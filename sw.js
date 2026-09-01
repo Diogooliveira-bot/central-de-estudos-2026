@@ -1,11 +1,11 @@
 /* Central de Estudos — service worker
    Cache-first no shell do app para abrir sem rede após a 1ª visita.
    Nomes de arquivo com ?v= são tratados como recursos distintos. */
-var CACHE = 'central-v6676';
+var CACHE = 'central-v6677';
 var SHELL = [
   './',
   './index.html',
-  './sync-client.js?v=6676',
+  './sync-client.js?v=6677',
   './manifest.webmanifest',
   './icons/icon-192.png',
   './icons/icon-512.png'
@@ -47,8 +47,8 @@ self.addEventListener('fetch', function (e) {
     responsePromise = responsePromise.then(function (response) {
       if (!response) return response;
       return response.text().then(function (html) {
-        if (html.indexOf('central-sync-v6676') < 0 && html.indexOf('sync-client.js?v=6676') < 0) {
-          html = html.replace('</body>', '<script src="./sync-client.js?v=6676"></script></body>');
+        if (html.indexOf('central-sync-v6677') < 0 && html.indexOf('sync-client.js?v=6677') < 0) {
+          html = html.replace('</body>', '<script src="./sync-client.js?v=6677"></script></body>');
         }
         var headers = new Headers(response.headers);
         headers.set('Content-Type', 'text/html; charset=utf-8');
