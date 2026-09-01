@@ -1,7 +1,7 @@
 {
   "name": "central-de-estudos",
   "private": true,
-  "version": "6.6.75",
+  "version": "6.6.76",
   "type": "module",
   "engines": {
     "node": ">=20"
