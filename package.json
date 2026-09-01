@@ -1,12 +1,12 @@
 {
-  "name": "central-de-estudos-v27-vercel",
+  "name": "central-de-estudos",
   "private": true,
-  "version": "27.0.0",
+  "version": "6.6.75",
   "type": "module",
   "engines": {
-    "node": "22.x"
+    "node": ">=20"
   },
   "dependencies": {
-    "@neondatabase/serverless": "1.1.0"
+    "@neondatabase/serverless": "^1.1.0"
   }
 }
