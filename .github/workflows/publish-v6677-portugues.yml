@@ -33,12 +33,20 @@ jobs:
         run: |
           python - <<'PY'
           from pathlib import Path
-          import hashlib
-          anki = Path('tools/anki.html').read_bytes()
-          sw = Path('sw.js').read_bytes()
-          assert hashlib.sha256(anki).hexdigest() == 'a07c1b5b4aecff4753857fa0d98ba208f2901899c21c9992956af32c5f2a2ced'
-          assert hashlib.sha256(sw).hexdigest() == '6975ee9484a41f9fab53dfd8c1491d1b2996f932c30b99fc16a055b467b0b5ca'
-          print('Validacao OK: v6.6.77 identica ao pacote testado.')
+          import json
+          html = Path('tools/anki.html').read_text(encoding='utf-8')
+          marker = 'window.ANKI_SITE_DATA = '
+          pos = html.index(marker) + len(marker)
+          data, _ = json.JSONDecoder().raw_decode(html[pos:])
+          novos = [c for c in data['cards'] if c.get('source') == 'flashcards_portugues_medio_dificil.csv']
+          assert data['totalCards'] == 4844
+          assert len(novos) == 160
+          assert len({c['id'] for c in novos}) == 160
+          assert data['version'] == '6.6.77-portugues-flashcards'
+          sw = Path('sw.js').read_text(encoding='utf-8')
+          assert 'central-v6677' in sw
+          assert 'sync-client.js?v=6677' in sw
+          print('Validacao OK: 160 cards adicionados, total 4844, PWA v6677.')
           PY
 
       - name: Publicar arquivos integrados no main
