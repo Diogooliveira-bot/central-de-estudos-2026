@@ -1,0 +1,54 @@
+name: Publicar v6.6.77 - Flashcards Portugues
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/apply_portugues_flashcards.py'
+      - 'data/flashcards_portugues_part*.csv'
+      - '.github/workflows/publish-v6677-portugues.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  integrar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Aplicar flashcards e atualizar PWA
+        run: python scripts/apply_portugues_flashcards.py
+
+      - name: Validar versao gerada
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import hashlib
+          anki = Path('tools/anki.html').read_bytes()
+          sw = Path('sw.js').read_bytes()
+          assert hashlib.sha256(anki).hexdigest() == 'a07c1b5b4aecff4753857fa0d98ba208f2901899c21c9992956af32c5f2a2ced'
+          assert hashlib.sha256(sw).hexdigest() == '6975ee9484a41f9fab53dfd8c1491d1b2996f932c30b99fc16a055b467b0b5ca'
+          print('Validacao OK: v6.6.77 identica ao pacote testado.')
+          PY
+
+      - name: Publicar arquivos integrados no main
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add tools/anki.html sw.js
+          if git diff --cached --quiet; then
+            echo 'Nenhuma alteracao adicional.'
+          else
+            git commit -m 'Publica v6.6.77 — flashcards de Português [skip ci]'
+            git push origin main
+          fi
