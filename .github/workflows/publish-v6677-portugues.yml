@@ -1,4 +1,4 @@
-name: Publicar v6.6.77 - Flashcards Portugues
+name: Publicar v6.6.78 - Portugues organizado
 
 on:
   push:
@@ -26,49 +26,54 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Corrigir ID transportado e aplicar v6.6.77
-        run: |
-          python - <<'PY'
-          from pathlib import Path
-          p = Path('scripts/apply_portugues_flashcards.py')
-          s = p.read_text(encoding='utf-8')
-          old = "'pt-md-a6ff475e78344f07', 'pt-md-59d82762319d0ab6'"
-          new = "'pt-md-a6ff475e78344f07', 'pt-md-e6816a3667496ace', 'pt-md-59d82762319d0ab6'"
-          if 'pt-md-e6816a3667496ace' not in s:
-              assert old in s
-              s = s.replace(old, new, 1)
-              p.write_text(s, encoding='utf-8')
-          PY
-          python scripts/apply_portugues_flashcards.py
+      - name: Organizar Portugues e limpar baralhos destacados
+        run: python scripts/apply_portugues_flashcards.py
 
       - name: Validar versao gerada
         run: |
           python - <<'PY'
           from pathlib import Path
           import json
+
           html = Path('tools/anki.html').read_text(encoding='utf-8')
           marker = 'window.ANKI_SITE_DATA = '
           pos = html.index(marker) + len(marker)
           data, _ = json.JSONDecoder().raw_decode(html[pos:])
-          novos = [c for c in data['cards'] if c.get('source') == 'flashcards_portugues_medio_dificil.csv']
-          assert data['totalCards'] == 4844
-          assert len(novos) == 160
-          assert len({c['id'] for c in novos}) == 160
-          assert data['version'] == '6.6.77-portugues-flashcards'
+
+          def raiz(deck):
+              return (deck or '').split('::', 1)[0].strip().upper()
+
+          pt = [c for c in data['cards'] if raiz(c.get('deck')) == '03 PORTUGUÊS']
+          assert len(pt) == 160, len(pt)
+          assert all(c.get('source') == 'flashcards_portugues_medio_dificil.csv' for c in pt)
+
+          semanas = {c['deck'].split('::')[1] for c in pt}
+          assert semanas == {f'SEMANA {i:02d}' for i in range(1, 17)}, semanas
+          assert all(len(c['deck'].split('::')) >= 3 for c in pt)
+
+          removidas = {'06 LEGISLAÇÃO', '99 ARQUIVO FORA DO EDITAL', 'QUESTÕES', 'RLM'}
+          for nome in removidas:
+              assert not any(raiz(c.get('deck')) == nome for c in data['cards']), nome
+              assert not any(raiz(d) == nome for d in data.get('decks', [])), nome
+
+          assert data['version'] == '6.6.78-portugues-organizado'
           sw = Path('sw.js').read_text(encoding='utf-8')
-          assert 'central-v6677' in sw
-          assert 'sync-client.js?v=6677' in sw
-          print('Validacao OK: 160 cards adicionados, total 4844, PWA v6677.')
+          assert 'central-v6678' in sw
+          assert 'sync-client.js?v=6678' in sw
+
+          print('Validação OK')
+          print('Português: 160 cards / 16 semanas / Semana -> Tópico')
+          print('Total geral:', data['totalCards'])
           PY
 
       - name: Publicar arquivos integrados no main
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add tools/anki.html sw.js scripts/apply_portugues_flashcards.py
+          git add tools/anki.html sw.js
           if git diff --cached --quiet; then
             echo 'Nenhuma alteracao adicional.'
           else
-            git commit -m 'Publica v6.6.77 — flashcards de Português [skip ci]'
+            git commit -m 'Publica v6.6.78 — Português por semana e tópico [skip ci]'
             git push origin main
           fi
