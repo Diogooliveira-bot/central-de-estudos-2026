@@ -61,7 +61,7 @@ jobs:
           assert './anki-migrate-v6679.js?v=6679' in html
           assert Path('tools/anki-migrate-v6679.js').exists()
           sw = Path('sw.js').read_text(encoding='utf-8')
-          assert 'central-v6679' in sw
+          assert 'central-v6680' in sw
           assert 'sync-client.js?v=6679' in sw
           assert 'anki-migrate-v6679.js?v=6679' in sw
           sync = Path('sync-client.js').read_text(encoding='utf-8')
