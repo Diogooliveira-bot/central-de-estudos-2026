@@ -127,7 +127,7 @@ function migrate(){
     }
   });
   try{localStorage.setItem('central:anki:migracao',MIGRATION)}catch(_){}
-  if(changed)window.__centralAnkiMigrated6680=true;
+  if(changed){window.__centralAnkiMigrated6680=true;window.__centralAnkiMigrated6679=true;}
   return changed;
 }
 function migrateAndReload(){
@@ -143,7 +143,7 @@ function migrateAndReload(){
 }
 window.centralMigrateAnki6680=migrate;
 window.centralMigrateAnki6679=migrate;
-window.addEventListener('central-cloud-applied',function(){setTimeout(migrateAndReload,0)});
+window.addEventListener('central-cloud-applied',function(){migrate();setTimeout(migrateAndReload,0)});
 migrateAndReload();
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',function(){setTimeout(migrate,0)});
 setTimeout(migrate,500);
