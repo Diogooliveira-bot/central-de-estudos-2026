@@ -1,7 +1,6 @@
 /* Central de Estudos — service worker
-   Cache-first no shell do app para abrir sem rede após a 1ª visita.
-   Nomes de arquivo com ?v= são tratados como recursos distintos. */
-var CACHE = 'central-v6679';
+   Shell cacheado para uso offline; páginas críticas do Anki usam rede primeiro quando houver conexão. */
+var CACHE = 'central-v6680';
 var SHELL = [
   './',
   './index.html',
@@ -24,24 +23,43 @@ self.addEventListener('activate', function (e) {
   );
 });
 
+function saveFresh(req, response) {
+  if (response && response.ok) {
+    var cp = response.clone();
+    caches.open(CACHE).then(function (c) { c.put(req, cp); });
+  }
+  return response;
+}
+
 self.addEventListener('fetch', function (e) {
   var url = new URL(e.request.url);
   if (e.request.method !== 'GET' || url.origin !== location.origin) return;
   if (url.pathname.startsWith('/api/')) return;
+
   var isMainDocument = url.pathname === '/' || url.pathname.endsWith('/index.html');
-  var responsePromise =
-    caches.match(e.request, { ignoreSearch: false }).then(function (hit) {
-      if (hit) {
-        fetch(e.request).then(function (r) { if (r && r.ok) caches.open(CACHE).then(function (c) { c.put(e.request, r); }); }).catch(function () {});
-        return hit;
-      }
-      return fetch(e.request).then(function (r) {
-        if (r && r.ok) { var cp = r.clone(); caches.open(CACHE).then(function (c) { c.put(e.request, cp); }); }
-        return r;
-      }).catch(function () {
-        return caches.match('./index.html');
-      });
+  var isAnkiCritical = url.pathname.endsWith('/tools/anki.html') || url.pathname.endsWith('/tools/anki-migrate-v6679.js');
+
+  if (isAnkiCritical) {
+    e.respondWith(
+      fetch(e.request).then(function (r) { return saveFresh(e.request, r); }).catch(function () {
+        return caches.match(e.request, { ignoreSearch: false }).then(function (hit) {
+          return hit || caches.match('./index.html');
+        });
+      })
+    );
+    return;
+  }
+
+  var responsePromise = caches.match(e.request, { ignoreSearch: false }).then(function (hit) {
+    if (hit) {
+      fetch(e.request).then(function (r) { saveFresh(e.request, r); }).catch(function () {});
+      return hit;
+    }
+    return fetch(e.request).then(function (r) { return saveFresh(e.request, r); }).catch(function () {
+      return caches.match('./index.html');
     });
+  });
+
   if (isMainDocument) {
     responsePromise = responsePromise.then(function (response) {
       if (!response) return response;
