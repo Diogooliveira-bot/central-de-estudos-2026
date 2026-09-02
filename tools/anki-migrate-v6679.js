@@ -2,17 +2,30 @@
 'use strict';
 var REMOVE={'06 LEGISLAÇÃO':1,'99 ARQUIVO FORA DO EDITAL':1,'QUESTÕES':1,'RLM':1};
 var PT='03 PORTUGUÊS';
+var MIGRATION='6680';
 
 function root(deck){return String(deck||'').split('::',1)[0].trim().toUpperCase()}
 function clone(v){return JSON.parse(JSON.stringify(v))}
+function siteData(){
+  var d=null;
+  try{d=window.ANKI_SITE_DATA||null}catch(_){}
+  if(!d){
+    try{if(typeof SITE_DATA!=='undefined')d=SITE_DATA}catch(_){}
+  }
+  if(d&&Array.isArray(d.cards)){
+    try{window.ANKI_SITE_DATA=d}catch(_){}
+    return d;
+  }
+  return null;
+}
 function expectedCards(){
-  var d=window.ANKI_SITE_DATA;
-  if(!d||!Array.isArray(d.cards))return [];
+  var d=siteData();
+  if(!d)return [];
   return d.cards.filter(function(c){return root(c&&c.deck)===PT});
 }
-function expectedDecks(){
+function expectedDecks(exp){
   var out={};
-  expectedCards().forEach(function(c){if(c&&c.deck)out[c.deck]=1});
+  (exp||expectedCards()).forEach(function(c){if(c&&c.deck)out[c.deck]=1});
   return Object.keys(out).sort(function(a,b){return a.localeCompare(b,'pt-BR')});
 }
 function preserveProgress(base,old){
@@ -24,61 +37,75 @@ function preserveProgress(base,old){
   }
   return c;
 }
-function mergeCards(cards){
-  var exp=expectedCards();
+function mergeCards(cards,exp){
+  exp=exp||expectedCards();
   if(exp.length!==160)return cards;
   var oldById={};
-  cards.forEach(function(c){if(c&&c.id)oldById[c.id]=c});
-  var out=cards.filter(function(c){var r=root(c&&c.deck);return r!==PT&&!REMOVE[r]});
+  (cards||[]).forEach(function(c){if(c&&c.id)oldById[c.id]=c});
+  var out=(cards||[]).filter(function(c){var r=root(c&&c.deck);return r!==PT&&!REMOVE[r]});
   exp.forEach(function(c){out.push(preserveProgress(c,oldById[c.id]))});
   return out;
 }
-function mergeDecks(decks){
+function mergeDecks(decks,exp){
   var keep={};
   (decks||[]).forEach(function(d){if(typeof d==='string'){var r=root(d);if(r!==PT&&!REMOVE[r])keep[d]=1}});
-  expectedDecks().forEach(function(d){keep[d]=1});
+  expectedDecks(exp).forEach(function(d){keep[d]=1});
   return Object.keys(keep).sort(function(a,b){return a.localeCompare(b,'pt-BR')});
 }
 function hasTargetCards(a){return Array.isArray(a)&&a.some(function(c){return c&&typeof c==='object'&&c.deck&&(root(c.deck)===PT||REMOVE[root(c.deck)])})}
 function hasTargetDecks(a){return Array.isArray(a)&&a.some(function(d){return typeof d==='string'&&(root(d)===PT||REMOVE[root(d)])})}
-function migrateObject(obj,depth){
-  if(!obj||typeof obj!=='object'||depth>4)return false;
+function migrateObject(obj,depth,exp){
+  if(!obj||typeof obj!=='object'||depth>5)return false;
   var changed=false;
   if(Array.isArray(obj)){
     if(hasTargetCards(obj)){
-      var merged=mergeCards(obj);
-      obj.splice.apply(obj,[0,obj.length].concat(merged));
-      return true;
+      var merged=mergeCards(obj,exp);
+      if(merged!==obj){obj.splice.apply(obj,[0,obj.length].concat(merged));return true}
     }
     if(hasTargetDecks(obj)){
-      var decks=mergeDecks(obj);
+      var decks=mergeDecks(obj,exp);
       obj.splice.apply(obj,[0,obj.length].concat(decks));
       return true;
     }
-    obj.forEach(function(v){if(v&&typeof v==='object'&&migrateObject(v,depth+1))changed=true});
+    obj.forEach(function(v){if(v&&typeof v==='object'&&migrateObject(v,depth+1,exp))changed=true});
     return changed;
   }
   if(Array.isArray(obj.cards)&&hasTargetCards(obj.cards)){
-    obj.cards=mergeCards(obj.cards);
-    if(Array.isArray(obj.decks))obj.decks=mergeDecks(obj.decks);
+    obj.cards=mergeCards(obj.cards,exp);
+    if(Array.isArray(obj.decks))obj.decks=mergeDecks(obj.decks,exp);
     if('totalCards' in obj)obj.totalCards=obj.cards.length;
     if('deckCount' in obj&&Array.isArray(obj.decks))obj.deckCount=obj.decks.length;
-    if('version' in obj)obj.version='6.6.79-portugues-organizado';
+    if('version' in obj)obj.version='6.6.80-portugues-organizado';
     changed=true;
   }else if(Array.isArray(obj.decks)&&hasTargetDecks(obj.decks)){
-    obj.decks=mergeDecks(obj.decks);changed=true;
+    obj.decks=mergeDecks(obj.decks,exp);changed=true;
   }
   Object.keys(obj).forEach(function(k){
     if(k==='cards'||k==='decks')return;
-    var v=obj[k];if(v&&typeof v==='object'&&migrateObject(v,depth+1))changed=true;
+    var v=obj[k];if(v&&typeof v==='object'&&migrateObject(v,depth+1,exp))changed=true;
   });
   return changed;
 }
+function cleanRuntime(exp){
+  var d=siteData();
+  if(!d||exp.length!==160)return false;
+  var before='';
+  try{before=JSON.stringify([d.cards,d.decks||null])}catch(_){}
+  d.cards=mergeCards(d.cards,exp);
+  if(Array.isArray(d.decks))d.decks=mergeDecks(d.decks,exp);
+  if('totalCards' in d)d.totalCards=d.cards.length;
+  if('deckCount' in d&&Array.isArray(d.decks))d.deckCount=d.decks.length;
+  try{return before!==JSON.stringify([d.cards,d.decks||null])}catch(_){return true}
+}
 function migrate(){
-  if(expectedCards().length!==160)return false;
-  var changed=false, expById={};
-  expectedCards().forEach(function(c){expById[c.id]=c});
-  var keys=[];try{for(var i=0;i<localStorage.length;i++)keys.push(localStorage.key(i))}catch(_){return false}
+  var exp=expectedCards();
+  if(exp.length!==160){
+    try{console.warn('[Central Anki] Migração '+MIGRATION+' aguardando SITE_DATA com 160 cards de Português; encontrados:',exp.length)}catch(_){}
+    return false;
+  }
+  var changed=cleanRuntime(exp), expById={};
+  exp.forEach(function(c){expById[c.id]=c});
+  var keys=[];try{for(var i=0;i<localStorage.length;i++)keys.push(localStorage.key(i))}catch(_){return changed}
   keys.forEach(function(k){
     if(!k)return;
     var raw;try{raw=localStorage.getItem(k)}catch(_){return}
@@ -94,26 +121,31 @@ function migrate(){
       return;
     }
     var before;try{before=JSON.stringify(value)}catch(_){return}
-    if(migrateObject(value,0)){
+    if(migrateObject(value,0,exp)){
       var after=JSON.stringify(value);
       if(after!==before){localStorage.setItem(k,after);changed=true}
     }
   });
-  if(changed){
-    window.__centralAnkiMigrated6679=true;
-    try{localStorage.setItem('central:anki:migracao','6679')}catch(_){}
-  }
+  try{localStorage.setItem('central:anki:migracao',MIGRATION)}catch(_){}
+  if(changed)window.__centralAnkiMigrated6680=true;
   return changed;
 }
-window.centralMigrateAnki6679=migrate;
-window.addEventListener('central-cloud-applied',function(){migrate()});
-var changed=migrate();
-if(changed){
+function migrateAndReload(){
+  var changed=migrate();
+  if(!changed)return;
   try{
-    if(sessionStorage.getItem('central:anki:migracao-reload')!=='6679'){
-      sessionStorage.setItem('central:anki:migracao-reload','6679');
-      setTimeout(function(){location.reload()},120);
+    var key='central:anki:migracao-reload';
+    if(sessionStorage.getItem(key)!==MIGRATION){
+      sessionStorage.setItem(key,MIGRATION);
+      setTimeout(function(){location.reload()},150);
     }
   }catch(_){}
 }
+window.centralMigrateAnki6680=migrate;
+window.centralMigrateAnki6679=migrate;
+window.addEventListener('central-cloud-applied',function(){setTimeout(migrateAndReload,0)});
+migrateAndReload();
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',function(){setTimeout(migrate,0)});
+setTimeout(migrate,500);
+setTimeout(migrate,1500);
 })();
