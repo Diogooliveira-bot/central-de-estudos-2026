@@ -1,4 +1,4 @@
-name: Publicar v6.6.78 - Portugues organizado
+name: Publicar v6.6.79 - Portugues com migracao
 
 on:
   push:
@@ -6,6 +6,8 @@ on:
     paths:
       - 'scripts/apply_portugues_flashcards.py'
       - 'data/flashcards_portugues_part*.csv'
+      - 'tools/anki-migrate-v6679.js'
+      - 'sync-client.js'
       - '.github/workflows/publish-v6677-portugues.yml'
 
 permissions:
@@ -26,7 +28,7 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Organizar Portugues e limpar baralhos destacados
+      - name: Organizar Portugues e instalar migracao
         run: python scripts/apply_portugues_flashcards.py
 
       - name: Validar versao gerada
@@ -46,7 +48,6 @@ jobs:
           pt = [c for c in data['cards'] if raiz(c.get('deck')) == '03 PORTUGUÊS']
           assert len(pt) == 160, len(pt)
           assert all(c.get('source') == 'flashcards_portugues_medio_dificil.csv' for c in pt)
-
           semanas = {c['deck'].split('::')[1] for c in pt}
           assert semanas == {f'SEMANA {i:02d}' for i in range(1, 17)}, semanas
           assert all(len(c['deck'].split('::')) >= 3 for c in pt)
@@ -56,13 +57,20 @@ jobs:
               assert not any(raiz(c.get('deck')) == nome for c in data['cards']), nome
               assert not any(raiz(d) == nome for d in data.get('decks', [])), nome
 
-          assert data['version'] == '6.6.78-portugues-organizado'
+          assert data['version'] == '6.6.79-portugues-organizado'
+          assert './anki-migrate-v6679.js?v=6679' in html
+          assert Path('tools/anki-migrate-v6679.js').exists()
           sw = Path('sw.js').read_text(encoding='utf-8')
-          assert 'central-v6678' in sw
-          assert 'sync-client.js?v=6678' in sw
+          assert 'central-v6679' in sw
+          assert 'sync-client.js?v=6679' in sw
+          assert 'anki-migrate-v6679.js?v=6679' in sw
+          sync = Path('sync-client.js').read_text(encoding='utf-8')
+          assert '__centralAnkiMigrated6679' in sync
+          assert "versao:'v6.6.79'" in sync
 
           print('Validação OK')
           print('Português: 160 cards / 16 semanas / Semana -> Tópico')
+          print('Migração local+nuvem: v6679')
           print('Total geral:', data['totalCards'])
           PY
 
@@ -74,6 +82,6 @@ jobs:
           if git diff --cached --quiet; then
             echo 'Nenhuma alteracao adicional.'
           else
-            git commit -m 'Publica v6.6.78 — Português por semana e tópico [skip ci]'
+            git commit -m 'Publica v6.6.79 — migração do Anki no tablet [skip ci]'
             git push origin main
           fi
