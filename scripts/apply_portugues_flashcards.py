@@ -4,10 +4,9 @@ import csv, io, json, re
 ANKI = Path('tools/anki.html')
 PARTS = [Path(f'data/flashcards_portugues_part{i}.csv') for i in range(1, 5)]
 SOURCE = 'flashcards_portugues_medio_dificil.csv'
+MIGRATION_TAG = '<script src="./anki-migrate-v6679.js?v=6679"></script>'
 # Mantido apenas para compatibilidade com a rotina anterior: pt-md-e6816a3667496ace
 
-# Grupos que o usuário pediu para retirar do Anki.
-# A comparação é feita pelo primeiro nível do caminho do baralho.
 REMOVER_RAIZES = {
     '06 LEGISLAÇÃO',
     '99 ARQUIVO FORA DO EDITAL',
@@ -20,7 +19,6 @@ for p in PARTS:
     rows.extend(csv.DictReader(io.StringIO(p.read_text(encoding='utf-8')), delimiter=';'))
 assert len(rows) == 160, len(rows)
 
-# Indexa cada card novo pela frente, que é única dentro do conjunto de 160.
 por_frente = {r['Frente'].strip(): r for r in rows}
 assert len(por_frente) == 160, 'Há frentes duplicadas no CSV.'
 
@@ -38,8 +36,6 @@ assert len({c.get('id') for c in cards_160}) == 160
 def raiz(deck):
     return (deck or '').split('::', 1)[0].strip().upper()
 
-# 1) Remove TODOS os cards antigos de Português, preservando somente os 160 novos.
-# 2) Remove também os grupos destacados pelo usuário.
 limpos = []
 for c in data.get('cards', []):
     r = raiz(c.get('deck'))
@@ -51,8 +47,6 @@ for c in data.get('cards', []):
 
 data['cards'] = limpos
 
-# Reorganiza os 160 no padrão:
-# 03 PORTUGUÊS :: SEMANA 01 :: VERBO E SUJEITO
 for c in data['cards']:
     if c.get('source') != SOURCE:
         continue
@@ -70,7 +64,6 @@ for c in data['cards']:
     nivel = row.get('Nivel', '').strip().lower()
     c['tags'] = f'portugues semana-{numero:02d} {nivel} {topico.lower()}'
 
-# Reconstrói a lista de decks exclusivamente a partir dos cards restantes.
 data['decks'] = sorted(
     {c.get('deck') for c in data['cards'] if c.get('deck')},
     key=lambda x: x.lower()
@@ -78,9 +71,8 @@ data['decks'] = sorted(
 
 data['totalCards'] = len(data['cards'])
 data['deckCount'] = len(data['decks'])
-data['version'] = '6.6.78-portugues-organizado'
+data['version'] = '6.6.79-portugues-organizado'
 
-# Validações estruturais antes de qualquer publicação.
 pt = [c for c in data['cards'] if raiz(c.get('deck')) == '03 PORTUGUÊS']
 assert len(pt) == 160, f'Português deveria ter 160 cards, tem {len(pt)}'
 assert all(c.get('source') == SOURCE for c in pt), 'Restou card antigo em Português.'
@@ -89,14 +81,19 @@ for removida in REMOVER_RAIZES:
     assert not any(raiz(c.get('deck')) == removida for c in data['cards']), f'Restou card em {removida}'
 
 compact = json.dumps(data, ensure_ascii=False, separators=(',', ':'))
-ANKI.write_text(html[:pos] + compact + html[end:], encoding='utf-8')
+out = html[:pos] + compact + html[end:]
+# A migração roda no próprio Anki e corrige também localStorage/cópia sincronizada antiga.
+if MIGRATION_TAG not in out:
+    assert '</body>' in out
+    out = out.replace('</body>', MIGRATION_TAG + '</body>', 1)
+ANKI.write_text(out, encoding='utf-8')
 
-# Atualiza o cache da PWA para forçar o tablet a buscar a nova árvore do Anki.
 sw = Path('sw.js')
-s = sw.read_text(encoding='utf-8').replace('6677', '6678')
+s = sw.read_text(encoding='utf-8').replace('6678', '6679')
 sw.write_text(s, encoding='utf-8')
 
 print('Português=', len(pt))
 print('Total=', data['totalCards'])
 print('Decks=', data['deckCount'])
+print('Migração=', '6679')
 print('Removidos=', ', '.join(sorted(REMOVER_RAIZES)))
