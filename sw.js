@@ -1,6 +1,6 @@
 /* Central de Estudos — service worker
    Shell cacheado para uso offline; páginas críticas do Anki usam rede primeiro quando houver conexão. */
-var CACHE = 'central-v6685';
+var CACHE = 'central-v6686';
 var SHELL = [
   './',
   './index.html',
@@ -10,7 +10,8 @@ var SHELL = [
   './icons/icon-512.png',
   './central-updater-v6682.js?v=6682',
   './tools/anki-migrate-v6679.js?v=6679',
-  './tools/anki-deck-manager-v6685.js?v=6685'
+  './tools/anki-deck-manager-v6685.js?v=6685',
+  './tools/anki-file-import-v6686.js?v=6686'
 ];
 
 self.addEventListener('install', function (e) {
@@ -33,11 +34,14 @@ function saveFresh(req, response) {
   return response;
 }
 
-function injectAnkiDeckManager(response) {
+function injectAnkiTools(response) {
   if (!response) return response;
   return response.text().then(function (html) {
     if (html.indexOf('anki-deck-manager-v6685.js') < 0) {
       html = html.replace('</body>', '<script src="./anki-deck-manager-v6685.js?v=6685"></script></body>');
+    }
+    if (html.indexOf('anki-file-import-v6686.js') < 0) {
+      html = html.replace('</body>', '<script src="./anki-file-import-v6686.js?v=6686"></script></body>');
     }
     var headers = new Headers(response.headers);
     headers.set('Content-Type', 'text/html; charset=utf-8');
@@ -53,18 +57,18 @@ self.addEventListener('fetch', function (e) {
 
   var isMainDocument = url.pathname === '/' || url.pathname.endsWith('/index.html');
   var isAnkiPage = url.pathname.endsWith('/tools/anki.html');
-  var isAnkiCritical = isAnkiPage || url.pathname.endsWith('/tools/anki-migrate-v6679.js') || url.pathname.endsWith('/tools/anki-deck-manager-v6685.js');
+  var isAnkiCritical = isAnkiPage || url.pathname.endsWith('/tools/anki-migrate-v6679.js') || url.pathname.endsWith('/tools/anki-deck-manager-v6685.js') || url.pathname.endsWith('/tools/anki-file-import-v6686.js');
 
   if (isAnkiCritical) {
     e.respondWith(
       fetch(e.request).then(function (r) {
         if (isAnkiPage) {
-          return injectAnkiDeckManager(r).then(function (injected) { return saveFresh(e.request, injected); });
+          return injectAnkiTools(r).then(function (injected) { return saveFresh(e.request, injected); });
         }
         return saveFresh(e.request, r);
       }).catch(function () {
         return caches.match(e.request, { ignoreSearch: false }).then(function (hit) {
-          if (isAnkiPage && hit) return injectAnkiDeckManager(hit);
+          if (isAnkiPage && hit) return injectAnkiTools(hit);
           return hit || caches.match('./index.html');
         });
       })
