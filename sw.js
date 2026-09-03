@@ -1,6 +1,6 @@
 /* Central de Estudos — service worker
    Shell cacheado para uso offline; páginas críticas do Anki usam rede primeiro quando houver conexão. */
-var CACHE = 'central-v6688';
+var CACHE = 'central-v6689';
 var SHELL = [
   './',
   './index.html',
@@ -35,9 +35,34 @@ function saveFresh(req, response) {
   return response;
 }
 
+/*
+ * O Anki original monta a lista de baralhos somando SOURCE.meta.decks,
+ * baralhos personalizados e todos os cards, inclusive os suspensos.
+ * Por isso um subbaralho excluído podia reaparecer mesmo sem cards ativos.
+ * Na v6689 substituímos a função nativa allDecks() antes de entregar o HTML:
+ * - respeita central-v6:anki-hidden-decks;
+ * - ignora cards suspensos;
+ * - oculta somente o caminho excluído e seus descendentes;
+ * - preserva pai e irmãos ao excluir apenas um subbaralho.
+ */
+function patchAnkiNativeDecks(html) {
+  var oldCode = "function allDecks(){const set=new Set([...(SOURCE.meta?.decks||[]),...customDecks()]);S.cards.forEach(c=>{if(c.deck)set.add(c.deck)});return [...set].filter(Boolean).sort((a,b)=>a.localeCompare(b,'pt-BR',{numeric:true}))}";
+  var newCode = "function allDecks(){const hidden=(()=>{try{return JSON.parse(localStorage.getItem('central-v6:anki-hidden-decks')||'[]')}catch{return[]}})();const isHidden=d=>hidden.some(h=>String(d)===String(h)||String(d).startsWith(String(h)+'::'));const set=new Set([...(SOURCE.meta?.decks||[]),...customDecks()]);S.cards.forEach(c=>{if(c.deck&&!c.suspended)set.add(c.deck)});return [...set].filter(d=>d&&!isHidden(d)).sort((a,b)=>a.localeCompare(b,'pt-BR',{numeric:true}))}";
+
+  if (html.indexOf(oldCode) >= 0) {
+    html = html.replace(oldCode, newCode);
+  }
+
+  if (html.indexOf('central-native-deck-filter-v6689') < 0) {
+    html = html.replace('</head>', '<meta name="central-native-deck-filter-v6689" content="1"></head>');
+  }
+  return html;
+}
+
 function injectAnkiTools(response) {
   if (!response) return response;
   return response.text().then(function (html) {
+    html = patchAnkiNativeDecks(html);
     if (html.indexOf('anki-deck-manager-v6685.js') < 0) {
       html = html.replace('</body>', '<script src="./anki-deck-manager-v6685.js?v=6685"></script></body>');
     }
