@@ -1,0 +1,1 @@
+(function(){if(window.centralAnkiDeckManager)return;var s=document.createElement('script');s.src='../anki-deck-manager-v6681.js?force=6683-'+Date.now();s.async=true;document.head.appendChild(s);})();
