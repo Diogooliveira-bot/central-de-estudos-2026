@@ -144,7 +144,7 @@ function migrateAndReload(){
 function loadDeckManager(){
   if(window.centralAnkiDeckManager||document.querySelector('script[data-central-deck-manager]'))return;
   var s=document.createElement('script');
-  s.src='./anki-deck-manager-v6681.js?v=6681-'+Date.now();
+  s.src='./tools/anki-deck-manager-v6681.js?v=6681-'+Date.now();
   s.async=true;
   s.setAttribute('data-central-deck-manager','1');
   document.head.appendChild(s);
