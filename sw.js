@@ -1,151 +1,49 @@
-/* Central de Estudos — service worker
-   Shell cacheado para uso offline; páginas críticas usam rede primeiro quando houver conexão. */
-var CACHE = 'central-v6691';
-var SHELL = [
-  './',
-  './index.html',
-  './sync-client.js?v=6679',
-  './manifest.webmanifest',
-  './icons/icon-192.png',
-  './icons/icon-512.png',
-  './central-updater-v6691.js?v=6691',
-  './central-version-v6691.js?v=6691',
-  './tools/anki-migrate-v6679.js?v=6679',
-  './tools/anki-deck-manager-v6685.js?v=6685',
-  './tools/anki-file-import-v6687.js?v=6687',
-  './tools/anki-deck-delete-fix-v6688.js?v=6688'
+/* Central de Estudos — service worker v6.6.92 */
+var CACHE='central-v6692';
+var SHELL=[
+ './','./index.html','./sync-client.js?v=6679','./manifest.webmanifest','./icons/icon-192.png','./icons/icon-512.png',
+ './central-updater-v6692.js?v=6692','./central-version-v6692.js?v=6692',
+ './tools/anki-migrate-v6679.js?v=6679','./tools/anki-deck-manager-v6685.js?v=6685','./tools/anki-file-import-v6687.js?v=6687','./tools/anki-deck-delete-v6692.js?v=6692'
 ];
 
-self.addEventListener('install', function (e) {
-  e.waitUntil(caches.open(CACHE).then(function (c) { return c.addAll(SHELL); }).then(function () { return self.skipWaiting(); }));
-});
+self.addEventListener('install',function(e){e.waitUntil(caches.open(CACHE).then(function(c){return c.addAll(SHELL)}).then(function(){return self.skipWaiting()}))});
+self.addEventListener('activate',function(e){e.waitUntil(caches.keys().then(function(keys){return Promise.all(keys.filter(function(k){return k!==CACHE}).map(function(k){return caches.delete(k)}))}).then(function(){return self.clients.claim()}))});
 
-self.addEventListener('activate', function (e) {
-  e.waitUntil(
-    caches.keys().then(function (keys) {
-      return Promise.all(keys.filter(function (k) { return k !== CACHE; }).map(function (k) { return caches.delete(k); }));
-    }).then(function () { return self.clients.claim(); })
-  );
-});
+function saveFresh(req,r){if(r&&r.ok){var cp=r.clone();caches.open(CACHE).then(function(c){c.put(req,cp)}).catch(function(){})}return r}
 
-function saveFresh(req, response) {
-  if (response && response.ok) {
-    var cp = response.clone();
-    caches.open(CACHE).then(function (c) { c.put(req, cp); });
-  }
-  return response;
+function injectAnki(response){
+ if(!response)return response;
+ return response.text().then(function(html){
+  /* Evita que correções antigas concorram com a exclusão definitiva v6692. */
+  html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*anki-deck-delete(?:-fix)?-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');
+  if(html.indexOf('anki-deck-manager-v6685.js')<0)html=html.replace('</body>','<script src="./anki-deck-manager-v6685.js?v=6685"></script></body>');
+  if(html.indexOf('anki-file-import-v6687.js')<0)html=html.replace('</body>','<script src="./anki-file-import-v6687.js?v=6687"></script></body>');
+  if(html.indexOf('anki-deck-delete-v6692.js')<0)html=html.replace('</body>','<script src="./anki-deck-delete-v6692.js?v=6692"></script></body>');
+  var h=new Headers(response.headers);h.set('Content-Type','text/html; charset=utf-8');h.delete('Content-Length');
+  return new Response(html,{status:response.status,statusText:response.statusText,headers:h});
+ })
 }
 
-/*
- * O Anki original monta a lista de baralhos somando SOURCE.meta.decks,
- * baralhos personalizados e todos os cards, inclusive os suspensos.
- * Por isso um subbaralho excluído podia reaparecer mesmo sem cards ativos.
- * Desde a v6689 substituímos a função nativa allDecks() antes de entregar o HTML:
- * - respeita central-v6:anki-hidden-decks;
- * - ignora cards suspensos;
- * - oculta somente o caminho excluído e seus descendentes;
- * - preserva pai e irmãos ao excluir apenas um subbaralho.
- */
-function patchAnkiNativeDecks(html) {
-  var oldCode = "function allDecks(){const set=new Set([...(SOURCE.meta?.decks||[]),...customDecks()]);S.cards.forEach(c=>{if(c.deck)set.add(c.deck)});return [...set].filter(Boolean).sort((a,b)=>a.localeCompare(b,'pt-BR',{numeric:true}))}";
-  var newCode = "function allDecks(){const hidden=(()=>{try{return JSON.parse(localStorage.getItem('central-v6:anki-hidden-decks')||'[]')}catch{return[]}})();const isHidden=d=>hidden.some(h=>String(d)===String(h)||String(d).startsWith(String(h)+'::'));const set=new Set([...(SOURCE.meta?.decks||[]),...customDecks()]);S.cards.forEach(c=>{if(c.deck&&!c.suspended)set.add(c.deck)});return [...set].filter(d=>d&&!isHidden(d)).sort((a,b)=>a.localeCompare(b,'pt-BR',{numeric:true}))}";
-
-  if (html.indexOf(oldCode) >= 0) {
-    html = html.replace(oldCode, newCode);
-  }
-
-  if (html.indexOf('central-native-deck-filter-v6689') < 0) {
-    html = html.replace('</head>', '<meta name="central-native-deck-filter-v6689" content="1"></head>');
-  }
-  return html;
+function injectMain(response){
+ if(!response)return response;
+ return response.text().then(function(html){
+  if(html.indexOf('central-sync-v6679')<0&&html.indexOf('sync-client.js?v=6679')<0)html=html.replace('</body>','<script src="./sync-client.js?v=6679"></script></body>');
+  html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*central-updater-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');
+  html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*central-version-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');
+  html=html.replace('</body>','<script src="./central-version-v6692.js?v=6692"></script><script src="./central-updater-v6692.js?v=6692"></script></body>');
+  var h=new Headers(response.headers);h.set('Content-Type','text/html; charset=utf-8');h.delete('Content-Length');
+  return new Response(html,{status:response.status,statusText:response.statusText,headers:h});
+ })
 }
 
-function injectAnkiTools(response) {
-  if (!response) return response;
-  return response.text().then(function (html) {
-    html = patchAnkiNativeDecks(html);
-    if (html.indexOf('anki-deck-manager-v6685.js') < 0) {
-      html = html.replace('</body>', '<script src="./anki-deck-manager-v6685.js?v=6685"></script></body>');
-    }
-    if (html.indexOf('anki-file-import-v6687.js') < 0) {
-      html = html.replace('</body>', '<script src="./anki-file-import-v6687.js?v=6687"></script></body>');
-    }
-    if (html.indexOf('anki-deck-delete-fix-v6688.js') < 0) {
-      html = html.replace('</body>', '<script src="./anki-deck-delete-fix-v6688.js?v=6688"></script></body>');
-    }
-    var headers = new Headers(response.headers);
-    headers.set('Content-Type', 'text/html; charset=utf-8');
-    headers.delete('Content-Length');
-    return new Response(html, { status: response.status, statusText: response.statusText, headers: headers });
-  });
-}
-
-function injectMainTools(response) {
-  if (!response) return response;
-  return response.text().then(function (html) {
-    if (html.indexOf('central-sync-v6679') < 0 && html.indexOf('sync-client.js?v=6679') < 0) {
-      html = html.replace('</body>', '<script src="./sync-client.js?v=6679"></script></body>');
-    }
-
-    /* Remove scripts antigos de atualização/versão antes de inserir a versão vigente. */
-    html = html.replace(/<script\b[^>]*\bsrc=["'][^"']*central-updater-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi, '');
-    html = html.replace(/<script\b[^>]*\bsrc=["'][^"']*central-version-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi, '');
-    if (html.indexOf('central-version-v6691.js') < 0) {
-      html = html.replace('</body>', '<script src="./central-version-v6691.js?v=6691"></script></body>');
-    }
-    if (html.indexOf('central-updater-v6691.js') < 0) {
-      html = html.replace('</body>', '<script src="./central-updater-v6691.js?v=6691"></script></body>');
-    }
-
-    var headers = new Headers(response.headers);
-    headers.set('Content-Type', 'text/html; charset=utf-8');
-    headers.delete('Content-Length');
-    return new Response(html, { status: response.status, statusText: response.statusText, headers: headers });
-  });
-}
-
-self.addEventListener('fetch', function (e) {
-  var url = new URL(e.request.url);
-  if (e.request.method !== 'GET' || url.origin !== location.origin) return;
-  if (url.pathname.startsWith('/api/')) return;
-
-  var isMainDocument = url.pathname === '/' || url.pathname.endsWith('/index.html');
-  var isAnkiPage = url.pathname.endsWith('/tools/anki.html');
-  var isUpdatePage = url.pathname.endsWith('/update-central.html');
-  var isUpdaterScript = url.pathname.endsWith('/central-updater-v6691.js');
-  var isVersionScript = url.pathname.endsWith('/central-version-v6691.js');
-  var isAnkiCritical = isAnkiPage || url.pathname.endsWith('/tools/anki-migrate-v6679.js') || url.pathname.endsWith('/tools/anki-deck-manager-v6685.js') || url.pathname.endsWith('/tools/anki-file-import-v6687.js') || url.pathname.endsWith('/tools/anki-deck-delete-fix-v6688.js');
-  var isNetworkFirstCritical = isAnkiCritical || isUpdatePage || isUpdaterScript || isVersionScript;
-
-  if (isNetworkFirstCritical) {
-    e.respondWith(
-      fetch(e.request).then(function (r) {
-        if (isAnkiPage) {
-          return injectAnkiTools(r).then(function (injected) { return saveFresh(e.request, injected); });
-        }
-        return saveFresh(e.request, r);
-      }).catch(function () {
-        return caches.match(e.request, { ignoreSearch: false }).then(function (hit) {
-          if (isAnkiPage && hit) return injectAnkiTools(hit);
-          return hit || caches.match('./index.html');
-        });
-      })
-    );
-    return;
-  }
-
-  var responsePromise = caches.match(e.request, { ignoreSearch: false }).then(function (hit) {
-    if (hit) {
-      fetch(e.request).then(function (r) { saveFresh(e.request, r); }).catch(function () {});
-      return hit;
-    }
-    return fetch(e.request).then(function (r) { return saveFresh(e.request, r); }).catch(function () {
-      return caches.match('./index.html');
-    });
-  });
-
-  if (isMainDocument) {
-    responsePromise = responsePromise.then(injectMainTools);
-  }
-  e.respondWith(responsePromise);
+self.addEventListener('fetch',function(e){
+ var u=new URL(e.request.url);if(e.request.method!=='GET'||u.origin!==location.origin||u.pathname.startsWith('/api/'))return;
+ var main=u.pathname==='/'||u.pathname.endsWith('/index.html');
+ var anki=u.pathname.endsWith('/tools/anki.html');
+ var critical=anki||u.pathname.endsWith('/update-central.html')||u.pathname.endsWith('/central-updater-v6692.js')||u.pathname.endsWith('/central-version-v6692.js')||u.pathname.endsWith('/tools/anki-migrate-v6679.js')||u.pathname.endsWith('/tools/anki-deck-manager-v6685.js')||u.pathname.endsWith('/tools/anki-file-import-v6687.js')||u.pathname.endsWith('/tools/anki-deck-delete-v6692.js');
+ if(critical){
+  e.respondWith(fetch(e.request,{cache:'no-store'}).then(function(r){return anki?injectAnki(r).then(function(x){return saveFresh(e.request,x)}):saveFresh(e.request,r)}).catch(function(){return caches.match(e.request,{ignoreSearch:false}).then(function(hit){if(anki&&hit)return injectAnki(hit);return hit||caches.match('./index.html')})}));return;
+ }
+ var p=caches.match(e.request,{ignoreSearch:false}).then(function(hit){if(hit){fetch(e.request).then(function(r){saveFresh(e.request,r)}).catch(function(){});return hit}return fetch(e.request).then(function(r){return saveFresh(e.request,r)}).catch(function(){return caches.match('./index.html')})});
+ if(main)p=p.then(injectMain);e.respondWith(p);
 });
