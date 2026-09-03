@@ -1,6 +1,6 @@
 /* Central de Estudos — service worker
-   Shell cacheado para uso offline; páginas críticas do Anki usam rede primeiro quando houver conexão. */
-var CACHE = 'central-v6689';
+   Shell cacheado para uso offline; páginas críticas usam rede primeiro quando houver conexão. */
+var CACHE = 'central-v6690';
 var SHELL = [
   './',
   './index.html',
@@ -8,7 +8,7 @@ var SHELL = [
   './manifest.webmanifest',
   './icons/icon-192.png',
   './icons/icon-512.png',
-  './central-updater-v6682.js?v=6682',
+  './central-updater-v6690.js?v=6690',
   './tools/anki-migrate-v6679.js?v=6679',
   './tools/anki-deck-manager-v6685.js?v=6685',
   './tools/anki-file-import-v6687.js?v=6687',
@@ -39,7 +39,7 @@ function saveFresh(req, response) {
  * O Anki original monta a lista de baralhos somando SOURCE.meta.decks,
  * baralhos personalizados e todos os cards, inclusive os suspensos.
  * Por isso um subbaralho excluído podia reaparecer mesmo sem cards ativos.
- * Na v6689 substituímos a função nativa allDecks() antes de entregar o HTML:
+ * Desde a v6689 substituímos a função nativa allDecks() antes de entregar o HTML:
  * - respeita central-v6:anki-hidden-decks;
  * - ignora cards suspensos;
  * - oculta somente o caminho excluído e seus descendentes;
@@ -79,6 +79,26 @@ function injectAnkiTools(response) {
   });
 }
 
+function injectMainTools(response) {
+  if (!response) return response;
+  return response.text().then(function (html) {
+    if (html.indexOf('central-sync-v6679') < 0 && html.indexOf('sync-client.js?v=6679') < 0) {
+      html = html.replace('</body>', '<script src="./sync-client.js?v=6679"></script></body>');
+    }
+
+    /* Remove qualquer atualizador antigo gravado no HTML antes de inserir o atual. */
+    html = html.replace(/<script\b[^>]*\bsrc=["'][^"']*central-updater-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi, '');
+    if (html.indexOf('central-updater-v6690.js') < 0) {
+      html = html.replace('</body>', '<script src="./central-updater-v6690.js?v=6690"></script></body>');
+    }
+
+    var headers = new Headers(response.headers);
+    headers.set('Content-Type', 'text/html; charset=utf-8');
+    headers.delete('Content-Length');
+    return new Response(html, { status: response.status, statusText: response.statusText, headers: headers });
+  });
+}
+
 self.addEventListener('fetch', function (e) {
   var url = new URL(e.request.url);
   if (e.request.method !== 'GET' || url.origin !== location.origin) return;
@@ -86,9 +106,12 @@ self.addEventListener('fetch', function (e) {
 
   var isMainDocument = url.pathname === '/' || url.pathname.endsWith('/index.html');
   var isAnkiPage = url.pathname.endsWith('/tools/anki.html');
+  var isUpdatePage = url.pathname.endsWith('/update-central.html');
+  var isUpdaterScript = url.pathname.endsWith('/central-updater-v6690.js');
   var isAnkiCritical = isAnkiPage || url.pathname.endsWith('/tools/anki-migrate-v6679.js') || url.pathname.endsWith('/tools/anki-deck-manager-v6685.js') || url.pathname.endsWith('/tools/anki-file-import-v6687.js') || url.pathname.endsWith('/tools/anki-deck-delete-fix-v6688.js');
+  var isNetworkFirstCritical = isAnkiCritical || isUpdatePage || isUpdaterScript;
 
-  if (isAnkiCritical) {
+  if (isNetworkFirstCritical) {
     e.respondWith(
       fetch(e.request).then(function (r) {
         if (isAnkiPage) {
@@ -116,21 +139,7 @@ self.addEventListener('fetch', function (e) {
   });
 
   if (isMainDocument) {
-    responsePromise = responsePromise.then(function (response) {
-      if (!response) return response;
-      return response.text().then(function (html) {
-        if (html.indexOf('central-sync-v6679') < 0 && html.indexOf('sync-client.js?v=6679') < 0) {
-          html = html.replace('</body>', '<script src="./sync-client.js?v=6679"></script></body>');
-        }
-        if (html.indexOf('central-updater-v6682.js') < 0) {
-          html = html.replace('</body>', '<script src="./central-updater-v6682.js?v=6682"></script></body>');
-        }
-        var headers = new Headers(response.headers);
-        headers.set('Content-Type', 'text/html; charset=utf-8');
-        headers.delete('Content-Length');
-        return new Response(html, { status: response.status, statusText: response.statusText, headers: headers });
-      });
-    });
+    responsePromise = responsePromise.then(injectMainTools);
   }
   e.respondWith(responsePromise);
 });
