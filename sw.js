@@ -1,6 +1,6 @@
 /* Central de Estudos — service worker
    Shell cacheado para uso offline; páginas críticas do Anki usam rede primeiro quando houver conexão. */
-var CACHE = 'central-v6681';
+var CACHE = 'central-v6682';
 var SHELL = [
   './',
   './index.html',
@@ -8,6 +8,7 @@ var SHELL = [
   './manifest.webmanifest',
   './icons/icon-192.png',
   './icons/icon-512.png',
+  './central-updater-v6682.js?v=6682',
   './tools/anki-migrate-v6679.js?v=6679',
   './tools/anki-deck-manager-v6681.js?v=6681'
 ];
@@ -87,6 +88,9 @@ self.addEventListener('fetch', function (e) {
       return response.text().then(function (html) {
         if (html.indexOf('central-sync-v6679') < 0 && html.indexOf('sync-client.js?v=6679') < 0) {
           html = html.replace('</body>', '<script src="./sync-client.js?v=6679"></script></body>');
+        }
+        if (html.indexOf('central-updater-v6682.js') < 0) {
+          html = html.replace('</body>', '<script src="./central-updater-v6682.js?v=6682"></script></body>');
         }
         var headers = new Headers(response.headers);
         headers.set('Content-Type', 'text/html; charset=utf-8');
