@@ -1,6 +1,6 @@
 /* Central de Estudos — service worker
    Shell cacheado para uso offline; páginas críticas do Anki usam rede primeiro quando houver conexão. */
-var CACHE = 'central-v6680';
+var CACHE = 'central-v6681';
 var SHELL = [
   './',
   './index.html',
@@ -8,7 +8,8 @@ var SHELL = [
   './manifest.webmanifest',
   './icons/icon-192.png',
   './icons/icon-512.png',
-  './tools/anki-migrate-v6679.js?v=6679'
+  './tools/anki-migrate-v6679.js?v=6679',
+  './tools/anki-deck-manager-v6681.js?v=6681'
 ];
 
 self.addEventListener('install', function (e) {
@@ -31,18 +32,38 @@ function saveFresh(req, response) {
   return response;
 }
 
+function injectAnkiDeckManager(response) {
+  if (!response) return response;
+  return response.text().then(function (html) {
+    if (html.indexOf('anki-deck-manager-v6681.js') < 0) {
+      html = html.replace('</body>', '<script src="./anki-deck-manager-v6681.js?v=6681"></script></body>');
+    }
+    var headers = new Headers(response.headers);
+    headers.set('Content-Type', 'text/html; charset=utf-8');
+    headers.delete('Content-Length');
+    return new Response(html, { status: response.status, statusText: response.statusText, headers: headers });
+  });
+}
+
 self.addEventListener('fetch', function (e) {
   var url = new URL(e.request.url);
   if (e.request.method !== 'GET' || url.origin !== location.origin) return;
   if (url.pathname.startsWith('/api/')) return;
 
   var isMainDocument = url.pathname === '/' || url.pathname.endsWith('/index.html');
-  var isAnkiCritical = url.pathname.endsWith('/tools/anki.html') || url.pathname.endsWith('/tools/anki-migrate-v6679.js');
+  var isAnkiPage = url.pathname.endsWith('/tools/anki.html');
+  var isAnkiCritical = isAnkiPage || url.pathname.endsWith('/tools/anki-migrate-v6679.js') || url.pathname.endsWith('/tools/anki-deck-manager-v6681.js');
 
   if (isAnkiCritical) {
     e.respondWith(
-      fetch(e.request).then(function (r) { return saveFresh(e.request, r); }).catch(function () {
+      fetch(e.request).then(function (r) {
+        if (isAnkiPage) {
+          return injectAnkiDeckManager(r).then(function (injected) { return saveFresh(e.request, injected); });
+        }
+        return saveFresh(e.request, r);
+      }).catch(function () {
         return caches.match(e.request, { ignoreSearch: false }).then(function (hit) {
+          if (isAnkiPage && hit) return injectAnkiDeckManager(hit);
           return hit || caches.match('./index.html');
         });
       })
