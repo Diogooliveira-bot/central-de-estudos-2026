@@ -1,6 +1,6 @@
 /* Central de Estudos — service worker
    Shell cacheado para uso offline; páginas críticas do Anki usam rede primeiro quando houver conexão. */
-var CACHE = 'central-v6687';
+var CACHE = 'central-v6688';
 var SHELL = [
   './',
   './index.html',
@@ -11,7 +11,8 @@ var SHELL = [
   './central-updater-v6682.js?v=6682',
   './tools/anki-migrate-v6679.js?v=6679',
   './tools/anki-deck-manager-v6685.js?v=6685',
-  './tools/anki-file-import-v6687.js?v=6687'
+  './tools/anki-file-import-v6687.js?v=6687',
+  './tools/anki-deck-delete-fix-v6688.js?v=6688'
 ];
 
 self.addEventListener('install', function (e) {
@@ -43,6 +44,9 @@ function injectAnkiTools(response) {
     if (html.indexOf('anki-file-import-v6687.js') < 0) {
       html = html.replace('</body>', '<script src="./anki-file-import-v6687.js?v=6687"></script></body>');
     }
+    if (html.indexOf('anki-deck-delete-fix-v6688.js') < 0) {
+      html = html.replace('</body>', '<script src="./anki-deck-delete-fix-v6688.js?v=6688"></script></body>');
+    }
     var headers = new Headers(response.headers);
     headers.set('Content-Type', 'text/html; charset=utf-8');
     headers.delete('Content-Length');
@@ -57,7 +61,7 @@ self.addEventListener('fetch', function (e) {
 
   var isMainDocument = url.pathname === '/' || url.pathname.endsWith('/index.html');
   var isAnkiPage = url.pathname.endsWith('/tools/anki.html');
-  var isAnkiCritical = isAnkiPage || url.pathname.endsWith('/tools/anki-migrate-v6679.js') || url.pathname.endsWith('/tools/anki-deck-manager-v6685.js') || url.pathname.endsWith('/tools/anki-file-import-v6687.js');
+  var isAnkiCritical = isAnkiPage || url.pathname.endsWith('/tools/anki-migrate-v6679.js') || url.pathname.endsWith('/tools/anki-deck-manager-v6685.js') || url.pathname.endsWith('/tools/anki-file-import-v6687.js') || url.pathname.endsWith('/tools/anki-deck-delete-fix-v6688.js');
 
   if (isAnkiCritical) {
     e.respondWith(
