@@ -1,6 +1,6 @@
 /* Central de Estudos — service worker
    Shell cacheado para uso offline; páginas críticas do Anki usam rede primeiro quando houver conexão. */
-var CACHE = 'central-v6682';
+var CACHE = 'central-v6685';
 var SHELL = [
   './',
   './index.html',
@@ -10,7 +10,7 @@ var SHELL = [
   './icons/icon-512.png',
   './central-updater-v6682.js?v=6682',
   './tools/anki-migrate-v6679.js?v=6679',
-  './tools/anki-deck-manager-v6681.js?v=6681'
+  './tools/anki-deck-manager-v6685.js?v=6685'
 ];
 
 self.addEventListener('install', function (e) {
@@ -36,8 +36,8 @@ function saveFresh(req, response) {
 function injectAnkiDeckManager(response) {
   if (!response) return response;
   return response.text().then(function (html) {
-    if (html.indexOf('anki-deck-manager-v6681.js') < 0) {
-      html = html.replace('</body>', '<script src="./anki-deck-manager-v6681.js?v=6681"></script></body>');
+    if (html.indexOf('anki-deck-manager-v6685.js') < 0) {
+      html = html.replace('</body>', '<script src="./anki-deck-manager-v6685.js?v=6685"></script></body>');
     }
     var headers = new Headers(response.headers);
     headers.set('Content-Type', 'text/html; charset=utf-8');
@@ -53,7 +53,7 @@ self.addEventListener('fetch', function (e) {
 
   var isMainDocument = url.pathname === '/' || url.pathname.endsWith('/index.html');
   var isAnkiPage = url.pathname.endsWith('/tools/anki.html');
-  var isAnkiCritical = isAnkiPage || url.pathname.endsWith('/tools/anki-migrate-v6679.js') || url.pathname.endsWith('/tools/anki-deck-manager-v6681.js');
+  var isAnkiCritical = isAnkiPage || url.pathname.endsWith('/tools/anki-migrate-v6679.js') || url.pathname.endsWith('/tools/anki-deck-manager-v6685.js');
 
   if (isAnkiCritical) {
     e.respondWith(
