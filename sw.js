@@ -1,6 +1,6 @@
 /* Central de Estudos — service worker
    Shell cacheado para uso offline; páginas críticas usam rede primeiro quando houver conexão. */
-var CACHE = 'central-v6690';
+var CACHE = 'central-v6691';
 var SHELL = [
   './',
   './index.html',
@@ -8,7 +8,8 @@ var SHELL = [
   './manifest.webmanifest',
   './icons/icon-192.png',
   './icons/icon-512.png',
-  './central-updater-v6690.js?v=6690',
+  './central-updater-v6691.js?v=6691',
+  './central-version-v6691.js?v=6691',
   './tools/anki-migrate-v6679.js?v=6679',
   './tools/anki-deck-manager-v6685.js?v=6685',
   './tools/anki-file-import-v6687.js?v=6687',
@@ -86,10 +87,14 @@ function injectMainTools(response) {
       html = html.replace('</body>', '<script src="./sync-client.js?v=6679"></script></body>');
     }
 
-    /* Remove qualquer atualizador antigo gravado no HTML antes de inserir o atual. */
+    /* Remove scripts antigos de atualização/versão antes de inserir a versão vigente. */
     html = html.replace(/<script\b[^>]*\bsrc=["'][^"']*central-updater-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi, '');
-    if (html.indexOf('central-updater-v6690.js') < 0) {
-      html = html.replace('</body>', '<script src="./central-updater-v6690.js?v=6690"></script></body>');
+    html = html.replace(/<script\b[^>]*\bsrc=["'][^"']*central-version-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi, '');
+    if (html.indexOf('central-version-v6691.js') < 0) {
+      html = html.replace('</body>', '<script src="./central-version-v6691.js?v=6691"></script></body>');
+    }
+    if (html.indexOf('central-updater-v6691.js') < 0) {
+      html = html.replace('</body>', '<script src="./central-updater-v6691.js?v=6691"></script></body>');
     }
 
     var headers = new Headers(response.headers);
@@ -107,9 +112,10 @@ self.addEventListener('fetch', function (e) {
   var isMainDocument = url.pathname === '/' || url.pathname.endsWith('/index.html');
   var isAnkiPage = url.pathname.endsWith('/tools/anki.html');
   var isUpdatePage = url.pathname.endsWith('/update-central.html');
-  var isUpdaterScript = url.pathname.endsWith('/central-updater-v6690.js');
+  var isUpdaterScript = url.pathname.endsWith('/central-updater-v6691.js');
+  var isVersionScript = url.pathname.endsWith('/central-version-v6691.js');
   var isAnkiCritical = isAnkiPage || url.pathname.endsWith('/tools/anki-migrate-v6679.js') || url.pathname.endsWith('/tools/anki-deck-manager-v6685.js') || url.pathname.endsWith('/tools/anki-file-import-v6687.js') || url.pathname.endsWith('/tools/anki-deck-delete-fix-v6688.js');
-  var isNetworkFirstCritical = isAnkiCritical || isUpdatePage || isUpdaterScript;
+  var isNetworkFirstCritical = isAnkiCritical || isUpdatePage || isUpdaterScript || isVersionScript;
 
   if (isNetworkFirstCritical) {
     e.respondWith(
