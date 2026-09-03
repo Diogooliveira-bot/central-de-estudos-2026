@@ -141,11 +141,20 @@ function migrateAndReload(){
     }
   }catch(_){}
 }
+function loadDeckManager(){
+  if(window.centralAnkiDeckManager||document.querySelector('script[data-central-deck-manager]'))return;
+  var s=document.createElement('script');
+  s.src='./anki-deck-manager-v6681.js?v=6681-'+Date.now();
+  s.async=true;
+  s.setAttribute('data-central-deck-manager','1');
+  document.head.appendChild(s);
+}
 window.centralMigrateAnki6680=migrate;
 window.centralMigrateAnki6679=migrate;
 window.addEventListener('central-cloud-applied',function(){migrate();setTimeout(migrateAndReload,0)});
 migrateAndReload();
-if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',function(){setTimeout(migrate,0)});
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',function(){setTimeout(migrate,0);setTimeout(loadDeckManager,100);});else setTimeout(loadDeckManager,100);
 setTimeout(migrate,500);
 setTimeout(migrate,1500);
+setTimeout(loadDeckManager,700);
 })();
