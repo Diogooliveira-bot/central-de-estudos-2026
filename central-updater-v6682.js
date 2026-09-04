@@ -1,52 +1,51 @@
 (function(){
 'use strict';
-var VERSION='6.6.82';
+var VERSION='6.6.97';
+var TARGET='6697';
+window.CENTRAL_VERSION=VERSION;
+window.__centralLegacyUpdaterCompat=TARGET;
 
-function makeButton(){
-  if(document.getElementById('central-update-btn')) return;
-  var btn=document.createElement('button');
-  btn.id='central-update-btn';
-  btn.type='button';
-  btn.textContent='↻ Atualizar Central';
-  btn.title='Buscar a versão mais recente da Central de Estudos';
-  btn.style.cssText='position:fixed;right:14px;bottom:14px;z-index:2147483000;border:0;border-radius:14px;padding:11px 14px;font:600 14px system-ui,-apple-system,Segoe UI,Roboto,sans-serif;box-shadow:0 4px 18px rgba(0,0,0,.22);cursor:pointer;background:#111827;color:#fff;';
-  var status=document.createElement('span');
-  status.style.cssText='display:none;position:fixed;right:14px;bottom:62px;z-index:2147483000;max-width:290px;padding:9px 12px;border-radius:10px;background:#111827;color:#fff;font:13px system-ui,-apple-system,Segoe UI,Roboto,sans-serif;box-shadow:0 4px 18px rgba(0,0,0,.2)';
-  document.body.appendChild(status);
-  document.body.appendChild(btn);
-
-  function say(msg){status.textContent=msg;status.style.display='block';}
-
-  btn.addEventListener('click',async function(){
-    if(btn.disabled) return;
-    btn.disabled=true;
-    btn.textContent='Atualizando...';
-    say('Buscando a versão mais recente. Seu progresso será preservado.');
-    try{
-      if('serviceWorker' in navigator){
-        var regs=await navigator.serviceWorker.getRegistrations();
-        await Promise.all(regs.map(function(r){return r.update().catch(function(){})}));
-      }
-      if(window.caches){
-        var keys=await caches.keys();
-        await Promise.all(keys.filter(function(k){return /^central-v/i.test(k)}).map(function(k){return caches.delete(k)}));
-      }
-      try{sessionStorage.setItem('central:last-manual-update',String(Date.now()))}catch(_){}
-      var u=new URL(location.href);
-      u.searchParams.set('_central_update',Date.now().toString(36));
-      location.replace(u.toString());
-    }catch(err){
-      btn.disabled=false;
-      btn.textContent='↻ Atualizar Central';
-      say('Não foi possível atualizar agora. Verifique a internet e tente novamente.');
-    }
-  });
-
-  var badge=document.createElement('span');
-  badge.textContent='v'+VERSION;
-  badge.style.cssText='opacity:.7;margin-left:7px;font-size:11px';
-  btn.appendChild(badge);
+var SKIP={SCRIPT:1,STYLE:1,NOSCRIPT:1,TEXTAREA:1,CODE:1,PRE:1};
+var RE=/\bv6\.6\.\d+\b/g;
+function patchText(n){
+ if(!n||n.nodeType!==3)return;
+ var p=n.parentElement;if(!p||SKIP[p.tagName])return;
+ var before=n.nodeValue;if(!before||before.indexOf('v6.6.')<0)return;
+ var after=before.replace(RE,'v'+VERSION);if(after!==before)n.nodeValue=after;
+}
+function patchTree(root){
+ if(!root)return;
+ if(root.nodeType===3){patchText(root);return}
+ if(root.nodeType!==1&&root.nodeType!==9&&root.nodeType!==11)return;
+ if(root.nodeType===1&&SKIP[root.tagName])return;
+ var w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT),n;
+ while((n=w.nextNode()))patchText(n);
 }
 
-if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',makeButton); else makeButton();
+function configureButton(){
+ var btn=document.getElementById('central-update-btn');
+ if(!btn){
+  btn=document.createElement('button');btn.id='central-update-btn';btn.type='button';
+  btn.style.cssText='position:fixed;right:14px;bottom:14px;z-index:2147483000;border:0;border-radius:14px;padding:11px 14px;font:600 14px system-ui,-apple-system,Segoe UI,Roboto,sans-serif;box-shadow:0 4px 18px rgba(0,0,0,.22);cursor:pointer;background:#111827;color:#fff;';
+  document.body.appendChild(btn);
+ }
+ btn.disabled=false;btn.replaceChildren(document.createTextNode('↻ Atualizar Central'));
+ var badge=document.createElement('span');badge.textContent='v'+VERSION;badge.style.cssText='opacity:.7;margin-left:7px;font-size:11px';btn.appendChild(badge);
+ btn.onclick=function(e){
+  e.preventDefault();
+  var u=new URL('/update-central.html',location.origin);
+  u.searchParams.set('target',TARGET);u.searchParams.set('_central_update',Date.now().toString(36));
+  location.href=u.toString();
+ };
+}
+
+function start(){
+ patchTree(document.body);configureButton();
+ /* Observa apenas novos nós visuais; não toca em cards, IndexedDB ou localStorage. */
+ var o=new MutationObserver(function(ms){
+  ms.forEach(function(m){m.addedNodes&&m.addedNodes.forEach(patchTree);if(m.type==='characterData')patchText(m.target)});
+ });
+ o.observe(document.body,{subtree:true,childList:true,characterData:true});
+}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start,{once:true});else start();
 })();
