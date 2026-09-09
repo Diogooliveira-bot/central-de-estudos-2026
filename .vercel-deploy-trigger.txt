@@ -1,1 +1,1 @@
-Trigger inicial do deploy Git da Central de Estudos v6.6.75.
+Forçar redeploy estável da Central de Estudos v6.6.97 em 09/09/2026.
