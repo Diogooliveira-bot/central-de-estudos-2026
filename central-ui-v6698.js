@@ -75,8 +75,10 @@
       const m=(count.textContent||'').trim().match(/^(\d+)\/\d+\s+m[oó]dulos$/i);
       if(m){
         const done=Math.min(Number(m[1])||0,15);
-        count.textContent=`${done}/15 módulos`;
-        if(pctEl) pctEl.textContent=`${Math.round(done/15*100)}%`;
+        const nextCount=`${done}/15 módulos`;
+        const nextPct=`${Math.round(done/15*100)}%`;
+        if((count.textContent||'').trim()!==nextCount) count.textContent=nextCount;
+        if(pctEl && (pctEl.textContent||'').trim()!==nextPct) pctEl.textContent=nextPct;
       }
     }
     const w=document.createTreeWalker(scope,NodeFilter.SHOW_TEXT);
@@ -276,9 +278,11 @@
     const count=document.getElementById('dayCount');
     const bar=document.getElementById('dayBar');
     const percent=document.getElementById('dayPct');
-    if(count) count.textContent=`${done} de ${total}`;
-    if(bar) bar.style.width=`${pct}%`;
-    if(percent) percent.textContent=`${pct}%`;
+    const nextCount=`${done} de ${total}`;
+    const nextPct=`${pct}%`;
+    if(count && (count.textContent||'').trim()!==nextCount) count.textContent=nextCount;
+    if(bar && bar.style.width!==nextPct) bar.style.width=nextPct;
+    if(percent && (percent.textContent||'').trim()!==nextPct) percent.textContent=nextPct;
   }
 
   function wrapNativeSubjectsRenderer(){
