@@ -1,7 +1,7 @@
 /* Central de Estudos — service worker v6.6.102 + teoria de Direito Civil organizada */
 var CACHE='central-v66102-civil-theory1';
 var SHELL=[
- './','./index.html','./sync-client.js?v=6679','./manifest.webmanifest','./icons/icon-192.png','./icons/icon-512.png',
+ './','./index.html','./sync-client.js?v=66102','./manifest.webmanifest','./icons/icon-192.png','./icons/icon-512.png',
  './central-updater-v66102.js?v=66102','./central-version-v66102.js?v=66102','./central-progress-entry-v1.js?v=1','./tools/progresso.html',
  './civil-decorando-index-v1.js?v=1','./central-civil-progress-v2.js?v=2','./civil-theory-v66102.js?v=66102',
  './tools/anki-migrate-v6696.js?v=6696','./tools/anki-deck-manager-v6697.js?v=6697','./tools/anki-file-import-v6687.js?v=6687','./tools/anki-subdeck-delete-v6696.js?v=6696'
@@ -34,7 +34,7 @@ function injectAnki(response){
 function injectMain(response){
  if(!response)return response;
  return response.text().then(function(html){
-  if(html.indexOf('central-sync-v6679')<0&&html.indexOf('sync-client.js?v=6679')<0)html=html.replace('</body>','<script src="./sync-client.js?v=6679"></script></body>');
+  if(html.indexOf('central-sync-v6679')<0&&html.indexOf('sync-client.js?v=66102')<0)html=html.replace('</body>','<script src="./sync-client.js?v=66102"></script></body>');
   html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*central-updater-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');
   html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*central-version-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');
   html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*central-progress-entry-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');
