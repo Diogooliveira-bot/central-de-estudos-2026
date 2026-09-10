@@ -11,10 +11,11 @@
   fetch('/index.html?verify_source=66102', { cache: 'no-store' })
     .then(function(response){ return response.text(); })
     .then(function(html){
-      var scripts = '<script src="/civil-decorando-index-v1.js?v=1"><\/script>' +
-        '<script src="/central-civil-progress-v2.js?v=2"><\/script>' +
-        '<script src="/civil-theory-v66102.js?v=66102"><\/script>' +
-        '<script src="/central-version-v66102.js?v=66102"><\/script>';
+      html = html.replace(/<script\b[^>]*\bsrc=["'][^"']*(?:civil-decorando-index|central-civil-progress|civil-theory|central-version|central-updater|central-progress-entry)-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi, '');
+      var scripts = '<script src="/civil-decorando-index-v1.js?v=6610201"><\/script>' +
+        '<script src="/central-civil-progress-v2.js?v=6610201"><\/script>' +
+        '<script src="/civil-theory-v66102.js?v=6610201"><\/script>' +
+        '<script src="/central-version-v66102.js?v=6610201"><\/script>';
       document.open();
       document.write(html.replace('</body>', scripts + '</body>'));
       document.close();
