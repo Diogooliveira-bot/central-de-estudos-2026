@@ -9,6 +9,6 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 setTimeout(start,0);setTimeout(start,350);setTimeout(start,1400);setTimeout(start,3200);setTimeout(start,6400);
 var observer=new MutationObserver(function(changes){changes.forEach(function(change){if(change.type==='characterData')patchText(change.target);else Array.prototype.forEach.call(change.addedNodes,patchTree)})});
 function observe(){if(document.documentElement)observer.observe(document.documentElement,{subtree:true,childList:true,characterData:true})}
-if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',observe,{once:true});else observe();
+observe();if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',observe,{once:true});
 window.addEventListener('pageshow',start);
 })();
