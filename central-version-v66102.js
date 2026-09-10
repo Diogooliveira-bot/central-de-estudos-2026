@@ -6,6 +6,9 @@ function patchText(n){if(!n||n.nodeType!==3)return;var p=n.parentElement;if(!p||
 function patchTree(root){if(!root)return;if(root.nodeType===3){patchText(root);return}if(root.nodeType!==1&&root.nodeType!==9&&root.nodeType!==11)return;if(root.nodeType===1&&SKIP[root.tagName])return;var w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT),n;while((n=w.nextNode()))patchText(n)}
 function start(){patchTree(document.body)}
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start,{once:true});else start();
-setTimeout(start,0);setTimeout(start,350);setTimeout(start,1400);
+setTimeout(start,0);setTimeout(start,350);setTimeout(start,1400);setTimeout(start,3200);setTimeout(start,6400);
+var observer=new MutationObserver(function(changes){changes.forEach(function(change){if(change.type==='characterData')patchText(change.target);else Array.prototype.forEach.call(change.addedNodes,patchTree)})});
+function observe(){if(document.documentElement)observer.observe(document.documentElement,{subtree:true,childList:true,characterData:true})}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',observe,{once:true});else observe();
 window.addEventListener('pageshow',start);
 })();
