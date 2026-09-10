@@ -67,13 +67,13 @@ function injectUi(){
  body.appendChild(wrap);document.getElementById('centralSyncToggle').onclick=toggle;document.getElementById('centralSyncNow').onclick=function(){if(!meta.enabled)status('Ative a sincronização neste aparelho primeiro.','warn');else sync('manual')};
 }
 function loadUpdater(){
- if(window.__centralUpdater6682||document.querySelector('script[data-central-updater]'))return;
- var s=document.createElement('script');s.src='./central-updater-v6682.js?v=6682-'+Date.now();s.async=true;s.setAttribute('data-central-updater','1');document.head.appendChild(s);
+ if(window.__centralUpdater66102||document.querySelector('script[data-central-updater]'))return;
+ var s=document.createElement('script');s.src='./central-updater-v66102.js?v=66102-'+Date.now();s.async=true;s.setAttribute('data-central-updater','1');document.head.appendChild(s);
 }
 function observe(){if(!meta.enabled)return;var h=hashObject(collect());if(!lastCheckHash)lastCheckHash=h;if(h!==lastCheckHash){lastCheckHash=h;status(navigator.onLine?'Alteração detectada; enviando...':'Alteração salva no aparelho; aguardando internet.','warn');setTimeout(function(){sync('change')},900)}}
 async function init(){
  injectUi();loadUpdater();meta.enabled=!!(await kvGet('enabled'));meta.secret=(await kvGet('secret'))||'';meta.device=(await kvGet('device'))||newDevice();meta.revision=Number((await kvGet('revision'))||0);meta.hash=(await kvGet('hash'))||'';await kvSet('device',meta.device);if(meta.secret)try{sessionStorage.setItem('central-backup:session-secret',meta.secret)}catch(_){}
- var brand=document.querySelector('.brand-copy small');if(brand)brand.textContent='v6.6.82 • Atualização manual + sincronização';var badge=document.querySelector('.central-version-v41');if(badge)badge.textContent='v6.6.82';status(meta.enabled?'Sincronização ativa neste aparelho.':'Desativada neste aparelho. Ative primeiro no aparelho que contém o progresso correto.',meta.enabled?'ok':'');if(meta.enabled)sync('startup');setInterval(observe,5000);setInterval(function(){sync('poll')},30000)
+ var brand=document.querySelector('.brand-copy small');if(brand)brand.textContent='v6.6.102 • Atualização manual + sincronização';var badge=document.querySelector('.central-version-v41');if(badge)badge.textContent='v6.6.102';status(meta.enabled?'Sincronização ativa neste aparelho.':'Desativada neste aparelho. Ative primeiro no aparelho que contém o progresso correto.',meta.enabled?'ok':'');if(meta.enabled)sync('startup');setInterval(observe,5000);setInterval(function(){sync('poll')},30000)
 }
 window.addEventListener('online',function(){if(meta.enabled)sync('online')});window.addEventListener('offline',function(){if(meta.enabled)status('Sem internet. Alterações continuam salvas neste aparelho.','warn')});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible'&&meta.enabled)sync('visible')});
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
