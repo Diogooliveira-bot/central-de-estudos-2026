@@ -16,12 +16,12 @@
   (async function(){
     try{
       if('serviceWorker' in navigator){
-        var reg=await navigator.serviceWorker.register('/sw.js?central_boot=66102-'+Date.now(),{scope:'/'});
+        var reg=await navigator.serviceWorker.register('/sw.js?central_boot=66103-'+Date.now(),{scope:'/'});
         try{await reg.update()}catch(e){}
         await navigator.serviceWorker.ready;
       }
     }catch(e){}
-    location.replace('/index.html?central_fresh=66102-'+Date.now());
+    location.replace('/index.html?central_fresh=66103-'+Date.now());
   })();
   </script>
 </body>
