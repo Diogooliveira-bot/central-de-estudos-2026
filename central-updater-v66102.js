@@ -1,6 +1,7 @@
 (function(){
 'use strict';
 var VERSION='6.6.102';
+window.__centralUpdater66102=true;window.__centralUpdater6682=true;
 function makeButton(){
  var previous=document.getElementById('central-update-btn');
  if(previous&&previous.getAttribute('data-central-version')===VERSION)return;
