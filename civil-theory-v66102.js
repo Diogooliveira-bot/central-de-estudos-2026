@@ -1,6 +1,9 @@
 (function(){
 'use strict';
 
+if(window.__civilTheorySubtopicsLoadedV1)return;
+window.__civilTheorySubtopicsLoadedV1=true;
+
 var VERSION='1.0.0';
 var STORAGE_KEY='central-v6:civil-theory-subtopics-v1';
 var THEORY={
