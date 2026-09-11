@@ -1,9 +1,9 @@
-/* Central de Estudos — service worker v6.6.107 + teoria completa do Módulo 5 de Direito Civil */
-var CACHE='central-v66107-civil-module5-full1';
+/* Central de Estudos — service worker v6.6.108 + teoria completa do Módulo 6 de Direito Civil */
+var CACHE='central-v66108-civil-module6-full1';
 var SHELL=[
  './','./index.html','./sync-client.js?v=66107','./manifest.webmanifest','./icons/icon-192.png','./icons/icon-512.png',
- './central-updater-v66107.js?v=66107','./central-version-v66107.js?v=66107','./central-progress-entry-v1.js?v=1','./tools/progresso.html',
- './civil-decorando-index-v1.js?v=1','./central-civil-progress-v2.js?v=2','./civil-theory-v66107.js?v=66107',
+ './central-updater-v66107.js?v=66108','./central-version-v66107.js?v=66108','./central-progress-entry-v1.js?v=1','./tools/progresso.html',
+ './civil-decorando-index-v1.js?v=1','./central-civil-progress-v2.js?v=2','./civil-theory-v66107.js?v=66107','./civil-theory-module6-v66108.js?v=66108',
  './tools/anki-migrate-v6696.js?v=6696','./tools/anki-deck-manager-v6697.js?v=6697','./tools/anki-file-import-v6687.js?v=6687','./tools/anki-subdeck-delete-v6696.js?v=6696'
 ];
 self.addEventListener('install',function(e){e.waitUntil(caches.open(CACHE).then(function(c){return c.addAll(SHELL)}).then(function(){return self.skipWaiting()}))});
@@ -41,7 +41,8 @@ function injectMain(response){
   html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*civil-decorando-index-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');
   html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*central-civil-progress-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');
   html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*civil-theory-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');
-  html=html.replace('</body>','<script src="./civil-decorando-index-v1.js?v=1"></script><script src="./central-civil-progress-v2.js?v=2"></script><script src="./civil-theory-v66107.js?v=66107"></script><script src="./central-version-v66107.js?v=66107"></script><script src="./central-updater-v66107.js?v=66107"></script><script src="./central-progress-entry-v1.js?v=1"></script></body>');
+  html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*civil-theory-module6-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');
+  html=html.replace('</body>','<script src="./civil-decorando-index-v1.js?v=1"></script><script src="./central-civil-progress-v2.js?v=2"></script><script src="./civil-theory-v66107.js?v=66107"></script><script src="./civil-theory-module6-v66108.js?v=66108"></script><script src="./central-version-v66107.js?v=66108"></script><script src="./central-updater-v66107.js?v=66108"></script><script src="./central-progress-entry-v1.js?v=1"></script></body>');
   var h=new Headers(response.headers);h.set('Content-Type','text/html; charset=utf-8');h.delete('Content-Length');
   return new Response(html,{status:response.status,statusText:response.statusText,headers:h});
  })
@@ -51,7 +52,7 @@ self.addEventListener('fetch',function(e){
  var main=u.pathname==='/'||u.pathname.endsWith('/index.html');
  var anki=u.pathname.endsWith('/tools/anki.html');
  var updater=u.pathname.endsWith('/update-central.html');
- var versioned=/\?v=\d+/.test(u.search)||/\/(?:central-progress-entry|central-civil-progress|civil-decorando-index|civil-theory)-v\d+\.js$/.test(u.pathname)||/\/(?:central-updater|central-version)-v\d+\.js$/.test(u.pathname)||/\/tools\/(?:anki-migrate|anki-deck-manager|anki-file-import|anki-subdeck-delete)-v\d+\.js$/.test(u.pathname);
+ var versioned=/\?v=\d+/.test(u.search)||/\/(?:central-progress-entry|central-civil-progress|civil-decorando-index|civil-theory)-v\d+\.js$/.test(u.pathname)||/\/civil-theory-module6-v\d+\.js$/.test(u.pathname)||/\/(?:central-updater|central-version)-v\d+\.js$/.test(u.pathname)||/\/tools\/(?:anki-migrate|anki-deck-manager|anki-file-import|anki-subdeck-delete)-v\d+\.js$/.test(u.pathname);
  if(updater){e.respondWith(fetch(e.request,{cache:'no-store'}).then(function(r){return saveFresh(e.request,r)}).catch(function(){return caches.match(e.request)}));return;}
  if(anki){e.respondWith(fetch(e.request,{cache:'no-store'}).then(function(r){return injectAnki(r).then(function(x){return saveFresh(e.request,x)})}).catch(function(){return caches.match(e.request).then(function(hit){return hit?injectAnki(hit):caches.match('./index.html')})}));return;}
  if(versioned){e.respondWith(caches.match(e.request).then(function(hit){if(hit)return hit;return fetch(e.request).then(function(r){return saveFresh(e.request,r)})}));return;}
