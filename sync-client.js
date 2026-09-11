@@ -45,7 +45,7 @@ function mergeCritical(local,cloud){
 }
 function applyCloud(payload){if(!payload||typeof payload!=='object'||Array.isArray(payload))throw new Error('cópia online inválida');localStorage.clear();Object.keys(payload).forEach(function(k){if(k&&k!=='__central_folder_probe__'&&k!=='__central_storage_probe__')localStorage.setItem(k,String(payload[k]))});try{window.dispatchEvent(new Event('central-cloud-applied'))}catch(_){}}
 async function push(local,hash,base){return request('/api/sync',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({payload:local,hash:hash,baseRevision:base,deviceId:meta.device})})}
-async function safetyBackup(local,note){try{await request('/api/backups',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'save',note:note,backup:{formato:'central-backup-v2',app:'Central de Estudos',versao:'v6.6.105',exportadoEm:new Date().toISOString(),origem:'sync',dados:local}})})}catch(_){}}
+async function safetyBackup(local,note){try{await request('/api/backups',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'save',note:note,backup:{formato:'central-backup-v2',app:'Central de Estudos',versao:'v6.6.106',exportadoEm:new Date().toISOString(),origem:'sync',dados:local}})})}catch(_){}}
 async function persistAnkiMigration(){
  if(!window.__centralAnkiMigrated6679)return false;
  var local=collect(),h=hashObject(local),sent=await push(local,h,meta.revision);
@@ -100,13 +100,13 @@ function injectUi(){
  body.appendChild(wrap);document.getElementById('centralSyncToggle').onclick=toggle;document.getElementById('centralSyncNow').onclick=function(){if(!meta.enabled)status('Ative a sincronização neste aparelho primeiro.','warn');else sync('manual')};
 }
 function loadUpdater(){
- if(window.__centralUpdater66105||document.querySelector('script[data-central-updater]'))return;
- var s=document.createElement('script');s.src='./central-updater-v66105.js?v=66105-'+Date.now();s.async=true;s.setAttribute('data-central-updater','1');document.head.appendChild(s);
+ if(window.__centralUpdater66106||document.querySelector('script[data-central-updater]'))return;
+ var s=document.createElement('script');s.src='./central-updater-v66106.js?v=66106-'+Date.now();s.async=true;s.setAttribute('data-central-updater','1');document.head.appendChild(s);
 }
 function observe(){if(!meta.enabled)return;var h=hashObject(collect());if(!lastCheckHash)lastCheckHash=h;if(h!==lastCheckHash){lastCheckHash=h;status(navigator.onLine?'Alteração detectada; enviando...':'Alteração salva no aparelho; aguardando internet.','warn');setTimeout(function(){sync('change')},900)}}
 async function init(){
  injectUi();loadUpdater();meta.enabled=!!(await kvGet('enabled'));meta.secret=(await kvGet('secret'))||'';meta.device=(await kvGet('device'))||newDevice();meta.revision=Number((await kvGet('revision'))||0);meta.hash=(await kvGet('hash'))||'';await kvSet('device',meta.device);if(meta.secret)try{sessionStorage.setItem('central-backup:session-secret',meta.secret)}catch(_){}
- var brand=document.querySelector('.brand-copy small');if(brand)brand.textContent='v6.6.105 • Atualização manual + sincronização';var badge=document.querySelector('.central-version-v41');if(badge)badge.textContent='v6.6.105';status(meta.enabled?'Sincronização ativa neste aparelho.':'Desativada neste aparelho. Ative primeiro no aparelho que contém o progresso correto.',meta.enabled?'ok':'');if(meta.enabled)sync('startup');setInterval(observe,5000);setInterval(function(){sync('poll')},30000)
+ var brand=document.querySelector('.brand-copy small');if(brand)brand.textContent='v6.6.106 • Atualização manual + sincronização';var badge=document.querySelector('.central-version-v41');if(badge)badge.textContent='v6.6.106';status(meta.enabled?'Sincronização ativa neste aparelho.':'Desativada neste aparelho. Ative primeiro no aparelho que contém o progresso correto.',meta.enabled?'ok':'');if(meta.enabled)sync('startup');setInterval(observe,5000);setInterval(function(){sync('poll')},30000)
 }
 window.addEventListener('online',function(){if(meta.enabled)sync('online')});window.addEventListener('offline',function(){if(meta.enabled)status('Sem internet. Alterações continuam salvas neste aparelho.','warn')});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible'&&meta.enabled)sync('visible')});
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
