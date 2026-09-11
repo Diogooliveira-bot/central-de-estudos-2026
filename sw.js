@@ -1,9 +1,9 @@
-/* Central de Estudos — service worker v6.6.106 + teoria completa do Módulo 4 de Direito Civil */
-var CACHE='central-v66106-civil-module4-full1';
+/* Central de Estudos — service worker v6.6.107 + teoria completa do Módulo 5 de Direito Civil */
+var CACHE='central-v66107-civil-module5-full1';
 var SHELL=[
- './','./index.html','./sync-client.js?v=66106','./manifest.webmanifest','./icons/icon-192.png','./icons/icon-512.png',
- './central-updater-v66106.js?v=66106','./central-version-v66106.js?v=66106','./central-progress-entry-v1.js?v=1','./tools/progresso.html',
- './civil-decorando-index-v1.js?v=1','./central-civil-progress-v2.js?v=2','./civil-theory-v66106.js?v=66106',
+ './','./index.html','./sync-client.js?v=66107','./manifest.webmanifest','./icons/icon-192.png','./icons/icon-512.png',
+ './central-updater-v66107.js?v=66107','./central-version-v66107.js?v=66107','./central-progress-entry-v1.js?v=1','./tools/progresso.html',
+ './civil-decorando-index-v1.js?v=1','./central-civil-progress-v2.js?v=2','./civil-theory-v66107.js?v=66107',
  './tools/anki-migrate-v6696.js?v=6696','./tools/anki-deck-manager-v6697.js?v=6697','./tools/anki-file-import-v6687.js?v=6687','./tools/anki-subdeck-delete-v6696.js?v=6696'
 ];
 self.addEventListener('install',function(e){e.waitUntil(caches.open(CACHE).then(function(c){return c.addAll(SHELL)}).then(function(){return self.skipWaiting()}))});
@@ -34,14 +34,14 @@ function injectAnki(response){
 function injectMain(response){
  if(!response)return response;
  return response.text().then(function(html){
-  if(html.indexOf('central-sync-v6679')<0&&html.indexOf('sync-client.js?v=66106')<0)html=html.replace('</body>','<script src="./sync-client.js?v=66106"></script></body>');
+  if(html.indexOf('central-sync-v6679')<0&&html.indexOf('sync-client.js?v=66107')<0)html=html.replace('</body>','<script src="./sync-client.js?v=66107"></script></body>');
   html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*central-updater-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');
   html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*central-version-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');
   html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*central-progress-entry-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');
   html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*civil-decorando-index-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');
   html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*central-civil-progress-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');
   html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*civil-theory-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');
-  html=html.replace('</body>','<script src="./civil-decorando-index-v1.js?v=1"></script><script src="./central-civil-progress-v2.js?v=2"></script><script src="./civil-theory-v66106.js?v=66106"></script><script src="./central-version-v66106.js?v=66106"></script><script src="./central-updater-v66106.js?v=66106"></script><script src="./central-progress-entry-v1.js?v=1"></script></body>');
+  html=html.replace('</body>','<script src="./civil-decorando-index-v1.js?v=1"></script><script src="./central-civil-progress-v2.js?v=2"></script><script src="./civil-theory-v66107.js?v=66107"></script><script src="./central-version-v66107.js?v=66107"></script><script src="./central-updater-v66107.js?v=66107"></script><script src="./central-progress-entry-v1.js?v=1"></script></body>');
   var h=new Headers(response.headers);h.set('Content-Type','text/html; charset=utf-8');h.delete('Content-Length');
   return new Response(html,{status:response.status,statusText:response.statusText,headers:h});
  })
