@@ -1,8 +1,11 @@
-/* Central de Estudos — service worker v6.6.118 + auditoria jurídica Civil */
-var CACHE='central-v66118-civil-audit-full1';
+/* Central de Estudos — service worker v6.6.119 + visual minimalista global */
+var CACHE='central-v66119-minimal-global1';
+var VISUAL_CSS='/central-minimal-v66119.css?v=66119';
+var VISUAL_JS='/central-minimal-v66119.js?v=66119';
 var SHELL=[
  './','./index.html','./sync-client.js?v=66107','./manifest.webmanifest','./icons/icon-192.png','./icons/icon-512.png',
- './central-updater-v66107.js?v=66118','./central-version-v66107.js?v=66118','./central-progress-entry-v1.js?v=1','./tools/progresso.html',
+ './central-updater-v66107.js?v=66119','./central-version-v66107.js?v=66119','./central-progress-entry-v1.js?v=1','./tools/progresso.html',
+ './central-minimal-v66119.css?v=66119','./central-minimal-v66119.js?v=66119',
  './civil-decorando-index-v1.js?v=1','./central-civil-progress-v2.js?v=2','./civil-theory-v66107.js?v=66107','./civil-theory-module6-v66108.js?v=66108',
  './civil-theory-module7-part1-v66109.js?v=66109','./civil-theory-module7-part2-v66109.js?v=66109','./civil-theory-module7-part3-v66109.js?v=66109','./civil-theory-module7-runtime-v66109.js?v=66109',
  './civil-theory-module8-part1-v66110.js?v=66110','./civil-theory-module8-part2-v66110.js?v=66110','./civil-theory-module8-part3-v66110.js?v=66110','./civil-theory-module8-part4-v66110.js?v=66110','./civil-theory-module8-part5-v66110.js?v=66110','./civil-theory-module8-runtime-v66110.js?v=66110',
@@ -19,6 +22,21 @@ var SHELL=[
 self.addEventListener('install',function(e){e.waitUntil(caches.open(CACHE).then(function(c){return c.addAll(SHELL)}).then(function(){return self.skipWaiting()}))});
 self.addEventListener('activate',function(e){e.waitUntil(caches.keys().then(function(keys){return Promise.all(keys.filter(function(k){return k!==CACHE}).map(function(k){return caches.delete(k)}))}).then(function(){return self.clients.claim()}))});
 function saveFresh(req,r){if(r&&r.ok){var cp=r.clone();caches.open(CACHE).then(function(c){c.put(req,cp)}).catch(function(){})}return r}
+function patchVisualHtml(html){
+ html=html.replace(/<link\b[^>]*\bhref=["'][^"']*central-minimal-v\d+\.css[^"']*["'][^>]*>/gi,'');
+ html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*central-minimal-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');
+ if(html.indexOf('</head>')>=0)html=html.replace('</head>','<link rel="stylesheet" href="'+VISUAL_CSS+'"></head>');
+ if(html.indexOf('</body>')>=0)html=html.replace('</body>','<script src="'+VISUAL_JS+'"></script></body>');
+ return html;
+}
+function injectVisual(response){
+ if(!response)return response;
+ return response.text().then(function(html){
+  html=patchVisualHtml(html);
+  var h=new Headers(response.headers);h.set('Content-Type','text/html; charset=utf-8');h.delete('Content-Length');
+  return new Response(html,{status:response.status,statusText:response.statusText,headers:h});
+ });
+}
 function patchAnkiNativeDecks(html){
  var oldCode="function allDecks(){const set=new Set([...(SOURCE.meta?.decks||[]),...customDecks()]);S.cards.forEach(c=>{if(c.deck)set.add(c.deck)});return [...set].filter(Boolean).sort((a,b)=>a.localeCompare(b,'pt-BR',{numeric:true}))}";
  var newCode="function allDecks(){const hidden=(()=>{try{const v=JSON.parse(localStorage.getItem('central-v6:anki-hidden-decks')||'[]');return Array.isArray(v)?v:[]}catch{return[]}})();const norm=x=>String(x||'').trim().toLocaleLowerCase('pt-BR');const isHidden=d=>hidden.some(h=>{const a=norm(d),b=norm(h);return b&&(a===b||a.startsWith(b+'::'))});const set=new Set([...(SOURCE.meta?.decks||[]),...customDecks()]);S.cards.forEach(c=>{if(c.deck&&!c.suspended&&!isHidden(c.deck))set.add(c.deck)});return [...set].filter(d=>d&&!isHidden(d)).sort((a,b)=>a.localeCompare(b,'pt-BR',{numeric:true}))}";
@@ -37,6 +55,7 @@ function injectAnki(response){
   if(html.indexOf('anki-deck-manager-v6697.js')<0)html=html.replace('</body>','<script src="./anki-deck-manager-v6697.js?v=6697"></script></body>');
   if(html.indexOf('anki-file-import-v6687.js')<0)html=html.replace('</body>','<script src="./anki-file-import-v6687.js?v=6687"></script></body>');
   if(html.indexOf('anki-subdeck-delete-v6696.js')<0)html=html.replace('</body>','<script src="./anki-subdeck-delete-v6696.js?v=6696"></script></body>');
+  html=patchVisualHtml(html);
   var h=new Headers(response.headers);h.set('Content-Type','text/html; charset=utf-8');h.delete('Content-Length');
   return new Response(html,{status:response.status,statusText:response.statusText,headers:h});
  });
@@ -64,9 +83,12 @@ function injectMain(response){
   html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*central-civil-progress-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');
   html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*civil-theory(?:-company)?(?:-module\d+(?:-posse)?-(?:part\d+|runtime)|-module\d+|)-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');
   html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*civil-theory-audit-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');
+  html=html.replace(/<link\b[^>]*\bhref=["'][^"']*central-minimal-v\d+\.css[^"']*["'][^>]*>/gi,'');
+  html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*central-minimal-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');
   var tags=CIVIL_SCRIPTS.map(function(src){return '<script src="./'+src+'"></script>'}).join('');
-  tags+='<script src="./central-version-v66107.js?v=66118"></script><script src="./central-updater-v66107.js?v=66118"></script><script src="./central-progress-entry-v1.js?v=1"></script>';
+  tags+='<script src="./central-version-v66107.js?v=66119"></script><script src="./central-updater-v66107.js?v=66119"></script><script src="./central-progress-entry-v1.js?v=1"></script>';
   html=html.replace('</body>',tags+'</body>');
+  html=patchVisualHtml(html);
   var h=new Headers(response.headers);h.set('Content-Type','text/html; charset=utf-8');h.delete('Content-Length');
   return new Response(html,{status:response.status,statusText:response.statusText,headers:h});
  });
@@ -76,9 +98,11 @@ self.addEventListener('fetch',function(e){
  var main=u.pathname==='/'||u.pathname.endsWith('/index.html');
  var anki=u.pathname.endsWith('/tools/anki.html');
  var updater=u.pathname.endsWith('/update-central.html');
- var versioned=/\?v=\d+/.test(u.search)||/\/(?:central-progress-entry|central-civil-progress|civil-decorando-index|civil-theory)-v\d+\.js$/.test(u.pathname)||/\/civil-theory-module6-v\d+\.js$/.test(u.pathname)||/\/civil-theory-module7-(?:part[123]|runtime)-v\d+\.js$/.test(u.pathname)||/\/civil-theory-module8-(?:part[1-5]|runtime)-v\d+\.js$/.test(u.pathname)||/\/civil-theory-module9-(?:part[1-4]|runtime)-v\d+\.js$/.test(u.pathname)||/\/civil-theory-module10-(?:part[1-3]|runtime)-v\d+\.js$/.test(u.pathname)||/\/civil-theory-module11-posse-runtime-v\d+\.js$/.test(u.pathname)||/\/civil-theory-company-module10-(?:part[1-5]|runtime)-v\d+\.js$/.test(u.pathname)||/\/civil-theory-module12-(?:part[1-6]|runtime)-v\d+\.js$/.test(u.pathname)||/\/civil-theory-module13-(?:part[1-5]|runtime)-v\d+\.js$/.test(u.pathname)||/\/civil-theory-module14-(?:part[1-6]|runtime)-v\d+\.js$/.test(u.pathname)||/\/civil-theory-module15-(?:part[1-6]|runtime)-v\d+\.js$/.test(u.pathname)||/\/civil-theory-audit-v\d+\.js$/.test(u.pathname)||/\/(?:central-updater|central-version)-v\d+\.js$/.test(u.pathname)||/\/tools\/(?:anki-migrate|anki-deck-manager|anki-file-import|anki-subdeck-delete)-v\d+\.js$/.test(u.pathname);
+ var toolHtml=u.pathname.startsWith('/tools/')&&u.pathname.endsWith('.html')&&!anki;
+ var versioned=/\?v=\d+/.test(u.search)||/\/(?:central-progress-entry|central-civil-progress|civil-decorando-index|civil-theory)-v\d+\.js$/.test(u.pathname)||/\/civil-theory-module6-v\d+\.js$/.test(u.pathname)||/\/civil-theory-module7-(?:part[123]|runtime)-v\d+\.js$/.test(u.pathname)||/\/civil-theory-module8-(?:part[1-5]|runtime)-v\d+\.js$/.test(u.pathname)||/\/civil-theory-module9-(?:part[1-4]|runtime)-v\d+\.js$/.test(u.pathname)||/\/civil-theory-module10-(?:part[1-3]|runtime)-v\d+\.js$/.test(u.pathname)||/\/civil-theory-module11-posse-runtime-v\d+\.js$/.test(u.pathname)||/\/civil-theory-company-module10-(?:part[1-5]|runtime)-v\d+\.js$/.test(u.pathname)||/\/civil-theory-module12-(?:part[1-6]|runtime)-v\d+\.js$/.test(u.pathname)||/\/civil-theory-module13-(?:part[1-5]|runtime)-v\d+\.js$/.test(u.pathname)||/\/civil-theory-module14-(?:part[1-6]|runtime)-v\d+\.js$/.test(u.pathname)||/\/civil-theory-module15-(?:part[1-6]|runtime)-v\d+\.js$/.test(u.pathname)||/\/civil-theory-audit-v\d+\.js$/.test(u.pathname)||/\/central-minimal-v\d+\.(?:css|js)$/.test(u.pathname)||/\/(?:central-updater|central-version)-v\d+\.js$/.test(u.pathname)||/\/tools\/(?:anki-migrate|anki-deck-manager|anki-file-import|anki-subdeck-delete)-v\d+\.js$/.test(u.pathname);
  if(updater){e.respondWith(fetch(e.request,{cache:'no-store'}).then(function(r){return saveFresh(e.request,r)}).catch(function(){return caches.match(e.request)}));return;}
  if(anki){e.respondWith(fetch(e.request,{cache:'no-store'}).then(function(r){return injectAnki(r).then(function(x){return saveFresh(e.request,x)})}).catch(function(){return caches.match(e.request).then(function(hit){return hit?injectAnki(hit):caches.match('./index.html')})}));return;}
+ if(toolHtml){e.respondWith(fetch(e.request,{cache:'no-store'}).then(function(r){return injectVisual(r).then(function(x){return saveFresh(e.request,x)})}).catch(function(){return caches.match(e.request).then(function(hit){return hit?injectVisual(hit):caches.match('./index.html')})}));return;}
  if(versioned){e.respondWith(caches.match(e.request).then(function(hit){if(hit)return hit;return fetch(e.request).then(function(r){return saveFresh(e.request,r)})}));return;}
  var p=caches.match(e.request).then(function(hit){if(hit){fetch(e.request).then(function(r){saveFresh(e.request,r)}).catch(function(){});return hit}return fetch(e.request).then(function(r){return saveFresh(e.request,r)}).catch(function(){return caches.match('./index.html')})});
  if(main)p=p.then(injectMain);e.respondWith(p);
