@@ -24,20 +24,8 @@
   </main>
   <script>
   (async function(){
-    var BUILD='66119-stability1';
-    var scripts=[
-      'civil-decorando-index-v1.js?v=1','central-civil-progress-v2.js?v=2','civil-theory-v66107.js?v=66107','civil-theory-module6-v66108.js?v=66108',
-      'civil-theory-module7-part1-v66109.js?v=66109','civil-theory-module7-part2-v66109.js?v=66109','civil-theory-module7-part3-v66109.js?v=66109','civil-theory-module7-runtime-v66109.js?v=66109',
-      'civil-theory-module8-part1-v66110.js?v=66110','civil-theory-module8-part2-v66110.js?v=66110','civil-theory-module8-part3-v66110.js?v=66110','civil-theory-module8-part4-v66110.js?v=66110','civil-theory-module8-part5-v66110.js?v=66110','civil-theory-module8-runtime-v66110.js?v=66110',
-      'civil-theory-module9-part1-v66111.js?v=66111','civil-theory-module9-part2-v66111.js?v=66111','civil-theory-module9-part3-v66111.js?v=66111','civil-theory-module9-part4-v66111.js?v=66111','civil-theory-module9-runtime-v66111.js?v=66111',
-      'civil-theory-module10-part1-v66112.js?v=66112','civil-theory-module10-part2-v66112.js?v=66112','civil-theory-module10-part3-v66112.js?v=66112','civil-theory-module11-posse-runtime-v66113.js?v=66113',
-      'civil-theory-company-module10-part1-v66113.js?v=66113','civil-theory-company-module10-part2-v66113.js?v=66113','civil-theory-company-module10-part3-v66113.js?v=66113','civil-theory-company-module10-part4-v66113.js?v=66113','civil-theory-company-module10-part5-v66113.js?v=66113','civil-theory-company-module10-runtime-v66113.js?v=66113',
-      'civil-theory-module12-part1-v66114.js?v=66114','civil-theory-module12-part2-v66114.js?v=66114','civil-theory-module12-part3-v66114.js?v=66114','civil-theory-module12-part4-v66114.js?v=66114','civil-theory-module12-part5-v66114.js?v=66114','civil-theory-module12-part6-v66114.js?v=66114','civil-theory-module12-runtime-v66114.js?v=66114',
-      'civil-theory-module13-part1-v66115.js?v=66115','civil-theory-module13-part2-v66115.js?v=66115','civil-theory-module13-part3-v66115.js?v=66115','civil-theory-module13-part4-v66115.js?v=66115','civil-theory-module13-part5-v66115.js?v=66115','civil-theory-module13-runtime-v66115.js?v=66115',
-      'civil-theory-module14-part1-v66116.js?v=66116','civil-theory-module14-part2-v66116.js?v=66116','civil-theory-module14-part3-v66116.js?v=66116','civil-theory-module14-part4-v66116.js?v=66116','civil-theory-module14-part5-v66116.js?v=66116','civil-theory-module14-part6-v66116.js?v=66116','civil-theory-module14-runtime-v66116.js?v=66116',
-      'civil-theory-module15-part1-v66117.js?v=66117','civil-theory-module15-part2-v66117.js?v=66117','civil-theory-module15-part3-v66117.js?v=66117','civil-theory-module15-part4-v66117.js?v=66117','civil-theory-module15-part5-v66117.js?v=66117','civil-theory-module15-part6-v66117.js?v=66117','civil-theory-module15-runtime-v66117.js?v=66117',
-      'civil-theory-audit-v66118.js?v=66118','cpc-theory-module1-v66119.js?v=66119'
-    ];
+    var BUILD='66119-performance1';
+    var scripts=['civil-decorando-index-v1.js?v=1','central-civil-progress-v2.js?v=2'];
 
     function tag(src){
       return '<scr'+'ipt defer src="/'+src+'"></scr'+'ipt>';
@@ -62,6 +50,7 @@
       html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*civil-theory-audit-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');
 
       var tags=scripts.map(tag).join('');
+      tags+=tag('central-lazy-theory-v66119.js?v=66119p1');
       tags+=tag('sync-client.js?v=66119s1');
       tags+=tag('central-version-v66107.js?v=66119s1');
       tags+=tag('central-updater-v66107.js?v=66119s1');
