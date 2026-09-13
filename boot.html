@@ -14,15 +14,23 @@
   <main class="box"><div class="mark">📚</div><h1>Central de Estudos</h1><p>Preparando a versão v6.6.119…</p><div class="spinner"></div></main>
   <script>
   (async function(){
-    var TARGET='66119';
+    var TARGET='66119-fast3';
     try{
       if('serviceWorker' in navigator){
-        var reg=await navigator.serviceWorker.register('/sw.js?central_boot='+TARGET+'-'+Date.now(),{scope:'/'});
+        var previous=navigator.serviceWorker.controller;
+        var reg=await navigator.serviceWorker.register('/sw-fast-v66119.js?central_boot='+TARGET,{scope:'/'});
         try{await reg.update()}catch(e){}
-        await navigator.serviceWorker.ready;
+        if(previous){
+          await Promise.race([
+            new Promise(function(resolve){navigator.serviceWorker.addEventListener('controllerchange',resolve,{once:true})}),
+            new Promise(function(resolve){setTimeout(resolve,2200)})
+          ]);
+        }else{
+          try{await navigator.serviceWorker.ready}catch(e){}
+        }
       }
     }catch(e){}
-    location.replace('/index.html?central_fresh='+TARGET+'-'+Date.now());
+    location.replace('/index.html?central_fresh='+TARGET);
   })();
   </script>
 </body>
