@@ -65,6 +65,21 @@ document.addEventListener('click',function(event){
  if(section&&groups[section.dataset.id])loadGroup(section.dataset.id).catch(function(){});
 },true);
 
+function warmOffline(){
+ if(!('serviceWorker' in navigator))return;
+ navigator.serviceWorker.ready.then(function(){
+  var files=groups.civil.concat(groups.cpc),index=0;
+  function next(){
+   if(index>=files.length)return;
+   fetch('/'+files[index++],{cache:'force-cache'}).catch(function(){}).then(function(){setTimeout(next,40)});
+  }
+  if('requestIdleCallback' in window)requestIdleCallback(next,{timeout:10000});
+  else setTimeout(next,10000);
+ }).catch(function(){});
+}
+if(document.readyState==='complete')warmOffline();
+else window.addEventListener('load',warmOffline,{once:true});
+
 var style=document.createElement('style');
 style.textContent='.central-lazy-status{margin:10px 0;padding:10px 12px;border:1px solid rgba(109,93,252,.35);border-radius:10px;background:rgba(109,93,252,.08);font:700 12px/1.4 system-ui;color:inherit}.subject-head[aria-busy="true"]{cursor:progress}';
 document.head.appendChild(style);
