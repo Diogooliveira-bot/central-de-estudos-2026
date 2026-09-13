@@ -5,6 +5,7 @@ var DB_NAME='central-sync-device-v1',STORE='kv';
 var meta={enabled:false,secret:'',device:'',revision:0,hash:''};
 var busy=false,lastCheckHash='';
 var CRONO_KEY='CENTRAL_CRONOGRAMA_6M_V2',AGENDA_PREFIX='central-v6:agenda:';
+function currentVersion(){return String(window.CENTRAL_VERSION||'6.6.119').replace(/^v/,'')}
 
 function dbOpen(){return new Promise(function(resolve,reject){var r=indexedDB.open(DB_NAME,1);r.onupgradeneeded=function(){if(!r.result.objectStoreNames.contains(STORE))r.result.createObjectStore(STORE)};r.onsuccess=function(){resolve(r.result)};r.onerror=function(){reject(r.error)}})}
 async function kvGet(k){var db=await dbOpen();return new Promise(function(resolve,reject){var tx=db.transaction(STORE,'readonly'),r=tx.objectStore(STORE).get(k);r.onsuccess=function(){resolve(r.result)};r.onerror=function(){reject(r.error)}})}
@@ -37,15 +38,16 @@ function mergeAgendaValue(localValue,cloudValue){
  }catch(_){}
  return localValue;
 }
-function mergeCritical(local,cloud){
- var out=Object.assign({},cloud||{}),src=local||{};
+function mergePayload(local,cloud,preferLocal){
+ var src=local||{},remote=cloud||{};
+ var out=preferLocal?Object.assign({},remote,src):Object.assign({},src,remote);
  if(Object.prototype.hasOwnProperty.call(src,CRONO_KEY))out[CRONO_KEY]=mergeCronogramaValue(src[CRONO_KEY],out[CRONO_KEY]);
  Object.keys(src).forEach(function(k){if(k.indexOf(AGENDA_PREFIX)===0)out[k]=mergeAgendaValue(src[k],out[k])});
  return out;
 }
-function applyCloud(payload){if(!payload||typeof payload!=='object'||Array.isArray(payload))throw new Error('cópia online inválida');localStorage.clear();Object.keys(payload).forEach(function(k){if(k&&k!=='__central_folder_probe__'&&k!=='__central_storage_probe__')localStorage.setItem(k,String(payload[k]))});try{window.dispatchEvent(new Event('central-cloud-applied'))}catch(_){}}
+function applyCloud(payload){if(!payload||typeof payload!=='object'||Array.isArray(payload))throw new Error('cópia online inválida');Object.keys(payload).forEach(function(k){if(k&&k!=='__central_folder_probe__'&&k!=='__central_storage_probe__')localStorage.setItem(k,String(payload[k]))});try{window.dispatchEvent(new Event('central-cloud-applied'))}catch(_){}}
 async function push(local,hash,base){return request('/api/sync',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({payload:local,hash:hash,baseRevision:base,deviceId:meta.device})})}
-async function safetyBackup(local,note){try{await request('/api/backups',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'save',note:note,backup:{formato:'central-backup-v2',app:'Central de Estudos',versao:'v6.6.107',exportadoEm:new Date().toISOString(),origem:'sync',dados:local}})})}catch(_){}}
+async function safetyBackup(local,note){try{await request('/api/backups',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'save',note:note,backup:{formato:'central-backup-v2',app:'Central de Estudos',versao:'v'+currentVersion(),exportadoEm:new Date().toISOString(),origem:'sync',dados:local}})})}catch(_){}}
 async function persistAnkiMigration(){
  if(!window.__centralAnkiMigrated6679)return false;
  var local=collect(),h=hashObject(local),sent=await push(local,h,meta.revision);
@@ -58,7 +60,7 @@ async function sync(reason){
   if(!cloud.exists){var first=await push(local,localHash,0);meta.revision=first.revision;meta.hash=localHash;lastCheckHash=localHash;await saveMeta();status('Sincronizado agora • primeira cópia online criada.','ok');return}
   if(cloud.revision>meta.revision){
    if(localHash!==meta.hash&&meta.revision>0)await safetyBackup(local,'Cópia automática antes de resolver conflito de sincronização');
-   var cloudPayload=cloud.payload||{},merged=mergeCritical(local,cloudPayload),remoteHash=hashObject(cloudPayload);
+   var cloudPayload=cloud.payload||{},hasLocalChanges=(localHash!==meta.hash&&meta.revision>0),merged=mergePayload(local,cloudPayload,hasLocalChanges),remoteHash=hashObject(cloudPayload);
    applyCloud(merged);meta.revision=cloud.revision;
    if(!(await persistAnkiMigration())){meta.hash=remoteHash;lastCheckHash=remoteHash}
    await saveMeta();status('Atualização recebida da nuvem sem perder os checks da agenda. Recarregando...','ok');setTimeout(function(){location.reload()},700);return
@@ -68,7 +70,7 @@ async function sync(reason){
    catch(e){
     if(e.status===409){
      var newest=await request('/api/sync');await safetyBackup(local,'Cópia automática antes de receber alteração mais recente');
-     var newestPayload=newest.payload||{},mergedNewest=mergeCritical(local,newestPayload),newestHash=hashObject(newestPayload);
+     var newestPayload=newest.payload||{},mergedNewest=mergePayload(local,newestPayload,true),newestHash=hashObject(newestPayload);
      applyCloud(mergedNewest);meta.revision=newest.revision;
      if(!(await persistAnkiMigration())){meta.hash=newestHash;lastCheckHash=newestHash}
      await saveMeta();status('Conflito resolvido preservando os checks da agenda. Recarregando...','warn');setTimeout(function(){location.reload()},700);return
@@ -86,7 +88,7 @@ async function toggle(){
   var cloud=await request('/api/sync');
   if(cloud.exists){
    var before=collect();await safetyBackup(before,'Antes de ativar sincronização neste aparelho');
-   var initialCloud=cloud.payload||{},initialMerged=mergeCritical(before,initialCloud),initialRemoteHash=hashObject(initialCloud);
+   var initialCloud=cloud.payload||{},initialMerged=mergePayload(before,initialCloud,false),initialRemoteHash=hashObject(initialCloud);
    applyCloud(initialMerged);meta.revision=cloud.revision;
    if(!(await persistAnkiMigration())){meta.hash=initialRemoteHash;lastCheckHash=initialRemoteHash}
    await saveMeta();status('Cópia online recebida sem perder os checks locais da agenda. Recarregando...','ok');setTimeout(function(){location.reload()},700)
@@ -105,10 +107,10 @@ function loadUpdater(){
 }
 function observe(){if(!meta.enabled)return;var h=hashObject(collect());if(!lastCheckHash)lastCheckHash=h;if(h!==lastCheckHash){lastCheckHash=h;status(navigator.onLine?'Alteração detectada; enviando...':'Alteração salva no aparelho; aguardando internet.','warn');setTimeout(function(){sync('change')},900)}}
 async function init(){
- injectUi();loadUpdater();meta.enabled=!!(await kvGet('enabled'));meta.secret=(await kvGet('secret'))||'';meta.device=(await kvGet('device'))||newDevice();meta.revision=Number((await kvGet('revision'))||0);meta.hash=(await kvGet('hash'))||'';await kvSet('device',meta.device);if(meta.secret)try{sessionStorage.setItem('central-backup:session-secret',meta.secret)}catch(_){}
- var brand=document.querySelector('.brand-copy small');if(brand)brand.textContent='v6.6.107 • Atualização manual + sincronização';var badge=document.querySelector('.central-version-v41');if(badge)badge.textContent='v6.6.107';status(meta.enabled?'Sincronização ativa neste aparelho.':'Desativada neste aparelho. Ative primeiro no aparelho que contém o progresso correto.',meta.enabled?'ok':'');if(meta.enabled)sync('startup');setInterval(observe,5000);setInterval(function(){sync('poll')},30000)
+ injectUi();meta.enabled=!!(await kvGet('enabled'));meta.secret=(await kvGet('secret'))||'';meta.device=(await kvGet('device'))||newDevice();meta.revision=Number((await kvGet('revision'))||0);meta.hash=(await kvGet('hash'))||'';await kvSet('device',meta.device);if(meta.secret)try{sessionStorage.setItem('central-backup:session-secret',meta.secret)}catch(_){}
+ var version=currentVersion();var brand=document.querySelector('.brand-copy small');if(brand)brand.textContent='v'+version+' • Atualização manual + sincronização';var badge=document.querySelector('.central-version-v41');if(badge)badge.textContent='v'+version;status(meta.enabled?'Sincronização ativa neste aparelho.':'Desativada neste aparelho. Ative primeiro no aparelho que contém o progresso correto.',meta.enabled?'ok':'');if(meta.enabled)sync('startup');setInterval(observe,15000);setInterval(function(){sync('poll')},120000)
 }
 window.addEventListener('online',function(){if(meta.enabled)sync('online')});window.addEventListener('offline',function(){if(meta.enabled)status('Sem internet. Alterações continuam salvas neste aparelho.','warn')});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible'&&meta.enabled)sync('visible')});
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
-setTimeout(loadUpdater,1200);
+
 })();

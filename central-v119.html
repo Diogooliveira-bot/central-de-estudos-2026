@@ -24,7 +24,7 @@
   </main>
   <script>
   (async function(){
-    var BUILD='66119-direct4';
+    var BUILD='66119-stability1';
     var scripts=[
       'civil-decorando-index-v1.js?v=1','central-civil-progress-v2.js?v=2','civil-theory-v66107.js?v=66107','civil-theory-module6-v66108.js?v=66108',
       'civil-theory-module7-part1-v66109.js?v=66109','civil-theory-module7-part2-v66109.js?v=66109','civil-theory-module7-part3-v66109.js?v=66109','civil-theory-module7-runtime-v66109.js?v=66109',
@@ -55,15 +55,16 @@
       html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*central-minimal(?:-ui)?-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');
       html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*(?:central-updater|central-version)-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');
       html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*central-progress-entry-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');
+      html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*sync-client\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');
       html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*civil-decorando-index-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');
       html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*central-civil-progress-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');
       html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*civil-theory(?:-company)?(?:-module\d+(?:-posse)?-(?:part\d+|runtime)|-module\d+|)-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');
       html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*civil-theory-audit-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');
 
       var tags=scripts.map(tag).join('');
-      if(html.indexOf('sync-client.js?v=66107')<0)tags+=tag('sync-client.js?v=66107');
-      tags+=tag('central-version-v66107.js?v=66119');
-      tags+=tag('central-updater-v66107.js?v=66119');
+      tags+=tag('sync-client.js?v=66119s1');
+      tags+=tag('central-version-v66107.js?v=66119s1');
+      tags+=tag('central-updater-v66107.js?v=66119s1');
       tags+=tag('central-progress-entry-v1.js?v=1');
       tags+=tag('central-minimal-ui-v66119.js?v=66119h4');
 
