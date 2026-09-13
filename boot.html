@@ -3,35 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#000000">
-  <title>Central de Estudos</title>
-  <style>
-    html,body{min-height:100%;margin:0;background:#050505;color:#eef2f7;font-family:system-ui,-apple-system,Segoe UI,sans-serif}
-    body{display:grid;place-items:center}.box{text-align:center;padding:24px}.mark{width:42px;height:42px;margin:0 auto 13px;border-radius:12px;display:grid;place-items:center;background:#171717;border:1px solid #2e2e2e;font-size:22px}.spinner{width:26px;height:26px;margin:16px auto 0;border:3px solid #292929;border-top-color:#745df4;border-radius:50%;animation:spin .75s linear infinite}h1{font-size:17px;margin:0}p{font-size:12px;color:#9ca3af;margin:7px 0}@keyframes spin{to{transform:rotate(360deg)}}
-  </style>
+  <meta http-equiv="refresh" content="0;url=/central-v119.html?direct=4">
+  <meta name="robots" content="noindex">
+  <title>Central de Estudos v6.6.119</title>
 </head>
 <body>
-  <main class="box"><div class="mark">📚</div><h1>Central de Estudos</h1><p>Preparando a versão v6.6.119…</p><div class="spinner"></div></main>
-  <script>
-  (async function(){
-    var TARGET='66119-fast3';
-    try{
-      if('serviceWorker' in navigator){
-        var previous=navigator.serviceWorker.controller;
-        var reg=await navigator.serviceWorker.register('/sw-fast-v66119.js?central_boot='+TARGET,{scope:'/'});
-        try{await reg.update()}catch(e){}
-        if(previous){
-          await Promise.race([
-            new Promise(function(resolve){navigator.serviceWorker.addEventListener('controllerchange',resolve,{once:true})}),
-            new Promise(function(resolve){setTimeout(resolve,2200)})
-          ]);
-        }else{
-          try{await navigator.serviceWorker.ready}catch(e){}
-        }
-      }
-    }catch(e){}
-    location.replace('/index.html?central_fresh='+TARGET);
-  })();
-  </script>
+  <p>Abrindo a Central de Estudos v6.6.119…</p>
+  <script>location.replace('/central-v119.html?direct=4');</script>
+  <noscript><a href="/central-v119.html?direct=4">Abrir a Central</a></noscript>
 </body>
 </html>
