@@ -1,8 +1,9 @@
 {
-  "rewrites": [
+  "redirects": [
     {
       "source": "/",
-      "destination": "/central-v119.html"
+      "destination": "/central-v119.html?direct=4",
+      "permanent": false
     }
   ],
   "headers": [
