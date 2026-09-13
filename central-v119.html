@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Central de Estudos — carregando v6.6.119</title>
+  <style>
+    :root{color-scheme:dark}
+    *{box-sizing:border-box}
+    body{margin:0;min-height:100vh;display:grid;place-items:center;background:#07111f;color:#e7eef8;font:500 16px/1.5 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    main{width:min(420px,calc(100% - 32px));padding:28px;border:1px solid #243750;border-radius:18px;background:#0d1a2b;text-align:center;box-shadow:0 18px 50px #0006}
+    .spinner{width:38px;height:38px;margin:0 auto 18px;border:4px solid #263b55;border-top-color:#55c2ff;border-radius:50%;animation:girar .8s linear infinite}
+    p{margin:0;color:#b7c6d9}
+    button{display:none;margin:20px auto 0;padding:10px 16px;border:0;border-radius:10px;background:#55c2ff;color:#07111f;font-weight:700;cursor:pointer}
+    @keyframes girar{to{transform:rotate(360deg)}}
+  </style>
+</head>
+<body>
+  <main>
+    <div class="spinner" aria-hidden="true"></div>
+    <p id="status">Abrindo a Central de Estudos v6.6.119…</p>
+    <button id="retry" type="button">Tentar novamente</button>
+  </main>
+  <script>
+  (async function(){
+    var BUILD='66119-direct4';
+    var scripts=[
+      'civil-decorando-index-v1.js?v=1','central-civil-progress-v2.js?v=2','civil-theory-v66107.js?v=66107','civil-theory-module6-v66108.js?v=66108',
+      'civil-theory-module7-part1-v66109.js?v=66109','civil-theory-module7-part2-v66109.js?v=66109','civil-theory-module7-part3-v66109.js?v=66109','civil-theory-module7-runtime-v66109.js?v=66109',
+      'civil-theory-module8-part1-v66110.js?v=66110','civil-theory-module8-part2-v66110.js?v=66110','civil-theory-module8-part3-v66110.js?v=66110','civil-theory-module8-part4-v66110.js?v=66110','civil-theory-module8-part5-v66110.js?v=66110','civil-theory-module8-runtime-v66110.js?v=66110',
+      'civil-theory-module9-part1-v66111.js?v=66111','civil-theory-module9-part2-v66111.js?v=66111','civil-theory-module9-part3-v66111.js?v=66111','civil-theory-module9-part4-v66111.js?v=66111','civil-theory-module9-runtime-v66111.js?v=66111',
+      'civil-theory-module10-part1-v66112.js?v=66112','civil-theory-module10-part2-v66112.js?v=66112','civil-theory-module10-part3-v66112.js?v=66112','civil-theory-module11-posse-runtime-v66113.js?v=66113',
+      'civil-theory-company-module10-part1-v66113.js?v=66113','civil-theory-company-module10-part2-v66113.js?v=66113','civil-theory-company-module10-part3-v66113.js?v=66113','civil-theory-company-module10-part4-v66113.js?v=66113','civil-theory-company-module10-part5-v66113.js?v=66113','civil-theory-company-module10-runtime-v66113.js?v=66113',
+      'civil-theory-module12-part1-v66114.js?v=66114','civil-theory-module12-part2-v66114.js?v=66114','civil-theory-module12-part3-v66114.js?v=66114','civil-theory-module12-part4-v66114.js?v=66114','civil-theory-module12-part5-v66114.js?v=66114','civil-theory-module12-part6-v66114.js?v=66114','civil-theory-module12-runtime-v66114.js?v=66114',
+      'civil-theory-module13-part1-v66115.js?v=66115','civil-theory-module13-part2-v66115.js?v=66115','civil-theory-module13-part3-v66115.js?v=66115','civil-theory-module13-part4-v66115.js?v=66115','civil-theory-module13-part5-v66115.js?v=66115','civil-theory-module13-runtime-v66115.js?v=66115',
+      'civil-theory-module14-part1-v66116.js?v=66116','civil-theory-module14-part2-v66116.js?v=66116','civil-theory-module14-part3-v66116.js?v=66116','civil-theory-module14-part4-v66116.js?v=66116','civil-theory-module14-part5-v66116.js?v=66116','civil-theory-module14-part6-v66116.js?v=66116','civil-theory-module14-runtime-v66116.js?v=66116',
+      'civil-theory-module15-part1-v66117.js?v=66117','civil-theory-module15-part2-v66117.js?v=66117','civil-theory-module15-part3-v66117.js?v=66117','civil-theory-module15-part4-v66117.js?v=66117','civil-theory-module15-part5-v66117.js?v=66117','civil-theory-module15-part6-v66117.js?v=66117','civil-theory-module15-runtime-v66117.js?v=66117',
+      'civil-theory-audit-v66118.js?v=66118'
+    ];
+
+    function tag(src){
+      return '<scr'+'ipt defer src="/'+src+'"></scr'+'ipt>';
+    }
+
+    try{
+      var response=await fetch('/index.html?central_source='+BUILD,{cache:'no-store'});
+      if(!response.ok)throw new Error('Falha HTTP '+response.status);
+      var html=await response.text();
+
+      html=html.replace('v6.6.75 • Plano de 6 meses','v6.6.119 • Plano de 6 meses');
+      html=html.replace('<span class="central-version-v41">v6.6.74</span>','<span class="central-version-v41">v6.6.119</span>');
+
+      html=html.replace(/<link\b[^>]*\bhref=["'][^"']*central-minimal(?:-theme)?-v\d+\.css[^"']*["'][^>]*>/gi,'');
+      html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*central-minimal(?:-ui)?-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');
+      html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*(?:central-updater|central-version)-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');
+      html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*central-progress-entry-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');
+      html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*civil-decorando-index-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');
+      html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*central-civil-progress-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');
+      html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*civil-theory(?:-company)?(?:-module\d+(?:-posse)?-(?:part\d+|runtime)|-module\d+|)-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');
+      html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*civil-theory-audit-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');
+
+      var tags=scripts.map(tag).join('');
+      if(html.indexOf('sync-client.js?v=66107')<0)tags+=tag('sync-client.js?v=66107');
+      tags+=tag('central-version-v66107.js?v=66119');
+      tags+=tag('central-updater-v66107.js?v=66119');
+      tags+=tag('central-progress-entry-v1.js?v=1');
+      tags+=tag('central-minimal-ui-v66119.js?v=66119h4');
+
+      html=html.replace('</head>','<meta name="central-source-version" content="6.6.119"><link rel="stylesheet" href="/central-minimal-theme-v66119.css?v=66119h4"></head>');
+      html=html.replace('</body>',tags+'</body>');
+
+      history.replaceState(null,'','/');
+      document.open();
+      document.write(html);
+      document.close();
+    }catch(error){
+      document.getElementById('status').textContent='Não foi possível abrir a Central. Verifique a conexão e tente novamente.';
+      document.querySelector('.spinner').style.display='none';
+      var retry=document.getElementById('retry');
+      retry.style.display='block';
+      retry.onclick=function(){location.reload()};
+      console.error('[Central v6.6.119]',error);
+    }
+  })();
+  </script>
+</body>
+</html>
