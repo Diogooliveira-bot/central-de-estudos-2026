@@ -11,17 +11,18 @@
   </style>
 </head>
 <body>
-  <main class="box"><div class="mark">📚</div><h1>Central de Estudos</h1><p>Preparando a versão mais recente…</p><div class="spinner"></div></main>
+  <main class="box"><div class="mark">📚</div><h1>Central de Estudos</h1><p>Preparando a versão v6.6.119…</p><div class="spinner"></div></main>
   <script>
   (async function(){
+    var TARGET='66119';
     try{
       if('serviceWorker' in navigator){
-        var reg=await navigator.serviceWorker.register('/sw.js?central_boot=66107-'+Date.now(),{scope:'/'});
+        var reg=await navigator.serviceWorker.register('/sw.js?central_boot='+TARGET+'-'+Date.now(),{scope:'/'});
         try{await reg.update()}catch(e){}
         await navigator.serviceWorker.ready;
       }
     }catch(e){}
-    location.replace('/index.html?central_fresh=66107-'+Date.now());
+    location.replace('/index.html?central_fresh='+TARGET+'-'+Date.now());
   })();
   </script>
 </body>
