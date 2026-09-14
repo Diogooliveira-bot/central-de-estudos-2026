@@ -12,11 +12,12 @@ var dismissed=false;
 function visible(el){
  if(!el)return false;
  var view=el.closest('.view');
- return !view||!view.classList.contains('hidden');
+ if(view&&view.classList.contains('hidden'))return false;
+ return !!(el.offsetWidth||el.offsetHeight||el.getClientRects().length);
 }
 function candidate(){
- var topic=document.querySelector('.ct-topic[open],.cpc-apostila-topic[open]');
- if(visible(topic))return topic;
+ var topics=document.querySelectorAll('.ct-topic[open],.cpc-apostila-topic[open]');
+ for(var t=0;t<topics.length;t++)if(visible(topics[t]))return topics[t];
  var stages=document.querySelectorAll('.civil-step.open');
  for(var i=0;i<stages.length;i++)if(visible(stages[i]))return stages[i];
  return null;
