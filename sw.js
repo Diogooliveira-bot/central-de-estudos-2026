@@ -1,6 +1,6 @@
-/* Central de Estudos — v6.6.127 correção da fonte da leitura
-   Offline não destrutivo: preserva a rota aberta e mantém uma cópia das ferramentas. */
-var CACHE='central-v66127-correcao-fonte-leitura';
+/* Central de Estudos — trava de navegação na v6.6.119
+   Offline não destrutivo: index.html permanece apenas como fonte interna da v119. */
+var CACHE='central-v66128-nav-lock';
 var BOOT='/central-v119.html?direct=4';
 var STRUCTURAL_MANIFEST='/central-structural-files-v66119.json?v=66119s2';
 var CORE=[
@@ -62,7 +62,17 @@ self.addEventListener('fetch',function(event){
   var url=new URL(request.url);
   if(request.method!=='GET'||url.origin!==self.location.origin||url.pathname.startsWith('/api/'))return;
 
-  if(request.mode==='navigate'||/\.(?:html)$/.test(url.pathname)||url.pathname==='/'){
+  /* Nunca exibir index.html diretamente. Ele é só a base interna que central-v119.html transforma. */
+  if(request.mode==='navigate' && (url.pathname==='/'||url.pathname==='/index.html')){
+    event.respondWith(
+      caches.open(CACHE).then(function(cache){
+        return fetch(BOOT,{cache:'no-store'}).then(function(response){return cacheResponse(cache,BOOT,response)}).catch(function(){return cache.match(BOOT)});
+      })
+    );
+    return;
+  }
+
+  if(request.mode==='navigate'||/\.(?:html)$/.test(url.pathname)){
     event.respondWith(
       caches.open(CACHE).then(function(cache){
         return fetch(request,{cache:'no-store'}).then(function(response){
@@ -72,7 +82,7 @@ self.addEventListener('fetch',function(event){
             if(hit)return hit;
             return cache.match(url.pathname).then(function(pathHit){
               if(pathHit)return pathHit;
-              if(url.pathname==='/'||url.pathname==='/index.html'||url.pathname==='/central-v119.html')return cache.match(BOOT);
+              if(url.pathname==='/central-v119.html')return cache.match(BOOT);
               return new Response('Esta página ainda não foi salva para uso offline.',{status:503,headers:{'Content-Type':'text/plain; charset=utf-8'}});
             });
           });
@@ -82,14 +92,12 @@ self.addEventListener('fetch',function(event){
     return;
   }
 
+  /* Fetch interno de /index.html continua permitido para a v119 montar a Central atual. */
   if(url.pathname==='/index.html'){
     event.respondWith(
       caches.open(CACHE).then(function(cache){
         return fetch(request,{cache:'no-store'}).then(function(response){
-          if(response&&response.ok){
-            cache.put('/index.html',response.clone()).catch(function(){});
-            cache.put(request,response.clone()).catch(function(){});
-          }
+          if(response&&response.ok){cache.put('/index.html',response.clone()).catch(function(){});cache.put(request,response.clone()).catch(function(){})}
           return response;
         }).catch(function(){return cache.match(request).then(function(hit){return hit||cache.match('/index.html')})});
       })
@@ -97,7 +105,7 @@ self.addEventListener('fetch',function(event){
     return;
   }
 
-  var versioned=/\?v=/.test(url.search)||/central-core|central-minimal|central-lazy-theory|central-health-entry|civil-theory|civil-decorando|central-civil-progress|central-progress-entry|central-updater|central-version|sync-client/.test(url.pathname);
+  var versioned=/\?v=/.test(url.search)||/central-core|central-minimal|central-lazy-theory|central-health-entry|civil-theory|civil-decorando|central-civil-progress|central-progress-entry|central-updater|central-version|sync-client|portugues-m1/.test(url.pathname);
   if(versioned){
     event.respondWith(
       caches.open(CACHE).then(function(cache){
