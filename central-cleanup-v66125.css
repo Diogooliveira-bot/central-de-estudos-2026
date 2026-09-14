@@ -1,0 +1,68 @@
+/* Central de Estudos — v6.6.125 visual enxuto
+   Camada exclusivamente visual: não altera armazenamento, progresso ou conteúdo. */
+
+/* A página inicial usa toda a largura disponível. */
+html.central-minimal-v66119 #homeView .home-grid {
+  display: block !important;
+  width: 100% !important;
+  max-width: none !important;
+}
+
+html.central-minimal-v66119 #homeView .home-grid > div:first-child {
+  width: 100% !important;
+  max-width: none !important;
+}
+
+/* Informações continuam salvas, mas saem da lateral para liberar a leitura. */
+html.central-minimal-v66119 #homeView .side-col,
+html.central-minimal-v66119 #homeView .schedule-intro,
+html.central-minimal-v66119 .topbar .top-actions,
+html.central-minimal-v66119 #central-progress-button,
+html.central-minimal-v66119 #central-progress-entry-v1,
+html.central-minimal-v66119 .central-progress-floating {
+  display: none !important;
+}
+
+/* A navegação esquerda já explica o agrupamento das ferramentas. */
+html.central-minimal-v66119 #centralSidebar .nav > .label {
+  display: none !important;
+}
+
+/* Menos caixas e instruções no roteiro de Português. */
+html.central-minimal-v66119 .pt-study-kicker,
+html.central-minimal-v66119 .pt-study-nav-head p,
+html.central-minimal-v66119 .pt-study-week .pt-week-guide,
+html.central-minimal-v66119 .pt-week-guide {
+  display: none !important;
+}
+
+html.central-minimal-v66119 .pt-study-nav {
+  padding: 12px 0 !important;
+  border-left: 0 !important;
+  border-right: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+html.central-minimal-v66119 .pt-study-nav-head {
+  margin-bottom: 10px !important;
+}
+
+/* Cartões abertos mais leves, sem destaque decorativo desnecessário. */
+html.central-minimal-v66119 #homeView .subject.open {
+  border-color: var(--cm-line, var(--line)) !important;
+  box-shadow: none !important;
+}
+
+html.central-minimal-v66119 #homeView .subject.open > .subject-head {
+  background: transparent !important;
+  border-bottom: 1px solid var(--cm-line, var(--line)) !important;
+}
+
+@media (max-width: 760px) {
+  html.central-minimal-v66119 #homeView {
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
+}
