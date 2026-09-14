@@ -26,6 +26,8 @@ function markSections(el){
   step.id=item.id;step.classList.add('cpc-apostila-section');
   step.setAttribute('data-apostila-number',item.label);
   step.setAttribute('data-apostila-eyebrow',item.eyebrow);
+  var head=step.querySelector(':scope > .cf-step-head');
+  if(head){head.setAttribute('data-apostila-number',item.label);head.setAttribute('data-apostila-eyebrow',item.eyebrow)}
  });
  var resources=el.querySelector(':scope > .cf-module-body > .cf-resources');
  if(resources){resources.id='cpc-m1-recursos';resources.classList.add('cpc-apostila-resources')}
