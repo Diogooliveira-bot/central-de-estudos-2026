@@ -58,6 +58,15 @@ function loadGroup(id){
 }
 
 window.loadCentralTheoryGroup=loadGroup;
+
+/* CPC M1 is a single theory bundle. Load it as soon as the DOM is ready so
+   saved/open navigation paths cannot bypass the lazy-load click trigger. */
+function preloadCpc(){
+ loadGroup('cpc').catch(function(){});
+}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',preloadCpc,{once:true});
+else preloadCpc();
+
 document.addEventListener('click',function(event){
  var head=event.target&&event.target.closest?event.target.closest('.subject-head'):null;
  if(!head)return;
