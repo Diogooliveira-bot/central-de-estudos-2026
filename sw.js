@@ -1,6 +1,6 @@
-/* Central de Estudos — v6.6.122 CPC M1 estrutura
+/* Central de Estudos — v6.6.123 leitura em tela cheia
    Offline não destrutivo: preserva a rota aberta e mantém uma cópia das ferramentas. */
-var CACHE='central-v66122-cpc-m1-estrutura';
+var CACHE='central-v66123-leitura-tela-cheia';
 var BOOT='/central-v119.html?direct=4';
 var STRUCTURAL_MANIFEST='/central-structural-files-v66119.json?v=66119s2';
 var CORE=[
@@ -10,6 +10,7 @@ var CORE=[
   '/manifest.webmanifest',
   '/central-lazy-theory-v66119.js?v=66119p2',
   '/cpc-m1-apostila-v66121.js?v=66122a1',
+  '/central-reading-fullscreen-v66123.js?v=66123a1',
   '/central-health-entry-v66119.js?v=66119s2',
   '/tools/anki.html',
   '/tools/decorando.html',
