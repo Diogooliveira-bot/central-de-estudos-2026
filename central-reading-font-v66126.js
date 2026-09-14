@@ -7,6 +7,19 @@
   var MAX=135;
   var STEP=5;
   var DEFAULT=100;
+  var observer=null;
+  var refreshTimer=0;
+  var LARGE_SELECTORS=[
+    '#homeView .ct-rich .ct-lead','#homeView .ct-section p','#homeView .ct-section li',
+    '#homeView .ct-callout p','#homeView .ct-callout li','#homeView .cf-reading strong',
+    '#homeView .cf-reading li','#homeView .cf-theory-text','#homeView .cf-advanced div',
+    '#homeView .cf-notes','#homeView .cpc-law-card p','#homeView .cpc-law-card li'
+  ].join(',');
+  var MEDIUM_SELECTORS=[
+    '#homeView .pt-lesson-section p','#homeView .pt-lesson-section li','#homeView .pt-reading-text',
+    '#homeView .civil-a-card p','#homeView .civil-a-list','#homeView .civil-theory p',
+    '#homeView .civil-theory li','#homeView .civil-law-card span'
+  ].join(',');
 
   function clamp(value){
     value=Math.round(Number(value)/STEP)*STEP;
@@ -28,6 +41,18 @@
     if(output)output.textContent=value+'%';
   }
 
+  function forceReadingText(value){
+    var scale=value/100;
+    var large=(16*scale).toFixed(1)+'px';
+    var medium=(13*scale).toFixed(1)+'px';
+    document.querySelectorAll(LARGE_SELECTORS).forEach(function(element){
+      element.style.setProperty('font-size',large,'important');
+    });
+    document.querySelectorAll(MEDIUM_SELECTORS).forEach(function(element){
+      element.style.setProperty('font-size',medium,'important');
+    });
+  }
+
   function apply(value,persist){
     value=clamp(value);
     var scale=value/100;
@@ -35,6 +60,7 @@
     root.dataset.centralReadingFont=String(value);
     root.style.setProperty('--central-reading-font-large',(16*scale).toFixed(1)+'px');
     root.style.setProperty('--central-reading-font-medium',(13*scale).toFixed(1)+'px');
+    forceReadingText(value);
     if(persist!==false)save(value);
     refreshControl(value);
     return value;
@@ -63,10 +89,26 @@
     refreshControl(read());
   }
 
+  function watchReading(){
+    var home=document.getElementById('homeView');
+    if(!home||observer||typeof MutationObserver==='undefined')return;
+    observer=new MutationObserver(function(){
+      clearTimeout(refreshTimer);
+      refreshTimer=setTimeout(function(){forceReadingText(read())},30);
+    });
+    observer.observe(home,{childList:true,subtree:true});
+  }
+
+  function ready(){
+    injectControl();
+    forceReadingText(read());
+    watchReading();
+  }
+
   window.centralReadingFontSet=function(value){return apply(value,true)};
   window.centralReadingFontChange=change;
 
   apply(read(),false);
-  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',injectControl,{once:true});
-  else injectControl();
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',ready,{once:true});
+  else ready();
 })();
