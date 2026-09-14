@@ -1,18 +1,22 @@
-/* Central de Estudos — v6.6.119 performance 1
+/* Central de Estudos — v6.6.119 structural 1
    Offline não destrutivo: preserva a rota aberta e mantém uma cópia das ferramentas. */
-var CACHE='central-v66119-performance1';
+var CACHE='central-v66119-structural2';
 var BOOT='/central-v119.html?direct=4';
+var STRUCTURAL_MANIFEST='/central-structural-files-v66119.json?v=66119s2';
 var CORE=[
   BOOT,
   '/index.html',
+  STRUCTURAL_MANIFEST,
   '/manifest.webmanifest',
   '/central-lazy-theory-v66119.js?v=66119p1',
+  '/central-health-entry-v66119.js?v=66119s2',
   '/tools/anki.html',
   '/tools/decorando.html',
   '/tools/vade.html',
   '/tools/rlm.html',
   '/tools/cronograma.html',
-  '/tools/progresso.html'
+  '/tools/progresso.html',
+  '/tools/diagnostico.html'
 ];
 
 function cacheResponse(cache,request,response){
@@ -23,11 +27,16 @@ function cacheResponse(cache,request,response){
 self.addEventListener('install',function(event){
   event.waitUntil(
     caches.open(CACHE).then(function(cache){
-      return Promise.all(CORE.map(function(url){
-        return fetch(url,{cache:'no-store'}).then(function(response){
-          if(response&&response.ok)return cache.put(url,response.clone());
-        }).catch(function(){return null});
-      }));
+      return fetch(STRUCTURAL_MANIFEST,{cache:'no-store'}).then(function(response){
+        if(!response||!response.ok)return [];
+        return response.clone().json().then(function(data){return Array.isArray(data.files)?data.files:[]});
+      }).catch(function(){return []}).then(function(extra){
+        return Promise.all(CORE.concat(extra).map(function(url){
+          return fetch(url,{cache:'no-store'}).then(function(response){
+            if(response&&response.ok)return cache.put(url,response.clone());
+          }).catch(function(){return null});
+        }));
+      });
     }).then(function(){return self.skipWaiting()})
   );
 });
@@ -82,7 +91,7 @@ self.addEventListener('fetch',function(event){
     return;
   }
 
-  var versioned=/\?v=/.test(url.search)||/central-minimal|central-lazy-theory|civil-theory|civil-decorando|central-civil-progress|central-progress-entry|central-updater|central-version|sync-client/.test(url.pathname);
+  var versioned=/\?v=/.test(url.search)||/central-core|central-minimal|central-lazy-theory|central-health-entry|civil-theory|civil-decorando|central-civil-progress|central-progress-entry|central-updater|central-version|sync-client/.test(url.pathname);
   if(versioned){
     event.respondWith(
       caches.open(CACHE).then(function(cache){

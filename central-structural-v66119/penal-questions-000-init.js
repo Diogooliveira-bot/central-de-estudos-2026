@@ -1,0 +1,1 @@
+const PENAL_QUESTIONS=[];
