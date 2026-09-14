@@ -1,6 +1,6 @@
-/* Central de Estudos — v6.6.119 structural 2
+/* Central de Estudos — v6.6.121 CPC M1 apostila
    Offline não destrutivo: preserva a rota aberta e mantém uma cópia das ferramentas. */
-var CACHE='central-v66119-structural2';
+var CACHE='central-v66121-cpc-m1-apostila';
 var BOOT='/central-v119.html?direct=4';
 var STRUCTURAL_MANIFEST='/central-structural-files-v66119.json?v=66119s2';
 var CORE=[
@@ -9,7 +9,7 @@ var CORE=[
   STRUCTURAL_MANIFEST,
   '/manifest.webmanifest',
   '/central-lazy-theory-v66119.js?v=66119p2',
-  '/cpc-m1-ui-v66120.js?v=66120a1',
+  '/cpc-m1-apostila-v66121.js?v=66121a1',
   '/central-health-entry-v66119.js?v=66119s2',
   '/tools/anki.html',
   '/tools/decorando.html',
