@@ -1,15 +1,15 @@
 /* Central de Estudos — v6.6.119 structural 1
    Offline não destrutivo: preserva a rota aberta e mantém uma cópia das ferramentas. */
-var CACHE='central-v66119-structural1';
+var CACHE='central-v66119-structural2';
 var BOOT='/central-v119.html?direct=4';
-var STRUCTURAL_MANIFEST='/central-structural-files-v66119.json?v=66119s1';
+var STRUCTURAL_MANIFEST='/central-structural-files-v66119.json?v=66119s2';
 var CORE=[
   BOOT,
   '/index.html',
   STRUCTURAL_MANIFEST,
   '/manifest.webmanifest',
   '/central-lazy-theory-v66119.js?v=66119p1',
-  '/central-health-entry-v66119.js?v=66119s1',
+  '/central-health-entry-v66119.js?v=66119s2',
   '/tools/anki.html',
   '/tools/decorando.html',
   '/tools/vade.html',
