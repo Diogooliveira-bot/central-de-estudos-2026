@@ -42,7 +42,9 @@ function insertIntro(el){
  if(!body||body.querySelector(':scope > .cpc-apostila-cover'))return;
  var cover=document.createElement('header');
  cover.className='cpc-apostila-cover';
- cover.innerHTML='<div class="cpc-apostila-cover-top"><span class="cpc-apostila-edition">APOSTILA DIGITAL</span><span class="cpc-apostila-code">CPC · MÓDULO 01</span></div><div class="cpc-apostila-rule"></div><p class="cpc-apostila-area">Direito Processual Civil</p><h2>Normas fundamentais, fontes, aplicação e direito intertemporal</h2><p class="cpc-apostila-basis">CPC, arts. 1º a 15 · Constituição Federal · LINDB</p><div class="cpc-apostila-cover-foot"><span><b>3</b> capítulos de estudo</span><span><b>6</b> tópicos essenciais</span><span><b>4</b> blocos de lei seca</span></div>';
+ var topics=el.querySelectorAll('.cf-theory').length||6;
+ var law=el.querySelectorAll('.cpc-law-card').length||4;
+ cover.innerHTML='<div class="cpc-apostila-cover-top"><span class="cpc-apostila-edition">APOSTILA DIGITAL</span><span class="cpc-apostila-code">CPC · MÓDULO 01</span></div><div class="cpc-apostila-rule"></div><p class="cpc-apostila-area">Direito Processual Civil</p><h2>Normas fundamentais, fontes, aplicação e direito intertemporal</h2><p class="cpc-apostila-basis">CPC, arts. 1º a 15 · Constituição Federal · LINDB</p><div class="cpc-apostila-cover-foot"><span><b>3</b> capítulos de estudo</span><span><b>'+topics+'</b> tópicos essenciais</span><span><b>'+law+'</b> blocos de lei seca</span></div>';
  var bar=body.querySelector(':scope > .cf-module-bar');
  if(bar)bar.insertAdjacentElement('afterend',cover);else body.insertBefore(cover,body.firstChild);
 }
@@ -123,6 +125,8 @@ html.central-minimal-v66119 .cpc-apostila-nav a b{margin-right:5px;color:var(--c
 html.central-minimal-v66119 .cpc-m1-apostila .cf-steps{max-width:920px!important;margin:0 auto!important;display:block!important}
 html.central-minimal-v66119 .cpc-m1-apostila .cpc-apostila-section{position:relative!important;margin:0 0 22px!important;padding:0!important;border:1px solid var(--cpc-rule)!important;border-radius:10px!important;background:var(--cpc-paper)!important;box-shadow:none!important;scroll-margin-top:82px}
 html.central-minimal-v66119 .cpc-m1-apostila .cpc-apostila-section>.cf-step-head{position:relative!important;padding:25px 30px 19px 88px!important;border-bottom:1px solid var(--cpc-rule)!important;background:#faf7ef!important;align-items:flex-start!important}
+html.central-minimal-v66119 .cpc-m1-apostila .cpc-apostila-section>.cf-step-head{display:grid!important;grid-template-columns:minmax(0,1fr)!important}
+html.central-minimal-v66119 .cpc-m1-apostila .cpc-apostila-section>.cf-step-head>.cf-step-copy{grid-column:1!important;width:auto!important;min-width:0!important}
 html.central-minimal-v66119 .cpc-m1-apostila .cpc-apostila-section>.cf-step-head:before{content:attr(data-apostila-number);position:absolute;left:28px;top:23px;color:var(--cpc-rust);font:600 25px/1 Georgia,"Times New Roman",serif}
 html.central-minimal-v66119 .cpc-m1-apostila .cpc-apostila-section>.cf-step-head:after{content:attr(data-apostila-eyebrow);position:absolute;left:88px;top:13px;color:var(--cpc-green);font:750 8px/1 Inter,system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase}
 html.central-minimal-v66119 .cpc-m1-apostila .cpc-apostila-section .cf-step-no{display:none!important}
