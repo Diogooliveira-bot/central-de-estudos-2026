@@ -1,0 +1,100 @@
+(function(){
+'use strict';
+if(window.__PT_M1_THEORY_V1__)return;window.__PT_M1_THEORY_V1__=true;
+
+var THEORY={
+ s1:{title:'Fundamentos de fonologia — teoria explicada',source:'PDF 1, p. 3–8',sections:[
+  ['1. Acento tônico x acento gráfico','Acento tônico pertence à fala: é a sílaba pronunciada com maior intensidade. Acento gráfico pertence à escrita e só aparece quando uma regra manda. Por isso, “saci” tem sílaba tônica em “ci”, mas não leva acento gráfico; “café” tem tonicidade e acento gráfico na última sílaba. O acento também pode distinguir palavras: sabia / sabiá / sábia; acumulo / acúmulo.'],
+  ['2. Monossílabo tônico x átono','O monossílabo tônico tem autonomia fonética e é pronunciado com intensidade própria: meu, pé, pó, dor. O átono se apoia em outra palavra e costuma aparecer em artigos, preposições, conjunções e pronomes: de, em, por, a, com. Essa diferença será importante quando chegarmos às regras de acentuação.'],
+  ['3. Letra x fonema','Fonema é a unidade sonora; letra é a representação gráfica. Eles não precisam aparecer na proporção 1:1. Em “machado”, o grupo CH representa um único som; em “guerra”, GU pode representar um único fonema. Por isso, uma palavra pode ter mais letras do que fonemas.'],
+  ['4. Dígrafo','Dígrafo é o encontro de duas letras que representam um único som. Entre os consonantais, o material destaca CH, LH, NH, RR, SS, SC, SÇ, XC, XS, QU e GU quando as duas letras não são pronunciadas separadamente. Atenção: QU/GU só são dígrafos quando o U não tem som próprio. Em “quente”, há dígrafo; em “consequência”, o U é pronunciado e a análise muda.'],
+  ['5. Dígrafo vocálico x encontro consonantal','Nos dígrafos vocálicos, M ou N apenas nasalizam a vogal: AM/AN, EM/EN, IM/IN, OM/ON, UM/UN. Já no encontro consonantal há dois sons consonantais: “pr” em processo, “br” em brado. A FCC pode misturar as duas ideias: em “processo”, SS é dígrafo e PR é encontro consonantal.']
+ ],remember:['Dígrafo = 2 letras, 1 som.','Encontro consonantal = 2 sons consonantais.','QU/GU dependem da pronúncia do U.','Acento tônico não é sinônimo de acento gráfico.']},
+ s2:{title:'Encontros vocálicos — teoria explicada',source:'PDF 1, p. 9–20',sections:[
+  ['1. Vogal e semivogal','Na sílaba, a vogal é o som vocálico de maior intensidade; a semivogal é mais fraca. Essa diferença permite reconhecer ditongo, tritongo e hiato.'],
+  ['2. Ditongo','Ditongo é o encontro de uma vogal e uma semivogal na mesma sílaba. É crescente quando vem primeiro a semivogal e depois a vogal, como em “história” e “primário”; é decrescente quando vem primeiro a vogal e depois a semivogal, como em “meu”, “paisagem” e “imóveis”. Os ditongos abertos ÉI, ÓI e ÉU são decrescentes.'],
+  ['3. Tritongo','Tritongo é semivogal + vogal + semivogal na mesma sílaba: Uruguai, iguais, saguão. Em formas como “águam” e “deságuem”, o M pode funcionar foneticamente como semivogal.'],
+  ['4. Hiato','Hiato é o encontro de duas vogais em sílabas diferentes: sa-ú-de, pa-í-ses, ve-í-cu-lo. Compare “pais” (uma sílaba, ditongo) com “pa-ís” (duas sílabas, hiato). Essa distinção aparece diretamente nas regras de acentuação.'],
+  ['5. Dígrafo nasal x ditongo nasal','No dígrafo nasal há um único som vocálico nasal: AM em “amplo”, EN em “entre”. No final de certas palavras, AM/EM/ENS podem representar dois sons e funcionar como ditongos nasais: “falam”, “batem”, “também”. O material destaca essa diferença porque ela altera a contagem de fonemas.'],
+  ['6. Falso hiato / glide','Em sequências como praia, meio e joia, pode ocorrer o chamado glide ou falso hiato: a semivogal do ditongo anterior se liga à vogal da sílaba seguinte. É conteúdo de baixa prioridade; foque primeiro em ditongo, tritongo e hiato.']
+ ],remember:['Ditongo = vogal + semivogal na mesma sílaba.','Hiato = duas vogais em sílabas diferentes.','Pais ≠ país.','AM/EM finais podem ser ditongos nasais.']},
+ s3:{title:'Regras gerais de acentuação — teoria explicada',source:'PDF 1, p. 21–35',sections:[
+  ['1. Primeiro classifique a tonicidade','Oxítona: última sílaba tônica. Paroxítona: penúltima. Proparoxítona: antepenúltima. A regra de acentuação depende, em geral, da combinação entre tonicidade e terminação. A banca costuma perguntar se duas palavras são acentuadas “pela mesma regra”.'],
+  ['2. Monossílabos tônicos','Levam acento os terminados em A(S), E(S), O(S) e os ditongos abertos ÉU(S), ÉI(S), ÓI(S): pá, pés, pó, céus, réis, dói.'],
+  ['3. Oxítonas','Levam acento as terminadas em A(S), E(S), O(S), EM, ENS e em ditongos abertos ÉU(S), ÉI(S), ÓI(S): sofá, café, cipó, também, parabéns, chapéu, papéis, herói.'],
+  ['4. Paroxítonas','A regra geral é residual: acentuam-se as paroxítonas que NÃO terminam em A(S), E(S), O(S), EM, ENS. Assim entram fácil, hífen, álbum, caráter, tórax, júri, lápis, vírus, bíceps, órfão. Além disso, há uma regra muito cobrada: paroxítonas terminadas em ditongo oral também são acentuadas, como história, série, água, imóveis, primário.'],
+  ['5. Novo Acordo: ditongos abertos','Os ditongos abertos EI e OI perderam o acento quando aparecem em paroxítonas: ideia, jiboia, heroico, assembleia. Mas permanecem acentuados nas oxítonas: papéis, herói, corrói.'],
+  ['6. Proparoxítonas','Todas são acentuadas: lâmpada, médico, matemática, específico. Não depende da terminação.'],
+  ['7. Hífen x hifens','“Hífen” leva acento por ser paroxítona terminada em N. “Hifens” não leva, porque termina em ENS, terminação que fica fora da regra das paroxítonas acentuadas.'],
+  ['8. Proparoxítona aparente','O PDF registra a análise alternativa de palavras como história, série e glória como “proparoxítonas aparentes”, mas orienta, para prova, priorizar a classificação tradicional: paroxítonas terminadas em ditongo crescente, salvo se a banca sinalizar expressamente outra análise.']
+ ],remember:['Oxítona: A/E/O/EM/ENS + ÉU/ÉI/ÓI.','Paroxítona: regra residual + ditongo oral.','Proparoxítona: todas.','Ideia/heroico sem acento; papéis/herói com acento.']},
+ s4:{title:'Regra do hiato — teoria explicada',source:'PDF 1, p. 55–61',sections:[
+  ['1. Regra principal','Acentuam-se I e U tônicos quando formam hiato com vogal ou ditongo anterior e ficam sozinhos na sílaba ou acompanhados de S: caí, faísca, Paraíba, egoísta, ruído, saúde, saúva, balaústre. A regra vale independentemente de a palavra ser oxítona ou paroxítona.'],
+  ['2. Quando não acentuar','Se I/U tônicos formarem sílaba com outra letra diferente de S, não se aplica essa regra: cair, juiz, ruim, Raul, ainda, saiu, contribuiu.'],
+  ['3. Exceção do NH','Hiato seguido de NH na sílaba seguinte não recebe acento: rainha, bainha, moinho. Essa exceção é destacada no PDF como muito cobrada.'],
+  ['4. Ditongo decrescente antes do I/U','Em paroxítonas, I/U tônicos depois de ditongo decrescente não recebem acento: feiura, baiuca, bocaiuva, Sauipe. Em oxítonas, recebem: Piauí, tuiuiú, teiú.'],
+  ['5. Ditongo crescente','Guaíba e Guaíra levam acento porque o I tônico vem após ditongo crescente.'],
+  ['6. EE/OO e letras repetidas','Não se acentuam os hiatos EEM e OO(S): creem, deem, leem, enjoo, voo. Também não se acentuam, pela regra do hiato, sequências como xiita e vadiice.']
+ ],remember:['I/U tônico + hiato + sozinho/com S = acento.','NH bloqueia.','Feiura não; Piauí sim.','Creem/voo sem acento.']},
+ s5:{title:'Acentos diferenciais — teoria explicada',source:'PDF 1, p. 62–65',sections:[
+  ['1. Pôde x pode','Pôde é passado: “ele pôde ontem”. Pode é presente: “ele pode agora”. O acento continua obrigatório para diferenciar as formas.'],
+  ['2. Pôr x por','Pôr é verbo; por é preposição. O acento diferencial de “pôr” permanece.'],
+  ['3. Tem x têm / vem x vêm','Tem e vem são singular; têm e vêm são plural: ele tem / eles têm; ela vem / elas vêm.'],
+  ['4. Derivados','Nos derivados, o singular costuma receber agudo e o plural circunflexo: mantém / mantêm; intervém / intervêm. A mesma lógica vale para outros derivados de ter e vir.'],
+  ['5. Acentos facultativos','O PDF registra fôrma/forma e dêmos/demos como casos facultativos em contextos específicos. São observações de menor prioridade.'],
+  ['6. Acentos que caíram','Não se usa mais acento diferencial em pares como pelo/pêlo, pela/péla, polo/pólo e pera/pêra. Em prova, essas grafias antigas são erro ortográfico.']
+ ],remember:['pôde ≠ pode','pôr ≠ por','tem/vem = singular; têm/vêm = plural','mantém/intervém = singular; mantêm/intervêm = plural']},
+ s6:{title:'Hífen — teoria explicada',source:'PDF 1, p. 81–115',sections:[
+  ['1. Regra geral com prefixos','O PDF propõe pensar que “os diferentes se atraem”: vogais diferentes se unem sem hífen (autoescola, infraestrutura); consoantes diferentes também (hipermercado, intermunicipal). Letras iguais tendem a ser separadas por hífen: micro-ondas, anti-inflamatório, hiper-resistente.'],
+  ['2. Prefixo terminado em vogal + R/S','Não há hífen e R/S dobra: antirracismo, contrarregra, minissaia, ultrassom, corresponsável. Essa é uma das regras mais cobradas.'],
+  ['3. Antes de H','Regra prática: antes de H, normalmente há hífen: anti-higiênico, super-homem, pré-história. Exceção relevante: formações com des- e in- em que o H desaparece, como desumano e inábil.'],
+  ['4. CO e RE','Com CO e RE, o material destaca grafias aglutinadas, inclusive diante de vogais: coautor, coabitação, coordenar, reescrever, reerguer, reaver.'],
+  ['5. BEM e MAL','BEM aparece, em regra, com hífen: bem-estar, bem-humorado, bem-vindo; o material destaca benfeito/benfeitor/benquerer como exceções. MAL usa hífen antes de vogal ou H: mal-educado, mal-humorado; com consoante, tende a aglutinar: malfeito.'],
+  ['6. Prefixos especiais','Pré-, pró- e pós- tônicos usam hífen: pré-escolar, pós-graduação. Recém-, além-, aquém-, sem-, ex- e vice- também: recém-nascido, ex-presidente, vice-presidente. Circum-/pan- usam hífen antes de vogal, M ou N. Sub-/sob- têm casos específicos com R/B.'],
+  ['7. Compostos e locuções','Compostos sem elemento de ligação podem usar hífen: guarda-chuva, força-tarefa, arco-íris. Locuções com elemento de ligação normalmente não: mão de obra, dia a dia, café com leite. Há exceções lexicalizadas, que devem ser consolidadas por questões.']
+ ],remember:['Vogal diferente: junta. Vogal igual: hífen.','R/S após vogal do prefixo: dobra, sem hífen.','Antes de H: hífen.','CO/RE: normalmente sem hífen.']},
+ s7:{title:'Emprego das letras — teoria explicada',source:'PDF 1, p. 116–137',sections:[
+  ['1. Estratégia principal','Ortografia é convenção e possui muitas exceções. O PDF recomenda não tentar decorar uma “lógica universal”; procure a palavra primitiva ou a família lexical e consolide por leitura e questões.'],
+  ['2. -ês/-esa x -ez/-eza','Nacionalidades, títulos e nomes próprios terminados em -ês/-esa usam S: português, norueguesa, marquês, duquesa. Substantivos abstratos derivados de adjetivos, indicando qualidade, usam -ez/-eza: lucidez, pobreza, nobreza, limpeza.'],
+  ['3. -isar x -izar','Se a palavra-base já contém S, o verbo tende a manter S: análise → analisar; pesquisa → pesquisar. Sem S na base, aparece -izar: economia → economizar; frágil → fragilizar. O PDF lista exceções como catequizar, sintetizar, hipnotizar e batizar.'],
+  ['4. Famílias com SS','Verbos em -ceder geram formas com -cess-: conceder → concessão; exceder → excesso. -primir → -press-: imprimir → impressão. -gredir → -gress-: agredir → agressão. -meter → -miss-/-mess-: comprometer → compromisso; prometer → promessa.'],
+  ['5. J, G, X e CH','Verbos em -jar mantêm J: viajar → viajem; encorajar → encorajem. O material chama atenção para terminações em -ágio/-égio/-ígio/-ógio/-úgio/-gem e para famílias que preservam CH. Também registra tendência de X em palavras iniciadas por mex-/enx- e em certos contextos após ditongo.'],
+  ['6. Palavras de prova','Fixar visualmente grafias como exceção, ascensão, subsídio, empecilho, privilégio, mexer, enxergar e ojeriza. O PDF usa justamente esse tipo de vocabulário para mostrar que exercício e memória visual são decisivos.']
+ ],remember:['Procure a palavra primitiva.','português/norueguesa x lucidez/pobreza','analisar x economizar','concessão, impressão, agressão, compromisso']},
+ s8:{title:'Siglas, maiúsculas/minúsculas e regras complementares',source:'PDF 1, p. 138–144',sections:[
+  ['1. Siglas','Até três letras, normalmente todas maiúsculas: ONU, USP, CPF. Com mais de três letras, permanecem em maiúsculas quando cada letra é pronunciada separadamente: UFRJ, ICMS, BNDES. Quando a sigla é pronunciada como palavra, o material exemplifica grafias como Detran, Sudene e Uerj. O plural recebe s minúsculo: PDFs, PUCs, UPAs.'],
+  ['2. Abreviações','Em regra, escreve-se parte da palavra seguida de ponto abreviativo e preservam-se os acentos: gram., gên., créd. Há exceções consagradas, como a. C., apto., cia., pág. ou p.'],
+  ['3. Maiúsculas','A maiúscula marca particularização/notoriedade: nomes próprios, instituições, logradouros, fatos históricos, datas oficiais, títulos de obras e áreas do conhecimento em determinados usos. Ex.: Senado Federal, Avenida Brasil, Idade Média.'],
+  ['4. Pontos cardeais','Quando designam grandes regiões, usam maiúscula: Sul, Nordeste, Oriente Médio. Quando indicam direção/localização, usam minúscula: norte, sul, zona leste.'],
+  ['5. Trema e GU/QU','O trema foi eliminado, salvo em nomes próprios estrangeiros e derivados: Müller, mülleriano. Formas como frequente, tranquilo, linguiça e cinquenta aparecem sem trema. O PDF também registra que argui/arguem não levam trema nem acento no U.']
+ ],remember:['PDFs/PUCs: s minúsculo.','Maiúscula = individualização/notoriedade.','Nordeste (região) x nordeste do estado (direção).','Trema só em nomes próprios estrangeiros e derivados.']},
+ s9:{title:'Expressões problemáticas — teoria explicada',source:'PDF 1, p. 145–165',sections:[
+  ['1. Mal x mau','Mal é o oposto de bem e costuma funcionar como advérbio: mal preparado. Também pode ser conjunção temporal (“mal cheguei”) ou substantivo (“um mal súbito”). Mau é o oposto de bom e funciona como adjetivo: mau candidato.'],
+  ['2. Há x a','Há, do verbo haver, indica existência ou tempo passado: há dias; há dez anos. A preposição a indica distância ou tempo futuro: a dois quilômetros; daqui a quinze minutos.'],
+  ['3. Os quatro porquês','Por que: interrogativas ou “pelo qual”. Porque: causa/explicação. Por quê: o mesmo valor de “por que” no fim do período ou antes de pausa. Porquê: substantivo, equivalente a motivo/razão, geralmente com determinante: “o porquê”.'],
+  ['4. Onde x aonde','Onde acompanha verbos que pedem EM: onde mora? Aonde acompanha verbos que pedem A: aonde vai?'],
+  ['5. A fim de x afim','A fim de indica finalidade: “a fim de estudar”. Afim significa semelhante/correlato: “matérias afins”.'],
+  ['6. Acerca / a cerca / há cerca','Acerca de = sobre. A cerca = artigo + substantivo ou distância aproximada com preposição. Há cerca de = tempo passado aproximado.'],
+  ['7. Tampouco / tão pouco; traz / trás','Tampouco = também não. Tão pouco = pequena quantidade/intensidade. Traz é forma do verbo trazer; trás indica posição/direção.'],
+  ['8. Cessão / sessão / seção','Cessão = ato de ceder. Sessão = reunião/período. Seção = divisão, setor ou parte.'],
+  ['9. Ao invés de / em vez de','Ao invés de expressa oposição/inversão; em vez de significa substituição e pode ser usado de modo mais amplo. O material recomenda “em vez de” quando houver dúvida.'],
+  ['10. De encontro a / ao encontro de','De encontro a = contra, choque, oposição. Ao encontro de = a favor, concordância, direção favorável.'],
+  ['11. Senão x se não','Se não mantém duas palavras independentes e pode equivaler a “caso não”. Senão pode significar “do contrário”, “exceto”, “a não ser”, “mas sim”. O PDF mostra também casos limítrofes em que a leitura pode ser dupla.'],
+  ['12. Vocabulário de atenção','Iminente = prestes a ocorrer; eminente = ilustre/elevado. Enxergar é com X. Demais pode significar “muito” ou “os restantes”; de mais faz oposição a “de menos”. Consertar = reparar; concertar = ajustar/combinar ou executar música. Coser = costurar; cozer = cozinhar.']
+ ],remember:['mal↔bem; mau↔bom','há = passado; a = futuro/distância','porquê = substantivo','de encontro = contra; ao encontro = a favor']},
+ s10:{title:'Teste de saída — como usar',source:'PDF 1, p. 166–176',sections:[
+  ['1. Não é nova teoria','As páginas finais reúnem questões comentadas. Resolva primeiro sem ler o comentário. Só depois confira a solução.'],
+  ['2. Transforme erro em diagnóstico','Para cada erro, registre o subtópico e a causa. Volte apenas ao trecho teórico correspondente em S1–S9. Não releia o PDF inteiro por rotina.'],
+  ['3. Critério de saída','A referência definida para o módulo é atingir pelo menos 80% no teste de saída, sem erro crítico repetido. Esse resultado não substitui as rodadas TEC; ele serve como verificação interna do PDF.']
+ ],remember:['Resolver antes de ver comentário.','Erro aponta para trecho específico da teoria.','Meta de saída: ≥80%, sem erro crítico repetido.']}
+};
+
+function css(){if(document.getElementById('pt-m1-theory-v1-style'))return;var e=document.createElement('style');e.id='pt-m1-theory-v1-style';e.textContent=`
+.ptm1-theory{margin:0 0 14px;border:1px solid var(--line);border-radius:10px;background:var(--soft);overflow:hidden}.ptm1-theory-head{padding:12px 13px;border-bottom:1px solid var(--line);background:var(--panel2)}.ptm1-theory-head b{display:block;font-size:13px}.ptm1-theory-head small{display:block;margin-top:3px;color:var(--muted);font-size:9px}.ptm1-theory-body{padding:13px;display:grid;gap:13px}.ptm1-lesson h4{margin:0 0 5px;font-size:12px;color:var(--text)}.ptm1-lesson p{margin:0;color:var(--text);font-size:11.5px;line-height:1.65;max-width:1050px}.ptm1-memory{border-left:3px solid var(--purple);background:var(--panel2);padding:10px 12px;border-radius:7px}.ptm1-memory b{font-size:10px}.ptm1-memory ul{margin:7px 0 0;padding-left:18px}.ptm1-memory li{font-size:10.5px;line-height:1.5;margin:4px 0}.ptm1-old-outline{margin:8px 0 0}.ptm1-old-outline summary{cursor:pointer;color:var(--muted);font-size:9px}.ptm1-old-outline ul{margin-top:7px}
+`;document.head.appendChild(e)}
+function esc(v){return String(v==null?'':v).replace(/[&<>\"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;',"'":'&#39;'}[c]})}
+function block(id){var t=THEORY[id];if(!t)return '';return `<article class="ptm1-theory"><div class="ptm1-theory-head"><b>${esc(t.title)}</b><small>Base teórica oficial: ${esc(t.source)}</small></div><div class="ptm1-theory-body">${t.sections.map(function(s){return `<section class="ptm1-lesson"><h4>${esc(s[0])}</h4><p>${esc(s[1])}</p></section>`}).join('')}<div class="ptm1-memory"><b>O que levar para a prova</b><ul>${t.remember.map(function(x){return `<li>${esc(x)}</li>`}).join('')}</ul></div></div></article>`}
+function enhance(html){css();var host=document.createElement('div');host.innerHTML=html;Object.keys(THEORY).forEach(function(id){var section=host.querySelector('[data-ptm1="'+id+'"]');if(!section)return;var body=section.querySelector('.ptm1-body');if(!body||body.querySelector('.ptm1-theory'))return;var oldList=body.querySelector('.ptm1-list');if(oldList){var details=document.createElement('details');details.className='ptm1-old-outline';details.innerHTML='<summary>Ver roteiro original da sessão</summary>';oldList.parentNode.insertBefore(details,oldList);details.appendChild(oldList)}body.insertAdjacentHTML('afterbegin',block(id))});return host.innerHTML}
+function install(){if(!window.PtM1V3||typeof window.PtM1V3.render!=='function')return setTimeout(install,60);var baseRender=window.PtM1V3.render;window.renderPortugueseMaster=function(){return enhance(baseRender())};try{if(typeof window.renderSubjects==='function')window.renderSubjects()}catch(e){console.warn('[PT M1 THEORY]',e)}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',install,{once:true});else install();
+})();
