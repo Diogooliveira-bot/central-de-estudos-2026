@@ -77,12 +77,7 @@
     "/central-structural-v66119/cpc-questions-011.js?v=66119s1",
     "/central-structural-v66119/cpc-questions-012.js?v=66119s1",
     "/central-structural-v66119/cpc-questions-013.js?v=66119s1",
-    "/central-structural-v66119/runtime-001.js?v=66119s1",
-    "/central-structural-v66119/runtime-002.js?v=66119s1",
-    "/central-structural-v66119/runtime-003.js?v=66119s1",
-    "/central-structural-v66119/runtime-004.js?v=66119s1",
-    "/central-structural-v66119/runtime-005.js?v=66119s1",
-    "/central-structural-v66119/runtime-006.js?v=66119s1"
+    "/central-structural-v66119/runtime.js?v=66119s1"
   ],
   "integrity": {
     "/central-structural-v66119/cf-weeks-000-init.js": "c63eeb715c09137daddfb1025bcc85eb2d7c88f7fd6cb22399b202840a7f601e",
@@ -158,11 +153,6 @@
     "/central-structural-v66119/cpc-questions-011.js": "a1091c76f0583cbba1565c23feb0a72b3fa23800a6835e696965c89ffa2893dc",
     "/central-structural-v66119/cpc-questions-012.js": "183ae28f42b6ab1ffe84eda4a3ba1cbba96403ff74aadb8826a92f67af333255",
     "/central-structural-v66119/cpc-questions-013.js": "1fdaf97d0a1985e658166bd1cd939916d02754f65b5d8fca769b03c4348e6df2",
-    "/central-structural-v66119/runtime-001.js": "c371ed0f2a388b44e8e32e1f1c6dda88dd6f28ba33ead97534d462a39a367967",
-    "/central-structural-v66119/runtime-002.js": "985285cacdcedc0b03ce318b5ef82df5097aa84430e75edc8e77d360a2d6252b",
-    "/central-structural-v66119/runtime-003.js": "b191994bb2c968c1783dfbabdcf30af2444a5895bb81449644f5d055f9899321",
-    "/central-structural-v66119/runtime-004.js": "cb6cd0441842ad95d245bb870a1536c84c6e93ec2ac8e536f4660346e04a4ca3",
-    "/central-structural-v66119/runtime-005.js": "e00e976e25c32e47ce62cab214a2e6b049262ad5a80ce485771ce07fcb6c5437",
-    "/central-structural-v66119/runtime-006.js": "af68c89ade6c289584a8025c31891da4d9d6c6a565b2eaf0ce858b4e52da48e1"
+    "/central-structural-v66119/runtime.js": "18d66de56f8b95934745b52bbeb3eeaeb9932a029c691d4d1b6bcfb677be9715"
   }
 }
