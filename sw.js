@@ -1,6 +1,6 @@
-/* Central de Estudos — v6.6.124 leitor focado
+/* Central de Estudos — v6.6.125 visual enxuto
    Offline não destrutivo: preserva a rota aberta e mantém uma cópia das ferramentas. */
-var CACHE='central-v66124-leitor-focado';
+var CACHE='central-v66125-visual-enxuto';
 var BOOT='/central-v119.html?direct=4';
 var STRUCTURAL_MANIFEST='/central-structural-files-v66119.json?v=66119s2';
 var CORE=[
@@ -11,6 +11,8 @@ var CORE=[
   '/central-lazy-theory-v66119.js?v=66119p2',
   '/cpc-m1-apostila-v66121.js?v=66122a1',
   '/central-reading-fullscreen-v66123.js?v=66124a1',
+  '/central-cleanup-v66125.js?v=66125a1',
+  '/central-cleanup-v66125.css?v=66125a1',
   '/central-health-entry-v66119.js?v=66119s2',
   '/tools/anki.html',
   '/tools/decorando.html',
