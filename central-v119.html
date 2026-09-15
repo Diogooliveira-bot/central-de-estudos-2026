@@ -24,21 +24,15 @@
   </main>
   <script>
   (async function(){
-    var BUILD='66133-portugues-m1-clean-slate';
+    var BUILD='66134-portugues-m2-preview';
     var scripts=['civil-decorando-index-v1.js?v=1','central-civil-progress-v2.js?v=2'];
-
-    function tag(src){
-      return '<scr'+'ipt defer src="/'+src+'"></scr'+'ipt>';
-    }
-
+    function tag(src){return '<scr'+'ipt defer src="/'+src+'"></scr'+'ipt>';}
     try{
       var response=await fetch('/index.html?central_source='+BUILD,{cache:'no-store'});
       if(!response.ok)throw new Error('Falha HTTP '+response.status);
       var html=await response.text();
-
       html=html.replace('v6.6.75 • Plano de 6 meses','v6.6.119 • Plano de 6 meses');
       html=html.replace('<span class="central-version-v41">v6.6.74</span>','<span class="central-version-v41">v6.6.119</span>');
-
       html=html.replace(/<link\b[^>]*\bhref=["'][^"']*central-minimal(?:-theme)?-v\d+\.css[^"']*["'][^>]*>/gi,'');
       html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*central-minimal(?:-ui)?-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');
       html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*(?:central-updater|central-version)-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');
@@ -48,7 +42,6 @@
       html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*central-civil-progress-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');
       html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*civil-theory(?:-company)?(?:-module\d+(?:-posse)?-(?:part\d+|runtime)|-module\d+|)-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');
       html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*civil-theory-audit-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');
-
       var tags=scripts.map(tag).join('');
       tags+=tag('central-lazy-theory-v66119.js?v=66119p2');
       tags+=tag('cpc-m1-apostila-v66121.js?v=66122a1');
@@ -68,20 +61,15 @@
       tags+=tag('portugues-m1-no-anki-v1.js?v=20260914a');
       tags+=tag('portugues-m1-apostila-v2.js?v=20260914c');
       tags+=tag('portugues-m1-clean-slate-v1.js?v=20260915a');
-
+      tags+=tag('portugues-m2-v1.js?v=20260915a');
       html=html.replace('</head>','<meta name="central-source-version" content="6.6.119"><link rel="stylesheet" href="/central-minimal-theme-v66119.css?v=66119h4"><link rel="stylesheet" href="/central-cleanup-v66125.css?v=66125a1"><link rel="stylesheet" href="/central-reading-font-v66126.css?v=66129a1"></head>');
       html=html.replace('</body>',tags+'</body>');
-
       history.replaceState(null,'','/');
-      document.open();
-      document.write(html);
-      document.close();
+      document.open();document.write(html);document.close();
     }catch(error){
       document.getElementById('status').textContent='Não foi possível abrir a Central. Verifique a conexão e tente novamente.';
       document.querySelector('.spinner').style.display='none';
-      var retry=document.getElementById('retry');
-      retry.style.display='block';
-      retry.onclick=function(){location.reload()};
+      var retry=document.getElementById('retry');retry.style.display='block';retry.onclick=function(){location.reload()};
       console.error('[Central v6.6.119]',error);
     }
   })();
