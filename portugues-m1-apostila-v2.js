@@ -20,7 +20,7 @@
     s10:{goal:'Usar as questões finais do PDF como teste de saída e diagnóstico, não como nova teoria.',prove:['Resolver antes de abrir o comentário.','Registrar o subtópico e a causa de cada erro real.','Voltar somente ao trecho teórico ligado ao erro.'],tip:'A meta do teste de saída é ≥80% sem erro crítico repetido; o domínio final continua dependendo do TEC.'}
   };
 
-  function esc(v){return String(v==null?'':v).replace(/[&<>\"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;',"'":'&#39;'}[c]})}
+  function esc(v){return String(v==null?'':v).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
 
   function injectStyle(){
     if(document.getElementById('pt-m1-apostila-v2-style'))return;
