@@ -1,7 +1,7 @@
 /* Central de Estudos — trava de navegação na v6.6.119
    Offline não destrutivo: index.html permanece apenas como fonte interna da v119. */
-var CACHE='central-v66129-ptm1-sem-anki';
-var BOOT='/central-v119.html?direct=4';
+var CACHE='central-v66131-ptm1-apostila-completa';
+var BOOT='/central-v119.html?direct=5';
 var STRUCTURAL_MANIFEST='/central-structural-files-v66119.json?v=66119s2';
 var CORE=[
   BOOT,
@@ -13,12 +13,15 @@ var CORE=[
   '/central-reading-fullscreen-v66123.js?v=66124a1',
   '/central-cleanup-v66125.js?v=66125a1',
   '/central-cleanup-v66125.css?v=66125a1',
-  '/central-reading-font-v66126.js?v=66127a1',
-  '/central-reading-font-v66126.css?v=66127a1',
+  '/central-reading-font-v66126.js?v=66129a1',
+  '/central-reading-font-v66126.css?v=66129a1',
   '/central-health-entry-v66119.js?v=66119s2',
   '/portugues-m1-v3.js?v=20260914a',
   '/portugues-m1-theory-v1.js?v=20260914a',
+  '/portugues-m1-theory-v2.js?v=20260914a',
+  '/portugues-m1-theory-v3.js?v=20260914a',
   '/portugues-m1-no-anki-v1.js?v=20260914a',
+  '/portugues-m1-apostila-v2.js?v=20260914c',
   '/tools/anki.html',
   '/tools/decorando.html',
   '/tools/vade.html',
