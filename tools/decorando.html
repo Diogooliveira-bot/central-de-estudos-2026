@@ -797,7 +797,12 @@ function answerScroll(id,value){
   ui.scrollChoices[id]=value;record(a,value);render()
 }
 function move(dir){
-  const v=visible(),n=ui.articleIndex+dir;if(n<0||n>=v.length)return;
+  const natural=statusFiltered(selectedActive());
+  const currentPinned=ui.choice!==null&&ui.focusArticleId&&!natural.some(a=>a.id===ui.focusArticleId);
+  const n=currentPinned
+    ? ui.articleIndex+(dir>0?0:-1)
+    : ui.articleIndex+dir;
+  if(n<0||n>=natural.length)return;
   ui.articleIndex=n;ui.choice=null;ui.focusArticleId=null;ui.historyOpen=false;ui.commentOpen=false;render();window.scrollTo({top:0,behavior:"smooth"})
 }
 function updateNote(id,val){saved.notes[id]=val;save()}
