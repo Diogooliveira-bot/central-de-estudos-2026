@@ -1,6 +1,6 @@
 /* Central de Estudos — trava de navegação na v6.6.119
    Offline não destrutivo: index.html permanece apenas como fonte interna da v119. */
-var CACHE='central-v66132-ptm1-force-refresh';
+var CACHE='central-v66133-portugues-m1-clean-slate';
 var BOOT='/central-v119.html?direct=6';
 var STRUCTURAL_MANIFEST='/central-structural-files-v66119.json?v=66119s2';
 var CORE=[
@@ -22,6 +22,7 @@ var CORE=[
   '/portugues-m1-theory-v3.js?v=20260914a',
   '/portugues-m1-no-anki-v1.js?v=20260914a',
   '/portugues-m1-apostila-v2.js?v=20260914c',
+  '/portugues-m1-clean-slate-v1.js?v=20260915a',
   '/tools/anki.html',
   '/tools/decorando.html',
   '/tools/vade.html',
