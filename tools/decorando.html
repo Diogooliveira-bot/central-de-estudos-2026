@@ -715,7 +715,17 @@ function statusFiltered(list){
   if(ui.statusFilter==="unseen") return list.filter(a=>!hasAttempts(a.id));
   return list;
 }
-function visible(){return statusFiltered(selectedActive())}
+function visible(){
+  const list=statusFiltered(selectedActive());
+  // No modo Foco, preserve a questão recém-respondida mesmo quando o filtro
+  // (ex.: "nunca vista" ou "errei") deixaria de incluí-la após o registro.
+  // Assim o feedback continua ligado à mesma questão até o usuário navegar.
+  if(ui.choice!==null&&ui.focusArticleId&&!list.some(a=>a.id===ui.focusArticleId)){
+    const pinned=selectedActive().find(a=>a.id===ui.focusArticleId);
+    if(pinned)list.splice(Math.min(ui.articleIndex,list.length),0,pinned)
+  }
+  return list
+}
 function statusCounts(){
   const list=selectedActive();
   return {
@@ -777,7 +787,9 @@ function record(article,value){
 }
 function answerFocus(value){
   const a=visible()[ui.articleIndex];if(!a||ui.choice!==null)return;
-  ui.choice=value;record(a,value);render()
+  // Fix: fixe o ID antes de registrar. O registro altera os filtros por status
+  // e, sem este pin, a mesma posição pode passar a apontar para a questão seguinte.
+  ui.focusArticleId=a.id;ui.choice=value;record(a,value);render()
 }
 function answerScroll(id,value){
   if(Object.prototype.hasOwnProperty.call(ui.scrollChoices,id))return;
@@ -786,7 +798,7 @@ function answerScroll(id,value){
 }
 function move(dir){
   const v=visible(),n=ui.articleIndex+dir;if(n<0||n>=v.length)return;
-  ui.articleIndex=n;ui.choice=null;ui.historyOpen=false;ui.commentOpen=false;render();window.scrollTo({top:0,behavior:"smooth"})
+  ui.articleIndex=n;ui.choice=null;ui.focusArticleId=null;ui.historyOpen=false;ui.commentOpen=false;render();window.scrollTo({top:0,behavior:"smooth"})
 }
 function updateNote(id,val){saved.notes[id]=val;save()}
 function updateImportance(id,val){saved.importance[id]=val;save();render()}
