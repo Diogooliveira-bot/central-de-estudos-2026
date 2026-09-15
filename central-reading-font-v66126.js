@@ -4,7 +4,7 @@
 
   var STORAGE_KEY='central-v6:reading-font-size';
   var MIN=85;
-  var MAX=135;
+  var MAX=150;
   var STEP=5;
   var DEFAULT=100;
   var observer=null;
@@ -80,7 +80,7 @@
     panel.innerHTML='<span class="central-setting-label">Fonte da leitura</span>'+
       '<div class="central-reading-font-control">'+
        '<button type="button" class="central-reading-font-button" onclick="centralReadingFontChange(-5)" aria-label="Diminuir fonte">A−</button>'+
-       '<input id="centralReadingFontRange" class="central-reading-font-range" type="range" min="85" max="135" step="5" aria-label="Tamanho da fonte da leitura" oninput="centralReadingFontSet(this.value)">'+
+       '<input id="centralReadingFontRange" class="central-reading-font-range" type="range" min="85" max="150" step="5" aria-label="Tamanho da fonte da leitura" oninput="centralReadingFontSet(this.value)">'+
        '<button type="button" class="central-reading-font-button" onclick="centralReadingFontChange(5)" aria-label="Aumentar fonte">A+</button>'+
       '</div>'+
       '<div class="central-reading-font-meta"><output id="centralReadingFontValue" class="central-reading-font-value">100%</output><button type="button" class="central-reading-font-reset" onclick="centralReadingFontSet(100)">Padrão</button></div>';
