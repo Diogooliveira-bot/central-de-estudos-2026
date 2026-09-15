@@ -13,8 +13,17 @@ window.renderPortugueseMaster=function(){
     '<a href="'+TEC_URL+'" target="_blank" rel="noopener">Abrir TEC PORT 05 · 177 questões ↗</a>'
   );
 };
+function loadM3(){
+  if(window.__PORTUGUES_M3_V1__||document.getElementById('portugues-m3-v1-script'))return;
+  var s=document.createElement('script');
+  s.id='portugues-m3-v1-script';
+  s.src='portugues-m3-v1.js';
+  s.async=false;
+  document.head.appendChild(s);
+}
 try{
   if(typeof window.renderAll==='function')window.renderAll();
   else if(typeof window.renderSubjects==='function')window.renderSubjects();
 }catch(e){console.warn('[PT M2 TEC LINK]',e)}
+loadM3();
 })();
