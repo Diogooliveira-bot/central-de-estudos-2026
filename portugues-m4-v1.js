@@ -26,5 +26,7 @@ function tabs(){
 }
 window.PtM4V1={switchTab:function(v){localStorage.setItem(TAB_KEY,v);try{if(typeof window.renderAll==='function')window.renderAll();else if(typeof window.renderSubjects==='function')window.renderSubjects()}catch(e){console.warn('[PT M4]',e)}},resize:resize};
 window.renderPortugueseMaster=function(){return tabs.apply(this,arguments)};
+function loadM5(){if(window.__PORTUGUES_M5_V1__||document.getElementById('portugues-m5-v1-script'))return;var s=document.createElement('script');s.id='portugues-m5-v1-script';s.src='portugues-m5-v1.js';s.async=false;document.head.appendChild(s)}
 try{if(typeof window.renderAll==='function')window.renderAll();else if(typeof window.renderSubjects==='function')window.renderSubjects()}catch(e){console.warn('[PT M4]',e)}
+loadM5();
 })();
