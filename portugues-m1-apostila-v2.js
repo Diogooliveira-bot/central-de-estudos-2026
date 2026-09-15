@@ -20,7 +20,7 @@
     s10:{goal:'Usar as questões finais do PDF como teste de saída e diagnóstico, não como nova teoria.',prove:['Resolver antes de abrir o comentário.','Registrar o subtópico e a causa de cada erro real.','Voltar somente ao trecho teórico ligado ao erro.'],tip:'A meta do teste de saída é ≥80% sem erro crítico repetido; o domínio final continua dependendo do TEC.'}
   };
 
-  function esc(v){return String(v==null?'':v).replace(/[&<>\"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;',\"'\":'&#39;'}[c]})}
+  function esc(v){return String(v==null?'':v).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
 
   function injectStyle(){
     if(document.getElementById('pt-m1-apostila-v2-style'))return;
@@ -93,13 +93,13 @@
   }
 
   function routeHtml(){
-    return '<section class=\"ptm1-route\" aria-label=\"Rota do módulo\">'+
-      '<div class=\"ptm1-route-title\">Rota do M1 — Ortografia e Acentuação</div>'+
-      '<div class=\"ptm1-route-grid\">'+
-      '<div class=\"ptm1-route-step\"><b>1 · Base</b><span>S1–S3: fonologia, encontros vocálicos e regras gerais.</span></div>'+
-      '<div class=\"ptm1-route-step\"><b>2 · Diagnóstico</b><span>TEC R1: 20 questões sem consulta para localizar lacunas.</span></div>'+
-      '<div class=\"ptm1-route-step\"><b>3 · Consolidação</b><span>S4–S9 + TEC R2: exceções, hífen, grafia e expressões.</span></div>'+
-      '<div class=\"ptm1-route-step\"><b>4 · Saída</b><span>S10 + TEC final + caderno de erros + revisões 24h/7d/30d.</span></div>'+
+    return '<section class="ptm1-route" aria-label="Rota do módulo">'+
+      '<div class="ptm1-route-title">Rota do M1 — Ortografia e Acentuação</div>'+
+      '<div class="ptm1-route-grid">'+
+      '<div class="ptm1-route-step"><b>1 · Base</b><span>S1–S3: fonologia, encontros vocálicos e regras gerais.</span></div>'+
+      '<div class="ptm1-route-step"><b>2 · Diagnóstico</b><span>TEC R1: 20 questões sem consulta para localizar lacunas.</span></div>'+
+      '<div class="ptm1-route-step"><b>3 · Consolidação</b><span>S4–S9 + TEC R2: exceções, hífen, grafia e expressões.</span></div>'+
+      '<div class="ptm1-route-step"><b>4 · Saída</b><span>S10 + TEC final + caderno de erros + revisões 24h/7d/30d.</span></div>'+
       '</div></section>';
   }
 
@@ -111,7 +111,7 @@
     var theory=body.querySelector('.ptm1-theory');
     var teacher=document.createElement('section');
     teacher.className='ptm1-teacher';
-    teacher.innerHTML='<div class=\"ptm1-teacher-label\">Objetivo da sessão</div><h4>'+esc(c.goal)+'</h4><div class=\"ptm1-teacher-tip\"><div class=\"ptm1-teacher-label\">Olhar de prova</div><p>'+esc(c.tip)+'</p></div>';
+    teacher.innerHTML='<div class="ptm1-teacher-label">Objetivo da sessão</div><h4>'+esc(c.goal)+'</h4><div class="ptm1-teacher-tip"><div class="ptm1-teacher-label">Olhar de prova</div><p>'+esc(c.tip)+'</p></div>';
     if(theory)theory.insertAdjacentElement('afterend',teacher);else body.insertBefore(teacher,body.firstChild);
 
     var exit=document.createElement('section');
@@ -135,7 +135,7 @@
       if(warning)warning.insertAdjacentHTML('afterend',routeHtml());
       else root.insertAdjacentHTML('afterbegin',routeHtml());
     }
-    Object.keys(CRITERIA).forEach(function(id){var s=root.querySelector('[data-ptm1=\"'+id+'\"]');if(s)decorateSession(s,id)});
+    Object.keys(CRITERIA).forEach(function(id){var s=root.querySelector('[data-ptm1="'+id+'"]');if(s)decorateSession(s,id)});
     return host.innerHTML;
   }
 

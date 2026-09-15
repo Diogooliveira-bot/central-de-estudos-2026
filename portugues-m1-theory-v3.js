@@ -105,14 +105,14 @@ var LESSONS={
  }
 };
 
-function esc(v){return String(v==null?'':v).replace(/[&<>\"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;',\"'\":'&#39;'}[c]})}
+function esc(v){return String(v==null?'':v).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
 function partHtml(p){
- if(p.kind==='compare')return '<section class=\"ptm1-compare\"><div class=\"ptm1-compare-card\"><b>'+esc(p.leftTitle)+'</b><p>'+p.left+'</p></div><div class=\"ptm1-compare-card\"><b>'+esc(p.rightTitle)+'</b><p>'+p.right+'</p></div></section>';
- if(p.kind==='rule'||p.kind==='trap'||p.kind==='example')return '<section class=\"ptm1-box ptm1-'+p.kind+'\"><h4>'+esc(p.title)+'</h4>'+p.html+'</section>';
- return '<section class=\"ptm1-lesson\"><h4>'+esc(p.title)+'</h4>'+p.html+'</section>';
+ if(p.kind==='compare')return '<section class="ptm1-compare"><div class="ptm1-compare-card"><b>'+esc(p.leftTitle)+'</b><p>'+p.left+'</p></div><div class="ptm1-compare-card"><b>'+esc(p.rightTitle)+'</b><p>'+p.right+'</p></div></section>';
+ if(p.kind==='rule'||p.kind==='trap'||p.kind==='example')return '<section class="ptm1-box ptm1-'+p.kind+'"><h4>'+esc(p.title)+'</h4>'+p.html+'</section>';
+ return '<section class="ptm1-lesson"><h4>'+esc(p.title)+'</h4>'+p.html+'</section>';
 }
-function block(id){var t=LESSONS[id];if(!t)return '';return '<article class=\"ptm1-theory ptm1-theory-v2\"><div class=\"ptm1-theory-head\"><b>'+esc(t.title)+'</b><small>Base teórica oficial: '+esc(t.source)+'</small></div><div class=\"ptm1-theory-body\"><p class=\"ptm1-theory-lead\">'+esc(t.lead)+'</p>'+t.parts.map(partHtml).join('')+'<div class=\"ptm1-memory\"><b>O que levar para a prova</b><ul>'+t.remember.map(function(x){return '<li>'+esc(x)+'</li>'}).join('')+'</ul></div></div></article>'}
-function enhance(html){var host=document.createElement('div');host.innerHTML=html;Object.keys(LESSONS).forEach(function(id){var section=host.querySelector('[data-ptm1=\"'+id+'\"]');if(!section)return;var old=section.querySelector('.ptm1-theory');if(old)old.outerHTML=block(id)});return host.innerHTML}
+function block(id){var t=LESSONS[id];if(!t)return '';return '<article class="ptm1-theory ptm1-theory-v2"><div class="ptm1-theory-head"><b>'+esc(t.title)+'</b><small>Base teórica oficial: '+esc(t.source)+'</small></div><div class="ptm1-theory-body"><p class="ptm1-theory-lead">'+esc(t.lead)+'</p>'+t.parts.map(partHtml).join('')+'<div class="ptm1-memory"><b>O que levar para a prova</b><ul>'+t.remember.map(function(x){return '<li>'+esc(x)+'</li>'}).join('')+'</ul></div></div></article>'}
+function enhance(html){var host=document.createElement('div');host.innerHTML=html;Object.keys(LESSONS).forEach(function(id){var section=host.querySelector('[data-ptm1="'+id+'"]');if(!section)return;var old=section.querySelector('.ptm1-theory');if(old)old.outerHTML=block(id)});return host.innerHTML}
 function install(){if(typeof window.renderPortugueseMaster!=='function')return setTimeout(install,70);if(window.renderPortugueseMaster.__theoryV3)return;var base=window.renderPortugueseMaster;var wrapped=function(){return enhance(base())};wrapped.__theoryV3=true;window.renderPortugueseMaster=wrapped;try{if(typeof window.renderSubjects==='function')window.renderSubjects()}catch(e){console.warn('[PT M1 THEORY V3]',e)}}
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',install,{once:true});else install();
 })();
