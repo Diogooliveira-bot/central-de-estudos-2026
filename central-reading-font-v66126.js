@@ -4,7 +4,7 @@
 
   var STORAGE_KEY='central-v6:reading-font-size';
   var MIN=85;
-  var MAX=135;
+  var MAX=150;
   var STEP=5;
   var DEFAULT=100;
   var observer=null;
@@ -13,12 +13,14 @@
     '#homeView .ct-rich .ct-lead','#homeView .ct-section p','#homeView .ct-section li',
     '#homeView .ct-callout p','#homeView .ct-callout li','#homeView .cf-reading strong',
     '#homeView .cf-reading li','#homeView .cf-theory-text','#homeView .cf-advanced div',
-    '#homeView .cf-notes','#homeView .cpc-law-card p','#homeView .cpc-law-card li'
+    '#homeView .cf-notes','#homeView .cpc-law-card p','#homeView .cpc-law-card li',
+    '#homeView .ptm1-lesson p'
   ].join(',');
   var MEDIUM_SELECTORS=[
     '#homeView .pt-lesson-section p','#homeView .pt-lesson-section li','#homeView .pt-reading-text',
     '#homeView .civil-a-card p','#homeView .civil-a-list','#homeView .civil-theory p',
-    '#homeView .civil-theory li','#homeView .civil-law-card span'
+    '#homeView .civil-theory li','#homeView .civil-law-card span',
+    '#homeView .ptm1-memory li','#homeView .ptm1-teacher p','#homeView .ptm1-exit li'
   ].join(',');
 
   function clamp(value){
@@ -37,7 +39,7 @@
   function refreshControl(value){
     var range=document.getElementById('centralReadingFontRange');
     var output=document.getElementById('centralReadingFontValue');
-    if(range)range.value=String(value);
+    if(range){range.min=String(MIN);range.max=String(MAX);range.step=String(STEP);range.value=String(value)}
     if(output)output.textContent=value+'%';
   }
 
@@ -80,7 +82,7 @@
     panel.innerHTML='<span class="central-setting-label">Fonte da leitura</span>'+
       '<div class="central-reading-font-control">'+
        '<button type="button" class="central-reading-font-button" onclick="centralReadingFontChange(-5)" aria-label="Diminuir fonte">A−</button>'+
-       '<input id="centralReadingFontRange" class="central-reading-font-range" type="range" min="85" max="135" step="5" aria-label="Tamanho da fonte da leitura" oninput="centralReadingFontSet(this.value)">'+
+       '<input id="centralReadingFontRange" class="central-reading-font-range" type="range" min="85" max="150" step="5" aria-label="Tamanho da fonte da leitura" oninput="centralReadingFontSet(this.value)">'+
        '<button type="button" class="central-reading-font-button" onclick="centralReadingFontChange(5)" aria-label="Aumentar fonte">A+</button>'+
       '</div>'+
       '<div class="central-reading-font-meta"><output id="centralReadingFontValue" class="central-reading-font-value">100%</output><button type="button" class="central-reading-font-reset" onclick="centralReadingFontSet(100)">Padrão</button></div>';
