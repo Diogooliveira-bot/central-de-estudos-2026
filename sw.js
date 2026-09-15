@@ -1,7 +1,7 @@
 /* Central de Estudos — trava de navegação na v6.6.119
    Offline não destrutivo: index.html permanece apenas como fonte interna da v119. */
-var CACHE='central-v66131-ptm1-apostila-completa';
-var BOOT='/central-v119.html?direct=5';
+var CACHE='central-v66132-ptm1-force-refresh';
+var BOOT='/central-v119.html?direct=6';
 var STRUCTURAL_MANIFEST='/central-structural-files-v66119.json?v=66119s2';
 var CORE=[
   BOOT,
@@ -68,7 +68,6 @@ self.addEventListener('fetch',function(event){
   var url=new URL(request.url);
   if(request.method!=='GET'||url.origin!==self.location.origin||url.pathname.startsWith('/api/'))return;
 
-  /* Nunca exibir index.html diretamente. Ele é só a base interna que central-v119.html transforma. */
   if(request.mode==='navigate' && (url.pathname==='/'||url.pathname==='/index.html')){
     event.respondWith(
       caches.open(CACHE).then(function(cache){
@@ -98,7 +97,6 @@ self.addEventListener('fetch',function(event){
     return;
   }
 
-  /* Fetch interno de /index.html continua permitido para a v119 montar a Central atual. */
   if(url.pathname==='/index.html'){
     event.respondWith(
       caches.open(CACHE).then(function(cache){
@@ -117,7 +115,7 @@ self.addEventListener('fetch',function(event){
       caches.open(CACHE).then(function(cache){
         return cache.match(request).then(function(hit){
           if(hit)return hit;
-          return fetch(request).then(function(response){return cacheResponse(cache,request,response)});
+          return fetch(request,{cache:'no-store'}).then(function(response){return cacheResponse(cache,request,response)});
         });
       })
     );
