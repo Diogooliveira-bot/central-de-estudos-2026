@@ -1,0 +1,30 @@
+(function(){
+'use strict';
+if(window.__PORTUGUES_M4_V1__)return;
+window.__PORTUGUES_M4_V1__=true;
+var TAB_KEY='central-v6:pt:active-module';
+var oldRender=window.renderPortugueseMaster;
+if(typeof oldRender!=='function')return;
+function style(){
+ if(document.getElementById('pt-m4-v1-style'))return;
+ var e=document.createElement('style');e.id='pt-m4-v1-style';
+ e.textContent='.ptm4-shell{margin-top:14px;background:transparent}.ptm4-frame-wrap{overflow:visible;border:0;background:transparent}.ptm4-frame{width:100%;min-height:1600px;border:0;display:block;background:transparent}@media(max-width:720px){.ptm4-shell{margin-top:10px}.ptm4-frame{min-height:1900px}}';
+ document.head.appendChild(e);
+}
+function resize(frame){
+ try{var doc=frame.contentDocument||frame.contentWindow.document;if(!doc)return;function fit(){try{frame.style.height=Math.max(1500,doc.documentElement.scrollHeight,doc.body?doc.body.scrollHeight:0)+'px'}catch(_){}}fit();setTimeout(fit,80);setTimeout(fit,350);setTimeout(fit,900);if(frame.contentWindow&&frame.contentWindow.MutationObserver){var obs=new frame.contentWindow.MutationObserver(fit);obs.observe(doc.body,{subtree:true,childList:true,attributes:true})}}catch(e){console.warn('[PT M4 resize]',e)}
+}
+function tabs(){
+ style();
+ var active=localStorage.getItem(TAB_KEY)||'m1';
+ if(active==='m4'){
+  return '<div class="ptm2-tabs"><button class="ptm2-tab" onclick="PtM4V1.switchTab(\'m1\')">M1 · Ortografia</button><button class="ptm2-tab" onclick="PtM4V1.switchTab(\'m2\')">M2 · Classes Nominais</button><button class="ptm2-tab" onclick="PtM4V1.switchTab(\'m3\')">M3 · Conectivos</button><button class="ptm2-tab active" onclick="PtM4V1.switchTab(\'m4\')">M4 · Pronomes</button></div><div class="ptm4-shell"><div class="ptm4-frame-wrap"><iframe id="ptm4-native-frame" class="ptm4-frame" src="portugues-m4-preview-v1.html" title="Português M4 — Pronomes" onload="PtM4V1.resize(this)"></iframe></div></div>';
+ }
+ var html=oldRender.apply(this,arguments);if(typeof html!=='string')return html;
+ if(html.indexOf("PtM4V1.switchTab('m4')")>=0)return html;
+ return html.replace('</div>','<button class="ptm2-tab" onclick="PtM4V1.switchTab(\'m4\')">M4 · Pronomes</button></div>');
+}
+window.PtM4V1={switchTab:function(v){localStorage.setItem(TAB_KEY,v);try{if(typeof window.renderAll==='function')window.renderAll();else if(typeof window.renderSubjects==='function')window.renderSubjects()}catch(e){console.warn('[PT M4]',e)}},resize:resize};
+window.renderPortugueseMaster=function(){return tabs.apply(this,arguments)};
+try{if(typeof window.renderAll==='function')window.renderAll();else if(typeof window.renderSubjects==='function')window.renderSubjects()}catch(e){console.warn('[PT M4]',e)}
+})();
