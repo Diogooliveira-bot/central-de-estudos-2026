@@ -70,12 +70,8 @@ function restyleFrame(frame){
       doc.head.appendChild(s);
     }
     function resize(){try{frame.style.height=Math.max(1400,doc.documentElement.scrollHeight,doc.body?doc.body.scrollHeight:0)+'px'}catch(_){}}
-    resize();
-    setTimeout(resize,80);setTimeout(resize,350);setTimeout(resize,900);
-    if(frame.contentWindow&&frame.contentWindow.MutationObserver){
-      var obs=new frame.contentWindow.MutationObserver(function(){resize()});
-      obs.observe(doc.body,{subtree:true,childList:true,attributes:true});
-    }
+    resize();setTimeout(resize,80);setTimeout(resize,350);setTimeout(resize,900);
+    if(frame.contentWindow&&frame.contentWindow.MutationObserver){var obs=new frame.contentWindow.MutationObserver(function(){resize()});obs.observe(doc.body,{subtree:true,childList:true,attributes:true});}
   }catch(e){console.warn('[PT M3 V2 theme]',e)}
 }
 function tabs(){
@@ -85,14 +81,15 @@ function tabs(){
     setTimeout(function(){var f=document.getElementById('ptm3-native-frame');if(f)restyleFrame(f)},50);
     return '<div class="ptm2-tabs"><button class="ptm2-tab" onclick="PtM3V1.switchTab(\'m1\')">M1 · Ortografia</button><button class="ptm2-tab" onclick="PtM3V1.switchTab(\'m2\')">M2 · Classes Nominais</button><button class="ptm2-tab active" onclick="PtM3V1.switchTab(\'m3\')">M3 · Conectivos</button></div><div class="ptm3-shell"><div class="ptm3-frame-wrap"><iframe id="ptm3-native-frame" class="ptm3-frame" src="portugues-m3-preview-v1.html" title="Português M3 — Conectivos" onload="PtM3V1.restyle(this)"></iframe></div></div>';
   }
-  var html=oldRender.apply(this,arguments);
-  if(typeof html!=='string')return html;
+  var html=oldRender.apply(this,arguments);if(typeof html!=='string')return html;
   return html.replace('</div>','<button class="ptm2-tab" onclick="PtM3V1.switchTab(\'m3\')">M3 · Conectivos</button></div>');
 }
-window.PtM3V1={
-  switchTab:function(v){localStorage.setItem(TAB_KEY,v);try{if(typeof window.renderAll==='function')window.renderAll();else if(typeof window.renderSubjects==='function')window.renderSubjects()}catch(e){console.warn('[PT M3 V2]',e)}},
-  restyle:restyleFrame
-};
+window.PtM3V1={switchTab:function(v){localStorage.setItem(TAB_KEY,v);try{if(typeof window.renderAll==='function')window.renderAll();else if(typeof window.renderSubjects==='function')window.renderSubjects()}catch(e){console.warn('[PT M3 V2]',e)}},restyle:restyleFrame};
 window.renderPortugueseMaster=function(){return tabs.apply(this,arguments)};
+function loadM4(){
+  if(window.__PORTUGUES_M4_V1__||document.getElementById('portugues-m4-v1-script'))return;
+  var s=document.createElement('script');s.id='portugues-m4-v1-script';s.src='portugues-m4-v1.js';s.async=false;document.head.appendChild(s);
+}
 try{if(typeof window.renderAll==='function')window.renderAll();else if(typeof window.renderSubjects==='function')window.renderSubjects()}catch(e){console.warn('[PT M3 V2]',e)}
+loadM4();
 })();
