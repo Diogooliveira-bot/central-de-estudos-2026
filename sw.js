@@ -1,6 +1,6 @@
-/* Central de Estudos — v6.6.127 correção da fonte da leitura
+/* Central de Estudos — v6.6.128 fonte até 150%
    Offline não destrutivo: preserva a rota aberta e mantém uma cópia das ferramentas. */
-var CACHE='central-v66127-correcao-fonte-leitura';
+var CACHE='central-v66128-fonte-ate-150';
 var BOOT='/central-v119.html?direct=4';
 var STRUCTURAL_MANIFEST='/central-structural-files-v66119.json?v=66119s2';
 var CORE=[
@@ -13,7 +13,7 @@ var CORE=[
   '/central-reading-fullscreen-v66123.js?v=66124a1',
   '/central-cleanup-v66125.js?v=66125a1',
   '/central-cleanup-v66125.css?v=66125a1',
-  '/central-reading-font-v66126.js?v=66127a1',
+  '/central-reading-font-v66126.js?v=66128a1',
   '/central-reading-font-v66126.css?v=66127a1',
   '/central-health-entry-v66119.js?v=66119s2',
   '/tools/anki.html',
