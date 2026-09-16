@@ -1,6 +1,6 @@
 /* Central de Estudos — trava de navegação na v6.6.119
    Offline não destrutivo: index.html permanece apenas como fonte interna da v119. */
-var CACHE='central-v66138-portugues-m8';
+var CACHE='central-v66139-portugues-m9';
 var BOOT='/central-v119.html?direct=6';
 var STRUCTURAL_MANIFEST='/central-structural-files-v66119.json?v=66119s2';
 var CORE=[
@@ -29,6 +29,11 @@ var CORE=[
   '/portugues-m8-content-v2.js',
   '/portugues-m8-content-v3.js',
   '/portugues-m8-runtime-v1.js',
+  '/portugues-m9-v1.html',
+  '/portugues-m9-content-v1.js',
+  '/portugues-m9-content-v2.js',
+  '/portugues-m9-content-v3.js',
+  '/portugues-m9-runtime-v1.js',
   '/tools/anki.html',
   '/tools/decorando.html',
   '/tools/vade.html',
@@ -116,7 +121,7 @@ self.addEventListener('fetch',function(event){
     return;
   }
 
-  var versioned=/\?v=/.test(url.search)||/central-core|central-minimal|central-lazy-theory|central-health-entry|civil-theory|civil-decorando|central-civil-progress|central-progress-entry|central-updater|central-version|sync-client|portugues-m(?:1|6|7|8)/.test(url.pathname);
+  var versioned=/\?v=/.test(url.search)||/central-core|central-minimal|central-lazy-theory|central-health-entry|civil-theory|civil-decorando|central-civil-progress|central-progress-entry|central-updater|central-version|sync-client|portugues-m(?:1|6|7|8|9)/.test(url.pathname);
   if(versioned){
     event.respondWith(
       caches.open(CACHE).then(function(cache){
