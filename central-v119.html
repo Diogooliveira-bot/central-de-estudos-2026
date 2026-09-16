@@ -65,7 +65,8 @@
       tags+=tag('portugues-m2-tec-link-v1.js?v=20260915a');
       tags+=tag('portugues-m2-vertical-tabs-v1.js?v=20260915a');
       html=html.replace('</head>','<meta name="central-source-version" content="6.6.119"><link rel="stylesheet" href="/central-minimal-theme-v66119.css?v=66119h4"><link rel="stylesheet" href="/central-cleanup-v66125.css?v=66125a1"><link rel="stylesheet" href="/central-reading-font-v66126.css?v=66129a1"></head>');
-      tags+=tag('central-question-stability-v66137.js?v=66137a1');\n      html=html.replace('</body>',tags+'</body>');
+      tags+=tag('central-question-stability-v66137.js?v=66137a1');
+      html=html.replace('</body>',tags+'</body>');
       history.replaceState(null,'','/');
       document.open();document.write(html);document.close();
     }catch(error){
