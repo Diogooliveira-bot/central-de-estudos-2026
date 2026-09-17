@@ -1,1 +1,1 @@
-Forçar redeploy estável da Central de Estudos v6.6.97 em 09/09/2026.
+Forçar redeploy estável da Central de Estudos v6.6.119 — ADM M4 em 17/09/2026.
