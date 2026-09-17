@@ -18,7 +18,7 @@ var groups={
   'civil-theory-audit-v66118.js?v=66118'
  ],
  cpc:['cpc-theory-module1-v66119.js?v=66119b2'],
- adm:['adm-m1-theory-v66141.js?v=66141a1']
+ adm:['adm-m1-theory-v66141.js?v=66141a1','adm-m1-correction-v66142.js?v=66142a1']
 };
 var states={};
 
@@ -60,8 +60,6 @@ function loadGroup(id){
 
 window.loadCentralTheoryGroup=loadGroup;
 
-/* CPC M1 and ADM M1 are single theory bundles. Preload them when the DOM is
-   ready so saved/open navigation paths cannot bypass the lazy-load trigger. */
 function preloadCore(){
  loadGroup('cpc').catch(function(){});
  loadGroup('adm').catch(function(){});
