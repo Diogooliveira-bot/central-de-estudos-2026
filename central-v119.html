@@ -6,76 +6,22 @@
   <meta name="robots" content="noindex">
   <title>Central de Estudos — carregando v6.6.119</title>
   <style>
-    :root{color-scheme:dark}
-    *{box-sizing:border-box}
-    body{margin:0;min-height:100vh;display:grid;place-items:center;background:#07111f;color:#e7eef8;font:500 16px/1.5 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-    main{width:min(420px,calc(100% - 32px));padding:28px;border:1px solid #243750;border-radius:18px;background:#0d1a2b;text-align:center;box-shadow:0 18px 50px #0006}
-    .spinner{width:38px;height:38px;margin:0 auto 18px;border:4px solid #263b55;border-top-color:#55c2ff;border-radius:50%;animation:girar .8s linear infinite}
-    p{margin:0;color:#b7c6d9}
-    button{display:none;margin:20px auto 0;padding:10px 16px;border:0;border-radius:10px;background:#55c2ff;color:#07111f;font-weight:700;cursor:pointer}
-    @keyframes girar{to{transform:rotate(360deg)}}
+    :root{color-scheme:dark}*{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;background:#07111f;color:#e7eef8;font:500 16px/1.5 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}main{width:min(420px,calc(100% - 32px));padding:28px;border:1px solid #243750;border-radius:18px;background:#0d1a2b;text-align:center;box-shadow:0 18px 50px #0006}.spinner{width:38px;height:38px;margin:0 auto 18px;border:4px solid #263b55;border-top-color:#55c2ff;border-radius:50%;animation:girar .8s linear infinite}p{margin:0;color:#b7c6d9}button{display:none;margin:20px auto 0;padding:10px 16px;border:0;border-radius:10px;background:#55c2ff;color:#07111f;font-weight:700;cursor:pointer}@keyframes girar{to{transform:rotate(360deg)}}
   </style>
 </head>
-<body>
-  <main>
-    <div class="spinner" aria-hidden="true"></div>
-    <p id="status">Abrindo a Central de Estudos v6.6.119…</p>
-    <button id="retry" type="button">Tentar novamente</button>
-  </main>
-  <script>
-  (async function(){
-    var BUILD='66136-portugues-m2-vertical-preview';
-    var scripts=['civil-decorando-index-v1.js?v=1','central-civil-progress-v2.js?v=2'];
-    function tag(src){return '<scr'+'ipt defer src="/'+src+'"></scr'+'ipt>';}
-    try{
-      var response=await fetch('/index.html?central_source='+BUILD,{cache:'no-store'});
-      if(!response.ok)throw new Error('Falha HTTP '+response.status);
-      var html=await response.text();
-      html=html.replace('v6.6.75 • Plano de 6 meses','v6.6.119 • Plano de 6 meses');
-      html=html.replace('<span class="central-version-v41">v6.6.74</span>','<span class="central-version-v41">v6.6.119</span>');
-      html=html.replace(/<link\b[^>]*\bhref=["'][^"']*central-minimal(?:-theme)?-v\d+\.css[^"']*["'][^>]*>/gi,'');
-      html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*central-minimal(?:-ui)?-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');
-      html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*(?:central-updater|central-version)-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');
-      html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*central-progress-entry-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');
-      html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*sync-client\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');
-      html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*civil-decorando-index-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');
-      html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*central-civil-progress-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');
-      html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*civil-theory(?:-company)?(?:-module\d+(?:-posse)?-(?:part\d+|runtime)|-module\d+|)-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');
-      html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*civil-theory-audit-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');
-      var tags=scripts.map(tag).join('');
-      tags+=tag('central-lazy-theory-v66119.js?v=66119p2');
-      tags+=tag('cpc-m1-apostila-v66121.js?v=66122a1');
-      tags+=tag('central-reading-fullscreen-v66123.js?v=66124a1');
-      tags+=tag('central-cleanup-v66125.js?v=66125a1');
-      tags+=tag('central-reading-font-v66126.js?v=66129a1');
-      tags+=tag('central-health-entry-v66119.js?v=66119s2');
-      tags+=tag('sync-client.js?v=66119s2');
-      tags+=tag('central-version-v66107.js?v=66119s2');
-      tags+=tag('central-updater-v66107.js?v=66119s2');
-      tags+=tag('central-progress-entry-v1.js?v=1');
-      tags+=tag('central-minimal-ui-v66119.js?v=66119h4');
-      tags+=tag('portugues-m1-v3.js?v=20260914a');
-      tags+=tag('portugues-m1-theory-v1.js?v=20260914a');
-      tags+=tag('portugues-m1-theory-v2.js?v=20260914a');
-      tags+=tag('portugues-m1-theory-v3.js?v=20260914a');
-      tags+=tag('portugues-m1-no-anki-v1.js?v=20260914a');
-      tags+=tag('portugues-m1-apostila-v2.js?v=20260914c');
-      tags+=tag('portugues-m1-clean-slate-v1.js?v=20260915a');
-      tags+=tag('portugues-m2-v1.js?v=20260915a');
-      tags+=tag('portugues-m2-tec-link-v1.js?v=20260915a');
-      tags+=tag('portugues-m2-vertical-tabs-v1.js?v=20260915a');
-      html=html.replace('</head>','<meta name="central-source-version" content="6.6.119"><link rel="stylesheet" href="/central-minimal-theme-v66119.css?v=66119h4"><link rel="stylesheet" href="/central-cleanup-v66125.css?v=66125a1"><link rel="stylesheet" href="/central-reading-font-v66126.css?v=66129a1"></head>');
-      tags+=tag('central-question-stability-v66137.js?v=66137a1');
-      html=html.replace('</body>',tags+'</body>');
-      history.replaceState(null,'','/');
-      document.open();document.write(html);document.close();
-    }catch(error){
-      document.getElementById('status').textContent='Não foi possível abrir a Central. Verifique a conexão e tente novamente.';
-      document.querySelector('.spinner').style.display='none';
-      var retry=document.getElementById('retry');retry.style.display='block';retry.onclick=function(){location.reload()};
-      console.error('[Central v6.6.119]',error);
-    }
-  })();
-  </script>
-</body>
-</html>
+<body><main><div class="spinner" aria-hidden="true"></div><p id="status">Abrindo a Central de Estudos v6.6.119…</p><button id="retry" type="button">Tentar novamente</button></main>
+<script>
+(async function(){
+ var BUILD='66136-cpp22-audit-preview';
+ var scripts=['civil-decorando-index-v1.js?v=1','central-civil-progress-v2.js?v=2'];
+ function tag(src){return '<scr'+'ipt defer src="/'+src+'"></scr'+'ipt>';}
+ try{
+  var response=await fetch('/index.html?central_source='+BUILD,{cache:'no-store'});if(!response.ok)throw new Error('Falha HTTP '+response.status);var html=await response.text();
+  html=html.replace('v6.6.75 • Plano de 6 meses','v6.6.119 • Plano de 6 meses');html=html.replace('<span class="central-version-v41">v6.6.74</span>','<span class="central-version-v41">v6.6.119</span>');
+  html=html.replace(/<link\b[^>]*\bhref=["'][^"']*central-minimal(?:-theme)?-v\d+\.css[^"']*["'][^>]*>/gi,'');html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*central-minimal(?:-ui)?-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*(?:central-updater|central-version)-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*central-progress-entry-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*sync-client\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*civil-decorando-index-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*central-civil-progress-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*civil-theory(?:-company)?(?:-module\d+(?:-posse)?-(?:part\d+|runtime)|-module\d+|)-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*civil-theory-audit-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');
+  var tags=scripts.map(tag).join('');
+  ['central-lazy-theory-v66119.js?v=66119p2','cpc-m1-apostila-v66121.js?v=66122a1','central-reading-fullscreen-v66123.js?v=66124a1','central-cleanup-v66125.js?v=66125a1','central-reading-font-v66126.js?v=66129a1','central-health-entry-v66119.js?v=66119s2','sync-client.js?v=66119s2','central-version-v66107.js?v=66119s2','central-updater-v66107.js?v=66119s2','central-progress-entry-v1.js?v=1','central-minimal-ui-v66119.js?v=66119h4','portugues-m1-v3.js?v=20260914a','portugues-m1-theory-v1.js?v=20260914a','portugues-m1-theory-v2.js?v=20260914a','portugues-m1-theory-v3.js?v=20260914a','portugues-m1-no-anki-v1.js?v=20260914a','portugues-m1-apostila-v2.js?v=20260914c','portugues-m1-clean-slate-v1.js?v=20260915a','portugues-m2-v1.js?v=20260915a','portugues-m2-tec-link-v1.js?v=20260915a','portugues-m2-vertical-tabs-v1.js?v=20260915a','central-question-stability-v66137.js?v=66137a1','cpp-course-data-1.js?v=20260917a','cpp-course-data-2.js?v=20260917a','cpp-course-data-3.js?v=20260917a','cpp-course-data-4.js?v=20260917a','cpp-course-data-5.js?v=20260917a','cpp-course-core-v1.js?v=20260917a'].forEach(function(s){tags+=tag(s)});
+  html=html.replace('</head>','<meta name="central-source-version" content="6.6.119"><link rel="stylesheet" href="/central-minimal-theme-v66119.css?v=66119h4"><link rel="stylesheet" href="/central-cleanup-v66125.css?v=66125a1"><link rel="stylesheet" href="/central-reading-font-v66126.css?v=66129a1"></head>');html=html.replace('</body>',tags+'</body>');history.replaceState(null,'','/');document.open();document.write(html);document.close();
+ }catch(error){document.getElementById('status').textContent='Não foi possível abrir a Central. Verifique a conexão e tente novamente.';document.querySelector('.spinner').style.display='none';var retry=document.getElementById('retry');retry.style.display='block';retry.onclick=function(){location.reload()};console.error('[Central v6.6.119 CPP preview]',error)}
+})();
+</script></body></html>
