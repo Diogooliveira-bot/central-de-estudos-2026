@@ -17,7 +17,8 @@ var groups={
   'civil-theory-module15-part1-v66117.js?v=66117','civil-theory-module15-part2-v66117.js?v=66117','civil-theory-module15-part3-v66117.js?v=66117','civil-theory-module15-part4-v66117.js?v=66117','civil-theory-module15-part5-v66117.js?v=66117','civil-theory-module15-part6-v66117.js?v=66117','civil-theory-module15-runtime-v66117.js?v=66117',
   'civil-theory-audit-v66118.js?v=66118'
  ],
- cpc:['cpc-theory-module1-v66119.js?v=66119b2']
+ cpc:['cpc-theory-module1-v66119.js?v=66119b2'],
+ adm:['adm-m1-theory-v66141.js?v=66141a1']
 };
 var states={};
 
@@ -59,13 +60,14 @@ function loadGroup(id){
 
 window.loadCentralTheoryGroup=loadGroup;
 
-/* CPC M1 is a single theory bundle. Load it as soon as the DOM is ready so
-   saved/open navigation paths cannot bypass the lazy-load click trigger. */
-function preloadCpc(){
+/* CPC M1 and ADM M1 are single theory bundles. Preload them when the DOM is
+   ready so saved/open navigation paths cannot bypass the lazy-load trigger. */
+function preloadCore(){
  loadGroup('cpc').catch(function(){});
+ loadGroup('adm').catch(function(){});
 }
-if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',preloadCpc,{once:true});
-else preloadCpc();
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',preloadCore,{once:true});
+else preloadCore();
 
 document.addEventListener('click',function(event){
  var head=event.target&&event.target.closest?event.target.closest('.subject-head'):null;
@@ -77,7 +79,7 @@ document.addEventListener('click',function(event){
 function warmOffline(){
  if(!('serviceWorker' in navigator))return;
  navigator.serviceWorker.ready.then(function(){
-  var files=groups.civil.concat(groups.cpc),index=0;
+  var files=groups.civil.concat(groups.cpc,groups.adm),index=0;
   function next(){
    if(index>=files.length)return;
    fetch('/'+files[index++],{cache:'force-cache'}).catch(function(){}).then(function(){setTimeout(next,40)});
