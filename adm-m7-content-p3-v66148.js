@@ -27,6 +27,10 @@ window.__admM7ContentV66148.p3=`
 <tr><td>Mudança × confiança</td><td>Orientação pode mudar, mas efeitos devem respeitar transição e situações constituídas.</td><td>Transformar segurança jurídica em congelamento interpretativo.</td></tr>
 <tr><td>Decisão adm. × controladora × judicial</td><td>Arts. 20, 21, 23, 24 e 27 alcançam as três esferas nos termos legais.</td><td>Limitar a LINDB somente ao Executivo.</td></tr>
 </tbody></table></div>
+<h4>Decisão administrativa × controladora × judicial</h4>
+<div class="adm-m7-table-wrap wide"><table><thead><tr><th>Administrativa</th><th>Controladora</th><th>Judicial</th></tr></thead><tbody><tr><td>Aplica a LINDB ao decidir, invalidar, sancionar, pactuar e uniformizar no exercício da função administrativa.</td><td>Ao controlar, deve considerar contexto, consequências, proporcionalidade e limites da competência administrativa.</td><td>Ao decidir questões de Direito Público alcançadas pelos dispositivos, também observa as exigências expressamente dirigidas à esfera judicial.</td></tr></tbody></table></div>
+<h4>Segurança jurídica × proteção da confiança</h4>
+<div class="adm-m7-table-wrap"><table><thead><tr><th>Segurança jurídica</th><th>Proteção da confiança</th></tr></thead><tbody><tr><td>Valor sistêmico de estabilidade, coerência e previsibilidade na aplicação do Direito.</td><td>Dimensão voltada à tutela de expectativas legitimamente formadas diante de orientações e práticas estatais.</td></tr><tr><td>Aparece fortemente nos arts. 23, 24 e 30.</td><td>É especialmente perceptível na proibição de retroatividade interpretativa destrutiva do art. 24.</td></tr></tbody></table></div>
 <div class="adm-m7-callout exam"><b>Fórmula de prova:</b> contexto não elimina dever; consequência não elimina legalidade; segurança não elimina mudança; consenso não elimina requisitos; erro grosseiro não se presume.</div>
 <p class="adm-m7-check">☐ Check manual — consigo reconstruir o mapa dos arts. 20–30 sem consultar a lei.</p></section>
 
