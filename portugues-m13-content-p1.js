@@ -1,0 +1,36 @@
+window.PT_M13_SESSIONS=(window.PT_M13_SESSIONS||[]).concat([
+{id:'s1',title:'A equação da crase — prove os dois “a”',html:`
+<h3>Comece pela estrutura, não pelo acento</h3>
+<p>Para a prova, trate crase como uma <b>fusão</b>. O acento grave apenas sinaliza que dois elementos se encontraram. Na situação mais comum: <span class="formula">preposição a + artigo a/as = à/às</span>.</p>
+<div class="remember"><span class="label">Regra-mãe</span>Antes de colocar crase, responda duas perguntas: <b>1) o termo anterior exige a preposição “a”?</b> <b>2) o termo seguinte admite artigo feminino “a/as”?</b> Se uma resposta for “não”, não há crase.</div>
+<h3>Veja a diferença</h3>
+<div class="contrast"><div><b>Só artigo</b><span>A decisão foi publicada.</span><br><small>Não existe termo anterior exigindo preposição “a”.</small></div><div><b>Preposição + artigo</b><span>Referiu-se <b>à</b> decisão.</span><br><small>referir-se a + a decisão = à decisão.</small></div></div>
+<p>Também pode haver fusão da preposição <b>a</b> com os demonstrativos <b>aquele(s), aquela(s), aquilo</b> e com <b>a qual / as quais</b>: <i>referi-me àquela norma</i>; <i>a regra à qual obedeci</i>.</p>
+<h3>O teste do masculino</h3>
+<p>Quando houver dúvida sobre o artigo, substitua o termo feminino por um masculino equivalente. Se aparecer <b>ao</b>, isso mostra que havia preposição + artigo: <i>referiu-se à norma</i> → <i>referiu-se ao regulamento</i>.</p>
+<div class="warning"><span class="label">Armadilha</span>O teste do masculino não cria regência. Primeiro confirme se o termo anterior realmente exige <b>a</b>. Depois use o masculino para enxergar o artigo.</div>
+<h3>Ligação direta com o M12</h3>
+<p>Crase frequentemente é apenas a consequência visual da regência. Em <i>favorável à proposta</i>, o adjetivo <i>favorável</i> exige <b>a</b>; <i>proposta</i> admite artigo <b>a</b>. O resultado é <b>à</b>.</p>
+<div class="exam"><span class="label">BIZU FCC</span>Se a banca sublinhar apenas o “a”, amplie a análise. Leia uma palavra para a esquerda para achar o <b>regente</b> e uma palavra para a direita para verificar o <b>artigo</b>.</div>
+<div class="analyst"><span class="label">Nível Analista</span>Nem todo “a” diante de palavra feminina é artigo. Em estruturas como <i>a que</i>, o “a” pode ser pronome demonstrativo equivalente a <i>aquela</i>. Se houver preposição exigida antes dele, pode surgir <i>à que</i>.</div>
+<div class="quiz" data-answer="b" data-explanation="‘Referir-se’ exige a preposição ‘a’ e ‘decisão’ admite o artigo ‘a’: a + a = à."><div class="quiz-title">Teste imediato 1</div><p>Em “O servidor referiu-se ___ decisão”, a forma correta é:</p><div class="quiz-options"><button class="quiz-opt" data-choice="a">a decisão</button><button class="quiz-opt" data-choice="b">à decisão</button><button class="quiz-opt" data-choice="c">há decisão</button></div><div class="quiz-feedback"></div></div>
+<div class="quiz" data-answer="c" data-explanation="Em ‘A decisão foi publicada’, o ‘a’ é apenas artigo; não há preposição anterior para formar crase."><div class="quiz-title">Teste imediato 2</div><p>Qual frase contém apenas artigo, sem crase?</p><div class="quiz-options"><button class="quiz-opt" data-choice="a">Obedeceu à norma.</button><button class="quiz-opt" data-choice="b">Foi favorável à medida.</button><button class="quiz-opt" data-choice="c">A medida entrou em vigor.</button></div><div class="quiz-feedback"></div></div>
+<div class="takeaway"><span class="label">O que levar</span><b>Crase = consequência.</b> Prove a preposição. Prove o artigo/pronome. Só depois marque o acento.</div>`},
+{id:'s2',title:'Casos obrigatórios — quando a fusão precisa aparecer',html:`
+<h3>Regência + artigo feminino</h3>
+<p>É o caso central: <i>obedecer à ordem</i>, <i>ser contrário à proposta</i>, <i>dar atenção à candidata</i>. O termo regente pede <b>a</b> e o nome feminino determinado admite <b>a/as</b>.</p>
+<table><thead><tr><th>Estrutura</th><th>Reconstrução</th><th>Resultado</th></tr></thead><tbody><tr><td>obedecer + norma</td><td>obedecer a + a norma</td><td>obedecer à norma</td></tr><tr><td>favorável + proposta</td><td>favorável a + a proposta</td><td>favorável à proposta</td></tr><tr><td>dar atenção + demandas</td><td>dar atenção a + as demandas</td><td>dar atenção às demandas</td></tr></tbody></table>
+<h3>Locuções femininas</h3>
+<p>O material oficial destaca locuções adverbiais, prepositivas e conjuntivas com núcleo feminino: <b>à noite, às vezes, à direita, à espera de, à medida que, à proporção que</b>.</p>
+<div class="remember"><span class="label">Memória de prova</span>Se a expressão funciona como bloco e tem núcleo feminino, a forma consagrada frequentemente leva acento grave: <i>à tarde</i>, <i>às pressas</i>, <i>à medida que</i>.</div>
+<h3>Horas determinadas</h3>
+<p>Em indicação de hora, use crase quando houver ideia de horário determinado: <i>a sessão começa às 14 horas</i>. Compare com <i>daqui a duas horas</i>, em que “duas horas” expressa intervalo, não horário marcado.</p>
+<h3>“À moda de” — explícita ou implícita</h3>
+<p>A locução <i>à moda de / à maneira de</i> mantém a crase mesmo quando <i>moda</i> está subentendida: <i>texto à Machado de Assis</i> = texto à moda de Machado de Assis.</p>
+<div class="warning"><span class="label">Cuidado</span>Não aplique “antes de palavra masculina nunca há crase” de modo mecânico. Em <i>à Machado de Assis</i>, o acento pertence à expressão feminina subentendida <i>à moda de</i>.</div>
+<div class="exam"><span class="label">BIZU FCC</span>A FCC gosta de misturar crase e pontuação em locuções. Primeiro corrija a crase; depois confira se a locução foi indevidamente separada por vírgula.</div>
+<div class="analyst"><span class="label">Nível Analista</span>Em enumerações regidas pela mesma estrutura, a banca pode cobrar paralelismo: <i>deu lugar à análise, à revisão e à inclusão</i>. A repetição do artigo e da preposição torna explícita a simetria.</div>
+<div class="quiz" data-answer="a" data-explanation="‘À medida que’ é locução conjuntiva proporcional consagrada com acento grave."><div class="quiz-title">Teste imediato 1</div><p>Complete: “O desempenho melhora ___ medida que a revisão se torna frequente.”</p><div class="quiz-options"><button class="quiz-opt" data-choice="a">à</button><button class="quiz-opt" data-choice="b">a</button><button class="quiz-opt" data-choice="c">há</button></div><div class="quiz-feedback"></div></div>
+<div class="quiz" data-answer="b" data-explanation="‘Daqui a duas horas’ expressa intervalo de tempo; não há artigo feminino formando fusão."><div class="quiz-title">Teste imediato 2</div><p>Qual opção está correta?</p><div class="quiz-options"><button class="quiz-opt" data-choice="a">Daqui à duas horas começaremos.</button><button class="quiz-opt" data-choice="b">Daqui a duas horas começaremos.</button><button class="quiz-opt" data-choice="c">Daqui às duas horas começaremos.</button></div><div class="quiz-feedback"></div></div>
+<div class="takeaway"><span class="label">O que levar</span>Obrigatória quando a estrutura exige a fusão; em locuções e horas, reconheça também as formas consagradas e o valor semântico.</div>`}
+]);
