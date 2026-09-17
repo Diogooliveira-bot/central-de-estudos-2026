@@ -2,7 +2,6 @@
 'use strict';
 if(window.__centralLazyTheoryV66119)return;
 window.__centralLazyTheoryV66119=true;
-
 var groups={
  civil:[
   'civil-theory-v66107.js?v=66107','civil-theory-module6-v66108.js?v=66108',
@@ -18,7 +17,7 @@ var groups={
   'civil-theory-audit-v66118.js?v=66118'
  ],
  cpc:['cpc-theory-module1-v66119.js?v=66119b2'],
- adm:['adm-m1-theory-v66141.js?v=66141a1','adm-m1-correction-v66142.js?v=66142a1','adm-m2-content-p1-v66143.js?v=66143a1','adm-m2-content-p2-v66143.js?v=66143a1','adm-m2-content-p3-v66143.js?v=66143a1','adm-m2-content-p4-v66143.js?v=66143a1','adm-m2-runtime-v66143.js?v=66143a1','adm-m3-content-p1-v66144.js?v=66144a1','adm-m3-content-p2-v66144.js?v=66144a1','adm-m3-content-p3-v66144.js?v=66144a1','adm-m3-content-p4-v66144.js?v=66144a1','adm-m3-runtime-v66144.js?v=66144a1']
+ adm:['adm-m1-theory-v66141.js?v=66141a1','adm-m1-correction-v66142.js?v=66142a1','adm-m2-content-p1-v66143.js?v=66143a1','adm-m2-content-p2-v66143.js?v=66143a1','adm-m2-content-p3-v66143.js?v=66143a1','adm-m2-content-p4-v66143.js?v=66143a1','adm-m2-runtime-v66143.js?v=66143a1','adm-m3-content-p1-v66144.js?v=66144a1','adm-m3-content-p2-v66144.js?v=66144a1','adm-m3-content-p3-v66144.js?v=66144a1','adm-m3-content-p4-v66144.js?v=66144a1','adm-m3-runtime-v66144.js?v=66144a1','adm-m4-content-p1-v66145.js?v=66145a1','adm-m4-content-p2-v66145.js?v=66145a1','adm-m4-content-p3-v66145.js?v=66145a1','adm-m4-content-p4-v66145.js?v=66145a1','adm-m4-runtime-v66145.js?v=66145a1']
 };
 var states={};
 function setBusy(id,busy,failed){var section=document.querySelector('.subject[data-id="'+id+'"]');if(!section)return;var head=section.querySelector('.subject-head');if(head)head.setAttribute('aria-busy',busy?'true':'false');var old=section.querySelector('.central-lazy-status');if(old)old.remove();if(!busy&&!failed)return;var note=document.createElement('div');note.className='central-lazy-status';note.textContent=failed?'Não foi possível carregar a teoria. Toque novamente para tentar.':'Carregando a teoria completa…';var body=section.querySelector('.subject-body');if(body)body.insertBefore(note,body.firstChild);}
