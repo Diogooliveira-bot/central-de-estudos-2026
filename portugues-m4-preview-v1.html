@@ -3,25 +3,31 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Preview · Português M4 — Pronomes</title>
+<title>Português M4 — Pronomes</title>
 <style>
-body{margin:0;background:#f7f7f3;color:#24282f;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif}.wrap{max-width:980px;margin:auto;padding:24px 18px 64px}.top,.card{background:#fffefb;border:1px solid #e1e3de;border-radius:14px;padding:18px;margin-bottom:12px}.top h1{margin:0 0 6px;font-size:24px}.muted{color:#7d8796}.tabs{display:grid;gap:8px;margin:14px 0}.tab{padding:12px 14px;border:1px solid #e1e3de;background:#fffefb;border-radius:10px;text-align:left;font-weight:700}.tab.active{background:#3568d4;color:#fff;border-color:#3568d4}.panel{display:none}.panel.active{display:block}.session{background:#fffefb;border:1px solid #e1e3de;border-radius:12px;margin:9px 0}.session summary{cursor:pointer;padding:14px 16px;font-weight:700}.body{padding:2px 16px 16px;border-top:1px solid #ecece8;line-height:1.6}.check{display:flex;gap:8px;margin-top:12px;padding-top:10px;border-top:1px dashed #d9ddd7}.progress{height:7px;background:#ebece8;border-radius:99px;overflow:hidden}.progress span{display:block;height:100%;width:0;background:#3568d4}@media(max-width:720px){.wrap{padding:16px 12px 48px}.top h1{font-size:20px}}
+body{margin:0;background:#f7f7f3;color:#24282f;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif}.wrap{max-width:980px;margin:auto;padding:24px 18px 64px}.top,.card{background:#fffefb;border:1px solid #e1e3de;border-radius:14px;padding:18px;margin-bottom:12px}.top h1{margin:0 0 6px;font-size:24px}.muted{color:#7d8796}.tabs{display:grid;gap:8px;margin:14px 0}.tab{padding:12px 14px;border:1px solid #e1e3de;background:#fffefb;border-radius:10px;text-align:left;font-weight:700}.tab.active{background:#3568d4;color:#fff;border-color:#3568d4}.panel{display:none}.panel.active{display:block}.session{background:#fffefb;border:1px solid #e1e3de;border-radius:12px;margin:9px 0}.session summary{cursor:pointer;padding:14px 16px;font-weight:700}.body{padding:2px 16px 16px;border-top:1px solid #ecece8;line-height:1.6}.check{display:flex;gap:8px;margin-top:12px;padding-top:10px;border-top:1px dashed #d9ddd7}.progress{height:7px;background:#ebece8;border-radius:99px;overflow:hidden}.progress span{display:block;height:100%;width:0;background:#3568d4}.tec-link{display:inline-block;margin-top:10px;padding:9px 12px;border-radius:8px;background:#3568d4;color:#fff;text-decoration:none;font-weight:700}@media(max-width:720px){.wrap{padding:16px 12px 48px}.top h1{font-size:20px}}
 </style>
 </head>
 <body>
 <div class="wrap">
-<div class="top"><h1>M4 — Classes de Palavras III: Pronomes</h1><p class="muted">Preview técnico isolado · branch preview-portugues-m4-20260915 · progresso próprio.</p><div class="progress"><span id="bar"></span></div><p><b id="pct">0%</b> da leitura concluída</p></div>
+<div class="top"><h1>M4 — Classes de Palavras III: Pronomes</h1><p class="muted">Conteúdo publicado · progresso próprio e independente.</p><div class="progress"><span id="bar"></span></div><p><b id="pct">0%</b> da leitura concluída</p></div>
 <div class="tabs"><button class="tab active" data-tab="theory">Teoria · 10 sessões</button><button class="tab" data-tab="review">Revisão ativa</button><button class="tab" data-tab="rounds">R1 · R2 · Final</button><button class="tab" data-tab="spaced">24h · 7d · 30d</button><button class="tab" data-tab="errors">Caderno de erros</button><button class="tab" data-tab="tec">TEC</button></div>
 <section id="theory" class="panel active"><div id="m4Theory"></div></section>
 <section id="review" class="panel"><div class="card"><h2>Revisão ativa</h2><div id="m4Review"></div></div></section>
 <section id="rounds" class="panel"><div class="card"><h2>R1 · R2 · Final</h2><div id="m4Rounds"></div></div></section>
 <section id="spaced" class="panel"><div class="card"><h2>Revisões espaçadas</h2><div id="m4Spaced"></div></div></section>
 <section id="errors" class="panel"><div class="card"><h2>Caderno de erros</h2><div id="m4Errors"></div></div></section>
-<section id="tec" class="panel"><div class="card"><h2>TEC</h2><p class="muted">O link definitivo será herdado do caderno já cadastrado na Central; este preview não inventa um novo endereço.</p></div></section>
+<section id="tec" class="panel"><div class="card"><h2>TEC</h2><div id="m4Tec"><p class="muted">Abrindo o caderno oficial já cadastrado na Central quando disponível.</p></div></div></section>
 </div>
 <script src="portugues-m4-content-v1.js"></script>
 <script src="portugues-m4-content-v2.js"></script>
 <script src="portugues-m4-content-v3.js"></script>
 <script src="portugues-m4-runtime-v1.js"></script>
+<script>
+(function(){
+function renderTec(){var host=document.getElementById('m4Tec');if(!host)return;try{var arr=window.TEC_CADERNOS_DATA&&window.TEC_CADERNOS_DATA.cadernos;if(Array.isArray(arr)){var x=arr.find(function(c){return /pronome/i.test((c.title||'')+' '+(c.name||'')+' '+(c.label||''))});if(x&&x.url){host.innerHTML='<p><b>'+(x.title||x.name||x.label||'Caderno TEC de Pronomes')+'</b></p><a class="tec-link" href="'+x.url+'" target="_blank" rel="noopener">Abrir TEC ↗</a>';return}}}catch(e){}host.innerHTML='<p class="muted">Use o caderno de Pronomes já cadastrado na Central.</p>'}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',renderTec);else renderTec();
+})();
+</script>
 </body>
 </html>
