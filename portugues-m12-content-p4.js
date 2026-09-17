@@ -1,0 +1,27 @@
+window.PT_M12_SESSIONS=(window.PT_M12_SESSIONS||[]).concat([
+{id:'s7',title:'Método FCC completo — reescrita, pegadinhas e revisão final',html:`
+<h3>Comece por aqui</h3>
+<p>Na prova, regência raramente aparece isolada. Ela vem misturada a reescrita, pronome relativo, crase, paralelismo e sentido. O objetivo desta sessão é transformar tudo em um <b>procedimento único</b>.</p>
+<div class="remember"><span class="label">Árvore de decisão</span><b>1.</b> Qual é o regente? → <b>2.</b> Qual o sentido? → <b>3.</b> Qual moldura ele exige? → <b>4.</b> Há relativo/pronome? → <b>5.</b> Há artigo que se funde à preposição? → <b>6.</b> A reescrita preserva gramática <i>e</i> sentido?</div>
+<h3>As seis armadilhas que você deve detectar</h3>
+<table><thead><tr><th>Armadilha</th><th>Teste rápido</th><th>Exemplo de raciocínio</th></tr></thead><tbody>
+<tr><td>troca de sentido</td><td>substitua por sinônimo simples</td><td>aspirar = inalar ou almejar?</td></tr>
+<tr><td>troca de verbo</td><td>recalcule a moldura</td><td>desejar X ≠ aspirar <b>a</b> X</td></tr>
+<tr><td>preposição suprimida/inserida</td><td>pergunte quem a exige</td><td>convencido <b>de</b> algo</td></tr>
+<tr><td>complemento compartilhado</td><td>teste cada regente separadamente</td><td>rejeitar X / responder <b>a</b> X</td></tr>
+<tr><td>pronome relativo</td><td>reconstrua sem o relativo</td><td>regra <b>a que</b> obedeço</td></tr>
+<tr><td>crase</td><td>prove preposição + artigo</td><td>proceder <b>a</b> + <b>a</b> análise = à análise</td></tr>
+</tbody></table>
+<h3>Simulado mental de 20 segundos</h3>
+<p><b>“A norma que o servidor aspirava foi alterada.”</b></p>
+<ol><li>Regente: <i>aspirava</i>.</li><li>Sentido provável: almejava/pretendia.</li><li>Moldura: <i>aspirar <b>a</b> algo</i>.</li><li>Relativo retoma <i>norma</i>.</li><li>Reconstrução: <i>o servidor aspirava <b>à norma</b></i>.</li><li>Correção: <i>A norma <b>a que</b> o servidor aspirava...</i></li></ol>
+<div class="exam"><span class="label">BIZU FCC</span>Quando a alternativa parece “soar melhor”, desconfie. O ouvido cotidiano costuma aceitar justamente as construções que a prova tradicional usa como distratores. Volte ao método e reconstrua.</div>
+<h3>Mapa de revisão</h3>
+<div class="mini-grid"><div><b>SENTIDO</b>agradar, aspirar, assistir, implicar, visar, proceder.</div><div><b>MOLDURA</b>preferir X a Y; obedecer a; coisa/pessoa em pagar e perdoar.</div><div><b>FORMA</b>lembrar X / lembrar-se de X; esquecer X / esquecer-se de X.</div><div><b>RELATIVO</b>a que, de que, em que, com que conforme o regente.</div><div><b>NOMINAL</b>favorável a; convencido de; compatível com; residente em.</div><div><b>CRASE</b>é consequência: preposição exigida + artigo feminino.</div></div>
+<div class="warning"><span class="label">Limite seguro</span>Não transforme exemplos normativos em afirmações universais sobre todo uso contemporâneo. Em itens de concurso, leia o comando, a variedade linguística cobrada e a moldura formal assumida pelo material/banca.</div>
+<div class="analyst"><span class="label">Nível Analista</span>Em reescritas complexas, faça duas auditorias independentes: <b>estrutura</b> (regência, pronome, crase, paralelismo) e <b>semântica</b> (acepção, relações entre termos, preservação do conteúdo). Uma frase pode passar em uma e falhar na outra.</div>
+<div class="quiz" data-answer="b" data-explanation="‘Obedecer’ rege ‘a’. Ao retomar ‘normas’ por relativo, reconstrua: obedecer às normas → normas a que obedecemos."><div class="quiz-title">Teste final 1</div><p>Assinale a estrutura adequada:</p><div class="quiz-options"><button class="quiz-opt" data-choice="a">As normas que obedecemos devem ser claras.</button><button class="quiz-opt" data-choice="b">As normas a que obedecemos devem ser claras.</button><button class="quiz-opt" data-choice="c">As normas de que obedecemos devem ser claras.</button></div><div class="quiz-feedback"></div></div>
+<div class="quiz" data-answer="c" data-explanation="Trocar ‘desejar’ por ‘aspirar’ no sentido de almejar exige introduzir ‘a’: desejar a vaga → aspirar à vaga. A simples troca sem ajuste de regência está errada."><div class="quiz-title">Teste final 2</div><p>Uma reescrita troca “desejava a vaga” por “aspirava a vaga”, mantendo o sentido de almejar. O diagnóstico correto é:</p><div class="quiz-options"><button class="quiz-opt" data-choice="a">correta, porque sinônimos sempre mantêm a mesma regência</button><button class="quiz-opt" data-choice="b">correta, porque “aspirar” nunca exige preposição</button><button class="quiz-opt" data-choice="c">incorreta; o padrão exige “aspirava à vaga”</button></div><div class="quiz-feedback"></div></div>
+<div class="quiz" data-answer="a" data-explanation="‘Proceder’ no sentido de realizar rege ‘a’: proceder à análise. A crase resulta de a + a."><div class="quiz-title">Teste final 3</div><p>Qual sequência explica corretamente “procedeu à análise”?</p><div class="quiz-options"><button class="quiz-opt" data-choice="a">proceder a algo + artigo a de “análise” → à</button><button class="quiz-opt" data-choice="b">o acento grave é inerente ao verbo “proceder”</button><button class="quiz-opt" data-choice="c">a preposição é exigida por “análise”, não por “proceder”</button></div><div class="quiz-feedback"></div></div>
+<div class="takeaway"><span class="label">O que levar para a prova</span><b>REGENTE → SENTIDO → PREPOSIÇÃO → REGIDO → RECONSTRUÇÃO → CONFIRMAÇÃO.</b> Se você seguir essa ordem, a maior parte das pegadinhas de regência deixa de ser memória e vira procedimento.</div>`}
+]);
