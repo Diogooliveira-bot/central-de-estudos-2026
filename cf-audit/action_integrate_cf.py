@@ -38,9 +38,33 @@ def pick(d,patterns):
   for f in os.listdir(d):
    if re.search(pat,f,re.I): return os.path.join(d,f)
 def special(d):
- def g(pats):
-  f=pick(d,pats);return secs(read(f),45) if f else []
- return g([r'porto.*seguro',r'PORTO_SEGURO_DECORAR']),g([r'^decorar',r'DECORAR']),g([r'pegadinh'])
+ porto=[];decor=[];peg=[]
+ def add(patterns,target):
+  f=pick(d,patterns)
+  if f: target.extend(secs(read(f),45))
+ add([r'^porto.*seguro'],porto);add([r'^decorar'],decor);add([r'pegadinh'],peg)
+ f=pick(d,[r'PORTO_SEGURO_DECORAR_PEGADINHAS'])
+ if f:
+  mode=None;title='';buf=[];buckets={'porto':porto,'decor':decor,'peg':peg}
+  def flush():
+   nonlocal buf
+   body=clean('\\n'.join(buf));buf=[]
+   if mode and len(body)>=15:buckets[mode].append([clean(title or mode.title()),body])
+  for line in read(f).splitlines():
+   if re.search(r'PORTO\\s+SEGURO',line,re.I):flush();mode='porto';title=line;continue
+   if re.search(r'DECORAR',line,re.I):flush();mode='decor';title=line;continue
+   if re.search(r'PEGADINH',line,re.I):flush();mode='peg';title=line;continue
+   h=re.match(r'^#{2,4}\\s+(.+)',line)
+   if h:flush();title=h.group(1)
+   else:buf.append(line)
+  flush()
+ def dd(a):
+  z=[];seen=set()
+  for x in a:
+   k=(x[0].lower(),x[1].lower()[:500])
+   if k not in seen:seen.add(k);z.append(x)
+  return z[:45]
+ return dd(porto),dd(decor),dd(peg)
 def qload(d,n):
  f=pick(d,[r'^05_QUESTOES_AUTORAIS.*\.json$',r'^questoes_m\d+\.json$']);out=[]
  if not f:return out
@@ -112,7 +136,7 @@ try{const A=window.ANKI_SITE_DATA;if(A&&Array.isArray(A.cards)){for(const c of A
 for(const E of P[1]){const n=E[0],deck=E[1],m=E[2],qs=E[3]||[],cards=E[4]||[];const id=m[0];
  try{if(typeof CF_WEEKS!=='undefined'){const w=CF_WEEKS.find(x=>x.id===id);if(w)Object.assign(w,{title:m[1],subtitle:m[2]||w.subtitle,topics:m[3]||w.topics,read:m[4]||w.read,read_focus:m[5]?.length?m[5]:w.read_focus,outline:m[6]?.length?m[6]:w.outline,theory:m[7]?.length?m[7]:w.theory,portoSeguro:m[8],decorar:m[9],pegadinhas:m[10],auditStatus:'AUDITADO • 19/09/2026',auditVersion:P[0]})}}catch(e){}
  try{if(typeof CF_QUESTIONS!=='undefined'){const by=new Map(CF_QUESTIONS.map((q,i)=>[String(q.id),i]));for(const r of qs){const q={id:r[0],t:r[1],l:'auditada',real:false,q:r[2],o:r[3],a:r[4],e:r[5],r:r[6],source:`CF M${n} auditado • 19/09/2026`,subject:r[7]||m[1],auditPackage:true,auditModule:id};const i=by.get(String(q.id));if(i==null){CF_QUESTIONS.push(q);by.set(String(q.id),CF_QUESTIONS.length-1)}else CF_QUESTIONS[i]=Object.assign({},CF_QUESTIONS[i],q)}}}catch(e){}
- try{const A=window.ANKI_SITE_DATA;if(A&&Array.isArray(A.cards)){const by=new Map(A.cards.map((c,i)=>[String(c.id),i]));let seq=0;for(const r of cards){seq++;const card={id:r[0],originalId:r[0],noteId:r[0]+'-note',deck,front:r[1],back:r[2],tags:r[3],noteType:'Básico',fields:{Frente:r[1],Verso:r[2]},structural:false,judgment:false,expected:null,suspended:false,createdAt:1789858800000+n*1000+seq,modifiedAt:1789858800000+n*1000+seq,stats:{views:0,correct:0,wrong:0,streak:0,lastSeen:null,history:[]},source:r[4],migrationGroup:'constitucional-auditado-20260919',migrationArchived:false,editalModule:`cf-m${String(n).padStart(2,'0')}`,auditPackage:true};const i=by.get(String(card.id));if(i==null){A.cards.push(card);by.set(String(card.id),A.cards.length-1)}else{const old=A.cards[i]||{};card.stats=old.stats||card.stats;A.cards[i]=Object.assign({},old,card)}}if(Array.isArray(A.decks)&&!A.decks.includes(deck))A.decks.push(deck);A.totalCards=A.cards.length;if(A.meta)A.meta.totalCards=A.cards.length}}catch(e){}
+ try{const A=window.ANKI_SITE_DATA;if(A&&Array.isArray(A.cards)){const by=new Map(A.cards.map((c,i)=>[String(c.id),i]));let seq=0;for(const r of cards){seq++;const card={id:r[0],originalId:r[0],noteId:r[0]+'-note',deck,front:r[1],back:r[2],tags:r[3],noteType:'Básico',fields:{Frente:r[1],Verso:r[2]},structural:false,judgment:false,expected:null,suspended:false,createdAt:1789858800000+n*1000+seq,modifiedAt:1789858800000+n*1000+seq,stats:{views:0,correct:0,wrong:0,streak:0,lastSeen:null,history:[]},source:r[4],migrationGroup:'constitucional-auditado-20260919',migrationArchived:false,editalModule:`cf-m${String(n).padStart(2,'0')}`,auditPackage:true};const i=by.get(String(card.id));if(i==null){A.cards.push(card);by.set(String(card.id),A.cards.length-1)}else{const old=A.cards[i]||{};card.stats=old.stats||card.stats;A.cards[i]=Object.assign({},old,card)}}if(Array.isArray(A.decks)&&!A.decks.includes(deck))A.decks.push(deck);A.totalCards=A.cards.length;if(A.meta){A.meta.totalCards=A.cards.length;A.meta.version='2026.09.19-final-audited'}}}catch(e){}
  try{if(typeof DATA_CF!=='undefined'&&typeof DATA!=='undefined'&&Array.isArray(m[9])){const ids=new Set(DATA_CF.map(x=>String(x.id)));let seq=0;for(const x of m[9].slice(0,30)){seq++;const did=`cf-audit-decor-m${String(n).padStart(2,'0')}-${String(seq).padStart(3,'0')}`;if(ids.has(did))continue;const t=x[0]||'Decorar',b=x[1]||'';const d={id:did,number:`DECORAR ${String(seq).padStart(2,'0')}`,title:'Memorização auditada',parts:[b],topicId:`cf-m${String(n).padStart(2,'0')}`,subtopic:t,question:{statement:(t+': '+b).slice(0,1300),answer:true,source:'Pacote CF M1-M12 auditado em 19/09/2026',explanation:'Regra de memorização validada na auditoria final.',meta:'DECORAR • conteúdo auditado',bank:'Autoral FCC',year:2026,origin:'auditado'},discipline:'cf',origin:'auditado_2026',auditPackage:true};DATA_CF.push(d);DATA.push(d);ids.add(did)}}}catch(e){}
 }
 try{if(typeof cfPool==='function'&&!window.__CF_AUDIT_POOL_PATCHED){window.__CF_AUDIT_POOL_PATCHED=true;cfPool=function(w){return CF_QUESTIONS.filter(q=>!q.auditArchived&&w.topics.includes(q.t))}}}catch(e){}
@@ -123,18 +147,21 @@ try{if(typeof renderAll==='function')setTimeout(()=>renderAll(),0)}catch(e){}try
 open(ROOT+'/cf-audit/generated/cf-audit-bundle-v1.js','w',encoding='utf8').write(js)
 TAG='/cf-audit/generated/cf-audit-bundle-v1.js?v=20260920a'
 def ins(path,src,mode):
- s=read(path)
- if 'cf-audit-bundle-v1.js' in s:return
- tag=f'<script src="{src}"></script>'
+ s=read(path);tag=f'<script src="{src}"></script>'
+ s=s.replace(tag,'')
  if mode=='index':
   marker='<script src="/central-structural-v66119/runtime.js?v=66119s2"></script>'
-  assert marker in s;s=s.replace(marker,marker+'\n'+tag,1)
+  assert marker in s;s=s.replace(marker,marker+'\\n'+tag,1)
+ elif mode=='anki':
+  pos=s.find('window.ANKI_SITE_DATA = ');assert pos>=0
+  end=s.find('</script>',pos);assert end>=0
+  end+=len('</script>');s=s[:end]+'\\n'+tag+s[end:]
  else:
-  s=s.replace('</body>',tag+'\n</body>',1)
+  s=s.replace('</body>',tag+'\\n</body>',1)
  open(path,'w',encoding='utf8').write(s)
 ins(ROOT+'/index.html',TAG,'index')
-ins(ROOT+'/tools/anki.html','../cf-audit/generated/cf-audit-bundle-v1.js?v=20260920a','tool')
-ins(ROOT+'/tools/decorando.html','../cf-audit/generated/cf-audit-bundle-v1.js?v=20260920a','tool')
+ins(ROOT+'/tools/anki.html','../cf-audit/generated/cf-audit-bundle-v1.js?v=20260920a','anki')
+ins(ROOT+'/tools/decorando.html','../cf-audit/generated/cf-audit-bundle-v1.js?v=20260920a','decor')
 for p in [ROOT+'/cf-audit/payload',ROOT+'/cf-audit/cf-audit-prelude-v1.js',ROOT+'/cf-audit/cf-audit-post-v1.js',ROOT+'/cf-audit/cf-audit-loader-v1.js']:
  if os.path.isdir(p):shutil.rmtree(p)
  elif os.path.exists(p):os.remove(p)
