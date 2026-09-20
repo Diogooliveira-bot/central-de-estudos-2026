@@ -1,0 +1,51 @@
+name: Integrar CF M1-M12 auditado
+on:
+  push:
+    branches:
+      - integracao-cf-m1-m12-auditada-20260920
+    paths:
+      - '.github/workflows/integrar-cf-auditado.yml'
+permissions:
+  contents: write
+jobs:
+  integrate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: integracao-cf-m1-m12-auditada-20260920
+          fetch-depth: 0
+      - name: Baixar pacote auditado
+        run: |
+          set -euo pipefail
+          curl -fL --retry 3 --retry-delay 2 'https://sdmntprbrazilsouth.oaiusercontent.com/files/00000000-4178-820e-9bd2-7def881b8465/raw?se=2026-09-20T08%3A17%3A12Z&sp=r&sv=2026-02-06&sr=b&scid=ce045945-9119-58fe-960f-f3f05f0b64de&skoid=68f37fa7-4e08-478b-93f3-c72d563a0ab3&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-19T19%3A14%3A26Z&ske=2026-09-20T19%3A14%3A26Z&sks=b&skv=2026-02-06&sig=FZpIcWPy6fTXV1RokRCGeaD4LNYUQtP6OpXCI6444BE%3D' -o /tmp/cf-audit.zip
+          test -s /tmp/cf-audit.zip
+          mkdir -p /tmp/cf_pkg
+          unzip -q /tmp/cf-audit.zip -d /tmp/cf_pkg
+      - name: Gerar integração não destrutiva
+        run: |
+          set -euo pipefail
+          python cf-audit/action_integrate_cf.py /tmp/cf_pkg
+      - name: Validar artefatos
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json, pathlib, re
+          r=json.load(open('cf-audit/INTEGRATION_REPORT.json'))
+          assert r['modules']==12 and r['questions']==503 and r['anki']==1024
+          b=pathlib.Path('cf-audit/generated/cf-audit-bundle-v1.js')
+          assert b.exists() and b.stat().st_size>500000
+          for p in ['index.html','tools/anki.html','tools/decorando.html']:
+              s=pathlib.Path(p).read_text(encoding='utf8')
+              assert 'cf-audit-bundle-v1.js?v=20260920a' in s, p
+          print(r)
+          PY
+      - name: Commit da integração
+        run: |
+          set -euo pipefail
+          git config user.name "OpenAI Integration"
+          git config user.email "integration@users.noreply.github.com"
+          git add -A
+          git status --short
+          git commit -m "feat(cf): integra pacote final auditado M1-M12" || exit 0
+          git push origin HEAD:integracao-cf-m1-m12-auditada-20260920
