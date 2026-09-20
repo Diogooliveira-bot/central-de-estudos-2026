@@ -2469,22 +2469,9 @@ window.moduleFrameRetry=function(){
 })();
 </script>
 <script id="central-study-query-v6675">(function(){function run(){try{var p=new URLSearchParams(location.search),uid=p.get('study'),sid=p.get('subject');if(uid&&typeof window.openTopicFromLast==='function'){window.openTopicFromLast(uid);return}if(sid&&typeof window.jumpSubject==='function')window.jumpSubject(sid)}catch(e){console.warn('study query',e)}}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',function(){setTimeout(run,180)});else setTimeout(run,180)})();</script>
+<script src="central-structural-v66119/cf-final-audit-integration-20260920.js"></script>
+<script id="cf-final-audit-integration-apply-20260920">
+(function(){'use strict';function apply(){try{var p=window.CF_FINAL_AUDIT_INTEGRATION;if(!p||!Array.isArray(window.CF_WEEKS))return;Object.keys(p.content||{}).forEach(function(id){var w=window.CF_WEEKS.find(function(x){return x.id===id});if(!w)return;var u=p.content[id];Object.keys(u).forEach(function(k){w[k]=u[k]})});window.CF_FINAL_AUDIT_INTEGRATION_APPLIED=true}catch(e){console.warn('CF final audit integration',e)}}apply();if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',apply)})();
+</script>
 </body></html>
 
-<script id="cf-final-audit-integration-apply-20260920">
-(function(){
- 'use strict';
- function apply(){
-  try{
-   var p=window.CF_FINAL_AUDIT_INTEGRATION;if(!p||!Array.isArray(window.CF_WEEKS))return;
-   Object.keys(p.content||{}).forEach(function(id){
-    var w=window.CF_WEEKS.find(function(x){return x.id===id});if(!w)return;
-    var u=p.content[id];Object.keys(u).forEach(function(k){w[k]=u[k]});
-   });
-   window.CF_FINAL_AUDIT_INTEGRATION_APPLIED=true;
-  }catch(e){console.warn('CF final audit integration',e)}
- }
- apply();
- if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',apply);
-})();
-</script>
