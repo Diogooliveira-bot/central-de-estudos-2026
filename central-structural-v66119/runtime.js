@@ -195,12 +195,26 @@ function decodeEmbeddedBytes(b64){
  for(let i=0;i<bin.length;i++)bytes[i]=bin.charCodeAt(i);
  return bytes;
 }
-function openRlmPdf(page=1){
+let rlmPdfSourceLoading=null;
+function loadRlmPdfSource(){
+ if(typeof RLM_SOURCE_PDF_B64!=='undefined')return Promise.resolve(true);
+ if(rlmPdfSourceLoading)return rlmPdfSourceLoading;
+ const files=['000-init','001','002','003','004','005','006','007','008','009','010','011','012','013','014-final'];
+ rlmPdfSourceLoading=files.reduce((p,n)=>p.then(()=>new Promise((resolve,reject)=>{
+   const s=document.createElement('script');
+   s.src='/central-structural-v66119/rlm-source-pdf-b64-'+n+'.js?v=66119s2';
+   s.async=false;s.onload=resolve;s.onerror=()=>reject(new Error('Falha ao carregar PDF RLM'));
+   document.head.appendChild(s);
+ })),Promise.resolve()).then(()=>true).catch(e=>{rlmPdfSourceLoading=null;throw e});
+ return rlmPdfSourceLoading;
+}
+async function openRlmPdf(page=1){
  const p=Math.max(1,parseInt(page,10)||1);
  try{
+  await loadRlmPdfSource();
   if(!rlmPdfObjectUrl)rlmPdfObjectUrl=URL.createObjectURL(new Blob([decodeEmbeddedBytes(RLM_SOURCE_PDF_B64)],{type:'application/pdf'}));
   window.open(rlmPdfObjectUrl+'#page='+p,'_blank');
- }catch(e){alert('Não foi possível abrir o PDF-fonte neste navegador. As figuras necessárias já estão incorporadas às questões.')}
+ }catch(e){console.error('[RLM PDF lazy]',e);alert('Não foi possível abrir o PDF-fonte neste navegador. As figuras necessárias já estão incorporadas às questões.')}
 }
 function buildEmbeddedRlmDoc(target){
  const safe=/^(?:calculo|rlm[1-9])$/.test(String(target||''))?String(target):'';
