@@ -34,6 +34,11 @@ async function ensurePt(){
  if(loading)return loading;
  loading=(async function(){
    var canonical=window.__PT_CANONICAL_RENDER__||window.renderPortugueseMaster;
+   var realRenderSubjects=window.renderSubjects,realRenderAll=window.renderAll;
+   // Auxiliary legacy scripts call renderSubjects during installation.
+   // Suppress those installation-time redraws so the canonical accordion never disappears.
+   window.renderSubjects=function(){};
+   window.renderAll=function(){};
 
    await loadSeq(M1_SCRIPTS);
    if(typeof window.renderPortugueseMaster==='function'&&window.renderPortugueseMaster!==canonical){
@@ -46,6 +51,8 @@ async function ensurePt(){
    await loadSeq(M2_SCRIPTS);
    if(canonical)window.renderPortugueseMaster=canonical;
 
+   window.renderSubjects=realRenderSubjects;
+   window.renderAll=realRenderAll;
    loaded=true;
    return true;
  })().catch(function(err){
