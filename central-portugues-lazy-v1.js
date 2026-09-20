@@ -7,12 +7,16 @@ function addScript(path){
  if(scripts[path])return scripts[path];
  scripts[path]=new Promise(function(resolve,reject){
   var s=document.createElement('script');
-  s.src='/'+path+'?v=20260920-pt2';s.async=false;
+  s.src='/'+path+'?v=20260920-pt3';s.async=false;
   s.onload=function(){resolve()};
   s.onerror=function(){s.remove();delete scripts[path];reject(new Error('Falha ao carregar '+path))};
   document.head.appendChild(s);
  });
  return scripts[path];
+}
+function addScriptsInOrder(paths){
+ var jobs=paths.map(addScript);
+ return jobs.reduce(function(chain,job){return chain.then(function(){return job})},Promise.resolve());
 }
 window.ensurePortugueseLoaded=function(id){
  if(id!=='m1'&&id!=='m2')return boot||Promise.resolve();
@@ -26,7 +30,7 @@ window.ensurePortugueseLoaded=function(id){
     await addScript('portugues-m1-v3.js');
     window.renderPortugueseMaster=window.PtM1V3.render;
     var files=['portugues-m1-theory-v1.js','portugues-m1-theory-v2.js','portugues-m1-theory-v3.js','portugues-m1-no-anki-v1.js','portugues-m1-apostila-v2.js'];
-    for(var i=0;i<files.length;i++)await addScript(files[i]);
+    await addScriptsInOrder(files);
     window.__PT_M1_ENHANCED_RENDER__=window.renderPortugueseMaster;
    }else{
     await addScript('portugues-m2-v1.js');
