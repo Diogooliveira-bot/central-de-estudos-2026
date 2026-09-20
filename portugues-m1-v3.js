@@ -156,16 +156,17 @@ var api={
 window.PtM1V3=api;
 
 var oldSubjStats=window.subjStats;
-if(typeof oldSubjStats==='function')window.subjStats=function(s){if(s&&s.id==='pt'){var x=stats();return {total:x.total,done:x.done,pct:x.pct,unit:'marcos'}}return oldSubjStats.apply(this,arguments)};
-window.renderPortugueseMaster=function(){return render()};
+if(!window.__PT_CANONICAL_HOST__&&typeof oldSubjStats==='function')window.subjStats=function(s){if(s&&s.id==='pt'){var x=stats();return {total:x.total,done:x.done,pct:x.pct,unit:'marcos'}}return oldSubjStats.apply(this,arguments)};
+if(!window.__PT_CANONICAL_HOST__)window.renderPortugueseMaster=function(){return render()};
 
 var oldGrid=window.renderDisciplineGrid;
 if(typeof oldGrid==='function')window.renderDisciplineGrid=function(){var r=oldGrid.apply(this,arguments);setTimeout(patchLabels,0);return r};
 function patchLabels(){
+ if(window.__PT_CANONICAL_HOST__)return;
  try{var card=document.querySelector('.disc-card[data-id="pt"]');if(card){var small=card.querySelector('small');if(small)small.textContent='M1 • Ortografia e Acentuação • fluxo validado';var meta=card.querySelector('.disc-meta'),st=stats();if(meta)meta.textContent=st.done+'/'+st.total+' marcos · '+st.pct+'%'}}catch(_){ }
  try{var s=document.querySelector('.subject[data-id="pt"]');if(s){var count=s.querySelector('.subject-count'),p=s.querySelector('.subject-pct'),st2=stats();if(count)count.textContent=st2.done+'/'+st2.total+' marcos';if(p)p.textContent=st2.pct+'%'}}catch(_){ }
 }
-function rerender(full){try{if(full!==false&&typeof window.renderAll==='function')window.renderAll();else if(typeof window.renderSubjects==='function')window.renderSubjects();patchLabels()}catch(e){console.warn('[PT M1 V3] render',e)}}
+function rerender(full){try{if(window.__PT_CANONICAL_HOST__&&typeof window.ptCanonicalRefreshModule==='function'){window.ptCanonicalRefreshModule('m1');return}if(full!==false&&typeof window.renderAll==='function')window.renderAll();else if(typeof window.renderSubjects==='function')window.renderSubjects();patchLabels()}catch(e){console.warn('[PT M1 V3] render',e)}}
 
 window.addEventListener('central-cloud-applied',function(){setTimeout(function(){rerender()},50)});
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',function(){setTimeout(function(){rerender()},60)},{once:true});else setTimeout(function(){rerender()},60);
