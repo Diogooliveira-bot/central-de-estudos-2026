@@ -1,29 +1,34 @@
 (function(){
 'use strict';
-if(window.__CENTRAL_PT_LAZY_M1M2_V2__)return;
-window.__CENTRAL_PT_LAZY_M1M2_V2__=true;
+if(window.__CENTRAL_PT_LAZY_CONTROLLER_V1__)return;
+window.__CENTRAL_PT_LAZY_CONTROLLER_V1__=true;
 
 var M1_SCRIPTS=[
- 'portugues-m1-v3.js?v=20260920c',
- 'portugues-m1-theory-v1.js?v=20260920c',
- 'portugues-m1-theory-v2.js?v=20260920c',
- 'portugues-m1-theory-v3.js?v=20260920c',
- 'portugues-m1-no-anki-v1.js?v=20260920c',
- 'portugues-m1-apostila-v2.js?v=20260920c'
+ 'portugues-m1-v3.js?v=20260920d',
+ 'portugues-m1-theory-v1.js?v=20260920d',
+ 'portugues-m1-theory-v2.js?v=20260920d',
+ 'portugues-m1-theory-v3.js?v=20260920d',
+ 'portugues-m1-no-anki-v1.js?v=20260920d',
+ 'portugues-m1-apostila-v2.js?v=20260920d'
 ];
 var M2_SCRIPTS=[
- 'portugues-m2-v1.js?v=20260920c',
- 'portugues-m2-tec-link-v1.js?v=20260920c'
+ 'portugues-m2-v1.js?v=20260920d',
+ 'portugues-m2-tec-link-v1.js?v=20260920d'
 ];
+var CONTROLLER_SCRIPT='central-portugues-controller-v1.js?v=20260920d';
 var loaded=false,loading=null;
 
 function addScript(src){
  return new Promise(function(resolve,reject){
-  var s=document.createElement('script');
-  s.src='/'+src;s.async=false;
-  s.onload=function(){resolve(src)};
-  s.onerror=function(){reject(new Error('Falha ao carregar '+src))};
-  document.head.appendChild(s);
+  var existing=document.querySelector('script[data-central-src="'+src+'"]');
+  if(existing){resolve(src);return}
+  var script=document.createElement('script');
+  script.src='/'+src;
+  script.async=false;
+  script.dataset.centralSrc=src;
+  script.onload=function(){resolve(src)};
+  script.onerror=function(){reject(new Error('Falha ao carregar '+src))};
+  document.head.appendChild(script);
  });
 }
 async function loadSeq(list){
@@ -35,8 +40,6 @@ async function ensurePt(){
  loading=(async function(){
    var canonical=window.__PT_CANONICAL_RENDER__||window.renderPortugueseMaster;
    var realRenderSubjects=window.renderSubjects,realRenderAll=window.renderAll;
-   // Auxiliary legacy scripts call renderSubjects during installation.
-   // Suppress those installation-time redraws so the canonical accordion never disappears.
    window.renderSubjects=function(){};
    window.renderAll=function(){};
 
@@ -49,29 +52,29 @@ async function ensurePt(){
    if(canonical)window.renderPortugueseMaster=canonical;
 
    await loadSeq(M2_SCRIPTS);
+   if(typeof window.renderPortugueseMaster==='function'&&window.renderPortugueseMaster!==canonical){
+     window.__PT_M2_ENHANCED_RENDER__=window.renderPortugueseMaster;
+   }
    if(canonical)window.renderPortugueseMaster=canonical;
 
+   await addScript(CONTROLLER_SCRIPT);
    window.renderSubjects=realRenderSubjects;
    window.renderAll=realRenderAll;
    loaded=true;
    return true;
- })().catch(function(err){
+ })().catch(function(error){
    loading=null;
    if(window.__PT_CANONICAL_RENDER__)window.renderPortugueseMaster=window.__PT_CANONICAL_RENDER__;
-   console.error('[PT M1-M2 lazy v2]',err);
-   throw err;
+   console.error('[PT lazy controller]',error);
+   throw error;
  });
  return loading;
 }
 window.ensurePortugueseLoaded=ensurePt;
-
-// Start warming M1/M2 only after the user opens the Portuguese discipline.
-// This does not block the Central boot.
-document.addEventListener('click',function(ev){
+document.addEventListener('click',function(event){
  try{
-   var head=ev.target&&ev.target.closest&&ev.target.closest('.subject[data-id="pt"] > .subject-head');
+   var head=event.target&&event.target.closest&&event.target.closest('.subject[data-id="pt"] > .subject-head');
    if(head)setTimeout(function(){ensurePt().catch(function(){})},0);
  }catch(_){}
 },true);
-
 })();
