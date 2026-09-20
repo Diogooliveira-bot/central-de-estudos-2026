@@ -5194,35 +5194,39 @@ const PT_CANONICAL_ACTIVE='central-v6:pt:active-module';
 function ensurePtCanonicalStyle(){
  if(document.getElementById('pt-canonical-runtime-style'))return;
  const e=document.createElement('style');e.id='pt-canonical-runtime-style';
- e.textContent='.pt-canonical-list{display:grid;grid-template-columns:1fr;gap:7px;margin:0 0 14px}.pt-canonical-btn{width:100%;text-align:left;border:1px solid var(--line2);background:var(--panel);color:var(--muted);border-radius:10px;padding:11px 14px;font-size:13px;font-weight:800}.pt-canonical-btn.active{background:var(--blue);border-color:var(--blue);color:#fff}.pt-canonical-frame{width:100%;min-height:2200px;border:0;display:block;background:transparent}.pt-canonical-loading{border:1px solid var(--line);border-radius:12px;padding:18px;background:var(--panel);color:var(--muted)}@media(max-width:720px){.pt-canonical-frame{min-height:3200px}.pt-canonical-btn{font-size:12px;padding:10px 12px}}';
+ e.textContent='.pt-flowbar{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:8px;align-items:center;margin:0 0 10px}.pt-flow-nav{width:40px;height:40px;border:1px solid var(--line2);background:var(--panel);color:var(--text);border-radius:10px;font-size:18px;font-weight:800}.pt-flow-nav:disabled{opacity:.35}.pt-flow-select{width:100%;height:40px;border:1px solid var(--line2);background:var(--panel);color:var(--text);border-radius:10px;padding:0 10px;font:inherit;font-weight:800}.pt-flow-current{border:1px solid var(--line);background:var(--panel);border-radius:12px;padding:12px 14px;margin-bottom:10px}.pt-flow-current small{display:block;color:var(--muted);font-size:10px;font-weight:850;letter-spacing:.08em;text-transform:uppercase}.pt-flow-current b{display:block;margin-top:3px;font-size:17px}.pt-flow-all{margin:0 0 12px;border:1px solid var(--line);border-radius:10px;background:var(--panel);overflow:hidden}.pt-flow-all summary{cursor:pointer;padding:10px 12px;font-size:12px;font-weight:800;color:var(--muted);list-style:none}.pt-flow-all summary::-webkit-details-marker{display:none}.pt-flow-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;padding:0 10px 10px}.pt-flow-chip{border:1px solid var(--line2);background:var(--panel);color:var(--muted);border-radius:8px;padding:8px 9px;text-align:left;font-size:11px;font-weight:750}.pt-flow-chip.active{background:var(--blue);border-color:var(--blue);color:#fff}.pt-canonical-frame{width:100%;min-height:1800px;border:0;display:block;background:transparent}.pt-canonical-loading{border:1px solid var(--line);border-radius:12px;padding:18px;background:var(--panel);color:var(--muted)}@media(max-width:720px){.pt-flow-grid{grid-template-columns:1fr}.pt-canonical-frame{min-height:2600px}.pt-flow-current b{font-size:15px}}';
  document.head.appendChild(e);
 }
 function ptCanonicalResize(frame){
  try{
   const doc=frame.contentDocument||frame.contentWindow.document;if(!doc)return;
-  function fit(){try{frame.style.height=Math.max(1800,doc.documentElement.scrollHeight,doc.body?doc.body.scrollHeight:0)+'px'}catch(_){}}
+  function fit(){try{frame.style.height=Math.max(1400,doc.documentElement.scrollHeight,doc.body?doc.body.scrollHeight:0)+'px'}catch(_){}}
   fit();setTimeout(fit,80);setTimeout(fit,350);setTimeout(fit,900);
   if(frame.contentWindow&&frame.contentWindow.MutationObserver){const obs=new frame.contentWindow.MutationObserver(fit);obs.observe(doc.body,{subtree:true,childList:true,attributes:true})}
  }catch(e){console.warn('[PT canonical resize]',e)}
 }
 function ptCanonicalSwitch(id){
+ if(!PT_CANONICAL_MODULES.some(x=>x.id===id))return;
  localStorage.setItem(PT_CANONICAL_ACTIVE,id);
  if((id==='m1'||id==='m2')&&typeof window.ensurePortugueseLoaded==='function'){
    window.ensurePortugueseLoaded().then(()=>renderAll()).catch(e=>console.warn('[PT canonical load]',e));
  }else renderAll();
+ setTimeout(()=>document.querySelector('.subject[data-id="pt"] .subject-body')?.scrollIntoView({behavior:'smooth',block:'start'}),30);
 }
 window.ptCanonicalSwitch=ptCanonicalSwitch;
 window.ptCanonicalResize=ptCanonicalResize;
 function renderPortugueseMaster(){
  ensurePtCanonicalStyle();
  let active=localStorage.getItem(PT_CANONICAL_ACTIVE)||'m1';
- let mod=PT_CANONICAL_MODULES.find(x=>x.id===active)||PT_CANONICAL_MODULES[0];
- const nav='<div class="pt-canonical-list">'+PT_CANONICAL_MODULES.map(m=>'<button class="pt-canonical-btn '+(m.id===active?'active':'')+'" onclick="ptCanonicalSwitch(\''+m.id+'\')">'+m.id.toUpperCase()+' · '+esc(m.title)+'</button>').join('')+'</div>';
+ let index=PT_CANONICAL_MODULES.findIndex(x=>x.id===active);if(index<0){index=0;active='m1'}
+ let mod=PT_CANONICAL_MODULES[index];
+ const select='<select class="pt-flow-select" aria-label="Selecionar módulo de Português" onchange="ptCanonicalSwitch(this.value)">'+PT_CANONICAL_MODULES.map(m=>'<option value="'+m.id+'" '+(m.id===active?'selected':'')+'>'+m.id.toUpperCase()+' · '+esc(m.title)+'</option>').join('')+'</select>';
+ const nav='<div class="pt-flow-current"><small>Português · módulo atual</small><b>'+mod.id.toUpperCase()+' · '+esc(mod.title)+'</b></div><div class="pt-flowbar"><button class="pt-flow-nav" '+(index===0?'disabled':'onclick="ptCanonicalSwitch(\''+PT_CANONICAL_MODULES[index-1].id+'\')"')+' aria-label="Módulo anterior">←</button>'+select+'<button class="pt-flow-nav" '+(index===PT_CANONICAL_MODULES.length-1?'disabled':'onclick="ptCanonicalSwitch(\''+PT_CANONICAL_MODULES[index+1].id+'\')"')+' aria-label="Próximo módulo">→</button></div><details class="pt-flow-all"><summary>Ver todos os 17 módulos</summary><div class="pt-flow-grid">'+PT_CANONICAL_MODULES.map(m=>'<button class="pt-flow-chip '+(m.id===active?'active':'')+'" onclick="ptCanonicalSwitch(\''+m.id+'\')">'+m.id.toUpperCase()+' · '+esc(m.title)+'</button>').join('')+'</div></details>';
  let body='';
  if(active==='m1'){
-   body=window.PtM1V3&&typeof window.PtM1V3.render==='function'?window.PtM1V3.render():'<div class="pt-canonical-loading">Carregando M1… toque novamente em M1 se necessário.</div>';
+   body=window.PtM1V3&&typeof window.PtM1V3.render==='function'?window.PtM1V3.render():'<div class="pt-canonical-loading">Carregando M1…</div>';
  }else if(active==='m2'){
-   body=window.PtM2V1&&typeof window.PtM2V1.render==='function'?window.PtM2V1.render():'<div class="pt-canonical-loading">Carregando M2… toque novamente em M2 se necessário.</div>';
+   body=window.PtM2V1&&typeof window.PtM2V1.render==='function'?window.PtM2V1.render():'<div class="pt-canonical-loading">Carregando M2…</div>';
  }else{
    body='<iframe class="pt-canonical-frame" src="/'+escAttr(mod.src)+'" title="Português '+mod.id.toUpperCase()+' — '+escAttr(mod.title)+'" onload="ptCanonicalResize(this)"></iframe>';
  }
