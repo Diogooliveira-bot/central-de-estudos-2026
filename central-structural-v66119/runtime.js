@@ -312,10 +312,8 @@ function goalDone(uid){return localStorage.getItem(key(uid,'done'))==='1'}
 function setDone(uid,v){localStorage.setItem(key(uid,'done'),v?'1':'0')}
 function subjStats(s){
  if(s.id==='pt'){
-   const total=PT_CONFIG.weeks.length*7;
-   let done=0;
-   PT_CONFIG.weeks.forEach(w=>w.days.forEach(d=>{if(ptDayDone(w.week,d.day))done++}));
-   return {total,done,pct:total?Math.round(done/total*100):0,unit:'dias'};
+   const total=17,done=0;
+   return {total,done,pct:0,unit:'módulos'};
  }
  if(s.id==='cf'){
    const total=CF_WEEKS.length,done=CF_WEEKS.filter(w=>cfWeekPct(w)===100).length;
@@ -366,7 +364,7 @@ function openTopicFromLast(uid){openHome();setTimeout(()=>{const found=topicByUi
 function renderSubjects(){
  $('subjects').innerHTML=SUBJECTS.map(s=>{
   const st=subjStats(s),open=localStorage.getItem(`central-v6:open:${s.id}`)==='1';
-  const unit=s.id==='pt'?'dias':(s.id==='cf'||s.id==='civil'||s.id==='penal'||s.id==='cpc')?'módulos':'metas';
+  const unit=(s.id==='pt'||s.id==='cf'||s.id==='civil'||s.id==='penal'||s.id==='cpc')?'módulos':'metas';
   return `<section class="subject ${open?'open':''}" data-id="${s.id}">
    <button class="subject-head" onclick="toggleSubject('${s.id}')"><span class="subject-name">${esc(s.name)}</span><span class="subject-count">${st.done}/${st.total} ${unit}</span><span class="subject-pct ${st.pct===100?'done':''}">${st.pct}%</span><span class="chev">⌄</span></button>
    <div class="subject-body"><div class="subject-bar"><span style="width:${st.pct}%"></span></div>
@@ -5159,16 +5157,62 @@ async function hydratePtNoteImages(week=null,day=null){
 }
 
 
+const PT_CANONICAL_MODULES=[
+ {id:'m1',title:'Ortografia e Acentuação',src:null},
+ {id:'m2',title:'Classes Nominais',src:null},
+ {id:'m3',title:'Conectivos',src:'portugues-m3-preview-v1.html'},
+ {id:'m4',title:'Pronomes',src:'portugues-m4-preview-v1.html'},
+ {id:'m5',title:'Colocação Pronominal',src:'portugues-m5-preview-v1.html'},
+ {id:'m6',title:'Verbos',src:'portugues-m6-v1.html'},
+ {id:'m7',title:'Correlação Verbal e Vozes Verbais',src:'portugues-m7-v1.html'},
+ {id:'m8',title:'Sintaxe da Oração',src:'portugues-m8-v1.html'},
+ {id:'m9',title:'Sintaxe do Período',src:'portugues-m9-v1.html'},
+ {id:'m10',title:'Pontuação',src:'portugues-m10-v1.html'},
+ {id:'m11',title:'Concordância',src:'portugues-m11-v1.html'},
+ {id:'m12',title:'Regência Verbal e Nominal',src:'portugues-m12-v1.html'},
+ {id:'m13',title:'Crase',src:'portugues-m13-v1.html'},
+ {id:'m14',title:'Coesão e Coerência',src:'portugues-m14-v1.html'},
+ {id:'m15',title:'Semântica Geral',src:'portugues-m15-v1.html'},
+ {id:'m16',title:'Interpretação de Textos',src:'portugues-m16-v1.html'},
+ {id:'m17',title:'Tipologia Textual',src:'portugues-m17-v1.html'}
+];
+const PT_CANONICAL_ACTIVE='central-v6:pt:active-module';
+function ensurePtCanonicalStyle(){
+ if(document.getElementById('pt-canonical-runtime-style'))return;
+ const e=document.createElement('style');e.id='pt-canonical-runtime-style';
+ e.textContent='.pt-canonical-list{display:grid;grid-template-columns:1fr;gap:7px;margin:0 0 14px}.pt-canonical-btn{width:100%;text-align:left;border:1px solid var(--line2);background:var(--panel);color:var(--muted);border-radius:10px;padding:11px 14px;font-size:13px;font-weight:800}.pt-canonical-btn.active{background:var(--blue);border-color:var(--blue);color:#fff}.pt-canonical-frame{width:100%;min-height:2200px;border:0;display:block;background:transparent}.pt-canonical-loading{border:1px solid var(--line);border-radius:12px;padding:18px;background:var(--panel);color:var(--muted)}@media(max-width:720px){.pt-canonical-frame{min-height:3200px}.pt-canonical-btn{font-size:12px;padding:10px 12px}}';
+ document.head.appendChild(e);
+}
+function ptCanonicalResize(frame){
+ try{
+  const doc=frame.contentDocument||frame.contentWindow.document;if(!doc)return;
+  function fit(){try{frame.style.height=Math.max(1800,doc.documentElement.scrollHeight,doc.body?doc.body.scrollHeight:0)+'px'}catch(_){}}
+  fit();setTimeout(fit,80);setTimeout(fit,350);setTimeout(fit,900);
+  if(frame.contentWindow&&frame.contentWindow.MutationObserver){const obs=new frame.contentWindow.MutationObserver(fit);obs.observe(doc.body,{subtree:true,childList:true,attributes:true})}
+ }catch(e){console.warn('[PT canonical resize]',e)}
+}
+function ptCanonicalSwitch(id){
+ localStorage.setItem(PT_CANONICAL_ACTIVE,id);
+ if((id==='m1'||id==='m2')&&typeof window.ensurePortugueseLoaded==='function'){
+   window.ensurePortugueseLoaded().then(()=>renderAll()).catch(e=>console.warn('[PT canonical load]',e));
+ }else renderAll();
+}
+window.ptCanonicalSwitch=ptCanonicalSwitch;
+window.ptCanonicalResize=ptCanonicalResize;
 function renderPortugueseMaster(){
- return `<div class="pt-master-tools">
-   <button onclick="togglePtMasterPanel('readings')">📖 Leituras completas</button>
-   <button onclick="togglePtMasterPanel('errors')">⚠ Caderno de erros <span id="pt-error-count-inline">${ptErrorCount()}</span></button>
-   <button onclick="togglePtMasterPanel('progress')">📊 Mapa de progresso</button>
-   <button onclick="togglePtMasterPanel('library')">🎓 Repertórios</button>
-   <button onclick="togglePtMasterPanel('backup')">💾 Backup / Restaurar</button>
- </div>
- <div id="pt-master-panel">${renderPtMasterPanel()}</div>
- ${renderPortugueseWeeks()}`;
+ ensurePtCanonicalStyle();
+ let active=localStorage.getItem(PT_CANONICAL_ACTIVE)||'m1';
+ let mod=PT_CANONICAL_MODULES.find(x=>x.id===active)||PT_CANONICAL_MODULES[0];
+ const nav='<div class="pt-canonical-list">'+PT_CANONICAL_MODULES.map(m=>'<button class="pt-canonical-btn '+(m.id===active?'active':'')+'" onclick="ptCanonicalSwitch(\''+m.id+'\')">'+m.id.toUpperCase()+' · '+esc(m.title)+'</button>').join('')+'</div>';
+ let body='';
+ if(active==='m1'){
+   body=window.PtM1V3&&typeof window.PtM1V3.render==='function'?window.PtM1V3.render():'<div class="pt-canonical-loading">Carregando M1… toque novamente em M1 se necessário.</div>';
+ }else if(active==='m2'){
+   body=window.PtM2V1&&typeof window.PtM2V1.render==='function'?window.PtM2V1.render():'<div class="pt-canonical-loading">Carregando M2… toque novamente em M2 se necessário.</div>';
+ }else{
+   body='<iframe class="pt-canonical-frame" src="/'+escAttr(mod.src)+'" title="Português '+mod.id.toUpperCase()+' — '+escAttr(mod.title)+'" onload="ptCanonicalResize(this)"></iframe>';
+ }
+ return nav+body;
 }
 function ptMasterKey(){return 'central-v6:pt-master-panel'}
 function togglePtMasterPanel(panel){
