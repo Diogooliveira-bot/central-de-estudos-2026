@@ -5171,63 +5171,118 @@ async function hydratePtNoteImages(week=null,day=null){
 }
 
 
+window.__PT_CANONICAL_HOST__=true;
 const PT_CANONICAL_MODULES=[
- {id:'m1',title:'Ortografia e Acentuação',src:null},
- {id:'m2',title:'Classes Nominais',src:null},
- {id:'m3',title:'Conectivos',src:'portugues-m3-preview-v1.html'},
- {id:'m4',title:'Pronomes',src:'portugues-m4-preview-v1.html'},
- {id:'m5',title:'Colocação Pronominal',src:'portugues-m5-preview-v1.html'},
- {id:'m6',title:'Verbos',src:'portugues-m6-v1.html'},
- {id:'m7',title:'Correlação Verbal e Vozes Verbais',src:'portugues-m7-v1.html'},
- {id:'m8',title:'Sintaxe da Oração',src:'portugues-m8-v1.html'},
- {id:'m9',title:'Sintaxe do Período',src:'portugues-m9-v1.html'},
- {id:'m10',title:'Pontuação',src:'portugues-m10-v1.html'},
- {id:'m11',title:'Concordância',src:'portugues-m11-v1.html'},
- {id:'m12',title:'Regência Verbal e Nominal',src:'portugues-m12-v1.html'},
- {id:'m13',title:'Crase',src:'portugues-m13-v1.html'},
- {id:'m14',title:'Coesão e Coerência',src:'portugues-m14-v1.html'},
- {id:'m15',title:'Semântica Geral',src:'portugues-m15-v1.html'},
- {id:'m16',title:'Interpretação de Textos',src:'portugues-m16-v1.html'},
- {id:'m17',title:'Tipologia Textual',src:'portugues-m17-v1.html'}
+ {id:'m1',num:1,title:'Ortografia e Acentuação',src:null},
+ {id:'m2',num:2,title:'Classes Nominais',src:null},
+ {id:'m3',num:3,title:'Conectivos',src:'portugues-m3-preview-v1.html'},
+ {id:'m4',num:4,title:'Pronomes',src:'portugues-m4-preview-v1.html'},
+ {id:'m5',num:5,title:'Colocação Pronominal',src:'portugues-m5-preview-v1.html'},
+ {id:'m6',num:6,title:'Verbos',src:'portugues-m6-v1.html'},
+ {id:'m7',num:7,title:'Correlação Verbal e Vozes Verbais',src:'portugues-m7-v1.html'},
+ {id:'m8',num:8,title:'Sintaxe da Oração',src:'portugues-m8-v1.html'},
+ {id:'m9',num:9,title:'Sintaxe do Período',src:'portugues-m9-v1.html'},
+ {id:'m10',num:10,title:'Pontuação',src:'portugues-m10-v1.html'},
+ {id:'m11',num:11,title:'Concordância',src:'portugues-m11-v1.html'},
+ {id:'m12',num:12,title:'Regência Verbal e Nominal',src:'portugues-m12-v1.html'},
+ {id:'m13',num:13,title:'Crase',src:'portugues-m13-v1.html'},
+ {id:'m14',num:14,title:'Coesão e Coerência',src:'portugues-m14-v1.html'},
+ {id:'m15',num:15,title:'Semântica Geral',src:'portugues-m15-v1.html'},
+ {id:'m16',num:16,title:'Interpretação de Textos',src:'portugues-m16-v1.html'},
+ {id:'m17',num:17,title:'Tipologia Textual',src:'portugues-m17-v1.html'}
 ];
-const PT_CANONICAL_ACTIVE='central-v6:pt:active-module';
+function ptModuleOpenKey(id){return 'central-v6:pt-module-open:'+id}
 function ensurePtCanonicalStyle(){
  if(document.getElementById('pt-canonical-runtime-style'))return;
  const e=document.createElement('style');e.id='pt-canonical-runtime-style';
- e.textContent='.pt-canonical-list{display:grid;grid-template-columns:1fr;gap:7px;margin:0 0 14px}.pt-canonical-btn{width:100%;text-align:left;border:1px solid var(--line2);background:var(--panel);color:var(--muted);border-radius:10px;padding:11px 14px;font-size:13px;font-weight:800}.pt-canonical-btn.active{background:var(--blue);border-color:var(--blue);color:#fff}.pt-canonical-frame{width:100%;min-height:2200px;border:0;display:block;background:transparent}.pt-canonical-loading{border:1px solid var(--line);border-radius:12px;padding:18px;background:var(--panel);color:var(--muted)}@media(max-width:720px){.pt-canonical-frame{min-height:3200px}.pt-canonical-btn{font-size:12px;padding:10px 12px}}';
+ e.textContent='.pt-cf-modules{display:grid;gap:10px}.pt-cf-frame{width:100%;min-height:1500px;border:0;display:block;background:transparent}.pt-cf-loading{padding:18px;border:1px solid var(--line);border-radius:12px;background:var(--panel);color:var(--muted)}.pt-cf-intro{margin:0 0 10px;color:var(--muted);font-size:12px}.pt-cf-module-body{padding-top:10px}@media(max-width:720px){.pt-cf-frame{min-height:2200px}}';
  document.head.appendChild(e);
 }
 function ptCanonicalResize(frame){
  try{
   const doc=frame.contentDocument||frame.contentWindow.document;if(!doc)return;
-  function fit(){try{frame.style.height=Math.max(1800,doc.documentElement.scrollHeight,doc.body?doc.body.scrollHeight:0)+'px'}catch(_){}}
+  function fit(){try{frame.style.height=Math.max(1100,doc.documentElement.scrollHeight,doc.body?doc.body.scrollHeight:0)+'px'}catch(_){}}
   fit();setTimeout(fit,80);setTimeout(fit,350);setTimeout(fit,900);
   if(frame.contentWindow&&frame.contentWindow.MutationObserver){const obs=new frame.contentWindow.MutationObserver(fit);obs.observe(doc.body,{subtree:true,childList:true,attributes:true})}
  }catch(e){console.warn('[PT canonical resize]',e)}
 }
-function ptCanonicalSwitch(id){
- localStorage.setItem(PT_CANONICAL_ACTIVE,id);
- if((id==='m1'||id==='m2')&&typeof window.ensurePortugueseLoaded==='function'){
-   window.ensurePortugueseLoaded().then(()=>renderAll()).catch(e=>console.warn('[PT canonical load]',e));
- }else renderAll();
-}
-window.ptCanonicalSwitch=ptCanonicalSwitch;
 window.ptCanonicalResize=ptCanonicalResize;
+
+function ptCanonicalContent(m){
+ if(m.id==='m1'){
+   if(typeof window.__PT_M1_ENHANCED_RENDER__==='function')return window.__PT_M1_ENHANCED_RENDER__();
+   return window.PtM1V3&&typeof window.PtM1V3.render==='function'
+     ? window.PtM1V3.render()
+     : '<div class="pt-cf-loading">Carregando M1…</div>';
+ }
+ if(m.id==='m2'){
+   return window.PtM2V1&&typeof window.PtM2V1.render==='function'
+     ? window.PtM2V1.render()
+     : '<div class="pt-cf-loading">Carregando M2…</div>';
+ }
+ return '<iframe class="pt-cf-frame" src="/'+escAttr(m.src)+'" title="Português '+m.id.toUpperCase()+' — '+escAttr(m.title)+'" onload="ptCanonicalResize(this)"></iframe>';
+}
+function ptCanonicalMount(id,force=false){
+ const m=PT_CANONICAL_MODULES.find(x=>x.id===id);if(!m)return;
+ const host=document.querySelector('[data-pt-host="'+id+'"]');if(!host)return;
+ if(host.dataset.mounted==='1'&&!force)return;
+ if(id==='m1'||id==='m2'){
+   host.innerHTML='<div class="pt-cf-loading">Carregando módulo…</div>';
+   if(typeof window.ensurePortugueseLoaded!=='function')return;
+   window.ensurePortugueseLoaded().then(()=>{
+     host.innerHTML=ptCanonicalContent(m);
+     host.dataset.mounted='1';
+   }).catch(e=>{console.error('[PT canonical load]',e);host.innerHTML='<div class="pt-cf-loading">Não foi possível carregar este módulo. Toque no cabeçalho para fechar e tente novamente.</div>'});
+ }else{
+   host.innerHTML=ptCanonicalContent(m);
+   host.dataset.mounted='1';
+ }
+}
+function ptCanonicalRefreshModule(id){
+ const host=document.querySelector('[data-pt-host="'+id+'"]');if(!host)return;
+ const m=PT_CANONICAL_MODULES.find(x=>x.id===id);if(!m)return;
+ host.innerHTML=ptCanonicalContent(m);
+ host.dataset.mounted='1';
+}
+window.ptCanonicalMount=ptCanonicalMount;
+window.ptCanonicalRefreshModule=ptCanonicalRefreshModule;
+
+function togglePtCanonicalModule(id){
+ const el=document.querySelector('.cf-module[data-pt-module="'+id+'"]');if(!el)return;
+ const open=!el.classList.contains('open');
+ el.classList.toggle('open',open);
+ localStorage.setItem(ptModuleOpenKey(id),open?'1':'0');
+ if(open){
+   localStorage.setItem('central-v6:pt:active-module',id);
+   const m=PT_CANONICAL_MODULES.find(x=>x.id===id);
+   if(m)saveLast({title:'Português • Módulo '+m.num+' • '+m.title,at:Date.now()});
+   ptCanonicalMount(id);
+ }
+}
+window.togglePtCanonicalModule=togglePtCanonicalModule;
+
+function renderPtCanonicalModule(m){
+ const open=localStorage.getItem(ptModuleOpenKey(m.id))==='1';
+ return '<section class="cf-module '+(open?'open':'')+'" data-pt-module="'+m.id+'">'+
+   '<button class="cf-module-head" onclick="togglePtCanonicalModule(\''+m.id+'\')">'+
+     '<span class="cf-module-no">MÓDULO '+m.num+'</span>'+
+     '<span class="cf-module-title">'+esc(m.title)+'</span>'+
+     '<span class="cf-module-stat">0% • teoria + TEC</span><span class="chev">⌄</span>'+
+   '</button>'+
+   '<div class="cf-module-body pt-cf-module-body">'+
+     '<div class="cf-module-bar"><span style="width:0%"></span></div>'+
+     '<div class="pt-cf-intro">Estude o conteúdo do módulo e use a área de questões/TEC do próprio módulo.</div>'+
+     '<div data-pt-host="'+m.id+'"></div>'+
+   '</div>'+
+ '</section>';
+}
 function renderPortugueseMaster(){
  ensurePtCanonicalStyle();
- let active=localStorage.getItem(PT_CANONICAL_ACTIVE)||'m1';
- let mod=PT_CANONICAL_MODULES.find(x=>x.id===active)||PT_CANONICAL_MODULES[0];
- const nav='<div class="pt-canonical-list">'+PT_CANONICAL_MODULES.map(m=>'<button class="pt-canonical-btn '+(m.id===active?'active':'')+'" onclick="ptCanonicalSwitch(\''+m.id+'\')">'+m.id.toUpperCase()+' · '+esc(m.title)+'</button>').join('')+'</div>';
- let body='';
- if(active==='m1'){
-   body=window.PtM1V3&&typeof window.PtM1V3.render==='function'?window.PtM1V3.render():'<div class="pt-canonical-loading">Carregando M1… toque novamente em M1 se necessário.</div>';
- }else if(active==='m2'){
-   body=window.PtM2V1&&typeof window.PtM2V1.render==='function'?window.PtM2V1.render():'<div class="pt-canonical-loading">Carregando M2… toque novamente em M2 se necessário.</div>';
- }else{
-   body='<iframe class="pt-canonical-frame" src="/'+escAttr(mod.src)+'" title="Português '+mod.id.toUpperCase()+' — '+escAttr(mod.title)+'" onload="ptCanonicalResize(this)"></iframe>';
- }
- return nav+body;
+ const html='<div class="pt-cf-modules">'+PT_CANONICAL_MODULES.map(renderPtCanonicalModule).join('')+'</div>';
+ setTimeout(()=>PT_CANONICAL_MODULES.forEach(m=>{if(localStorage.getItem(ptModuleOpenKey(m.id))==='1')ptCanonicalMount(m.id)}),0);
+ return html;
 }
+window.__PT_CANONICAL_RENDER__=renderPortugueseMaster;
 function ptMasterKey(){return 'central-v6:pt-master-panel'}
 function togglePtMasterPanel(panel){
  const current=localStorage.getItem(ptMasterKey())||'';
