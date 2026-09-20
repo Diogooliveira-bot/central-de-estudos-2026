@@ -1,0 +1,45 @@
+name: Regerar integração CF auditada
+on:
+  push:
+    branches: [integracao-cf-m1-m12-auditada-20260920]
+    paths: ['.github/workflows/regerar-cf-auditado.yml']
+permissions:
+  contents: write
+jobs:
+  regenerate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: integracao-cf-m1-m12-auditada-20260920
+          fetch-depth: 0
+      - run: |
+          set -euo pipefail
+          curl -fL --retry 3 'https://sdmntprbrazilsouth.oaiusercontent.com/files/00000000-b6c8-820e-a2f4-db884da8e59b/raw?se=2026-09-20T08%3A19%3A54Z&sp=r&sv=2026-02-06&sr=b&scid=f0d4c64d-cd02-56ef-97eb-ee280e9f91e3&skoid=68f37fa7-4e08-478b-93f3-c72d563a0ab3&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-19T18%3A17%3A51Z&ske=2026-09-20T18%3A17%3A51Z&sks=b&skv=2026-02-06&sig=F6mKOv9xld%2BnExzp2uhUg1372SjZuAqvM/2eKsUC62Y%3D' -o /tmp/cf.zip
+          mkdir -p /tmp/cf_pkg
+          unzip -q /tmp/cf.zip -d /tmp/cf_pkg
+          python cf-audit/action_integrate_cf.py /tmp/cf_pkg
+      - name: QA
+        run: |
+          set -euo pipefail
+          node --check cf-audit/generated/cf-audit-bundle-v1.js
+          python - <<'PY'
+          import json,re,pathlib
+          r=json.load(open('cf-audit/INTEGRATION_REPORT.json'))
+          assert (r['modules'],r['questions'],r['anki'])==(12,503,1024),r
+          idx=pathlib.Path('index.html').read_text(encoding='utf8')
+          anki=pathlib.Path('tools/anki.html').read_text(encoding='utf8')
+          dec=pathlib.Path('tools/decorando.html').read_text(encoding='utf8')
+          tag='cf-audit-bundle-v1.js?v=20260920a'
+          assert idx.count(tag)==1 and anki.count(tag)==1 and dec.count(tag)==1
+          p=anki.index(tag); source=anki.index("const SOURCE = window.ANKI_SITE_DATA")
+          assert p < source,(p,source)
+          assert "2026.09.19-final-audited" in pathlib.Path('cf-audit/generated/cf-audit-bundle-v1.js').read_text(encoding='utf8')
+          print(r)
+          PY
+      - run: |
+          git config user.name "OpenAI Integration"
+          git config user.email "integration@users.noreply.github.com"
+          git add -A
+          git commit -m "fix(cf): consolida integração auditada e migração Anki" || exit 0
+          git push origin HEAD:integracao-cf-m1-m12-auditada-20260920
