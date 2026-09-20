@@ -5210,6 +5210,7 @@ window.ptCanonicalResize=ptCanonicalResize;
 
 function ptCanonicalContent(m){
  if(m.id==='m1'){
+   if(typeof window.__PT_M1_ENHANCED_RENDER__==='function')return window.__PT_M1_ENHANCED_RENDER__();
    return window.PtM1V3&&typeof window.PtM1V3.render==='function'
      ? window.PtM1V3.render()
      : '<div class="pt-cf-loading">Carregando M1…</div>';
@@ -5281,6 +5282,7 @@ function renderPortugueseMaster(){
  setTimeout(()=>PT_CANONICAL_MODULES.forEach(m=>{if(localStorage.getItem(ptModuleOpenKey(m.id))==='1')ptCanonicalMount(m.id)}),0);
  return html;
 }
+window.__PT_CANONICAL_RENDER__=renderPortugueseMaster;
 function ptMasterKey(){return 'central-v6:pt-master-panel'}
 function togglePtMasterPanel(panel){
  const current=localStorage.getItem(ptMasterKey())||'';
