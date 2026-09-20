@@ -5195,13 +5195,13 @@ function ptModuleOpenKey(id){return 'central-v6:pt-module-open:'+id}
 function ensurePtCanonicalStyle(){
  if(document.getElementById('pt-canonical-runtime-style'))return;
  const e=document.createElement('style');e.id='pt-canonical-runtime-style';
- e.textContent='.pt-cf-modules{display:grid;gap:10px}.pt-cf-frame{width:100%;min-height:1500px;border:0;display:block;background:transparent}.pt-cf-loading{padding:18px;border:1px solid var(--line);border-radius:12px;background:var(--panel);color:var(--muted)}.pt-cf-intro{margin:0 0 10px;color:var(--muted);font-size:12px}.pt-cf-module-body{padding-top:10px}@media(max-width:720px){.pt-cf-frame{min-height:2200px}}';
+ e.textContent='.pt-cf-modules{display:grid;gap:10px}.pt-cf-frame{width:100%;height:420px;border:0;display:block;background:transparent}.pt-cf-loading{padding:18px;border:1px solid var(--line);border-radius:12px;background:var(--panel);color:var(--muted)}.pt-cf-intro{margin:0 0 10px;color:var(--muted);font-size:12px}.pt-cf-module-body{padding-top:10px}';
  document.head.appendChild(e);
 }
 function ptCanonicalResize(frame){
  try{
   const doc=frame.contentDocument||frame.contentWindow.document;if(!doc)return;
-  function fit(){try{frame.style.height=Math.max(1100,doc.documentElement.scrollHeight,doc.body?doc.body.scrollHeight:0)+'px'}catch(_){}}
+  function fit(){try{const h=Math.max(doc.documentElement.scrollHeight,doc.body?doc.body.scrollHeight:0);frame.style.height=Math.max(420,h+8)+'px'}catch(_){}}
   fit();setTimeout(fit,80);setTimeout(fit,350);setTimeout(fit,900);
   if(frame.contentWindow&&frame.contentWindow.MutationObserver){const obs=new frame.contentWindow.MutationObserver(fit);obs.observe(doc.body,{subtree:true,childList:true,attributes:true})}
  }catch(e){console.warn('[PT canonical resize]',e)}
