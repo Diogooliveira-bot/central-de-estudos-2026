@@ -1,91 +1,95 @@
 (function(){
 'use strict';
-if(window.__CENTRAL_PT_CONTROLLER_V1__)return;
-window.__CENTRAL_PT_CONTROLLER_V1__=true;
-
-var TAB_KEY='central-v6:pt:active-module';
-var modules=[
- {id:'m1',name:'Ortografia e Acentuacao',legacy:'m1'},
- {id:'m2',name:'Classes Nominais',legacy:'m2'},
- {id:'m3',name:'Conectivos',src:'portugues-m3-preview-v1.html'},
- {id:'m4',name:'Pronomes',src:'portugues-m4-preview-v1.html'},
- {id:'m5',name:'Colocacao Pronominal',src:'portugues-m5-preview-v1.html'},
- {id:'m6',name:'Verbos',src:'portugues-m6-v1.html'},
- {id:'m7',name:'Correlacao e Vozes',src:'portugues-m7-v1.html'},
- {id:'m8',name:'Sintaxe da Oracao',src:'portugues-m8-v1.html'},
- {id:'m9',name:'Sintaxe do Periodo',src:'portugues-m9-v1.html'},
- {id:'m10',name:'Pontuacao',src:'portugues-m10-v1.html'},
- {id:'m11',name:'Concordancia',src:'portugues-m11-v1.html'},
- {id:'m12',name:'Regencia Verbal e Nominal',src:'portugues-m12-v1.html'},
- {id:'m13',name:'Crase',src:'portugues-m13-v1.html'},
- {id:'m14',name:'Coesao e Coerencia',src:'portugues-m14-v1.html'},
- {id:'m15',name:'Semantica Geral',src:'portugues-m15-v1.html'},
- {id:'m16',name:'Interpretacao de Textos',src:'portugues-m16-v1.html'},
- {id:'m17',name:'Tipologia Textual',src:'portugues-m17-v1.html'}
-];
-var byId={};
-modules.forEach(function(module){byId[module.id]=module});
-var canonical=window.__PT_CANONICAL_RENDER__||window.renderPortugueseMaster;
-var legacyM1=window.__PT_M1_ENHANCED_RENDER__||(window.PtM1V3&&window.PtM1V3.render);
-var legacyM2=window.__PT_M2_ENHANCED_RENDER__;
-
+if(window.__PT_CONTROLLER_V2__)return;
+window.__PT_CONTROLLER_V2__=true;
+var names=['Ortografia e Acentuação','Classes Nominais','Conectivos','Pronomes','Colocação Pronominal','Verbos','Correlação Verbal e Vozes Verbais','Sintaxe da Oração','Sintaxe do Período','Pontuação','Concordância','Regência Verbal e Nominal','Crase','Coesão e Coerência','Semântica Geral','Interpretação de Textos','Tipologia Textual'];
+var modules=names.map(function(name,i){var n=i+1;return {id:'m'+n,name:name,src:n>2?'portugues-m'+n+(n<6?'-preview-v1.html':'-v1.html'):null}});
+var active='hub',pending={},errors={};
+function get(id){return modules.find(function(m){return m.id===id})}
+function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+function contentRenderer(id){return id==='m1'?window.__PT_M1_ENHANCED_RENDER__:window.__PT_M2_ENHANCED_RENDER__}
 function style(){
- if(document.getElementById('pt-controller-v1-style'))return;
- var el=document.createElement('style');
- el.id='pt-controller-v1-style';
- el.textContent='.ptc{margin-top:12px}.ptc-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:0 0 14px}.ptc-title{font-size:18px;font-weight:800;color:var(--text,#172033)}.ptc-back{border:1px solid var(--line,#dde2ea);background:var(--panel,#fff);color:var(--text,#172033);border-radius:8px;padding:8px 11px;font:inherit;font-size:13px;font-weight:700;cursor:pointer}.ptc-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.ptc-module{display:flex;flex-direction:column;align-items:flex-start;gap:5px;min-height:84px;border:1px solid var(--line,#dde2ea);background:var(--panel,#fff);border-radius:8px;padding:13px;color:var(--text,#172033);text-align:left;font:inherit;cursor:pointer}.ptc-module:hover{border-color:#3568d4;background:#f7f9ff}.ptc-code{font-size:11px;font-weight:800;color:#3568d4}.ptc-name{font-size:14px;font-weight:750;line-height:1.3}.ptc-frame{width:100%;min-height:1400px;border:0;display:block;background:transparent}.ptc-loading{padding:18px 0;color:var(--muted,#677386);font-size:13px}@media(max-width:720px){.ptc-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.ptc-module{min-height:76px;padding:11px}.ptc-frame{min-height:1900px}.ptc-title{font-size:16px}}';
- document.head.appendChild(el);
+ if(document.getElementById('pt-controller-v2-style'))return;
+ var e=document.createElement('style');e.id='pt-controller-v2-style';
+ e.textContent=`
+ .ptc{color:var(--text);min-width:0}.ptc-head{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:12px 0;position:sticky;top:0;z-index:2;background:var(--panel,#fff)}
+ .ptc button{cursor:pointer}.ptc-back,.ptc-retry{padding:10px 14px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--text)}
+ .ptc-list{display:grid;gap:8px}.ptc-module{display:flex;gap:14px;align-items:center;width:100%;padding:15px 12px;text-align:left;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--text)}
+ .ptc-module span{font-size:12px;flex:none;color:var(--muted)}.ptc-module b{font-size:14px;overflow-wrap:anywhere}.ptc-module:focus-visible,.ptc-back:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+ .ptc-content{min-width:0;overflow-wrap:anywhere}.ptc-content .ptm1-body{display:none}.ptc-content .ptm1-section.open>.ptm1-body{display:block}
+ .ptc-content .ptm1-section{border:1px solid var(--line);border-radius:8px;margin:8px 0;overflow:hidden;background:var(--panel)}
+ .ptc-content .ptm1-head{width:100%;display:flex;align-items:center;gap:12px;padding:14px;border:0;text-align:left;background:var(--panel);color:var(--text)}
+ .ptc-content .ptm1-head>span:nth-child(2){flex:1}.ptc-content .ptm1-head small{display:block;color:var(--muted)}.ptc-content .ptm1-body{padding:16px;color:var(--text);background:var(--panel)}
+ .ptc-content .ptm1-top,.ptc-content .ptm1-grid,.ptc-content .ptm1-revs{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:10px}
+ .ptc-content .ptm1-card{padding:14px;border:1px solid var(--line);border-radius:8px}.ptc-content input,.ptc-content textarea,.ptc-content select{max-width:100%;background:var(--panel);color:var(--text);border:1px solid var(--line)}
+ .ptc-content table{display:block;max-width:100%;overflow:auto}.ptc-frame{display:block;width:100%;height:75vh;min-height:400px;border:0;background:var(--panel)}
+ .ptc-status{padding:16px;color:var(--muted)}@media(max-width:600px){.ptc-head strong{font-size:14px}.ptc-content .ptm1-done{display:none}.ptc-content .ptm1-body{padding:12px}}
+ `;document.head.appendChild(e);
 }
-function escapeHtml(value){return String(value).replace(/[&<>"']/g,function(char){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]})}
-function active(){var id=localStorage.getItem(TAB_KEY)||'hub';return id==='hub'||byId[id]?id:'hub'}
-function hub(){
- return '<div class="ptc"><div class="ptc-head"><div><div class="ptc-title">Lingua Portuguesa</div><div class="muted small">17 modulos organizados para estudo, revisao e questoes.</div></div></div><div class="ptc-grid">'+modules.map(function(module){return '<button type="button" class="ptc-module" onclick="PtControllerV1.open(\''+module.id+'\')"><span class="ptc-code">'+module.id.toUpperCase()+'</span><span class="ptc-name">'+escapeHtml(module.name)+'</span></button>'}).join('')+'</div></div>';
+function status(message){return '<div class="ptc-status" role="status">'+message+'</div>'}
+function begin(id){
+ if(pending[id])return;
+ pending[id]=true;
+ window.ensurePortugueseLoaded(id).then(function(){delete pending[id];delete errors[id];if(active===id)refresh(id)}).catch(function(error){
+  delete pending[id];errors[id]=error.message;if(active===id)refresh(id);
+ });
 }
-function frame(module){
- var id='ptc-'+module.id+'-frame';
- return '<div class="ptc"><div class="ptc-head"><button type="button" class="ptc-back" onclick="PtControllerV1.back()">Voltar aos modulos</button><div class="ptc-title">'+module.id.toUpperCase()+' - '+escapeHtml(module.name)+'</div></div><div class="ptc-loading" id="'+id+'-loading">Carregando modulo...</div><iframe id="'+id+'" class="ptc-frame" src="'+module.src+'" title="Portugues '+module.id.toUpperCase()+' - '+escapeHtml(module.name)+'" onload="PtControllerV1.loaded(this)"></iframe></div>';
-}
-function legacy(module){
- var render=module.id==='m1'?legacyM1:legacyM2;
- if(typeof render!=='function'){
-   return '<div class="ptc"><div class="ptc-head"><button type="button" class="ptc-back" onclick="PtControllerV1.back()">Voltar aos modulos</button></div><div class="ptc-loading">Este modulo ainda esta sendo preparado. Tente abrir novamente em alguns segundos.</div></div>';
- }
- var html=render();
- return '<div class="ptc"><div class="ptc-head"><button type="button" class="ptc-back" onclick="PtControllerV1.back()">Voltar aos modulos</button><div class="ptc-title">'+module.id.toUpperCase()+' - '+escapeHtml(module.name)+'</div></div>'+html+'</div>';
+function legacy(id){
+ if(errors[id])return status('Não foi possível carregar o módulo. <button class="ptc-retry" onclick="PtControllerV1.retry()">Tentar novamente</button>');
+ var render=contentRenderer(id);
+ if(typeof render==='function')return render();
+ setTimeout(function(){begin(id)},0);
+ return status('Carregando módulo…');
 }
 function render(){
  style();
- var id=active();
- if(id==='hub')return hub();
- var module=byId[id];
- return module.legacy?legacy(module):frame(module);
+ if(active==='hub')return '<div class="ptc" data-pt-view="hub"><div class="ptc-head"><strong>Língua Portuguesa</strong><span>17 módulos</span></div><div class="ptc-list">'+modules.map(function(m){return '<button type="button" class="ptc-module" onclick="PtControllerV1.open(\''+m.id+'\')"><span>'+m.id.toUpperCase()+'</span><b>'+esc(m.name)+'</b></button>'}).join('')+'</div></div>';
+ var m=get(active);
+ var body=m.src?status('Carregando conteúdo…')+'<iframe class="ptc-frame" src="/'+m.src+'" title="Português '+m.id.toUpperCase()+' — '+esc(m.name)+'" onload="PtControllerV1.loaded(this)" onerror="PtControllerV1.frameError(this)"></iframe>':legacy(m.id);
+ return '<div class="ptc" data-pt-view="'+m.id+'"><div class="ptc-head"><button type="button" class="ptc-back" onclick="PtControllerV1.back()">Voltar aos módulos</button><strong>'+m.id.toUpperCase()+' · '+esc(m.name)+'</strong></div><div class="ptc-content">'+body+'</div></div>';
 }
 function redraw(){
- try{
-  if(typeof window.renderAll==='function')window.renderAll();
-  else if(typeof window.renderSubjects==='function')window.renderSubjects();
- }catch(error){console.warn('[PT controller]',error)}
+ var root=document.querySelector('.subject[data-id="pt"] .ptc');
+ if(root){root.outerHTML=render();return}
+ if(typeof window.renderSubjects==='function')window.renderSubjects();
 }
-function resize(frame){
- try{
-  var doc=frame.contentDocument||frame.contentWindow.document;
-  if(!doc)return;
-  function fit(){try{frame.style.height=Math.max(900,doc.documentElement.scrollHeight,doc.body?doc.body.scrollHeight:0)+'px'}catch(_){}}
-  fit();setTimeout(fit,80);setTimeout(fit,350);setTimeout(fit,900);
-  var loading=document.getElementById(frame.id+'-loading');
-  if(loading)loading.remove();
-  if(frame.contentWindow&&frame.contentWindow.MutationObserver&&doc.body){
-   var observer=new frame.contentWindow.MutationObserver(fit);
-   observer.observe(doc.body,{subtree:true,childList:true,attributes:true});
-  }
- }catch(error){console.warn('[PT controller resize]',error)}
+function refresh(id){
+ if(active!==id)return;
+ var host=document.querySelector('.ptc[data-pt-view="'+id+'"] .ptc-content');
+ if(host&&!get(id).src)host.innerHTML=legacy(id);
 }
-window.PtControllerV1={
- open:function(id){if(!byId[id])return;localStorage.setItem(TAB_KEY,id);redraw()},
- back:function(){localStorage.setItem(TAB_KEY,'hub');redraw()},
- loaded:resize,
- audit:function(){return {registered:modules.map(function(module){return module.id}),active:active(),legacyM1:typeof legacyM1==='function',legacyM2:typeof legacyM2==='function'}}
-};
+function open(id){
+ if(!get(id))return;
+ active=id;
+ try{localStorage.setItem('central-v6:pt:active-module',id)}catch(_){}
+ redraw();
+}
+function back(){active='hub';redraw()}
+function frameError(frame){
+ var host=frame.parentNode;if(!host)return;
+ var msg=host.querySelector('.ptc-status');
+ if(msg)msg.innerHTML='Não foi possível carregar o conteúdo. <button class="ptc-retry" onclick="PtControllerV1.retry()">Tentar novamente</button>';
+}
+function loaded(frame){
+ try{
+  var doc=frame.contentDocument;
+  if(!doc||!doc.body||!doc.body.textContent.trim()){frameError(frame);return}
+  var notice=frame.parentNode.querySelector('.ptc-status');if(notice)notice.remove();
+  // Keep child navigation from loading an entire Central inside its iframe.
+  doc.addEventListener('click',function(event){
+   var a=event.target.closest('a');if(!a)return;
+   var url=new URL(a.href,location.href);
+   if(url.origin===location.origin&&(/\/(?:index.html|central-v119.html)?$/).test(url.pathname)){event.preventDefault();back()}
+  });
+  var css=doc.createElement('style');
+  css.textContent='html,body{max-width:100%;overflow-x:hidden}h1{letter-spacing:0}.wrap{max-width:100%;box-sizing:border-box}table{display:block;max-width:100%;overflow:auto}.tabs{flex-wrap:wrap}';
+  doc.head.appendChild(css);
+ }catch(error){frameError(frame)}
+}
+window.PtControllerV1={render:render,open:open,back:back,loaded:loaded,frameError:frameError,retry:function(){delete errors[active];if(get(active)&&!get(active).src)begin(active);redraw()},audit:function(){return {registered:modules.map(function(m){return m.id}),active:active}}};
 window.renderPortugueseMaster=render;
-setTimeout(redraw,0);
+window.__PT_CANONICAL_RENDER__=render;
+window.ptCanonicalRefreshModule=refresh;
+window.ptCanonicalMount=function(id){open(id)};
+window.togglePtCanonicalModule=open;
 })();

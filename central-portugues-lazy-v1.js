@@ -1,80 +1,58 @@
 (function(){
 'use strict';
-if(window.__CENTRAL_PT_LAZY_CONTROLLER_V1__)return;
-window.__CENTRAL_PT_LAZY_CONTROLLER_V1__=true;
-
-var M1_SCRIPTS=[
- 'portugues-m1-v3.js?v=20260920d',
- 'portugues-m1-theory-v1.js?v=20260920d',
- 'portugues-m1-theory-v2.js?v=20260920d',
- 'portugues-m1-theory-v3.js?v=20260920d',
- 'portugues-m1-no-anki-v1.js?v=20260920d',
- 'portugues-m1-apostila-v2.js?v=20260920d'
-];
-var M2_SCRIPTS=[
- 'portugues-m2-v1.js?v=20260920d',
- 'portugues-m2-tec-link-v1.js?v=20260920d'
-];
-var CONTROLLER_SCRIPT='central-portugues-controller-v1.js?v=20260920d';
-var loaded=false,loading=null;
-
-function addScript(src){
- return new Promise(function(resolve,reject){
-  var existing=document.querySelector('script[data-central-src="'+src+'"]');
-  if(existing){resolve(src);return}
-  var script=document.createElement('script');
-  script.src='/'+src;
-  script.async=false;
-  script.dataset.centralSrc=src;
-  script.onload=function(){resolve(src)};
-  script.onerror=function(){reject(new Error('Falha ao carregar '+src))};
-  document.head.appendChild(script);
+if(window.__CENTRAL_PT_LOADER_V2__)return;
+window.__CENTRAL_PT_LOADER_V2__=true;
+var scripts={},modules={},queue=Promise.resolve(),boot;
+function addScript(path){
+ if(scripts[path])return scripts[path];
+ scripts[path]=new Promise(function(resolve,reject){
+  var s=document.createElement('script');
+  s.src='/'+path+'?v=20260920-pt2';s.async=false;
+  s.onload=function(){resolve()};
+  s.onerror=function(){s.remove();delete scripts[path];reject(new Error('Falha ao carregar '+path))};
+  document.head.appendChild(s);
  });
+ return scripts[path];
 }
-async function loadSeq(list){
- for(var i=0;i<list.length;i++)await addScript(list[i]);
-}
-async function ensurePt(){
- if(loaded)return true;
- if(loading)return loading;
- loading=(async function(){
-   var canonical=window.__PT_CANONICAL_RENDER__||window.renderPortugueseMaster;
-   var realRenderSubjects=window.renderSubjects,realRenderAll=window.renderAll;
-   window.renderSubjects=function(){};
-   window.renderAll=function(){};
-
-   await loadSeq(M1_SCRIPTS);
-   if(typeof window.renderPortugueseMaster==='function'&&window.renderPortugueseMaster!==canonical){
-     window.__PT_M1_ENHANCED_RENDER__=window.renderPortugueseMaster;
-   }else if(window.PtM1V3&&typeof window.PtM1V3.render==='function'){
-     window.__PT_M1_ENHANCED_RENDER__=window.PtM1V3.render;
+window.ensurePortugueseLoaded=function(id){
+ if(id!=='m1'&&id!=='m2')return boot||Promise.resolve();
+ if(modules[id])return modules[id];
+ // Serialize legacy decorators and restore host rendering even after errors.
+ var task=queue.then(async function(){
+  var master=window.renderPortugueseMaster,subjects=window.renderSubjects,all=window.renderAll;
+  window.renderSubjects=function(){};window.renderAll=function(){};
+  try{
+   if(id==='m1'){
+    await addScript('portugues-m1-v3.js');
+    window.renderPortugueseMaster=window.PtM1V3.render;
+    var files=['portugues-m1-theory-v1.js','portugues-m1-theory-v2.js','portugues-m1-theory-v3.js','portugues-m1-no-anki-v1.js','portugues-m1-apostila-v2.js'];
+    for(var i=0;i<files.length;i++)await addScript(files[i]);
+    window.__PT_M1_ENHANCED_RENDER__=window.renderPortugueseMaster;
+   }else{
+    await addScript('portugues-m2-v1.js');
+    window.renderPortugueseMaster=window.PtM2V1.render;
+    await addScript('portugues-m2-tec-link-v1.js');
+    window.__PT_M2_ENHANCED_RENDER__=window.renderPortugueseMaster;
    }
-   if(canonical)window.renderPortugueseMaster=canonical;
-
-   await loadSeq(M2_SCRIPTS);
-   if(typeof window.renderPortugueseMaster==='function'&&window.renderPortugueseMaster!==canonical){
-     window.__PT_M2_ENHANCED_RENDER__=window.renderPortugueseMaster;
-   }
-   if(canonical)window.renderPortugueseMaster=canonical;
-
-   await addScript(CONTROLLER_SCRIPT);
-   window.renderSubjects=realRenderSubjects;
-   window.renderAll=realRenderAll;
-   loaded=true;
-   return true;
- })().catch(function(error){
-   loading=null;
-   if(window.__PT_CANONICAL_RENDER__)window.renderPortugueseMaster=window.__PT_CANONICAL_RENDER__;
-   console.error('[PT lazy controller]',error);
-   throw error;
+  }finally{
+   window.renderPortugueseMaster=master;window.renderSubjects=subjects;window.renderAll=all;
+  }
  });
- return loading;
+ modules[id]=task.catch(function(error){delete modules[id];throw error});
+ queue=modules[id].catch(function(){});
+ return modules[id];
+};
+function start(){
+ boot=addScript('central-portugues-controller-v1.js').then(function(){
+  if(typeof window.renderSubjects==='function')window.renderSubjects();
+ }).catch(function(error){
+  boot=null;console.error('[Português]',error);
+  document.querySelectorAll('[data-pt-bootstrap]').forEach(function(host){
+   host.innerHTML='<p>Não foi possível abrir Português.</p><button type="button" onclick="ptRetryBootstrap()">Tentar novamente</button>';
+  });
+ });
+ return boot;
 }
-window.ensurePortugueseLoaded=ensurePt;
-document.addEventListener('click',function(event){
- try{
-   var head=event.target&&event.target.closest&&event.target.closest('.subject[data-id="pt"] > .subject-head');
-   if(head)setTimeout(function(){ensurePt().catch(function(){})},0);
- }catch(_){}
-},true);
+window.ptRetryBootstrap=start;
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start,{once:true});else start();
 })();

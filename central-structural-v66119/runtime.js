@@ -5277,10 +5277,8 @@ function renderPtCanonicalModule(m){
  '</section>';
 }
 function renderPortugueseMaster(){
- ensurePtCanonicalStyle();
- const html='<div class="pt-cf-modules">'+PT_CANONICAL_MODULES.map(renderPtCanonicalModule).join('')+'</div>';
- setTimeout(()=>PT_CANONICAL_MODULES.forEach(m=>{if(localStorage.getItem(ptModuleOpenKey(m.id))==='1')ptCanonicalMount(m.id)}),0);
- return html;
+ if(window.PtControllerV1)return window.PtControllerV1.render();
+ return '<div data-pt-bootstrap role="status">Preparando Português…</div>';
 }
 window.__PT_CANONICAL_RENDER__=renderPortugueseMaster;
 function ptMasterKey(){return 'central-v6:pt-master-panel'}
