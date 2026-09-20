@@ -5171,6 +5171,7 @@ async function hydratePtNoteImages(week=null,day=null){
 }
 
 
+window.__PT_CANONICAL_HOST__=true;
 const PT_CANONICAL_MODULES=[
  {id:'m1',num:1,title:'Ortografia e Acentuação',src:null},
  {id:'m2',num:2,title:'Classes Nominais',src:null},
