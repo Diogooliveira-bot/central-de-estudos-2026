@@ -5218,6 +5218,12 @@ function ptCanonicalResize(frame){
  }catch(e){console.warn('[PT canonical resize]',e)}
 }
 window.ptCanonicalResize=ptCanonicalResize;
+function closePtCanonicalModule(id){
+ localStorage.setItem(ptModuleOpenKey(id),'0');
+ renderAll();
+ setTimeout(()=>document.querySelector('[data-pt-module="'+id+'"]')?.scrollIntoView({behavior:'smooth',block:'start'}),30);
+}
+window.closePtCanonicalModule=closePtCanonicalModule;
 function renderPtCanonicalModule(m){
  const open=localStorage.getItem(ptModuleOpenKey(m.id))==='1';
  let body='';
@@ -5239,7 +5245,9 @@ function renderPtCanonicalModule(m){
    '<div class="cf-module-body pt-cf-module-body">'+
      '<div class="cf-module-bar"><span style="width:0%"></span></div>'+
      '<div class="pt-cf-intro">Estude o conteúdo do módulo e use a área de questões/TEC do próprio módulo.</div>'+
+     '<div class="cf-actions" style="margin:0 0 10px"><button class="cf-btn" onclick="closePtCanonicalModule(\''+m.id+'\')">← Voltar aos módulos</button></div>'+
      body+
+     '<div class="cf-actions" style="margin-top:12px"><button class="cf-btn" onclick="closePtCanonicalModule(\''+m.id+'\')">← Voltar aos módulos</button></div>'+
    '</div>'+
  '</section>';
 }
