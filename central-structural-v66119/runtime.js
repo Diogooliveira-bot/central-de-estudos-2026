@@ -5192,45 +5192,76 @@ const PT_CANONICAL_MODULES=[
  {id:'m17',num:17,title:'Tipologia Textual',src:'portugues-m17-v1.html'}
 ];
 function ptModuleOpenKey(id){return 'central-v6:pt-module-open:'+id}
-function togglePtCanonicalModule(id){
- const mod=PT_CANONICAL_MODULES.find(x=>x.id===id);if(!mod)return;
- const opening=localStorage.getItem(ptModuleOpenKey(id))!=='1';
- PT_CANONICAL_MODULES.forEach(m=>localStorage.setItem(ptModuleOpenKey(m.id),'0'));
- localStorage.setItem(ptModuleOpenKey(id),opening?'1':'0');
- localStorage.setItem('central-v6:pt:active-module',id);
- if(opening&&(id==='m1'||id==='m2')&&typeof window.ensurePortugueseLoaded==='function'){
-   window.ensurePortugueseLoaded().then(()=>renderAll()).catch(e=>console.warn('[PT canonical load]',e));
- }else renderAll();
- setTimeout(()=>document.querySelector('[data-pt-module="'+id+'"]')?.scrollIntoView({behavior:'smooth',block:'start'}),30);
-}
-window.togglePtCanonicalModule=togglePtCanonicalModule;
 function ensurePtCanonicalStyle(){
  if(document.getElementById('pt-canonical-runtime-style'))return;
  const e=document.createElement('style');e.id='pt-canonical-runtime-style';
- e.textContent='.pt-cf-modules{display:grid;gap:10px}.pt-cf-frame{width:100%;min-height:1600px;border:0;display:block;background:transparent}.pt-cf-loading{padding:18px;border:1px solid var(--line);border-radius:12px;background:var(--panel);color:var(--muted)}.pt-cf-intro{margin:0 0 10px;color:var(--muted);font-size:12px}.pt-cf-module-body{padding-top:10px}@media(max-width:720px){.pt-cf-frame{min-height:2400px}}';
+ e.textContent='.pt-cf-modules{display:grid;gap:10px}.pt-cf-frame{width:100%;min-height:1500px;border:0;display:block;background:transparent}.pt-cf-loading{padding:18px;border:1px solid var(--line);border-radius:12px;background:var(--panel);color:var(--muted)}.pt-cf-intro{margin:0 0 10px;color:var(--muted);font-size:12px}.pt-cf-module-body{padding-top:10px}@media(max-width:720px){.pt-cf-frame{min-height:2200px}}';
  document.head.appendChild(e);
 }
 function ptCanonicalResize(frame){
  try{
   const doc=frame.contentDocument||frame.contentWindow.document;if(!doc)return;
-  function fit(){try{frame.style.height=Math.max(1200,doc.documentElement.scrollHeight,doc.body?doc.body.scrollHeight:0)+'px'}catch(_){}}
+  function fit(){try{frame.style.height=Math.max(1100,doc.documentElement.scrollHeight,doc.body?doc.body.scrollHeight:0)+'px'}catch(_){}}
   fit();setTimeout(fit,80);setTimeout(fit,350);setTimeout(fit,900);
   if(frame.contentWindow&&frame.contentWindow.MutationObserver){const obs=new frame.contentWindow.MutationObserver(fit);obs.observe(doc.body,{subtree:true,childList:true,attributes:true})}
  }catch(e){console.warn('[PT canonical resize]',e)}
 }
 window.ptCanonicalResize=ptCanonicalResize;
+
+function ptCanonicalContent(m){
+ if(m.id==='m1'){
+   return window.PtM1V3&&typeof window.PtM1V3.render==='function'
+     ? window.PtM1V3.render()
+     : '<div class="pt-cf-loading">Carregando M1…</div>';
+ }
+ if(m.id==='m2'){
+   return window.PtM2V1&&typeof window.PtM2V1.render==='function'
+     ? window.PtM2V1.render()
+     : '<div class="pt-cf-loading">Carregando M2…</div>';
+ }
+ return '<iframe class="pt-cf-frame" src="/'+escAttr(m.src)+'" title="Português '+m.id.toUpperCase()+' — '+escAttr(m.title)+'" onload="ptCanonicalResize(this)"></iframe>';
+}
+function ptCanonicalMount(id,force=false){
+ const m=PT_CANONICAL_MODULES.find(x=>x.id===id);if(!m)return;
+ const host=document.querySelector('[data-pt-host="'+id+'"]');if(!host)return;
+ if(host.dataset.mounted==='1'&&!force)return;
+ if(id==='m1'||id==='m2'){
+   host.innerHTML='<div class="pt-cf-loading">Carregando módulo…</div>';
+   if(typeof window.ensurePortugueseLoaded!=='function')return;
+   window.ensurePortugueseLoaded().then(()=>{
+     host.innerHTML=ptCanonicalContent(m);
+     host.dataset.mounted='1';
+   }).catch(e=>{console.error('[PT canonical load]',e);host.innerHTML='<div class="pt-cf-loading">Não foi possível carregar este módulo. Toque no cabeçalho para fechar e tente novamente.</div>'});
+ }else{
+   host.innerHTML=ptCanonicalContent(m);
+   host.dataset.mounted='1';
+ }
+}
+function ptCanonicalRefreshModule(id){
+ const host=document.querySelector('[data-pt-host="'+id+'"]');if(!host)return;
+ const m=PT_CANONICAL_MODULES.find(x=>x.id===id);if(!m)return;
+ host.innerHTML=ptCanonicalContent(m);
+ host.dataset.mounted='1';
+}
+window.ptCanonicalMount=ptCanonicalMount;
+window.ptCanonicalRefreshModule=ptCanonicalRefreshModule;
+
+function togglePtCanonicalModule(id){
+ const el=document.querySelector('.cf-module[data-pt-module="'+id+'"]');if(!el)return;
+ const open=!el.classList.contains('open');
+ el.classList.toggle('open',open);
+ localStorage.setItem(ptModuleOpenKey(id),open?'1':'0');
+ if(open){
+   localStorage.setItem('central-v6:pt:active-module',id);
+   const m=PT_CANONICAL_MODULES.find(x=>x.id===id);
+   if(m)saveLast({title:'Português • Módulo '+m.num+' • '+m.title,at:Date.now()});
+   ptCanonicalMount(id);
+ }
+}
+window.togglePtCanonicalModule=togglePtCanonicalModule;
+
 function renderPtCanonicalModule(m){
  const open=localStorage.getItem(ptModuleOpenKey(m.id))==='1';
- let body='';
- if(open){
-   if(m.id==='m1'){
-     body=window.PtM1V3&&typeof window.PtM1V3.render==='function'?window.PtM1V3.render():'<div class="pt-cf-loading">Carregando M1…</div>';
-   }else if(m.id==='m2'){
-     body=window.PtM2V1&&typeof window.PtM2V1.render==='function'?window.PtM2V1.render():'<div class="pt-cf-loading">Carregando M2…</div>';
-   }else{
-     body='<iframe class="pt-cf-frame" src="/'+escAttr(m.src)+'" title="Português '+m.id.toUpperCase()+' — '+escAttr(m.title)+'" onload="ptCanonicalResize(this)"></iframe>';
-   }
- }
  return '<section class="cf-module '+(open?'open':'')+'" data-pt-module="'+m.id+'">'+
    '<button class="cf-module-head" onclick="togglePtCanonicalModule(\''+m.id+'\')">'+
      '<span class="cf-module-no">MÓDULO '+m.num+'</span>'+
@@ -5240,13 +5271,15 @@ function renderPtCanonicalModule(m){
    '<div class="cf-module-body pt-cf-module-body">'+
      '<div class="cf-module-bar"><span style="width:0%"></span></div>'+
      '<div class="pt-cf-intro">Estude o conteúdo do módulo e use a área de questões/TEC do próprio módulo.</div>'+
-     body+
+     '<div data-pt-host="'+m.id+'"></div>'+
    '</div>'+
  '</section>';
 }
 function renderPortugueseMaster(){
  ensurePtCanonicalStyle();
- return '<div class="pt-cf-modules">'+PT_CANONICAL_MODULES.map(renderPtCanonicalModule).join('')+'</div>';
+ const html='<div class="pt-cf-modules">'+PT_CANONICAL_MODULES.map(renderPtCanonicalModule).join('')+'</div>';
+ setTimeout(()=>PT_CANONICAL_MODULES.forEach(m=>{if(localStorage.getItem(ptModuleOpenKey(m.id))==='1')ptCanonicalMount(m.id)}),0);
+ return html;
 }
 function ptMasterKey(){return 'central-v6:pt-master-panel'}
 function togglePtMasterPanel(panel){
