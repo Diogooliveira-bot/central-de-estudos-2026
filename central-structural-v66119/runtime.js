@@ -5247,11 +5247,15 @@ function ptCanonicalRefreshModule(id){
 window.ptCanonicalMount=ptCanonicalMount;
 window.ptCanonicalRefreshModule=ptCanonicalRefreshModule;
 
+let ptCanonicalToggleLock={id:null,until:0};
 function togglePtCanonicalModule(id){
+ const now=Date.now();
+ if(ptCanonicalToggleLock.id===id&&now<ptCanonicalToggleLock.until)return;
+ ptCanonicalToggleLock={id:id,until:now+800};
  const el=document.querySelector('.cf-module[data-pt-module="'+id+'"]');if(!el)return;
  const open=!el.classList.contains('open');
- el.classList.toggle('open',open);
  localStorage.setItem(ptModuleOpenKey(id),open?'1':'0');
+ el.classList.toggle('open',open);
  if(open){
    localStorage.setItem('central-v6:pt:active-module',id);
    const m=PT_CANONICAL_MODULES.find(x=>x.id===id);
