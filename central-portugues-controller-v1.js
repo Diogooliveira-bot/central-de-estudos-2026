@@ -87,4 +87,5 @@ window.PtControllerV1={
  audit:function(){return {registered:modules.map(function(module){return module.id}),active:active(),legacyM1:typeof legacyM1==='function',legacyM2:typeof legacyM2==='function'}}
 };
 window.renderPortugueseMaster=render;
+setTimeout(redraw,0);
 })();
