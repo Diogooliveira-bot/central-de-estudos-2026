@@ -5207,6 +5207,12 @@ function ptCanonicalResize(frame){
  }catch(e){console.warn('[PT canonical resize]',e)}
 }
 window.ptCanonicalResize=ptCanonicalResize;
+function ptCanonicalFrameSrc(src){
+ try{
+  const token=new URLSearchParams(location.search).get('_vercel_share');
+  return '/'+src+(token?'?_vercel_share='+encodeURIComponent(token):'');
+ }catch(_){return '/'+src}
+}
 
 function ptCanonicalContent(m){
  if(m.id==='m1'){
@@ -5220,7 +5226,7 @@ function ptCanonicalContent(m){
      ? window.PtM2V1.render()
      : '<div class="pt-cf-loading">Carregando M2…</div>';
  }
- return '<iframe class="pt-cf-frame" src="/'+escAttr(m.src)+'" title="Português '+m.id.toUpperCase()+' — '+escAttr(m.title)+'" onload="ptCanonicalResize(this)"></iframe>';
+ return '<iframe class="pt-cf-frame" src="'+escAttr(ptCanonicalFrameSrc(m.src))+'" title="Português '+m.id.toUpperCase()+' — '+escAttr(m.title)+'" onload="ptCanonicalResize(this)"></iframe>';
 }
 function ptCanonicalMount(id,force=false){
  const m=PT_CANONICAL_MODULES.find(x=>x.id===id);if(!m)return;
