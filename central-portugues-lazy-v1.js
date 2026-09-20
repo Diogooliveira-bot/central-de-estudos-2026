@@ -26,26 +26,9 @@ function addScript(src){
 async function ensurePt(){
  if(loaded)return true;
  if(loading)return loading;
- loading=(async function(){
-  for(var i=0;i<PT_SCRIPTS.length;i++)await addScript(PT_SCRIPTS[i]);
-  loaded=true;return true;
- })().catch(function(err){loading=null;console.error('[PT M1-M2 lazy]',err);throw err});
+ loading=Promise.all(PT_SCRIPTS.map(addScript)).then(function(){loaded=true;return true}).catch(function(err){loading=null;console.error('[PT M1-M2 lazy]',err);throw err});
  return loading;
 }
 window.ensurePortugueseLoaded=ensurePt;
 
-// If Portuguese is already open on first paint with M1/M2 selected, hydrate it automatically.
-function hydrateIfNeeded(){
- try{
-  var open=localStorage.getItem('central-v6:open:pt')==='1';
-  var active=localStorage.getItem('central-v6:pt:active-module')||'m1';
-  if(open&&(active==='m1'||active==='m2')){
-   ensurePt().then(function(){
-    if(typeof window.renderAll==='function')window.renderAll();
-    else if(typeof window.renderSubjects==='function')window.renderSubjects();
-   });
-  }
- }catch(e){console.warn('[PT hydrate]',e)}
-}
-if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',hydrateIfNeeded,{once:true});else setTimeout(hydrateIfNeeded,0);
 })();
