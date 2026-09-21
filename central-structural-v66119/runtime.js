@@ -5173,10 +5173,10 @@ async function hydratePtNoteImages(week=null,day=null){
 
 /* Português é registrado pelo controlador leve carregado pela Central.
    O runtime não mantém mais um segundo renderizador, iframes ou cadeia de módulos. */
-window.__PT_CANONICAL_HOST__=true;
-window.__PT_CANONICAL_MODULES__=[];
+window.__PT_NATIVE_HOST__=true;
+window.__PT_NATIVE_MODULES__=[];
 function renderPortugueseMaster(){return '<div class="pt-native-placeholder" aria-live="polite"></div>';}
-window.__PT_CANONICAL_RENDER__=renderPortugueseMaster;
+window.__PT_NATIVE_RENDER__=renderPortugueseMaster;
 
 function ptMasterKey(){return 'central-v6:pt-master-panel'}
 function togglePtMasterPanel(panel){
