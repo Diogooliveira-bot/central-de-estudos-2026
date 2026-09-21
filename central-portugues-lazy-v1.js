@@ -272,14 +272,7 @@ function mount(module,host){
  host.innerHTML='<div class="pt-native-loading">Carregando '+esc(module.title)+'…</div>';
  var job;
  if(id==='m1'||id==='m2'){
-  job=renderNativeM1M2(id).then(function(html){
-   host.innerHTML=html||'<p>Conteúdo indisponível.</p>';
-   installModuleStyles(id,[]);
-   makeSurface(host,id);
-   host.dataset.ptMounted='1';
-   applyFont(host,readFont());
-   return host;
-  });
+  job=renderNativeM1M2(id,host);
  }else{
   job=renderHtmlModule(id,host,module).then(function(result){
    host.dataset.ptMounted='1';
