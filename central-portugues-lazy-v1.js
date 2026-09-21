@@ -71,12 +71,12 @@ function scopeSelector(selector,scope){
  var value=selector.trim();
  if(!value)return value;
  if(value===':root')return scope;
- if(/^html(?:\\s|$|[.#[:])/.test(value))return value.replace(/^html/,scope);
- if(/^body(?:\\s|$|[.#[:])/.test(value))return value.replace(/^body/,scope);
+ if(/^html(?:\s|$|[.#[:])/.test(value))return value.replace(/^html/,scope);
+ if(/^body(?:\s|$|[.#[:])/.test(value))return value.replace(/^body/,scope);
  return scope+' '+value;
 }
 function scopeCss(css,scope){
- return String(css||'').replace(/(^|})([^{}]+)\\{/g,function(all,prefix,selectors){
+ return String(css||'').replace(/(^|})([^{}]+)\{/g,function(all,prefix,selectors){
   var raw=selectors.trim();
   if(!raw||raw.charAt(0)==='@'||/^(from|to|[0-9.]+%)$/.test(raw))return all;
   return prefix+raw.split(',').map(function(part){return scopeSelector(part,scope)}).join(', ')+'{';
@@ -89,12 +89,12 @@ function installModuleStyles(id,styles){
  var style=document.createElement('style');
  style.id=styleId;
  var scope='.pt-native-surface[data-pt-id="'+id+'"]';
- style.textContent=styles.map(function(css){return scopeCss(css,scope)}).join('\\n');
+ style.textContent=styles.map(function(css){return scopeCss(css,scope)}).join('\n');
  document.head.appendChild(style);
 }
 function assetName(src){
  var url=new URL(src,window.location.href);
- return url.pathname.replace(/^\\//,'')+url.search;
+ return url.pathname.replace(/^\//,'')+url.search;
 }
 function addScript(src){
  var key=assetName(src);
@@ -117,7 +117,7 @@ function executeInline(code,id,index){
  var script=document.createElement('script');
  script.type='text/javascript';
  script.dataset.centralPtInline=id;
- script.text=String(code||'')+'\\n//# sourceURL=central-pt-'+id+'-inline-'+index+'.js';
+ script.text=String(code||'')+'\n//# sourceURL=central-pt-'+id+'-inline-'+index+'.js';
  document.head.appendChild(script);
  script.remove();
 }
@@ -246,7 +246,7 @@ function mount(module,host){
  }
  record.promise=job;
  return job.catch(function(error){
-  host.innerHTML='<div class="pt-native-error"><strong>Não foi possível abrir este módulo.</strong><p>'+esc(error.message||error)+'</p><button type="button" onclick="togglePtModule(\\''+id+'\\')">Tentar novamente</button></div>';
+  host.innerHTML='<div class="pt-native-error"><strong>Não foi possível abrir este módulo.</strong><p>'+esc(error.message||error)+'</p><button type="button" onclick="togglePtModule(\''+id+'\')">Tentar novamente</button></div>';
   console.error('[Português nativo '+id+']',error);
   throw error;
  });
@@ -294,7 +294,7 @@ function backToPortugueseHub(){
 function renderModule(module,active){
  var open=module.id===active;
  return '<section class="cf-module pt-native-module'+(open?' open':'')+'" data-pt-module="'+module.id+'" aria-expanded="'+(open?'true':'false')+'">'+
-  '<button class="cf-module-head" type="button" onclick="togglePtModule(\\''+module.id+'\\')" aria-controls="pt-host-'+module.id+'">'+
+  '<button class="cf-module-head" type="button" onclick="togglePtModule(\''+module.id+'\')" aria-controls="pt-host-'+module.id+'">'+
    '<span class="cf-module-title"><span class="cf-module-number">M'+module.num+'</span> '+esc(module.title)+'</span>'+
    '<span class="cf-module-meta">Abrir módulo <span aria-hidden="true">⌄</span></span>'+
   '</button>'+
