@@ -17,6 +17,10 @@ function applyTheme(){if(state.theme==="light"||state.theme==="dark")document.bo
 function updateProgress(){const n=SESSIONS.filter(s=>state.done[s.id]).length;const pct=SESSIONS.length?Math.round(n/SESSIONS.length*100):0;const f=document.getElementById("progressFill"),l=document.getElementById("progressLabel"),p=document.getElementById("progressPct");if(f)f.style.width=pct+"%";if(l)l.textContent=n+"/"+SESSIONS.length+" sessões concluídas";if(p)p.textContent=pct+"%"}
 function renderTheory(){
  const host=document.getElementById("m17Theory");if(!host)return;
+ const openIds=new Set(Array.from(host.querySelectorAll("details.session[open]")).map(el=>el.dataset.session));
+ const hadOpen=openIds.size>0;
+ const scrollBox=host.closest(".view")||host.closest(".workspace")||null;
+ const scrollTop=scrollBox?scrollBox.scrollTop:(window.scrollY||0);
  host.innerHTML=SESSIONS.map((s,idx)=>{
    const done=!!state.done[s.id];
    const quiz=(s.quiz||[]).map((q,qi)=>{
@@ -24,12 +28,13 @@ function renderTheory(){
      const opts=q.options.map((o,oi)=>'<button class="qopt'+(chosen===oi?' selected':'')+'" data-q="'+esc(key)+'" data-o="'+oi+'" type="button">'+String.fromCharCode(65+oi)+") "+esc(o)+'</button>').join("");
      let fb="";
      if(Number.isInteger(chosen)){const ok=chosen===q.correct;fb='<div class="feedback"><b>'+(ok?'✓ Correto.':'✗ Revise.')+'</b> '+esc(q.explanation)+'</div>'}
-     return '<div class="qcard"><b>'+(qi+1)+'. '+esc(q.q)+'</b><div class="qopts">'+opts+'</div>'+fb+'</div>'
-   }).join("");
-   return '<details class="session" '+(idx===0?'open':'')+'><summary><span class="num">'+(idx+1)+'</span><span class="sumtxt"><b>'+esc(s.title)+'</b><span class="goal">'+esc(s.goal||"")+'</span></span><span class="state">'+(done?'CONCLUÍDA':'PENDENTE')+'</span></summary><div class="body">'+s.html+'<div class="quiz"><span class="label">Checagem rápida — estilo FCC, autoral</span>'+quiz+'</div><div class="donebox"><label><input type="checkbox" data-done="'+esc(s.id)+'" '+(done?'checked':'')+'> Concluir sessão</label></div></div></details>'
+     const shouldOpen=hadOpen?openIds.has(s.id):idx===0;
+     return '<details class="session" data-session="'+esc(s.id)+'" '+(shouldOpen?'open':'')+'><summary><span class="num">'+(idx+1)+'</span><span class="sumtxt"><b>'+esc(s.title)+'</b><span class="goal">'+esc(s.goal||"")+'</span></span><span class="state">'+(done?'CONCLUÍDA':'PENDENTE')+'</span></summary><div class="body">'+s.html+'<div class="quiz"><span class="label">Checagem rápida — estilo FCC, autoral</span>'+quiz+'</div><div class="donebox"><label><input type="checkbox" data-done="'+esc(s.id)+'" '+(done?'checked':'')+'> Concluir sessão</label></div></div></details>'
  }).join("");
  host.querySelectorAll("[data-done]").forEach(el=>el.addEventListener("change",e=>{state.done[e.target.dataset.done]=e.target.checked;save();renderTheory();updateProgress()}));
  host.querySelectorAll("[data-q]").forEach(el=>el.addEventListener("click",e=>{state.quiz[e.currentTarget.dataset.q]=Number(e.currentTarget.dataset.o);save();renderTheory()}));
+ const restoreScroll=()=>{if(scrollBox)scrollBox.scrollTop=scrollTop;else try{window.scrollTo(0,scrollTop)}catch(_){}};
+ if(typeof requestAnimationFrame==="function")requestAnimationFrame(restoreScroll);else setTimeout(restoreScroll,0);
 }
 function normalizeRounds(){if(!state.tec||typeof state.tec!=="object")state.tec={};if(!Array.isArray(state.tec.rounds))state.tec.rounds=[];while(state.tec.rounds.length<3)state.tec.rounds.push({pct:"",done:false});state.tec.rounds=state.tec.rounds.slice(0,3).map(r=>({pct:r&&r.pct!==undefined?r.pct:"",done:!!(r&&r.done)}))}
 function renderTec(){
