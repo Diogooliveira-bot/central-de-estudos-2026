@@ -98,6 +98,7 @@ function assetName(src){
 }
 function addScript(src){
  var key=assetName(src);
+ if(isInjectedHostSource(key))return Promise.resolve(key);
  if(scripts[key])return scripts[key];
  scripts[key]=new Promise(function(resolve,reject){
   var script=document.createElement('script');
@@ -128,9 +129,13 @@ function fetchText(path){
   return response.text();
  });
 }
+function isInjectedHostSource(raw){
+ raw=String(raw||'');
+ return raw.indexOf('_next-live/')>=0||raw.indexOf('vercel.live')>=0||raw.indexOf('feedback/feedback.js')>=0;
+}
 function isInjectedHostScript(script){
  var raw=script&&script.getAttribute?script.getAttribute('src')||'':'';
- return raw.indexOf('_next-live/')>=0||raw.indexOf('vercel.live')>=0||raw.indexOf('feedback/feedback.js')>=0;
+ return isInjectedHostSource(raw);
 }
 function versionedAsset(src){
  var key=assetName(src);
