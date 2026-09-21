@@ -173,6 +173,7 @@ function restoreStash(host,id){
  var record=mounts[id];
  if(!record||!record.stash||!record.stash.childNodes.length)return false;
  moveChildren(record.stash,host);
+ host.dataset.ptMounted='1';
  makeSurface(host,id);
  return true;
 }
@@ -230,6 +231,8 @@ function renderHtmlModule(id,host,module){
 function mount(module,host){
  var id=module.id;
  var record=mounts[id]||(mounts[id]={stash:document.createElement('div')});
+ if(host.dataset.ptMounted==='1')return Promise.resolve(host);
+ if(record.promise)return record.promise;
  if(restoreStash(host,id))return Promise.resolve(host);
  host.innerHTML='<div class="pt-native-loading">Carregando '+esc(module.title)+'…</div>';
  var job;
@@ -238,14 +241,20 @@ function mount(module,host){
    host.innerHTML=html||'<p>Conteúdo indisponível.</p>';
    installModuleStyles(id,[]);
    makeSurface(host,id);
+   host.dataset.ptMounted='1';
    applyFont(host,readFont());
    return host;
   });
  }else{
-  job=renderHtmlModule(id,host,module);
+  job=renderHtmlModule(id,host,module).then(function(result){
+   host.dataset.ptMounted='1';
+   return result;
+  });
  }
  record.promise=job;
  return job.catch(function(error){
+  delete record.promise;
+  delete host.dataset.ptMounted;
   host.innerHTML='<div class="pt-native-error"><strong>Não foi possível abrir este módulo.</strong><p>'+esc(error.message||error)+'</p><button type="button" onclick="togglePtModule(\''+id+'\')">Tentar novamente</button></div>';
   console.error('[Português nativo '+id+']',error);
   throw error;
@@ -266,23 +275,31 @@ function closeCurrentExcept(id){
   }
  });
 }
+function isPtModuleOpen(id){
+ try{return localStorage.getItem(OPEN_PREFIX+id)==='1'}catch(_){return false}
+}
 function openModule(id){
  var module=BY_ID[id],section=document.querySelector('.cf-module[data-pt-module="'+id+'"]');
- if(!module||!section)return Promise.resolve(false);
- closeCurrentExcept(id);
+ if(!module||!section)return false;
+ writeOpen(id,true);
  writeActive(id);
  setModuleState(section,true);
  var host=section.querySelector('[data-pt-host]');
- return mount(module,host).then(function(){applyFont(host,readFont());return true});
+ if(host.dataset.ptMounted!=='1')mount(module,host).catch(function(){});
+ else applyFont(host,readFont());
+ return true;
 }
 function togglePtModule(id){
- var active=readActive();
- if(active===id){
-  closeCurrentExcept('');
-  writeActive('');
+ var section=document.querySelector('.cf-module[data-pt-module="'+id+'"]');
+ if(!section)return false;
+ var open=section.classList.contains('open');
+ if(open){
+  setModuleState(section,false);
+  writeOpen(id,false);
+  if(readActive()===id)writeActive('');
   return false;
  }
- return openModule(id).catch(function(){return false});
+ return openModule(id);
 }
 function backToPortugueseHub(){
  var active=readActive();
@@ -291,12 +308,12 @@ function backToPortugueseHub(){
  if(active)applyFontEverywhere(readFont());
  return true;
 }
-function renderModule(module,active){
- var open=module.id===active;
+function renderModule(module){
+ var open=isPtModuleOpen(module.id);
  return '<section class="cf-module pt-native-module'+(open?' open':'')+'" data-pt-module="'+module.id+'" aria-expanded="'+(open?'true':'false')+'">'+
   '<button class="cf-module-head" type="button" onclick="togglePtModule(\''+module.id+'\')" aria-controls="pt-host-'+module.id+'">'+
-   '<span class="cf-module-title"><span class="cf-module-number">M'+module.num+'</span> '+esc(module.title)+'</span>'+
-   '<span class="cf-module-meta">Abrir módulo <span aria-hidden="true">⌄</span></span>'+
+   '<span class="cf-module-no">MÓDULO '+module.num+'</span><span class="cf-module-title">'+esc(module.title)+'</span>'+
+   '<span class="cf-module-stat">Teoria • revisão • questões • TEC</span><span class="chev">⌄</span>'+
   '</button>'+
   '<div class="cf-module-body"><div class="pt-native-host" id="pt-host-'+module.id+'" data-pt-host="'+module.id+'">'+
    (open?'<div class="pt-native-loading">Preparando conteúdo…</div>':'')+
@@ -305,20 +322,21 @@ function renderModule(module,active){
 }
 function renderPortugueseMaster(){
  preserveMountedContent();
- var active=readActive();
+ var opened=MODULES.filter(function(module){return isPtModuleOpen(module.id)});
  var html='<div class="pt-cf-modules pt-native-modules" data-pt-native="true">'+
   '<div class="pt-native-heading"><strong>Português</strong><span>17 módulos • teoria, revisão, questões e TEC</span></div>'+
-  MODULES.map(function(module){return renderModule(module,active)}).join('')+
+  MODULES.map(renderModule).join('')+
   '</div>';
  setTimeout(function(){
-  if(!active)return;
   var ptSubject=document.querySelector('.subject[data-id="pt"]');
   if(ptSubject&&!ptSubject.classList.contains('open'))return;
-  var section=document.querySelector('.cf-module[data-pt-module="'+active+'"]');
-  if(section){
-   var host=section.querySelector('[data-pt-host]');
-   mount(BY_ID[active],host).catch(function(){});
-  }
+  opened.forEach(function(module){
+   var section=document.querySelector('.cf-module[data-pt-module="'+module.id+'"]');
+   if(section){
+    var host=section.querySelector('[data-pt-host]');
+    mount(module,host).catch(function(){});
+   }
+  });
  },0);
  return html;
 }
