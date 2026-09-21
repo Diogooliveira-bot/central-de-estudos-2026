@@ -29,6 +29,16 @@ function database() {
   return neon(process.env.DATABASE_URL);
 }
 
+function isPortugueseDataKey(key) {
+  const value = String(key || '');
+  return /^central-v6:pt(?::|-)/.test(value) || /^dominio_portugues/i.test(value);
+}
+
+function sanitizePayload(payload) {
+  if (!payload || typeof payload !== 'object' || Array.isArray(payload)) return {};
+  return Object.fromEntries(Object.entries(payload).filter(([key]) => !isPortugueseDataKey(key)));
+}
+
 async function ensureTable(sql) {
   await sql`
     CREATE TABLE IF NOT EXISTS central_sync_state (
@@ -62,7 +72,7 @@ function rowToState(row, includePayload = true) {
     hash: row.content_hash || '',
     bytes: Number(row.payload_bytes || 0),
   };
-  if (includePayload) state.payload = row.payload || {};
+  if (includePayload) state.payload = sanitizePayload(row.payload || {});
   return state;
 }
 
@@ -87,7 +97,8 @@ export default async function handler(req, res) {
       if (!body?.payload || typeof body.payload !== 'object' || Array.isArray(body.payload)) {
         return send(res, 400, { error: 'Estado de sincronização inválido' });
       }
-      const raw = JSON.stringify(body.payload);
+      const cleanPayload = sanitizePayload(body.payload);
+      const raw = JSON.stringify(cleanPayload);
       const bytes = Buffer.byteLength(raw, 'utf8');
       if (bytes > 4_000_000) {
         return send(res, 413, { error: 'Dados acima de 4 MB; faça um backup por arquivo antes de continuar' });
