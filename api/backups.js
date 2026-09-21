@@ -28,6 +28,25 @@ function database() {
   return neon(process.env.DATABASE_URL);
 }
 
+function isPortugueseDataKey(key) {
+  const value = String(key || '');
+  return /^central-v6:pt(?::|-)/.test(value) || /^dominio_portugues/i.test(value);
+}
+
+function sanitizeDataMap(data) {
+  if (!data || typeof data !== 'object' || Array.isArray(data)) return {};
+  return Object.fromEntries(Object.entries(data).filter(([key]) => !isPortugueseDataKey(key)));
+}
+
+function sanitizeBackup(backup) {
+  if (!backup || typeof backup !== 'object' || Array.isArray(backup)) return backup;
+  const clean = { ...backup };
+  if (clean.dados && typeof clean.dados === 'object' && !Array.isArray(clean.dados)) {
+    clean.dados = sanitizeDataMap(clean.dados);
+  }
+  return clean;
+}
+
 async function ensureTable(sql) {
   await sql`
     CREATE TABLE IF NOT EXISTS central_backups (
@@ -64,7 +83,7 @@ export default async function handler(req, res) {
       if (id) {
         const rows = await sql`SELECT id, payload FROM central_backups WHERE id = ${id} LIMIT 1`;
         if (!rows.length) return send(res, 404, { error: 'Backup não encontrado' });
-        return send(res, 200, { id: Number(rows[0].id), backup: rows[0].payload });
+        return send(res, 200, { id: Number(rows[0].id), backup: sanitizeBackup(rows[0].payload) });
       }
       const rows = await sql`
         SELECT id, created_at, app_version, note, payload_bytes
@@ -88,13 +107,14 @@ export default async function handler(req, res) {
       if (body?.action !== 'save' || !body.backup || typeof body.backup !== 'object') {
         return send(res, 400, { error: 'Payload de backup inválido' });
       }
-      const raw = JSON.stringify(body.backup);
+      const cleanBackup = sanitizeBackup(body.backup);
+      const raw = JSON.stringify(cleanBackup);
       const bytes = Buffer.byteLength(raw, 'utf8');
       // Mantém folga para limites de request/JSON e evita snapshots acidentalmente gigantes.
       if (bytes > 4_000_000) {
         return send(res, 413, { error: 'Backup maior que 4 MB. Baixe o arquivo localmente; para backups maiores use armazenamento de objetos.' });
       }
-      const version = String(body.backup.versao || '').slice(0, 50);
+      const version = String(cleanBackup.versao || '').slice(0, 50);
       const note = body.note ? String(body.note).slice(0, 300) : null;
       const rows = await sql`
         INSERT INTO central_backups (app_version, note, payload, payload_bytes)
