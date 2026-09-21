@@ -31,6 +31,12 @@ function loadInOrder(list){
  var jobs=list.map(addScript);
  return jobs.reduce(function(chain,job){return chain.then(function(){return job})},Promise.resolve());
 }
+function preloadScript(src){
+ var href='/'+src;
+ if(document.querySelector('link[data-pt-preload="'+src+'"]'))return;
+ var link=document.createElement('link');link.rel='preload';link.as='script';link.href=href;link.dataset.ptPreload=src;
+ document.head.appendChild(link);
+}
 function controllerRender(){return window.__PT_CONTROLLER_RENDER__||window.renderPortugueseMaster}
 function ensureHub(){
  if(boot)return boot;
@@ -46,11 +52,13 @@ async function loadModule(id){
  window.renderSubjects=function(){};window.renderAll=function(){};
  try{
   if(id==='m1'){
+   M1_DECORATORS.forEach(preloadScript);
    await addScript(M1_BASE);
    window.renderPortugueseMaster=window.PtM1V3&&window.PtM1V3.render;
    await loadInOrder(M1_DECORATORS);
    window.__PT_M1_ENHANCED_RENDER__=window.renderPortugueseMaster||(window.PtM1V3&&window.PtM1V3.render);
   }else if(id==='m2'){
+   preloadScript(M2_DECORATOR);
    await addScript(M2_BASE);
    window.renderPortugueseMaster=window.PtM2V1&&window.PtM2V1.render;
    await addScript(M2_DECORATOR);
