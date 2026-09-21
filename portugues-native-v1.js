@@ -254,13 +254,20 @@ function answer(id,qid,choice){
 }
 window.ptNativeAnswer=answer;
 
-const VERIFIED_TEC={
- m3:{name:'PORT 08 — Advérbio, preposição, conjunção e outras classes',url:'https://www.tecconcursos.com.br/questoes/cadernos/101831187',count:455},
- m17:{name:'PORT 02 — Tipologia, gêneros, coesão e discurso',url:'https://www.tecconcursos.com.br/questoes/cadernos/101818338',count:770}
+const TEC_MAP={
+ m1:['port-04'],m2:['port-05'],m3:['port-08'],m4:['port-07'],m5:['port-07'],m6:['port-06'],
+ m7:['port-06','port-14'],m8:['port-10'],m9:['port-11'],m10:['port-12'],m11:['port-14'],
+ m12:['port-13'],m13:['port-13'],m14:['port-02','port-03'],m15:['port-09'],m16:['port-01'],m17:['port-02']
 };
+function tecData(){
+ if(Array.isArray(window.PT_TEC_CADERNOS))return window.PT_TEC_CADERNOS;
+ const d=window.TEC_CADERNOS_DATA;return d&&Array.isArray(d.cadernos)?d.cadernos:[];
+}
 function renderTec(id){
- const t=VERIFIED_TEC[id];
- if(t)return '<div class="ptn-review-card"><b>'+esc(t.name)+'</b><p>'+t.count+' questões · link já existente no material anterior deste módulo.</p><div class="ptn-actions"><button class="ptn-btn primary" onclick="window.open(\''+escAttr(t.url)+'\',\'_blank\',\'noopener\')">Abrir TEC ↗</button></div></div>';
+ const ids=TEC_MAP[id]||[],index=new Map(tecData().map(x=>[x.id,x])),items=ids.map(x=>index.get(x)).filter(Boolean);
+ if(items.length){
+  return '<div class="ptn-review-grid">'+items.map(t=>'<div class="ptn-review-card"><b>'+esc(t.nome)+'</b><p>'+Number(t.questoes||0).toLocaleString('pt-BR')+' questões · caderno já cadastrado na base de Português da Central.</p><div class="ptn-actions"><button class="ptn-btn primary" onclick="window.open(\''+escAttr(t.url)+'\',\'_blank\',\'noopener\')">Abrir TEC ↗</button></div></div>').join('')+'</div>';
+ }
  return '<div class="ptn-review-card"><b>Cadernos TEC de Língua Portuguesa</b><p>Abra a área de Cadernos TEC da Central e filtre a disciplina. Nenhum endereço novo é inventado pelo módulo.</p><div class="ptn-actions"><button class="ptn-btn primary" onclick="return ptNativeOpenTec()">Abrir Cadernos TEC</button></div></div>';
 }
 function openTec(){
