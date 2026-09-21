@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Prévia — Português nativo na Central</title>
+<style>
+:root{
+  --bg:#09111f;--side:#08111e;--panel:#0d1727;--soft:#0a1525;--line:#26364f;--line2:#334760;
+  --text:#f1f5fb;--muted:#92a6c2;--accent:#8b7cff;--accent-soft:rgba(139,124,255,.12);
+  --green:#13bd6b;--yellow:#facc15;--red:#ef4444;--font-scale:1;
+}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
+button{font:inherit}
+.app{min-height:100vh;display:grid;grid-template-columns:250px minmax(0,1fr)}
+aside{background:var(--side);border-right:1px solid var(--line);padding:16px 12px}
+.brand{display:flex;gap:11px;align-items:center;padding:4px 4px 16px;border-bottom:1px solid var(--line)}
+.brand-icon{width:40px;height:40px;border-radius:12px;background:#111f34;border:1px solid var(--line2);display:grid;place-items:center;font-weight:900;color:var(--accent)}
+.brand b{display:block;font-size:14px}.brand small{display:block;color:var(--muted);font-size:11px;margin-top:2px}
+.nav{display:grid;gap:5px;margin-top:14px}.nav-label{font-size:10px;color:#647890;text-transform:uppercase;letter-spacing:.08em;padding:8px 10px 4px}
+.nav-item{border:0;background:transparent;color:#bdcbe0;border-radius:11px;padding:11px;text-align:left;font-weight:750}
+.nav-item.active{background:var(--accent-soft);color:#fff;border-left:3px solid var(--accent)}
+.shell{min-width:0}
+.topbar{height:62px;background:#0a1423;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:12px;padding:0 20px;position:sticky;top:0;z-index:5}
+.crumb{font-size:12px;color:var(--muted)}
+.preview-badge{font-size:10px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;border:1px solid #705dd6;background:rgba(124,92,255,.12);color:#c9c0ff;border-radius:999px;padding:5px 8px}
+.fontbox{margin-left:auto;display:flex;align-items:center;gap:8px}.fontbox button{border:1px solid var(--line2);background:#111d2f;color:var(--text);border-radius:8px;padding:7px 10px}.fontbox span{font-size:11px;color:var(--muted);min-width:42px;text-align:center}
+main{padding:26px;max-width:1240px;margin:0 auto}
+.hero{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;margin-bottom:18px}
+.hero h1{font-size:28px;margin:0}.hero p{margin:6px 0 0;color:var(--muted);line-height:1.5}
+.hero-note{max-width:430px;border:1px solid #3e3a69;background:rgba(124,92,255,.08);border-radius:12px;padding:12px 14px;color:#c9c4e9;font-size:12px;line-height:1.5}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:0 0 14px}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:13px}.stat small{display:block;color:var(--muted);font-size:10px}.stat b{display:block;font-size:19px;margin-top:4px}
+.modules{display:grid;gap:10px}
+.module{background:var(--soft);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.module.open{border-color:var(--accent);box-shadow:0 12px 34px rgba(0,0,0,.12)}
+.module-head{width:100%;min-height:64px;border:0;background:transparent;color:var(--text);display:grid;grid-template-columns:92px minmax(0,1fr) 150px 32px;gap:10px;align-items:center;text-align:left;padding:11px 13px;cursor:pointer}
+.module-head:hover{background:linear-gradient(90deg,var(--accent-soft),transparent 60%)}
+.module-num{font-size:11px;color:#9c91ff;font-weight:900}.module-title{font-size:14px;font-weight:850;line-height:1.35}.module-stat{text-align:right;font-size:10px;color:#93a7c2}
+.chev{font-size:18px;color:#879ab3;transition:.16s}.module.open .chev{transform:rotate(180deg)}
+.module-body{display:none;border-top:1px solid var(--line);padding:13px}.module.open .module-body{display:block}
+.bar{height:6px;background:#1b2940;border-radius:999px;overflow:hidden;margin-bottom:12px}.bar span{display:block;height:100%;background:linear-gradient(90deg,#6e5cff,#9a64ff)}
+.tabs{display:flex;gap:7px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:10px}
+.tab{border:1px solid var(--line2);background:#101d30;color:#c9d6e8;border-radius:9px;padding:8px 11px;font-size:12px;font-weight:800;cursor:pointer}
+.tab.active{background:var(--accent-soft);border-color:var(--accent);color:#fff}
+.study-content{font-size:calc(16px * var(--font-scale));line-height:1.65;padding-top:12px}
+.study-content h3{font-size:calc(18px * var(--font-scale));margin:0 0 8px}.study-content p{margin:7px 0;color:#d8e2f0}
+.study-content ul{margin:8px 0;padding-left:22px}.study-content li{margin:5px 0}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:10px}
+.card{border:1px solid var(--line);background:#0d1a2b;border-radius:11px;padding:12px}.card b{display:block;margin-bottom:5px}.card p{font-size:calc(13px * var(--font-scale));color:var(--muted);margin:0}
+.action{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap}.btn{border:1px solid var(--line2);background:#101d30;color:#e2eaf6;border-radius:8px;padding:8px 11px;font-weight:800;font-size:12px}.btn.primary{border-color:#6d58ff;background:#31245e}.btn.ghost{background:transparent}
+.footer-note{margin-top:16px;color:var(--muted);font-size:11px;text-align:center}
+@media(max-width:900px){.app{grid-template-columns:88px minmax(0,1fr)}.brand-copy,.nav-label,.nav-item span{display:none}.brand{justify-content:center}.nav-item{text-align:center}.module-head{grid-template-columns:74px minmax(0,1fr) 32px}.module-stat{display:none}.stats{grid-template-columns:1fr 1fr 1fr}}
+@media(max-width:680px){.app{display:block}.app aside{display:none}.topbar{padding:0 10px}.crumb{display:none}.fontbox{margin-left:auto}.fontbox button{padding:6px 9px}main{padding:14px 10px 24px}.hero{display:block}.hero-note{margin-top:12px}.stats{grid-template-columns:1fr}.module-head{grid-template-columns:68px minmax(0,1fr) 28px;padding:10px 9px}.module-title{font-size:12.5px}.module-num{font-size:9.5px}.module-body{padding:10px}.grid{grid-template-columns:1fr}.study-content{font-size:calc(15px * var(--font-scale))}}
+</style>
+</head>
+<body>
+<div class="app">
+  <aside>
+    <div class="brand"><div class="brand-icon">B</div><div class="brand-copy"><b>Base Completa</b><small>Central de Estudos</small></div></div>
+    <div class="nav">
+      <div class="nav-label">Central</div>
+      <button class="nav-item">⌂ <span>Início</span></button>
+      <button class="nav-item active">A <span>Disciplinas</span></button>
+      <button class="nav-item">✓ <span>Agenda</span></button>
+      <button class="nav-item">▤ <span>Desempenho</span></button>
+    </div>
+  </aside>
+  <div class="shell">
+    <div class="topbar">
+      <span class="preview-badge">Prévia</span>
+      <span class="crumb">Disciplinas / Português</span>
+      <div class="fontbox" aria-label="Controle de fonte">
+        <button type="button" onclick="changeFont(-10)">A−</button>
+        <span id="fontLabel">100%</span>
+        <button type="button" onclick="changeFont(10)">A+</button>
+      </div>
+    </div>
+    <main>
+      <div class="hero">
+        <div><h1>Português</h1><p>17 módulos no mesmo padrão de funcionamento das disciplinas nativas da Central.</p></div>
+        <div class="hero-note"><b>Prévia estrutural.</b> Nada desta página altera a versão publicada. O objetivo é validar abertura/recolhimento, abas, fonte, progresso visual e comportamento mobile antes da integração real.</div>
+      </div>
+
+      <div class="stats">
+        <div class="stat"><small>Módulos</small><b>17</b></div>
+        <div class="stat"><small>Arquitetura</small><b>Nativa</b></div>
+        <div class="stat"><small>Iframe</small><b>0</b></div>
+      </div>
+
+      <div class="modules" id="modules"></div>
+      <div class="footer-note">Prévia técnica — branch preview-portugues-native-v1</div>
+    </main>
+  </div>
+</div>
+<script>
+const MODULES=[
+ ["m1","Ortografia e Acentuação","Fundamentos de fonologia, encontros vocálicos, acentuação, hiato, acentos diferenciais, hífen e emprego das letras."],
+ ["m2","Classes Nominais","Classes de palavras, substantivos, adjetivos, artigos, numerais, pronomes, classificações e flexões."],
+ ["m3","Conectivos","Coordenação e subordinação, valores semânticos, conjunções e locuções."],
+ ["m4","Pronomes","Pronomes pessoais, demonstrativos, possessivos, relativos, tratamento e emprego em prova."],
+ ["m5","Colocação Pronominal","Próclise, mesóclise, ênclise, fatores atrativos e casos recorrentes de prova."],
+ ["m6","Verbos","Tempos, modos, vozes, formas nominais, locuções e emprego verbal."],
+ ["m7","Correlação e Vozes","Correlação verbal, concordância temporal, voz ativa, passiva e reflexiva."],
+ ["m8","Sintaxe da Oração","Termos essenciais, integrantes e acessórios; sujeito, predicado, complementos, adjuntos, aposto e vocativo."],
+ ["m9","Sintaxe do Período","Coordenação, subordinação, orações reduzidas, funções sintáticas e relações de sentido."],
+ ["m10","Pontuação","Vírgula, ponto e vírgula, dois-pontos, travessão, parênteses e pegadinhas FCC."],
+ ["m11","Concordância","Concordância verbal e nominal, casos gerais, avançados e estruturas de maior incidência."],
+ ["m12","Regência Verbal e Nominal","Regências recorrentes, complementos, preposições, mudança de sentido e erros de prova."],
+ ["m13","Crase","Condições, proibições, facultatividade, locuções e método de teste."],
+ ["m14","Coesão e Coerência","Mecanismos referenciais, conectores, progressão temática, coerência e reescrita."],
+ ["m15","Semântica Geral","Significação, polissemia, sinonímia, antonímia, ambiguidade, pressupostos e inferência."],
+ ["m16","Interpretação de Textos","Compreensão, inferência, tese, argumentos, efeitos de sentido, reescrita e estratégia FCC."],
+ ["m17","Tipologia Textual","Tipos e gêneros textuais, sequências discursivas, estrutura e identificação em questões."]
+];
+const OPEN_KEY="preview:pt-native:v1:open";
+const FONT_KEY="preview:pt-native:v1:font";
+const TAB_PREFIX="preview:pt-native:v1:tab:";
+const pct = id => ({m1:24,m2:18,m8:32,m11:12,m17:7}[id]||0);
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function render(){
+ const open=localStorage.getItem(OPEN_KEY)||"";
+ document.getElementById("modules").innerHTML=MODULES.map((m,i)=>{
+   const id=m[0], title=m[1], summary=m[2], p=pct(id), isOpen=open===id;
+   const tab=localStorage.getItem(TAB_PREFIX+id)||"teoria";
+   return '<section class="module '+(isOpen?'open':'')+'" data-id="'+id+'">'+
+    '<button class="module-head" onclick="toggleModule(\''+id+'\')">'+
+      '<span class="module-num">MÓDULO '+(i+1)+'</span>'+
+      '<span class="module-title">'+esc(title)+'</span>'+
+      '<span class="module-stat">'+p+'% • teoria + revisão + questões + TEC</span>'+
+      '<span class="chev">⌄</span>'+
+    '</button>'+
+    '<div class="module-body">'+
+      '<div class="bar"><span style="width:'+p+'%"></span></div>'+
+      '<div class="tabs">'+["teoria","revisao","questoes","tec"].map(t=>'<button class="tab '+(tab===t?'active':'')+'" onclick="setTab(\''+id+'\',\''+t+'\')">'+({teoria:"Teoria",revisao:"Revisão",questoes:"Questões",tec:"TEC"}[t])+'</button>').join('')+'</div>'+
+      '<div class="study-content">'+tabHtml(id,title,summary,tab)+'</div>'+
+    '</div>'+
+   '</section>';
+ }).join("");
+}
+function tabHtml(id,title,summary,tab){
+ if(tab==="teoria")return '<h3>'+esc(title)+'</h3><p>'+esc(summary)+'</p><div class="grid"><div class="card"><b>Teoria organizada</b><p>Conteúdo migrado para dados do próprio módulo, sem executar runtimes antigos.</p></div><div class="card"><b>Subtópicos recolhíveis</b><p>Abertura local: um subtópico não redireciona, não fecha o módulo e não altera outro módulo.</p></div></div><ul><li>Mesmo cabeçalho e mesmo componente em M1–M17.</li><li>Sem iframe.</li><li>Sem carregamento em cadeia.</li></ul>';
+ if(tab==="revisao")return '<h3>Revisão</h3><div class="grid"><div class="card"><b>O que decorar</b><p>Resumo enxuto dos pontos de prova do módulo.</p></div><div class="card"><b>Checklist</b><p>Marcação persistente por módulo.</p></div><div class="card"><b>Flashcards</b><p>Blocos para revisão ativa sem sair da disciplina.</p></div><div class="card"><b>Caderno de erros</b><p>Erros vinculados ao módulo e recuperados depois.</p></div></div>';
+ if(tab==="questoes")return '<h3>Questões</h3><p>Área demonstrativa no mesmo módulo, sem abrir outra página.</p><div class="grid"><div class="card"><b>Bloco FCC</b><p>Questões associadas ao conteúdo do módulo.</p></div><div class="card"><b>Desempenho</b><p>Acertos, erros e tentativas ficam salvos localmente.</p></div></div><div class="action"><button class="btn primary">Iniciar bloco</button><button class="btn ghost">Revisar erros</button></div>';
+ return '<h3>TEC</h3><p>O link e os filtros do TEC ficam como dados deste módulo. Abrir TEC não altera a navegação da Central.</p><div class="action"><button class="btn primary">Abrir caderno TEC</button><button class="btn">Ver filtros sugeridos</button></div>';
+}
+function toggleModule(id){
+ const current=localStorage.getItem(OPEN_KEY)||"";
+ localStorage.setItem(OPEN_KEY,current===id?"":id);
+ render();
+ const el=document.querySelector('[data-id="'+id+'"]');
+ if(el && current!==id) setTimeout(()=>el.scrollIntoView({behavior:"smooth",block:"start"}),20);
+}
+function setTab(id,tab){localStorage.setItem(TAB_PREFIX+id,tab);render()}
+function applyFont(){
+ let v=parseInt(localStorage.getItem(FONT_KEY)||"100",10);
+ if(!Number.isFinite(v))v=100;v=Math.max(85,Math.min(250,v));
+ document.documentElement.style.setProperty("--font-scale",String(v/100));
+ document.getElementById("fontLabel").textContent=v+"%";
+}
+function changeFont(delta){
+ let v=parseInt(localStorage.getItem(FONT_KEY)||"100",10);
+ v=Math.max(85,Math.min(250,v+delta));localStorage.setItem(FONT_KEY,String(v));applyFont();
+}
+applyFont();render();
+</script>
+</body>
+</html>
