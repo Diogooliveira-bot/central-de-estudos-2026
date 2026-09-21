@@ -34,6 +34,52 @@ function js(v){return String(v==null?'':v).replace(/\\/g,'\\\\').replace(/'/g,"\
 function stateKey(id){return PREFIX+'module:'+id+':progress'}
 function tabKey(id){return PREFIX+'module:'+id+':last-tab'}
 function scrollKey(id){return PREFIX+'module:'+id+':scroll'}
+function ptScrollBox(id){
+ const mod=document.querySelector('.cf-module[data-ptn-module="'+id+'"]');
+ return (mod&&mod.closest('.view'))||document.scrollingElement||document.documentElement;
+}
+function ptScrollTop(box){
+ if(!box)return 0;
+ if(box===document.scrollingElement||box===document.documentElement||box===document.body)return window.scrollY||document.documentElement.scrollTop||0;
+ return Number(box.scrollTop)||0;
+}
+function ptModuleTop(id,box){
+ const mod=document.querySelector('.cf-module[data-ptn-module="'+id+'"]');if(!mod)return 0;
+ if(box===document.scrollingElement||box===document.documentElement||box===document.body)return mod.getBoundingClientRect().top+(window.scrollY||document.documentElement.scrollTop||0);
+ const br=box.getBoundingClientRect(),mr=mod.getBoundingClientRect();
+ return (Number(box.scrollTop)||0)+(mr.top-br.top);
+}
+function saveScroll(id){
+ if(!id||!byId[id])return;
+ try{
+  const box=ptScrollBox(id),rel=Math.max(0,Math.round(ptScrollTop(box)-ptModuleTop(id,box)));
+  localStorage.setItem(scrollKey(id),String(rel));
+ }catch(_){}
+}
+function restoreScroll(id){
+ if(!id||!byId[id])return;
+ const raw=localStorage.getItem(scrollKey(id));if(raw===null)return;
+ const rel=Math.max(0,Number(raw)||0);
+ const run=()=>{
+  const box=ptScrollBox(id),top=Math.max(0,ptModuleTop(id,box)+rel);
+  try{
+   if(box===document.scrollingElement||box===document.documentElement||box===document.body)window.scrollTo({top,behavior:'auto'});
+   else box.scrollTo({top,behavior:'auto'});
+  }catch(_){if(box)box.scrollTop=top}
+ };
+ requestAnimationFrame(()=>requestAnimationFrame(run));
+}
+let scrollTrackRAF=0;
+function installScrollTracking(){
+ if(window.__PT_NATIVE_SCROLL_TRACKING__)return;
+ window.__PT_NATIVE_SCROLL_TRACKING__=true;
+ document.addEventListener('scroll',()=>{
+  if(scrollTrackRAF)return;
+  scrollTrackRAF=requestAnimationFrame(()=>{scrollTrackRAF=0;const id=localStorage.getItem(OPEN_KEY);if(id&&byId[id])saveScroll(id)});
+ },true);
+ window.addEventListener('beforeunload',()=>{const id=localStorage.getItem(OPEN_KEY);if(id&&byId[id])saveScroll(id)});
+ document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='hidden'){const id=localStorage.getItem(OPEN_KEY);if(id&&byId[id])saveScroll(id)}});
+}
 function blankState(){return {sections:{},reviewDone:false,rounds:{r1:'',r2:'',final:''},answers:{},errors:[],migrated:false}}
 
 function readState(id){
@@ -138,7 +184,7 @@ function addScript(src){
 function loadData(id){
  if(window.PT_NATIVE_DATA[id])return Promise.resolve(window.PT_NATIVE_DATA[id]);
  if(loading[id])return loading[id];
- loading[id]=addScript('/portugues-native-data/'+id+'.js?v=20260921n1').then(()=>{
+ loading[id]=addScript('/portugues-native-data/'+id+'.js?v=20260921n2').then(()=>{
    const d=window.PT_NATIVE_DATA[id];if(!d)throw new Error('Dados não registrados para '+id);return d;
  }).finally(()=>{delete loading[id]});
  return loading[id];
@@ -164,7 +210,8 @@ function renderModuleShell(m){
 
 function toggle(id){
  const el=document.querySelector('.cf-module[data-ptn-module="'+id+'"]');if(!el)return false;
- const opening=!el.classList.contains('open');
+ const opening=!el.classList.contains('open'),previous=localStorage.getItem(OPEN_KEY);
+ if(previous&&byId[previous])saveScroll(previous);
  document.querySelectorAll('.cf-module[data-ptn-module].open').forEach(x=>{if(x!==el)x.classList.remove('open')});
  el.classList.toggle('open',opening);
  if(opening){
@@ -183,6 +230,7 @@ function mount(id){
   const tab=localStorage.getItem(tabKey(id))||'teoria';
   host.innerHTML=renderModuleContent(id,data,tab);
   hydrate(id,data,tab);
+  restoreScroll(id);
  }).catch(err=>{console.error('[Português nativo]',err);host.innerHTML='<div class="ptn-loading">Não foi possível carregar este módulo. Feche e abra novamente.</div>'});
 }
 window.ptNativeMount=mount;
@@ -193,8 +241,9 @@ function renderModuleContent(id,data,tab){
   '<div class="ptn-content">'+(tab==='teoria'?renderTheory(id,data):tab==='revisao'?renderReview(id,data):tab==='questoes'?renderQuestions(id,data):renderTec(id,data))+'</div>';
 }
 function setTab(id,tab){
+ saveScroll(id);
  localStorage.setItem(tabKey(id),tab);
- loadData(id).then(data=>{const host=document.querySelector('[data-ptn-host="'+id+'"]');if(!host)return;host.innerHTML=renderModuleContent(id,data,tab);hydrate(id,data,tab)});
+ loadData(id).then(data=>{const host=document.querySelector('[data-ptn-host="'+id+'"]');if(!host)return;host.innerHTML=renderModuleContent(id,data,tab);hydrate(id,data,tab);restoreScroll(id)});
  return false;
 }
 window.ptNativeTab=setTab;
@@ -339,5 +388,6 @@ function installSubject(){
  try{if(typeof renderAll==='function')renderAll();if(typeof renderDisciplineGrid==='function')renderDisciplineGrid()}catch(e){console.warn('[PT render init]',e)}
 }
 installStyle();
+installScrollTracking();
 setTimeout(installSubject,0);
 })();
