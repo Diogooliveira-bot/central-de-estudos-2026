@@ -132,6 +132,26 @@ function installStyles(id,styles){
  style.textContent=styles.map(function(css){return scopeCss(css,scope)}).join('\n');
  document.head.appendChild(style);
 }
+function installNativeTheme(id){
+ var styleId='central-pt-native-v2-theme-'+id;
+ var old=document.getElementById(styleId);
+ if(old)old.remove();
+ var scope='.pt-native-surface[data-pt-id="'+id+'"]';
+ var style=document.createElement('style');
+ style.id=styleId;
+ style.textContent=
+  scope+'{background:#f7f7f3!important;color:#24282f!important;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif!important;color-scheme:light!important;}'+
+  scope+' .wrap,'+scope+' .top,'+scope+' .card,'+scope+' .session,'+scope+' .body,'+scope+' .trap,'+scope+' .exam,'+scope+' .remember,'+scope+' .warning,'+scope+' .panel,'+scope+' .tabs{background:#fffefb!important;color:#24282f!important;border-color:#e1e3de!important;}'+
+  scope+' h1,'+scope+' h2,'+scope+' h3,'+scope+' h4,'+scope+' h5,'+scope+' h6,'+scope+' p,'+scope+' li,'+scope+' td,'+scope+' th,'+scope+' label,'+scope+' summary,'+scope+' strong,'+scope+' b,'+scope+' em,'+scope+' span,'+scope+' a{color:#24282f!important;}'+
+  scope+' .muted{color:#7d8796!important;}'+
+  scope+' .progress{background:#ebece8!important;}'+
+  scope+' .progress span{background:#3568d4!important;}'+
+  scope+' .tab,'+scope+' .card button,'+scope+' input,'+scope+' select,'+scope+' textarea{background:#fff!important;color:#24282f!important;border-color:#d9ddd7!important;}'+
+  scope+' .tab.active,'+scope+' .tec-link{background:#3568d4!important;color:#fff!important;border-color:#3568d4!important;}'+
+  scope+' .tab.active *,'+scope+' .tec-link *{color:#fff!important;}'+
+  scope+' button{color:#24282f!important;}';
+ document.head.appendChild(style);
+}
 function assetName(src){
  var url=new URL(src,window.location.href);
  return url.pathname.replace(/^\//,'')+url.search;
@@ -248,6 +268,7 @@ function loadHtmlModule(module,host){
   host.dataset.ptId=module.id;
   host.classList.add('pt-native-surface');
   installStyles(module.id,styles);
+  installNativeTheme(module.id);
   applyFont(host,readFont());
   return scripts.reduce(function(chain,script,index){
    return chain.then(function(){
@@ -275,14 +296,35 @@ function mount(module,host){
   return result;
  }).catch(function(error){
   state.loaded=false;
-  host.innerHTML='<div class="pt-native-error"><strong>Não foi possível abrir este módulo.</strong><p>'+esc(error.message||error)+'</p><button type="button" onclick="togglePtModule(\''+id+'\')">Tentar novamente</button></div>';
+  host.innerHTML='<div class="pt-native-error"><strong>Não foi possível abrir este módulo.</strong><p>'+esc(error.message||error)+'</p><button type="button" onclick="retryPtModule(\''+id+'\')">Tentar novamente</button></div>';
   console.error('[Português v2 '+id+']',error);
   throw error;
  }).then(function(result){
   state.promise=null;
   return result;
+ },function(error){
+  state.promise=null;
+  throw error;
  });
  return state.promise;
+}
+function retryPtModule(id){
+ var section=document.querySelector('.cf-module[data-pt-module="'+id+'"]');
+ if(!section)return false;
+ if(!section.classList.contains('open')){
+  togglePtModule(id);
+  return false;
+ }
+ var host=section.querySelector('[data-pt-host]');
+ var state=stateFor(id);
+ state.promise=null;
+ state.loaded=false;
+ if(host){
+  host.removeAttribute('data-pt-mounted');
+  host.innerHTML='<div class="pt-native-loading">Tentando carregar novamente…</div>';
+  mount(BY_ID[id],host).catch(function(){});
+ }
+ return false;
 }
 function togglePtModule(id){
  var section=document.querySelector('.cf-module[data-pt-module="'+id+'"]');
@@ -358,6 +400,7 @@ window.ensurePortugueseModule=function(id){
  return host?mount(BY_ID[id],host):Promise.reject(new Error('Módulo fora da Central'));
 };
 window.togglePtModule=togglePtModule;
+window.retryPtModule=retryPtModule;
 window.renderPortugueseMaster=renderPortugueseMaster;
 if(typeof window.renderAll==='function')window.renderAll();
 })();
