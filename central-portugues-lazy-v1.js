@@ -122,10 +122,19 @@ function executeInline(code,id,index){
  script.remove();
 }
 function fetchText(path){
- return fetch('/'+path,{credentials:'same-origin',cache:'default'}).then(function(response){
+ var requestPath=path+(path.indexOf('?')>=0?'&':'?')+'v='+VERSION;
+ return fetch('/'+requestPath,{credentials:'same-origin',cache:'default'}).then(function(response){
   if(!response.ok)throw new Error('HTTP '+response.status+' ao carregar '+path);
   return response.text();
  });
+}
+function isInjectedHostScript(script){
+ var raw=script&&script.getAttribute?script.getAttribute('src')||'':'';
+ return /(?:^|\\/)_next-live\\//i.test(raw)||/vercel\\.live/i.test(raw)||/feedback\\/feedback\\.js/i.test(raw);
+}
+function versionedAsset(src){
+ var key=assetName(src);
+ return key+(key.indexOf('?')>=0?'&':'?')+'v='+VERSION;
 }
 function applyFont(root,value){
  if(!root)return;
@@ -249,14 +258,16 @@ function renderHtmlModule(id,host,module){
  return fetchText(module.src).then(function(markup){
   var doc=new DOMParser().parseFromString(markup,'text/html');
   var styles=Array.prototype.slice.call(doc.querySelectorAll('style')).map(function(style){return style.textContent});
-  var scriptsInDoc=Array.prototype.slice.call(doc.querySelectorAll('script'));
-  scriptsInDoc.forEach(function(script){script.remove()});
+  var scriptsInDoc=Array.prototype.slice.call(doc.querySelectorAll('script')).filter(function(script){
+   return !isInjectedHostScript(script);
+  });
+  Array.prototype.slice.call(doc.querySelectorAll('script')).forEach(function(script){script.remove()});
   host.innerHTML=doc.body?doc.body.innerHTML:'';
   installModuleStyles(id,styles);
   makeSurface(host,id);
   var jobs=scriptsInDoc.reduce(function(chain,script,index){
    return chain.then(function(){
-    if(script.src)return addScript(assetName(script.src));
+    if(script.src)return addScript(versionedAsset(script.src));
     executeInline(script.textContent,id,index);
    });
   },Promise.resolve());
