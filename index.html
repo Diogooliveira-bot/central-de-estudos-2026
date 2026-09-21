@@ -924,13 +924,17 @@ setTimeout(function(){
    <div id="centralBackupStatus" class="central-backup-status">O backup por arquivo funciona mesmo sem banco online. Quando o site estiver no Vercel com o banco configurado, você também poderá guardar snapshots gerais no servidor.</div>
    <div id="centralBackupHistoryList" class="central-backup-history hidden"></div>
    <button class="central-btn-sec hidden" id="centralPwaInstall" onclick="centralPwaInstall()" style="margin-top:8px;width:100%">📱 Instalar como aplicativo</button>
-   <div class="central-settings-note"><b>Backup geral:</b> inclui todas as chaves de dados desta Central no aparelho — progresso, agenda/cronograma, cadernos TEC, Vade Mecum, Anki, Lei Seca, RLM e preferências. A restauração substitui o estado atual pelo estado do backup.</div>
+   <div class="central-settings-note"><b>Backup geral:</b> inclui somente os dados da Central — progresso, agenda/cronograma, cadernos TEC, Vade Mecum, Anki, Lei Seca, RLM e preferências. O progresso do site separado de Português não entra neste backup e não é alterado na restauração.</div>
    <div class="central-settings-note" style="margin-top:7px"><b>Segurança do backup online:</b> configure no Vercel as variáveis <code>DATABASE_URL</code> e <code>BACKUP_SECRET</code>. A chave é solicitada somente quando você usa o histórico online e fica apenas na sessão atual do navegador.</div>
   <script id="central-backup-geral-v6674">
 (function(){
 'use strict';
 var SECRET_SESSION_KEY='central-backup:session-secret';
 var OMIT_KEYS={'__central_folder_probe__':1,'__central_storage_probe__':1};
+function isPortugueseDataKey(k){
+ k=String(k||'');
+ return /^central-v6:pt(?::|-)/.test(k)||/^dominio_portugues/i.test(k);
+}
 function setStatus(msg,type){
  var el=document.getElementById('centralBackupStatus');if(!el)return;
  el.className='central-backup-status'+(type?' '+type:'');el.textContent=msg;
@@ -940,7 +944,7 @@ function coletar(){
  try{
   for(var i=0;i<localStorage.length;i++){
    var k=localStorage.key(i);
-   if(k&&!OMIT_KEYS[k])o[k]=localStorage.getItem(k);
+   if(k&&!OMIT_KEYS[k]&&!isPortugueseDataKey(k))o[k]=localStorage.getItem(k);
   }
  }catch(e){}
  return o;
@@ -955,10 +959,16 @@ function baixarObjeto(obj,nome){
 function aplicarBackup(p){
  var d=p&&p.dados?p.dados:p;
  if(!d||typeof d!=='object'||Array.isArray(d))throw new Error('estrutura de dados não reconhecida');
- var keys=Object.keys(d),n=0;
+ var keys=Object.keys(d),n=0,remove=[];
  if(!keys.length&&!confirm('Este backup está vazio. Deseja continuar?'))return 0;
- localStorage.clear();
- keys.forEach(function(k){if(k&&!OMIT_KEYS[k]){localStorage.setItem(k,String(d[k]));n++}});
+ for(var i=0;i<localStorage.length;i++){
+  var current=localStorage.key(i);
+  if(current&&!OMIT_KEYS[current]&&!isPortugueseDataKey(current))remove.push(current);
+ }
+ remove.forEach(function(k){localStorage.removeItem(k)});
+ keys.forEach(function(k){
+  if(k&&!OMIT_KEYS[k]&&!isPortugueseDataKey(k)){localStorage.setItem(k,String(d[k]));n++}
+ });
  return n;
 }
 function segredo(){
