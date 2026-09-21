@@ -154,3 +154,14 @@ html.central-minimal-v66119 .pt-native-error button {
     min-height: 52px;
   }
 }
+
+/* Português v2: o cartão nativo mantém contraste idêntico ao CF. */
+html.central-minimal-v66119 .pt-native-module .cf-module-head,
+html.central-minimal-v66119 .pt-native-module .cf-module-title,
+html.central-minimal-v66119 .pt-native-module .cf-module-stat,
+html.central-minimal-v66119 .pt-native-module .cf-module-no {
+  color: var(--text);
+}
+html.central-minimal-v66119 .pt-native-module .cf-module-head {
+  text-align: left;
+}
