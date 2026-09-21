@@ -100,3 +100,57 @@ html.central-minimal-v66119[data-central-reading-font] body #homeView .civil-law
     height: 42px;
   }
 }
+
+/* Português nativo: a lista e os painéis reutilizam o ritmo visual do CF. */
+html.central-minimal-v66119 .pt-native-modules {
+  width: 100%;
+}
+html.central-minimal-v66119 .pt-native-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0 0 12px;
+  color: var(--text);
+}
+html.central-minimal-v66119 .pt-native-heading strong {
+  font-size: 16px;
+}
+html.central-minimal-v66119 .pt-native-heading span {
+  color: var(--muted);
+  font-size: 12px;
+}
+html.central-minimal-v66119 .pt-native-module .cf-module-head {
+  width: 100%;
+}
+html.central-minimal-v66119 .pt-native-module .cf-module-meta {
+  color: var(--muted);
+  font-size: 12px;
+}
+html.central-minimal-v66119 .pt-native-host {
+  min-height: 18px;
+  overflow-wrap: anywhere;
+}
+html.central-minimal-v66119 .pt-native-loading,
+html.central-minimal-v66119 .pt-native-error {
+  padding: 16px;
+  border: 1px dashed var(--line2);
+  border-radius: 10px;
+  color: var(--muted);
+}
+html.central-minimal-v66119 .pt-native-error strong {
+  color: var(--text);
+}
+html.central-minimal-v66119 .pt-native-error button {
+  margin-top: 10px;
+}
+@media (max-width: 680px) {
+  html.central-minimal-v66119 .pt-native-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+  }
+  html.central-minimal-v66119 .pt-native-module .cf-module-head {
+    min-height: 52px;
+  }
+}
