@@ -76,7 +76,7 @@ function scopeSelector(selector,scope){
  return scope+' '+value;
 }
 function scopeCss(css,scope){
- return String(css||'').replace(/(^|})([^{}]+)\{/g,function(all,prefix,selectors){
+ return String(css||'').replace(/(^|[{}])([^{}]+)\{/g,function(all,prefix,selectors){
   var raw=selectors.trim();
   if(!raw||raw.charAt(0)==='@'||/^(from|to|[0-9.]+%)$/.test(raw))return all;
   return prefix+raw.split(',').map(function(part){return scopeSelector(part,scope)}).join(', ')+'{';
