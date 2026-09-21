@@ -41,9 +41,42 @@
     });
   };
 
+
+  const escapeHtml=(value)=>String(value==null?'':value).replace(/[&<>"']/g,char=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[char]));
+  const openBaseTool=(tool)=>{
+    try{
+      if(tool==='anki'&&typeof window.openAnkiIntegrated==='function')window.openAnkiIntegrated();
+      if(tool==='decorando'&&typeof window.openLeiSecaEnxuta==='function')window.openLeiSecaEnxuta();
+      if(tool==='tec'&&typeof window.openTecCadernos==='function')window.openTecCadernos();
+      if(tool==='vade'&&typeof window.openVadeMecum==='function')window.openVadeMecum();
+    }catch(e){console.warn('Ferramenta Base Completa',tool,e)}
+    return false;
+  };
+  window.baseCompletaOpenTool=openBaseTool;
+  const renderDisciplineKits=()=>{
+    document.querySelectorAll('.subject[data-id]:not([data-id="civil"])').forEach(section=>{
+      const body=section.querySelector('.subject-body');if(!body||body.querySelector(':scope > .bc-discipline-kit'))return;
+      const id=section.dataset.id||'',name=(section.querySelector('.subject-name')?.textContent||'Disciplina').trim();
+      let stats={done:0,total:0,pct:0};
+      try{const subject=Array.isArray(window.SUBJECTS)?window.SUBJECTS.find(item=>item&&item.id===id):null;if(typeof window.subjStats==='function')stats=window.subjStats(subject||{id,topics:[]})||stats}catch(_){}
+      if(!Number.isFinite(Number(stats.total))||!stats.total){
+        const text=section.querySelector('.subject-count')?.textContent||'';const m=text.match(/(\\d+)\\s*\\/\\s*(\\d+)/);
+        if(m)stats={done:Number(m[1]),total:Number(m[2]),pct:Math.round(Number(m[1])/Math.max(1,Number(m[2]))*100)};
+      }
+      const done=Math.max(0,Number(stats.done)||0),total=Math.max(0,Number(stats.total)||0),pct=Math.max(0,Math.min(100,Number(stats.pct)||0));
+      const kit='<section class="bc-discipline-kit" data-bc-kit="'+escapeHtml(id)+'">'+
+        '<div class="bc-kit-head"><div><span class="bc-kit-eyebrow">BASE COMPLETA</span><h3>'+escapeHtml(name)+'</h3></div>'+
+        '<div class="bc-kit-stat"><b>'+done+'/'+total+'</b><small>Módulos concluídos · '+pct+'%</small></div></div>'+
+        '<div class="bc-kit-meter"><span style="width:'+pct+'%"></span></div>'+
+        '<div class="bc-kit-grid"><article class="bc-kit-card"><b>Seu percurso está preservado</b><p>Teoria, revisões, questões e registros existentes continuam no mesmo módulo.</p></article>'+
+        '<div class="bc-kit-tools"><button type="button" onclick="return baseCompletaOpenTool(\'anki\')">Anki</button><button type="button" onclick="return baseCompletaOpenTool(\'decorando\')">Decorando</button><button type="button" onclick="return baseCompletaOpenTool(\'tec\')">Cadernos TEC</button><button type="button" onclick="return baseCompletaOpenTool(\'vade\')">Vade Mecum</button></div></div></section>';
+      const anchor=body.querySelector('.subject-bar');if(anchor)anchor.insertAdjacentHTML('afterend',kit);else body.insertAdjacentHTML('afterbegin',kit);
+    });
+  };
+
   let queued=false;
   const refresh=()=>{
-    queued=false;applyBrand();applyLabels(document);standardizeFrames();
+    queued=false;applyBrand();applyLabels(document);standardizeFrames();renderDisciplineKits();
   };
   const schedule=()=>{if(!queued){queued=true;requestAnimationFrame(refresh)}};
   const init=()=>{
