@@ -2,6 +2,8 @@
 'use strict';
 if(window.__CENTRAL_PT_LAZY_V2__)return;
 window.__CENTRAL_PT_LAZY_V2__=true;
+// Bloqueia o carregador legado que ainda pode ser inserido pela casca antiga da Central.
+window.__CENTRAL_PT_LOADER_V2__=true;
 
 var M1_BASE='portugues-m1-v3.js?v=20260921pt1';
 var M1_DECORATORS=[
