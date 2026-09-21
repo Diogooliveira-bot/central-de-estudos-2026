@@ -330,7 +330,7 @@ var previousStats=window.subjStats;
 if(typeof previousStats==='function'){
  window.subjStats=function(subject){return nativeStats(subject)||previousStats(subject)};
 }
-window.__PT_CANONICAL_HOST__=true;
+window.__PT_NATIVE_HOST__=true;
 window.__PT_NATIVE_MODULES__=MODULES.slice();
 window.__PT_NATIVE_RENDER__=renderPortugueseMaster;
 window.__PT_NATIVE_PROGRESS__=function(){
