@@ -50,11 +50,6 @@ function mergePayload(local,cloud,preferLocal){
 function applyCloud(payload){if(!payload||typeof payload!=='object'||Array.isArray(payload))throw new Error('cópia online inválida');payload=sanitizePayload(payload);Object.keys(payload).forEach(function(k){if(k&&k!=='__central_folder_probe__'&&k!=='__central_storage_probe__')localStorage.setItem(k,String(payload[k]))});try{window.dispatchEvent(new Event('central-cloud-applied'))}catch(_){}}
 async function push(local,hash,base){return request('/api/sync',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({payload:local,hash:hash,baseRevision:base,deviceId:meta.device})})}
 async function safetyBackup(local,note){try{await request('/api/backups',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'save',note:note,backup:{formato:'central-backup-v2',app:'Central de Estudos',versao:'v'+currentVersion(),exportadoEm:new Date().toISOString(),origem:'sync',dados:local}})})}catch(_){}}
-async function persistAnkiMigration(){
- if(!window.__centralAnkiMigrated6679)return false;
- var local=collect(),h=hashObject(local),sent=await push(local,h,meta.revision);
- meta.revision=sent.revision;meta.hash=h;lastCheckHash=h;window.__centralAnkiMigrated6679=false;return true;
-}
 async function sync(reason){
  if(!meta.enabled||busy||!navigator.onLine)return;busy=true;status('Sincronizando...','warn');
  try{
@@ -64,7 +59,7 @@ async function sync(reason){
    if(localHash!==meta.hash&&meta.revision>0)await safetyBackup(local,'Cópia automática antes de resolver conflito de sincronização');
    var cloudPayload=sanitizePayload(cloud.payload||{}),hasLocalChanges=(localHash!==meta.hash&&meta.revision>0),merged=mergePayload(local,cloudPayload,hasLocalChanges),remoteHash=hashObject(cloudPayload);
    applyCloud(merged);meta.revision=cloud.revision;
-   if(!(await persistAnkiMigration())){meta.hash=remoteHash;lastCheckHash=remoteHash}
+   meta.hash=remoteHash;lastCheckHash=remoteHash
    await saveMeta();status('Atualização recebida da nuvem sem perder os checks da agenda. Recarregando...','ok');setTimeout(function(){location.reload()},700);return
   }
   if(localHash!==meta.hash||reason==='manual'){
@@ -74,7 +69,7 @@ async function sync(reason){
      var newest=await request('/api/sync');await safetyBackup(local,'Cópia automática antes de receber alteração mais recente');
      var newestPayload=sanitizePayload(newest.payload||{}),mergedNewest=mergePayload(local,newestPayload,true),newestHash=hashObject(newestPayload);
      applyCloud(mergedNewest);meta.revision=newest.revision;
-     if(!(await persistAnkiMigration())){meta.hash=newestHash;lastCheckHash=newestHash}
+     meta.hash=newestHash;lastCheckHash=newestHash
      await saveMeta();status('Conflito resolvido preservando os checks da agenda. Recarregando...','warn');setTimeout(function(){location.reload()},700);return
     }
     throw e
@@ -92,7 +87,7 @@ async function toggle(){
    var before=collect();await safetyBackup(before,'Antes de ativar sincronização neste aparelho');
    var initialCloud=sanitizePayload(cloud.payload||{}),initialMerged=mergePayload(before,initialCloud,false),initialRemoteHash=hashObject(initialCloud);
    applyCloud(initialMerged);meta.revision=cloud.revision;
-   if(!(await persistAnkiMigration())){meta.hash=initialRemoteHash;lastCheckHash=initialRemoteHash}
+   meta.hash=initialRemoteHash;lastCheckHash=initialRemoteHash
    await saveMeta();status('Cópia online recebida sem perder os checks locais da agenda. Recarregando...','ok');setTimeout(function(){location.reload()},700)
   }else await sync('enable')
  }catch(e){meta.enabled=false;meta.secret='';await Promise.all([kvSet('enabled',false),kvDel('secret')]);status('Não foi possível ativar: '+e.message,'err')}
