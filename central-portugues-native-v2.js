@@ -149,7 +149,16 @@ function installNativeTheme(id){
   scope+' .tab,'+scope+' .card button,'+scope+' input,'+scope+' select,'+scope+' textarea{background:#fff!important;color:#24282f!important;border-color:#d9ddd7!important;}'+
   scope+' .tab.active,'+scope+' .tec-link{background:#3568d4!important;color:#fff!important;border-color:#3568d4!important;}'+
   scope+' .tab.active *,'+scope+' .tec-link *{color:#fff!important;}'+
-  scope+' button{color:#24282f!important;}';
+  scope+' button{color:#24282f!important;}'+
+  scope+' .hero,'+scope+' .teccard,'+scope+' .session,'+scope+' .qcard,'+scope+' .round,'+scope+' .method,'+scope+' .panel,'+scope+' .audit{background:#fffefb!important;color:#24282f!important;border-color:#e1e3de!important;}'+
+  scope+' .flow b,'+scope+' .chip,'+scope+' .num,'+scope+' .qopt,'+scope+' .back,'+scope+' .ghost,'+scope+' .tab,'+scope+' .tecbtn{background:#fff!important;color:#24282f!important;border-color:#d9ddd7!important;}'+
+  scope+' .tab.active,'+scope+' .tecbtn{background:#3568d4!important;color:#fff!important;border-color:#3568d4!important;}'+
+  scope+' .tab.active *,'+scope+' .tecbtn *{color:#fff!important;}'+
+  scope+' .sub,'+scope+' .goal,'+scope+' .state,'+scope+' .small,'+scope+' .audit,'+scope+' .progressmeta,'+scope+' .label{color:#7d8796!important;}'+
+  scope+' .progressline,'+scope+' .soft,'+scope+' .method,'+scope+' .flow b,'+scope+' .chip{background:#f2f4f1!important;}'+
+  scope+' .body th,'+scope+' .alert,'+scope+' .procedure,'+scope+' .evidence,'+scope+' .exam,'+scope+' .takeaway{background:#f2f4f1!important;color:#24282f!important;border-color:#dfe4de!important;}'+
+  scope+' .qopt.selected{outline-color:#3568d4!important;}'+
+  scope+' .round input{background:#fff!important;color:#24282f!important;border-color:#d9ddd7!important;}';
  document.head.appendChild(style);
 }
 function assetName(src){
