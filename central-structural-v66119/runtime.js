@@ -315,33 +315,12 @@ function activateEmbeddedDecorando(frame,discipline=null){
 }
 function openLeiSecaEnxuta(btn,discipline=null,topicId=null){return openEmbeddedTool('decorando',{discipline,topicId},btn);}
 
-function cleanRemovedSubjectResidue(){
- try{
-  const normalize=v=>String(v||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
-  const isRemoved=v=>{const x=normalize(v);return x==='pt'||x==='portugues'||x==='lingua portuguesa'};
-  const agendaPrefix='central-v6:agenda:';
-  const agendaKeys=[];
-  for(let i=0;i<localStorage.length;i++){const k=localStorage.key(i);if(k&&k.startsWith(agendaPrefix))agendaKeys.push(k)}
-  agendaKeys.forEach(k=>{
-   try{
-    const list=JSON.parse(localStorage.getItem(k)||'[]');
-    if(!Array.isArray(list))return;
-    const next=list.filter(item=>!isRemoved(item?.discipline));
-    if(next.length!==list.length)localStorage.setItem(k,JSON.stringify(next));
-   }catch(_){}
-  });
-  try{
-   const last=JSON.parse(localStorage.getItem('central-v6:last')||'null');
-   const lastText=normalize(last?.title)+' '+normalize(last?.url);
-   if(last&&(last.ptWeek||lastText.includes('portugues')||lastText.includes('modules/portugues')))localStorage.removeItem('central-v6:last');
-  }catch(_){}
-  localStorage.removeItem('central-v6:open:pt');
- }catch(e){console.warn('Limpeza de disciplina removida',e)}
-}
+function cleanRemovedSubjectResidue(){ /* Português voltou à Central: nenhum dado deve ser apagado. */ }
 function key(uid,kind){return `central-v6:${kind}:${uid}`}
 function goalDone(uid){return localStorage.getItem(key(uid,'done'))==='1'}
 function setDone(uid,v){localStorage.setItem(key(uid,'done'),v?'1':'0')}
 function subjStats(s){
+ if(s.id==='pt'&&typeof window.ptNativeStats==='function')return window.ptNativeStats();
  if(s.id==='cf'){
    const total=CF_WEEKS.length,done=CF_WEEKS.filter(w=>cfWeekPct(w)===100).length;
    return {total,done,pct:total?Math.round(done/total*100):0,unit:'módulos'};
@@ -375,17 +354,17 @@ function topicByUid(uid){for(const s of SUBJECTS){const t=s.topics.find(x=>x.uid
 
 function saveLastTopic(uid){const x=topicByUid(uid);if(x)saveLast({topicUid:uid,title:x.s.name+' • '+x.t.title,at:Date.now()})}
 function saveLast(x){localStorage.setItem('central-v6:last',JSON.stringify(x));renderContinue()}
-function renderContinue(){const x=JSON.parse(localStorage.getItem('central-v6:last')||'null');if(!x){$('continueBox').innerHTML='<div class="muted small">Nenhuma sessão recente.</div>';return}const act=x.tool==='vade-mecum'?`openVadeMecum()`:x.tool==='lei-seca-enxuta'?`openLeiSecaEnxuta()`:x.civilModule?`openCivilLast('${x.civilModule}')`:x.cfWeek?`openCfLast('${x.cfWeek}')`:x.penalWeek?`openPenalLast('${x.penalWeek}')`:x.cpcWeek?`openCpcLast('${x.cpcWeek}')`:x.topicUid?`openTopicFromLast('${x.topicUid}')`:`openInternal('${escJs(x.url)}','${escJs(x.title)}')`;$('continueBox').innerHTML=`<b style="display:block;font-size:12px">${esc(x.title)}</b><span class="muted small">${new Date(x.at).toLocaleString('pt-BR')}</span><div style="margin-top:9px"><button class="btn primary sm" onclick="${act}">Continuar</button></div>`}
+function renderContinue(){const x=JSON.parse(localStorage.getItem('central-v6:last')||'null');if(!x){$('continueBox').innerHTML='<div class="muted small">Nenhuma sessão recente.</div>';return}const act=x.tool==='vade-mecum'?`openVadeMecum()`:x.tool==='lei-seca-enxuta'?`openLeiSecaEnxuta()`:x.ptModule?`openPtNativeLast('${x.ptModule}')`:x.civilModule?`openCivilLast('${x.civilModule}')`:x.cfWeek?`openCfLast('${x.cfWeek}')`:x.penalWeek?`openPenalLast('${x.penalWeek}')`:x.cpcWeek?`openCpcLast('${x.cpcWeek}')`:x.topicUid?`openTopicFromLast('${x.topicUid}')`:`openInternal('${escJs(x.url)}','${escJs(x.title)}')`;$('continueBox').innerHTML=`<b style="display:block;font-size:12px">${esc(x.title)}</b><span class="muted small">${new Date(x.at).toLocaleString('pt-BR')}</span><div style="margin-top:9px"><button class="btn primary sm" onclick="${act}">Continuar</button></div>`}
 function openTopicFromLast(uid){openHome();setTimeout(()=>{const found=topicByUid(uid);if(found){localStorage.setItem(`central-v6:open:${found.s.id}`,'1');renderSubjects();localStorage.setItem(topicOpenKey(uid),'1');renderSubjects();const el=document.querySelector(`.topic-item[data-uid="${uid}"]`);el?.scrollIntoView({behavior:'smooth',block:'center'})}},30)}
 
 function renderSubjects(){
  $('subjects').innerHTML=SUBJECTS.map(s=>{
   const st=subjStats(s),open=localStorage.getItem(`central-v6:open:${s.id}`)==='1';
-  const unit=(s.id==='cf'||s.id==='civil'||s.id==='penal'||s.id==='cpc')?'módulos':'metas';
+  const unit=(s.id==='pt'||s.id==='cf'||s.id==='civil'||s.id==='penal'||s.id==='cpc')?'módulos':'metas';
   return `<section class="subject ${open?'open':''}" data-id="${s.id}">
    <button class="subject-head" onclick="toggleSubject('${s.id}')"><span class="subject-name">${esc(s.name)}</span><span class="subject-count">${st.done}/${st.total} ${unit}</span><span class="subject-pct ${st.pct===100?'done':''}">${st.pct}%</span><span class="chev">⌄</span></button>
    <div class="subject-body"><div class="subject-bar"><span style="width:${st.pct}%"></span></div>
-    ${s.id==='cf' ? renderConstitutionalMaster() : s.id==='penal' ? renderPenalMaster() : s.id==='cpc' ? renderCpcMaster() : s.id==='civil' ? renderCivilMaster() : `
+    ${s.id==='pt' ? renderPortugueseMaster() : s.id==='cf' ? renderConstitutionalMaster() : s.id==='penal' ? renderPenalMaster() : s.id==='cpc' ? renderCpcMaster() : s.id==='civil' ? renderCivilMaster() : `
       <div class="topic-header"><div></div><div>Tópico real</div><div>Origem</div><div>Tipo</div><div></div></div>
       ${s.topics.map(t=>renderTopic(s,t)).join('')}
     `}
@@ -4883,7 +4862,7 @@ function renderDisciplineGrid(){
  host.innerHTML=list.map(s=>{
   try{
    let st;try{st=subjStats(s)}catch(err){st={done:0,total:(s.topics?.length||0),pct:0}}
-   const cards=(s.topics||[]).reduce((a,t)=>a+(t.sourceStats?.cards||0),0),guided=['cf','civil','penal','cpc'].includes(s.id);
+   const cards=(s.topics||[]).reduce((a,t)=>a+(t.sourceStats?.cards||0),0),guided=['pt','cf','civil','penal','cpc'].includes(s.id);
    const desc=guided?`${s.topics.length} módulos • curso integrado`:s.id==='rlm'?'9 módulos teóricos • cálculo rápido • 200 FCC':(s.id==='trab'||s.id==='ptra')?`${s.topics.length} aulas • Mentoria AJAJ`:`${s.topics.length} tópicos reais recuperados`;
    const unit=guided?'módulos':s.id==='rlm'?'itens':(s.id==='trab'||s.id==='ptra')?'aulas':'tópicos';
    return `<button type="button" class="disc-card" data-id="${escAttr(s.id)}" onclick="return jumpSubject('${escJs(s.id)}')"><b>${esc(s.name)}</b><small>${esc(desc)}</small><span class="disc-meta">${Number(st.done)||0}/${Number(st.total)||0} ${unit} · ${Number(st.pct)||0}%${!guided&&s.id!=='rlm'&&cards?' · '+cards+' cards':''}</span></button>`
