@@ -193,20 +193,55 @@ function moduleScriptList(id){
  ];
  return [];
 }
-function renderNativeM1M2(id){
- var original=window.renderPortugueseMaster;
+function renderNativeM1M2(id,host){
+ var originalMaster=window.renderPortugueseMaster;
+ var originalSubjects=window.renderSubjects;
+ var originalAll=window.renderAll;
  var list=moduleScriptList(id);
+ var record=mounts[id]||(mounts[id]={stash:document.createElement('div')});
+ var restored=false;
+ function restoreGlobals(){
+  if(restored)return;
+  restored=true;
+  window.renderPortugueseMaster=originalMaster;
+  window.renderSubjects=originalSubjects;
+  window.renderAll=originalAll;
+ }
+ function paint(target,renderer){
+  var html=typeof renderer==='function'?renderer():'';
+  target.innerHTML=html||'<p>Conteúdo indisponível.</p>';
+  installModuleStyles(id,[]);
+  makeSurface(target,id);
+  target.dataset.ptMounted='1';
+  applyFont(target,readFont());
+ }
+ /* Os decoradores legados executam renderSubjects() ao serem importados.
+    Durante a montagem eles não podem redesenhar a Central nem remover o
+    cabeçalho CF; só o HTML do módulo é aceito aqui. */
+ window.renderSubjects=function(){};
+ window.renderAll=function(){};
  return addScript(list[0]).then(function(){
   var base=id==='m1'?(window.PtM1V3&&window.PtM1V3.render):(window.PtM2V1&&window.PtM2V1.render);
   if(typeof base!=='function')throw new Error('Renderer nativo ausente para '+id);
   window.renderPortugueseMaster=base;
-  return sequence(list.slice(1));
- }).then(function(){
-  var html=typeof window.renderPortugueseMaster==='function'?window.renderPortugueseMaster():''; 
-  window.renderPortugueseMaster=original;
-  return html;
- },function(error){
-  window.renderPortugueseMaster=original;
+  paint(host,base);
+  var enrichment=sequence(list.slice(1)).then(function(){
+   var renderer=typeof window.renderPortugueseMaster==='function'?window.renderPortugueseMaster:base;
+   var target=host.isConnected?host:record.stash;
+   paint(target,renderer);
+   if(target===record.stash&&host.isConnected)moveChildren(record.stash,host);
+   return host;
+  });
+  record.enrichment=enrichment;
+  enrichment.catch(function(error){
+   console.error('[Português nativo '+id+' complemento]',error);
+  }).then(function(){
+   delete record.enrichment;
+   restoreGlobals();
+  });
+  return host;
+ }).catch(function(error){
+  restoreGlobals();
   throw error;
  });
 }
