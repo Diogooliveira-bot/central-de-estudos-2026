@@ -359,6 +359,9 @@ if(typeof previousStats==='function'){
  window.subjStats=function(subject){return nativeStats(subject)||previousStats(subject)};
 }
 window.__PT_NATIVE_HOST__=true;
+/* Compatibilidade com os runtimes de conteúdo M1/M2:
+   impede que os decoradores antigos substituam o host nativo. */
+window.__PT_CANONICAL_HOST__=true;
 window.__PT_NATIVE_MODULES__=MODULES.slice();
 window.__PT_NATIVE_RENDER__=renderPortugueseMaster;
 window.__PT_NATIVE_PROGRESS__=function(){
@@ -386,6 +389,7 @@ window.backToPortugueseHub=backToPortugueseHub;
 window.togglePtCanonicalModule=togglePtModule;
 window.ptCanonicalMount=function(){};
 window.ptCanonicalContent=function(){return ''};
+window.ptCanonicalRefreshModule=function(){};
 window.__PT_CONTROLLER_RENDER__=renderPortugueseMaster;
 window.renderPortugueseMaster=renderPortugueseMaster;
 if(typeof window.renderAll==='function')window.renderAll();
