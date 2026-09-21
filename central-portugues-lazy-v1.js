@@ -278,6 +278,16 @@ function closeCurrentExcept(id){
 function isPtModuleOpen(id){
  try{return localStorage.getItem(OPEN_PREFIX+id)==='1'}catch(_){return false}
 }
+function normalizePtOpenState(){
+ var migrationKey='central-v6:pt-native-open-state-v2';
+ try{
+  if(localStorage.getItem(migrationKey)==='1')return;
+  MODULES.forEach(function(module){writeOpen(module.id,false)});
+  writeActive('');
+  localStorage.setItem(migrationKey,'1');
+ }catch(_){}
+}
+normalizePtOpenState();
 function openModule(id){
  var module=BY_ID[id],section=document.querySelector('.cf-module[data-pt-module="'+id+'"]');
  if(!module||!section)return false;
