@@ -436,11 +436,7 @@ function renderModule(module){
   '</div>'+
  '</section>';
 }
-function ptStats(){
- var progress=0;
- MODULES.forEach(function(module){if(safeRead('central-v6:pt:'+module.id+':v1',''))progress++;});
- return {total:17,started:progress};
-}
+function ptStats(){return {total:17};}
 function renderStandalone(){
  var root=document.getElementById('pt-standalone-app');
  if(!root)return;
