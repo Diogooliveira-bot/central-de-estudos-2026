@@ -28,27 +28,6 @@ html.central-minimal-v66119 #centralSidebar .nav > .label {
   display: none !important;
 }
 
-/* Menos caixas e instruções no roteiro de Português. */
-html.central-minimal-v66119 .pt-study-kicker,
-html.central-minimal-v66119 .pt-study-nav-head p,
-html.central-minimal-v66119 .pt-study-week .pt-week-guide,
-html.central-minimal-v66119 .pt-week-guide {
-  display: none !important;
-}
-
-html.central-minimal-v66119 .pt-study-nav {
-  padding: 12px 0 !important;
-  border-left: 0 !important;
-  border-right: 0 !important;
-  border-radius: 0 !important;
-  background: transparent !important;
-  box-shadow: none !important;
-}
-
-html.central-minimal-v66119 .pt-study-nav-head {
-  margin-bottom: 10px !important;
-}
-
 /* Cartões abertos mais leves, sem destaque decorativo desnecessário. */
 html.central-minimal-v66119 #homeView .subject.open {
   border-color: var(--cm-line, var(--line)) !important;
