@@ -315,6 +315,29 @@ function activateEmbeddedDecorando(frame,discipline=null){
 }
 function openLeiSecaEnxuta(btn,discipline=null,topicId=null){return openEmbeddedTool('decorando',{discipline,topicId},btn);}
 
+function cleanRemovedSubjectResidue(){
+ try{
+  const normalize=v=>String(v||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+  const isRemoved=v=>{const x=normalize(v);return x==='pt'||x==='portugues'||x==='lingua portuguesa'};
+  const agendaPrefix='central-v6:agenda:';
+  const agendaKeys=[];
+  for(let i=0;i<localStorage.length;i++){const k=localStorage.key(i);if(k&&k.startsWith(agendaPrefix))agendaKeys.push(k)}
+  agendaKeys.forEach(k=>{
+   try{
+    const list=JSON.parse(localStorage.getItem(k)||'[]');
+    if(!Array.isArray(list))return;
+    const next=list.filter(item=>!isRemoved(item?.discipline));
+    if(next.length!==list.length)localStorage.setItem(k,JSON.stringify(next));
+   }catch(_){}
+  });
+  try{
+   const last=JSON.parse(localStorage.getItem('central-v6:last')||'null');
+   const lastText=normalize(last?.title)+' '+normalize(last?.url);
+   if(last&&(last.ptWeek||lastText.includes('portugues')||lastText.includes('modules/portugues')))localStorage.removeItem('central-v6:last');
+  }catch(_){}
+  localStorage.removeItem('central-v6:open:pt');
+ }catch(e){console.warn('Limpeza de disciplina removida',e)}
+}
 function key(uid,kind){return `central-v6:${kind}:${uid}`}
 function goalDone(uid){return localStorage.getItem(key(uid,'done'))==='1'}
 function setDone(uid,v){localStorage.setItem(key(uid,'done'),v?'1':'0')}
@@ -4888,6 +4911,7 @@ function renderAll(){
 function esc(v){return String(v??'').replace(/[&<>"']/g,s=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[s]))}
 function escAttr(v){return esc(v).replace(/`/g,'&#96;')}function escJs(v){return String(v??'').replace(/\\/g,'\\\\').replace(/'/g,"\\'")}
 
+try{cleanRemovedSubjectResidue()}catch(e){console.warn('Limpeza de estado',e)}
 try{applyCentralTheme()}catch(e){console.warn('Tema',e)}
 try{applySidebarCollapse()}catch(e){console.warn('Sidebar',e)}
 try{renderAll()}catch(e){
