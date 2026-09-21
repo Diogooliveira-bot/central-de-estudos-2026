@@ -1,87 +1,126 @@
-name: Publicar v6.6.79 - Portugues com migracao
+name: Limpeza final de Portugues da Central
 
 on:
   push:
-    branches: [main]
+    branches:
+      - cleanup/central-sem-portugues-v2
     paths:
-      - 'scripts/apply_portugues_flashcards.py'
-      - 'data/flashcards_portugues_part*.csv'
-      - 'tools/anki-migrate-v6679.js'
-      - 'sync-client.js'
       - '.github/workflows/publish-v6677-portugues.yml'
 
 permissions:
   contents: write
 
 jobs:
-  integrar:
+  limpar:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout da branch de limpeza
         uses: actions/checkout@v4
         with:
-          ref: main
+          ref: cleanup/central-sem-portugues-v2
           fetch-depth: 0
 
-      - name: Configurar Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
+      - name: Limpar Anki e residuos de integracao
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json, re
 
-      - name: Organizar Portugues e instalar migracao
-        run: python scripts/apply_portugues_flashcards.py
+          anki = Path('tools/anki.html')
+          html = anki.read_text(encoding='utf-8')
+          marker = 'window.ANKI_SITE_DATA = '
+          pos = html.index(marker) + len(marker)
+          data, consumed = json.JSONDecoder().raw_decode(html[pos:])
+          end = pos + consumed
 
-      - name: Validar versao gerada
+          def root(deck):
+              return (deck or '').split('::', 1)[0].strip().upper()
+
+          pt_cards = [c for c in data.get('cards', []) if root(c.get('deck')) == '03 PORTUGUÊS']
+          assert len(pt_cards) == 160, f'Esperados 160 cards de Português; encontrados {len(pt_cards)}'
+
+          data['cards'] = [c for c in data.get('cards', []) if root(c.get('deck')) != '03 PORTUGUÊS']
+          data['decks'] = [d for d in data.get('decks', []) if root(d) != '03 PORTUGUÊS']
+          if isinstance(data.get('meta'), dict) and isinstance(data['meta'].get('decks'), list):
+              data['meta']['decks'] = [d for d in data['meta']['decks'] if root(d) != '03 PORTUGUÊS']
+          data['totalCards'] = len(data['cards'])
+          data['deckCount'] = len(data['decks'])
+          data['version'] = '6.6.79-central-clean'
+
+          compact = json.dumps(data, ensure_ascii=False, separators=(',', ':'))
+          html = html[:pos] + compact + html[end:]
+          html = re.sub(r'\s*<script\s+src=["\']\./anki-migrate-v6679\.js\?v=6679["\']></script>', '', html, flags=re.I)
+
+          assert '03 PORTUGUÊS' not in html
+          assert 'flashcards_portugues_medio_dificil' not in html
+          assert 'anki-migrate-v6679' not in html
+          anki.write_text(html, encoding='utf-8')
+
+          sync = Path('sync-client.js')
+          s = sync.read_text(encoding='utf-8')
+          s, n = re.subn(r'async function persistAnkiMigration\(\)\{.*?\n\}\n(?=async function sync)', '', s, count=1, flags=re.S)
+          assert n == 1, f'Hook persistAnkiMigration não removido: {n}'
+          s = s.replace("if(!(await persistAnkiMigration())){meta.hash=remoteHash;lastCheckHash=remoteHash}", "meta.hash=remoteHash;lastCheckHash=remoteHash")
+          s = s.replace("if(!(await persistAnkiMigration())){meta.hash=newestHash;lastCheckHash=newestHash}", "meta.hash=newestHash;lastCheckHash=newestHash")
+          s = s.replace("if(!(await persistAnkiMigration())){meta.hash=initialRemoteHash;lastCheckHash=initialRemoteHash}", "meta.hash=initialRemoteHash;lastCheckHash=initialRemoteHash")
+          assert 'persistAnkiMigration' not in s
+          assert '__centralAnkiMigrated6679' not in s
+          sync.write_text(s, encoding='utf-8')
+
+          remove = [
+              'central-portugues-native-v2.js',
+              'tools/anki-migrate-v6679.js',
+              'data/flashcards_portugues_part1.csv',
+              'data/flashcards_portugues_part2.csv',
+              'data/flashcards_portugues_part3.csv',
+              'data/flashcards_portugues_part4.csv',
+              'scripts/apply_portugues_flashcards.py',
+              '.github/workflows/publish-v6677-portugues.yml',
+          ]
+          for name in remove:
+              p = Path(name)
+              if p.exists():
+                  p.unlink()
+
+          print('Cards removidos:', len(pt_cards))
+          print('Cards restantes:', data['totalCards'])
+          print('Decks restantes:', data['deckCount'])
+          PY
+
+      - name: Validar limpeza
         run: |
           python - <<'PY'
           from pathlib import Path
           import json
-
           html = Path('tools/anki.html').read_text(encoding='utf-8')
           marker = 'window.ANKI_SITE_DATA = '
           pos = html.index(marker) + len(marker)
           data, _ = json.JSONDecoder().raw_decode(html[pos:])
-
-          def raiz(deck):
-              return (deck or '').split('::', 1)[0].strip().upper()
-
-          pt = [c for c in data['cards'] if raiz(c.get('deck')) == '03 PORTUGUÊS']
-          assert len(pt) == 160, len(pt)
-          assert all(c.get('source') == 'flashcards_portugues_medio_dificil.csv' for c in pt)
-          semanas = {c['deck'].split('::')[1] for c in pt}
-          assert semanas == {f'SEMANA {i:02d}' for i in range(1, 17)}, semanas
-          assert all(len(c['deck'].split('::')) >= 3 for c in pt)
-
-          removidas = {'06 LEGISLAÇÃO', '99 ARQUIVO FORA DO EDITAL', 'QUESTÕES', 'RLM'}
-          for nome in removidas:
-              assert not any(raiz(c.get('deck')) == nome for c in data['cards']), nome
-              assert not any(raiz(d) == nome for d in data.get('decks', [])), nome
-
-          assert data['version'] == '6.6.79-portugues-organizado'
-          assert './anki-migrate-v6679.js?v=6679' in html
-          assert Path('tools/anki-migrate-v6679.js').exists()
-          sw = Path('sw.js').read_text(encoding='utf-8')
-          assert 'central-v6680' in sw
-          assert 'sync-client.js?v=6679' in sw
-          assert 'anki-migrate-v6679.js?v=6679' in sw
-          sync = Path('sync-client.js').read_text(encoding='utf-8')
-          assert '__centralAnkiMigrated6679' in sync
-          assert "versao:'v6.6.79'" in sync
-
-          print('Validação OK')
-          print('Português: 160 cards / 16 semanas / Semana -> Tópico')
-          print('Migração local+nuvem: v6679')
-          print('Total geral:', data['totalCards'])
+          root = lambda d: (d or '').split('::', 1)[0].strip().upper()
+          assert not any(root(c.get('deck')) == '03 PORTUGUÊS' for c in data['cards'])
+          assert not any(root(d) == '03 PORTUGUÊS' for d in data['decks'])
+          assert not any(root(d) == '03 PORTUGUÊS' for d in data.get('meta', {}).get('decks', []))
+          assert data['totalCards'] == len(data['cards']) == 4167
+          assert 'anki-migrate-v6679' not in html
+          assert 'persistAnkiMigration' not in Path('sync-client.js').read_text(encoding='utf-8')
+          for p in [
+            'central-portugues-native-v2.js',
+            'tools/anki-migrate-v6679.js',
+            'data/flashcards_portugues_part1.csv',
+            'data/flashcards_portugues_part2.csv',
+            'data/flashcards_portugues_part3.csv',
+            'data/flashcards_portugues_part4.csv',
+            'scripts/apply_portugues_flashcards.py',
+            '.github/workflows/publish-v6677-portugues.yml',
+          ]:
+              assert not Path(p).exists(), p
+          print('VALIDAÇÃO FINAL OK')
           PY
 
-      - name: Publicar arquivos integrados no main
+      - name: Commit da limpeza
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add tools/anki.html sw.js
-          if git diff --cached --quiet; then
-            echo 'Nenhuma alteracao adicional.'
-          else
-            git commit -m 'Publica v6.6.79 — migração do Anki no tablet [skip ci]'
-            git push origin main
-          fi
+          git add -A
+          git commit -m 'Remove resíduos finais de Português da Central'
+          git push origin cleanup/central-sem-portugues-v2
