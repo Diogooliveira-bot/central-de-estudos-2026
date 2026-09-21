@@ -157,3 +157,84 @@ html[data-central-theme="light"] .workspace :is(.btn.primary,.cf-btn.primary,.an
   .workspace :is(p,li,button,input,textarea,select){font-size:max(1rem,16px)}
   .workspace :is(.small,.cf-module-stat,.subject-count,.disc-meta){font-size:.8125rem}
 }
+
+
+/* Direito Civil — superfícies coerentes nos 15 módulos */
+html[data-central-theme="dark"],html:not([data-central-theme]) .subject[data-id="civil"]{
+  --civil-base:#092235;--civil-elev:#0d2b40;--civil-soft:#103249;--civil-line:#24536a;
+  --civil-ink:#effbff;--civil-copy:#bdd8e3;--civil-muted:#8fb6c5;--civil-accent:#24d2df;
+}
+html[data-central-theme="light"] .subject[data-id="civil"]{
+  --civil-base:#ffffff;--civil-elev:#f6fcfe;--civil-soft:#edf9fc;--civil-line:#b9dce5;
+  --civil-ink:#082c40;--civil-copy:#315f71;--civil-muted:#557d8d;--civil-accent:#007b9d;
+}
+.subject[data-id="civil"]{
+  background:var(--civil-base)!important;border-color:var(--civil-line)!important;color:var(--civil-ink)!important;
+}
+.subject[data-id="civil"] .subject-head,
+.subject[data-id="civil"] .subject-body,
+.subject[data-id="civil"] .civil-master,
+.subject[data-id="civil"] .civil-master-intro,
+.subject[data-id="civil"] .civil-module,
+.subject[data-id="civil"] .civil-module-body,
+.subject[data-id="civil"] .civil-step-body,
+.subject[data-id="civil"] .civil-a-section,
+.subject[data-id="civil"] .csp-panel{
+  background:var(--civil-base)!important;border-color:var(--civil-line)!important;color:var(--civil-ink)!important;
+}
+.subject[data-id="civil"] .civil-master-intro,
+.subject[data-id="civil"] .civil-module,
+.subject[data-id="civil"] .csp-panel{border-radius:14px!important}
+.subject[data-id="civil"] .civil-a-card,
+.subject[data-id="civil"] .civil-theory section,
+.subject[data-id="civil"] .civil-law-card,
+.subject[data-id="civil"] .civil-step,
+.subject[data-id="civil"] .civil-scope-note,
+.subject[data-id="civil"] .civil-target,
+.subject[data-id="civil"] .civil-a-chip,
+.subject[data-id="civil"] .csp-stage-card,
+.subject[data-id="civil"] .csp-tec-target,
+.subject[data-id="civil"] .csp-read-check,
+.subject[data-id="civil"] .csp-tec-summary span{
+  background:var(--civil-elev)!important;border-color:var(--civil-line)!important;color:var(--civil-ink)!important;
+}
+.subject[data-id="civil"] .civil-step-head:hover,
+.subject[data-id="civil"] .civil-module-head:hover{background:var(--civil-soft)!important}
+.subject[data-id="civil"] :is(.civil-master h3,.civil-master h4,.civil-module-title b,
+.civil-a-card b,.civil-step-title b,.civil-theory h4,.civil-theory strong,
+.civil-scope-note b,.civil-target b,.csp-panel-head b,.csp-stage-head b,
+.csp-tec-target label,.csp-tec-summary b){color:var(--civil-ink)!important}
+.subject[data-id="civil"] :is(.civil-master p,.civil-module-title small,.civil-scope-note,
+.civil-a-card p,.civil-a-list,.civil-a-basis,.civil-step-title small,.civil-step-status,
+.civil-theory p,.civil-theory li,.civil-anki-note,.csp-panel-note,.csp-stage-head small,
+.csp-auto-status,.csp-tec-target small,.csp-empty,.csp-tec-row,.csp-tec-row small,
+.civil-target span,.civil-module-num){color:var(--civil-copy)!important}
+.subject[data-id="civil"] :is(.civil-a-chip,.csp-revision-chip,.csp-active-chip,
+.csp-stage-summary,.civil-pct,.civil-a-basis,.civil-scope-badge){color:var(--civil-accent)!important}
+.subject[data-id="civil"] .civil-a-meta{gap:8px;margin-top:11px}
+.subject[data-id="civil"] .civil-a-chip{min-height:30px;display:inline-flex;align-items:center;font-weight:750;line-height:1.25}
+.subject[data-id="civil"] .civil-target{padding:12px 14px;min-width:152px}
+.subject[data-id="civil"] .csp-panel{padding:14px;margin:2px 0 15px;border-color:color-mix(in srgb,var(--civil-accent) 44%,var(--civil-line))!important}
+.subject[data-id="civil"] .csp-panel-head span{color:var(--civil-accent)!important}
+.subject[data-id="civil"] .csp-stage-card{padding:12px}
+.subject[data-id="civil"] .csp-meter,.subject[data-id="civil"] .civil-overall{background:color-mix(in srgb,var(--civil-line) 54%,transparent)!important}
+.subject[data-id="civil"] .csp-meter span,.subject[data-id="civil"] .civil-overall span{background:linear-gradient(90deg,#00a4c4,#2bdce6)!important}
+.subject[data-id="civil"] :is(.csp-target-control button,.csp-add-round,.csp-topic-read button){
+  background:color-mix(in srgb,var(--civil-accent) 12%,var(--civil-elev))!important;
+  border-color:color-mix(in srgb,var(--civil-accent) 48%,var(--civil-line))!important;
+  color:var(--civil-ink)!important;
+}
+.subject[data-id="civil"] :is(.csp-tec-target input,.csp-modal input,.csp-modal select){
+  background:var(--civil-soft)!important;border-color:var(--civil-line)!important;color:var(--civil-ink)!important;
+}
+.subject[data-id="civil"] .csp-topic-read button.done,
+.subject[data-id="civil"] .civil-a-reviewed.on{color:#58e6ae!important;border-color:#35c881!important;background:rgba(20,166,101,.14)!important}
+.subject[data-id="civil"] .csp-read-check{color:var(--civil-copy)!important}
+.subject[data-id="civil"] .csp-read-check span{background:var(--civil-soft)!important;border-color:var(--civil-line)!important}
+.subject[data-id="civil"] .civil-scope-badge.edital{color:#0a8d68!important;background:rgba(20,166,101,.12)!important}
+.subject[data-id="civil"] .civil-scope-badge.mix{color:#b87600!important;background:rgba(214,150,0,.12)!important}
+@media(max-width:760px){
+  .subject[data-id="civil"] .civil-master-intro{padding:14px!important}
+  .subject[data-id="civil"] .civil-a-chip{font-size:10px!important}
+  .subject[data-id="civil"] .csp-panel{padding:11px!important}
+}
