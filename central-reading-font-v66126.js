@@ -30,7 +30,8 @@
  }
  function applyPortuguese(value){
   document.documentElement.style.setProperty('--central-pt-font-scale',String(value/100));
-  if(window.PtControllerV1&&typeof window.PtControllerV1.setReadingFont==='function')window.PtControllerV1.setReadingFont(value);
+  var controller=window.PtControllerV2||window.PtControllerV1;
+  if(controller&&typeof controller.setReadingFont==='function')controller.setReadingFont(value);
  }
  function apply(value,persist){
   value=clamp(value);
