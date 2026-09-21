@@ -253,7 +253,7 @@ html[data-central-theme="light"]{
 }
 html,body{background:var(--bg);color:var(--text)}
 body,button,input,textarea,select{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
-body,.topbar,aside,.card,.subject,.disc-card,.pt-week,.pt-day,.cf-module,#ankiView{
+body,.topbar,aside,.card,.subject,.disc-card,.cf-module,#ankiView{
  transition:background-color .16s ease,border-color .16s ease,color .16s ease;
 }
 aside{background:var(--side);border-color:var(--line)}
@@ -272,34 +272,31 @@ aside{background:var(--side);border-color:var(--line)}
 .btn:hover{background:var(--surface-hover)}
 .btn.primary{background:var(--purple2);border-color:var(--purple);color:#fff}
 .field input,.field textarea,.field select{background:var(--input);border-color:var(--line2);color:var(--text)}
-.subject,.pt-week,.pt-day,.cf-module{background:var(--soft);border-color:var(--line)}
-.subject-head,.pt-week-head,.pt-day-head,.cf-module-head{color:var(--text)}
-.subject-head:hover,.pt-week-head:hover,.pt-day-head:hover,.cf-module-head:hover{background:var(--surface-hover)}
+.subject,.cf-module{background:var(--soft);border-color:var(--line)}
+.subject-head,.cf-module-head{color:var(--text)}
+.subject-head:hover,.cf-module-head:hover{background:var(--surface-hover)}
 .topic-row:hover{background:var(--surface-hover)}
-.topic-title,.pt-week-title,.pt-day-title,.cf-module-title{color:var(--text)}
-.sum,.note-item,.tips,.detail-panel,.pt-resource,.pt-notes,.pt-note-item,.pt-integrated,
-.pt-question-card,.pt-reading-card,.pt-error-card,.pt-progress-card,.pt-library-card,
+.topic-title,.cf-module-title{color:var(--text)}
+.sum,.note-item,.tips,.detail-panel,
 .cf-step,.cf-syllabus,.cf-theory,.cf-resource-box,.cf-question,.cf-error-panel,
 .cf-result-grid div,.cf-metric{
  background:var(--panel)!important;border-color:var(--line)!important;color:var(--text);
 }
-.pt-integrated-head,.cf-session-head,.pt-master-head{
+.cf-session-head{
  background:var(--panel2)!important;border-color:var(--line)!important;color:var(--text);
 }
-.pt-option,.pt-rq-option,.cf-option,.cf-strike,.cf-btn,.pt-master-tools button,
-.pt-day-reading-button,.pt-filter-source,.pt-total-stat{
+.cf-option,.cf-strike,.cf-btn{
  background:var(--panel2);border-color:var(--line2);color:var(--text);
 }
-.pt-option:hover,.cf-option:hover,.cf-btn:hover,.pt-master-tools button:hover{background:var(--surface-hover)}
-.pt-lesson-section p,.pt-lesson-section li,.pt-reading-text,.cf-theory-text,.cf-advanced div,
-.pt-error-answer,.pt-error-explanation{color:var(--muted)}
-.pt-note-editor textarea,.cf-notes,.pt-filter-count input,.pt-filter-stats input{
+.cf-option:hover,.cf-btn:hover{background:var(--surface-hover)}
+.cf-theory-text,.cf-advanced div{color:var(--muted)}
+.cf-notes{
  background:var(--input)!important;color:var(--text)!important;border-color:var(--line2)!important;
 }
 .module-frame{background:var(--bg)}
 /* Os estados semânticos permanecem iguais em ambos os temas. */
-.btn.green,.pt-feedback.good,.cf-feedback.good,.anki-duo-feedback.good{color:#bff5da}
-.btn.red,.pt-feedback.bad,.cf-feedback.bad,.anki-duo-feedback.bad{color:#ffcbd0}
+.btn.green,.cf-feedback.good,.anki-duo-feedback.good{color:#bff5da}
+.btn.red,.cf-feedback.bad,.anki-duo-feedback.bad{color:#ffcbd0}
 
 /* Anki segue o mesmo fundo, cards, bordas e tipografia da Central. */
 #ankiView{background:var(--bg)!important;color:var(--text)}
@@ -1485,7 +1482,7 @@ document.addEventListener('click',function(ev){
  border-left:4px solid var(--discipline-accent);background:var(--panel);color:var(--text);text-align:left;
  display:flex;flex-direction:column;align-items:flex-start;justify-content:center;box-shadow:0 8px 22px rgba(0,0,0,.07);
 }
-.disc-card[data-id="pt"]{--discipline-accent:#8b7cff}.disc-card[data-id="cf"]{--discipline-accent:#5b8cff}
+.disc-card[data-id="cf"]{--discipline-accent:#5b8cff}
 .disc-card[data-id="adm"]{--discipline-accent:#38bda9}.disc-card[data-id="civil"]{--discipline-accent:#24c77a}
 .disc-card[data-id="cpc"]{--discipline-accent:#38bdf8}.disc-card[data-id="penal"]{--discipline-accent:#ef6b76}
 .disc-card[data-id="cpp"]{--discipline-accent:#f59e42}.disc-card[data-id="rlm"]{--discipline-accent:#e7b83f}
@@ -1497,7 +1494,7 @@ document.addEventListener('click',function(ev){
  position:relative;background:var(--panel);border-color:var(--line);border-radius:var(--discipline-radius);
  box-shadow:0 8px 24px rgba(0,0,0,.08);isolation:isolate;
 }
-.subject[data-id="pt"]{--discipline-accent:#8b7cff;--discipline-accent-soft:rgba(139,124,255,.12)}
+
 .subject[data-id="cf"]{--discipline-accent:#5b8cff;--discipline-accent-soft:rgba(91,140,255,.12)}
 .subject[data-id="adm"]{--discipline-accent:#38bda9;--discipline-accent-soft:rgba(56,189,169,.12)}
 .subject[data-id="civil"]{--discipline-accent:#24c77a;--discipline-accent-soft:rgba(36,199,122,.12)}
@@ -1545,18 +1542,18 @@ document.addEventListener('click',function(ev){
 .hist{min-height:44px;font-size:11px}.note-item{padding:12px;font-size:12px}
 
 /* Barras de ação e cartões de resumo comuns. */
-.pt-master-tools,.cf-master-tools{gap:8px;margin-bottom:14px}
-.pt-master-tools button,.cf-master-tools button,.cf-btn,.civil-btn,.pt-day-reading-button{
+.cf-master-tools{gap:8px;margin-bottom:14px}
+.cf-master-tools button,.cf-btn,.civil-btn{
  min-height:44px;padding:9px 13px;border-radius:10px;font-size:12px;font-weight:780;
 }
-.pt-master-tools button,.cf-master-tools button{background:var(--panel2);border:1px solid var(--line2);color:var(--text)}
-.pt-master-tools button:hover,.cf-master-tools button:hover{background:var(--surface-hover)}
-.cf-metrics,.pt-progress-summary{gap:10px;margin-bottom:14px}
-.cf-metric,.pt-progress-stat,.pt-total-stat{min-height:78px;padding:13px;border-radius:var(--discipline-radius-sm)}
-.cf-metric small,.pt-progress-stat small{font-size:11px}.cf-metric b,.pt-progress-stat b{font-size:21px}
-.pt-master-panel,.cf-session,.cf-error-panel{border-radius:var(--discipline-radius);margin-bottom:14px}
-.pt-master-head,.cf-session-head{min-height:54px;padding:10px 14px}.pt-master-head h3,.cf-session-head b{font-size:13px}
-.pt-master-body,.cf-session-body{padding:14px}
+.cf-master-tools button{background:var(--panel2);border:1px solid var(--line2);color:var(--text)}
+.cf-master-tools button:hover{background:var(--surface-hover)}
+.cf-metrics{gap:10px;margin-bottom:14px}
+.cf-metric{min-height:78px;padding:13px;border-radius:var(--discipline-radius-sm)}
+.cf-metric small{font-size:11px}.cf-metric b{font-size:21px}
+.cf-session,.cf-error-panel{border-radius:var(--discipline-radius);margin-bottom:14px}
+.cf-session-head{min-height:54px;padding:10px 14px}.cf-session-head b{font-size:13px}
+.cf-session-body{padding:14px}
 
 /* Constitucional, Penal e Processo Civil usam o mesmo fluxo guiado. */
 .cf-modules{gap:10px}.cf-module{border-radius:var(--discipline-radius);background:var(--soft)}
@@ -1579,10 +1576,10 @@ document.addEventListener('click',function(ev){
 .cf-letter{width:26px;height:26px;font-size:10px}.cf-strike{width:44px;min-height:44px;border-radius:9px}
 .cf-feedback{padding:12px;font-size:12px;border-radius:10px}.cf-source{font-size:10px}.cf-coverage{font-size:11px}
 .cf-result-grid{gap:9px}.cf-result-grid div{min-height:72px;padding:11px;border-radius:10px}.cf-result-grid small{font-size:10px}
-.cf-option.correct,.pt-option.correct,.pt-rq-option.correct,.civil-option.correct{background:var(--discipline-good-bg)}
-.cf-option.wrong,.pt-option.wrong,.pt-rq-option.wrong,.civil-option.wrong{background:var(--discipline-bad-bg)}
-.cf-feedback.good,.pt-feedback.good,.civil-feedback.good{background:var(--discipline-good-bg)}
-.cf-feedback.bad,.pt-feedback.bad,.civil-feedback.bad{background:var(--discipline-bad-bg)}
+.cf-option.correct,.civil-option.correct{background:var(--discipline-good-bg)}
+.cf-option.wrong,.civil-option.wrong{background:var(--discipline-bad-bg)}
+.cf-feedback.good,.civil-feedback.good{background:var(--discipline-good-bg)}
+.cf-feedback.bad,.civil-feedback.bad{background:var(--discipline-bad-bg)}
 
 /* Civil reconstruído para Analista. */
 .civil-master{gap:10px}.civil-master-intro{padding:17px;border-radius:var(--discipline-radius);background:var(--soft)}
@@ -1613,7 +1610,7 @@ document.addEventListener('click',function(ev){
 @media(max-width:900px){
  .cf-module-head{grid-template-columns:82px minmax(0,1fr) 150px 32px}
  .civil-module-head{grid-template-columns:76px minmax(0,1fr) 130px 32px}
- .civil-a-grid,.pt-library-grid{grid-template-columns:1fr}
+ .civil-a-grid{grid-template-columns:1fr}
 }
 @media(max-width:680px){
  .view:not(.module-view){padding:12px 10px calc(20px + env(safe-area-inset-bottom))}
@@ -1628,14 +1625,10 @@ document.addEventListener('click',function(ev){
  .topic-title{font-size:12.5px}.topic-origin{font-size:10.5px}.type{font-size:9px;padding:4px 6px}
  .topic-detail{padding:0 0 14px}.detail-panel{padding:12px}
  .perf-form{grid-template-columns:1fr 1fr}.perf-form .btn{grid-column:1/-1}
- .pt-master-tools button,.cf-master-tools button{flex:1 1 145px}
- .cf-metrics,.pt-progress-summary{grid-template-columns:1fr 1fr;gap:8px}
- .cf-metric,.pt-progress-stat{min-height:72px;padding:11px}.cf-metric b,.pt-progress-stat b{font-size:19px}
- .pt-master-body,.cf-session-body{padding:11px}
- .pt-week-head{grid-template-columns:70px minmax(0,1fr) 32px;padding:9px}.pt-week-progress{display:none}
- .pt-day-head{grid-template-columns:54px minmax(0,1fr) 32px;padding:8px 4px}.pt-day-status{display:none}
- .pt-week-body{padding-inline:8px}.pt-day-body{padding-inline:3px}.pt-resources{grid-template-columns:1fr}
- .pt-resource-actions,.pt-backup-actions,.pt-q-actions{gap:7px}.pt-resource-actions>*{flex:1 1 130px}
+ .cf-master-tools button{flex:1 1 145px}
+ .cf-metrics{grid-template-columns:1fr 1fr;gap:8px}
+ .cf-metric{min-height:72px;padding:11px}.cf-metric b{font-size:19px}
+ .cf-session-body{padding:11px}
  .cf-module-head{grid-template-columns:70px minmax(0,1fr) 32px;padding:10px 9px}.cf-module-stat{display:none}
  .cf-module-no{font-size:9.5px}.cf-module-title{font-size:12.5px}.cf-module-body{padding:0 9px 11px}
  .cf-step-head{padding:10px}.cf-step-body{padding:0 10px 10px}.cf-resource-grid{grid-template-columns:1fr}
@@ -1650,13 +1643,13 @@ document.addEventListener('click',function(ev){
  .cpc-law-heading{align-items:flex-start;flex-direction:column}
 }
 @media(max-width:420px){
- .pt-master-tools button,.cf-master-tools button{flex-basis:100%}
- .cf-actions>*,.civil-a-actions>*,.pt-backup-actions>*{flex-basis:100%}
+ .cf-master-tools button{flex-basis:100%}
+ .cf-actions>*,.civil-a-actions>*{flex-basis:100%}
  .topic-row{grid-template-columns:26px minmax(0,1fr) 44px;grid-template-areas:"check title open" "check origin open" "check type open"}
  .cf-option{grid-template-columns:28px minmax(0,1fr);padding-inline:9px}
 }
 @media(prefers-reduced-motion:reduce){
- .subject,.subject-head,.chev,.pt-week,.cf-module,.civil-module{transition:none!important;scroll-behavior:auto!important}
+ .subject,.subject-head,.chev,.cf-module,.civil-module{transition:none!important;scroll-behavior:auto!important}
 }
 
 </style>
@@ -1832,7 +1825,7 @@ window.openEmbeddedTool=openEmbeddedTool;
 <script id="tec-context-module-v6655">
 (function(){
  'use strict';
- const MAP={"pt-w1":["port-06","port-10"],"pt-w2":["port-10"],"pt-w3":["port-11"],"pt-w4":["port-08","port-09"],"pt-w5":["port-12"],"pt-w6":["port-14"],"pt-w7":["port-13"],"pt-w8":["port-07","port-14","port-15"],"pt-w9":["port-02"],"pt-w10":["port-02","port-09"],"pt-w11":["port-01"],"pt-w12":["port-03"],"pt-w13":["port-03","port-10"],"pt-w14":["port-02","port-03"],"pt-w15":["port-01","port-02"],"pt-w16":["port-16"],"w1":["cf-01","cf-02"],"w2":["cf-03"],"w3":["cf-04"],"w4":["cf-05"],"w5":["cf-06"],"w6":["cf-07"],"w7":["cf-08"],"w8":["cf-09"],"w9":["cf-10"],"w10":["cf-10","cf-11"],"w11":["cf-12"],"w12":["cf-13"],"adm-01-01-regime-juridico-e-principios":["adm-01"],"adm-02-02-organizacao-administrativa":["adm-04"],"adm-03-03-atos-administrativos":["adm-02"],"adm-04-04-poderes-administrativos":["adm-03"],"adm-05-05-agentes-publicos":["adm-10","adm-11","adm-12","adm-13"],"adm-06-06-processo-administrativo-lei-9-784":["adm-15"],"adm-07-07-lindb-aplicada-ao-direito-publico":[],"adm-08-08-controle-da-administracao":["adm-07"],"adm-09-09-servicos-publicos-lei-8-987":["adm-06"],"adm-10-10-ppp-lei-11-079":["adm-06"],"adm-11-11-mrosc-lei-13-019":["adm-06"],"adm-12-12-consorcios-e-terceiro-setor":["adm-06"],"adm-13-13-improbidade-lei-8-429":["adm-14"],"adm-14-14-licitacoes-gerais-e-conceitos":["adm-16","adm-20"],"adm-15-15-licitacoes-planejamento":["adm-16"],"adm-16-16-licitacoes-procedimento-e-modalidades":["adm-16","adm-21"],"adm-17-17-contratacao-direta":["adm-17"],"adm-18-18-contratos-administrativos":["adm-18","adm-19"],"adm-19-19-lai-lei-12-527":["adm-23"],"adm-20-20-lgpd-lei-13-709":[],"civ-pessoa-natural":["cc-01"],"civ-pessoa-juridica":["cc-02"],"civ-bens":["cc-03"],"civ-negocio":["cc-04"],"civ-prescricao-prova":["cc-05"],"civ-obrigacoes":["cc-06","cc-07","cc-08"],"civ-contratos-geral":["cc-09"],"civ-contratos-especie":["cc-10","cc-11"],"civ-responsabilidade":["cc-12"],"civ-empresa":["emp-01","emp-02"],"civ-posse":["cc-13"],"civ-propriedade":["cc-14","cc-15"],"civ-direitos-reais":["cc-16","cc-17"],"civ-familia":["cc-18","cc-19","cc-20"],"civ-sucessoes":["cc-21","cc-22","cc-23"],"cpc1":["proc-civil-01"],"cpc2":["proc-civil-02"],"cpc3":["proc-civil-02"],"cpc4":["proc-civil-03"],"cpc5":["proc-civil-03"],"cpc6":["proc-civil-04"],"cpc7":["proc-civil-05"],"cpc8":["proc-civil-06","proc-civil-07"],"cpc9":["proc-civil-08"],"cpc10":["proc-civil-08","proc-civil-09"],"cpc11":["proc-civil-09","proc-civil-10"],"cpc12":["proc-civil-11","proc-civil-12"],"cpc13":["proc-civil-13"],"cpc14":["proc-civil-14"],"cpc15":["proc-civil-22","proc-civil-23"],"cpc16":["proc-civil-17","proc-civil-18"],"cpc17":["proc-civil-18","proc-civil-19"],"cpc18":["proc-civil-15","proc-civil-16"],"cpc19":[],"cpc20":["proc-civil-20","proc-civil-21"],"p1":["cp-01"],"p2":["cp-02"],"p3":["cp-05"],"p4":["cp-05"],"p5":["cp-06"],"p6":["cp-07"],"p7":["cp-09"],"p8":["cp-10","cp-11"],"p9":["cp-12","cp-13"],"p10":["cp-17","cp-18"],"p11":["cp-15"],"p12":["cp-19","cp-20","cp-21"],"p13":[],"p14":[],"p15":["cp-23","cp-24","cp-25"],"p16":["cp-20"],"p17":["cp-22"],"cpp-01-01-aplicacao-da-lei-e-principios":["cpp-01"],"cpp-02-02-inquerito-policial":["cpp-02"],"cpp-03-03-acao-penal-e-anpp":["cpp-03"],"cpp-04-04-jurisdicao-e-competencia":["cpp-04"],"cpp-05-05-sujeitos-processuais":["cpp-07"],"cpp-06-06-provas-e-cadeia-de-custodia":["cpp-05","cpp-06"],"cpp-07-07-prisao-e-cautelares":["cpp-08"],"cpp-08-08-citacao-e-intimacao":["cpp-09"],"cpp-09-09-procedimento-comum":["cpp-10"],"cpp-10-10-tribunal-do-juri":["cpp-11"],"cpp-11-11-nulidades":["cpp-12"],"cpp-12-12-recursos":["cpp-13"],"cpp-13-13-habeas-corpus":["cpp-13"],"cpp-14-01-prisao-temporaria":["cpp-08"],"cpp-15-02-juizado-especial-criminal":["cpp-11"],"cpp-16-03-lei-de-execucao-penal":[],"rlm-calculo-rapido-v6638":["mat-02"],"rlm-m01-analista":["mat-02"],"rlm-m02-analista":["mat-02"],"rlm-m03-analista":["mat-02"],"rlm-m04-analista":["mat-04"],"rlm-m05-analista":["mat-04"],"rlm-m06-analista":["mat-01"],"rlm-m07-analista":["rlm-05"],"rlm-m08-analista":["rlm-01","rlm-02"],"rlm-m09-analista":["rlm-03"]};
+ const MAP={"w1":["cf-01","cf-02"],"w2":["cf-03"],"w3":["cf-04"],"w4":["cf-05"],"w5":["cf-06"],"w6":["cf-07"],"w7":["cf-08"],"w8":["cf-09"],"w9":["cf-10"],"w10":["cf-10","cf-11"],"w11":["cf-12"],"w12":["cf-13"],"adm-01-01-regime-juridico-e-principios":["adm-01"],"adm-02-02-organizacao-administrativa":["adm-04"],"adm-03-03-atos-administrativos":["adm-02"],"adm-04-04-poderes-administrativos":["adm-03"],"adm-05-05-agentes-publicos":["adm-10","adm-11","adm-12","adm-13"],"adm-06-06-processo-administrativo-lei-9-784":["adm-15"],"adm-07-07-lindb-aplicada-ao-direito-publico":[],"adm-08-08-controle-da-administracao":["adm-07"],"adm-09-09-servicos-publicos-lei-8-987":["adm-06"],"adm-10-10-ppp-lei-11-079":["adm-06"],"adm-11-11-mrosc-lei-13-019":["adm-06"],"adm-12-12-consorcios-e-terceiro-setor":["adm-06"],"adm-13-13-improbidade-lei-8-429":["adm-14"],"adm-14-14-licitacoes-gerais-e-conceitos":["adm-16","adm-20"],"adm-15-15-licitacoes-planejamento":["adm-16"],"adm-16-16-licitacoes-procedimento-e-modalidades":["adm-16","adm-21"],"adm-17-17-contratacao-direta":["adm-17"],"adm-18-18-contratos-administrativos":["adm-18","adm-19"],"adm-19-19-lai-lei-12-527":["adm-23"],"adm-20-20-lgpd-lei-13-709":[],"civ-pessoa-natural":["cc-01"],"civ-pessoa-juridica":["cc-02"],"civ-bens":["cc-03"],"civ-negocio":["cc-04"],"civ-prescricao-prova":["cc-05"],"civ-obrigacoes":["cc-06","cc-07","cc-08"],"civ-contratos-geral":["cc-09"],"civ-contratos-especie":["cc-10","cc-11"],"civ-responsabilidade":["cc-12"],"civ-empresa":["emp-01","emp-02"],"civ-posse":["cc-13"],"civ-propriedade":["cc-14","cc-15"],"civ-direitos-reais":["cc-16","cc-17"],"civ-familia":["cc-18","cc-19","cc-20"],"civ-sucessoes":["cc-21","cc-22","cc-23"],"cpc1":["proc-civil-01"],"cpc2":["proc-civil-02"],"cpc3":["proc-civil-02"],"cpc4":["proc-civil-03"],"cpc5":["proc-civil-03"],"cpc6":["proc-civil-04"],"cpc7":["proc-civil-05"],"cpc8":["proc-civil-06","proc-civil-07"],"cpc9":["proc-civil-08"],"cpc10":["proc-civil-08","proc-civil-09"],"cpc11":["proc-civil-09","proc-civil-10"],"cpc12":["proc-civil-11","proc-civil-12"],"cpc13":["proc-civil-13"],"cpc14":["proc-civil-14"],"cpc15":["proc-civil-22","proc-civil-23"],"cpc16":["proc-civil-17","proc-civil-18"],"cpc17":["proc-civil-18","proc-civil-19"],"cpc18":["proc-civil-15","proc-civil-16"],"cpc19":[],"cpc20":["proc-civil-20","proc-civil-21"],"p1":["cp-01"],"p2":["cp-02"],"p3":["cp-05"],"p4":["cp-05"],"p5":["cp-06"],"p6":["cp-07"],"p7":["cp-09"],"p8":["cp-10","cp-11"],"p9":["cp-12","cp-13"],"p10":["cp-17","cp-18"],"p11":["cp-15"],"p12":["cp-19","cp-20","cp-21"],"p13":[],"p14":[],"p15":["cp-23","cp-24","cp-25"],"p16":["cp-20"],"p17":["cp-22"],"cpp-01-01-aplicacao-da-lei-e-principios":["cpp-01"],"cpp-02-02-inquerito-policial":["cpp-02"],"cpp-03-03-acao-penal-e-anpp":["cpp-03"],"cpp-04-04-jurisdicao-e-competencia":["cpp-04"],"cpp-05-05-sujeitos-processuais":["cpp-07"],"cpp-06-06-provas-e-cadeia-de-custodia":["cpp-05","cpp-06"],"cpp-07-07-prisao-e-cautelares":["cpp-08"],"cpp-08-08-citacao-e-intimacao":["cpp-09"],"cpp-09-09-procedimento-comum":["cpp-10"],"cpp-10-10-tribunal-do-juri":["cpp-11"],"cpp-11-11-nulidades":["cpp-12"],"cpp-12-12-recursos":["cpp-13"],"cpp-13-13-habeas-corpus":["cpp-13"],"cpp-14-01-prisao-temporaria":["cpp-08"],"cpp-15-02-juizado-especial-criminal":["cpp-11"],"cpp-16-03-lei-de-execucao-penal":[],"rlm-calculo-rapido-v6638":["mat-02"],"rlm-m01-analista":["mat-02"],"rlm-m02-analista":["mat-02"],"rlm-m03-analista":["mat-02"],"rlm-m04-analista":["mat-04"],"rlm-m05-analista":["mat-04"],"rlm-m06-analista":["mat-01"],"rlm-m07-analista":["rlm-05"],"rlm-m08-analista":["rlm-01","rlm-02"],"rlm-m09-analista":["rlm-03"]};
  const GROUPS={
 'w':'Direito Constitucional','adm-':'Direito Administrativo','civ-':'Direito Civil','cpc':'Direito Processual Civil','p':'Direito Penal','cpp-':'Direito Processual Penal','rlm-':'Raciocínio Lógico'
  };
