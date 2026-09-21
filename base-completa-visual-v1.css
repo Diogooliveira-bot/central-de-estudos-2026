@@ -74,3 +74,86 @@ html[data-central-theme="light"] .nav button.active{color:#06334a}
  .disc-card:hover{transform:none}.subject-head,.cf-module-head{min-height:54px}
 }
 @media(prefers-reduced-motion:reduce){.disc-card{transition:none}.disc-card:hover{transform:none}}
+
+
+/* Auditoria de legibilidade v2 — tipografia e contraste em todas as superfícies */
+:root{
+  --bc-font:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+}
+html[data-central-theme="dark"],html:not([data-central-theme]){
+  --bc-ink:#f2fcff;--bc-copy:#c3dce5;--bc-subtle:#9bc0cd;--bc-link:#52e5ee;
+  --bc-field:#effcff;--bc-good:#74efc1;--bc-warn:#ffe08a;--bc-bad:#ffadb5;
+}
+html[data-central-theme="light"]{
+  --bc-ink:#082c40;--bc-copy:#355f70;--bc-subtle:#527a8a;--bc-link:#007a9e;
+  --bc-field:#082c40;--bc-good:#087a57;--bc-warn:#8b5d00;--bc-bad:#b42333;
+}
+
+/* A mesma família tipográfica é aplicada à Central e aos componentes carregados nela. */
+html,body,button,input,textarea,select,
+.workspace,.view,.card,.subject,.cf-module,.disc-card,
+.anki-duo-shell,.civil-master,.ptn-master,.rlm-shell,
+.central-settings,.module-frame{
+  font-family:var(--bc-font)!important;
+}
+
+/* Texto de leitura, ajuda, rótulos e metadados — nunca fica apagado no fundo. */
+.workspace :is(p,li,small,.muted,.crumb,.eyebrow,.subject-count,.topic-origin,
+.topic-header,.resource-label,.history-label,.field label,.agenda-copy small,
+.schedule-intro p,.disc-card small,.disc-meta,.cf-module-stat,.cf-subtitle,
+.cf-coverage,.cf-step-copy small,.cf-theory-text,.cf-reading li,.cf-advanced div,
+.cf-resource-box h4,.cf-qtop,.cf-qmeta,.cf-source,.civil-qsource,.civil-chip,
+.civil-step-copy small,.civil-anki-note,.ptn-progress-note,.ptn-session-title small,
+.ptn-review-card p,.ptn-question-context,.anki-duo-eyebrow,.anki-duo-subtitle,
+.anki-duo-hint,.anki-duo-studytop,.anki-duo-tags,.anki-duo-form label,
+.anki-duo-row p,.anki-duo-stat small,.anki-duo-history summary,.anki-duo-history-row,
+.anki-duo-editor-summary,.anki-duo-editor-note){
+  color:var(--bc-copy)!important;
+}
+.workspace :is(h1,h2,h3,h4,h5,h6,b,strong,summary,.topic-title,.subject-name,
+.cf-module-title,.cf-step-copy b,.cf-reading strong,.cf-theory summary,
+.cf-question h3,.civil-master h3,.civil-step-title b,.ptn-session-title b,
+.ptn-review-card b,.ptn-question-title,.anki-duo-home h1,.anki-duo-heading h1,
+.anki-duo-overview h1,.anki-duo-content,.brand b,.topbar>b){
+  color:var(--bc-ink)!important;
+}
+.workspace :is(a,.chip,.chip.real,.chip.anki,.chip.law,.edit-link,.open-topic,
+.central-inline-close,.central-view-back,.cf-resource-box a,.cf-source a,
+.anki-duo-link){
+  color:var(--bc-link)!important;
+}
+.workspace :is(.btn,.cf-btn,.anki-duo-btn,.ptn-btn,.nav button,.top-actions button,
+.sidebar-toggle,.central-btn-sec,.cf-option,.anki-duo-choice,.ptn-option){
+  color:var(--bc-field)!important;font-family:var(--bc-font)!important;
+}
+.workspace :is(input,textarea,select,.cf-notes,.anki-duo-custom select,
+.anki-duo-form select,.anki-duo-form input,.anki-duo-form textarea,
+.anki-duo-browser-tools input,.anki-duo-browser-tools select){
+  color:var(--bc-field)!important;font-family:var(--bc-font)!important;
+}
+.workspace :is(input,textarea,select)::placeholder{color:var(--bc-subtle)!important;opacity:1}
+
+/* Semântica continua visível tanto no tema escuro quanto no claro. */
+.workspace :is(.rate.good,.btn.green,.cf-feedback.good,.anki-duo-feedback.good,
+.subject-pct.done,.ptn-session.done .ptn-session-state){color:var(--bc-good)!important}
+.workspace :is(.rate.mid,.chip.law,.cf-update,.ptn-trap){color:var(--bc-warn)!important}
+.workspace :is(.rate.bad,.btn.red,.cf-feedback.bad,.anki-duo-feedback.bad,
+.ptn-option.wrong){color:var(--bc-bad)!important}
+.workspace :is(.subject-pct,.agenda-time,.tips-title,.pre-title,.cf-module-no,
+.ptn-session-no){color:var(--bc-link)!important}
+
+/* Correções dos componentes que tinham cor fixa e escapavam do tema claro. */
+html[data-central-theme="light"] .workspace :is(.topic-title,.cf-module-title,.cf-step-copy b,
+.cf-reading strong,.cf-theory summary,.cf-question h3,.civil-step-title b,
+.anki-duo-home h1,.anki-duo-heading h1,.anki-duo-overview h1){color:#082c40!important}
+html[data-central-theme="dark"] .workspace :is(.topic-title,.cf-module-title,.cf-step-copy b,
+.cf-reading strong,.cf-theory summary,.cf-question h3,.civil-step-title b,
+.anki-duo-home h1,.anki-duo-heading h1,.anki-duo-overview h1){color:#f2fcff!important}
+html[data-central-theme="light"] .workspace :is(.cf-reading,.tips,.detail-panel,.cf-theory,
+.cf-resource-box,.cf-step,.cf-question,.civil-theory,.ptn-review-card){background:#fff!important}
+html[data-central-theme="light"] .workspace :is(.btn.primary,.cf-btn.primary,.anki-duo-btn.primary,
+.ptn-btn.primary){color:#fff!important}
+@media(max-width:680px){
+  .workspace :is(p,li,button,input,textarea,select){font-size:max(1rem,16px)}
+  .workspace :is(.small,.cf-module-stat,.subject-count,.disc-meta){font-size:.8125rem}
+}

@@ -25,9 +25,25 @@
       if(next!==el.textContent)el.textContent=next;
     });
   };
+
+  const applyFrameTypography=(frame)=>{
+    try{
+      const doc=frame.contentDocument;if(!doc||doc.getElementById('base-completa-font-bridge'))return;
+      const style=doc.createElement('style');style.id='base-completa-font-bridge';
+      style.textContent='html,body,button,input,textarea,select{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif!important}body{color:#082c40!important}';
+      (doc.head||doc.documentElement).appendChild(style);
+    }catch(_){}
+  };
+  const standardizeFrames=()=>{
+    document.querySelectorAll('iframe').forEach(frame=>{
+      applyFrameTypography(frame);
+      if(!frame.dataset.bcFontBound){frame.dataset.bcFontBound='1';frame.addEventListener('load',()=>applyFrameTypography(frame));}
+    });
+  };
+
   let queued=false;
   const refresh=()=>{
-    queued=false;applyBrand();applyLabels(document);
+    queued=false;applyBrand();applyLabels(document);standardizeFrames();
   };
   const schedule=()=>{if(!queued){queued=true;requestAnimationFrame(refresh)}};
   const init=()=>{
