@@ -1,80 +1,78 @@
 (function(){
 'use strict';
-if(window.__CENTRAL_PT_LAZY_CONTROLLER_V1__)return;
-window.__CENTRAL_PT_LAZY_CONTROLLER_V1__=true;
+if(window.__CENTRAL_PT_LAZY_V2__)return;
+window.__CENTRAL_PT_LAZY_V2__=true;
 
-var M1_SCRIPTS=[
- 'portugues-m1-v3.js?v=20260920d',
- 'portugues-m1-theory-v1.js?v=20260920d',
- 'portugues-m1-theory-v2.js?v=20260920d',
- 'portugues-m1-theory-v3.js?v=20260920d',
- 'portugues-m1-no-anki-v1.js?v=20260920d',
- 'portugues-m1-apostila-v2.js?v=20260920d'
+var M1_BASE='portugues-m1-v3.js?v=20260921pt1';
+var M1_DECORATORS=[
+ 'portugues-m1-theory-v1.js?v=20260921pt1',
+ 'portugues-m1-theory-v2.js?v=20260921pt1',
+ 'portugues-m1-theory-v3.js?v=20260921pt1',
+ 'portugues-m1-no-anki-v1.js?v=20260921pt1',
+ 'portugues-m1-apostila-v2.js?v=20260921pt1'
 ];
-var M2_SCRIPTS=[
- 'portugues-m2-v1.js?v=20260920d',
- 'portugues-m2-tec-link-v1.js?v=20260920d'
-];
-var CONTROLLER_SCRIPT='central-portugues-controller-v1.js?v=20260920d';
-var loaded=false,loading=null;
+var M2_BASE='portugues-m2-v1.js?v=20260921pt1';
+var M2_DECORATOR='portugues-m2-tec-link-v1.js?v=20260921pt1';
+var CONTROLLER_SCRIPT='central-portugues-controller-v1.js?v=20260921pt1';
+var scripts={},modules={},boot=null;
 
 function addScript(src){
- return new Promise(function(resolve,reject){
-  var existing=document.querySelector('script[data-central-src="'+src+'"]');
-  if(existing){resolve(src);return}
+ if(scripts[src])return scripts[src];
+ scripts[src]=new Promise(function(resolve,reject){
   var script=document.createElement('script');
-  script.src='/'+src;
-  script.async=false;
-  script.dataset.centralSrc=src;
+  script.src='/'+src;script.async=false;
   script.onload=function(){resolve(src)};
-  script.onerror=function(){reject(new Error('Falha ao carregar '+src))};
+  script.onerror=function(){delete scripts[src];reject(new Error('Falha ao carregar '+src))};
   document.head.appendChild(script);
  });
+ return scripts[src];
 }
-async function loadSeq(list){
- for(var i=0;i<list.length;i++)await addScript(list[i]);
+function loadInOrder(list){
+ var jobs=list.map(addScript);
+ return jobs.reduce(function(chain,job){return chain.then(function(){return job})},Promise.resolve());
 }
-async function ensurePt(){
- if(loaded)return true;
- if(loading)return loading;
- loading=(async function(){
-   var canonical=window.__PT_CANONICAL_RENDER__||window.renderPortugueseMaster;
-   var realRenderSubjects=window.renderSubjects,realRenderAll=window.renderAll;
-   window.renderSubjects=function(){};
-   window.renderAll=function(){};
-
-   await loadSeq(M1_SCRIPTS);
-   if(typeof window.renderPortugueseMaster==='function'&&window.renderPortugueseMaster!==canonical){
-     window.__PT_M1_ENHANCED_RENDER__=window.renderPortugueseMaster;
-   }else if(window.PtM1V3&&typeof window.PtM1V3.render==='function'){
-     window.__PT_M1_ENHANCED_RENDER__=window.PtM1V3.render;
-   }
-   if(canonical)window.renderPortugueseMaster=canonical;
-
-   await loadSeq(M2_SCRIPTS);
-   if(typeof window.renderPortugueseMaster==='function'&&window.renderPortugueseMaster!==canonical){
-     window.__PT_M2_ENHANCED_RENDER__=window.renderPortugueseMaster;
-   }
-   if(canonical)window.renderPortugueseMaster=canonical;
-
-   await addScript(CONTROLLER_SCRIPT);
-   window.renderSubjects=realRenderSubjects;
-   window.renderAll=realRenderAll;
-   loaded=true;
-   return true;
- })().catch(function(error){
-   loading=null;
-   if(window.__PT_CANONICAL_RENDER__)window.renderPortugueseMaster=window.__PT_CANONICAL_RENDER__;
-   console.error('[PT lazy controller]',error);
-   throw error;
- });
- return loading;
+function controllerRender(){return window.__PT_CONTROLLER_RENDER__||window.renderPortugueseMaster}
+function ensureHub(){
+ if(boot)return boot;
+ boot=addScript(CONTROLLER_SCRIPT).then(function(){
+  if(typeof window.renderSubjects==='function')window.renderSubjects();
+  return true;
+ }).catch(function(error){boot=null;console.error('[Português]',error);throw error});
+ return boot;
 }
-window.ensurePortugueseLoaded=ensurePt;
+async function loadModule(id){
+ await ensureHub();
+ var master=window.renderPortugueseMaster,subjects=window.renderSubjects,all=window.renderAll,controller=controllerRender();
+ window.renderSubjects=function(){};window.renderAll=function(){};
+ try{
+  if(id==='m1'){
+   await addScript(M1_BASE);
+   window.renderPortugueseMaster=window.PtM1V3&&window.PtM1V3.render;
+   await loadInOrder(M1_DECORATORS);
+   window.__PT_M1_ENHANCED_RENDER__=window.renderPortugueseMaster||(window.PtM1V3&&window.PtM1V3.render);
+  }else if(id==='m2'){
+   await addScript(M2_BASE);
+   window.renderPortugueseMaster=window.PtM2V1&&window.PtM2V1.render;
+   await addScript(M2_DECORATOR);
+   window.__PT_M2_ENHANCED_RENDER__=window.renderPortugueseMaster||(window.PtM2V1&&window.PtM2V1.render);
+  }
+ }finally{
+  window.renderPortugueseMaster=controller||master;
+  window.renderSubjects=subjects;window.renderAll=all;
+ }
+ return true;
+}
+window.ensurePortugueseLoaded=ensureHub;
+window.ensurePortugueseModule=function(id){
+ if(id!=='m1'&&id!=='m2')return Promise.resolve(true);
+ if(modules[id])return modules[id];
+ modules[id]=loadModule(id).catch(function(error){delete modules[id];throw error});
+ return modules[id];
+};
 document.addEventListener('click',function(event){
  try{
-   var head=event.target&&event.target.closest&&event.target.closest('.subject[data-id="pt"] > .subject-head');
-   if(head)setTimeout(function(){ensurePt().catch(function(){})},0);
+  var head=event.target&&event.target.closest&&event.target.closest('.subject[data-id="pt"] > .subject-head');
+  if(head)setTimeout(function(){ensureHub().catch(function(){})},0);
  }catch(_){}
 },true);
 })();
