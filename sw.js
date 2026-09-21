@@ -1,6 +1,6 @@
 /* Central de Estudos — trava de navegação na v6.6.119
    Offline não destrutivo: index.html permanece apenas como fonte interna da v119. */
-var CACHE='central-v66163-sem-portugues';
+var CACHE='central-v66163-fastboot';
 var BOOT='/central-v119.html?direct=21';
 var STRUCTURAL_MANIFEST='/central-structural-files-v66119.json?v=66119s2';
 var CORE=[BOOT,'/index.html',STRUCTURAL_MANIFEST,'/manifest.webmanifest','/central-minimal-theme-v66119.css?v=66119h4','/central-cleanup-v66125.css?v=66125a1','/central-reading-font-v66126.css?v=66129a1'];
