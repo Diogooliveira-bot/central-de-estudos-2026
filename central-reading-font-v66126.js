@@ -1,4 +1,4 @@
-/* Central de Estudos — fonte de leitura, inclusive Português */
+/* Central de Estudos — controle de fonte de leitura */
 (function(){
  'use strict';
  var STORAGE_KEY='central-v6:reading-font-size',MIN=85,MAX=250,STEP=5,DEFAULT=100,observer=null,refreshTimer=0;
@@ -7,13 +7,10 @@
   '#homeView .ct-callout p','#homeView .ct-callout li','#homeView .cf-reading strong',
   '#homeView .cf-reading li','#homeView .cf-theory-text','#homeView .cf-advanced div',
   '#homeView .cf-notes','#homeView .cpc-law-card p','#homeView .cpc-law-card li',
-  '#homeView .ptm1-lesson p'
  ].join(',');
  var MEDIUM_SELECTORS=[
-  '#homeView .pt-lesson-section p','#homeView .pt-lesson-section li','#homeView .pt-reading-text',
   '#homeView .civil-a-card p','#homeView .civil-a-list','#homeView .civil-theory p',
   '#homeView .civil-theory li','#homeView .civil-law-card span',
-  '#homeView .ptm1-memory li','#homeView .ptm1-teacher p','#homeView .ptm1-exit li'
  ].join(',');
  function clamp(value){value=Math.round(Number(value)/STEP)*STEP;return Math.max(MIN,Math.min(MAX,value||DEFAULT))}
  function read(){try{return clamp(localStorage.getItem(STORAGE_KEY)||DEFAULT)}catch(_){return DEFAULT}}
@@ -28,18 +25,13 @@
   document.querySelectorAll(LARGE_SELECTORS).forEach(function(element){element.style.setProperty('font-size',large,'important')});
   document.querySelectorAll(MEDIUM_SELECTORS).forEach(function(element){element.style.setProperty('font-size',medium,'important')});
  }
- function applyPortuguese(value){
-  document.documentElement.style.setProperty('--central-pt-font-scale',String(value/100));
-  var controller=window.PtControllerV2||window.PtControllerV1;
-  if(controller&&typeof controller.setReadingFont==='function')controller.setReadingFont(value);
- }
  function apply(value,persist){
   value=clamp(value);
   var scale=value/100,root=document.documentElement;
   root.dataset.centralReadingFont=String(value);
   root.style.setProperty('--central-reading-font-large',(16*scale).toFixed(1)+'px');
   root.style.setProperty('--central-reading-font-medium',(13*scale).toFixed(1)+'px');
-  forceReadingText(value);applyPortuguese(value);
+  forceReadingText(value);
   if(persist!==false)save(value);
   refreshControl(value);
   return value;
@@ -56,7 +48,7 @@
  }
  function watchReading(){
   var home=document.getElementById('homeView');if(!home||observer||typeof MutationObserver==='undefined')return;
-  observer=new MutationObserver(function(){clearTimeout(refreshTimer);refreshTimer=setTimeout(function(){var value=read();forceReadingText(value);applyPortuguese(value)},30)});
+  observer=new MutationObserver(function(){clearTimeout(refreshTimer);refreshTimer=setTimeout(function(){var value=read();forceReadingText(value)},30)});
   observer.observe(home,{childList:true,subtree:true});
  }
  function ready(){injectControl();apply(read(),false);watchReading()}
