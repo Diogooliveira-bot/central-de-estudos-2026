@@ -222,6 +222,9 @@ function scopedDocument(root){
  scoped.getElementsByClassName=function(name){return root.getElementsByClassName(name)};
  scoped.getElementsByTagName=function(name){return root.getElementsByTagName(name)};
  scoped.body=root;
+ scoped.createElement=document.createElement.bind(document);
+ scoped.createTextNode=document.createTextNode.bind(document);
+ scoped.createDocumentFragment=document.createDocumentFragment.bind(document);
  scoped.addEventListener=function(type,handler,options){
   if(type==='DOMContentLoaded'){setTimeout(function(){handler.call(scoped,{type:type})},0);return}
   document.addEventListener(type,handler,options);
