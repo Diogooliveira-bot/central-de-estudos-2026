@@ -312,6 +312,8 @@ function renderPortugueseMaster(){
   '</div>';
  setTimeout(function(){
   if(!active)return;
+  var ptSubject=document.querySelector('.subject[data-id="pt"]');
+  if(ptSubject&&!ptSubject.classList.contains('open'))return;
   var section=document.querySelector('.cf-module[data-pt-module="'+active+'"]');
   if(section){
    var host=section.querySelector('[data-pt-host]');
