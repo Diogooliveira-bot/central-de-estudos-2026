@@ -9,15 +9,15 @@
   const applyBrand=()=>{
     document.title='Base Completa — Estude, revise e evolua';
     const icon=document.querySelector('.brand-icon');
-    if(icon){icon.textContent='BC';icon.setAttribute('aria-label','Base Completa')}
+    if(icon){if(icon.textContent!=='BC')icon.textContent='BC';icon.setAttribute('aria-label','Base Completa')}
     const brand=document.querySelector('.brand-copy');
     if(brand){
       const name=brand.querySelector('b'),sub=brand.querySelector('small');
-      if(name)name.textContent='BASE COMPLETA';
-      if(sub)sub.textContent='Estude. Revise. Evolua.';
+      if(name&&name.textContent!=='BASE COMPLETA')name.textContent='BASE COMPLETA';
+      if(sub&&sub.textContent!=='Estude. Revise. Evolua.')sub.textContent='Estude. Revise. Evolua.';
     }
     const title=document.querySelector('.topbar > b');
-    if(title)title.textContent='BASE COMPLETA';
+    if(title&&title.textContent!=='BASE COMPLETA')title.textContent='BASE COMPLETA';
   };
   const applyLabels=(root=document)=>{
     root.querySelectorAll?.('.subject-count,.disc-meta,.schedule-intro .eyebrow,.disc-card small').forEach(el=>{
