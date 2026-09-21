@@ -182,13 +182,69 @@ function loadScript(src){
 function loadSequence(list){
  return list.reduce(function(chain,item){return chain.then(function(){return loadScript(item)})},Promise.resolve());
 }
-function runInline(code,id,index){
- var script=document.createElement('script');
- script.type='text/javascript';
- script.dataset.centralPtInline=id;
- script.text=String(code||'')+'\n//# sourceURL=central-pt-v2-'+id+'-'+index+'.js';
- document.head.appendChild(script);
- script.remove();
+function scopedDocument(root){
+ var scoped=Object.create(document);
+ function localQuery(selector){
+  var value=String(selector||'');
+  if(value==='body')return root;
+  if(value==='html')return document.documentElement;
+  if(/^body(?:$|[.#[:])/.test(value)){
+   var bodySelector=':scope'+value.slice(4);
+   return root.matches(bodySelector)?root:root.querySelector(bodySelector);
+  }
+  return root.querySelector(value);
+ }
+ function localQueryAll(selector){
+  var value=String(selector||'');
+  if(value==='body')return [root];
+  if(value==='html')return [document.documentElement];
+  if(/^body(?:$|[.#[:])/.test(value)){
+   var bodySelector=':scope'+value.slice(4);
+   return root.matches(bodySelector)?[root]:root.querySelectorAll(bodySelector);
+  }
+  return root.querySelectorAll(value);
+ }
+ scoped.getElementById=function(id){
+  if(id==null)return null;
+  return root.querySelector('[id="'+String(id).replace(/"/g,'\\\"')+'"]');
+ };
+ scoped.querySelector=localQuery;
+ scoped.querySelectorAll=localQueryAll;
+ scoped.getElementsByClassName=function(name){return root.getElementsByClassName(name)};
+ scoped.getElementsByTagName=function(name){return root.getElementsByTagName(name)};
+ scoped.body=root;
+ scoped.addEventListener=function(type,handler,options){
+  if(type==='DOMContentLoaded'){setTimeout(function(){handler.call(scoped,{type:type})},0);return}
+  document.addEventListener(type,handler,options);
+ };
+ scoped.removeEventListener=function(type,handler,options){
+  if(type==='DOMContentLoaded')return;
+  document.removeEventListener(type,handler,options);
+ };
+ return scoped;
+}
+function runScoped(code,id,index,root){
+ var doc=scopedDocument(root);
+ var source=String(code||'')+'\\n//# sourceURL=central-pt-v2-'+id+'-'+index+'.js';
+ return Function('document','window','globalThis',source)(doc,window,window);
+}
+var scopedAssets=Object.create(null);
+function loadScopedScript(src,id,index,root){
+ var key=assetName(src);
+ if(hostScript(key))return Promise.resolve(key);
+ if(!scopedAssets[key]){
+  scopedAssets[key]=fetch('/'+key,{credentials:'same-origin',cache:'no-store'}).then(function(response){
+   if(!response.ok)throw new Error('HTTP '+response.status+' ao carregar '+key);
+   return response.text();
+  });
+ }
+ return scopedAssets[key].then(function(source){
+  runScoped(source,id,index,root);
+  return key;
+ });
+}
+function runInline(code,id,index,root){
+ return runScoped(code,id,index,root);
 }
 function fetchMarkup(path){
  var request=path+(path.indexOf('?')>=0?'&':'?')+'v='+VERSION;
@@ -263,6 +319,7 @@ function loadHtmlModule(module,host){
    return !hostScript(src);
   });
   Array.prototype.slice.call(doc.querySelectorAll('script')).forEach(function(script){script.remove()});
+  Array.prototype.slice.call(doc.querySelectorAll('a.back,a[href="index.html"],a[href="./index.html"],a[href="/index.html"]')).forEach(function(link){link.remove()});
   var body=doc.body?doc.body.innerHTML:'';
   host.innerHTML=body;
   host.dataset.ptId=module.id;
@@ -272,8 +329,9 @@ function loadHtmlModule(module,host){
   applyFont(host,readFont());
   return scripts.reduce(function(chain,script,index){
    return chain.then(function(){
-    if(script.getAttribute('src'))return loadScript(versioned(script.getAttribute('src')));
-    runInline(script.textContent,module.id,index);
+    var src=script.getAttribute('src');
+    if(src)return loadScopedScript(versioned(src),module.id,index,host);
+    runInline(script.textContent,module.id,index,host);
    });
   },Promise.resolve()).then(function(){
    applyFont(host,readFont());
