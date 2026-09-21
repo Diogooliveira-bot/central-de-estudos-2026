@@ -1,7 +1,6 @@
 
 
 const SUBJECTS=[{"id":"cf","name":"Direito Constitucional","special":"Cargo 16 — Analista Judiciário — Área Judiciária","topics":[{"uid":"cf-m01-analista","title":"01 CONSTITUIÇÃO, NORMAS E PRINCÍPIOS FUNDAMENTAIS","origin":"Módulo 01 do edital","type":"Curso","studyUrl":"modules/cf/index.html?week=w1","ankiDeck":"02 DIREITO CONSTITUCIONAL::01 CONSTITUIÇÃO, NORMAS E PRINCÍPIOS FUNDAMENTAIS","sourceInfo":"Curso, Anki e Decorando alinhados à mesma matriz do edital novo.","sourceStats":{"cards":54,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Estude a teoria antes da revisão espaçada.","Questões reais e autorais estão identificadas.","Conteúdo fora do edital foi arquivado, sem apagar IDs ou histórico."]},{"uid":"cf-m02-analista","title":"02 DIREITOS E DEVERES INDIVIDUAIS E COLETIVOS","origin":"Módulo 02 do edital","type":"Curso","studyUrl":"modules/cf/index.html?week=w2","ankiDeck":"02 DIREITO CONSTITUCIONAL::02 DIREITOS E DEVERES INDIVIDUAIS E COLETIVOS","sourceInfo":"Curso, Anki e Decorando alinhados à mesma matriz do edital novo.","sourceStats":{"cards":122,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Estude a teoria antes da revisão espaçada.","Questões reais e autorais estão identificadas.","Conteúdo fora do edital foi arquivado, sem apagar IDs ou histórico."]},{"uid":"cf-m03-analista","title":"03 DIREITOS SOCIAIS, NACIONALIDADE E DIREITOS POLÍTICOS","origin":"Módulo 03 do edital","type":"Curso","studyUrl":"modules/cf/index.html?week=w3","ankiDeck":"02 DIREITO CONSTITUCIONAL::03 DIREITOS SOCIAIS, NACIONALIDADE E DIREITOS POLÍTICOS","sourceInfo":"Curso, Anki e Decorando alinhados à mesma matriz do edital novo.","sourceStats":{"cards":77,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Estude a teoria antes da revisão espaçada.","Questões reais e autorais estão identificadas.","Conteúdo fora do edital foi arquivado, sem apagar IDs ou histórico."]},{"uid":"cf-m04-analista","title":"04 ORGANIZAÇÃO DO ESTADO","origin":"Módulo 04 do edital","type":"Curso","studyUrl":"modules/cf/index.html?week=w4","ankiDeck":"02 DIREITO CONSTITUCIONAL::04 ORGANIZAÇÃO DO ESTADO","sourceInfo":"Curso, Anki e Decorando alinhados à mesma matriz do edital novo.","sourceStats":{"cards":20,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Estude a teoria antes da revisão espaçada.","Questões reais e autorais estão identificadas.","Conteúdo fora do edital foi arquivado, sem apagar IDs ou histórico."]},{"uid":"cf-m05-analista","title":"05 ADMINISTRAÇÃO PÚBLICA E SERVIDORES","origin":"Módulo 05 do edital","type":"Curso","studyUrl":"modules/cf/index.html?week=w5","ankiDeck":"02 DIREITO CONSTITUCIONAL::05 ADMINISTRAÇÃO PÚBLICA E SERVIDORES","sourceInfo":"Curso, Anki e Decorando alinhados à mesma matriz do edital novo.","sourceStats":{"cards":41,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Estude a teoria antes da revisão espaçada.","Questões reais e autorais estão identificadas.","Conteúdo fora do edital foi arquivado, sem apagar IDs ou histórico."]},{"uid":"cf-m06-analista","title":"06 ORGANIZAÇÃO DOS PODERES E LEGISLATIVO — CONGRESSO E ATRIBUIÇÕES","origin":"Módulo 06 do edital","type":"Curso","studyUrl":"modules/cf/index.html?week=w6","ankiDeck":"02 DIREITO CONSTITUCIONAL::06 PODER LEGISLATIVO - ORGANIZAÇÃO E ATRIBUIÇÕES","sourceInfo":"Curso, Anki e Decorando alinhados à mesma matriz do edital novo.","sourceStats":{"cards":35,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Estude a teoria antes da revisão espaçada.","Questões reais e autorais estão identificadas.","Conteúdo fora do edital foi arquivado, sem apagar IDs ou histórico."]},{"uid":"cf-m07-analista","title":"07 PROCESSO LEGISLATIVO E FISCALIZAÇÃO","origin":"Módulo 07 do edital","type":"Curso","studyUrl":"modules/cf/index.html?week=w7","ankiDeck":"02 DIREITO CONSTITUCIONAL::07 PROCESSO LEGISLATIVO E FISCALIZAÇÃO","sourceInfo":"Curso, Anki e Decorando alinhados à mesma matriz do edital novo.","sourceStats":{"cards":96,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Estude a teoria antes da revisão espaçada.","Questões reais e autorais estão identificadas.","Conteúdo fora do edital foi arquivado, sem apagar IDs ou histórico."]},{"uid":"cf-m08-analista","title":"08 PODER EXECUTIVO","origin":"Módulo 08 do edital","type":"Curso","studyUrl":"modules/cf/index.html?week=w8","ankiDeck":"02 DIREITO CONSTITUCIONAL::08 PODER EXECUTIVO","sourceInfo":"Curso, Anki e Decorando alinhados à mesma matriz do edital novo.","sourceStats":{"cards":49,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Estude a teoria antes da revisão espaçada.","Questões reais e autorais estão identificadas.","Conteúdo fora do edital foi arquivado, sem apagar IDs ou histórico."]},{"uid":"cf-m09-analista","title":"09 PODER JUDICIÁRIO — DISPOSIÇÕES GERAIS E STF","origin":"Módulo 09 do edital","type":"Curso","studyUrl":"modules/cf/index.html?week=w9","ankiDeck":"02 DIREITO CONSTITUCIONAL::09 PODER JUDICIÁRIO - DISPOSIÇÕES GERAIS E STF","sourceInfo":"Curso, Anki e Decorando alinhados à mesma matriz do edital novo.","sourceStats":{"cards":72,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Estude a teoria antes da revisão espaçada.","Questões reais e autorais estão identificadas.","Conteúdo fora do edital foi arquivado, sem apagar IDs ou histórico."]},{"uid":"cf-m10-analista","title":"10 CNJ, STJ, JUSTIÇA DO TRABALHO E CSJT","origin":"Módulo 10 do edital","type":"Curso","studyUrl":"modules/cf/index.html?week=w10","ankiDeck":"02 DIREITO CONSTITUCIONAL::10 CNJ, STJ, JUSTIÇA DO TRABALHO E CSJT","sourceInfo":"Curso, Anki e Decorando alinhados à mesma matriz do edital novo.","sourceStats":{"cards":57,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Estude a teoria antes da revisão espaçada.","Questões reais e autorais estão identificadas.","Conteúdo fora do edital foi arquivado, sem apagar IDs ou histórico."]},{"uid":"cf-m11-analista","title":"11 FUNÇÕES ESSENCIAIS À JUSTIÇA","origin":"Módulo 11 do edital","type":"Curso","studyUrl":"modules/cf/index.html?week=w11","ankiDeck":"02 DIREITO CONSTITUCIONAL::11 FUNÇÕES ESSENCIAIS À JUSTIÇA","sourceInfo":"Curso, Anki e Decorando alinhados à mesma matriz do edital novo.","sourceStats":{"cards":49,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Estude a teoria antes da revisão espaçada.","Questões reais e autorais estão identificadas.","Conteúdo fora do edital foi arquivado, sem apagar IDs ou histórico."]},{"uid":"cf-m12-analista","title":"12 CONTROLE DE CONSTITUCIONALIDADE","origin":"Módulo 12 do edital","type":"Curso","studyUrl":"modules/cf/index.html?week=w12","ankiDeck":"02 DIREITO CONSTITUCIONAL::12 CONTROLE DE CONSTITUCIONALIDADE","sourceInfo":"Curso, Anki e Decorando alinhados à mesma matriz do edital novo.","sourceStats":{"cards":50,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Estude a teoria antes da revisão espaçada.","Questões reais e autorais estão identificadas.","Conteúdo fora do edital foi arquivado, sem apagar IDs ou histórico."]}]},{"id":"adm","name":"Direito Administrativo","special":"","topics":[{"uid":"adm-01-01-regime-juridico-e-principios","title":"01 REGIME JURÍDICO E PRINCÍPIOS","origin":"Baralho 01","type":"Anki","studyUrl":null,"ankiDeck":"01 DIREITO ADM::01 REGIME JURÍDICO E PRINCÍPIOS","sourceInfo":"Subbaralho real da coleção Anki recuperada","sourceStats":{"cards":36,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Este tópico vem diretamente da árvore real de baralhos do Anki.","Use “Abrir este baralho” para estudar somente este núcleo, sem perder a estrutura original.","TEC/QC, Lei Seca e desempenho ficam vinculados a este mesmo tópico na Central."]},{"uid":"adm-02-02-organizacao-administrativa","title":"02 ORGANIZAÇÃO ADMINISTRATIVA","origin":"Baralho 02","type":"Anki","studyUrl":null,"ankiDeck":"01 DIREITO ADM::02 ORGANIZAÇÃO ADMINISTRATIVA","sourceInfo":"Subbaralho real da coleção Anki recuperada","sourceStats":{"cards":36,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Este tópico vem diretamente da árvore real de baralhos do Anki.","Use “Abrir este baralho” para estudar somente este núcleo, sem perder a estrutura original.","TEC/QC, Lei Seca e desempenho ficam vinculados a este mesmo tópico na Central."]},{"uid":"adm-03-03-atos-administrativos","title":"03 ATOS ADMINISTRATIVOS","origin":"Baralho 03","type":"Anki","studyUrl":null,"ankiDeck":"01 DIREITO ADM::03 ATOS ADMINISTRATIVOS","sourceInfo":"Subbaralho real da coleção Anki recuperada","sourceStats":{"cards":36,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Este tópico vem diretamente da árvore real de baralhos do Anki.","Use “Abrir este baralho” para estudar somente este núcleo, sem perder a estrutura original.","TEC/QC, Lei Seca e desempenho ficam vinculados a este mesmo tópico na Central."]},{"uid":"adm-04-04-poderes-administrativos","title":"04 PODERES ADMINISTRATIVOS","origin":"Baralho 04","type":"Anki","studyUrl":null,"ankiDeck":"01 DIREITO ADM::04 PODERES ADMINISTRATIVOS","sourceInfo":"Subbaralho real da coleção Anki recuperada","sourceStats":{"cards":36,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Este tópico vem diretamente da árvore real de baralhos do Anki.","Use “Abrir este baralho” para estudar somente este núcleo, sem perder a estrutura original.","TEC/QC, Lei Seca e desempenho ficam vinculados a este mesmo tópico na Central."]},{"uid":"adm-05-05-agentes-publicos","title":"05 AGENTES PÚBLICOS","origin":"Baralho 05","type":"Anki","studyUrl":null,"ankiDeck":"01 DIREITO ADM::05 AGENTES PÚBLICOS","sourceInfo":"Subbaralho real da coleção Anki recuperada","sourceStats":{"cards":36,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Este tópico vem diretamente da árvore real de baralhos do Anki.","Use “Abrir este baralho” para estudar somente este núcleo, sem perder a estrutura original.","TEC/QC, Lei Seca e desempenho ficam vinculados a este mesmo tópico na Central."]},{"uid":"adm-06-06-processo-administrativo-lei-9-784","title":"06 PROCESSO ADMINISTRATIVO - LEI 9.784","origin":"Baralho 06","type":"Anki","studyUrl":null,"ankiDeck":"01 DIREITO ADM::06 PROCESSO ADMINISTRATIVO - LEI 9.784","sourceInfo":"Subbaralho real da coleção Anki recuperada","sourceStats":{"cards":36,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Este tópico vem diretamente da árvore real de baralhos do Anki.","Use “Abrir este baralho” para estudar somente este núcleo, sem perder a estrutura original.","TEC/QC, Lei Seca e desempenho ficam vinculados a este mesmo tópico na Central."]},{"uid":"adm-07-07-lindb-aplicada-ao-direito-publico","title":"07 LINDB APLICADA AO DIREITO PÚBLICO","origin":"Baralho 07","type":"Anki","studyUrl":null,"ankiDeck":"01 DIREITO ADM::07 LINDB APLICADA AO DIREITO PÚBLICO","sourceInfo":"Subbaralho real da coleção Anki recuperada","sourceStats":{"cards":36,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Este tópico vem diretamente da árvore real de baralhos do Anki.","Use “Abrir este baralho” para estudar somente este núcleo, sem perder a estrutura original.","TEC/QC, Lei Seca e desempenho ficam vinculados a este mesmo tópico na Central."]},{"uid":"adm-08-08-controle-da-administracao","title":"08 CONTROLE DA ADMINISTRAÇÃO","origin":"Baralho 08","type":"Anki","studyUrl":null,"ankiDeck":"01 DIREITO ADM::08 CONTROLE DA ADMINISTRAÇÃO","sourceInfo":"Subbaralho real da coleção Anki recuperada","sourceStats":{"cards":36,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Este tópico vem diretamente da árvore real de baralhos do Anki.","Use “Abrir este baralho” para estudar somente este núcleo, sem perder a estrutura original.","TEC/QC, Lei Seca e desempenho ficam vinculados a este mesmo tópico na Central."]},{"uid":"adm-09-09-servicos-publicos-lei-8-987","title":"09 SERVIÇOS PÚBLICOS - LEI 8.987","origin":"Baralho 09","type":"Anki","studyUrl":null,"ankiDeck":"01 DIREITO ADM::09 SERVIÇOS PÚBLICOS - LEI 8.987","sourceInfo":"Subbaralho real da coleção Anki recuperada","sourceStats":{"cards":36,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Este tópico vem diretamente da árvore real de baralhos do Anki.","Use “Abrir este baralho” para estudar somente este núcleo, sem perder a estrutura original.","TEC/QC, Lei Seca e desempenho ficam vinculados a este mesmo tópico na Central."]},{"uid":"adm-10-10-ppp-lei-11-079","title":"10 PPP - LEI 11.079","origin":"Baralho 10","type":"Anki","studyUrl":null,"ankiDeck":"01 DIREITO ADM::10 PPP - LEI 11.079","sourceInfo":"Subbaralho real da coleção Anki recuperada","sourceStats":{"cards":36,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Este tópico vem diretamente da árvore real de baralhos do Anki.","Use “Abrir este baralho” para estudar somente este núcleo, sem perder a estrutura original.","TEC/QC, Lei Seca e desempenho ficam vinculados a este mesmo tópico na Central."]},{"uid":"adm-11-11-mrosc-lei-13-019","title":"11 MROSC - LEI 13.019","origin":"Baralho 11","type":"Anki","studyUrl":null,"ankiDeck":"01 DIREITO ADM::11 MROSC - LEI 13.019","sourceInfo":"Subbaralho real da coleção Anki recuperada","sourceStats":{"cards":36,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Este tópico vem diretamente da árvore real de baralhos do Anki.","Use “Abrir este baralho” para estudar somente este núcleo, sem perder a estrutura original.","TEC/QC, Lei Seca e desempenho ficam vinculados a este mesmo tópico na Central."]},{"uid":"adm-12-12-consorcios-e-terceiro-setor","title":"12 CONSÓRCIOS E TERCEIRO SETOR","origin":"Baralho 12","type":"Anki","studyUrl":null,"ankiDeck":"01 DIREITO ADM::12 CONSÓRCIOS E TERCEIRO SETOR","sourceInfo":"Subbaralho real da coleção Anki recuperada","sourceStats":{"cards":36,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Este tópico vem diretamente da árvore real de baralhos do Anki.","Use “Abrir este baralho” para estudar somente este núcleo, sem perder a estrutura original.","TEC/QC, Lei Seca e desempenho ficam vinculados a este mesmo tópico na Central."]},{"uid":"adm-13-13-improbidade-lei-8-429","title":"13 IMPROBIDADE - LEI 8.429","origin":"Baralho 13","type":"Anki","studyUrl":null,"ankiDeck":"01 DIREITO ADM::13 IMPROBIDADE - LEI 8.429","sourceInfo":"Subbaralho real da coleção Anki recuperada","sourceStats":{"cards":36,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Este tópico vem diretamente da árvore real de baralhos do Anki.","Use “Abrir este baralho” para estudar somente este núcleo, sem perder a estrutura original.","TEC/QC, Lei Seca e desempenho ficam vinculados a este mesmo tópico na Central."]},{"uid":"adm-14-14-licitacoes-gerais-e-conceitos","title":"14 LICITAÇÕES - GERAIS E CONCEITOS","origin":"Baralho 14","type":"Anki","studyUrl":null,"ankiDeck":"01 DIREITO ADM::14 LICITAÇÕES - GERAIS E CONCEITOS","sourceInfo":"Subbaralho real da coleção Anki recuperada","sourceStats":{"cards":36,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Este tópico vem diretamente da árvore real de baralhos do Anki.","Use “Abrir este baralho” para estudar somente este núcleo, sem perder a estrutura original.","TEC/QC, Lei Seca e desempenho ficam vinculados a este mesmo tópico na Central."]},{"uid":"adm-15-15-licitacoes-planejamento","title":"15 LICITAÇÕES - PLANEJAMENTO","origin":"Baralho 15","type":"Anki","studyUrl":null,"ankiDeck":"01 DIREITO ADM::15 LICITAÇÕES - PLANEJAMENTO","sourceInfo":"Subbaralho real da coleção Anki recuperada","sourceStats":{"cards":36,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Este tópico vem diretamente da árvore real de baralhos do Anki.","Use “Abrir este baralho” para estudar somente este núcleo, sem perder a estrutura original.","TEC/QC, Lei Seca e desempenho ficam vinculados a este mesmo tópico na Central."]},{"uid":"adm-16-16-licitacoes-procedimento-e-modalidades","title":"16 LICITAÇÕES - PROCEDIMENTO E MODALIDADES","origin":"Baralho 16","type":"Anki","studyUrl":null,"ankiDeck":"01 DIREITO ADM::16 LICITAÇÕES - PROCEDIMENTO E MODALIDADES","sourceInfo":"Subbaralho real da coleção Anki recuperada","sourceStats":{"cards":36,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Este tópico vem diretamente da árvore real de baralhos do Anki.","Use “Abrir este baralho” para estudar somente este núcleo, sem perder a estrutura original.","TEC/QC, Lei Seca e desempenho ficam vinculados a este mesmo tópico na Central."]},{"uid":"adm-17-17-contratacao-direta","title":"17 CONTRATAÇÃO DIRETA","origin":"Baralho 17","type":"Anki","studyUrl":null,"ankiDeck":"01 DIREITO ADM::17 CONTRATAÇÃO DIRETA","sourceInfo":"Subbaralho real da coleção Anki recuperada","sourceStats":{"cards":36,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Este tópico vem diretamente da árvore real de baralhos do Anki.","Use “Abrir este baralho” para estudar somente este núcleo, sem perder a estrutura original.","TEC/QC, Lei Seca e desempenho ficam vinculados a este mesmo tópico na Central."]},{"uid":"adm-18-18-contratos-administrativos","title":"18 CONTRATOS ADMINISTRATIVOS","origin":"Baralho 18","type":"Anki","studyUrl":null,"ankiDeck":"01 DIREITO ADM::18 CONTRATOS ADMINISTRATIVOS","sourceInfo":"Subbaralho real da coleção Anki recuperada","sourceStats":{"cards":36,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Este tópico vem diretamente da árvore real de baralhos do Anki.","Use “Abrir este baralho” para estudar somente este núcleo, sem perder a estrutura original.","TEC/QC, Lei Seca e desempenho ficam vinculados a este mesmo tópico na Central."]},{"uid":"adm-19-19-lai-lei-12-527","title":"19 LAI - LEI 12.527","origin":"Baralho 19","type":"Anki","studyUrl":null,"ankiDeck":"01 DIREITO ADM::19 LAI - LEI 12.527","sourceInfo":"Subbaralho real da coleção Anki recuperada","sourceStats":{"cards":38,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Este tópico vem diretamente da árvore real de baralhos do Anki.","Use “Abrir este baralho” para estudar somente este núcleo, sem perder a estrutura original.","TEC/QC, Lei Seca e desempenho ficam vinculados a este mesmo tópico na Central."]},{"uid":"adm-20-20-lgpd-lei-13-709","title":"20 LGPD - LEI 13.709","origin":"Baralho 20","type":"Anki","studyUrl":null,"ankiDeck":"01 DIREITO ADM::20 LGPD - LEI 13.709","sourceInfo":"Subbaralho real da coleção Anki recuperada","sourceStats":{"cards":38,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Este tópico vem diretamente da árvore real de baralhos do Anki.","Use “Abrir este baralho” para estudar somente este núcleo, sem perder a estrutura original.","TEC/QC, Lei Seca e desempenho ficam vinculados a este mesmo tópico na Central."]}]},{"id":"civil","name":"Direito Civil","special":"Cargo 16 — Analista Judiciário — Área Judiciária","topics":[{"uid":"civ-pessoa-natural-analista","title":"01 PESSOA NATURAL E DIREITOS DA PERSONALIDADE","origin":"Módulo 01 do edital","type":"Anki","studyUrl":null,"ankiDeck":"04 DIREITO CIVIL::01 PESSOA NATURAL E DIREITOS DA PERSONALIDADE","sourceInfo":"Baralho reorganizado pelo edital atual, com IDs e histórico preservados.","sourceStats":{"cards":47,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Estude a teoria do módulo antes da revisão espaçada.","Use o Decorando para treino de certo/errado.","Cartões autorais estão identificados no próprio enunciado."]},{"uid":"civ-pessoa-juridica-analista","title":"02 PESSOAS JURÍDICAS E DOMICÍLIO","origin":"Módulo 02 do edital","type":"Anki","studyUrl":null,"ankiDeck":"04 DIREITO CIVIL::02 PESSOAS JURÍDICAS E DOMICÍLIO","sourceInfo":"Baralho reorganizado pelo edital atual, com IDs e histórico preservados.","sourceStats":{"cards":34,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Estude a teoria do módulo antes da revisão espaçada.","Use o Decorando para treino de certo/errado.","Cartões autorais estão identificados no próprio enunciado."]},{"uid":"civ-bens-analista","title":"03 BENS","origin":"Módulo 03 do edital","type":"Anki","studyUrl":null,"ankiDeck":"04 DIREITO CIVIL::03 BENS","sourceInfo":"Baralho reorganizado pelo edital atual, com IDs e histórico preservados.","sourceStats":{"cards":34,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Estude a teoria do módulo antes da revisão espaçada.","Use o Decorando para treino de certo/errado.","Cartões autorais estão identificados no próprio enunciado."]},{"uid":"civ-negocio-analista","title":"04 NEGÓCIO JURÍDICO","origin":"Módulo 04 do edital","type":"Anki","studyUrl":null,"ankiDeck":"04 DIREITO CIVIL::04 NEGÓCIO JURÍDICO","sourceInfo":"Baralho reorganizado pelo edital atual, com IDs e histórico preservados.","sourceStats":{"cards":74,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Estude a teoria do módulo antes da revisão espaçada.","Use o Decorando para treino de certo/errado.","Cartões autorais estão identificados no próprio enunciado."]},{"uid":"civ-prescricao-prova-analista","title":"05 PRESCRIÇÃO, DECADÊNCIA E PROVA","origin":"Módulo 05 do edital","type":"Anki","studyUrl":null,"ankiDeck":"04 DIREITO CIVIL::05 PRESCRIÇÃO, DECADÊNCIA E PROVA","sourceInfo":"Baralho reorganizado pelo edital atual, com IDs e histórico preservados.","sourceStats":{"cards":48,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Estude a teoria do módulo antes da revisão espaçada.","Use o Decorando para treino de certo/errado.","Cartões autorais estão identificados no próprio enunciado."]},{"uid":"civ-obrigacoes-analista","title":"06 OBRIGAÇÕES","origin":"Módulo 06 do edital","type":"Anki","studyUrl":null,"ankiDeck":"04 DIREITO CIVIL::06 OBRIGAÇÕES","sourceInfo":"Baralho reorganizado pelo edital atual, com IDs e histórico preservados.","sourceStats":{"cards":143,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Estude a teoria do módulo antes da revisão espaçada.","Use o Decorando para treino de certo/errado.","Cartões autorais estão identificados no próprio enunciado."]},{"uid":"civ-contratos-geral-analista","title":"07 CONTRATOS EM GERAL","origin":"Módulo 07 do edital","type":"Anki","studyUrl":null,"ankiDeck":"04 DIREITO CIVIL::07 CONTRATOS EM GERAL","sourceInfo":"Baralho reorganizado pelo edital atual, com IDs e histórico preservados.","sourceStats":{"cards":58,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Estude a teoria do módulo antes da revisão espaçada.","Use o Decorando para treino de certo/errado.","Cartões autorais estão identificados no próprio enunciado."]},{"uid":"civ-contratos-especie-analista","title":"08 CONTRATOS EM ESPÉCIE","origin":"Módulo 08 do edital","type":"Anki","studyUrl":null,"ankiDeck":"04 DIREITO CIVIL::08 CONTRATOS EM ESPÉCIE","sourceInfo":"Baralho reorganizado pelo edital atual, com IDs e histórico preservados.","sourceStats":{"cards":56,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Estude a teoria do módulo antes da revisão espaçada.","Use o Decorando para treino de certo/errado.","Cartões autorais estão identificados no próprio enunciado."]},{"uid":"civ-responsabilidade-analista","title":"09 RESPONSABILIDADE CIVIL","origin":"Módulo 09 do edital","type":"Anki","studyUrl":null,"ankiDeck":"04 DIREITO CIVIL::09 RESPONSABILIDADE CIVIL","sourceInfo":"Baralho reorganizado pelo edital atual, com IDs e histórico preservados.","sourceStats":{"cards":40,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Estude a teoria do módulo antes da revisão espaçada.","Use o Decorando para treino de certo/errado.","Cartões autorais estão identificados no próprio enunciado."]},{"uid":"civ-empresa-analista","title":"10 DIREITO DE EMPRESA E NOME EMPRESARIAL","origin":"Módulo 10 do edital","type":"Anki","studyUrl":null,"ankiDeck":"04 DIREITO CIVIL::10 DIREITO DE EMPRESA E NOME EMPRESARIAL","sourceInfo":"Baralho reorganizado pelo edital atual, com IDs e histórico preservados.","sourceStats":{"cards":32,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Estude a teoria do módulo antes da revisão espaçada.","Use o Decorando para treino de certo/errado.","Cartões autorais estão identificados no próprio enunciado."]},{"uid":"civ-posse-analista","title":"11 POSSE","origin":"Módulo 11 do edital","type":"Anki","studyUrl":null,"ankiDeck":"04 DIREITO CIVIL::11 POSSE","sourceInfo":"Baralho reorganizado pelo edital atual, com IDs e histórico preservados.","sourceStats":{"cards":43,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Estude a teoria do módulo antes da revisão espaçada.","Use o Decorando para treino de certo/errado.","Cartões autorais estão identificados no próprio enunciado."]},{"uid":"civ-propriedade-analista","title":"12 PROPRIEDADE, VIZINHANÇA E CONDOMÍNIOS","origin":"Módulo 12 do edital","type":"Anki","studyUrl":null,"ankiDeck":"04 DIREITO CIVIL::12 PROPRIEDADE, VIZINHANÇA E CONDOMÍNIOS","sourceInfo":"Baralho reorganizado pelo edital atual, com IDs e histórico preservados.","sourceStats":{"cards":35,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Estude a teoria do módulo antes da revisão espaçada.","Use o Decorando para treino de certo/errado.","Cartões autorais estão identificados no próprio enunciado."]},{"uid":"civ-direitos-reais-analista","title":"13 OUTROS DIREITOS REAIS E GARANTIAS","origin":"Módulo 13 do edital","type":"Anki","studyUrl":null,"ankiDeck":"04 DIREITO CIVIL::13 OUTROS DIREITOS REAIS E GARANTIAS","sourceInfo":"Baralho reorganizado pelo edital atual, com IDs e histórico preservados.","sourceStats":{"cards":30,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Estude a teoria do módulo antes da revisão espaçada.","Use o Decorando para treino de certo/errado.","Cartões autorais estão identificados no próprio enunciado."]},{"uid":"civ-familia-analista","title":"14 DIREITO DE FAMÍLIA","origin":"Módulo 14 do edital","type":"Anki","studyUrl":null,"ankiDeck":"04 DIREITO CIVIL::14 DIREITO DE FAMÍLIA","sourceInfo":"Baralho reorganizado pelo edital atual, com IDs e histórico preservados.","sourceStats":{"cards":98,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Estude a teoria do módulo antes da revisão espaçada.","Use o Decorando para treino de certo/errado.","Cartões autorais estão identificados no próprio enunciado."]},{"uid":"civ-sucessoes-analista","title":"15 DIREITO DAS SUCESSÕES","origin":"Módulo 15 do edital","type":"Anki","studyUrl":null,"ankiDeck":"04 DIREITO CIVIL::15 DIREITO DAS SUCESSÕES","sourceInfo":"Baralho reorganizado pelo edital atual, com IDs e histórico preservados.","sourceStats":{"cards":90,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Estude a teoria do módulo antes da revisão espaçada.","Use o Decorando para treino de certo/errado.","Cartões autorais estão identificados no próprio enunciado."]}]},{"id":"cpc","name":"Direito Processual Civil","special":"TJ-CE — Cargo 16 — Analista Judiciário — Área Judiciária — disciplina, Anki e Decorando alinhados","topics":[{"uid":"cpc-m01-disciplina","title":"01 NORMAS FUNDAMENTAIS, FONTES E APLICAÇÃO","origin":"Módulo 01 do edital de Analista","type":"Curso","studyUrl":null,"ankiDeck":"PROCESSO CIVIL::01 NORMAS FUNDAMENTAIS, FONTES E APLICAÇÃO","sourceInfo":"27 questões FCC reais na disciplina. Anki com 57 cards ativos: 45 legados preservados e 12 novos de teoria, nível avançado e lei seca esquematizada.","sourceStats":{"cards":57,"questionsReal":27,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Estude a teoria e a lei seca antes da revisão espaçada.","Cards novos de cobertura estão identificados e não são questões reais da FCC.","Conteúdo fora do edital foi suspenso e arquivado sem apagar IDs ou histórico.","Use o aviso da disciplina para complementar questões no TEC/QConcursos."]},{"uid":"cpc-m02-disciplina","title":"02 JURISDIÇÃO, AÇÃO, PROCESSO E PRESSUPOSTOS","origin":"Módulo 02 do edital de Analista","type":"Curso","studyUrl":null,"ankiDeck":"PROCESSO CIVIL::02 JURISDIÇÃO, AÇÃO, PROCESSO E PRESSUPOSTOS","sourceInfo":"21 questões FCC reais na disciplina. Anki com 34 cards ativos: 21 legados preservados e 13 novos de teoria, nível avançado e lei seca esquematizada.","sourceStats":{"cards":34,"questionsReal":21,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Estude a teoria e a lei seca antes da revisão espaçada.","Cards novos de cobertura estão identificados e não são questões reais da FCC.","Conteúdo fora do edital foi suspenso e arquivado sem apagar IDs ou histórico.","Use o aviso da disciplina para complementar questões no TEC/QConcursos."]},{"uid":"cpc-m03-disciplina","title":"03 COMPETÊNCIA, CONEXÃO E CONFLITOS","origin":"Módulo 03 do edital de Analista","type":"Curso","studyUrl":null,"ankiDeck":"PROCESSO CIVIL::03 COMPETÊNCIA, CONEXÃO E CONFLITOS","sourceInfo":"60 questões FCC reais na disciplina. Anki com 36 cards ativos: 24 legados preservados e 12 novos de teoria, nível avançado e lei seca esquematizada.","sourceStats":{"cards":36,"questionsReal":60,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Estude a teoria e a lei seca antes da revisão espaçada.","Cards novos de cobertura estão identificados e não são questões reais da FCC.","Conteúdo fora do edital foi suspenso e arquivado sem apagar IDs ou histórico.","Use o aviso da disciplina para complementar questões no TEC/QConcursos."]},{"uid":"cpc-m04-disciplina","title":"04 PARTES, PROCURADORES, DESPESAS E GRATUIDADE","origin":"Módulo 04 do edital de Analista","type":"Curso","studyUrl":null,"ankiDeck":"PROCESSO CIVIL::04 PARTES, PROCURADORES, DESPESAS E GRATUIDADE","sourceInfo":"74 questões FCC reais na disciplina. Anki com 57 cards ativos: 45 legados preservados e 12 novos de teoria, nível avançado e lei seca esquematizada.","sourceStats":{"cards":57,"questionsReal":74,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Estude a teoria e a lei seca antes da revisão espaçada.","Cards novos de cobertura estão identificados e não são questões reais da FCC.","Conteúdo fora do edital foi suspenso e arquivado sem apagar IDs ou histórico.","Use o aviso da disciplina para complementar questões no TEC/QConcursos."]},{"uid":"cpc-m05-disciplina","title":"05 LITISCONSÓRCIO E INTERVENÇÃO DE TERCEIROS","origin":"Módulo 05 do edital de Analista","type":"Curso","studyUrl":null,"ankiDeck":"PROCESSO CIVIL::05 LITISCONSÓRCIO E INTERVENÇÃO DE TERCEIROS","sourceInfo":"77 questões FCC reais na disciplina. Anki com 39 cards ativos: 27 legados preservados e 12 novos de teoria, nível avançado e lei seca esquematizada.","sourceStats":{"cards":39,"questionsReal":77,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Estude a teoria e a lei seca antes da revisão espaçada.","Cards novos de cobertura estão identificados e não são questões reais da FCC.","Conteúdo fora do edital foi suspenso e arquivado sem apagar IDs ou histórico.","Use o aviso da disciplina para complementar questões no TEC/QConcursos."]},{"uid":"cpc-m06-disciplina","title":"06 JUIZ, AUXILIARES, MP, ADVOCACIA E DEFENSORIA","origin":"Módulo 06 do edital de Analista","type":"Curso","studyUrl":null,"ankiDeck":"PROCESSO CIVIL::06 JUIZ, AUXILIARES, MP, ADVOCACIA E DEFENSORIA","sourceInfo":"56 questões FCC reais na disciplina. Anki com 30 cards ativos: 18 legados preservados e 12 novos de teoria, nível avançado e lei seca esquematizada.","sourceStats":{"cards":30,"questionsReal":56,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Estude a teoria e a lei seca antes da revisão espaçada.","Cards novos de cobertura estão identificados e não são questões reais da FCC.","Conteúdo fora do edital foi suspenso e arquivado sem apagar IDs ou histórico.","Use o aviso da disciplina para complementar questões no TEC/QConcursos."]},{"uid":"cpc-m07-disciplina","title":"07 ATOS PROCESSUAIS, NEGÓCIOS E PRAZOS","origin":"Módulo 07 do edital de Analista","type":"Curso","studyUrl":null,"ankiDeck":"PROCESSO CIVIL::07 ATOS PROCESSUAIS, NEGÓCIOS E PRAZOS","sourceInfo":"50 questões FCC reais na disciplina. Anki com 57 cards ativos: 45 legados preservados e 12 novos de teoria, nível avançado e lei seca esquematizada.","sourceStats":{"cards":57,"questionsReal":50,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Estude a teoria e a lei seca antes da revisão espaçada.","Cards novos de cobertura estão identificados e não são questões reais da FCC.","Conteúdo fora do edital foi suspenso e arquivado sem apagar IDs ou histórico.","Use o aviso da disciplina para complementar questões no TEC/QConcursos."]},{"uid":"cpc-m08-disciplina","title":"08 COMUNICAÇÃO DOS ATOS E NULIDADES","origin":"Módulo 08 do edital de Analista","type":"Curso","studyUrl":null,"ankiDeck":"PROCESSO CIVIL::08 COMUNICAÇÃO DOS ATOS E NULIDADES","sourceInfo":"64 questões FCC reais na disciplina. Anki com 48 cards ativos: 39 legados preservados e 9 novos de teoria, nível avançado e lei seca esquematizada.","sourceStats":{"cards":48,"questionsReal":64,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Estude a teoria e a lei seca antes da revisão espaçada.","Cards novos de cobertura estão identificados e não são questões reais da FCC.","Conteúdo fora do edital foi suspenso e arquivado sem apagar IDs ou histórico.","Use o aviso da disciplina para complementar questões no TEC/QConcursos."]},{"uid":"cpc-m09-disciplina","title":"09 TUTELA PROVISÓRIA","origin":"Módulo 09 do edital de Analista","type":"Curso","studyUrl":null,"ankiDeck":"PROCESSO CIVIL::09 TUTELA PROVISÓRIA","sourceInfo":"43 questões FCC reais na disciplina. Anki com 54 cards ativos: 42 legados preservados e 12 novos de teoria, nível avançado e lei seca esquematizada.","sourceStats":{"cards":54,"questionsReal":43,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Estude a teoria e a lei seca antes da revisão espaçada.","Cards novos de cobertura estão identificados e não são questões reais da FCC.","Conteúdo fora do edital foi suspenso e arquivado sem apagar IDs ou histórico.","Use o aviso da disciplina para complementar questões no TEC/QConcursos."]},{"uid":"cpc-m10-disciplina","title":"10 FORMAÇÃO, SUSPENSÃO E PETIÇÃO INICIAL","origin":"Módulo 10 do edital de Analista","type":"Curso","studyUrl":null,"ankiDeck":"PROCESSO CIVIL::10 FORMAÇÃO, SUSPENSÃO E PETIÇÃO INICIAL","sourceInfo":"51 questões FCC reais na disciplina. Anki com 52 cards ativos: 39 legados preservados e 13 novos de teoria, nível avançado e lei seca esquematizada.","sourceStats":{"cards":52,"questionsReal":51,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Estude a teoria e a lei seca antes da revisão espaçada.","Cards novos de cobertura estão identificados e não são questões reais da FCC.","Conteúdo fora do edital foi suspenso e arquivado sem apagar IDs ou histórico.","Use o aviso da disciplina para complementar questões no TEC/QConcursos."]},{"uid":"cpc-m11-disciplina","title":"11 DEFESA, REVELIA, SANEAMENTO E JULGAMENTO","origin":"Módulo 11 do edital de Analista","type":"Curso","studyUrl":null,"ankiDeck":"PROCESSO CIVIL::11 DEFESA, REVELIA, SANEAMENTO E JULGAMENTO","sourceInfo":"60 questões FCC reais na disciplina. Anki com 52 cards ativos: 39 legados preservados e 13 novos de teoria, nível avançado e lei seca esquematizada.","sourceStats":{"cards":52,"questionsReal":60,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Estude a teoria e a lei seca antes da revisão espaçada.","Cards novos de cobertura estão identificados e não são questões reais da FCC.","Conteúdo fora do edital foi suspenso e arquivado sem apagar IDs ou histórico.","Use o aviso da disciplina para complementar questões no TEC/QConcursos."]},{"uid":"cpc-m12-disciplina","title":"12 PROVAS","origin":"Módulo 12 do edital de Analista","type":"Curso","studyUrl":null,"ankiDeck":"PROCESSO CIVIL::12 PROVAS","sourceInfo":"88 questões FCC reais na disciplina. Anki com 73 cards ativos: 60 legados preservados e 13 novos de teoria, nível avançado e lei seca esquematizada.","sourceStats":{"cards":73,"questionsReal":88,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Estude a teoria e a lei seca antes da revisão espaçada.","Cards novos de cobertura estão identificados e não são questões reais da FCC.","Conteúdo fora do edital foi suspenso e arquivado sem apagar IDs ou histórico.","Use o aviso da disciplina para complementar questões no TEC/QConcursos."]},{"uid":"cpc-m13-disciplina","title":"13 SENTENÇA, REMESSA, COISA JULGADA E LIQUIDAÇÃO","origin":"Módulo 13 do edital de Analista","type":"Curso","studyUrl":null,"ankiDeck":"PROCESSO CIVIL::13 SENTENÇA, REMESSA, COISA JULGADA E LIQUIDAÇÃO","sourceInfo":"73 questões FCC reais na disciplina. Anki com 58 cards ativos: 45 legados preservados e 13 novos de teoria, nível avançado e lei seca esquematizada.","sourceStats":{"cards":58,"questionsReal":73,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Estude a teoria e a lei seca antes da revisão espaçada.","Cards novos de cobertura estão identificados e não são questões reais da FCC.","Conteúdo fora do edital foi suspenso e arquivado sem apagar IDs ou histórico.","Use o aviso da disciplina para complementar questões no TEC/QConcursos."]},{"uid":"cpc-m14-disciplina","title":"14 CUMPRIMENTO DE SENTENÇA","origin":"Módulo 14 do edital de Analista","type":"Curso","studyUrl":null,"ankiDeck":"PROCESSO CIVIL::14 CUMPRIMENTO DE SENTENÇA","sourceInfo":"64 questões FCC reais na disciplina. Anki com 55 cards ativos: 42 legados preservados e 13 novos de teoria, nível avançado e lei seca esquematizada.","sourceStats":{"cards":55,"questionsReal":64,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Estude a teoria e a lei seca antes da revisão espaçada.","Cards novos de cobertura estão identificados e não são questões reais da FCC.","Conteúdo fora do edital foi suspenso e arquivado sem apagar IDs ou histórico.","Use o aviso da disciplina para complementar questões no TEC/QConcursos."]},{"uid":"cpc-m15-disciplina","title":"15 RECURSOS, PRECEDENTES E REPETITIVOS","origin":"Módulo 15 do edital de Analista","type":"Curso","studyUrl":null,"ankiDeck":"PROCESSO CIVIL::15 RECURSOS, PRECEDENTES E REPETITIVOS","sourceInfo":"73 questões FCC reais na disciplina. Anki com 57 cards ativos: 42 legados preservados e 15 novos de teoria, nível avançado e lei seca esquematizada.","sourceStats":{"cards":57,"questionsReal":73,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Estude a teoria e a lei seca antes da revisão espaçada.","Cards novos de cobertura estão identificados e não são questões reais da FCC.","Conteúdo fora do edital foi suspenso e arquivado sem apagar IDs ou histórico.","Use o aviso da disciplina para complementar questões no TEC/QConcursos."]},{"uid":"cpc-m16-disciplina","title":"16 EXECUÇÃO, TÍTULOS, OBRIGAÇÕES E FAZENDA","origin":"Módulo 16 do edital de Analista","type":"Curso","studyUrl":null,"ankiDeck":"PROCESSO CIVIL::16 EXECUÇÃO, TÍTULOS, OBRIGAÇÕES E FAZENDA","sourceInfo":"40 questões FCC reais na disciplina. Anki com 46 cards ativos: 33 legados preservados e 13 novos de teoria, nível avançado e lei seca esquematizada.","sourceStats":{"cards":46,"questionsReal":40,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Estude a teoria e a lei seca antes da revisão espaçada.","Cards novos de cobertura estão identificados e não são questões reais da FCC.","Conteúdo fora do edital foi suspenso e arquivado sem apagar IDs ou histórico.","Use o aviso da disciplina para complementar questões no TEC/QConcursos."]},{"uid":"cpc-m17-disciplina","title":"17 PENHORA, EXPROPRIAÇÃO E EMBARGOS","origin":"Módulo 17 do edital de Analista","type":"Curso","studyUrl":null,"ankiDeck":"PROCESSO CIVIL::17 PENHORA, EXPROPRIAÇÃO E EMBARGOS","sourceInfo":"60 questões FCC reais na disciplina. Anki com 70 cards ativos: 57 legados preservados e 13 novos de teoria, nível avançado e lei seca esquematizada.","sourceStats":{"cards":70,"questionsReal":60,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Estude a teoria e a lei seca antes da revisão espaçada.","Cards novos de cobertura estão identificados e não são questões reais da FCC.","Conteúdo fora do edital foi suspenso e arquivado sem apagar IDs ou histórico.","Use o aviso da disciplina para complementar questões no TEC/QConcursos."]},{"uid":"cpc-m18-disciplina","title":"18 PROCEDIMENTOS ESPECIAIS PREVISTOS","origin":"Módulo 18 do edital de Analista","type":"Curso","studyUrl":null,"ankiDeck":"PROCESSO CIVIL::18 PROCEDIMENTOS ESPECIAIS PREVISTOS","sourceInfo":"5 questões FCC reais na disciplina. Anki com 14 cards ativos: 0 legados preservados e 14 novos de teoria, nível avançado e lei seca esquematizada.","sourceStats":{"cards":14,"questionsReal":5,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Estude a teoria e a lei seca antes da revisão espaçada.","Cards novos de cobertura estão identificados e não são questões reais da FCC.","Conteúdo fora do edital foi suspenso e arquivado sem apagar IDs ou histórico.","Use o aviso da disciplina para complementar questões no TEC/QConcursos."]},{"uid":"cpc-m19-disciplina","title":"19 AÇÕES COLETIVAS, CONSTITUCIONAIS E CONTROLE","origin":"Módulo 19 do edital de Analista","type":"Curso","studyUrl":null,"ankiDeck":"PROCESSO CIVIL::19 AÇÕES COLETIVAS, CONSTITUCIONAIS E CONTROLE","sourceInfo":"1 questões FCC reais na disciplina. Anki com 16 cards ativos: 0 legados preservados e 16 novos de teoria, nível avançado e lei seca esquematizada.","sourceStats":{"cards":16,"questionsReal":1,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Estude a teoria e a lei seca antes da revisão espaçada.","Cards novos de cobertura estão identificados e não são questões reais da FCC.","Conteúdo fora do edital foi suspenso e arquivado sem apagar IDs ou histórico.","Use o aviso da disciplina para complementar questões no TEC/QConcursos."]},{"uid":"cpc-m20-disciplina","title":"20 TRIBUNAIS, RESCISÓRIA, IAC, IRDR E RECLAMAÇÃO","origin":"Módulo 20 do edital de Analista","type":"Curso","studyUrl":null,"ankiDeck":"PROCESSO CIVIL::20 TRIBUNAIS, RESCISÓRIA, IAC, IRDR E RECLAMAÇÃO","sourceInfo":"43 questões FCC reais na disciplina. Anki com 13 cards ativos: 0 legados preservados e 13 novos de teoria, nível avançado e lei seca esquematizada.","sourceStats":{"cards":13,"questionsReal":43,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Estude a teoria e a lei seca antes da revisão espaçada.","Cards novos de cobertura estão identificados e não são questões reais da FCC.","Conteúdo fora do edital foi suspenso e arquivado sem apagar IDs ou histórico.","Use o aviso da disciplina para complementar questões no TEC/QConcursos."]}]},{"id":"penal","name":"Direito Penal","special":"TJ-CE 2026 — Cargo 16 — Analista Judiciário — Área Judiciária","topics":[{"uid":"pen-m01-analista","title":"01 PRINCÍPIOS, INTERPRETAÇÃO, ANALOGIA E CONFLITO APARENTE","origin":"Módulo 01 do edital TJ-CE","type":"Curso","studyUrl":null,"ankiDeck":"05 DIREITO PENAL::01 PRINCÍPIOS, INTERPRETAÇÃO, ANALOGIA E CONFLITO APARENTE","sourceInfo":"36 questões FCC reais no curso; 3 autorais identificadas; Anki separado.","sourceStats":{"cards":5,"questionsReal":36,"questionsAuthorial":3,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Faça o diagnóstico antes da teoria.","Use o banco completo para acessar todas as FCC reais do módulo.","Questões antigas com mudança legislativa exibem alerta.","Conteúdo fora do edital foi arquivado sem apagar IDs ou histórico."]},{"uid":"pen-m02-analista","title":"02 APLICAÇÃO DA LEI PENAL NO TEMPO E NO ESPAÇO","origin":"Módulo 02 do edital TJ-CE","type":"Curso","studyUrl":null,"ankiDeck":"05 DIREITO PENAL::02 APLICAÇÃO DA LEI PENAL NO TEMPO E NO ESPAÇO","sourceInfo":"39 questões FCC reais no curso; 2 autorais identificadas; Anki separado.","sourceStats":{"cards":33,"questionsReal":39,"questionsAuthorial":2,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Faça o diagnóstico antes da teoria.","Use o banco completo para acessar todas as FCC reais do módulo.","Questões antigas com mudança legislativa exibem alerta.","Conteúdo fora do edital foi arquivado sem apagar IDs ou histórico."]},{"uid":"pen-m03-analista","title":"03 ILICITUDE","origin":"Módulo 03 do edital TJ-CE","type":"Curso","studyUrl":null,"ankiDeck":"05 DIREITO PENAL::03 ILICITUDE","sourceInfo":"45 questões FCC reais no curso; 1 autorais identificadas; Anki separado.","sourceStats":{"cards":9,"questionsReal":45,"questionsAuthorial":1,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Faça o diagnóstico antes da teoria.","Use o banco completo para acessar todas as FCC reais do módulo.","Questões antigas com mudança legislativa exibem alerta.","Conteúdo fora do edital foi arquivado sem apagar IDs ou histórico."]},{"uid":"pen-m04-analista","title":"04 CULPABILIDADE","origin":"Módulo 04 do edital TJ-CE","type":"Curso","studyUrl":null,"ankiDeck":"05 DIREITO PENAL::04 CULPABILIDADE","sourceInfo":"36 questões FCC reais no curso; 1 autorais identificadas; Anki separado.","sourceStats":{"cards":9,"questionsReal":36,"questionsAuthorial":1,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Faça o diagnóstico antes da teoria.","Use o banco completo para acessar todas as FCC reais do módulo.","Questões antigas com mudança legislativa exibem alerta.","Conteúdo fora do edital foi arquivado sem apagar IDs ou histórico."]},{"uid":"pen-m05-analista","title":"05 CONCURSO DE PESSOAS","origin":"Módulo 05 do edital TJ-CE","type":"Curso","studyUrl":null,"ankiDeck":"05 DIREITO PENAL::05 CONCURSO DE PESSOAS","sourceInfo":"31 questões FCC reais no curso; 1 autorais identificadas; Anki separado.","sourceStats":{"cards":3,"questionsReal":31,"questionsAuthorial":1,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Faça o diagnóstico antes da teoria.","Use o banco completo para acessar todas as FCC reais do módulo.","Questões antigas com mudança legislativa exibem alerta.","Conteúdo fora do edital foi arquivado sem apagar IDs ou histórico."]},{"uid":"pen-m06-analista","title":"06 PENAS: ESPÉCIES E COMINAÇÃO","origin":"Módulo 06 do edital TJ-CE","type":"Curso","studyUrl":null,"ankiDeck":"05 DIREITO PENAL::06 PENAS - ESPÉCIES E COMINAÇÃO","sourceInfo":"80 questões FCC reais no curso; 1 autorais identificadas; Anki separado.","sourceStats":{"cards":21,"questionsReal":80,"questionsAuthorial":1,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Faça o diagnóstico antes da teoria.","Use o banco completo para acessar todas as FCC reais do módulo.","Questões antigas com mudança legislativa exibem alerta.","Conteúdo fora do edital foi arquivado sem apagar IDs ou histórico."]},{"uid":"pen-m07-analista","title":"07 AÇÃO PENAL, PUNIBILIDADE, EXTINÇÃO E PRESCRIÇÃO","origin":"Módulo 07 do edital TJ-CE","type":"Curso","studyUrl":null,"ankiDeck":"05 DIREITO PENAL::07 AÇÃO PENAL, PUNIBILIDADE E PRESCRIÇÃO","sourceInfo":"93 questões FCC reais no curso; 1 autorais identificadas; Anki separado.","sourceStats":{"cards":31,"questionsReal":93,"questionsAuthorial":1,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Faça o diagnóstico antes da teoria.","Use o banco completo para acessar todas as FCC reais do módulo.","Questões antigas com mudança legislativa exibem alerta.","Conteúdo fora do edital foi arquivado sem apagar IDs ou histórico."]},{"uid":"pen-m08-analista","title":"08 CRIMES CONTRA A PESSOA","origin":"Módulo 08 do edital TJ-CE","type":"Curso","studyUrl":null,"ankiDeck":"05 DIREITO PENAL::08 CRIMES CONTRA A PESSOA","sourceInfo":"86 questões FCC reais no curso; 2 autorais identificadas; Anki separado.","sourceStats":{"cards":27,"questionsReal":86,"questionsAuthorial":2,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Faça o diagnóstico antes da teoria.","Use o banco completo para acessar todas as FCC reais do módulo.","Questões antigas com mudança legislativa exibem alerta.","Conteúdo fora do edital foi arquivado sem apagar IDs ou histórico."]},{"uid":"pen-m09-analista","title":"09 CRIMES CONTRA O PATRIMÔNIO","origin":"Módulo 09 do edital TJ-CE","type":"Curso","studyUrl":null,"ankiDeck":"05 DIREITO PENAL::09 CRIMES CONTRA O PATRIMÔNIO","sourceInfo":"99 questões FCC reais no curso; 4 autorais identificadas; Anki separado.","sourceStats":{"cards":30,"questionsReal":99,"questionsAuthorial":4,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Faça o diagnóstico antes da teoria.","Use o banco completo para acessar todas as FCC reais do módulo.","Questões antigas com mudança legislativa exibem alerta.","Conteúdo fora do edital foi arquivado sem apagar IDs ou histórico."]},{"uid":"pen-m10-analista","title":"10 CRIMES CONTRA A FÉ PÚBLICA","origin":"Módulo 10 do edital TJ-CE","type":"Curso","studyUrl":null,"ankiDeck":"05 DIREITO PENAL::10 CRIMES CONTRA A FÉ PÚBLICA","sourceInfo":"59 questões FCC reais no curso; 1 autorais identificadas; Anki separado.","sourceStats":{"cards":18,"questionsReal":59,"questionsAuthorial":1,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Faça o diagnóstico antes da teoria.","Use o banco completo para acessar todas as FCC reais do módulo.","Questões antigas com mudança legislativa exibem alerta.","Conteúdo fora do edital foi arquivado sem apagar IDs ou histórico."]},{"uid":"pen-m11-analista","title":"11 CRIMES CONTRA A DIGNIDADE SEXUAL","origin":"Módulo 11 do edital TJ-CE","type":"Curso","studyUrl":null,"ankiDeck":"05 DIREITO PENAL::11 CRIMES CONTRA A DIGNIDADE SEXUAL","sourceInfo":"23 questões FCC reais no curso; 3 autorais identificadas; Anki separado.","sourceStats":{"cards":12,"questionsReal":23,"questionsAuthorial":3,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Faça o diagnóstico antes da teoria.","Use o banco completo para acessar todas as FCC reais do módulo.","Questões antigas com mudança legislativa exibem alerta.","Conteúdo fora do edital foi arquivado sem apagar IDs ou histórico."]},{"uid":"pen-m12-analista","title":"12 CRIMES CONTRA A ADMINISTRAÇÃO PÚBLICA","origin":"Módulo 12 do edital TJ-CE","type":"Curso","studyUrl":null,"ankiDeck":"05 DIREITO PENAL::12 CRIMES CONTRA A ADMINISTRAÇÃO PÚBLICA","sourceInfo":"280 questões FCC reais no curso; 1 autorais identificadas; Anki separado.","sourceStats":{"cards":25,"questionsReal":280,"questionsAuthorial":1,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Faça o diagnóstico antes da teoria.","Use o banco completo para acessar todas as FCC reais do módulo.","Questões antigas com mudança legislativa exibem alerta.","Conteúdo fora do edital foi arquivado sem apagar IDs ou histórico."]},{"uid":"pen-m13-analista","title":"13 ABUSO DE AUTORIDADE","origin":"Módulo 13 do edital TJ-CE","type":"Curso","studyUrl":null,"ankiDeck":"05 DIREITO PENAL::13 ABUSO DE AUTORIDADE - LEI 13.869","sourceInfo":"48 questões FCC reais no curso; 2 autorais identificadas; Anki separado.","sourceStats":{"cards":13,"questionsReal":48,"questionsAuthorial":2,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Faça o diagnóstico antes da teoria.","Use o banco completo para acessar todas as FCC reais do módulo.","Questões antigas com mudança legislativa exibem alerta.","Conteúdo fora do edital foi arquivado sem apagar IDs ou histórico."]},{"uid":"pen-m14-analista","title":"14 LAVAGEM DE DINHEIRO","origin":"Módulo 14 do edital TJ-CE","type":"Curso","studyUrl":null,"ankiDeck":"05 DIREITO PENAL::14 LAVAGEM DE DINHEIRO - LEI 9.613","sourceInfo":"8 questões FCC reais no curso; 3 autorais identificadas; Anki separado.","sourceStats":{"cards":25,"questionsReal":8,"questionsAuthorial":3,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Faça o diagnóstico antes da teoria.","Use o banco completo para acessar todas as FCC reais do módulo.","Questões antigas com mudança legislativa exibem alerta.","Conteúdo fora do edital foi arquivado sem apagar IDs ou histórico."]},{"uid":"pen-m15-analista","title":"15 DISPOSIÇÕES CONSTITUCIONAIS E SÚMULAS STF/STJ","origin":"Módulo 15 do edital TJ-CE","type":"Curso","studyUrl":null,"ankiDeck":"05 DIREITO PENAL::15 CONSTITUIÇÃO E SÚMULAS STF-STJ","sourceInfo":"8 questões FCC reais no curso; 5 autorais identificadas; Anki separado.","sourceStats":{"cards":5,"questionsReal":8,"questionsAuthorial":5,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Faça o diagnóstico antes da teoria.","Use o banco completo para acessar todas as FCC reais do módulo.","Questões antigas com mudança legislativa exibem alerta.","Conteúdo fora do edital foi arquivado sem apagar IDs ou histórico."]},{"uid":"pen-m16-analista","title":"16 CRIMES EM LICITAÇÕES E CONTRATOS","origin":"Módulo 16 do edital TJ-CE","type":"Curso","studyUrl":null,"ankiDeck":"05 DIREITO PENAL::16 CRIMES EM LICITAÇÕES E CONTRATOS","sourceInfo":"6 questões FCC reais no curso; 4 autorais identificadas; Anki separado.","sourceStats":{"cards":4,"questionsReal":6,"questionsAuthorial":4,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Faça o diagnóstico antes da teoria.","Use o banco completo para acessar todas as FCC reais do módulo.","Questões antigas com mudança legislativa exibem alerta.","Conteúdo fora do edital foi arquivado sem apagar IDs ou histórico."]},{"uid":"pen-m17-analista","title":"17 RESPONSABILIDADE, FINANÇAS PÚBLICAS E LRF","origin":"Módulo 17 do edital TJ-CE","type":"Curso","studyUrl":null,"ankiDeck":"05 DIREITO PENAL::17 RESPONSABILIDADE, FINANÇAS PÚBLICAS E LRF","sourceInfo":"20 questões FCC reais no curso; 6 autorais identificadas; Anki separado.","sourceStats":{"cards":6,"questionsReal":20,"questionsAuthorial":6,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Faça o diagnóstico antes da teoria.","Use o banco completo para acessar todas as FCC reais do módulo.","Questões antigas com mudança legislativa exibem alerta.","Conteúdo fora do edital foi arquivado sem apagar IDs ou histórico."]}]},{"id":"cpp","name":"Direito Processual Penal","special":"","topics":[{"uid":"cpp-01-01-aplicacao-da-lei-e-principios","title":"01 APLICAÇÃO DA LEI E PRINCÍPIOS","origin":"CPP","type":"Anki","studyUrl":null,"ankiDeck":"PROCESSO PENAL::CPP::01 APLICAÇÃO DA LEI E PRINCÍPIOS","sourceInfo":"Subbaralho real da coleção Anki recuperada","sourceStats":{"cards":18,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Tópico recuperado diretamente do baralho de Processo Penal.","O botão do Anki abre este subbaralho específico.","Acrescente o filtro TEC/QC e o artigo de Lei Seca que você usar para este núcleo."]},{"uid":"cpp-02-02-inquerito-policial","title":"02 INQUÉRITO POLICIAL","origin":"CPP","type":"Anki","studyUrl":null,"ankiDeck":"PROCESSO PENAL::CPP::02 INQUÉRITO POLICIAL","sourceInfo":"Subbaralho real da coleção Anki recuperada","sourceStats":{"cards":30,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Tópico recuperado diretamente do baralho de Processo Penal.","O botão do Anki abre este subbaralho específico.","Acrescente o filtro TEC/QC e o artigo de Lei Seca que você usar para este núcleo."]},{"uid":"cpp-03-03-acao-penal-e-anpp","title":"03 AÇÃO PENAL E ANPP","origin":"CPP","type":"Anki","studyUrl":null,"ankiDeck":"PROCESSO PENAL::CPP::03 AÇÃO PENAL E ANPP","sourceInfo":"Subbaralho real da coleção Anki recuperada","sourceStats":{"cards":58,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Tópico recuperado diretamente do baralho de Processo Penal.","O botão do Anki abre este subbaralho específico.","Acrescente o filtro TEC/QC e o artigo de Lei Seca que você usar para este núcleo."]},{"uid":"cpp-04-04-jurisdicao-e-competencia","title":"04 JURISDIÇÃO E COMPETÊNCIA","origin":"CPP","type":"Anki","studyUrl":null,"ankiDeck":"PROCESSO PENAL::CPP::04 JURISDIÇÃO E COMPETÊNCIA","sourceInfo":"Subbaralho real da coleção Anki recuperada","sourceStats":{"cards":49,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Tópico recuperado diretamente do baralho de Processo Penal.","O botão do Anki abre este subbaralho específico.","Acrescente o filtro TEC/QC e o artigo de Lei Seca que você usar para este núcleo."]},{"uid":"cpp-05-05-sujeitos-processuais","title":"05 SUJEITOS PROCESSUAIS","origin":"CPP","type":"Anki","studyUrl":null,"ankiDeck":"PROCESSO PENAL::CPP::05 SUJEITOS PROCESSUAIS","sourceInfo":"Subbaralho real da coleção Anki recuperada","sourceStats":{"cards":30,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Tópico recuperado diretamente do baralho de Processo Penal.","O botão do Anki abre este subbaralho específico.","Acrescente o filtro TEC/QC e o artigo de Lei Seca que você usar para este núcleo."]},{"uid":"cpp-06-06-provas-e-cadeia-de-custodia","title":"06 PROVAS E CADEIA DE CUSTÓDIA","origin":"CPP","type":"Anki","studyUrl":null,"ankiDeck":"PROCESSO PENAL::CPP::06 PROVAS E CADEIA DE CUSTÓDIA","sourceInfo":"Subbaralho real da coleção Anki recuperada","sourceStats":{"cards":62,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Tópico recuperado diretamente do baralho de Processo Penal.","O botão do Anki abre este subbaralho específico.","Acrescente o filtro TEC/QC e o artigo de Lei Seca que você usar para este núcleo."]},{"uid":"cpp-07-07-prisao-e-cautelares","title":"07 PRISÃO E CAUTELARES","origin":"CPP","type":"Anki","studyUrl":null,"ankiDeck":"PROCESSO PENAL::CPP::07 PRISÃO E CAUTELARES","sourceInfo":"Subbaralho real da coleção Anki recuperada","sourceStats":{"cards":62,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Tópico recuperado diretamente do baralho de Processo Penal.","O botão do Anki abre este subbaralho específico.","Acrescente o filtro TEC/QC e o artigo de Lei Seca que você usar para este núcleo."]},{"uid":"cpp-08-08-citacao-e-intimacao","title":"08 CITAÇÃO E INTIMAÇÃO","origin":"CPP","type":"Anki","studyUrl":null,"ankiDeck":"PROCESSO PENAL::CPP::08 CITAÇÃO E INTIMAÇÃO","sourceInfo":"Subbaralho real da coleção Anki recuperada","sourceStats":{"cards":24,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Tópico recuperado diretamente do baralho de Processo Penal.","O botão do Anki abre este subbaralho específico.","Acrescente o filtro TEC/QC e o artigo de Lei Seca que você usar para este núcleo."]},{"uid":"cpp-09-09-procedimento-comum","title":"09 PROCEDIMENTO COMUM","origin":"CPP","type":"Anki","studyUrl":null,"ankiDeck":"PROCESSO PENAL::CPP::09 PROCEDIMENTO COMUM","sourceInfo":"Subbaralho real da coleção Anki recuperada","sourceStats":{"cards":21,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Tópico recuperado diretamente do baralho de Processo Penal.","O botão do Anki abre este subbaralho específico.","Acrescente o filtro TEC/QC e o artigo de Lei Seca que você usar para este núcleo."]},{"uid":"cpp-10-10-tribunal-do-juri","title":"10 TRIBUNAL DO JÚRI","origin":"CPP","type":"Anki","studyUrl":null,"ankiDeck":"PROCESSO PENAL::CPP::10 TRIBUNAL DO JÚRI","sourceInfo":"Subbaralho real da coleção Anki recuperada","sourceStats":{"cards":47,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Tópico recuperado diretamente do baralho de Processo Penal.","O botão do Anki abre este subbaralho específico.","Acrescente o filtro TEC/QC e o artigo de Lei Seca que você usar para este núcleo."]},{"uid":"cpp-11-11-nulidades","title":"11 NULIDADES","origin":"CPP","type":"Anki","studyUrl":null,"ankiDeck":"PROCESSO PENAL::CPP::11 NULIDADES","sourceInfo":"Subbaralho real da coleção Anki recuperada","sourceStats":{"cards":11,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Tópico recuperado diretamente do baralho de Processo Penal.","O botão do Anki abre este subbaralho específico.","Acrescente o filtro TEC/QC e o artigo de Lei Seca que você usar para este núcleo."]},{"uid":"cpp-12-12-recursos","title":"12 RECURSOS","origin":"CPP","type":"Anki","studyUrl":null,"ankiDeck":"PROCESSO PENAL::CPP::12 RECURSOS","sourceInfo":"Subbaralho real da coleção Anki recuperada","sourceStats":{"cards":39,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Tópico recuperado diretamente do baralho de Processo Penal.","O botão do Anki abre este subbaralho específico.","Acrescente o filtro TEC/QC e o artigo de Lei Seca que você usar para este núcleo."]},{"uid":"cpp-13-13-habeas-corpus","title":"13 HABEAS CORPUS","origin":"CPP","type":"Anki","studyUrl":null,"ankiDeck":"PROCESSO PENAL::CPP::13 HABEAS CORPUS","sourceInfo":"Subbaralho real da coleção Anki recuperada","sourceStats":{"cards":7,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Tópico recuperado diretamente do baralho de Processo Penal.","O botão do Anki abre este subbaralho específico.","Acrescente o filtro TEC/QC e o artigo de Lei Seca que você usar para este núcleo."]},{"uid":"cpp-14-01-prisao-temporaria","title":"01 PRISÃO TEMPORÁRIA","origin":"Leg. Especial","type":"Anki","studyUrl":null,"ankiDeck":"PROCESSO PENAL::LEGISLAÇÃO ESPECIAL::01 PRISÃO TEMPORÁRIA","sourceInfo":"Subbaralho real da coleção Anki recuperada","sourceStats":{"cards":13,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Tópico recuperado diretamente do baralho de Processo Penal.","O botão do Anki abre este subbaralho específico.","Acrescente o filtro TEC/QC e o artigo de Lei Seca que você usar para este núcleo."]},{"uid":"cpp-15-02-juizado-especial-criminal","title":"02 JUIZADO ESPECIAL CRIMINAL","origin":"Leg. Especial","type":"Anki","studyUrl":null,"ankiDeck":"PROCESSO PENAL::LEGISLAÇÃO ESPECIAL::02 JUIZADO ESPECIAL CRIMINAL","sourceInfo":"Subbaralho real da coleção Anki recuperada","sourceStats":{"cards":39,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Tópico recuperado diretamente do baralho de Processo Penal.","O botão do Anki abre este subbaralho específico.","Acrescente o filtro TEC/QC e o artigo de Lei Seca que você usar para este núcleo."]},{"uid":"cpp-16-03-lei-de-execucao-penal","title":"03 LEI DE EXECUÇÃO PENAL","origin":"Leg. Especial","type":"Anki","studyUrl":null,"ankiDeck":"PROCESSO PENAL::LEGISLAÇÃO ESPECIAL::03 LEI DE EXECUÇÃO PENAL","sourceInfo":"Subbaralho real da coleção Anki recuperada","sourceStats":{"cards":80,"views":0,"correct":0,"wrong":0,"accuracy":null},"tips":["Tópico recuperado diretamente do baralho de Processo Penal.","O botão do Anki abre este subbaralho específico.","Acrescente o filtro TEC/QC e o artigo de Lei Seca que você usar para este núcleo."]}]},{"id":"rlm","name":"Raciocínio Lógico-Matemático","special":"Analista Judiciário — edital em uso • cálculo rápido integrado","topics":[{"uid":"rlm-calculo-rapido-v6638","title":"00 CÁLCULO RÁPIDO — TREINO INTENSIVO","origin":"Núcleo de velocidade","type":"Treino","studyUrl":"rlm_disciplina.html#calculo","ankiDeck":null,"sourceInfo":"Exercícios mecânicos autorais, separados do banco oficial FCC e identificados em todas as telas.","sourceStats":{"blocks":6,"generated":true},"tips":["Treine 15 minutos sem calculadora.","Cronômetro individual, meta por assunto e repetição automática de erro ou lentidão.","Anki, Decorando e as 200 questões reais FCC não foram alterados."]},{"uid":"rlm-m01-analista","title":"01 NÚMEROS INTEIROS E RACIONAIS","origin":"Módulo 01 do edital","type":"Curso","studyUrl":"rlm_disciplina.html#rlm1","ankiDeck":null,"sourceInfo":"Teoria alinhada ao edital; banco local composto apenas por questões reais FCC identificadas.","sourceStats":{"questions":0},"tips":["Construa segurança operacional: sinal, prioridade e representação racional. Na FCC, o erro costuma nascer da tradução do enunciado ou da ordem das operações, não da conta longa.","Complemente nas plataformas: operações com inteiros e racionais; expressões numéricas; potenciação aplicada a problemas.","Anki e Decorando não foram alterados nesta etapa."]},{"uid":"rlm-m02-analista","title":"02 MÚLTIPLOS, DIVISORES E PROBLEMAS","origin":"Módulo 02 do edital","type":"Curso","studyUrl":"rlm_disciplina.html#rlm2","ankiDeck":null,"sourceInfo":"Teoria alinhada ao edital; banco local composto apenas por questões reais FCC identificadas.","sourceStats":{"questions":0},"tips":["MDC aparece quando se quer dividir ou agrupar no maior tamanho possível; MMC aparece quando ciclos precisam coincidir ou quando se busca o menor múltiplo comum.","Complemente nas plataformas: múltiplos e divisores; MDC e MMC; problemas de periodicidade e agrupamento.","Anki e Decorando não foram alterados nesta etapa."]},{"uid":"rlm-m03-analista","title":"03 FRAÇÕES","origin":"Módulo 03 do edital","type":"Curso","studyUrl":"rlm_disciplina.html#rlm3","ankiDeck":null,"sourceInfo":"Teoria alinhada ao edital; banco local composto apenas por questões reais FCC identificadas.","sourceStats":{"questions":0},"tips":["Toda questão de fração tem três perguntas: qual é o todo, qual parte foi tomada e se a nova fração incide sobre o todo inicial ou sobre o restante.","Complemente nas plataformas: operações com frações; fração de uma quantidade; problemas com parte, todo e restante.","Anki e Decorando não foram alterados nesta etapa."]},{"uid":"rlm-m04-analista","title":"04 RAZÕES, PROPORÇÕES E REGRA DE TRÊS","origin":"Módulo 04 do edital","type":"Curso","studyUrl":"rlm_disciplina.html#rlm4","ankiDeck":null,"sourceInfo":"Teoria alinhada ao edital; banco local composto apenas por questões reais FCC identificadas.","sourceStats":{"questions":0},"tips":["O centro do módulo é reconhecer como as grandezas variam. Só depois de classificar relação direta ou inversa deve-se montar a proporção.","Complemente nas plataformas: razões e proporções; divisão em partes proporcionais; regra de três simples e composta.","Anki e Decorando não foram alterados nesta etapa."]},{"uid":"rlm-m05-analista","title":"05 PORCENTAGEM","origin":"Módulo 05 do edital","type":"Curso","studyUrl":"rlm_disciplina.html#rlm5","ankiDeck":null,"sourceInfo":"Teoria alinhada ao edital; banco local composto apenas por questões reais FCC identificadas.","sourceStats":{"questions":0},"tips":["Porcentagem é fator multiplicativo. Aumentos e descontos sucessivos atuam sobre bases diferentes e, por isso, não devem ser somados automaticamente.","Complemente nas plataformas: porcentagem e problemas; aumentos e descontos sucessivos; taxa reversa e comparação percentual.","Anki e Decorando não foram alterados nesta etapa."]},{"uid":"rlm-m06-analista","title":"06 RELAÇÕES, CONJUNTOS E DIAGRAMAS LÓGICOS","origin":"Módulo 06 do edital","type":"Curso","studyUrl":"rlm_disciplina.html#rlm6","ankiDeck":null,"sourceInfo":"Teoria alinhada ao edital; banco local composto apenas por questões reais FCC identificadas.","sourceStats":{"questions":65},"tips":["Traduza cada frase para uma restrição visível. O banco local tem 65 questões FCC de diagramas, proposições categóricas e quantificadores; para associação e ordenação, complemente na plataforma.","Complemente nas plataformas: problemas de ordenação e associação fora de proposições categóricas; relações de parentesco, posição e vizinhança.","Anki e Decorando não foram alterados nesta etapa."]},{"uid":"rlm-m07-analista","title":"07 RACIOCÍNIOS VERBAL, MATEMÁTICO E SEQUENCIAL","origin":"Módulo 07 do edital","type":"Curso","studyUrl":"rlm_disciplina.html#rlm7","ankiDeck":null,"sourceInfo":"Teoria alinhada ao edital; banco local composto apenas por questões reais FCC identificadas.","sourceStats":{"questions":0},"tips":["Procure a regra mais simples que explica todos os termos, não apenas os dois primeiros. Em orientação, escolha um referencial fixo antes de executar movimentos.","Complemente nas plataformas: sequências numéricas e figurais; orientação espacial e temporal; formação de conceitos e discriminação de elementos; raciocínio verbal e matemático aplicado.","Anki e Decorando não foram alterados nesta etapa."]},{"uid":"rlm-m08-analista","title":"08 PROPOSIÇÕES, EQUIVALÊNCIAS E NEGAÇÕES","origin":"Módulo 08 do edital","type":"Curso","studyUrl":"rlm_disciplina.html#rlm8","ankiDeck":null,"sourceInfo":"Teoria alinhada ao edital; banco local composto apenas por questões reais FCC identificadas.","sourceStats":{"questions":51},"tips":["O banco local oferece 51 questões FCC deste núcleo. A estratégia mais rápida é reconhecer equivalências-padrão e negar de fora para dentro, respeitando o conectivo principal.","Complemente nas plataformas: tabelas-verdade completas fora do recorte de equivalências; classificação de tautologia, contradição e contingência.","Anki e Decorando não foram alterados nesta etapa."]},{"uid":"rlm-m09-analista","title":"09 ARGUMENTOS E CONCLUSÕES VÁLIDAS","origin":"Módulo 09 do edital","type":"Curso","studyUrl":"rlm_disciplina.html#rlm9","ankiDeck":null,"sourceInfo":"Teoria alinhada ao edital; banco local composto apenas por questões reais FCC identificadas.","sourceStats":{"questions":84},"tips":["O banco local oferece 84 questões FCC de argumentos. Validade significa: não existe situação em que todas as premissas sejam verdadeiras e a conclusão falsa.","Complemente nas plataformas: problemas gerais de hipótese e conclusão sem formalização proposicional; validade por contraexemplo em estruturas não categóricas.","Anki e Decorando não foram alterados nesta etapa."]}]},{"id": "trab", "name": "Direito do Trabalho", "special": "TRTs — Mentoria Prof. Eduardo José (AJAJ) • 13 aulas", "topics": [{"uid": "trab-a01", "title": "01 DIREITOS CONSTITUCIONAIS DOS TRABALHADORES, FONTES E PRINCÍPIOS", "origin": "Mentoria AJAJ • Direito do Trabalho — Aula 1", "type": "Aula", "studyUrl": "modules/trabalho/AJAJ_DIREITO_TRABALHO.pdf#page=1", "ankiDeck": null, "sourceInfo": "Resumo estratégico AJAJ (Prof. Eduardo José) — aula inicia na página 1.", "sourceStats": {"cards": 0}, "tips": ["Estude a aula no PDF e resolva questões do tema antes de marcar a meta como concluída.", "O selo \"DICA DO PROFESSOR — DESPENCA NA PROVA\" marca os pontos de maior recorrência."]}, {"uid": "trab-a02", "title": "02 GRUPO ECONÔMICO, SUCESSÃO E RELAÇÃO DE EMPREGO", "origin": "Mentoria AJAJ • Direito do Trabalho — Aula 2", "type": "Aula", "studyUrl": "modules/trabalho/AJAJ_DIREITO_TRABALHO.pdf#page=9", "ankiDeck": null, "sourceInfo": "Resumo estratégico AJAJ (Prof. Eduardo José) — aula inicia na página 9.", "sourceStats": {"cards": 0}, "tips": ["Estude a aula no PDF e resolva questões do tema antes de marcar a meta como concluída.", "O selo \"DICA DO PROFESSOR — DESPENCA NA PROVA\" marca os pontos de maior recorrência."]}, {"uid": "trab-a03", "title": "03 TERCEIRIZAÇÃO E TRABALHO TEMPORÁRIO", "origin": "Mentoria AJAJ • Direito do Trabalho — Aula 3", "type": "Aula", "studyUrl": "modules/trabalho/AJAJ_DIREITO_TRABALHO.pdf#page=18", "ankiDeck": null, "sourceInfo": "Resumo estratégico AJAJ (Prof. Eduardo José) — aula inicia na página 18.", "sourceStats": {"cards": 0}, "tips": ["Estude a aula no PDF e resolva questões do tema antes de marcar a meta como concluída.", "O selo \"DICA DO PROFESSOR — DESPENCA NA PROVA\" marca os pontos de maior recorrência."]}, {"uid": "trab-a04", "title": "04 SUSPENSÃO, INTERRUPÇÃO E ALTERAÇÕES CONTRATUAIS", "origin": "Mentoria AJAJ • Direito do Trabalho — Aula 4", "type": "Aula", "studyUrl": "modules/trabalho/AJAJ_DIREITO_TRABALHO.pdf#page=25", "ankiDeck": null, "sourceInfo": "Resumo estratégico AJAJ (Prof. Eduardo José) — aula inicia na página 25.", "sourceStats": {"cards": 0}, "tips": ["Estude a aula no PDF e resolva questões do tema antes de marcar a meta como concluída.", "O selo \"DICA DO PROFESSOR — DESPENCA NA PROVA\" marca os pontos de maior recorrência."]}, {"uid": "trab-a05", "title": "05 TÉRMINO DO CONTRATO, AVISO PRÉVIO E ESTABILIDADES", "origin": "Mentoria AJAJ • Direito do Trabalho — Aula 5", "type": "Aula", "studyUrl": "modules/trabalho/AJAJ_DIREITO_TRABALHO.pdf#page=33", "ankiDeck": null, "sourceInfo": "Resumo estratégico AJAJ (Prof. Eduardo José) — aula inicia na página 33.", "sourceStats": {"cards": 0}, "tips": ["Estude a aula no PDF e resolva questões do tema antes de marcar a meta como concluída.", "O selo \"DICA DO PROFESSOR — DESPENCA NA PROVA\" marca os pontos de maior recorrência."]}, {"uid": "trab-a06", "title": "06 DURAÇÃO DO TRABALHO, HORAS EXTRAS E INTERVALOS", "origin": "Mentoria AJAJ • Direito do Trabalho — Aula 6", "type": "Aula", "studyUrl": "modules/trabalho/AJAJ_DIREITO_TRABALHO.pdf#page=43", "ankiDeck": null, "sourceInfo": "Resumo estratégico AJAJ (Prof. Eduardo José) — aula inicia na página 43.", "sourceStats": {"cards": 0}, "tips": ["Estude a aula no PDF e resolva questões do tema antes de marcar a meta como concluída.", "O selo \"DICA DO PROFESSOR — DESPENCA NA PROVA\" marca os pontos de maior recorrência."]}, {"uid": "trab-a07", "title": "07 SALÁRIO E REMUNERAÇÃO", "origin": "Mentoria AJAJ • Direito do Trabalho — Aula 7", "type": "Aula", "studyUrl": "modules/trabalho/AJAJ_DIREITO_TRABALHO.pdf#page=53", "ankiDeck": null, "sourceInfo": "Resumo estratégico AJAJ (Prof. Eduardo José) — aula inicia na página 53.", "sourceStats": {"cards": 0}, "tips": ["Estude a aula no PDF e resolva questões do tema antes de marcar a meta como concluída.", "O selo \"DICA DO PROFESSOR — DESPENCA NA PROVA\" marca os pontos de maior recorrência."]}, {"uid": "trab-a08", "title": "08 FÉRIAS, PRESCRIÇÃO E DECADÊNCIA", "origin": "Mentoria AJAJ • Direito do Trabalho — Aula 8", "type": "Aula", "studyUrl": "modules/trabalho/AJAJ_DIREITO_TRABALHO.pdf#page=62", "ankiDeck": null, "sourceInfo": "Resumo estratégico AJAJ (Prof. Eduardo José) — aula inicia na página 62.", "sourceStats": {"cards": 0}, "tips": ["Estude a aula no PDF e resolva questões do tema antes de marcar a meta como concluída.", "O selo \"DICA DO PROFESSOR — DESPENCA NA PROVA\" marca os pontos de maior recorrência."]}, {"uid": "trab-a09", "title": "09 SEGURANÇA E MEDICINA DO TRABALHO", "origin": "Mentoria AJAJ • Direito do Trabalho — Aula 9", "type": "Aula", "studyUrl": "modules/trabalho/AJAJ_DIREITO_TRABALHO.pdf#page=71", "ankiDeck": null, "sourceInfo": "Resumo estratégico AJAJ (Prof. Eduardo José) — aula inicia na página 71.", "sourceStats": {"cards": 0}, "tips": ["Estude a aula no PDF e resolva questões do tema antes de marcar a meta como concluída.", "O selo \"DICA DO PROFESSOR — DESPENCA NA PROVA\" marca os pontos de maior recorrência."]}, {"uid": "trab-a10", "title": "10 NEGOCIAÇÃO COLETIVA — CCT E ACT", "origin": "Mentoria AJAJ • Direito do Trabalho — Aula 10", "type": "Aula", "studyUrl": "modules/trabalho/AJAJ_DIREITO_TRABALHO.pdf#page=80", "ankiDeck": null, "sourceInfo": "Resumo estratégico AJAJ (Prof. Eduardo José) — aula inicia na página 80.", "sourceStats": {"cards": 0}, "tips": ["Estude a aula no PDF e resolva questões do tema antes de marcar a meta como concluída.", "O selo \"DICA DO PROFESSOR — DESPENCA NA PROVA\" marca os pontos de maior recorrência."]}, {"uid": "trab-a11", "title": "11 FGTS — LEI 8.036/1990", "origin": "Mentoria AJAJ • Direito do Trabalho — Aula 11", "type": "Aula", "studyUrl": "modules/trabalho/AJAJ_DIREITO_TRABALHO.pdf#page=87", "ankiDeck": null, "sourceInfo": "Resumo estratégico AJAJ (Prof. Eduardo José) — aula inicia na página 87.", "sourceStats": {"cards": 0}, "tips": ["Estude a aula no PDF e resolva questões do tema antes de marcar a meta como concluída.", "O selo \"DICA DO PROFESSOR — DESPENCA NA PROVA\" marca os pontos de maior recorrência."]}, {"uid": "trab-a12", "title": "12 DIREITO DE GREVE E ORGANIZAÇÃO SINDICAL", "origin": "Mentoria AJAJ • Direito do Trabalho — Aula 12", "type": "Aula", "studyUrl": "modules/trabalho/AJAJ_DIREITO_TRABALHO.pdf#page=94", "ankiDeck": null, "sourceInfo": "Resumo estratégico AJAJ (Prof. Eduardo José) — aula inicia na página 94.", "sourceStats": {"cards": 0}, "tips": ["Estude a aula no PDF e resolva questões do tema antes de marcar a meta como concluída.", "O selo \"DICA DO PROFESSOR — DESPENCA NA PROVA\" marca os pontos de maior recorrência."]}, {"uid": "trab-a13", "title": "13 TRABALHO DOMÉSTICO — LC 150/2015", "origin": "Mentoria AJAJ • Direito do Trabalho — Aula 13", "type": "Aula", "studyUrl": "modules/trabalho/AJAJ_DIREITO_TRABALHO.pdf#page=101", "ankiDeck": null, "sourceInfo": "Resumo estratégico AJAJ (Prof. Eduardo José) — aula inicia na página 101.", "sourceStats": {"cards": 0}, "tips": ["Estude a aula no PDF e resolva questões do tema antes de marcar a meta como concluída.", "O selo \"DICA DO PROFESSOR — DESPENCA NA PROVA\" marca os pontos de maior recorrência."]}]},{"id": "ptra", "name": "Direito Processual do Trabalho", "special": "TRTs — Mentoria Prof. Eduardo José (AJAJ) • 11 aulas", "topics": [{"uid": "ptra-a00", "title": "01 ORGANIZAÇÃO E COMPETÊNCIA DA JUSTIÇA DO TRABALHO", "origin": "Mentoria AJAJ • Processual do Trabalho — Aula 0", "type": "Aula", "studyUrl": "modules/trabalho/AJAJ_PROCESSUAL_TRABALHO.pdf#page=1", "ankiDeck": null, "sourceInfo": "Resumo estratégico AJAJ (Prof. Eduardo José) — aula inicia na página 1.", "sourceStats": {"cards": 0}, "tips": ["Estude a aula no PDF e resolva questões do tema antes de marcar a meta como concluída.", "O selo \"DICA DO PROFESSOR — DESPENCA NA PROVA\" marca os pontos de maior recorrência."]}, {"uid": "ptra-a01", "title": "02 COMPETÊNCIA TERRITORIAL E MATERIAL", "origin": "Mentoria AJAJ • Processual do Trabalho — Aula 1", "type": "Aula", "studyUrl": "modules/trabalho/AJAJ_PROCESSUAL_TRABALHO.pdf#page=10", "ankiDeck": null, "sourceInfo": "Resumo estratégico AJAJ (Prof. Eduardo José) — aula inicia na página 10.", "sourceStats": {"cards": 0}, "tips": ["Estude a aula no PDF e resolva questões do tema antes de marcar a meta como concluída.", "O selo \"DICA DO PROFESSOR — DESPENCA NA PROVA\" marca os pontos de maior recorrência."]}, {"uid": "ptra-a02", "title": "03 PARTES, PROCURADORES E AUDIÊNCIA", "origin": "Mentoria AJAJ • Processual do Trabalho — Aula 2", "type": "Aula", "studyUrl": "modules/trabalho/AJAJ_PROCESSUAL_TRABALHO.pdf#page=18", "ankiDeck": null, "sourceInfo": "Resumo estratégico AJAJ (Prof. Eduardo José) — aula inicia na página 18.", "sourceStats": {"cards": 0}, "tips": ["Estude a aula no PDF e resolva questões do tema antes de marcar a meta como concluída.", "O selo \"DICA DO PROFESSOR — DESPENCA NA PROVA\" marca os pontos de maior recorrência."]}, {"uid": "ptra-a03", "title": "04 ATOS, TERMOS, PRAZOS E NULIDADES", "origin": "Mentoria AJAJ • Processual do Trabalho — Aula 3", "type": "Aula", "studyUrl": "modules/trabalho/AJAJ_PROCESSUAL_TRABALHO.pdf#page=27", "ankiDeck": null, "sourceInfo": "Resumo estratégico AJAJ (Prof. Eduardo José) — aula inicia na página 27.", "sourceStats": {"cards": 0}, "tips": ["Estude a aula no PDF e resolva questões do tema antes de marcar a meta como concluída.", "O selo \"DICA DO PROFESSOR — DESPENCA NA PROVA\" marca os pontos de maior recorrência."]}, {"uid": "ptra-a04", "title": "05 NOTIFICAÇÃO, RESPOSTA E REVELIA", "origin": "Mentoria AJAJ • Processual do Trabalho — Aula 4", "type": "Aula", "studyUrl": "modules/trabalho/AJAJ_PROCESSUAL_TRABALHO.pdf#page=36", "ankiDeck": null, "sourceInfo": "Resumo estratégico AJAJ (Prof. Eduardo José) — aula inicia na página 36.", "sourceStats": {"cards": 0}, "tips": ["Estude a aula no PDF e resolva questões do tema antes de marcar a meta como concluída.", "O selo \"DICA DO PROFESSOR — DESPENCA NA PROVA\" marca os pontos de maior recorrência."]}, {"uid": "ptra-a05", "title": "06 PROVAS, AUDIÊNCIAS E SUMARÍSSIMO", "origin": "Mentoria AJAJ • Processual do Trabalho — Aula 5", "type": "Aula", "studyUrl": "modules/trabalho/AJAJ_PROCESSUAL_TRABALHO.pdf#page=44", "ankiDeck": null, "sourceInfo": "Resumo estratégico AJAJ (Prof. Eduardo José) — aula inicia na página 44.", "sourceStats": {"cards": 0}, "tips": ["Estude a aula no PDF e resolva questões do tema antes de marcar a meta como concluída.", "O selo \"DICA DO PROFESSOR — DESPENCA NA PROVA\" marca os pontos de maior recorrência."]}, {"uid": "ptra-a06", "title": "07 RECURSOS", "origin": "Mentoria AJAJ • Processual do Trabalho — Aula 6", "type": "Aula", "studyUrl": "modules/trabalho/AJAJ_PROCESSUAL_TRABALHO.pdf#page=54", "ankiDeck": null, "sourceInfo": "Resumo estratégico AJAJ (Prof. Eduardo José) — aula inicia na página 54.", "sourceStats": {"cards": 0}, "tips": ["Estude a aula no PDF e resolva questões do tema antes de marcar a meta como concluída.", "O selo \"DICA DO PROFESSOR — DESPENCA NA PROVA\" marca os pontos de maior recorrência."]}, {"uid": "ptra-a07", "title": "08 LIQUIDAÇÃO E EXECUÇÃO", "origin": "Mentoria AJAJ • Processual do Trabalho — Aula 7", "type": "Aula", "studyUrl": "modules/trabalho/AJAJ_PROCESSUAL_TRABALHO.pdf#page=63", "ankiDeck": null, "sourceInfo": "Resumo estratégico AJAJ (Prof. Eduardo José) — aula inicia na página 63.", "sourceStats": {"cards": 0}, "tips": ["Estude a aula no PDF e resolva questões do tema antes de marcar a meta como concluída.", "O selo \"DICA DO PROFESSOR — DESPENCA NA PROVA\" marca os pontos de maior recorrência."]}, {"uid": "ptra-a08", "title": "09 RESCISÓRIA, INQUÉRITO E PROCEDIMENTOS ESPECIAIS", "origin": "Mentoria AJAJ • Processual do Trabalho — Aula 8", "type": "Aula", "studyUrl": "modules/trabalho/AJAJ_PROCESSUAL_TRABALHO.pdf#page=71", "ankiDeck": null, "sourceInfo": "Resumo estratégico AJAJ (Prof. Eduardo José) — aula inicia na página 71.", "sourceStats": {"cards": 0}, "tips": ["Estude a aula no PDF e resolva questões do tema antes de marcar a meta como concluída.", "O selo \"DICA DO PROFESSOR — DESPENCA NA PROVA\" marca os pontos de maior recorrência."]}, {"uid": "ptra-a09", "title": "10 DISSÍDIO COLETIVO E AÇÃO DE CUMPRIMENTO", "origin": "Mentoria AJAJ • Processual do Trabalho — Aula 9", "type": "Aula", "studyUrl": "modules/trabalho/AJAJ_PROCESSUAL_TRABALHO.pdf#page=78", "ankiDeck": null, "sourceInfo": "Resumo estratégico AJAJ (Prof. Eduardo José) — aula inicia na página 78.", "sourceStats": {"cards": 0}, "tips": ["Estude a aula no PDF e resolva questões do tema antes de marcar a meta como concluída.", "O selo \"DICA DO PROFESSOR — DESPENCA NA PROVA\" marca os pontos de maior recorrência."]}, {"uid": "ptra-a10", "title": "11 PRESCRIÇÃO, DECADÊNCIA E PJE", "origin": "Mentoria AJAJ • Processual do Trabalho — Aula 10", "type": "Aula", "studyUrl": "modules/trabalho/AJAJ_PROCESSUAL_TRABALHO.pdf#page=85", "ankiDeck": null, "sourceInfo": "Resumo estratégico AJAJ (Prof. Eduardo José) — aula inicia na página 85.", "sourceStats": {"cards": 0}, "tips": ["Estude a aula no PDF e resolva questões do tema antes de marcar a meta como concluída.", "O selo \"DICA DO PROFESSOR — DESPENCA NA PROVA\" marca os pontos de maior recorrência."]}]}];
-const PT_CONFIG={"weeks": [{"week": 1, "title": "Verbo e sujeito", "days": [{"day": 1, "title": "Verbo e locução verbal: o ponto de partida da análise"}, {"day": 2, "title": "Sujeito: identificação, posição e tipos fundamentais"}, {"day": 3, "title": "Núcleo do sujeito e termos que confundem a análise"}, {"day": 4, "title": "Sujeito indeterminado, oração sem sujeito, haver, fazer e partícula “se”"}, {"day": 5, "title": "Concordância verbal como consequência da análise sintática"}, {"day": 6, "title": "Análise integrada: resolver sem saber previamente qual regra está sendo cobrada"}, {"day": 7, "title": "Teste final e revisão da Semana 1"}]}, {"week": 2, "title": "Complementos e estrutura da oração", "days": [{"day": 1, "title": "Dia 1"}, {"day": 2, "title": "Dia 2"}, {"day": 3, "title": "Dia 3"}, {"day": 4, "title": "Dia 4"}, {"day": 5, "title": "Dia 5"}, {"day": 6, "title": "Dia 6"}, {"day": 7, "title": "Dia 7"}]}, {"week": 3, "title": "Período composto", "days": [{"day": 1, "title": "Dia 1"}, {"day": 2, "title": "Dia 2"}, {"day": 3, "title": "Dia 3"}, {"day": 4, "title": "Dia 4"}, {"day": 5, "title": "Dia 5"}, {"day": 6, "title": "Dia 6"}, {"day": 7, "title": "Dia 7"}]}, {"week": 4, "title": "Relações de sentido e conectivos", "days": [{"day": 1, "title": "Dia 1"}, {"day": 2, "title": "Dia 2"}, {"day": 3, "title": "Dia 3"}, {"day": 4, "title": "Dia 4"}, {"day": 5, "title": "Dia 5"}, {"day": 6, "title": "Dia 6"}, {"day": 7, "title": "Dia 7"}]}, {"week": 5, "title": "Pontuação", "days": [{"day": 1, "title": "Dia 1"}, {"day": 2, "title": "Dia 2"}, {"day": 3, "title": "Dia 3"}, {"day": 4, "title": "Dia 4"}, {"day": 5, "title": "Dia 5"}, {"day": 6, "title": "Dia 6"}, {"day": 7, "title": "Dia 7"}]}, {"week": 6, "title": "Concordância", "days": [{"day": 1, "title": "Dia 1"}, {"day": 2, "title": "Dia 2"}, {"day": 3, "title": "Dia 3"}, {"day": 4, "title": "Dia 4"}, {"day": 5, "title": "Dia 5"}, {"day": 6, "title": "Dia 6"}, {"day": 7, "title": "Dia 7"}]}, {"week": 7, "title": "Regência e crase", "days": [{"day": 1, "title": "Dia 1"}, {"day": 2, "title": "Dia 2"}, {"day": 3, "title": "Dia 3"}, {"day": 4, "title": "Dia 4"}, {"day": 5, "title": "Dia 5"}, {"day": 6, "title": "Dia 6"}, {"day": 7, "title": "Dia 7"}]}, {"week": 8, "title": "Pronomes, “se” e vozes verbais", "days": [{"day": 1, "title": "Dia 1"}, {"day": 2, "title": "Dia 2"}, {"day": 3, "title": "Dia 3"}, {"day": 4, "title": "Dia 4"}, {"day": 5, "title": "Dia 5"}, {"day": 6, "title": "Dia 6"}, {"day": 7, "title": "Dia 7"}]}, {"week": 9, "title": "Coesão", "days": [{"day": 1, "title": "Dia 1"}, {"day": 2, "title": "Dia 2"}, {"day": 3, "title": "Dia 3"}, {"day": 4, "title": "Dia 4"}, {"day": 5, "title": "Dia 5"}, {"day": 6, "title": "Dia 6"}, {"day": 7, "title": "Dia 7"}]}, {"week": 10, "title": "Coerência e semântica", "days": [{"day": 1, "title": "Dia 1"}, {"day": 2, "title": "Dia 2"}, {"day": 3, "title": "Dia 3"}, {"day": 4, "title": "Dia 4"}, {"day": 5, "title": "Dia 5"}, {"day": 6, "title": "Dia 6"}, {"day": 7, "title": "Dia 7"}]}, {"week": 11, "title": "Interpretação", "days": [{"day": 1, "title": "Dia 1"}, {"day": 2, "title": "Dia 2"}, {"day": 3, "title": "Dia 3"}, {"day": 4, "title": "Dia 4"}, {"day": 5, "title": "Dia 5"}, {"day": 6, "title": "Dia 6"}, {"day": 7, "title": "Dia 7"}]}, {"week": 12, "title": "Reescrita", "days": [{"day": 1, "title": "Dia 1"}, {"day": 2, "title": "Dia 2"}, {"day": 3, "title": "Dia 3"}, {"day": 4, "title": "Dia 4"}, {"day": 5, "title": "Dia 5"}, {"day": 6, "title": "Dia 6"}, {"day": 7, "title": "Dia 7"}]}, {"week": 13, "title": "Frase boa", "days": [{"day": 1, "title": "Dia 1"}, {"day": 2, "title": "Dia 2"}, {"day": 3, "title": "Dia 3"}, {"day": 4, "title": "Dia 4"}, {"day": 5, "title": "Dia 5"}, {"day": 6, "title": "Dia 6"}, {"day": 7, "title": "Dia 7"}]}, {"week": 14, "title": "Parágrafo", "days": [{"day": 1, "title": "Dia 1"}, {"day": 2, "title": "Dia 2"}, {"day": 3, "title": "Dia 3"}, {"day": 4, "title": "Dia 4"}, {"day": 5, "title": "Dia 5"}, {"day": 6, "title": "Dia 6"}, {"day": 7, "title": "Dia 7"}]}, {"week": 15, "title": "Argumentação", "days": [{"day": 1, "title": "Dia 1"}, {"day": 2, "title": "Dia 2"}, {"day": 3, "title": "Dia 3"}, {"day": 4, "title": "Dia 4"}, {"day": 5, "title": "Dia 5"}, {"day": 6, "title": "Dia 6"}, {"day": 7, "title": "Dia 7"}]}, {"week": 16, "title": "Redação completa", "days": [{"day": 1, "title": "Dia 1"}, {"day": 2, "title": "Dia 2"}, {"day": 3, "title": "Dia 3"}, {"day": 4, "title": "Dia 4"}, {"day": 5, "title": "Dia 5"}, {"day": 6, "title": "Dia 6"}, {"day": 7, "title": "Dia 7"}]}], "week1Splits": {"1": {"pre": ["w1_d1_01", "w1_d1_02", "w1_d1_03", "w1_d1_04", "w1_d1_05"], "post": ["w1_d1_06", "w1_d1_07", "w1_d1_08", "w1_d1_09", "w1_d1_10", "w1_d1_11", "w1_d1_12", "w1_d1_13", "w1_d1_14", "w1_d1_15"], "all": ["w1_d1_01", "w1_d1_02", "w1_d1_03", "w1_d1_04", "w1_d1_05", "w1_d1_06", "w1_d1_07", "w1_d1_08", "w1_d1_09", "w1_d1_10", "w1_d1_11", "w1_d1_12", "w1_d1_13", "w1_d1_14", "w1_d1_15"]}, "2": {"pre": ["w1_d2_01", "w1_d2_02", "w1_d2_03", "w1_d2_04", "w1_d2_05"], "post": ["w1_d2_06", "w1_d2_07", "w1_d2_08", "w1_d2_09", "w1_d2_10", "w1_d2_11", "w1_d2_12", "w1_d2_13", "w1_d2_14", "w1_d2_15"], "all": ["w1_d2_01", "w1_d2_02", "w1_d2_03", "w1_d2_04", "w1_d2_05", "w1_d2_06", "w1_d2_07", "w1_d2_08", "w1_d2_09", "w1_d2_10", "w1_d2_11", "w1_d2_12", "w1_d2_13", "w1_d2_14", "w1_d2_15"]}, "3": {"pre": ["w1_d3_01", "w1_d3_02", "w1_d3_03", "w1_d3_04", "w1_d3_05"], "post": ["w1_d3_06", "w1_d3_07", "w1_d3_08", "w1_d3_09", "w1_d3_10", "w1_d3_11", "w1_d3_12", "w1_d3_13", "w1_d3_14", "w1_d3_15"], "all": ["w1_d3_01", "w1_d3_02", "w1_d3_03", "w1_d3_04", "w1_d3_05", "w1_d3_06", "w1_d3_07", "w1_d3_08", "w1_d3_09", "w1_d3_10", "w1_d3_11", "w1_d3_12", "w1_d3_13", "w1_d3_14", "w1_d3_15"]}, "4": {"pre": ["w1_d4_01", "w1_d4_02", "w1_d4_03", "w1_d4_04", "w1_d4_05"], "post": ["w1_d4_06", "w1_d4_07", "w1_d4_08", "w1_d4_09", "w1_d4_10", "w1_d4_11", "w1_d4_12", "w1_d4_13", "w1_d4_14", "w1_d4_15"], "all": ["w1_d4_01", "w1_d4_02", "w1_d4_03", "w1_d4_04", "w1_d4_05", "w1_d4_06", "w1_d4_07", "w1_d4_08", "w1_d4_09", "w1_d4_10", "w1_d4_11", "w1_d4_12", "w1_d4_13", "w1_d4_14", "w1_d4_15"]}, "5": {"pre": ["w1_d5_01", "w1_d5_02", "w1_d5_03", "w1_d5_04", "w1_d5_05"], "post": ["w1_d5_06", "w1_d5_07", "w1_d5_08", "w1_d5_09", "w1_d5_10", "w1_d5_11", "w1_d5_12", "w1_d5_13", "w1_d5_14", "w1_d5_15", "w1_d5_16", "w1_d5_17", "w1_d5_18", "w1_d5_19", "w1_d5_20"], "all": ["w1_d5_01", "w1_d5_02", "w1_d5_03", "w1_d5_04", "w1_d5_05", "w1_d5_06", "w1_d5_07", "w1_d5_08", "w1_d5_09", "w1_d5_10", "w1_d5_11", "w1_d5_12", "w1_d5_13", "w1_d5_14", "w1_d5_15", "w1_d5_16", "w1_d5_17", "w1_d5_18", "w1_d5_19", "w1_d5_20"]}, "6": {"pre": ["w1_d6_01", "w1_d6_02", "w1_d6_03", "w1_d6_04", "w1_d6_05"], "post": ["w1_d6_06", "w1_d6_07", "w1_d6_08", "w1_d6_09", "w1_d6_10", "w1_d6_11", "w1_d6_12", "w1_d6_13", "w1_d6_14", "w1_d6_15", "w1_d6_16", "w1_d6_17", "w1_d6_18", "w1_d6_19", "w1_d6_20"], "all": ["w1_d6_01", "w1_d6_02", "w1_d6_03", "w1_d6_04", "w1_d6_05", "w1_d6_06", "w1_d6_07", "w1_d6_08", "w1_d6_09", "w1_d6_10", "w1_d6_11", "w1_d6_12", "w1_d6_13", "w1_d6_14", "w1_d6_15", "w1_d6_16", "w1_d6_17", "w1_d6_18", "w1_d6_19", "w1_d6_20"]}, "7": {"pre": ["w1_d7_01", "w1_d7_02", "w1_d7_03", "w1_d7_04", "w1_d7_05"], "post": ["w1_d7_06", "w1_d7_07", "w1_d7_08", "w1_d7_09", "w1_d7_10", "w1_d7_11", "w1_d7_12", "w1_d7_13", "w1_d7_14", "w1_d7_15", "w1_d7_16", "w1_d7_17", "w1_d7_18", "w1_d7_19", "w1_d7_20"], "all": ["w1_d7_01", "w1_d7_02", "w1_d7_03", "w1_d7_04", "w1_d7_05", "w1_d7_06", "w1_d7_07", "w1_d7_08", "w1_d7_09", "w1_d7_10", "w1_d7_11", "w1_d7_12", "w1_d7_13", "w1_d7_14", "w1_d7_15", "w1_d7_16", "w1_d7_17", "w1_d7_18", "w1_d7_19", "w1_d7_20"]}}};
 
 
 const $=id=>document.getElementById(id);
@@ -265,11 +264,6 @@ function routeIntegratedCentralModule(value,title,btn){
  }
  const cf=value.match(/^(?:\.\/)?modules\/cf\/index\.html\?[^#]*\bweek=(w\d+)/);
  if(cf){openCfLast(cf[1]);return true}
- if(/^(?:\.\/)?modules\/portugues\/index\.html(?:[?#]|$)/.test(value)){
-  const page=internalRouteParam(value,'page');
-  if(page==='week1')openPtLast(1,1);else jumpSubject('pt');
-  return true;
- }
  return false;
 }
 function openInternal(url,title,btn){
@@ -325,10 +319,6 @@ function key(uid,kind){return `central-v6:${kind}:${uid}`}
 function goalDone(uid){return localStorage.getItem(key(uid,'done'))==='1'}
 function setDone(uid,v){localStorage.setItem(key(uid,'done'),v?'1':'0')}
 function subjStats(s){
- if(s.id==='pt'){
-   const total=17,done=0;
-   return {total,done,pct:0,unit:'módulos'};
- }
  if(s.id==='cf'){
    const total=CF_WEEKS.length,done=CF_WEEKS.filter(w=>cfWeekPct(w)===100).length;
    return {total,done,pct:total?Math.round(done/total*100):0,unit:'módulos'};
@@ -362,27 +352,17 @@ function topicByUid(uid){for(const s of SUBJECTS){const t=s.topics.find(x=>x.uid
 
 function saveLastTopic(uid){const x=topicByUid(uid);if(x)saveLast({topicUid:uid,title:x.s.name+' • '+x.t.title,at:Date.now()})}
 function saveLast(x){localStorage.setItem('central-v6:last',JSON.stringify(x));renderContinue()}
-function openPtLast(week,day){
- openHome();
- localStorage.setItem('central-v6:open:pt','1');
- localStorage.setItem(ptWeekOpenKey(week),'1');
- localStorage.setItem(ptDayOpenKey(week,day),'1');
- setTimeout(()=>{
-   renderSubjects();
-   document.querySelector(`.pt-day[data-daykey="${week}-${day}"]`)?.scrollIntoView({behavior:'smooth',block:'center'});
- },40);
-}
-function renderContinue(){const x=JSON.parse(localStorage.getItem('central-v6:last')||'null');if(!x){$('continueBox').innerHTML='<div class="muted small">Nenhuma sessão recente.</div>';return}const act=x.tool==='vade-mecum'?`openVadeMecum()`:x.tool==='lei-seca-enxuta'?`openLeiSecaEnxuta()`:x.civilModule?`openCivilLast('${x.civilModule}')`:x.cfWeek?`openCfLast('${x.cfWeek}')`:x.penalWeek?`openPenalLast('${x.penalWeek}')`:x.cpcWeek?`openCpcLast('${x.cpcWeek}')`:x.ptWeek?`openPtLast(${x.ptWeek},${x.ptDay})`:x.topicUid?`openTopicFromLast('${x.topicUid}')`:`openInternal('${escJs(x.url)}','${escJs(x.title)}')`;$('continueBox').innerHTML=`<b style="display:block;font-size:12px">${esc(x.title)}</b><span class="muted small">${new Date(x.at).toLocaleString('pt-BR')}</span><div style="margin-top:9px"><button class="btn primary sm" onclick="${act}">Continuar</button></div>`}
+function renderContinue(){const x=JSON.parse(localStorage.getItem('central-v6:last')||'null');if(!x){$('continueBox').innerHTML='<div class="muted small">Nenhuma sessão recente.</div>';return}const act=x.tool==='vade-mecum'?`openVadeMecum()`:x.tool==='lei-seca-enxuta'?`openLeiSecaEnxuta()`:x.civilModule?`openCivilLast('${x.civilModule}')`:x.cfWeek?`openCfLast('${x.cfWeek}')`:x.penalWeek?`openPenalLast('${x.penalWeek}')`:x.cpcWeek?`openCpcLast('${x.cpcWeek}')`:x.topicUid?`openTopicFromLast('${x.topicUid}')`:`openInternal('${escJs(x.url)}','${escJs(x.title)}')`;$('continueBox').innerHTML=`<b style="display:block;font-size:12px">${esc(x.title)}</b><span class="muted small">${new Date(x.at).toLocaleString('pt-BR')}</span><div style="margin-top:9px"><button class="btn primary sm" onclick="${act}">Continuar</button></div>`}
 function openTopicFromLast(uid){openHome();setTimeout(()=>{const found=topicByUid(uid);if(found){localStorage.setItem(`central-v6:open:${found.s.id}`,'1');renderSubjects();localStorage.setItem(topicOpenKey(uid),'1');renderSubjects();const el=document.querySelector(`.topic-item[data-uid="${uid}"]`);el?.scrollIntoView({behavior:'smooth',block:'center'})}},30)}
 
 function renderSubjects(){
  $('subjects').innerHTML=SUBJECTS.map(s=>{
   const st=subjStats(s),open=localStorage.getItem(`central-v6:open:${s.id}`)==='1';
-  const unit=(s.id==='pt'||s.id==='cf'||s.id==='civil'||s.id==='penal'||s.id==='cpc')?'módulos':'metas';
+  const unit=(s.id==='cf'||s.id==='civil'||s.id==='penal'||s.id==='cpc')?'módulos':'metas';
   return `<section class="subject ${open?'open':''}" data-id="${s.id}">
    <button class="subject-head" onclick="toggleSubject('${s.id}')"><span class="subject-name">${esc(s.name)}</span><span class="subject-count">${st.done}/${st.total} ${unit}</span><span class="subject-pct ${st.pct===100?'done':''}">${st.pct}%</span><span class="chev">⌄</span></button>
    <div class="subject-body"><div class="subject-bar"><span style="width:${st.pct}%"></span></div>
-    ${s.id==='pt' ? renderPortugueseMaster() : s.id==='cf' ? renderConstitutionalMaster() : s.id==='penal' ? renderPenalMaster() : s.id==='cpc' ? renderCpcMaster() : s.id==='civil' ? renderCivilMaster() : `
+    ${s.id==='cf' ? renderConstitutionalMaster() : s.id==='penal' ? renderPenalMaster() : s.id==='cpc' ? renderCpcMaster() : s.id==='civil' ? renderCivilMaster() : `
       <div class="topic-header"><div></div><div>Tópico real</div><div>Origem</div><div>Tipo</div><div></div></div>
       ${s.topics.map(t=>renderTopic(s,t)).join('')}
     `}
@@ -4184,7 +4164,7 @@ function renderCfQuestion(){
  const q=cfSession.list[cfSession.index];cfSession.answered=false;cfSession.order=cfOptionOrder(q,cfSession.mode);
  const legal=cfLegalUpdate(q);
  host.innerHTML=`<section class="cf-session">
-   <div class="cf-session-head"><div><b>${cfModeName(cfSession.mode)} • Módulo ${cfSession.week.num}</b><br><span class="muted small">${esc(cfSession.week.title)}</span></div><button class="pt-inline-close" onclick="closeCfSession()">✕ fechar</button></div>
+   <div class="cf-session-head"><div><b>${cfModeName(cfSession.mode)} • Módulo ${cfSession.week.num}</b><br><span class="muted small">${esc(cfSession.week.title)}</span></div><button class="central-inline-close" onclick="closeCfSession()">✕ fechar</button></div>
    <div class="cf-session-body">
      <div class="cf-qtop"><span>${cfSession.index+1}/${cfSession.list.length}</span><span>${cfSourceKind(q)}</span></div>
      <div class="cf-qbar"><span style="width:${((cfSession.index)/cfSession.list.length)*100}%"></span></div>
@@ -4224,7 +4204,7 @@ function finishCfQuiz(){
  if(sess.mode==='diagnostic')ws.diagnostic=true;if(sess.mode==='intermediate')ws.intermediate=true;if(sess.mode==='fixation')ws.fixation=true;
  st.weeks[w.id]=ws;st.lastWeek=w.id;cfSave(st);
  const total=sess.list.length,pct=Math.round(sess.score/total*100),host=document.getElementById('cf-session-host');
- host.innerHTML=`<section class="cf-session"><div class="cf-session-head"><b>${cfModeName(sess.mode)} concluído</b><button class="pt-inline-close" onclick="closeCfSession()">✕</button></div><div class="cf-session-body cf-result"><div class="cf-score">${pct}%</div><div class="cf-result-grid"><div><b>${sess.score}</b><small>acertos</small></div><div><b>${total-sess.score}</b><small>erros</small></div><div><b>${cfWeekPct(w)}%</b><small>módulo</small></div></div><div class="cf-actions" style="justify-content:center"><button class="cf-btn primary" onclick="closeCfSession();openCfLast('${w.id}')">Voltar ao módulo</button>${sess.errors.length?`<button class="cf-btn bad" onclick="startCfQuiz('${w.id}','errors',999)">Refazer erros</button>`:''}</div></div></section>`;
+ host.innerHTML=`<section class="cf-session"><div class="cf-session-head"><b>${cfModeName(sess.mode)} concluído</b><button class="central-inline-close" onclick="closeCfSession()">✕</button></div><div class="cf-session-body cf-result"><div class="cf-score">${pct}%</div><div class="cf-result-grid"><div><b>${sess.score}</b><small>acertos</small></div><div><b>${total-sess.score}</b><small>erros</small></div><div><b>${cfWeekPct(w)}%</b><small>módulo</small></div></div><div class="cf-actions" style="justify-content:center"><button class="cf-btn primary" onclick="closeCfSession();openCfLast('${w.id}')">Voltar ao módulo</button>${sess.errors.length?`<button class="cf-btn bad" onclick="startCfQuiz('${w.id}','errors',999)">Refazer erros</button>`:''}</div></div></section>`;
  renderAll();localStorage.setItem('central-v6:open:cf','1');localStorage.setItem(cfModuleOpenKey(w.id),'1');
  setTimeout(()=>{const h=document.getElementById('cf-session-host');if(h)h.innerHTML=host.innerHTML},0);
 }
@@ -4235,7 +4215,7 @@ function renderCfErrorPanel(){
  if(!list.length){host.innerHTML='<div class="cf-error-panel"><b>Nenhum erro pendente.</b></div>';return}
  const weak={};list.forEach(q=>{const k=q.subject||'Assunto';weak[k]=(weak[k]||0)+1});
  const top=Object.entries(weak).sort((a,b)=>b[1]-a[1]).slice(0,6);
- host.innerHTML=`<div class="cf-error-panel"><div style="display:flex;justify-content:space-between;gap:8px"><div><b>Caderno automático de erros</b><div class="muted small">${list.length} questão(ões) pendente(s)</div></div><button class="pt-inline-close" onclick="document.getElementById('cf-errors-host').innerHTML=''">✕</button></div><div class="cf-micro-grid">${top.map(([x,n])=>`<span class="cf-micro">${esc(x)} • ${n}</span>`).join('')}</div><div class="cf-actions"><button class="cf-btn bad" onclick="startCfGlobalErrors()">Refazer todos</button></div>${CF_WEEKS.map(w=>{const n=cfModuleErrors(w).length;return n?`<div class="cf-error-row"><b>Módulo ${w.num} • ${esc(w.title)}</b><small>${n} erro(s)</small><div class="cf-actions"><button class="cf-btn" onclick="startCfQuiz('${w.id}','errors',999)">Revisar módulo</button></div></div>`:''}).join('')}</div>`;
+ host.innerHTML=`<div class="cf-error-panel"><div style="display:flex;justify-content:space-between;gap:8px"><div><b>Caderno automático de erros</b><div class="muted small">${list.length} questão(ões) pendente(s)</div></div><button class="central-inline-close" onclick="document.getElementById('cf-errors-host').innerHTML=''">✕</button></div><div class="cf-micro-grid">${top.map(([x,n])=>`<span class="cf-micro">${esc(x)} • ${n}</span>`).join('')}</div><div class="cf-actions"><button class="cf-btn bad" onclick="startCfGlobalErrors()">Refazer todos</button></div>${CF_WEEKS.map(w=>{const n=cfModuleErrors(w).length;return n?`<div class="cf-error-row"><b>Módulo ${w.num} • ${esc(w.title)}</b><small>${n} erro(s)</small><div class="cf-actions"><button class="cf-btn" onclick="startCfQuiz('${w.id}','errors',999)">Revisar módulo</button></div></div>`:''}).join('')}</div>`;
  host.scrollIntoView({behavior:'smooth',block:'start'});
 }
 function startCfGlobalErrors(){
@@ -4413,7 +4393,7 @@ function renderPenalQuestion(){
  const q=penalSession.list[penalSession.index];penalSession.answered=false;penalSession.order=penalOptionOrder(q,penalSession.mode);
  const legal=penalLegalUpdate(q);
  host.innerHTML=`<section class="cf-session">
-   <div class="cf-session-head"><div><b>${penalModeName(penalSession.mode)} • Módulo ${penalSession.week.num}</b><br><span class="muted small">${esc(penalSession.week.title)}</span></div><button class="pt-inline-close" onclick="closePenalSession()">✕ fechar</button></div>
+   <div class="cf-session-head"><div><b>${penalModeName(penalSession.mode)} • Módulo ${penalSession.week.num}</b><br><span class="muted small">${esc(penalSession.week.title)}</span></div><button class="central-inline-close" onclick="closePenalSession()">✕ fechar</button></div>
    <div class="cf-session-body">
      <div class="cf-qtop"><span>${penalSession.index+1}/${penalSession.list.length}</span><span>${penalSourceKind(q)}</span></div>
      <div class="cf-qbar"><span style="width:${((penalSession.index)/penalSession.list.length)*100}%"></span></div>
@@ -4453,7 +4433,7 @@ function finishPenalQuiz(){
  if(sess.mode==='diagnostic')ws.diagnostic=true;if(sess.mode==='intermediate')ws.intermediate=true;if(sess.mode==='fixation')ws.fixation=true;
  st.weeks[w.id]=ws;st.lastWeek=w.id;penalSave(st);
  const total=sess.list.length,pct=Math.round(sess.score/total*100),host=document.getElementById('penal-session-host');
- host.innerHTML=`<section class="cf-session"><div class="cf-session-head"><b>${penalModeName(sess.mode)} concluído</b><button class="pt-inline-close" onclick="closePenalSession()">✕</button></div><div class="cf-session-body cf-result"><div class="cf-score">${pct}%</div><div class="cf-result-grid"><div><b>${sess.score}</b><small>acertos</small></div><div><b>${total-sess.score}</b><small>erros</small></div><div><b>${penalWeekPct(w)}%</b><small>módulo</small></div></div><div class="cf-actions" style="justify-content:center"><button class="cf-btn primary" onclick="closePenalSession();openPenalLast('${w.id}')">Voltar ao módulo</button>${sess.errors.length?`<button class="cf-btn bad" onclick="startPenalQuiz('${w.id}','errors',999)">Refazer erros</button>`:''}</div></div></section>`;
+ host.innerHTML=`<section class="cf-session"><div class="cf-session-head"><b>${penalModeName(sess.mode)} concluído</b><button class="central-inline-close" onclick="closePenalSession()">✕</button></div><div class="cf-session-body cf-result"><div class="cf-score">${pct}%</div><div class="cf-result-grid"><div><b>${sess.score}</b><small>acertos</small></div><div><b>${total-sess.score}</b><small>erros</small></div><div><b>${penalWeekPct(w)}%</b><small>módulo</small></div></div><div class="cf-actions" style="justify-content:center"><button class="cf-btn primary" onclick="closePenalSession();openPenalLast('${w.id}')">Voltar ao módulo</button>${sess.errors.length?`<button class="cf-btn bad" onclick="startPenalQuiz('${w.id}','errors',999)">Refazer erros</button>`:''}</div></div></section>`;
  renderAll();localStorage.setItem('central-v6:open:penal','1');localStorage.setItem(penalModuleOpenKey(w.id),'1');
  setTimeout(()=>{const h=document.getElementById('penal-session-host');if(h)h.innerHTML=host.innerHTML},0);
 }
@@ -4464,7 +4444,7 @@ function renderPenalErrorPanel(){
  if(!list.length){host.innerHTML='<div class="cf-error-panel"><b>Nenhum erro pendente.</b></div>';return}
  const weak={};list.forEach(q=>{const k=q.subject||'Assunto';weak[k]=(weak[k]||0)+1});
  const top=Object.entries(weak).sort((a,b)=>b[1]-a[1]).slice(0,6);
- host.innerHTML=`<div class="cf-error-panel"><div style="display:flex;justify-content:space-between;gap:8px"><div><b>Caderno automático de erros</b><div class="muted small">${list.length} questão(ões) pendente(s)</div></div><button class="pt-inline-close" onclick="document.getElementById('penal-errors-host').innerHTML=''">✕</button></div><div class="cf-micro-grid">${top.map(([x,n])=>`<span class="cf-micro">${esc(x)} • ${n}</span>`).join('')}</div><div class="cf-actions"><button class="cf-btn bad" onclick="startPenalGlobalErrors()">Refazer todos</button></div>${PENAL_WEEKS.map(w=>{const n=penalModuleErrors(w).length;return n?`<div class="cf-error-row"><b>Módulo ${w.num} • ${esc(w.title)}</b><small>${n} erro(s)</small><div class="cf-actions"><button class="cf-btn" onclick="startPenalQuiz('${w.id}','errors',999)">Revisar módulo</button></div></div>`:''}).join('')}</div>`;
+ host.innerHTML=`<div class="cf-error-panel"><div style="display:flex;justify-content:space-between;gap:8px"><div><b>Caderno automático de erros</b><div class="muted small">${list.length} questão(ões) pendente(s)</div></div><button class="central-inline-close" onclick="document.getElementById('penal-errors-host').innerHTML=''">✕</button></div><div class="cf-micro-grid">${top.map(([x,n])=>`<span class="cf-micro">${esc(x)} • ${n}</span>`).join('')}</div><div class="cf-actions"><button class="cf-btn bad" onclick="startPenalGlobalErrors()">Refazer todos</button></div>${PENAL_WEEKS.map(w=>{const n=penalModuleErrors(w).length;return n?`<div class="cf-error-row"><b>Módulo ${w.num} • ${esc(w.title)}</b><small>${n} erro(s)</small><div class="cf-actions"><button class="cf-btn" onclick="startPenalQuiz('${w.id}','errors',999)">Revisar módulo</button></div></div>`:''}).join('')}</div>`;
  host.scrollIntoView({behavior:'smooth',block:'start'});
 }
 function startPenalGlobalErrors(){
@@ -4635,7 +4615,7 @@ function renderCpcQuestion(){
  const q=cpcSession.list[cpcSession.index];cpcSession.answered=false;cpcSession.order=cpcOptionOrder(q,cpcSession.mode);
  const legal=cpcLegalUpdate(q);
  host.innerHTML=`<section class="cf-session">
-   <div class="cf-session-head"><div><b>${cpcModeName(cpcSession.mode)} • Módulo ${cpcSession.week.num}</b><br><span class="muted small">${esc(cpcSession.week.title)}</span></div><button class="pt-inline-close" onclick="closeCpcSession()">✕ fechar</button></div>
+   <div class="cf-session-head"><div><b>${cpcModeName(cpcSession.mode)} • Módulo ${cpcSession.week.num}</b><br><span class="muted small">${esc(cpcSession.week.title)}</span></div><button class="central-inline-close" onclick="closeCpcSession()">✕ fechar</button></div>
    <div class="cf-session-body">
      <div class="cf-qtop"><span>${cpcSession.index+1}/${cpcSession.list.length}</span><span>${cpcSourceKind(q)}</span></div>
      <div class="cf-qbar"><span style="width:${((cpcSession.index)/cpcSession.list.length)*100}%"></span></div>
@@ -4675,7 +4655,7 @@ function finishCpcQuiz(){
  if(sess.mode==='diagnostic')ws.diagnostic=true;if(sess.mode==='intermediate')ws.intermediate=true;if(sess.mode==='fixation')ws.fixation=true;
  st.weeks[w.id]=ws;st.lastWeek=w.id;cpcSave(st);
  const total=sess.list.length,pct=Math.round(sess.score/total*100),host=document.getElementById('cpc-session-host');
- host.innerHTML=`<section class="cf-session"><div class="cf-session-head"><b>${cpcModeName(sess.mode)} concluído</b><button class="pt-inline-close" onclick="closeCpcSession()">✕</button></div><div class="cf-session-body cf-result"><div class="cf-score">${pct}%</div><div class="cf-result-grid"><div><b>${sess.score}</b><small>acertos</small></div><div><b>${total-sess.score}</b><small>erros</small></div><div><b>${cpcWeekPct(w)}%</b><small>módulo</small></div></div><div class="cf-actions" style="justify-content:center"><button class="cf-btn primary" onclick="closeCpcSession();openCpcLast('${w.id}')">Voltar ao módulo</button>${sess.errors.length?`<button class="cf-btn bad" onclick="startCpcQuiz('${w.id}','errors',999)">Refazer erros</button>`:''}</div></div></section>`;
+ host.innerHTML=`<section class="cf-session"><div class="cf-session-head"><b>${cpcModeName(sess.mode)} concluído</b><button class="central-inline-close" onclick="closeCpcSession()">✕</button></div><div class="cf-session-body cf-result"><div class="cf-score">${pct}%</div><div class="cf-result-grid"><div><b>${sess.score}</b><small>acertos</small></div><div><b>${total-sess.score}</b><small>erros</small></div><div><b>${cpcWeekPct(w)}%</b><small>módulo</small></div></div><div class="cf-actions" style="justify-content:center"><button class="cf-btn primary" onclick="closeCpcSession();openCpcLast('${w.id}')">Voltar ao módulo</button>${sess.errors.length?`<button class="cf-btn bad" onclick="startCpcQuiz('${w.id}','errors',999)">Refazer erros</button>`:''}</div></div></section>`;
  renderAll();localStorage.setItem('central-v6:open:cpc','1');localStorage.setItem(cpcModuleOpenKey(w.id),'1');
  setTimeout(()=>{const h=document.getElementById('cpc-session-host');if(h)h.innerHTML=host.innerHTML},0);
 }
@@ -4686,7 +4666,7 @@ function renderCpcErrorPanel(){
  if(!list.length){host.innerHTML='<div class="cf-error-panel"><b>Nenhum erro pendente.</b></div>';return}
  const weak={};list.forEach(q=>{const k=q.subject||'Assunto';weak[k]=(weak[k]||0)+1});
  const top=Object.entries(weak).sort((a,b)=>b[1]-a[1]).slice(0,6);
- host.innerHTML=`<div class="cf-error-panel"><div style="display:flex;justify-content:space-between;gap:8px"><div><b>Caderno automático de erros</b><div class="muted small">${list.length} questão(ões) pendente(s)</div></div><button class="pt-inline-close" onclick="document.getElementById('cpc-errors-host').innerHTML=''">✕</button></div><div class="cf-micro-grid">${top.map(([x,n])=>`<span class="cf-micro">${esc(x)} • ${n}</span>`).join('')}</div><div class="cf-actions"><button class="cf-btn bad" onclick="startCpcGlobalErrors()">Refazer todos</button></div>${CPC_WEEKS.map(w=>{const n=cpcModuleErrors(w).length;return n?`<div class="cf-error-row"><b>Módulo ${w.num} • ${esc(w.title)}</b><small>${n} erro(s)</small><div class="cf-actions"><button class="cf-btn" onclick="startCpcQuiz('${w.id}','errors',999)">Revisar módulo</button></div></div>`:''}).join('')}</div>`;
+ host.innerHTML=`<div class="cf-error-panel"><div style="display:flex;justify-content:space-between;gap:8px"><div><b>Caderno automático de erros</b><div class="muted small">${list.length} questão(ões) pendente(s)</div></div><button class="central-inline-close" onclick="document.getElementById('cpc-errors-host').innerHTML=''">✕</button></div><div class="cf-micro-grid">${top.map(([x,n])=>`<span class="cf-micro">${esc(x)} • ${n}</span>`).join('')}</div><div class="cf-actions"><button class="cf-btn bad" onclick="startCpcGlobalErrors()">Refazer todos</button></div>${CPC_WEEKS.map(w=>{const n=cpcModuleErrors(w).length;return n?`<div class="cf-error-row"><b>Módulo ${w.num} • ${esc(w.title)}</b><small>${n} erro(s)</small><div class="cf-actions"><button class="cf-btn" onclick="startCpcQuiz('${w.id}','errors',999)">Revisar módulo</button></div></div>`:''}).join('')}</div>`;
  host.scrollIntoView({behavior:'smooth',block:'start'});
 }
 function startCpcGlobalErrors(){
@@ -4704,864 +4684,6 @@ async function importCpcProgress(input){
 }
 
 
-
-function ptDayKey(week,day,kind){return `central-v6:pt:w${week}:d${day}:${kind}`}
-function getPtModuleState(){
- try{return JSON.parse(localStorage.getItem('dominio_portugues_site_v01')||'{}')}catch(e){return {}}
-}
-function ptAutoTaskDone(week,day,kind){
- if(week!==1)return false;
- const state=getPtModuleState();
- const split=PT_CONFIG.week1Splits[String(day)]||PT_CONFIG.week1Splits[day];
- if(!split)return false;
- if(kind==='pre')return split.pre.length>0 && split.pre.every(id=>state.answers && state.answers[id]);
- if(kind==='post')return split.post.length>0 && split.post.every(id=>state.answers && state.answers[id]);
- if(kind==='theory' && day<=6)return !!(state.theoryCompleted && state.theoryCompleted[String(day)]);
- return false;
-}
-function ptTaskDone(week,day,kind){
- return ptAutoTaskDone(week,day,kind) || localStorage.getItem(ptDayKey(week,day,kind))==='1';
-}
-function ptSetTask(week,day,kind,value){
- if(ptAutoTaskDone(week,day,kind))return;
- localStorage.setItem(ptDayKey(week,day,kind),value?'1':'0');
- renderAll();
-}
-function ptDayDone(week,day){return ['pre','theory','post'].every(k=>ptTaskDone(week,day,k))}
-
-function ptFilterMetricKey(week,day,source,metric){return `central-v6:pt-filter:${week}:${day}:${source}:${metric}`}
-function oldPtFilterCountKey(week,day,source){return `central-v6:pt-filter-count:${week}:${day}:${source}`}
-function getPtFilterMetric(week,day,source,metric){
- const direct=localStorage.getItem(ptFilterMetricKey(week,day,source,metric));
- if(direct!==null)return Math.max(0,Number(direct)||0);
- if(metric==='made'){
-   const old=localStorage.getItem(oldPtFilterCountKey(week,day,source));
-   if(old!==null)return Math.max(0,Number(old)||0);
- }
- return 0;
-}
-function getPtFilterStats(week,day,source){
- const made=getPtFilterMetric(week,day,source,'made');
- const correct=Math.min(made,getPtFilterMetric(week,day,source,'correct'));
- return {made,correct,wrong:Math.max(0,made-correct),accuracy:made?Math.round(correct/made*1000)/10:0};
-}
-function setPtFilterMetric(week,day,source,metric,value){
- let n=Math.max(0,Math.floor(Number(value)||0));
- const st=getPtFilterStats(week,day,source);
- if(metric==='correct' && n>st.made){
-   n=st.made;
-   alert('As certas não podem ser maiores que as feitas.');
- }
- localStorage.setItem(ptFilterMetricKey(week,day,source,metric),String(n));
- if(metric==='made'){
-   const c=getPtFilterMetric(week,day,source,'correct');
-   if(c>n)localStorage.setItem(ptFilterMetricKey(week,day,source,'correct'),String(n));
- }
- renderAll();
-}
-function ptDayFilterStats(week,day){
- const a=getPtFilterStats(week,day,'tec'),b=getPtFilterStats(week,day,'qc');
- const made=a.made+b.made,correct=a.correct+b.correct;
- return {made,correct,wrong:made-correct,accuracy:made?Math.round(correct/made*1000)/10:0};
-}
-function ptWeekFilterStats(week){
- const w=PT_CONFIG.weeks.find(x=>x.week===week);
- let made=0,correct=0;
- if(w)w.days.forEach(d=>{const st=ptDayFilterStats(week,d.day);made+=st.made;correct+=st.correct});
- return {made,correct,wrong:made-correct,accuracy:made?Math.round(correct/made*1000)/10:0};
-}
-function ptAllFilterStats(){
- let made=0,correct=0;
- PT_CONFIG.weeks.forEach(w=>w.days.forEach(d=>{const st=ptDayFilterStats(w.week,d.day);made+=st.made;correct+=st.correct}));
- return {made,correct,wrong:made-correct,accuracy:made?Math.round(correct/made*1000)/10:0};
-}
-function ptDayQuestionTotal(week,day){return ptDayFilterStats(week,day).made}
-function ptWeekQuestionTotal(week){return ptWeekFilterStats(week).made}
-function ptAllQuestionTotal(){return ptAllFilterStats().made}
-
-function ptDayProgress(week,day){return ['pre','theory','post'].filter(k=>ptTaskDone(week,day,k)).length}
-function ptWeekStats(week){
- const w=PT_CONFIG.weeks.find(x=>x.week===week);
- const done=w.days.filter(d=>ptDayDone(week,d.day)).length;
- return {done,total:7,pct:Math.round(done/7*100)};
-}
-function ptWeekOpenKey(week){return `central-v6:pt-week-open:${week}`}
-function ptDayOpenKey(week,day){return `central-v6:pt-day-open:${week}:${day}`}
-function togglePtWeek(week){
- const el=document.querySelector(`.pt-week[data-week="${week}"]`);
- if(!el)return;
- const open=!el.classList.contains('open');
- el.classList.toggle('open',open);
- localStorage.setItem(ptWeekOpenKey(week),open?'1':'0');
-}
-function togglePtDay(week,day){
- const el=document.querySelector(`.pt-day[data-daykey="${week}-${day}"]`);
- if(!el)return;
- const open=!el.classList.contains('open');
- // Um dia por vez: evita transformar a disciplina em uma página muito longa.
- PT_CONFIG.weeks.find(w=>w.week===week)?.days.forEach(d=>{
-   if(d.day===day)return;
-   localStorage.setItem(ptDayOpenKey(week,d.day),'0');
-   document.querySelector(`.pt-day[data-daykey="${week}-${d.day}"]`)?.classList.remove('open');
- });
- el.classList.toggle('open',open);
- localStorage.setItem(ptDayOpenKey(week,day),open?'1':'0');
- if(open){
-   saveLast({ptWeek:week,ptDay:day,title:`Português • Semana ${week} • Dia ${day}`,at:Date.now()});
-   setTimeout(()=>el.scrollIntoView({behavior:'smooth',block:'start'}),0);
- }
-}
-function ptResourceKey(week,day){return `central-v6:pt-resource:${week}:${day}`}
-function getPtResources(week,day){try{return JSON.parse(localStorage.getItem(ptResourceKey(week,day))||'{}')}catch(e){return {}}}
-function savePtResources(week,day,r){localStorage.setItem(ptResourceKey(week,day),JSON.stringify(r));renderSubjects()}
-function editPtLink(week,day,kind){
- const r=getPtResources(week,day);
- const label={youtube:'YouTube',tec:'Filtro TEC Concursos',qc:'Filtro QConcursos'}[kind]||kind;
- const v=prompt(`Cole o link de ${label}:`,r[kind]||'https://');
- if(v===null)return;
- const value=v.trim();
- if(!value){r[kind]='';savePtResources(week,day,r);return}
- const valid=safeUrl(value);
- if(!valid){alert('Link inválido. Use um endereço http:// ou https://.');return}
- r[kind]=valid;
- if(kind==='youtube'){
-   const title=prompt('Nome do vídeo (opcional):',r.youtubeTitle||'Videoaula');
-   if(title!==null)r.youtubeTitle=title.trim()||'Videoaula';
- }
- savePtResources(week,day,r);
-}
-function openPtSaved(week,day,kind){
- const r=getPtResources(week,day),url=safeUrl(r[kind]);
- if(url)openExternalUrl(url);
- else editPtLink(week,day,kind);
-}
-function openPortugueseReal(week,day,stage){
- if(week===1){
-   openPtIntegratedStage(week,day,stage||'theory');
-   return;
- }
- // Semanas 2–16 ainda têm apenas o planejamento real do V030.
- openPtIntegratedPlanning(week,day);
-}
-
-function getPtOldState(){
- try{
-   const raw=JSON.parse(localStorage.getItem('dominio_portugues_site_v01')||'{}');
-   return {
-     answers:raw.answers||{},
-     errors:raw.errors||{},
-     theoryCompleted:raw.theoryCompleted||{},
-     finalPassedAt:raw.finalPassedAt||null,
-     delayedPassed:raw.delayedPassed||false,
-     ...raw
-   };
- }catch(e){
-   return {answers:{},errors:{},theoryCompleted:{}};
- }
-}
-function savePtOldState(st){localStorage.setItem('dominio_portugues_site_v01',JSON.stringify(st))}
-function ptDayQuestions(day){
- const qs=(PT_CONTENT.week1||[]).filter(q=>Number(q.day)===Number(day) && !q.delayed);
- if(day===7)return {pre:qs.slice(0,10),post:qs.slice(10),all:qs};
- const cut=Math.min(5,qs.length);
- return {pre:qs.slice(0,cut),post:qs.slice(cut),all:qs};
-}
-function ptIntegratedId(week,day){return `pt-integrated-${week}-${day}`}
-function closePtIntegrated(week,day){
- const el=document.getElementById(ptIntegratedId(week,day));
- if(el)el.innerHTML='';
-}
-function openPtIntegratedStage(week,day,stage){
- const host=document.getElementById(ptIntegratedId(week,day));
- if(!host)return;
- if(week!==1){openPtIntegratedPlanning(week,day);return}
- if(stage==='pre')renderPtQuestionSession(host,day,'pre');
- else if(stage==='post')renderPtQuestionSession(host,day,'post');
- else renderPtTheoryInside(host,day);
- host.scrollIntoView({behavior:'smooth',block:'center'});
-}
-function openPtIntegratedPlanning(week,day){
- const host=document.getElementById(ptIntegratedId(week,day));
- if(!host)return;
- const w=PT_CONFIG.weeks.find(x=>x.week===week);
- host.innerHTML=`<div class="pt-integrated">
-   <div class="pt-integrated-head"><div><b>Semana ${week} · Dia ${day}</b><br><small>${esc(w?.title||'Planejamento')}</small></div><button class="pt-inline-close" onclick="closePtIntegrated(${week},${day})">✕ fechar</button></div>
-   <div class="pt-integrated-body">
-     <div class="pt-stage-lock"><b>Estrutura incorporada.</b><br>O conteúdo completo deste dia ainda será preenchido.</div>
-   </div>
- </div>`;
-}
-function ptAnswerRecord(q,selected,source){
- const st=getPtOldState();
- const correct=selected===q.correctIndex;
- const previous=st.answers[q.id];
- st.answers[q.id]={
-   selectedIndex:selected,correct,
-   topic:q.topic||'Semana 1',subskill:q.subskill||'',errorType:q.errorType||'',
-   source,answeredAt:new Date().toISOString()
- };
- if(!correct){
-   const k=q.errorType||q.subskill||q.id;
-   const old=st.errors[k];
-   st.errors[k]={
-     key:k,questionId:q.id,topic:q.topic||'Semana 1',subskill:q.subskill||'',
-     errorType:q.errorType||'Erro de análise',prompt:q.prompt,
-     selectedAnswer:q.options[selected],correctAnswer:q.options[q.correctIndex],
-     explanation:q.explanation||'',
-     recurrence:old ? (old.recurrence||1)+(previous&&!previous.correct?0:1) : 1,
-     resolved:false,lastAt:new Date().toISOString()
-   };
- }
- savePtOldState(st);
-}
-function ptQuestionCompleted(q){return !!getPtOldState().answers?.[q.id]}
-function renderPtQuestionSession(host,day,stage,startIndex=null){
- const split=ptDayQuestions(day);
- const qs=stage==='pre'?split.pre:split.post;
- if(!qs.length){
-   host.innerHTML=`<div class="pt-integrated"><div class="pt-integrated-head"><b>Sem questões nesta etapa</b><button class="pt-inline-close" onclick="closePtIntegrated(1,${day})">✕</button></div></div>`;
-   return;
- }
- const state=getPtOldState();
- let idx=startIndex==null ? Math.max(0,qs.findIndex(q=>!state.answers[q.id])) : startIndex;
- if(idx<0)idx=0;
- if(idx>=qs.length){renderPtQuestionResult(host,day,stage);return}
- const q=qs[idx],saved=state.answers[q.id]||null;
- const selected=saved?.selectedIndex;
- const checked=!!saved;
- const options=q.options.map((opt,i)=>{
-   let cl='pt-option';
-   if(selected===i)cl+=' selected';
-   if(checked&&i===q.correctIndex)cl+=' correct';
-   if(checked&&selected===i&&i!==q.correctIndex)cl+=' wrong';
-   return `<button class="${cl}" ${checked?'disabled':''} onclick="ptSelectIntegratedAnswer(${day},'${stage}',${idx},${i})"><span class="pt-letter">${String.fromCharCode(65+i)}</span><span>${esc(opt)}</span></button>`;
- }).join('');
- const answered=qs.filter(x=>state.answers[x.id]).length;
- host.innerHTML=`<div class="pt-integrated">
-   <div class="pt-integrated-head"><div><b>${stage==='pre'?'Questões iniciais':'Questões depois'} · Dia ${day}</b><br><small>Conteúdo original do Português V030 incorporado</small></div><button class="pt-inline-close" onclick="closePtIntegrated(1,${day})">✕ fechar</button></div>
-   <div class="pt-integrated-body">
-     <div class="pt-q-progress"><span>${esc(q.subskill||'Semana 1')}</span><span>${idx+1}/${qs.length} · ${answered} respondidas</span></div>
-     <div class="pt-qbar"><span style="width:${((idx+1)/qs.length)*100}%"></span></div>
-     <article class="pt-question-card">
-       <div class="pt-q-tags"><span class="pt-q-tag">${esc(q.difficulty||'concurso')}</span>${q.errorType?`<span class="pt-q-tag">${esc(q.errorType)}</span>`:''}</div>
-       <h3>${esc(q.prompt)}</h3>
-       <div class="pt-options">${options}</div>
-       ${checked?`<div class="pt-feedback ${saved.correct?'good':'bad'}"><b>${saved.correct?'Certo.':'Errado.'}</b> ${esc(q.explanation||'')}${!saved.correct&&q.errorType?`<br><b>Padrão:</b> ${esc(q.errorType)}`:''}</div>`:''}
-       <div class="pt-q-actions">
-         <button class="btn sm" ${idx===0?'disabled':''} onclick="renderPtQuestionSession(document.getElementById('${ptIntegratedId(1,day)}'),${day},'${stage}',${idx-1})">← Anterior</button>
-         <div>
-           ${checked?`<button class="btn primary sm" onclick="${idx===qs.length-1?`renderPtQuestionResult(document.getElementById('${ptIntegratedId(1,day)}'),${day},'${stage}')`:`renderPtQuestionSession(document.getElementById('${ptIntegratedId(1,day)}'),${day},'${stage}',${idx+1})`}">${idx===qs.length-1?'Ver resultado':'Próxima →'}</button>`:''}
-         </div>
-       </div>
-     </article>
-   </div>
- </div>`;
-}
-function ptSelectIntegratedAnswer(day,stage,idx,selected){
- const qs=stage==='pre'?ptDayQuestions(day).pre:ptDayQuestions(day).post;
- const q=qs[idx];
- if(!q||ptQuestionCompleted(q))return;
- ptAnswerRecord(q,selected,`central-week1-${stage}`);
- // Mantém a mesma questão aberta depois de responder. O avanço só ocorre pelo botão "Próxima".
- localStorage.setItem(ptWeekOpenKey(1),'1');
- localStorage.setItem(ptDayOpenKey(1,day),'1');
- renderAll();
- setTimeout(()=>{
-   const host=document.getElementById(ptIntegratedId(1,day));
-   if(!host)return;
-   renderPtQuestionSession(host,day,stage,idx);
-   host.scrollIntoView({behavior:'auto',block:'nearest'});
- },0);
-}
-function renderPtQuestionResult(host,day,stage){
- const qs=stage==='pre'?ptDayQuestions(day).pre:ptDayQuestions(day).post;
- const st=getPtOldState();
- const results=qs.map(q=>st.answers[q.id]).filter(Boolean);
- const correct=results.filter(x=>x.correct).length;
- const pct=qs.length?Math.round(correct/qs.length*100):0;
- if(day===7 && stage==='post'){
-   const all=ptDayQuestions(7).all;
-   const allResults=all.map(q=>st.answers[q.id]).filter(Boolean);
-   const allCorrect=allResults.filter(x=>x.correct).length;
-   if(allResults.length===all.length && allCorrect/all.length>=.85 && !st.finalPassedAt){
-     st.finalPassedAt=new Date().toISOString();savePtOldState(st);
-   }
- }
- host.innerHTML=`<div class="pt-integrated">
-   <div class="pt-integrated-head"><div><b>Resultado · ${stage==='pre'?'Questões iniciais':'Questões depois'}</b><br><small>Dia ${day}</small></div><button class="pt-inline-close" onclick="closePtIntegrated(1,${day})">✕ fechar</button></div>
-   <div class="pt-integrated-body pt-result">
-     <div class="pt-result-score">${pct}%</div>
-     <b>${correct} de ${qs.length} questões corretas</b>
-     <p class="muted small">${results.length<qs.length?`${qs.length-results.length} questão(ões) ainda não respondida(s).`:'Etapa concluída e salva no mesmo histórico do Português V030.'}</p>
-     <div class="q-actions" style="margin-top:10px">
-       <button class="btn sm" onclick="renderPtQuestionSession(document.getElementById('${ptIntegratedId(1,day)}'),${day},'${stage}',0)">Rever questões</button>
-       ${stage==='pre'?`<button class="btn primary sm" onclick="openPtIntegratedStage(1,${day},'theory')">Ir para teoria →</button>`:''}
-       ${stage==='post'?`<button class="btn green sm" onclick="closePtIntegrated(1,${day})">Concluir etapa</button>`:''}
-     </div>
-   </div>
- </div>`;
-}
-function renderPtTheoryInside(host,day){
- const lesson=PT_CONTENT.week1Lessons?.[String(day)];
- if(day===7){renderPtWeek1Review(host);return}
- if(!lesson){
-   host.innerHTML=`<div class="pt-integrated"><div class="pt-integrated-head"><b>Teoria não encontrada</b><button class="pt-inline-close" onclick="closePtIntegrated(1,${day})">✕</button></div></div>`;return
- }
- const reading=(PT_CONTENT.week1Readings||[]).find(r=>Number(r.day)===Number(day));
- const st=getPtOldState(),done=!!st.theoryCompleted?.[String(day)];
- host.innerHTML=`<div class="pt-integrated">
-   <div class="pt-integrated-head"><div><b>Teoria completa · Dia ${day}</b><br><small>${esc(lesson.title)}</small></div><button class="pt-inline-close" onclick="closePtIntegrated(1,${day})">✕ fechar</button></div>
-   <div class="pt-integrated-body">
-    <article class="pt-lesson">
-      <div class="pt-lesson-objective"><strong>OBJETIVO DO DIA</strong><p>${esc(lesson.objective)}</p></div>
-      ${lesson.sections.map(sec=>`<section class="pt-lesson-section"><h3>${esc(sec[0])}</h3><p>${esc(sec[1])}</p></section>`).join('')}
-      <section class="pt-lesson-section"><h3>Como aplicar na questão</h3><ol>${lesson.procedure.map(x=>`<li>${esc(x)}</li>`).join('')}</ol></section>
-      <section class="pt-lesson-section"><h3>Exemplos guiados</h3><div class="pt-guided">${lesson.guided.map((g,i)=>`<details><summary>${i+1} · ${esc(g[0])}</summary><p><b>Análise:</b> ${esc(g[1])}</p></details>`).join('')}</div></section>
-      <section class="pt-lesson-section"><h3>Aplicação em leitura real</h3><p>${esc(lesson.application)}</p></section>
-      <div class="pt-lesson-summary"><h3>Resumo para guardar</h3><ul>${lesson.summary.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div>
-      ${reading?`<section class="pt-reading-preview"><span class="pt-q-tag">${esc(reading.sourceType)}</span><h3>${esc(reading.title)}</h3><p>${esc(reading.text.slice(0,900))}${reading.text.length>900?'…':''}</p><div class="muted small">${esc(reading.source)} · ${esc(reading.reference)}</div><div style="margin-top:8px"><button class="pt-day-reading-button" onclick="openDayReading(${day})">Abrir leitura completa + questões</button></div></section>`:''}
-      <div class="q-actions">
-        <button class="btn ${done?'':'green'}" onclick="completePtTheory(${day})">${done?'Teoria concluída ✓':'Marcar teoria como concluída'}</button>
-        <button class="btn primary" onclick="openPtIntegratedStage(1,${day},'post')">Questões depois →</button>
-      </div>
-    </article>
-   </div>
- </div>`;
-}
-function completePtTheory(day){
- const st=getPtOldState();st.theoryCompleted=st.theoryCompleted||{};st.theoryCompleted[String(day)]=true;savePtOldState(st);
- localStorage.setItem(ptDayKey(1,day,'theory'),'1');
- localStorage.setItem(ptWeekOpenKey(1),'1');
- localStorage.setItem(ptDayOpenKey(1,day),'1');
- renderAll();
- setTimeout(()=>openPtIntegratedStage(1,day,'theory'),0);
-}
-function renderPtWeek1Review(host){
- const theories=Object.values(PT_CONTENT.week1Theory||{});
- host.innerHTML=`<div class="pt-integrated">
-   <div class="pt-integrated-head"><div><b>Dia 7 · Revisão da Semana 1</b><br><small>Fechamento incorporado na Central</small></div><button class="pt-inline-close" onclick="closePtIntegrated(1,7)">✕ fechar</button></div>
-   <div class="pt-integrated-body">
-     <div class="pt-lesson">
-       ${theories.map((t,i)=>`<section class="pt-lesson-section"><h3>${i+1} · ${esc(t.title)}</h3><p><b>Regras-chave:</b></p><ul>${t.rules.map(x=>`<li>${esc(x)}</li>`).join('')}</ul><p><b>Pegadinhas:</b></p><ul>${t.traps.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></section>`).join('')}
-       <div class="q-actions"><button class="btn green" onclick="ptSetTask(1,7,'theory',true);openPtIntegratedStage(1,7,'post')">Concluir revisão e ir à parte 2 →</button></div>
-     </div>
-   </div>
- </div>`;
-}
-
-function ptFilterButtons(week,day){
- const r=getPtResources(week,day);
- return `<button class="btn sm" onclick="openPtSaved(${week},${day},'tec')">${r.tec?'Abrir TEC':'+ TEC'}</button>
-         <button class="btn sm" onclick="openPtSaved(${week},${day},'qc')">${r.qc?'Abrir QC':'+ QC'}</button>`;
-}
-
-const PT_IMAGE_DB='central-estudos-pt-images-v1';
-const PT_IMAGE_STORE='images';
-let ptImageDbPromise=null;
-
-function openPtImageDb(){
- if(ptImageDbPromise)return ptImageDbPromise;
- ptImageDbPromise=new Promise((resolve,reject)=>{
-   const req=indexedDB.open(PT_IMAGE_DB,1);
-   req.onupgradeneeded=()=>{
-     const db=req.result;
-     if(!db.objectStoreNames.contains(PT_IMAGE_STORE))db.createObjectStore(PT_IMAGE_STORE);
-   };
-   req.onsuccess=()=>resolve(req.result);
-   req.onerror=()=>reject(req.error);
- });
- return ptImageDbPromise;
-}
-async function putPtImage(id,file){
- const db=await openPtImageDb();
- return new Promise((resolve,reject)=>{
-   const tx=db.transaction(PT_IMAGE_STORE,'readwrite');
-   tx.objectStore(PT_IMAGE_STORE).put(file,id);
-   tx.oncomplete=()=>resolve();
-   tx.onerror=()=>reject(tx.error);
- });
-}
-async function getPtImage(id){
- if(!id)return null;
- const db=await openPtImageDb();
- return new Promise((resolve,reject)=>{
-   const tx=db.transaction(PT_IMAGE_STORE,'readonly');
-   const req=tx.objectStore(PT_IMAGE_STORE).get(id);
-   req.onsuccess=()=>resolve(req.result||null);
-   req.onerror=()=>reject(req.error);
- });
-}
-async function deletePtImage(id){
- if(!id)return;
- const db=await openPtImageDb();
- return new Promise((resolve,reject)=>{
-   const tx=db.transaction(PT_IMAGE_STORE,'readwrite');
-   tx.objectStore(PT_IMAGE_STORE).delete(id);
-   tx.oncomplete=()=>resolve();
-   tx.onerror=()=>reject(tx.error);
- });
-}
-function ptNotesKey(week,day){return `central-v6:pt-notes:${week}:${day}`}
-function getPtDayNotes(week,day){
- try{return JSON.parse(localStorage.getItem(ptNotesKey(week,day))||'[]')}catch(e){return []}
-}
-function savePtDayNotes(week,day,notes){localStorage.setItem(ptNotesKey(week,day),JSON.stringify(notes))}
-function ptSelectedImageName(week,day,input){
- const el=document.getElementById(`pt-note-file-name-${week}-${day}`);
- if(el)el.textContent=input.files?.[0]?`Imagem selecionada: ${input.files[0].name}`:'';
-}
-async function savePtDayNote(week,day){
- const textEl=document.getElementById(`pt-note-text-${week}-${day}`);
- const fileEl=document.getElementById(`pt-note-file-${week}-${day}`);
- const text=(textEl?.value||'').trim();
- const file=fileEl?.files?.[0]||null;
- if(!text&&!file){alert('Escreva uma anotação ou selecione uma imagem.');return}
- if(file && !file.type.startsWith('image/')){alert('Selecione um arquivo de imagem.');return}
- if(file && file.size>6*1024*1024){alert('A imagem deve ter no máximo 6 MB.');return}
-
- const noteId=Date.now();
- let imageId=null;
- if(file){
-   imageId=`pt-note-img-${week}-${day}-${noteId}`;
-   try{await putPtImage(imageId,file)}catch(e){alert('Não foi possível salvar a imagem neste navegador.');return}
- }
- const notes=getPtDayNotes(week,day);
- notes.unshift({id:noteId,text,imageId,at:new Date().toISOString()});
- savePtDayNotes(week,day,notes);
- if(textEl)textEl.value='';
- if(fileEl)fileEl.value='';
- renderSubjects();
- setTimeout(()=>hydratePtNoteImages(week,day),20);
-}
-async function deletePtDayNote(week,day,id){
- const notes=getPtDayNotes(week,day);
- const note=notes.find(n=>n.id===id);
- if(note?.imageId){try{await deletePtImage(note.imageId)}catch(e){}}
- savePtDayNotes(week,day,notes.filter(n=>n.id!==id));
- renderSubjects();
-}
-function renderPtNotes(week,day){
- const notes=getPtDayNotes(week,day);
- if(!notes.length)return '<div class="pt-note-empty">Nenhuma anotação neste dia.</div>';
- return notes.map(n=>`<article class="pt-note">
-   ${n.text?`<div class="pt-note-text">${esc(n.text)}</div>`:''}
-   ${n.imageId?`<div data-pt-note-image="${escAttr(n.imageId)}"><span class="muted small">Carregando imagem...</span></div>`:''}
-   <div class="pt-note-meta">${new Date(n.at).toLocaleString('pt-BR')}</div>
-   <div class="pt-note-actions"><button class="btn red sm" onclick="deletePtDayNote(${week},${day},${n.id})">Excluir</button></div>
- </article>`).join('');
-}
-async function hydratePtNoteImages(week=null,day=null){
- const nodes=[...document.querySelectorAll('[data-pt-note-image]')];
- for(const node of nodes){
-   if(node.dataset.loaded==='1')continue;
-   const id=node.getAttribute('data-pt-note-image');
-   try{
-     const blob=await getPtImage(id);
-     if(blob){
-       const url=URL.createObjectURL(blob);
-       node.innerHTML=`<img class="pt-note-image" src="${url}" alt="Imagem da anotação">`;
-       node.dataset.loaded='1';
-     }else{
-       node.innerHTML='<span class="muted small">Imagem não encontrada.</span>';
-     }
-   }catch(e){
-     node.innerHTML='<span class="muted small">Não foi possível carregar a imagem.</span>';
-   }
- }
-}
-
-
-/* Português é registrado pelo controlador leve carregado pela Central.
-   O runtime não mantém mais um segundo renderizador, iframes ou cadeia de módulos. */
-window.__PT_NATIVE_HOST__=true;
-window.__PT_NATIVE_MODULES__=[];
-function renderPortugueseMaster(){return '<div class="pt-native-placeholder" aria-live="polite"></div>';}
-window.__PT_NATIVE_RENDER__=renderPortugueseMaster;
-
-function ptMasterKey(){return 'central-v6:pt-master-panel'}
-function togglePtMasterPanel(panel){
- const current=localStorage.getItem(ptMasterKey())||'';
- localStorage.setItem(ptMasterKey(),current===panel?'':panel);
- renderSubjects();
- setTimeout(()=>hydratePtNoteImages(),0);
-}
-function closePtMasterPanel(){localStorage.setItem(ptMasterKey(),'');renderSubjects()}
-function renderPtMasterPanel(){
- const panel=localStorage.getItem(ptMasterKey())||'';
- if(!panel)return '';
- if(panel==='readings')return renderPtReadingsPanel();
- if(panel==='errors')return renderPtErrorsPanel();
- if(panel==='progress')return renderPtProgressPanel();
- if(panel==='library')return renderPtLibraryPanel();
- if(panel==='backup')return renderPtBackupPanel();
- return '';
-}
-function masterPanel(title,body){
- return `<section class="pt-master-panel">
-   <div class="pt-master-head"><h3>${title}</h3><button class="pt-inline-close" onclick="closePtMasterPanel()">✕ fechar</button></div>
-   <div class="pt-master-body">${body}</div>
- </section>`;
-}
-
-
-function renderPtReadingsPanel(){
- const body=`<div class="pt-reading-list">${(PT_CONTENT.week1Readings||[]).map(r=>renderFullReadingCard(r)).join('')}</div>`;
- return masterPanel('📖 Leituras completas da Semana 1',body);
-}
-function renderFullReadingCard(r){
- const state=getPtOldState();
- return `<article class="pt-reading-card" id="full-reading-${escAttr(r.id)}">
-   <div class="pt-reading-meta"><span class="pt-q-tag">Dia ${r.day}</span><span class="pt-q-tag">${esc(r.sourceType)}</span><span class="pt-q-tag">${esc(r.source)}</span></div>
-   <h3>${esc(r.title)}</h3>
-   <div class="muted small">${esc(r.reference)}</div>
-   <div class="pt-reading-text">${esc(r.text)}</div>
-   <section class="pt-reading-section"><h4>Tese central</h4><p>${esc(r.thesis)}</p></section>
-   <section class="pt-reading-section"><h4>Argumentos aproveitáveis</h4><ul>${(r.arguments||[]).map(x=>`<li>${esc(x)}</li>`).join('')}</ul></section>
-   <section class="pt-reading-section"><h4>Repertórios para redação</h4><ul>${(r.repertoires||[]).map(x=>`<li>${esc(x)}</li>`).join('')}</ul></section>
-   <section class="pt-reading-section"><h4>Exercício de escrita</h4><p>${esc(r.writingPrompt)}</p></section>
-   <section class="pt-reading-section"><h4>Questões da leitura</h4>${(r.questions||[]).map(q=>renderReadingQuestion(q,state)).join('')}</section>
- </article>`;
-}
-function renderReadingQuestion(q,state){
- const saved=state.answers?.[q.id];
- return `<div class="pt-reading-question">
-   <b>${esc(q.prompt)}</b>
-   <div class="pt-rq-options">${q.options.map((o,i)=>{
-      let cl='pt-rq-option';
-      if(saved && i===q.correctIndex)cl+=' correct';
-      if(saved && saved.selectedIndex===i && i!==q.correctIndex)cl+=' wrong';
-      return `<button class="${cl}" ${saved?'disabled':''} onclick="answerReadingQuestion('${escJs(q.id)}',${i})">${String.fromCharCode(65+i)}. ${esc(o)}</button>`;
-   }).join('')}</div>
-   ${saved?`<div class="pt-feedback ${saved.correct?'good':'bad'}"><b>${saved.correct?'Certo.':'Errado.'}</b> ${esc(q.explanation||'')}</div>`:''}
- </div>`;
-}
-function findPtQuestionById(id){
- for(const r of (PT_CONTENT.week1Readings||[])){
-   const q=(r.questions||[]).find(x=>x.id===id);if(q)return q;
- }
- for(const q of (PT_CONTENT.week1||[]))if(q.id===id)return q;
- for(const rep of (PT_CONTENT.repertoires||[])){
-   const q=(rep.questions||[]).find(x=>x.id===id);if(q)return q;
- }
- return null;
-}
-function answerReadingQuestion(id,selected){
- const q=findPtQuestionById(id);if(!q)return;
- if(getPtOldState().answers?.[id])return;
- ptAnswerRecord(q,selected,'central-reading');
- renderSubjects();
- localStorage.setItem(ptMasterKey(),'readings');
-}
-function openDayReading(day){
- localStorage.setItem(ptMasterKey(),'readings');
- renderSubjects();
- setTimeout(()=>document.getElementById(`full-reading-${(PT_CONTENT.week1Readings||[]).find(r=>Number(r.day)===Number(day))?.id}`)?.scrollIntoView({behavior:'smooth',block:'start'}),40);
-}
-
-
-function ptErrorsArray(){
- const st=getPtOldState();
- return Object.values(st.errors||{}).sort((a,b)=>String(b.lastAt||'').localeCompare(String(a.lastAt||'')));
-}
-function ptErrorCount(){return ptErrorsArray().filter(e=>!e.resolved).length}
-function renderPtErrorsPanel(){
- const errors=ptErrorsArray();
- const active=errors.filter(e=>!e.resolved),resolved=errors.filter(e=>e.resolved);
- const body=`<div class="summary" style="margin:0 0 10px">
-   <div class="sum"><small>Erros ativos</small><b>${active.length}</b></div>
-   <div class="sum"><small>Resolvidos</small><b>${resolved.length}</b></div>
- </div>
- ${errors.length?`<div class="pt-error-list">${errors.map(renderErrorCard).join('')}</div>`:'<div class="pt-empty-state">Nenhum erro registrado ainda. Quando você errar uma questão incorporada, ela aparecerá aqui automaticamente.</div>'}`;
- return masterPanel('⚠ Caderno de erros',body);
-}
-function renderErrorCard(e){
- return `<article class="pt-error-card ${e.resolved?'pt-error-resolved':''}">
-   <div class="pt-error-title">${esc(e.prompt||'Questão')}</div>
-   <div class="pt-error-meta">
-     <span class="pt-error-chip">${esc(e.topic||'Português')}</span>
-     ${e.subskill?`<span class="pt-error-chip">${esc(e.subskill)}</span>`:''}
-     ${e.errorType?`<span class="pt-error-chip">${esc(e.errorType)}</span>`:''}
-     <span class="pt-error-chip">Reincidência: ${Number(e.recurrence||1)}</span>
-     <span class="pt-error-chip">${e.resolved?'Resolvido':'Ativo'}</span>
-   </div>
-   <div class="pt-error-answer"><strong>Sua resposta:</strong> ${esc(e.selectedAnswer||'—')}</div>
-   <div class="pt-error-answer"><strong>Resposta correta:</strong> ${esc(e.correctAnswer||'—')}</div>
-   <div class="pt-error-explanation">${esc(e.explanation||'')}</div>
-   <div class="action-row">
-     <button class="btn sm ${e.resolved?'':'green'}" onclick="togglePtErrorResolved('${escJs(e.key)}')">${e.resolved?'Reabrir erro':'Marcar como resolvido'}</button>
-   </div>
- </article>`;
-}
-function togglePtErrorResolved(key){
- const st=getPtOldState();if(!st.errors?.[key])return;
- st.errors[key].resolved=!st.errors[key].resolved;
- st.errors[key].resolvedAt=st.errors[key].resolved?new Date().toISOString():null;
- savePtOldState(st);localStorage.setItem(ptMasterKey(),'errors');renderSubjects();
-}
-
-
-function ptInternalQuestionStats(){
- const st=getPtOldState();
- const all=[];
- (PT_CONTENT.week1||[]).forEach(q=>all.push(q));
- (PT_CONTENT.week1Readings||[]).forEach(r=>(r.questions||[]).forEach(q=>all.push(q)));
- const answered=all.filter(q=>st.answers?.[q.id]);
- const correct=answered.filter(q=>st.answers[q.id].correct);
- return {available:all.length,answered:answered.length,correct:correct.length,accuracy:answered.length?Math.round(correct.length/answered.length*1000)/10:0};
-}
-function renderPtProgressPanel(){
- const stats=ptInternalQuestionStats();
- const totalDays=PT_CONFIG.weeks.length*7;
- let doneDays=0;PT_CONFIG.weeks.forEach(w=>w.days.forEach(d=>{if(ptDayDone(w.week,d.day))doneDays++}));
- const theoryDone=Object.values(getPtOldState().theoryCompleted||{}).filter(Boolean).length;
- const body=`<div class="pt-progress-summary">
-   <div class="pt-progress-stat"><small>Dias concluídos</small><b>${doneDays}/${totalDays}</b></div>
-   <div class="pt-progress-stat"><small>Questões internas</small><b>${stats.answered}/${stats.available}</b></div>
-   <div class="pt-progress-stat"><small>Acerto interno</small><b>${stats.answered?stats.accuracy+'%':'—'}</b></div>
-   <div class="pt-progress-stat"><small>Erros ativos</small><b>${ptErrorCount()}</b></div>
- </div>
- <div class="pt-progress-list">${PT_CONFIG.weeks.map(w=>{
-   const st=ptWeekStats(w.week);return `<div class="pt-progress-card pt-progress-week">
-     <b>Semana ${w.week}</b>
-     <div class="pt-progress-weekbar"><span style="width:${st.pct}%"></span></div>
-     <span class="muted small">${st.done}/7</span>
-   </div>`;
- }).join('')}</div>
- <div class="notice" style="margin-top:10px">As questões dos filtros TEC/QC continuam contabilizadas separadamente. Este mapa mostra também o desempenho das questões internas incorporadas.</div>`;
- return masterPanel('📊 Mapa de progresso de Português',body);
-}
-
-
-function renderPtLibraryPanel(){
- const reps=PT_CONTENT.repertoires||[],cult=PT_CONTENT.culturalLibrary||[];
- const body=`<div class="resource-label">Repertórios argumentativos</div>
- <div class="pt-library-grid">${reps.map(r=>`<article class="pt-library-card">
-   <small>${esc(r.thinker||'')}</small><h3>${esc(r.title)}</h3>
-   <div class="pt-reading-text">${esc(r.text)}</div>
-   <div class="pt-reading-section"><h4>Como usar na redação</h4><p>${esc(r.writingUse||'')}</p></div>
-   <div class="pt-library-tags">${(r.themes||[]).map(x=>`<span>${esc(x)}</span>`).join('')}</div>
- </article>`).join('')}</div>
- <div class="resource-label" style="margin-top:15px">Biblioteca cultural</div>
- <div class="pt-library-grid">${cult.map(r=>`<article class="pt-library-card">
-   <small>${esc(r.category)} · ${esc(r.creator)}</small><h3>${esc(r.work)}</h3>
-   <div class="pt-reading-text">${esc(r.summary)}</div>
-   <div class="pt-reading-section"><h4>Ideia-chave</h4><p>${esc(r.keyIdea)}</p></div>
-   <div class="pt-reading-section"><h4>Uso em redação</h4><p>${esc(r.writingUse)}</p></div>
-   <div class="pt-library-tags">${(r.themes||[]).map(x=>`<span>${esc(x)}</span>`).join('')}</div>
- </article>`).join('')}</div>`;
- return masterPanel('🎓 Repertórios e biblioteca cultural',body);
-}
-
-
-function blobToDataUrl(blob){
- return new Promise((resolve,reject)=>{
-   const fr=new FileReader();fr.onload=()=>resolve(fr.result);fr.onerror=()=>reject(fr.error);fr.readAsDataURL(blob);
- });
-}
-function dataUrlToBlob(dataUrl){
- const [meta,b64]=String(dataUrl).split(',');
- const mime=(meta.match(/data:([^;]+)/)||[])[1]||'application/octet-stream';
- const bin=atob(b64||''),arr=new Uint8Array(bin.length);
- for(let i=0;i<bin.length;i++)arr[i]=bin.charCodeAt(i);
- return new Blob([arr],{type:mime});
-}
-async function buildPortugueseBackup(){
- const data={version:'central-portugues-v6.6',exportedAt:new Date().toISOString(),localStorage:{},images:[]};
- for(let i=0;i<localStorage.length;i++){
-   const k=localStorage.key(i);
-   if(k==='dominio_portugues_site_v01'||k.startsWith('central-v6:pt')||k.startsWith('central-v6:open:pt')){
-     data.localStorage[k]=localStorage.getItem(k);
-   }
- }
- const imageIds=new Set();
- Object.entries(data.localStorage).forEach(([k,v])=>{
-   if(!k.startsWith('central-v6:pt-notes:'))return;
-   try{(JSON.parse(v)||[]).forEach(n=>{if(n.imageId)imageIds.add(n.imageId)})}catch(e){}
- });
- for(const id of imageIds){
-   try{
-     const blob=await getPtImage(id);
-     if(blob)data.images.push({id,type:blob.type||'image/jpeg',dataUrl:await blobToDataUrl(blob)});
-   }catch(e){}
- }
- return data;
-}
-async function downloadPtBackup(){
- const data=await buildPortugueseBackup();
- const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});
- const url=URL.createObjectURL(blob),a=document.createElement('a');
- a.href=url;a.download=`backup-portugues-${todayISO()}.json`;a.click();
- setTimeout(()=>URL.revokeObjectURL(url),500);
-}
-function triggerPtRestore(){document.getElementById('pt-backup-file')?.click()}
-async function restorePtBackup(input){
- const file=input.files?.[0];if(!file)return;
- try{
-   const data=JSON.parse(await file.text());
-   if(!data.localStorage||typeof data.localStorage!=='object')throw new Error('Formato inválido');
-   Object.entries(data.localStorage).forEach(([k,v])=>localStorage.setItem(k,v));
-   for(const img of (data.images||[])){
-     if(img.id&&img.dataUrl){
-       try{await putPtImage(img.id,dataUrlToBlob(img.dataUrl))}catch(e){}
-     }
-   }
-   alert(`Backup de Português restaurado${(data.images||[]).length?` com ${(data.images||[]).length} imagem(ns)`:''}.`);
-   localStorage.setItem(ptMasterKey(),'backup');renderAll();
- }catch(e){alert('Não foi possível restaurar este arquivo de backup.')}
- input.value='';
-}
-function clearPortugueseProgress(){
- if(!confirm('Apagar o progresso de Português salvo nesta Central? Esta ação não pode ser desfeita sem backup.'))return;
- const keys=[];for(let i=0;i<localStorage.length;i++){const k=localStorage.key(i);if(k==='dominio_portugues_site_v01'||k.startsWith('central-v6:pt'))keys.push(k)}
- keys.forEach(k=>localStorage.removeItem(k));renderAll();
-}
-function renderPtBackupPanel(){
- const body=`<div class="pt-backup-actions">
-   <button class="btn primary" onclick="downloadPtBackup()">⬇ Exportar backup</button>
-   <button class="btn" onclick="triggerPtRestore()">⬆ Restaurar backup</button>
-   <input class="pt-file-hidden" id="pt-backup-file" type="file" accept=".json,application/json" onchange="restorePtBackup(this)">
- </div>
- <div class="pt-backup-note"><b>O que o backup preserva:</b> respostas, caderno de erros, teorias concluídas, semanas/dias, filtros TEC/QC, contadores, anotações em texto, revisões e configurações de Português.</div>
- <div class="pt-backup-note" style="margin-top:7px"><b>Imagens das anotações:</b> também são incluídas no backup e restauradas junto com os demais dados.</div>
- <div class="action-row"><button class="btn red sm" onclick="clearPortugueseProgress()">Apagar progresso de Português</button></div>`;
- return masterPanel('💾 Backup e restauração de Português',body);
-}
-
-function ptActiveWeekKey(){return 'central-v6:pt-active-week'}
-function setPtActiveWeek(week){
- const n=Math.max(1,Math.min(16,Number(week)||1));
- localStorage.setItem(ptActiveWeekKey(),String(n));
- localStorage.setItem(ptWeekOpenKey(n),'1');
- renderAll();
- setTimeout(()=>document.querySelector('.pt-study-nav')?.scrollIntoView({behavior:'smooth',block:'start'}),0);
-}
-function renderPortugueseWeeks(){
- const stored=Number(localStorage.getItem(ptActiveWeekKey())||1);
- const activeWeek=Math.max(1,Math.min(16,stored||1));
- const w=PT_CONFIG.weeks.find(x=>x.week===activeWeek)||PT_CONFIG.weeks[0];
- const rememberedOpenDays=w.days.filter(d=>localStorage.getItem(ptDayOpenKey(w.week,d.day))==='1');
- if(rememberedOpenDays.length>1)rememberedOpenDays.slice(1).forEach(d=>localStorage.setItem(ptDayOpenKey(w.week,d.day),'0'));
- const st=ptWeekStats(w.week);
- const phases=[
-   {id:'grammar',title:'1 · Gramática e sintaxe',subtitle:'Semanas 1–8',from:1,to:8},
-   {id:'text',title:'2 · Texto e interpretação',subtitle:'Semanas 9–12',from:9,to:12},
-   {id:'writing',title:'3 · Redação',subtitle:'Semanas 13–16',from:13,to:16}
- ];
- const phase=phases.find(p=>activeWeek>=p.from&&activeWeek<=p.to)||phases[0];
- const phaseWeeks=PT_CONFIG.weeks.filter(x=>x.week>=phase.from&&x.week<=phase.to);
- const prev=activeWeek>1?activeWeek-1:null,next=activeWeek<16?activeWeek+1:null;
- return `<div class="pt-study-shell">
-   <section class="pt-study-nav">
-     <div class="pt-study-nav-head">
-       <div><span class="pt-study-kicker">ROTEIRO DE ESTUDO</span><h3>Português dividido por etapas</h3><p>Escolha a fase, depois a semana e abra somente o dia que vai estudar.</p></div>
-       <div class="pt-study-current"><small>Agora</small><b>Semana ${activeWeek}</b><span>${st.pct}% concluída</span></div>
-     </div>
-     <div class="pt-phase-tabs">${phases.map(p=>`<button class="${phase.id===p.id?'active':''}" onclick="setPtActiveWeek(${p.from})"><b>${p.title}</b><small>${p.subtitle}</small></button>`).join('')}</div>
-     <div class="pt-week-tabs">${phaseWeeks.map(x=>{const s=ptWeekStats(x.week);return `<button class="${x.week===activeWeek?'active':''}" onclick="setPtActiveWeek(${x.week})"><span>S${x.week}</span><small>${s.pct}%</small></button>`}).join('')}</div>
-   </section>
-
-   <section class="pt-week pt-week-focus open" data-week="${w.week}">
-     <div class="pt-focus-head">
-       <button class="pt-focus-arrow" ${prev?'':'disabled'} onclick="${prev?`setPtActiveWeek(${prev})`:''}" aria-label="Semana anterior">←</button>
-       <div class="pt-focus-title"><span>SEMANA ${w.week}</span><h3>${esc(w.title)}</h3><small>${st.done}/7 dias concluídos · ${ptWeekFilterStats(w.week).made} questões externas registradas</small></div>
-       <button class="pt-focus-arrow" ${next?'':'disabled'} onclick="${next?`setPtActiveWeek(${next})`:''}" aria-label="Próxima semana">→</button>
-     </div>
-     <div class="pt-week-body">
-       <div class="pt-week-bar"><span style="width:${st.pct}%"></span></div>
-       <div class="pt-week-guide"><b>Fluxo:</b> abra um dia → faça as questões iniciais → estude a teoria → faça as questões depois. Os materiais extras ficam recolhidos no fim do dia.</div>
-       ${typeof window.tecContextPanel==='function'?window.tecContextPanel('pt-w'+w.week,'Cadernos TEC desta semana'):''}
-       ${w.days.map(d=>renderPortugueseDay(w,d)).join('')}
-     </div>
-   </section>
- </div>`;
-}
-function renderPortugueseDay(w,d){
- const progress=ptDayProgress(w.week,d.day);
- const open=localStorage.getItem(ptDayOpenKey(w.week,d.day))==='1';
- const r=getPtResources(w.week,d.day);
- const isReal=w.week===1;
- const autoPre=ptAutoTaskDone(w.week,d.day,'pre'),autoTheory=ptAutoTaskDone(w.week,d.day,'theory'),autoPost=ptAutoTaskDone(w.week,d.day,'post');
- const theoryDesc=isReal && d.day<=6 ? d.title : (isReal ? 'Teste final e revisão da semana' : `Conteúdo planejado: ${w.title}`);
- return `<div class="pt-day ${open?'open':''}" data-daykey="${w.week}-${d.day}">
-   <button class="pt-day-head" onclick="togglePtDay(${w.week},${d.day})">
-     <span class="pt-day-label">DIA ${d.day}</span>
-     <span class="pt-day-title">${esc(d.title)}</span>
-     <span class="pt-day-status">${progress}/3 etapas • ${ptDayFilterStats(w.week,d.day).made} feitas · ${ptDayFilterStats(w.week,d.day).correct} certas</span>
-     <span class="chev">⌄</span>
-   </button>
-   <div class="pt-day-body">
-     <div class="pt-day-route-title"><span>ROTEIRO PRINCIPAL</span><small>Conclua na ordem 1 → 2 → 3</small></div>
-     <div class="pt-flow">
-       ${renderPtStep(w.week,d.day,'pre','1 · Questões iniciais','Tente antes de receber a teoria.',autoPre,
-         isReal?`openPortugueseReal(${w.week},${d.day},'pre')`:`openPtSaved(${w.week},${d.day},'tec')`,
-         isReal?'Abrir aqui':'Abrir filtro')}
-       ${renderPtStep(w.week,d.day,'theory','2 · Teoria',theoryDesc,autoTheory,
-         `openPortugueseReal(${w.week},${d.day},'theory')`,
-         isReal?'Abrir aqui':'Ver planejamento')}
-       ${renderPtStep(w.week,d.day,'post','3 · Questões depois','Aplicar o conteúdo depois da teoria.',autoPost,
-         isReal?`openPortugueseReal(${w.week},${d.day},'post')`:`openPtSaved(${w.week},${d.day},'tec')`,
-         isReal?'Abrir aqui':'Abrir filtro')}
-     </div>
-
-     <div id="pt-integrated-${w.week}-${d.day}"></div>
-
-     <details class="pt-support-panel">
-       <summary><div><b>Materiais e registros do dia</b><small>Vídeo · filtros TEC/QC · leitura · anotações</small></div><span>⌄</span></summary>
-       <div class="pt-support-body">
-         <div class="pt-resources">
-           <div class="pt-resource">
-             <h4>Vídeo do YouTube</h4>
-             ${r.youtube?`<a class="pt-video-link" href="${escAttr(safeUrl(r.youtube))}" target="_blank" rel="noopener">▶ ${esc(r.youtubeTitle||'Videoaula')}</a>`:'<div class="muted small">Nenhum vídeo adicionado.</div>'}
-             <div class="pt-resource-actions"><button class="btn sm" onclick="editPtLink(${w.week},${d.day},'youtube')">${r.youtube?'Trocar vídeo':'+ Adicionar vídeo'}</button></div>
-           </div>
-
-           <div class="pt-resource">
-             <h4>Filtros de questões</h4>
-             <div class="pt-filter-source">
-               <div class="pt-filter-top"><span><b>TEC Concursos</b></span><div class="pt-resource-actions"><button class="btn sm" onclick="openPtSaved(${w.week},${d.day},'tec')">${r.tec?'Abrir filtro':'+ Adicionar filtro'}</button></div></div>
-               <div class="pt-filter-count"><label>Feitas</label><input type="number" min="0" value="${getPtFilterStats(w.week,d.day,'tec').made||''}" placeholder="0" onchange="setPtFilterMetric(${w.week},${d.day},'tec','made',this.value)"></div>
-               <div class="pt-filter-count"><label>Certas</label><input type="number" min="0" value="${getPtFilterStats(w.week,d.day,'tec').correct||''}" placeholder="0" onchange="setPtFilterMetric(${w.week},${d.day},'tec','correct',this.value)"></div>
-               <div class="pt-hint">${getPtFilterStats(w.week,d.day,'tec').made?`${getPtFilterStats(w.week,d.day,'tec').wrong} erradas · ${getPtFilterStats(w.week,d.day,'tec').accuracy}%`:'Sem registro'}</div>
-             </div>
-             <div class="pt-filter-source">
-               <div class="pt-filter-top"><span><b>QConcursos</b></span><div class="pt-resource-actions"><button class="btn sm" onclick="openPtSaved(${w.week},${d.day},'qc')">${r.qc?'Abrir filtro':'+ Adicionar filtro'}</button></div></div>
-               <div class="pt-filter-count"><label>Feitas</label><input type="number" min="0" value="${getPtFilterStats(w.week,d.day,'qc').made||''}" placeholder="0" onchange="setPtFilterMetric(${w.week},${d.day},'qc','made',this.value)"></div>
-               <div class="pt-filter-count"><label>Certas</label><input type="number" min="0" value="${getPtFilterStats(w.week,d.day,'qc').correct||''}" placeholder="0" onchange="setPtFilterMetric(${w.week},${d.day},'qc','correct',this.value)"></div>
-               <div class="pt-hint">${getPtFilterStats(w.week,d.day,'qc').made?`${getPtFilterStats(w.week,d.day,'qc').wrong} erradas · ${getPtFilterStats(w.week,d.day,'qc').accuracy}%`:'Sem registro'}</div>
-             </div>
-           </div>
-         </div>
-
-         <div class="pt-day-total"><span>TEC/QC no dia</span><b>${ptDayFilterStats(w.week,d.day).made} feitas · ${ptDayFilterStats(w.week,d.day).correct} certas · ${ptDayFilterStats(w.week,d.day).wrong} erradas · ${ptDayFilterStats(w.week,d.day).made?ptDayFilterStats(w.week,d.day).accuracy+'%':'—'}</b></div>
-
-         ${isReal?`<div style="margin-top:8px"><button class="pt-day-reading-button" onclick="openDayReading(${d.day})">📖 Abrir leitura completa do Dia ${d.day}</button></div>`:''}
-
-         <section class="pt-notes">
-           <div class="resource-label">Anotações do dia</div>
-           <div class="pt-note-compose">
-             <div><textarea id="pt-note-text-${w.week}-${d.day}" placeholder="Anote uma regra, dúvida, pegadinha, exemplo..."></textarea><div class="pt-note-selected" id="pt-note-file-name-${w.week}-${d.day}"></div></div>
-             <div><input class="pt-note-image-input" id="pt-note-file-${w.week}-${d.day}" type="file" accept="image/*" onchange="ptSelectedImageName(${w.week},${d.day},this)"><label class="pt-note-image-label" for="pt-note-file-${w.week}-${d.day}">🖼 Adicionar imagem</label><button class="btn primary sm" style="display:block;margin-top:6px;width:100%" onclick="savePtDayNote(${w.week},${d.day})">Salvar anotação</button></div>
-           </div>
-           <div class="pt-note-list">${renderPtNotes(w.week,d.day)}</div>
-         </section>
-
-         ${isReal?`<div class="pt-hint" style="margin-top:9px">Semana 1: questões, teoria e leituras disponíveis dentro da Central.</div>`:`<div class="pt-hint" style="margin-top:9px"><span class="pt-planned">PLANEJADA</span> A estrutura deste dia já está pronta; o conteúdo interno desta semana ainda será alimentado no módulo de Português.</div>`}
-       </div>
-     </details>
-   </div>
- </div>`;
-}
-function renderPtStep(week,day,kind,title,desc,autoDone,action,label){
- const done=ptTaskDone(week,day,kind);
- return `<div class="pt-step ${done?'done':''}">
-   <input type="checkbox" ${done?'checked':''} ${autoDone?'disabled title="Concluído no conteúdo incorporado de Português"':''} onchange="ptSetTask(${week},${day},'${kind}',this.checked)">
-   <div>
-     <b>${title}${autoDone?' • salvo':''}</b>
-     <small>${esc(desc)}</small>
-   </div>
-   <button class="btn sm" onclick="${action}">${label}</button>
- </div>`;
-}
 
 function renderTopic(s,t){
  const done=goalDone(t.uid),r=getResources(t.uid),stats=t.sourceStats;
@@ -5698,7 +4820,7 @@ function getAgenda(d){
   catch(e){console.warn('Agenda armazenada inválida; registro ignorado',e);try{localStorage.removeItem(k)}catch(_){}}
  }
  if(d===todayISO()){
-  const a=[{id:1,time:'06:40',discipline:'Direito Constitucional',task:'Continuar módulo atual',done:false},{id:2,time:'07:20',discipline:'Anki',task:'Revisar baralhos pendentes',done:false},{id:3,time:'19:30',discipline:'Português',task:'Continuar semana atual',done:false}];
+  const a=[{id:1,time:'06:40',discipline:'Direito Constitucional',task:'Continuar módulo atual',done:false},{id:2,time:'07:20',discipline:'Anki',task:'Revisar baralhos pendentes',done:false}];
   try{saveAgenda(d,a)}catch(_){}return a
  }
  return []
@@ -5721,8 +4843,8 @@ function renderSummary(){
  let total=0,done=0;
  SUBJECTS.forEach(s=>{const st=subjStats(s);total+=st.total;done+=st.done});
  const p=allPerf(),manualQ=p.reduce((a,x)=>a+x.q,0),manualC=p.reduce((a,x)=>a+x.c,0);
- const pt=ptAllFilterStats(),cf=cfStats();
- const q=manualQ+pt.made+cf.answered,correct=manualC+pt.correct+cf.correct;
+ const cf=cfStats();
+ const q=manualQ+cf.answered,correct=manualC+cf.correct;
  const g=$('sumGoals'),sq=$('sumQ'),sa=$('sumAcc'),sr=$('sumRev');
  if(g)g.textContent=`${done}/${total}`;
  if(sq)sq.textContent=q;
@@ -5737,10 +4859,10 @@ function renderDisciplineGrid(){
  if(!list.length){host.innerHTML='<div class="card" style="padding:18px"><b>Disciplinas</b><div class="muted small" style="margin-top:7px">O conteúdo ainda está terminando de carregar. Toque novamente em Disciplinas.</div></div>';return}
  host.innerHTML=list.map(s=>{
   try{
-   let st;try{st=subjStats(s)}catch(err){st={done:0,total:(s.id==='pt'?112:(s.topics?.length||0)),pct:0}}
+   let st;try{st=subjStats(s)}catch(err){st={done:0,total:(s.topics?.length||0),pct:0}}
    const cards=(s.topics||[]).reduce((a,t)=>a+(t.sourceStats?.cards||0),0),guided=['cf','civil','penal','cpc'].includes(s.id);
-   const desc=s.id==='pt'?'16 semanas • 7 dias por semana':guided?`${s.topics.length} módulos • curso integrado`:s.id==='rlm'?'9 módulos teóricos • cálculo rápido • 200 FCC':(s.id==='trab'||s.id==='ptra')?`${s.topics.length} aulas • Mentoria AJAJ`:`${s.topics.length} tópicos reais recuperados`;
-   const unit=s.id==='pt'?'dias':guided?'módulos':s.id==='rlm'?'itens':(s.id==='trab'||s.id==='ptra')?'aulas':'tópicos';
+   const desc=guided?`${s.topics.length} módulos • curso integrado`:s.id==='rlm'?'9 módulos teóricos • cálculo rápido • 200 FCC':(s.id==='trab'||s.id==='ptra')?`${s.topics.length} aulas • Mentoria AJAJ`:`${s.topics.length} tópicos reais recuperados`;
+   const unit=guided?'módulos':s.id==='rlm'?'itens':(s.id==='trab'||s.id==='ptra')?'aulas':'tópicos';
    return `<button type="button" class="disc-card" data-id="${escAttr(s.id)}" onclick="return jumpSubject('${escJs(s.id)}')"><b>${esc(s.name)}</b><small>${esc(desc)}</small><span class="disc-meta">${Number(st.done)||0}/${Number(st.total)||0} ${unit} · ${Number(st.pct)||0}%${!guided&&s.id!=='rlm'&&cards?' · '+cards+' cards':''}</span></button>`
   }catch(e){console.warn('Falha em cartão de disciplina',s?.id,e);return ''}
  }).join('')
@@ -5761,7 +4883,6 @@ function jumpSubject(id){
 }
 function renderAll(){
  renderHomeAgenda();renderSubjects();renderContinue();renderSummary();
- setTimeout(()=>hydratePtNoteImages(),0);
 }
 
 function esc(v){return String(v??'').replace(/[&<>"']/g,s=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[s]))}
