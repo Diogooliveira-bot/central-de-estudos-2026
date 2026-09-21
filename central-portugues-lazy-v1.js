@@ -130,7 +130,7 @@ function fetchText(path){
 }
 function isInjectedHostScript(script){
  var raw=script&&script.getAttribute?script.getAttribute('src')||'':'';
- return /(?:^|\\/)_next-live\\//i.test(raw)||/vercel\\.live/i.test(raw)||/feedback\\/feedback\\.js/i.test(raw);
+ return raw.indexOf('_next-live/')>=0||raw.indexOf('vercel.live')>=0||raw.indexOf('feedback/feedback.js')>=0;
 }
 function versionedAsset(src){
  var key=assetName(src);
