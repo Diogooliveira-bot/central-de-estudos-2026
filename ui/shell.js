@@ -171,6 +171,32 @@
       if(!control.id)control.id='bc-field-'+index;
       if(!label.htmlFor)label.htmlFor=control.id;
     });
+    document.querySelectorAll('#tecHistCard label').forEach(function(label,index){
+      if(label.htmlFor)return;
+      var host=label.parentElement;
+      var control=host&&host.querySelector('input,select,textarea');
+      if(!control)return;
+      if(!control.id)control.id='bc-tec-field-'+index;
+      label.htmlFor=control.id;
+    });
+    var named={
+      tecBusca:'Pesquisar cadernos TEC',
+      tecMateria:'Filtrar cadernos por matéria'
+    };
+    Object.keys(named).forEach(function(id){
+      var el=document.getElementById(id);
+      if(el&&!el.getAttribute('aria-label'))el.setAttribute('aria-label',named[id]);
+    });
+    document.querySelectorAll('.tr-dt').forEach(function(el){if(!el.getAttribute('aria-label'))el.setAttribute('aria-label','Data do registro')});
+    document.querySelectorAll('.tr-f').forEach(function(el){if(!el.getAttribute('aria-label'))el.setAttribute('aria-label','Questões feitas')});
+    document.querySelectorAll('.tr-a').forEach(function(el){if(!el.getAttribute('aria-label'))el.setAttribute('aria-label','Acertos')});
+    document.querySelectorAll('.trl-del').forEach(function(btn){
+      if(!btn.getAttribute('aria-label'))btn.setAttribute('aria-label','Excluir registro');
+      if(!btn.title)btn.title='Excluir registro';
+    });
+    document.querySelectorAll('.central-theme-option').forEach(function(btn){
+      btn.setAttribute('aria-pressed',btn.classList.contains('active')?'true':'false');
+    });
   }
 
   function enhanceCheckboxTargets(){
