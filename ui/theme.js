@@ -4,6 +4,10 @@
   if(window.__bcThemeV1)return;window.__bcThemeV1=true;
   var media=window.matchMedia?window.matchMedia('(prefers-color-scheme: dark)'):null;
   function requested(){
+    try{
+      var saved=typeof window.centralThemeMode==='function'?String(window.centralThemeMode()||'').toLowerCase():'';
+      if(saved==='oled'||saved==='dark'||saved==='light'||saved==='system')return saved;
+    }catch(_){}
     var root=document.documentElement;
     var value=(root.getAttribute('data-central-theme')||root.getAttribute('data-theme')||'').toLowerCase();
     if(value==='oled'||value==='dark'||value==='light'||value==='system')return value;
