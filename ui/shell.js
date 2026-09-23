@@ -28,6 +28,9 @@
     addAll(root,'.central-settings-close',['bc-button','bc-icon-button','bc-button--ghost']);
     addAll(root,'.tec-toolbar input,.tec-toolbar select',['bc-input']);
     var crumb=document.getElementById('crumb');if(crumb)crumb.classList.add('bc-breadcrumb');
+    var perfSummary=document.querySelector('#performanceView .summary');if(perfSummary){perfSummary.classList.add('bc-stat-strip');perfSummary.querySelectorAll('.sum').forEach(function(el){el.classList.add('bc-stat')})}
+    var tecSummary=document.querySelector('#tecHistCard .summary');if(tecSummary){tecSummary.classList.add('bc-stat-strip');tecSummary.querySelectorAll('.sum').forEach(function(el){el.classList.add('bc-stat')})}
+    addAll(root,'.tec-empty,#agendaEditor>.muted.small',['bc-empty-state']);
     document.querySelectorAll('.nav button').forEach(function(btn){
       if(btn.classList.contains('active'))btn.setAttribute('aria-current','page');else btn.removeAttribute('aria-current');
     });
