@@ -32,9 +32,9 @@
   }
   function enhanceBrand(){
     var icon=document.querySelector('.brand-icon'),name=document.querySelector('.brand b'),sub=document.querySelector('.brand small');
-    if(icon){icon.textContent='BC';icon.setAttribute('aria-label','Base Completa')}
-    if(name)name.textContent='BASE COMPLETA';
-    if(sub)sub.textContent='Estude. Revise. Evolua.';
+    if(icon){if(icon.textContent!=='BC')icon.textContent='BC';icon.setAttribute('aria-label','Base Completa')}
+    if(name&&name.textContent!=='BASE COMPLETA')name.textContent='BASE COMPLETA';
+    if(sub&&sub.textContent!=='Estude. Revise. Evolua.')sub.textContent='Estude. Revise. Evolua.';
   }
   function enhanceHome(){
     var home=document.getElementById('homeView');if(!home)return;
