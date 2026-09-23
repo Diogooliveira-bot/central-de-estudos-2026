@@ -319,3 +319,36 @@ html.bc-ui-v1 :is(
   html.bc-ui-v1 .central-settings-body{padding:16px!important}
   html.bc-ui-v1 .central-theme-options{grid-template-columns:repeat(2,minmax(0,1fr))!important}
 }
+
+
+/* HOTFIX PRODUÇÃO — restaura rolagem das views normais sem afetar módulos/iframes */
+html.bc-ui-v1 body{
+  overflow-x:hidden!important;
+  overflow-y:auto!important;
+}
+html.bc-ui-v1 .app{
+  overflow:visible!important;
+}
+html.bc-ui-v1 .shell{
+  height:auto!important;
+  min-height:100dvh!important;
+  overflow:visible!important;
+}
+html.bc-ui-v1 .workspace{
+  height:auto!important;
+  min-height:calc(100dvh - var(--bc-topbar-height))!important;
+  overflow:visible!important;
+}
+html.bc-ui-v1 .workspace>.view:not(.module-view):not(#ankiView){
+  height:auto!important;
+  min-height:calc(100dvh - var(--bc-topbar-height))!important;
+  overflow:visible!important;
+}
+@media(max-width:1023px){
+  html.bc-ui-v1 .workspace{
+    min-height:calc(100dvh - var(--bc-topbar-mobile-height))!important;
+  }
+  html.bc-ui-v1 .workspace>.view:not(.module-view):not(#ankiView){
+    min-height:calc(100dvh - var(--bc-topbar-mobile-height))!important;
+  }
+}
