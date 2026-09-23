@@ -52,12 +52,20 @@ html.bc-ui-v1 .bc-page-header>div:first-child{min-width:0}
 
 @media(min-width:1024px) and (max-width:1439px){
   html.bc-ui-v1 .app:not(.sidebar-expanded-manual){grid-template-columns:var(--bc-sidebar-compact) minmax(0,1fr)}
+  html.bc-ui-v1 .app:not(.sidebar-expanded-manual) .brand-copy,
+  html.bc-ui-v1 .app:not(.sidebar-expanded-manual) .nav .label,
+  html.bc-ui-v1 .app:not(.sidebar-expanded-manual) .nav-text{display:none}
+  html.bc-ui-v1 .app:not(.sidebar-expanded-manual) .brand{justify-content:center}
+  html.bc-ui-v1 .app:not(.sidebar-expanded-manual) .nav button{justify-content:center;padding-inline:0!important}
   html.bc-ui-v1 .view{padding:32px 28px 56px}
   html.bc-ui-v1 .bc-grid-3{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 @media(min-width:640px) and (max-width:1023px){
-  html.bc-ui-v1 .app{grid-template-columns:var(--bc-sidebar-compact) minmax(0,1fr)}
-  html.bc-ui-v1 #centralSidebar{padding:16px 8px}
+  html.bc-ui-v1 .app{display:grid;grid-template-columns:var(--bc-sidebar-compact) minmax(0,1fr)}
+  html.bc-ui-v1 #centralSidebar{display:block;padding:16px 8px}
+  html.bc-ui-v1 .brand{justify-content:center}
+  html.bc-ui-v1 .brand-copy,html.bc-ui-v1 .nav .label,html.bc-ui-v1 .nav-text{display:none}
+  html.bc-ui-v1 .nav button{justify-content:center;padding-inline:0!important}
   html.bc-ui-v1 .view{padding:28px 24px 56px}
   html.bc-ui-v1 .bc-grid-2{grid-template-columns:1fr}
   html.bc-ui-v1 .bc-grid-3{grid-template-columns:repeat(2,minmax(0,1fr))}
