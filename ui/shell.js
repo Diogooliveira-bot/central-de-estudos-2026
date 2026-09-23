@@ -4,6 +4,7 @@
   if(window.__bcShellV1)return;window.__bcShellV1=true;
   var scheduled=false,observer=null;
 
+  function icon(path){return '<svg class="bc-ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="'+path+'"/></svg>'}
   function addAll(root,selector,classes){
     if(!root.querySelectorAll)return;
     root.querySelectorAll(selector).forEach(function(el){classes.forEach(function(c){el.classList.add(c)})});
@@ -34,6 +35,20 @@
       var head=item.querySelector('.subject-head,.cf-module-head');if(head)head.setAttribute('aria-expanded',item.classList.contains('open')?'true':'false');
     });
   }
+  function enhanceIcons(){
+    var toggle=document.querySelector('.sidebar-toggle');
+    if(toggle&&!toggle.dataset.bcIcon){toggle.dataset.bcIcon='1';toggle.innerHTML=icon('m15 18-6-6 6-6')}
+    var menu=document.getElementById('mobileMenuBtn');
+    if(menu&&!menu.dataset.bcIcon){menu.dataset.bcIcon='1';menu.innerHTML=icon('M4 7h16M4 12h16M4 17h16')}
+    document.querySelectorAll('.nav-icon.nav-badge').forEach(function(box){
+      if(box.dataset.bcIcon)return;
+      var label=(box.closest('button')?.querySelector('.nav-text')?.textContent||'').trim();
+      if(/Anki/i.test(label))box.innerHTML=icon('M6 4h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2M8 9h8M8 13h6');
+      else if(/TEC/i.test(label))box.innerHTML=icon('M6 3h8l4 4v14H6V3M14 3v5h5M9 12h6M9 16h6');
+      box.dataset.bcIcon='1';
+    });
+  }
+
   function enhanceBrand(){
     var icon=document.querySelector('.brand-icon'),name=document.querySelector('.brand b'),sub=document.querySelector('.brand small');
     if(icon){if(icon.textContent!=='BC')icon.textContent='BC';icon.setAttribute('aria-label','Base Completa')}
@@ -58,11 +73,11 @@
     if(!shell||shell.querySelector('.bc-tec-tabs'))return;
     var hero=shell.querySelector('.hero');
     var tabs=document.createElement('div');tabs.className='bc-tabs bc-tec-tabs';tabs.setAttribute('role','tablist');
-    tabs.innerHTML='<button type="button" class="bc-tab active" role="tab" aria-selected="true" data-bc-tec-tab="list">Cadernos</button><button type="button" class="bc-tab" role="tab" aria-selected="false" data-bc-tec-tab="register">Registro</button>';
+    tabs.innerHTML='<button id="bcTecTabList" type="button" class="bc-tab active" role="tab" aria-selected="true" aria-controls="bcTecListPanel" data-bc-tec-tab="list">Cadernos</button><button id="bcTecTabRegister" type="button" class="bc-tab" role="tab" aria-selected="false" aria-controls="bcTecRegisterPanel" data-bc-tec-tab="register">Registro</button>';
     if(hero&&hero.nextSibling)shell.insertBefore(tabs,hero.nextSibling);else if(hero)shell.appendChild(tabs);else shell.insertBefore(tabs,shell.firstChild);
 
-    var list=document.createElement('div');list.className='bc-tab-panel';list.id='bcTecListPanel';list.setAttribute('role','tabpanel');
-    var register=document.createElement('div');register.className='bc-tab-panel';register.id='bcTecRegisterPanel';register.setAttribute('role','tabpanel');register.hidden=true;
+    var list=document.createElement('div');list.className='bc-tab-panel';list.id='bcTecListPanel';list.setAttribute('role','tabpanel');list.setAttribute('aria-labelledby','bcTecTabList');
+    var register=document.createElement('div');register.className='bc-tab-panel';register.id='bcTecRegisterPanel';register.setAttribute('role','tabpanel');register.setAttribute('aria-labelledby','bcTecTabRegister');register.hidden=true;
     var summary=shell.querySelector('.tec-summary'),overview=document.getElementById('tecVisaoGeral'),history=document.getElementById('tecHistCard'),toolbar=shell.querySelector('.tec-toolbar'),groups=document.getElementById('tecCadernosLista');
     [summary,overview,toolbar,groups].forEach(function(el){if(el)list.appendChild(el)});
     if(history)register.appendChild(history);
@@ -80,6 +95,34 @@
       });
     }
     tabs.addEventListener('click',function(e){var btn=e.target.closest('[data-bc-tec-tab]');if(btn)activate(btn.getAttribute('data-bc-tec-tab'))});
+    tabs.addEventListener('keydown',function(e){
+      if(e.key!=='ArrowLeft'&&e.key!=='ArrowRight')return;
+      var buttons=Array.from(tabs.querySelectorAll('[data-bc-tec-tab]')),current=buttons.indexOf(document.activeElement);
+      if(current<0)return;e.preventDefault();
+      var next=e.key==='ArrowRight'?(current+1)%buttons.length:(current-1+buttons.length)%buttons.length;
+      buttons[next].focus();activate(buttons[next].getAttribute('data-bc-tec-tab'));
+    });
+  }
+
+  function enhanceModal(){
+    var backdrop=document.getElementById('centralSettingsBackdrop');if(!backdrop||backdrop.dataset.bcModalBound)return;
+    backdrop.dataset.bcModalBound='1';var lastFocus=null;
+    function open(){return !backdrop.classList.contains('hidden')}
+    var obs=new MutationObserver(function(){
+      if(open()){lastFocus=document.activeElement;var close=backdrop.querySelector('.central-settings-close');if(close)setTimeout(function(){close.focus()},0)}
+      else if(lastFocus&&typeof lastFocus.focus==='function'){setTimeout(function(){try{lastFocus.focus()}catch(_){}},0)}
+    });
+    obs.observe(backdrop,{attributes:true,attributeFilter:['class']});
+    document.addEventListener('keydown',function(e){
+      if(!open())return;
+      if(e.key==='Escape'&&typeof window.closeCentralSettings==='function'){e.preventDefault();window.closeCentralSettings();return}
+      if(e.key!=='Tab')return;
+      var focusable=Array.from(backdrop.querySelectorAll('button:not([disabled]),input:not([disabled]),select:not([disabled]),textarea:not([disabled]),a[href],[tabindex]:not([tabindex="-1"])')).filter(function(el){return !el.classList.contains('hidden')});
+      if(!focusable.length)return;
+      var first=focusable[0],last=focusable[focusable.length-1];
+      if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}
+      else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}
+    });
   }
 
   function enhanceReturns(){
@@ -111,7 +154,7 @@
     scheduled=false;
     document.documentElement.classList.add('bc-ui-v1');
     if(document.body)document.body.classList.add('bc-ui-v1');
-    enhanceBrand();mapComponents(document);enhanceHome();enhanceTec();enhanceReturns();improveLabels();
+    enhanceBrand();enhanceIcons();mapComponents(document);enhanceHome();enhanceTec();enhanceReturns();enhanceModal();improveLabels();
   }
   function schedule(){if(scheduled)return;scheduled=true;requestAnimationFrame(refresh)}
   function init(){
