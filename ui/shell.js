@@ -109,6 +109,60 @@
     });
   }
 
+  function enhancePolishIcons(){
+    var calendarButton=document.querySelector('#homeView .schedule-intro .btn.primary');
+    if(calendarButton&&!calendarButton.dataset.bcPolishIcon){
+      calendarButton.dataset.bcPolishIcon='1';
+      calendarButton.innerHTML=icon('M7 3v3M17 3v3M4 9h16M5 5h14a1 1 0 0 1 1 1v13H4V6a1 1 0 0 1 1-1')+'<span>Abrir Cronograma de Estudos</span>';
+    }
+
+    var themeIcons={
+      light:'M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6 1.4 1.4M17 17l1.4 1.4M18.4 5.6 17 7M7 17l-1.4 1.4M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8',
+      dark:'M20 15.5A8 8 0 0 1 8.5 4 8 8 0 1 0 11 20a8 8 0 0 0 9-4.5',
+      oled:'M6 5h12v14H6z',
+      system:'M4 5h16v12H4zM8 21h8M12 17v4'
+    };
+    document.querySelectorAll('.central-theme-option').forEach(function(btn){
+      if(btn.dataset.bcPolishIcon)return;
+      var choice=btn.getAttribute('data-central-theme-choice');
+      var span=btn.querySelector('span');
+      if(span&&themeIcons[choice]){span.innerHTML=icon(themeIcons[choice])}
+      btn.dataset.bcPolishIcon='1';
+    });
+
+    var settingsActions=[
+      ['centralBackupExport','M12 3v12M8 11l4 4 4-4M5 21h14','Baixar backup geral'],
+      ['centralBackupSaveOnline','M7 18h10a4 4 0 0 0 .5-8A6 6 0 0 0 6 8.5 4.5 4.5 0 0 0 7 18M12 17v-6M9 14l3 3 3-3','Salvar cópia online'],
+      ['centralBackupHistory','M4 6h16M7 3v6M17 3v6M5 9v11h14V9M8 13h4M8 16h7','Histórico online'],
+      ["document.getElementById('centralBackupImport').click()",'M12 21V9M8 13l4-4 4 4M5 3h14','Restaurar arquivo'],
+      ['centralPwaInstall','M8 3h8a2 2 0 0 1 2 2v14H6V5a2 2 0 0 1 2-2M10 18h4','Instalar como aplicativo']
+    ];
+    settingsActions.forEach(function(item){
+      var btn=null;
+      if(item[0]==='centralPwaInstall')btn=document.getElementById('centralPwaInstall');
+      else btn=Array.from(document.querySelectorAll('.central-btn-sec')).find(function(el){return (el.getAttribute('onclick')||'').indexOf(item[0])!==-1});
+      if(!btn||btn.dataset.bcPolishIcon)return;
+      btn.dataset.bcPolishIcon='1';
+      btn.innerHTML=icon(item[1])+'<span>'+item[2]+'</span>';
+    });
+
+    var close=document.querySelector('.central-settings-close');
+    if(close&&!close.dataset.bcPolishIcon){
+      close.dataset.bcPolishIcon='1';
+      close.innerHTML=icon('M6 6l12 12M18 6 6 18');
+      close.title='Fechar';
+    }
+
+    document.querySelectorAll('.agenda-row .btn.red,.agenda-edit-row .btn.red').forEach(function(btn){
+      if(btn.dataset.bcPolishIcon)return;
+      btn.dataset.bcPolishIcon='1';
+      btn.classList.add('bc-icon-button');
+      btn.innerHTML=icon('M4 7h16M9 7V4h6v3M7 7l1 13h8l1-13M10 11v5M14 11v5');
+      if(!btn.getAttribute('aria-label'))btn.setAttribute('aria-label','Excluir tarefa');
+      btn.title='Excluir tarefa';
+    });
+  }
+
   function enhanceFieldLabels(){
     document.querySelectorAll('.field').forEach(function(field,index){
       var label=field.querySelector('label');
@@ -248,7 +302,7 @@
     Array.from(document.body.childNodes).forEach(function(node){
       if(node.nodeType===3 && /^(?:\s|\\n)+$/.test(node.nodeValue) && node.nodeValue.indexOf('\\n')!==-1)node.nodeValue='';
     });
-    enhanceBrand();enhanceIcons();mapComponents(document);enhanceHome();enhanceTec();enhanceReturns();enhanceFieldLabels();enhanceCheckboxTargets();enhanceDrawer();enhanceModal();improveLabels();
+    enhanceBrand();enhanceIcons();mapComponents(document);enhanceHome();enhanceTec();enhanceReturns();enhancePolishIcons();enhanceFieldLabels();enhanceCheckboxTargets();enhanceDrawer();enhanceModal();improveLabels();
   }
   function schedule(){if(scheduled)return;scheduled=true;requestAnimationFrame(refresh)}
   function init(){
