@@ -34,6 +34,12 @@ html.bc-ui-v1 .brand-icon{
   background:var(--bc-color-primary)!important;color:#fff!important;box-shadow:none!important;font-size:11px!important
 }
 html.bc-ui-v1 .brand b{font-size:14px!important;color:var(--bc-color-secondary)!important;letter-spacing:-.01em!important}
+html.bc-ui-v1 .sidebar-toggle,html.bc-ui-v1 .mobile-menu-btn{
+  width:44px!important;height:44px!important;min-width:44px!important;min-height:44px!important;padding:0!important;border:0!important;border-radius:var(--bc-radius-md)!important;
+  display:grid!important;place-items:center!important;background:transparent!important;color:var(--bc-color-text-secondary)!important;box-shadow:none!important
+}
+html.bc-ui-v1 .sidebar-toggle .bc-ui-icon{transition:transform var(--bc-transition)}
+html.bc-ui-v1 .app.sidebar-collapsed .sidebar-toggle .bc-ui-icon{transform:rotate(180deg)}
 html.bc-ui-v1 .brand small{font-size:12px!important;color:var(--bc-color-text-secondary)!important}
 html.bc-ui-v1 .nav{gap:4px!important}
 html.bc-ui-v1 .nav .label{font-size:12px!important;color:var(--bc-color-text-secondary)!important;letter-spacing:.08em!important;padding:14px 10px 4px!important}
@@ -136,6 +142,7 @@ html.bc-ui-v1 .central-view-back{
 }
 html.bc-ui-v1 .central-view-back::before{content:"←";margin-right:6px}
 html.bc-ui-v1 #ankiView .anki-parent-return{margin-bottom:18px!important}
+html.bc-ui-v1 .bc-back-button::before,html.bc-ui-v1 .central-embedded-back::before{content:"←";margin-right:6px}
 html.bc-ui-v1 #ankiView .anki-parent-return button.bc-back-button{
   min-height:44px!important;padding:0!important;border:0!important;background:transparent!important;color:var(--bc-color-secondary)!important;
   font-family:var(--bc-font)!important;font-size:14px!important;font-weight:600!important;box-shadow:none!important
