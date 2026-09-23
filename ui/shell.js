@@ -115,7 +115,7 @@
       if(open()){lastFocus=document.activeElement;var close=backdrop.querySelector('.central-settings-close');if(close)setTimeout(function(){close.focus()},0)}
       else if(lastFocus&&typeof lastFocus.focus==='function'){setTimeout(function(){try{lastFocus.focus()}catch(_){}},0)}
     });
-    obs.observe(backdrop,{attributes:true,attributeFilter:['class']});
+    obs.observe(backdrop,{attributes:true,attributeFilter:['class'],attributeOldValue:true});
     document.addEventListener('keydown',function(e){
       if(!open())return;
       if(e.key==='Escape'&&typeof window.closeCentralSettings==='function'){e.preventDefault();window.closeCentralSettings();return}
@@ -157,12 +157,18 @@
     scheduled=false;
     document.documentElement.classList.add('bc-ui-v1');
     if(document.body)document.body.classList.add('bc-ui-v1');
+    // Remove only stray escaped-newline text at the document boundary.
+    Array.from(document.body.childNodes).forEach(function(node){
+      if(node.nodeType===3 && /^(?:\s|\\n)+$/.test(node.nodeValue) && node.nodeValue.indexOf('\\n')!==-1)node.nodeValue='';
+    });
     enhanceBrand();enhanceIcons();mapComponents(document);enhanceHome();enhanceTec();enhanceReturns();enhanceModal();improveLabels();
   }
   function schedule(){if(scheduled)return;scheduled=true;requestAnimationFrame(refresh)}
   function init(){
     refresh();
-    observer=new MutationObserver(schedule);
+    observer=new MutationObserver(function(records){
+      if(records.some(function(record){return record.type==='childList'||record.oldValue!==record.target.getAttribute('class')}))schedule();
+    });
     observer.observe(document.body,{childList:true,subtree:true,attributes:true,attributeFilter:['class']});
     document.addEventListener('click',function(){setTimeout(schedule,0)},true);
   }
