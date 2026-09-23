@@ -102,3 +102,28 @@ html.bc-ui-v1 .bc-page-header>div:first-child{min-width:0}
   html.bc-ui-v1 .bc-grid-2,html.bc-ui-v1 .bc-grid-3,html.bc-ui-v1 .discipline-grid{grid-template-columns:1fr}
   html.bc-ui-v1 .bc-section{margin-top:32px}
 }
+
+/* HOTFIX TABLET/PWA — drawer aberto sempre exibe ícone + rótulo */
+@media(max-width:1023px){
+  html.bc-ui-v1 #centralSidebar.mobile-open{
+    display:block!important;
+    width:min(286px,86vw)!important;
+    overflow-y:auto!important;
+    overflow-x:hidden!important;
+  }
+  html.bc-ui-v1 #centralSidebar.mobile-open .brand{
+    justify-content:flex-start!important;
+  }
+  html.bc-ui-v1 #centralSidebar.mobile-open :is(.brand-copy,.nav .label,.nav-text){
+    display:block!important;
+    visibility:visible!important;
+    opacity:1!important;
+    width:auto!important;
+    max-width:none!important;
+  }
+  html.bc-ui-v1 #centralSidebar.mobile-open .nav button{
+    justify-content:flex-start!important;
+    padding-inline:12px!important;
+    gap:12px!important;
+  }
+}
