@@ -189,6 +189,11 @@ function loadData(id){
  }).finally(()=>{delete loading[id]});
  return loading[id];
 }
+function prefetchNext(id){
+ const index=MANIFEST.findIndex(m=>m.id===id),next=MANIFEST[index+1];
+ if(!next||window.PT_NATIVE_DATA[next.id]||loading[next.id])return;
+ setTimeout(()=>{loadData(next.id).catch(()=>{})},0);
+}
 
 function renderPortugueseMaster(){
  installStyle();
@@ -231,6 +236,7 @@ function mount(id){
   host.innerHTML=renderModuleContent(id,data,tab);
   hydrate(id,data,tab);
   restoreScroll(id);
+  prefetchNext(id);
  }).catch(err=>{console.error('[Português nativo]',err);host.innerHTML='<div class="ptn-loading">Não foi possível carregar este módulo. Feche e abra novamente.</div>'});
 }
 window.ptNativeMount=mount;
