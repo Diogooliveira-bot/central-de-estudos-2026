@@ -95,7 +95,7 @@ html.bc-ui-v1 #homeView .bc-home-continue{margin-bottom:24px!important;border-le
 html.bc-ui-v1 #homeView .home-grid{display:grid!important;grid-template-columns:minmax(0,2fr) minmax(280px,1fr)!important;gap:24px!important}
 html.bc-ui-v1 #homeView .side-col{display:grid!important;gap:16px!important}
 html.bc-ui-v1 #homeView .subject.open{border-color:var(--bc-color-border)!important}
-html.bc-ui-v1 .view.central-view-visible:not(.hidden){
+html.bc-ui-v1 :is(.view.central-view-visible,#agendaView.central-agenda-visible):not(.hidden){
   position:static!important;
   inset:auto!important;
   width:min(100%,var(--bc-workspace-width))!important;
@@ -168,7 +168,7 @@ html.bc-ui-v1 .workspace :is(.muted,.small,small){color:var(--bc-color-text-seco
 html.bc-ui-v1 .workspace :is(.topic-title,.subject-name,.cf-module-title,b,strong,summary){color:var(--bc-color-text)!important}
 
 @media(min-width:640px) and (max-width:1023px){
-  html.bc-ui-v1 .view.central-view-visible:not(.hidden){padding:28px 24px 56px!important}
+  html.bc-ui-v1 :is(.view.central-view-visible,#agendaView.central-agenda-visible):not(.hidden){padding:28px 24px 56px!important}
   html.bc-ui-v1 #homeView .home-grid{grid-template-columns:1fr!important}
   html.bc-ui-v1 #agendaView .form-grid{grid-template-columns:1fr 1fr!important}
   html.bc-ui-v1 #performanceView .summary{grid-template-columns:repeat(2,1fr)!important}
@@ -176,7 +176,7 @@ html.bc-ui-v1 .workspace :is(.topic-title,.subject-name,.cf-module-title,b,stron
   html.bc-ui-v1 #performanceView .summary .sum:nth-child(-n+2){border-bottom:1px solid var(--bc-color-border)!important}
 }
 @media(max-width:639px){
-  html.bc-ui-v1 .view.central-view-visible:not(.hidden){min-height:calc(100dvh - var(--bc-topbar-mobile-height))!important;padding:24px 16px 48px!important}
+  html.bc-ui-v1 :is(.view.central-view-visible,#agendaView.central-agenda-visible):not(.hidden){min-height:calc(100dvh - var(--bc-topbar-mobile-height))!important;padding:24px 16px 48px!important}
   html.bc-ui-v1 .view.module-view.central-view-visible:not(.hidden){height:calc(100dvh - var(--bc-topbar-mobile-height))!important;padding:0!important}
   html.bc-ui-v1 .view.module-view :is(.central-view-back,.central-embedded-back){padding:0 16px!important}
   html.bc-ui-v1 .hero h1{font-size:28px!important;line-height:36px!important}
@@ -188,4 +188,14 @@ html.bc-ui-v1 .workspace :is(.topic-title,.subject-name,.cf-module-title,b,stron
   html.bc-ui-v1 #performanceView .summary .sum:nth-child(-n+2){border-bottom:1px solid var(--bc-color-border)!important}
   html.bc-ui-v1 .central-view-back{margin-top:0!important}
   html.bc-ui-v1 .brand b{color:var(--bc-color-text)!important}
+}
+/* Auditoria visual: o workspace legado contém apenas a Home. */
+html.bc-ui-v1 .workspace:not(:has(>.view:not(.hidden))){min-height:0!important;height:0!important}
+html.bc-ui-v1 .brand-copy{flex:1;min-width:0}
+html.bc-ui-v1 .brand-copy :is(b,small){white-space:normal!important;overflow:visible!important;text-overflow:clip!important}
+html.bc-ui-v1 #central-update-btn{position:static!important;display:flex!important;width:max-content!important;max-width:calc(100% - 32px)!important;margin:16px 16px 16px auto!important;min-height:44px!important}
+html.bc-ui-v1 .central-view-back{min-height:44px!important;align-items:center!important}
+html.bc-ui-v1 .btn.primary.bc-button:hover{background:color-mix(in srgb,var(--bc-color-primary) 90%,#000)!important}
+@media(min-width:640px) and (max-width:1023px){
+ html.bc-ui-v1 .topbar{height:var(--bc-topbar-mobile-height);min-height:var(--bc-topbar-mobile-height)}
 }
