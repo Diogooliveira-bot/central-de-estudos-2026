@@ -169,7 +169,7 @@
     observer=new MutationObserver(function(records){
       if(records.some(function(record){return record.type==='childList'||record.oldValue!==record.target.getAttribute('class')}))schedule();
     });
-    observer.observe(document.body,{childList:true,subtree:true,attributes:true,attributeFilter:['class']});
+    observer.observe(document.body,{childList:true,subtree:true,attributes:true,attributeOldValue:true,attributeFilter:['class']});
     document.addEventListener('click',function(){setTimeout(schedule,0)},true);
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
