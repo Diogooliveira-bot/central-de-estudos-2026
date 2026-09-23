@@ -199,3 +199,123 @@ html.bc-ui-v1 .btn.primary.bc-button:hover{background:color-mix(in srgb,var(--bc
 @media(min-width:640px) and (max-width:1023px){
  html.bc-ui-v1 .topbar{height:var(--bc-topbar-mobile-height);min-height:var(--bc-topbar-mobile-height)}
 }
+
+
+/* CONVERSA 8 — polimento visual final */
+html.bc-ui-v1 .hero{
+  align-items:flex-start!important;
+  gap:24px!important;
+}
+html.bc-ui-v1 .hero :is(h1,h2,h3){margin-top:0!important}
+html.bc-ui-v1 .hero p{max-width:760px!important;margin:8px 0 0!important}
+html.bc-ui-v1 .card-head{
+  min-height:56px!important;
+  padding:14px 16px!important;
+  gap:12px!important;
+}
+html.bc-ui-v1 .card-head :is(h2,h3){line-height:1.35!important}
+html.bc-ui-v1 :is(.agenda-row,.agenda-edit-row){min-height:52px}
+html.bc-ui-v1 .agenda-time{font-size:12px!important;line-height:18px!important}
+html.bc-ui-v1 .agenda-copy b{font-size:14px!important;line-height:20px!important}
+html.bc-ui-v1 .agenda-copy small{font-size:12px!important;line-height:18px!important}
+html.bc-ui-v1 .disc-meta{font-size:13px!important;line-height:19px!important}
+html.bc-ui-v1 .central-view-back,
+html.bc-ui-v1 .bc-back-button{
+  transition:color var(--bc-transition),background var(--bc-transition)!important;
+}
+@media(hover:hover){
+  html.bc-ui-v1 .central-view-back:hover,
+  html.bc-ui-v1 .bc-back-button:hover{color:var(--bc-color-primary)!important}
+}
+html.bc-ui-v1 .btn.bc-button:active{transform:translateY(1px)!important}
+
+html.bc-ui-v1 .central-settings-head{padding:18px 20px!important}
+html.bc-ui-v1 .central-settings-head h2{font-size:20px!important;line-height:28px!important}
+html.bc-ui-v1 .central-settings-head p{font-size:13px!important;line-height:19px!important;margin-top:4px!important}
+html.bc-ui-v1 .central-settings-body{padding:20px!important}
+html.bc-ui-v1 .central-setting-label{
+  font-size:12px!important;
+  line-height:18px!important;
+  letter-spacing:.06em!important;
+  margin-bottom:10px!important;
+}
+html.bc-ui-v1 .central-theme-options{gap:8px!important}
+html.bc-ui-v1 .central-theme-option{
+  min-height:68px!important;
+  padding:10px 8px!important;
+  font-size:13px!important;
+  line-height:18px!important;
+  border-radius:var(--bc-radius-md)!important;
+}
+html.bc-ui-v1 .central-theme-option span{min-height:22px;margin-bottom:6px!important}
+html.bc-ui-v1 .central-theme-option .bc-ui-icon{width:20px;height:20px;margin:auto}
+html.bc-ui-v1 .central-settings-note{
+  font-size:12px!important;
+  line-height:18px!important;
+  margin-top:16px!important;
+  padding-top:16px!important;
+}
+html.bc-ui-v1 .central-btn-sec.bc-button{
+  width:100%!important;
+  justify-content:flex-start!important;
+  min-height:44px!important;
+  margin-top:8px!important;
+  text-align:left!important;
+}
+html.bc-ui-v1 .central-settings-footer button{
+  min-height:44px!important;
+  padding:10px 16px!important;
+  border-radius:var(--bc-radius-md)!important;
+  font-size:14px!important;
+  line-height:20px!important;
+}
+html.bc-ui-v1 .central-settings-close .bc-ui-icon{width:20px;height:20px}
+
+html.bc-ui-v1 :is(
+  .topic-header,.type,.pre-title,.resource-label,.history-label,
+  .cf-module-no,.cf-module-stat,.cf-subtitle,.cf-syllabus summary,.cf-micro,
+  .cf-step-no,.cf-step-copy small,.cf-reading strong,.cf-reading li,
+  .cf-theory summary,.cf-theory-text,.cf-advanced b,.cf-advanced div,
+  .cf-coverage,.cf-resource-box h4,.cf-qtop,.cf-chip,.cf-letter,.cf-strike,
+  .cf-feedback,.cf-source,.cf-result-grid small,.cf-error-row b,.cf-error-row small,
+  .anki-duo-eyebrow,.anki-duo-hint,.anki-duo-overview-counts small,.anki-duo-choice,
+  .anki-duo-studytop,.anki-duo-side,.anki-duo-tags,.anki-duo-rate small,
+  .anki-duo-feedback,.anki-duo-resultgrid span,.anki-duo-stat small,.anki-duo-row p,
+  .anki-duo-pill,.anki-duo-form label,.anki-duo-empty,.anki-duo-cardtool,
+  .anki-duo-history summary,.anki-duo-history-row,.anki-duo-editor-summary,.anki-duo-editor-note,
+  .civil-target span,.civil-target b,.civil-module-num,.civil-module-title small,
+  .civil-module-state span,.civil-planned,.civil-scope-note,.civil-step-n,
+  .civil-step-title small,.civil-step-status,.civil-stage-toolbar p,.civil-qsource,
+  .civil-letter,.civil-option span:last-child,.civil-qnav span,.civil-feedback,
+  .civil-feedback .basis,.civil-source-link,.civil-theory p,.civil-theory li,
+  .civil-law-card span,.civil-error-row b,.civil-error-row small,.civil-anki-note
+){
+  font-size:12px!important;
+  line-height:18px!important;
+}
+html.bc-ui-v1 :is(
+  .topic-row,.pre-row,.inline-tools,.tips li,.chip,.hist,.note-item,.agenda-edit-row,
+  .cf-step-copy b,.cf-btn,.cf-session-head b,.anki-duo-btn,
+  .anki-duo-table-row>span:not(:first-child),.anki-duo-row h3,.anki-duo-editor-history h3,
+  .civil-module-title b,.civil-pct,.civil-step-title b,.civil-btn,.civil-qcard h4,
+  .civil-law-card b,.civil-manual-done,.civil-scope-badge
+){
+  font-size:13px!important;
+  line-height:19px!important;
+}
+html.bc-ui-v1 :is(
+  .sum,.note-item,.tips,.detail-panel,.cf-step,.cf-syllabus,.cf-theory,
+  .cf-resource-box,.cf-question,.cf-error-panel,.cf-result-grid div,.cf-metric,
+  .anki-duo-history,.anki-duo-settings-item,.anki-duo-empty,
+  .civil-scope-note,.civil-qcard,.civil-law-card
+){
+  border-radius:var(--bc-radius-md)!important;
+}
+@media(max-width:1023px){
+  html.bc-ui-v1 :is(.cf-btn,.civil-btn,.anki-duo-btn,.anki-duo-cardtool){min-height:44px!important}
+}
+@media(max-width:639px){
+  html.bc-ui-v1 .central-settings-head{padding:16px!important}
+  html.bc-ui-v1 .central-settings-body{padding:16px!important}
+  html.bc-ui-v1 .central-theme-options{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+}
