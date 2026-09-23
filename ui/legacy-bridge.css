@@ -135,6 +135,11 @@ html.bc-ui-v1 .central-view-back{
   background:transparent!important;color:var(--bc-color-secondary)!important;box-shadow:none!important;font-size:14px!important
 }
 html.bc-ui-v1 .central-view-back::before{content:"←";margin-right:6px}
+html.bc-ui-v1 #ankiView .anki-parent-return{margin-bottom:18px!important}
+html.bc-ui-v1 #ankiView .anki-parent-return button.bc-back-button{
+  min-height:44px!important;padding:0!important;border:0!important;background:transparent!important;color:var(--bc-color-secondary)!important;
+  font-family:var(--bc-font)!important;font-size:14px!important;font-weight:600!important;box-shadow:none!important
+}
 html.bc-ui-v1 .central-settings{background:var(--bc-color-surface)!important;border-radius:var(--bc-radius-modal)!important;box-shadow:var(--bc-shadow-elevated)!important}
 html.bc-ui-v1 #agendaView .form-grid{grid-template-columns:1fr .8fr 1.2fr 2fr!important;gap:16px!important}
 html.bc-ui-v1 #agendaView .action-row{margin-top:16px!important}
