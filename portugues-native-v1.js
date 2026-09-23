@@ -370,8 +370,31 @@ function refreshProgress(id){
  if(subject){const count=subject.querySelector('.subject-count'),pct=subject.querySelector('.subject-pct'),b=subject.querySelector('.subject-bar span');if(count)count.textContent=s.done+'/'+s.total+' módulos';if(pct){pct.textContent=s.pct+'%';pct.classList.toggle('done',s.pct===100)}if(b)b.style.width=s.pct+'%'}
 }
 
+const legacyJumpSubject=typeof window.jumpSubject==='function'?window.jumpSubject:null;
+function openSubjectFast(){
+ try{
+  if(typeof openHome==='function')openHome();
+  localStorage.setItem('central-v6:open:pt','1');
+  const subject=document.querySelector('.subject[data-id="pt"]');
+  if(!subject)return legacyJumpSubject?legacyJumpSubject('pt'):false;
+  subject.classList.add('open');
+  setTimeout(()=>{try{subject.scrollIntoView({behavior:'auto',block:'start'})}catch(_){subject.scrollIntoView()}},0);
+ }catch(e){console.warn('[PT abrir rápido]',e)}
+ return false;
+}
+window.jumpSubject=function(id){
+ return String(id||'')==='pt'?openSubjectFast():(legacyJumpSubject?legacyJumpSubject(id):false);
+};
+
 function openLast(id){
- try{if(typeof openHome==='function')openHome();localStorage.setItem('central-v6:open:pt','1');localStorage.setItem(OPEN_KEY,id);if(typeof renderSubjects==='function')renderSubjects();setTimeout(()=>{const el=document.querySelector('.cf-module[data-ptn-module="'+id+'"]');if(el){el.classList.add('open');mount(id);el.scrollIntoView({behavior:'auto',block:'start'})}},20)}catch(e){console.warn('[PT continuar]',e)}
+ try{
+  if(typeof openHome==='function')openHome();
+  localStorage.setItem('central-v6:open:pt','1');
+  localStorage.setItem(OPEN_KEY,id);
+  let el=document.querySelector('.cf-module[data-ptn-module="'+id+'"]');
+  if(!el&&typeof renderSubjects==='function'){renderSubjects();el=document.querySelector('.cf-module[data-ptn-module="'+id+'"]');}
+  setTimeout(()=>{if(el){el.classList.add('open');mount(id);el.scrollIntoView({behavior:'auto',block:'start'})}},20);
+ }catch(e){console.warn('[PT continuar]',e)}
  return false;
 }
 window.openPtNativeLast=openLast;
