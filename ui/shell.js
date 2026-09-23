@@ -32,6 +32,8 @@
     var tecSummary=document.querySelector('#tecHistCard .summary');if(tecSummary){tecSummary.classList.add('bc-stat-strip');tecSummary.querySelectorAll('.sum').forEach(function(el){el.classList.add('bc-stat')})}
     addAll(root,'.tec-empty,#agendaEditor>.muted.small',['bc-empty-state']);
     document.querySelectorAll('.nav button').forEach(function(btn){
+      var label=btn.querySelector('.nav-text');
+      if(label){btn.setAttribute('aria-label',label.textContent.trim());btn.setAttribute('title',label.textContent.trim())}
       if(btn.classList.contains('active'))btn.setAttribute('aria-current','page');else btn.removeAttribute('aria-current');
     });
     document.querySelectorAll('.subject,.cf-module').forEach(function(item){
