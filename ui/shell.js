@@ -22,6 +22,10 @@
     addAll(root,'.field input,.field select,.field textarea',['bc-input']);
     addAll(root,'.chip,.type',['bc-badge']);
     addAll(root,'.hero',['bc-page-header']);
+    addAll(root,'.central-settings',['bc-modal-surface']);
+    addAll(root,'.central-btn-sec,.central-theme-option',['bc-button','bc-button--secondary']);
+    addAll(root,'.central-settings-close',['bc-button','bc-icon-button','bc-button--ghost']);
+    addAll(root,'.tec-toolbar input,.tec-toolbar select',['bc-input']);
     var crumb=document.getElementById('crumb');if(crumb)crumb.classList.add('bc-breadcrumb');
     document.querySelectorAll('.nav button').forEach(function(btn){
       if(btn.classList.contains('active'))btn.setAttribute('aria-current','page');else btn.removeAttribute('aria-current');
@@ -49,6 +53,43 @@
     var schedule=home.querySelector('.schedule-intro');if(schedule)schedule.classList.add('bc-section');
     var subjects=home.querySelector('.subjects');if(subjects)subjects.classList.add('bc-section');
   }
+  function enhanceTec(){
+    var shell=document.querySelector('#tecCadernosView .tec-shell');
+    if(!shell||shell.querySelector('.bc-tec-tabs'))return;
+    var hero=shell.querySelector('.hero');
+    var tabs=document.createElement('div');tabs.className='bc-tabs bc-tec-tabs';tabs.setAttribute('role','tablist');
+    tabs.innerHTML='<button type="button" class="bc-tab active" role="tab" aria-selected="true" data-bc-tec-tab="list">Cadernos</button><button type="button" class="bc-tab" role="tab" aria-selected="false" data-bc-tec-tab="register">Registro</button>';
+    if(hero&&hero.nextSibling)shell.insertBefore(tabs,hero.nextSibling);else if(hero)shell.appendChild(tabs);else shell.insertBefore(tabs,shell.firstChild);
+
+    var list=document.createElement('div');list.className='bc-tab-panel';list.id='bcTecListPanel';list.setAttribute('role','tabpanel');
+    var register=document.createElement('div');register.className='bc-tab-panel';register.id='bcTecRegisterPanel';register.setAttribute('role','tabpanel');register.hidden=true;
+    var summary=shell.querySelector('.tec-summary'),overview=document.getElementById('tecVisaoGeral'),history=document.getElementById('tecHistCard'),toolbar=shell.querySelector('.tec-toolbar'),groups=document.getElementById('tecCadernosLista');
+    [summary,overview,toolbar,groups].forEach(function(el){if(el)list.appendChild(el)});
+    if(history)register.appendChild(history);
+    shell.appendChild(list);shell.appendChild(register);
+
+    if(history){
+      history.querySelectorAll('label').forEach(function(label){label.classList.add('bc-field-label')});
+      history.querySelectorAll('input,select').forEach(function(input){input.classList.add('bc-input')});
+    }
+    function activate(name){
+      var showList=name==='list';list.hidden=!showList;register.hidden=showList;
+      tabs.querySelectorAll('[data-bc-tec-tab]').forEach(function(btn){
+        var active=btn.getAttribute('data-bc-tec-tab')===name;
+        btn.classList.toggle('active',active);btn.setAttribute('aria-selected',active?'true':'false');
+      });
+    }
+    tabs.addEventListener('click',function(e){var btn=e.target.closest('[data-bc-tec-tab]');if(btn)activate(btn.getAttribute('data-bc-tec-tab'))});
+  }
+
+  function enhanceReturns(){
+    document.querySelectorAll('.anki-parent-return button,.central-embedded-back').forEach(function(btn){
+      btn.classList.add('bc-back-button');
+      var txt=(btn.textContent||'').trim();
+      if(txt==='← Central'||txt==='‹ Central'||txt==='⌂ Início')btn.textContent='Voltar';
+    });
+  }
+
   function improveLabels(){
     document.querySelectorAll('.central-view-back').forEach(function(btn){
       var txt=(btn.textContent||'').trim();
@@ -61,7 +102,7 @@
     scheduled=false;
     document.documentElement.classList.add('bc-ui-v1');
     if(document.body)document.body.classList.add('bc-ui-v1');
-    enhanceBrand();mapComponents(document);enhanceHome();improveLabels();
+    enhanceBrand();mapComponents(document);enhanceHome();enhanceTec();enhanceReturns();improveLabels();
   }
   function schedule(){if(scheduled)return;scheduled=true;requestAnimationFrame(refresh)}
   function init(){
