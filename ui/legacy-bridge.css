@@ -89,12 +89,66 @@ html.bc-ui-v1 #homeView .bc-home-continue{margin-bottom:24px!important;border-le
 html.bc-ui-v1 #homeView .home-grid{display:grid!important;grid-template-columns:minmax(0,2fr) minmax(280px,1fr)!important;gap:24px!important}
 html.bc-ui-v1 #homeView .side-col{display:grid!important;gap:16px!important}
 html.bc-ui-v1 #homeView .subject.open{border-color:var(--bc-color-border)!important}
+html.bc-ui-v1 .view.central-view-visible:not(.hidden){
+  position:static!important;
+  inset:auto!important;
+  width:min(100%,var(--bc-workspace-width))!important;
+  height:auto!important;
+  min-height:calc(100dvh - var(--bc-topbar-height))!important;
+  margin:0 auto!important;
+  padding:36px 36px 64px!important;
+  overflow:visible!important;
+  overscroll-behavior:auto!important;
+  z-index:auto!important;
+}
+html.bc-ui-v1 .view.module-view.central-view-visible:not(.hidden){
+  width:100%!important;
+  max-width:none!important;
+  height:calc(100dvh - var(--bc-topbar-height))!important;
+  min-height:0!important;
+  padding:0!important;
+  margin:0!important;
+  overflow:hidden!important;
+  display:grid!important;
+  grid-template-rows:56px minmax(0,1fr);
+}
+html.bc-ui-v1 .view.module-view .module-frame{width:100%!important;height:100%!important;min-height:0!important}
+html.bc-ui-v1 .view.module-view :is(.central-view-back,.central-embedded-back){
+  position:static!important;
+  display:flex!important;
+  align-items:center!important;
+  width:100%!important;
+  min-height:56px!important;
+  margin:0!important;
+  padding:0 24px!important;
+  border:0!important;
+  border-bottom:1px solid var(--bc-color-border)!important;
+  border-radius:0!important;
+  background:var(--bc-color-surface)!important;
+  color:var(--bc-color-secondary)!important;
+  box-shadow:none!important;
+  font-size:14px!important;
+  font-weight:600!important;
+}
 html.bc-ui-v1 .central-view-back{
   position:static!important;display:inline-flex!important;margin-bottom:18px!important;padding:8px 0!important;border:0!important;border-radius:0!important;
   background:transparent!important;color:var(--bc-color-secondary)!important;box-shadow:none!important;font-size:14px!important
 }
 html.bc-ui-v1 .central-view-back::before{content:"←";margin-right:6px}
 html.bc-ui-v1 .central-settings{background:var(--bc-color-surface)!important;border-radius:var(--bc-radius-modal)!important;box-shadow:var(--bc-shadow-elevated)!important}
+html.bc-ui-v1 #agendaView .form-grid{grid-template-columns:1fr .8fr 1.2fr 2fr!important;gap:16px!important}
+html.bc-ui-v1 #agendaView .action-row{margin-top:16px!important}
+html.bc-ui-v1 #performanceView>.card:first-of-type{background:transparent!important;border:0!important;padding:0!important}
+html.bc-ui-v1 #performanceView .summary{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:0!important;border-top:1px solid var(--bc-color-border);border-bottom:1px solid var(--bc-color-border);margin:0 0 32px!important}
+html.bc-ui-v1 #performanceView .summary .sum{background:transparent!important;border:0!important;border-right:1px solid var(--bc-color-border)!important;border-radius:0!important;padding:18px 22px!important}
+html.bc-ui-v1 #performanceView .summary .sum:last-child{border-right:0!important}
+html.bc-ui-v1 .bc-tec-tabs{margin:0 0 24px!important}
+html.bc-ui-v1 .bc-tab-panel{display:block}
+html.bc-ui-v1 .bc-tab-panel[hidden]{display:none!important}
+html.bc-ui-v1 #tecHistCard label.bc-field-label{font-size:14px!important;color:var(--bc-color-text)!important;line-height:20px!important}
+html.bc-ui-v1 #tecHistCard :is(input,select).bc-input,
+html.bc-ui-v1 .tec-toolbar :is(input,select).bc-input{min-height:44px!important;background:var(--bc-color-surface)!important;color:var(--bc-color-text)!important;border:1px solid var(--bc-color-border-interactive)!important;border-radius:var(--bc-radius-md)!important;padding:0 12px!important}
+html.bc-ui-v1 .central-settings.bc-modal-surface{padding:24px!important}
 html.bc-ui-v1 .central-settings :is(button,input,select,textarea){font-family:var(--bc-font)!important}
 html.bc-ui-v1 .module-frame{background:var(--bc-color-bg)!important}
 html.bc-ui-v1 .workspace :is(p,li){color:var(--bc-color-text)!important}
@@ -102,11 +156,24 @@ html.bc-ui-v1 .workspace :is(.muted,.small,small){color:var(--bc-color-text-seco
 html.bc-ui-v1 .workspace :is(.topic-title,.subject-name,.cf-module-title,b,strong,summary){color:var(--bc-color-text)!important}
 
 @media(min-width:640px) and (max-width:1023px){
+  html.bc-ui-v1 .view.central-view-visible:not(.hidden){padding:28px 24px 56px!important}
   html.bc-ui-v1 #homeView .home-grid{grid-template-columns:1fr!important}
+  html.bc-ui-v1 #agendaView .form-grid{grid-template-columns:1fr 1fr!important}
+  html.bc-ui-v1 #performanceView .summary{grid-template-columns:repeat(2,1fr)!important}
+  html.bc-ui-v1 #performanceView .summary .sum:nth-child(2){border-right:0!important}
+  html.bc-ui-v1 #performanceView .summary .sum:nth-child(-n+2){border-bottom:1px solid var(--bc-color-border)!important}
 }
 @media(max-width:639px){
+  html.bc-ui-v1 .view.central-view-visible:not(.hidden){min-height:calc(100dvh - var(--bc-topbar-mobile-height))!important;padding:24px 16px 48px!important}
+  html.bc-ui-v1 .view.module-view.central-view-visible:not(.hidden){height:calc(100dvh - var(--bc-topbar-mobile-height))!important;padding:0!important}
+  html.bc-ui-v1 .view.module-view :is(.central-view-back,.central-embedded-back){padding:0 16px!important}
   html.bc-ui-v1 .hero h1{font-size:28px!important;line-height:36px!important}
   html.bc-ui-v1 #homeView .home-grid{grid-template-columns:1fr!important}
+  html.bc-ui-v1 #agendaView .form-grid{grid-template-columns:1fr!important}
+  html.bc-ui-v1 #performanceView .summary{grid-template-columns:repeat(2,1fr)!important}
+  html.bc-ui-v1 #performanceView .summary .sum{padding:16px 8px!important}
+  html.bc-ui-v1 #performanceView .summary .sum:nth-child(2){border-right:0!important}
+  html.bc-ui-v1 #performanceView .summary .sum:nth-child(-n+2){border-bottom:1px solid var(--bc-color-border)!important}
   html.bc-ui-v1 .central-view-back{margin-top:0!important}
   html.bc-ui-v1 .brand b{color:var(--bc-color-text)!important}
 }
