@@ -35,7 +35,7 @@ function toggleMobileSidebar(){
  const open=!aside.classList.contains('mobile-open');
  aside.classList.toggle('mobile-open',open);back?.classList.toggle('show',open);back?.setAttribute('aria-hidden',open?'false':'true');btn?.setAttribute('aria-expanded',open?'true':'false');
 }
-window.addEventListener('resize',()=>{if(window.innerWidth>680)closeMobileSidebar()});
+window.addEventListener('resize',()=>{if(window.innerWidth>1023)closeMobileSidebar()});
 
 const CENTRAL_THEME_KEY='central-v6:appearance';
 function centralThemeMode(){return localStorage.getItem(CENTRAL_THEME_KEY)||'oled'}

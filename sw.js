@@ -1,9 +1,9 @@
 /* Central de Estudos — trava de navegação na v6.6.119
    Offline não destrutivo: index.html permanece apenas como fonte interna da v119. */
-var CACHE='central-v66163-fastboot';
-var BOOT='/central-v119.html?direct=21';
+var CACHE='central-v66167-base-completa-ui-preprod2';
+var BOOT='/central-v119.html?direct=30';
 var STRUCTURAL_MANIFEST='/central-structural-files-v66119.json?v=66119s2';
-var CORE=[BOOT,'/index.html',STRUCTURAL_MANIFEST,'/manifest.webmanifest','/central-minimal-theme-v66119.css?v=66119h4','/central-cleanup-v66125.css?v=66125a1','/central-reading-font-v66126.css?v=66129a1'];
+var CORE=[BOOT,'/index.html',STRUCTURAL_MANIFEST,'/manifest.webmanifest','/central-minimal-theme-v66119.css?v=66119h4','/central-cleanup-v66125.css?v=66125a1','/central-reading-font-v66126.css?v=66129a1','/ui/tokens.css?v=20260923preprod2','/ui/foundation.css?v=20260923preprod2','/ui/layout.css?v=20260923preprod2','/ui/components.css?v=20260923preprod2','/ui/legacy-bridge.css?v=20260923preprod2','/ui/theme.js?v=20260923preprod2','/ui/shell.js?v=20260923preprod2'];
 function cacheResponse(cache,request,response){if(response&&response.ok)cache.put(request,response.clone()).catch(function(){});return response}
 self.addEventListener('install',function(event){event.waitUntil(caches.open(CACHE).then(function(cache){return Promise.all(CORE.map(function(url){return fetch(url,{cache:'no-store'}).then(function(response){if(response&&response.ok)return cache.put(url,response.clone())}).catch(function(){return null})}))}).then(function(){return self.skipWaiting()}))});
 self.addEventListener('activate',function(event){event.waitUntil(caches.keys().then(function(keys){return Promise.all(keys.filter(function(key){return key!==CACHE&&key.indexOf('central-')===0}).map(function(key){return caches.delete(key)}))}).then(function(){return self.clients.claim()}))});

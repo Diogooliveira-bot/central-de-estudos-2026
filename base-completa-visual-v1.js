@@ -2,10 +2,10 @@
 (function(){
   'use strict';
   const replaceUnit=(text)=>String(text||'')
-    .replace(/(\\b\\d+\\s*\\/\\s*\\d+\\s+)metas?\\b/gi,'$1módulos')
-    .replace(/\\bmetas concluídas\\b/gi,'Módulos concluídos')
-    .replace(/\\btópicos do edital\\b/gi,'módulos do edital')
-    .replace(/\\btópicos reais recuperados\\b/gi,'módulos estruturados');
+    .replace(/(\b\d+\s*\/\s*\d+\s+)metas?\b/gi,'$1módulos')
+    .replace(/\bmetas concluídas\b/gi,'Módulos concluídos')
+    .replace(/\btópicos do edital\b/gi,'módulos do edital')
+    .replace(/\btópicos reais recuperados\b/gi,'módulos estruturados');
   const applyBrand=()=>{
     document.title='Base Completa — Estude, revise e evolua';
     const icon=document.querySelector('.brand-icon');
@@ -60,7 +60,7 @@
       let stats={done:0,total:0,pct:0};
       try{const subject=Array.isArray(window.SUBJECTS)?window.SUBJECTS.find(item=>item&&item.id===id):null;if(typeof window.subjStats==='function')stats=window.subjStats(subject||{id,topics:[]})||stats}catch(_){}
       if(!Number.isFinite(Number(stats.total))||!stats.total){
-        const text=section.querySelector('.subject-count')?.textContent||'';const m=text.match(/(\\d+)\\s*\\/\\s*(\\d+)/);
+        const text=section.querySelector('.subject-count')?.textContent||'';const m=text.match(/(\d+)\s*\/\s*(\d+)/);
         if(m)stats={done:Number(m[1]),total:Number(m[2]),pct:Math.round(Number(m[1])/Math.max(1,Number(m[2]))*100)};
       }
       const done=Math.max(0,Number(stats.done)||0),total=Math.max(0,Number(stats.total)||0),pct=Math.max(0,Math.min(100,Number(stats.pct)||0));
