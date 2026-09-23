@@ -1,0 +1,87 @@
+/* BASE COMPLETA — Design System V1 — tokens oficiais */
+:root{
+  --bc-color-primary:#0F766E;
+  --bc-color-secondary:#12344D;
+  --bc-color-accent:#0E7490;
+  --bc-color-bg:#F7FAFC;
+  --bc-color-bg-secondary:#EEF4F6;
+  --bc-color-surface:#FFFFFF;
+  --bc-color-surface-elevated:#F9FCFD;
+  --bc-color-border:#CBD5E1;
+  --bc-color-border-interactive:#8092A4;
+  --bc-color-text:#0F172A;
+  --bc-color-text-secondary:#475569;
+  --bc-color-text-disabled:#94A3B8;
+  --bc-color-success:#15803D;
+  --bc-color-warning:#B45309;
+  --bc-color-error:#B91C1C;
+  --bc-color-info:#0369A1;
+
+  --bc-space-xs:4px;
+  --bc-space-sm:8px;
+  --bc-space-md1:12px;
+  --bc-space-md:16px;
+  --bc-space-lg:24px;
+  --bc-space-xl:32px;
+  --bc-space-2xl:48px;
+  --bc-space-3xl:64px;
+
+  --bc-radius-sm:6px;
+  --bc-radius-md:10px;
+  --bc-radius-lg:14px;
+  --bc-radius-modal:16px;
+
+  --bc-shadow-sm:0 1px 2px rgba(15,23,42,.08);
+  --bc-shadow-md:0 6px 18px rgba(15,23,42,.10);
+  --bc-shadow-elevated:0 16px 40px rgba(15,23,42,.16);
+
+  --bc-font:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --bc-reading-width:840px;
+  --bc-workspace-width:1360px;
+  --bc-sidebar-width:248px;
+  --bc-sidebar-compact:72px;
+  --bc-topbar-height:64px;
+  --bc-topbar-mobile-height:56px;
+  --bc-transition:160ms ease;
+  color-scheme:light;
+}
+
+html[data-bc-theme="dark"]{
+  --bc-color-primary:#2DD4BF;
+  --bc-color-secondary:#BFEAF1;
+  --bc-color-accent:#22D3EE;
+  --bc-color-bg:#07141C;
+  --bc-color-bg-secondary:#0A1B25;
+  --bc-color-surface:#0E2531;
+  --bc-color-surface-elevated:#13323F;
+  --bc-color-border:#29424F;
+  --bc-color-border-interactive:#3F5966;
+  --bc-color-text:#F1F5F9;
+  --bc-color-text-secondary:#B6C6CF;
+  --bc-color-text-disabled:#728690;
+  --bc-color-success:#4ADE80;
+  --bc-color-warning:#FBBF24;
+  --bc-color-error:#FB7185;
+  --bc-color-info:#38BDF8;
+  color-scheme:dark;
+}
+
+html[data-bc-theme="oled"]{
+  --bc-color-bg:#000;
+  --bc-color-bg-secondary:#05090C;
+  --bc-color-surface:#091116;
+  --bc-color-surface-elevated:#0D171D;
+  --bc-color-border:#23323B;
+  --bc-color-border-interactive:#3B505C;
+  --bc-color-text:#F8FAFC;
+  --bc-color-text-secondary:#C3D0D7;
+  --bc-color-text-disabled:#72808A;
+  --bc-color-primary:#2DD4BF;
+  --bc-color-secondary:#C7EDF2;
+  --bc-color-accent:#22D3EE;
+  --bc-color-success:#4ADE80;
+  --bc-color-warning:#FBBF24;
+  --bc-color-error:#FB7185;
+  --bc-color-info:#38BDF8;
+  color-scheme:dark;
+}
