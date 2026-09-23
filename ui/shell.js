@@ -109,6 +109,91 @@
     });
   }
 
+  function enhanceFieldLabels(){
+    document.querySelectorAll('.field').forEach(function(field,index){
+      var label=field.querySelector('label');
+      var control=field.querySelector('input,select,textarea');
+      if(!label||!control)return;
+      if(!control.id)control.id='bc-field-'+index;
+      if(!label.htmlFor)label.htmlFor=control.id;
+    });
+  }
+
+  function enhanceCheckboxTargets(){
+    document.querySelectorAll('.agenda-row input[type="checkbox"]').forEach(function(input){
+      if(input.closest('.bc-checkbox-target'))return;
+      var row=input.closest('.agenda-row');
+      var copy=row&&row.querySelector('.agenda-copy');
+      if(!input.getAttribute('aria-label')){
+        var text=copy?(copy.textContent||'').replace(/\s+/g,' ').trim():'tarefa';
+        input.setAttribute('aria-label','Marcar como concluída: '+text);
+      }
+      var label=document.createElement('label');
+      label.className='bc-checkbox-target';
+      input.parentNode.insertBefore(label,input);
+      label.appendChild(input);
+    });
+  }
+
+  function enhanceDrawer(){
+    var sidebar=document.getElementById('centralSidebar');
+    var menu=document.getElementById('mobileMenuBtn');
+    var backdrop=document.getElementById('mobileSidebarBackdrop');
+    if(!sidebar||!menu||sidebar.dataset.bcDrawerBound)return;
+    sidebar.dataset.bcDrawerBound='1';
+    var restoreFocus=menu;
+
+    function isDrawerViewport(){
+      return window.matchMedia?window.matchMedia('(max-width:1023px)').matches:true;
+    }
+    function isOpen(){
+      return isDrawerViewport()&&sidebar.classList.contains('mobile-open');
+    }
+    function closeDrawer(){
+      if(typeof window.closeMobileSidebar==='function'){
+        window.closeMobileSidebar();
+      }else{
+        sidebar.classList.remove('mobile-open');
+        if(backdrop){backdrop.classList.remove('show');backdrop.setAttribute('aria-hidden','true')}
+        menu.setAttribute('aria-expanded','false');
+      }
+    }
+    function focusables(){
+      return Array.from(sidebar.querySelectorAll('button:not([disabled]),a[href],input:not([disabled]),select:not([disabled]),textarea:not([disabled]),[tabindex]:not([tabindex="-1"])'))
+        .filter(function(el){return !el.classList.contains('hidden')});
+    }
+    function sync(){
+      var open=isOpen();
+      menu.setAttribute('aria-expanded',open?'true':'false');
+      menu.setAttribute('aria-label',open?'Fechar menu':'Abrir menu');
+      if(open){
+        restoreFocus=menu;
+        if(backdrop)backdrop.setAttribute('aria-hidden','false');
+        var items=focusables();
+        if(items.length&&document.activeElement===menu)setTimeout(function(){items[0].focus()},0);
+      }else{
+        if(backdrop)backdrop.setAttribute('aria-hidden','true');
+      }
+    }
+    new MutationObserver(function(){sync()}).observe(sidebar,{attributes:true,attributeFilter:['class']});
+    document.addEventListener('keydown',function(e){
+      if(!isOpen())return;
+      if(e.key==='Escape'){
+        e.preventDefault();
+        closeDrawer();
+        setTimeout(function(){restoreFocus.focus()},0);
+        return;
+      }
+      if(e.key!=='Tab')return;
+      var items=focusables();
+      if(!items.length)return;
+      var first=items[0],last=items[items.length-1];
+      if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}
+      else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}
+    });
+    sync();
+  }
+
   function enhanceModal(){
     var backdrop=document.getElementById('centralSettingsBackdrop');if(!backdrop||backdrop.dataset.bcModalBound)return;
     backdrop.dataset.bcModalBound='1';var lastFocus=null;
@@ -163,7 +248,7 @@
     Array.from(document.body.childNodes).forEach(function(node){
       if(node.nodeType===3 && /^(?:\s|\\n)+$/.test(node.nodeValue) && node.nodeValue.indexOf('\\n')!==-1)node.nodeValue='';
     });
-    enhanceBrand();enhanceIcons();mapComponents(document);enhanceHome();enhanceTec();enhanceReturns();enhanceModal();improveLabels();
+    enhanceBrand();enhanceIcons();mapComponents(document);enhanceHome();enhanceTec();enhanceReturns();enhanceFieldLabels();enhanceCheckboxTargets();enhanceDrawer();enhanceModal();improveLabels();
   }
   function schedule(){if(scheduled)return;scheduled=true;requestAnimationFrame(refresh)}
   function init(){
