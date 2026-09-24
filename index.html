@@ -698,7 +698,7 @@ window.addEventListener('beforeinstallprompt',function(e){e.preventDefault();def
 window.centralPwaInstall=function(){if(deferred)deferred.prompt()};
 })();
 </script>
-<link rel="stylesheet" href="/base-completa-visual-v1.css?v=20260921a">\n</head>
+<link rel="stylesheet" href="/base-completa-visual-v1.css?v=20260921a">\n<link rel="stylesheet" href="/qc-preview.css?v=20260924q1">\n</head>
 <body>
 
 <script id="central-native-router-v6652">
@@ -735,7 +735,7 @@ setTimeout(function(){
  <div class="brand">
   <div class="brand-main">
    <div class="brand-icon brand-stack">📚</div>
-   <div class="brand-copy"><b>Central de Estudos</b><small>v6.6.75 • Plano de 6 meses</small></div>
+   <div class="brand-copy qc-brand-copy"><b><span>BASE</span> <em>COMPLETA</em></b><small>Central de Estudos • Preview visual</small></div>
   </div>
   <button class="sidebar-toggle" id="sidebarToggle" onclick="toggleSidebarCollapse()" title="Expandir ou recolher menu" aria-label="Expandir ou recolher menu">
    <span class="sidebar-toggle-open">«</span><span class="sidebar-toggle-close">»</span>
@@ -804,12 +804,12 @@ setTimeout(function(){
 <div id="mobileSidebarBackdrop" class="mobile-sidebar-backdrop" onclick="closeMobileSidebar()" aria-hidden="true"></div>
 
 <div class="shell">
- <div class="topbar"><button class="mobile-menu-btn" id="mobileMenuBtn" onclick="toggleMobileSidebar()" aria-label="Abrir menu" aria-expanded="false">☰</button><b>Central de Estudos</b><span class="central-version-v41">v6.6.74</span><span class="crumb" id="crumb">Início</span><div class="top-actions"><button onclick="openCentralSettings()" title="Configurações">⚙ <span class="settings-text">Configurações</span></button><button onclick="openHome()">⌂ Início</button></div></div>
+ <div class="topbar"><button class="mobile-menu-btn" id="mobileMenuBtn" onclick="toggleMobileSidebar()" aria-label="Abrir menu" aria-expanded="false">☰</button><b class="qc-top-brand"><span>BASE</span> <em>COMPLETA</em></b><span class="central-version-v41">Preview QC</span><span class="crumb" id="crumb">Início</span><div class="top-actions"><button onclick="openCentralSettings()" title="Configurações">⚙ <span class="settings-text">Configurações</span></button><button onclick="openHome()">⌂ Início</button></div></div>
  <div class="workspace">
 
   <section class="view" id="homeView">
    <div class="hero">
-    <div><h1>Meu estudo</h1><p id="today"></p></div>
+    <div><h1>Olá, Diogo 👋</h1><p>Vamos continuar evoluindo? <span id="today"></span></p></div>
     <button class="btn primary" onclick="document.getElementById('cronograma').scrollIntoView({behavior:'smooth'})">Cronograma de Estudos</button>
    </div>
    <div class="home-grid">
