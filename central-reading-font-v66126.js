@@ -22,8 +22,8 @@
  }
  function forceReadingText(value){
   var scale=value/100,large=(16*scale).toFixed(1)+'px',medium=(13*scale).toFixed(1)+'px';
-  document.querySelectorAll(LARGE_SELECTORS).forEach(function(element){element.style.setProperty('font-size',large,'important');element.style.setProperty('line-height','1.58','important')});
-  document.querySelectorAll(MEDIUM_SELECTORS).forEach(function(element){element.style.setProperty('font-size',medium,'important');element.style.setProperty('line-height','1.55','important')});
+  document.querySelectorAll(LARGE_SELECTORS).forEach(function(element){element.style.setProperty('font-size',large,'important');element.style.setProperty('line-height','1.68','important')});
+  document.querySelectorAll(MEDIUM_SELECTORS).forEach(function(element){element.style.setProperty('font-size',medium,'important');element.style.setProperty('line-height','1.65','important')});
  }
  function apply(value,persist){
   value=clamp(value);
