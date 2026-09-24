@@ -1,0 +1,1207 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>M4 — Relação de Trabalho, Relação de Emprego, Empregado e CTPS</title><style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style><style>
+:root{color-scheme:light dark;--bg:#ffffff;--surface:#f6f7f9;--text:#17181b;--muted:#5f6570;--border:#d9dde4;--accent:#244a7c;--callout:#f7f8fa}
+@media(prefers-color-scheme:dark){:root{--bg:#111317;--surface:#191c22;--text:#f0f2f5;--muted:#b2b7c2;--border:#343943;--accent:#9fc2f0;--callout:#191c22}}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.68;font-size:17px;padding:28px 20px 72px} body>*{max-width:900px;margin-left:auto;margin-right:auto} h1{font-size:clamp(2rem,5vw,3rem);line-height:1.12;margin-top:0;margin-bottom:.5rem} h2{font-size:clamp(1.45rem,3.5vw,2rem);line-height:1.25;margin-top:2.4rem;margin-bottom:.9rem;border-bottom:1px solid var(--border);padding-bottom:.35rem} h3{font-size:1.18rem;line-height:1.35;margin:1.7rem 0 .55rem} p{margin:.65rem 0 1rem} ul,ol{padding-left:1.35rem} li{margin:.35rem 0} strong{font-weight:720} blockquote{margin:1.1rem auto;padding:.85rem 1rem;border-left:4px solid var(--accent);background:var(--callout);border-radius:0 8px 8px 0} blockquote p{margin:.2rem 0}.table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:1rem auto 1.4rem;border:1px solid var(--border);border-radius:8px;max-width:900px} table{border-collapse:collapse;width:100%;min-width:520px;margin:0} th,td{padding:.72rem .8rem;border-bottom:1px solid var(--border);text-align:left;vertical-align:top} th{background:var(--surface);font-weight:700} tr:last-child td{border-bottom:0} hr{border:0;border-top:1px solid var(--border);margin:2.5rem auto} a{color:var(--accent)} code{font-size:.92em} @media(max-width:600px){body{padding:20px 15px 56px;font-size:16px}h2{margin-top:2rem}blockquote{padding:.75rem .85rem}th,td{padding:.62rem .7rem}}
+</style><style id="dt-central-integration-v1">.dt-central-bar{position:relative;z-index:9999;display:flex;gap:14px;align-items:center;max-width:1180px;margin:18px auto 10px;padding:12px 14px;border:1px solid rgba(148,163,184,.25);border-radius:14px;background:#0f172a;color:#e2e8f0;font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif}.dt-central-bar .dt-back{color:#7dd3fc;text-decoration:none;font-weight:800;white-space:nowrap}.dt-central-bar strong{display:block;font-size:.9rem}.dt-central-bar span{display:block;font-size:.76rem;color:#94a3b8;margin-top:2px}.dt-tec-panel{max-width:1180px;margin:0 auto 16px;padding:14px;border:1px solid rgba(14,165,233,.28);border-radius:14px;background:rgba(14,165,233,.08);font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif}.dt-tec-panel b{display:block}.dt-tec-panel small{display:block;color:#64748b;margin-top:3px}.dt-tec-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.dt-tec-link{display:inline-flex;padding:8px 10px;border-radius:9px;background:#0284c7;color:white!important;text-decoration:none!important;font-size:.78rem;font-weight:800}.dt-tec-link:hover{filter:brightness(1.08)}@media(max-width:700px){.dt-central-bar{margin:8px;align-items:flex-start;flex-direction:column}.dt-tec-panel{margin:0 8px 12px}.dt-tec-link{width:100%;box-sizing:border-box}.dt-central-bar span{line-height:1.35}}</style>
+</head><body><div class="dt-central-bar"><a class="dt-back" href="/">← BASE COMPLETA</a><div><strong>M4 · Direito do Trabalho</strong><span>Relação de Trabalho, Relação de Emprego, Empregado e CTPS</span></div></div><section class="dt-tec-panel"><div><b>Questões no TEC</b><small>Cadernos já cadastrados na Central; use após a teoria e na revisão.</small></div><div class="dt-tec-links"><a class="dt-tec-link" href="https://www.tecconcursos.com.br/questoes/cadernos/101797675" target="_blank" rel="noopener noreferrer">TRAB 02 — Relação de trabalho, emprego e CTPS</a></div></section><main><h1 id="direito-do-trabalho-m4">DIREITO DO TRABALHO — M4</h1>
+<h2
+id="relação-de-trabalho-relação-de-emprego-empregado-e-carteira-de-trabalho-e-previdência-social">Relação
+de Trabalho, Relação de Emprego, Empregado e Carteira de Trabalho e
+Previdência Social</h2>
+<p><strong>Versão:</strong> final auditada OFFLINE —
+pré-integração.<br />
+<strong>Publicação:</strong> não realizada.<br />
+<strong>GitHub / Vercel / produção:</strong> não alterados.<br />
+<strong>Data da auditoria:</strong> 24/09/2026.</p>
+<hr />
+<h2 id="introdução-do-módulo">INTRODUÇÃO DO MÓDULO</h2>
+<p>Este módulo responde à pergunta central do Direito Individual do
+Trabalho: <strong>quando uma prestação de trabalho se transforma
+juridicamente em relação de emprego?</strong></p>
+<p>A dificuldade mais comum é tratar como sinônimas expressões que não
+são iguais. <strong>Relação de trabalho</strong> é o gênero amplo.
+<strong>Relação de emprego</strong> é uma espécie desse gênero e somente
+se configura quando os elementos jurídicos do vínculo aparecem em
+conjunto.</p>
+<p>O M4 também mostra como distinguir o empregado de figuras próximas —
+eventual, autônomo, estagiário, voluntário, cooperado e avulso — e
+integra a <strong>Carteira de Trabalho e Previdência Social
+(CTPS)</strong> ao tema do vínculo, sem transformar o módulo em um
+estudo autônomo de documentação trabalhista.</p>
+<blockquote>
+<p><strong>ENTENDA DE VERDADE</strong><br />
+O nome do contrato não resolve a questão. “Parceiro”, “prestador”,
+“autônomo” ou outro rótulo não substitui a análise da realidade.
+Primeiro se observam os fatos; depois se verifica se eles preenchem os
+requisitos jurídicos da relação de emprego.</p>
+</blockquote>
+<h3 id="o-que-você-precisa-sair-sabendo">O QUE VOCÊ PRECISA SAIR
+SABENDO</h3>
+<p>Ao terminar o M4, você deve conseguir:</p>
+<ul>
+<li>diferenciar relação de trabalho de relação de emprego;</li>
+<li>identificar, separadamente, <strong>pessoa física, pessoalidade,
+onerosidade, não eventualidade e subordinação jurídica</strong>;</li>
+<li>explicar por que os requisitos devem ser analisados em
+conjunto;</li>
+<li>distinguir pessoa física de pessoalidade;</li>
+<li>distinguir não eventualidade de trabalho diário;</li>
+<li>distinguir subordinação jurídica de dependência econômica;</li>
+<li>reconhecer que exclusividade e assinatura prévia da CTPS não são
+requisitos gerais do vínculo;</li>
+<li>diferenciar empregado de figuras próximas tratadas nas fontes;</li>
+<li>compreender a diferença básica entre <strong>trabalho
+proibido</strong> e <strong>trabalho ilícito</strong>;</li>
+<li>aplicar as regras essenciais da CTPS, inclusive os prazos
+atuais;</li>
+<li>reconhecer as Súmulas nº 12, 363 e 386 do Tribunal Superior do
+Trabalho (TST).</li>
+</ul>
+<hr />
+<h2 id="relação-de-trabalho-e-relação-de-emprego">1. RELAÇÃO DE TRABALHO
+E RELAÇÃO DE EMPREGO</h2>
+<h3 id="relação-de-trabalho">1.1 Relação de trabalho</h3>
+<p><strong>Relação de trabalho</strong> é a categoria ampla que abrange
+relações jurídicas cujo conteúdo envolve prestação humana de trabalho.
+Dentro dela podem existir, entre outras figuras tratadas nas fontes,
+relação de emprego, trabalho autônomo, trabalho eventual, estágio,
+trabalho avulso e serviço voluntário.</p>
+<blockquote>
+<p><strong>REGRA</strong><br />
+Relação de trabalho = <strong>gênero</strong>.</p>
+</blockquote>
+<p>A existência de prestação de trabalho, sozinha, não autoriza concluir
+que existe emprego.</p>
+<h3 id="relação-de-emprego">1.2 Relação de emprego</h3>
+<p>A <strong>relação de emprego</strong> é espécie da relação de
+trabalho. Sua caracterização decorre do conjunto dos elementos extraídos
+principalmente dos arts. 2º e 3º da Consolidação das Leis do Trabalho
+(CLT).</p>
+<p>O art. 3º traz o núcleo do conceito de empregado: pessoa física que
+presta serviços de natureza não eventual a empregador, sob dependência
+deste e mediante salário. A leitura sistemática com o art. 2º permite
+organizar os requisitos clássicos do vínculo.</p>
+<blockquote>
+<p><strong>REGRA</strong><br />
+Relação de emprego = relação de trabalho que reúne <strong>pessoa física
++ pessoalidade + onerosidade + não eventualidade + subordinação
+jurídica</strong>.</p>
+</blockquote>
+<h3 id="relação-de-trabalho-relação-de-emprego">1.3 Relação de trabalho
+× relação de emprego</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Ponto</th>
+<th>Relação de trabalho</th>
+<th>Relação de emprego</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Posição</td>
+<td>Gênero amplo</td>
+<td>Espécie do gênero</td>
+</tr>
+<tr class="even">
+<td>Requisitos do vínculo</td>
+<td>Podem não estar reunidos</td>
+<td>Devem aparecer em conjunto</td>
+</tr>
+<tr class="odd">
+<td>Regime de empregado da CLT</td>
+<td>Não decorre automaticamente</td>
+<td>Incide quando caracterizado o vínculo</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>PEGADINHA</strong><br />
+❌ “Toda relação de trabalho é relação de emprego.”<br />
+✅ Toda relação de emprego é relação de trabalho, mas nem toda relação
+de trabalho é emprego.<br />
+<strong>POR QUÊ:</strong> o emprego exige requisitos jurídicos
+específicos.</p>
+</blockquote>
+<h3 id="a-realidade-da-prestação">1.4 A realidade da prestação</h3>
+<p>O art. 9º da CLT invalida atos praticados com o objetivo de
+desvirtuar, impedir ou fraudar a aplicação da legislação
+trabalhista.</p>
+<p>Isso significa que o rótulo formal não prevalece automaticamente
+sobre os fatos. Se um contrato chama o trabalhador de “autônomo”, mas a
+execução concreta revela os elementos do emprego, a qualificação
+jurídica deve considerar a realidade da prestação.</p>
+<p>Esse raciocínio se conecta ao princípio da <strong>primazia da
+realidade</strong>, já estudado no M2.</p>
+<blockquote>
+<p><strong>CONSEQUÊNCIA</strong><br />
+A falta de assinatura da CTPS não impede, por si só, o reconhecimento de
+um vínculo que exista materialmente.</p>
+</blockquote>
+<hr />
+<h2 id="como-reconhecer-a-relação-de-emprego">2. COMO RECONHECER A
+RELAÇÃO DE EMPREGO</h2>
+<h3 id="passo-a-passo-de-análise">2.1 Passo a passo de análise</h3>
+<p>Use este roteiro em casos concretos:</p>
+<ol type="1">
+<li><strong>Existe prestação de trabalho por pessoa
+natural?</strong></li>
+<li><strong>O serviço é pessoal?</strong></li>
+<li><strong>Há contraprestação econômica ou expectativa jurídica de
+remuneração?</strong></li>
+<li><strong>A prestação é não eventual?</strong></li>
+<li><strong>Existe subordinação jurídica?</strong></li>
+<li><strong>Há regime legal especial que explique a situação?</strong>
+Ex.: estágio regular, voluntariado verdadeiro, cooperativismo
+verdadeiro.</li>
+<li><strong>Existe fraude ou simples rótulo contratual?</strong> Se
+houver indício, confronte a forma com a realidade e com o art. 9º da
+CLT.</li>
+</ol>
+<p>O roteiro é didático. Ele não transforma nenhum indício isolado em
+prova automática do vínculo.</p>
+<h3 id="pessoa-física">2.2 Pessoa física</h3>
+<p>O empregado é <strong>pessoa física</strong>. O Direito do Trabalho
+protege, aqui, a prestação de trabalho realizada pela pessoa
+natural.</p>
+<p>Uma pessoa jurídica real e autônoma não é “empregada” em sentido
+técnico. Se uma pessoa jurídica for utilizada apenas como forma para
+ocultar trabalho pessoal subordinado, a situação exige exame da
+realidade; o aprofundamento da <strong>pejotização</strong> pertence ao
+M8.</p>
+<blockquote>
+<p><strong>PERGUNTA-CHAVE:</strong> quem executa o trabalho é uma pessoa
+natural?</p>
+</blockquote>
+<h3 id="pessoalidade">2.3 Pessoalidade</h3>
+<p>A prestação é <strong>pessoal</strong> quando o trabalhador foi
+contratado em consideração à sua própria pessoa e não possui liberdade
+ordinária para mandar qualquer substituto em seu lugar.</p>
+<p>Substituições excepcionais consentidas pelo empregador ou previstas
+no regime jurídico aplicável não eliminam, por si só, a
+pessoalidade.</p>
+<blockquote>
+<p><strong>ERRO QUE EU NÃO POSSO COMETER</strong><br />
+Pessoa física e pessoalidade não são sinônimos.<br />
+<strong>Pessoa física</strong> responde <em>quem</em> presta o
+trabalho.<br />
+<strong>Pessoalidade</strong> responde se o serviço é devido por
+<em>aquela pessoa</em>.</p>
+</blockquote>
+<h3 id="onerosidade">2.4 Onerosidade</h3>
+<p>A relação de emprego é <strong>onerosa</strong>: existe troca
+jurídica entre trabalho e contraprestação econômica.</p>
+<p>O art. 3º da CLT utiliza a expressão “mediante salário”. O eventual
+inadimplemento do empregador não transforma um vínculo oneroso em
+trabalho gratuito.</p>
+<blockquote>
+<p><strong>PERGUNTA-CHAVE:</strong> existe obrigação ou expectativa
+jurídica de remuneração pela prestação?</p>
+</blockquote>
+<h3 id="não-eventualidade">2.5 Não eventualidade</h3>
+<p>O empregado presta serviços de natureza <strong>não
+eventual</strong>.</p>
+<p>Não eventualidade não significa, simplesmente, “trabalhar todos os
+dias”. O ponto é distinguir a prestação inserida de modo não meramente
+episódico daquela que ocorre de forma fortuita ou ocasional.</p>
+<p>O trabalhador eventual é justamente uma figura importante de
+contraste: na configuração típica tratada pela fonte, falta a não
+eventualidade própria do emprego.</p>
+<blockquote>
+<p><strong>ATENÇÃO — TRABALHO INTERMITENTE</strong><br />
+O contrato intermitente demonstra por que “não eventual” não é sinônimo
+de presença diária. Há relação de emprego mesmo com alternância de
+períodos de prestação e inatividade. O regime contratual completo fica
+para módulo posterior.</p>
+</blockquote>
+<h3 id="subordinação-jurídica">2.6 Subordinação jurídica</h3>
+<p>A <strong>subordinação jurídica</strong> é o elemento que mais
+frequentemente diferencia empregado e trabalhador autônomo.</p>
+<p>O art. 3º da CLT fala em prestação “sob a dependência” do empregador.
+No estudo trabalhista, o núcleo é jurídico: o empregador ocupa posição
+de direção, organização, comando e fiscalização da prestação, dentro dos
+limites legais.</p>
+<p>Podem aparecer, conforme o caso:</p>
+<ul>
+<li>ordens e diretrizes sobre a execução;</li>
+<li>fiscalização da atividade;</li>
+<li>inserção do trabalho na organização do empregador;</li>
+<li>padrões organizacionais e disciplinares;</li>
+<li>comando, controle ou supervisão por meios digitais.</li>
+</ul>
+<p>Nenhum indício, sozinho, deve ser transformado em fórmula
+automática.</p>
+<blockquote>
+<p><strong>ENTENDA DE VERDADE</strong><br />
+Subordinação não exige um chefe fisicamente ao lado do trabalhador. O
+art. 6º da CLT admite trabalho no estabelecimento, no domicílio ou a
+distância e equipara meios telemáticos e informatizados de comando,
+controle e supervisão aos meios pessoais e diretos para fins de
+subordinação.</p>
+</blockquote>
+<p>A fonte principal também menciona construções doutrinárias como
+<strong>subordinação estrutural</strong> e <strong>reticular</strong>.
+No M4, a função dessas categorias é mostrar que a inserção subordinada
+pode surgir por formas menos visíveis que a ordem verbal direta. O
+aprofundamento teórico não é necessário para o núcleo deste módulo.</p>
+<blockquote>
+<p><strong>ERRO QUE EU NÃO POSSO COMETER</strong><br />
+Subordinação jurídica ≠ dependência econômica.<br />
+Uma pessoa pode depender economicamente de um cliente e continuar
+autônoma; um empregado pode ter alta renda e continuar juridicamente
+subordinado.</p>
+</blockquote>
+<h3 id="quadro-dos-cinco-requisitos">2.7 Quadro dos cinco
+requisitos</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Requisito</th>
+<th>Pergunta para a prova</th>
+<th>Confusão comum</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Pessoa física</td>
+<td>Quem trabalha é pessoa natural?</td>
+<td>Confundir com pessoalidade</td>
+</tr>
+<tr class="even">
+<td>Pessoalidade</td>
+<td>O serviço é devido por aquela pessoa?</td>
+<td>Achar que qualquer substituição elimina o vínculo</td>
+</tr>
+<tr class="odd">
+<td>Onerosidade</td>
+<td>Há contraprestação econômica?</td>
+<td>Achar que remuneração, sozinha, basta</td>
+</tr>
+<tr class="even">
+<td>Não eventualidade</td>
+<td>A prestação é não meramente episódica?</td>
+<td>Exigir trabalho diário</td>
+</tr>
+<tr class="odd">
+<td>Subordinação jurídica</td>
+<td>Há poder jurídico de direção/controle?</td>
+<td>Confundir com dependência econômica</td>
+</tr>
+</tbody>
+</table>
+<h3 id="o-que-não-é-requisito-geral-do-vínculo">2.8 O que NÃO é
+requisito geral do vínculo</h3>
+<p><strong>Exclusividade.</strong> A fonte principal alerta
+expressamente que exclusividade não é requisito essencial da relação de
+emprego.</p>
+<p><strong>CTPS previamente assinada.</strong> O registro é dever legal
+e importante meio de prova, mas não é o elemento que cria a realidade
+material do vínculo.</p>
+<p><strong>Presença física constante.</strong> O art. 6º da CLT afasta
+essa ideia.</p>
+<p><strong>Dependência econômica absoluta.</strong> O elemento técnico é
+a subordinação jurídica, analisada com os demais requisitos.</p>
+<blockquote>
+<p><strong>PEGADINHA</strong><br />
+❌ “Autônomo que presta serviços de forma contínua vira empregado
+automaticamente.”<br />
+✅ Continuidade, isoladamente, não substitui a análise da subordinação e
+dos demais requisitos.</p>
+</blockquote>
+<hr />
+<h2 id="empregado-conceito-e-situações-especiais">3. EMPREGADO: CONCEITO
+E SITUAÇÕES ESPECIAIS</h2>
+<h3 id="conceito-legal">3.1 Conceito legal</h3>
+<h3 id="empregados-de-formação-intelectual">3.1.1 Empregados de formação
+intelectual</h3>
+<p>A fonte 43124580 destaca expressamente que a condição de empregado
+<strong>não depende de o trabalho ser manual, técnico ou
+intelectual</strong>. A natureza intelectual da atividade não elimina,
+por si só, os requisitos da relação de emprego.</p>
+<p><strong>Regra para prova:</strong> se estiverem presentes pessoa
+física, pessoalidade, onerosidade, não eventualidade e subordinação, a
+qualificação intelectual da prestação não afasta automaticamente o
+vínculo.</p>
+<p>O art. 3º da CLT é o centro do tema: empregado é a pessoa física que
+presta serviço não eventual a empregador, sob dependência deste e
+mediante salário.</p>
+<p>O parágrafo único determina que não há distinções relativas à espécie
+de emprego e à condição de trabalhador, nem entre trabalho
+<strong>intelectual, técnico e manual</strong>.</p>
+<blockquote>
+<p><strong>CONSEQUÊNCIA</strong><br />
+Sofisticação técnica, formação superior ou prestígio profissional não
+afastam, por si, a possibilidade de vínculo. O ponto continua sendo a
+presença dos requisitos.</p>
+</blockquote>
+<h3 id="altos-empregados">3.2 Altos empregados</h3>
+<p>As fontes indicam o estudo dos chamados altos empregados. Para o M4,
+retenha somente a ideia estrutural: posição hierárquica elevada ou maior
+poder de gestão <strong>não transforma automaticamente o trabalhador em
+autônomo</strong>.</p>
+<p>Regras de cargo de confiança, poderes específicos e jornada pertencem
+a módulos posteriores.</p>
+<h3 id="empregado-doméstico">3.3 Empregado doméstico</h3>
+<p>A Lei Complementar nº 150/2015 caracteriza empregado doméstico pela
+prestação <strong>contínua, subordinada, onerosa e pessoal</strong>, de
+finalidade <strong>não lucrativa</strong>, à pessoa ou à família, no
+âmbito residencial destas, <strong>por mais de 2 dias por
+semana</strong>.</p>
+<blockquote>
+<p><strong>PEGADINHA</strong><br />
+❌ “Quem trabalha dois dias por semana em residência é necessariamente
+empregado doméstico.”<br />
+✅ A lei exige <strong>mais de 2 dias por semana</strong>, além dos
+demais elementos.</p>
+</blockquote>
+<h3 id="empregado-rural">3.4 Empregado rural</h3>
+<p>A Lei nº 5.889/1973 define empregado rural como a pessoa física que,
+em propriedade rural ou prédio rústico, presta serviços de natureza não
+eventual a empregador rural, sob dependência e mediante salário.</p>
+<p>No M4 interessa perceber que a categoria especial continua
+estruturada pelos elementos básicos do vínculo. O regime rural completo
+fica fora deste módulo.</p>
+<h3 id="menor-e-aprendiz">3.5 Menor e aprendiz</h3>
+<p>As fontes incluem menor e aprendiz. Para o M4, o ponto indispensável
+é que a <strong>aprendizagem é relação empregatícia especial</strong>,
+disciplinada por requisitos próprios.</p>
+<p>Idades, forma, formação técnico-profissional e demais regras devem
+ser aprofundadas no módulo específico.</p>
+<h3 id="bancário-e-trabalho-da-mulher">3.6 Bancário e trabalho da
+mulher</h3>
+<p>Essas categorias aparecem nas fontes, mas suas regras especiais
+pertencem principalmente a temas posteriores, como jornada e proteção
+específica.</p>
+<p>No M4, não se altera o filtro central: a categoria profissional ou a
+condição pessoal não substitui a análise dos requisitos do vínculo.</p>
+<h3 id="trabalhador-indígena">3.7 Trabalhador indígena</h3>
+<p>A temática é sinalizada na estrutura da aula “O Empregado”. Como o
+binário integral dessa apostila não pôde ser recuperado, o M4 não
+reconstrói regras especiais por suposição. Para fins estruturais, a
+identificação do vínculo continua partindo dos requisitos gerais, sem
+prejuízo de disciplina protetiva específica em fonte própria.</p>
+<h3 id="empregado-intermitente">3.8 Empregado intermitente</h3>
+<p>O trabalhador intermitente é <strong>empregado</strong>. A
+alternância entre períodos de trabalho e inatividade não elimina, por
+si, a subordinação nem converte o vínculo em trabalho eventual.</p>
+<p>O regime contratual do intermitente será aprofundado no módulo de
+contratos.</p>
+<hr />
+<h2 id="figuras-próximas-validade-e-ausência-de-vínculo">4. FIGURAS
+PRÓXIMAS, VALIDADE E AUSÊNCIA DE VÍNCULO</h2>
+<h3 id="trabalhador-eventual">4.1 Trabalhador eventual</h3>
+<p>O trabalhador eventual realiza prestação ocasional ou episódica. Na
+comparação típica feita pelas fontes, o elemento que não se completa é a
+<strong>não eventualidade</strong> exigida para a relação de
+emprego.</p>
+<h3 id="trabalhador-autônomo">4.2 Trabalhador autônomo</h3>
+<p>O autônomo verdadeiro organiza sua atividade com autonomia jurídica,
+sem a subordinação típica do empregado.</p>
+<p>O art. 442-B da CLT admite contratação de autônomo, observadas as
+formalidades legais, com ou sem exclusividade e de forma contínua ou
+não.</p>
+<blockquote>
+<p><strong>ATENÇÃO</strong><br />
+O dispositivo não legitima fraude. Se a execução real preencher os
+elementos da relação de emprego, o rótulo de “autônomo” deve ser
+confrontado com os arts. 2º, 3º e 9º da CLT.</p>
+</blockquote>
+<h3 id="cooperado">4.3 Cooperado</h3>
+<p>O art. 442, § 1º, da CLT estabelece que não existe vínculo
+empregatício entre cooperativa e associados nem entre estes e os
+tomadores dos serviços da cooperativa.</p>
+<p>A regra pressupõe cooperativismo verdadeiro. O uso meramente formal
+de uma cooperativa não substitui a análise da realidade quando houver
+alegação de fraude.</p>
+<h3 id="estagiário">4.4 Estagiário</h3>
+<p>A Lei nº 11.788/2008 define o estágio como ato educativo escolar
+supervisionado. O estágio regular não cria vínculo empregatício quando
+os requisitos legais são observados, incluindo matrícula e frequência
+regular, termo de compromisso, compatibilidade das atividades e
+acompanhamento efetivo.</p>
+<p>A lei também prevê consequência para o estágio mantido em
+desconformidade: nas hipóteses legais, pode haver caracterização de
+vínculo com a parte concedente.</p>
+<blockquote>
+<p><strong>PEGADINHA</strong><br />
+❌ “Receber bolsa transforma o estagiário em empregado.”<br />
+✅ A bolsa pode existir em estágio regular. O ponto é verificar o
+cumprimento dos requisitos da Lei nº 11.788/2008.</p>
+</blockquote>
+<h3 id="serviço-voluntário">4.5 Serviço voluntário</h3>
+<p>A Lei nº 9.608/1998 define serviço voluntário como atividade
+<strong>não remunerada</strong> prestada por pessoa física a entidade
+pública ou instituição privada sem fins lucrativos nos objetivos
+previstos em lei.</p>
+<p>O serviço voluntário verdadeiro não gera vínculo empregatício. A lei
+admite ressarcimento de despesas comprovadamente realizadas, desde que
+autorizadas.</p>
+<blockquote>
+<p><strong>PEGADINHA</strong><br />
+Ressarcimento de despesa autorizada ≠ salário automaticamente.</p>
+</blockquote>
+<h3 id="trabalhador-avulso">4.6 Trabalhador avulso</h3>
+<h3 id="trabalhador-avulso-portuário-não-portuário">4.6.1 Trabalhador
+avulso portuário × não portuário</h3>
+<p>A apostila 43123815 subdivide o trabalho avulso em duas figuras
+relevantes:</p>
+<ul>
+<li><strong>avulso portuário:</strong> prestação ligada às operações
+portuárias, com intermediação do Órgão Gestor de Mão de Obra (OGMO) no
+regime próprio;</li>
+<li><strong>avulso não portuário:</strong> prestação avulsa fora do
+porto, com intermediação sindical nas hipóteses tratadas pela legislação
+específica.</li>
+</ul>
+<p>A característica comum para este módulo é que o trabalhador avulso
+<strong>não se transforma em empregado de cada tomador apenas pela
+prestação</strong>, embora a Constituição assegure igualdade de direitos
+entre trabalhador com vínculo permanente e trabalhador avulso nos termos
+do art. 7º, XXXIV.</p>
+<blockquote>
+<p><strong>ATENÇÃO:</strong> a fonte também associa às tomadoras
+responsabilidades específicas por remuneração/encargos no regime do
+avulso. O ponto aqui é classificatório; não confundir com terceirização
+do M8.</p>
+</blockquote>
+<h3 id="plataformas-digitais-conteúdo-histórico-da-fonte">4.6.2
+Plataformas digitais — conteúdo histórico da fonte</h3>
+<p>A 43123815 contém capítulo sobre trabalho em plataformas e a Lei nº
+14.297/2022, criada para medidas de proteção a entregadores durante a
+emergência sanitária da covid-19. Como o próprio recorte da fonte é
+<strong>emergencial e temporal</strong>, ele é preservado no M4 como
+registro histórico de uma forma de trabalho e não como regime geral
+permanente de plataformas.</p>
+<p>Para vínculo de emprego, permanece o método do próprio M4: analisar
+os requisitos no caso concreto. A existência de aplicativo, algoritmo ou
+pessoa jurídica <strong>não resolve sozinha</strong> a classificação
+jurídica.</p>
+<p>O trabalhador avulso possui regime próprio e presta serviços sem
+formação ordinária de vínculo de emprego com cada tomador.</p>
+<p>Organização portuária, Órgão Gestor de Mão de Obra (OGMO) e demais
+detalhes não são aprofundados no M4.</p>
+<h3 id="comparativo-funcional">4.7 Comparativo funcional</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Figura</th>
+<th>Elemento decisivo para diferenciar</th>
+<th>Resultado típico no nível do M4</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Empregado</td>
+<td>Reúne os cinco requisitos</td>
+<td>Relação de emprego</td>
+</tr>
+<tr class="even">
+<td>Eventual</td>
+<td>Falta a não eventualidade própria do emprego</td>
+<td>Sem vínculo empregatício típico</td>
+</tr>
+<tr class="odd">
+<td>Autônomo verdadeiro</td>
+<td>Autonomia jurídica, e não subordinação empregatícia</td>
+<td>Sem vínculo empregatício</td>
+</tr>
+<tr class="even">
+<td>Estagiário regular</td>
+<td>Regime educativo legal próprio</td>
+<td>Não cria vínculo</td>
+</tr>
+<tr class="odd">
+<td>Voluntário verdadeiro</td>
+<td>Atividade não remunerada em regime legal próprio</td>
+<td>Não gera vínculo</td>
+</tr>
+<tr class="even">
+<td>Cooperado verdadeiro</td>
+<td>Regime cooperativo próprio</td>
+<td>Não há vínculo nas hipóteses legais</td>
+</tr>
+<tr class="odd">
+<td>Avulso</td>
+<td>Regime jurídico próprio</td>
+<td>Sem vínculo ordinário com cada tomador</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>ENTENDA DE VERDADE</strong><br />
+O quadro não serve para “marcar X” mecanicamente em cada requisito.
+Algumas figuras possuem regime legal próprio. Em prova, primeiro
+identifique os fatos e depois verifique se existe vínculo ou se uma
+disciplina especial explica a prestação.</p>
+</blockquote>
+<h3 id="trabalho-proibido-trabalho-ilícito">4.8 Trabalho proibido ×
+trabalho ilícito</h3>
+<p>Esse ponto aparece expressamente na fonte principal dentro da
+<strong>validade jurídica da relação de emprego</strong> e também no
+material sintético da aula “O Empregado”. Ele estava ausente na versão
+anterior e foi reinserido na auditoria.</p>
+<p><strong>Trabalho proibido ou irregular</strong> ocorre quando a
+prestação é vedada em determinadas condições por norma protetiva. A
+fonte enfatiza que, nesse caso, a proteção trabalhista não deve ser
+simplesmente apagada pela irregularidade. Exemplo recorrente nas
+próprias fontes: trabalho de menor em condição proibida.</p>
+<p><strong>Trabalho ilícito</strong> envolve objeto ilícito. A fonte usa
+como paradigma o jogo do bicho e remete à Orientação Jurisprudencial nº
+199 da Subseção I Especializada em Dissídios Individuais (SBDI-1) do
+TST, segundo a qual é nulo o contrato voltado ao desempenho de atividade
+inerente à prática do jogo do bicho, em razão da ilicitude do
+objeto.</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Situação</th>
+<th>Ideia central</th>
+<th>Consequência estudada no M4</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Trabalho proibido/irregular</td>
+<td>A atividade é vedada para aquele trabalhador ou naquelas
+condições</td>
+<td>A irregularidade não autoriza apagar a proteção trabalhista já
+gerada pela prestação, conforme abordagem da fonte</td>
+</tr>
+<tr class="even">
+<td>Trabalho ilícito</td>
+<td>O objeto da própria atividade é ilícito</td>
+<td>Nulidade, com o paradigma da OJ nº 199 do TST</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>ERRO QUE EU NÃO POSSO COMETER</strong><br />
+Trabalho proibido não é sinônimo de trabalho ilícito.</p>
+</blockquote>
+<blockquote>
+<p><strong>FRONTEIRA</strong><br />
+A teoria geral das nulidades, requisitos de validade do negócio jurídico
+e seus desdobramentos contratuais serão aprofundados no M5.</p>
+</blockquote>
+<h3 id="administração-pública-contratação-irregular">4.9 Administração
+Pública: contratação irregular</h3>
+<p>A fonte principal trata dos servidores irregulares na Administração
+Pública.</p>
+<p>A contratação após a Constituição de 1988 sem prévia aprovação em
+concurso público encontra obstáculo no art. 37, II e § 2º, da
+Constituição. A Súmula nº 363 do TST limita os efeitos da contratação
+nula à contraprestação pactuada pelas horas trabalhadas, respeitado o
+valor da hora do salário mínimo, e aos depósitos do <strong>Fundo de
+Garantia do Tempo de Serviço (FGTS)</strong>.</p>
+<p>O TST reafirmou esse entendimento em precedente qualificado em
+2025.</p>
+<h3 id="policial-militar-e-empresa-privada">4.10 Policial militar e
+empresa privada</h3>
+<p>A Súmula nº 386 do TST estabelece que, preenchidos os requisitos do
+art. 3º da CLT, é legítimo reconhecer relação de emprego entre policial
+militar e empresa privada, independentemente de eventual penalidade
+disciplinar prevista no estatuto militar.</p>
+<p>O entendimento também foi reafirmado pelo TST em precedente
+qualificado em 2025.</p>
+<blockquote>
+<p><strong>LIÇÃO</strong><br />
+A possível consequência disciplinar militar não substitui a análise dos
+requisitos da relação trabalhista privada.</p>
+</blockquote>
+<h3 id="natureza-jurídica-limite-deliberado-do-m4">4.11 Natureza
+jurídica: limite deliberado do M4</h3>
+<p>A fonte principal possui tópico próprio sobre a <strong>natureza
+jurídica da relação de emprego</strong> e informa que existem diferentes
+teorias para explicá-la.</p>
+<p>A versão anterior reduziu esse ponto excessivamente. Nesta auditoria,
+a existência e a finalidade do tema foram restauradas, mas <strong>as
+teorias não foram reconstruídas por memória ou conhecimento
+geral</strong>, porque o binário integral da apostila original continua
+inacessível e o comando do M4 reserva a teoria geral do contrato ao
+M5.</p>
+<blockquote>
+<p><strong>LACUNA/VERIFICAÇÃO FUTURA</strong><br />
+Antes de eventual aprofundamento das teorias de natureza jurídica,
+recuperar o PDF binário original e conferir integralmente a
+classificação adotada pela professora. Até lá, o M4 mantém apenas o
+reconhecimento do tema e sua transferência para o M5.</p>
+</blockquote>
+<hr />
+<h2 id="carteira-de-trabalho-e-previdência-social-ctps">5. CARTEIRA DE
+TRABALHO E PREVIDÊNCIA SOCIAL (CTPS)</h2>
+<h3 id="função-no-m4">5.1 Função no M4</h3>
+<p>A CTPS é instrumento de identificação e registro de informações
+profissionais do trabalhador. Neste módulo, ela interessa por sua
+ligação com <strong>admissão, registro, prova e reconhecimento do
+vínculo</strong>.</p>
+<p>A legislação atual privilegia o formato eletrônico. O art. 16 da CLT
+estabelece o número de inscrição no <strong>Cadastro de Pessoas Físicas
+(CPF)</strong> como identificação única do empregado na CTPS.</p>
+<h3 id="ctps-digital">5.2 CTPS digital</h3>
+<p>Nos termos do art. 29 da CLT:</p>
+<ul>
+<li>a comunicação do CPF ao empregador equivale à apresentação da CTPS
+em meio digital;</li>
+<li>os registros eletrônicos gerados pelo empregador nos sistemas
+informatizados equivalem às anotações previstas na legislação.</li>
+</ul>
+<h3 id="prazo-para-anotação-e-prazo-de-acesso">5.3 Prazo para anotação e
+prazo de acesso</h3>
+<p>O empregador possui <strong>5 dias úteis</strong> para efetuar as
+anotações do art. 29 da CLT relativas aos trabalhadores admitidos,
+incluindo data de admissão, remuneração e condições especiais, se
+houver.</p>
+<p>Depois da anotação, o trabalhador deve ter acesso às informações de
+sua CTPS no prazo de até <strong>48 horas</strong>.</p>
+<blockquote>
+<p><strong>O QUE DECORAR</strong><br />
+<strong>5 dias úteis</strong> → prazo do empregador para anotar.<br />
+<strong>48 horas após a anotação</strong> → prazo para o trabalhador ter
+acesso às informações.</p>
+</blockquote>
+<blockquote>
+<p><strong>PEGADINHA</strong><br />
+❌ “O empregador ainda tem 48 horas para anotar a admissão.”<br />
+✅ A redação atual do art. 29 fixa <strong>5 dias úteis</strong>. As 48
+horas referem-se ao acesso do trabalhador depois da anotação.</p>
+</blockquote>
+<h3 id="anotação-desabonadora">5.4 Anotação desabonadora</h3>
+<p>O art. 29, § 4º, da CLT proíbe anotações desabonadoras à conduta do
+empregado na CTPS.</p>
+<blockquote>
+<p><strong>CONSEQUÊNCIA</strong><br />
+A CTPS não pode ser transformada em instrumento de punição ou registro
+depreciativo do trabalhador.</p>
+</blockquote>
+<h3 id="ctps-não-cria-o-vínculo">5.5 CTPS não cria o vínculo</h3>
+<p>Duas ideias devem ser mantidas simultaneamente:</p>
+<ol type="1">
+<li>o empregador possui dever legal de registro/anotação;</li>
+<li>a ausência de anotação não impede o reconhecimento de uma relação de
+emprego que se comprove na realidade.</li>
+</ol>
+<h3 id="valor-probatório-súmula-nº-12-do-tst">5.6 Valor probatório —
+Súmula nº 12 do TST</h3>
+<p>A Súmula nº 12 do TST estabelece que as anotações feitas pelo
+empregador na carteira profissional geram <strong>presunção
+relativa</strong>, e não absoluta.</p>
+<p>O TST reafirmou essa orientação em precedente qualificado em
+2025.</p>
+<blockquote>
+<p><strong>ENTENDA DE VERDADE</strong><br />
+A CTPS é prova importante, mas admite prova em contrário. Ela não é
+“verdade absoluta” contra todos os demais elementos probatórios.</p>
+</blockquote>
+<hr />
+<h2 id="lei-seca-integrada">6. LEI SECA INTEGRADA</h2>
+<h3 id="clt-art.-2º">6.1 CLT — art. 2º</h3>
+<p><strong>REGRA:</strong> o empregador assume os riscos da atividade
+econômica, admite, assalaria e dirige a prestação pessoal de
+serviços.</p>
+<p><strong>INTERPRETAÇÃO NO M4:</strong> ajuda a visualizar o poder de
+direção e a posição do empregador na relação.</p>
+<p><strong>PEGADINHA:</strong> alteridade — assunção do risco do
+empreendimento — é característica ligada ao empregador, não requisito
+autônomo do empregado.</p>
+<h3 id="clt-art.-3º">6.2 CLT — art. 3º</h3>
+<p><strong>REGRA:</strong> núcleo legal do conceito de empregado.</p>
+<p><strong>INTERPRETAÇÃO:</strong> pessoa física + serviço não eventual
++ dependência/subordinação + salário, complementados pela pessoalidade
+extraída da estrutura dos arts. 2º e 3º.</p>
+<p><strong>CONSEQUÊNCIA:</strong> é o dispositivo central para
+reconhecer a relação de emprego.</p>
+<h3 id="clt-art.-6º">6.3 CLT — art. 6º</h3>
+<p><strong>REGRA:</strong> o trabalho no estabelecimento, no domicílio
+ou a distância pode preencher os pressupostos da relação de emprego;
+meios telemáticos e informatizados podem servir ao comando, controle e
+supervisão.</p>
+<p><strong>PEGADINHA:</strong> home office não elimina subordinação
+automaticamente.</p>
+<h3 id="clt-art.-9º">6.4 CLT — art. 9º</h3>
+<p><strong>REGRA:</strong> são nulos os atos destinados a desvirtuar,
+impedir ou fraudar a aplicação da CLT.</p>
+<p><strong>CONSEQUÊNCIA:</strong> o rótulo contratual não protege
+fraude.</p>
+<h3 id="clt-arts.-13-a-16">6.5 CLT — arts. 13 a 16</h3>
+<p><strong>REGRA:</strong> disciplinam a CTPS; a emissão é privilegiada
+em formato eletrônico e o CPF é a identificação única do empregado.</p>
+<h3 id="clt-art.-29">6.6 CLT — art. 29</h3>
+<p><strong>REGRA:</strong> 5 dias úteis para anotações essenciais;
+vedação de anotação desabonadora; disciplina da CTPS digital e acesso do
+trabalhador às informações em até 48 horas após a anotação.</p>
+<h3 id="clt-art.-442-1º">6.7 CLT — art. 442, § 1º</h3>
+<p><strong>REGRA:</strong> dentro do cooperativismo verdadeiro, não
+existe vínculo entre cooperativa e associados nem entre estes e os
+tomadores dos serviços da cooperativa.</p>
+<h3 id="clt-art.-442-b">6.8 CLT — art. 442-B</h3>
+<p><strong>REGRA:</strong> a contratação regular do autônomo pode
+existir com ou sem exclusividade e de forma contínua ou não.</p>
+<p><strong>ATENÇÃO:</strong> a regra não dispensa o exame de fraude e da
+realidade da prestação.</p>
+<h3 id="leis-especiais-usadas-no-m4">6.9 Leis especiais usadas no
+M4</h3>
+<p><strong>Lei nº 11.788/2008:</strong> estágio regular não cria
+vínculo; desconformidade com os requisitos legais pode gerar as
+consequências previstas na lei.</p>
+<p><strong>Lei nº 9.608/1998:</strong> serviço voluntário verdadeiro não
+gera vínculo; admite ressarcimento de despesas comprovadas e
+autorizadas.</p>
+<p><strong>Lei Complementar nº 150/2015:</strong> conceito de empregado
+doméstico, inclusive prestação por mais de 2 dias por semana.</p>
+<p><strong>Lei nº 5.889/1973:</strong> conceito de empregado rural.</p>
+<hr />
+<h2 id="jurisprudência-essencial">7. JURISPRUDÊNCIA ESSENCIAL</h2>
+<h3 id="súmula-nº-12-do-tst-ctps">7.1 Súmula nº 12 do TST — CTPS</h3>
+<p><strong>ENTENDIMENTO:</strong> as anotações da CTPS não geram
+presunção absoluta; a presunção é relativa.</p>
+<p><strong>EFEITO PRÁTICO:</strong> é possível demonstrar por outros
+meios que a realidade foi diferente do registro.</p>
+<p><strong>ATENÇÃO:</strong> a banca costuma trocar “relativa” por
+“absoluta”.</p>
+<h3 id="súmula-nº-363-do-tst-contratação-pública-sem-concurso">7.2
+Súmula nº 363 do TST — contratação pública sem concurso</h3>
+<p><strong>ENTENDIMENTO:</strong> a contratação pública feita após a
+Constituição de 1988 sem concurso, nas hipóteses abrangidas pela súmula,
+é nula.</p>
+<p><strong>EFEITO PRÁTICO:</strong> a súmula reconhece os efeitos
+limitados nela expressamente previstos: contraprestação pelas horas
+trabalhadas, observado o valor da hora do salário mínimo, e depósitos do
+FGTS.</p>
+<p><strong>ATENÇÃO:</strong> não equiparar essa situação, em seus
+efeitos, a um emprego privado válido comum.</p>
+<h3 id="súmula-nº-386-do-tst-policial-militar">7.3 Súmula nº 386 do TST
+— policial militar</h3>
+<p><strong>ENTENDIMENTO:</strong> preenchidos os requisitos do art. 3º
+da CLT, é legítimo reconhecer vínculo entre policial militar e empresa
+privada, independentemente de eventual penalidade disciplinar
+militar.</p>
+<p><strong>EFEITO PRÁTICO:</strong> eventual infração estatutária não
+elimina, por si, a realidade trabalhista privada.</p>
+<h3 id="oj-nº-199-da-sbdi-1-do-tst-jogo-do-bicho">7.4 OJ nº 199 da
+SBDI-1 do TST — jogo do bicho</h3>
+<p><strong>ENTENDIMENTO:</strong> o contrato para desempenho de
+atividade inerente à prática do jogo do bicho é nulo pela ilicitude do
+objeto.</p>
+<p><strong>EFEITO PRÁTICO:</strong> é o paradigma usado pelas fontes
+para distinguir trabalho ilícito de trabalho apenas
+proibido/irregular.</p>
+<p><strong>ATENÇÃO:</strong> não transportar automaticamente essa
+consequência para todo trabalho prestado em ambiente onde exista alguma
+atividade ilícita; a análise concreta e os limites da própria orientação
+jurisprudencial devem ser respeitados.</p>
+<hr />
+<h2 id="entenda-de-verdade-casos-guiados">8. ENTENDA DE VERDADE — CASOS
+GUIADOS</h2>
+<h3 id="prestador-chamado-de-parceiro">8.1 Prestador chamado de
+“parceiro”</h3>
+<p>Carlos trabalha de segunda a sábado em uma loja, comparece
+pessoalmente, segue escala definida pela empresa, recebe valor mensal e
+responde ao gerente. O contrato escrito o chama de “parceiro
+independente”.</p>
+<p><strong>PASSO A PASSO:</strong> pessoa física → sim; pessoalidade →
+sim; onerosidade → sim; não eventualidade → sim; fatos indicam
+subordinação → sim.</p>
+<p><strong>CONCLUSÃO DIDÁTICA:</strong> o rótulo contratual não decide o
+caso. A realidade deve ser confrontada com os requisitos do vínculo.</p>
+<h3 id="profissional-autônomo">8.2 Profissional autônomo</h3>
+<p>Ana é eletricista, define o preço por serviço, organiza a própria
+agenda, atende vários clientes e decide a execução sem sujeição ao poder
+disciplinar de um tomador específico.</p>
+<p><strong>CONCLUSÃO DIDÁTICA:</strong> pessoa física e onerosidade
+podem existir sem emprego. O dado decisivo apresentado é a autonomia
+jurídica.</p>
+<h3 id="estágio-regular">8.3 Estágio regular</h3>
+<p>Bruno é universitário, possui termo de compromisso, atividades
+compatíveis com o curso e acompanhamento efetivo.</p>
+<p><strong>CONCLUSÃO DIDÁTICA:</strong> habitualidade e bolsa,
+isoladamente, não transformam estágio regular em emprego.</p>
+<h3 id="estágio-desvirtuado">8.4 Estágio desvirtuado</h3>
+<p>O estudante é chamado de estagiário, mas os requisitos legais doestágio não são observados.</p>
+<p><strong>CONCLUSÃO DIDÁTICA:</strong> o nome “estágio” não imuniza uma
+relação irregular. A Lei nº 11.788/2008 prevê consequências quando seus
+requisitos são descumpridos.</p>
+<h3 id="trabalho-a-distância">8.5 Trabalho a distância</h3>
+<p>Marina trabalha de casa, acessa sistemas da empresa, recebe ordens
+por plataforma, tem tarefas supervisionadas e responde à chefia.</p>
+<p><strong>CONCLUSÃO DIDÁTICA:</strong> ausência de presença física não
+significa ausência de subordinação.</p>
+<h3 id="voluntariado">8.6 Voluntariado</h3>
+<p>Rafael celebra termo de adesão com entidade sem fins lucrativos,
+presta atividade não remunerada e recebe somente ressarcimento
+autorizado de despesas comprovadas.</p>
+<p><strong>CONCLUSÃO DIDÁTICA:</strong> ressarcimento de despesas não se
+confunde automaticamente com salário.</p>
+<h3 id="ctps-sem-registro">8.7 CTPS sem registro</h3>
+<p>Paula trabalhou por meses com os elementos do emprego, mas o
+empregador não realizou a anotação.</p>
+<p><strong>CONCLUSÃO DIDÁTICA:</strong> o descumprimento do dever de
+registro não apaga, por si só, uma relação materialmente existente.</p>
+<hr />
+<h2 id="o-que-decorar-e-pegadinhas-de-alto-risco">9. O QUE DECORAR E
+PEGADINHAS DE ALTO RISCO</h2>
+<h3 id="o-que-decorar">9.1 O que decorar</h3>
+<p><strong>Relação de trabalho</strong> = gênero.<br />
+<strong>Relação de emprego</strong> = espécie.</p>
+<p><strong>Cinco requisitos:</strong></p>
+<ol type="1">
+<li>pessoa física;</li>
+<li>pessoalidade;</li>
+<li>onerosidade;</li>
+<li>não eventualidade;</li>
+<li>subordinação jurídica.</li>
+</ol>
+<p><strong>CTPS:</strong></p>
+<ul>
+<li>5 dias úteis → prazo para anotação pelo empregador;</li>
+<li>até 48 horas após a anotação → acesso do trabalhador;</li>
+<li>CPF → identificação única na CTPS digital;</li>
+<li>anotação desabonadora → proibida;</li>
+<li>Súmula nº 12 → presunção relativa.</li>
+</ul>
+<p><strong>Jurisprudência-chave:</strong></p>
+<ul>
+<li>Súmula nº 363 → contratação pública sem concurso e efeitos
+limitados;</li>
+<li>Súmula nº 386 → policial militar pode ter vínculo privado se
+preenchido o art. 3º;</li>
+<li>OJ nº 199 → jogo do bicho como paradigma de objeto ilícito.</li>
+</ul>
+<h3 id="pegadinhas-de-alto-risco">9.2 Pegadinhas de alto risco</h3>
+<blockquote>
+<p><strong>PEGADINHA — REQUISITOS</strong><br />
+❌ Exclusividade é requisito do vínculo.<br />
+✅ Não. A própria fonte destaca que exclusividade não é requisito
+essencial.</p>
+</blockquote>
+<blockquote>
+<p><strong>PEGADINHA — NÃO EVENTUALIDADE</strong><br />
+❌ Se não trabalha todos os dias, não pode ser empregado.<br />
+✅ O trabalho intermitente demonstra que a afirmação é falsa.</p>
+</blockquote>
+<blockquote>
+<p><strong>PEGADINHA — AUTÔNOMO</strong><br />
+❌ Continuidade ou exclusividade isoladas criam vínculo
+automaticamente.<br />
+✅ O ponto central continua sendo a análise conjunta, especialmente da
+subordinação jurídica.</p>
+</blockquote>
+<blockquote>
+<p><strong>PEGADINHA — CTPS</strong><br />
+❌ CTPS sem assinatura significa inexistência de emprego.<br />
+✅ A falta de anotação não elimina vínculo materialmente
+configurado.</p>
+</blockquote>
+<blockquote>
+<p><strong>PEGADINHA — PROVA DA CTPS</strong><br />
+❌ A anotação da carteira possui presunção absoluta.<br />
+✅ Súmula nº 12: presunção relativa.</p>
+</blockquote>
+<blockquote>
+<p><strong>PEGADINHA — VALIDADE</strong><br />
+❌ Trabalho proibido e trabalho ilícito produzem necessariamente o mesmo
+resultado.<br />
+✅ As fontes distinguem as duas categorias; o paradigma de objeto
+ilícito é a OJ nº 199.</p>
+</blockquote>
+<hr />
+<h2 id="revisão-rápida-5-minutos">10. REVISÃO RÁPIDA — 5 MINUTOS</h2>
+<p><strong>RELAÇÃO DE TRABALHO → REGRA ESSENCIAL</strong><br />
+É o gênero amplo das prestações humanas de trabalho.</p>
+<p><strong>RELAÇÃO DE EMPREGO → REQUISITOS</strong><br />
+Pessoa física + pessoalidade + onerosidade + não eventualidade +
+subordinação jurídica.</p>
+<p><strong>PESSOA FÍSICA × PESSOALIDADE → PEGADINHA</strong><br />
+Pessoa física diz respeito ao sujeito; pessoalidade, à infungibilidade
+da prestação pelo trabalhador.</p>
+<p><strong>SUBORDINAÇÃO → REGRA</strong><br />
+É jurídica. Pode existir presencialmente ou por meios telemáticos. Não é
+sinônimo de dependência econômica.</p>
+<p><strong>EXCLUSIVIDADE → EXCEÇÃO À INTUIÇÃO DA PROVA</strong><br />
+Não é requisito geral do vínculo.</p>
+<p><strong>EVENTUAL → DIFERENÇA</strong><br />
+Falta a não eventualidade própria da relação de emprego.</p>
+<p><strong>AUTÔNOMO → DIFERENÇA</strong><br />
+Autonomia jurídica real, e não subordinação empregatícia.</p>
+<p><strong>ESTÁGIO → REGRA/CONSEQUÊNCIA</strong><br />
+Estágio regular não cria vínculo; desrespeito aos requisitos legais pode
+produzir as consequências previstas na Lei nº 11.788/2008.</p>
+<p><strong>VOLUNTÁRIO → REGRA</strong><br />
+Atividade não remunerada no regime da Lei nº 9.608/1998; ressarcimento
+autorizado de despesa não é automaticamente salário.</p>
+<p><strong>TRABALHO PROIBIDO × ILÍCITO → PEGADINHA</strong><br />
+Não são sinônimos. A fonte preserva a proteção no trabalho
+proibido/irregular e usa a OJ nº 199 como paradigma de objeto
+ilícito.</p>
+<p><strong>CTPS → PRAZOS</strong><br />
+5 dias úteis para anotar; até 48 horas depois da anotação para acesso do
+trabalhador.</p>
+<p><strong>CTPS → PROVA</strong><br />
+Súmula nº 12: presunção relativa.</p>
+<p><strong>ADMINISTRAÇÃO PÚBLICA → CONSEQUÊNCIA</strong><br />
+Súmula nº 363: contratação nula sem concurso, com efeitos limitados
+definidos pela súmula.</p>
+<p><strong>POLICIAL MILITAR → PEGADINHA</strong><br />
+Súmula nº 386: vínculo privado pode ser reconhecido se preenchidos os
+requisitos do art. 3º.</p>
+<hr />
+<h2 id="checklist-final">11. CHECKLIST FINAL</h2>
+<h3 id="antes-de-encerrar-este-módulo-eu-consigo">ANTES DE ENCERRAR ESTE
+MÓDULO, EU CONSIGO…</h3>
+<ul class="task-list">
+<li><label><input type="checkbox" />definir relação de
+trabalho;</label></li>
+<li><label><input type="checkbox" />definir relação de
+emprego;</label></li>
+<li><label><input type="checkbox" />explicar gênero ×
+espécie;</label></li>
+<li><label><input type="checkbox" />listar os cinco requisitos sem
+consultar;</label></li>
+<li><label><input type="checkbox" />diferenciar pessoa física de
+pessoalidade;</label></li>
+<li><label><input type="checkbox" />explicar onerosidade;</label></li>
+<li><label><input type="checkbox" />explicar não eventualidade sem
+reduzi-la a trabalho diário;</label></li>
+<li><label><input type="checkbox" />explicar subordinação jurídica sem
+confundi-la com dependência econômica;</label></li>
+<li><label><input type="checkbox" />dizer por que exclusividade não é
+requisito geral;</label></li>
+<li><label><input type="checkbox" />aplicar o passo a passo de
+identificação do vínculo;</label></li>
+<li><label><input type="checkbox" />diferenciar empregado de eventual e
+autônomo;</label></li>
+<li><label><input type="checkbox" />explicar por que estágio regular e
+voluntariado verdadeiro não geram vínculo;</label></li>
+<li><label><input type="checkbox" />diferenciar trabalho proibido de
+trabalho ilícito no nível do M4;</label></li>
+<li><label><input type="checkbox" />reconhecer o núcleo da OJ nº
+199;</label></li>
+<li><label><input type="checkbox" />identificar os prazos essenciais da
+CTPS;</label></li>
+<li><label><input type="checkbox" />explicar por que a CTPS não cria,
+sozinha, o vínculo;</label></li>
+<li><label><input type="checkbox" />explicar a Súmula nº
+12;</label></li>
+<li><label><input type="checkbox" />reconhecer o núcleo das Súmulas nº
+363 e nº 386;</label></li>
+<li><label><input type="checkbox" />identificar quais temas foram
+deliberadamente deixados para M5 e módulos posteriores.</label></li>
+</ul>
+<hr />
+<h2 id="fronteira-do-módulo">12. FRONTEIRA DO MÓDULO</h2>
+<p>O M4 mantém apenas o necessário para reconhecer relação de trabalho,
+relação de emprego, empregado, figuras próximas, validade no nível
+introdutório e CTPS.</p>
+<p><strong>Aprofundamento transferido:</strong></p>
+<ul>
+<li>teoria geral e formação do contrato de trabalho →
+<strong>M5</strong>;</li>
+<li>teorias completas da natureza jurídica e nulidades contratuais →
+<strong>M5</strong>;</li>
+<li>contratos por prazo determinado/indeterminado, aprendizagem e
+intermitente em profundidade → <strong>M6</strong>;</li>
+<li>suspensão e interrupção → <strong>M7</strong>;</li>
+<li>terceirização e pejotização → <strong>M8</strong>;</li>
+<li>jornada, inclusive regras especiais do bancário → módulo
+próprio;</li>
+<li>salário e remuneração → módulo próprio;</li>
+<li>extinção contratual → módulo próprio;</li>
+<li>proteções específicas de menor, mulher e outras categorias → módulos
+correspondentes;</li>
+<li>trabalho do artista → módulo pertinente;</li>
+<li>direito coletivo → módulos posteriores.</li>
+</ul>
+<hr />
+<h2 id="síntese-final">SÍNTESE FINAL</h2>
+<p>O M4 funciona como um <strong>filtro jurídico</strong>.</p>
+<p>Primeiro, identifique a prestação de trabalho. Depois, procure os
+cinco requisitos do emprego. Em seguida, verifique se existe regime
+legal especial ou problema de validade que altere a classificação.</p>
+<p>Se aparecerem <strong>pessoa física, pessoalidade, onerosidade, não
+eventualidade e subordinação jurídica</strong>, a situação ingressa no
+núcleo da relação de emprego, sem depender do nome dado pelas partes ou
+de assinatura prévia da CTPS.</p>
+<p>A CTPS entra como instrumento de identificação, registro e prova. Ela
+é juridicamente relevante, mas <strong>não substitui a realidade da
+prestação</strong>.</p>
+</main></body></html>
