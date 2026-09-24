@@ -1,0 +1,201 @@
+/* =========================================================
+   PREVIEW QC — BASE COMPLETA
+   Branch: preview-qc-layout
+   Escopo: camada visual. Nenhuma regra de estudo/progresso alterada.
+   ========================================================= */
+:root{
+  --qc-orange:#ff5a12;
+  --qc-orange-2:#ff7a22;
+  --qc-ink:#10182d;
+  --qc-muted:#6f7b91;
+  --qc-bg:#f5f6f8;
+  --qc-card:#ffffff;
+  --qc-line:#e6e9ee;
+  --qc-soft:#fff3ec;
+  --qc-shadow:0 8px 28px rgba(24,39,75,.06);
+}
+
+/* Shell geral inspirado no portal de concursos */
+body{background:var(--qc-bg)!important;color:var(--qc-ink)}
+.app{grid-template-columns:238px minmax(0,1fr)}
+aside{
+  background:#fff!important;border-right:1px solid var(--qc-line)!important;
+  padding:14px 12px;box-shadow:2px 0 16px rgba(24,39,75,.025)
+}
+.brand{border-bottom:1px solid var(--qc-line)!important;padding:4px 5px 16px;margin-bottom:10px}
+.brand-icon{display:none!important}
+.qc-brand-copy b,.qc-top-brand{font-style:normal;font-weight:900;letter-spacing:-.03em}
+.qc-brand-copy b{font-size:17px!important;color:#0d1930}
+.qc-brand-copy b span,.qc-top-brand span{color:#0d1930}
+.qc-brand-copy b em,.qc-top-brand em{font-style:normal;color:var(--qc-orange)}
+.qc-brand-copy small{font-size:10px!important;color:#8b95a7!important}
+.sidebar-toggle{
+  border:1px solid var(--qc-line)!important;background:#fff!important;color:#66738a!important;
+  box-shadow:none!important
+}
+.nav{gap:3px}
+.nav .label{color:#9aa3b2!important;font-size:9px!important;padding:15px 10px 5px}
+.nav button{
+  min-height:43px!important;border-radius:8px!important;padding:9px 10px!important;
+  color:#405069!important;font-weight:650!important
+}
+.nav button:hover{background:#f7f8fa!important;color:#17233b!important}
+.nav button.active{
+  background:var(--qc-soft)!important;color:var(--qc-orange)!important;
+  border-left:3px solid var(--qc-orange);padding-left:7px!important
+}
+.nav-icon{color:inherit}
+.nav-icon.nav-badge{background:#fff!important;border:1px solid currentColor;color:inherit!important;border-radius:6px!important}
+.nav-settings{border-top:1px solid var(--qc-line)!important}
+
+.shell{background:var(--qc-bg)}
+.topbar{
+  height:66px!important;flex-basis:66px!important;background:#fff!important;
+  border-bottom:1px solid var(--qc-line)!important;padding:0 22px!important;
+  box-shadow:0 2px 12px rgba(24,39,75,.025)
+}
+.qc-top-brand{font-size:16px}
+.central-version-v41{
+  color:#8a95a7!important;background:#f6f7f9;border:1px solid var(--qc-line);
+  border-radius:999px;padding:4px 8px;font-size:9px
+}
+.crumb{color:#8b95a7!important}
+.top-actions button{
+  background:#fff!important;border:1px solid var(--qc-line)!important;color:#34445e!important;
+  border-radius:8px!important
+}
+.top-actions button:hover{background:#f8f9fb!important}
+.workspace,.view{background:var(--qc-bg)!important}
+
+/* Home */
+#homeView{padding:28px clamp(18px,3vw,38px)!important;color:var(--qc-ink)}
+#homeView .hero{
+  align-items:center;margin-bottom:20px;padding:0 2px
+}
+#homeView .hero h1{
+  color:#0d1629;font-size:31px;line-height:1.08;letter-spacing:-.035em
+}
+#homeView .hero p{color:var(--qc-muted)!important;font-size:13px;margin-top:6px}
+#homeView .hero .btn.primary{
+  background:var(--qc-orange)!important;border-color:var(--qc-orange)!important;
+  color:#fff!important;border-radius:8px!important;box-shadow:0 5px 14px rgba(255,90,18,.18)
+}
+
+#homeView .home-grid{
+  grid-template-columns:minmax(0,1.7fr) minmax(275px,.7fr)!important;gap:16px!important;
+  align-items:start
+}
+#homeView .card{
+  background:#fff!important;border:1px solid var(--qc-line)!important;
+  border-radius:10px!important;box-shadow:var(--qc-shadow);color:var(--qc-ink)
+}
+#homeView .card-head{
+  border-bottom:1px solid #edf0f3!important;padding:14px 16px!important
+}
+#homeView .card-head h2,#homeView .card-head h3{font-size:14px;color:#142039}
+#homeView .btn{
+  background:#fff!important;border:1px solid var(--qc-line)!important;color:#4a5870!important;
+  border-radius:7px!important
+}
+#homeView .btn:hover{border-color:#ffc8ad!important;color:var(--qc-orange)!important}
+
+#homeView .agenda{padding:5px 16px 9px}
+#homeView .agenda-row{border-bottom:1px solid #edf0f3!important;padding:12px 0}
+#homeView .agenda-time{color:#8a95a7!important}
+#homeView .agenda-copy b{color:#17223a}
+#homeView .agenda-copy small{color:#8a95a7!important}
+#homeView .agenda-row input{accent-color:var(--qc-orange)}
+
+#homeView .side-col{gap:14px}
+#homeView .progress-box{padding:18px}
+#homeView .big{color:#10182d;font-size:30px}
+#homeView .muted{color:#8290a6!important}
+#homeView .progress-line{height:6px;background:#edf0f3!important}
+#homeView .progress-line span{background:var(--qc-orange)!important}
+
+/* Continue estudando vira destaque laranja, sem alterar seu conteúdo dinâmico */
+#homeView .side-col .card:nth-child(2){
+  background:linear-gradient(135deg,var(--qc-orange),var(--qc-orange-2))!important;
+  border-color:transparent!important;color:#fff!important;overflow:hidden;position:relative
+}
+#homeView .side-col .card:nth-child(2)::after{
+  content:"";position:absolute;width:150px;height:150px;border-radius:50%;
+  right:-48px;bottom:-70px;background:rgba(255,255,255,.12)
+}
+#homeView .side-col .card:nth-child(2) .card-head{border-bottom-color:rgba(255,255,255,.18)!important}
+#homeView .side-col .card:nth-child(2) .card-head h3,
+#homeView .side-col .card:nth-child(2) .progress-box,
+#homeView .side-col .card:nth-child(2) .muted{color:#fff!important}
+#homeView .side-col .card:nth-child(2) button,
+#homeView .side-col .card:nth-child(2) a{
+  background:#fff!important;color:var(--qc-orange)!important;border-color:#fff!important
+}
+
+/* Cronograma / disciplinas */
+#homeView .schedule-intro{
+  margin:18px 0 12px;padding:18px 20px;background:#fff;border:1px solid var(--qc-line);
+  border-radius:10px;box-shadow:var(--qc-shadow)
+}
+#homeView .schedule-intro .eyebrow{
+  color:var(--qc-orange)!important;font-weight:800;text-transform:uppercase;letter-spacing:.08em
+}
+#homeView .schedule-intro h2{font-size:18px;color:#111d34;margin-top:5px}
+#homeView .schedule-intro p{color:#718096!important}
+#homeView .schedule-intro .btn.primary{
+  background:var(--qc-orange)!important;color:#fff!important;border-color:var(--qc-orange)!important
+}
+#homeView .subjects{gap:9px!important}
+#homeView .subject{
+  background:#fff!important;border:1px solid var(--qc-line)!important;
+  border-radius:9px!important;box-shadow:0 4px 18px rgba(24,39,75,.04)!important;
+  --discipline-accent:var(--qc-orange)!important;
+  --discipline-accent-soft:#fff5ef!important
+}
+#homeView .subject.open{border-color:#ffb58f!important}
+#homeView .subject-head{
+  min-height:60px!important;background:#fff!important;border-left:3px solid transparent!important;
+  color:#17233b!important
+}
+#homeView .subject-head:hover{background:#fff8f4!important}
+#homeView .subject.open .subject-head{border-left-color:var(--qc-orange)!important;background:#fff8f4!important}
+#homeView .subject-name{font-size:13px!important}
+#homeView .subject-count{color:#8995a7!important}
+#homeView .subject-pct{color:var(--qc-orange)!important}
+#homeView .subject-body{background:#fff!important}
+#homeView .subject-bar{background:#edf0f3!important}
+#homeView .subject .subject-bar span{background:var(--qc-orange)!important}
+
+/* Telas nativas recebem a mesma moldura sem interferir nas rotinas internas */
+#disciplinesView,#agendaView,#performanceView,#tecCadernosView{
+  color:var(--qc-ink);background:var(--qc-bg)!important
+}
+#disciplinesView .disc-card{
+  background:#fff!important;border-color:var(--qc-line)!important;
+  border-left-color:var(--qc-orange)!important;box-shadow:var(--qc-shadow)!important;color:var(--qc-ink)!important
+}
+#disciplinesView .disc-card:hover{border-color:#ffc8ad!important;background:#fff8f4!important}
+#disciplinesView .disc-meta{color:var(--qc-orange)!important}
+.central-view-back{color:var(--qc-orange)!important}
+
+/* Mobile */
+@media(max-width:1050px){
+  .app:not(.sidebar-expanded-manual){grid-template-columns:80px 1fr}
+}
+@media(max-width:680px){
+  .topbar{height:58px!important;flex-basis:58px!important;padding:0 10px!important}
+  .qc-top-brand{font-size:15px}
+  .central-version-v41{display:none}
+  .top-actions button:last-child{display:none}
+  #homeView{padding:14px 10px 24px!important}
+  #homeView .hero{display:flex!important;align-items:flex-start;gap:10px;margin-bottom:14px}
+  #homeView .hero h1{font-size:25px}
+  #homeView .hero p{font-size:11px}
+  #homeView .hero>.btn{display:none}
+  #homeView .home-grid{grid-template-columns:1fr!important;gap:12px!important}
+  #homeView .side-col{grid-template-columns:1fr!important;order:-1}
+  #homeView .side-col .card:first-child{order:1}
+  #homeView .side-col .card:nth-child(2){order:2}
+  #homeView .schedule-intro{padding:15px;margin:12px 0}
+  #homeView .subject-head{min-height:56px!important}
+  .app aside.mobile-open{background:#fff!important}
+}
