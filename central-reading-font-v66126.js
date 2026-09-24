@@ -1,7 +1,7 @@
 /* Central de Estudos — controle de fonte de leitura */
 (function(){
  'use strict';
- var STORAGE_KEY='central-v6:reading-font-size',MIN=85,MAX=250,STEP=5,DEFAULT=100,observer=null,refreshTimer=0;
+ var STORAGE_KEY='central-v6:reading-font-size',MIN=85,MAX=140,STEP=5,DEFAULT=100,observer=null,refreshTimer=0;
  var LARGE_SELECTORS=[
   '#homeView .ct-rich .ct-lead','#homeView .ct-section p','#homeView .ct-section li',
   '#homeView .ct-callout p','#homeView .ct-callout li','#homeView .cf-reading strong',
@@ -13,7 +13,7 @@
   '#homeView .civil-theory li','#homeView .civil-law-card span',
  ].join(',');
  function clamp(value){value=Math.round(Number(value)/STEP)*STEP;return Math.max(MIN,Math.min(MAX,value||DEFAULT))}
- function read(){try{return clamp(localStorage.getItem(STORAGE_KEY)||DEFAULT)}catch(_){return DEFAULT}}
+ function read(){try{var saved=Number(localStorage.getItem(STORAGE_KEY)||DEFAULT);if(saved>MAX){save(DEFAULT);return DEFAULT}return clamp(saved||DEFAULT)}catch(_){return DEFAULT}}
  function save(value){try{localStorage.setItem(STORAGE_KEY,String(value))}catch(_){}}
  function refreshControl(value){
   var range=document.getElementById('centralReadingFontRange'),output=document.getElementById('centralReadingFontValue');
