@@ -1,7 +1,7 @@
 /* Central de Estudos — controle de fonte de leitura */
 (function(){
  'use strict';
- var STORAGE_KEY='central-v6:reading-font-size',MIN=85,MAX=140,STEP=5,DEFAULT=100,observer=null,refreshTimer=0;
+ var STORAGE_KEY='central-v6:reading-font-size-v2',MIN=90,MAX=125,STEP=5,DEFAULT=100,observer=null,refreshTimer=0;
  var LARGE_SELECTORS=[
   '#homeView .ct-rich .ct-lead','#homeView .ct-section p','#homeView .ct-section li',
   '#homeView .ct-callout p','#homeView .ct-callout li','#homeView .cf-reading strong',
@@ -22,8 +22,8 @@
  }
  function forceReadingText(value){
   var scale=value/100,large=(16*scale).toFixed(1)+'px',medium=(13*scale).toFixed(1)+'px';
-  document.querySelectorAll(LARGE_SELECTORS).forEach(function(element){element.style.setProperty('font-size',large,'important')});
-  document.querySelectorAll(MEDIUM_SELECTORS).forEach(function(element){element.style.setProperty('font-size',medium,'important')});
+  document.querySelectorAll(LARGE_SELECTORS).forEach(function(element){element.style.setProperty('font-size',large,'important');element.style.setProperty('line-height','1.58','important')});
+  document.querySelectorAll(MEDIUM_SELECTORS).forEach(function(element){element.style.setProperty('font-size',medium,'important');element.style.setProperty('line-height','1.55','important')});
  }
  function apply(value,persist){
   value=clamp(value);
