@@ -1925,9 +1925,8 @@ window.openEmbeddedTool=openEmbeddedTool;
     } catch (_) {
       try {
         agendaStorage.setItem(`central-v6:agenda-corrompida:${date}:${Date.now()}`, raw);
-        agendaStorage.removeItem(key(date));
       } catch (_) {}
-      status('Um registro antigo inválido foi separado. A Agenda continua disponível.', 'warning');
+      status('Um registro antigo inválido foi preservado para recuperação. A Agenda continua disponível.', 'warning');
       return [];
     }
   }
