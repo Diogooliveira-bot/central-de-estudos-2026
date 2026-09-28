@@ -129,10 +129,14 @@ html.bc-ui-v1 .error-module-row em{flex:0 0 auto;color:var(--bc-color-error);fon
   html.bc-ui-v1 .agenda-simple-home-card{padding:20px;align-items:stretch;flex-direction:column;gap:18px}
   html.bc-ui-v1 .agenda-simple-header{align-items:stretch;flex-direction:column;gap:14px}
   html.bc-ui-v1 .agenda-simple-header>button{align-self:flex-start}
+  html.bc-ui-v1 .agenda-calendar-card{display:block!important}
   html.bc-ui-v1 .agenda-add-line{grid-template-columns:1fr}
+  html.bc-ui-v1 .agenda-more-fields-button{min-height:44px}
   html.bc-ui-v1 .agenda-more-fields{grid-template-columns:1fr}
   html.bc-ui-v1 .agenda-simple-task{grid-template-columns:44px minmax(0,1fr) 44px}
   html.bc-ui-v1 .agenda-task-order{grid-column:2;order:4}
+  html.bc-ui-v1 .agenda-task-order button,
+  html.bc-ui-v1 .agenda-task-more{width:44px;height:44px}
   html.bc-ui-v1 .agenda-task-more{grid-column:3;grid-row:1}
   html.bc-ui-v1 .agenda-task-options{grid-column:1/-1;grid-template-columns:1fr}
   html.bc-ui-v1 .agenda-task-options .wide{grid-column:auto}
