@@ -103,7 +103,8 @@ aside{background:var(--side);border-right:1px solid var(--line);padding:15px 12p
 .agenda-row.done .agenda-copy{text-decoration:line-through;color:#687b94}.agenda-row input{width:18px;height:18px;accent-color:var(--green)}.agenda-time{font-size:11px;color:#8ca8ff;font-weight:800}.agenda-copy b{display:block;font-size:12px}.agenda-copy small{display:block;color:var(--muted);margin-top:2px}
 .progress-box{padding:16px}.big{font-size:28px;font-weight:900}.progress-line{height:7px;border-radius:999px;background:#1d2b42;overflow:hidden;margin:12px 0}.progress-line span{display:block;height:100%;background:linear-gradient(90deg,#6d58ff,#8f59ff);width:0}
 .summary{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:11px}.sum{background:#0a1525;border:1px solid #213149;border-radius:8px;padding:10px}.sum small{display:block;color:var(--muted);font-size:10px}.sum b{font-size:18px}
-.quick{padding:7px 14px 12px}.quick button{width:100%;border:0;background:transparent;color:#eaf0fa;border-bottom:1px solid #1d2b40;padding:11px 0;text-align:left;display:flex;justify-content:space-between}.quick button:last-child{border-bottom:0}.quick small{color:var(--muted);display:block}
+.quick{padding:7px 14px 12px}.quick button{width:100%;border:0;background:transparent;color:#eaf0fa;border-bottom:1px solid #1d2b40;padding:11px 0;text-align:left;display:flex;justify-content:space-between;gap:10px}.quick button:last-child{border-bottom:0}.quick small{color:var(--muted);display:block}
+.home-today-card .card-head small{display:block;margin-top:3px;font-size:11px}.home-pending{display:grid;gap:0}.home-pending .pending-item{border-bottom:1px solid #1d2b40;padding:11px 0}.home-pending .pending-item:last-child{border-bottom:0}.home-pending b{display:block;font-size:12px}.home-pending small{display:block;color:var(--muted);margin-top:2px}
 
 .schedule-intro{margin:18px 0 13px}.eyebrow{font-size:11px;color:#8ea4c5}.schedule-intro h2{margin:4px 0 5px;font-size:19px}.schedule-intro p{margin:0;color:var(--muted);font-size:12px;line-height:1.45}
 .subjects{display:grid;gap:7px}
@@ -810,16 +811,18 @@ setTimeout(function(){
   <section class="view" id="homeView">
    <div class="hero">
     <div><h1>Meu estudo</h1><p id="today"></p></div>
-    <button class="btn primary" onclick="document.getElementById('cronograma').scrollIntoView({behavior:'smooth'})">Cronograma de Estudos</button>
+    <button class="btn primary" onclick="return CentralAgenda.open(this)">Abrir agenda simples</button>
    </div>
    <div class="home-grid">
     <div>
-     <div class="card"><div class="card-head"><h2>Agenda de hoje</h2><button class="btn sm" onclick="openAgenda()">Editar</button></div><div class="agenda" id="homeAgenda"></div></div>
-     <div class="schedule-intro" id="cronograma"><div class="eyebrow">Metas concluídas</div><h2>Cronograma de Estudos</h2><p>Plano fechado de 6 meses: conteúdo novo, revisões D+1/D+7/D+30, erros semanais e consolidação final, usando os módulos reais da Central.</p><div style="margin-top:10px"><button type="button" class="btn primary" onclick="return openEmbeddedTool('cronograma',{},this)">🗓 Abrir Cronograma de Estudos</button></div></div>
+     <div class="card home-today-card"><div class="card-head"><div><h2>Hoje na agenda</h2><small id="homeTodayLabel" class="muted">Carregando...</small></div><button class="btn sm" onclick="return CentralAgenda.open(this)">Editar</button></div><div class="agenda" id="homeAgenda"></div></div>
+     <div class="schedule-intro" id="cronograma"><div class="eyebrow">Disciplinas</div><h2>Escolha o que estudar agora</h2><p>Visão simples das matérias da Central, com módulos, progresso e acesso direto aos tópicos.</p></div>
      <div class="subjects" id="subjects"></div>
     </div>
     <div class="side-col">
-     <div class="card"><div class="card-head"><h3>Progresso do dia</h3></div><div class="progress-box"><div class="big" id="dayCount">0 de 0</div><div class="muted small">blocos concluídos</div><div class="progress-line"><span id="dayBar"></span></div><div class="muted small" id="dayPct">0%</div></div></div>
+     <div class="card"><div class="card-head"><h3>Progresso do dia</h3></div><div class="progress-box"><div class="big" id="dayCount">0 de 0</div><div class="muted small">tarefas concluídas hoje</div><div class="progress-line"><span id="dayBar"></span></div><div class="muted small" id="dayPct">0%</div></div></div>
+     <div class="card"><div class="card-head"><h3>Pendências de hoje</h3></div><div class="quick home-pending" id="homePending"><div class="muted small">Carregando pendências...</div></div></div>
+     <div class="card"><div class="card-head"><h3>Decorando a Lei</h3></div><div class="quick"><button type="button" onclick="return openEmbeddedTool('decorando',{},this)"><span><b>Lei seca</b><small>Abra o Decorando a Lei Seca sem sair da Central.</small></span><span>↗</span></button><button type="button" onclick="return openEmbeddedTool('vade',{},this)"><span><b>Vade Mecum</b><small>Consulta rápida para conferir artigos.</small></span><span>↗</span></button></div></div>
      <div class="card"><div class="card-head"><h3>Continuar de onde parei</h3></div><div class="progress-box" id="continueBox"></div></div></div>
     </div>
    </div>
@@ -1960,12 +1963,19 @@ window.openEmbeddedTool=openEmbeddedTool;
   function renderHomeSummary() {
     const date = today();
     const tasks = read(date);
-    const done = tasks.filter((task) => task.done).length;
+    const pending = tasks.filter((task) => !task.done);
+    const done = tasks.length - pending.length;
     const percentage = tasks.length ? Math.round((done / tasks.length) * 100) : 0;
     const count = element('dayCount');
     const bar = element('dayBar');
     const percent = element('dayPct');
     const host = element('homeAgenda');
+    const pendingHost = element('homePending');
+    const todayLabel = element('homeTodayLabel');
+    const todayText = element('today');
+    const formatted = new Intl.DateTimeFormat('pt-BR', { weekday: 'long', day: '2-digit', month: 'long' }).format(new Date(date + 'T12:00:00'));
+    if (todayText) todayText.textContent = formatted.charAt(0).toUpperCase() + formatted.slice(1);
+    if (todayLabel) todayLabel.textContent = pending.length ? `${pending.length} pendente(s) para hoje` : (tasks.length ? 'Tudo concluído hoje.' : 'Nenhuma tarefa cadastrada para hoje.');
     if (count) count.textContent = `${done} de ${tasks.length}`;
     if (bar) bar.style.width = `${percentage}%`;
     if (percent) percent.textContent = `${percentage}%`;
@@ -1976,7 +1986,14 @@ window.openEmbeddedTool=openEmbeddedTool;
           <div class="agenda-time">${escapeHtml(task.time || '—')}</div>
           <div class="agenda-copy"><b>${escapeHtml(disciplineLabel(task.discipline))}</b><small>${escapeHtml(task.task)}</small></div>
           <button class="btn sm" type="button" onclick="CentralAgenda.open()">Editar</button>
-        </div>`).join('') : '<div class="muted small" style="padding:12px">Agenda vazia.</div>';
+        </div>`).join('') : '<div class="muted small" style="padding:12px">Agenda de hoje vazia. Toque em Editar para adicionar estudo, questões ou revisão.</div>';
+    }
+    if (pendingHost) {
+      pendingHost.innerHTML = pending.length ? pending.slice(0, 6).map((task) => `
+        <div class="pending-item">
+          <b>${escapeHtml(task.time || 'Sem horário')} · ${escapeHtml(disciplineLabel(task.discipline))}</b>
+          <small>${escapeHtml(task.task)}</small>
+        </div>`).join('') + (pending.length > 6 ? '<div class="muted small" style="padding:10px 0">Mais pendências na agenda.</div>' : '') : '<div class="muted small" style="padding:12px 0">Nada pendente para hoje.</div>';
     }
   }
 
@@ -2087,6 +2104,9 @@ window.openEmbeddedTool=openEmbeddedTool;
     if (addButton) addButton.onclick = add;
     currentDate();
     renderHomeSummary();
+    window.addEventListener('storage', (event) => {
+      if (String(event.key || '').startsWith(KEY_PREFIX)) renderHomeSummary();
+    });
   }
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initialize, { once: true });
