@@ -5,7 +5,7 @@ window.__baseCpcFinal20260928=true;
 var original=window.renderCpcModule;
 if(typeof original!=='function'){console.error('CPC final: renderer não encontrado');return}
 window.renderCpcModule=function(w){
- var markup=original(w);
+ var markup=original(w).replace(/30\/07\/2027/g,'31/07/2027');
  if(!w||!/^cpc(?:[1-9]|1[0-9]|20)$/.test(w.id))return markup;
  var start=markup.indexOf('<div class="cf-theory-grid">');
  var end=start<0?-1:markup.indexOf('<div class="cf-actions">',start);
