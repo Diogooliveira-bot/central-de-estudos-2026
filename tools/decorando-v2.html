@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#1698c4">
+<title>BASE COMPLETA · Decorando a Lei Seca · Visual V2</title>
+<style>
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#f4f6f8}
+#decorando{display:block;width:100%;height:100%;border:0;background:#f4f6f8}
+#fail{display:none;font:600 14px system-ui;padding:24px;color:#17222b}
+</style>
+</head>
+<body>
+<iframe id="decorando" title="Decorando a Lei Seca"></iframe>
+<div id="fail">Não foi possível carregar o Decorando. Abra esta página pelo mesmo domínio da BASE COMPLETA.</div>
+<script>
+(()=>{
+const frame=document.getElementById('decorando');
+const qs=location.search||'';
+frame.src='./decorando.html'+qs;
+const css=`
+:root{
+ --v2-bg:#f4f6f8;--v2-card:#fff;--v2-text:#17222b;--v2-muted:#6c7881;--v2-line:#dbe1e5;
+ --v2-blue:#1698c4;--v2-blue2:#0f87b0;--v2-soft:#e9f7fc;--v2-okbg:#eaf7f0;--v2-badbg:#fceeed;
+ --v2-shadow:0 10px 30px rgba(25,43,58,.07);--v2-r:22px
+}
+html,body{background:var(--v2-bg)!important;color:var(--v2-text)!important}
+body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif!important}
+.filter-page,.compact-filter-page,.app-shell,.audit-page{background:var(--v2-bg)!important}
+.filter-topbar{position:sticky!important;top:0!important;z-index:30!important;min-height:76px!important;padding:0 clamp(16px,4vw,34px)!important;border-bottom:1px solid #e9edf0!important;background:rgba(255,255,255,.96)!important;backdrop-filter:blur(12px)!important;box-shadow:none!important}
+.filter-topbar .brand{display:flex!important;align-items:center!important;gap:12px!important}
+.filter-topbar .brand-mark,.sidebar-brand .brand-mark{width:46px!important;height:46px!important;border-radius:15px!important;display:grid!important;place-items:center!important;background:linear-gradient(145deg,var(--v2-blue),#3ab4d8)!important;color:#fff!important;font-weight:900!important;border:0!important;box-shadow:0 8px 20px rgba(22,152,196,.24)!important}
+.filter-topbar .brand strong,.sidebar-brand strong{color:#168fbb!important;font-weight:900!important}
+.filter-topbar .brand span,.sidebar-brand span{color:#7b8790!important}
+.header-action,.theme-toggle,.menu-button,.topbar-audit{min-height:40px!important;border:1px solid var(--v2-line)!important;border-radius:12px!important;background:#fff!important;color:#53616b!important;font-weight:800!important}
+.sync-indicator{color:#70808a!important}
+.compact-filter-content{max-width:900px!important;padding:28px 16px 56px!important}
+.compact-filter-heading>span,.audit-heading>div>span{color:var(--v2-blue)!important}
+.compact-filter-heading h1,.audit-heading h1{font-family:inherit!important;color:var(--v2-text)!important;font-weight:850!important;letter-spacing:-.03em!important}
+.compact-filter-heading p{color:var(--v2-muted)!important}
+.selection-card{border:1px solid var(--v2-line)!important;border-radius:24px!important;background:#fff!important;box-shadow:var(--v2-shadow)!important}
+.selection-section{padding:21px 22px!important;border-bottom:1px solid #edf1f3!important}
+.selection-label>span{width:32px!important;height:32px!important;border-radius:11px!important;background:var(--v2-soft)!important;color:var(--v2-blue)!important;font-size:12px!important;font-weight:900!important}
+.selection-label strong{color:#25343e!important;font-weight:850!important}
+.selection-label small{color:#8a969e!important}
+.selection-label>button{border:1px solid #cde8f1!important;background:#f8fdff!important;color:#0f84aa!important;border-radius:11px!important;padding:8px 10px!important}
+.discipline-row{grid-template-columns:1fr!important;gap:14px!important}
+.discipline-choice-grid{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important}
+.discipline-choice{min-height:76px!important;border:1.5px solid var(--v2-line)!important;border-radius:17px!important;background:#fff!important;padding:12px 13px!important;box-shadow:none!important}
+.discipline-choice:hover,.topic-choice-grid button:hover{border-color:#b8dce8!important;background:#fbfeff!important}
+.discipline-choice.selected,.topic-choice-grid button.selected{border-color:#63bdd9!important;background:#f4fbfe!important}
+.discipline-choice .law-badge,.law-nav .law-badge{background:linear-gradient(145deg,var(--v2-blue),#3ab4d8)!important;color:#fff!important;border-radius:12px!important}
+.discipline-choice>b{color:var(--v2-blue)!important}
+.topic-choice-grid{display:grid!important;grid-template-columns:1fr 1fr!important;gap:9px!important}
+.topic-choice-grid button{min-height:72px!important;padding:11px 12px!important;border:1.5px solid var(--v2-line)!important;border-radius:15px!important;background:#fff!important;color:#394951!important}
+.topic-choice-grid button>span{border-color:#d6e5eb!important;background:#fff!important;color:var(--v2-blue)!important;border-radius:9px!important}
+.topic-choice-grid button.selected>span{background:var(--v2-blue)!important;border-color:var(--v2-blue)!important;color:#fff!important}
+.subtopic-chips button{min-height:40px!important;border:1px solid var(--v2-line)!important;border-radius:12px!important;background:#fff!important;color:#53616b!important}
+.subtopic-chips button.selected{border-color:#75c5dd!important;background:var(--v2-soft)!important;color:#0b7ca2!important}
+.initial-status-options{display:grid!important;grid-template-columns:repeat(4,1fr)!important;gap:9px!important}
+.initial-status-options button{min-height:68px!important;border:1.5px solid var(--v2-line)!important;border-radius:15px!important;background:#fff!important;color:#56636c!important}
+.initial-status-options button.selected{border-color:#63bdd9!important;background:var(--v2-soft)!important;color:#0b7ca2!important}
+.preference-grid>div{border:1px solid var(--v2-line)!important;border-radius:16px!important;background:#fbfcfd!important}
+.preference-grid button{border:1px solid var(--v2-line)!important;border-radius:10px!important;background:#fff!important;color:#57666f!important}
+.preference-grid button.selected{border-color:#75c5dd!important;background:var(--v2-soft)!important;color:#0b7ca2!important}
+.compact-start{background:#fbfcfd!important}
+.compact-start strong{color:var(--v2-blue)!important}
+.compact-start>button{min-height:52px!important;border:0!important;border-radius:15px!important;background:var(--v2-blue)!important;color:#fff!important;font-weight:850!important;box-shadow:0 8px 20px rgba(22,152,196,.18)!important}
+.compact-start>button:hover{background:var(--v2-blue2)!important}
+.decorando-supplement-notice{border:1px solid #b9ddea!important;border-left:5px solid var(--v2-blue)!important;background:#f4fbfe!important;color:#34505c!important;border-radius:14px!important}
+.workspace{background:transparent!important}
+.workspace>.topbar{position:sticky!important;top:0!important;z-index:25!important;min-height:76px!important;background:rgba(255,255,255,.96)!important;backdrop-filter:blur(12px)!important;border-bottom:1px solid #e9edf0!important;box-shadow:none!important}
+.workspace>.topbar h1{color:#273741!important;font-weight:850!important}
+.breadcrumb{color:var(--v2-blue)!important;font-weight:900!important}
+.sidebar{background:#fff!important;border-right:1px solid #e9edf0!important;box-shadow:none!important}
+.sidebar-brand{border-bottom:1px solid #edf1f3!important}
+.sidebar-brand>button{border:1px solid var(--v2-line)!important;background:#fff!important;border-radius:11px!important;color:#60707a!important}
+.law-nav>button{border:1px solid transparent!important;border-radius:13px!important;background:transparent!important}
+.law-nav>button:hover{background:#f6fbfd!important;border-color:#d9edf4!important}
+.law-nav>button.active{background:var(--v2-soft)!important;border-color:#bfe4ef!important;color:#0b7ca2!important}
+.sidebar-progress{border-top:1px solid #edf1f3!important;background:#fbfcfd!important}
+.sidebar-progress strong{color:var(--v2-blue)!important}
+.progress-track{background:#e8edf0!important}.progress-track>span{background:linear-gradient(90deg,var(--v2-blue),#3ab4d8)!important}
+.study-grid.question-first,.scroll-study{max-width:820px!important;margin:0 auto!important;padding:22px 16px 52px!important}
+.study-grid.question-first{display:block!important}.right-column{margin-top:12px!important}
+.exercise-card,.scroll-question-card{border:1px solid var(--v2-line)!important;border-radius:var(--v2-r)!important;background:var(--v2-card)!important;box-shadow:var(--v2-shadow)!important;padding:22px!important}
+.exercise-heading{border-bottom:0!important;padding-bottom:0!important;margin-bottom:18px!important}
+.question-number{color:var(--v2-blue)!important;font-weight:900!important}
+.exercise-heading h2{color:#273741!important;font-weight:800!important}
+.question-type{border:1px solid #cde8f1!important;border-radius:10px!important;background:#f8fdff!important;color:#0f84aa!important;font-weight:850!important}
+.question-actions button{border:1px solid var(--v2-line)!important;border-radius:10px!important;background:#fff!important;color:#60707a!important}
+.question-actions .delete-action{color:#a34742!important;border-color:#efcfcd!important;background:#fffafa!important}
+.main-statement{font-size:clamp(19px,2.3vw,22px)!important;line-height:1.55!important;color:#17222b!important;margin:18px 0 20px!important}
+.answer-buttons.main-answers{display:grid!important;grid-template-columns:1fr 1fr!important;gap:12px!important;margin-top:16px!important}
+.answer-buttons.main-answers button{min-height:72px!important;border:1.5px solid var(--v2-line)!important;border-radius:18px!important;background:#fff!important;color:#34414a!important;font-size:17px!important;font-weight:800!important}
+.answer-buttons.main-answers button:hover{border-color:#a9dce9!important;background:#fbfeff!important}
+.answer-buttons.main-answers button.chosen{border-color:#63bdd9!important;background:#f3fbfe!important;color:#0b7ca2!important}
+.answer-buttons.main-answers button:disabled{opacity:1!important}
+.feedback{border-radius:16px!important;padding:14px 15px!important;font-size:14px!important;line-height:1.5!important}
+.feedback.correct{background:var(--v2-okbg)!important;color:#176d48!important;border:1px solid #bfe4d1!important}
+.feedback.wrong{background:var(--v2-badbg)!important;color:#953d38!important;border:1px solid #efc4c1!important}
+.legal-basis{margin-top:14px!important;border:1px solid var(--v2-line)!important;border-radius:18px!important;background:#fbfcfd!important;padding:16px!important;box-shadow:none!important}
+.article-header .eyebrow{color:var(--v2-blue)!important}
+.importance select{border:1px solid var(--v2-line)!important;border-radius:10px!important;background:#fff!important}
+.marker-tools{border-color:#edf1f3!important}
+.law-text button{border:1px solid #e6ecef!important;border-radius:12px!important;background:#fff!important;color:#2d3b44!important}
+.article-footer{border-top:1px solid #edf1f3!important}
+.article-footer button,.history-toggle,.inline-history-toggle,.scroll-load-more{border:1px solid var(--v2-line)!important;border-radius:13px!important;background:#fff!important;color:#56636c!important}
+.comment-box{border:1px solid #cde8f1!important;border-radius:16px!important;background:#f8fdff!important}
+.comment-box textarea{border:1px solid var(--v2-line)!important;border-radius:12px!important;background:#fff!important}
+.scroll-intro{border:1px solid var(--v2-line)!important;border-radius:18px!important;background:#fff!important;box-shadow:var(--v2-shadow)!important}
+.scroll-intro span{color:var(--v2-blue)!important}
+.empty-status{max-width:760px!important;margin:30px auto!important;border:1px solid var(--v2-line)!important;border-radius:22px!important;background:#fff!important;box-shadow:var(--v2-shadow)!important}
+.audit-content{max-width:1050px!important}
+.audit-heading button{border:0!important;border-radius:13px!important;background:var(--v2-blue)!important;color:#fff!important}
+.metric-grid article,.audit-panel{border:1px solid var(--v2-line)!important;border-radius:18px!important;background:#fff!important;box-shadow:var(--v2-shadow)!important}
+.metric-grid article.accent{background:linear-gradient(135deg,#0f8db8,#28a9d3)!important;color:#fff!important}.metric-grid article.accent *{color:#fff!important}
+.daily-bar{background:#e8edf0!important}.daily-bar span{background:linear-gradient(90deg,var(--v2-blue),#3ab4d8)!important}
+#centralFolderBack,#central-back-btn{background:#1698c4!important;border-color:#1698c4!important;box-shadow:0 8px 20px rgba(22,152,196,.22)!important}
+@media(max-width:900px){
+ .sync-indicator{display:none!important}.discipline-choice-grid,.topic-choice-grid{grid-template-columns:1fr!important}
+ .initial-status-options{grid-template-columns:1fr 1fr!important}.preference-grid{grid-template-columns:1fr!important}
+ .compact-start{display:grid!important;grid-template-columns:1fr!important;gap:14px!important}.compact-start>button{width:100%!important}
+ .study-grid.question-first,.scroll-study{padding:16px 12px 42px!important}
+}
+@media(max-width:560px){
+ .filter-topbar{min-height:70px!important;padding:0 12px!important}.filter-topbar .brand-mark{width:42px!important;height:42px!important}
+ .header-action{display:none!important}.compact-filter-content{padding:20px 12px 42px!important}.selection-section{padding:17px 15px!important}
+ .answer-buttons.main-answers{grid-template-columns:1fr!important}.exercise-card,.scroll-question-card{padding:17px 15px!important}
+ .main-statement{font-size:19px!important}.daily-goal{display:none!important}
+}
+`;
+function apply(){
+ try{
+   const d=frame.contentDocument;
+   if(!d||!d.head)throw new Error('sem acesso ao documento');
+   let s=d.getElementById('base-completa-visual-v2');
+   if(!s){s=d.createElement('style');s.id='base-completa-visual-v2';d.head.appendChild(s)}
+   s.textContent=css;
+   d.documentElement.style.setProperty('--green','#1698c4');
+   d.title='BASE COMPLETA · Decorando a Lei Seca';
+   const brandStrong=d.querySelector('.filter-topbar .brand strong');
+   if(brandStrong)brandStrong.textContent='Decorando a Lei Seca';
+   const brandSub=d.querySelector('.filter-topbar .brand span');
+   if(brandSub)brandSub.textContent='BASE COMPLETA';
+ }catch(e){
+   document.getElementById('fail').style.display='block';
+ }
+}
+frame.addEventListener('load',()=>{apply();setTimeout(apply,80);setTimeout(apply,500)});
+})();
+</script>
+</body>
+</html>
