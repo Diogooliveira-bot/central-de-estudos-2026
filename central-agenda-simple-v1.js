@@ -202,7 +202,42 @@
     if (!host) return;
     var tasks = read(todayISO(), true);
     var pending = core.pendingCount(tasks);
-    host.innerHTML = '<div><span>HOJE</span><b>' + (pending ? pending + (pending === 1 ? ' tarefa pendente' : ' tarefas pendentes') : 'Nenhuma tarefa pendente') + '</b></div><button type="button" data-action="open-agenda">Abrir Agenda</button>';
+    var overdue = overdueTasks(todayISO());
+    var disciplines = Array.from(document.querySelectorAll('#disciplineGrid .disc-card')).map(function (card) {
+      return {
+        id: card.dataset.id || '',
+        title: (card.querySelector('b') || {}).textContent || 'Disciplina',
+        detail: (card.querySelector('small') || {}).textContent || ''
+      };
+    });
+    if (!disciplines.length) disciplines = [
+      { id: 'cf', title: 'Direito Constitucional', detail: 'Curso por módulos' },
+      { id: 'adm', title: 'Direito Administrativo', detail: 'Tópicos do edital' },
+      { id: 'civil', title: 'Direito Civil', detail: 'Curso por módulos' },
+      { id: 'cpc', title: 'Direito Processual Civil', detail: 'Curso por módulos' },
+      { id: 'penal', title: 'Direito Penal', detail: 'Curso por módulos' },
+      { id: 'cpp', title: 'Direito Processual Penal', detail: 'Tópicos do edital' }
+    ];
+    function brief(item, date, isOverdue) {
+      var task = item.task || item;
+      var detail = [task.time || '', disciplineLabel(task.discipline)].filter(Boolean).join(' · ');
+      return '<label class="agenda-home-task' + (task.done ? ' done' : '') + (isOverdue ? ' overdue' : '') + '">' +
+        '<input type="checkbox" data-action="home-toggle" data-id="' + escapeHtml(task.id) + '" data-date="' + escapeHtml(date) + '" ' + (task.done ? 'checked' : '') + '>' +
+        '<span><b>' + escapeHtml(task.task || 'Tarefa sem descrição') + '</b>' +
+        (detail ? '<small>' + escapeHtml(detail) + '</small>' : '') +
+        (isOverdue ? '<em>' + escapeHtml(shortDate(date)) + '</em>' : '') +
+        '</span></label>';
+    }
+    var todayHtml = tasks.length ? tasks.map(function (task) { return brief(task, todayISO(), false); }).join('') : '<div class="agenda-home-empty">Nenhuma tarefa para hoje.</div>';
+    var overdueHtml = overdue.length ? overdue.slice(0, 6).map(function (item) { return brief(item, item.date, true); }).join('') : '<div class="agenda-home-empty">Nenhuma pendência anterior.</div>';
+    var disciplineHtml = disciplines.map(function (item) {
+      return '<button type="button" class="agenda-home-discipline" data-action="open-discipline" data-id="' + escapeHtml(item.id) + '"><b>' + escapeHtml(item.title) + '</b><small>' + escapeHtml(item.detail) + '</small><span>Abrir disciplina</span></button>';
+    }).join('');
+    host.innerHTML = '<div class="agenda-home-heading"><div><span>INÍCIO</span><h1>Meu estudo de hoje</h1><p>' + escapeHtml(longDate(todayISO())) + '</p></div><button type="button" data-action="open-agenda">Abrir Agenda</button></div>' +
+      '<div class="agenda-home-summary"><div><small>Para hoje</small><b>' + tasks.length + '</b><span>tarefas</span></div><div><small>Pendentes hoje</small><b>' + pending + '</b><span>tarefas</span></div><div><small>Pendências anteriores</small><b>' + overdue.length + '</b><span>tarefas</span></div></div>' +
+      '<div class="agenda-home-grid"><section class="agenda-home-panel"><div class="agenda-home-panel-head"><h2>Hoje</h2><span>' + pending + ' pendente' + (pending === 1 ? '' : 's') + '</span></div><div class="agenda-home-list">' + todayHtml + '</div></section>' +
+      '<section class="agenda-home-panel"><div class="agenda-home-panel-head"><h2>Pendências</h2><span>dias anteriores</span></div><div class="agenda-home-list">' + overdueHtml + '</div></section></div>' +
+      '<section class="agenda-home-disciplines"><div class="agenda-home-panel-head"><h2>Disciplinas</h2><button type="button" data-action="open-disciplines">Ver todas</button></div><div class="agenda-home-discipline-grid">' + disciplineHtml + '</div></section>';
   }
 
   function render() {
@@ -475,17 +510,16 @@
     var home = byLabel(/^Início$/i);
     var disciplines = byLabel(/^Disciplinas$/i);
     var agenda = byLabel(/^Agenda$/i);
+    var decorando = byLabel(/^Decorando a Lei Seca$/i);
     var vade = byLabel(/^Vade Mecum$/i);
-    buttons.forEach(function (button) { button.hidden = ![home, disciplines, agenda, vade].includes(button); });
+    buttons.forEach(function (button) { button.hidden = ![home, disciplines, agenda, decorando, vade].includes(button); });
     nav.querySelectorAll(':scope > .label').forEach(function (label) { label.hidden = true; });
     if (home) { home.dataset.simpleNav = 'home'; home.onclick = function () { return openHome(home); }; }
     if (disciplines) { disciplines.dataset.simpleNav = 'disciplines'; disciplines.onclick = function () { return openDisciplines(disciplines); }; }
     if (agenda) { agenda.dataset.simpleNav = 'agenda'; agenda.onclick = function () { return open(agenda); }; }
     var review = makeNavButton('Revisar meus erros', 'review-errors', 'M4 5h16v14H4zM8 9h8M8 13h8M8 17h5M18 3v4M16 5h4');
-    var notebook = makeNavButton('Caderno de Erros', 'error-notebook', 'M5 4h14v16H5zM8 8h8M8 12h8M8 16h5');
     review.onclick = function () { return openErrors('review', review); };
-    notebook.onclick = function () { return openErrors('notebook', notebook); };
-    [home, disciplines, agenda, review, notebook, vade].forEach(function (button) { if (button) nav.appendChild(button); });
+    [home, disciplines, agenda, decorando, review, vade].forEach(function (button) { if (button) nav.appendChild(button); });
   }
 
   function installHome() {
@@ -500,8 +534,18 @@
     if (!document.getElementById('agendaSimpleHome')) {
       var card = document.createElement('section');
       card.id = 'agendaSimpleHome';
-      card.className = 'agenda-simple-home-card';
-      card.addEventListener('click', function (event) { if (event.target.closest('[data-action="open-agenda"]')) open(); });
+      card.className = 'agenda-simple-home-dashboard';
+      card.addEventListener('click', function (event) {
+        var action = event.target.closest('[data-action]');
+        if (!action) return;
+        if (action.dataset.action === 'open-agenda') open();
+        if (action.dataset.action === 'open-disciplines') openDisciplines(action);
+        if (action.dataset.action === 'open-discipline' && typeof window.centralHardSubject === 'function') window.centralHardSubject(action.dataset.id);
+      });
+      card.addEventListener('change', function (event) {
+        var input = event.target.closest('input[data-action="home-toggle"]');
+        if (input) toggle(input.dataset.date, input.dataset.id, input.checked);
+      });
       if (legacy) legacy.parentNode.insertBefore(card, legacy); else home.appendChild(card);
     }
     renderHome();
