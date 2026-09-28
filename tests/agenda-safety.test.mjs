@@ -35,7 +35,7 @@ test('entrada e service worker incluem a Agenda simples no cache offline', () =>
     assert.match(entry, new RegExp(asset.replaceAll('.', '\\.'), 'u'));
     assert.match(worker, new RegExp(asset.replaceAll('.', '\\.'), 'u'));
   }
-  assert.match(worker, /central-v66168-agenda-simples-v3/);
+  assert.match(worker, /central-v66168-agenda-simples-v4/);
 });
 
 test('camada visual vence regras legadas ao ocultar Home e navegação antigas', () => {
@@ -43,4 +43,11 @@ test('camada visual vence regras legadas ao ocultar Home e navegação antigas',
   assert.match(css, /#homeView \.agenda-simple-home-legacy\{display:none!important\}/);
   assert.match(css, /#homeView>\.bc-home-continue\{display:none!important\}/);
   assert.match(css, /#centralSidebar \.nav>button\[hidden\]/);
+});
+
+test('Agenda móvel mantém calendário e alvos de toque acessíveis', () => {
+  const css = read('central-agenda-simple-v1.css');
+  assert.match(css, /\.agenda-calendar-card\{display:block!important\}/);
+  assert.match(css, /\.agenda-more-fields-button\{min-height:44px\}/);
+  assert.match(css, /\.agenda-task-more\{width:44px;height:44px\}/);
 });
