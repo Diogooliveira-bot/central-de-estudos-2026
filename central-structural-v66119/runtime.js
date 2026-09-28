@@ -4819,11 +4819,7 @@ function getAgenda(d){
  try{raw=localStorage.getItem(k)}catch(e){console.warn('Agenda sem acesso ao armazenamento',e)}
  if(raw){
   try{const parsed=JSON.parse(raw);if(Array.isArray(parsed))return parsed;throw new Error('formato inválido')}
-  catch(e){console.warn('Agenda armazenada inválida; registro ignorado',e);try{localStorage.removeItem(k)}catch(_){}}
- }
- if(d===todayISO()){
-  const a=[{id:1,time:'06:40',discipline:'Direito Constitucional',task:'Continuar módulo atual',done:false},{id:2,time:'07:20',discipline:'Anki',task:'Revisar baralhos pendentes',done:false}];
-  try{saveAgenda(d,a)}catch(_){}return a
+  catch(e){console.warn('Agenda armazenada inválida; registro preservado e ignorado',e);return []}
  }
  return []
 }
