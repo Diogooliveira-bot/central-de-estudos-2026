@@ -35,7 +35,7 @@ test('entrada e service worker incluem a Agenda simples no cache offline', () =>
     assert.match(entry, new RegExp(asset.replaceAll('.', '\\.'), 'u'));
     assert.match(worker, new RegExp(asset.replaceAll('.', '\\.'), 'u'));
   }
-  assert.match(worker, /central-v66168-agenda-simples-v1/);
+  assert.match(worker, /central-v66168-agenda-simples-v2/);
 });
 
 test('camada visual vence regras legadas ao ocultar Home e navegação antigas', () => {
