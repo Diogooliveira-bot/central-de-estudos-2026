@@ -35,11 +35,12 @@ test('entrada e service worker incluem a Agenda simples no cache offline', () =>
     assert.match(entry, new RegExp(asset.replaceAll('.', '\\.'), 'u'));
     assert.match(worker, new RegExp(asset.replaceAll('.', '\\.'), 'u'));
   }
-  assert.match(worker, /central-v66168-agenda-simples-v2/);
+  assert.match(worker, /central-v66168-agenda-simples-v3/);
 });
 
 test('camada visual vence regras legadas ao ocultar Home e navegação antigas', () => {
   const css = read('central-agenda-simple-v1.css');
   assert.match(css, /#homeView \.agenda-simple-home-legacy\{display:none!important\}/);
+  assert.match(css, /#homeView>\.bc-home-continue\{display:none!important\}/);
   assert.match(css, /#centralSidebar \.nav>button\[hidden\]/);
 });
