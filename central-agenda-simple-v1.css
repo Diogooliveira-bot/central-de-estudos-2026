@@ -1,5 +1,7 @@
 /* BASE COMPLETA — Agenda simples, aditiva e retrocompatível */
-html.bc-ui-v1 .agenda-simple-home-legacy{display:none!important}
+html.bc-ui-v1 #homeView .agenda-simple-home-legacy{display:none!important}
+html.bc-ui-v1 #centralSidebar .nav>button[hidden],
+html.bc-ui-v1 #centralSidebar .nav>.label[hidden]{display:none!important}
 html.bc-ui-v1 .agenda-simple-home-card{
   width:min(100%,760px);min-height:132px;margin-top:8px;padding:26px 28px;
   display:flex;align-items:center;justify-content:space-between;gap:24px;
