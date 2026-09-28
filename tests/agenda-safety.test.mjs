@@ -37,3 +37,9 @@ test('entrada e service worker incluem a Agenda simples no cache offline', () =>
   }
   assert.match(worker, /central-v66168-agenda-simples-v1/);
 });
+
+test('camada visual vence regras legadas ao ocultar Home e navegação antigas', () => {
+  const css = read('central-agenda-simple-v1.css');
+  assert.match(css, /#homeView \.agenda-simple-home-legacy\{display:none!important\}/);
+  assert.match(css, /#centralSidebar \.nav>button\[hidden\]/);
+});
