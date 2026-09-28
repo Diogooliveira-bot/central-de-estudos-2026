@@ -138,6 +138,12 @@ function apply(){
    let s=d.getElementById('base-completa-visual-v2');
    if(!s){s=d.createElement('style');s.id='base-completa-visual-v2';d.head.appendChild(s)}
    s.textContent=css;
+   if(!d.getElementById('base-completa-data-bridge-v2')){
+     const patch=d.createElement('script');
+     patch.id='base-completa-data-bridge-v2';
+     patch.textContent="(()=>{try{if(typeof DATA_PENAL!=='undefined'&&typeof TOPICS_PENAL!=='undefined'){for(const a of DATA_PENAL){const t=TOPICS_PENAL.find(x=>x.id===a.topicId);if(t&&a.subtopic&&!t.subtopics.includes(a.subtopic))t.subtopics.push(a.subtopic)}if(typeof saved!=='undefined'&&typeof ui!=='undefined'&&saved.preferences&&saved.preferences.discipline==='penal'){ui.selectedSubtopics=new Set(disciplineTopics().flatMap(t=>t.subtopics))}}if(typeof render==='function')render()}catch(e){console.warn('V2 taxonomy patch',e)}})();";
+     (d.body||d.documentElement).appendChild(patch);
+   }
    d.documentElement.style.setProperty('--green','#1698c4');
    d.title='BASE COMPLETA · Decorando a Lei Seca';
    const brandStrong=d.querySelector('.filter-topbar .brand strong');
