@@ -1,0 +1,34 @@
+{
+  "schema": "base-completa-persistence-fixture-v1",
+  "capturedAt": "2026-09-28T10:11:00.000Z",
+  "sourceBranch": "main",
+  "sourceCommit": "65844e8c22fb33b2bcf08f9130315dbd0496d813",
+  "localStorage": {
+    "central-v6:agenda:2026-09-27": "[{\"id\":1695801000000,\"time\":\"19:00\",\"discipline\":\"penal\",\"task\":\"Revisar M3\",\"done\":false,\"reviewUid\":\"p3\"}]",
+    "central-v6:agenda:2026-09-28": "[{\"id\":1695887400000,\"time\":\"06:30\",\"discipline\":\"cf\",\"task\":\"Constitucional — revisar M4\",\"done\":false},{\"id\":1695888000000,\"time\":\"07:10\",\"discipline\":\"civil\",\"task\":\"Civil — M3\",\"done\":true,\"legacyExtra\":\"preservar\"}]",
+    "CENTRAL_CRONOGRAMA_6M_V2": "{\"version\":\"TJCE-6M-2026-01\",\"completed\":{\"cf-m01-analista\":true},\"reinforce\":[\"cf-m01-analista\"],\"selected\":\"2026-09-28\"}",
+    "cf_tjce_fcc_guided_v23": "{\"version\":23,\"weeks\":{\"w1\":{\"done\":true}},\"answers\":{\"cf-q-1\":{\"everWrong\":true,\"lastCorrect\":false}}}",
+    "penal_tjce_fcc_guided_v32": "{\"version\":32,\"weeks\":{\"p1\":{\"done\":false}},\"answers\":{}}",
+    "cpc_tjce_fcc_guided_v34": "{\"version\":34,\"weeks\":{\"cpc1\":{\"done\":true}},\"answers\":{\"cpc-q-1\":{\"everWrong\":true,\"lastCorrect\":false}}}",
+    "central-v6:civil-course-v1": "{\"version\":1,\"modules\":{\"civ-pessoa-natural\":{\"done\":true}}}",
+    "central-v6:civil-study-progress-v1": "{\"civ-pessoa-natural-analista\":{\"done\":true,\"updatedAt\":1695888000000}}",
+    "central-v6:pt:m1:v3": "{\"read\":{\"intro\":true},\"updatedAt\":\"2026-09-28T09:00:00.000Z\"}",
+    "central-v6:tec:registros": "[{\"id\":1695889000000,\"caderno\":\"cf-01\",\"feitas\":30,\"acertos\":24,\"data\":\"2026-09-28\"}]",
+    "lei-seca-enxuta-state": "{\"version\":1,\"progress\":{\"cf-art-5\":true}}",
+    "vade-mecum-central-v1": "{\"version\":1,\"highlights\":[{\"law\":\"CF\",\"article\":\"5\"}]}",
+    "vade-mecum-comments-v1": "{\"CF:5\":\"Revisar direitos fundamentais\"}",
+    "central-v6:appearance": "dark",
+    "central-v6:reading-font-size": "150",
+    "central-v6:sidebar": "expanded",
+    "central-v6:last": "{\"url\":\"folder:vade\",\"title\":\"vade\",\"at\":1695889200000}"
+  },
+  "indexedDB": {
+    "anki-offline-tauanne-v1": {
+      "cards": [{"id":"fixture-card-1","deck":"02 DIREITO CONSTITUCIONAL::01 CONSTITUIÇÃO","front":"Princípio fundamental","back":"Resposta preservada","stats":{"views":3,"correct":2,"wrong":1}}],
+      "settings": [{"key":"fixture","value":true}]
+    },
+    "vade-mecum-images-v1": {
+      "images": [{"id":"fixture-image-1","byteLength":128}]
+    }
+  }
+}
