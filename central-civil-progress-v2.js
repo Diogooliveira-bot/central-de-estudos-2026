@@ -88,7 +88,7 @@ function moduleStats(m,s,regs,deco){
   rows.forEach(function(x){var f=Math.max(0,Number(x.r.f)||0),a=Math.max(0,Number(x.r.a)||0);tecDone+=f;tecCorrect+=Math.min(f,a)});
   var tecTarget=ms.tecTarget||DEFAULT_TEC_TARGET;
   var tec=Math.min(100,Math.round(tecDone/tecTarget*100));
-  return {reading:reading,anki:anki,decorando:decorando,tec:tec,overall:Math.round((reading+anki+decorando+tec)/4),ankiInfo:ai,decorandoInfo:di,rows:rows,tecDone:tecDone,tecCorrect:tecCorrect,tecErrors:Math.max(0,tecDone-tecCorrect),tecTarget:tecTarget,tecAverage:tecDone?Math.round(tecCorrect/tecDone*100):null};
+  return {reading:reading,anki:anki,decorando:decorando,tec:tec,overall:Math.round((reading+decorando+tec)/3),ankiInfo:ai,decorandoInfo:di,rows:rows,tecDone:tecDone,tecCorrect:tecCorrect,tecErrors:Math.max(0,tecDone-tecCorrect),tecTarget:tecTarget,tecAverage:tecDone?Math.round(tecCorrect/tecDone*100):null};
 }
 function courseStats(){
   var s=loadProgress(),regs=loadTec(),deco=loadDecorando(),sum=0,done=0;
@@ -130,7 +130,7 @@ function tecCard(m,st){
   return '<article class="csp-stage-card csp-tec"><div class="csp-stage-head"><div><b>✓ Questões TEC</b><small>'+st.tecDone+'/'+st.tecTarget+' questões · '+rows.length+' rodada'+(rows.length===1?'':'s')+' registrada'+(rows.length===1?'':'s')+'</small></div><strong>'+st.tec+'%</strong></div>'+stageBar(st.tec)+'<div class="csp-tec-target"><div class="csp-target-control"><label>Meta do módulo <input type="number" min="1" max="10000" step="1" inputmode="numeric" aria-label="Meta de questões do TEC" value="'+st.tecTarget+'"></label><button type="button" onclick="civilStudySetTecTarget(&quot;'+escAttr(m.id)+'&quot;,this.parentElement.querySelector(&quot;input&quot;).value)">Salvar meta</button></div><small>Rodadas ilimitadas. A meta mede progresso; os acertos medem desempenho.</small></div>'+summary+reached+'<button type="button" class="csp-add-round" onclick="civilStudyOpenTecModal(&quot;'+escAttr(m.id)+'&quot;)">＋ Registrar nova rodada</button>'+history+'</article>';
 }
 function progressPanel(m,ms,st){
-  return '<section class="csp-panel"><div class="csp-panel-head"><div><span>PROGRESSO DE ESTUDO</span><b>'+st.overall+'% do módulo</b></div><div class="csp-panel-note">Média de Leitura, Anki, Decorando e TEC</div></div>'+stageBar(st.overall)+'<div class="csp-grid">'+readingCard(m,ms,st)+automaticCard(st,'anki','Anki','🧠','cards',st.ankiInfo)+automaticCard(st,'decorando','Decorando','📖','questões',st.decorandoInfo)+tecCard(m,st)+'</div></section>';
+  return '<section class="csp-panel"><div class="csp-panel-head"><div><span>PROGRESSO DE ESTUDO</span><b>'+st.overall+'% do módulo</b></div><div class="csp-panel-note">Média de Leitura, Decorando e TEC</div></div>'+stageBar(st.overall)+'<div class="csp-grid">'+readingCard(m,ms,st)+automaticCard(st,'decorando','Decorando','📖','questões',st.decorandoInfo)+tecCard(m,st)+'</div></section>';
 }
 function enhanceCivilHtml(html){
   try{
@@ -148,7 +148,7 @@ function enhanceCivilHtml(html){
         if(textSection)textSection.insertAdjacentHTML('beforeend',readingAction(m,part,!!ms.reading[part[0]]));
       });
       var status=section.querySelector('.civil-module-state');
-      if(status)status.innerHTML='<span class="csp-stage-summary">L '+st.reading+' · A '+st.anki+' · D '+st.decorando+' · T '+st.tec+'</span><b class="civil-pct '+(st.overall===100?'csp-full':'')+'">'+st.overall+'%</b>';
+      if(status)status.innerHTML='<span class="csp-stage-summary">L '+st.reading+' · D '+st.decorando+' · T '+st.tec+'</span><b class="civil-pct '+(st.overall===100?'csp-full':'')+'">'+st.overall+'%</b>';
     });
     var pct=Math.round(sum/MODULES.length),target=root.querySelector('.civil-target');
     if(target)target.innerHTML='<span>Progresso de estudo</span><b>'+done+'/15 concluídos · '+pct+'%</b>';
