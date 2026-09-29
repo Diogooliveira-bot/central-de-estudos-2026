@@ -76,3 +76,5 @@ test('adaptador troca somente a teoria de CPC e preserva os demais módulos', ()
   assert.doesNotMatch(civil, /cpc-final-20260928/u);
   assert.equal(context.window.rendered, true);
 });
+
+// preview build marker: full audited CPC theory surfaced
