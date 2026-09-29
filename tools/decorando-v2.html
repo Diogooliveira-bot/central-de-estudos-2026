@@ -144,6 +144,48 @@ function apply(){
      patch.textContent="(()=>{try{if(typeof DATA_PENAL!=='undefined'&&typeof TOPICS_PENAL!=='undefined'){for(const a of DATA_PENAL){const t=TOPICS_PENAL.find(x=>x.id===a.topicId);if(t&&a.subtopic&&!t.subtopics.includes(a.subtopic))t.subtopics.push(a.subtopic)}if(typeof saved!=='undefined'&&typeof ui!=='undefined'&&saved.preferences&&saved.preferences.discipline==='penal'){ui.selectedSubtopics=new Set(disciplineTopics().flatMap(t=>t.subtopics))}}if(typeof render==='function')render()}catch(e){console.warn('V3 taxonomy patch',e)}})();";
      (d.body||d.documentElement).appendChild(patch);
    }
+   if(!d.getElementById('base-completa-interaction-v3')){
+     const ix=d.createElement('script');
+     ix.id='base-completa-interaction-v3';
+     ix.textContent=`
+(()=>{try{
+  ui.pendingChoice=null;
+  const originalMove=move;
+  move=function(dir){ui.pendingChoice=null;return originalMove(dir)};
+  const originalStartStudy=startStudy;
+  startStudy=function(){ui.pendingChoice=null;return originalStartStudy.apply(this,arguments)};
+  const originalChooseStatus=chooseStatus;
+  chooseStatus=function(v){ui.pendingChoice=null;return originalChooseStatus(v)};
+  answerFocus=function(value){
+    const a=visible()[ui.articleIndex];
+    if(!a||ui.choice!==null)return;
+    ui.pendingChoice=value;
+    render();
+  };
+  window.submitFocus=function(){
+    const a=visible()[ui.articleIndex];
+    if(!a||ui.choice!==null||ui.pendingChoice===null||ui.pendingChoice===undefined)return;
+    const value=ui.pendingChoice;
+    ui.focusArticleId=a.id;
+    ui.choice=value;
+    record(a,value);
+    ui.pendingChoice=null;
+    render();
+  };
+  answerButtons=function(selected){
+    const opts=saved.preferences.answerOrder==="correct-left"
+      ? [[true,"Certo"],[false,"Errado"]]
+      : [[false,"Errado"],[true,"Certo"]];
+    const answered=selected!==null&&selected!==undefined;
+    const pending=answered?selected:ui.pendingChoice;
+    return '<div class="answer-buttons main-answers">'+opts.map(([v,l])=>'<button '+(answered?'disabled':'')+' class="'+(pending===v?'chosen':'')+'" onclick="answerFocus('+v+')">'+l+'</button>').join('')+'</div>'+
+      (answered?'':'<button class="v3-submit" '+(pending===null||pending===undefined?'disabled':'')+' onclick="submitFocus()">Responder</button>');
+  };
+  render();
+}catch(e){console.warn('V3 interaction patch',e)}})();
+`;
+     (d.body||d.documentElement).appendChild(ix);
+   }
    d.documentElement.style.setProperty('--green','#1698c4');
    d.title='BASE COMPLETA · Decorando a Lei Seca';
    const brandStrong=d.querySelector('.filter-topbar .brand strong');
