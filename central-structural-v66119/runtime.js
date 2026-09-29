@@ -134,7 +134,7 @@ function centralSidebarAction(action,btn){
   if(action==='agenda'){openAgenda(btn);return false}
   if(action==='disciplines'){openDisciplines(btn);return false}
   const routes={
-   home:()=>openHome(btn),anki:()=>openEmbeddedTool('anki',{},btn),decorando:()=>openEmbeddedTool('decorando',{},btn),
+   home:()=>openHome(btn),anki:()=>false,decorando:()=>openEmbeddedTool('decorando',{},btn),
    vade:()=>openEmbeddedTool('vade',{},btn),performance:()=>openPerformance(btn),'tec-cadernos':()=>openTecCadernos(btn),settings:()=>openCentralSettings()
   };
   const run=routes[action];if(!run)throw new Error('Destino lateral inválido: '+action);run();
@@ -240,9 +240,6 @@ function internalRouteParam(value,key){
  }catch(e){return ''}
 }
 function routeIntegratedCentralModule(value,title,btn){
- if(/^(?:\.\/)?anki\.html(?:[?#]|$)/.test(value)){
-  openEmbeddedTool('anki',{deck:internalRouteParam(value,'deck')||null,title:title||'Anki'},btn);return true;
- }
  if(/^(?:\.\/)?decorando_lei_seca\.html(?:[?#]|$)/.test(value)){
   openEmbeddedTool('decorando',{discipline:internalRouteParam(value,'discipline')||null,topicId:internalRouteParam(value,'topic')||null},btn);return true;
  }
@@ -255,9 +252,6 @@ function routeIntegratedCentralModule(value,title,btn){
  }
  if(/^(?:\.\/)?decorando_civil_analista\.html(?:[?#]|$)/.test(value)){
   openLeiSecaEnxuta(btn,'civil');return true;
- }
- if(/^(?:\.\/)?modules\/anki\/index\.html(?:[?#]|$)/.test(value)){
-  openAnkiDeck(internalRouteParam(value,'deck'),title);return true;
  }
  if(/^(?:\.\/)?modules\/lei-seca-juridica\/index\.html(?:[?#]|$)/.test(value)){
   openVadeMecum(btn);return true;
@@ -409,7 +403,6 @@ function civilSteps(){
   {id:'cases',done:civilStageDone('cases')},
   {id:'final',done:civilStageDone('final')},
   {id:'errors',done:!!m.errorsReviewed},
-  {id:'anki',done:!!m.anki}
  ]
 }
 function civilModulePct(id){
@@ -588,7 +581,6 @@ function renderCivilModule1(){
  ${civilQuestionStep('cases','Casos práticos','5 casos autorais claramente identificados.',5)}
  ${civilQuestionStep('final','Bateria final FCC','15 questões reais após a teoria.',6)}
  ${civilErrorStep()}
- ${civilAnkiStep()}
  </div>`
 }
 
@@ -617,7 +609,6 @@ function civil2Steps(){
   {id:'cases2',done:civil2StageDone('cases2')},
   {id:'final2',done:civil2StageDone('final2')},
   {id:'errors2',done:!!m.errorsReviewed},
-  {id:'anki2',done:!!m.anki}
  ]
 }
 function toggleCivil2Step(id){
@@ -752,7 +743,6 @@ function renderCivilModule2(){
  ${civil2QuestionStep('cases2','Casos práticos','5 casos autorais identificados.',5)}
  ${civil2QuestionStep('final2','Bateria final FCC','15 questões reais após a teoria.',6)}
  ${civil2ErrorStep()}
- ${civil2AnkiStep()}
  </div>`
 }
 
@@ -782,7 +772,6 @@ function civil3Steps(){
   {id:'cases3',done:civil3StageDone('cases3')},
   {id:'final3',done:civil3StageDone('final3')},
   {id:'errors3',done:!!m.errorsReviewed},
-  {id:'anki3',done:!!m.anki}
  ]
 }
 function toggleCivil3Step(id){
@@ -942,7 +931,6 @@ function renderCivilModule3(){
  ${civil3QuestionStep('cases3','Casos práticos','5 casos autorais identificados.',5)}
  ${civil3QuestionStep('final3','Bateria final FCC','15 questões reais após a teoria.',6)}
  ${civil3ErrorStep()}
- ${civil3AnkiStep()}
  </div>`
 }
 
@@ -972,7 +960,6 @@ function civil4Steps(){
   {id:'cases4',done:civil4StageDone('cases4')},
   {id:'final4',done:civil4StageDone('final4')},
   {id:'errors4',done:!!m.errorsReviewed},
-  {id:'anki4',done:!!m.anki}
  ]
 }
 function toggleCivil4Step(id){
@@ -1132,7 +1119,6 @@ function renderCivilModule4(){
  ${civil4QuestionStep('cases4','Casos práticos','5 casos autorais identificados.',5)}
  ${civil4QuestionStep('final4','Bateria final FCC','15 questões reais após a teoria.',6)}
  ${civil4ErrorStep()}
- ${civil4AnkiStep()}
  </div>`
 }
 
@@ -1162,7 +1148,6 @@ function civil5Steps(){
   {id:'cases5',done:civil5StageDone('cases5')},
   {id:'final5',done:civil5StageDone('final5')},
   {id:'errors5',done:!!m.errorsReviewed},
-  {id:'anki5',done:!!m.anki}
  ]
 }
 function toggleCivil5Step(id){
@@ -1337,7 +1322,6 @@ function renderCivilModule5(){
  ${civil5QuestionStep('cases5','Casos práticos','5 casos autorais identificados.',5)}
  ${civil5QuestionStep('final5','Bateria final FCC','15 questões reais após a teoria.',6)}
  ${civil5ErrorStep()}
- ${civil5AnkiStep()}
  </div>`
 }
 
@@ -1367,7 +1351,6 @@ function civil6Steps(){
   {id:'cases6',done:civil6StageDone('cases6')},
   {id:'final6',done:civil6StageDone('final6')},
   {id:'errors6',done:!!m.errorsReviewed},
-  {id:'anki6',done:!!m.anki}
  ]
 }
 function toggleCivil6Step(id){
@@ -1548,7 +1531,6 @@ function renderCivilModule6(){
  ${civil6QuestionStep('cases6','Casos práticos','5 casos autorais identificados.',5)}
  ${civil6QuestionStep('final6','Bateria final FCC','15 questões reais após a teoria.',6)}
  ${civil6ErrorStep()}
- ${civil6AnkiStep()}
  </div>`
 }
 
@@ -1578,7 +1560,6 @@ function civil7Steps(){
   {id:'cases7',done:civil7StageDone('cases7')},
   {id:'final7',done:civil7StageDone('final7')},
   {id:'errors7',done:!!m.errorsReviewed},
-  {id:'anki7',done:!!m.anki}
  ]
 }
 function toggleCivil7Step(id){
@@ -1755,7 +1736,6 @@ function renderCivilModule7(){
  ${civil7QuestionStep('cases7','Casos práticos','5 casos autorais identificados.',5)}
  ${civil7QuestionStep('final7','Bateria final FCC','15 questões reais após a teoria.',6)}
  ${civil7ErrorStep()}
- ${civil7AnkiStep()}
  </div>`
 }
 
@@ -1785,7 +1765,6 @@ function civil8Steps(){
   {id:'cases8',done:civil8StageDone('cases8')},
   {id:'final8',done:civil8StageDone('final8')},
   {id:'errors8',done:!!m.errorsReviewed},
-  {id:'anki8',done:!!m.anki}
  ]
 }
 function toggleCivil8Step(id){
@@ -1956,7 +1935,6 @@ function renderCivilModule8(){
  ${civil8QuestionStep('cases8','Casos práticos','5 casos autorais para cobrir lacunas do banco real.',5)}
  ${civil8QuestionStep('final8','Bateria final FCC','15 questões reais após a teoria.',6)}
  ${civil8ErrorStep()}
- ${civil8AnkiStep()}
  </div>`
 }
 
@@ -1986,7 +1964,6 @@ function civil9Steps(){
   {id:'cases9',done:civil9StageDone('cases9')},
   {id:'final9',done:civil9StageDone('final9')},
   {id:'errors9',done:!!m.errorsReviewed},
-  {id:'anki9',done:!!m.anki}
  ]
 }
 function toggleCivil9Step(id){
@@ -2179,7 +2156,6 @@ function renderCivilModule9(){
  ${civil9QuestionStep('cases9','Casos práticos','5 casos autorais para contratos pouco cobrados no caderno.',5)}
  ${civil9QuestionStep('final9','Bateria final FCC','15 questões reais após a teoria.',6)}
  ${civil9ErrorStep()}
- ${civil9AnkiStep()}
  </div>`
 }
 
@@ -2209,7 +2185,6 @@ function civil10Steps(){
   {id:'cases10',done:civil10StageDone('cases10')},
   {id:'final10',done:civil10StageDone('final10')},
   {id:'errors10',done:!!m.errorsReviewed},
-  {id:'anki10',done:!!m.anki}
  ]
 }
 function toggleCivil10Step(id){
@@ -2399,7 +2374,6 @@ function renderCivilModule10(){
  ${civil10QuestionStep('cases10','Casos práticos','5 casos autorais identificados.',5)}
  ${civil10QuestionStep('final10','Bateria final FCC','15 questões reais após a teoria.',6)}
  ${civil10ErrorStep()}
- ${civil10AnkiStep()}
  </div>`
 }
 
@@ -2429,7 +2403,6 @@ function civil11Steps(){
   {id:'cases11',done:civil11StageDone('cases11')},
   {id:'final11',done:civil11StageDone('final11')},
   {id:'errors11',done:!!m.errorsReviewed},
-  {id:'anki11',done:!!m.anki}
  ]
 }
 function toggleCivil11Step(id){
@@ -2667,7 +2640,6 @@ function renderCivilModule11(){
  ${civil11QuestionStep('cases11','Casos práticos','5 casos autorais direcionados ao edital.',5)}
  ${civil11QuestionStep('final11','Bateria final FCC','15 questões reais FCC de fechamento.',6)}
  ${civil11ErrorStep()}
- ${civil11AnkiStep()}
  </div>`
 }
 
@@ -2697,7 +2669,6 @@ function civil12Steps(){
   {id:'cases12',done:civil12StageDone('cases12')},
   {id:'final12',done:civil12StageDone('final12')},
   {id:'errors12',done:!!m.errorsReviewed},
-  {id:'anki12',done:!!m.anki}
  ]
 }
 function toggleCivil12Step(id){
@@ -2897,7 +2868,6 @@ function renderCivilModule12(){
  ${civil12QuestionStep('cases12','Casos práticos','5 casos autorais identificados.',5)}
  ${civil12QuestionStep('final12','Bateria final FCC','15 questões FCC reais após a teoria.',6)}
  ${civil12ErrorStep()}
- ${civil12AnkiStep()}
  </div>`
 }
 
@@ -2927,7 +2897,6 @@ function civil13Steps(){
   {id:'cases13',done:civil13StageDone('cases13')},
   {id:'final13',done:civil13StageDone('final13')},
   {id:'errors13',done:!!m.errorsReviewed},
-  {id:'anki13',done:!!m.anki}
  ]
 }
 function toggleCivil13Step(id){
@@ -3133,7 +3102,6 @@ function renderCivilModule13(){
  ${civil13QuestionStep('cases13','Casos práticos','5 casos autorais de nível Analista/Oficial.',5)}
  ${civil13QuestionStep('final13','Bateria final FCC','15 questões FCC reais após a teoria.',6)}
  ${civil13ErrorStep()}
- ${civil13AnkiStep()}
  </div>`
 }
 
@@ -3163,7 +3131,6 @@ function civil14Steps(){
   {id:'cases14',done:civil14StageDone('cases14')},
   {id:'final14',done:civil14StageDone('final14')},
   {id:'errors14',done:!!m.errorsReviewed},
-  {id:'anki14',done:!!m.anki}
  ]
 }
 function toggleCivil14Step(id){
@@ -3458,7 +3425,6 @@ function renderCivilModule14(){
  ${civil14QuestionStep('cases14','Casos práticos','5 casos autorais orientados ao edital.',5)}
  ${civil14QuestionStep('final14','Bateria final FCC','15 questões reais FCC, incluindo curatela/TDA.',6)}
  ${civil14ErrorStep()}
- ${civil14AnkiStep()}
  </div>`
 }
 
@@ -3488,7 +3454,6 @@ function civil15Steps(){
   {id:'cases15',done:civil15StageDone('cases15')},
   {id:'final15',done:civil15StageDone('final15')},
   {id:'errors15',done:!!m.errorsReviewed},
-  {id:'anki15',done:!!m.anki}
  ]
 }
 function toggleCivil15Step(id){
@@ -3719,7 +3684,6 @@ function renderCivilModule15(){
  ${civil15QuestionStep('cases15','Casos práticos','5 casos autorais de nível Analista/Oficial.',5)}
  ${civil15QuestionStep('final15','Bateria final FCC','15 questões FCC reais após a teoria.',6)}
  ${civil15ErrorStep()}
- ${civil15AnkiStep()}
  </div>`
 }
 
@@ -3749,7 +3713,6 @@ function civil16Steps(){
   {id:'cases16',done:civil16StageDone('cases16')},
   {id:'final16',done:civil16StageDone('final16')},
   {id:'errors16',done:!!m.errorsReviewed},
-  {id:'anki16',done:!!m.anki}
  ]
 }
 function toggleCivil16Step(id){
@@ -3999,7 +3962,6 @@ function renderCivilModule16(){
  ${civil16QuestionStep('cases16','Casos práticos','5 casos autorais de nível Analista/Oficial.',5)}
  ${civil16QuestionStep('final16','Bateria final FCC','15 questões FCC reais após a teoria.',6)}
  ${civil16ErrorStep()}
- ${civil16AnkiStep()}
  </div>`
 }
 
