@@ -95,7 +95,7 @@ function syncOpenLayout(){
  if(side)side.style.display=open?'none':'';
 }
 document.addEventListener('click',function(event){
- if(event.target&&event.target.closest&&event.target.closest('.subject-head'))setTimeout(syncOpenLayout,0);
+ setTimeout(syncOpenLayout,0);
 },true);
 
 installVisualPolish();
@@ -155,4 +155,5 @@ window.addEventListener('message',function(event){
  });
 });
 try{if(typeof window.renderAll==='function')window.renderAll()}catch(error){console.error('CPC final: atualização de tela',error)}
+var cpcLayoutTimer=setInterval(syncOpenLayout,250);setTimeout(function(){clearInterval(cpcLayoutTimer)},6000);
 })();
