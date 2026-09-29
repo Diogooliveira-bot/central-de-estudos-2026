@@ -4762,7 +4762,7 @@ function editNamedLinks(uid,kind){
 }
 function editTips(uid){const x=topicByUid(uid),r=getResources(uid),current=(r.tips||x.t.tips||[]).map(v=>String(v).replace(/<[^>]*>/g,'')).join('\n');const v=prompt('Uma dica por linha:',current);if(v===null)return;r.tips=v.split('\n').map(x=>esc(x.trim())).filter(Boolean);saveResources(uid,r)}
 
-function openAnkiDeck(deck,title){return openEmbeddedTool('anki',{deck:deck||null,title:title||'Anki'},null);}
+function openAnkiDeck(deck,title){return false;}
 function perfKey(uid){return key(uid,'perf')}function getPerf(uid){return JSON.parse(localStorage.getItem(perfKey(uid))||'[]')}
 function registerPerf(uid){const q=Number($(`q-${uid}`).value||0),c=Number($(`c-${uid}`).value||0);if(q<=0||c<0||c>q){alert('Confira questões feitas e certas.');return}const a=getPerf(uid);a.unshift({id:Date.now(),q,c,pct:Math.round(c/q*1000)/10,date:todayISO()});localStorage.setItem(perfKey(uid),JSON.stringify(a));renderAll()}
 function deletePerf(uid,id){localStorage.setItem(perfKey(uid),JSON.stringify(getPerf(uid).filter(x=>x.id!==id)));renderAll()}
