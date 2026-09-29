@@ -1,7 +1,7 @@
 /* Central de Estudos — trava de navegação na v6.6.119
    Offline não destrutivo: index.html permanece apenas como fonte interna da v119. */
-var CACHE='central-v66169-cpc-editorial-v14';
-var BOOT='/central-v119.html?direct=33';
+var CACHE='central-v66169-cpc-editorial-v15';
+var BOOT='/central-v119.html?direct=34';
 var STRUCTURAL_MANIFEST='/central-structural-files-v66119.json?v=66119s2';
 var CPC_EDITORIAL=['/cpc-final-integration-20260928.js?v=20260929editorial12'];
 for(var cpcNo=1;cpcNo<=20;cpcNo++)CPC_EDITORIAL.push('/cpc-final-20260928/M'+String(cpcNo).padStart(2,'0')+'.html');
