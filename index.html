@@ -704,7 +704,7 @@ window.centralPwaInstall=function(){if(deferred)deferred.prompt()};
 <script id="central-native-router-v6652">
 (function(){
 'use strict';
-var VIEW_IDS=['homeView','disciplinesView','agendaView','performanceView','tecCadernosView','ankiView','leiSecaView','vadeMecumView','moduleView'];
+var VIEW_IDS=['homeView','disciplinesView','agendaView','performanceView','tecCadernosView','leiSecaView','vadeMecumView','moduleView'];
 var SUBJECTS_STATIC=[['pt','Português','17 módulos • curso integrado'],['cf','Direito Constitucional','curso integrado por módulos'],['adm','Direito Administrativo','tópicos do edital'],['civil','Direito Civil','curso integrado por módulos'],['cpc','Direito Processual Civil','curso integrado por módulos'],['penal','Direito Penal','curso integrado por módulos'],['cpp','Direito Processual Penal','tópicos do edital'],['rlm','Raciocínio Lógico-Matemático','9 módulos • cálculo rápido • questões FCC']];
 function el(id){return document.getElementById(id)}
 function esc(v){return String(v==null?'':v).replace(/[&<>\"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;'}[c]})}
@@ -719,7 +719,7 @@ window.centralHardSubject=function(id){try{if(typeof window.jumpSubject==='funct
 document.addEventListener('click',function(ev){var b=ev.target&&ev.target.closest?ev.target.closest('[data-central-native]'):null;if(!b)return;var a=b.getAttribute('data-central-native');if(a==='agenda'||a==='disciplines'){ev.preventDefault();ev.stopPropagation();window.centralHardOpen(a,b)}},true);
 setTimeout(function(){
  try{
-  var ids=['homeView','disciplinesView','agendaView','performanceView','tecCadernosView','ankiView','leiSecaView','vadeMecumView','moduleView'];
+  var ids=['homeView','disciplinesView','agendaView','performanceView','tecCadernosView','leiSecaView','vadeMecumView','moduleView'];
   var any=false;
   for(var i=0;i<ids.length;i++){var n=el(ids[i]);if(n&&!n.classList.contains('hidden')){any=true;n.classList.add('central-view-visible');break}}
   if(!any){var h=el('homeView');if(h){h.classList.remove('hidden');h.classList.add('central-view-visible')}}
@@ -765,16 +765,10 @@ setTimeout(function(){
    <span class="nav-text">Cadernos TEC</span>
   </button>
   <div class="label">Ferramentas já criadas</div>
-  <button type="button" data-i="🗓" onclick="return openEmbeddedTool('cronograma',{},this)">
-   <span class="nav-icon">
-    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm4-2v3M16 4v3M4 9h16M8 13h3M8 17h6"/></svg>
-   </span>
-   <span class="nav-text">Cronograma</span>
-  </button>
-  <button type="button" data-i="A" onclick="return openEmbeddedTool('anki',{},this)">
-   <span class="nav-icon nav-badge nav-badge-a">A</span>
-   <span class="nav-text">Anki</span>
-  </button>
+  
+
+  
+
   <button type="button" data-i="CE" onclick="return openEmbeddedTool('decorando',{},this)">
    <span class="nav-icon">
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 16.2 5.8 12.5l1.4-1.4 2.3 2.3 7-7 1.4 1.4z"/></svg>
@@ -815,7 +809,7 @@ setTimeout(function(){
    <div class="home-grid">
     <div>
      <div class="card"><div class="card-head"><h2>Agenda de hoje</h2><button class="btn sm" onclick="openAgenda()">Editar</button></div><div class="agenda" id="homeAgenda"></div></div>
-     <div class="schedule-intro" id="cronograma"><div class="eyebrow">Metas concluídas</div><h2>Cronograma de Estudos</h2><p>Plano fechado de 6 meses: conteúdo novo, revisões D+1/D+7/D+30, erros semanais e consolidação final, usando os módulos reais da Central.</p><div style="margin-top:10px"><button type="button" class="btn primary" onclick="return openEmbeddedTool('cronograma',{},this)">🗓 Abrir Cronograma de Estudos</button></div></div>
+     <div class="schedule-intro" id="disciplinasHome"><div class="eyebrow">Disciplinas</div><h2>Escolha o que estudar agora</h2><p>Visão simples das matérias da Central, com módulos, progresso e acesso direto aos tópicos.</p></div>
      <div class="subjects" id="subjects"></div>
     </div>
     <div class="side-col">
@@ -886,7 +880,6 @@ setTimeout(function(){
    </div>
   </section>
 
-  <section class="view hidden" id="ankiView"><div class="anki-parent-return"><button type="button" onclick="openHome()">← Central</button></div><div id="ankiIntegrated"></div></section>
 
   <section class="view module-view hidden" id="leiSecaView"><button type="button" class="central-view-back" onclick="return openHome()" aria-label="Voltar ao início">‹ Central</button><iframe id="leiSecaFrame" class="module-frame" title="Decorando a Lei Seca"></iframe></section>
 
@@ -912,7 +905,7 @@ setTimeout(function(){
     <button class="central-theme-option" data-central-theme-choice="dark" onclick="setCentralTheme('dark')"><span>☾</span>Escuro</button>
     <button class="central-theme-option" data-central-theme-choice="oled" onclick="setCentralTheme('oled')"><span>◼</span>OLED</button><button class="central-theme-option" data-central-theme-choice="system" onclick="setCentralTheme('system')"><span>◐</span>Sistema</button>
    </div>
-   <div class="central-settings-note">O tema é aplicado à Central, Constitucional, Anki, Decorando a Lei Seca e Vade Mecum. Nenhum conteúdo ou progresso é alterado.</div>
+   <div class="central-settings-note">O tema é aplicado à Central, Constitucional, Decorando a Lei Seca e Vade Mecum. Nenhum conteúdo ou progresso é alterado.</div>
 
    <span class="central-setting-label">Backup geral</span>
    <div class="central-backup-row">
@@ -925,7 +918,7 @@ setTimeout(function(){
    <div id="centralBackupStatus" class="central-backup-status">O backup por arquivo funciona mesmo sem banco online. Quando o site estiver no Vercel com o banco configurado, você também poderá guardar snapshots gerais no servidor.</div>
    <div id="centralBackupHistoryList" class="central-backup-history hidden"></div>
    <button class="central-btn-sec hidden" id="centralPwaInstall" onclick="centralPwaInstall()" style="margin-top:8px;width:100%">📱 Instalar como aplicativo</button>
-   <div class="central-settings-note"><b>Backup geral:</b> inclui os dados da Central — progresso, Português nativo, agenda/cronograma, cadernos TEC, Vade Mecum, Anki, Lei Seca, RLM e preferências.</div>
+   <div class="central-settings-note"><b>Backup geral:</b> inclui os dados da Central — progresso, Português nativo, agenda, cadernos TEC, Vade Mecum, Lei Seca, RLM e preferências.</div>
    <div class="central-settings-note" style="margin-top:7px"><b>Segurança do backup online:</b> configure no Vercel as variáveis <code>DATABASE_URL</code> e <code>BACKUP_SECRET</code>. A chave é solicitada somente quando você usa o histórico online e fica apenas na sessão atual do navegador.</div>
   <script id="central-backup-geral-v6674">
 (function(){
@@ -1465,9 +1458,9 @@ document.addEventListener('click',function(ev){
   window.civilAnalistaReview = id => {const s=load();s.reviewed=s.reviewed||{};if(s.reviewed[id])delete s.reviewed[id];else s.reviewed[id]={at:Date.now(),version:COURSE.version};save(s);window.renderAll?.()};
   window.renderCivilMaster = () => {
     const s=load(),p=progress();
-    return '<div class="civil-master"><div class="civil-master-intro"><div><h3>'+esc(COURSE.title)+'</h3><p>Curso reconstruído pelo edital atual: teoria essencial, jurisprudência, exemplos, pegadinhas, Anki e Decorando na mesma ordem de 15 módulos.</p><div class="civil-a-meta"><span class="civil-a-chip">15 módulos</span><span class="civil-a-chip">1.056 questões no Decorando</span><span class="civil-a-chip">Anki migrado sem apagar histórico</span><span class="civil-a-chip">Atualizado em 17/08/2026</span></div></div><div class="civil-target"><span>Revisados</span><b>'+p.done+'/15 · '+p.pct+'%</b></div></div><div class="civil-overall"><span style="width:'+p.pct+'%"></span></div>'+COURSE.modules.map(m=>{
+    return '<div class="civil-master"><div class="civil-master-intro"><div><h3>'+esc(COURSE.title)+'</h3><p>Curso reconstruído pelo edital atual: teoria essencial, jurisprudência, exemplos, pegadinhas e Decorando na mesma ordem de 15 módulos.</p><div class="civil-a-meta"><span class="civil-a-chip">15 módulos</span><span class="civil-a-chip">1.056 questões no Decorando</span><span class="civil-a-chip">Atualizado em 17/08/2026</span></div></div><div class="civil-target"><span>Revisados</span><b>'+p.done+'/15 · '+p.pct+'%</b></div></div><div class="civil-overall"><span style="width:'+p.pct+'%"></span></div>'+COURSE.modules.map(m=>{
       const open=!!s.open?.[m.id],reviewed=!!s.reviewed?.[m.id];
-      return '<section class="civil-module '+(open?'open':'')+'" data-civil-analista="'+esc(m.id)+'"><button class="civil-module-head" onclick="civilAnalistaToggle(&quot;'+esc(m.id)+'&quot;)"><span class="civil-module-num">Módulo '+m.num+'</span><span class="civil-module-title"><b>'+esc(m.title)+'</b><small>'+esc(m.summary)+'</small></span><span class="civil-module-state"><span>'+esc(m.range)+'</span><b class="civil-pct">'+(reviewed?'✓':'—')+'</b></span><span>'+(open?'⌃':'⌄')+'</span></button><div class="civil-module-body"><div class="civil-scope-note"><b>Cobertura do edital:</b> '+esc(m.summary)+'</div><section class="civil-a-section"><h4>Mapa de cobertura</h4>'+list(m.scope,'civil-a-list civil-a-scope')+'</section><section class="civil-a-section"><h4>Teoria essencial</h4>'+cards(m.theory)+'</section><section class="civil-a-section"><h4>Jurisprudência e entendimentos-chave</h4>'+cards(m.jurisprudence)+'</section><section class="civil-a-section"><h4>Exemplos aplicados</h4>'+list(m.examples)+'</section><section class="civil-a-section"><h4>Pegadinhas de prova</h4>'+list(m.traps)+'</section><div class="civil-a-actions"><button class="civil-btn primary" onclick="openAnkiDeck(&quot;'+esc(m.deck)+'&quot;)">Abrir Anki deste módulo</button><button class="civil-btn" onclick="openLeiSecaEnxuta(null,&quot;civil&quot;,&quot;'+esc(m.id)+'&quot;)">📖 Decorando deste módulo</button>'+(typeof window.tecContextButtons==='function'?window.tecContextButtons(m.id,'civil-btn'):'')+'<button class="civil-btn civil-a-reviewed '+(reviewed?'on':'')+'" onclick="civilAnalistaReview(&quot;'+esc(m.id)+'&quot;)">'+(reviewed?'✓ Revisado':'Marcar como revisado')+'</button></div></div></section>';
+      return '<section class="civil-module '+(open?'open':'')+'" data-civil-analista="'+esc(m.id)+'"><button class="civil-module-head" onclick="civilAnalistaToggle(&quot;'+esc(m.id)+'&quot;)"><span class="civil-module-num">Módulo '+m.num+'</span><span class="civil-module-title"><b>'+esc(m.title)+'</b><small>'+esc(m.summary)+'</small></span><span class="civil-module-state"><span>'+esc(m.range)+'</span><b class="civil-pct">'+(reviewed?'✓':'—')+'</b></span><span>'+(open?'⌃':'⌄')+'</span></button><div class="civil-module-body"><div class="civil-scope-note"><b>Cobertura do edital:</b> '+esc(m.summary)+'</div><section class="civil-a-section"><h4>Mapa de cobertura</h4>'+list(m.scope,'civil-a-list civil-a-scope')+'</section><section class="civil-a-section"><h4>Teoria essencial</h4>'+cards(m.theory)+'</section><section class="civil-a-section"><h4>Jurisprudência e entendimentos-chave</h4>'+cards(m.jurisprudence)+'</section><section class="civil-a-section"><h4>Exemplos aplicados</h4>'+list(m.examples)+'</section><section class="civil-a-section"><h4>Pegadinhas de prova</h4>'+list(m.traps)+'</section><div class="civil-a-actions"><button class="civil-btn primary" onclick="openLeiSecaEnxuta(null,&quot;civil&quot;,&quot;'+esc(m.id)+'&quot;)">📖 Decorando deste módulo</button>'+(typeof window.tecContextButtons==='function'?window.tecContextButtons(m.id,'civil-btn'):'')+'<button class="civil-btn civil-a-reviewed '+(reviewed?'on':'')+'" onclick="civilAnalistaReview(&quot;'+esc(m.id)+'&quot;)">'+(reviewed?'✓ Revisado':'Marcar como revisado')+'</button></div></div></section>';
     }).join('')+'</div>';
   };
   window.__civilAnalistaSelfTest = () => ({version:COURSE.version,modules:COURSE.modules.length,decks:new Set(COURSE.modules.map(m=>m.deck)).size,reviewed:progress().done});
@@ -1727,7 +1720,6 @@ window.mapaOpenTopic=function(sid,uid,idx){
   var t=s&&s.topics?s.topics[idx]:null;
   if(!t)return false;
   if(t.studyUrl){if(typeof window.__EMB_PDF__==='function'&&window.__EMB_PDF__(t.studyUrl))return false;location.href=t.studyUrl;return false}
-  if(t.ankiDeck){openEmbeddedTool('anki',{deck:t.ankiDeck,title:s.name});return false}
   if(typeof jumpSubject==='function')return jumpSubject(sid);
  }catch(e){try{if(typeof jumpSubject==='function')return jumpSubject(sid)}catch(_){}}
  return false;
@@ -1801,10 +1793,9 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 </script>
 <script id="central-offline-folder-router-v6659">
 function centralToolPath(name,opts={}){
- const files={anki:'tools/anki.html',decorando:'tools/decorando.html',vade:'tools/vade.html',rlm:'tools/rlm.html',cronograma:'tools/cronograma.html'},base=files[name];
+ const files={decorando:'tools/decorando.html',vade:'tools/vade.html',rlm:'tools/rlm.html'},base=files[name];
  if(!base)throw new Error('Ferramenta offline desconhecida: '+name);
  const query=new URLSearchParams();
- if(name==='anki'&&opts.deck)query.set('deck',opts.deck);
  if(name==='decorando'&&opts.discipline)query.set('discipline',opts.discipline);
  if(name==='decorando'&&opts.topicId)query.set('topic',opts.topicId);
  if(name==='vade'&&opts.lawId)query.set('law',opts.lawId);
@@ -1875,7 +1866,7 @@ window.openEmbeddedTool=openEmbeddedTool;
 
   const VIEW_IDS = [
     'homeView', 'disciplinesView', 'agendaView', 'performanceView', 'tecCadernosView',
-    'ankiView', 'leiSecaView', 'vadeMecumView', 'moduleView',
+    'leiSecaView', 'vadeMecumView', 'moduleView',
   ];
   const KEY_PREFIX = 'central-v6:agenda:';
   const memory = new Map();
@@ -2156,4 +2147,62 @@ window.moduleFrameRetry=function(){
 </script>
 <script src="/cpc-final-integration-20260928.js?v=20260929editorial1"></script>
 <script src="/portugues-tec-data-v1.js?v=20260921n2"></script>
-<link rel="stylesheet" href="/base-completa-visual-v1.css?v=20260921all1" data-base-completa-audit>\n<script src="/base-completa-visual-v1.js?v=20260923preprod2"></script>\n</body></html>
+<link rel="stylesheet" href="/base-completa-visual-v1.css?v=20260921all1" data-base-completa-audit>\n<script src="/base-completa-visual-v1.js?v=20260923preprod2"></script>\n
+<script id="central-remove-cronograma-anki-v6676">
+(function(){
+  'use strict';
+  window.CENTRAL_REMOVED_TOOLS = Object.assign({}, window.CENTRAL_REMOVED_TOOLS, { cronograma: true, anki: true });
+  window.openAnkiDeck=function(){return false};
+  function wrap(){
+    const current = window.openEmbeddedTool;
+    if (typeof current !== 'function' || current.__centralRemovedToolsGuard) return;
+    const wrapped = function(name) {
+      if (name === 'cronograma' || name === 'anki') {
+        if (typeof window.openHome === 'function') window.openHome();
+        return false;
+      }
+      return current.apply(this, arguments);
+    };
+    wrapped.__centralRemovedToolsGuard = true;
+    window.openEmbeddedTool = wrapped;
+  }
+  function removeAnkiResidue(root){
+    const scope = root && root.querySelectorAll ? root : document;
+    const selectors = [
+      '[data-step^="anki"]',
+      '.civil-anki-note',
+      '.chip.anki',
+      '[data-tool="anki"]',
+      'a[href*="anki" i]',
+      'button[onclick*="anki" i]'
+    ];
+    scope.querySelectorAll(selectors.join(',')).forEach(function(el){
+      const step = el.closest && el.closest('[data-step^="anki"]');
+      if (step) step.remove();
+      else el.remove();
+    });
+    scope.querySelectorAll('.csp-stage-card,.civil-step,.resource,.resource-row,.chips,.civil-stage-actions').forEach(function(el){
+      const text = (el.textContent || '').toLowerCase();
+      const action = Array.from(el.querySelectorAll ? el.querySelectorAll('a,button,input,label') : []).some(function(child){
+        return /anki/i.test((child.textContent || '') + ' ' + (child.getAttribute('onclick') || '') + ' ' + (child.getAttribute('href') || ''));
+      });
+      if (text.indexOf('anki') !== -1 || action) el.remove();
+    });
+  }
+  function boot(){
+    wrap();
+    removeAnkiResidue(document);
+    if (!window.__centralAnkiResidueObserver && document.body) {
+      window.__centralAnkiResidueObserver = new MutationObserver(function(mutations){
+        mutations.forEach(function(m){ removeAnkiResidue(m.target); });
+      });
+      window.__centralAnkiResidueObserver.observe(document.body, { childList: true, subtree: true });
+    }
+  }
+  boot();
+  window.addEventListener('DOMContentLoaded', boot, { once: true });
+  setTimeout(boot, 300);
+  setTimeout(boot, 1200);
+})();
+</script>
+</body></html>
