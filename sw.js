@@ -1,9 +1,9 @@
 /* Central de Estudos — trava de navegação na v6.6.119
    Offline não destrutivo: index.html permanece apenas como fonte interna da v119. */
-var CACHE='central-v66169-cpc-editorial-v11';
+var CACHE='central-v66169-cpc-editorial-v12';
 var BOOT='/central-v119.html?direct=33';
 var STRUCTURAL_MANIFEST='/central-structural-files-v66119.json?v=66119s2';
-var CPC_EDITORIAL=['/cpc-final-integration-20260928.js?v=20260929editorial9'];
+var CPC_EDITORIAL=['/cpc-final-integration-20260928.js?v=20260929editorial10'];
 for(var cpcNo=1;cpcNo<=20;cpcNo++)CPC_EDITORIAL.push('/cpc-final-20260928/M'+String(cpcNo).padStart(2,'0')+'.html');
 var CORE=[BOOT,'/index.html',STRUCTURAL_MANIFEST,'/manifest.webmanifest','/central-minimal-theme-v66119.css?v=66119h4','/central-cleanup-v66125.css?v=66125a1','/central-reading-font-v66126.css?v=66129a1','/central-agenda-simple-v1.css?v=20260928a5','/central-agenda-core-v1.js?v=20260928a1','/central-agenda-simple-v1.js?v=20260929a3','/ui/tokens.css?v=20260923preprod2','/ui/foundation.css?v=20260923preprod2','/ui/layout.css?v=20260923preprod2','/ui/components.css?v=20260923preprod2','/ui/legacy-bridge.css?v=20260923preprod2','/ui/theme.js?v=20260923preprod2','/ui/shell.js?v=20260923preprod2'].concat(CPC_EDITORIAL);
 function cacheResponse(cache,request,response){if(response&&response.ok)cache.put(request,response.clone()).catch(function(){});return response}
