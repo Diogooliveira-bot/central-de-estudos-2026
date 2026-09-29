@@ -18,6 +18,21 @@ window.renderCpcModule=function(w){
  markup=markup.replace('>Teoria nuclear<','>Teoria completa<').replace('>Base completa antes da segunda bateria.<','>Teoria desenvolvida integral do módulo auditado; depois vêm as questões e o resumo.<');
  return markup.slice(0,start)+panel+markup.slice(end);
 };
+function openFullTheory(module){
+ var detail=module&&module.querySelector?module.querySelector('.base-cpc-full'):null;
+ if(!detail)return;
+ detail.open=true;
+ var frame=detail.querySelector('iframe[data-cpc-src]');
+ if(frame&&!frame.src)frame.src=frame.dataset.cpcSrc;
+}
+document.addEventListener('click',function(event){
+ var head=event.target&&event.target.closest?event.target.closest('.cf-module-head'):null;
+ if(!head)return;
+ setTimeout(function(){
+  var module=head.closest('.cf-module');
+  if(module&&module.classList.contains('open'))openFullTheory(module);
+ },0);
+},true);
 document.addEventListener('toggle',function(event){
  var detail=event.target;
  if(!detail.matches?.('.base-cpc-full')||!detail.open)return;
