@@ -91,8 +91,8 @@ function syncOpenLayout(){
  if(!grid)return;
  var side=grid.querySelector('.side-col');
  var open=!!(cpc&&cpc.classList.contains('open'));
- grid.style.gridTemplateColumns=open?'minmax(0,1fr)':'';
- if(side)side.style.display=open?'none':'';
+ grid.style.setProperty('grid-template-columns',open?'minmax(0,1fr)':'','important');
+ if(side)side.style.setProperty('display',open?'none':'','important');
 }
 document.addEventListener('click',function(event){
  setTimeout(syncOpenLayout,0);
