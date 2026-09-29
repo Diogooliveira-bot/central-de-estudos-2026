@@ -48,6 +48,10 @@ test('adaptador troca somente a teoria de CPC e preserva os demais módulos', ()
         this.rendered = true;
       }
     },
+    localStorage: {
+      getItem(key) { return key === 'central-v6:cpc-open:cpc1' ? '1' : null; }
+    },
+    cpcModuleOpenKey(id) { return `central-v6:cpc-open:${id}`; },
     document: {
       addEventListener(type, listener) {
         listeners[type] = listener;
