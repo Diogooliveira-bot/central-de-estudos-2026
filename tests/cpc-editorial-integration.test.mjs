@@ -25,12 +25,12 @@ test('entrada carrega a integração e não reinsere a decoração legada do M01
   const entry = read('central-v119.html');
   const worker = read('sw.js');
 
-  assert.match(index, /cpc-final-integration-20260928\.js\?v=20260929editorial7/u);
+  assert.match(index, /cpc-final-integration-20260928\.js\?v=20260929editorial8/u);
   assert.match(entry, /66169-cpc-editorial-20260929/u);
   assert.doesNotMatch(entry, /cpc-m1-apostila-v66121\.js/u);
-  assert.match(worker, /central-v66169-cpc-editorial-v9/u);
+  assert.match(worker, /central-v66169-cpc-editorial-v10/u);
   assert.match(worker, /cpcNo<=20/u);
-  assert.match(worker, /cpc-final-integration-20260928\.js\?v=20260929editorial7/u);
+  assert.match(worker, /cpc-final-integration-20260928\.js\?v=20260929editorial8/u);
 });
 
 test('adaptador troca somente a teoria de CPC e preserva os demais módulos', () => {
