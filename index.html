@@ -2323,7 +2323,7 @@ function bind(){
  sync();
 }
 function start(){bind();setTimeout(bind,300);setTimeout(bind,1000)}
-if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start,{once:true});else start();
+start();if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start,{once:true});
 })();
 </script>
 </body></html>
