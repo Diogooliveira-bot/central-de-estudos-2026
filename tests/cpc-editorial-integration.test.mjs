@@ -28,7 +28,7 @@ test('entrada carrega a integração e não reinsere a decoração legada do M01
   assert.match(index, /cpc-final-integration-20260928\.js\?v=20260929editorial1/u);
   assert.match(entry, /66169-cpc-editorial-20260929/u);
   assert.doesNotMatch(entry, /cpc-m1-apostila-v66121\.js/u);
-  assert.match(worker, /central-v66169-cpc-editorial-v2/u);
+  assert.match(worker, /central-v66169-cpc-editorial-v3/u);
   assert.match(worker, /cpcNo<=20/u);
   assert.match(worker, /cpc-final-integration-20260928\.js\?v=20260929editorial1/u);
 });
