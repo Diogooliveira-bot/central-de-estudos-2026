@@ -35,7 +35,7 @@ test('entrada e service worker incluem a Agenda simples no cache offline', () =>
     assert.match(entry, new RegExp(asset.replaceAll('.', '\\.'), 'u'));
     assert.match(worker, new RegExp(asset.replaceAll('.', '\\.'), 'u'));
   }
-  assert.match(worker, /central-v66169-cpc-editorial-v2/);
+  assert.match(worker, /central-v66169-cpc-editorial-v3/);
 });
 
 test('camada visual vence regras legadas ao ocultar Home e navegação antigas', () => {
@@ -59,4 +59,13 @@ test('Home reúne hoje, pendências e disciplinas; Decorando permanece acessíve
   assert.match(script, /<h2>Disciplinas<\/h2>/);
   assert.match(script, /var decorando = byLabel\(\/\^Decorando a Lei Seca\$\/i\)/);
   assert.doesNotMatch(script, /makeNavButton\('Caderno de Erros'/);
+});
+
+
+test('cards de disciplinas revelam o curso legado sem esconder a Agenda simples', () => {
+  const script = read('central-agenda-simple-v1.js');
+  assert.match(script, /function openDiscipline\(id, button\)/);
+  assert.match(script, /setHomeMode\('study'\)/);
+  assert.match(script, /window\.jumpSubject = openDiscipline/);
+  assert.match(script, /window\.centralHardSubject = openDiscipline/);
 });
