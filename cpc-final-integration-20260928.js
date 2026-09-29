@@ -139,7 +139,7 @@ window.addEventListener('load',syncOpenLayout);
 setTimeout(installVisualPolish,250);
 
 window.renderCpcModule=function(w){
- var markup=original(w).replace(/30\\/07\\/2027/g,'31/07/2027');
+ var markup=original(w).replace(/30\/07\/2027/g,'31/07/2027');
  if(!w||!/^cpc(?:[1-9]|1[0-9]|20)$/.test(w.id))return markup;
  var no=String(w.num).padStart(2,'0');
  var moduleOpen=typeof cpcModuleOpenKey==='function'&&localStorage.getItem(cpcModuleOpenKey(w.id))==='1';
