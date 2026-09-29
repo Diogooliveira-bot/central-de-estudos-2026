@@ -562,14 +562,7 @@ function civilErrorStep(){
  <div class="civil-step-body">${qs.length?`<div class="civil-error-list">${rows}</div>${civilUi.stage==='errors'?`<div style="margin-top:9px">${civilStageSession('errors')}</div>`:''}`:'<div class="muted small">Nenhum erro registrado ainda. Esta lista será criada automaticamente conforme você responder.</div>'}
  <label class="civil-manual-done"><input type="checkbox" ${done?'checked':''} onchange="civilSetModule('m1',{errorsReviewed:this.checked})"> Marcar minha revisão de erros como concluída</label></div></section>`
 }
-function civilAnkiStep(){
- const id='anki',m=civilModuleState('m1'),done=!!m.anki,open=localStorage.getItem(civilStepOpenKey(id))==='1';
- const deck='04 DIREITO CIVIL::02 PESSOAS NATURAIS E DIREITOS DA PERSONALIDADE';
- return `<section class="civil-step ${done?'done':''} ${open?'open':''}" data-step="anki"><button class="civil-step-head" onclick="toggleCivilStep('anki')"><span class="civil-step-n">${done?'✓':'8'}</span><span class="civil-step-title"><b>Anki seletivo</b><small>Consolide os conceitos que realmente precisam de memória.</small></span><span class="civil-step-status">${done?'Concluído':'Pendente'}</span><span>⌄</span></button>
- <div class="civil-step-body"><p class="civil-anki-note"><b>Baralho já existente:</b> Pessoas Naturais e Direitos da Personalidade. Para este Módulo 1, concentre-se nos cards de personalidade, capacidade, emancipação, morte, comoriência e ausência. Os cards específicos de Direitos da Personalidade serão retomados no Módulo 2.</p>
- <div class="civil-stage-actions" style="margin-top:9px"><button class="civil-btn primary" onclick="saveLast({civilModule:'m1',title:'Direito Civil • Módulo 1 • Anki',at:Date.now()});window.openAnkiDeck('${escJs(deck)}')">🧠 Abrir baralho no Anki</button></div>
- <label class="civil-manual-done"><input type="checkbox" ${done?'checked':''} onchange="civilSetModule('m1',{anki:this.checked})"> Marcar revisão no Anki como concluída</label></div></section>`
-}
+function civilAnkiStep(){return ''}
 function renderCivilModule1(){
  const pct=civilModulePct('m1');
  return `<div class="civil-overall"><span style="width:${pct}%"></span></div><div class="civil-scope-note"><span class="civil-scope-badge mix">EDITAL + COMPLEMENTAR</span><b>Escopo fechado do Módulo 1:</b> personalidade e capacidade da pessoa natural; incapacidade; emancipação; morte e morte presumida; comoriência; registros essenciais; ausência. <b>Direitos da Personalidade serão estudados no Módulo 2.</b></div>
@@ -723,15 +716,7 @@ function civil2ErrorStep(){
  <div class="civil-step-body">${qs.length?`<div class="civil-error-list">${rows}</div>${civil2Ui.stage==='errors2'?`<div style="margin-top:9px">${civil2StageSession('errors2')}</div>`:''}`:'<div class="muted small">Nenhum erro registrado neste módulo ainda.</div>'}
  <label class="civil-manual-done"><input type="checkbox" ${done?'checked':''} onchange="civilSetModule('m2',{errorsReviewed:this.checked})"> Marcar minha revisão de erros como concluída</label></div></section>`
 }
-function civil2AnkiStep(){
- const id='anki2',m=civilModuleState('m2'),done=!!m.anki,open=localStorage.getItem(civil2StepOpenKey(id))==='1';
- const deck1='04 DIREITO CIVIL::02 PESSOAS NATURAIS E DIREITOS DA PERSONALIDADE';
- const deck2='04 DIREITO CIVIL::03 PESSOAS JURÍDICAS E DOMICÍLIO';
- return `<section class="civil-step ${done?'done':''} ${open?'open':''}" data-step="anki2"><button class="civil-step-head" onclick="toggleCivil2Step('anki2')"><span class="civil-step-n">${done?'✓':'8'}</span><span class="civil-step-title"><b>Anki seletivo</b><small>Dois baralhos reais já existentes na sua coleção.</small></span><span class="civil-step-status">${done?'Concluído':'Pendente'}</span><span>⌄</span></button>
- <div class="civil-step-body"><p class="civil-anki-note">Para este módulo, use <b>Pessoas Naturais e Direitos da Personalidade</b> somente nos cards dos arts. 11 a 21 e <b>Pessoas Jurídicas e Domicílio</b> somente nos cards de pessoas jurídicas. Domicílio ficará para o Módulo 3.</p>
- <div class="civil-stage-actions" style="margin-top:9px"><button class="civil-btn primary" onclick="window.openAnkiDeck('${escJs(deck1)}')">🧠 Direitos da Personalidade</button><button class="civil-btn primary" onclick="window.openAnkiDeck('${escJs(deck2)}')">🧠 Pessoas Jurídicas</button></div>
- <label class="civil-manual-done"><input type="checkbox" ${done?'checked':''} onchange="civilSetModule('m2',{anki:this.checked})"> Marcar revisão no Anki como concluída</label></div></section>`
-}
+function civil2AnkiStep(){return ''}
 function renderCivilModule2(){
  const pct=civilModulePct('m2');
  return `<div class="civil-overall"><span style="width:${pct}%"></span></div><div class="civil-scope-note"><span class="civil-scope-badge edital">EDITAL</span><b>Escopo fechado do Módulo 2:</b> direitos da personalidade (CC 11-21) e pessoas jurídicas (CC 40-69), incluindo associações, fundações, autonomia patrimonial e desconsideração. <b>Domicílio começa apenas no Módulo 3.</b></div>
@@ -911,15 +896,7 @@ function civil3ErrorStep(){
  <div class="civil-step-body">${qs.length?`<div class="civil-error-list">${rows}</div>${civil3Ui.stage==='errors3'?`<div style="margin-top:9px">${civil3StageSession('errors3')}</div>`:''}`:'<div class="muted small">Nenhum erro registrado neste módulo ainda.</div>'}
  <label class="civil-manual-done"><input type="checkbox" ${done?'checked':''} onchange="civilSetModule('m3',{errorsReviewed:this.checked})"> Marcar minha revisão de erros como concluída</label></div></section>`
 }
-function civil3AnkiStep(){
- const id='anki3',m=civilModuleState('m3'),done=!!m.anki,open=localStorage.getItem(civil3StepOpenKey(id))==='1';
- const deck1='04 DIREITO CIVIL::03 PESSOAS JURÍDICAS E DOMICÍLIO';
- const deck2='04 DIREITO CIVIL::04 BENS';
- return `<section class="civil-step ${done?'done':''} ${open?'open':''}" data-step="anki3"><button class="civil-step-head" onclick="toggleCivil3Step('anki3')"><span class="civil-step-n">${done?'✓':'8'}</span><span class="civil-step-title"><b>Anki seletivo</b><small>Use os dois baralhos já existentes.</small></span><span class="civil-step-status">${done?'Concluído':'Pendente'}</span><span>⌄</span></button>
- <div class="civil-step-body"><p class="civil-anki-note">No primeiro baralho, filtre mentalmente somente <b>Domicílio</b>; Pessoas Jurídicas já foi estudado no Módulo 2. No segundo, revise classificação de bens e bens públicos.</p>
- <div class="civil-stage-actions" style="margin-top:9px"><button class="civil-btn primary" onclick="window.openAnkiDeck('${escJs(deck1)}')">🧠 Domicílio</button><button class="civil-btn primary" onclick="window.openAnkiDeck('${escJs(deck2)}')">🧠 Bens</button></div>
- <label class="civil-manual-done"><input type="checkbox" ${done?'checked':''} onchange="civilSetModule('m3',{anki:this.checked})"> Marcar revisão no Anki como concluída</label></div></section>`
-}
+function civil3AnkiStep(){return ''}
 function renderCivilModule3(){
  const pct=civilModulePct('m3');
  return `<div class="civil-overall"><span style="width:${pct}%"></span></div><div class="civil-scope-note"><span class="civil-scope-badge edital">EDITAL</span><b>Escopo fechado do Módulo 3:</b> domicílio (CC 70-78), classificação dos bens (79-97), bens públicos (98-103), com afetação/desafetação como aprofundamento. <b>Negócio Jurídico começa apenas no Módulo 4.</b></div>
@@ -1100,14 +1077,7 @@ function civil4ErrorStep(){
  <div class="civil-step-body">${qs.length?`<div class="civil-error-list">${rows}</div>${civil4Ui.stage==='errors4'?`<div style="margin-top:9px">${civil4StageSession('errors4')}</div>`:''}`:'<div class="muted small">Nenhum erro registrado neste módulo ainda.</div>'}
  <label class="civil-manual-done"><input type="checkbox" ${done?'checked':''} onchange="civilSetModule('m4',{errorsReviewed:this.checked})"> Marcar minha revisão de erros como concluída</label></div></section>`
 }
-function civil4AnkiStep(){
- const id='anki4',m=civilModuleState('m4'),done=!!m.anki,open=localStorage.getItem(civil4StepOpenKey(id))==='1';
- const deck='04 DIREITO CIVIL::05 FATOS E NEGÓCIOS JURÍDICOS';
- return `<section class="civil-step ${done?'done':''} ${open?'open':''}" data-step="anki4"><button class="civil-step-head" onclick="toggleCivil4Step('anki4')"><span class="civil-step-n">${done?'✓':'8'}</span><span class="civil-step-title"><b>Anki seletivo</b><small>Baralho de Fatos e Negócios Jurídicos.</small></span><span class="civil-step-status">${done?'Concluído':'Pendente'}</span><span>⌄</span></button>
- <div class="civil-step-body"><p class="civil-anki-note">Neste módulo, revise somente os cards de <b>disposições gerais, representação, condição, termo e encargo</b>. Defeitos, invalidade, prescrição e decadência serão tratados nos módulos seguintes.</p>
- <div class="civil-stage-actions" style="margin-top:9px"><button class="civil-btn primary" onclick="window.openAnkiDeck('${escJs(deck)}')">🧠 Abrir Fatos e Negócios Jurídicos</button></div>
- <label class="civil-manual-done"><input type="checkbox" ${done?'checked':''} onchange="civilSetModule('m4',{anki:this.checked})"> Marcar revisão no Anki como concluída</label></div></section>`
-}
+function civil4AnkiStep(){return ''}
 function renderCivilModule4(){
  const pct=civilModulePct('m4');
  return `<div class="civil-overall"><span style="width:${pct}%"></span></div><div class="civil-scope-note"><span class="civil-scope-badge edital">EDITAL</span><b>Escopo fechado do Módulo 4:</b> disposições gerais do negócio jurídico (CC 104-114), representação (115-120), condição, termo e encargo (121-137), além das classificações e dos planos existência/validade/eficácia como ferramentas doutrinárias. <b>Defeitos começam apenas no art. 138 e ficam para o Módulo 5.</b></div>
@@ -1303,14 +1273,7 @@ function civil5ErrorStep(){
  <div class="civil-step-body">${qs.length?`<div class="civil-error-list">${rows}</div>${civil5Ui.stage==='errors5'?`<div style="margin-top:9px">${civil5StageSession('errors5')}</div>`:''}`:'<div class="muted small">Nenhum erro registrado neste módulo ainda.</div>'}
  <label class="civil-manual-done"><input type="checkbox" ${done?'checked':''} onchange="civilSetModule('m5',{errorsReviewed:this.checked})"> Marcar minha revisão de erros como concluída</label></div></section>`
 }
-function civil5AnkiStep(){
- const id='anki5',m=civilModuleState('m5'),done=!!m.anki,open=localStorage.getItem(civil5StepOpenKey(id))==='1';
- const deck='04 DIREITO CIVIL::05 FATOS E NEGÓCIOS JURÍDICOS';
- return `<section class="civil-step ${done?'done':''} ${open?'open':''}" data-step="anki5"><button class="civil-step-head" onclick="toggleCivil5Step('anki5')"><span class="civil-step-n">${done?'✓':'8'}</span><span class="civil-step-title"><b>Anki seletivo</b><small>Revisão dos defeitos no baralho já existente.</small></span><span class="civil-step-status">${done?'Concluído':'Pendente'}</span><span>⌄</span></button>
- <div class="civil-step-body"><p class="civil-anki-note">Use o baralho <b>Fatos e Negócios Jurídicos</b>, concentrando-se agora em erro, dolo, coação, estado de perigo, lesão e fraude contra credores. Simulação e invalidade geral ficam para o próximo módulo.</p>
- <div class="civil-stage-actions" style="margin-top:9px"><button class="civil-btn primary" onclick="window.openAnkiDeck('${escJs(deck)}')">🧠 Abrir Fatos e Negócios Jurídicos</button></div>
- <label class="civil-manual-done"><input type="checkbox" ${done?'checked':''} onchange="civilSetModule('m5',{anki:this.checked})"> Marcar revisão no Anki como concluída</label></div></section>`
-}
+function civil5AnkiStep(){return ''}
 function renderCivilModule5(){
  const pct=civilModulePct('m5');
  return `<div class="civil-overall"><span style="width:${pct}%"></span></div><div class="civil-scope-note"><span class="civil-scope-badge edital">EDITAL</span><b>Escopo fechado do Módulo 5:</b> Erro ou Ignorância (138-144), Dolo (145-150), Coação (151-155), Estado de Perigo (156), Lesão (157) e Fraude contra Credores (158-165). <b>Invalidade e simulação começam no art. 166/167 e ficam para o Módulo 6.</b></div>
@@ -1511,15 +1474,7 @@ function civil6ErrorStep(){
  <div class="civil-step-body">${qs.length?`<div class="civil-error-list">${rows}</div>${civil6Ui.stage==='errors6'?`<div style="margin-top:9px">${civil6StageSession('errors6')}</div>`:''}`:'<div class="muted small">Nenhum erro registrado neste módulo ainda.</div>'}
  <label class="civil-manual-done"><input type="checkbox" ${done?'checked':''} onchange="civilSetModule('m6',{errorsReviewed:this.checked})"> Marcar minha revisão de erros como concluída</label></div></section>`
 }
-function civil6AnkiStep(){
- const id='anki6',m=civilModuleState('m6'),done=!!m.anki,open=localStorage.getItem(civil6StepOpenKey(id))==='1';
- const deck1='04 DIREITO CIVIL::05 FATOS E NEGÓCIOS JURÍDICOS';
- const deck2='04 DIREITO CIVIL::06 PRESCRIÇÃO E DECADÊNCIA';
- return `<section class="civil-step ${done?'done':''} ${open?'open':''}" data-step="anki6"><button class="civil-step-head" onclick="toggleCivil6Step('anki6')"><span class="civil-step-n">${done?'✓':'8'}</span><span class="civil-step-title"><b>Anki seletivo</b><small>Invalidade + Prescrição/Decadência.</small></span><span class="civil-step-status">${done?'Concluído':'Pendente'}</span><span>⌄</span></button>
- <div class="civil-step-body"><p class="civil-anki-note">Use <b>Fatos e Negócios Jurídicos</b> para nulidade/anulabilidade/simulação e <b>Prescrição e Decadência</b> para prazos e causas. A coleção atual não possui um subbaralho específico de Prova; por isso essa parte fica consolidada pelas questões e revisão de erros do próprio módulo.</p>
- <div class="civil-stage-actions" style="margin-top:9px"><button class="civil-btn primary" onclick="window.openAnkiDeck('${escJs(deck1)}')">🧠 Invalidade</button><button class="civil-btn primary" onclick="window.openAnkiDeck('${escJs(deck2)}')">🧠 Prescrição e Decadência</button></div>
- <label class="civil-manual-done"><input type="checkbox" ${done?'checked':''} onchange="civilSetModule('m6',{anki:this.checked})"> Marcar revisão no Anki como concluída</label></div></section>`
-}
+function civil6AnkiStep(){return ''}
 function renderCivilModule6(){
  const pct=civilModulePct('m6');
  return `<div class="civil-overall"><span style="width:${pct}%"></span></div><div class="civil-scope-note"><span class="civil-scope-badge mix">EDITAL + COMPLEMENTAR</span><b>Escopo fechado do Módulo 6:</b> Invalidade (166-184), ponte dos atos jurídicos (185-188), Prescrição (189-206-A), Decadência (207-211) e Prova (212-232). <b>Com isso, a Parte Geral fica fechada; Obrigações começam no Módulo 7, art. 233.</b></div>
@@ -1717,14 +1672,7 @@ function civil7ErrorStep(){
  <div class="civil-step-body">${qs.length?`<div class="civil-error-list">${rows}</div>${civil7Ui.stage==='errors7'?`<div style="margin-top:9px">${civil7StageSession('errors7')}</div>`:''}`:'<div class="muted small">Nenhum erro registrado neste módulo ainda.</div>'}
  <label class="civil-manual-done"><input type="checkbox" ${done?'checked':''} onchange="civilSetModule('m7',{errorsReviewed:this.checked})"> Marcar minha revisão de erros como concluída</label></div></section>`
 }
-function civil7AnkiStep(){
- const id='anki7',m=civilModuleState('m7'),done=!!m.anki,open=localStorage.getItem(civil7StepOpenKey(id))==='1';
- const deck='04 DIREITO CIVIL::07 OBRIGAÇÕES - MODALIDADES E TRANSMISSÃO';
- return `<section class="civil-step ${done?'done':''} ${open?'open':''}" data-step="anki7"><button class="civil-step-head" onclick="toggleCivil7Step('anki7')"><span class="civil-step-n">${done?'✓':'8'}</span><span class="civil-step-title"><b>Anki seletivo</b><small>Modalidades das Obrigações.</small></span><span class="civil-step-status">${done?'Concluído':'Pendente'}</span><span>⌄</span></button>
- <div class="civil-step-body"><p class="civil-anki-note">O baralho existente reúne <b>Modalidades e Transmissão</b>. Neste módulo, revise somente os cards de arts. 233 a 285: dar, fazer, não fazer, alternativas, divisíveis/indivisíveis e solidariedade. <b>Cessão de crédito e assunção de dívida ficam para o Módulo 8.</b></p>
- <div class="civil-stage-actions" style="margin-top:9px"><button class="civil-btn primary" onclick="window.openAnkiDeck('${escJs(deck)}')">🧠 Abrir Modalidades e Transmissão</button></div>
- <label class="civil-manual-done"><input type="checkbox" ${done?'checked':''} onchange="civilSetModule('m7',{anki:this.checked})"> Marcar revisão no Anki como concluída</label></div></section>`
-}
+function civil7AnkiStep(){return ''}
 function renderCivilModule7(){
  const pct=civilModulePct('m7');
  return `<div class="civil-overall"><span style="width:${pct}%"></span></div><div class="civil-scope-note"><span class="civil-scope-badge edital">EDITAL</span><b>Escopo fechado do Módulo 7:</b> Modalidades das Obrigações — dar (233-246), fazer (247-249), não fazer (250-251), alternativas (252-256), divisíveis/indivisíveis (257-263) e solidariedade (264-285). <b>Transmissão das Obrigações começa no art. 286 e fica para o Módulo 8.</b></div>
@@ -1915,15 +1863,7 @@ function civil8ErrorStep(){
  <div class="civil-step-body">${qs.length?`<div class="civil-error-list">${rows}</div>${civil8Ui.stage==='errors8'?`<div style="margin-top:9px">${civil8StageSession('errors8')}</div>`:''}`:'<div class="muted small">Nenhum erro registrado neste módulo ainda.</div>'}
  <label class="civil-manual-done"><input type="checkbox" ${done?'checked':''} onchange="civilSetModule('m8',{errorsReviewed:this.checked})"> Marcar minha revisão de erros como concluída</label></div></section>`
 }
-function civil8AnkiStep(){
- const id='anki8',m=civilModuleState('m8'),done=!!m.anki,open=localStorage.getItem(civil8StepOpenKey(id))==='1';
- const deck1='04 DIREITO CIVIL::07 OBRIGAÇÕES - MODALIDADES E TRANSMISSÃO';
- const deck2='04 DIREITO CIVIL::08 ADIMPLEMENTO, MORA E EXTINÇÃO DAS OBRIGAÇÕES';
- return `<section class="civil-step ${done?'done':''} ${open?'open':''}" data-step="anki8"><button class="civil-step-head" onclick="toggleCivil8Step('anki8')"><span class="civil-step-n">${done?'✓':'8'}</span><span class="civil-step-title"><b>Anki seletivo</b><small>Transmissão + Adimplemento/Mora/Extinção.</small></span><span class="civil-step-status">${done?'Concluído':'Pendente'}</span><span>⌄</span></button>
- <div class="civil-step-body"><p class="civil-anki-note">Use <b>Modalidades e Transmissão</b> apenas nos cards de cessão e assunção. Para pagamento, formas especiais de extinção, mora e inadimplemento, use <b>Adimplemento, Mora e Extinção das Obrigações</b>.</p>
- <div class="civil-stage-actions" style="margin-top:9px"><button class="civil-btn primary" onclick="window.openAnkiDeck('${escJs(deck1)}')">🧠 Transmissão</button><button class="civil-btn primary" onclick="window.openAnkiDeck('${escJs(deck2)}')">🧠 Adimplemento e Mora</button></div>
- <label class="civil-manual-done"><input type="checkbox" ${done?'checked':''} onchange="civilSetModule('m8',{anki:this.checked})"> Marcar revisão no Anki como concluída</label></div></section>`
-}
+function civil8AnkiStep(){return ''}
 function renderCivilModule8(){
  const pct=civilModulePct('m8');
  return `<div class="civil-overall"><span style="width:${pct}%"></span></div><div class="civil-scope-note"><span class="civil-scope-badge mix">EDITAL + COMPLEMENTAR</span><b>Escopo fechado do Módulo 8:</b> transmissão (286-303), adimplemento e extinção (304-388) e inadimplemento (389-420). <b>O art. 421 inicia Contratos em Geral e fica para o Módulo 9.</b></div>
@@ -2136,15 +2076,7 @@ function civil9ErrorStep(){
  <div class="civil-step-body">${qs.length?`<div class="civil-error-list">${rows}</div>${civil9Ui.stage==='errors9'?`<div style="margin-top:9px">${civil9StageSession('errors9')}</div>`:''}`:'<div class="muted small">Nenhum erro registrado neste módulo ainda.</div>'}
  <label class="civil-manual-done"><input type="checkbox" ${done?'checked':''} onchange="civilSetModule('m9',{errorsReviewed:this.checked})"> Marcar minha revisão de erros como concluída</label></div></section>`
 }
-function civil9AnkiStep(){
- const id='anki9',m=civilModuleState('m9'),done=!!m.anki,open=localStorage.getItem(civil9StepOpenKey(id))==='1';
- const deck1='04 DIREITO CIVIL::09 CONTRATOS - TEORIA GERAL E EXTINÇÃO';
- const deck2='04 DIREITO CIVIL::10 CONTRATOS EM ESPÉCIE E ATOS UNILATERAIS';
- return `<section class="civil-step ${done?'done':''} ${open?'open':''}" data-step="anki9"><button class="civil-step-head" onclick="toggleCivil9Step('anki9')"><span class="civil-step-n">${done?'✓':'8'}</span><span class="civil-step-title"><b>Anki seletivo</b><small>Teoria Geral + Contratos em Espécie.</small></span><span class="civil-step-status">${done?'Concluído':'Pendente'}</span><span>⌄</span></button>
- <div class="civil-step-body"><p class="civil-anki-note">Use <b>Contratos — Teoria Geral e Extinção</b> para arts. 421-480, excluindo os cards específicos de vícios redibitórios/evicção nesta rodada. Depois use <b>Contratos em Espécie e Atos Unilaterais</b> apenas nos cards contratuais; atos unilaterais não integram o escopo deste módulo.</p>
- <div class="civil-stage-actions" style="margin-top:9px"><button class="civil-btn primary" onclick="window.openAnkiDeck('${escJs(deck1)}')">🧠 Teoria Geral</button><button class="civil-btn primary" onclick="window.openAnkiDeck('${escJs(deck2)}')">🧠 Contratos em Espécie</button></div>
- <label class="civil-manual-done"><input type="checkbox" ${done?'checked':''} onchange="civilSetModule('m9',{anki:this.checked})"> Marcar revisão no Anki como concluída</label></div></section>`
-}
+function civil9AnkiStep(){return ''}
 function renderCivilModule9(){
  const pct=civilModulePct('m9');
  return `<div class="civil-overall"><span style="width:${pct}%"></span></div><div class="civil-scope-note"><span class="civil-scope-badge mix">EDITAL + COMPLEMENTAR</span><b>Escopo fechado do Módulo 9:</b> teoria geral (421-440 e 458-480) + contratos em espécie (481-853-A). <b>Os arts. 441-457 — vícios redibitórios e evicção — foram deliberadamente reservados ao Módulo 10.</b></div>
@@ -2354,15 +2286,7 @@ function civil10ErrorStep(){
  <div class="civil-step-body">${qs.length?`<div class="civil-error-list">${rows}</div>${civil10Ui.stage==='errors10'?`<div style="margin-top:9px">${civil10StageSession('errors10')}</div>`:''}`:'<div class="muted small">Nenhum erro registrado neste módulo ainda.</div>'}
  <label class="civil-manual-done"><input type="checkbox" ${done?'checked':''} onchange="civilSetModule('m10',{errorsReviewed:this.checked})"> Marcar minha revisão de erros como concluída</label></div></section>`
 }
-function civil10AnkiStep(){
- const id='anki10',m=civilModuleState('m10'),done=!!m.anki,open=localStorage.getItem(civil10StepOpenKey(id))==='1';
- const deckContracts='04 DIREITO CIVIL::09 CONTRATOS - TEORIA GERAL E EXTINÇÃO';
- const deckRC='04 DIREITO CIVIL::11 RESPONSABILIDADE CIVIL';
- return `<section class="civil-step ${done?'done':''} ${open?'open':''}" data-step="anki10"><button class="civil-step-head" onclick="toggleCivil10Step('anki10')"><span class="civil-step-n">${done?'✓':'8'}</span><span class="civil-step-title"><b>Anki seletivo</b><small>Vícios/Evicção + Responsabilidade Civil.</small></span><span class="civil-step-status">${done?'Concluído':'Pendente'}</span><span>⌄</span></button>
- <div class="civil-step-body"><p class="civil-anki-note">Para <b>vícios redibitórios e evicção</b>, use o baralho de Teoria Geral dos Contratos apenas nesses cards. Depois abra o baralho próprio de <b>Responsabilidade Civil</b> para arts. 927-954.</p>
- <div class="civil-stage-actions" style="margin-top:9px"><button class="civil-btn primary" onclick="window.openAnkiDeck('${escJs(deckContracts)}')">🧠 Vícios e Evicção</button><button class="civil-btn primary" onclick="window.openAnkiDeck('${escJs(deckRC)}')">🧠 Responsabilidade Civil</button></div>
- <label class="civil-manual-done"><input type="checkbox" ${done?'checked':''} onchange="civilSetModule('m10',{anki:this.checked})"> Marcar revisão no Anki como concluída</label></div></section>`
-}
+function civil10AnkiStep(){return ''}
 function renderCivilModule10(){
  const pct=civilModulePct('m10');
  return `<div class="civil-overall"><span style="width:${pct}%"></span></div><div class="civil-scope-note"><span class="civil-scope-badge edital">EDITAL</span><b>Escopo fechado do Módulo 10:</b> Vícios Redibitórios (441-446), Evicção (447-457) e Responsabilidade Civil (927-954). <b>O art. 456 está revogado.</b> O próximo módulo será Direito de Empresa.</div>
@@ -2606,14 +2530,7 @@ function civil11DeepBody(){
  </details>
  </div>`
 }
-function civil11AnkiStep(){
- const id='anki11',m=civilModuleState('m11'),done=!!m.anki,open=localStorage.getItem(civil11StepOpenKey(id))==='1';
- const deck1='04 DIREITO CIVIL::01 LINDB',deck2='04 DIREITO CIVIL::10 CONTRATOS EM ESPÉCIE E ATOS UNILATERAIS';
- return `<section class="civil-step ${done?'done':''} ${open?'open':''}" data-step="anki11"><button class="civil-step-head" onclick="toggleCivil11Step('anki11')"><span class="civil-step-n">${done?'✓':'8'}</span><span class="civil-step-title"><b>Anki seletivo</b><small>LINDB + atos unilaterais.</small></span><span class="civil-step-status">${done?'Concluído':'Pendente'}</span><span>⌄</span></button>
- <div class="civil-step-body"><p class="civil-anki-note">Priorize LINDB e depois os cartões de atos unilaterais/pagamento indevido/enriquecimento. Preferências creditórias devem ser revistas pelo caderno de erros deste módulo.</p>
- <div class="civil-stage-actions"><button class="civil-btn primary" onclick="window.openAnkiDeck('${escJs(deck1)}')">🧠 Abrir LINDB</button><button class="civil-btn" onclick="window.openAnkiDeck('${escJs(deck2)}')">Atos unilaterais</button></div>
- <label class="civil-manual-done"><input type="checkbox" ${done?'checked':''} onchange="civilSetModule('m11',{anki:this.checked})"> Marcar revisão no Anki como concluída</label></div></section>`
-}
+function civil11AnkiStep(){return ''}
 
 function civil11ErrorStep(){
  const id='errors11',m=civilModuleState('m11'),done=!!m.errorsReviewed,open=localStorage.getItem(civil11StepOpenKey(id))==='1';
@@ -2849,14 +2766,7 @@ function civil12ErrorStep(){
  <div class="civil-step-body">${qs.length?`<div class="civil-error-list">${rows}</div>${civil12Ui.stage==='errors12'?`<div style="margin-top:9px">${civil12StageSession('errors12')}</div>`:''}`:'<div class="muted small">Nenhum erro registrado neste módulo ainda.</div>'}
  <label class="civil-manual-done"><input type="checkbox" ${done?'checked':''} onchange="civilSetModule('m12',{errorsReviewed:this.checked})"> Marcar minha revisão de erros como concluída</label></div></section>`
 }
-function civil12AnkiStep(){
- const id='anki12',m=civilModuleState('m12'),done=!!m.anki,open=localStorage.getItem(civil12StepOpenKey(id))==='1';
- const deck='04 DIREITO CIVIL::12 POSSE, PROPRIEDADE E DIREITOS REAIS';
- return `<section class="civil-step ${done?'done':''} ${open?'open':''}" data-step="anki12"><button class="civil-step-head" onclick="toggleCivil12Step('anki12')"><span class="civil-step-n">${done?'✓':'8'}</span><span class="civil-step-title"><b>Anki seletivo</b><small>Use o baralho existente de Posse, Propriedade e Direitos Reais.</small></span><span class="civil-step-status">${done?'Concluído':'Pendente'}</span><span>⌄</span></button>
- <div class="civil-step-body"><p class="civil-anki-note">Abra o baralho <b>12 POSSE, PROPRIEDADE E DIREITOS REAIS</b> e revise nesta rodada somente os cartões de <b>Posse — arts. 1.196 a 1.224</b>. Deixe propriedade e demais direitos reais para os Módulos 13 e 14.</p>
- <div class="civil-stage-actions" style="margin-top:9px"><button class="civil-btn primary" onclick="window.openAnkiDeck('${escJs(deck)}')">🧠 Abrir baralho existente</button></div>
- <label class="civil-manual-done"><input type="checkbox" ${done?'checked':''} onchange="civilSetModule('m12',{anki:this.checked})"> Marcar revisão no Anki como concluída</label></div></section>`
-}
+function civil12AnkiStep(){return ''}
 function renderCivilModule12(){
  const pct=civilModulePct('m12');
  return `<div class="civil-overall"><span style="width:${pct}%"></span></div><div class="civil-scope-note"><span class="civil-scope-badge edital">EDITAL</span><b>Escopo fechado do Módulo 12:</b> Posse do art. 1.196 ao 1.224, incluindo teorias, classificação, detenção, aquisição/transmissão, proteção, efeitos, função social/socioambiental e perda. <b>Usucapião detalhada e propriedade ficam para o Módulo 13.</b></div>
@@ -3083,14 +2993,7 @@ function civil13ErrorStep(){
  <div class="civil-step-body">${qs.length?`<div class="civil-error-list">${rows}</div>${civil13Ui.stage==='errors13'?`<div style="margin-top:9px">${civil13StageSession('errors13')}</div>`:''}`:'<div class="muted small">Nenhum erro registrado neste módulo ainda.</div>'}
  <label class="civil-manual-done"><input type="checkbox" ${done?'checked':''} onchange="civilSetModule('m13',{errorsReviewed:this.checked})"> Marcar minha revisão de erros como concluída</label></div></section>`
 }
-function civil13AnkiStep(){
- const id='anki13',m=civilModuleState('m13'),done=!!m.anki,open=localStorage.getItem(civil13StepOpenKey(id))==='1';
- const deck='04 DIREITO CIVIL::12 POSSE, PROPRIEDADE E DIREITOS REAIS';
- return `<section class="civil-step ${done?'done':''} ${open?'open':''}" data-step="anki13"><button class="civil-step-head" onclick="toggleCivil13Step('anki13')"><span class="civil-step-n">${done?'✓':'8'}</span><span class="civil-step-title"><b>Anki seletivo</b><small>Mesmo baralho, agora somente Propriedade e Condomínio.</small></span><span class="civil-step-status">${done?'Concluído':'Pendente'}</span><span>⌄</span></button>
- <div class="civil-step-body"><p class="civil-anki-note">Abra <b>12 POSSE, PROPRIEDADE E DIREITOS REAIS</b> e revise nesta rodada apenas os cartões de <b>Propriedade, Usucapião, Vizinhança, Condomínio e Propriedade Resolúvel/Fiduciária</b>. Ignore os cartões de superfície, servidão, usufruto, uso, habitação, laje e garantias reais: entram no Módulo 14.</p>
- <div class="civil-stage-actions" style="margin-top:9px"><button class="civil-btn primary" onclick="window.openAnkiDeck('${escJs(deck)}')">🧠 Abrir baralho existente</button></div>
- <label class="civil-manual-done"><input type="checkbox" ${done?'checked':''} onchange="civilSetModule('m13',{anki:this.checked})"> Marcar revisão no Anki como concluída</label></div></section>`
-}
+function civil13AnkiStep(){return ''}
 function renderCivilModule13(){
  const pct=civilModulePct('m13');
  return `<div class="civil-overall"><span style="width:${pct}%"></span></div><div class="civil-scope-note"><span class="civil-scope-badge mix">EDITAL + COMPLEMENTAR</span><b>Escopo fechado do Módulo 13:</b> Propriedade, aquisição e perda, usucapião, direitos de vizinhança, condomínio geral/edilício, multipropriedade em baixa prioridade e propriedade resolúvel/fiduciária. <b>Direitos reais sobre coisa alheia ficam para o Módulo 14.</b></div>
@@ -3389,14 +3292,7 @@ function civil14DeepBody(){
  </details>
  </div>`
 }
-function civil14AnkiStep(){
- const id='anki14',m=civilModuleState('m14'),done=!!m.anki,open=localStorage.getItem(civil14StepOpenKey(id))==='1';
- const deck='04 DIREITO CIVIL::15 LEGISLAÇÃO CIVIL ESPECIAL E ATUALIZAÇÕES';
- return `<section class="civil-step ${done?'done':''} ${open?'open':''}" data-step="anki14"><button class="civil-step-head" onclick="toggleCivil14Step('anki14')"><span class="civil-step-n">${done?'✓':'8'}</span><span class="civil-step-title"><b>Anki seletivo</b><small>Legislação civil especial e atualização.</small></span><span class="civil-step-status">${done?'Concluído':'Pendente'}</span><span>⌄</span></button>
- <div class="civil-step-body"><p class="civil-anki-note">Priorize CDC, LRP, Estatuto da Pessoa Idosa e jurisprudência civil. Para tutela/curatela/TDA, use também os cartões de Direito de Família já existentes.</p>
- <div class="civil-stage-actions"><button class="civil-btn primary" onclick="window.openAnkiDeck('${escJs(deck)}')">🧠 Abrir legislação especial</button></div>
- <label class="civil-manual-done"><input type="checkbox" ${done?'checked':''} onchange="civilSetModule('m14',{anki:this.checked})"> Marcar revisão no Anki como concluída</label></div></section>`
-}
+function civil14AnkiStep(){return ''}
 
 function civil14ErrorStep(){
  const id='errors14',m=civilModuleState('m14'),done=!!m.errorsReviewed,open=localStorage.getItem(civil14StepOpenKey(id))==='1';
@@ -3665,14 +3561,7 @@ function civil15ErrorStep(){
  <div class="civil-step-body">${qs.length?`<div class="civil-error-list">${rows}</div>${civil15Ui.stage==='errors15'?`<div style="margin-top:9px">${civil15StageSession('errors15')}</div>`:''}`:'<div class="muted small">Nenhum erro registrado neste módulo ainda.</div>'}
  <label class="civil-manual-done"><input type="checkbox" ${done?'checked':''} onchange="civilSetModule('m15',{errorsReviewed:this.checked})"> Marcar minha revisão de erros como concluída</label></div></section>`
 }
-function civil15AnkiStep(){
- const id='anki15',m=civilModuleState('m15'),done=!!m.anki,open=localStorage.getItem(civil15StepOpenKey(id))==='1';
- const deck='04 DIREITO CIVIL::13 DIREITO DE FAMÍLIA';
- return `<section class="civil-step ${done?'done':''} ${open?'open':''}" data-step="anki15"><button class="civil-step-head" onclick="toggleCivil15Step('anki15')"><span class="civil-step-n">${done?'✓':'8'}</span><span class="civil-step-title"><b>Anki seletivo</b><small>Baralho existente de Direito de Família.</small></span><span class="civil-step-status">${done?'Concluído':'Pendente'}</span><span>⌄</span></button>
- <div class="civil-step-body"><p class="civil-anki-note">Abra <b>13 DIREITO DE FAMÍLIA</b>. Priorize: impedimentos × suspensivas, invalidade/putatividade, Tema 1.053, guarda e violência, filiação/multiparentalidade, poder familiar, regimes e pacto, Tema 1.236, bem de família e união estável. Deixe os cartões essencialmente sucessórios para o Módulo 16.</p>
- <div class="civil-stage-actions" style="margin-top:9px"><button class="civil-btn primary" onclick="window.openAnkiDeck('${escJs(deck)}')">🧠 Abrir baralho existente</button></div>
- <label class="civil-manual-done"><input type="checkbox" ${done?'checked':''} onchange="civilSetModule('m15',{anki:this.checked})"> Marcar revisão no Anki como concluída</label></div></section>`
-}
+function civil15AnkiStep(){return ''}
 function renderCivilModule15(){
  const pct=civilModulePct('m15');
  return `<div class="civil-overall"><span style="width:${pct}%"></span></div><div class="civil-scope-note"><span class="civil-scope-badge edital">EDITAL</span><b>Escopo fechado do Módulo 15:</b> casamento, guarda, parentesco, filiação, poder familiar, regimes de bens, pacto antenupcial, bens dos filhos, alimentos, bem de família, união estável, união homoafetiva e concubinato. <b>Sucessões em profundidade ficam exclusivamente para o Módulo 16.</b></div>
@@ -3943,14 +3832,7 @@ function civil16ErrorStep(){
  <div class="civil-step-body">${qs.length?`<div class="civil-error-list">${rows}</div>${civil16Ui.stage==='errors16'?`<div style="margin-top:9px">${civil16StageSession('errors16')}</div>`:''}`:'<div class="muted small">Nenhum erro registrado neste módulo ainda.</div>'}
  <label class="civil-manual-done"><input type="checkbox" ${done?'checked':''} onchange="civilSetModule('m16',{errorsReviewed:this.checked})"> Marcar minha revisão de erros como concluída</label></div></section>`
 }
-function civil16AnkiStep(){
- const id='anki16',m=civilModuleState('m16'),done=!!m.anki,open=localStorage.getItem(civil16StepOpenKey(id))==='1';
- const deck='04 DIREITO CIVIL::14 SUCESSÕES';
- return `<section class="civil-step ${done?'done':''} ${open?'open':''}" data-step="anki16"><button class="civil-step-head" onclick="toggleCivil16Step('anki16')"><span class="civil-step-n">${done?'✓':'8'}</span><span class="civil-step-title"><b>Anki seletivo</b><small>Baralho existente de Sucessões.</small></span><span class="civil-step-status">${done?'Concluído':'Pendente'}</span><span>⌄</span></button>
- <div class="civil-step-body"><p class="civil-anki-note">Abra <b>14 SUCESSÕES</b>. Priorize nesta rodada: saisine, cessão, renúncia, indignidade/deserdação, ordem da vocação, concorrência do cônjuge/companheiro, representação, legítima, testamento, redução, inventário, colação e partilha.</p>
- <div class="civil-stage-actions" style="margin-top:9px"><button class="civil-btn primary" onclick="window.openAnkiDeck('${escJs(deck)}')">🧠 Abrir baralho existente</button></div>
- <label class="civil-manual-done"><input type="checkbox" ${done?'checked':''} onchange="civilSetModule('m16',{anki:this.checked})"> Marcar revisão no Anki como concluída</label></div></section>`
-}
+function civil16AnkiStep(){return ''}
 function renderCivilModule16(){
  const pct=civilModulePct('m16');
  return `<div class="civil-overall"><span style="width:${pct}%"></span></div><div class="civil-scope-note"><span class="civil-scope-badge mix">EDITAL + COMPLEMENTAR</span><b>Escopo fechado do Módulo 16:</b> sucessão legítima e testamentária, herança, aceitação/renúncia, exclusão, jacência/vacância, petição de herança, inventário, arrolamentos, alvarás, colação, partilha e sobrepartilha. <b>Com este módulo, o curso de Direito Civil fecha os 16 módulos planejados.</b></div>
@@ -4103,7 +3985,6 @@ function renderCfModule(w){
        <div class="cf-resource-grid" style="margin-top:8px">
          <div class="cf-resource-box"><h4>Questões externas</h4><div class="cf-actions">${tecAuto}${r.tec?`<button class="cf-btn" onclick="openCfResource('${w.id}','tec')">TEC personalizado ↗</button>`:(tecAuto?'':`<button class="cf-btn" onclick="openCfResource('${w.id}','tec')">+ TEC</button>`)}<button class="cf-btn" onclick="openCfResource('${w.id}','qc')">${r.qc?'Abrir QC':'+ QC'}</button></div></div>
          <div class="cf-resource-box"><h4>Decorando a Lei</h4><button class="cf-btn" onclick="openLeiSecaEnxuta(null,'cf','cf-m${String(w.num).padStart(2,'0')}')">Abrir artigos deste módulo</button></div>
-         <div class="cf-resource-box"><h4>Anki</h4>${CF_ANKI[w.id]?`<button class="cf-btn" onclick="openAnkiDeck('${escJs(CF_ANKI[w.id])}','${escJs(w.title)}')">Abrir baralho</button>`:'<span class="muted small">Sem subbaralho específico mapeado.</span>'}</div>
          <div class="cf-resource-box" style="grid-column:1/-1"><h4>Anotação</h4><textarea class="cf-notes" id="cf-note-${w.id}" placeholder="Regra, artigo, pegadinha ou dúvida...">${esc(localStorage.getItem(cfNoteKey(w.id))||'')}</textarea><div class="cf-actions"><button class="cf-btn" onclick="saveCfNote('${w.id}')">Salvar anotação</button></div></div>
        </div>
      </details>
@@ -4332,7 +4213,6 @@ function renderPenalModule(w){
        <div class="cf-resource-grid" style="margin-top:8px">
          <div class="cf-resource-box"><h4>Questões externas</h4><div class="cf-actions">${tecAuto}${r.tec?`<button class="cf-btn" onclick="openPenalResource('${w.id}','tec')">TEC personalizado ↗</button>`:(tecAuto?'':`<button class="cf-btn" onclick="openPenalResource('${w.id}','tec')">+ TEC</button>`)}<button class="cf-btn" onclick="openPenalResource('${w.id}','qc')">${r.qc?'Abrir QC':'+ QC'}</button></div></div>
          <div class="cf-resource-box"><h4>Decorando a Lei</h4><button class="cf-btn" onclick="openLeiSecaEnxuta(null,'penal','${w.editalModule}')">Abrir artigos deste módulo</button></div>
-         <div class="cf-resource-box"><h4>Anki</h4>${PENAL_ANKI[w.id]?`<button class="cf-btn" onclick="openAnkiDeck('${escJs(PENAL_ANKI[w.id])}','${escJs(w.title)}')">Abrir baralho</button>`:'<span class="muted small">Sem subbaralho específico mapeado.</span>'}</div>
          <div class="cf-resource-box" style="grid-column:1/-1"><h4>Anotação</h4><textarea class="cf-notes" id="cf-note-${w.id}" placeholder="Regra, artigo, pegadinha ou dúvida...">${esc(localStorage.getItem(penalNoteKey(w.id))||'')}</textarea><div class="cf-actions"><button class="cf-btn" onclick="savePenalNote('${w.id}')">Salvar anotação</button></div></div>
        </div>
      </details>
@@ -4554,7 +4434,6 @@ function renderCpcModule(w){
        <div class="cf-resource-grid" style="margin-top:8px">
          <div class="cf-resource-box"><h4>Questões externas</h4><div class="cf-actions">${tecAuto}${r.tec?`<button class="cf-btn" onclick="openCpcResource('${w.id}','tec')">TEC personalizado ↗</button>`:(tecAuto?'':`<button class="cf-btn" onclick="openCpcResource('${w.id}','tec')">+ TEC</button>`)}<button class="cf-btn" onclick="openCpcResource('${w.id}','qc')">${r.qc?'Abrir QC':'+ QC'}</button></div></div>
          <div class="cf-resource-box"><h4>Decorando a Lei</h4>${cpcDecorandoButton(w,true)}</div>
-         <div class="cf-resource-box"><h4>Anki</h4>${CPC_ANKI[w.id]?`<button class="cf-btn" onclick="openAnkiDeck('${escJs(CPC_ANKI[w.id])}','${escJs(w.title)}')">Abrir baralho</button>`:'<span class="muted small">Sem subbaralho específico mapeado.</span>'}</div>
          <div class="cf-resource-box" style="grid-column:1/-1"><h4>Anotação</h4><textarea class="cf-notes" id="cf-note-${w.id}" placeholder="Regra, artigo, pegadinha ou dúvida...">${esc(localStorage.getItem(cpcNoteKey(w.id))||'')}</textarea><div class="cf-actions"><button class="cf-btn" onclick="saveCpcNote('${w.id}')">Salvar anotação</button></div></div>
        </div>
      </details>
