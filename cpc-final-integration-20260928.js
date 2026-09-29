@@ -1,9 +1,28 @@
 (function(){
 'use strict';
-if(window.__baseCpcFinal20260928)return;
-window.__baseCpcFinal20260928=true;
+if(window.__cpcFinalVisualWrapped)return;
 var original=window.renderCpcModule;
-if(typeof original!=='function'){console.error('CPC final: renderer não encontrado');return}
+if(typeof original!=='function'){
+ if(!window.__cpcFinalRetryScheduled){
+  window.__cpcFinalRetryScheduled=true;
+  var cpcRetryCount=0;
+  var cpcRetryTimer=setInterval(function(){
+   cpcRetryCount++;
+   if(typeof window.renderCpcModule==='function'){
+    clearInterval(cpcRetryTimer);
+    window.__cpcFinalRetryScheduled=false;
+    var retry=document.createElement('script');
+    retry.src='/cpc-final-integration-20260928.js?v=20260929editorial11&retry='+Date.now();
+    document.head.appendChild(retry);
+   }else if(cpcRetryCount>120){
+    clearInterval(cpcRetryTimer);
+    window.__cpcFinalRetryScheduled=false;
+   }
+  },50);
+ }
+ return;
+}
+window.__cpcFinalVisualWrapped=true;
 
 function installVisualPolish(){
  var style=document.getElementById('cpc-visual-polish');
