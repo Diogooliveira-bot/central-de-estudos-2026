@@ -1,6 +1,6 @@
 /* Central de Estudos — trava de navegação na v6.6.119
    Offline não destrutivo: index.html permanece apenas como fonte interna da v119. */
-var CACHE='central-v66169-cpc-editorial-v1';
+var CACHE='central-v66169-cpc-editorial-v2';
 var BOOT='/central-v119.html?direct=33';
 var STRUCTURAL_MANIFEST='/central-structural-files-v66119.json?v=66119s2';
 var CPC_EDITORIAL=['/cpc-final-integration-20260928.js?v=20260929editorial1'];
