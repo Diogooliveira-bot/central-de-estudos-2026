@@ -2309,7 +2309,7 @@ function renderCalendar(){
  var first=(new Date(y,m,1).getDay()+6)%7,total=new Date(y,m+1,0).getDate(),prevTotal=new Date(y,m,0).getDate(),html='';
  for(var i=0;i<first;i++){var pd=prevTotal-first+i+1,pk=dateKey(y,m-1,pd);html+='<button type="button" class="other-month" data-calendar-date="'+pk+'">'+pd+'</button>'}
  for(var d=1;d<=total;d++){var key=dateKey(y,m,d),tasks=readTasks(key),classes=[];if(key===selectedKey())classes.push('selected');if(key===todayKey())classes.push('today');if(tasks.length)classes.push('has-tasks');html+='<button type="button" role="gridcell" class="'+classes.join(' ')+'" data-calendar-date="'+key+'" aria-label="'+key+(tasks.length?' — '+tasks.length+' tarefa(s)':'')+'">'+d+'</button>'}
- var cells=first+total;for(var n=1;cells+n<=42;n++){var nk=dateKey(y,m+1,n);html+='<button type="button" class="other-month" data-calendar-date="'+nk+'">'+n+'</button>}
+ var cells=first+total;for(var n=1;cells+n<=42;n++){var nk=dateKey(y,m+1,n);html+='<button type="button" class="other-month" data-calendar-date="'+nk+'">'+n+'</button>'}
  grid.innerHTML=html;
  grid.querySelectorAll('button[data-calendar-date]').forEach(function(btn){btn.onclick=function(){var key=btn.getAttribute('data-calendar-date'),input=document.getElementById('agendaDate');if(input)input.value=key;monthCursor=parseKey(key);if(window.CentralAgenda&&typeof window.CentralAgenda.render==='function')window.CentralAgenda.render();renderCalendar()}})
 }
