@@ -93,11 +93,19 @@ function polishReader(frame){
 }
 
 
+
+function cleanCpcSubtitle(){
+ document.querySelectorAll('.subject[data-id="cpc"] .cf-step-copy small').forEach(function(el){
+  if(/Teoria desenvolvida integral do módulo auditado/.test(el.textContent))el.textContent=el.textContent.replace(/[<\\\/]+$/,'');
+ });
+}
+
 function syncOpenLayout(){
  var cpc=document.querySelector('.subject[data-id="cpc"]');
  var grid=cpc&&cpc.closest('.home-grid');
  if(!grid)return;
  var side=grid.querySelector('.side-col');
+ cleanCpcSubtitle();
  var open=!!(cpc&&cpc.classList.contains('open'));
  grid.style.setProperty('grid-template-columns',open?'minmax(0,1fr)':'','important');
  if(side)side.style.setProperty('display',open?'none':'','important');
