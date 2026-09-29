@@ -1796,7 +1796,7 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 </script>
 <script id="central-offline-folder-router-v6659">
 function centralToolPath(name,opts={}){
- const files={decorando:'tools/decorando.html',vade:'tools/vade.html',rlm:'tools/rlm.html'},base=files[name];
+ const files={decorando:'tools/decorando-v4.html',vade:'tools/vade.html',rlm:'tools/rlm.html'},base=files[name];
  if(!base)throw new Error('Ferramenta offline desconhecida: '+name);
  const query=new URLSearchParams();
  if(name==='decorando'&&opts.discipline)query.set('discipline',opts.discipline);
