@@ -6,13 +6,14 @@ var original=window.renderCpcModule;
 if(typeof original!=='function'){console.error('CPC final: renderer não encontrado');return}
 
 function installVisualPolish(){
- if(document.getElementById('cpc-visual-polish'))return;
- var style=document.createElement('style');
+ var style=document.getElementById('cpc-visual-polish');
+ if(style){document.head.appendChild(style);return;}
+ style=document.createElement('style');
  style.id='cpc-visual-polish';
  style.textContent=[
   '/* CPC — hierarquia visual v2 */',
-  '.home-grid:has(.subject.open){grid-template-columns:minmax(0,1fr)}',
-  '.home-grid:has(.subject.open) .side-col{display:none}',
+  '.home-grid:has(.subject.open){grid-template-columns:minmax(0,1fr)!important}',
+  '.home-grid:has(.subject.open) .side-col{display:none!important}',
   '.subject[data-id="cpc"]{max-width:1120px;margin-inline:auto}',
   '.subject[data-id="cpc"] .subject-body{padding:0 16px 20px}',
   '.subject[data-id="cpc"] .cf-module-body{padding:0 4px 16px}',
@@ -38,7 +39,7 @@ function installVisualPolish(){
   '.subject[data-id="cpc"] .cf-resource-grid{gap:10px}',
   '.subject[data-id="cpc"] .cf-resource-box{border-radius:10px;padding:11px;background:#0e2a3d!important}',
   '@media(max-width:680px){',
-  ' .home-grid:has(.subject.open){grid-template-columns:minmax(0,1fr)}',
+  ' .home-grid:has(.subject.open){grid-template-columns:minmax(0,1fr)!important}',
   ' .subject[data-id="cpc"] .subject-body{padding:0 10px 16px}',
   ' .subject[data-id="cpc"] .cf-module-head{grid-template-columns:1fr 22px;gap:6px}',
   ' .subject[data-id="cpc"] .cf-module-stat{grid-column:1;text-align:left;margin-top:-4px}',
@@ -84,6 +85,8 @@ function polishReader(frame){
 }
 
 installVisualPolish();
+window.addEventListener('load',installVisualPolish);
+setTimeout(installVisualPolish,250);
 
 window.renderCpcModule=function(w){
  var markup=original(w).replace(/30\/07\/2027/g,'31/07/2027');
