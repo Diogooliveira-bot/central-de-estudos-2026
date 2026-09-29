@@ -120,18 +120,32 @@ window.addEventListener('load',syncOpenLayout);
 setTimeout(installVisualPolish,250);
 
 window.renderCpcModule=function(w){
- var markup=original(w).replace(/30\/07\/2027/g,'31/07/2027');
+ var markup=original(w).replace(/30\\/07\\/2027/g,'31/07/2027');
  if(!w||!/^cpc(?:[1-9]|1[0-9]|20)$/.test(w.id))return markup;
- var start=markup.indexOf('<div class="cf-theory-grid">');
- var end=start<0?-1:markup.indexOf('<div class="cf-actions">',start);
- if(end<0)return markup;
  var no=String(w.num).padStart(2,'0');
  var moduleOpen=typeof cpcModuleOpenKey==='function'&&localStorage.getItem(cpcModuleOpenKey(w.id))==='1';
  var openAttr=moduleOpen?' open':'';
  var srcAttr=moduleOpen?' src="/cpc-final-20260928/M'+no+'.html"':'';
  var panel='<div class="cf-theory-grid"><details class="cf-theory cpc-apostila-topic base-cpc-full" data-cpc-doc="M'+no+'"'+openAttr+'><summary>Teoria completa • M'+no+' (módulo auditado)</summary><div class="cf-theory-text"><iframe title="Teoria completa de Processo Civil M'+no+'" loading="lazy"'+srcAttr+' data-cpc-src="/cpc-final-20260928/M'+no+'.html" style="display:block;width:100%;height:620px;border:0;background:#fffdf8"></iframe></div></details></div>';
- markup=markup.replace('>Teoria nuclear<','>Teoria completa<').replace('Base completa antes da segunda bateria.','Teoria desenvolvida integral do módulo auditado; depois vêm as questões e o resumo.');
- return markup.slice(0,start)+panel+markup.slice(end);
+ try{
+  var parser=new DOMParser();
+  var doc=parser.parseFromString('<div id="cpc-render-host">'+markup+'</div>','text/html');
+  var host=doc.getElementById('cpc-render-host');
+  var target=Array.prototype.slice.call(host.querySelectorAll('.cf-step')).find(function(step){
+   var heading=step.querySelector('.cf-step-copy b');
+   return heading&&heading.textContent.trim()==='Teoria nuclear';
+  });
+  if(target){
+   var heading=target.querySelector('.cf-step-copy b');
+   if(heading)heading.textContent='Teoria completa';
+   var small=target.querySelector('.cf-step-copy small');
+   if(small)small.textContent='Teoria desenvolvida integral do módulo auditado; depois vêm as questões e o resumo.';
+   var grid=target.querySelector('.cf-theory-grid');
+   if(grid)grid.outerHTML=panel;
+   return host.innerHTML;
+  }
+ }catch(error){console.error('CPC final: normalização do módulo',error)}
+ return markup;
 };
 function openFullTheory(module){
  var detail=module&&module.querySelector?module.querySelector('.base-cpc-full'):null;
