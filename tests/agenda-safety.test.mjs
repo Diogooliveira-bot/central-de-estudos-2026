@@ -69,3 +69,9 @@ test('cards de disciplinas revelam o curso legado sem esconder a Agenda simples'
   assert.match(script, /window\.jumpSubject = openDiscipline/);
   assert.match(script, /window\.centralHardSubject = openDiscipline/);
 });
+
+test('recursos editoriais não exibem referência residual ao Anki nos módulos integrados', () => {
+  const runtime = read('central-structural-v66119/runtime.js');
+  assert.doesNotMatch(runtime, /Recursos do módulo • TEC\/QC, Anki e anotações/u);
+  assert.match(runtime, /Recursos do módulo • TEC\/QC e anotações/u);
+});
