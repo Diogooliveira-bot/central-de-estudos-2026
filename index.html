@@ -2185,9 +2185,43 @@ window.moduleFrameRetry=function(){
     wrapped.__centralRemovedToolsGuard = true;
     window.openEmbeddedTool = wrapped;
   }
-  wrap();
-  window.addEventListener('DOMContentLoaded', wrap, { once: true });
-  setTimeout(wrap, 300);
+  function removeAnkiResidue(root){
+    const scope = root && root.querySelectorAll ? root : document;
+    const selectors = [
+      '[data-step^="anki"]',
+      '.civil-anki-note',
+      '.chip.anki',
+      '[data-tool="anki"]',
+      'a[href*="anki" i]',
+      'button[onclick*="anki" i]'
+    ];
+    scope.querySelectorAll(selectors.join(',')).forEach(function(el){
+      const step = el.closest && el.closest('[data-step^="anki"]');
+      if (step) step.remove();
+      else el.remove();
+    });
+    scope.querySelectorAll('.csp-stage-card,.civil-step,.resource,.resource-row,.chips,.civil-stage-actions').forEach(function(el){
+      const text = (el.textContent || '').toLowerCase();
+      const action = Array.from(el.querySelectorAll ? el.querySelectorAll('a,button,input,label') : []).some(function(child){
+        return /anki/i.test((child.textContent || '') + ' ' + (child.getAttribute('onclick') || '') + ' ' + (child.getAttribute('href') || ''));
+      });
+      if (text.indexOf('anki') !== -1 || action) el.remove();
+    });
+  }
+  function boot(){
+    wrap();
+    removeAnkiResidue(document);
+    if (!window.__centralAnkiResidueObserver && document.body) {
+      window.__centralAnkiResidueObserver = new MutationObserver(function(mutations){
+        mutations.forEach(function(m){ removeAnkiResidue(m.target); });
+      });
+      window.__centralAnkiResidueObserver.observe(document.body, { childList: true, subtree: true });
+    }
+  }
+  boot();
+  window.addEventListener('DOMContentLoaded', boot, { once: true });
+  setTimeout(boot, 300);
+  setTimeout(boot, 1200);
 })();
 </script>
 </body></html>
