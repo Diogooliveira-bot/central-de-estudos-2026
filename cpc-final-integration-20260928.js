@@ -11,7 +11,11 @@ window.renderCpcModule=function(w){
  var end=start<0?-1:markup.indexOf('<div class="cf-actions">',start);
  if(end<0)return markup;
  var no=String(w.num).padStart(2,'0');
- var panel='<div class="cf-theory-grid"><details class="cf-theory cpc-apostila-topic base-cpc-full" data-cpc-doc="M'+no+'"><summary>Apostila integral • M'+no+'</summary><div class="cf-theory-text"><iframe title="Apostila completa de Processo Civil M'+no+'" loading="lazy" data-cpc-src="/cpc-final-20260928/M'+no+'.html" style="display:block;width:100%;height:620px;border:0;background:#fffdf8"></iframe></div></details></div>';
+ var moduleOpen=typeof cpcModuleOpenKey==='function'&&localStorage.getItem(cpcModuleOpenKey(w.id))==='1';
+ var openAttr=moduleOpen?' open':'';
+ var srcAttr=moduleOpen?' src="/cpc-final-20260928/M'+no+'.html"':'';
+ var panel='<div class="cf-theory-grid"><details class="cf-theory cpc-apostila-topic base-cpc-full" data-cpc-doc="M'+no+'"'+openAttr+'><summary>Teoria completa • M'+no+' (módulo auditado)</summary><div class="cf-theory-text"><iframe title="Teoria completa de Processo Civil M'+no+'" loading="lazy"'+srcAttr+' data-cpc-src="/cpc-final-20260928/M'+no+'.html" style="display:block;width:100%;height:620px;border:0;background:#fffdf8"></iframe></div></details></div>';
+ markup=markup.replace('>Teoria nuclear<','>Teoria completa<').replace('>Base completa antes da segunda bateria.<','>Teoria desenvolvida integral do módulo auditado; depois vêm as questões e o resumo.<');
  return markup.slice(0,start)+panel+markup.slice(end);
 };
 document.addEventListener('toggle',function(event){
