@@ -96,7 +96,7 @@ function polishReader(frame){
 
 function cleanCpcSubtitle(){
  document.querySelectorAll('.subject[data-id="cpc"] .cf-step-copy small').forEach(function(el){
-  if(/Teoria desenvolvida integral do módulo auditado/.test(el.textContent))el.textContent=el.textContent.replace(/[<\\\/]+$/,'');
+  if(/Teoria desenvolvida integral do módulo auditado/.test(el.textContent))el.textContent='Teoria desenvolvida integral do módulo auditado; depois vêm as questões e o resumo.';
  });
 }
 
