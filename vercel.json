@@ -1,6 +1,11 @@
 {
   "redirects": [
     {
+      "source": "/editor",
+      "destination": "/central-v119.html?editor=1",
+      "permanent": false
+    },
+    {
       "source": "/portugues",
       "destination": "/portugues.html",
       "permanent": false
@@ -49,6 +54,15 @@
         {
           "key": "Service-Worker-Allowed",
           "value": "/"
+        }
+      ]
+    },
+    {
+      "source": "/api/editor",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-store"
         }
       ]
     }
