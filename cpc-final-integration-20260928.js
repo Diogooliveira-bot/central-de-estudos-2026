@@ -84,8 +84,23 @@ function polishReader(frame){
  setTimeout(apply,80);
 }
 
+
+function syncOpenLayout(){
+ var cpc=document.querySelector('.subject[data-id="cpc"]');
+ var grid=cpc&&cpc.closest('.home-grid');
+ if(!grid)return;
+ var side=grid.querySelector('.side-col');
+ var open=!!(cpc&&cpc.classList.contains('open'));
+ grid.style.gridTemplateColumns=open?'minmax(0,1fr)':'';
+ if(side)side.style.display=open?'none':'';
+}
+document.addEventListener('click',function(event){
+ if(event.target&&event.target.closest&&event.target.closest('.subject-head'))setTimeout(syncOpenLayout,0);
+},true);
+
 installVisualPolish();
 window.addEventListener('load',installVisualPolish);
+window.addEventListener('load',syncOpenLayout);
 setTimeout(installVisualPolish,250);
 
 window.renderCpcModule=function(w){
