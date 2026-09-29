@@ -2540,12 +2540,7 @@ function civil11ErrorStep(){
  <div class="civil-step-body">${qs.length?`<div class="civil-error-list">${rows}</div>${civil11Ui.stage==='errors11'?`<div style="margin-top:9px">${civil11StageSession('errors11')}</div>`:''}`:'<div class="muted small">Nenhum erro registrado neste módulo ainda.</div>'}
  <label class="civil-manual-done"><input type="checkbox" ${done?'checked':''} onchange="civilSetModule('m11',{errorsReviewed:this.checked})"> Marcar minha revisão de erros como concluída</label></div></section>`
 }
-function civil11ComplementAnkiStep(){
- const id='anki11',m=civilModuleState('m11'),done=!!m.anki,open=localStorage.getItem(civil11StepOpenKey(id))==='1';
- return `<section class="civil-step ${done?'done':''} ${open?'open':''}" data-step="anki11"><button class="civil-step-head" onclick="toggleCivil11Step('anki11')"><span class="civil-step-n">${done?'✓':'8'}</span><span class="civil-step-title"><b>Anki seletivo</b><small>Revisão sem alterar seus baralhos existentes.</small></span><span class="civil-step-status">${done?'Concluído':'Pendente'}</span><span>⌄</span></button>
- <div class="civil-step-body"><p class="civil-anki-note">A coleção Anki integrada atualmente <b>não possui um subbaralho específico de Direito de Empresa</b>. Para não misturar matérias nem alterar seus cards sem pedido, não criei deck novo. Use o caderno de erros deste módulo e, ao revisar, priorize 5 cartões: <b>art. 966; art. 971; art. 978; arts. 1.142/1.147; arts. 1.155/1.164/1.166</b>.</p>
- <label class="civil-manual-done"><input type="checkbox" ${done?'checked':''} onchange="civilSetModule('m11',{anki:this.checked})"> Marcar minha revisão seletiva como concluída</label></div></section>`
-}
+function civil11ComplementAnkiStep(){return ''}
 function renderCivilModule11(){
  const pct=civilModulePct('m11');
  return `<div class="civil-overall"><span style="width:${pct}%"></span></div><div class="civil-scope-note"><span class="civil-scope-badge edital">EDITAL</span><b>Fechamento do Edital I:</b> LINDB, teoria geral dos fatos jurídicos, atos unilaterais, pagamento indevido, enriquecimento sem causa, preferências/privilégios creditórios e disposições finais/transitórias do Código Civil. <b>Direito de Empresa foi preservado apenas como conteúdo complementar.</b></div>
@@ -3302,14 +3297,7 @@ function civil14ErrorStep(){
  <div class="civil-step-body">${qs.length?`<div class="civil-error-list">${rows}</div>${civil14Ui.stage==='errors14'?`<div style="margin-top:9px">${civil14StageSession('errors14')}</div>`:''}`:'<div class="muted small">Nenhum erro registrado neste módulo ainda.</div>'}
  <label class="civil-manual-done"><input type="checkbox" ${done?'checked':''} onchange="civilSetModule('m14',{errorsReviewed:this.checked})"> Marcar minha revisão de erros como concluída</label></div></section>`
 }
-function civil14ComplementAnkiStep(){
- const id='anki14',m=civilModuleState('m14'),done=!!m.anki,open=localStorage.getItem(civil14StepOpenKey(id))==='1';
- const deck='04 DIREITO CIVIL::12 POSSE, PROPRIEDADE E DIREITOS REAIS';
- return `<section class="civil-step ${done?'done':''} ${open?'open':''}" data-step="anki14"><button class="civil-step-head" onclick="toggleCivil14Step('anki14')"><span class="civil-step-n">${done?'✓':'8'}</span><span class="civil-step-title"><b>Anki seletivo</b><small>Última rodada do baralho de Direitos Reais.</small></span><span class="civil-step-status">${done?'Concluído':'Pendente'}</span><span>⌄</span></button>
- <div class="civil-step-body"><p class="civil-anki-note">Abra <b>12 POSSE, PROPRIEDADE E DIREITOS REAIS</b> e revise somente cartões de <b>superfície, servidão, usufruto, uso, habitação, laje, promitente comprador, penhor e hipoteca</b>. Posse e propriedade já foram trabalhadas nos Módulos 12 e 13.</p>
- <div class="civil-stage-actions" style="margin-top:9px"><button class="civil-btn primary" onclick="window.openAnkiDeck('${escJs(deck)}')">🧠 Abrir baralho existente</button></div>
- <label class="civil-manual-done"><input type="checkbox" ${done?'checked':''} onchange="civilSetModule('m14',{anki:this.checked})"> Marcar revisão no Anki como concluída</label></div></section>`
-}
+function civil14ComplementAnkiStep(){return ''}
 function renderCivilModule14(){
  const pct=civilModulePct('m14');
  return `<div class="civil-overall"><span style="width:${pct}%"></span></div><div class="civil-scope-note"><span class="civil-scope-badge edital">EDITAL</span><b>Fechamento do Edital II:</b> Código de Defesa do Consumidor, Lei de Registros Públicos, Estatuto da Pessoa Idosa, tutela/curatela/tomada de decisão apoiada e painel de jurisprudência civil STF/STJ. <b>O antigo conteúdo de direitos reais permanece como complementar.</b></div>
