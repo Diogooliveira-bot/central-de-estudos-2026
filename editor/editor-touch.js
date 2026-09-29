@@ -1,3 +1,4 @@
+/* build: editor-touch-v1-final */
 (function(){
 'use strict';
 if(window.__centralEditorTouchV1)return;window.__centralEditorTouchV1=true;
