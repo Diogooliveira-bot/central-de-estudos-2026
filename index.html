@@ -804,7 +804,6 @@ setTimeout(function(){
   <section class="view" id="homeView">
    <div class="hero">
     <div><h1>Meu estudo</h1><p id="today"></p></div>
-    <button class="btn primary" onclick="document.getElementById('cronograma').scrollIntoView({behavior:'smooth'})">Cronograma de Estudos</button>
    </div>
    <div class="home-grid">
     <div>
@@ -837,6 +836,16 @@ setTimeout(function(){
   <section class="view hidden" id="agendaView"><button type="button" class="central-view-back" onclick="return openHome()" aria-label="Voltar ao início">‹ Central</button>
    <div class="hero"><div><h1>Agenda</h1><p>Checklist editável por dia.</p></div></div>
    <div class="card" style="padding:16px">
+    <div id="agendaCalendarPanel" class="agenda-calendar-panel">
+     <div class="agenda-calendar-toolbar">
+      <button type="button" class="btn sm" id="agendaCalendarPrev" aria-label="Mês anterior">‹</button>
+      <strong id="agendaCalendarTitle">Agenda mensal</strong>
+      <button type="button" class="btn sm" id="agendaCalendarNext" aria-label="Próximo mês">›</button>
+      <button type="button" class="btn sm agenda-calendar-today" id="agendaCalendarToday">Hoje</button>
+     </div>
+     <div class="agenda-calendar-week" aria-hidden="true"><span>Seg</span><span>Ter</span><span>Qua</span><span>Qui</span><span>Sex</span><span>Sáb</span><span>Dom</span></div>
+     <div id="agendaCalendarGrid" class="agenda-calendar-grid" role="grid" aria-label="Calendário mensal"></div>
+    </div>
     <div class="form-grid">
      <div class="field"><label>Data</label><input id="agendaDate" type="date"></div>
      <div class="field"><label>Horário</label><input id="agendaTime" type="time"></div>
@@ -2265,6 +2274,55 @@ window.moduleFrameRetry=function(){
     window.__centralQuestionPolicyObserver.observe(document.body,{childList:true,subtree:true});
   }
   setTimeout(schedule,300);setTimeout(schedule,1200);
+})();
+</script>
+<style id="central-agenda-calendar-v1-style">
+.agenda-calendar-panel{margin-bottom:16px;padding:14px;border:1px solid var(--line);border-radius:12px;background:var(--panel2)}
+.agenda-calendar-toolbar{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.agenda-calendar-toolbar strong{min-width:150px;text-align:center;font-size:14px}
+.agenda-calendar-today{margin-left:4px}
+.agenda-calendar-week,.agenda-calendar-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px}
+.agenda-calendar-week{margin-bottom:5px;color:var(--muted);font-size:10px;font-weight:800;text-align:center}
+.agenda-calendar-grid button{min-height:42px;padding:7px 4px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--text);font:700 12px/1.15 inherit;cursor:pointer}
+.agenda-calendar-grid button:hover,.agenda-calendar-grid button.selected{border-color:#12c2dc;background:rgba(18,194,220,.16)}
+.agenda-calendar-grid button.today{box-shadow:inset 0 0 0 2px #12c2dc}
+.agenda-calendar-grid button.has-tasks{position:relative}
+.agenda-calendar-grid button.has-tasks::after{content:"";display:block;width:5px;height:5px;margin:4px auto 0;border-radius:50%;background:#12c2dc}
+.agenda-calendar-grid button.other-month{opacity:.38}
+@media(max-width:680px){.agenda-calendar-panel{padding:10px}.agenda-calendar-grid{gap:4px}.agenda-calendar-grid button{min-height:40px}}
+</style>
+<script id="central-agenda-calendar-v1">
+(function(){
+'use strict';
+var monthCursor=null,bound=false;
+function pad(v){return String(v).padStart(2,'0')}
+function dateKey(y,m,d){return y+'-'+pad(m+1)+'-'+pad(d)}
+function parseKey(value){var p=String(value||'').split('-').map(Number);return p.length===3&&p.every(function(n){return Number.isFinite(n)})?new Date(p[0],p[1]-1,p[2]):new Date()}
+function todayKey(){var d=new Date();return dateKey(d.getFullYear(),d.getMonth(),d.getDate())}
+function selectedKey(){var el=document.getElementById('agendaDate');return el&&el.value||todayKey()}
+function readTasks(key){try{return window.CentralAgenda&&typeof window.CentralAgenda.read==='function'?window.CentralAgenda.read(key):[]}catch(_){return []}}
+function renderCalendar(){
+ var grid=document.getElementById('agendaCalendarGrid'),title=document.getElementById('agendaCalendarTitle');if(!grid||!title)return;
+ var base=monthCursor||parseKey(selectedKey()),y=base.getFullYear(),m=base.getMonth();
+ title.textContent=new Intl.DateTimeFormat('pt-BR',{month:'long',year:'numeric'}).format(base).replace(/^./,function(ch){return ch.toUpperCase()});
+ var first=(new Date(y,m,1).getDay()+6)%7,total=new Date(y,m+1,0).getDate(),prevTotal=new Date(y,m,0).getDate(),html='';
+ for(var i=0;i<first;i++){var pd=prevTotal-first+i+1,pk=dateKey(y,m-1,pd);html+='<button type="button" class="other-month" data-calendar-date="'+pk+'">'+pd+'</button>'}
+ for(var d=1;d<=total;d++){var key=dateKey(y,m,d),tasks=readTasks(key),classes=[];if(key===selectedKey())classes.push('selected');if(key===todayKey())classes.push('today');if(tasks.length)classes.push('has-tasks');html+='<button type="button" role="gridcell" class="'+classes.join(' ')+'" data-calendar-date="'+key+'" aria-label="'+key+(tasks.length?' — '+tasks.length+' tarefa(s)':'')+'">'+d+'</button>'}
+ var cells=first+total;for(var n=1;cells+n<=42;n++){var nk=dateKey(y,m+1,n);html+='<button type="button" class="other-month" data-calendar-date="'+nk+'">'+n+'</button>}
+ grid.innerHTML=html;
+ grid.querySelectorAll('button[data-calendar-date]').forEach(function(btn){btn.onclick=function(){var key=btn.getAttribute('data-calendar-date'),input=document.getElementById('agendaDate');if(input)input.value=key;monthCursor=parseKey(key);if(window.CentralAgenda&&typeof window.CentralAgenda.render==='function')window.CentralAgenda.render();renderCalendar()}})
+}
+function sync(){var input=document.getElementById('agendaDate');if(input&&!input.__calendarBound){input.__calendarBound=true;input.addEventListener('change',function(){monthCursor=parseKey(input.value);renderCalendar()})}if(!monthCursor)monthCursor=parseKey(selectedKey());renderCalendar()}
+function bind(){
+ var prev=document.getElementById('agendaCalendarPrev'),next=document.getElementById('agendaCalendarNext'),today=document.getElementById('agendaCalendarToday');if(!prev||!next||!today){setTimeout(bind,80);return}
+ if(bound){sync();return}bound=true;
+ prev.onclick=function(){var base=monthCursor||parseKey(selectedKey());monthCursor=new Date(base.getFullYear(),base.getMonth()-1,1);renderCalendar()};
+ next.onclick=function(){var base=monthCursor||parseKey(selectedKey());monthCursor=new Date(base.getFullYear(),base.getMonth()+1,1);renderCalendar()};
+ today.onclick=function(){var key=todayKey(),input=document.getElementById('agendaDate');if(input)input.value=key;monthCursor=parseKey(key);if(window.CentralAgenda&&typeof window.CentralAgenda.render==='function')window.CentralAgenda.render();renderCalendar()};
+ sync();
+}
+function start(){bind();setTimeout(bind,300);setTimeout(bind,1000)}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start,{once:true});else start();
 })();
 </script>
 </body></html>
