@@ -405,8 +405,58 @@
     return false;
   }
 
+  function setHomeMode(mode) {
+    var home = document.getElementById('homeView');
+    if (!home) return;
+    var studying = mode === 'study';
+    var dashboard = document.getElementById('agendaSimpleHome');
+    var hero = home.querySelector('.hero');
+    var legacy = home.querySelector('.home-grid');
+    [hero, legacy].forEach(function (node) {
+      if (node) node.classList.toggle('agenda-simple-home-legacy', !studying);
+    });
+    if (dashboard) dashboard.classList.toggle('agenda-simple-home-legacy', studying);
+  }
+
+  function openDiscipline(id, button) {
+    var sid = String(id || '');
+    if (!sid) return false;
+    showView('homeView', 'Disciplinas', button || document.querySelector('[data-simple-nav="disciplines"]'));
+    setHomeMode('study');
+    try { window.localStorage.setItem('central-v6:open:' + sid, '1'); } catch (_) {}
+    try {
+      if (typeof window.renderSubjects === 'function') window.renderSubjects();
+    } catch (error) {
+      console.warn('[Agenda simples] Falha ao montar disciplina', sid, error);
+    }
+    setTimeout(function () {
+      setHomeMode('study');
+      var subject = document.querySelector('.subject[data-id="' + sid.replace(/"/g, '\\"') + '"]');
+      if (subject) {
+        try { subject.scrollIntoView({ behavior: 'auto', block: 'start' }); }
+        catch (_) { subject.scrollIntoView(); }
+      }
+    }, 30);
+    return false;
+  }
+
+  function wrapStudyOpeners() {
+    ['openPtNativeLast', 'openCfLast', 'openCivilLast', 'openCpcLast', 'openPenalLast', 'openTopicFromLast'].forEach(function (name) {
+      var original = window[name];
+      if (typeof original !== 'function' || original.__agendaSimpleStudyBridge) return;
+      var wrapped = function () {
+        var result = original.apply(this, arguments);
+        setTimeout(function () { setHomeMode('study'); }, 0);
+        return result;
+      };
+      wrapped.__agendaSimpleStudyBridge = true;
+      window[name] = wrapped;
+    });
+  }
+
   function openHome(button) {
     showView('homeView', 'Início', button || document.querySelector('[data-simple-nav="home"]'));
+    setHomeMode('dashboard');
     try { if (typeof window.renderAll === 'function') window.renderAll(); } catch (_) {}
     renderHome();
     return false;
@@ -540,7 +590,7 @@
         if (!action) return;
         if (action.dataset.action === 'open-agenda') open();
         if (action.dataset.action === 'open-disciplines') openDisciplines(action);
-        if (action.dataset.action === 'open-discipline' && typeof window.centralHardSubject === 'function') window.centralHardSubject(action.dataset.id);
+        if (action.dataset.action === 'open-discipline') openDiscipline(action.dataset.id, action);
       });
       card.addEventListener('change', function (event) {
         var input = event.target.closest('input[data-action="home-toggle"]');
@@ -614,6 +664,9 @@
     window.openHome = openHome;
     window.openDisciplines = openDisciplines;
     window.openAgenda = open;
+    window.centralHardSubject = openDiscipline;
+    window.jumpSubject = openDiscipline;
+    wrapStudyOpeners();
     window.CentralAgenda = { open: open, add: add, toggle: toggle, remove: remove, render: render, read: read };
     window.addAgenda = add;
     window.toggleAgenda = toggle;
