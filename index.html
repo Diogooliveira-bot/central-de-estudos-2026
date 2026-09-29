@@ -2217,7 +2217,18 @@ window.moduleFrameRetry=function(){
   var COURSE_IDS={cf:true,cpc:true,penal:true,civil:true};
   var KEEP=/^(leitura orientada|teoria nuclear)$/i;
   function remove(el){if(el&&el.parentNode)el.parentNode.removeChild(el)}
+  function ensureHomeTecCard(){
+    var host=document.getElementById('agendaSimpleHome');
+    if(!host||host.querySelector('.bc-home-tec-card'))return;
+    var card=document.createElement('section');
+    card.className='agenda-home-panel bc-home-tec-card';
+    card.innerHTML='<div class="agenda-home-panel-head"><h2>Cadernos TEC</h2><span>questões externas</span></div><p class="muted small" style="line-height:1.55;margin:0 0 14px">Cadernos vinculados por matéria para complementar a teoria com questões externas.</p><button type="button" data-action="open-tec" style="min-height:44px;padding:10px 16px;border:1px solid transparent;border-radius:var(--bc-radius-md);background:var(--bc-color-primary);color:#fff;font:650 14px/20px inherit;cursor:pointer">Abrir Cadernos TEC</button>';
+    card.querySelector('[data-action="open-tec"]').addEventListener('click',function(){if(typeof window.centralSidebarAction==='function')window.centralSidebarAction('tec-cadernos',this);else if(typeof window.openTecCadernos==='function')window.openTecCadernos(this)});
+    var disciplines=host.querySelector('.agenda-home-disciplines');
+    if(disciplines)disciplines.insertAdjacentElement('afterend',card);else host.appendChild(card);
+  }
   function apply(){
+    ensureHomeTecCard();
     document.querySelectorAll('.subject[data-id]').forEach(function(subject){
       var sid=subject.getAttribute('data-id');
       if(!COURSE_IDS[sid]||sid==='pt'||sid==='rlm')return;
