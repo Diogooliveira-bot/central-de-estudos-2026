@@ -814,7 +814,12 @@ setTimeout(function(){
     </div>
     <div class="side-col">
      <div class="card"><div class="card-head"><h3>Progresso do dia</h3></div><div class="progress-box"><div class="big" id="dayCount">0 de 0</div><div class="muted small">blocos concluídos</div><div class="progress-line"><span id="dayBar"></span></div><div class="muted small" id="dayPct">0%</div></div></div>
-     <div class="card"><div class="card-head"><h3>Continuar de onde parei</h3></div><div class="progress-box" id="continueBox"></div></div></div>
+     <div class="card"><div class="card-head"><h3>Continuar de onde parei</h3></div><div class="progress-box" id="continueBox"></div></div>
+     <div class="card home-tec-card" id="homeTecCard">
+      <div class="card-head"><h3>Cadernos TEC</h3><span class="muted small">externo</span></div>
+      <div class="progress-box"><b>Questões externas por matéria</b><p class="muted small" style="line-height:1.5;margin:7px 0 12px">Abra os cadernos vinculados ao seu plano e registre seu desempenho.</p><button class="btn primary" type="button" onclick="return centralSidebarAction('tec-cadernos',this)">Abrir Cadernos TEC</button></div>
+     </div>
+    </div>
     </div>
    </div>
   </section>
@@ -2203,6 +2208,52 @@ window.moduleFrameRetry=function(){
   window.addEventListener('DOMContentLoaded', boot, { once: true });
   setTimeout(boot, 300);
   setTimeout(boot, 1200);
+})();
+</script>
+
+<script id="central-internal-questions-policy-v1">
+(function(){
+  'use strict';
+  var COURSE_IDS={cf:true,cpc:true,penal:true,civil:true};
+  var KEEP=/^(leitura orientada|teoria nuclear)$/i;
+  function remove(el){if(el&&el.parentNode)el.parentNode.removeChild(el)}
+  function apply(){
+    document.querySelectorAll('.subject[data-id]').forEach(function(subject){
+      var sid=subject.getAttribute('data-id');
+      if(!COURSE_IDS[sid]||sid==='pt'||sid==='rlm')return;
+      subject.querySelectorAll('.cf-master-tools button').forEach(function(button){
+        if(/erro/i.test(button.textContent||''))remove(button);
+      });
+      subject.querySelectorAll('.cf-metrics').forEach(remove);
+      subject.querySelectorAll('.cf-step,.civil-step').forEach(function(step){
+        var title=step.querySelector('.cf-step-copy b,.civil-step-title b');
+        var label=(title&&title.textContent||'').trim();
+        if(!KEEP.test(label))remove(step);
+      });
+      subject.querySelectorAll('.cf-module-stat').forEach(function(el){el.textContent='leitura + teoria'});
+      subject.querySelectorAll('.civil-module-state span').forEach(function(el){if(/etapas/i.test(el.textContent||''))el.textContent='leitura + teoria'});
+      subject.querySelectorAll('.civil-master-intro p').forEach(function(p){
+        if(/banco do curso|questões|casos autorais/i.test(p.textContent||''))p.textContent='Conteúdo completo do edital, organizado em módulos de leitura e teoria.';
+      });
+      subject.querySelectorAll('.cpc-coverage-warning').forEach(remove);
+      subject.querySelectorAll('.cf-resource-box').forEach(function(box){
+        if(/questões únicas|abrir as [\d.]+ questões/i.test(box.textContent||''))remove(box);
+      });
+      subject.querySelectorAll('#cf-session-host,#cf-errors-host,#cpc-session-host,#cpc-errors-host,#penal-session-host,#penal-errors-host').forEach(remove);
+    });
+  }
+  function schedule(){
+    if(window.__centralQuestionPolicyQueued)return;
+    window.__centralQuestionPolicyQueued=true;
+    setTimeout(function(){window.__centralQuestionPolicyQueued=false;try{apply()}catch(e){console.warn('Internal question policy',e)}},0);
+  }
+  apply();
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',schedule,{once:true});
+  if(document.body&&!window.__centralQuestionPolicyObserver){
+    window.__centralQuestionPolicyObserver=new MutationObserver(schedule);
+    window.__centralQuestionPolicyObserver.observe(document.body,{childList:true,subtree:true});
+  }
+  setTimeout(schedule,300);setTimeout(schedule,1200);
 })();
 </script>
 </body></html>
