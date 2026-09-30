@@ -99,7 +99,12 @@
     const note = document.createElement('section');
     note.className = 'ds-notes'; note.dataset.dsNotes = meta.key;
     const id = 'ds-note-' + meta.key.replace(/[^a-zA-Z0-9_-]/g,'-');
-    let value = ''; try { value = localStorage.getItem('central-v6:module-notes:' + meta.key) || ''; } catch (_) {}
+    let value = ''; try {
+      const current = localStorage.getItem('central-v6:module-notes:' + meta.key);
+      const oldId = meta.subject === 'cpp' ? 'cpp-' + meta.id : meta.id;
+      value = current ?? localStorage.getItem('central-v6:module-standard-notes:v1:' + oldId) ??
+        (meta.subject === 'civil' ? localStorage.getItem('central-v6:civil-note:' + meta.id) : null) ?? '';
+    } catch (_) {}
     note.innerHTML = '<label for="' + id + '">Anotações do módulo</label><textarea id="' + id + '" placeholder="Regra, artigo, pegadinha ou dúvida…">' + esc(value) + '</textarea><div class="ds-actions"><button type="button" class="ds-action" data-ds-save-note>Salvar anotação</button><span role="status" aria-live="polite" class="ds-note-status"></span></div>';
     body.appendChild(note);
   }
@@ -170,7 +175,7 @@
     let target = body.querySelector(selector) || body;
     if (action === 'questions' && meta.subject !== 'civil') {
       const stages = Array.from(body.querySelectorAll('.cf-step'));
-      target = stages.find(x => /diagnóstico|bateria|questões/i.test(x.querySelector('.cf-step-copy b')?.textContent || '')) || target;
+      target = stages.find(x => /diagnóstico|bateria|questões/i.test(x.querySelector('.cf-step-copy b')?.textContent || '')) || body.querySelector('.cf-resources') || target;
     }
     const details = target.closest('details'); if (details) details.open = true;
     target.scrollIntoView({block:'start'});

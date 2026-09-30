@@ -569,7 +569,7 @@ function renderCivilModule1(){
  <div class="civil-steps">
  ${civilQuestionStep('diagnostic','Diagnóstico FCC','10 questões reais antes da teoria.',1)}
  ${civilManualStep('reading','Leitura orientada','Código Civil + LBI, com roteiro objetivo.',2,civilReadingBody(),'reading')}
- ${civilManualStep('theory','Teoria nuclear','Base completa para resolver questões de nível superior.',3,civilTheoryBody(),'theory')}
+ ${civilManualStep('theory','Teoria completa','Base completa para resolver questões de nível superior.',3,civilTheoryBody(),'theory')}
  ${civilManualStep('deep','Aprofundamento e jurisprudência','STJ, LBI e pegadinhas de prova.',4,civilDeepBody(),'deep')}
  ${civilQuestionStep('cases','Casos práticos','5 casos autorais claramente identificados.',5)}
  ${civilQuestionStep('final','Bateria final FCC','15 questões reais após a teoria.',6)}
@@ -723,7 +723,7 @@ function renderCivilModule2(){
  <div class="civil-steps">
  ${civil2QuestionStep('diagnostic2','Diagnóstico FCC','10 questões reais antes da teoria.',1)}
  ${civil2ManualStep('reading2','Leitura orientada','CC 11-21 e 40-69 + complementos atuais.',2,civil2ReadingBody(),'reading')}
- ${civil2ManualStep('theory2','Teoria nuclear','Base completa e atualizada para nível superior.',3,civil2TheoryBody(),'theory')}
+ ${civil2ManualStep('theory2','Teoria completa','Base completa e atualizada para nível superior.',3,civil2TheoryBody(),'theory')}
  ${civil2ManualStep('deep2','Aprofundamento e jurisprudência','STF, STJ e pegadinhas de prova.',4,civil2DeepBody(),'deep')}
  ${civil2QuestionStep('cases2','Casos práticos','5 casos autorais identificados.',5)}
  ${civil2QuestionStep('final2','Bateria final FCC','15 questões reais após a teoria.',6)}
@@ -903,7 +903,7 @@ function renderCivilModule3(){
  <div class="civil-steps">
  ${civil3QuestionStep('diagnostic3','Diagnóstico FCC','10 questões reais antes da teoria.',1)}
  ${civil3ManualStep('reading3','Leitura orientada','CC 70 a 103, sem avançar ao art. 104.',2,civil3ReadingBody(),'reading')}
- ${civil3ManualStep('theory3','Teoria nuclear','Domicílio, classificações, pertenças, benfeitorias e bens públicos.',3,civil3TheoryBody(),'theory')}
+ ${civil3ManualStep('theory3','Teoria completa','Domicílio, classificações, pertenças, benfeitorias e bens públicos.',3,civil3TheoryBody(),'theory')}
  ${civil3ManualStep('deep3','Aprofundamento e aplicação','Afetação, desafetação e pegadinhas de nível superior.',4,civil3DeepBody(),'deep')}
  ${civil3QuestionStep('cases3','Casos práticos','5 casos autorais identificados.',5)}
  ${civil3QuestionStep('final3','Bateria final FCC','15 questões reais após a teoria.',6)}
@@ -1084,7 +1084,7 @@ function renderCivilModule4(){
  <div class="civil-steps">
  ${civil4QuestionStep('diagnostic4','Diagnóstico FCC','10 questões reais antes da teoria.',1)}
  ${civil4ManualStep('reading4','Leitura orientada','CC 104 a 137, sem avançar aos defeitos.',2,civil4ReadingBody(),'reading')}
- ${civil4ManualStep('theory4','Teoria nuclear','Validade, forma, vontade, interpretação, representação e elementos acidentais.',3,civil4TheoryBody(),'theory')}
+ ${civil4ManualStep('theory4','Teoria completa','Validade, forma, vontade, interpretação, representação e elementos acidentais.',3,civil4TheoryBody(),'theory')}
  ${civil4ManualStep('deep4','Aprofundamento e atualização','Art. 113 atual, planos do negócio e diferenças decisivas.',4,civil4DeepBody(),'deep')}
  ${civil4QuestionStep('cases4','Casos práticos','5 casos autorais identificados.',5)}
  ${civil4QuestionStep('final4','Bateria final FCC','15 questões reais após a teoria.',6)}
@@ -1280,7 +1280,7 @@ function renderCivilModule5(){
  <div class="civil-steps">
  ${civil5QuestionStep('diagnostic5','Diagnóstico FCC','10 questões reais antes da teoria.',1)}
  ${civil5ManualStep('reading5','Leitura orientada','CC 138 a 165, sem avançar à invalidade.',2,civil5ReadingBody(),'reading')}
- ${civil5ManualStep('theory5','Teoria nuclear','Identificação precisa dos seis defeitos e suas diferenças.',3,civil5TheoryBody(),'theory')}
+ ${civil5ManualStep('theory5','Teoria completa','Identificação precisa dos seis defeitos e suas diferenças.',3,civil5TheoryBody(),'theory')}
  ${civil5ManualStep('deep5','Aprofundamento e jurisprudência','STJ, ação pauliana e pegadinhas de nível superior.',4,civil5DeepBody(),'deep')}
  ${civil5QuestionStep('cases5','Casos práticos','5 casos autorais identificados.',5)}
  ${civil5QuestionStep('final5','Bateria final FCC','15 questões reais após a teoria.',6)}
@@ -1481,7 +1481,7 @@ function renderCivilModule6(){
  <div class="civil-steps">
  ${civil6QuestionStep('diagnostic6','Diagnóstico FCC','10 questões reais antes da teoria.',1)}
  ${civil6ManualStep('reading6','Leitura orientada','CC 166 a 232, fechando a Parte Geral.',2,civil6ReadingBody(),'reading')}
- ${civil6ManualStep('theory6','Teoria nuclear','Invalidade, prazos e regras probatórias com texto atualizado.',3,civil6TheoryBody(),'theory')}
+ ${civil6ManualStep('theory6','Teoria completa','Invalidade, prazos e regras probatórias com texto atualizado.',3,civil6TheoryBody(),'theory')}
  ${civil6ManualStep('deep6','Aprofundamento e jurisprudência','STJ 2026, actio nata e atualizações legislativas.',4,civil6DeepBody(),'deep')}
  ${civil6QuestionStep('cases6','Casos práticos','5 casos autorais identificados.',5)}
  ${civil6QuestionStep('final6','Bateria final FCC','15 questões reais após a teoria.',6)}
@@ -1679,7 +1679,7 @@ function renderCivilModule7(){
  <div class="civil-steps">
  ${civil7QuestionStep('diagnostic7','Diagnóstico FCC','10 questões reais antes da teoria.',1)}
  ${civil7ManualStep('reading7','Leitura orientada','CC 233 a 285, sem avançar à cessão de crédito.',2,civil7ReadingBody(),'reading')}
- ${civil7ManualStep('theory7','Teoria nuclear','Todas as modalidades com diferenças e efeitos.',3,civil7TheoryBody(),'theory')}
+ ${civil7ManualStep('theory7','Teoria completa','Todas as modalidades com diferenças e efeitos.',3,civil7TheoryBody(),'theory')}
  ${civil7ManualStep('deep7','Aprofundamento e jurisprudência','STJ 2026 e pegadinhas de solidariedade.',4,civil7DeepBody(),'deep')}
  ${civil7QuestionStep('cases7','Casos práticos','5 casos autorais identificados.',5)}
  ${civil7QuestionStep('final7','Bateria final FCC','15 questões reais após a teoria.',6)}
@@ -1870,7 +1870,7 @@ function renderCivilModule8(){
  <div class="civil-steps">
  ${civil8QuestionStep('diagnostic8','Diagnóstico FCC','10 questões reais antes da teoria.',1)}
  ${civil8ManualStep('reading8','Leitura orientada','CC 286 a 420, com atenção às alterações de 2024.',2,civil8ReadingBody(),'reading')}
- ${civil8ManualStep('theory8','Teoria nuclear','Transmissão, pagamento, extinção, mora, penal e arras.',3,civil8TheoryBody(),'theory')}
+ ${civil8ManualStep('theory8','Teoria completa','Transmissão, pagamento, extinção, mora, penal e arras.',3,civil8TheoryBody(),'theory')}
  ${civil8ManualStep('deep8','Aprofundamento e atualização','STJ 2026 + Lei 14.905/2024.',4,civil8DeepBody(),'deep')}
  ${civil8QuestionStep('cases8','Casos práticos','5 casos autorais para cobrir lacunas do banco real.',5)}
  ${civil8QuestionStep('final8','Bateria final FCC','15 questões reais após a teoria.',6)}
@@ -2083,7 +2083,7 @@ function renderCivilModule9(){
  <div class="civil-steps">
  ${civil9QuestionStep('diagnostic9','Diagnóstico FCC','10 questões reais antes da teoria.',1)}
  ${civil9ManualStep('reading9','Leitura orientada','Teoria geral + mapa completo dos contratos típicos.',2,civil9ReadingBody(),'reading')}
- ${civil9ManualStep('theory9','Teoria nuclear','Princípios, formação, extinção e contratos em espécie.',3,civil9TheoryBody(),'theory')}
+ ${civil9ManualStep('theory9','Teoria completa','Princípios, formação, extinção e contratos em espécie.',3,civil9TheoryBody(),'theory')}
  ${civil9ManualStep('deep9','Aprofundamento e jurisprudência','STJ 2025/2026 e pegadinhas de prova.',4,civil9DeepBody(),'deep')}
  ${civil9QuestionStep('cases9','Casos práticos','5 casos autorais para contratos pouco cobrados no caderno.',5)}
  ${civil9QuestionStep('final9','Bateria final FCC','15 questões reais após a teoria.',6)}
@@ -2293,7 +2293,7 @@ function renderCivilModule10(){
  <div class="civil-steps">
  ${civil10QuestionStep('diagnostic10','Diagnóstico FCC','10 questões reais antes da teoria.',1)}
  ${civil10ManualStep('reading10','Leitura orientada','CC 441-457 e 927-954, com artigo revogado sinalizado.',2,civil10ReadingBody(),'reading')}
- ${civil10ManualStep('theory10','Teoria nuclear','Garantias contratuais + sistema completo de responsabilidade civil.',3,civil10TheoryBody(),'theory')}
+ ${civil10ManualStep('theory10','Teoria completa','Garantias contratuais + sistema completo de responsabilidade civil.',3,civil10TheoryBody(),'theory')}
  ${civil10ManualStep('deep10','Aprofundamento e jurisprudência','STJ 2026, nexo causal, perda de chance e súmulas.',4,civil10DeepBody(),'deep')}
  ${civil10QuestionStep('cases10','Casos práticos','5 casos autorais identificados.',5)}
  ${civil10QuestionStep('final10','Bateria final FCC','15 questões reais após a teoria.',6)}
@@ -2547,7 +2547,7 @@ function renderCivilModule11(){
  <div class="civil-steps">
  ${civil11QuestionStep('diagnostic11','Diagnóstico FCC — lacunas do edital','10 questões reais FCC de LINDB, fatos, pagamento e preferências.',1)}
  ${civil11ManualStep('reading11','Leitura orientada','LINDB + CC 854-886, 955-965 e 2.028-2.046.',2,civil11ReadingBody(),'reading')}
- ${civil11ManualStep('theory11','Teoria nuclear','Preenchimento das lacunas identificadas na auditoria.',3,civil11TheoryBody(),'theory')}
+ ${civil11ManualStep('theory11','Teoria completa','Preenchimento das lacunas identificadas na auditoria.',3,civil11TheoryBody(),'theory')}
  ${civil11ManualStep('deep11','Aprofundamento e complementar','Pegadinhas + antigo conteúdo de Empresa preservado.',4,civil11DeepBody(),'deep')}
  ${civil11QuestionStep('cases11','Casos práticos','5 casos autorais direcionados ao edital.',5)}
  ${civil11QuestionStep('final11','Bateria final FCC','15 questões reais FCC de fechamento.',6)}
@@ -2768,7 +2768,7 @@ function renderCivilModule12(){
  <div class="civil-steps">
  ${civil12QuestionStep('diagnostic12','Diagnóstico FCC','10 questões reais, com prioridade para 2020-2026.',1)}
  ${civil12ManualStep('reading12','Leitura orientada','CC 1.196-1.224, sem avançar para propriedade.',2,civil12ReadingBody(),'reading')}
- ${civil12ManualStep('theory12','Teoria nuclear','Teorias, classificações, aquisição, proteção, efeitos e perda.',3,civil12TheoryBody(),'theory')}
+ ${civil12ManualStep('theory12','Teoria completa','Teorias, classificações, aquisição, proteção, efeitos e perda.',3,civil12TheoryBody(),'theory')}
  ${civil12ManualStep('deep12','Aprofundamento e jurisprudência','STJ 2020-2026, interversão, detenção e efeitos da boa/má-fé.',4,civil12DeepBody(),'deep')}
  ${civil12QuestionStep('cases12','Casos práticos','5 casos autorais identificados.',5)}
  ${civil12QuestionStep('final12','Bateria final FCC','15 questões FCC reais após a teoria.',6)}
@@ -2995,7 +2995,7 @@ function renderCivilModule13(){
  <div class="civil-steps">
  ${civil13QuestionStep('diagnostic13','Diagnóstico FCC','10 questões reais antes da teoria.',1)}
  ${civil13ManualStep('reading13','Leitura orientada','CC 1.225-1.368-B, com fronteiras do módulo sinalizadas.',2,civil13ReadingBody(),'reading')}
- ${civil13ManualStep('theory13','Teoria nuclear','Propriedade, usucapião, vizinhança, condomínio e fiduciária.',3,civil13TheoryBody(),'theory')}
+ ${civil13ManualStep('theory13','Teoria completa','Propriedade, usucapião, vizinhança, condomínio e fiduciária.',3,civil13TheoryBody(),'theory')}
  ${civil13ManualStep('deep13','Aprofundamento e jurisprudência','Tema 985, STJ 2026 e atualizações legislativas de condomínio.',4,civil13DeepBody(),'deep')}
  ${civil13QuestionStep('cases13','Casos práticos','5 casos autorais de nível Analista/Oficial.',5)}
  ${civil13QuestionStep('final13','Bateria final FCC','15 questões FCC reais após a teoria.',6)}
@@ -3304,7 +3304,7 @@ function renderCivilModule14(){
  <div class="civil-steps">
  ${civil14QuestionStep('diagnostic14','Diagnóstico FCC — legislação especial','10 questões reais FCC de CDC, LRP e Pessoa Idosa.',1)}
  ${civil14ManualStep('reading14','Leitura orientada','CDC + LRP + Pessoa Idosa + família residual + jurisprudência.',2,civil14ReadingBody(),'reading')}
- ${civil14ManualStep('theory14','Teoria nuclear','Fechamento sistemático dos itens especiais do edital.',3,civil14TheoryBody(),'theory')}
+ ${civil14ManualStep('theory14','Teoria completa','Fechamento sistemático dos itens especiais do edital.',3,civil14TheoryBody(),'theory')}
  ${civil14ManualStep('deep14','Aprofundamento e complementar','Checklist final + antigo conteúdo de direitos reais preservado.',4,civil14DeepBody(),'deep')}
  ${civil14QuestionStep('cases14','Casos práticos','5 casos autorais orientados ao edital.',5)}
  ${civil14QuestionStep('final14','Bateria final FCC','15 questões reais FCC, incluindo curatela/TDA.',6)}
@@ -3556,7 +3556,7 @@ function renderCivilModule15(){
  <div class="civil-steps">
  ${civil15QuestionStep('diagnostic15','Diagnóstico FCC','10 questões reais antes da teoria.',1)}
  ${civil15ManualStep('reading15','Leitura orientada','CC 1.511-1.727 + atualização constitucional e legislativa.',2,civil15ReadingBody(),'reading')}
- ${civil15ManualStep('theory15','Teoria nuclear','Família completa dentro do recorte do edital.',3,civil15TheoryBody(),'theory')}
+ ${civil15ManualStep('theory15','Teoria completa','Família completa dentro do recorte do edital.',3,civil15TheoryBody(),'theory')}
  ${civil15ManualStep('deep15','Aprofundamento e jurisprudência','STF/STJ e alterações legislativas que mudam a leitura do Código.',4,civil15DeepBody(),'deep')}
  ${civil15QuestionStep('cases15','Casos práticos','5 casos autorais de nível Analista/Oficial.',5)}
  ${civil15QuestionStep('final15','Bateria final FCC','15 questões FCC reais após a teoria.',6)}
@@ -3827,7 +3827,7 @@ function renderCivilModule16(){
  <div class="civil-steps">
  ${civil16QuestionStep('diagnostic16','Diagnóstico FCC','10 questões reais antes da teoria.',1)}
  ${civil16ManualStep('reading16','Leitura orientada','CC Livro V + CPC do inventário + atualização CNJ.',2,civil16ReadingBody(),'reading')}
- ${civil16ManualStep('theory16','Teoria nuclear','Sucessões do início da saisine até a partilha.',3,civil16TheoryBody(),'theory')}
+ ${civil16ManualStep('theory16','Teoria completa','Sucessões do início da saisine até a partilha.',3,civil16TheoryBody(),'theory')}
  ${civil16ManualStep('deep16','Aprofundamento e jurisprudência','STF/STJ, Lei 14.661/2023 e CNJ 571/2024.',4,civil16DeepBody(),'deep')}
  ${civil16QuestionStep('cases16','Casos práticos','5 casos autorais de nível Analista/Oficial.',5)}
  ${civil16QuestionStep('final16','Bateria final FCC','15 questões FCC reais após a teoria.',6)}
@@ -3835,11 +3835,25 @@ function renderCivilModule16(){
  </div>`
 }
 
+function civilModuleNoteKey(moduleId){return `central-v6:civil-note:${moduleId}`}
+function civilStandardFooter(moduleId){
+ const key=civilModuleNoteKey(moduleId);
+ return `<section class="civil-step civil-standard-footer" style="margin-top:14px">
+  <div class="civil-step-body" style="display:block">
+   <div class="cf-resource-grid">
+    <div class="cf-resource-box"><h4>Decorando a Lei</h4><button class="civil-btn" onclick="openEmbeddedTool('decorando',{},this)">Abrir Decorando a Lei</button></div>
+    <div class="cf-resource-box"><h4>Vade Mecum</h4><button class="civil-btn" onclick="openEmbeddedTool('vade',{},this)">Abrir Vade Mecum</button></div>
+    <div class="cf-resource-box"><h4>Cadernos TEC</h4><button class="civil-btn" onclick="centralSidebarAction('tec-cadernos',this)">Abrir meus cadernos</button></div>
+    <div class="cf-resource-box" style="grid-column:1/-1"><h4>Anotações do módulo</h4><textarea id="civil-note-${moduleId}" placeholder="Regra, dúvida ou observação do módulo..." oninput="localStorage.setItem('${key}',this.value)">${esc(localStorage.getItem(key)||'')}</textarea></div>
+   </div>
+  </div>
+ </section>`
+}
 function renderCivilMaster(){
  const cs=civilCourseStats();
  return `<div class="civil-master"><div class="civil-master-intro"><div><span class="eyebrow">Curso avançado • Direito Civil</span><h3>16 módulos, construídos um por vez</h3><p>Todos os 16 módulos estão completos. Banco do curso: <b>400 questões reais</b> + <b>80 casos autorais</b>, com revisão automática de erros por módulo.</p></div><div class="civil-target"><span>Foco de nível</span><b>Analista / Oficial de Justiça</b></div></div>
  <div class="civil-edital-coverage"><div class="coverage-number">100%</div><div class="coverage-text"><b>92/92 itens textuais do edital mapeados no curso</b><span class="muted small">A versão anterior tinha lacunas em LINDB, fatos jurídicos, atos unilaterais, preferências, tutela/curatela/TDA, legislação especial e fechamento jurisprudencial. Esses pontos agora estão integrados aos 16 módulos. Jurisprudência continua sendo matéria dinâmica e deve ser atualizada perto da prova.</span></div><div class="coverage-legend"><span class="civil-scope-badge edital">EDITAL</span><span class="civil-scope-badge mix">EDITAL + COMPLEMENTAR</span></div></div>
- ${CIVIL_COURSE.modules.map(m=>{const active=m.status==='active',pct=active?civilModulePct(m.id):0,open=active&&localStorage.getItem(civilModuleOpenKey(m.id))==='1';return `<section class="civil-module ${open?'open':''}" data-civil="${m.id}"><button class="civil-module-head" ${active?`onclick="toggleCivilModule('${m.id}')"`:'disabled'}><span class="civil-module-num">MÓD. ${String(m.num).padStart(2,'0')}</span><span class="civil-module-title"><b>${esc(m.title)}</b><small>${esc(m.subtitle)}</small></span><span class="civil-module-state">${active?`<span>8 etapas</span><b class="civil-pct">${pct}%</b>`:'<span class="civil-planned">PLANEJADO</span>'}</span><span>${active?'⌄':''}</span></button>${active?`<div class="civil-module-body">${m.id==='m1'?renderCivilModule1():m.id==='m2'?renderCivilModule2():m.id==='m3'?renderCivilModule3():m.id==='m4'?renderCivilModule4():m.id==='m5'?renderCivilModule5():m.id==='m6'?renderCivilModule6():m.id==='m7'?renderCivilModule7():m.id==='m8'?renderCivilModule8():m.id==='m9'?renderCivilModule9():m.id==='m10'?renderCivilModule10():m.id==='m11'?renderCivilModule11():m.id==='m12'?renderCivilModule12():m.id==='m13'?renderCivilModule13():m.id==='m14'?renderCivilModule14():m.id==='m15'?renderCivilModule15():m.id==='m16'?renderCivilModule16():''}</div>`:''}</section>`}).join('')}</div>`
+ ${CIVIL_COURSE.modules.map(m=>{const active=m.status==='active',pct=active?civilModulePct(m.id):0,open=active&&localStorage.getItem(civilModuleOpenKey(m.id))==='1';return `<section class="civil-module ${open?'open':''}" data-civil="${m.id}"><button class="civil-module-head" ${active?`onclick="toggleCivilModule('${m.id}')"`:'disabled'}><span class="civil-module-num">MÓD. ${String(m.num).padStart(2,'0')}</span><span class="civil-module-title"><b>${esc(m.title)}</b><small>${esc(m.subtitle)}</small></span><span class="civil-module-state">${active?`<span>8 etapas</span><b class="civil-pct">${pct}%</b>`:'<span class="civil-planned">PLANEJADO</span>'}</span><span>${active?'⌄':''}</span></button>${active?`<div class="civil-module-body">${m.id==='m1'?renderCivilModule1():m.id==='m2'?renderCivilModule2():m.id==='m3'?renderCivilModule3():m.id==='m4'?renderCivilModule4():m.id==='m5'?renderCivilModule5():m.id==='m6'?renderCivilModule6():m.id==='m7'?renderCivilModule7():m.id==='m8'?renderCivilModule8():m.id==='m9'?renderCivilModule9():m.id==='m10'?renderCivilModule10():m.id==='m11'?renderCivilModule11():m.id==='m12'?renderCivilModule12():m.id==='m13'?renderCivilModule13():m.id==='m14'?renderCivilModule14():m.id==='m15'?renderCivilModule15():m.id==='m16'?renderCivilModule16():''}${civilStandardFooter(m.id)}</div>`:''}</section>`}).join('')}</div>`
 }
 
 
@@ -3931,12 +3945,7 @@ function cfStep(n,title,desc,done,body){
 }
 function renderConstitutionalMaster(){
  const st=cfStats(),real=CF_QUESTIONS.filter(q=>q.real!==false).length,ined=CF_QUESTIONS.length-real;
- return `<div class="cf-master-tools">
-   <button onclick="renderCfErrorPanel()">⚠ Erros ${st.wrongIds.length?`(${st.wrongIds.length})`:''}</button>
-   <button onclick="exportCfProgress()">💾 Backup</button>
-   <button onclick="document.getElementById('cf-import-file').click()">↥ Restaurar</button>
-   <input class="cf-file" id="cf-import-file" type="file" accept=".json,application/json" onchange="importCfProgress(this)">
- </div>
+ return `<div class="cf-master-tools"><button onclick="renderCfErrorPanel()">⚠ Erros ${st.wrongIds.length?`(${st.wrongIds.length})`:''}</button></div>
  <div class="cf-metrics">
    <div class="cf-metric"><small>Banco do curso</small><b>${CF_QUESTIONS.length}</b></div>
    <div class="cf-metric"><small>Respondidas</small><b>${st.answered}</b></div>
@@ -3946,6 +3955,23 @@ function renderConstitutionalMaster(){
  <div id="cf-session-host"></div>
  <div id="cf-errors-host"></div>
  <div class="cf-modules">${CF_WEEKS.map(renderCfModule).join('')}</div>`;
+}
+function renderBaseModuleRounds(key){
+ const k='central-v6:module-rounds:'+key;let data=[];try{data=JSON.parse(localStorage.getItem(k)||'[]')}catch(_){}
+ while(data.length<3)data.push({done:'',correct:''});
+ const safe=esc(key);
+ return '<section class="bc-module-rounds" data-bc-round-key="'+safe+'" style="grid-column:1/-1;border:1px solid var(--line);border-radius:8px;padding:10px;background:var(--bg)"><h4 style="margin:0 0 8px">Questões feitas por rodadas</h4><div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px">'+data.slice(0,3).map((r,i)=>'<div style="border:1px solid var(--line);border-radius:7px;padding:8px"><b>Rodada '+(i+1)+'</b><div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:6px"><label>Feitas<input type="number" min="0" data-round-index="'+i+'" data-round-field="done" value="'+esc(r.done||'')+'" onchange="saveBaseModuleRound(this)" style="width:100%;box-sizing:border-box"></label><label>Certas<input type="number" min="0" data-round-index="'+i+'" data-round-field="correct" value="'+esc(r.correct||'')+'" onchange="saveBaseModuleRound(this)" style="width:100%;box-sizing:border-box"></label></div></div>').join('')+'</div></section>';
+}
+function saveBaseModuleRound(input){
+ const host=input.closest('[data-bc-round-key]');if(!host)return;
+ const key=host.dataset.bcRoundKey,index=Number(input.dataset.roundIndex),field=input.dataset.roundField,next=String(input.value||'').trim();
+ const k='central-v6:module-rounds:'+key;let data=[];try{data=JSON.parse(localStorage.getItem(k)||'[]')}catch(_){}
+ while(data.length<3)data.push({done:'',correct:''});
+ const row=data[index]||{done:'',correct:''};
+ if(next!==''&&!/^\d+$/.test(next)){alert('Informe uma quantidade inteira válida.');input.value=row[field]||'';return}
+ if(field==='correct'&&next!==''&&row.done!==''&&Number(next)>Number(row.done)){alert('A quantidade de acertos não pode superar as questões feitas.');input.value=row[field]||'';return}
+ if(field==='done'&&next!==''&&row.correct!==''&&Number(row.correct)>Number(next)){alert('A quantidade feita não pode ser menor que os acertos registrados.');input.value=row[field]||'';return}
+ row[field]=next;data[index]=row;localStorage.setItem(k,JSON.stringify(data));
 }
 function renderCfModule(w){
  const ws=cfWeekState(w.id),pct=cfWeekPct(w),pool=cfPool(w),real=pool.filter(q=>q.real!==false),ined=pool.filter(q=>q.real===false),errors=cfModuleErrors(w);
@@ -3959,21 +3985,23 @@ function renderCfModule(w){
    <div class="cf-module-body">
      <div class="cf-module-bar"><span style="width:${pct}%"></span></div>
      <div class="cf-subtitle">${esc(w.subtitle)}</div>
-     <details class="cf-syllabus"><summary>Matriz do edital • ${w.outline.length} pontos</summary><div class="cf-micro-grid">${w.outline.map(x=>`<span class="cf-micro">${esc(x)}</span>`).join('')}</div></details>
      <div class="cf-steps">
        ${cfStep(1,'Diagnóstico','Questões FCC antes da teoria.',ws.diagnostic,real.length?`<button class="cf-btn primary" onclick="startCfQuiz('${w.id}','diagnostic',${diag})">${ws.diagnostic?'Refazer diagnóstico':'Começar '+diag+' FCC'}</button>`:`<span class="muted small">Sem questões reais suficientes.</span>`)}
-       ${cfStep(2,'Leitura orientada','Dispositivos e pontos para observar na Constituição.',ws.reading,`<div class="cf-reading"><strong>${esc(w.read)}</strong><ul>${w.read_focus.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div><div class="cf-actions"><button class="cf-btn primary" onclick="openLeiSecaEnxuta(null,'cf','cf-m${String(w.num).padStart(2,'0')}')">📖 Decorando deste módulo</button><button class="cf-btn" onclick="openVadeMecum(null,'cf')">Abrir Vade Mecum</button><button class="cf-btn ${ws.reading?'good':''}" onclick="cfUpdateWeek('${w.id}',{reading:${!ws.reading}})">${ws.reading?'✓ Concluída':'Marcar concluída'}</button></div>`)}
-       ${cfStep(3,'Teoria nuclear','Base completa antes da segunda bateria.',ws.theory,`<div class="cf-theory-grid">${w.theory.map((t,i)=>`<details class="cf-theory" ${i===0?'open':''}><summary>${esc(t[0])}</summary><div class="cf-theory-text">${esc(t[1])}</div></details>`).join('')}</div><div class="cf-actions"><button class="cf-btn ${ws.theory?'good':''}" onclick="cfUpdateWeek('${w.id}',{theory:${!ws.theory}})">${ws.theory?'✓ Teoria concluída':'Marcar teoria concluída'}</button></div>`)}
+       ${cfStep(2,'Leitura orientada','Dispositivos e pontos para observar na Constituição.',ws.reading,`<div class="cf-reading"><strong>${esc(w.read)}</strong><ul>${w.read_focus.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div><div class="cf-actions"><button class="cf-btn primary" onclick="openLeiSecaEnxuta(null,'cf','cf-m${String(w.num).padStart(2,'0')}')">📖 Decorando deste módulo</button><button class="cf-btn ${ws.reading?'good':''}" onclick="cfUpdateWeek('${w.id}',{reading:${!ws.reading}})">${ws.reading?'✓ Concluída':'Marcar concluída'}</button></div>`)}
+       ${cfStep(3,'Teoria completa','Base completa antes da segunda bateria.',ws.theory,`<div class="cf-theory-grid">${w.theory.map((t,i)=>`<details class="cf-theory" ${i===0?'open':''}><summary>${esc(t[0])}</summary><div class="cf-theory-text">${esc(t[1])}</div></details>`).join('')}</div><div class="cf-actions"><button class="cf-btn ${ws.theory?'good':''}" onclick="cfUpdateWeek('${w.id}',{theory:${!ws.theory}})">${ws.theory?'✓ Teoria concluída':'Marcar teoria concluída'}</button></div>`)}
        ${cfStep(4,'Questões intermediárias','Bateria curta depois da teoria.',ws.intermediate,real.length?`<button class="cf-btn primary" onclick="startCfQuiz('${w.id}','intermediate',${inter})">${ws.intermediate?'Refazer '+inter+' FCC':'Fazer '+inter+' FCC'}</button>`:`<span class="muted small">Sem fila real suficiente.</span>`)}
        ${cfStep(5,'Aprofundamento FCC','Distinções, exceções e pegadinhas de nível mais alto.',ws.deep,`<div class="cf-advanced-grid">${w.advanced.map(t=>`<div class="cf-advanced"><b>${esc(t[0])}</b><div>${esc(t[1])}</div></div>`).join('')}</div><div class="cf-actions"><button class="cf-btn ${ws.deep?'good':''}" onclick="cfUpdateWeek('${w.id}',{deep:${!ws.deep}})">${ws.deep?'✓ Aprofundamento concluído':'Marcar aprofundamento concluído'}</button></div>`)}
        ${cfStep(6,'Bateria final FCC','Misture literalidade, exceções e casos concretos.',ws.fixation,`<div class="cf-actions">${real.length?`<button class="cf-btn primary" onclick="startCfQuiz('${w.id}','fixation',${finalN})">FCC real • ${finalN}</button>${extra>finalN?`<button class="cf-btn" onclick="startCfQuiz('${w.id}','extra',${extra})">FCC extra • ${extra}</button>`:''}`:''}${ined.length?`<button class="cf-btn" onclick="startCfQuiz('${w.id}','coverage',${Math.min(15,ined.length)})">Cobertura inédita • ${Math.min(15,ined.length)}</button>`:''}</div><div class="cf-coverage">${real.length} questões FCC reais + ${ined.length} inéditas neste módulo.</div>`)}
        ${cfStep(7,'Revisão de erros',errors.length?`${errors.length} erro(s) pendente(s) neste módulo.`:'Nenhum erro pendente.',errors.length===0,errors.length?`<button class="cf-btn bad" onclick="startCfQuiz('${w.id}','errors',999)">Refazer ${errors.length} erro(s)</button>`:`<span class="muted small">A fila fica vazia quando a questão é acertada novamente.</span>`)}
      </div>
-     <details class="cf-resources"><summary class="muted small" style="cursor:pointer">Recursos do módulo • TEC/QC, Anki e anotações</summary>
+     <details class="cf-resources" open><summary class="muted small" style="cursor:pointer">Recursos do módulo</summary>
        <div class="cf-resource-grid" style="margin-top:8px">
-         <div class="cf-resource-box"><h4>Questões externas</h4><div class="cf-actions">${tecAuto}${r.tec?`<button class="cf-btn" onclick="openCfResource('${w.id}','tec')">TEC personalizado ↗</button>`:(tecAuto?'':`<button class="cf-btn" onclick="openCfResource('${w.id}','tec')">+ TEC</button>`)}<button class="cf-btn" onclick="openCfResource('${w.id}','qc')">${r.qc?'Abrir QC':'+ QC'}</button></div></div>
+         <div class="cf-resource-box"><h4>Filtro do TEC</h4><div class="cf-actions">${tecAuto}${r.tec?`<button class="cf-btn" onclick="openCfResource('${w.id}','tec')">TEC personalizado ↗</button>`:(tecAuto?'':`<button class="cf-btn" onclick="openCfResource('${w.id}','tec')">+ TEC</button>`)}<button class="cf-btn" onclick="openCfResource('${w.id}','qc')">${r.qc?'Abrir QC':'+ QC'}</button></div></div>
          <div class="cf-resource-box"><h4>Decorando a Lei</h4><button class="cf-btn" onclick="openLeiSecaEnxuta(null,'cf','cf-m${String(w.num).padStart(2,'0')}')">Abrir artigos deste módulo</button></div>
-         <div class="cf-resource-box" style="grid-column:1/-1"><h4>Anotação</h4><textarea class="cf-notes" id="cf-note-${w.id}" placeholder="Regra, artigo, pegadinha ou dúvida...">${esc(localStorage.getItem(cfNoteKey(w.id))||'')}</textarea><div class="cf-actions"><button class="cf-btn" onclick="saveCfNote('${w.id}')">Salvar anotação</button></div></div>
+         <div class="cf-resource-box"><h4>Vade Mecum</h4><button class="cf-btn" onclick="openEmbeddedTool('vade',{},this)">Abrir Vade Mecum</button></div>
+         <div class="cf-resource-box"><h4>Cadernos TEC</h4><button class="cf-btn" onclick="centralSidebarAction('tec-cadernos',this)">Abrir meus cadernos do TEC</button></div>
+         <div class="cf-resource-box" style="grid-column:1/-1"><h4>Anotações do módulo</h4><textarea class="cf-notes" id="cf-note-${w.id}" placeholder="Regra, artigo, pegadinha ou dúvida...">${esc(localStorage.getItem(cfNoteKey(w.id))||'')}</textarea><div class="cf-actions"><button class="cf-btn" onclick="saveCfNote('${w.id}')">Salvar anotação</button></div></div>
+         ${renderBaseModuleRounds("cf:"+w.id)}
        </div>
      </details>
    </div>
@@ -4154,17 +4182,7 @@ function penalStep(n,title,desc,done,body){
 }
 function renderPenalMaster(){
  const st=penalStats(),real=PENAL_QUESTIONS.filter(q=>q.real!==false).length,ined=PENAL_QUESTIONS.length-real;
- return `<div class="cf-master-tools">
-   <button onclick="renderPenalErrorPanel()">⚠ Erros ${st.wrongIds.length?`(${st.wrongIds.length})`:''}</button>
-   <button onclick="exportPenalProgress()">💾 Backup</button>
-   <button onclick="document.getElementById('penal-import-file').click()">↥ Restaurar</button>
-   <input class="cf-file" id="penal-import-file" type="file" accept=".json,application/json" onchange="importPenalProgress(this)">
- </div>
- <div class="cf-resource-box" style="margin:12px 0 14px;border-color:#315c54;background:linear-gradient(135deg,rgba(49,92,84,.14),rgba(49,92,84,.04))">
-   <h4 style="margin:0 0 6px">Decorando Penal atualizado</h4>
-   <div class="muted small" style="margin-bottom:10px"><b style="color:inherit">1.763 questões únicas</b> organizadas por assunto e artigo do Código Penal, incluindo 1.674 questões novas do PDF auditado.</div>
-   <div class="cf-actions"><button class="cf-btn primary" onclick="openLeiSecaEnxuta(null,'penal')">Abrir as 1.763 questões</button></div>
- </div>
+ return `<div class="cf-master-tools"><button onclick="renderPenalErrorPanel()">⚠ Erros ${st.wrongIds.length?`(${st.wrongIds.length})`:''}</button></div>
  <div class="cf-metrics">
    <div class="cf-metric"><small>Banco do curso</small><b>${PENAL_QUESTIONS.length}</b></div>
    <div class="cf-metric"><small>Respondidas</small><b>${st.answered}</b></div>
@@ -4187,21 +4205,23 @@ function renderPenalModule(w){
    <div class="cf-module-body">
      <div class="cf-module-bar"><span style="width:${pct}%"></span></div>
      <div class="cf-subtitle">${esc(w.subtitle)}</div>
-     <details class="cf-syllabus"><summary>Matriz do edital • ${w.outline.length} pontos</summary><div class="cf-micro-grid">${w.outline.map(x=>`<span class="cf-micro">${esc(x)}</span>`).join('')}</div></details>
      <div class="cf-steps">
        ${penalStep(1,'Diagnóstico','Questões FCC antes da teoria.',ws.diagnostic,real.length?`<button class="cf-btn primary" onclick="startPenalQuiz('${w.id}','diagnostic',${diag})">${ws.diagnostic?'Refazer diagnóstico':'Começar '+diag+' FCC'}</button>`:`<span class="muted small">Sem questões reais suficientes.</span>`)}
-       ${penalStep(2,'Leitura orientada','Dispositivos e pontos para observar na legislação penal.',ws.reading,`<div class="cf-reading"><strong>${esc(w.read)}</strong><ul>${w.read_focus.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div><div class="cf-actions"><button class="cf-btn primary" onclick="openLeiSecaEnxuta(null,'penal','${w.editalModule}')">📖 Decorando deste módulo</button><button class="cf-btn" onclick="openVadeMecum(null,'cp')">Abrir Vade Mecum Penal</button><button class="cf-btn ${ws.reading?'good':''}" onclick="penalUpdateWeek('${w.id}',{reading:${!ws.reading}})">${ws.reading?'✓ Concluída':'Marcar concluída'}</button></div>`)}
-       ${penalStep(3,'Teoria nuclear','Base completa antes da segunda bateria.',ws.theory,`<div class="cf-theory-grid">${w.theory.map((t,i)=>`<details class="cf-theory" ${i===0?'open':''}><summary>${esc(t[0])}</summary><div class="cf-theory-text">${esc(t[1])}</div></details>`).join('')}</div><div class="cf-actions"><button class="cf-btn ${ws.theory?'good':''}" onclick="penalUpdateWeek('${w.id}',{theory:${!ws.theory}})">${ws.theory?'✓ Teoria concluída':'Marcar teoria concluída'}</button></div>`)}
+       ${penalStep(2,'Leitura orientada','Dispositivos e pontos para observar na legislação penal.',ws.reading,`<div class="cf-reading"><strong>${esc(w.read)}</strong><ul>${w.read_focus.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div><div class="cf-actions"><button class="cf-btn primary" onclick="openLeiSecaEnxuta(null,'penal','${w.editalModule}')">📖 Decorando deste módulo</button><button class="cf-btn ${ws.reading?'good':''}" onclick="penalUpdateWeek('${w.id}',{reading:${!ws.reading}})">${ws.reading?'✓ Concluída':'Marcar concluída'}</button></div>`)}
+       ${penalStep(3,'Teoria completa','Base completa antes da segunda bateria.',ws.theory,`<div class="cf-theory-grid">${w.theory.map((t,i)=>`<details class="cf-theory" ${i===0?'open':''}><summary>${esc(t[0])}</summary><div class="cf-theory-text">${esc(t[1])}</div></details>`).join('')}</div><div class="cf-actions"><button class="cf-btn ${ws.theory?'good':''}" onclick="penalUpdateWeek('${w.id}',{theory:${!ws.theory}})">${ws.theory?'✓ Teoria concluída':'Marcar teoria concluída'}</button></div>`)}
        ${penalStep(4,'Questões intermediárias','Bateria curta depois da teoria.',ws.intermediate,real.length?`<button class="cf-btn primary" onclick="startPenalQuiz('${w.id}','intermediate',${inter})">${ws.intermediate?'Refazer '+inter+' FCC':'Fazer '+inter+' FCC'}</button>`:`<span class="muted small">Sem fila real suficiente.</span>`)}
        ${penalStep(5,'Aprofundamento FCC','Distinções, exceções e pegadinhas de nível mais alto.',ws.deep,`<div class="cf-advanced-grid">${w.advanced.map(t=>`<div class="cf-advanced"><b>${esc(t[0])}</b><div>${esc(t[1])}</div></div>`).join('')}</div><div class="cf-actions"><button class="cf-btn ${ws.deep?'good':''}" onclick="penalUpdateWeek('${w.id}',{deep:${!ws.deep}})">${ws.deep?'✓ Aprofundamento concluído':'Marcar aprofundamento concluído'}</button></div>`)}
        ${penalStep(6,'Bateria final FCC','Misture literalidade, exceções e casos concretos.',ws.fixation,`<div class="cf-actions">${real.length?`<button class="cf-btn primary" onclick="startPenalQuiz('${w.id}','fixation',${finalN})">FCC real • ${finalN}</button>${extra>finalN?`<button class="cf-btn" onclick="startPenalQuiz('${w.id}','extra',${extra})">Banco completo • ${extra}</button>`:''}`:''}${ined.length?`<button class="cf-btn" onclick="startPenalQuiz('${w.id}','coverage',${Math.min(15,ined.length)})">Cobertura inédita • ${Math.min(15,ined.length)}</button>`:''}</div><div class="cf-coverage">${real.length} questões FCC reais + ${ined.length} autorais neste módulo.</div>`)}
        ${penalStep(7,'Revisão de erros',errors.length?`${errors.length} erro(s) pendente(s) neste módulo.`:'Nenhum erro pendente.',errors.length===0,errors.length?`<button class="cf-btn bad" onclick="startPenalQuiz('${w.id}','errors',999)">Refazer ${errors.length} erro(s)</button>`:`<span class="muted small">A fila fica vazia quando a questão é acertada novamente.</span>`)}
      </div>
-     <details class="cf-resources"><summary class="muted small" style="cursor:pointer">Recursos do módulo • TEC/QC, Anki e anotações</summary>
+     <details class="cf-resources" open><summary class="muted small" style="cursor:pointer">Recursos do módulo</summary>
        <div class="cf-resource-grid" style="margin-top:8px">
-         <div class="cf-resource-box"><h4>Questões externas</h4><div class="cf-actions">${tecAuto}${r.tec?`<button class="cf-btn" onclick="openPenalResource('${w.id}','tec')">TEC personalizado ↗</button>`:(tecAuto?'':`<button class="cf-btn" onclick="openPenalResource('${w.id}','tec')">+ TEC</button>`)}<button class="cf-btn" onclick="openPenalResource('${w.id}','qc')">${r.qc?'Abrir QC':'+ QC'}</button></div></div>
+         <div class="cf-resource-box"><h4>Filtro do TEC</h4><div class="cf-actions">${tecAuto}${r.tec?`<button class="cf-btn" onclick="openPenalResource('${w.id}','tec')">TEC personalizado ↗</button>`:(tecAuto?'':`<button class="cf-btn" onclick="openPenalResource('${w.id}','tec')">+ TEC</button>`)}<button class="cf-btn" onclick="openPenalResource('${w.id}','qc')">${r.qc?'Abrir QC':'+ QC'}</button></div></div>
          <div class="cf-resource-box"><h4>Decorando a Lei</h4><button class="cf-btn" onclick="openLeiSecaEnxuta(null,'penal','${w.editalModule}')">Abrir artigos deste módulo</button></div>
-         <div class="cf-resource-box" style="grid-column:1/-1"><h4>Anotação</h4><textarea class="cf-notes" id="cf-note-${w.id}" placeholder="Regra, artigo, pegadinha ou dúvida...">${esc(localStorage.getItem(penalNoteKey(w.id))||'')}</textarea><div class="cf-actions"><button class="cf-btn" onclick="savePenalNote('${w.id}')">Salvar anotação</button></div></div>
+         <div class="cf-resource-box"><h4>Vade Mecum</h4><button class="cf-btn" onclick="openEmbeddedTool('vade',{},this)">Abrir Vade Mecum</button></div>
+         <div class="cf-resource-box"><h4>Cadernos TEC</h4><button class="cf-btn" onclick="centralSidebarAction('tec-cadernos',this)">Abrir meus cadernos do TEC</button></div>
+         <div class="cf-resource-box" style="grid-column:1/-1"><h4>Anotações do módulo</h4><textarea class="cf-notes" id="cf-note-${w.id}" placeholder="Regra, artigo, pegadinha ou dúvida...">${esc(localStorage.getItem(penalNoteKey(w.id))||'')}</textarea><div class="cf-actions"><button class="cf-btn" onclick="savePenalNote('${w.id}')">Salvar anotação</button></div></div>
+         ${renderBaseModuleRounds("penal:"+w.id)}
        </div>
      </details>
    </div>
@@ -4375,12 +4395,7 @@ function cpcStep(n,title,desc,done,body){
 }
 function renderCpcMaster(){
  const st=cpcStats(),real=CPC_QUESTIONS.filter(q=>q.real!==false).length,ined=CPC_QUESTIONS.length-real;
- return `<div class="cf-master-tools">
-   <button onclick="renderCpcErrorPanel()">⚠ Erros ${st.wrongIds.length?`(${st.wrongIds.length})`:''}</button>
-   <button onclick="exportCpcProgress()">💾 Backup</button>
-   <button onclick="document.getElementById('cpc-import-file').click()">↥ Restaurar</button>
-   <input class="cf-file" id="cpc-import-file" type="file" accept=".json,application/json" onchange="importCpcProgress(this)">
- </div>
+ return `<div class="cf-master-tools"><button onclick="renderCpcErrorPanel()">⚠ Erros ${st.wrongIds.length?`(${st.wrongIds.length})`:''}</button></div>
  <div class="cf-metrics">
    <div class="cf-metric"><small>Banco do curso</small><b>${CPC_QUESTIONS.length}</b></div>
    <div class="cf-metric"><small>Respondidas</small><b>${st.answered}</b></div>
@@ -4407,22 +4422,24 @@ function renderCpcModule(w){
    <div class="cf-module-body">
      <div class="cf-module-bar"><span style="width:${pct}%"></span></div>
      <div class="cf-subtitle">${esc(w.subtitle)}</div>
-     <details class="cf-syllabus"><summary>Matriz do edital • ${w.outline.length} pontos</summary><div class="cf-micro-grid">${w.outline.map(x=>`<span class="cf-micro">${esc(x)}</span>`).join('')}</div></details>
      ${w.questionGaps?.length?`<aside class="cpc-coverage-warning"><div class="cpc-warning-title">⚠ Complementação externa de questões</div><p>O banco FCC local não cobre suficientemente: <b>${w.questionGaps.map(esc).join("; ")}</b>.</p><p>A teoria e a leitura esquematizada abaixo cobrem todo o conteúdo. Faça questões adicionais desses pontos no TEC ou QConcursos.</p></aside>`:``}
      <div class="cf-steps">
        ${cpcStep(1,'Diagnóstico','Questões FCC antes da teoria.',ws.diagnostic,real.length?`<button class="cf-btn primary" onclick="startCpcQuiz('${w.id}','diagnostic',${diag})">${ws.diagnostic?'Refazer diagnóstico':'Começar '+diag+' FCC'}</button>`:`<span class="muted small">Sem questões reais suficientes.</span>`)}
-       ${cpcStep(2,'Leitura orientada','Dispositivos e pontos para observar na legislação processual civil.',ws.reading,`<div class="cf-reading"><strong>${esc(w.read)}</strong><ul>${w.read_focus.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div>${(w.lawScheme||[]).length?`<div class="cpc-law-heading"><b>Lei seca esquematizada</b><span>${w.lawScheme.length} blocos de leitura</span></div><div class="cpc-law-grid">${w.lawScheme.map((item,i)=>`<article class="cpc-law-card"><div class="cpc-law-kicker">BLOCO ${i+1}</div><h4>${esc(item.title)}</h4><strong>${esc(item.articles)}</strong><ul>${item.checkpoints.map(point=>`<li>${esc(point)}</li>`).join('')}</ul></article>`).join('')}</div>`:``}<div class="cf-actions">${cpcDecorandoButton(w)}<button class="cf-btn" onclick="openVadeMecum(null,'cpc')">Abrir Vade Mecum CPC</button><button class="cf-btn ${ws.reading?'good':''}" onclick="cpcUpdateWeek('${w.id}',{reading:${!ws.reading}})">${ws.reading?'✓ Concluída':'Marcar concluída'}</button></div>`)}
-       ${cpcStep(3,'Teoria nuclear','Base completa antes da segunda bateria.',ws.theory,`<div class="cf-theory-grid">${w.theory.map((t,i)=>`<details class="cf-theory" ${i===0?'open':''}><summary>${esc(t[0])}</summary><div class="cf-theory-text">${esc(t[1])}</div></details>`).join('')}</div><div class="cf-actions"><button class="cf-btn ${ws.theory?'good':''}" onclick="cpcUpdateWeek('${w.id}',{theory:${!ws.theory}})">${ws.theory?'✓ Teoria concluída':'Marcar teoria concluída'}</button></div>`)}
+       ${cpcStep(2,'Leitura orientada','Dispositivos e pontos para observar na legislação processual civil.',ws.reading,`<div class="cf-reading"><strong>${esc(w.read)}</strong><ul>${w.read_focus.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div>${(w.lawScheme||[]).length?`<div class="cpc-law-heading"><b>Lei seca esquematizada</b><span>${w.lawScheme.length} blocos de leitura</span></div><div class="cpc-law-grid">${w.lawScheme.map((item,i)=>`<article class="cpc-law-card"><div class="cpc-law-kicker">BLOCO ${i+1}</div><h4>${esc(item.title)}</h4><strong>${esc(item.articles)}</strong><ul>${item.checkpoints.map(point=>`<li>${esc(point)}</li>`).join('')}</ul></article>`).join('')}</div>`:``}<div class="cf-actions">${cpcDecorandoButton(w)}<button class="cf-btn ${ws.reading?'good':''}" onclick="cpcUpdateWeek('${w.id}',{reading:${!ws.reading}})">${ws.reading?'✓ Concluída':'Marcar concluída'}</button></div>`)}
+       ${cpcStep(3,'Teoria completa','Base completa antes da segunda bateria.',ws.theory,`<div class="cf-theory-grid">${w.theory.map((t,i)=>`<details class="cf-theory" ${i===0?'open':''}><summary>${esc(t[0])}</summary><div class="cf-theory-text">${esc(t[1])}</div></details>`).join('')}</div><div class="cf-actions"><button class="cf-btn ${ws.theory?'good':''}" onclick="cpcUpdateWeek('${w.id}',{theory:${!ws.theory}})">${ws.theory?'✓ Teoria concluída':'Marcar teoria concluída'}</button></div>`)}
        ${cpcStep(4,'Questões intermediárias','Bateria curta depois da teoria.',ws.intermediate,real.length?`<button class="cf-btn primary" onclick="startCpcQuiz('${w.id}','intermediate',${inter})">${ws.intermediate?'Refazer '+inter+' FCC':'Fazer '+inter+' FCC'}</button>`:`<span class="muted small">Sem fila real suficiente.</span>`)}
        ${cpcStep(5,'Aprofundamento FCC','Distinções, exceções e pegadinhas de nível mais alto.',ws.deep,`<div class="cf-advanced-grid">${w.advanced.map(t=>`<div class="cf-advanced"><b>${esc(t[0])}</b><div>${esc(t[1])}</div></div>`).join('')}</div><div class="cf-actions"><button class="cf-btn ${ws.deep?'good':''}" onclick="cpcUpdateWeek('${w.id}',{deep:${!ws.deep}})">${ws.deep?'✓ Aprofundamento concluído':'Marcar aprofundamento concluído'}</button></div>`)}
        ${cpcStep(6,'Bateria final FCC','Misture literalidade, exceções e casos concretos.',ws.fixation,`<div class="cf-actions">${real.length?`<button class="cf-btn primary" onclick="startCpcQuiz('${w.id}','fixation',${finalN})">FCC real • ${finalN}</button>${extra>finalN?`<button class="cf-btn" onclick="startCpcQuiz('${w.id}','extra',${extra})">Banco completo • ${extra}</button>`:''}`:''}${ined.length?`<button class="cf-btn" onclick="startCpcQuiz('${w.id}','coverage',${Math.min(15,ined.length)})">Cobertura inédita • ${Math.min(15,ined.length)}</button>`:''}</div><div class="cf-coverage">${real.length} questões FCC reais neste módulo. Os pontos sem cobertura local estão no aviso acima.</div>`)}
        ${cpcStep(7,'Revisão de erros',errors.length?`${errors.length} erro(s) pendente(s) neste módulo.`:'Nenhum erro pendente.',errors.length===0,errors.length?`<button class="cf-btn bad" onclick="startCpcQuiz('${w.id}','errors',999)">Refazer ${errors.length} erro(s)</button>`:`<span class="muted small">A fila fica vazia quando a questão é acertada novamente.</span>`)}
      </div>
-     <details class="cf-resources"><summary class="muted small" style="cursor:pointer">Recursos do módulo • TEC/QC, Anki e anotações</summary>
+     <details class="cf-resources" open><summary class="muted small" style="cursor:pointer">Recursos do módulo</summary>
        <div class="cf-resource-grid" style="margin-top:8px">
-         <div class="cf-resource-box"><h4>Questões externas</h4><div class="cf-actions">${tecAuto}${r.tec?`<button class="cf-btn" onclick="openCpcResource('${w.id}','tec')">TEC personalizado ↗</button>`:(tecAuto?'':`<button class="cf-btn" onclick="openCpcResource('${w.id}','tec')">+ TEC</button>`)}<button class="cf-btn" onclick="openCpcResource('${w.id}','qc')">${r.qc?'Abrir QC':'+ QC'}</button></div></div>
+         <div class="cf-resource-box"><h4>Filtro do TEC</h4><div class="cf-actions">${tecAuto}${r.tec?`<button class="cf-btn" onclick="openCpcResource('${w.id}','tec')">TEC personalizado ↗</button>`:(tecAuto?'':`<button class="cf-btn" onclick="openCpcResource('${w.id}','tec')">+ TEC</button>`)}<button class="cf-btn" onclick="openCpcResource('${w.id}','qc')">${r.qc?'Abrir QC':'+ QC'}</button></div></div>
          <div class="cf-resource-box"><h4>Decorando a Lei</h4>${cpcDecorandoButton(w,true)}</div>
-         <div class="cf-resource-box" style="grid-column:1/-1"><h4>Anotação</h4><textarea class="cf-notes" id="cf-note-${w.id}" placeholder="Regra, artigo, pegadinha ou dúvida...">${esc(localStorage.getItem(cpcNoteKey(w.id))||'')}</textarea><div class="cf-actions"><button class="cf-btn" onclick="saveCpcNote('${w.id}')">Salvar anotação</button></div></div>
+         <div class="cf-resource-box"><h4>Vade Mecum</h4><button class="cf-btn" onclick="openEmbeddedTool('vade',{},this)">Abrir Vade Mecum</button></div>
+         <div class="cf-resource-box"><h4>Cadernos TEC</h4><button class="cf-btn" onclick="centralSidebarAction('tec-cadernos',this)">Abrir meus cadernos do TEC</button></div>
+         <div class="cf-resource-box" style="grid-column:1/-1"><h4>Anotações do módulo</h4><textarea class="cf-notes" id="cf-note-${w.id}" placeholder="Regra, artigo, pegadinha ou dúvida...">${esc(localStorage.getItem(cpcNoteKey(w.id))||'')}</textarea><div class="cf-actions"><button class="cf-btn" onclick="saveCpcNote('${w.id}')">Salvar anotação</button></div></div>
+         ${renderBaseModuleRounds("cpc:"+w.id)}
        </div>
      </details>
    </div>
@@ -4533,6 +4550,7 @@ function renderTopic(s,t){
 function renderDetail(s,t,r){
  const perf=getPerf(t.uid),q=perf.reduce((a,x)=>a+x.q,0),c=perf.reduce((a,x)=>a+x.c,0);
  const tecAuto=(typeof window.tecContextButtons==='function'?window.tecContextButtons(t.uid,'chip'):'');
+ const moduleTools=(s.id==='pt'||s.id==='rlm')?'<button class="chip real" onclick="centralSidebarAction(&quot;tec-cadernos&quot;,this)">▤ Cadernos do TEC</button>':'<button class="chip real" onclick="openEmbeddedTool(&quot;decorando&quot;,{},this)">📖 Decorando a Lei</button><button class="chip real" onclick="openEmbeddedTool(&quot;vade&quot;,{},this)">⚖ Vade Mecum</button><button class="chip real" onclick="centralSidebarAction(&quot;tec-cadernos&quot;,this)">▤ Cadernos do TEC</button>';
  const decorandoId=s.id==='cpp'?`cpp-${String(s.topics.indexOf(t)+1).padStart(2,'0')}`:'';
  const pre=(r.prestudy||[]);
  const preHtml=`<div class="prestudy"><div class="pre-title">▶ ${pre.length?pre.length+' AULA'+(pre.length>1?'S':'')+' / ORIENTAÇÃO'+(pre.length>1?'ÕES':''):'AULAS / ORIENTAÇÕES ANTES DE ESTUDAR'}</div>${pre.length?pre.map((x,i)=>`<div class="pre-row"><span>${i+1}</span><a href="${escAttr(safeUrl(x.url))}" target="_blank">${esc(x.name)}</a><span>→</span></div>`).join(''):`<div class="pre-row"><span>+</span><a href="#" onclick="editNamedLinks('${t.uid}','prestudy');return false">Adicionar aula, mentoria ou orientação preparatória</a><span>→</span></div>`}</div>`;
@@ -4542,21 +4560,22 @@ function renderDetail(s,t,r){
    t.ankiDeck?`<a class="chip anki" href="#" onclick="openAnkiDeck('${escJs(t.ankiDeck)}','${escJs(t.title)}');return false">🧠 Abrir este baralho</a>`:'',
    decorandoId?`<a class="chip real" href="#" onclick="openLeiSecaEnxuta(null,'cpp','${decorandoId}');return false">📖 Decorando deste tópico</a>`:''
  ].filter(Boolean).join('');
- const hist=perf.length?perf.slice(0,8).map((x,i)=>`<div class="hist"><span>${i?'Anterior':'Atual'}</span><span>${x.q} feitas · ${x.c} certas</span><span class="rate ${x.pct>=80?'good':x.pct>=60?'mid':'bad'}">${x.pct}%</span><button class="btn red sm" onclick="deletePerf('${t.uid}',${x.id})">×</button></div>`).join(''):`<div class="muted small" style="padding:8px 0">Nenhum resultado registrado.</div>`;
+ const hist=perf.length?perf.slice(0,8).map((x,i)=>`<div class="hist"><span>Rodada ${perf.length-i}</span><span>${x.q} feitas · ${x.c} certas</span><span class="rate ${x.pct>=80?'good':x.pct>=60?'mid':'bad'}">${x.pct}%</span><button class="btn red sm" onclick="deletePerf('${t.uid}',${x.id})">×</button></div>`).join(''):`<div class="muted small" style="padding:8px 0">Nenhum resultado registrado.</div>`;
  const notes=getNotes(t.uid);
  return `${preHtml}
   <div class="inline-tools"><button onclick="toggleTopic('${t.uid}')">⌃ Fechar</button><button onclick="focusNote('${t.uid}')">✎ Anotar</button><button onclick="startTimer('${t.uid}',this)">◷ <span data-timer="${t.uid}">${formatTimer(Number(localStorage.getItem(key(t.uid,'timer'))||0))}</span></button><button onclick="quickReview('${t.uid}')">▣ Agendar revisão</button></div>
   <div class="tips"><div class="tips-title">💡 Dicas</div><ul>${tips.map(x=>`<li>${x}</li>`).join('')}</ul><button class="edit-link" onclick="editTips('${t.uid}')">editar dicas</button></div>
   <div class="resource"><div class="resource-label">O que já existe neste tópico</div><div class="chips">${realButtons||'<span class="muted small">Sem módulo teórico separado; o conteúdo existente é o baralho/recursos abaixo.</span>'}</div></div>
-  <div class="resource"><div class="resource-label">Questões</div><div class="chips">${tecAuto}${r.tec?linkChip(r.tec,'↗ TEC personalizado','',t.uid,'tec'):(tecAuto?'':linkChip(r.tec,'+ TEC Concursos','',t.uid,'tec'))}${linkChip(r.qc,'↗ QConcursos','',t.uid,'qc')}<button class="edit-link" onclick="editLink('${t.uid}','tec')">TEC manual</button><button class="edit-link" onclick="editLink('${t.uid}','qc')">QC</button></div></div>
+  <div class="resource"><div class="resource-label">Filtro do TEC</div><div class="chips">${tecAuto}${r.tec?linkChip(r.tec,'↗ TEC personalizado','',t.uid,'tec'):(tecAuto?'':linkChip(r.tec,'+ TEC Concursos','',t.uid,'tec'))}${linkChip(r.qc,'↗ QConcursos','',t.uid,'qc')}<button class="edit-link" onclick="editLink('${t.uid}','tec')">TEC manual</button><button class="edit-link" onclick="editLink('${t.uid}','qc')">QC</button></div></div>
   <div class="resource"><div class="resource-label">Lei Seca</div><div class="chips">${linkChip(r.law,'⚖ Lei / artigo','law',t.uid,'law')}<a class="chip law" href="#" onclick="openInternal('modules/lei-seca-juridica/index.html','Lei Seca Jurídica');return false">⚖ Biblioteca geral</a><button class="edit-link" onclick="editLink('${t.uid}','law')">editar link</button></div></div>
   <div class="resource"><div class="resource-label">Videoaulas</div><div class="chips">${namedLinks(r.videos,'video')}<button class="edit-link" onclick="editNamedLinks('${t.uid}','videos')">+ videoaula</button></div></div>
   <div class="resource"><div class="resource-label">Materiais</div><div class="chips">${namedLinks(r.materials,'')}<button class="edit-link" onclick="editNamedLinks('${t.uid}','materials')">+ material</button></div></div>
   ${t.sourceStats?`<div class="resource"><div class="resource-label">${t.sourceStats.cards!=null?'Dados do pacote Anki recuperado':'Dados deste tópico'}</div><div class="muted small">${t.sourceStats.cards!=null?t.sourceStats.cards+' cartões · '+t.sourceStats.views+' visualizações · '+t.sourceStats.correct+' acertos · '+t.sourceStats.wrong+' erros'+(t.sourceStats.accuracy!=null?' · '+t.sourceStats.accuracy+'%':''):t.sourceStats.questions!=null?t.sourceStats.questions+' questões reais disponíveis':t.sourceStats.blocks!=null?t.sourceStats.blocks+' blocos de treino mecânico':'dados disponíveis'}</div></div>`:''}
   <div class="perf-form"><div class="field"><label>Questões feitas</label><input id="q-${t.uid}" type="number" min="0" placeholder="—"></div><div class="field"><label>Questões certas</label><input id="c-${t.uid}" type="number" min="0" placeholder="—"></div><button class="btn green" onclick="registerPerf('${t.uid}')">✓ Registrar</button></div>
-  <div class="history-label">Histórico · total ${q} feitas · ${c} certas</div>${hist}
-  <div class="notes"><div class="resource-label">Anotações</div><div class="field"><textarea id="note-${t.uid}" placeholder="Regra, dúvida, pegadinha, observação..."></textarea></div><div class="action-row"><button class="btn primary sm" onclick="saveNote('${t.uid}')">Salvar anotação</button></div>${notes.map(n=>`<div class="note-item">${esc(n.text)}<br><small>${new Date(n.at).toLocaleString('pt-BR')}</small> <button class="edit-link" style="float:right;color:#ef7777" onclick="deleteNote('${t.uid}',${n.id})">×</button></div>`).join('')}</div>
-  <div class="resource"><div class="resource-label">Revisão</div><div class="chips"><input id="rev-${t.uid}" type="date" value="${localStorage.getItem(key(t.uid,'review'))||todayISO()}" style="border:1px solid var(--line2);background:#091525;color:#eaf2ff;border-radius:6px;padding:6px"><button class="btn sm" onclick="scheduleReview('${t.uid}')">Agendar revisão</button>${localStorage.getItem(key(t.uid,'review'))?`<span class="muted small">marcada para ${formatDate(localStorage.getItem(key(t.uid,'review')))}</span>`:''}</div></div>`
+  <div class="history-label">Questões feitas por rodadas · total ${q} feitas · ${c} certas</div>${hist}
+  <div class="resource"><div class="resource-label">Revisão</div><div class="chips"><input id="rev-${t.uid}" type="date" value="${localStorage.getItem(key(t.uid,'review'))||todayISO()}" style="border:1px solid var(--line2);background:#091525;color:#eaf2ff;border-radius:6px;padding:6px"><button class="btn sm" onclick="scheduleReview('${t.uid}')">Agendar revisão</button>${localStorage.getItem(key(t.uid,'review'))?`<span class="muted small">marcada para ${formatDate(localStorage.getItem(key(t.uid,'review')))}</span>`:''}</div></div>
+  <div class="resource"><div class="resource-label">Ferramentas do módulo</div><div class="chips">${moduleTools}</div></div>
+  <div class="notes"><div class="resource-label">Anotações do módulo</div><div class="field"><textarea id="note-${t.uid}" placeholder="Regra, dúvida, pegadinha, observação..."></textarea></div><div class="action-row"><button class="btn primary sm" onclick="saveNote('${t.uid}')">Salvar anotação</button></div>${notes.map(n=>`<div class="note-item">${esc(n.text)}<br><small>${new Date(n.at).toLocaleString('pt-BR')}</small> <button class="edit-link" style="float:right;color:#ef7777" onclick="deleteNote('${t.uid}',${n.id})">×</button></div>`).join('')}</div>`
 }
 function safeUrl(raw){
  if(!raw)return '';
@@ -4722,6 +4741,55 @@ function escAttr(v){return esc(v).replace(/`/g,'&#96;')}function escJs(v){return
 try{cleanRemovedSubjectResidue()}catch(e){console.warn('Limpeza de estado',e)}
 try{applyCentralTheme()}catch(e){console.warn('Tema',e)}
 try{applySidebarCollapse()}catch(e){console.warn('Sidebar',e)}
+/* Padronização das etapas: mantém leitura, teoria e aprofundamento; preserva o histórico local. */
+(function(){
+const baseCivilPct=civilModulePct;
+civilModulePct=function(id){let steps=[];if(id==='m1')steps=civilSteps();else if(id==='m2')steps=civil2Steps();else if(/^m(?:[3-9]|1[0-6])$/.test(id))steps=window['civil'+id.slice(1)+'Steps']();const visible=steps.filter(x=>/^(reading|theory|deep)\d*$/.test(x.id));return visible.length?Math.round(visible.filter(x=>x.done).length/visible.length*100):baseCivilPct(id)};
+const baseRenderCivil=renderCivilMaster;
+renderCivilMaster=function(){
+ let html=baseRenderCivil.apply(this,arguments).replace('Banco do curso: <b>400 questões reais</b> + <b>80 casos autorais</b>, com revisão automática de erros por módulo.','Cada módulo reúne leitura orientada, teoria completa e aprofundamento.').replace(/8 etapas/g,'3 etapas');
+ const doc=new DOMParser().parseFromString('<div id="civil-clean-root">'+html+'</div>','text/html'),root=doc.getElementById('civil-clean-root');
+ if(root)root.querySelectorAll('.civil-steps').forEach(function(group){group.querySelectorAll('.civil-step').forEach(function(step,index){const label=step.querySelector('.civil-step-n');if(label&&!step.classList.contains('done'))label.textContent=String(index+1);const id=step.getAttribute('data-step')||'',kind=id.replace(/[0-9]+$/,'');const title=step.querySelector('.civil-step-title b'),subtitle=step.querySelector('.civil-step-title small'),copy={reading:['Leitura orientada','Roteiro de leitura e marcação da legislação aplicável.'],theory:['Teoria completa','Base completa organizada para o conteúdo do módulo.'],deep:['Aprofundamento','Exceções, jurisprudência e aplicações relevantes.']}[kind];if(copy&&title&&subtitle){title.textContent=copy[0];subtitle.textContent=copy[1]}})});
+ return root?root.innerHTML:html;
+};
+window.civilQuestionStep=function(){return ''};
+window.civilErrorStep=function(){return ''};
+window.civil2QuestionStep=function(){return ''};
+window.civil2ErrorStep=function(){return ''};
+window.civil3QuestionStep=function(){return ''};
+window.civil3ErrorStep=function(){return ''};
+window.civil4QuestionStep=function(){return ''};
+window.civil4ErrorStep=function(){return ''};
+window.civil5QuestionStep=function(){return ''};
+window.civil5ErrorStep=function(){return ''};
+window.civil6QuestionStep=function(){return ''};
+window.civil6ErrorStep=function(){return ''};
+window.civil7QuestionStep=function(){return ''};
+window.civil7ErrorStep=function(){return ''};
+window.civil8QuestionStep=function(){return ''};
+window.civil8ErrorStep=function(){return ''};
+window.civil9QuestionStep=function(){return ''};
+window.civil9ErrorStep=function(){return ''};
+window.civil10QuestionStep=function(){return ''};
+window.civil10ErrorStep=function(){return ''};
+window.civil11QuestionStep=function(){return ''};
+window.civil11ErrorStep=function(){return ''};
+window.civil12QuestionStep=function(){return ''};
+window.civil12ErrorStep=function(){return ''};
+window.civil13QuestionStep=function(){return ''};
+window.civil13ErrorStep=function(){return ''};
+window.civil14QuestionStep=function(){return ''};
+window.civil14ErrorStep=function(){return ''};
+window.civil15QuestionStep=function(){return ''};
+window.civil15ErrorStep=function(){return ''};
+window.civil16QuestionStep=function(){return ''};
+window.civil16ErrorStep=function(){return ''};
+function cleanStepFactory(factory,keep){const original=window[factory];if(typeof original!=='function')return;window[factory]=function(n,title,desc,done,body){if(!keep.includes(n))return '';const map={2:1,3:2,5:3};const stage={2:['Leitura orientada','Roteiro de leitura e marcação da legislação aplicável.'],3:['Teoria completa','Base completa organizada para o conteúdo do módulo.'],5:['Aprofundamento','Exceções, jurisprudência e aplicações relevantes.']}[n];return original(map[n]||n,stage?stage[0]:title,stage?stage[1]:desc,done,body)}}
+cleanStepFactory('cfStep',[2,3,5]);cleanStepFactory('penalStep',[2,3,5]);cleanStepFactory('cpcStep',[2,3,5]);
+['renderCfModule','renderPenalModule','renderCpcModule'].forEach(function(name){const original=window[name];if(typeof original==='function')window[name]=function(){return original.apply(this,arguments).replace(new RegExp('(<span class="cf-module-stat">)([0-9]+)%[^<]*(</span>)'),'$1$2%$3').replaceAll('<h4>Anotação</h4>','<h4>Anotações do módulo</h4>')}});
+const style=document.createElement('style');style.textContent='.cf-master-tools,.cf-metrics,[id="cf-session-host"],[id="cf-errors-host"],[id="penal-session-host"],[id="penal-errors-host"],[id="cpc-session-host"],[id="cpc-errors-host"]{display:none!important}';document.head.appendChild(style);
+})();
+
 try{renderAll()}catch(e){
  console.error('Inicialização parcial da Central',e);
  try{renderDisciplineGrid()}catch(_){}

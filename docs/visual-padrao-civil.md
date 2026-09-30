@@ -4,12 +4,12 @@ A apresentação dos 162 módulos das dez disciplinas passa a compartilhar cabe�
 
 Nas outras disciplinas, o painel consulta os dados existentes. Os critérios de conclusão continuam próprios de cada curso: a alteração não equipara cálculos, não cria resultados de acertos e não altera o conteúdo pedagógico. Português mostra a quantidade de respostas; Constitucional, Penal e Processo Civil mostram o resultado da última resposta às questões do módulo.
 
-A navegação comum leva ao conteúdo, às questões, às ferramentas já disponíveis e às anotações. Onde não havia campo de anotação, ele foi adicionado com salvamento local e uma chave exclusiva por disciplina e módulo. As anotações nativas conservam seus controles e armazenamento.
+A navegação comum leva ao conteúdo, às questões, às ferramentas já disponíveis e às anotações. Onde não havia campo de anotação, ele foi adicionado com salvamento local e uma chave exclusiva por disciplina e módulo. As anotações nativas conservam seus controles e armazenamento. Os novos campos também leem as anotações da padronização anterior publicada, sem apagar as chaves existentes.
 
 ## Arquivos
 
 - `ui/discipline-standard.js` e `ui/discipline-standard.css`: apresentação compartilhada, sem substituir a renderização e os controles nativos.
-- `central-v119.html` e `sw.js`: carregamento e versão do cache dos novos arquivos.
+- `central-v119.html` e `sw.js`: carregamento e versão do cache dos novos arquivos. A apresentação anterior de `central-module-standard-v1.js` foi substituída pelo adaptador compartilhado; seu arquivo permanece no histórico e no repositório.
 - `central-reading-font-v66126.js`: base de leitura de 16px, mantendo a preferência de escala.
 - `cpc-flow-visual-v1.js`: evita alterações repetidas de texto pelo observador visual de Processo Civil.
 
@@ -34,4 +34,4 @@ A verificação de apresentação usa o conteúdo já renderizado e os controles
 
 ## Publicação
 
-Esta proposta parte da `main` no commit `872ca43e4fdfbdc662c0952e12bcfbad0f8520fd`. A versão pública observada contém arquivos adicionais que não estavam nessa branch. Antes de promover uma versão à produção, concilie essa diferença de origem. A proposta não altera a branch principal nem promove uma implantação à produção.
+A implementação inicial partiu da `main` no commit `872ca43e4fdfbdc662c0952e12bcfbad0f8520fd`. Para a publicação autorizada, foram incorporados os ajustes da versão de produção no commit `ea2489fd6d4266ea9e69e26c1696794e22cbba24`, da branch `work/padronizacao-modulos-20260930`. Isso conserva os ajustes de sincronização, atalhos, etapas, rodapés e notas já presentes no site. O novo adaptador assume apenas a padronização visual dos módulos.

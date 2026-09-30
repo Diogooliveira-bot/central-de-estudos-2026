@@ -1,6 +1,7 @@
 /* Direito Civil is the shared visual reference for every discipline. */
 html.bc-ui-v1 #subjects { --ds-accent:var(--bc-color-success); display:grid; gap:16px; }
 html.bc-ui-v1 #subjects .bc-discipline-kit { display:none; }
+html.bc-ui-v1 #subjects .bc-civil-legacy-intro.ds-course-intro { display:block!important; }
 html.bc-ui-v1 #subjects :is(.ptn-intro,.cpp-course-top) { display:none; }
 html.bc-ui-v1 #subjects .ds-course-intro { padding:20px!important; border:1px solid var(--bc-color-border); border-radius:12px; background:var(--bc-color-surface-elevated); margin:0 0 16px; }
 html.bc-ui-v1 #subjects .ds-course-intro h3 { margin:0; font-size:20px!important; line-height:1.5!important; }
