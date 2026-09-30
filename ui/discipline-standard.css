@@ -99,3 +99,84 @@ html.bc-ui-v1 #subjects :is(.cf-step,.civil-a-section,.cpp-rounds,.ds-notes) { s
   html.bc-ui-v1 #subjects .topic-row>.open-topic { grid-column:3; grid-row:1/3; }
   html.bc-ui-v1 #subjects .topic-row>input { grid-column:1; grid-row:1/3; }
 }
+
+/* Final de cada módulo: apenas questões, revisão, ferramentas e anotações. */
+html.bc-ui-v1 #subjects .ds-footer-replaced { display:none!important; }
+html.bc-ui-v1 #subjects .ds-module-footer {
+  display:flex; flex-direction:column; gap:12px;
+  margin-top:24px; min-width:0; width:100%;
+  color:var(--bc-color-text);
+  scroll-margin-top:86px;
+}
+html.bc-ui-v1 #subjects .ds-footer-questions {
+  border-top:1px solid var(--bc-color-border-interactive);
+  padding-top:16px; min-width:0;
+}
+html.bc-ui-v1 #subjects .ds-module-footer .perf-form {
+  display:grid!important; grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  gap:10px; padding:0; margin:0; border:0; background:transparent;
+  scroll-margin-top:86px;
+}
+html.bc-ui-v1 #subjects .ds-module-footer .perf-form .field { min-width:0; margin:0; display:grid; gap:14px; }
+html.bc-ui-v1 #subjects .ds-module-footer .perf-form label {
+  color:var(--bc-color-text); font-size:14px!important; line-height:1.5!important; font-weight:700;
+}
+html.bc-ui-v1 #subjects .ds-module-footer :is(input,textarea) {
+  min-width:0; max-width:100%; box-sizing:border-box;
+  border:1px solid var(--bc-color-border-interactive)!important;
+  background:var(--bc-color-surface)!important; color:var(--bc-color-text)!important;
+  border-radius:10px!important; padding:12px!important;
+  font:400 16px/1.5 var(--bc-font)!important;
+}
+html.bc-ui-v1 #subjects .ds-module-footer .perf-form input { width:100%; min-height:44px; }
+html.bc-ui-v1 #subjects .ds-module-footer button {
+  font:600 14px/1.4 var(--bc-font)!important;
+  color:var(--bc-color-secondary)!important;
+  background:var(--bc-color-surface)!important;
+  border:1px solid var(--bc-color-border-interactive)!important;
+  border-radius:10px!important; box-shadow:none!important;
+  min-height:44px; padding:10px 16px!important; cursor:pointer;
+  white-space:normal!important; max-width:100%; touch-action:manipulation;
+}
+html.bc-ui-v1 #subjects .ds-module-footer .perf-form > button {
+  grid-column:1/-1; width:100%; color:var(--bc-color-primary)!important;
+}
+html.bc-ui-v1 #subjects .ds-module-footer .history-label {
+  margin:14px 0 8px; font:400 12px/1.55 var(--bc-font)!important;
+  letter-spacing:.07em; text-transform:uppercase; color:var(--bc-color-text-secondary)!important;
+}
+html.bc-ui-v1 #subjects .ds-module-footer .muted.small {
+  padding:0!important; font:400 14px/1.5 var(--bc-font)!important; color:var(--bc-color-text-secondary)!important;
+}
+html.bc-ui-v1 #subjects .ds-module-footer :is(.ds-footer-review,.ds-footer-tools,.ds-notes) {
+  padding:16px!important; margin:0!important; border:1px solid var(--bc-color-border)!important;
+  border-radius:12px!important; background:var(--bc-color-surface-elevated)!important;
+  min-width:0; display:block; box-shadow:none!important;
+}
+html.bc-ui-v1 #subjects .ds-module-footer .ds-notes { margin-top:12px!important; }
+html.bc-ui-v1 #subjects .ds-module-footer :is(.resource-label,h4,.ds-notes > label) {
+  display:block; margin:0 0 12px!important;
+  color:var(--bc-color-text)!important; font:700 16px/1.4 var(--bc-font)!important;
+  text-transform:uppercase; letter-spacing:.055em;
+}
+html.bc-ui-v1 #subjects .ds-module-footer .ds-footer-review .chips {
+  display:flex; flex-direction:column; align-items:flex-start; gap:8px;
+}
+html.bc-ui-v1 #subjects .ds-module-footer input[type=date] { padding:6px!important; min-height:34px; width:156px; }
+html.bc-ui-v1 #subjects .ds-module-footer .ds-footer-tools .chips { display:flex; flex-wrap:wrap; gap:6px; }
+html.bc-ui-v1 #subjects .ds-module-footer .ds-footer-tools button {
+  min-height:28px; padding:4px 8px!important;
+  color:var(--bc-color-accent)!important; border-color:var(--bc-color-primary)!important;
+  background:color-mix(in srgb,var(--bc-color-primary) 7%,var(--bc-color-surface))!important;
+  border-radius:10px!important; font-size:12px!important;
+}
+html.bc-ui-v1 #subjects .ds-module-footer .ds-notes textarea { width:100%; min-height:120px!important; }
+html.bc-ui-v1 #subjects .ds-module-footer :is(.ds-actions,.cf-actions,.action-row) { margin-top:10px; display:flex; justify-content:flex-start!important; align-items:center; gap:8px; }
+html.bc-ui-v1 #subjects .ds-module-footer .hist {
+  display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.5fr) auto auto;
+  gap:8px; font-size:13px; line-height:1.5; color:var(--bc-color-text-secondary);
+}
+html.bc-ui-v1 #subjects .ds-module-footer .ds-footer-status { grid-column:1/-1; color:var(--bc-color-error); font-size:14px; }
+@media(max-width:420px) {
+  html.bc-ui-v1 #subjects .ds-module-footer .hist { grid-template-columns:minmax(0,1fr) auto; }
+}

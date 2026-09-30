@@ -204,6 +204,17 @@ window.civilStudyOpenTecModal=function(id){
   modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.documentElement.classList.add('csp-modal-open');setTimeout(function(){modal.querySelector('#csp-modal-feitas').focus()},40);return false;
 };
 window.civilStudyCloseTecModal=function(){var modal=document.getElementById('csp-tec-modal');if(modal){modal.classList.remove('open');modal.setAttribute('aria-hidden','true')}document.documentElement.classList.remove('csp-modal-open');return false};
+window.civilStudyFooterRows=function(id){
+  var m=MODULE_BY_ID.get(id);if(!m)return [];
+  return tecRows(m,loadTec()).map(function(x){return {index:x.index,done:Number(x.r.f)||0,correct:Number(x.r.a)||0,date:x.r.dt}});
+};
+window.civilStudyRegisterRound=function(id,done,correct){
+  var m=MODULE_BY_ID.get(id);
+  if(!m||!Number.isInteger(done)||!Number.isInteger(correct)||done<1||correct<0||correct>done)return false;
+  var regs=loadTec();
+  regs.push({rid:'civil-'+Date.now().toString(36)+'-'+Math.random().toString(36).slice(2,7),cid:'',dt:localToday(),f:done,a:correct,moduleId:id,note:'',source:'module-footer'});
+  localStorage.setItem(TEC_KEY,JSON.stringify(regs));rerender();return true;
+};
 window.civilStudySaveTec=function(e){
   if(e)e.preventDefault();
   var id=document.getElementById('csp-modal-module-id').value,m=MODULE_BY_ID.get(id),cid=document.getElementById('csp-modal-caderno').value,dt=document.getElementById('csp-modal-date').value,f=Math.max(0,parseInt(document.getElementById('csp-modal-feitas').value,10)||0),a=Math.max(0,parseInt(document.getElementById('csp-modal-acertos').value,10)||0),note=String(document.getElementById('csp-modal-note').value||'').trim();
