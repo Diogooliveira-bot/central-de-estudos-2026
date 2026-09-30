@@ -145,11 +145,25 @@ function installStatsWrapper(){
 function subjectById(id){
   try{return Array.isArray(window.SUBJECTS)?window.SUBJECTS.find(function(s){return s&&s.id===id}):null}catch(_){return null}
 }
+function domStats(id){
+  var section=q('.subject[data-id="'+String(id||'').replace(/"/g,'')+'"]');if(!section)return null;
+  if(id==='rlm'){
+    var mods=qa('.topic-item[data-uid^="rlm-m"]',section);
+    if(mods.length){
+      var rd=mods.filter(function(m){var cb=q(':scope > .topic-row input[type="checkbox"]',m);return !!(cb&&cb.checked)}).length;
+      return {done:rd,total:mods.length,pct:Math.round(rd/mods.length*100),unit:'módulos'};
+    }
+  }
+  var text=(q('.subject-count',section)||{}).textContent||'',m=text.match(/(\d+)\s*\/\s*(\d+)/);
+  var pctText=(q('.subject-pct',section)||{}).textContent||'',pm=pctText.match(/(\d{1,3})\s*%/);
+  if(m)return {done:Number(m[1]),total:Number(m[2]),pct:pm?Number(pm[1]):Math.round(Number(m[1])/Math.max(1,Number(m[2]))*100),unit:'módulos'};
+  return null;
+}
 function statsFor(id){
   var subject=subjectById(id);
   if(id==='cpp'){var cpp=cppStats();if(cpp)return cpp}
   if(subject&&typeof window.subjStats==='function'){try{return normalizeStats(subject,window.subjStats(subject))}catch(_){}}
-  return null;
+  return domStats(id);
 }
 function normalizeCounts(){
   qa('.subject[data-id]').forEach(function(section){
@@ -205,9 +219,10 @@ function enhanceFirstAccess(){
 }
 function firstIncompleteSubject(){
   var list=[];try{list=Array.isArray(window.SUBJECTS)?window.SUBJECTS:[]}catch(_){}
+  if(!list.length)list=qa('.subject[data-id]').map(function(el){return {id:el.getAttribute('data-id')||''}});
   for(var i=0;i<list.length;i++){
-    var s=list[i],st=statsFor(s.id);
-    if(!st||st.pct<100)return s;
+    var item=list[i],st=statsFor(item.id);
+    if(!st||st.pct<100)return item;
   }
   return list[0]||null;
 }
