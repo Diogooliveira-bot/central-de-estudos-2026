@@ -72,13 +72,12 @@
   const renderDisciplineKits=()=>{
     document.querySelectorAll('.subject[data-id]').forEach(section=>{
       const id=section.dataset.id||'';
+      const body=section.querySelector('.subject-body');
+      if(!body||body.querySelector(':scope > .bc-discipline-kit'))return;
       if(id==='civil'){
-        const target=section.querySelector('.civil-master-intro .civil-target');
-        if(!target||target.querySelector('.bc-civil-tools'))return;
-        target.insertAdjacentHTML('beforeend',renderTools(id,'bc-civil-tools'));
-        return;
+        const legacy=section.querySelector('.civil-master-intro');
+        if(legacy)legacy.classList.add('bc-civil-legacy-intro');
       }
-      const body=section.querySelector('.subject-body');if(!body||body.querySelector(':scope > .bc-discipline-kit'))return;
       const name=(section.querySelector('.subject-name')?.textContent||'Disciplina').trim();
       let stats={done:0,total:0,pct:0};
       try{const subject=Array.isArray(window.SUBJECTS)?window.SUBJECTS.find(item=>item&&item.id===id):null;if(typeof window.subjStats==='function')stats=window.subjStats(subject||{id,topics:[]})||stats}catch(_){}
@@ -87,11 +86,14 @@
         if(m)stats={done:Number(m[1]),total:Number(m[2]),pct:Math.round(Number(m[1])/Math.max(1,Number(m[2]))*100)};
       }
       const done=Math.max(0,Number(stats.done)||0),total=Math.max(0,Number(stats.total)||0),pct=Math.max(0,Math.min(100,Number(stats.pct)||0));
+      const preserved=id==='civil'
+        ? 'Teoria completa, jurisprudência, exemplos e pegadinhas organizados em 15 módulos para Analista Judiciário.'
+        : 'Teoria, revisões, questões e registros existentes continuam no mesmo módulo.';
       const kit='<section class="bc-discipline-kit" data-bc-kit="'+escapeHtml(id)+'">'+
         '<div class="bc-kit-head"><div><span class="bc-kit-eyebrow">BASE COMPLETA</span><h3>'+escapeHtml(name)+'</h3></div>'+
         '<div class="bc-kit-stat"><b>'+done+'/'+total+'</b><small>Módulos concluídos · '+pct+'%</small></div></div>'+
         '<div class="bc-kit-meter"><span style="width:'+pct+'%"></span></div>'+
-        '<div class="bc-kit-grid"><article class="bc-kit-card"><b>Seu percurso está preservado</b><p>Teoria, revisões, questões e registros existentes continuam no mesmo módulo.</p></article>'+
+        '<div class="bc-kit-grid"><article class="bc-kit-card"><b>Seu percurso está preservado</b><p>'+escapeHtml(preserved)+'</p></article>'+
         renderTools(id)+'</div></section>';
       const anchor=body.querySelector('.subject-bar');if(anchor)anchor.insertAdjacentHTML('afterend',kit);else body.insertAdjacentHTML('afterbegin',kit);
     });
