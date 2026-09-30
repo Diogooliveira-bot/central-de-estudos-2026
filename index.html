@@ -699,7 +699,12 @@ window.addEventListener('beforeinstallprompt',function(e){e.preventDefault();def
 window.centralPwaInstall=function(){if(deferred)deferred.prompt()};
 })();
 </script>
-<link rel="stylesheet" href="/base-completa-visual-v1.css?v=20260921a">\n</head>
+<link rel="stylesheet" href="/base-completa-visual-v1.css?v=20260921a">\n<style id="bc-hide-backup-controls">
+/* Dados e progresso permanecem salvos; esta mudança remove somente os controles visuais. */
+.central-backup-row,#centralBackupStatus,#centralBackupHistoryList,
+.central-backup-row~.central-settings-note{display:none!important}
+</style>
+</head>
 <body>
 
 <script id="central-native-router-v6652">
