@@ -193,7 +193,7 @@ function loadData(id){
 function renderPortugueseMaster(){
  installStyle();
  const s=stats();
- const html='<div class="ptn-master"><div class="ptn-intro"><div><h3>Português</h3><p>17 módulos nativos. O conteúdo só é carregado quando você abre o módulo.</p></div><span class="ptn-pill">'+s.done+'/'+s.total+' concluídos · '+s.pct+'%</span></div><div class="cf-modules">'+MANIFEST.map(renderModuleShell).join('')+'</div></div>';
+ const html='<div class="ptn-master"><div class="ptn-intro"><div><h3>Português</h3></div><span class="ptn-pill">'+s.done+'/'+s.total+' concluídos · '+s.pct+'%</span></div><div class="cf-modules">'+MANIFEST.map(renderModuleShell).join('')+'</div></div>';
  setTimeout(()=>{const open=localStorage.getItem(OPEN_KEY);if(open&&byId[open])mount(open)},0);
  return html;
 }
