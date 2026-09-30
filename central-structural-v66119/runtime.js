@@ -4730,7 +4730,12 @@ try{applySidebarCollapse()}catch(e){console.warn('Sidebar',e)}
 const baseCivilPct=civilModulePct;
 civilModulePct=function(id){let steps=[];if(id==='m1')steps=civilSteps();else if(id==='m2')steps=civil2Steps();else if(/^m(?:[3-9]|1[0-6])$/.test(id))steps=window['civil'+id.slice(1)+'Steps']();const visible=steps.filter(x=>/^(reading|theory|deep)\d*$/.test(x.id));return visible.length?Math.round(visible.filter(x=>x.done).length/visible.length*100):baseCivilPct(id)};
 const baseRenderCivil=renderCivilMaster;
-renderCivilMaster=function(){return baseRenderCivil.apply(this,arguments).replace('Banco do curso: <b>400 questões reais</b> + <b>80 casos autorais</b>, com revisão automática de erros por módulo.','Cada módulo reúne leitura orientada, teoria completa e aprofundamento.').replace(/8 etapas/g,'3 etapas')};
+renderCivilMaster=function(){
+ let html=baseRenderCivil.apply(this,arguments).replace('Banco do curso: <b>400 questões reais</b> + <b>80 casos autorais</b>, com revisão automática de erros por módulo.','Cada módulo reúne leitura orientada, teoria completa e aprofundamento.').replace(/8 etapas/g,'3 etapas');
+ const doc=new DOMParser().parseFromString('<div id="civil-clean-root">'+html+'</div>','text/html'),root=doc.getElementById('civil-clean-root');
+ if(root)root.querySelectorAll('.civil-steps').forEach(function(group){group.querySelectorAll('.civil-step').forEach(function(step,index){const label=step.querySelector('.civil-step-n');if(label&&!step.classList.contains('done'))label.textContent=String(index+1)})});
+ return root?root.innerHTML:html;
+};
 window.civilQuestionStep=function(){return ''};
 window.civilErrorStep=function(){return ''};
 window.civil2QuestionStep=function(){return ''};
