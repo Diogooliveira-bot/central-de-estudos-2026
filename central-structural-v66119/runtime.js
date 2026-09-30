@@ -3931,12 +3931,7 @@ function cfStep(n,title,desc,done,body){
 }
 function renderConstitutionalMaster(){
  const st=cfStats(),real=CF_QUESTIONS.filter(q=>q.real!==false).length,ined=CF_QUESTIONS.length-real;
- return `<div class="cf-master-tools">
-   <button onclick="renderCfErrorPanel()">⚠ Erros ${st.wrongIds.length?`(${st.wrongIds.length})`:''}</button>
-   <button onclick="exportCfProgress()">💾 Backup</button>
-   <button onclick="document.getElementById('cf-import-file').click()">↥ Restaurar</button>
-   <input class="cf-file" id="cf-import-file" type="file" accept=".json,application/json" onchange="importCfProgress(this)">
- </div>
+ return `<div class="cf-master-tools"><button onclick="renderCfErrorPanel()">⚠ Erros ${st.wrongIds.length?`(${st.wrongIds.length})`:''}</button></div>
  <div class="cf-metrics">
    <div class="cf-metric"><small>Banco do curso</small><b>${CF_QUESTIONS.length}</b></div>
    <div class="cf-metric"><small>Respondidas</small><b>${st.answered}</b></div>
@@ -3959,20 +3954,21 @@ function renderCfModule(w){
    <div class="cf-module-body">
      <div class="cf-module-bar"><span style="width:${pct}%"></span></div>
      <div class="cf-subtitle">${esc(w.subtitle)}</div>
-     <details class="cf-syllabus"><summary>Matriz do edital • ${w.outline.length} pontos</summary><div class="cf-micro-grid">${w.outline.map(x=>`<span class="cf-micro">${esc(x)}</span>`).join('')}</div></details>
      <div class="cf-steps">
        ${cfStep(1,'Diagnóstico','Questões FCC antes da teoria.',ws.diagnostic,real.length?`<button class="cf-btn primary" onclick="startCfQuiz('${w.id}','diagnostic',${diag})">${ws.diagnostic?'Refazer diagnóstico':'Começar '+diag+' FCC'}</button>`:`<span class="muted small">Sem questões reais suficientes.</span>`)}
        ${cfStep(2,'Leitura orientada','Dispositivos e pontos para observar na Constituição.',ws.reading,`<div class="cf-reading"><strong>${esc(w.read)}</strong><ul>${w.read_focus.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div><div class="cf-actions"><button class="cf-btn primary" onclick="openLeiSecaEnxuta(null,'cf','cf-m${String(w.num).padStart(2,'0')}')">📖 Decorando deste módulo</button><button class="cf-btn" onclick="openVadeMecum(null,'cf')">Abrir Vade Mecum</button><button class="cf-btn ${ws.reading?'good':''}" onclick="cfUpdateWeek('${w.id}',{reading:${!ws.reading}})">${ws.reading?'✓ Concluída':'Marcar concluída'}</button></div>`)}
-       ${cfStep(3,'Teoria nuclear','Base completa antes da segunda bateria.',ws.theory,`<div class="cf-theory-grid">${w.theory.map((t,i)=>`<details class="cf-theory" ${i===0?'open':''}><summary>${esc(t[0])}</summary><div class="cf-theory-text">${esc(t[1])}</div></details>`).join('')}</div><div class="cf-actions"><button class="cf-btn ${ws.theory?'good':''}" onclick="cfUpdateWeek('${w.id}',{theory:${!ws.theory}})">${ws.theory?'✓ Teoria concluída':'Marcar teoria concluída'}</button></div>`)}
+       ${cfStep(3,'Teoria completa','Base completa antes da segunda bateria.',ws.theory,`<div class="cf-theory-grid">${w.theory.map((t,i)=>`<details class="cf-theory" ${i===0?'open':''}><summary>${esc(t[0])}</summary><div class="cf-theory-text">${esc(t[1])}</div></details>`).join('')}</div><div class="cf-actions"><button class="cf-btn ${ws.theory?'good':''}" onclick="cfUpdateWeek('${w.id}',{theory:${!ws.theory}})">${ws.theory?'✓ Teoria concluída':'Marcar teoria concluída'}</button></div>`)}
        ${cfStep(4,'Questões intermediárias','Bateria curta depois da teoria.',ws.intermediate,real.length?`<button class="cf-btn primary" onclick="startCfQuiz('${w.id}','intermediate',${inter})">${ws.intermediate?'Refazer '+inter+' FCC':'Fazer '+inter+' FCC'}</button>`:`<span class="muted small">Sem fila real suficiente.</span>`)}
        ${cfStep(5,'Aprofundamento FCC','Distinções, exceções e pegadinhas de nível mais alto.',ws.deep,`<div class="cf-advanced-grid">${w.advanced.map(t=>`<div class="cf-advanced"><b>${esc(t[0])}</b><div>${esc(t[1])}</div></div>`).join('')}</div><div class="cf-actions"><button class="cf-btn ${ws.deep?'good':''}" onclick="cfUpdateWeek('${w.id}',{deep:${!ws.deep}})">${ws.deep?'✓ Aprofundamento concluído':'Marcar aprofundamento concluído'}</button></div>`)}
        ${cfStep(6,'Bateria final FCC','Misture literalidade, exceções e casos concretos.',ws.fixation,`<div class="cf-actions">${real.length?`<button class="cf-btn primary" onclick="startCfQuiz('${w.id}','fixation',${finalN})">FCC real • ${finalN}</button>${extra>finalN?`<button class="cf-btn" onclick="startCfQuiz('${w.id}','extra',${extra})">FCC extra • ${extra}</button>`:''}`:''}${ined.length?`<button class="cf-btn" onclick="startCfQuiz('${w.id}','coverage',${Math.min(15,ined.length)})">Cobertura inédita • ${Math.min(15,ined.length)}</button>`:''}</div><div class="cf-coverage">${real.length} questões FCC reais + ${ined.length} inéditas neste módulo.</div>`)}
        ${cfStep(7,'Revisão de erros',errors.length?`${errors.length} erro(s) pendente(s) neste módulo.`:'Nenhum erro pendente.',errors.length===0,errors.length?`<button class="cf-btn bad" onclick="startCfQuiz('${w.id}','errors',999)">Refazer ${errors.length} erro(s)</button>`:`<span class="muted small">A fila fica vazia quando a questão é acertada novamente.</span>`)}
      </div>
-     <details class="cf-resources"><summary class="muted small" style="cursor:pointer">Recursos do módulo • TEC/QC, Anki e anotações</summary>
+     <details class="cf-resources" open><summary class="muted small" style="cursor:pointer">Recursos do módulo</summary>
        <div class="cf-resource-grid" style="margin-top:8px">
          <div class="cf-resource-box"><h4>Questões externas</h4><div class="cf-actions">${tecAuto}${r.tec?`<button class="cf-btn" onclick="openCfResource('${w.id}','tec')">TEC personalizado ↗</button>`:(tecAuto?'':`<button class="cf-btn" onclick="openCfResource('${w.id}','tec')">+ TEC</button>`)}<button class="cf-btn" onclick="openCfResource('${w.id}','qc')">${r.qc?'Abrir QC':'+ QC'}</button></div></div>
          <div class="cf-resource-box"><h4>Decorando a Lei</h4><button class="cf-btn" onclick="openLeiSecaEnxuta(null,'cf','cf-m${String(w.num).padStart(2,'0')}')">Abrir artigos deste módulo</button></div>
+         <div class="cf-resource-box"><h4>Vade Mecum</h4><button class="cf-btn" onclick="openEmbeddedTool('vade',{},this)">Abrir Vade Mecum</button></div>
+         <div class="cf-resource-box"><h4>Cadernos TEC</h4><button class="cf-btn" onclick="centralSidebarAction('tec-cadernos',this)">Abrir meus cadernos do TEC</button></div>
          <div class="cf-resource-box" style="grid-column:1/-1"><h4>Anotação</h4><textarea class="cf-notes" id="cf-note-${w.id}" placeholder="Regra, artigo, pegadinha ou dúvida...">${esc(localStorage.getItem(cfNoteKey(w.id))||'')}</textarea><div class="cf-actions"><button class="cf-btn" onclick="saveCfNote('${w.id}')">Salvar anotação</button></div></div>
        </div>
      </details>
@@ -4154,12 +4150,7 @@ function penalStep(n,title,desc,done,body){
 }
 function renderPenalMaster(){
  const st=penalStats(),real=PENAL_QUESTIONS.filter(q=>q.real!==false).length,ined=PENAL_QUESTIONS.length-real;
- return `<div class="cf-master-tools">
-   <button onclick="renderPenalErrorPanel()">⚠ Erros ${st.wrongIds.length?`(${st.wrongIds.length})`:''}</button>
-   <button onclick="exportPenalProgress()">💾 Backup</button>
-   <button onclick="document.getElementById('penal-import-file').click()">↥ Restaurar</button>
-   <input class="cf-file" id="penal-import-file" type="file" accept=".json,application/json" onchange="importPenalProgress(this)">
- </div>
+ return `<div class="cf-master-tools"><button onclick="renderPenalErrorPanel()">⚠ Erros ${st.wrongIds.length?`(${st.wrongIds.length})`:''}</button></div>
  <div class="cf-resource-box" style="margin:12px 0 14px;border-color:#315c54;background:linear-gradient(135deg,rgba(49,92,84,.14),rgba(49,92,84,.04))">
    <h4 style="margin:0 0 6px">Decorando Penal atualizado</h4>
    <div class="muted small" style="margin-bottom:10px"><b style="color:inherit">1.763 questões únicas</b> organizadas por assunto e artigo do Código Penal, incluindo 1.674 questões novas do PDF auditado.</div>
@@ -4187,20 +4178,21 @@ function renderPenalModule(w){
    <div class="cf-module-body">
      <div class="cf-module-bar"><span style="width:${pct}%"></span></div>
      <div class="cf-subtitle">${esc(w.subtitle)}</div>
-     <details class="cf-syllabus"><summary>Matriz do edital • ${w.outline.length} pontos</summary><div class="cf-micro-grid">${w.outline.map(x=>`<span class="cf-micro">${esc(x)}</span>`).join('')}</div></details>
      <div class="cf-steps">
        ${penalStep(1,'Diagnóstico','Questões FCC antes da teoria.',ws.diagnostic,real.length?`<button class="cf-btn primary" onclick="startPenalQuiz('${w.id}','diagnostic',${diag})">${ws.diagnostic?'Refazer diagnóstico':'Começar '+diag+' FCC'}</button>`:`<span class="muted small">Sem questões reais suficientes.</span>`)}
        ${penalStep(2,'Leitura orientada','Dispositivos e pontos para observar na legislação penal.',ws.reading,`<div class="cf-reading"><strong>${esc(w.read)}</strong><ul>${w.read_focus.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div><div class="cf-actions"><button class="cf-btn primary" onclick="openLeiSecaEnxuta(null,'penal','${w.editalModule}')">📖 Decorando deste módulo</button><button class="cf-btn" onclick="openVadeMecum(null,'cp')">Abrir Vade Mecum Penal</button><button class="cf-btn ${ws.reading?'good':''}" onclick="penalUpdateWeek('${w.id}',{reading:${!ws.reading}})">${ws.reading?'✓ Concluída':'Marcar concluída'}</button></div>`)}
-       ${penalStep(3,'Teoria nuclear','Base completa antes da segunda bateria.',ws.theory,`<div class="cf-theory-grid">${w.theory.map((t,i)=>`<details class="cf-theory" ${i===0?'open':''}><summary>${esc(t[0])}</summary><div class="cf-theory-text">${esc(t[1])}</div></details>`).join('')}</div><div class="cf-actions"><button class="cf-btn ${ws.theory?'good':''}" onclick="penalUpdateWeek('${w.id}',{theory:${!ws.theory}})">${ws.theory?'✓ Teoria concluída':'Marcar teoria concluída'}</button></div>`)}
+       ${penalStep(3,'Teoria completa','Base completa antes da segunda bateria.',ws.theory,`<div class="cf-theory-grid">${w.theory.map((t,i)=>`<details class="cf-theory" ${i===0?'open':''}><summary>${esc(t[0])}</summary><div class="cf-theory-text">${esc(t[1])}</div></details>`).join('')}</div><div class="cf-actions"><button class="cf-btn ${ws.theory?'good':''}" onclick="penalUpdateWeek('${w.id}',{theory:${!ws.theory}})">${ws.theory?'✓ Teoria concluída':'Marcar teoria concluída'}</button></div>`)}
        ${penalStep(4,'Questões intermediárias','Bateria curta depois da teoria.',ws.intermediate,real.length?`<button class="cf-btn primary" onclick="startPenalQuiz('${w.id}','intermediate',${inter})">${ws.intermediate?'Refazer '+inter+' FCC':'Fazer '+inter+' FCC'}</button>`:`<span class="muted small">Sem fila real suficiente.</span>`)}
        ${penalStep(5,'Aprofundamento FCC','Distinções, exceções e pegadinhas de nível mais alto.',ws.deep,`<div class="cf-advanced-grid">${w.advanced.map(t=>`<div class="cf-advanced"><b>${esc(t[0])}</b><div>${esc(t[1])}</div></div>`).join('')}</div><div class="cf-actions"><button class="cf-btn ${ws.deep?'good':''}" onclick="penalUpdateWeek('${w.id}',{deep:${!ws.deep}})">${ws.deep?'✓ Aprofundamento concluído':'Marcar aprofundamento concluído'}</button></div>`)}
        ${penalStep(6,'Bateria final FCC','Misture literalidade, exceções e casos concretos.',ws.fixation,`<div class="cf-actions">${real.length?`<button class="cf-btn primary" onclick="startPenalQuiz('${w.id}','fixation',${finalN})">FCC real • ${finalN}</button>${extra>finalN?`<button class="cf-btn" onclick="startPenalQuiz('${w.id}','extra',${extra})">Banco completo • ${extra}</button>`:''}`:''}${ined.length?`<button class="cf-btn" onclick="startPenalQuiz('${w.id}','coverage',${Math.min(15,ined.length)})">Cobertura inédita • ${Math.min(15,ined.length)}</button>`:''}</div><div class="cf-coverage">${real.length} questões FCC reais + ${ined.length} autorais neste módulo.</div>`)}
        ${penalStep(7,'Revisão de erros',errors.length?`${errors.length} erro(s) pendente(s) neste módulo.`:'Nenhum erro pendente.',errors.length===0,errors.length?`<button class="cf-btn bad" onclick="startPenalQuiz('${w.id}','errors',999)">Refazer ${errors.length} erro(s)</button>`:`<span class="muted small">A fila fica vazia quando a questão é acertada novamente.</span>`)}
      </div>
-     <details class="cf-resources"><summary class="muted small" style="cursor:pointer">Recursos do módulo • TEC/QC, Anki e anotações</summary>
+     <details class="cf-resources" open><summary class="muted small" style="cursor:pointer">Recursos do módulo</summary>
        <div class="cf-resource-grid" style="margin-top:8px">
          <div class="cf-resource-box"><h4>Questões externas</h4><div class="cf-actions">${tecAuto}${r.tec?`<button class="cf-btn" onclick="openPenalResource('${w.id}','tec')">TEC personalizado ↗</button>`:(tecAuto?'':`<button class="cf-btn" onclick="openPenalResource('${w.id}','tec')">+ TEC</button>`)}<button class="cf-btn" onclick="openPenalResource('${w.id}','qc')">${r.qc?'Abrir QC':'+ QC'}</button></div></div>
          <div class="cf-resource-box"><h4>Decorando a Lei</h4><button class="cf-btn" onclick="openLeiSecaEnxuta(null,'penal','${w.editalModule}')">Abrir artigos deste módulo</button></div>
+         <div class="cf-resource-box"><h4>Vade Mecum</h4><button class="cf-btn" onclick="openEmbeddedTool('vade',{},this)">Abrir Vade Mecum</button></div>
+         <div class="cf-resource-box"><h4>Cadernos TEC</h4><button class="cf-btn" onclick="centralSidebarAction('tec-cadernos',this)">Abrir meus cadernos do TEC</button></div>
          <div class="cf-resource-box" style="grid-column:1/-1"><h4>Anotação</h4><textarea class="cf-notes" id="cf-note-${w.id}" placeholder="Regra, artigo, pegadinha ou dúvida...">${esc(localStorage.getItem(penalNoteKey(w.id))||'')}</textarea><div class="cf-actions"><button class="cf-btn" onclick="savePenalNote('${w.id}')">Salvar anotação</button></div></div>
        </div>
      </details>
@@ -4375,12 +4367,7 @@ function cpcStep(n,title,desc,done,body){
 }
 function renderCpcMaster(){
  const st=cpcStats(),real=CPC_QUESTIONS.filter(q=>q.real!==false).length,ined=CPC_QUESTIONS.length-real;
- return `<div class="cf-master-tools">
-   <button onclick="renderCpcErrorPanel()">⚠ Erros ${st.wrongIds.length?`(${st.wrongIds.length})`:''}</button>
-   <button onclick="exportCpcProgress()">💾 Backup</button>
-   <button onclick="document.getElementById('cpc-import-file').click()">↥ Restaurar</button>
-   <input class="cf-file" id="cpc-import-file" type="file" accept=".json,application/json" onchange="importCpcProgress(this)">
- </div>
+ return `<div class="cf-master-tools"><button onclick="renderCpcErrorPanel()">⚠ Erros ${st.wrongIds.length?`(${st.wrongIds.length})`:''}</button></div>
  <div class="cf-metrics">
    <div class="cf-metric"><small>Banco do curso</small><b>${CPC_QUESTIONS.length}</b></div>
    <div class="cf-metric"><small>Respondidas</small><b>${st.answered}</b></div>
@@ -4407,21 +4394,22 @@ function renderCpcModule(w){
    <div class="cf-module-body">
      <div class="cf-module-bar"><span style="width:${pct}%"></span></div>
      <div class="cf-subtitle">${esc(w.subtitle)}</div>
-     <details class="cf-syllabus"><summary>Matriz do edital • ${w.outline.length} pontos</summary><div class="cf-micro-grid">${w.outline.map(x=>`<span class="cf-micro">${esc(x)}</span>`).join('')}</div></details>
      ${w.questionGaps?.length?`<aside class="cpc-coverage-warning"><div class="cpc-warning-title">⚠ Complementação externa de questões</div><p>O banco FCC local não cobre suficientemente: <b>${w.questionGaps.map(esc).join("; ")}</b>.</p><p>A teoria e a leitura esquematizada abaixo cobrem todo o conteúdo. Faça questões adicionais desses pontos no TEC ou QConcursos.</p></aside>`:``}
      <div class="cf-steps">
        ${cpcStep(1,'Diagnóstico','Questões FCC antes da teoria.',ws.diagnostic,real.length?`<button class="cf-btn primary" onclick="startCpcQuiz('${w.id}','diagnostic',${diag})">${ws.diagnostic?'Refazer diagnóstico':'Começar '+diag+' FCC'}</button>`:`<span class="muted small">Sem questões reais suficientes.</span>`)}
        ${cpcStep(2,'Leitura orientada','Dispositivos e pontos para observar na legislação processual civil.',ws.reading,`<div class="cf-reading"><strong>${esc(w.read)}</strong><ul>${w.read_focus.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div>${(w.lawScheme||[]).length?`<div class="cpc-law-heading"><b>Lei seca esquematizada</b><span>${w.lawScheme.length} blocos de leitura</span></div><div class="cpc-law-grid">${w.lawScheme.map((item,i)=>`<article class="cpc-law-card"><div class="cpc-law-kicker">BLOCO ${i+1}</div><h4>${esc(item.title)}</h4><strong>${esc(item.articles)}</strong><ul>${item.checkpoints.map(point=>`<li>${esc(point)}</li>`).join('')}</ul></article>`).join('')}</div>`:``}<div class="cf-actions">${cpcDecorandoButton(w)}<button class="cf-btn" onclick="openVadeMecum(null,'cpc')">Abrir Vade Mecum CPC</button><button class="cf-btn ${ws.reading?'good':''}" onclick="cpcUpdateWeek('${w.id}',{reading:${!ws.reading}})">${ws.reading?'✓ Concluída':'Marcar concluída'}</button></div>`)}
-       ${cpcStep(3,'Teoria nuclear','Base completa antes da segunda bateria.',ws.theory,`<div class="cf-theory-grid">${w.theory.map((t,i)=>`<details class="cf-theory" ${i===0?'open':''}><summary>${esc(t[0])}</summary><div class="cf-theory-text">${esc(t[1])}</div></details>`).join('')}</div><div class="cf-actions"><button class="cf-btn ${ws.theory?'good':''}" onclick="cpcUpdateWeek('${w.id}',{theory:${!ws.theory}})">${ws.theory?'✓ Teoria concluída':'Marcar teoria concluída'}</button></div>`)}
+       ${cpcStep(3,'Teoria completa','Base completa antes da segunda bateria.',ws.theory,`<div class="cf-theory-grid">${w.theory.map((t,i)=>`<details class="cf-theory" ${i===0?'open':''}><summary>${esc(t[0])}</summary><div class="cf-theory-text">${esc(t[1])}</div></details>`).join('')}</div><div class="cf-actions"><button class="cf-btn ${ws.theory?'good':''}" onclick="cpcUpdateWeek('${w.id}',{theory:${!ws.theory}})">${ws.theory?'✓ Teoria concluída':'Marcar teoria concluída'}</button></div>`)}
        ${cpcStep(4,'Questões intermediárias','Bateria curta depois da teoria.',ws.intermediate,real.length?`<button class="cf-btn primary" onclick="startCpcQuiz('${w.id}','intermediate',${inter})">${ws.intermediate?'Refazer '+inter+' FCC':'Fazer '+inter+' FCC'}</button>`:`<span class="muted small">Sem fila real suficiente.</span>`)}
        ${cpcStep(5,'Aprofundamento FCC','Distinções, exceções e pegadinhas de nível mais alto.',ws.deep,`<div class="cf-advanced-grid">${w.advanced.map(t=>`<div class="cf-advanced"><b>${esc(t[0])}</b><div>${esc(t[1])}</div></div>`).join('')}</div><div class="cf-actions"><button class="cf-btn ${ws.deep?'good':''}" onclick="cpcUpdateWeek('${w.id}',{deep:${!ws.deep}})">${ws.deep?'✓ Aprofundamento concluído':'Marcar aprofundamento concluído'}</button></div>`)}
        ${cpcStep(6,'Bateria final FCC','Misture literalidade, exceções e casos concretos.',ws.fixation,`<div class="cf-actions">${real.length?`<button class="cf-btn primary" onclick="startCpcQuiz('${w.id}','fixation',${finalN})">FCC real • ${finalN}</button>${extra>finalN?`<button class="cf-btn" onclick="startCpcQuiz('${w.id}','extra',${extra})">Banco completo • ${extra}</button>`:''}`:''}${ined.length?`<button class="cf-btn" onclick="startCpcQuiz('${w.id}','coverage',${Math.min(15,ined.length)})">Cobertura inédita • ${Math.min(15,ined.length)}</button>`:''}</div><div class="cf-coverage">${real.length} questões FCC reais neste módulo. Os pontos sem cobertura local estão no aviso acima.</div>`)}
        ${cpcStep(7,'Revisão de erros',errors.length?`${errors.length} erro(s) pendente(s) neste módulo.`:'Nenhum erro pendente.',errors.length===0,errors.length?`<button class="cf-btn bad" onclick="startCpcQuiz('${w.id}','errors',999)">Refazer ${errors.length} erro(s)</button>`:`<span class="muted small">A fila fica vazia quando a questão é acertada novamente.</span>`)}
      </div>
-     <details class="cf-resources"><summary class="muted small" style="cursor:pointer">Recursos do módulo • TEC/QC, Anki e anotações</summary>
+     <details class="cf-resources" open><summary class="muted small" style="cursor:pointer">Recursos do módulo</summary>
        <div class="cf-resource-grid" style="margin-top:8px">
          <div class="cf-resource-box"><h4>Questões externas</h4><div class="cf-actions">${tecAuto}${r.tec?`<button class="cf-btn" onclick="openCpcResource('${w.id}','tec')">TEC personalizado ↗</button>`:(tecAuto?'':`<button class="cf-btn" onclick="openCpcResource('${w.id}','tec')">+ TEC</button>`)}<button class="cf-btn" onclick="openCpcResource('${w.id}','qc')">${r.qc?'Abrir QC':'+ QC'}</button></div></div>
          <div class="cf-resource-box"><h4>Decorando a Lei</h4>${cpcDecorandoButton(w,true)}</div>
+         <div class="cf-resource-box"><h4>Vade Mecum</h4><button class="cf-btn" onclick="openEmbeddedTool('vade',{},this)">Abrir Vade Mecum</button></div>
+         <div class="cf-resource-box"><h4>Cadernos TEC</h4><button class="cf-btn" onclick="centralSidebarAction('tec-cadernos',this)">Abrir meus cadernos do TEC</button></div>
          <div class="cf-resource-box" style="grid-column:1/-1"><h4>Anotação</h4><textarea class="cf-notes" id="cf-note-${w.id}" placeholder="Regra, artigo, pegadinha ou dúvida...">${esc(localStorage.getItem(cpcNoteKey(w.id))||'')}</textarea><div class="cf-actions"><button class="cf-btn" onclick="saveCpcNote('${w.id}')">Salvar anotação</button></div></div>
        </div>
      </details>
@@ -4555,8 +4543,9 @@ function renderDetail(s,t,r){
   ${t.sourceStats?`<div class="resource"><div class="resource-label">${t.sourceStats.cards!=null?'Dados do pacote Anki recuperado':'Dados deste tópico'}</div><div class="muted small">${t.sourceStats.cards!=null?t.sourceStats.cards+' cartões · '+t.sourceStats.views+' visualizações · '+t.sourceStats.correct+' acertos · '+t.sourceStats.wrong+' erros'+(t.sourceStats.accuracy!=null?' · '+t.sourceStats.accuracy+'%':''):t.sourceStats.questions!=null?t.sourceStats.questions+' questões reais disponíveis':t.sourceStats.blocks!=null?t.sourceStats.blocks+' blocos de treino mecânico':'dados disponíveis'}</div></div>`:''}
   <div class="perf-form"><div class="field"><label>Questões feitas</label><input id="q-${t.uid}" type="number" min="0" placeholder="—"></div><div class="field"><label>Questões certas</label><input id="c-${t.uid}" type="number" min="0" placeholder="—"></div><button class="btn green" onclick="registerPerf('${t.uid}')">✓ Registrar</button></div>
   <div class="history-label">Histórico · total ${q} feitas · ${c} certas</div>${hist}
-  <div class="notes"><div class="resource-label">Anotações</div><div class="field"><textarea id="note-${t.uid}" placeholder="Regra, dúvida, pegadinha, observação..."></textarea></div><div class="action-row"><button class="btn primary sm" onclick="saveNote('${t.uid}')">Salvar anotação</button></div>${notes.map(n=>`<div class="note-item">${esc(n.text)}<br><small>${new Date(n.at).toLocaleString('pt-BR')}</small> <button class="edit-link" style="float:right;color:#ef7777" onclick="deleteNote('${t.uid}',${n.id})">×</button></div>`).join('')}</div>
-  <div class="resource"><div class="resource-label">Revisão</div><div class="chips"><input id="rev-${t.uid}" type="date" value="${localStorage.getItem(key(t.uid,'review'))||todayISO()}" style="border:1px solid var(--line2);background:#091525;color:#eaf2ff;border-radius:6px;padding:6px"><button class="btn sm" onclick="scheduleReview('${t.uid}')">Agendar revisão</button>${localStorage.getItem(key(t.uid,'review'))?`<span class="muted small">marcada para ${formatDate(localStorage.getItem(key(t.uid,'review')))}</span>`:''}</div></div>`
+  <div class="resource"><div class="resource-label">Revisão</div><div class="chips"><input id="rev-${t.uid}" type="date" value="${localStorage.getItem(key(t.uid,'review'))||todayISO()}" style="border:1px solid var(--line2);background:#091525;color:#eaf2ff;border-radius:6px;padding:6px"><button class="btn sm" onclick="scheduleReview('${t.uid}')">Agendar revisão</button>${localStorage.getItem(key(t.uid,'review'))?`<span class="muted small">marcada para ${formatDate(localStorage.getItem(key(t.uid,'review')))}</span>`:''}</div></div>
+  <div class="resource"><div class="resource-label">Ferramentas do módulo</div><div class="chips"><button class="chip real" onclick="openEmbeddedTool('decorando',{},this)">📖 Decorando a Lei</button><button class="chip real" onclick="openEmbeddedTool('vade',{},this)">⚖ Vade Mecum</button><button class="chip real" onclick="centralSidebarAction('tec-cadernos',this)">▤ Cadernos do TEC</button></div></div>
+  <div class="notes"><div class="resource-label">Anotações</div><div class="field"><textarea id="note-${t.uid}" placeholder="Regra, dúvida, pegadinha, observação..."></textarea></div><div class="action-row"><button class="btn primary sm" onclick="saveNote('${t.uid}')">Salvar anotação</button></div>${notes.map(n=>`<div class="note-item">${esc(n.text)}<br><small>${new Date(n.at).toLocaleString('pt-BR')}</small> <button class="edit-link" style="float:right;color:#ef7777" onclick="deleteNote('${t.uid}',${n.id})">×</button></div>`).join('')}</div>`
 }
 function safeUrl(raw){
  if(!raw)return '';
