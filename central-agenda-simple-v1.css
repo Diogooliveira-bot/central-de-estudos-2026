@@ -1,0 +1,189 @@
+/* BASE COMPLETA — Agenda simples, aditiva e retrocompatível */
+html.bc-ui-v1 #homeView .agenda-simple-home-legacy{display:none!important}
+html.bc-ui-v1 #homeView>.bc-home-continue{display:none!important}
+html.bc-ui-v1 #centralSidebar .nav>button[hidden],
+html.bc-ui-v1 #centralSidebar .nav>.label[hidden]{display:none!important}
+html.bc-ui-v1 .agenda-simple-home-card{
+  width:min(100%,760px);min-height:132px;margin-top:8px;padding:26px 28px;
+  display:flex;align-items:center;justify-content:space-between;gap:24px;
+  background:var(--bc-color-surface);border:1px solid var(--bc-color-border);border-radius:var(--bc-radius-lg)
+}
+html.bc-ui-v1 .agenda-simple-home-card>div{display:flex;flex-direction:column;gap:7px}
+html.bc-ui-v1 .agenda-simple-home-card span{font-size:12px;line-height:18px;font-weight:750;letter-spacing:.08em;color:var(--bc-color-text-secondary)}
+html.bc-ui-v1 .agenda-simple-home-card b{font-size:22px;line-height:30px;color:var(--bc-color-text)}
+html.bc-ui-v1 .agenda-simple-home-dashboard{width:min(100%,1180px);padding-bottom:72px}
+html.bc-ui-v1 .agenda-home-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin:8px 0 24px}
+html.bc-ui-v1 .agenda-home-heading>div{display:flex;flex-direction:column;gap:5px}
+html.bc-ui-v1 .agenda-home-heading>div>span{font-size:12px;line-height:18px;font-weight:800;letter-spacing:.09em;color:var(--bc-color-primary)}
+html.bc-ui-v1 .agenda-home-heading h1{margin:0;color:var(--bc-color-text);font-size:clamp(28px,4vw,40px);line-height:1.15;letter-spacing:-.025em}
+html.bc-ui-v1 .agenda-home-heading p{margin:0;color:var(--bc-color-text-secondary)}
+html.bc-ui-v1 .agenda-home-heading>button{min-height:44px;padding:10px 16px;border:1px solid transparent;border-radius:var(--bc-radius-md);background:var(--bc-color-primary);color:#fff;font:650 14px/20px inherit;cursor:pointer}
+html.bc-ui-v1 .agenda-home-summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-bottom:24px}
+html.bc-ui-v1 .agenda-home-summary>div{min-height:104px;padding:16px 18px;display:flex;flex-direction:column;justify-content:center;gap:2px;background:var(--bc-color-surface);border:1px solid var(--bc-color-border);border-radius:var(--bc-radius-lg)}
+html.bc-ui-v1 .agenda-home-summary small{color:var(--bc-color-text-secondary);font-size:12px;line-height:18px}
+html.bc-ui-v1 .agenda-home-summary b{color:var(--bc-color-text);font-size:28px;line-height:34px}
+html.bc-ui-v1 .agenda-home-summary span{color:var(--bc-color-text-secondary);font-size:12px}
+html.bc-ui-v1 .agenda-home-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-bottom:24px}
+html.bc-ui-v1 .agenda-home-panel,
+html.bc-ui-v1 .agenda-home-disciplines{padding:18px;background:var(--bc-color-surface);border:1px solid var(--bc-color-border);border-radius:var(--bc-radius-lg)}
+html.bc-ui-v1 .agenda-home-panel-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
+html.bc-ui-v1 .agenda-home-panel-head h2{margin:0;color:var(--bc-color-text);font-size:18px;line-height:26px}
+html.bc-ui-v1 .agenda-home-panel-head>span{color:var(--bc-color-text-secondary);font-size:12px;line-height:18px}
+html.bc-ui-v1 .agenda-home-panel-head>button{min-height:40px;padding:8px 12px;border:1px solid var(--bc-color-border-interactive);border-radius:var(--bc-radius-md);background:var(--bc-color-surface);color:var(--bc-color-text);font:650 13px/20px inherit;cursor:pointer}
+html.bc-ui-v1 .agenda-home-list{display:flex;flex-direction:column;gap:8px}
+html.bc-ui-v1 .agenda-home-task{min-height:58px;padding:9px 10px 9px 2px;display:grid;grid-template-columns:44px minmax(0,1fr);align-items:start;gap:8px;border:1px solid var(--bc-color-border);border-radius:var(--bc-radius-md);background:var(--bc-color-bg-secondary);cursor:pointer}
+html.bc-ui-v1 .agenda-home-task.overdue{border-left:3px solid var(--bc-color-warning)}
+html.bc-ui-v1 .agenda-home-task input{width:20px;height:20px;margin:11px 12px;accent-color:var(--bc-color-primary)}
+html.bc-ui-v1 .agenda-home-task>span{min-width:0;padding:2px 0;display:flex;flex-direction:column;gap:2px}
+html.bc-ui-v1 .agenda-home-task b{overflow:hidden;color:var(--bc-color-text);font-size:14px;line-height:20px;text-overflow:ellipsis;white-space:nowrap}
+html.bc-ui-v1 .agenda-home-task small,
+html.bc-ui-v1 .agenda-home-task em{color:var(--bc-color-text-secondary);font-size:12px;line-height:17px;font-style:normal}
+html.bc-ui-v1 .agenda-home-task.done{opacity:.65}
+html.bc-ui-v1 .agenda-home-task.done b{text-decoration:line-through}
+html.bc-ui-v1 .agenda-home-empty{min-height:58px;padding:16px;display:flex;align-items:center;justify-content:center;color:var(--bc-color-text-secondary);font-size:13px;text-align:center;border:1px dashed var(--bc-color-border-interactive);border-radius:var(--bc-radius-md)}
+html.bc-ui-v1 .agenda-home-discipline-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+html.bc-ui-v1 .agenda-home-discipline{min-height:104px;padding:14px;display:flex;flex-direction:column;align-items:flex-start;gap:5px;text-align:left;border:1px solid var(--bc-color-border);border-left:4px solid var(--bc-color-primary);border-radius:var(--bc-radius-md);background:var(--bc-color-bg-secondary);color:var(--bc-color-text);cursor:pointer}
+html.bc-ui-v1 .agenda-home-discipline:hover{background:var(--bc-color-surface);border-color:var(--bc-color-primary)}
+html.bc-ui-v1 .agenda-home-discipline b{font-size:14px;line-height:20px}
+html.bc-ui-v1 .agenda-home-discipline small{color:var(--bc-color-text-secondary);font-size:12px;line-height:18px}
+html.bc-ui-v1 .agenda-home-discipline span{margin-top:auto;color:var(--bc-color-primary);font-size:12px;font-weight:750}
+html.bc-ui-v1 .agenda-simple-home-card button,
+html.bc-ui-v1 .agenda-simple-header>button,
+html.bc-ui-v1 .agenda-add-line button,
+html.bc-ui-v1 .agenda-task-options button,
+html.bc-ui-v1 .error-source-card>button{
+  min-height:44px;padding:10px 16px;border:1px solid transparent;border-radius:var(--bc-radius-md);
+  background:var(--bc-color-primary);color:#fff;font:650 14px/20px inherit;cursor:pointer
+}
+html[data-bc-theme="dark"].bc-ui-v1 .agenda-simple-home-card button,
+html[data-bc-theme="oled"].bc-ui-v1 .agenda-simple-home-card button,
+html[data-bc-theme="dark"].bc-ui-v1 .agenda-simple-header>button,
+html[data-bc-theme="oled"].bc-ui-v1 .agenda-simple-header>button,
+html[data-bc-theme="dark"].bc-ui-v1 .agenda-add-line button,
+html[data-bc-theme="oled"].bc-ui-v1 .agenda-add-line button{color:#062126}
+
+html.bc-ui-v1 #agendaView.agenda-simple-ready{width:min(100%,1180px);padding-bottom:72px}
+html.bc-ui-v1 .agenda-simple-header{display:flex;align-items:flex-start;justify-content:space-between;gap:24px;margin-bottom:26px}
+html.bc-ui-v1 .agenda-simple-header .eyebrow{display:block;margin-bottom:7px;font-size:12px;line-height:18px;font-weight:750;letter-spacing:.09em;color:var(--bc-color-primary)}
+html.bc-ui-v1 .agenda-simple-header h1{margin:0;color:var(--bc-color-text);font-size:clamp(26px,4vw,38px);line-height:1.15;letter-spacing:-.025em}
+html.bc-ui-v1 .agenda-simple-header p{margin:8px 0 0;color:var(--bc-color-text-secondary)}
+html.bc-ui-v1 .agenda-simple-header>button{background:var(--bc-color-surface);border-color:var(--bc-color-border-interactive);color:var(--bc-color-text)}
+html.bc-ui-v1 .agenda-simple-layout{display:grid;grid-template-columns:minmax(250px,300px) minmax(0,1fr);gap:28px;align-items:start}
+html.bc-ui-v1 .agenda-calendar-card{position:sticky;top:calc(var(--bc-topbar-height) + 20px);padding:18px;background:var(--bc-color-surface);border:1px solid var(--bc-color-border);border-radius:var(--bc-radius-lg)}
+html.bc-ui-v1 .agenda-calendar-head{display:grid;grid-template-columns:44px 1fr 44px;align-items:center;gap:4px;margin-bottom:15px;text-align:center}
+html.bc-ui-v1 .agenda-calendar-head button{width:44px;height:44px;border:0;border-radius:10px;background:transparent;color:var(--bc-color-text);font-size:26px;cursor:pointer}
+html.bc-ui-v1 .agenda-calendar-head button:hover{background:var(--bc-color-bg-secondary)}
+html.bc-ui-v1 .agenda-calendar-head b{font-size:14px;line-height:20px}
+html.bc-ui-v1 .agenda-calendar-week,
+html.bc-ui-v1 .agenda-calendar-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px}
+html.bc-ui-v1 .agenda-calendar-week{margin-bottom:5px;color:var(--bc-color-text-secondary);font-size:10px;text-align:center}
+html.bc-ui-v1 .agenda-cal-day,
+html.bc-ui-v1 .agenda-cal-empty{aspect-ratio:1;min-width:0}
+html.bc-ui-v1 .agenda-cal-day{position:relative;border:1px solid transparent;border-radius:9px;background:transparent;color:var(--bc-color-text);font-size:13px;cursor:pointer}
+html.bc-ui-v1 .agenda-cal-day:hover{background:var(--bc-color-bg-secondary)}
+html.bc-ui-v1 .agenda-cal-day.today{border-color:var(--bc-color-border-interactive)}
+html.bc-ui-v1 .agenda-cal-day.selected{background:var(--bc-color-primary);color:#fff}
+html[data-bc-theme="dark"].bc-ui-v1 .agenda-cal-day.selected,
+html[data-bc-theme="oled"].bc-ui-v1 .agenda-cal-day.selected{color:#062126}
+html.bc-ui-v1 .agenda-cal-day small{position:absolute;right:4px;bottom:3px;min-width:14px;height:14px;border-radius:7px;background:var(--bc-color-accent);color:#fff;font-size:9px;line-height:14px}
+
+html.bc-ui-v1 .agenda-quick-add{margin-bottom:28px;padding:18px;background:var(--bc-color-surface);border:1px solid var(--bc-color-border);border-radius:var(--bc-radius-lg)}
+html.bc-ui-v1 .agenda-add-line{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px}
+html.bc-ui-v1 .agenda-add-line input,
+html.bc-ui-v1 .agenda-more-fields input,
+html.bc-ui-v1 .agenda-task-options input,
+html.bc-ui-v1 .agenda-task-options textarea{
+  width:100%;min-height:44px;padding:10px 12px;border:1px solid var(--bc-color-border-interactive);border-radius:var(--bc-radius-md);background:var(--bc-color-surface);color:var(--bc-color-text);font:400 16px/22px inherit
+}
+html.bc-ui-v1 .agenda-more-fields-button{margin-top:10px;padding:5px 0;border:0;background:transparent;color:var(--bc-color-text-secondary);font-size:13px;cursor:pointer}
+html.bc-ui-v1 .agenda-more-fields{display:grid;grid-template-columns:160px minmax(0,1fr);gap:12px;margin-top:12px}
+html.bc-ui-v1 .agenda-more-fields[hidden]{display:none}
+html.bc-ui-v1 .agenda-more-fields label,
+html.bc-ui-v1 .agenda-task-options label{display:flex;flex-direction:column;gap:6px;color:var(--bc-color-text-secondary);font-size:12px;font-weight:650}
+html.bc-ui-v1 .agenda-simple-status{min-height:20px;margin-top:8px;color:var(--bc-color-text-secondary);font-size:12px;line-height:20px}
+html.bc-ui-v1 .agenda-simple-status.success{color:var(--bc-color-success)}
+html.bc-ui-v1 .agenda-simple-status.warning{color:var(--bc-color-warning)}
+html.bc-ui-v1 .agenda-simple-status.error{color:var(--bc-color-error)}
+html.bc-ui-v1 .agenda-section-title{display:flex;align-items:end;justify-content:space-between;gap:16px;margin:0 0 10px}
+html.bc-ui-v1 .agenda-section-title h2{margin:0;font-size:18px;line-height:26px}
+html.bc-ui-v1 .agenda-section-title>span,
+html.bc-ui-v1 .agenda-section-title small{color:var(--bc-color-text-secondary);font-size:12px}
+html.bc-ui-v1 .agenda-section-title>div{display:flex;flex-direction:column;gap:2px}
+html.bc-ui-v1 .agenda-section-title>div>span{font-size:12px;font-weight:750;letter-spacing:.08em;color:var(--bc-color-warning)}
+html.bc-ui-v1 .agenda-overdue-section{margin-bottom:28px}
+html.bc-ui-v1 .agenda-simple-list{display:flex;flex-direction:column;gap:8px}
+html.bc-ui-v1 .agenda-simple-task{
+  display:grid;grid-template-columns:44px minmax(0,1fr) auto 44px;align-items:start;gap:8px;
+  min-height:66px;padding:10px 10px 10px 4px;background:var(--bc-color-surface);border:1px solid var(--bc-color-border);border-radius:var(--bc-radius-md)
+}
+html.bc-ui-v1 .agenda-simple-task[draggable="true"]{cursor:grab}
+html.bc-ui-v1 .agenda-simple-task.dragging{opacity:.48;border-color:var(--bc-color-primary)}
+html.bc-ui-v1 .agenda-simple-task.overdue{border-left:3px solid var(--bc-color-warning)}
+html.bc-ui-v1 .agenda-task-check{width:44px;height:44px;display:grid;place-items:center;cursor:pointer}
+html.bc-ui-v1 .agenda-task-check input{width:20px;height:20px;margin:0;accent-color:var(--bc-color-primary)}
+html.bc-ui-v1 .agenda-task-copy{min-width:0;padding-top:2px;display:flex;flex-direction:column;gap:3px}
+html.bc-ui-v1 .agenda-task-copy b{color:var(--bc-color-text);font-size:15px;line-height:22px;font-weight:620;word-break:break-word}
+html.bc-ui-v1 .agenda-task-copy small,
+html.bc-ui-v1 .agenda-task-copy p,
+html.bc-ui-v1 .agenda-task-copy em{margin:0;color:var(--bc-color-text-secondary);font-size:12px;line-height:18px;font-style:normal}
+html.bc-ui-v1 .agenda-simple-task.done .agenda-task-copy b{text-decoration:line-through;color:var(--bc-color-text-secondary)}
+html.bc-ui-v1 .agenda-simple-task.done{opacity:.72}
+html.bc-ui-v1 .agenda-task-order{display:flex;gap:2px}
+html.bc-ui-v1 .agenda-task-order button,
+html.bc-ui-v1 .agenda-task-more{width:36px;height:36px;border:0;border-radius:9px;background:transparent;color:var(--bc-color-text-secondary);cursor:pointer}
+html.bc-ui-v1 .agenda-task-order button:hover,
+html.bc-ui-v1 .agenda-task-more:hover{background:var(--bc-color-bg-secondary);color:var(--bc-color-text)}
+html.bc-ui-v1 .agenda-task-order button:disabled{opacity:.3;cursor:not-allowed}
+html.bc-ui-v1 .agenda-task-options{grid-column:2/-1;display:grid;grid-template-columns:150px minmax(0,1fr);gap:12px;margin:8px 0 4px;padding:14px;border-radius:var(--bc-radius-md);background:var(--bc-color-bg-secondary);border:1px solid var(--bc-color-border)}
+html.bc-ui-v1 .agenda-task-options .wide{grid-column:1/-1}
+html.bc-ui-v1 .agenda-task-options textarea{resize:vertical}
+html.bc-ui-v1 .agenda-option-actions{display:flex;align-items:end;gap:8px;flex-wrap:wrap}
+html.bc-ui-v1 .agenda-task-options button{min-height:40px;padding:8px 12px;background:var(--bc-color-surface);border-color:var(--bc-color-border-interactive);color:var(--bc-color-text)}
+html.bc-ui-v1 .agenda-task-options button.danger{color:var(--bc-color-error)}
+html.bc-ui-v1 .agenda-simple-empty{min-height:120px;padding:28px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;text-align:center;color:var(--bc-color-text-secondary);background:var(--bc-color-surface);border:1px dashed var(--bc-color-border-interactive);border-radius:var(--bc-radius-md)}
+
+html.bc-ui-v1 .agenda-errors-view{width:min(100%,940px)}
+html.bc-ui-v1 .agenda-error-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+html.bc-ui-v1 .error-source-card{padding:20px;background:var(--bc-color-surface);border:1px solid var(--bc-color-border);border-radius:var(--bc-radius-lg)}
+html.bc-ui-v1 .error-source-card>div:first-child{display:flex;flex-direction:column;gap:3px;margin-bottom:12px}
+html.bc-ui-v1 .error-source-card>div:first-child span{color:var(--bc-color-text-secondary);font-size:12px}
+html.bc-ui-v1 .error-source-card>div:first-child b{font-size:20px}
+html.bc-ui-v1 .error-source-card>button{margin-bottom:14px}
+html.bc-ui-v1 .error-module-list{display:flex;flex-direction:column;gap:6px}
+html.bc-ui-v1 .error-module-row{width:100%;min-height:54px;padding:9px 10px;display:flex;align-items:center;justify-content:space-between;gap:12px;text-align:left;border:1px solid var(--bc-color-border);border-radius:10px;background:var(--bc-color-bg-secondary);color:var(--bc-color-text);cursor:pointer}
+html.bc-ui-v1 .error-module-row>span{min-width:0;display:flex;flex-direction:column;gap:2px}
+html.bc-ui-v1 .error-module-row small{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--bc-color-text-secondary)}
+html.bc-ui-v1 .error-module-row em{flex:0 0 auto;color:var(--bc-color-error);font-size:12px;font-style:normal}
+
+@media(max-width:1023px){
+  html.bc-ui-v1 .agenda-home-discipline-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  html.bc-ui-v1 .agenda-simple-layout{grid-template-columns:1fr}
+  html.bc-ui-v1 .agenda-calendar-card{position:static}
+  html.bc-ui-v1 .agenda-calendar-grid{gap:6px}
+  html.bc-ui-v1 .agenda-cal-day{aspect-ratio:auto;min-height:42px}
+}
+@media(max-width:639px){
+  html.bc-ui-v1 .agenda-simple-home-dashboard{padding-bottom:48px}
+  html.bc-ui-v1 .agenda-home-heading{align-items:stretch;flex-direction:column;gap:14px}
+  html.bc-ui-v1 .agenda-home-heading>button{align-self:flex-start}
+  html.bc-ui-v1 .agenda-home-summary,
+  html.bc-ui-v1 .agenda-home-grid,
+  html.bc-ui-v1 .agenda-home-discipline-grid{grid-template-columns:1fr}
+  html.bc-ui-v1 .agenda-simple-home-card{padding:20px;align-items:stretch;flex-direction:column;gap:18px}
+  html.bc-ui-v1 .agenda-simple-header{align-items:stretch;flex-direction:column;gap:14px}
+  html.bc-ui-v1 .agenda-simple-header>button{align-self:flex-start}
+  html.bc-ui-v1 .agenda-calendar-card{display:block!important}
+  html.bc-ui-v1 .agenda-add-line{grid-template-columns:1fr}
+  html.bc-ui-v1 .agenda-more-fields-button{min-height:44px}
+  html.bc-ui-v1 .agenda-more-fields{grid-template-columns:1fr}
+  html.bc-ui-v1 .agenda-simple-task{grid-template-columns:44px minmax(0,1fr) 44px}
+  html.bc-ui-v1 .agenda-task-order{grid-column:2;order:4}
+  html.bc-ui-v1 .agenda-task-order button,
+  html.bc-ui-v1 .agenda-task-more{width:44px;height:44px}
+  html.bc-ui-v1 .agenda-task-more{grid-column:3;grid-row:1}
+  html.bc-ui-v1 .agenda-task-options{grid-column:1/-1;grid-template-columns:1fr}
+  html.bc-ui-v1 .agenda-task-options .wide{grid-column:auto}
+  html.bc-ui-v1 .agenda-error-grid{grid-template-columns:1fr}
+}
+
+@media(prefers-reduced-motion:reduce){html.bc-ui-v1 .agenda-simple-task{scroll-behavior:auto}}

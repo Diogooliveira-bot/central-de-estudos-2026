@@ -103,8 +103,7 @@ aside{background:var(--side);border-right:1px solid var(--line);padding:15px 12p
 .agenda-row.done .agenda-copy{text-decoration:line-through;color:#687b94}.agenda-row input{width:18px;height:18px;accent-color:var(--green)}.agenda-time{font-size:11px;color:#8ca8ff;font-weight:800}.agenda-copy b{display:block;font-size:12px}.agenda-copy small{display:block;color:var(--muted);margin-top:2px}
 .progress-box{padding:16px}.big{font-size:28px;font-weight:900}.progress-line{height:7px;border-radius:999px;background:#1d2b42;overflow:hidden;margin:12px 0}.progress-line span{display:block;height:100%;background:linear-gradient(90deg,#6d58ff,#8f59ff);width:0}
 .summary{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:11px}.sum{background:#0a1525;border:1px solid #213149;border-radius:8px;padding:10px}.sum small{display:block;color:var(--muted);font-size:10px}.sum b{font-size:18px}
-.quick{padding:7px 14px 12px}.quick button{width:100%;border:0;background:transparent;color:#eaf0fa;border-bottom:1px solid #1d2b40;padding:11px 0;text-align:left;display:flex;justify-content:space-between;gap:10px}.quick button:last-child{border-bottom:0}.quick small{color:var(--muted);display:block}
-.home-today-card .card-head small{display:block;margin-top:3px;font-size:11px}.home-pending{display:grid;gap:0}.home-pending .pending-item{border-bottom:1px solid #1d2b40;padding:11px 0}.home-pending .pending-item:last-child{border-bottom:0}.home-pending b{display:block;font-size:12px}.home-pending small{display:block;color:var(--muted);margin-top:2px}
+.quick{padding:7px 14px 12px}.quick button{width:100%;border:0;background:transparent;color:#eaf0fa;border-bottom:1px solid #1d2b40;padding:11px 0;text-align:left;display:flex;justify-content:space-between}.quick button:last-child{border-bottom:0}.quick small{color:var(--muted);display:block}
 
 .schedule-intro{margin:18px 0 13px}.eyebrow{font-size:11px;color:#8ea4c5}.schedule-intro h2{margin:4px 0 5px;font-size:19px}.schedule-intro p{margin:0;color:var(--muted);font-size:12px;line-height:1.45}
 .subjects{display:grid;gap:7px}
@@ -805,19 +804,21 @@ setTimeout(function(){
   <section class="view" id="homeView">
    <div class="hero">
     <div><h1>Meu estudo</h1><p id="today"></p></div>
-    <button class="btn primary" onclick="return CentralAgenda.open(this)">Abrir agenda simples</button>
    </div>
    <div class="home-grid">
     <div>
-     <div class="card home-today-card"><div class="card-head"><div><h2>Hoje na agenda</h2><small id="homeTodayLabel" class="muted">Carregando...</small></div><button class="btn sm" onclick="return CentralAgenda.open(this)">Editar</button></div><div class="agenda" id="homeAgenda"></div></div>
+     <div class="card"><div class="card-head"><h2>Agenda de hoje</h2><button class="btn sm" onclick="openAgenda()">Editar</button></div><div class="agenda" id="homeAgenda"></div></div>
      <div class="schedule-intro" id="disciplinasHome"><div class="eyebrow">Disciplinas</div><h2>Escolha o que estudar agora</h2><p>Visão simples das matérias da Central, com módulos, progresso e acesso direto aos tópicos.</p></div>
      <div class="subjects" id="subjects"></div>
     </div>
     <div class="side-col">
-     <div class="card"><div class="card-head"><h3>Progresso do dia</h3></div><div class="progress-box"><div class="big" id="dayCount">0 de 0</div><div class="muted small">tarefas concluídas hoje</div><div class="progress-line"><span id="dayBar"></span></div><div class="muted small" id="dayPct">0%</div></div></div>
-     <div class="card"><div class="card-head"><h3>Pendências de hoje</h3></div><div class="quick home-pending" id="homePending"><div class="muted small">Carregando pendências...</div></div></div>
-     <div class="card"><div class="card-head"><h3>Decorando a Lei</h3></div><div class="quick"><button type="button" onclick="return openEmbeddedTool('decorando',{},this)"><span><b>Lei seca</b><small>Abra o Decorando a Lei Seca sem sair da Central.</small></span><span>↗</span></button><button type="button" onclick="return openEmbeddedTool('vade',{},this)"><span><b>Vade Mecum</b><small>Consulta rápida para conferir artigos.</small></span><span>↗</span></button></div></div>
-     <div class="card"><div class="card-head"><h3>Continuar de onde parei</h3></div><div class="progress-box" id="continueBox"></div></div></div>
+     <div class="card"><div class="card-head"><h3>Progresso do dia</h3></div><div class="progress-box"><div class="big" id="dayCount">0 de 0</div><div class="muted small">blocos concluídos</div><div class="progress-line"><span id="dayBar"></span></div><div class="muted small" id="dayPct">0%</div></div></div>
+     <div class="card"><div class="card-head"><h3>Continuar de onde parei</h3></div><div class="progress-box" id="continueBox"></div></div>
+     <div class="card home-tec-card" id="homeTecCard">
+      <div class="card-head"><h3>Cadernos TEC</h3><span class="muted small">externo</span></div>
+      <div class="progress-box"><b>Questões externas por matéria</b><p class="muted small" style="line-height:1.5;margin:7px 0 12px">Abra os cadernos vinculados ao seu plano e registre seu desempenho.</p><button class="btn primary" type="button" onclick="return centralSidebarAction('tec-cadernos',this)">Abrir Cadernos TEC</button></div>
+     </div>
+    </div>
     </div>
    </div>
   </section>
@@ -835,6 +836,16 @@ setTimeout(function(){
   <section class="view hidden" id="agendaView"><button type="button" class="central-view-back" onclick="return openHome()" aria-label="Voltar ao início">‹ Central</button>
    <div class="hero"><div><h1>Agenda</h1><p>Checklist editável por dia.</p></div></div>
    <div class="card" style="padding:16px">
+    <div id="agendaCalendarPanel" class="agenda-calendar-panel">
+     <div class="agenda-calendar-toolbar">
+      <button type="button" class="btn sm" id="agendaCalendarPrev" aria-label="Mês anterior">‹</button>
+      <strong id="agendaCalendarTitle">Agenda mensal</strong>
+      <button type="button" class="btn sm" id="agendaCalendarNext" aria-label="Próximo mês">›</button>
+      <button type="button" class="btn sm agenda-calendar-today" id="agendaCalendarToday">Hoje</button>
+     </div>
+     <div class="agenda-calendar-week" aria-hidden="true"><span>Seg</span><span>Ter</span><span>Qua</span><span>Qui</span><span>Sex</span><span>Sáb</span><span>Dom</span></div>
+     <div id="agendaCalendarGrid" class="agenda-calendar-grid" role="grid" aria-label="Calendário mensal"></div>
+    </div>
     <div class="form-grid">
      <div class="field"><label>Data</label><input id="agendaDate" type="date"></div>
      <div class="field"><label>Horário</label><input id="agendaTime" type="time"></div>
@@ -1093,7 +1104,7 @@ window.centralBackupImport=function(inp){
 <script src="/central-structural-v66119/cpc-questions-011.js?v=66119s2"></script>
 <script src="/central-structural-v66119/cpc-questions-012.js?v=66119s2"></script>
 <script src="/central-structural-v66119/cpc-questions-013.js?v=66119s2"></script>
-<script src="/central-structural-v66119/runtime.js?v=20260923preprod1"></script>
+<script src="/central-structural-v66119/runtime.js?v=20260930standard1"></script>
 <script src="/portugues-native-v1.js?v=20260921n2"></script>
 <script src="/central-reading-font-v66126.js?v=20260921font250"></script>
 <script src="/penal-full-theory-data-01.js?v=20260919b"></script>
@@ -1919,9 +1930,8 @@ window.openEmbeddedTool=openEmbeddedTool;
     } catch (_) {
       try {
         agendaStorage.setItem(`central-v6:agenda-corrompida:${date}:${Date.now()}`, raw);
-        agendaStorage.removeItem(key(date));
       } catch (_) {}
-      status('Um registro antigo inválido foi separado. A Agenda continua disponível.', 'warning');
+      status('Um registro antigo inválido foi preservado para recuperação. A Agenda continua disponível.', 'warning');
       return [];
     }
   }
@@ -1954,19 +1964,12 @@ window.openEmbeddedTool=openEmbeddedTool;
   function renderHomeSummary() {
     const date = today();
     const tasks = read(date);
-    const pending = tasks.filter((task) => !task.done);
-    const done = tasks.length - pending.length;
+    const done = tasks.filter((task) => task.done).length;
     const percentage = tasks.length ? Math.round((done / tasks.length) * 100) : 0;
     const count = element('dayCount');
     const bar = element('dayBar');
     const percent = element('dayPct');
     const host = element('homeAgenda');
-    const pendingHost = element('homePending');
-    const todayLabel = element('homeTodayLabel');
-    const todayText = element('today');
-    const formatted = new Intl.DateTimeFormat('pt-BR', { weekday: 'long', day: '2-digit', month: 'long' }).format(new Date(date + 'T12:00:00'));
-    if (todayText) todayText.textContent = formatted.charAt(0).toUpperCase() + formatted.slice(1);
-    if (todayLabel) todayLabel.textContent = pending.length ? `${pending.length} pendente(s) para hoje` : (tasks.length ? 'Tudo concluído hoje.' : 'Nenhuma tarefa cadastrada para hoje.');
     if (count) count.textContent = `${done} de ${tasks.length}`;
     if (bar) bar.style.width = `${percentage}%`;
     if (percent) percent.textContent = `${percentage}%`;
@@ -1977,14 +1980,7 @@ window.openEmbeddedTool=openEmbeddedTool;
           <div class="agenda-time">${escapeHtml(task.time || '—')}</div>
           <div class="agenda-copy"><b>${escapeHtml(disciplineLabel(task.discipline))}</b><small>${escapeHtml(task.task)}</small></div>
           <button class="btn sm" type="button" onclick="CentralAgenda.open()">Editar</button>
-        </div>`).join('') : '<div class="muted small" style="padding:12px">Agenda de hoje vazia. Toque em Editar para adicionar estudo, questões ou revisão.</div>';
-    }
-    if (pendingHost) {
-      pendingHost.innerHTML = pending.length ? pending.slice(0, 6).map((task) => `
-        <div class="pending-item">
-          <b>${escapeHtml(task.time || 'Sem horário')} · ${escapeHtml(disciplineLabel(task.discipline))}</b>
-          <small>${escapeHtml(task.task)}</small>
-        </div>`).join('') + (pending.length > 6 ? '<div class="muted small" style="padding:10px 0">Mais pendências na agenda.</div>' : '') : '<div class="muted small" style="padding:12px 0">Nada pendente para hoje.</div>';
+        </div>`).join('') : '<div class="muted small" style="padding:12px">Agenda vazia.</div>';
     }
   }
 
@@ -2095,9 +2091,6 @@ window.openEmbeddedTool=openEmbeddedTool;
     if (addButton) addButton.onclick = add;
     currentDate();
     renderHomeSummary();
-    window.addEventListener('storage', (event) => {
-      if (String(event.key || '').startsWith(KEY_PREFIX)) renderHomeSummary();
-    });
   }
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initialize, { once: true });
@@ -2166,8 +2159,10 @@ window.moduleFrameRetry=function(){
 <script id="cf-final-audit-integration-apply-20260920">
 (function(){'use strict';function apply(){try{var p=window.CF_FINAL_AUDIT_INTEGRATION;if(!p||!Array.isArray(window.CF_WEEKS))return;Object.keys(p.content||{}).forEach(function(id){var w=window.CF_WEEKS.find(function(x){return x.id===id});if(!w)return;var u=p.content[id];Object.keys(u).forEach(function(k){w[k]=u[k]})});window.CF_FINAL_AUDIT_INTEGRATION_APPLIED=true}catch(e){console.warn('CF final audit integration',e)}}apply();if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',apply)})();
 </script>
+<script src="/cpc-final-integration-20260928.js?v=20260929editorial12"></script>
 <script src="/portugues-tec-data-v1.js?v=20260921n2"></script>
-<link rel="stylesheet" href="/base-completa-visual-v1.css?v=20260921all1" data-base-completa-audit>\n<script src="/base-completa-visual-v1.js?v=20260923preprod2"></script>\n<script id="central-remove-cronograma-anki-v6676">
+<link rel="stylesheet" href="/base-completa-visual-v1.css?v=20260921all1" data-base-completa-audit>\n<script src="/base-completa-visual-v1.js?v=20260923preprod2"></script>\n
+<script id="central-remove-cronograma-anki-v6676">
 (function(){
   'use strict';
   window.CENTRAL_REMOVED_TOOLS = Object.assign({}, window.CENTRAL_REMOVED_TOOLS, { cronograma: true, anki: true });
@@ -2224,5 +2219,111 @@ window.moduleFrameRetry=function(){
   setTimeout(boot, 1200);
 })();
 </script>
-</body></html>
 
+<script id="central-internal-questions-policy-v1">
+(function(){
+  'use strict';
+  var COURSE_IDS={cf:true,cpc:true,penal:true,civil:true};
+  var KEEP=/^(leitura orientada|teoria nuclear)$/i;
+  function remove(el){if(el&&el.parentNode)el.parentNode.removeChild(el)}
+  function ensureHomeTecCard(){
+    var host=document.getElementById('agendaSimpleHome');
+    if(!host||host.querySelector('.bc-home-tec-card'))return;
+    var card=document.createElement('section');
+    card.className='agenda-home-panel bc-home-tec-card';
+    card.innerHTML='<div class="agenda-home-panel-head"><h2>Cadernos TEC</h2><span>questões externas</span></div><p class="muted small" style="line-height:1.55;margin:0 0 14px">Cadernos vinculados por matéria para complementar a teoria com questões externas.</p><button type="button" data-action="open-tec" style="min-height:44px;padding:10px 16px;border:1px solid transparent;border-radius:var(--bc-radius-md);background:var(--bc-color-primary);color:#fff;font:650 14px/20px inherit;cursor:pointer">Abrir Cadernos TEC</button>';
+    card.querySelector('[data-action="open-tec"]').addEventListener('click',function(){if(typeof window.centralSidebarAction==='function')window.centralSidebarAction('tec-cadernos',this);else if(typeof window.openTecCadernos==='function')window.openTecCadernos(this)});
+    var disciplines=host.querySelector('.agenda-home-disciplines');
+    if(disciplines)disciplines.insertAdjacentElement('afterend',card);else host.appendChild(card);
+  }
+  function apply(){
+    ensureHomeTecCard();
+    document.querySelectorAll('.subject[data-id]').forEach(function(subject){
+      var sid=subject.getAttribute('data-id');
+      if(!COURSE_IDS[sid]||sid==='pt'||sid==='rlm')return;
+      subject.querySelectorAll('.cf-master-tools button').forEach(function(button){
+        if(/erro/i.test(button.textContent||''))remove(button);
+      });
+      subject.querySelectorAll('.cf-metrics').forEach(remove);
+      subject.querySelectorAll('.cf-step,.civil-step').forEach(function(step){
+        var title=step.querySelector('.cf-step-copy b,.civil-step-title b');
+        var label=(title&&title.textContent||'').trim();
+        if(!KEEP.test(label))remove(step);
+      });
+      subject.querySelectorAll('.cf-module-stat').forEach(function(el){el.textContent='leitura + teoria'});
+      subject.querySelectorAll('.civil-module-state span').forEach(function(el){if(/etapas/i.test(el.textContent||''))el.textContent='leitura + teoria'});
+      subject.querySelectorAll('.civil-master-intro p').forEach(function(p){
+        if(/banco do curso|questões|casos autorais/i.test(p.textContent||''))p.textContent='Conteúdo completo do edital, organizado em módulos de leitura e teoria.';
+      });
+      subject.querySelectorAll('.cpc-coverage-warning').forEach(remove);
+      subject.querySelectorAll('.cf-resource-box').forEach(function(box){
+        if(/questões únicas|abrir as [\d.]+ questões/i.test(box.textContent||''))remove(box);
+      });
+      subject.querySelectorAll('#cf-session-host,#cf-errors-host,#cpc-session-host,#cpc-errors-host,#penal-session-host,#penal-errors-host').forEach(remove);
+    });
+  }
+  function schedule(){
+    if(window.__centralQuestionPolicyQueued)return;
+    window.__centralQuestionPolicyQueued=true;
+    setTimeout(function(){window.__centralQuestionPolicyQueued=false;try{apply()}catch(e){console.warn('Internal question policy',e)}},0);
+  }
+  apply();
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',schedule,{once:true});
+  if(document.body&&!window.__centralQuestionPolicyObserver){
+    window.__centralQuestionPolicyObserver=new MutationObserver(schedule);
+    window.__centralQuestionPolicyObserver.observe(document.body,{childList:true,subtree:true});
+  }
+  setTimeout(schedule,300);setTimeout(schedule,1200);
+})();
+</script>
+<style id="cpc-width-fix-v1">#subjects .subject[data-id="cpc"]{width:100%!important;max-width:none!important;justify-self:stretch!important}</style>
+<style id="central-agenda-calendar-v1-style">
+.agenda-calendar-panel{margin-bottom:16px;padding:14px;border:1px solid var(--line);border-radius:12px;background:var(--panel2)}
+.agenda-calendar-toolbar{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.agenda-calendar-toolbar strong{min-width:150px;text-align:center;font-size:14px}
+.agenda-calendar-today{margin-left:4px}
+.agenda-calendar-week,.agenda-calendar-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px}
+.agenda-calendar-week{margin-bottom:5px;color:var(--muted);font-size:10px;font-weight:800;text-align:center}
+.agenda-calendar-grid button{min-height:42px;padding:7px 4px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--text);font:700 12px/1.15 inherit;cursor:pointer}
+.agenda-calendar-grid button:hover,.agenda-calendar-grid button.selected{border-color:#12c2dc;background:rgba(18,194,220,.16)}
+.agenda-calendar-grid button.today{box-shadow:inset 0 0 0 2px #12c2dc}
+.agenda-calendar-grid button.has-tasks{position:relative}
+.agenda-calendar-grid button.has-tasks::after{content:"";display:block;width:5px;height:5px;margin:4px auto 0;border-radius:50%;background:#12c2dc}
+.agenda-calendar-grid button.other-month{opacity:.38}
+@media(max-width:680px){.agenda-calendar-panel{padding:10px}.agenda-calendar-grid{gap:4px}.agenda-calendar-grid button{min-height:40px}}
+</style>
+<script id="central-agenda-calendar-v1">
+(function(){
+'use strict';
+var monthCursor=null,bound=false;
+function pad(v){return String(v).padStart(2,'0')}
+function dateKey(y,m,d){return y+'-'+pad(m+1)+'-'+pad(d)}
+function parseKey(value){var p=String(value||'').split('-').map(Number);return p.length===3&&p.every(function(n){return Number.isFinite(n)})?new Date(p[0],p[1]-1,p[2]):new Date()}
+function todayKey(){var d=new Date();return dateKey(d.getFullYear(),d.getMonth(),d.getDate())}
+function selectedKey(){var el=document.getElementById('agendaDate');return el&&el.value||todayKey()}
+function readTasks(key){try{return window.CentralAgenda&&typeof window.CentralAgenda.read==='function'?window.CentralAgenda.read(key):[]}catch(_){return []}}
+function renderCalendar(){
+ var grid=document.getElementById('agendaCalendarGrid'),title=document.getElementById('agendaCalendarTitle');if(!grid||!title)return;
+ var base=monthCursor||parseKey(selectedKey()),y=base.getFullYear(),m=base.getMonth();
+ title.textContent=new Intl.DateTimeFormat('pt-BR',{month:'long',year:'numeric'}).format(base).replace(/^./,function(ch){return ch.toUpperCase()});
+ var first=(new Date(y,m,1).getDay()+6)%7,total=new Date(y,m+1,0).getDate(),prevTotal=new Date(y,m,0).getDate(),html='';
+ for(var i=0;i<first;i++){var pd=prevTotal-first+i+1,pk=dateKey(y,m-1,pd);html+='<button type="button" class="other-month" data-calendar-date="'+pk+'">'+pd+'</button>'}
+ for(var d=1;d<=total;d++){var key=dateKey(y,m,d),tasks=readTasks(key),classes=[];if(key===selectedKey())classes.push('selected');if(key===todayKey())classes.push('today');if(tasks.length)classes.push('has-tasks');html+='<button type="button" role="gridcell" class="'+classes.join(' ')+'" data-calendar-date="'+key+'" aria-label="'+key+(tasks.length?' — '+tasks.length+' tarefa(s)':'')+'">'+d+'</button>'}
+ var cells=first+total;for(var n=1;cells+n<=42;n++){var nk=dateKey(y,m+1,n);html+='<button type="button" class="other-month" data-calendar-date="'+nk+'">'+n+'</button>'}
+ grid.innerHTML=html;
+ grid.querySelectorAll('button[data-calendar-date]').forEach(function(btn){btn.onclick=function(){var key=btn.getAttribute('data-calendar-date'),input=document.getElementById('agendaDate');if(input)input.value=key;monthCursor=parseKey(key);if(window.CentralAgenda&&typeof window.CentralAgenda.render==='function')window.CentralAgenda.render();renderCalendar()}})
+}
+function sync(){var input=document.getElementById('agendaDate');if(input&&!input.__calendarBound){input.__calendarBound=true;input.addEventListener('change',function(){monthCursor=parseKey(input.value);renderCalendar()})}if(!monthCursor)monthCursor=parseKey(selectedKey());renderCalendar()}
+function bind(){
+ var prev=document.getElementById('agendaCalendarPrev'),next=document.getElementById('agendaCalendarNext'),today=document.getElementById('agendaCalendarToday');if(!prev||!next||!today){setTimeout(bind,80);return}
+ if(bound){sync();return}bound=true;
+ prev.onclick=function(){var base=monthCursor||parseKey(selectedKey());monthCursor=new Date(base.getFullYear(),base.getMonth()-1,1);renderCalendar()};
+ next.onclick=function(){var base=monthCursor||parseKey(selectedKey());monthCursor=new Date(base.getFullYear(),base.getMonth()+1,1);renderCalendar()};
+ today.onclick=function(){var key=todayKey(),input=document.getElementById('agendaDate');if(input)input.value=key;monthCursor=parseKey(key);if(window.CentralAgenda&&typeof window.CentralAgenda.render==='function')window.CentralAgenda.render();renderCalendar()};
+ sync();
+}
+function start(){bind();setTimeout(bind,300);setTimeout(bind,1000)}
+start();if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start,{once:true});
+})();
+</script>
+</body></html>
