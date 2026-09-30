@@ -303,7 +303,21 @@ html[data-central-theme="light"] .subject:not([data-id="civil"]){
 .bc-kit-card b{display:block;color:var(--bc-course-ink);font-size:.82rem}.bc-kit-card p{margin:4px 0 0;color:var(--bc-course-copy);font-size:.75rem;line-height:1.5}
 .bc-kit-tools{display:flex;gap:7px;align-items:center;flex-wrap:wrap}
 .bc-kit-tools button{min-height:34px;border:1px solid;border-radius:8px;padding:7px 9px;font:800 .72rem var(--bc-font);cursor:pointer}
-.subject[data-id="civil"] .bc-civil-tools{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}.subject[data-id="civil"] .bc-civil-tools button{min-height:32px;border:1px solid var(--civil-line);border-radius:8px;background:var(--civil-soft);color:var(--civil-ink);padding:6px 8px;font:800 .72rem var(--bc-font);cursor:pointer}
+/* Civil usa o mesmo cartão inicial das demais disciplinas. */
+.subject[data-id="civil"]{
+  --bc-course-base:var(--civil-base);--bc-course-elev:var(--civil-elev);--bc-course-line:var(--civil-line);
+  --bc-course-ink:var(--civil-ink);--bc-course-copy:var(--civil-copy);--bc-course-accent:var(--civil-accent);
+}
+.subject[data-id="civil"] .bc-civil-legacy-intro{display:none!important}
+.subject[data-id="civil"] .bc-discipline-kit{margin:12px 0 14px;padding:14px;border:1px solid var(--bc-course-line);background:var(--bc-course-base);border-radius:13px!important}
+.subject[data-id="civil"] .bc-kit-eyebrow,.subject[data-id="civil"] .bc-kit-stat b{color:var(--bc-course-accent)!important}
+.subject[data-id="civil"] .bc-kit-head h3,.subject[data-id="civil"] .bc-kit-card b{color:var(--bc-course-ink)!important}
+.subject[data-id="civil"] .bc-kit-stat,.subject[data-id="civil"] .bc-kit-card,.subject[data-id="civil"] .bc-kit-tools{background:var(--bc-course-elev)!important;border-color:var(--bc-course-line)!important}
+.subject[data-id="civil"] .bc-kit-stat small,.subject[data-id="civil"] .bc-kit-card p{color:var(--bc-course-copy)!important}
+.subject[data-id="civil"] .bc-kit-meter{background:color-mix(in srgb,var(--bc-course-line) 55%,transparent)!important}
+.subject[data-id="civil"] .bc-kit-meter span{background:linear-gradient(90deg,#0099bd,#2bdce6)!important}
+.subject[data-id="civil"] .bc-kit-tools button{color:#fff!important;background:linear-gradient(135deg,#007d9f,#11bfd1)!important;border-color:#29d7e3!important}
+
 @media(max-width:760px){
   .bc-discipline-kit{padding:12px}.bc-kit-grid{grid-template-columns:1fr}.bc-kit-head{align-items:stretch;flex-direction:column}.bc-kit-stat{text-align:left}
   .bc-kit-tools button{flex:1 1 130px;min-height:40px}
