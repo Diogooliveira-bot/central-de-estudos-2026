@@ -4733,7 +4733,7 @@ const baseRenderCivil=renderCivilMaster;
 renderCivilMaster=function(){
  let html=baseRenderCivil.apply(this,arguments).replace('Banco do curso: <b>400 questões reais</b> + <b>80 casos autorais</b>, com revisão automática de erros por módulo.','Cada módulo reúne leitura orientada, teoria completa e aprofundamento.').replace(/8 etapas/g,'3 etapas');
  const doc=new DOMParser().parseFromString('<div id="civil-clean-root">'+html+'</div>','text/html'),root=doc.getElementById('civil-clean-root');
- if(root)root.querySelectorAll('.civil-steps').forEach(function(group){group.querySelectorAll('.civil-step').forEach(function(step,index){const label=step.querySelector('.civil-step-n');if(label&&!step.classList.contains('done'))label.textContent=String(index+1)})});
+ if(root)root.querySelectorAll('.civil-steps').forEach(function(group){group.querySelectorAll('.civil-step').forEach(function(step,index){const label=step.querySelector('.civil-step-n');if(label&&!step.classList.contains('done'))label.textContent=String(index+1);const id=step.getAttribute('data-step')||'',kind=id.replace(/[0-9]+$/,'');const title=step.querySelector('.civil-step-title b'),subtitle=step.querySelector('.civil-step-title small'),copy={reading:['Leitura orientada','Roteiro de leitura e marcação da legislação aplicável.'],theory:['Teoria completa','Base completa organizada para o conteúdo do módulo.'],deep:['Aprofundamento','Exceções, jurisprudência e aplicações relevantes.']}[kind];if(copy&&title&&subtitle){title.textContent=copy[0];subtitle.textContent=copy[1]}})});
  return root?root.innerHTML:html;
 };
 window.civilQuestionStep=function(){return ''};
@@ -4768,9 +4768,9 @@ window.civil15QuestionStep=function(){return ''};
 window.civil15ErrorStep=function(){return ''};
 window.civil16QuestionStep=function(){return ''};
 window.civil16ErrorStep=function(){return ''};
-function cleanStepFactory(factory,keep){const original=window[factory];if(typeof original!=='function')return;window[factory]=function(n,title,desc,done,body){if(!keep.includes(n))return '';const map={2:1,3:2,5:3};return original(map[n]||n,title,desc,done,body)}}
+function cleanStepFactory(factory,keep){const original=window[factory];if(typeof original!=='function')return;window[factory]=function(n,title,desc,done,body){if(!keep.includes(n))return '';const map={2:1,3:2,5:3};const stage={2:['Leitura orientada','Roteiro de leitura e marcação da legislação aplicável.'],3:['Teoria completa','Base completa organizada para o conteúdo do módulo.'],5:['Aprofundamento','Exceções, jurisprudência e aplicações relevantes.']}[n];return original(map[n]||n,stage?stage[0]:title,stage?stage[1]:desc,done,body)}}
 cleanStepFactory('cfStep',[2,3,5]);cleanStepFactory('penalStep',[2,3,5]);cleanStepFactory('cpcStep',[2,3,5]);
-['renderCfModule','renderPenalModule','renderCpcModule'].forEach(function(name){const original=window[name];if(typeof original==='function')window[name]=function(){return original.apply(this,arguments).replace(new RegExp('(<span class="cf-module-stat">)([0-9]+)%[^<]*(</span>)'),'$1$2%$3')}});
+['renderCfModule','renderPenalModule','renderCpcModule'].forEach(function(name){const original=window[name];if(typeof original==='function')window[name]=function(){return original.apply(this,arguments).replace(new RegExp('(<span class="cf-module-stat">)([0-9]+)%[^<]*(</span>)'),'$1$2%$3').replaceAll('<h4>Anotação</h4>','<h4>Anotações do módulo</h4>')}});
 const style=document.createElement('style');style.textContent='.cf-master-tools,.cf-metrics,[id="cf-session-host"],[id="cf-errors-host"],[id="penal-session-host"],[id="penal-errors-host"],[id="cpc-session-host"],[id="cpc-errors-host"]{display:none!important}';document.head.appendChild(style);
 })();
 
