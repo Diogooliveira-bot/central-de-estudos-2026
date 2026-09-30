@@ -5,6 +5,7 @@ Corrige os problemas reproduzidos na produção de commit `5bec6a3`:
 - Cadernos TEC: nome e ações em linhas próprias no celular, com botões de pelo menos 44px.
 - Tabelas dos módulos: contêiner com rolagem horizontal e foco por teclado. Colunas e conteúdo preservados.
 - Títulos longos, incluindo revisão/restabelecimento no Administrativo M18: quebra de palavras para evitar corte.
+- Grade da página inicial: colunas podem encolher em telas pequenas, mantendo os módulos dentro da tela em 320px.
 - Primeira sessão pendente: utiliza o botão nativo de abertura dos módulos genéricos.
 - Índice de sessões: fecha antes de calcular a rolagem; navegação anterior/próxima preservada.
 - Retorno: uma única seta. Ícone da aba reutiliza a identidade do aplicativo.

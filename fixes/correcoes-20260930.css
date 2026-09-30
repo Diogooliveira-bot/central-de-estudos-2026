@@ -143,6 +143,10 @@
 /* A rolagem pertence ao contêiner, sem cortar colunas da tabela. */
 html.bc-ui-v1 #subjects :is(.subject,.ds-module,.ds-module-body){min-width:0}
 html.bc-ui-v1 #subjects .ds-module-body{overflow-wrap:anywhere}
+html.bc-ui-v1 #homeView .home-grid > *{min-width:0}
+@media(max-width:1023px){
+  html.bc-ui-v1 #homeView .home-grid{grid-template-columns:minmax(0,1fr)!important}
+}
 html.bc-ui-v1 #subjects .bc-table-scroll{
   min-width:0;
   max-width:100%;
