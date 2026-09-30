@@ -569,7 +569,7 @@ function renderCivilModule1(){
  <div class="civil-steps">
  ${civilQuestionStep('diagnostic','Diagnóstico FCC','10 questões reais antes da teoria.',1)}
  ${civilManualStep('reading','Leitura orientada','Código Civil + LBI, com roteiro objetivo.',2,civilReadingBody(),'reading')}
- ${civilManualStep('theory','Teoria nuclear','Base completa para resolver questões de nível superior.',3,civilTheoryBody(),'theory')}
+ ${civilManualStep('theory','Teoria completa','Base completa para resolver questões de nível superior.',3,civilTheoryBody(),'theory')}
  ${civilManualStep('deep','Aprofundamento e jurisprudência','STJ, LBI e pegadinhas de prova.',4,civilDeepBody(),'deep')}
  ${civilQuestionStep('cases','Casos práticos','5 casos autorais claramente identificados.',5)}
  ${civilQuestionStep('final','Bateria final FCC','15 questões reais após a teoria.',6)}
@@ -723,7 +723,7 @@ function renderCivilModule2(){
  <div class="civil-steps">
  ${civil2QuestionStep('diagnostic2','Diagnóstico FCC','10 questões reais antes da teoria.',1)}
  ${civil2ManualStep('reading2','Leitura orientada','CC 11-21 e 40-69 + complementos atuais.',2,civil2ReadingBody(),'reading')}
- ${civil2ManualStep('theory2','Teoria nuclear','Base completa e atualizada para nível superior.',3,civil2TheoryBody(),'theory')}
+ ${civil2ManualStep('theory2','Teoria completa','Base completa e atualizada para nível superior.',3,civil2TheoryBody(),'theory')}
  ${civil2ManualStep('deep2','Aprofundamento e jurisprudência','STF, STJ e pegadinhas de prova.',4,civil2DeepBody(),'deep')}
  ${civil2QuestionStep('cases2','Casos práticos','5 casos autorais identificados.',5)}
  ${civil2QuestionStep('final2','Bateria final FCC','15 questões reais após a teoria.',6)}
@@ -903,7 +903,7 @@ function renderCivilModule3(){
  <div class="civil-steps">
  ${civil3QuestionStep('diagnostic3','Diagnóstico FCC','10 questões reais antes da teoria.',1)}
  ${civil3ManualStep('reading3','Leitura orientada','CC 70 a 103, sem avançar ao art. 104.',2,civil3ReadingBody(),'reading')}
- ${civil3ManualStep('theory3','Teoria nuclear','Domicílio, classificações, pertenças, benfeitorias e bens públicos.',3,civil3TheoryBody(),'theory')}
+ ${civil3ManualStep('theory3','Teoria completa','Domicílio, classificações, pertenças, benfeitorias e bens públicos.',3,civil3TheoryBody(),'theory')}
  ${civil3ManualStep('deep3','Aprofundamento e aplicação','Afetação, desafetação e pegadinhas de nível superior.',4,civil3DeepBody(),'deep')}
  ${civil3QuestionStep('cases3','Casos práticos','5 casos autorais identificados.',5)}
  ${civil3QuestionStep('final3','Bateria final FCC','15 questões reais após a teoria.',6)}
@@ -1084,7 +1084,7 @@ function renderCivilModule4(){
  <div class="civil-steps">
  ${civil4QuestionStep('diagnostic4','Diagnóstico FCC','10 questões reais antes da teoria.',1)}
  ${civil4ManualStep('reading4','Leitura orientada','CC 104 a 137, sem avançar aos defeitos.',2,civil4ReadingBody(),'reading')}
- ${civil4ManualStep('theory4','Teoria nuclear','Validade, forma, vontade, interpretação, representação e elementos acidentais.',3,civil4TheoryBody(),'theory')}
+ ${civil4ManualStep('theory4','Teoria completa','Validade, forma, vontade, interpretação, representação e elementos acidentais.',3,civil4TheoryBody(),'theory')}
  ${civil4ManualStep('deep4','Aprofundamento e atualização','Art. 113 atual, planos do negócio e diferenças decisivas.',4,civil4DeepBody(),'deep')}
  ${civil4QuestionStep('cases4','Casos práticos','5 casos autorais identificados.',5)}
  ${civil4QuestionStep('final4','Bateria final FCC','15 questões reais após a teoria.',6)}
@@ -1280,7 +1280,7 @@ function renderCivilModule5(){
  <div class="civil-steps">
  ${civil5QuestionStep('diagnostic5','Diagnóstico FCC','10 questões reais antes da teoria.',1)}
  ${civil5ManualStep('reading5','Leitura orientada','CC 138 a 165, sem avançar à invalidade.',2,civil5ReadingBody(),'reading')}
- ${civil5ManualStep('theory5','Teoria nuclear','Identificação precisa dos seis defeitos e suas diferenças.',3,civil5TheoryBody(),'theory')}
+ ${civil5ManualStep('theory5','Teoria completa','Identificação precisa dos seis defeitos e suas diferenças.',3,civil5TheoryBody(),'theory')}
  ${civil5ManualStep('deep5','Aprofundamento e jurisprudência','STJ, ação pauliana e pegadinhas de nível superior.',4,civil5DeepBody(),'deep')}
  ${civil5QuestionStep('cases5','Casos práticos','5 casos autorais identificados.',5)}
  ${civil5QuestionStep('final5','Bateria final FCC','15 questões reais após a teoria.',6)}
@@ -1481,7 +1481,7 @@ function renderCivilModule6(){
  <div class="civil-steps">
  ${civil6QuestionStep('diagnostic6','Diagnóstico FCC','10 questões reais antes da teoria.',1)}
  ${civil6ManualStep('reading6','Leitura orientada','CC 166 a 232, fechando a Parte Geral.',2,civil6ReadingBody(),'reading')}
- ${civil6ManualStep('theory6','Teoria nuclear','Invalidade, prazos e regras probatórias com texto atualizado.',3,civil6TheoryBody(),'theory')}
+ ${civil6ManualStep('theory6','Teoria completa','Invalidade, prazos e regras probatórias com texto atualizado.',3,civil6TheoryBody(),'theory')}
  ${civil6ManualStep('deep6','Aprofundamento e jurisprudência','STJ 2026, actio nata e atualizações legislativas.',4,civil6DeepBody(),'deep')}
  ${civil6QuestionStep('cases6','Casos práticos','5 casos autorais identificados.',5)}
  ${civil6QuestionStep('final6','Bateria final FCC','15 questões reais após a teoria.',6)}
@@ -1679,7 +1679,7 @@ function renderCivilModule7(){
  <div class="civil-steps">
  ${civil7QuestionStep('diagnostic7','Diagnóstico FCC','10 questões reais antes da teoria.',1)}
  ${civil7ManualStep('reading7','Leitura orientada','CC 233 a 285, sem avançar à cessão de crédito.',2,civil7ReadingBody(),'reading')}
- ${civil7ManualStep('theory7','Teoria nuclear','Todas as modalidades com diferenças e efeitos.',3,civil7TheoryBody(),'theory')}
+ ${civil7ManualStep('theory7','Teoria completa','Todas as modalidades com diferenças e efeitos.',3,civil7TheoryBody(),'theory')}
  ${civil7ManualStep('deep7','Aprofundamento e jurisprudência','STJ 2026 e pegadinhas de solidariedade.',4,civil7DeepBody(),'deep')}
  ${civil7QuestionStep('cases7','Casos práticos','5 casos autorais identificados.',5)}
  ${civil7QuestionStep('final7','Bateria final FCC','15 questões reais após a teoria.',6)}
@@ -1870,7 +1870,7 @@ function renderCivilModule8(){
  <div class="civil-steps">
  ${civil8QuestionStep('diagnostic8','Diagnóstico FCC','10 questões reais antes da teoria.',1)}
  ${civil8ManualStep('reading8','Leitura orientada','CC 286 a 420, com atenção às alterações de 2024.',2,civil8ReadingBody(),'reading')}
- ${civil8ManualStep('theory8','Teoria nuclear','Transmissão, pagamento, extinção, mora, penal e arras.',3,civil8TheoryBody(),'theory')}
+ ${civil8ManualStep('theory8','Teoria completa','Transmissão, pagamento, extinção, mora, penal e arras.',3,civil8TheoryBody(),'theory')}
  ${civil8ManualStep('deep8','Aprofundamento e atualização','STJ 2026 + Lei 14.905/2024.',4,civil8DeepBody(),'deep')}
  ${civil8QuestionStep('cases8','Casos práticos','5 casos autorais para cobrir lacunas do banco real.',5)}
  ${civil8QuestionStep('final8','Bateria final FCC','15 questões reais após a teoria.',6)}
@@ -2083,7 +2083,7 @@ function renderCivilModule9(){
  <div class="civil-steps">
  ${civil9QuestionStep('diagnostic9','Diagnóstico FCC','10 questões reais antes da teoria.',1)}
  ${civil9ManualStep('reading9','Leitura orientada','Teoria geral + mapa completo dos contratos típicos.',2,civil9ReadingBody(),'reading')}
- ${civil9ManualStep('theory9','Teoria nuclear','Princípios, formação, extinção e contratos em espécie.',3,civil9TheoryBody(),'theory')}
+ ${civil9ManualStep('theory9','Teoria completa','Princípios, formação, extinção e contratos em espécie.',3,civil9TheoryBody(),'theory')}
  ${civil9ManualStep('deep9','Aprofundamento e jurisprudência','STJ 2025/2026 e pegadinhas de prova.',4,civil9DeepBody(),'deep')}
  ${civil9QuestionStep('cases9','Casos práticos','5 casos autorais para contratos pouco cobrados no caderno.',5)}
  ${civil9QuestionStep('final9','Bateria final FCC','15 questões reais após a teoria.',6)}
@@ -2293,7 +2293,7 @@ function renderCivilModule10(){
  <div class="civil-steps">
  ${civil10QuestionStep('diagnostic10','Diagnóstico FCC','10 questões reais antes da teoria.',1)}
  ${civil10ManualStep('reading10','Leitura orientada','CC 441-457 e 927-954, com artigo revogado sinalizado.',2,civil10ReadingBody(),'reading')}
- ${civil10ManualStep('theory10','Teoria nuclear','Garantias contratuais + sistema completo de responsabilidade civil.',3,civil10TheoryBody(),'theory')}
+ ${civil10ManualStep('theory10','Teoria completa','Garantias contratuais + sistema completo de responsabilidade civil.',3,civil10TheoryBody(),'theory')}
  ${civil10ManualStep('deep10','Aprofundamento e jurisprudência','STJ 2026, nexo causal, perda de chance e súmulas.',4,civil10DeepBody(),'deep')}
  ${civil10QuestionStep('cases10','Casos práticos','5 casos autorais identificados.',5)}
  ${civil10QuestionStep('final10','Bateria final FCC','15 questões reais após a teoria.',6)}
@@ -2547,7 +2547,7 @@ function renderCivilModule11(){
  <div class="civil-steps">
  ${civil11QuestionStep('diagnostic11','Diagnóstico FCC — lacunas do edital','10 questões reais FCC de LINDB, fatos, pagamento e preferências.',1)}
  ${civil11ManualStep('reading11','Leitura orientada','LINDB + CC 854-886, 955-965 e 2.028-2.046.',2,civil11ReadingBody(),'reading')}
- ${civil11ManualStep('theory11','Teoria nuclear','Preenchimento das lacunas identificadas na auditoria.',3,civil11TheoryBody(),'theory')}
+ ${civil11ManualStep('theory11','Teoria completa','Preenchimento das lacunas identificadas na auditoria.',3,civil11TheoryBody(),'theory')}
  ${civil11ManualStep('deep11','Aprofundamento e complementar','Pegadinhas + antigo conteúdo de Empresa preservado.',4,civil11DeepBody(),'deep')}
  ${civil11QuestionStep('cases11','Casos práticos','5 casos autorais direcionados ao edital.',5)}
  ${civil11QuestionStep('final11','Bateria final FCC','15 questões reais FCC de fechamento.',6)}
@@ -2768,7 +2768,7 @@ function renderCivilModule12(){
  <div class="civil-steps">
  ${civil12QuestionStep('diagnostic12','Diagnóstico FCC','10 questões reais, com prioridade para 2020-2026.',1)}
  ${civil12ManualStep('reading12','Leitura orientada','CC 1.196-1.224, sem avançar para propriedade.',2,civil12ReadingBody(),'reading')}
- ${civil12ManualStep('theory12','Teoria nuclear','Teorias, classificações, aquisição, proteção, efeitos e perda.',3,civil12TheoryBody(),'theory')}
+ ${civil12ManualStep('theory12','Teoria completa','Teorias, classificações, aquisição, proteção, efeitos e perda.',3,civil12TheoryBody(),'theory')}
  ${civil12ManualStep('deep12','Aprofundamento e jurisprudência','STJ 2020-2026, interversão, detenção e efeitos da boa/má-fé.',4,civil12DeepBody(),'deep')}
  ${civil12QuestionStep('cases12','Casos práticos','5 casos autorais identificados.',5)}
  ${civil12QuestionStep('final12','Bateria final FCC','15 questões FCC reais após a teoria.',6)}
@@ -2995,7 +2995,7 @@ function renderCivilModule13(){
  <div class="civil-steps">
  ${civil13QuestionStep('diagnostic13','Diagnóstico FCC','10 questões reais antes da teoria.',1)}
  ${civil13ManualStep('reading13','Leitura orientada','CC 1.225-1.368-B, com fronteiras do módulo sinalizadas.',2,civil13ReadingBody(),'reading')}
- ${civil13ManualStep('theory13','Teoria nuclear','Propriedade, usucapião, vizinhança, condomínio e fiduciária.',3,civil13TheoryBody(),'theory')}
+ ${civil13ManualStep('theory13','Teoria completa','Propriedade, usucapião, vizinhança, condomínio e fiduciária.',3,civil13TheoryBody(),'theory')}
  ${civil13ManualStep('deep13','Aprofundamento e jurisprudência','Tema 985, STJ 2026 e atualizações legislativas de condomínio.',4,civil13DeepBody(),'deep')}
  ${civil13QuestionStep('cases13','Casos práticos','5 casos autorais de nível Analista/Oficial.',5)}
  ${civil13QuestionStep('final13','Bateria final FCC','15 questões FCC reais após a teoria.',6)}
@@ -3304,7 +3304,7 @@ function renderCivilModule14(){
  <div class="civil-steps">
  ${civil14QuestionStep('diagnostic14','Diagnóstico FCC — legislação especial','10 questões reais FCC de CDC, LRP e Pessoa Idosa.',1)}
  ${civil14ManualStep('reading14','Leitura orientada','CDC + LRP + Pessoa Idosa + família residual + jurisprudência.',2,civil14ReadingBody(),'reading')}
- ${civil14ManualStep('theory14','Teoria nuclear','Fechamento sistemático dos itens especiais do edital.',3,civil14TheoryBody(),'theory')}
+ ${civil14ManualStep('theory14','Teoria completa','Fechamento sistemático dos itens especiais do edital.',3,civil14TheoryBody(),'theory')}
  ${civil14ManualStep('deep14','Aprofundamento e complementar','Checklist final + antigo conteúdo de direitos reais preservado.',4,civil14DeepBody(),'deep')}
  ${civil14QuestionStep('cases14','Casos práticos','5 casos autorais orientados ao edital.',5)}
  ${civil14QuestionStep('final14','Bateria final FCC','15 questões reais FCC, incluindo curatela/TDA.',6)}
@@ -3556,7 +3556,7 @@ function renderCivilModule15(){
  <div class="civil-steps">
  ${civil15QuestionStep('diagnostic15','Diagnóstico FCC','10 questões reais antes da teoria.',1)}
  ${civil15ManualStep('reading15','Leitura orientada','CC 1.511-1.727 + atualização constitucional e legislativa.',2,civil15ReadingBody(),'reading')}
- ${civil15ManualStep('theory15','Teoria nuclear','Família completa dentro do recorte do edital.',3,civil15TheoryBody(),'theory')}
+ ${civil15ManualStep('theory15','Teoria completa','Família completa dentro do recorte do edital.',3,civil15TheoryBody(),'theory')}
  ${civil15ManualStep('deep15','Aprofundamento e jurisprudência','STF/STJ e alterações legislativas que mudam a leitura do Código.',4,civil15DeepBody(),'deep')}
  ${civil15QuestionStep('cases15','Casos práticos','5 casos autorais de nível Analista/Oficial.',5)}
  ${civil15QuestionStep('final15','Bateria final FCC','15 questões FCC reais após a teoria.',6)}
@@ -3827,7 +3827,7 @@ function renderCivilModule16(){
  <div class="civil-steps">
  ${civil16QuestionStep('diagnostic16','Diagnóstico FCC','10 questões reais antes da teoria.',1)}
  ${civil16ManualStep('reading16','Leitura orientada','CC Livro V + CPC do inventário + atualização CNJ.',2,civil16ReadingBody(),'reading')}
- ${civil16ManualStep('theory16','Teoria nuclear','Sucessões do início da saisine até a partilha.',3,civil16TheoryBody(),'theory')}
+ ${civil16ManualStep('theory16','Teoria completa','Sucessões do início da saisine até a partilha.',3,civil16TheoryBody(),'theory')}
  ${civil16ManualStep('deep16','Aprofundamento e jurisprudência','STF/STJ, Lei 14.661/2023 e CNJ 571/2024.',4,civil16DeepBody(),'deep')}
  ${civil16QuestionStep('cases16','Casos práticos','5 casos autorais de nível Analista/Oficial.',5)}
  ${civil16QuestionStep('final16','Bateria final FCC','15 questões FCC reais após a teoria.',6)}
@@ -3835,11 +3835,25 @@ function renderCivilModule16(){
  </div>`
 }
 
+function civilModuleNoteKey(moduleId){return `central-v6:civil-note:${moduleId}`}
+function civilStandardFooter(moduleId){
+ const key=civilModuleNoteKey(moduleId);
+ return `<section class="civil-step civil-standard-footer" style="margin-top:14px">
+  <div class="civil-step-body" style="display:block">
+   <div class="cf-resource-grid">
+    <div class="cf-resource-box"><h4>Decorando a Lei</h4><button class="civil-btn" onclick="openEmbeddedTool('decorando',{},this)">Abrir Decorando a Lei</button></div>
+    <div class="cf-resource-box"><h4>Vade Mecum</h4><button class="civil-btn" onclick="openEmbeddedTool('vade',{},this)">Abrir Vade Mecum</button></div>
+    <div class="cf-resource-box"><h4>Cadernos TEC</h4><button class="civil-btn" onclick="centralSidebarAction('tec-cadernos',this)">Abrir meus cadernos</button></div>
+    <div class="cf-resource-box" style="grid-column:1/-1"><h4>Anotações do módulo</h4><textarea id="civil-note-${moduleId}" placeholder="Regra, dúvida ou observação do módulo..." oninput="localStorage.setItem('${key}',this.value)">${esc(localStorage.getItem(key)||'')}</textarea></div>
+   </div>
+  </div>
+ </section>`
+}
 function renderCivilMaster(){
  const cs=civilCourseStats();
  return `<div class="civil-master"><div class="civil-master-intro"><div><span class="eyebrow">Curso avançado • Direito Civil</span><h3>16 módulos, construídos um por vez</h3><p>Todos os 16 módulos estão completos. Banco do curso: <b>400 questões reais</b> + <b>80 casos autorais</b>, com revisão automática de erros por módulo.</p></div><div class="civil-target"><span>Foco de nível</span><b>Analista / Oficial de Justiça</b></div></div>
  <div class="civil-edital-coverage"><div class="coverage-number">100%</div><div class="coverage-text"><b>92/92 itens textuais do edital mapeados no curso</b><span class="muted small">A versão anterior tinha lacunas em LINDB, fatos jurídicos, atos unilaterais, preferências, tutela/curatela/TDA, legislação especial e fechamento jurisprudencial. Esses pontos agora estão integrados aos 16 módulos. Jurisprudência continua sendo matéria dinâmica e deve ser atualizada perto da prova.</span></div><div class="coverage-legend"><span class="civil-scope-badge edital">EDITAL</span><span class="civil-scope-badge mix">EDITAL + COMPLEMENTAR</span></div></div>
- ${CIVIL_COURSE.modules.map(m=>{const active=m.status==='active',pct=active?civilModulePct(m.id):0,open=active&&localStorage.getItem(civilModuleOpenKey(m.id))==='1';return `<section class="civil-module ${open?'open':''}" data-civil="${m.id}"><button class="civil-module-head" ${active?`onclick="toggleCivilModule('${m.id}')"`:'disabled'}><span class="civil-module-num">MÓD. ${String(m.num).padStart(2,'0')}</span><span class="civil-module-title"><b>${esc(m.title)}</b><small>${esc(m.subtitle)}</small></span><span class="civil-module-state">${active?`<span>8 etapas</span><b class="civil-pct">${pct}%</b>`:'<span class="civil-planned">PLANEJADO</span>'}</span><span>${active?'⌄':''}</span></button>${active?`<div class="civil-module-body">${m.id==='m1'?renderCivilModule1():m.id==='m2'?renderCivilModule2():m.id==='m3'?renderCivilModule3():m.id==='m4'?renderCivilModule4():m.id==='m5'?renderCivilModule5():m.id==='m6'?renderCivilModule6():m.id==='m7'?renderCivilModule7():m.id==='m8'?renderCivilModule8():m.id==='m9'?renderCivilModule9():m.id==='m10'?renderCivilModule10():m.id==='m11'?renderCivilModule11():m.id==='m12'?renderCivilModule12():m.id==='m13'?renderCivilModule13():m.id==='m14'?renderCivilModule14():m.id==='m15'?renderCivilModule15():m.id==='m16'?renderCivilModule16():''}</div>`:''}</section>`}).join('')}</div>`
+ ${CIVIL_COURSE.modules.map(m=>{const active=m.status==='active',pct=active?civilModulePct(m.id):0,open=active&&localStorage.getItem(civilModuleOpenKey(m.id))==='1';return `<section class="civil-module ${open?'open':''}" data-civil="${m.id}"><button class="civil-module-head" ${active?`onclick="toggleCivilModule('${m.id}')"`:'disabled'}><span class="civil-module-num">MÓD. ${String(m.num).padStart(2,'0')}</span><span class="civil-module-title"><b>${esc(m.title)}</b><small>${esc(m.subtitle)}</small></span><span class="civil-module-state">${active?`<span>8 etapas</span><b class="civil-pct">${pct}%</b>`:'<span class="civil-planned">PLANEJADO</span>'}</span><span>${active?'⌄':''}</span></button>${active?`<div class="civil-module-body">${m.id==='m1'?renderCivilModule1():m.id==='m2'?renderCivilModule2():m.id==='m3'?renderCivilModule3():m.id==='m4'?renderCivilModule4():m.id==='m5'?renderCivilModule5():m.id==='m6'?renderCivilModule6():m.id==='m7'?renderCivilModule7():m.id==='m8'?renderCivilModule8():m.id==='m9'?renderCivilModule9():m.id==='m10'?renderCivilModule10():m.id==='m11'?renderCivilModule11():m.id==='m12'?renderCivilModule12():m.id==='m13'?renderCivilModule13():m.id==='m14'?renderCivilModule14():m.id==='m15'?renderCivilModule15():m.id==='m16'?renderCivilModule16():''}${civilStandardFooter(m.id)}</div>`:''}</section>`}).join('')}</div>`
 }
 
 
