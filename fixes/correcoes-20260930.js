@@ -13,6 +13,8 @@ function localDate(){
   return d.getFullYear()+'-'+m+'-'+day;
 }
 function esc(v){return String(v==null?'':v).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+function setText(el,value){if(el&&el.textContent!==String(value))el.textContent=String(value)}
+function setHtml(el,value){if(el&&el.innerHTML!==String(value))el.innerHTML=String(value)}
 function smoothTo(el){
   if(!el)return;
   try{el.scrollIntoView({behavior:'smooth',block:'start'})}catch(_){try{el.scrollIntoView()}catch(__){}}
@@ -44,7 +46,7 @@ function hardenSettings(){
   var el=settingsElement();if(!el)return;
   var title=q('#centralSettingsTitle',el);
   var subtitle=title&&title.parentElement?q('p',title.parentElement):null;
-  if(subtitle)subtitle.textContent='Aparência, backup e instalação';
+  if(subtitle)setText(subtitle,'Aparência, backup e instalação');
   qa('.central-settings-note',el).forEach(function(note){
     var text=String(note.textContent||'');
     if(/DATABASE_URL|BACKUP_SECRET|Segurança do backup online/i.test(text)){
@@ -54,12 +56,12 @@ function hardenSettings(){
   });
   var status=q('#centralBackupStatus',el);
   if(status&&/Vercel|banco configurado|snapshot/i.test(status.textContent||'')){
-    status.textContent='Baixe uma cópia local a qualquer momento. O histórico online aparece quando estiver disponível.';
+    setText(status,'Baixe uma cópia local a qualquer momento. O histórico online aparece quando estiver disponível.');
   }
   var x=q('.central-settings-close',el);
   if(x){x.setAttribute('type','button');x.setAttribute('aria-label','Fechar configurações');x.title='Fechar configurações'}
   var done=q('.central-settings-footer button',el);
-  if(done){done.setAttribute('type','button');done.textContent='Concluído'}
+  if(done){done.setAttribute('type','button');setText(done,'Concluído')}
   if(el.classList.contains('hidden'))forceCloseSettings();
 }
 function installSettingsGuards(){
@@ -152,18 +154,18 @@ function statsFor(id){
 function normalizeCounts(){
   qa('.subject[data-id]').forEach(function(section){
     var id=section.getAttribute('data-id'),st=statsFor(id),count=q('.subject-count',section);
-    if(st&&count)count.textContent=st.done+'/'+st.total+' módulos';
+    if(st&&count)setText(count,st.done+'/'+st.total+' módulos');
     var pct=q('.subject-pct',section);
-    if(st&&pct){pct.textContent=st.pct+'%';pct.classList.toggle('done',st.pct===100)}
+    if(st&&pct){setText(pct,st.pct+'%');pct.classList.toggle('done',st.pct===100)}
   });
   qa('.disc-card[data-id]').forEach(function(card){
     var id=card.getAttribute('data-id'),st=statsFor(id);if(!st)return;
     var small=q('small',card),meta=q('.disc-meta',card);
     if(small){
-      if(id==='rlm')small.textContent=st.total+' módulos + cálculo rápido';
-      else small.textContent=st.total+' módulos • curso integrado';
+      if(id==='rlm')setText(small,st.total+' módulos + cálculo rápido');
+      else setText(small,st.total+' módulos • curso integrado');
     }
-    if(meta)meta.textContent=st.done+'/'+st.total+' módulos · '+st.pct+'%';
+    if(meta)setText(meta,st.done+'/'+st.total+' módulos · '+st.pct+'%');
   });
 }
 
@@ -190,12 +192,12 @@ function firstAccessHtml(){
 function enhanceFirstAccess(){
   var tasks=agendaToday();if(tasks===null||tasks.length)return;
   var count=q('#dayCount'),pct=q('#dayPct'),bar=q('#dayBar'),host=q('#homeAgenda'),pending=q('#homePending');
-  if(count)count.textContent='Dia ainda não planejado';
-  if(pct)pct.textContent='Escolha por onde começar';
+  if(count)setText(count,'Dia ainda não planejado');
+  if(pct)setText(pct,'Escolha por onde começar');
   if(bar)bar.style.width='0%';
   if(host&&!q('[data-bc-first-access]',host))host.innerHTML=firstAccessHtml();
-  if(pending)pending.innerHTML='<div class="muted small" style="padding:12px 0">Sem pendências cadastradas. Planeje o dia ou comece por um módulo pendente.</div>';
-  var label=q('#homeTodayLabel');if(label)label.textContent='Nenhuma tarefa cadastrada para hoje.';
+  if(pending)setHtml(pending,'<div class="muted small" style="padding:12px 0">Sem pendências cadastradas. Planeje o dia ou comece por um módulo pendente.</div>');
+  var label=q('#homeTodayLabel');if(label)setText(label,'Nenhuma tarefa cadastrada para hoje.');
   var cont=q('#continueBox');
   if(cont&&/Nenhuma sessão recente/i.test(cont.textContent||'')&&!q('[data-bc-first-session]',cont)){
     cont.insertAdjacentHTML('beforeend','<div style="margin-top:9px"><button type="button" class="btn primary sm" data-bc-first-session>Começar primeira sessão</button></div>');
@@ -331,7 +333,7 @@ function jumpSession(button,direction){
    --------------------------------------------------------- */
 function normalizeNavigationLabels(){
   qa('.central-view-back,.central-embedded-back').forEach(function(btn){
-    btn.textContent='← Voltar à Central';
+    setText(btn,'← Voltar à Central');
     btn.setAttribute('aria-label','Voltar à Central');
     btn.title='Voltar à Central';
   });
