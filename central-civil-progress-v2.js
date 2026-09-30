@@ -132,6 +132,10 @@ function tecCard(m,st){
 function progressPanel(m,ms,st){
   return '<section class="csp-panel"><div class="csp-panel-head"><div><span>PROGRESSO DE ESTUDO</span><b>'+st.overall+'% do módulo</b></div><div class="csp-panel-note">Média de Leitura, Decorando e TEC</div></div>'+stageBar(st.overall)+'<div class="csp-grid">'+readingCard(m,ms,st)+automaticCard(st,'decorando','Decorando','📖','questões',st.decorandoInfo)+tecCard(m,st)+'</div></section>';
 }
+function moduleToolsFooter(m){
+ var noteKey='central-v6:civil-note:'+m.id;
+ return '<section class="csp-module-footer" aria-label="Ferramentas e anotações do módulo"><div class="csp-footer-links"><button type="button" onclick="openEmbeddedTool(&quot;decorando&quot;,{},this)">📖 Decorando a Lei</button><button type="button" onclick="openEmbeddedTool(&quot;vade&quot;,{},this)">⚖ Vade Mecum</button><button type="button" onclick="centralSidebarAction(&quot;tec-cadernos&quot;,this)">▤ Cadernos do TEC</button></div><label class="csp-note-label" for="csp-note-'+escAttr(m.id)+'">Anotações do módulo<textarea id="csp-note-'+escAttr(m.id)+'" placeholder="Regra, dúvida ou observação do módulo..." oninput="localStorage.setItem(&quot;'+noteKey+'&quot;,this.value)">'+esc(localStorage.getItem(noteKey)||'')+'</textarea></label></section>';
+}
 function enhanceCivilHtml(html){
   try{
     var parser=new DOMParser(),doc=parser.parseFromString('<div id="csp-root">'+html+'</div>','text/html'),root=doc.getElementById('csp-root');
@@ -141,7 +145,7 @@ function enhanceCivilHtml(html){
       var section=root.querySelector('[data-civil-analista="'+m.id+'"]');if(!section)return;
       var ms=moduleState(state,m.id),st=moduleStats(m,state,regs,deco);sum+=st.overall;if(st.overall===100)done++;
       if(section.querySelector('.civil-a-reviewed.on'))reviewed++;
-      var body=section.querySelector('.civil-module-body');if(body)body.insertAdjacentHTML('afterbegin',progressPanel(m,ms,st));
+      var body=section.querySelector('.civil-module-body');if(body){body.insertAdjacentHTML('afterbegin',progressPanel(m,ms,st));body.insertAdjacentHTML('beforeend',moduleToolsFooter(m));}
       var textSections=section.querySelectorAll('.civil-a-section');
       READING_PARTS.forEach(function(part,index){
         var textSection=textSections[index];
@@ -247,6 +251,7 @@ document.head.appendChild(style);
 var styleV2=document.createElement('style');styleV2.id='central-civil-progress-style-v2';styleV2.textContent='\
 .csp-auto-status{margin:8px 0 0;color:var(--muted);font-size:8px;line-height:1.45}.csp-topic-read{display:flex;justify-content:flex-end;margin-top:10px;padding-top:9px;border-top:1px dashed var(--line)}.csp-topic-read button{min-height:34px;border:1px solid rgba(139,124,255,.42);border-radius:8px;background:rgba(139,124,255,.08);color:#b8afff;padding:7px 11px;font-size:9px;font-weight:800;cursor:pointer}.csp-topic-read button.done{border-color:rgba(36,199,122,.52);background:rgba(36,199,122,.1);color:#75e5ad}.csp-tec-target{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:10px;padding:9px;border:1px solid var(--line);border-radius:9px;background:var(--panel2)}.csp-target-control{display:flex;align-items:center;gap:6px}.csp-tec-target label{display:flex;align-items:center;gap:6px;color:var(--text);font-size:9px;font-weight:800;white-space:nowrap}.csp-tec-target input{width:68px;border:1px solid var(--line2);border-radius:7px;background:var(--input);color:var(--text);padding:6px 7px;font:inherit;text-align:center}.csp-target-control button{min-height:30px;border:1px solid rgba(56,189,248,.4);border-radius:7px;background:rgba(56,189,248,.08);color:#9bdcff;padding:6px 8px;font-size:8px;font-weight:800;cursor:pointer}.csp-tec-target small{color:var(--muted);font-size:8px;line-height:1.4;text-align:right}.csp-tec-reached{margin:9px 0 0;color:#65dfa3;font-size:8px;font-weight:800}\
 @media(max-width:760px){.csp-topic-read button{min-height:40px;font-size:10px}.csp-tec-target{align-items:flex-start;flex-direction:column}.csp-tec-target small{text-align:left}.csp-tec-target input{min-height:34px;font-size:12px}}';
+styleV2.textContent += '.csp-module-footer{margin-top:13px;padding:12px;border:1px solid var(--line);border-radius:11px;background:var(--panel)}.csp-footer-links{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:12px}.csp-footer-links button{min-height:36px;border:1px solid var(--line2);border-radius:8px;background:var(--panel2);color:var(--text);padding:7px 10px;font-size:10px;font-weight:800;cursor:pointer}.csp-note-label{display:grid;gap:6px;color:var(--muted);font-size:10px;font-weight:800}.csp-note-label textarea{width:100%;min-height:92px;resize:vertical;border:1px solid var(--line2);border-radius:8px;background:var(--input);color:var(--text);padding:10px;font:inherit;line-height:1.5}@media(max-width:520px){.csp-footer-links{display:grid;grid-template-columns:1fr}.csp-footer-links button{min-height:42px;text-align:left}.csp-note-label textarea{min-height:110px}}';
 document.head.appendChild(styleV2);
 
 document.addEventListener('keydown',function(e){if(e.key==='Escape'&&document.getElementById('csp-tec-modal')&&document.getElementById('csp-tec-modal').classList.contains('open'))window.civilStudyCloseTecModal()});
