@@ -3,7 +3,7 @@
 if(window.__BASE_CORRECOES_20260930__)return;
 window.__BASE_CORRECOES_20260930__=true;
 
-var VERSION='20260930r1';
+var VERSION='20260930r2';
 var scheduled=false,observer=null,nativeSubjStats=null;
 
 function q(sel,root){return (root||document).querySelector(sel)}
@@ -257,7 +257,8 @@ function openFirstSession(){
       })||roots[0];
       if(!target){smoothTo(section);return}
       var head=q('.cf-module-head,.civil-module-head,.cpp-mod-head,.topic-row',target);
-      if(!target.classList.contains('open')&&head)head.click();
+      var toggle=target.matches('.topic-item')?q(':scope > .topic-row .open-topic',target):head;
+      if(!target.classList.contains('open')&&toggle)toggle.click();
       setTimeout(function(){smoothTo(head||target)},80);
     },120);
   }
@@ -338,9 +339,24 @@ function jumpSession(button,direction){
   var index=Number(button.getAttribute(direction==='jump'?'data-bc-jump-session':direction==='prev'?'data-bc-prev-session':'data-bc-next-session'));
   if(direction==='prev')index--;else if(direction==='next')index++;
   index=Math.max(0,Math.min(sessions.length-1,index));
-  smoothTo(sessions[index]);
   var nav=q(':scope > .bc-session-nav',body);if(nav&&direction==='jump')nav.open=false;
+  requestAnimationFrame(function(){smoothTo(sessions[index])});
   return false;
+}
+
+/* Tabelas largas mantêm as colunas e ganham rolagem própria. */
+function enhanceTables(){
+  qa('#subjects .ds-module-body table').forEach(function(table){
+    if(table.parentElement.classList.contains('bc-table-scroll'))return;
+    var wrapper=document.createElement('div');
+    wrapper.className='bc-table-scroll';
+    wrapper.tabIndex=0;
+    wrapper.setAttribute('role','region');
+    var caption=q('caption',table);
+    wrapper.setAttribute('aria-label',caption?caption.textContent.trim():'Tabela de estudo — role para ver todas as colunas');
+    table.parentNode.insertBefore(wrapper,table);
+    wrapper.appendChild(table);
+  });
 }
 
 /* ---------------------------------------------------------
@@ -365,6 +381,7 @@ function enhance(){
   try{enhanceFirstAccess()}catch(e){console.warn('Primeiro acesso',e)}
   try{normalizeNavigationLabels()}catch(e){console.warn('Navegação',e)}
   try{enhanceAllSessionNav()}catch(e){console.warn('Sessões',e)}
+  try{enhanceTables()}catch(e){console.warn('Tabelas',e)}
 }
 function schedule(){if(scheduled)return;scheduled=true;requestAnimationFrame(enhance)}
 
