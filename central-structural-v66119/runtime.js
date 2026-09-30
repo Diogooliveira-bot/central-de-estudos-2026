@@ -4165,11 +4165,6 @@ function penalStep(n,title,desc,done,body){
 function renderPenalMaster(){
  const st=penalStats(),real=PENAL_QUESTIONS.filter(q=>q.real!==false).length,ined=PENAL_QUESTIONS.length-real;
  return `<div class="cf-master-tools"><button onclick="renderPenalErrorPanel()">⚠ Erros ${st.wrongIds.length?`(${st.wrongIds.length})`:''}</button></div>
- <div class="cf-resource-box" style="margin:12px 0 14px;border-color:#315c54;background:linear-gradient(135deg,rgba(49,92,84,.14),rgba(49,92,84,.04))">
-   <h4 style="margin:0 0 6px">Decorando Penal atualizado</h4>
-   <div class="muted small" style="margin-bottom:10px"><b style="color:inherit">1.763 questões únicas</b> organizadas por assunto e artigo do Código Penal, incluindo 1.674 questões novas do PDF auditado.</div>
-   <div class="cf-actions"><button class="cf-btn primary" onclick="openLeiSecaEnxuta(null,'penal')">Abrir as 1.763 questões</button></div>
- </div>
  <div class="cf-metrics">
    <div class="cf-metric"><small>Banco do curso</small><b>${PENAL_QUESTIONS.length}</b></div>
    <div class="cf-metric"><small>Respondidas</small><b>${st.answered}</b></div>
