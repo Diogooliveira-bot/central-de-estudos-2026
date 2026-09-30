@@ -4725,6 +4725,50 @@ function escAttr(v){return esc(v).replace(/`/g,'&#96;')}function escJs(v){return
 try{cleanRemovedSubjectResidue()}catch(e){console.warn('Limpeza de estado',e)}
 try{applyCentralTheme()}catch(e){console.warn('Tema',e)}
 try{applySidebarCollapse()}catch(e){console.warn('Sidebar',e)}
+/* Padronização das etapas: mantém leitura, teoria e aprofundamento; preserva o histórico local. */
+(function(){
+const baseCivilPct=civilModulePct;
+civilModulePct=function(id){let steps=[];if(id==='m1')steps=civilSteps();else if(id==='m2')steps=civil2Steps();else if(/^m(?:[3-9]|1[0-6])$/.test(id))steps=window['civil'+id.slice(1)+'Steps']();const visible=steps.filter(x=>/^(reading|theory|deep)\d*$/.test(x.id));return visible.length?Math.round(visible.filter(x=>x.done).length/visible.length*100):baseCivilPct(id)};
+const baseRenderCivil=renderCivilMaster;
+renderCivilMaster=function(){return baseRenderCivil.apply(this,arguments).replace('Banco do curso: <b>400 questões reais</b> + <b>80 casos autorais</b>, com revisão automática de erros por módulo.','Cada módulo reúne leitura orientada, teoria completa e aprofundamento.').replace(/8 etapas/g,'3 etapas')};
+window.civilQuestionStep=function(){return ''};
+window.civilErrorStep=function(){return ''};
+window.civil2QuestionStep=function(){return ''};
+window.civil2ErrorStep=function(){return ''};
+window.civil3QuestionStep=function(){return ''};
+window.civil3ErrorStep=function(){return ''};
+window.civil4QuestionStep=function(){return ''};
+window.civil4ErrorStep=function(){return ''};
+window.civil5QuestionStep=function(){return ''};
+window.civil5ErrorStep=function(){return ''};
+window.civil6QuestionStep=function(){return ''};
+window.civil6ErrorStep=function(){return ''};
+window.civil7QuestionStep=function(){return ''};
+window.civil7ErrorStep=function(){return ''};
+window.civil8QuestionStep=function(){return ''};
+window.civil8ErrorStep=function(){return ''};
+window.civil9QuestionStep=function(){return ''};
+window.civil9ErrorStep=function(){return ''};
+window.civil10QuestionStep=function(){return ''};
+window.civil10ErrorStep=function(){return ''};
+window.civil11QuestionStep=function(){return ''};
+window.civil11ErrorStep=function(){return ''};
+window.civil12QuestionStep=function(){return ''};
+window.civil12ErrorStep=function(){return ''};
+window.civil13QuestionStep=function(){return ''};
+window.civil13ErrorStep=function(){return ''};
+window.civil14QuestionStep=function(){return ''};
+window.civil14ErrorStep=function(){return ''};
+window.civil15QuestionStep=function(){return ''};
+window.civil15ErrorStep=function(){return ''};
+window.civil16QuestionStep=function(){return ''};
+window.civil16ErrorStep=function(){return ''};
+function cleanStepFactory(factory,keep){const original=window[factory];if(typeof original!=='function')return;window[factory]=function(n,title,desc,done,body){if(!keep.includes(n))return '';const map={2:1,3:2,5:3};return original(map[n]||n,title,desc,done,body)}}
+cleanStepFactory('cfStep',[2,3,5]);cleanStepFactory('penalStep',[2,3,5]);cleanStepFactory('cpcStep',[2,3,5]);
+['renderCfModule','renderPenalModule','renderCpcModule'].forEach(function(name){const original=window[name];if(typeof original==='function')window[name]=function(){return original.apply(this,arguments).replace(new RegExp('(<span class="cf-module-stat">)([0-9]+)%[^<]*(</span>)'),'$1$2%$3')}});
+const style=document.createElement('style');style.textContent='.cf-master-tools,.cf-metrics,[id="cf-session-host"],[id="cf-errors-host"],[id="penal-session-host"],[id="penal-errors-host"],[id="cpc-session-host"],[id="cpc-errors-host"]{display:none!important}';document.head.appendChild(style);
+})();
+
 try{renderAll()}catch(e){
  console.error('Inicialização parcial da Central',e);
  try{renderDisciplineGrid()}catch(_){}
