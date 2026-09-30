@@ -21,7 +21,7 @@
   if(output)output.textContent=value+'%';
  }
  function forceReadingText(value){
-  var scale=value/100,large=(16*scale).toFixed(1)+'px',medium=(13*scale).toFixed(1)+'px';
+  var scale=value/100,large=(16*scale).toFixed(1)+'px',medium=(16*scale).toFixed(1)+'px';
   document.querySelectorAll(LARGE_SELECTORS).forEach(function(element){element.style.setProperty('font-size',large,'important')});
   document.querySelectorAll(MEDIUM_SELECTORS).forEach(function(element){element.style.setProperty('font-size',medium,'important')});
  }
@@ -30,7 +30,7 @@
   var scale=value/100,root=document.documentElement;
   root.dataset.centralReadingFont=String(value);
   root.style.setProperty('--central-reading-font-large',(16*scale).toFixed(1)+'px');
-  root.style.setProperty('--central-reading-font-medium',(13*scale).toFixed(1)+'px');
+  root.style.setProperty('--central-reading-font-medium',(16*scale).toFixed(1)+'px');
   forceReadingText(value);
   if(persist!==false)save(value);
   refreshControl(value);

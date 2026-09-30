@@ -1,0 +1,100 @@
+/* Direito Civil is the shared visual reference for every discipline. */
+html.bc-ui-v1 #subjects { --ds-accent:var(--bc-color-success); display:grid; gap:16px; }
+html.bc-ui-v1 #subjects .bc-discipline-kit { display:none; }
+html.bc-ui-v1 #subjects :is(.ptn-intro,.cpp-course-top) { display:none; }
+html.bc-ui-v1 #subjects .ds-course-intro { padding:20px!important; border:1px solid var(--bc-color-border); border-radius:12px; background:var(--bc-color-surface-elevated); margin:0 0 16px; }
+html.bc-ui-v1 #subjects .ds-course-intro h3 { margin:0; font-size:20px!important; line-height:1.5!important; }
+html.bc-ui-v1 #subjects .ds-course-intro p { margin:6px 0 0; font-size:14px!important; line-height:1.6!important; color:var(--bc-color-text-secondary); }
+html.bc-ui-v1 #subjects :is(.cf-modules,.civil-master,.cpp-course) { display:grid; gap:12px; }
+html.bc-ui-v1 #subjects .ds-module { border:1px solid var(--bc-color-border)!important; border-radius:14px!important; background:var(--bc-color-surface)!important; overflow:hidden; margin:0 0 12px; scroll-margin-top:140px; }
+html.bc-ui-v1 #subjects .ds-module.open { border-color:var(--bc-color-border-interactive)!important; }
+html.bc-ui-v1 #subjects .ds-module-head { width:100%; min-height:76px; height:auto!important; display:grid!important; grid-template-columns:92px minmax(0,1fr) auto 24px!important; align-items:center; gap:16px!important; padding:18px 20px!important; border:0!important; border-radius:0!important; background:var(--bc-color-surface)!important; color:var(--bc-color-text)!important; text-align:left; cursor:pointer; }
+html.bc-ui-v1 #subjects .ds-module-head:hover { background:var(--bc-color-surface-elevated)!important; }
+html.bc-ui-v1 #subjects :is(.civil-module-num,.cf-module-no,.cpp-num) { font-size:12px!important; line-height:1.5!important; color:var(--bc-color-text-secondary)!important; font-weight:700; white-space:normal!important; }
+html.bc-ui-v1 #subjects :is(.civil-module-title,.cf-module-title,.cpp-mod-title,.topic-title) { min-width:0; font-size:16px!important; line-height:1.45!important; font-weight:700!important; color:var(--bc-color-text)!important; white-space:normal!important; overflow-wrap:anywhere; }
+html.bc-ui-v1 #subjects :is(.civil-module-title b,.cpp-mod-title b) { font-size:16px!important; line-height:1.45!important; }
+html.bc-ui-v1 #subjects :is(.civil-module-title small,.cpp-mod-title small) { display:block; font-size:13px!important; line-height:1.5!important; font-weight:400; color:var(--bc-color-text-secondary)!important; margin-top:4px; }
+html.bc-ui-v1 #subjects :is(.civil-module-state,.cf-module-stat,.cpp-mpct) { font-size:13px!important; line-height:1.5!important; color:var(--ds-accent)!important; white-space:normal!important; text-align:right; max-width:170px; }
+html.bc-ui-v1 #subjects .civil-pct { font-size:16px!important; }
+html.bc-ui-v1 #subjects .csp-stage-summary { font-size:12px!important; color:var(--bc-color-text-secondary)!important; }
+html.bc-ui-v1 #subjects .ds-module-body { padding:20px!important; border-top:1px solid var(--bc-color-border); background:var(--bc-color-surface)!important; color:var(--bc-color-text)!important; }
+html.bc-ui-v1 #subjects .ds-module :is(h2,h3,h4,p,li,button,input,textarea,summary) { font-family:var(--bc-font)!important; }
+html.bc-ui-v1 #subjects .ds-module :is(.cpc-apostila-cover,.cpc-law-card,.cpc-apostila-topic,.cf-theory-text,.cpp-summary,.cpp-source) { background:var(--bc-color-surface-elevated)!important; color:var(--bc-color-text-secondary)!important; border-color:var(--bc-color-border)!important; }
+html.bc-ui-v1 #subjects .ds-module .cpc-apostila-cover h2 { font-size:20px!important; line-height:1.5!important; color:var(--bc-color-text)!important; }
+html.bc-ui-v1 #subjects .ds-module-body :is(.cpc-apostila-study,.cpc-flow-nav) { display:none!important; }
+html.bc-ui-v1 #subjects .ds-module-body> :is(.cf-module-bar,.civil-overall) { display:none; }
+html.bc-ui-v1 #subjects :is(.csp-panel,.csp-stage-card,.cf-step,.civil-step,.civil-a-card,.cf-advanced,.cf-theory,.ptn-session,.ptn-review-card,.ptn-q,.cpp-sec,.cpp-box,.resource,.prestudy,.tips,.ds-notes) { border:1px solid var(--bc-color-border)!important; border-radius:12px!important; background:var(--bc-color-surface-elevated)!important; color:var(--bc-color-text)!important; box-shadow:none!important; }
+html.bc-ui-v1 #subjects .csp-panel { padding:16px!important; margin:0 0 16px!important; border-color:color-mix(in srgb,var(--ds-accent) 40%,var(--bc-color-border))!important; background:color-mix(in srgb,var(--ds-accent) 5%,var(--bc-color-surface))!important; }
+html.bc-ui-v1 #subjects .csp-panel-head { display:flex; justify-content:space-between; gap:16px; align-items:flex-start; margin-bottom:12px; }
+html.bc-ui-v1 #subjects .csp-panel-head span { font-size:12px!important; line-height:1.5!important; letter-spacing:.04em; color:var(--ds-accent)!important; }
+html.bc-ui-v1 #subjects .csp-panel-head b { display:block; font-size:18px!important; line-height:1.5!important; }
+html.bc-ui-v1 #subjects :is(.csp-panel-note,.csp-stage-head small,.csp-auto-status,.csp-empty,.csp-tec-target>small) { font-size:13px!important; line-height:1.55!important; color:var(--bc-color-text-secondary)!important; }
+html.bc-ui-v1 #subjects .csp-panel-note { max-width:240px; }
+html.bc-ui-v1 #subjects .csp-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin-top:12px; }
+html.bc-ui-v1 #subjects .csp-stage-card { padding:16px!important; min-width:0; }
+html.bc-ui-v1 #subjects .csp-stage-head { display:flex; justify-content:space-between; gap:12px; }
+html.bc-ui-v1 #subjects .csp-stage-head>div { flex:1; min-width:0; }
+html.bc-ui-v1 #subjects .csp-stage-head>strong { flex:0 0 auto; }
+html.bc-ui-v1 #subjects .csp-stage-head b { display:block; font-size:15px!important; line-height:1.5!important; }
+html.bc-ui-v1 #subjects .csp-stage-head small { display:block; margin-top:4px; }
+html.bc-ui-v1 #subjects .csp-stage-head strong { font-size:15px!important; line-height:1.5!important; color:var(--ds-accent)!important; white-space:normal!important; }
+html.bc-ui-v1 #subjects .csp-tec { grid-column:1/-1; }
+html.bc-ui-v1 #subjects .csp-meter { height:7px; border-radius:999px; overflow:hidden; margin-top:12px; background:var(--bc-color-border); }
+html.bc-ui-v1 #subjects .csp-meter>span { display:block; height:100%; border-radius:inherit; background:var(--ds-accent)!important; }
+html.bc-ui-v1 #subjects .ds-module-nav { display:flex; flex-wrap:wrap; gap:8px; padding-bottom:16px; margin-bottom:20px; border-bottom:1px solid var(--bc-color-border); }
+html.bc-ui-v1 #subjects :is(.ds-module-nav button,.ds-action,.civil-btn,.cf-btn,.ptn-btn,.cpp-actions button,.cpp-tec-btn,.csp-add-round,.csp-topic-read button,.csp-target-control button,.inline-tools button) { min-height:44px!important; padding:10px 14px!important; border:1px solid var(--bc-color-border-interactive)!important; border-radius:9px!important; font-size:14px!important; line-height:1.4!important; font-weight:600; background:var(--bc-color-surface)!important; color:var(--bc-color-text)!important; cursor:pointer; white-space:normal!important; }
+html.bc-ui-v1 #subjects :is(.civil-btn.primary,.cf-btn.primary,.ptn-btn.primary,.csp-topic-read button.done) { background:var(--bc-color-primary)!important; border-color:var(--bc-color-primary)!important; color:#fff!important; }
+html[data-bc-theme="dark"].bc-ui-v1 #subjects :is(.civil-btn.primary,.cf-btn.primary,.ptn-btn.primary,.csp-topic-read button.done),
+html[data-bc-theme="oled"].bc-ui-v1 #subjects :is(.civil-btn.primary,.cf-btn.primary,.ptn-btn.primary,.csp-topic-read button.done) { color:#062126!important; }
+html.bc-ui-v1 #subjects :is(.civil-a-grid,.cpp-sections,.cf-theory-grid,.cf-advanced-grid,.cpp-two) { display:grid!important; grid-template-columns:repeat(2,minmax(0,1fr))!important; gap:12px!important; }
+html.bc-ui-v1 #subjects :is(.civil-a-card,.cpp-sec,.cpp-box,.cf-advanced,.ptn-review-card,.resource,.prestudy,.tips) { padding:16px!important; }
+html.bc-ui-v1 #subjects :is(.civil-a-card b,.cpp-sec b,.cpp-box h5,.cf-advanced b,.civil-a-section>h4,.resource-label,.tips-title,.pre-title) { font-size:15px!important; line-height:1.5!important; color:var(--bc-color-text)!important; }
+html.bc-ui-v1 #subjects :is(.civil-a-card p,.civil-a-list,.cpp-sec p,.cpp-box li,.cf-theory-text,.cf-reading li,.cf-advanced div,.ptn-session-body p,.ptn-session-body li,.tips li) { font-size:var(--central-reading-font-large,16px)!important; line-height:1.7!important; color:var(--bc-color-text-secondary)!important; }
+html.bc-ui-v1 #subjects :is(.civil-a-basis,.cf-source,.cpp-chip,.civil-a-chip,.cf-step-copy small,.civil-step-title small,.ptn-session-title small,.topic-origin,.type) { font-size:13px!important; line-height:1.5!important; color:var(--bc-color-text-secondary)!important; }
+html.bc-ui-v1 #subjects :is(.cf-step-copy b,.civil-step-title b,.ptn-session-title b,.cf-theory summary) { font-size:16px!important; line-height:1.5!important; }
+html.bc-ui-v1 #subjects :is(.cf-step-head,.civil-step-head,.ptn-session summary) { padding:16px!important; gap:12px; }
+html.bc-ui-v1 #subjects :is(.cf-step-body,.civil-step-body,.ptn-session-body) { padding:16px!important; }
+html.bc-ui-v1 #subjects :is(.civil-a-section,.cf-step,.civil-step,.ptn-session) { margin-top:16px!important; }
+html.bc-ui-v1 #subjects .ds-notes { display:grid; gap:10px; margin-top:24px; padding:16px!important; }
+html.bc-ui-v1 #subjects .ds-notes :is(label,h4,.resource-label) { margin:0; font-size:15px!important; font-weight:700; color:var(--bc-color-text); }
+html.bc-ui-v1 #subjects .ds-notes textarea { width:100%; min-height:120px!important; padding:12px!important; box-sizing:border-box; border:1px solid var(--bc-color-border-interactive)!important; border-radius:9px!important; background:var(--bc-color-surface)!important; color:var(--bc-color-text)!important; font:inherit; font-size:16px!important; line-height:1.6!important; resize:vertical; }
+html.bc-ui-v1 #subjects .ds-actions { display:flex; gap:12px; align-items:center; flex-wrap:wrap; margin-top:12px; }
+html.bc-ui-v1 #subjects .ds-note-status { font-size:13px; color:var(--bc-color-text-secondary); }
+html.bc-ui-v1 #subjects .ds-module :is(button,input,textarea,a):focus-visible { outline:3px solid var(--bc-color-accent); outline-offset:3px; }
+html.bc-ui-v1 #subjects :is(.subject-head,.civil-master-intro,.ptn-intro,.cpp-course-top) { padding:18px!important; border-radius:12px!important; }
+html.bc-ui-v1 #subjects :is(.subject-name,.civil-master-intro h3,.ptn-intro h3,.cpp-course-top b) { font-size:18px!important; line-height:1.5!important; }
+html.bc-ui-v1 #subjects .topic-header { display:none; }
+html.bc-ui-v1 #subjects .topic-row.ds-module-head { grid-template-columns:24px minmax(0,1fr) auto 44px!important; }
+html.bc-ui-v1 #subjects .topic-row>.topic-origin { display:none; }
+html.bc-ui-v1 #subjects .open-topic { min-height:44px; min-width:44px; }
+html.bc-ui-v1 #subjects :is(.cpp-round label,.cpp-round b,.cpp-score,.csp-tec-row,.csp-tec-row small,.csp-tec-summary span) { font-size:13px!important; line-height:1.5!important; }
+html.bc-ui-v1 #subjects :is(.cpp-round input,.csp-target-control input) { min-height:44px; font-size:16px!important; padding:8px!important; }
+html.bc-ui-v1 #subjects .csp-target-control { display:flex!important; gap:8px; align-items:end; flex-wrap:wrap; }
+html.bc-ui-v1 #subjects .csp-target-control label { display:grid; gap:6px; font-size:13px!important; line-height:1.4!important; }
+html.bc-ui-v1 #subjects .csp-target-control input { max-width:100px; }
+html.bc-ui-v1 #subjects .csp-tec-target { border-color:var(--bc-color-border)!important; background:var(--bc-color-surface-elevated)!important; }
+html.bc-ui-v1 #subjects .ptn-tabs { display:flex; flex-wrap:wrap; gap:8px; }
+html.bc-ui-v1 #subjects .ptn-tab { min-height:44px!important; font-size:14px!important; padding:10px 14px!important; }
+/* Match the reading controls' scaling for Civil and the other disciplines. */
+html.bc-ui-v1 #subjects .ds-module-body { scroll-margin-top:90px; }
+html.bc-ui-v1 #subjects :is(.cf-step,.civil-a-section,.cpp-rounds,.ds-notes) { scroll-margin-top:90px; }
+@media(max-width:760px) {
+  html.bc-ui-v1 #subjects .ds-module-head { grid-template-columns:minmax(0,1fr) auto 20px!important; gap:8px!important; padding:16px!important; }
+  html.bc-ui-v1 #subjects :is(.civil-module-num,.cf-module-no,.cpp-num) { grid-column:1; grid-row:1; }
+  html.bc-ui-v1 #subjects :is(.civil-module-title,.cf-module-title,.cpp-mod-title) { grid-column:1; grid-row:2; }
+  html.bc-ui-v1 #subjects :is(.civil-module-state,.cf-module-stat,.cpp-mpct) { display:block!important; grid-column:2; grid-row:1/3; max-width:88px; font-size:12px!important; }
+  html.bc-ui-v1 #subjects .ds-module-head>:is(.chev,.cpp-chevron) { grid-column:3; grid-row:1/3; }
+  html.bc-ui-v1 #subjects .ds-module-body { padding:14px!important; }
+  html.bc-ui-v1 #subjects :is(.csp-grid,.civil-a-grid,.cpp-sections,.cf-theory-grid,.cf-advanced-grid,.cpp-two,.cpp-round-grid) { grid-template-columns:minmax(0,1fr)!important; }
+  html.bc-ui-v1 #subjects .csp-panel-head { flex-direction:column; gap:4px; }
+  html.bc-ui-v1 #subjects .csp-panel-note { text-align:left; max-width:none; }
+  html.bc-ui-v1 #subjects :is(.csp-panel,.csp-stage-card) { padding:12px!important; }
+  html.bc-ui-v1 #subjects .ds-module-nav { display:grid; grid-template-columns:1fr 1fr; }
+  html.bc-ui-v1 #subjects .civil-a-scope { columns:1; }
+  html.bc-ui-v1 #subjects .csp-stage-head { flex-wrap:nowrap; }
+  html.bc-ui-v1 #subjects .topic-row.ds-module-head { grid-template-columns:24px minmax(0,1fr) 44px!important; }
+  html.bc-ui-v1 #subjects .topic-row>.topic-title { grid-column:2; grid-row:1; }
+  html.bc-ui-v1 #subjects .topic-row>div:has(.type) { grid-column:2; grid-row:2; }
+  html.bc-ui-v1 #subjects .topic-row>.open-topic { grid-column:3; grid-row:1/3; }
+  html.bc-ui-v1 #subjects .topic-row>input { grid-column:1; grid-row:1/3; }
+}
