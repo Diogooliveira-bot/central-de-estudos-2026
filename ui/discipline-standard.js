@@ -88,12 +88,16 @@
       '<article class="csp-stage-card csp-tec"><div class="csp-stage-head"><div><b>Questões / TEC</b><small>' + esc(questions.text) + '</small></div><strong>' + (questions.total && questions.correct !== null ? Math.round(questions.correct / questions.total * 100) + '% de acertos' : questions.total ? '—' : 'Sem registro') + '</strong></div><div class="ds-actions"><button type="button" class="ds-action" data-ds-action="questions">Abrir questões e registros</button></div></article></div></section>';
   }
   function notes(module, body, meta) {
+    const host = body.querySelector(':scope > .ds-module-footer') || body;
     const native = body.querySelector('.notes,.cpp-note,.cf-resource-box:has(textarea),[data-ds-notes]');
     if (native) {
       native.classList.add('ds-notes');
-      if (native.parentElement !== body || body.lastElementChild !== native) body.appendChild(native);
+      if (native.parentElement !== host || host.lastElementChild !== native) host.appendChild(native);
       const heading = native.querySelector('label,h4,.resource-label');
       if (heading && heading.textContent !== 'Anotações do módulo') heading.textContent = 'Anotações do módulo';
+      const area = native.querySelector('textarea');
+      if (area) area.placeholder = 'Regra, dúvida, pegadinha, observação...';
+      if (native.matches('.cpp-note') && !native.querySelector('[data-ds-footer-save-note]')) native.insertAdjacentHTML('beforeend','<div class="ds-actions"><button type="button" class="ds-action" data-ds-footer-save-note>Salvar anotação</button><span role="status" class="ds-note-status"></span></div>');
       return;
     }
     const note = document.createElement('section');
@@ -105,8 +109,95 @@
       value = current ?? localStorage.getItem('central-v6:module-standard-notes:v1:' + oldId) ??
         (meta.subject === 'civil' ? localStorage.getItem('central-v6:civil-note:' + meta.id) : null) ?? '';
     } catch (_) {}
-    note.innerHTML = '<label for="' + id + '">Anotações do módulo</label><textarea id="' + id + '" placeholder="Regra, artigo, pegadinha ou dúvida…">' + esc(value) + '</textarea><div class="ds-actions"><button type="button" class="ds-action" data-ds-save-note>Salvar anotação</button><span role="status" aria-live="polite" class="ds-note-status"></span></div>';
-    body.appendChild(note);
+    note.innerHTML = '<label for="' + id + '">Anotações do módulo</label><textarea id="' + id + '" placeholder="Regra, dúvida, pegadinha, observação...">' + esc(value) + '</textarea><div class="ds-actions"><button type="button" class="ds-action" data-ds-save-note>Salvar anotação</button><span role="status" aria-live="polite" class="ds-note-status"></span></div>';
+    host.appendChild(note);
+  }
+  function reviewUid(module, meta) {
+    if (module.dataset.uid) return meta.id;
+    const subject = window.SUBJECTS?.find(s => s.id === meta.subject);
+    if (meta.subject === 'civil') return subject?.topics.find(t => t.uid === meta.id + '-analista')?.uid || meta.key;
+    const number = Number((meta.id.match(/\d+/) || [])[0]);
+    return subject?.topics[number - 1]?.uid || meta.key;
+  }
+  function footerRounds(meta) {
+    if (meta.subject === 'civil') return window.civilStudyFooterRows?.(meta.id) || [];
+    const rows = meta.subject === 'cpp' ? window.CppCourseV1.state().modules[meta.id]?.rounds || [] :
+      read('central-v6:module-rounds:' + meta.key) || [];
+    return rows.map((r,index) => ({ index, done:Number(r.valid ?? r.done)||0, correct:Number(r.correct)||0, date:r.date })).filter(r => r.done > 0);
+  }
+  function footerHistory(meta) {
+    const rows = footerRounds(meta), done = rows.reduce((n,r) => n + r.done,0), correct = rows.reduce((n,r) => n + r.correct,0);
+    return '<div class="history-label">Questões feitas por rodadas · total ' + done + ' feitas · ' + correct + ' certas</div>' +
+      (rows.length ? rows.map((r,i) => '<div class="hist"><span>Rodada ' + (i+1) + '</span><span>' + r.done + ' feitas · ' + r.correct + ' certas</span><span class="rate">' + Math.round(r.correct/r.done*100) + '%</span></div>').join('') : '<div class="muted small">Nenhum resultado registrado.</div>');
+  }
+  function footerTools(body, host) {
+    if (host.children.length) return;
+    const actions = [
+      {label:'📖 Decorando a Lei', selector:'[onclick*="openLeiSeca"],[onclick*="decorando"]', tool:'decorando'},
+      {label:'⚖ Vade Mecum', selector:'[onclick*="vade"]', tool:'vade'},
+      {label:'▤ Cadernos do TEC', selector:'[onclick*="tec-cadernos"]', tool:'tec'}
+    ];
+    actions.forEach(action => {
+      const native = body.querySelector('button' + action.selector.split(',').join(',button'));
+      const button = native ? native.cloneNode(false) : document.createElement('button');
+      button.removeAttribute('id'); button.removeAttribute('style'); button.type = 'button'; button.className = 'chip real'; button.textContent = action.label;
+      if (!native) button.dataset.dsFooterTool = action.tool;
+      host.appendChild(button);
+    });
+  }
+  function moduleFooter(module, body, meta) {
+    let footer = body.querySelector(':scope > .ds-module-footer');
+    if (!footer) {
+      footer = document.createElement('section'); footer.className = 'ds-module-footer'; footer.dataset.dsFooter = meta.key;
+      const questions = document.createElement('section'); questions.className = 'ds-footer-questions';
+      const perf = body.querySelector(':scope > .perf-form');
+      if (perf) {
+        let node = perf;
+        while (node) {
+          const next = node.nextElementSibling;
+          if (node.matches('.resource,.ds-notes,.notes')) footer.appendChild(node); else questions.appendChild(node);
+          node = next;
+        }
+        footer.prepend(questions);
+      } else {
+        const suffix = meta.key.replace(/[^a-zA-Z0-9_-]/g,'-'), uid = reviewUid(module,meta);
+        questions.innerHTML = '<form class="perf-form" data-ds-footer-register><div class="field"><label for="ds-q-' + suffix + '">Questões feitas</label><input id="ds-q-' + suffix + '" name="done" type="number" inputmode="numeric" min="1" step="1" placeholder="—" required></div><div class="field"><label for="ds-c-' + suffix + '">Questões certas</label><input id="ds-c-' + suffix + '" name="correct" type="number" inputmode="numeric" min="0" step="1" placeholder="—"></div><button class="btn green" type="submit">✓ Registrar</button><div class="ds-footer-status" role="status" hidden></div></form><div data-ds-footer-history></div>';
+        footer.appendChild(questions);
+        const review = document.createElement('section'); review.className = 'resource ds-footer-review';
+        const date = localStorage.getItem(key(uid,'review')) || todayISO();
+        review.innerHTML = '<div class="resource-label">Revisão</div><div class="chips"><input type="date" aria-label="Data da revisão" value="' + esc(date) + '"><button class="btn sm" type="button" data-ds-footer-review>Agendar revisão</button><span class="muted small" data-ds-review-status></span></div>';
+        footer.appendChild(review);
+      }
+      let tools = Array.from(footer.children).find(el => /Ferramentas do módulo/i.test(el.querySelector('.resource-label')?.textContent || ''));
+      if (!tools) {
+        tools = document.createElement('section'); tools.className = 'resource';
+        tools.innerHTML = '<div class="resource-label">Ferramentas do módulo</div><div class="chips"></div>';
+        footer.appendChild(tools);
+      }
+      tools.classList.add('ds-footer-tools');
+      const chips = tools.querySelector('.chips');
+      // One set of three tools for every discipline; native module context is retained.
+      chips.replaceChildren(); footerTools(body,chips);
+      Array.from(footer.children).find(el => el.querySelector('.resource-label')?.textContent === 'Revisão')?.classList.add('ds-footer-review');
+      body.appendChild(footer);
+    }
+    if (body.lastElementChild !== footer) body.appendChild(footer);
+    const history = footer.querySelector('[data-ds-footer-history]');
+    if (history) { const html = footerHistory(meta); if (history.innerHTML !== html) history.innerHTML = html; }
+    const savedReview = localStorage.getItem(key(reviewUid(module,meta),'review'));
+    const status = footer.querySelector('[data-ds-review-status]');
+    const reviewText = savedReview ? 'marcada para ' + window.formatDate(savedReview) : '';
+    if (status && status.textContent !== reviewText) status.textContent = reviewText;
+    footer.querySelectorAll('.perf-form .field').forEach(field => {
+      const input = field.querySelector('input'), label = field.querySelector('label');
+      if (input && label) { label.htmlFor = input.id; input.inputMode = 'numeric'; input.step = '1'; }
+    });
+    body.querySelectorAll(':scope > .cf-resources,:scope > .cpp-rounds').forEach(el => el.classList.add('ds-footer-replaced'));
+    // Completion controls stay with the study controls, above the reading content.
+    body.querySelectorAll(':scope > .cpp-actions,:scope > .civil-a-actions').forEach(el => {
+      const nav = body.querySelector(':scope > .ds-module-nav');
+      if (nav && nav.nextElementSibling !== el) nav.after(el);
+    });
   }
   function enhance(module) {
     const body = bodyOf(module); if (!body) return;
@@ -134,6 +225,7 @@
       nav.innerHTML = '<button type="button" data-ds-action="content">Conteúdo</button><button type="button" data-ds-action="questions">Questões / TEC</button><button type="button" data-ds-action="resources">Ferramentas</button><button type="button" data-ds-action="notes">Anotações</button>';
       const panel = body.querySelector('.csp-panel'); if (panel) panel.after(nav); else body.prepend(nav);
     }
+    moduleFooter(module,body,meta);
     notes(module,body,meta);
   }
   function refresh() {
@@ -181,6 +273,27 @@
     target.scrollIntoView({block:'start'});
   }
   document.addEventListener('click',function (event) {
+    const cppNote = event.target.closest('[data-ds-footer-save-note]');
+    if (cppNote) {
+      const module = cppNote.closest('.ds-module'), box = cppNote.closest('.ds-notes');
+      window.CppCourseV1.note(Number(module.dataset.cppNum),box.querySelector('textarea').value);
+      box.querySelector('[role=status]').textContent = 'Anotação salva';
+    }
+    const tool = event.target.closest('[data-ds-footer-tool]');
+    if (tool) {
+      if (tool.dataset.dsFooterTool === 'tec') window.centralSidebarAction('tec-cadernos',tool);
+      else window.openEmbeddedTool(tool.dataset.dsFooterTool,{},tool);
+    }
+    const review = event.target.closest('[data-ds-footer-review]');
+    if (review) {
+      const module = review.closest('.ds-module'), meta = identity(module), uid = reviewUid(module,meta), footer = review.closest('.ds-module-footer');
+      const date = footer.querySelector('input[type=date]').value;
+      if (date) {
+        const tasks = window.CentralAgenda.read(date), reviewId = uid;
+        if (!tasks.some(task => task.reviewUid === reviewId)) tasks.push({id:Date.now(),time:'',discipline:module.closest('.subject').querySelector('.subject-name').textContent,task:'Revisão — ' + module.querySelector('.civil-module-title,.cf-module-title,.cpp-mod-title,.topic-title').textContent.trim(),done:false,reviewUid:reviewId});
+        window.saveAgenda(date,tasks); localStorage.setItem(key(uid,'review'),date); schedule();
+      }
+    }
     const action = event.target.closest('[data-ds-action]');
     if (action) { const module = action.closest('.ds-module'); if (module) navigate(module,action.dataset.dsAction); }
     const save = event.target.closest('[data-ds-save-note]');
@@ -191,6 +304,25 @@
     }
     if (event.target.closest('#subjects')) schedule();
   });
+  document.addEventListener('submit',function(event) {
+    const form = event.target.closest('[data-ds-footer-register]'); if (!form) return;
+    event.preventDefault();
+    const module = form.closest('.ds-module'), meta = identity(module);
+    const done = Number(form.elements.done.value), correct = Number(form.elements.correct.value || 0), status = form.querySelector('[role=status]');
+    try {
+      if (!Number.isInteger(done) || !Number.isInteger(correct) || done < 1 || correct < 0 || correct > done) throw new Error('Confira questões feitas e certas.');
+      if (meta.subject === 'civil') { if (!window.civilStudyRegisterRound(meta.id,done,correct)) throw new Error('Não foi possível registrar.'); }
+      else if (meta.subject === 'cpp') { if (!window.CppCourseV1.registerRound(Number(meta.id),done,correct)) throw new Error('Não foi possível registrar.'); }
+      else {
+        const k = 'central-v6:module-rounds:' + meta.key, rows = read(k) || [];
+        const index = rows.findIndex(r => r.done === '' && r.correct === '');
+        const record = {done,correct,date:todayISO(),id:Date.now()};
+        if (index < 0) rows.push(record); else rows[index] = record;
+        localStorage.setItem(k,JSON.stringify(rows));
+      }
+      form.reset(); status.hidden = true; schedule();
+    } catch (error) { status.textContent = error.message; status.hidden = false; }
+  });
   document.addEventListener('change',function(event) { if (event.target.closest('#subjects')) schedule(); });
   // Keep new-note drafts during native re-renders without touching the original note stores.
   document.addEventListener('input',function(event) {
@@ -200,7 +332,7 @@
       catch (_) { box.querySelector('[role=status]').textContent = 'Não foi possível salvar'; }
     }
   });
-  window.CentralDisciplineStandard = { refresh, version:'1.0.0' };
+  window.CentralDisciplineStandard = { refresh, version:'1.1.0' };
   function start() { observer = new MutationObserver(schedule); refresh(); }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded',start,{once:true}); else start();
 })();
