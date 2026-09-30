@@ -73,6 +73,7 @@ function enhanceModule(el){
  var subject=el.closest('.subject');if(subject&&!subject.classList.contains('open'))return;
  if(el.matches('.topic-item')&&!el.classList.contains('open'))return;
  if((el.matches('.cf-module,.cpp-mod,.civil-module'))&&!el.classList.contains('open'))return;
+ if(el.hasAttribute('data-civil-analista')){var civilCard=el.closest('.civil-a-module,.civil-module,[data-civil]')||el;if(!civilCard.classList.contains('open'))return}
  var body=bodyFor(el);if(!body)return;
  var id=moduleId(el);
  if(!hasStagePanel(body))body.insertAdjacentHTML('afterbegin',progressPanel(el,id));
