@@ -72,7 +72,7 @@ function normalizeNotes(el,body,id){
 function enhanceModule(el){
  var subject=el.closest('.subject');if(subject&&!subject.classList.contains('open'))return;
  if(el.matches('.topic-item')&&!el.classList.contains('open'))return;
- if((el.matches('.cf-module,.cpp-mod')||el.hasAttribute('data-civil-analista')||el.matches('.civil-module'))&&!el.classList.contains('open'))return;
+ if((el.matches('.cf-module,.cpp-mod,.civil-module'))&&!el.classList.contains('open'))return;
  var body=bodyFor(el);if(!body)return;
  var id=moduleId(el);
  if(!hasStagePanel(body))body.insertAdjacentHTML('afterbegin',progressPanel(el,id));
@@ -91,6 +91,7 @@ function installStyle(){
 }
 document.addEventListener('click',function(e){var button=e.target&&e.target.closest&&e.target.closest('[data-cms-note-save]');if(!button)return;var id=button.getAttribute('data-cms-note-save'),area=Array.from(document.querySelectorAll('[data-cms-note-input]')).find(function(x){return x.getAttribute('data-cms-note-input')===id});if(!area)return;try{localStorage.setItem(NOTE_PREFIX+id,area.value.trim())}catch(err){console.warn('Anotação não salva',err)}button.textContent='Anotação salva';setTimeout(function(){if(button.isConnected)button.textContent='Salvar anotação'},1300)});
 installStyle();
+document.addEventListener('click',scheduleEnhance,true);
 if(typeof window.renderSubjects==='function'){
  var originalRenderSubjects=window.renderSubjects;
  window.renderSubjects=function(){var r=originalRenderSubjects.apply(this,arguments);enhance();return r};
