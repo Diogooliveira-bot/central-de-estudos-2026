@@ -303,6 +303,7 @@ html[data-central-theme="light"] .subject:not([data-id="civil"]){
 .bc-kit-card b{display:block;color:var(--bc-course-ink);font-size:.82rem}.bc-kit-card p{margin:4px 0 0;color:var(--bc-course-copy);font-size:.75rem;line-height:1.5}
 .bc-kit-tools{display:flex;gap:7px;align-items:center;flex-wrap:wrap}
 .bc-kit-tools button{min-height:34px;border:1px solid;border-radius:8px;padding:7px 9px;font:800 .72rem var(--bc-font);cursor:pointer}
+.subject[data-id="civil"] .bc-civil-tools{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}.subject[data-id="civil"] .bc-civil-tools button{min-height:32px;border:1px solid var(--civil-line);border-radius:8px;background:var(--civil-soft);color:var(--civil-ink);padding:6px 8px;font:800 .72rem var(--bc-font);cursor:pointer}
 @media(max-width:760px){
   .bc-discipline-kit{padding:12px}.bc-kit-grid{grid-template-columns:1fr}.bc-kit-head{align-items:stretch;flex-direction:column}.bc-kit-stat{text-align:left}
   .bc-kit-tools button{flex:1 1 130px;min-height:40px}
