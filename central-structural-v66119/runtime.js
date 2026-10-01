@@ -4650,15 +4650,39 @@ function editTips(uid){const x=topicByUid(uid),r=getResources(uid),current=(r.ti
 
 function openAnkiDeck(deck,title){return false;}
 function perfKey(uid){return key(uid,'perf')}function getPerf(uid){return JSON.parse(localStorage.getItem(perfKey(uid))||'[]')}
-function registerPerf(uid){const q=Number($(`q-${uid}`).value||0),c=Number($(`c-${uid}`).value||0);if(q<=0||c<0||c>q){alert('Confira questões feitas e certas.');return}const a=getPerf(uid);a.unshift({id:Date.now(),q,c,pct:Math.round(c/q*1000)/10,date:todayISO()});localStorage.setItem(perfKey(uid),JSON.stringify(a));renderAll()}
+function registerPerf(uid){const q=Number($(`q-${uid}`).value||0),c=Number($(`c-${uid}`).value||0);if(!Number.isInteger(q)||!Number.isInteger(c)||q<=0||c<0||c>q){alert('Informe quantidades inteiras de questões feitas e certas.');return}const a=getPerf(uid);a.unshift({id:Date.now(),q,c,pct:Math.round(c/q*1000)/10,date:todayISO()});localStorage.setItem(perfKey(uid),JSON.stringify(a));renderAll()}
 function deletePerf(uid,id){localStorage.setItem(perfKey(uid),JSON.stringify(getPerf(uid).filter(x=>x.id!==id)));renderAll()}
 function notesKey(uid){return key(uid,'notes')}function getNotes(uid){return JSON.parse(localStorage.getItem(notesKey(uid))||'[]')}function saveNote(uid){const el=$(`note-${uid}`),v=el.value.trim();if(!v)return;const a=getNotes(uid);a.unshift({id:Date.now(),text:v,at:new Date().toISOString()});localStorage.setItem(notesKey(uid),JSON.stringify(a));renderSubjects()}function deleteNote(uid,id){localStorage.setItem(notesKey(uid),JSON.stringify(getNotes(uid).filter(x=>x.id!==id)));renderSubjects()}function focusNote(uid){$(`note-${uid}`)?.focus()}
 
 let timerHandles={};function startTimer(uid,btn){if(timerHandles[uid]){clearInterval(timerHandles[uid]);delete timerHandles[uid];return}let sec=Number(localStorage.getItem(key(uid,'timer'))||0);timerHandles[uid]=setInterval(()=>{sec++;localStorage.setItem(key(uid,'timer'),sec);const el=document.querySelector(`[data-timer="${uid}"]`);if(el)el.textContent=formatTimer(sec)},1000)}
 function formatTimer(s){return `${String(Math.floor(s/60)).padStart(2,'0')}:${String(s%60).padStart(2,'0')}`}
-function quickReview(uid){const d=new Date();d.setDate(d.getDate()+7);const iso=d.toISOString().slice(0,10);localStorage.setItem(key(uid,'review'),iso);addReviewAgenda(uid,iso);renderAll();alert('Revisão agendada para 7 dias.')}
-function scheduleReview(uid){const v=$(`rev-${uid}`).value;if(!v)return;localStorage.setItem(key(uid,'review'),v);addReviewAgenda(uid,v);renderAll()}
-function addReviewAgenda(uid,date){const x=topicByUid(uid);if(!x)return;const a=getAgenda(date);if(!a.some(i=>i.reviewUid===uid)){a.push({id:Date.now(),time:'',discipline:x.s.name,task:'Revisão — '+x.t.title,done:false,reviewUid:uid});saveAgenda(date,a)}}
+function quickReview(uid){const d=new Date();d.setDate(d.getDate()+7);const iso=d.toISOString().slice(0,10);if(!scheduleModuleReview(uid,iso)){alert('Não foi possível agendar a revisão.');return}renderAll();alert('Revisão agendada para 7 dias.')}
+function scheduleReview(uid){const v=$(`rev-${uid}`).value;if(!v)return;if(!scheduleModuleReview(uid,v)){alert('Não foi possível agendar a revisão.');return}renderAll()}
+function addReviewAgenda(uid,date){return scheduleModuleReview(uid,date)}
+function scheduleModuleReview(uid,date,entry){
+ if(!uid||!/^\d{4}-\d{2}-\d{2}$/.test(date))return false;
+ if(!entry){const x=topicByUid(uid);if(!x)return false;entry={discipline:x.s.name,task:'Revisão — '+x.t.title}}
+ try{
+  const prefix='central-v6:agenda:',changes=[];let previous=null;
+  const storedKeys=Array.from({length:localStorage.length},(_,i)=>localStorage.key(i));
+  for(const storageKey of storedKeys){
+   if(!storageKey||!storageKey.startsWith(prefix)||storageKey===agendaKey(date))continue;
+   const oldDate=storageKey.slice(prefix.length);if(!/^\d{4}-\d{2}-\d{2}$/.test(oldDate))continue;
+   let tasks;try{tasks=JSON.parse(localStorage.getItem(storageKey))}catch(_){continue}
+   if(!Array.isArray(tasks))continue;
+   const pending=tasks.filter(task=>task&&task.reviewUid===uid&&!task.done);
+   if(!pending.length)continue;
+   previous=previous||pending[0];
+   changes.push({date:oldDate,tasks:tasks.filter(task=>!task||task.reviewUid!==uid||task.done)});
+  }
+  const tasks=getAgenda(date),existing=tasks.find(task=>task&&task.reviewUid===uid);
+  if(!existing)tasks.push({id:Date.now(),time:'',done:false,...entry,...(previous||{}),reviewUid:uid});
+  if(!saveAgenda(date,tasks))return false;
+  for(const change of changes)if(!saveAgenda(change.date,change.tasks))return false;
+  localStorage.setItem(key(uid,'review'),date);
+  return true;
+ }catch(error){console.warn('Não foi possível reagendar a revisão',error);return false}
+}
 function formatDate(iso){return new Date(iso+'T12:00:00').toLocaleDateString('pt-BR')}
 
 function agendaKey(d){return `central-v6:agenda:${d}`}

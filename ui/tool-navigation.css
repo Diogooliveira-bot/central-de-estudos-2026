@@ -1,0 +1,25 @@
+.central-tool-navigation {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  min-height: 52px;
+  width: 100%;
+  padding: 8px 16px;
+  border-bottom: 1px solid var(--line, #dde2df);
+  background: var(--panel, var(--paper, #fff));
+  color: var(--ink, var(--text, #20251f));
+  font: 600 14px/1.4 system-ui, sans-serif;
+}
+.central-tool-navigation a {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  padding: 6px 10px;
+  border: 1px solid var(--line, #dde2df);
+  border-radius: 8px;
+  color: inherit;
+  text-decoration: none;
+}
+.central-tool-navigation a:hover { text-decoration: underline; }
+.central-tool-navigation a:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }

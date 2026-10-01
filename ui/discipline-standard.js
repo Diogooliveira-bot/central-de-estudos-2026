@@ -256,6 +256,12 @@
   function navigate(module, action) {
     const body = bodyOf(module), meta = identity(module);
     if (action === 'notes') { const area = body.querySelector('.ds-notes textarea'); area?.scrollIntoView({block:'center'}); area?.focus({preventScroll:true}); return; }
+    if (action === 'questions' && meta.subject === 'cpp') {
+      const form = body.querySelector('.ds-footer-questions .perf-form');
+      form?.scrollIntoView({block:'start'});
+      form?.querySelector('input[type=number]')?.focus({preventScroll:true});
+      return;
+    }
     if (meta.subject === 'pt' && typeof window.ptNativeTab === 'function') {
       window.ptNativeTab(meta.id,action === 'questions' ? 'questoes' : action === 'review' ? 'revisao' : action === 'resources' ? 'tec' : 'teoria'); return;
     }
@@ -289,9 +295,12 @@
       const module = review.closest('.ds-module'), meta = identity(module), uid = reviewUid(module,meta), footer = review.closest('.ds-module-footer');
       const date = footer.querySelector('input[type=date]').value;
       if (date) {
-        const tasks = window.CentralAgenda.read(date), reviewId = uid;
-        if (!tasks.some(task => task.reviewUid === reviewId)) tasks.push({id:Date.now(),time:'',discipline:module.closest('.subject').querySelector('.subject-name').textContent,task:'Revisão — ' + module.querySelector('.civil-module-title,.cf-module-title,.cpp-mod-title,.topic-title').textContent.trim(),done:false,reviewUid:reviewId});
-        window.saveAgenda(date,tasks); localStorage.setItem(key(uid,'review'),date); schedule();
+        const saved = window.scheduleModuleReview(uid,date,{
+          discipline:module.closest('.subject').querySelector('.subject-name').textContent,
+          task:'Revisão — ' + module.querySelector('.civil-module-title,.cf-module-title,.cpp-mod-title,.topic-title').textContent.trim()
+        });
+        if (saved) schedule();
+        else footer.querySelector('[data-ds-review-status]').textContent = 'Não foi possível agendar a revisão.';
       }
     }
     const action = event.target.closest('[data-ds-action]');
@@ -332,7 +341,7 @@
       catch (_) { box.querySelector('[role=status]').textContent = 'Não foi possível salvar'; }
     }
   });
-  window.CentralDisciplineStandard = { refresh, version:'1.1.0' };
+  window.CentralDisciplineStandard = { refresh, version:'1.1.1' };
   function start() { observer = new MutationObserver(schedule); refresh(); }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded',start,{once:true}); else start();
 })();
