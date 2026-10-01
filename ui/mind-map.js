@@ -2,7 +2,7 @@
 'use strict';
 
 const SUBJECT='penal';
-const MODULE_SELECTOR='.subject[data-id="penal"] .cf-module[data-penal]';
+const MODULE_SELECTOR='.subject[data-id="penal"] .cf-module[data-cf]';
 const ENTRY_CLASS='bc-mindmap-entry';
 const OVERLAY_ID='bcMindMapOverlay';
 const registry=new Map();
@@ -424,7 +424,7 @@ function open(subject,moduleId,sourceModule){
 
 function injectForModule(module){
   if(!module || module.querySelector('.'+ENTRY_CLASS)) return;
-  const moduleId=module.dataset.penal;
+  const moduleId=module.dataset.cf;
   if(!moduleId) return;
   const d=theoryData(moduleId);
   if(!d && !registry.has(key(SUBJECT,moduleId))) return;
@@ -472,7 +472,7 @@ function register(subject,moduleId,tree){
 }
 
 global.BaseMindMap={
-  open:function(subject,moduleId){ open(subject,moduleId,document.querySelector('.subject[data-id="'+subject+'"] [data-penal="'+moduleId+'"]')); },
+  open:function(subject,moduleId){ open(subject,moduleId,document.querySelector('.subject[data-id="'+subject+'"] [data-cf="'+moduleId+'"]')); },
   close:close,
   register:register,
   version:'2026.10.01-preview1'
