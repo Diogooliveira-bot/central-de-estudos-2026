@@ -44,11 +44,96 @@
     host.querySelectorAll('.subject[data-id]').forEach(subjectMeta);
   }
 
+
+  function compactDesktopHome(){
+    const home = byId('homeView');
+    if(!home) return;
+
+    const grid = home.querySelector('.home-grid');
+    const left = grid?.querySelector(':scope > div:first-child');
+    const side = grid?.querySelector(':scope > .side-col');
+    const intro = byId('disciplinasHome');
+    const todayCard = home.querySelector('.home-today-card');
+    const progressCard = byId('dayCount')?.closest('.card');
+    const pendingCard = byId('homePending')?.closest('.card');
+    const continueCard = byId('continueBox')?.closest('.card');
+    let quickToolsCard = null;
+
+    if(side){
+      quickToolsCard = Array.from(side.querySelectorAll(':scope > .card')).find(card=>{
+        const title=(card.querySelector('.card-head h3')?.textContent||'').trim().toLowerCase();
+        return title.includes('decorando a lei');
+      }) || null;
+    } else {
+      quickToolsCard = home.querySelector('.home-quick-tools-card');
+    }
+
+    if(grid){
+      grid.style.setProperty('display','block','important');
+      grid.style.setProperty('grid-template-columns','none','important');
+      grid.style.setProperty('gap','0','important');
+    }
+
+    if(left){
+      let dash = left.querySelector(':scope > .home-dashboard-row');
+      if(!dash){
+        dash=document.createElement('div');
+        dash.className='home-dashboard-row';
+        left.insertBefore(dash,left.firstChild);
+      }
+      if(todayCard && todayCard.parentElement!==dash) dash.appendChild(todayCard);
+      if(progressCard){
+        progressCard.classList.add('home-progress-card');
+        if(progressCard.parentElement!==dash) dash.appendChild(progressCard);
+      }
+      if(pendingCard){
+        pendingCard.classList.add('home-pending-card');
+        if(pendingCard.parentElement!==dash) dash.appendChild(pendingCard);
+      }
+
+      let secondary = left.querySelector(':scope > .home-secondary-row');
+      if(!secondary){
+        secondary=document.createElement('div');
+        secondary.className='home-secondary-row';
+        if(intro) left.insertBefore(secondary,intro);
+        else left.appendChild(secondary);
+      }
+      if(continueCard){
+        continueCard.classList.add('home-continue-card');
+        if(continueCard.parentElement!==secondary) secondary.appendChild(continueCard);
+      }
+      if(quickToolsCard){
+        quickToolsCard.classList.add('home-quick-tools-card');
+        if(quickToolsCard.parentElement!==secondary) secondary.appendChild(quickToolsCard);
+      }
+    }
+
+    if(side){
+      side.style.setProperty('display','none','important');
+      side.setAttribute('aria-hidden','true');
+    }
+  }
+
+  function hideDecorandoSidebar(){
+    document.querySelectorAll('#centralSidebar .nav button').forEach(button=>{
+      const label=(button.textContent||'').replace(/\s+/g,' ').trim().toLowerCase();
+      const action=button.getAttribute('onclick')||'';
+      if(label.includes('decorando a lei seca') || action.includes("openEmbeddedTool('decorando'")){
+        button.setAttribute('data-bc-hide-decorando','1');
+        button.style.setProperty('display','none','important');
+        button.setAttribute('aria-hidden','true');
+        button.tabIndex=-1;
+      }
+    });
+  }
+
   function decorateHome(){
     const home = byId('homeView');
     if(!home) return;
 
     document.documentElement.classList.add('bc-home-v3-active');
+    hideDecorandoSidebar();
+    compactDesktopHome();
 
     const todayCard = home.querySelector('.home-today-card');
     if(todayCard){
