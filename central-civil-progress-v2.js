@@ -208,6 +208,10 @@ window.civilStudyFooterRows=function(id){
   var m=MODULE_BY_ID.get(id);if(!m)return [];
   return tecRows(m,loadTec()).map(function(x){return {index:x.index,done:Number(x.r.f)||0,correct:Number(x.r.a)||0,date:x.r.dt}});
 };
+window.civilStudyTecRecordLabel=function(record){
+  var m=MODULE_BY_ID.get(record&&record.moduleId);
+  return m?'Direito Civil — '+m.title:'';
+};
 window.civilStudyRegisterRound=function(id,done,correct){
   var m=MODULE_BY_ID.get(id);
   if(!m||!Number.isInteger(done)||!Number.isInteger(correct)||done<1||correct<0||correct>done)return false;
