@@ -62,14 +62,8 @@
   }
   function enhanceHome(){
     var home=document.getElementById('homeView');if(!home)return;
-    var grid=home.querySelector('.home-grid'),continueBox=document.getElementById('continueBox');
-    var card=continueBox&&continueBox.closest('.card');
-    if(grid&&card&&!card.classList.contains('bc-home-continue')){
-      card.classList.add('bc-home-continue');
-      grid.parentNode.insertBefore(card,grid);
-    }
-    var agenda=home.querySelector('.home-grid>div:first-child>.card');
-    if(agenda)agenda.classList.add('bc-home-agenda');
+    var dashboard=home.querySelector('.home-dashboard-card');
+    if(dashboard)dashboard.classList.add('bc-home-agenda');
     var schedule=home.querySelector('.schedule-intro');if(schedule)schedule.classList.add('bc-section');
     var subjects=home.querySelector('.subjects');if(subjects)subjects.classList.add('bc-section');
   }

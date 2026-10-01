@@ -63,23 +63,23 @@
   font-size:10px;
   white-space:nowrap;
 }
-#homeView>.home-grid{width:100%;max-width:none;margin:0;display:block}
+html.bc-ui-v1 #homeView>.home-grid{width:100%!important;max-width:none!important;margin:0!important;display:block!important;grid-template-columns:none!important;gap:0!important}
 #homeView .home-main{width:100%;min-width:0}
 #homeView .home-dashboard-card{
-  display:grid;
+  display:grid!important;
   grid-template-columns:minmax(135px,.85fr) minmax(0,3.8fr) minmax(118px,.9fr) minmax(170px,1.25fr);
   align-items:center;
   gap:0;
-  width:100%;
+  width:100%!important;
   min-width:0;
-  min-height:84px;
-  margin:0 0 7px;
-  padding:8px 10px;
+  min-height:84px!important;
+  margin:0 0 7px!important;
+  padding:8px 10px!important;
   overflow:hidden;
-  border:1px solid var(--bc-home-line);
-  border-radius:10px;
-  background:#09141a;
-  box-shadow:none;
+  border:1px solid var(--bc-home-line)!important;
+  border-radius:10px!important;
+  background:#09141a!important;
+  box-shadow:none!important;
 }
 #homeView .home-dashboard-card>div{min-width:0;padding:0 10px}
 #homeView .home-dashboard-card>div+div{border-left:1px solid var(--bc-home-line)}
@@ -140,19 +140,19 @@
 #homeView .home-pending .pending-item b{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:8.5px;color:#e4eff2}
 #homeView .home-pending .pending-item small{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin:1px 0 0;font-size:7.5px;color:#91a8b1}
 #homeView .home-pending>.muted{padding:0!important;font-size:8.5px}
-#homeView .home-continue-card{
+html.bc-ui-v1 #homeView .home-continue-card{
   display:grid;
   grid-template-columns:165px minmax(0,1fr);
   align-items:center;
-  min-height:48px;
-  width:100%;
-  margin:0 0 7px;
+  min-height:48px!important;
+  width:100%!important;
+  margin:0 0 7px!important;
   overflow:hidden;
-  border:0;
-  border-left:3px solid var(--bc-home-brand);
-  border-radius:8px;
-  background:#091318;
-  box-shadow:none;
+  border:0!important;
+  border-left:3px solid var(--bc-home-brand)!important;
+  border-radius:8px!important;
+  background:#091318!important;
+  box-shadow:none!important;
 }
 #homeView .home-continue-card>.card-head{display:flex;align-items:center;min-width:0;padding:6px 10px;border:0}
 #homeView .home-continue-card>.card-head h3{margin:0;font-size:9px;font-weight:700;color:#9bb0b9}
@@ -190,10 +190,10 @@
   min-width:0;
   overflow:hidden;
   isolation:isolate;
-  border:1px solid rgba(255,255,255,.12);
-  border-radius:9px;
-  background:linear-gradient(112deg,var(--bc-card-a,#345b80),var(--bc-card-b,#6ba6df));
-  box-shadow:0 4px 14px rgba(0,0,0,.16);
+  border:1px solid rgba(255,255,255,.12)!important;
+  border-radius:9px!important;
+  background:linear-gradient(112deg,var(--bc-card-a,#345b80),var(--bc-card-b,#6ba6df))!important;
+  box-shadow:0 4px 14px rgba(0,0,0,.16)!important;
 }
 #homeView #subjects>.subject[data-id="pt"]{--bc-card-a:#355d88;--bc-card-b:#6ba9e7}
 #homeView #subjects>.subject[data-id="cf"]{--bc-card-a:#4b2862;--bc-card-b:#7f3c95}
@@ -215,9 +215,9 @@
   width:100%;
   min-height:82px;
   padding:8px 10px;
-  border:0;
-  background:transparent;
-  color:#fff;
+  border:0!important;
+  background:transparent!important;
+  color:#fff!important;
   text-align:left;
 }
 #homeView #subjects>.subject:not(.open) .subject-name{
@@ -273,8 +273,8 @@
 #homeView #subjects>.subject.open{
   grid-column:1/-1;
   background:var(--panel);
-  border-color:var(--line);
-  box-shadow:0 8px 22px rgba(0,0,0,.2);
+  border-color:var(--line)!important;
+  box-shadow:0 8px 22px rgba(0,0,0,.2)!important;
 }
 #homeView #subjects>.subject.open>.subject-head{
   min-height:52px;
