@@ -501,3 +501,227 @@
     grid-template-columns:1fr!important;
   }
 }
+
+
+/* ===== Home visual v5: organização final compacta ===== */
+/* Corrige a largura real da home, elimina duplicidade visual e aproxima as disciplinas do topo. */
+html.bc-ui-v1 #homeView{
+  width:100%!important;
+  max-width:none!important;
+  margin:0!important;
+  padding:10px 12px 24px!important;
+}
+#homeView>.hero,
+#homeView>.home-grid{
+  width:100%!important;
+  max-width:none!important;
+  margin:0!important;
+}
+#homeView>.hero{
+  min-height:26px!important;
+  margin:0 0 5px!important;
+}
+#homeView>.hero p{font-size:9.5px!important}
+#homeView>.hero .btn.primary{
+  padding:6px 9px!important;
+  font-size:9.5px!important;
+}
+
+/* Um único bloco para o dia: agenda + progresso. A pendência já aparece na contagem da agenda. */
+#homeView .home-dashboard-row{
+  display:block!important;
+  margin:0 0 6px!important;
+}
+#homeView .home-dashboard-row>.home-today-card{
+  width:100%!important;
+  min-height:68px!important;
+  margin:0!important;
+  display:grid!important;
+  grid-template-columns:118px minmax(0,1fr) 150px auto!important;
+  grid-template-rows:1fr!important;
+  gap:8px!important;
+  align-items:center!important;
+  padding:7px 9px!important;
+}
+#homeView .home-dashboard-row>.home-today-card>.card-head{display:contents!important}
+#homeView .home-dashboard-row>.home-today-card>.card-head>div{
+  grid-column:1!important;
+  padding-right:8px!important;
+}
+#homeView .home-dashboard-row>.home-today-card>.card-head>.btn{
+  grid-column:4!important;
+  grid-row:1!important;
+  align-self:center!important;
+}
+#homeView .home-dashboard-row>.home-today-card>.agenda{
+  grid-column:2!important;
+  grid-row:1!important;
+  min-width:0!important;
+  display:grid!important;
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  gap:6px!important;
+  overflow:visible!important;
+  max-height:none!important;
+}
+#homeView .home-dashboard-row>.home-today-card .agenda-row{
+  min-width:0!important;
+  max-width:none!important;
+  flex:none!important;
+  padding:5px 7px!important;
+}
+#homeView .home-dashboard-row>.home-today-card>.home-progress-card{
+  grid-column:3!important;
+  grid-row:1!important;
+  align-self:stretch!important;
+  min-height:0!important;
+  border:0!important;
+  border-left:1px solid var(--bc-home-line)!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  display:grid!important;
+  grid-template-columns:1fr!important;
+  grid-template-rows:auto 1fr!important;
+  padding-left:8px!important;
+}
+#homeView .home-dashboard-row>.home-today-card>.home-progress-card>.card-head{
+  padding:2px 0 0!important;
+  min-height:0!important;
+  border:0!important;
+}
+#homeView .home-dashboard-row>.home-today-card>.home-progress-card>.card-head h3{
+  font-size:8px!important;
+}
+#homeView .home-dashboard-row>.home-today-card>.home-progress-card>.progress-box{
+  padding:1px 0 1px!important;
+}
+#homeView .home-dashboard-row>.home-today-card>.home-progress-card .big{
+  font-size:15px!important;
+  line-height:1!important;
+}
+#homeView .home-dashboard-row>.home-today-card>.home-progress-card .progress-box>.muted.small:first-of-type{
+  display:none!important;
+}
+#homeView .home-dashboard-row>.home-today-card>.home-progress-card .progress-line{
+  height:4px!important;
+  margin-top:4px!important;
+}
+#homeView .home-dashboard-row>.home-today-card>.home-progress-card #dayPct{
+  font-size:7.5px!important;
+}
+#homeView .home-pending-card{
+  display:none!important;
+}
+
+/* A faixa intermediária fica só com "Continuar de onde parei". */
+#homeView .home-secondary-row{
+  display:block!important;
+  margin:0 0 6px!important;
+}
+#homeView .home-secondary-row>.home-continue-card{
+  width:100%!important;
+  min-height:44px!important;
+  margin:0!important;
+  grid-template-columns:125px minmax(0,1fr)!important;
+}
+#homeView .home-secondary-row>.home-continue-card>.card-head{
+  padding:6px 9px!important;
+}
+#homeView .home-secondary-row>.home-continue-card>#continueBox{
+  padding:5px 8px!important;
+}
+#homeView .home-quick-tools-card{
+  display:none!important;
+}
+
+/* Disciplinas imediatamente abaixo, sem faixa de título alta. */
+#homeView .schedule-intro{
+  min-height:24px!important;
+  margin:0 0 5px!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:space-between!important;
+  gap:12px!important;
+}
+#homeView .schedule-intro h2{
+  font-size:14px!important;
+  margin:0!important;
+}
+#homeView .schedule-intro p{display:none!important}
+#homeView .bc-home-summary{
+  position:static!important;
+  margin-left:auto!important;
+  font-size:8px!important;
+}
+
+/* 10 disciplinas = duas linhas de cinco em monitores largos. */
+@media(min-width:1500px){
+  #homeView #subjects{
+    grid-template-columns:repeat(5,minmax(0,1fr))!important;
+    gap:6px!important;
+  }
+  #homeView #subjects>.subject:not(.open)>.subject-head{
+    min-height:72px!important;
+    padding:7px 9px!important;
+    grid-template-columns:minmax(0,1fr) 42px!important;
+    gap:1px 7px!important;
+  }
+  #homeView #subjects>.subject:not(.open) .subject-name{
+    font-size:9.8px!important;
+  }
+  #homeView #subjects>.subject:not(.open) .bc-home-submeta{
+    font-size:7.2px!important;
+  }
+  #homeView #subjects>.subject:not(.open) .subject-count{
+    font-size:8px!important;
+  }
+  #homeView #subjects>.subject:not(.open) .subject-pct{
+    width:40px!important;height:40px!important;min-width:40px!important;
+  }
+  #homeView #subjects>.subject:not(.open) .subject-pct::before{
+    inset:4px!important;
+  }
+  #homeView #subjects>.subject:not(.open)::after{
+    right:47px!important;
+    bottom:-7px!important;
+    font-size:29px!important;
+  }
+}
+@media(min-width:1200px) and (max-width:1499px){
+  #homeView #subjects{
+    grid-template-columns:repeat(4,minmax(0,1fr))!important;
+    gap:6px!important;
+  }
+}
+@media(min-width:901px) and (max-width:1199px){
+  #homeView #subjects{
+    grid-template-columns:repeat(3,minmax(0,1fr))!important;
+    gap:6px!important;
+  }
+}
+
+/* Em telas médias, a agenda continua limpa sem esmagar o conteúdo. */
+@media(max-width:1100px){
+  #homeView .home-dashboard-row>.home-today-card{
+    grid-template-columns:105px minmax(0,1fr) 125px auto!important;
+  }
+}
+@media(max-width:900px){
+  html.bc-ui-v1 #homeView{padding:8px 9px 20px!important}
+  #homeView .home-dashboard-row>.home-today-card{
+    grid-template-columns:1fr auto!important;
+    grid-template-rows:auto auto auto!important;
+  }
+  #homeView .home-dashboard-row>.home-today-card>.card-head>div{grid-column:1!important;grid-row:1!important}
+  #homeView .home-dashboard-row>.home-today-card>.card-head>.btn{grid-column:2!important;grid-row:1!important}
+  #homeView .home-dashboard-row>.home-today-card>.agenda{
+    grid-column:1/-1!important;grid-row:2!important;
+    display:flex!important;overflow-x:auto!important;
+  }
+  #homeView .home-dashboard-row>.home-today-card>.home-progress-card{
+    grid-column:1/-1!important;grid-row:3!important;
+    border-left:0!important;border-top:1px solid var(--bc-home-line)!important;
+    padding:5px 0 0!important;
+  }
+  #homeView .schedule-intro p{display:none!important}
+}
