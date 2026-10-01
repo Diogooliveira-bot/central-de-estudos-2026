@@ -1,727 +1,322 @@
-/* Base Completa — home visual v3
-   Camada exclusivamente visual da página inicial aprovada em 01/10/2026.
-   Não altera dados, módulos, progresso, agenda ou rotinas da Central. */
-
+/* BASE COMPLETA — Home consolidada. Escopo limitado a #homeView. */
 @media (min-width:901px){
-  .app{grid-template-columns:148px minmax(0,1fr)!important}
-  .app.sidebar-collapsed{grid-template-columns:60px minmax(0,1fr)!important}
+  #appRoot.app{grid-template-columns:148px minmax(0,1fr)!important}
+  #appRoot.app.sidebar-collapsed{grid-template-columns:60px minmax(0,1fr)!important}
   #centralSidebar{padding:10px 8px!important}
   #centralSidebar .brand{padding:0 2px 9px!important;margin-bottom:8px!important;gap:7px!important}
   #centralSidebar .brand-main{gap:8px!important}
-  #centralSidebar .brand-icon{
-    width:32px!important;height:32px!important;flex:0 0 32px!important;border-radius:9px!important;
-    border:1px solid rgba(32,211,194,.45)!important;
-    background:linear-gradient(145deg,rgba(32,211,194,.18),rgba(32,211,194,.04)),#09161b!important;
-    box-shadow:inset 0 -3px 0 #20d3c2!important;color:#e7fffc!important;
-    font-size:11px!important;letter-spacing:-.08em!important
-  }
+  #centralSidebar .brand-icon{width:32px!important;height:32px!important;flex:0 0 32px!important;border-radius:9px!important;border:1px solid rgba(32,211,194,.45)!important;background:linear-gradient(145deg,rgba(32,211,194,.18),rgba(32,211,194,.04)),#09161b!important;box-shadow:inset 0 -3px 0 #20d3c2!important;color:#e7fffc!important;font-size:11px!important;letter-spacing:-.08em!important}
   #centralSidebar .brand-copy b{font-size:10.5px!important;letter-spacing:.075em!important;line-height:1.05!important}
   #centralSidebar .brand-copy small{display:none!important}
-  #centralSidebar .sidebar-toggle{width:25px!important;height:25px!important;flex-basis:25px!important;border:0!important;background:transparent!important}
+  #centralSidebar .sidebar-toggle{width:25px!important;height:25px!important;flex-basis:25px!important}
   #centralSidebar .nav{gap:3px!important}
   #centralSidebar .nav .label{display:none!important}
   #centralSidebar .nav button{min-height:37px!important;padding:7px 8px!important;gap:7px!important;border-radius:8px!important;font-size:11px!important}
   #centralSidebar .nav-icon{width:19px!important;height:19px!important;flex-basis:19px!important}
   #centralSidebar .nav-icon svg{width:16px!important;height:16px!important}
   #centralSidebar .nav-settings{margin-top:3px!important;padding-top:5px!important}
-  .app.sidebar-collapsed #centralSidebar{padding-left:6px!important;padding-right:6px!important}
-  .app.sidebar-collapsed #centralSidebar .sidebar-toggle{right:4px!important;top:11px!important}
+  #appRoot.app.sidebar-collapsed #centralSidebar{padding-inline:6px!important}
 }
-
-.topbar{
-  height:44px!important;min-height:44px!important;flex-basis:44px!important;
-  padding:0 16px!important;gap:7px!important;background:#071219!important
-}
+.topbar{height:44px!important;min-height:44px!important;flex-basis:44px!important;padding:0 16px!important;gap:7px!important}
 .topbar>b,.topbar .central-version-v41,.topbar .top-actions{display:none!important}
-.topbar .crumb{font-size:11px!important;color:#d9e7eb!important}
+.topbar .crumb{font-size:11px!important}
 .mobile-menu-btn{color:#20d3c2!important}
 
 #homeView{
   --bc-home-brand:#20d3c2;
   --bc-home-line:#20343d;
-  --bc-home-panel:#0a151a;
-  --bc-home-panel2:#102027;
-  padding:12px!important;
+  width:100%!important;
+  max-width:none!important;
+  min-width:0;
+  margin:0!important;
+  padding:12px 16px 24px!important;
   background:#05090c!important;
 }
-#homeView>.hero,
-#homeView>.home-grid{width:min(1320px,100%)!important;margin-left:auto!important;margin-right:auto!important}
-#homeView>.hero{
-  min-height:32px!important;margin-bottom:6px!important;align-items:center!important;gap:10px!important
+#homeView>.home-hero{
+  width:100%;
+  min-height:40px;
+  margin:0 0 7px;
+  padding:0;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
 }
-#homeView>.hero h1{display:none!important}
-#homeView>.hero p{
-  margin:0!important;color:#9bb0b9!important;font-size:11px!important;line-height:1.2!important
+#homeView>.home-hero>div{min-width:0}
+#homeView>.home-hero p{
+  margin:0;
+  color:#b5c5ca;
+  font-size:11px;
+  line-height:1.25;
+  white-space:nowrap;
 }
-#homeView>.hero .btn.primary{
-  margin-left:auto!important;padding:7px 11px!important;border-radius:9px!important;
-  background:#0b171c!important;border:1px solid #203943!important;color:#e9f7fa!important;
-  box-shadow:none!important;font-size:10.5px!important
+#homeView>.home-hero .btn{
+  flex:none;
+  min-height:34px;
+  margin:0;
+  padding:6px 10px;
+  border:1px solid #203943;
+  border-radius:8px;
+  background:#0b171c;
+  color:#e9f7fa;
+  box-shadow:none;
+  font-size:10px;
+  white-space:nowrap;
 }
-
-/* A home passa a ter uma única coluna principal. Os cards auxiliares continuam no DOM,
-   porém ficam ocultos; nenhuma rotina de dados é removida. */
-#homeView .home-grid{display:block!important}
-#homeView .home-grid>div:first-child{min-width:0!important}
-#homeView .side-col{display:none!important}
-
-/* Agenda compacta em faixa horizontal */
-#homeView .home-today-card{
-  display:grid!important;grid-template-columns:132px minmax(0,1fr) auto!important;
-  align-items:center!important;column-gap:10px!important;
-  min-height:58px!important;padding:7px 10px!important;margin:0 0 7px!important;
-  border:1px solid var(--bc-home-line)!important;border-radius:11px!important;
-  background:#09141a!important;box-shadow:none!important;overflow:hidden!important
+#homeView>.home-grid{width:100%;max-width:none;margin:0;display:block}
+#homeView .home-main{width:100%;min-width:0}
+#homeView .home-dashboard-card{
+  display:grid;
+  grid-template-columns:minmax(135px,.85fr) minmax(0,3.8fr) minmax(118px,.9fr) minmax(170px,1.25fr);
+  align-items:center;
+  gap:0;
+  width:100%;
+  min-width:0;
+  min-height:84px;
+  margin:0 0 7px;
+  padding:8px 10px;
+  overflow:hidden;
+  border:1px solid var(--bc-home-line);
+  border-radius:10px;
+  background:#09141a;
+  box-shadow:none;
 }
-#homeView .home-today-card>.card-head{display:contents!important}
-#homeView .home-today-card>.card-head>div{
-  grid-column:1!important;min-width:0!important;padding-right:10px!important;
-  border-right:1px solid var(--bc-home-line)!important
+#homeView .home-dashboard-card>div{min-width:0;padding:0 10px}
+#homeView .home-dashboard-card>div+div{border-left:1px solid var(--bc-home-line)}
+#homeView .home-dashboard-summary{padding-left:2px!important}
+#homeView .home-dashboard-summary h2{margin:0 0 4px;font-size:12px;line-height:1.2;color:#f5fbfd}
+#homeView .home-dashboard-summary small{display:block;font-size:9px;line-height:1.3;color:#91a8b1}
+#homeView .home-dashboard-label{margin:0 0 5px;font-size:8px;line-height:1.1;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:#a9bec6}
+#homeView .home-dashboard-tasks{padding-left:12px!important}
+#homeView .home-dashboard-tasks .agenda{
+  display:flex;
+  gap:6px;
+  align-items:center;
+  min-width:0;
+  max-height:62px;
+  overflow:auto;
+  scrollbar-width:thin;
 }
-#homeView .home-today-card>.card-head h2{
-  margin:0!important;font-size:12px!important;line-height:1.2!important;color:#f5fbfd!important
+#homeView .home-dashboard-tasks .agenda-row{
+  display:grid;
+  grid-template-columns:15px 36px minmax(0,1fr);
+  flex:1 1 150px;
+  align-items:center;
+  gap:5px;
+  min-width:118px;
+  max-width:none;
+  padding:5px 6px;
+  border:1px solid #1e3540;
+  border-radius:7px;
+  background:#102027;
 }
-#homeView .home-today-card>.card-head small{
-  display:block!important;margin-top:3px!important;font-size:9px!important;color:#88a2ac!important
+#homeView .home-dashboard-tasks .agenda-row input{width:14px;height:14px;margin:0}
+#homeView .home-dashboard-tasks .agenda-time{font-size:9px;color:#6ee9dd;white-space:nowrap}
+#homeView .home-dashboard-tasks .agenda-copy{min-width:0}
+#homeView .home-dashboard-tasks .agenda-copy b{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:9px;color:#f4fbfd}
+#homeView .home-dashboard-tasks .agenda-copy small{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:8px;color:#91a8b1}
+#homeView .home-dashboard-tasks .agenda-row .btn{display:none}
+#homeView .home-dashboard-tasks .agenda>.muted{font-size:9px;color:#91a8b1}
+#homeView .home-progress-data{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  grid-template-rows:auto auto;
+  gap:2px 6px;
+  align-items:center;
 }
-#homeView .home-today-card>.card-head>.btn{
-  grid-column:3!important;align-self:center!important;
-  border:0!important;background:transparent!important;color:#b7cbd2!important;
-  box-shadow:none!important;font-size:9.5px!important;padding:5px!important;white-space:nowrap!important
+#homeView .home-progress-data .big{grid-column:1;font-size:14px;line-height:1;color:#f7fcfd}
+#homeView .home-progress-data>.muted.small:first-of-type{grid-column:1/-1;font-size:8px}
+#homeView .home-progress-data .progress-line{grid-column:1;height:4px;margin:3px 0 0}
+#homeView .home-progress-data #dayPct{grid-column:2;font-size:8px;white-space:nowrap}
+#homeView .home-dashboard-pending .home-pending{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:3px;
+  max-height:56px;
+  padding:0;
+  overflow:auto;
 }
-#homeView .home-today-card>.agenda{
-  grid-column:2!important;display:flex!important;align-items:center!important;gap:7px!important;
-  min-width:0!important;padding:0!important;overflow-x:auto!important;scrollbar-width:thin!important
-}
-#homeView .home-today-card .agenda-row{
-  flex:1 1 230px!important;min-width:190px!important;max-width:315px!important;
-  display:grid!important;grid-template-columns:18px 42px minmax(0,1fr)!important;
-  gap:7px!important;align-items:center!important;padding:6px 8px!important;
-  border:1px solid #1e3540!important;border-radius:8px!important;background:#102027!important
-}
-#homeView .home-today-card .agenda-row .btn{display:none!important}
-#homeView .home-today-card .agenda-row input{width:15px!important;height:15px!important}
-#homeView .home-today-card .agenda-time{font-size:9px!important;color:#6ee9dd!important}
-#homeView .home-today-card .agenda-copy b{font-size:9.5px!important;color:#f4fbfd!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important}
-#homeView .home-today-card .agenda-copy small{display:none!important}
-#homeView .home-today-card .agenda>.muted{padding:5px 7px!important;font-size:9.5px!important}
-
-/* Continuar de onde parei */
+#homeView .home-pending .pending-item{min-width:0;padding:2px 0;border:0;background:transparent}
+#homeView .home-pending .pending-item b{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:8.5px;color:#e4eff2}
+#homeView .home-pending .pending-item small{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin:1px 0 0;font-size:7.5px;color:#91a8b1}
+#homeView .home-pending>.muted{padding:0!important;font-size:8.5px}
 #homeView .home-continue-card{
-  display:grid!important;grid-template-columns:145px minmax(0,1fr)!important;align-items:center!important;
-  min-height:54px!important;margin:0 0 10px!important;border:0!important;border-left:3px solid var(--bc-home-brand)!important;
-  border-radius:10px!important;background:#091318!important;box-shadow:none!important;overflow:hidden!important
+  display:grid;
+  grid-template-columns:165px minmax(0,1fr);
+  align-items:center;
+  min-height:48px;
+  width:100%;
+  margin:0 0 7px;
+  overflow:hidden;
+  border:0;
+  border-left:3px solid var(--bc-home-brand);
+  border-radius:8px;
+  background:#091318;
+  box-shadow:none;
 }
-#homeView .home-continue-card>.card-head{
-  padding:8px 10px!important;border:0!important;align-self:stretch!important;display:flex!important;align-items:center!important
-}
-#homeView .home-continue-card>.card-head h3{font-size:9.5px!important;color:#8ca5ae!important;font-weight:700!important}
+#homeView .home-continue-card>.card-head{display:flex;align-items:center;min-width:0;padding:6px 10px;border:0}
+#homeView .home-continue-card>.card-head h3{margin:0;font-size:9px;font-weight:700;color:#9bb0b9}
 #homeView .home-continue-card>#continueBox{
-  padding:7px 10px!important;display:grid!important;grid-template-columns:minmax(0,1fr) auto!important;
-  grid-template-rows:auto auto!important;column-gap:10px!important;row-gap:2px!important;align-items:center!important
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  grid-template-rows:auto auto;
+  align-items:center;
+  gap:1px 8px;
+  min-width:0;
+  padding:5px 9px;
 }
-#homeView .home-continue-card>#continueBox>b{
-  grid-column:1!important;grid-row:1!important;font-size:10.5px!important;color:#f5fbfd!important;
-  white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important
-}
-#homeView .home-continue-card>#continueBox>.muted{grid-column:1!important;grid-row:2!important;font-size:8.5px!important;color:#78939e!important}
-#homeView .home-continue-card>#continueBox>div{
-  grid-column:2!important;grid-row:1/3!important;margin-top:0!important
-}
-#homeView .home-continue-card>#continueBox .btn.primary{
-  padding:7px 12px!important;border:0!important;border-radius:8px!important;
-  background:var(--bc-home-brand)!important;color:#04221f!important;font-size:10px!important;box-shadow:none!important
-}
-
-/* Título da área de disciplinas */
+#homeView .home-continue-card>#continueBox>b{grid-column:1;grid-row:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:10px;color:#f5fbfd}
+#homeView .home-continue-card>#continueBox>.muted{grid-column:1;grid-row:2;font-size:8px;color:#91a8b1}
+#homeView .home-continue-card>#continueBox>div{grid-column:2;grid-row:1/3;margin:0}
+#homeView .home-continue-card>#continueBox .btn{min-height:32px;padding:5px 10px;border:0;border-radius:7px;background:var(--bc-home-brand);color:#04221f;font-size:9px;box-shadow:none}
 #homeView .schedule-intro{
-  position:relative!important;margin:0 0 7px!important;padding:0!important;min-height:40px!important
+  display:flex;
+  align-items:center;
+  min-height:24px;
+  margin:0 0 5px;
+  padding:0;
 }
-#homeView .schedule-intro .eyebrow{display:none!important}
-#homeView .schedule-intro h2{
-  margin:0 0 2px!important;font-size:17px!important;line-height:1.15!important;color:#f5fbfd!important;letter-spacing:-.02em!important
-}
-#homeView .schedule-intro p{margin:0!important;font-size:9.5px!important;color:#8fa7b0!important}
-#homeView .bc-home-summary{
-  position:absolute!important;right:0!important;bottom:2px!important;
-  font-size:9px!important;color:#a4bac2!important;white-space:nowrap!important
-}
-
-/* Cards das disciplinas */
+#homeView .schedule-intro h2{margin:0;font-size:13px;line-height:1.2;color:#f5fbfd}
 #homeView #subjects{
-  width:100%!important;max-width:none!important;margin:0!important;
-  display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:8px;
+  width:100%;
+  max-width:none;
+  margin:0;
 }
 #homeView #subjects>.subject{
-  --bc-card-a:#345b80;--bc-card-b:#6ba6df;--bc-icon:"📘";
-  position:relative!important;min-width:0!important;overflow:hidden!important;
-  border:1px solid rgba(255,255,255,.12)!important;border-radius:11px!important;
-  background:linear-gradient(112deg,var(--bc-card-a),var(--bc-card-b))!important;
-  box-shadow:0 6px 18px rgba(0,0,0,.17)!important;isolation:isolate!important
+  position:relative;
+  min-width:0;
+  overflow:hidden;
+  isolation:isolate;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:9px;
+  background:linear-gradient(112deg,var(--bc-card-a,#345b80),var(--bc-card-b,#6ba6df));
+  box-shadow:0 4px 14px rgba(0,0,0,.16);
 }
-#homeView #subjects>.subject[data-id="pt"]{--bc-card-a:#355d88;--bc-card-b:#6ba9e7;--bc-icon:"📖"}
-#homeView #subjects>.subject[data-id="cf"]{--bc-card-a:#4b2862;--bc-card-b:#7f3c95;--bc-icon:"⚖"}
-#homeView #subjects>.subject[data-id="adm"]{--bc-card-a:#344a61;--bc-card-b:#496582;--bc-icon:"🏛"}
-#homeView #subjects>.subject[data-id="rlm"]{--bc-card-a:#246347;--bc-card-b:#419a69;--bc-icon:"◆"}
-#homeView #subjects>.subject[data-id="penal"]{--bc-card-a:#8a4b00;--bc-card-b:#d07a00;--bc-icon:"⚒"}
-#homeView #subjects>.subject[data-id="civil"]{--bc-card-a:#8d3d18;--bc-card-b:#c75b20;--bc-icon:"⚖"}
-#homeView #subjects>.subject[data-id="cpp"]{--bc-card-a:#6a292b;--bc-card-b:#a34042;--bc-icon:"▤"}
-#homeView #subjects>.subject[data-id="ptra"]{--bc-card-a:#0d5267;--bc-card-b:#167f98;--bc-icon:"▥"}
-#homeView #subjects>.subject[data-id="trab"]{--bc-card-a:#5c2a3d;--bc-card-b:#90415d;--bc-icon:"◆"}
-#homeView #subjects>.subject[data-id="cpc"]{--bc-card-a:#31305f;--bc-card-b:#5256a5;--bc-icon:"§"}
-
-#homeView #subjects>.subject:not(.open)::after{
-  content:var(--bc-icon)!important;position:absolute!important;right:63px!important;bottom:-8px!important;
-  font-size:38px!important;line-height:1!important;opacity:.16!important;pointer-events:none!important;z-index:-1!important
-}
+#homeView #subjects>.subject[data-id="pt"]{--bc-card-a:#355d88;--bc-card-b:#6ba9e7}
+#homeView #subjects>.subject[data-id="cf"]{--bc-card-a:#4b2862;--bc-card-b:#7f3c95}
+#homeView #subjects>.subject[data-id="adm"]{--bc-card-a:#344a61;--bc-card-b:#496582}
+#homeView #subjects>.subject[data-id="rlm"]{--bc-card-a:#246347;--bc-card-b:#419a69}
+#homeView #subjects>.subject[data-id="penal"]{--bc-card-a:#8a4b00;--bc-card-b:#d07a00}
+#homeView #subjects>.subject[data-id="civil"]{--bc-card-a:#8d3d18;--bc-card-b:#c75b20}
+#homeView #subjects>.subject[data-id="cpp"]{--bc-card-a:#6a292b;--bc-card-b:#a34042}
+#homeView #subjects>.subject[data-id="ptra"]{--bc-card-a:#0d5267;--bc-card-b:#167f98}
+#homeView #subjects>.subject[data-id="trab"]{--bc-card-a:#5c2a3d;--bc-card-b:#90415d}
+#homeView #subjects>.subject[data-id="cpc"]{--bc-card-a:#31305f;--bc-card-b:#5256a5}
 #homeView #subjects>.subject:not(.open)>.subject-head{
-  width:100%!important;min-height:84px!important;padding:9px 12px!important;
-  display:grid!important;grid-template-columns:minmax(0,1fr) 50px!important;
-  grid-template-rows:auto auto auto!important;grid-template-areas:"name pct" "meta pct" "count pct"!important;
-  gap:2px 10px!important;align-items:center!important;border:0!important;
-  background:transparent!important;color:#fff!important;text-align:left!important
-}
-#homeView #subjects>.subject:not(.open)>.subject-head:hover{
-  background:rgba(255,255,255,.055)!important
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 44px;
+  grid-template-rows:auto auto;
+  grid-template-areas:"name pct" "count pct";
+  align-items:center;
+  gap:2px 8px;
+  width:100%;
+  min-height:82px;
+  padding:8px 10px;
+  border:0;
+  background:transparent;
+  color:#fff;
+  text-align:left;
 }
 #homeView #subjects>.subject:not(.open) .subject-name{
-  grid-area:name!important;font-size:11px!important;line-height:1.2!important;font-weight:850!important;color:#fff!important;
-  white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important
-}
-#homeView #subjects>.subject:not(.open) .bc-home-submeta{
-  grid-area:meta!important;font-size:8px!important;line-height:1.15!important;color:rgba(255,255,255,.78)!important;
-  white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important
+  grid-area:name;
+  min-width:0;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  font-size:10px;
+  line-height:1.2;
+  font-weight:800;
+  color:#fff;
 }
 #homeView #subjects>.subject:not(.open) .subject-count{
-  grid-area:count!important;font-size:9px!important;line-height:1.15!important;font-weight:800!important;color:#fff!important
+  grid-area:count;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  font-size:8.5px;
+  line-height:1.2;
+  font-weight:700;
+  color:rgba(255,255,255,.92);
 }
 #homeView #subjects>.subject:not(.open) .subject-pct{
-  grid-area:pct!important;justify-self:end!important;width:48px!important;height:48px!important;min-width:48px!important;
-  border-radius:50%!important;display:grid!important;place-items:center!important;
-  background:conic-gradient(#fff calc(var(--bc-pct,0)*1%),rgba(255,255,255,.22) 0)!important;
-  color:#fff!important;font-size:10px!important;font-weight:900!important;position:relative!important;text-align:center!important
+  grid-area:pct;
+  position:relative;
+  display:grid;
+  place-items:center;
+  width:42px;
+  height:42px;
+  min-width:42px;
+  border-radius:50%;
+  background:conic-gradient(#fff calc(var(--bc-pct,0)*1%),rgba(255,255,255,.25) 0);
+  font-size:0;
 }
 #homeView #subjects>.subject:not(.open) .subject-pct::before{
-  content:""!important;position:absolute!important;inset:5px!important;border-radius:50%!important;background:rgba(7,16,21,.50)!important
+  content:"";
+  position:absolute;
+  inset:4px;
+  border-radius:50%;
+  background:rgba(7,16,21,.56);
 }
 #homeView #subjects>.subject:not(.open) .subject-pct::after{
-  content:attr(data-bc-pct)!important;position:relative!important;z-index:1!important
+  content:attr(data-bc-pct);
+  position:relative;
+  z-index:1;
+  font-size:9px;
+  font-weight:800;
+  color:#fff;
 }
-#homeView #subjects>.subject:not(.open) .subject-pct{font-size:0!important}
-#homeView #subjects>.subject:not(.open) .chev{display:none!important}
-#homeView #subjects>.subject:not(.open)>.subject-body{display:none!important}
-
-/* Disciplina aberta: preserva a interface original do módulo e ocupa toda a largura. */
+#homeView #subjects>.subject:not(.open) .chev{display:none}
+#homeView #subjects>.subject:not(.open)>.subject-body{display:none}
 #homeView #subjects>.subject.open{
-  grid-column:1/-1!important;background:var(--panel)!important;border-color:var(--line)!important;
-  box-shadow:0 9px 25px rgba(0,0,0,.20)!important
+  grid-column:1/-1;
+  background:var(--panel);
+  border-color:var(--line);
+  box-shadow:0 8px 22px rgba(0,0,0,.2);
 }
 #homeView #subjects>.subject.open>.subject-head{
-  min-height:54px!important;padding:10px 12px!important;
-  grid-template-columns:minmax(0,1fr) auto 56px 28px!important;gap:8px!important;
-  background:linear-gradient(90deg,rgba(32,211,194,.08),transparent 45%)!important;
-  border-left:3px solid var(--bc-home-brand)!important
+  min-height:52px;
+  padding:9px 12px;
+  border-left:3px solid var(--bc-home-brand);
+  background:linear-gradient(90deg,rgba(32,211,194,.08),transparent 45%);
 }
-#homeView #subjects>.subject.open .subject-name{font-size:11.5px!important;color:var(--text)!important}
-#homeView #subjects>.subject.open .subject-count{font-size:9.5px!important}
-#homeView #subjects>.subject.open .subject-pct{font-size:10px!important;color:var(--bc-home-brand)!important}
-#homeView #subjects>.subject.open .bc-home-submeta{display:none!important}
-#homeView #subjects>.subject.open>.subject-body{background:var(--panel)!important;padding:0 12px 14px!important}
-#homeView #subjects>.subject.open .subject-bar{height:4px!important;margin:0 0 10px!important}
+#homeView #subjects>.subject.open>.subject-body{padding:0 12px 14px;background:var(--panel)}
+#homeView #subjects>.subject.open .subject-bar{height:4px;margin:0 0 10px}
+#homeView #subjects .bc-discipline-kit{margin-top:8px}
+#homeView #subjects .bc-kit-head{padding:10px}
+#homeView #subjects .bc-kit-grid{gap:8px}
 
-/* evita que a camada visual global imponha tamanho excessivo na home */
-#homeView #subjects .bc-discipline-kit{margin-top:8px!important}
-#homeView #subjects .bc-kit-head{padding:10px!important}
-#homeView #subjects .bc-kit-grid{gap:8px!important}
-
-@media(max-width:900px){
-  #homeView{padding:10px!important}
-  #homeView>.hero{min-height:34px!important}
-  #homeView .home-today-card{
-    grid-template-columns:1fr auto!important;row-gap:7px!important;padding:8px!important
-  }
-  #homeView .home-today-card>.card-head>div{grid-column:1!important;border-right:0!important}
-  #homeView .home-today-card>.card-head>.btn{grid-column:2!important}
-  #homeView .home-today-card>.agenda{grid-column:1/-1!important}
-  #homeView .home-continue-card{grid-template-columns:1fr!important}
-  #homeView .home-continue-card>.card-head{padding:7px 9px 0!important}
-  #homeView .home-continue-card>#continueBox{padding:6px 9px 8px!important}
-  #homeView #subjects{grid-template-columns:1fr!important}
-  #homeView #subjects>.subject.open{grid-column:auto!important}
-  #homeView .bc-home-summary{display:none!important}
-}
-@media(max-width:520px){
-  #homeView>.hero .btn.primary{font-size:9.5px!important;padding:6px 8px!important}
-  #homeView .home-today-card .agenda-row{min-width:205px!important}
-  #homeView #subjects>.subject:not(.open)>.subject-head{min-height:80px!important}
-}
-
-
-/* ===== Home visual v4: desktop mais compacto ===== */
-/* Ajustes solicitados em 01/10/2026:
-   - aproveita melhor a largura no PC;
-   - progresso e pendências ficam junto da agenda;
-   - ferramentas rápidas ocupam uma faixa compacta;
-   - nenhuma regra de conteúdo/progresso é alterada. */
-
-#centralSidebar .nav button[data-bc-hide-decorando="1"]{display:none!important}
-
-#homeView>.hero,
-#homeView>.home-grid{
-  width:100%!important;
-  max-width:none!important;
-  margin-left:0!important;
-  margin-right:0!important;
-}
-#homeView .home-grid{
-  display:block!important;
-  grid-template-columns:none!important;
-  gap:0!important;
-}
-#homeView .home-grid>div:first-child{
-  width:100%!important;
-  max-width:none!important;
-}
-#homeView .side-col{display:none!important}
-
-#homeView .home-dashboard-row{
-  width:100%!important;
-  display:grid!important;
-  grid-template-columns:minmax(0,1.75fr) 190px minmax(245px,.78fr)!important;
-  gap:8px!important;
-  align-items:stretch!important;
-  margin:0 0 8px!important;
-}
-#homeView .home-dashboard-row>.card{
-  margin:0!important;
-  min-width:0!important;
-  height:100%!important;
-}
-#homeView .home-dashboard-row>.home-today-card{
-  min-height:86px!important;
-  grid-template-columns:120px minmax(0,1fr) auto!important;
-}
-#homeView .home-dashboard-row>.home-today-card>.agenda{
-  max-height:68px!important;
-}
-#homeView .home-dashboard-row>.home-today-card .agenda-row{
-  min-width:170px!important;
-  max-width:none!important;
-}
-
-#homeView .home-progress-card{
-  display:grid!important;
-  grid-template-rows:auto 1fr!important;
-  background:#09141a!important;
-  border:1px solid var(--bc-home-line)!important;
-  border-radius:11px!important;
-  box-shadow:none!important;
-  overflow:hidden!important;
-}
-#homeView .home-progress-card>.card-head{
-  min-height:30px!important;
-  padding:7px 9px 4px!important;
-  border:0!important;
-}
-#homeView .home-progress-card>.card-head h3{
-  font-size:9.5px!important;
-  color:#a9bec6!important;
-}
-#homeView .home-progress-card>.progress-box{
-  padding:1px 9px 8px!important;
-  display:grid!important;
-  grid-template-columns:1fr auto!important;
-  grid-template-rows:auto auto auto!important;
-  gap:1px 7px!important;
-  align-items:end!important;
-}
-#homeView .home-progress-card .big{
-  grid-column:1!important;
-  grid-row:1!important;
-  font-size:22px!important;
-  line-height:1!important;
-  color:#f7fcfd!important;
-}
-#homeView .home-progress-card .progress-box>.muted.small:first-of-type{
-  grid-column:1/-1!important;
-  grid-row:2!important;
-  font-size:8px!important;
-}
-#homeView .home-progress-card .progress-line{
-  grid-column:1!important;
-  grid-row:3!important;
-  height:5px!important;
-  margin:5px 0 0!important;
-}
-#homeView .home-progress-card #dayPct{
-  grid-column:2!important;
-  grid-row:3!important;
-  align-self:center!important;
-  font-size:8.5px!important;
-  color:#8fa7b0!important;
-}
-
-#homeView .home-pending-card{
-  display:grid!important;
-  grid-template-rows:auto 1fr!important;
-  background:#09141a!important;
-  border:1px solid var(--bc-home-line)!important;
-  border-radius:11px!important;
-  box-shadow:none!important;
-  overflow:hidden!important;
-}
-#homeView .home-pending-card>.card-head{
-  min-height:30px!important;
-  padding:7px 9px 4px!important;
-  border:0!important;
-}
-#homeView .home-pending-card>.card-head h3{
-  font-size:9.5px!important;
-  color:#a9bec6!important;
-}
-#homeView .home-pending-card>.home-pending{
-  padding:0 9px 6px!important;
-  display:grid!important;
-  grid-template-columns:repeat(2,minmax(0,1fr))!important;
-  gap:5px!important;
-  align-content:start!important;
-}
-#homeView .home-pending-card .pending-item{
-  min-width:0!important;
-  padding:5px 7px!important;
-  border:1px solid #1d343e!important;
-  border-radius:7px!important;
-  background:#102027!important;
-}
-#homeView .home-pending-card .pending-item b{
-  font-size:8.5px!important;
-  white-space:nowrap!important;
-  overflow:hidden!important;
-  text-overflow:ellipsis!important;
-}
-#homeView .home-pending-card .pending-item small{
-  margin-top:1px!important;
-  font-size:7.5px!important;
-  white-space:nowrap!important;
-  overflow:hidden!important;
-  text-overflow:ellipsis!important;
-}
-
-#homeView .home-secondary-row{
-  width:100%!important;
-  display:grid!important;
-  grid-template-columns:minmax(0,1fr) 330px!important;
-  gap:8px!important;
-  align-items:stretch!important;
-  margin:0 0 8px!important;
-}
-#homeView .home-secondary-row>.home-continue-card{
-  margin:0!important;
-  min-height:48px!important;
-}
-#homeView .home-quick-tools-card{
-  display:grid!important;
-  grid-template-columns:105px minmax(0,1fr)!important;
-  align-items:center!important;
-  min-height:48px!important;
-  margin:0!important;
-  background:#091318!important;
-  border:1px solid var(--bc-home-line)!important;
-  border-radius:10px!important;
-  box-shadow:none!important;
-  overflow:hidden!important;
-}
-#homeView .home-quick-tools-card>.card-head{
-  padding:7px 10px!important;
-  border:0!important;
-}
-#homeView .home-quick-tools-card>.card-head h3{
-  font-size:9px!important;
-  color:#8da5ae!important;
-}
-#homeView .home-quick-tools-card>.quick{
-  padding:5px 7px!important;
-  display:grid!important;
-  grid-template-columns:1fr 1fr!important;
-  gap:5px!important;
-}
-#homeView .home-quick-tools-card>.quick button{
-  min-height:34px!important;
-  padding:5px 7px!important;
-  border:1px solid #1d343e!important;
-  border-radius:7px!important;
-  background:#102027!important;
-}
-#homeView .home-quick-tools-card>.quick button b{font-size:8.5px!important}
-#homeView .home-quick-tools-card>.quick button small{display:none!important}
-#homeView .home-quick-tools-card>.quick button>span:last-child{font-size:9px!important}
-
-@media(min-width:1280px){
-  #homeView #subjects{
-    grid-template-columns:repeat(3,minmax(0,1fr))!important;
-    gap:7px!important;
-  }
-  #homeView #subjects>.subject:not(.open)>.subject-head{
-    min-height:76px!important;
-    padding:8px 10px!important;
-  }
-  #homeView #subjects>.subject:not(.open) .subject-pct{
-    width:44px!important;height:44px!important;min-width:44px!important;
-  }
-  #homeView #subjects>.subject:not(.open)::after{
-    right:56px!important;
-    font-size:34px!important;
-  }
-}
-
-@media(min-width:901px) and (max-width:1279px){
-  #homeView .home-dashboard-row{
-    grid-template-columns:minmax(0,1.5fr) 175px minmax(225px,.78fr)!important;
-  }
-  #homeView .home-secondary-row{
-    grid-template-columns:minmax(0,1fr) 290px!important;
-  }
-}
-
-@media(max-width:900px){
-  #homeView .home-dashboard-row,
-  #homeView .home-secondary-row{
-    grid-template-columns:1fr!important;
-  }
-  #homeView .home-dashboard-row>.home-today-card{
-    grid-template-columns:1fr auto!important;
-  }
-  #homeView .home-progress-card>.progress-box{
-    grid-template-columns:1fr auto!important;
-  }
-  #homeView .home-pending-card>.home-pending{
-    grid-template-columns:1fr!important;
-  }
-  #homeView .home-quick-tools-card{
-    grid-template-columns:1fr!important;
-  }
-}
-
-
-/* ===== Home visual v5: organização final compacta ===== */
-/* Corrige a largura real da home, elimina duplicidade visual e aproxima as disciplinas do topo. */
-html.bc-ui-v1 #homeView{
-  width:100%!important;
-  max-width:none!important;
-  margin:0!important;
-  padding:10px 12px 24px!important;
-}
-#homeView>.hero,
-#homeView>.home-grid{
-  width:100%!important;
-  max-width:none!important;
-  margin:0!important;
-}
-#homeView>.hero{
-  min-height:26px!important;
-  margin:0 0 5px!important;
-}
-#homeView>.hero p{font-size:9.5px!important}
-#homeView>.hero .btn.primary{
-  padding:6px 9px!important;
-  font-size:9.5px!important;
-}
-
-/* Um único bloco para o dia: agenda + progresso. A pendência já aparece na contagem da agenda. */
-#homeView .home-dashboard-row{
-  display:block!important;
-  margin:0 0 6px!important;
-}
-#homeView .home-dashboard-row>.home-today-card{
-  width:100%!important;
-  min-height:68px!important;
-  margin:0!important;
-  display:grid!important;
-  grid-template-columns:118px minmax(0,1fr) 150px auto!important;
-  grid-template-rows:1fr!important;
-  gap:8px!important;
-  align-items:center!important;
-  padding:7px 9px!important;
-}
-#homeView .home-dashboard-row>.home-today-card>.card-head{display:contents!important}
-#homeView .home-dashboard-row>.home-today-card>.card-head>div{
-  grid-column:1!important;
-  padding-right:8px!important;
-}
-#homeView .home-dashboard-row>.home-today-card>.card-head>.btn{
-  grid-column:4!important;
-  grid-row:1!important;
-  align-self:center!important;
-}
-#homeView .home-dashboard-row>.home-today-card>.agenda{
-  grid-column:2!important;
-  grid-row:1!important;
-  min-width:0!important;
-  display:grid!important;
-  grid-template-columns:repeat(2,minmax(0,1fr))!important;
-  gap:6px!important;
-  overflow:visible!important;
-  max-height:none!important;
-}
-#homeView .home-dashboard-row>.home-today-card .agenda-row{
-  min-width:0!important;
-  max-width:none!important;
-  flex:none!important;
-  padding:5px 7px!important;
-}
-#homeView .home-dashboard-row>.home-today-card>.home-progress-card{
-  grid-column:3!important;
-  grid-row:1!important;
-  align-self:stretch!important;
-  min-height:0!important;
-  border:0!important;
-  border-left:1px solid var(--bc-home-line)!important;
-  border-radius:0!important;
-  background:transparent!important;
-  box-shadow:none!important;
-  display:grid!important;
-  grid-template-columns:1fr!important;
-  grid-template-rows:auto 1fr!important;
-  padding-left:8px!important;
-}
-#homeView .home-dashboard-row>.home-today-card>.home-progress-card>.card-head{
-  padding:2px 0 0!important;
-  min-height:0!important;
-  border:0!important;
-}
-#homeView .home-dashboard-row>.home-today-card>.home-progress-card>.card-head h3{
-  font-size:8px!important;
-}
-#homeView .home-dashboard-row>.home-today-card>.home-progress-card>.progress-box{
-  padding:1px 0 1px!important;
-}
-#homeView .home-dashboard-row>.home-today-card>.home-progress-card .big{
-  font-size:15px!important;
-  line-height:1!important;
-}
-#homeView .home-dashboard-row>.home-today-card>.home-progress-card .progress-box>.muted.small:first-of-type{
-  display:none!important;
-}
-#homeView .home-dashboard-row>.home-today-card>.home-progress-card .progress-line{
-  height:4px!important;
-  margin-top:4px!important;
-}
-#homeView .home-dashboard-row>.home-today-card>.home-progress-card #dayPct{
-  font-size:7.5px!important;
-}
-#homeView .home-pending-card{
-  display:none!important;
-}
-
-/* A faixa intermediária fica só com "Continuar de onde parei". */
-#homeView .home-secondary-row{
-  display:block!important;
-  margin:0 0 6px!important;
-}
-#homeView .home-secondary-row>.home-continue-card{
-  width:100%!important;
-  min-height:44px!important;
-  margin:0!important;
-  grid-template-columns:125px minmax(0,1fr)!important;
-}
-#homeView .home-secondary-row>.home-continue-card>.card-head{
-  padding:6px 9px!important;
-}
-#homeView .home-secondary-row>.home-continue-card>#continueBox{
-  padding:5px 8px!important;
-}
-#homeView .home-quick-tools-card{
-  display:none!important;
-}
-
-/* Disciplinas imediatamente abaixo, sem faixa de título alta. */
-#homeView .schedule-intro{
-  min-height:24px!important;
-  margin:0 0 5px!important;
-  display:flex!important;
-  align-items:center!important;
-  justify-content:space-between!important;
-  gap:12px!important;
-}
-#homeView .schedule-intro h2{
-  font-size:14px!important;
-  margin:0!important;
-}
-#homeView .schedule-intro p{display:none!important}
-#homeView .bc-home-summary{
-  position:static!important;
-  margin-left:auto!important;
-  font-size:8px!important;
-}
-
-/* 10 disciplinas = duas linhas de cinco em monitores largos. */
-@media(min-width:1500px){
-  #homeView #subjects{
-    grid-template-columns:repeat(5,minmax(0,1fr))!important;
-    gap:6px!important;
-  }
-  #homeView #subjects>.subject:not(.open)>.subject-head{
-    min-height:72px!important;
-    padding:7px 9px!important;
-    grid-template-columns:minmax(0,1fr) 42px!important;
-    gap:1px 7px!important;
-  }
-  #homeView #subjects>.subject:not(.open) .subject-name{
-    font-size:9.8px!important;
-  }
-  #homeView #subjects>.subject:not(.open) .bc-home-submeta{
-    font-size:7.2px!important;
-  }
-  #homeView #subjects>.subject:not(.open) .subject-count{
-    font-size:8px!important;
-  }
-  #homeView #subjects>.subject:not(.open) .subject-pct{
-    width:40px!important;height:40px!important;min-width:40px!important;
-  }
-  #homeView #subjects>.subject:not(.open) .subject-pct::before{
-    inset:4px!important;
-  }
-  #homeView #subjects>.subject:not(.open)::after{
-    right:47px!important;
-    bottom:-7px!important;
-    font-size:29px!important;
-  }
-}
-@media(min-width:1200px) and (max-width:1499px){
-  #homeView #subjects{
-    grid-template-columns:repeat(4,minmax(0,1fr))!important;
-    gap:6px!important;
-  }
-}
-@media(min-width:901px) and (max-width:1199px){
-  #homeView #subjects{
-    grid-template-columns:repeat(3,minmax(0,1fr))!important;
-    gap:6px!important;
-  }
-}
-
-/* Em telas médias, a agenda continua limpa sem esmagar o conteúdo. */
-@media(max-width:1100px){
-  #homeView .home-dashboard-row>.home-today-card{
-    grid-template-columns:105px minmax(0,1fr) 125px auto!important;
-  }
-}
-@media(max-width:900px){
-  html.bc-ui-v1 #homeView{padding:8px 9px 20px!important}
-  #homeView .home-dashboard-row>.home-today-card{
-    grid-template-columns:1fr auto!important;
-    grid-template-rows:auto auto auto!important;
-  }
-  #homeView .home-dashboard-row>.home-today-card>.card-head>div{grid-column:1!important;grid-row:1!important}
-  #homeView .home-dashboard-row>.home-today-card>.card-head>.btn{grid-column:2!important;grid-row:1!important}
-  #homeView .home-dashboard-row>.home-today-card>.agenda{
-    grid-column:1/-1!important;grid-row:2!important;
-    display:flex!important;overflow-x:auto!important;
-  }
-  #homeView .home-dashboard-row>.home-today-card>.home-progress-card{
-    grid-column:1/-1!important;grid-row:3!important;
-    border-left:0!important;border-top:1px solid var(--bc-home-line)!important;
-    padding:5px 0 0!important;
-  }
-  #homeView .schedule-intro p{display:none!important}
+@media(min-width:1700px){
+  #homeView #subjects{grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
+  #homeView #subjects>.subject:not(.open)>.subject-head{min-height:78px;padding:7px 9px}
+}
+@media(min-width:1400px) and (max-width:1699px){
+  #homeView #subjects{grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+}
+@media(min-width:1100px) and (max-width:1399px){
+  #homeView #subjects{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+}
+@media(min-width:640px) and (max-width:1099px){
+  #homeView #subjects{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  #homeView .home-dashboard-card{grid-template-columns:minmax(135px,.9fr) minmax(0,1.8fr);row-gap:8px}
+  #homeView .home-dashboard-progress{border-left:0!important}
+  #homeView .home-dashboard-pending{border-left:1px solid var(--bc-home-line)!important}
+}
+@media(max-width:639px){
+  #homeView{padding:8px 10px 18px!important}
+  #homeView>.home-hero{min-height:36px;gap:8px}
+  #homeView>.home-hero p{font-size:10px}
+  #homeView>.home-hero .btn{min-height:32px;padding:5px 8px;font-size:9px}
+  #homeView .home-dashboard-card{grid-template-columns:minmax(0,1fr);gap:0;padding:4px 9px}
+  #homeView .home-dashboard-card>div{padding:7px 2px}
+  #homeView .home-dashboard-card>div+div{border-top:1px solid var(--bc-home-line);border-left:0}
+  #homeView .home-dashboard-summary{padding-left:2px!important}
+  #homeView .home-dashboard-tasks .agenda{flex-wrap:wrap;max-height:86px}
+  #homeView .home-dashboard-tasks .agenda-row{flex:1 1 100%;min-width:0}
+  #homeView .home-dashboard-pending .home-pending{max-height:68px}
+  #homeView .home-continue-card{grid-template-columns:minmax(0,1fr);min-height:0}
+  #homeView .home-continue-card>.card-head{padding:7px 9px 0}
+  #homeView .home-continue-card>#continueBox{padding:5px 9px 8px}
 }
