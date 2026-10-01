@@ -1222,14 +1222,16 @@ window.tecRegRender=function(){
   const cor=p>=80?'#1f7a4d':p>=60?'#8a6d1a':'#b3563e';
   return `<div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:7px 10px;font-size:12.5px">
    <b style="min-width:78px">${fmtBR(r.dt)}</b>
-   <span style="flex:1;min-width:150px">${textoSeguro(nomeCurto(r.cid))}</span>
+   <span style="flex:1;min-width:150px">${textoSeguro(nomeCurto(r.cid,r))}</span>
    <span>${r.f} feitas</span><span>${r.a} acertos</span>
    <b style="color:${cor};min-width:44px;text-align:right">${p}%</b>
    <button type="button" class="btn sm" onclick="return tecRegApagar(${i})" title="Apagar registro" style="padding:2px 8px">✕</button>
   </div>`;
  }).join('')+'</div>';
 };
-function nomeCurto(id){
+function nomeCurto(id,record){
+ const moduleLabel=window.civilStudyTecRecordLabel?.(record);
+ if(moduleLabel)return moduleLabel;
  try{const c=(window.TEC_CADERNOS_DATA&&TEC_CADERNOS_DATA.cadernos||[]).find(x=>x.id===id);
   return c?String(c.id).toUpperCase().replace(/-(\d+)$/,(_,n)=>' '+n.padStart(2,'0')).replace('PROC-CIVIL','CPC')+' — '+c.nome:id}catch(e){return id}
 }
@@ -1297,7 +1299,8 @@ window.tecVisaoRender=function(){
  (data.cadernos||[]).forEach(c=>{if(c.grupoNome&&!grupos.has(c.grupoNome))grupos.set(c.grupoNome,{f:0,a:0,s:0})});
  regs.forEach(r=>{
   let nome;
-  if(r.cid&&r.cid.startsWith('t:'))nome=nomeT[r.cid]||'Tópicos';
+  if(window.civilStudyTecRecordLabel?.(r))nome='Direito Civil';
+  else if(r.cid&&r.cid.startsWith('t:'))nome=nomeT[r.cid]||'Tópicos';
   else{const c=(data.cadernos||[]).find(x=>x.id===r.cid);nome=c?c.grupoNome:'Cadernos'}
   add(nome,r.f||0,r.a||0);
  });
@@ -1945,6 +1948,7 @@ window.openEmbeddedTool=openEmbeddedTool;
 
   function disciplineLabel(value) {
     const labels = {
+      pt: 'Português', trab: 'Direito do Trabalho', ptra: 'Direito Processual do Trabalho',
       cf: 'Direito Constitucional', adm: 'Direito Administrativo',
       civil: 'Direito Civil', cpc: 'Direito Processual Civil', penal: 'Direito Penal',
       cpp: 'Direito Processual Penal', rlm: 'Raciocínio Lógico-Matemático',
@@ -2053,7 +2057,7 @@ window.openEmbeddedTool=openEmbeddedTool;
     tasks.push({
       id: `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
       time: element('agendaTime')?.value || '',
-      discipline: element('agendaDisc')?.value || '',
+      discipline: disciplineLabel(element('agendaDisc')?.value || ''),
       task,
       done: false,
     });
@@ -2232,4 +2236,3 @@ window.moduleFrameRetry=function(){
 })();
 </script>
 </body></html>
-

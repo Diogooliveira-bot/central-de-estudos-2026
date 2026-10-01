@@ -38,6 +38,9 @@
     return { pct: null, text: 'Use os controles de conclusão no conteúdo' };
   }
   function questionStats(module, meta) {
+    const manual = footerRounds(meta);
+    const manualTotal = manual.reduce((n,r) => n + r.done,0);
+    const manualCorrect = manual.reduce((n,r) => n + r.correct,0);
     const course = meta.subject === 'cf' && typeof CF_WEEKS !== 'undefined' ? { weeks:CF_WEEKS, pool:window.cfPool, state:window.cfState } :
       meta.subject === 'penal' && typeof PENAL_WEEKS !== 'undefined' ? { weeks:PENAL_WEEKS, pool:window.penalPool, state:window.penalState } :
       meta.subject === 'cpc' && typeof CPC_WEEKS !== 'undefined' ? { weeks:CPC_WEEKS, pool:window.cpcPool, state:window.cpcState } : null;
@@ -47,6 +50,8 @@
         const answers = course.state().answers || {};
         const answered = course.pool(week).map(q => answers[q.id]).filter(a => a?.attempts);
         const correct = answered.filter(a => a.lastCorrect).length;
+        if (manualTotal) return { total:manualTotal + answered.length, correct:manualCorrect + correct,
+          text:manualTotal + ' questões em rodadas · ' + manualCorrect + ' acertos; ' + answered.length + ' exercícios internos · ' + correct + ' acertos na última resposta' };
         return { total:answered.length, correct, text:answered.length + ' questões respondidas · ' + correct + ' acertos na última resposta' };
       }
     }
@@ -59,6 +64,8 @@
     if (meta.subject === 'pt') {
       const state = read('base-completa:pt:v1:module:' + meta.id + ':progress');
       const answers = Object.values(state?.answers || {});
+      if (manualTotal) return { total:manualTotal, correct:manualCorrect,
+        text:manualTotal + ' questões em rodadas · ' + manualCorrect + ' acertos; ' + answers.length + ' exercícios internos respondidos · resultado na área de prática' };
       // Native Portuguese stores selected alternatives, not correctness. Its own question UI owns the result.
       return { total: answers.length, correct: null, text: answers.length + ' questões respondidas · resultado na área de prática' };
     }
@@ -256,7 +263,7 @@
   function navigate(module, action) {
     const body = bodyOf(module), meta = identity(module);
     if (action === 'notes') { const area = body.querySelector('.ds-notes textarea'); area?.scrollIntoView({block:'center'}); area?.focus({preventScroll:true}); return; }
-    if (action === 'questions' && meta.subject === 'cpp') {
+    if (action === 'questions' && ['cpp','cf','cpc','penal'].includes(meta.subject)) {
       const form = body.querySelector('.ds-footer-questions .perf-form');
       form?.scrollIntoView({block:'start'});
       form?.querySelector('input[type=number]')?.focus({preventScroll:true});
@@ -341,7 +348,7 @@
       catch (_) { box.querySelector('[role=status]').textContent = 'Não foi possível salvar'; }
     }
   });
-  window.CentralDisciplineStandard = { refresh, version:'1.1.1' };
+  window.CentralDisciplineStandard = { refresh, version:'1.1.2' };
   function start() { observer = new MutationObserver(schedule); refresh(); }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded',start,{once:true}); else start();
 })();
