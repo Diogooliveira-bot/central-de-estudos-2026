@@ -2,7 +2,7 @@
 'use strict';
 
 const SUBJECT='penal';
-const MODULE_SELECTOR='.subject[data-id="penal"] .cf-module[data-cf]';
+const MODULE_SELECTOR='#subjects .cf-module[data-cf]';
 const ENTRY_CLASS='bc-mindmap-entry';
 const OVERLAY_ID='bcMindMapOverlay';
 const registry=new Map();
@@ -454,7 +454,12 @@ function injectForModule(module){
 }
 
 function scan(){
-  document.querySelectorAll(MODULE_SELECTOR).forEach(injectForModule);
+  document.querySelectorAll(MODULE_SELECTOR).forEach(function(module){
+    const moduleId=module.dataset.cf;
+    if(!moduleId) return;
+    if(!theoryData(moduleId) && !registry.has(key(SUBJECT,moduleId))) return;
+    injectForModule(module);
+  });
 }
 
 function install(){
