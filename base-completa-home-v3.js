@@ -127,6 +127,36 @@
     });
   }
 
+
+  function tidyHomeV5(){
+    const home=byId('homeView');
+    if(!home) return;
+
+    const todayCard=home.querySelector('.home-today-card');
+    const progressCard=byId('dayCount')?.closest('.card');
+    const pendingCard=byId('homePending')?.closest('.card');
+    const quickCard=home.querySelector('.home-quick-tools-card');
+
+    if(todayCard && progressCard){
+      progressCard.classList.add('home-progress-card');
+      if(progressCard.parentElement!==todayCard) todayCard.appendChild(progressCard);
+    }
+
+    if(pendingCard){
+      pendingCard.classList.add('home-pending-card');
+      pendingCard.style.setProperty('display','none','important');
+      pendingCard.setAttribute('aria-hidden','true');
+    }
+
+    if(quickCard){
+      quickCard.style.setProperty('display','none','important');
+      quickCard.setAttribute('aria-hidden','true');
+    }
+
+    const dash=home.querySelector('.home-dashboard-row');
+    if(dash && todayCard && todayCard.parentElement!==dash) dash.appendChild(todayCard);
+  }
+
   function decorateHome(){
     const home = byId('homeView');
     if(!home) return;
@@ -134,6 +164,7 @@
     document.documentElement.classList.add('bc-home-v3-active');
     hideDecorandoSidebar();
     compactDesktopHome();
+    tidyHomeV5();
 
     const todayCard = home.querySelector('.home-today-card');
     if(todayCard){
