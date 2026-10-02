@@ -112,19 +112,19 @@ function buildHtml(data,mode){
     host.querySelector('.pen-m3-cover')?.remove();
     host.querySelector('.pen-m3-toc')?.remove();
     host.querySelector('.pen-m3-orientacao')?.remove();
-    host.querySelector('#pen-m3-s25')?.remove();
+    host.querySelector('#pen-m3-s40')?.remove();
 
     const headings=[];
-    host.querySelectorAll('article.pen-m3-session').forEach((section,index)=>{
+    host.querySelectorAll('section.pen-m3-session').forEach((section,index)=>{
       const h=section.querySelector('h3');
       if(!h)return;
       if(!h.id)h.id='bcsec-complete-'+(index+1)+'-'+slug(h.textContent);
       headings.push({id:h.id,text:norm(h.textContent),level:2,key:normKey(h.textContent)});
     });
 
-    // Normalize native M2 blocks to the reader's component vocabulary.
+    // Normalize native M3 blocks to the reader's component vocabulary.
     host.querySelectorAll('.pen-m3-callout').forEach(el=>el.classList.add('bc-native-callout'));
-    host.querySelectorAll('.pen-m3-table-wrap').forEach(el=>el.classList.add('bc-native-table-wrap'));
+    host.querySelectorAll('.pen-m3-table').forEach(el=>el.classList.add('bc-native-table-wrap'));
     const text=norm(host.textContent);
     const words=text.split(/\s+/).filter(Boolean).length;
     const mins=Math.max(1,Math.round(words/190));
