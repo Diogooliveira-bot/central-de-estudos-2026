@@ -3509,3 +3509,620 @@ global.BaseNativeReaderM05={
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&document.getElementById(OVERLAY_ID))close()});
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',install);else install();
 })(window);
+
+/* M06 preview bundled */
+(function(global){
+'use strict';
+global.BASE_NATIVE_CONTENT=global.BASE_NATIVE_CONTENT||{};
+global.BASE_NATIVE_CONTENT.penal=global.BASE_NATIVE_CONTENT.penal||{};
+global.BASE_NATIVE_CONTENT.penal.m06={"moduleId":"p6","number":6,"title":"Concurso de Pessoas","updatedAt":"2026-10-02","sources":{"completeDriveId":"1YrV-UwF_k-Ks3WJ0KjXpNwEUNzPhNkhd","completeTheoryKey":"p6","summaryDriveId":"1R1D4anytd5zTJDGw_7ZXSS4-huers1WR","mindMapDriveId":"142bCrNsumig3tM4JuAW2TeCie5NUd5iL"},"summary":"PEN M6 - Concurso de Pessoas 1 / 4\r\nBASE COMPLETA - DIREITO PENAL\r\nPEN M6 - Concurso de Pessoas\r\nResumo para primeira leitura e revisão rápida\r\n1. Visão geral\r\nIdeia central: concurso de pessoas ocorre quando duas ou mais pessoas contribuem para a mesma infração penal. A prova\r\ncostuma exigir: quem é autor, coautor ou partícipe, qual foi a contribuição de cada um e se incide alguma regra especial dos\r\narts. 29 a 31 do Código Penal.\r\nConcurso eventual\r\nO crime pode ser praticado por uma pessoa, mas admite pluralidade.\r\nSão os crimes monossubjetivos.\r\nConcurso necessário\r\nO próprio tipo exige pluralidade de agentes. São os crimes\r\nplurissubjetivos.\r\nRequisitos do concurso de pessoas\r\nRequisito O que significa\r\nPluralidade de agentes e condutas Duas ou mais pessoas contribuem para o fato.\r\nRelevância da contribuição A conduta deve efetivamente colaborar para o crime; mera presença ou conhecimento não\r\nbastam.\r\nLiame subjetivo Consciência e vontade de cooperar com a realização do fato comum. Não exige ajuste\r\nprévio formal.\r\nIdentidade de infração Como regra, os concorrentes respondem pelo mesmo fato, com responsabilidade\r\nindividualizada.\r\nMEMÓRIA: P-R-L-I = Pluralidade - Relevância - Liame - Identidade.\r\n2. Teoria - autoria, coautoria e participação\r\nAutor\r\nOcupa posição autoral na realização do fato.\r\nNão é apenas quem executa materialmente\r\no verbo do tipo.\r\nCoautor\r\nRealiza o fato em conjunto, com divisão\r\nfuncional de tarefas e vínculo subjetivo.\r\nPartícipe\r\nContribui de forma acessória para fato\r\nalheio, sem assumir posição de autor.\r\nPrincipais teorias da autoria\r\nTeoria Essência Atenção\r\nObjetivo-formal Autor é quem pratica o núcleo do tipo. É clara, mas não explica bem todas as hipóteses de autoria\r\nmediata e coautoria funcional.\r\nObjetivo-material Autor é quem presta a contribuição mais\r\nrelevante ao resultado.\r\nHá dificuldade em medir qual contribuição é \"mais importante\".\r\nDomínio do fato Em crimes dolosos, identifica quem detém\r\ncontrole relevante da realização.\r\nNão dispensa prova e não transforma chefia, cargo ou influência\r\nem autoria automática.PEN M6 - Concurso de Pessoas 2 / 4\r\nBASE COMPLETA - DIREITO PENAL\r\nTeoria essencial\r\nAutoria, participação, acessoriedade e regras especiais\r\n3. Formas de autoria e participação\r\nAutoria direta\r\nO agente realiza diretamente a conduta típica.\r\nAutoria mediata\r\nO autor utiliza outra pessoa como instrumento. Pode ocorrer,\r\nconforme o caso, em erro provocado, coação, obediência hierárquica\r\nou inimputabilidade instrumentalizada.\r\nCoautoria sucessiva\r\nO agente adere depois do início da execução e passa a\r\ndesempenhar função autoral enquanto o fato ainda está em curso.\r\nAutoria de escritório\r\nConstrução doutrinária ligada a aparatos organizados de poder. Não\r\nse presume por mera posição de chefia.\r\nCoautoria x autoria colateral\r\nCoautoria Autoria colateral\r\nHá liame subjetivo e atuação conjunta. Agentes atuam paralelamente sem saber um do outro.\r\nEx.: um rende a vítima e outro recolhe os bens dentro do plano\r\ncomum.\r\nEx.: dois atiradores independentes disparam contra a mesma vítima.\r\n- Incerta: não se sabe qual conduta causou o resultado; não se pode\r\npresumir o nexo causal.\r\nParticipação\r\nForma Como reconhecer\r\nInduzimento Cria a ideia criminosa que antes não existia.\r\nInstigação Reforça uma decisão criminosa já existente.\r\nAuxílio Facilita materialmente a execução: instrumento, chave, informação, transporte acessório etc.\r\nAjuda posterior: depois de consumado e encerrado o crime, em regra não há participação no fato anterior. Pode surgir crime autônomo. Se a\r\najuda posterior foi prometida antes e influenciou a execução, a análise muda.\r\n4. Acessoriedade da participação\r\nTeoria Fato principal necessário\r\nMínima Típico\r\nLimitada Típico + ilícito - posição predominante para prova.\r\nMáxima Típico + ilícito + culpável\r\nHiperacessória Crime completo, inclusive punibilidade.\r\n5. Duas regras muito cobradas\r\nParticipação de menor importância - art. 29, §1º\r\nContribuição acessória de pequena relevância. Pena pode ser\r\ndiminuída de 1/6 a 1/3. Não decorre do simples fato de o agente estar\r\nlonge do local ou executar tarefa secundária.\r\nCooperação dolosamente distinta - art. 29, §2º\r\nO agente quis participar de crime menos grave, mas outro pratica\r\ncrime mais grave. Responde pelo crime menos grave; se o resultado\r\nmais grave era previsível, a pena pode aumentar até metade.\r\nNão confunda: menor importância analisa a relevância da contribuição; cooperação dolosamente distinta analisa o limite do dolo do\r\nconcorrente.PEN M6 - Concurso de Pessoas 3 / 4\r\nBASE COMPLETA - DIREITO PENAL\r\nComunicabilidade e situações especiais\r\nArt. 30, crimes próprios, mão própria, culposos e omissivos\r\n6. Art. 30 - o que comunica?\r\nRegra: circunstâncias e condições de caráter pessoal não se comunicam, salvo quando forem elementares do crime.\r\nElemento Regra Exemplo mental\r\nElementar Integra a própria definição do crime. Pode comunicar-se quando\r\nconhecida pelo concorrente.\r\nCondição de funcionário público no\r\npeculato.\r\nCircunstância pessoal Em regra, não se comunica. Motivo estritamente pessoal de um dos\r\nagentes.\r\nCondição pessoal Em regra, não se comunica; se for elementar, aplica-se a exceção. Qualidade exigida pelo tipo próprio.\r\n7. Crimes próprios, de mão própria, culposos e omissivos\r\nSituação Regra resumida\r\nCrime próprio Exige qualidade especial do sujeito ativo. Em regra, admite coautoria e participação; a elementar pessoal pode\r\nalcançar o terceiro que a conhece.\r\nCrime de mão própria Execução personalíssima. Na formulação tradicional, não admite coautoria executória, mas admite\r\nparticipação em tese. Há debate doutrinário em hipóteses específicas.\r\nCrime culposo Predomina a admissibilidade de coautoria culposa. A participação stricto sensu é controvertida e\r\nmajoritariamente negada.\r\nCrime omissivo Verifique quem tinha dever jurídico de agir. A omissão pode ter papel autoral ou participativo, conforme a\r\nposição de garantidor e o caso concreto.\r\nParticipação por omissão: exige dever jurídico de agir, possibilidade de atuação e dolo de favorecer o crime. Mera passividade moralmente\r\nreprovável não basta.\r\n8. Artigos para decorar\r\nArt. 29, caput - Quem concorre para o crime incide nas penas a ele cominadas, na medida de sua culpabilidade.\r\nArt. 29, §1º - Participação de menor importância: redução de 1/6 a 1/3.\r\nArt. 29, §2º - Quis participar de crime menos grave: aplica-se a pena deste; se era previsível o resultado mais grave, aumento até metade.\r\nArt. 30 - Circunstâncias e condições pessoais não se comunicam, salvo quando elementares do crime.\r\nArt. 31 - Ajuste, determinação/instigação e auxílio, salvo disposição expressa em contrário, não são puníveis se o crime não chega, pelo\r\nmenos, a ser tentado.\r\nMapa: 29 = quem responde | 30 = o que comunica | 31 = quando a participação começa a ser punível.PEN M6 - Concurso de Pessoas 4 / 4\r\nBASE COMPLETA - DIREITO PENAL\r\nPegadinhas + revisão ativa\r\nFechamento rápido do PEN M6\r\n9. Pegadinhas de prova\r\n1. Liame subjetivo\r\nNão exige acordo prévio formal. Basta consciência e vontade de\r\ncooperar.\r\n2. Teoria monista\r\nMesmo crime não significa mesma pena para todos.\r\n3. Domínio do fato\r\nNão é presunção de autoria e não dispensa prova.\r\n4. Coautoria x colateral\r\nO ponto decisivo é o vínculo subjetivo.\r\n5. Induzir x instigar\r\nInduzir cria a ideia; instigar reforça ideia já existente.\r\n6. Menor importância\r\nNão basta ter função simples; a contribuição precisa ser realmente\r\npouco relevante.\r\n7. Art. 29, §2º\r\nPrevisibilidade não faz o agente responder automaticamente pelo\r\ncrime mais grave: autoriza aumento da pena do crime menos grave.\r\n8. Art. 30\r\n\"Pessoal não comunica\" tem exceção: se for elementar do crime.\r\n9. Próprio x mão própria\r\nNão são sinônimos. Crime próprio exige qualidade; mão própria\r\nexige execução pessoal.\r\n10. Crime culposo\r\nÉ errado afirmar que nunca admite concurso: a coautoria culposa é\r\namplamente admitida.\r\n11. Art. 31\r\nEm regra, sem ao menos tentativa, ajuste/instigação/auxílio não são\r\npuníveis como participação.\r\n12. Omissão\r\nSem dever jurídico de agir, a simples inércia não vira participação\r\npenal.\r\n10. Revisão ativa\r\n1. Quais são os quatro requisitos do concurso de pessoas?\r\nResposta: Pluralidade, relevância, liame subjetivo e identidade de infração.\r\n2. Qual é a diferença central entre coautoria e autoria colateral?\r\nResposta: Na coautoria existe vínculo subjetivo; na autoria colateral, não.\r\n3. Induzimento, instigação e auxílio: como diferenciar?\r\nResposta: Cria a ideia; reforça a ideia; facilita materialmente.\r\n4. O que a acessoriedade limitada exige?\r\nResposta: Fato principal típico e ilícito.\r\n5. Qual a redução da participação de menor importância?\r\nResposta: De 1/6 a 1/3.\r\n6. No art. 29, §2º, o que ocorre se o resultado mais grave era previsível?\r\nResposta: Aplica-se a pena do crime menos grave, com possível aumento de até metade.\r\n7. Qual a regra do art. 30?\r\nResposta: Condições e circunstâncias pessoais não se comunicam, salvo quando elementares.\r\n8. Qual a regra tradicional para crime de mão própria?\r\nResposta: Execução personalíssima; em regra não há coautoria executória, mas participação é possível em tese.\r\n9. Coautoria em crime culposo é possível?\r\nResposta: Sim, predominantemente. Participação stricto sensu é controvertida.\r\n10. Quando ajuste, instigação e auxílio passam a ser puníveis como participação?\r\nResposta: Em regra, quando o crime chega pelo menos à tentativa, salvo previsão expressa em contrário.\r\nMapa final de prova: fato principal -> liame subjetivo -> papel de cada agente -> art. 29, §§1º e 2º -> art. 30 -> art. 31.","chapters":{"summary":[{"id":"s01","title":"1. Visão geral"},{"id":"s02","title":"2. Teoria - autoria, coautoria e participação"},{"id":"s03","title":"3. Formas de autoria e participação"},{"id":"s04","title":"4. Acessoriedade da participação"},{"id":"s05","title":"5. Duas regras muito cobradas"},{"id":"s06","title":"6. Art. 30 - o que comunica?"},{"id":"s07","title":"7. Crimes próprios, de mão própria, culposos e omissivos"},{"id":"s08","title":"8. Artigos para decorar"},{"id":"s09","title":"9. Pegadinhas de prova"}],"complete":[{"id":"c01","title":"Conceito, concurso eventual/necessário e requisitos"},{"id":"c02","title":"Teoria monista e suas exceções/temperamentos"},{"id":"c03","title":"Autoria: teorias e limites do domínio do fato"},{"id":"c04","title":"Autor direto, autoria intelectual e autoria mediata"},{"id":"c05","title":"Coautoria, coautoria sucessiva e autoria colateral"},{"id":"c06","title":"Participação: induzimento, instigação, auxílio, cadeia e omissão"},{"id":"c07","title":"Teorias da acessoriedade e art. 31"},{"id":"c08","title":"Participação de menor importância"},{"id":"c09","title":"Cooperação dolosamente distinta"},{"id":"c10","title":"Comunicabilidade — art. 30"},{"id":"c11","title":"Crimes próprios e crimes de mão própria"},{"id":"c12","title":"Concurso de pessoas em crimes culposos"},{"id":"c13","title":"Concurso de pessoas em crimes omissivos"},{"id":"c14","title":"Quadros comparativos FCC"},{"id":"c15","title":"O que decorar e pegadinhas"}]},"internalQuestions":{"summary":[{"id":"sq01","q":"Quais são os quatro requisitos estruturais do concurso de pessoas destacados no M06?","options":["Pluralidade, relevância, liame subjetivo e identidade de infração.","Tipicidade, ilicitude, culpabilidade e punibilidade.","Autoria, coautoria, participação e tentativa.","Dolo, culpa, resultado e nexo causal."],"answer":0,"explanation":"O resumo usa o mnemônico P-R-L-I: pluralidade, relevância da contribuição, liame subjetivo e identidade de infração."},{"id":"sq02","q":"Qual é a diferença decisiva entre coautoria e autoria colateral?","options":["Na coautoria existe liame subjetivo; na autoria colateral, não.","Na autoria colateral todos executam o mesmo verbo do tipo.","Na coautoria não pode haver divisão de tarefas.","Na autoria colateral sempre se identifica o causador do resultado."],"answer":0,"explanation":"O ponto divisor indicado no material é o vínculo subjetivo entre os agentes."},{"id":"sq03","q":"Induzimento, instigação e auxílio significam, respectivamente:","options":["Criar a ideia criminosa; reforçar ideia já existente; facilitar materialmente a execução.","Executar o núcleo; criar a ideia; desistir da execução.","Reforçar a ideia; criar a ideia; praticar o verbo do tipo.","Facilitar materialmente; executar o crime; criar a ideia."],"answer":0,"explanation":"O resumo diferencia: induzir cria a resolução, instigar reforça a resolução já existente e auxiliar presta facilitação material acessória."},{"id":"sq04","q":"Na participação de menor importância do art. 29, §1º, a redução prevista é de:","options":["1/6 a 1/3.","1/3 a 2/3.","Metade obrigatoriamente.","Até metade, sem mínimo."],"answer":0,"explanation":"O material registra a redução de um sexto a um terço para participação de menor importância."},{"id":"sq05","q":"Qual é a regra central do art. 30 do Código Penal, conforme o M06?","options":["Condições e circunstâncias pessoais não se comunicam, salvo quando elementares do crime.","Toda circunstância pessoal se comunica aos concorrentes.","Elementares nunca se comunicam.","Somente motivos pessoais se comunicam."],"answer":0,"explanation":"O art. 30 é resumido no material pela incomunicabilidade das condições e circunstâncias pessoais, com exceção das elementares do crime."}],"complete":[{"id":"cq01","q":"A teoria monista do art. 29 significa que:","options":["O fato criminoso é juridicamente uno para os concorrentes, sem exigir penas idênticas.","Todos os concorrentes recebem obrigatoriamente a mesma pena.","Cada concorrente responde sempre por crime autônomo.","Só autores, nunca partícipes, respondem pelo fato."],"answer":0,"explanation":"O material enfatiza: unidade do fato não significa identidade de pena; a responsabilidade é individualizada na medida da culpabilidade."},{"id":"cq02","q":"Sobre a teoria do domínio do fato, o M06 alerta que:","options":["Ela dispensa prova concreta de autoria.","A posição de chefia basta para presumir autoria.","É critério de delimitação e não presunção automática de responsabilidade.","Só pode ser usada em crimes culposos."],"answer":2,"explanation":"O módulo afirma que domínio do fato não substitui tipicidade nem prova e não autoriza condenação automática por cargo ou posição."},{"id":"cq03","q":"Na autoria mediata, em termos gerais:","options":["O agente atua por intermédio de outra pessoa utilizada como instrumento da execução.","Dois agentes atuam sem saber um do outro.","O partícipe apenas reforça ideia criminosa alheia.","O autor chega depois da consumação."],"answer":0,"explanation":"A autoria mediata é apresentada como utilização de outra pessoa como instrumento, com domínio da situação pelo autor de trás."},{"id":"cq04","q":"Coautoria sucessiva é a hipótese em que:","options":["O agente adere ao fato depois do início da execução e assume função autoral enquanto o fato ainda está em curso.","O agente só promete ajuda após a consumação.","Dois agentes atuam paralelamente sem liame subjetivo.","O partícipe cria a ideia criminosa antes da execução."],"answer":0,"explanation":"O material admite adesão posterior ao início da execução, desde que ainda haja realização em curso e função autoral assumida."},{"id":"cq05","q":"Segundo a acessoriedade limitada indicada no módulo, a participação exige fato principal:","options":["Típico e ilícito.","Típico, ilícito e culpável em qualquer caso.","Apenas culpável.","Somente consumado."],"answer":0,"explanation":"A revisão do M06 resume a acessoriedade limitada como exigência de fato principal típico e ilícito."},{"id":"cq06","q":"No art. 29, §2º, se o concorrente quis participar de crime menos grave e o resultado mais grave era previsível:","options":["Ele responde automaticamente pelo crime mais grave.","Aplica-se a pena do crime menos grave, com possível aumento até metade.","O fato torna-se atípico para ele.","Aplica-se obrigatoriamente a redução de 1/6 a 1/3."],"answer":1,"explanation":"O material destaca que a previsibilidade não transfere automaticamente o crime mais grave; autoriza aumento até metade da pena do crime menos grave."},{"id":"cq07","q":"Nos crimes de mão própria, a formulação tradicional do material é:","options":["Admite sempre coautoria executória.","Não admite participação em hipótese alguma.","Execução é personalíssima; em regra não há coautoria executória, mas participação é possível em tese.","É sinônimo de crime próprio."],"answer":2,"explanation":"O M06 separa crime próprio de crime de mão própria e registra a regra tradicional de execução personalíssima."},{"id":"cq08","q":"Sobre concurso de pessoas em crime culposo, o resumo afirma que:","options":["Coautoria culposa é predominantemente admitida; participação stricto sensu é controvertida e majoritariamente negada.","Nenhuma forma de concurso é possível.","Somente participação stricto sensu é admitida.","Coautoria depende de ajuste prévio expresso."],"answer":0,"explanation":"Essa é exatamente a síntese apresentada no quadro do material."},{"id":"cq09","q":"A participação por omissão exige, conforme o M06:","options":["Dever jurídico de agir, possibilidade de atuação e dolo de favorecer o crime.","Apenas reprovação moral pela inércia.","Somente vínculo familiar com o autor.","Resultado consumado e confissão."],"answer":0,"explanation":"O material afasta a mera passividade moral: exige dever jurídico, possibilidade concreta de agir e dolo de favorecer o fato alheio."},{"id":"cq10","q":"Segundo o art. 31, ajuste, determinação/instigação e auxílio, em regra, não são puníveis como participação quando:","options":["O crime não chega pelo menos à tentativa, salvo disposição expressa em contrário.","O crime é consumado.","Há liame subjetivo.","O partícipe presta auxílio material."],"answer":0,"explanation":"O M06 resume o art. 31 exatamente assim: sem ao menos tentativa, esses atos não são puníveis, salvo previsão expressa em contrário."}]}};
+})(window);
+
+(function(global){
+'use strict';
+const SEL='#subjects .subject[data-id="penal"] .cf-module[data-cf="p6"]';
+
+function inject(){
+  const module=document.querySelector(SEL);
+  if(!module) return;
+  const body=module.querySelector('.cf-module-body');
+  if(!body || body.querySelector('[data-bc-native-m06]')) return;
+
+  const host=document.createElement('section');
+  host.className='bc-native-materials bc-native-materials-static';
+  host.setAttribute('data-bc-native-m06','');
+  host.innerHTML=
+    '<section class="bc-native-metrics" aria-label="Indicadores do módulo">'+
+      '<article class="bc-native-metric-card">'+
+        '<div class="bc-native-ring" data-native-ring="theory"><div class="bc-native-ring-inner"><b data-ring-value>0%</b><span>teoria</span></div></div>'+
+        '<div class="bc-native-metric-copy"><small>COBERTURA DA TEORIA</small><strong data-native-metric-detail="theory">0 de 39 pontos concluídos</strong><span>Checks dos capítulos + questões internas.</span></div>'+
+      '</article>'+
+      '<article class="bc-native-metric-card">'+
+        '<div class="bc-native-ring" data-native-ring="external"><div class="bc-native-ring-inner"><b data-ring-value>—</b><span>externas</span></div></div>'+
+        '<div class="bc-native-metric-copy"><small>ACERTO EM QUESTÕES EXTERNAS</small><strong data-native-metric-detail="external">Nenhuma questão externa respondida</strong><span data-native-metric-meta="external">Registre questões externas no final do módulo</span></div>'+
+      '</article>'+
+    '</section>'+
+    '<div class="bc-native-materials-head"><div><b>Materiais do módulo</b><small>Escolha como estudar</small></div><small>M06 • conteúdo nativo</small></div>'+
+    '<div class="bc-native-material-grid">'+
+      '<button type="button" class="bc-native-material-card" data-native-kind="summary"><span class="bc-native-material-icon">⚡</span><span><strong>Conteúdo resumido</strong><small>Primeira leitura, revisão rápida, artigos, pegadinhas e revisão ativa.</small></span><span class="bc-native-material-action"><span>Abrir</span><span>→</span></span></button>'+
+      '<button type="button" class="bc-native-material-card" data-native-kind="complete"><span class="bc-native-material-icon">📚</span><span><strong>Conteúdo completo</strong><small>Teoria integral do M06 em formato de site, com índice, busca e progresso de leitura.</small></span><span class="bc-native-material-action"><span>Abrir</span><span>→</span></span></button>'+
+      '<button type="button" class="bc-native-material-card" data-native-kind="mindmap"><span class="bc-native-material-icon">🧠</span><span><strong>Mapa mental</strong><small>Mapa interativo com abrir/recolher ramos, zoom, arrastar e tela cheia.</small></span><span class="bc-native-material-action"><span>Abrir</span><span>→</span></span></button>'+
+    '</div>'+
+    '<section class="bc-native-quick-summary" aria-label="Resumo do módulo">'+
+      '<div class="bc-native-quick-summary-head"><span class="bc-native-quick-summary-no">6</span><div><b>Resumo do módulo</b><small>O M06 em poucas palavras.</small></div></div>'+
+      '<div class="bc-native-quick-summary-body">Concurso de pessoas • autoria, coautoria e participação • acessoriedade • participação de menor importância • cooperação dolosamente distinta • comunicabilidade do art. 30 • crimes próprios, de mão própria, culposos e omissivos.</div>'+
+    '</section>';
+
+  host.querySelector('[data-native-kind="summary"]').onclick=function(){global.BaseNativeReaderM06?.open('summary')};
+  host.querySelector('[data-native-kind="complete"]').onclick=function(){global.BaseNativeReaderM06?.open('complete')};
+  host.querySelector('[data-native-kind="mindmap"]').onclick=function(){global.BaseMindMap?.open('penal','p6')};
+
+  const subtitle=body.querySelector('.cf-subtitle');
+  if(subtitle) subtitle.insertAdjacentElement('afterend',host);
+  else body.insertAdjacentElement('afterbegin',host);
+  global.BaseNativeReaderM06?.refreshMetrics?.();
+}
+function install(){
+  inject();
+  const obs=new MutationObserver(function(){
+    clearTimeout(install._t);
+    install._t=setTimeout(inject,60);
+  });
+  obs.observe(document.documentElement,{subtree:true,childList:true});
+}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',install);else install();
+})(window);
+
+(function(global){
+'use strict';
+
+const OVERLAY_ID='bcNativeReaderOverlayM06';
+const M1_SELECTOR='#subjects .subject[data-id="penal"] .cf-module[data-cf="p6"]';
+const STORAGE_PREFIX='central-v6:native-reader:penal:p6';
+let current=null;
+let observer=null;
+
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function norm(s){return String(s||'').replace(/\u00a0/g,' ').replace(/[ \t]+/g,' ').trim()}
+function normKey(s){return norm(s).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim()}
+function slug(s){return normKey(s).replace(/\s+/g,'-').slice(0,70)}
+function source(){return global.BASE_NATIVE_CONTENT?.penal?.m06||null}
+function storageKey(part){return STORAGE_PREFIX+':'+part}
+
+function cleanLines(raw,mode){
+  const lines=String(raw||'').replace(/\r/g,'').split('\n').map(norm);
+  const out=[];
+  let skipOldSummaryReview=false;
+  for(let line of lines){
+    if(mode==='summary' && /^10\.\s*REVIS(?:A|Ã)O ATIVA/i.test(line)){skipOldSummaryReview=true;continue}
+    if(skipOldSummaryReview)continue;
+    if(!line){out.push('');continue}
+    if(/^BASE COMPLETA(?:\s*[|•-]|$)/i.test(line))continue;
+    if(/^D\s*IRE\s*ITO PENAL\s*•\s*M0?1$/i.test(line))continue;
+    if(/^\d+\s*\/\s*\d+$/.test(line))continue;
+    if(/^P[aá]gina\s+\d+$/i.test(line))continue;
+    if(/^Conteudo restrito ao PEN M1/i.test(line))continue;
+    out.push(line);
+  }
+  return out;
+}
+function headingInfo(line){
+  const l=norm(line);
+  if(!l)return null;
+  let m=l.match(/^(\d+)\.(\d+)\s+(.{3,140})$/);
+  if(m)return {level:3,text:l};
+  m=l.match(/^(\d+)\.?\s+(.{3,140})$/);
+  if(m && !/^\d+\s*\/\s*\d+/.test(l) && !/^\d+\s+(Quais|Qual|A |O |Como |Quando |Pequeno|Pessoalidade|Na )/i.test(l)){
+    return {level:2,text:l};
+  }
+  if(/^(VISÃO GERAL|VISAO GERAL|REVISÃO ATIVA|REVISAO ATIVA|ARTIGOS PARA DECORAR|PEGADINHAS DE PROVA|PEGADINHAS DE PROVAS|MAPA DO MÓDULO|MAPA DO MODULO|TEORIA ESSENCIAL)$/i.test(l)){
+    return {level:2,text:l};
+  }
+  if(/^TEORIA\s*-\s*[123]\./i.test(l)){
+    return {level:2,text:l};
+  }
+  return null;
+}
+function calloutType(line){
+  const l=norm(line).toUpperCase();
+  if(/^(✅\s*)?EXEMPLO/.test(l))return ['example','Exemplo'];
+  if(/PEGADINHA/.test(l))return ['trap','Pegadinha'];
+  if(/^(⚖️\s*)?LEI SECA/.test(l))return ['law','Lei seca'];
+  if(/^(DECORE|MEMÓRIA|MEMORIA|MNEMÔNICO|MNEMONICO|REGRA DE OURO|IDEIA-CENTRAL|IDEIA CENTRAL|FÓRMULA|FORMULA|MEMORIZACAO RAPIDA)/.test(l))return ['memory',norm(line)];
+  if(/^(STF|STJ|JURISPRUDÊNCIA|JURISPRUDENCIA|ATUALIZAÇÃO|ATUALIZACAO)/.test(l))return ['case',norm(line)];
+  if(/^(COMPARAÇÃO|COMPARACAO|ATENÇÃO|ATENCAO|PROVA|CUIDADO|FRONTEIRA DO MÓDULO|FRONTEIRA DO MODULO)/.test(l))return ['case',norm(line)];
+  return null;
+}
+function isBullet(line){return /^[•●▪◦*-]\s+/.test(line)}
+function looksTitle(line){
+  const l=norm(line);
+  if(l.length<3||l.length>105)return false;
+  if(/[.!?]$/.test(l))return false;
+  if(/^[A-ZÁÉÍÓÚÂÊÔÃÕÇ0-9][A-ZÁÉÍÓÚÂÊÔÃÕÇ0-9\s:–—()/%ºª,.-]+$/.test(l)&&l.split(/\s+/).length<=12)return true;
+  return false;
+}
+function parse(raw,mode){
+  const lines=cleanLines(raw,mode);
+  const blocks=[];
+  let para=[];
+  const flush=()=>{if(para.length){blocks.push({type:'p',text:para.join(' ')});para=[]}};
+  for(let i=0;i<lines.length;i++){
+    const line=lines[i];
+    if(!line){flush();continue}
+    const hi=headingInfo(line);
+    if(hi){flush();blocks.push({type:'h',level:hi.level,text:hi.text});continue}
+    const co=calloutType(line);
+    if(co){
+      flush();
+      const body=[];
+      for(let j=i+1;j<lines.length;j++){
+        const next=lines[j];
+        if(!next){if(body.length)break;else continue}
+        if(headingInfo(next)||calloutType(next)||looksTitle(next))break;
+        body.push(next);i=j;
+      }
+      blocks.push({type:'callout',kind:co[0],label:co[1],text:body.join(' ')});
+      continue;
+    }
+    if(isBullet(line)){
+      flush();
+      const items=[line.replace(/^[•●▪◦*-]\s+/,'')];
+      while(i+1<lines.length&&isBullet(lines[i+1]))items.push(lines[++i].replace(/^[•●▪◦*-]\s+/,''));
+      blocks.push({type:'ul',items});
+      continue;
+    }
+    if(looksTitle(line)&&mode==='summary'){flush();blocks.push({type:'h',level:3,text:line});continue}
+    para.push(line);
+  }
+  flush();
+  const firstH=blocks.findIndex(b=>b.type==='h');
+  if(firstH>2){
+    const lead=blocks.slice(0,firstH).filter(b=>b.type==='p').map(b=>b.text).join(' ');
+    blocks.splice(0,firstH,{type:'lead',text:lead});
+  }
+  return blocks;
+}
+function buildHtml(data,mode){
+  if(mode==='complete'){
+    const host=document.createElement('div');
+    host.innerHTML=global.PENAL_FULL_THEORY?.p6?.html||'';
+    host.querySelector('.pen-m6-cover')?.remove();
+    host.querySelector('.pen-m6-toc')?.remove();
+    host.querySelector('.pen-m6-orientacao')?.remove();
+    host.querySelector('#pen-m6-revisao')?.remove();
+
+    const headings=[];
+    host.querySelectorAll('section.pen-m6-session').forEach((section,index)=>{
+      const h=section.querySelector('.pen-m6-session-head h3');
+      if(!h)return;
+      if(!h.id)h.id='bcsec-complete-'+(index+1)+'-'+slug(h.textContent);
+      headings.push({id:h.id,text:norm(h.textContent),level:2,key:normKey(h.textContent)});
+    });
+
+    host.querySelectorAll('.pen-m6-box').forEach(el=>el.classList.add('bc-native-callout'));
+    host.querySelectorAll('.pen-m6-table-wrap').forEach(el=>el.classList.add('bc-native-table-wrap'));
+
+    const text=norm(host.textContent);
+    const words=text.split(/\s+/).filter(Boolean).length;
+    const mins=Math.max(1,Math.round(words/190));
+    return {body:host.innerHTML,headings,words,mins};
+  }
+
+  const raw=mode==='summary'?data.summary:data.complete;
+  const blocks=parse(raw,mode);
+  const headings=[];
+  let hCount=0;
+  const body=blocks.map(b=>{
+    if(b.type==='h'){
+      const id='bcsec-'+(++hCount)+'-'+slug(b.text);
+      headings.push({id,text:b.text,level:b.level,key:normKey(b.text)});
+      return '<h'+b.level+' id="'+id+'">'+esc(b.text)+'</h'+b.level+'>';
+    }
+    if(b.type==='lead')return '<p class="lead">'+esc(b.text)+'</p>';
+    if(b.type==='p')return '<p>'+esc(b.text)+'</p>';
+    if(b.type==='ul')return '<ul>'+b.items.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul>';
+    if(b.type==='callout')return '<aside class="bc-native-callout '+b.kind+'"><b>'+esc(b.label)+'</b><div>'+esc(b.text)+'</div></aside>';
+    return '';
+  }).join('');
+  const words=norm(raw).split(/\s+/).filter(Boolean).length;
+  const mins=Math.max(1,Math.round(words/(mode==='summary'?220:190)));
+  return {body,headings,words,mins};
+}
+function modeChapters(data,mode){return Array.isArray(data?.chapters?.[mode])?data.chapters[mode]:[]}
+function modeQuestions(data,mode){return Array.isArray(data?.internalQuestions?.[mode])?data.internalQuestions[mode]:[]}
+function chapterDone(mode,id){return localStorage.getItem(storageKey('chapter:'+mode+':'+id))==='1'}
+function setChapterDone(mode,id,done){
+  localStorage.setItem(storageKey('chapter:'+mode+':'+id),done?'1':'0');
+}
+function internalAnswer(mode,id){
+  try{return JSON.parse(localStorage.getItem(storageKey('internal:'+mode+':'+id))||'null')}catch(_){return null}
+}
+function saveInternalAnswer(mode,q,selected){
+  const prev=internalAnswer(mode,q.id)||{attempts:0};
+  const state={
+    selected:Number(selected),
+    correct:Number(selected)===Number(q.answer),
+    attempts:(prev.attempts||0)+1,
+    updatedAt:new Date().toISOString()
+  };
+  localStorage.setItem(storageKey('internal:'+mode+':'+q.id),JSON.stringify(state));
+  return state;
+}
+function resetInternalAnswer(mode,id){localStorage.removeItem(storageKey('internal:'+mode+':'+id))}
+
+function modeStudyStats(data,mode){
+  const chapters=modeChapters(data,mode);
+  const questions=modeQuestions(data,mode);
+  const chapterDoneCount=chapters.filter(ch=>chapterDone(mode,ch.id)).length;
+  const answered=questions.filter(q=>!!internalAnswer(mode,q.id)).length;
+  const correct=questions.filter(q=>internalAnswer(mode,q.id)?.correct).length;
+  return {
+    chapterDone:chapterDoneCount,
+    chapterTotal:chapters.length,
+    answered,
+    questionTotal:questions.length,
+    correct,
+    done:chapterDoneCount+answered,
+    total:chapters.length+questions.length
+  };
+}
+function theoryStats(){
+  const data=source();
+  if(!data)return {done:0,total:0,pct:0};
+  const s=modeStudyStats(data,'summary');
+  const c=modeStudyStats(data,'complete');
+  const done=s.done+c.done,total=s.total+c.total;
+  return {done,total,pct:total?Math.round(done/total*100):0,summary:s,complete:c};
+}
+function externalStats(){
+  try{
+    const rows=JSON.parse(localStorage.getItem('central-v6:module-rounds:penal:p6')||'[]');
+    const valid=(Array.isArray(rows)?rows:[]).map(r=>({
+      done:Math.max(0,Number(r.valid ?? r.done)||0),
+      correct:Math.max(0,Number(r.correct)||0)
+    })).filter(r=>r.done>0);
+    const answered=valid.reduce((n,r)=>n+r.done,0);
+    const correct=valid.reduce((n,r)=>n+Math.min(r.correct,r.done),0);
+    return {answered,correct,rounds:valid.length,accuracy:answered?Math.round(correct/answered*100):null};
+  }catch(_){
+    return {answered:0,correct:0,rounds:0,accuracy:null};
+  }
+}
+function setRing(el,pct,label){
+  if(!el)return;
+  const safe=Math.max(0,Math.min(100,Number(pct)||0));
+  el.style.setProperty('--pct',String(safe));
+  const value=el.querySelector('[data-ring-value]');
+  if(value)value.textContent=label??(safe+'%');
+}
+function refreshModuleMetrics(){
+  const module=document.querySelector(M1_SELECTOR);
+  if(!module)return;
+  const theory=theoryStats(),external=externalStats();
+
+  setRing(module.querySelector('[data-native-ring="theory"]'),theory.pct,theory.pct+'%');
+  const theoryDetail=module.querySelector('[data-native-metric-detail="theory"]');
+  if(theoryDetail)theoryDetail.textContent=theory.done+' de '+theory.total+' pontos concluídos';
+
+  setRing(module.querySelector('[data-native-ring="external"]'),external.accuracy??0,external.accuracy==null?'—':external.accuracy+'%');
+  const extDetail=module.querySelector('[data-native-metric-detail="external"]');
+  if(extDetail){
+    extDetail.textContent=external.answered
+      ? external.correct+' acertos em '+external.answered+' questões externas'
+      : 'Nenhuma questão externa respondida';
+  }
+  const extMeta=module.querySelector('[data-native-metric-meta="external"]');
+  if(extMeta)extMeta.textContent=external.answered
+    ? external.rounds+' rodada(s) registrada(s) no final do módulo'
+    : 'Registre questões externas no final do módulo';
+
+  const headerStat=module.querySelector('.cf-module-stat');
+  if(headerStat)headerStat.textContent='Cobertura '+theory.pct+'% • teoria + revisão interna';
+  const legacyBar=module.querySelector('.cf-module-bar span');
+  if(legacyBar)legacyBar.style.width=theory.pct+'%';
+  refreshCardState();
+}
+function refreshCardState(){
+  const data=source();if(!data)return;
+  ['summary','complete'].forEach(kind=>{
+    const st=modeStudyStats(data,kind);
+    document.querySelectorAll(M1_SELECTOR+' [data-native-kind="'+kind+'"]').forEach(card=>{
+      const tag=card.querySelector('.bc-native-material-action span:first-child');
+      if(tag)tag.textContent=st.done===st.total&&st.total?'✓ Concluído':st.chapterDone+'/'+st.chapterTotal+' capítulos';
+    });
+  });
+}
+
+function close(){
+  document.getElementById(OVERLAY_ID)?.remove();
+  document.body.style.overflow='';
+  current=null;
+}
+function buildChapterMap(){
+  if(!current)return [];
+  return modeChapters(source(),current.mode).map(ch=>({chapter:ch,heading:findHeadingForChapter(ch)})).filter(x=>x.heading);
+}
+function autoMarkViewedChapters(){
+  if(!current||!current.chapterMap?.length)return;
+  const sc=current.scroll;
+  const viewportBottom=sc.scrollTop+sc.clientHeight;
+  let changed=false;
+  current.chapterMap.forEach((item,index)=>{
+    if(chapterDone(current.mode,item.chapter.id))return;
+    const start=item.heading.offsetTop;
+    const next=current.chapterMap[index+1]?.heading?.offsetTop ?? current.article.scrollHeight;
+    const target=start+Math.max(80,(next-start)*0.72);
+    if(viewportBottom>=target){
+      setChapterDone(current.mode,item.chapter.id,true);
+      changed=true;
+    }
+  });
+  if(changed)refreshReaderStudyUI();
+}
+function updateScrollProgress(){
+  if(!current)return;
+  const sc=current.scroll;
+  const max=Math.max(1,sc.scrollHeight-sc.clientHeight);
+  const pct=Math.max(0,Math.min(100,sc.scrollTop/max*100));
+  const bar=current.overlay.querySelector('.bc-native-reader-progress');
+  if(bar)bar.style.width=pct+'%';
+  localStorage.setItem(storageKey(current.mode+':scroll'),String(sc.scrollTop));
+  autoMarkViewedChapters();
+}
+function restoreScroll(){
+  if(!current)return;
+  const v=Number(localStorage.getItem(storageKey(current.mode+':scroll'))||0);
+  if(v>0)current.scroll.scrollTop=v;
+}
+function setFont(delta){
+  if(!current)return;
+  current.font=Math.max(14,Math.min(21,current.font+delta));
+  current.article.style.fontSize=current.font+'px';
+  localStorage.setItem(storageKey('font'),String(current.font));
+}
+function stripMarks(){
+  if(!current)return;
+  current.article.querySelectorAll('mark.bc-native-search-hit').forEach(m=>m.replaceWith(document.createTextNode(m.textContent)));
+  current.article.normalize();
+}
+function search(term){
+  stripMarks();
+  term=norm(term);
+  if(term.length<2)return 0;
+  let n=0;
+  const root=current.article;
+  const walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode(node){
+    if(!node.nodeValue.trim())return NodeFilter.FILTER_REJECT;
+    if(node.parentElement.closest('mark'))return NodeFilter.FILTER_REJECT;
+    return node.nodeValue.toLocaleLowerCase('pt-BR').includes(term.toLocaleLowerCase('pt-BR'))?NodeFilter.FILTER_ACCEPT:NodeFilter.FILTER_REJECT;
+  }});
+  const nodes=[];while(walker.nextNode())nodes.push(walker.currentNode);
+  for(const node of nodes){
+    const raw=node.nodeValue,low=raw.toLocaleLowerCase('pt-BR'),needle=term.toLocaleLowerCase('pt-BR');
+    let pos=0,idx;const frag=document.createDocumentFragment();
+    while((idx=low.indexOf(needle,pos))>=0){
+      frag.append(raw.slice(pos,idx));
+      const mk=document.createElement('mark');mk.className='bc-native-search-hit';mk.textContent=raw.slice(idx,idx+term.length);frag.append(mk);
+      n++;pos=idx+term.length;
+    }
+    frag.append(raw.slice(pos));node.replaceWith(frag);
+  }
+  root.querySelector('mark.bc-native-search-hit')?.scrollIntoView({block:'center'});
+  return n;
+}
+function findHeadingForChapter(chapter){
+  if(!current)return null;
+  const target=normKey(chapter.title).replace(/^\d+\s+/,'');
+  const words=target.split(' ').filter(w=>w.length>3);
+  const headings=Array.from(current.article.querySelectorAll('h2,h3'));
+  let best=null,bestScore=0;
+  for(const h of headings){
+    const hk=normKey(h.textContent);
+    let score=0;
+    words.forEach(w=>{if(hk.includes(w))score++});
+    if(score>bestScore){bestScore=score;best=h}
+  }
+  return bestScore>=Math.max(1,Math.min(2,words.length))?best:null;
+}
+function refreshReaderStudyUI(){
+  if(!current)return;
+  const data=source(),st=modeStudyStats(data,current.mode);
+  const value=current.overlay.querySelector('[data-reader-study-value]');
+  const bar=current.overlay.querySelector('[data-reader-study-bar]');
+  const qscore=current.overlay.querySelector('[data-reader-internal-score]');
+  if(value)value.textContent=st.done+' / '+st.total+' pontos';
+  if(bar)bar.style.width=(st.total?Math.round(st.done/st.total*100):0)+'%';
+  if(qscore)qscore.textContent=st.answered
+    ? st.correct+' acertos em '+st.answered+' respondidas'
+    : 'Nenhuma questão interna respondida';
+
+  current.overlay.querySelectorAll('[data-chapter-check]').forEach(btn=>{
+    const done=chapterDone(current.mode,btn.dataset.chapterCheck);
+    btn.classList.toggle('done',done);
+    btn.setAttribute('aria-pressed',String(done));
+    btn.textContent=done?'✓':'';
+  });
+  refreshModuleMetrics();
+}
+function chapterTocHtml(data,mode){
+  return modeChapters(data,mode).map((ch,i)=>{
+    const done=chapterDone(mode,ch.id);
+    return '<div class="bc-native-toc-row">'+
+      '<button type="button" class="bc-native-chapter-check '+(done?'done':'')+'" data-chapter-check="'+esc(ch.id)+'" aria-pressed="'+done+'" title="Marcar capítulo">'+(done?'✓':'')+'</button>'+
+      '<button type="button" class="bc-native-chapter-jump" data-chapter-jump="'+esc(ch.id)+'"><span>'+(i+1)+'.</span>'+esc(ch.title)+'</button>'+
+    '</div>';
+  }).join('');
+}
+function quizHtml(data,mode){
+  const qs=modeQuestions(data,mode);
+  if(!qs.length)return '';
+  const cards=qs.map((q,i)=>{
+    const a=internalAnswer(mode,q.id);
+    const options=q.options.map((op,idx)=>{
+      let cls='';
+      if(a){
+        if(idx===q.answer)cls+=' correct';
+        if(idx===a.selected&&idx!==q.answer)cls+=' wrong';
+      }
+      return '<button type="button" class="bc-native-quiz-option'+cls+'" data-internal-q="'+esc(q.id)+'" data-option="'+idx+'" '+(a?'disabled':'')+'><span>'+String.fromCharCode(65+idx)+'</span>'+esc(op)+'</button>';
+    }).join('');
+    return '<article class="bc-native-quiz-card" data-quiz-card="'+esc(q.id)+'">'+
+      '<div class="bc-native-quiz-number">Questão '+(i+1)+' de '+qs.length+'</div>'+
+      '<h3>'+esc(q.q)+'</h3>'+
+      '<div class="bc-native-quiz-options">'+options+'</div>'+
+      '<div class="bc-native-quiz-feedback '+(a?(a.correct?'ok':'bad'):'')+'" data-quiz-feedback>'+
+        (a?'<b>'+(a.correct?'✓ Correto':'✕ Incorreto')+'</b><span>'+esc(q.explanation)+'</span><button type="button" data-internal-retry="'+esc(q.id)+'">Refazer</button>':'<span>Escolha uma alternativa para receber o feedback.</span>')+
+      '</div>'+
+    '</article>';
+  }).join('');
+  return '<section class="bc-native-internal-review">'+
+    '<div class="bc-native-internal-review-head"><div><span class="bc-native-kicker">REVISÃO ATIVA INTERNA</span><h2>'+qs.length+' questões de assimilação</h2><p>Estas questões contam na <b>cobertura da teoria</b>. Elas não entram no gráfico de questões externas.</p></div><div class="bc-native-internal-score" data-reader-internal-score></div></div>'+
+    cards+
+  '</section>';
+}
+function bindQuiz(){
+  if(!current)return;
+  const data=source();
+  current.overlay.querySelectorAll('[data-internal-q]').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const q=modeQuestions(data,current.mode).find(x=>x.id===btn.dataset.internalQ);
+      if(!q)return;
+      saveInternalAnswer(current.mode,q,Number(btn.dataset.option));
+      rerenderQuizCard(q.id);
+      refreshReaderStudyUI();
+    });
+  });
+  current.overlay.querySelectorAll('[data-internal-retry]').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      resetInternalAnswer(current.mode,btn.dataset.internalRetry);
+      rerenderQuizCard(btn.dataset.internalRetry);
+      refreshReaderStudyUI();
+    });
+  });
+}
+function rerenderQuizCard(id){
+  if(!current)return;
+  const data=source(),q=modeQuestions(data,current.mode).find(x=>x.id===id);
+  const old=current.overlay.querySelector('[data-quiz-card="'+CSS.escape(id)+'"]');
+  if(!q||!old)return;
+  const i=modeQuestions(data,current.mode).findIndex(x=>x.id===id);
+  const a=internalAnswer(current.mode,id);
+  const options=q.options.map((op,idx)=>{
+    let cls='';
+    if(a){
+      if(idx===q.answer)cls+=' correct';
+      if(idx===a.selected&&idx!==q.answer)cls+=' wrong';
+    }
+    return '<button type="button" class="bc-native-quiz-option'+cls+'" data-internal-q="'+esc(q.id)+'" data-option="'+idx+'" '+(a?'disabled':'')+'><span>'+String.fromCharCode(65+idx)+'</span>'+esc(op)+'</button>';
+  }).join('');
+  old.innerHTML='<div class="bc-native-quiz-number">Questão '+(i+1)+' de '+modeQuestions(data,current.mode).length+'</div>'+
+    '<h3>'+esc(q.q)+'</h3><div class="bc-native-quiz-options">'+options+'</div>'+
+    '<div class="bc-native-quiz-feedback '+(a?(a.correct?'ok':'bad'):'')+'" data-quiz-feedback>'+
+      (a?'<b>'+(a.correct?'✓ Correto':'✕ Incorreto')+'</b><span>'+esc(q.explanation)+'</span><button type="button" data-internal-retry="'+esc(q.id)+'">Refazer</button>':'<span>Escolha uma alternativa para receber o feedback.</span>')+
+    '</div>';
+  bindQuiz();
+}
+function open(mode){
+  const data=source();if(!data){alert('Conteúdo nativo do M01 ainda não foi carregado.');return}
+  close();
+  const parsed=buildHtml(data,mode);
+  const label=mode==='summary'?'Conteúdo resumido':'Conteúdo completo';
+  const chapters=modeChapters(data,mode),questions=modeQuestions(data,mode);
+  const ov=document.createElement('div');
+  ov.id=OVERLAY_ID;ov.className='bc-native-reader-overlay';
+  ov.innerHTML='<section class="bc-native-reader" role="dialog" aria-modal="true" aria-label="'+esc(label)+'">'+
+    '<header class="bc-native-reader-head"><div class="bc-native-reader-title"><b>PEN M06 — '+esc(data.title)+'</b><small>'+label+' • experiência nativa da Base Completa</small></div><span class="bc-native-reader-meta">'+parsed.words.toLocaleString('pt-BR')+' palavras • ~'+parsed.mins+' min</span><button class="bc-native-reader-close" data-native-action="close" aria-label="Fechar">×</button><div class="bc-native-reader-progress-track"><div class="bc-native-reader-progress"></div></div></header>'+
+    '<div class="bc-native-reader-tools"><input type="search" placeholder="Buscar neste material…" aria-label="Buscar"><button data-native-action="smaller">A−</button><button data-native-action="larger">A+</button><button class="primary" data-native-action="top">Ir ao topo</button></div>'+
+    '<div class="bc-native-reader-body">'+
+      '<nav class="bc-native-toc"><div class="bc-native-toc-label">Capítulos para concluir</div>'+chapterTocHtml(data,mode)+'</nav>'+
+      '<main class="bc-native-scroll"><article class="bc-native-article">'+
+        '<div class="bc-native-kicker">'+(mode==='summary'?'PRIMEIRA LEITURA + REVISÃO':'TEORIA INTEGRAL')+'</div>'+
+        '<h1>'+esc(data.title)+'</h1>'+
+        '<p class="lead">'+(mode==='summary'?'Versão condensada para compreender o módulo e revisar os pontos de maior rendimento.':'Conteúdo integral convertido para leitura nativa, sem leitor de PDF.')+'</p>'+
+        '<section class="bc-native-study-progress"><div><b>Progresso neste material</b><span data-reader-study-value>0 / '+(chapters.length+questions.length)+' pontos</span></div><div class="bc-native-study-progress-track"><span data-reader-study-bar></span></div><small>'+chapters.length+' capítulos + '+questions.length+' questões internas. Os capítulos recebem check automaticamente conforme você avança; as questões internas também entram na cobertura da teoria.</small></section>'+
+        parsed.body+
+        quizHtml(data,mode)+
+      '</article></main>'+
+    '</div></section>';
+  document.body.appendChild(ov);document.body.style.overflow='hidden';
+
+  current={
+    mode,overlay:ov,scroll:ov.querySelector('.bc-native-scroll'),article:ov.querySelector('.bc-native-article'),
+    font:Number(localStorage.getItem(storageKey('font'))||16),chapterMap:[]
+  };
+  current.article.style.fontSize=current.font+'px';
+  current.scroll.addEventListener('scroll',updateScrollProgress,{passive:true});
+  ov.querySelector('[data-native-action="close"]').onclick=close;
+  ov.querySelector('[data-native-action="smaller"]').onclick=()=>setFont(-1);
+  ov.querySelector('[data-native-action="larger"]').onclick=()=>setFont(1);
+  ov.querySelector('[data-native-action="top"]').onclick=()=>current.scroll.scrollTo({top:0,behavior:'smooth'});
+  ov.querySelector('.bc-native-reader-tools input').addEventListener('input',e=>search(e.target.value));
+
+  ov.querySelectorAll('[data-chapter-check]').forEach(btn=>{
+    btn.onclick=()=>{
+      const id=btn.dataset.chapterCheck;
+      setChapterDone(mode,id,!chapterDone(mode,id));
+      refreshReaderStudyUI();
+    };
+  });
+  ov.querySelectorAll('[data-chapter-jump]').forEach(btn=>{
+    btn.onclick=()=>{
+      const ch=modeChapters(data,mode).find(x=>x.id===btn.dataset.chapterJump);
+      findHeadingForChapter(ch)?.scrollIntoView({behavior:'smooth',block:'start'});
+    };
+  });
+
+  bindQuiz();
+  ov.addEventListener('click',e=>{if(e.target===ov)close()});
+  requestAnimationFrame(()=>{
+    current.chapterMap=buildChapterMap();
+    restoreScroll();updateScrollProgress();refreshReaderStudyUI();autoMarkViewedChapters();
+  });
+}
+function openMap(){
+  if(global.BaseMindMap?.open)global.BaseMindMap.open('penal','p6');
+  else alert('O mapa mental interativo ainda está carregando. Tente novamente em alguns segundos.');
+}
+function removeLegacyM01Content(){
+  const module=document.querySelector(M1_SELECTOR);
+  if(!module)return;
+  module.querySelectorAll('.bc-session-nav,.bc-session-pager').forEach(el=>el.remove());
+}
+function inject(){
+  const module=document.querySelector(M1_SELECTOR);if(!module)return;
+  removeLegacyM01Content();
+  const body=module.querySelector('.cf-module-body');if(!body)return;
+
+  // Fallback: a renderização principal já entrega os cards diretamente.
+  if(!body.querySelector('.bc-native-materials')){
+    const host=document.createElement('section');host.className='bc-native-materials';
+    host.innerHTML='<div class="bc-native-materials-head"><div><b>Materiais do módulo</b><small>Escolha como estudar</small></div><small>Piloto M06 • conteúdo nativo</small></div>'+
+      '<div class="bc-native-material-grid">'+
+        '<button class="bc-native-material-card" data-native-kind="summary"><span class="bc-native-material-icon">⚡</span><span><strong>Conteúdo resumido</strong><small>Primeira leitura, revisão rápida, artigos, pegadinhas e revisão ativa.</small></span><span class="bc-native-material-action"><span>Abrir</span><span>→</span></span></button>'+
+        '<button class="bc-native-material-card" data-native-kind="complete"><span class="bc-native-material-icon">📚</span><span><strong>Conteúdo completo</strong><small>Teoria integral do M06 em formato de site, com índice, busca e progresso de leitura.</small></span><span class="bc-native-material-action"><span>Abrir</span><span>→</span></span></button>'+
+        '<button class="bc-native-material-card" data-native-kind="mindmap"><span class="bc-native-material-icon">🧠</span><span><strong>Mapa mental</strong><small>Mapa interativo com abrir/recolher ramos, zoom, arrastar e tela cheia.</small></span><span class="bc-native-material-action"><span>Abrir</span><span>→</span></span></button>'+
+      '</div>';
+    host.querySelector('[data-native-kind="summary"]').onclick=()=>open('summary');
+    host.querySelector('[data-native-kind="complete"]').onclick=()=>open('complete');
+    host.querySelector('[data-native-kind="mindmap"]').onclick=openMap;
+    const subtitle=body.querySelector('.cf-subtitle');
+    if(subtitle)subtitle.insertAdjacentElement('afterend',host);else body.insertAdjacentElement('afterbegin',host);
+  }
+  refreshModuleMetrics();
+}
+function install(){
+  inject();
+  observer=new MutationObserver(()=>{
+    clearTimeout(install._t);
+    install._t=setTimeout(()=>{removeLegacyM01Content();inject();refreshModuleMetrics()},60);
+  });
+  observer.observe(document.documentElement,{subtree:true,childList:true});
+  global.addEventListener('focus',refreshModuleMetrics);
+}
+global.BaseNativeReaderM06={
+  open,close,refreshMetrics:refreshModuleMetrics,theoryStats,externalStats,
+  version:'2026.10.02-m06-pilot1'
+};
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&document.getElementById(OVERLAY_ID))close()});
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',install);else install();
+})(window);
