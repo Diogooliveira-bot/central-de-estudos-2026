@@ -75,3 +75,22 @@ html[data-bc-theme="dark"] .bc-native-reader-footer button,html[data-bc-theme="o
  .bc-native-reader-tools input{min-width:170px;width:170px}
  .bc-native-reader-meta{display:none}
 }
+
+
+/* Piloto M01 enxuto:
+   conserva somente cabeçalho padrão do módulo, materiais e rodapé padrão. */
+html.bc-ui-v1 #subjects .cf-module[data-cf="p1"] > .cf-module-body > :not(.bc-native-materials):not(.ds-module-footer){
+  display:none!important;
+}
+html.bc-ui-v1 #subjects .cf-module[data-cf="p1"] > .cf-module-body{
+  padding-top:20px!important;
+}
+html.bc-ui-v1 #subjects .cf-module[data-cf="p1"] > .cf-module-body > .bc-native-materials{
+  display:block!important;
+  margin-top:0!important;
+  margin-bottom:22px!important;
+}
+html.bc-ui-v1 #subjects .cf-module[data-cf="p1"] > .cf-module-body > .ds-module-footer{
+  display:block!important;
+  margin-top:0!important;
+}
