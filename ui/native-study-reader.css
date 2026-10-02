@@ -277,3 +277,15 @@ html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-module[data-cf="p1"] .bc-n
   .bc-native-internal-review-head{display:block}
   .bc-native-internal-score{margin-top:10px;width:100%}
 }
+
+
+/* M01 piloto revisado: os dois indicadores nativos substituem o painel genérico antigo. */
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-module[data-cf="p1"] > .cf-module-body > .csp-panel.ds-progress{
+  display:none!important;
+}
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-module[data-cf="p1"] .bc-native-toc-label::after{
+  content:" • check automático ao avançar";
+  font-weight:600;
+  letter-spacing:0;
+  text-transform:none;
+}
