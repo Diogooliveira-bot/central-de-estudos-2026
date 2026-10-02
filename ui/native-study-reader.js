@@ -217,6 +217,8 @@ function refreshModuleMetrics(){
 
   const headerStat=module.querySelector('.cf-module-stat');
   if(headerStat)headerStat.textContent='Cobertura '+theory.pct+'% • teoria + revisão interna';
+  const legacyBar=module.querySelector('.cf-module-bar span');
+  if(legacyBar)legacyBar.style.width=theory.pct+'%';
   refreshCardState();
 }
 function refreshCardState(){
