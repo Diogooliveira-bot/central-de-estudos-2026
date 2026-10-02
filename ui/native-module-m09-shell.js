@@ -33,3 +33,25 @@ function install(){
 }
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',install);else install();
 })(window);
+
+/* M10 preview loader */
+(function(){
+  var css=document.createElement('link');
+  css.rel='stylesheet';
+  css.href='/ui/native-study-reader.css?v=20261002m10p1';
+  css.setAttribute('data-bc-m10-css','1');
+  document.head.appendChild(css);
+
+  function load(src,next){
+    var s=document.createElement('script');
+    s.src=src;
+    s.async=false;
+    s.onload=function(){if(next)next();};
+    document.head.appendChild(s);
+  }
+  load('/content/penal/m10-native-data.js?v=20261002m10p1',function(){
+    load('/ui/native-study-reader-m10.js?v=20261002m10p1',function(){
+      load('/ui/native-module-m10-shell.js?v=20261002m10p1');
+    });
+  });
+})();
