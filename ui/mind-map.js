@@ -2,7 +2,7 @@
 'use strict';
 
 const SUBJECT='penal';
-const MODULE_SELECTOR='#subjects .cf-module[data-cf]';
+const MODULE_SELECTOR='#subjects .subject[data-id="penal"] .cf-module[data-cf]';
 const ENTRY_CLASS='bc-mindmap-entry';
 const OVERLAY_ID='bcMindMapOverlay';
 const registry=new Map();
@@ -477,7 +477,7 @@ function register(subject,moduleId,tree){
 }
 
 global.BaseMindMap={
-  open:function(subject,moduleId){ open(subject,moduleId,document.querySelector('.subject[data-id="'+subject+'"] [data-cf="'+moduleId+'"]')); },
+  open:function(subject,moduleId){ open(subject,moduleId,document.querySelector('#subjects .subject[data-id="'+subject+'"] [data-cf="'+moduleId+'"]')); },
   close:close,
   register:register,
   version:'2026.10.01-preview1'
