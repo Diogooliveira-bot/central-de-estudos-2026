@@ -219,8 +219,21 @@ function openMap(){
   if(global.BaseMindMap?.open) global.BaseMindMap.open('penal','p1');
   else alert('O mapa mental interativo ainda está carregando. Tente novamente em alguns segundos.');
 }
+
+function removeLegacyM01Content(){
+  const module=document.querySelector(M1_SELECTOR);
+  if(!module) return;
+  module.querySelectorAll('.cf-step').forEach(function(step){
+    const title=norm(step.querySelector('.cf-step-copy b')?.textContent||'');
+    if(/^(Leitura orientada|Teoria completa|Aprofundamento FCC)$/i.test(title)){
+      step.remove();
+    }
+  });
+}
+
 function inject(){
   const module=document.querySelector(M1_SELECTOR);if(!module)return;
+  removeLegacyM01Content();
   const body=module.querySelector('.cf-module-body');if(!body||body.querySelector('.bc-native-materials'))return;
   const host=document.createElement('section');host.className='bc-native-materials';
   host.innerHTML='<div class="bc-native-materials-head"><div><b>Materiais do módulo</b><small>Escolha como estudar</small></div><small>Piloto M01 • sem PDF embutido</small></div>'+
@@ -238,7 +251,7 @@ function inject(){
 }
 function install(){
   inject();
-  observer=new MutationObserver(()=>{clearTimeout(install._t);install._t=setTimeout(inject,50)});
+  observer=new MutationObserver(()=>{clearTimeout(install._t);install._t=setTimeout(()=>{removeLegacyM01Content();inject()},50)});
   observer.observe(document.documentElement,{subtree:true,childList:true});
 }
 global.BaseNativeReader={open,close,version:'2026.10.02-m01-pilot1'};
