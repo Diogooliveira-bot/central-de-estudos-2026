@@ -223,33 +223,7 @@ function openMap(){
 function removeLegacyM01Content(){
   const module=document.querySelector(M1_SELECTOR);
   if(!module) return;
-
-  // Remove o índice/paginadores de sessões apenas no piloto M01.
   module.querySelectorAll('.bc-session-nav,.bc-session-pager').forEach(function(el){ el.remove(); });
-
-  // Mantém o primeiro card visual, mas transforma "Leitura orientada" em um resumo curto do módulo.
-  module.querySelectorAll('.cf-step').forEach(function(step){
-    const title=norm(step.querySelector('.cf-step-copy b')?.textContent||'');
-
-    if(/^Leitura orientada$/i.test(title)){
-      step.classList.add('bc-native-module-summary');
-      step.innerHTML =
-        '<div class="cf-step-head">'+
-          '<div class="cf-step-no">1</div>'+
-          '<div class="cf-step-copy"><b>Resumo do módulo</b><small>O M01 em poucas palavras.</small></div>'+
-        '</div>'+
-        '<div class="cf-step-body">'+
-          '<div class="bc-native-module-summary-text">'+
-            'Legalidade e princípios penais • interpretação e analogia • intervenção mínima e insignificância • conflito aparente de normas (ESCA).'+
-          '</div>'+
-        '</div>';
-      return;
-    }
-
-    if(/^(Teoria completa|Aprofundamento FCC)$/i.test(title)){
-      step.remove();
-    }
-  });
 }
 
 function inject(){
@@ -262,7 +236,11 @@ function inject(){
    '<button class="bc-native-material-card" data-native-kind="summary"><span class="bc-native-material-icon">⚡</span><span><strong>Conteúdo resumido</strong><small>Primeira leitura, revisão rápida, artigos, pegadinhas e revisão ativa.</small></span><span class="bc-native-material-action"><span>Abrir</span><span>→</span></span></button>'+
    '<button class="bc-native-material-card" data-native-kind="complete"><span class="bc-native-material-icon">📚</span><span><strong>Conteúdo completo</strong><small>Teoria integral do M01 em formato de site, com índice, busca e progresso de leitura.</small></span><span class="bc-native-material-action"><span>Abrir</span><span>→</span></span></button>'+
    '<button class="bc-native-material-card" data-native-kind="mindmap"><span class="bc-native-material-icon">🧠</span><span><strong>Mapa mental</strong><small>Ferramenta interativa aprovada: abrir/recolher ramos, zoom, arrastar e tela cheia.</small></span><span class="bc-native-material-action"><span>Abrir</span><span>→</span></span></button>'+
-  '</div>';
+  '</div>'+
+  '<section class="bc-native-quick-summary" aria-label="Resumo do módulo">'+
+    '<div class="bc-native-quick-summary-head"><span class="bc-native-quick-summary-no">1</span><div><b>Resumo do módulo</b><small>O M01 em poucas palavras.</small></div></div>'+
+    '<div class="bc-native-quick-summary-body">Legalidade e princípios penais • interpretação e analogia • intervenção mínima e insignificância • conflito aparente de normas (ESCA).</div>'+
+  '</section>';
   host.querySelector('[data-native-kind="summary"]').onclick=()=>open('summary');
   host.querySelector('[data-native-kind="complete"]').onclick=()=>open('complete');
   host.querySelector('[data-native-kind="mindmap"]').onclick=openMap;
