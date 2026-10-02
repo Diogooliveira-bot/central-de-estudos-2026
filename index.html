@@ -830,7 +830,7 @@ setTimeout(function(){
    </div>
   </section>
 
-  <section class="view hidden" id="disciplinesView"><button type="button" class="central-view-back" onclick="return openHome()" aria-label="Voltar ao início">‹ Central</button><div class="hero"><div><h1>Disciplinas</h1><p>As matérias abaixo são alimentadas pelas estruturas já existentes nos projetos recuperados.</p></div></div><div class="discipline-grid" id="disciplineGrid"><button type="button" class="disc-card" data-id="pt" onclick="return centralHardSubject('pt')"><b>Português</b><small>17 módulos • curso integrado</small><span class="disc-meta">Abrir disciplina</span></button>
+  <section class="view hidden" id="disciplinesView"><button type="button" class="central-view-back" onclick="return openHome()" aria-label="Voltar ao início">‹ Central</button><div class="hero"><div><h1>Disciplinas</h1><p>Escolha uma disciplina para abrir seus módulos e continuar o estudo.</p></div></div><div class="discipline-grid" id="disciplineGrid"><button type="button" class="disc-card" data-id="pt" onclick="return centralHardSubject('pt')"><b>Português</b><small>17 módulos • curso integrado</small><span class="disc-meta">Abrir disciplina</span></button>
 <button type="button" class="disc-card" data-id="cf" onclick="return centralHardSubject('cf')"><b>Direito Constitucional</b><small>curso integrado por módulos</small><span class="disc-meta">Abrir disciplina</span></button>
 <button type="button" class="disc-card" data-id="adm" onclick="return centralHardSubject('adm')"><b>Direito Administrativo</b><small>tópicos do edital</small><span class="disc-meta">Abrir disciplina</span></button>
 <button type="button" class="disc-card" data-id="civil" onclick="return centralHardSubject('civil')"><b>Direito Civil</b><small>curso integrado por módulos</small><span class="disc-meta">Abrir disciplina</span></button>
@@ -1101,7 +1101,7 @@ window.centralBackupImport=function(inp){
 <script src="/central-structural-v66119/cpc-questions-011.js?v=66119s2"></script>
 <script src="/central-structural-v66119/cpc-questions-012.js?v=66119s2"></script>
 <script src="/central-structural-v66119/cpc-questions-013.js?v=66119s2"></script>
-<script src="/central-structural-v66119/runtime.js?v=20261001fix1"></script>
+<script src="/central-structural-v66119/runtime.js?v=20261002navigation2"></script>
 <script src="/portugues-native-v1.js?v=20260921n2"></script>
 <script src="/central-reading-font-v66126.js?v=20260921font250"></script>
 <script src="/penal-full-theory-data-01.js?v=20260919b"></script>
@@ -1818,6 +1818,7 @@ function centralToolPath(name,opts={}){
  return base+suffix+hash;
 }
 function openEmbeddedTool(name,opts={},btn=null){
+ try{if(window.CentralStudyNavigation)window.CentralStudyNavigation.rememberReturn()}catch(_){}
  try{if(typeof saveLast==='function')saveLast({url:'folder:'+name,title:name,at:Date.now(),opts:opts||{}})}catch(_){}
  try{if(typeof setNav==='function')setNav(btn);else if(typeof closeMobileSidebar==='function')closeMobileSidebar()}catch(_){}
  location.href=centralToolPath(name,opts||{});return false;
@@ -1963,6 +1964,12 @@ window.openEmbeddedTool=openEmbeddedTool;
     return input?.value || today();
   }
 
+  function studyButton(task) {
+    const subjects = {pt:'Português',cf:'Direito Constitucional',adm:'Direito Administrativo',civil:'Direito Civil',cpc:'Direito Processual Civil',penal:'Direito Penal',cpp:'Direito Processual Penal',rlm:'Raciocínio Lógico-Matemático',trab:'Direito do Trabalho',ptra:'Direito Processual do Trabalho'};
+    const id = Object.keys(subjects).find(id => task.discipline === id || task.discipline === subjects[id]);
+    return id ? `<button class="btn sm agenda-study" type="button" onclick="centralHardSubject('${id}')" aria-label="Estudar ${escapeHtml(subjects[id])}">Estudar</button>` : '';
+  }
+
   function renderHomeSummary() {
     const date = today();
     const tasks = read(date);
@@ -1988,6 +1995,7 @@ window.openEmbeddedTool=openEmbeddedTool;
           <input type="checkbox" ${task.done ? 'checked' : ''} onchange="CentralAgenda.toggle('${date}','${escapeHtml(task.id)}',this.checked)">
           <div class="agenda-time">${escapeHtml(task.time || '—')}</div>
           <div class="agenda-copy"><b>${escapeHtml(disciplineLabel(task.discipline))}</b><small>${escapeHtml(task.task)}</small></div>
+          ${studyButton(task)}
           <button class="btn sm" type="button" onclick="CentralAgenda.open()">Editar</button>
         </div>`).join('') : '<div class="muted small" style="padding:12px">Agenda de hoje vazia. Toque em Editar para adicionar estudo, questões ou revisão.</div>';
     }
@@ -2009,6 +2017,7 @@ window.openEmbeddedTool=openEmbeddedTool;
       <div class="agenda-edit-row ${task.done ? 'done' : ''}">
         <span>${escapeHtml(task.time || '—')}</span>
         <span><b>${escapeHtml(disciplineLabel(task.discipline))}</b><br><span class="muted">${escapeHtml(task.task)}</span></span>
+        ${studyButton(task)}
         <input type="checkbox" aria-label="Marcar tarefa como concluída" ${task.done ? 'checked' : ''} onchange="CentralAgenda.toggle('${date}','${escapeHtml(task.id)}',this.checked)">
         <button class="btn red sm" type="button" aria-label="Excluir tarefa" onclick="CentralAgenda.remove('${date}','${escapeHtml(task.id)}')">×</button>
       </div>`).join('') : '<div class="muted small agenda-empty">Nenhuma tarefa neste dia.</div>';
@@ -2092,7 +2101,7 @@ window.openEmbeddedTool=openEmbeddedTool;
     return false;
   }
 
-  const api = { open, add, toggle, remove, render, read };
+  const api = { open, add, toggle, remove, render, read, renderHomeSummary };
   window.CentralAgenda = api;
   window.openAgenda = open;
   window.addAgenda = add;
@@ -2173,7 +2182,7 @@ window.moduleFrameRetry=function(){
 };
 })();
 </script>
-<script id="central-study-query-v6675">(function(){function run(){try{var p=new URLSearchParams(location.search),uid=p.get('study'),sid=p.get('subject');if(uid&&typeof window.openTopicFromLast==='function'){window.openTopicFromLast(uid);return}if(sid&&typeof window.jumpSubject==='function')window.jumpSubject(sid)}catch(e){console.warn('study query',e)}}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',function(){setTimeout(run,180)});else setTimeout(run,180)})();</script>
+
 <script src="central-structural-v66119/cf-final-audit-integration-20260920.js"></script>
 <script id="cf-final-audit-integration-apply-20260920">
 (function(){'use strict';function apply(){try{var p=window.CF_FINAL_AUDIT_INTEGRATION;if(!p||!Array.isArray(window.CF_WEEKS))return;Object.keys(p.content||{}).forEach(function(id){var w=window.CF_WEEKS.find(function(x){return x.id===id});if(!w)return;var u=p.content[id];Object.keys(u).forEach(function(k){w[k]=u[k]})});window.CF_FINAL_AUDIT_INTEGRATION_APPLIED=true}catch(e){console.warn('CF final audit integration',e)}}apply();if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',apply)})();
@@ -2237,4 +2246,5 @@ window.moduleFrameRetry=function(){
 })();
 </script>
 <script src="/base-completa-home-v3.js?v=20261001v5"></script>
+<script defer src="ui/study-navigation.js?v=20261002navigation2"></script>
 </body></html>
