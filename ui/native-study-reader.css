@@ -90,3 +90,26 @@ html.bc-ui-v1 #subjects .cf-module[data-cf="p1"] .cf-steps > .cf-step:nth-child(
 html.bc-ui-v1 #subjects .cf-module[data-cf="p1"] .bc-native-materials{
   display:block!important;
 }
+
+/* M01 — índice de sessões não faz parte do novo modelo de conteúdo. */
+html.bc-ui-v1 #subjects .cf-module[data-cf="p1"] .bc-session-nav,
+html.bc-ui-v1 #subjects .cf-module[data-cf="p1"] .bc-session-pager{
+  display:none!important;
+}
+
+/* Card curto de visão geral do módulo, reaproveitando a linguagem visual antiga. */
+html.bc-ui-v1 #subjects .cf-module[data-cf="p1"] .bc-native-module-summary{
+  margin-top:14px!important;
+}
+html.bc-ui-v1 #subjects .cf-module[data-cf="p1"] .bc-native-module-summary .cf-step-body{
+  padding:14px!important;
+}
+html.bc-ui-v1 #subjects .cf-module[data-cf="p1"] .bc-native-module-summary-text{
+  padding:14px 16px;
+  border-left:3px solid var(--bc-color-primary);
+  border-radius:10px;
+  background:color-mix(in srgb,var(--bc-color-primary) 8%,var(--bc-color-surface-elevated));
+  color:var(--bc-color-text);
+  font-size:14px;
+  line-height:1.6;
+}
