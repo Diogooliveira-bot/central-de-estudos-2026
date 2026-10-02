@@ -1719,3 +1719,617 @@ global.BaseNativeReaderM03={
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&document.getElementById(OVERLAY_ID))close()});
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',install);else install();
 })(window);
+
+/* M04 preview bundled */
+(function(global){
+'use strict';
+global.BASE_NATIVE_CONTENT=global.BASE_NATIVE_CONTENT||{};
+global.BASE_NATIVE_CONTENT.penal=global.BASE_NATIVE_CONTENT.penal||{};
+global.BASE_NATIVE_CONTENT.penal.m04={"moduleId":"p4","number":4,"title":"Ilicitude","updatedAt":"2026-10-02","sources":{"completeDriveId":"1y1dWypnyGxSXCpmKw_OYqqxkeqxWZeZ-","completeTheoryKey":"p4","summaryDriveId":"1cSf6kEjbQTDomkyGYPUN-BQqva1wyJqv","mindMapDriveId":"1ASb1AqR5YgOJrtVDiZeqEREIki9UY4HD"},"summary":"BASE COMPLETA - Direito Penal | PEN M4 - Ilicitude 1\r\nPEN M4 - ILICITUDE\r\nResumo para primeira leitura e revisão rápida | foco em conceitos, requisitos, comparações e armadilhas de prova.\r\n1. Visão geral\r\nIlicitude (ou antijuridicidade) é a contrariedade do fato típico ao Direito. No modelo tradicional, a tipicidade indica inicialmente\r\nilicitude, mas esse indício cai quando existe uma causa de justificação. Assim, um fato pode continuar típico e, ao mesmo tempo,\r\nser lícito.\r\nIDEIA-CENTRAL Primeiro pergunte: o fato é típico? Depois: existe uma justificante que autoriza essa conduta? Se sim, exclui-se a\r\nilicitude.\r\nCausas gerais do art. 23 do Código Penal\r\n• Estado de necessidade (EN) - conflito diante de perigo atual.\r\n• Legítima defesa (LD) - reação contra agressão humana injusta, atual ou iminente.\r\n• Estrito cumprimento do dever legal (ECDL) - atuação exigida por dever jurídico, dentro dos limites.\r\n• Exercício regular de direito (ERD) - atuação permitida como direito/faculdade, sem abuso.\r\n• Consentimento do ofendido - pode atuar como causa supralegal quando o bem for disponível e a manifestação for válida.\r\nTIPICIDADE ILICITUDE\r\nA conduta se encaixa no tipo penal? A conduta típica é contrária ao Direito ou está justificada?\r\nÉ analisada antes. É analisada depois, no modelo tradicional.\r\nSua presença é indício de ilicitude. Uma justificante rompe esse indício.\r\n2. Teoria - Estado de necessidade\r\nO estado de necessidade permite sacrificar um interesse para salvar outro diante de perigo atual, quando não era razoável exigir a\r\nperda do bem ameaçado. A fonte do perigo pode ser natural, animal ou humana; o essencial é que a estrutura seja de perigo, não\r\nnecessariamente de agressão injusta.\r\nDECORE EN = PERIGO ATUAL + inevitabilidade por outro meio + direito próprio/alheio + sacrifício inexigível + não\r\nprovocação voluntária + ausência de dever legal de enfrentar o perigo.\r\nRequisitos essenciais\r\n• Perigo atual: já existente no momento da ação salvadora. Não confundir com a fórmula “atual ou iminente” da LD.\r\n• Não provocação voluntária: quem cria deliberadamente o perigo não pode usá-lo como justificativa para sacrificar bem alheio.\r\n• Inevitabilidade por outro meio: se havia alternativa concreta, segura e razoável, a justificante não se completa.\r\n• Direito próprio ou alheio: também se pode agir para proteger terceiro.\r\n• Sacrifício inexigível: deve ser irrazoável exigir a perda do bem ameaçado. Se o sacrifício era razoavelmente exigível, não há\r\njustificante, embora o art. 24, §2º, admita redução de pena de 1/3 a 2/3.\r\n• Dever legal de enfrentar o perigo: impede a invocação do EN nos limites desse dever; não significa dever de suicídio ou atuação\r\nimpossível.\r\nClassificações úteis\r\nDefensivo: recai sobre a própria fonte do perigo. Agressivo: sacrifica bem de terceiro estranho à fonte do perigo. Real: o perigo existe.\r\nPutativo: o agente apenas imagina a situação; os efeitos do erro pertencem ao PEN M5.BASE COMPLETA - Direito Penal | PEN M4 - Ilicitude 2\r\n3. Teoria - Legítima defesa\r\nA legítima defesa autoriza repelir agressão humana injusta, atual ou iminente, contra direito próprio ou de terceiro, mediante\r\nmeios necessários usados moderadamente. A agressão deve ser objetivamente injusta; por isso, pode haver defesa contra\r\ninimputável.\r\nFÓRMULA LD = AGRESSÃO INJUSTA + atual ou iminente + direito próprio/alheio + meio necessário + uso moderado.\r\nNecessidade e moderação não são a mesma coisa\r\nMEIO NECESSÁRIO USO MODERADO\r\nPergunta: era necessário recorrer a esse meio? Pergunta: como e por quanto tempo o meio foi usado?\r\nCompara os meios eficazes e realmente disponíveis. Examina intensidade, duração e modo de emprego.\r\nNão exige igualdade de armas. Não existe número abstrato de golpes/disparos permitido.\r\nÉ um juízo concreto, feito à luz da situação vivida. Mesmo meio necessário pode tornar-se excessivo após cessar a\r\nagressão.\r\n• Atual: agressão em curso. Iminente: prestes a começar de forma concreta e imediata.\r\n• Agressão passada: não autoriza vingança. Ameaça remota: não autoriza defesa antecipada.\r\n• Não há dever geral de fuga como requisito da legítima defesa, mas necessidade e moderação continuam obrigatórias.\r\nSituações especiais\r\n• Própria x de terceiro: muda o titular do direito protegido; os demais requisitos são os mesmos.\r\n• Sucessiva: cabe contra o excesso de quem inicialmente se defendia legitimamente.\r\n• Recíproca real: não existe; se uma reação está juridicamente justificada, ela não é agressão injusta apta a gerar LD real do outro\r\nlado.\r\n• Contra inimputável: é possível, porque inimputabilidade afeta culpabilidade, não necessariamente a injustiça objetiva da agressão.\r\n• Putativa: a agressão é imaginada; não há justificante objetiva. O tratamento do erro fica para o PEN M5.\r\n• Agressão por omissão: pode ser admitida em situações juridicamente relevantes, mas não é qualquer omissão que autoriza reação\r\ndefensiva.\r\nHonra e atuação de agentes de segurança\r\nA chamada “legítima defesa da honra” não é juridicamente admitida: ciúme, traição ou sentimento de desonra não constituem\r\nagressão injusta capaz de justificar violência. Quanto ao agente de segurança pública, o art. 25, parágrafo único, abrange a reação\r\npara proteger vítima mantida refém, mas mantém os requisitos do caput, inclusive necessidade e moderação.\r\nPROVA Se a alternativa disser que a regra especial do agente de segurança dispensa os requisitos gerais da legítima\r\ndefesa, está errada.\r\n4. Estado de necessidade x legítima defesa\r\nCRITÉRIO ESTADO DE NECESSIDADE LEGÍTIMA DEFESA\r\nNúcleo Perigo Agressão humana injusta\r\nTempo Perigo atual Agressão atual ou iminente\r\nOutro meio Perigo não podia ser evitado de outro modo Meio defensivo deve ser necessário\r\nModeração Não é expressão literal do art. 24; há ponderação do\r\nsacrifício\r\nExigência expressa de uso moderado\r\nDever de enfrentar Pode impedir o EN Não há cláusula equivalente no art. 25\r\nTerceiro Pode proteger direito alheio Pode proteger direito alheioBASE COMPLETA - Direito Penal | PEN M4 - Ilicitude 3\r\n5. Outras justificantes\r\nEstrito cumprimento do dever legal\r\nIncide quando o Direito impõe um dever de agir e a conduta típica permanece estritamente dentro desse dever. Exige norma\r\nválida, competência, respeito aos limites e ausência de excesso. Não se trata de “licença” geral para agentes públicos: abuso,\r\ndesvio ou ordem manifestamente ilegal não se tornam lícitos apenas por terem origem funcional.\r\nCHAVE ECDL = DEVER. A palavra decisiva é “estrito”: passou do limite, surge excesso.\r\nExercício regular de direito\r\nIncide quando o ordenamento reconhece um direito, faculdade ou liberdade e o agente atua regularmente. Exemplos clássicos:\r\nriscos permitidos em esportes praticados segundo as regras, intervenções médicas lícitas e consentidas e certas faculdades de\r\nproteção patrimonial. O abuso rompe a justificante.\r\nESTRITO CUMPRIMENTO EXERCÍCIO REGULAR\r\nHá dever jurídico de atuar. Há direito/faculdade de atuar.\r\nA conduta é imposta pelo ordenamento. A conduta é permitida pelo ordenamento.\r\nLimite: estrita conformidade com o dever. Limite: exercício regular, sem abuso.\r\nConsentimento do ofendido\r\nO consentimento pode atuar em dois planos. Se a falta de autorização integra o próprio tipo, o consentimento válido pode afastar a\r\ntipicidade (alguns autores chamam de “acordo”). Se o tipo se completa mesmo com a vontade da vítima, o consentimento pode ser\r\ndiscutido como causa supralegal de exclusão da ilicitude.\r\n• Bem disponível: o titular precisa poder dispor juridicamente daquele interesse.\r\n• Titular apto: capacidade para compreender e decidir conforme a natureza do bem e a legislação aplicável.\r\n• Manifestação livre e consciente: sem coação ou fraude relevante.\r\n• Momento: anterior ou concomitante ao fato; consentimento posterior não retroage.\r\n• Limites: o agente deve permanecer dentro do que foi efetivamente autorizado.\r\nATENÇÃO A vida não se torna disponível para fins penais apenas por manifestação de vontade. Em outros bens, a\r\ndisponibilidade pode ser parcial e depender do caso concreto.\r\n6. Excesso nas excludentes\r\nA justificante protege apenas a conduta dentro de seus limites. A sequência é: situação inicialmente justificada -> ultrapassagem\r\n-> excesso. O art. 23, parágrafo único, prevê responsabilidade pelo excesso doloso ou culposo.\r\nEXCESSO DOLOSO EXCESSO CULPOSO\r\nO agente conscientemente ultrapassa os limites. Ultrapassa por imprudência, negligência ou imperícia, sem dolo no\r\nexcesso.\r\nResponde pelo fato doloso correspondente, se presentes os requisitos. Só há punição se existir modalidade culposa legalmente prevista.\r\nEx.: agressor neutralizado; vítima continua por vingança. Ex.: reação defensiva permitida executada de modo imprudente e\r\nexcessivo.\r\nEXCESSO INTENSIVO EXCESSO EXTENSIVO\r\nOcorre durante a situação justificante, mas com intensidade/meio além\r\ndo permitido.\r\nUltrapassa o limite temporal, continuando depois de cessar perigo ou\r\nagressão.\r\nExcesso no modo ou intensidade. Excesso na duração da reação.\r\n“Excesso exculpante” é construção doutrinária ligada à culpabilidade e não constitui nova justificante do art. 23; seu aprofundamento pertence\r\nao PEN M5.BASE COMPLETA - Direito Penal | PEN M4 - Ilicitude 4\r\n7. Artigos para decorar\r\nArt. 23 - mapa das justificantes\r\nMemorize as quatro causas gerais: estado de necessidade; legítima defesa; estrito cumprimento de dever legal; exercício\r\nregular de direito. O parágrafo único determina que o agente responde pelo excesso doloso ou culposo.\r\nArt. 24 - estado de necessidade\r\nGatilho: perigo atual. Estrutura mental: perigo atual + não provocação voluntária + inevitabilidade por outro meio + direito\r\npróprio/alheio + sacrifício que não era razoável exigir. §1º: não pode alegar EN quem tinha dever legal de enfrentar o perigo, nos\r\nlimites desse dever. §2º: se era razoável exigir o sacrifício, não há justificante, mas a pena pode ser reduzida de 1/3 a 2/3.\r\nArt. 25 - legítima defesa\r\nGatilho: agressão injusta atual ou iminente. Estrutura mental: direito próprio/alheio + meios necessários + uso moderado.\r\nParágrafo único: situação do agente de segurança em defesa de vítima mantida refém, sempre observados os requisitos do caput.\r\nMNEMÔNICO NECESSIDADE = PERIGO. DEFESA = AGRESSÃO.\r\n8. Pegadinhas de prova\r\nPEGADINHA CORREÇÃO\r\n“Estado de necessidade exige perigo atual ou iminente.” Errado. O art. 24 usa perigo atual.\r\n“Legítima defesa só protege direito próprio.” Errado. Pode proteger direito próprio ou alheio.\r\n“Contra inimputável não cabe legítima defesa.” Errado. Agressão pode ser objetivamente injusta mesmo sem culpabilidade do\r\nagressor.\r\n“Se o meio era necessário, a reação está automaticamente\r\njustificada.”\r\nErrado. Além da necessidade, exige-se moderação.\r\n“Legítima defesa exige armas equivalentes.” Errado. Não há simetria mecânica; o juízo é concreto.\r\n“Agressão passada ainda permite legítima defesa.” Errado. Depois de cessada a agressão, reação vingativa pode configurar\r\nexcesso ou novo ilícito.\r\n“Há legítima defesa real recíproca.” Errado. Se uma reação é lícita, ela não é agressão injusta para gerar LD real do\r\noutro lado.\r\n“Consentimento posterior torna lícita a conduta anterior.” Errado. Deve ser anterior ou concomitante, além de válido e referente a bem\r\ndisponível.\r\n“Excesso culposo só existe na legítima defesa.” Errado. O art. 23, parágrafo único, refere-se às hipóteses do artigo.\r\n“Agente de segurança em situação de refém não precisa observar\r\nnecessidade e moderação.”\r\nErrado. O art. 25, parágrafo único, remete aos requisitos do caput.\r\n“Legítima defesa da honra é justificante penal.” Errado. A tese não é juridicamente admitida.\r\n“Estrito cumprimento e exercício regular são a mesma ideia.” Errado. Um decorre de dever; o outro, de direito/faculdade.BASE COMPLETA - Direito Penal | PEN M4 - Ilicitude 5\r\n9. Revisão ativa\r\nLeia a pergunta, tente responder mentalmente e só depois confira a linha seguinte.\r\n1. Qual é a diferença nuclear entre estado de necessidade e legítima defesa?\r\nResposta: EN gira em torno de perigo; LD exige agressão humana injusta.\r\n2. Qual é a expressão temporal do art. 24?\r\nResposta: Perigo atual.\r\n3. Qual é a expressão temporal do art. 25?\r\nResposta: Agressão atual ou iminente.\r\n4. Quais são as quatro justificantes gerais do art. 23?\r\nResposta: Estado de necessidade, legítima defesa, estrito cumprimento de dever legal e exercício regular de direito.\r\n5. No estado de necessidade, qual requisito demonstra sua subsidiariedade?\r\nResposta: O perigo não podia ser evitado de outro modo.\r\n6. Quem tem dever legal de enfrentar o perigo pode invocar EN livremente?\r\nResposta: Não. O art. 24, §1º, impede a justificante nos limites do dever legal.\r\n7. Meio necessário e moderação são sinônimos?\r\nResposta: Não. Necessidade trata da escolha do meio; moderação trata do modo, intensidade e duração do uso.\r\n8. É possível legítima defesa de terceiro?\r\nResposta: Sim. O art. 25 protege direito seu ou de outrem.\r\n9. É possível legítima defesa contra inimputável?\r\nResposta: Sim, se houver agressão objetivamente injusta e os demais requisitos.\r\n10. O que é legítima defesa sucessiva?\r\nResposta: Defesa contra o excesso de quem inicialmente estava em legítima defesa.\r\n11. Qual a diferença entre LD real e putativa?\r\nResposta: Na real, a agressão existe; na putativa, ela é apenas imaginada. O erro é aprofundado no PEN M5.\r\n12. Qual a palavra-chave do estrito cumprimento?\r\nResposta: Dever.\r\n13. Qual a palavra-chave do exercício regular?\r\nResposta: Direito/faculdade.\r\n14. Quais os requisitos-base do consentimento justificante?\r\nResposta: Bem disponível, titular apto, manifestação livre, anterior/concomitante e respeito aos limites.\r\n15. Como distinguir excesso intensivo e extensivo?\r\nResposta: Intensivo = excesso na intensidade/manejo; extensivo = excesso no tempo, após cessar a situação justificante.\r\n16. Qual é a regra do excesso culposo?\r\nResposta: Só haverá punição se o resultado admitir modalidade culposa prevista em lei.\r\nCHECK FINAL Ao resolver um caso, marque quatro pontos: fonte (perigo ou agressão), tempo (atual ou iminente), alternativa\r\n(outro meio/meio necessário) e limite (sacrifício ou moderação).\r\nResumo editorial baseado no PEN M4 offline auditado em 18/09/2026. Escopo propositalmente enxuto: primeira leitura + revisão, sem\r\naprofundar teoria do erro ou culpabilidade (PEN M5).","chapters":{"summary":[{"id":"s01","title":"Visão geral"},{"id":"s02","title":"Teoria - Estado de necessidade"},{"id":"s03","title":"Teoria - Legítima defesa"},{"id":"s04","title":"Estado de necessidade x legítima defesa"},{"id":"s05","title":"Outras justificantes"},{"id":"s06","title":"Excesso nas excludentes"},{"id":"s07","title":"Artigos para decorar"},{"id":"s08","title":"Pegadinhas de prova"}],"complete":[{"id":"c01","title":"Conceito de ilicitude e antijuridicidade"},{"id":"c02","title":"Antijuridicidade e relação com a tipicidade"},{"id":"c03","title":"Causas de exclusão da ilicitude"},{"id":"c04","title":"Estado de necessidade: conceito e fundamento"},{"id":"c05","title":"Requisitos do estado de necessidade"},{"id":"c06","title":"Espécies e classificações do estado de necessidade"},{"id":"c07","title":"Legítima defesa: conceito, fundamento e agressão"},{"id":"c08","title":"Requisitos da legítima defesa: direito protegido, necessidade e moderação"},{"id":"c09","title":"Espécies e situações especiais de legítima defesa"},{"id":"c10","title":"Legítima defesa putativa — introdução"},{"id":"c11","title":"Legítima defesa da honra e atuação de agentes de segurança"},{"id":"c12","title":"Estrito cumprimento do dever legal"},{"id":"c13","title":"Exercício regular de direito"},{"id":"c14","title":"Consentimento do ofendido"},{"id":"c15","title":"Excesso nas excludentes"},{"id":"c16","title":"Estado de necessidade × legítima defesa"},{"id":"c17","title":"Quadros comparativos FCC"},{"id":"c18","title":"O que decorar e pegadinhas FCC"}]},"internalQuestions":{"summary":[{"id":"sq01","q":"Qual é a diferença nuclear entre estado de necessidade e legítima defesa?","options":["Estado de necessidade parte de perigo; legítima defesa parte de agressão humana injusta.","Ambos exigem agressão humana injusta.","Estado de necessidade exige agressão iminente; legítima defesa exige apenas perigo atual.","Não há diferença estrutural entre eles."],"answer":0,"explanation":"O material usa a chave: necessidade = perigo; defesa = agressão humana injusta."},{"id":"sq02","q":"Qual é a expressão temporal correta do art. 24 para o estado de necessidade?","options":["Perigo atual ou iminente.","Perigo futuro provável.","Perigo atual.","Agressão atual."],"answer":2,"explanation":"O resumo enfatiza a literalidade do art. 24: perigo atual."},{"id":"sq03","q":"Na legítima defesa, meios necessários e moderação:","options":["São sinônimos.","São requisitos distintos e cumulativos.","Só importam para agentes de segurança.","Podem ser ignorados quando o agressor é inimputável."],"answer":1,"explanation":"Necessidade diz respeito à escolha do meio; moderação, ao modo, intensidade e duração de seu uso."},{"id":"sq04","q":"O consentimento do ofendido pode funcionar como justificante supralegal quando:","options":["O bem é disponível e a manifestação é válida.","É dado apenas depois do fato.","Recai sobre qualquer bem, inclusive indisponível.","É obtido por coação."],"answer":0,"explanation":"O material exige disponibilidade do bem e consentimento válido, livre e anterior ou concomitante."},{"id":"sq05","q":"No excesso culposo previsto no art. 23, parágrafo único, o agente:","options":["Sempre fica isento de pena.","Só pode responder se houver modalidade culposa legalmente prevista para o resultado.","Responde necessariamente por crime doloso.","Só pode responder em legítima defesa."],"answer":1,"explanation":"O excesso culposo só é punível quando o resultado admite forma culposa prevista em lei."}],"complete":[{"id":"cq01","q":"No modelo tradicional, qual é a relação entre tipicidade e ilicitude?","options":["A tipicidade funciona como indício de ilicitude, afastável por justificante.","Tipicidade e ilicitude são o mesmo juízo.","A ilicitude é examinada antes da tipicidade.","Uma causa de justificação elimina sempre a tipicidade."],"answer":0,"explanation":"O material adota a ideia de ratio cognoscendi: a tipicidade indica inicialmente ilicitude, salvo causa de justificação."},{"id":"cq02","q":"Quais são as quatro causas gerais expressas do art. 23 do Código Penal?","options":["Estado de necessidade, legítima defesa, estrito cumprimento do dever legal e exercício regular de direito.","Erro de tipo, erro de proibição, coação e obediência hierárquica.","Consentimento, insignificância, adequação social e inexigibilidade.","Necessidade, culpabilidade, tipicidade e punibilidade."],"answer":0,"explanation":"São as quatro justificantes gerais expressas previstas no art. 23."},{"id":"cq03","q":"O estado de necessidade revela sua natureza subsidiária principalmente pela exigência de:","options":["Agressão humana injusta.","Inevitabilidade do perigo por outro meio.","Uso moderado dos meios necessários.","Consentimento do titular do bem sacrificado."],"answer":1,"explanation":"Se havia alternativa concreta, segura e razoável, a justificante não se completa."},{"id":"cq04","q":"Sobre legítima defesa contra inimputável, o material afirma que:","options":["É impossível porque o agressor não é culpável.","É possível, porque a injustiça da agressão não depende da culpabilidade do agressor.","Só é possível para proteger terceiro.","Só é possível com autorização judicial."],"answer":1,"explanation":"A inimputabilidade afeta a culpabilidade do agressor, não necessariamente a injustiça objetiva da agressão."},{"id":"cq05","q":"Legítima defesa sucessiva ocorre quando:","options":["Duas pessoas atuam simultaneamente em legítima defesa real.","Há reação contra o excesso de quem inicialmente estava em legítima defesa.","A vítima reage a uma ameaça futura e remota.","O agente imagina uma agressão inexistente."],"answer":1,"explanation":"Quando a reação inicial ultrapassa os limites da justificante, o excesso pode se tornar nova agressão injusta."},{"id":"cq06","q":"No estrito cumprimento do dever legal, a palavra decisiva destacada pelo material é:","options":["Estrito.","Voluntário.","Supralegal.","Putativo."],"answer":0,"explanation":"O dever não justifica abuso, desvio de finalidade ou violência desnecessária; a atuação deve permanecer estritamente nos limites jurídicos."},{"id":"cq07","q":"A diferença central entre estrito cumprimento do dever legal e exercício regular de direito é:","options":["No primeiro há dever jurídico de atuar; no segundo há direito ou faculdade juridicamente reconhecido.","O primeiro exclui tipicidade; o segundo exclui culpabilidade.","O primeiro só vale para policiais; o segundo só para particulares.","Não existe diferença entre as duas justificantes."],"answer":0,"explanation":"O material resume: dever legal = atuação imposta; exercício regular = atuação facultada."},{"id":"cq08","q":"Consentimento posterior ao fato:","options":["Retroage e torna a conduta lícita.","Só produz efeito se houver homologação judicial.","Não converte retroativamente a conduta em lícita.","Sempre exclui a tipicidade."],"answer":2,"explanation":"A autorização precisa ser anterior ou concomitante, além de válida e relativa a bem juridicamente disponível."},{"id":"cq09","q":"Excesso intensivo e excesso extensivo correspondem, respectivamente, a:","options":["Excesso na intensidade/modo durante a situação justificante e prolongamento temporal após seu limite.","Erro sobre a existência da justificante e erro sobre a culpabilidade.","Ato preparatório e ato executório.","Dolo direto e dolo eventual."],"answer":0,"explanation":"Intensivo é excesso no modo ou intensidade; extensivo é ultrapassagem temporal da justificante."},{"id":"cq10","q":"Na comparação entre estado de necessidade e legítima defesa, qual afirmação está correta?","options":["Ambos exigem agressão humana injusta.","O estado de necessidade exige uso moderado dos meios necessários.","A legítima defesa exige agressão injusta atual ou iminente; o estado de necessidade trabalha com perigo atual.","Quem tem dever legal de enfrentar o perigo nunca pode agir em legítima defesa."],"answer":2,"explanation":"A distinção temporal e estrutural do material é: EN = perigo atual; LD = agressão injusta atual ou iminente."}]}};
+})(window);
+
+(function(global){
+'use strict';
+const SEL='#subjects .subject[data-id="penal"] .cf-module[data-cf="p4"]';
+
+function inject(){
+  const module=document.querySelector(SEL);
+  if(!module) return;
+  const body=module.querySelector('.cf-module-body');
+  if(!body || body.querySelector('[data-bc-native-m04]')) return;
+
+  const host=document.createElement('section');
+  host.className='bc-native-materials bc-native-materials-static';
+  host.setAttribute('data-bc-native-m04','');
+  host.innerHTML=
+    '<section class="bc-native-metrics" aria-label="Indicadores do módulo">'+
+      '<article class="bc-native-metric-card">'+
+        '<div class="bc-native-ring" data-native-ring="theory"><div class="bc-native-ring-inner"><b data-ring-value>0%</b><span>teoria</span></div></div>'+
+        '<div class="bc-native-metric-copy"><small>COBERTURA DA TEORIA</small><strong data-native-metric-detail="theory">0 de 41 pontos concluídos</strong><span>Checks dos capítulos + questões internas.</span></div>'+
+      '</article>'+
+      '<article class="bc-native-metric-card">'+
+        '<div class="bc-native-ring" data-native-ring="external"><div class="bc-native-ring-inner"><b data-ring-value>—</b><span>externas</span></div></div>'+
+        '<div class="bc-native-metric-copy"><small>ACERTO EM QUESTÕES EXTERNAS</small><strong data-native-metric-detail="external">Nenhuma questão externa respondida</strong><span data-native-metric-meta="external">Registre questões externas no final do módulo</span></div>'+
+      '</article>'+
+    '</section>'+
+    '<div class="bc-native-materials-head"><div><b>Materiais do módulo</b><small>Escolha como estudar</small></div><small>M04 • conteúdo nativo</small></div>'+
+    '<div class="bc-native-material-grid">'+
+      '<button type="button" class="bc-native-material-card" data-native-kind="summary"><span class="bc-native-material-icon">⚡</span><span><strong>Conteúdo resumido</strong><small>Primeira leitura, revisão rápida, artigos, pegadinhas e revisão ativa.</small></span><span class="bc-native-material-action"><span>Abrir</span><span>→</span></span></button>'+
+      '<button type="button" class="bc-native-material-card" data-native-kind="complete"><span class="bc-native-material-icon">📚</span><span><strong>Conteúdo completo</strong><small>Teoria integral do M04 em formato de site, com índice, busca e progresso de leitura.</small></span><span class="bc-native-material-action"><span>Abrir</span><span>→</span></span></button>'+
+      '<button type="button" class="bc-native-material-card" data-native-kind="mindmap"><span class="bc-native-material-icon">🧠</span><span><strong>Mapa mental</strong><small>Mapa interativo com abrir/recolher ramos, zoom, arrastar e tela cheia.</small></span><span class="bc-native-material-action"><span>Abrir</span><span>→</span></span></button>'+
+    '</div>'+
+    '<section class="bc-native-quick-summary" aria-label="Resumo do módulo">'+
+      '<div class="bc-native-quick-summary-head"><span class="bc-native-quick-summary-no">4</span><div><b>Resumo do módulo</b><small>O M04 em poucas palavras.</small></div></div>'+
+      '<div class="bc-native-quick-summary-body">Ilicitude e causas de justificação • estado de necessidade • legítima defesa • estrito cumprimento e exercício regular • consentimento do ofendido • excesso nas excludentes.</div>'+
+    '</section>';
+
+  host.querySelector('[data-native-kind="summary"]').onclick=function(){global.BaseNativeReaderM04?.open('summary')};
+  host.querySelector('[data-native-kind="complete"]').onclick=function(){global.BaseNativeReaderM04?.open('complete')};
+  host.querySelector('[data-native-kind="mindmap"]').onclick=function(){global.BaseMindMap?.open('penal','p4')};
+
+  const subtitle=body.querySelector('.cf-subtitle');
+  if(subtitle) subtitle.insertAdjacentElement('afterend',host);
+  else body.insertAdjacentElement('afterbegin',host);
+  global.BaseNativeReaderM04?.refreshMetrics?.();
+}
+function install(){
+  inject();
+  const obs=new MutationObserver(function(){
+    clearTimeout(install._t);
+    install._t=setTimeout(inject,60);
+  });
+  obs.observe(document.documentElement,{subtree:true,childList:true});
+}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',install);else install();
+})(window);
+
+(function(global){
+'use strict';
+
+const OVERLAY_ID='bcNativeReaderOverlayM04';
+const M1_SELECTOR='#subjects .subject[data-id="penal"] .cf-module[data-cf="p4"]';
+const STORAGE_PREFIX='central-v6:native-reader:penal:p4';
+let current=null;
+let observer=null;
+
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function norm(s){return String(s||'').replace(/\u00a0/g,' ').replace(/[ \t]+/g,' ').trim()}
+function normKey(s){return norm(s).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim()}
+function slug(s){return normKey(s).replace(/\s+/g,'-').slice(0,70)}
+function source(){return global.BASE_NATIVE_CONTENT?.penal?.m04||null}
+function storageKey(part){return STORAGE_PREFIX+':'+part}
+
+function cleanLines(raw,mode){
+  const lines=String(raw||'').replace(/\r/g,'').split('\n').map(norm);
+  const out=[];
+  let skipOldSummaryReview=false;
+  for(let line of lines){
+    if(mode==='summary' && /^9\.\s*REVIS(?:A|Ã)O ATIVA/i.test(line)){skipOldSummaryReview=true;continue}
+    if(skipOldSummaryReview)continue;
+    if(!line){out.push('');continue}
+    if(/^BASE COMPLETA(?:\s*[|•-]|$)/i.test(line))continue;
+    if(/^D\s*IRE\s*ITO PENAL\s*•\s*M0?1$/i.test(line))continue;
+    if(/^\d+\s*\/\s*\d+$/.test(line))continue;
+    if(/^P[aá]gina\s+\d+$/i.test(line))continue;
+    if(/^Conteudo restrito ao PEN M1/i.test(line))continue;
+    out.push(line);
+  }
+  return out;
+}
+function headingInfo(line){
+  const l=norm(line);
+  if(!l)return null;
+  let m=l.match(/^(\d+)\.(\d+)\s+(.{3,140})$/);
+  if(m)return {level:3,text:l};
+  m=l.match(/^(\d+)\.?\s+(.{3,140})$/);
+  if(m && !/^\d+\s*\/\s*\d+/.test(l) && !/^\d+\s+(Quais|Qual|A |O |Como |Quando |Pequeno|Pessoalidade|Na )/i.test(l)){
+    return {level:2,text:l};
+  }
+  if(/^(VISÃO GERAL|VISAO GERAL|REVISÃO ATIVA|REVISAO ATIVA|ARTIGOS PARA DECORAR|PEGADINHAS DE PROVA|MAPA DO MÓDULO|MAPA DO MODULO|TEORIA ESSENCIAL)$/i.test(l)){
+    return {level:2,text:l};
+  }
+  return null;
+}
+function calloutType(line){
+  const l=norm(line).toUpperCase();
+  if(/^(✅\s*)?EXEMPLO/.test(l))return ['example','Exemplo'];
+  if(/PEGADINHA/.test(l))return ['trap','Pegadinha'];
+  if(/^(⚖️\s*)?LEI SECA/.test(l))return ['law','Lei seca'];
+  if(/^(DECORE|MEMÓRIA|MEMORIA|MNEMÔNICO|MNEMONICO|REGRA DE OURO|IDEIA-CENTRAL|IDEIA CENTRAL|FÓRMULA|FORMULA|MEMORIZACAO RAPIDA)/.test(l))return ['memory',norm(line)];
+  if(/^(STF|STJ|JURISPRUDÊNCIA|JURISPRUDENCIA|ATUALIZAÇÃO|ATUALIZACAO)/.test(l))return ['case',norm(line)];
+  if(/^(COMPARAÇÃO|COMPARACAO|ATENÇÃO|ATENCAO|PROVA|CUIDADO|FRONTEIRA DO MÓDULO|FRONTEIRA DO MODULO)/.test(l))return ['case',norm(line)];
+  return null;
+}
+function isBullet(line){return /^[•●▪◦*-]\s+/.test(line)}
+function looksTitle(line){
+  const l=norm(line);
+  if(l.length<3||l.length>105)return false;
+  if(/[.!?]$/.test(l))return false;
+  if(/^[A-ZÁÉÍÓÚÂÊÔÃÕÇ0-9][A-ZÁÉÍÓÚÂÊÔÃÕÇ0-9\s:–—()/%ºª,.-]+$/.test(l)&&l.split(/\s+/).length<=12)return true;
+  return false;
+}
+function parse(raw,mode){
+  const lines=cleanLines(raw,mode);
+  const blocks=[];
+  let para=[];
+  const flush=()=>{if(para.length){blocks.push({type:'p',text:para.join(' ')});para=[]}};
+  for(let i=0;i<lines.length;i++){
+    const line=lines[i];
+    if(!line){flush();continue}
+    const hi=headingInfo(line);
+    if(hi){flush();blocks.push({type:'h',level:hi.level,text:hi.text});continue}
+    const co=calloutType(line);
+    if(co){
+      flush();
+      const body=[];
+      for(let j=i+1;j<lines.length;j++){
+        const next=lines[j];
+        if(!next){if(body.length)break;else continue}
+        if(headingInfo(next)||calloutType(next)||looksTitle(next))break;
+        body.push(next);i=j;
+      }
+      blocks.push({type:'callout',kind:co[0],label:co[1],text:body.join(' ')});
+      continue;
+    }
+    if(isBullet(line)){
+      flush();
+      const items=[line.replace(/^[•●▪◦*-]\s+/,'')];
+      while(i+1<lines.length&&isBullet(lines[i+1]))items.push(lines[++i].replace(/^[•●▪◦*-]\s+/,''));
+      blocks.push({type:'ul',items});
+      continue;
+    }
+    if(looksTitle(line)&&mode==='summary'){flush();blocks.push({type:'h',level:3,text:line});continue}
+    para.push(line);
+  }
+  flush();
+  const firstH=blocks.findIndex(b=>b.type==='h');
+  if(firstH>2){
+    const lead=blocks.slice(0,firstH).filter(b=>b.type==='p').map(b=>b.text).join(' ');
+    blocks.splice(0,firstH,{type:'lead',text:lead});
+  }
+  return blocks;
+}
+function buildHtml(data,mode){
+  if(mode==='complete'){
+    const host=document.createElement('div');
+    host.innerHTML=global.PENAL_FULL_THEORY?.p4?.html||'';
+    host.querySelector('.pen-m3-cover')?.remove();
+    host.querySelector('.pen-m3-toc')?.remove();
+    host.querySelector('.pen-m3-orientacao')?.remove();
+    host.querySelector('#pen-m3-s40')?.remove();
+
+    const headings=[];
+    host.querySelectorAll('section.pen-m3-session').forEach((section,index)=>{
+      const h=section.querySelector('h3');
+      if(!h)return;
+      if(!h.id)h.id='bcsec-complete-'+(index+1)+'-'+slug(h.textContent);
+      headings.push({id:h.id,text:norm(h.textContent),level:2,key:normKey(h.textContent)});
+    });
+
+    // Normalize native M3 blocks to the reader's component vocabulary.
+    host.querySelectorAll('.pen-m3-callout').forEach(el=>el.classList.add('bc-native-callout'));
+    host.querySelectorAll('.pen-m3-table').forEach(el=>el.classList.add('bc-native-table-wrap'));
+    const text=norm(host.textContent);
+    const words=text.split(/\s+/).filter(Boolean).length;
+    const mins=Math.max(1,Math.round(words/190));
+    return {body:host.innerHTML,headings,words,mins};
+  }
+
+  const raw=mode==='summary'?data.summary:data.complete;
+  const blocks=parse(raw,mode);
+  const headings=[];
+  let hCount=0;
+  const body=blocks.map(b=>{
+    if(b.type==='h'){
+      const id='bcsec-'+(++hCount)+'-'+slug(b.text);
+      headings.push({id,text:b.text,level:b.level,key:normKey(b.text)});
+      return '<h'+b.level+' id="'+id+'">'+esc(b.text)+'</h'+b.level+'>';
+    }
+    if(b.type==='lead')return '<p class="lead">'+esc(b.text)+'</p>';
+    if(b.type==='p')return '<p>'+esc(b.text)+'</p>';
+    if(b.type==='ul')return '<ul>'+b.items.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul>';
+    if(b.type==='callout')return '<aside class="bc-native-callout '+b.kind+'"><b>'+esc(b.label)+'</b><div>'+esc(b.text)+'</div></aside>';
+    return '';
+  }).join('');
+  const words=norm(raw).split(/\s+/).filter(Boolean).length;
+  const mins=Math.max(1,Math.round(words/(mode==='summary'?220:190)));
+  return {body,headings,words,mins};
+}
+function modeChapters(data,mode){return Array.isArray(data?.chapters?.[mode])?data.chapters[mode]:[]}
+function modeQuestions(data,mode){return Array.isArray(data?.internalQuestions?.[mode])?data.internalQuestions[mode]:[]}
+function chapterDone(mode,id){return localStorage.getItem(storageKey('chapter:'+mode+':'+id))==='1'}
+function setChapterDone(mode,id,done){
+  localStorage.setItem(storageKey('chapter:'+mode+':'+id),done?'1':'0');
+}
+function internalAnswer(mode,id){
+  try{return JSON.parse(localStorage.getItem(storageKey('internal:'+mode+':'+id))||'null')}catch(_){return null}
+}
+function saveInternalAnswer(mode,q,selected){
+  const prev=internalAnswer(mode,q.id)||{attempts:0};
+  const state={
+    selected:Number(selected),
+    correct:Number(selected)===Number(q.answer),
+    attempts:(prev.attempts||0)+1,
+    updatedAt:new Date().toISOString()
+  };
+  localStorage.setItem(storageKey('internal:'+mode+':'+q.id),JSON.stringify(state));
+  return state;
+}
+function resetInternalAnswer(mode,id){localStorage.removeItem(storageKey('internal:'+mode+':'+id))}
+
+function modeStudyStats(data,mode){
+  const chapters=modeChapters(data,mode);
+  const questions=modeQuestions(data,mode);
+  const chapterDoneCount=chapters.filter(ch=>chapterDone(mode,ch.id)).length;
+  const answered=questions.filter(q=>!!internalAnswer(mode,q.id)).length;
+  const correct=questions.filter(q=>internalAnswer(mode,q.id)?.correct).length;
+  return {
+    chapterDone:chapterDoneCount,
+    chapterTotal:chapters.length,
+    answered,
+    questionTotal:questions.length,
+    correct,
+    done:chapterDoneCount+answered,
+    total:chapters.length+questions.length
+  };
+}
+function theoryStats(){
+  const data=source();
+  if(!data)return {done:0,total:0,pct:0};
+  const s=modeStudyStats(data,'summary');
+  const c=modeStudyStats(data,'complete');
+  const done=s.done+c.done,total=s.total+c.total;
+  return {done,total,pct:total?Math.round(done/total*100):0,summary:s,complete:c};
+}
+function externalStats(){
+  try{
+    const rows=JSON.parse(localStorage.getItem('central-v6:module-rounds:penal:p4')||'[]');
+    const valid=(Array.isArray(rows)?rows:[]).map(r=>({
+      done:Math.max(0,Number(r.valid ?? r.done)||0),
+      correct:Math.max(0,Number(r.correct)||0)
+    })).filter(r=>r.done>0);
+    const answered=valid.reduce((n,r)=>n+r.done,0);
+    const correct=valid.reduce((n,r)=>n+Math.min(r.correct,r.done),0);
+    return {answered,correct,rounds:valid.length,accuracy:answered?Math.round(correct/answered*100):null};
+  }catch(_){
+    return {answered:0,correct:0,rounds:0,accuracy:null};
+  }
+}
+function setRing(el,pct,label){
+  if(!el)return;
+  const safe=Math.max(0,Math.min(100,Number(pct)||0));
+  el.style.setProperty('--pct',String(safe));
+  const value=el.querySelector('[data-ring-value]');
+  if(value)value.textContent=label??(safe+'%');
+}
+function refreshModuleMetrics(){
+  const module=document.querySelector(M1_SELECTOR);
+  if(!module)return;
+  const theory=theoryStats(),external=externalStats();
+
+  setRing(module.querySelector('[data-native-ring="theory"]'),theory.pct,theory.pct+'%');
+  const theoryDetail=module.querySelector('[data-native-metric-detail="theory"]');
+  if(theoryDetail)theoryDetail.textContent=theory.done+' de '+theory.total+' pontos concluídos';
+
+  setRing(module.querySelector('[data-native-ring="external"]'),external.accuracy??0,external.accuracy==null?'—':external.accuracy+'%');
+  const extDetail=module.querySelector('[data-native-metric-detail="external"]');
+  if(extDetail){
+    extDetail.textContent=external.answered
+      ? external.correct+' acertos em '+external.answered+' questões externas'
+      : 'Nenhuma questão externa respondida';
+  }
+  const extMeta=module.querySelector('[data-native-metric-meta="external"]');
+  if(extMeta)extMeta.textContent=external.answered
+    ? external.rounds+' rodada(s) registrada(s) no final do módulo'
+    : 'Registre questões externas no final do módulo';
+
+  const headerStat=module.querySelector('.cf-module-stat');
+  if(headerStat)headerStat.textContent='Cobertura '+theory.pct+'% • teoria + revisão interna';
+  const legacyBar=module.querySelector('.cf-module-bar span');
+  if(legacyBar)legacyBar.style.width=theory.pct+'%';
+  refreshCardState();
+}
+function refreshCardState(){
+  const data=source();if(!data)return;
+  ['summary','complete'].forEach(kind=>{
+    const st=modeStudyStats(data,kind);
+    document.querySelectorAll(M1_SELECTOR+' [data-native-kind="'+kind+'"]').forEach(card=>{
+      const tag=card.querySelector('.bc-native-material-action span:first-child');
+      if(tag)tag.textContent=st.done===st.total&&st.total?'✓ Concluído':st.chapterDone+'/'+st.chapterTotal+' capítulos';
+    });
+  });
+}
+
+function close(){
+  document.getElementById(OVERLAY_ID)?.remove();
+  document.body.style.overflow='';
+  current=null;
+}
+function buildChapterMap(){
+  if(!current)return [];
+  return modeChapters(source(),current.mode).map(ch=>({chapter:ch,heading:findHeadingForChapter(ch)})).filter(x=>x.heading);
+}
+function autoMarkViewedChapters(){
+  if(!current||!current.chapterMap?.length)return;
+  const sc=current.scroll;
+  const viewportBottom=sc.scrollTop+sc.clientHeight;
+  let changed=false;
+  current.chapterMap.forEach((item,index)=>{
+    if(chapterDone(current.mode,item.chapter.id))return;
+    const start=item.heading.offsetTop;
+    const next=current.chapterMap[index+1]?.heading?.offsetTop ?? current.article.scrollHeight;
+    const target=start+Math.max(80,(next-start)*0.72);
+    if(viewportBottom>=target){
+      setChapterDone(current.mode,item.chapter.id,true);
+      changed=true;
+    }
+  });
+  if(changed)refreshReaderStudyUI();
+}
+function updateScrollProgress(){
+  if(!current)return;
+  const sc=current.scroll;
+  const max=Math.max(1,sc.scrollHeight-sc.clientHeight);
+  const pct=Math.max(0,Math.min(100,sc.scrollTop/max*100));
+  const bar=current.overlay.querySelector('.bc-native-reader-progress');
+  if(bar)bar.style.width=pct+'%';
+  localStorage.setItem(storageKey(current.mode+':scroll'),String(sc.scrollTop));
+  autoMarkViewedChapters();
+}
+function restoreScroll(){
+  if(!current)return;
+  const v=Number(localStorage.getItem(storageKey(current.mode+':scroll'))||0);
+  if(v>0)current.scroll.scrollTop=v;
+}
+function setFont(delta){
+  if(!current)return;
+  current.font=Math.max(14,Math.min(21,current.font+delta));
+  current.article.style.fontSize=current.font+'px';
+  localStorage.setItem(storageKey('font'),String(current.font));
+}
+function stripMarks(){
+  if(!current)return;
+  current.article.querySelectorAll('mark.bc-native-search-hit').forEach(m=>m.replaceWith(document.createTextNode(m.textContent)));
+  current.article.normalize();
+}
+function search(term){
+  stripMarks();
+  term=norm(term);
+  if(term.length<2)return 0;
+  let n=0;
+  const root=current.article;
+  const walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode(node){
+    if(!node.nodeValue.trim())return NodeFilter.FILTER_REJECT;
+    if(node.parentElement.closest('mark'))return NodeFilter.FILTER_REJECT;
+    return node.nodeValue.toLocaleLowerCase('pt-BR').includes(term.toLocaleLowerCase('pt-BR'))?NodeFilter.FILTER_ACCEPT:NodeFilter.FILTER_REJECT;
+  }});
+  const nodes=[];while(walker.nextNode())nodes.push(walker.currentNode);
+  for(const node of nodes){
+    const raw=node.nodeValue,low=raw.toLocaleLowerCase('pt-BR'),needle=term.toLocaleLowerCase('pt-BR');
+    let pos=0,idx;const frag=document.createDocumentFragment();
+    while((idx=low.indexOf(needle,pos))>=0){
+      frag.append(raw.slice(pos,idx));
+      const mk=document.createElement('mark');mk.className='bc-native-search-hit';mk.textContent=raw.slice(idx,idx+term.length);frag.append(mk);
+      n++;pos=idx+term.length;
+    }
+    frag.append(raw.slice(pos));node.replaceWith(frag);
+  }
+  root.querySelector('mark.bc-native-search-hit')?.scrollIntoView({block:'center'});
+  return n;
+}
+function findHeadingForChapter(chapter){
+  if(!current)return null;
+  const target=normKey(chapter.title).replace(/^\d+\s+/,'');
+  const words=target.split(' ').filter(w=>w.length>3);
+  const headings=Array.from(current.article.querySelectorAll('h2,h3'));
+  let best=null,bestScore=0;
+  for(const h of headings){
+    const hk=normKey(h.textContent);
+    let score=0;
+    words.forEach(w=>{if(hk.includes(w))score++});
+    if(score>bestScore){bestScore=score;best=h}
+  }
+  return bestScore>=Math.max(1,Math.min(2,words.length))?best:null;
+}
+function refreshReaderStudyUI(){
+  if(!current)return;
+  const data=source(),st=modeStudyStats(data,current.mode);
+  const value=current.overlay.querySelector('[data-reader-study-value]');
+  const bar=current.overlay.querySelector('[data-reader-study-bar]');
+  const qscore=current.overlay.querySelector('[data-reader-internal-score]');
+  if(value)value.textContent=st.done+' / '+st.total+' pontos';
+  if(bar)bar.style.width=(st.total?Math.round(st.done/st.total*100):0)+'%';
+  if(qscore)qscore.textContent=st.answered
+    ? st.correct+' acertos em '+st.answered+' respondidas'
+    : 'Nenhuma questão interna respondida';
+
+  current.overlay.querySelectorAll('[data-chapter-check]').forEach(btn=>{
+    const done=chapterDone(current.mode,btn.dataset.chapterCheck);
+    btn.classList.toggle('done',done);
+    btn.setAttribute('aria-pressed',String(done));
+    btn.textContent=done?'✓':'';
+  });
+  refreshModuleMetrics();
+}
+function chapterTocHtml(data,mode){
+  return modeChapters(data,mode).map((ch,i)=>{
+    const done=chapterDone(mode,ch.id);
+    return '<div class="bc-native-toc-row">'+
+      '<button type="button" class="bc-native-chapter-check '+(done?'done':'')+'" data-chapter-check="'+esc(ch.id)+'" aria-pressed="'+done+'" title="Marcar capítulo">'+(done?'✓':'')+'</button>'+
+      '<button type="button" class="bc-native-chapter-jump" data-chapter-jump="'+esc(ch.id)+'"><span>'+(i+1)+'.</span>'+esc(ch.title)+'</button>'+
+    '</div>';
+  }).join('');
+}
+function quizHtml(data,mode){
+  const qs=modeQuestions(data,mode);
+  if(!qs.length)return '';
+  const cards=qs.map((q,i)=>{
+    const a=internalAnswer(mode,q.id);
+    const options=q.options.map((op,idx)=>{
+      let cls='';
+      if(a){
+        if(idx===q.answer)cls+=' correct';
+        if(idx===a.selected&&idx!==q.answer)cls+=' wrong';
+      }
+      return '<button type="button" class="bc-native-quiz-option'+cls+'" data-internal-q="'+esc(q.id)+'" data-option="'+idx+'" '+(a?'disabled':'')+'><span>'+String.fromCharCode(65+idx)+'</span>'+esc(op)+'</button>';
+    }).join('');
+    return '<article class="bc-native-quiz-card" data-quiz-card="'+esc(q.id)+'">'+
+      '<div class="bc-native-quiz-number">Questão '+(i+1)+' de '+qs.length+'</div>'+
+      '<h3>'+esc(q.q)+'</h3>'+
+      '<div class="bc-native-quiz-options">'+options+'</div>'+
+      '<div class="bc-native-quiz-feedback '+(a?(a.correct?'ok':'bad'):'')+'" data-quiz-feedback>'+
+        (a?'<b>'+(a.correct?'✓ Correto':'✕ Incorreto')+'</b><span>'+esc(q.explanation)+'</span><button type="button" data-internal-retry="'+esc(q.id)+'">Refazer</button>':'<span>Escolha uma alternativa para receber o feedback.</span>')+
+      '</div>'+
+    '</article>';
+  }).join('');
+  return '<section class="bc-native-internal-review">'+
+    '<div class="bc-native-internal-review-head"><div><span class="bc-native-kicker">REVISÃO ATIVA INTERNA</span><h2>'+qs.length+' questões de assimilação</h2><p>Estas questões contam na <b>cobertura da teoria</b>. Elas não entram no gráfico de questões externas.</p></div><div class="bc-native-internal-score" data-reader-internal-score></div></div>'+
+    cards+
+  '</section>';
+}
+function bindQuiz(){
+  if(!current)return;
+  const data=source();
+  current.overlay.querySelectorAll('[data-internal-q]').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const q=modeQuestions(data,current.mode).find(x=>x.id===btn.dataset.internalQ);
+      if(!q)return;
+      saveInternalAnswer(current.mode,q,Number(btn.dataset.option));
+      rerenderQuizCard(q.id);
+      refreshReaderStudyUI();
+    });
+  });
+  current.overlay.querySelectorAll('[data-internal-retry]').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      resetInternalAnswer(current.mode,btn.dataset.internalRetry);
+      rerenderQuizCard(btn.dataset.internalRetry);
+      refreshReaderStudyUI();
+    });
+  });
+}
+function rerenderQuizCard(id){
+  if(!current)return;
+  const data=source(),q=modeQuestions(data,current.mode).find(x=>x.id===id);
+  const old=current.overlay.querySelector('[data-quiz-card="'+CSS.escape(id)+'"]');
+  if(!q||!old)return;
+  const i=modeQuestions(data,current.mode).findIndex(x=>x.id===id);
+  const a=internalAnswer(current.mode,id);
+  const options=q.options.map((op,idx)=>{
+    let cls='';
+    if(a){
+      if(idx===q.answer)cls+=' correct';
+      if(idx===a.selected&&idx!==q.answer)cls+=' wrong';
+    }
+    return '<button type="button" class="bc-native-quiz-option'+cls+'" data-internal-q="'+esc(q.id)+'" data-option="'+idx+'" '+(a?'disabled':'')+'><span>'+String.fromCharCode(65+idx)+'</span>'+esc(op)+'</button>';
+  }).join('');
+  old.innerHTML='<div class="bc-native-quiz-number">Questão '+(i+1)+' de '+modeQuestions(data,current.mode).length+'</div>'+
+    '<h3>'+esc(q.q)+'</h3><div class="bc-native-quiz-options">'+options+'</div>'+
+    '<div class="bc-native-quiz-feedback '+(a?(a.correct?'ok':'bad'):'')+'" data-quiz-feedback>'+
+      (a?'<b>'+(a.correct?'✓ Correto':'✕ Incorreto')+'</b><span>'+esc(q.explanation)+'</span><button type="button" data-internal-retry="'+esc(q.id)+'">Refazer</button>':'<span>Escolha uma alternativa para receber o feedback.</span>')+
+    '</div>';
+  bindQuiz();
+}
+function open(mode){
+  const data=source();if(!data){alert('Conteúdo nativo do M01 ainda não foi carregado.');return}
+  close();
+  const parsed=buildHtml(data,mode);
+  const label=mode==='summary'?'Conteúdo resumido':'Conteúdo completo';
+  const chapters=modeChapters(data,mode),questions=modeQuestions(data,mode);
+  const ov=document.createElement('div');
+  ov.id=OVERLAY_ID;ov.className='bc-native-reader-overlay';
+  ov.innerHTML='<section class="bc-native-reader" role="dialog" aria-modal="true" aria-label="'+esc(label)+'">'+
+    '<header class="bc-native-reader-head"><div class="bc-native-reader-title"><b>PEN M04 — '+esc(data.title)+'</b><small>'+label+' • experiência nativa da Base Completa</small></div><span class="bc-native-reader-meta">'+parsed.words.toLocaleString('pt-BR')+' palavras • ~'+parsed.mins+' min</span><button class="bc-native-reader-close" data-native-action="close" aria-label="Fechar">×</button><div class="bc-native-reader-progress-track"><div class="bc-native-reader-progress"></div></div></header>'+
+    '<div class="bc-native-reader-tools"><input type="search" placeholder="Buscar neste material…" aria-label="Buscar"><button data-native-action="smaller">A−</button><button data-native-action="larger">A+</button><button class="primary" data-native-action="top">Ir ao topo</button></div>'+
+    '<div class="bc-native-reader-body">'+
+      '<nav class="bc-native-toc"><div class="bc-native-toc-label">Capítulos para concluir</div>'+chapterTocHtml(data,mode)+'</nav>'+
+      '<main class="bc-native-scroll"><article class="bc-native-article">'+
+        '<div class="bc-native-kicker">'+(mode==='summary'?'PRIMEIRA LEITURA + REVISÃO':'TEORIA INTEGRAL')+'</div>'+
+        '<h1>'+esc(data.title)+'</h1>'+
+        '<p class="lead">'+(mode==='summary'?'Versão condensada para compreender o módulo e revisar os pontos de maior rendimento.':'Conteúdo integral convertido para leitura nativa, sem leitor de PDF.')+'</p>'+
+        '<section class="bc-native-study-progress"><div><b>Progresso neste material</b><span data-reader-study-value>0 / '+(chapters.length+questions.length)+' pontos</span></div><div class="bc-native-study-progress-track"><span data-reader-study-bar></span></div><small>'+chapters.length+' capítulos + '+questions.length+' questões internas. Os capítulos recebem check automaticamente conforme você avança; as questões internas também entram na cobertura da teoria.</small></section>'+
+        parsed.body+
+        quizHtml(data,mode)+
+      '</article></main>'+
+    '</div></section>';
+  document.body.appendChild(ov);document.body.style.overflow='hidden';
+
+  current={
+    mode,overlay:ov,scroll:ov.querySelector('.bc-native-scroll'),article:ov.querySelector('.bc-native-article'),
+    font:Number(localStorage.getItem(storageKey('font'))||16),chapterMap:[]
+  };
+  current.article.style.fontSize=current.font+'px';
+  current.scroll.addEventListener('scroll',updateScrollProgress,{passive:true});
+  ov.querySelector('[data-native-action="close"]').onclick=close;
+  ov.querySelector('[data-native-action="smaller"]').onclick=()=>setFont(-1);
+  ov.querySelector('[data-native-action="larger"]').onclick=()=>setFont(1);
+  ov.querySelector('[data-native-action="top"]').onclick=()=>current.scroll.scrollTo({top:0,behavior:'smooth'});
+  ov.querySelector('.bc-native-reader-tools input').addEventListener('input',e=>search(e.target.value));
+
+  ov.querySelectorAll('[data-chapter-check]').forEach(btn=>{
+    btn.onclick=()=>{
+      const id=btn.dataset.chapterCheck;
+      setChapterDone(mode,id,!chapterDone(mode,id));
+      refreshReaderStudyUI();
+    };
+  });
+  ov.querySelectorAll('[data-chapter-jump]').forEach(btn=>{
+    btn.onclick=()=>{
+      const ch=modeChapters(data,mode).find(x=>x.id===btn.dataset.chapterJump);
+      findHeadingForChapter(ch)?.scrollIntoView({behavior:'smooth',block:'start'});
+    };
+  });
+
+  bindQuiz();
+  ov.addEventListener('click',e=>{if(e.target===ov)close()});
+  requestAnimationFrame(()=>{
+    current.chapterMap=buildChapterMap();
+    restoreScroll();updateScrollProgress();refreshReaderStudyUI();autoMarkViewedChapters();
+  });
+}
+function openMap(){
+  if(global.BaseMindMap?.open)global.BaseMindMap.open('penal','p4');
+  else alert('O mapa mental interativo ainda está carregando. Tente novamente em alguns segundos.');
+}
+function removeLegacyM01Content(){
+  const module=document.querySelector(M1_SELECTOR);
+  if(!module)return;
+  module.querySelectorAll('.bc-session-nav,.bc-session-pager').forEach(el=>el.remove());
+}
+function inject(){
+  const module=document.querySelector(M1_SELECTOR);if(!module)return;
+  removeLegacyM01Content();
+  const body=module.querySelector('.cf-module-body');if(!body)return;
+
+  // Fallback: a renderização principal já entrega os cards diretamente.
+  if(!body.querySelector('.bc-native-materials')){
+    const host=document.createElement('section');host.className='bc-native-materials';
+    host.innerHTML='<div class="bc-native-materials-head"><div><b>Materiais do módulo</b><small>Escolha como estudar</small></div><small>Piloto M04 • conteúdo nativo</small></div>'+
+      '<div class="bc-native-material-grid">'+
+        '<button class="bc-native-material-card" data-native-kind="summary"><span class="bc-native-material-icon">⚡</span><span><strong>Conteúdo resumido</strong><small>Primeira leitura, revisão rápida, artigos, pegadinhas e revisão ativa.</small></span><span class="bc-native-material-action"><span>Abrir</span><span>→</span></span></button>'+
+        '<button class="bc-native-material-card" data-native-kind="complete"><span class="bc-native-material-icon">📚</span><span><strong>Conteúdo completo</strong><small>Teoria integral do M04 em formato de site, com índice, busca e progresso de leitura.</small></span><span class="bc-native-material-action"><span>Abrir</span><span>→</span></span></button>'+
+        '<button class="bc-native-material-card" data-native-kind="mindmap"><span class="bc-native-material-icon">🧠</span><span><strong>Mapa mental</strong><small>Mapa interativo com abrir/recolher ramos, zoom, arrastar e tela cheia.</small></span><span class="bc-native-material-action"><span>Abrir</span><span>→</span></span></button>'+
+      '</div>';
+    host.querySelector('[data-native-kind="summary"]').onclick=()=>open('summary');
+    host.querySelector('[data-native-kind="complete"]').onclick=()=>open('complete');
+    host.querySelector('[data-native-kind="mindmap"]').onclick=openMap;
+    const subtitle=body.querySelector('.cf-subtitle');
+    if(subtitle)subtitle.insertAdjacentElement('afterend',host);else body.insertAdjacentElement('afterbegin',host);
+  }
+  refreshModuleMetrics();
+}
+function install(){
+  inject();
+  observer=new MutationObserver(()=>{
+    clearTimeout(install._t);
+    install._t=setTimeout(()=>{removeLegacyM01Content();inject();refreshModuleMetrics()},60);
+  });
+  observer.observe(document.documentElement,{subtree:true,childList:true});
+  global.addEventListener('focus',refreshModuleMetrics);
+}
+global.BaseNativeReaderM04={
+  open,close,refreshMetrics:refreshModuleMetrics,theoryStats,externalStats,
+  version:'2026.10.02-m04-pilot1'
+};
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&document.getElementById(OVERLAY_ID))close()});
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',install);else install();
+})(window);
