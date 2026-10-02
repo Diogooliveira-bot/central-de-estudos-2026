@@ -115,12 +115,12 @@ function buildHtml(data,mode){
     const host=document.createElement('div');
     host.innerHTML=global.PENAL_FULL_THEORY?.p10?.html||'';
 
-    const review=Array.from(host.querySelectorAll('h2')).find(h=>/^41\\.\\s/.test(norm(h.textContent)));
+    const review=Array.from(host.querySelectorAll('h2')).find(h=>/^26\\.\\s/.test(norm(h.textContent)));
     if(review){
       let n=review;
       while(n){const next=n.nextSibling;n.remove();n=next;}
     }
-    const first=Array.from(host.querySelectorAll('h2')).find(h=>/^01\\.\\s/.test(norm(h.textContent)));
+    const first=Array.from(host.querySelectorAll('h2')).find(h=>/^1\\.\\s/.test(norm(h.textContent)));
     if(first){
       let n=host.firstChild;
       while(n&&n!==first){const next=n.nextSibling;n.remove();n=next;}
@@ -129,7 +129,7 @@ function buildHtml(data,mode){
     const headings=[];
     host.querySelectorAll('h2').forEach((h,index)=>{
       const title=norm(h.textContent);
-      if(!/^(?:0[1-9]|[12][0-9]|3[0-9]|40)\\.\\s/.test(title))return;
+      if(!/^(?:[1-9]|1[0-9]|2[0-5])\\.\\s/.test(title))return;
       if(!h.id)h.id='bcsec-complete-'+(index+1)+'-'+slug(title);
       headings.push({id:h.id,text:title,level:2,key:normKey(title)});
     });
