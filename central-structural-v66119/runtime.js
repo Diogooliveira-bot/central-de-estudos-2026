@@ -3985,38 +3985,6 @@ function renderCfModule(w){
    <div class="cf-module-body">
      <div class="cf-module-bar"><span style="width:${pct}%"></span></div>
      <div class="cf-subtitle">${esc(w.subtitle)}</div>
-     ${w.id==='p1'?\`
-     <section class="bc-native-materials bc-native-materials-static" data-bc-native-m01>
-       <div class="bc-native-materials-head">
-         <div><b>Materiais do módulo</b><small>Escolha como estudar</small></div>
-         <small>Piloto M01 • conteúdo nativo</small>
-       </div>
-       <div class="bc-native-material-grid">
-         <button type="button" class="bc-native-material-card" data-native-kind="summary" onclick="window.BaseNativeReader&&BaseNativeReader.open('summary')">
-           <span class="bc-native-material-icon">⚡</span>
-           <span><strong>Conteúdo resumido</strong><small>Primeira leitura, revisão rápida, artigos, pegadinhas e revisão ativa.</small></span>
-           <span class="bc-native-material-action"><span>Abrir</span><span>→</span></span>
-         </button>
-         <button type="button" class="bc-native-material-card" data-native-kind="complete" onclick="window.BaseNativeReader&&BaseNativeReader.open('complete')">
-           <span class="bc-native-material-icon">📚</span>
-           <span><strong>Conteúdo completo</strong><small>Teoria integral do M01 em formato de site, com índice, busca e progresso de leitura.</small></span>
-           <span class="bc-native-material-action"><span>Abrir</span><span>→</span></span>
-         </button>
-         <button type="button" class="bc-native-material-card" data-native-kind="mindmap" onclick="window.BaseMindMap&&BaseMindMap.open('penal','p1')">
-           <span class="bc-native-material-icon">🧠</span>
-           <span><strong>Mapa mental</strong><small>Mapa interativo com abrir/recolher ramos, zoom, arrastar e tela cheia.</small></span>
-           <span class="bc-native-material-action"><span>Abrir</span><span>→</span></span>
-         </button>
-       </div>
-       <section class="bc-native-quick-summary" aria-label="Resumo do módulo">
-         <div class="bc-native-quick-summary-head">
-           <span class="bc-native-quick-summary-no">1</span>
-           <div><b>Resumo do módulo</b><small>O M01 em poucas palavras.</small></div>
-         </div>
-         <div class="bc-native-quick-summary-body">Legalidade e princípios penais • interpretação e analogia • intervenção mínima e insignificância • conflito aparente de normas (ESCA).</div>
-       </section>
-     </section>
-     \`:''}
      <div class="cf-steps">
        ${cfStep(1,'Diagnóstico','Questões FCC antes da teoria.',ws.diagnostic,real.length?`<button class="cf-btn primary" onclick="startCfQuiz('${w.id}','diagnostic',${diag})">${ws.diagnostic?'Refazer diagnóstico':'Começar '+diag+' FCC'}</button>`:`<span class="muted small">Sem questões reais suficientes.</span>`)}
        ${cfStep(2,'Leitura orientada','Dispositivos e pontos para observar na Constituição.',ws.reading,`<div class="cf-reading"><strong>${esc(w.read)}</strong><ul>${w.read_focus.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div><div class="cf-actions"><button class="cf-btn primary" onclick="openLeiSecaEnxuta(null,'cf','cf-m${String(w.num).padStart(2,'0')}')">📖 Decorando deste módulo</button><button class="cf-btn ${ws.reading?'good':''}" onclick="cfUpdateWeek('${w.id}',{reading:${!ws.reading}})">${ws.reading?'✓ Concluída':'Marcar concluída'}</button></div>`)}
