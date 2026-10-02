@@ -549,3 +549,4 @@ global.BaseNativeReaderM02={
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&document.getElementById(OVERLAY_ID))close()});
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',install);else install();
 })(window);
+/* M03 preview handoff */
