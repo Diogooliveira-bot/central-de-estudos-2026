@@ -223,9 +223,30 @@ function openMap(){
 function removeLegacyM01Content(){
   const module=document.querySelector(M1_SELECTOR);
   if(!module) return;
+
+  // Remove o índice/paginadores de sessões apenas no piloto M01.
+  module.querySelectorAll('.bc-session-nav,.bc-session-pager').forEach(function(el){ el.remove(); });
+
+  // Mantém o primeiro card visual, mas transforma "Leitura orientada" em um resumo curto do módulo.
   module.querySelectorAll('.cf-step').forEach(function(step){
     const title=norm(step.querySelector('.cf-step-copy b')?.textContent||'');
-    if(/^(Leitura orientada|Teoria completa|Aprofundamento FCC)$/i.test(title)){
+
+    if(/^Leitura orientada$/i.test(title)){
+      step.classList.add('bc-native-module-summary');
+      step.innerHTML =
+        '<div class="cf-step-head">'+
+          '<div class="cf-step-no">1</div>'+
+          '<div class="cf-step-copy"><b>Resumo do módulo</b><small>O M01 em poucas palavras.</small></div>'+
+        '</div>'+
+        '<div class="cf-step-body">'+
+          '<div class="bc-native-module-summary-text">'+
+            'Legalidade e princípios penais • interpretação e analogia • intervenção mínima e insignificância • conflito aparente de normas (ESCA).'+
+          '</div>'+
+        '</div>';
+      return;
+    }
+
+    if(/^(Teoria completa|Aprofundamento FCC)$/i.test(title)){
       step.remove();
     }
   });
