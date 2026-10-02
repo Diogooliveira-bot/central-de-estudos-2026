@@ -14,10 +14,14 @@ function slug(s){return normKey(s).replace(/\s+/g,'-').slice(0,70)}
 function source(){return global.BASE_NATIVE_CONTENT?.penal?.m01||null}
 function storageKey(part){return STORAGE_PREFIX+':'+part}
 
-function cleanLines(raw){
+function cleanLines(raw,mode){
   const lines=String(raw||'').replace(/\r/g,'').split('\n').map(norm);
   const out=[];
+  let skipOldSummaryReview=false;
   for(let line of lines){
+    if(mode==='summary' && /^REVISAO ATIVA$/i.test(line)){skipOldSummaryReview=true;continue}
+    if(mode==='summary' && /^REVISAO DE 60 SEGUNDOS$/i.test(line)){skipOldSummaryReview=false;out.push(line);continue}
+    if(skipOldSummaryReview)continue;
     if(!line){out.push('');continue}
     if(/^BASE COMPLETA(?:\s*[|•-]|$)/i.test(line))continue;
     if(/^D\s*IRE\s*ITO PENAL\s*•\s*M0?1$/i.test(line))continue;
@@ -61,7 +65,7 @@ function looksTitle(line){
   return false;
 }
 function parse(raw,mode){
-  const lines=cleanLines(raw);
+  const lines=cleanLines(raw,mode);
   const blocks=[];
   let para=[];
   const flush=()=>{if(para.length){blocks.push({type:'p',text:para.join(' ')});para=[]}};
@@ -171,19 +175,16 @@ function theoryStats(){
 }
 function externalStats(){
   try{
-    if(typeof PENAL_WEEKS==='undefined'||typeof penalPool!=='function'||typeof penalState!=='function')return {answered:0,correct:0,total:0,accuracy:null};
-    const w=PENAL_WEEKS.find(x=>x.id==='p1');
-    if(!w)return {answered:0,correct:0,total:0,accuracy:null};
-    const qs=penalPool(w).filter(q=>q.real!==false);
-    const st=penalState();
-    let answered=0,correct=0;
-    qs.forEach(q=>{
-      const a=st.answers?.[q.id];
-      if(a?.attempts){answered++;if(a.lastCorrect)correct++}
-    });
-    return {answered,correct,total:qs.length,accuracy:answered?Math.round(correct/answered*100):null};
+    const rows=JSON.parse(localStorage.getItem('central-v6:module-rounds:penal:p1')||'[]');
+    const valid=(Array.isArray(rows)?rows:[]).map(r=>({
+      done:Math.max(0,Number(r.valid ?? r.done)||0),
+      correct:Math.max(0,Number(r.correct)||0)
+    })).filter(r=>r.done>0);
+    const answered=valid.reduce((n,r)=>n+r.done,0);
+    const correct=valid.reduce((n,r)=>n+Math.min(r.correct,r.done),0);
+    return {answered,correct,rounds:valid.length,accuracy:answered?Math.round(correct/answered*100):null};
   }catch(_){
-    return {answered:0,correct:0,total:0,accuracy:null};
+    return {answered:0,correct:0,rounds:0,accuracy:null};
   }
 }
 function setRing(el,pct,label){
@@ -210,8 +211,12 @@ function refreshModuleMetrics(){
       : 'Nenhuma questão externa respondida';
   }
   const extMeta=module.querySelector('[data-native-metric-meta="external"]');
-  if(extMeta)extMeta.textContent=external.total?external.total+' questões externas disponíveis':'Aguardando banco externo';
+  if(extMeta)extMeta.textContent=external.answered
+    ? external.rounds+' rodada(s) registrada(s) no final do módulo'
+    : 'Registre questões externas no final do módulo';
 
+  const headerStat=module.querySelector('.cf-module-stat');
+  if(headerStat)headerStat.textContent='Cobertura '+theory.pct+'% • teoria + revisão interna';
   refreshCardState();
 }
 function refreshCardState(){
@@ -230,6 +235,27 @@ function close(){
   document.body.style.overflow='';
   current=null;
 }
+function buildChapterMap(){
+  if(!current)return [];
+  return modeChapters(source(),current.mode).map(ch=>({chapter:ch,heading:findHeadingForChapter(ch)})).filter(x=>x.heading);
+}
+function autoMarkViewedChapters(){
+  if(!current||!current.chapterMap?.length)return;
+  const sc=current.scroll;
+  const viewportBottom=sc.scrollTop+sc.clientHeight;
+  let changed=false;
+  current.chapterMap.forEach((item,index)=>{
+    if(chapterDone(current.mode,item.chapter.id))return;
+    const start=item.heading.offsetTop;
+    const next=current.chapterMap[index+1]?.heading?.offsetTop ?? current.article.scrollHeight;
+    const target=start+Math.max(80,(next-start)*0.72);
+    if(viewportBottom>=target){
+      setChapterDone(current.mode,item.chapter.id,true);
+      changed=true;
+    }
+  });
+  if(changed)refreshReaderStudyUI();
+}
 function updateScrollProgress(){
   if(!current)return;
   const sc=current.scroll;
@@ -238,6 +264,7 @@ function updateScrollProgress(){
   const bar=current.overlay.querySelector('.bc-native-reader-progress');
   if(bar)bar.style.width=pct+'%';
   localStorage.setItem(storageKey(current.mode+':scroll'),String(sc.scrollTop));
+  autoMarkViewedChapters();
 }
 function restoreScroll(){
   if(!current)return;
@@ -409,7 +436,7 @@ function open(mode){
         '<div class="bc-native-kicker">'+(mode==='summary'?'PRIMEIRA LEITURA + REVISÃO':'TEORIA INTEGRAL')+'</div>'+
         '<h1>'+esc(data.title)+'</h1>'+
         '<p class="lead">'+(mode==='summary'?'Versão condensada para compreender o módulo e revisar os pontos de maior rendimento.':'Conteúdo integral convertido para leitura nativa, sem leitor de PDF.')+'</p>'+
-        '<section class="bc-native-study-progress"><div><b>Progresso neste material</b><span data-reader-study-value>0 / '+(chapters.length+questions.length)+' pontos</span></div><div class="bc-native-study-progress-track"><span data-reader-study-bar></span></div><small>'+chapters.length+' capítulos + '+questions.length+' questões internas. Cada check e cada questão respondida contam na cobertura da teoria.</small></section>'+
+        '<section class="bc-native-study-progress"><div><b>Progresso neste material</b><span data-reader-study-value>0 / '+(chapters.length+questions.length)+' pontos</span></div><div class="bc-native-study-progress-track"><span data-reader-study-bar></span></div><small>'+chapters.length+' capítulos + '+questions.length+' questões internas. Os capítulos recebem check automaticamente conforme você avança; as questões internas também entram na cobertura da teoria.</small></section>'+
         parsed.body+
         quizHtml(data,mode)+
       '</article></main>'+
@@ -418,7 +445,7 @@ function open(mode){
 
   current={
     mode,overlay:ov,scroll:ov.querySelector('.bc-native-scroll'),article:ov.querySelector('.bc-native-article'),
-    font:Number(localStorage.getItem(storageKey('font'))||16)
+    font:Number(localStorage.getItem(storageKey('font'))||16),chapterMap:[]
   };
   current.article.style.fontSize=current.font+'px';
   current.scroll.addEventListener('scroll',updateScrollProgress,{passive:true});
@@ -444,7 +471,10 @@ function open(mode){
 
   bindQuiz();
   ov.addEventListener('click',e=>{if(e.target===ov)close()});
-  requestAnimationFrame(()=>{restoreScroll();updateScrollProgress();refreshReaderStudyUI()});
+  requestAnimationFrame(()=>{
+    current.chapterMap=buildChapterMap();
+    restoreScroll();updateScrollProgress();refreshReaderStudyUI();autoMarkViewedChapters();
+  });
 }
 function openMap(){
   if(global.BaseMindMap?.open)global.BaseMindMap.open('penal','p1');
