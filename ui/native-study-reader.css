@@ -113,3 +113,47 @@ html.bc-ui-v1 #subjects .cf-module[data-cf="p1"] .bc-native-module-summary-text{
   font-size:14px;
   line-height:1.6;
 }
+
+/* M01 definitivo do preview: o fluxo antigo inteiro fica oculto.
+   O conteúdo do módulo passa a ser somente materiais nativos + resumo curto + rodapé padrão. */
+html.bc-ui-v1 #subjects .cf-module[data-cf="p1"] .cf-steps{
+  display:none!important;
+}
+html.bc-ui-v1 #subjects .cf-module[data-cf="p1"] .bc-session-nav,
+html.bc-ui-v1 #subjects .cf-module[data-cf="p1"] .bc-session-pager{
+  display:none!important;
+}
+html.bc-ui-v1 #subjects .cf-module[data-cf="p1"] .bc-native-quick-summary{
+  margin-top:14px;
+  border:1px solid var(--bc-color-border)!important;
+  border-radius:12px;
+  overflow:hidden;
+  background:var(--bc-color-surface-elevated)!important;
+}
+html.bc-ui-v1 #subjects .cf-module[data-cf="p1"] .bc-native-quick-summary-head{
+  min-height:64px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:12px 14px;
+  background:var(--bc-color-surface)!important;
+}
+html.bc-ui-v1 #subjects .cf-module[data-cf="p1"] .bc-native-quick-summary-no{
+  width:30px;height:30px;flex:0 0 30px;display:grid;place-items:center;
+  border-radius:999px;background:color-mix(in srgb,var(--bc-color-primary) 18%,transparent);
+  color:var(--bc-color-primary);font-weight:800;font-size:12px;
+}
+html.bc-ui-v1 #subjects .cf-module[data-cf="p1"] .bc-native-quick-summary-head b{
+  display:block;font-size:14px;color:var(--bc-color-text)!important;
+}
+html.bc-ui-v1 #subjects .cf-module[data-cf="p1"] .bc-native-quick-summary-head small{
+  display:block;margin-top:3px;font-size:11px;color:var(--bc-color-text-secondary)!important;
+}
+html.bc-ui-v1 #subjects .cf-module[data-cf="p1"] .bc-native-quick-summary-body{
+  padding:16px;
+  border-top:1px solid var(--bc-color-border);
+  border-left:3px solid var(--bc-color-primary);
+  color:var(--bc-color-text);
+  font-size:14px;
+  line-height:1.6;
+}
