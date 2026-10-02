@@ -157,3 +157,123 @@ html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-module[data-cf="p1"] .bc-n
   font-size:14px;
   line-height:1.6;
 }
+
+
+/* ===== M01 piloto 2 — métricas, capítulos e revisão ativa ===== */
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-module[data-cf="p1"] .bc-native-metrics{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:10px;
+  margin:0 0 16px;
+}
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-module[data-cf="p1"] .bc-native-metric-card{
+  min-height:128px;
+  display:flex;
+  align-items:center;
+  gap:16px;
+  padding:15px;
+  border:1px solid var(--bc-color-border)!important;
+  border-radius:14px;
+  background:var(--bc-color-surface)!important;
+}
+.bc-native-ring{
+  --pct:0;
+  width:82px;height:82px;flex:0 0 82px;
+  padding:7px;border-radius:999px;
+  background:conic-gradient(var(--bc-color-primary,#0F766E) calc(var(--pct)*1%),color-mix(in srgb,var(--bc-color-border,#CBD5E1) 72%,transparent) 0);
+}
+.bc-native-ring-inner{
+  width:100%;height:100%;border-radius:999px;background:var(--bc-color-surface,#fff);
+  display:grid;place-items:center;align-content:center;text-align:center;
+}
+.bc-native-ring-inner b{font-size:18px;line-height:1;color:var(--bc-color-text,#0F172A)}
+.bc-native-ring-inner span{margin-top:4px;font-size:9px;text-transform:uppercase;letter-spacing:.08em;color:var(--bc-color-text-secondary,#64748B)}
+.bc-native-metric-copy{min-width:0}
+.bc-native-metric-copy small{display:block;font-size:10px;font-weight:800;letter-spacing:.08em;color:var(--bc-color-text-secondary)}
+.bc-native-metric-copy strong{display:block;margin:5px 0 4px;font-size:14px;line-height:1.35;color:var(--bc-color-text)}
+.bc-native-metric-copy span{display:block;font-size:11px;line-height:1.45;color:var(--bc-color-text-secondary)}
+
+.bc-native-study-progress{
+  margin:0 0 28px;
+  padding:14px 15px;
+  border:1px solid var(--bc-color-border);
+  border-radius:12px;
+  background:var(--bc-color-surface);
+}
+.bc-native-study-progress>div:first-child{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.bc-native-study-progress b{font-size:13px}
+.bc-native-study-progress [data-reader-study-value]{font-size:12px;font-weight:800;color:var(--bc-color-primary)}
+.bc-native-study-progress-track{height:7px;margin:10px 0 8px;border-radius:999px;background:color-mix(in srgb,var(--bc-color-border) 72%,transparent);overflow:hidden}
+.bc-native-study-progress-track span{display:block;height:100%;width:0;border-radius:inherit;background:var(--bc-color-primary);transition:width .18s ease}
+.bc-native-study-progress small{font-size:11px;line-height:1.45;color:var(--bc-color-text-secondary)}
+
+.bc-native-toc-row{
+  display:grid;
+  grid-template-columns:27px minmax(0,1fr);
+  align-items:start;
+  gap:6px;
+  margin:2px 0;
+}
+.bc-native-chapter-check{
+  width:25px;height:25px;display:grid;place-items:center;margin-top:4px;
+  border:1px solid var(--bc-color-border-interactive);
+  border-radius:7px;background:var(--bc-color-surface);color:#fff;
+  font-size:12px;font-weight:900;cursor:pointer;
+}
+.bc-native-chapter-check.done{border-color:var(--bc-color-primary);background:var(--bc-color-primary)}
+.bc-native-chapter-jump{
+  width:100%;border:0;background:transparent;color:var(--bc-color-text-secondary);
+  padding:7px 6px;border-radius:8px;text-align:left;font-size:11px;line-height:1.35;cursor:pointer;
+}
+.bc-native-chapter-jump:hover{background:var(--bc-color-bg-secondary);color:var(--bc-color-text)}
+.bc-native-chapter-jump span{display:inline-block;min-width:24px;color:var(--bc-color-primary);font-weight:800}
+
+.bc-native-internal-review{
+  margin-top:48px;padding-top:28px;border-top:2px solid var(--bc-color-border);
+}
+.bc-native-internal-review-head{
+  display:flex;align-items:flex-start;justify-content:space-between;gap:18px;margin-bottom:16px;
+}
+.bc-native-internal-review-head h2{margin:4px 0 6px!important}
+.bc-native-internal-review-head p{margin:0!important;color:var(--bc-color-text-secondary)!important;font-size:13px}
+.bc-native-internal-score{
+  min-width:190px;padding:10px 12px;border:1px solid var(--bc-color-border);border-radius:10px;
+  background:var(--bc-color-surface);color:var(--bc-color-text-secondary);font-size:11px;font-weight:750;text-align:center;
+}
+.bc-native-quiz-card{
+  margin:12px 0;padding:17px;border:1px solid var(--bc-color-border);border-radius:13px;background:var(--bc-color-surface);
+}
+.bc-native-quiz-number{font-size:10px;font-weight:850;letter-spacing:.08em;text-transform:uppercase;color:var(--bc-color-primary)}
+.bc-native-quiz-card h3{margin:7px 0 13px!important;font-size:16px!important;line-height:1.45!important}
+.bc-native-quiz-options{display:grid;gap:8px}
+.bc-native-quiz-option{
+  width:100%;display:flex;align-items:flex-start;gap:10px;padding:11px 12px;
+  border:1px solid var(--bc-color-border);border-radius:10px;background:var(--bc-color-surface-elevated);
+  color:var(--bc-color-text);text-align:left;font:600 12px/1.45 var(--bc-font);cursor:pointer;
+}
+.bc-native-quiz-option>span{
+  width:24px;height:24px;flex:0 0 24px;display:grid;place-items:center;border-radius:999px;
+  border:1px solid var(--bc-color-border-interactive);font-size:10px;font-weight:900;
+}
+.bc-native-quiz-option:hover:not(:disabled){border-color:var(--bc-color-primary)}
+.bc-native-quiz-option.correct{border-color:var(--bc-color-success);background:color-mix(in srgb,var(--bc-color-success) 8%,var(--bc-color-surface))}
+.bc-native-quiz-option.wrong{border-color:var(--bc-color-danger,#DC2626);background:color-mix(in srgb,var(--bc-color-danger,#DC2626) 7%,var(--bc-color-surface))}
+.bc-native-quiz-option:disabled{cursor:default;opacity:1}
+.bc-native-quiz-feedback{
+  margin-top:10px;padding:11px 12px;border:1px solid var(--bc-color-border);border-radius:10px;
+  color:var(--bc-color-text-secondary);font-size:12px;line-height:1.5;
+}
+.bc-native-quiz-feedback b{display:block;margin-bottom:3px;color:var(--bc-color-text)}
+.bc-native-quiz-feedback.ok{border-color:color-mix(in srgb,var(--bc-color-success) 55%,var(--bc-color-border))}
+.bc-native-quiz-feedback.bad{border-color:color-mix(in srgb,var(--bc-color-danger,#DC2626) 50%,var(--bc-color-border))}
+.bc-native-quiz-feedback button{
+  margin-top:8px;min-height:34px;padding:6px 10px;border:1px solid var(--bc-color-border-interactive);
+  border-radius:8px;background:var(--bc-color-surface);color:var(--bc-color-text);font-weight:700;cursor:pointer;
+}
+
+@media(max-width:760px){
+  html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-module[data-cf="p1"] .bc-native-metrics{grid-template-columns:1fr}
+  .bc-native-ring{width:72px;height:72px;flex-basis:72px}
+  .bc-native-internal-review-head{display:block}
+  .bc-native-internal-score{margin-top:10px;width:100%}
+}
