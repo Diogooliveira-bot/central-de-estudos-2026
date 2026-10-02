@@ -33,3 +33,20 @@ function install(){
 }
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',install);else install();
 })(window);
+
+/* M11 preview loader */
+(function(){
+  function load(src,next){
+    var s=document.createElement('script');
+    s.src=src; s.async=false;
+    s.onload=function(){if(next)next();};
+    document.head.appendChild(s);
+  }
+  load('/content/penal/m11-native-data.js?v=20261002m11p1',function(){
+    load('/ui/native-study-reader-m11.js?v=20261002m11p1',function(){
+      load('/ui/native-module-m11-shell.js?v=20261002m11p1',function(){
+        load('/ui/m11-header-fix.js?v=20261002m11p1');
+      });
+    });
+  });
+})();
