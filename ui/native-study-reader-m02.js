@@ -2885,3 +2885,627 @@ global.BaseNativeReaderM04={
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&document.getElementById(OVERLAY_ID))close()});
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',install);else install();
 })(window);
+
+/* M05 preview bundled */
+(function(global){
+'use strict';
+global.BASE_NATIVE_CONTENT=global.BASE_NATIVE_CONTENT||{};
+global.BASE_NATIVE_CONTENT.penal=global.BASE_NATIVE_CONTENT.penal||{};
+global.BASE_NATIVE_CONTENT.penal.m05={"moduleId":"p5","number":5,"title":"Culpabilidade e Teoria do Erro","updatedAt":"2026-10-02","sources":{"completeDriveId":"1vGhyrk6t9n5zhDFmB7dyhajL5dq2FSZq","completeTheoryKey":"p5","summaryDriveId":"1-8A9jxV6LMZCXqis4ILuhfECJp1qUjIt","mindMapDriveId":"1wtAoXtQekL_YvKmhxSFApky9enDQ4ME4"},"summary":"BASE COMPLETA | DIREITO PENAL | PEN M5 Culpabilidade e Teoria do Erro\r\nResumo para primeira leitura e revisão | Base normativa conferida em 01/10/2026 1\r\nPEN M5\r\nCulpabilidade e Teoria do Erro\r\nLeitura curta para quem está vendo o tema pela primeira vez e material de revisão rápida para\r\nquem já estudou.\r\n1ª leitura\r\nPáginas 1 a 4: compreenda o mapa e as diferenças.\r\nRevisão\r\nPáginas 5 e 6: lei seca, pegadinhas e recuperação ativa.\r\nVisão geral\r\nMapa-mestre: FATO TÍPICO -> ILICITUDE -> CULPABILIDADE. Para fins didáticos, o módulo usa a concepção\r\ntripartida: a culpabilidade é o terceiro substrato do crime e representa o juízo de reprovação pessoal dirigido ao\r\nautor de um fato típico e ilícito.\r\nFórmula central\r\nCULPABILIDADE = IMPUTABILIDADE + POTENCIAL CONSCIÊNCIA DA ILICITUDE + EXIGIBILIDADE DE CONDUTA DIVERSA\r\nPlano Pergunta Exemplo de instituto\r\nFato típico O comportamento realiza o tipo penal? Erro de tipo essencial pode excluir o dolo.\r\nIlicitude O fato típico é contrário ao Direito ou está justificado? Legítima defesa real exclui a ilicitude.\r\nCulpabilidade É possível censurar pessoalmente o agente? Erro de proibição inevitável exclui a culpabilidade.\r\nAtalhos de localização:\r\n- Erro de tipo essencial -> atinge o dolo/tipicidade subjetiva.\r\n- Excludente real -> atinge a ilicitude.\r\n- Erro de proibição inevitável -> atinge a culpabilidade.\r\n- Coação física irresistível -> elimina a própria conduta voluntária.\r\n- Coação moral irresistível -> elimina a exigibilidade de conduta diversa.\r\nAtenção\r\nInimputabilidade não significa ausência de fato típico ou de ilicitude. Em regra, ela impede a formação da\r\nculpabilidade.BASE COMPLETA | DIREITO PENAL | PEN M5 Culpabilidade e Teoria do Erro\r\nResumo para primeira leitura e revisão | Base normativa conferida em 01/10/2026 2\r\nTeoria - 1. Culpabilidade e imputabilidade\r\nEvolução resumida: na teoria psicológica, dolo e culpa formavam o vínculo psíquico da culpabilidade. A teoria\r\npsicológico-normativa acrescentou o juízo de reprovação. No finalismo, dolo e culpa migram para o fato típico, e\r\na culpabilidade assume estrutura normativa: imputabilidade + potencial consciência da ilicitude + exigibilidade.\r\nPonto de prova\r\nNo finalismo, dolo e culpa pertencem ao fato típico, não à culpabilidade.\r\nImputabilidade\r\nÉ a capacidade de entender o caráter ilícito do fato e de determinar-se de acordo com esse entendimento. É\r\napenas um elemento da culpabilidade, e não seu sinônimo.\r\nDoença mental e desenvolvimento mental\r\nO art. 26, caput, adota estrutura biopsicológica: deve existir a causa mental prevista e, ao tempo da ação ou\r\nomissão, incapacidade inteira de compreender a ilicitude ou de se autodeterminar. O diagnóstico, sozinho, não\r\nbasta.\r\nSemi-imputabilidade\r\nNo art. 26, parágrafo único, a capacidade não está eliminada, mas reduzida. A culpabilidade subsiste em grau\r\ndiminuído, com consequência legal própria.\r\nMenoridade penal\r\nMenor de 18 anos é penalmente inimputável (art. 27 CP e art. 228 CF). Aqui prevalece o critério biológico: não\r\nse investiga maturidade concreta para afastar a regra. A idade relevante é a do momento da ação ou omissão.\r\nSituação Capacidade Efeito principal\r\nInimputável - art. 26 caput Inteiramente ausente Exclui imputabilidade.\r\nSemi-imputável Reduzida Não exclui totalmente; há redução legal.\r\nImputável Preservada Segue análise dos demais elementos da culpabilidade.\r\nEmoção, paixão e embriaguez\r\nEmoção e paixão, por si, não excluem imputabilidade. Na embriaguez, é preciso separar a origem e a\r\nintensidade: voluntária e culposa não excluem; a acidental por caso fortuito ou força maior pode produzir\r\nisenção se completa e houver incapacidade total, ou redução se a capacidade estiver apenas diminuída.\r\nEmbriaguez Regra\r\nVoluntária ou culposa Não exclui imputabilidade.\r\nAcidental completa Pode isentar se decorre de caso fortuito/força maior e causa incapacidade total.\r\nAcidental incompleta Pode gerar redução quando há diminuição de capacidade.\r\nPatológica Pode exigir análise pelo art. 26, conforme natureza do quadro e capacidade concreta.\r\nActio libera in causa\r\nO olhar pode voltar ao momento anterior em que o agente era livre e criou o estado posterior de incapacidade. A teoria\r\nnão autoriza responsabilidade objetiva.BASE COMPLETA | DIREITO PENAL | PEN M5 Culpabilidade e Teoria do Erro\r\nResumo para primeira leitura e revisão | Base normativa conferida em 01/10/2026 3\r\nTeoria - 2. Consciência da ilicitude e exigibilidade\r\nPotencial consciência da ilicitude\r\nNão se exige conhecimento técnico, número de artigo ou domínio jurídico. Basta que, nas circunstâncias, o\r\nagente pudesse alcançar a consciência de que o comportamento era ilícito. É potencial, e não necessariamente\r\natual.\r\nExigibilidade de conduta diversa\r\nMesmo imputável e capaz de perceber a ilicitude, o agente só é culpável quando o Direito podia exigir\r\ncomportamento diferente. O art. 22 traz duas hipóteses clássicas: coação moral irresistível e estrita obediência\r\na ordem não manifestamente ilegal de superior hierárquico.\r\nInstituto O que ocorre Plano afetado\r\nCoação física irresistível Força elimina a voluntariedade corporal. Conduta / fato típico\r\nCoação moral irresistível Há ação física, mas a grave ameaça torna inexigível conduta\r\ndiversa.\r\nCulpabilidade\r\nCoação moral resistível Havia alternativa juridicamente exigível. Não exclui culpabilidade\r\nRegra para memorizar\r\nFÍSICA = sem conduta voluntária. MORAL = sem exigibilidade.\r\nObediência hierárquica\r\nA exculpação exige relação hierárquica juridicamente relevante, ordem de superior, cumprimento estrito e\r\nordem não manifestamente ilegal. Se a ilegalidade é ostensiva e perceptível, o subordinado não se beneficia do\r\nart. 22.\r\nOrdem Consequência para o subordinado\r\nNão manifestamente ilegal + estrita obediência Pode haver exclusão da culpabilidade.\r\nManifestamente ilegal Deve ser recusada; o art. 22 não exculpa.\r\nCausas supralegais de inexigibilidade\r\nA doutrina admite discussão em situações excepcionalíssimas não previstas expressamente, desde que\r\ncomprovada a impossibilidade concreta de exigir outra conduta. Não é cláusula aberta para mera conveniência,\r\nreceio comum ou dificuldade ordinária.\r\nComparação decisiva\r\nImputabilidade = capacidade do agente.\r\nPotencial consciência = possibilidade de perceber a ilicitude.\r\nExigibilidade = possibilidade de exigir atuação diferente.BASE COMPLETA | DIREITO PENAL | PEN M5 Culpabilidade e Teoria do Erro\r\nResumo para primeira leitura e revisão | Base normativa conferida em 01/10/2026 4\r\nTeoria - 3. Teoria do erro\r\nA pergunta certa é: sobre o que o agente se enganou? O erro pode recair sobre um elemento do tipo, sobre a\r\nilicitude, sobre uma situação fática justificante, sobre a identidade da vítima, sobre a execução ou sobre o\r\nresultado.\r\nInstituto O agente erra sobre... Efeito central\r\nErro de tipo Elemento constitutivo do tipo Exclui o dolo; culpa pode subsistir se prevista e o erro\r\nfor evitável.\r\nErro de proibição Ilicitude do comportamento Afeta a culpabilidade; inevitável isenta, evitável pode\r\nreduzir a pena.\r\nErro de tipo essencial\r\nInevitável: exclui dolo e culpa. Evitável: exclui dolo, mas pode haver punição culposa se o delito admitir\r\nmodalidade culposa.\r\nErro de proibição\r\nO agente conhece os fatos, porém acredita que sua conduta é permitida. Inevitável: exclui culpabilidade.\r\nEvitável: a culpabilidade subsiste e o art. 21 prevê redução de 1/6 a 1/3.\r\nDescriminantes putativas\r\nSe o agente imagina fatos que, se existissem, tornariam sua ação legítima, a teoria limitada trata a hipótese\r\ncomo erro de tipo permissivo (art. 20, §1º). Se conhece os fatos, mas erra sobre a existência ou os limites\r\njurídicos da justificante, há erro de proibição indireto.\r\nSituação Teoria limitada\r\nErro sobre pressuposto fático de justificante Erro de tipo permissivo - art. 20, §1º.\r\nErro sobre existência/limite jurídico da justificante Erro de proibição indireto - art. 21.\r\nErro determinado por terceiro\r\nO art. 20, §2º, atribui responsabilidade ao terceiro que determina o erro. O executor continua sendo analisado\r\nconforme a natureza e a evitabilidade do próprio erro.\r\nErros acidentais\r\nInstituto Chave de identificação\r\nErro sobre a pessoa - art. 20, §3º O agente acerta a pessoa fisicamente escolhida, mas erra sua identidade. Consideram-se as\r\nqualidades da pessoa visada.\r\nAberratio ictus - art. 73 O agente sabe quem quer atingir, mas erra a execução e atinge pessoa diversa.\r\nAberratio criminis - art. 74 Por erro/acidente na execução, sobrevém resultado de natureza diversa do pretendido.\r\nDelito putativo O agente imagina estar praticando crime, mas a conduta não é penalmente proibida na forma\r\nimaginada.BASE COMPLETA | DIREITO PENAL | PEN M5 Culpabilidade e Teoria do Erro\r\nResumo para primeira leitura e revisão | Base normativa conferida em 01/10/2026 5\r\nArtigos para decorar\r\nArt. 20 caput\r\nErro de tipo: exclui dolo; permite punição por culpa se\r\nhouver previsão.\r\nArt. 20, §1º\r\nDescriminante putativa por situação de fato. Erro\r\nplenamente justificado pode isentar; se derivar de culpa\r\ne houver tipo culposo, não há isenção.\r\nArt. 20, §2º\r\nResponde pelo crime o terceiro que determina o erro.\r\nArt. 20, §3º\r\nErro sobre a pessoa não isenta; consideram-se as\r\ncondições/qualidades da pessoa que o agente queria\r\natingir.\r\nArt. 21\r\nDesconhecimento da lei é inescusável. Erro de proibição\r\ninevitável isenta; evitável pode reduzir de 1/6 a 1/3.\r\nArt. 22\r\nCoação irresistível e estrita obediência a ordem não\r\nmanifestamente ilegal.\r\nArt. 26\r\nInimputabilidade por incapacidade inteira; parágrafo\r\núnico trata da capacidade reduzida.\r\nArt. 27 + CF art. 228\r\nMenor de 18 anos é penalmente inimputável.\r\nArt. 28\r\nEmoção/paixão e embriaguez voluntária/culposa não\r\nexcluem imputabilidade; §§1º e 2º tratam da embriaguez\r\nacidental.\r\nArt. 73\r\nAberratio ictus: pessoa diversa atingida por erro na\r\nexecução.\r\nArt. 74\r\nAberratio criminis: resultado diverso do pretendido.\r\nPegadinhas de provas\r\n1. Doença mental não gera inimputabilidade automática: é\r\nnecessária incapacidade inteira ao tempo do fato.\r\n7. Erro de tipo inevitável exclui dolo e culpa; o evitável\r\nexclui o dolo e pode deixar culpa prevista.\r\n2. No finalismo, dolo e culpa estão no fato típico, não na\r\nculpabilidade.\r\n8. Erro de proibição não exclui dolo; ele atinge a\r\nculpabilidade.\r\n3. Menoridade penal usa critério biológico; o corte é 18\r\nanos.\r\n9. Desconhecimento da lei não é sinônimo de erro de\r\nproibição.\r\n4. Embriaguez voluntária ou culposa não exclui\r\nimputabilidade, mesmo quando intensa.\r\n10. Descriminante putativa fática e excludente real são\r\ninstitutos diferentes.\r\n5. Coação física irresistível elimina conduta; coação moral\r\nirresistível exclui exigibilidade.\r\n11. Erro sobre a pessoa ≠ aberratio ictus: identidade ≠\r\nexecução.\r\n6. Obediência hierárquica só exculpa diante de ordem não\r\nmanifestamente ilegal e estritamente cumprida.\r\n12. Aberratio ictus = pessoa diversa; aberratio criminis =\r\nresultado diverso.BASE COMPLETA | DIREITO PENAL | PEN M5 Culpabilidade e Teoria do Erro\r\nResumo para primeira leitura e revisão | Base normativa conferida em 01/10/2026 6\r\nRevisão ativa\r\nTente responder mentalmente antes de ler a linha seguinte. Se hesitar, volte à página indicada pelo tema.\r\n1. Quais são os três elementos da culpabilidade?\r\nImputabilidade + potencial consciência da ilicitude +\r\nexigibilidade de conduta diversa.\r\n2. No finalismo, onde ficam dolo e culpa?\r\nNo fato típico.\r\n3. Qual critério é usado no art. 26?\r\nBiopsicológico: causa mental + incapacidade concreta\r\ntotal.\r\n4. Qual critério vale para menoridade penal?\r\nBiológico: menor de 18 anos.\r\n5. Emoção e paixão excluem imputabilidade?\r\nNão.\r\n6. Embriaguez voluntária ou culposa exclui\r\nimputabilidade?\r\nNão.\r\n7. Quando a embriaguez acidental pode isentar?\r\nQuando completa, por caso fortuito/força maior, com\r\nincapacidade total.\r\n8. Coação física e moral irresistíveis produzem o\r\nmesmo efeito?\r\nNão. Física elimina conduta; moral exclui exigibilidade.\r\n9. Qual é a exigência central da obediência\r\nhierárquica?\r\nOrdem não manifestamente ilegal, de superior,\r\nestritamente cumprida.\r\n10. Erro de tipo essencial inevitável exclui o quê?\r\nDolo e culpa.\r\n11. Erro de tipo essencial evitável exclui o quê?\r\nDolo; pode restar culpa se houver modalidade culposa.\r\n12. Erro de proibição inevitável exclui dolo?\r\nNão. Exclui a culpabilidade.\r\n13. E o erro de proibição evitável?\r\nMantém culpabilidade e pode reduzir a pena de 1/6 a 1/3.\r\n14. Erro fático sobre uma justificante, na teoria\r\nlimitada, é o quê?\r\nErro de tipo permissivo.\r\n15. Erro sobre existência/limites jurídicos de\r\njustificante é o quê?\r\nErro de proibição indireto.\r\n16. Erro determinado por terceiro: quem\r\nresponde?\r\nO terceiro provocador responde; o executor é analisado\r\nconforme seu próprio erro.\r\n17. Erro sobre a pessoa x aberratio ictus?\r\nIdentidade da vítima x desvio na execução.\r\n18. Aberratio ictus x aberratio criminis?\r\nPessoa diversa atingida x resultado de natureza diversa.\r\n19. Delito putativo x erro de proibição?\r\nNo delito putativo, o agente imagina crime inexistente; no\r\nerro de proibição, existe proibição e ele pensa estar\r\nautorizado.\r\n20. Qual é o mapa de decisão para um caso de\r\nerro?\r\nPergunte: errou o fato, a ilicitude, a justificante, a\r\nidentidade, a execução ou o resultado?\r\nFechamento em 30 segundos\r\nTIPO -> erro de tipo mexe no dolo. PROIBIÇÃO -> erro de proibição mexe na culpabilidade.\r\nFÍSICA -> sem conduta. MORAL -> sem exigibilidade.\r\nPESSOA -> art. 20, §3º. EXECUÇÃO -> art. 73. RESULTADO -> art. 74.\r\nBase normativa principal: Código Penal, arts. 20 a 22, 26 a 28, 73 e 74; Constituição Federal, art. 228. Conteúdo resumido do PEN M5\r\ncompleto.","chapters":{"summary":[{"id":"s01","title":"Visão geral"},{"id":"s02","title":"Teoria - 1. Culpabilidade e imputabilidade"},{"id":"s03","title":"Teoria - 2. Consciência da ilicitude e exigibilidade"},{"id":"s04","title":"Teoria - 3. Teoria do erro"},{"id":"s05","title":"Artigos para decorar"},{"id":"s06","title":"Pegadinhas de provas"}],"complete":[{"id":"c01","title":"1. Conceito de culpabilidade"},{"id":"c02","title":"2. Culpabilidade como terceiro substrato do crime"},{"id":"c03","title":"3. Evolução das teorias da culpabilidade"},{"id":"c04","title":"4. Elementos da culpabilidade"},{"id":"c05","title":"5. Imputabilidade"},{"id":"c06","title":"6. Inimputabilidade por doença mental ou desenvolvimento mental incompleto/retardado"},{"id":"c07","title":"7. Semi-imputabilidade"},{"id":"c08","title":"8. Menoridade penal"},{"id":"c09","title":"9. Emoção e paixão"},{"id":"c10","title":"10. Embriaguez"},{"id":"c11","title":"11. Actio libera in causa"},{"id":"c12","title":"12. Potencial consciência da ilicitude"},{"id":"c13","title":"13. Exigibilidade de conduta diversa"},{"id":"c14","title":"14. Coação física × coação moral"},{"id":"c15","title":"15. Coação moral irresistível × resistível"},{"id":"c16","title":"16. Obediência hierárquica"},{"id":"c17","title":"17. Introdução à teoria do erro"},{"id":"c18","title":"18. Erro de tipo"},{"id":"c19","title":"19. Erro de tipo essencial inevitável × evitável"},{"id":"c20","title":"20. Erro de proibição"},{"id":"c21","title":"21. Erro de proibição inevitável × evitável"},{"id":"c22","title":"22. Descriminantes putativas"},{"id":"c23","title":"23. Art. 20, §1º — erro de tipo permissivo"},{"id":"c24","title":"24. Teoria limitada × teoria extremada da culpabilidade"},{"id":"c25","title":"25. Erro determinado por terceiro"},{"id":"c26","title":"26. Erro de tipo acidental"},{"id":"c27","title":"27. Erro sobre a pessoa"},{"id":"c28","title":"28. Aberratio ictus — erro na execução"},{"id":"c29","title":"29. Aberratio criminis — resultado diverso do pretendido"},{"id":"c30","title":"30. Institutos complementares: erro mandamental, erro de subsunção e delito putativo"},{"id":"c31","title":"31.1 Mapa de localização dogmática"},{"id":"c32","title":"31.2 O quadro mais cobrado"},{"id":"c33","title":"31.3 Descriminantes"}]},"internalQuestions":{"summary":[{"id":"sq01","q":"No modelo tripartido usado no M05, quais são os três elementos da culpabilidade?","options":["Imputabilidade, potencial consciência da ilicitude e exigibilidade de conduta diversa.","Tipicidade, antijuridicidade e punibilidade.","Dolo, culpa e resultado.","Imputabilidade, tipicidade e nexo causal."],"answer":0,"explanation":"O material usa a fórmula: culpabilidade = imputabilidade + potencial consciência da ilicitude + exigibilidade de conduta diversa."},{"id":"sq02","q":"No finalismo, onde ficam dolo e culpa?","options":["Na culpabilidade.","No fato típico.","Na ilicitude.","Na punibilidade."],"answer":1,"explanation":"O resumo destaca que, no finalismo, dolo e culpa migram para o fato típico e deixam a culpabilidade."},{"id":"sq03","q":"Qual critério o art. 26 utiliza para a inimputabilidade por doença mental ou desenvolvimento mental?","options":["Somente biológico.","Somente psicológico.","Biopsicológico.","Etário absoluto."],"answer":2,"explanation":"O art. 26 exige causa mental relevante e incapacidade concreta total ao tempo da ação ou omissão."},{"id":"sq04","q":"Qual é a diferença central entre coação física irresistível e coação moral irresistível?","options":["A física elimina a conduta voluntária; a moral afeta a exigibilidade de conduta diversa.","A física exclui a ilicitude; a moral exclui a tipicidade.","Ambas excluem sempre a imputabilidade.","A moral elimina a conduta e a física apenas reduz a pena."],"answer":0,"explanation":"O material localiza a coação física irresistível antes da culpabilidade, por eliminar voluntariedade; a moral irresistível atua na exigibilidade."},{"id":"sq05","q":"O erro de proibição inevitável produz qual efeito principal?","options":["Exclui o dolo.","Exclui a culpabilidade.","Exclui a tipicidade objetiva.","Transforma o crime doloso em culposo."],"answer":1,"explanation":"O erro de proibição atua sobre a potencial consciência da ilicitude; sendo inevitável, exclui a culpabilidade."}],"complete":[{"id":"cq01","q":"Imputabilidade e culpabilidade se relacionam de que forma?","options":["São sinônimos perfeitos.","Imputabilidade é um dos elementos da culpabilidade.","Culpabilidade é um elemento da imputabilidade.","Imputabilidade pertence exclusivamente à ilicitude."],"answer":1,"explanation":"O material enfatiza que imputabilidade é elemento da culpabilidade, e não seu sinônimo."},{"id":"cq02","q":"Na semi-imputabilidade do art. 26, parágrafo único:","options":["A capacidade está inteiramente ausente.","A capacidade está reduzida, e a culpabilidade não é totalmente excluída.","O agente é menor de 18 anos.","A consequência é sempre absolvição sem qualquer efeito penal."],"answer":1,"explanation":"A semi-imputabilidade pressupõe capacidade reduzida, não eliminada, com consequência legal própria."},{"id":"cq03","q":"Quanto à menoridade penal, o material trabalha com qual critério?","options":["Biopsicológico.","Psicológico.","Biológico, com corte em 18 anos.","Misto, com corte em 21 anos."],"answer":2,"explanation":"Menor de 18 anos é penalmente inimputável; o critério destacado é biológico."},{"id":"cq04","q":"Sobre emoção e paixão, o art. 28, I, conforme o material, estabelece que:","options":["Excluem sempre a imputabilidade.","Não excluem, por si só, a imputabilidade penal.","Excluem a tipicidade subjetiva.","Transformam dolo em culpa."],"answer":1,"explanation":"Emoção e paixão não excluem a imputabilidade por si mesmas."},{"id":"cq05","q":"A embriaguez voluntária ou culposa:","options":["Exclui a imputabilidade se completa.","Não exclui a imputabilidade penal.","Sempre reduz a pena.","É tratada como erro de proibição."],"answer":1,"explanation":"O art. 28, II, mantém a imputabilidade na embriaguez voluntária ou culposa."},{"id":"cq06","q":"A embriaguez acidental completa pode isentar quando:","options":["Decorre de caso fortuito ou força maior e elimina totalmente a capacidade de compreensão ou autodeterminação.","Foi voluntariamente buscada para facilitar o crime.","É apenas incompleta.","Decorre de emoção intensa."],"answer":0,"explanation":"O material exige origem acidental — caso fortuito ou força maior — e incapacidade total."},{"id":"cq07","q":"A actio libera in causa permite olhar para:","options":["O momento anterior em que o agente era livre e imputável e criou a situação posterior de incapacidade.","Somente o resultado naturalístico.","Apenas a fase processual da sentença.","Qualquer embriaguez como responsabilidade objetiva."],"answer":0,"explanation":"A teoria desloca o exame para o momento anterior de liberdade, sem autorizar responsabilidade objetiva."},{"id":"cq08","q":"Erro de tipo essencial inevitável e evitável produzem, respectivamente:","options":["Exclusão de dolo e culpa; exclusão de dolo com possibilidade de punição culposa se prevista.","Exclusão da culpabilidade; redução obrigatória da pena.","Exclusão da ilicitude; exclusão da tipicidade objetiva.","Nenhum efeito; redução de pena."],"answer":0,"explanation":"O erro inevitável exclui dolo e culpa; o evitável exclui o dolo, mas pode subsistir culpa se houver previsão legal."},{"id":"cq09","q":"Na obediência hierárquica, a exculpação exige que a ordem seja:","options":["Manifestamente ilegal.","Não manifestamente ilegal, dentro da relação hierárquica pertinente.","Sempre escrita.","Proferida por qualquer pessoa mais velha."],"answer":1,"explanation":"O material vincula a exculpação à estrita observância de ordem não manifestamente ilegal."},{"id":"cq10","q":"Qual associação está correta?","options":["Erro de tipo essencial → culpabilidade; erro de proibição → dolo.","Erro de tipo essencial → tipo/dolo; erro de proibição → potencial consciência da ilicitude.","Excludente real → imputabilidade; coação moral → ilicitude.","Erro sobre a pessoa → ausência de conduta."],"answer":1,"explanation":"O mapa do módulo localiza o erro de tipo no fato típico e o erro de proibição na culpabilidade."}]}};
+})(window);
+
+(function(global){
+'use strict';
+const SEL='#subjects .subject[data-id="penal"] .cf-module[data-cf="p5"]';
+
+function inject(){
+  const module=document.querySelector(SEL);
+  if(!module) return;
+  const body=module.querySelector('.cf-module-body');
+  if(!body || body.querySelector('[data-bc-native-m05]')) return;
+
+  const host=document.createElement('section');
+  host.className='bc-native-materials bc-native-materials-static';
+  host.setAttribute('data-bc-native-m05','');
+  host.innerHTML=
+    '<section class="bc-native-metrics" aria-label="Indicadores do módulo">'+
+      '<article class="bc-native-metric-card">'+
+        '<div class="bc-native-ring" data-native-ring="theory"><div class="bc-native-ring-inner"><b data-ring-value>0%</b><span>teoria</span></div></div>'+
+        '<div class="bc-native-metric-copy"><small>COBERTURA DA TEORIA</small><strong data-native-metric-detail="theory">0 de 54 pontos concluídos</strong><span>Checks dos capítulos + questões internas.</span></div>'+
+      '</article>'+
+      '<article class="bc-native-metric-card">'+
+        '<div class="bc-native-ring" data-native-ring="external"><div class="bc-native-ring-inner"><b data-ring-value>—</b><span>externas</span></div></div>'+
+        '<div class="bc-native-metric-copy"><small>ACERTO EM QUESTÕES EXTERNAS</small><strong data-native-metric-detail="external">Nenhuma questão externa respondida</strong><span data-native-metric-meta="external">Registre questões externas no final do módulo</span></div>'+
+      '</article>'+
+    '</section>'+
+    '<div class="bc-native-materials-head"><div><b>Materiais do módulo</b><small>Escolha como estudar</small></div><small>M05 • conteúdo nativo</small></div>'+
+    '<div class="bc-native-material-grid">'+
+      '<button type="button" class="bc-native-material-card" data-native-kind="summary"><span class="bc-native-material-icon">⚡</span><span><strong>Conteúdo resumido</strong><small>Primeira leitura, revisão rápida, artigos, pegadinhas e revisão ativa.</small></span><span class="bc-native-material-action"><span>Abrir</span><span>→</span></span></button>'+
+      '<button type="button" class="bc-native-material-card" data-native-kind="complete"><span class="bc-native-material-icon">📚</span><span><strong>Conteúdo completo</strong><small>Teoria integral do M05 em formato de site, com índice, busca e progresso de leitura.</small></span><span class="bc-native-material-action"><span>Abrir</span><span>→</span></span></button>'+
+      '<button type="button" class="bc-native-material-card" data-native-kind="mindmap"><span class="bc-native-material-icon">🧠</span><span><strong>Mapa mental</strong><small>Mapa interativo com abrir/recolher ramos, zoom, arrastar e tela cheia.</small></span><span class="bc-native-material-action"><span>Abrir</span><span>→</span></span></button>'+
+    '</div>'+
+    '<section class="bc-native-quick-summary" aria-label="Resumo do módulo">'+
+      '<div class="bc-native-quick-summary-head"><span class="bc-native-quick-summary-no">5</span><div><b>Resumo do módulo</b><small>O M05 em poucas palavras.</small></div></div>'+
+      '<div class="bc-native-quick-summary-body">Culpabilidade e imputabilidade • consciência da ilicitude • exigibilidade de conduta diversa • embriaguez e actio libera in causa • erro de tipo e erro de proibição • descriminantes putativas e erros acidentais.</div>'+
+    '</section>';
+
+  host.querySelector('[data-native-kind="summary"]').onclick=function(){global.BaseNativeReaderM05?.open('summary')};
+  host.querySelector('[data-native-kind="complete"]').onclick=function(){global.BaseNativeReaderM05?.open('complete')};
+  host.querySelector('[data-native-kind="mindmap"]').onclick=function(){global.BaseMindMap?.open('penal','p5')};
+
+  const subtitle=body.querySelector('.cf-subtitle');
+  if(subtitle) subtitle.insertAdjacentElement('afterend',host);
+  else body.insertAdjacentElement('afterbegin',host);
+  global.BaseNativeReaderM05?.refreshMetrics?.();
+}
+function install(){
+  inject();
+  const obs=new MutationObserver(function(){
+    clearTimeout(install._t);
+    install._t=setTimeout(inject,60);
+  });
+  obs.observe(document.documentElement,{subtree:true,childList:true});
+}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',install);else install();
+})(window);
+
+(function(global){
+'use strict';
+
+const OVERLAY_ID='bcNativeReaderOverlayM05';
+const M1_SELECTOR='#subjects .subject[data-id="penal"] .cf-module[data-cf="p5"]';
+const STORAGE_PREFIX='central-v6:native-reader:penal:p5';
+let current=null;
+let observer=null;
+
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function norm(s){return String(s||'').replace(/\u00a0/g,' ').replace(/[ \t]+/g,' ').trim()}
+function normKey(s){return norm(s).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim()}
+function slug(s){return normKey(s).replace(/\s+/g,'-').slice(0,70)}
+function source(){return global.BASE_NATIVE_CONTENT?.penal?.m05||null}
+function storageKey(part){return STORAGE_PREFIX+':'+part}
+
+function cleanLines(raw,mode){
+  const lines=String(raw||'').replace(/\r/g,'').split('\n').map(norm);
+  const out=[];
+  let skipOldSummaryReview=false;
+  for(let line of lines){
+    if(mode==='summary' && /^REVIS(?:A|Ã)O ATIVA$/i.test(line)){skipOldSummaryReview=true;continue}
+    if(skipOldSummaryReview)continue;
+    if(!line){out.push('');continue}
+    if(/^BASE COMPLETA(?:\s*[|•-]|$)/i.test(line))continue;
+    if(/^D\s*IRE\s*ITO PENAL\s*•\s*M0?1$/i.test(line))continue;
+    if(/^\d+\s*\/\s*\d+$/.test(line))continue;
+    if(/^P[aá]gina\s+\d+$/i.test(line))continue;
+    if(/^Conteudo restrito ao PEN M1/i.test(line))continue;
+    out.push(line);
+  }
+  return out;
+}
+function headingInfo(line){
+  const l=norm(line);
+  if(!l)return null;
+  let m=l.match(/^(\d+)\.(\d+)\s+(.{3,140})$/);
+  if(m)return {level:3,text:l};
+  m=l.match(/^(\d+)\.?\s+(.{3,140})$/);
+  if(m && !/^\d+\s*\/\s*\d+/.test(l) && !/^\d+\s+(Quais|Qual|A |O |Como |Quando |Pequeno|Pessoalidade|Na )/i.test(l)){
+    return {level:2,text:l};
+  }
+  if(/^(VISÃO GERAL|VISAO GERAL|REVISÃO ATIVA|REVISAO ATIVA|ARTIGOS PARA DECORAR|PEGADINHAS DE PROVA|PEGADINHAS DE PROVAS|MAPA DO MÓDULO|MAPA DO MODULO|TEORIA ESSENCIAL)$/i.test(l)){
+    return {level:2,text:l};
+  }
+  if(/^TEORIA\s*-\s*[123]\./i.test(l)){
+    return {level:2,text:l};
+  }
+  return null;
+}
+function calloutType(line){
+  const l=norm(line).toUpperCase();
+  if(/^(✅\s*)?EXEMPLO/.test(l))return ['example','Exemplo'];
+  if(/PEGADINHA/.test(l))return ['trap','Pegadinha'];
+  if(/^(⚖️\s*)?LEI SECA/.test(l))return ['law','Lei seca'];
+  if(/^(DECORE|MEMÓRIA|MEMORIA|MNEMÔNICO|MNEMONICO|REGRA DE OURO|IDEIA-CENTRAL|IDEIA CENTRAL|FÓRMULA|FORMULA|MEMORIZACAO RAPIDA)/.test(l))return ['memory',norm(line)];
+  if(/^(STF|STJ|JURISPRUDÊNCIA|JURISPRUDENCIA|ATUALIZAÇÃO|ATUALIZACAO)/.test(l))return ['case',norm(line)];
+  if(/^(COMPARAÇÃO|COMPARACAO|ATENÇÃO|ATENCAO|PROVA|CUIDADO|FRONTEIRA DO MÓDULO|FRONTEIRA DO MODULO)/.test(l))return ['case',norm(line)];
+  return null;
+}
+function isBullet(line){return /^[•●▪◦*-]\s+/.test(line)}
+function looksTitle(line){
+  const l=norm(line);
+  if(l.length<3||l.length>105)return false;
+  if(/[.!?]$/.test(l))return false;
+  if(/^[A-ZÁÉÍÓÚÂÊÔÃÕÇ0-9][A-ZÁÉÍÓÚÂÊÔÃÕÇ0-9\s:–—()/%ºª,.-]+$/.test(l)&&l.split(/\s+/).length<=12)return true;
+  return false;
+}
+function parse(raw,mode){
+  const lines=cleanLines(raw,mode);
+  const blocks=[];
+  let para=[];
+  const flush=()=>{if(para.length){blocks.push({type:'p',text:para.join(' ')});para=[]}};
+  for(let i=0;i<lines.length;i++){
+    const line=lines[i];
+    if(!line){flush();continue}
+    const hi=headingInfo(line);
+    if(hi){flush();blocks.push({type:'h',level:hi.level,text:hi.text});continue}
+    const co=calloutType(line);
+    if(co){
+      flush();
+      const body=[];
+      for(let j=i+1;j<lines.length;j++){
+        const next=lines[j];
+        if(!next){if(body.length)break;else continue}
+        if(headingInfo(next)||calloutType(next)||looksTitle(next))break;
+        body.push(next);i=j;
+      }
+      blocks.push({type:'callout',kind:co[0],label:co[1],text:body.join(' ')});
+      continue;
+    }
+    if(isBullet(line)){
+      flush();
+      const items=[line.replace(/^[•●▪◦*-]\s+/,'')];
+      while(i+1<lines.length&&isBullet(lines[i+1]))items.push(lines[++i].replace(/^[•●▪◦*-]\s+/,''));
+      blocks.push({type:'ul',items});
+      continue;
+    }
+    if(looksTitle(line)&&mode==='summary'){flush();blocks.push({type:'h',level:3,text:line});continue}
+    para.push(line);
+  }
+  flush();
+  const firstH=blocks.findIndex(b=>b.type==='h');
+  if(firstH>2){
+    const lead=blocks.slice(0,firstH).filter(b=>b.type==='p').map(b=>b.text).join(' ');
+    blocks.splice(0,firstH,{type:'lead',text:lead});
+  }
+  return blocks;
+}
+function buildHtml(data,mode){
+  if(mode==='complete'){
+    const host=document.createElement('div');
+    host.innerHTML=global.PENAL_FULL_THEORY?.p5?.html||'';
+
+    // O leitor já possui título/cabeçalho próprio: remove a capa textual antes da primeira seção.
+    const firstH2=host.querySelector('h2');
+    if(firstH2){
+      let node=host.firstChild;
+      while(node && node!==firstH2){
+        const next=node.nextSibling;
+        node.remove();
+        node=next;
+      }
+    }
+
+    const headings=[];
+    host.querySelectorAll('h2').forEach((h,index)=>{
+      if(!h.id)h.id='bcsec-complete-'+(index+1)+'-'+slug(h.textContent);
+      headings.push({id:h.id,text:norm(h.textContent),level:2,key:normKey(h.textContent)});
+    });
+
+    host.querySelectorAll('blockquote').forEach(el=>el.classList.add('bc-native-callout','theory'));
+    host.querySelectorAll('table').forEach(el=>el.classList.add('bc-native-m05-table'));
+    host.querySelectorAll('h3').forEach(el=>el.classList.add('bc-native-m05-subhead'));
+    host.querySelectorAll('hr').forEach(el=>el.classList.add('bc-native-m05-separator'));
+
+    const text=norm(host.textContent);
+    const words=text.split(/\s+/).filter(Boolean).length;
+    const mins=Math.max(1,Math.round(words/190));
+    return {body:host.innerHTML,headings,words,mins};
+  }
+
+  const raw=mode==='summary'?data.summary:data.complete;
+  const blocks=parse(raw,mode);
+  const headings=[];
+  let hCount=0;
+  const body=blocks.map(b=>{
+    if(b.type==='h'){
+      const id='bcsec-'+(++hCount)+'-'+slug(b.text);
+      headings.push({id,text:b.text,level:b.level,key:normKey(b.text)});
+      return '<h'+b.level+' id="'+id+'">'+esc(b.text)+'</h'+b.level+'>';
+    }
+    if(b.type==='lead')return '<p class="lead">'+esc(b.text)+'</p>';
+    if(b.type==='p')return '<p>'+esc(b.text)+'</p>';
+    if(b.type==='ul')return '<ul>'+b.items.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul>';
+    if(b.type==='callout')return '<aside class="bc-native-callout '+b.kind+'"><b>'+esc(b.label)+'</b><div>'+esc(b.text)+'</div></aside>';
+    return '';
+  }).join('');
+  const words=norm(raw).split(/\s+/).filter(Boolean).length;
+  const mins=Math.max(1,Math.round(words/(mode==='summary'?220:190)));
+  return {body,headings,words,mins};
+}
+function modeChapters(data,mode){return Array.isArray(data?.chapters?.[mode])?data.chapters[mode]:[]}
+function modeQuestions(data,mode){return Array.isArray(data?.internalQuestions?.[mode])?data.internalQuestions[mode]:[]}
+function chapterDone(mode,id){return localStorage.getItem(storageKey('chapter:'+mode+':'+id))==='1'}
+function setChapterDone(mode,id,done){
+  localStorage.setItem(storageKey('chapter:'+mode+':'+id),done?'1':'0');
+}
+function internalAnswer(mode,id){
+  try{return JSON.parse(localStorage.getItem(storageKey('internal:'+mode+':'+id))||'null')}catch(_){return null}
+}
+function saveInternalAnswer(mode,q,selected){
+  const prev=internalAnswer(mode,q.id)||{attempts:0};
+  const state={
+    selected:Number(selected),
+    correct:Number(selected)===Number(q.answer),
+    attempts:(prev.attempts||0)+1,
+    updatedAt:new Date().toISOString()
+  };
+  localStorage.setItem(storageKey('internal:'+mode+':'+q.id),JSON.stringify(state));
+  return state;
+}
+function resetInternalAnswer(mode,id){localStorage.removeItem(storageKey('internal:'+mode+':'+id))}
+
+function modeStudyStats(data,mode){
+  const chapters=modeChapters(data,mode);
+  const questions=modeQuestions(data,mode);
+  const chapterDoneCount=chapters.filter(ch=>chapterDone(mode,ch.id)).length;
+  const answered=questions.filter(q=>!!internalAnswer(mode,q.id)).length;
+  const correct=questions.filter(q=>internalAnswer(mode,q.id)?.correct).length;
+  return {
+    chapterDone:chapterDoneCount,
+    chapterTotal:chapters.length,
+    answered,
+    questionTotal:questions.length,
+    correct,
+    done:chapterDoneCount+answered,
+    total:chapters.length+questions.length
+  };
+}
+function theoryStats(){
+  const data=source();
+  if(!data)return {done:0,total:0,pct:0};
+  const s=modeStudyStats(data,'summary');
+  const c=modeStudyStats(data,'complete');
+  const done=s.done+c.done,total=s.total+c.total;
+  return {done,total,pct:total?Math.round(done/total*100):0,summary:s,complete:c};
+}
+function externalStats(){
+  try{
+    const rows=JSON.parse(localStorage.getItem('central-v6:module-rounds:penal:p5')||'[]');
+    const valid=(Array.isArray(rows)?rows:[]).map(r=>({
+      done:Math.max(0,Number(r.valid ?? r.done)||0),
+      correct:Math.max(0,Number(r.correct)||0)
+    })).filter(r=>r.done>0);
+    const answered=valid.reduce((n,r)=>n+r.done,0);
+    const correct=valid.reduce((n,r)=>n+Math.min(r.correct,r.done),0);
+    return {answered,correct,rounds:valid.length,accuracy:answered?Math.round(correct/answered*100):null};
+  }catch(_){
+    return {answered:0,correct:0,rounds:0,accuracy:null};
+  }
+}
+function setRing(el,pct,label){
+  if(!el)return;
+  const safe=Math.max(0,Math.min(100,Number(pct)||0));
+  el.style.setProperty('--pct',String(safe));
+  const value=el.querySelector('[data-ring-value]');
+  if(value)value.textContent=label??(safe+'%');
+}
+function refreshModuleMetrics(){
+  const module=document.querySelector(M1_SELECTOR);
+  if(!module)return;
+  const theory=theoryStats(),external=externalStats();
+
+  setRing(module.querySelector('[data-native-ring="theory"]'),theory.pct,theory.pct+'%');
+  const theoryDetail=module.querySelector('[data-native-metric-detail="theory"]');
+  if(theoryDetail)theoryDetail.textContent=theory.done+' de '+theory.total+' pontos concluídos';
+
+  setRing(module.querySelector('[data-native-ring="external"]'),external.accuracy??0,external.accuracy==null?'—':external.accuracy+'%');
+  const extDetail=module.querySelector('[data-native-metric-detail="external"]');
+  if(extDetail){
+    extDetail.textContent=external.answered
+      ? external.correct+' acertos em '+external.answered+' questões externas'
+      : 'Nenhuma questão externa respondida';
+  }
+  const extMeta=module.querySelector('[data-native-metric-meta="external"]');
+  if(extMeta)extMeta.textContent=external.answered
+    ? external.rounds+' rodada(s) registrada(s) no final do módulo'
+    : 'Registre questões externas no final do módulo';
+
+  const headerStat=module.querySelector('.cf-module-stat');
+  if(headerStat)headerStat.textContent='Cobertura '+theory.pct+'% • teoria + revisão interna';
+  const legacyBar=module.querySelector('.cf-module-bar span');
+  if(legacyBar)legacyBar.style.width=theory.pct+'%';
+  refreshCardState();
+}
+function refreshCardState(){
+  const data=source();if(!data)return;
+  ['summary','complete'].forEach(kind=>{
+    const st=modeStudyStats(data,kind);
+    document.querySelectorAll(M1_SELECTOR+' [data-native-kind="'+kind+'"]').forEach(card=>{
+      const tag=card.querySelector('.bc-native-material-action span:first-child');
+      if(tag)tag.textContent=st.done===st.total&&st.total?'✓ Concluído':st.chapterDone+'/'+st.chapterTotal+' capítulos';
+    });
+  });
+}
+
+function close(){
+  document.getElementById(OVERLAY_ID)?.remove();
+  document.body.style.overflow='';
+  current=null;
+}
+function buildChapterMap(){
+  if(!current)return [];
+  return modeChapters(source(),current.mode).map(ch=>({chapter:ch,heading:findHeadingForChapter(ch)})).filter(x=>x.heading);
+}
+function autoMarkViewedChapters(){
+  if(!current||!current.chapterMap?.length)return;
+  const sc=current.scroll;
+  const viewportBottom=sc.scrollTop+sc.clientHeight;
+  let changed=false;
+  current.chapterMap.forEach((item,index)=>{
+    if(chapterDone(current.mode,item.chapter.id))return;
+    const start=item.heading.offsetTop;
+    const next=current.chapterMap[index+1]?.heading?.offsetTop ?? current.article.scrollHeight;
+    const target=start+Math.max(80,(next-start)*0.72);
+    if(viewportBottom>=target){
+      setChapterDone(current.mode,item.chapter.id,true);
+      changed=true;
+    }
+  });
+  if(changed)refreshReaderStudyUI();
+}
+function updateScrollProgress(){
+  if(!current)return;
+  const sc=current.scroll;
+  const max=Math.max(1,sc.scrollHeight-sc.clientHeight);
+  const pct=Math.max(0,Math.min(100,sc.scrollTop/max*100));
+  const bar=current.overlay.querySelector('.bc-native-reader-progress');
+  if(bar)bar.style.width=pct+'%';
+  localStorage.setItem(storageKey(current.mode+':scroll'),String(sc.scrollTop));
+  autoMarkViewedChapters();
+}
+function restoreScroll(){
+  if(!current)return;
+  const v=Number(localStorage.getItem(storageKey(current.mode+':scroll'))||0);
+  if(v>0)current.scroll.scrollTop=v;
+}
+function setFont(delta){
+  if(!current)return;
+  current.font=Math.max(14,Math.min(21,current.font+delta));
+  current.article.style.fontSize=current.font+'px';
+  localStorage.setItem(storageKey('font'),String(current.font));
+}
+function stripMarks(){
+  if(!current)return;
+  current.article.querySelectorAll('mark.bc-native-search-hit').forEach(m=>m.replaceWith(document.createTextNode(m.textContent)));
+  current.article.normalize();
+}
+function search(term){
+  stripMarks();
+  term=norm(term);
+  if(term.length<2)return 0;
+  let n=0;
+  const root=current.article;
+  const walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode(node){
+    if(!node.nodeValue.trim())return NodeFilter.FILTER_REJECT;
+    if(node.parentElement.closest('mark'))return NodeFilter.FILTER_REJECT;
+    return node.nodeValue.toLocaleLowerCase('pt-BR').includes(term.toLocaleLowerCase('pt-BR'))?NodeFilter.FILTER_ACCEPT:NodeFilter.FILTER_REJECT;
+  }});
+  const nodes=[];while(walker.nextNode())nodes.push(walker.currentNode);
+  for(const node of nodes){
+    const raw=node.nodeValue,low=raw.toLocaleLowerCase('pt-BR'),needle=term.toLocaleLowerCase('pt-BR');
+    let pos=0,idx;const frag=document.createDocumentFragment();
+    while((idx=low.indexOf(needle,pos))>=0){
+      frag.append(raw.slice(pos,idx));
+      const mk=document.createElement('mark');mk.className='bc-native-search-hit';mk.textContent=raw.slice(idx,idx+term.length);frag.append(mk);
+      n++;pos=idx+term.length;
+    }
+    frag.append(raw.slice(pos));node.replaceWith(frag);
+  }
+  root.querySelector('mark.bc-native-search-hit')?.scrollIntoView({block:'center'});
+  return n;
+}
+function findHeadingForChapter(chapter){
+  if(!current)return null;
+  const target=normKey(chapter.title).replace(/^\d+\s+/,'');
+  const words=target.split(' ').filter(w=>w.length>3);
+  const headings=Array.from(current.article.querySelectorAll('h2,h3'));
+  let best=null,bestScore=0;
+  for(const h of headings){
+    const hk=normKey(h.textContent);
+    let score=0;
+    words.forEach(w=>{if(hk.includes(w))score++});
+    if(score>bestScore){bestScore=score;best=h}
+  }
+  return bestScore>=Math.max(1,Math.min(2,words.length))?best:null;
+}
+function refreshReaderStudyUI(){
+  if(!current)return;
+  const data=source(),st=modeStudyStats(data,current.mode);
+  const value=current.overlay.querySelector('[data-reader-study-value]');
+  const bar=current.overlay.querySelector('[data-reader-study-bar]');
+  const qscore=current.overlay.querySelector('[data-reader-internal-score]');
+  if(value)value.textContent=st.done+' / '+st.total+' pontos';
+  if(bar)bar.style.width=(st.total?Math.round(st.done/st.total*100):0)+'%';
+  if(qscore)qscore.textContent=st.answered
+    ? st.correct+' acertos em '+st.answered+' respondidas'
+    : 'Nenhuma questão interna respondida';
+
+  current.overlay.querySelectorAll('[data-chapter-check]').forEach(btn=>{
+    const done=chapterDone(current.mode,btn.dataset.chapterCheck);
+    btn.classList.toggle('done',done);
+    btn.setAttribute('aria-pressed',String(done));
+    btn.textContent=done?'✓':'';
+  });
+  refreshModuleMetrics();
+}
+function chapterTocHtml(data,mode){
+  return modeChapters(data,mode).map((ch,i)=>{
+    const done=chapterDone(mode,ch.id);
+    return '<div class="bc-native-toc-row">'+
+      '<button type="button" class="bc-native-chapter-check '+(done?'done':'')+'" data-chapter-check="'+esc(ch.id)+'" aria-pressed="'+done+'" title="Marcar capítulo">'+(done?'✓':'')+'</button>'+
+      '<button type="button" class="bc-native-chapter-jump" data-chapter-jump="'+esc(ch.id)+'"><span>'+(i+1)+'.</span>'+esc(ch.title)+'</button>'+
+    '</div>';
+  }).join('');
+}
+function quizHtml(data,mode){
+  const qs=modeQuestions(data,mode);
+  if(!qs.length)return '';
+  const cards=qs.map((q,i)=>{
+    const a=internalAnswer(mode,q.id);
+    const options=q.options.map((op,idx)=>{
+      let cls='';
+      if(a){
+        if(idx===q.answer)cls+=' correct';
+        if(idx===a.selected&&idx!==q.answer)cls+=' wrong';
+      }
+      return '<button type="button" class="bc-native-quiz-option'+cls+'" data-internal-q="'+esc(q.id)+'" data-option="'+idx+'" '+(a?'disabled':'')+'><span>'+String.fromCharCode(65+idx)+'</span>'+esc(op)+'</button>';
+    }).join('');
+    return '<article class="bc-native-quiz-card" data-quiz-card="'+esc(q.id)+'">'+
+      '<div class="bc-native-quiz-number">Questão '+(i+1)+' de '+qs.length+'</div>'+
+      '<h3>'+esc(q.q)+'</h3>'+
+      '<div class="bc-native-quiz-options">'+options+'</div>'+
+      '<div class="bc-native-quiz-feedback '+(a?(a.correct?'ok':'bad'):'')+'" data-quiz-feedback>'+
+        (a?'<b>'+(a.correct?'✓ Correto':'✕ Incorreto')+'</b><span>'+esc(q.explanation)+'</span><button type="button" data-internal-retry="'+esc(q.id)+'">Refazer</button>':'<span>Escolha uma alternativa para receber o feedback.</span>')+
+      '</div>'+
+    '</article>';
+  }).join('');
+  return '<section class="bc-native-internal-review">'+
+    '<div class="bc-native-internal-review-head"><div><span class="bc-native-kicker">REVISÃO ATIVA INTERNA</span><h2>'+qs.length+' questões de assimilação</h2><p>Estas questões contam na <b>cobertura da teoria</b>. Elas não entram no gráfico de questões externas.</p></div><div class="bc-native-internal-score" data-reader-internal-score></div></div>'+
+    cards+
+  '</section>';
+}
+function bindQuiz(){
+  if(!current)return;
+  const data=source();
+  current.overlay.querySelectorAll('[data-internal-q]').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const q=modeQuestions(data,current.mode).find(x=>x.id===btn.dataset.internalQ);
+      if(!q)return;
+      saveInternalAnswer(current.mode,q,Number(btn.dataset.option));
+      rerenderQuizCard(q.id);
+      refreshReaderStudyUI();
+    });
+  });
+  current.overlay.querySelectorAll('[data-internal-retry]').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      resetInternalAnswer(current.mode,btn.dataset.internalRetry);
+      rerenderQuizCard(btn.dataset.internalRetry);
+      refreshReaderStudyUI();
+    });
+  });
+}
+function rerenderQuizCard(id){
+  if(!current)return;
+  const data=source(),q=modeQuestions(data,current.mode).find(x=>x.id===id);
+  const old=current.overlay.querySelector('[data-quiz-card="'+CSS.escape(id)+'"]');
+  if(!q||!old)return;
+  const i=modeQuestions(data,current.mode).findIndex(x=>x.id===id);
+  const a=internalAnswer(current.mode,id);
+  const options=q.options.map((op,idx)=>{
+    let cls='';
+    if(a){
+      if(idx===q.answer)cls+=' correct';
+      if(idx===a.selected&&idx!==q.answer)cls+=' wrong';
+    }
+    return '<button type="button" class="bc-native-quiz-option'+cls+'" data-internal-q="'+esc(q.id)+'" data-option="'+idx+'" '+(a?'disabled':'')+'><span>'+String.fromCharCode(65+idx)+'</span>'+esc(op)+'</button>';
+  }).join('');
+  old.innerHTML='<div class="bc-native-quiz-number">Questão '+(i+1)+' de '+modeQuestions(data,current.mode).length+'</div>'+
+    '<h3>'+esc(q.q)+'</h3><div class="bc-native-quiz-options">'+options+'</div>'+
+    '<div class="bc-native-quiz-feedback '+(a?(a.correct?'ok':'bad'):'')+'" data-quiz-feedback>'+
+      (a?'<b>'+(a.correct?'✓ Correto':'✕ Incorreto')+'</b><span>'+esc(q.explanation)+'</span><button type="button" data-internal-retry="'+esc(q.id)+'">Refazer</button>':'<span>Escolha uma alternativa para receber o feedback.</span>')+
+    '</div>';
+  bindQuiz();
+}
+function open(mode){
+  const data=source();if(!data){alert('Conteúdo nativo do M01 ainda não foi carregado.');return}
+  close();
+  const parsed=buildHtml(data,mode);
+  const label=mode==='summary'?'Conteúdo resumido':'Conteúdo completo';
+  const chapters=modeChapters(data,mode),questions=modeQuestions(data,mode);
+  const ov=document.createElement('div');
+  ov.id=OVERLAY_ID;ov.className='bc-native-reader-overlay';
+  ov.innerHTML='<section class="bc-native-reader" role="dialog" aria-modal="true" aria-label="'+esc(label)+'">'+
+    '<header class="bc-native-reader-head"><div class="bc-native-reader-title"><b>PEN M05 — '+esc(data.title)+'</b><small>'+label+' • experiência nativa da Base Completa</small></div><span class="bc-native-reader-meta">'+parsed.words.toLocaleString('pt-BR')+' palavras • ~'+parsed.mins+' min</span><button class="bc-native-reader-close" data-native-action="close" aria-label="Fechar">×</button><div class="bc-native-reader-progress-track"><div class="bc-native-reader-progress"></div></div></header>'+
+    '<div class="bc-native-reader-tools"><input type="search" placeholder="Buscar neste material…" aria-label="Buscar"><button data-native-action="smaller">A−</button><button data-native-action="larger">A+</button><button class="primary" data-native-action="top">Ir ao topo</button></div>'+
+    '<div class="bc-native-reader-body">'+
+      '<nav class="bc-native-toc"><div class="bc-native-toc-label">Capítulos para concluir</div>'+chapterTocHtml(data,mode)+'</nav>'+
+      '<main class="bc-native-scroll"><article class="bc-native-article">'+
+        '<div class="bc-native-kicker">'+(mode==='summary'?'PRIMEIRA LEITURA + REVISÃO':'TEORIA INTEGRAL')+'</div>'+
+        '<h1>'+esc(data.title)+'</h1>'+
+        '<p class="lead">'+(mode==='summary'?'Versão condensada para compreender o módulo e revisar os pontos de maior rendimento.':'Conteúdo integral convertido para leitura nativa, sem leitor de PDF.')+'</p>'+
+        '<section class="bc-native-study-progress"><div><b>Progresso neste material</b><span data-reader-study-value>0 / '+(chapters.length+questions.length)+' pontos</span></div><div class="bc-native-study-progress-track"><span data-reader-study-bar></span></div><small>'+chapters.length+' capítulos + '+questions.length+' questões internas. Os capítulos recebem check automaticamente conforme você avança; as questões internas também entram na cobertura da teoria.</small></section>'+
+        parsed.body+
+        quizHtml(data,mode)+
+      '</article></main>'+
+    '</div></section>';
+  document.body.appendChild(ov);document.body.style.overflow='hidden';
+
+  current={
+    mode,overlay:ov,scroll:ov.querySelector('.bc-native-scroll'),article:ov.querySelector('.bc-native-article'),
+    font:Number(localStorage.getItem(storageKey('font'))||16),chapterMap:[]
+  };
+  current.article.style.fontSize=current.font+'px';
+  current.scroll.addEventListener('scroll',updateScrollProgress,{passive:true});
+  ov.querySelector('[data-native-action="close"]').onclick=close;
+  ov.querySelector('[data-native-action="smaller"]').onclick=()=>setFont(-1);
+  ov.querySelector('[data-native-action="larger"]').onclick=()=>setFont(1);
+  ov.querySelector('[data-native-action="top"]').onclick=()=>current.scroll.scrollTo({top:0,behavior:'smooth'});
+  ov.querySelector('.bc-native-reader-tools input').addEventListener('input',e=>search(e.target.value));
+
+  ov.querySelectorAll('[data-chapter-check]').forEach(btn=>{
+    btn.onclick=()=>{
+      const id=btn.dataset.chapterCheck;
+      setChapterDone(mode,id,!chapterDone(mode,id));
+      refreshReaderStudyUI();
+    };
+  });
+  ov.querySelectorAll('[data-chapter-jump]').forEach(btn=>{
+    btn.onclick=()=>{
+      const ch=modeChapters(data,mode).find(x=>x.id===btn.dataset.chapterJump);
+      findHeadingForChapter(ch)?.scrollIntoView({behavior:'smooth',block:'start'});
+    };
+  });
+
+  bindQuiz();
+  ov.addEventListener('click',e=>{if(e.target===ov)close()});
+  requestAnimationFrame(()=>{
+    current.chapterMap=buildChapterMap();
+    restoreScroll();updateScrollProgress();refreshReaderStudyUI();autoMarkViewedChapters();
+  });
+}
+function openMap(){
+  if(global.BaseMindMap?.open)global.BaseMindMap.open('penal','p5');
+  else alert('O mapa mental interativo ainda está carregando. Tente novamente em alguns segundos.');
+}
+function removeLegacyM01Content(){
+  const module=document.querySelector(M1_SELECTOR);
+  if(!module)return;
+  module.querySelectorAll('.bc-session-nav,.bc-session-pager').forEach(el=>el.remove());
+}
+function inject(){
+  const module=document.querySelector(M1_SELECTOR);if(!module)return;
+  removeLegacyM01Content();
+  const body=module.querySelector('.cf-module-body');if(!body)return;
+
+  // Fallback: a renderização principal já entrega os cards diretamente.
+  if(!body.querySelector('.bc-native-materials')){
+    const host=document.createElement('section');host.className='bc-native-materials';
+    host.innerHTML='<div class="bc-native-materials-head"><div><b>Materiais do módulo</b><small>Escolha como estudar</small></div><small>Piloto M05 • conteúdo nativo</small></div>'+
+      '<div class="bc-native-material-grid">'+
+        '<button class="bc-native-material-card" data-native-kind="summary"><span class="bc-native-material-icon">⚡</span><span><strong>Conteúdo resumido</strong><small>Primeira leitura, revisão rápida, artigos, pegadinhas e revisão ativa.</small></span><span class="bc-native-material-action"><span>Abrir</span><span>→</span></span></button>'+
+        '<button class="bc-native-material-card" data-native-kind="complete"><span class="bc-native-material-icon">📚</span><span><strong>Conteúdo completo</strong><small>Teoria integral do M05 em formato de site, com índice, busca e progresso de leitura.</small></span><span class="bc-native-material-action"><span>Abrir</span><span>→</span></span></button>'+
+        '<button class="bc-native-material-card" data-native-kind="mindmap"><span class="bc-native-material-icon">🧠</span><span><strong>Mapa mental</strong><small>Mapa interativo com abrir/recolher ramos, zoom, arrastar e tela cheia.</small></span><span class="bc-native-material-action"><span>Abrir</span><span>→</span></span></button>'+
+      '</div>';
+    host.querySelector('[data-native-kind="summary"]').onclick=()=>open('summary');
+    host.querySelector('[data-native-kind="complete"]').onclick=()=>open('complete');
+    host.querySelector('[data-native-kind="mindmap"]').onclick=openMap;
+    const subtitle=body.querySelector('.cf-subtitle');
+    if(subtitle)subtitle.insertAdjacentElement('afterend',host);else body.insertAdjacentElement('afterbegin',host);
+  }
+  refreshModuleMetrics();
+}
+function install(){
+  inject();
+  observer=new MutationObserver(()=>{
+    clearTimeout(install._t);
+    install._t=setTimeout(()=>{removeLegacyM01Content();inject();refreshModuleMetrics()},60);
+  });
+  observer.observe(document.documentElement,{subtree:true,childList:true});
+  global.addEventListener('focus',refreshModuleMetrics);
+}
+global.BaseNativeReaderM05={
+  open,close,refreshMetrics:refreshModuleMetrics,theoryStats,externalStats,
+  version:'2026.10.02-m05-pilot1'
+};
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&document.getElementById(OVERLAY_ID))close()});
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',install);else install();
+})(window);
