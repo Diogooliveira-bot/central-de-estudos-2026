@@ -19,8 +19,8 @@ function cleanLines(raw,mode){
   const out=[];
   let skipOldSummaryReview=false;
   for(let line of lines){
-    if(mode==='summary' && /^13\.\s*REVISAO ATIVA/i.test(line)){skipOldSummaryReview=true;continue}
-    if(skipOldSummaryReview && /^ESQUELETO DE MEMORIA/i.test(line)){skipOldSummaryReview=false;continue}
+    if(mode==='summary' && /^13\.\s*REVIS(?:A|Ã)O ATIVA/i.test(line)){skipOldSummaryReview=true;continue}
+    if(skipOldSummaryReview && /^ESQUELETO DE MEM(?:O|Ó)RIA/i.test(line)){skipOldSummaryReview=false;continue}
     if(skipOldSummaryReview)continue;
     if(!line){out.push('');continue}
     if(/^BASE COMPLETA(?:\s*[|•-]|$)/i.test(line))continue;
