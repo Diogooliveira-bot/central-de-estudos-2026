@@ -4007,6 +4007,7 @@ function renderCfModule(w){
    <div class="cf-module-body">
      <div class="cf-module-bar"><span style="width:${pct}%"></span></div>
      <div class="cf-subtitle">${esc(w.subtitle)}</div>
+     ${w.id==='p1'?renderPenalNativeM01Materials():w.id==='p2'?renderPenalNativeM02Materials():''}
      <div class="cf-steps">
        ${cfStep(1,'Diagnóstico','Questões FCC antes da teoria.',ws.diagnostic,real.length?`<button class="cf-btn primary" onclick="startCfQuiz('${w.id}','diagnostic',${diag})">${ws.diagnostic?'Refazer diagnóstico':'Começar '+diag+' FCC'}</button>`:`<span class="muted small">Sem questões reais suficientes.</span>`)}
        ${cfStep(2,'Leitura orientada','Dispositivos e pontos para observar na Constituição.',ws.reading,`<div class="cf-reading"><strong>${esc(w.read)}</strong><ul>${w.read_focus.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div><div class="cf-actions"><button class="cf-btn primary" onclick="openLeiSecaEnxuta(null,'cf','cf-m${String(w.num).padStart(2,'0')}')">📖 Decorando deste módulo</button><button class="cf-btn ${ws.reading?'good':''}" onclick="cfUpdateWeek('${w.id}',{reading:${!ws.reading}})">${ws.reading?'✓ Concluída':'Marcar concluída'}</button></div>`)}
@@ -4215,6 +4216,96 @@ function renderPenalMaster(){
  <div id="penal-errors-host"></div>
  <div class="cf-modules">${PENAL_WEEKS.map(renderPenalModule).join('')}</div>`;
 }
+function renderPenalNativeM01Materials(){
+ return [
+  '<section class="bc-native-materials bc-native-materials-static" data-bc-native-m01>',
+    '<section class="bc-native-metrics" aria-label="Indicadores do módulo">',
+      '<article class="bc-native-metric-card">',
+        '<div class="bc-native-ring" data-native-ring="theory"><div class="bc-native-ring-inner"><b data-ring-value>0%</b><span>teoria</span></div></div>',
+        '<div class="bc-native-metric-copy"><small>COBERTURA DA TEORIA</small><strong data-native-metric-detail="theory">0 de 46 pontos concluídos</strong><span>Checks dos capítulos + questões internas.</span></div>',
+      '</article>',
+      '<article class="bc-native-metric-card">',
+        '<div class="bc-native-ring" data-native-ring="external"><div class="bc-native-ring-inner"><b data-ring-value>—</b><span>externas</span></div></div>',
+        '<div class="bc-native-metric-copy"><small>ACERTO EM QUESTÕES EXTERNAS</small><strong data-native-metric-detail="external">Nenhuma questão externa respondida</strong><span data-native-metric-meta="external">Aguardando banco externo</span></div>',
+      '</article>',
+    '</section>',
+    '<div class="bc-native-materials-head">',
+      '<div><b>Materiais do módulo</b><small>Escolha como estudar</small></div>',
+      '<small>Piloto M01 • conteúdo nativo</small>',
+    '</div>',
+    '<div class="bc-native-material-grid">',
+      '<button type="button" class="bc-native-material-card" data-native-kind="summary" onclick="window.BaseNativeReader&&window.BaseNativeReader.open(\'summary\')">',
+        '<span class="bc-native-material-icon">⚡</span>',
+        '<span><strong>Conteúdo resumido</strong><small>Primeira leitura, revisão rápida, artigos, pegadinhas e revisão ativa.</small></span>',
+        '<span class="bc-native-material-action"><span>Abrir</span><span>→</span></span>',
+      '</button>',
+      '<button type="button" class="bc-native-material-card" data-native-kind="complete" onclick="window.BaseNativeReader&&window.BaseNativeReader.open(\'complete\')">',
+        '<span class="bc-native-material-icon">📚</span>',
+        '<span><strong>Conteúdo completo</strong><small>Teoria integral do M01 em formato de site, com índice, busca e progresso de leitura.</small></span>',
+        '<span class="bc-native-material-action"><span>Abrir</span><span>→</span></span>',
+      '</button>',
+      '<button type="button" class="bc-native-material-card" data-native-kind="mindmap" onclick="window.BaseMindMap&&window.BaseMindMap.open(\'penal\',\'p1\')">',
+        '<span class="bc-native-material-icon">🧠</span>',
+        '<span><strong>Mapa mental</strong><small>Mapa interativo com abrir/recolher ramos, zoom, arrastar e tela cheia.</small></span>',
+        '<span class="bc-native-material-action"><span>Abrir</span><span>→</span></span>',
+      '</button>',
+    '</div>',
+    '<section class="bc-native-quick-summary" aria-label="Resumo do módulo">',
+      '<div class="bc-native-quick-summary-head">',
+        '<span class="bc-native-quick-summary-no">1</span>',
+        '<div><b>Resumo do módulo</b><small>O M01 em poucas palavras.</small></div>',
+      '</div>',
+      '<div class="bc-native-quick-summary-body">Legalidade e princípios penais • interpretação e analogia • intervenção mínima e insignificância • conflito aparente de normas (ESCA).</div>',
+    '</section>',
+  '</section>'
+ ].join('');
+}
+
+function renderPenalNativeM02Materials(){
+ return [
+  '<section class="bc-native-materials bc-native-materials-static" data-bc-native-m02>',
+    '<section class="bc-native-metrics" aria-label="Indicadores do módulo">',
+      '<article class="bc-native-metric-card">',
+        '<div class="bc-native-ring" data-native-ring="theory"><div class="bc-native-ring-inner"><b data-ring-value>0%</b><span>teoria</span></div></div>',
+        '<div class="bc-native-metric-copy"><small>COBERTURA DA TEORIA</small><strong data-native-metric-detail="theory">0 de 51 pontos concluídos</strong><span>Checks dos capítulos + questões internas.</span></div>',
+      '</article>',
+      '<article class="bc-native-metric-card">',
+        '<div class="bc-native-ring" data-native-ring="external"><div class="bc-native-ring-inner"><b data-ring-value>—</b><span>externas</span></div></div>',
+        '<div class="bc-native-metric-copy"><small>ACERTO EM QUESTÕES EXTERNAS</small><strong data-native-metric-detail="external">Nenhuma questão externa respondida</strong><span data-native-metric-meta="external">Registre questões externas no final do módulo</span></div>',
+      '</article>',
+    '</section>',
+    '<div class="bc-native-materials-head">',
+      '<div><b>Materiais do módulo</b><small>Escolha como estudar</small></div>',
+      '<small>Piloto M02 • conteúdo nativo</small>',
+    '</div>',
+    '<div class="bc-native-material-grid">',
+      '<button type="button" class="bc-native-material-card" data-native-kind="summary" onclick="window.BaseNativeReaderM02&&window.BaseNativeReaderM02.open(\'summary\')">',
+        '<span class="bc-native-material-icon">⚡</span>',
+        '<span><strong>Conteúdo resumido</strong><small>Primeira leitura, revisão rápida, artigos, pegadinhas e revisão ativa.</small></span>',
+        '<span class="bc-native-material-action"><span>Abrir</span><span>→</span></span>',
+      '</button>',
+      '<button type="button" class="bc-native-material-card" data-native-kind="complete" onclick="window.BaseNativeReaderM02&&window.BaseNativeReaderM02.open(\'complete\')">',
+        '<span class="bc-native-material-icon">📚</span>',
+        '<span><strong>Conteúdo completo</strong><small>Teoria integral do M02 em formato de site, com índice, busca e progresso de leitura.</small></span>',
+        '<span class="bc-native-material-action"><span>Abrir</span><span>→</span></span>',
+      '</button>',
+      '<button type="button" class="bc-native-material-card" data-native-kind="mindmap" onclick="window.BaseMindMap&&window.BaseMindMap.open(\'penal\',\'p2\')">',
+        '<span class="bc-native-material-icon">🧠</span>',
+        '<span><strong>Mapa mental</strong><small>Mapa interativo com abrir/recolher ramos, zoom, arrastar e tela cheia.</small></span>',
+        '<span class="bc-native-material-action"><span>Abrir</span><span>→</span></span>',
+      '</button>',
+    '</div>',
+    '<section class="bc-native-quick-summary" aria-label="Resumo do módulo">',
+      '<div class="bc-native-quick-summary-head">',
+        '<span class="bc-native-quick-summary-no">2</span>',
+        '<div><b>Resumo do módulo</b><small>O M02 em poucas palavras.</small></div>',
+      '</div>',
+      '<div class="bc-native-quick-summary-body">Norma penal e lei penal em branco • lei penal no tempo • tempo e lugar do crime • territorialidade e extraterritorialidade • sentença estrangeira e prazo penal.</div>',
+    '</section>',
+  '</section>'
+ ].join('');
+}
+
 function renderPenalModule(w){
  const ws=penalWeekState(w.id),pct=penalWeekPct(w),pool=penalPool(w),real=pool.filter(q=>q.real!==false),ined=pool.filter(q=>q.real===false),errors=penalModuleErrors(w);
  const open=localStorage.getItem(penalModuleOpenKey(w.id))==='1';
