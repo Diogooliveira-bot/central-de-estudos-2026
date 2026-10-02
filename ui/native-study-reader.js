@@ -2,7 +2,7 @@
 'use strict';
 
 const OVERLAY_ID='bcNativeReaderOverlay';
-const M1_SELECTOR='#subjects .cf-module[data-cf="p1"]';
+const M1_SELECTOR='#subjects .subject[data-id="penal"] .cf-module[data-cf="p1"]';
 let current=null;
 let observer=null;
 
