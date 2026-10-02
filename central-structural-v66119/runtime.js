@@ -4200,7 +4200,7 @@ function renderPenalNativeM01Materials(){
     '<section class="bc-native-metrics" aria-label="Indicadores do módulo">',
       '<article class="bc-native-metric-card">',
         '<div class="bc-native-ring" data-native-ring="theory"><div class="bc-native-ring-inner"><b data-ring-value>0%</b><span>teoria</span></div></div>',
-        '<div class="bc-native-metric-copy"><small>COBERTURA DA TEORIA</small><strong data-native-metric-detail="theory">0 de 47 pontos concluídos</strong><span>Checks dos capítulos + questões internas.</span></div>',
+        '<div class="bc-native-metric-copy"><small>COBERTURA DA TEORIA</small><strong data-native-metric-detail="theory">0 de 46 pontos concluídos</strong><span>Checks dos capítulos + questões internas.</span></div>',
       '</article>',
       '<article class="bc-native-metric-card">',
         '<div class="bc-native-ring" data-native-ring="external"><div class="bc-native-ring-inner"><b data-ring-value>—</b><span>externas</span></div></div>',
