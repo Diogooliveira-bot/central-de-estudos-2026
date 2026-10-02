@@ -19,7 +19,7 @@ function cleanLines(raw,mode){
   const out=[];
   let skipOldSummaryReview=false;
   for(let line of lines){
-    if(mode==='summary' && /^5\.\s*REVIS(?:A|Ã)O ATIVA/i.test(line)){skipOldSummaryReview=true;continue}
+    if(mode==='summary' && /^7\.\s*REVIS(?:A|Ã)O ATIVA/i.test(line)){skipOldSummaryReview=true;continue}
     if(skipOldSummaryReview)continue;
     if(!line){out.push('');continue}
     if(/^BASE COMPLETA(?:\s*[|•-]|$)/i.test(line))continue;
