@@ -51,7 +51,7 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
   }
   load('/content/penal/m10-native-data.js?v=20261002m10p1',function(){
     load('/ui/native-study-reader-m10.js?v=20261002m10p1',function(){
-      load('/ui/native-module-m10-shell.js?v=20261002m10p1');
+      load('/ui/native-module-m10-shell.js?v=20261002m10p1',function(){load('/ui/m10-header-fix.js?v=20261002m10p1');});
     });
   });
 })();
