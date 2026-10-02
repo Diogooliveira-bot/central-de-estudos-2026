@@ -599,3 +599,33 @@ html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-module[data-cf="p8"] .bc-n
 html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-module[data-cf="p9"] .bc-native-materials:not([data-bc-native-m09]){
   display:none!important;
 }
+
+
+/* M09/M10 complete native HTML normalization */
+.bc-native-article .bc-native-m09-table,
+.bc-native-article .bc-native-m10-table{
+  width:100%;min-width:700px;border-collapse:collapse;background:var(--bc-color-surface)
+}
+.bc-native-article .bc-native-m09-table th,
+.bc-native-article .bc-native-m09-table td,
+.bc-native-article .bc-native-m10-table th,
+.bc-native-article .bc-native-m10-table td{
+  padding:10px 11px;border:1px solid var(--bc-color-border);
+  vertical-align:top;text-align:left;font-size:12px;line-height:1.5
+}
+.bc-native-article .bc-native-m09-table th,
+.bc-native-article .bc-native-m10-table th{
+  background:var(--bc-color-surface-elevated);font-weight:800
+}
+.bc-native-article .bc-native-m09-subhead,
+.bc-native-article .bc-native-m10-subhead{
+  margin:20px 0 8px!important;font-size:16px!important;line-height:1.4!important
+}
+.bc-native-article .bc-native-m09-separator,
+.bc-native-article .bc-native-m10-separator{
+  border:0;border-top:1px solid var(--bc-color-border);margin:28px 0
+}
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-module[data-cf="p9"] .bc-native-materials:not([data-bc-native-m09]),
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-module[data-cf="p10"] .bc-native-materials:not([data-bc-native-m10]){
+  display:none!important;
+}
