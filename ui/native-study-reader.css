@@ -382,3 +382,8 @@ html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-module:is([data-cf="p1"],[
 .bc-native-article .pen-m3-flow span{font-size:12px;font-weight:750}
 .bc-native-article .pen-m3-flow i{color:var(--bc-color-primary);font-style:normal;font-weight:900}
 .bc-native-article .pen-m3-muted{color:var(--bc-color-text-secondary)!important;font-size:12px}
+
+/* M03 hide fallback duplicate */
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-module[data-cf="p3"] .bc-native-materials:not([data-bc-native-m03]){
+  display:none!important;
+}
