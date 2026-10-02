@@ -348,7 +348,29 @@ function topicByUid(uid){for(const s of SUBJECTS){const t=s.topics.find(x=>x.uid
 
 function saveLastTopic(uid){const x=topicByUid(uid);if(x)saveLast({topicUid:uid,title:x.s.name+' • '+x.t.title,at:Date.now()})}
 function saveLast(x){localStorage.setItem('central-v6:last',JSON.stringify(x));renderContinue()}
-function renderContinue(){const x=JSON.parse(localStorage.getItem('central-v6:last')||'null');if(!x){$('continueBox').innerHTML='<div class="muted small">Nenhuma sessão recente.</div>';return}const act=x.tool==='vade-mecum'?`openVadeMecum()`:x.tool==='lei-seca-enxuta'?`openLeiSecaEnxuta()`:x.ptModule?`openPtNativeLast('${x.ptModule}')`:x.civilModule?`openCivilLast('${x.civilModule}')`:x.cfWeek?`openCfLast('${x.cfWeek}')`:x.penalWeek?`openPenalLast('${x.penalWeek}')`:x.cpcWeek?`openCpcLast('${x.cpcWeek}')`:x.topicUid?`openTopicFromLast('${x.topicUid}')`:`openInternal('${escJs(x.url)}','${escJs(x.title)}')`;$('continueBox').innerHTML=`<b style="display:block;font-size:12px">${esc(x.title)}</b><span class="muted small">${new Date(x.at).toLocaleString('pt-BR')}</span><div style="margin-top:9px"><button class="btn primary sm" onclick="${act}">Continuar</button></div>`}
+function renderContinue(){
+ const host=$('continueBox');if(!host)return;
+ let x=null;try{x=JSON.parse(localStorage.getItem('central-v6:last')||'null')}catch(_){}
+ if(!x||typeof x!=='object'){host.innerHTML='<div class="muted small">Nenhuma sessão recente.</div>';return}
+ const date=new Date(x.at);
+ host.innerHTML=`<b style="display:block;font-size:12px">${esc(x.title||'Último estudo')}</b><span class="muted small">${Number.isNaN(date.getTime())?'':date.toLocaleString('pt-BR')}</span><div style="margin-top:9px"><button type="button" class="btn primary sm" onclick="centralResumeLast()">Continuar</button></div>`;
+}
+function centralResumeLast(){
+ let x=null;try{x=JSON.parse(localStorage.getItem('central-v6:last')||'null')}catch(_){}
+ if(!x||typeof x!=='object')return openHome();
+ const folder=String(x.url||'').match(/^folder:(vade|decorando|rlm)$/);
+ if(folder)return openEmbeddedTool(folder[1],x.opts||{});
+ if(x.tool==='vade-mecum')return openVadeMecum();
+ if(x.tool==='lei-seca-enxuta')return openLeiSecaEnxuta();
+ if(x.ptModule&&typeof window.openPtNativeLast==='function')return window.openPtNativeLast(x.ptModule);
+ if(x.civilModule)return openCivilLast(x.civilModule);
+ if(x.cfWeek)return openCfLast(x.cfWeek);
+ if(x.penalWeek)return openPenalLast(x.penalWeek);
+ if(x.cpcWeek)return openCpcLast(x.cpcWeek);
+ if(x.topicUid)return openTopicFromLast(x.topicUid);
+ if(x.url){try{const url=new URL(x.url,location.href);if(/^https?:$/.test(url.protocol))return openInternal(url.href,x.title||'Estudo')}catch(_){}}
+ return openHome();
+}
 function openTopicFromLast(uid){openHome();setTimeout(()=>{const found=topicByUid(uid);if(found){localStorage.setItem(`central-v6:open:${found.s.id}`,'1');renderSubjects();localStorage.setItem(topicOpenKey(uid),'1');renderSubjects();const el=document.querySelector(`.topic-item[data-uid="${uid}"]`);el?.scrollIntoView({behavior:'smooth',block:'center'})}},30)}
 
 function renderSubjects(){
@@ -4693,17 +4715,13 @@ function getAgenda(d){
   try{const parsed=JSON.parse(raw);if(Array.isArray(parsed))return parsed;throw new Error('formato inválido')}
   catch(e){console.warn('Agenda armazenada inválida; registro ignorado',e);try{localStorage.removeItem(k)}catch(_){}}
  }
- if(d===todayISO()){
-  const a=[{id:1,time:'06:40',discipline:'Direito Constitucional',task:'Continuar módulo atual',done:false},{id:2,time:'07:20',discipline:'Anki',task:'Revisar baralhos pendentes',done:false}];
-  try{saveAgenda(d,a)}catch(_){}return a
- }
  return []
 }
 function saveAgenda(d,a){try{localStorage.setItem(agendaKey(d),JSON.stringify(Array.isArray(a)?a:[]));return true}catch(e){console.warn('Não foi possível salvar Agenda',e);return false}}
 function toggleAgenda(d,id,v){const a=getAgenda(d),x=a.find(i=>i.id===id);if(x)x.done=v;saveAgenda(d,a);renderAll();renderAgendaEditor()}
 function deleteAgenda(d,id){saveAgenda(d,getAgenda(d).filter(x=>x.id!==id));renderAll();renderAgendaEditor()}
 function addAgenda(){const d=$('agendaDate').value||todayISO(),task=$('agendaTask').value.trim();if(!task)return;const a=getAgenda(d);a.push({id:Date.now(),time:$('agendaTime').value||'',discipline:$('agendaDisc').value,task,done:false});saveAgenda(d,a);$('agendaTask').value='';renderAll();renderAgendaEditor()}
-function renderHomeAgenda(){const d=todayISO(),a=getAgenda(d),done=a.filter(x=>x.done).length,p=a.length?Math.round(done/a.length*100):0;$('dayCount').textContent=`${done} de ${a.length}`;$('dayBar').style.width=p+'%';$('dayPct').textContent=p+'%';$('homeAgenda').innerHTML=a.length?a.map(x=>`<div class="agenda-row ${x.done?'done':''}"><input type="checkbox" ${x.done?'checked':''} onchange="toggleAgenda('${d}',${x.id},this.checked)"><div class="agenda-time">${esc(x.time||'—')}</div><div class="agenda-copy"><b>${esc(x.discipline)}</b><small>${esc(x.task)}</small></div><button class="btn sm" onclick="openAgenda()">Editar</button></div>`).join(''):'<div class="muted small" style="padding:12px">Agenda vazia.</div>'}
+function renderHomeAgenda(){if(window.CentralAgenda?.renderHomeSummary)return window.CentralAgenda.renderHomeSummary();const d=todayISO(),a=getAgenda(d),done=a.filter(x=>x.done).length,p=a.length?Math.round(done/a.length*100):0;$('dayCount').textContent=`${done} de ${a.length}`;$('dayBar').style.width=p+'%';$('dayPct').textContent=p+'%';$('homeAgenda').innerHTML=a.length?a.map(x=>`<div class="agenda-row ${x.done?'done':''}"><input type="checkbox" ${x.done?'checked':''} onchange="toggleAgenda('${d}',${x.id},this.checked)"><div class="agenda-time">${esc(x.time||'—')}</div><div class="agenda-copy"><b>${esc(x.discipline)}</b><small>${esc(x.task)}</small></div><button class="btn sm" onclick="openAgenda()">Editar</button></div>`).join(''):'<div class="muted small" style="padding:12px">Agenda vazia.</div>'}
 function renderAgendaEditor(){
  const host=$('agendaEditor');if(!host)return;
  const dateEl=$('agendaDate');const d=(dateEl&&dateEl.value)||todayISO();

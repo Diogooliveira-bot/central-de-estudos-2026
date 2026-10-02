@@ -10,7 +10,18 @@
     const link = document.createElement('a');
     link.id = 'centralToolReturn';
     link.href = '../central-v119.html?direct=34';
-    link.textContent = '← Voltar à Central';
+    try {
+      const context = JSON.parse(sessionStorage.getItem('central-v6:tool-return') || 'null');
+      if (context && typeof context === 'object') {
+        const query = new URLSearchParams();
+        ['subject','module','view'].forEach(key => {
+          if (typeof context[key] === 'string') query.set(key,context[key]);
+        });
+        link.href = '../central-v119.html' + (query.size ? '?' + query.toString() : '');
+        if (context.module) link.textContent = 'Voltar ao módulo';
+      }
+    } catch (_) {}
+    if (!link.textContent) link.textContent = '← Voltar à Central';
     nav.appendChild(link);
     document.body.prepend(nav);
   }
