@@ -39,3 +39,84 @@ html.bc-ui-v1 #agendaView .agenda-edit-row { grid-template-columns:60px minmax(0
 html.bc-ui-v1 #homeView .home-progress-card #dayCount { font-size:14px!important; }
 html.bc-ui-v1 #homeView .home-progress-card #dayPct { font-size:12px!important; }
 html.bc-ui-v1 #homeView .home-progress-card .muted { font-size:12px!important; }
+
+/* Home vertical: full workspace width and larger subject cards. */
+html.bc-ui-v1 .workspace > #homeView.view.central-view-visible:not(.hidden) {
+  width:100%!important;
+  max-width:none!important;
+  margin:0!important;
+  padding:12px 18px 18px!important;
+}
+html.bc-ui-v1 #homeView > .hero,
+html.bc-ui-v1 #homeView > .home-grid {
+  width:100%!important;
+  max-width:none!important;
+  margin-inline:0!important;
+}
+html.bc-ui-v1 #homeView > .hero { min-height:32px!important; margin-bottom:8px!important; }
+html.bc-ui-v1 #homeView .home-dashboard-row,
+html.bc-ui-v1 #homeView .home-secondary-row { margin-bottom:10px!important; }
+html.bc-ui-v1 #homeView .home-dashboard-row > .home-today-card { min-height:0!important; padding:10px 12px!important; }
+html.bc-ui-v1 #homeView .home-secondary-row > .home-continue-card { min-height:0!important; }
+html.bc-ui-v1 #homeView .home-continue-card > .card-head { padding:10px 12px!important; }
+html.bc-ui-v1 #homeView .home-continue-card > #continueBox { padding:10px 12px!important; }
+html.bc-ui-v1 #homeView #subjects {
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr)!important;
+  gap:12px!important;
+  width:100%!important;
+  margin:0!important;
+}
+html.bc-ui-v1 #homeView #subjects > .subject {
+  margin:0!important;
+  border-radius:14px!important;
+}
+html.bc-ui-v1 #homeView #subjects > .subject:not(.open) > .subject-head {
+  min-height:132px!important;
+  padding:22px 26px!important;
+  grid-template-columns:minmax(0,1fr) 84px!important;
+  grid-template-rows:auto auto auto!important;
+  gap:5px 22px!important;
+}
+html.bc-ui-v1 #homeView #subjects > .subject:not(.open) .subject-name {
+  font-size:22px!important;
+  line-height:1.35!important;
+  white-space:normal!important;
+}
+html.bc-ui-v1 #homeView #subjects > .subject:not(.open) .bc-home-submeta {
+  font-size:15px!important;
+  line-height:1.4!important;
+  white-space:normal!important;
+}
+html.bc-ui-v1 #homeView #subjects > .subject:not(.open) .subject-count { font-size:15px!important; line-height:1.4!important; }
+html.bc-ui-v1 #homeView #subjects > .subject:not(.open) .subject-pct {
+  width:76px!important; height:76px!important; min-width:76px!important;
+}
+html.bc-ui-v1 #homeView #subjects > .subject:not(.open) .subject-pct::before { inset:7px!important; }
+html.bc-ui-v1 #homeView #subjects > .subject:not(.open) .subject-pct::after { font-size:17px!important; }
+html.bc-ui-v1 #homeView #subjects > .subject:not(.open)::after { right:130px!important; bottom:-8px!important; font-size:64px!important; }
+html.bc-ui-v1 #homeView #subjects > .subject.open > .subject-head { min-height:76px!important; padding:16px 22px!important; }
+html.bc-ui-v1 #homeView #subjects > .subject.open > .subject-head .subject-name { font-size:20px!important; line-height:1.4!important; }
+html.bc-ui-v1 #homeView #subjects > .subject.open > .subject-head .subject-count,
+html.bc-ui-v1 #homeView #subjects > .subject.open > .subject-head .subject-pct { font-size:14px!important; }
+@media(max-width:600px) {
+  html.bc-ui-v1 .workspace > #homeView.view.central-view-visible:not(.hidden) { padding:10px!important; }
+  html.bc-ui-v1 #homeView #subjects > .subject:not(.open) > .subject-head {
+    min-height:124px!important; padding:18px!important; grid-template-columns:minmax(0,1fr) 64px!important; gap:4px 12px!important;
+  }
+  html.bc-ui-v1 #homeView #subjects > .subject:not(.open) .subject-name { font-size:18px!important; }
+  html.bc-ui-v1 #homeView #subjects > .subject:not(.open) .subject-pct { width:60px!important; height:60px!important; min-width:60px!important; }
+  html.bc-ui-v1 #homeView #subjects > .subject:not(.open) .subject-pct::after { font-size:14px!important; }
+  html.bc-ui-v1 #homeView #subjects > .subject.open > .subject-head { grid-template-columns:minmax(0,1fr) auto 24px!important; padding:14px!important; }
+  html.bc-ui-v1 #homeView #subjects > .subject.open > .subject-head .subject-name { grid-column:1; font-size:18px!important; }
+  html.bc-ui-v1 #homeView #subjects > .subject.open > .subject-head .subject-count { grid-column:1; grid-row:2; }
+}
+html.bc-ui-v1 #homeView .home-secondary-row > .home-continue-card { padding:0!important; }
+html.bc-ui-v1 #homeView .schedule-intro { display:none!important; }
+@media(min-width:1101px) {
+  html.bc-ui-v1 #homeView .home-dashboard-row > .home-today-card { grid-template-columns:140px minmax(0,1fr) 160px auto!important; }
+}
+html.bc-ui-v1 #homeView .home-progress-card .progress-box { display:flex!important; flex-direction:column!important; align-items:stretch!important; gap:4px!important; }
+html.bc-ui-v1 #homeView .home-progress-card .progress-box > .muted.small:first-of-type { display:none!important; }
+html.bc-ui-v1 #homeView .home-progress-card #dayCount { line-height:1.4!important; }
+html.bc-ui-v1 #homeView .home-progress-card #dayPct { line-height:1.4!important; }
