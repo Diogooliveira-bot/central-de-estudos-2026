@@ -115,21 +115,21 @@ function buildHtml(data,mode){
     const host=document.createElement('div');
     host.innerHTML=global.PENAL_FULL_THEORY?.p11?.html||'';
 
-    const review=Array.from(host.querySelectorAll('h2')).find(h=>/^41\\.\\s/.test(norm(h.textContent)));
-    if(review){
-      let n=review;
-      while(n){const next=n.nextSibling;n.remove();n=next;}
-    }
-    const first=Array.from(host.querySelectorAll('h2')).find(h=>/^01\\.\\s/.test(norm(h.textContent)));
+    const first=Array.from(host.querySelectorAll('h2')).find(h=>/^1\.\s/.test(norm(h.textContent)));
     if(first){
-      let n=host.firstChild;
-      while(n&&n!==first){const next=n.nextSibling;n.remove();n=next;}
+      let node=host.firstChild;
+      while(node&&node!==first){const next=node.nextSibling;node.remove();node=next;}
+    }
+    const endMarker=Array.from(host.querySelectorAll('h1,h2,h3')).find(h=>/FIM DO CONTE[ÚU]DO TE[ÓO]RICO/i.test(norm(h.textContent)));
+    if(endMarker){
+      let node=endMarker;
+      while(node){const next=node.nextSibling;node.remove();node=next;}
     }
 
     const headings=[];
     host.querySelectorAll('h2').forEach((h,index)=>{
       const title=norm(h.textContent);
-      if(!/^(?:0[1-9]|[12][0-9]|3[0-9]|40)\\.\\s/.test(title))return;
+      if(!title || /FIM DO CONTE[ÚU]DO/i.test(title))return;
       if(!h.id)h.id='bcsec-complete-'+(index+1)+'-'+slug(title);
       headings.push({id:h.id,text:title,level:2,key:normKey(title)});
     });
@@ -143,7 +143,6 @@ function buildHtml(data,mode){
     const words=text.split(/\\s+/).filter(Boolean).length;
     return {body:host.innerHTML,headings,words,mins:Math.max(1,Math.round(words/190))};
   }
-
   const raw=mode==='summary'?data.summary:data.complete;
   const blocks=parse(raw,mode);
   const headings=[];let hCount=0;
