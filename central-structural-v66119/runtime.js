@@ -4452,6 +4452,7 @@ function cpcUpdateWeek(id,patch){
  const st=cpcState();st.weeks=st.weeks||{};st.weeks[id]={...(st.weeks[id]||{}),...patch};st.lastWeek=id;cpcSave(st);renderAll();
 }
 function cpcWeekPct(w){
+ if(window.CpcStudyV1&&typeof window.CpcStudyV1.progress==='function')return window.CpcStudyV1.progress(w.id);
  const st=cpcWeekState(w.id),keys=['diagnostic','reading','theory','intermediate','deep','fixation'];
  return Math.round(keys.filter(k=>st[k]).length/keys.length*100);
 }
@@ -4508,6 +4509,7 @@ function cpcStep(n,title,desc,done,body){
  return `<section class="cf-step ${done?'done':''}"><div class="cf-step-head"><div class="cf-step-no">${done?'✓':n}</div><div class="cf-step-copy"><b>${title}</b><small>${desc}</small></div></div><div class="cf-step-body">${body}</div></section>`;
 }
 function renderCpcMaster(){
+ if(window.CpcStudyV1&&typeof window.CpcStudyV1.renderMaster==='function')return window.CpcStudyV1.renderMaster();
  const st=cpcStats(),real=CPC_QUESTIONS.filter(q=>q.real!==false).length,ined=CPC_QUESTIONS.length-real;
  return `<div class="cf-master-tools"><button onclick="renderCpcErrorPanel()">⚠ Erros ${st.wrongIds.length?`(${st.wrongIds.length})`:''}</button></div>
  <div class="cf-metrics">
