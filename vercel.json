@@ -7,11 +7,20 @@
     },
     {
       "source": "/",
-      "destination": "/central-v119.html?direct=10",
+      "destination": "/central-v119.html",
       "permanent": false
     }
   ],
   "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-cache, must-revalidate"
+        }
+      ]
+    },
     {
       "source": "/",
       "headers": [

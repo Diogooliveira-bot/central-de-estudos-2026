@@ -362,6 +362,7 @@ function centralResumeLast(){
  if(folder)return openEmbeddedTool(folder[1],x.opts||{});
  if(x.tool==='vade-mecum')return openVadeMecum();
  if(x.tool==='lei-seca-enxuta')return openLeiSecaEnxuta();
+ if(x.ptAutoModule)return window.openPtCurrentModule(x.ptAutoModule);
  if(x.ptModule&&typeof window.openPtNativeLast==='function')return window.openPtNativeLast(x.ptModule);
  if(x.civilModule)return openCivilLast(x.civilModule);
  if(x.cfWeek)return openCfLast(x.cfWeek);
@@ -4844,7 +4845,7 @@ function renderDisciplineGrid(){
   try{
    let st;try{st=subjStats(s)}catch(err){st={done:0,total:(s.topics?.length||0),pct:0}}
    const cards=(s.topics||[]).reduce((a,t)=>a+(t.sourceStats?.cards||0),0),guided=['pt','cf','civil','penal','cpc'].includes(s.id);
-   const desc=guided?`${s.topics.length} módulos • curso integrado`:s.id==='rlm'?'9 módulos teóricos • cálculo rápido • 200 FCC':(s.id==='trab'||s.id==='ptra')?`${s.topics.length} aulas • Mentoria AJAJ`:`${s.topics.length} tópicos reais recuperados`;
+   const desc=guided?`${st.total} módulos • curso integrado`:s.id==='rlm'?'9 módulos teóricos • cálculo rápido • 200 FCC':(s.id==='trab'||s.id==='ptra')?`${s.topics.length} aulas • Mentoria AJAJ`:`${s.topics.length} tópicos reais recuperados`;
    const unit=guided?'módulos':s.id==='rlm'?'itens':(s.id==='trab'||s.id==='ptra')?'aulas':'tópicos';
    return `<button type="button" class="disc-card" data-id="${escAttr(s.id)}" onclick="return jumpSubject('${escJs(s.id)}')"><b>${esc(s.name)}</b><small>${esc(desc)}</small><span class="disc-meta">${Number(st.done)||0}/${Number(st.total)||0} ${unit} · ${Number(st.pct)||0}%${!guided&&s.id!=='rlm'&&cards?' · '+cards+' cards':''}</span></button>`
   }catch(e){console.warn('Falha em cartão de disciplina',s?.id,e);return ''}

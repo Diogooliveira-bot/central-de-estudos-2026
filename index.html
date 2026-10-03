@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
+<script>if(location.pathname==='/index.html'&&!new URLSearchParams(location.search).has('central_source'))location.replace('/central-v119.html'+location.search+location.hash)</script>
 <script id="central-content-storage-fix-v6650">
 /* Android content:// compatibility: synchronous storage shared with tools opened
    as top-level Blob documents. Native localStorage is used whenever permitted. */
@@ -691,7 +692,7 @@ window.addEventListener('unhandledrejection',function(e){try{window.__CENTRAL_LA
 'use strict';
 if(!('serviceWorker' in navigator))return;
 if(location.protocol!=='https:'&&!/localhost|127\.0\.0\.1/.test(location.hostname))return;
-window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});
+window.addEventListener('load',function(){navigator.serviceWorker.register('/sw.js',{updateViaCache:'none'}).then(function(){return navigator.serviceWorker.ready}).then(function(reg){if(navigator.onLine)reg.active?.postMessage({type:'PREPARE_OFFLINE'})}).catch(function(){})});
 var deferred=null;
 window.addEventListener('beforeinstallprompt',function(e){e.preventDefault();deferred=e;
  var b=document.getElementById('centralPwaInstall');
@@ -714,7 +715,7 @@ window.centralPwaInstall=function(){if(deferred)deferred.prompt()};
 (function(){
 'use strict';
 var VIEW_IDS=['homeView','disciplinesView','agendaView','performanceView','tecCadernosView','leiSecaView','vadeMecumView','moduleView'];
-var SUBJECTS_STATIC=[['pt','Português','17 módulos • curso integrado'],['cf','Direito Constitucional','curso integrado por módulos'],['adm','Direito Administrativo','tópicos do edital'],['civil','Direito Civil','curso integrado por módulos'],['cpc','Direito Processual Civil','curso integrado por módulos'],['penal','Direito Penal','curso integrado por módulos'],['cpp','Direito Processual Penal','tópicos do edital'],['rlm','Raciocínio Lógico-Matemático','9 módulos • cálculo rápido • questões FCC']];
+var SUBJECTS_STATIC=[['pt','Português','24 módulos • Português Autodidata'],['cf','Direito Constitucional','curso integrado por módulos'],['adm','Direito Administrativo','tópicos do edital'],['civil','Direito Civil','curso integrado por módulos'],['cpc','Direito Processual Civil','curso integrado por módulos'],['penal','Direito Penal','curso integrado por módulos'],['cpp','Direito Processual Penal','tópicos do edital'],['rlm','Raciocínio Lógico-Matemático','9 módulos • cálculo rápido • questões FCC']];
 function el(id){return document.getElementById(id)}
 function esc(v){return String(v==null?'':v).replace(/[&<>\"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;'}[c]})}
 function setActive(btn){try{document.querySelectorAll('#centralSidebar .nav button').forEach(function(b){b.classList.remove('active')});if(btn)btn.classList.add('active')}catch(e){}}
@@ -830,7 +831,7 @@ setTimeout(function(){
    </div>
   </section>
 
-  <section class="view hidden" id="disciplinesView"><button type="button" class="central-view-back" onclick="return openHome()" aria-label="Voltar ao início">‹ Central</button><div class="hero"><div><h1>Disciplinas</h1><p>Escolha uma disciplina para abrir seus módulos e continuar o estudo.</p></div></div><div class="discipline-grid" id="disciplineGrid"><button type="button" class="disc-card" data-id="pt" onclick="return centralHardSubject('pt')"><b>Português</b><small>17 módulos • curso integrado</small><span class="disc-meta">Abrir disciplina</span></button>
+  <section class="view hidden" id="disciplinesView"><button type="button" class="central-view-back" onclick="return openHome()" aria-label="Voltar ao início">‹ Central</button><div class="hero"><div><h1>Disciplinas</h1><p>Escolha uma disciplina para abrir seus módulos e continuar o estudo.</p></div></div><div class="discipline-grid" id="disciplineGrid"><button type="button" class="disc-card" data-id="pt" onclick="return centralHardSubject('pt')"><b>Português</b><small>24 módulos • Português Autodidata</small><span class="disc-meta">Abrir disciplina</span></button>
 <button type="button" class="disc-card" data-id="cf" onclick="return centralHardSubject('cf')"><b>Direito Constitucional</b><small>curso integrado por módulos</small><span class="disc-meta">Abrir disciplina</span></button>
 <button type="button" class="disc-card" data-id="adm" onclick="return centralHardSubject('adm')"><b>Direito Administrativo</b><small>tópicos do edital</small><span class="disc-meta">Abrir disciplina</span></button>
 <button type="button" class="disc-card" data-id="civil" onclick="return centralHardSubject('civil')"><b>Direito Civil</b><small>curso integrado por módulos</small><span class="disc-meta">Abrir disciplina</span></button>
@@ -1102,7 +1103,8 @@ window.centralBackupImport=function(inp){
 <script src="/central-structural-v66119/cpc-questions-012.js?v=66119s2"></script>
 <script src="/central-structural-v66119/cpc-questions-013.js?v=66119s2"></script>
 <script src="/central-structural-v66119/runtime.js?v=20261002navigation2"></script>
-<script src="/portugues-native-v1.js?v=20260921n2"></script>
+<script src="/portugues-site.js?v=20261003current1"></script>
+<script src="/ui/current-courses.js?v=20261003current1"></script>
 <script src="/central-reading-font-v66126.js?v=20260921font250"></script>
 <script src="/penal-full-theory-data-01.js?v=20260919b"></script>
 <script src="/penal-full-theory-data-02.js?v=20260919b"></script>

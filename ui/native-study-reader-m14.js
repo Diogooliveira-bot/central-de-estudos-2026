@@ -545,7 +545,7 @@ function install(){
     clearTimeout(install._t);
     install._t=setTimeout(()=>{removeLegacyM01Content();inject();refreshModuleMetrics()},60);
   });
-  observer.observe(document.documentElement,{subtree:true,childList:true});
+  observer.observe(document.getElementById('subjects'),{childList:true});
   global.addEventListener('focus',refreshModuleMetrics);
 }
 global.BaseNativeReaderM14={

@@ -48,7 +48,7 @@ function install(){
     clearTimeout(install._t);
     install._t=setTimeout(inject,60);
   });
-  obs.observe(document.documentElement,{subtree:true,childList:true});
+  obs.observe(document.getElementById('subjects'),{childList:true});
 }
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',install);else install();
 })(window);

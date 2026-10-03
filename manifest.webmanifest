@@ -3,7 +3,7 @@
   "short_name": "Central",
   "description": "Central de estudos offline para o concurso TJ-CE (Analista Judiciário): cronograma, flashcards, leis, cadernos e desempenho.",
   "lang": "pt-BR",
-  "start_url": "/central-v119.html?direct=35",
+  "start_url": "/central-v119.html",
   "scope": "/",
   "display": "standalone",
   "orientation": "any",

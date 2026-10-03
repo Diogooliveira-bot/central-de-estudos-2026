@@ -32,6 +32,7 @@
     if (!context || typeof context !== 'object') return;
     const subject = typeof context.subject === 'string' && (typeof SUBJECTS !== 'undefined' ? SUBJECTS : []).find(s => s.id === context.subject);
     if (subject) {
+      if(subject.id==='pt'&&context.module&&typeof window.openPtCurrentModule==='function')return window.openPtCurrentModule(context.module);
       window.jumpSubject(subject.id);
       if (context.module) {
         // Rendering and the subject's native enhancement finish before opening its module.
@@ -69,13 +70,14 @@
         const index = found.s.topics.indexOf(found.t) + 1;
         const native = {cf:'openCfLast',cpc:'openCpcLast',penal:'openPenalLast'}[found.s.id];
         if (native && typeof window[native] === 'function') window[native](({cf:'w',cpc:'cpc',penal:'p'}[found.s.id]) + index);
-        else if (found.s.id === 'pt' && typeof window.openPtNativeLast === 'function') window.openPtNativeLast('m' + index);
+        else if (found.s.id === 'pt' && typeof window.openPtCurrentModule === 'function') window.openPtCurrentModule(found.t.uid.replace('pt-auto24-',''));
         else if (found.s.id === 'civil') openContext({subject:'civil',module:topic.replace(/-analista$/, '')});
         else if (found.s.id === 'cpp') openContext({subject:'cpp',module:String(index)});
         else openContext({subject:found.s.id,module:topic});
         return;
       }
     }
+    if(topic&&/^pt-/.test(topic)&&typeof window.openPtNativeLast==='function')return window.openPtNativeLast();
     openContext({subject:params.get('subject'),module:params.get('module'),view:params.get('view')});
   }
   window.CentralStudyNavigation = {rememberReturn,openContext};

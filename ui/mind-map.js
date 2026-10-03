@@ -423,7 +423,7 @@ function open(subject,moduleId,sourceModule){
 }
 
 function injectForModule(module){
-  if(!module || module.querySelector('.'+ENTRY_CLASS)) return;
+  if(!module || module.querySelector('.'+ENTRY_CLASS) || module.querySelector('[data-native-kind="mindmap"]')) return;
   const moduleId=module.dataset.cf;
   if(!moduleId) return;
   const d=theoryData(moduleId);
@@ -468,7 +468,7 @@ function install(){
     clearTimeout(install._t);
     install._t=setTimeout(scan,40);
   });
-  observer.observe(document.documentElement,{subtree:true,childList:true});
+  observer.observe(document.getElementById('subjects'),{childList:true});
 }
 
 function register(subject,moduleId,tree){

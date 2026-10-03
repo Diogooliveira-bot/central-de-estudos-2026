@@ -1,7 +1,7 @@
 /* Central de Estudos — PWA cache repair 2026-10-03. */
-var CACHE='central-20261003-penal-native-v5';
-var BOOT='/central-v119.html?direct=35';
-var OFFLINE_MANIFEST='/central-offline-files-v66172.json?v=20261003pwa1';
+var CACHE='central-20261003-current-courses-v1';
+var BOOT='/central-v119.html';
+var OFFLINE_MANIFEST='/central-offline-files-v66172.json?v=20261003current1';
 
 function cacheResponse(cache,request,response){
   if(response&&response.ok)cache.put(request,response.clone()).catch(function(){});
@@ -17,7 +17,7 @@ async function prepareOffline(){
   try{
     var response=await fetch(OFFLINE_MANIFEST,{cache:'no-store'});
     if(response&&response.ok){
-      await cache.put(OFFLINE_MANIFEST,response.clone());
+      var manifestResponse=response.clone();
       var manifest=await response.json(),files=Array.isArray(manifest.files)?manifest.files:[];
       var index=0;
       async function worker(){
@@ -30,12 +30,13 @@ async function prepareOffline(){
         }
       }
       await Promise.all([worker(),worker(),worker(),worker()]);
+      await cache.put(OFFLINE_MANIFEST,manifestResponse);
     }
   }catch(_){}
   await self.skipWaiting();
 }
 
-self.addEventListener('install',function(event){event.waitUntil(prepareOffline())});
+self.addEventListener('install',function(event){event.waitUntil(caches.open(CACHE).then(async function(cache){try{var boot=await fetch(BOOT,{cache:'no-store'});if(boot.ok)await cache.put(BOOT,boot)}catch(_){}return self.skipWaiting()}))});
 
 self.addEventListener('activate',function(event){
   event.waitUntil(
@@ -56,8 +57,9 @@ self.addEventListener('fetch',function(event){
   if(request.mode==='navigate'&&(url.pathname==='/'||url.pathname==='/index.html'||url.pathname==='/central-v119.html')){
     event.respondWith(
       caches.open(CACHE).then(function(cache){
-        return fetch(BOOT,{cache:'no-store'})
-          .then(function(response){return cacheResponse(cache,BOOT,response)})
+        var entry=new URL(request.url);entry.pathname=BOOT;entry.searchParams.delete('direct');
+        return fetch(entry.href,{cache:'no-store'})
+          .then(function(response){return cacheResponse(cache,request,response)})
           .catch(function(){return cache.match(BOOT)})
       })
     );
@@ -77,7 +79,7 @@ self.addEventListener('fetch',function(event){
 
   /* JS/CSS e assets versionados passam a ser network-first.
      O cache vira apenas fallback offline, evitando ficar preso em scripts antigos. */
-  var dynamic=/\.(?:js|css|json|woff2?|png|ico|svg)$/.test(url.pathname)||url.search;
+  var dynamic=/\.(?:js|css|json|woff2?|png|ico|svg)$/.test(url.pathname)||/\.txt$/.test(url.pathname)||url.search;
   if(dynamic){
     event.respondWith(
       caches.open(CACHE).then(function(cache){
@@ -88,3 +90,6 @@ self.addEventListener('fetch',function(event){
     );
   }
 });
+
+var offlineJob=null;
+self.addEventListener('message',function(event){if(event.data&&event.data.type==='PREPARE_OFFLINE')event.waitUntil(offlineJob||(offlineJob=caches.open(CACHE).then(function(cache){return cache.match(OFFLINE_MANIFEST)}).then(function(hit){if(!hit)return prepareOffline()}).finally(function(){offlineJob=null}))) });

@@ -120,3 +120,28 @@ html.bc-ui-v1 #homeView .home-progress-card .progress-box { display:flex!importa
 html.bc-ui-v1 #homeView .home-progress-card .progress-box > .muted.small:first-of-type { display:none!important; }
 html.bc-ui-v1 #homeView .home-progress-card #dayCount { line-height:1.4!important; }
 html.bc-ui-v1 #homeView .home-progress-card #dayPct { line-height:1.4!important; }
+
+/* Current course titles retain the full card width on small screens. */
+@media (max-width:600px) {
+  html.bc-ui-v1 .subject[data-id="pt"] [data-pt-current] > .cf-module-head,
+  html.bc-ui-v1 .subject[data-id="penal"] .cf-module > .cf-module-head {
+    grid-template-columns:minmax(0,1fr) auto!important;
+    grid-template-areas:"number arrow" "title title" "status status"!important;
+    gap:6px 12px!important;
+    padding:14px!important;
+  }
+  html.bc-ui-v1 .subject[data-id="pt"] [data-pt-current] .cf-module-no,
+  html.bc-ui-v1 .subject[data-id="penal"] .cf-module .cf-module-no { grid-area:number!important; }
+  html.bc-ui-v1 .subject[data-id="pt"] [data-pt-current] .cf-module-title,
+  html.bc-ui-v1 .subject[data-id="penal"] .cf-module .cf-module-title {
+    grid-area:title!important;
+    min-width:0!important;
+    white-space:normal!important;
+    text-align:left!important;
+    line-height:1.45!important;
+  }
+  html.bc-ui-v1 .subject[data-id="pt"] [data-pt-current] .cf-module-stat,
+  html.bc-ui-v1 .subject[data-id="penal"] .cf-module .cf-module-stat { grid-area:status!important; text-align:left!important; }
+  html.bc-ui-v1 .subject[data-id="pt"] [data-pt-current] .chev,
+  html.bc-ui-v1 .subject[data-id="penal"] .cf-module .chev { grid-area:arrow!important; }
+}

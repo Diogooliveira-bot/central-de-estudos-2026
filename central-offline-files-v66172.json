@@ -1,5 +1,5 @@
 {
-  "build": "20261003-penal-native-v5",
+  "build": "20261003-current-courses-v1",
   "files": [
     "/central-v119.html?direct=35",
     "/ui/discipline-standard.js?v=20261003penalnative1",
@@ -276,6 +276,29 @@
     "/portugues-native-data/m6.js?v=20260921n2",
     "/portugues-native-data/m7.js?v=20260921n2",
     "/portugues-native-data/m8.js?v=20260921n2",
-    "/portugues-native-data/m9.js?v=20260921n2"
+    "/portugues-native-data/m9.js?v=20260921n2",
+    "/portugues.html",
+    "/portugues-site.js?v=20261003current1",
+    "/portugues-autodidata-data.txt?v=20261003ptauto24",
+    "/ui/current-courses.js?v=20261003current1",
+    "/base-completa-visual-v1.css?v=20260921a",
+    "/base-completa-home-v3.css?v=20261001v5",
+    "/central-structural-v66119/runtime.js?v=20261002navigation2",
+    "/base-completa-home-v3.js?v=20261001v5",
+    "/ui/study-navigation.js?v=20261002navigation2",
+    "/ui/mind-map.js?v=20261002p3",
+    "/ui/m10-header-fix.js?v=20261003m10p1",
+    "/ui/m11-header-fix.js?v=20261003m11p1",
+    "/ui/m12-header-fix.js?v=20261003m12p1",
+    "/ui/m13-header-fix.js?v=20261003m13p1",
+    "/ui/m14-header-fix.js?v=20261003m14p1",
+    "/ui/m15-header-fix.js?v=20261003m15p1",
+    "/ui/m16-header-fix.js?v=20261003m16p1",
+    "/ui/m17-header-fix.js?v=20261003m17p1",
+    "/ui/study-navigation.css?v=20261002vertical2",
+    "/ui/mind-map.css?v=20261002p3",
+    "/central-structural-v66119/runtime.js?v=20261003current1",
+    "/index.html?central_source=20261003-current-courses-v1",
+    "/central-v119.html"
   ]
 }

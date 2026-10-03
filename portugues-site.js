@@ -6,6 +6,8 @@ window.__PT_AUTO24__=true;
 var VERSION='20261003ptauto24';
 var MODULES=[{"id":"m01","num":1,"title":"Como a língua se organiza","lessons":0,"path":"portugues-autodidata/m01.html"},{"id":"m02","num":2,"title":"Sons, letras e sílabas","lessons":11,"path":"portugues-autodidata/m02.html"},{"id":"m03","num":3,"title":"Acentuação","lessons":23,"path":"portugues-autodidata/m03.html"},{"id":"m04","num":4,"title":"Estrutura da palavra e ortografia","lessons":43,"path":"portugues-autodidata/m04.html"},{"id":"m05","num":5,"title":"Substantivo, artigo e numeral","lessons":44,"path":"portugues-autodidata/m05.html"},{"id":"m06","num":6,"title":"Adjetivo","lessons":29,"path":"portugues-autodidata/m06.html"},{"id":"m07","num":7,"title":"Pronomes: fundamentos","lessons":35,"path":"portugues-autodidata/m07.html"},{"id":"m08","num":8,"title":"Verbos: fundamentos","lessons":45,"path":"portugues-autodidata/m08.html"},{"id":"m09","num":9,"title":"Classes invariáveis e conectivos","lessons":47,"path":"portugues-autodidata/m09.html"},{"id":"m10","num":10,"title":"Sintaxe I: sujeito e arquitetura da oração","lessons":43,"path":"portugues-autodidata/m10.html"},{"id":"m11","num":11,"title":"Sintaxe II: verbo e complementos","lessons":33,"path":"portugues-autodidata/m11.html"},{"id":"m12","num":12,"title":"Sintaxe III: relações nominais e termos acessórios","lessons":29,"path":"portugues-autodidata/m12.html"},{"id":"m13","num":13,"title":"Sistema verbal avançado e vozes","lessons":0,"path":"portugues-autodidata/m13.html"},{"id":"m14","num":14,"title":"Período composto","lessons":85,"path":"portugues-autodidata/m14.html"},{"id":"m15","num":15,"title":"Colocação pronominal","lessons":48,"path":"portugues-autodidata/m15.html"},{"id":"m16","num":16,"title":"Pontuação pela estrutura","lessons":52,"path":"portugues-autodidata/m16.html"},{"id":"m17","num":17,"title":"Concordância verbal","lessons":66,"path":"portugues-autodidata/m17.html"},{"id":"m18","num":18,"title":"Concordância nominal","lessons":59,"path":"portugues-autodidata/m18.html"},{"id":"m19","num":19,"title":"Regência verbal e nominal","lessons":52,"path":"portugues-autodidata/m19.html"},{"id":"m20","num":20,"title":"Crase","lessons":50,"path":"portugues-autodidata/m20.html"},{"id":"m21","num":21,"title":"Semântica","lessons":50,"path":"portugues-autodidata/m21.html"},{"id":"m22","num":22,"title":"Coesão e coerência","lessons":51,"path":"portugues-autodidata/m22.html"},{"id":"m23","num":23,"title":"Tipologia, gênero e funções da linguagem","lessons":50,"path":"portugues-autodidata/m23.html"},{"id":"m24","num":24,"title":"Interpretação de textos para prova","lessons":70,"path":"portugues-autodidata/m24.html"}];
 var REVIEW={id:'review',num:25,title:'Revisão Cumulativa Final M01–M24',lessons:0,path:'portugues-autodidata/review.html',review:true};
+window.CentralPortugueseCourse={modules:MODULES,review:REVIEW};
+if(!document.getElementById('pt-standalone-app'))return;
 var ITEMS=MODULES.concat([REVIEW]);
 var OPEN_KEY='central-v6:pt:auto24:open';
 var DONE_PREFIX='central-v6:pt:auto24:done:';
@@ -61,14 +63,15 @@ function render(){
  '<section class="pt-section"><div class="pt-section-title"><div><p class="eyebrow">FECHAMENTO</p><h2>Revisão cumulativa final</h2></div><p>84 itens: cobertura M01–M24 + questões integradas.</p></div><div class="pt-modules">'+card(REVIEW)+'</div></section>';
  root.querySelectorAll('[data-open]').forEach(function(btn){btn.addEventListener('click',function(){toggle(btn.dataset.open)})});
  updateSummary();
- var open=read(OPEN_KEY,''); if(open && document.querySelector('[data-module-card="'+open+'"]')) toggle(open,true);
+ var requested=new URLSearchParams(location.search).get('module');
+ var open=ITEMS.some(function(m){return m.id===requested})?requested:read(OPEN_KEY,''); if(open && document.querySelector('[data-module-card="'+open+'"]')) toggle(open,true);
 }
 function toggle(id,forceOpen){
  var card=document.querySelector('[data-module-card="'+id+'"]');if(!card)return;
  var open=forceOpen===true?!card.classList.contains('open'):!card.classList.contains('open');
- document.querySelectorAll('.pt-module-card.open').forEach(function(other){if(other!==card){other.classList.remove('open');var b=other.querySelector('[data-open]');if(b)b.setAttribute('aria-expanded','false')}});
+ document.querySelectorAll('.pt-module-card.open').forEach(function(other){if(other!==card){other.classList.remove('open');var b=other.querySelector('[data-open]');if(b)b.setAttribute('aria-expanded','false');var body=other.querySelector('.pt-module-body');if(body){body.innerHTML='';delete body.dataset.loaded}}});
  card.classList.toggle('open',open);var btn=card.querySelector('[data-open]');if(btn)btn.setAttribute('aria-expanded',open?'true':'false');
- if(open){write(OPEN_KEY,id);load(id);setTimeout(function(){card.scrollIntoView({behavior:'smooth',block:'start'})},30)} else write(OPEN_KEY,'');
+ if(open){write(OPEN_KEY,id);var item=ITEMS.find(function(m){return m.id===id});write('central-v6:last',JSON.stringify({ptAutoModule:id,title:'Português • '+item.title,at:Date.now()}));load(id);setTimeout(function(){card.scrollIntoView({behavior:'smooth',block:'start'})},30)} else write(OPEN_KEY,'');
 }
 function load(id){
  var item=ITEMS.find(function(x){return x.id===id});var host=document.getElementById('pt-body-'+id);if(!item||!host)return;
