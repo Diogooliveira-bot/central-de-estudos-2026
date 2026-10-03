@@ -308,6 +308,13 @@ function moveQuiz(delta){
  if(ni<0)return;quizSession.index=ni;renderQuiz()
 }
 
+function studyRenderMaster(){
+ injectStyle();
+ const w=cpcWeeks().find(x=>x.id==='w1');
+ if(!w)return '<div class="card" style="padding:18px">CPC M01 indisponível no momento.</div>';
+ return '<div class="cpc-study-only-badge" style="margin:0 0 10px;padding:10px 12px;border:1px solid rgba(56,189,248,.32);border-radius:12px;background:rgba(56,189,248,.07)"><b>Novo CPC</b><div class="muted small" style="margin-top:3px">O conteúdo anterior foi removido. Esta disciplina agora usa somente a nova estrutura.</div></div><div id="cpc-session-host"></div><div class="cf-modules">'+m01Html(w)+'</div>';
+}
+
 function install(){
  injectStyle();
  if(typeof renderCpcModule!=='function'||typeof cpcWeekPct!=='function'||typeof renderCpcMaster!=='function'){
@@ -330,14 +337,10 @@ function install(){
    return 0;
  };
 
- global.renderCpcMaster=function(){
-   const w=cpcWeeks().find(x=>x.id==='w1');
-   if(!w)return '<div class="card" style="padding:18px">CPC M01 indisponível no momento.</div>';
-   return '<div class="cpc-study-only-badge" style="margin:0 0 10px;padding:10px 12px;border:1px solid rgba(56,189,248,.32);border-radius:12px;background:rgba(56,189,248,.07)"><b>Novo CPC</b><div class="muted small" style="margin-top:3px">A disciplina está usando somente a nova estrutura de estudo. O fluxo antigo foi removido desta versão.</div></div><div id="cpc-session-host"></div><div class="cf-modules">'+m01Html(w)+'</div>';
- };
+ global.renderCpcMaster=studyRenderMaster;
 
  global.CpcStudyV1=Object.assign(global.CpcStudyV1||{}, {
-   progress,progressDetail,state:load,version:'2026-10-03-staging-m01-v3',installed:true
+   progress,progressDetail,state:load,renderMaster:studyRenderMaster,version:'2026-10-03-staging-m01-v4',installed:true
  });
 
  try{
@@ -361,7 +364,7 @@ global.cpcStudyCloseQuiz=closeQuiz;
 global.cpcStudySelectQuiz=selectQuiz;
 global.cpcStudySubmitQuiz=submitQuiz;
 global.cpcStudyMoveQuiz=moveQuiz;
-global.CpcStudyV1=Object.assign(global.CpcStudyV1||{},{progress,progressDetail,state:load,version:'2026-10-03-staging-m01-v3'});
+global.CpcStudyV1=Object.assign(global.CpcStudyV1||{},{progress,progressDetail,state:load,renderMaster:studyRenderMaster,version:'2026-10-03-staging-m01-v4'});
 
 global.addEventListener('message',e=>{
   try{
