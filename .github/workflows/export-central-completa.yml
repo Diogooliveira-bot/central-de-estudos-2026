@@ -1,0 +1,45 @@
+name: Export Central Completa
+
+on:
+  push:
+    branches:
+      - export-central-20261002
+    paths:
+      - '.github/workflows/export-central-completa.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  exportar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout da Central
+        uses: actions/checkout@v4
+
+      - name: Criar ZIP completo
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf _export
+          mkdir -p _export/CENTRAL_COMPLETA_BASE_COMPLETA_2026-10-02
+          shopt -s dotglob
+          for item in *; do
+            case "$item" in
+              .git|_export) continue ;;
+            esac
+            cp -a "$item" _export/CENTRAL_COMPLETA_BASE_COMPLETA_2026-10-02/
+          done
+          cd _export
+          zip -q -r CENTRAL_COMPLETA_BASE_COMPLETA_2026-10-02.zip CENTRAL_COMPLETA_BASE_COMPLETA_2026-10-02
+          mv CENTRAL_COMPLETA_BASE_COMPLETA_2026-10-02.zip ..
+
+      - name: Publicar artefato
+        uses: actions/upload-artifact@v4
+        with:
+          name: central-completa-base-completa-2026-10-02
+          path: CENTRAL_COMPLETA_BASE_COMPLETA_2026-10-02.zip
+          if-no-files-found: error
+          compression-level: 0
+          retention-days: 1
