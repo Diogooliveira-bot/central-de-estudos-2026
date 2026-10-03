@@ -4457,6 +4457,10 @@ function cpcWeekPct(w){
  return Math.round(keys.filter(k=>st[k]).length/keys.length*100);
 }
 function cpcPool(w){return CPC_QUESTIONS.filter(q=>w.topics.includes(q.t))}
+window.__CPC_WEEKS=CPC_WEEKS;
+window.__cpcPool=function(w){return cpcPool(w)};
+window.__cpcModuleOpenKey=function(id){return cpcModuleOpenKey(id)};
+window.__cpcNoteKey=function(id){return cpcNoteKey(id)};
 function cpcStats(){
  const st=cpcState();let answered=0,correct=0,wrongIds=[];
  CPC_QUESTIONS.forEach(q=>{
