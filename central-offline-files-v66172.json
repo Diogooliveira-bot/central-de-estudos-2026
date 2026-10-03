@@ -335,6 +335,10 @@
     "/content/cpc/m10-native-data.js?v=20261003cpcm10v1",
     "/ui/cpc-m10-native-study-reader.js?v=20261003cpcm10v1",
     "/cpc-study-m10-lite.js?v=20261003cpcm10v1",
-    "/tools/cpc-m10-mapa.html"
+    "/tools/cpc-m10-mapa.html",
+    "/content/cpc/m11-native-data.js?v=20261003cpcm11v1",
+    "/ui/cpc-m11-native-study-reader.js?v=20261003cpcm11v1",
+    "/cpc-study-m11-lite.js?v=20261003cpcm11v1",
+    "/tools/cpc-m11-mapa.html"
   ]
 }
