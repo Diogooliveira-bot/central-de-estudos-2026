@@ -87,10 +87,12 @@ function complexity(q){
   if(/jurisprud|STJ|STF|tema|súmula|precedente/i.test(prompt+' '+(q.subject||'')))s+=75;
   return s;
 }
+function cpcWeeks(){try{return typeof CPC_WEEKS!=='undefined'?CPC_WEEKS:(global.CPC_WEEKS||[])}catch(_){return global.CPC_WEEKS||[]}}
+function cpcPoolSafe(w){try{return typeof cpcPool==='function'?cpcPool(w):(typeof global.cpcPool==='function'?global.cpcPool(w):[])}catch(_){return []}}
 function bucketed(id){
-  const w=(global.CPC_WEEKS||[]).find(x=>x.id===id);
-  if(!w||typeof global.cpcPool!=='function')return {easy:[],medium:[],hard:[]};
-  const pool=global.cpcPool(w).filter(q=>q&&Array.isArray(q.o)&&q.o.length>=4).slice().sort((a,b)=>complexity(a)-complexity(b));
+  const w=cpcWeeks().find(x=>x.id===id);
+  if(!w)return {easy:[],medium:[],hard:[]};
+  const pool=cpcPoolSafe(w).filter(q=>q&&Array.isArray(q.o)&&q.o.length>=4).slice().sort((a,b)=>complexity(a)-complexity(b));
   const n=pool.length,a=Math.max(1,Math.floor(n/3)),b=Math.max(a+1,Math.floor(n*2/3));
   return {easy:pool.slice(0,a),medium:pool.slice(a,b),hard:pool.slice(b)};
 }
@@ -109,7 +111,7 @@ function internalQuestions(id,track){
   // complete lacunas com o pool geral sem repetir, se um terço ficou pequeno
   const target=track==='summary'?5:10;
   if(out.length<target){
-    const w=(global.CPC_WEEKS||[]).find(x=>x.id===id),pool=w&&global.cpcPool?global.cpcPool(w):[];
+    const w=cpcWeeks().find(x=>x.id===id),pool=w?cpcPoolSafe(w):[];
     const used=new Set(out.map(q=>q.id));
     for(const q of pick(pool.filter(q=>!used.has(q.id)),target-out.length,id+track+'fill')){
       out.push(Object.assign({},q,{_difficulty:out.length<Math.ceil(target*.4)?'easy':out.length<Math.ceil(target*.8)?'medium':'hard'}));
@@ -329,5 +331,14 @@ global.cpcStudySubmitQuiz=submitQuiz;
 global.cpcStudyMoveQuiz=moveQuiz;
 global.CpcStudyV1={progress,progressDetail,state:load,version:'2026-10-03-staging-m01'};
 
+global.addEventListener('message',e=>{
+  try{
+    if(e.origin!==location.origin)return;
+    if(e.data&&e.data.type==='cpc-map-complete'&&e.data.module==='w1'){
+      const m=moduleState('w1');
+      if(!m.map)updateModule('w1',{map:true});
+    }
+  }catch(_){}
+});
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',()=>setTimeout(install,0),{once:true});else setTimeout(install,0);
 })(window);
