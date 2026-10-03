@@ -4565,14 +4565,41 @@ function renderCpcModule(w){
    </div>
  </section>`;
 }
+function cpcQuestionComplexity(q){
+ const prompt=String(q?.q||''),opts=Array.isArray(q?.o)?q.o.join(' '):'';
+ let s=prompt.length+Math.round(opts.length*.18);
+ if(/\bI\.|\bII\.|\bIII\.|considere|assertiv|itens/i.test(prompt))s+=120;
+ if(/ajuizou|ingressou|pretende|processo|sentença|tribunal|juiz|autor|réu/i.test(prompt))s+=45;
+ if(/jurisprud|STJ|STF|tema|súmula|precedente/i.test(prompt+' '+String(q?.subject||'')))s+=75;
+ return s;
+}
+function cpcFixationMix(list,mode,seed){
+ const sorted=list.slice().sort((a,b)=>cpcQuestionComplexity(a)-cpcQuestionComplexity(b));
+ const n=sorted.length;
+ if(!n)return[];
+ const cut1=Math.max(1,Math.floor(n/3)),cut2=Math.max(cut1+1,Math.floor(n*2/3));
+ const buckets={easy:sorted.slice(0,cut1),medium:sorted.slice(cut1,cut2),hard:sorted.slice(cut2)};
+ const need=mode==='intermediate'?{easy:2,medium:2,hard:1}:{easy:4,medium:4,hard:2};
+ let out=[];
+ for(const level of ['easy','medium','hard'])out.push(...cpcDeterministic(buckets[level],need[level],seed+level));
+ const used=new Set(out.map(q=>q.id));
+ const target=mode==='intermediate'?5:10;
+ if(out.length<target)out.push(...cpcDeterministic(sorted.filter(q=>!used.has(q.id)),target-out.length,seed+'fill'));
+ return out.slice(0,target);
+}
 function startCpcQuiz(id,mode,count){
  const w=CPC_WEEKS.find(x=>x.id===id);if(!w)return;
  let list=cpcPool(w),st=cpcState();
  if(mode==='errors')list=list.filter(q=>st.answers?.[q.id]?.everWrong&&!st.answers?.[q.id]?.lastCorrect);
  else if(mode==='coverage')list=list.filter(q=>q.real===false);
- else {const real=list.filter(q=>q.real!==false);if(real.length)list=real}
+ else {
+   const real=list.filter(q=>q.real!==false);
+   if(real.length)list=real;
+ }
  if(!list.length){alert('Não há questões nessa fila.');return}
- list=cpcDeterministic(list,Math.min(count,list.length),id+mode+Object.keys(st.answers||{}).length);
+ const fixedMix=/^cpc1[1-7]$/.test(id)&&(mode==='intermediate'||mode==='fixation');
+ if(fixedMix)list=cpcFixationMix(list,mode,id+mode+Object.keys(st.answers||{}).length);
+ else list=cpcDeterministic(list,Math.min(count,list.length),id+mode+Object.keys(st.answers||{}).length);
  cpcSession={week:w,mode,list,index:0,score:0,errors:[],answered:false,order:null};
  localStorage.setItem('central-v6:open:cpc','1');localStorage.setItem(cpcModuleOpenKey(id),'1');
  renderCpcQuestion();
