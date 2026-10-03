@@ -129,7 +129,7 @@
     "/central-structural-v66119/cpc-questions-011.js?v=66119s2",
     "/central-structural-v66119/cpc-questions-012.js?v=66119s2",
     "/central-structural-v66119/cpc-questions-013.js?v=66119s2",
-    "/central-structural-v66119/runtime.js?v=20261001fix1",
+    "/central-structural-v66119/runtime.js?v=20261003cpcstudy2",
     "/portugues-native-v1.js?v=20260921n2",
     "/central-reading-font-v66126.js?v=20260921font250",
     "/penal-full-theory-data-01.js?v=20260919b",
@@ -283,7 +283,6 @@
     "/ui/current-courses.js?v=20261003ptnative2",
     "/base-completa-visual-v1.css?v=20260921a",
     "/base-completa-home-v3.css?v=20261001v5",
-    "/central-structural-v66119/runtime.js?v=20261002navigation2",
     "/base-completa-home-v3.js?v=20261001v5",
     "/ui/study-navigation.js?v=20261002navigation2",
     "/ui/mind-map.js?v=20261002p3",
@@ -297,11 +296,11 @@
     "/ui/m17-header-fix.js?v=20261003m17p1",
     "/ui/study-navigation.css?v=20261002vertical2",
     "/ui/mind-map.css?v=20261002p3",
-    "/central-structural-v66119/runtime.js?v=20261003ptnative2",
-    "/index.html?central_source=20261003-portuguese-native-v2",
+    "/index.html?central_source=20261003-cpc-study-v2",
     "/central-v119.html",
     "/ui/portuguese-reader.js?v=20261003ptnative2",
     "/ui/portuguese-reader.css?v=20261003ptnative2",
-    "/tools/cpc-m01-mapa.html"
+    "/tools/cpc-m01-mapa.html",
+    "/cpc-study-system-v1.js?v=20261003prod3"
   ]
 }
