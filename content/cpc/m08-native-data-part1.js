@@ -45,4 +45,4 @@ A citação é pessoal, mas admite representante nas hipóteses legais. Pode oco
 
 6. CITAÇÃO ELETRÔNICA
 É preferencial. O CPC prevê expedição em até 2 dias úteis da decisão. O Domicílio Judicial Eletrônico atende citações e comunicações pessoais; o DJEN atende publicações oficiais.
-`
+`\n// m08 continuation marker\n
