@@ -319,6 +319,10 @@
     "/content/cpc/m05-native-data.js?v=20261003cpcm05v1",
     "/ui/cpc-m05-native-study-reader.js?v=20261003cpcm05v1",
     "/cpc-study-m05.js?v=20261003cpcm05v1",
-    "/tools/cpc-m05-mapa.html"
+    "/tools/cpc-m05-mapa.html",
+    "/content/cpc/m06-native-data.js?v=20261003cpcm06v1",
+    "/ui/cpc-m06-native-study-reader.js?v=20261003cpcm06v1",
+    "/cpc-study-m06.js?v=20261003cpcm06v1",
+    "/tools/cpc-m06-mapa.html"
   ]
 }
