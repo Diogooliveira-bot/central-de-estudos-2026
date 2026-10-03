@@ -67,3 +67,18 @@ complete:[
 {id:'c13',title:'Classificação das nulidades',match:'13. CLASSIFICAÇÃO'},
 {id:'c14',title:'Prazos e números',match:'14. NÚMEROS'},
 {id:'c15',title:'Pegadinhas e revisão',match:'15. PEGADINHAS'}]}};})(window);
+(function(g){
+function src(){return g.BASE_NATIVE_CONTENT?.cpc?.m08}
+function key(m,id){return 'central-v6:cpc-m08:'+m+':'+id}
+function stats(m){const a=src()?.chapters?.[m]||[];return {done:a.filter(x=>localStorage.getItem(key(m,x.id))==='1').length,total:a.length}}
+function close(){document.getElementById('cpcM08Reader')?.remove();document.body.style.overflow=''}
+function open(m){
+ const d=src();if(!d)return;
+ const raw=m==='summary'?d.summary:d.complete,chs=d.chapters?.[m]||[];
+ const o=document.createElement('div');o.id='cpcM08Reader';o.className='bc-native-reader-overlay';
+ o.innerHTML='<section class="bc-native-reader"><header class="bc-native-reader-head"><div class="bc-native-reader-title"><b>CPC M08 — '+d.title+'</b><small>'+(m==='summary'?'Conteúdo resumido':'Conteúdo completo')+' • leitura incorporada</small></div><button class="bc-native-reader-close" onclick="CpcM08NativeReader.close()">×</button></header><div class="bc-native-reader-tools"><button class="primary" onclick="CpcM08NativeReader.close()">← Voltar ao M08</button></div><div class="bc-native-reader-body"><nav class="bc-native-toc">'+chs.map((x,i)=>'<label class="bc-native-toc-row"><input type="checkbox" data-m08="'+x.id+'" '+(localStorage.getItem(key(m,x.id))==='1'?'checked':'')+'><span>'+(i+1)+'. '+x.title+'</span></label>').join('')+'</nav><main class="bc-native-scroll"><article class="bc-native-article"><h1>'+d.title+'</h1>'+raw.split(/\n\s*\n/).map(p=>'<p>'+p.replace(/[&<>]/g,z=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[z]))+'</p>').join('')+'</article></main></div></section>';
+ document.body.appendChild(o);document.body.style.overflow='hidden';
+ o.querySelectorAll('[data-m08]').forEach(i=>i.onchange=()=>{localStorage.setItem(key(m,i.dataset.m08),i.checked?'1':'0');try{renderAll()}catch(_){}});
+}
+g.CpcM08NativeReader={open,close,stats};
+})(window);
