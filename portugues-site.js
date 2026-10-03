@@ -1,491 +1,87 @@
-/* Base Completa — Português, aplicação independente. */
+/* Base Completa — Português Autodidata M01–M24. */
 (function(){
 'use strict';
-if(window.__PT_STANDALONE_SITE__)return;
-window.__PT_STANDALONE_SITE__=true;
-
-var VERSION='20260921ptsite1';
-var OPEN_PREFIX='central-v6:pt-module-open:';
-var ACTIVE_KEY='central-v6:pt:active-module';
+if(window.__PT_AUTO24__) return;
+window.__PT_AUTO24__=true;
+var VERSION='20261003ptauto24';
+var MODULES=[{"id":"m01","num":1,"title":"Como a língua se organiza","lessons":0,"path":"portugues-autodidata/m01.html"},{"id":"m02","num":2,"title":"Sons, letras e sílabas","lessons":11,"path":"portugues-autodidata/m02.html"},{"id":"m03","num":3,"title":"Acentuação","lessons":23,"path":"portugues-autodidata/m03.html"},{"id":"m04","num":4,"title":"Estrutura da palavra e ortografia","lessons":43,"path":"portugues-autodidata/m04.html"},{"id":"m05","num":5,"title":"Substantivo, artigo e numeral","lessons":44,"path":"portugues-autodidata/m05.html"},{"id":"m06","num":6,"title":"Adjetivo","lessons":29,"path":"portugues-autodidata/m06.html"},{"id":"m07","num":7,"title":"Pronomes: fundamentos","lessons":35,"path":"portugues-autodidata/m07.html"},{"id":"m08","num":8,"title":"Verbos: fundamentos","lessons":45,"path":"portugues-autodidata/m08.html"},{"id":"m09","num":9,"title":"Classes invariáveis e conectivos","lessons":47,"path":"portugues-autodidata/m09.html"},{"id":"m10","num":10,"title":"Sintaxe I: sujeito e arquitetura da oração","lessons":43,"path":"portugues-autodidata/m10.html"},{"id":"m11","num":11,"title":"Sintaxe II: verbo e complementos","lessons":33,"path":"portugues-autodidata/m11.html"},{"id":"m12","num":12,"title":"Sintaxe III: relações nominais e termos acessórios","lessons":29,"path":"portugues-autodidata/m12.html"},{"id":"m13","num":13,"title":"Sistema verbal avançado e vozes","lessons":0,"path":"portugues-autodidata/m13.html"},{"id":"m14","num":14,"title":"Período composto","lessons":85,"path":"portugues-autodidata/m14.html"},{"id":"m15","num":15,"title":"Colocação pronominal","lessons":48,"path":"portugues-autodidata/m15.html"},{"id":"m16","num":16,"title":"Pontuação pela estrutura","lessons":52,"path":"portugues-autodidata/m16.html"},{"id":"m17","num":17,"title":"Concordância verbal","lessons":66,"path":"portugues-autodidata/m17.html"},{"id":"m18","num":18,"title":"Concordância nominal","lessons":59,"path":"portugues-autodidata/m18.html"},{"id":"m19","num":19,"title":"Regência verbal e nominal","lessons":52,"path":"portugues-autodidata/m19.html"},{"id":"m20","num":20,"title":"Crase","lessons":50,"path":"portugues-autodidata/m20.html"},{"id":"m21","num":21,"title":"Semântica","lessons":50,"path":"portugues-autodidata/m21.html"},{"id":"m22","num":22,"title":"Coesão e coerência","lessons":51,"path":"portugues-autodidata/m22.html"},{"id":"m23","num":23,"title":"Tipologia, gênero e funções da linguagem","lessons":50,"path":"portugues-autodidata/m23.html"},{"id":"m24","num":24,"title":"Interpretação de textos para prova","lessons":70,"path":"portugues-autodidata/m24.html"}];
+var REVIEW={id:'review',num:25,title:'Revisão Cumulativa Final M01–M24',lessons:0,path:'portugues-autodidata/review.html',review:true};
+var ITEMS=MODULES.concat([REVIEW]);
+var OPEN_KEY='central-v6:pt:auto24:open';
+var DONE_PREFIX='central-v6:pt:auto24:done:';
 var FONT_KEY='central-v6:reading-font-size';
-var assets=Object.create(null);
-var states=Object.create(null);
-var stashes=Object.create(null);
-var observers=Object.create(null);
-
-var MODULES=[
- {id:'m1',num:1,title:'Ortografia e Acentuação'},
- {id:'m2',num:2,title:'Classes Nominais'},
- {id:'m3',num:3,title:'Conectivos',src:'portugues-m3-preview-v1.html'},
- {id:'m4',num:4,title:'Pronomes',src:'portugues-m4-preview-v1.html'},
- {id:'m5',num:5,title:'Colocação Pronominal',src:'portugues-m5-preview-v1.html'},
- {id:'m6',num:6,title:'Verbos',src:'portugues-m6-v1.html'},
- {id:'m7',num:7,title:'Correlação e Vozes',src:'portugues-m7-v1.html'},
- {id:'m8',num:8,title:'Sintaxe da Oração',src:'portugues-m8-v1.html'},
- {id:'m9',num:9,title:'Sintaxe do Período',src:'portugues-m9-v1.html'},
- {id:'m10',num:10,title:'Pontuação',src:'portugues-m10-v1.html'},
- {id:'m11',num:11,title:'Concordância',src:'portugues-m11-v1.html'},
- {id:'m12',num:12,title:'Regência Verbal e Nominal',src:'portugues-m12-v1.html'},
- {id:'m13',num:13,title:'Crase',src:'portugues-m13-v1.html'},
- {id:'m14',num:14,title:'Coesão e Coerência',src:'portugues-m14-v1.html'},
- {id:'m15',num:15,title:'Semântica Geral',src:'portugues-m15-v1.html'},
- {id:'m16',num:16,title:'Interpretação de Textos',src:'portugues-m16-v1.html'},
- {id:'m17',num:17,title:'Tipologia Textual',src:'portugues-m17-v1.html'}
-];
-var BY_ID=MODULES.reduce(function(out,module){out[module.id]=module;return out},{});
-
-function esc(value){
- return String(value==null?'':value).replace(/[&<>\"']/g,function(char){
-  return {'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;',"'":'&#39;'};
- });
+var cache=Object.create(null);
+var DATA_PROMISE=null;
+function loadData(){
+ if(DATA_PROMISE)return DATA_PROMISE;
+ DATA_PROMISE=fetch('/portugues-autodidata-data.txt?v='+VERSION,{cache:'no-store',credentials:'same-origin'}).then(function(r){if(!r.ok)throw new Error('HTTP '+r.status+' ao carregar dados');return r.text()}).then(function(b64){
+  var bin=atob(b64.trim()), bytes=new Uint8Array(bin.length);for(var i=0;i<bin.length;i++)bytes[i]=bin.charCodeAt(i);
+  if(typeof DecompressionStream==='undefined')throw new Error('Navegador sem suporte à descompressão do material');
+  var stream=new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'));
+  return new Response(stream).text();
+ }).then(function(text){return JSON.parse(text)});
+ return DATA_PROMISE;
 }
-function safeRead(key,fallback){
- try{var value=localStorage.getItem(key);return value==null?fallback:value}catch(_){return fallback}
+function esc(v){return String(v==null?'':v).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+function read(k,d){try{var v=localStorage.getItem(k);return v==null?d:v}catch(_){return d}}
+function write(k,v){try{localStorage.setItem(k,v)}catch(_){}}
+function done(id){return read(DONE_PREFIX+id,'0')==='1'}
+function setDone(id,v){write(DONE_PREFIX+id,v?'1':'0');updateSummary();updateCardState(id)}
+function currentFont(){var n=Number(read(FONT_KEY,'100'));return Math.max(85,Math.min(180,Math.round((n||100)/5)*5))}
+function setFont(n){n=Math.max(85,Math.min(180,Math.round(Number(n||100)/5)*5));write(FONT_KEY,String(n));document.documentElement.style.setProperty('--reader-scale',String(n/100));var o=document.getElementById('pt-font-value');if(o)o.value=n+'%';return n}
+function updateSummary(){
+ var completed=MODULES.filter(function(m){return done(m.id)}).length;
+ var pct=Math.round(completed/MODULES.length*100);
+ var count=document.getElementById('pt-done-count'); if(count)count.textContent=completed;
+ var pctEl=document.getElementById('pt-done-pct'); if(pctEl)pctEl.textContent=pct+'%';
+ var bar=document.getElementById('pt-progress-fill'); if(bar)bar.style.width=pct+'%';
+ var review=document.getElementById('pt-review-state'); if(review)review.textContent=done('review')?'CONCLUÍDA':'PENDENTE';
 }
-function isOpen(id){return safeRead(OPEN_PREFIX+id,'0')==='1'}
-function setOpen(id,value){
- try{localStorage.setItem(OPEN_PREFIX+id,value?'1':'0')}catch(_){}
+function updateCardState(id){
+ var card=document.querySelector('[data-module-card="'+id+'"]');if(!card)return;
+ var state=card.querySelector('.pt-module-state');if(state)state.textContent=done(id)?'CONCLUÍDO':'PENDENTE';
+ card.classList.toggle('is-done',done(id));
+ var cb=card.querySelector('[data-pt-complete="'+id+'"]');if(cb)cb.checked=done(id);
 }
-function setActive(id){
- try{
-  if(id)localStorage.setItem(ACTIVE_KEY,id);
-  else localStorage.removeItem(ACTIVE_KEY);
- }catch(_){}
+function card(item){
+ var isReview=!!item.review;
+ return '<section class="pt-module-card'+(isReview?' pt-review-card':'')+(done(item.id)?' is-done':'')+'" data-module-card="'+item.id+'">'+
+  '<button class="pt-module-head" type="button" data-open="'+item.id+'" aria-expanded="false">'+
+   '<span class="pt-module-no">'+(isReview?'FINAL':'M'+String(item.num).padStart(2,'0'))+'</span>'+
+   '<span class="pt-module-title">'+esc(item.title)+'</span>'+
+   '<span class="pt-module-meta">'+(item.lessons?item.lessons+' aulas':'revisão geral')+'</span>'+
+   '<span class="pt-module-state">'+(done(item.id)?'CONCLUÍDO':'PENDENTE')+'</span>'+
+   '<span class="pt-chev">⌄</span></button>'+
+  '<div class="pt-module-body" id="pt-body-'+item.id+'"></div></section>';
 }
-function readFont(){
- var value=Number(safeRead(FONT_KEY,'100'));
- return Math.max(85,Math.min(250,Math.round(value/5)*5||100));
+function render(){
+ var root=document.getElementById('pt-standalone-app');if(!root)return;
+ root.innerHTML='<section class="pt-hero"><div><p class="eyebrow">BASE COMPLETA • PORTUGUÊS</p><h1>Português Autodidata</h1><p class="pt-lead">M01–M24 em sequência progressiva: entender, consolidar e dominar para prova.</p></div><div class="pt-summary"><div><strong id="pt-done-count">0</strong><span>/24 módulos</span></div><b id="pt-done-pct">0%</b></div><div class="pt-progress"><span id="pt-progress-fill"></span></div></section>'+
+ '<section class="pt-section"><div class="pt-section-title"><div><p class="eyebrow">CURSO COMPLETO</p><h2>24 módulos</h2></div><p>Abra apenas o módulo que vai estudar. O conteúdo é carregado sob demanda.</p></div><div class="pt-modules">'+MODULES.map(card).join('')+'</div></section>'+
+ '<section class="pt-section"><div class="pt-section-title"><div><p class="eyebrow">FECHAMENTO</p><h2>Revisão cumulativa final</h2></div><p>84 itens: cobertura M01–M24 + questões integradas.</p></div><div class="pt-modules">'+card(REVIEW)+'</div></section>';
+ root.querySelectorAll('[data-open]').forEach(function(btn){btn.addEventListener('click',function(){toggle(btn.dataset.open)})});
+ updateSummary();
+ var open=read(OPEN_KEY,''); if(open && document.querySelector('[data-module-card="'+open+'"]')) toggle(open,true);
 }
-function hostFor(id){
- return document.getElementById('pt-host-'+id);
+function toggle(id,forceOpen){
+ var card=document.querySelector('[data-module-card="'+id+'"]');if(!card)return;
+ var open=forceOpen===true?!card.classList.contains('open'):!card.classList.contains('open');
+ document.querySelectorAll('.pt-module-card.open').forEach(function(other){if(other!==card){other.classList.remove('open');var b=other.querySelector('[data-open]');if(b)b.setAttribute('aria-expanded','false')}});
+ card.classList.toggle('open',open);var btn=card.querySelector('[data-open]');if(btn)btn.setAttribute('aria-expanded',open?'true':'false');
+ if(open){write(OPEN_KEY,id);load(id);setTimeout(function(){card.scrollIntoView({behavior:'smooth',block:'start'})},30)} else write(OPEN_KEY,'');
 }
-function stateFor(id){
- return states[id]||(states[id]={promise:null,loaded:false});
+function load(id){
+ var item=ITEMS.find(function(x){return x.id===id});var host=document.getElementById('pt-body-'+id);if(!item||!host)return;
+ if(host.dataset.loaded==='1'){bindCompletion(host,id);return}
+ host.innerHTML='<div class="pt-loading">Carregando conteúdo…</div>';
+ loadData().then(function(data){var markup=data[id];if(!markup)throw new Error('Conteúdo '+id+' não encontrado');host.innerHTML=markup;host.dataset.loaded='1';bindCompletion(host,id);applyEnhancements(host)}).catch(function(err){host.innerHTML='<div class="pt-error"><b>Não foi possível carregar este conteúdo.</b><span>'+esc(err.message||err)+'</span><button type="button" data-retry="'+id+'">Tentar novamente</button></div>';var b=host.querySelector('[data-retry]');if(b)b.onclick=function(){host.dataset.loaded='0';DATA_PROMISE=null;load(id)}})
 }
-function stashFor(id){
- return stashes[id]||(stashes[id]=document.createElement('div'));
+function bindCompletion(host,id){var cb=host.querySelector('[data-pt-complete="'+id+'"]');if(!cb)return;cb.checked=done(id);cb.onchange=function(){setDone(id,cb.checked)}}
+function applyEnhancements(host){
+ host.querySelectorAll('table').forEach(function(t){if(!t.parentElement.classList.contains('pt-table-wrap')){var w=document.createElement('div');w.className='pt-table-wrap';t.parentNode.insertBefore(w,t);w.appendChild(t)}});
+ host.querySelectorAll('a').forEach(function(a){if(/^https?:/i.test(a.href)){a.target='_blank';a.rel='noopener noreferrer'}});
 }
-function moveChildren(from,to){
- while(from&&from.firstChild)to.appendChild(from.firstChild);
-}
-function preserveMounted(){
- document.querySelectorAll('.pt-native-host[data-pt-host]').forEach(function(host){
-  var id=host.getAttribute('data-pt-host');
-  if(id&&host.childNodes.length)moveChildren(host,stashFor(id));
- });
-}
-function restoreStash(id,host){
- var stash=stashFor(id);
- if(!stash.childNodes.length)return false;
- moveChildren(stash,host);
- host.dataset.ptMounted='1';
- applyFont(host,readFont());
- return true;
-}
-function applyFont(root,value){
- if(!root)return;
- value=Math.max(85,Math.min(250,Number(value)||100));
- root.style.setProperty('--central-pt-font-scale',String(value/100));
- var selector='p,li,span,strong,b,em,small,label,button,input,textarea,select,option,summary,h1,h2,h3,h4,h5,h6,dt,dd,td,th,blockquote,a';
- root.querySelectorAll(selector).forEach(function(element){
-  var base=Number(element.dataset.centralPtBaseFont);
-  if(!base){
-   base=parseFloat(window.getComputedStyle(element).fontSize)||16;
-   element.dataset.centralPtBaseFont=String(base);
-  }
-  element.style.setProperty('font-size',(base*value/100).toFixed(2)+'px','important');
- });
- if(!observers[root.dataset.ptId]&&typeof MutationObserver!=='undefined'){
-  observers[root.dataset.ptId]=new MutationObserver(function(){applyFont(root,readFont())});
-  observers[root.dataset.ptId].observe(root,{childList:true,subtree:true});
- }
-}
-function setReadingFont(value){
- value=Math.max(85,Math.min(250,Math.round(Number(value||100)/5)*5||100));
- try{localStorage.setItem(FONT_KEY,String(value))}catch(_){}
- document.querySelectorAll('.pt-native-surface').forEach(function(root){applyFont(root,value)});
- return value;
-}
-function scopeSelector(selector,scope){
- var value=selector.trim();
- if(!value)return value;
- if(value===':root')return scope;
- if(/^html(?:\s|$|[.#[:])/.test(value))return value.replace(/^html/,scope);
- if(/^body(?:\s|$|[.#[:])/.test(value))return value.replace(/^body/,scope);
- return scope+' '+value;
-}
-function scopeCss(css,scope){
- return String(css||'').replace(/(^|[{}])([^{}]+)\{/g,function(all,prefix,selectors){
-  var raw=selectors.trim();
-  if(!raw||raw.charAt(0)==='@'||/^(from|to|[0-9.]+%)$/.test(raw))return all;
-  return prefix+raw.split(',').map(function(part){return scopeSelector(part,scope)}).join(', ')+'{';
- });
-}
-function installStyles(id,styles){
- var styleId='central-pt-native-v2-style-'+id;
- var old=document.getElementById(styleId);
- if(old)old.remove();
- if(!styles.length)return;
- var style=document.createElement('style');
- style.id=styleId;
- var scope='.pt-native-surface[data-pt-id="'+id+'"]';
- style.textContent=styles.map(function(css){return scopeCss(css,scope)}).join('\n');
- document.head.appendChild(style);
-}
-function installNativeTheme(id){
- var styleId='central-pt-native-v2-theme-'+id;
- var old=document.getElementById(styleId);
- if(old)old.remove();
- var scope='.pt-native-surface[data-pt-id="'+id+'"]';
- var style=document.createElement('style');
- style.id=styleId;
- style.textContent=
-  scope+'{background:#f7f7f3!important;color:#24282f!important;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif!important;color-scheme:light!important;}'+
-  scope+' .wrap,'+scope+' .top,'+scope+' .card,'+scope+' .session,'+scope+' .body,'+scope+' .trap,'+scope+' .exam,'+scope+' .remember,'+scope+' .warning,'+scope+' .panel,'+scope+' .tabs{background:#fffefb!important;color:#24282f!important;border-color:#e1e3de!important;}'+
-  scope+' h1,'+scope+' h2,'+scope+' h3,'+scope+' h4,'+scope+' h5,'+scope+' h6,'+scope+' p,'+scope+' li,'+scope+' td,'+scope+' th,'+scope+' label,'+scope+' summary,'+scope+' strong,'+scope+' b,'+scope+' em,'+scope+' span,'+scope+' a{color:#24282f!important;}'+
-  scope+' .muted{color:#7d8796!important;}'+
-  scope+' .progress{background:#ebece8!important;}'+
-  scope+' .progress span{background:#3568d4!important;}'+
-  scope+' .tab,'+scope+' .card button,'+scope+' input,'+scope+' select,'+scope+' textarea{background:#fff!important;color:#24282f!important;border-color:#d9ddd7!important;}'+
-  scope+' .tab.active,'+scope+' .tec-link{background:#3568d4!important;color:#fff!important;border-color:#3568d4!important;}'+
-  scope+' .tab.active *,'+scope+' .tec-link *{color:#fff!important;}'+
-  scope+' button{color:#24282f!important;}'+
-  scope+' .hero,'+scope+' .teccard,'+scope+' .session,'+scope+' .qcard,'+scope+' .round,'+scope+' .method,'+scope+' .panel,'+scope+' .audit{background:#fffefb!important;color:#24282f!important;border-color:#e1e3de!important;}'+
-  scope+' .flow b,'+scope+' .chip,'+scope+' .num,'+scope+' .qopt,'+scope+' .back,'+scope+' .ghost,'+scope+' .tab,'+scope+' .tecbtn{background:#fff!important;color:#24282f!important;border-color:#d9ddd7!important;}'+
-  scope+' .tab.active,'+scope+' .tecbtn{background:#3568d4!important;color:#fff!important;border-color:#3568d4!important;}'+
-  scope+' .tab.active *,'+scope+' .tecbtn *{color:#fff!important;}'+
-  scope+' .sub,'+scope+' .goal,'+scope+' .state,'+scope+' .small,'+scope+' .audit,'+scope+' .progressmeta,'+scope+' .label{color:#7d8796!important;}'+
-  scope+' .progressline,'+scope+' .soft,'+scope+' .method,'+scope+' .flow b,'+scope+' .chip{background:#f2f4f1!important;}'+
-  scope+' .body th,'+scope+' .alert,'+scope+' .procedure,'+scope+' .evidence,'+scope+' .exam,'+scope+' .takeaway{background:#f2f4f1!important;color:#24282f!important;border-color:#dfe4de!important;}'+
-  scope+' .qopt.selected{outline-color:#3568d4!important;}'+
-  scope+' .round input{background:#fff!important;color:#24282f!important;border-color:#d9ddd7!important;}';
- document.head.appendChild(style);
-}
-function assetName(src){
- var url=new URL(src,window.location.href);
- return url.pathname.replace(/^\//,'')+url.search;
-}
-function hostScript(src){
- var raw=String(src||'');
- return raw.indexOf('_next-live/')>=0||raw.indexOf('vercel.live')>=0||raw.indexOf('feedback/feedback.js')>=0;
-}
-function versioned(src){
- var key=assetName(src);
- return key+(key.indexOf('?')>=0?'&':'?')+'v='+VERSION;
-}
-function loadScript(src){
- var key=assetName(src);
- if(hostScript(key))return Promise.resolve(key);
- if(assets[key])return assets[key];
- assets[key]=new Promise(function(resolve,reject){
-  var script=document.createElement('script');
-  script.src='/'+key;
-  script.async=false;
-  script.dataset.centralPtV2=key;
-  script.onload=function(){resolve(key)};
-  script.onerror=function(){delete assets[key];reject(new Error('Falha ao carregar '+key))};
-  document.head.appendChild(script);
- });
- return assets[key];
-}
-function loadSequence(list){
- return list.reduce(function(chain,item){return chain.then(function(){return loadScript(item)})},Promise.resolve());
-}
-function scopedDocument(root){
- var scoped=Object.create(document);
- function localQuery(selector){
-  var value=String(selector||'');
-  if(value==='body')return root;
-  if(value==='html')return document.documentElement;
-  if(/^body(?:$|[.#[:])/.test(value)){
-   var bodySelector=':scope'+value.slice(4);
-   return root.matches(bodySelector)?root:root.querySelector(bodySelector);
-  }
-  return root.querySelector(value);
- }
- function localQueryAll(selector){
-  var value=String(selector||'');
-  if(value==='body')return [root];
-  if(value==='html')return [document.documentElement];
-  if(/^body(?:$|[.#[:])/.test(value)){
-   var bodySelector=':scope'+value.slice(4);
-   return root.matches(bodySelector)?[root]:root.querySelectorAll(bodySelector);
-  }
-  return root.querySelectorAll(value);
- }
- scoped.getElementById=function(id){
-  if(id==null)return null;
-  return root.querySelector('[id="'+String(id).replace(/"/g,'\\\"')+'"]');
- };
- scoped.querySelector=localQuery;
- scoped.querySelectorAll=localQueryAll;
- scoped.getElementsByClassName=function(name){return root.getElementsByClassName(name)};
- scoped.getElementsByTagName=function(name){return root.getElementsByTagName(name)};
- scoped.body=root;
- scoped.createElement=document.createElement.bind(document);
- scoped.createTextNode=document.createTextNode.bind(document);
- scoped.createDocumentFragment=document.createDocumentFragment.bind(document);
- scoped.addEventListener=function(type,handler,options){
-  if(type==='DOMContentLoaded'){setTimeout(function(){handler.call(scoped,{type:type})},0);return}
-  document.addEventListener(type,handler,options);
- };
- scoped.removeEventListener=function(type,handler,options){
-  if(type==='DOMContentLoaded')return;
-  document.removeEventListener(type,handler,options);
- };
- return scoped;
-}
-function runScoped(code,id,index,root){
- var doc=scopedDocument(root);
- var source=String(code||'')+'\\n//# sourceURL=central-pt-v2-'+id+'-'+index+'.js';
- return Function('document','window','globalThis',source)(doc,window,window);
-}
-var scopedAssets=Object.create(null);
-function loadScopedScript(src,id,index,root){
- var key=assetName(src);
- if(hostScript(key))return Promise.resolve(key);
- if(!scopedAssets[key]){
-  scopedAssets[key]=fetch('/'+key,{credentials:'same-origin',cache:'no-store'}).then(function(response){
-   if(!response.ok)throw new Error('HTTP '+response.status+' ao carregar '+key);
-   return response.text();
-  });
- }
- return scopedAssets[key].then(function(source){
-  runScoped(source,id,index,root);
-  return key;
- });
-}
-function runInline(code,id,index,root){
- return runScoped(code,id,index,root);
-}
-function fetchMarkup(path){
- var request=path+(path.indexOf('?')>=0?'&':'?')+'v='+VERSION;
- return fetch('/'+request,{credentials:'same-origin',cache:'no-store'}).then(function(response){
-  if(!response.ok)throw new Error('HTTP '+response.status+' ao carregar '+path);
-  return response.text();
- });
-}
-function setHostHtml(id,host,html,styles){
- var current=hostFor(id);
- var target=current&&current.isConnected?current:stashFor(id);
- target.innerHTML=html||'<p>Conteúdo indisponível.</p>';
- installStyles(id,styles||[]);
- target.dataset.ptId=id;
- target.dataset.ptMounted='1';
- target.classList.add('pt-native-surface');
- applyFont(target,readFont());
- if(target!==current&&current&&current.isConnected)moveChildren(target,current);
- return current&&current.isConnected?current:target;
-}
-function legacyScripts(id){
- var common='?v='+VERSION;
- if(id==='m1')return [
-  'portugues-m1-v3.js'+common,
-  'portugues-m1-theory-v1.js'+common,
-  'portugues-m1-theory-v2.js'+common,
-  'portugues-m1-theory-v3.js'+common,
-  'portugues-m1-no-anki-v1.js'+common,
-  'portugues-m1-apostila-v2.js'+common
- ];
- if(id==='m2')return [
-  'portugues-m2-v1.js'+common,
-  'portugues-m2-tec-link-v1.js'+common
- ];
- return [];
-}
-function loadLegacy(id,host){
- var originalMaster=window.renderPortugueseMaster;
- var originalSubjects=window.renderSubjects;
- var originalAll=window.renderAll;
- var list=legacyScripts(id);
- var restored=false;
- function restore(){
-  if(restored)return;
-  restored=true;
-  window.renderPortugueseMaster=originalMaster;
-  window.renderSubjects=originalSubjects;
-  window.renderAll=originalAll;
- }
- window.renderSubjects=function(){};
- window.renderAll=function(){};
- window.__PT_CANONICAL_HOST__=true;
- return loadScript(list[0]).then(function(){
-  var api=id==='m1'?window.PtM1V3:window.PtM2V1;
-  var base=api&&typeof api.render==='function'?api.render:null;
-  if(!base)throw new Error('Renderer do '+id.toUpperCase()+' indisponível');
-  window.renderPortugueseMaster=base;
-  setHostHtml(id,host,base(),[]);
-  return loadSequence(list.slice(1)).then(function(){
-   var renderer=typeof window.renderPortugueseMaster==='function'?window.renderPortugueseMaster:base;
-   setHostHtml(id,host,renderer(),[]);
-   return host;
-  });
- }).then(function(result){restore();return result},function(error){restore();throw error});
-}
-function loadHtmlModule(module,host){
- return fetchMarkup(module.src).then(function(markup){
-  var doc=new DOMParser().parseFromString(markup,'text/html');
-  var styles=Array.prototype.slice.call(doc.querySelectorAll('style')).map(function(style){return style.textContent});
-  var scripts=Array.prototype.slice.call(doc.querySelectorAll('script')).filter(function(script){
-   var src=script.getAttribute('src')||'';
-   return !hostScript(src);
-  });
-  Array.prototype.slice.call(doc.querySelectorAll('script')).forEach(function(script){script.remove()});
-  Array.prototype.slice.call(doc.querySelectorAll('a.back,a[href="index.html"],a[href="./index.html"],a[href="/index.html"]')).forEach(function(link){link.remove()});
-  var body=doc.body?doc.body.innerHTML:'';
-  host.innerHTML=body;
-  host.dataset.ptId=module.id;
-  host.classList.add('pt-native-surface');
-  installStyles(module.id,styles);
-  installNativeTheme(module.id);
-  applyFont(host,readFont());
-  return scripts.reduce(function(chain,script,index){
-   return chain.then(function(){
-    var src=script.getAttribute('src');
-    if(src)return loadScopedScript(versioned(src),module.id,index,host);
-    runInline(script.textContent,module.id,index,host);
-   });
-  },Promise.resolve()).then(function(){
-   applyFont(host,readFont());
-   return host;
-  });
- });
-}
-function mount(module,host){
- var id=module.id;
- var state=stateFor(id);
- if(!host)return Promise.reject(new Error('Host '+id+' indisponível'));
- if(host.dataset.ptMounted==='1')return Promise.resolve(host);
- if(state.promise)return state.promise;
- if(restoreStash(id,host))return Promise.resolve(host);
- host.innerHTML='<div class="pt-native-loading">Carregando '+esc(module.title)+'…</div>';
- var job=(id==='m1'||id==='m2')?loadLegacy(id,host):loadHtmlModule(module,host);
- state.promise=job.then(function(result){
-  state.loaded=true;
-  if(result&&result.dataset)result.dataset.ptMounted='1';
-  return result;
- }).catch(function(error){
-  state.loaded=false;
-  host.innerHTML='<div class="pt-native-error"><strong>Não foi possível abrir este módulo.</strong><p>'+esc(error.message||error)+'</p><button type="button" onclick="retryPtModule(\''+id+'\')">Tentar novamente</button></div>';
-  console.error('[Português v2 '+id+']',error);
-  throw error;
- }).then(function(result){
-  state.promise=null;
-  return result;
- },function(error){
-  state.promise=null;
-  throw error;
- });
- return state.promise;
-}
-function retryPtModule(id){
- var section=document.querySelector('.cf-module[data-pt-module="'+id+'"]');
- if(!section)return false;
- if(!section.classList.contains('open')){
-  togglePtModule(id);
-  return false;
- }
- var host=section.querySelector('[data-pt-host]');
- var state=stateFor(id);
- state.promise=null;
- state.loaded=false;
- if(host){
-  host.removeAttribute('data-pt-mounted');
-  host.innerHTML='<div class="pt-native-loading">Tentando carregar novamente…</div>';
-  mount(BY_ID[id],host).catch(function(){});
- }
- return false;
-}
-function togglePtModule(id){
- var section=document.querySelector('.cf-module[data-pt-module="'+id+'"]');
- if(!section)return false;
- var opening=!section.classList.contains('open');
- section.classList.toggle('open',opening);
- section.setAttribute('aria-expanded',opening?'true':'false');
- setOpen(id,opening);
- setActive(opening?id:'');
- if(opening){
-  var host=section.querySelector('[data-pt-host]');
-  mount(BY_ID[id],host).catch(function(){});
- }
- return opening;
-}
-function renderModule(module){
- var open=isOpen(module.id);
- var mounted=stateFor(module.id).loaded;
- return '<section class="cf-module pt-native-module'+(open?' open':'')+'" data-pt-module="'+module.id+'" aria-expanded="'+(open?'true':'false')+'">'+
-  '<button class="cf-module-head" type="button" onclick="togglePtModule(\''+module.id+'\')" aria-controls="pt-host-'+module.id+'">'+
-   '<span class="cf-module-no">MÓDULO '+module.num+'</span><span class="cf-module-title">'+esc(module.title)+'</span>'+
-   '<span class="cf-module-stat">Teoria • revisão • questões • TEC</span><span class="chev">⌄</span>'+
-  '</button>'+
-  '<div class="cf-module-body"><div class="cf-module-bar"><span style="width:0%"></span></div>'+
-   '<div class="pt-native-host" id="pt-host-'+module.id+'" data-pt-host="'+module.id+'">'+
-    (open?(mounted?'':'<div class="pt-native-loading">Preparando conteúdo…</div>'):'')+
-   '</div>'+
-  '</div>'+
- '</section>';
-}
-function renderModule(module){
- return '<section class="cf-module pt-native-module" data-pt-module="'+module.id+'" aria-expanded="false">'+
-  '<button class="cf-module-head" type="button" onclick="togglePtModule(\''+module.id+'\')" aria-controls="pt-host-'+module.id+'">'+
-   '<span class="cf-module-no">MÓDULO '+module.num+'</span><span class="cf-module-title">'+esc(module.title)+'</span>'+
-   '<span class="cf-module-stat">Teoria · revisão · questões · TEC</span><span class="chev" aria-hidden="true">⌄</span>'+
-  '</button>'+
-  '<div class="cf-module-body"><div class="cf-module-bar"><span></span></div>'+
-   '<div class="pt-native-host" id="pt-host-'+module.id+'" data-pt-host="'+module.id+'"></div>'+
-  '</div>'+
- '</section>';
-}
-function ptStats(){return {total:17};}
-function renderStandalone(){
- var root=document.getElementById('pt-standalone-app');
- if(!root)return;
- var stats=ptStats();
- root.innerHTML=
-  '<section class="pt-dashboard" aria-label="Painel de Português">'+
-   '<div><p class="eyebrow">BASE COMPLETA · DISCIPLINA</p><h1>Português</h1><p class="pt-lead">17 módulos completos: teoria, revisão, questões e cadernos TEC.</p></div>'+
-   '<div class="pt-summary"><strong>'+stats.total+'</strong><span>módulos</span><small>'+stats.started+' com dados salvos</small></div>'+
-  '</section>'+
-  '<section class="pt-modules-section"><div class="pt-section-title"><div><p class="eyebrow">ROTEIRO DE ESTUDO</p><h2>Escolha um módulo</h2></div><p>Clique no título para abrir. Clique novamente para recolher.</p></div>'+
-  '<div class="cf-modules pt-native-modules" data-pt-native="standalone">'+MODULES.map(renderModule).join('')+'</div></section>';
-}
-function refreshModule(id){
- var module=BY_ID[id], host=hostFor(id);
- if(!module||!host||host.dataset.ptMounted!=='1')return false;
- var api=id==='m1'?window.PtM1V3:(id==='m2'?window.PtM2V1:null);
- if(!api||typeof api.render!=='function')return false;
- setHostHtml(id,host,api.render(),[]);
- return true;
-}
-window.__PT_CANONICAL_HOST__=true;
-window.__PT_NATIVE_HOST__=true;
-window.__PT_NATIVE_V2__=true;
-window.__PT_NATIVE_MODULES__=MODULES.slice();
-window.__PT_NATIVE_PROGRESS__=function(){
- return MODULES.map(function(module){var key='central-v6:pt:'+module.id+':v1';return {id:module.id,key:key,present:!!safeRead(key,'')};});
-};
-window.PtStandalone={
- setReadingFont:setReadingFont,
- toggle:togglePtModule,
- audit:function(){return {standalone:true,modules:MODULES.map(function(module){return module.id}),iframes:0,fontMax:250};}
-};
-window.PtControllerV2={setReadingFont:setReadingFont,loaded:function(root){applyFont(root,readFont())},audit:window.PtStandalone.audit};
-window.setPortugueseFont=setReadingFont;
-window.ensurePortugueseLoaded=function(){return Promise.resolve(true)};
-window.ensurePortugueseModule=function(id){
- if(!BY_ID[id])return Promise.reject(new Error('Módulo Português inválido: '+id));
- var host=hostFor(id);
- return host?mount(BY_ID[id],host):Promise.reject(new Error('Módulo fora da página'));
-};
-window.ptCanonicalRefreshModule=refreshModule;
-window.togglePtModule=togglePtModule;
-window.retryPtModule=retryPtModule;
-document.addEventListener('DOMContentLoaded',function(){
- var input=document.getElementById('pt-font-size');
- var output=document.getElementById('pt-font-value');
- function sync(value){var next=setReadingFont(value);if(input)input.value=next;if(output)output.textContent=next+'%';}
- renderStandalone();
- sync(readFont());
- if(input)input.addEventListener('input',function(){sync(input.value)});
-});
+function initFont(){var input=document.getElementById('pt-font-size');var n=setFont(currentFont());if(input){input.value=n;input.addEventListener('input',function(){setFont(input.value)})}}
+render();initFont();
+window.__PT_AUTO24_AUDIT__=function(){return {version:VERSION,moduleCount:MODULES.length,review:true,modules:MODULES.map(function(m){return m.id}),completed:MODULES.filter(function(m){return done(m.id)}).length}};
 })();
