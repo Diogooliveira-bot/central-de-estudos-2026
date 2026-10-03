@@ -45,4 +45,25 @@ A citação é pessoal, mas admite representante nas hipóteses legais. Pode oco
 
 6. CITAÇÃO ELETRÔNICA
 É preferencial. O CPC prevê expedição em até 2 dias úteis da decisão. O Domicílio Judicial Eletrônico atende citações e comunicações pessoais; o DJEN atende publicações oficiais.
-`\n// m08 continuation marker\n
+`,chapters:{summary:[
+{id:'s1',title:'Visão geral e cartas',match:'1. VISÃO GERAL'},
+{id:'s2',title:'Citação',match:'2. CITAÇÃO'},
+{id:'s3',title:'Intimação e nulidades',match:'3. INTIMAÇÃO E NULIDADES'},
+{id:'s4',title:'Artigos para decorar',match:'4. ARTIGOS PARA DECORAR'},
+{id:'s5',title:'Pegadinhas e revisão',match:'5. PEGADINHAS E REVISÃO'}],
+complete:[
+{id:'c1',title:'Visão geral',match:'1. VISÃO GERAL'},
+{id:'c2',title:'Cartas processuais',match:'2. CARTAS PROCESSUAIS'},
+{id:'c3',title:'Citação: conceito e função',match:'3. CITAÇÃO: CONCEITO E FUNÇÃO'},
+{id:'c4',title:'Efeitos da citação',match:'4. EFEITOS DA CITAÇÃO'},
+{id:'c5',title:'Quem pode receber, onde e quando',match:'5. QUEM PODE RECEBER'},
+{id:'c6',title:'Citação eletrônica',match:'6. CITAÇÃO ELETRÔNICA'},
+{id:'c7',title:'Correio e oficial',match:'7. CITAÇÃO PELO CORREIO'},
+{id:'c8',title:'Hora certa',match:'8. HORA CERTA'},
+{id:'c9',title:'Edital',match:'9. CITAÇÃO POR EDITAL'},
+{id:'c10',title:'Formas atípicas',match:'10. FORMAS ATÍPICAS'},
+{id:'c11',title:'Intimação',match:'11. INTIMAÇÃO'},
+{id:'c12',title:'Nulidades processuais',match:'12. NULIDADES'},
+{id:'c13',title:'Classificação das nulidades',match:'13. CLASSIFICAÇÃO'},
+{id:'c14',title:'Prazos e números',match:'14. NÚMEROS'},
+{id:'c15',title:'Pegadinhas e revisão',match:'15. PEGADINHAS'}]}};})(window);
