@@ -13,8 +13,21 @@
 <body><main><div class="spinner" aria-hidden="true"></div><p id="status">Abrindo a BASE COMPLETA…</p><button id="retry" type="button">Tentar novamente</button></main>
 <script>
 (async function(){
- var BUILD='20261003-penal-m01-m17-prod4';
+ var BUILD='20261003-penal-m01-m17-prod5';
  var entryUrl=new URL(location.href);
+ if('serviceWorker' in navigator){
+  try{
+   var reg=await navigator.serviceWorker.getRegistration();
+   if(reg)reg.update().catch(function(){});
+   if(!sessionStorage.getItem('central:pwa-reload:prod5')){
+    navigator.serviceWorker.addEventListener('controllerchange',function(){
+     if(sessionStorage.getItem('central:pwa-reload:prod5'))return;
+     sessionStorage.setItem('central:pwa-reload:prod5','1');
+     location.reload();
+    },{once:true});
+   }
+  }catch(_){}
+ }
  entryUrl.searchParams.delete('direct');
  entryUrl.searchParams.delete('central_source');
  var scripts=['civil-decorando-index-v1.js?v=1','central-civil-progress-v2.js?v=20261001fix2'];
