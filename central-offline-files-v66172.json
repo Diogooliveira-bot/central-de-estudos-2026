@@ -295,7 +295,6 @@
     "/ui/m17-header-fix.js?v=20261003m17p1",
     "/ui/study-navigation.css?v=20261002vertical2",
     "/ui/mind-map.css?v=20261002p3",
-    "/index.html?central_source=20261003-cpc-study-v3",
     "/central-v119.html",
     "/ui/portuguese-reader.js?v=20261003ptnative2",
     "/ui/portuguese-reader.css?v=20261003ptnative2",
@@ -367,6 +366,11 @@
     "/content/cpc/m18-native-data.js?v=20261003cpcm18v1",
     "/ui/cpc-m18-native-study-reader.js?v=20261003cpcm18v1",
     "/cpc-study-m18-lite.js?v=20261003cpcm18v1",
-    "/tools/cpc-m18-mapa.html"
+    "/tools/cpc-m18-mapa.html",
+    "/index.html?central_source=20261003-cpc-m19-v1",
+    "/content/cpc/m19-native-data.js?v=20261003cpcm19v1",
+    "/ui/cpc-m19-native-study-reader.js?v=20261003cpcm19v1",
+    "/cpc-study-m19-lite.js?v=20261003cpcm19v1",
+    "/tools/cpc-m19-mapa.html"
   ]
 }
