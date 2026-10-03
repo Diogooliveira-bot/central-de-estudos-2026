@@ -303,6 +303,10 @@
     "/base-completa-visual-v1.js?v=20261003cpcnative1",
     "/content/cpc/m01-native-data.js?v=20261003cpcnative1",
     "/ui/cpc-native-study-reader.js?v=20261003cpcnative1",
-    "/cpc-study-system-v1.js?v=20261003cpcnative1"
+    "/cpc-study-system-v1.js?v=20261003cpcnative1",
+    "/content/cpc/m02-native-data.js?v=20261003cpcm02v1",
+    "/ui/cpc-m02-native-study-reader.js?v=20261003cpcm02v1",
+    "/cpc-study-m02.js?v=20261003cpcm02v1",
+    "/tools/cpc-m02-mapa.html"
   ]
 }
