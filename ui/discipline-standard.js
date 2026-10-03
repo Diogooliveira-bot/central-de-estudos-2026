@@ -222,6 +222,18 @@
       if (toggleOnly) toggleOnly.setAttribute('aria-label',(module.classList.contains('open') ? 'Recolher' : 'Abrir') + ' módulo');
     }
     if (!module.classList.contains('open') || !module.closest('.subject').classList.contains('open')) return;
+
+    // Direito Penal M01-M17 usa o fluxo nativo aprovado.
+    // Mantém apenas o rodapé padrão (questões externas, revisão, ferramentas e anotações),
+    // sem recriar o painel/progresso e a navegação legados por cima dos cards nativos.
+    if (meta.subject === 'penal' && /^p(?:[1-9]|1[0-7])$/.test(meta.id)) {
+      body.querySelector(':scope > .csp-panel[data-ds-summary]')?.remove();
+      body.querySelector(':scope > .ds-module-nav')?.remove();
+      moduleFooter(module,body,meta);
+      notes(module,body,meta);
+      return;
+    }
+
     if (!body.querySelector('.csp-panel')) body.insertAdjacentHTML('afterbegin',progressPanel(module,meta));
     else {
       const panel = body.querySelector('[data-ds-summary]');
