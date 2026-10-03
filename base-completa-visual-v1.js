@@ -124,13 +124,14 @@
   window.baseCompletaCloseCpcMap=()=>{
     const overlay=document.getElementById('bcCpcMapOverlay');if(overlay)overlay.remove();
     document.documentElement.style.overflow='';document.body.style.overflow='';
+    setTimeout(()=>document.querySelector('#subjects .subject[data-id="cpc"] .cf-module[data-cf="cpc1"]')?.scrollIntoView({behavior:'smooth',block:'start'}),40);
     return false;
   };
   window.baseCompletaOpenCpcMap=()=>{
     ensureCpcMapStyles();
     if(document.getElementById('bcCpcMapOverlay'))return false;
     const overlay=document.createElement('div');overlay.id='bcCpcMapOverlay';overlay.className='bc-cpc-map-overlay';
-    overlay.innerHTML='<div class="bc-cpc-map-overlay-head"><div><b>CPC M01 — Mapa Mental</b><span>Carrossel de fixação e revisão rápida</span></div><button type="button" class="bc-cpc-map-close" onclick="return baseCompletaCloseCpcMap()">← Voltar à Central</button></div><iframe class="bc-cpc-map-frame" src="tools/cpc-m01-mapa.html" title="Mapa mental CPC M01"></iframe>';
+    overlay.innerHTML='<div class="bc-cpc-map-overlay-head"><div><b>CPC M01 — Mapa Mental</b><span>Carrossel de fixação e revisão rápida</span></div><button type="button" class="bc-cpc-map-close" onclick="return baseCompletaCloseCpcMap()">← Voltar ao M01</button></div><iframe class="bc-cpc-map-frame" src="tools/cpc-m01-mapa.html" title="Mapa mental CPC M01"></iframe>';
     document.body.appendChild(overlay);document.documentElement.style.overflow='hidden';document.body.style.overflow='hidden';
     return false;
   };
