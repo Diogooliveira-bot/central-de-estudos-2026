@@ -139,7 +139,6 @@
     "/penal-full-theory-ui-v1.js?v=20260919b",
     "/central-structural-v66119/cf-final-audit-integration-20260920.js",
     "/portugues-tec-data-v1.js?v=20260921n2",
-    "/base-completa-visual-v1.js?v=20260923preprod2",
     "/civil-decorando-index-v1.js?v=1",
     "/central-civil-progress-v2.js?v=20261001fix2",
     "/central-lazy-theory-v66119.js?v=66160adm20",
@@ -301,6 +300,9 @@
     "/ui/portuguese-reader.js?v=20261003ptnative2",
     "/ui/portuguese-reader.css?v=20261003ptnative2",
     "/tools/cpc-m01-mapa.html",
-    "/cpc-study-system-v1.js?v=20261003prod4"
+    "/base-completa-visual-v1.js?v=20261003cpcnative1",
+    "/content/cpc/m01-native-data.js?v=20261003cpcnative1",
+    "/ui/cpc-native-study-reader.js?v=20261003cpcnative1",
+    "/cpc-study-system-v1.js?v=20261003cpcnative1"
   ]
 }
