@@ -1,7 +1,7 @@
 /* Central de Estudos — PWA cache repair 2026-10-03. */
-var CACHE='central-20261003-portuguese-native-v2';
+var CACHE='central-20261003-cpc-m01-map-v1';
 var BOOT='/central-v119.html';
-var OFFLINE_MANIFEST='/central-offline-files-v66172.json?v=20261003ptnative2';
+var OFFLINE_MANIFEST='/central-offline-files-v66172.json?v=20261003cpcm01';
 
 function cacheResponse(cache,request,response){
   if(response&&response.ok)cache.put(request,response.clone()).catch(function(){});
