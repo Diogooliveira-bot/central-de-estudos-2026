@@ -70,10 +70,15 @@ function build(raw){
 function chapters(mode){return source()?.chapters?.[mode]||[]}
 function findHeading(ch){
  if(!current)return null;
+ const ordered=Array.from(current.article.querySelectorAll('h2,h3'));
+ const pos=String(ch?.id||'').match(/^[sc](\d+)$/);
+ if(pos){const direct=ordered[Number(pos[1])-1];if(direct)return direct}
  const target=normKey(ch.match||ch.title);
- const words=target.split(' ').filter(w=>w.length>3);
+ const exact=ordered.find(el=>normKey(el.textContent)===target||normKey(el.textContent).startsWith(target));
+ if(exact)return exact;
+ const words=target.split(' ').filter(Boolean);
  let best=null,score=0;
- current.article.querySelectorAll('h2,h3').forEach(el=>{
+ ordered.forEach(el=>{
    const k=normKey(el.textContent); let s=0; words.forEach(w=>{if(k.includes(w))s++});
    if(s>score){score=s;best=el}
  });
