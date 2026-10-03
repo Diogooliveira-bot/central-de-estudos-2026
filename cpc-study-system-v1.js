@@ -310,14 +310,46 @@ function moveQuiz(delta){
 
 function install(){
  injectStyle();
- if(typeof global.renderCpcModule!=='function'||typeof global.cpcWeekPct!=='function')return;
- if(global.renderCpcModule.__cpcStudyV1)return;
- global.__cpcLegacyRenderModule=global.renderCpcModule;
- global.__cpcLegacyWeekPct=global.cpcWeekPct;
- global.renderCpcModule=function(w){return w&&w.id==='w1'?m01Html(w):global.__cpcLegacyRenderModule(w)};
- global.renderCpcModule.__cpcStudyV1=true;
- global.cpcWeekPct=function(w){return w&&w.id==='w1'?progress('w1'):global.__cpcLegacyWeekPct(w)};
- try{renderAll()}catch(e){console.warn('CPC Study v1 render',e)}
+ if(typeof renderCpcModule!=='function'||typeof cpcWeekPct!=='function'||typeof renderCpcMaster!=='function'){
+   setTimeout(install,120);
+   return;
+ }
+ if(global.CpcStudyV1&&global.CpcStudyV1.installed)return;
+
+ if(!global.__cpcLegacyRenderModule)global.__cpcLegacyRenderModule=renderCpcModule;
+ if(!global.__cpcLegacyWeekPct)global.__cpcLegacyWeekPct=cpcWeekPct;
+ if(!global.__cpcLegacyRenderMaster)global.__cpcLegacyRenderMaster=renderCpcMaster;
+
+ global.renderCpcModule=function(w){
+   if(w&&w.id==='w1')return m01Html(w);
+   return '';
+ };
+
+ global.cpcWeekPct=function(w){
+   if(w&&w.id==='w1')return progress('w1');
+   return 0;
+ };
+
+ global.renderCpcMaster=function(){
+   const w=cpcWeeks().find(x=>x.id==='w1');
+   if(!w)return '<div class="card" style="padding:18px">CPC M01 indisponível no momento.</div>';
+   return '<div class="cpc-study-only-badge" style="margin:0 0 10px;padding:10px 12px;border:1px solid rgba(56,189,248,.32);border-radius:12px;background:rgba(56,189,248,.07)"><b>Novo CPC</b><div class="muted small" style="margin-top:3px">A disciplina está usando somente a nova estrutura de estudo. O fluxo antigo foi removido desta versão.</div></div><div id="cpc-session-host"></div><div class="cf-modules">'+m01Html(w)+'</div>';
+ };
+
+ global.CpcStudyV1=Object.assign(global.CpcStudyV1||{}, {
+   progress,progressDetail,state:load,version:'2026-10-03-staging-m01-v3',installed:true
+ });
+
+ try{
+   localStorage.setItem('central-v6:open:cpc','1');
+   renderAll();
+   setTimeout(()=>{
+     try{
+       const section=document.querySelector('.subject[data-id="cpc"]');
+       if(section&&!section.classList.contains('open'))section.classList.add('open');
+     }catch(_){}
+   },50);
+ }catch(e){console.warn('CPC Study v1 render',e)}
 }
 
 global.cpcStudyToggleRead=toggleRead;
@@ -329,7 +361,7 @@ global.cpcStudyCloseQuiz=closeQuiz;
 global.cpcStudySelectQuiz=selectQuiz;
 global.cpcStudySubmitQuiz=submitQuiz;
 global.cpcStudyMoveQuiz=moveQuiz;
-global.CpcStudyV1={progress,progressDetail,state:load,version:'2026-10-03-staging-m01'};
+global.CpcStudyV1=Object.assign(global.CpcStudyV1||{},{progress,progressDetail,state:load,version:'2026-10-03-staging-m01-v3'});
 
 global.addEventListener('message',e=>{
   try{
@@ -340,5 +372,5 @@ global.addEventListener('message',e=>{
     }
   }catch(_){}
 });
-if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',()=>setTimeout(install,0),{once:true});else setTimeout(install,0);
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',()=>setTimeout(install,20),{once:true});setTimeout(install,20);setTimeout(install,500);
 })(window);
