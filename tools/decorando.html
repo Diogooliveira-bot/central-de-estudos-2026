@@ -606,6 +606,162 @@ body{font-family:Arial,Helvetica,sans-serif}
 [data-theme="dark"] .legal-update-warning{background:#352d18;color:#f5dda2;border-color:#7f6936}[data-theme="dark"] .historical-question-note{background:#1f2d39;color:#c9dceb;border-color:#49677f}
 </style>
 
+<style id="tema-profissional">
+/* ===== Tema profissional (sobreposição visual; não altera a lógica) ===== */
+:root{
+  --font-ui:"Inter","Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial;
+  --font-reading:"Source Serif 4","Source Serif Pro",Georgia,"Times New Roman";
+  --ink:#1b2430; --muted:#5d6877; --green:#1f3a5f; --paper:#f4f6f9; --line:#d9dee6;
+  --surface:#ffffff; --surface-2:#f8f9fb; --accent-soft:#eaf0f7; --accent-line:#b9c8dc;
+}
+html,body{background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body,button,input,select,textarea{font-family:var(--font-ui),sans-serif}
+.filter-page,.compact-filter-page,.audit-page{background:var(--paper)}
+
+/* Tipografia: tamanhos mínimos legíveis */
+.eyebrow,.question-number,.breadcrumb,.nav-label,.selection-label small,.law-copy small,
+.question-meta,.history-title small,.notes-card small,.comment-box small,.legal-source,
+.sidebar-progress small,.daily-goal span,.status-bar > span,.importance span,.marker-tools small,
+.article-footer span,.law-legend,.history-row,.recent-list time,.audit-empty{font-size:11px}
+.selection-label strong,.law-copy strong,.panel-title strong,.history-title strong,.notes-card strong,
+.comment-box strong,.audit-panel-title strong{font-size:13px}
+.topic-choice-grid > button strong,.subtopic-chips button,.initial-status-options button,
+.status-bar button,.question-actions > button,.header-action,.theme-toggle,.topbar-audit,
+.answer-buttons button,.feedback,.notes-card textarea,.comment-box textarea,.daily-row{font-size:12px}
+.topic-choice-grid > button small,.subtopic-chips button span,.discipline-choice div small,
+.status-bar small,.initial-status-options button b,.daily-row > strong,.sync-indicator{font-size:10.5px}
+.nav-label,.eyebrow,.question-number,.compact-filter-heading > span,.breadcrumb{letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--muted)}
+
+/* Cabeçalhos: sans-serif sóbrio; serifa só no texto legal */
+h1,h2,.brand strong,.topbar h1,.article-header h2,.exercise-heading h2,.metric-grid strong,
+.compact-start strong,.filter-footer > div > strong{font-family:var(--font-ui),sans-serif;letter-spacing:-.01em;font-weight:650}
+.topbar h1{font-size:clamp(19px,2vw,24px)}
+.article-header h2{font-size:26px}
+.law-text,.legal-basis .law-text,.main-statement,.statement{font-family:var(--font-reading),Georgia,serif}
+
+/* Marca */
+.brand-mark{background:var(--green);border-radius:6px;font-family:var(--font-ui),sans-serif;letter-spacing:.02em}
+.brand span{font-size:10px;color:var(--muted)}
+
+/* Superfícies: planas, bordas finas, raios pequenos */
+.filter-topbar,.topbar{background:var(--surface);border-color:var(--line)}
+.selection-card,.metric-grid article,.audit-panel,.law-card,.question-card,.notes-card,.exercise-card,
+.history-card,.scroll-question-card,.filter-panel,.filter-footer,.empty-status,.history-toggle{
+  background:var(--surface);border:1px solid var(--line);border-radius:8px;box-shadow:0 1px 2px rgba(20,32,50,.04)}
+.legal-basis{background:var(--surface-2);border:1px solid var(--line);border-radius:6px}
+.history-card.locked{background:var(--surface-2)}
+.selection-section,.article-header,.exercise-heading,.article-footer,.audit-panel-title,.attempt-history{border-color:var(--line)}
+.selection-label > span,.panel-title > div > span{background:var(--accent-soft);border:0;border-radius:5px;color:var(--green)}
+
+/* Controles */
+.discipline-choice,.topic-choice-grid > button,.subtopic-chips button,.initial-status-options button,
+.preference-grid > div,.preference-grid button,.status-bar button,.filter-option,.answer-buttons button,
+.question-actions > button,.importance select,.notes-card textarea,.comment-box textarea,
+.header-action,.theme-toggle,.topbar-audit,.search-box{
+  background:var(--surface);border:1px solid var(--line);border-radius:6px;color:var(--ink);box-shadow:none}
+.topic-choice-grid > button:hover,.subtopic-chips button:hover,.status-bar button:hover,.filter-option:hover,
+.question-actions > button:hover,.header-action:hover,.theme-toggle:hover,.topbar-audit:hover{border-color:var(--accent-line);background:var(--surface-2)}
+.discipline-choice,.topic-choice-grid > button.selected,.subtopic-chips button.selected,
+.initial-status-options button.selected,.preference-grid button.selected,.status-bar button.active,
+.filter-option.selected,.answer-buttons button:hover,.answer-buttons button.chosen,.metric-grid article.accent{
+  background:var(--accent-soft);border-color:var(--green);color:var(--green)}
+.topic-choice-grid > button.selected > span,.filter-option.selected .filter-check{background:var(--green);border-color:var(--green)}
+.initial-status-options button.selected b,.status-bar button.active small{background:var(--green);color:#fff}
+button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+
+/* Botões primários */
+.compact-start > button,.filter-footer > button,.audit-heading > button,.empty-status button,.scroll-load-more{
+  background:var(--green);color:#fff;border:0;border-radius:6px;box-shadow:none;font-weight:650;font-size:12.5px}
+.compact-start > button:hover,.filter-footer > button:hover,.audit-heading > button:hover{background:#17304f}
+.compact-start > button:disabled,.filter-footer > button:disabled{background:#b5bdc8}
+.scroll-load-more{background:var(--accent-soft);color:var(--green);border:1px solid var(--accent-line)}
+.article-footer button{color:var(--green)}
+
+/* Barra lateral */
+.sidebar{background:#162235;border-right:0;color:#d7dfeb}
+.sidebar .brand strong{color:#fff}.sidebar .brand span,.sidebar .nav-label{color:#8fa0b8}
+.sidebar .brand-mark{background:#fff;color:#162235}
+.sidebar .search-box{background:#1f2e45;border-color:#2c3e5a}
+.sidebar .search-box input{color:#e8eef7}.sidebar .search-box span{color:#8fa0b8}
+.law-nav > button{border-radius:6px}
+.law-nav > button:hover{background:#1f2e45}
+.law-nav > button.active{background:#243651;box-shadow:inset 3px 0 0 #7fa6d8}
+.law-nav .law-copy strong{color:#eef3fa}.law-nav .law-copy small{color:#8fa0b8}.law-nav .chevron{color:#5f7392}
+.law-badge{border-radius:5px;background:#2c4468!important;color:#dbe6f5}
+.sidebar-progress{background:#1f2e45;border-radius:6px}
+.sidebar-progress > div:first-child{color:#d7dfeb}.sidebar-progress strong{color:#fff}
+.progress-track{background:#33465f}.progress-track span{background:#7fa6d8}
+.sidebar-progress small{color:#8fa0b8}
+
+/* Leitura */
+.law-text{color:var(--ink);line-height:1.85}
+.law-text button:hover{background:var(--accent-soft)}
+.question-type{background:var(--accent-soft);color:var(--green);border-radius:4px;font-weight:600}
+.feedback.correct{background:#e8f3ee;color:#1d5a3f;border:1px solid #bddccd}
+.feedback.wrong{background:#f8ebea;color:#8a2f2a;border:1px solid #e6c4c1}
+.delete-toast{background:#162235;border-radius:6px}
+.delete-toast button{color:#a9c4e8}
+.daily-row > b,.sidebar-progress strong{color:var(--green)}
+.sidebar-progress strong{color:#fff}
+
+/* Escuro: mantém sobriedade azul-acinzentada */
+[data-theme="dark"]{--ink:#e6ebf2;--muted:#9aa7b8;--green:#8fb4e3;--paper:#0f1520;--line:#27334a;
+  --surface:#161e2c;--surface-2:#1b2536;--accent-soft:#1f2f48;--accent-line:#3a5378}
+[data-theme="dark"] body,[data-theme="dark"] .filter-page,[data-theme="dark"] .compact-filter-page,[data-theme="dark"] .audit-page{background:var(--paper);color:var(--ink)}
+[data-theme="dark"] .filter-topbar,[data-theme="dark"] .topbar{background:var(--surface);border-color:var(--line)}
+[data-theme="dark"] .selection-card,[data-theme="dark"] .metric-grid article,[data-theme="dark"] .audit-panel,
+[data-theme="dark"] .law-card,[data-theme="dark"] .question-card,[data-theme="dark"] .notes-card,
+[data-theme="dark"] .exercise-card,[data-theme="dark"] .history-card,[data-theme="dark"] .scroll-question-card,
+[data-theme="dark"] .filter-panel,[data-theme="dark"] .filter-footer,[data-theme="dark"] .empty-status,
+[data-theme="dark"] .history-toggle{background:var(--surface);border-color:var(--line)}
+[data-theme="dark"] .legal-basis,[data-theme="dark"] .compact-start{background:var(--surface-2);border-color:var(--line)}
+[data-theme="dark"] .discipline-choice,[data-theme="dark"] .topic-choice-grid > button,[data-theme="dark"] .subtopic-chips button,
+[data-theme="dark"] .initial-status-options button,[data-theme="dark"] .preference-grid > div,[data-theme="dark"] .preference-grid button,
+[data-theme="dark"] .status-bar button,[data-theme="dark"] .answer-buttons button,[data-theme="dark"] .question-actions > button,
+[data-theme="dark"] .importance select,[data-theme="dark"] .notes-card textarea,[data-theme="dark"] .comment-box textarea,
+[data-theme="dark"] .header-action,[data-theme="dark"] .theme-toggle,[data-theme="dark"] .topbar-audit{background:var(--surface-2);border-color:var(--line);color:var(--ink)}
+[data-theme="dark"] .topic-choice-grid > button.selected,[data-theme="dark"] .subtopic-chips button.selected,
+[data-theme="dark"] .initial-status-options button.selected,[data-theme="dark"] .preference-grid button.selected,
+[data-theme="dark"] .status-bar button.active,[data-theme="dark"] .answer-buttons button.chosen,[data-theme="dark"] .metric-grid article.accent{background:var(--accent-soft);border-color:var(--green);color:var(--green)}
+[data-theme="dark"] .compact-start > button,[data-theme="dark"] .filter-footer > button,[data-theme="dark"] .audit-heading > button,[data-theme="dark"] .empty-status button{background:#3b6aa8;color:#fff}
+[data-theme="dark"] .sidebar{background:#0b111b}
+[data-theme="dark"] .main-statement,[data-theme="dark"] .law-text,[data-theme="dark"] .exercise-heading h2,
+[data-theme="dark"] .compact-filter-heading h1,[data-theme="dark"] .audit-heading h1{color:var(--ink)}
+[data-theme="dark"] .feedback.correct{background:#173026;color:#a9d7bf;border-color:#2c5a45}
+[data-theme="dark"] .feedback.wrong{background:#35201f;color:#efb8b3;border-color:#6a3a37}
+
+@media (max-width:560px){
+  .selection-section{padding:16px}
+  .topic-choice-grid{grid-template-columns:1fr}
+}
+</style>
+<style id="filtro-acordeao">
+/* ===== Filtro em acordeão ===== */
+.selection-section.acc{padding:0;border-bottom:1px solid var(--line);display:block}
+.selection-section.acc:last-of-type{border-bottom:0}
+.acc>.acc-head{display:flex;align-items:center;gap:12px;margin:0;padding:16px 20px;cursor:pointer;user-select:none}
+.acc>.acc-head:hover{background:var(--surface-2,#f8f9fb)}
+.acc>.acc-head>div{flex:1;min-width:0}
+.acc>.acc-head small{display:block;margin-top:2px;color:var(--green);font-weight:600;font-size:11.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.acc.open>.acc-head small{color:var(--muted);font-weight:500}
+.acc>.acc-head>button{flex:0 0 auto}
+.acc>.acc-head::after{content:"";flex:0 0 auto;width:8px;height:8px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:rotate(45deg);margin:0 4px 3px 6px;transition:transform .18s ease}
+.acc.open>.acc-head::after{transform:rotate(-135deg);margin-bottom:-3px}
+.acc:not(.open)>*:not(.acc-head){display:none}
+.acc.open>*:not(.acc-head){margin-left:20px;margin-right:20px}
+.acc.open{padding-bottom:20px}
+.acc.open>.acc-head{margin-left:0;margin-right:0}
+.selection-section.discipline-row.acc{display:block;grid-template-columns:none}
+.acc.open>.acc-head{border-bottom:0}
+.compact-start{position:sticky;bottom:0;z-index:5}
+@media (max-width:640px){
+  .acc>.acc-head{padding:14px 14px}
+  .acc.open>*:not(.acc-head){margin-left:14px;margin-right:14px}
+  .acc>.acc-head>button{padding:6px 8px;font-size:11px}
+  .discipline-choice-grid,.topic-choice-grid{grid-template-columns:1fr}
+  .compact-start{padding-bottom:calc(12px + env(safe-area-inset-bottom,0px))}
+}
+</style>
 <style id="central-native-return-style">
 .central-native-return{position:fixed;top:10px;left:10px;z-index:2147483647;font-family:Arial,sans-serif}
 .central-native-return a{display:inline-flex;align-items:center;gap:6px;padding:9px 12px;border-radius:10px;background:#111827;color:#fff;text-decoration:none;font-weight:800;font-size:13px;border:1px solid rgba(255,255,255,.18);box-shadow:0 4px 18px rgba(0,0,0,.18)}
@@ -687,8 +843,11 @@ function currentDiscipline(){return DISCIPLINES[saved.preferences.discipline]||D
 function disciplineTopics(){return TOPICS_BY_DISCIPLINE[currentDiscipline().id]||[]}
 let ui={
   screen:"filters",
-  selectedTopics:new Set(disciplineTopics().map(t=>t.id)),
-  selectedSubtopics:new Set(disciplineTopics().flatMap(t=>t.subtopics)),
+  selectedTopics:new Set(),
+  selectedSubtopics:new Set(),
+  discPicked:false,
+  statusPicked:false,
+  shuffleSeed:0,
   statusFilter:"all",
   articleIndex:0,
   choice:null,
@@ -716,8 +875,15 @@ function hasAttempts(id){return (saved.attempts[id]||[]).length>0}
 function lastAttempt(id){const a=saved.attempts[id]||[];return a.length?a[a.length-1]:null}
 function allActiveAll(){return DATA.filter(a=>!saved.deleted[a.id])}
 function allActive(){const d=currentDiscipline().id;return DATA.filter(a=>a.discipline===d&&!saved.deleted[a.id])}
+let _topicSubsCache=null;
+function topicSubs(topicId){
+  if(!_topicSubsCache){_topicSubsCache={};Object.values(TOPICS_BY_DISCIPLINE).forEach(list=>list.forEach(t=>{_topicSubsCache[t.id]=new Set(t.subtopics)}))}
+  return _topicSubsCache[topicId]||new Set();
+}
 function selectedActive(){
-  return allActive().filter(a=>ui.selectedTopics.has(a.topicId)&&ui.selectedSubtopics.has(a.subtopic))
+  // Questão entra se o bloco está marcado e o capítulo está marcado; capítulos que não existem
+  // como chip do bloco não podem ser desmarcados, então seguem o bloco.
+  return allActive().filter(a=>ui.selectedTopics.has(a.topicId)&&(ui.selectedSubtopics.has(a.subtopic)||!topicSubs(a.topicId).has(a.subtopic)))
 }
 function statusFiltered(list){
   if(ui.statusFilter==="answered") return list.filter(a=>hasAttempts(a.id));
@@ -725,8 +891,10 @@ function statusFiltered(list){
   if(ui.statusFilter==="unseen") return list.filter(a=>!hasAttempts(a.id));
   return list;
 }
+function shuffleKey(id){let h=(2166136261^ui.shuffleSeed)>>>0;for(let i=0;i<id.length;i++){h^=id.charCodeAt(i);h=Math.imul(h,16777619)}h^=h>>>13;h=Math.imul(h,1274126177);return (h^(h>>>16))>>>0}
 function visible(){
   const list=statusFiltered(selectedActive());
+  if(saved.preferences.order==="random"&&ui.shuffleSeed)list.sort((a,b)=>shuffleKey(String(a.id))-shuffleKey(String(b.id)));
   // No modo Foco, preserve a questão recém-respondida mesmo quando o filtro
   // (ex.: "nunca vista" ou "errei") deixaria de incluí-la após o registro.
   // Assim o feedback continua ligado à mesma questão até o usuário navegar.
@@ -782,9 +950,10 @@ function toggleAllSubtopics(){
   else available.forEach(x=>ui.selectedSubtopics.add(x));
   render()
 }
-function chooseStatus(v){ui.statusFilter=v;ui.articleIndex=0;ui.choice=null;render()}
+function chooseStatus(v){ui.statusPicked=true;ui.statusFilter=v;ui.articleIndex=0;ui.choice=null;render()}
 function startStudy(){
   if(!ui.selectedSubtopics.size||!visible().length)return;
+  ui.shuffleSeed=Math.floor(Math.random()*4294967295)+1;
   ui.articleIndex=0;ui.choice=null;ui.historyOpen=false;ui.commentOpen=false;
   ui.scrollChoices={};ui.scrollComments={};ui.scrollHistories={};ui.scrollLimit=40;
   setScreen("study")
@@ -843,37 +1012,44 @@ function topbar(audit=false){
     </div>
   </header>`
 }
+function toggleAcc(n){ui.accOpen=ui.accOpen===n?0:n;render()}
+(function(){const orig=chooseDiscipline;chooseDiscipline=function(id){orig(id);if(DISCIPLINES[id]){ui.selectedTopics=new Set();ui.selectedSubtopics=new Set();ui.discPicked=true;ui.statusPicked=false;ui.accOpen=2;render()}}})();
 function renderFilters(){
-  const topics=disciplineTopics(),d=currentDiscipline();
+  if(ui.accOpen===undefined)ui.accOpen=ui.discPicked?2:1;
+  const topics=ui.discPicked?disciplineTopics():[],d=currentDiscipline();
   const available=topics.filter(t=>ui.selectedTopics.has(t.id)).flatMap(t=>t.subtopics);
   const counts=statusCounts();
   const status=[["all","Todas"],["unseen","Não vistas"],["wrong","Errei"],["answered","Respondidas"]];
+  const sumry={1:ui.discPicked?esc(d.name):"Nenhuma selecionada",2:topics.length?(ui.selectedTopics.size?`${ui.selectedTopics.size} de ${topics.length} blocos`:"Nenhum selecionado"):"Escolha a disciplina primeiro",3:ui.selectedSubtopics.size?`${ui.selectedSubtopics.size} selecionados`:"Nenhum selecionado",4:ui.statusPicked?`${(status.find(x=>x[0]===ui.statusFilter)||status[0])[1]} · ${counts[ui.statusFilter]} questões`:"Todas (padrão)",5:`${saved.preferences.studyMode==="focus"?"Foco":"Scroll"} · ${saved.preferences.order==="random"?"Aleatória":"Sequencial"}`};
+  const ac=n=>`acc ${ui.accOpen===n?"open":""}`;
+  const head=(n,t)=>`<div class="selection-label acc-head" role="button" tabindex="0" aria-expanded="${ui.accOpen===n}" onclick="toggleAcc(${n})" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleAcc(${n})}"><span>${n}</span><div><strong>${t}</strong><small>${sumry[n]}</small></div>`;
   return `<main class="filter-page compact-filter-page">${topbar(false)}
     <section class="compact-filter-content">
       <div class="compact-filter-heading"><span>NOVO BLOCO</span><h1>O que você quer estudar?</h1><p>Escolha a lei, o título/capítulo e comece.</p></div>
-      ${d.supplementNotice?`<aside class="decorando-supplement-notice"><strong>Complementação necessária</strong><p>${esc(d.supplementNotice)}</p></aside>`:""}
+      ${ui.discPicked&&d.supplementNotice?`<aside class="decorando-supplement-notice"><strong>Complementação necessária</strong><p>${esc(d.supplementNotice)}</p></aside>`:""}
       <section class="selection-card">
-        <div class="selection-section discipline-row">
-          <div class="selection-label"><span>1</span><div><strong>Disciplina</strong><small>Escolha a matéria</small></div></div>
-          <div class="discipline-choice-grid">${Object.values(DISCIPLINES).map(x=>`<button onclick="chooseDiscipline('${x.id}')" class="discipline-choice ${d.id===x.id?'selected':''}"><span class="law-badge" style="background:${x.color}">${x.badge}</span><div><strong>${esc(x.name)}</strong><small>${esc(x.subtitle)}</small></div><b>${d.id===x.id?'✓':''}</b></button>`).join('')}</div>
+        <div class="selection-section discipline-row ${ac(1)}">
+          ${head(1,"Disciplina")}</div>
+          <div class="discipline-choice-grid">${Object.values(DISCIPLINES).map(x=>`<button onclick="chooseDiscipline('${x.id}')" class="discipline-choice ${ui.discPicked&&d.id===x.id?'selected':''}"><span class="law-badge" style="background:${x.color}">${x.badge}</span><div><strong>${esc(x.name)}</strong><small>${esc(x.subtitle)}</small></div><b>${ui.discPicked&&d.id===x.id?'✓':''}</b></button>`).join('')}</div>
         </div>
-        <div class="selection-section"><div class="selection-label"><span>2</span><div><strong>Títulos / blocos</strong><small>Organizados pela estrutura da lei</small></div><button onclick="selectAllTopics()">${ui.selectedTopics.size===topics.length?"Limpar":"Selecionar todos"}</button></div>
-          <div class="topic-choice-grid">${topics.map(t=>{const n=DATA.filter(a=>a.discipline===d.id&&a.topicId===t.id&&!saved.deleted[a.id]).length;return `<button onclick="toggleTopic('${t.id}')" class="${ui.selectedTopics.has(t.id)?"selected":""} ${n===0?"coverage-gap":""}"><span>${ui.selectedTopics.has(t.id)?"✓":""}</span><div><strong>${esc(t.label)}</strong><small>${esc(t.range)} · ${d.badge} · ${n} ${n===1?"questão":"questões"}${n===0?" · complementar na plataforma":""}</small></div></button>`}).join("")}</div>
+        <div class="selection-section ${ac(2)}">${head(2,"Títulos / blocos")}${topics.length?`<button onclick="event.stopPropagation();selectAllTopics()">${ui.selectedTopics.size===topics.length?"Limpar":"Selecionar todos"}</button>`:""}</div>
+          ${topics.length?`<div class="topic-choice-grid">${topics.map(t=>{const n=DATA.filter(a=>a.discipline===d.id&&a.topicId===t.id&&!saved.deleted[a.id]).length;return `<button onclick="toggleTopic('${t.id}')" class="${ui.selectedTopics.has(t.id)?"selected":""} ${n===0?"coverage-gap":""}"><span>${ui.selectedTopics.has(t.id)?"✓":""}</span><div><strong>${esc(t.label)}</strong><small>${esc(t.range)} · ${d.badge} · ${n} ${n===1?"questão":"questões"}${n===0?" · complementar na plataforma":""}</small></div></button>`}).join("")}</div>`:`<div class="compact-empty">Escolha uma disciplina acima para ver os títulos.</div>`}</div>
         </div>
-        <div class="selection-section"><div class="selection-label"><span>3</span><div><strong>Capítulos / seções</strong><small>Refine apenas se quiser</small></div>${available.length?`<button onclick="toggleAllSubtopics()">${available.every(x=>ui.selectedSubtopics.has(x))?"Limpar":"Selecionar todos"}</button>`:""}</div>
+        <div class="selection-section ${ac(3)}">${head(3,"Capítulos / seções")}${available.length?`<button onclick="event.stopPropagation();toggleAllSubtopics()">${available.every(x=>ui.selectedSubtopics.has(x))?"Limpar":"Selecionar todos"}</button>`:""}</div>
           ${available.length?`<div class="subtopic-chips">${available.map(x=>`<button onclick="toggleSubtopic('${esc(x).replace(/'/g,"&#39;")}')" class="${ui.selectedSubtopics.has(x)?"selected":""}"><span>${ui.selectedSubtopics.has(x)?"✓":"+"}</span>${esc(x)}</button>`).join("")}</div>`:`<div class="compact-empty">Selecione um título acima para ver os capítulos.</div>`}
         </div>
-        <div class="selection-section"><div class="selection-label"><span>4</span><div><strong>Quais questões?</strong><small>Filtre antes de começar</small></div></div>
-          <div class="initial-status-options">${status.map(([v,l])=>`<button class="${ui.statusFilter===v?"selected":""}" onclick="chooseStatus('${v}')"><span>${l}</span><b>${counts[v]}</b></button>`).join("")}</div>
+        <div class="selection-section ${ac(4)}">${head(4,"Quais questões?")}</div>
+          <div class="initial-status-options">${status.map(([v,l])=>`<button class="${ui.statusPicked&&ui.statusFilter===v?"selected":""}" onclick="chooseStatus('${v}')"><span>${l}</span><b>${counts[v]}</b></button>`).join("")}</div>
         </div>
-        <div class="selection-section"><div class="selection-label"><span>5</span><div><strong>Como estudar?</strong><small>Preferências para tablet e celular</small></div></div>
+        <div class="selection-section ${ac(5)}">${head(5,"Como estudar?")}</div>
           <div class="preference-grid">
             <div><span>Exibição</span><div><button class="${saved.preferences.studyMode==="focus"?"selected":""}" onclick="setPref('studyMode','focus')">▣ Foco</button><button class="${saved.preferences.studyMode==="scroll"?"selected":""}" onclick="setPref('studyMode','scroll')">☷ Scroll</button></div></div>
+            <div><span>Ordem das questões</span><div><button class="${saved.preferences.order!=="random"?"selected":""}" onclick="setPref('order','sequential')">≡ Sequencial</button><button class="${saved.preferences.order==="random"?"selected":""}" onclick="setPref('order','random')">⤮ Aleatória</button></div></div>
             <div><span>Ordem dos botões</span><div><button class="${saved.preferences.answerOrder==="correct-left"?"selected":""}" onclick="setPref('answerOrder','correct-left')">Certo à esquerda</button><button class="${saved.preferences.answerOrder==="wrong-left"?"selected":""}" onclick="setPref('answerOrder','wrong-left')">Errado à esquerda</button></div></div>
             <div><span>Aparência</span><div><button class="${saved.preferences.theme==="light"?"selected":""}" onclick="setPref('theme','light')">☀ Claro</button><button class="${saved.preferences.theme==="dark"?"selected":""}" onclick="setPref('theme','dark')">☾ Noturno</button></div></div>
           </div>
         </div>
-        <div class="compact-start"><div><strong>${ui.selectedSubtopics.size}</strong><span> capítulos/seções selecionados</span><small>${counts[ui.statusFilter]} questões neste filtro · modo ${saved.preferences.studyMode==="focus"?"Foco":"Scroll"}</small></div><button ${!ui.selectedSubtopics.size||!counts[ui.statusFilter]?"disabled":""} onclick="startStudy()">Iniciar questões →</button></div>
+        <div class="compact-start"><div><strong>${ui.selectedSubtopics.size}</strong><span> capítulos/seções selecionados</span><small>${counts[ui.statusFilter]} questões neste filtro · modo ${saved.preferences.studyMode==="focus"?"Foco":"Scroll"} · ${saved.preferences.order==="random"?"aleatória":"sequencial"}</small></div><button ${!ui.selectedSubtopics.size||!counts[ui.statusFilter]?"disabled":""} onclick="startStudy()">Iniciar questões →</button></div>
       </section>
     </section>
   </main>`
@@ -1022,7 +1198,7 @@ function centralOpenTopic(topicId,direct){
   const target=topics.find(topic=>topic.id===topicId)||null;
   ui.selectedTopics=new Set(target?[target.id]:topics.map(topic=>topic.id));
   ui.selectedSubtopics=new Set(target?target.subtopics:topics.flatMap(topic=>topic.subtopics));
-  ui.statusFilter="all";ui.articleIndex=0;ui.choice=null;ui.historyOpen=false;ui.commentOpen=false;ui.menuOpen=false;
+  ui.statusFilter="all";ui.articleIndex=0;ui.choice=null;ui.historyOpen=false;ui.commentOpen=false;ui.menuOpen=false;ui.discPicked=true;ui.statusPicked=true;
   ui.scrollChoices={};ui.scrollComments={};ui.scrollHistories={};ui.scrollLimit=40;
   ui.screen=direct&&target?"study":"filters";
   render();window.scrollTo(0,0);
