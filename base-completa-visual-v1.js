@@ -99,9 +99,55 @@
     });
   };
 
+
+  const ensureCpcMapStyles=()=>{
+    if(document.getElementById('bc-cpc-map-style'))return;
+    const style=document.createElement('style');style.id='bc-cpc-map-style';
+    style.textContent=`
+      .bc-cpc-map-card{margin:14px 0 4px;border:1px solid rgba(56,189,248,.32);border-radius:16px;overflow:hidden;background:linear-gradient(145deg,rgba(56,189,248,.10),rgba(124,92,255,.08));cursor:pointer;box-shadow:0 12px 28px rgba(0,0,0,.13)}
+      .bc-cpc-map-card:hover{border-color:rgba(56,189,248,.60);transform:translateY(-1px)}
+      .bc-cpc-map-preview{height:330px;background:#eef4fb;overflow:hidden;border-bottom:1px solid rgba(56,189,248,.22);position:relative}
+      .bc-cpc-map-preview iframe{width:100%;height:100%;border:0;display:block;pointer-events:none;background:#eef4fb}
+      .bc-cpc-map-copy{padding:14px 16px 16px;display:flex;align-items:center;gap:14px}
+      .bc-cpc-map-copy>div{min-width:0;flex:1}.bc-cpc-map-copy small{display:block;color:var(--muted);font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px}
+      .bc-cpc-map-copy b{display:block;color:var(--text);font-size:15px}.bc-cpc-map-copy p{margin:4px 0 0;color:var(--muted);font-size:11.5px;line-height:1.45}
+      .bc-cpc-map-open{flex:0 0 auto;border:1px solid rgba(56,189,248,.45);background:#103453;color:#dff5ff;border-radius:10px;padding:9px 12px;font-size:11px;font-weight:850}
+      .bc-cpc-map-overlay{position:fixed;inset:0;z-index:2147483600;background:#07111f;display:flex;flex-direction:column}
+      .bc-cpc-map-overlay-head{height:58px;flex:0 0 58px;display:flex;align-items:center;gap:12px;padding:8px 12px;border-bottom:1px solid #26364f;background:#0a1423;color:#f1f5fb}
+      .bc-cpc-map-overlay-head b{font-size:13px}.bc-cpc-map-overlay-head span{font-size:10.5px;color:#92a6c2;display:block;margin-top:2px}
+      .bc-cpc-map-close{margin-left:auto;border:1px solid #334760;background:#111d2f;color:#fff;border-radius:10px;padding:9px 12px;font-weight:850}
+      .bc-cpc-map-frame{width:100%;flex:1;min-height:0;border:0;background:#f5f7fb}
+      @media(max-width:680px){.bc-cpc-map-preview{height:390px}.bc-cpc-map-copy{align-items:flex-start;flex-direction:column}.bc-cpc-map-open{width:100%}.bc-cpc-map-overlay-head{height:54px;flex-basis:54px}}
+    `;
+    document.head.appendChild(style);
+  };
+  window.baseCompletaCloseCpcMap=()=>{
+    const overlay=document.getElementById('bcCpcMapOverlay');if(overlay)overlay.remove();
+    document.documentElement.style.overflow='';document.body.style.overflow='';
+    return false;
+  };
+  window.baseCompletaOpenCpcMap=()=>{
+    ensureCpcMapStyles();
+    if(document.getElementById('bcCpcMapOverlay'))return false;
+    const overlay=document.createElement('div');overlay.id='bcCpcMapOverlay';overlay.className='bc-cpc-map-overlay';
+    overlay.innerHTML='<div class="bc-cpc-map-overlay-head"><div><b>CPC M01 — Mapa Mental</b><span>Carrossel de fixação e revisão rápida</span></div><button type="button" class="bc-cpc-map-close" onclick="return baseCompletaCloseCpcMap()">← Voltar à Central</button></div><iframe class="bc-cpc-map-frame" src="tools/cpc-m01-mapa.html" title="Mapa mental CPC M01"></iframe>';
+    document.body.appendChild(overlay);document.documentElement.style.overflow='hidden';document.body.style.overflow='hidden';
+    return false;
+  };
+  const renderCpcMapCard=()=>{
+    ensureCpcMapStyles();
+    const section=document.querySelector('.subject[data-id="cpc"]');if(!section)return;
+    const body=section.querySelector('.subject-body');if(!body||body.querySelector(':scope > .bc-cpc-map-card'))return;
+    const card=document.createElement('section');card.className='bc-cpc-map-card';card.setAttribute('role','button');card.tabIndex=0;
+    card.innerHTML='<div class="bc-cpc-map-preview"><iframe src="tools/cpc-m01-mapa.html?preview=1" tabindex="-1" aria-hidden="true"></iframe></div><div class="bc-cpc-map-copy"><div><small>MAPA MENTAL · M01</small><b>Normas fundamentais, fontes, aplicação e direito intertemporal</b><p>Abra o carrossel e revise cada bloco individualmente. No final, veja o mapa completo.</p></div><button type="button" class="bc-cpc-map-open">Abrir carrossel →</button></div>';
+    card.addEventListener('click',()=>window.baseCompletaOpenCpcMap());
+    card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();window.baseCompletaOpenCpcMap()}});
+    const kit=body.querySelector(':scope > .bc-discipline-kit');if(kit)kit.insertAdjacentElement('afterend',card);else body.insertAdjacentElement('afterbegin',card);
+  };
+
   let queued=false;
   const refresh=()=>{
-    queued=false;applyBrand();applyLabels(document);standardizeFrames();renderDisciplineKits();
+    queued=false;applyBrand();applyLabels(document);standardizeFrames();renderDisciplineKits();renderCpcMapCard();
   };
   const schedule=()=>{if(!queued){queued=true;requestAnimationFrame(refresh)}};
   const init=()=>{
