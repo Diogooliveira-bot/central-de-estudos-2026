@@ -77,6 +77,7 @@ function render(){
  document.getElementById('label').textContent=idx<DATA.length?(DATA[idx].n+' — '+DATA[idx].t):'Mapa completo — CPC M01';
  document.getElementById('bar').style.width=((idx+1)/(DATA.length+1)*100)+'%';
  [...document.querySelectorAll('.dot')].forEach((d,i)=>d.classList.toggle('on',i===idx));
+ if(!preview&&idx===DATA.length){try{parent.postMessage({type:'cpc-map-complete',module:'w1'},location.origin)}catch(_){}}
  if(preview&&idx!==0){idx=0;render()}
 }
 function move(n){idx=(idx+n+DATA.length+1)%(DATA.length+1);render()}
