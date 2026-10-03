@@ -131,36 +131,32 @@ function quizDone(id,track){
   const list=internalQuestions(id,track);return list.length>0&&answeredCount(id,track,list)===list.length;
 }
 
+function nativeChapterCount(mode){
+ const ids=mode==='summary'?['s1','s2','s3','s4','s5']:['c1','c2','c3','c4','c5','c6','c7','c8','c9','c10','c11','c12'];
+ const prefix='central-v6:native-reader:cpc:cpc1:chapter:'+mode+':';
+ return {done:ids.filter(id=>localStorage.getItem(prefix+id)==='1').length,total:ids.length};
+}
 function progress(id){
-  id=studyId(id);
-  if(id!=='w1')return 0;
-  const m=moduleState(id),sq=internalQuestions(id,'summary'),fq=internalQuestions(id,'full');
-  const total=1+M01.summaryParts.length+sq.length+M01.fullParts.length+fq.length+1;
-  let done=0;
-  if(m.map)done++;
-  done+=M01.summaryParts.filter((_,i)=>m.summaryReads?.[i]).length;
-  done+=answeredCount(id,'summary',sq);
-  done+=M01.fullParts.filter((_,i)=>m.fullReads?.[i]).length;
-  done+=answeredCount(id,'full',fq);
-  if(m.decorando)done++;
-  return total?Math.round(done/total*100):0;
+ id=studyId(id);
+ if(id!=='w1')return 0;
+ const m=moduleState(id),sq=internalQuestions(id,'summary'),fq=internalQuestions(id,'full');
+ const sr=nativeChapterCount('summary'),fr=nativeChapterCount('complete');
+ const total=1+sr.total+sq.length+fr.total+fq.length+1;
+ let done=(m.map?1:0)+sr.done+answeredCount(id,'summary',sq)+fr.done+answeredCount(id,'full',fq)+(m.decorando?1:0);
+ return total?Math.round(done/total*100):0;
 }
 function progressDetail(id){
-  id=studyId(id);
-  const m=moduleState(id),sq=internalQuestions(id,'summary'),fq=internalQuestions(id,'full');
-  return {
-    pct:progress(id),
-    map:m.map?1:0,
-    summaryRead:M01.summaryParts.filter((_,i)=>m.summaryReads?.[i]).length,
-    summaryTotal:M01.summaryParts.length,
-    summaryQuiz:answeredCount(id,'summary',sq),
-    summaryQuizTotal:sq.length,
-    fullRead:M01.fullParts.filter((_,i)=>m.fullReads?.[i]).length,
-    fullTotal:M01.fullParts.length,
-    fullQuiz:answeredCount(id,'full',fq),
-    fullQuizTotal:fq.length,
-    decorando:m.decorando?1:0
-  };
+ id=studyId(id);
+ const m=moduleState(id),sq=internalQuestions(id,'summary'),fq=internalQuestions(id,'full');
+ const sr=nativeChapterCount('summary'),fr=nativeChapterCount('complete');
+ return {
+   pct:progress(id),map:m.map?1:0,
+   summaryRead:sr.done,summaryTotal:sr.total,
+   summaryQuiz:answeredCount(id,'summary',sq),summaryQuizTotal:sq.length,
+   fullRead:fr.done,fullTotal:fr.total,
+   fullQuiz:answeredCount(id,'full',fq),fullQuizTotal:fq.length,
+   decorando:m.decorando?1:0
+ };
 }
 
 function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
@@ -217,51 +213,34 @@ function m01Html(w){
  return `<section class="cf-module ${open?'open':''}" data-cf="${w.id}">
   <button class="cf-module-head" onclick="toggleCpcModule('${w.id}')">
    <span class="cf-module-no">MÓDULO ${w.num}</span><span class="cf-module-title">${esc(w.title)}</span>
-   <span class="cf-module-stat">${d.pct}% cobertura · externas ${ext.done?acc+'%':'—'}</span><span class="chev">⌄</span>
+   <span class="cf-module-stat">Cobertura ${d.pct}% · externas ${ext.done?acc+'%':'—'}</span><span class="chev">⌄</span>
   </button>
   <div class="cf-module-body">
    <div class="cf-module-bar"><span style="width:${d.pct}%"></span></div>
-   <div class="cpc-study-intro"><div><h3>Cobertura da teoria</h3><p>Mapa mental + leitura resumida + 5 questões + leitura completa + 10 questões + Decorando. Acertos externos ficam fora desta porcentagem.</p></div><div class="cpc-study-pct">${d.pct}%</div></div>
-   <div class="cpc-progress-row">
-    <div class="cpc-progress-chip"><b>${d.map}/1</b><small>Mapa mental</small></div>
-    <div class="cpc-progress-chip"><b>${d.summaryRead}/${d.summaryTotal}</b><small>Leitura resumida</small></div>
-    <div class="cpc-progress-chip"><b>${d.summaryQuiz}/${d.summaryQuizTotal}</b><small>Fixação resumida</small></div>
-    <div class="cpc-progress-chip"><b>${d.fullRead}/${d.fullTotal}</b><small>Leitura completa</small></div>
-    <div class="cpc-progress-chip"><b>${d.fullQuiz}/${d.fullQuizTotal}</b><small>Fixação completa</small></div>
-   </div>
 
-   <div class="cpc-study-grid">
-    <article class="cpc-study-card map">
-     <div class="cpc-study-cover"><iframe src="${M01.mapUrl}?preview=1" title="Prévia mapa mental M01"></iframe></div>
-     <div class="cpc-study-card-body"><small>MAPA MENTAL RESUMIDO</small><h4>Carrossel de fixação</h4><p>Abra os cards individualmente e finalize com a visão completa.</p>
-      <div class="cpc-study-actions"><button class="cf-btn primary" onclick="baseCompletaOpenCpcMap()">🧠 Abrir carrossel</button><button class="cf-btn ${m.map?'good':''}" onclick="cpcStudySetModule('w1',{map:${!m.map}})">${m.map?'✓ Concluído':'Marcar concluído'}</button></div>
-     </div>
-    </article>
+   <section class="bc-native-metrics" aria-label="Indicadores do módulo">
+    <article class="bc-native-metric-card"><div class="bc-native-ring" style="--pct:${d.pct}"><div class="bc-native-ring-inner"><b>${d.pct}%</b><span>teoria</span></div></div><div class="bc-native-metric-copy"><small>COBERTURA DA TEORIA</small><strong>${d.summaryRead+d.summaryQuiz+d.fullRead+d.fullQuiz+d.map+d.decorando} pontos concluídos</strong><span>Leitura + questões internas + mapa + Decorando.</span></div></article>
+    <article class="bc-native-metric-card"><div class="bc-native-ring" style="--pct:${ext.done?acc:0}"><div class="bc-native-ring-inner"><b>${ext.done?acc+'%':'—'}</b><span>externas</span></div></div><div class="bc-native-metric-copy"><small>ACERTO EM QUESTÕES EXTERNAS</small><strong>${ext.done?ext.correct+' acertos em '+ext.done:'Nenhuma questão externa registrada'}</strong><span>Este indicador não altera a cobertura da teoria.</span></div></article>
+   </section>
 
-    <article class="cpc-study-card summary">
-     <div class="cpc-study-cover">⚡</div>
-     <div class="cpc-study-card-body"><small>CONTEÚDO RESUMIDO</small><h4>Primeira leitura + revisão</h4><p>PDF curto com visão geral, teoria, artigos, pegadinhas e revisão ativa.</p>
-      <div class="cpc-study-actions"><button class="cf-btn primary" onclick="cpcStudyOpenUrl('${M01.summaryUrl}')">Abrir PDF</button><button class="cf-btn ${sq.done?'good':''}" onclick="cpcStudyOpenQuiz('w1','summary')">5 questões · ${sq.label}</button></div>
-      ${checklist('w1','summary',M01.summaryParts,m.summaryReads)}
-     </div>
-    </article>
+   <section class="bc-native-materials bc-native-materials-static">
+    <div class="bc-native-materials-head"><div><b>Materiais do módulo</b><small>Escolha como estudar e volte sempre ao M01.</small></div><small>CPC M01 • conteúdo nativo</small></div>
+    <div class="bc-native-material-grid">
+      <button type="button" class="bc-native-material-card" onclick="CpcNativeReader.open('summary')"><span class="bc-native-material-icon">⚡</span><span><strong>Conteúdo resumido</strong><small>Leitura incorporada ao site, 5 capítulos, retomada automática e busca.</small></span><span class="bc-native-material-action"><span>${d.summaryRead}/${d.summaryTotal} capítulos</span><span>→</span></span></button>
+      <button type="button" class="bc-native-material-card" onclick="CpcNativeReader.open('complete')"><span class="bc-native-material-icon">📚</span><span><strong>Conteúdo completo</strong><small>Teoria integral convertida do PDF para página de estudo nativa.</small></span><span class="bc-native-material-action"><span>${d.fullRead}/${d.fullTotal} capítulos</span><span>→</span></span></button>
+      <button type="button" class="bc-native-material-card" onclick="baseCompletaOpenCpcMap()"><span class="bc-native-material-icon">🧠</span><span><strong>Mapa mental</strong><small>Carrossel de revisão rápida. Use como complemento, não como tela principal de estudo.</small></span><span class="bc-native-material-action"><span>${m.map?'✓ Concluído':'Abrir carrossel'}</span><span>→</span></span></button>
+    </div>
+   </section>
 
-    <article class="cpc-study-card full">
-     <div class="cpc-study-cover">📚</div>
-     <div class="cpc-study-card-body"><small>CONTEÚDO COMPLETO</small><h4>Apostila integral auditada</h4><p>Leitura aprofundada organizada em blocos para controlar a porcentagem sem perder o ponto de parada.</p>
-      <div class="cpc-study-actions"><button class="cf-btn primary" onclick="cpcStudyOpenUrl('${M01.fullUrl}')">Abrir PDF</button><button class="cf-btn ${fq.done?'good':''}" onclick="cpcStudyOpenQuiz('w1','full')">10 questões · ${fq.label}</button></div>
-      ${checklist('w1','full',M01.fullParts,m.fullReads)}
-     </div>
-    </article>
-   </div>
+   <section class="cpc-study-intro" style="margin-top:12px"><div><h3>Fixação interna</h3><p>As questões ficam separadas da leitura para não quebrar seu fluxo de estudo.</p></div><div class="cpc-study-actions"><button class="cf-btn ${sq.done?'good':''}" onclick="cpcStudyOpenQuiz('w1','summary')">5 do resumido · ${sq.n}/${sq.list.length}</button><button class="cf-btn ${fq.done?'good':''}" onclick="cpcStudyOpenQuiz('w1','full')">10 do completo · ${fq.n}/${fq.list.length}</button></div></section>
 
    <div class="cpc-bottom-grid">
-    <section class="cpc-mini-panel"><h4>⚖️ Decorando a Lei</h4><p>Treino da legislação do módulo. Esta etapa entra na cobertura da teoria.</p><div class="cpc-study-actions" style="margin-top:9px"><button class="cf-btn primary" onclick="openLeiSecaEnxuta(null,'cpc','cpc-m01')">Abrir Decorando</button><button class="cf-btn ${m.decorando?'good':''}" onclick="cpcStudySetModule('w1',{decorando:${!m.decorando}})">${m.decorando?'✓ Concluído':'Marcar concluído'}</button></div></section>
-    <section class="cpc-mini-panel"><h4>🎯 Questões externas</h4><p>Contador de desempenho separado. Não altera a cobertura da teoria.</p><div class="cpc-external-form"><label>Feitas<input id="cpc-ext-done-w1" type="number" min="0" value="${ext.done}"></label><label>Acertos<input id="cpc-ext-correct-w1" type="number" min="0" value="${ext.correct}"></label><button class="cf-btn" onclick="cpcStudySaveExternal('w1')">Salvar</button></div><div class="cpc-ext-score"><b>${ext.done?acc+'%':'—'}</b> · ${ext.correct} acertos · ${Math.max(0,ext.done-ext.correct)} erros</div></section>
+    <section class="cpc-mini-panel"><h4>⚖️ Decorando a Lei</h4><p>Artigos do módulo. Entra na cobertura quando você concluir.</p><div class="cpc-study-actions" style="margin-top:9px"><button class="cf-btn primary" onclick="openLeiSecaEnxuta(null,'cpc','cpc-m01')">Abrir Decorando</button><button class="cf-btn ${m.decorando?'good':''}" onclick="cpcStudySetModule('w1',{decorando:${!m.decorando}})">${m.decorando?'✓ Concluído':'Marcar concluído'}</button></div></section>
+    <section class="cpc-mini-panel"><h4>🎯 Questões externas</h4><p>Registro separado da cobertura da teoria.</p><div class="cpc-external-form"><label>Feitas<input id="cpc-ext-done-w1" type="number" min="0" value="${ext.done}"></label><label>Acertos<input id="cpc-ext-correct-w1" type="number" min="0" value="${ext.correct}"></label><button class="cf-btn" onclick="cpcStudySaveExternal('w1')">Salvar</button></div><div class="cpc-ext-score"><b>${ext.done?acc+'%':'—'}</b> · ${ext.correct} acertos · ${Math.max(0,ext.done-ext.correct)} erros</div></section>
    </div>
 
-   <details class="cf-resources"><summary class="muted small" style="cursor:pointer">Recursos e anotações</summary><div class="cf-resource-grid" style="margin-top:8px">
-    <div class="cf-resource-box"><h4>Cadernos TEC</h4><button class="cf-btn" onclick="centralSidebarAction('tec-cadernos',this)">Abrir meus cadernos</button></div>
+   <details class="cf-resources"><summary class="muted small" style="cursor:pointer">Ferramentas e anotações</summary><div class="cf-resource-grid" style="margin-top:8px">
+    <div class="cf-resource-box"><h4>Cadernos TEC</h4><button class="cf-btn" onclick="centralSidebarAction('tec-cadernos',this)">Abrir cadernos</button></div>
     <div class="cf-resource-box"><h4>Vade Mecum</h4><button class="cf-btn" onclick="openEmbeddedTool('vade',{},this)">Abrir Vade Mecum</button></div>
     <div class="cf-resource-box" style="grid-column:1/-1"><h4>Anotações do módulo</h4><textarea class="cf-notes" id="cf-note-${w.id}" placeholder="Regra, artigo, pegadinha ou dúvida...">${esc(localStorage.getItem(localNoteKey(w.id))||'')}</textarea><div class="cf-actions"><button class="cf-btn" onclick="saveCpcNote('${w.id}')">Salvar anotação</button></div></div>
    </div></details>
@@ -366,7 +345,7 @@ global.cpcStudyCloseQuiz=closeQuiz;
 global.cpcStudySelectQuiz=selectQuiz;
 global.cpcStudySubmitQuiz=submitQuiz;
 global.cpcStudyMoveQuiz=moveQuiz;
-global.CpcStudyV1=Object.assign(global.CpcStudyV1||{},{progress,progressDetail,state:load,renderMaster:studyRenderMaster,version:'2026-10-03-staging-m01-v4'});
+global.CpcStudyV1=Object.assign(global.CpcStudyV1||{},{progress,progressDetail,state:load,renderMaster:studyRenderMaster,refresh:()=>{try{renderAll()}catch(_){try{renderSubjects()}catch(__){}}},version:'2026-10-03-native-m01-v5'});
 
 global.addEventListener('message',e=>{
   try{
