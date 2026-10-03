@@ -13,16 +13,16 @@
 <body><main><div class="spinner" aria-hidden="true"></div><p id="status">Abrindo a BASE COMPLETA…</p><button id="retry" type="button">Tentar novamente</button></main>
 <script>
 (async function(){
- var BUILD='20261003-cpc-study-v2';
+ var BUILD='20261003-cpc-study-v3';
  var entryUrl=new URL(location.href);
  if('serviceWorker' in navigator){
   try{
    var reg=await navigator.serviceWorker.getRegistration();
    if(reg)reg.update().catch(function(){});
-   if(!sessionStorage.getItem('central:pwa-reload:cpcstudy2')){
+   if(!sessionStorage.getItem('central:pwa-reload:cpcstudy3')){
     navigator.serviceWorker.addEventListener('controllerchange',function(){
-     if(sessionStorage.getItem('central:pwa-reload:cpcstudy2'))return;
-     sessionStorage.setItem('central:pwa-reload:cpcstudy2','1');
+     if(sessionStorage.getItem('central:pwa-reload:cpcstudy3'))return;
+     sessionStorage.setItem('central:pwa-reload:cpcstudy3','1');
      location.reload();
     },{once:true});
    }
@@ -34,7 +34,7 @@
  function tag(src){return '<scr'+'ipt defer src="/'+src+'"></scr'+'ipt>';}
  try{
   var response=await fetch('/index.html?central_source='+BUILD,{cache:'no-store'});if(!response.ok)throw new Error('Falha HTTP '+response.status);var html=await response.text();
-  html=html.replace('v6.6.75 • Plano de 6 meses','v6.6.119 • Plano de 6 meses');html=html.replace(/\/central-structural-v66119\/runtime\.js\?v=[^\"'<>]+/g,'/central-structural-v66119/runtime.js?v=20261003cpcstudy2');html=html.replace('<span class="central-version-v41">v6.6.74</span>','<span class="central-version-v41">v6.6.119</span>');html=html.replace(/<link\b[^>]*\bhref=["'][^"']*base-completa-visual-v1\.css[^"']*["'][^>]*>/gi,'');
+  html=html.replace('v6.6.75 • Plano de 6 meses','v6.6.119 • Plano de 6 meses');html=html.replace(/\/central-structural-v66119\/runtime\.js\?v=[^\"'<>]+/g,'/central-structural-v66119/runtime.js?v=20261003cpcstudy3');html=html.replace('<span class="central-version-v41">v6.6.74</span>','<span class="central-version-v41">v6.6.119</span>');html=html.replace(/<link\b[^>]*\bhref=["'][^"']*base-completa-visual-v1\.css[^"']*["'][^>]*>/gi,'');
   html=html.replace(/<link\b[^>]*\bhref=["'][^"']*central-minimal(?:-theme)?-v\d+\.css[^"']*["'][^>]*>/gi,'');html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*central-minimal(?:-ui)?-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*(?:central-updater|central-version)-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*central-progress-entry-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*sync-client\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*civil-decorando-index-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*central-civil-progress-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*civil-theory(?:-company)?(?:-module\d+(?:-posse)?-(?:part\d+|runtime)|-module\d+|)-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*civil-theory-audit-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');
   html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*penal-full-theory-(?:data-\d+|ui-v1)\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');
   var tags=scripts.map(tag).join('');
