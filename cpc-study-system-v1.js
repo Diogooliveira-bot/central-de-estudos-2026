@@ -87,10 +87,14 @@ function complexity(q){
   if(/jurisprud|STJ|STF|tema|súmula|precedente/i.test(prompt+' '+(q.subject||'')))s+=75;
   return s;
 }
-function cpcWeeks(){try{return typeof CPC_WEEKS!=='undefined'?CPC_WEEKS:(global.CPC_WEEKS||[])}catch(_){return global.CPC_WEEKS||[]}}
-function cpcPoolSafe(w){try{return typeof cpcPool==='function'?cpcPool(w):(typeof global.cpcPool==='function'?global.cpcPool(w):[])}catch(_){return []}}
+function cpcWeeks(){return Array.isArray(global.__CPC_WEEKS)?global.__CPC_WEEKS:[]}
+function cpcPoolSafe(w){try{return typeof global.__cpcPool==='function'?global.__cpcPool(w):[]}catch(_){return []}}
+function legacyId(id){return id==='w1'?'cpc1':id}
+function studyId(id){return id==='cpc1'?'w1':id}
+function localOpenKey(id){return 'central-v6:cpc-open:'+id}
+function localNoteKey(id){return 'central-v6:cpc-note:'+id}
 function bucketed(id){
-  const w=cpcWeeks().find(x=>x.id===id);
+  const w=cpcWeeks().find(x=>x.id===legacyId(id));
   if(!w)return {easy:[],medium:[],hard:[]};
   const pool=cpcPoolSafe(w).filter(q=>q&&Array.isArray(q.o)&&q.o.length>=4).slice().sort((a,b)=>complexity(a)-complexity(b));
   const n=pool.length,a=Math.max(1,Math.floor(n/3)),b=Math.max(a+1,Math.floor(n*2/3));
@@ -111,7 +115,7 @@ function internalQuestions(id,track){
   // complete lacunas com o pool geral sem repetir, se um terço ficou pequeno
   const target=track==='summary'?5:10;
   if(out.length<target){
-    const w=cpcWeeks().find(x=>x.id===id),pool=w?cpcPoolSafe(w):[];
+    const w=cpcWeeks().find(x=>x.id===legacyId(id)),pool=w?cpcPoolSafe(w):[];
     const used=new Set(out.map(q=>q.id));
     for(const q of pick(pool.filter(q=>!used.has(q.id)),target-out.length,id+track+'fill')){
       out.push(Object.assign({},q,{_difficulty:out.length<Math.ceil(target*.4)?'easy':out.length<Math.ceil(target*.8)?'medium':'hard'}));
@@ -128,11 +132,8 @@ function quizDone(id,track){
 }
 
 function progress(id){
-  if(id!=='w1'){
-    const w=(global.CPC_WEEKS||[]).find(x=>x.id===id);
-    if(w&&global.__cpcLegacyWeekPct)return global.__cpcLegacyWeekPct(w);
-    return 0;
-  }
+  id=studyId(id);
+  if(id!=='w1')return 0;
   const m=moduleState(id),sq=internalQuestions(id,'summary'),fq=internalQuestions(id,'full');
   const total=1+M01.summaryParts.length+sq.length+M01.fullParts.length+fq.length+1;
   let done=0;
@@ -145,6 +146,7 @@ function progress(id){
   return total?Math.round(done/total*100):0;
 }
 function progressDetail(id){
+  id=studyId(id);
   const m=moduleState(id),sq=internalQuestions(id,'summary'),fq=internalQuestions(id,'full');
   return {
     pct:progress(id),
@@ -211,7 +213,7 @@ function quizStatus(id,track){
 function m01Html(w){
  const m=moduleState('w1'),d=progressDetail('w1'),ext=extState('w1'),sq=quizStatus('w1','summary'),fq=quizStatus('w1','full');
  const acc=ext.done?Math.round(ext.correct/ext.done*1000)/10:0;
- const open=localStorage.getItem(cpcModuleOpenKey(w.id))==='1';
+ const open=localStorage.getItem(localOpenKey(w.id))==='1';
  return `<section class="cf-module ${open?'open':''}" data-cf="${w.id}">
   <button class="cf-module-head" onclick="toggleCpcModule('${w.id}')">
    <span class="cf-module-no">MÓDULO ${w.num}</span><span class="cf-module-title">${esc(w.title)}</span>
@@ -261,7 +263,7 @@ function m01Html(w){
    <details class="cf-resources"><summary class="muted small" style="cursor:pointer">Recursos e anotações</summary><div class="cf-resource-grid" style="margin-top:8px">
     <div class="cf-resource-box"><h4>Cadernos TEC</h4><button class="cf-btn" onclick="centralSidebarAction('tec-cadernos',this)">Abrir meus cadernos</button></div>
     <div class="cf-resource-box"><h4>Vade Mecum</h4><button class="cf-btn" onclick="openEmbeddedTool('vade',{},this)">Abrir Vade Mecum</button></div>
-    <div class="cf-resource-box" style="grid-column:1/-1"><h4>Anotações do módulo</h4><textarea class="cf-notes" id="cf-note-${w.id}" placeholder="Regra, artigo, pegadinha ou dúvida...">${esc(localStorage.getItem(cpcNoteKey(w.id))||'')}</textarea><div class="cf-actions"><button class="cf-btn" onclick="saveCpcNote('${w.id}')">Salvar anotação</button></div></div>
+    <div class="cf-resource-box" style="grid-column:1/-1"><h4>Anotações do módulo</h4><textarea class="cf-notes" id="cf-note-${w.id}" placeholder="Regra, artigo, pegadinha ou dúvida...">${esc(localStorage.getItem(localNoteKey(w.id))||'')}</textarea><div class="cf-actions"><button class="cf-btn" onclick="saveCpcNote('${w.id}')">Salvar anotação</button></div></div>
    </div></details>
   </div>
  </section>`;
@@ -310,7 +312,7 @@ function moveQuiz(delta){
 
 function studyRenderMaster(){
  injectStyle();
- const w=cpcWeeks().find(x=>x.id==='w1');
+ const w=cpcWeeks().find(x=>x.id==='cpc1');
  if(!w)return '<div class="card" style="padding:18px">CPC M01 indisponível no momento.</div>';
  return '<div class="cpc-study-only-badge" style="margin:0 0 10px;padding:10px 12px;border:1px solid rgba(56,189,248,.32);border-radius:12px;background:rgba(56,189,248,.07)"><b>Novo CPC</b><div class="muted small" style="margin-top:3px">O conteúdo anterior foi removido. Esta disciplina agora usa somente a nova estrutura.</div></div><div id="cpc-session-host"></div><div class="cf-modules">'+m01Html(w)+'</div>';
 }
@@ -328,12 +330,12 @@ function install(){
  if(!global.__cpcLegacyRenderMaster)global.__cpcLegacyRenderMaster=renderCpcMaster;
 
  global.renderCpcModule=function(w){
-   if(w&&w.id==='w1')return m01Html(w);
+   if(w&&w.id==='cpc1')return m01Html(w);
    return '';
  };
 
  global.cpcWeekPct=function(w){
-   if(w&&w.id==='w1')return progress('w1');
+   if(w&&w.id==='cpc1')return progress('w1');
    return 0;
  };
 
