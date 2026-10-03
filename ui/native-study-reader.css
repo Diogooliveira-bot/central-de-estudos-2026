@@ -14,8 +14,8 @@ html.bc-ui-v1 #subjects .bc-native-material-icon{width:38px;height:38px;border:1
 html.bc-ui-v1 #subjects .bc-native-material-card strong{display:block;font-size:14px;line-height:1.35;margin-bottom:4px;color:var(--bc-color-text)!important}
 html.bc-ui-v1 #subjects .bc-native-material-card small{display:block;font-size:11px;line-height:1.45;color:var(--bc-color-text-secondary)!important}
 html.bc-ui-v1 #subjects .bc-native-material-action{display:flex;align-items:center;justify-content:space-between;gap:8px;color:var(--bc-color-primary);font-size:12px;font-weight:750}
-html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-module:is([data-cf="p1"],[data-cf="p2"],[data-cf="p3"],[data-cf="p4"],[data-cf="p5"],[data-cf="p6"],[data-cf="p7"],[data-cf="p8"],[data-cf="p9"])>.cf-module-body>.pen-full-entry,
-html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-module:is([data-cf="p1"],[data-cf="p2"],[data-cf="p3"],[data-cf="p4"],[data-cf="p5"],[data-cf="p6"],[data-cf="p7"],[data-cf="p8"],[data-cf="p9"])>.cf-module-body>.bc-mindmap-entry{display:none!important}
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-module:is([data-cf="p1"],[data-cf="p2"],[data-cf="p3"],[data-cf="p4"],[data-cf="p5"],[data-cf="p6"],[data-cf="p7"],[data-cf="p8"],[data-cf="p9"],[data-cf="p10"],[data-cf="p11"],[data-cf="p12"],[data-cf="p13"],[data-cf="p14"],[data-cf="p15"],[data-cf="p16"],[data-cf="p17"])>.cf-module-body>.pen-full-entry,
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-module:is([data-cf="p1"],[data-cf="p2"],[data-cf="p3"],[data-cf="p4"],[data-cf="p5"],[data-cf="p6"],[data-cf="p7"],[data-cf="p8"],[data-cf="p9"],[data-cf="p10"],[data-cf="p11"],[data-cf="p12"],[data-cf="p13"],[data-cf="p14"],[data-cf="p15"],[data-cf="p16"],[data-cf="p17"])>.cf-module-body>.bc-mindmap-entry{display:none!important}
 
 /* Reader */
 .bc-native-reader-overlay{position:fixed;inset:0;z-index:100001;background:rgba(2,6,23,.72);display:grid;place-items:center;padding:12px;backdrop-filter:blur(3px)}
@@ -80,31 +80,31 @@ html[data-bc-theme="dark"] .bc-native-reader-footer button,html[data-bc-theme="o
 
 /* Piloto M01 — remover apenas o conteúdo legado substituído pelos 3 materiais novos.
    Mantém cabeçalho/navegação padrão e rodapé padrão. */
-html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-module:is([data-cf="p1"],[data-cf="p2"],[data-cf="p3"],[data-cf="p4"],[data-cf="p5"],[data-cf="p6"],[data-cf="p7"],[data-cf="p8"],[data-cf="p9"]) .cf-steps > .cf-step:nth-child(2),
-html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-module:is([data-cf="p1"],[data-cf="p2"],[data-cf="p3"],[data-cf="p4"],[data-cf="p5"],[data-cf="p6"],[data-cf="p7"],[data-cf="p8"],[data-cf="p9"]) .cf-steps > .cf-step:nth-child(3),
-html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-module:is([data-cf="p1"],[data-cf="p2"],[data-cf="p3"],[data-cf="p4"],[data-cf="p5"],[data-cf="p6"],[data-cf="p7"],[data-cf="p8"],[data-cf="p9"]) .cf-steps > .cf-step:nth-child(5){
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-module:is([data-cf="p1"],[data-cf="p2"],[data-cf="p3"],[data-cf="p4"],[data-cf="p5"],[data-cf="p6"],[data-cf="p7"],[data-cf="p8"],[data-cf="p9"],[data-cf="p10"],[data-cf="p11"],[data-cf="p12"],[data-cf="p13"],[data-cf="p14"],[data-cf="p15"],[data-cf="p16"],[data-cf="p17"]) .cf-steps > .cf-step:nth-child(2),
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-module:is([data-cf="p1"],[data-cf="p2"],[data-cf="p3"],[data-cf="p4"],[data-cf="p5"],[data-cf="p6"],[data-cf="p7"],[data-cf="p8"],[data-cf="p9"],[data-cf="p10"],[data-cf="p11"],[data-cf="p12"],[data-cf="p13"],[data-cf="p14"],[data-cf="p15"],[data-cf="p16"],[data-cf="p17"]) .cf-steps > .cf-step:nth-child(3),
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-module:is([data-cf="p1"],[data-cf="p2"],[data-cf="p3"],[data-cf="p4"],[data-cf="p5"],[data-cf="p6"],[data-cf="p7"],[data-cf="p8"],[data-cf="p9"],[data-cf="p10"],[data-cf="p11"],[data-cf="p12"],[data-cf="p13"],[data-cf="p14"],[data-cf="p15"],[data-cf="p16"],[data-cf="p17"]) .cf-steps > .cf-step:nth-child(5){
   display:none!important;
 }
 /* No piloto M01, o bloco principal antigo de etapas deixa de ocupar a área de conteúdo.
    Os novos cards Resumido/Completo/Mapa passam a ser o núcleo do módulo. */
-html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-module:is([data-cf="p1"],[data-cf="p2"],[data-cf="p3"],[data-cf="p4"],[data-cf="p5"],[data-cf="p6"],[data-cf="p7"],[data-cf="p8"],[data-cf="p9"]) .bc-native-materials{
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-module:is([data-cf="p1"],[data-cf="p2"],[data-cf="p3"],[data-cf="p4"],[data-cf="p5"],[data-cf="p6"],[data-cf="p7"],[data-cf="p8"],[data-cf="p9"],[data-cf="p10"],[data-cf="p11"],[data-cf="p12"],[data-cf="p13"],[data-cf="p14"],[data-cf="p15"],[data-cf="p16"],[data-cf="p17"]) .bc-native-materials{
   display:block!important;
 }
 
 /* M01 — índice de sessões não faz parte do novo modelo de conteúdo. */
-html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-module:is([data-cf="p1"],[data-cf="p2"],[data-cf="p3"],[data-cf="p4"],[data-cf="p5"],[data-cf="p6"],[data-cf="p7"],[data-cf="p8"],[data-cf="p9"]) .bc-session-nav,
-html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-module:is([data-cf="p1"],[data-cf="p2"],[data-cf="p3"],[data-cf="p4"],[data-cf="p5"],[data-cf="p6"],[data-cf="p7"],[data-cf="p8"],[data-cf="p9"]) .bc-session-pager{
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-module:is([data-cf="p1"],[data-cf="p2"],[data-cf="p3"],[data-cf="p4"],[data-cf="p5"],[data-cf="p6"],[data-cf="p7"],[data-cf="p8"],[data-cf="p9"],[data-cf="p10"],[data-cf="p11"],[data-cf="p12"],[data-cf="p13"],[data-cf="p14"],[data-cf="p15"],[data-cf="p16"],[data-cf="p17"]) .bc-session-nav,
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-module:is([data-cf="p1"],[data-cf="p2"],[data-cf="p3"],[data-cf="p4"],[data-cf="p5"],[data-cf="p6"],[data-cf="p7"],[data-cf="p8"],[data-cf="p9"],[data-cf="p10"],[data-cf="p11"],[data-cf="p12"],[data-cf="p13"],[data-cf="p14"],[data-cf="p15"],[data-cf="p16"],[data-cf="p17"]) .bc-session-pager{
   display:none!important;
 }
 
 /* Card curto de visão geral do módulo, reaproveitando a linguagem visual antiga. */
-html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-module:is([data-cf="p1"],[data-cf="p2"],[data-cf="p3"],[data-cf="p4"],[data-cf="p5"],[data-cf="p6"],[data-cf="p7"],[data-cf="p8"],[data-cf="p9"]) .bc-native-module-summary{
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-module:is([data-cf="p1"],[data-cf="p2"],[data-cf="p3"],[data-cf="p4"],[data-cf="p5"],[data-cf="p6"],[data-cf="p7"],[data-cf="p8"],[data-cf="p9"],[data-cf="p10"],[data-cf="p11"],[data-cf="p12"],[data-cf="p13"],[data-cf="p14"],[data-cf="p15"],[data-cf="p16"],[data-cf="p17"]) .bc-native-module-summary{
   margin-top:14px!important;
 }
-html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-module:is([data-cf="p1"],[data-cf="p2"],[data-cf="p3"],[data-cf="p4"],[data-cf="p5"],[data-cf="p6"],[data-cf="p7"],[data-cf="p8"],[data-cf="p9"]) .bc-native-module-summary .cf-step-body{
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-module:is([data-cf="p1"],[data-cf="p2"],[data-cf="p3"],[data-cf="p4"],[data-cf="p5"],[data-cf="p6"],[data-cf="p7"],[data-cf="p8"],[data-cf="p9"],[data-cf="p10"],[data-cf="p11"],[data-cf="p12"],[data-cf="p13"],[data-cf="p14"],[data-cf="p15"],[data-cf="p16"],[data-cf="p17"]) .bc-native-module-summary .cf-step-body{
   padding:14px!important;
 }
-html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-module:is([data-cf="p1"],[data-cf="p2"],[data-cf="p3"],[data-cf="p4"],[data-cf="p5"],[data-cf="p6"],[data-cf="p7"],[data-cf="p8"],[data-cf="p9"]) .bc-native-module-summary-text{
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-module:is([data-cf="p1"],[data-cf="p2"],[data-cf="p3"],[data-cf="p4"],[data-cf="p5"],[data-cf="p6"],[data-cf="p7"],[data-cf="p8"],[data-cf="p9"],[data-cf="p10"],[data-cf="p11"],[data-cf="p12"],[data-cf="p13"],[data-cf="p14"],[data-cf="p15"],[data-cf="p16"],[data-cf="p17"]) .bc-native-module-summary-text{
   padding:14px 16px;
   border-left:3px solid var(--bc-color-primary);
   border-radius:10px;
@@ -116,21 +116,21 @@ html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-module:is([data-cf="p1"],[
 
 /* M01 definitivo do preview: o fluxo antigo inteiro fica oculto.
    O conteúdo do módulo passa a ser somente materiais nativos + resumo curto + rodapé padrão. */
-html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-module:is([data-cf="p1"],[data-cf="p2"],[data-cf="p3"],[data-cf="p4"],[data-cf="p5"],[data-cf="p6"],[data-cf="p7"],[data-cf="p8"],[data-cf="p9"]) .cf-steps{
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-module:is([data-cf="p1"],[data-cf="p2"],[data-cf="p3"],[data-cf="p4"],[data-cf="p5"],[data-cf="p6"],[data-cf="p7"],[data-cf="p8"],[data-cf="p9"],[data-cf="p10"],[data-cf="p11"],[data-cf="p12"],[data-cf="p13"],[data-cf="p14"],[data-cf="p15"],[data-cf="p16"],[data-cf="p17"]) .cf-steps{
   display:none!important;
 }
-html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-module:is([data-cf="p1"],[data-cf="p2"],[data-cf="p3"],[data-cf="p4"],[data-cf="p5"],[data-cf="p6"],[data-cf="p7"],[data-cf="p8"],[data-cf="p9"]) .bc-session-nav,
-html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-module:is([data-cf="p1"],[data-cf="p2"],[data-cf="p3"],[data-cf="p4"],[data-cf="p5"],[data-cf="p6"],[data-cf="p7"],[data-cf="p8"],[data-cf="p9"]) .bc-session-pager{
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-module:is([data-cf="p1"],[data-cf="p2"],[data-cf="p3"],[data-cf="p4"],[data-cf="p5"],[data-cf="p6"],[data-cf="p7"],[data-cf="p8"],[data-cf="p9"],[data-cf="p10"],[data-cf="p11"],[data-cf="p12"],[data-cf="p13"],[data-cf="p14"],[data-cf="p15"],[data-cf="p16"],[data-cf="p17"]) .bc-session-nav,
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-module:is([data-cf="p1"],[data-cf="p2"],[data-cf="p3"],[data-cf="p4"],[data-cf="p5"],[data-cf="p6"],[data-cf="p7"],[data-cf="p8"],[data-cf="p9"],[data-cf="p10"],[data-cf="p11"],[data-cf="p12"],[data-cf="p13"],[data-cf="p14"],[data-cf="p15"],[data-cf="p16"],[data-cf="p17"]) .bc-session-pager{
   display:none!important;
 }
-html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-module:is([data-cf="p1"],[data-cf="p2"],[data-cf="p3"],[data-cf="p4"],[data-cf="p5"],[data-cf="p6"],[data-cf="p7"],[data-cf="p8"],[data-cf="p9"]) .bc-native-quick-summary{
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-module:is([data-cf="p1"],[data-cf="p2"],[data-cf="p3"],[data-cf="p4"],[data-cf="p5"],[data-cf="p6"],[data-cf="p7"],[data-cf="p8"],[data-cf="p9"],[data-cf="p10"],[data-cf="p11"],[data-cf="p12"],[data-cf="p13"],[data-cf="p14"],[data-cf="p15"],[data-cf="p16"],[data-cf="p17"]) .bc-native-quick-summary{
   margin-top:14px;
   border:1px solid var(--bc-color-border)!important;
   border-radius:12px;
   overflow:hidden;
   background:var(--bc-color-surface-elevated)!important;
 }
-html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-module:is([data-cf="p1"],[data-cf="p2"],[data-cf="p3"],[data-cf="p4"],[data-cf="p5"],[data-cf="p6"],[data-cf="p7"],[data-cf="p8"],[data-cf="p9"]) .bc-native-quick-summary-head{
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-module:is([data-cf="p1"],[data-cf="p2"],[data-cf="p3"],[data-cf="p4"],[data-cf="p5"],[data-cf="p6"],[data-cf="p7"],[data-cf="p8"],[data-cf="p9"],[data-cf="p10"],[data-cf="p11"],[data-cf="p12"],[data-cf="p13"],[data-cf="p14"],[data-cf="p15"],[data-cf="p16"],[data-cf="p17"]) .bc-native-quick-summary-head{
   min-height:64px;
   display:flex;
   align-items:center;
@@ -138,18 +138,18 @@ html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-module:is([data-cf="p1"],[
   padding:12px 14px;
   background:var(--bc-color-surface)!important;
 }
-html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-module:is([data-cf="p1"],[data-cf="p2"],[data-cf="p3"],[data-cf="p4"],[data-cf="p5"],[data-cf="p6"],[data-cf="p7"],[data-cf="p8"],[data-cf="p9"]) .bc-native-quick-summary-no{
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-module:is([data-cf="p1"],[data-cf="p2"],[data-cf="p3"],[data-cf="p4"],[data-cf="p5"],[data-cf="p6"],[data-cf="p7"],[data-cf="p8"],[data-cf="p9"],[data-cf="p10"],[data-cf="p11"],[data-cf="p12"],[data-cf="p13"],[data-cf="p14"],[data-cf="p15"],[data-cf="p16"],[data-cf="p17"]) .bc-native-quick-summary-no{
   width:30px;height:30px;flex:0 0 30px;display:grid;place-items:center;
   border-radius:999px;background:color-mix(in srgb,var(--bc-color-primary) 18%,transparent);
   color:var(--bc-color-primary);font-weight:800;font-size:12px;
 }
-html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-module:is([data-cf="p1"],[data-cf="p2"],[data-cf="p3"],[data-cf="p4"],[data-cf="p5"],[data-cf="p6"],[data-cf="p7"],[data-cf="p8"],[data-cf="p9"]) .bc-native-quick-summary-head b{
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-module:is([data-cf="p1"],[data-cf="p2"],[data-cf="p3"],[data-cf="p4"],[data-cf="p5"],[data-cf="p6"],[data-cf="p7"],[data-cf="p8"],[data-cf="p9"],[data-cf="p10"],[data-cf="p11"],[data-cf="p12"],[data-cf="p13"],[data-cf="p14"],[data-cf="p15"],[data-cf="p16"],[data-cf="p17"]) .bc-native-quick-summary-head b{
   display:block;font-size:14px;color:var(--bc-color-text)!important;
 }
-html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-module:is([data-cf="p1"],[data-cf="p2"],[data-cf="p3"],[data-cf="p4"],[data-cf="p5"],[data-cf="p6"],[data-cf="p7"],[data-cf="p8"],[data-cf="p9"]) .bc-native-quick-summary-head small{
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-module:is([data-cf="p1"],[data-cf="p2"],[data-cf="p3"],[data-cf="p4"],[data-cf="p5"],[data-cf="p6"],[data-cf="p7"],[data-cf="p8"],[data-cf="p9"],[data-cf="p10"],[data-cf="p11"],[data-cf="p12"],[data-cf="p13"],[data-cf="p14"],[data-cf="p15"],[data-cf="p16"],[data-cf="p17"]) .bc-native-quick-summary-head small{
   display:block;margin-top:3px;font-size:11px;color:var(--bc-color-text-secondary)!important;
 }
-html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-module:is([data-cf="p1"],[data-cf="p2"],[data-cf="p3"],[data-cf="p4"],[data-cf="p5"],[data-cf="p6"],[data-cf="p7"],[data-cf="p8"],[data-cf="p9"]) .bc-native-quick-summary-body{
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-module:is([data-cf="p1"],[data-cf="p2"],[data-cf="p3"],[data-cf="p4"],[data-cf="p5"],[data-cf="p6"],[data-cf="p7"],[data-cf="p8"],[data-cf="p9"],[data-cf="p10"],[data-cf="p11"],[data-cf="p12"],[data-cf="p13"],[data-cf="p14"],[data-cf="p15"],[data-cf="p16"],[data-cf="p17"]) .bc-native-quick-summary-body{
   padding:16px;
   border-top:1px solid var(--bc-color-border);
   border-left:3px solid var(--bc-color-primary);
@@ -160,13 +160,13 @@ html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-module:is([data-cf="p1"],[
 
 
 /* ===== M01 piloto 2 — métricas, capítulos e revisão ativa ===== */
-html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-module:is([data-cf="p1"],[data-cf="p2"],[data-cf="p3"],[data-cf="p4"],[data-cf="p5"],[data-cf="p6"],[data-cf="p7"],[data-cf="p8"],[data-cf="p9"]) .bc-native-metrics{
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-module:is([data-cf="p1"],[data-cf="p2"],[data-cf="p3"],[data-cf="p4"],[data-cf="p5"],[data-cf="p6"],[data-cf="p7"],[data-cf="p8"],[data-cf="p9"],[data-cf="p10"],[data-cf="p11"],[data-cf="p12"],[data-cf="p13"],[data-cf="p14"],[data-cf="p15"],[data-cf="p16"],[data-cf="p17"]) .bc-native-metrics{
   display:grid;
   grid-template-columns:repeat(2,minmax(0,1fr));
   gap:10px;
   margin:0 0 16px;
 }
-html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-module:is([data-cf="p1"],[data-cf="p2"],[data-cf="p3"],[data-cf="p4"],[data-cf="p5"],[data-cf="p6"],[data-cf="p7"],[data-cf="p8"],[data-cf="p9"]) .bc-native-metric-card{
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-module:is([data-cf="p1"],[data-cf="p2"],[data-cf="p3"],[data-cf="p4"],[data-cf="p5"],[data-cf="p6"],[data-cf="p7"],[data-cf="p8"],[data-cf="p9"],[data-cf="p10"],[data-cf="p11"],[data-cf="p12"],[data-cf="p13"],[data-cf="p14"],[data-cf="p15"],[data-cf="p16"],[data-cf="p17"]) .bc-native-metric-card{
   min-height:128px;
   display:flex;
   align-items:center;
@@ -272,7 +272,7 @@ html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-module:is([data-cf="p1"],[
 }
 
 @media(max-width:760px){
-  html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-module:is([data-cf="p1"],[data-cf="p2"],[data-cf="p3"],[data-cf="p4"],[data-cf="p5"],[data-cf="p6"],[data-cf="p7"],[data-cf="p8"],[data-cf="p9"]) .bc-native-metrics{grid-template-columns:1fr}
+  html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-module:is([data-cf="p1"],[data-cf="p2"],[data-cf="p3"],[data-cf="p4"],[data-cf="p5"],[data-cf="p6"],[data-cf="p7"],[data-cf="p8"],[data-cf="p9"],[data-cf="p10"],[data-cf="p11"],[data-cf="p12"],[data-cf="p13"],[data-cf="p14"],[data-cf="p15"],[data-cf="p16"],[data-cf="p17"]) .bc-native-metrics{grid-template-columns:1fr}
   .bc-native-ring{width:72px;height:72px;flex-basis:72px}
   .bc-native-internal-review-head{display:block}
   .bc-native-internal-score{margin-top:10px;width:100%}
@@ -280,10 +280,10 @@ html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-module:is([data-cf="p1"],[
 
 
 /* M01 piloto revisado: os dois indicadores nativos substituem o painel genérico antigo. */
-html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-module:is([data-cf="p1"],[data-cf="p2"],[data-cf="p3"],[data-cf="p4"],[data-cf="p5"],[data-cf="p6"],[data-cf="p7"],[data-cf="p8"],[data-cf="p9"]) > .cf-module-body > .csp-panel.ds-progress{
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-module:is([data-cf="p1"],[data-cf="p2"],[data-cf="p3"],[data-cf="p4"],[data-cf="p5"],[data-cf="p6"],[data-cf="p7"],[data-cf="p8"],[data-cf="p9"],[data-cf="p10"],[data-cf="p11"],[data-cf="p12"],[data-cf="p13"],[data-cf="p14"],[data-cf="p15"],[data-cf="p16"],[data-cf="p17"]) > .cf-module-body > .csp-panel.ds-progress{
   display:none!important;
 }
-html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-module:is([data-cf="p1"],[data-cf="p2"],[data-cf="p3"],[data-cf="p4"],[data-cf="p5"],[data-cf="p6"],[data-cf="p7"],[data-cf="p8"],[data-cf="p9"]) .bc-native-toc-label::after{
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-module:is([data-cf="p1"],[data-cf="p2"],[data-cf="p3"],[data-cf="p4"],[data-cf="p5"],[data-cf="p6"],[data-cf="p7"],[data-cf="p8"],[data-cf="p9"],[data-cf="p10"],[data-cf="p11"],[data-cf="p12"],[data-cf="p13"],[data-cf="p14"],[data-cf="p15"],[data-cf="p16"],[data-cf="p17"]) .bc-native-toc-label::after{
   content:" • check automático ao avançar";
   font-weight:600;
   letter-spacing:0;
