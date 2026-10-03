@@ -82,3 +82,17 @@ function open(m){
 }
 g.CpcM08NativeReader={open,close,stats};
 })(window);
+/* __M08_MINI_RENDER__ */
+(function(g){
+ function H(w){
+  var a=g.CpcM08NativeReader.stats('summary'),b=g.CpcM08NativeReader.stats('complete');
+  return '<section class="cf-module" data-cf="cpc8"><button class="cf-module-head" onclick="toggleCpcModule(\'cpc8\')"><span class="cf-module-no">MÓDULO 8</span><span class="cf-module-title">'+w.title+'</span><span class="chev">⌄</span></button><div class="cf-module-body"><section class="bc-native-materials bc-native-materials-static"><div class="bc-native-material-grid"><button class="bc-native-material-card" onclick="CpcM08NativeReader.open(\'summary\')"><span class="bc-native-material-icon">⚡</span><span><strong>Conteúdo resumido</strong><small>'+a.done+'/'+a.total+' capítulos</small></span></button><button class="bc-native-material-card" onclick="CpcM08NativeReader.open(\'complete\')"><span class="bc-native-material-icon">📚</span><span><strong>Conteúdo completo</strong><small>'+b.done+'/'+b.total+' capítulos</small></span></button><button class="bc-native-material-card"><span class="bc-native-material-icon">🧠</span><span><strong>Mapa mental</strong><small>Carrossel M08</small></span></button></div></section></div></section>';
+ }
+ function I(){
+  if(!g.CpcStudyV1||!g.__CPC_WEEKS){setTimeout(I,120);return}
+  if(g.__M08Installed)return;g.__M08Installed=true;
+  var prev=g.CpcStudyV1.renderMaster;
+  g.CpcStudyV1.renderMaster=function(){var base=prev(),w=g.__CPC_WEEKS.find(x=>x.id==='cpc8'),i=base.lastIndexOf('</div>');return w?base.slice(0,i)+H(w)+base.slice(i):base};
+  try{renderAll()}catch(_){}
+ }setTimeout(I,0);
+})(window);
