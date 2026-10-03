@@ -13,16 +13,16 @@
 <body><main><div class="spinner" aria-hidden="true"></div><p id="status">Abrindo a BASE COMPLETA…</p><button id="retry" type="button">Tentar novamente</button></main>
 <script>
 (async function(){
- var BUILD='20261003-cpc-m04-v1';
+ var BUILD='20261003-cpc-m05-v1';
  var entryUrl=new URL(location.href);
  if('serviceWorker' in navigator){
   try{
    var reg=await navigator.serviceWorker.getRegistration();
    if(reg)reg.update().catch(function(){});
-   if(!sessionStorage.getItem('central:pwa-reload:cpcm04v1')){
+   if(!sessionStorage.getItem('central:pwa-reload:cpcm05v1')){
     navigator.serviceWorker.addEventListener('controllerchange',function(){
-     if(sessionStorage.getItem('central:pwa-reload:cpcm04v1'))return;
-     sessionStorage.setItem('central:pwa-reload:cpcm04v1','1');
+     if(sessionStorage.getItem('central:pwa-reload:cpcm05v1'))return;
+     sessionStorage.setItem('central:pwa-reload:cpcm05v1','1');
      location.reload();
     },{once:true});
    }
