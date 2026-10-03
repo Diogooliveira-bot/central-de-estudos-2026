@@ -2,14 +2,14 @@
 (function () {
   'use strict';
   if (window.CentralDisciplineStandard) return;
-  const MODULES = '.civil-module[data-civil-analista],.cf-module[data-cf],.cf-module[data-penal],.cf-module[data-cpc],.cf-module[data-ptn-module],.cpp-mod[data-cpp-num],.topic-item[data-uid]';
+  const MODULES = '.civil-module[data-civil-analista],.cf-module[data-cf],.cf-module[data-penal],.cf-module[data-cpc],.cf-module[data-ptn-module],.cf-module[data-pt-current],.cpp-mod[data-cpp-num],.topic-item[data-uid]';
   let observer, scheduled = false;
   const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const read = key => { try { return JSON.parse(localStorage.getItem(key) || 'null'); } catch (_) { return null; } };
   const meter = value => Number.isFinite(value) ? '<div class="csp-meter" aria-hidden="true"><span style="width:' + Math.max(0, Math.min(100, value)) + '%"></span></div>' : '';
   function identity(module) {
     const subject = module.closest('.subject').dataset.id;
-    const id = module.dataset.civilAnalista || module.dataset.ptnModule || module.dataset.cf || module.dataset.penal || module.dataset.cpc || module.dataset.cppNum || module.dataset.uid;
+    const id = module.dataset.civilAnalista || module.dataset.ptCurrent || module.dataset.ptnModule || module.dataset.cf || module.dataset.penal || module.dataset.cpc || module.dataset.cppNum || module.dataset.uid;
     return { subject, id, key: subject + ':' + id };
   }
   function bodyOf(module) { return module.querySelector('.civil-module-body,.cf-module-body,.cpp-mod-body,.detail-panel'); }
@@ -226,7 +226,7 @@
     // Direito Penal M01-M17 usa o fluxo nativo aprovado.
     // Mantém apenas o rodapé padrão (questões externas, revisão, ferramentas e anotações),
     // sem recriar o painel/progresso e a navegação legados por cima dos cards nativos.
-    if (meta.subject === 'penal' && /^p(?:[1-9]|1[0-7])$/.test(meta.id)) {
+    if ((meta.subject === 'penal' && /^p(?:[1-9]|1[0-7])$/.test(meta.id)) || (meta.subject === 'pt' && module.dataset.ptCurrent)) {
       body.querySelector(':scope > .csp-panel[data-ds-summary]')?.remove();
       body.querySelector(':scope > .ds-module-nav')?.remove();
       moduleFooter(module,body,meta);

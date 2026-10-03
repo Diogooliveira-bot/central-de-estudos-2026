@@ -5,15 +5,31 @@ function esc(value){return String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;'
 function modules(){return global.CentralPortugueseCourse?.modules||[]}
 function ptStats(){const total=modules().length,done=modules().filter(m=>localStorage.getItem('central-v6:pt:auto24:done:'+m.id)==='1').length;return {total,done,pct:total?Math.round(done/total*100):0,unit:'módulos'}}
 function openPt(id){
- const m=modules().find(m=>m.id===id);
- const url=new URL('/portugues.html',location.origin);
- if(m||id==='review')url.searchParams.set('module',id);
- location.assign(url.href);return false;
+ const course=global.CentralPortugueseCourse;
+ if(!course)return false;
+ const item=course.modules.concat([course.review]).find(m=>m.id===id);
+ if(typeof global.jumpSubject==='function')global.jumpSubject('pt');
+ if(!item)return false;
+ localStorage.setItem('central-v6:pt:auto24:open',id);
+ const url=new URL(location.href);url.searchParams.set('subject','pt');url.searchParams.set('module',id);history.replaceState(null,'',url);
+ if(typeof global.renderSubjects==='function')global.renderSubjects();
+ if(typeof global.saveLast==='function')global.saveLast({ptAutoModule:id,title:'Português • '+item.title,at:Date.now()});
+ requestAnimationFrame(()=>document.querySelector('[data-pt-current="'+id+'"]')?.scrollIntoView({block:'start',behavior:'auto'}));
+ return false;
+}
+function togglePt(id){
+ const el=document.querySelector('[data-pt-current="'+id+'"]');
+ if(el?.classList.contains('open')){el.classList.remove('open');localStorage.removeItem('central-v6:pt:auto24:open');const url=new URL(location.href);url.searchParams.delete('module');history.replaceState(null,'',url);return false}
+ return openPt(id);
 }
 function ptMaster(){
  const course=global.CentralPortugueseCourse;if(!course)return '';
- return '<div class="ptn-master"><h3>Português Autodidata</h3><p>24 módulos e revisão cumulativa final.</p><div class="cf-modules">'+course.modules.concat([course.review]).map(m=>
- '<section class="cf-module" data-pt-current="'+m.id+'"><button type="button" class="cf-module-head" onclick="return openPtCurrentModule(\''+m.id+'\')"><span class="cf-module-no">'+(m.review?'REVISÃO':'MÓDULO '+m.num)+'</span><span class="cf-module-title">'+esc(m.title)+'</span><span class="cf-module-stat">'+(localStorage.getItem('central-v6:pt:auto24:done:'+m.id)==='1'?'Concluído':'Abrir conteúdo')+'</span><span class="chev">→</span></button></section>').join('')+'</div></div>';
+ return '<div class="cf-modules">'+course.modules.concat([course.review]).map(m=>{
+ const done=localStorage.getItem('central-v6:pt:auto24:done:'+m.id)==='1';
+ const open=localStorage.getItem('central-v6:pt:auto24:open')===m.id;
+ const card=(mode,title,text,icon)=>'<button type="button" class="bc-native-material-card" data-pt-material="'+mode+'" onclick="CentralPortugueseReader.open(\''+m.id+'\',\''+mode+'\')"><span class="bc-native-material-icon">'+icon+'</span><span><strong>'+title+'</strong><small>'+text+'</small></span><span class="bc-native-material-action">Abrir →</span></button>';
+ return '<section class="cf-module '+(open?'open':'')+'" data-pt-current="'+m.id+'"><button type="button" class="cf-module-head" onclick="return togglePtCurrentModule(\''+m.id+'\')"><span class="cf-module-no">'+(m.review?'REVISÃO FINAL':'MÓDULO '+m.num)+'</span><span class="cf-module-title">'+esc(m.title)+'</span><span class="cf-module-stat">'+(done?'100%':'0%')+'</span><span class="chev">⌄</span></button><div class="cf-module-body"><div class="cf-subtitle">'+(m.review?'Revisão cumulativa dos 24 módulos.':m.lessons?m.lessons+' aulas • Português Autodidata':'Português Autodidata')+'</div><section class="bc-native-materials"><section class="bc-native-metrics"><article class="bc-native-metric-card"><div class="bc-native-ring" style="--pct:'+(done?100:0)+'"><div class="bc-native-ring-inner"><b>'+ (done?'100%':'0%')+'</b><span>módulo</span></div></div><div class="bc-native-metric-copy"><small>CONCLUSÃO DO MÓDULO</small><strong>'+(done?'Concluído':'Em estudo')+'</strong><span>Marque a conclusão ao terminar o material.</span></div></article></section><div class="bc-native-materials-head"><div><b>Materiais do módulo</b><small>Escolha como estudar</small></div><small>'+ (m.review?'REVISÃO':m.id.toUpperCase())+' • conteúdo nativo</small></div><div class="bc-native-material-grid">'+card('complete','Conteúdo completo','Apostila integral com índice, busca e ajuste de fonte.','📚')+card('review','Revisão e exercícios','Acesse a consolidação e a prática do próprio módulo.','⚡')+card('mindmap','Mapa mental','Mapa dos tópicos do módulo com zoom e tela cheia.','🧠')+'</div></section></div></section>';
+ }).join('');
 }
 if(!global.__centralCurrentPortuguese){
  global.__centralCurrentPortuguese=true;
@@ -22,6 +38,7 @@ if(!global.__centralCurrentPortuguese){
  global.goalDone=function(uid){if(/^pt-auto24-/.test(uid))return localStorage.getItem('central-v6:pt:auto24:done:'+uid.replace('pt-auto24-',''))==='1';return originalGoalDone(uid)};
  global.renderPortugueseMaster=ptMaster;
  global.openPtCurrentModule=openPt;
+ global.togglePtCurrentModule=togglePt;
  // Old saved module numbers belong to a different syllabus. Retain their data,
  // and reopen the current course without assigning the old progress to new lessons.
  global.openPtNativeLast=()=>openPt();

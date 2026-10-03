@@ -3,7 +3,7 @@
   'use strict';
   if (window.CentralStudyNavigation) return;
   const moduleSelector = '.topic-item,.cf-module,.civil-module,.cpp-mod';
-  const attributes = ['data-uid','data-ptn-module','data-civil-analista','data-civil','data-cf','data-penal','data-cpc','data-cpp-num'];
+  const attributes = ['data-uid','data-pt-current','data-ptn-module','data-civil-analista','data-civil','data-cf','data-penal','data-cpc','data-cpp-num'];
   const views = {home:'homeView',agenda:'agendaView',disciplines:'disciplinesView',tec:'tecCadernosView',performance:'performanceView'};
   let sourceModule = null;
   function moduleId(module) {
@@ -27,6 +27,11 @@
   }
   document.addEventListener('click', event => {
     sourceModule = event.target.closest(moduleSelector);
+    const subject=event.target.closest('.subject');
+    const url=new URL(location.href);
+    if(subject&&subject.dataset.id!=='pt'&&url.searchParams.get('subject')==='pt'){
+      url.searchParams.delete('subject');url.searchParams.delete('module');history.replaceState(null,'',url);
+    }
   }, true);
   function openContext(context) {
     if (!context || typeof context !== 'object') return;

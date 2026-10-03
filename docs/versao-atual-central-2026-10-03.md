@@ -25,3 +25,9 @@ O Português abre o módulo escolhido, registra a retomada, volta à disciplina 
 O roteiro de navegador verifica os 24 módulos de Português e sua revisão, persistência da conclusão e retorno à Central, conteúdo completo e resumido dos 17 módulos de Penal, estabilidade dos cards após renderização, preservação de anotações, navegação com Service Worker ativo e largura móvel. Também verifica erros de JavaScript e respostas HTTP com falha. Sintaxe dos arquivos JS e scripts inline, JSON e diferenças de whitespace são verificados antes de publicar.
 
 Resultado local: os 24 módulos e a revisão de Português, os 17 leitores completos e resumos de Penal, os cards após renderização e o retorno com Service Worker ativo passaram. Não houve erro de JavaScript, falha HTTP ou rolagem horizontal na largura de 390 px.
+
+## Português com apresentação integrada
+
+Português passa a abrir módulos na própria Central, usando os cards de materiais, o leitor nativo e o rodapé compartilhado com registro de questões, revisão e anotações. O conteúdo integral M01–M24 e a revisão cumulativa permanecem no banco original, assim como suas chaves de conclusão. O leitor fornece índice, busca, fonte ajustável e acesso aos trechos de revisão. O mapa deriva dos títulos reais do módulo. Links antigos de `/portugues.html` retornam ao módulo integrado.
+
+Verificação: os 24 materiais completos e a revisão final foram abertos no leitor integrado. Fluxos de conclusão, busca e mapas foram exercitados; as notas, os links antigos e a apresentação móvel são verificados antes de publicar.

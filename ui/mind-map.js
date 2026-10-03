@@ -45,8 +45,8 @@ function makeNode(label,depth){
   };
 }
 
-function extractTreeFromTheory(moduleId,fallbackTitle){
-  const custom=registry.get(key(SUBJECT,moduleId));
+function extractTreeFromTheory(moduleId,fallbackTitle,subject=SUBJECT){
+  const custom=registry.get(key(subject,moduleId));
   if(custom) return cloneTree(custom);
 
   const d=theoryData(moduleId);
@@ -349,7 +349,7 @@ function open(subject,moduleId,sourceModule){
   const d=subject===SUBJECT ? theoryData(moduleId) : null;
   const title=d?.title || (sourceModule ? moduleTitle(sourceModule) : 'Mapa mental');
   const number=sourceModule ? moduleNumber(sourceModule,moduleId) : (d?.module||'');
-  const root=extractTreeFromTheory(moduleId,title);
+  const root=extractTreeFromTheory(moduleId,title,subject);
 
   close();
   const ov=document.createElement('div');
@@ -361,7 +361,7 @@ function open(subject,moduleId,sourceModule){
   ov.innerHTML=
     '<section class="bc-mindmap-shell">'+
       '<header class="bc-mindmap-head">'+
-        '<div class="bc-mindmap-title"><b>🧠 '+esc(number?'PEN M'+number+' — '+title:title)+'</b><small>Mapa mental interativo • clique nos nós para abrir ou recolher ramos</small></div>'+
+        '<div class="bc-mindmap-title"><b>🧠 '+esc(number?(subject==='pt'?'PT M':'PEN M')+number+' — '+title:title)+'</b><small>Mapa mental interativo • clique nos nós para abrir ou recolher ramos</small></div>'+
         '<button type="button" class="bc-mindmap-close" data-mm-action="close" aria-label="Fechar">×</button>'+
       '</header>'+
       '<div class="bc-mindmap-toolbar" aria-label="Controles do mapa mental">'+
@@ -477,7 +477,7 @@ function register(subject,moduleId,tree){
 }
 
 global.BaseMindMap={
-  open:function(subject,moduleId){ open(subject,moduleId,document.querySelector('#subjects .subject[data-id="'+subject+'"] [data-cf="'+moduleId+'"]')); },
+  open:function(subject,moduleId){ open(subject,moduleId,document.querySelector('#subjects .subject[data-id="'+subject+'"] [data-'+(subject==='pt'?'pt-current':'cf')+'="'+moduleId+'"]')); },
   close:close,
   register:register,
   version:'2026.10.01-preview1'
