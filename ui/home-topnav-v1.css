@@ -1,5 +1,9 @@
 /* Base Completa: menu superior e página inicial aprovada. Camada visual reversível. */
 html.bc-ui-v1.bc-topnav { --bc-nav-height:88px; }
+html.bc-ui-v1.bc-topnav,
+html.bc-ui-v1.bc-topnav body,
+html.bc-ui-v1.bc-topnav .app { height:100vh!important; height:100dvh!important; min-height:0!important; overflow:hidden!important; }
+html.bc-ui-v1.bc-topnav body { background:#f3f9fd!important; }
 html.bc-ui-v1.bc-topnav .app,
 html.bc-ui-v1.bc-topnav .app.sidebar-collapsed { display:block!important; grid-template-columns:none!important; }
 html.bc-ui-v1.bc-topnav #centralSidebar {
@@ -32,7 +36,9 @@ html.bc-ui-v1.bc-topnav #centralSidebar .nav-icon { width:23px!important; height
 html.bc-ui-v1.bc-topnav #centralSidebar .nav-icon svg { width:23px!important; height:23px!important; }
 html.bc-ui-v1.bc-topnav #centralSidebar .nav-settings { margin:0 0 0 auto!important; padding:10px!important; }
 html.bc-ui-v1.bc-topnav #centralSidebar .nav-settings .nav-text { display:none!important; }
-html.bc-ui-v1.bc-topnav .shell { height:100%!important; padding-top:var(--bc-nav-height)!important; margin:0!important; }
+html.bc-ui-v1.bc-topnav .shell { display:flex!important; flex-direction:column!important; box-sizing:border-box!important; height:100%!important; min-height:0!important; padding-top:var(--bc-nav-height)!important; margin:0!important; }
+html.bc-ui-v1.bc-topnav .workspace { flex:1!important; min-height:0!important; overflow:hidden!important; }
+html.bc-ui-v1.bc-topnav .workspace>.view { height:100%!important; min-height:0!important; overflow-y:auto!important; }
 html.bc-ui-v1.bc-topnav .app .view.central-view-visible:not(.hidden) { top:var(--bc-nav-height)!important; left:0!important; padding:22px 28px!important; }
 html.bc-ui-v1.bc-topnav .central-view-back { top:calc(var(--bc-nav-height) + 6px)!important; left:12px!important; }
 html.bc-ui-v1.bc-topnav #homeView {
