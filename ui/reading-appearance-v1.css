@@ -42,7 +42,8 @@ html.bc-ui-v1 .bc-reading-cf .cf-native-shell>header b {display:block;white-spac
 html.bc-ui-v1 .bc-reading-cf .cf-native-shell>header small {color:var(--bc-reading-muted)!important;}
 html.bc-ui-v1 .bc-reading-cf .cf-native-reader {display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto minmax(0,1fr);min-width:0;min-height:0;overflow:hidden;}
 html.bc-ui-v1 .bc-reading-cf .cf-native-reader>* {min-width:0;}
-html.bc-ui-v1 .bc-reading-cf .cf-native-reader>aside {display:flex;align-items:center;}
+html.bc-ui-v1 .bc-reading-cf .cf-native-reader>aside {display:flex;align-items:center;border-right:0;}
+html.bc-ui-v1 .bc-reading-cf .cf-native-reader>aside button {width:auto;flex:0 0 auto;}
 html.bc-ui-v1 .bc-reading-cf .cf-native-reader main {min-height:0;overflow:auto;padding:0!important;}
 html.bc-ui-v1 .bc-reading-cf .cf-native-reader article {margin:0 auto!important;box-sizing:border-box;}
 html.bc-ui-v1 .bc-reading-cf .cf-native-progress {background:var(--bc-reading-line)!important;}
