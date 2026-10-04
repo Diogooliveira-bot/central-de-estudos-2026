@@ -33,7 +33,7 @@
 <body><section id="central-boot-screen" aria-label="Carregamento da Base Completa"><div class="boot-brand"><img class="boot-logo" src="/assets/base-completa-symbol.png" alt="Logomarca Base Completa" fetchpriority="high"><div class="spinner" aria-hidden="true"></div><h1 id="boot-title" class="boot-title">Preparando sua Central</h1><p id="status" role="status" aria-live="polite">Organizando seu ambiente de estudo...</p><div class="boot-progress" aria-hidden="true"><span></span></div><button id="retry" type="button" hidden>Tentar novamente</button><noscript><p>Ative o JavaScript para abrir a central.</p></noscript></div></section>
 <script>
 (async function(){
- var BUILD='20261004-calm-dynamic-loading-v2';
+ var BUILD='20261004-cf-g07-v2';
  var entryUrl=new URL(location.href);
  var bootStyle=document.getElementById('central-boot-style').outerHTML;
  var bootScreen=document.getElementById('central-boot-screen').outerHTML;
@@ -59,7 +59,7 @@
  function tag(src){return '<scr'+'ipt defer src="/'+src+'"></scr'+'ipt>';}
  try{
   var response=await fetch('/index.html?central_source='+BUILD,{cache:'no-store'});if(!response.ok)throw new Error('Falha HTTP '+response.status);var html=await response.text();
-  html=html.replace(/cpc-study-system-v1\.js\?v=[^"'<>]+/g,'cpc-study-system-v1.js?v=20261004cpcall2');html=html.replace('v6.6.75 • Plano de 6 meses','v6.6.119 • Plano de 6 meses');html=html.replace(/\/central-structural-v66119\/runtime\.js\?v=[^\"'<>]+/g,'/central-structural-v66119/runtime.js?v=20261003cpcstudy4');html=html.replace('<span class="central-version-v41">v6.6.74</span>','<span class="central-version-v41">v6.6.119</span>');html=html.replace(/<link\b[^>]*\bhref=["'][^"']*base-completa-visual-v1\.css[^"']*["'][^>]*>/gi,'');
+  html=html.replace(/cpc-study-system-v1\.js\?v=[^"'<>]+/g,'cpc-study-system-v1.js?v=20261004cpcall2');html=html.replace('v6.6.75 • Plano de 6 meses','v6.6.119 • Plano de 6 meses');html=html.replace(/\/central-structural-v66119\/runtime\.js\?v=[^\"'<>]+/g,'/central-structural-v66119/runtime.js?v=20261004cfg07v2');html=html.replace('<span class="central-version-v41">v6.6.74</span>','<span class="central-version-v41">v6.6.119</span>');html=html.replace(/<link\b[^>]*\bhref=["'][^"']*base-completa-visual-v1\.css[^"']*["'][^>]*>/gi,'');
   html=html.replace(/<link\b[^>]*\bhref=["'][^"']*central-minimal(?:-theme)?-v\d+\.css[^"']*["'][^>]*>/gi,'');html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*central-minimal(?:-ui)?-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*(?:central-updater|central-version)-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*central-progress-entry-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*sync-client\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*civil-decorando-index-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*central-civil-progress-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*civil-theory(?:-company)?(?:-module\d+(?:-posse)?-(?:part\d+|runtime)|-module\d+|)-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*civil-theory-audit-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');
   html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*penal-full-theory-(?:data-\d+|ui-v1)\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');
   var tags=scripts.map(tag).join('');
