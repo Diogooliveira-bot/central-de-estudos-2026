@@ -1,7 +1,7 @@
 /* Central de Estudos — PWA cache repair 2026-10-03. */
-var CACHE='central-20261004-cf-g07-v2';
+var CACHE='central-20261004-lei-reading-v2';
 var BOOT='/central-v119.html';
-var OFFLINE_MANIFEST='/central-offline-files-v66172.json?v=20261004-cf-g07-v2';
+var OFFLINE_MANIFEST='/central-offline-files-v66172.json?v=20261004leireading2';
 
 function cacheResponse(cache,request,response){
   if(response&&response.ok)cache.put(request,response.clone()).catch(function(){});
@@ -71,7 +71,7 @@ self.addEventListener('fetch',function(event){
       caches.open(CACHE).then(function(cache){
         return fetch(request,{cache:'no-store'})
           .then(function(response){return cacheResponse(cache,request,response)})
-          .catch(function(){return cache.match(request)})
+          .catch(function(){return cache.match(request).then(function(hit){return hit||(url.pathname==='/tools/decorando.html'?cache.match(url.pathname):undefined)})})
       })
     );
     return;
@@ -93,3 +93,4 @@ self.addEventListener('fetch',function(event){
 
 var offlineJob=null;
 self.addEventListener('message',function(event){if(event.data&&event.data.type==='PREPARE_OFFLINE')event.waitUntil(offlineJob||(offlineJob=caches.open(CACHE).then(function(cache){return cache.match(OFFLINE_MANIFEST)}).then(function(hit){if(!hit)return prepareOffline()}).finally(function(){offlineJob=null}))) });
+
