@@ -1,5 +1,5 @@
 {
-  "build": "20261004-lei-reading-v1",
+  "build": "20261004-lei-reading-v2",
   "files": [
     "/central-v119.html?direct=35",
     "/ui/discipline-standard.js?v=20261003penalnative1",
@@ -400,6 +400,13 @@
     "/assets/cf/m15-infografico.svg?v=20261004cfg07v2",
     "/assets/cf/m07-infografico-v2.svg?v=20261004cfg07v2",
     "/assets/cf/m10-infografico-v2.svg?v=20261004cfg07v2",
-    "/ui/lei-em-dia-v1.css?v=20261004lei1"
+    "/ui/lei-em-dia-v1.css?v=20261004lei1",
+    "/tools/decorando.html",
+    "/ui/tool-navigation.js?v=20261002navigation2",
+    "/tools/decorando-data-cf.js?v=20261001fix1",
+    "/tools/decorando-data-civil.js?v=20261001fix1",
+    "/tools/decorando-data-penal.js?v=20261001fix1",
+    "/tools/decorando-data-cpc.js?v=20261001fix1",
+    "/tools/decorando-data-cpp.js?v=20261001fix1"
   ]
 }
