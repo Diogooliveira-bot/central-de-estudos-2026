@@ -356,5 +356,5 @@ global.addEventListener('message',e=>{
     }
   }catch(_){}
 });
-if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',()=>setTimeout(install,20),{once:true});setTimeout(install,20);setTimeout(install,500);
+install();if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',()=>setTimeout(install,20),{once:true});setTimeout(install,120);setTimeout(install,500);
 })(window);
