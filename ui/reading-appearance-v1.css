@@ -78,7 +78,7 @@ html.bc-ui-v1 .bc-reading-appearance .bc-reading-appearance-controls [aria-press
 html.bc-ui-v1.bc-topnav.bc-reading-visible[data-bc-reading-mode="night"] #centralSidebar {background:#202020!important;box-shadow:0 1px 0 #414141!important;}
 /* A leitura anterior de Civil/Administrativo usa a tela cheia do próprio módulo. */
 html.bc-ui-v1.bc-topnav.central-reading-fullscreen-v66124 #centralSidebar {display:flex!important;}
-html.bc-ui-v1.bc-topnav.central-reading-fullscreen-v66124 #appRoot #homeView {
+html.bc-ui-v1.bc-topnav.central-reading-fullscreen-v66124 #appRoot .workspace>#homeView.view {
   top:calc(var(--bc-nav-height) + 60px)!important;height:calc(100dvh - var(--bc-nav-height) - 60px)!important;
   background:var(--bc-reading-paper)!important;color:var(--bc-reading-text)!important;padding:0!important;
 }
@@ -99,5 +99,8 @@ html.bc-ui-v1.bc-topnav.central-reading-fullscreen-v66124 #central-reading-exit 
   html.bc-ui-v1 .bc-reading-appearance .bc-native-reader-tools input {max-width:none;}
   .bc-reading-appearance-controls {flex-wrap:wrap;justify-content:flex-end;}
   #bc-reading-legacy-controls {height:104px;padding:54px 12px 8px;}
-  html.bc-ui-v1.bc-topnav.central-reading-fullscreen-v66124 #appRoot #homeView {top:calc(var(--bc-nav-height) + 104px)!important;height:calc(100dvh - var(--bc-nav-height) - 104px)!important;}
+  html.bc-ui-v1.bc-topnav.central-reading-fullscreen-v66124 #appRoot .workspace>#homeView.view {top:calc(var(--bc-nav-height) + 104px)!important;height:calc(100dvh - var(--bc-nav-height) - 104px)!important;}
 }
+
+html.bc-ui-v1.bc-topnav.central-reading-fullscreen-v66124 #appRoot #homeView .bc-reading-path>:not(.bc-reading-path):not(.central-reading-active-topic) {display:none!important;}
+html.bc-ui-v1.bc-topnav.central-reading-fullscreen-v66124 #appRoot #homeView .bc-reading-path {display:block!important; width:100%!important; max-width:none!important; padding:0!important; margin:0!important; border:0!important; border-radius:0!important; background:var(--bc-reading-paper)!important; box-shadow:none!important; overflow:visible!important;}

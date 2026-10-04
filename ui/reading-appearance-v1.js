@@ -87,8 +87,11 @@
     var topic = legacy ? document.querySelector('.central-reading-active-topic') : null;
     if (topic !== legacyTopic) {
       if (legacyFontObserver) legacyFontObserver.disconnect();
+      document.querySelectorAll('.bc-reading-path').forEach(function (element) { element.classList.remove('bc-reading-path'); });
       legacyTopic = topic;
       if (topic) {
+        var parent = topic.parentElement;
+        while (parent && parent.id !== 'homeView') { parent.classList.add('bc-reading-path'); parent = parent.parentElement; }
         legacyFontObserver = new MutationObserver(schedule);
         legacyFontObserver.observe(topic, {subtree: true, attributes: true, attributeFilter: ['style']});
       }
