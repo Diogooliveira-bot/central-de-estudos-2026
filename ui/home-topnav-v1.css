@@ -42,6 +42,7 @@ html.bc-ui-v1.bc-topnav .workspace>.view { height:100%!important; min-height:0!i
 html.bc-ui-v1.bc-topnav .app .view.central-view-visible:not(.hidden) { top:var(--bc-nav-height)!important; left:0!important; padding:22px 28px!important; }
 html.bc-ui-v1.bc-topnav .central-view-back { top:calc(var(--bc-nav-height) + 6px)!important; left:12px!important; }
 html.bc-ui-v1.bc-topnav #homeView {
+  height:calc(100dvh - var(--bc-nav-height))!important; min-height:0!important; box-sizing:border-box!important; overflow-y:auto!important;
   background:#f3f9fd!important; color:#12344d!important; padding:22px 28px 32px!important;
   --bc-home-line:#cde2ee; --bc-home-brand:#10c9c1; --bc-home-text:#12344d; --bc-home-muted:#526d80;
 }
