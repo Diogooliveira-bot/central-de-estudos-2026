@@ -5,7 +5,7 @@ const localStorage=(()=>{try{const s=window.localStorage,k='__central_folder_pro
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Decorando Penal, Constitucional e Civil · Analista Judiciário — Offline</title>
+<title>Lei em Dia · Base Completa</title>
 <style>
 :root { --ink: #20251f; --muted: #747a72; --green: #315c54; --paper: #fbfaf6; --line: #e7e4da; }
 * { box-sizing: border-box; }
@@ -767,7 +767,7 @@ button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-vis
 .central-native-return a{display:inline-flex;align-items:center;gap:6px;padding:9px 12px;border-radius:10px;background:#111827;color:#fff;text-decoration:none;font-weight:800;font-size:13px;border:1px solid rgba(255,255,255,.18);box-shadow:0 4px 18px rgba(0,0,0,.18)}
 </style>
 <script>try{history.scrollRestoration='manual'}catch(e){};window.addEventListener('pageshow',()=>{scrollTo(0,0);setTimeout(()=>scrollTo(0,0),30)});</script>
-<script>window.__CENTRAL_EMBEDDED__=true;</script><link rel="stylesheet" href="../ui/tool-navigation.css?v=20261001fix1"></head>
+<script>window.__CENTRAL_EMBEDDED__=true;</script><link rel="stylesheet" href="../ui/tool-navigation.css?v=20261001fix1"><link rel="stylesheet" href="/ui/lei-em-dia-v1.css?v=20261004lei1"></head>
 <body>
 <div id="app"></div>
 <script>
@@ -846,6 +846,7 @@ let ui={
   selectedTopics:new Set(),
   selectedSubtopics:new Set(),
   discPicked:false,
+  fBanks:new Set(),fYears:new Set(),fRoles:new Set(),fOrigin:"",dd:null,ddQuery:"",
   statusPicked:false,
   shuffleSeed:0,
   statusFilter:"all",
@@ -880,17 +881,7 @@ function topicSubs(topicId){
   if(!_topicSubsCache){_topicSubsCache={};Object.values(TOPICS_BY_DISCIPLINE).forEach(list=>list.forEach(t=>{_topicSubsCache[t.id]=new Set(t.subtopics)}))}
   return _topicSubsCache[topicId]||new Set();
 }
-function selectedActive(){
-  // Questão entra se o bloco está marcado e o capítulo está marcado; capítulos que não existem
-  // como chip do bloco não podem ser desmarcados, então seguem o bloco.
-  return allActive().filter(a=>ui.selectedTopics.has(a.topicId)&&(ui.selectedSubtopics.has(a.subtopic)||!topicSubs(a.topicId).has(a.subtopic)))
-}
-function statusFiltered(list){
-  if(ui.statusFilter==="answered") return list.filter(a=>hasAttempts(a.id));
-  if(ui.statusFilter==="wrong") return list.filter(a=>lastAttempt(a.id)?.correct===false);
-  if(ui.statusFilter==="unseen") return list.filter(a=>!hasAttempts(a.id));
-  return list;
-}
+function statusFiltered(list){return list;}
 function shuffleKey(id){let h=(2166136261^ui.shuffleSeed)>>>0;for(let i=0;i<id.length;i++){h^=id.charCodeAt(i);h=Math.imul(h,16777619)}h^=h>>>13;h=Math.imul(h,1274126177);return (h^(h>>>16))>>>0}
 function visible(){
   const list=statusFiltered(selectedActive());
@@ -952,7 +943,7 @@ function toggleAllSubtopics(){
 }
 function chooseStatus(v){ui.statusPicked=true;ui.statusFilter=v;ui.articleIndex=0;ui.choice=null;render()}
 function startStudy(){
-  if(!ui.selectedSubtopics.size||!visible().length)return;
+  if(!ui.discPicked||!visible().length)return;
   ui.shuffleSeed=Math.floor(Math.random()*4294967295)+1;
   ui.articleIndex=0;ui.choice=null;ui.historyOpen=false;ui.commentOpen=false;
   ui.scrollChoices={};ui.scrollComments={};ui.scrollHistories={};ui.scrollLimit=40;
@@ -984,6 +975,31 @@ function move(dir){
   if(n<0||n>=natural.length)return;
   ui.articleIndex=n;ui.choice=null;ui.focusArticleId=null;ui.historyOpen=false;ui.commentOpen=false;render();window.scrollTo({top:0,behavior:"smooth"})
 }
+function randomQuestion(){
+  const curId=(visible()[ui.articleIndex]||{}).id;
+  ui.choice=null;ui.focusArticleId=null;
+  const v=visible();
+  if(v.length<2){render();return}
+  let idx;do{idx=Math.floor(Math.random()*v.length)}while(v[idx].id===curId);
+  ui.articleIndex=idx;ui.historyOpen=false;ui.commentOpen=false;render();window.scrollTo({top:0,behavior:"smooth"})
+}
+function scrollToQuestion(id){
+  const el=[...document.querySelectorAll(".scroll-card-footer")].find(e=>e.dataset.qid===id);
+  const card=el&&el.closest(".scroll-question-card");
+  if(card)card.scrollIntoView({behavior:"smooth",block:"start"})
+}
+function scrollNext(id){
+  const v=visible(),i=v.findIndex(a=>a.id===id);
+  if(i<0||i>=v.length-1)return;
+  if(i+1>=ui.scrollLimit){ui.scrollLimit+=40;render()}
+  setTimeout(()=>scrollToQuestion(v[i+1].id),30)
+}
+function scrollRandom(id){
+  const v=visible();if(v.length<2)return;
+  let idx;do{idx=Math.floor(Math.random()*v.length)}while(v[idx].id===id);
+  if(idx>=ui.scrollLimit){ui.scrollLimit=Math.ceil((idx+1)/40)*40;render()}
+  setTimeout(()=>scrollToQuestion(v[idx].id),30)
+}
 function updateNote(id,val){saved.notes[id]=val;save()}
 function updateImportance(id,val){saved.importance[id]=val;save();render()}
 function toggleHighlight(id,index){
@@ -1005,7 +1021,7 @@ function answerButtons(selected,fn){
 }
 function topbar(audit=false){
   return `<header class="filter-topbar">
-    <div class="brand"><div class="brand-mark">LS</div><div><strong>Lei Seca</strong><span>${audit?"auditoria de estudos":"versão enxuta"}</span></div></div>
+    <div class="brand"><div class="bc-logo"><img src="/assets/base-completa-symbol.png" alt="Logo Base Completa"></div><div><strong>Base Completa</strong><span>${audit?"Desempenho nos estudos":"Lei em Dia"}</span></div></div>
     <div class="header-controls"><span class="sync-indicator saved">✓ Salvo neste dispositivo</span>
       <button class="theme-toggle" onclick="setPref('theme','${saved.preferences.theme==="light"?"dark":"light"}')">${saved.preferences.theme==="light"?"☾ Noturno":"☀ Claro"}</button>
       <button class="header-action" onclick="setScreen('${audit?"filters":"audit"}')">${audit?"← Voltar ao início":"Ver auditoria"}</button>
@@ -1013,47 +1029,138 @@ function topbar(audit=false){
   </header>`
 }
 function toggleAcc(n){ui.accOpen=ui.accOpen===n?0:n;render()}
-(function(){const orig=chooseDiscipline;chooseDiscipline=function(id){orig(id);if(DISCIPLINES[id]){ui.selectedTopics=new Set();ui.selectedSubtopics=new Set();ui.discPicked=true;ui.statusPicked=false;ui.accOpen=2;render()}}})();
+(function(){const orig=chooseDiscipline;chooseDiscipline=function(id){orig(id);if(DISCIPLINES[id]){ui.selectedTopics=new Set();ui.selectedSubtopics=new Set();ui.fBanks=new Set();ui.fYears=new Set();ui.fRoles=new Set();ui.fOrigin="";ui.discPicked=true;ui.statusPicked=false;ui.dd=null;render()}}})();
+/* ===== Filtro estilo banco de questões (QConcursos/TEC) ===== */
+function qcBank(a){let b=String((a.question||{}).bank||"").trim().toUpperCase();if(!b)return "Sem banca informada";if(/CESPE|CEBRASPE/.test(b))return "CEBRASPE (CESPE)";return b}
+function qcYear(a){const y=(a.question||{}).year;return y?String(y):"Sem ano"}
+function qcRole(a){const r=String((a.question||{}).role||"").trim();return r||""}
+function qcOrigin(a){return (a.origin==="authorial"||(a.question||{}).origin==="authorial")?"authorial":"real"}
+const QC_ORIGIN_LABEL={real:"Questões de prova",authorial:"Autorais"};
+function selectedActive(){
+  return allActive().filter(a=>{
+    if(ui.selectedTopics.size&&!ui.selectedTopics.has(a.topicId))return false;
+    if(ui.selectedSubtopics.size&&!ui.selectedSubtopics.has(a.subtopic))return false;
+    if(ui.fBanks.size&&!ui.fBanks.has(qcBank(a)))return false;
+    return true;
+  })
+}
+function qcEsc(x){return esc(x).replace(/'/g,"&#39;")}
+function qcOptions(field){
+  const base=allActive();const d=currentDiscipline();const m=new Map();
+  const add=(k,label,extra)=>{const o=m.get(k)||{key:k,label,n:0,...extra};o.n++;m.set(k,o)};
+  if(field==="topic"){disciplineTopics().forEach(t=>m.set(t.id,{key:t.id,label:t.label,n:0}));base.forEach(a=>{const o=m.get(a.topicId);if(o)o.n++});return [...m.values()]}
+  if(field==="sub"){const pool=ui.selectedTopics.size?base.filter(a=>ui.selectedTopics.has(a.topicId)):base;const tl={};disciplineTopics().forEach(t=>tl[t.id]=t.label);pool.forEach(a=>add(a.subtopic,a.subtopic,{group:tl[a.topicId]||""}));return [...m.values()]}
+  if(field==="bank"){base.forEach(a=>add(qcBank(a),qcBank(a)));return [...m.values()].sort((x,y)=>y.n-x.n)}
+  if(field==="year"){base.forEach(a=>add(qcYear(a),qcYear(a)));return [...m.values()].sort((x,y)=>(y.key==="Sem ano"?-1:0)-(x.key==="Sem ano"?-1:0)||String(y.key).localeCompare(String(x.key)))}
+  if(field==="role"){base.forEach(a=>{const r=qcRole(a);if(r)add(r,r)});return [...m.values()].sort((x,y)=>y.n-x.n)}
+  return []
+}
+const QC_FIELDS={
+  disc:{label:"Disciplina",ph:"Selecione a disciplina",single:true},
+  topic:{label:"Assunto",ph:"Todos os assuntos",set:()=>ui.selectedTopics,search:true},
+  sub:{label:"Subassunto",ph:"Todos os subassuntos",set:()=>ui.selectedSubtopics,search:true},
+  bank:{label:"Banca",ph:"Todas as bancas",set:()=>ui.fBanks,search:true},
+  year:{label:"Ano",ph:"Todos os anos",set:()=>ui.fYears,search:false},
+  role:{label:"Cargo / órgão",ph:"Todos os cargos",set:()=>ui.fRoles,search:true}
+};
+function qcSummary(f){
+  if(f==="disc")return ui.discPicked?esc(currentDiscipline().name):"";
+  const s=QC_FIELDS[f].set();if(!s.size)return "";
+  if(f==="topic"){const t=disciplineTopics().find(x=>s.has(x.id));return s.size===1?esc(t?t.label:""):`${s.size} selecionados`}
+  return s.size===1?esc([...s][0]):`${s.size} selecionados`;
+}
+function qcRerender(){
+  const l=document.getElementById("qc-list"),st=l?l.scrollTop:0;
+  const si=document.getElementById("qc-search"),foc=si&&document.activeElement===si,q=si?si.value:"";
+  render();
+  const l2=document.getElementById("qc-list");if(l2)l2.scrollTop=st;
+  const s2=document.getElementById("qc-search");if(s2){s2.value=q;if(foc){s2.focus();s2.setSelectionRange(q.length,q.length)}}
+}
+function qcOpen(f){if(f!=="disc"&&!ui.discPicked)return;ui.dd=ui.dd===f?null:f;ui.ddQuery="";render();const s=document.getElementById("qc-search");if(s&&window.innerWidth>640)s.focus()}
+function qcClose(){ui.dd=null;ui.ddQuery="";render()}
+function qcSearch(v){ui.ddQuery=v;qcRerender()}
+function qcPick(f,key){
+  if(f==="disc"){chooseDiscipline(key);ui.dd=null;render();return}
+  const s=QC_FIELDS[f].set();s.has(key)?s.delete(key):s.add(key);
+  if(f==="topic"&&ui.selectedSubtopics.size){const ok=new Set(allActive().filter(a=>!ui.selectedTopics.size||ui.selectedTopics.has(a.topicId)).map(a=>a.subtopic));[...ui.selectedSubtopics].forEach(x=>{if(!ok.has(x))ui.selectedSubtopics.delete(x)})}
+  ui.articleIndex=0;ui.choice=null;qcRerender();
+}
+function qcClearField(f){if(f==="disc")return;QC_FIELDS[f].set().clear();qcRerender()}
+function qcSeg(k,v){const cur=k==="status"?(ui.statusFilter==="all"?"":ui.statusFilter):ui.fOrigin;const nv=cur===v?"":v;if(k==="status"){ui.statusFilter=nv||"all";ui.statusPicked=!!nv}else ui.fOrigin=nv;ui.articleIndex=0;ui.choice=null;render()}
+function qcClearAll(){ui.selectedTopics=new Set();ui.selectedSubtopics=new Set();ui.fBanks=new Set();ui.fYears=new Set();ui.fRoles=new Set();ui.fOrigin="";ui.statusFilter="all";ui.statusPicked=false;ui.dd=null;render()}
+function qcPopover(f){
+  const F=QC_FIELDS[f];let opts;
+  if(f==="disc")opts=Object.values(DISCIPLINES).map(x=>({key:x.id,label:x.name,sub:x.subtitle,badge:x.badge,color:x.color,n:allActiveAll().filter(a=>a.discipline===x.id).length}));
+  else opts=qcOptions(f);
+  const q=(ui.ddQuery||"").trim().toLowerCase();
+  const norm=s=>String(s).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");
+  const nq=norm(q);
+  let list=nq?opts.filter(o=>norm(o.label).includes(nq)):opts;
+  const total=list.length,CAP=250;if(list.length>CAP)list=list.slice(0,CAP);
+  const sel=f==="disc"?new Set(ui.discPicked?[currentDiscipline().id]:[]):F.set();
+  let lastG=null;
+  const rows=list.map(o=>{
+    const g=o.group&&o.group!==lastG?(lastG=o.group,`<div class="qc-group">${esc(o.group)}</div>`):"";
+    const on=sel.has(o.key);
+    const lead=f==="disc"?`<span class="law-badge" style="background:${o.color}">${o.badge}</span>`:`<span class="qc-check ${on?"on":""}">${on?"✓":""}</span>`;
+    return g+`<button class="qc-opt ${on?"on":""}" onclick="qcPick('${f}','${qcEsc(o.key)}')">${lead}<span class="qc-opt-label">${esc(o.label)}${o.sub?`<small>${esc(o.sub)}</small>`:""}</span><em>${o.n}</em></button>`;
+  }).join("");
+  return `<div class="qc-backdrop" onclick="qcClose()"></div>
+  <div class="qc-pop" role="dialog" aria-label="${F.label}">
+    <div class="qc-pop-head"><strong>${F.label}</strong><button onclick="qcClose()" aria-label="Fechar">✕</button></div>
+    ${F.search?`<div class="qc-search"><input id="qc-search" type="search" placeholder="Buscar em ${F.label.toLowerCase()}…" value="${esc(ui.ddQuery||"")}" oninput="qcSearch(this.value)" autocomplete="off"></div>`:""}
+    <div class="qc-list" id="qc-list">${rows||`<div class="compact-empty">Nada encontrado.</div>`}${total>CAP?`<div class="qc-more">Mostrando ${CAP} de ${total}. Refine a busca.</div>`:""}</div>
+    ${f!=="disc"?`<div class="qc-pop-foot"><button onclick="qcClearField('${f}')" ${sel.size?"":"disabled"}>Limpar</button><button class="primary" onclick="qcClose()">Concluir${sel.size?` (${sel.size})`:""}</button></div>`:""}
+  </div>`;
+}
+function rememberFilterSection(key,open){
+  ui.filterOpen||={subjects:true,banks:false};
+  ui.filterOpen[key]=open;
+  if(!open&&((key==="subjects"&&["topic","sub"].includes(ui.dd))||(key==="banks"&&ui.dd==="bank")))ui.dd=null;
+}
 function renderFilters(){
-  if(ui.accOpen===undefined)ui.accOpen=ui.discPicked?2:1;
-  const topics=ui.discPicked?disciplineTopics():[],d=currentDiscipline();
-  const available=topics.filter(t=>ui.selectedTopics.has(t.id)).flatMap(t=>t.subtopics);
-  const counts=statusCounts();
-  const status=[["all","Todas"],["unseen","Não vistas"],["wrong","Errei"],["answered","Respondidas"]];
-  const sumry={1:ui.discPicked?esc(d.name):"Nenhuma selecionada",2:topics.length?(ui.selectedTopics.size?`${ui.selectedTopics.size} de ${topics.length} blocos`:"Nenhum selecionado"):"Escolha a disciplina primeiro",3:ui.selectedSubtopics.size?`${ui.selectedSubtopics.size} selecionados`:"Nenhum selecionado",4:ui.statusPicked?`${(status.find(x=>x[0]===ui.statusFilter)||status[0])[1]} · ${counts[ui.statusFilter]} questões`:"Todas (padrão)",5:`${saved.preferences.studyMode==="focus"?"Foco":"Scroll"} · ${saved.preferences.order==="random"?"Aleatória":"Sequencial"}`};
-  const ac=n=>`acc ${ui.accOpen===n?"open":""}`;
-  const head=(n,t)=>`<div class="selection-label acc-head" role="button" tabindex="0" aria-expanded="${ui.accOpen===n}" onclick="toggleAcc(${n})" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleAcc(${n})}"><span>${n}</span><div><strong>${t}</strong><small>${sumry[n]}</small></div>`;
-  return `<main class="filter-page compact-filter-page">${topbar(false)}
-    <section class="compact-filter-content">
-      <div class="compact-filter-heading"><span>NOVO BLOCO</span><h1>O que você quer estudar?</h1><p>Escolha a lei, o título/capítulo e comece.</p></div>
-      ${ui.discPicked&&d.supplementNotice?`<aside class="decorando-supplement-notice"><strong>Complementação necessária</strong><p>${esc(d.supplementNotice)}</p></aside>`:""}
-      <section class="selection-card">
-        <div class="selection-section discipline-row ${ac(1)}">
-          ${head(1,"Disciplina")}</div>
-          <div class="discipline-choice-grid">${Object.values(DISCIPLINES).map(x=>`<button onclick="chooseDiscipline('${x.id}')" class="discipline-choice ${ui.discPicked&&d.id===x.id?'selected':''}"><span class="law-badge" style="background:${x.color}">${x.badge}</span><div><strong>${esc(x.name)}</strong><small>${esc(x.subtitle)}</small></div><b>${ui.discPicked&&d.id===x.id?'✓':''}</b></button>`).join('')}</div>
-        </div>
-        <div class="selection-section ${ac(2)}">${head(2,"Títulos / blocos")}${topics.length?`<button onclick="event.stopPropagation();selectAllTopics()">${ui.selectedTopics.size===topics.length?"Limpar":"Selecionar todos"}</button>`:""}</div>
-          ${topics.length?`<div class="topic-choice-grid">${topics.map(t=>{const n=DATA.filter(a=>a.discipline===d.id&&a.topicId===t.id&&!saved.deleted[a.id]).length;return `<button onclick="toggleTopic('${t.id}')" class="${ui.selectedTopics.has(t.id)?"selected":""} ${n===0?"coverage-gap":""}"><span>${ui.selectedTopics.has(t.id)?"✓":""}</span><div><strong>${esc(t.label)}</strong><small>${esc(t.range)} · ${d.badge} · ${n} ${n===1?"questão":"questões"}${n===0?" · complementar na plataforma":""}</small></div></button>`}).join("")}</div>`:`<div class="compact-empty">Escolha uma disciplina acima para ver os títulos.</div>`}</div>
-        </div>
-        <div class="selection-section ${ac(3)}">${head(3,"Capítulos / seções")}${available.length?`<button onclick="event.stopPropagation();toggleAllSubtopics()">${available.every(x=>ui.selectedSubtopics.has(x))?"Limpar":"Selecionar todos"}</button>`:""}</div>
-          ${available.length?`<div class="subtopic-chips">${available.map(x=>`<button onclick="toggleSubtopic('${esc(x).replace(/'/g,"&#39;")}')" class="${ui.selectedSubtopics.has(x)?"selected":""}"><span>${ui.selectedSubtopics.has(x)?"✓":"+"}</span>${esc(x)}</button>`).join("")}</div>`:`<div class="compact-empty">Selecione um título acima para ver os capítulos.</div>`}
-        </div>
-        <div class="selection-section ${ac(4)}">${head(4,"Quais questões?")}</div>
-          <div class="initial-status-options">${status.map(([v,l])=>`<button class="${ui.statusPicked&&ui.statusFilter===v?"selected":""}" onclick="chooseStatus('${v}')"><span>${l}</span><b>${counts[v]}</b></button>`).join("")}</div>
-        </div>
-        <div class="selection-section ${ac(5)}">${head(5,"Como estudar?")}</div>
-          <div class="preference-grid">
-            <div><span>Exibição</span><div><button class="${saved.preferences.studyMode==="focus"?"selected":""}" onclick="setPref('studyMode','focus')">▣ Foco</button><button class="${saved.preferences.studyMode==="scroll"?"selected":""}" onclick="setPref('studyMode','scroll')">☷ Scroll</button></div></div>
-            <div><span>Ordem das questões</span><div><button class="${saved.preferences.order!=="random"?"selected":""}" onclick="setPref('order','sequential')">≡ Sequencial</button><button class="${saved.preferences.order==="random"?"selected":""}" onclick="setPref('order','random')">⤮ Aleatória</button></div></div>
-            <div><span>Ordem dos botões</span><div><button class="${saved.preferences.answerOrder==="correct-left"?"selected":""}" onclick="setPref('answerOrder','correct-left')">Certo à esquerda</button><button class="${saved.preferences.answerOrder==="wrong-left"?"selected":""}" onclick="setPref('answerOrder','wrong-left')">Errado à esquerda</button></div></div>
-            <div><span>Aparência</span><div><button class="${saved.preferences.theme==="light"?"selected":""}" onclick="setPref('theme','light')">☀ Claro</button><button class="${saved.preferences.theme==="dark"?"selected":""}" onclick="setPref('theme','dark')">☾ Noturno</button></div></div>
-          </div>
-        </div>
-        <div class="compact-start"><div><strong>${ui.selectedSubtopics.size}</strong><span> capítulos/seções selecionados</span><small>${counts[ui.statusFilter]} questões neste filtro · modo ${saved.preferences.studyMode==="focus"?"Foco":"Scroll"} · ${saved.preferences.order==="random"?"aleatória":"sequencial"}</small></div><button ${!ui.selectedSubtopics.size||!counts[ui.statusFilter]?"disabled":""} onclick="startStudy()">Iniciar questões →</button></div>
+  const d=currentDiscipline(),picked=ui.discPicked;
+  ui.filterOpen||={subjects:true,banks:false};
+  const total=picked?selectedActive().length:0;
+  const field=f=>{const F=QC_FIELDS[f],sm=qcSummary(f),dis=f!=="disc"&&!picked;
+    return `<div class="qc-field ${ui.dd===f?"open":""} ${dis?"disabled":""}"><label id="label-${f}">${F.label}</label>
+      <button aria-labelledby="label-${f}" class="qc-select ${sm?"filled":""}" ${dis?"disabled":""} onclick="qcOpen('${f}')" aria-haspopup="dialog" aria-expanded="${ui.dd===f}"><span>${sm||F.ph}</span><i></i></button>
+      ${ui.dd===f?qcPopover(f):""}</div>`};
+  const nf=ui.selectedTopics.size+ui.selectedSubtopics.size+ui.fBanks.size;
+  const subjects=ui.selectedTopics.size?`${ui.selectedTopics.size} ${ui.selectedTopics.size===1?"assunto":"assuntos"}${ui.selectedSubtopics.size?` · ${ui.selectedSubtopics.size} subassunto(s)`:""}`:ui.selectedSubtopics.size?`${ui.selectedSubtopics.size} subassunto(s)`:"Todos os assuntos";
+  const bank=ui.fBanks.size===1?esc([...ui.fBanks][0]):ui.fBanks.size?`${ui.fBanks.size} bancas`:"Todas as bancas";
+  return `<main class="filter-page compact-filter-page qc bc-steps">${topbar(false)}
+    <section class="compact-filter-content qc-content">
+      <div class="qc-title"><div><span class="qc-eyebrow">Lei em Dia</span><h1>Monte seu caderno</h1><p>Escolha a disciplina e ajuste os filtros que deseja usar.</p></div>
+        <div class="qc-count ${picked?"":"idle"}" aria-live="polite"><strong>${picked?total.toLocaleString("pt-BR"):"—"}</strong><span>${picked?(total===1?"questão disponível":"questões disponíveis"):"Escolha uma disciplina"}</span></div></div>
+      ${picked&&d.supplementNotice?`<aside class="decorando-supplement-notice"><strong>Complementação necessária</strong><p>${esc(d.supplementNotice)}</p></aside>`:""}
+      <section class="qc-card bc-accordion" aria-label="Filtros do caderno">
+        <div class="bc-discipline-step"><div class="bc-step-title"><span>01</span><strong>Disciplina</strong></div>${field("disc")}</div>
+        <details class="bc-filter-section" ${ui.filterOpen.subjects?"open":""} ontoggle="rememberFilterSection('subjects',this.open)">
+          <summary><span class="bc-step-title"><span>02</span><strong>Assunto e subassunto</strong></span><small>${subjects}</small><i aria-hidden="true"></i></summary>
+          <div class="bc-step-fields">${field("topic")}${field("sub")}</div>
+        </details>
+        <details class="bc-filter-section" ${ui.filterOpen.banks?"open":""} ontoggle="rememberFilterSection('banks',this.open)">
+          <summary><span class="bc-step-title"><span>03</span><strong>Banca</strong></span><small>${bank}</small><i aria-hidden="true"></i></summary>
+          <div class="bc-step-fields bank-only">${field("bank")}</div>
+        </details>
       </section>
+      <details class="qc-card qc-opts"><summary><strong>Opções de estudo</strong><span>${saved.preferences.studyMode==="focus"?"Foco":"Scroll"} · ${saved.preferences.order==="random"?"Aleatória":"Sequencial"}</span></summary>
+        <div class="preference-grid">
+          <div><span>Exibição</span><div><button class="${saved.preferences.studyMode==="focus"?"selected":""}" onclick="setPref('studyMode','focus')">▣ Foco</button><button class="${saved.preferences.studyMode==="scroll"?"selected":""}" onclick="setPref('studyMode','scroll')">☷ Scroll</button></div></div>
+          <div><span>Ordem das questões</span><div><button class="${saved.preferences.order!=="random"?"selected":""}" onclick="setPref('order','sequential')">≡ Sequencial</button><button class="${saved.preferences.order==="random"?"selected":""}" onclick="setPref('order','random')">⤮ Aleatória</button></div></div>
+          <div><span>Ordem dos botões</span><div><button class="${saved.preferences.answerOrder==="correct-left"?"selected":""}" onclick="setPref('answerOrder','correct-left')">Certo à esquerda</button><button class="${saved.preferences.answerOrder==="wrong-left"?"selected":""}" onclick="setPref('answerOrder','wrong-left')">Errado à esquerda</button></div></div>
+          <div><span>Aparência</span><div><button class="${saved.preferences.theme==="light"?"selected":""}" onclick="setPref('theme','light')">☀ Claro</button><button class="${saved.preferences.theme==="dark"?"selected":""}" onclick="setPref('theme','dark')">☾ Noturno</button></div></div>
+        </div>
+      </details>
+      <div class="qc-bar bc-session-action"><div><button class="qc-link" onclick="qcClearAll()">Limpar filtros</button><small>${nf?nf+(nf===1?" seleção aplicada":" seleções aplicadas"):"Sem filtros adicionais"}</small></div>
+        <button class="qc-go" ${!picked||!total?"disabled":""} onclick="startStudy()">Resolver questões →</button></div>
+      <footer class="bc-footer"><strong>Base Completa</strong><span>Estudar, revisar e evoluir.</span></footer>
     </section>
   </main>`
 }
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&typeof ui!=="undefined"&&ui.dd){qcClose()}});
+
 function feedback(article,choice){
   const ok=choice===article.question.answer;
   return `<div class="feedback ${ok?"correct":"wrong"}"><strong>${ok?"Você acertou":"Você errou"}</strong>${article.question.explanation?`<p>${esc(article.question.explanation)}</p>`:""}${article.question.updateWarning?`<aside class="legal-update-warning"><strong>⚠ Atualização legislativa</strong><span>${esc(article.question.updateWarning)}</span></aside>`:""}${article.question.historicalNote?`<aside class="historical-question-note"><strong>Questão histórica</strong><span>${esc(article.question.historicalNote)}</span></aside>`:""}</div>`
@@ -1103,7 +1210,7 @@ function studyHeader(){
 }
 function sidebar(){
   const d=currentDiscipline();
-  return `<aside class="sidebar ${ui.menuOpen?"open":""}"><div class="sidebar-brand"><div class="brand-mark">LS</div><div><strong>Lei Seca</strong><span>versão enxuta</span></div><button onclick="setScreen('filters')">⌂</button></div>
+  return `<aside class="sidebar ${ui.menuOpen?"open":""}"><div class="sidebar-brand"><div class="bc-logo"><img src="/assets/base-completa-symbol.png" alt="Logo Base Completa"></div><div><strong>Base Completa</strong><span>Lei em Dia</span></div><button onclick="setScreen('filters')" aria-label="Voltar aos filtros" title="Voltar aos filtros">⌂</button></div>
     <nav class="law-nav"><p class="nav-label">MINHAS LEIS</p>${Object.values(DISCIPLINES).map(x=>{const list=DATA.filter(a=>a.discipline===x.id&&!saved.deleted[a.id]),seen=list.filter(a=>hasAttempts(a.id)).length;return `<button class="${d.id===x.id?'active':''}" onclick="chooseDiscipline('${x.id}')"><span class="law-badge" style="background:${x.color}">${x.badge}</span><span class="law-copy"><strong>${esc(x.law)}</strong><small>${seen}/${list.length} questões vistas</small></span><span class="chevron">›</span></button>`}).join('')}</nav>
     <div class="sidebar-progress"><div><span>Seu avanço · ${d.badge}</span><strong>${progress()}%</strong></div><div class="progress-track"><span style="width:${progress()}%"></span></div><small>${completedCount()} de ${totalCount()} questões vistas</small></div>
   </aside>`
@@ -1121,13 +1228,13 @@ function renderFocus(){
   return `<div class="study-grid question-first">
     <article class="exercise-card">
       <div class="exercise-heading"><div><span class="question-number">QUESTÃO ${ui.articleIndex+1}</span>${originBadge(article)}${domBadge(article.id)}<h2>Julgue o item a seguir</h2>${article.question.meta?`<small class="question-meta">${esc(article.question.meta)}</small>`:""}</div>
-        <div class="question-actions"><span class="question-type">Certo ou errado</span><button onclick="ui.commentOpen=!ui.commentOpen;render()">▢ Comentário</button><button class="delete-action" onclick="deleteQuestion('${article.id}')">Excluir</button></div>
+        <div class="question-actions"><span class="question-type">Certo ou errado</span><button onclick="ui.commentOpen=!ui.commentOpen;render()">▢ Comentário</button></div>
       </div>
       ${ui.commentOpen?`<div class="comment-box"><div><strong>Comentário da questão</strong><small>Salvo automaticamente</small></div><textarea autofocus oninput="updateNote('${article.id}',this.value)" placeholder="Registre uma pegadinha, observação ou lembrete...">${esc(saved.notes[article.id]||"")}</textarea></div>`:""}
       <p class="statement main-statement">${esc(article.question.statement)}</p>
       ${answerButtons(ui.choice,"answerFocus")}
       ${ui.choice!==null?`<div class="answer-reveal">${feedback(article,ui.choice)}${legalBasis(article)}</div>`:""}
-      <div class="article-footer"><button ${ui.articleIndex===0?"disabled":""} onclick="move(-1)">← Anterior</button><span>${ui.articleIndex+1} de ${v.length}</span><button ${ui.articleIndex===v.length-1?"disabled":""} onclick="move(1)">Próximo →</button></div>
+      <div class="article-footer"><button ${ui.articleIndex===0?"disabled":""} onclick="move(-1)">← Anterior</button><span>${ui.articleIndex+1} de ${v.length}</span><div class="footer-right"><button class="btn-random" ${v.length<2?"disabled":""} onclick="randomQuestion()" title="Ir para uma questão aleatória">⤮ Aleatória</button><button class="btn-next" ${ui.articleIndex===v.length-1?"disabled":""} onclick="move(1)">Próximo →</button></div></div>
     </article>
     <aside class="right-column">${ui.choice!==null?`<button class="history-toggle" onclick="ui.historyOpen=!ui.historyOpen;render()"><div><span>◷</span><p><strong>Histórico da questão</strong><small>${attempts.length} ${attempts.length===1?"tentativa":"tentativas"}</small></p></div><b>${ui.historyOpen?"Fechar ↑":"Ver histórico ↓"}</b></button>${ui.historyOpen?historyBlock(article,true):""}`:""}</aside>
   </div>`
@@ -1139,11 +1246,12 @@ function renderScroll(){
       const selected=Object.prototype.hasOwnProperty.call(ui.scrollChoices,article.id)?ui.scrollChoices[article.id]:undefined;
       const open=!!ui.scrollHistories[article.id];
       return `<article class="scroll-question-card">
-        <div class="exercise-heading"><div><span class="question-number">QUESTÃO ${i+1}</span>${originBadge(article)}<h2>Julgue o item a seguir</h2>${article.question.meta?`<small class="question-meta">${esc(article.question.meta)}</small>`:""}</div><div class="question-actions"><span class="question-type">Certo ou errado</span><button onclick="ui.scrollComments['${article.id}']=!ui.scrollComments['${article.id}'];render()">▢ Comentário</button><button class="delete-action" onclick="deleteQuestion('${article.id}')">Excluir</button></div></div>
+        <div class="exercise-heading"><div><span class="question-number">QUESTÃO ${i+1}</span>${originBadge(article)}<h2>Julgue o item a seguir</h2>${article.question.meta?`<small class="question-meta">${esc(article.question.meta)}</small>`:""}</div><div class="question-actions"><span class="question-type">Certo ou errado</span><button onclick="ui.scrollComments['${article.id}']=!ui.scrollComments['${article.id}'];render()">▢ Comentário</button></div></div>
         ${ui.scrollComments[article.id]?`<div class="comment-box"><div><strong>Comentário da questão</strong><small>Salvo automaticamente</small></div><textarea oninput="updateNote('${article.id}',this.value)">${esc(saved.notes[article.id]||"")}</textarea></div>`:""}
         <p class="statement main-statement">${esc(article.question.statement)}</p>
         ${(()=>{const opts=saved.preferences.answerOrder==="correct-left"?[[true,"✓ Certo"],[false,"× Errado"]]:[[false,"× Errado"],[true,"✓ Certo"]];return `<div class="answer-buttons main-answers">${opts.map(([v,l])=>`<button ${selected!==undefined?"disabled":""} class="${selected===v?"chosen":""}" onclick="answerScroll('${article.id}',${v})">${l}</button>`).join("")}</div>`})()}
         ${selected!==undefined?`<div class="answer-reveal">${feedback(article,selected)}${legalBasis(article)}<button class="inline-history-toggle" onclick="ui.scrollHistories['${article.id}']=!ui.scrollHistories['${article.id}'];render()">${open?"Fechar histórico ↑":`Ver histórico (${(saved.attempts[article.id]||[]).length}) ↓`}</button>${historyBlock(article,open)}</div>`:""}
+        <div class="scroll-card-footer" data-qid="${esc(article.id)}"><button class="btn-random" ${v.length<2?"disabled":""} onclick="scrollRandom('${article.id}')">⤮ Aleatória</button><button class="btn-next" ${i===v.length-1?"disabled":""} onclick="scrollNext('${article.id}')">Próxima ↓</button></div>
       </article>`
     }).join("")}
     ${ui.scrollLimit<v.length?`<button class="scroll-load-more" onclick="ui.scrollLimit+=40;render()">Carregar mais 40 questões</button>`:""}
@@ -1196,8 +1304,8 @@ function centralOpenTopic(topicId,direct){
   saved.preferences.discipline=discipline;save();
   const topics=disciplineTopics();
   const target=topics.find(topic=>topic.id===topicId)||null;
-  ui.selectedTopics=new Set(target?[target.id]:topics.map(topic=>topic.id));
-  ui.selectedSubtopics=new Set(target?target.subtopics:topics.flatMap(topic=>topic.subtopics));
+  ui.selectedTopics=new Set(target?[target.id]:[]);
+  ui.selectedSubtopics=new Set();ui.fBanks=new Set();ui.fYears=new Set();ui.fRoles=new Set();ui.fOrigin="";
   ui.statusFilter="all";ui.articleIndex=0;ui.choice=null;ui.historyOpen=false;ui.commentOpen=false;ui.menuOpen=false;ui.discPicked=true;ui.statusPicked=true;
   ui.scrollChoices={};ui.scrollComments={};ui.scrollHistories={};ui.scrollLimit=40;
   ui.screen=direct&&target?"study":"filters";

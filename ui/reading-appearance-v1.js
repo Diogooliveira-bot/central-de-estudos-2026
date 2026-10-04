@@ -83,6 +83,21 @@
   function refresh() {
     pending = false;
     document.querySelectorAll('.bc-native-reader-overlay').forEach(mountNative);
+    document.querySelectorAll('.cf-native-overlay').forEach(function (overlay) {
+      var tools = overlay.querySelector('.cf-native-reader > aside');
+      if (!tools || overlay.classList.contains('bc-reading-appearance')) return;
+      overlay.classList.add('bc-reading-appearance', 'bc-reading-cf');
+      tools.classList.add('bc-native-reader-tools');
+      tools.querySelectorAll('[data-font]').forEach(function (button) {button.hidden = true;button.classList.add('bc-reading-replaced-font');});
+      tools.appendChild(controls());
+      overlay.querySelector('.cf-native-reader article').classList.add('bc-native-article');
+      overlay.querySelector('.cf-native-reader main').classList.add('bc-native-scroll');
+      overlay.querySelector('.cf-native-shell > header').classList.add('bc-native-reader-head');
+      var close = overlay.querySelector('[data-close]');
+      close.classList.add('bc-native-reader-close');
+      close.setAttribute('aria-label', 'Fechar leitura e voltar ao módulo');
+      tools.querySelector('input').setAttribute('aria-label', 'Buscar neste material');
+    });
     var legacy = document.documentElement.classList.contains('central-reading-fullscreen-v66124');
     var topic = legacy ? document.querySelector('.central-reading-active-topic') : null;
     if (topic !== legacyTopic) {
@@ -107,7 +122,7 @@
       bar.appendChild(controls()); document.body.appendChild(bar);
     }
     if (bar) bar.hidden = !legacy;
-    var visible = legacy || !!document.querySelector('.bc-native-reader-overlay');
+    var visible = legacy || !!document.querySelector('.bc-native-reader-overlay,.bc-reading-cf');
     if (document.documentElement.classList.contains('bc-reading-visible') !== visible)
       document.documentElement.classList.toggle('bc-reading-visible', visible);
     syncPreference();
@@ -122,6 +137,7 @@
     document.addEventListener('click', function (event) {
       if (!event.target.closest('#centralSidebar .nav button')) return;
       document.querySelectorAll('.bc-native-reader-overlay .bc-native-reader-close').forEach(function (button) { button.click(); });
+      document.querySelectorAll('.bc-reading-cf [data-close]').forEach(function (button) {button.click();});
       if (window.CentralReadingFullscreen && window.CentralReadingFullscreen.active()) window.CentralReadingFullscreen.leave();
     }, true);
   }

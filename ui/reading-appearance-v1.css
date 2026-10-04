@@ -35,6 +35,18 @@ html.bc-ui-v1 .bc-reading-appearance .bc-native-reader {
 }
 html.bc-ui-v1 .bc-reading-appearance .bc-native-reader>*,
 html.bc-ui-v1 .bc-reading-appearance .bc-native-reader-body>* {min-width:0;}
+html.bc-ui-v1 .bc-reading-cf .cf-native-shell {width:100%!important;height:100%!important;min-width:0;min-height:0;display:grid;grid-template-rows:auto minmax(0,1fr);border:0!important;border-radius:0!important;background:var(--bc-reading-paper)!important;color:var(--bc-reading-text)!important;box-shadow:none!important;}
+html.bc-ui-v1 .bc-reading-cf .cf-native-shell>header {position:relative;min-width:0;color:var(--bc-reading-text)!important;background:var(--bc-reading-paper)!important;}
+html.bc-ui-v1 .bc-reading-cf .cf-native-shell>header>div:first-child {min-width:0;flex:1;}
+html.bc-ui-v1 .bc-reading-cf .cf-native-shell>header b {display:block;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;}
+html.bc-ui-v1 .bc-reading-cf .cf-native-shell>header small {color:var(--bc-reading-muted)!important;}
+html.bc-ui-v1 .bc-reading-cf .cf-native-reader {display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto minmax(0,1fr);min-width:0;min-height:0;overflow:hidden;}
+html.bc-ui-v1 .bc-reading-cf .cf-native-reader>* {min-width:0;}
+html.bc-ui-v1 .bc-reading-cf .cf-native-reader>aside {display:flex;align-items:center;}
+html.bc-ui-v1 .bc-reading-cf .cf-native-reader main {min-height:0;overflow:auto;padding:0!important;}
+html.bc-ui-v1 .bc-reading-cf .cf-native-reader article {margin:0 auto!important;box-sizing:border-box;}
+html.bc-ui-v1 .bc-reading-cf .cf-native-progress {background:var(--bc-reading-line)!important;}
+html.bc-ui-v1 .bc-reading-cf .cf-native-progress span {background:var(--bc-reading-accent)!important;}
 html.bc-ui-v1 .bc-reading-appearance .bc-native-reader-head,
 html.bc-ui-v1 .bc-reading-appearance .bc-native-reader-tools {background:var(--bc-reading-paper)!important;border-color:var(--bc-reading-line)!important;}
 html.bc-ui-v1 .bc-reading-appearance .bc-native-reader-head {min-height:58px;padding:10px 24px;}

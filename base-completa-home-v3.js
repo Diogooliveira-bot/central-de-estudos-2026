@@ -116,14 +116,12 @@
 
   function hideDecorandoSidebar(){
     document.querySelectorAll('#centralSidebar .nav button').forEach(button=>{
-      const label=(button.textContent||'').replace(/\s+/g,' ').trim().toLowerCase();
-      const action=button.getAttribute('onclick')||'';
-      if(label.includes('decorando a lei seca') || action.includes("openEmbeddedTool('decorando'")){
-        button.setAttribute('data-bc-hide-decorando','1');
-        button.style.setProperty('display','none','important');
-        button.setAttribute('aria-hidden','true');
-        button.tabIndex=-1;
-      }
+      if(!(button.getAttribute('onclick')||'').includes("openEmbeddedTool('decorando'"))return;
+      button.removeAttribute('data-bc-hide-decorando');
+      button.style.removeProperty('display');
+      button.removeAttribute('aria-hidden');
+      button.tabIndex=0;
+      const label=button.querySelector('.nav-text');if(label&&label.textContent!=='Lei em Dia')label.textContent='Lei em Dia';
     });
   }
 
@@ -243,3 +241,4 @@
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init,{once:true});
   else init();
 })();
+

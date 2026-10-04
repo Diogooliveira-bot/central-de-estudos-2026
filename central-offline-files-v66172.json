@@ -1,5 +1,5 @@
 {
-  "build": "20261004-cf-g07-v2",
+  "build": "20261004-lei-reading-v1",
   "files": [
     "/central-v119.html?direct=35",
     "/ui/discipline-standard.js?v=20261003penalnative1",
@@ -266,7 +266,7 @@
     "/ui/current-courses.js?v=20261003ptnative2",
     "/base-completa-visual-v1.css?v=20260921a",
     "/base-completa-home-v3.css?v=20261001v5",
-    "/base-completa-home-v3.js?v=20261004boot1",
+    "/base-completa-home-v3.js?v=20261004lei1",
     "/ui/study-navigation.js?v=20261002navigation2",
     "/ui/mind-map.js?v=20261002p3",
     "/ui/m10-header-fix.js?v=20261003m10p1",
@@ -362,8 +362,8 @@
     "/tools/cpc-m20-mapa.html",
     "/ui/home-topnav-v1.css?v=20261004a8",
     "/ui/home-topnav-v1.js?v=20261004a8",
-    "/ui/reading-appearance-v1.css?v=20261004r3",
-    "/ui/reading-appearance-v1.js?v=20261004r3",
+    "/ui/reading-appearance-v1.css?v=20261004r4",
+    "/ui/reading-appearance-v1.js?v=20261004r4",
     "/assets/base-completa-symbol.png",
     "/index.html?central_source=20261004-home-reading-v1",
     "/central-boot-ready.js?v=20261004-brand-loading-cpc-v1",
@@ -399,6 +399,7 @@
     "/assets/cf/m14-infografico.svg?v=20261004cfg07v2",
     "/assets/cf/m15-infografico.svg?v=20261004cfg07v2",
     "/assets/cf/m07-infografico-v2.svg?v=20261004cfg07v2",
-    "/assets/cf/m10-infografico-v2.svg?v=20261004cfg07v2"
+    "/assets/cf/m10-infografico-v2.svg?v=20261004cfg07v2",
+    "/ui/lei-em-dia-v1.css?v=20261004lei1"
   ]
 }
