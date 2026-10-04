@@ -28,10 +28,13 @@ html.bc-ui-v1 .bc-reading-appearance {
   background:var(--bc-reading-paper)!important; backdrop-filter:none!important;
 }
 html.bc-ui-v1 .bc-reading-appearance .bc-native-reader {
+  grid-template-columns:minmax(0,1fr); min-width:0;
   width:100%!important; height:100%!important; max-height:none!important;
   border:0!important; border-radius:0!important; box-shadow:none!important;
   background:var(--bc-reading-paper)!important; color:var(--bc-reading-text)!important;
 }
+html.bc-ui-v1 .bc-reading-appearance .bc-native-reader>*,
+html.bc-ui-v1 .bc-reading-appearance .bc-native-reader-body>* {min-width:0;}
 html.bc-ui-v1 .bc-reading-appearance .bc-native-reader-head,
 html.bc-ui-v1 .bc-reading-appearance .bc-native-reader-tools {background:var(--bc-reading-paper)!important;border-color:var(--bc-reading-line)!important;}
 html.bc-ui-v1 .bc-reading-appearance .bc-native-reader-head {min-height:58px;padding:10px 24px;}
