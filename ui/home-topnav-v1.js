@@ -28,7 +28,7 @@
       if (!meta) { meta = document.createElement('span'); meta.className = 'bc-row-meta'; head.appendChild(meta); }
       var nativeCount = count ? count.textContent.trim() : '';
       var total = nativeCount.match(/\/(\d+)/);
-      var text = total ? total[1] + ' módulos' : nativeCount;
+      var text = total ? nativeCount.replace(/^\d+\//, '') : nativeCount;
       if (meta.textContent !== text) meta.textContent = text;
       if (!head.querySelector('.bc-row-track')) {
         var track = document.createElement('span');
