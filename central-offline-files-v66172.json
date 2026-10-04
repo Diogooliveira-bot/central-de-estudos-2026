@@ -1,5 +1,5 @@
 {
-  "build": "20261004-home-topnav-v1",
+  "build": "20261004-home-reading-v1",
   "files": [
     "/central-v119.html?direct=35",
     "/ui/discipline-standard.js?v=20261003penalnative1",
@@ -302,7 +302,7 @@
     "/base-completa-visual-v1.js?v=20261003cpcnative1",
     "/content/cpc/m01-native-data.js?v=20261003cpcnative1",
     "/ui/cpc-native-study-reader.js?v=20261003cpcnative1",
-    "/cpc-study-system-v1.js?v=20261003cpcnative1",
+    "/cpc-study-system-v1.js?v=20261004cpcall1",
     "/content/cpc/m02-native-data.js?v=20261003cpcm02v1",
     "/ui/cpc-m02-native-study-reader.js?v=20261003cpcm02v1",
     "/cpc-study-m02.js?v=20261003cpcm02v1",
@@ -371,14 +371,16 @@
     "/ui/cpc-m19-native-study-reader.js?v=20261003cpcm19v1",
     "/cpc-study-m19-lite.js?v=20261003cpcm19v1",
     "/tools/cpc-m19-mapa.html",
-    "/index.html?central_source=20261003-cpc-m11-m20-audit-v1",
+    "/index.html?central_source=20261004-cpc-m01-m20-loader-v1",
     "/content/cpc/m20-native-data.js?v=20261003cpcm20v2",
     "/ui/cpc-m20-native-study-reader.js?v=20261003cpcm20v2",
     "/cpc-study-m20-lite.js?v=20261003cpcm20v2",
     "/tools/cpc-m20-mapa.html",
     "/ui/home-topnav-v1.css?v=20261004a8",
     "/ui/home-topnav-v1.js?v=20261004a8",
+    "/ui/reading-appearance-v1.css?v=20261004r1",
+    "/ui/reading-appearance-v1.js?v=20261004r1",
     "/assets/base-completa-symbol.png",
-    "/index.html?central_source=20261004-home-topnav-v1"
+    "/index.html?central_source=20261004-home-reading-v1"
   ]
 }
