@@ -314,11 +314,23 @@ function install(){
  };
 
  global.cpcWeekPct=function(w){
-   if(w&&w.id==='cpc1')return progress('w1');
-   return 0;
+   return w ? global.CpcStudyV1.progress(w.id) : 0;
  };
 
- global.renderCpcMaster=studyRenderMaster;
+ // Module installers extend renderMaster after the base renderer is installed.
+ // Resolve it on every render so the Central includes M02–M20 as well as M01.
+ global.renderCpcMaster=function(){
+   const template=document.createElement('template');
+   template.innerHTML=global.CpcStudyV1.renderMaster();
+   const host=template.content.querySelector('.cf-modules');
+   if(host){
+     Array.from(host.children).sort((a,b)=>Number(a.dataset.cf?.replace('cpc',''))-Number(b.dataset.cf?.replace('cpc',''))).forEach(module=>{
+       if(localStorage.getItem(cpcModuleOpenKey(module.dataset.cf))==='1')module.classList.add('open');
+       host.appendChild(module);
+     });
+   }
+   return template.innerHTML;
+ };
 
  global.CpcStudyV1=Object.assign(global.CpcStudyV1||{}, {
    progress,progressDetail,state:load,renderMaster:studyRenderMaster,version:'2026-10-03-staging-m01-v4',installed:true

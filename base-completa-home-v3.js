@@ -207,8 +207,9 @@
             }else total += Array.isArray(s?.topics)?s.topics.length:0;
           }catch(_){ total += Array.isArray(s?.topics)?s.topics.length:0; }
         });
-        sum.textContent = list.length ? list.length+' disciplinas · '+total+' módulos' : '';
-      }catch(_){ sum.textContent=''; }
+        const summary = list.length ? list.length+' disciplinas · '+total+' módulos' : '';
+        if(sum.textContent !== summary) sum.textContent = summary;
+      }catch(_){ if(sum.textContent) sum.textContent=''; }
     }
 
     decorateSubjects();

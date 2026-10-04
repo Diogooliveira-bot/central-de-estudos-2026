@@ -1,7 +1,7 @@
 /* Central de Estudos — PWA cache repair 2026-10-03. */
-var CACHE='central-20261004-home-reading-v3';
+var CACHE='central-20261004-brand-loading-cpc-v1';
 var BOOT='/central-v119.html';
-var OFFLINE_MANIFEST='/central-offline-files-v66172.json?v=20261004homereading3';
+var OFFLINE_MANIFEST='/central-offline-files-v66172.json?v=20261004-brand-loading-cpc-v1';
 
 function cacheResponse(cache,request,response){
   if(response&&response.ok)cache.put(request,response.clone()).catch(function(){});
@@ -59,7 +59,7 @@ self.addEventListener('fetch',function(event){
       caches.open(CACHE).then(function(cache){
         var entry=new URL(request.url);entry.pathname=BOOT;entry.searchParams.delete('direct');
         return fetch(entry.href,{cache:'no-store'})
-          .then(function(response){return cacheResponse(cache,request,response)})
+          .then(function(response){return cacheResponse(cache,BOOT,response)})
           .catch(function(){return cache.match(BOOT)})
       })
     );
