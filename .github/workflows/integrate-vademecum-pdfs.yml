@@ -1,0 +1,51 @@
+name: Integrate Vade Mecum PDFs
+
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/integrate-vademecum-pdfs.yml"
+  workflow_dispatch:
+
+permissions:
+  actions: read
+  contents: write
+
+jobs:
+  integrate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: generate-vademecum-pdfs-20261005
+          fetch-depth: 0
+
+      - name: Download validated 78/78 artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          rm -rf /tmp/vade-artifact
+          mkdir -p /tmp/vade-artifact
+          gh run download 37359101187 -n PDFs_VadeMecum -D /tmp/vade-artifact
+          ls -lah /tmp/vade-artifact
+
+      - name: Put PDFs in repository
+        run: |
+          rm -rf assets/vademecum-pdf
+          mkdir -p assets/vademecum-pdf
+          unzip -q /tmp/vade-artifact/PDFs_VadeMecum.zip -d /tmp/vade-files
+          find /tmp/vade-files -type f -name '*.pdf' -exec cp {} assets/vademecum-pdf/ \;
+          if [ -f /tmp/vade-files/relatorio.csv ]; then cp /tmp/vade-files/relatorio.csv assets/vademecum-pdf/; fi
+          echo "PDF count: $(find assets/vademecum-pdf -type f -name '*.pdf' | wc -l)"
+          test "$(find assets/vademecum-pdf -type f -name '*.pdf' | wc -l)" -eq 78
+
+      - name: Patch Vade interface
+        run: python scripts/patch_vade_pdf_catalog.py
+
+      - name: Commit integration
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/vademecum-pdf tools/vade.html tools/vade-pdf-catalog.js
+          git diff --cached --quiet || git commit -m "content: feed Vade Mecum with 78 official PDFs"
+          git push origin HEAD:generate-vademecum-pdfs-20261005
