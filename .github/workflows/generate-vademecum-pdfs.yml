@@ -29,7 +29,10 @@ jobs:
       - name: Generate official-law PDFs
         run: python scripts/generate_vademecum_pdfs.py
 
-      - name: Commit PDFs into repository branch
+      - name: Patch Vade Mecum interface
+        run: python scripts/patch_vade_pdf_catalog.py
+
+      - name: Commit PDFs and Vade integration
         run: |
           rm -rf assets/vademecum-pdf
           mkdir -p assets/vademecum-pdf
@@ -37,8 +40,8 @@ jobs:
           cp generated_vademecum_pdfs/relatorio.csv assets/vademecum-pdf/
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/vademecum-pdf
-          git diff --cached --quiet || git commit -m "content: add official Vade Mecum PDFs"
+          git add assets/vademecum-pdf tools/vade.html tools/vade-pdf-catalog.js
+          git diff --cached --quiet || git commit -m "content: feed Vade Mecum with official PDFs"
           git push origin HEAD:generate-vademecum-pdfs-20261005
 
       - name: Upload PDFs
