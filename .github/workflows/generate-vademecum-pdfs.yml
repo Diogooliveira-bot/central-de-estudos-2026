@@ -1,5 +1,8 @@
 name: Generate Vade Mecum PDFs
 
+permissions:
+  contents: write
+
 on:
   pull_request:
     paths:
@@ -25,6 +28,18 @@ jobs:
 
       - name: Generate official-law PDFs
         run: python scripts/generate_vademecum_pdfs.py
+
+      - name: Commit PDFs into repository branch
+        run: |
+          rm -rf assets/vademecum-pdf
+          mkdir -p assets/vademecum-pdf
+          cp generated_vademecum_pdfs/*.pdf assets/vademecum-pdf/
+          cp generated_vademecum_pdfs/relatorio.csv assets/vademecum-pdf/
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/vademecum-pdf
+          git diff --cached --quiet || git commit -m "content: add official Vade Mecum PDFs"
+          git push origin HEAD:generate-vademecum-pdfs-20261005
 
       - name: Upload PDFs
         uses: actions/upload-artifact@v4
