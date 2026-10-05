@@ -34,6 +34,7 @@
   forceReadingText(value);
   if(persist!==false)save(value);
   refreshControl(value);
+  if(persist!==false)window.dispatchEvent(new CustomEvent('central:reading-font-change',{detail:{percentage:value}}));
   return value;
  }
  function change(delta){return apply(read()+Number(delta||0),true)}

@@ -27,7 +27,8 @@ for(const kind of ['cpc','penal'])for(const p of fs.readdirSync(path.join(root,'
  run(`content/${kind}/${p}`,code);
 }
 run('content/adm/adm-native-index.js');
-const data={cpc:{},penal:{},admModuleIds:Object.keys(context.ADM_NATIVE_INDEX.modules),cfQuestionIds:vm.runInContext('CF_QUESTIONS.map(q=>q.id)',context)};
+run('content/cpp/cpp-native-index.js');
+const data={cpc:{},penal:{},admModuleIds:Object.keys(context.ADM_NATIVE_INDEX.modules),cppModules:context.CPP_NATIVE_INDEX.modules.map(({uid,number,title})=>({uid,number,title})),cfQuestionIds:vm.runInContext('CF_QUESTIONS.map(q=>q.id)',context)};
 for(const kind of ['cpc','penal'])for(const [id,m] of Object.entries(context.BASE_NATIVE_CONTENT[kind])){
  data[kind][id]={chapters:{},questions:{}};
  for(const mode of ['summary','complete']){

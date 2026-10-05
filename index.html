@@ -1706,6 +1706,9 @@ document.addEventListener('click',function(ev){
 function esc(v){return String(v==null?'':v).replace(/[&<>"']/g,function(c){return({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])})}
 window.mapaTopicPct=function(s,idx,t){
  try{
+  const saved=window.CentralDisciplineLoader?.modulePercent(s,idx);
+  if(saved!==null&&saved!==undefined)return saved;
+  if(s.id==='pt')return localStorage.getItem('central-v6:pt:auto24:done:'+t.uid.replace('pt-auto24-',''))==='1'?100:0;
   if(s.id==='cf'&&typeof CF_WEEKS!=='undefined'&&CF_WEEKS[idx])return cfWeekPct(CF_WEEKS[idx]);
   if(s.id==='penal'&&typeof PENAL_WEEKS!=='undefined'&&PENAL_WEEKS[idx])return penalWeekPct(PENAL_WEEKS[idx]);
   if(s.id==='cpc'&&typeof CPC_WEEKS!=='undefined'&&CPC_WEEKS[idx])return cpcWeekPct(CPC_WEEKS[idx]);
@@ -1718,8 +1721,13 @@ window.mapaTopicPct=function(s,idx,t){
 window.mapaOpenTopic=function(sid,uid,idx){
  try{
   var s=(typeof SUBJECTS!=='undefined'?SUBJECTS:[]).find(function(x){return x.id===sid});
-  var t=s&&s.topics?s.topics[idx]:null;
+  var topics=sid==='cpp'?(window.CentralHomeProgressData?.cppModules||s?.topics):s?.topics;
+  var t=topics&&topics[idx];
   if(!t)return false;
+  if(window.CentralStudyNavigation){
+   var module=sid==='cpp'?String(idx+1):sid==='pt'?t.uid.replace('pt-auto24-',''):sid==='cf'?'w'+(idx+1):sid==='cpc'?'cpc'+(idx+1):sid==='penal'?'p'+(idx+1):sid==='civil'?t.uid.replace(/-analista$/,''):t.uid;
+   window.CentralStudyNavigation.openContext({subject:sid,module:module});return false;
+  }
   if(t.studyUrl){if(typeof window.__EMB_PDF__==='function'&&window.__EMB_PDF__(t.studyUrl))return false;location.href=t.studyUrl;return false}
   if(typeof jumpSubject==='function')return jumpSubject(sid);
  }catch(e){try{if(typeof jumpSubject==='function')return jumpSubject(sid)}catch(_){}}
@@ -1742,19 +1750,21 @@ function renderMap(hostId){
   var teal=s.id==='rlm';
   var st=null;try{st=subjStats(s)}catch(e){}
   var soma=0;
-  var rows=s.topics.map(function(t,idx){
-   var p=window.mapaTopicPct(s,idx,t);
+  var topics=s.id==='cpp'?(window.CentralHomeProgressData?.cppModules||s.topics):s.topics;
+  var saved=window.CentralDisciplineLoader?.percentages(s);
+  var rows=topics.map(function(t,idx){
+   var p=saved?.[idx]??window.mapaTopicPct(s,idx,t);
    totalBlocos++;if(p===100)feitos++;soma+=p;
    var nome=String(t.title||'').replace(/^\d+\s*[-–]?\s*/,'');
    return '<div class="mp-item" onclick="return mapaOpenTopic(\''+s.id+'\',\''+t.uid+'\','+idx+')" title="Abrir módulo" role="button" tabindex="0">'
-    +'<span class="n">'+String(idx===0&&teal?0:idx+1).padStart(2,'0')+'</span>'
+    +'<span class="n">'+String(teal?idx:idx+1).padStart(2,'0')+'</span>'
     +'<span class="t">'+esc(nome)+'</span>'
     +'<span class="pct'+(p===100?' full':(p>0?' started':''))+'">'+p+'%</span>'
     +(window.tecTopicCountBadge?tecTopicCountBadge(t.uid):'')
     +'<button type="button" class="mp-qbtn" onclick="event.stopPropagation();return tecRegTopic(\''+t.uid+'\')" title="Registrar questões deste tópico">📝+</button></div>';
   }).join('');
-  var pct=s.topics.length?Math.round(soma/s.topics.length):0;
-  var cnt=s.id==='pt'?(s.topics.length+' semanas'):(s.id==='trab'||s.id==='ptra')?(s.topics.length+' aulas'):(s.topics.length+' módulos');
+  var pct=topics.length?Math.round(soma/topics.length):0;
+  var cnt=(s.id==='trab'||s.id==='ptra')?(topics.length+' aulas'):(teal?'9 módulos + cálculo rápido':topics.length+' módulos');
   var sub=(st&&st.done?st.done+'/'+st.total+' '+st.unit+' · ':'')+cnt;
   return '<div class="mp-card'+(teal?' teal':'')+'" data-sid="'+esc(s.id)+'">'
    +'<span class="mp-hex">'+(ci+1)+'</span>'
@@ -1776,6 +1786,10 @@ window.renderMapaEstudos=function(){
  renderMap('mapaEstudos');
  renderMap('mapaEstudosDisc');
 };
+document.addEventListener('keydown',function(event){
+ var item=event.target.closest('.mp-item');
+ if(item&&event.target===item&&(event.key==='Enter'||event.key===' ')){event.preventDefault();item.click()}
+});
 // re-render quando uma das telas com o mapa for mostrada
 function watchView(id){
  var el=document.getElementById(id);
@@ -2255,4 +2269,3 @@ window.moduleFrameRetry=function(){
 <!-- CF G07 COMPLETO — AUDITORIA FINAL V2 20261004 — BUILD CONSOLIDADO RETRY 20261004-2028 -->
 
 </body></html>
-

@@ -2,8 +2,8 @@
 (function () {
   'use strict';
   if (window.CentralStudyNavigation) return;
-  const moduleSelector = '.topic-item,.cf-module,.civil-module,.cpp-mod';
-  const attributes = ['data-uid','data-pt-current','data-ptn-module','data-civil-analista','data-civil','data-cf','data-penal','data-cpc','data-cpp-num','data-cpp-native-module'];
+  const moduleSelector = '.topic-item,.cf-module,.civil-module,.cpp-mod,.cv-module';
+  const attributes = ['data-uid','data-pt-current','data-ptn-module','data-civil-native-module','data-civil-analista','data-civil','data-cf','data-penal','data-cpc','data-cpp-num','data-cpp-native-module'];
   const views = {home:'homeView',agenda:'agendaView',disciplines:'disciplinesView',tec:'tecCadernosView',performance:'performanceView'};
   let sourceModule = null;
   function moduleId(module) {
@@ -39,6 +39,11 @@
     if (subject) {
       if(window.CentralDisciplineLoader&&!CentralDisciplineLoader.isReady(subject.id))return CentralDisciplineLoader.open(subject.id,()=>openContext(context));
       if(subject.id==='cpp'&&context.module&&window.CppNative)return window.openCppLast(context.module,context.reader);
+      if(subject.id==='civil'&&context.module&&window.CivilNative){
+        const number=String(context.module).replace(/^(?:civil-)?m0*/,'');
+        const module=window.CIVIL_NATIVE_INDEX.modules.find(m=>String(m.number)===number||m.id===context.module||m.uid===context.module);
+        if(module){window.jumpSubject('civil');window.CivilNative.openModule(module.number);if(context.reader)window.CivilNative.openReader(module.number,context.reader);return;}
+      }
       if(subject.id==='pt'&&context.module&&typeof window.openPtCurrentModule==='function')return window.openPtCurrentModule(context.module);
       window.jumpSubject(subject.id);
       if (context.module) {
@@ -50,7 +55,7 @@
           if (!module && ++attempts < 20) { setTimeout(openModule, 100); return; }
           if (!module) return;
           if (!module.classList.contains('open')) {
-            const head = module.querySelector('.open-topic,.cf-module-head,.civil-module-head,.cpp-mod-head');
+            const head = module.querySelector('.open-topic,.cf-module-head,.civil-module-head,.cpp-mod-head,.cv-module-head');
             head?.click();
           }
           setTimeout(() => module.scrollIntoView({block:'start',behavior:'auto'}), 100);
@@ -72,6 +77,7 @@
     const params = new URLSearchParams(location.search);
     const topic = params.get('study');
     if(topic&&/^cpp-m\d{1,2}$/.test(topic))return openContext({subject:'cpp',module:topic});
+    if(topic&&/^civil-m\d{1,2}$/.test(topic))return openContext({subject:'civil',module:topic});
     if (topic && typeof window.topicByUid === 'function') {
       const found = window.topicByUid(topic);
       if (found) {

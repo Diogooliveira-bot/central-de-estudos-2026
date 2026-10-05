@@ -4,7 +4,8 @@ const SUBJECTS=[{"id":"cf","name":"Direito Constitucional","special":"TJCE 2026 
 
 
 const $=id=>document.getElementById(id);
-const todayISO=()=>new Date().toISOString().slice(0,10);
+const localDateISO=date=>`${date.getFullYear()}-${String(date.getMonth()+1).padStart(2,'0')}-${String(date.getDate()).padStart(2,'0')}`;
+const todayISO=()=>localDateISO(new Date());
 $('today').textContent=new Intl.DateTimeFormat('pt-BR',{weekday:'long',day:'2-digit',month:'long',year:'numeric'}).format(new Date());
 $('agendaDate').value=todayISO();
 $('agendaDisc').innerHTML=SUBJECTS.map(s=>`<option>${esc(s.name)}</option>`).join('');
@@ -365,7 +366,11 @@ function centralResumeLast(){
  if(x.tool==='lei-seca-enxuta')return openLeiSecaEnxuta();
  if(x.ptAutoModule)return window.openPtCurrentModule(x.ptAutoModule);
  if(x.ptModule&&typeof window.openPtNativeLast==='function')return window.openPtNativeLast(x.ptModule);
- if(x.civilModule)return openCivilLast(x.civilModule);
+ if(x.civilModule){
+  if(window.CentralDisciplineLoader&&!CentralDisciplineLoader.isReady('civil'))return CentralDisciplineLoader.open('civil',()=>centralResumeLast());
+  if(window.CivilNative)return window.CentralStudyNavigation.openContext({subject:'civil',module:String(x.civilModule),reader:x.civilKind});
+  return openCivilLast(x.civilModule);
+ }
  if(x.cfWeek)return openCfLast(x.cfWeek);
  if(x.penalWeek)return openPenalLast(x.penalWeek);
  if(x.cpcWeek)return openCpcLast(x.cpcWeek);
@@ -4824,7 +4829,7 @@ function notesKey(uid){return key(uid,'notes')}function getNotes(uid){return JSO
 
 let timerHandles={};function startTimer(uid,btn){if(timerHandles[uid]){clearInterval(timerHandles[uid]);delete timerHandles[uid];return}let sec=Number(localStorage.getItem(key(uid,'timer'))||0);timerHandles[uid]=setInterval(()=>{sec++;localStorage.setItem(key(uid,'timer'),sec);const el=document.querySelector(`[data-timer="${uid}"]`);if(el)el.textContent=formatTimer(sec)},1000)}
 function formatTimer(s){return `${String(Math.floor(s/60)).padStart(2,'0')}:${String(s%60).padStart(2,'0')}`}
-function quickReview(uid){const d=new Date();d.setDate(d.getDate()+7);const iso=d.toISOString().slice(0,10);if(!scheduleModuleReview(uid,iso)){alert('Não foi possível agendar a revisão.');return}renderAll();alert('Revisão agendada para 7 dias.')}
+function quickReview(uid){const d=new Date();d.setDate(d.getDate()+7);const iso=localDateISO(d);if(!scheduleModuleReview(uid,iso)){alert('Não foi possível agendar a revisão.');return}renderAll();alert('Revisão agendada para 7 dias.')}
 function scheduleReview(uid){const v=$(`rev-${uid}`).value;if(!v)return;if(!scheduleModuleReview(uid,v)){alert('Não foi possível agendar a revisão.');return}renderAll()}
 function addReviewAgenda(uid,date){return scheduleModuleReview(uid,date)}
 function scheduleModuleReview(uid,date,entry){
@@ -4875,7 +4880,49 @@ function renderAgendaEditor(){
  host.innerHTML=a.length?a.map(x=>`<div class="agenda-edit-row"><span>${esc(x.time||'—')}</span><span><b>${esc(x.discipline||'')}</b><br><span class="muted">${esc(x.task||'')}</span></span><input type="checkbox" ${x.done?'checked':''} onchange="toggleAgenda('${d}',${Number(x.id)||0},this.checked)"><button class="btn red sm" onclick="deleteAgenda('${d}',${Number(x.id)||0})">×</button></div>`).join(''):'<div class="muted small">Nenhuma tarefa neste dia.</div>'
 }
 
-function allPerf(){const out=[];for(const s of SUBJECTS)for(const t of s.topics)getPerf(t.uid).forEach(x=>out.push({...x,sid:s.id,subject:s.name}));return out}
+function allPerf(){
+ const out=[],subjects=new Map(SUBJECTS.map(s=>[s.id,s]));
+ const read=k=>{try{return JSON.parse(localStorage.getItem(k)||'null')}catch(_){return null}};
+ const add=(r,sid,source)=>{
+  if(!r||typeof r!=='object')return;
+  const q=Number(r.q??r.done??r.valid??r.f),c=Number(r.c??r.correct??r.a??0);
+  if(!Number.isSafeInteger(q)||!Number.isSafeInteger(c)||q<=0||c<0||c>q)return;
+  out.push({...r,q,c,pct:Math.round(c/q*1000)/10,sid,subject:subjects.get(sid)?.name||'Outros',source});
+ };
+ const topicSubjects=new Map();
+ for(const s of SUBJECTS)for(const t of s.topics){
+  topicSubjects.set(t.uid,s.id);
+  const rows=read(perfKey(t.uid));if(Array.isArray(rows))rows.forEach(r=>add(r,s.id,'topic'));
+ }
+ for(const m of window.CentralHomeProgressData?.cppModules||[])topicSubjects.set(m.uid,'cpp');
+ const prefix='central-v6:module-rounds:';
+ for(let i=0;i<localStorage.length;i++){
+  const k=localStorage.key(i);if(!k?.startsWith(prefix))continue;
+  const id=k.slice(prefix.length),sid=subjects.has(id.split(':')[0])?id.split(':')[0]:topicSubjects.get(id);
+  if(!sid)continue;const rows=read(k);if(Array.isArray(rows))rows.forEach(r=>add(r,sid,'module'));
+ }
+ const cpp=read('central-v6:cpp:curso22:v1');
+ for(const [id,m]of Object.entries(cpp?.modules||{})){
+  if(Number(id)<1||Number(id)>22||!Array.isArray(m?.rounds))continue;
+  m.rounds.slice(0,3).forEach(r=>add(r,'cpp','cpp'));
+ }
+ const civil=read('central-v6:civil-native:external:v1');
+ for(const [id,rows]of Object.entries(civil||{})){
+  if(Number(id)>=1&&Number(id)<=15&&Array.isArray(rows))rows.slice(0,3).forEach(r=>add(r,'civil','civil'));
+ }
+ // Civil and the study map share the TEC store: include each saved record once.
+ const tec=read('central-v6:tec:registros');
+ if(Array.isArray(tec)){
+  const books=new Map((window.TEC_CADERNOS_DATA?.cadernos||[]).map(b=>[b.id,b.grupoNome]));
+  const byName=new Map(SUBJECTS.map(s=>[s.name,s.id]));
+  byName.set('Direito Empresarial','civil');byName.set('Raciocínio Lógico','rlm');byName.set('Matemática','rlm');
+  tec.forEach(r=>{
+   const sid=r?.moduleId?.startsWith('civ-')?'civil':String(r?.cid||'').startsWith('t:')?topicSubjects.get(r.cid.slice(2)):byName.get(books.get(r?.cid));
+   add(r,sid||'other','tec');
+  });
+ }
+ return out;
+}
 function countReviews(){let n=0;for(const s of SUBJECTS)for(const t of s.topics)if(localStorage.getItem(key(t.uid,'review')))n++;return n}
 function renderSummary(){
  let total=0,done=0;
@@ -4898,7 +4945,7 @@ function renderDisciplineGrid(){
  host.innerHTML=list.map(s=>{
   try{
    let st;try{st=subjStats(s)}catch(err){st={done:0,total:(s.topics?.length||0),pct:0}}
-   const cards=(s.topics||[]).reduce((a,t)=>a+(t.sourceStats?.cards||0),0),guided=['pt','cf','civil','penal','cpc'].includes(s.id);
+   const cards=(s.topics||[]).reduce((a,t)=>a+(t.sourceStats?.cards||0),0),guided=['pt','cf','civil','penal','cpc','adm','cpp'].includes(s.id);
    const desc=guided?`${st.total} módulos • curso integrado`:s.id==='rlm'?'9 módulos teóricos • cálculo rápido • 200 FCC':(s.id==='trab'||s.id==='ptra')?`${s.topics.length} aulas • Mentoria AJAJ`:`${s.topics.length} tópicos reais recuperados`;
    const unit=guided?'módulos':s.id==='rlm'?'itens':(s.id==='trab'||s.id==='ptra')?'aulas':'tópicos';
    return `<button type="button" class="disc-card" data-id="${escAttr(s.id)}" onclick="return jumpSubject('${escJs(s.id)}')"><b>${esc(s.name)}</b><small>${esc(desc)}</small><span class="disc-meta">${Number(st.done)||0}/${Number(st.total)||0} ${unit} · ${Number(st.pct)||0}%${!guided&&s.id!=='rlm'&&cards?' · '+cards+' cards':''}</span></button>`

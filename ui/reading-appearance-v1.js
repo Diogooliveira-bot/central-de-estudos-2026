@@ -12,7 +12,12 @@
     return {mode: value.mode === 'night' ? 'night' : 'paper', size: Number.isFinite(size) ? Math.max(MIN, Math.min(MAX, Math.round(size))) : DEFAULT};
   }
   function read() {
-    try { return normalize(JSON.parse(localStorage.getItem(KEY) || 'null')); }
+    try {
+      var saved = JSON.parse(localStorage.getItem(KEY) || 'null');
+      if (!saved && localStorage.getItem('central-v6:reading-font-size'))
+        saved = {size: DEFAULT * Number(localStorage.getItem('central-v6:reading-font-size')) / 100};
+      return normalize(saved);
+    }
     catch (_) { return normalize(null); }
   }
   var preference = read();
@@ -34,12 +39,17 @@
       group.querySelector('[data-bc-reading-size="1"]').disabled = preference.size >= MAX;
     });
   }
-  function change(values) {
+  function change(values, syncLegacy) {
     preference = normalize({mode: values.mode || preference.mode, size: values.size == null ? preference.size : values.size});
     try { localStorage.setItem(KEY, JSON.stringify(preference)); } catch (_) {}
     syncPreference();
+    if (values.size != null && syncLegacy !== false && typeof window.centralReadingFontSet === 'function')
+      window.centralReadingFontSet(preference.size / DEFAULT * 100);
     schedule();
   }
+  window.addEventListener('central:reading-font-change', function (event) {
+    change({size: DEFAULT * event.detail.percentage / 100}, false);
+  });
   function controls() {
     var group = document.createElement('div');
     group.className = 'bc-reading-appearance-controls';
@@ -59,7 +69,7 @@
     var tools = overlay.querySelector('.bc-native-reader-tools');
     if (!tools) return;
     overlay.classList.add('bc-reading-appearance');
-    tools.querySelectorAll('[data-cpc-font],[data-native-action="smaller"],[data-native-action="larger"]').forEach(function (button) { button.hidden = true; button.classList.add('bc-reading-replaced-font'); });
+    tools.querySelectorAll('[data-pt-font],[data-cpc-font],[data-native-action="smaller"],[data-native-action="larger"]').forEach(function (button) { button.hidden = true; button.classList.add('bc-reading-replaced-font'); });
     var toc = overlay.querySelector('.bc-native-toc');
     if (toc) {
       if (!toc.id) toc.id = 'bc-reading-chapters-' + (++nextId);

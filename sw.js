@@ -1,8 +1,8 @@
 /* Central de Estudos — PWA cache repair 2026-10-03. */
 var CACHE='central-20261005-civil-native-v1';
 var BOOT='/central-v119.html';
-var OFFLINE_MANIFEST='/central-offline-files-v66172.json?v=20261005civil1';
-var OFFLINE_READY='/central-offline-ready?v=20261005civil1';
+var OFFLINE_MANIFEST='/central-offline-files-v66172.json?v=20261005civil2';
+var OFFLINE_READY='/central-offline-ready?v=20261005civil2';
 
 function cacheResponse(cache,request,response){
   if(response&&response.ok)cache.put(request,response.clone()).catch(function(){});
@@ -98,4 +98,3 @@ self.addEventListener('fetch',function(event){
 
 var offlineJob=null;
 self.addEventListener('message',function(event){if(event.data?.type==='PAUSE_OFFLINE'){pauseOfflineUntil=Date.now()+45000;return;}if(event.data?.type==='RESUME_OFFLINE'){pauseOfflineUntil=0;return;}if(event.data&&event.data.type==='PREPARE_OFFLINE')event.waitUntil(offlineJob||(offlineJob=caches.open(CACHE).then(function(cache){return cache.match(OFFLINE_READY)}).then(function(hit){if(!hit)return prepareOffline()}).finally(function(){offlineJob=null}))) });
-

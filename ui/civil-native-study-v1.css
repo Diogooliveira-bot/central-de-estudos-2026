@@ -13,4 +13,14 @@
 @media(max-width:780px){.cv-preview{padding:10px}.cv-hero{display:block}.cv-cards,.cv-progress-grid,.cv-below{grid-template-columns:1fr}.cv-module-head{grid-template-columns:55px 1fr 30px}.cv-module-head>.cv-pct{display:none}.cv-tools{display:block}.cv-tool-buttons{margin-top:8px}.cv-reader-layout{grid-template-columns:1fr}.cv-toc{display:none}.cv-reader-body{padding:23px 14px 65px}.cv-overlay header{grid-template-columns:auto 1fr}.cv-overlay .cv-head-actions{grid-column:1/-1;justify-self:end}.cv-round{grid-template-columns:1fr 1fr}.cv-round button{grid-column:1/-1}.cv-result-grid{grid-template-columns:1fr}.civil-source-table{font-size:.72em}}
 
 /* Civil native production integration */
-html.bc-ui-v1 #subjects .cv-list{margin-top:8px}html.bc-ui-v1 #subjects .cv-module-head{font:inherit}
+html.bc-ui-v1{--cv-bg:var(--bc-color-bg);--cv-card:var(--bc-color-surface);--cv-card2:var(--bc-color-surface-elevated);--cv-line:var(--bc-color-border);--cv-text:var(--bc-color-text);--cv-muted:var(--bc-color-text-secondary);--cv-accent:var(--bc-color-accent);--cv-good:var(--bc-color-success);--cv-bad:var(--bc-color-error)}
+html.bc-ui-v1 #subjects .cv-list{margin-top:8px}
+html.bc-ui-v1 #subjects .cv-module-head{font:inherit;grid-template-columns:78px minmax(0,1fr) auto 24px}
+html.bc-ui-v1 #subjects .cv-module-num{font-size:12px;line-height:1.5;overflow-wrap:normal;word-break:normal}
+html.bc-ui-v1 :is(.cv-hero,.cv-zone,.cv-tec-chip,.cv-option,.civil-source-table,.civil-source-callout-title){background:var(--cv-card2);color:var(--cv-text)}
+html.bc-ui-v1 :is(.cv-module-head:hover,.cv-option.selected){background:var(--cv-card2)}
+html.bc-ui-v1 :is(.cv-round input,.cv-note-input){min-width:0;background:var(--cv-card)!important;color:var(--cv-text)!important;border-color:var(--cv-line)!important}
+html.bc-ui-v1 .cv-card-actions button:not(.ghost){color:#fff}
+html.bc-ui-v1[data-bc-theme="dark"] .cv-card-actions button:not(.ghost),html.bc-ui-v1[data-bc-theme="oled"] .cv-card-actions button:not(.ghost){color:#00262b}
+html.bc-ui-v1 .civil-source-content h3{color:var(--cv-accent)}
+@media(max-width:780px){html.bc-ui-v1 #subjects .cv-module-head{grid-template-columns:58px minmax(0,1fr) 22px;gap:7px}}

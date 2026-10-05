@@ -11,8 +11,7 @@ const isReady=id=>!pending.has(id)||states[id]?.ready===true;
 const isLoading=id=>!!states[id]?.promise;
 const count=(ids,key)=>ids.filter(id=>localStorage.getItem(key+id)==='1').length;
 const readingPercent=key=>Math.max(0,Math.min(100,Math.round(Number(localStorage.getItem(key))||0)));
-function stats(subject){
- if(isReady(subject.id))return null;
+function savedProgress(subject){
  let percentages=[];
  if(subject.id==='cf'){
   const native=json('central-v6:cf-native-v2').modules||{};
@@ -59,7 +58,8 @@ function stats(subject){
    const nn=String(n).padStart(2,'0'),sk='central-v6:civil-native:m'+nn+':summary:read',ck='central-v6:civil-native:m'+nn+':complete:read';
    const hasS=localStorage.getItem(sk)!==null,hasC=localStorage.getItem(ck)!==null,old=legacy[ids[n-1]]||{},reading=old.reading||{};
    const legacyPct=Math.round(['coverage','theory','jurisprudence','examples','traps'].filter(key=>!!reading[key]).length/5*100);
-   const summary=hasS?readingPercent(sk):legacyPct,complete=hasC?readingPercent(ck):legacyPct;
+   const migrate=!hasS&&!hasC;
+   const summary=hasS?readingPercent(sk):(migrate?legacyPct:0),complete=hasC?readingPercent(ck):(migrate?legacyPct:0);
    percentages.push(Math.round((summary+complete)/2));
   }
  }else if(subject.id==='cpp'){
@@ -73,6 +73,11 @@ function stats(subject){
    percentages.push(Math.round((summary+complete)/2));
   }
  }else return null;
+ return percentages;
+}
+function stats(subject){
+ if(isReady(subject.id))return null;
+ const percentages=savedProgress(subject);if(!percentages)return null;
  const total=percentages.length,done=percentages.filter(p=>p===100).length;
  const pct=['penal','adm','cpp','civil'].includes(subject.id)?Math.round(percentages.reduce((a,p)=>a+p,0)/(total||1)):Math.round(done/(total||1)*100);
  return {total,done,pct,unit:'módulos'};
@@ -147,5 +152,5 @@ function prepareOffline(reg){
  },15000);
  if(document.documentElement.dataset.centralReady==='true')schedule();else document.addEventListener('central:ready',schedule,{once:true});
 }
-global.CentralDisciplineLoader={isReady,isLoading,hasError:id=>!!states[id]?.error,stats,placeholder,load,open,prepareOffline};
+global.CentralDisciplineLoader={isReady,isLoading,hasError:id=>!!states[id]?.error,stats,percentages:savedProgress,modulePercent:(subject,index)=>savedProgress(subject)?.[index]??null,placeholder,load,open,prepareOffline};
 })(window);

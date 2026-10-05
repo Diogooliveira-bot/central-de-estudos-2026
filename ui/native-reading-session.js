@@ -1,7 +1,12 @@
-/* Shared reader layout for ADM and CPP: loading, appearance and editing. */
+/* Shared reader layout for ADM, CPP and Civil: loading, appearance and editing. */
 (function (g) {
   'use strict';
   function create(options) {
+    const returnFocus = document.activeElement;
+    const sourceModule = returnFocus.closest('.topic-item,.cv-module');
+    const sourceSelector = sourceModule?.dataset.civilNativeModule ? '[data-civil-native-module="' + sourceModule.dataset.civilNativeModule + '"] .cv-module-head' :
+      sourceModule?.dataset.cppNativeModule ? '[data-cpp-native-module="' + sourceModule.dataset.cppNativeModule + '"] .open-topic' :
+      sourceModule?.dataset.uid ? '[data-uid="' + CSS.escape(sourceModule.dataset.uid) + '"] .open-topic' : '.subject[data-id="' + options.subject + '"] .topic-item.open .open-topic';
     const overlay = document.createElement('div');
     overlay.id = options.id;
     overlay.className = 'bc-native-reader-overlay ' + options.subject + '-native-overlay';
@@ -19,7 +24,24 @@
       '<main id="' + prefix + '-body" class="bc-native-scroll"></main></div></div>';
     overlay.querySelector('.bc-native-reader-title b').textContent = options.title;
     overlay.querySelector('.bc-native-reader-title small').textContent = options.eyebrow;
-    overlay.querySelector('.bc-native-reader-close').onclick = options.close;
+    const close = () => {
+      options.close();
+      if (returnFocus?.isConnected && returnFocus !== document.body) returnFocus.focus({preventScroll: true});
+      else document.querySelector(sourceSelector)?.focus({preventScroll: true});
+    };
+    overlay.querySelector('.bc-native-reader-close').onclick = close;
+    overlay.addEventListener('keydown', event => {
+      if (event.key === 'Escape') { event.preventDefault(); close(); return; }
+      if (event.key !== 'Tab') return;
+      const focusable = Array.from(overlay.querySelectorAll('button,a[href],input,select,textarea,[tabindex]'))
+        .filter(el => !el.disabled && el.tabIndex >= 0 && el.getClientRects().length);
+      const first = focusable[0], last = focusable[focusable.length - 1];
+      if (event.shiftKey && (document.activeElement === first || !overlay.contains(document.activeElement))) {
+        event.preventDefault(); last?.focus();
+      } else if (!event.shiftKey && (document.activeElement === last || !overlay.contains(document.activeElement))) {
+        event.preventDefault(); first?.focus();
+      }
+    });
     overlay.querySelector('[data-finish-reading]').onclick = options.finish;
     overlay.querySelector('[data-finish-reading]').disabled = true;
     const body = overlay.querySelector('.bc-native-scroll');
@@ -27,6 +49,7 @@
       '<img src="/assets/base-completa-symbol.webp" alt="Logomarca Base Completa"><h3>Carregando sua leitura</h3>' +
       '<p>Preparando o material…</p><div class="loading-track" aria-hidden="true"><span></span></div></section>';
     document.body.appendChild(overlay);
+    overlay.querySelector('.bc-native-reader-close').focus({preventScroll: true});
     return overlay;
   }
   function show(overlay, html, toc, scroll, onScroll) {
