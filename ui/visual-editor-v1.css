@@ -35,3 +35,20 @@
  .bc-editor-bar button,.bc-editor-bar select{min-height:38px}
  .bc-editor-bar .bc-editor-spacer{display:none}
 }
+
+.bc-native-article .bc-editor-callout-prazo,.cf-native-reader article .bc-editor-callout-prazo{
+  background:#fff4d8!important;border-left-color:#b87800!important;
+}
+.bc-native-article .bc-editor-callout-erro,.cf-native-reader article .bc-editor-callout-erro{
+  background:#fde9e7!important;border-left-color:#a33a32!important;
+}
+.bc-native-article .bc-editor-callout-palavra,.cf-native-reader article .bc-editor-callout-palavra{
+  background:#e8f3f4!important;border-left-color:#087584!important;
+  font-weight:700!important;
+}
+html[data-bc-reading-mode="night"] .bc-native-article .bc-editor-callout-prazo,
+html[data-bc-reading-mode="night"] .cf-native-reader article .bc-editor-callout-prazo{background:#45391f!important}
+html[data-bc-reading-mode="night"] .bc-native-article .bc-editor-callout-erro,
+html[data-bc-reading-mode="night"] .cf-native-reader article .bc-editor-callout-erro{background:#472724!important}
+html[data-bc-reading-mode="night"] .bc-native-article .bc-editor-callout-palavra,
+html[data-bc-reading-mode="night"] .cf-native-reader article .bc-editor-callout-palavra{background:#20393b!important}
