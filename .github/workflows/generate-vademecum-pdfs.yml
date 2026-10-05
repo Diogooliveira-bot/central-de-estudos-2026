@@ -1,53 +1,70 @@
 name: Generate Vade Mecum PDFs
 
-permissions:
-  contents: write
-
 on:
   pull_request:
     paths:
       - "scripts/generate_vademecum_pdfs.py"
+      - "scripts/patch_vade_pdf_catalog.py"
+      - "tools/vade-pdf-catalog.js"
       - ".github/workflows/generate-vademecum-pdfs.yml"
   workflow_dispatch:
+
+permissions:
+  actions: read
+  contents: write
 
 jobs:
   build-pdfs:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
-
-      - uses: actions/setup-python@v5
         with:
-          python-version: "3.12"
+          ref: generate-vademecum-pdfs-20261005
+          fetch-depth: 0
 
-      - name: Install dependencies
+      - name: Download validated 78 PDF package
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
-          python -m pip install --upgrade pip
-          pip install requests beautifulsoup4 weasyprint
+          rm -rf /tmp/vade-artifact /tmp/vade-files
+          mkdir -p /tmp/vade-artifact /tmp/vade-files
+          gh run download 37359101187 -n PDFs_VadeMecum -D /tmp/vade-artifact
+          unzip -q /tmp/vade-artifact/PDFs_VadeMecum.zip -d /tmp/vade-files
 
-      - name: Generate official-law PDFs
-        run: python scripts/generate_vademecum_pdfs.py
+      - name: Install PDFs in branch
+        run: |
+          rm -rf assets/vademecum-pdf
+          mkdir -p assets/vademecum-pdf
+          find /tmp/vade-files -type f -name '*.pdf' -exec cp {} assets/vademecum-pdf/ \;
+          if [ -f /tmp/vade-files/relatorio.csv ]; then cp /tmp/vade-files/relatorio.csv assets/vademecum-pdf/; fi
+          COUNT="$(find assets/vademecum-pdf -type f -name '*.pdf' | wc -l)"
+          echo "PDF count: $COUNT"
+          test "$COUNT" -eq 78
 
       - name: Patch Vade Mecum interface
         run: python scripts/patch_vade_pdf_catalog.py
 
+      - name: Validate integration files
+        run: |
+          grep -q 'vade-pdf-catalog.js' tools/vade.html
+          grep -q 'PDF_LAW_MAP' tools/vade.html
+          grep -q 'vm-pdf-panel' tools/vade.html
+          test -f tools/vade-pdf-catalog.js
+
       - name: Commit PDFs and Vade integration
         run: |
-          rm -rf assets/vademecum-pdf
-          mkdir -p assets/vademecum-pdf
-          cp generated_vademecum_pdfs/*.pdf assets/vademecum-pdf/
-          cp generated_vademecum_pdfs/relatorio.csv assets/vademecum-pdf/
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add assets/vademecum-pdf tools/vade.html tools/vade-pdf-catalog.js
-          git diff --cached --quiet || git commit -m "content: feed Vade Mecum with official PDFs"
+          git diff --cached --quiet || git commit -m "content: feed Vade Mecum with 78 official PDFs"
           git push origin HEAD:generate-vademecum-pdfs-20261005
 
-      - name: Upload PDFs
+      - name: Upload integration package
         uses: actions/upload-artifact@v4
         with:
-          name: PDFs_VadeMecum
-          path: PDFs_VadeMecum.zip
-          if-no-files-found: error
+          name: VadeMecum-78-integrated
+          path: |
+            assets/vademecum-pdf
+            tools/vade-pdf-catalog.js
           retention-days: 7
