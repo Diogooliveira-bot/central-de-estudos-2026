@@ -1,8 +1,8 @@
 /* Central de Estudos — PWA cache repair 2026-10-03. */
-var CACHE='central-20261005-lazy-disciplines-v1';
+var CACHE='central-20261005-adm-native-v1';
 var BOOT='/central-v119.html';
-var OFFLINE_MANIFEST='/central-offline-files-v66172.json?v=20261005lazy1';
-var OFFLINE_READY='/central-offline-ready?v=20261005lazy1';
+var OFFLINE_MANIFEST='/central-offline-files-v66172.json?v=20261005adm1';
+var OFFLINE_READY='/central-offline-ready?v=20261005adm1';
 
 function cacheResponse(cache,request,response){
   if(response&&response.ok)cache.put(request,response.clone()).catch(function(){});
@@ -84,7 +84,7 @@ self.addEventListener('fetch',function(event){
 
   /* JS/CSS e assets versionados passam a ser network-first.
      O cache vira apenas fallback offline, evitando ficar preso em scripts antigos. */
-  var dynamic=/\.(?:js|css|json|woff2?|png|webp|ico|svg)$/.test(url.pathname)||/\.txt$/.test(url.pathname)||url.search;
+  var dynamic=/\.(?:js|css|json|woff2?|png|webp|avif|ico|svg)$/.test(url.pathname)||/\.txt$/.test(url.pathname)||url.search;
   if(dynamic){
     event.respondWith(
       caches.open(CACHE).then(function(cache){
