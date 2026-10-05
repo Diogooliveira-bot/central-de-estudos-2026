@@ -1,5 +1,6 @@
 from pathlib import Path
 import re, csv, zipfile, time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 import requests
 from bs4 import BeautifulSoup
 from weasyprint import HTML, CSS
@@ -128,7 +129,7 @@ session.headers.update({"User-Agent":"Mozilla/5.0 BaseCompleta/1.0"})
 def fetch_official(tipo,num,year):
     for url in candidates(tipo,num,year):
         try:
-            r=session.get(url,timeout=30,allow_redirects=True)
+            r=session.get(url,timeout=6,allow_redirects=True)
             if r.status_code != 200 or len(r.content) < 600:
                 continue
             r.encoding = r.apparent_encoding or r.encoding
@@ -156,18 +157,18 @@ a { color:#111 !important; text-decoration:none !important; }
 
 rows=[]
 ok=0
-for idx,(name,tipo,num,year) in enumerate(LAWS,1):
-    print(f"[{idx}/{len(LAWS)}] {name}", flush=True)
+
+def generate_one(item):
+    name,tipo,num,year=item
+    print(f"[START] {name}", flush=True)
     url, source=fetch_official(tipo,num,year)
     if not source:
-        rows.append([name,tipo,num,year,"FALHA","",""])
-        print("  -> NAO LOCALIZADA", flush=True)
-        continue
+        print(f"[FALHA URL] {name}", flush=True)
+        return [name,tipo,num,year,"FALHA","",""]
     try:
         soup=BeautifulSoup(source,"html.parser")
         for tag in soup(["script","noscript"]):
             tag.decompose()
-        # adiciona cabecalho simples com fonte oficial
         header=soup.new_tag("div")
         header["style"]="border-bottom:1px solid #aaa;padding-bottom:8px;margin-bottom:14px;font-family:Arial,sans-serif"
         title=soup.new_tag("div")
@@ -188,12 +189,21 @@ for idx,(name,tipo,num,year) in enumerate(LAWS,1):
         size=out.stat().st_size if out.exists() else 0
         if size < 2000:
             raise RuntimeError("PDF muito pequeno")
-        ok+=1
-        rows.append([name,tipo,num,year,"OK",url,size])
-        print(f"  -> OK {size} bytes", flush=True)
+        print(f"[OK] {name} - {size} bytes", flush=True)
+        return [name,tipo,num,year,"OK",url,size]
     except Exception as e:
-        rows.append([name,tipo,num,year,"FALHA_PDF",url,str(e)])
-        print("  -> FALHA PDF",e, flush=True)
+        print(f"[FALHA PDF] {name}: {e}", flush=True)
+        return [name,tipo,num,year,"FALHA_PDF",url,str(e)]
+
+with ThreadPoolExecutor(max_workers=6) as ex:
+    futs={ex.submit(generate_one,item):item for item in LAWS}
+    for fut in as_completed(futs):
+        row=fut.result()
+        rows.append(row)
+        if row[4]=="OK":
+            ok+=1
+
+rows.sort(key=lambda r: r[0])
 
 with open(OUT/"relatorio.csv","w",newline="",encoding="utf-8-sig") as f:
     w=csv.writer(f,delimiter=";")
@@ -201,7 +211,7 @@ with open(OUT/"relatorio.csv","w",newline="",encoding="utf-8-sig") as f:
     w.writerows(rows)
 
 with open(OUT/"README.txt","w",encoding="utf-8") as f:
-    f.write(f"Base Completa - PDFs do Vade Mecum\\n\\nGerados com fonte oficial do Planalto.\\nSucessos: {ok}/{len(LAWS)}\\n\\nVeja relatorio.csv para conferir a URL oficial de cada diploma.\\n")
+    f.write(f"Base Completa - PDFs do Vade Mecum\n\nGerados com fonte oficial do Planalto.\nSucessos: {ok}/{len(LAWS)}\n\nVeja relatorio.csv para conferir a URL oficial de cada diploma.\n")
 
 zip_path=Path("PDFs_VadeMecum.zip")
 with zipfile.ZipFile(zip_path,"w",zipfile.ZIP_DEFLATED) as z:
