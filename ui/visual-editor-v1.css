@@ -52,3 +52,72 @@ html[data-bc-reading-mode="night"] .bc-native-article .bc-editor-callout-erro,
 html[data-bc-reading-mode="night"] .cf-native-reader article .bc-editor-callout-erro{background:#472724!important}
 html[data-bc-reading-mode="night"] .bc-native-article .bc-editor-callout-palavra,
 html[data-bc-reading-mode="night"] .cf-native-reader article .bc-editor-callout-palavra{background:#20393b!important}
+
+/* Caixas temáticas do editor visual */
+.bc-native-article .bc-editor-callout::before,
+.cf-native-reader article .bc-editor-callout::before{
+  display:block;margin:0 0 8px;font:800 12px/1.2 system-ui,sans-serif;letter-spacing:.02em
+}
+.bc-native-article .bc-editor-callout-atencao,.cf-native-reader article .bc-editor-callout-atencao{background:#fff4d8!important;border-left-color:#c58a16!important}
+.bc-native-article .bc-editor-callout-atencao::before,.cf-native-reader article .bc-editor-callout-atencao::before{content:"⚠ Atenção";color:#9a6800}
+
+.bc-native-article .bc-editor-callout-pegadinha,.cf-native-reader article .bc-editor-callout-pegadinha{background:#fde9e7!important;border-left-color:#b34a43!important}
+.bc-native-article .bc-editor-callout-pegadinha::before,.cf-native-reader article .bc-editor-callout-pegadinha::before{content:"🎯 Pegadinha";color:#94372f}
+
+.bc-native-article .bc-editor-callout-decore,.cf-native-reader article .bc-editor-callout-decore{background:#f0eafa!important;border-left-color:#7657a8!important}
+.bc-native-article .bc-editor-callout-decore::before,.cf-native-reader article .bc-editor-callout-decore::before{content:"🧠 Decore";color:#60438f}
+
+.bc-native-article .bc-editor-callout-lei,.cf-native-reader article .bc-editor-callout-lei{background:#eaf1fb!important;border-left-color:#3f6fa8!important}
+.bc-native-article .bc-editor-callout-lei::before,.cf-native-reader article .bc-editor-callout-lei::before{content:"⚖ Lei seca";color:#315b8b}
+
+.bc-native-article .bc-editor-callout-juris,.cf-native-reader article .bc-editor-callout-juris{background:#e8f3f4!important;border-left-color:#087584!important}
+.bc-native-article .bc-editor-callout-juris::before,.cf-native-reader article .bc-editor-callout-juris::before{content:"🏛 Jurisprudência";color:#087584}
+
+.bc-native-article .bc-editor-callout-exemplo,.cf-native-reader article .bc-editor-callout-exemplo{background:#eaf6ed!important;border-left-color:#3d8557!important}
+.bc-native-article .bc-editor-callout-exemplo::before,.cf-native-reader article .bc-editor-callout-exemplo::before{content:"💡 Exemplo";color:#347149}
+
+.bc-native-article .bc-editor-callout-resumo,.cf-native-reader article .bc-editor-callout-resumo{background:#eef1f4!important;border-left-color:#667788!important}
+.bc-native-article .bc-editor-callout-resumo::before,.cf-native-reader article .bc-editor-callout-resumo::before{content:"📌 Resumo";color:#526170}
+
+.bc-native-article .bc-editor-callout-fcc,.cf-native-reader article .bc-editor-callout-fcc{background:#fff0df!important;border-left-color:#d47a1f!important}
+.bc-native-article .bc-editor-callout-fcc::before,.cf-native-reader article .bc-editor-callout-fcc::before{content:"📝 FCC";color:#aa5e13}
+
+.bc-native-article .bc-editor-callout-prazo,.cf-native-reader article .bc-editor-callout-prazo{background:#fff4d8!important;border-left-color:#b87800!important}
+.bc-native-article .bc-editor-callout-prazo::before,.cf-native-reader article .bc-editor-callout-prazo::before{content:"⏱ Prazo";color:#8f5f00}
+
+.bc-native-article .bc-editor-callout-erro,.cf-native-reader article .bc-editor-callout-erro{background:#fde9e7!important;border-left-color:#a33a32!important}
+.bc-native-article .bc-editor-callout-erro::before,.cf-native-reader article .bc-editor-callout-erro::before{content:"✕ Erro comum";color:#8f302a}
+
+.bc-native-article .bc-editor-callout-palavra,.cf-native-reader article .bc-editor-callout-palavra{background:#e8f3f4!important;border-left-color:#087584!important;font-weight:700!important}
+.bc-native-article .bc-editor-callout-palavra::before,.cf-native-reader article .bc-editor-callout-palavra::before{content:"🔑 Palavra-chave";color:#087584}
+
+/* Ajustes para modo noturno */
+html[data-bc-reading-mode="night"] .bc-native-article .bc-editor-callout-atencao,
+html[data-bc-reading-mode="night"] .cf-native-reader article .bc-editor-callout-atencao,
+html[data-bc-reading-mode="night"] .bc-native-article .bc-editor-callout-prazo,
+html[data-bc-reading-mode="night"] .cf-native-reader article .bc-editor-callout-prazo{background:#45391f!important}
+
+html[data-bc-reading-mode="night"] .bc-native-article .bc-editor-callout-pegadinha,
+html[data-bc-reading-mode="night"] .cf-native-reader article .bc-editor-callout-pegadinha,
+html[data-bc-reading-mode="night"] .bc-native-article .bc-editor-callout-erro,
+html[data-bc-reading-mode="night"] .cf-native-reader article .bc-editor-callout-erro{background:#472724!important}
+
+html[data-bc-reading-mode="night"] .bc-native-article .bc-editor-callout-decore,
+html[data-bc-reading-mode="night"] .cf-native-reader article .bc-editor-callout-decore{background:#352d45!important}
+
+html[data-bc-reading-mode="night"] .bc-native-article .bc-editor-callout-lei,
+html[data-bc-reading-mode="night"] .cf-native-reader article .bc-editor-callout-lei{background:#273447!important}
+
+html[data-bc-reading-mode="night"] .bc-native-article .bc-editor-callout-juris,
+html[data-bc-reading-mode="night"] .cf-native-reader article .bc-editor-callout-juris,
+html[data-bc-reading-mode="night"] .bc-native-article .bc-editor-callout-palavra,
+html[data-bc-reading-mode="night"] .cf-native-reader article .bc-editor-callout-palavra{background:#20393b!important}
+
+html[data-bc-reading-mode="night"] .bc-native-article .bc-editor-callout-exemplo,
+html[data-bc-reading-mode="night"] .cf-native-reader article .bc-editor-callout-exemplo{background:#26392d!important}
+
+html[data-bc-reading-mode="night"] .bc-native-article .bc-editor-callout-resumo,
+html[data-bc-reading-mode="night"] .cf-native-reader article .bc-editor-callout-resumo{background:#32363b!important}
+
+html[data-bc-reading-mode="night"] .bc-native-article .bc-editor-callout-fcc,
+html[data-bc-reading-mode="night"] .cf-native-reader article .bc-editor-callout-fcc{background:#49351f!important}
