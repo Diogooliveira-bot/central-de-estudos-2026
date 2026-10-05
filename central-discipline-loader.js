@@ -47,9 +47,16 @@ function stats(subject){
    percentages.push(total?Math.round(done/total*100):0);
   }
  }else if(subject.id==='cpp'){
-  const modules=json('central-v6:cpp:curso22:v1').modules||{};let done=0,steps=0;
-  for(let n=1;n<=22;n++){const m=modules[n]||{},count=[m.reading,m.anki,m.decorando,m.tec].filter(Boolean).length;steps+=count;if(count===4)done++;}
-  return {total:22,done,pct:Math.round(steps/88*100),unit:'módulos'};
+  const legacy=json('central-v6:cpp:curso22:v1').modules||{},percentages=[];
+  for(let n=1;n<=22;n++){
+   const nn=String(n).padStart(2,'0'),sk='central-v6:cpp-native:m'+nn+':summary:read',ck='central-v6:cpp-native:m'+nn+':complete:read';
+   const hasS=localStorage.getItem(sk)!==null,hasC=localStorage.getItem(ck)!==null,old=legacy[n]||{};
+   const summary=hasS?Math.max(0,Math.min(100,Number(localStorage.getItem(sk))||0)):(old.reading?100:0);
+   const complete=hasC?Math.max(0,Math.min(100,Number(localStorage.getItem(ck))||0)):(old.reading?100:0);
+   percentages.push(Math.round((summary+complete)/2));
+  }
+  const done=percentages.filter(p=>p>=100).length,pct=Math.round(percentages.reduce((a,p)=>a+p,0)/22);
+  return {total:22,done,pct,unit:'módulos'};
  }else return null;
  const total=percentages.length,done=percentages.filter(p=>p===100).length;
  const pct=subject.id==='penal'?Math.round(percentages.reduce((a,p)=>a+p,0)/total):Math.round(done/total*100);
@@ -74,6 +81,7 @@ async function download(files){
 function nativeReady(id){
  if(id==='cf')return !!global.CfNativeStudy;
  if(id==='penal')return !!global.__centralCurrentPenal;
+ if(id==='cpp')return !!global.CppNative;
  if(id!=='cpc')return true;
  if(!global.CpcStudyV1?.installed||!global.__M08Installed)return false;
  for(let n=2;n<=20;n++){if(n===8)continue;const module=global['CpcStudyM'+String(n).padStart(2,'0')];if(module!==true&&!module?.installed)return false;}
