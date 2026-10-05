@@ -123,6 +123,25 @@ function exec(article,cmd,value){
 function setBlockTag(article,tag){
   exec(article,'formatBlock','<'+tag+'>');
 }
+function headingEnterToParagraph(article,e){
+  if(e.key!=='Enter'||e.shiftKey)return;
+  var sel=getSelection();if(!sel||!sel.rangeCount||!sel.isCollapsed)return;
+  var node=sel.anchorNode;if(node&&node.nodeType===3)node=node.parentElement;
+  if(!node)return;
+  var heading=node.closest('h1,h2,h3,h4');
+  if(!heading||!article.contains(heading))return;
+  var range=sel.getRangeAt(0);
+  var tail=range.cloneRange();
+  tail.setEndAfter(heading.lastChild||heading);
+  var frag=tail.extractContents();
+  var p=document.createElement('p');
+  while(frag.firstChild)p.appendChild(frag.firstChild);
+  if(!p.textContent.trim())p.appendChild(document.createElement('br'));
+  heading.insertAdjacentElement('afterend',p);
+  var nr=document.createRange();nr.selectNodeContents(p);nr.collapse(true);
+  sel.removeAllRanges();sel.addRange(nr);
+  e.preventDefault();
+}
 function adjustGap(article,delta){
   var block=blockFromSelection(article);if(!block)return;
   var current=parseInt(getComputedStyle(block).marginBottom,10)||0;
@@ -151,7 +170,7 @@ function applyCallout(article,type){
 function makeEditorBar(overlay,article,state){
   var bar=document.createElement('div');bar.className='bc-editor-bar';
   bar.innerHTML=
-    '<select data-ed="block" aria-label="Estilo do bloco"><option value="">Estilo</option><option value="p">Texto</option><option value="h1">Título 1</option><option value="h2">Título 2</option><option value="h3">Título 3</option><option value="blockquote">Citação</option></select>'+
+    '<select data-ed="block" aria-label="Formato do bloco"><option value="">Formato ▾</option><option value="p">Texto normal</option><option value="h1">Título 1</option><option value="h2">Título 2</option><option value="h3">Título 3</option><option value="blockquote">Citação</option></select>'+
     '<button type="button" data-ed="bold" title="Negrito"><b>B</b></button>'+
     '<button type="button" data-ed="italic" title="Itálico"><i>I</i></button>'+
     '<button type="button" data-ed="underline" title="Sublinhado"><u>U</u></button>'+
@@ -210,6 +229,8 @@ function enterEdit(overlay,article,state){
   article.setAttribute('contenteditable','true');
   article.setAttribute('spellcheck','true');
   article.querySelectorAll(PROTECTED).forEach(function(n){n.setAttribute('contenteditable','false')});
+  state.keyHandler=function(e){headingEnterToParagraph(article,e)};
+  article.addEventListener('keydown',state.keyHandler);
   var tools=toolsFor(overlay);
   var bar=makeEditorBar(overlay,article,state);
   state.bar=bar;
@@ -221,6 +242,7 @@ function exitEdit(overlay,article,state){
   state.editing=false;
   article.removeAttribute('contenteditable');article.removeAttribute('spellcheck');article.classList.remove('bc-editor-active');
   article.querySelectorAll(PROTECTED).forEach(function(n){n.removeAttribute('contenteditable')});
+  if(state.keyHandler){article.removeEventListener('keydown',state.keyHandler);state.keyHandler=null}
   if(state.bar){state.bar.remove();state.bar=null}
   state.button.disabled=false;state.button.textContent='✎ Editar';
 }
@@ -245,7 +267,7 @@ function mount(overlay){
   if(mounted.has(overlay))return;
   var article=articleFor(overlay),tools=toolsFor(overlay);if(!article||!tools)return;
   mounted.add(overlay);
-  var state={editing:false,sourceSnapshot:capture(article),beforeEdit:'',bar:null,button:null,reset:null,cloudRevision:0};
+  var state={editing:false,sourceSnapshot:capture(article),beforeEdit:'',bar:null,button:null,reset:null,cloudRevision:0,keyHandler:null};
   var saved=getSaved(overlay);if(saved)applySnapshot(article,saved);
   cloudGet(overlay).then(function(remote){
     if(!remote||state.editing)return;
