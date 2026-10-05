@@ -144,9 +144,9 @@ def fetch_official(tipo,num,year):
         except Exception:
             continue
     fallbacks = {
-        ("lei",6404,1976): "https://www2.camara.leg.br/legin/fed/lei/1970-1979/lei-6404-15-dezembro-1976-368447-normaatualizada-pl.html",
-        ("lc",75,1993): "https://www2.camara.leg.br/legin/fed/leicom/1993/leicomplementar-75-20-maio-1993-354948-normaatualizada-pl.html",
-        ("lei",11340,2006): "https://www2.camara.leg.br/legin/fed/lei/2006/lei-11340-7-agosto-2006-545133-normaatualizada-pl.html",
+        ("lei",6404,1976): "https://legis.senado.leg.br/norma/548280/publicacao/34619484",
+        ("lc",75,1993): "https://legis.senado.leg.br/norma/572830/publicacao/36345452",
+        ("lei",11340,2006): "https://legis.senado.leg.br/norma/572125/publicacao/34620955",
     }
     u = fallbacks.get((tipo,num,year))
     if u:
