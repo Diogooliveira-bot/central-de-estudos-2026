@@ -105,6 +105,8 @@ function makeEditorBar(overlay,article,state){
     '<select data-ed="block" aria-label="Estilo do bloco"><option value="">Estilo</option><option value="p">Texto</option><option value="h1">Título 1</option><option value="h2">Título 2</option><option value="h3">Título 3</option><option value="blockquote">Citação</option></select>'+
     '<button type="button" data-ed="bold" title="Negrito"><b>B</b></button>'+
     '<button type="button" data-ed="italic" title="Itálico"><i>I</i></button>'+
+    '<button type="button" data-ed="underline" title="Sublinhado"><u>U</u></button>'+
+    '<select data-ed="color" aria-label="Cor do texto"><option value="">Cor</option><option value="#34312d">Preto</option><option value="#087584">Azul petróleo</option><option value="#6d5b88">Roxo</option><option value="#9b3d3d">Vermelho</option><option value="#2f7a4f">Verde</option><option value="#b36b00">Laranja</option></select>'+
     '<button type="button" data-ed="mark" title="Marca-texto">Destaque</button>'+
     '<button type="button" data-ed="ul" title="Lista com marcadores">• Lista</button>'+
     '<button type="button" data-ed="ol" title="Lista numerada">1. Lista</button>'+
@@ -118,12 +120,14 @@ function makeEditorBar(overlay,article,state){
     '<button type="button" class="bc-editor-save" data-ed="save">Salvar</button>';
   bar.addEventListener('change',function(e){
     if(e.target.matches('[data-ed="block"]')&&e.target.value){setBlockTag(article,e.target.value);e.target.value=''}
+    if(e.target.matches('[data-ed="color"]')&&e.target.value){exec(article,'foreColor',e.target.value);e.target.value=''}
   });
   bar.addEventListener('click',function(e){
     var b=e.target.closest('[data-ed]');if(!b)return;
     var a=b.dataset.ed;
     if(a==='bold')exec(article,'bold');
     else if(a==='italic')exec(article,'italic');
+    else if(a==='underline')exec(article,'underline');
     else if(a==='mark')exec(article,'hiliteColor','#ffe4a0');
     else if(a==='ul')exec(article,'insertUnorderedList');
     else if(a==='ol')exec(article,'insertOrderedList');
