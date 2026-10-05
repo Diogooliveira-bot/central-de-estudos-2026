@@ -52,6 +52,16 @@ function stats(subject){
    const prefix='central-v6:adm-native:'+uid+':';
    percentages.push(Math.round((readingPercent(prefix+'summary:read')+readingPercent(prefix+'complete:read'))/2));
   }
+ }else if(subject.id==='civil'){
+  const legacy=json('central-v6:civil-study-progress-v1').modules||{};
+  const ids=['civ-pessoa-natural','civ-pessoa-juridica','civ-bens','civ-negocio','civ-prescricao-prova','civ-obrigacoes','civ-contratos-geral','civ-contratos-especie','civ-responsabilidade','civ-empresa','civ-posse','civ-propriedade','civ-direitos-reais','civ-familia','civ-sucessoes'];
+  for(let n=1;n<=15;n++){
+   const nn=String(n).padStart(2,'0'),sk='central-v6:civil-native:m'+nn+':summary:read',ck='central-v6:civil-native:m'+nn+':complete:read';
+   const hasS=localStorage.getItem(sk)!==null,hasC=localStorage.getItem(ck)!==null,old=legacy[ids[n-1]]||{},reading=old.reading||{};
+   const legacyPct=Math.round(['coverage','theory','jurisprudence','examples','traps'].filter(key=>!!reading[key]).length/5*100);
+   const summary=hasS?readingPercent(sk):legacyPct,complete=hasC?readingPercent(ck):legacyPct;
+   percentages.push(Math.round((summary+complete)/2));
+  }
  }else if(subject.id==='cpp'){
   const legacy=json('central-v6:cpp:curso22:v1').modules||{};
   for(let n=1;n<=22;n++){
@@ -64,7 +74,7 @@ function stats(subject){
   }
  }else return null;
  const total=percentages.length,done=percentages.filter(p=>p===100).length;
- const pct=['penal','adm','cpp'].includes(subject.id)?Math.round(percentages.reduce((a,p)=>a+p,0)/(total||1)):Math.round(done/(total||1)*100);
+ const pct=['penal','adm','cpp','civil'].includes(subject.id)?Math.round(percentages.reduce((a,p)=>a+p,0)/(total||1)):Math.round(done/(total||1)*100);
  return {total,done,pct,unit:'módulos'};
 }
 const style=document.createElement('style');style.id='central-discipline-loading-style';
@@ -88,6 +98,7 @@ function nativeReady(id){
  if(id==='penal')return !!global.__centralCurrentPenal;
  if(id==='cpp')return !!global.CppNative;
  if(id==='adm')return !!global.AdmNative;
+ if(id==='civil')return !!global.CivilNative;
  if(id!=='cpc')return true;
  if(!global.CpcStudyV1?.installed||!global.__M08Installed)return false;
  for(let n=2;n<=20;n++){if(n===8)continue;const module=global['CpcStudyM'+String(n).padStart(2,'0')];if(module!==true&&!module?.installed)return false;}
