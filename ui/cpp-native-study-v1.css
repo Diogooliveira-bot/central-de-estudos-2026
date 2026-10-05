@@ -8,3 +8,10 @@
 @media(max-width:780px){.cpp-native-mod-head{grid-template-columns:44px 1fr auto}.cpp-native-chev{display:none}.cpp-native-module-tools{align-items:flex-start;flex-direction:column}.cpp-native-module-tools>div{justify-content:flex-start}.cpp-native-progress-panel,.cpp-native-material-grid{grid-template-columns:1fr}.cpp-native-card{min-height:138px}.cpp-native-reader-layout{grid-template-columns:1fr}.cpp-native-reader-layout aside{display:none}#cpp-native-body{padding:26px 15px 70px}.cpp-native-shell>header{grid-template-columns:auto 1fr}.cpp-native-reader-actions{grid-column:1/-1;justify-content:flex-end}}
 .cpp-native-infographic-svg{display:block;width:min(100%,700px);height:auto;box-shadow:0 20px 70px #000a;border-radius:8px;background:#fff}
 html.cpp-native-reader-open{overflow:hidden}
+
+/* CPP audit alignment with ADM — 2026-10-05 */
+.cpp-native-tec-panel.adm-native-pulse{outline:2px solid var(--adm-native-accent,#19c2c9);outline-offset:4px;transition:outline-color .3s}
+.cpp-native-round:first-of-type{margin-top:0}
+.cpp-native-round+.cpp-native-round{margin-top:8px}
+.cpp-native-content details{margin:10px 0;padding:10px 12px;border:1px solid var(--line,#26364f);border-radius:8px;background:var(--card,#0c1828)}
+.cpp-native-content details summary{cursor:pointer;font-weight:800}
