@@ -143,6 +143,20 @@ def fetch_official(tipo,num,year):
             return r.url, txt
         except Exception:
             continue
+    fallbacks = {
+        ("lei",6404,1976): "https://www2.camara.leg.br/legin/fed/lei/1970-1979/lei-6404-15-dezembro-1976-368447-normaatualizada-pl.html",
+        ("lc",75,1993): "https://www2.camara.leg.br/legin/fed/leicom/1993/leicomplementar-75-20-maio-1993-354948-normaatualizada-pl.html",
+        ("lei",11340,2006): "https://www2.camara.leg.br/legin/fed/lei/2006/lei-11340-7-agosto-2006-545133-normaatualizada-pl.html",
+    }
+    u = fallbacks.get((tipo,num,year))
+    if u:
+        try:
+            r=requests.get(u,timeout=15,headers={"User-Agent":"Mozilla/5.0 BaseCompleta/1.0"})
+            if r.status_code == 200 and len(r.content) > 1000:
+                r.encoding=r.apparent_encoding or r.encoding
+                return r.url, r.text
+        except Exception:
+            pass
     return None, None
 
 BASE_CSS = """
