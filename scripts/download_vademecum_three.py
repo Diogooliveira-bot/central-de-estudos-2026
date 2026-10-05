@@ -24,9 +24,9 @@ headers={"User-Agent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome
 for name,urls in FILES:
     ok=False
     for url in urls:
-        for attempt in range(3):
+        for attempt in range(1):
             try:
-                r=requests.get(url,headers=headers,timeout=90,allow_redirects=True,verify=True)
+                r=requests.get(url,headers=headers,timeout=15,allow_redirects=True,verify=True)
                 print(name,url,r.status_code,r.headers.get("content-type"),len(r.content),flush=True)
                 if r.status_code==200 and len(r.content)>5000:
                     data=r.content
