@@ -1,0 +1,37 @@
+/* Base Completa — Editor visual de leitura v1 */
+.bc-editor-trigger,.bc-editor-reset{
+  min-height:40px;padding:8px 12px!important;border:1px solid var(--bc-reading-line,#d8d2c8)!important;
+  border-radius:5px!important;background:var(--bc-reading-paper,#f5f1e8)!important;color:var(--bc-reading-text,#34312d)!important;
+  font:700 12px/1.2 system-ui,sans-serif!important;white-space:nowrap
+}
+.bc-editor-trigger{color:var(--bc-reading-accent,#087584)!important}
+.bc-editor-bar{
+  position:sticky;top:0;z-index:40;display:flex;align-items:center;gap:6px;flex-wrap:wrap;
+  padding:8px 24px;background:var(--bc-reading-inset,#eee8dd);border-bottom:1px solid var(--bc-reading-line,#ded7ca);
+  font:600 12px/1.2 system-ui,sans-serif;box-shadow:0 4px 14px rgba(0,0,0,.06)
+}
+.bc-editor-bar button,.bc-editor-bar select{
+  min-height:34px;border:1px solid var(--bc-reading-line,#ded7ca);border-radius:5px;
+  background:var(--bc-reading-paper,#f5f1e8);color:var(--bc-reading-text,#34312d);padding:6px 9px
+}
+.bc-editor-bar .bc-editor-spacer{flex:1 1 16px}
+.bc-editor-bar .bc-editor-save{background:var(--bc-reading-accent,#087584)!important;color:white!important;border-color:var(--bc-reading-accent,#087584)!important}
+.bc-editor-bar .bc-editor-cancel{color:#8a3d35!important}
+.bc-editor-active{outline:none!important}
+.bc-editor-active :is(p,h1,h2,h3,h4,li,blockquote,td,th){border-radius:3px}
+.bc-editor-active :is(p,h1,h2,h3,h4,li,blockquote,td,th):hover{outline:1px dashed color-mix(in srgb,var(--bc-reading-accent,#087584) 45%,transparent);outline-offset:4px}
+.bc-editor-active .bc-editor-callout,.bc-native-article .bc-editor-callout,.cf-native-reader article .bc-editor-callout{
+  margin:26px 0!important;padding:18px 20px!important;background:var(--bc-reading-inset,#eee8dd)!important;
+  border-left:4px solid var(--bc-reading-accent,#087584)!important;border-radius:6px!important
+}
+.bc-editor-toast{
+  position:fixed;left:50%;bottom:28px;z-index:2147483600;transform:translate(-50%,16px);opacity:0;
+  background:#17211f;color:#fff;border-radius:8px;padding:10px 14px;font:700 12px system-ui,sans-serif;
+  box-shadow:0 8px 26px rgba(0,0,0,.2);transition:.2s ease
+}
+.bc-editor-toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:700px){
+ .bc-editor-bar{padding:8px 12px;gap:5px}
+ .bc-editor-bar button,.bc-editor-bar select{min-height:38px}
+ .bc-editor-bar .bc-editor-spacer{display:none}
+}
