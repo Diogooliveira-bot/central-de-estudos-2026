@@ -18,7 +18,40 @@ function identity(overlay){
   var sub=(overlay.querySelector('.bc-native-reader-title small,.cf-native-shell>header small')||{}).textContent||'';
   return location.pathname+'|'+title.trim()+'|'+sub.trim();
 }
+function contentId(overlay){return 'reader:'+hash(identity(overlay))}
 function keyFor(overlay){return PREFIX+hash(identity(overlay))}
+function adminSecret(){
+  try{
+    var s=sessionStorage.getItem('central-backup:session-secret')||'';
+    if(s)return s;
+    s=(prompt('Digite a chave administrativa da Base Completa para editar o conteúdo definitivo:')||'').trim();
+    if(s)sessionStorage.setItem('central-backup:session-secret',s);
+    return s;
+  }catch(_){return ''}
+}
+async function cloudGet(overlay){
+  try{
+    var r=await fetch('/api/content-editor?id='+encodeURIComponent(contentId(overlay)),{cache:'no-store'});
+    if(!r.ok)return null;
+    var j=await r.json();
+    return j&&j.exists?j:null;
+  }catch(_){return null}
+}
+async function cloudSave(overlay,html){
+  var secret=adminSecret();if(!secret)throw new Error('Chave administrativa não informada');
+  var label=identity(overlay);
+  var r=await fetch('/api/content-editor',{method:'POST',headers:{'Content-Type':'application/json','X-Backup-Key':secret},body:JSON.stringify({id:contentId(overlay),label:label,html:html})});
+  var j={};try{j=await r.json()}catch(_){}
+  if(!r.ok)throw new Error(j.error||('Falha ao salvar (HTTP '+r.status+')'));
+  return j;
+}
+async function cloudDelete(overlay){
+  var secret=adminSecret();if(!secret)throw new Error('Chave administrativa não informada');
+  var r=await fetch('/api/content-editor?id='+encodeURIComponent(contentId(overlay)),{method:'DELETE',headers:{'X-Backup-Key':secret}});
+  var j={};try{j=await r.json()}catch(_){}
+  if(!r.ok)throw new Error(j.error||('Falha ao restaurar (HTTP '+r.status+')'));
+  return j;
+}
 function articleFor(overlay){return overlay.querySelector('.bc-native-article,.cf-native-reader article')}
 function toolsFor(overlay){return overlay.querySelector('.bc-native-reader-tools,.cf-native-reader>aside')}
 
@@ -153,12 +186,25 @@ function makeEditorBar(overlay,article,state){
     else if(a==='gapminus')adjustGap(article,-8);
     else if(a==='gapplus')adjustGap(article,8);
     else if(a==='cancel'){applySnapshot(article,state.beforeEdit);exitEdit(overlay,article,state);toast('Alterações canceladas')}
-    else if(a==='save'){setSaved(overlay,capture(article));state.sourceChanged=true;exitEdit(overlay,article,state);toast('Alterações salvas')}
+    else if(a==='save'){
+      var html=capture(article);
+      b.disabled=true;b.textContent='Salvando…';
+      cloudSave(overlay,html).then(function(result){
+        setSaved(overlay,html);state.sourceChanged=true;state.cloudRevision=result.revision||0;
+        exitEdit(overlay,article,state);
+        if(state.reset)state.reset.hidden=false;
+        toast('Conteúdo definitivo salvo');
+      }).catch(function(err){
+        b.disabled=false;b.textContent='Salvar';
+        toast(err.message||'Falha ao salvar');
+      });
+    }
   });
   return bar;
 }
 function enterEdit(overlay,article,state){
   if(state.editing)return;
+  if(!adminSecret()){toast('Edição cancelada');return;}
   state.editing=true;state.beforeEdit=capture(article);
   article.classList.add('bc-editor-active');
   article.setAttribute('contenteditable','true');
@@ -183,9 +229,15 @@ function addReset(overlay,article,state,tools){
   btn.title='Remover suas alterações e voltar ao conteúdo original';
   btn.hidden=!getSaved(overlay);
   btn.addEventListener('click',function(){
-    if(!confirm('Remover as alterações deste material e restaurar o conteúdo original?'))return;
-    if(state.editing)exitEdit(overlay,article,state);
-    removeSaved(overlay);applySnapshot(article,state.sourceSnapshot);btn.hidden=true;toast('Conteúdo original restaurado');
+    if(!confirm('Remover as alterações definitivas deste material e restaurar o conteúdo original?'))return;
+    btn.disabled=true;
+    cloudDelete(overlay).then(function(){
+      if(state.editing)exitEdit(overlay,article,state);
+      removeSaved(overlay);applySnapshot(article,state.sourceSnapshot);btn.hidden=true;
+      toast('Conteúdo original restaurado');
+    }).catch(function(err){
+      toast(err.message||'Falha ao restaurar');
+    }).finally(function(){btn.disabled=false});
   });
   tools.appendChild(btn);state.reset=btn;
 }
@@ -193,8 +245,13 @@ function mount(overlay){
   if(mounted.has(overlay))return;
   var article=articleFor(overlay),tools=toolsFor(overlay);if(!article||!tools)return;
   mounted.add(overlay);
-  var state={editing:false,sourceSnapshot:capture(article),beforeEdit:'',bar:null,button:null,reset:null};
+  var state={editing:false,sourceSnapshot:capture(article),beforeEdit:'',bar:null,button:null,reset:null,cloudRevision:0};
   var saved=getSaved(overlay);if(saved)applySnapshot(article,saved);
+  cloudGet(overlay).then(function(remote){
+    if(!remote||state.editing)return;
+    applySnapshot(article,remote.html);setSaved(overlay,remote.html);state.cloudRevision=remote.revision||0;
+    if(state.reset)state.reset.hidden=false;
+  });
   var btn=document.createElement('button');btn.type='button';btn.className='bc-editor-trigger';btn.textContent='✎ Editar';btn.title='Editar este material';
   btn.addEventListener('click',function(){enterEdit(overlay,article,state)});
   tools.appendChild(btn);state.button=btn;
