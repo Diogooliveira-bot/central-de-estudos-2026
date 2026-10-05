@@ -96,13 +96,21 @@ function adjustGap(article,delta){
   block.style.marginBottom=Math.max(0,Math.min(80,current+delta))+'px';
 }
 function clearCalloutClasses(block){
-  block.classList.remove('bc-editor-callout','bc-editor-callout-prazo','bc-editor-callout-erro','bc-editor-callout-palavra');
+  block.classList.remove('bc-editor-callout','bc-editor-callout-atencao','bc-editor-callout-pegadinha','bc-editor-callout-decore','bc-editor-callout-lei','bc-editor-callout-juris','bc-editor-callout-exemplo','bc-editor-callout-resumo','bc-editor-callout-fcc','bc-editor-callout-prazo','bc-editor-callout-erro','bc-editor-callout-palavra');
 }
 function applyCallout(article,type){
   var block=blockFromSelection(article);if(!block)return;
   clearCalloutClasses(block);
   if(type==='remove')return;
   if(type==='generic')block.classList.add('bc-editor-callout');
+  if(type==='atencao')block.classList.add('bc-editor-callout','bc-editor-callout-atencao');
+  if(type==='pegadinha')block.classList.add('bc-editor-callout','bc-editor-callout-pegadinha');
+  if(type==='decore')block.classList.add('bc-editor-callout','bc-editor-callout-decore');
+  if(type==='lei')block.classList.add('bc-editor-callout','bc-editor-callout-lei');
+  if(type==='juris')block.classList.add('bc-editor-callout','bc-editor-callout-juris');
+  if(type==='exemplo')block.classList.add('bc-editor-callout','bc-editor-callout-exemplo');
+  if(type==='resumo')block.classList.add('bc-editor-callout','bc-editor-callout-resumo');
+  if(type==='fcc')block.classList.add('bc-editor-callout','bc-editor-callout-fcc');
   if(type==='prazo')block.classList.add('bc-editor-callout','bc-editor-callout-prazo');
   if(type==='erro')block.classList.add('bc-editor-callout','bc-editor-callout-erro');
   if(type==='palavra')block.classList.add('bc-editor-callout','bc-editor-callout-palavra');
@@ -118,7 +126,7 @@ function makeEditorBar(overlay,article,state){
     '<button type="button" data-ed="mark" title="Marca-texto">Destaque</button>'+
     '<button type="button" data-ed="ul" title="Lista com marcadores">• Lista</button>'+
     '<button type="button" data-ed="ol" title="Lista numerada">1. Lista</button>'+
-    '<select data-ed="callout" aria-label="Tipo de caixa"><option value="">Caixa</option><option value="generic">Caixa padrão</option><option value="prazo">Prazo</option><option value="erro">Erro comum</option><option value="palavra">Palavra-chave</option><option value="remove">Remover caixa</option></select>'+
+    '<select data-ed="callout" aria-label="Tipo de caixa"><option value="">Caixa ▾</option><option value="generic">Caixa padrão</option><option value="atencao">⚠ Atenção</option><option value="pegadinha">🎯 Pegadinha</option><option value="decore">🧠 Decore</option><option value="lei">⚖ Lei seca</option><option value="juris">🏛 Jurisprudência</option><option value="exemplo">💡 Exemplo</option><option value="resumo">📌 Resumo</option><option value="fcc">📝 FCC</option><option value="prazo">⏱ Prazo</option><option value="erro">✕ Erro comum</option><option value="palavra">🔑 Palavra-chave</option><option value="remove">Remover caixa</option></select>'+
     '<button type="button" data-ed="gapminus" title="Diminuir espaço abaixo">Espaço −</button>'+
     '<button type="button" data-ed="gapplus" title="Aumentar espaço abaixo">Espaço +</button>'+
     '<span class="bc-editor-spacer"></span>'+
