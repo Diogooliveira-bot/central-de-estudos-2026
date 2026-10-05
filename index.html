@@ -692,7 +692,7 @@ window.addEventListener('unhandledrejection',function(e){try{window.__CENTRAL_LA
 'use strict';
 if(!('serviceWorker' in navigator))return;
 if(location.protocol!=='https:'&&!/localhost|127\.0\.0\.1/.test(location.hostname))return;
-window.addEventListener('load',function(){navigator.serviceWorker.register('/sw.js',{updateViaCache:'none'}).then(function(){return navigator.serviceWorker.ready}).then(function(reg){if(navigator.onLine)reg.active?.postMessage({type:'PREPARE_OFFLINE'})}).catch(function(){})});
+window.addEventListener('load',function(){navigator.serviceWorker.register('/sw.js',{updateViaCache:'none'}).then(function(){return navigator.serviceWorker.ready}).then(function(reg){if(window.CentralDisciplineLoader)CentralDisciplineLoader.prepareOffline(reg);else if(navigator.onLine)reg.active?.postMessage({type:'PREPARE_OFFLINE'})}).catch(function(){})});
 var deferred=null;
 window.addEventListener('beforeinstallprompt',function(e){e.preventDefault();deferred=e;
  var b=document.getElementById('centralPwaInstall');

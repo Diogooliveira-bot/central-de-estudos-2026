@@ -23,7 +23,8 @@
       let label = 'Curso Integrado';
       try{
         const s = Array.isArray(window.SUBJECTS) ? window.SUBJECTS.find(x=>x&&x.id===sid) : null;
-        if(s && Array.isArray(s.topics)) total = String(s.topics.length);
+        if(s && typeof window.subjStats==='function') total = String(window.subjStats(s).total);
+        else if(s && Array.isArray(s.topics)) total = String(s.topics.length);
         if(sid==='trab' || sid==='ptra') label = 'Curso Integrado';
       }catch(_){}
       if(!total){
@@ -183,7 +184,7 @@
       const eyebrow = intro.querySelector('.eyebrow');
       const h2 = intro.querySelector('h2');
       const p = intro.querySelector('p');
-      if(eyebrow) eyebrow.textContent = 'Disciplinas';
+      if(eyebrow && eyebrow.textContent !== 'Disciplinas') eyebrow.textContent = 'Disciplinas';
       if(h2 && h2.textContent.trim() !== 'Disciplinas') h2.textContent = 'Disciplinas';
       if(p && p.textContent.trim() !== 'Escolha uma disciplina e continue direto do seu progresso.'){
         p.textContent = 'Escolha uma disciplina e continue direto do seu progresso.';

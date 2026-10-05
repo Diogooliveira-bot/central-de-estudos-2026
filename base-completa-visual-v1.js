@@ -136,6 +136,7 @@
     return false;
   };
   const renderCpcMapCard=()=>{
+    if(window.CentralDisciplineLoader&&!CentralDisciplineLoader.isReady('cpc'))return;
     ensureCpcMapStyles();
     const section=document.querySelector('.subject[data-id="cpc"]');if(!section)return;
     const body=section.querySelector('.subject-body');if(!body||body.querySelector(':scope > .bc-cpc-map-card'))return;

@@ -37,6 +37,7 @@
     if (!context || typeof context !== 'object') return;
     const subject = typeof context.subject === 'string' && (typeof SUBJECTS !== 'undefined' ? SUBJECTS : []).find(s => s.id === context.subject);
     if (subject) {
+      if(window.CentralDisciplineLoader&&!CentralDisciplineLoader.isReady(subject.id))return CentralDisciplineLoader.open(subject.id,()=>openContext(context));
       if(subject.id==='pt'&&context.module&&typeof window.openPtCurrentModule==='function')return window.openPtCurrentModule(context.module);
       window.jumpSubject(subject.id);
       if (context.module) {

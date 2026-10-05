@@ -77,7 +77,7 @@ if(typeof global.renderDisciplineGrid==='function')global.renderDisciplineGrid()
 })(window);
 
 (function(){
- if(window.__cpcM07Autoload)return;window.__cpcM07Autoload=true;
+ if(window.CentralDisciplineLoader||window.__cpcM07Autoload)return;window.__cpcM07Autoload=true;
  const files=[
   '/content/cpc/m07-native-data.js?v=20261003cpcm07v1',
   '/ui/cpc-m07-native-study-reader.js?v=20261003cpcm07v1',

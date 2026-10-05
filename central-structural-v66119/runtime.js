@@ -314,6 +314,7 @@ function key(uid,kind){return `central-v6:${kind}:${uid}`}
 function goalDone(uid){return localStorage.getItem(key(uid,'done'))==='1'}
 function setDone(uid,v){localStorage.setItem(key(uid,'done'),v?'1':'0')}
 function subjStats(s){
+ const lightweight=window.CentralDisciplineLoader?.stats(s);if(lightweight)return lightweight;
  if(s.id==='pt'&&typeof window.ptNativeStats==='function')return window.ptNativeStats();
  if(s.id==='cf'){
    const total=CF_WEEKS.length,done=CF_WEEKS.filter(w=>cfWeekPct(w)===100).length;
@@ -333,7 +334,7 @@ function subjStats(s){
  const total=s.topics.length,done=s.topics.filter(t=>goalDone(t.uid)).length;
  return {total,done,pct:total?Math.round(done/total*100):0,unit:(s.id==='trab'||s.id==='ptra')?'aulas':'metas'};
 }
-function toggleSubject(id){const el=document.querySelector(`.subject[data-id="${id}"]`);const o=!el.classList.contains('open');el.classList.toggle('open');localStorage.setItem(`central-v6:open:${id}`,o?'1':'0')}
+function toggleSubject(id){if(window.CentralDisciplineLoader&&!CentralDisciplineLoader.isReady(id)){CentralDisciplineLoader.open(id);return false;}const el=document.querySelector(`.subject[data-id="${id}"]`);const o=!el.classList.contains('open');el.classList.toggle('open');localStorage.setItem(`central-v6:open:${id}`,o?'1':'0');if(o&&window.CentralDisciplineLoader)renderSubjects()}
 function toggleGoal(uid,v,e){e?.stopPropagation();setDone(uid,v);renderAll()}
 function topicOpenKey(uid){return `central-v6:topic-open:${uid}`}
 function toggleTopic(uid){
@@ -372,16 +373,16 @@ function centralResumeLast(){
  if(x.url){try{const url=new URL(x.url,location.href);if(/^https?:$/.test(url.protocol))return openInternal(url.href,x.title||'Estudo')}catch(_){}}
  return openHome();
 }
-function openTopicFromLast(uid){openHome();setTimeout(()=>{const found=topicByUid(uid);if(found){localStorage.setItem(`central-v6:open:${found.s.id}`,'1');renderSubjects();localStorage.setItem(topicOpenKey(uid),'1');renderSubjects();const el=document.querySelector(`.topic-item[data-uid="${uid}"]`);el?.scrollIntoView({behavior:'smooth',block:'center'})}},30)}
+function openTopicFromLast(uid){const target=topicByUid(uid);if(target&&window.CentralDisciplineLoader&&!CentralDisciplineLoader.isReady(target.s.id))return CentralDisciplineLoader.open(target.s.id,()=>openTopicFromLast(uid));openHome();setTimeout(()=>{const found=topicByUid(uid);if(found){localStorage.setItem(`central-v6:open:${found.s.id}`,'1');renderSubjects();localStorage.setItem(topicOpenKey(uid),'1');renderSubjects();const el=document.querySelector(`.topic-item[data-uid="${uid}"]`);el?.scrollIntoView({behavior:'smooth',block:'center'})}},30)}
 
 function renderSubjects(){
  $('subjects').innerHTML=SUBJECTS.map(s=>{
-  const st=subjStats(s),open=localStorage.getItem(`central-v6:open:${s.id}`)==='1';
+  const st=subjStats(s),ready=!window.CentralDisciplineLoader||CentralDisciplineLoader.isReady(s.id),open=localStorage.getItem(`central-v6:open:${s.id}`)==='1'&&(ready||CentralDisciplineLoader.isLoading(s.id)||CentralDisciplineLoader.hasError(s.id));
   const unit=(s.id==='pt'||s.id==='cf'||s.id==='civil'||s.id==='penal'||s.id==='cpc')?'módulos':'metas';
-  return `<section class="subject ${open?'open':''}" data-id="${s.id}">
+  return `<section class="subject ${!ready?'central-subject-pending':''} ${open?'open':''}" data-id="${s.id}">
    <button class="subject-head" onclick="toggleSubject('${s.id}')"><span class="subject-name">${esc(s.name)}</span><span class="subject-count">${st.done}/${st.total} ${unit}</span><span class="subject-pct ${st.pct===100?'done':''}">${st.pct}%</span><span class="chev">⌄</span></button>
    <div class="subject-body"><div class="subject-bar"><span style="width:${st.pct}%"></span></div>
-    ${s.id==='pt' ? renderPortugueseMaster() : s.id==='cf' ? renderConstitutionalMaster() : s.id==='penal' ? renderPenalMaster() : s.id==='cpc' ? renderCpcMaster() : s.id==='civil' ? renderCivilMaster() : `
+    ${!ready ? CentralDisciplineLoader.placeholder(s) : !open ? '' : s.id==='pt' ? renderPortugueseMaster() : s.id==='cf' ? renderConstitutionalMaster() : s.id==='penal' ? renderPenalMaster() : s.id==='cpc' ? renderCpcMaster() : s.id==='civil' ? renderCivilMaster() : `
       <div class="topic-header"><div></div><div>Tópico real</div><div>Origem</div><div>Tipo</div><div></div></div>
       ${s.topics.map(t=>renderTopic(s,t)).join('')}
     `}
@@ -466,6 +467,7 @@ function toggleCivilStep(id){
  const open=!el.classList.contains('open');el.classList.toggle('open',open);localStorage.setItem(civilStepOpenKey(id),open?'1':'0')
 }
 function openCivilLast(id='m1'){
+ if(window.CentralDisciplineLoader&&!CentralDisciplineLoader.isReady('civil'))return CentralDisciplineLoader.open('civil',()=>openCivilLast(id));
  openHome();localStorage.setItem('central-v6:open:civil','1');localStorage.setItem(civilModuleOpenKey(id),'1');
  setTimeout(()=>{renderSubjects();document.querySelector(`.civil-module[data-civil="${id}"]`)?.scrollIntoView({behavior:'smooth',block:'start'})},40)
 }
@@ -3908,9 +3910,10 @@ function cfWeekPct(w){
 function cfPool(w){return CF_QUESTIONS.filter(q=>w.topics.includes(q.t))}
 function cfStats(){
  const st=cfState();let answered=0,correct=0,wrongIds=[];
- CF_QUESTIONS.forEach(q=>{
-   const a=st.answers?.[q.id];
-   if(a?.attempts){answered++;if(a.lastCorrect)correct++;if(a.everWrong&&!a.lastCorrect)wrongIds.push(q.id)}
+ const ids=CF_QUESTIONS.length?CF_QUESTIONS.map(q=>q.id):(window.CentralHomeProgressData?.cfQuestionIds||[]);
+ ids.forEach(id=>{
+   const a=st.answers?.[id];
+   if(a?.attempts){answered++;if(a.lastCorrect)correct++;if(a.everWrong&&!a.lastCorrect)wrongIds.push(id)}
  });
  try{
    const native=JSON.parse(localStorage.getItem('central-v6:cf-native-v2')||'{}'),mods=native.modules||{};
@@ -3929,6 +3932,7 @@ function toggleCfModule(id){
  if(open){const w=CF_WEEKS.find(x=>x.id===id);if(w)saveLast({cfWeek:id,title:`Constitucional • Módulo ${w.num} • ${w.title}`,at:Date.now()})}
 }
 function openCfLast(id){
+ if(window.CentralDisciplineLoader&&!CentralDisciplineLoader.isReady('cf'))return CentralDisciplineLoader.open('cf',()=>openCfLast(id));
  openHome();localStorage.setItem('central-v6:open:cf','1');localStorage.setItem(cfModuleOpenKey(id),'1');
  setTimeout(()=>{renderSubjects();document.querySelector(`.cf-module[data-cf="${id}"]`)?.scrollIntoView({behavior:'smooth',block:'start'})},40);
 }
@@ -4168,6 +4172,7 @@ function togglePenalModule(id){
  if(open){const w=PENAL_WEEKS.find(x=>x.id===id);if(w)saveLast({penalWeek:id,title:`Penal • Módulo ${w.num} • ${w.title}`,at:Date.now()})}
 }
 function openPenalLast(id){
+ if(window.CentralDisciplineLoader&&!CentralDisciplineLoader.isReady('penal'))return CentralDisciplineLoader.open('penal',()=>openPenalLast(id));
  openHome();localStorage.setItem('central-v6:open:penal','1');localStorage.setItem(penalModuleOpenKey(id),'1');
  setTimeout(()=>{renderSubjects();document.querySelector(`.cf-module[data-cf="${id}"]`)?.scrollIntoView({behavior:'smooth',block:'start'})},40);
 }
@@ -4484,6 +4489,7 @@ function toggleCpcModule(id){
  if(open){const w=CPC_WEEKS.find(x=>x.id===id);if(w)saveLast({cpcWeek:id,title:`Processo Civil • Módulo ${w.num} • ${w.title}`,at:Date.now()})}
 }
 function openCpcLast(id){
+ if(window.CentralDisciplineLoader&&!CentralDisciplineLoader.isReady('cpc'))return CentralDisciplineLoader.open('cpc',()=>openCpcLast(id));
  openHome();localStorage.setItem('central-v6:open:cpc','1');localStorage.setItem(cpcModuleOpenKey(id),'1');
  setTimeout(()=>{renderSubjects();document.querySelector(`.cf-module[data-cf="${id}"]`)?.scrollIntoView({behavior:'smooth',block:'start'})},40);
 }
@@ -4894,6 +4900,7 @@ function renderDisciplineGrid(){
 function jumpSubject(id){
  try{
   const sid=String(id||'');
+  if(window.CentralDisciplineLoader&&!CentralDisciplineLoader.isReady(sid)){CentralDisciplineLoader.open(sid);return false;}
   openHome();
   try{localStorage.setItem(`central-v6:open:${sid}`,'1')}catch(_){}
   try{renderSubjects()}catch(e){console.warn('Falha ao renderizar disciplina',sid,e)}

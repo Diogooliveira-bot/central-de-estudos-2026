@@ -1,5 +1,5 @@
 {
-  "build": "20261004-lei-reading-v2",
+  "build": "20261005-lazy-disciplines-v1",
   "files": [
     "/central-v119.html?direct=35",
     "/ui/discipline-standard.js?v=20261003penalnative1",
@@ -407,6 +407,13 @@
     "/tools/decorando-data-civil.js?v=20261001fix1",
     "/tools/decorando-data-penal.js?v=20261001fix1",
     "/tools/decorando-data-cpc.js?v=20261001fix1",
-    "/tools/decorando-data-cpp.js?v=20261001fix1"
+    "/tools/decorando-data-cpp.js?v=20261001fix1",
+    "/central-home-progress-data.js?v=20261005-lazy-disciplines-v1",
+    "/central-discipline-loader.js?v=20261005-lazy-disciplines-v1",
+    "/assets/base-completa-symbol.webp",
+    "/central-boot-ready.js?v=20261005-lazy-disciplines-v1",
+    "/index.html?central_source=20261005-lazy-disciplines-v1",
+    "/study-cycle-planner-v1.js",
+    "/tools/cpc-m01-mapa.html?preview=1"
   ]
 }

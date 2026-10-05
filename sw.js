@@ -1,13 +1,16 @@
 /* Central de Estudos — PWA cache repair 2026-10-03. */
-var CACHE='central-20261004-lei-reading-v2';
+var CACHE='central-20261005-lazy-disciplines-v1';
 var BOOT='/central-v119.html';
-var OFFLINE_MANIFEST='/central-offline-files-v66172.json?v=20261004leireading2';
+var OFFLINE_MANIFEST='/central-offline-files-v66172.json?v=20261005lazy1';
+var OFFLINE_READY='/central-offline-ready?v=20261005lazy1';
 
 function cacheResponse(cache,request,response){
   if(response&&response.ok)cache.put(request,response.clone()).catch(function(){});
   return response;
 }
 
+var pauseOfflineUntil=0;
+async function yieldToStudy(){while(Date.now()<pauseOfflineUntil)await new Promise(function(resolve){setTimeout(resolve,300)})}
 async function prepareOffline(){
   var cache=await caches.open(CACHE);
   try{
@@ -19,18 +22,20 @@ async function prepareOffline(){
     if(response&&response.ok){
       var manifestResponse=response.clone();
       var manifest=await response.json(),files=Array.isArray(manifest.files)?manifest.files:[];
-      var index=0;
+      var index=0,saved=0,failed=[];
       async function worker(){
         while(index<files.length){
+          await yieldToStudy();
           var url=files[index++];
           try{
             var asset=await fetch(url,{cache:'no-store'});
-            if(asset&&asset.ok)await cache.put(url,asset.clone());
-          }catch(_){}
+            if(asset&&asset.ok){await cache.put(url,asset.clone());saved++;}else failed.push(url+': HTTP '+asset.status);
+          }catch(error){failed.push(url+': '+error.message)}
         }
       }
-      await Promise.all([worker(),worker(),worker(),worker()]);
+      await Promise.all([worker(),worker()]);
       await cache.put(OFFLINE_MANIFEST,manifestResponse);
+      await cache.put(OFFLINE_READY,new Response(JSON.stringify({total:files.length,saved,failed:failed.slice(0,10)})));
     }
   }catch(_){}
   await self.skipWaiting();
@@ -92,5 +97,5 @@ self.addEventListener('fetch',function(event){
 });
 
 var offlineJob=null;
-self.addEventListener('message',function(event){if(event.data&&event.data.type==='PREPARE_OFFLINE')event.waitUntil(offlineJob||(offlineJob=caches.open(CACHE).then(function(cache){return cache.match(OFFLINE_MANIFEST)}).then(function(hit){if(!hit)return prepareOffline()}).finally(function(){offlineJob=null}))) });
+self.addEventListener('message',function(event){if(event.data?.type==='PAUSE_OFFLINE'){pauseOfflineUntil=Date.now()+45000;return;}if(event.data?.type==='RESUME_OFFLINE'){pauseOfflineUntil=0;return;}if(event.data&&event.data.type==='PREPARE_OFFLINE')event.waitUntil(offlineJob||(offlineJob=caches.open(CACHE).then(function(cache){return cache.match(OFFLINE_READY)}).then(function(hit){if(!hit)return prepareOffline()}).finally(function(){offlineJob=null}))) });
 

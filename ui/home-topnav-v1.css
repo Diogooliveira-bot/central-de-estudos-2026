@@ -16,7 +16,7 @@ html.bc-ui-v1.bc-topnav #centralSidebar .brand { margin:0!important; padding:0!i
 html.bc-ui-v1.bc-topnav #centralSidebar .brand-main { gap:10px!important; }
 html.bc-ui-v1.bc-topnav #centralSidebar .brand-icon {
   width:54px!important; height:56px!important; flex:0 0 54px!important; border:0!important;
-  background:transparent url('/assets/base-completa-symbol.png') center/contain no-repeat!important;
+  background:transparent url('/assets/base-completa-symbol.webp') center/contain no-repeat!important;
   font-size:0!important; color:transparent!important; border-radius:0!important; box-shadow:none!important;
 }
 html.bc-ui-v1.bc-topnav #centralSidebar .brand-copy { display:block!important; }
