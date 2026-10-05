@@ -5,6 +5,7 @@
   var failed=false,timer;
   function fail(){
     failed=true;
+    if(!document.getElementById('status')){document.addEventListener('DOMContentLoaded',fail,{once:true});return;}
     document.getElementById('status').textContent='Não foi possível concluir o carregamento. Verifique a conexão e tente novamente.';
     document.querySelector('#central-boot-screen .spinner').hidden=true;
     var retry=document.getElementById('retry');retry.hidden=false;retry.onclick=function(){location.reload()};
@@ -30,7 +31,7 @@
     })});
   }
   window.addEventListener('error',function(event){
-    if(event.target?.tagName==='SCRIPT'&&root.classList.contains('central-boot-pending')){
+    if((event.target?.tagName==='SCRIPT'||event.target?.rel==='stylesheet')&&root.classList.contains('central-boot-pending')){
       clearTimeout(timer);fail();
     }
   },true);

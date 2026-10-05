@@ -26,7 +26,8 @@ for(const kind of ['cpc','penal'])for(const p of fs.readdirSync(path.join(root,'
  if(kind==='cpc'&&p.startsWith('m08'))code=code.split('})(window);')[0]+'})(window);';
  run(`content/${kind}/${p}`,code);
 }
-const data={cpc:{},penal:{},cfQuestionIds:vm.runInContext('CF_QUESTIONS.map(q=>q.id)',context)};
+run('content/adm/adm-native-index.js');
+const data={cpc:{},penal:{},admModuleIds:Object.keys(context.ADM_NATIVE_INDEX.modules),cfQuestionIds:vm.runInContext('CF_QUESTIONS.map(q=>q.id)',context)};
 for(const kind of ['cpc','penal'])for(const [id,m] of Object.entries(context.BASE_NATIVE_CONTENT[kind])){
  data[kind][id]={chapters:{},questions:{}};
  for(const mode of ['summary','complete']){

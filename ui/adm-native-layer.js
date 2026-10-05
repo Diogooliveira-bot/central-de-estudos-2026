@@ -9,7 +9,7 @@ function num(uid){return Number(INDEX[uid]?.number)||0}
 function progress(uid,kind){return clamp(localStorage.getItem(k(uid,kind,'read'))||0)}
 function moduleProgress(uid){return Math.round((progress(uid,'summary')+progress(uid,'complete'))/2)}
 function stats(){const uids=Object.keys(INDEX),vals=uids.map(moduleProgress),done=vals.filter(x=>x>=100).length,pct=Math.round(vals.reduce((a,b)=>a+b,0)/(vals.length||1));return {total:uids.length,done,pct,unit:'módulos'}}
-function loadData(uid){if(CONTENT[uid])return Promise.resolve(CONTENT[uid]);if(loaded[uid])return loaded[uid];const n=String(num(uid)).padStart(2,'0');loaded[uid]=new Promise((resolve,reject)=>{const script=document.createElement('script');script.src='/content/adm/m'+n+'-native-data-lite.js?v=20261005adm1';script.onload=()=>resolve(CONTENT[uid]||null);script.onerror=()=>{loaded[uid]=null;reject(new Error('Falha ao carregar conteúdo ADM M'+n))};document.head.appendChild(script)});return loaded[uid]}
+function loadData(uid){if(CONTENT[uid])return Promise.resolve(CONTENT[uid]);if(loaded[uid])return loaded[uid];const n=String(num(uid)).padStart(2,'0');loaded[uid]=new Promise((resolve,reject)=>{const script=document.createElement('script');script.src='/content/adm/m'+n+'-native-data-lite.js?v=20261005adm1';script.onload=()=>{if(CONTENT[uid])resolve(CONTENT[uid]);else{loaded[uid]=null;reject(new Error('Conteúdo ADM M'+n+' não localizado'))}};script.onerror=()=>{loaded[uid]=null;reject(new Error('Falha ao carregar conteúdo ADM M'+n))};document.head.appendChild(script)});return loaded[uid]}
 function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function escAttr(s){return esc(s).replace(/`/g,'&#96;')}
 function existingTopic(uid){try{return typeof g.topicByUid==='function'?g.topicByUid(uid):null}catch(_){return null}}
@@ -65,13 +65,46 @@ function updateCards(uid){
   });
 }
 function updateSubject(){const el=document.querySelector('.subject[data-id="adm"]');if(!el)return;const uids=Object.keys(INDEX),vals=uids.map(moduleProgress),pct=Math.round(vals.reduce((a,b)=>a+b,0)/(vals.length||1)),done=vals.filter(x=>x>=100).length;const c=el.querySelector('.subject-count'),p=el.querySelector('.subject-pct'),bar=el.querySelector('.subject-bar span');if(c)c.textContent=`${done}/${uids.length} módulos`;if(p){p.textContent=pct+'%';p.classList.toggle('done',pct===100)}if(bar)bar.style.width=pct+'%';el.querySelectorAll('.topic-item').forEach(row=>{const uid=row.dataset.uid;if(!INDEX[uid])return;row.classList.add('adm-native-module-row');const origin=row.querySelector('.topic-origin');if(origin)origin.textContent=`Módulo ${String(num(uid)).padStart(2,'0')}`;const type=row.querySelector('.type');if(type)type.textContent=moduleProgress(uid)+'%';})}
-function ensureOverlay(){let o=document.getElementById('adm-native-reader');if(o)return o;document.body.insertAdjacentHTML('beforeend',`<div id="adm-native-reader" class="adm-native-overlay" hidden><div class="adm-native-shell"><header><button onclick="AdmNative.close()">← Voltar</button><div><small id="adm-native-eyebrow"></small><h2 id="adm-native-title"></h2></div><div class="adm-native-reader-actions"><button onclick="AdmNative.font(-1)">A−</button><button onclick="AdmNative.font(1)">A+</button><button onclick="AdmNative.close()">✕</button></div></header><div class="adm-native-reader-progress"><i id="adm-native-reader-bar"></i><b id="adm-native-reader-pct">0%</b></div><div class="adm-native-reader-layout"><aside id="adm-native-toc"></aside><main id="adm-native-body"></main></div></div></div>`);return document.getElementById('adm-native-reader')}
-let active=null, font=0, saveTimer=null;
+let active=null;
 function buildToc(body){const hs=[...body.querySelectorAll('h1,h2,h3')].filter(h=>!h.closest('details'));return hs.slice(0,40).map((h,i)=>{if(!h.id)h.id='adm-native-h-'+i;return `<button onclick="document.getElementById('${h.id}').scrollIntoView({behavior:'smooth',block:'start'})">${esc(h.textContent)}</button>`}).join('')}
-async function open(uid,kind,jump){const d=await loadData(uid),o=ensureOverlay(),body=o.querySelector('#adm-native-body');active={uid,kind};o.hidden=false;document.documentElement.classList.add('adm-native-reader-open');o.querySelector('#adm-native-eyebrow').textContent=`DIREITO ADMINISTRATIVO · MÓDULO ${String(d.number).padStart(2,'0')} · ${kind==='summary'?'RESUMIDO':'COMPLETO'}`;o.querySelector('#adm-native-title').textContent=d.title;let content=kind==='summary'?d.summaryHtml:(LEGACY[uid]||`<div class="adm-native-empty"><b>Teoria completa preservada.</b><p>Abra o módulo pela Central para carregar a teoria integral.</p></div>`);if(kind==='complete'&&d.completeAppendHtml)content+=d.completeAppendHtml;body.innerHTML=`<article class="adm-native-content">${content||'<div class="adm-native-empty">Conteúdo não localizado.</div>'}</article>`;o.querySelector('#adm-native-toc').innerHTML=buildToc(body);body.style.fontSize=(16+font)+'px';const saved=Number(localStorage.getItem(k(uid,kind,'scroll'))||0);requestAnimationFrame(()=>{body.scrollTop=saved;if(jump){const hs=[...body.querySelectorAll('h1,h2,h3')];const q=hs.find(h=>/quest/i.test(h.textContent));q&&q.scrollIntoView({block:'start'})}onScroll()});body.onscroll=onScroll;try{localStorage.setItem('central-v6:last',JSON.stringify({topicUid:uid,title:`Direito Administrativo · Módulo ${d.number} · ${d.title}`,at:Date.now()}))}catch(_){} }
-function onScroll(){if(!active)return;const body=document.getElementById('adm-native-body');if(!body)return;const total=Math.max(1,body.scrollHeight),pct=clamp((body.scrollTop+body.clientHeight)/total*100);setRead(active.uid,active.kind,pct);localStorage.setItem(k(active.uid,active.kind,'scroll'),String(Math.round(body.scrollTop)));const b=document.getElementById('adm-native-reader-bar'),p=document.getElementById('adm-native-reader-pct');if(b)b.style.width=progress(active.uid,active.kind)+'%';if(p)p.textContent=progress(active.uid,active.kind)+'%';clearTimeout(saveTimer);saveTimer=setTimeout(()=>localStorage.setItem(k(active.uid,active.kind,'scroll'),String(Math.round(body.scrollTop))),120)}
-function close(){const o=document.getElementById('adm-native-reader');if(o)o.hidden=true;document.documentElement.classList.remove('adm-native-reader-open');active=null}
-function fontSize(delta){font=Math.max(-2,Math.min(4,font+delta));const b=document.getElementById('adm-native-body');if(b)b.style.fontSize=(16+font)+'px'}
+async function open(uid,kind,jump){
+ if(!INDEX[uid])return;
+ close();
+ const session=active={uid,kind},reader=g.CentralNativeReadingSession;
+ const o=reader.create({id:'adm-native-reader',subject:'adm',title:INDEX[uid].title,
+  eyebrow:`DIREITO ADMINISTRATIVO · MÓDULO ${String(num(uid)).padStart(2,'0')} · ${kind==='summary'?'RESUMIDO':'COMPLETO'}`,
+  close,finish:()=>markRead(100)});
+ document.documentElement.classList.add('adm-native-reader-open');
+ reader.percent(o,progress(uid,kind));
+ try{
+  const d=await loadData(uid);if(active!==session)return;
+  if(!d)throw new Error('Conteúdo ADM não localizado');
+  let content=kind==='summary'?d.summaryHtml:LEGACY[uid];
+  if(!content)throw new Error('Teoria ADM não localizada');
+  if(kind==='complete'&&d.completeAppendHtml)content+=d.completeAppendHtml;
+  const body=reader.show(o,content,buildToc,Number(localStorage.getItem(k(uid,kind,'scroll'))||0),onScroll);
+  if(jump)requestAnimationFrame(()=>requestAnimationFrame(()=>{if(active!==session)return;const q=[...body.querySelectorAll('h1,h2,h3')].find(h=>/quest/i.test(h.textContent));q?.scrollIntoView({block:'start'})}));
+  localStorage.setItem('central-v6:last',JSON.stringify({topicUid:uid,title:`Direito Administrativo · Módulo ${d.number} · ${d.title}`,at:Date.now()}));
+  g.renderContinue?.();
+ }catch(error){if(active===session){console.warn('[ADM reader]',error);reader.fail(o,()=>open(uid,kind,jump))}}
+}
+function onScroll(){
+ const o=document.getElementById('adm-native-reader'),body=o?.querySelector('.bc-native-scroll');
+ if(!active||!g.CentralNativeReadingSession.canTrack(o,body))return;
+ const available=body.scrollHeight-body.clientHeight;
+ if(available>0)markRead(body.scrollTop/available*100);
+ localStorage.setItem(k(active.uid,active.kind,'scroll'),String(Math.round(body.scrollTop)));
+}
+function markRead(value){
+ const o=document.getElementById('adm-native-reader'),body=o?.querySelector('.bc-native-scroll');
+ if(!active||!g.CentralNativeReadingSession.canTrack(o,body))return;
+ setRead(active.uid,active.kind,value);g.CentralNativeReadingSession.percent(o,progress(active.uid,active.kind));
+}
+function close(){
+ document.getElementById('adm-native-reader')?.remove();document.documentElement.classList.remove('adm-native-reader-open');active=null;
+ try{g.renderDisciplineGrid?.()}catch(_){}
+}
+function fontSize(){ /* Font size is controlled by the shared reading appearance. */ }
 function openImage(uid){
  const m=INDEX[uid],sprite=g.ADM_NATIVE_INDEX?.sprite;if(!m||!sprite)return;
  let v=document.getElementById('adm-native-image-viewer');

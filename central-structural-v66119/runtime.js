@@ -369,16 +369,24 @@ function centralResumeLast(){
  if(x.cfWeek)return openCfLast(x.cfWeek);
  if(x.penalWeek)return openPenalLast(x.penalWeek);
  if(x.cpcWeek)return openCpcLast(x.cpcWeek);
+ if(x.cppModule)return openCppLast(x.cppModule,x.cppKind);
  if(x.topicUid)return openTopicFromLast(x.topicUid);
  if(x.url){try{const url=new URL(x.url,location.href);if(/^https?:$/.test(url.protocol))return openInternal(url.href,x.title||'Estudo')}catch(_){}}
  return openHome();
+}
+function openCppLast(id,kind){
+ const n=Number(String(id).replace(/^cpp-m/,''));if(!Number.isInteger(n)||n<1||n>22)return openHome();
+ if(window.CentralDisciplineLoader&&!CentralDisciplineLoader.isReady('cpp'))return CentralDisciplineLoader.open('cpp',()=>openCppLast(n,kind));
+ openHome();localStorage.setItem('central-v6:open:cpp','1');renderAll();window.CppNative?.openModule(n);
+ if(kind==='summary'||kind==='complete')window.CppNative?.open(n,kind,false);
+ return false;
 }
 function openTopicFromLast(uid){const target=topicByUid(uid);if(target&&window.CentralDisciplineLoader&&!CentralDisciplineLoader.isReady(target.s.id))return CentralDisciplineLoader.open(target.s.id,()=>openTopicFromLast(uid));openHome();setTimeout(()=>{const found=topicByUid(uid);if(found){localStorage.setItem(`central-v6:open:${found.s.id}`,'1');renderSubjects();localStorage.setItem(topicOpenKey(uid),'1');renderSubjects();const el=document.querySelector(`.topic-item[data-uid="${uid}"]`);el?.scrollIntoView({behavior:'smooth',block:'center'})}},30)}
 
 function renderSubjects(){
  $('subjects').innerHTML=SUBJECTS.map(s=>{
   const st=subjStats(s),ready=!window.CentralDisciplineLoader||CentralDisciplineLoader.isReady(s.id),open=localStorage.getItem(`central-v6:open:${s.id}`)==='1'&&(ready||CentralDisciplineLoader.isLoading(s.id)||CentralDisciplineLoader.hasError(s.id));
-  const unit=(s.id==='pt'||s.id==='cf'||s.id==='civil'||s.id==='penal'||s.id==='cpc')?'módulos':'metas';
+  const unit=st.unit||((s.id==='pt'||s.id==='cf'||s.id==='civil'||s.id==='penal'||s.id==='cpc')?'módulos':'metas');
   return `<section class="subject ${!ready?'central-subject-pending':''} ${open?'open':''}" data-id="${s.id}">
    <button class="subject-head" onclick="toggleSubject('${s.id}')"><span class="subject-name">${esc(s.name)}</span><span class="subject-count">${st.done}/${st.total} ${unit}</span><span class="subject-pct ${st.pct===100?'done':''}">${st.pct}%</span><span class="chev">⌄</span></button>
    <div class="subject-body"><div class="subject-bar"><span style="width:${st.pct}%"></span></div>

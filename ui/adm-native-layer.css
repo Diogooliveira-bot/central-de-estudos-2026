@@ -30,3 +30,6 @@
 #adm-native-image-host{width:100%;min-height:0;overflow:auto;display:flex;justify-content:center;padding:18px;box-sizing:border-box}
 .adm-native-infographic-svg{display:block;width:min(100%,720px);height:auto;box-shadow:0 20px 70px #000a;border-radius:8px;background:#06233c}
 @media(max-width:780px){.adm-native-preserved-head{align-items:flex-start;flex-direction:column}#adm-native-image-host{padding:8px}}
+/* Shared reader layout and reading palette. */
+#adm-native-reader .bc-native-scroll{padding:0;min-height:0}
+#adm-native-reader .bc-native-article details{background:var(--bc-reading-inset);border-color:var(--bc-reading-line)}

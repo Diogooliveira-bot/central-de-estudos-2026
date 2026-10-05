@@ -10,6 +10,7 @@ const escape=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&g
 const isReady=id=>!pending.has(id)||states[id]?.ready===true;
 const isLoading=id=>!!states[id]?.promise;
 const count=(ids,key)=>ids.filter(id=>localStorage.getItem(key+id)==='1').length;
+const readingPercent=key=>Math.max(0,Math.min(100,Math.round(Number(localStorage.getItem(key))||0)));
 function stats(subject){
  if(isReady(subject.id))return null;
  let percentages=[];
@@ -46,20 +47,24 @@ function stats(subject){
    }
    percentages.push(total?Math.round(done/total*100):0);
   }
+ }else if(subject.id==='adm'){
+  for(const uid of data.admModuleIds||[]){
+   const prefix='central-v6:adm-native:'+uid+':';
+   percentages.push(Math.round((readingPercent(prefix+'summary:read')+readingPercent(prefix+'complete:read'))/2));
+  }
  }else if(subject.id==='cpp'){
-  const legacy=json('central-v6:cpp:curso22:v1').modules||{},percentages=[];
+  const legacy=json('central-v6:cpp:curso22:v1').modules||{};
   for(let n=1;n<=22;n++){
    const nn=String(n).padStart(2,'0'),sk='central-v6:cpp-native:m'+nn+':summary:read',ck='central-v6:cpp-native:m'+nn+':complete:read';
    const hasS=localStorage.getItem(sk)!==null,hasC=localStorage.getItem(ck)!==null,old=legacy[n]||{};
-   const summary=hasS?Math.max(0,Math.min(100,Number(localStorage.getItem(sk))||0)):(old.reading?100:0);
-   const complete=hasC?Math.max(0,Math.min(100,Number(localStorage.getItem(ck))||0)):(old.reading?100:0);
+   const migrate=!hasS&&!hasC&&old.reading;
+   const summary=migrate?100:readingPercent(sk);
+   const complete=migrate?100:readingPercent(ck);
    percentages.push(Math.round((summary+complete)/2));
   }
-  const done=percentages.filter(p=>p>=100).length,pct=Math.round(percentages.reduce((a,p)=>a+p,0)/22);
-  return {total:22,done,pct,unit:'módulos'};
  }else return null;
  const total=percentages.length,done=percentages.filter(p=>p===100).length;
- const pct=subject.id==='penal'?Math.round(percentages.reduce((a,p)=>a+p,0)/total):Math.round(done/total*100);
+ const pct=['penal','adm','cpp'].includes(subject.id)?Math.round(percentages.reduce((a,p)=>a+p,0)/(total||1)):Math.round(done/(total||1)*100);
  return {total,done,pct,unit:'módulos'};
 }
 const style=document.createElement('style');style.id='central-discipline-loading-style';
@@ -82,6 +87,7 @@ function nativeReady(id){
  if(id==='cf')return !!global.CfNativeStudy;
  if(id==='penal')return !!global.__centralCurrentPenal;
  if(id==='cpp')return !!global.CppNative;
+ if(id==='adm')return !!global.AdmNative;
  if(id!=='cpc')return true;
  if(!global.CpcStudyV1?.installed||!global.__M08Installed)return false;
  for(let n=2;n<=20;n++){if(n===8)continue;const module=global['CpcStudyM'+String(n).padStart(2,'0')];if(module!==true&&!module?.installed)return false;}

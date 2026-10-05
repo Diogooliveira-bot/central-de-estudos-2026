@@ -2,14 +2,14 @@
 (function () {
   'use strict';
   if (window.CentralDisciplineStandard) return;
-  const MODULES = '.civil-module[data-civil-analista],.cf-module[data-cf],.cf-module[data-penal],.cf-module[data-cpc],.cf-module[data-ptn-module],.cf-module[data-pt-current],.cpp-mod[data-cpp-num],.topic-item[data-uid]';
+  const MODULES = '.civil-module[data-civil-analista],.cf-module[data-cf],.cf-module[data-penal],.cf-module[data-cpc],.cf-module[data-ptn-module],.cf-module[data-pt-current],.cpp-mod[data-cpp-num],.topic-item[data-uid],.topic-item[data-cpp-native-module]';
   let observer, scheduled = false;
   const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const read = key => { try { return JSON.parse(localStorage.getItem(key) || 'null'); } catch (_) { return null; } };
   const meter = value => Number.isFinite(value) ? '<div class="csp-meter" aria-hidden="true"><span style="width:' + Math.max(0, Math.min(100, value)) + '%"></span></div>' : '';
   function identity(module) {
     const subject = module.closest('.subject').dataset.id;
-    const id = module.dataset.civilAnalista || module.dataset.ptCurrent || module.dataset.ptnModule || module.dataset.cf || module.dataset.penal || module.dataset.cpc || module.dataset.cppNum || module.dataset.uid;
+    const id = module.dataset.civilAnalista || module.dataset.ptCurrent || module.dataset.ptnModule || module.dataset.cf || module.dataset.penal || module.dataset.cpc || module.dataset.cppNativeModule || module.dataset.cppNum || module.dataset.uid;
     return { subject, id, key: subject + ':' + id };
   }
   function bodyOf(module) { return module.querySelector('.civil-module-body,.cf-module-body,.cpp-mod-body,.detail-panel'); }
@@ -221,6 +221,7 @@
       const toggleOnly = head.querySelector('.open-topic');
       if (toggleOnly) toggleOnly.setAttribute('aria-label',(module.classList.contains('open') ? 'Recolher' : 'Abrir') + ' módulo');
     }
+    if(body.querySelector('.adm-native-zone'))return;
     if (!module.classList.contains('open') || !module.closest('.subject').classList.contains('open')) return;
 
     // Direito Penal M01-M17 usa o fluxo nativo aprovado.

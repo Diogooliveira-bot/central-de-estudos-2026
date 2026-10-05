@@ -15,3 +15,7 @@ html.cpp-native-reader-open{overflow:hidden}
 .cpp-native-round+.cpp-native-round{margin-top:8px}
 .cpp-native-content details{margin:10px 0;padding:10px 12px;border:1px solid var(--line,#26364f);border-radius:8px;background:var(--card,#0c1828)}
 .cpp-native-content details summary{cursor:pointer;font-weight:800}
+
+/* Shared reader layout and reading palette. */
+#cpp-native-reader .bc-native-scroll{padding:0;min-height:0}
+#cpp-native-reader .bc-native-article details{background:var(--bc-reading-inset);border-color:var(--bc-reading-line)}
