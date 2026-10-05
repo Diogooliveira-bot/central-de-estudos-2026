@@ -120,3 +120,44 @@ html.bc-ui-v1.bc-topnav.central-reading-fullscreen-v66124 #central-reading-exit 
 
 html.bc-ui-v1.bc-topnav.central-reading-fullscreen-v66124 #appRoot #homeView .bc-reading-path>:not(.bc-reading-path):not(.central-reading-active-topic) {display:none!important;}
 html.bc-ui-v1.bc-topnav.central-reading-fullscreen-v66124 #appRoot #homeView .bc-reading-path {display:block!important; width:100%!important; max-width:none!important; padding:0!important; margin:0!important; border:0!important; border-radius:0!important; background:var(--bc-reading-paper)!important; box-shadow:none!important; overflow:visible!important;}
+
+
+/* Padronização tipográfica global dos títulos no leitor.
+   O mesmo nível sempre recebe o mesmo tamanho, peso e espaçamento. */
+html.bc-ui-v1 .bc-reading-appearance .bc-native-article h1,
+.cf-native-reader article h1{
+  font-family:Georgia,'Times New Roman',serif!important;
+  font-size:2em!important;
+  line-height:1.18!important;
+  font-weight:700!important;
+  letter-spacing:-.02em!important;
+  margin:1.55em 0 .55em!important;
+  color:var(--bc-reading-text,#2f2b27)!important;
+}
+html.bc-ui-v1 .bc-reading-appearance .bc-native-article h2,
+.cf-native-reader article h2{
+  font-family:Georgia,'Times New Roman',serif!important;
+  font-size:1.5em!important;
+  line-height:1.25!important;
+  font-weight:700!important;
+  letter-spacing:-.012em!important;
+  margin:1.45em 0 .5em!important;
+  color:var(--bc-reading-text,#2f2b27)!important;
+}
+html.bc-ui-v1 .bc-reading-appearance .bc-native-article h3,
+.cf-native-reader article h3{
+  font-family:Georgia,'Times New Roman',serif!important;
+  font-size:1.22em!important;
+  line-height:1.3!important;
+  font-weight:700!important;
+  letter-spacing:0!important;
+  margin:1.25em 0 .45em!important;
+  color:var(--bc-reading-text,#2f2b27)!important;
+}
+html.bc-ui-v1 .bc-reading-appearance .bc-native-article :is(h1,h2,h3) *,
+.cf-native-reader article :is(h1,h2,h3) *{
+  font:inherit!important;
+  color:inherit!important;
+  line-height:inherit!important;
+  letter-spacing:inherit!important;
+}
