@@ -95,9 +95,17 @@ function adjustGap(article,delta){
   var current=parseInt(getComputedStyle(block).marginBottom,10)||0;
   block.style.marginBottom=Math.max(0,Math.min(80,current+delta))+'px';
 }
-function toggleCallout(article){
+function clearCalloutClasses(block){
+  block.classList.remove('bc-editor-callout','bc-editor-callout-prazo','bc-editor-callout-erro','bc-editor-callout-palavra');
+}
+function applyCallout(article,type){
   var block=blockFromSelection(article);if(!block)return;
-  block.classList.toggle('bc-editor-callout');
+  clearCalloutClasses(block);
+  if(type==='remove')return;
+  if(type==='generic')block.classList.add('bc-editor-callout');
+  if(type==='prazo')block.classList.add('bc-editor-callout','bc-editor-callout-prazo');
+  if(type==='erro')block.classList.add('bc-editor-callout','bc-editor-callout-erro');
+  if(type==='palavra')block.classList.add('bc-editor-callout','bc-editor-callout-palavra');
 }
 function makeEditorBar(overlay,article,state){
   var bar=document.createElement('div');bar.className='bc-editor-bar';
@@ -110,7 +118,7 @@ function makeEditorBar(overlay,article,state){
     '<button type="button" data-ed="mark" title="Marca-texto">Destaque</button>'+
     '<button type="button" data-ed="ul" title="Lista com marcadores">• Lista</button>'+
     '<button type="button" data-ed="ol" title="Lista numerada">1. Lista</button>'+
-    '<button type="button" data-ed="callout" title="Caixa de destaque">Caixa</button>'+
+    '<select data-ed="callout" aria-label="Tipo de caixa"><option value="">Caixa</option><option value="generic">Caixa padrão</option><option value="prazo">Prazo</option><option value="erro">Erro comum</option><option value="palavra">Palavra-chave</option><option value="remove">Remover caixa</option></select>'+
     '<button type="button" data-ed="gapminus" title="Diminuir espaço abaixo">Espaço −</button>'+
     '<button type="button" data-ed="gapplus" title="Aumentar espaço abaixo">Espaço +</button>'+
     '<span class="bc-editor-spacer"></span>'+
@@ -121,6 +129,7 @@ function makeEditorBar(overlay,article,state){
   bar.addEventListener('change',function(e){
     if(e.target.matches('[data-ed="block"]')&&e.target.value){setBlockTag(article,e.target.value);e.target.value=''}
     if(e.target.matches('[data-ed="color"]')&&e.target.value){exec(article,'foreColor',e.target.value);e.target.value=''}
+    if(e.target.matches('[data-ed="callout"]')&&e.target.value){applyCallout(article,e.target.value);e.target.value=''}
   });
   bar.addEventListener('click',function(e){
     var b=e.target.closest('[data-ed]');if(!b)return;
@@ -133,7 +142,6 @@ function makeEditorBar(overlay,article,state){
     else if(a==='ol')exec(article,'insertOrderedList');
     else if(a==='undo')exec(article,'undo');
     else if(a==='redo')exec(article,'redo');
-    else if(a==='callout')toggleCallout(article);
     else if(a==='gapminus')adjustGap(article,-8);
     else if(a==='gapplus')adjustGap(article,8);
     else if(a==='cancel'){applySnapshot(article,state.beforeEdit);exitEdit(overlay,article,state);toast('Alterações canceladas')}
