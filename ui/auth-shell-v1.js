@@ -16,13 +16,24 @@ function findNav(){return document.querySelector('#centralSidebar .nav,#centralS
 function inject(user){
  addStyles();window.BASE_COMPLETA_USER=user;
  document.documentElement.setAttribute('data-bc-role',user.role);
+ if(user.role!=='admin'){
+  document.getElementById('central-update-btn')?.remove();
+  document.getElementById('central-update-status')?.remove();
+ }
 
  var top=findTopbar();
  if(top&&!document.getElementById('bcAuthActions')){
   var actions=document.createElement('div');actions.id='bcAuthActions';actions.className='bc-auth-actions';
   actions.innerHTML='<div class="bc-auth-chip"><span>👤</span><span><b></b><small></small></span></div>'+(user.role==='admin'?'<a class="bc-auth-users" href="/usuarios.html">Usuários</a>':'')+'<button type="button" data-bc-logout>Sair</button>';
   actions.querySelector('b').textContent=user.name||user.email;actions.querySelector('small').textContent=roleLabel(user.role);
-  actions.querySelector('[data-bc-logout]').onclick=async function(){await fetch('/api/auth?action=logout',{method:'POST'});location.replace('/login.html')};
+  actions.querySelector('[data-bc-logout]').onclick=async function(){
+   try{
+    var r=await fetch('/api/auth?action=logout',{method:'POST'});
+    if(!r.ok){var j={};try{j=await r.json()}catch(_){}throw new Error(j.error||'Não foi possível sair')}
+    try{navigator.serviceWorker&&navigator.serviceWorker.controller&&navigator.serviceWorker.controller.postMessage({type:'CLEAR_OFFLINE_AUTH'})}catch(_){}
+    location.replace('/login.html');
+   }catch(e){alert(e.message||'Para sair da conta, conecte-se à internet e tente novamente.')}
+  };
   top.appendChild(actions);
  }
  var nav=findNav();
