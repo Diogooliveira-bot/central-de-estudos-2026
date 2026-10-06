@@ -5,6 +5,19 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex">
 <title>Entrar — Base Completa</title>
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#f4f1ea">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<script id="base-completa-pwa-bootstrap">
+(function(){
+  if(!('serviceWorker' in navigator))return;
+  if(location.protocol!=='https:'&&!/localhost|127\.0\.0\.1/.test(location.hostname))return;
+  navigator.serviceWorker.register('/sw.js',{updateViaCache:'none'}).catch(function(){});
+})();
+</script>
 <style>
 :root{--bg:#f4f0e7;--card:#fffdf8;--ink:#2f2b28;--muted:#7a716a;--line:#d8d0c5;--accent:#6d5b88;--accent2:#58466f;--danger:#9f3e3e;--ok:#2f7657}
 *{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;background:radial-gradient(circle at 50% 0,#fffaf0 0,#f4f0e7 45%,#ebe5da 100%);color:var(--ink);font:500 15px/1.45 system-ui,-apple-system,"Segoe UI",sans-serif;padding:24px}

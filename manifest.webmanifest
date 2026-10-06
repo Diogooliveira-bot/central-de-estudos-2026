@@ -1,29 +1,30 @@
 {
-  "name": "Central de Estudos — TJ-CE",
-  "short_name": "Central",
-  "description": "Central de estudos offline para o concurso TJ-CE (Analista Judiciário): cronograma, flashcards, leis, cadernos e desempenho.",
+  "id": "/",
+  "name": "BASE COMPLETA — Central de Estudos",
+  "short_name": "BASE COMPLETA",
+  "description": "Plataforma de estudos BASE COMPLETA, com conteúdos, revisão, progresso e recursos offline.",
   "lang": "pt-BR",
-  "start_url": "/central-v119.html",
+  "start_url": "/",
   "scope": "/",
   "display": "standalone",
   "orientation": "any",
-  "background_color": "#000000",
-  "theme_color": "#000000",
+  "background_color": "#f4f1ea",
+  "theme_color": "#f4f1ea",
   "icons": [
     {
-      "src": "icons/icon-192.png",
+      "src": "/icons/icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "icons/icon-512.png",
+      "src": "/icons/icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "icons/icon-512.png",
+      "src": "/icons/icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
