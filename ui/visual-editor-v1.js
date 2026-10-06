@@ -169,6 +169,81 @@ function applyCallout(article,type){
   if(type==='erro')block.classList.add('bc-editor-callout','bc-editor-callout-erro');
   if(type==='palavra')block.classList.add('bc-editor-callout','bc-editor-callout-palavra');
 }
+function selectionElement(article){
+  var sel=getSelection();if(!sel||!sel.rangeCount)return null;
+  var n=sel.anchorNode;if(n&&n.nodeType===3)n=n.parentElement;
+  return n&&article.contains(n)?n:null;
+}
+function selectedTable(article){
+  var n=selectionElement(article);
+  return n?n.closest('table'):null;
+}
+function setCaret(node){
+  var sel=getSelection(),range=document.createRange();
+  range.selectNodeContents(node);range.collapse(true);
+  sel.removeAllRanges();sel.addRange(range);
+}
+function insertTable(article,rows,cols){
+  rows=Math.max(1,Math.min(20,Number(rows)||3));
+  cols=Math.max(1,Math.min(8,Number(cols)||3));
+  var wrap=document.createElement('div');wrap.className='bc-editor-table-wrap';
+  var table=document.createElement('table');table.className='bc-editor-table';
+  var tbody=document.createElement('tbody');
+  for(var r=0;r<rows;r++){
+    var tr=document.createElement('tr');
+    for(var c=0;c<cols;c++){
+      var cell=document.createElement(r===0?'th':'td');
+      cell.appendChild(document.createElement('br'));
+      tr.appendChild(cell);
+    }
+    tbody.appendChild(tr);
+  }
+  table.appendChild(tbody);wrap.appendChild(table);
+  var sel=getSelection(),range=sel&&sel.rangeCount?sel.getRangeAt(0):null;
+  if(!range||!article.contains(range.commonAncestorContainer)){article.appendChild(wrap)}
+  else{
+    range.deleteContents();range.insertNode(wrap);
+    var p=document.createElement('p');p.appendChild(document.createElement('br'));
+    wrap.insertAdjacentElement('afterend',p);
+  }
+  setCaret(table.querySelector('th,td'));
+}
+function addTableRow(article){
+  var table=selectedTable(article);if(!table)return toast('Toque em uma célula da tabela primeiro');
+  var rows=table.rows,cols=rows.length?rows[0].cells.length:1;
+  var tr=document.createElement('tr');
+  for(var i=0;i<cols;i++){var td=document.createElement('td');td.appendChild(document.createElement('br'));tr.appendChild(td)}
+  (table.tBodies[0]||table).appendChild(tr);setCaret(tr.cells[0]);
+}
+function removeTableRow(article){
+  var n=selectionElement(article),row=n&&n.closest('tr'),table=row&&row.closest('table');
+  if(!row||!table)return toast('Toque na linha que deseja remover');
+  if(table.rows.length<=1)return toast('A tabela precisa ter pelo menos uma linha');
+  var next=row.nextElementSibling||row.previousElementSibling;row.remove();if(next&&next.cells[0])setCaret(next.cells[0]);
+}
+function addTableColumn(article){
+  var table=selectedTable(article);if(!table)return toast('Toque em uma célula da tabela primeiro');
+  Array.from(table.rows).forEach(function(row,i){
+    var tag=i===0&&row.cells[0]&&row.cells[0].tagName==='TH'?'th':'td';
+    var cell=document.createElement(tag);cell.appendChild(document.createElement('br'));row.appendChild(cell);
+  });
+}
+function removeTableColumn(article){
+  var n=selectionElement(article),cell=n&&n.closest('th,td'),table=cell&&cell.closest('table');
+  if(!cell||!table)return toast('Toque na coluna que deseja remover');
+  var index=cell.cellIndex;if(table.rows[0].cells.length<=1)return toast('A tabela precisa ter pelo menos uma coluna');
+  Array.from(table.rows).forEach(function(row){if(row.cells[index])row.cells[index].remove()});
+  if(table.rows[0].cells[Math.max(0,index-1)])setCaret(table.rows[0].cells[Math.max(0,index-1)]);
+}
+function toggleTableHeader(article){
+  var table=selectedTable(article);if(!table)return toast('Toque em uma célula da tabela primeiro');
+  var row=table.rows[0];if(!row)return;
+  var makeHeader=!Array.from(row.cells).every(function(c){return c.tagName==='TH'});
+  Array.from(row.cells).forEach(function(cell){
+    if((makeHeader&&cell.tagName==='TH')||(!makeHeader&&cell.tagName==='TD'))return;
+    var repl=document.createElement(makeHeader?'th':'td');repl.innerHTML=cell.innerHTML;cell.replaceWith(repl);
+  });
+}
 function makeEditorBar(overlay,article,state){
   var bar=document.createElement('div');bar.className='bc-editor-bar';
   bar.innerHTML=
@@ -180,6 +255,12 @@ function makeEditorBar(overlay,article,state){
     '<button type="button" data-ed="mark" title="Marca-texto">Destaque</button>'+
     '<button type="button" data-ed="ul" title="Lista com marcadores">• Lista</button>'+
     '<button type="button" data-ed="ol" title="Lista numerada">1. Lista</button>'+
+    '<button type="button" data-ed="table" title="Inserir tabela">▦ Tabela</button>'+
+    '<button type="button" data-ed="rowplus" title="Adicionar linha à tabela">Linha +</button>'+
+    '<button type="button" data-ed="rowminus" title="Remover linha da tabela">Linha −</button>'+
+    '<button type="button" data-ed="colplus" title="Adicionar coluna à tabela">Coluna +</button>'+
+    '<button type="button" data-ed="colminus" title="Remover coluna da tabela">Coluna −</button>'+
+    '<button type="button" data-ed="header" title="Alternar cabeçalho da primeira linha">Cabeçalho</button>'+
     '<select data-ed="callout" aria-label="Tipo de caixa"><option value="">Caixa ▾</option><option value="generic">Caixa padrão</option><option value="atencao">⚠ Atenção</option><option value="pegadinha">🎯 Pegadinha</option><option value="decore">🧠 Decore</option><option value="lei">⚖ Lei seca</option><option value="juris">🏛 Jurisprudência</option><option value="exemplo">💡 Exemplo</option><option value="resumo">📌 Resumo</option><option value="fcc">📝 FCC</option><option value="prazo">⏱ Prazo</option><option value="erro">✕ Erro comum</option><option value="palavra">🔑 Palavra-chave</option><option value="remove">Remover caixa</option></select>'+
     '<button type="button" data-ed="gapminus" title="Diminuir espaço abaixo">Espaço −</button>'+
     '<button type="button" data-ed="gapplus" title="Aumentar espaço abaixo">Espaço +</button>'+
@@ -188,6 +269,9 @@ function makeEditorBar(overlay,article,state){
     '<button type="button" data-ed="redo" title="Refazer">↷</button>'+
     '<button type="button" class="bc-editor-cancel" data-ed="cancel">Cancelar</button>'+
     '<button type="button" class="bc-editor-save" data-ed="save">Salvar</button>';
+  bar.addEventListener('mousedown',function(e){
+    if(e.target.closest('button[data-ed]'))e.preventDefault();
+  });
   bar.addEventListener('change',function(e){
     if(e.target.matches('[data-ed="block"]')&&e.target.value){setBlockTag(article,e.target.value);e.target.value=''}
     if(e.target.matches('[data-ed="color"]')&&e.target.value){exec(article,'foreColor',e.target.value);e.target.value=''}
@@ -202,6 +286,16 @@ function makeEditorBar(overlay,article,state){
     else if(a==='mark')exec(article,'hiliteColor','#ffe4a0');
     else if(a==='ul')exec(article,'insertUnorderedList');
     else if(a==='ol')exec(article,'insertOrderedList');
+    else if(a==='table'){
+      var rows=prompt('Quantas linhas?', '5');if(rows===null)return;
+      var cols=prompt('Quantas colunas?', '3');if(cols===null)return;
+      insertTable(article,rows,cols);
+    }
+    else if(a==='rowplus')addTableRow(article);
+    else if(a==='rowminus')removeTableRow(article);
+    else if(a==='colplus')addTableColumn(article);
+    else if(a==='colminus')removeTableColumn(article);
+    else if(a==='header')toggleTableHeader(article);
     else if(a==='undo')exec(article,'undo');
     else if(a==='redo')exec(article,'redo');
     else if(a==='gapminus')adjustGap(article,-8);
