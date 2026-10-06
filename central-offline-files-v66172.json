@@ -1,5 +1,5 @@
 {
-  "build": "20261005-civil-native-v1",
+  "build": "20261006-module-premium-v1",
   "files": [
     "/central-v119.html?direct=35",
     "/ui/discipline-standard.js?v=20261003penalnative1",
@@ -69,6 +69,8 @@
     "/central-reading-font-v66126.css?v=66129a1",
     "/ui/tokens.css?v=20260923preprod2",
     "/ui/appearance-themes-v1.css?v=20261006themes2",
+    "/ui/module-premium-layout-v1.css?v=20261006premium1",
+    "/ui/module-premium-layout-v1.js?v=20261006premium1",
     "/ui/foundation.css?v=20260923preprod2",
     "/ui/layout.css?v=20260923drawerfix1",
     "/ui/components.css?v=20260923preprod2",

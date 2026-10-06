@@ -33,7 +33,7 @@
 <body><section id="central-boot-screen" aria-label="Carregamento da Base Completa"><div class="boot-brand"><img class="boot-logo" src="/assets/base-completa-symbol.webp" alt="Logomarca Base Completa" fetchpriority="high"><div class="spinner" aria-hidden="true"></div><h1 id="boot-title" class="boot-title">Preparando sua Central</h1><p id="status" role="status" aria-live="polite">Organizando seu ambiente de estudo...</p><div class="boot-progress" aria-hidden="true"><span></span></div><button id="retry" type="button" hidden>Tentar novamente</button><noscript><p>Ative o JavaScript para abrir a central.</p></noscript></div></section>
 <script>
 (async function(){
- var BUILD='20261006-users-release1';
+ var BUILD='20261006-module-premium1';
  var entryUrl=new URL(location.href);
  var bootStyle=document.getElementById('central-boot-style').outerHTML;
  var bootStyles=Array.from(document.querySelectorAll('head link[rel="stylesheet"]')).map(function(link){return link.outerHTML}).join('');
