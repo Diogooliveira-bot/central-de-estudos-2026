@@ -1,28 +1,30 @@
 (function(){
 'use strict';
-if(window.__centralSync6679)return;window.__centralSync6679=true;
-var DB_NAME='central-sync-device-v1',STORE='kv';
-var meta={enabled:false,secret:'',device:'',revision:0,hash:''};
-var busy=false,lastCheckHash='';
-var CRONO_KEY='CENTRAL_CRONOGRAMA_6M_V2',AGENDA_PREFIX='central-v6:agenda:';
-function currentVersion(){return String(window.CENTRAL_VERSION||'6.6.119').replace(/^v/,'')}
+if(window.__centralUserSyncV1)return;window.__centralUserSyncV1=true;
 
+var DB_NAME='central-sync-device-v2',STORE='kv';
+var busy=false,lastCheckHash='',timers=[];
+var CRONO_KEY='CENTRAL_CRONOGRAMA_6M_V2',AGENDA_PREFIX='central-v6:agenda:';
+var user=window.BASE_COMPLETA_USER||null;
+var userId=String(window.__BASE_COMPLETA_USER_ID__||user&&user.id||'');
+var meta={device:'',revision:0,hash:''};
+
+function currentVersion(){return String(window.CENTRAL_VERSION||'6.6.120').replace(/^v/,'')}
+function mk(k){return 'u:'+userId+':'+k}
 function dbOpen(){return new Promise(function(resolve,reject){var r=indexedDB.open(DB_NAME,1);r.onupgradeneeded=function(){if(!r.result.objectStoreNames.contains(STORE))r.result.createObjectStore(STORE)};r.onsuccess=function(){resolve(r.result)};r.onerror=function(){reject(r.error)}})}
-async function kvGet(k){var db=await dbOpen();return new Promise(function(resolve,reject){var tx=db.transaction(STORE,'readonly'),r=tx.objectStore(STORE).get(k);r.onsuccess=function(){resolve(r.result)};r.onerror=function(){reject(r.error)}})}
-async function kvSet(k,v){var db=await dbOpen();return new Promise(function(resolve,reject){var tx=db.transaction(STORE,'readwrite');tx.objectStore(STORE).put(v,k);tx.oncomplete=function(){resolve()};tx.onerror=function(){reject(tx.error)}})}
-async function kvDel(k){var db=await dbOpen();return new Promise(function(resolve,reject){var tx=db.transaction(STORE,'readwrite');tx.objectStore(STORE).delete(k);tx.oncomplete=function(){resolve()};tx.onerror=function(){reject(tx.error)}})}
+async function kvGet(k){var db=await dbOpen();return new Promise(function(resolve,reject){var tx=db.transaction(STORE,'readonly'),r=tx.objectStore(STORE).get(mk(k));r.onsuccess=function(){resolve(r.result)};r.onerror=function(){reject(r.error)}})}
+async function kvSet(k,v){var db=await dbOpen();return new Promise(function(resolve,reject){var tx=db.transaction(STORE,'readwrite');tx.objectStore(STORE).put(v,mk(k));tx.oncomplete=function(){resolve()};tx.onerror=function(){reject(tx.error)}})}
 function newDevice(){return 'device-'+Date.now().toString(36)+'-'+Math.random().toString(36).slice(2,10)}
 function isPortugueseDataKey(k){k=String(k||'');return /^central-v6:pt(?::|-)/.test(k)||/^dominio_portugues/i.test(k)}
 function sanitizePayload(payload){var out={};if(!payload||typeof payload!=='object'||Array.isArray(payload))return out;Object.keys(payload).forEach(function(k){if(k&&!isPortugueseDataKey(k))out[k]=payload[k]});return out}
 function collect(){var out={};try{for(var i=0;i<localStorage.length;i++){var k=localStorage.key(i);if(k&&k!=='__central_folder_probe__'&&k!=='__central_storage_probe__'&&!isPortugueseDataKey(k))out[k]=localStorage.getItem(k)}}catch(_){}return out}
 function hashObject(obj){var s=JSON.stringify(obj),h=2166136261;for(var i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619)}return (h>>>0).toString(16)+'-'+s.length}
-function status(msg,type){var el=document.getElementById('centralSyncStatus');if(el){el.textContent=msg;el.className='central-backup-status'+(type?' '+type:'')}var b=document.getElementById('centralSyncToggle');if(b)b.textContent=meta.enabled?'☁ Desativar neste aparelho':'☁ Ativar neste aparelho'}
-async function saveMeta(){await Promise.all([kvSet('enabled',meta.enabled),kvSet('secret',meta.secret),kvSet('device',meta.device),kvSet('revision',meta.revision),kvSet('hash',meta.hash)])}
-async function request(path,opt){opt=opt||{};opt.headers=Object.assign({'X-Backup-Key':meta.secret},opt.headers||{});var r=await fetch(path,opt),txt=await r.text(),j={};try{j=txt?JSON.parse(txt):{}}catch(_){j={error:txt||('HTTP '+r.status)}}if(!r.ok){var e=new Error(j.error||('HTTP '+r.status));e.status=r.status;e.body=j;throw e}return j}
+function status(msg,type){var el=document.getElementById('centralSyncStatus');if(el){el.textContent=msg;el.className='central-backup-status'+(type?' '+type:'')}}
+async function saveMeta(){await Promise.all([kvSet('device',meta.device),kvSet('revision',meta.revision),kvSet('hash',meta.hash)])}
+async function request(path,opt){opt=opt||{};var r=await fetch(path,opt),txt=await r.text(),j={};try{j=txt?JSON.parse(txt):{}}catch(_){j={error:txt||('HTTP '+r.status)}}if(r.status===401){location.replace('/login.html?next='+encodeURIComponent(location.pathname+location.search));throw new Error('Sessão expirada')}if(!r.ok){var e=new Error(j.error||('HTTP '+r.status));e.status=r.status;e.body=j;throw e}return j}
 function jsonObject(v){try{var x=JSON.parse(String(v||''));return x&&typeof x==='object'&&!Array.isArray(x)?x:null}catch(_){return null}}
 function mergeCronogramaValue(localValue,cloudValue){
- if(localValue==null)return cloudValue;
- if(cloudValue==null)return localValue;
+ if(localValue==null)return cloudValue;if(cloudValue==null)return localValue;
  var l=jsonObject(localValue),c=jsonObject(cloudValue);if(!l||!c)return localValue;
  if(l.version&&c.version&&l.version!==c.version)return cloudValue;
  var out=Object.assign({},c,l);out.version=c.version||l.version;
@@ -47,72 +49,76 @@ function mergePayload(local,cloud,preferLocal){
  Object.keys(src).forEach(function(k){if(k.indexOf(AGENDA_PREFIX)===0)out[k]=mergeAgendaValue(src[k],out[k])});
  return out;
 }
-function applyCloud(payload){if(!payload||typeof payload!=='object'||Array.isArray(payload))throw new Error('cópia online inválida');payload=sanitizePayload(payload);Object.keys(payload).forEach(function(k){if(k&&k!=='__central_folder_probe__'&&k!=='__central_storage_probe__')localStorage.setItem(k,String(payload[k]))});try{window.dispatchEvent(new Event('central-cloud-applied'))}catch(_){}}
-async function push(local,hash,base){return request('/api/sync',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({payload:local,hash:hash,baseRevision:base,deviceId:meta.device})})}
-async function safetyBackup(local,note){try{await request('/api/backups',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'save',note:note,backup:{formato:'central-backup-v2',app:'Central de Estudos',versao:'v'+currentVersion(),exportadoEm:new Date().toISOString(),origem:'sync',dados:local}})})}catch(_){}}
-async function persistAnkiMigration(){
- if(!window.__centralAnkiMigrated6679)return false;
- var local=collect(),h=hashObject(local),sent=await push(local,h,meta.revision);
- meta.revision=sent.revision;meta.hash=h;lastCheckHash=h;window.__centralAnkiMigrated6679=false;return true;
+function applyCloud(payload){
+ if(!payload||typeof payload!=='object'||Array.isArray(payload))throw new Error('cópia online inválida');
+ payload=sanitizePayload(payload);
+ Object.keys(payload).forEach(function(k){if(k&&k!=='__central_folder_probe__'&&k!=='__central_storage_probe__')localStorage.setItem(k,String(payload[k]))});
+ try{window.dispatchEvent(new Event('central-cloud-applied'))}catch(_){}
 }
+async function push(local,hash,base){return request('/api/sync',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({payload:local,hash:hash,baseRevision:base,deviceId:meta.device})})}
+async function safetyBackup(local,note){try{await request('/api/backups',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'save',note:note,backup:{formato:'central-backup-v3-user',app:'Base Completa',versao:'v'+currentVersion(),exportadoEm:new Date().toISOString(),origem:'sync',userId:userId,dados:local}})})}catch(_){}}
+
 async function sync(reason){
- if(!meta.enabled||busy||!navigator.onLine)return;busy=true;status('Sincronizando...','warn');
+ if(!userId||busy||!navigator.onLine)return;
+ busy=true;status('Sincronizando sua conta...','warn');
  try{
   var local=collect(),localHash=hashObject(local),cloud=await request('/api/sync');
-  if(!cloud.exists){var first=await push(local,localHash,0);meta.revision=first.revision;meta.hash=localHash;lastCheckHash=localHash;await saveMeta();status('Sincronizado agora • primeira cópia online criada.','ok');return}
+  if(!cloud.exists){
+   var first=await push(local,localHash,0);
+   meta.revision=first.revision;meta.hash=localHash;lastCheckHash=localHash;await saveMeta();
+   status('Conta sincronizada • primeira cópia criada.','ok');return;
+  }
   if(cloud.revision>meta.revision){
-   if(localHash!==meta.hash&&meta.revision>0)await safetyBackup(local,'Cópia automática antes de resolver conflito de sincronização');
-   var cloudPayload=sanitizePayload(cloud.payload||{}),hasLocalChanges=(localHash!==meta.hash&&meta.revision>0),merged=mergePayload(local,cloudPayload,hasLocalChanges),remoteHash=hashObject(cloudPayload);
-   applyCloud(merged);meta.revision=cloud.revision;
-   if(!(await persistAnkiMigration())){meta.hash=remoteHash;lastCheckHash=remoteHash}
-   await saveMeta();status('Atualização recebida da nuvem sem perder os checks da agenda. Recarregando...','ok');setTimeout(function(){location.reload()},700);return
+   if(localHash!==meta.hash&&meta.revision>0)await safetyBackup(local,'Cópia automática antes de receber dados mais recentes');
+   var cloudPayload=sanitizePayload(cloud.payload||{}),hasLocalChanges=(localHash!==meta.hash&&meta.revision>0);
+   var merged=mergePayload(local,cloudPayload,hasLocalChanges),remoteHash=hashObject(cloudPayload);
+   applyCloud(merged);meta.revision=cloud.revision;meta.hash=hasLocalChanges?hashObject(merged):remoteHash;lastCheckHash=meta.hash;await saveMeta();
+   if(hasLocalChanges){var sent=await push(merged,meta.hash,meta.revision);meta.revision=sent.revision;await saveMeta()}
+   status('Sua conta recebeu as alterações mais recentes.','ok');return;
   }
   if(localHash!==meta.hash||reason==='manual'){
-   try{var sent=await push(local,localHash,meta.revision);meta.revision=sent.revision;meta.hash=localHash;lastCheckHash=localHash;await saveMeta();status('Sincronizado agora.','ok')}
-   catch(e){
-    if(e.status===409){
-     var newest=await request('/api/sync');await safetyBackup(local,'Cópia automática antes de receber alteração mais recente');
-     var newestPayload=sanitizePayload(newest.payload||{}),mergedNewest=mergePayload(local,newestPayload,true),newestHash=hashObject(newestPayload);
-     applyCloud(mergedNewest);meta.revision=newest.revision;
-     if(!(await persistAnkiMigration())){meta.hash=newestHash;lastCheckHash=newestHash}
-     await saveMeta();status('Conflito resolvido preservando os checks da agenda. Recarregando...','warn');setTimeout(function(){location.reload()},700);return
-    }
-    throw e
+   try{
+    var sent2=await push(local,localHash,meta.revision);meta.revision=sent2.revision;meta.hash=localHash;lastCheckHash=localHash;await saveMeta();status('Sua conta está sincronizada.','ok');
+   }catch(e){
+    if(e.status===409){meta.revision=0;meta.hash='';await saveMeta();return sync('conflict')}
+    throw e;
    }
   }else{lastCheckHash=localHash;status('Sincronizado • nenhuma alteração pendente.','ok')}
- }catch(e){status((navigator.onLine?'Falha na sincronização: ':'Sem internet: ')+e.message,'err')}finally{busy=false}
+ }catch(e){status((navigator.onLine?'Falha na sincronização: ':'Sem internet: ')+e.message,'err')}
+ finally{busy=false}
 }
-async function toggle(){
- if(meta.enabled){if(!confirm('Desativar a sincronização automática somente neste aparelho? Seus dados locais e backups serão mantidos.'))return;meta.enabled=false;meta.secret='';meta.revision=0;meta.hash='';await Promise.all([kvSet('enabled',false),kvDel('secret'),kvDel('revision'),kvDel('hash')]);status('Desativada neste aparelho. Os dados locais foram mantidos.','warn');return}
- var secret=(prompt('Digite a mesma chave BACKUP_SECRET usada nos backups online:')||'').trim();if(!secret)return;
- meta.secret=secret;meta.enabled=true;if(!meta.device)meta.device=newDevice();try{sessionStorage.setItem('central-backup:session-secret',secret)}catch(_){}await saveMeta();status('Conectando este aparelho...','warn');
- try{
-  var cloud=await request('/api/sync');
-  if(cloud.exists){
-   var before=collect();await safetyBackup(before,'Antes de ativar sincronização neste aparelho');
-   var initialCloud=sanitizePayload(cloud.payload||{}),initialMerged=mergePayload(before,initialCloud,false),initialRemoteHash=hashObject(initialCloud);
-   applyCloud(initialMerged);meta.revision=cloud.revision;
-   if(!(await persistAnkiMigration())){meta.hash=initialRemoteHash;lastCheckHash=initialRemoteHash}
-   await saveMeta();status('Cópia online recebida sem perder os checks locais da agenda. Recarregando...','ok');setTimeout(function(){location.reload()},700)
-  }else await sync('enable')
- }catch(e){meta.enabled=false;meta.secret='';await Promise.all([kvSet('enabled',false),kvDel('secret')]);status('Não foi possível ativar: '+e.message,'err')}
-}
+
 function injectUi(){
  if(document.getElementById('centralSyncStatus'))return;
  var body=document.querySelector('.central-settings-body');if(!body)return;
- var wrap=document.createElement('div');wrap.id='centralSyncPanel';wrap.innerHTML='<span class="central-setting-label" style="margin-top:16px">Sincronização entre aparelhos</span><div class="central-backup-row"><button class="central-btn-sec" id="centralSyncToggle">☁ Ativar neste aparelho</button><button class="central-btn-sec" id="centralSyncNow">↻ Sincronizar agora</button></div><div id="centralSyncStatus" class="central-backup-status">Carregando...</div><div class="central-settings-note" style="margin-top:7px"><b>Como funciona:</b> ative primeiro no aparelho com o progresso correto. Alterações continuam salvas offline e são enviadas quando a internet voltar.</div>';
- body.appendChild(wrap);document.getElementById('centralSyncToggle').onclick=toggle;document.getElementById('centralSyncNow').onclick=function(){if(!meta.enabled)status('Ative a sincronização neste aparelho primeiro.','warn');else sync('manual')};
+ var wrap=document.createElement('div');wrap.id='centralSyncPanel';
+ wrap.innerHTML='<span class="central-setting-label" style="margin-top:16px">Sincronização da conta</span><div class="central-backup-row"><button class="central-btn-sec" id="centralSyncNow">↻ Sincronizar agora</button></div><div id="centralSyncStatus" class="central-backup-status">Preparando...</div><div class="central-settings-note" style="margin-top:7px"><b>Conta atual:</b> '+String(user&&user.name||user&&user.email||'Usuário')+'. Seu progresso é separado dos demais usuários e sincroniza automaticamente quando houver internet.</div>';
+ body.appendChild(wrap);
+ document.getElementById('centralSyncNow').onclick=function(){sync('manual')};
 }
-function loadUpdater(){
- if(window.__centralUpdater66107||document.querySelector('script[data-central-updater]'))return;
- var s=document.createElement('script');s.src='./central-updater-v66107.js?v=66107-'+Date.now();s.async=true;s.setAttribute('data-central-updater','1');document.head.appendChild(s);
-}
-function observe(){if(!meta.enabled)return;var h=hashObject(collect());if(!lastCheckHash)lastCheckHash=h;if(h!==lastCheckHash){lastCheckHash=h;status(navigator.onLine?'Alteração detectada; enviando...':'Alteração salva no aparelho; aguardando internet.','warn');setTimeout(function(){sync('change')},900)}}
-async function init(){
- injectUi();meta.enabled=!!(await kvGet('enabled'));meta.secret=(await kvGet('secret'))||'';meta.device=(await kvGet('device'))||newDevice();meta.revision=Number((await kvGet('revision'))||0);meta.hash=(await kvGet('hash'))||'';await kvSet('device',meta.device);if(meta.secret)try{sessionStorage.setItem('central-backup:session-secret',meta.secret)}catch(_){}
- var version=currentVersion();var brand=document.querySelector('.brand-copy small');if(brand)brand.textContent='v'+version+' • Atualização manual + sincronização';var badge=document.querySelector('.central-version-v41');if(badge)badge.textContent='v'+version;status(meta.enabled?'Sincronização ativa neste aparelho.':'Desativada neste aparelho. Ative primeiro no aparelho que contém o progresso correto.',meta.enabled?'ok':'');if(meta.enabled)sync('startup');setInterval(observe,15000);setInterval(function(){sync('poll')},120000)
-}
-window.addEventListener('online',function(){if(meta.enabled)sync('online')});window.addEventListener('offline',function(){if(meta.enabled)status('Sem internet. Alterações continuam salvas neste aparelho.','warn')});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible'&&meta.enabled)sync('visible')});
-if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+function observe(){var h=hashObject(collect());if(!lastCheckHash)lastCheckHash=h;if(h!==lastCheckHash){lastCheckHash=h;status(navigator.onLine?'Alteração detectada; salvando na sua conta...':'Alteração salva neste aparelho; aguardando internet.','warn');setTimeout(function(){sync('change')},900)}}
 
+async function init(){
+ if(!userId){
+  try{var r=await fetch('/api/auth?action=me',{cache:'no-store'}),j=await r.json();if(j&&j.authenticated&&j.user){user=j.user;userId=String(j.user.id||'')}}catch(_){}
+ }
+ if(!userId)return;
+ injectUi();
+ meta.device=(await kvGet('device'))||newDevice();
+ meta.revision=Number((await kvGet('revision'))||0);
+ meta.hash=(await kvGet('hash'))||'';
+ await kvSet('device',meta.device);
+ var version=currentVersion(),brand=document.querySelector('.brand-copy small'),badge=document.querySelector('.central-version-v41');
+ if(brand)brand.textContent='v'+version+' • conta '+(user&&user.name||'sincronizada');
+ if(badge)badge.textContent='v'+version;
+ status(navigator.onLine?'Sincronização da conta ativa.':'Sem internet. Seus dados continuam separados neste aparelho.',navigator.onLine?'ok':'warn');
+ sync('startup');
+ timers.push(setInterval(observe,15000));
+ timers.push(setInterval(function(){sync('poll')},120000));
+}
+
+window.addEventListener('online',function(){status('Internet restaurada; sincronizando...','warn');sync('online')});
+window.addEventListener('offline',function(){status('Sem internet. Alterações ficam salvas somente na sua conta neste aparelho até reconectar.','warn')});
+document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')sync('visible')});
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 })();

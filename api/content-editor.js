@@ -1,22 +1,11 @@
-import crypto from 'node:crypto';
 import { neon } from '@neondatabase/serverless';
+import { requireSession, sameOriginRequest } from '../lib/auth.js';
 
 function send(res,status,body){
   res.statusCode=status;
   res.setHeader('Content-Type','application/json; charset=utf-8');
   res.setHeader('Cache-Control','no-store');
   res.end(JSON.stringify(body));
-}
-function safeEqual(a,b){
-  const aa=Buffer.from(String(a||'')),bb=Buffer.from(String(b||''));
-  if(!aa.length||aa.length!==bb.length)return false;
-  return crypto.timingSafeEqual(aa,bb);
-}
-function authorized(req){
-  const expected=process.env.BACKUP_SECRET;
-  if(!expected)return {ok:false,status:503,error:'BACKUP_SECRET não configurado no Vercel'};
-  if(!safeEqual(req.headers['x-backup-key'],expected))return {ok:false,status:401,error:'Chave administrativa inválida'};
-  return {ok:true};
 }
 function database(){
   if(!process.env.DATABASE_URL)throw new Error('DATABASE_URL não configurado no Vercel');
@@ -53,13 +42,16 @@ export default async function handler(req,res){
     const sql=database();await ensureTable(sql);
     const id=String(req.query?.id||'').trim().slice(0,240);
     if(req.method==='GET'){
+      const reader=await requireSession(req,['admin','editor','aluno']);
+      if(!reader.ok)return send(res,reader.status,{error:reader.error});
       if(!id)return send(res,400,{error:'ID do conteúdo não informado'});
       const rows=await sql`SELECT content_id,label,html,revision,updated_at FROM central_content_overrides WHERE content_id=${id} LIMIT 1`;
       if(!rows.length)return send(res,200,{exists:false,id});
       const r=rows[0];
       return send(res,200,{exists:true,id:r.content_id,label:r.label||'',html:r.html,revision:Number(r.revision||1),updatedAt:r.updated_at});
     }
-    const auth=authorized(req);
+    if(!sameOriginRequest(req))return send(res,403,{error:'Origem da requisição não permitida'});
+    const auth=await requireSession(req,['admin','editor']);
     if(!auth.ok)return send(res,auth.status,{error:auth.error});
     if(req.method==='POST'){
       const body=await readJsonBody(req);

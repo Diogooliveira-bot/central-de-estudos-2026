@@ -7,6 +7,7 @@ if(window.__bcVisualEditorV1)return;window.__bcVisualEditorV1=true;
 var PREFIX='base-completa:visual-editor:v1:';
 var PROTECTED='.bc-native-study-progress,.bc-native-internal-review';
 var mounted=new WeakSet();
+var authUser=null,canEdit=false;
 
 function hash(s){
   var h=2166136261;
@@ -20,14 +21,15 @@ function identity(overlay){
 }
 function contentId(overlay){return 'reader:'+hash(identity(overlay))}
 function keyFor(overlay){return PREFIX+hash(identity(overlay))}
-function adminSecret(){
+async function loadAuth(){
   try{
-    var s=sessionStorage.getItem('central-backup:session-secret')||'';
-    if(s)return s;
-    s=(prompt('Digite a chave administrativa da Base Completa para editar o conteúdo definitivo:')||'').trim();
-    if(s)sessionStorage.setItem('central-backup:session-secret',s);
-    return s;
-  }catch(_){return ''}
+    var r=await fetch('/api/auth?action=me',{cache:'no-store'}),j=await r.json();
+    if(j&&j.authenticated&&j.user){
+      authUser=j.user;window.BASE_COMPLETA_USER=j.user;
+      canEdit=j.user.role==='admin'||j.user.role==='editor';
+    }
+  }catch(_){}
+  return authUser;
 }
 async function cloudGet(overlay){
   try{
@@ -38,16 +40,16 @@ async function cloudGet(overlay){
   }catch(_){return null}
 }
 async function cloudSave(overlay,html){
-  var secret=adminSecret();if(!secret)throw new Error('Chave administrativa não informada');
+  if(!canEdit)throw new Error('Seu perfil não permite editar conteúdo');
   var label=identity(overlay);
-  var r=await fetch('/api/content-editor',{method:'POST',headers:{'Content-Type':'application/json','X-Backup-Key':secret},body:JSON.stringify({id:contentId(overlay),label:label,html:html})});
+  var r=await fetch('/api/content-editor',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({id:contentId(overlay),label:label,html:html})});
   var j={};try{j=await r.json()}catch(_){}
   if(!r.ok)throw new Error(j.error||('Falha ao salvar (HTTP '+r.status+')'));
   return j;
 }
 async function cloudDelete(overlay){
-  var secret=adminSecret();if(!secret)throw new Error('Chave administrativa não informada');
-  var r=await fetch('/api/content-editor?id='+encodeURIComponent(contentId(overlay)),{method:'DELETE',headers:{'X-Backup-Key':secret}});
+  if(!canEdit)throw new Error('Seu perfil não permite restaurar conteúdo');
+  var r=await fetch('/api/content-editor?id='+encodeURIComponent(contentId(overlay)),{method:'DELETE'});
   var j={};try{j=await r.json()}catch(_){}
   if(!r.ok)throw new Error(j.error||('Falha ao restaurar (HTTP '+r.status+')'));
   return j;
@@ -223,7 +225,7 @@ function makeEditorBar(overlay,article,state){
 }
 function enterEdit(overlay,article,state){
   if(state.editing)return;
-  if(!adminSecret()){toast('Edição cancelada');return;}
+  if(!canEdit){toast('Seu perfil não permite editar');return;}
   state.editing=true;state.beforeEdit=capture(article);
   article.classList.add('bc-editor-active');
   article.setAttribute('contenteditable','true');
@@ -274,6 +276,7 @@ function mount(overlay){
     applySnapshot(article,remote.html);setSaved(overlay,remote.html);state.cloudRevision=remote.revision||0;
     if(state.reset)state.reset.hidden=false;
   });
+  if(!canEdit)return;
   var btn=document.createElement('button');btn.type='button';btn.className='bc-editor-trigger';btn.textContent='✎ Editar';btn.title='Editar este material';
   btn.addEventListener('click',function(){enterEdit(overlay,article,state)});
   tools.appendChild(btn);state.button=btn;
@@ -287,7 +290,7 @@ function scan(){
 }
 var scheduled=false;
 function schedule(){if(scheduled)return;scheduled=true;requestAnimationFrame(function(){scheduled=false;scan()})}
-function start(){scan();new MutationObserver(schedule).observe(document.body,{childList:true,subtree:true})}
+async function start(){await loadAuth();scan();new MutationObserver(schedule).observe(document.body,{childList:true,subtree:true})}
 window.addEventListener('central-cloud-applied',function(){setTimeout(scan,0)});
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start,{once:true});else start();
 })();

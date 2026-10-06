@@ -3,7 +3,9 @@
 var VERSION='6.6.119';
 window.__centralUpdater66119=true;window.__centralUpdater66118=true;window.__centralUpdater66117=true;window.__centralUpdater66116=true;window.__centralUpdater66115=true;window.__centralUpdater66114=true;window.__centralUpdater66113=true;window.__centralUpdater66112=true;window.__centralUpdater66111=true;window.__centralUpdater66110=true;window.__centralUpdater66109=true;window.__centralUpdater66108=true;window.__centralUpdater66107=true;window.__centralUpdater66106=true;window.__centralUpdater66105=true;window.__centralUpdater66104=true;window.__centralUpdater66103=true;window.__centralUpdater66102=true;window.__centralUpdater6682=true;
 function makeButton(){
+ var role=String(window.__BASE_COMPLETA_USER_ROLE__||window.BASE_COMPLETA_USER&&window.BASE_COMPLETA_USER.role||'');
  var previous=document.getElementById('central-update-btn');
+ if(role!=='admin'){if(previous)previous.remove();var oldStatus=document.getElementById('central-update-status');if(oldStatus)oldStatus.remove();return;}
  if(previous&&previous.getAttribute('data-central-version')===VERSION)return;
  if(previous)previous.remove();
  var previousStatus=document.getElementById('central-update-status');if(previousStatus)previousStatus.remove();
