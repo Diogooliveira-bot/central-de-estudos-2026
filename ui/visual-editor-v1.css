@@ -164,3 +164,9 @@ html[data-bc-reading-mode="night"] .cf-native-reader article .bc-editor-table th
   .bc-native-article .bc-editor-table th,.bc-native-article .bc-editor-table td,
   .cf-native-reader article .bc-editor-table th,.cf-native-reader article .bc-editor-table td{min-width:130px;padding:10px 12px}
 }
+
+.bc-editor-bar .bc-editor-spell.is-on{
+  border-color:var(--bc-reading-accent,#087584)!important;
+  color:var(--bc-reading-accent,#087584)!important;
+  background:color-mix(in srgb,var(--bc-reading-accent,#087584) 8%,var(--bc-reading-paper,#f5f1e8))!important;
+}
