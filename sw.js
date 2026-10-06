@@ -51,6 +51,10 @@ function offlineDenied(){
 var pauseOfflineUntil=0;
 async function yieldToStudy(){while(Date.now()<pauseOfflineUntil)await new Promise(function(resolve){setTimeout(resolve,300)})}
 async function prepareOffline(){
+  try{
+    var auth=await fetch('/api/auth?action=me',{cache:'no-store'});
+    await cacheOfflineAuth(auth);
+  }catch(_){}
   if(!(await offlineAllowed()))return;
   var cache=await caches.open(CACHE);
   try{
