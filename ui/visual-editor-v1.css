@@ -250,3 +250,58 @@ html[data-bc-reading-mode="night"] .cf-native-reader article .bc-editor-table tb
 @media(max-width:700px){
   .bc-spell-panel{left:12px;right:12px;top:auto;bottom:12px;width:auto;max-height:58vh}
 }
+
+
+/* Blocos inseríveis do editor */
+.bc-editor-compare,.bc-editor-cards{
+  display:grid;gap:14px;margin:22px 0;
+}
+.bc-editor-compare{grid-template-columns:repeat(2,minmax(0,1fr))}
+.bc-editor-cards{grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
+.bc-editor-compare-card,.bc-editor-card,.bc-editor-review-box{
+  border:1px solid var(--bc-reading-line,#d8d2c8);
+  border-radius:9px;background:var(--bc-reading-paper,#f7f3eb);
+  padding:16px 18px;box-shadow:0 1px 5px rgba(0,0,0,.035);
+}
+.bc-editor-compare-card h4,.bc-editor-card h4,.bc-editor-review-box h4{
+  margin:0 0 10px!important;
+  font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;
+  font-size:.9em!important;line-height:1.25!important;font-weight:800!important;
+  color:var(--bc-reading-accent,#087584)!important;
+}
+.bc-editor-compare-card p,.bc-editor-card p,.bc-editor-review-box p{margin:7px 0!important}
+.bc-editor-review-box{
+  margin:22px 0;border-left:4px solid var(--bc-reading-accent,#087584);
+  background:color-mix(in srgb,var(--bc-reading-accent,#087584) 6%,var(--bc-reading-paper,#f7f3eb));
+}
+.bc-editor-image{
+  margin:24px auto;text-align:center;
+  border:1px solid transparent;border-radius:10px;padding:4px;
+  transition:border-color .15s ease,background .15s ease;
+}
+.bc-editor-image img{
+  display:block;width:100%;height:auto;margin:0 auto;border-radius:7px;object-fit:contain;
+}
+.bc-editor-image-small{max-width:420px}
+.bc-editor-image-medium{max-width:680px}
+.bc-editor-image-full{max-width:100%}
+.bc-editor-image figcaption{
+  margin:9px auto 0;max-width:90%;font:500 .72em/1.4 system-ui,sans-serif;
+  color:color-mix(in srgb,var(--bc-reading-text,#34312d) 70%,transparent);
+}
+.bc-editor-active .bc-editor-image{cursor:pointer}
+.bc-editor-active .bc-editor-image.is-selected{
+  border-color:var(--bc-reading-accent,#087584);
+  background:color-mix(in srgb,var(--bc-reading-accent,#087584) 5%,transparent);
+}
+html[data-bc-reading-mode="night"] .bc-editor-compare-card,
+html[data-bc-reading-mode="night"] .bc-editor-card,
+html[data-bc-reading-mode="night"] .bc-editor-review-box{
+  background:#252b2e;border-color:#3c484d;
+}
+@media(max-width:700px){
+  .bc-editor-compare{grid-template-columns:1fr}
+  .bc-editor-compare,.bc-editor-cards{gap:10px}
+  .bc-editor-compare-card,.bc-editor-card,.bc-editor-review-box{padding:14px}
+  .bc-editor-image-small,.bc-editor-image-medium,.bc-editor-image-full{max-width:100%}
+}
