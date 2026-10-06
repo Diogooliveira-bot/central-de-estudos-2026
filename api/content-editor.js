@@ -1,5 +1,5 @@
-import crypto from 'node:crypto';
 import { neon } from '@neondatabase/serverless';
+import { requireSession, safeSecretEqual } from '../lib/auth.js';
 
 function send(res,status,body){
   res.statusCode=status;
@@ -7,16 +7,12 @@ function send(res,status,body){
   res.setHeader('Cache-Control','no-store');
   res.end(JSON.stringify(body));
 }
-function safeEqual(a,b){
-  const aa=Buffer.from(String(a||'')),bb=Buffer.from(String(b||''));
-  if(!aa.length||aa.length!==bb.length)return false;
-  return crypto.timingSafeEqual(aa,bb);
-}
-function authorized(req){
+async function writerAuthorized(req){
+  const session=await requireSession(req,['admin','editor']);
+  if(session.ok)return session;
   const expected=process.env.BACKUP_SECRET;
-  if(!expected)return {ok:false,status:503,error:'BACKUP_SECRET não configurado no Vercel'};
-  if(!safeEqual(req.headers['x-backup-key'],expected))return {ok:false,status:401,error:'Chave administrativa inválida'};
-  return {ok:true};
+  if(expected&&safeSecretEqual(req.headers['x-backup-key'],expected))return {ok:true,legacy:true};
+  return {ok:false,status:session.status||401,error:session.error||'Acesso de edição negado'};
 }
 function database(){
   if(!process.env.DATABASE_URL)throw new Error('DATABASE_URL não configurado no Vercel');
@@ -53,13 +49,15 @@ export default async function handler(req,res){
     const sql=database();await ensureTable(sql);
     const id=String(req.query?.id||'').trim().slice(0,240);
     if(req.method==='GET'){
+      const reader=await requireSession(req,['admin','editor','aluno']);
+      if(!reader.ok)return send(res,reader.status,{error:reader.error});
       if(!id)return send(res,400,{error:'ID do conteúdo não informado'});
       const rows=await sql`SELECT content_id,label,html,revision,updated_at FROM central_content_overrides WHERE content_id=${id} LIMIT 1`;
       if(!rows.length)return send(res,200,{exists:false,id});
       const r=rows[0];
       return send(res,200,{exists:true,id:r.content_id,label:r.label||'',html:r.html,revision:Number(r.revision||1),updatedAt:r.updated_at});
     }
-    const auth=authorized(req);
+    const auth=await writerAuthorized(req);
     if(!auth.ok)return send(res,auth.status,{error:auth.error});
     if(req.method==='POST'){
       const body=await readJsonBody(req);
