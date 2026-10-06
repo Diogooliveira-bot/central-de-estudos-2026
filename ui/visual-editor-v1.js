@@ -77,6 +77,7 @@ function capture(article){
   clone.removeAttribute('contenteditable');
   clone.classList.remove('bc-editor-active');
   clone.querySelectorAll('[contenteditable]').forEach(function(n){n.removeAttribute('contenteditable')});
+  clone.querySelectorAll('[data-bc-spell-error]').forEach(function(n){n.replaceWith(document.createTextNode(n.textContent||''))});
   sanitize(clone);
   return clone.innerHTML;
 }
@@ -244,6 +245,95 @@ function toggleTableHeader(article){
     var repl=document.createElement(makeHeader?'th':'td');repl.innerHTML=cell.innerHTML;cell.replaceWith(repl);
   });
 }
+function clearSpellHighlights(article){
+  article.querySelectorAll('[data-bc-spell-error]').forEach(function(n){
+    n.replaceWith(document.createTextNode(n.textContent||''));
+  });
+  article.normalize();
+}
+function textNodesForSpell(article){
+  var out=[],walker=document.createTreeWalker(article,NodeFilter.SHOW_TEXT,{
+    acceptNode:function(node){
+      if(!node.nodeValue||!node.nodeValue.trim())return NodeFilter.FILTER_REJECT;
+      var p=node.parentElement;
+      if(!p||p.closest('[data-bc-editor-preserve],script,style'))return NodeFilter.FILTER_REJECT;
+      return NodeFilter.FILTER_ACCEPT;
+    }
+  });
+  var n;while((n=walker.nextNode()))out.push(n);return out;
+}
+function plainTextMap(article){
+  var nodes=textNodesForSpell(article),text='',map=[];
+  nodes.forEach(function(node,i){
+    if(i&&text&&!/\s$/.test(text))text+=' ';
+    var start=text.length;var value=node.nodeValue||'';
+    text+=value;map.push({node:node,start:start,end:start+value.length});
+  });
+  return {text:text,map:map};
+}
+function highlightSpellMatches(article,matches){
+  clearSpellHighlights(article);
+  var data=plainTextMap(article);
+  var sorted=(matches||[]).slice().sort(function(a,b){return b.offset-a.offset});
+  sorted.forEach(function(m){
+    var start=Number(m.offset)||0,end=start+(Number(m.length)||0);
+    for(var i=data.map.length-1;i>=0;i--){
+      var item=data.map[i];
+      if(end<=item.start||start>=item.end)continue;
+      var localStart=Math.max(0,start-item.start),localEnd=Math.min(item.end,end)-item.start;
+      if(localEnd<=localStart)continue;
+      var node=item.node;if(!node.isConnected)continue;
+      var range=document.createRange();
+      try{
+        range.setStart(node,localStart);range.setEnd(node,localEnd);
+        var mark=document.createElement('span');
+        mark.className='bc-spell-error';mark.setAttribute('data-bc-spell-error','1');
+        mark.title=(m.message||'Possível erro')+(m.replacements&&m.replacements.length?' — Sugestão: '+m.replacements[0].value:'');
+        range.surroundContents(mark);
+      }catch(_){}
+    }
+  });
+}
+function ensureSpellPanel(overlay,state){
+  if(state.spellPanel&&state.spellPanel.isConnected)return state.spellPanel;
+  var panel=document.createElement('aside');panel.className='bc-spell-panel';panel.hidden=true;
+  panel.innerHTML='<div class="bc-spell-panel-head"><b>Revisão ortográfica</b><button type="button" data-spell-close aria-label="Fechar">×</button></div><div class="bc-spell-panel-body"></div>';
+  panel.addEventListener('click',function(e){
+    if(e.target.closest('[data-spell-close]')){panel.hidden=true;clearSpellHighlights(articleFor(overlay));}
+    var fix=e.target.closest('[data-spell-fix]');
+    if(fix){
+      var index=Number(fix.getAttribute('data-spell-fix')),m=(state.spellMatches||[])[index],article=articleFor(overlay);
+      if(!m||!article)return;
+      var target=article.querySelectorAll('[data-bc-spell-error]')[index];
+      if(target&&m.replacements&&m.replacements[0]){
+        target.replaceWith(document.createTextNode(m.replacements[0].value));
+        article.normalize();panel.hidden=true;toast('Correção aplicada. Revise novamente.');
+      }
+    }
+  });
+  overlay.appendChild(panel);state.spellPanel=panel;return panel;
+}
+async function runSpellReview(overlay,article,state,button){
+  clearSpellHighlights(article);
+  var data=plainTextMap(article),text=data.text.trim();
+  if(!text)return toast('Não há texto para revisar');
+  button.disabled=true;var old=button.textContent;button.textContent='Revisando…';
+  try{
+    var r=await fetch('/api/spellcheck',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({text:text,language:'pt-BR'})});
+    var j={};try{j=await r.json()}catch(_){}
+    if(!r.ok)throw new Error(j.error||'Falha na revisão ortográfica');
+    state.spellMatches=j.matches||[];
+    highlightSpellMatches(article,state.spellMatches);
+    var panel=ensureSpellPanel(overlay,state),body=panel.querySelector('.bc-spell-panel-body');
+    if(!state.spellMatches.length)body.innerHTML='<p class="bc-spell-ok">Nenhum erro encontrado.</p>';
+    else body.innerHTML=state.spellMatches.map(function(m,i){
+      var replacement=m.replacements&&m.replacements[0]?m.replacements[0].value:'';
+      return '<div class="bc-spell-item"><div><b>'+(m.shortMessage||'Possível erro')+'</b><p>'+String(m.message||'').replace(/[<>&]/g,function(ch){return {'<':'&lt;','>':'&gt;','&':'&amp;'}[ch]})+'</p>'+(replacement?'<small>Sugestão: <strong>'+String(replacement).replace(/[<>&]/g,function(ch){return {'<':'&lt;','>':'&gt;','&':'&amp;'}[ch]})+'</strong></small>':'')+'</div>'+(replacement?'<button type="button" data-spell-fix="'+i+'">Aplicar</button>':'')+'</div>';
+    }).join('');
+    panel.hidden=false;toast(state.spellMatches.length?state.spellMatches.length+' ponto(s) para revisar':'Nenhum erro encontrado');
+  }catch(err){toast(err.message||'Falha na revisão ortográfica')}
+  finally{button.disabled=false;button.textContent=old}
+}
 function makeEditorBar(overlay,article,state){
   var bar=document.createElement('div');bar.className='bc-editor-bar';
   bar.innerHTML=
@@ -254,6 +344,7 @@ function makeEditorBar(overlay,article,state){
     '<select data-ed="color" aria-label="Cor do texto"><option value="">Cor</option><option value="#34312d">Preto</option><option value="#087584">Azul petróleo</option><option value="#6d5b88">Roxo</option><option value="#9b3d3d">Vermelho</option><option value="#2f7a4f">Verde</option><option value="#b36b00">Laranja</option></select>'+
     '<button type="button" data-ed="mark" title="Marca-texto">Destaque</button>'+
     '<button type="button" data-ed="spell" class="bc-editor-spell is-on" title="Ativar ou desativar corretor ortográfico">✓ Ortografia</button>'+
+    '<button type="button" data-ed="spellreview" title="Mostrar erros de ortografia e gramática">Revisar ortografia</button>'+
     '<button type="button" data-ed="ul" title="Lista com marcadores">• Lista</button>'+
     '<button type="button" data-ed="ol" title="Lista numerada">1. Lista</button>'+
     '<button type="button" data-ed="table" title="Inserir tabela">▦ Tabela</button>'+
@@ -294,6 +385,7 @@ function makeEditorBar(overlay,article,state){
       toast(enabled?'Corretor ortográfico desativado':'Corretor ortográfico ativado');
       article.focus({preventScroll:true});
     }
+    else if(a==='spellreview')runSpellReview(overlay,article,state,b);
     else if(a==='ul')exec(article,'insertUnorderedList');
     else if(a==='ol')exec(article,'insertOrderedList');
     else if(a==='table'){
@@ -352,6 +444,8 @@ function exitEdit(overlay,article,state){
   article.removeAttribute('contenteditable');article.removeAttribute('spellcheck');article.removeAttribute('autocapitalize');article.removeAttribute('autocorrect');article.classList.remove('bc-editor-active');
   article.querySelectorAll(PROTECTED).forEach(function(n){n.removeAttribute('contenteditable')});
   if(state.keyHandler){article.removeEventListener('keydown',state.keyHandler);state.keyHandler=null}
+  clearSpellHighlights(article);
+  if(state.spellPanel){state.spellPanel.remove();state.spellPanel=null;state.spellMatches=[]}
   if(state.bar){state.bar.remove();state.bar=null}
   state.button.disabled=false;state.button.textContent='✎ Editar';
 }
@@ -376,7 +470,7 @@ function mount(overlay){
   if(mounted.has(overlay))return;
   var article=articleFor(overlay),tools=toolsFor(overlay);if(!article||!tools)return;
   mounted.add(overlay);
-  var state={editing:false,sourceSnapshot:capture(article),beforeEdit:'',bar:null,button:null,reset:null,cloudRevision:0,keyHandler:null};
+  var state={editing:false,sourceSnapshot:capture(article),beforeEdit:'',bar:null,button:null,reset:null,cloudRevision:0,keyHandler:null,spellPanel:null,spellMatches:[]};
   var saved=getSaved(overlay);if(saved)applySnapshot(article,saved);
   cloudGet(overlay).then(function(remote){
     if(!remote||state.editing)return;
