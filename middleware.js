@@ -89,7 +89,7 @@ export default async function middleware(request) {
   const session = await verifyToken(token);
   if (!session) return redirectToLogin(request);
 
-  if (path === '/usuarios.html' && session.role !== 'admin') {
+  if ((path === '/usuarios.html' || path === '/update-central.html') && session.role !== 'admin') {
     return Response.redirect(new URL('/', request.url), 302);
   }
 
