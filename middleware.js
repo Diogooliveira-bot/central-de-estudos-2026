@@ -6,6 +6,10 @@ const PUBLIC_PATHS = new Set([
   '/favicon.ico',
   '/robots.txt',
   '/assets/base-completa-symbol.webp',
+  '/manifest.webmanifest',
+  '/sw.js',
+  '/icons/icon-192.png',
+  '/icons/icon-512.png',
 ]);
 
 function parseCookie(header, name) {
