@@ -121,3 +121,46 @@ html[data-bc-reading-mode="night"] .cf-native-reader article .bc-editor-callout-
 
 html[data-bc-reading-mode="night"] .bc-native-article .bc-editor-callout-fcc,
 html[data-bc-reading-mode="night"] .cf-native-reader article .bc-editor-callout-fcc{background:#49351f!important}
+
+
+/* Tabelas do editor visual */
+.bc-editor-table-wrap,
+.bc-native-article .bc-editor-table-wrap,
+.cf-native-reader article .bc-editor-table-wrap{
+  width:100%;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;margin:24px 0;
+}
+.bc-editor-table,
+.bc-native-article .bc-editor-table,
+.cf-native-reader article .bc-editor-table{
+  width:100%;min-width:620px;border-collapse:collapse;border-spacing:0;
+  font:inherit;color:inherit;background:var(--bc-reading-paper,#f5f1e8);
+}
+.bc-editor-table th,.bc-editor-table td,
+.bc-native-article .bc-editor-table th,.bc-native-article .bc-editor-table td,
+.cf-native-reader article .bc-editor-table th,.cf-native-reader article .bc-editor-table td{
+  min-width:140px;padding:12px 14px;border:1px solid var(--bc-reading-line,#d8d2c8);
+  text-align:left;vertical-align:top;line-height:1.45;overflow-wrap:anywhere;
+}
+.bc-editor-table th,
+.bc-native-article .bc-editor-table th,
+.cf-native-reader article .bc-editor-table th{
+  font-weight:800;background:var(--bc-reading-inset,#eee8dd);
+}
+.bc-editor-active .bc-editor-table th:focus,
+.bc-editor-active .bc-editor-table td:focus{outline:2px solid var(--bc-reading-accent,#087584);outline-offset:-2px}
+html[data-bc-reading-mode="night"] .bc-editor-table,
+html[data-bc-reading-mode="night"] .bc-native-article .bc-editor-table,
+html[data-bc-reading-mode="night"] .cf-native-reader article .bc-editor-table{
+  background:var(--bc-reading-paper,#1f2426);color:var(--bc-reading-text,#ece8df);
+}
+html[data-bc-reading-mode="night"] .bc-editor-table th,
+html[data-bc-reading-mode="night"] .bc-native-article .bc-editor-table th,
+html[data-bc-reading-mode="night"] .cf-native-reader article .bc-editor-table th{
+  background:var(--bc-reading-inset,#2a3033);
+}
+@media(max-width:700px){
+  .bc-editor-table,.bc-native-article .bc-editor-table,.cf-native-reader article .bc-editor-table{min-width:560px}
+  .bc-editor-table th,.bc-editor-table td,
+  .bc-native-article .bc-editor-table th,.bc-native-article .bc-editor-table td,
+  .cf-native-reader article .bc-editor-table th,.cf-native-reader article .bc-editor-table td{min-width:130px;padding:10px 12px}
+}
