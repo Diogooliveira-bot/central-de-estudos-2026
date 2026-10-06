@@ -911,13 +911,48 @@ setTimeout(function(){
    <button class="central-settings-close" onclick="closeCentralSettings()" aria-label="Fechar">×</button>
   </div>
   <div class="central-settings-body">
-   <span class="central-setting-label">Tema</span>
-   <div class="central-theme-options">
-    <button class="central-theme-option" data-central-theme-choice="light" onclick="setCentralTheme('light')"><span>☀</span>Claro</button>
-    <button class="central-theme-option" data-central-theme-choice="dark" onclick="setCentralTheme('dark')"><span>☾</span>Escuro</button>
-    <button class="central-theme-option" data-central-theme-choice="oled" onclick="setCentralTheme('oled')"><span>◼</span>OLED</button><button class="central-theme-option" data-central-theme-choice="system" onclick="setCentralTheme('system')"><span>◐</span>Sistema</button>
+   <div class="central-appearance-heading">
+    <h3>Aparência da Central</h3>
+    <p>Escolha um visual para todas as telas. A preferência fica salva somente neste dispositivo.</p>
    </div>
-   <div class="central-settings-note">O tema é aplicado à Central, Constitucional, Decorando a Lei Seca e Vade Mecum. Nenhum conteúdo ou progresso é alterado.</div>
+   <div class="central-theme-options" role="group" aria-label="Temas visuais da Central">
+    <article class="central-theme-card" data-theme-card="paper-yellow">
+     <div class="central-theme-card-head"><span class="central-theme-name">Papel amarelado</span><span class="central-theme-active">Ativo</span></div>
+     <div class="central-theme-preview" aria-hidden="true"><i style="--swatch:#F4ECDD"></i><i style="--swatch:#FFF9ED"></i><i style="--swatch:#D8CAB3"></i><i style="--swatch:#0F8B8D"></i></div>
+     <button type="button" class="central-theme-option" data-central-theme-choice="paper-yellow" onclick="setCentralTheme('paper-yellow')">Aplicar tema</button>
+    </article>
+    <article class="central-theme-card" data-theme-card="paper-white">
+     <div class="central-theme-card-head"><span class="central-theme-name">Papel branco premium</span><span class="central-theme-active">Ativo</span></div>
+     <div class="central-theme-preview" aria-hidden="true"><i style="--swatch:#F8F7F3"></i><i style="--swatch:#FFFFFF"></i><i style="--swatch:#DDD8CE"></i><i style="--swatch:#0E8583"></i></div>
+     <button type="button" class="central-theme-option" data-central-theme-choice="paper-white" onclick="setCentralTheme('paper-white')">Aplicar tema</button>
+    </article>
+    <article class="central-theme-card" data-theme-card="sage-study">
+     <div class="central-theme-card-head"><span class="central-theme-name">Verde sálvia estudo</span><span class="central-theme-active">Ativo</span></div>
+     <div class="central-theme-preview" aria-hidden="true"><i style="--swatch:#EAF0E9"></i><i style="--swatch:#F5F9F4"></i><i style="--swatch:#C8D5CA"></i><i style="--swatch:#176F6B"></i></div>
+     <button type="button" class="central-theme-option" data-central-theme-choice="sage-study" onclick="setCentralTheme('sage-study')">Aplicar tema</button>
+    </article>
+    <article class="central-theme-card" data-theme-card="editorial-gray">
+     <div class="central-theme-card-head"><span class="central-theme-name">Cinza editorial</span><span class="central-theme-active">Ativo</span></div>
+     <div class="central-theme-preview" aria-hidden="true"><i style="--swatch:#EFF0EF"></i><i style="--swatch:#FFFFFF"></i><i style="--swatch:#D1D4D2"></i><i style="--swatch:#167E82"></i></div>
+     <button type="button" class="central-theme-option" data-central-theme-choice="editorial-gray" onclick="setCentralTheme('editorial-gray')">Aplicar tema</button>
+    </article>
+    <article class="central-theme-card" data-theme-card="legal-mist">
+     <div class="central-theme-card-head"><span class="central-theme-name">Azul névoa jurídico</span><span class="central-theme-active">Ativo</span></div>
+     <div class="central-theme-preview" aria-hidden="true"><i style="--swatch:#EAF0F5"></i><i style="--swatch:#FAFCFE"></i><i style="--swatch:#C7D4DE"></i><i style="--swatch:#0F8087"></i></div>
+     <button type="button" class="central-theme-option" data-central-theme-choice="legal-mist" onclick="setCentralTheme('legal-mist')">Aplicar tema</button>
+    </article>
+    <article class="central-theme-card" data-theme-card="dark-premium">
+     <div class="central-theme-card-head"><span class="central-theme-name">Escuro premium</span><span class="central-theme-active">Ativo</span></div>
+     <div class="central-theme-preview" aria-hidden="true"><i style="--swatch:#071820"></i><i style="--swatch:#0E2833"></i><i style="--swatch:#294753"></i><i style="--swatch:#31C9C0"></i></div>
+     <button type="button" class="central-theme-option" data-central-theme-choice="dark-premium" onclick="setCentralTheme('dark-premium')">Aplicar tema</button>
+    </article>
+    <article class="central-theme-card" data-theme-card="oled-black">
+     <div class="central-theme-card-head"><span class="central-theme-name">OLED preto</span><span class="central-theme-active">Ativo</span></div>
+     <div class="central-theme-preview" aria-hidden="true"><i style="--swatch:#000000"></i><i style="--swatch:#090E11"></i><i style="--swatch:#242D31"></i><i style="--swatch:#2AD0C5"></i></div>
+     <button type="button" class="central-theme-option" data-central-theme-choice="oled-black" onclick="setCentralTheme('oled-black')">Aplicar tema</button>
+    </article>
+   </div>
+   <div class="central-settings-note">O tema é aplicado à tela inicial, agenda, disciplinas, módulos, questões, anotações, Vade Mecum, Lei em Dia, Cadernos TEC, editor, menus, modais, tabelas e progresso. Nenhum conteúdo ou avanço é alterado.</div>
 
    <span class="central-setting-label">Backup geral</span>
    <div class="central-backup-row">
