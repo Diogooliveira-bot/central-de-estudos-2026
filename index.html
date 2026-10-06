@@ -3,17 +3,69 @@
 <head>
 <script>if(location.pathname==='/index.html'&&!new URLSearchParams(location.search).has('central_source'))location.replace('/central-v119.html'+location.search+location.hash)</script>
 <script id="central-content-storage-fix-v6650">
-/* Android content:// compatibility: synchronous storage shared with tools opened
-   as top-level Blob documents. Native localStorage is used whenever permitted. */
+/* Base Completa — armazenamento local isolado por usuário.
+   Mantém compatibilidade Android/content:// e preserva os dados antigos.
+   O primeiro ADMIN copia o estado legado para seu espaço pessoal; alunos novos começam vazios. */
 const localStorage = (() => {
+  const userId = String(window.__BASE_COMPLETA_USER_ID__ || '').trim();
+  const userRole = String(window.__BASE_COMPLETA_USER_ROLE__ || 'aluno');
+  const USER_PREFIX = userId ? 'BC_USER_V1:' + userId + ':' : '';
+  const MIGRATION_KEY = userId ? 'BC_USER_MIGRATED_V1:' + userId : '';
+
+  function scopedStore(base) {
+    if (!USER_PREFIX) return base;
+
+    try {
+      if (userRole === 'admin' && base.getItem(MIGRATION_KEY) !== '1') {
+        const legacy = [];
+        for (let i = 0; i < base.length; i++) {
+          const key = base.key(i);
+          if (!key || key.startsWith('BC_USER_V1:') || key.startsWith('BC_USER_MIGRATED_V1:')) continue;
+          legacy.push([key, base.getItem(key)]);
+        }
+        legacy.forEach(([key, value]) => {
+          if (base.getItem(USER_PREFIX + key) == null && value != null) base.setItem(USER_PREFIX + key, value);
+        });
+        base.setItem(MIGRATION_KEY, '1');
+      }
+    } catch (_) {}
+
+    function physicalKeys() {
+      const keys = [];
+      try {
+        for (let i = 0; i < base.length; i++) {
+          const key = base.key(i);
+          if (key && key.startsWith(USER_PREFIX)) keys.push(key);
+        }
+      } catch (_) {}
+      return keys;
+    }
+
+    return {
+      getItem(key) {
+        key = String(key);
+        const value = base.getItem(USER_PREFIX + key);
+        return value == null ? null : String(value);
+      },
+      setItem(key, value) { base.setItem(USER_PREFIX + String(key), String(value)); },
+      removeItem(key) { base.removeItem(USER_PREFIX + String(key)); },
+      clear() { physicalKeys().forEach((key) => base.removeItem(key)); },
+      key(index) {
+        const key = physicalKeys()[Number(index)];
+        return key ? key.slice(USER_PREFIX.length) : null;
+      },
+      get length() { return physicalKeys().length; }
+    };
+  }
+
   try {
     const nativeStore = window.localStorage;
     const probe = '__central_storage_probe__';
     nativeStore.setItem(probe, '1'); nativeStore.removeItem(probe);
-    window.__CENTRAL_STORAGE_MODE__ = 'native';
-    return nativeStore;
+    window.__CENTRAL_STORAGE_MODE__ = userId ? 'native-user-scoped' : 'native';
+    return scopedStore(nativeStore);
   } catch (err) {
-    window.__CENTRAL_STORAGE_MODE__ = 'content-shared-fallback';
+    window.__CENTRAL_STORAGE_MODE__ = userId ? 'content-user-scoped-fallback' : 'content-shared-fallback';
     const PREFIX = 'CENTRAL_SHARED_STORAGE_V1:';
     const LEGACY = ['CENTRAL_V6648_STORAGE:','CENTRAL_CHILD_STORAGE:'];
     let data = {};
@@ -25,8 +77,7 @@ const localStorage = (() => {
       }
     } catch (_) { data = {}; }
     const persist = () => { try { window.name = PREFIX + encodeURIComponent(JSON.stringify(data)); } catch (_) {} };
-    persist();
-    return {
+    const base = {
       getItem(key){ key=String(key); return Object.prototype.hasOwnProperty.call(data,key)?String(data[key]):null; },
       setItem(key,value){ data[String(key)]=String(value); persist(); },
       removeItem(key){ delete data[String(key)]; persist(); },
@@ -34,6 +85,8 @@ const localStorage = (() => {
       key(index){ return Object.keys(data)[Number(index)] ?? null; },
       get length(){ return Object.keys(data).length; }
     };
+    persist();
+    return scopedStore(base);
   }
 })();
 </script>
