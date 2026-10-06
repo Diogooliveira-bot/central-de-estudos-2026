@@ -382,7 +382,7 @@ function makeEditorBar(overlay,article,state){
     '<button type="button" data-ed="underline" title="Sublinhado"><u>U</u></button>'+
     '<select data-ed="color" aria-label="Cor do texto"><option value="">Cor</option><option value="#34312d">Preto</option><option value="#087584">Azul petróleo</option><option value="#6d5b88">Roxo</option><option value="#9b3d3d">Vermelho</option><option value="#2f7a4f">Verde</option><option value="#b36b00">Laranja</option></select>'+
     '<button type="button" data-ed="mark" title="Marca-texto">Destaque</button>'+
-    '<button type="button" data-ed="spell" class="bc-editor-spell is-on" title="Ativar ou desativar corretor ortográfico">✓ Ortografia</button>'+
+
     '<button type="button" data-ed="spellreview" title="Mostrar erros de ortografia e gramática">Revisar ortografia</button>'+
     '<button type="button" data-ed="spellfixall" title="Revisar e aplicar automaticamente todas as sugestões disponíveis">Revisar e ajustar tudo</button>'+
     '<button type="button" data-ed="ul" title="Lista com marcadores">• Lista</button>'+
@@ -416,15 +416,6 @@ function makeEditorBar(overlay,article,state){
     else if(a==='italic')exec(article,'italic');
     else if(a==='underline')exec(article,'underline');
     else if(a==='mark')exec(article,'hiliteColor','#ffe4a0');
-    else if(a==='spell'){
-      var enabled=article.getAttribute('spellcheck')!=='false';
-      article.setAttribute('spellcheck',enabled?'false':'true');
-      article.setAttribute('autocorrect',enabled?'off':'on');
-      b.classList.toggle('is-on',!enabled);
-      b.textContent=enabled?'Ortografia':'✓ Ortografia';
-      toast(enabled?'Corretor ortográfico desativado':'Corretor ortográfico ativado');
-      article.focus({preventScroll:true});
-    }
     else if(a==='spellreview')runSpellReview(overlay,article,state,b);
     else if(a==='spellfixall')reviewAndFixAll(overlay,article,state,b);
     else if(a==='ul')exec(article,'insertUnorderedList');
