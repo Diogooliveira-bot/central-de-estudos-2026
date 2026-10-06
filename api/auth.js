@@ -11,6 +11,7 @@ import {
   requireSession,
   safeSecretEqual,
   sessionCookie,
+  sameOriginRequest,
   validatePassword,
   verifyPassword,
 } from '../lib/auth.js';
@@ -53,7 +54,7 @@ async function login(req, res) {
   const sql = database();
   await ensureUsersTable(sql);
   const rows = await sql`
-    SELECT user_id,name,email,role,password_hash,active,failed_attempts,locked_until,created_at,updated_at,last_login
+    SELECT user_id,name,email,role,password_hash,active,failed_attempts,locked_until,session_version,created_at,updated_at,last_login
     FROM central_users
     WHERE LOWER(email)=${email}
     LIMIT 1
@@ -122,7 +123,7 @@ async function bootstrap(req, res) {
   const rows = await sql`
     INSERT INTO central_users(user_id,name,email,role,password_hash,active)
     VALUES(${userId},${name},${email},'admin',${passwordHash},TRUE)
-    RETURNING user_id,name,email,role,active,created_at,updated_at,last_login
+    RETURNING user_id,name,email,role,active,session_version,created_at,updated_at,last_login
   `;
   const token = createSessionToken(rows[0]);
   return send(res, 201, { ok: true, user: publicUser(rows[0]) }, { 'Set-Cookie': sessionCookie(token) });
@@ -131,6 +132,7 @@ async function bootstrap(req, res) {
 export default async function handler(req, res) {
   try {
     const action = String(req.query?.action || '').toLowerCase();
+    if (req.method === 'POST' && !sameOriginRequest(req)) return send(res, 403, { error: 'Origem da requisição não permitida' });
 
     if (req.method === 'GET' && action === 'me') return currentUser(req, res);
     if (req.method === 'GET' && action === 'bootstrap-status') return bootstrapStatus(res);
