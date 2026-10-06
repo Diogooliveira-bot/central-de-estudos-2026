@@ -7,6 +7,7 @@ import {
   readJsonBody,
   requireSession,
   validatePassword,
+  sameOriginRequest,
 } from '../lib/auth.js';
 
 function send(res, status, body) {
@@ -25,6 +26,7 @@ function validEmail(email) {
 
 export default async function handler(req, res) {
   try {
+    if (req.method === 'POST' && !sameOriginRequest(req)) return send(res, 403, { error: 'Origem da requisição não permitida' });
     const session = await requireSession(req, ['admin']);
     if (!session.ok) return send(res, session.status, { error: session.error });
     const sql = session.sql;
@@ -92,7 +94,9 @@ export default async function handler(req, res) {
 
         const rows = await sql`
           UPDATE central_users
-          SET name=${name}, role=${role}, active=${active}, updated_at=NOW()
+          SET name=${name}, role=${role}, active=${active},
+              session_version=session_version + CASE WHEN role IS DISTINCT FROM ${role} OR active IS DISTINCT FROM ${active} THEN 1 ELSE 0 END,
+              updated_at=NOW()
           WHERE user_id=${userId}
           RETURNING user_id,name,email,role,active,created_at,updated_at,last_login
         `;
@@ -108,7 +112,8 @@ export default async function handler(req, res) {
 
         const rows = await sql`
           UPDATE central_users
-          SET password_hash=${hashPassword(password)}, failed_attempts=0, locked_until=NULL, updated_at=NOW()
+          SET password_hash=${hashPassword(password)}, failed_attempts=0, locked_until=NULL,
+              session_version=session_version+1, updated_at=NOW()
           WHERE user_id=${userId}
           RETURNING user_id
         `;
