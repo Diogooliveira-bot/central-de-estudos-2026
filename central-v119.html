@@ -65,7 +65,15 @@
   return html.replace(/<head\b[^>]*>/i,function(head){return head+config+tag('central-home-progress-data.js?v='+BUILD).replace(' defer','')+tag('central-discipline-loader.js?v='+BUILD).replace(' defer','')});
  }
  try{
+  var authResponse=await fetch('/api/auth?action=me',{cache:'no-store'});
+  var authState=authResponse.ok?await authResponse.json():null;
+  if(!authState||!authState.authenticated||!authState.user){location.replace('/login.html?next='+encodeURIComponent(entryUrl.pathname+entryUrl.search));return}
+  window.BASE_COMPLETA_USER=authState.user;
+  window.__BASE_COMPLETA_USER_ID__=String(authState.user.id||'');
+  window.__BASE_COMPLETA_USER_ROLE__=String(authState.user.role||'aluno');
   var response=await fetch('/index.html?central_source='+BUILD,{cache:'no-store'});if(!response.ok)throw new Error('Falha HTTP '+response.status);var html=await response.text();
+  var authBoot='<scr'+'ipt>window.BASE_COMPLETA_USER='+JSON.stringify(authState.user)+';window.__BASE_COMPLETA_USER_ID__='+JSON.stringify(String(authState.user.id||''))+';window.__BASE_COMPLETA_USER_ROLE__='+JSON.stringify(String(authState.user.role||'aluno'))+';</scr'+'ipt>';
+  html=html.replace(/<head\b[^>]*>/i,function(head){return head+authBoot});
   html=html.replace(/cpc-study-system-v1\.js\?v=[^"'<>]+/g,'cpc-study-system-v1.js?v=20261004cpcall2');html=html.replace('v6.6.75 • Plano de 6 meses','v6.6.120 • Plano de 6 meses');html=html.replace(/\/central-structural-v66119\/runtime\.js\?v=[^\"'<>]+/g,'/central-structural-v66119/runtime.js?v=20261004cfg07v2');html=html.replace('<span class="central-version-v41">v6.6.74</span>','<span class="central-version-v41">v6.6.120</span>');html=html.replace(/<link\b[^>]*\bhref=["'][^"']*base-completa-visual-v1\.css[^"']*["'][^>]*>/gi,'');
   html=html.replace(/<link\b[^>]*\bhref=["'][^"']*central-minimal(?:-theme)?-v\d+\.css[^"']*["'][^>]*>/gi,'');html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*central-minimal(?:-ui)?-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*(?:central-updater|central-version)-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*central-progress-entry-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*sync-client\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*civil-decorando-index-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*central-civil-progress-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*civil-theory(?:-company)?(?:-module\d+(?:-posse)?-(?:part\d+|runtime)|-module\d+|)-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*civil-theory-audit-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');
   html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*penal-full-theory-(?:data-\d+|ui-v1)\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');
