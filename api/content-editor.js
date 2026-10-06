@@ -1,18 +1,11 @@
 import { neon } from '@neondatabase/serverless';
-import { requireSession, safeSecretEqual } from '../lib/auth.js';
+import { requireSession, sameOriginRequest } from '../lib/auth.js';
 
 function send(res,status,body){
   res.statusCode=status;
   res.setHeader('Content-Type','application/json; charset=utf-8');
   res.setHeader('Cache-Control','no-store');
   res.end(JSON.stringify(body));
-}
-async function writerAuthorized(req){
-  const session=await requireSession(req,['admin','editor']);
-  if(session.ok)return session;
-  const expected=process.env.BACKUP_SECRET;
-  if(expected&&safeSecretEqual(req.headers['x-backup-key'],expected))return {ok:true,legacy:true};
-  return {ok:false,status:session.status||401,error:session.error||'Acesso de edição negado'};
 }
 function database(){
   if(!process.env.DATABASE_URL)throw new Error('DATABASE_URL não configurado no Vercel');
@@ -57,7 +50,8 @@ export default async function handler(req,res){
       const r=rows[0];
       return send(res,200,{exists:true,id:r.content_id,label:r.label||'',html:r.html,revision:Number(r.revision||1),updatedAt:r.updated_at});
     }
-    const auth=await writerAuthorized(req);
+    if(!sameOriginRequest(req))return send(res,403,{error:'Origem da requisição não permitida'});
+    const auth=await requireSession(req,['admin','editor']);
     if(!auth.ok)return send(res,auth.status,{error:auth.error});
     if(req.method==='POST'){
       const body=await readJsonBody(req);
