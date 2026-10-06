@@ -13,7 +13,7 @@
 label{display:block;font-size:12px;font-weight:800;margin:14px 0 6px}input{width:100%;border:1px solid var(--line);background:#fff;padding:12px 13px;border-radius:10px;outline:none;color:var(--ink)}input:focus{border-color:#9b8aaf;box-shadow:0 0 0 3px rgba(109,91,136,.11)}
 button{width:100%;margin-top:18px;border:0;border-radius:10px;padding:12px 14px;background:var(--accent);color:#fff;font-weight:800;cursor:pointer}button:hover{background:var(--accent2)}button:disabled{opacity:.55;cursor:wait}
 .msg{min-height:22px;margin-top:14px;font-size:12px;text-align:center;color:var(--muted)}.msg.err{color:var(--danger)}.msg.ok{color:var(--ok)}
-.setup{display:none}.setup.show{display:block}.login.hide{display:none}.note{margin-top:18px;padding:11px 12px;border-radius:10px;background:#f3eee7;color:var(--muted);font-size:11px}
+.setup{display:none}.setup.show{display:block}.login.hide{display:none}.note{margin-top:18px;padding:11px 12px;border-radius:10px;background:#f3eee7;color:var(--muted);font-size:11px}.remember{display:flex;align-items:center;gap:9px;margin-top:12px;color:var(--muted);font-size:12px;font-weight:700}.remember input{width:16px;height:16px;margin:0;accent-color:var(--accent)}
 </style>
 </head>
 <body>
@@ -28,6 +28,7 @@ button{width:100%;margin-top:18px;border:0;border-radius:10px;padding:12px 14px;
 <input id="email" type="email" autocomplete="username" required>
 <label for="password">Senha</label>
 <input id="password" type="password" autocomplete="current-password" required>
+<label class="remember" for="remember"><input id="remember" type="checkbox"> Manter conectado neste dispositivo</label>
 <button id="loginBtn" type="submit">Entrar</button>
 </form>
 
@@ -66,7 +67,7 @@ async function init(){
 loginForm.addEventListener('submit',async function(e){
  e.preventDefault();var btn=document.getElementById('loginBtn');btn.disabled=true;setMsg('Entrando...');
  try{
-  await jsonFetch('/api/auth?action=login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:document.getElementById('email').value,password:document.getElementById('password').value})});
+  await jsonFetch('/api/auth?action=login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:document.getElementById('email').value,password:document.getElementById('password').value,remember:document.getElementById('remember').checked})});
   setMsg('Acesso liberado.','ok');location.replace(nextUrl());
  }catch(err){setMsg(err.message,'err');btn.disabled=false}
 });

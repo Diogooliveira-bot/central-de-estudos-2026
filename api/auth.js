@@ -49,6 +49,7 @@ async function login(req, res) {
   const body = await readJsonBody(req);
   const email = normalizeEmail(body.email);
   const password = String(body.password || '');
+  const remember = body.remember === true;
   if (!email || !password) return send(res, 400, { error: 'Informe e-mail e senha' });
 
   const sql = database();
@@ -90,8 +91,9 @@ async function login(req, res) {
     WHERE user_id=${row.user_id}
   `;
   row.last_login = new Date().toISOString();
-  const token = createSessionToken(row);
-  return send(res, 200, { ok: true, user: publicUser(row) }, { 'Set-Cookie': sessionCookie(token) });
+  const ttl = remember ? 30 * 24 * 60 * 60 : undefined;
+  const token = createSessionToken(row, ttl);
+  return send(res, 200, { ok: true, user: publicUser(row), remembered: remember }, { 'Set-Cookie': sessionCookie(token, ttl) });
 }
 
 async function logout(res) {
