@@ -313,6 +313,45 @@ function ensureSpellPanel(overlay,state){
   });
   overlay.appendChild(panel);state.spellPanel=panel;return panel;
 }
+function applyAllSpellFixes(article,matches){
+  if(!matches||!matches.length)return 0;
+  clearSpellHighlights(article);
+  var data=plainTextMap(article),applied=0;
+  var fixes=matches.filter(function(m){return m&&m.replacements&&m.replacements[0]&&m.length>0})
+    .slice().sort(function(a,b){return b.offset-a.offset});
+  fixes.forEach(function(m){
+    var start=Number(m.offset)||0,end=start+(Number(m.length)||0),replacement=String(m.replacements[0].value||'');
+    for(var i=data.map.length-1;i>=0;i--){
+      var item=data.map[i];
+      if(start>=item.start&&end<=item.end){
+        var node=item.node;if(!node.isConnected)break;
+        var value=node.nodeValue||'';
+        var ls=start-item.start,le=end-item.start;
+        node.nodeValue=value.slice(0,ls)+replacement+value.slice(le);
+        applied++;break;
+      }
+    }
+  });
+  article.normalize();
+  return applied;
+}
+async function reviewAndFixAll(overlay,article,state,button){
+  clearSpellHighlights(article);
+  var data=plainTextMap(article),text=data.text.trim();
+  if(!text)return toast('Não há texto para revisar');
+  if(!confirm('Revisar todo o material e aplicar automaticamente todas as sugestões disponíveis? Revise o resultado antes de salvar.'))return;
+  button.disabled=true;var old=button.textContent;button.textContent='Ajustando…';
+  try{
+    var r=await fetch('/api/spellcheck',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({text:text,language:'pt-BR'})});
+    var j={};try{j=await r.json()}catch(_){}
+    if(!r.ok)throw new Error(j.error||'Falha na revisão ortográfica');
+    state.spellMatches=j.matches||[];
+    var applied=applyAllSpellFixes(article,state.spellMatches);
+    if(state.spellPanel){state.spellPanel.hidden=true}
+    toast(applied?applied+' correção(ões) aplicada(s). Revise antes de salvar.':'Nenhuma correção automática disponível');
+  }catch(err){toast(err.message||'Falha na revisão ortográfica')}
+  finally{button.disabled=false;button.textContent=old}
+}
 async function runSpellReview(overlay,article,state,button){
   clearSpellHighlights(article);
   var data=plainTextMap(article),text=data.text.trim();
@@ -345,6 +384,7 @@ function makeEditorBar(overlay,article,state){
     '<button type="button" data-ed="mark" title="Marca-texto">Destaque</button>'+
     '<button type="button" data-ed="spell" class="bc-editor-spell is-on" title="Ativar ou desativar corretor ortográfico">✓ Ortografia</button>'+
     '<button type="button" data-ed="spellreview" title="Mostrar erros de ortografia e gramática">Revisar ortografia</button>'+
+    '<button type="button" data-ed="spellfixall" title="Revisar e aplicar automaticamente todas as sugestões disponíveis">Revisar e ajustar tudo</button>'+
     '<button type="button" data-ed="ul" title="Lista com marcadores">• Lista</button>'+
     '<button type="button" data-ed="ol" title="Lista numerada">1. Lista</button>'+
     '<button type="button" data-ed="table" title="Inserir tabela">▦ Tabela</button>'+
@@ -386,6 +426,7 @@ function makeEditorBar(overlay,article,state){
       article.focus({preventScroll:true});
     }
     else if(a==='spellreview')runSpellReview(overlay,article,state,b);
+    else if(a==='spellfixall')reviewAndFixAll(overlay,article,state,b);
     else if(a==='ul')exec(article,'insertUnorderedList');
     else if(a==='ol')exec(article,'insertOrderedList');
     else if(a==='table'){
