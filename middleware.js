@@ -58,7 +58,7 @@ async function verifyToken(token) {
     const actual = fromBase64Url(sig);
     if (!safeEqualBytes(expected, actual)) return null;
     const payload = decodePayload(part);
-    if (!payload || payload.v !== 1 || !payload.uid || !['admin','editor','aluno'].includes(payload.role)) return null;
+    if (!payload || payload.v !== 1 || !payload.uid || !['admin','editor','aluno'].includes(payload.role) || !Number.isFinite(Number(payload.sv))) return null;
     if (!Number.isFinite(payload.exp) || payload.exp <= Math.floor(Date.now() / 1000)) return null;
     return payload;
   } catch (_) {
