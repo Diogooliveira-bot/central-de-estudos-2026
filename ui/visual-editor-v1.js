@@ -125,7 +125,19 @@ function exec(article,cmd,value){
   try{document.execCommand(cmd,false,value==null?null:value)}catch(_){}
 }
 function setBlockTag(article,tag){
-  exec(article,'formatBlock','<'+tag+'>');
+  var block=blockFromSelection(article);
+  if(!block)return;
+  var allowed=/^(P|H1|H2|H3|H4|BLOCKQUOTE)$/;
+  while(block&&block!==article&&!allowed.test(block.tagName||''))block=block.parentElement;
+  if(!block||block===article)return;
+  if(block.tagName.toLowerCase()===tag)return;
+  var repl=document.createElement(tag);
+  Array.from(block.attributes).forEach(function(a){
+    if(a.name!=='class'&&a.name!=='style')repl.setAttribute(a.name,a.value);
+  });
+  repl.innerHTML=block.innerHTML;
+  block.replaceWith(repl);
+  setCaret(repl);
 }
 function headingEnterToParagraph(article,e){
   if(e.key!=='Enter'||e.shiftKey)return;
@@ -303,6 +315,19 @@ function setCaret(node){
   range.selectNodeContents(node);range.collapse(true);
   sel.removeAllRanges();sel.addRange(range);
 }
+function saveEditorSelection(article,state){
+  var sel=getSelection();
+  if(!sel||!sel.rangeCount)return;
+  var range=sel.getRangeAt(0);
+  if(article.contains(range.commonAncestorContainer))state.lastRange=range.cloneRange();
+}
+function restoreEditorSelection(article,state){
+  if(!state.lastRange)return false;
+  var container=state.lastRange.commonAncestorContainer;
+  if(container!==article&&!article.contains(container))return false;
+  var sel=getSelection();
+  try{sel.removeAllRanges();sel.addRange(state.lastRange.cloneRange());return true}catch(_){return false}
+}
 function clearSpellHighlights(article){
   article.querySelectorAll('[data-bc-spell-error]').forEach(function(n){
     n.replaceWith(document.createTextNode(n.textContent||''));
@@ -454,10 +479,13 @@ function makeEditorBar(overlay,article,state){
     '<button type="button" data-ed="redo" title="Refazer">↷</button>'+
     '<button type="button" class="bc-editor-cancel" data-ed="cancel">Cancelar</button>'+
     '<button type="button" class="bc-editor-save" data-ed="save">Salvar</button>';
-  bar.addEventListener('mousedown',function(e){
+  bar.addEventListener('pointerdown',function(e){
+    saveEditorSelection(article,state);
     if(e.target.closest('button[data-ed]'))e.preventDefault();
   });
+  bar.addEventListener('touchstart',function(){saveEditorSelection(article,state)},{passive:true});
   bar.addEventListener('change',function(e){
+    restoreEditorSelection(article,state);
     if(e.target.matches('[data-ed="block"]')&&e.target.value){setBlockTag(article,e.target.value);e.target.value=''}
     if(e.target.matches('[data-ed="color"]')&&e.target.value){exec(article,'foreColor',e.target.value);e.target.value=''}
     if(e.target.matches('[data-ed="callout"]')&&e.target.value){applyCallout(article,e.target.value);e.target.value=''}
@@ -473,6 +501,7 @@ function makeEditorBar(overlay,article,state){
   });
   bar.addEventListener('click',function(e){
     var b=e.target.closest('[data-ed]');if(!b)return;
+    restoreEditorSelection(article,state);
     var a=b.dataset.ed;
     if(a==='bold')exec(article,'bold');
     else if(a==='italic')exec(article,'italic');
@@ -516,6 +545,8 @@ function enterEdit(overlay,article,state){
   article.querySelectorAll(PROTECTED).forEach(function(n){n.setAttribute('contenteditable','false')});
   state.keyHandler=function(e){headingEnterToParagraph(article,e)};
   article.addEventListener('keydown',state.keyHandler);
+  state.selectionHandler=function(){saveEditorSelection(article,state)};
+  document.addEventListener('selectionchange',state.selectionHandler);
   state.imageClickHandler=function(e){
     var figure=e.target.closest&&e.target.closest('.bc-editor-image');
     if(!figure)return;
@@ -534,6 +565,8 @@ function exitEdit(overlay,article,state){
   article.removeAttribute('contenteditable');article.removeAttribute('spellcheck');article.removeAttribute('autocapitalize');article.removeAttribute('autocorrect');article.classList.remove('bc-editor-active');
   article.querySelectorAll(PROTECTED).forEach(function(n){n.removeAttribute('contenteditable')});
   if(state.keyHandler){article.removeEventListener('keydown',state.keyHandler);state.keyHandler=null}
+  if(state.selectionHandler){document.removeEventListener('selectionchange',state.selectionHandler);state.selectionHandler=null}
+  state.lastRange=null;
   if(state.imageClickHandler){article.removeEventListener('click',state.imageClickHandler);state.imageClickHandler=null}
   clearImageSelection(article);
   clearSpellHighlights(article);
@@ -562,7 +595,7 @@ function mount(overlay){
   if(mounted.has(overlay))return;
   var article=articleFor(overlay),tools=toolsFor(overlay);if(!article||!tools)return;
   mounted.add(overlay);
-  var state={editing:false,sourceSnapshot:capture(article),beforeEdit:'',bar:null,button:null,reset:null,cloudRevision:0,keyHandler:null,imageClickHandler:null,spellPanel:null,spellMatches:[]};
+  var state={editing:false,sourceSnapshot:capture(article),beforeEdit:'',bar:null,button:null,reset:null,cloudRevision:0,keyHandler:null,selectionHandler:null,lastRange:null,imageClickHandler:null,spellPanel:null,spellMatches:[]};
   var saved=getSaved(overlay);if(saved)applySnapshot(article,saved);
   cloudGet(overlay).then(function(remote){
     if(!remote||state.editing)return;
