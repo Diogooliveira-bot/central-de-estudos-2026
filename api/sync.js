@@ -1,32 +1,10 @@
-import crypto from 'node:crypto';
-import { neon } from '@neondatabase/serverless';
+import { requireSession, readJsonBody, sameOriginRequest } from '../lib/auth.js';
 
 function send(res, status, body) {
   res.statusCode = status;
   res.setHeader('Content-Type', 'application/json; charset=utf-8');
   res.setHeader('Cache-Control', 'no-store');
   res.end(JSON.stringify(body));
-}
-
-function safeEqual(a, b) {
-  const aa = Buffer.from(String(a || ''));
-  const bb = Buffer.from(String(b || ''));
-  if (!aa.length || aa.length !== bb.length) return false;
-  return crypto.timingSafeEqual(aa, bb);
-}
-
-function authorized(req) {
-  const expected = process.env.BACKUP_SECRET;
-  if (!expected) return { ok: false, status: 503, error: 'BACKUP_SECRET não configurado no Vercel' };
-  if (!safeEqual(req.headers['x-backup-key'], expected)) {
-    return { ok: false, status: 401, error: 'Chave de sincronização inválida' };
-  }
-  return { ok: true };
-}
-
-function database() {
-  if (!process.env.DATABASE_URL) throw new Error('DATABASE_URL não configurado no Vercel');
-  return neon(process.env.DATABASE_URL);
 }
 
 function isPortugueseDataKey(key) {
@@ -41,8 +19,8 @@ function sanitizePayload(payload) {
 
 async function ensureTable(sql) {
   await sql`
-    CREATE TABLE IF NOT EXISTS central_sync_state (
-      id SMALLINT PRIMARY KEY DEFAULT 1 CHECK (id = 1),
+    CREATE TABLE IF NOT EXISTS central_user_sync_state (
+      user_id TEXT PRIMARY KEY REFERENCES central_users(user_id) ON DELETE CASCADE,
       revision BIGINT NOT NULL DEFAULT 0,
       updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
       device_id TEXT,
@@ -51,15 +29,6 @@ async function ensureTable(sql) {
       payload_bytes INTEGER NOT NULL DEFAULT 0
     )
   `;
-}
-
-async function readJsonBody(req) {
-  if (req.body && typeof req.body === 'object') return req.body;
-  if (typeof req.body === 'string') return JSON.parse(req.body || '{}');
-  const chunks = [];
-  for await (const chunk of req) chunks.push(chunk);
-  const raw = Buffer.concat(chunks).toString('utf8');
-  return raw ? JSON.parse(raw) : {};
 }
 
 function rowToState(row, includePayload = true) {
@@ -77,19 +46,23 @@ function rowToState(row, includePayload = true) {
 }
 
 export default async function handler(req, res) {
-  const auth = authorized(req);
-  if (!auth.ok) return send(res, auth.status, { error: auth.error });
+  if (req.method !== 'GET' && !sameOriginRequest(req)) return send(res, 403, { error: 'Origem da requisição não permitida' });
+  const session = await requireSession(req, ['admin','editor','aluno']);
+  if (!session.ok) return send(res, session.status, { error: session.error });
 
   try {
-    const sql = database();
+    const sql = session.sql;
+    const userId = session.user.id;
     await ensureTable(sql);
 
     if (req.method === 'GET') {
       const rows = await sql`
-        SELECT revision, updated_at, device_id, content_hash, payload, payload_bytes
-        FROM central_sync_state WHERE id = 1 LIMIT 1
+        SELECT revision,updated_at,device_id,content_hash,payload,payload_bytes
+        FROM central_user_sync_state
+        WHERE user_id=${userId}
+        LIMIT 1
       `;
-      return send(res, 200, rowToState(rows[0]));
+      return send(res, 200, { ...rowToState(rows[0]), userId });
     }
 
     if (req.method === 'POST') {
@@ -101,40 +74,48 @@ export default async function handler(req, res) {
       const raw = JSON.stringify(cleanPayload);
       const bytes = Buffer.byteLength(raw, 'utf8');
       if (bytes > 4_000_000) {
-        return send(res, 413, { error: 'Dados acima de 4 MB; faça um backup por arquivo antes de continuar' });
+        return send(res, 413, { error: 'Dados acima de 4 MB; reduza anexos locais antes de sincronizar' });
       }
+
       const baseRevision = Math.max(0, Math.trunc(Number(body.baseRevision || 0)));
       const deviceId = String(body.deviceId || '').slice(0, 120);
       const contentHash = String(body.hash || '').slice(0, 120);
       const rows = await sql`
-        INSERT INTO central_sync_state
-          (id, revision, updated_at, device_id, content_hash, payload, payload_bytes)
+        INSERT INTO central_user_sync_state
+          (user_id,revision,updated_at,device_id,content_hash,payload,payload_bytes)
         VALUES
-          (1, 1, NOW(), ${deviceId}, ${contentHash}, ${raw}::jsonb, ${bytes})
-        ON CONFLICT (id) DO UPDATE SET
-          revision = central_sync_state.revision + 1,
-          updated_at = NOW(),
-          device_id = EXCLUDED.device_id,
-          content_hash = EXCLUDED.content_hash,
-          payload = EXCLUDED.payload,
-          payload_bytes = EXCLUDED.payload_bytes
-        WHERE central_sync_state.revision = ${baseRevision}
-        RETURNING revision, updated_at, device_id, content_hash, payload_bytes
+          (${userId},1,NOW(),${deviceId},${contentHash},${raw}::jsonb,${bytes})
+        ON CONFLICT (user_id) DO UPDATE SET
+          revision=central_user_sync_state.revision+1,
+          updated_at=NOW(),
+          device_id=EXCLUDED.device_id,
+          content_hash=EXCLUDED.content_hash,
+          payload=EXCLUDED.payload,
+          payload_bytes=EXCLUDED.payload_bytes
+        WHERE central_user_sync_state.revision=${baseRevision}
+        RETURNING revision,updated_at,device_id,content_hash,payload_bytes
       `;
+
       if (!rows.length) {
         const current = await sql`
-          SELECT revision, updated_at, device_id, content_hash, payload_bytes
-          FROM central_sync_state WHERE id = 1 LIMIT 1
+          SELECT revision,updated_at,device_id,content_hash,payload_bytes
+          FROM central_user_sync_state
+          WHERE user_id=${userId}
+          LIMIT 1
         `;
-        return send(res, 409, { error: 'Existe uma alteração mais recente na nuvem', current: rowToState(current[0], false) });
+        return send(res, 409, {
+          error: 'Existe uma alteração mais recente na nuvem',
+          current: rowToState(current[0], false)
+        });
       }
-      return send(res, 200, rowToState(rows[0], false));
+
+      return send(res, 200, { ...rowToState(rows[0], false), userId });
     }
 
     res.setHeader('Allow', 'GET, POST');
     return send(res, 405, { error: 'Método não permitido' });
   } catch (error) {
-    console.error('central sync error', error);
-    return send(res, 500, { error: error?.message || 'Falha interna na sincronização' });
+    console.error('central user sync error', error);
+    return send(res, 500, { error: error?.message || 'Falha interna na sincronização do usuário' });
   }
 }
