@@ -78,6 +78,7 @@ function capture(article){
   clone.classList.remove('bc-editor-active');
   clone.querySelectorAll('[contenteditable]').forEach(function(n){n.removeAttribute('contenteditable')});
   clone.querySelectorAll('[data-bc-spell-error]').forEach(function(n){n.replaceWith(document.createTextNode(n.textContent||''))});
+  clone.querySelectorAll('.bc-editor-image.is-selected').forEach(function(n){n.classList.remove('is-selected')});
   sanitize(clone);
   return clone.innerHTML;
 }
@@ -179,6 +180,128 @@ function selectedTable(article){
   var n=selectionElement(article);
   return n?n.closest('table'):null;
 }
+function topLevelBlock(article,node){
+  if(!node)return null;
+  if(node.nodeType===3)node=node.parentElement;
+  if(!node||!article.contains(node))return null;
+  while(node.parentElement&&node.parentElement!==article)node=node.parentElement;
+  return node;
+}
+function insertBlockAtSelection(article,node,focusTarget){
+  var sel=getSelection(),range=sel&&sel.rangeCount?sel.getRangeAt(0):null;
+  var current=range?topLevelBlock(article,range.commonAncestorContainer):null;
+  if(current)current.insertAdjacentElement('afterend',node);
+  else article.appendChild(node);
+  var p=document.createElement('p');p.appendChild(document.createElement('br'));
+  node.insertAdjacentElement('afterend',p);
+  if(focusTarget)setCaret(focusTarget);
+  else setCaret(p);
+}
+function createEditableText(tag,text){
+  var el=document.createElement(tag);el.textContent=text;return el;
+}
+function insertComparison(article){
+  var wrap=document.createElement('section');wrap.className='bc-editor-compare';
+  for(var i=0;i<2;i++){
+    var card=document.createElement('div');card.className='bc-editor-compare-card';
+    card.appendChild(createEditableText('h4',i===0?'Conceito A':'Conceito B'));
+    var p1=document.createElement('p');p1.innerHTML='<strong>Pergunta-chave:</strong> escreva a pergunta que diferencia este conceito.';
+    var p2=document.createElement('p');p2.innerHTML='<strong>Ideia:</strong> escreva a regra essencial para revisão.';
+    card.appendChild(p1);card.appendChild(p2);wrap.appendChild(card);
+  }
+  insertBlockAtSelection(article,wrap,wrap.querySelector('h4'));
+}
+function insertCards(article,count){
+  count=Math.max(2,Math.min(4,Number(count)||3));
+  var wrap=document.createElement('section');wrap.className='bc-editor-cards';wrap.setAttribute('data-card-count',String(count));
+  for(var i=0;i<count;i++){
+    var card=document.createElement('div');card.className='bc-editor-card';
+    card.appendChild(createEditableText('h4','Título'));
+    card.appendChild(createEditableText('p','Escreva o conteúdo deste card.'));
+    wrap.appendChild(card);
+  }
+  insertBlockAtSelection(article,wrap,wrap.querySelector('h4'));
+}
+function insertReviewBox(article){
+  var box=document.createElement('section');box.className='bc-editor-review-box';
+  box.appendChild(createEditableText('h4','Resumo de revisão'));
+  box.appendChild(createEditableText('p','Escreva aqui o ponto essencial que o aluno precisa recuperar na revisão.'));
+  insertBlockAtSelection(article,box,box.querySelector('h4'));
+}
+function fitImageToDataUrl(file){
+  return new Promise(function(resolve,reject){
+    if(!file||!/^image\//i.test(file.type||''))return reject(new Error('Selecione uma imagem válida'));
+    if(file.size>15*1024*1024)return reject(new Error('Imagem muito grande. Use um arquivo de até 15 MB'));
+    var reader=new FileReader();
+    reader.onerror=function(){reject(new Error('Não foi possível ler a imagem'))};
+    reader.onload=function(){
+      var img=new Image();
+      img.onerror=function(){reject(new Error('Formato de imagem não suportado'))};
+      img.onload=function(){
+        var max=1400,scale=Math.min(1,max/Math.max(img.naturalWidth,img.naturalHeight));
+        var w=Math.max(1,Math.round(img.naturalWidth*scale)),h=Math.max(1,Math.round(img.naturalHeight*scale));
+        var canvas=document.createElement('canvas');canvas.width=w;canvas.height=h;
+        var ctx=canvas.getContext('2d');ctx.drawImage(img,0,0,w,h);
+        var url=canvas.toDataURL('image/webp',0.72);
+        if(url.length>850000){
+          var scale2=Math.min(1,1000/Math.max(w,h));
+          var c2=document.createElement('canvas');c2.width=Math.max(1,Math.round(w*scale2));c2.height=Math.max(1,Math.round(h*scale2));
+          c2.getContext('2d').drawImage(canvas,0,0,c2.width,c2.height);
+          url=c2.toDataURL('image/webp',0.58);
+        }
+        if(url.length>1100000)return reject(new Error('A imagem ainda ficou grande após compactação. Escolha uma imagem menor.'));
+        resolve(url);
+      };
+      img.src=reader.result;
+    };
+    reader.readAsDataURL(file);
+  });
+}
+function chooseImage(callback){
+  var input=document.createElement('input');input.type='file';input.accept='image/*';input.hidden=true;
+  document.body.appendChild(input);
+  input.addEventListener('change',function(){
+    var file=input.files&&input.files[0];if(!file){input.remove();return}
+    fitImageToDataUrl(file).then(callback).catch(function(err){toast(err.message||'Falha ao inserir imagem')}).finally(function(){input.remove()});
+  },{once:true});
+  input.click();
+}
+function makeImageFigure(dataUrl){
+  var figure=document.createElement('figure');figure.className='bc-editor-image bc-editor-image-full';
+  var img=document.createElement('img');img.src=dataUrl;img.alt='';img.setAttribute('contenteditable','false');
+  var cap=document.createElement('figcaption');cap.textContent='Legenda opcional';
+  figure.appendChild(img);figure.appendChild(cap);return figure;
+}
+function insertImage(article){
+  chooseImage(function(dataUrl){
+    var figure=makeImageFigure(dataUrl);
+    insertBlockAtSelection(article,figure,figure.querySelector('figcaption'));
+    toast('Imagem inserida. Edite a legenda e salve o material.');
+  });
+}
+function selectedFigure(article){
+  var n=selectionElement(article),figure=n&&n.closest('.bc-editor-image');
+  return figure||article.querySelector('.bc-editor-image.is-selected');
+}
+function clearImageSelection(article){
+  article.querySelectorAll('.bc-editor-image.is-selected').forEach(function(n){n.classList.remove('is-selected')});
+}
+function imageAction(article,action){
+  var figure=selectedFigure(article);if(!figure)return toast('Toque primeiro na imagem que deseja editar');
+  if(action==='small'||action==='medium'||action==='full'){
+    figure.classList.remove('bc-editor-image-small','bc-editor-image-medium','bc-editor-image-full');
+    figure.classList.add('bc-editor-image-'+action);return;
+  }
+  if(action==='caption'){
+    var cap=figure.querySelector('figcaption');if(cap){setCaret(cap);toast('Edite a legenda abaixo da imagem')}return;
+  }
+  if(action==='replace'){
+    chooseImage(function(url){var img=figure.querySelector('img');if(img)img.src=url;toast('Imagem substituída')});return;
+  }
+  if(action==='delete'){
+    if(confirm('Excluir esta imagem do material?'))figure.remove();
+  }
+}
 function setCaret(node){
   var sel=getSelection(),range=document.createRange();
   range.selectNodeContents(node);range.collapse(true);
@@ -200,14 +323,7 @@ function insertTable(article,rows,cols){
     tbody.appendChild(tr);
   }
   table.appendChild(tbody);wrap.appendChild(table);
-  var sel=getSelection(),range=sel&&sel.rangeCount?sel.getRangeAt(0):null;
-  if(!range||!article.contains(range.commonAncestorContainer)){article.appendChild(wrap)}
-  else{
-    range.deleteContents();range.insertNode(wrap);
-    var p=document.createElement('p');p.appendChild(document.createElement('br'));
-    wrap.insertAdjacentElement('afterend',p);
-  }
-  setCaret(table.querySelector('th,td'));
+  insertBlockAtSelection(article,wrap,table.querySelector('th,td'));
 }
 function addTableRow(article){
   var table=selectedTable(article);if(!table)return toast('Toque em uma célula da tabela primeiro');
@@ -387,7 +503,8 @@ function makeEditorBar(overlay,article,state){
     '<button type="button" data-ed="spellfixall" title="Revisar e aplicar automaticamente todas as sugestões disponíveis">Revisar e ajustar tudo</button>'+
     '<button type="button" data-ed="ul" title="Lista com marcadores">• Lista</button>'+
     '<button type="button" data-ed="ol" title="Lista numerada">1. Lista</button>'+
-    '<button type="button" data-ed="table" title="Inserir tabela">▦ Tabela</button>'+
+    '<select data-ed="insert" aria-label="Inserir bloco"><option value="">+ Inserir ▾</option><option value="table">Tabela simples</option><option value="compare">Quadro comparativo</option><option value="cards">Cards</option><option value="image">Imagem</option><option value="review">Caixa de revisão</option></select>'+
+    '<select data-ed="imageaction" aria-label="Editar imagem"><option value="">Imagem ▾</option><option value="small">Pequena</option><option value="medium">Média</option><option value="full">Largura total</option><option value="caption">Editar legenda</option><option value="replace">Substituir</option><option value="delete">Excluir</option></select>'+
     '<button type="button" data-ed="rowplus" title="Adicionar linha à tabela">Linha +</button>'+
     '<button type="button" data-ed="rowminus" title="Remover linha da tabela">Linha −</button>'+
     '<button type="button" data-ed="colplus" title="Adicionar coluna à tabela">Coluna +</button>'+
@@ -408,6 +525,19 @@ function makeEditorBar(overlay,article,state){
     if(e.target.matches('[data-ed="block"]')&&e.target.value){setBlockTag(article,e.target.value);e.target.value=''}
     if(e.target.matches('[data-ed="color"]')&&e.target.value){exec(article,'foreColor',e.target.value);e.target.value=''}
     if(e.target.matches('[data-ed="callout"]')&&e.target.value){applyCallout(article,e.target.value);e.target.value=''}
+    if(e.target.matches('[data-ed="insert"]')&&e.target.value){
+      var v=e.target.value;e.target.value='';
+      if(v==='table'){
+        var rows=prompt('Quantas linhas?', '5');if(rows===null)return;
+        var cols=prompt('Quantas colunas?', '3');if(cols===null)return;
+        insertTable(article,rows,cols);
+      }else if(v==='compare')insertComparison(article);
+      else if(v==='cards'){
+        var count=prompt('Quantos cards? (2 a 4)','3');if(count!==null)insertCards(article,count);
+      }else if(v==='image')insertImage(article);
+      else if(v==='review')insertReviewBox(article);
+    }
+    if(e.target.matches('[data-ed="imageaction"]')&&e.target.value){var action=e.target.value;e.target.value='';imageAction(article,action)}
   });
   bar.addEventListener('click',function(e){
     var b=e.target.closest('[data-ed]');if(!b)return;
@@ -420,11 +550,6 @@ function makeEditorBar(overlay,article,state){
     else if(a==='spellfixall')reviewAndFixAll(overlay,article,state,b);
     else if(a==='ul')exec(article,'insertUnorderedList');
     else if(a==='ol')exec(article,'insertOrderedList');
-    else if(a==='table'){
-      var rows=prompt('Quantas linhas?', '5');if(rows===null)return;
-      var cols=prompt('Quantas colunas?', '3');if(cols===null)return;
-      insertTable(article,rows,cols);
-    }
     else if(a==='rowplus')addTableRow(article);
     else if(a==='rowminus')removeTableRow(article);
     else if(a==='colplus')addTableColumn(article);
@@ -464,6 +589,12 @@ function enterEdit(overlay,article,state){
   article.querySelectorAll(PROTECTED).forEach(function(n){n.setAttribute('contenteditable','false')});
   state.keyHandler=function(e){headingEnterToParagraph(article,e)};
   article.addEventListener('keydown',state.keyHandler);
+  state.imageClickHandler=function(e){
+    var figure=e.target.closest&&e.target.closest('.bc-editor-image');
+    if(!figure)return;
+    clearImageSelection(article);figure.classList.add('is-selected');
+  };
+  article.addEventListener('click',state.imageClickHandler);
   var tools=toolsFor(overlay);
   var bar=makeEditorBar(overlay,article,state);
   state.bar=bar;
@@ -476,6 +607,8 @@ function exitEdit(overlay,article,state){
   article.removeAttribute('contenteditable');article.removeAttribute('spellcheck');article.removeAttribute('autocapitalize');article.removeAttribute('autocorrect');article.classList.remove('bc-editor-active');
   article.querySelectorAll(PROTECTED).forEach(function(n){n.removeAttribute('contenteditable')});
   if(state.keyHandler){article.removeEventListener('keydown',state.keyHandler);state.keyHandler=null}
+  if(state.imageClickHandler){article.removeEventListener('click',state.imageClickHandler);state.imageClickHandler=null}
+  clearImageSelection(article);
   clearSpellHighlights(article);
   if(state.spellPanel){state.spellPanel.remove();state.spellPanel=null;state.spellMatches=[]}
   if(state.bar){state.bar.remove();state.bar=null}
@@ -502,7 +635,7 @@ function mount(overlay){
   if(mounted.has(overlay))return;
   var article=articleFor(overlay),tools=toolsFor(overlay);if(!article||!tools)return;
   mounted.add(overlay);
-  var state={editing:false,sourceSnapshot:capture(article),beforeEdit:'',bar:null,button:null,reset:null,cloudRevision:0,keyHandler:null,spellPanel:null,spellMatches:[]};
+  var state={editing:false,sourceSnapshot:capture(article),beforeEdit:'',bar:null,button:null,reset:null,cloudRevision:0,keyHandler:null,imageClickHandler:null,spellPanel:null,spellMatches:[]};
   var saved=getSaved(overlay);if(saved)applySnapshot(article,saved);
   cloudGet(overlay).then(function(remote){
     if(!remote||state.editing)return;
