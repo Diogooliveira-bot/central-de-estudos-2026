@@ -7,23 +7,24 @@
 <title>Administração — Base Completa</title>
 <style>
 :root{--bg:#f3efe7;--panel:#fffdf9;--ink:#312d29;--muted:#756d66;--line:#d9d1c7;--purple:#6d5b88;--green:#2d7655;--red:#a14747;--amber:#a56b18}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:500 14px/1.45 system-ui,-apple-system,"Segoe UI",sans-serif}.shell{max-width:1180px;margin:auto;padding:28px 20px 64px}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:500 14px/1.45 system-ui,-apple-system,"Segoe UI",sans-serif}.shell{max-width:1200px;margin:auto;padding:28px 20px 64px}
 .top{display:flex;gap:14px;align-items:center;justify-content:space-between;margin-bottom:20px}.top h1{margin:0;font:600 30px/1.15 Georgia,serif}.top p{margin:5px 0 0;color:var(--muted)}.actions{display:flex;gap:8px;flex-wrap:wrap}
-button,.btn{border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:9px;padding:9px 12px;font-weight:750;cursor:pointer;text-decoration:none}.primary{background:var(--purple);border-color:var(--purple);color:#fff}.danger{color:var(--red)}
+button,.btn{border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:9px;padding:9px 12px;font-weight:750;cursor:pointer;text-decoration:none}.primary{background:var(--purple);border-color:var(--purple);color:#fff}
 .metrics{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin-bottom:18px}.metric{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px}.metric small{display:block;color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.06em}.metric b{display:block;font-size:24px;margin-top:3px}.metric span{display:block;color:var(--muted);font-size:10px;margin-top:3px}
 .grid{display:grid;grid-template-columns:340px minmax(0,1fr);gap:18px}.panel{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:0 12px 30px rgba(69,56,45,.05)}h2{font-size:15px;margin:0 0 14px}
 label{display:block;font-size:11px;font-weight:800;margin:12px 0 5px;color:#5f5751}input,select{width:100%;border:1px solid var(--line);border-radius:9px;padding:10px;background:#fff;color:var(--ink)}.hint{font-size:11px;color:var(--muted);margin-top:8px}.status{min-height:20px;margin-top:10px;font-size:12px;color:var(--muted)}.status.err{color:var(--red)}.status.ok{color:var(--green)}
-.toolbar{display:flex;gap:8px;align-items:center;margin-bottom:12px}.toolbar input{margin:0}.toolbar select{max-width:150px}
+.toolbar{display:flex;gap:8px;align-items:center;margin-bottom:12px}.toolbar input{margin:0}.toolbar select{max-width:160px}
 .list{display:grid;gap:10px}.user{border:1px solid var(--line);border-radius:12px;padding:13px;background:#fff}.user.inactive{opacity:.64}.user-head{display:grid;grid-template-columns:minmax(0,1fr) 130px 96px auto;gap:10px;align-items:center}.who b{display:block}.who small{display:block;color:var(--muted);margin-top:2px}.meta{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}.pill{display:inline-block;padding:3px 7px;border-radius:999px;background:#eee8f2;color:#5f4d75;font-size:10px;font-weight:800}.pill.ok{background:#e8f3ed;color:var(--green)}.pill.warn{background:#f6ead9;color:var(--amber)}.row-actions{display:flex;gap:6px;justify-content:flex-end;flex-wrap:wrap}.row-actions button{padding:7px 9px;font-size:11px}
-.activity{margin-top:10px;padding-top:10px;border-top:1px solid #eee7de;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.activity div{background:#faf7f2;border:1px solid #eee7de;border-radius:9px;padding:9px}.activity small{display:block;color:var(--muted);font-size:9px;text-transform:uppercase}.activity b{display:block;margin-top:2px;font-size:12px}
+.activity{margin-top:10px;padding-top:10px;border-top:1px solid #eee7de;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.activity div{background:#faf7f2;border:1px solid #eee7de;border-radius:9px;padding:9px}.activity small{display:block;color:var(--muted);font-size:9px;text-transform:uppercase}.activity b{display:block;margin-top:2px;font-size:12px}
+.progress-box{margin-top:10px;border-top:1px solid #eee7de;padding-top:10px}.progress-toggle{width:100%;display:flex;justify-content:space-between;align-items:center;background:#faf7f2;border:1px solid #eee7de}.progress-detail{display:none;padding:10px 2px 0}.progress-detail.open{display:block}.overall{display:grid;grid-template-columns:120px 1fr;gap:10px;align-items:center;margin-bottom:10px}.overall strong{font-size:24px;color:var(--purple)}.bar{height:8px;background:#eae4dc;border-radius:999px;overflow:hidden}.bar i{display:block;height:100%;background:var(--purple);border-radius:999px}.disciplines{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.discipline{border:1px solid #eee7de;border-radius:9px;padding:8px;background:#fff}.discipline-head{display:flex;justify-content:space-between;gap:8px;font-size:11px;margin-bottom:5px}.discipline-head span{color:var(--muted)}
 .empty{padding:28px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:12px}
-@media(max-width:900px){.metrics{grid-template-columns:repeat(2,1fr)}.grid{grid-template-columns:1fr}.user-head{grid-template-columns:1fr 1fr}.row-actions{grid-column:1/-1;justify-content:flex-start}.activity{grid-template-columns:1fr}.top{align-items:flex-start;flex-direction:column}}
+@media(max-width:900px){.metrics{grid-template-columns:repeat(2,1fr)}.grid{grid-template-columns:1fr}.user-head{grid-template-columns:1fr 1fr}.row-actions{grid-column:1/-1;justify-content:flex-start}.activity{grid-template-columns:1fr 1fr}.disciplines{grid-template-columns:1fr}.top{align-items:flex-start;flex-direction:column}}
 </style>
 </head>
 <body>
 <div class="shell">
 <header class="top">
-<div><h1>Administração de usuários</h1><p>Controle quem entra na Base Completa e acompanhe a atividade das contas.</p></div>
+<div><h1>Administração de usuários</h1><p>Controle os acessos e acompanhe o progresso dos usuários da Base Completa.</p></div>
 <div class="actions"><a class="btn" href="/">← Voltar à Central</a><button id="refresh">Atualizar</button><button id="logout">Sair</button></div>
 </header>
 
@@ -32,7 +33,7 @@ label{display:block;font-size:11px;font-weight:800;margin:12px 0 5px;color:#5f57
 <div class="metric"><small>Ativos</small><b>—</b><span>com acesso liberado</span></div>
 <div class="metric"><small>Alunos</small><b>—</b><span>perfil de estudo</span></div>
 <div class="metric"><small>Editores</small><b>—</b><span>podem editar conteúdo</span></div>
-<div class="metric"><small>Sincronizados</small><b>—</b><span>já possuem dados na nuvem</span></div>
+<div class="metric"><small>Com atividade</small><b>—</b><span>já enviaram progresso</span></div>
 </section>
 
 <div class="grid">
@@ -42,14 +43,10 @@ label{display:block;font-size:11px;font-weight:800;margin:12px 0 5px;color:#5f57
 <label for="name">Nome</label><input id="name" required>
 <label for="email">E-mail</label><input id="email" type="email" required>
 <label for="role">Perfil</label>
-<select id="role">
-<option value="aluno">Aluno</option>
-<option value="editor">Editor</option>
-<option value="admin">Administrador</option>
-</select>
+<select id="role"><option value="aluno">Aluno</option><option value="editor">Editor</option><option value="admin">Administrador</option></select>
 <label for="password">Senha inicial</label><input id="password" type="password" minlength="8" required>
 <button class="primary" type="submit" style="width:100%;margin-top:15px">Criar usuário</button>
-<div class="hint">A conta já nasce fechada para uso exclusivo do e-mail cadastrado. Somente administradores podem criar novos acessos.</div>
+<div class="hint">Cadastro fechado: somente administradores podem criar novos acessos.</div>
 <div id="formStatus" class="status"></div>
 </form>
 </section>
@@ -72,48 +69,46 @@ var host=document.getElementById('users'),formStatus=document.getElementById('fo
 function esc(s){return String(s||'').replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
 function status(el,text,type){el.textContent=text||'';el.className='status'+(type?' '+type:'')}
 function dt(value){if(!value)return 'Nunca';try{return new Intl.DateTimeFormat('pt-BR',{dateStyle:'short',timeStyle:'short'}).format(new Date(value))}catch(_){return '—'}}
+function duration(seconds){seconds=Math.max(0,Number(seconds)||0);var h=Math.floor(seconds/3600),m=Math.floor((seconds%3600)/60);if(h)return h+'h '+String(m).padStart(2,'0')+'min';return m+' min'}
 function bytes(n){n=Number(n||0);if(n<1024)return n+' B';if(n<1048576)return (n/1024).toFixed(1)+' KB';return (n/1048576).toFixed(1)+' MB'}
 async function fetchJson(url,opt){var r=await fetch(url,opt||{}),j={};try{j=await r.json()}catch(_){}if(!r.ok){if(r.status===401)location.replace('/login.html?next=/usuarios.html');throw new Error(j.error||('HTTP '+r.status))}return j}
 async function api(opt){return fetchJson('/api/users',opt)}
-function paintMetrics(s){var vals=[s.total,s.active,s.students,s.editors,s.synced];document.querySelectorAll('#metrics .metric b').forEach(function(el,i){el.textContent=vals[i]==null?'0':String(vals[i])})}
+function paintMetrics(s){var vals=[s.total,s.active,s.students,s.editors,s.studying];document.querySelectorAll('#metrics .metric b').forEach(function(el,i){el.textContent=vals[i]==null?'0':String(vals[i])})}
 function roleLabel(role){return role==='admin'?'ADMIN':role==='editor'?'EDITOR':'ALUNO'}
 function filtered(){
  var q=document.getElementById('search').value.trim().toLowerCase(),f=document.getElementById('filter').value;
- return users.filter(function(u){
-  var match=!q||(u.name+' '+u.email).toLowerCase().includes(q);
-  var type=f==='all'||u.role===f||(f==='inactive'&&!u.active);
-  return match&&type;
- });
+ return users.filter(function(u){var match=!q||(u.name+' '+u.email).toLowerCase().includes(q),type=f==='all'||u.role===f||(f==='inactive'&&!u.active);return match&&type});
+}
+function disciplineHtml(p){
+ var rows=Array.isArray(p.disciplines)?p.disciplines:[];
+ if(!rows.length)return '<div class="hint">Este usuário ainda não enviou percentuais das disciplinas.</div>';
+ return '<div class="disciplines">'+rows.map(function(d){var pct=Math.max(0,Math.min(100,Number(d.pct)||0));return '<div class="discipline"><div class="discipline-head"><b>'+esc(d.name)+'</b><span>'+pct+'%</span></div><div class="bar"><i style="width:'+pct+'%"></i></div></div>'}).join('')+'</div>';
 }
 function render(){
  var list=filtered();host.innerHTML='';
  if(!list.length){host.innerHTML='<div class="empty">Nenhum usuário encontrado.</div>';return}
  list.forEach(function(u){
-  var a=activityMap[u.id]||{sync:{}},sync=a.sync||{};
+  var a=activityMap[u.id]||{},sync=a.sync||{},p=a.progress||{disciplines:[]},hasProgress=!!p.lastStudy||Number(p.studySeconds)>0||Number(p.questions)>0;
   var row=document.createElement('div');row.className='user'+(u.active?'':' inactive');row.dataset.id=u.id;
   row.innerHTML=
    '<div class="user-head">'+
-    '<div class="who"><b>'+esc(u.name)+'</b><small>'+esc(u.email)+'</small><div class="meta"><span class="pill">'+roleLabel(u.role)+'</span><span class="pill '+(u.active?'ok':'warn')+'">'+(u.active?'ATIVO':'INATIVO')+'</span>'+(sync.hasData?'<span class="pill ok">DADOS NA NUVEM</span>':'<span class="pill warn">SEM PROGRESSO SINCRONIZADO</span>')+'</div></div>'+
+    '<div class="who"><b>'+esc(u.name)+'</b><small>'+esc(u.email)+'</small><div class="meta"><span class="pill">'+roleLabel(u.role)+'</span><span class="pill '+(u.active?'ok':'warn')+'">'+(u.active?'ATIVO':'INATIVO')+'</span>'+(hasProgress?'<span class="pill ok">PROGRESSO ATIVO</span>':'<span class="pill warn">SEM ATIVIDADE AINDA</span>')+'</div></div>'+
     '<select class="role"><option value="aluno">Aluno</option><option value="editor">Editor</option><option value="admin">Administrador</option></select>'+
     '<label style="margin:0;display:flex;gap:6px;align-items:center;font-size:11px"><input class="active" type="checkbox" style="width:auto"> Ativo</label>'+
     '<div class="row-actions"><button class="save">Salvar</button><button class="reset">Nova senha</button></div>'+
    '</div>'+
    '<div class="activity">'+
     '<div><small>Último acesso</small><b>'+esc(dt(u.lastLogin))+'</b></div>'+
-    '<div><small>Última sincronização</small><b>'+esc(dt(sync.lastSync))+'</b></div>'+
-    '<div><small>Dados pessoais salvos</small><b>'+(sync.hasData?esc(bytes(sync.bytes)):'Ainda não há')+'</b></div>'+
-   '</div>';
+    '<div><small>Último estudo</small><b>'+esc(dt(p.lastStudy))+'</b></div>'+
+    '<div><small>Questões registradas</small><b>'+Number(p.questions||0).toLocaleString('pt-BR')+'</b></div>'+
+    '<div><small>Tempo ativo de estudo</small><b>'+esc(duration(p.studySeconds))+'</b></div>'+
+   '</div>'+
+   '<div class="progress-box"><button type="button" class="progress-toggle"><span>Progresso pedagógico</span><b>'+Number(p.overallPct||0)+'% ▾</b></button><div class="progress-detail"><div class="overall"><strong>'+Number(p.overallPct||0)+'%</strong><div><div class="bar"><i style="width:'+Math.max(0,Math.min(100,Number(p.overallPct)||0))+'%"></i></div><div class="hint">Média atual das disciplinas exibidas na Central.</div></div></div>'+disciplineHtml(p)+'<div class="hint">Última leitura do painel: '+esc(dt(p.updatedAt))+' · dados sincronizados: '+(sync.hasData?esc(bytes(sync.bytes)):'ainda não')+'.</div></div></div>';
   row.querySelector('.role').value=u.role;row.querySelector('.active').checked=!!u.active;
   if(u.id===currentUserId){row.querySelector('.role').disabled=true;row.querySelector('.active').disabled=true}
-  row.querySelector('.save').onclick=async function(){
-   try{await api({method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'update',userId:u.id,role:row.querySelector('.role').value,active:row.querySelector('.active').checked})});await load()}
-   catch(e){alert(e.message)}
-  };
-  row.querySelector('.reset').onclick=async function(){
-   var p=prompt('Digite a nova senha (mínimo 8 caracteres):');if(!p)return;
-   try{await api({method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'reset-password',userId:u.id,password:p})});alert('Senha atualizada.')}
-   catch(e){alert(e.message)}
-  };
+  row.querySelector('.save').onclick=async function(){try{await api({method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'update',userId:u.id,role:row.querySelector('.role').value,active:row.querySelector('.active').checked})});await load()}catch(e){alert(e.message)}};
+  row.querySelector('.reset').onclick=async function(){var pass=prompt('Digite a nova senha (mínimo 8 caracteres):');if(!pass)return;try{await api({method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'reset-password',userId:u.id,password:pass})});alert('Senha atualizada.')}catch(e){alert(e.message)}};
+  row.querySelector('.progress-toggle').onclick=function(){var box=row.querySelector('.progress-detail');box.classList.toggle('open');this.querySelector('b').textContent=Number(p.overallPct||0)+'% '+(box.classList.contains('open')?'▴':'▾')};
   host.appendChild(row);
  })
 }
@@ -121,8 +116,7 @@ async function load(){
  host.innerHTML='<div class="hint">Atualizando painel...</div>';
  try{
   var base=await api(),dash=await fetchJson('/api/admin-dashboard');
-  currentUserId=base.currentUserId||'';users=base.users||[];
-  activityMap={};(dash.users||[]).forEach(function(u){activityMap[u.id]=u});
+  currentUserId=base.currentUserId||'';users=base.users||[];activityMap={};(dash.users||[]).forEach(function(u){activityMap[u.id]=u});
   paintMetrics(dash.summary||{});render();
  }catch(e){host.innerHTML='<div class="status err">'+esc(e.message)+'</div>'}
 }
