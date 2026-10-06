@@ -7,6 +7,9 @@
   var THEMES=['paper-yellow','paper-white','sage-study','editorial-gray','legal-mist','dark-premium','oled-black'];
   var LEGACY={light:'paper-white',dark:'dark-premium',oled:'oled-black'};
   var progressSelector='.progress-line,.subject-bar,.cf-module-bar,.cf-qbar,.anki-duo-progress,.ct-meter,.bc-progress';
+  var pendingRoots=new Set();
+  var progressScheduled=false;
+  var initialized=false;
 
   function savedTheme(){
     var value='';
@@ -56,33 +59,49 @@
     var raw=fill.style.width||fill.getAttribute('data-width')||'';
     var match=String(raw).match(/([\d.]+)%/);
     if(match)return Math.max(0,Math.min(100,Math.round(Number(match[1])||0)));
-    var total=bar.getBoundingClientRect().width,current=fill.getBoundingClientRect().width;
-    return total>0?Math.max(0,Math.min(100,Math.round(current/total*100))):null;
+    return null;
   }
 
   function enhanceProgress(root){
     var scope=root&&root.querySelectorAll?root:document;
-    scope.querySelectorAll(progressSelector).forEach(function(bar){
+    var bars=[];
+    if(scope.nodeType===1&&scope.matches&&scope.matches(progressSelector))bars.push(scope);
+    scope.querySelectorAll(progressSelector).forEach(function(bar){bars.push(bar)});
+    bars.forEach(function(bar){
       bar.classList.add('bc-global-progress');
       var pct=percentage(bar);
       if(pct!==null&&bar.getAttribute('data-progress-label')!==pct+'%')bar.setAttribute('data-progress-label',pct+'%');
     });
   }
 
+  function scheduleProgress(root){
+    pendingRoots.add(root&&root.querySelectorAll?root:document);
+    if(progressScheduled)return;
+    progressScheduled=true;
+    var run=function(){
+      progressScheduled=false;
+      var roots=Array.from(pendingRoots);pendingRoots.clear();
+      roots.forEach(enhanceProgress);
+    };
+    if(typeof window.requestIdleCallback==='function')window.requestIdleCallback(run,{timeout:700});
+    else window.setTimeout(run,0);
+  }
+
   function init(){
+    if(initialized)return;initialized=true;
     var themeSheet=Array.from(document.querySelectorAll('link[rel="stylesheet"]')).find(function(link){return /appearance-themes-v1\.css/.test(link.href)});
     if(themeSheet&&document.head.lastElementChild!==themeSheet)document.head.appendChild(themeSheet);
-    var theme=savedTheme();persistMigration(theme);apply(theme,false);enhanceProgress(document);
+    var theme=savedTheme();persistMigration(theme);apply(theme,false);scheduleProgress(document);
     var observer=new MutationObserver(function(records){
       records.forEach(function(record){
-        if(record.type==='childList')record.addedNodes.forEach(function(node){if(node.nodeType===1)enhanceProgress(node)});
-        if(record.type==='attributes'&&record.target.closest&&record.target.closest(progressSelector))enhanceProgress(record.target.parentElement||document);
+        if(record.type==='childList')record.addedNodes.forEach(function(node){if(node.nodeType===1)scheduleProgress(node)});
+        if(record.type==='attributes'&&record.target.closest){var bar=record.target.closest(progressSelector);if(bar)scheduleProgress(bar)}
       });
     });
-    observer.observe(document.body,{childList:true,subtree:true,attributes:true,attributeFilter:['style','aria-valuenow','class']});
+    observer.observe(document.body,{childList:true,subtree:true,attributes:true,attributeFilter:['style','aria-valuenow']});
   }
 
   window.bcAppearanceThemes={themes:THEMES.slice(),get:savedTheme,apply:function(theme){return apply(theme,true)}};
   document.addEventListener('bc:themechange',function(event){var theme=event.detail&&event.detail.choice;if(theme)refreshCards(LEGACY[theme]||theme)});
-  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
+  if(document.readyState==='complete')init();else document.addEventListener('DOMContentLoaded',init,{once:true});
 })();
