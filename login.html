@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Entrar — Base Completa</title>
+<style>
+:root{--bg:#f4f0e7;--card:#fffdf8;--ink:#2f2b28;--muted:#7a716a;--line:#d8d0c5;--accent:#6d5b88;--accent2:#58466f;--danger:#9f3e3e;--ok:#2f7657}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;background:radial-gradient(circle at 50% 0,#fffaf0 0,#f4f0e7 45%,#ebe5da 100%);color:var(--ink);font:500 15px/1.45 system-ui,-apple-system,"Segoe UI",sans-serif;padding:24px}
+.card{width:min(440px,100%);background:var(--card);border:1px solid var(--line);border-radius:20px;padding:30px;box-shadow:0 24px 60px rgba(57,47,39,.10)}
+.logo{display:block;width:170px;max-height:86px;object-fit:contain;margin:0 auto 20px}.eyebrow{text-align:center;color:var(--accent);font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.title{font:600 30px/1.15 Georgia,serif;text-align:center;margin:8px 0 8px}.subtitle{text-align:center;color:var(--muted);margin:0 0 26px}
+label{display:block;font-size:12px;font-weight:800;margin:14px 0 6px}input{width:100%;border:1px solid var(--line);background:#fff;padding:12px 13px;border-radius:10px;outline:none;color:var(--ink)}input:focus{border-color:#9b8aaf;box-shadow:0 0 0 3px rgba(109,91,136,.11)}
+button{width:100%;margin-top:18px;border:0;border-radius:10px;padding:12px 14px;background:var(--accent);color:#fff;font-weight:800;cursor:pointer}button:hover{background:var(--accent2)}button:disabled{opacity:.55;cursor:wait}
+.msg{min-height:22px;margin-top:14px;font-size:12px;text-align:center;color:var(--muted)}.msg.err{color:var(--danger)}.msg.ok{color:var(--ok)}
+.setup{display:none}.setup.show{display:block}.login.hide{display:none}.note{margin-top:18px;padding:11px 12px;border-radius:10px;background:#f3eee7;color:var(--muted);font-size:11px}
+</style>
+</head>
+<body>
+<main class="card">
+<img class="logo" src="/assets/base-completa-symbol.webp" alt="Base Completa">
+<div class="eyebrow">Acesso protegido</div>
+<h1 class="title">Base Completa</h1>
+<p class="subtitle" id="subtitle">Entre para continuar seus estudos.</p>
+
+<form id="loginForm" class="login">
+<label for="email">E-mail</label>
+<input id="email" type="email" autocomplete="username" required>
+<label for="password">Senha</label>
+<input id="password" type="password" autocomplete="current-password" required>
+<button id="loginBtn" type="submit">Entrar</button>
+</form>
+
+<form id="setupForm" class="setup">
+<label for="adminName">Seu nome</label>
+<input id="adminName" autocomplete="name" required>
+<label for="adminEmail">Seu e-mail</label>
+<input id="adminEmail" type="email" autocomplete="username" required>
+<label for="adminPassword">Crie sua senha</label>
+<input id="adminPassword" type="password" minlength="8" autocomplete="new-password" required>
+<label for="backupSecret">Chave administrativa atual (BACKUP_SECRET)</label>
+<input id="backupSecret" type="password" autocomplete="off" required>
+<button id="setupBtn" type="submit">Criar administrador</button>
+<div class="note">Esta etapa aparece apenas na primeira configuração. A chave administrativa não será salva no navegador.</div>
+</form>
+
+<div id="msg" class="msg" role="status" aria-live="polite"></div>
+</main>
+<script>
+(function(){
+'use strict';
+var msg=document.getElementById('msg'),loginForm=document.getElementById('loginForm'),setupForm=document.getElementById('setupForm'),subtitle=document.getElementById('subtitle');
+function setMsg(text,type){msg.textContent=text||'';msg.className='msg'+(type?' '+type:'')}
+function nextUrl(){var p=new URLSearchParams(location.search).get('next')||'/';return p.startsWith('/')&&!p.startsWith('//')?p:'/'}
+async function jsonFetch(url,opt){var r=await fetch(url,opt||{}),j={};try{j=await r.json()}catch(_){}if(!r.ok)throw new Error(j.error||('HTTP '+r.status));return j}
+async function init(){
+ try{
+  var me=await jsonFetch('/api/auth?action=me');
+  if(me.authenticated){location.replace(nextUrl());return}
+  var status=await jsonFetch('/api/auth?action=bootstrap-status');
+  if(status.needsBootstrap){
+   loginForm.classList.add('hide');setupForm.classList.add('show');subtitle.textContent='Crie o primeiro administrador da Central.';
+  }
+ }catch(e){setMsg(e.message,'err')}
+}
+loginForm.addEventListener('submit',async function(e){
+ e.preventDefault();var btn=document.getElementById('loginBtn');btn.disabled=true;setMsg('Entrando...');
+ try{
+  await jsonFetch('/api/auth?action=login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:document.getElementById('email').value,password:document.getElementById('password').value})});
+  setMsg('Acesso liberado.','ok');location.replace(nextUrl());
+ }catch(err){setMsg(err.message,'err');btn.disabled=false}
+});
+setupForm.addEventListener('submit',async function(e){
+ e.preventDefault();var btn=document.getElementById('setupBtn');btn.disabled=true;setMsg('Criando administrador...');
+ try{
+  await jsonFetch('/api/auth?action=bootstrap',{method:'POST',headers:{'Content-Type':'application/json','X-Backup-Key':document.getElementById('backupSecret').value},body:JSON.stringify({name:document.getElementById('adminName').value,email:document.getElementById('adminEmail').value,password:document.getElementById('adminPassword').value})});
+  document.getElementById('backupSecret').value='';setMsg('Administrador criado.','ok');location.replace('/');
+ }catch(err){setMsg(err.message,'err');btn.disabled=false}
+});
+init();
+})();
+</script>
+</body>
+</html>
