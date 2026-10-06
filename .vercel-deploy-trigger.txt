@@ -1,6 +1,0 @@
-Forçar redeploy estável da Central de Estudos v6.6.119 — ADM M4 em 17/09/2026.
-Merge PR de produção ADM M4.
-
-Editor v3 production trigger: 2026-09-29T13:43Z
-
-Correções de estabilidade e navegação publicadas em produção: 2026-09-30T15:46Z

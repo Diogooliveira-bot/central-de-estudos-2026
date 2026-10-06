@@ -1,1 +1,0 @@
-const PENAL_QUESTIONS=[];
