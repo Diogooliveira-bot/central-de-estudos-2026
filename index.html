@@ -740,17 +740,84 @@ window.addEventListener('unhandledrejection',function(e){try{window.__CENTRAL_LA
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <link rel="apple-touch-icon" href="icons/icon-192.png">
-<script id="central-pwa-v6672">
+<script id="central-pwa-v6673">
 (function(){
 'use strict';
-if(!('serviceWorker' in navigator))return;
-if(location.protocol!=='https:'&&!/localhost|127\.0\.0\.1/.test(location.hostname))return;
-window.addEventListener('load',function(){navigator.serviceWorker.register('/sw.js',{updateViaCache:'none'}).then(function(){return navigator.serviceWorker.ready}).then(function(reg){if(window.CentralDisciplineLoader)CentralDisciplineLoader.prepareOffline(reg);else if(navigator.onLine)reg.active?.postMessage({type:'PREPARE_OFFLINE'})}).catch(function(){})});
 var deferred=null;
-window.addEventListener('beforeinstallprompt',function(e){e.preventDefault();deferred=e;
- var b=document.getElementById('centralPwaInstall');
- if(b){b.classList.remove('hidden');b.onclick=function(){deferred.prompt();deferred.userChoice.finally(function(){deferred=null;b.classList.add('hidden')})}}});
-window.centralPwaInstall=function(){if(deferred)deferred.prompt()};
+
+function isInstalled(){
+  return window.matchMedia&&window.matchMedia('(display-mode: standalone)').matches||window.navigator.standalone===true;
+}
+function installButton(){
+  return document.getElementById('centralPwaInstall');
+}
+function syncInstallButton(){
+  var b=installButton();
+  if(!b)return;
+  b.classList.remove('hidden');
+  if(isInstalled()){
+    b.disabled=true;
+    b.textContent='✓ Aplicativo instalado';
+    b.title='A BASE COMPLETA já está instalada neste dispositivo';
+  }else{
+    b.disabled=false;
+    b.textContent='📱 Instalar como aplicativo';
+    b.title='Instalar a BASE COMPLETA no dispositivo';
+  }
+}
+function fallbackInstructions(){
+  var ua=navigator.userAgent||'';
+  if(/iPad|iPhone|iPod/.test(ua)){
+    alert('Para instalar a BASE COMPLETA no iPhone/iPad: abra no Safari, toque em Compartilhar e escolha “Adicionar à Tela de Início”.');
+    return;
+  }
+  if(/Android/i.test(ua)){
+    alert('Para instalar a BASE COMPLETA no Android: abra esta página no Google Chrome, toque no menu ⋮ e escolha “Instalar app” ou “Adicionar à tela inicial”.');
+    return;
+  }
+  alert('Para instalar a BASE COMPLETA, abra o menu do navegador e escolha “Instalar aplicativo” ou “Adicionar à tela inicial”.');
+}
+
+if('serviceWorker' in navigator&&(location.protocol==='https:'||/localhost|127\.0\.0\.1/.test(location.hostname))){
+  navigator.serviceWorker.register('/sw.js',{updateViaCache:'none'}).then(function(){
+    return navigator.serviceWorker.ready;
+  }).then(function(reg){
+    if(window.CentralDisciplineLoader)CentralDisciplineLoader.prepareOffline(reg);
+    else if(navigator.onLine&&reg.active)reg.active.postMessage({type:'PREPARE_OFFLINE'});
+  }).catch(function(){});
+}
+
+window.addEventListener('beforeinstallprompt',function(e){
+  e.preventDefault();
+  deferred=e;
+  syncInstallButton();
+});
+
+window.addEventListener('appinstalled',function(){
+  deferred=null;
+  syncInstallButton();
+});
+
+window.centralPwaInstall=async function(){
+  if(isInstalled()){syncInstallButton();return;}
+  if(deferred){
+    var promptEvent=deferred;
+    deferred=null;
+    try{
+      promptEvent.prompt();
+      await promptEvent.userChoice;
+    }catch(_){}
+    syncInstallButton();
+    return;
+  }
+  fallbackInstructions();
+};
+
+if(document.readyState==='loading'){
+  document.addEventListener('DOMContentLoaded',syncInstallButton,{once:true});
+}else syncInstallButton();
+setTimeout(syncInstallButton,600);
+setTimeout(syncInstallButton,1800);
 })();
 </script>
 <link rel="stylesheet" href="/base-completa-visual-v1.css?v=20260921a">\n<style id="bc-hide-backup-controls">
@@ -1017,7 +1084,7 @@ setTimeout(function(){
    </div>
    <div id="centralBackupStatus" class="central-backup-status">O backup por arquivo funciona mesmo sem banco online. Quando o site estiver no Vercel com o banco configurado, você também poderá guardar snapshots gerais no servidor.</div>
    <div id="centralBackupHistoryList" class="central-backup-history hidden"></div>
-   <button class="central-btn-sec hidden" id="centralPwaInstall" onclick="centralPwaInstall()" style="margin-top:8px;width:100%">📱 Instalar como aplicativo</button>
+   <button class="central-btn-sec" id="centralPwaInstall" type="button" onclick="centralPwaInstall()" style="margin-top:8px;width:100%">📱 Instalar como aplicativo</button>
    <div class="central-settings-note"><b>Backup geral:</b> inclui os dados da Central — progresso, Português nativo, agenda, cadernos TEC, Vade Mecum, Lei Seca, RLM e preferências.</div>
    <div class="central-settings-note" style="margin-top:7px"><b>Segurança do backup online:</b> configure no Vercel as variáveis <code>DATABASE_URL</code> e <code>BACKUP_SECRET</code>. A chave é solicitada somente quando você usa o histórico online e fica apenas na sessão atual do navegador.</div>
   <script id="central-backup-geral-v6674">
