@@ -43,6 +43,92 @@ function fitImage(file){return new Promise(function(resolve,reject){if(!file||!/
 function chooseImage(cb){var input=document.createElement('input');input.type='file';input.accept='image/*';input.hidden=true;document.body.appendChild(input);input.addEventListener('change',function(){var f=input.files&&input.files[0];if(!f){input.remove();return}fitImage(f).then(cb).catch(function(e){toast(e.message||'Falha ao inserir imagem')}).finally(function(){input.remove()})},{once:true});input.click()}
 function imageAction(article,state,action){var fig=selectedOrFirst(article,state);if(!fig||!fig.matches('.bc-editor-image'))return toast('Selecione uma imagem');if(action==='small'||action==='medium'||action==='full'){fig.classList.remove('bc-editor-image-small','bc-editor-image-medium','bc-editor-image-full');fig.classList.add('bc-editor-image-'+action)}else if(action==='replace'){chooseImage(function(url){fig.querySelector('img').src=url})}else if(action==='caption'){var cap=fig.querySelector('figcaption');if(cap){cap.setAttribute('contenteditable','true');cap.focus()}}}
 
+function portableClone(article){
+  var clone=article.cloneNode(true);
+  clone.classList.remove('bc-block-editing');
+  clone.querySelectorAll('[data-bc-block-editor-ui]').forEach(function(n){n.remove()});
+  clone.querySelectorAll('[contenteditable],[spellcheck],[lang],[data-bc-editable]').forEach(function(n){n.removeAttribute('contenteditable');n.removeAttribute('spellcheck');n.removeAttribute('lang');n.removeAttribute('data-bc-editable')});
+  clone.querySelectorAll('.bc-block-selected').forEach(function(n){n.classList.remove('bc-block-selected')});
+  clone.querySelectorAll('[data-bc-spell-error]').forEach(function(n){n.replaceWith(document.createTextNode(n.textContent||''))});
+  clone.querySelectorAll(PROTECTED).forEach(function(n){n.remove()});
+  sanitize(clone);
+  return clone;
+}
+function googleDocsHtml(article){
+  var clone=portableClone(article);
+  var body=clone.innerHTML;
+  return '<div style="font-family:Arial,sans-serif;font-size:11pt;line-height:1.5;color:#222">'+body+'</div>';
+}
+function fallbackCopyRich(html,text){
+  var holder=document.createElement('div');
+  holder.contentEditable='true';holder.style.position='fixed';holder.style.left='-99999px';holder.style.top='0';holder.innerHTML=html;
+  document.body.appendChild(holder);
+  var r=document.createRange();r.selectNodeContents(holder);var sel=getSelection();sel.removeAllRanges();sel.addRange(r);
+  var ok=false;try{ok=document.execCommand('copy')}catch(_){}
+  sel.removeAllRanges();holder.remove();return ok;
+}
+async function copyForGoogleDocs(article){
+  var html=googleDocsHtml(article),text=portableClone(article).innerText||'';
+  try{
+    if(navigator.clipboard&&window.ClipboardItem){
+      var item=new ClipboardItem({'text/html':new Blob([html],{type:'text/html'}),'text/plain':new Blob([text],{type:'text/plain'})});
+      await navigator.clipboard.write([item]);return true;
+    }
+  }catch(_){}
+  return fallbackCopyRich(html,text);
+}
+function cleanGooglePaste(root){
+  root.querySelectorAll('script,style,iframe,object,embed,form,meta,link').forEach(function(n){n.remove()});
+  root.querySelectorAll('*').forEach(function(el){
+    Array.from(el.attributes).forEach(function(a){
+      var keep=(el.tagName==='A'&&a.name==='href')||(el.tagName==='IMG'&&(a.name==='src'||a.name==='alt'));
+      if(!keep)el.removeAttribute(a.name);
+    });
+  });
+  var allowed={P:1,H1:1,H2:1,H3:1,H4:1,UL:1,OL:1,LI:1,BLOCKQUOTE:1,STRONG:1,B:1,EM:1,I:1,U:1,A:1,BR:1,IMG:1,DIV:1,SPAN:1};
+  Array.from(root.querySelectorAll('*')).reverse().forEach(function(el){
+    if(allowed[el.tagName])return;
+    var frag=document.createDocumentFragment();while(el.firstChild)frag.appendChild(el.firstChild);el.replaceWith(frag);
+  });
+  root.querySelectorAll('span,div').forEach(function(el){
+    if(el.tagName==='DIV'&&el.children.length>1)return;
+    var parent=el.parentElement;
+    if(!parent)return;
+    while(el.firstChild)parent.insertBefore(el.firstChild,el);
+    el.remove();
+  });
+  root.querySelectorAll('b').forEach(function(el){var s=document.createElement('strong');s.innerHTML=el.innerHTML;el.replaceWith(s)});
+  root.querySelectorAll('i').forEach(function(el){var s=document.createElement('em');s.innerHTML=el.innerHTML;el.replaceWith(s)});
+  Array.from(root.childNodes).forEach(function(n){if(n.nodeType===3&&n.nodeValue.trim()){var p=document.createElement('p');p.textContent=n.nodeValue;n.replaceWith(p)}});
+  sanitize(root);return root.innerHTML;
+}
+function openGoogleImport(article,state){
+  if(state.googleDialog)state.googleDialog.remove();
+  var dlg=document.createElement('div');dlg.className='bc-google-docs-dialog';dlg.setAttribute('data-bc-block-editor-ui','1');
+  dlg.innerHTML='<div class="bc-google-docs-card"><div class="bc-google-docs-head"><div><b>Importar do Google Docs</b><small>No Google Docs, use Ctrl+A / Selecionar tudo, copie e cole abaixo.</small></div><button type="button" data-g-close>×</button></div><div class="bc-google-docs-paste" contenteditable="true" spellcheck="false" data-g-paste><p>Cole aqui o conteúdo copiado do Google Docs…</p></div><div class="bc-google-docs-note">A Central preserva títulos, parágrafos, negrito, itálico, sublinhado, listas, citações, links e imagens incorporadas quando o navegador fornecer esses dados. O resultado aparece primeiro como prévia e só é gravado quando você tocar em Salvar.</div><div class="bc-google-docs-actions"><button type="button" data-g-cancel>Cancelar</button><button type="button" data-g-apply>Aplicar na prévia</button></div></div>';
+  document.body.appendChild(dlg);state.googleDialog=dlg;
+  var paste=dlg.querySelector('[data-g-paste]');
+  paste.addEventListener('focus',function(){if(/Cole aqui/.test(paste.textContent||''))paste.innerHTML=''});
+  function close(){dlg.remove();state.googleDialog=null}
+  dlg.querySelector('[data-g-close]').onclick=close;dlg.querySelector('[data-g-cancel]').onclick=close;
+  dlg.querySelector('[data-g-apply]').onclick=function(){
+    var html=cleanGooglePaste(paste.cloneNode(true));
+    if(!html||!html.replace(/<[^>]+>/g,'').trim())return toast('Cole o conteúdo do Google Docs antes de aplicar');
+    if(!confirm('Substituir a prévia atual pelo conteúdo colado do Google Docs? Nada será salvo até você tocar em Salvar.'))return;
+    applySnapshot(article,html);markBlocks(article);state.selected=null;var first=topBlocks(article)[0];if(first)selectBlock(article,state,first);close();toast('Conteúdo importado para a prévia');
+  };
+  setTimeout(function(){paste.focus()},80);
+}
+async function googleDocsAction(article,state,action){
+  if(action==='export'){
+    var ok=await copyForGoogleDocs(article);
+    if(!ok)return toast('Não foi possível copiar automaticamente. Tente novamente pelo navegador.');
+    toast('Conteúdo copiado. Cole no Google Docs.');
+    var w=window.open('https://docs.new','_blank','noopener');
+    if(!w)window.open('https://docs.google.com/document/','_blank','noopener');
+  }else if(action==='import')openGoogleImport(article,state);
+}
+
 function saveRange(article,state){var sel=getSelection();if(!sel||!sel.rangeCount)return;var r=sel.getRangeAt(0);if(article.contains(r.commonAncestorContainer))state.range=r.cloneRange()}
 function restoreRange(article,state){if(!state.range)return false;try{var c=state.range.commonAncestorContainer;if(c!==article&&!article.contains(c))return false;var sel=getSelection();sel.removeAllRanges();sel.addRange(state.range.cloneRange());return true}catch(_){return false}}
 function inlineCmd(article,state,cmd,val){restoreRange(article,state);try{document.execCommand(cmd,false,val==null?null:val)}catch(_){}saveRange(article,state)}
@@ -54,15 +140,15 @@ async function spell(article,state,fixAll,button){clearSpell(article);var data=t
 function highlightSpell(article,matches){clearSpell(article);var data=textMap(article);matches.slice().sort(function(a,b){return b.offset-a.offset}).forEach(function(m){var s=Number(m.offset)||0,e=s+(Number(m.length)||0);for(var i=data.map.length-1;i>=0;i--){var it=data.map[i];if(e<=it.start||s>=it.end)continue;var ls=Math.max(0,s-it.start),le=Math.min(it.end,e)-it.start;if(le<=ls||!it.node.isConnected)continue;try{var r=document.createRange();r.setStart(it.node,ls);r.setEnd(it.node,le);var mark=document.createElement('span');mark.className='bc-spell-error';mark.setAttribute('data-bc-spell-error','1');mark.title=(m.message||'Possível erro')+(m.replacements&&m.replacements[0]?' — '+m.replacements[0].value:'');r.surroundContents(mark)}catch(_){}break}})}
 function showSpellPanel(state,matches){if(state.spellPanel)state.spellPanel.remove();var p=document.createElement('aside');p.className='bc-spell-panel';p.setAttribute('data-bc-block-editor-ui','1');p.innerHTML='<div class="bc-spell-panel-head"><b>Revisão ortográfica</b><button type="button">×</button></div><div class="bc-spell-panel-body"></div>';p.querySelector('button').onclick=function(){p.remove();state.spellPanel=null};var body=p.querySelector('.bc-spell-panel-body');if(!matches.length)body.innerHTML='<p class="bc-spell-ok">Nenhum erro encontrado.</p>';else matches.forEach(function(m){var d=document.createElement('div');d.className='bc-spell-item';var suggestion=m.replacements&&m.replacements[0]?m.replacements[0].value:'';d.innerHTML='<div><b>'+(m.shortMessage||'Possível erro')+'</b><p></p><small></small></div>';d.querySelector('p').textContent=m.message||'';d.querySelector('small').textContent=suggestion?'Sugestão: '+suggestion:'';body.appendChild(d)});document.body.appendChild(p);state.spellPanel=p}
 
-function makeBars(overlay,article,state){var wrap=document.createElement('div');wrap.className='bc-block-editor-bars';wrap.setAttribute('data-bc-block-editor-ui','1');wrap.innerHTML='<div class="bc-block-mainbar"><button type="button" data-inline="bold"><b>B</b></button><button type="button" data-inline="italic"><i>I</i></button><button type="button" data-inline="underline"><u>U</u></button><button type="button" data-inline="hiliteColor" data-value="#ffe4a0">Destaque</button><select data-add><option value="">+ Adicionar bloco ▾</option><option value="p">Texto</option><option value="h2">Título</option><option value="h3">Subtítulo</option><option value="ul">Lista</option><option value="ol">Lista numerada</option><option value="quote">Citação</option><option value="compare">Comparativo</option><option value="cards">Cards</option><option value="image">Imagem</option><option value="review">Caixa de revisão</option></select><button type="button" data-spell="review">Revisar ortografia</button><button type="button" data-spell="all">Revisar e ajustar tudo</button><span></span><button type="button" data-cancel>Cancelar</button><button type="button" data-save>Salvar</button></div><div class="bc-block-blockbar"><span>Bloco selecionado</span><select data-block-type data-needs-block><option value="">Tipo</option><option value="p">Texto</option><option value="h2">Título</option><option value="h3">Subtítulo</option><option value="blockquote">Citação</option></select><button type="button" data-move="up" data-needs-block>↑</button><button type="button" data-move="down" data-needs-block>↓</button><button type="button" data-duplicate data-needs-block>Duplicar</button><select data-image-action><option value="">Imagem ▾</option><option value="small">Pequena</option><option value="medium">Média</option><option value="full">Largura total</option><option value="caption">Editar legenda</option><option value="replace">Substituir</option></select><button type="button" data-delete data-needs-block>Excluir</button></div>';
+function makeBars(overlay,article,state){var wrap=document.createElement('div');wrap.className='bc-block-editor-bars';wrap.setAttribute('data-bc-block-editor-ui','1');wrap.innerHTML='<div class="bc-block-mainbar"><button type="button" data-inline="bold"><b>B</b></button><button type="button" data-inline="italic"><i>I</i></button><button type="button" data-inline="underline"><u>U</u></button><button type="button" data-inline="hiliteColor" data-value="#ffe4a0">Destaque</button><select data-add><option value="">+ Adicionar bloco ▾</option><option value="p">Texto</option><option value="h2">Título</option><option value="h3">Subtítulo</option><option value="ul">Lista</option><option value="ol">Lista numerada</option><option value="quote">Citação</option><option value="compare">Comparativo</option><option value="cards">Cards</option><option value="image">Imagem</option><option value="review">Caixa de revisão</option></select><select data-google-docs><option value="">Google Docs ▾</option><option value="export">Copiar + abrir Google Docs</option><option value="import">Importar do Google Docs</option></select><button type="button" data-spell="review">Revisar ortografia</button><button type="button" data-spell="all">Revisar e ajustar tudo</button><span></span><button type="button" data-cancel>Cancelar</button><button type="button" data-save>Salvar</button></div><div class="bc-block-blockbar"><span>Bloco selecionado</span><select data-block-type data-needs-block><option value="">Tipo</option><option value="p">Texto</option><option value="h2">Título</option><option value="h3">Subtítulo</option><option value="blockquote">Citação</option></select><button type="button" data-move="up" data-needs-block>↑</button><button type="button" data-move="down" data-needs-block>↓</button><button type="button" data-duplicate data-needs-block>Duplicar</button><select data-image-action><option value="">Imagem ▾</option><option value="small">Pequena</option><option value="medium">Média</option><option value="full">Largura total</option><option value="caption">Editar legenda</option><option value="replace">Substituir</option></select><button type="button" data-delete data-needs-block>Excluir</button></div>';
 var parent=toolsFor(overlay),host=parent&&parent.parentElement?parent.parentElement:overlay;host.insertBefore(wrap,parent?parent.nextSibling:host.firstChild);state.bar=wrap;state.blockbar=wrap.querySelector('.bc-block-blockbar');
 wrap.addEventListener('pointerdown',function(e){saveRange(article,state);if(e.target.closest('button'))e.preventDefault()});
 wrap.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;if(b.dataset.inline)inlineCmd(article,state,b.dataset.inline,b.dataset.value||null);else if(b.dataset.move)moveBlock(article,state,b.dataset.move==='up'?-1:1);else if(b.hasAttribute('data-duplicate'))duplicateBlock(article,state);else if(b.hasAttribute('data-delete'))deleteBlock(article,state);else if(b.dataset.spell)spell(article,state,b.dataset.spell==='all',b);else if(b.hasAttribute('data-cancel')){applySnapshot(article,state.before);exitEdit(article,state);toast('Alterações canceladas')}else if(b.hasAttribute('data-save')){var html=capture(article);b.disabled=true;b.textContent='Salvando…';cloudSave(overlay,html).then(function(){setSaved(overlay,html);exitEdit(article,state);if(state.reset)state.reset.hidden=false;toast('Conteúdo salvo')}).catch(function(err){b.disabled=false;b.textContent='Salvar';toast(err.message||'Falha ao salvar')})}});
-wrap.addEventListener('change',function(e){if(e.target.matches('[data-add]')&&e.target.value){var v=e.target.value;e.target.value='';addBlock(article,state,v)}else if(e.target.matches('[data-block-type]')&&e.target.value){replaceTag(article,state,e.target.value)}else if(e.target.matches('[data-image-action]')&&e.target.value){var a=e.target.value;e.target.value='';imageAction(article,state,a)}});updateBlockToolbar(state)}
+wrap.addEventListener('change',function(e){if(e.target.matches('[data-add]')&&e.target.value){var v=e.target.value;e.target.value='';addBlock(article,state,v)}else if(e.target.matches('[data-block-type]')&&e.target.value){replaceTag(article,state,e.target.value)}else if(e.target.matches('[data-image-action]')&&e.target.value){var a=e.target.value;e.target.value='';imageAction(article,state,a)}else if(e.target.matches('[data-google-docs]')&&e.target.value){var g=e.target.value;e.target.value='';googleDocsAction(article,state,g)}});updateBlockToolbar(state)}
 function enterEdit(overlay,article,state){if(state.editing)return;if(!canEdit)return toast('Seu perfil não permite editar');state.editing=true;state.before=capture(article);article.classList.add('bc-block-editing');markBlocks(article);makeBars(overlay,article,state);state.clickHandler=function(e){var block=e.target.closest('[data-bc-editable]');if(block&&article.contains(block))selectBlock(article,state,block)};article.addEventListener('click',state.clickHandler);state.selHandler=function(){saveRange(article,state)};document.addEventListener('selectionchange',state.selHandler);var first=topBlocks(article)[0];if(first)selectBlock(article,state,first);state.button.textContent='Editando…';state.button.disabled=true}
-function exitEdit(article,state){state.editing=false;article.classList.remove('bc-block-editing');clearSpell(article);unmarkBlocks(article);article.querySelectorAll('.bc-block-selected').forEach(function(n){n.classList.remove('bc-block-selected')});if(state.clickHandler){article.removeEventListener('click',state.clickHandler);state.clickHandler=null}if(state.selHandler){document.removeEventListener('selectionchange',state.selHandler);state.selHandler=null}if(state.bar){state.bar.remove();state.bar=null;state.blockbar=null}if(state.spellPanel){state.spellPanel.remove();state.spellPanel=null}state.range=null;state.selected=null;state.button.disabled=false;state.button.textContent='✎ Editar'}
+function exitEdit(article,state){state.editing=false;article.classList.remove('bc-block-editing');clearSpell(article);unmarkBlocks(article);article.querySelectorAll('.bc-block-selected').forEach(function(n){n.classList.remove('bc-block-selected')});if(state.clickHandler){article.removeEventListener('click',state.clickHandler);state.clickHandler=null}if(state.selHandler){document.removeEventListener('selectionchange',state.selHandler);state.selHandler=null}if(state.bar){state.bar.remove();state.bar=null;state.blockbar=null}if(state.spellPanel){state.spellPanel.remove();state.spellPanel=null}if(state.googleDialog){state.googleDialog.remove();state.googleDialog=null}state.range=null;state.selected=null;state.button.disabled=false;state.button.textContent='✎ Editar'}
 function addReset(overlay,article,state,tools){var btn=document.createElement('button');btn.type='button';btn.className='bc-editor-reset';btn.textContent='Restaurar';btn.hidden=!getSaved(overlay);btn.onclick=function(){if(!confirm('Restaurar o conteúdo original deste material?'))return;btn.disabled=true;cloudDelete(overlay).then(function(){if(state.editing)exitEdit(article,state);removeSaved(overlay);applySnapshot(article,state.source);btn.hidden=true;toast('Conteúdo original restaurado')}).catch(function(e){toast(e.message||'Falha ao restaurar')}).finally(function(){btn.disabled=false})};tools.appendChild(btn);state.reset=btn}
-function mount(overlay){if(mounted.has(overlay))return;var article=articleFor(overlay),tools=toolsFor(overlay);if(!article||!tools)return;mounted.add(overlay);var state={editing:false,source:capture(article),before:'',selected:null,range:null,bar:null,blockbar:null,button:null,reset:null,spellPanel:null,clickHandler:null,selHandler:null};var saved=getSaved(overlay);if(saved)applySnapshot(article,saved);cloudGet(overlay).then(function(remote){if(!remote||state.editing)return;applySnapshot(article,remote.html);setSaved(overlay,remote.html);if(state.reset)state.reset.hidden=false});if(!canEdit)return;var btn=document.createElement('button');btn.type='button';btn.className='bc-editor-trigger';btn.textContent='✎ Editar';btn.onclick=function(){enterEdit(overlay,article,state)};tools.appendChild(btn);state.button=btn;addReset(overlay,article,state,tools)}
+function mount(overlay){if(mounted.has(overlay))return;var article=articleFor(overlay),tools=toolsFor(overlay);if(!article||!tools)return;mounted.add(overlay);var state={editing:false,source:capture(article),before:'',selected:null,range:null,bar:null,blockbar:null,button:null,reset:null,spellPanel:null,googleDialog:null,clickHandler:null,selHandler:null};var saved=getSaved(overlay);if(saved)applySnapshot(article,saved);cloudGet(overlay).then(function(remote){if(!remote||state.editing)return;applySnapshot(article,remote.html);setSaved(overlay,remote.html);if(state.reset)state.reset.hidden=false});if(!canEdit)return;var btn=document.createElement('button');btn.type='button';btn.className='bc-editor-trigger';btn.textContent='✎ Editar';btn.onclick=function(){enterEdit(overlay,article,state)};tools.appendChild(btn);state.button=btn;addReset(overlay,article,state,tools)}
 function scan(){document.querySelectorAll('.bc-native-reader-overlay,.cf-native-overlay').forEach(mount)}
 var scheduled=false;function schedule(){if(scheduled)return;scheduled=true;requestAnimationFrame(function(){scheduled=false;scan()})}
 async function start(){await loadAuth();scan();new MutationObserver(schedule).observe(document.body,{childList:true,subtree:true})}
