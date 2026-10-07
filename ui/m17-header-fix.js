@@ -39,9 +39,7 @@
       : null;
   }
 
-  function imageUrl(fileId){
-    return 'https://drive.google.com/thumbnail?id='+encodeURIComponent(fileId)+'&sz=w3000';
-  }
+  function imageUrl(fileId){\n    return 'https://drive.google.com/file/d/'+encodeURIComponent(fileId)+'/preview';\n  }
 
   function close(){
     var ov=document.getElementById(OVERLAY_ID);
@@ -49,30 +47,7 @@
     document.body.style.overflow='';
   }
 
-  function setScale(value){
-    var ov=document.getElementById(OVERLAY_ID);
-    if(!ov)return;
-    var img=ov.querySelector('.bc-pen-infographic-image');
-    var label=ov.querySelector('[data-pen-info-zoom]');
-    if(!img||!img.naturalWidth)return;
-    currentScale=Math.max(.2,Math.min(4,Number(value)||1));
-    img.style.width=Math.round(img.naturalWidth*currentScale)+'px';
-    img.style.height='auto';
-    if(label)label.textContent=Math.round(currentScale*100)+'%';
-  }
-
-  function fit(){
-    var ov=document.getElementById(OVERLAY_ID);
-    if(!ov)return;
-    var stage=ov.querySelector('.bc-pen-infographic-stage');
-    var img=ov.querySelector('.bc-pen-infographic-image');
-    if(!stage||!img||!img.naturalWidth||!img.naturalHeight)return;
-    var sx=Math.max(.2,(stage.clientWidth-34)/img.naturalWidth);
-    var sy=Math.max(.2,(stage.clientHeight-34)/img.naturalHeight);
-    setScale(Math.min(1,sx,sy));
-    stage.scrollTop=0;
-    stage.scrollLeft=Math.max(0,(img.offsetWidth-stage.clientWidth)/2);
-  }
+  function setScale(value){ currentScale=1; }\n\n  function fit(){ currentScale=1; }
 
   function injectStyle(){
     if(document.getElementById('bcPenalInfographicStyle'))return;
@@ -84,7 +59,7 @@
       '#'+OVERLAY_ID+' .bc-pen-infographic-head{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:15px 18px;background:linear-gradient(135deg,#0a2542,#06385a);color:#fff;border-bottom:1px solid rgba(255,255,255,.1)}\n'+
       '#'+OVERLAY_ID+' .bc-pen-infographic-head b{font-size:15px}.bc-pen-infographic-head small{display:block;margin-top:3px;color:#9edfe8;font-size:11px}\n'+
       '#'+OVERLAY_ID+' .bc-pen-infographic-close{border:0;background:rgba(255,255,255,.1);color:#fff;width:38px;height:38px;border-radius:10px;font-size:24px;line-height:1}\n'+
-      '#'+OVERLAY_ID+' .bc-pen-infographic-tools{display:flex;align-items:center;gap:8px;padding:9px 12px;background:#0b1e34;border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto}\n'+
+      '#'+OVERLAY_ID+' .bc-pen-infographic-tools{display:none;align-items:center;gap:8px;padding:9px 12px;background:#0b1e34;border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto}\n'+
       '#'+OVERLAY_ID+' .bc-pen-infographic-tools button{border:1px solid #244664;background:#102a45;color:#eefbff;border-radius:8px;padding:8px 11px;font-weight:700;white-space:nowrap}\n'+
       '#'+OVERLAY_ID+' .bc-pen-infographic-tools button:hover{background:#173a5d}.bc-pen-infographic-zoom{min-width:54px;text-align:center;color:#aeeaf0;font-weight:800;font-size:12px}\n'+
       '#'+OVERLAY_ID+' .bc-pen-infographic-stage{overflow:auto;background:#071322;padding:16px;display:block;text-align:center;overscroll-behavior:contain}\n'+
@@ -111,7 +86,7 @@
     ov.innerHTML=''+
       '<section class="bc-pen-infographic-shell">'+
         '<header class="bc-pen-infographic-head">'+
-          '<div><b>▣ PEN M'+n+' — '+esc(title)+'</b><small>Infográfico de revisão • use o zoom para ampliar os detalhes</small></div>'+
+          '<div><b>▣ PEN M'+n+' — '+esc(title)+'</b><small>Infográfico de revisão • visualização segura pelo Google Drive</small></div>'+
           '<button type="button" class="bc-pen-infographic-close" data-pen-info-action="close" aria-label="Fechar">×</button>'+
         '</header>'+
         '<div class="bc-pen-infographic-tools">'+
@@ -122,7 +97,7 @@
           '<button type="button" data-pen-info-action="actual">100%</button>'+
         '</div>'+
         '<div class="bc-pen-infographic-stage">'+
-          '<img class="bc-pen-infographic-image" src="'+imageUrl(fileId)+'" alt="Infográfico PEN M'+n+' — '+esc(title)+'">'+
+          '<iframe class="bc-pen-infographic-image" src="'+imageUrl(fileId)+'" title="Infográfico PEN M'+n+' — '+esc(title)+'" loading="eager" allow="autoplay"></iframe>'+
         '</div>'+
       '</section>';
     document.body.appendChild(ov);
