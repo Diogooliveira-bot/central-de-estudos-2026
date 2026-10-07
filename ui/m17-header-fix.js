@@ -162,6 +162,38 @@
     observer.observe(root,{childList:true,subtree:true});
   }
 
+  // Intercepta o clique ANTES dos handlers antigos dos shells de cada módulo.
+  // Isso evita que um onclick tardio volte a abrir o mapa mental legado.
+  document.addEventListener('click',function(ev){
+    var card=ev.target&&ev.target.closest?ev.target.closest('#subjects .subject[data-id="penal"] .cf-module[data-cf] [data-native-kind="mindmap"]'):null;
+    if(!card)return;
+    var module=card.closest('.cf-module[data-cf]');
+    if(!module)return;
+    ev.preventDefault();
+    ev.stopPropagation();
+    if(ev.stopImmediatePropagation)ev.stopImmediatePropagation();
+    openInfographic(module);
+  },true);
+
+  // Fallback adicional: qualquer chamada legada BaseMindMap.open('penal','pN')
+  // é redirecionada para o infográfico correspondente.
+  function patchLegacyMindMap(){
+    if(!global.BaseMindMap||global.BaseMindMap.__penalInfographicRedirect)return;
+    var originalOpen=global.BaseMindMap.open;
+    global.BaseMindMap.open=function(subject,moduleId){
+      if(subject==='penal'&&/^p(?:[1-9]|1[0-7])$/.test(String(moduleId||''))){
+        var module=document.querySelector('#subjects .subject[data-id="penal"] .cf-module[data-cf="'+moduleId+'"]');
+        if(module){openInfographic(module);return;}
+      }
+      return originalOpen&&originalOpen.apply(this,arguments);
+    };
+    global.BaseMindMap.__penalInfographicRedirect=true;
+  }
+  patchLegacyMindMap();
+  setTimeout(patchLegacyMindMap,250);
+  setTimeout(patchLegacyMindMap,1000);
+  setTimeout(patchLegacyMindMap,3000);
+
   document.addEventListener('keydown',function(ev){
     if(ev.key==='Escape'&&document.getElementById(OVERLAY_ID))close();
   });
