@@ -2,7 +2,7 @@
 'use strict';
 if(window.__centralUserSyncV1)return;window.__centralUserSyncV1=true;
 
-var DB_NAME='central-sync-device-v2',STORE='kv';
+var DB_NAME='central-sync-device-v2',STORE='kv',LOCAL_OWNER_KEY='central-v6:local-owner';
 var busy=false,lastCheckHash='',timers=[];
 var CRONO_KEY='CENTRAL_CRONOGRAMA_6M_V2',AGENDA_PREFIX='central-v6:agenda:';
 var user=window.BASE_COMPLETA_USER||null;
@@ -10,17 +10,22 @@ var userId=String(window.__BASE_COMPLETA_USER_ID__||user&&user.id||'');
 var meta={device:'',revision:0,hash:''};
 
 function currentVersion(){return String(window.CENTRAL_VERSION||'6.6.120').replace(/^v/,'')}
-function mk(k){return 'u:'+userId+':'+k}
+function mkFor(uid,k){return 'u:'+uid+':'+k}
+function mk(k){return mkFor(userId,k)}
 function dbOpen(){return new Promise(function(resolve,reject){var r=indexedDB.open(DB_NAME,1);r.onupgradeneeded=function(){if(!r.result.objectStoreNames.contains(STORE))r.result.createObjectStore(STORE)};r.onsuccess=function(){resolve(r.result)};r.onerror=function(){reject(r.error)}})}
 async function kvGet(k){var db=await dbOpen();return new Promise(function(resolve,reject){var tx=db.transaction(STORE,'readonly'),r=tx.objectStore(STORE).get(mk(k));r.onsuccess=function(){resolve(r.result)};r.onerror=function(){reject(r.error)}})}
 async function kvSet(k,v){var db=await dbOpen();return new Promise(function(resolve,reject){var tx=db.transaction(STORE,'readwrite');tx.objectStore(STORE).put(v,mk(k));tx.oncomplete=function(){resolve()};tx.onerror=function(){reject(tx.error)}})}
+async function kvGetFor(uid,k){var db=await dbOpen();return new Promise(function(resolve,reject){var tx=db.transaction(STORE,'readonly'),r=tx.objectStore(STORE).get(mkFor(uid,k));r.onsuccess=function(){resolve(r.result)};r.onerror=function(){reject(r.error)}})}
+async function kvSetFor(uid,k,v){var db=await dbOpen();return new Promise(function(resolve,reject){var tx=db.transaction(STORE,'readwrite');tx.objectStore(STORE).put(v,mkFor(uid,k));tx.oncomplete=function(){resolve()};tx.onerror=function(){reject(tx.error)}})}
 function newDevice(){return 'device-'+Date.now().toString(36)+'-'+Math.random().toString(36).slice(2,10)}
 function isPortugueseDataKey(k){k=String(k||'');return /^central-v6:pt(?::|-)/.test(k)||/^dominio_portugues/i.test(k)}
-function sanitizePayload(payload){var out={};if(!payload||typeof payload!=='object'||Array.isArray(payload))return out;Object.keys(payload).forEach(function(k){if(k&&!isPortugueseDataKey(k))out[k]=payload[k]});return out}
-function collect(){var out={};try{for(var i=0;i<localStorage.length;i++){var k=localStorage.key(i);if(k&&k!=='__central_folder_probe__'&&k!=='__central_storage_probe__'&&!isPortugueseDataKey(k))out[k]=localStorage.getItem(k)}}catch(_){}return out}
+function isSyncKey(k){return !!k&&k!=='__central_folder_probe__'&&k!=='__central_storage_probe__'&&k!==LOCAL_OWNER_KEY&&!isPortugueseDataKey(k)}
+function sanitizePayload(payload){var out={};if(!payload||typeof payload!=='object'||Array.isArray(payload))return out;Object.keys(payload).forEach(function(k){if(isSyncKey(k))out[k]=payload[k]});return out}
+function collect(){var out={};try{for(var i=0;i<localStorage.length;i++){var k=localStorage.key(i);if(isSyncKey(k))out[k]=localStorage.getItem(k)}}catch(_){}return out}
+function clearSyncStorage(){try{var keys=[];for(var i=0;i<localStorage.length;i++){var k=localStorage.key(i);if(isSyncKey(k))keys.push(k)}keys.forEach(function(k){localStorage.removeItem(k)})}catch(_){}}
 function hashObject(obj){var s=JSON.stringify(obj),h=2166136261;for(var i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619)}return (h>>>0).toString(16)+'-'+s.length}
 function status(msg,type){var el=document.getElementById('centralSyncStatus');if(el){el.textContent=msg;el.className='central-backup-status'+(type?' '+type:'')}}
-async function saveMeta(){await Promise.all([kvSet('device',meta.device),kvSet('revision',meta.revision),kvSet('hash',meta.hash)])}
+async function saveMeta(){await Promise.all([kvSet('device',meta.device),kvSet('revision',meta.revision),kvSet('hash',meta.hash),kvSet('local-snapshot',collect())])}
 async function request(path,opt){opt=opt||{};var r=await fetch(path,opt),txt=await r.text(),j={};try{j=txt?JSON.parse(txt):{}}catch(_){j={error:txt||('HTTP '+r.status)}}if(r.status===401){location.replace('/login.html?next='+encodeURIComponent(location.pathname+location.search));throw new Error('Sessão expirada')}if(!r.ok){var e=new Error(j.error||('HTTP '+r.status));e.status=r.status;e.body=j;throw e}return j}
 function jsonObject(v){try{var x=JSON.parse(String(v||''));return x&&typeof x==='object'&&!Array.isArray(x)?x:null}catch(_){return null}}
 function mergeCronogramaValue(localValue,cloudValue){
@@ -49,11 +54,28 @@ function mergePayload(local,cloud,preferLocal){
  Object.keys(src).forEach(function(k){if(k.indexOf(AGENDA_PREFIX)===0)out[k]=mergeAgendaValue(src[k],out[k])});
  return out;
 }
+function applySnapshot(payload){
+ if(!payload||typeof payload!=='object'||Array.isArray(payload))throw new Error('cópia inválida');
+ payload=sanitizePayload(payload);clearSyncStorage();
+ Object.keys(payload).forEach(function(k){localStorage.setItem(k,String(payload[k]))});
+}
 function applyCloud(payload){
- if(!payload||typeof payload!=='object'||Array.isArray(payload))throw new Error('cópia online inválida');
- payload=sanitizePayload(payload);
- Object.keys(payload).forEach(function(k){if(k&&k!=='__central_folder_probe__'&&k!=='__central_storage_probe__')localStorage.setItem(k,String(payload[k]))});
+ applySnapshot(payload);
  try{window.dispatchEvent(new Event('central-cloud-applied'))}catch(_){}
+}
+async function prepareLocalUserState(){
+ var owner='';try{owner=String(localStorage.getItem(LOCAL_OWNER_KEY)||'')}catch(_){}
+ if(owner===userId)return;
+ if(owner&&owner!==userId){
+  await kvSetFor(owner,'local-snapshot',collect());
+  var target=await kvGetFor(userId,'local-snapshot');
+  clearSyncStorage();
+  if(target&&typeof target==='object')applySnapshot(target);
+  try{localStorage.setItem(LOCAL_OWNER_KEY,userId)}catch(_){}
+  return;
+ }
+ await kvSetFor(userId,'local-snapshot',collect());
+ try{localStorage.setItem(LOCAL_OWNER_KEY,userId)}catch(_){}
 }
 async function push(local,hash,base){return request('/api/sync',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({payload:local,hash:hash,baseRevision:base,deviceId:meta.device})})}
 async function safetyBackup(local,note){try{await request('/api/backups',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'save',note:note,backup:{formato:'central-backup-v3-user',app:'Base Completa',versao:'v'+currentVersion(),exportadoEm:new Date().toISOString(),origem:'sync',userId:userId,dados:local}})})}catch(_){}}
@@ -103,6 +125,7 @@ async function init(){
   try{var r=await fetch('/api/auth?action=me',{cache:'no-store'}),j=await r.json();if(j&&j.authenticated&&j.user){user=j.user;userId=String(j.user.id||'')}}catch(_){}
  }
  if(!userId)return;
+ await prepareLocalUserState();
  injectUi();
  meta.device=(await kvGet('device'))||newDevice();
  meta.revision=Number((await kvGet('revision'))||0);
