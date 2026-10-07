@@ -1,0 +1,410 @@
+[
+  {
+    "width": 360,
+    "card": {
+      "left": 12,
+      "right": 348,
+      "top": 140,
+      "bottom": 509.828125,
+      "width": 336
+    },
+    "row": {
+      "left": 27,
+      "right": 224.90625,
+      "top": 202.1875,
+      "bottom": 396.9375,
+      "width": 197.90625
+    },
+    "copy": {
+      "left": 38,
+      "right": 213.90625,
+      "top": 242.1875,
+      "bottom": 337.9375,
+      "width": 175.90625
+    },
+    "buttons": [
+      {
+        "left": 38,
+        "right": 106.453125,
+        "top": 345.9375,
+        "bottom": 385.9375,
+        "width": 68.453125
+      }
+    ],
+    "headerButton": {
+      "left": 232.90625,
+      "right": 333,
+      "top": 255.96875,
+      "bottom": 295.96875,
+      "width": 100.09375
+    },
+    "cardScroll": 334,
+    "cardClient": 334,
+    "rowScroll": 196,
+    "rowClient": 196,
+    "pageScroll": 360,
+    "rowDisplay": "flex",
+    "copyFlex": "1 1 160px",
+    "cardBoxSizing": "border-box",
+    "buttonShrink": [
+      "0"
+    ]
+  },
+  {
+    "width": 390,
+    "card": {
+      "left": 12,
+      "right": 378,
+      "top": 140,
+      "bottom": 509.828125,
+      "width": 366
+    },
+    "row": {
+      "left": 27,
+      "right": 254.90625,
+      "top": 202.1875,
+      "bottom": 396.9375,
+      "width": 227.90625
+    },
+    "copy": {
+      "left": 38,
+      "right": 243.90625,
+      "top": 242.1875,
+      "bottom": 337.9375,
+      "width": 205.90625
+    },
+    "buttons": [
+      {
+        "left": 38,
+        "right": 106.453125,
+        "top": 345.9375,
+        "bottom": 385.9375,
+        "width": 68.453125
+      }
+    ],
+    "headerButton": {
+      "left": 262.90625,
+      "right": 363,
+      "top": 255.96875,
+      "bottom": 295.96875,
+      "width": 100.09375
+    },
+    "cardScroll": 364,
+    "cardClient": 364,
+    "rowScroll": 226,
+    "rowClient": 226,
+    "pageScroll": 390,
+    "rowDisplay": "flex",
+    "copyFlex": "1 1 160px",
+    "cardBoxSizing": "border-box",
+    "buttonShrink": [
+      "0"
+    ]
+  },
+  {
+    "width": 600,
+    "card": {
+      "left": 12,
+      "right": 588,
+      "top": 140,
+      "bottom": 395.046875,
+      "width": 576
+    },
+    "row": {
+      "left": 27,
+      "right": 464.90625,
+      "top": 202.1875,
+      "bottom": 282.15625,
+      "width": 437.90625
+    },
+    "copy": {
+      "left": 106.890625,
+      "right": 377.453125,
+      "top": 213.1875,
+      "bottom": 271.15625,
+      "width": 270.5625
+    },
+    "buttons": [
+      {
+        "left": 385.453125,
+        "right": 453.90625,
+        "top": 222.171875,
+        "bottom": 262.171875,
+        "width": 68.453125
+      }
+    ],
+    "headerButton": {
+      "left": 472.90625,
+      "right": 573,
+      "top": 198.578125,
+      "bottom": 238.578125,
+      "width": 100.09375
+    },
+    "cardScroll": 574,
+    "cardClient": 574,
+    "rowScroll": 436,
+    "rowClient": 436,
+    "pageScroll": 600,
+    "rowDisplay": "flex",
+    "copyFlex": "1 1 160px",
+    "cardBoxSizing": "border-box",
+    "buttonShrink": [
+      "0"
+    ]
+  },
+  {
+    "width": 800,
+    "card": {
+      "left": 12,
+      "right": 788,
+      "top": 140,
+      "bottom": 377.078125,
+      "width": 776
+    },
+    "row": {
+      "left": 27,
+      "right": 664.90625,
+      "top": 202.1875,
+      "bottom": 264.1875,
+      "width": 637.90625
+    },
+    "copy": {
+      "left": 106.890625,
+      "right": 577.453125,
+      "top": 213.296875,
+      "bottom": 253.078125,
+      "width": 470.5625
+    },
+    "buttons": [
+      {
+        "left": 585.453125,
+        "right": 653.90625,
+        "top": 213.1875,
+        "bottom": 253.1875,
+        "width": 68.453125
+      }
+    ],
+    "headerButton": {
+      "left": 672.90625,
+      "right": 773,
+      "top": 189.59375,
+      "bottom": 229.59375,
+      "width": 100.09375
+    },
+    "cardScroll": 774,
+    "cardClient": 774,
+    "rowScroll": 636,
+    "rowClient": 636,
+    "pageScroll": 800,
+    "rowDisplay": "flex",
+    "copyFlex": "1 1 160px",
+    "cardBoxSizing": "border-box",
+    "buttonShrink": [
+      "0"
+    ]
+  },
+  {
+    "width": 850,
+    "card": {
+      "left": 28,
+      "right": 822,
+      "top": 110,
+      "bottom": 368.65625,
+      "width": 794
+    },
+    "row": {
+      "left": 49,
+      "right": 647.078125,
+      "top": 175.796875,
+      "bottom": 255.765625,
+      "width": 598.078125
+    },
+    "copy": {
+      "left": 128.890625,
+      "right": 559.625,
+      "top": 186.796875,
+      "bottom": 244.765625,
+      "width": 430.734375
+    },
+    "buttons": [
+      {
+        "left": 567.625,
+        "right": 636.078125,
+        "top": 195.78125,
+        "bottom": 235.78125,
+        "width": 68.453125
+      }
+    ],
+    "headerButton": {
+      "left": 667.078125,
+      "right": 801,
+      "top": 169.875,
+      "bottom": 213.875,
+      "width": 133.921875
+    },
+    "cardScroll": 792,
+    "cardClient": 792,
+    "rowScroll": 596,
+    "rowClient": 596,
+    "pageScroll": 850,
+    "rowDisplay": "flex",
+    "copyFlex": "1 1 160px",
+    "cardBoxSizing": "border-box",
+    "buttonShrink": [
+      "0"
+    ]
+  },
+  {
+    "width": 900,
+    "card": {
+      "left": 28,
+      "right": 872,
+      "top": 110,
+      "bottom": 350.6875,
+      "width": 844
+    },
+    "row": {
+      "left": 49,
+      "right": 697.078125,
+      "top": 175.796875,
+      "bottom": 237.796875,
+      "width": 648.078125
+    },
+    "copy": {
+      "left": 128.890625,
+      "right": 609.625,
+      "top": 186.90625,
+      "bottom": 226.6875,
+      "width": 480.734375
+    },
+    "buttons": [
+      {
+        "left": 617.625,
+        "right": 686.078125,
+        "top": 186.796875,
+        "bottom": 226.796875,
+        "width": 68.453125
+      }
+    ],
+    "headerButton": {
+      "left": 717.078125,
+      "right": 851,
+      "top": 160.890625,
+      "bottom": 204.890625,
+      "width": 133.921875
+    },
+    "cardScroll": 842,
+    "cardClient": 842,
+    "rowScroll": 646,
+    "rowClient": 646,
+    "pageScroll": 900,
+    "rowDisplay": "flex",
+    "copyFlex": "1 1 160px",
+    "cardBoxSizing": "border-box",
+    "buttonShrink": [
+      "0"
+    ]
+  },
+  {
+    "width": 1024,
+    "card": {
+      "left": 28,
+      "right": 996,
+      "top": 110,
+      "bottom": 350.6875,
+      "width": 968
+    },
+    "row": {
+      "left": 49,
+      "right": 821.078125,
+      "top": 175.796875,
+      "bottom": 237.796875,
+      "width": 772.078125
+    },
+    "copy": {
+      "left": 128.890625,
+      "right": 733.625,
+      "top": 186.90625,
+      "bottom": 226.6875,
+      "width": 604.734375
+    },
+    "buttons": [
+      {
+        "left": 741.625,
+        "right": 810.078125,
+        "top": 186.796875,
+        "bottom": 226.796875,
+        "width": 68.453125
+      }
+    ],
+    "headerButton": {
+      "left": 841.078125,
+      "right": 975,
+      "top": 160.890625,
+      "bottom": 204.890625,
+      "width": 133.921875
+    },
+    "cardScroll": 966,
+    "cardClient": 966,
+    "rowScroll": 770,
+    "rowClient": 770,
+    "pageScroll": 1024,
+    "rowDisplay": "flex",
+    "copyFlex": "1 1 160px",
+    "cardBoxSizing": "border-box",
+    "buttonShrink": [
+      "0"
+    ]
+  },
+  {
+    "width": 1440,
+    "card": {
+      "left": 28,
+      "right": 1412,
+      "top": 110,
+      "bottom": 379.46875,
+      "width": 1384
+    },
+    "row": {
+      "left": 49,
+      "right": 617.984375,
+      "top": 175.796875,
+      "bottom": 266.578125,
+      "width": 568.984375
+    },
+    "copy": {
+      "left": 92,
+      "right": 530.53125,
+      "top": 215.796875,
+      "bottom": 255.578125,
+      "width": 438.53125
+    },
+    "buttons": [
+      {
+        "left": 538.53125,
+        "right": 606.984375,
+        "top": 201.1875,
+        "bottom": 241.1875,
+        "width": 68.453125
+      }
+    ],
+    "headerButton": {
+      "left": 1257.078125,
+      "right": 1391,
+      "top": 175.28125,
+      "bottom": 219.28125,
+      "width": 133.921875
+    },
+    "cardScroll": 1382,
+    "cardClient": 1382,
+    "rowScroll": 567,
+    "rowClient": 567,
+    "pageScroll": 1440,
+    "rowDisplay": "grid",
+    "copyFlex": "0 1 auto",
+    "cardBoxSizing": "border-box",
+    "buttonShrink": [
+      "1"
+    ]
+  }
+]
