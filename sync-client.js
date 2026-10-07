@@ -2,7 +2,7 @@
 'use strict';
 if(window.__centralUserSyncV1)return;window.__centralUserSyncV1=true;
 
-var DB_NAME='central-sync-device-v2',STORE='kv',localState=null;
+var DB_NAME='central-sync-device-v2',STORE='kv',localState=null,localReady=false;
 var busy=false,lastCheckHash='',timers=[];
 var CRONO_KEY='CENTRAL_CRONOGRAMA_6M_V2',AGENDA_PREFIX='central-v6:agenda:';
 var user=window.BASE_COMPLETA_USER||null;
@@ -57,7 +57,7 @@ async function push(local,hash,base){return request('/api/sync',{method:'POST',h
 async function safetyBackup(local,note){try{await request('/api/backups',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'save',note:note,backup:{formato:'central-backup-v3-user',app:'Base Completa',versao:'v'+currentVersion(),exportadoEm:new Date().toISOString(),origem:'sync',userId:userId,dados:local}})})}catch(_){}}
 
 async function sync(reason){
- if(!userId||!localState||busy||!navigator.onLine)return;
+ if(!userId||!localReady||busy||!navigator.onLine)return;
  busy=true;status('Sincronizando sua conta...','warn');
  try{
   var local=collect(),localHash=hashObject(local),cloud=await request('/api/sync');
@@ -103,6 +103,7 @@ async function init(){
  if(!userId)return;
  localState=await import('./sync-local-state.js?v=20261007');
  await localState.prepareLocalUserState(userId);
+ localReady=true;
  injectUi();
  meta.device=(await kvGet('device'))||newDevice();
  meta.revision=Number((await kvGet('revision'))||0);
