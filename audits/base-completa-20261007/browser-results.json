@@ -1,0 +1,817 @@
+{
+  "date": "2026-10-07T09:07:09.423Z",
+  "baseSha": "b709b6f",
+  "isolation": {
+    "bSeesA": null,
+    "aRestored": "A-only",
+    "bRestored": "B-only",
+    "pass": true,
+    "offline": true,
+    "reconnected": true,
+    "cloudB": "B-only"
+  },
+  "themes": {
+    "themes": 7,
+    "legacy": 3,
+    "pass": true,
+    "checks": [
+      {
+        "theme": "paper-yellow",
+        "before": {
+          "attr": "paper-yellow",
+          "key": "paper-yellow"
+        },
+        "after": {
+          "attr": "paper-yellow",
+          "key": "paper-yellow",
+          "overflow": false
+        }
+      },
+      {
+        "theme": "paper-white",
+        "before": {
+          "attr": "paper-white",
+          "key": "paper-white"
+        },
+        "after": {
+          "attr": "paper-white",
+          "key": "paper-white",
+          "overflow": false
+        }
+      },
+      {
+        "theme": "sage-study",
+        "before": {
+          "attr": "sage-study",
+          "key": "sage-study"
+        },
+        "after": {
+          "attr": "sage-study",
+          "key": "sage-study",
+          "overflow": false
+        }
+      },
+      {
+        "theme": "editorial-gray",
+        "before": {
+          "attr": "editorial-gray",
+          "key": "editorial-gray"
+        },
+        "after": {
+          "attr": "editorial-gray",
+          "key": "editorial-gray",
+          "overflow": false
+        }
+      },
+      {
+        "theme": "legal-mist",
+        "before": {
+          "attr": "legal-mist",
+          "key": "legal-mist"
+        },
+        "after": {
+          "attr": "legal-mist",
+          "key": "legal-mist",
+          "overflow": false
+        }
+      },
+      {
+        "theme": "dark-premium",
+        "before": {
+          "attr": "dark-premium",
+          "key": "dark-premium"
+        },
+        "after": {
+          "attr": "dark-premium",
+          "key": "dark-premium",
+          "overflow": false
+        }
+      },
+      {
+        "theme": "oled-black",
+        "before": {
+          "attr": "oled-black",
+          "key": "oled-black"
+        },
+        "after": {
+          "attr": "oled-black",
+          "key": "oled-black",
+          "overflow": false
+        }
+      }
+    ]
+  },
+  "sweep": {
+    "pages": 66,
+    "widths": [
+      360,
+      390,
+      768,
+      1024,
+      1440
+    ],
+    "cases": 330,
+    "main404": 0,
+    "overflow": 0,
+    "asset404": 0,
+    "errors": 0,
+    "pagesWithOverflow": [],
+    "issues": []
+  },
+  "extra": null,
+  "screenshots": [
+    "m04-mobile.png",
+    "m08-mobile.png",
+    "m17-mobile.png",
+    "cronograma-mobile.png",
+    "home-390.png",
+    "home-1440.png",
+    "dark-premium.png",
+    "oled.png"
+  ],
+  "sanitization": {
+    "cases": 6,
+    "pass": true,
+    "checks": [
+      {
+        "input": "<script>window.__auditFired=1</script>",
+        "serverHtml": "",
+        "state": {
+          "html": "<p>Original</p>",
+          "fired": 0,
+          "unsafe": false
+        }
+      },
+      {
+        "input": "<img src=x onerror=window.__auditFired=1>",
+        "serverHtml": "<img src=x>",
+        "state": {
+          "html": "<img src=\"x\">",
+          "fired": 0,
+          "unsafe": false
+        }
+      },
+      {
+        "input": "<a href=\"javascript:window.__auditFired=1\">x</a>",
+        "serverHtml": "<a>x</a>",
+        "state": {
+          "html": "<a>x</a>",
+          "fired": 0,
+          "unsafe": false
+        }
+      },
+      {
+        "input": "<a href=javascript:window.__auditFired=1>x</a>",
+        "serverHtml": "<a href=javascript:window.__auditFired=1>x</a>",
+        "state": {
+          "html": "<a>x</a>",
+          "fired": 0,
+          "unsafe": false
+        }
+      },
+      {
+        "input": "<iframe srcdoc=\"<script>window.__auditFired=1</script>\"></iframe>",
+        "serverHtml": "",
+        "state": {
+          "html": "<a>x</a>",
+          "fired": 0,
+          "unsafe": false
+        }
+      },
+      {
+        "input": "<svg onload=window.__auditFired=1></svg>",
+        "serverHtml": "<svg></svg>",
+        "state": {
+          "html": "<svg></svg>",
+          "fired": 0,
+          "unsafe": false
+        }
+      }
+    ],
+    "formatting": "<h2>Título</h2><table><tr><td>Célula</td></tr></table><figure><img src=\"/assets/base-completa-symbol.webp\"></figure>"
+  },
+  "bootIsolation": {
+    "ownerAtWrite": "B",
+    "bSeesA": null,
+    "pass": true
+  },
+  "pwa": {
+    "offline": {
+      "status": 200,
+      "progress": "done"
+    },
+    "updated": {
+      "progress": "done",
+      "cacheKeys": [
+        "central-20261007-local-theme2",
+        "central-auth-session-v1"
+      ]
+    },
+    "pass": true
+  },
+  "realThemes": [
+    {
+      "theme": "paper-yellow",
+      "before": {
+        "attr": "paper-yellow",
+        "key": "paper-yellow"
+      },
+      "after": {
+        "attr": "paper-yellow",
+        "key": "paper-yellow",
+        "overflow": false,
+        "bg": "rgb(243, 249, 253)",
+        "bgVar": "#F4ECDD",
+        "rootClass": "central-minimal-v66119 bc-ui-v1 bc-topnav bc-home-v3-active",
+        "cardBg": "rgb(255, 255, 255)",
+        "continuePath": [
+          {
+            "tag": "DIV",
+            "id": "continueBox",
+            "cls": "progress-box",
+            "bg": "rgba(0, 0, 0, 0)",
+            "color": "rgb(45, 41, 36)"
+          },
+          {
+            "tag": "DIV",
+            "id": "",
+            "cls": "card bc-card bc-home-continue home-continue-card",
+            "bg": "rgb(255, 255, 255)",
+            "color": "rgb(45, 41, 36)"
+          },
+          {
+            "tag": "DIV",
+            "id": "",
+            "cls": "home-secondary-row",
+            "bg": "rgba(0, 0, 0, 0)",
+            "color": "rgb(18, 52, 77)"
+          }
+        ],
+        "heading": "rgb(18, 52, 77)",
+        "themeCss": true
+      },
+      "navigated": {
+        "attr": "paper-yellow",
+        "key": "paper-yellow"
+      }
+    },
+    {
+      "theme": "paper-white",
+      "before": {
+        "attr": "paper-white",
+        "key": "paper-white"
+      },
+      "after": {
+        "attr": "paper-white",
+        "key": "paper-white",
+        "overflow": false,
+        "bg": "rgb(243, 249, 253)",
+        "bgVar": "#F8F7F3",
+        "rootClass": "central-minimal-v66119 bc-ui-v1 bc-topnav bc-home-v3-active",
+        "cardBg": "rgb(255, 255, 255)",
+        "continuePath": [
+          {
+            "tag": "DIV",
+            "id": "continueBox",
+            "cls": "progress-box",
+            "bg": "rgba(0, 0, 0, 0)",
+            "color": "rgb(32, 40, 45)"
+          },
+          {
+            "tag": "DIV",
+            "id": "",
+            "cls": "card bc-card bc-home-continue home-continue-card",
+            "bg": "rgb(255, 255, 255)",
+            "color": "rgb(32, 40, 45)"
+          },
+          {
+            "tag": "DIV",
+            "id": "",
+            "cls": "home-secondary-row",
+            "bg": "rgba(0, 0, 0, 0)",
+            "color": "rgb(18, 52, 77)"
+          }
+        ],
+        "heading": "rgb(18, 52, 77)",
+        "themeCss": true
+      },
+      "navigated": {
+        "attr": "paper-white",
+        "key": "paper-white"
+      }
+    },
+    {
+      "theme": "sage-study",
+      "before": {
+        "attr": "sage-study",
+        "key": "sage-study"
+      },
+      "after": {
+        "attr": "sage-study",
+        "key": "sage-study",
+        "overflow": false,
+        "bg": "rgb(243, 249, 253)",
+        "bgVar": "#EAF0E9",
+        "rootClass": "central-minimal-v66119 bc-ui-v1 bc-topnav bc-home-v3-active",
+        "cardBg": "rgb(255, 255, 255)",
+        "continuePath": [
+          {
+            "tag": "DIV",
+            "id": "continueBox",
+            "cls": "progress-box",
+            "bg": "rgba(0, 0, 0, 0)",
+            "color": "rgb(34, 49, 43)"
+          },
+          {
+            "tag": "DIV",
+            "id": "",
+            "cls": "card bc-card bc-home-continue home-continue-card",
+            "bg": "rgb(255, 255, 255)",
+            "color": "rgb(34, 49, 43)"
+          },
+          {
+            "tag": "DIV",
+            "id": "",
+            "cls": "home-secondary-row",
+            "bg": "rgba(0, 0, 0, 0)",
+            "color": "rgb(18, 52, 77)"
+          }
+        ],
+        "heading": "rgb(18, 52, 77)",
+        "themeCss": true
+      },
+      "navigated": {
+        "attr": "sage-study",
+        "key": "sage-study"
+      }
+    },
+    {
+      "theme": "editorial-gray",
+      "before": {
+        "attr": "editorial-gray",
+        "key": "editorial-gray"
+      },
+      "after": {
+        "attr": "editorial-gray",
+        "key": "editorial-gray",
+        "overflow": false,
+        "bg": "rgb(243, 249, 253)",
+        "bgVar": "#EFF0EF",
+        "rootClass": "central-minimal-v66119 bc-ui-v1 bc-topnav bc-home-v3-active",
+        "cardBg": "rgb(255, 255, 255)",
+        "continuePath": [
+          {
+            "tag": "DIV",
+            "id": "continueBox",
+            "cls": "progress-box",
+            "bg": "rgba(0, 0, 0, 0)",
+            "color": "rgb(37, 43, 45)"
+          },
+          {
+            "tag": "DIV",
+            "id": "",
+            "cls": "card bc-card bc-home-continue home-continue-card",
+            "bg": "rgb(255, 255, 255)",
+            "color": "rgb(37, 43, 45)"
+          },
+          {
+            "tag": "DIV",
+            "id": "",
+            "cls": "home-secondary-row",
+            "bg": "rgba(0, 0, 0, 0)",
+            "color": "rgb(18, 52, 77)"
+          }
+        ],
+        "heading": "rgb(18, 52, 77)",
+        "themeCss": true
+      },
+      "navigated": {
+        "attr": "editorial-gray",
+        "key": "editorial-gray"
+      }
+    },
+    {
+      "theme": "legal-mist",
+      "before": {
+        "attr": "legal-mist",
+        "key": "legal-mist"
+      },
+      "after": {
+        "attr": "legal-mist",
+        "key": "legal-mist",
+        "overflow": false,
+        "bg": "rgb(243, 249, 253)",
+        "bgVar": "#EAF0F5",
+        "rootClass": "central-minimal-v66119 bc-ui-v1 bc-topnav bc-home-v3-active",
+        "cardBg": "rgb(255, 255, 255)",
+        "continuePath": [
+          {
+            "tag": "DIV",
+            "id": "continueBox",
+            "cls": "progress-box",
+            "bg": "rgba(0, 0, 0, 0)",
+            "color": "rgb(32, 48, 60)"
+          },
+          {
+            "tag": "DIV",
+            "id": "",
+            "cls": "card bc-card bc-home-continue home-continue-card",
+            "bg": "rgb(255, 255, 255)",
+            "color": "rgb(32, 48, 60)"
+          },
+          {
+            "tag": "DIV",
+            "id": "",
+            "cls": "home-secondary-row",
+            "bg": "rgba(0, 0, 0, 0)",
+            "color": "rgb(18, 52, 77)"
+          }
+        ],
+        "heading": "rgb(18, 52, 77)",
+        "themeCss": true
+      },
+      "navigated": {
+        "attr": "legal-mist",
+        "key": "legal-mist"
+      }
+    },
+    {
+      "theme": "dark-premium",
+      "before": {
+        "attr": "dark-premium",
+        "key": "dark-premium"
+      },
+      "after": {
+        "attr": "dark-premium",
+        "key": "dark-premium",
+        "overflow": false,
+        "bg": "rgb(7, 24, 32)",
+        "bgVar": "#071820",
+        "rootClass": "central-minimal-v66119 bc-ui-v1 bc-topnav bc-home-v3-active",
+        "cardBg": "rgb(14, 40, 51)",
+        "continuePath": [
+          {
+            "tag": "DIV",
+            "id": "continueBox",
+            "cls": "progress-box",
+            "bg": "rgb(14, 40, 51)",
+            "color": "rgb(241, 246, 247)"
+          },
+          {
+            "tag": "DIV",
+            "id": "",
+            "cls": "card bc-card bc-home-continue home-continue-card",
+            "bg": "rgb(14, 40, 51)",
+            "color": "rgb(241, 246, 247)"
+          },
+          {
+            "tag": "DIV",
+            "id": "",
+            "cls": "home-secondary-row",
+            "bg": "rgba(0, 0, 0, 0)",
+            "color": "rgb(241, 246, 247)"
+          }
+        ],
+        "heading": "rgb(241, 246, 247)",
+        "themeCss": true
+      },
+      "navigated": {
+        "attr": "dark-premium",
+        "key": "dark-premium"
+      }
+    },
+    {
+      "theme": "oled-black",
+      "before": {
+        "attr": "oled-black",
+        "key": "oled-black"
+      },
+      "after": {
+        "attr": "oled-black",
+        "key": "oled-black",
+        "overflow": false,
+        "bg": "rgb(0, 0, 0)",
+        "bgVar": "#000000",
+        "rootClass": "central-minimal-v66119 bc-ui-v1 bc-topnav bc-home-v3-active",
+        "cardBg": "rgb(9, 14, 17)",
+        "continuePath": [
+          {
+            "tag": "DIV",
+            "id": "continueBox",
+            "cls": "progress-box",
+            "bg": "rgb(9, 14, 17)",
+            "color": "rgb(244, 248, 249)"
+          },
+          {
+            "tag": "DIV",
+            "id": "",
+            "cls": "card bc-card bc-home-continue home-continue-card",
+            "bg": "rgb(9, 14, 17)",
+            "color": "rgb(244, 248, 249)"
+          },
+          {
+            "tag": "DIV",
+            "id": "",
+            "cls": "home-secondary-row",
+            "bg": "rgba(0, 0, 0, 0)",
+            "color": "rgb(244, 248, 249)"
+          }
+        ],
+        "heading": "rgb(244, 248, 249)",
+        "themeCss": true
+      },
+      "navigated": {
+        "attr": "oled-black",
+        "key": "oled-black"
+      }
+    }
+  ],
+  "accessibility": [
+    {
+      "file": "central-v119.html",
+      "unnamedButtons": 0,
+      "emptyLinks": 0,
+      "unlabeledInputs": 0,
+      "h1": 5,
+      "dialogCount": 1
+    },
+    {
+      "file": "login.html",
+      "unnamedButtons": 0,
+      "emptyLinks": 0,
+      "unlabeledInputs": 0,
+      "h1": 1,
+      "dialogCount": 0
+    },
+    {
+      "file": "usuarios.html",
+      "unnamedButtons": 0,
+      "emptyLinks": 0,
+      "unlabeledInputs": 0,
+      "h1": 1,
+      "dialogCount": 0
+    },
+    {
+      "file": "tools/cronograma.html",
+      "unnamedButtons": 0,
+      "emptyLinks": 0,
+      "unlabeledInputs": 0,
+      "h1": 1,
+      "dialogCount": 0
+    },
+    {
+      "file": "modules/trabalho/base-completa/m04.html",
+      "unnamedButtons": 0,
+      "emptyLinks": 0,
+      "unlabeledInputs": 0,
+      "h1": 1,
+      "dialogCount": 0
+    }
+  ],
+  "layouts": {
+    "cases": 30,
+    "overflows": [],
+    "checks": [
+      {
+        "file": "central-v119.html",
+        "view": "mobile-portrait",
+        "viewport": 390,
+        "scroll": 390,
+        "body": 390,
+        "overflow": false
+      },
+      {
+        "file": "central-v119.html",
+        "view": "mobile-landscape",
+        "viewport": 844,
+        "scroll": 844,
+        "body": 844,
+        "overflow": false
+      },
+      {
+        "file": "central-v119.html",
+        "view": "tablet-portrait",
+        "viewport": 768,
+        "scroll": 768,
+        "body": 768,
+        "overflow": false
+      },
+      {
+        "file": "central-v119.html",
+        "view": "tablet-landscape",
+        "viewport": 1024,
+        "scroll": 1024,
+        "body": 1024,
+        "overflow": false
+      },
+      {
+        "file": "central-v119.html",
+        "view": "zoom-200",
+        "viewport": 1440,
+        "scroll": 1440,
+        "body": 720,
+        "overflow": false
+      },
+      {
+        "file": "tools/cronograma.html",
+        "view": "mobile-portrait",
+        "viewport": 390,
+        "scroll": 390,
+        "body": 390,
+        "overflow": false
+      },
+      {
+        "file": "tools/cronograma.html",
+        "view": "mobile-landscape",
+        "viewport": 844,
+        "scroll": 844,
+        "body": 844,
+        "overflow": false
+      },
+      {
+        "file": "tools/cronograma.html",
+        "view": "tablet-portrait",
+        "viewport": 768,
+        "scroll": 768,
+        "body": 768,
+        "overflow": false
+      },
+      {
+        "file": "tools/cronograma.html",
+        "view": "tablet-landscape",
+        "viewport": 1024,
+        "scroll": 1024,
+        "body": 1024,
+        "overflow": false
+      },
+      {
+        "file": "tools/cronograma.html",
+        "view": "zoom-200",
+        "viewport": 1440,
+        "scroll": 1440,
+        "body": 720,
+        "overflow": false
+      },
+      {
+        "file": "modules/trabalho/base-completa/m04.html",
+        "view": "mobile-portrait",
+        "viewport": 390,
+        "scroll": 390,
+        "body": 390,
+        "overflow": false
+      },
+      {
+        "file": "modules/trabalho/base-completa/m04.html",
+        "view": "mobile-landscape",
+        "viewport": 844,
+        "scroll": 844,
+        "body": 612,
+        "overflow": false
+      },
+      {
+        "file": "modules/trabalho/base-completa/m04.html",
+        "view": "tablet-portrait",
+        "viewport": 768,
+        "scroll": 768,
+        "body": 612,
+        "overflow": false
+      },
+      {
+        "file": "modules/trabalho/base-completa/m04.html",
+        "view": "tablet-landscape",
+        "viewport": 1024,
+        "scroll": 1024,
+        "body": 612,
+        "overflow": false
+      },
+      {
+        "file": "modules/trabalho/base-completa/m04.html",
+        "view": "zoom-200",
+        "viewport": 1440,
+        "scroll": 1440,
+        "body": 612,
+        "overflow": false
+      },
+      {
+        "file": "modules/trabalho/base-completa/m08.html",
+        "view": "mobile-portrait",
+        "viewport": 390,
+        "scroll": 390,
+        "body": 390,
+        "overflow": false
+      },
+      {
+        "file": "modules/trabalho/base-completa/m08.html",
+        "view": "mobile-landscape",
+        "viewport": 844,
+        "scroll": 844,
+        "body": 844,
+        "overflow": false
+      },
+      {
+        "file": "modules/trabalho/base-completa/m08.html",
+        "view": "tablet-portrait",
+        "viewport": 768,
+        "scroll": 768,
+        "body": 768,
+        "overflow": false
+      },
+      {
+        "file": "modules/trabalho/base-completa/m08.html",
+        "view": "tablet-landscape",
+        "viewport": 1024,
+        "scroll": 1024,
+        "body": 1024,
+        "overflow": false
+      },
+      {
+        "file": "modules/trabalho/base-completa/m08.html",
+        "view": "zoom-200",
+        "viewport": 1440,
+        "scroll": 1440,
+        "body": 720,
+        "overflow": false
+      },
+      {
+        "file": "modules/trabalho/base-completa/m17.html",
+        "view": "mobile-portrait",
+        "viewport": 390,
+        "scroll": 390,
+        "body": 390,
+        "overflow": false
+      },
+      {
+        "file": "modules/trabalho/base-completa/m17.html",
+        "view": "mobile-landscape",
+        "viewport": 844,
+        "scroll": 844,
+        "body": 844,
+        "overflow": false
+      },
+      {
+        "file": "modules/trabalho/base-completa/m17.html",
+        "view": "tablet-portrait",
+        "viewport": 768,
+        "scroll": 768,
+        "body": 768,
+        "overflow": false
+      },
+      {
+        "file": "modules/trabalho/base-completa/m17.html",
+        "view": "tablet-landscape",
+        "viewport": 1024,
+        "scroll": 1024,
+        "body": 1024,
+        "overflow": false
+      },
+      {
+        "file": "modules/trabalho/base-completa/m17.html",
+        "view": "zoom-200",
+        "viewport": 1440,
+        "scroll": 1440,
+        "body": 720,
+        "overflow": false
+      },
+      {
+        "file": "usuarios.html",
+        "view": "mobile-portrait",
+        "viewport": 390,
+        "scroll": 390,
+        "body": 390,
+        "overflow": false
+      },
+      {
+        "file": "usuarios.html",
+        "view": "mobile-landscape",
+        "viewport": 844,
+        "scroll": 844,
+        "body": 844,
+        "overflow": false
+      },
+      {
+        "file": "usuarios.html",
+        "view": "tablet-portrait",
+        "viewport": 768,
+        "scroll": 768,
+        "body": 768,
+        "overflow": false
+      },
+      {
+        "file": "usuarios.html",
+        "view": "tablet-landscape",
+        "viewport": 1024,
+        "scroll": 1024,
+        "body": 1024,
+        "overflow": false
+      },
+      {
+        "file": "usuarios.html",
+        "view": "zoom-200",
+        "viewport": 1440,
+        "scroll": 1440,
+        "body": 720,
+        "overflow": false
+      }
+    ]
+  }
+}
