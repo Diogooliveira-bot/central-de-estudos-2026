@@ -222,3 +222,40 @@ html.bc-ui-v1 :is(.progress-line,.subject-bar,.cf-module-bar,.cf-qbar,.anki-duo-
 @media(max-width:420px){.central-theme-options{grid-template-columns:1fr!important}}
 
 @media(prefers-reduced-motion:reduce){.central-theme-card{transition:none}.central-theme-card:hover{transform:none}}
+
+/* A home com menu superior usa cores fixas; respeite os dois temas escuros existentes. */
+html:is([data-central-theme="dark-premium"],[data-central-theme="oled-black"]).bc-ui-v1.bc-topnav,
+html:is([data-central-theme="dark-premium"],[data-central-theme="oled-black"]).bc-ui-v1.bc-topnav body,
+html:is([data-central-theme="dark-premium"],[data-central-theme="oled-black"]).bc-ui-v1.bc-topnav #appRoot #homeView{
+  background:var(--bg)!important;color:var(--text)!important;
+}
+html:is([data-central-theme="dark-premium"],[data-central-theme="oled-black"]).bc-ui-v1.bc-topnav #centralSidebar{
+  background:var(--surface)!important;box-shadow:0 1px 0 var(--border)!important;
+}
+html:is([data-central-theme="dark-premium"],[data-central-theme="oled-black"]).bc-ui-v1.bc-topnav #appRoot #homeView :is(.home-today-card,#continueBox,.agenda-row),
+html:is([data-central-theme="dark-premium"],[data-central-theme="oled-black"]).bc-ui-v1.bc-topnav #appRoot #homeView #subjects>.subject,
+html:is([data-central-theme="dark-premium"],[data-central-theme="oled-black"]).bc-ui-v1.bc-topnav #appRoot #homeView #subjects>.subject:nth-child(even){
+  background:var(--card)!important;color:var(--text)!important;border-color:var(--border)!important;
+}
+html:is([data-central-theme="dark-premium"],[data-central-theme="oled-black"]).bc-ui-v1.bc-topnav #appRoot #homeView #subjects>.subject>.subject-head,
+html:is([data-central-theme="dark-premium"],[data-central-theme="oled-black"]).bc-ui-v1.bc-topnav #appRoot #homeView #subjects>.subject>.subject-head:hover{
+  background:var(--card)!important;color:var(--text)!important;
+}
+html:is([data-central-theme="dark-premium"],[data-central-theme="oled-black"]).bc-ui-v1.bc-topnav #appRoot #homeView :is(h2,.big,.agenda-row b,.subject-name,.subject-pct,.bc-row-meta),
+html:is([data-central-theme="dark-premium"],[data-central-theme="oled-black"]).bc-ui-v1.bc-topnav #appRoot #homeView #subjects>.subject>.subject-head :is(.subject-name,.subject-pct){
+  color:var(--text)!important;
+}
+html:is([data-central-theme="dark-premium"],[data-central-theme="oled-black"]).bc-ui-v1.bc-topnav #appRoot #homeView :is(.bc-row-track,.subject-bar,.progress-line){background:var(--progress-track)!important}
+html:is([data-central-theme="dark-premium"],[data-central-theme="oled-black"]).bc-ui-v1.bc-topnav #appRoot #homeView :is(.bc-row-track,.subject-bar,.progress-line)>span{background:var(--progress-fill)!important}
+html:is([data-central-theme="dark-premium"],[data-central-theme="oled-black"]).bc-ui-v1.bc-topnav #appRoot #homeView :is(.btn.primary,#continueBox .btn){background:var(--button-bg)!important;color:var(--button-text)!important}
+html:is([data-central-theme="dark-premium"],[data-central-theme="oled-black"]).bc-ui-v1.bc-topnav #appRoot #homeView .home-continue-card{
+  background:var(--card)!important;color:var(--text)!important;border-color:var(--border)!important;
+}
+html:is([data-central-theme="dark-premium"],[data-central-theme="oled-black"]).bc-ui-v1.bc-topnav #appRoot #homeView #continueBox :is(.big,b),
+html:is([data-central-theme="dark-premium"],[data-central-theme="oled-black"]).bc-ui-v1.bc-topnav #appRoot #homeView #disciplinasHome h2{
+  color:var(--text)!important;
+}
+html:is([data-central-theme="dark-premium"],[data-central-theme="oled-black"]).bc-ui-v1.bc-topnav #appRoot #homeView .home-continue-card h3{color:var(--text)!important}
+html[data-central-theme="oled-black"].bc-ui-v1.bc-topnav,
+html[data-central-theme="oled-black"].bc-ui-v1.bc-topnav body,
+html[data-central-theme="oled-black"].bc-ui-v1.bc-topnav #appRoot #homeView{background:#000!important}

@@ -11,6 +11,10 @@
     "@vercel/functions": "^3.9.11"
   },
   "scripts": {
-    "prepare": "node scripts/build-home-progress.mjs"
+    "prepare": "node scripts/build-home-progress.mjs",
+    "test": "node --test tests/auth-unit.mjs"
+  },
+  "devDependencies": {
+    "playwright": "^1.63.0"
   }
 }

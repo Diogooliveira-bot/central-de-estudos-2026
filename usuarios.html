@@ -54,8 +54,8 @@ label{display:block;font-size:11px;font-weight:800;margin:12px 0 5px;color:#5f57
 <section class="panel">
 <h2>Usuários cadastrados</h2>
 <div class="toolbar">
-<input id="search" placeholder="Buscar por nome ou e-mail">
-<select id="filter"><option value="all">Todos</option><option value="aluno">Alunos</option><option value="editor">Editores</option><option value="admin">Administradores</option><option value="inactive">Inativos</option></select>
+<input id="search" aria-label="Buscar usuários por nome ou e-mail" placeholder="Buscar por nome ou e-mail">
+<select id="filter" aria-label="Filtrar usuários por perfil"><option value="all">Todos</option><option value="aluno">Alunos</option><option value="editor">Editores</option><option value="admin">Administradores</option><option value="inactive">Inativos</option></select>
 </div>
 <div id="users" class="list"><div class="hint">Carregando...</div></div>
 </section>
@@ -93,7 +93,7 @@ function render(){
   row.innerHTML=
    '<div class="user-head">'+
     '<div class="who"><b>'+esc(u.name)+'</b><small>'+esc(u.email)+'</small><div class="meta"><span class="pill">'+roleLabel(u.role)+'</span><span class="pill '+(u.active?'ok':'warn')+'">'+(u.active?'ATIVO':'INATIVO')+'</span>'+(hasProgress?'<span class="pill ok">PROGRESSO ATIVO</span>':'<span class="pill warn">SEM ATIVIDADE AINDA</span>')+'</div></div>'+
-    '<select class="role"><option value="aluno">Aluno</option><option value="editor">Editor</option><option value="admin">Administrador</option></select>'+
+    '<select class="role" aria-label="Perfil do usuário"><option value="aluno">Aluno</option><option value="editor">Editor</option><option value="admin">Administrador</option></select>'+
     '<label style="margin:0;display:flex;gap:6px;align-items:center;font-size:11px"><input class="active" type="checkbox" style="width:auto"> Ativo</label>'+
     '<div class="row-actions"><button class="save">Salvar</button><button class="reset">Nova senha</button></div>'+
    '</div>'+
