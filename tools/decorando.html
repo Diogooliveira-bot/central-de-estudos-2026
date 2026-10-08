@@ -809,7 +809,7 @@ const TOPICS_CPP=[{"id":"cpp-01","label":"Módulo 1 — Sistemas, princípios, l
 const TOPICS_ADM_EXTENDED = [...TOPICS_ADM,...TOPICS_ADM_PACK1,...TOPICS_ADM_PACK2,...TOPICS_ADM_PACK3,...TOPICS_ADM_PACK4].map(topic=>({...topic,subtopics:[...new Set([...(topic.subtopics||[]),...DATA_ADM_EXTRAS.filter(q=>q.topicId===topic.id).map(q=>q.subtopic)])].sort((a,b)=>a.localeCompare(b,"pt-BR",{numeric:true}))}));
 TOPICS_BY_DISCIPLINE={cf:TOPICS_CF,civil:TOPICS_CIVIL,penal:TOPICS_PENAL,cpc:TOPICS_CPC,cpp:TOPICS_CPP,adm:TOPICS_ADM_EXTENDED};
 const DISCIPLINES={
- adm:{id:"adm",badge:"ADM",name:"Direito Administrativo",law:"Direito Administrativo",subtitle:"25 conjuntos legais · 765 questões de estudo ativo",color:"#366657",supplementNotice:"25 conjuntos legais: 321 questões importadas do acervo de concursos públicos e 444 exercícios autorais da Base Completa. Banca, cargo e ano são exibidos quando identificados; 12 questões importadas ainda não têm banca e ano confirmados no material recebido. Questões históricas devem ser estudadas considerando a legislação vigente."},
+ adm:{id:"adm",badge:"ADM",name:"Direito Administrativo",law:"Direito Administrativo",subtitle:"25 conjuntos legais · 765 questões de estudo ativo",color:"#366657",supplementNotice:"25 conjuntos legais: 309 questões de provas com banca identificada, 444 exercícios autorais da Base Completa e 12 questões importadas cuja origem precisa ser confirmada. Nenhuma questão sem banca identificada é atribuída a um site. Questões históricas exigem atenção à legislação vigente."},
  cf:{id:"cf",badge:"CF",name:"Direito Constitucional",law:"Constituição Federal",subtitle:"Constituição Federal de 1988",color:"#315c54"},
  civil:{id:"civil",badge:"CC",name:"Direito Civil",law:"Direito Civil · Lei Seca",subtitle:"Edital Analista · questões reais + autorais de lei seca",color:"#67543e"},
  penal:{id:"penal",badge:"CP",name:"Direito Penal",law:"Código Penal",subtitle:"1.763 questões únicas · PDF auditado e deduplicado",color:"#6b3f4b",supplementNotice:"Auditoria de 27/08/2026: duplicatas literais removidas; variações que cobram o mesmo artigo por ângulos diferentes foram mantidas. O item 686 do PDF não foi importado porque o arquivo não apresenta gabarito."},
@@ -1152,8 +1152,8 @@ function toggleAcc(n){ui.accOpen=ui.accOpen===n?0:n;render()}
 function qcBank(a){let b=String((a.question||{}).bank||"").trim().toUpperCase();if(!b)return "Sem banca informada";if(/CESPE|CEBRASPE/.test(b))return "CEBRASPE (CESPE)";return b}
 function qcYear(a){const y=(a.question||{}).year;return y?String(y):"Sem ano"}
 function qcRole(a){const r=String((a.question||{}).role||"").trim();return r||""}
-function qcOrigin(a){return (a.origin==="authorial"||(a.question||{}).origin==="authorial")?"authorial":"real"}
-const QC_ORIGIN_LABEL={real:"Questões de prova",authorial:"Autorais"};
+function qcOrigin(a){return a.origin==="unverified"?"unverified":(a.origin==="authorial"||(a.question||{}).origin==="authorial")?"authorial":"real"}
+const QC_ORIGIN_LABEL={real:"Questões de prova",authorial:"Autorais",unverified:"Origem a confirmar"};
 function selectedActive(){
   return allActive().filter(a=>{
     if(ui.selectedTopics.size&&!ui.selectedTopics.has(a.topicId))return false;
@@ -1265,7 +1265,7 @@ function renderFilters(){
         <details class="bc-filter-section" ${ui.filterOpen.banks?"open":""} ontoggle="rememberFilterSection('banks',this.open)">
           <summary><span class="bc-step-title"><span>03</span><strong>Banca e origem</strong></span><small>${bank}</small><i aria-hidden="true"></i></summary>
           <div class="bc-step-fields qc-metadata-grid">${field("bank")}${field("year")}${qcOptions('role').length?field("role"):''}
-            <div class="qc-field"><label>Origem</label><div class="qc-origin-options" role="group" aria-label="Origem das questões">${Object.entries(QC_ORIGIN_LABEL).map(([key,label])=>`<button type="button" aria-pressed="${ui.fOrigin===key}" class="${ui.fOrigin===key?'selected':''}" onclick="qcSeg('origin','${key}')">${label}</button>`).join('')}</div></div>
+            <div class="qc-field"><label>Origem</label><div class="qc-origin-options" role="group" aria-label="Origem das questões">${Object.entries(QC_ORIGIN_LABEL).filter(([key])=>key!=="unverified"||allActive().some(a=>qcOrigin(a)==="unverified")).map(([key,label])=>`<button type="button" aria-pressed="${ui.fOrigin===key}" class="${ui.fOrigin===key?'selected':''}" onclick="qcSeg('origin','${key}')">${label}</button>`).join('')}</div></div>
           </div>
         </details>
       </section>
