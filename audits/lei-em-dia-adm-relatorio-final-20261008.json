@@ -1,0 +1,432 @@
+{
+  "title": "Base Completa — encerramento técnico da importação de Direito Administrativo na Lei em Dia",
+  "date": "2026-10-08",
+  "version": {
+    "laws": 25,
+    "questions": 765,
+    "authorial": 444,
+    "originatedFromPDFs": 321,
+    "originalPdfCount": 15
+  },
+  "publication": {
+    "githubBranch": "main",
+    "status": "MERGED_AND_DEPLOYED",
+    "lastMergedPR": 64,
+    "verifiedProductionAt": "2026-10-08T13:22:00Z"
+  },
+  "validation": {
+    "structural": {
+      "status": "PASS",
+      "details": "765 IDs únicos; 25 tópicos legais; não mais que duas questões por dispositivo canônico; nenhum enunciado literalmente repetido no mesmo conjunto; arquivos offline incluídos."
+    },
+    "sourceTranscription": {
+      "status": "PASS_TO_SOURCE_NOT_TO_CURRENT_LAW",
+      "matchingAnswersToSource": 321,
+      "missingAnswersInSource": 0,
+      "mismatchedAnswers": 0,
+      "sourceAudit": "audits/lei-em-dia-adm-gabaritos-fonte-20261008.json"
+    },
+    "automatedTests": {
+      "status": "PASS",
+      "evidence": "https://github.com/Diogooliveira-bot/central-de-estudos-2026/actions/runs/37783768434",
+      "scope": "npm run test:lei-adm + npm test + Playwright Chromium em 390px e 1280px com autenticação local simulada"
+    },
+    "lawSpotChecks": {
+      "status": "PARTIAL_CHECK",
+      "verifiedExamples": [
+        {
+          "law": "Lei 8.745/1993",
+          "scope": "art. 2º XII, art. 3º § 1º, art. 4º I e II",
+          "source": "https://www.planalto.gov.br/ccivil_03/leis/l8745compilada.htm"
+        },
+        {
+          "law": "Lei 11.079/2004",
+          "scope": "art. 2º § 4º",
+          "source": "https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2004/lei/l11079compilado.htm"
+        },
+        {
+          "law": "Lei 13.019/2014",
+          "scope": "arts. 16, 17, 24, 29 e 35",
+          "source": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2014/lei/l13019compilado.htm"
+        },
+        {
+          "law": "Lei 9.784/1999",
+          "scope": "arts. 61 a 64",
+          "source": "https://www2.camara.leg.br/legin/fed/lei/1999/lei-9784-29-janeiro-1999-322239-normaatualizada-pl.html"
+        },
+        {
+          "law": "Lei 13.460/2017",
+          "scope": "art. 10 § 4º",
+          "source": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13460.htm"
+        },
+        {
+          "law": "Lei 14.129/2021",
+          "scope": "arts. 11 a 14",
+          "source": "https://www2.camara.leg.br/legin/fed/lei/2021/lei-14129-29-marco-2021-791203-normaatualizada-pl.html"
+        }
+      ],
+      "note": "Amostra de disposições consultadas. Não implica auditoria jurídica individual de todos os 765 itens, nem valida entendimentos jurisprudenciais."
+    }
+  },
+  "sourceAge": {
+    "ruleUnderReview": "Preferência por questões reais recentes: últimos 5 anos; complementar até 10 anos. Ano sem mês/dia não comprova dez anos exatos.",
+    "byYear": {
+      "2008": 1,
+      "2009": 4,
+      "2010": 15,
+      "2011": 3,
+      "2013": 7,
+      "2014": 2,
+      "2015": 13,
+      "2016": 7,
+      "2017": 3,
+      "2018": 3,
+      "2019": 16,
+      "2020": 10,
+      "2021": 25,
+      "2022": 26,
+      "2023": 33,
+      "2024": 32,
+      "2025": 67,
+      "2026": 42,
+      "sem ano": 12
+    },
+    "categories": {
+      "before2016": 45,
+      "year2016": 7,
+      "between2017And2020": 32,
+      "year2021To2026": 225,
+      "notIdentified": 12
+    },
+    "itemsRequiringEditorialDecision": {
+      "before2016": [
+        {
+          "id": "adm-8112-pdf53-q001",
+          "year": 2011,
+          "source": "53.pdf · questão 1 · Art. 1°, Lei n° 8.112/90"
+        },
+        {
+          "id": "adm-8112-pdf53-q006",
+          "year": 2008,
+          "source": "53.pdf · questão 6 · Art. 3°, Lei n° 8.112/90"
+        },
+        {
+          "id": "adm-8112-pdf53-q012",
+          "year": 2014,
+          "source": "53.pdf · questão 12 · Art. 4°, Lei 8.112/90"
+        },
+        {
+          "id": "adm-12527-pdf20-q004",
+          "year": 2013,
+          "source": "20.pdf · questão 4 · Art. 1º, § único, II, Lei 12.527/2011"
+        },
+        {
+          "id": "adm-12527-pdf20-q048",
+          "year": 2013,
+          "source": "20.pdf · questão 48 · Art. 7º, § 5º, Lei 12.527/2011"
+        },
+        {
+          "id": "adm-dl200-pdf1-q018",
+          "year": 2013,
+          "source": "1.pdf · questão 18 · Art. 12, DEL 200/1967"
+        },
+        {
+          "id": "adm-dl200-pdf1-q019",
+          "year": 2013,
+          "source": "1.pdf · questão 19 · Art. 13, DEL 200/1967"
+        },
+        {
+          "id": "adm-dl200-pdf1-q024",
+          "year": 2013,
+          "source": "1.pdf · questão 24 · Art. 25, VII, DEL 200/1967"
+        },
+        {
+          "id": "adm-dl200-pdf1-q025",
+          "year": 2011,
+          "source": "1.pdf · questão 25 · Art. 36, DEL 200/1967"
+        },
+        {
+          "id": "adm-dl200-pdf1-q033",
+          "year": 2010,
+          "source": "1.pdf · questão 33 · Art. 4º, II, DEL 200/67"
+        },
+        {
+          "id": "adm-8987-pdf59-q003",
+          "year": 2015,
+          "source": "59.pdf · questão 3 · Art. 2º, I, Lei 8.987/95"
+        },
+        {
+          "id": "adm-11107-pdf9-q041",
+          "year": 2013,
+          "source": "9.pdf · questão 41 · Art. 2º, § 1º, I, Lei 11.107/2005"
+        },
+        {
+          "id": "adm-11107-pdf9-q046",
+          "year": 2011,
+          "source": "9.pdf · questão 46 · Art. 2º, § 1º, II, Lei 11.107/2005"
+        },
+        {
+          "id": "adm-8443-pdf58-q003",
+          "year": 2015,
+          "source": "58.pdf · questão 3 · Art. 5°, I, Lei 8.443/92"
+        },
+        {
+          "id": "adm-8443-pdf58-q004",
+          "year": 2015,
+          "source": "58.pdf · questão 4 · Art. 5°, V, Lei 8.443/92"
+        },
+        {
+          "id": "adm-8443-pdf58-q006",
+          "year": 2015,
+          "source": "58.pdf · questão 6 · Art. 5°, IX, Lei 8.443/92"
+        },
+        {
+          "id": "adm-8443-pdf58-q007",
+          "year": 2010,
+          "source": "58.pdf · questão 7 · Art. 5°, Lei 8.443/92"
+        },
+        {
+          "id": "adm-8443-pdf58-q008",
+          "year": 2010,
+          "source": "58.pdf · questão 8 · Art. 1°, I, Lei 8.443/92"
+        },
+        {
+          "id": "adm-8443-pdf58-q009",
+          "year": 2010,
+          "source": "58.pdf · questão 9 · Art. 3°, Lei 8.443/92"
+        },
+        {
+          "id": "adm-8443-pdf58-q010",
+          "year": 2015,
+          "source": "58.pdf · questão 10 · Art. 7°, § único, Lei 8.443/92"
+        },
+        {
+          "id": "adm-8443-pdf58-q012",
+          "year": 2015,
+          "source": "58.pdf · questão 12 · Art. 10, § 2°, Lei 8.443/92"
+        },
+        {
+          "id": "adm-8443-pdf58-q013",
+          "year": 2015,
+          "source": "58.pdf · questão 13 · Art. 10, § 2°, Lei 8.443/92"
+        },
+        {
+          "id": "adm-8443-pdf58-q014",
+          "year": 2015,
+          "source": "58.pdf · questão 14 · Art. 10, § 3°, Lei 8.443/92"
+        },
+        {
+          "id": "adm-8443-pdf58-q015",
+          "year": 2015,
+          "source": "58.pdf · questão 15 · Art. 12, I, Lei 8.443/92"
+        },
+        {
+          "id": "adm-8443-pdf58-q022",
+          "year": 2015,
+          "source": "58.pdf · questão 22 · Art. 16, § 1°, Lei 8.443/92"
+        },
+        {
+          "id": "adm-8443-pdf58-q023",
+          "year": 2015,
+          "source": "58.pdf · questão 23 · Art. 20, Lei 8.443/92"
+        },
+        {
+          "id": "adm-8443-pdf58-q024",
+          "year": 2015,
+          "source": "58.pdf · questão 24 · Art. 32, Lei 8.443/92"
+        },
+        {
+          "id": "adm-8443-pdf58-q026",
+          "year": 2015,
+          "source": "58.pdf · questão 26 · Art. 60, Lei 8.443/92"
+        },
+        {
+          "id": "adm-8443-pdf58-q028",
+          "year": 2009,
+          "source": "58.pdf · questão 28 · Art. 10, Lei 8.443/92"
+        },
+        {
+          "id": "adm-8443-pdf58-q029",
+          "year": 2010,
+          "source": "58.pdf · questão 29 · Art. 7°, § único, Lei 8.443/92"
+        },
+        {
+          "id": "adm-8443-pdf58-q030",
+          "year": 2010,
+          "source": "58.pdf · questão 30 · Art. 10, § 3°, Lei 8.443/92"
+        },
+        {
+          "id": "adm-8443-pdf58-q031",
+          "year": 2010,
+          "source": "58.pdf · questão 31 · Art. 16, II, Lei 8.443/92"
+        },
+        {
+          "id": "adm-8443-pdf58-q032",
+          "year": 2010,
+          "source": "58.pdf · questão 32 · Art. 46, Lei 8.443/92"
+        },
+        {
+          "id": "adm-8443-pdf58-q033",
+          "year": 2010,
+          "source": "58.pdf · questão 33 · Art. 61, Lei 8.443/92"
+        },
+        {
+          "id": "adm-8443-pdf58-q034",
+          "year": 2010,
+          "source": "58.pdf · questão 34 · Art. 44, Lei 8.443/92"
+        },
+        {
+          "id": "adm-8443-pdf58-q035",
+          "year": 2010,
+          "source": "58.pdf · questão 35 · Art. 57, Lei 8.443/92"
+        },
+        {
+          "id": "adm-8443-pdf58-q036",
+          "year": 2010,
+          "source": "58.pdf · questão 36 · Art. 9°, III, Lei 8.443/92"
+        },
+        {
+          "id": "adm-8443-pdf58-q037",
+          "year": 2010,
+          "source": "58.pdf · questão 37 · Art. 8°, Lei 8.443/92"
+        },
+        {
+          "id": "adm-8443-pdf58-q038",
+          "year": 2009,
+          "source": "58.pdf · questão 38 · Art. 23, III, b, Lei 8.443/92"
+        },
+        {
+          "id": "adm-8443-pdf58-q039",
+          "year": 2009,
+          "source": "58.pdf · questão 39 · Art. 24, Lei 8.443/92"
+        },
+        {
+          "id": "adm-8443-pdf58-q040",
+          "year": 2009,
+          "source": "58.pdf · questão 40 · Art. 55, § 2°, Lei 8.443/92"
+        },
+        {
+          "id": "adm-8443-pdf58-q041",
+          "year": 2010,
+          "source": "58.pdf · questão 41 · Art. 17, Lei 8.443/92"
+        },
+        {
+          "id": "adm-8443-pdf58-q042",
+          "year": 2010,
+          "source": "58.pdf · questão 42 · Art. 60, Lei 8.443/92"
+        },
+        {
+          "id": "adm-8443-pdf58-q043",
+          "year": 2013,
+          "source": "58.pdf · questão 43 · Art. 12, II, Lei 8.443/92"
+        },
+        {
+          "id": "adm-8443-pdf58-q046",
+          "year": 2014,
+          "source": "58.pdf · questão 46 · Art. 69, Lei 8.443/92"
+        }
+      ],
+      "year2016": [
+        {
+          "id": "adm-12527-pdf20-q018",
+          "year": 2016,
+          "source": "20.pdf · questão 18 · Art. 3º, II, Lei 12.527/2011"
+        },
+        {
+          "id": "adm-12527-pdf20-q046",
+          "year": 2016,
+          "source": "20.pdf · questão 46 · Art. 7º, § 4º, Lei 12.527/2011"
+        },
+        {
+          "id": "adm-dl200-pdf1-q026",
+          "year": 2016,
+          "source": "1.pdf · questão 26 · Art. 47, DEL 200/1967"
+        },
+        {
+          "id": "adm-13019-pdf24-q048",
+          "year": 2016,
+          "source": "24.pdf · questão 48 · Art. 3º, IX, Lei 13.019/2014"
+        },
+        {
+          "id": "adm-11107-pdf9-q049",
+          "year": 2016,
+          "source": "9.pdf · questão 49 · Art. 2º, § 1º, II, Lei 11.107/2005"
+        },
+        {
+          "id": "adm-8443-pdf58-q019",
+          "year": 2016,
+          "source": "58.pdf · questão 19 · Art. 16, III, a, Lei 8.443/92"
+        },
+        {
+          "id": "adm-8443-pdf58-q020",
+          "year": 2016,
+          "source": "58.pdf · questão 20 · Art. 16, III, b, Lei 8.443/92"
+        }
+      ],
+      "unidentifiedYear": [
+        {
+          "id": "adm-13303-pdf28-q029",
+          "source": "28.pdf · questão 29 · Art 8º, X, Lei 13.303/2016"
+        },
+        {
+          "id": "adm-13303-pdf28-q046",
+          "source": "28.pdf · questão 46 · Art 19-A, Lei 13.303/2016"
+        },
+        {
+          "id": "adm-13848-pdf32-q001",
+          "source": "32.pdf · questão 1 · Art. 2º, III e IV, Lei 13.848/2019"
+        },
+        {
+          "id": "adm-13848-pdf32-q002",
+          "source": "32.pdf · questão 2 · Art. 2º, XII, Lei 13.848/2019"
+        },
+        {
+          "id": "adm-13848-pdf32-q004",
+          "source": "32.pdf · questão 4 · Art. 2º, § único, Lei 13.848/2019"
+        },
+        {
+          "id": "adm-13848-pdf32-q023",
+          "source": "32.pdf · questão 23 · Art. 5º, Lei 13.848/2019"
+        },
+        {
+          "id": "adm-13848-pdf32-q031",
+          "source": "32.pdf · questão 31 · Art. 7º, Lei 13.848/2019"
+        },
+        {
+          "id": "adm-13848-pdf32-q033",
+          "source": "32.pdf · questão 33 · Art. 7º, § 2º, Lei 13.848/2019"
+        },
+        {
+          "id": "adm-13848-pdf32-q036",
+          "source": "32.pdf · questão 36 · Art. 8º, § 1º, Lei 13.848/2019"
+        },
+        {
+          "id": "adm-13848-pdf32-q043",
+          "source": "32.pdf · questão 43 · Art. 9º, § 5º, Lei 13.848/2019"
+        },
+        {
+          "id": "adm-13848-pdf32-q045",
+          "source": "32.pdf · questão 45 · Art. 10, § 2º, Lei 13.848/2019"
+        },
+        {
+          "id": "adm-13848-pdf32-q047",
+          "source": "32.pdf · questão 47 · Art. 13, Lei 13.848/2019"
+        }
+      ]
+    },
+    "disposition": "Marcados para revisão editorial. Nenhum item foi removido ou reclassificado automaticamente para não apagar respostas e notas dos alunos."
+  },
+  "commercialReadiness": {
+    "status": "BLOCKED_PENDING_EXTERNAL_EVIDENCE",
+    "blockingIssues": [
+      "Autorizações ou licenças de reprodução e distribuição comercial dos 321 itens oriundos de apostilas/PDFs de terceiros não foram comprovadas.",
+      "A correção jurídica atualizada de cada um dos 321 gabaritos externos não foi validada individualmente contra legislação e precedentes recentes.",
+      "45 questões foram identificadas com ano anterior a 2016; 12 sem ano; 7 apenas com ano 2016 requerem data exata para confirmar limite de dez anos."
+    ]
+  },
+  "remainingCoverage": {
+    "status": "PARTIAL",
+    "note": "O banco de questões não contém todos os artigos dos 25 diplomas. Os conjuntos variam de 1 a 71 questões conforme acervo."
+  },
+  "finalConclusion": "Encerramento da etapa de importação e validação técnica: APROVADO. Certificação jurídica integral e liberação comercial dos itens de terceiros: NÃO CONCLUÍDAS."
+}
