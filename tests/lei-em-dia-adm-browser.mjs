@@ -34,7 +34,9 @@ try{
   assert.equal(inventory.questions,765);
   assert.equal(inventory.laws,25);
   assert.deepEqual(inventory.originCounts,{"real":309,"authorial":444,"unverified":12});
-  assert.ok(await page.locator(".qc-origin-options").innerText().then(x=>x.includes("Origem a confirmar")));
+  assert.ok((await page.locator(".qc-origin-options").textContent()).includes("Origem a confirmar"));
+  const unverifiedFiltered=await page.evaluate(()=>{ui.fOrigin="unverified";const result=selectedActive().length;ui.fOrigin="";return result});
+  assert.equal(unverifiedFiltered,12);
   assert.deepEqual(inventory.lawCounts,{"adm-lei-9784":69,"adm-lei-12527":52,"adm-lei-13709":43,"adm-lei-14133":67});
   await page.evaluate(()=>toggleTopic("adm-lei-9784"));
   assert.equal(await page.evaluate(()=>selectedActive().length),69);
