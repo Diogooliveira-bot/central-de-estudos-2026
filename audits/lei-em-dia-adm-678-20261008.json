@@ -1,0 +1,170 @@
+{
+  "date": "2026-10-08",
+  "phase": "ampliação autoral 9.784/1999, LAI e LGPD",
+  "status": "CI e revisão editorial ainda necessários",
+  "summary": {
+    "totalQuestions": 678,
+    "uniqueTopics": 25,
+    "originalPdfQuestions": 321,
+    "authorialQuestions": 357,
+    "newAuthorialQuestions": 82
+  },
+  "newContent": [
+    {
+      "path": "tools/decorando-data-adm-9784-expansao.js",
+      "count": 43,
+      "laws": [
+        "adm-lei-9784"
+      ]
+    },
+    {
+      "path": "tools/decorando-data-adm-12527-expansao.js",
+      "count": 19,
+      "laws": [
+        "adm-lei-12527"
+      ]
+    },
+    {
+      "path": "tools/decorando-data-adm-13709-expansao.js",
+      "count": 20,
+      "laws": [
+        "adm-lei-13709"
+      ]
+    }
+  ],
+  "perLegislation": [
+    {
+      "topic": "adm-lei-9784",
+      "count": 69,
+      "distinctSubtopics": 59
+    },
+    {
+      "topic": "adm-lei-8112",
+      "count": 71,
+      "distinctSubtopics": 61
+    },
+    {
+      "topic": "adm-lei-8429",
+      "count": 57,
+      "distinctSubtopics": 49
+    },
+    {
+      "topic": "adm-lei-12527",
+      "count": 52,
+      "distinctSubtopics": 38
+    },
+    {
+      "topic": "adm-lei-13709",
+      "count": 43,
+      "distinctSubtopics": 33
+    },
+    {
+      "topic": "adm-lei-dl200",
+      "count": 29,
+      "distinctSubtopics": 25
+    },
+    {
+      "topic": "adm-lei-8987",
+      "count": 7,
+      "distinctSubtopics": 4
+    },
+    {
+      "topic": "adm-lei-12846",
+      "count": 6,
+      "distinctSubtopics": 3
+    },
+    {
+      "topic": "adm-lei-13019",
+      "count": 17,
+      "distinctSubtopics": 12
+    },
+    {
+      "topic": "adm-lei-11107",
+      "count": 17,
+      "distinctSubtopics": 10
+    },
+    {
+      "topic": "adm-lei-11079",
+      "count": 8,
+      "distinctSubtopics": 4
+    },
+    {
+      "topic": "adm-lei-13303",
+      "count": 41,
+      "distinctSubtopics": 33
+    },
+    {
+      "topic": "adm-lei-13848",
+      "count": 37,
+      "distinctSubtopics": 26
+    },
+    {
+      "topic": "adm-lei-8443",
+      "count": 42,
+      "distinctSubtopics": 34
+    },
+    {
+      "topic": "adm-lei-d11462",
+      "count": 1,
+      "distinctSubtopics": 1
+    },
+    {
+      "topic": "adm-lei-14133",
+      "count": 67,
+      "distinctSubtopics": 59
+    },
+    {
+      "topic": "adm-lei-lindb20",
+      "count": 15,
+      "distinctSubtopics": 14
+    },
+    {
+      "topic": "adm-lei-9637",
+      "count": 8,
+      "distinctSubtopics": 5
+    },
+    {
+      "topic": "adm-lei-9790",
+      "count": 8,
+      "distinctSubtopics": 6
+    },
+    {
+      "topic": "adm-lei-13460",
+      "count": 15,
+      "distinctSubtopics": 14
+    },
+    {
+      "topic": "adm-lei-14129",
+      "count": 14,
+      "distinctSubtopics": 14
+    },
+    {
+      "topic": "adm-lei-8745",
+      "count": 16,
+      "distinctSubtopics": 15
+    },
+    {
+      "topic": "adm-lei-12813",
+      "count": 14,
+      "distinctSubtopics": 13
+    },
+    {
+      "topic": "adm-lei-4717",
+      "count": 11,
+      "distinctSubtopics": 10
+    },
+    {
+      "topic": "adm-lei-7347",
+      "count": 13,
+      "distinctSubtopics": 12
+    }
+  ],
+  "checks": {
+    "duplicateIds": [],
+    "invalidRecords": [],
+    "duplicateStatements": [],
+    "maxBySubtopic": 2,
+    "overTwo": []
+  },
+  "legalLimitations": "Gabaritos das 321 questões externas foram comparados com PDFs originais, mas não validados juridicamente um a um. Direitos de reprodução não verificados. Exercícios autorais passam por controle documental, sem validação de jurisprudência posterior ou revisão humana de cada item."
+}
