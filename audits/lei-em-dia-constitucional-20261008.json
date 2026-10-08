@@ -1,0 +1,2673 @@
+{
+  "sources": [
+    {
+      "pdf": "19.pdf",
+      "law": "Lei 12.016/2009",
+      "title": "Mandado de Segurança",
+      "questionHeaders": 50,
+      "explicitAnswers": 50,
+      "imported": 14,
+      "beforeDeviceReview": 46
+    },
+    {
+      "pdf": "27.pdf",
+      "law": "Lei 13.300/2016",
+      "title": "Mandado de Injunção",
+      "questionHeaders": 50,
+      "explicitAnswers": 50,
+      "imported": 15,
+      "beforeDeviceReview": 50
+    },
+    {
+      "pdf": "39.pdf",
+      "law": "Lei 4.717/1965",
+      "title": "Ação Popular",
+      "questionHeaders": 50,
+      "explicitAnswers": 50,
+      "imported": 17,
+      "beforeDeviceReview": 49
+    },
+    {
+      "pdf": "64.pdf",
+      "law": "Lei 9.507/1997",
+      "title": "Habeas Data",
+      "questionHeaders": 24,
+      "explicitAnswers": 22,
+      "imported": 12,
+      "beforeDeviceReview": 22
+    },
+    {
+      "pdf": "15.pdf",
+      "law": "Lei 11.417/2006",
+      "title": "Súmula Vinculante",
+      "questionHeaders": 28,
+      "explicitAnswers": 28,
+      "imported": 10,
+      "beforeDeviceReview": 28
+    },
+    {
+      "pdf": "7.pdf",
+      "law": "Lei 1.079/1950",
+      "title": "Crimes de Responsabilidade",
+      "questionHeaders": 4,
+      "explicitAnswers": 4,
+      "imported": 4,
+      "beforeDeviceReview": 4
+    },
+    {
+      "pdf": "67.pdf",
+      "law": "Lei 9.868/1999",
+      "title": "ADI e ADC",
+      "questionHeaders": 50,
+      "explicitAnswers": 50,
+      "imported": 17,
+      "beforeDeviceReview": 50
+    },
+    {
+      "pdf": "68.pdf",
+      "law": "Lei 9.882/1999",
+      "title": "ADPF",
+      "questionHeaders": 50,
+      "explicitAnswers": 49,
+      "imported": 9,
+      "beforeDeviceReview": 49
+    }
+  ],
+  "duplicates": [
+    {
+      "pdf": "19.pdf",
+      "question": "9",
+      "existingId": "cf-lei-12016-pdf19-q007"
+    },
+    {
+      "pdf": "19.pdf",
+      "question": "16",
+      "existingId": "cf-lei-12016-pdf19-q015"
+    },
+    {
+      "pdf": "19.pdf",
+      "question": "23",
+      "existingId": "cf-lei-12016-pdf19-q020"
+    },
+    {
+      "pdf": "19.pdf",
+      "question": "28",
+      "existingId": "cf-lei-12016-pdf19-q026"
+    },
+    {
+      "pdf": "39.pdf",
+      "question": "6",
+      "existingId": "cf-lei-4717-pdf39-q004"
+    }
+  ],
+  "excluded": [
+    {
+      "pdf": "64.pdf",
+      "question": "19",
+      "reference": "Art. 18, Lei 9.507/97",
+      "reason": "Sem gabarito explícito no PDF"
+    },
+    {
+      "pdf": "64.pdf",
+      "question": "20",
+      "reference": "Art. 18, Lei 9.507/97",
+      "reason": "Sem gabarito explícito no PDF"
+    },
+    {
+      "pdf": "68.pdf",
+      "question": "4",
+      "reference": "Art. 1º, Lei 9.882/99",
+      "reason": "Sem gabarito explícito no PDF"
+    }
+  ],
+  "answerConflicts": [],
+  "baseQuestions": 3034,
+  "addedQuestions": 98,
+  "totalQuestions": 3132,
+  "missingSource": "Lei 14.824/2024 — CSJT",
+  "scope": "Importação fiel dos arquivos fornecidos; sem certificar atualização legislativa ou cobertura integral das leis.",
+  "beforeDeviceReview": 298,
+  "deviceReview": {
+    "rule": "Uma questão por dispositivo. Incisos, parágrafos e alíneas diferentes são preservados. Questões com referências combinadas sobrepostas são removidas.",
+    "selection": "Prioridade para dispositivo individual, questão de prova identificada, ano mais recente e fundamento mais completo.",
+    "removed": [
+      {
+        "id": "cf-lei-4717-pdf39-q013",
+        "source": "39.pdf · questão 13 · Art. 1º, § 3º, Lei 4.717/65",
+        "reference": "Art. 1º, § 3º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "4717|1|p3||"
+        ],
+        "keptIds": [
+          "cf-lei-4717-pdf39-q014"
+        ]
+      },
+      {
+        "id": "cf-lei-11417-pdf15-q002",
+        "source": "15.pdf · questão 2 · Art. 2º, Lei 11.417/2006",
+        "reference": "Art. 2º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "11417|2|caput||"
+        ],
+        "keptIds": [
+          "cf-lei-11417-pdf15-q001"
+        ]
+      },
+      {
+        "id": "cf-lei-11417-pdf15-q003",
+        "source": "15.pdf · questão 3 · Art. 2º, Lei 11.417/2006",
+        "reference": "Art. 2º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "11417|2|caput||"
+        ],
+        "keptIds": [
+          "cf-lei-11417-pdf15-q001"
+        ]
+      },
+      {
+        "id": "cf-lei-11417-pdf15-q016",
+        "source": "15.pdf · questão 16 · Art. 3º, § 1º, Lei 11.417/2006",
+        "reference": "Art. 3º, § 1º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "11417|3|p1||"
+        ],
+        "keptIds": [
+          "cf-lei-11417-pdf15-q015"
+        ]
+      },
+      {
+        "id": "cf-lei-11417-pdf15-q019",
+        "source": "15.pdf · questão 19 · Art. 3º, § 1º, Lei 11.417/2006",
+        "reference": "Art. 3º, § 1º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "11417|3|p1||"
+        ],
+        "keptIds": [
+          "cf-lei-11417-pdf15-q015"
+        ]
+      },
+      {
+        "id": "cf-lei-12016-pdf19-q035",
+        "source": "19.pdf · questão 35 · Art. 5º, II, Lei 12.016/2009",
+        "reference": "Art. 5º, II",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "12016|5|caput|II|"
+        ],
+        "keptIds": [
+          "cf-lei-12016-pdf19-q038"
+        ]
+      },
+      {
+        "id": "cf-lei-4717-pdf39-q011",
+        "source": "39.pdf · questão 11 · Art. 1º, § 3º, Lei 4.717/65",
+        "reference": "Art. 1º, § 3º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "4717|1|p3||"
+        ],
+        "keptIds": [
+          "cf-lei-4717-pdf39-q014"
+        ]
+      },
+      {
+        "id": "cf-lei-9882-pdf68-q027",
+        "source": "68.pdf · questão 27 · Art. 1º, § único, I, Lei 9.882/99",
+        "reference": "Art. 1º, § único, I",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9882|1|unico|I|"
+        ],
+        "keptIds": [
+          "cf-lei-9882-pdf68-q022"
+        ]
+      },
+      {
+        "id": "cf-lei-12016-pdf19-q006",
+        "source": "19.pdf · questão 6 · Art. 1º, § 1º, Lei 12.016/2009",
+        "reference": "Art. 1º, § 1º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "12016|1|p1||"
+        ],
+        "keptIds": [
+          "cf-lei-12016-pdf19-q003"
+        ]
+      },
+      {
+        "id": "cf-lei-4717-pdf39-q046",
+        "source": "39.pdf · questão 46 · Art. 6º, § 3º, Lei 4.717/65",
+        "reference": "Art. 6º, § 3º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "4717|6|p3||"
+        ],
+        "keptIds": [
+          "cf-lei-4717-pdf39-q045"
+        ]
+      },
+      {
+        "id": "cf-lei-9882-pdf68-q023",
+        "source": "68.pdf · questão 23 · Art. 1º, § único, I, Lei 9.882/99",
+        "reference": "Art. 1º, § único, I",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9882|1|unico|I|"
+        ],
+        "keptIds": [
+          "cf-lei-9882-pdf68-q022"
+        ]
+      },
+      {
+        "id": "cf-lei-9882-pdf68-q025",
+        "source": "68.pdf · questão 25 · Art. 1º, § único, I, Lei 9.882/99",
+        "reference": "Art. 1º, § único, I",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9882|1|unico|I|"
+        ],
+        "keptIds": [
+          "cf-lei-9882-pdf68-q022"
+        ]
+      },
+      {
+        "id": "cf-lei-13300-pdf27-q006",
+        "source": "27.pdf · questão 6 · Art. 2º, Lei 13.300/2016",
+        "reference": "Art. 2º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "13300|2|caput||"
+        ],
+        "keptIds": [
+          "cf-lei-13300-pdf27-q008"
+        ]
+      },
+      {
+        "id": "cf-lei-11417-pdf15-q018",
+        "source": "15.pdf · questão 18 · Art. 3º, § 1º, Lei 11.417/2006",
+        "reference": "Art. 3º, § 1º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "11417|3|p1||"
+        ],
+        "keptIds": [
+          "cf-lei-11417-pdf15-q015"
+        ]
+      },
+      {
+        "id": "cf-lei-9868-pdf67-q026",
+        "source": "67.pdf · questão 26 · Art. 11, § 2º, Lei 9.868/99",
+        "reference": "Art. 11, § 2º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9868|11|p2||"
+        ],
+        "keptIds": [
+          "cf-lei-9868-pdf67-q025"
+        ]
+      },
+      {
+        "id": "cf-lei-9882-pdf68-q048",
+        "source": "68.pdf · questão 48 · Art. 4º, § 1º, Lei 9.882/99",
+        "reference": "Art. 4º, § 1º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9882|4|p1||"
+        ],
+        "keptIds": [
+          "cf-lei-9882-pdf68-q047"
+        ]
+      },
+      {
+        "id": "cf-lei-9882-pdf68-q049",
+        "source": "68.pdf · questão 49 · Art. 4º, § 1º, Lei 9.882/99",
+        "reference": "Art. 4º, § 1º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9882|4|p1||"
+        ],
+        "keptIds": [
+          "cf-lei-9882-pdf68-q047"
+        ]
+      },
+      {
+        "id": "cf-lei-4717-pdf39-q020",
+        "source": "39.pdf · questão 20 · Art. 1º, Lei 4.717/1965",
+        "reference": "Art. 1º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "4717|1|caput||"
+        ],
+        "keptIds": [
+          "cf-lei-4717-pdf39-q002"
+        ]
+      },
+      {
+        "id": "cf-lei-4717-pdf39-q040",
+        "source": "39.pdf · questão 40 · Art. 6º, Lei 4.717/65",
+        "reference": "Art. 6º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "4717|6|caput||"
+        ],
+        "keptIds": [
+          "cf-lei-4717-pdf39-q039"
+        ]
+      },
+      {
+        "id": "cf-lei-9882-pdf68-q024",
+        "source": "68.pdf · questão 24 · Art. 1º, § único, I, Lei 9.882/99",
+        "reference": "Art. 1º, § único, I",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9882|1|unico|I|"
+        ],
+        "keptIds": [
+          "cf-lei-9882-pdf68-q022"
+        ]
+      },
+      {
+        "id": "cf-lei-11417-pdf15-q025",
+        "source": "15.pdf · questão 25 · Art. 7º, § 1º, Lei 11.417/2006",
+        "reference": "Art. 7º, § 1º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "11417|7|p1||"
+        ],
+        "keptIds": [
+          "cf-lei-11417-pdf15-q028"
+        ]
+      },
+      {
+        "id": "cf-lei-11417-pdf15-q020",
+        "source": "15.pdf · questão 20 · Art. 4º, Lei 11.417/06",
+        "reference": "Art. 4º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "11417|4|caput||"
+        ],
+        "keptIds": [
+          "cf-lei-11417-pdf15-q004"
+        ]
+      },
+      {
+        "id": "cf-lei-9868-pdf67-q033",
+        "source": "67.pdf · questão 33 · Art. 10, Lei 9.868/99",
+        "reference": "Art. 10",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9868|10|caput||"
+        ],
+        "keptIds": [
+          "cf-lei-9868-pdf67-q021"
+        ]
+      },
+      {
+        "id": "cf-lei-9868-pdf67-q018",
+        "source": "67.pdf · questão 18 · Art. 10, Lei 9.868/99",
+        "reference": "Art. 10",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9868|10|caput||"
+        ],
+        "keptIds": [
+          "cf-lei-9868-pdf67-q021"
+        ]
+      },
+      {
+        "id": "cf-lei-4717-pdf39-q047",
+        "source": "39.pdf · questão 47 · Art. 6º, § 3º, Lei 4.717/65",
+        "reference": "Art. 6º, § 3º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "4717|6|p3||"
+        ],
+        "keptIds": [
+          "cf-lei-4717-pdf39-q045"
+        ]
+      },
+      {
+        "id": "cf-lei-12016-pdf19-q040",
+        "source": "19.pdf · questão 40 · Art. 5º, III, Lei 12.016/09",
+        "reference": "Art. 5º, III",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "12016|5|caput|III|"
+        ],
+        "keptIds": [
+          "cf-lei-12016-pdf19-q041"
+        ]
+      },
+      {
+        "id": "cf-lei-9882-pdf68-q016",
+        "source": "68.pdf · questão 16 · Art. 1º, § único, I, Lei 9.882/99",
+        "reference": "Art. 1º, § único, I",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9882|1|unico|I|"
+        ],
+        "keptIds": [
+          "cf-lei-9882-pdf68-q022"
+        ]
+      },
+      {
+        "id": "cf-lei-9882-pdf68-q017",
+        "source": "68.pdf · questão 17 · Art. 1º, § único, I, Lei 9.882/99",
+        "reference": "Art. 1º, § único, I",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9882|1|unico|I|"
+        ],
+        "keptIds": [
+          "cf-lei-9882-pdf68-q022"
+        ]
+      },
+      {
+        "id": "cf-lei-9882-pdf68-q028",
+        "source": "68.pdf · questão 28 · Art. 1º, § único, I, Lei 9.882/99",
+        "reference": "Art. 1º, § único, I",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9882|1|unico|I|"
+        ],
+        "keptIds": [
+          "cf-lei-9882-pdf68-q022"
+        ]
+      },
+      {
+        "id": "cf-lei-9868-pdf67-q032",
+        "source": "67.pdf · questão 32 · Art. 10, § 2º, Lei 9.868/99",
+        "reference": "Art. 10, § 2º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9868|10|p2||"
+        ],
+        "keptIds": [
+          "cf-lei-9868-pdf67-q024"
+        ]
+      },
+      {
+        "id": "cf-lei-9868-pdf67-q034",
+        "source": "67.pdf · questão 34 · Art. 11, § 2º, Lei 9.868/99",
+        "reference": "Art. 11, § 2º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9868|11|p2||"
+        ],
+        "keptIds": [
+          "cf-lei-9868-pdf67-q025"
+        ]
+      },
+      {
+        "id": "cf-lei-9868-pdf67-q035",
+        "source": "67.pdf · questão 35 · Art. 10, § 1º, Lei 9.868/99",
+        "reference": "Art. 10, § 1º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9868|10|p1||"
+        ],
+        "keptIds": [
+          "cf-lei-9868-pdf67-q028"
+        ]
+      },
+      {
+        "id": "cf-lei-12016-pdf19-q036",
+        "source": "19.pdf · questão 36 · Art. 5º, II, Lei 12.016/09",
+        "reference": "Art. 5º, II",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "12016|5|caput|II|"
+        ],
+        "keptIds": [
+          "cf-lei-12016-pdf19-q038"
+        ]
+      },
+      {
+        "id": "cf-lei-12016-pdf19-q043",
+        "source": "19.pdf · questão 43 · Art. 6º, § 3º, Lei 12.016/2009",
+        "reference": "Art. 6º, § 3º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "12016|6|p3||"
+        ],
+        "keptIds": [
+          "cf-lei-12016-pdf19-q044"
+        ]
+      },
+      {
+        "id": "cf-lei-12016-pdf19-q045",
+        "source": "19.pdf · questão 45 · Art. 6º, § 3º, Lei 12.016/2009",
+        "reference": "Art. 6º, § 3º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "12016|6|p3||"
+        ],
+        "keptIds": [
+          "cf-lei-12016-pdf19-q044"
+        ]
+      },
+      {
+        "id": "cf-lei-9868-pdf67-q029",
+        "source": "67.pdf · questão 29 · Art. 4º, Lei 9.868/99",
+        "reference": "Art. 4º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9868|4|caput||"
+        ],
+        "keptIds": [
+          "cf-lei-9868-pdf67-q027"
+        ]
+      },
+      {
+        "id": "cf-lei-12016-pdf19-q039",
+        "source": "19.pdf · questão 39 · Art. 5º, III, Lei 12.016/2009",
+        "reference": "Art. 5º, III",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "12016|5|caput|III|"
+        ],
+        "keptIds": [
+          "cf-lei-12016-pdf19-q041"
+        ]
+      },
+      {
+        "id": "cf-lei-4717-pdf39-q001",
+        "source": "39.pdf · questão 1 · Art. 1º, Lei 4.717/65",
+        "reference": "Art. 1º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "4717|1|caput||"
+        ],
+        "keptIds": [
+          "cf-lei-4717-pdf39-q002"
+        ]
+      },
+      {
+        "id": "cf-lei-4717-pdf39-q003",
+        "source": "39.pdf · questão 3 · Art. 1º, Lei 4.717/65",
+        "reference": "Art. 1º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "4717|1|caput||"
+        ],
+        "keptIds": [
+          "cf-lei-4717-pdf39-q002"
+        ]
+      },
+      {
+        "id": "cf-lei-9882-pdf68-q020",
+        "source": "68.pdf · questão 20 · Art. 1º, §único, I, Lei 9.882/99",
+        "reference": "Art. 1º, §único, I",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9882|1|unico|I|"
+        ],
+        "keptIds": [
+          "cf-lei-9882-pdf68-q022"
+        ]
+      },
+      {
+        "id": "cf-lei-12016-pdf19-q005",
+        "source": "19.pdf · questão 5 · Art. 1º, § 1º, Lei 12.016/2009",
+        "reference": "Art. 1º, § 1º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "12016|1|p1||"
+        ],
+        "keptIds": [
+          "cf-lei-12016-pdf19-q003"
+        ]
+      },
+      {
+        "id": "cf-lei-13300-pdf27-q049",
+        "source": "27.pdf · questão 49 · Art. 9º, § 1º, Lei 13.300/2016",
+        "reference": "Art. 9º, § 1º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "13300|9|p1||"
+        ],
+        "keptIds": [
+          "cf-lei-13300-pdf27-q045"
+        ]
+      },
+      {
+        "id": "cf-lei-4717-pdf39-q030",
+        "source": "39.pdf · questão 30 · Art. 5º, Lei 4.717/65",
+        "reference": "Art. 5º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "4717|5|caput||"
+        ],
+        "keptIds": [
+          "cf-lei-4717-pdf39-q031"
+        ]
+      },
+      {
+        "id": "cf-lei-4717-pdf39-q032",
+        "source": "39.pdf · questão 32 · Art. 5º, Lei 4.717/65",
+        "reference": "Art. 5º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "4717|5|caput||"
+        ],
+        "keptIds": [
+          "cf-lei-4717-pdf39-q031"
+        ]
+      },
+      {
+        "id": "cf-lei-9882-pdf68-q012",
+        "source": "68.pdf · questão 12 · Art. 1º, § único, Lei 9.882/99",
+        "reference": "Art. 1º, § único",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9882|1|unico||"
+        ],
+        "keptIds": [
+          "cf-lei-9882-pdf68-q007"
+        ]
+      },
+      {
+        "id": "cf-lei-9882-pdf68-q014",
+        "source": "68.pdf · questão 14 · Art. 1º, § único, I, Lei 9.882/99",
+        "reference": "Art. 1º, § único, I",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9882|1|unico|I|"
+        ],
+        "keptIds": [
+          "cf-lei-9882-pdf68-q022"
+        ]
+      },
+      {
+        "id": "cf-lei-9882-pdf68-q029",
+        "source": "68.pdf · questão 29 · Art. 1º, § único, I, Lei 9.882/99",
+        "reference": "Art. 1º, § único, I",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9882|1|unico|I|"
+        ],
+        "keptIds": [
+          "cf-lei-9882-pdf68-q022"
+        ]
+      },
+      {
+        "id": "cf-lei-13300-pdf27-q004",
+        "source": "27.pdf · questão 4 · Art. 2º, Lei 13.300/2016",
+        "reference": "Art. 2º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "13300|2|caput||"
+        ],
+        "keptIds": [
+          "cf-lei-13300-pdf27-q008"
+        ]
+      },
+      {
+        "id": "cf-lei-13300-pdf27-q007",
+        "source": "27.pdf · questão 7 · Art. 2º, Lei 13.300/2016",
+        "reference": "Art. 2º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "13300|2|caput||"
+        ],
+        "keptIds": [
+          "cf-lei-13300-pdf27-q008"
+        ]
+      },
+      {
+        "id": "cf-lei-9868-pdf67-q038",
+        "source": "67.pdf · questão 38 · Art. 7º, § 2º, Lei 9.868/99",
+        "reference": "Art. 7º, § 2º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9868|7|p2||"
+        ],
+        "keptIds": [
+          "cf-lei-9868-pdf67-q012"
+        ]
+      },
+      {
+        "id": "cf-lei-11417-pdf15-q017",
+        "source": "15.pdf · questão 17 · Art. 3º, § 1º, Lei 11.417/2006",
+        "reference": "Art. 3º, § 1º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "11417|3|p1||"
+        ],
+        "keptIds": [
+          "cf-lei-11417-pdf15-q015"
+        ]
+      },
+      {
+        "id": "cf-lei-9868-pdf67-q014",
+        "source": "67.pdf · questão 14 · Art. 8º, Lei 9.868/99",
+        "reference": "Art. 8º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9868|8|caput||"
+        ],
+        "keptIds": [
+          "cf-lei-9868-pdf67-q015"
+        ]
+      },
+      {
+        "id": "cf-lei-12016-pdf19-q030",
+        "source": "19.pdf · questão 30 · Art. 5º, I, Lei 12.016/2009",
+        "reference": "Art. 5º, I",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "12016|5|caput|I|"
+        ],
+        "keptIds": [
+          "cf-lei-12016-pdf19-q027"
+        ]
+      },
+      {
+        "id": "cf-lei-9868-pdf67-q036",
+        "source": "67.pdf · questão 36 · Art. 11, § 2º, Lei 9.868/99",
+        "reference": "Art. 11, § 2º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9868|11|p2||"
+        ],
+        "keptIds": [
+          "cf-lei-9868-pdf67-q025"
+        ]
+      },
+      {
+        "id": "cf-lei-9882-pdf68-q043",
+        "source": "68.pdf · questão 43 · Art. 4º, § 1º, Lei 9.882/99",
+        "reference": "Art. 4º, § 1º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9882|4|p1||"
+        ],
+        "keptIds": [
+          "cf-lei-9882-pdf68-q047"
+        ]
+      },
+      {
+        "id": "cf-lei-9882-pdf68-q045",
+        "source": "68.pdf · questão 45 · Art. 4º, § 1º, Lei 9.882/99",
+        "reference": "Art. 4º, § 1º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9882|4|p1||"
+        ],
+        "keptIds": [
+          "cf-lei-9882-pdf68-q047"
+        ]
+      },
+      {
+        "id": "cf-lei-11417-pdf15-q027",
+        "source": "15.pdf · questão 27 · Art. 7º, § 1º, Lei 11.417/2006",
+        "reference": "Art. 7º, § 1º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "11417|7|p1||"
+        ],
+        "keptIds": [
+          "cf-lei-11417-pdf15-q028"
+        ]
+      },
+      {
+        "id": "cf-lei-9882-pdf68-q033",
+        "source": "68.pdf · questão 33 · Art. 2º, I, Lei 9.882/99",
+        "reference": "Art. 2º, I",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9882|2|caput|I|"
+        ],
+        "keptIds": [
+          "cf-lei-9882-pdf68-q034"
+        ]
+      },
+      {
+        "id": "cf-lei-12016-pdf19-q014",
+        "source": "19.pdf · questão 14 · Art. 1º, § 3º, Lei 12.016/2009",
+        "reference": "Art. 1º, § 3º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "12016|1|p3||"
+        ],
+        "keptIds": [
+          "cf-lei-12016-pdf19-q012"
+        ]
+      },
+      {
+        "id": "cf-lei-9868-pdf67-q037",
+        "source": "67.pdf · questão 37 · Art. 5º, Lei 9.868/99",
+        "reference": "Art. 5º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9868|5|caput||"
+        ],
+        "keptIds": [
+          "cf-lei-9868-pdf67-q009"
+        ]
+      },
+      {
+        "id": "cf-lei-9868-pdf67-q008",
+        "source": "67.pdf · questão 8 · Art. 5º, Lei n.º 9.868/99",
+        "reference": "Art. 5º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9868|5|caput||"
+        ],
+        "keptIds": [
+          "cf-lei-9868-pdf67-q009"
+        ]
+      },
+      {
+        "id": "cf-lei-9868-pdf67-q010",
+        "source": "67.pdf · questão 10 · Art. 5º, Lei 9.868/99",
+        "reference": "Art. 5º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9868|5|caput||"
+        ],
+        "keptIds": [
+          "cf-lei-9868-pdf67-q009"
+        ]
+      },
+      {
+        "id": "cf-lei-9882-pdf68-q035",
+        "source": "68.pdf · questão 35 · Art. 2º, I, Lei 9.882/99 c/c Art. 103, CF",
+        "reference": "Art. 2º, I",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9882|2|caput|I|"
+        ],
+        "keptIds": [
+          "cf-lei-9882-pdf68-q034"
+        ]
+      },
+      {
+        "id": "cf-lei-13300-pdf27-q009",
+        "source": "27.pdf · questão 9 · Art. 2º, Lei 13.300/2016",
+        "reference": "Art. 2º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "13300|2|caput||"
+        ],
+        "keptIds": [
+          "cf-lei-13300-pdf27-q008"
+        ]
+      },
+      {
+        "id": "cf-lei-9882-pdf68-q009",
+        "source": "68.pdf · questão 9 · Art. 1º, § único, I, Lei 9.882/99",
+        "reference": "Art. 1º, § único, I",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9882|1|unico|I|"
+        ],
+        "keptIds": [
+          "cf-lei-9882-pdf68-q022"
+        ]
+      },
+      {
+        "id": "cf-lei-9882-pdf68-q001",
+        "source": "68.pdf · questão 1 · Art. 1º, Lei 9.882/99",
+        "reference": "Art. 1º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9882|1|caput||"
+        ],
+        "keptIds": [
+          "cf-lei-9882-pdf68-q002"
+        ]
+      },
+      {
+        "id": "cf-lei-12016-pdf19-q010",
+        "source": "19.pdf · questão 10 · Art. 1º, § 2º, Lei 12.016/2009",
+        "reference": "Art. 1º, § 2º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "12016|1|p2||"
+        ],
+        "keptIds": [
+          "cf-lei-12016-pdf19-q011"
+        ]
+      },
+      {
+        "id": "cf-lei-12016-pdf19-q021",
+        "source": "19.pdf · questão 21 · Art. 4º, Lei 12.016/2009",
+        "reference": "Art. 4º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "12016|4|caput||"
+        ],
+        "keptIds": [
+          "cf-lei-12016-pdf19-q022"
+        ]
+      },
+      {
+        "id": "cf-lei-12016-pdf19-q029",
+        "source": "19.pdf · questão 29 · Art. 5º, I, Lei 12.016/2009",
+        "reference": "Art. 5º, I",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "12016|5|caput|I|"
+        ],
+        "keptIds": [
+          "cf-lei-12016-pdf19-q027"
+        ]
+      },
+      {
+        "id": "cf-lei-12016-pdf19-q031",
+        "source": "19.pdf · questão 31 · Art. 5º, I, Lei 12.016/2009",
+        "reference": "Art. 5º, I",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "12016|5|caput|I|"
+        ],
+        "keptIds": [
+          "cf-lei-12016-pdf19-q027"
+        ]
+      },
+      {
+        "id": "cf-lei-13300-pdf27-q002",
+        "source": "27.pdf · questão 2 · Art. 1º, Lei 13.300/2016",
+        "reference": "Art. 1º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "13300|1|caput||"
+        ],
+        "keptIds": [
+          "cf-lei-13300-pdf27-q001"
+        ]
+      },
+      {
+        "id": "cf-lei-9882-pdf68-q044",
+        "source": "68.pdf · questão 44 · Art. 4º, § 1º, Lei 9.882/99",
+        "reference": "Art. 4º, § 1º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9882|4|p1||"
+        ],
+        "keptIds": [
+          "cf-lei-9882-pdf68-q047"
+        ]
+      },
+      {
+        "id": "cf-lei-12016-pdf19-q034",
+        "source": "19.pdf · questão 34 · Art. 5°, II, Lei 12.016/2009",
+        "reference": "Art. 5°, II",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "12016|5|caput|II|"
+        ],
+        "keptIds": [
+          "cf-lei-12016-pdf19-q038"
+        ]
+      },
+      {
+        "id": "cf-lei-9882-pdf68-q037",
+        "source": "68.pdf · questão 37 · Art. 2º, I, Lei 9.882/99 c/c Art. 103, CF",
+        "reference": "Art. 2º, I",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9882|2|caput|I|"
+        ],
+        "keptIds": [
+          "cf-lei-9882-pdf68-q034"
+        ]
+      },
+      {
+        "id": "cf-lei-9882-pdf68-q018",
+        "source": "68.pdf · questão 18 · Art. 1º, § único, I, Lei 9.882/99",
+        "reference": "Art. 1º, § único, I",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9882|1|unico|I|"
+        ],
+        "keptIds": [
+          "cf-lei-9882-pdf68-q022"
+        ]
+      },
+      {
+        "id": "cf-lei-13300-pdf27-q031",
+        "source": "27.pdf · questão 31 · Art. 8º, II, Lei 13.300/2016",
+        "reference": "Art. 8º, II",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "13300|8|caput|II|"
+        ],
+        "keptIds": [
+          "cf-lei-13300-pdf27-q032"
+        ]
+      },
+      {
+        "id": "cf-lei-9868-pdf67-q020",
+        "source": "67.pdf · questão 20 · Art. 11, § 1º, Lei 9.868/99",
+        "reference": "Art. 11, § 1º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9868|11|p1||"
+        ],
+        "keptIds": [
+          "cf-lei-9868-pdf67-q031"
+        ]
+      },
+      {
+        "id": "cf-lei-9507-pdf64-q007",
+        "source": "64.pdf · questão 7 · Art. 9º, Lei 9.507/97",
+        "reference": "Art. 9º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9507|9|caput||"
+        ],
+        "keptIds": [
+          "cf-lei-9507-pdf64-q008"
+        ]
+      },
+      {
+        "id": "cf-lei-12016-pdf19-q018",
+        "source": "19.pdf · questão 18 · Art. 3º, Lei 12.016/2009",
+        "reference": "Art. 3º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "12016|3|caput||"
+        ],
+        "keptIds": [
+          "cf-lei-12016-pdf19-q019"
+        ]
+      },
+      {
+        "id": "cf-lei-13300-pdf27-q029",
+        "source": "27.pdf · questão 29 · Art. 8º, I, Lei 13.300/2016",
+        "reference": "Art. 8º, I",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "13300|8|caput|I|"
+        ],
+        "keptIds": [
+          "cf-lei-13300-pdf27-q030"
+        ]
+      },
+      {
+        "id": "cf-lei-9507-pdf64-q013",
+        "source": "64.pdf · questão 13 · Art. 15, Lei 9.507/97",
+        "reference": "Art. 15",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9507|15|caput||"
+        ],
+        "keptIds": [
+          "cf-lei-9507-pdf64-q014"
+        ]
+      },
+      {
+        "id": "cf-lei-9507-pdf64-q015",
+        "source": "64.pdf · questão 15 · Art. 15, § único, Lei 9.507/97",
+        "reference": "Art. 15, § único",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9507|15|unico||"
+        ],
+        "keptIds": [
+          "cf-lei-9507-pdf64-q016"
+        ]
+      },
+      {
+        "id": "cf-lei-9868-pdf67-q040",
+        "source": "67.pdf · questão 40 · Art. 11, § 1º, Lei 9.868/99",
+        "reference": "Art. 11, § 1º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9868|11|p1||"
+        ],
+        "keptIds": [
+          "cf-lei-9868-pdf67-q031"
+        ]
+      },
+      {
+        "id": "cf-lei-12016-pdf19-q032",
+        "source": "19.pdf · questão 32 · Art. 5º, I, Lei 12.016/2009",
+        "reference": "Art. 5º, I",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "12016|5|caput|I|"
+        ],
+        "keptIds": [
+          "cf-lei-12016-pdf19-q027"
+        ]
+      },
+      {
+        "id": "cf-lei-13300-pdf27-q038",
+        "source": "27.pdf · questão 38 · Art. 9º, Lei 13.300/2016",
+        "reference": "Art. 9º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "13300|9|caput||"
+        ],
+        "keptIds": [
+          "cf-lei-13300-pdf27-q040"
+        ]
+      },
+      {
+        "id": "cf-lei-9868-pdf67-q041",
+        "source": "67.pdf · questão 41 · Art. 5º, Lei 9.868/99",
+        "reference": "Art. 5º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9868|5|caput||"
+        ],
+        "keptIds": [
+          "cf-lei-9868-pdf67-q009"
+        ]
+      },
+      {
+        "id": "cf-lei-9882-pdf68-q036",
+        "source": "68.pdf · questão 36 · Art. 2º, I, Lei 9.882/99 c/c Art. 103, CF",
+        "reference": "Art. 2º, I",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9882|2|caput|I|"
+        ],
+        "keptIds": [
+          "cf-lei-9882-pdf68-q034"
+        ]
+      },
+      {
+        "id": "cf-lei-13300-pdf27-q025",
+        "source": "27.pdf · questão 25 · Art. 8º, Lei 13.300/2016",
+        "reference": "Art. 8º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "13300|8|caput||"
+        ],
+        "keptIds": [
+          "cf-lei-13300-pdf27-q026"
+        ]
+      },
+      {
+        "id": "cf-lei-9868-pdf67-q017",
+        "source": "67.pdf · questão 17 · Art. 9º, § 1º, Lei 9.868/99",
+        "reference": "Art. 9º, § 1º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9868|9|p1||"
+        ],
+        "keptIds": [
+          "cf-lei-9868-pdf67-q016"
+        ]
+      },
+      {
+        "id": "cf-lei-9868-pdf67-q045",
+        "source": "67.pdf · questão 45 · Art. 9º, 1º, Lei 9.868/99",
+        "reference": "Art. 9º, § 1º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9868|9|p1||"
+        ],
+        "keptIds": [
+          "cf-lei-9868-pdf67-q016"
+        ]
+      },
+      {
+        "id": "cf-lei-13300-pdf27-q036",
+        "source": "27.pdf · questão 36 · Art. 8º, § único, Lei 13.300/2016",
+        "reference": "Art. 8º, § único",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "13300|8|unico||"
+        ],
+        "keptIds": [
+          "cf-lei-13300-pdf27-q035"
+        ]
+      },
+      {
+        "id": "cf-lei-12016-pdf19-q001",
+        "source": "19.pdf · questão 1 · Art. 1º, Lei 12.016/2009",
+        "reference": "Art. 1º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "12016|1|caput||"
+        ],
+        "keptIds": [
+          "cf-lei-12016-pdf19-q002"
+        ]
+      },
+      {
+        "id": "cf-lei-9868-pdf67-q023",
+        "source": "67.pdf · questão 23 · Art. 10, Lei 9.868/99",
+        "reference": "Art. 10",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9868|10|caput||"
+        ],
+        "keptIds": [
+          "cf-lei-9868-pdf67-q021"
+        ]
+      },
+      {
+        "id": "cf-lei-9882-pdf68-q005",
+        "source": "68.pdf · questão 5 · Art. 1º, § único, Lei 9.882/99",
+        "reference": "Art. 1º, § único",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9882|1|unico||"
+        ],
+        "keptIds": [
+          "cf-lei-9882-pdf68-q007"
+        ]
+      },
+      {
+        "id": "cf-lei-9882-pdf68-q006",
+        "source": "68.pdf · questão 6 · Art. 1º, § único, Lei 9.882/99",
+        "reference": "Art. 1º, § único",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9882|1|unico||"
+        ],
+        "keptIds": [
+          "cf-lei-9882-pdf68-q007"
+        ]
+      },
+      {
+        "id": "cf-lei-4717-pdf39-q029",
+        "source": "39.pdf · questão 29 · Art. 5º, Lei 4.717/65",
+        "reference": "Art. 5º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "4717|5|caput||"
+        ],
+        "keptIds": [
+          "cf-lei-4717-pdf39-q031"
+        ]
+      },
+      {
+        "id": "cf-lei-9882-pdf68-q013",
+        "source": "68.pdf · questão 13 · Art. 1º, § único, I, Lei 9.882/99",
+        "reference": "Art. 1º, § único, I",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9882|1|unico|I|"
+        ],
+        "keptIds": [
+          "cf-lei-9882-pdf68-q022"
+        ]
+      },
+      {
+        "id": "cf-lei-9882-pdf68-q026",
+        "source": "68.pdf · questão 26 · Art. 1º, § único, I, Lei 9.882/99",
+        "reference": "Art. 1º, § único, I",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9882|1|unico|I|"
+        ],
+        "keptIds": [
+          "cf-lei-9882-pdf68-q022"
+        ]
+      },
+      {
+        "id": "cf-lei-9882-pdf68-q003",
+        "source": "68.pdf · questão 3 · Art. 1º, Lei 9.882/99",
+        "reference": "Art. 1º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9882|1|caput||"
+        ],
+        "keptIds": [
+          "cf-lei-9882-pdf68-q002"
+        ]
+      },
+      {
+        "id": "cf-lei-13300-pdf27-q046",
+        "source": "27.pdf · questão 46 · Art. 9º, § 1º, Lei 13.300/2016",
+        "reference": "Art. 9º, § 1º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "13300|9|p1||"
+        ],
+        "keptIds": [
+          "cf-lei-13300-pdf27-q045"
+        ]
+      },
+      {
+        "id": "cf-lei-13300-pdf27-q050",
+        "source": "27.pdf · questão 50 · Art. 9º, § 1º, Lei 13.300/2016",
+        "reference": "Art. 9º, § 1º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "13300|9|p1||"
+        ],
+        "keptIds": [
+          "cf-lei-13300-pdf27-q045"
+        ]
+      },
+      {
+        "id": "cf-lei-12016-pdf19-q020",
+        "source": "19.pdf · questão 20 · Art. 4º, Lei 12.016/2009",
+        "reference": "Art. 4º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "12016|4|caput||"
+        ],
+        "keptIds": [
+          "cf-lei-12016-pdf19-q022"
+        ]
+      },
+      {
+        "id": "cf-lei-9868-pdf67-q019",
+        "source": "67.pdf · questão 19 · Art. 11, § 1º, Lei 9.882/99",
+        "reference": "Art. 11, § 1º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9868|11|p1||"
+        ],
+        "keptIds": [
+          "cf-lei-9868-pdf67-q031"
+        ]
+      },
+      {
+        "id": "cf-lei-13300-pdf27-q027",
+        "source": "27.pdf · questão 27 · Art. 8º, I, Lei 13.300/2016",
+        "reference": "Art. 8º, I",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "13300|8|caput|I|"
+        ],
+        "keptIds": [
+          "cf-lei-13300-pdf27-q030"
+        ]
+      },
+      {
+        "id": "cf-lei-13300-pdf27-q028",
+        "source": "27.pdf · questão 28 · Art. 8º, I, Lei 13.300/2016",
+        "reference": "Art. 8º, I",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "13300|8|caput|I|"
+        ],
+        "keptIds": [
+          "cf-lei-13300-pdf27-q030"
+        ]
+      },
+      {
+        "id": "cf-lei-9507-pdf64-q012",
+        "source": "64.pdf · questão 12 · Art. 15, Lei 9.507/97",
+        "reference": "Art. 15",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9507|15|caput||"
+        ],
+        "keptIds": [
+          "cf-lei-9507-pdf64-q014"
+        ]
+      },
+      {
+        "id": "cf-lei-9868-pdf67-q044",
+        "source": "67.pdf · questão 44 · Art. 11, 1º, Lei 9.868/99",
+        "reference": "Art. 11, § 1º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9868|11|p1||"
+        ],
+        "keptIds": [
+          "cf-lei-9868-pdf67-q031"
+        ]
+      },
+      {
+        "id": "cf-lei-12016-pdf19-q049",
+        "source": "19.pdf · questão 49 · Art. 6º, § 6º, Lei 12.016/2009",
+        "reference": "Art. 6º, § 6º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "12016|6|p6||"
+        ],
+        "keptIds": [
+          "cf-lei-12016-pdf19-q047"
+        ]
+      },
+      {
+        "id": "cf-lei-9868-pdf67-q022",
+        "source": "67.pdf · questão 22 · Art. 11, § 2º, Lei 9.868/99",
+        "reference": "Art. 11, § 2º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9868|11|p2||"
+        ],
+        "keptIds": [
+          "cf-lei-9868-pdf67-q025"
+        ]
+      },
+      {
+        "id": "cf-lei-9882-pdf68-q046",
+        "source": "68.pdf · questão 46 · Art. 4º, § 1º, Lei 9.882/99",
+        "reference": "Art. 4º, § 1º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9882|4|p1||"
+        ],
+        "keptIds": [
+          "cf-lei-9882-pdf68-q047"
+        ]
+      },
+      {
+        "id": "cf-lei-9882-pdf68-q032",
+        "source": "68.pdf · questão 32 · Art. 2º, I, Lei 9.882/99",
+        "reference": "Art. 2º, I",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9882|2|caput|I|"
+        ],
+        "keptIds": [
+          "cf-lei-9882-pdf68-q034"
+        ]
+      },
+      {
+        "id": "cf-lei-4717-pdf39-q009",
+        "source": "39.pdf · questão 9 · Art. 1º, § 3º, Lei 4.717/65",
+        "reference": "Art. 1º, § 3º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "4717|1|p3||"
+        ],
+        "keptIds": [
+          "cf-lei-4717-pdf39-q014"
+        ]
+      },
+      {
+        "id": "cf-lei-9868-pdf67-q042",
+        "source": "67.pdf · questão 42 · Art. 7º, Lei 9.868/99",
+        "reference": "Art. 7º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9868|7|caput||"
+        ],
+        "keptIds": [
+          "cf-lei-9868-pdf67-q039"
+        ]
+      },
+      {
+        "id": "cf-lei-9868-pdf67-q043",
+        "source": "67.pdf · questão 43 · Art. 5º, Lei 9.868/99",
+        "reference": "Art. 5º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9868|5|caput||"
+        ],
+        "keptIds": [
+          "cf-lei-9868-pdf67-q009"
+        ]
+      },
+      {
+        "id": "cf-lei-9868-pdf67-q007",
+        "source": "67.pdf · questão 7 · Art. 5º, Lei 9.868/99",
+        "reference": "Art. 5º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9868|5|caput||"
+        ],
+        "keptIds": [
+          "cf-lei-9868-pdf67-q009"
+        ]
+      },
+      {
+        "id": "cf-lei-4717-pdf39-q019",
+        "source": "39.pdf · questão 19 · Art. 1º, § 7º, Lei 4.717/65",
+        "reference": "Art. 1º, § 7º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "4717|1|p7||"
+        ],
+        "keptIds": [
+          "cf-lei-4717-pdf39-q018"
+        ]
+      },
+      {
+        "id": "cf-lei-13300-pdf27-q033",
+        "source": "27.pdf · questão 33 · Art. 8º, II, Lei 13.300/2016",
+        "reference": "Art. 8º, II",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "13300|8|caput|II|"
+        ],
+        "keptIds": [
+          "cf-lei-13300-pdf27-q032"
+        ]
+      },
+      {
+        "id": "cf-lei-4717-pdf39-q038",
+        "source": "39.pdf · questão 38 · Art. 6º, Lei 4.717/65",
+        "reference": "Art. 6º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "4717|6|caput||"
+        ],
+        "keptIds": [
+          "cf-lei-4717-pdf39-q039"
+        ]
+      },
+      {
+        "id": "cf-lei-9882-pdf68-q038",
+        "source": "68.pdf · questão 38 · Art. 2º, I, Lei 9.882/99 c/c Art. 103, VIII, CF",
+        "reference": "Art. 2º, I",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9882|2|caput|I|"
+        ],
+        "keptIds": [
+          "cf-lei-9882-pdf68-q034"
+        ]
+      },
+      {
+        "id": "cf-lei-9868-pdf67-q050",
+        "source": "67.pdf · questão 50 · Art. 11, § 1º e § 2º, Lei 9.868/99",
+        "reference": "Art. 11, § 1º e § 2º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9868|11|p1||"
+        ],
+        "keptIds": [
+          "cf-lei-9868-pdf67-q031"
+        ]
+      },
+      {
+        "id": "cf-lei-13300-pdf27-q044",
+        "source": "27.pdf · questão 44 · Art. 9º, § 1º, Lei 13.300/2016",
+        "reference": "Art. 9º, § 1º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "13300|9|p1||"
+        ],
+        "keptIds": [
+          "cf-lei-13300-pdf27-q045"
+        ]
+      },
+      {
+        "id": "cf-lei-13300-pdf27-q017",
+        "source": "27.pdf · questão 17 · Art. 3º, Lei 13.300/2016",
+        "reference": "Art. 3º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "13300|3|caput||"
+        ],
+        "keptIds": [
+          "cf-lei-13300-pdf27-q013"
+        ]
+      },
+      {
+        "id": "cf-lei-13300-pdf27-q018",
+        "source": "27.pdf · questão 18 · Art. 3º, Lei 13.300/2016",
+        "reference": "Art. 3º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "13300|3|caput||"
+        ],
+        "keptIds": [
+          "cf-lei-13300-pdf27-q013"
+        ]
+      },
+      {
+        "id": "cf-lei-4717-pdf39-q049",
+        "source": "39.pdf · questão 49 · Art. 6º, § 4º, Lei 4.717/65",
+        "reference": "Art. 6º, § 4º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "4717|6|p4||"
+        ],
+        "keptIds": [
+          "cf-lei-4717-pdf39-q048"
+        ]
+      },
+      {
+        "id": "cf-lei-4717-pdf39-q033",
+        "source": "39.pdf · questão 33 · Art. 5º, Lei 4.717/65",
+        "reference": "Art. 5º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "4717|5|caput||"
+        ],
+        "keptIds": [
+          "cf-lei-4717-pdf39-q031"
+        ]
+      },
+      {
+        "id": "cf-lei-9882-pdf68-q008",
+        "source": "68.pdf · questão 8 · Art. 1º, § único, I, Lei 9.882/99",
+        "reference": "Art. 1º, § único, I",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9882|1|unico|I|"
+        ],
+        "keptIds": [
+          "cf-lei-9882-pdf68-q022"
+        ]
+      },
+      {
+        "id": "cf-lei-9882-pdf68-q010",
+        "source": "68.pdf · questão 10 · Art. 1º, § único, I, Lei 9.882/99",
+        "reference": "Art. 1º, § único, I",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9882|1|unico|I|"
+        ],
+        "keptIds": [
+          "cf-lei-9882-pdf68-q022"
+        ]
+      },
+      {
+        "id": "cf-lei-9882-pdf68-q011",
+        "source": "68.pdf · questão 11 · Art. 1º, § único, I, Lei 9.882/99",
+        "reference": "Art. 1º, § único, I",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9882|1|unico|I|"
+        ],
+        "keptIds": [
+          "cf-lei-9882-pdf68-q022"
+        ]
+      },
+      {
+        "id": "cf-lei-9882-pdf68-q015",
+        "source": "68.pdf · questão 15 · Art. 1º, § único, I, Lei 9.882/99",
+        "reference": "Art. 1º, § único, I",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9882|1|unico|I|"
+        ],
+        "keptIds": [
+          "cf-lei-9882-pdf68-q022"
+        ]
+      },
+      {
+        "id": "cf-lei-9882-pdf68-q019",
+        "source": "68.pdf · questão 19 · Art. 1º, § único, I, Lei 9.882/99",
+        "reference": "Art. 1º, § único, I",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9882|1|unico|I|"
+        ],
+        "keptIds": [
+          "cf-lei-9882-pdf68-q022"
+        ]
+      },
+      {
+        "id": "cf-lei-9882-pdf68-q021",
+        "source": "68.pdf · questão 21 · Art. 1º, § único, I, Lei 9.882/99",
+        "reference": "Art. 1º, § único, I",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9882|1|unico|I|"
+        ],
+        "keptIds": [
+          "cf-lei-9882-pdf68-q022"
+        ]
+      },
+      {
+        "id": "cf-lei-9882-pdf68-q030",
+        "source": "68.pdf · questão 30 · Art. 1º, § único, I, Lei 9.882/99",
+        "reference": "Art. 1º, § único, I",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9882|1|unico|I|"
+        ],
+        "keptIds": [
+          "cf-lei-9882-pdf68-q022"
+        ]
+      },
+      {
+        "id": "cf-lei-13300-pdf27-q043",
+        "source": "27.pdf · questão 43 · Art. 9º, § 1º, Lei 13.300/2016",
+        "reference": "Art. 9º, § 1º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "13300|9|p1||"
+        ],
+        "keptIds": [
+          "cf-lei-13300-pdf27-q045"
+        ]
+      },
+      {
+        "id": "cf-lei-13300-pdf27-q047",
+        "source": "27.pdf · questão 47 · Art. 9º, § 1º, Lei 13.300/2016",
+        "reference": "Art. 9º, § 1º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "13300|9|p1||"
+        ],
+        "keptIds": [
+          "cf-lei-13300-pdf27-q045"
+        ]
+      },
+      {
+        "id": "cf-lei-12016-pdf19-q024",
+        "source": "19.pdf · questão 24 · Art. 5º, Lei 12.016/2009",
+        "reference": "Art. 5º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "12016|5|caput||"
+        ],
+        "keptIds": [
+          "cf-lei-12016-pdf19-q026"
+        ]
+      },
+      {
+        "id": "cf-lei-9507-pdf64-q018",
+        "source": "64.pdf · questão 18 · Art. 15, § único, Lei 9.507/97",
+        "reference": "Art. 15, § único",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9507|15|unico||"
+        ],
+        "keptIds": [
+          "cf-lei-9507-pdf64-q016"
+        ]
+      },
+      {
+        "id": "cf-lei-9868-pdf67-q047",
+        "source": "67.pdf · questão 47 · Art. 11, 1º, Lei 9.868/99",
+        "reference": "Art. 11, § 1º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9868|11|p1||"
+        ],
+        "keptIds": [
+          "cf-lei-9868-pdf67-q031"
+        ]
+      },
+      {
+        "id": "cf-lei-9507-pdf64-q023",
+        "source": "64.pdf · questão 23 · Art. 21, Lei 9.507/97",
+        "reference": "Art. 21",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9507|21|caput||"
+        ],
+        "keptIds": [
+          "cf-lei-9507-pdf64-q024"
+        ]
+      },
+      {
+        "id": "cf-lei-12016-pdf19-q048",
+        "source": "19.pdf · questão 48 · Art. 6º, § 6º, Lei 12.016/2009",
+        "reference": "Art. 6º, § 6º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "12016|6|p6||"
+        ],
+        "keptIds": [
+          "cf-lei-12016-pdf19-q047"
+        ]
+      },
+      {
+        "id": "cf-lei-12016-pdf19-q046",
+        "source": "19.pdf · questão 46 · Art. 6º, § 6º, Lei 12.016/2009",
+        "reference": "Art. 6º, § 6º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "12016|6|p6||"
+        ],
+        "keptIds": [
+          "cf-lei-12016-pdf19-q047"
+        ]
+      },
+      {
+        "id": "cf-lei-9868-pdf67-q046",
+        "source": "67.pdf · questão 46 · Art. 11, 2º, Lei 9.868/99",
+        "reference": "Art. 11, § 2º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9868|11|p2||"
+        ],
+        "keptIds": [
+          "cf-lei-9868-pdf67-q025"
+        ]
+      },
+      {
+        "id": "cf-lei-9882-pdf68-q042",
+        "source": "68.pdf · questão 42 · Art. 4º, § 1º, Lei 9.882/99",
+        "reference": "Art. 4º, § 1º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9882|4|p1||"
+        ],
+        "keptIds": [
+          "cf-lei-9882-pdf68-q047"
+        ]
+      },
+      {
+        "id": "cf-lei-9882-pdf68-q050",
+        "source": "68.pdf · questão 50 · Art. 4º, § 1º, Lei 9.882/99",
+        "reference": "Art. 4º, § 1º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9882|4|p1||"
+        ],
+        "keptIds": [
+          "cf-lei-9882-pdf68-q047"
+        ]
+      },
+      {
+        "id": "cf-lei-13300-pdf27-q011",
+        "source": "27.pdf · questão 11 · Art. 2º, § único, Lei 13.300/2016",
+        "reference": "Art. 2º, § único",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "13300|2|unico||"
+        ],
+        "keptIds": [
+          "cf-lei-13300-pdf27-q010"
+        ]
+      },
+      {
+        "id": "cf-lei-4717-pdf39-q008",
+        "source": "39.pdf · questão 8 · Art. 1º, § 3º, Lei 4.717/65",
+        "reference": "Art. 1º, § 3º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "4717|1|p3||"
+        ],
+        "keptIds": [
+          "cf-lei-4717-pdf39-q014"
+        ]
+      },
+      {
+        "id": "cf-lei-4717-pdf39-q012",
+        "source": "39.pdf · questão 12 · Art. 1º, § 3º, Lei 4.717/65",
+        "reference": "Art. 1º, § 3º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "4717|1|p3||"
+        ],
+        "keptIds": [
+          "cf-lei-4717-pdf39-q014"
+        ]
+      },
+      {
+        "id": "cf-lei-13300-pdf27-q037",
+        "source": "27.pdf · questão 37 · Art. 9º, Lei 13.300/2016",
+        "reference": "Art. 9º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "13300|9|caput||"
+        ],
+        "keptIds": [
+          "cf-lei-13300-pdf27-q040"
+        ]
+      },
+      {
+        "id": "cf-lei-13300-pdf27-q039",
+        "source": "27.pdf · questão 39 · Art. 9º, Lei 13.300/2016",
+        "reference": "Art. 9º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "13300|9|caput||"
+        ],
+        "keptIds": [
+          "cf-lei-13300-pdf27-q040"
+        ]
+      },
+      {
+        "id": "cf-lei-9868-pdf67-q048",
+        "source": "67.pdf · questão 48 · Art. 5º, Lei 9.868/99",
+        "reference": "Art. 5º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9868|5|caput||"
+        ],
+        "keptIds": [
+          "cf-lei-9868-pdf67-q009"
+        ]
+      },
+      {
+        "id": "cf-lei-9868-pdf67-q049",
+        "source": "67.pdf · questão 49 · Art. 5º, Lei 9.868/99",
+        "reference": "Art. 5º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9868|5|caput||"
+        ],
+        "keptIds": [
+          "cf-lei-9868-pdf67-q009"
+        ]
+      },
+      {
+        "id": "cf-lei-11417-pdf15-q026",
+        "source": "15.pdf · questão 26 · Art. 7º, § 1º, Lei 11.417/2006",
+        "reference": "Art. 7º, § 1º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "11417|7|p1||"
+        ],
+        "keptIds": [
+          "cf-lei-11417-pdf15-q028"
+        ]
+      },
+      {
+        "id": "cf-lei-9507-pdf64-q004",
+        "source": "64.pdf · questão 4 · Art. 8º, Lei 9.507/97",
+        "reference": "Art. 8º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9507|8|caput||"
+        ],
+        "keptIds": [
+          "cf-lei-9507-pdf64-q005"
+        ]
+      },
+      {
+        "id": "cf-lei-9507-pdf64-q022",
+        "source": "64.pdf · questão 22 · Art. 19, Lei 9.507/97",
+        "reference": "Art. 19",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9507|19|caput||"
+        ],
+        "keptIds": [
+          "cf-lei-9507-pdf64-q021"
+        ]
+      },
+      {
+        "id": "cf-lei-13300-pdf27-q020",
+        "source": "27.pdf · questão 20 · Art. 4º, § 2º, Lei 13.300/2016",
+        "reference": "Art. 4º, § 2º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "13300|4|p2||"
+        ],
+        "keptIds": [
+          "cf-lei-13300-pdf27-q021"
+        ]
+      },
+      {
+        "id": "cf-lei-13300-pdf27-q015",
+        "source": "27.pdf · questão 15 · Art. 3º, Lei 13.300/2016",
+        "reference": "Art. 3º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "13300|3|caput||"
+        ],
+        "keptIds": [
+          "cf-lei-13300-pdf27-q013"
+        ]
+      },
+      {
+        "id": "cf-lei-4717-pdf39-q044",
+        "source": "39.pdf · questão 44 · Art. 6°, § 3°, Lei 4.717/65",
+        "reference": "Art. 6°, § 3°",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "4717|6|p3||"
+        ],
+        "keptIds": [
+          "cf-lei-4717-pdf39-q045"
+        ]
+      },
+      {
+        "id": "cf-lei-12016-pdf19-q007",
+        "source": "19.pdf · questão 7 · Art. 1º, § 2º, Lei 12.016/2009",
+        "reference": "Art. 1º, § 2º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "12016|1|p2||"
+        ],
+        "keptIds": [
+          "cf-lei-12016-pdf19-q011"
+        ]
+      },
+      {
+        "id": "cf-lei-13300-pdf27-q048",
+        "source": "27.pdf · questão 48 · Art. 9º, § 1º, Lei 13.300/2016",
+        "reference": "Art. 9º, § 1º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "13300|9|p1||"
+        ],
+        "keptIds": [
+          "cf-lei-13300-pdf27-q045"
+        ]
+      },
+      {
+        "id": "cf-lei-9868-pdf67-q005",
+        "source": "67.pdf · questão 5 · Art. 4º, Lei 9.868/99",
+        "reference": "Art. 4º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9868|4|caput||"
+        ],
+        "keptIds": [
+          "cf-lei-9868-pdf67-q027"
+        ]
+      },
+      {
+        "id": "cf-lei-9868-pdf67-q013",
+        "source": "67.pdf · questão 13 · Art. 8º, Lei 9.868/99",
+        "reference": "Art. 8º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9868|8|caput||"
+        ],
+        "keptIds": [
+          "cf-lei-9868-pdf67-q015"
+        ]
+      },
+      {
+        "id": "cf-lei-9507-pdf64-q017",
+        "source": "64.pdf · questão 17 · Art. 15, § único, Lei 9.507/97",
+        "reference": "Art. 15, § único",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9507|15|unico||"
+        ],
+        "keptIds": [
+          "cf-lei-9507-pdf64-q016"
+        ]
+      },
+      {
+        "id": "cf-lei-4717-pdf39-q010",
+        "source": "39.pdf · questão 10 · Art. 1º, § 3º, Lei 4.717/65",
+        "reference": "Art. 1º, § 3º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "4717|1|p3||"
+        ],
+        "keptIds": [
+          "cf-lei-4717-pdf39-q014"
+        ]
+      },
+      {
+        "id": "cf-lei-12016-pdf19-q015",
+        "source": "19.pdf · questão 15 · Art. 1º, § 3º, Lei 12.016/2009",
+        "reference": "Art. 1º, § 3º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "12016|1|p3||"
+        ],
+        "keptIds": [
+          "cf-lei-12016-pdf19-q012"
+        ]
+      },
+      {
+        "id": "cf-lei-12016-pdf19-q025",
+        "source": "19.pdf · questão 25 · Art. 5º, Lei 12.016/2009",
+        "reference": "Art. 5º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "12016|5|caput||"
+        ],
+        "keptIds": [
+          "cf-lei-12016-pdf19-q026"
+        ]
+      },
+      {
+        "id": "cf-lei-13300-pdf27-q014",
+        "source": "27.pdf · questão 14 · Art. 3º, Lei 13.300/2016",
+        "reference": "Art. 3º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "13300|3|caput||"
+        ],
+        "keptIds": [
+          "cf-lei-13300-pdf27-q013"
+        ]
+      },
+      {
+        "id": "cf-lei-13300-pdf27-q016",
+        "source": "27.pdf · questão 16 · Art. 3º, Lei 13.300/2016",
+        "reference": "Art. 3º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "13300|3|caput||"
+        ],
+        "keptIds": [
+          "cf-lei-13300-pdf27-q013"
+        ]
+      },
+      {
+        "id": "cf-lei-4717-pdf39-q026",
+        "source": "39.pdf · questão 26 · Art. 2º, § único, \"b\", Lei 4.717/65",
+        "reference": "Art. 2º, § único, \"b\"",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "4717|2|unico||b"
+        ],
+        "keptIds": [
+          "cf-lei-4717-pdf39-q025"
+        ]
+      },
+      {
+        "id": "cf-lei-4717-pdf39-q027",
+        "source": "39.pdf · questão 27 · Art. 2º, § único, \"c\", Lei 4.717/65",
+        "reference": "Art. 2º, § único, \"c\"",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "4717|2|unico|C|c"
+        ],
+        "keptIds": [
+          "cf-lei-4717-pdf39-q022"
+        ]
+      },
+      {
+        "id": "cf-lei-11417-pdf15-q013",
+        "source": "15.pdf · questão 13 · Art. 3º, Lei 11.417/2006",
+        "reference": "Art. 3º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "11417|3|caput||"
+        ],
+        "keptIds": [
+          "cf-lei-11417-pdf15-q010"
+        ]
+      },
+      {
+        "id": "cf-lei-12016-pdf19-q004",
+        "source": "19.pdf · questão 4 · Art. 1º, § 1º, Lei 12.016/2009",
+        "reference": "Art. 1º, § 1º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "12016|1|p1||"
+        ],
+        "keptIds": [
+          "cf-lei-12016-pdf19-q003"
+        ]
+      },
+      {
+        "id": "cf-lei-11417-pdf15-q012",
+        "source": "15.pdf · questão 12 · Art. 3º, Lei 11.417/2006",
+        "reference": "Art. 3º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "11417|3|caput||"
+        ],
+        "keptIds": [
+          "cf-lei-11417-pdf15-q010"
+        ]
+      },
+      {
+        "id": "cf-lei-11417-pdf15-q024",
+        "source": "15.pdf · questão 24 · Art. 7º, Lei 11.417/2006",
+        "reference": "Art. 7º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "11417|7|caput||"
+        ],
+        "keptIds": [
+          "cf-lei-11417-pdf15-q023"
+        ]
+      },
+      {
+        "id": "cf-lei-12016-pdf19-q017",
+        "source": "19.pdf · questão 17 · Art. 3º, Lei 12.016/2009",
+        "reference": "Art. 3º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "12016|3|caput||"
+        ],
+        "keptIds": [
+          "cf-lei-12016-pdf19-q019"
+        ]
+      },
+      {
+        "id": "cf-lei-11417-pdf15-q022",
+        "source": "15.pdf · questão 22 · Art. 7º, Lei 11.417/2006",
+        "reference": "Art. 7º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "11417|7|caput||"
+        ],
+        "keptIds": [
+          "cf-lei-11417-pdf15-q023"
+        ]
+      },
+      {
+        "id": "cf-lei-12016-pdf19-q008",
+        "source": "19.pdf · questão 8 · Art. 1º, § 2º, Lei 12.016/2009",
+        "reference": "Art. 1º, § 2º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "12016|1|p2||"
+        ],
+        "keptIds": [
+          "cf-lei-12016-pdf19-q011"
+        ]
+      },
+      {
+        "id": "cf-lei-4717-pdf39-q004",
+        "source": "39.pdf · questão 4 · Art. 1º, Lei 4.717/65",
+        "reference": "Art. 1º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "4717|1|caput||"
+        ],
+        "keptIds": [
+          "cf-lei-4717-pdf39-q002"
+        ]
+      },
+      {
+        "id": "cf-lei-4717-pdf39-q043",
+        "source": "39.pdf · questão 43 · Art. 6º, § 3º, Lei 4.717/65",
+        "reference": "Art. 6º, § 3º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "4717|6|p3||"
+        ],
+        "keptIds": [
+          "cf-lei-4717-pdf39-q045"
+        ]
+      },
+      {
+        "id": "cf-lei-4717-pdf39-q050",
+        "source": "39.pdf · questão 50 · Art. 6º, § 4º, Lei 4.717/65",
+        "reference": "Art. 6º, § 4º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "4717|6|p4||"
+        ],
+        "keptIds": [
+          "cf-lei-4717-pdf39-q048"
+        ]
+      },
+      {
+        "id": "cf-lei-4717-pdf39-q021",
+        "source": "39.pdf · questão 21 · Art. 2º, Lei 4.717/65",
+        "reference": "Art. 2º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "4717|2|caput||"
+        ],
+        "keptIds": [
+          "cf-lei-4717-pdf39-q028"
+        ]
+      },
+      {
+        "id": "cf-lei-4717-pdf39-q035",
+        "source": "39.pdf · questão 35 · Art. 5º, § 4º Lei 4.717/65",
+        "reference": "Art. 5º, § 4º Lei 4.717/65",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "4717|5|p4||"
+        ],
+        "keptIds": [
+          "cf-lei-4717-pdf39-q036"
+        ]
+      },
+      {
+        "id": "cf-lei-13300-pdf27-q005",
+        "source": "27.pdf · questão 5 · Art. 2º, Lei 13.300/2016 c/c Art. 37, CF",
+        "reference": "Art. 2º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "13300|2|caput||"
+        ],
+        "keptIds": [
+          "cf-lei-13300-pdf27-q008"
+        ]
+      },
+      {
+        "id": "cf-lei-12016-pdf19-q013",
+        "source": "19.pdf · questão 13 · Art. 1º, § 3º, Lei 12.016/2009",
+        "reference": "Art. 1º, § 3º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "12016|1|p3||"
+        ],
+        "keptIds": [
+          "cf-lei-12016-pdf19-q012"
+        ]
+      },
+      {
+        "id": "cf-lei-4717-pdf39-q005",
+        "source": "39.pdf · questão 5 · Art. 1º, Lei 4.717/65",
+        "reference": "Art. 1º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "4717|1|caput||"
+        ],
+        "keptIds": [
+          "cf-lei-4717-pdf39-q002"
+        ]
+      },
+      {
+        "id": "cf-lei-4717-pdf39-q041",
+        "source": "39.pdf · questão 41 · Art. 6º, § 1º, Lei 4.717/65",
+        "reference": "Art. 6º, § 1º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "4717|6|p1||"
+        ],
+        "keptIds": [
+          "cf-lei-4717-pdf39-q042"
+        ]
+      },
+      {
+        "id": "cf-lei-11417-pdf15-q009",
+        "source": "15.pdf · questão 9 · Art. 3º, Lei 11.417/2006",
+        "reference": "Art. 3º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "11417|3|caput||"
+        ],
+        "keptIds": [
+          "cf-lei-11417-pdf15-q010"
+        ]
+      },
+      {
+        "id": "cf-lei-11417-pdf15-q007",
+        "source": "15.pdf · questão 7 · Art. 2º, Lei 11.417/2006",
+        "reference": "Art. 2º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "11417|2|caput||"
+        ],
+        "keptIds": [
+          "cf-lei-11417-pdf15-q001"
+        ]
+      },
+      {
+        "id": "cf-lei-4717-pdf39-q037",
+        "source": "39.pdf · questão 37 · Art. 6º, Lei 4.717/65",
+        "reference": "Art. 6º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "4717|6|caput||"
+        ],
+        "keptIds": [
+          "cf-lei-4717-pdf39-q039"
+        ]
+      },
+      {
+        "id": "cf-lei-11417-pdf15-q011",
+        "source": "15.pdf · questão 11 · Art. 3º, Lei 11.417/2006",
+        "reference": "Art. 3º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "11417|3|caput||"
+        ],
+        "keptIds": [
+          "cf-lei-11417-pdf15-q010"
+        ]
+      },
+      {
+        "id": "cf-lei-9868-pdf67-q006",
+        "source": "67.pdf · questão 6 · Art. 4º, § único, Lei 9.868/99",
+        "reference": "Art. 4º, § único",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9868|4|unico||"
+        ],
+        "keptIds": [
+          "cf-lei-9868-pdf67-q030"
+        ]
+      },
+      {
+        "id": "cf-lei-4717-pdf39-q017",
+        "source": "39.pdf · questão 17 · Art. 1º, §§ 6º e 7º, Lei 4.717/65",
+        "reference": "Art. 1º, §§ 6º e 7º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "4717|1|p6||",
+          "4717|1|p7||"
+        ],
+        "keptIds": [
+          "cf-lei-4717-pdf39-q018"
+        ]
+      },
+      {
+        "id": "cf-lei-13300-pdf27-q042",
+        "source": "27.pdf · questão 42 · Art. 9º c/c Art. 13, Lei 13.300/2016",
+        "reference": "Art. 9º c/c Art. 13",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "13300|9|caput||",
+          "13300|13|caput||"
+        ],
+        "keptIds": [
+          "cf-lei-13300-pdf27-q040"
+        ]
+      },
+      {
+        "id": "cf-lei-12016-pdf19-q033",
+        "source": "19.pdf · questão 33 · Art. 5º, I, II, III, Lei 12.016/2009",
+        "reference": "Art. 5º, I, II, III",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "12016|5|caput|I|",
+          "12016|5|caput|II|",
+          "12016|5|caput|III|"
+        ],
+        "keptIds": [
+          "cf-lei-12016-pdf19-q027",
+          "cf-lei-12016-pdf19-q038",
+          "cf-lei-12016-pdf19-q041"
+        ]
+      },
+      {
+        "id": "cf-lei-12016-pdf19-q037",
+        "source": "19.pdf · questão 37 · Art. 5º, II, III, Lei 12.016/2009",
+        "reference": "Art. 5º, II, III",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "12016|5|caput|II|",
+          "12016|5|caput|III|"
+        ],
+        "keptIds": [
+          "cf-lei-12016-pdf19-q038",
+          "cf-lei-12016-pdf19-q041"
+        ]
+      },
+      {
+        "id": "cf-lei-13300-pdf27-q012",
+        "source": "27.pdf · questão 12 · Arts. 2°, 3° e 8°, II e § único, Lei 13.300/2016 c/c Art. 102, I, q, CF",
+        "reference": "Arts. 2°, 3° e 8°, II e § único",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "13300|2|caput||",
+          "13300|3|caput||",
+          "13300|8|caput|II|",
+          "13300|8|unico||"
+        ],
+        "keptIds": [
+          "cf-lei-13300-pdf27-q008",
+          "cf-lei-13300-pdf27-q013",
+          "cf-lei-13300-pdf27-q032",
+          "cf-lei-13300-pdf27-q035"
+        ]
+      },
+      {
+        "id": "cf-lei-13300-pdf27-q003",
+        "source": "27.pdf · questão 3 · Art. 102, I, q, CF c/c Arts. 2º e 12, III, Lei 13.300/2016",
+        "reference": "Art. 102, I, q, CF c/c Arts. 2º e 12, III",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "cf|102|caput|I|q",
+          "13300|2|caput||",
+          "13300|12|caput|III|"
+        ],
+        "keptIds": [
+          "cf-lei-13300-pdf27-q008"
+        ]
+      },
+      {
+        "id": "cf-lei-13300-pdf27-q041",
+        "source": "27.pdf · questão 41 · Art. 9º, caput e §§ 1º e 2º, Lei 13.300/2016",
+        "reference": "Art. 9º, caput e §§ 1º e 2º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "13300|9|caput||",
+          "13300|9|p1||",
+          "13300|9|p2||"
+        ],
+        "keptIds": [
+          "cf-lei-13300-pdf27-q040",
+          "cf-lei-13300-pdf27-q045"
+        ]
+      },
+      {
+        "id": "cf-lei-9507-pdf64-q009",
+        "source": "64.pdf · questão 9 · Arts. 9º e 10, Lei 9.507/97",
+        "reference": "Arts. 9º e 10",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "9507|9|caput||",
+          "9507|10|caput||"
+        ],
+        "keptIds": [
+          "cf-lei-9507-pdf64-q008",
+          "cf-lei-9507-pdf64-q010"
+        ]
+      },
+      {
+        "id": "cf-lei-4717-pdf39-q016",
+        "source": "39.pdf · questão 16 · Art. 1º, §§ 4º e 6º, Lei 4.717/65",
+        "reference": "Art. 1º, §§ 4º e 6º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "4717|1|p4||",
+          "4717|1|p6||"
+        ],
+        "keptIds": [
+          "cf-lei-4717-pdf39-q015"
+        ]
+      },
+      {
+        "id": "cf-lei-13300-pdf27-q034",
+        "source": "27.pdf · questão 34 · Arts. 8º, II e 11, Lei 13.300/2016",
+        "reference": "Arts. 8º, II e 11",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "13300|8|caput|II|",
+          "13300|11|caput||"
+        ],
+        "keptIds": [
+          "cf-lei-13300-pdf27-q032"
+        ]
+      },
+      {
+        "id": "cf-lei-11417-pdf15-q006",
+        "source": "15.pdf · questão 6 · Arts. 2º e 7º, Lei 11.417/2006",
+        "reference": "Arts. 2º e 7º",
+        "reason": "Dispositivo já representado por questão mantida",
+        "devices": [
+          "11417|2|caput||",
+          "11417|7|caput||"
+        ],
+        "keptIds": [
+          "cf-lei-11417-pdf15-q001",
+          "cf-lei-11417-pdf15-q023"
+        ]
+      }
+    ],
+    "removedCount": 200,
+    "retainedDevices": {
+      "4717|1|p3||": "cf-lei-4717-pdf39-q014",
+      "11417|2|p2||": "cf-lei-11417-pdf15-q008",
+      "11417|7|p1||": "cf-lei-11417-pdf15-q028",
+      "4717|1|p2||": "cf-lei-4717-pdf39-q007",
+      "11417|4|caput||": "cf-lei-11417-pdf15-q004",
+      "13300|2|caput||": "cf-lei-13300-pdf27-q008",
+      "4717|2|caput||": "cf-lei-4717-pdf39-q028",
+      "12016|5|caput|II|": "cf-lei-12016-pdf19-q038",
+      "12016|5|caput|III|": "cf-lei-12016-pdf19-q041",
+      "4717|1|caput||": "cf-lei-4717-pdf39-q002",
+      "9507|8|unico||": "cf-lei-9507-pdf64-q006",
+      "9882|1|unico|I|": "cf-lei-9882-pdf68-q022",
+      "9507|12|caput||": "cf-lei-9507-pdf64-q011",
+      "12016|6|p1||": "cf-lei-12016-pdf19-q042",
+      "11417|2|caput||": "cf-lei-11417-pdf15-q001",
+      "12016|1|caput||": "cf-lei-12016-pdf19-q002",
+      "11417|3|caput|XI|": "cf-lei-11417-pdf15-q014",
+      "4717|6|caput||": "cf-lei-4717-pdf39-q039",
+      "12016|1|p1||": "cf-lei-12016-pdf19-q003",
+      "9868|10|caput||": "cf-lei-9868-pdf67-q021",
+      "11417|3|p1||": "cf-lei-11417-pdf15-q015",
+      "4717|6|p3||": "cf-lei-4717-pdf39-q045",
+      "4717|5|caput||": "cf-lei-4717-pdf39-q031",
+      "4717|2|unico||b": "cf-lei-4717-pdf39-q025",
+      "4717|1|p4||": "cf-lei-4717-pdf39-q015",
+      "9507|7|caput|III|": "cf-lei-9507-pdf64-q003",
+      "9507|15|unico||": "cf-lei-9507-pdf64-q016",
+      "9507|21|caput||": "cf-lei-9507-pdf64-q024",
+      "9882|4|p1||": "cf-lei-9882-pdf68-q047",
+      "11417|3|caput||": "cf-lei-11417-pdf15-q010",
+      "9882|2|caput|I|": "cf-lei-9882-pdf68-q034",
+      "9882|3|caput||": "cf-lei-9882-pdf68-q040",
+      "9868|10|p2||": "cf-lei-9868-pdf67-q024",
+      "9882|4|caput||": "cf-lei-9882-pdf68-q041",
+      "13300|4|caput||": "cf-lei-13300-pdf27-q019",
+      "13300|1|caput||": "cf-lei-13300-pdf27-q001",
+      "9868|11|p2||": "cf-lei-9868-pdf67-q025",
+      "13300|9|caput||": "cf-lei-13300-pdf27-q040",
+      "13300|9|p1||": "cf-lei-13300-pdf27-q045",
+      "12016|7|caput|I|": "cf-lei-12016-pdf19-q050",
+      "12016|1|p2||": "cf-lei-12016-pdf19-q011",
+      "9868|8|caput||": "cf-lei-9868-pdf67-q015",
+      "9868|11|p1||": "cf-lei-9868-pdf67-q031",
+      "12016|5|caput|I|": "cf-lei-12016-pdf19-q027",
+      "12016|6|p3||": "cf-lei-12016-pdf19-q044",
+      "12016|6|p6||": "cf-lei-12016-pdf19-q047",
+      "9868|10|p1||": "cf-lei-9868-pdf67-q028",
+      "9868|4|caput||": "cf-lei-9868-pdf67-q027",
+      "9868|4|unico||": "cf-lei-9868-pdf67-q030",
+      "9868|5|caput||": "cf-lei-9868-pdf67-q009",
+      "13300|8|caput||": "cf-lei-13300-pdf27-q026",
+      "9882|1|unico||": "cf-lei-9882-pdf68-q007",
+      "13300|8|caput|II|": "cf-lei-13300-pdf27-q032",
+      "9868|7|p2||": "cf-lei-9868-pdf67-q012",
+      "9882|2|p1||": "cf-lei-9882-pdf68-q039",
+      "9507|9|caput||": "cf-lei-9507-pdf64-q008",
+      "12016|3|caput||": "cf-lei-12016-pdf19-q019",
+      "12016|4|caput||": "cf-lei-12016-pdf19-q022",
+      "13300|8|caput|I|": "cf-lei-13300-pdf27-q030",
+      "12016|1|p3||": "cf-lei-12016-pdf19-q012",
+      "9868|7|caput||": "cf-lei-9868-pdf67-q039",
+      "9507|15|caput||": "cf-lei-9507-pdf64-q014",
+      "9882|1|caput||": "cf-lei-9882-pdf68-q002",
+      "11417|7|caput||": "cf-lei-11417-pdf15-q023",
+      "13300|5|caput|I|": "cf-lei-13300-pdf27-q022",
+      "1079|7|caput|6|": "cf-lei-1079-pdf7-q003",
+      "13300|7|caput||": "cf-lei-13300-pdf27-q024",
+      "13300|8|unico||": "cf-lei-13300-pdf27-q035",
+      "1079|5|caput|7|": "cf-lei-1079-pdf7-q002",
+      "9868|9|p1||": "cf-lei-9868-pdf67-q016",
+      "4717|5|p2||": "cf-lei-4717-pdf39-q034",
+      "4717|6|p4||": "cf-lei-4717-pdf39-q048",
+      "9507|10|caput||": "cf-lei-9507-pdf64-q010",
+      "9507|8|caput||": "cf-lei-9507-pdf64-q005",
+      "12016|5|caput||": "cf-lei-12016-pdf19-q026",
+      "13300|2|unico||": "cf-lei-13300-pdf27-q010",
+      "4717|1|p7||": "cf-lei-4717-pdf39-q018",
+      "13300|4|p2||": "cf-lei-13300-pdf27-q021",
+      "13300|3|caput||": "cf-lei-13300-pdf27-q013",
+      "9507|19|caput||": "cf-lei-9507-pdf64-q021",
+      "4717|2|unico|C|c": "cf-lei-4717-pdf39-q022",
+      "9882|2|caput||": "cf-lei-9882-pdf68-q031",
+      "4717|5|p4||": "cf-lei-4717-pdf39-q036",
+      "9507|2|caput||": "cf-lei-9507-pdf64-q002",
+      "9868|6|caput||": "cf-lei-9868-pdf67-q011",
+      "13300|6|unico||": "cf-lei-13300-pdf27-q023",
+      "1079|4|caput|V|": "cf-lei-1079-pdf7-q001",
+      "4717|2|unico||": "cf-lei-4717-pdf39-q023",
+      "9507|1|unico||": "cf-lei-9507-pdf64-q001",
+      "4717|2|unico||a": "cf-lei-4717-pdf39-q024",
+      "4717|6|p1||": "cf-lei-4717-pdf39-q042",
+      "11417|2|p1||": "cf-lei-11417-pdf15-q005",
+      "11417|6|caput||": "cf-lei-11417-pdf15-q021",
+      "1079|79-A|caput|I|": "cf-lei-1079-pdf7-q004",
+      "9868|2|caput|IX|": "cf-lei-9868-pdf67-q004",
+      "9868|1|caput||": "cf-lei-9868-pdf67-q001",
+      "9868|2|caput|II|": "cf-lei-9868-pdf67-q003",
+      "9868|2|caput|I|": "cf-lei-9868-pdf67-q002"
+    },
+    "metadataFixes": [
+      "cf-lei-12016-pdf19-q034",
+      "cf-lei-12016-pdf19-q040",
+      "cf-lei-13300-pdf27-q003",
+      "cf-lei-13300-pdf27-q045",
+      "cf-lei-4717-pdf39-q018",
+      "cf-lei-4717-pdf39-q038",
+      "cf-lei-4717-pdf39-q049",
+      "cf-lei-11417-pdf15-q025"
+    ],
+    "scope": "Somente as oito leis novas; banco anterior da Constituição preservado."
+  }
+}
