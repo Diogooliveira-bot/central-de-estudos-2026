@@ -166,7 +166,14 @@
   "datasetBlobShas": {
     "tools/decorando-data-adm-9784.js": "c75103f94a14d204c781663f84737a36db861623",
     "tools/decorando-data-adm-pack1.js": "4b91e7b18b7d9d058ac26120b094e9078eda6089",
-    "tools/decorando-data-adm-pack2.js": "25846334550a95b04f34eb7edc32fb6d83249250"
+    "tools/decorando-data-adm-pack2.js": "02ea242478b313ba1a8ef038a9565c019e3183f4"
   },
-  "datasetIntegrityRule": "Para usar resultado desta auditoria, o SHA Git blob dos três datasets de PDFs deve continuar igual ao indicado."
+  "datasetIntegrityRule": "Para usar resultado desta auditoria, o SHA Git blob dos três datasets de PDFs deve continuar igual ao indicado.",
+  "metadataCorrection": {
+    "date": "2026-10-08",
+    "count": 12,
+    "detail": "Rótulo de site de compilação foi retirado de banca e descrição em 12 registros sem banca/ano identificados no material de origem; enunciados, respostas, justificativas e IDs foram preservados.",
+    "shaBefore": "25846334550a95b04f34eb7edc32fb6d83249250",
+    "shaAfter": "02ea242478b313ba1a8ef038a9565c019e3183f4"
+  }
 }
