@@ -335,3 +335,43 @@ html,body{background:var(--paper);color:var(--ink)}
 [data-theme="dark"]{--ink:#D8D2C8;--muted:#AAA397;--green:#56C9C5;--paper:#252525;--surface:#252525;--surface-2:#30302e;--line:#484540;--accent-soft:#303c3a;--accent-line:#567772}
 [data-theme="dark"] .sidebar{background:#202020}
 .law-text,.main-statement,.statement{font-family:Georgia,"Times New Roman",serif}
+
+/* Situação e domínio usam o histórico existente, sem alterar questões. */
+.qc-status{margin-top:14px;padding:18px 20px}
+.qc-status-heading{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:12px}
+.qc-status-heading strong{font-size:13px;color:var(--ink)}
+.qc-status-heading small{font-size:11px;color:var(--muted);line-height:1.45}
+.qc-status-options{display:flex;flex-wrap:wrap;gap:8px}
+.qc-status-options button{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:8px 12px;border:1px solid var(--line);border-radius:7px;background:var(--surface);color:var(--ink);font-size:12px;font-weight:600;cursor:pointer}
+.qc-status-options button b{font-size:11px;font-variant-numeric:tabular-nums;color:var(--muted)}
+.qc-status-options button.selected{border-color:var(--green);background:var(--accent-soft);color:var(--green)}
+.qc-status-options button.selected b{color:var(--green)}
+.qc-status-options button:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+.qc-metadata-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.qc-origin-options{display:flex;flex-wrap:wrap;gap:7px}
+.qc-origin-options button{min-height:44px;padding:8px 11px;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--ink);font-size:12px;cursor:pointer}
+.qc-origin-options button.selected{border-color:var(--green);background:var(--accent-soft);color:var(--green)}
+.history-progress{display:grid;gap:6px;font-size:12px}
+.history-progress strong{color:var(--ink)}
+.history-progress span,.history-progress small{color:var(--muted)}
+.history-progress-track{height:7px;border-radius:99px;background:var(--line);overflow:hidden}
+.history-progress-track span{display:block;height:100%;background:var(--green)}
+.selectable-highlight,.law-text .law-part{user-select:text!important;-webkit-user-select:text!important}
+.law-text .law-part{display:inline;border:0;border-radius:3px;background:transparent;color:inherit;cursor:text}
+.law-text .law-part:hover{background:var(--accent-soft)}
+.law-text .law-part:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+.law-text .law-part.marked.yellow{background:#fff0a7}.law-text .law-part.marked.green{background:#ccebd0}
+.law-text .law-part.marked.blue{background:#c8e7f4}.law-text .law-part.marked.pink{background:#f7d3d9}
+mark.user-highlight{padding:0 1px;border-radius:2px;color:inherit}
+mark.user-highlight.yellow{background:#fff0a7}mark.user-highlight.green{background:#ccebd0}
+mark.user-highlight.blue{background:#c8e7f4}mark.user-highlight.pink{background:#f7d3d9}
+[data-theme="dark"] mark.user-highlight,[data-theme="dark"] .law-text .law-part.marked{color:#172433}
+#lei-selection-toolbar{position:fixed;z-index:2147483646;display:flex;align-items:center;flex-wrap:wrap;gap:6px;max-width:calc(100vw - 16px);padding:8px;border:1px solid var(--line);border-radius:9px;background:var(--surface);color:var(--ink);box-shadow:0 8px 24px rgba(0,0,0,.2)}
+#lei-selection-toolbar[hidden]{display:none}
+#lei-selection-toolbar span{font-size:12px;font-weight:700;margin-right:2px}
+#lei-selection-toolbar button{min-width:40px;min-height:40px;border:1px solid var(--line);border-radius:6px;background:var(--surface-2);color:var(--ink);cursor:pointer}
+#lei-selection-toolbar button[data-color]{width:40px;padding:0;border-radius:50%}
+#lei-selection-toolbar button[data-color="yellow"]{background:#fff0a7}#lei-selection-toolbar button[data-color="green"]{background:#ccebd0}
+#lei-selection-toolbar button[data-color="blue"]{background:#c8e7f4}#lei-selection-toolbar button[data-color="pink"]{background:#f7d3d9}
+#lei-selection-toolbar button:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+@media(max-width:580px){.qc-status{padding:16px}.qc-status-heading{display:block}.qc-status-heading small{display:block;margin-top:5px}.qc-status-options button{flex:1 1 auto;justify-content:center}.qc-metadata-grid{grid-template-columns:1fr}}
