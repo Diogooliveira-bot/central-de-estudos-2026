@@ -63,7 +63,7 @@
     {
       "path": "tools/decorando-data-adm-pack2.js",
       "items": 146,
-      "blobSHA": "02ea242478b313ba1a8ef038a9565c019e3183f4"
+      "blobSHA": "e98f679f7bfe52d2e0ff0be62356faccd5fae22c"
     },
     {
       "path": "tools/decorando-data-adm-pack3.js",
@@ -120,6 +120,11 @@
   "metadataCorrection": {
     "date": "2026-10-08",
     "count": 12,
-    "notes": "Correção editorial apenas em banca e meta, sem alteração de enunciados, gabaritos, origem por PDF ou identificadores."
+    "notes": "Correção editorial apenas em banca e meta, sem alteração de enunciados, gabaritos, origem por PDF ou identificadores.",
+    "finalOriginClassification": {
+      "real": 309,
+      "authorial": 444,
+      "unverified": 12
+    }
   }
 }
