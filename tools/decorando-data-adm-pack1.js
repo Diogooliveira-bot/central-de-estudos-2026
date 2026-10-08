@@ -4,7 +4,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-8112-pdf53-q001",
     "discipline": "adm",
     "topicId": "adm-lei-8112",
-    "subtopic": "Art. 1º",
+    "subtopic": "Lei 8.112/1990 · Art. 1º",
     "number": "Art. 1º",
     "title": "Lei 8.112/1990 — Servidores federais",
     "parts": [
@@ -20,14 +20,15 @@ const DATA_ADM_PACK1 = [
       "bank": "CESPE",
       "year": 2011,
       "role": "Analista de Correios (Correios)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-8112-pdf53-q003",
     "discipline": "adm",
     "topicId": "adm-lei-8112",
-    "subtopic": "Art. 2º",
+    "subtopic": "Lei 8.112/1990 · Art. 2º",
     "number": "Art. 2º",
     "title": "Lei 8.112/1990 — Servidores federais",
     "parts": [
@@ -50,7 +51,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-8112-pdf53-q004",
     "discipline": "adm",
     "topicId": "adm-lei-8112",
-    "subtopic": "Art. 2º",
+    "subtopic": "Lei 8.112/1990 · Art. 2º",
     "number": "Art. 2º",
     "title": "Lei 8.112/1990 — Servidores federais",
     "parts": [
@@ -73,7 +74,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-8112-pdf53-q006",
     "discipline": "adm",
     "topicId": "adm-lei-8112",
-    "subtopic": "Art. 3º",
+    "subtopic": "Lei 8.112/1990 · Art. 3º",
     "number": "Art. 3º",
     "title": "Lei 8.112/1990 — Servidores federais",
     "parts": [
@@ -89,14 +90,15 @@ const DATA_ADM_PACK1 = [
       "bank": "CESPE",
       "year": 2008,
       "role": "Exame de Ordem (OAB-SP)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-8112-pdf53-q007",
     "discipline": "adm",
     "topicId": "adm-lei-8112",
-    "subtopic": "Art. 3º, parágrafo único",
+    "subtopic": "Lei 8.112/1990 · Art. 3º, parágrafo único",
     "number": "Art. 3º, parágrafo único",
     "title": "Lei 8.112/1990 — Servidores federais",
     "parts": [
@@ -119,7 +121,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-8112-pdf53-q008",
     "discipline": "adm",
     "topicId": "adm-lei-8112",
-    "subtopic": "Art. 3º",
+    "subtopic": "Lei 8.112/1990 · Art. 3º",
     "number": "Art. 3º",
     "title": "Lei 8.112/1990 — Servidores federais",
     "parts": [
@@ -142,7 +144,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-8112-pdf53-q010",
     "discipline": "adm",
     "topicId": "adm-lei-8112",
-    "subtopic": "Art. 3º, parágrafo único",
+    "subtopic": "Lei 8.112/1990 · Art. 3º, parágrafo único",
     "number": "Art. 3º, parágrafo único",
     "title": "Lei 8.112/1990 — Servidores federais",
     "parts": [
@@ -158,14 +160,15 @@ const DATA_ADM_PACK1 = [
       "bank": "CESPE",
       "year": 2009,
       "role": "Analista Judiciário - Área Judiciária",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-8112-pdf53-q011",
     "discipline": "adm",
     "topicId": "adm-lei-8112",
-    "subtopic": "Art. 3º, parágrafo único",
+    "subtopic": "Lei 8.112/1990 · Art. 3º, parágrafo único",
     "number": "Art. 3º, parágrafo único",
     "title": "Lei 8.112/1990 — Servidores federais",
     "parts": [
@@ -188,7 +191,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-8112-pdf53-q012",
     "discipline": "adm",
     "topicId": "adm-lei-8112",
-    "subtopic": "Art. 4º",
+    "subtopic": "Lei 8.112/1990 · Art. 4º",
     "number": "Art. 4º",
     "title": "Lei 8.112/1990 — Servidores federais",
     "parts": [
@@ -204,14 +207,15 @@ const DATA_ADM_PACK1 = [
       "bank": "CONSULPLAN",
       "year": 2014,
       "role": "Administrador (MAPA)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-8112-pdf53-q013",
     "discipline": "adm",
     "topicId": "adm-lei-8112",
-    "subtopic": "Art. 4º",
+    "subtopic": "Lei 8.112/1990 · Art. 4º",
     "number": "Art. 4º",
     "title": "Lei 8.112/1990 — Servidores federais",
     "parts": [
@@ -234,7 +238,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-8112-pdf53-q014",
     "discipline": "adm",
     "topicId": "adm-lei-8112",
-    "subtopic": "Art. 5º",
+    "subtopic": "Lei 8.112/1990 · Art. 5º",
     "number": "Art. 5º",
     "title": "Lei 8.112/1990 — Servidores federais",
     "parts": [
@@ -257,7 +261,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-8112-pdf53-q017",
     "discipline": "adm",
     "topicId": "adm-lei-8112",
-    "subtopic": "Art. 5º",
+    "subtopic": "Lei 8.112/1990 · Art. 5º",
     "number": "Art. 5º",
     "title": "Lei 8.112/1990 — Servidores federais",
     "parts": [
@@ -280,7 +284,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-8112-pdf53-q020",
     "discipline": "adm",
     "topicId": "adm-lei-8112",
-    "subtopic": "Art. 5º, inc. I",
+    "subtopic": "Lei 8.112/1990 · Art. 5º, inc. I",
     "number": "Art. 5º, inc. I",
     "title": "Lei 8.112/1990 — Servidores federais",
     "parts": [
@@ -303,7 +307,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-8112-pdf53-q021",
     "discipline": "adm",
     "topicId": "adm-lei-8112",
-    "subtopic": "Art. 5º, inc. I",
+    "subtopic": "Lei 8.112/1990 · Art. 5º, inc. I",
     "number": "Art. 5º, inc. I",
     "title": "Lei 8.112/1990 — Servidores federais",
     "parts": [
@@ -326,7 +330,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-8112-pdf53-q024",
     "discipline": "adm",
     "topicId": "adm-lei-8112",
-    "subtopic": "Art. 5º, inc. II",
+    "subtopic": "Lei 8.112/1990 · Art. 5º, inc. II",
     "number": "Art. 5º, inc. II",
     "title": "Lei 8.112/1990 — Servidores federais",
     "parts": [
@@ -349,7 +353,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-8112-pdf53-q025",
     "discipline": "adm",
     "topicId": "adm-lei-8112",
-    "subtopic": "Art. 5º, inc. II",
+    "subtopic": "Lei 8.112/1990 · Art. 5º, inc. II",
     "number": "Art. 5º, inc. II",
     "title": "Lei 8.112/1990 — Servidores federais",
     "parts": [
@@ -372,7 +376,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-8112-pdf53-q026",
     "discipline": "adm",
     "topicId": "adm-lei-8112",
-    "subtopic": "Art. 5º, inc. III",
+    "subtopic": "Lei 8.112/1990 · Art. 5º, inc. III",
     "number": "Art. 5º, inc. III",
     "title": "Lei 8.112/1990 — Servidores federais",
     "parts": [
@@ -395,7 +399,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-8112-pdf53-q027",
     "discipline": "adm",
     "topicId": "adm-lei-8112",
-    "subtopic": "Art. 5º, inc. V",
+    "subtopic": "Lei 8.112/1990 · Art. 5º, inc. V",
     "number": "Art. 5º, inc. V",
     "title": "Lei 8.112/1990 — Servidores federais",
     "parts": [
@@ -418,7 +422,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-8112-pdf53-q028",
     "discipline": "adm",
     "topicId": "adm-lei-8112",
-    "subtopic": "Art. 5º, § 1º",
+    "subtopic": "Lei 8.112/1990 · Art. 5º, § 1º",
     "number": "Art. 5º, § 1º",
     "title": "Lei 8.112/1990 — Servidores federais",
     "parts": [
@@ -441,7 +445,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-8112-pdf53-q031",
     "discipline": "adm",
     "topicId": "adm-lei-8112",
-    "subtopic": "Art. 5º, § 2º",
+    "subtopic": "Lei 8.112/1990 · Art. 5º, § 2º",
     "number": "Art. 5º, § 2º",
     "title": "Lei 8.112/1990 — Servidores federais",
     "parts": [
@@ -464,7 +468,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-8112-pdf53-q032",
     "discipline": "adm",
     "topicId": "adm-lei-8112",
-    "subtopic": "Art. 5º, § 2º",
+    "subtopic": "Lei 8.112/1990 · Art. 5º, § 2º",
     "number": "Art. 5º, § 2º",
     "title": "Lei 8.112/1990 — Servidores federais",
     "parts": [
@@ -487,7 +491,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-8112-pdf53-q035",
     "discipline": "adm",
     "topicId": "adm-lei-8112",
-    "subtopic": "Art. 5º, § 3º",
+    "subtopic": "Lei 8.112/1990 · Art. 5º, § 3º",
     "number": "Art. 5º, § 3º",
     "title": "Lei 8.112/1990 — Servidores federais",
     "parts": [
@@ -510,7 +514,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-8112-pdf53-q036",
     "discipline": "adm",
     "topicId": "adm-lei-8112",
-    "subtopic": "Art. 6º",
+    "subtopic": "Lei 8.112/1990 · Art. 6º",
     "number": "Art. 6º",
     "title": "Lei 8.112/1990 — Servidores federais",
     "parts": [
@@ -533,7 +537,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-8112-pdf53-q037",
     "discipline": "adm",
     "topicId": "adm-lei-8112",
-    "subtopic": "Art. 7º",
+    "subtopic": "Lei 8.112/1990 · Art. 7º",
     "number": "Art. 7º",
     "title": "Lei 8.112/1990 — Servidores federais",
     "parts": [
@@ -556,7 +560,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-8112-pdf53-q041",
     "discipline": "adm",
     "topicId": "adm-lei-8112",
-    "subtopic": "Art. 7º",
+    "subtopic": "Lei 8.112/1990 · Art. 7º",
     "number": "Art. 7º",
     "title": "Lei 8.112/1990 — Servidores federais",
     "parts": [
@@ -579,7 +583,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-8112-pdf53-q044",
     "discipline": "adm",
     "topicId": "adm-lei-8112",
-    "subtopic": "Art. 8º",
+    "subtopic": "Lei 8.112/1990 · Art. 8º",
     "number": "Art. 8º",
     "title": "Lei 8.112/1990 — Servidores federais",
     "parts": [
@@ -602,7 +606,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-8112-pdf53-q049",
     "discipline": "adm",
     "topicId": "adm-lei-8112",
-    "subtopic": "Art. 8º",
+    "subtopic": "Lei 8.112/1990 · Art. 8º",
     "number": "Art. 8º",
     "title": "Lei 8.112/1990 — Servidores federais",
     "parts": [
@@ -625,7 +629,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-8429-pdf57-q001",
     "discipline": "adm",
     "topicId": "adm-lei-8429",
-    "subtopic": "Art. 1º",
+    "subtopic": "Lei 8.429/1992 · Art. 1º",
     "number": "Art. 1º",
     "title": "Lei 8.429/1992 — Improbidade administrativa",
     "parts": [
@@ -648,7 +652,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-8429-pdf57-q002",
     "discipline": "adm",
     "topicId": "adm-lei-8429",
-    "subtopic": "Art. 1º",
+    "subtopic": "Lei 8.429/1992 · Art. 1º",
     "number": "Art. 1º",
     "title": "Lei 8.429/1992 — Improbidade administrativa",
     "parts": [
@@ -671,7 +675,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-8429-pdf57-q004",
     "discipline": "adm",
     "topicId": "adm-lei-8429",
-    "subtopic": "Art. 1º, § 1º",
+    "subtopic": "Lei 8.429/1992 · Art. 1º, § 1º",
     "number": "Art. 1º, § 1º",
     "title": "Lei 8.429/1992 — Improbidade administrativa",
     "parts": [
@@ -694,7 +698,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-8429-pdf57-q014",
     "discipline": "adm",
     "topicId": "adm-lei-8429",
-    "subtopic": "Art. 1º, § 1º",
+    "subtopic": "Lei 8.429/1992 · Art. 1º, § 1º",
     "number": "Art. 1º, § 1º",
     "title": "Lei 8.429/1992 — Improbidade administrativa",
     "parts": [
@@ -717,7 +721,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-8429-pdf57-q030",
     "discipline": "adm",
     "topicId": "adm-lei-8429",
-    "subtopic": "Art. 1º, § 3º",
+    "subtopic": "Lei 8.429/1992 · Art. 1º, § 3º",
     "number": "Art. 1º, § 3º",
     "title": "Lei 8.429/1992 — Improbidade administrativa",
     "parts": [
@@ -740,7 +744,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-8429-pdf57-q037",
     "discipline": "adm",
     "topicId": "adm-lei-8429",
-    "subtopic": "Art. 1º, § 2º",
+    "subtopic": "Lei 8.429/1992 · Art. 1º, § 2º",
     "number": "Art. 1º, § 2º",
     "title": "Lei 8.429/1992 — Improbidade administrativa",
     "parts": [
@@ -763,7 +767,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-8429-pdf57-q043",
     "discipline": "adm",
     "topicId": "adm-lei-8429",
-    "subtopic": "Art. 1º, § 2º",
+    "subtopic": "Lei 8.429/1992 · Art. 1º, § 2º",
     "number": "Art. 1º, § 2º",
     "title": "Lei 8.429/1992 — Improbidade administrativa",
     "parts": [
@@ -786,7 +790,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-8429-pdf57-q050",
     "discipline": "adm",
     "topicId": "adm-lei-8429",
-    "subtopic": "Art. 1º, § 3º",
+    "subtopic": "Lei 8.429/1992 · Art. 1º, § 3º",
     "number": "Art. 1º, § 3º",
     "title": "Lei 8.429/1992 — Improbidade administrativa",
     "parts": [
@@ -809,7 +813,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-12527-pdf20-q002",
     "discipline": "adm",
     "topicId": "adm-lei-12527",
-    "subtopic": "Art. 1º, parágrafo único",
+    "subtopic": "Lei 12.527/2011 · Art. 1º, parágrafo único",
     "number": "Art. 1º, parágrafo único",
     "title": "Lei 12.527/2011 — Acesso à Informação (LAI)",
     "parts": [
@@ -832,7 +836,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-12527-pdf20-q003",
     "discipline": "adm",
     "topicId": "adm-lei-12527",
-    "subtopic": "Art. 1º, parágrafo único, inc. I",
+    "subtopic": "Lei 12.527/2011 · Art. 1º, parágrafo único, inc. I",
     "number": "Art. 1º, parágrafo único, inc. I",
     "title": "Lei 12.527/2011 — Acesso à Informação (LAI)",
     "parts": [
@@ -855,7 +859,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-12527-pdf20-q004",
     "discipline": "adm",
     "topicId": "adm-lei-12527",
-    "subtopic": "Art. 1º, parágrafo único, inc. II",
+    "subtopic": "Lei 12.527/2011 · Art. 1º, parágrafo único, inc. II",
     "number": "Art. 1º, parágrafo único, inc. II",
     "title": "Lei 12.527/2011 — Acesso à Informação (LAI)",
     "parts": [
@@ -871,14 +875,15 @@ const DATA_ADM_PACK1 = [
       "bank": "FCC",
       "year": 2013,
       "role": "Analista de Contas (MPC-MT)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-12527-pdf20-q005",
     "discipline": "adm",
     "topicId": "adm-lei-12527",
-    "subtopic": "Art. 1º, parágrafo único, inc. II",
+    "subtopic": "Lei 12.527/2011 · Art. 1º, parágrafo único, inc. II",
     "number": "Art. 1º, parágrafo único, inc. II",
     "title": "Lei 12.527/2011 — Acesso à Informação (LAI)",
     "parts": [
@@ -894,14 +899,15 @@ const DATA_ADM_PACK1 = [
       "bank": "FCC",
       "year": 2017,
       "role": "Juiz de Direito (TJ-SC)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-12527-pdf20-q009",
     "discipline": "adm",
     "topicId": "adm-lei-12527",
-    "subtopic": "Art. 2º",
+    "subtopic": "Lei 12.527/2011 · Art. 2º",
     "number": "Art. 2º",
     "title": "Lei 12.527/2011 — Acesso à Informação (LAI)",
     "parts": [
@@ -924,7 +930,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-12527-pdf20-q011",
     "discipline": "adm",
     "topicId": "adm-lei-12527",
-    "subtopic": "Art. 2º",
+    "subtopic": "Lei 12.527/2011 · Art. 2º",
     "number": "Art. 2º",
     "title": "Lei 12.527/2011 — Acesso à Informação (LAI)",
     "parts": [
@@ -947,7 +953,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-12527-pdf20-q012",
     "discipline": "adm",
     "topicId": "adm-lei-12527",
-    "subtopic": "Art. 3º, inc. I",
+    "subtopic": "Lei 12.527/2011 · Art. 3º, inc. I",
     "number": "Art. 3º, inc. I",
     "title": "Lei 12.527/2011 — Acesso à Informação (LAI)",
     "parts": [
@@ -970,7 +976,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-12527-pdf20-q013",
     "discipline": "adm",
     "topicId": "adm-lei-12527",
-    "subtopic": "Art. 3º, inc. I",
+    "subtopic": "Lei 12.527/2011 · Art. 3º, inc. I",
     "number": "Art. 3º, inc. I",
     "title": "Lei 12.527/2011 — Acesso à Informação (LAI)",
     "parts": [
@@ -993,7 +999,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-12527-pdf20-q014",
     "discipline": "adm",
     "topicId": "adm-lei-12527",
-    "subtopic": "Art. 3º, inc. II",
+    "subtopic": "Lei 12.527/2011 · Art. 3º, inc. II",
     "number": "Art. 3º, inc. II",
     "title": "Lei 12.527/2011 — Acesso à Informação (LAI)",
     "parts": [
@@ -1016,7 +1022,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-12527-pdf20-q018",
     "discipline": "adm",
     "topicId": "adm-lei-12527",
-    "subtopic": "Art. 3º, inc. II",
+    "subtopic": "Lei 12.527/2011 · Art. 3º, inc. II",
     "number": "Art. 3º, inc. II",
     "title": "Lei 12.527/2011 — Acesso à Informação (LAI)",
     "parts": [
@@ -1032,14 +1038,15 @@ const DATA_ADM_PACK1 = [
       "bank": "VUNESP",
       "year": 2016,
       "role": "Juiz de Direito (TJM-SP)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-12527-pdf20-q019",
     "discipline": "adm",
     "topicId": "adm-lei-12527",
-    "subtopic": "Art. 4º, inc. I",
+    "subtopic": "Lei 12.527/2011 · Art. 4º, inc. I",
     "number": "Art. 4º, inc. I",
     "title": "Lei 12.527/2011 — Acesso à Informação (LAI)",
     "parts": [
@@ -1055,14 +1062,15 @@ const DATA_ADM_PACK1 = [
       "bank": "ADM&TEC",
       "year": 2019,
       "role": "Chefe de Divisão (Câmara de",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-12527-pdf20-q020",
     "discipline": "adm",
     "topicId": "adm-lei-12527",
-    "subtopic": "Art. 4º, inc. III",
+    "subtopic": "Lei 12.527/2011 · Art. 4º, inc. III",
     "number": "Art. 4º, inc. III",
     "title": "Lei 12.527/2011 — Acesso à Informação (LAI)",
     "parts": [
@@ -1078,14 +1086,15 @@ const DATA_ADM_PACK1 = [
       "bank": "UFCG",
       "year": 2019,
       "role": "Arquivista",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-12527-pdf20-q021",
     "discipline": "adm",
     "topicId": "adm-lei-12527",
-    "subtopic": "Art. 4º, inc. III",
+    "subtopic": "Lei 12.527/2011 · Art. 4º, inc. III",
     "number": "Art. 4º, inc. III",
     "title": "Lei 12.527/2011 — Acesso à Informação (LAI)",
     "parts": [
@@ -1108,7 +1117,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-12527-pdf20-q022",
     "discipline": "adm",
     "topicId": "adm-lei-12527",
-    "subtopic": "Art. 4º, inc. V",
+    "subtopic": "Lei 12.527/2011 · Art. 4º, inc. V",
     "number": "Art. 4º, inc. V",
     "title": "Lei 12.527/2011 — Acesso à Informação (LAI)",
     "parts": [
@@ -1131,7 +1140,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-12527-pdf20-q024",
     "discipline": "adm",
     "topicId": "adm-lei-12527",
-    "subtopic": "Art. 5º",
+    "subtopic": "Lei 12.527/2011 · Art. 5º",
     "number": "Art. 5º",
     "title": "Lei 12.527/2011 — Acesso à Informação (LAI)",
     "parts": [
@@ -1147,14 +1156,15 @@ const DATA_ADM_PACK1 = [
       "bank": "Quadrix",
       "year": 2019,
       "role": "Assistente Administrativo (CRESS-SC)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-12527-pdf20-q025",
     "discipline": "adm",
     "topicId": "adm-lei-12527",
-    "subtopic": "Art. 5º",
+    "subtopic": "Lei 12.527/2011 · Art. 5º",
     "number": "Art. 5º",
     "title": "Lei 12.527/2011 — Acesso à Informação (LAI)",
     "parts": [
@@ -1177,7 +1187,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-12527-pdf20-q027",
     "discipline": "adm",
     "topicId": "adm-lei-12527",
-    "subtopic": "Art. 7º, inc. II",
+    "subtopic": "Lei 12.527/2011 · Art. 7º, inc. II",
     "number": "Art. 7º, inc. II",
     "title": "Lei 12.527/2011 — Acesso à Informação (LAI)",
     "parts": [
@@ -1200,7 +1210,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-12527-pdf20-q028",
     "discipline": "adm",
     "topicId": "adm-lei-12527",
-    "subtopic": "Art. 7º, inc. II",
+    "subtopic": "Lei 12.527/2011 · Art. 7º, inc. II",
     "number": "Art. 7º, inc. II",
     "title": "Lei 12.527/2011 — Acesso à Informação (LAI)",
     "parts": [
@@ -1223,7 +1233,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-12527-pdf20-q029",
     "discipline": "adm",
     "topicId": "adm-lei-12527",
-    "subtopic": "Art. 7º, inc. III",
+    "subtopic": "Lei 12.527/2011 · Art. 7º, inc. III",
     "number": "Art. 7º, inc. III",
     "title": "Lei 12.527/2011 — Acesso à Informação (LAI)",
     "parts": [
@@ -1246,7 +1256,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-12527-pdf20-q030",
     "discipline": "adm",
     "topicId": "adm-lei-12527",
-    "subtopic": "Art. 7º, inc. III",
+    "subtopic": "Lei 12.527/2011 · Art. 7º, inc. III",
     "number": "Art. 7º, inc. III",
     "title": "Lei 12.527/2011 — Acesso à Informação (LAI)",
     "parts": [
@@ -1269,7 +1279,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-12527-pdf20-q031",
     "discipline": "adm",
     "topicId": "adm-lei-12527",
-    "subtopic": "Art. 7º, inc. VII",
+    "subtopic": "Lei 12.527/2011 · Art. 7º, inc. VII",
     "number": "Art. 7º, inc. VII",
     "title": "Lei 12.527/2011 — Acesso à Informação (LAI)",
     "parts": [
@@ -1292,7 +1302,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-12527-pdf20-q032",
     "discipline": "adm",
     "topicId": "adm-lei-12527",
-    "subtopic": "Art. 7º, inc. VII",
+    "subtopic": "Lei 12.527/2011 · Art. 7º, inc. VII",
     "number": "Art. 7º, inc. VII",
     "title": "Lei 12.527/2011 — Acesso à Informação (LAI)",
     "parts": [
@@ -1315,7 +1325,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-12527-pdf20-q033",
     "discipline": "adm",
     "topicId": "adm-lei-12527",
-    "subtopic": "Art. 7º, § 1º",
+    "subtopic": "Lei 12.527/2011 · Art. 7º, § 1º",
     "number": "Art. 7º, § 1º",
     "title": "Lei 12.527/2011 — Acesso à Informação (LAI)",
     "parts": [
@@ -1338,7 +1348,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-12527-pdf20-q034",
     "discipline": "adm",
     "topicId": "adm-lei-12527",
-    "subtopic": "Art. 7º, § 1º",
+    "subtopic": "Lei 12.527/2011 · Art. 7º, § 1º",
     "number": "Art. 7º, § 1º",
     "title": "Lei 12.527/2011 — Acesso à Informação (LAI)",
     "parts": [
@@ -1361,7 +1371,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-12527-pdf20-q039",
     "discipline": "adm",
     "topicId": "adm-lei-12527",
-    "subtopic": "Art. 7º, § 2º",
+    "subtopic": "Lei 12.527/2011 · Art. 7º, § 2º",
     "number": "Art. 7º, § 2º",
     "title": "Lei 12.527/2011 — Acesso à Informação (LAI)",
     "parts": [
@@ -1384,7 +1394,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-12527-pdf20-q041",
     "discipline": "adm",
     "topicId": "adm-lei-12527",
-    "subtopic": "Art. 7º, § 2º",
+    "subtopic": "Lei 12.527/2011 · Art. 7º, § 2º",
     "number": "Art. 7º, § 2º",
     "title": "Lei 12.527/2011 — Acesso à Informação (LAI)",
     "parts": [
@@ -1407,7 +1417,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-12527-pdf20-q044",
     "discipline": "adm",
     "topicId": "adm-lei-12527",
-    "subtopic": "Art. 7º, § 3º",
+    "subtopic": "Lei 12.527/2011 · Art. 7º, § 3º",
     "number": "Art. 7º, § 3º",
     "title": "Lei 12.527/2011 — Acesso à Informação (LAI)",
     "parts": [
@@ -1430,7 +1440,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-12527-pdf20-q045",
     "discipline": "adm",
     "topicId": "adm-lei-12527",
-    "subtopic": "Art. 7º, § 3º",
+    "subtopic": "Lei 12.527/2011 · Art. 7º, § 3º",
     "number": "Art. 7º, § 3º",
     "title": "Lei 12.527/2011 — Acesso à Informação (LAI)",
     "parts": [
@@ -1453,7 +1463,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-12527-pdf20-q046",
     "discipline": "adm",
     "topicId": "adm-lei-12527",
-    "subtopic": "Art. 7º, § 4º",
+    "subtopic": "Lei 12.527/2011 · Art. 7º, § 4º",
     "number": "Art. 7º, § 4º",
     "title": "Lei 12.527/2011 — Acesso à Informação (LAI)",
     "parts": [
@@ -1469,14 +1479,15 @@ const DATA_ADM_PACK1 = [
       "bank": "MPE-RS",
       "year": 2016,
       "role": "Promotor de Justiça",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-12527-pdf20-q047",
     "discipline": "adm",
     "topicId": "adm-lei-12527",
-    "subtopic": "Art. 7º, § 5º",
+    "subtopic": "Lei 12.527/2011 · Art. 7º, § 5º",
     "number": "Art. 7º, § 5º",
     "title": "Lei 12.527/2011 — Acesso à Informação (LAI)",
     "parts": [
@@ -1499,7 +1510,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-12527-pdf20-q048",
     "discipline": "adm",
     "topicId": "adm-lei-12527",
-    "subtopic": "Art. 7º, § 5º",
+    "subtopic": "Lei 12.527/2011 · Art. 7º, § 5º",
     "number": "Art. 7º, § 5º",
     "title": "Lei 12.527/2011 — Acesso à Informação (LAI)",
     "parts": [
@@ -1515,14 +1526,15 @@ const DATA_ADM_PACK1 = [
       "bank": "VUNESP",
       "year": 2013,
       "role": "Escrivão de Polícia (PC-SP)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-12527-pdf20-q049",
     "discipline": "adm",
     "topicId": "adm-lei-12527",
-    "subtopic": "Art. 8º",
+    "subtopic": "Lei 12.527/2011 · Art. 8º",
     "number": "Art. 8º",
     "title": "Lei 12.527/2011 — Acesso à Informação (LAI)",
     "parts": [
@@ -1545,7 +1557,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-12527-pdf20-q050",
     "discipline": "adm",
     "topicId": "adm-lei-12527",
-    "subtopic": "Art. 8º",
+    "subtopic": "Lei 12.527/2011 · Art. 8º",
     "number": "Art. 8º",
     "title": "Lei 12.527/2011 — Acesso à Informação (LAI)",
     "parts": [
@@ -1568,7 +1580,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-13709-pdf31-q005",
     "discipline": "adm",
     "topicId": "adm-lei-13709",
-    "subtopic": "Art. 1º",
+    "subtopic": "Lei 13.709/2018 · Art. 1º",
     "number": "Art. 1º",
     "title": "Lei 13.709/2018 — LGPD",
     "parts": [
@@ -1591,7 +1603,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-13709-pdf31-q010",
     "discipline": "adm",
     "topicId": "adm-lei-13709",
-    "subtopic": "Art. 1º",
+    "subtopic": "Lei 13.709/2018 · Art. 1º",
     "number": "Art. 1º",
     "title": "Lei 13.709/2018 — LGPD",
     "parts": [
@@ -1614,7 +1626,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-13709-pdf31-q012",
     "discipline": "adm",
     "topicId": "adm-lei-13709",
-    "subtopic": "Art. 2º, inc. I",
+    "subtopic": "Lei 13.709/2018 · Art. 2º, inc. I",
     "number": "Art. 2º, inc. I",
     "title": "Lei 13.709/2018 — LGPD",
     "parts": [
@@ -1637,7 +1649,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-13709-pdf31-q013",
     "discipline": "adm",
     "topicId": "adm-lei-13709",
-    "subtopic": "Art. 2º, inc. I",
+    "subtopic": "Lei 13.709/2018 · Art. 2º, inc. I",
     "number": "Art. 2º, inc. I",
     "title": "Lei 13.709/2018 — LGPD",
     "parts": [
@@ -1660,7 +1672,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-13709-pdf31-q014",
     "discipline": "adm",
     "topicId": "adm-lei-13709",
-    "subtopic": "Art. 2º",
+    "subtopic": "Lei 13.709/2018 · Art. 2º",
     "number": "Art. 2º",
     "title": "Lei 13.709/2018 — LGPD",
     "parts": [
@@ -1683,7 +1695,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-13709-pdf31-q017",
     "discipline": "adm",
     "topicId": "adm-lei-13709",
-    "subtopic": "Art. 2º, inc. II",
+    "subtopic": "Lei 13.709/2018 · Art. 2º, inc. II",
     "number": "Art. 2º, inc. II",
     "title": "Lei 13.709/2018 — LGPD",
     "parts": [
@@ -1706,7 +1718,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-13709-pdf31-q018",
     "discipline": "adm",
     "topicId": "adm-lei-13709",
-    "subtopic": "Art. 2º, inc. II",
+    "subtopic": "Lei 13.709/2018 · Art. 2º, inc. II",
     "number": "Art. 2º, inc. II",
     "title": "Lei 13.709/2018 — LGPD",
     "parts": [
@@ -1729,7 +1741,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-13709-pdf31-q019",
     "discipline": "adm",
     "topicId": "adm-lei-13709",
-    "subtopic": "Art. 2º",
+    "subtopic": "Lei 13.709/2018 · Art. 2º",
     "number": "Art. 2º",
     "title": "Lei 13.709/2018 — LGPD",
     "parts": [
@@ -1752,7 +1764,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-13709-pdf31-q021",
     "discipline": "adm",
     "topicId": "adm-lei-13709",
-    "subtopic": "Art. 2º, inc. III",
+    "subtopic": "Lei 13.709/2018 · Art. 2º, inc. III",
     "number": "Art. 2º, inc. III",
     "title": "Lei 13.709/2018 — LGPD",
     "parts": [
@@ -1775,7 +1787,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-13709-pdf31-q022",
     "discipline": "adm",
     "topicId": "adm-lei-13709",
-    "subtopic": "Art. 2º, inc. III",
+    "subtopic": "Lei 13.709/2018 · Art. 2º, inc. III",
     "number": "Art. 2º, inc. III",
     "title": "Lei 13.709/2018 — LGPD",
     "parts": [
@@ -1798,7 +1810,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-13709-pdf31-q025",
     "discipline": "adm",
     "topicId": "adm-lei-13709",
-    "subtopic": "Art. 2º, inc. IV",
+    "subtopic": "Lei 13.709/2018 · Art. 2º, inc. IV",
     "number": "Art. 2º, inc. IV",
     "title": "Lei 13.709/2018 — LGPD",
     "parts": [
@@ -1821,7 +1833,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-13709-pdf31-q026",
     "discipline": "adm",
     "topicId": "adm-lei-13709",
-    "subtopic": "Art. 2º, inc. IV",
+    "subtopic": "Lei 13.709/2018 · Art. 2º, inc. IV",
     "number": "Art. 2º, inc. IV",
     "title": "Lei 13.709/2018 — LGPD",
     "parts": [
@@ -1844,7 +1856,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-13709-pdf31-q029",
     "discipline": "adm",
     "topicId": "adm-lei-13709",
-    "subtopic": "Art. 2º, inc. V",
+    "subtopic": "Lei 13.709/2018 · Art. 2º, inc. V",
     "number": "Art. 2º, inc. V",
     "title": "Lei 13.709/2018 — LGPD",
     "parts": [
@@ -1867,7 +1879,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-13709-pdf31-q033",
     "discipline": "adm",
     "topicId": "adm-lei-13709",
-    "subtopic": "Art. 2º, inc. V",
+    "subtopic": "Lei 13.709/2018 · Art. 2º, inc. V",
     "number": "Art. 2º, inc. V",
     "title": "Lei 13.709/2018 — LGPD",
     "parts": [
@@ -1890,7 +1902,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-13709-pdf31-q038",
     "discipline": "adm",
     "topicId": "adm-lei-13709",
-    "subtopic": "Art. 2º, inc. VI",
+    "subtopic": "Lei 13.709/2018 · Art. 2º, inc. VI",
     "number": "Art. 2º, inc. VI",
     "title": "Lei 13.709/2018 — LGPD",
     "parts": [
@@ -1913,7 +1925,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-13709-pdf31-q040",
     "discipline": "adm",
     "topicId": "adm-lei-13709",
-    "subtopic": "Art. 2º, inc. VI",
+    "subtopic": "Lei 13.709/2018 · Art. 2º, inc. VI",
     "number": "Art. 2º, inc. VI",
     "title": "Lei 13.709/2018 — LGPD",
     "parts": [
@@ -1936,7 +1948,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-13709-pdf31-q041",
     "discipline": "adm",
     "topicId": "adm-lei-13709",
-    "subtopic": "Art. 2º, inc. VII",
+    "subtopic": "Lei 13.709/2018 · Art. 2º, inc. VII",
     "number": "Art. 2º, inc. VII",
     "title": "Lei 13.709/2018 — LGPD",
     "parts": [
@@ -1959,7 +1971,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-13709-pdf31-q042",
     "discipline": "adm",
     "topicId": "adm-lei-13709",
-    "subtopic": "Art. 2º, inc. VII",
+    "subtopic": "Lei 13.709/2018 · Art. 2º, inc. VII",
     "number": "Art. 2º, inc. VII",
     "title": "Lei 13.709/2018 — LGPD",
     "parts": [
@@ -1982,7 +1994,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-13709-pdf31-q044",
     "discipline": "adm",
     "topicId": "adm-lei-13709",
-    "subtopic": "Art. 3º, inc. I",
+    "subtopic": "Lei 13.709/2018 · Art. 3º, inc. I",
     "number": "Art. 3º, inc. I",
     "title": "Lei 13.709/2018 — LGPD",
     "parts": [
@@ -2005,7 +2017,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-13709-pdf31-q045",
     "discipline": "adm",
     "topicId": "adm-lei-13709",
-    "subtopic": "Art. 3º, inc. II",
+    "subtopic": "Lei 13.709/2018 · Art. 3º, inc. II",
     "number": "Art. 3º, inc. II",
     "title": "Lei 13.709/2018 — LGPD",
     "parts": [
@@ -2028,7 +2040,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-13709-pdf31-q047",
     "discipline": "adm",
     "topicId": "adm-lei-13709",
-    "subtopic": "Art. 3º, inc. II",
+    "subtopic": "Lei 13.709/2018 · Art. 3º, inc. II",
     "number": "Art. 3º, inc. II",
     "title": "Lei 13.709/2018 — LGPD",
     "parts": [
@@ -2051,7 +2063,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-13709-pdf31-q048",
     "discipline": "adm",
     "topicId": "adm-lei-13709",
-    "subtopic": "Art. 3º, inc. III",
+    "subtopic": "Lei 13.709/2018 · Art. 3º, inc. III",
     "number": "Art. 3º, inc. III",
     "title": "Lei 13.709/2018 — LGPD",
     "parts": [
@@ -2074,7 +2086,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-13709-pdf31-q050",
     "discipline": "adm",
     "topicId": "adm-lei-13709",
-    "subtopic": "Art. 3º, inc. III",
+    "subtopic": "Lei 13.709/2018 · Art. 3º, inc. III",
     "number": "Art. 3º, inc. III",
     "title": "Lei 13.709/2018 — LGPD",
     "parts": [
@@ -2097,7 +2109,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-dl200-pdf1-q002",
     "discipline": "adm",
     "topicId": "adm-lei-dl200",
-    "subtopic": "Art. 4º, inc. I",
+    "subtopic": "Decreto-Lei 200/1967 · Art. 4º, inc. I",
     "number": "Art. 4º, inc. I",
     "title": "Decreto-Lei 200/1967 — Organização administrativa",
     "parts": [
@@ -2120,7 +2132,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-dl200-pdf1-q003",
     "discipline": "adm",
     "topicId": "adm-lei-dl200",
-    "subtopic": "Art. 4º, parágrafo único",
+    "subtopic": "Decreto-Lei 200/1967 · Art. 4º, parágrafo único",
     "number": "Art. 4º, parágrafo único",
     "title": "Decreto-Lei 200/1967 — Organização administrativa",
     "parts": [
@@ -2143,7 +2155,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-dl200-pdf1-q004",
     "discipline": "adm",
     "topicId": "adm-lei-dl200",
-    "subtopic": "Art. 5º",
+    "subtopic": "Decreto-Lei 200/1967 · Art. 5º",
     "number": "Art. 5º",
     "title": "Decreto-Lei 200/1967 — Organização administrativa",
     "parts": [
@@ -2166,7 +2178,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-dl200-pdf1-q005",
     "discipline": "adm",
     "topicId": "adm-lei-dl200",
-    "subtopic": "Art. 5º, inc. I",
+    "subtopic": "Decreto-Lei 200/1967 · Art. 5º, inc. I",
     "number": "Art. 5º, inc. I",
     "title": "Decreto-Lei 200/1967 — Organização administrativa",
     "parts": [
@@ -2189,7 +2201,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-dl200-pdf1-q006",
     "discipline": "adm",
     "topicId": "adm-lei-dl200",
-    "subtopic": "Art. 5º, inc. I",
+    "subtopic": "Decreto-Lei 200/1967 · Art. 5º, inc. I",
     "number": "Art. 5º, inc. I",
     "title": "Decreto-Lei 200/1967 — Organização administrativa",
     "parts": [
@@ -2205,14 +2217,15 @@ const DATA_ADM_PACK1 = [
       "bank": "ADM&TEC",
       "year": 2020,
       "role": "Procurador (Prefeitura de Gravatá-PE)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-dl200-pdf1-q007",
     "discipline": "adm",
     "topicId": "adm-lei-dl200",
-    "subtopic": "Art. 5º, inc. II",
+    "subtopic": "Decreto-Lei 200/1967 · Art. 5º, inc. II",
     "number": "Art. 5º, inc. II",
     "title": "Decreto-Lei 200/1967 — Organização administrativa",
     "parts": [
@@ -2235,7 +2248,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-dl200-pdf1-q008",
     "discipline": "adm",
     "topicId": "adm-lei-dl200",
-    "subtopic": "Art. 5º, inc. II",
+    "subtopic": "Decreto-Lei 200/1967 · Art. 5º, inc. II",
     "number": "Art. 5º, inc. II",
     "title": "Decreto-Lei 200/1967 — Organização administrativa",
     "parts": [
@@ -2251,14 +2264,15 @@ const DATA_ADM_PACK1 = [
       "bank": "Quadrix",
       "year": 2018,
       "role": "Advogado (CRP-17)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-dl200-pdf1-q009",
     "discipline": "adm",
     "topicId": "adm-lei-dl200",
-    "subtopic": "Art. 5º, inc. III",
+    "subtopic": "Decreto-Lei 200/1967 · Art. 5º, inc. III",
     "number": "Art. 5º, inc. III",
     "title": "Decreto-Lei 200/1967 — Organização administrativa",
     "parts": [
@@ -2281,7 +2295,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-dl200-pdf1-q010",
     "discipline": "adm",
     "topicId": "adm-lei-dl200",
-    "subtopic": "Art. 5º, inc. IV",
+    "subtopic": "Decreto-Lei 200/1967 · Art. 5º, inc. IV",
     "number": "Art. 5º, inc. IV",
     "title": "Decreto-Lei 200/1967 — Organização administrativa",
     "parts": [
@@ -2304,7 +2318,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-dl200-pdf1-q015",
     "discipline": "adm",
     "topicId": "adm-lei-dl200",
-    "subtopic": "Art. 6º",
+    "subtopic": "Decreto-Lei 200/1967 · Art. 6º",
     "number": "Art. 6º",
     "title": "Decreto-Lei 200/1967 — Organização administrativa",
     "parts": [
@@ -2320,14 +2334,15 @@ const DATA_ADM_PACK1 = [
       "bank": "Quadrix",
       "year": 2019,
       "role": "Assistente Administrativo e",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-dl200-pdf1-q016",
     "discipline": "adm",
     "topicId": "adm-lei-dl200",
-    "subtopic": "Art. 6º, inc. IV",
+    "subtopic": "Decreto-Lei 200/1967 · Art. 6º, inc. IV",
     "number": "Art. 6º, inc. IV",
     "title": "Decreto-Lei 200/1967 — Organização administrativa",
     "parts": [
@@ -2343,14 +2358,15 @@ const DATA_ADM_PACK1 = [
       "bank": "Quadrix",
       "year": 2019,
       "role": "Assistente Administrativo e Financeiro",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-dl200-pdf1-q017",
     "discipline": "adm",
     "topicId": "adm-lei-dl200",
-    "subtopic": "Art. 10º, § 1º",
+    "subtopic": "Decreto-Lei 200/1967 · Art. 10º, § 1º",
     "number": "Art. 10º, § 1º",
     "title": "Decreto-Lei 200/1967 — Organização administrativa",
     "parts": [
@@ -2373,7 +2389,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-dl200-pdf1-q018",
     "discipline": "adm",
     "topicId": "adm-lei-dl200",
-    "subtopic": "Art. 12º",
+    "subtopic": "Decreto-Lei 200/1967 · Art. 12º",
     "number": "Art. 12º",
     "title": "Decreto-Lei 200/1967 — Organização administrativa",
     "parts": [
@@ -2389,14 +2405,15 @@ const DATA_ADM_PACK1 = [
       "bank": "CESPE/CEBRASPE",
       "year": 2013,
       "role": "Assistente em Administração",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-dl200-pdf1-q019",
     "discipline": "adm",
     "topicId": "adm-lei-dl200",
-    "subtopic": "Art. 13º",
+    "subtopic": "Decreto-Lei 200/1967 · Art. 13º",
     "number": "Art. 13º",
     "title": "Decreto-Lei 200/1967 — Organização administrativa",
     "parts": [
@@ -2412,14 +2429,15 @@ const DATA_ADM_PACK1 = [
       "bank": "CESPE/CEBRASPE",
       "year": 2013,
       "role": "Assistente em Administração",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-dl200-pdf1-q022",
     "discipline": "adm",
     "topicId": "adm-lei-dl200",
-    "subtopic": "Art. 17º",
+    "subtopic": "Decreto-Lei 200/1967 · Art. 17º",
     "number": "Art. 17º",
     "title": "Decreto-Lei 200/1967 — Organização administrativa",
     "parts": [
@@ -2442,7 +2460,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-dl200-pdf1-q023",
     "discipline": "adm",
     "topicId": "adm-lei-dl200",
-    "subtopic": "Art. 18º",
+    "subtopic": "Decreto-Lei 200/1967 · Art. 18º",
     "number": "Art. 18º",
     "title": "Decreto-Lei 200/1967 — Organização administrativa",
     "parts": [
@@ -2465,7 +2483,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-dl200-pdf1-q024",
     "discipline": "adm",
     "topicId": "adm-lei-dl200",
-    "subtopic": "Art. 25º, inc. VII",
+    "subtopic": "Decreto-Lei 200/1967 · Art. 25º, inc. VII",
     "number": "Art. 25º, inc. VII",
     "title": "Decreto-Lei 200/1967 — Organização administrativa",
     "parts": [
@@ -2481,14 +2499,15 @@ const DATA_ADM_PACK1 = [
       "bank": "FCC",
       "year": 2013,
       "role": "Analista Ministerial - Administrativo (MPE\u0002MA) - Adaptada",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-dl200-pdf1-q025",
     "discipline": "adm",
     "topicId": "adm-lei-dl200",
-    "subtopic": "Art. 36º",
+    "subtopic": "Decreto-Lei 200/1967 · Art. 36º",
     "number": "Art. 36º",
     "title": "Decreto-Lei 200/1967 — Organização administrativa",
     "parts": [
@@ -2504,14 +2523,15 @@ const DATA_ADM_PACK1 = [
       "bank": "FCC",
       "year": 2011,
       "role": "Técnico Judiciário - Área Administrativa (TRT\u000214)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-dl200-pdf1-q026",
     "discipline": "adm",
     "topicId": "adm-lei-dl200",
-    "subtopic": "Art. 47º",
+    "subtopic": "Decreto-Lei 200/1967 · Art. 47º",
     "number": "Art. 47º",
     "title": "Decreto-Lei 200/1967 — Organização administrativa",
     "parts": [
@@ -2527,14 +2547,15 @@ const DATA_ADM_PACK1 = [
       "bank": "Coperve",
       "year": 2016,
       "role": "Assistente em Administração (FURG)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-dl200-pdf1-q027",
     "discipline": "adm",
     "topicId": "adm-lei-dl200",
-    "subtopic": "Art. 72º",
+    "subtopic": "Decreto-Lei 200/1967 · Art. 72º",
     "number": "Art. 72º",
     "title": "Decreto-Lei 200/1967 — Organização administrativa",
     "parts": [
@@ -2550,14 +2571,15 @@ const DATA_ADM_PACK1 = [
       "bank": "ADM&TEC",
       "year": 2020,
       "role": "Procurador (Prefeitura de Gravatá-PE)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-dl200-pdf1-q028",
     "discipline": "adm",
     "topicId": "adm-lei-dl200",
-    "subtopic": "Art. 73º",
+    "subtopic": "Decreto-Lei 200/1967 · Art. 73º",
     "number": "Art. 73º",
     "title": "Decreto-Lei 200/1967 — Organização administrativa",
     "parts": [
@@ -2573,14 +2595,15 @@ const DATA_ADM_PACK1 = [
       "bank": "ADM&TEC",
       "year": 2020,
       "role": "Procurador (Prefeitura de Gravatá-PE)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-dl200-pdf1-q029",
     "discipline": "adm",
     "topicId": "adm-lei-dl200",
-    "subtopic": "Art. 89º",
+    "subtopic": "Decreto-Lei 200/1967 · Art. 89º",
     "number": "Art. 89º",
     "title": "Decreto-Lei 200/1967 — Organização administrativa",
     "parts": [
@@ -2596,14 +2619,15 @@ const DATA_ADM_PACK1 = [
       "bank": "ADM&TEC",
       "year": 2020,
       "role": "Procurador (Prefeitura de Gravatá-PE)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-dl200-pdf1-q030",
     "discipline": "adm",
     "topicId": "adm-lei-dl200",
-    "subtopic": "Art. 94º, inc. X",
+    "subtopic": "Decreto-Lei 200/1967 · Art. 94º, inc. X",
     "number": "Art. 94º, inc. X",
     "title": "Decreto-Lei 200/1967 — Organização administrativa",
     "parts": [
@@ -2626,7 +2650,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-dl200-pdf1-q031",
     "discipline": "adm",
     "topicId": "adm-lei-dl200",
-    "subtopic": "Art. 183º",
+    "subtopic": "Decreto-Lei 200/1967 · Art. 183º",
     "number": "Art. 183º",
     "title": "Decreto-Lei 200/1967 — Organização administrativa",
     "parts": [
@@ -2642,14 +2666,15 @@ const DATA_ADM_PACK1 = [
       "bank": "ADM&TEC",
       "year": 2020,
       "role": "Procurador (Prefeitura de Gravatá-PE)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-dl200-pdf1-q033",
     "discipline": "adm",
     "topicId": "adm-lei-dl200",
-    "subtopic": "Art. 4º, inc. II",
+    "subtopic": "Decreto-Lei 200/1967 · Art. 4º, inc. II",
     "number": "Art. 4º, inc. II",
     "title": "Decreto-Lei 200/1967 — Organização administrativa",
     "parts": [
@@ -2665,14 +2690,15 @@ const DATA_ADM_PACK1 = [
       "bank": "CESGRANRIO",
       "year": 2010,
       "role": "Analista de Planejamento - Gestão e",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-dl200-pdf1-q034",
     "discipline": "adm",
     "topicId": "adm-lei-dl200",
-    "subtopic": "Art. 5º, inc. IV",
+    "subtopic": "Decreto-Lei 200/1967 · Art. 5º, inc. IV",
     "number": "Art. 5º, inc. IV",
     "title": "Decreto-Lei 200/1967 — Organização administrativa",
     "parts": [
@@ -2695,7 +2721,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-dl200-pdf1-q035",
     "discipline": "adm",
     "topicId": "adm-lei-dl200",
-    "subtopic": "Art. 5º",
+    "subtopic": "Decreto-Lei 200/1967 · Art. 5º",
     "number": "Art. 5º",
     "title": "Decreto-Lei 200/1967 — Organização administrativa",
     "parts": [
@@ -2718,7 +2744,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-dl200-pdf1-q036",
     "discipline": "adm",
     "topicId": "adm-lei-dl200",
-    "subtopic": "Art. 6º",
+    "subtopic": "Decreto-Lei 200/1967 · Art. 6º",
     "number": "Art. 6º",
     "title": "Decreto-Lei 200/1967 — Organização administrativa",
     "parts": [
@@ -2741,7 +2767,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-dl200-pdf1-q037",
     "discipline": "adm",
     "topicId": "adm-lei-dl200",
-    "subtopic": "Art. 22º",
+    "subtopic": "Decreto-Lei 200/1967 · Art. 22º",
     "number": "Art. 22º",
     "title": "Decreto-Lei 200/1967 — Organização administrativa",
     "parts": [
@@ -2764,7 +2790,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-8987-pdf59-q001",
     "discipline": "adm",
     "topicId": "adm-lei-8987",
-    "subtopic": "Art. 1º, parágrafo único",
+    "subtopic": "Lei 8.987/1995 · Art. 1º, parágrafo único",
     "number": "Art. 1º, parágrafo único",
     "title": "Lei 8.987/1995 — Serviços públicos",
     "parts": [
@@ -2787,7 +2813,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-8987-pdf59-q003",
     "discipline": "adm",
     "topicId": "adm-lei-8987",
-    "subtopic": "Art. 2º, inc. I",
+    "subtopic": "Lei 8.987/1995 · Art. 2º, inc. I",
     "number": "Art. 2º, inc. I",
     "title": "Lei 8.987/1995 — Serviços públicos",
     "parts": [
@@ -2803,14 +2829,15 @@ const DATA_ADM_PACK1 = [
       "bank": "FUNCAB",
       "year": 2015,
       "role": "Atividade Técnica de Suporte - Direito",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-8987-pdf59-q004",
     "discipline": "adm",
     "topicId": "adm-lei-8987",
-    "subtopic": "Art. 2º, inc. I",
+    "subtopic": "Lei 8.987/1995 · Art. 2º, inc. I",
     "number": "Art. 2º, inc. I",
     "title": "Lei 8.987/1995 — Serviços públicos",
     "parts": [
@@ -2833,7 +2860,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-8987-pdf59-q023",
     "discipline": "adm",
     "topicId": "adm-lei-8987",
-    "subtopic": "Art. 2º, inc. II",
+    "subtopic": "Lei 8.987/1995 · Art. 2º, inc. II",
     "number": "Art. 2º, inc. II",
     "title": "Lei 8.987/1995 — Serviços públicos",
     "parts": [
@@ -2856,7 +2883,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-8987-pdf59-q044",
     "discipline": "adm",
     "topicId": "adm-lei-8987",
-    "subtopic": "Art. 2º, inc. II",
+    "subtopic": "Lei 8.987/1995 · Art. 2º, inc. II",
     "number": "Art. 2º, inc. II",
     "title": "Lei 8.987/1995 — Serviços públicos",
     "parts": [
@@ -2879,7 +2906,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-8987-pdf59-q047",
     "discipline": "adm",
     "topicId": "adm-lei-8987",
-    "subtopic": "Art. 2º",
+    "subtopic": "Lei 8.987/1995 · Art. 2º",
     "number": "Art. 2º",
     "title": "Lei 8.987/1995 — Serviços públicos",
     "parts": [
@@ -2902,7 +2929,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-8987-pdf59-q048",
     "discipline": "adm",
     "topicId": "adm-lei-8987",
-    "subtopic": "Art. 2º",
+    "subtopic": "Lei 8.987/1995 · Art. 2º",
     "number": "Art. 2º",
     "title": "Lei 8.987/1995 — Serviços públicos",
     "parts": [
@@ -2925,7 +2952,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-12846-pdf22-q001",
     "discipline": "adm",
     "topicId": "adm-lei-12846",
-    "subtopic": "Art. 1º",
+    "subtopic": "Lei 12.846/2013 · Art. 1º",
     "number": "Art. 1º",
     "title": "Lei 12.846/2013 — Anticorrupção",
     "parts": [
@@ -2948,7 +2975,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-12846-pdf22-q002",
     "discipline": "adm",
     "topicId": "adm-lei-12846",
-    "subtopic": "Art. 1º",
+    "subtopic": "Lei 12.846/2013 · Art. 1º",
     "number": "Art. 1º",
     "title": "Lei 12.846/2013 — Anticorrupção",
     "parts": [
@@ -2971,7 +2998,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-12846-pdf22-q011",
     "discipline": "adm",
     "topicId": "adm-lei-12846",
-    "subtopic": "Art. 1º, parágrafo único",
+    "subtopic": "Lei 12.846/2013 · Art. 1º, parágrafo único",
     "number": "Art. 1º, parágrafo único",
     "title": "Lei 12.846/2013 — Anticorrupção",
     "parts": [
@@ -2994,7 +3021,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-12846-pdf22-q018",
     "discipline": "adm",
     "topicId": "adm-lei-12846",
-    "subtopic": "Art. 1º, parágrafo único",
+    "subtopic": "Lei 12.846/2013 · Art. 1º, parágrafo único",
     "number": "Art. 1º, parágrafo único",
     "title": "Lei 12.846/2013 — Anticorrupção",
     "parts": [
@@ -3017,7 +3044,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-12846-pdf22-q035",
     "discipline": "adm",
     "topicId": "adm-lei-12846",
-    "subtopic": "Art. 2º",
+    "subtopic": "Lei 12.846/2013 · Art. 2º",
     "number": "Art. 2º",
     "title": "Lei 12.846/2013 — Anticorrupção",
     "parts": [
@@ -3040,7 +3067,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-12846-pdf22-q036",
     "discipline": "adm",
     "topicId": "adm-lei-12846",
-    "subtopic": "Art. 2º",
+    "subtopic": "Lei 12.846/2013 · Art. 2º",
     "number": "Art. 2º",
     "title": "Lei 12.846/2013 — Anticorrupção",
     "parts": [
@@ -3063,7 +3090,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-13019-pdf24-q002",
     "discipline": "adm",
     "topicId": "adm-lei-13019",
-    "subtopic": "Art. 2º, inc. I",
+    "subtopic": "Lei 13.019/2014 · Art. 2º, inc. I",
     "number": "Art. 2º, inc. I",
     "title": "Lei 13.019/2014 — MROSC",
     "parts": [
@@ -3086,7 +3113,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-13019-pdf24-q006",
     "discipline": "adm",
     "topicId": "adm-lei-13019",
-    "subtopic": "Art. 2º, inc. I",
+    "subtopic": "Lei 13.019/2014 · Art. 2º, inc. I",
     "number": "Art. 2º, inc. I",
     "title": "Lei 13.019/2014 — MROSC",
     "parts": [
@@ -3109,7 +3136,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-13019-pdf24-q010",
     "discipline": "adm",
     "topicId": "adm-lei-13019",
-    "subtopic": "Art. 2º, inc. III",
+    "subtopic": "Lei 13.019/2014 · Art. 2º, inc. III",
     "number": "Art. 2º, inc. III",
     "title": "Lei 13.019/2014 — MROSC",
     "parts": [
@@ -3132,7 +3159,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-13019-pdf24-q012",
     "discipline": "adm",
     "topicId": "adm-lei-13019",
-    "subtopic": "Art. 2º",
+    "subtopic": "Lei 13.019/2014 · Art. 2º",
     "number": "Art. 2º",
     "title": "Lei 13.019/2014 — MROSC",
     "parts": [
@@ -3155,7 +3182,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-13019-pdf24-q013",
     "discipline": "adm",
     "topicId": "adm-lei-13019",
-    "subtopic": "Art. 2º, inc. IV",
+    "subtopic": "Lei 13.019/2014 · Art. 2º, inc. IV",
     "number": "Art. 2º, inc. IV",
     "title": "Lei 13.019/2014 — MROSC",
     "parts": [
@@ -3171,14 +3198,15 @@ const DATA_ADM_PACK1 = [
       "bank": "VUNESP",
       "year": 2017,
       "role": "Procurador (Câmara de Porto",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-13019-pdf24-q015",
     "discipline": "adm",
     "topicId": "adm-lei-13019",
-    "subtopic": "Art. 2º, inc. VII",
+    "subtopic": "Lei 13.019/2014 · Art. 2º, inc. VII",
     "number": "Art. 2º, inc. VII",
     "title": "Lei 13.019/2014 — MROSC",
     "parts": [
@@ -3201,7 +3229,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-13019-pdf24-q016",
     "discipline": "adm",
     "topicId": "adm-lei-13019",
-    "subtopic": "Art. 2º, inc. VII",
+    "subtopic": "Lei 13.019/2014 · Art. 2º, inc. VII",
     "number": "Art. 2º, inc. VII",
     "title": "Lei 13.019/2014 — MROSC",
     "parts": [
@@ -3224,7 +3252,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-13019-pdf24-q017",
     "discipline": "adm",
     "topicId": "adm-lei-13019",
-    "subtopic": "Art. 2º, inc. VIII",
+    "subtopic": "Lei 13.019/2014 · Art. 2º, inc. VIII",
     "number": "Art. 2º, inc. VIII",
     "title": "Lei 13.019/2014 — MROSC",
     "parts": [
@@ -3247,7 +3275,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-13019-pdf24-q025",
     "discipline": "adm",
     "topicId": "adm-lei-13019",
-    "subtopic": "Art. 2º, inc. VIII",
+    "subtopic": "Lei 13.019/2014 · Art. 2º, inc. VIII",
     "number": "Art. 2º, inc. VIII",
     "title": "Lei 13.019/2014 — MROSC",
     "parts": [
@@ -3270,7 +3298,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-13019-pdf24-q028",
     "discipline": "adm",
     "topicId": "adm-lei-13019",
-    "subtopic": "Art. 2º",
+    "subtopic": "Lei 13.019/2014 · Art. 2º",
     "number": "Art. 2º",
     "title": "Lei 13.019/2014 — MROSC",
     "parts": [
@@ -3293,7 +3321,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-13019-pdf24-q041",
     "discipline": "adm",
     "topicId": "adm-lei-13019",
-    "subtopic": "Art. 2º, inc. IX",
+    "subtopic": "Lei 13.019/2014 · Art. 2º, inc. IX",
     "number": "Art. 2º, inc. IX",
     "title": "Lei 13.019/2014 — MROSC",
     "parts": [
@@ -3309,14 +3337,15 @@ const DATA_ADM_PACK1 = [
       "bank": "VUNESP",
       "year": 2017,
       "role": "Procurador (Câmara de Porto",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-13019-pdf24-q042",
     "discipline": "adm",
     "topicId": "adm-lei-13019",
-    "subtopic": "Art. 2º, inc. X",
+    "subtopic": "Lei 13.019/2014 · Art. 2º, inc. X",
     "number": "Art. 2º, inc. X",
     "title": "Lei 13.019/2014 — MROSC",
     "parts": [
@@ -3332,14 +3361,15 @@ const DATA_ADM_PACK1 = [
       "bank": "AMEOSC",
       "year": 2020,
       "role": "Controlador Interno (Prefeitura de",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-13019-pdf24-q045",
     "discipline": "adm",
     "topicId": "adm-lei-13019",
-    "subtopic": "Art. 2º, inc. XII",
+    "subtopic": "Lei 13.019/2014 · Art. 2º, inc. XII",
     "number": "Art. 2º, inc. XII",
     "title": "Lei 13.019/2014 — MROSC",
     "parts": [
@@ -3362,7 +3392,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-13019-pdf24-q046",
     "discipline": "adm",
     "topicId": "adm-lei-13019",
-    "subtopic": "Art. 2º, inc. XII",
+    "subtopic": "Lei 13.019/2014 · Art. 2º, inc. XII",
     "number": "Art. 2º, inc. XII",
     "title": "Lei 13.019/2014 — MROSC",
     "parts": [
@@ -3385,7 +3415,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-13019-pdf24-q048",
     "discipline": "adm",
     "topicId": "adm-lei-13019",
-    "subtopic": "Art. 3º, inc. IX",
+    "subtopic": "Lei 13.019/2014 · Art. 3º, inc. IX",
     "number": "Art. 3º, inc. IX",
     "title": "Lei 13.019/2014 — MROSC",
     "parts": [
@@ -3401,14 +3431,15 @@ const DATA_ADM_PACK1 = [
       "bank": "MPE-PR",
       "year": 2016,
       "role": "Promotor Substituto (MPE-PR)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-13019-pdf24-q049",
     "discipline": "adm",
     "topicId": "adm-lei-13019",
-    "subtopic": "Art. 5º",
+    "subtopic": "Lei 13.019/2014 · Art. 5º",
     "number": "Art. 5º",
     "title": "Lei 13.019/2014 — MROSC",
     "parts": [
@@ -3431,7 +3462,7 @@ const DATA_ADM_PACK1 = [
     "id": "adm-13019-pdf24-q050",
     "discipline": "adm",
     "topicId": "adm-lei-13019",
-    "subtopic": "Art. 5º, inc. IX",
+    "subtopic": "Lei 13.019/2014 · Art. 5º, inc. IX",
     "number": "Art. 5º, inc. IX",
     "title": "Lei 13.019/2014 — MROSC",
     "parts": [
@@ -3457,22 +3488,22 @@ const TOPICS_ADM_PACK1 = [
     "label": "Lei 8.112/1990 — Servidores federais",
     "range": "PDF cobre apenas os dispositivos nele indicados",
     "subtopics": [
-      "Art. 1º",
-      "Art. 2º",
-      "Art. 3º",
-      "Art. 3º, parágrafo único",
-      "Art. 4º",
-      "Art. 5º",
-      "Art. 5º, § 1º",
-      "Art. 5º, § 2º",
-      "Art. 5º, § 3º",
-      "Art. 5º, inc. I",
-      "Art. 5º, inc. II",
-      "Art. 5º, inc. III",
-      "Art. 5º, inc. V",
-      "Art. 6º",
-      "Art. 7º",
-      "Art. 8º"
+      "Lei 8.112/1990 · Art. 1º",
+      "Lei 8.112/1990 · Art. 2º",
+      "Lei 8.112/1990 · Art. 3º",
+      "Lei 8.112/1990 · Art. 3º, parágrafo único",
+      "Lei 8.112/1990 · Art. 4º",
+      "Lei 8.112/1990 · Art. 5º",
+      "Lei 8.112/1990 · Art. 5º, § 1º",
+      "Lei 8.112/1990 · Art. 5º, § 2º",
+      "Lei 8.112/1990 · Art. 5º, § 3º",
+      "Lei 8.112/1990 · Art. 5º, inc. I",
+      "Lei 8.112/1990 · Art. 5º, inc. II",
+      "Lei 8.112/1990 · Art. 5º, inc. III",
+      "Lei 8.112/1990 · Art. 5º, inc. V",
+      "Lei 8.112/1990 · Art. 6º",
+      "Lei 8.112/1990 · Art. 7º",
+      "Lei 8.112/1990 · Art. 8º"
     ]
   },
   {
@@ -3480,10 +3511,10 @@ const TOPICS_ADM_PACK1 = [
     "label": "Lei 8.429/1992 — Improbidade administrativa",
     "range": "PDF cobre apenas os dispositivos nele indicados",
     "subtopics": [
-      "Art. 1º",
-      "Art. 1º, § 1º",
-      "Art. 1º, § 2º",
-      "Art. 1º, § 3º"
+      "Lei 8.429/1992 · Art. 1º",
+      "Lei 8.429/1992 · Art. 1º, § 1º",
+      "Lei 8.429/1992 · Art. 1º, § 2º",
+      "Lei 8.429/1992 · Art. 1º, § 3º"
     ]
   },
   {
@@ -3491,25 +3522,25 @@ const TOPICS_ADM_PACK1 = [
     "label": "Lei 12.527/2011 — Acesso à Informação (LAI)",
     "range": "PDF cobre apenas os dispositivos nele indicados",
     "subtopics": [
-      "Art. 1º, parágrafo único",
-      "Art. 1º, parágrafo único, inc. I",
-      "Art. 1º, parágrafo único, inc. II",
-      "Art. 2º",
-      "Art. 3º, inc. I",
-      "Art. 3º, inc. II",
-      "Art. 4º, inc. I",
-      "Art. 4º, inc. III",
-      "Art. 4º, inc. V",
-      "Art. 5º",
-      "Art. 7º, § 1º",
-      "Art. 7º, § 2º",
-      "Art. 7º, § 3º",
-      "Art. 7º, § 4º",
-      "Art. 7º, § 5º",
-      "Art. 7º, inc. II",
-      "Art. 7º, inc. III",
-      "Art. 7º, inc. VII",
-      "Art. 8º"
+      "Lei 12.527/2011 · Art. 1º, parágrafo único",
+      "Lei 12.527/2011 · Art. 1º, parágrafo único, inc. I",
+      "Lei 12.527/2011 · Art. 1º, parágrafo único, inc. II",
+      "Lei 12.527/2011 · Art. 2º",
+      "Lei 12.527/2011 · Art. 3º, inc. I",
+      "Lei 12.527/2011 · Art. 3º, inc. II",
+      "Lei 12.527/2011 · Art. 4º, inc. I",
+      "Lei 12.527/2011 · Art. 4º, inc. III",
+      "Lei 12.527/2011 · Art. 4º, inc. V",
+      "Lei 12.527/2011 · Art. 5º",
+      "Lei 12.527/2011 · Art. 7º, § 1º",
+      "Lei 12.527/2011 · Art. 7º, § 2º",
+      "Lei 12.527/2011 · Art. 7º, § 3º",
+      "Lei 12.527/2011 · Art. 7º, § 4º",
+      "Lei 12.527/2011 · Art. 7º, § 5º",
+      "Lei 12.527/2011 · Art. 7º, inc. II",
+      "Lei 12.527/2011 · Art. 7º, inc. III",
+      "Lei 12.527/2011 · Art. 7º, inc. VII",
+      "Lei 12.527/2011 · Art. 8º"
     ]
   },
   {
@@ -3517,18 +3548,18 @@ const TOPICS_ADM_PACK1 = [
     "label": "Lei 13.709/2018 — LGPD",
     "range": "PDF cobre apenas os dispositivos nele indicados",
     "subtopics": [
-      "Art. 1º",
-      "Art. 2º",
-      "Art. 2º, inc. I",
-      "Art. 2º, inc. II",
-      "Art. 2º, inc. III",
-      "Art. 2º, inc. IV",
-      "Art. 2º, inc. V",
-      "Art. 2º, inc. VI",
-      "Art. 2º, inc. VII",
-      "Art. 3º, inc. I",
-      "Art. 3º, inc. II",
-      "Art. 3º, inc. III"
+      "Lei 13.709/2018 · Art. 1º",
+      "Lei 13.709/2018 · Art. 2º",
+      "Lei 13.709/2018 · Art. 2º, inc. I",
+      "Lei 13.709/2018 · Art. 2º, inc. II",
+      "Lei 13.709/2018 · Art. 2º, inc. III",
+      "Lei 13.709/2018 · Art. 2º, inc. IV",
+      "Lei 13.709/2018 · Art. 2º, inc. V",
+      "Lei 13.709/2018 · Art. 2º, inc. VI",
+      "Lei 13.709/2018 · Art. 2º, inc. VII",
+      "Lei 13.709/2018 · Art. 3º, inc. I",
+      "Lei 13.709/2018 · Art. 3º, inc. II",
+      "Lei 13.709/2018 · Art. 3º, inc. III"
     ]
   },
   {
@@ -3536,30 +3567,30 @@ const TOPICS_ADM_PACK1 = [
     "label": "Decreto-Lei 200/1967 — Organização administrativa",
     "range": "PDF cobre apenas os dispositivos nele indicados",
     "subtopics": [
-      "Art. 4º, inc. I",
-      "Art. 4º, inc. II",
-      "Art. 4º, parágrafo único",
-      "Art. 5º",
-      "Art. 5º, inc. I",
-      "Art. 5º, inc. II",
-      "Art. 5º, inc. III",
-      "Art. 5º, inc. IV",
-      "Art. 6º",
-      "Art. 6º, inc. IV",
-      "Art. 10º, § 1º",
-      "Art. 12º",
-      "Art. 13º",
-      "Art. 17º",
-      "Art. 18º",
-      "Art. 22º",
-      "Art. 25º, inc. VII",
-      "Art. 36º",
-      "Art. 47º",
-      "Art. 72º",
-      "Art. 73º",
-      "Art. 89º",
-      "Art. 94º, inc. X",
-      "Art. 183º"
+      "Decreto-Lei 200/1967 · Art. 4º, inc. I",
+      "Decreto-Lei 200/1967 · Art. 4º, inc. II",
+      "Decreto-Lei 200/1967 · Art. 4º, parágrafo único",
+      "Decreto-Lei 200/1967 · Art. 5º",
+      "Decreto-Lei 200/1967 · Art. 5º, inc. I",
+      "Decreto-Lei 200/1967 · Art. 5º, inc. II",
+      "Decreto-Lei 200/1967 · Art. 5º, inc. III",
+      "Decreto-Lei 200/1967 · Art. 5º, inc. IV",
+      "Decreto-Lei 200/1967 · Art. 6º",
+      "Decreto-Lei 200/1967 · Art. 6º, inc. IV",
+      "Decreto-Lei 200/1967 · Art. 10º, § 1º",
+      "Decreto-Lei 200/1967 · Art. 12º",
+      "Decreto-Lei 200/1967 · Art. 13º",
+      "Decreto-Lei 200/1967 · Art. 17º",
+      "Decreto-Lei 200/1967 · Art. 18º",
+      "Decreto-Lei 200/1967 · Art. 22º",
+      "Decreto-Lei 200/1967 · Art. 25º, inc. VII",
+      "Decreto-Lei 200/1967 · Art. 36º",
+      "Decreto-Lei 200/1967 · Art. 47º",
+      "Decreto-Lei 200/1967 · Art. 72º",
+      "Decreto-Lei 200/1967 · Art. 73º",
+      "Decreto-Lei 200/1967 · Art. 89º",
+      "Decreto-Lei 200/1967 · Art. 94º, inc. X",
+      "Decreto-Lei 200/1967 · Art. 183º"
     ]
   },
   {
@@ -3567,10 +3598,10 @@ const TOPICS_ADM_PACK1 = [
     "label": "Lei 8.987/1995 — Serviços públicos",
     "range": "PDF cobre apenas os dispositivos nele indicados",
     "subtopics": [
-      "Art. 1º, parágrafo único",
-      "Art. 2º",
-      "Art. 2º, inc. I",
-      "Art. 2º, inc. II"
+      "Lei 8.987/1995 · Art. 1º, parágrafo único",
+      "Lei 8.987/1995 · Art. 2º",
+      "Lei 8.987/1995 · Art. 2º, inc. I",
+      "Lei 8.987/1995 · Art. 2º, inc. II"
     ]
   },
   {
@@ -3578,9 +3609,9 @@ const TOPICS_ADM_PACK1 = [
     "label": "Lei 12.846/2013 — Anticorrupção",
     "range": "PDF cobre apenas os dispositivos nele indicados",
     "subtopics": [
-      "Art. 1º",
-      "Art. 1º, parágrafo único",
-      "Art. 2º"
+      "Lei 12.846/2013 · Art. 1º",
+      "Lei 12.846/2013 · Art. 1º, parágrafo único",
+      "Lei 12.846/2013 · Art. 2º"
     ]
   },
   {
@@ -3588,18 +3619,18 @@ const TOPICS_ADM_PACK1 = [
     "label": "Lei 13.019/2014 — MROSC",
     "range": "PDF cobre apenas os dispositivos nele indicados",
     "subtopics": [
-      "Art. 2º",
-      "Art. 2º, inc. I",
-      "Art. 2º, inc. III",
-      "Art. 2º, inc. IV",
-      "Art. 2º, inc. IX",
-      "Art. 2º, inc. VII",
-      "Art. 2º, inc. VIII",
-      "Art. 2º, inc. X",
-      "Art. 2º, inc. XII",
-      "Art. 3º, inc. IX",
-      "Art. 5º",
-      "Art. 5º, inc. IX"
+      "Lei 13.019/2014 · Art. 2º",
+      "Lei 13.019/2014 · Art. 2º, inc. I",
+      "Lei 13.019/2014 · Art. 2º, inc. III",
+      "Lei 13.019/2014 · Art. 2º, inc. IV",
+      "Lei 13.019/2014 · Art. 2º, inc. IX",
+      "Lei 13.019/2014 · Art. 2º, inc. VII",
+      "Lei 13.019/2014 · Art. 2º, inc. VIII",
+      "Lei 13.019/2014 · Art. 2º, inc. X",
+      "Lei 13.019/2014 · Art. 2º, inc. XII",
+      "Lei 13.019/2014 · Art. 3º, inc. IX",
+      "Lei 13.019/2014 · Art. 5º",
+      "Lei 13.019/2014 · Art. 5º, inc. IX"
     ]
   }
 ];
