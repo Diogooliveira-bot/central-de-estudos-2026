@@ -63,7 +63,7 @@
     {
       "path": "tools/decorando-data-adm-pack2.js",
       "items": 146,
-      "blobSHA": "25846334550a95b04f34eb7edc32fb6d83249250"
+      "blobSHA": "e98f679f7bfe52d2e0ff0be62356faccd5fae22c"
     },
     {
       "path": "tools/decorando-data-adm-pack3.js",
@@ -116,5 +116,15 @@
     "Correspondência de gabaritos dos 321 itens externos aos PDFs foi auditada anteriormente, mas não substitui revisão jurídica individual de vigência nem direitos de reprodução.",
     "Incisos diferentes são dispositivos distintos; questões envolvendo vários incisos são classificadas por referência composta.",
     "Esta ampliação não representa cobertura integral das cinco leis."
-  ]
+  ],
+  "metadataCorrection": {
+    "date": "2026-10-08",
+    "count": 12,
+    "notes": "Correção editorial apenas em banca e meta, sem alteração de enunciados, gabaritos, origem por PDF ou identificadores.",
+    "finalOriginClassification": {
+      "real": 309,
+      "authorial": 444,
+      "unverified": 12
+    }
+  }
 }

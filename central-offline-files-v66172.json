@@ -1,5 +1,5 @@
 {
-  "build": "20261008-lei-em-dia-adm-765",
+  "build": "20261008-lei-em-dia-sem-marca-site",
   "files": [
     "/central-v119.html?direct=35",
     "/ui/discipline-standard.js?v=20261003penalnative1",
@@ -403,7 +403,7 @@
     "/ui/civil-native-study-v1.css?v=20261005civil1",
     "/tools/decorando-data-adm-9784.js?v=20261008pilot1",
     "/tools/decorando-data-adm-pack1.js?v=20261008adm1",
-    "/tools/decorando-data-adm-pack2.js?v=20261008adm1",
+    "/tools/decorando-data-adm-pack2.js?v=20261008admBrandClean1",
     "/tools/decorando-data-adm-pack3.js?v=20261008adm2",
     "/tools/decorando-data-adm-pack4.js?v=20261008adm3",
     "/tools/decorando-data-adm-14133-extra.js?v=20261008adm4",

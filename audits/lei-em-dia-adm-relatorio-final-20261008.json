@@ -428,5 +428,11 @@
     "status": "PARTIAL",
     "note": "O banco de questões não contém todos os artigos dos 25 diplomas. Os conjuntos variam de 1 a 71 questões conforme acervo."
   },
-  "finalConclusion": "Encerramento da etapa de importação e validação técnica: APROVADO. Certificação jurídica integral e liberação comercial dos itens de terceiros: NÃO CONCLUÍDAS."
+  "finalConclusion": "Encerramento da etapa de importação e validação técnica: APROVADO. Certificação jurídica integral e liberação comercial dos itens de terceiros: NÃO CONCLUÍDAS.",
+  "originBreakdown": {
+    "examBankIdentified": 309,
+    "baseCompletaAuthorial": 444,
+    "sourceUnverified": 12,
+    "notes": "Doze questões importadas sem banca/ano foram marcadas como origem a confirmar; nenhum rótulo de compilador foi atribuído como banca de concurso. Não se alteraram enunciado, gabarito ou ID."
+  }
 }
