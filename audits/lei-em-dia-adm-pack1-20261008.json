@@ -19,9 +19,9 @@
       "headers": 50,
       "withGabarito": 49,
       "eligible": 44,
-      "selected": 27,
+      "selected": 26,
       "devices": 17,
-      "excludedByLimit": 17,
+      "excludedByLimit": 18,
       "held": [
         {
           "n": 5,
@@ -310,5 +310,13 @@
       ],
       "heldCount": 5
     }
-  ]
+  ],
+  "postImportQA": {
+    "filesChecked": 1,
+    "selected": 149,
+    "manualAuditPending": true,
+    "footersRemoved": true,
+    "maxPerDevice": 2,
+    "notes": "Uma terceira questão do art. 3º, parágrafo único, da Lei 8.112 foi descartada após auditoria conjunta de dispositivos."
+  }
 }
