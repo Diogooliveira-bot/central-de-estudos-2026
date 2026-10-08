@@ -1,0 +1,314 @@
+{
+  "date": "2026-10-08",
+  "status": "draft",
+  "policy": "máximo 2 por dispositivo específico; incisos distintos contam separadamente; casos multiartigo segregados",
+  "pdfGroups": {
+    "Lei 8112": [
+      "53.pdf",
+      "69.pdf",
+      "70.pdf"
+    ],
+    "Lei 8429": [
+      "57.pdf",
+      "71.pdf"
+    ]
+  },
+  "sources": [
+    {
+      "file": "53.pdf",
+      "headers": 50,
+      "withGabarito": 49,
+      "eligible": 44,
+      "selected": 27,
+      "devices": 17,
+      "excludedByLimit": 17,
+      "held": [
+        {
+          "n": 5,
+          "ref": "Arts. 2º e 3º, Lei 8.112/90",
+          "reason": "referência a múltiplos artigos ou parágrafos"
+        },
+        {
+          "n": 22,
+          "ref": "Art. 5º, I, Lei 8.112/90",
+          "reason": "enunciado literalmente repetido"
+        },
+        {
+          "n": 29,
+          "ref": "Art. 5º, § 2º, Lei 8.112/90",
+          "reason": "sem gabarito identificado"
+        },
+        {
+          "n": 30,
+          "ref": "Arts. 5º, § 2º e 9º § único, Lei 8.112/90",
+          "reason": "referência a múltiplos artigos ou parágrafos"
+        },
+        {
+          "n": 42,
+          "ref": "Art. 8º c/c Art. 33, IX, Lei 8.112/90",
+          "reason": "referência a múltiplos artigos ou parágrafos"
+        },
+        {
+          "n": 50,
+          "ref": "Art. 8º c/c Art. 33, Lei 8.112/90",
+          "reason": "referência a múltiplos artigos ou parágrafos"
+        }
+      ],
+      "heldCount": 6
+    },
+    {
+      "file": "57.pdf",
+      "headers": 50,
+      "withGabarito": 50,
+      "eligible": 38,
+      "selected": 8,
+      "devices": 4,
+      "excludedByLimit": 30,
+      "held": [
+        {
+          "n": 24,
+          "ref": "Art. 1º, §§ 1º e 2º, Lei 8.429/92",
+          "reason": "referência a múltiplos artigos ou parágrafos"
+        },
+        {
+          "n": 25,
+          "ref": "Art. 1º, §§ 1º e 2º, Lei 8.429/92",
+          "reason": "referência a múltiplos artigos ou parágrafos"
+        },
+        {
+          "n": 26,
+          "ref": "Art. 1º, §§ 1º e 2º, Lei 8.429/92",
+          "reason": "referência a múltiplos artigos ou parágrafos"
+        },
+        {
+          "n": 27,
+          "ref": "Art. 1º, §§ 1º e 2º, Lei 8.429/92",
+          "reason": "referência a múltiplos artigos ou parágrafos"
+        },
+        {
+          "n": 28,
+          "ref": "Art. 1º, §§ 1º, 2º e 3º, Lei 8.429/92",
+          "reason": "referência a múltiplos artigos ou parágrafos"
+        },
+        {
+          "n": 29,
+          "ref": "Art. 1º, §§ 1º e 2º, Lei 8.429/92",
+          "reason": "referência a múltiplos artigos ou parágrafos"
+        },
+        {
+          "n": 31,
+          "ref": "Arts. 1º, § 1º e 12, Lei 8.429/92",
+          "reason": "referência a múltiplos artigos ou parágrafos"
+        },
+        {
+          "n": 44,
+          "ref": "Art. 1º, §§ 2º e 3º, Lei 8.429/92",
+          "reason": "referência a múltiplos artigos ou parágrafos"
+        },
+        {
+          "n": 45,
+          "ref": "Art. 1, §§ 2º e 3º, Lei 8.429/92",
+          "reason": "referência a múltiplos artigos ou parágrafos"
+        },
+        {
+          "n": 46,
+          "ref": "Art. 1º, §§ 2º e 3º, Lei 8.429/92",
+          "reason": "referência a múltiplos artigos ou parágrafos"
+        },
+        {
+          "n": 47,
+          "ref": "Art. 1º, §§ 2º e 3º, Lei 8.429/92",
+          "reason": "referência a múltiplos artigos ou parágrafos"
+        },
+        {
+          "n": 48,
+          "ref": "Art. 1, §§ 2º e 3º, Lei 8.429/92",
+          "reason": "referência a múltiplos artigos ou parágrafos"
+        }
+      ],
+      "heldCount": 12
+    },
+    {
+      "file": "20.pdf",
+      "headers": 51,
+      "withGabarito": 50,
+      "eligible": 47,
+      "selected": 33,
+      "devices": 19,
+      "excludedByLimit": 14,
+      "held": [
+        {
+          "n": 1,
+          "ref": "Arts. 1º e 10, Lei 12.527/2011",
+          "reason": "referência a múltiplos artigos ou parágrafos"
+        },
+        {
+          "n": 15,
+          "ref": "Arts. 3º, I e 10, § 3º, Lei 12.527/2011",
+          "reason": "referência a múltiplos artigos ou parágrafos"
+        },
+        {
+          "n": 16,
+          "ref": "...",
+          "reason": "sem gabarito identificado"
+        },
+        {
+          "n": 26,
+          "ref": "Arts. 5° e 14, Lei 12.527/2011",
+          "reason": "referência a múltiplos artigos ou parágrafos"
+        }
+      ],
+      "heldCount": 4
+    },
+    {
+      "file": "31.pdf",
+      "headers": 50,
+      "withGabarito": 50,
+      "eligible": 49,
+      "selected": 23,
+      "devices": 12,
+      "excludedByLimit": 26,
+      "held": [
+        {
+          "n": 43,
+          "ref": "Art. 2º, VII, LGPD",
+          "reason": "enunciado literalmente repetido"
+        }
+      ],
+      "heldCount": 1
+    },
+    {
+      "file": "1.pdf",
+      "headers": 37,
+      "withGabarito": 35,
+      "eligible": 33,
+      "selected": 29,
+      "devices": 24,
+      "excludedByLimit": 4,
+      "held": [
+        {
+          "n": 1,
+          "ref": "Arts. 1º e 2º, DEL 200/67",
+          "reason": "referência a múltiplos artigos ou parágrafos"
+        },
+        {
+          "n": 20,
+          "ref": "Art. 16, § único, DL 200/1967",
+          "reason": "metadados/enunciado/fundamento insuficiente"
+        },
+        {
+          "n": 21,
+          "ref": "...",
+          "reason": "sem gabarito identificado"
+        },
+        {
+          "n": 32,
+          "ref": "Art. 5º, III, DEL 200/67",
+          "reason": "sem gabarito identificado"
+        }
+      ],
+      "heldCount": 4
+    },
+    {
+      "file": "59.pdf",
+      "headers": 50,
+      "withGabarito": 47,
+      "eligible": 47,
+      "selected": 7,
+      "devices": 4,
+      "excludedByLimit": 40,
+      "held": [
+        {
+          "n": 25,
+          "ref": "Art. 2º, II, Lei 8.987/95",
+          "reason": "sem gabarito identificado"
+        },
+        {
+          "n": 36,
+          "ref": "Art. 2º, II, Lei 8.987/95",
+          "reason": "sem gabarito identificado"
+        },
+        {
+          "n": 40,
+          "ref": "Art. 2º, II, Lei 8.987/95",
+          "reason": "sem gabarito identificado"
+        }
+      ],
+      "heldCount": 3
+    },
+    {
+      "file": "22.pdf",
+      "headers": 50,
+      "withGabarito": 50,
+      "eligible": 45,
+      "selected": 6,
+      "devices": 3,
+      "excludedByLimit": 39,
+      "held": [
+        {
+          "n": 21,
+          "ref": "Art. 1º, § único c/c Art. 2º, Lei 12.846/2013",
+          "reason": "referência a múltiplos artigos ou parágrafos"
+        },
+        {
+          "n": 22,
+          "ref": "Arts. 1º e 2º, Lei 12.846/2013",
+          "reason": "referência a múltiplos artigos ou parágrafos"
+        },
+        {
+          "n": 23,
+          "ref": "Art. 1º e 2º, Lei 12.846/2013 c/c Art. 1º, §§ 1º e 2º, Lei 8.429/92",
+          "reason": "referência a múltiplos artigos ou parágrafos"
+        },
+        {
+          "n": 24,
+          "ref": "Art. 1º c/c 2º, Lei 12.846/13",
+          "reason": "referência a múltiplos artigos ou parágrafos"
+        },
+        {
+          "n": 32,
+          "ref": "Art. 2º, Lei 12.846/2013",
+          "reason": "enunciado literalmente repetido"
+        }
+      ],
+      "heldCount": 5
+    },
+    {
+      "file": "24.pdf",
+      "headers": 50,
+      "withGabarito": 48,
+      "eligible": 45,
+      "selected": 17,
+      "devices": 12,
+      "excludedByLimit": 28,
+      "held": [
+        {
+          "n": 1,
+          "ref": "Art. 2º, I, Lei 13.019/2014",
+          "reason": "sem gabarito identificado"
+        },
+        {
+          "n": 8,
+          "ref": "Art. 2º, I, \"c\", Lei 13.019/2014",
+          "reason": "enunciado literalmente repetido"
+        },
+        {
+          "n": 18,
+          "ref": "Art. 2º, VII, c/c Art. 35, § 1º, Lei 13.019/2014",
+          "reason": "referência a múltiplos artigos ou parágrafos"
+        },
+        {
+          "n": 33,
+          "ref": "Art. 2º, VIII-A, Lei 13.019/2014",
+          "reason": "enunciado literalmente repetido"
+        },
+        {
+          "n": 47,
+          "ref": "Art. 2º, XII, Lei 13.019/2014",
+          "reason": "sem gabarito identificado"
+        }
+      ],
+      "heldCount": 5
+    }
+  ]
+}
