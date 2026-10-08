@@ -120,7 +120,7 @@ function show(){
     for(const r of selected){
      seen.add(r.n);
      for(const m of modes){
-      if(m==='summary'&&(d[0]==='pt'||d[0]==='trabalho'))continue;
+      if(m==='summary'&&(d[0]==='pt'||d[0]==='trabalho')){if(r===selected[0])issues.push(d[1]+': não há versão resumida separada nesta estrutura');continue;}
       const t=makeText(d,r,m);
       if(t)files.push({name:nameFor(d,r,m),text:header(d,r,m,t)});
       else issues.push(d[1]+' M'+pad(r.n)+' '+kind(m)+': '+(r.note||r.error||'texto indisponível'));
