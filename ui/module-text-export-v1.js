@@ -164,6 +164,15 @@ function scan(){
   if(actions&&!actions.querySelector('[data-bc-export-open]')){
    const b=document.createElement('button');b.className='bc-export-text-btn';b.dataset.bcExportOpen='1';b.type='button';b.textContent='↓ Exportar textos';b.onclick=show;actions.insertBefore(b,actions.firstChild);
   }
+  const nav=document.querySelector('#centralSidebar .nav');
+  if(nav&&!nav.querySelector('[data-bc-export-nav]')){
+   const entry=document.createElement('button');entry.type='button';entry.dataset.bcExportNav='1';
+   entry.setAttribute('data-i','↓');entry.setAttribute('title','Exportar textos dos módulos');
+   entry.innerHTML='<span class="nav-icon" aria-hidden="true">↓</span><span class="nav-text">Exportar textos</span>';
+   entry.onclick=()=>{show();if(typeof w.closeMobileSidebar==='function')w.closeMobileSidebar()};
+   const settings=nav.querySelector('.nav-settings');
+   if(settings)nav.insertBefore(entry,settings);else nav.appendChild(entry);
+  }
   document.querySelectorAll('.bc-native-reader-overlay,.cf-native-overlay').forEach(readerButton);
  });
 }
