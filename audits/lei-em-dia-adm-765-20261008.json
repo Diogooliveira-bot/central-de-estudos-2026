@@ -1,0 +1,120 @@
+{
+  "createdAt": "2026-10-08",
+  "purpose": "Verificar seleção ampliada de concessões, PPP, consórcios, anticorrupção e MROSC",
+  "summary": {
+    "totalQuestions": 765,
+    "topics": 25,
+    "pdfItems": 321,
+    "authorial": 444,
+    "newPack5": 87
+  },
+  "pack5ByLaw": {
+    "adm-lei-8987": 22,
+    "adm-lei-11079": 16,
+    "adm-lei-11107": 16,
+    "adm-lei-12846": 19,
+    "adm-lei-13019": 14
+  },
+  "entireCoverage": {
+    "adm-lei-9784": 69,
+    "adm-lei-8112": 71,
+    "adm-lei-8429": 57,
+    "adm-lei-12527": 52,
+    "adm-lei-13709": 43,
+    "adm-lei-dl200": 29,
+    "adm-lei-8987": 29,
+    "adm-lei-12846": 25,
+    "adm-lei-13019": 31,
+    "adm-lei-11107": 33,
+    "adm-lei-11079": 24,
+    "adm-lei-13303": 41,
+    "adm-lei-13848": 37,
+    "adm-lei-8443": 42,
+    "adm-lei-d11462": 1,
+    "adm-lei-14133": 67,
+    "adm-lei-lindb20": 15,
+    "adm-lei-9637": 8,
+    "adm-lei-9790": 8,
+    "adm-lei-13460": 15,
+    "adm-lei-14129": 14,
+    "adm-lei-8745": 16,
+    "adm-lei-12813": 14,
+    "adm-lei-4717": 11,
+    "adm-lei-7347": 13
+  },
+  "integrity": {
+    "duplicateIds": [],
+    "duplicateStatements": [],
+    "missingRequired": [],
+    "overTwoByCanonicalProvision": [],
+    "distinctProvisionKeys": 640
+  },
+  "provenance": [
+    {
+      "path": "tools/decorando-data-adm-9784.js",
+      "items": 26,
+      "blobSHA": "c75103f94a14d204c781663f84737a36db861623"
+    },
+    {
+      "path": "tools/decorando-data-adm-pack1.js",
+      "items": 149,
+      "blobSHA": "4b91e7b18b7d9d058ac26120b094e9078eda6089"
+    },
+    {
+      "path": "tools/decorando-data-adm-pack2.js",
+      "items": 146,
+      "blobSHA": "25846334550a95b04f34eb7edc32fb6d83249250"
+    },
+    {
+      "path": "tools/decorando-data-adm-pack3.js",
+      "items": 58,
+      "blobSHA": "4969c8fe9547d532562543dd11123ef234efacc6"
+    },
+    {
+      "path": "tools/decorando-data-adm-pack4.js",
+      "items": 83,
+      "blobSHA": "5374b7ff817b37e29ad876f994dbb05cdfc353e3"
+    },
+    {
+      "path": "tools/decorando-data-adm-14133-extra.js",
+      "items": 40,
+      "blobSHA": "c8636c440b09254d11781982d780fbf6f5951168"
+    },
+    {
+      "path": "tools/decorando-data-adm-8112-extra.js",
+      "items": 45,
+      "blobSHA": "c5fc1f0d3ab79430157478ad25f93eb106f29bec"
+    },
+    {
+      "path": "tools/decorando-data-adm-8429-extra.js",
+      "items": 49,
+      "blobSHA": "57090213757cc24fdf3a82fd0208c9145425f2ae"
+    },
+    {
+      "path": "tools/decorando-data-adm-9784-expansao.js",
+      "items": 43,
+      "blobSHA": "261fba8f32cb2b198b16ed327cccb7e7857128f7"
+    },
+    {
+      "path": "tools/decorando-data-adm-12527-expansao.js",
+      "items": 19,
+      "blobSHA": "c6802ed8cf0a0e0d6d03178ba703f7ebd60c41c4"
+    },
+    {
+      "path": "tools/decorando-data-adm-13709-expansao.js",
+      "items": 20,
+      "blobSHA": "8686641af0e9b87a875a751853ee01d61a810cd7"
+    },
+    {
+      "path": "tools/decorando-data-adm-pack5.js",
+      "items": 87,
+      "blobSHA": "42feb341bfcd4595e2bf2e4eef3d776e1eaed031"
+    }
+  ],
+  "editorialLimits": [
+    "Questões autorais foram redigidas a partir dos textos oficiais, sem copiar questões de apostilas comerciais.",
+    "Correspondência de gabaritos dos 321 itens externos aos PDFs foi auditada anteriormente, mas não substitui revisão jurídica individual de vigência nem direitos de reprodução.",
+    "Incisos diferentes são dispositivos distintos; questões envolvendo vários incisos são classificadas por referência composta.",
+    "Esta ampliação não representa cobertura integral das cinco leis."
+  ]
+}

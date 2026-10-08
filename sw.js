@@ -1,11 +1,11 @@
 /* Base Completa — PWA autenticado e offline por sessão verificada. */
-var CACHE='central-20261008-adm678';
+var CACHE='central-20261008-adm765';
 var AUTH_CACHE='central-auth-session-v1';
 var AUTH_KEY='/__bc_offline_auth__';
 var AUTH_TTL_MS=72*60*60*1000;
 var BOOT='/central-v119.html';
-var OFFLINE_MANIFEST='/central-offline-files-v66172.json?v=20261008adm678';
-var OFFLINE_READY='/central-offline-ready?v=20261008-adm678';
+var OFFLINE_MANIFEST='/central-offline-files-v66172.json?v=20261008adm765';
+var OFFLINE_READY='/central-offline-ready?v=20261008-adm765';
 
 function publicPath(path){
   return path==='/login.html'||path==='/favicon.ico'||path==='/robots.txt'||path==='/assets/base-completa-symbol.webp';

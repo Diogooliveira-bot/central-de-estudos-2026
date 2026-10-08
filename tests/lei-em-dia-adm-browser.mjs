@@ -31,7 +31,7 @@ try{
   await page.locator(".qc-pop .qc-opt").filter({hasText:"Direito Administrativo"}).click();
   const inventory=await page.evaluate(()=>({discipline:currentDiscipline().id,questions:allActive().length,laws:disciplineTopics().length,lawCounts:Object.fromEntries(["adm-lei-9784","adm-lei-12527","adm-lei-13709","adm-lei-14133"].map(id=>[id,allActive().filter(q=>q.topicId===id).length]))}));
   assert.equal(inventory.discipline,"adm");
-  assert.equal(inventory.questions,678);
+  assert.equal(inventory.questions,765);
   assert.equal(inventory.laws,25);
   assert.deepEqual(inventory.lawCounts,{"adm-lei-9784":69,"adm-lei-12527":52,"adm-lei-13709":43,"adm-lei-14133":67});
   await page.evaluate(()=>toggleTopic("adm-lei-9784"));
