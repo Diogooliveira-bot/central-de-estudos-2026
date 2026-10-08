@@ -39,7 +39,7 @@ test("gabarito, fundamento e filtro são coerentes com os dados",()=>{
     const signature=q.topicId+"|"+q.question.statement.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]/g,"");
     assert.ok(!signatures.has(signature),"enunciado duplicado: "+q.id);
     signatures.add(signature);
-    assert.ok(!/decorandoaleiseca\.app\/vade-mecum-de-questoes|Gabarito:\s*(?:Verdadeiro|Falso)/i.test(q.parts[0]+" "+q.question.statement),q.id);
+    assert.ok(!/https?:\/\/\S+\/vade-mecum-de-questoes|Gabarito:\s*(?:Verdadeiro|Falso)/i.test(q.parts[0]+" "+q.question.statement),q.id);
   }
 });
 test("Lei em Dia e PWA carregam os três datasets sem alterar o progresso",()=>{
@@ -62,7 +62,7 @@ test("pacote complementar contem 6 conjuntos autorais e 83 itens legalmente iden
     assert.equal(q.question.origin,"authorial",q.id);
     assert.ok(q.question.source.includes("https://"),q.id);
     assert.ok(q.question.source.includes(q.number),q.id);
-    assert.ok(!/Decorando a Lei Seca|CESPE|FGV|VUNESP/i.test(q.question.meta),q.id);
+    assert.ok(!/decorando|CESPE|FGV|VUNESP/i.test(q.question.meta),q.id);
   }
 });
 
@@ -134,4 +134,26 @@ test("87 itens autorais ampliam 5 conjuntos sem novos identificadores de lei",()
  const expected={"adm-lei-8987":22,"adm-lei-11079":16,"adm-lei-11107":16,"adm-lei-12846":19,"adm-lei-13019":14};
  for(const [key,value] of Object.entries(expected))assert.equal(counts.get(key),value);
  assert.equal(topics.length,25);
+});
+
+test("banca e metadados não atribuem questões de concursos a plataformas de compilação",()=>{
+ const real=data.filter(q=>q.origin!=="authorial"&&q.question.origin!=="authorial");
+ assert.equal(real.length,321);
+ const unidentified=real.filter(q=>q.question.bank==="Banca não identificada");
+ assert.equal(unidentified.length,12);
+ for(const q of data){
+   const metadata=[q.question.bank,q.question.meta,q.question.source,q.question.role].join(" ");
+   assert.ok(!/decorando/i.test(metadata),"Rótulo indevido em "+q.id);
+ }
+ for(const q of unidentified){
+   assert.equal(q.question.year,null,q.id);
+   assert.equal(q.question.meta,"Banca e ano não identificados no material enviado",q.id);
+   assert.ok(/(?:28|32)\.pdf/.test(q.question.source),q.id);
+ }
+ const known=real.filter(q=>q.question.bank!=="Banca não identificada");
+ assert.equal(known.length,309);
+ const text=html.match(/supplementNotice:"([^"]+)"/)?.[1]||"";
+ assert.ok(text.includes("321 questões importadas do acervo de concursos públicos"));
+ assert.ok(text.includes("444 exercícios autorais"));
+ assert.ok(!/decorando/i.test(text));
 });
