@@ -162,5 +162,11 @@
   "flags": [],
   "warning": "Correspondência textual ao PDF não comprova correção jurídica, vigência, licitude de reprodução, autenticidade de banca ou integridade da extração do enunciado. Revisão jurídica e editorial pendentes.",
   "flaggingCorrection": "Palavra 'recursos' em cargo de Recursos Humanos não indica questão anulada; dois alertas falsos positivos retirados.",
-  "flagsPolicy": "Apenas 'prova anulada', 'questão anulada' ou 'cancelada' exigem segregação; não considerar 'recurso' em cargos como anulação."
+  "flagsPolicy": "Apenas 'prova anulada', 'questão anulada' ou 'cancelada' exigem segregação; não considerar 'recurso' em cargos como anulação.",
+  "datasetBlobShas": {
+    "tools/decorando-data-adm-9784.js": "c75103f94a14d204c781663f84737a36db861623",
+    "tools/decorando-data-adm-pack1.js": "4b91e7b18b7d9d058ac26120b094e9078eda6089",
+    "tools/decorando-data-adm-pack2.js": "25846334550a95b04f34eb7edc32fb6d83249250"
+  },
+  "datasetIntegrityRule": "Para usar resultado desta auditoria, o SHA Git blob dos três datasets de PDFs deve continuar igual ao indicado."
 }
