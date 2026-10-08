@@ -3,17 +3,17 @@ import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import vm from "node:vm";
 const root=new URL("../",import.meta.url),ctx=vm.createContext({});
-for(const p of ["tools/decorando-data-adm-9784.js","tools/decorando-data-adm-pack1.js","tools/decorando-data-adm-pack2.js","tools/decorando-data-adm-pack3.js"]){
+for(const p of ["tools/decorando-data-adm-9784.js","tools/decorando-data-adm-pack1.js","tools/decorando-data-adm-pack2.js","tools/decorando-data-adm-pack3.js","tools/decorando-data-adm-pack4.js"]){
   const src=readFileSync(new URL(p,root),"utf8");
   vm.runInContext(src,ctx,{filename:p});
 }
-const data=vm.runInContext("[...DATA_ADM,...DATA_ADM_PACK1,...DATA_ADM_PACK2,...DATA_ADM_PACK3]",ctx);
-const topics=vm.runInContext("[...TOPICS_ADM,...TOPICS_ADM_PACK1,...TOPICS_ADM_PACK2,...TOPICS_ADM_PACK3]",ctx);
+const data=vm.runInContext("[...DATA_ADM,...DATA_ADM_PACK1,...DATA_ADM_PACK2,...DATA_ADM_PACK3,...DATA_ADM_PACK4]",ctx);
+const topics=vm.runInContext("[...TOPICS_ADM,...TOPICS_ADM_PACK1,...TOPICS_ADM_PACK2,...TOPICS_ADM_PACK3,...TOPICS_ADM_PACK4]",ctx);
 const html=readFileSync(new URL("tools/decorando.html",root),"utf8");
 const offline=JSON.parse(readFileSync(new URL("central-offline-files-v66172.json",root),"utf8"));
-test("19 conjuntos e 379 questões com IDs únicos",()=>{
-  assert.equal(topics.length,19);
-  assert.equal(data.length,379);
+test("25 conjuntos e 462 questões com IDs únicos",()=>{
+  assert.equal(topics.length,25);
+  assert.equal(data.length,462);
   assert.equal(new Set(data.map(x=>x.id)).size,data.length);
   assert.equal(new Set(topics.map(x=>x.id)).size,topics.length);
 });
@@ -42,11 +42,25 @@ test("gabarito, fundamento e filtro são coerentes com os dados",()=>{
   }
 });
 test("Lei em Dia e PWA carregam os três datasets sem alterar o progresso",()=>{
-  for(const name of ["decorando-data-adm-9784.js","decorando-data-adm-pack1.js","decorando-data-adm-pack2.js","decorando-data-adm-pack3.js"]){
+  for(const name of ["decorando-data-adm-9784.js","decorando-data-adm-pack1.js","decorando-data-adm-pack2.js","decorando-data-adm-pack3.js","decorando-data-adm-pack4.js"]){
     assert.ok(html.includes(name));
     assert.ok(offline.files.some(x=>x.includes(name)));
   }
-  assert.ok(html.includes("...DATA_ADM_PACK1,...DATA_ADM_PACK2,...DATA_ADM_PACK3"));
-  assert.ok(html.includes("...TOPICS_ADM_PACK1,...TOPICS_ADM_PACK2,...TOPICS_ADM_PACK3"));
+  assert.ok(html.includes("...DATA_ADM_PACK1,...DATA_ADM_PACK2,...DATA_ADM_PACK3,...DATA_ADM_PACK4"));
+  assert.ok(html.includes("...TOPICS_ADM_PACK1,...TOPICS_ADM_PACK2,...TOPICS_ADM_PACK3,...TOPICS_ADM_PACK4"));
   assert.ok(html.includes('const STORAGE_KEY = "lei-seca-enxuta-state"'));
+});
+
+
+test("pacote complementar contem 6 conjuntos autorais e 83 itens legalmente identificados",()=>{
+  const supplement=data.filter(q=>q.id.includes("-autoral-")&&["adm-lei-13460","adm-lei-14129","adm-lei-8745","adm-lei-12813","adm-lei-4717","adm-lei-7347"].includes(q.topicId));
+  assert.equal(supplement.length,83);
+  assert.equal(new Set(supplement.map(q=>q.topicId)).size,6);
+  for(const q of supplement){
+    assert.equal(q.origin,"authorial",q.id);
+    assert.equal(q.question.origin,"authorial",q.id);
+    assert.ok(q.question.source.includes("https://"),q.id);
+    assert.ok(q.question.source.includes(q.number),q.id);
+    assert.ok(!/Decorando a Lei Seca|CESPE|FGV|VUNESP/i.test(q.question.meta),q.id);
+  }
 });
