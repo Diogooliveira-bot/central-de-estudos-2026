@@ -1,0 +1,3149 @@
+{
+  "discipline": "cpc",
+  "baseQuestions": 2620,
+  "sources": [
+    {
+      "pdf": "62.pdf",
+      "law": "Lei 9.307/1996",
+      "title": "Arbitragem",
+      "questionHeaders": 50,
+      "explicitAnswers": 50,
+      "imported": 17,
+      "url": "https://drive.google.com/file/d/1VD_5p3zfqSU0ktUbiVEIu6r7EHsKmIXG/view?usp=drivesdk"
+    },
+    {
+      "pdf": "16.pdf",
+      "law": "Lei 11.419/2006",
+      "title": "Processo Judicial Eletrônico",
+      "questionHeaders": 34,
+      "explicitAnswers": 34,
+      "imported": 24,
+      "url": "https://drive.google.com/file/d/1jZjQM34c0VMcIXRDFHa8Rj82ANSeIy3_/view?usp=drivesdk"
+    },
+    {
+      "pdf": "47.pdf",
+      "law": "Lei 7.347/1985",
+      "title": "Ação Civil Pública",
+      "questionHeaders": 50,
+      "explicitAnswers": 50,
+      "imported": 18,
+      "url": "https://drive.google.com/file/d/1B-Vqo_Yx0QtM6Hhl9EpukDgQOhSTDvok/view?usp=drivesdk"
+    },
+    {
+      "pdf": "19.pdf",
+      "law": "Lei 12.016/2009",
+      "title": "Mandado de Segurança",
+      "questionHeaders": 50,
+      "explicitAnswers": 50,
+      "imported": 14,
+      "url": "https://drive.google.com/file/d/1zmBVoRuHM1iKj3YUehZbTODIX0OyvEaB/view?usp=drivesdk"
+    },
+    {
+      "pdf": "27.pdf",
+      "law": "Lei 13.300/2016",
+      "title": "Mandado de Injunção",
+      "questionHeaders": 50,
+      "explicitAnswers": 50,
+      "imported": 15,
+      "url": "https://drive.google.com/file/d/1CQPJX4q2scKkAO6GwyZTxUtqYz1F6T6R/view?usp=drivesdk"
+    },
+    {
+      "pdf": "39.pdf",
+      "law": "Lei 4.717/1965",
+      "title": "Ação Popular",
+      "questionHeaders": 50,
+      "explicitAnswers": 50,
+      "imported": 16,
+      "url": "https://drive.google.com/file/d/1xp_VcXP4sa4PoXSmD-DUAUHuzXc26Ut9/view?usp=drivesdk"
+    },
+    {
+      "pdf": "64.pdf",
+      "law": "Lei 9.507/1997",
+      "title": "Habeas Data",
+      "questionHeaders": 24,
+      "explicitAnswers": 22,
+      "imported": 12,
+      "url": "https://drive.google.com/file/d/1C4REVDW2RiQPzUVQzXQBiHT8lcLbwSAr/view?usp=drivesdk"
+    },
+    {
+      "pdf": "67.pdf",
+      "law": "Lei 9.868/1999",
+      "title": "ADI e ADC",
+      "questionHeaders": 50,
+      "explicitAnswers": 50,
+      "imported": 17,
+      "url": "https://drive.google.com/file/d/1ZD1-mFRy6fY8KAJyT9NYpDmThg6F2msc/view?usp=drivesdk"
+    },
+    {
+      "pdf": "68.pdf",
+      "law": "Lei 9.882/1999",
+      "title": "ADPF",
+      "questionHeaders": 50,
+      "explicitAnswers": 49,
+      "imported": 9,
+      "url": "https://drive.google.com/file/d/1lpUOv79FHErZ2Exs8sCcH3Itmt9_0QiC/view?usp=drivesdk"
+    }
+  ],
+  "duplicates": [
+    {
+      "source": "62.pdf · questão 19 · Art. 1º, § 2º, Lei 9.307/96",
+      "keptId": "cpc-lei-9307-pdf62-q014"
+    },
+    {
+      "source": "62.pdf · questão 20 · Art. 1º, § 1º, Lei 9.307/96",
+      "keptId": "cpc-lei-9307-pdf62-q015"
+    },
+    {
+      "source": "62.pdf · questão 45 · Art. 4º, § 1º, Lei 9.307/96",
+      "keptId": "cpc-lei-9307-pdf62-q044"
+    },
+    {
+      "source": "16.pdf · questão 12 · Art. 4º, § 3º, Lei 11.419/2006",
+      "keptId": "cpc-lei-11419-pdf16-q008"
+    },
+    {
+      "source": "19.pdf · questão 9 · Art. 1º, § 2º, Lei 12.016/2009",
+      "keptId": "cpc-lei-12016-pdf19-q007"
+    },
+    {
+      "source": "19.pdf · questão 16 · Art. 1º, § 3º, Lei 12.016/2009",
+      "keptId": "cpc-lei-12016-pdf19-q015"
+    },
+    {
+      "source": "19.pdf · questão 23 · Art. 4º, Lei 12.016/2009",
+      "keptId": "cpc-lei-12016-pdf19-q020"
+    },
+    {
+      "source": "19.pdf · questão 28 · Art. 5º, I, Lei 12.016/2009",
+      "keptId": "cpc-lei-12016-pdf19-q026"
+    },
+    {
+      "source": "39.pdf · questão 6 · Art. 1º, Lei 4.717/65",
+      "keptId": "cpc-lei-4717-pdf39-q004"
+    }
+  ],
+  "excluded": [
+    {
+      "source": "64.pdf · questão 19 · Art. 18, Lei 9.507/97",
+      "reason": "Sem gabarito explícito"
+    },
+    {
+      "source": "64.pdf · questão 20 · Art. 18, Lei 9.507/97",
+      "reason": "Sem gabarito explícito"
+    },
+    {
+      "source": "68.pdf · questão 4 · Art. 1º, Lei 9.882/99",
+      "reason": "Sem gabarito explícito"
+    }
+  ],
+  "answerConflicts": [],
+  "addedQuestions": 142,
+  "beforeDeviceReview": 396,
+  "deviceReview": {
+    "rule": "Uma questão por dispositivo; incisos, parágrafos e alíneas distintos preservados. Prioridade a referências individuais e provas mais recentes.",
+    "retained": {
+      "cpc-lei-9307-pdf62-q001": [
+        "9307|1|caput||"
+      ],
+      "cpc-lei-9307-pdf62-q005": [
+        "9307|2|caput||"
+      ],
+      "cpc-lei-9307-pdf62-q006": [
+        "9307|2|p1||"
+      ],
+      "cpc-lei-9307-pdf62-q011": [
+        "9307|1|p2||"
+      ],
+      "cpc-lei-9307-pdf62-q035": [
+        "9307|1|p1||"
+      ],
+      "cpc-lei-9307-pdf62-q036": [
+        "9307|2|p3||"
+      ],
+      "cpc-lei-9307-pdf62-q037": [
+        "9307|2|p2||"
+      ],
+      "cpc-lei-9307-pdf62-q038": [
+        "9307|4|caput||"
+      ],
+      "cpc-lei-9307-pdf62-q039": [
+        "9307|4|p2||"
+      ],
+      "cpc-lei-9307-pdf62-q041": [
+        "9307|10|caput||"
+      ],
+      "cpc-lei-9307-pdf62-q042": [
+        "9307|7|p6||"
+      ],
+      "cpc-lei-9307-pdf62-q044": [
+        "9307|4|p1||"
+      ],
+      "cpc-lei-9307-pdf62-q046": [
+        "9307|11|caput|II|"
+      ],
+      "cpc-lei-9307-pdf62-q047": [
+        "9307|10|caput|IV|"
+      ],
+      "cpc-lei-9307-pdf62-q048": [
+        "9307|10|caput|II|"
+      ],
+      "cpc-lei-9307-pdf62-q049": [
+        "9307|10|caput|III|"
+      ],
+      "cpc-lei-9307-pdf62-q050": [
+        "9307|10|caput|I|"
+      ],
+      "cpc-lei-11419-pdf16-q001": [
+        "11419|1|p1||"
+      ],
+      "cpc-lei-11419-pdf16-q002": [
+        "11419|2|caput||"
+      ],
+      "cpc-lei-11419-pdf16-q003": [
+        "11419|3|caput||"
+      ],
+      "cpc-lei-11419-pdf16-q006": [
+        "11419|3|unico||"
+      ],
+      "cpc-lei-11419-pdf16-q009": [
+        "11419|4|p3||"
+      ],
+      "cpc-lei-11419-pdf16-q010": [
+        "11419|4|p2||"
+      ],
+      "cpc-lei-11419-pdf16-q013": [
+        "11419|5|caput||"
+      ],
+      "cpc-lei-11419-pdf16-q015": [
+        "11419|5|p1||"
+      ],
+      "cpc-lei-11419-pdf16-q016": [
+        "11419|5|p3||"
+      ],
+      "cpc-lei-11419-pdf16-q018": [
+        "11419|5|p6||"
+      ],
+      "cpc-lei-11419-pdf16-q019": [
+        "11419|7|caput||"
+      ],
+      "cpc-lei-11419-pdf16-q021": [
+        "11419|8|caput||"
+      ],
+      "cpc-lei-11419-pdf16-q022": [
+        "11419|8|unico||"
+      ],
+      "cpc-lei-11419-pdf16-q024": [
+        "11419|9|caput||"
+      ],
+      "cpc-lei-11419-pdf16-q025": [
+        "11419|9|p1||"
+      ],
+      "cpc-lei-11419-pdf16-q026": [
+        "11419|9|p2||"
+      ],
+      "cpc-lei-11419-pdf16-q027": [
+        "11419|10|p2||"
+      ],
+      "cpc-lei-11419-pdf16-q028": [
+        "11419|10|caput||"
+      ],
+      "cpc-lei-11419-pdf16-q029": [
+        "11419|10|p3||"
+      ],
+      "cpc-lei-11419-pdf16-q030": [
+        "11419|11|p1||"
+      ],
+      "cpc-lei-11419-pdf16-q031": [
+        "11419|11|p5||"
+      ],
+      "cpc-lei-11419-pdf16-q032": [
+        "11419|11|p7||"
+      ],
+      "cpc-lei-11419-pdf16-q033": [
+        "11419|12|caput||"
+      ],
+      "cpc-lei-11419-pdf16-q034": [
+        "11419|12|p1||"
+      ],
+      "cpc-lei-7347-pdf47-q003": [
+        "7347|1|caput||"
+      ],
+      "cpc-lei-7347-pdf47-q006": [
+        "7347|1|unico||"
+      ],
+      "cpc-lei-7347-pdf47-q007": [
+        "7347|1|caput|III|"
+      ],
+      "cpc-lei-7347-pdf47-q008": [
+        "7347|1|caput|V|"
+      ],
+      "cpc-lei-7347-pdf47-q009": [
+        "7347|1|caput|VII|"
+      ],
+      "cpc-lei-7347-pdf47-q012": [
+        "7347|1|caput|VIII|"
+      ],
+      "cpc-lei-7347-pdf47-q018": [
+        "7347|2|caput||"
+      ],
+      "cpc-lei-7347-pdf47-q024": [
+        "7347|2|unico||"
+      ],
+      "cpc-lei-7347-pdf47-q028": [
+        "7347|3|caput||"
+      ],
+      "cpc-lei-7347-pdf47-q032": [
+        "7347|4|caput||"
+      ],
+      "cpc-lei-7347-pdf47-q034": [
+        "7347|5|caput||"
+      ],
+      "cpc-lei-7347-pdf47-q039": [
+        "7347|5|caput|I|"
+      ],
+      "cpc-lei-7347-pdf47-q040": [
+        "7347|5|caput|II|"
+      ],
+      "cpc-lei-7347-pdf47-q041": [
+        "7347|5|caput|IV|"
+      ],
+      "cpc-lei-7347-pdf47-q042": [
+        "7347|5|caput|V|"
+      ],
+      "cpc-lei-7347-pdf47-q044": [
+        "7347|5|caput|V|a"
+      ],
+      "cpc-lei-7347-pdf47-q045": [
+        "7347|5|caput|V|b"
+      ],
+      "cpc-lei-7347-pdf47-q048": [
+        "7347|5|p1||"
+      ],
+      "cpc-lei-12016-pdf19-q002": [
+        "12016|1|caput||"
+      ],
+      "cpc-lei-12016-pdf19-q003": [
+        "12016|1|p1||"
+      ],
+      "cpc-lei-12016-pdf19-q011": [
+        "12016|1|p2||"
+      ],
+      "cpc-lei-12016-pdf19-q012": [
+        "12016|1|p3||"
+      ],
+      "cpc-lei-12016-pdf19-q019": [
+        "12016|3|caput||"
+      ],
+      "cpc-lei-12016-pdf19-q022": [
+        "12016|4|caput||"
+      ],
+      "cpc-lei-12016-pdf19-q026": [
+        "12016|5|caput||"
+      ],
+      "cpc-lei-12016-pdf19-q027": [
+        "12016|5|caput|I|"
+      ],
+      "cpc-lei-12016-pdf19-q038": [
+        "12016|5|caput|II|"
+      ],
+      "cpc-lei-12016-pdf19-q041": [
+        "12016|5|caput|III|"
+      ],
+      "cpc-lei-12016-pdf19-q042": [
+        "12016|6|p1||"
+      ],
+      "cpc-lei-12016-pdf19-q044": [
+        "12016|6|p3||"
+      ],
+      "cpc-lei-12016-pdf19-q047": [
+        "12016|6|p6||"
+      ],
+      "cpc-lei-12016-pdf19-q050": [
+        "12016|7|caput|I|"
+      ],
+      "cpc-lei-13300-pdf27-q001": [
+        "13300|1|caput||"
+      ],
+      "cpc-lei-13300-pdf27-q008": [
+        "13300|2|caput||"
+      ],
+      "cpc-lei-13300-pdf27-q010": [
+        "13300|2|unico||"
+      ],
+      "cpc-lei-13300-pdf27-q013": [
+        "13300|3|caput||"
+      ],
+      "cpc-lei-13300-pdf27-q019": [
+        "13300|4|caput||"
+      ],
+      "cpc-lei-13300-pdf27-q021": [
+        "13300|4|p2||"
+      ],
+      "cpc-lei-13300-pdf27-q022": [
+        "13300|5|caput|I|"
+      ],
+      "cpc-lei-13300-pdf27-q023": [
+        "13300|6|unico||"
+      ],
+      "cpc-lei-13300-pdf27-q024": [
+        "13300|7|caput||"
+      ],
+      "cpc-lei-13300-pdf27-q026": [
+        "13300|8|caput||"
+      ],
+      "cpc-lei-13300-pdf27-q030": [
+        "13300|8|caput|I|"
+      ],
+      "cpc-lei-13300-pdf27-q032": [
+        "13300|8|caput|II|"
+      ],
+      "cpc-lei-13300-pdf27-q035": [
+        "13300|8|unico||"
+      ],
+      "cpc-lei-13300-pdf27-q040": [
+        "13300|9|caput||"
+      ],
+      "cpc-lei-13300-pdf27-q045": [
+        "13300|9|p1||"
+      ],
+      "cpc-lei-4717-pdf39-q002": [
+        "4717|1|caput||"
+      ],
+      "cpc-lei-4717-pdf39-q007": [
+        "4717|1|p2||"
+      ],
+      "cpc-lei-4717-pdf39-q014": [
+        "4717|1|p3||"
+      ],
+      "cpc-lei-4717-pdf39-q015": [
+        "4717|1|p4||"
+      ],
+      "cpc-lei-4717-pdf39-q018": [
+        "4717|1|p7||"
+      ],
+      "cpc-lei-4717-pdf39-q022": [
+        "4717|2|unico||"
+      ],
+      "cpc-lei-4717-pdf39-q024": [
+        "4717|2|unico||a"
+      ],
+      "cpc-lei-4717-pdf39-q025": [
+        "4717|2|unico||b"
+      ],
+      "cpc-lei-4717-pdf39-q028": [
+        "4717|2|caput||"
+      ],
+      "cpc-lei-4717-pdf39-q031": [
+        "4717|5|caput||"
+      ],
+      "cpc-lei-4717-pdf39-q034": [
+        "4717|5|p2||"
+      ],
+      "cpc-lei-4717-pdf39-q036": [
+        "4717|5|p4||"
+      ],
+      "cpc-lei-4717-pdf39-q039": [
+        "4717|6|caput||"
+      ],
+      "cpc-lei-4717-pdf39-q042": [
+        "4717|6|p1||"
+      ],
+      "cpc-lei-4717-pdf39-q045": [
+        "4717|6|p3||"
+      ],
+      "cpc-lei-4717-pdf39-q048": [
+        "4717|6|p4||"
+      ],
+      "cpc-lei-9507-pdf64-q001": [
+        "9507|1|unico||"
+      ],
+      "cpc-lei-9507-pdf64-q002": [
+        "9507|2|caput||"
+      ],
+      "cpc-lei-9507-pdf64-q003": [
+        "9507|7|caput|III|"
+      ],
+      "cpc-lei-9507-pdf64-q005": [
+        "9507|8|caput||"
+      ],
+      "cpc-lei-9507-pdf64-q006": [
+        "9507|8|unico||"
+      ],
+      "cpc-lei-9507-pdf64-q008": [
+        "9507|9|caput||"
+      ],
+      "cpc-lei-9507-pdf64-q010": [
+        "9507|10|caput||"
+      ],
+      "cpc-lei-9507-pdf64-q011": [
+        "9507|12|caput||"
+      ],
+      "cpc-lei-9507-pdf64-q014": [
+        "9507|15|caput||"
+      ],
+      "cpc-lei-9507-pdf64-q016": [
+        "9507|15|unico||"
+      ],
+      "cpc-lei-9507-pdf64-q021": [
+        "9507|19|caput||"
+      ],
+      "cpc-lei-9507-pdf64-q024": [
+        "9507|21|caput||"
+      ],
+      "cpc-lei-9868-pdf67-q001": [
+        "9868|1|caput||"
+      ],
+      "cpc-lei-9868-pdf67-q002": [
+        "9868|2|caput|I|"
+      ],
+      "cpc-lei-9868-pdf67-q003": [
+        "9868|2|caput|II|"
+      ],
+      "cpc-lei-9868-pdf67-q004": [
+        "9868|2|caput|IX|"
+      ],
+      "cpc-lei-9868-pdf67-q009": [
+        "9868|5|caput||"
+      ],
+      "cpc-lei-9868-pdf67-q011": [
+        "9868|6|caput||"
+      ],
+      "cpc-lei-9868-pdf67-q012": [
+        "9868|7|p2||"
+      ],
+      "cpc-lei-9868-pdf67-q015": [
+        "9868|8|caput||"
+      ],
+      "cpc-lei-9868-pdf67-q016": [
+        "9868|9|p1||"
+      ],
+      "cpc-lei-9868-pdf67-q021": [
+        "9868|10|caput||"
+      ],
+      "cpc-lei-9868-pdf67-q024": [
+        "9868|10|p2||"
+      ],
+      "cpc-lei-9868-pdf67-q025": [
+        "9868|11|p2||"
+      ],
+      "cpc-lei-9868-pdf67-q027": [
+        "9868|4|caput||"
+      ],
+      "cpc-lei-9868-pdf67-q028": [
+        "9868|10|p1||"
+      ],
+      "cpc-lei-9868-pdf67-q030": [
+        "9868|4|unico||"
+      ],
+      "cpc-lei-9868-pdf67-q031": [
+        "9868|11|p1||"
+      ],
+      "cpc-lei-9868-pdf67-q039": [
+        "9868|7|caput||"
+      ],
+      "cpc-lei-9882-pdf68-q002": [
+        "9882|1|caput||"
+      ],
+      "cpc-lei-9882-pdf68-q007": [
+        "9882|1|unico||"
+      ],
+      "cpc-lei-9882-pdf68-q022": [
+        "9882|1|unico|I|"
+      ],
+      "cpc-lei-9882-pdf68-q031": [
+        "9882|2|caput||"
+      ],
+      "cpc-lei-9882-pdf68-q034": [
+        "9882|2|caput|I|"
+      ],
+      "cpc-lei-9882-pdf68-q039": [
+        "9882|2|p1||"
+      ],
+      "cpc-lei-9882-pdf68-q040": [
+        "9882|3|caput||"
+      ],
+      "cpc-lei-9882-pdf68-q041": [
+        "9882|4|caput||"
+      ],
+      "cpc-lei-9882-pdf68-q047": [
+        "9882|4|p1||"
+      ]
+    },
+    "removed": [
+      {
+        "id": "cpc-lei-4717-pdf39-q013",
+        "source": "39.pdf · questão 13 · Art. 1º, § 3º, Lei 4.717/65",
+        "devices": [
+          "4717|1|p3||"
+        ],
+        "keptIds": [
+          "cpc-lei-4717-pdf39-q014"
+        ]
+      },
+      {
+        "id": "cpc-lei-7347-pdf47-q022",
+        "source": "47.pdf · questão 22 · Art. 2º, Lei 7.347/85",
+        "devices": [
+          "7347|2|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-7347-pdf47-q018"
+        ]
+      },
+      {
+        "id": "cpc-lei-12016-pdf19-q035",
+        "source": "19.pdf · questão 35 · Art. 5º, II, Lei 12.016/2009",
+        "devices": [
+          "12016|5|caput|II|"
+        ],
+        "keptIds": [
+          "cpc-lei-12016-pdf19-q038"
+        ]
+      },
+      {
+        "id": "cpc-lei-4717-pdf39-q011",
+        "source": "39.pdf · questão 11 · Art. 1º, § 3º, Lei 4.717/65",
+        "devices": [
+          "4717|1|p3||"
+        ],
+        "keptIds": [
+          "cpc-lei-4717-pdf39-q014"
+        ]
+      },
+      {
+        "id": "cpc-lei-9882-pdf68-q027",
+        "source": "68.pdf · questão 27 · Art. 1º, § único, I, Lei 9.882/99",
+        "devices": [
+          "9882|1|unico|I|"
+        ],
+        "keptIds": [
+          "cpc-lei-9882-pdf68-q022"
+        ]
+      },
+      {
+        "id": "cpc-lei-12016-pdf19-q006",
+        "source": "19.pdf · questão 6 · Art. 1º, § 1º, Lei 12.016/2009",
+        "devices": [
+          "12016|1|p1||"
+        ],
+        "keptIds": [
+          "cpc-lei-12016-pdf19-q003"
+        ]
+      },
+      {
+        "id": "cpc-lei-4717-pdf39-q046",
+        "source": "39.pdf · questão 46 · Art. 6º, § 3º, Lei 4.717/65",
+        "devices": [
+          "4717|6|p3||"
+        ],
+        "keptIds": [
+          "cpc-lei-4717-pdf39-q045"
+        ]
+      },
+      {
+        "id": "cpc-lei-9882-pdf68-q023",
+        "source": "68.pdf · questão 23 · Art. 1º, § único, I, Lei 9.882/99",
+        "devices": [
+          "9882|1|unico|I|"
+        ],
+        "keptIds": [
+          "cpc-lei-9882-pdf68-q022"
+        ]
+      },
+      {
+        "id": "cpc-lei-9882-pdf68-q025",
+        "source": "68.pdf · questão 25 · Art. 1º, § único, I, Lei 9.882/99",
+        "devices": [
+          "9882|1|unico|I|"
+        ],
+        "keptIds": [
+          "cpc-lei-9882-pdf68-q022"
+        ]
+      },
+      {
+        "id": "cpc-lei-13300-pdf27-q006",
+        "source": "27.pdf · questão 6 · Art. 2º, Lei 13.300/2016",
+        "devices": [
+          "13300|2|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-13300-pdf27-q008"
+        ]
+      },
+      {
+        "id": "cpc-lei-7347-pdf47-q026",
+        "source": "47.pdf · questão 26 · Art. 2º, § único, Lei 7.347/85",
+        "devices": [
+          "7347|2|unico||"
+        ],
+        "keptIds": [
+          "cpc-lei-7347-pdf47-q024"
+        ]
+      },
+      {
+        "id": "cpc-lei-9307-pdf62-q009",
+        "source": "62.pdf · questão 9 · Art. 1º, § 1º, Lei 9.307/96",
+        "devices": [
+          "9307|1|p1||"
+        ],
+        "keptIds": [
+          "cpc-lei-9307-pdf62-q035"
+        ]
+      },
+      {
+        "id": "cpc-lei-9307-pdf62-q010",
+        "source": "62.pdf · questão 10 · Art. 1º, § 1º, Lei 9.307/96",
+        "devices": [
+          "9307|1|p1||"
+        ],
+        "keptIds": [
+          "cpc-lei-9307-pdf62-q035"
+        ]
+      },
+      {
+        "id": "cpc-lei-9868-pdf67-q026",
+        "source": "67.pdf · questão 26 · Art. 11, § 2º, Lei 9.868/99",
+        "devices": [
+          "9868|11|p2||"
+        ],
+        "keptIds": [
+          "cpc-lei-9868-pdf67-q025"
+        ]
+      },
+      {
+        "id": "cpc-lei-9882-pdf68-q048",
+        "source": "68.pdf · questão 48 · Art. 4º, § 1º, Lei 9.882/99",
+        "devices": [
+          "9882|4|p1||"
+        ],
+        "keptIds": [
+          "cpc-lei-9882-pdf68-q047"
+        ]
+      },
+      {
+        "id": "cpc-lei-9882-pdf68-q049",
+        "source": "68.pdf · questão 49 · Art. 4º, § 1º, Lei 9.882/99",
+        "devices": [
+          "9882|4|p1||"
+        ],
+        "keptIds": [
+          "cpc-lei-9882-pdf68-q047"
+        ]
+      },
+      {
+        "id": "cpc-lei-9307-pdf62-q012",
+        "source": "62.pdf · questão 12 · Art. 2º, § 3º, Lei 9.307/96",
+        "devices": [
+          "9307|2|p3||"
+        ],
+        "keptIds": [
+          "cpc-lei-9307-pdf62-q036"
+        ]
+      },
+      {
+        "id": "cpc-lei-9307-pdf62-q013",
+        "source": "62.pdf · questão 13 · Art. 2º, § 3º, Lei 9.307/96",
+        "devices": [
+          "9307|2|p3||"
+        ],
+        "keptIds": [
+          "cpc-lei-9307-pdf62-q036"
+        ]
+      },
+      {
+        "id": "cpc-lei-4717-pdf39-q020",
+        "source": "39.pdf · questão 20 · Art. 1º, Lei 4.717/1965",
+        "devices": [
+          "4717|1|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-4717-pdf39-q002"
+        ]
+      },
+      {
+        "id": "cpc-lei-4717-pdf39-q040",
+        "source": "39.pdf · questão 40 · Art. 6º, Lei 4.717/65",
+        "devices": [
+          "4717|6|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-4717-pdf39-q039"
+        ]
+      },
+      {
+        "id": "cpc-lei-9882-pdf68-q024",
+        "source": "68.pdf · questão 24 · Art. 1º, § único, I, Lei 9.882/99",
+        "devices": [
+          "9882|1|unico|I|"
+        ],
+        "keptIds": [
+          "cpc-lei-9882-pdf68-q022"
+        ]
+      },
+      {
+        "id": "cpc-lei-9868-pdf67-q033",
+        "source": "67.pdf · questão 33 · Art. 10, Lei 9.868/99",
+        "devices": [
+          "9868|10|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-9868-pdf67-q021"
+        ]
+      },
+      {
+        "id": "cpc-lei-9868-pdf67-q018",
+        "source": "67.pdf · questão 18 · Art. 10, Lei 9.868/99",
+        "devices": [
+          "9868|10|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-9868-pdf67-q021"
+        ]
+      },
+      {
+        "id": "cpc-lei-4717-pdf39-q047",
+        "source": "39.pdf · questão 47 · Art. 6º, § 3º, Lei 4.717/65",
+        "devices": [
+          "4717|6|p3||"
+        ],
+        "keptIds": [
+          "cpc-lei-4717-pdf39-q045"
+        ]
+      },
+      {
+        "id": "cpc-lei-12016-pdf19-q040",
+        "source": "19.pdf · questão 40 · Art. 5º, III, Lei 12.016/09",
+        "devices": [
+          "12016|5|caput|III|"
+        ],
+        "keptIds": [
+          "cpc-lei-12016-pdf19-q041"
+        ]
+      },
+      {
+        "id": "cpc-lei-9882-pdf68-q016",
+        "source": "68.pdf · questão 16 · Art. 1º, § único, I, Lei 9.882/99",
+        "devices": [
+          "9882|1|unico|I|"
+        ],
+        "keptIds": [
+          "cpc-lei-9882-pdf68-q022"
+        ]
+      },
+      {
+        "id": "cpc-lei-9882-pdf68-q017",
+        "source": "68.pdf · questão 17 · Art. 1º, § único, I, Lei 9.882/99",
+        "devices": [
+          "9882|1|unico|I|"
+        ],
+        "keptIds": [
+          "cpc-lei-9882-pdf68-q022"
+        ]
+      },
+      {
+        "id": "cpc-lei-9882-pdf68-q028",
+        "source": "68.pdf · questão 28 · Art. 1º, § único, I, Lei 9.882/99",
+        "devices": [
+          "9882|1|unico|I|"
+        ],
+        "keptIds": [
+          "cpc-lei-9882-pdf68-q022"
+        ]
+      },
+      {
+        "id": "cpc-lei-9868-pdf67-q032",
+        "source": "67.pdf · questão 32 · Art. 10, § 2º, Lei 9.868/99",
+        "devices": [
+          "9868|10|p2||"
+        ],
+        "keptIds": [
+          "cpc-lei-9868-pdf67-q024"
+        ]
+      },
+      {
+        "id": "cpc-lei-7347-pdf47-q010",
+        "source": "47.pdf · questão 10 · Art. 1º, VII, Lei 7.347/85",
+        "devices": [
+          "7347|1|caput|VII|"
+        ],
+        "keptIds": [
+          "cpc-lei-7347-pdf47-q009"
+        ]
+      },
+      {
+        "id": "cpc-lei-7347-pdf47-q011",
+        "source": "47.pdf · questão 11 · Art. 1º, VII, Lei 7.347/85",
+        "devices": [
+          "7347|1|caput|VII|"
+        ],
+        "keptIds": [
+          "cpc-lei-7347-pdf47-q009"
+        ]
+      },
+      {
+        "id": "cpc-lei-9307-pdf62-q014",
+        "source": "62.pdf · questão 14 · Art. 1º, § 2º, Lei 9.307/96",
+        "devices": [
+          "9307|1|p2||"
+        ],
+        "keptIds": [
+          "cpc-lei-9307-pdf62-q011"
+        ]
+      },
+      {
+        "id": "cpc-lei-9307-pdf62-q015",
+        "source": "62.pdf · questão 15 · Art. 1º, § 1º, Lei 9.307/96",
+        "devices": [
+          "9307|1|p1||"
+        ],
+        "keptIds": [
+          "cpc-lei-9307-pdf62-q035"
+        ]
+      },
+      {
+        "id": "cpc-lei-9868-pdf67-q034",
+        "source": "67.pdf · questão 34 · Art. 11, § 2º, Lei 9.868/99",
+        "devices": [
+          "9868|11|p2||"
+        ],
+        "keptIds": [
+          "cpc-lei-9868-pdf67-q025"
+        ]
+      },
+      {
+        "id": "cpc-lei-9868-pdf67-q035",
+        "source": "67.pdf · questão 35 · Art. 10, § 1º, Lei 9.868/99",
+        "devices": [
+          "9868|10|p1||"
+        ],
+        "keptIds": [
+          "cpc-lei-9868-pdf67-q028"
+        ]
+      },
+      {
+        "id": "cpc-lei-12016-pdf19-q036",
+        "source": "19.pdf · questão 36 · Art. 5º, II, Lei 12.016/09",
+        "devices": [
+          "12016|5|caput|II|"
+        ],
+        "keptIds": [
+          "cpc-lei-12016-pdf19-q038"
+        ]
+      },
+      {
+        "id": "cpc-lei-12016-pdf19-q043",
+        "source": "19.pdf · questão 43 · Art. 6º, § 3º, Lei 12.016/2009",
+        "devices": [
+          "12016|6|p3||"
+        ],
+        "keptIds": [
+          "cpc-lei-12016-pdf19-q044"
+        ]
+      },
+      {
+        "id": "cpc-lei-12016-pdf19-q045",
+        "source": "19.pdf · questão 45 · Art. 6º, § 3º, Lei 12.016/2009",
+        "devices": [
+          "12016|6|p3||"
+        ],
+        "keptIds": [
+          "cpc-lei-12016-pdf19-q044"
+        ]
+      },
+      {
+        "id": "cpc-lei-9868-pdf67-q029",
+        "source": "67.pdf · questão 29 · Art. 4º, Lei 9.868/99",
+        "devices": [
+          "9868|4|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-9868-pdf67-q027"
+        ]
+      },
+      {
+        "id": "cpc-lei-7347-pdf47-q049",
+        "source": "47.pdf · questão 49 · Art. 5º, § 1º, Lei 7.347/85",
+        "devices": [
+          "7347|5|p1||"
+        ],
+        "keptIds": [
+          "cpc-lei-7347-pdf47-q048"
+        ]
+      },
+      {
+        "id": "cpc-lei-12016-pdf19-q039",
+        "source": "19.pdf · questão 39 · Art. 5º, III, Lei 12.016/2009",
+        "devices": [
+          "12016|5|caput|III|"
+        ],
+        "keptIds": [
+          "cpc-lei-12016-pdf19-q041"
+        ]
+      },
+      {
+        "id": "cpc-lei-7347-pdf47-q035",
+        "source": "47.pdf · questão 35 · Art. 5º, Lei 7.347/85",
+        "devices": [
+          "7347|5|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-7347-pdf47-q034"
+        ]
+      },
+      {
+        "id": "cpc-lei-4717-pdf39-q001",
+        "source": "39.pdf · questão 1 · Art. 1º, Lei 4.717/65",
+        "devices": [
+          "4717|1|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-4717-pdf39-q002"
+        ]
+      },
+      {
+        "id": "cpc-lei-4717-pdf39-q003",
+        "source": "39.pdf · questão 3 · Art. 1º, Lei 4.717/65",
+        "devices": [
+          "4717|1|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-4717-pdf39-q002"
+        ]
+      },
+      {
+        "id": "cpc-lei-9882-pdf68-q020",
+        "source": "68.pdf · questão 20 · Art. 1º, §único, I, Lei 9.882/99",
+        "devices": [
+          "9882|1|unico|I|"
+        ],
+        "keptIds": [
+          "cpc-lei-9882-pdf68-q022"
+        ]
+      },
+      {
+        "id": "cpc-lei-7347-pdf47-q019",
+        "source": "47.pdf · questão 19 · Art. 2º, Lei 7.347/85",
+        "devices": [
+          "7347|2|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-7347-pdf47-q018"
+        ]
+      },
+      {
+        "id": "cpc-lei-7347-pdf47-q031",
+        "source": "47.pdf · questão 31 · Art. 4º, Lei 7.347/85",
+        "devices": [
+          "7347|4|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-7347-pdf47-q032"
+        ]
+      },
+      {
+        "id": "cpc-lei-7347-pdf47-q029",
+        "source": "47.pdf · questão 29 · Art. 4º, Lei 7.347/85",
+        "devices": [
+          "7347|4|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-7347-pdf47-q032"
+        ]
+      },
+      {
+        "id": "cpc-lei-12016-pdf19-q005",
+        "source": "19.pdf · questão 5 · Art. 1º, § 1º, Lei 12.016/2009",
+        "devices": [
+          "12016|1|p1||"
+        ],
+        "keptIds": [
+          "cpc-lei-12016-pdf19-q003"
+        ]
+      },
+      {
+        "id": "cpc-lei-7347-pdf47-q017",
+        "source": "47.pdf · questão 17 · Art. 2º, Lei 7.347/85",
+        "devices": [
+          "7347|2|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-7347-pdf47-q018"
+        ]
+      },
+      {
+        "id": "cpc-lei-13300-pdf27-q049",
+        "source": "27.pdf · questão 49 · Art. 9º, § 1º, Lei 13.300/2016",
+        "devices": [
+          "13300|9|p1||"
+        ],
+        "keptIds": [
+          "cpc-lei-13300-pdf27-q045"
+        ]
+      },
+      {
+        "id": "cpc-lei-7347-pdf47-q036",
+        "source": "47.pdf · questão 36 · Art. 5º, Lei 7.347/85",
+        "devices": [
+          "7347|5|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-7347-pdf47-q034"
+        ]
+      },
+      {
+        "id": "cpc-lei-7347-pdf47-q005",
+        "source": "47.pdf · questão 5 · Art. 1º, III, Lei 7.347/85",
+        "devices": [
+          "7347|1|caput|III|"
+        ],
+        "keptIds": [
+          "cpc-lei-7347-pdf47-q007"
+        ]
+      },
+      {
+        "id": "cpc-lei-4717-pdf39-q030",
+        "source": "39.pdf · questão 30 · Art. 5º, Lei 4.717/65",
+        "devices": [
+          "4717|5|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-4717-pdf39-q031"
+        ]
+      },
+      {
+        "id": "cpc-lei-4717-pdf39-q032",
+        "source": "39.pdf · questão 32 · Art. 5º, Lei 4.717/65",
+        "devices": [
+          "4717|5|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-4717-pdf39-q031"
+        ]
+      },
+      {
+        "id": "cpc-lei-9882-pdf68-q012",
+        "source": "68.pdf · questão 12 · Art. 1º, § único, Lei 9.882/99",
+        "devices": [
+          "9882|1|unico||"
+        ],
+        "keptIds": [
+          "cpc-lei-9882-pdf68-q007"
+        ]
+      },
+      {
+        "id": "cpc-lei-9882-pdf68-q014",
+        "source": "68.pdf · questão 14 · Art. 1º, § único, I, Lei 9.882/99",
+        "devices": [
+          "9882|1|unico|I|"
+        ],
+        "keptIds": [
+          "cpc-lei-9882-pdf68-q022"
+        ]
+      },
+      {
+        "id": "cpc-lei-9882-pdf68-q029",
+        "source": "68.pdf · questão 29 · Art. 1º, § único, I, Lei 9.882/99",
+        "devices": [
+          "9882|1|unico|I|"
+        ],
+        "keptIds": [
+          "cpc-lei-9882-pdf68-q022"
+        ]
+      },
+      {
+        "id": "cpc-lei-13300-pdf27-q004",
+        "source": "27.pdf · questão 4 · Art. 2º, Lei 13.300/2016",
+        "devices": [
+          "13300|2|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-13300-pdf27-q008"
+        ]
+      },
+      {
+        "id": "cpc-lei-13300-pdf27-q007",
+        "source": "27.pdf · questão 7 · Art. 2º, Lei 13.300/2016",
+        "devices": [
+          "13300|2|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-13300-pdf27-q008"
+        ]
+      },
+      {
+        "id": "cpc-lei-9868-pdf67-q038",
+        "source": "67.pdf · questão 38 · Art. 7º, § 2º, Lei 9.868/99",
+        "devices": [
+          "9868|7|p2||"
+        ],
+        "keptIds": [
+          "cpc-lei-9868-pdf67-q012"
+        ]
+      },
+      {
+        "id": "cpc-lei-9868-pdf67-q014",
+        "source": "67.pdf · questão 14 · Art. 8º, Lei 9.868/99",
+        "devices": [
+          "9868|8|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-9868-pdf67-q015"
+        ]
+      },
+      {
+        "id": "cpc-lei-12016-pdf19-q030",
+        "source": "19.pdf · questão 30 · Art. 5º, I, Lei 12.016/2009",
+        "devices": [
+          "12016|5|caput|I|"
+        ],
+        "keptIds": [
+          "cpc-lei-12016-pdf19-q027"
+        ]
+      },
+      {
+        "id": "cpc-lei-9307-pdf62-q017",
+        "source": "62.pdf · questão 17 · Art. 1º, § 1º, Lei 9.307/96",
+        "devices": [
+          "9307|1|p1||"
+        ],
+        "keptIds": [
+          "cpc-lei-9307-pdf62-q035"
+        ]
+      },
+      {
+        "id": "cpc-lei-9868-pdf67-q036",
+        "source": "67.pdf · questão 36 · Art. 11, § 2º, Lei 9.868/99",
+        "devices": [
+          "9868|11|p2||"
+        ],
+        "keptIds": [
+          "cpc-lei-9868-pdf67-q025"
+        ]
+      },
+      {
+        "id": "cpc-lei-9882-pdf68-q043",
+        "source": "68.pdf · questão 43 · Art. 4º, § 1º, Lei 9.882/99",
+        "devices": [
+          "9882|4|p1||"
+        ],
+        "keptIds": [
+          "cpc-lei-9882-pdf68-q047"
+        ]
+      },
+      {
+        "id": "cpc-lei-9882-pdf68-q045",
+        "source": "68.pdf · questão 45 · Art. 4º, § 1º, Lei 9.882/99",
+        "devices": [
+          "9882|4|p1||"
+        ],
+        "keptIds": [
+          "cpc-lei-9882-pdf68-q047"
+        ]
+      },
+      {
+        "id": "cpc-lei-9882-pdf68-q033",
+        "source": "68.pdf · questão 33 · Art. 2º, I, Lei 9.882/99",
+        "devices": [
+          "9882|2|caput|I|"
+        ],
+        "keptIds": [
+          "cpc-lei-9882-pdf68-q034"
+        ]
+      },
+      {
+        "id": "cpc-lei-12016-pdf19-q014",
+        "source": "19.pdf · questão 14 · Art. 1º, § 3º, Lei 12.016/2009",
+        "devices": [
+          "12016|1|p3||"
+        ],
+        "keptIds": [
+          "cpc-lei-12016-pdf19-q012"
+        ]
+      },
+      {
+        "id": "cpc-lei-9307-pdf62-q018",
+        "source": "62.pdf · questão 18 · Art. 2º, § 3º, Lei 9.307/96",
+        "devices": [
+          "9307|2|p3||"
+        ],
+        "keptIds": [
+          "cpc-lei-9307-pdf62-q036"
+        ]
+      },
+      {
+        "id": "cpc-lei-9307-pdf62-q021",
+        "source": "62.pdf · questão 21 · Art. 2º, § 3º, Lei 9.307/96",
+        "devices": [
+          "9307|2|p3||"
+        ],
+        "keptIds": [
+          "cpc-lei-9307-pdf62-q036"
+        ]
+      },
+      {
+        "id": "cpc-lei-7347-pdf47-q050",
+        "source": "47.pdf · questão 50 · Art. 5º, § 1º, Lei 7.347/85",
+        "devices": [
+          "7347|5|p1||"
+        ],
+        "keptIds": [
+          "cpc-lei-7347-pdf47-q048"
+        ]
+      },
+      {
+        "id": "cpc-lei-9868-pdf67-q037",
+        "source": "67.pdf · questão 37 · Art. 5º, Lei 9.868/99",
+        "devices": [
+          "9868|5|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-9868-pdf67-q009"
+        ]
+      },
+      {
+        "id": "cpc-lei-9868-pdf67-q008",
+        "source": "67.pdf · questão 8 · Art. 5º, Lei n.º 9.868/99",
+        "devices": [
+          "9868|5|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-9868-pdf67-q009"
+        ]
+      },
+      {
+        "id": "cpc-lei-9868-pdf67-q010",
+        "source": "67.pdf · questão 10 · Art. 5º, Lei 9.868/99",
+        "devices": [
+          "9868|5|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-9868-pdf67-q009"
+        ]
+      },
+      {
+        "id": "cpc-lei-9882-pdf68-q035",
+        "source": "68.pdf · questão 35 · Art. 2º, I, Lei 9.882/99 c/c Art. 103, CF",
+        "devices": [
+          "9882|2|caput|I|"
+        ],
+        "keptIds": [
+          "cpc-lei-9882-pdf68-q034"
+        ]
+      },
+      {
+        "id": "cpc-lei-13300-pdf27-q009",
+        "source": "27.pdf · questão 9 · Art. 2º, Lei 13.300/2016",
+        "devices": [
+          "13300|2|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-13300-pdf27-q008"
+        ]
+      },
+      {
+        "id": "cpc-lei-9882-pdf68-q009",
+        "source": "68.pdf · questão 9 · Art. 1º, § único, I, Lei 9.882/99",
+        "devices": [
+          "9882|1|unico|I|"
+        ],
+        "keptIds": [
+          "cpc-lei-9882-pdf68-q022"
+        ]
+      },
+      {
+        "id": "cpc-lei-9882-pdf68-q001",
+        "source": "68.pdf · questão 1 · Art. 1º, Lei 9.882/99",
+        "devices": [
+          "9882|1|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-9882-pdf68-q002"
+        ]
+      },
+      {
+        "id": "cpc-lei-12016-pdf19-q010",
+        "source": "19.pdf · questão 10 · Art. 1º, § 2º, Lei 12.016/2009",
+        "devices": [
+          "12016|1|p2||"
+        ],
+        "keptIds": [
+          "cpc-lei-12016-pdf19-q011"
+        ]
+      },
+      {
+        "id": "cpc-lei-12016-pdf19-q021",
+        "source": "19.pdf · questão 21 · Art. 4º, Lei 12.016/2009",
+        "devices": [
+          "12016|4|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-12016-pdf19-q022"
+        ]
+      },
+      {
+        "id": "cpc-lei-12016-pdf19-q029",
+        "source": "19.pdf · questão 29 · Art. 5º, I, Lei 12.016/2009",
+        "devices": [
+          "12016|5|caput|I|"
+        ],
+        "keptIds": [
+          "cpc-lei-12016-pdf19-q027"
+        ]
+      },
+      {
+        "id": "cpc-lei-12016-pdf19-q031",
+        "source": "19.pdf · questão 31 · Art. 5º, I, Lei 12.016/2009",
+        "devices": [
+          "12016|5|caput|I|"
+        ],
+        "keptIds": [
+          "cpc-lei-12016-pdf19-q027"
+        ]
+      },
+      {
+        "id": "cpc-lei-13300-pdf27-q002",
+        "source": "27.pdf · questão 2 · Art. 1º, Lei 13.300/2016",
+        "devices": [
+          "13300|1|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-13300-pdf27-q001"
+        ]
+      },
+      {
+        "id": "cpc-lei-9882-pdf68-q044",
+        "source": "68.pdf · questão 44 · Art. 4º, § 1º, Lei 9.882/99",
+        "devices": [
+          "9882|4|p1||"
+        ],
+        "keptIds": [
+          "cpc-lei-9882-pdf68-q047"
+        ]
+      },
+      {
+        "id": "cpc-lei-12016-pdf19-q034",
+        "source": "19.pdf · questão 34 · Art. 5°, II, Lei 12.016/2009",
+        "devices": [
+          "12016|5|caput|II|"
+        ],
+        "keptIds": [
+          "cpc-lei-12016-pdf19-q038"
+        ]
+      },
+      {
+        "id": "cpc-lei-9307-pdf62-q022",
+        "source": "62.pdf · questão 22 · Art. 2º, § 3º, Lei 9.307/96",
+        "devices": [
+          "9307|2|p3||"
+        ],
+        "keptIds": [
+          "cpc-lei-9307-pdf62-q036"
+        ]
+      },
+      {
+        "id": "cpc-lei-9882-pdf68-q037",
+        "source": "68.pdf · questão 37 · Art. 2º, I, Lei 9.882/99 c/c Art. 103, CF",
+        "devices": [
+          "9882|2|caput|I|"
+        ],
+        "keptIds": [
+          "cpc-lei-9882-pdf68-q034"
+        ]
+      },
+      {
+        "id": "cpc-lei-9882-pdf68-q018",
+        "source": "68.pdf · questão 18 · Art. 1º, § único, I, Lei 9.882/99",
+        "devices": [
+          "9882|1|unico|I|"
+        ],
+        "keptIds": [
+          "cpc-lei-9882-pdf68-q022"
+        ]
+      },
+      {
+        "id": "cpc-lei-13300-pdf27-q031",
+        "source": "27.pdf · questão 31 · Art. 8º, II, Lei 13.300/2016",
+        "devices": [
+          "13300|8|caput|II|"
+        ],
+        "keptIds": [
+          "cpc-lei-13300-pdf27-q032"
+        ]
+      },
+      {
+        "id": "cpc-lei-9868-pdf67-q020",
+        "source": "67.pdf · questão 20 · Art. 11, § 1º, Lei 9.868/99",
+        "devices": [
+          "9868|11|p1||"
+        ],
+        "keptIds": [
+          "cpc-lei-9868-pdf67-q031"
+        ]
+      },
+      {
+        "id": "cpc-lei-9507-pdf64-q007",
+        "source": "64.pdf · questão 7 · Art. 9º, Lei 9.507/97",
+        "devices": [
+          "9507|9|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-9507-pdf64-q008"
+        ]
+      },
+      {
+        "id": "cpc-lei-12016-pdf19-q018",
+        "source": "19.pdf · questão 18 · Art. 3º, Lei 12.016/2009",
+        "devices": [
+          "12016|3|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-12016-pdf19-q019"
+        ]
+      },
+      {
+        "id": "cpc-lei-13300-pdf27-q029",
+        "source": "27.pdf · questão 29 · Art. 8º, I, Lei 13.300/2016",
+        "devices": [
+          "13300|8|caput|I|"
+        ],
+        "keptIds": [
+          "cpc-lei-13300-pdf27-q030"
+        ]
+      },
+      {
+        "id": "cpc-lei-9507-pdf64-q013",
+        "source": "64.pdf · questão 13 · Art. 15, Lei 9.507/97",
+        "devices": [
+          "9507|15|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-9507-pdf64-q014"
+        ]
+      },
+      {
+        "id": "cpc-lei-9507-pdf64-q015",
+        "source": "64.pdf · questão 15 · Art. 15, § único, Lei 9.507/97",
+        "devices": [
+          "9507|15|unico||"
+        ],
+        "keptIds": [
+          "cpc-lei-9507-pdf64-q016"
+        ]
+      },
+      {
+        "id": "cpc-lei-9868-pdf67-q040",
+        "source": "67.pdf · questão 40 · Art. 11, § 1º, Lei 9.868/99",
+        "devices": [
+          "9868|11|p1||"
+        ],
+        "keptIds": [
+          "cpc-lei-9868-pdf67-q031"
+        ]
+      },
+      {
+        "id": "cpc-lei-12016-pdf19-q032",
+        "source": "19.pdf · questão 32 · Art. 5º, I, Lei 12.016/2009",
+        "devices": [
+          "12016|5|caput|I|"
+        ],
+        "keptIds": [
+          "cpc-lei-12016-pdf19-q027"
+        ]
+      },
+      {
+        "id": "cpc-lei-13300-pdf27-q038",
+        "source": "27.pdf · questão 38 · Art. 9º, Lei 13.300/2016",
+        "devices": [
+          "13300|9|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-13300-pdf27-q040"
+        ]
+      },
+      {
+        "id": "cpc-lei-9868-pdf67-q041",
+        "source": "67.pdf · questão 41 · Art. 5º, Lei 9.868/99",
+        "devices": [
+          "9868|5|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-9868-pdf67-q009"
+        ]
+      },
+      {
+        "id": "cpc-lei-9882-pdf68-q036",
+        "source": "68.pdf · questão 36 · Art. 2º, I, Lei 9.882/99 c/c Art. 103, CF",
+        "devices": [
+          "9882|2|caput|I|"
+        ],
+        "keptIds": [
+          "cpc-lei-9882-pdf68-q034"
+        ]
+      },
+      {
+        "id": "cpc-lei-13300-pdf27-q025",
+        "source": "27.pdf · questão 25 · Art. 8º, Lei 13.300/2016",
+        "devices": [
+          "13300|8|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-13300-pdf27-q026"
+        ]
+      },
+      {
+        "id": "cpc-lei-7347-pdf47-q037",
+        "source": "47.pdf · questão 37 · Art. 5º, Lei 7.347/85",
+        "devices": [
+          "7347|5|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-7347-pdf47-q034"
+        ]
+      },
+      {
+        "id": "cpc-lei-9307-pdf62-q040",
+        "source": "62.pdf · questão 40 · Art. 7º, § 6º, Lei 9.307/96",
+        "devices": [
+          "9307|7|p6||"
+        ],
+        "keptIds": [
+          "cpc-lei-9307-pdf62-q042"
+        ]
+      },
+      {
+        "id": "cpc-lei-9868-pdf67-q017",
+        "source": "67.pdf · questão 17 · Art. 9º, § 1º, Lei 9.868/99",
+        "devices": [
+          "9868|9|p1||"
+        ],
+        "keptIds": [
+          "cpc-lei-9868-pdf67-q016"
+        ]
+      },
+      {
+        "id": "cpc-lei-9868-pdf67-q045",
+        "source": "67.pdf · questão 45 · Art. 9º, 1º, Lei 9.868/99",
+        "devices": [
+          "9868|9|p1||"
+        ],
+        "keptIds": [
+          "cpc-lei-9868-pdf67-q016"
+        ]
+      },
+      {
+        "id": "cpc-lei-13300-pdf27-q036",
+        "source": "27.pdf · questão 36 · Art. 8º, § único, Lei 13.300/2016",
+        "devices": [
+          "13300|8|unico||"
+        ],
+        "keptIds": [
+          "cpc-lei-13300-pdf27-q035"
+        ]
+      },
+      {
+        "id": "cpc-lei-7347-pdf47-q038",
+        "source": "47.pdf · questão 38 · Art. 5º, Lei 7.347/85",
+        "devices": [
+          "7347|5|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-7347-pdf47-q034"
+        ]
+      },
+      {
+        "id": "cpc-lei-12016-pdf19-q001",
+        "source": "19.pdf · questão 1 · Art. 1º, Lei 12.016/2009",
+        "devices": [
+          "12016|1|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-12016-pdf19-q002"
+        ]
+      },
+      {
+        "id": "cpc-lei-9868-pdf67-q023",
+        "source": "67.pdf · questão 23 · Art. 10, Lei 9.868/99",
+        "devices": [
+          "9868|10|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-9868-pdf67-q021"
+        ]
+      },
+      {
+        "id": "cpc-lei-9882-pdf68-q005",
+        "source": "68.pdf · questão 5 · Art. 1º, § único, Lei 9.882/99",
+        "devices": [
+          "9882|1|unico||"
+        ],
+        "keptIds": [
+          "cpc-lei-9882-pdf68-q007"
+        ]
+      },
+      {
+        "id": "cpc-lei-9882-pdf68-q006",
+        "source": "68.pdf · questão 6 · Art. 1º, § único, Lei 9.882/99",
+        "devices": [
+          "9882|1|unico||"
+        ],
+        "keptIds": [
+          "cpc-lei-9882-pdf68-q007"
+        ]
+      },
+      {
+        "id": "cpc-lei-4717-pdf39-q029",
+        "source": "39.pdf · questão 29 · Art. 5º, Lei 4.717/65",
+        "devices": [
+          "4717|5|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-4717-pdf39-q031"
+        ]
+      },
+      {
+        "id": "cpc-lei-9882-pdf68-q013",
+        "source": "68.pdf · questão 13 · Art. 1º, § único, I, Lei 9.882/99",
+        "devices": [
+          "9882|1|unico|I|"
+        ],
+        "keptIds": [
+          "cpc-lei-9882-pdf68-q022"
+        ]
+      },
+      {
+        "id": "cpc-lei-9882-pdf68-q026",
+        "source": "68.pdf · questão 26 · Art. 1º, § único, I, Lei 9.882/99",
+        "devices": [
+          "9882|1|unico|I|"
+        ],
+        "keptIds": [
+          "cpc-lei-9882-pdf68-q022"
+        ]
+      },
+      {
+        "id": "cpc-lei-11419-pdf16-q017",
+        "source": "16.pdf · questão 17 · Art. 5º, §3º, Lei 11.419/2006",
+        "devices": [
+          "11419|5|p3||"
+        ],
+        "keptIds": [
+          "cpc-lei-11419-pdf16-q016"
+        ]
+      },
+      {
+        "id": "cpc-lei-11419-pdf16-q020",
+        "source": "16.pdf · questão 20 · Art. 7º, Lei 11.419/2006",
+        "devices": [
+          "11419|7|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-11419-pdf16-q019"
+        ]
+      },
+      {
+        "id": "cpc-lei-9882-pdf68-q003",
+        "source": "68.pdf · questão 3 · Art. 1º, Lei 9.882/99",
+        "devices": [
+          "9882|1|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-9882-pdf68-q002"
+        ]
+      },
+      {
+        "id": "cpc-lei-13300-pdf27-q046",
+        "source": "27.pdf · questão 46 · Art. 9º, § 1º, Lei 13.300/2016",
+        "devices": [
+          "13300|9|p1||"
+        ],
+        "keptIds": [
+          "cpc-lei-13300-pdf27-q045"
+        ]
+      },
+      {
+        "id": "cpc-lei-13300-pdf27-q050",
+        "source": "27.pdf · questão 50 · Art. 9º, § 1º, Lei 13.300/2016",
+        "devices": [
+          "13300|9|p1||"
+        ],
+        "keptIds": [
+          "cpc-lei-13300-pdf27-q045"
+        ]
+      },
+      {
+        "id": "cpc-lei-11419-pdf16-q014",
+        "source": "16.pdf · questão 14 · Art. 5º, Lei 11.419/2006",
+        "devices": [
+          "11419|5|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-11419-pdf16-q013"
+        ]
+      },
+      {
+        "id": "cpc-lei-12016-pdf19-q020",
+        "source": "19.pdf · questão 20 · Art. 4º, Lei 12.016/2009",
+        "devices": [
+          "12016|4|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-12016-pdf19-q022"
+        ]
+      },
+      {
+        "id": "cpc-lei-9868-pdf67-q019",
+        "source": "67.pdf · questão 19 · Art. 11, § 1º, Lei 9.882/99",
+        "devices": [
+          "9868|11|p1||"
+        ],
+        "keptIds": [
+          "cpc-lei-9868-pdf67-q031"
+        ]
+      },
+      {
+        "id": "cpc-lei-13300-pdf27-q027",
+        "source": "27.pdf · questão 27 · Art. 8º, I, Lei 13.300/2016",
+        "devices": [
+          "13300|8|caput|I|"
+        ],
+        "keptIds": [
+          "cpc-lei-13300-pdf27-q030"
+        ]
+      },
+      {
+        "id": "cpc-lei-13300-pdf27-q028",
+        "source": "27.pdf · questão 28 · Art. 8º, I, Lei 13.300/2016",
+        "devices": [
+          "13300|8|caput|I|"
+        ],
+        "keptIds": [
+          "cpc-lei-13300-pdf27-q030"
+        ]
+      },
+      {
+        "id": "cpc-lei-9507-pdf64-q012",
+        "source": "64.pdf · questão 12 · Art. 15, Lei 9.507/97",
+        "devices": [
+          "9507|15|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-9507-pdf64-q014"
+        ]
+      },
+      {
+        "id": "cpc-lei-9868-pdf67-q044",
+        "source": "67.pdf · questão 44 · Art. 11, 1º, Lei 9.868/99",
+        "devices": [
+          "9868|11|p1||"
+        ],
+        "keptIds": [
+          "cpc-lei-9868-pdf67-q031"
+        ]
+      },
+      {
+        "id": "cpc-lei-7347-pdf47-q002",
+        "source": "47.pdf · questão 2 · Art. 1º, Lei 7.347/85",
+        "devices": [
+          "7347|1|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-7347-pdf47-q003"
+        ]
+      },
+      {
+        "id": "cpc-lei-11419-pdf16-q011",
+        "source": "16.pdf · questão 11 · Art. 4, §3º, Lei 11.419/2006",
+        "devices": [
+          "11419|4|p3||"
+        ],
+        "keptIds": [
+          "cpc-lei-11419-pdf16-q009"
+        ]
+      },
+      {
+        "id": "cpc-lei-12016-pdf19-q049",
+        "source": "19.pdf · questão 49 · Art. 6º, § 6º, Lei 12.016/2009",
+        "devices": [
+          "12016|6|p6||"
+        ],
+        "keptIds": [
+          "cpc-lei-12016-pdf19-q047"
+        ]
+      },
+      {
+        "id": "cpc-lei-9868-pdf67-q022",
+        "source": "67.pdf · questão 22 · Art. 11, § 2º, Lei 9.868/99",
+        "devices": [
+          "9868|11|p2||"
+        ],
+        "keptIds": [
+          "cpc-lei-9868-pdf67-q025"
+        ]
+      },
+      {
+        "id": "cpc-lei-9882-pdf68-q046",
+        "source": "68.pdf · questão 46 · Art. 4º, § 1º, Lei 9.882/99",
+        "devices": [
+          "9882|4|p1||"
+        ],
+        "keptIds": [
+          "cpc-lei-9882-pdf68-q047"
+        ]
+      },
+      {
+        "id": "cpc-lei-9882-pdf68-q032",
+        "source": "68.pdf · questão 32 · Art. 2º, I, Lei 9.882/99",
+        "devices": [
+          "9882|2|caput|I|"
+        ],
+        "keptIds": [
+          "cpc-lei-9882-pdf68-q034"
+        ]
+      },
+      {
+        "id": "cpc-lei-4717-pdf39-q009",
+        "source": "39.pdf · questão 9 · Art. 1º, § 3º, Lei 4.717/65",
+        "devices": [
+          "4717|1|p3||"
+        ],
+        "keptIds": [
+          "cpc-lei-4717-pdf39-q014"
+        ]
+      },
+      {
+        "id": "cpc-lei-9868-pdf67-q042",
+        "source": "67.pdf · questão 42 · Art. 7º, Lei 9.868/99",
+        "devices": [
+          "9868|7|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-9868-pdf67-q039"
+        ]
+      },
+      {
+        "id": "cpc-lei-9868-pdf67-q043",
+        "source": "67.pdf · questão 43 · Art. 5º, Lei 9.868/99",
+        "devices": [
+          "9868|5|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-9868-pdf67-q009"
+        ]
+      },
+      {
+        "id": "cpc-lei-9868-pdf67-q007",
+        "source": "67.pdf · questão 7 · Art. 5º, Lei 9.868/99",
+        "devices": [
+          "9868|5|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-9868-pdf67-q009"
+        ]
+      },
+      {
+        "id": "cpc-lei-7347-pdf47-q033",
+        "source": "47.pdf · questão 33 · Art. 5º, Lei 7.347/85",
+        "devices": [
+          "7347|5|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-7347-pdf47-q034"
+        ]
+      },
+      {
+        "id": "cpc-lei-4717-pdf39-q019",
+        "source": "39.pdf · questão 19 · Art. 1º, § 7º, Lei 4.717/65",
+        "devices": [
+          "4717|1|p7||"
+        ],
+        "keptIds": [
+          "cpc-lei-4717-pdf39-q018"
+        ]
+      },
+      {
+        "id": "cpc-lei-7347-pdf47-q043",
+        "source": "47.pdf · questão 43 · Art. 5º, V, Lei 7.347/85",
+        "devices": [
+          "7347|5|caput|V|"
+        ],
+        "keptIds": [
+          "cpc-lei-7347-pdf47-q042"
+        ]
+      },
+      {
+        "id": "cpc-lei-13300-pdf27-q033",
+        "source": "27.pdf · questão 33 · Art. 8º, II, Lei 13.300/2016",
+        "devices": [
+          "13300|8|caput|II|"
+        ],
+        "keptIds": [
+          "cpc-lei-13300-pdf27-q032"
+        ]
+      },
+      {
+        "id": "cpc-lei-4717-pdf39-q038",
+        "source": "39.pdf · questão 38 · Art. 6º, Lei 4.717/65",
+        "devices": [
+          "4717|6|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-4717-pdf39-q039"
+        ]
+      },
+      {
+        "id": "cpc-lei-9882-pdf68-q038",
+        "source": "68.pdf · questão 38 · Art. 2º, I, Lei 9.882/99 c/c Art. 103, VIII, CF",
+        "devices": [
+          "9882|2|caput|I|"
+        ],
+        "keptIds": [
+          "cpc-lei-9882-pdf68-q034"
+        ]
+      },
+      {
+        "id": "cpc-lei-13300-pdf27-q044",
+        "source": "27.pdf · questão 44 · Art. 9º, § 1º, Lei 13.300/2016",
+        "devices": [
+          "13300|9|p1||"
+        ],
+        "keptIds": [
+          "cpc-lei-13300-pdf27-q045"
+        ]
+      },
+      {
+        "id": "cpc-lei-13300-pdf27-q017",
+        "source": "27.pdf · questão 17 · Art. 3º, Lei 13.300/2016",
+        "devices": [
+          "13300|3|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-13300-pdf27-q013"
+        ]
+      },
+      {
+        "id": "cpc-lei-13300-pdf27-q018",
+        "source": "27.pdf · questão 18 · Art. 3º, Lei 13.300/2016",
+        "devices": [
+          "13300|3|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-13300-pdf27-q013"
+        ]
+      },
+      {
+        "id": "cpc-lei-4717-pdf39-q049",
+        "source": "39.pdf · questão 49 · Art. 6º, § 4º, Lei 4.717/65",
+        "devices": [
+          "4717|6|p4||"
+        ],
+        "keptIds": [
+          "cpc-lei-4717-pdf39-q048"
+        ]
+      },
+      {
+        "id": "cpc-lei-4717-pdf39-q033",
+        "source": "39.pdf · questão 33 · Art. 5º, Lei 4.717/65",
+        "devices": [
+          "4717|5|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-4717-pdf39-q031"
+        ]
+      },
+      {
+        "id": "cpc-lei-9882-pdf68-q008",
+        "source": "68.pdf · questão 8 · Art. 1º, § único, I, Lei 9.882/99",
+        "devices": [
+          "9882|1|unico|I|"
+        ],
+        "keptIds": [
+          "cpc-lei-9882-pdf68-q022"
+        ]
+      },
+      {
+        "id": "cpc-lei-9882-pdf68-q010",
+        "source": "68.pdf · questão 10 · Art. 1º, § único, I, Lei 9.882/99",
+        "devices": [
+          "9882|1|unico|I|"
+        ],
+        "keptIds": [
+          "cpc-lei-9882-pdf68-q022"
+        ]
+      },
+      {
+        "id": "cpc-lei-9882-pdf68-q011",
+        "source": "68.pdf · questão 11 · Art. 1º, § único, I, Lei 9.882/99",
+        "devices": [
+          "9882|1|unico|I|"
+        ],
+        "keptIds": [
+          "cpc-lei-9882-pdf68-q022"
+        ]
+      },
+      {
+        "id": "cpc-lei-9882-pdf68-q015",
+        "source": "68.pdf · questão 15 · Art. 1º, § único, I, Lei 9.882/99",
+        "devices": [
+          "9882|1|unico|I|"
+        ],
+        "keptIds": [
+          "cpc-lei-9882-pdf68-q022"
+        ]
+      },
+      {
+        "id": "cpc-lei-9882-pdf68-q019",
+        "source": "68.pdf · questão 19 · Art. 1º, § único, I, Lei 9.882/99",
+        "devices": [
+          "9882|1|unico|I|"
+        ],
+        "keptIds": [
+          "cpc-lei-9882-pdf68-q022"
+        ]
+      },
+      {
+        "id": "cpc-lei-9882-pdf68-q021",
+        "source": "68.pdf · questão 21 · Art. 1º, § único, I, Lei 9.882/99",
+        "devices": [
+          "9882|1|unico|I|"
+        ],
+        "keptIds": [
+          "cpc-lei-9882-pdf68-q022"
+        ]
+      },
+      {
+        "id": "cpc-lei-9882-pdf68-q030",
+        "source": "68.pdf · questão 30 · Art. 1º, § único, I, Lei 9.882/99",
+        "devices": [
+          "9882|1|unico|I|"
+        ],
+        "keptIds": [
+          "cpc-lei-9882-pdf68-q022"
+        ]
+      },
+      {
+        "id": "cpc-lei-13300-pdf27-q043",
+        "source": "27.pdf · questão 43 · Art. 9º, § 1º, Lei 13.300/2016",
+        "devices": [
+          "13300|9|p1||"
+        ],
+        "keptIds": [
+          "cpc-lei-13300-pdf27-q045"
+        ]
+      },
+      {
+        "id": "cpc-lei-13300-pdf27-q047",
+        "source": "27.pdf · questão 47 · Art. 9º, § 1º, Lei 13.300/2016",
+        "devices": [
+          "13300|9|p1||"
+        ],
+        "keptIds": [
+          "cpc-lei-13300-pdf27-q045"
+        ]
+      },
+      {
+        "id": "cpc-lei-12016-pdf19-q024",
+        "source": "19.pdf · questão 24 · Art. 5º, Lei 12.016/2009",
+        "devices": [
+          "12016|5|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-12016-pdf19-q026"
+        ]
+      },
+      {
+        "id": "cpc-lei-9507-pdf64-q018",
+        "source": "64.pdf · questão 18 · Art. 15, § único, Lei 9.507/97",
+        "devices": [
+          "9507|15|unico||"
+        ],
+        "keptIds": [
+          "cpc-lei-9507-pdf64-q016"
+        ]
+      },
+      {
+        "id": "cpc-lei-9868-pdf67-q047",
+        "source": "67.pdf · questão 47 · Art. 11, 1º, Lei 9.868/99",
+        "devices": [
+          "9868|11|p1||"
+        ],
+        "keptIds": [
+          "cpc-lei-9868-pdf67-q031"
+        ]
+      },
+      {
+        "id": "cpc-lei-9507-pdf64-q023",
+        "source": "64.pdf · questão 23 · Art. 21, Lei 9.507/97",
+        "devices": [
+          "9507|21|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-9507-pdf64-q024"
+        ]
+      },
+      {
+        "id": "cpc-lei-7347-pdf47-q021",
+        "source": "47.pdf · questão 21 · Art. 2º, Lei 7.347/85",
+        "devices": [
+          "7347|2|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-7347-pdf47-q018"
+        ]
+      },
+      {
+        "id": "cpc-lei-12016-pdf19-q048",
+        "source": "19.pdf · questão 48 · Art. 6º, § 6º, Lei 12.016/2009",
+        "devices": [
+          "12016|6|p6||"
+        ],
+        "keptIds": [
+          "cpc-lei-12016-pdf19-q047"
+        ]
+      },
+      {
+        "id": "cpc-lei-9307-pdf62-q004",
+        "source": "62.pdf · questão 4 · Art. 1º, § 1º, Lei 9.307/1996",
+        "devices": [
+          "9307|1|p1||"
+        ],
+        "keptIds": [
+          "cpc-lei-9307-pdf62-q035"
+        ]
+      },
+      {
+        "id": "cpc-lei-12016-pdf19-q046",
+        "source": "19.pdf · questão 46 · Art. 6º, § 6º, Lei 12.016/2009",
+        "devices": [
+          "12016|6|p6||"
+        ],
+        "keptIds": [
+          "cpc-lei-12016-pdf19-q047"
+        ]
+      },
+      {
+        "id": "cpc-lei-9307-pdf62-q003",
+        "source": "62.pdf · questão 3 · Art. 1º, § 1º, Lei 9.307/1996",
+        "devices": [
+          "9307|1|p1||"
+        ],
+        "keptIds": [
+          "cpc-lei-9307-pdf62-q035"
+        ]
+      },
+      {
+        "id": "cpc-lei-9868-pdf67-q046",
+        "source": "67.pdf · questão 46 · Art. 11, 2º, Lei 9.868/99",
+        "devices": [
+          "9868|11|p2||"
+        ],
+        "keptIds": [
+          "cpc-lei-9868-pdf67-q025"
+        ]
+      },
+      {
+        "id": "cpc-lei-9882-pdf68-q042",
+        "source": "68.pdf · questão 42 · Art. 4º, § 1º, Lei 9.882/99",
+        "devices": [
+          "9882|4|p1||"
+        ],
+        "keptIds": [
+          "cpc-lei-9882-pdf68-q047"
+        ]
+      },
+      {
+        "id": "cpc-lei-9882-pdf68-q050",
+        "source": "68.pdf · questão 50 · Art. 4º, § 1º, Lei 9.882/99",
+        "devices": [
+          "9882|4|p1||"
+        ],
+        "keptIds": [
+          "cpc-lei-9882-pdf68-q047"
+        ]
+      },
+      {
+        "id": "cpc-lei-13300-pdf27-q011",
+        "source": "27.pdf · questão 11 · Art. 2º, § único, Lei 13.300/2016",
+        "devices": [
+          "13300|2|unico||"
+        ],
+        "keptIds": [
+          "cpc-lei-13300-pdf27-q010"
+        ]
+      },
+      {
+        "id": "cpc-lei-9307-pdf62-q002",
+        "source": "62.pdf · questão 2 · Art. 1º, Lei 9.307/1996",
+        "devices": [
+          "9307|1|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-9307-pdf62-q001"
+        ]
+      },
+      {
+        "id": "cpc-lei-4717-pdf39-q008",
+        "source": "39.pdf · questão 8 · Art. 1º, § 3º, Lei 4.717/65",
+        "devices": [
+          "4717|1|p3||"
+        ],
+        "keptIds": [
+          "cpc-lei-4717-pdf39-q014"
+        ]
+      },
+      {
+        "id": "cpc-lei-4717-pdf39-q012",
+        "source": "39.pdf · questão 12 · Art. 1º, § 3º, Lei 4.717/65",
+        "devices": [
+          "4717|1|p3||"
+        ],
+        "keptIds": [
+          "cpc-lei-4717-pdf39-q014"
+        ]
+      },
+      {
+        "id": "cpc-lei-7347-pdf47-q047",
+        "source": "47.pdf · questão 47 · Art. 5º, § 1º, Lei 7.347/85",
+        "devices": [
+          "7347|5|p1||"
+        ],
+        "keptIds": [
+          "cpc-lei-7347-pdf47-q048"
+        ]
+      },
+      {
+        "id": "cpc-lei-7347-pdf47-q046",
+        "source": "47.pdf · questão 46 · Art. 5º, § 1º, Lei 7.347/85",
+        "devices": [
+          "7347|5|p1||"
+        ],
+        "keptIds": [
+          "cpc-lei-7347-pdf47-q048"
+        ]
+      },
+      {
+        "id": "cpc-lei-13300-pdf27-q037",
+        "source": "27.pdf · questão 37 · Art. 9º, Lei 13.300/2016",
+        "devices": [
+          "13300|9|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-13300-pdf27-q040"
+        ]
+      },
+      {
+        "id": "cpc-lei-13300-pdf27-q039",
+        "source": "27.pdf · questão 39 · Art. 9º, Lei 13.300/2016",
+        "devices": [
+          "13300|9|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-13300-pdf27-q040"
+        ]
+      },
+      {
+        "id": "cpc-lei-9868-pdf67-q048",
+        "source": "67.pdf · questão 48 · Art. 5º, Lei 9.868/99",
+        "devices": [
+          "9868|5|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-9868-pdf67-q009"
+        ]
+      },
+      {
+        "id": "cpc-lei-9868-pdf67-q049",
+        "source": "67.pdf · questão 49 · Art. 5º, Lei 9.868/99",
+        "devices": [
+          "9868|5|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-9868-pdf67-q009"
+        ]
+      },
+      {
+        "id": "cpc-lei-9507-pdf64-q004",
+        "source": "64.pdf · questão 4 · Art. 8º, Lei 9.507/97",
+        "devices": [
+          "9507|8|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-9507-pdf64-q005"
+        ]
+      },
+      {
+        "id": "cpc-lei-9507-pdf64-q022",
+        "source": "64.pdf · questão 22 · Art. 19, Lei 9.507/97",
+        "devices": [
+          "9507|19|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-9507-pdf64-q021"
+        ]
+      },
+      {
+        "id": "cpc-lei-13300-pdf27-q020",
+        "source": "27.pdf · questão 20 · Art. 4º, § 2º, Lei 13.300/2016",
+        "devices": [
+          "13300|4|p2||"
+        ],
+        "keptIds": [
+          "cpc-lei-13300-pdf27-q021"
+        ]
+      },
+      {
+        "id": "cpc-lei-13300-pdf27-q015",
+        "source": "27.pdf · questão 15 · Art. 3º, Lei 13.300/2016",
+        "devices": [
+          "13300|3|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-13300-pdf27-q013"
+        ]
+      },
+      {
+        "id": "cpc-lei-4717-pdf39-q044",
+        "source": "39.pdf · questão 44 · Art. 6°, § 3°, Lei 4.717/65",
+        "devices": [
+          "4717|6|p3||"
+        ],
+        "keptIds": [
+          "cpc-lei-4717-pdf39-q045"
+        ]
+      },
+      {
+        "id": "cpc-lei-12016-pdf19-q007",
+        "source": "19.pdf · questão 7 · Art. 1º, § 2º, Lei 12.016/2009",
+        "devices": [
+          "12016|1|p2||"
+        ],
+        "keptIds": [
+          "cpc-lei-12016-pdf19-q011"
+        ]
+      },
+      {
+        "id": "cpc-lei-13300-pdf27-q048",
+        "source": "27.pdf · questão 48 · Art. 9º, § 1º, Lei 13.300/2016",
+        "devices": [
+          "13300|9|p1||"
+        ],
+        "keptIds": [
+          "cpc-lei-13300-pdf27-q045"
+        ]
+      },
+      {
+        "id": "cpc-lei-9868-pdf67-q005",
+        "source": "67.pdf · questão 5 · Art. 4º, Lei 9.868/99",
+        "devices": [
+          "9868|4|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-9868-pdf67-q027"
+        ]
+      },
+      {
+        "id": "cpc-lei-9868-pdf67-q013",
+        "source": "67.pdf · questão 13 · Art. 8º, Lei 9.868/99",
+        "devices": [
+          "9868|8|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-9868-pdf67-q015"
+        ]
+      },
+      {
+        "id": "cpc-lei-7347-pdf47-q023",
+        "source": "47.pdf · questão 23 · Art. 2º, Lei 7.347/85",
+        "devices": [
+          "7347|2|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-7347-pdf47-q018"
+        ]
+      },
+      {
+        "id": "cpc-lei-9507-pdf64-q017",
+        "source": "64.pdf · questão 17 · Art. 15, § único, Lei 9.507/97",
+        "devices": [
+          "9507|15|unico||"
+        ],
+        "keptIds": [
+          "cpc-lei-9507-pdf64-q016"
+        ]
+      },
+      {
+        "id": "cpc-lei-7347-pdf47-q020",
+        "source": "47.pdf · questão 20 · Art. 2º, Lei 7.347/85",
+        "devices": [
+          "7347|2|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-7347-pdf47-q018"
+        ]
+      },
+      {
+        "id": "cpc-lei-9307-pdf62-q023",
+        "source": "62.pdf · questão 23 · Art. 1º, § 1º, Lei 9.307/96",
+        "devices": [
+          "9307|1|p1||"
+        ],
+        "keptIds": [
+          "cpc-lei-9307-pdf62-q035"
+        ]
+      },
+      {
+        "id": "cpc-lei-9307-pdf62-q007",
+        "source": "62.pdf · questão 7 · Art. 1º, Lei 9.307/96",
+        "devices": [
+          "9307|1|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-9307-pdf62-q001"
+        ]
+      },
+      {
+        "id": "cpc-lei-4717-pdf39-q010",
+        "source": "39.pdf · questão 10 · Art. 1º, § 3º, Lei 4.717/65",
+        "devices": [
+          "4717|1|p3||"
+        ],
+        "keptIds": [
+          "cpc-lei-4717-pdf39-q014"
+        ]
+      },
+      {
+        "id": "cpc-lei-12016-pdf19-q015",
+        "source": "19.pdf · questão 15 · Art. 1º, § 3º, Lei 12.016/2009",
+        "devices": [
+          "12016|1|p3||"
+        ],
+        "keptIds": [
+          "cpc-lei-12016-pdf19-q012"
+        ]
+      },
+      {
+        "id": "cpc-lei-9307-pdf62-q024",
+        "source": "62.pdf · questão 24 · Art. 2º, § 3º, Lei 9.307/96",
+        "devices": [
+          "9307|2|p3||"
+        ],
+        "keptIds": [
+          "cpc-lei-9307-pdf62-q036"
+        ]
+      },
+      {
+        "id": "cpc-lei-12016-pdf19-q025",
+        "source": "19.pdf · questão 25 · Art. 5º, Lei 12.016/2009",
+        "devices": [
+          "12016|5|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-12016-pdf19-q026"
+        ]
+      },
+      {
+        "id": "cpc-lei-4717-pdf39-q023",
+        "source": "39.pdf · questão 23 · Art. 2º, § único, Lei 4.717/65",
+        "devices": [
+          "4717|2|unico||"
+        ],
+        "keptIds": [
+          "cpc-lei-4717-pdf39-q022"
+        ]
+      },
+      {
+        "id": "cpc-lei-7347-pdf47-q001",
+        "source": "47.pdf · questão 1 · Art. 1º, Lei 7.347/85",
+        "devices": [
+          "7347|1|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-7347-pdf47-q003"
+        ]
+      },
+      {
+        "id": "cpc-lei-13300-pdf27-q014",
+        "source": "27.pdf · questão 14 · Art. 3º, Lei 13.300/2016",
+        "devices": [
+          "13300|3|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-13300-pdf27-q013"
+        ]
+      },
+      {
+        "id": "cpc-lei-13300-pdf27-q016",
+        "source": "27.pdf · questão 16 · Art. 3º, Lei 13.300/2016",
+        "devices": [
+          "13300|3|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-13300-pdf27-q013"
+        ]
+      },
+      {
+        "id": "cpc-lei-4717-pdf39-q026",
+        "source": "39.pdf · questão 26 · Art. 2º, § único, \"b\", Lei 4.717/65",
+        "devices": [
+          "4717|2|unico||b"
+        ],
+        "keptIds": [
+          "cpc-lei-4717-pdf39-q025"
+        ]
+      },
+      {
+        "id": "cpc-lei-4717-pdf39-q027",
+        "source": "39.pdf · questão 27 · Art. 2º, § único, \"c\", Lei 4.717/65",
+        "devices": [
+          "4717|2|unico||"
+        ],
+        "keptIds": [
+          "cpc-lei-4717-pdf39-q022"
+        ]
+      },
+      {
+        "id": "cpc-lei-9307-pdf62-q026",
+        "source": "62.pdf · questão 26 · Art. 2º, § 1º, Lei 9.307/96",
+        "devices": [
+          "9307|2|p1||"
+        ],
+        "keptIds": [
+          "cpc-lei-9307-pdf62-q006"
+        ]
+      },
+      {
+        "id": "cpc-lei-9307-pdf62-q025",
+        "source": "62.pdf · questão 25 · Art. 1º, § 1º, Lei 9.307/96",
+        "devices": [
+          "9307|1|p1||"
+        ],
+        "keptIds": [
+          "cpc-lei-9307-pdf62-q035"
+        ]
+      },
+      {
+        "id": "cpc-lei-9307-pdf62-q029",
+        "source": "62.pdf · questão 29 · Art. 1º, § 1º, Lei 9.307/96",
+        "devices": [
+          "9307|1|p1||"
+        ],
+        "keptIds": [
+          "cpc-lei-9307-pdf62-q035"
+        ]
+      },
+      {
+        "id": "cpc-lei-9307-pdf62-q028",
+        "source": "62.pdf · questão 28 · Art. 2º, § 3º, Lei 9.307/96",
+        "devices": [
+          "9307|2|p3||"
+        ],
+        "keptIds": [
+          "cpc-lei-9307-pdf62-q036"
+        ]
+      },
+      {
+        "id": "cpc-lei-9307-pdf62-q027",
+        "source": "62.pdf · questão 27 · Art. 2º, Lei 9.307/96",
+        "devices": [
+          "9307|2|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-9307-pdf62-q005"
+        ]
+      },
+      {
+        "id": "cpc-lei-7347-pdf47-q027",
+        "source": "47.pdf · questão 27 · Art. 3º, Lei 7.347/85",
+        "devices": [
+          "7347|3|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-7347-pdf47-q028"
+        ]
+      },
+      {
+        "id": "cpc-lei-12016-pdf19-q004",
+        "source": "19.pdf · questão 4 · Art. 1º, § 1º, Lei 12.016/2009",
+        "devices": [
+          "12016|1|p1||"
+        ],
+        "keptIds": [
+          "cpc-lei-12016-pdf19-q003"
+        ]
+      },
+      {
+        "id": "cpc-lei-12016-pdf19-q017",
+        "source": "19.pdf · questão 17 · Art. 3º, Lei 12.016/2009",
+        "devices": [
+          "12016|3|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-12016-pdf19-q019"
+        ]
+      },
+      {
+        "id": "cpc-lei-12016-pdf19-q008",
+        "source": "19.pdf · questão 8 · Art. 1º, § 2º, Lei 12.016/2009",
+        "devices": [
+          "12016|1|p2||"
+        ],
+        "keptIds": [
+          "cpc-lei-12016-pdf19-q011"
+        ]
+      },
+      {
+        "id": "cpc-lei-11419-pdf16-q023",
+        "source": "16.pdf · questão 23 · Art. 9º, Lei 11.419/2006",
+        "devices": [
+          "11419|9|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-11419-pdf16-q024"
+        ]
+      },
+      {
+        "id": "cpc-lei-4717-pdf39-q004",
+        "source": "39.pdf · questão 4 · Art. 1º, Lei 4.717/65",
+        "devices": [
+          "4717|1|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-4717-pdf39-q002"
+        ]
+      },
+      {
+        "id": "cpc-lei-4717-pdf39-q043",
+        "source": "39.pdf · questão 43 · Art. 6º, § 3º, Lei 4.717/65",
+        "devices": [
+          "4717|6|p3||"
+        ],
+        "keptIds": [
+          "cpc-lei-4717-pdf39-q045"
+        ]
+      },
+      {
+        "id": "cpc-lei-4717-pdf39-q050",
+        "source": "39.pdf · questão 50 · Art. 6º, § 4º, Lei 4.717/65",
+        "devices": [
+          "4717|6|p4||"
+        ],
+        "keptIds": [
+          "cpc-lei-4717-pdf39-q048"
+        ]
+      },
+      {
+        "id": "cpc-lei-4717-pdf39-q021",
+        "source": "39.pdf · questão 21 · Art. 2º, Lei 4.717/65",
+        "devices": [
+          "4717|2|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-4717-pdf39-q028"
+        ]
+      },
+      {
+        "id": "cpc-lei-11419-pdf16-q005",
+        "source": "16.pdf · questão 5 · Art. 3º, § único, Lei 11.419/2006",
+        "devices": [
+          "11419|3|unico||"
+        ],
+        "keptIds": [
+          "cpc-lei-11419-pdf16-q006"
+        ]
+      },
+      {
+        "id": "cpc-lei-11419-pdf16-q007",
+        "source": "16.pdf · questão 7 · Art. 3º, § único, Lei 11.419/2006",
+        "devices": [
+          "11419|3|unico||"
+        ],
+        "keptIds": [
+          "cpc-lei-11419-pdf16-q006"
+        ]
+      },
+      {
+        "id": "cpc-lei-11419-pdf16-q004",
+        "source": "16.pdf · questão 4 · Art. 3º, Lei 11.419/2006",
+        "devices": [
+          "11419|3|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-11419-pdf16-q003"
+        ]
+      },
+      {
+        "id": "cpc-lei-11419-pdf16-q008",
+        "source": "16.pdf · questão 8 · Art. 4º, § 3º, Lei 11.419/2006",
+        "devices": [
+          "11419|4|p3||"
+        ],
+        "keptIds": [
+          "cpc-lei-11419-pdf16-q009"
+        ]
+      },
+      {
+        "id": "cpc-lei-4717-pdf39-q035",
+        "source": "39.pdf · questão 35 · Art. 5º, § 4º Lei 4.717/65",
+        "devices": [
+          "4717|5|p4||"
+        ],
+        "keptIds": [
+          "cpc-lei-4717-pdf39-q036"
+        ]
+      },
+      {
+        "id": "cpc-lei-7347-pdf47-q015",
+        "source": "47.pdf · questão 15 · Art. 1º, § único, Lei 7.347/85",
+        "devices": [
+          "7347|1|unico||"
+        ],
+        "keptIds": [
+          "cpc-lei-7347-pdf47-q006"
+        ]
+      },
+      {
+        "id": "cpc-lei-13300-pdf27-q005",
+        "source": "27.pdf · questão 5 · Art. 2º, Lei 13.300/2016 c/c Art. 37, CF",
+        "devices": [
+          "13300|2|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-13300-pdf27-q008"
+        ]
+      },
+      {
+        "id": "cpc-lei-7347-pdf47-q030",
+        "source": "47.pdf · questão 30 · Art. 4º, Lei 7.347/85",
+        "devices": [
+          "7347|4|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-7347-pdf47-q032"
+        ]
+      },
+      {
+        "id": "cpc-lei-7347-pdf47-q025",
+        "source": "47.pdf · questão 25 · Art. 2º, § único, Lei 7.347/85",
+        "devices": [
+          "7347|2|unico||"
+        ],
+        "keptIds": [
+          "cpc-lei-7347-pdf47-q024"
+        ]
+      },
+      {
+        "id": "cpc-lei-9307-pdf62-q032",
+        "source": "62.pdf · questão 32 · Art. 1º, § 1º, Lei 9.307/96",
+        "devices": [
+          "9307|1|p1||"
+        ],
+        "keptIds": [
+          "cpc-lei-9307-pdf62-q035"
+        ]
+      },
+      {
+        "id": "cpc-lei-9307-pdf62-q030",
+        "source": "62.pdf · questão 30 · Art. 1º, Lei 9.307/96",
+        "devices": [
+          "9307|1|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-9307-pdf62-q001"
+        ]
+      },
+      {
+        "id": "cpc-lei-9307-pdf62-q031",
+        "source": "62.pdf · questão 31 · Art. 2º, Lei 9.307/96",
+        "devices": [
+          "9307|2|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-9307-pdf62-q005"
+        ]
+      },
+      {
+        "id": "cpc-lei-9307-pdf62-q033",
+        "source": "62.pdf · questão 33 · Art. 1º, Lei 9.307/96",
+        "devices": [
+          "9307|1|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-9307-pdf62-q001"
+        ]
+      },
+      {
+        "id": "cpc-lei-12016-pdf19-q013",
+        "source": "19.pdf · questão 13 · Art. 1º, § 3º, Lei 12.016/2009",
+        "devices": [
+          "12016|1|p3||"
+        ],
+        "keptIds": [
+          "cpc-lei-12016-pdf19-q012"
+        ]
+      },
+      {
+        "id": "cpc-lei-9307-pdf62-q034",
+        "source": "62.pdf · questão 34 · Art. 1º, § 1º, Lei 9.307/96",
+        "devices": [
+          "9307|1|p1||"
+        ],
+        "keptIds": [
+          "cpc-lei-9307-pdf62-q035"
+        ]
+      },
+      {
+        "id": "cpc-lei-4717-pdf39-q005",
+        "source": "39.pdf · questão 5 · Art. 1º, Lei 4.717/65",
+        "devices": [
+          "4717|1|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-4717-pdf39-q002"
+        ]
+      },
+      {
+        "id": "cpc-lei-4717-pdf39-q041",
+        "source": "39.pdf · questão 41 · Art. 6º, § 1º, Lei 4.717/65",
+        "devices": [
+          "4717|6|p1||"
+        ],
+        "keptIds": [
+          "cpc-lei-4717-pdf39-q042"
+        ]
+      },
+      {
+        "id": "cpc-lei-4717-pdf39-q037",
+        "source": "39.pdf · questão 37 · Art. 6º, Lei 4.717/65",
+        "devices": [
+          "4717|6|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-4717-pdf39-q039"
+        ]
+      },
+      {
+        "id": "cpc-lei-7347-pdf47-q014",
+        "source": "47.pdf · questão 14 · Art. 1º, § único, Lei 7.347/85",
+        "devices": [
+          "7347|1|unico||"
+        ],
+        "keptIds": [
+          "cpc-lei-7347-pdf47-q006"
+        ]
+      },
+      {
+        "id": "cpc-lei-7347-pdf47-q016",
+        "source": "47.pdf · questão 16 · Art. 2º, Lei 7.347/85",
+        "devices": [
+          "7347|2|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-7347-pdf47-q018"
+        ]
+      },
+      {
+        "id": "cpc-lei-9868-pdf67-q006",
+        "source": "67.pdf · questão 6 · Art. 4º, § único, Lei 9.868/99",
+        "devices": [
+          "9868|4|unico||"
+        ],
+        "keptIds": [
+          "cpc-lei-9868-pdf67-q030"
+        ]
+      },
+      {
+        "id": "cpc-lei-7347-pdf47-q004",
+        "source": "47.pdf · questão 4 · Arts. 1º e 21, Lei 7.347/85",
+        "devices": [
+          "7347|1|caput||",
+          "7347|21|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-7347-pdf47-q003"
+        ]
+      },
+      {
+        "id": "cpc-lei-4717-pdf39-q017",
+        "source": "39.pdf · questão 17 · Art. 1º, §§ 6º e 7º, Lei 4.717/65",
+        "devices": [
+          "4717|1|p6||",
+          "4717|1|p7||"
+        ],
+        "keptIds": [
+          "cpc-lei-4717-pdf39-q018"
+        ]
+      },
+      {
+        "id": "cpc-lei-13300-pdf27-q042",
+        "source": "27.pdf · questão 42 · Art. 9º c/c Art. 13, Lei 13.300/2016",
+        "devices": [
+          "13300|9|caput||",
+          "13300|13|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-13300-pdf27-q040"
+        ]
+      },
+      {
+        "id": "cpc-lei-9307-pdf62-q043",
+        "source": "62.pdf · questão 43 · Arts. 4º e 9º, Lei 9.307/96",
+        "devices": [
+          "9307|4|caput||",
+          "9307|9|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-9307-pdf62-q038"
+        ]
+      },
+      {
+        "id": "cpc-lei-9307-pdf62-q008",
+        "source": "62.pdf · questão 8 · Art. 2º, § 3º c/c Art. 22-C, § único, Lei 9.307/96",
+        "devices": [
+          "9307|2|p3||",
+          "9307|22-C|unico||"
+        ],
+        "keptIds": [
+          "cpc-lei-9307-pdf62-q036"
+        ]
+      },
+      {
+        "id": "cpc-lei-12016-pdf19-q033",
+        "source": "19.pdf · questão 33 · Art. 5º, I, II, III, Lei 12.016/2009",
+        "devices": [
+          "12016|5|caput|I|",
+          "12016|5|caput|II|",
+          "12016|5|caput|III|"
+        ],
+        "keptIds": [
+          "cpc-lei-12016-pdf19-q027",
+          "cpc-lei-12016-pdf19-q038",
+          "cpc-lei-12016-pdf19-q041"
+        ]
+      },
+      {
+        "id": "cpc-lei-12016-pdf19-q037",
+        "source": "19.pdf · questão 37 · Art. 5º, II, III, Lei 12.016/2009",
+        "devices": [
+          "12016|5|caput|II|",
+          "12016|5|caput|III|"
+        ],
+        "keptIds": [
+          "cpc-lei-12016-pdf19-q038",
+          "cpc-lei-12016-pdf19-q041"
+        ]
+      },
+      {
+        "id": "cpc-lei-13300-pdf27-q012",
+        "source": "27.pdf · questão 12 · Arts. 2°, 3° e 8°, II e § único, Lei 13.300/2016 c/c Art. 102, I, q, CF",
+        "devices": [
+          "13300|2|caput||",
+          "13300|3|caput||",
+          "13300|8|caput|II|",
+          "13300|8|unico||"
+        ],
+        "keptIds": [
+          "cpc-lei-13300-pdf27-q008",
+          "cpc-lei-13300-pdf27-q013",
+          "cpc-lei-13300-pdf27-q032",
+          "cpc-lei-13300-pdf27-q035"
+        ]
+      },
+      {
+        "id": "cpc-lei-13300-pdf27-q003",
+        "source": "27.pdf · questão 3 · Art. 102, I, q, CF c/c Arts. 2º e 12, III, Lei 13.300/2016",
+        "devices": [
+          "cf|102|caput|I|q",
+          "13300|2|caput||",
+          "13300|12|caput|III|"
+        ],
+        "keptIds": [
+          "cpc-lei-13300-pdf27-q008"
+        ]
+      },
+      {
+        "id": "cpc-lei-9307-pdf62-q016",
+        "source": "62.pdf · questão 16 · Art. 2º, § 3º c/c Art. 18 c/c Art. 31, Lei 9.307/96",
+        "devices": [
+          "9307|2|p3||",
+          "9307|18|caput||",
+          "9307|31|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-9307-pdf62-q036"
+        ]
+      },
+      {
+        "id": "cpc-lei-13300-pdf27-q041",
+        "source": "27.pdf · questão 41 · Art. 9º, caput e §§ 1º e 2º, Lei 13.300/2016",
+        "devices": [
+          "13300|9|caput||",
+          "13300|9|p1||",
+          "13300|9|p2||"
+        ],
+        "keptIds": [
+          "cpc-lei-13300-pdf27-q040",
+          "cpc-lei-13300-pdf27-q045"
+        ]
+      },
+      {
+        "id": "cpc-lei-7347-pdf47-q013",
+        "source": "47.pdf · questão 13 · Arts. 1º, VIII e 5º, I, Lei 7.347/85",
+        "devices": [
+          "7347|1|caput|VIII|",
+          "7347|1|caput|I|"
+        ],
+        "keptIds": [
+          "cpc-lei-7347-pdf47-q012"
+        ]
+      },
+      {
+        "id": "cpc-lei-9507-pdf64-q009",
+        "source": "64.pdf · questão 9 · Arts. 9º e 10, Lei 9.507/97",
+        "devices": [
+          "9507|9|caput||",
+          "9507|10|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-9507-pdf64-q008",
+          "cpc-lei-9507-pdf64-q010"
+        ]
+      },
+      {
+        "id": "cpc-lei-4717-pdf39-q016",
+        "source": "39.pdf · questão 16 · Art. 1º, §§ 4º e 6º, Lei 4.717/65",
+        "devices": [
+          "4717|1|p4||",
+          "4717|1|p6||"
+        ],
+        "keptIds": [
+          "cpc-lei-4717-pdf39-q015"
+        ]
+      },
+      {
+        "id": "cpc-lei-9868-pdf67-q050",
+        "source": "67.pdf · questão 50 · Art. 11, § 1º e § 2º, Lei 9.868/99",
+        "devices": [
+          "9868|11|p1||",
+          "9868|11|p2||"
+        ],
+        "keptIds": [
+          "cpc-lei-9868-pdf67-q031",
+          "cpc-lei-9868-pdf67-q025"
+        ]
+      },
+      {
+        "id": "cpc-lei-13300-pdf27-q034",
+        "source": "27.pdf · questão 34 · Arts. 8º, II e 11, Lei 13.300/2016",
+        "devices": [
+          "13300|8|caput|II|",
+          "13300|11|caput||"
+        ],
+        "keptIds": [
+          "cpc-lei-13300-pdf27-q032"
+        ]
+      }
+    ],
+    "removedCount": 254
+  },
+  "missingSources": [],
+  "scope": "Importação dos PDFs fornecidos, sem afirmar cobertura integral ou atualização legislativa."
+}

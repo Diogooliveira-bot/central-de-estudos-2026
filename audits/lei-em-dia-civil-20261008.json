@@ -1,0 +1,2851 @@
+{
+  "discipline": "civil",
+  "baseQuestions": 1056,
+  "sources": [
+    {
+      "pdf": "62.pdf",
+      "law": "Lei 9.307/1996",
+      "title": "Arbitragem",
+      "questionHeaders": 50,
+      "explicitAnswers": 50,
+      "imported": 17,
+      "url": "https://drive.google.com/file/d/1VD_5p3zfqSU0ktUbiVEIu6r7EHsKmIXG/view?usp=drivesdk"
+    },
+    {
+      "pdf": "26.pdf",
+      "law": "Lei 13.146/2015",
+      "title": "Estatuto da Pessoa com Deficiência",
+      "questionHeaders": 50,
+      "explicitAnswers": 50,
+      "imported": 6,
+      "url": "https://drive.google.com/file/d/1WXzaRW9xR065WMuQKDPMK8evcDI4__l4/view?usp=drivesdk"
+    },
+    {
+      "pdf": "56.pdf",
+      "law": "Lei 8.245/1991",
+      "title": "Inquilinato",
+      "questionHeaders": 50,
+      "explicitAnswers": 49,
+      "imported": 23,
+      "url": "https://drive.google.com/file/d/1cWLiLYxjc8b7nm0fijjbr-Bik3BuX3GQ/view?usp=drivesdk"
+    },
+    {
+      "pdf": "43.pdf",
+      "law": "Lei 6.015/1973",
+      "title": "Registros Públicos",
+      "questionHeaders": 50,
+      "explicitAnswers": 49,
+      "imported": 20,
+      "url": "https://drive.google.com/file/d/1eA9ZUFY0ABanxJba7qPR8xrbAjcwxrA5/view?usp=drivesdk"
+    },
+    {
+      "pdf": "50.pdf",
+      "law": "Lei 8.009/1990",
+      "title": "Bem de Família",
+      "questionHeaders": 26,
+      "explicitAnswers": 26,
+      "imported": 13,
+      "url": "https://drive.google.com/file/d/1Lafh2sutprOMpQ85m7560EetSjxCeYie/view?usp=drivesdk"
+    },
+    {
+      "pdf": "40.pdf",
+      "law": "Lei 5.478/1968",
+      "title": "Alimentos",
+      "questionHeaders": 25,
+      "explicitAnswers": 25,
+      "imported": 14,
+      "url": "https://drive.google.com/file/d/1TETMdzQtRZsoGCMhkKSfDFBQvTobEEIz/view?usp=drivesdk"
+    },
+    {
+      "pdf": "18.pdf",
+      "law": "Lei 11.804/2008",
+      "title": "Alimentos Gravídicos",
+      "questionHeaders": 25,
+      "explicitAnswers": 25,
+      "imported": 5,
+      "url": "https://drive.google.com/file/d/1WwxwoXFmgyfis6bULnwmXh4ZcaMBZwR9/view?usp=drivesdk"
+    },
+    {
+      "pdf": "45.pdf",
+      "law": "Lei 6.404/1976",
+      "title": "Sociedades por Ações",
+      "questionHeaders": 50,
+      "explicitAnswers": 50,
+      "imported": 13,
+      "url": "https://drive.google.com/file/d/1_QKXf_IRuVsQPvUms_3OJWcmlhId4Xj4/view?usp=drivesdk"
+    },
+    {
+      "pdf": "30.pdf",
+      "law": "Lei 13.465/2017",
+      "title": "Regularização Fundiária",
+      "questionHeaders": 50,
+      "explicitAnswers": 50,
+      "imported": 30,
+      "url": "https://drive.google.com/file/d/1g8qaKuBZ4Q5hh6PQ8Y4ka2lSH5js3gfO/view?usp=drivesdk"
+    },
+    {
+      "pdf": "37.pdf",
+      "law": "Lei 14.711/2023",
+      "title": "Marco Legal das Garantias",
+      "questionHeaders": 4,
+      "explicitAnswers": 4,
+      "imported": 4,
+      "url": "https://drive.google.com/file/d/1kV8J2SKoYO5uq5HQjTqOjoHstDlj_MAo/view?usp=drivesdk"
+    }
+  ],
+  "duplicates": [
+    {
+      "source": "62.pdf · questão 19 · Art. 1º, § 2º, Lei 9.307/96",
+      "keptId": "civ-lei-9307-pdf62-q014"
+    },
+    {
+      "source": "62.pdf · questão 20 · Art. 1º, § 1º, Lei 9.307/96",
+      "keptId": "civ-lei-9307-pdf62-q015"
+    },
+    {
+      "source": "62.pdf · questão 45 · Art. 4º, § 1º, Lei 9.307/96",
+      "keptId": "civ-lei-9307-pdf62-q044"
+    },
+    {
+      "source": "26.pdf · questão 21 · Art. 2º, EPD",
+      "keptId": "civ-lei-13146-pdf26-q015"
+    },
+    {
+      "source": "43.pdf · questão 11 · Art. 3º, § 2º, Lei 6.015/73",
+      "keptId": "civ-lei-6015-pdf43-q010"
+    },
+    {
+      "source": "43.pdf · questão 15 · Art. 4º, § único, Lei 6.015/73",
+      "keptId": "civ-lei-6015-pdf43-q014"
+    },
+    {
+      "source": "43.pdf · questão 16 · Art. 4º, § único, Lei 6.015/1973",
+      "keptId": "civ-lei-6015-pdf43-q014"
+    },
+    {
+      "source": "43.pdf · questão 24 · Art. 7º, Lei 6.015/73",
+      "keptId": "civ-lei-6015-pdf43-q023"
+    },
+    {
+      "source": "43.pdf · questão 25 · Art. 7º, Lei 6.015/73",
+      "keptId": "civ-lei-6015-pdf43-q023"
+    },
+    {
+      "source": "43.pdf · questão 38 · Art. 9º, Lei 6.015/73",
+      "keptId": "civ-lei-6015-pdf43-q034"
+    },
+    {
+      "source": "40.pdf · questão 7 · Art. 4º, Lei 5.478/68",
+      "keptId": "civ-lei-5478-pdf40-q001"
+    },
+    {
+      "source": "18.pdf · questão 13 · Art. 2º, caput e parágrafo único, Lei 11.804/2008",
+      "keptId": "civ-lei-11804-pdf18-q005"
+    },
+    {
+      "source": "45.pdf · questão 29 · Art. 4º, Lei 6.404/76",
+      "keptId": "civ-lei-6404-pdf45-q028"
+    },
+    {
+      "source": "30.pdf · questão 4 · Arts. 9º e 11, II, Lei 13.465/2017",
+      "keptId": "civ-lei-13465-pdf30-q003"
+    },
+    {
+      "source": "30.pdf · questão 41 · Art. 18, § 1º, Lei 13.465/2017",
+      "keptId": "civ-lei-13465-pdf30-q040"
+    }
+  ],
+  "excluded": [
+    {
+      "source": "56.pdf · questão 12 · Art. 8º, Lei 8.245/91",
+      "reason": "Sem gabarito explícito"
+    },
+    {
+      "source": "43.pdf · questão 3 · Art. 1º, Lei 6.015/73",
+      "reason": "Sem gabarito explícito"
+    }
+  ],
+  "answerConflicts": [],
+  "addedQuestions": 145,
+  "beforeDeviceReview": 363,
+  "deviceReview": {
+    "rule": "Uma questão por dispositivo; incisos, parágrafos e alíneas distintos preservados. Prioridade a referências individuais e provas mais recentes.",
+    "retained": {
+      "civ-lei-9307-pdf62-q001": [
+        "9307|1|caput||"
+      ],
+      "civ-lei-9307-pdf62-q005": [
+        "9307|2|caput||"
+      ],
+      "civ-lei-9307-pdf62-q006": [
+        "9307|2|p1||"
+      ],
+      "civ-lei-9307-pdf62-q011": [
+        "9307|1|p2||"
+      ],
+      "civ-lei-9307-pdf62-q035": [
+        "9307|1|p1||"
+      ],
+      "civ-lei-9307-pdf62-q036": [
+        "9307|2|p3||"
+      ],
+      "civ-lei-9307-pdf62-q037": [
+        "9307|2|p2||"
+      ],
+      "civ-lei-9307-pdf62-q038": [
+        "9307|4|caput||"
+      ],
+      "civ-lei-9307-pdf62-q039": [
+        "9307|4|p2||"
+      ],
+      "civ-lei-9307-pdf62-q041": [
+        "9307|10|caput||"
+      ],
+      "civ-lei-9307-pdf62-q042": [
+        "9307|7|p6||"
+      ],
+      "civ-lei-9307-pdf62-q044": [
+        "9307|4|p1||"
+      ],
+      "civ-lei-9307-pdf62-q046": [
+        "9307|11|caput|II|"
+      ],
+      "civ-lei-9307-pdf62-q047": [
+        "9307|10|caput|IV|"
+      ],
+      "civ-lei-9307-pdf62-q048": [
+        "9307|10|caput|II|"
+      ],
+      "civ-lei-9307-pdf62-q049": [
+        "9307|10|caput|III|"
+      ],
+      "civ-lei-9307-pdf62-q050": [
+        "9307|10|caput|I|"
+      ],
+      "civ-lei-13146-pdf26-q001": [
+        "13146|1|caput||"
+      ],
+      "civ-lei-13146-pdf26-q002": [
+        "13146|1|unico||"
+      ],
+      "civ-lei-13146-pdf26-q016": [
+        "13146|2|caput||"
+      ],
+      "civ-lei-13146-pdf26-q023": [
+        "13146|2|p1||"
+      ],
+      "civ-lei-13146-pdf26-q037": [
+        "13146|2|p1|I|"
+      ],
+      "civ-lei-13146-pdf26-q041": [
+        "13146|2|p1|II|"
+      ],
+      "civ-lei-8245-pdf56-q004": [
+        "8245|3|unico||"
+      ],
+      "civ-lei-8245-pdf56-q005": [
+        "8245|3|caput||"
+      ],
+      "civ-lei-8245-pdf56-q007": [
+        "8245|4|caput||"
+      ],
+      "civ-lei-8245-pdf56-q008": [
+        "8245|4|unico||"
+      ],
+      "civ-lei-8245-pdf56-q010": [
+        "8245|6|unico||"
+      ],
+      "civ-lei-8245-pdf56-q017": [
+        "8245|11|caput|I|"
+      ],
+      "civ-lei-8245-pdf56-q020": [
+        "8245|37|caput|IV|"
+      ],
+      "civ-lei-8245-pdf56-q021": [
+        "8245|11|caput||"
+      ],
+      "civ-lei-8245-pdf56-q022": [
+        "8245|10|caput||"
+      ],
+      "civ-lei-8245-pdf56-q023": [
+        "8245|2|caput||"
+      ],
+      "civ-lei-8245-pdf56-q025": [
+        "8245|5|caput||"
+      ],
+      "civ-lei-8245-pdf56-q026": [
+        "8245|7|caput||"
+      ],
+      "civ-lei-8245-pdf56-q028": [
+        "8245|12|caput||"
+      ],
+      "civ-lei-8245-pdf56-q029": [
+        "8245|9|caput|I|a",
+        "8245|9|caput|II|a",
+        "8245|9|caput|III|a",
+        "8245|9|caput|IV|a"
+      ],
+      "civ-lei-8245-pdf56-q030": [
+        "8245|6|caput||"
+      ],
+      "civ-lei-8245-pdf56-q031": [
+        "8245|8|caput||"
+      ],
+      "civ-lei-8245-pdf56-q032": [
+        "8245|13|caput||"
+      ],
+      "civ-lei-8245-pdf56-q033": [
+        "8245|1|unico||a"
+      ],
+      "civ-lei-8245-pdf56-q042": [
+        "8245|5|unico||"
+      ],
+      "civ-lei-8245-pdf56-q045": [
+        "8245|9|caput|IV|",
+        "8245|53|caput|I|"
+      ],
+      "civ-lei-8245-pdf56-q046": [
+        "8245|9|caput|III|",
+        "8245|9|caput|I|"
+      ],
+      "civ-lei-8245-pdf56-q048": [
+        "8245|12|p2||"
+      ],
+      "civ-lei-8245-pdf56-q050": [
+        "8245|16|caput||",
+        "8245|59|p2||"
+      ],
+      "civ-lei-6015-pdf43-q001": [
+        "6015|1|caput||"
+      ],
+      "civ-lei-6015-pdf43-q005": [
+        "6015|1|p1||"
+      ],
+      "civ-lei-6015-pdf43-q006": [
+        "6015|1|p3|I|"
+      ],
+      "civ-lei-6015-pdf43-q007": [
+        "6015|3|caput||"
+      ],
+      "civ-lei-6015-pdf43-q009": [
+        "6015|3|p1||"
+      ],
+      "civ-lei-6015-pdf43-q010": [
+        "6015|3|p2||"
+      ],
+      "civ-lei-6015-pdf43-q012": [
+        "6015|4|caput||"
+      ],
+      "civ-lei-6015-pdf43-q014": [
+        "6015|4|unico||"
+      ],
+      "civ-lei-6015-pdf43-q017": [
+        "6015|5|caput||"
+      ],
+      "civ-lei-6015-pdf43-q022": [
+        "6015|6|caput||"
+      ],
+      "civ-lei-6015-pdf43-q029": [
+        "6015|7|caput||"
+      ],
+      "civ-lei-6015-pdf43-q030": [
+        "6015|8|caput||"
+      ],
+      "civ-lei-6015-pdf43-q032": [
+        "6015|8|unico||"
+      ],
+      "civ-lei-6015-pdf43-q033": [
+        "6015|9|caput||"
+      ],
+      "civ-lei-6015-pdf43-q039": [
+        "6015|9|p1||"
+      ],
+      "civ-lei-6015-pdf43-q040": [
+        "6015|10|caput||"
+      ],
+      "civ-lei-6015-pdf43-q045": [
+        "6015|10|unico||"
+      ],
+      "civ-lei-6015-pdf43-q046": [
+        "6015|11|caput||"
+      ],
+      "civ-lei-6015-pdf43-q047": [
+        "6015|12|caput||"
+      ],
+      "civ-lei-6015-pdf43-q050": [
+        "6015|12|unico||"
+      ],
+      "civ-lei-8009-pdf50-q002": [
+        "8009|1|caput||"
+      ],
+      "civ-lei-8009-pdf50-q003": [
+        "8009|1|unico||"
+      ],
+      "civ-lei-8009-pdf50-q006": [
+        "8009|2|caput||"
+      ],
+      "civ-lei-8009-pdf50-q012": [
+        "8009|3|caput||"
+      ],
+      "civ-lei-8009-pdf50-q013": [
+        "8009|3|caput|III|"
+      ],
+      "civ-lei-8009-pdf50-q015": [
+        "8009|3|caput|IV|"
+      ],
+      "civ-lei-8009-pdf50-q018": [
+        "8009|3|caput|VI|"
+      ],
+      "civ-lei-8009-pdf50-q019": [
+        "8009|3|caput|VII|"
+      ],
+      "civ-lei-8009-pdf50-q021": [
+        "8009|4|caput||"
+      ],
+      "civ-lei-8009-pdf50-q023": [
+        "8009|4|p1||"
+      ],
+      "civ-lei-8009-pdf50-q024": [
+        "8009|4|p2||"
+      ],
+      "civ-lei-8009-pdf50-q025": [
+        "8009|5|caput||"
+      ],
+      "civ-lei-8009-pdf50-q026": [
+        "8009|5|unico||"
+      ],
+      "civ-lei-5478-pdf40-q002": [
+        "5478|4|caput||"
+      ],
+      "civ-lei-5478-pdf40-q004": [
+        "5478|15|caput||"
+      ],
+      "civ-lei-5478-pdf40-q010": [
+        "5478|19|p1||",
+        "5478|19|p2||",
+        "5478|19|p3||"
+      ],
+      "civ-lei-5478-pdf40-q011": [
+        "5478|1|p2||"
+      ],
+      "civ-lei-5478-pdf40-q012": [
+        "5478|7|caput||"
+      ],
+      "civ-lei-5478-pdf40-q014": [
+        "5478|14|caput||"
+      ],
+      "civ-lei-5478-pdf40-q015": [
+        "5478|8|caput||"
+      ],
+      "civ-lei-5478-pdf40-q017": [
+        "5478|5|caput||"
+      ],
+      "civ-lei-5478-pdf40-q018": [
+        "5478|24|caput||"
+      ],
+      "civ-lei-5478-pdf40-q019": [
+        "5478|13|p3||"
+      ],
+      "civ-lei-5478-pdf40-q020": [
+        "5478|6|caput||"
+      ],
+      "civ-lei-5478-pdf40-q021": [
+        "5478|5|p4||"
+      ],
+      "civ-lei-5478-pdf40-q022": [
+        "5478|12|caput||"
+      ],
+      "civ-lei-5478-pdf40-q024": [
+        "5478|13|p2||"
+      ],
+      "civ-lei-11804-pdf18-q007": [
+        "11804|2|caput||"
+      ],
+      "civ-lei-11804-pdf18-q008": [
+        "11804|7|caput||"
+      ],
+      "civ-lei-11804-pdf18-q010": [
+        "11804|6|caput||"
+      ],
+      "civ-lei-11804-pdf18-q012": [
+        "11804|2|unico||"
+      ],
+      "civ-lei-11804-pdf18-q025": [
+        "11804|6|unico||"
+      ],
+      "civ-lei-6404-pdf45-q006": [
+        "6404|1|caput||"
+      ],
+      "civ-lei-6404-pdf45-q015": [
+        "6404|2|caput||"
+      ],
+      "civ-lei-6404-pdf45-q018": [
+        "6404|2|p1||"
+      ],
+      "civ-lei-6404-pdf45-q020": [
+        "6404|2|p3||"
+      ],
+      "civ-lei-6404-pdf45-q023": [
+        "6404|3|caput||"
+      ],
+      "civ-lei-6404-pdf45-q026": [
+        "6404|3|p1||"
+      ],
+      "civ-lei-6404-pdf45-q041": [
+        "6404|4|p4||"
+      ],
+      "civ-lei-6404-pdf45-q042": [
+        "6404|4|p5||"
+      ],
+      "civ-lei-6404-pdf45-q045": [
+        "6404|4|caput||"
+      ],
+      "civ-lei-6404-pdf45-q046": [
+        "6404|4|p1||"
+      ],
+      "civ-lei-6404-pdf45-q047": [
+        "6404|4|p2||"
+      ],
+      "civ-lei-6404-pdf45-q049": [
+        "6404|4|p3||"
+      ],
+      "civ-lei-6404-pdf45-q050": [
+        "6404|5|caput||"
+      ],
+      "civ-lei-13465-pdf30-q001": [
+        "13465|5|caput|I|",
+        "13465|5|caput|II|",
+        "13465|5|caput|III|",
+        "13465|5|caput|IV|",
+        "13465|5|caput|V|"
+      ],
+      "civ-lei-13465-pdf30-q002": [
+        "13465|9|caput||"
+      ],
+      "civ-lei-13465-pdf30-q005": [
+        "13465|9|p1||"
+      ],
+      "civ-lei-13465-pdf30-q006": [
+        "13465|9|p2||"
+      ],
+      "civ-lei-13465-pdf30-q007": [
+        "13465|10|caput|I|"
+      ],
+      "civ-lei-13465-pdf30-q008": [
+        "13465|10|caput|V|"
+      ],
+      "civ-lei-13465-pdf30-q009": [
+        "13465|10|caput|VII|"
+      ],
+      "civ-lei-13465-pdf30-q011": [
+        "13465|10|caput|X|"
+      ],
+      "civ-lei-13465-pdf30-q012": [
+        "13465|10|caput|XII|"
+      ],
+      "civ-lei-13465-pdf30-q013": [
+        "13465|11|caput|II|"
+      ],
+      "civ-lei-13465-pdf30-q016": [
+        "13465|11|caput|III|"
+      ],
+      "civ-lei-13465-pdf30-q019": [
+        "13465|11|caput|VII|"
+      ],
+      "civ-lei-13465-pdf30-q021": [
+        "13465|11|p2||"
+      ],
+      "civ-lei-13465-pdf30-q024": [
+        "13465|13|caput||"
+      ],
+      "civ-lei-13465-pdf30-q026": [
+        "13465|13|caput|I|"
+      ],
+      "civ-lei-13465-pdf30-q028": [
+        "13465|13|caput|II|"
+      ],
+      "civ-lei-13465-pdf30-q030": [
+        "13465|13|p1||"
+      ],
+      "civ-lei-13465-pdf30-q031": [
+        "13465|14|caput||"
+      ],
+      "civ-lei-13465-pdf30-q033": [
+        "13465|14|caput|V|"
+      ],
+      "civ-lei-13465-pdf30-q034": [
+        "13465|14|p3||"
+      ],
+      "civ-lei-13465-pdf30-q035": [
+        "13465|15|caput||"
+      ],
+      "civ-lei-13465-pdf30-q037": [
+        "13465|15|caput|XIII|",
+        "13465|15|caput|XIV|",
+        "13465|15|caput|XV|"
+      ],
+      "civ-lei-13465-pdf30-q039": [
+        "13465|16|unico||"
+      ],
+      "civ-lei-13465-pdf30-q040": [
+        "13465|18|p1||"
+      ],
+      "civ-lei-13465-pdf30-q043": [
+        "13465|18|p2||"
+      ],
+      "civ-lei-13465-pdf30-q045": [
+        "13465|19|p3||"
+      ],
+      "civ-lei-13465-pdf30-q046": [
+        "13465|23|p4||"
+      ],
+      "civ-lei-13465-pdf30-q047": [
+        "13465|25|caput||"
+      ],
+      "civ-lei-13465-pdf30-q049": [
+        "13465|25|p1||"
+      ],
+      "civ-lei-13465-pdf30-q050": [
+        "13465|25|p2||"
+      ],
+      "civ-lei-14711-pdf37-q001": [
+        "14711|9|caput||"
+      ],
+      "civ-lei-14711-pdf37-q002": [
+        "14711|9|p1||"
+      ],
+      "civ-lei-14711-pdf37-q003": [
+        "14711|9|p14||"
+      ],
+      "civ-lei-14711-pdf37-q004": [
+        "14711|9|p15||"
+      ]
+    },
+    "removed": [
+      {
+        "id": "civ-lei-6404-pdf45-q048",
+        "source": "45.pdf · questão 48 · Art. 4º-A, § 2º, Lei 6.404/76",
+        "devices": [
+          "6404|4|p2||"
+        ],
+        "keptIds": [
+          "civ-lei-6404-pdf45-q047"
+        ]
+      },
+      {
+        "id": "civ-lei-8009-pdf50-q017",
+        "source": "50.pdf · questão 17 · Art. 3º, VI, Lei 8.009/90",
+        "devices": [
+          "8009|3|caput|VI|"
+        ],
+        "keptIds": [
+          "civ-lei-8009-pdf50-q018"
+        ]
+      },
+      {
+        "id": "civ-lei-6404-pdf45-q034",
+        "source": "45.pdf · questão 34 · Art. 4º, § 1º, Lei 6.404/76",
+        "devices": [
+          "6404|4|p1||"
+        ],
+        "keptIds": [
+          "civ-lei-6404-pdf45-q046"
+        ]
+      },
+      {
+        "id": "civ-lei-13146-pdf26-q009",
+        "source": "26.pdf · questão 9 · Art. 2º, EPD",
+        "devices": [
+          "13146|2|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-13146-pdf26-q016"
+        ]
+      },
+      {
+        "id": "civ-lei-13465-pdf30-q044",
+        "source": "30.pdf · questão 44 · Art. 18, § 2º, Lei 13.465/2017",
+        "devices": [
+          "13465|18|p2||"
+        ],
+        "keptIds": [
+          "civ-lei-13465-pdf30-q043"
+        ]
+      },
+      {
+        "id": "civ-lei-8009-pdf50-q020",
+        "source": "50.pdf · questão 20 · Art. 3º, VII, Lei 8.009/90",
+        "devices": [
+          "8009|3|caput|VII|"
+        ],
+        "keptIds": [
+          "civ-lei-8009-pdf50-q019"
+        ]
+      },
+      {
+        "id": "civ-lei-8009-pdf50-q022",
+        "source": "50.pdf · questão 22 · Art. 4º, Lei 8.009/90",
+        "devices": [
+          "8009|4|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-8009-pdf50-q021"
+        ]
+      },
+      {
+        "id": "civ-lei-11804-pdf18-q009",
+        "source": "18.pdf · questão 9 · Art. 6º, parágrafo único, 11.804/2008",
+        "devices": [
+          "11804|6|unico||"
+        ],
+        "keptIds": [
+          "civ-lei-11804-pdf18-q025"
+        ]
+      },
+      {
+        "id": "civ-lei-13146-pdf26-q033",
+        "source": "26.pdf · questão 33 · Art. 2º, § 1º, EPD",
+        "devices": [
+          "13146|2|p1||"
+        ],
+        "keptIds": [
+          "civ-lei-13146-pdf26-q023"
+        ]
+      },
+      {
+        "id": "civ-lei-13146-pdf26-q036",
+        "source": "26.pdf · questão 36 · Art. 2º, § 1º, Lei 13.146/2015",
+        "devices": [
+          "13146|2|p1||"
+        ],
+        "keptIds": [
+          "civ-lei-13146-pdf26-q023"
+        ]
+      },
+      {
+        "id": "civ-lei-13146-pdf26-q048",
+        "source": "26.pdf · questão 48 · Art. 2º-A, EPD",
+        "devices": [
+          "13146|2|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-13146-pdf26-q016"
+        ]
+      },
+      {
+        "id": "civ-lei-8009-pdf50-q008",
+        "source": "50.pdf · questão 8 · Art. 2º, Lei 8.009/90",
+        "devices": [
+          "8009|2|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-8009-pdf50-q006"
+        ]
+      },
+      {
+        "id": "civ-lei-8009-pdf50-q009",
+        "source": "50.pdf · questão 9 · Art. 3º, Lei 8.009/90",
+        "devices": [
+          "8009|3|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-8009-pdf50-q012"
+        ]
+      },
+      {
+        "id": "civ-lei-13146-pdf26-q026",
+        "source": "26.pdf · questão 26 · Art. 2º, § 1º, EPD",
+        "devices": [
+          "13146|2|p1||"
+        ],
+        "keptIds": [
+          "civ-lei-13146-pdf26-q023"
+        ]
+      },
+      {
+        "id": "civ-lei-8009-pdf50-q016",
+        "source": "50.pdf · questão 16 · Art. 3°, VI, Lei 8.009/90",
+        "devices": [
+          "8009|3|caput|VI|"
+        ],
+        "keptIds": [
+          "civ-lei-8009-pdf50-q018"
+        ]
+      },
+      {
+        "id": "civ-lei-13465-pdf30-q038",
+        "source": "30.pdf · questão 38 · Art. 16, § único, Lei 13.465/2017",
+        "devices": [
+          "13465|16|unico||"
+        ],
+        "keptIds": [
+          "civ-lei-13465-pdf30-q039"
+        ]
+      },
+      {
+        "id": "civ-lei-13146-pdf26-q010",
+        "source": "26.pdf · questão 10 · Art. 2º, EPD",
+        "devices": [
+          "13146|2|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-13146-pdf26-q016"
+        ]
+      },
+      {
+        "id": "civ-lei-13146-pdf26-q015",
+        "source": "26.pdf · questão 15 · Art. 2º, EPD",
+        "devices": [
+          "13146|2|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-13146-pdf26-q016"
+        ]
+      },
+      {
+        "id": "civ-lei-13146-pdf26-q018",
+        "source": "26.pdf · questão 18 · Art. 2º, EPD",
+        "devices": [
+          "13146|2|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-13146-pdf26-q016"
+        ]
+      },
+      {
+        "id": "civ-lei-13465-pdf30-q025",
+        "source": "30.pdf · questão 25 · Art. 13, I, Lei 13.465/2017",
+        "devices": [
+          "13465|13|caput|I|"
+        ],
+        "keptIds": [
+          "civ-lei-13465-pdf30-q026"
+        ]
+      },
+      {
+        "id": "civ-lei-8009-pdf50-q004",
+        "source": "50.pdf · questão 4 · Art. 1º, § único, Lei 8.009/90",
+        "devices": [
+          "8009|1|unico||"
+        ],
+        "keptIds": [
+          "civ-lei-8009-pdf50-q003"
+        ]
+      },
+      {
+        "id": "civ-lei-11804-pdf18-q011",
+        "source": "18.pdf · questão 11 · Art. 6º, parágrafo único, 11.804/2008",
+        "devices": [
+          "11804|6|unico||"
+        ],
+        "keptIds": [
+          "civ-lei-11804-pdf18-q025"
+        ]
+      },
+      {
+        "id": "civ-lei-13146-pdf26-q050",
+        "source": "26.pdf · questão 50 · Art. 2º-A, § 1º, EPD",
+        "devices": [
+          "13146|2|p1||"
+        ],
+        "keptIds": [
+          "civ-lei-13146-pdf26-q023"
+        ]
+      },
+      {
+        "id": "civ-lei-13146-pdf26-q030",
+        "source": "26.pdf · questão 30 · Art. 2º, § 1º, EPD",
+        "devices": [
+          "13146|2|p1||"
+        ],
+        "keptIds": [
+          "civ-lei-13146-pdf26-q023"
+        ]
+      },
+      {
+        "id": "civ-lei-13146-pdf26-q034",
+        "source": "26.pdf · questão 34 · Art. 2º, § 1º, EPD",
+        "devices": [
+          "13146|2|p1||"
+        ],
+        "keptIds": [
+          "civ-lei-13146-pdf26-q023"
+        ]
+      },
+      {
+        "id": "civ-lei-9307-pdf62-q009",
+        "source": "62.pdf · questão 9 · Art. 1º, § 1º, Lei 9.307/96",
+        "devices": [
+          "9307|1|p1||"
+        ],
+        "keptIds": [
+          "civ-lei-9307-pdf62-q035"
+        ]
+      },
+      {
+        "id": "civ-lei-9307-pdf62-q010",
+        "source": "62.pdf · questão 10 · Art. 1º, § 1º, Lei 9.307/96",
+        "devices": [
+          "9307|1|p1||"
+        ],
+        "keptIds": [
+          "civ-lei-9307-pdf62-q035"
+        ]
+      },
+      {
+        "id": "civ-lei-6404-pdf45-q039",
+        "source": "45.pdf · questão 39 · Art. 4º, § 2º, Lei 6.404/76",
+        "devices": [
+          "6404|4|p2||"
+        ],
+        "keptIds": [
+          "civ-lei-6404-pdf45-q047"
+        ]
+      },
+      {
+        "id": "civ-lei-13146-pdf26-q044",
+        "source": "26.pdf · questão 44 · Art. 2º-A, EPD",
+        "devices": [
+          "13146|2|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-13146-pdf26-q016"
+        ]
+      },
+      {
+        "id": "civ-lei-13146-pdf26-q046",
+        "source": "26.pdf · questão 46 · Art. 2º-A, EPD",
+        "devices": [
+          "13146|2|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-13146-pdf26-q016"
+        ]
+      },
+      {
+        "id": "civ-lei-13146-pdf26-q047",
+        "source": "26.pdf · questão 47 · Art. 2º-A, EPD",
+        "devices": [
+          "13146|2|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-13146-pdf26-q016"
+        ]
+      },
+      {
+        "id": "civ-lei-13146-pdf26-q049",
+        "source": "26.pdf · questão 49 · Art. 2º-A, EPD",
+        "devices": [
+          "13146|2|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-13146-pdf26-q016"
+        ]
+      },
+      {
+        "id": "civ-lei-9307-pdf62-q012",
+        "source": "62.pdf · questão 12 · Art. 2º, § 3º, Lei 9.307/96",
+        "devices": [
+          "9307|2|p3||"
+        ],
+        "keptIds": [
+          "civ-lei-9307-pdf62-q036"
+        ]
+      },
+      {
+        "id": "civ-lei-9307-pdf62-q013",
+        "source": "62.pdf · questão 13 · Art. 2º, § 3º, Lei 9.307/96",
+        "devices": [
+          "9307|2|p3||"
+        ],
+        "keptIds": [
+          "civ-lei-9307-pdf62-q036"
+        ]
+      },
+      {
+        "id": "civ-lei-13146-pdf26-q024",
+        "source": "26.pdf · questão 24 · Art. 2º, § 1º, EPD",
+        "devices": [
+          "13146|2|p1||"
+        ],
+        "keptIds": [
+          "civ-lei-13146-pdf26-q023"
+        ]
+      },
+      {
+        "id": "civ-lei-13146-pdf26-q032",
+        "source": "26.pdf · questão 32 · Art. 2º, § 1º, EPD",
+        "devices": [
+          "13146|2|p1||"
+        ],
+        "keptIds": [
+          "civ-lei-13146-pdf26-q023"
+        ]
+      },
+      {
+        "id": "civ-lei-13146-pdf26-q029",
+        "source": "26.pdf · questão 29 · Art. 2º, § 1º, EPD",
+        "devices": [
+          "13146|2|p1||"
+        ],
+        "keptIds": [
+          "civ-lei-13146-pdf26-q023"
+        ]
+      },
+      {
+        "id": "civ-lei-8245-pdf56-q039",
+        "source": "56.pdf · questão 39 · Art. 7º, Lei 8.245/91",
+        "devices": [
+          "8245|7|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-8245-pdf56-q026"
+        ]
+      },
+      {
+        "id": "civ-lei-6404-pdf45-q035",
+        "source": "45.pdf · questão 35 · Art. 4º, § 1º, Lei 6.404/76",
+        "devices": [
+          "6404|4|p1||"
+        ],
+        "keptIds": [
+          "civ-lei-6404-pdf45-q046"
+        ]
+      },
+      {
+        "id": "civ-lei-6404-pdf45-q027",
+        "source": "45.pdf · questão 27 · Art. 3º, § 1º, Lei 6.404/76",
+        "devices": [
+          "6404|3|p1||"
+        ],
+        "keptIds": [
+          "civ-lei-6404-pdf45-q026"
+        ]
+      },
+      {
+        "id": "civ-lei-6404-pdf45-q040",
+        "source": "45.pdf · questão 40 · Art. 4º, § 2º, Lei 6.404/76",
+        "devices": [
+          "6404|4|p2||"
+        ],
+        "keptIds": [
+          "civ-lei-6404-pdf45-q047"
+        ]
+      },
+      {
+        "id": "civ-lei-13146-pdf26-q006",
+        "source": "26.pdf · questão 6 · Art. 2º, EPD",
+        "devices": [
+          "13146|2|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-13146-pdf26-q016"
+        ]
+      },
+      {
+        "id": "civ-lei-13146-pdf26-q011",
+        "source": "26.pdf · questão 11 · Art. 2º, EPD",
+        "devices": [
+          "13146|2|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-13146-pdf26-q016"
+        ]
+      },
+      {
+        "id": "civ-lei-13146-pdf26-q017",
+        "source": "26.pdf · questão 17 · Art. 2º, EPD",
+        "devices": [
+          "13146|2|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-13146-pdf26-q016"
+        ]
+      },
+      {
+        "id": "civ-lei-13146-pdf26-q012",
+        "source": "26.pdf · questão 12 · Art. 2º, Lei 13.416/2015",
+        "devices": [
+          "13146|2|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-13146-pdf26-q016"
+        ]
+      },
+      {
+        "id": "civ-lei-8245-pdf56-q041",
+        "source": "56.pdf · questão 41 · Art. 12, Lei 8.245/91",
+        "devices": [
+          "8245|12|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-8245-pdf56-q028"
+        ]
+      },
+      {
+        "id": "civ-lei-6404-pdf45-q001",
+        "source": "45.pdf · questão 1 · Art. 1º, Lei 6.404/76",
+        "devices": [
+          "6404|1|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-6404-pdf45-q006"
+        ]
+      },
+      {
+        "id": "civ-lei-6404-pdf45-q005",
+        "source": "45.pdf · questão 5 · Art. 1º, Lei 6.404/76",
+        "devices": [
+          "6404|1|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-6404-pdf45-q006"
+        ]
+      },
+      {
+        "id": "civ-lei-6404-pdf45-q009",
+        "source": "45.pdf · questão 9 · Art. 1º, Lei 6.404/76",
+        "devices": [
+          "6404|1|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-6404-pdf45-q006"
+        ]
+      },
+      {
+        "id": "civ-lei-6404-pdf45-q010",
+        "source": "45.pdf · questão 10 · Art. 1º, Lei 6.404/76",
+        "devices": [
+          "6404|1|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-6404-pdf45-q006"
+        ]
+      },
+      {
+        "id": "civ-lei-6404-pdf45-q011",
+        "source": "45.pdf · questão 11 · Art. 1º, Lei 6.404/76",
+        "devices": [
+          "6404|1|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-6404-pdf45-q006"
+        ]
+      },
+      {
+        "id": "civ-lei-6404-pdf45-q031",
+        "source": "45.pdf · questão 31 · Art. 4º, Lei 6.404/76",
+        "devices": [
+          "6404|4|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-6404-pdf45-q045"
+        ]
+      },
+      {
+        "id": "civ-lei-6404-pdf45-q032",
+        "source": "45.pdf · questão 32 · Art. 4º, Lei 6.404/76",
+        "devices": [
+          "6404|4|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-6404-pdf45-q045"
+        ]
+      },
+      {
+        "id": "civ-lei-6404-pdf45-q030",
+        "source": "45.pdf · questão 30 · Art. 4º, Lei 6.404/76",
+        "devices": [
+          "6404|4|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-6404-pdf45-q045"
+        ]
+      },
+      {
+        "id": "civ-lei-9307-pdf62-q014",
+        "source": "62.pdf · questão 14 · Art. 1º, § 2º, Lei 9.307/96",
+        "devices": [
+          "9307|1|p2||"
+        ],
+        "keptIds": [
+          "civ-lei-9307-pdf62-q011"
+        ]
+      },
+      {
+        "id": "civ-lei-9307-pdf62-q015",
+        "source": "62.pdf · questão 15 · Art. 1º, § 1º, Lei 9.307/96",
+        "devices": [
+          "9307|1|p1||"
+        ],
+        "keptIds": [
+          "civ-lei-9307-pdf62-q035"
+        ]
+      },
+      {
+        "id": "civ-lei-8245-pdf56-q037",
+        "source": "56.pdf · questão 37 · Art. 6º, Lei 8.245/91",
+        "devices": [
+          "8245|6|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-8245-pdf56-q030"
+        ]
+      },
+      {
+        "id": "civ-lei-13146-pdf26-q045",
+        "source": "26.pdf · questão 45 · Art. 2º-A, EPD",
+        "devices": [
+          "13146|2|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-13146-pdf26-q016"
+        ]
+      },
+      {
+        "id": "civ-lei-8245-pdf56-q024",
+        "source": "56.pdf · questão 24 · Art. 3º, Lei 8.245/91",
+        "devices": [
+          "8245|3|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-8245-pdf56-q005"
+        ]
+      },
+      {
+        "id": "civ-lei-8245-pdf56-q035",
+        "source": "56.pdf · questão 35 · Art. 3º, Lei 8.245/91",
+        "devices": [
+          "8245|3|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-8245-pdf56-q005"
+        ]
+      },
+      {
+        "id": "civ-lei-8245-pdf56-q038",
+        "source": "56.pdf · questão 38 · Art. 3º, Lei 8.245/91",
+        "devices": [
+          "8245|3|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-8245-pdf56-q005"
+        ]
+      },
+      {
+        "id": "civ-lei-8245-pdf56-q040",
+        "source": "56.pdf · questão 40 · Art. 3º, Lei 8.245/91",
+        "devices": [
+          "8245|3|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-8245-pdf56-q005"
+        ]
+      },
+      {
+        "id": "civ-lei-8245-pdf56-q034",
+        "source": "56.pdf · questão 34 · Art. 2º, Lei 8.245/91",
+        "devices": [
+          "8245|2|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-8245-pdf56-q023"
+        ]
+      },
+      {
+        "id": "civ-lei-8245-pdf56-q036",
+        "source": "56.pdf · questão 36 · Art. 5º, Lei 8.245/91",
+        "devices": [
+          "8245|5|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-8245-pdf56-q025"
+        ]
+      },
+      {
+        "id": "civ-lei-8245-pdf56-q027",
+        "source": "56.pdf · questão 27 · Art. 10, Lei 8.245/91",
+        "devices": [
+          "8245|10|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-8245-pdf56-q022"
+        ]
+      },
+      {
+        "id": "civ-lei-8009-pdf50-q005",
+        "source": "50.pdf · questão 5 · Art. 1º c/c 3º, III, Lei 8.009/90",
+        "devices": [
+          "8009|1|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-8009-pdf50-q002"
+        ]
+      },
+      {
+        "id": "civ-lei-11804-pdf18-q004",
+        "source": "18.pdf · questão 4 · Art. 2º, Lei 11.804/2008",
+        "devices": [
+          "11804|2|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-11804-pdf18-q007"
+        ]
+      },
+      {
+        "id": "civ-lei-13146-pdf26-q028",
+        "source": "26.pdf · questão 28 · Art. 2º, § 1º, EPD",
+        "devices": [
+          "13146|2|p1||"
+        ],
+        "keptIds": [
+          "civ-lei-13146-pdf26-q023"
+        ]
+      },
+      {
+        "id": "civ-lei-13146-pdf26-q035",
+        "source": "26.pdf · questão 35 · Art. 2º, § 1º, EPD",
+        "devices": [
+          "13146|2|p1||"
+        ],
+        "keptIds": [
+          "civ-lei-13146-pdf26-q023"
+        ]
+      },
+      {
+        "id": "civ-lei-13146-pdf26-q003",
+        "source": "26.pdf · questão 3 · Art. 2º, EPD",
+        "devices": [
+          "13146|2|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-13146-pdf26-q016"
+        ]
+      },
+      {
+        "id": "civ-lei-13146-pdf26-q005",
+        "source": "26.pdf · questão 5 · Art. 2º, EPD",
+        "devices": [
+          "13146|2|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-13146-pdf26-q016"
+        ]
+      },
+      {
+        "id": "civ-lei-13146-pdf26-q007",
+        "source": "26.pdf · questão 7 · Art. 2º, EPD",
+        "devices": [
+          "13146|2|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-13146-pdf26-q016"
+        ]
+      },
+      {
+        "id": "civ-lei-13146-pdf26-q013",
+        "source": "26.pdf · questão 13 · Art. 2º, EPD",
+        "devices": [
+          "13146|2|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-13146-pdf26-q016"
+        ]
+      },
+      {
+        "id": "civ-lei-13146-pdf26-q031",
+        "source": "26.pdf · questão 31 · Art. 2º, EPD",
+        "devices": [
+          "13146|2|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-13146-pdf26-q016"
+        ]
+      },
+      {
+        "id": "civ-lei-8245-pdf56-q047",
+        "source": "56.pdf · questão 47 · Art. 8º, Lei 8.245/91",
+        "devices": [
+          "8245|8|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-8245-pdf56-q031"
+        ]
+      },
+      {
+        "id": "civ-lei-8245-pdf56-q003",
+        "source": "56.pdf · questão 3 · Art. 3º, Lei 8.245/91",
+        "devices": [
+          "8245|3|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-8245-pdf56-q005"
+        ]
+      },
+      {
+        "id": "civ-lei-8245-pdf56-q044",
+        "source": "56.pdf · questão 44 · Art. 3º, parágrafo único, Lei 8.245/91",
+        "devices": [
+          "8245|3|unico||"
+        ],
+        "keptIds": [
+          "civ-lei-8245-pdf56-q004"
+        ]
+      },
+      {
+        "id": "civ-lei-6404-pdf45-q003",
+        "source": "45.pdf · questão 3 · Art. 1º, Lei 6.404/76",
+        "devices": [
+          "6404|1|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-6404-pdf45-q006"
+        ]
+      },
+      {
+        "id": "civ-lei-9307-pdf62-q017",
+        "source": "62.pdf · questão 17 · Art. 1º, § 1º, Lei 9.307/96",
+        "devices": [
+          "9307|1|p1||"
+        ],
+        "keptIds": [
+          "civ-lei-9307-pdf62-q035"
+        ]
+      },
+      {
+        "id": "civ-lei-9307-pdf62-q018",
+        "source": "62.pdf · questão 18 · Art. 2º, § 3º, Lei 9.307/96",
+        "devices": [
+          "9307|2|p3||"
+        ],
+        "keptIds": [
+          "civ-lei-9307-pdf62-q036"
+        ]
+      },
+      {
+        "id": "civ-lei-9307-pdf62-q021",
+        "source": "62.pdf · questão 21 · Art. 2º, § 3º, Lei 9.307/96",
+        "devices": [
+          "9307|2|p3||"
+        ],
+        "keptIds": [
+          "civ-lei-9307-pdf62-q036"
+        ]
+      },
+      {
+        "id": "civ-lei-8245-pdf56-q049",
+        "source": "56.pdf · questão 49 · Art. 10, Lei 8.245/91",
+        "devices": [
+          "8245|10|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-8245-pdf56-q022"
+        ]
+      },
+      {
+        "id": "civ-lei-8009-pdf50-q014",
+        "source": "50.pdf · questão 14 · Art. 3º, IV, Lei 8.009/90",
+        "devices": [
+          "8009|3|caput|IV|"
+        ],
+        "keptIds": [
+          "civ-lei-8009-pdf50-q015"
+        ]
+      },
+      {
+        "id": "civ-lei-13146-pdf26-q039",
+        "source": "26.pdf · questão 39 · Art. 2º, § 1º, II, EPD",
+        "devices": [
+          "13146|2|p1|II|"
+        ],
+        "keptIds": [
+          "civ-lei-13146-pdf26-q041"
+        ]
+      },
+      {
+        "id": "civ-lei-13146-pdf26-q040",
+        "source": "26.pdf · questão 40 · Art. 2º, § 1º, II, EPD",
+        "devices": [
+          "13146|2|p1|II|"
+        ],
+        "keptIds": [
+          "civ-lei-13146-pdf26-q041"
+        ]
+      },
+      {
+        "id": "civ-lei-11804-pdf18-q005",
+        "source": "18.pdf · questão 5 · Art. 2º, Lei 11.804/2008",
+        "devices": [
+          "11804|2|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-11804-pdf18-q007"
+        ]
+      },
+      {
+        "id": "civ-lei-6404-pdf45-q036",
+        "source": "45.pdf · questão 36 · Art. 4º, § 1º, Lei 6.404/76",
+        "devices": [
+          "6404|4|p1||"
+        ],
+        "keptIds": [
+          "civ-lei-6404-pdf45-q046"
+        ]
+      },
+      {
+        "id": "civ-lei-13146-pdf26-q020",
+        "source": "26.pdf · questão 20 · Art. 2º, EPD",
+        "devices": [
+          "13146|2|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-13146-pdf26-q016"
+        ]
+      },
+      {
+        "id": "civ-lei-13146-pdf26-q008",
+        "source": "26.pdf · questão 8 · Art. 2º, EPD",
+        "devices": [
+          "13146|2|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-13146-pdf26-q016"
+        ]
+      },
+      {
+        "id": "civ-lei-8245-pdf56-q011",
+        "source": "56.pdf · questão 11 · Art. 8º, Lei 8.245/91",
+        "devices": [
+          "8245|8|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-8245-pdf56-q031"
+        ]
+      },
+      {
+        "id": "civ-lei-11804-pdf18-q006",
+        "source": "18.pdf · questão 6 · Art. 2º, § único, Lei 11.804/2008",
+        "devices": [
+          "11804|2|unico||"
+        ],
+        "keptIds": [
+          "civ-lei-11804-pdf18-q012"
+        ]
+      },
+      {
+        "id": "civ-lei-11804-pdf18-q002",
+        "source": "18.pdf · questão 2 · Art. 6º, Lei 11.804/2008",
+        "devices": [
+          "11804|6|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-11804-pdf18-q010"
+        ]
+      },
+      {
+        "id": "civ-lei-11804-pdf18-q001",
+        "source": "18.pdf · questão 1 · Art. 6º, § único, Lei 11.804/2008",
+        "devices": [
+          "11804|6|unico||"
+        ],
+        "keptIds": [
+          "civ-lei-11804-pdf18-q025"
+        ]
+      },
+      {
+        "id": "civ-lei-5478-pdf40-q005",
+        "source": "40.pdf · questão 5 · Art. 4º, Lei 5.478/68",
+        "devices": [
+          "5478|4|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-5478-pdf40-q002"
+        ]
+      },
+      {
+        "id": "civ-lei-9307-pdf62-q022",
+        "source": "62.pdf · questão 22 · Art. 2º, § 3º, Lei 9.307/96",
+        "devices": [
+          "9307|2|p3||"
+        ],
+        "keptIds": [
+          "civ-lei-9307-pdf62-q036"
+        ]
+      },
+      {
+        "id": "civ-lei-11804-pdf18-q003",
+        "source": "18.pdf · questão 3 · Art. 7º, Lei 11.804/2008",
+        "devices": [
+          "11804|7|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-11804-pdf18-q008"
+        ]
+      },
+      {
+        "id": "civ-lei-13465-pdf30-q029",
+        "source": "30.pdf · questão 29 · Art. 13, II, Lei 13.465/2017",
+        "devices": [
+          "13465|13|caput|II|"
+        ],
+        "keptIds": [
+          "civ-lei-13465-pdf30-q028"
+        ]
+      },
+      {
+        "id": "civ-lei-13146-pdf26-q025",
+        "source": "26.pdf · questão 25 · Art. 2º, § 1º, EPD",
+        "devices": [
+          "13146|2|p1||"
+        ],
+        "keptIds": [
+          "civ-lei-13146-pdf26-q023"
+        ]
+      },
+      {
+        "id": "civ-lei-13146-pdf26-q014",
+        "source": "26.pdf · questão 14 · Art. 2º, EPD",
+        "devices": [
+          "13146|2|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-13146-pdf26-q016"
+        ]
+      },
+      {
+        "id": "civ-lei-13465-pdf30-q010",
+        "source": "30.pdf · questão 10 · Art. 10, X, Lei 13.465/2017",
+        "devices": [
+          "13465|10|caput|X|"
+        ],
+        "keptIds": [
+          "civ-lei-13465-pdf30-q011"
+        ]
+      },
+      {
+        "id": "civ-lei-13146-pdf26-q027",
+        "source": "26.pdf · questão 27 · Art. 2º, § 1º, EPD",
+        "devices": [
+          "13146|2|p1||"
+        ],
+        "keptIds": [
+          "civ-lei-13146-pdf26-q023"
+        ]
+      },
+      {
+        "id": "civ-lei-13465-pdf30-q020",
+        "source": "30.pdf · questão 20 · Art. 11, § 2º, Lei 13.465/2017",
+        "devices": [
+          "13465|11|p2||"
+        ],
+        "keptIds": [
+          "civ-lei-13465-pdf30-q021"
+        ]
+      },
+      {
+        "id": "civ-lei-13465-pdf30-q022",
+        "source": "30.pdf · questão 22 · Art. 11, § 2º, Lei 13.465/2017",
+        "devices": [
+          "13465|11|p2||"
+        ],
+        "keptIds": [
+          "civ-lei-13465-pdf30-q021"
+        ]
+      },
+      {
+        "id": "civ-lei-13465-pdf30-q023",
+        "source": "30.pdf · questão 23 · Art. 11, § 2º, Lei 13.465/2017",
+        "devices": [
+          "13465|11|p2||"
+        ],
+        "keptIds": [
+          "civ-lei-13465-pdf30-q021"
+        ]
+      },
+      {
+        "id": "civ-lei-11804-pdf18-q017",
+        "source": "18.pdf · questão 17 · Art. 2º, 11.804/2008",
+        "devices": [
+          "11804|2|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-11804-pdf18-q007"
+        ]
+      },
+      {
+        "id": "civ-lei-9307-pdf62-q040",
+        "source": "62.pdf · questão 40 · Art. 7º, § 6º, Lei 9.307/96",
+        "devices": [
+          "9307|7|p6||"
+        ],
+        "keptIds": [
+          "civ-lei-9307-pdf62-q042"
+        ]
+      },
+      {
+        "id": "civ-lei-8245-pdf56-q016",
+        "source": "56.pdf · questão 16 · Art. 11, Lei 8.245/91",
+        "devices": [
+          "8245|11|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-8245-pdf56-q021"
+        ]
+      },
+      {
+        "id": "civ-lei-13146-pdf26-q019",
+        "source": "26.pdf · questão 19 · Art. 2º, EPD",
+        "devices": [
+          "13146|2|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-13146-pdf26-q016"
+        ]
+      },
+      {
+        "id": "civ-lei-8245-pdf56-q002",
+        "source": "56.pdf · questão 2 · Art. 2º, Lei 8.245/91",
+        "devices": [
+          "8245|2|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-8245-pdf56-q023"
+        ]
+      },
+      {
+        "id": "civ-lei-8245-pdf56-q006",
+        "source": "56.pdf · questão 6 · Art. 3º, Lei 8.245/91",
+        "devices": [
+          "8245|3|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-8245-pdf56-q005"
+        ]
+      },
+      {
+        "id": "civ-lei-6404-pdf45-q044",
+        "source": "45.pdf · questão 44 · Art. 4º-A, Lei 6.404/76",
+        "devices": [
+          "6404|4|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-6404-pdf45-q045"
+        ]
+      },
+      {
+        "id": "civ-lei-13465-pdf30-q018",
+        "source": "30.pdf · questão 18 · Art. 11, VII, Lei 11.345/2017",
+        "devices": [
+          "13465|11|caput|VII|"
+        ],
+        "keptIds": [
+          "civ-lei-13465-pdf30-q019"
+        ]
+      },
+      {
+        "id": "civ-lei-6404-pdf45-q022",
+        "source": "45.pdf · questão 22 · Art. 3º, Lei 6.404/76",
+        "devices": [
+          "6404|3|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-6404-pdf45-q023"
+        ]
+      },
+      {
+        "id": "civ-lei-5478-pdf40-q006",
+        "source": "40.pdf · questão 6 · Art. 4º, Lei 5.478/68",
+        "devices": [
+          "5478|4|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-5478-pdf40-q002"
+        ]
+      },
+      {
+        "id": "civ-lei-6404-pdf45-q025",
+        "source": "45.pdf · questão 25 · Art. 3º, § 1º, Lei 6.404/76",
+        "devices": [
+          "6404|3|p1||"
+        ],
+        "keptIds": [
+          "civ-lei-6404-pdf45-q026"
+        ]
+      },
+      {
+        "id": "civ-lei-8245-pdf56-q009",
+        "source": "56.pdf · questão 9 · Art. 6º, Lei 8.245/91",
+        "devices": [
+          "8245|6|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-8245-pdf56-q030"
+        ]
+      },
+      {
+        "id": "civ-lei-8245-pdf56-q019",
+        "source": "56.pdf · questão 19 · Art. 13, Lei 8.245/91",
+        "devices": [
+          "8245|13|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-8245-pdf56-q032"
+        ]
+      },
+      {
+        "id": "civ-lei-8245-pdf56-q014",
+        "source": "56.pdf · questão 14 · Art. 10, Lei 8.245/91",
+        "devices": [
+          "8245|10|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-8245-pdf56-q022"
+        ]
+      },
+      {
+        "id": "civ-lei-8245-pdf56-q015",
+        "source": "56.pdf · questão 15 · Art. 10, Lei 8.245/91",
+        "devices": [
+          "8245|10|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-8245-pdf56-q022"
+        ]
+      },
+      {
+        "id": "civ-lei-13465-pdf30-q042",
+        "source": "30.pdf · questão 42 · Art. 18, § 2º, Lei 13.465/2017",
+        "devices": [
+          "13465|18|p2||"
+        ],
+        "keptIds": [
+          "civ-lei-13465-pdf30-q043"
+        ]
+      },
+      {
+        "id": "civ-lei-11804-pdf18-q014",
+        "source": "18.pdf · questão 14 · Art. 2º, Lei 11.804/2008",
+        "devices": [
+          "11804|2|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-11804-pdf18-q007"
+        ]
+      },
+      {
+        "id": "civ-lei-13146-pdf26-q004",
+        "source": "26.pdf · questão 4 · Art. 2º, EPD",
+        "devices": [
+          "13146|2|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-13146-pdf26-q016"
+        ]
+      },
+      {
+        "id": "civ-lei-11804-pdf18-q015",
+        "source": "18.pdf · questão 15 · Art. 6º, Lei 11.804/2008",
+        "devices": [
+          "11804|6|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-11804-pdf18-q010"
+        ]
+      },
+      {
+        "id": "civ-lei-6404-pdf45-q004",
+        "source": "45.pdf · questão 4 · Art. 1º, Lei 6.404/76",
+        "devices": [
+          "6404|1|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-6404-pdf45-q006"
+        ]
+      },
+      {
+        "id": "civ-lei-11804-pdf18-q016",
+        "source": "18.pdf · questão 16 · Art. 6º, parágrafo único, Lei 11.804/2008",
+        "devices": [
+          "11804|6|unico||"
+        ],
+        "keptIds": [
+          "civ-lei-11804-pdf18-q025"
+        ]
+      },
+      {
+        "id": "civ-lei-9307-pdf62-q004",
+        "source": "62.pdf · questão 4 · Art. 1º, § 1º, Lei 9.307/1996",
+        "devices": [
+          "9307|1|p1||"
+        ],
+        "keptIds": [
+          "civ-lei-9307-pdf62-q035"
+        ]
+      },
+      {
+        "id": "civ-lei-9307-pdf62-q003",
+        "source": "62.pdf · questão 3 · Art. 1º, § 1º, Lei 9.307/1996",
+        "devices": [
+          "9307|1|p1||"
+        ],
+        "keptIds": [
+          "civ-lei-9307-pdf62-q035"
+        ]
+      },
+      {
+        "id": "civ-lei-6015-pdf43-q026",
+        "source": "43.pdf · questão 26 · Art. 7º, Lei 6.015/73",
+        "devices": [
+          "6015|7|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-6015-pdf43-q029"
+        ]
+      },
+      {
+        "id": "civ-lei-9307-pdf62-q002",
+        "source": "62.pdf · questão 2 · Art. 1º, Lei 9.307/1996",
+        "devices": [
+          "9307|1|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-9307-pdf62-q001"
+        ]
+      },
+      {
+        "id": "civ-lei-11804-pdf18-q018",
+        "source": "18.pdf · questão 18 · Art. 7º, Lei 11.804/2008",
+        "devices": [
+          "11804|7|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-11804-pdf18-q008"
+        ]
+      },
+      {
+        "id": "civ-lei-8009-pdf50-q011",
+        "source": "50.pdf · questão 11 · Art. 3, Lei 8.009/90",
+        "devices": [
+          "8009|3|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-8009-pdf50-q012"
+        ]
+      },
+      {
+        "id": "civ-lei-8009-pdf50-q001",
+        "source": "50.pdf · questão 1 · Art. 1º, Lei 8.009/90",
+        "devices": [
+          "8009|1|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-8009-pdf50-q002"
+        ]
+      },
+      {
+        "id": "civ-lei-6404-pdf45-q043",
+        "source": "45.pdf · questão 43 · Art. 4º. § 5º, Lei 6.404/76",
+        "devices": [
+          "6404|4|p5||"
+        ],
+        "keptIds": [
+          "civ-lei-6404-pdf45-q042"
+        ]
+      },
+      {
+        "id": "civ-lei-8245-pdf56-q018",
+        "source": "56.pdf · questão 18 · Art. 12, Lei 8.245/91",
+        "devices": [
+          "8245|12|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-8245-pdf56-q028"
+        ]
+      },
+      {
+        "id": "civ-lei-8009-pdf50-q007",
+        "source": "50.pdf · questão 7 · Art. 2º, Lei 8.009/90",
+        "devices": [
+          "8009|2|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-8009-pdf50-q006"
+        ]
+      },
+      {
+        "id": "civ-lei-6404-pdf45-q024",
+        "source": "45.pdf · questão 24 · Art. 3º, Lei 6.404/76",
+        "devices": [
+          "6404|3|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-6404-pdf45-q023"
+        ]
+      },
+      {
+        "id": "civ-lei-8245-pdf56-q001",
+        "source": "56.pdf · questão 1 · Art. 1º, § único, a, 2, Lei 8.245/91",
+        "devices": [
+          "8245|1|unico||a"
+        ],
+        "keptIds": [
+          "civ-lei-8245-pdf56-q033"
+        ]
+      },
+      {
+        "id": "civ-lei-6015-pdf43-q036",
+        "source": "43.pdf · questão 36 · Art. 9º, Lei 6.015/73",
+        "devices": [
+          "6015|9|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-6015-pdf43-q033"
+        ]
+      },
+      {
+        "id": "civ-lei-9307-pdf62-q023",
+        "source": "62.pdf · questão 23 · Art. 1º, § 1º, Lei 9.307/96",
+        "devices": [
+          "9307|1|p1||"
+        ],
+        "keptIds": [
+          "civ-lei-9307-pdf62-q035"
+        ]
+      },
+      {
+        "id": "civ-lei-8009-pdf50-q010",
+        "source": "50.pdf · questão 10 · Art. 3º, Lei 8.009/90",
+        "devices": [
+          "8009|3|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-8009-pdf50-q012"
+        ]
+      },
+      {
+        "id": "civ-lei-9307-pdf62-q007",
+        "source": "62.pdf · questão 7 · Art. 1º, Lei 9.307/96",
+        "devices": [
+          "9307|1|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-9307-pdf62-q001"
+        ]
+      },
+      {
+        "id": "civ-lei-9307-pdf62-q024",
+        "source": "62.pdf · questão 24 · Art. 2º, § 3º, Lei 9.307/96",
+        "devices": [
+          "9307|2|p3||"
+        ],
+        "keptIds": [
+          "civ-lei-9307-pdf62-q036"
+        ]
+      },
+      {
+        "id": "civ-lei-6015-pdf43-q002",
+        "source": "43.pdf · questão 2 · Art. 1º, Lei 6.015/73",
+        "devices": [
+          "6015|1|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-6015-pdf43-q001"
+        ]
+      },
+      {
+        "id": "civ-lei-11804-pdf18-q019",
+        "source": "18.pdf · questão 19 · Art. 6º, parágrafo único, Lei 11.804/2008",
+        "devices": [
+          "11804|6|unico||"
+        ],
+        "keptIds": [
+          "civ-lei-11804-pdf18-q025"
+        ]
+      },
+      {
+        "id": "civ-lei-9307-pdf62-q026",
+        "source": "62.pdf · questão 26 · Art. 2º, § 1º, Lei 9.307/96",
+        "devices": [
+          "9307|2|p1||"
+        ],
+        "keptIds": [
+          "civ-lei-9307-pdf62-q006"
+        ]
+      },
+      {
+        "id": "civ-lei-5478-pdf40-q001",
+        "source": "40.pdf · questão 1 · Art. 4º, Lei 5.478/68",
+        "devices": [
+          "5478|4|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-5478-pdf40-q002"
+        ]
+      },
+      {
+        "id": "civ-lei-9307-pdf62-q025",
+        "source": "62.pdf · questão 25 · Art. 1º, § 1º, Lei 9.307/96",
+        "devices": [
+          "9307|1|p1||"
+        ],
+        "keptIds": [
+          "civ-lei-9307-pdf62-q035"
+        ]
+      },
+      {
+        "id": "civ-lei-9307-pdf62-q029",
+        "source": "62.pdf · questão 29 · Art. 1º, § 1º, Lei 9.307/96",
+        "devices": [
+          "9307|1|p1||"
+        ],
+        "keptIds": [
+          "civ-lei-9307-pdf62-q035"
+        ]
+      },
+      {
+        "id": "civ-lei-6015-pdf43-q028",
+        "source": "43.pdf · questão 28 · Art. 7º, Lei 6.015/73",
+        "devices": [
+          "6015|7|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-6015-pdf43-q029"
+        ]
+      },
+      {
+        "id": "civ-lei-9307-pdf62-q028",
+        "source": "62.pdf · questão 28 · Art. 2º, § 3º, Lei 9.307/96",
+        "devices": [
+          "9307|2|p3||"
+        ],
+        "keptIds": [
+          "civ-lei-9307-pdf62-q036"
+        ]
+      },
+      {
+        "id": "civ-lei-9307-pdf62-q027",
+        "source": "62.pdf · questão 27 · Art. 2º, Lei 9.307/96",
+        "devices": [
+          "9307|2|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-9307-pdf62-q005"
+        ]
+      },
+      {
+        "id": "civ-lei-11804-pdf18-q020",
+        "source": "18.pdf · questão 20 · Art. 7º, Lei 11.804/2008",
+        "devices": [
+          "11804|7|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-11804-pdf18-q008"
+        ]
+      },
+      {
+        "id": "civ-lei-6404-pdf45-q021",
+        "source": "45.pdf · questão 21 · Art. 3º, Lei 6.404/76",
+        "devices": [
+          "6404|3|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-6404-pdf45-q023"
+        ]
+      },
+      {
+        "id": "civ-lei-6404-pdf45-q002",
+        "source": "45.pdf · questão 2 · Art. 1º, Lei 6.404/76",
+        "devices": [
+          "6404|1|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-6404-pdf45-q006"
+        ]
+      },
+      {
+        "id": "civ-lei-6015-pdf43-q031",
+        "source": "43.pdf · questão 31 · Art. 8º, Lei 6.015/73",
+        "devices": [
+          "6015|8|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-6015-pdf43-q030"
+        ]
+      },
+      {
+        "id": "civ-lei-6404-pdf45-q014",
+        "source": "45.pdf · questão 14 · Art. 2º, Lei 6.404/76",
+        "devices": [
+          "6404|2|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-6404-pdf45-q015"
+        ]
+      },
+      {
+        "id": "civ-lei-6404-pdf45-q017",
+        "source": "45.pdf · questão 17 · Art. 2º, § 1º, Lei 6.404/76",
+        "devices": [
+          "6404|2|p1||"
+        ],
+        "keptIds": [
+          "civ-lei-6404-pdf45-q018"
+        ]
+      },
+      {
+        "id": "civ-lei-11804-pdf18-q021",
+        "source": "18.pdf · questão 21 · Art. 6º, Lei 11.804/2008",
+        "devices": [
+          "11804|6|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-11804-pdf18-q010"
+        ]
+      },
+      {
+        "id": "civ-lei-6015-pdf43-q018",
+        "source": "43.pdf · questão 18 · Art. 5º, Lei 6.015/73",
+        "devices": [
+          "6015|5|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-6015-pdf43-q017"
+        ]
+      },
+      {
+        "id": "civ-lei-6015-pdf43-q027",
+        "source": "43.pdf · questão 27 · Art. 7º, Lei 6.015/73",
+        "devices": [
+          "6015|7|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-6015-pdf43-q029"
+        ]
+      },
+      {
+        "id": "civ-lei-6404-pdf45-q016",
+        "source": "45.pdf · questão 16 · Art. 2º, Lei 6.404/76",
+        "devices": [
+          "6404|2|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-6404-pdf45-q015"
+        ]
+      },
+      {
+        "id": "civ-lei-5478-pdf40-q009",
+        "source": "40.pdf · questão 9 · Art. 4º, Lei 5.478/68",
+        "devices": [
+          "5478|4|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-5478-pdf40-q002"
+        ]
+      },
+      {
+        "id": "civ-lei-11804-pdf18-q022",
+        "source": "18.pdf · questão 22 · Art. 2º, Lei 11.804/2008",
+        "devices": [
+          "11804|2|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-11804-pdf18-q007"
+        ]
+      },
+      {
+        "id": "civ-lei-6015-pdf43-q021",
+        "source": "43.pdf · questão 21 · Art. 6º, Lei 6.015/73",
+        "devices": [
+          "6015|6|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-6015-pdf43-q022"
+        ]
+      },
+      {
+        "id": "civ-lei-6015-pdf43-q041",
+        "source": "43.pdf · questão 41 · Art. 10, Lei 6.015/73",
+        "devices": [
+          "6015|10|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-6015-pdf43-q040"
+        ]
+      },
+      {
+        "id": "civ-lei-6015-pdf43-q042",
+        "source": "43.pdf · questão 42 · Art. 10, Lei 6.015/73",
+        "devices": [
+          "6015|10|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-6015-pdf43-q040"
+        ]
+      },
+      {
+        "id": "civ-lei-6015-pdf43-q048",
+        "source": "43.pdf · questão 48 · Art. 12, Lei 6.015/73",
+        "devices": [
+          "6015|12|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-6015-pdf43-q047"
+        ]
+      },
+      {
+        "id": "civ-lei-6404-pdf45-q019",
+        "source": "45.pdf · questão 19 · Art. 2º, § 3º, Lei 6.404/76",
+        "devices": [
+          "6404|2|p3||"
+        ],
+        "keptIds": [
+          "civ-lei-6404-pdf45-q020"
+        ]
+      },
+      {
+        "id": "civ-lei-11804-pdf18-q023",
+        "source": "18.pdf · questão 23 · Art. 6º, Lei 11.804/2008",
+        "devices": [
+          "11804|6|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-11804-pdf18-q010"
+        ]
+      },
+      {
+        "id": "civ-lei-6404-pdf45-q007",
+        "source": "45.pdf · questão 7 · Art. 1º, Lei 6.404/76",
+        "devices": [
+          "6404|1|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-6404-pdf45-q006"
+        ]
+      },
+      {
+        "id": "civ-lei-6404-pdf45-q008",
+        "source": "45.pdf · questão 8 · Art. 1º, Lei 6.404/76",
+        "devices": [
+          "6404|1|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-6404-pdf45-q006"
+        ]
+      },
+      {
+        "id": "civ-lei-6404-pdf45-q028",
+        "source": "45.pdf · questão 28 · Art. 4º, Lei 6.404/76",
+        "devices": [
+          "6404|4|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-6404-pdf45-q045"
+        ]
+      },
+      {
+        "id": "civ-lei-6015-pdf43-q034",
+        "source": "43.pdf · questão 34 · Art. 9º, Lei 6.015/73",
+        "devices": [
+          "6015|9|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-6015-pdf43-q033"
+        ]
+      },
+      {
+        "id": "civ-lei-6015-pdf43-q035",
+        "source": "43.pdf · questão 35 · Art. 9º, Lei 6.015/73",
+        "devices": [
+          "6015|9|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-6015-pdf43-q033"
+        ]
+      },
+      {
+        "id": "civ-lei-6015-pdf43-q020",
+        "source": "43.pdf · questão 20 · Art. 5º, Lei 6.015/73",
+        "devices": [
+          "6015|5|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-6015-pdf43-q017"
+        ]
+      },
+      {
+        "id": "civ-lei-6404-pdf45-q033",
+        "source": "45.pdf · questão 33 · Art. 4º, § 1º, Lei 6.404/76",
+        "devices": [
+          "6404|4|p1||"
+        ],
+        "keptIds": [
+          "civ-lei-6404-pdf45-q046"
+        ]
+      },
+      {
+        "id": "civ-lei-9307-pdf62-q032",
+        "source": "62.pdf · questão 32 · Art. 1º, § 1º, Lei 9.307/96",
+        "devices": [
+          "9307|1|p1||"
+        ],
+        "keptIds": [
+          "civ-lei-9307-pdf62-q035"
+        ]
+      },
+      {
+        "id": "civ-lei-6015-pdf43-q023",
+        "source": "43.pdf · questão 23 · Art. 7º, Lei 6.015/73",
+        "devices": [
+          "6015|7|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-6015-pdf43-q029"
+        ]
+      },
+      {
+        "id": "civ-lei-6404-pdf45-q038",
+        "source": "45.pdf · questão 38 · Art. 4º, § 2º, Lei 6.404/76",
+        "devices": [
+          "6404|4|p2||"
+        ],
+        "keptIds": [
+          "civ-lei-6404-pdf45-q047"
+        ]
+      },
+      {
+        "id": "civ-lei-9307-pdf62-q030",
+        "source": "62.pdf · questão 30 · Art. 1º, Lei 9.307/96",
+        "devices": [
+          "9307|1|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-9307-pdf62-q001"
+        ]
+      },
+      {
+        "id": "civ-lei-9307-pdf62-q031",
+        "source": "62.pdf · questão 31 · Art. 2º, Lei 9.307/96",
+        "devices": [
+          "9307|2|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-9307-pdf62-q005"
+        ]
+      },
+      {
+        "id": "civ-lei-6015-pdf43-q043",
+        "source": "43.pdf · questão 43 · Art. 10, Lei 6.015/73",
+        "devices": [
+          "6015|10|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-6015-pdf43-q040"
+        ]
+      },
+      {
+        "id": "civ-lei-6015-pdf43-q049",
+        "source": "43.pdf · questão 49 · Art. 12, Lei 6.015/73",
+        "devices": [
+          "6015|12|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-6015-pdf43-q047"
+        ]
+      },
+      {
+        "id": "civ-lei-9307-pdf62-q033",
+        "source": "62.pdf · questão 33 · Art. 1º, Lei 9.307/96",
+        "devices": [
+          "9307|1|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-9307-pdf62-q001"
+        ]
+      },
+      {
+        "id": "civ-lei-9307-pdf62-q034",
+        "source": "62.pdf · questão 34 · Art. 1º, § 1º, Lei 9.307/96",
+        "devices": [
+          "9307|1|p1||"
+        ],
+        "keptIds": [
+          "civ-lei-9307-pdf62-q035"
+        ]
+      },
+      {
+        "id": "civ-lei-6015-pdf43-q044",
+        "source": "43.pdf · questão 44 · Art. 10, Lei 6.015/73",
+        "devices": [
+          "6015|10|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-6015-pdf43-q040"
+        ]
+      },
+      {
+        "id": "civ-lei-6015-pdf43-q013",
+        "source": "43.pdf · questão 13 · Art. 4º, Lei 6.015/73",
+        "devices": [
+          "6015|4|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-6015-pdf43-q012"
+        ]
+      },
+      {
+        "id": "civ-lei-6015-pdf43-q037",
+        "source": "43.pdf · questão 37 · Art. 9º, Lei 6.015/73",
+        "devices": [
+          "6015|9|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-6015-pdf43-q033"
+        ]
+      },
+      {
+        "id": "civ-lei-6015-pdf43-q019",
+        "source": "43.pdf · questão 19 · Art. 5º, Lei 6.015/73",
+        "devices": [
+          "6015|5|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-6015-pdf43-q017"
+        ]
+      },
+      {
+        "id": "civ-lei-6015-pdf43-q008",
+        "source": "43.pdf · questão 8 · Art. 3º, Lei 6.015/73",
+        "devices": [
+          "6015|3|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-6015-pdf43-q007"
+        ]
+      },
+      {
+        "id": "civ-lei-5478-pdf40-q016",
+        "source": "40.pdf · questão 16 · Art. 4º, Lei 5.478/68",
+        "devices": [
+          "5478|4|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-5478-pdf40-q002"
+        ]
+      },
+      {
+        "id": "civ-lei-5478-pdf40-q013",
+        "source": "40.pdf · questão 13 · Art. 7º, Lei 5.478/68",
+        "devices": [
+          "5478|7|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-5478-pdf40-q012"
+        ]
+      },
+      {
+        "id": "civ-lei-6015-pdf43-q004",
+        "source": "43.pdf · questão 4 · Art. 1º, § 1º, Lei 6.015/73",
+        "devices": [
+          "6015|1|p1||"
+        ],
+        "keptIds": [
+          "civ-lei-6015-pdf43-q005"
+        ]
+      },
+      {
+        "id": "civ-lei-5478-pdf40-q023",
+        "source": "40.pdf · questão 23 · Art. 8º, Lei 5.478/68",
+        "devices": [
+          "5478|8|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-5478-pdf40-q015"
+        ]
+      },
+      {
+        "id": "civ-lei-5478-pdf40-q025",
+        "source": "40.pdf · questão 25 · Art. 14, Lei 5.478/68",
+        "devices": [
+          "5478|14|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-5478-pdf40-q014"
+        ]
+      },
+      {
+        "id": "civ-lei-13146-pdf26-q022",
+        "source": "26.pdf · questão 22 · Arts. 2º e 3º, IV, e EPD",
+        "devices": [
+          "13146|2|caput||",
+          "13146|3|caput|IV|"
+        ],
+        "keptIds": [
+          "civ-lei-13146-pdf26-q016"
+        ]
+      },
+      {
+        "id": "civ-lei-13465-pdf30-q027",
+        "source": "30.pdf · questão 27 · Art. 13, I, II, Lei 13.465/17",
+        "devices": [
+          "13465|13|caput|I|",
+          "13465|13|caput|II|"
+        ],
+        "keptIds": [
+          "civ-lei-13465-pdf30-q026",
+          "civ-lei-13465-pdf30-q028"
+        ]
+      },
+      {
+        "id": "civ-lei-6404-pdf45-q012",
+        "source": "45.pdf · questão 12 · Art. 1º e 4º, Lei 6.404/76",
+        "devices": [
+          "6404|1|caput||",
+          "6404|4|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-6404-pdf45-q006",
+          "civ-lei-6404-pdf45-q045"
+        ]
+      },
+      {
+        "id": "civ-lei-6404-pdf45-q013",
+        "source": "45.pdf · questão 13 · Arts. 1º e 4º, Lei 6.404/76",
+        "devices": [
+          "6404|1|caput||",
+          "6404|4|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-6404-pdf45-q006",
+          "civ-lei-6404-pdf45-q045"
+        ]
+      },
+      {
+        "id": "civ-lei-8245-pdf56-q013",
+        "source": "56.pdf · questão 13 · Arts. 8° e 11, Lei 8.245/91",
+        "devices": [
+          "8245|8|caput||",
+          "8245|11|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-8245-pdf56-q031",
+          "civ-lei-8245-pdf56-q021"
+        ]
+      },
+      {
+        "id": "civ-lei-6404-pdf45-q037",
+        "source": "45.pdf · questão 37 · Art. 4º, §§ 1º e 2º, Lei 6.404/76",
+        "devices": [
+          "6404|4|p1||",
+          "6404|4|p2||"
+        ],
+        "keptIds": [
+          "civ-lei-6404-pdf45-q046",
+          "civ-lei-6404-pdf45-q047"
+        ]
+      },
+      {
+        "id": "civ-lei-13146-pdf26-q043",
+        "source": "26.pdf · questão 43 · Art. 2º, § 1º e § 3º, EPD",
+        "devices": [
+          "13146|2|p1||",
+          "13146|2|p3||"
+        ],
+        "keptIds": [
+          "civ-lei-13146-pdf26-q023"
+        ]
+      },
+      {
+        "id": "civ-lei-9307-pdf62-q043",
+        "source": "62.pdf · questão 43 · Arts. 4º e 9º, Lei 9.307/96",
+        "devices": [
+          "9307|4|caput||",
+          "9307|9|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-9307-pdf62-q038"
+        ]
+      },
+      {
+        "id": "civ-lei-9307-pdf62-q008",
+        "source": "62.pdf · questão 8 · Art. 2º, § 3º c/c Art. 22-C, § único, Lei 9.307/96",
+        "devices": [
+          "9307|2|p3||",
+          "9307|22-C|unico||"
+        ],
+        "keptIds": [
+          "civ-lei-9307-pdf62-q036"
+        ]
+      },
+      {
+        "id": "civ-lei-13465-pdf30-q003",
+        "source": "30.pdf · questão 3 · Arts. 9º e 11, II, Lei 13.465/2017",
+        "devices": [
+          "13465|9|caput|II|",
+          "13465|11|caput|II|"
+        ],
+        "keptIds": [
+          "civ-lei-13465-pdf30-q013"
+        ]
+      },
+      {
+        "id": "civ-lei-9307-pdf62-q016",
+        "source": "62.pdf · questão 16 · Art. 2º, § 3º c/c Art. 18 c/c Art. 31, Lei 9.307/96",
+        "devices": [
+          "9307|2|p3||",
+          "9307|18|caput||",
+          "9307|31|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-9307-pdf62-q036"
+        ]
+      },
+      {
+        "id": "civ-lei-13146-pdf26-q038",
+        "source": "26.pdf · questão 38 · Art. 2º, § 1º, I, III, IV, EPD",
+        "devices": [
+          "13146|2|p1|I|",
+          "13146|2|p1|III|",
+          "13146|2|p1|IV|"
+        ],
+        "keptIds": [
+          "civ-lei-13146-pdf26-q037"
+        ]
+      },
+      {
+        "id": "civ-lei-8245-pdf56-q043",
+        "source": "56.pdf · questão 43 · Art. 9º, I, II e III, Lei 8.245/91",
+        "devices": [
+          "8245|9|caput|I|",
+          "8245|9|caput|II|",
+          "8245|9|caput|III|"
+        ],
+        "keptIds": [
+          "civ-lei-8245-pdf56-q046"
+        ]
+      },
+      {
+        "id": "civ-lei-13465-pdf30-q032",
+        "source": "30.pdf · questão 32 · Art. 14, IV e V, Lei 13.465/2017",
+        "devices": [
+          "13465|14|caput|IV|",
+          "13465|14|caput|V|"
+        ],
+        "keptIds": [
+          "civ-lei-13465-pdf30-q033"
+        ]
+      },
+      {
+        "id": "civ-lei-13465-pdf30-q048",
+        "source": "30.pdf · questão 48 · Arts. 25 e 26, Lei 13.465/2017",
+        "devices": [
+          "13465|25|caput||",
+          "13465|26|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-13465-pdf30-q047"
+        ]
+      },
+      {
+        "id": "civ-lei-13465-pdf30-q014",
+        "source": "30.pdf · questão 14 · Art. 11, II e III Lei 13.465/2017",
+        "devices": [
+          "13465|11|caput|II|",
+          "13465|11|caput|III|"
+        ],
+        "keptIds": [
+          "civ-lei-13465-pdf30-q013",
+          "civ-lei-13465-pdf30-q016"
+        ]
+      },
+      {
+        "id": "civ-lei-13465-pdf30-q015",
+        "source": "30.pdf · questão 15 · Art. 11, II e III Lei 13.465/2017",
+        "devices": [
+          "13465|11|caput|II|",
+          "13465|11|caput|III|"
+        ],
+        "keptIds": [
+          "civ-lei-13465-pdf30-q013",
+          "civ-lei-13465-pdf30-q016"
+        ]
+      },
+      {
+        "id": "civ-lei-13465-pdf30-q017",
+        "source": "30.pdf · questão 17 · Art. 11, VI e VII, Lei 13.465/2017",
+        "devices": [
+          "13465|11|caput|VI|",
+          "13465|11|caput|VII|"
+        ],
+        "keptIds": [
+          "civ-lei-13465-pdf30-q019"
+        ]
+      },
+      {
+        "id": "civ-lei-13146-pdf26-q042",
+        "source": "26.pdf · questão 42 · Art. 2º, § 1º, II, III, EPD",
+        "devices": [
+          "13146|2|p1|II|",
+          "13146|2|p1|III|"
+        ],
+        "keptIds": [
+          "civ-lei-13146-pdf26-q041"
+        ]
+      },
+      {
+        "id": "civ-lei-13465-pdf30-q036",
+        "source": "30.pdf · questão 36 · Art. 15, XIII e XIV, Lei 13.465/2017",
+        "devices": [
+          "13465|15|caput|XIII|",
+          "13465|15|caput|XIV|"
+        ],
+        "keptIds": [
+          "civ-lei-13465-pdf30-q037"
+        ]
+      },
+      {
+        "id": "civ-lei-5478-pdf40-q003",
+        "source": "40.pdf · questão 3 · Arts. 14 e 15, Lei 5.478/68",
+        "devices": [
+          "5478|14|caput||",
+          "5478|15|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-5478-pdf40-q014",
+          "civ-lei-5478-pdf40-q004"
+        ]
+      },
+      {
+        "id": "civ-lei-5478-pdf40-q008",
+        "source": "40.pdf · questão 8 · Art. 14 e 15, Lei 5.478/68",
+        "devices": [
+          "5478|14|caput||",
+          "5478|15|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-5478-pdf40-q014",
+          "civ-lei-5478-pdf40-q004"
+        ]
+      },
+      {
+        "id": "civ-lei-11804-pdf18-q024",
+        "source": "18.pdf · questão 24 · Art. 241, II, CPC c/c 7º e 11, Lei 11.804/2008",
+        "devices": [
+          "cpc1973|241|caput|II|",
+          "11804|7|caput||",
+          "11804|11|caput||"
+        ],
+        "keptIds": [
+          "civ-lei-11804-pdf18-q008"
+        ]
+      }
+    ],
+    "removedCount": 218
+  },
+  "missingSources": [
+    "CDC — Lei 8.078/1990",
+    "União Estável — Lei 9.278/1996",
+    "Complementação ECA — Lei 8.069/1990",
+    "Complementação Seguros — Lei 15.040/2024"
+  ],
+  "scope": "Importação dos PDFs fornecidos, sem afirmar cobertura integral ou atualização legislativa."
+}
