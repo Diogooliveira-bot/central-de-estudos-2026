@@ -1,5 +1,5 @@
 {
-  "build": "20261008-lei-em-dia-adm-678",
+  "build": "20261008-lei-em-dia-adm-765",
   "files": [
     "/central-v119.html?direct=35",
     "/ui/discipline-standard.js?v=20261003penalnative1",
@@ -411,6 +411,7 @@
     "/tools/decorando-data-adm-8429-extra.js?v=20261008adm4",
     "/tools/decorando-data-adm-9784-expansao.js?v=20261008adm5",
     "/tools/decorando-data-adm-12527-expansao.js?v=20261008adm5",
-    "/tools/decorando-data-adm-13709-expansao.js?v=20261008adm5"
+    "/tools/decorando-data-adm-13709-expansao.js?v=20261008adm5",
+    "/tools/decorando-data-adm-pack5.js?v=20261008adm6"
   ]
 }
