@@ -12,7 +12,8 @@
   },
   "scripts": {
     "prepare": "node scripts/build-home-progress.mjs",
-    "test": "node --test tests/auth-unit.mjs"
+    "test": "node --test tests/auth-unit.mjs",
+    "test:lei-adm": "node --test tests/lei-em-dia-adm-9784.mjs tests/lei-em-dia-adm-15leis.mjs"
   },
   "devDependencies": {
     "playwright": "^1.63.0"
