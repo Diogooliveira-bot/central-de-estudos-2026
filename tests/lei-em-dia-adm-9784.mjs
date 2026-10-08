@@ -27,7 +27,7 @@ test("nenhum gabarito, enunciado ou fonte está ausente", () => {
     assert.ok(q.question.source.includes("PDF 72.pdf"));
     assert.ok(topics[0].subtopics.includes(q.subtopic));
     assert.ok(!q.question.statement.includes("Gabarito:"));
-    assert.ok(!q.parts[0].includes("decorandoaleiseca.app"));
+    assert.ok(!/https?:\/\//i.test(q.parts[0]), "Texto de lei não deve conter endereço de site comercial");
   }
 });
 test("front-end carrega módulo administrativo sem mudar a chave de progresso", () => {
