@@ -55,7 +55,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 2º",
     "title": "Lei 8.112/1990 — Servidores federais",
     "parts": [
-      "Art. 2º Para os efeitos desta Lei, servidor é a pessoa legalmente investida em cargo público. 07/10/2026, 23:26 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 2/"
+      "Art. 2º Para os efeitos desta Lei, servidor é a pessoa legalmente investida em cargo público."
     ],
     "origin": "real",
     "question": {
@@ -78,7 +78,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 3º",
     "title": "Lei 8.112/1990 — Servidores federais",
     "parts": [
-      "Art. 3° Cargo público é o conjunto de atribuições e responsabilidades previstas na estrutura organizacional que devem ser cometidas a um servidor. 07/10/2026, 23:26 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 3/"
+      "Art. 3° Cargo público é o conjunto de atribuições e responsabilidades previstas na estrutura organizacional que devem ser cometidas a um servidor."
     ],
     "origin": "real",
     "question": {
@@ -102,18 +102,18 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 3º, parágrafo único",
     "title": "Lei 8.112/1990 — Servidores federais",
     "parts": [
-      "Art. 3º, Parágrafo único - Os cargos públicos, acessíveis a todos os brasileiros, são criados por lei, com denominação própria e vencimento pago pelos cofres públicos, para provimento em caráter efetivo ou em comissão. 07/10/2026, 23:26 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 4/"
+      "Art. 3º, Parágrafo único - Os cargos públicos, acessíveis a todos os brasileiros, são criados por lei, com denominação própria e vencimento pago pelos cofres públicos, para provimento em caráter efetivo ou em comissão."
     ],
     "origin": "real",
     "question": {
-      "statement": "Vinhedo - SP) Julgue o item a seguir sobre o conceito de servidores públicos no direito administrativo brasileiro. Os cargos públicos são acessíveis exclusivamente aos brasileiros com ensino superior, e são criados por lei, resolução, decreto ou portaria, com denominação própria e vencimento pago pelos cofres públicos, para provimento em caráter efetivo.",
+      "statement": "Julgue o item a seguir sobre o conceito de servidores públicos no direito administrativo brasileiro. Os cargos públicos são acessíveis exclusivamente aos brasileiros com ensino superior, e são criados por lei, resolução, decreto ou portaria, com denominação própria e vencimento pago pelos cofres públicos, para provimento em caráter efetivo.",
       "answer": false,
       "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
       "source": "53.pdf · questão 7 · Art. 3º, § único, Lei 8.112/90",
-      "meta": "AVANÇASP 2026 - Escriturário (Prefeitura de",
+      "meta": "AVANÇASP 2026 - Escriturário (Prefeitura de Vinhedo - SP)",
       "bank": "AVANÇASP",
       "year": 2026,
-      "role": "Escriturário (Prefeitura de",
+      "role": "Escriturário (Prefeitura de Vinhedo - SP)",
       "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
     }
   },
@@ -125,43 +125,19 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 3º",
     "title": "Lei 8.112/1990 — Servidores federais",
     "parts": [
-      "Art. 3º Cargo público é o conjunto de atribuições e responsabilidades previstas na estrutura organizacional que devem ser cometidas a um servidor. Parágrafo único. Os cargos públicos, acessíveis a todos os brasileiros, são criados por lei, com denominação própria e vencimento pago pelos cofres públicos, para provimento em caráter efetivo ou em comissão. 07/10/2026, 23:26 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 5/"
+      "Art. 3º Cargo público é o conjunto de atribuições e responsabilidades previstas na estrutura organizacional que devem ser cometidas a um servidor. Parágrafo único. Os cargos públicos, acessíveis a todos os brasileiros, são criados por lei, com denominação própria e vencimento pago pelos cofres públicos, para provimento em caráter efetivo ou em comissão."
     ],
     "origin": "real",
     "question": {
-      "statement": "Federal) Foi realizado concurso para o preenchimento de vagas para determinado cargo público, de natureza civil, da administração direta federal. Após a divulgação dos resultados, os aprovados foram nomeados. Considerando essa situação hipotética e o que dispõe a Lei n.º 8.112/1990, julgue o item subsecutivo. É correto afirmar que o cargo público em questão foi criado por lei.",
+      "statement": "Foi realizado concurso para o preenchimento de vagas para determinado cargo público, de natureza civil, da administração direta federal. Após a divulgação dos resultados, os aprovados foram nomeados. Considerando essa situação hipotética e o que dispõe a Lei n.º 8.112/1990, julgue o item subsecutivo. É correto afirmar que o cargo público em questão foi criado por lei.",
       "answer": true,
       "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
       "source": "53.pdf · questão 8 · Art. 3º, Lei 8.112/90",
-      "meta": "CESPE/CEBRASPE 2021 - Delegado de Polícia (Polícia",
+      "meta": "CESPE/CEBRASPE 2021 - Delegado de Polícia (Polícia Federal)",
       "bank": "CESPE/CEBRASPE",
       "year": 2021,
-      "role": "Delegado de Polícia (Polícia",
+      "role": "Delegado de Polícia (Polícia Federal)",
       "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
-    }
-  },
-  {
-    "id": "adm-8112-pdf53-q010",
-    "discipline": "adm",
-    "topicId": "adm-lei-8112",
-    "subtopic": "Lei 8.112/1990 · Art. 3º, parágrafo único",
-    "number": "Art. 3º, parágrafo único",
-    "title": "Lei 8.112/1990 — Servidores federais",
-    "parts": [
-      "Art. 3°. [...] Parágrafo único. Os cargos públicos, acessíveis a todos os brasileiros, são criados por lei, com denominação própria e vencimento pago pelos cofres públicos, para provimento em caráter efetivo ou em comissão."
-    ],
-    "origin": "real",
-    "question": {
-      "statement": "(TRE-MA) Considerando a Lei n.º 8.112/1990, que dispõe sobre o regime jurídico dos servidores públicos civis da União, das autarquias e das fundações públicas federais, considere a afirmativa: Os cargos públicos são acessíveis a todos os brasileiros e criados por lei, com denominação própria e vencimento pago pelos cofres públicos, com vistas ao provimento em caráter efetivo ou em comissão.",
-      "answer": true,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
-      "source": "53.pdf · questão 10 · Art. 3°, § Único, Lei 8.112/90",
-      "meta": "CESPE 2009 - Analista Judiciário - Área Judiciária",
-      "bank": "CESPE",
-      "year": 2009,
-      "role": "Analista Judiciário - Área Judiciária",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
-      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
@@ -172,7 +148,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 3º, parágrafo único",
     "title": "Lei 8.112/1990 — Servidores federais",
     "parts": [
-      "Art. 3o Cargo público é o conjunto de atribuições e responsabilidades previstas na estrutura organizacional que devem ser cometidas a um servidor. Parágrafo único. Os cargos públicos, acessíveis a todos os brasileiros, são criados por lei, com denominação própria e vencimento pago pelos cofres públicos, para provimento em caráter efetivo ou em comissão. 07/10/2026, 23:26 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 7/"
+      "Art. 3o Cargo público é o conjunto de atribuições e responsabilidades previstas na estrutura organizacional que devem ser cometidas a um servidor. Parágrafo único. Os cargos públicos, acessíveis a todos os brasileiros, são criados por lei, com denominação própria e vencimento pago pelos cofres públicos, para provimento em caráter efetivo ou em comissão."
     ],
     "origin": "real",
     "question": {
@@ -219,7 +195,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 4º",
     "title": "Lei 8.112/1990 — Servidores federais",
     "parts": [
-      "Art. 4º - É proibida a prestação de serviços gratuitos, salvo os casos previstos em lei. 07/10/2026, 23:26 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 8/"
+      "Art. 4º - É proibida a prestação de serviços gratuitos, salvo os casos previstos em lei."
     ],
     "origin": "real",
     "question": {
@@ -242,18 +218,18 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 5º",
     "title": "Lei 8.112/1990 — Servidores federais",
     "parts": [
-      "Art. 5 o - São requisitos básicos para investidura em cargo público: I - a nacionalidade brasileira; II - o gozo dos direitos políticos; III - a quitação com as obrigações militares e eleitorais; IV - o nível de escolaridade exigido para o exercício do cargo; V - a idade mínima de dezoito anos; VI - aptidão física e mental. 07/10/2026, 23:26 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 9/"
+      "Art. 5 o - São requisitos básicos para investidura em cargo público: I - a nacionalidade brasileira; II - o gozo dos direitos políticos; III - a quitação com as obrigações militares e eleitorais; IV - o nível de escolaridade exigido para o exercício do cargo; V - a idade mínima de dezoito anos; VI - aptidão física e mental."
     ],
     "origin": "real",
     "question": {
-      "statement": "6ª Região) Antônio é brasileiro, tem 25 anos de idade, não está em gozo dos direitos políticos, possui deficiência visual bilateral e deseja prestar concurso público cujas atribuições são compatíveis com a deficiência que possui. Nessa situação, com base apenas nas informações fornecidas, de acordo com a Lei nº 8.112/1990, Antônio não poderá ser investido em cargo público.",
+      "statement": "Antônio é brasileiro, tem 25 anos de idade, não está em gozo dos direitos políticos, possui deficiência visual bilateral e deseja prestar concurso público cujas atribuições são compatíveis com a deficiência que possui. Nessa situação, com base apenas nas informações fornecidas, de acordo com a Lei nº 8.112/1990, Antônio não poderá ser investido em cargo público.",
       "answer": true,
       "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
       "source": "53.pdf · questão 14 · Art. 5º, Lei 8.112/90",
-      "meta": "FCC 2025 - Analista Judiciário - Área Administrativa (TRT -",
+      "meta": "FCC 2025 - Analista Judiciário - Área Administrativa (TRT - 6ª Região)",
       "bank": "FCC",
       "year": 2025,
-      "role": "Analista Judiciário - Área Administrativa (TRT -",
+      "role": "Analista Judiciário - Área Administrativa (TRT - 6ª Região)",
       "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
     }
   },
@@ -269,14 +245,14 @@ const DATA_ADM_PACK1 = [
     ],
     "origin": "real",
     "question": {
-      "statement": "Piauí - PI) Dentre os requisitos básicos para investidura em cargo público, o único que não está coerente com o regime jurídico dos servidores públicos civis (Lei nº 8.112/90) é a idade mínima de 21 anos.",
+      "statement": "Dentre os requisitos básicos para investidura em cargo público, o único que não está coerente com o regime jurídico dos servidores públicos civis (Lei nº 8.112/90) é a idade mínima de 21 anos.",
       "answer": true,
       "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
       "source": "53.pdf · questão 17 · Art. 5º, Lei 8.112/90",
-      "meta": "IVIN 2026 - Merendeira (Prefeitura de Campo Grande do",
+      "meta": "IVIN 2026 - Merendeira (Prefeitura de Campo Grande do Piauí - PI)",
       "bank": "IVIN",
       "year": 2026,
-      "role": "Merendeira (Prefeitura de Campo Grande do",
+      "role": "Merendeira (Prefeitura de Campo Grande do Piauí - PI)",
       "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
     }
   },
@@ -311,7 +287,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 5º, inc. I",
     "title": "Lei 8.112/1990 — Servidores federais",
     "parts": [
-      "Art. 5 o - São requisitos básicos para investidura em cargo público: I - a nacionalidade brasileira; [...] 07/10/2026, 23:26 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 14/"
+      "Art. 5 o - São requisitos básicos para investidura em cargo público: I - a nacionalidade brasileira; [...]"
     ],
     "origin": "real",
     "question": {
@@ -334,7 +310,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 5º, inc. II",
     "title": "Lei 8.112/1990 — Servidores federais",
     "parts": [
-      "Art. 5 o - São requisitos básicos para investidura em cargo público: […] II - o gozo dos direitos políticos; […] 07/10/2026, 23:26 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 16/"
+      "Art. 5 o - São requisitos básicos para investidura em cargo público: […] II - o gozo dos direitos políticos; […]"
     ],
     "origin": "real",
     "question": {
@@ -380,18 +356,18 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 5º, inc. III",
     "title": "Lei 8.112/1990 — Servidores federais",
     "parts": [
-      "Art. 5º - São requisitos básicos para investidura em cargo público: [...] III - a quitação com as obrigações militares e eleitorais; [...] 07/10/2026, 23:26 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 17/"
+      "Art. 5º - São requisitos básicos para investidura em cargo público: [...] III - a quitação com as obrigações militares e eleitorais; [...]"
     ],
     "origin": "real",
     "question": {
-      "statement": "Paraty) São requisitos básicos para investidura em cargo público, exceto a quitação com as obrigações militares e eleitorais.",
+      "statement": "São requisitos básicos para investidura em cargo público, exceto a quitação com as obrigações militares e eleitorais.",
       "answer": false,
       "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
       "source": "53.pdf · questão 26 · Art. 5º, III, Lei 8.112/90",
-      "meta": "AVANÇA SP 2024 - Analista de Recursos Humanos (CM",
+      "meta": "AVANÇA SP 2024 - Analista de Recursos Humanos (CM Paraty)",
       "bank": "AVANÇA SP",
       "year": 2024,
-      "role": "Analista de Recursos Humanos (CM",
+      "role": "Analista de Recursos Humanos (CM Paraty)",
       "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
     }
   },
@@ -403,18 +379,18 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 5º, inc. V",
     "title": "Lei 8.112/1990 — Servidores federais",
     "parts": [
-      "Art. 5º São requisitos básicos para investidura em cargo público: […] V - a idade mínima de dezoito anos; 07/10/2026, 23:26 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 18/"
+      "Art. 5º São requisitos básicos para investidura em cargo público: […] V - a idade mínima de dezoito anos;"
     ],
     "origin": "real",
     "question": {
-      "statement": "Região) Ao disciplinar o provimento de cargos públicos, a Lei 8.112/1990 estabelece que a investidura em cargo público exige a idade mínima de 18 (dezoito) anos.",
+      "statement": "Ao disciplinar o provimento de cargos públicos, a Lei 8.112/1990 estabelece que a investidura em cargo público exige a idade mínima de 18 (dezoito) anos.",
       "answer": true,
       "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
       "source": "53.pdf · questão 27 · Art. 5º, V, Lei 8.112/90",
-      "meta": "FCC 2022 - Analista Judiciário - Área Judiciária (TRT - 5ª",
+      "meta": "FCC 2022 - Analista Judiciário - Área Judiciária (TRT - 5ª Região)",
       "bank": "FCC",
       "year": 2022,
-      "role": "Analista Judiciário - Área Judiciária (TRT - 5ª",
+      "role": "Analista Judiciário - Área Judiciária (TRT - 5ª Região)",
       "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
     }
   },
@@ -426,7 +402,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 5º, § 1º",
     "title": "Lei 8.112/1990 — Servidores federais",
     "parts": [
-      "Art. 5º - São requisitos básicos para investidura em cargo público: I - a nacionalidade brasileira; II - o gozo dos direitos políticos; III - a quitação com as obrigações militares e eleitorais; IV - o nível de escolaridade exigido para o exercício do cargo; V - a idade mínima de dezoito anos; VI - aptidão física e mental. § 1º - As atribuições do cargo podem justificar a exigência de outros requisitos estabelecidos em lei. 07/10/2026, 23:26 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 19/"
+      "Art. 5º - São requisitos básicos para investidura em cargo público: I - a nacionalidade brasileira; II - o gozo dos direitos políticos; III - a quitação com as obrigações militares e eleitorais; IV - o nível de escolaridade exigido para o exercício do cargo; V - a idade mínima de dezoito anos; VI - aptidão física e mental. § 1º - As atribuições do cargo podem justificar a exigência de outros requisitos estabelecidos em lei."
     ],
     "origin": "real",
     "question": {
@@ -449,7 +425,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 5º, § 2º",
     "title": "Lei 8.112/1990 — Servidores federais",
     "parts": [
-      "Art. 5º - São requisitos básicos para investidura em cargo público: [...] II - o gozo dos direitos políticos; [...] 07/10/2026, 23:26 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 22/"
+      "Art. 5º - São requisitos básicos para investidura em cargo público: [...] II - o gozo dos direitos políticos; [...]"
     ],
     "origin": "real",
     "question": {
@@ -472,7 +448,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 5º, § 2º",
     "title": "Lei 8.112/1990 — Servidores federais",
     "parts": [
-      "Art. 5º - São requisitos básicos para investidura em cargo público: I - a nacionalidade brasileira; II - o gozo dos direitos políticos; III - a quitação com as obrigações militares e eleitorais; IV - o nível de escolaridade exigido para o exercício do cargo; V - a idade mínima de dezoito anos; VI - aptidão física e mental. § 2º - Às pessoas portadoras de deficiência é assegurado o direito de se inscrever em concurso público para provimento de cargo cujas atribuições sejam compatíveis com a deficiência de que são portadoras; para tais pessoas serão reservadas até 20% (vinte por cento) das vagas oferecidas no concurso. 07/10/2026, 23:26 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 23/"
+      "Art. 5º - São requisitos básicos para investidura em cargo público: I - a nacionalidade brasileira; II - o gozo dos direitos políticos; III - a quitação com as obrigações militares e eleitorais; IV - o nível de escolaridade exigido para o exercício do cargo; V - a idade mínima de dezoito anos; VI - aptidão física e mental. § 2º - Às pessoas portadoras de deficiência é assegurado o direito de se inscrever em concurso público para provimento de cargo cujas atribuições sejam compatíveis com a deficiência de que são portadoras; para tais pessoas serão reservadas até 20% (vinte por cento) das vagas oferecidas no concurso."
     ],
     "origin": "real",
     "question": {
@@ -518,7 +494,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 6º",
     "title": "Lei 8.112/1990 — Servidores federais",
     "parts": [
-      "Art. 6º - O provimento dos cargos públicos far-se-á mediante ato da autoridade competente de cada Poder. 07/10/2026, 23:26 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 25/"
+      "Art. 6º - O provimento dos cargos públicos far-se-á mediante ato da autoridade competente de cada Poder."
     ],
     "origin": "real",
     "question": {
@@ -564,7 +540,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 7º",
     "title": "Lei 8.112/1990 — Servidores federais",
     "parts": [
-      "Art. 7 o - A investidura em cargo público ocorrerá com a posse. 07/10/2026, 23:26 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 28/"
+      "Art. 7 o - A investidura em cargo público ocorrerá com a posse."
     ],
     "origin": "real",
     "question": {
@@ -587,7 +563,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 8º",
     "title": "Lei 8.112/1990 — Servidores federais",
     "parts": [
-      "Art. 8º - São formas de provimento de cargo público: I - nomeação; II - promoção; V - readaptação; VI - reversão; VII - aproveitamento; VIII - reintegração; IX - recondução. 07/10/2026, 23:26 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 31/"
+      "Art. 8º - São formas de provimento de cargo público: I - nomeação; II - promoção; V - readaptação; VI - reversão; VII - aproveitamento; VIII - reintegração; IX - recondução."
     ],
     "origin": "real",
     "question": {
@@ -610,7 +586,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 8º",
     "title": "Lei 8.112/1990 — Servidores federais",
     "parts": [
-      "Art. 8º - São formas de provimento de cargo público: I - nomeação; II - promoção; V - readaptação; VI - reversão; VII - aproveitamento; VIII - reintegração; IX - recondução. Obs: o rol do art. 8º não cita a ascenção. 07/10/2026, 23:26 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 36/"
+      "Art. 8º - São formas de provimento de cargo público: I - nomeação; II - promoção; V - readaptação; VI - reversão; VII - aproveitamento; VIII - reintegração; IX - recondução. Obs: o rol do art. 8º não cita a ascenção."
     ],
     "origin": "real",
     "question": {
@@ -656,7 +632,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 1º",
     "title": "Lei 8.429/1992 — Improbidade administrativa",
     "parts": [
-      "Art. 1º O sistema de responsabilização por atos de improbidade administrativa tutelará a probidade na organização do Estado e no exercício de suas funções, como forma de assegurar a integridade do patrimônio público e social, nos termos desta Lei. 07/10/2026, 23:28 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 1/"
+      "Art. 1º O sistema de responsabilização por atos de improbidade administrativa tutelará a probidade na organização do Estado e no exercício de suas funções, como forma de assegurar a integridade do patrimônio público e social, nos termos desta Lei."
     ],
     "origin": "real",
     "question": {
@@ -679,7 +655,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 1º, § 1º",
     "title": "Lei 8.429/1992 — Improbidade administrativa",
     "parts": [
-      "Art. 1º, § 1º - Consideram-se atos de improbidade administrativa as condutas dolosas tipificadas nos arts. 9º, 10 e 11 desta Lei, ressalvados tipos previstos em leis especiais. 07/10/2026, 23:28 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 2/"
+      "Art. 1º, § 1º - Consideram-se atos de improbidade administrativa as condutas dolosas tipificadas nos arts. 9º, 10 e 11 desta Lei, ressalvados tipos previstos em leis especiais."
     ],
     "origin": "real",
     "question": {
@@ -702,18 +678,18 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 1º, § 1º",
     "title": "Lei 8.429/1992 — Improbidade administrativa",
     "parts": [
-      "Art. 1º. [...] § 1º Consideram-se atos de improbidade administrativa as condutas dolosas tipificadas nos arts. 9º, 10 e 11 desta Lei, ressalvados tipos previstos em leis especiais. 07/10/2026, 23:28 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 8/"
+      "Art. 1º. [...] § 1º Consideram-se atos de improbidade administrativa as condutas dolosas tipificadas nos arts. 9º, 10 e 11 desta Lei, ressalvados tipos previstos em leis especiais."
     ],
     "origin": "real",
     "question": {
-      "statement": "Municipal Mogi das Cruzes - SP) Considerando as alterações promovidas pela Lei nº 14.230, de 25 de outubro de 2021, na Lei nº 8.429/1992 (Lei de Improbidade Administrativa), julgue o item acerca da responsabilização dos agentes públicos. O particular, pessoa física, mesmo não sendo agente público, sujeita-se às sanções da Lei no 8.429/1992 quando restar comprovado que induziu ou concorreu, de forma dolosa ou culposa, para a prática do ato de improbidade.",
+      "statement": "Considerando as alterações promovidas pela Lei nº 14.230, de 25 de outubro de 2021, na Lei nº 8.429/1992 (Lei de Improbidade Administrativa), julgue o item acerca da responsabilização dos agentes públicos. O particular, pessoa física, mesmo não sendo agente público, sujeita-se às sanções da Lei no 8.429/1992 quando restar comprovado que induziu ou concorreu, de forma dolosa ou culposa, para a prática do ato de improbidade.",
       "answer": false,
       "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
       "source": "57.pdf · questão 14 · Art. 1º, § 1º, Lei 8.429/92",
-      "meta": "VUNESP 2026 – Técnico Legislativo (Câmara",
+      "meta": "VUNESP 2026 – Técnico Legislativo (Câmara Municipal Mogi das Cruzes - SP)",
       "bank": "VUNESP",
       "year": 2026,
-      "role": "Técnico Legislativo (Câmara",
+      "role": "Técnico Legislativo (Câmara Municipal Mogi das Cruzes - SP)",
       "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
     }
   },
@@ -725,7 +701,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 1º, § 3º",
     "title": "Lei 8.429/1992 — Improbidade administrativa",
     "parts": [
-      "Art. 12. Independentemente do ressarcimento integral do dano patrimonial, se efetivo, e das sanções penais comuns e de responsabilidade, civis e administrativas previstas na legislação específica, está o responsável pelo ato de improbidade sujeito às seguintes cominações, que podem ser aplicadas isolada ou cumulativamente, de acordo com a gravidade do fato: [...] II - na hipótese do art. 10 desta Lei, perda dos bens ou valores acrescidos ilicitamente ao patrimônio, se concorrer esta circunstância, perda da função pública, suspensão dos direitos políticos até 12 (doze) anos, pagamento de multa civil equivalente ao valor do dano e proibição de contratar com o poder público ou de receber benefícios ou incentivos fiscais ou creditícios, direta ou indiretamente, ainda que por intermédio de pessoa jurídica da qual seja sócio majoritário, pelo prazo não superior a 12 (doze) anos; 07/10/2026, 23:28 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 21/"
+      "Art. 12. Independentemente do ressarcimento integral do dano patrimonial, se efetivo, e das sanções penais comuns e de responsabilidade, civis e administrativas previstas na legislação específica, está o responsável pelo ato de improbidade sujeito às seguintes cominações, que podem ser aplicadas isolada ou cumulativamente, de acordo com a gravidade do fato: [...] II - na hipótese do art. 10 desta Lei, perda dos bens ou valores acrescidos ilicitamente ao patrimônio, se concorrer esta circunstância, perda da função pública, suspensão dos direitos políticos até 12 (doze) anos, pagamento de multa civil equivalente ao valor do dano e proibição de contratar com o poder público ou de receber benefícios ou incentivos fiscais ou creditícios, direta ou indiretamente, ainda que por intermédio de pessoa jurídica da qual seja sócio majoritário, pelo prazo não superior a 12 (doze) anos;"
     ],
     "origin": "real",
     "question": {
@@ -798,14 +774,14 @@ const DATA_ADM_PACK1 = [
     ],
     "origin": "real",
     "question": {
-      "statement": "Olímpia - SP) A afirmativa a seguir contempla hipótese em que a Lei no 8.429/92 (com alterações da Lei no 14.230/2021), em tese, prevê expressamente a responsabilização por ato de improbidade administrativa. Exercício da função ou desempenho de competências públicas, sem comprovação de ato doloso com fim ilícito.",
+      "statement": "A afirmativa a seguir contempla hipótese em que a Lei no 8.429/92 (com alterações da Lei no 14.230/2021), em tese, prevê expressamente a responsabilização por ato de improbidade administrativa. Exercício da função ou desempenho de competências públicas, sem comprovação de ato doloso com fim ilícito.",
       "answer": false,
       "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
       "source": "57.pdf · questão 50 · Art. 1º, § 3º, Lei 8.429/92",
-      "meta": "VUNESP - 2022 - Analista (Câmara Municipal de",
+      "meta": "VUNESP - 2022 - Analista (Câmara Municipal de Olímpia - SP)",
       "bank": "VUNESP -",
       "year": 2022,
-      "role": "Analista (Câmara Municipal de",
+      "role": "Analista (Câmara Municipal de Olímpia - SP)",
       "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
     }
   },
@@ -840,7 +816,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 1º, parágrafo único, inc. I",
     "title": "Lei 12.527/2011 — Acesso à Informação (LAI)",
     "parts": [
-      "Art. 1º […] Parágrafo único. Subordinam-se ao regime desta Lei: I - os órgãos públicos integrantes da administração direta dos Poderes Executivo, Legislativo, incluindo as Cortes de Contas, e Judiciário e do Ministério Público; 07/10/2026, 23:10 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 2/"
+      "Art. 1º […] Parágrafo único. Subordinam-se ao regime desta Lei: I - os órgãos públicos integrantes da administração direta dos Poderes Executivo, Legislativo, incluindo as Cortes de Contas, e Judiciário e do Ministério Público;"
     ],
     "origin": "real",
     "question": {
@@ -863,7 +839,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 1º, parágrafo único, inc. II",
     "title": "Lei 12.527/2011 — Acesso à Informação (LAI)",
     "parts": [
-      "Art. 1º Esta Lei dispõe sobre os procedimentos a serem observados pela União, Estados, Distrito Federal e Municípios, com o fim de garantir o acesso a informações previsto no inciso XXXIII do art. 5º , no inciso II do § 3º do art. 37 e no § 2º do art. 216 da Constituição Federal. Parágrafo único. Subordinam-se ao regime desta Lei: I - os órgãos públicos integrantes da administração direta dos Poderes Executivo, Legislativo, incluindo as Cortes de Contas, e Judiciário e do Ministério Público; II - as autarquias, as fundações públicas, as empresas públicas, as sociedades de economia mista e demais entidades controladas direta ou indiretamente pela União, Estados, Distrito Federal e Municípios. 07/10/2026, 23:10 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 3/"
+      "Art. 1º Esta Lei dispõe sobre os procedimentos a serem observados pela União, Estados, Distrito Federal e Municípios, com o fim de garantir o acesso a informações previsto no inciso XXXIII do art. 5º , no inciso II do § 3º do art. 37 e no § 2º do art. 216 da Constituição Federal. Parágrafo único. Subordinam-se ao regime desta Lei: I - os órgãos públicos integrantes da administração direta dos Poderes Executivo, Legislativo, incluindo as Cortes de Contas, e Judiciário e do Ministério Público; II - as autarquias, as fundações públicas, as empresas públicas, as sociedades de economia mista e demais entidades controladas direta ou indiretamente pela União, Estados, Distrito Federal e Municípios."
     ],
     "origin": "real",
     "question": {
@@ -887,7 +863,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 1º, parágrafo único, inc. II",
     "title": "Lei 12.527/2011 — Acesso à Informação (LAI)",
     "parts": [
-      "Art. 1º Esta Lei dispõe sobre os procedimentos a serem observados pela União, Estados, Distrito Federal e Municípios, com o fim de garantir o acesso a informações previsto no inciso XXXIII do art. 5º, no inciso II do § 3º do art. 37 e no § 2º do art. 216 da Constituição Federal. Parágrafo único. Subordinam-se ao regime desta Lei: I - os órgãos públicos integrantes da administração direta dos Poderes Executivo, Legislativo, incluindo as Cortes de Contas, e Judiciário e do Ministério Público; II - as autarquias, as fundações públicas, as empresas públicas, as sociedades de economia mista e demais entidades controladas direta ou indiretamente pela União, Estados, Distrito Federal e Municípios. 07/10/2026, 23:10 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 4/"
+      "Art. 1º Esta Lei dispõe sobre os procedimentos a serem observados pela União, Estados, Distrito Federal e Municípios, com o fim de garantir o acesso a informações previsto no inciso XXXIII do art. 5º, no inciso II do § 3º do art. 37 e no § 2º do art. 216 da Constituição Federal. Parágrafo único. Subordinam-se ao regime desta Lei: I - os órgãos públicos integrantes da administração direta dos Poderes Executivo, Legislativo, incluindo as Cortes de Contas, e Judiciário e do Ministério Público; II - as autarquias, as fundações públicas, as empresas públicas, as sociedades de economia mista e demais entidades controladas direta ou indiretamente pela União, Estados, Distrito Federal e Municípios."
     ],
     "origin": "real",
     "question": {
@@ -911,7 +887,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 2º",
     "title": "Lei 12.527/2011 — Acesso à Informação (LAI)",
     "parts": [
-      "Art. 2º Aplicam-se as disposições desta Lei, no que couber, às entidades privadas sem fins lucrativos que recebam, para realização de ações de interesse público, recursos públicos diretamente do orçamento ou mediante subvenções sociais, contrato de gestão, termo de parceria, convênios, acordo, ajustes ou outros instrumentos congêneres. 07/10/2026, 23:10 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 6/"
+      "Art. 2º Aplicam-se as disposições desta Lei, no que couber, às entidades privadas sem fins lucrativos que recebam, para realização de ações de interesse público, recursos públicos diretamente do orçamento ou mediante subvenções sociais, contrato de gestão, termo de parceria, convênios, acordo, ajustes ou outros instrumentos congêneres."
     ],
     "origin": "real",
     "question": {
@@ -934,7 +910,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 2º",
     "title": "Lei 12.527/2011 — Acesso à Informação (LAI)",
     "parts": [
-      "Art. 2º Aplicam-se as disposições desta Lei, no que couber, às entidades privadas sem fins lucrativos que recebam, para realização de ações de interesse público, recursos públicos diretamente do orçamento ou mediante subvenções sociais, contrato de gestão, termo de parceria, convênios, acordo, ajustes ou outros instrumentos congêneres. 07/10/2026, 23:10 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 7/"
+      "Art. 2º Aplicam-se as disposições desta Lei, no que couber, às entidades privadas sem fins lucrativos que recebam, para realização de ações de interesse público, recursos públicos diretamente do orçamento ou mediante subvenções sociais, contrato de gestão, termo de parceria, convênios, acordo, ajustes ou outros instrumentos congêneres."
     ],
     "origin": "real",
     "question": {
@@ -980,7 +956,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 3º, inc. I",
     "title": "Lei 12.527/2011 — Acesso à Informação (LAI)",
     "parts": [
-      "Art. 3º Os procedimentos previstos nesta Lei destinam-se a assegurar o direito fundamental de acesso à informação e devem ser executados em conformidade com os princípios básicos da administração pública e com as seguintes diretrizes: I - observância da publicidade como preceito geral e do sigilo como exceção; 07/10/2026, 23:10 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 8/"
+      "Art. 3º Os procedimentos previstos nesta Lei destinam-se a assegurar o direito fundamental de acesso à informação e devem ser executados em conformidade com os princípios básicos da administração pública e com as seguintes diretrizes: I - observância da publicidade como preceito geral e do sigilo como exceção;"
     ],
     "origin": "real",
     "question": {
@@ -1003,7 +979,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 3º, inc. II",
     "title": "Lei 12.527/2011 — Acesso à Informação (LAI)",
     "parts": [
-      "Art. 3º Os procedimentos previstos nesta Lei destinam-se a assegurar o direito fundamental de acesso à informação e devem ser executados em conformidade com os princípios básicos da administração pública e com as seguintes diretrizes: [...] II - divulgação de informações de interesse público, independentemente de solicitações; 07/10/2026, 23:10 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 9/"
+      "Art. 3º Os procedimentos previstos nesta Lei destinam-se a assegurar o direito fundamental de acesso à informação e devem ser executados em conformidade com os princípios básicos da administração pública e com as seguintes diretrizes: [...] II - divulgação de informações de interesse público, independentemente de solicitações;"
     ],
     "origin": "real",
     "question": {
@@ -1050,18 +1026,18 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 4º, inc. I",
     "title": "Lei 12.527/2011 — Acesso à Informação (LAI)",
     "parts": [
-      "Art. 4º Para os efeitos desta Lei, considera-se: I - informação: dados, processados ou não, que podem ser utilizados para produção e transmissão de conhecimento, contidos em qualquer meio, suporte ou formato; [...] 07/10/2026, 23:10 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 12/"
+      "Art. 4º Para os efeitos desta Lei, considera-se: I - informação: dados, processados ou não, que podem ser utilizados para produção e transmissão de conhecimento, contidos em qualquer meio, suporte ou formato; [...]"
     ],
     "origin": "real",
     "question": {
-      "statement": "Taquaritinga do Norte - PE) Para os efeitos do artigo 4º da Lei de Acesso à Informação, considera-se informação quaisquer dados, processados ou não, que podem ser utilizados para produção e transmissão de conhecimento, contidos em qualquer meio, suporte ou formato.",
+      "statement": "Para os efeitos do artigo 4º da Lei de Acesso à Informação, considera-se informação quaisquer dados, processados ou não, que podem ser utilizados para produção e transmissão de conhecimento, contidos em qualquer meio, suporte ou formato.",
       "answer": true,
       "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
       "source": "20.pdf · questão 19 · Art. 4º, I, Lei 12.527/2011",
-      "meta": "ADM&TEC 2019 - Chefe de Divisão (Câmara de",
+      "meta": "ADM&TEC 2019 - Chefe de Divisão (Câmara de Taquaritinga do Norte - PE)",
       "bank": "ADM&TEC",
       "year": 2019,
-      "role": "Chefe de Divisão (Câmara de",
+      "role": "Chefe de Divisão (Câmara de Taquaritinga do Norte - PE)",
       "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
       "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
@@ -1074,7 +1050,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 4º, inc. III",
     "title": "Lei 12.527/2011 — Acesso à Informação (LAI)",
     "parts": [
-      "Art. 4º Para os efeitos desta Lei, considera-se: [...] III - informação sigilosa: aquela submetida temporariamente à restrição de acesso público em razão de sua imprescindibilidade para a segurança da sociedade e do Estado; [...] 07/10/2026, 23:10 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 13/"
+      "Art. 4º Para os efeitos desta Lei, considera-se: [...] III - informação sigilosa: aquela submetida temporariamente à restrição de acesso público em razão de sua imprescindibilidade para a segurança da sociedade e do Estado; [...]"
     ],
     "origin": "real",
     "question": {
@@ -1098,7 +1074,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 4º, inc. III",
     "title": "Lei 12.527/2011 — Acesso à Informação (LAI)",
     "parts": [
-      "Art. 4º - Para os efeitos desta Lei, considera-se: [...] III - informação sigilosa: aquela submetida temporariamente à restrição de acesso público em razão de sua imprescindibilidade para a segurança da sociedade e do Estado; [...] 07/10/2026, 23:10 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 14/"
+      "Art. 4º - Para os efeitos desta Lei, considera-se: [...] III - informação sigilosa: aquela submetida temporariamente à restrição de acesso público em razão de sua imprescindibilidade para a segurança da sociedade e do Estado; [...]"
     ],
     "origin": "real",
     "question": {
@@ -1168,7 +1144,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 5º",
     "title": "Lei 12.527/2011 — Acesso à Informação (LAI)",
     "parts": [
-      "Art. 5º É dever do Estado garantir o direito de acesso à informação, que será franqueada, mediante procedimentos objetivos e ágeis, de forma transparente, clara e em linguagem de fácil compreensão. 07/10/2026, 23:10 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 16/"
+      "Art. 5º É dever do Estado garantir o direito de acesso à informação, que será franqueada, mediante procedimentos objetivos e ágeis, de forma transparente, clara e em linguagem de fácil compreensão."
     ],
     "origin": "real",
     "question": {
@@ -1191,7 +1167,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 7º, inc. II",
     "title": "Lei 12.527/2011 — Acesso à Informação (LAI)",
     "parts": [
-      "Art. 7º O acesso à informação de que trata esta Lei compreende, entre outros, os direitos de obter: [...] II - informação contida em registros ou documentos, produzidos ou acumulados por seus órgãos ou entidades, recolhidos ou não a arquivos públicos; [...] 07/10/2026, 23:10 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 18/"
+      "Art. 7º O acesso à informação de que trata esta Lei compreende, entre outros, os direitos de obter: [...] II - informação contida em registros ou documentos, produzidos ou acumulados por seus órgãos ou entidades, recolhidos ou não a arquivos públicos; [...]"
     ],
     "origin": "real",
     "question": {
@@ -1214,7 +1190,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 7º, inc. II",
     "title": "Lei 12.527/2011 — Acesso à Informação (LAI)",
     "parts": [
-      "Art. 7º O acesso à informação de que trata esta Lei compreende, entre outros, os direitos de obter: I - orientação sobre os procedimentos para a consecução de acesso, bem como sobre o local onde poderá ser encontrada ou obtida a informação almejada; II - informação contida em registros ou documentos, produzidos ou acumulados por seus órgãos ou entidades, recolhidos ou não a arquivos públicos; […] 07/10/2026, 23:10 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 19/"
+      "Art. 7º O acesso à informação de que trata esta Lei compreende, entre outros, os direitos de obter: I - orientação sobre os procedimentos para a consecução de acesso, bem como sobre o local onde poderá ser encontrada ou obtida a informação almejada; II - informação contida em registros ou documentos, produzidos ou acumulados por seus órgãos ou entidades, recolhidos ou não a arquivos públicos; […]"
     ],
     "origin": "real",
     "question": {
@@ -1237,7 +1213,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 7º, inc. III",
     "title": "Lei 12.527/2011 — Acesso à Informação (LAI)",
     "parts": [
-      "Art. 7º O acesso à informação de que trata esta Lei compreende, entre outros, os direitos de obter: […] III - informação produzida ou custodiada por pessoa física ou entidade privada decorrente de qualquer vínculo com seus órgãos ou entidades, mesmo que esse vínculo já tenha cessado; 07/10/2026, 23:10 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 20/"
+      "Art. 7º O acesso à informação de que trata esta Lei compreende, entre outros, os direitos de obter: […] III - informação produzida ou custodiada por pessoa física ou entidade privada decorrente de qualquer vínculo com seus órgãos ou entidades, mesmo que esse vínculo já tenha cessado;"
     ],
     "origin": "real",
     "question": {
@@ -1260,7 +1236,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 7º, inc. III",
     "title": "Lei 12.527/2011 — Acesso à Informação (LAI)",
     "parts": [
-      "Art. 7º O acesso à informação de que trata esta Lei compreende, entre outros, os direitos de obter: [...] III - informação produzida ou custodiada por pessoa física ou entidade privada decorrente de qualquer vínculo com seus órgãos ou entidades, mesmo que esse vínculo já tenha cessado; 07/10/2026, 23:10 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 21/"
+      "Art. 7º O acesso à informação de que trata esta Lei compreende, entre outros, os direitos de obter: [...] III - informação produzida ou custodiada por pessoa física ou entidade privada decorrente de qualquer vínculo com seus órgãos ou entidades, mesmo que esse vínculo já tenha cessado;"
     ],
     "origin": "real",
     "question": {
@@ -1283,7 +1259,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 7º, inc. VII",
     "title": "Lei 12.527/2011 — Acesso à Informação (LAI)",
     "parts": [
-      "Art. 7º O acesso à informação de que trata esta Lei compreende, entre outros, os direitos de obter: […] VII - informação relativa: a) à implementação, acompanhamento e resultados dos programas, projetos e ações dos órgãos e entidades públicas, bem como metas e indicadores propostos; b) ao resultado de inspeções, auditorias, prestações e tomadas de contas realizadas pelos órgãos de controle interno e externo, incluindo prestações de contas relativas a exercícios anteriores. 07/10/2026, 23:10 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 22/"
+      "Art. 7º O acesso à informação de que trata esta Lei compreende, entre outros, os direitos de obter: […] VII - informação relativa: a) à implementação, acompanhamento e resultados dos programas, projetos e ações dos órgãos e entidades públicas, bem como metas e indicadores propostos; b) ao resultado de inspeções, auditorias, prestações e tomadas de contas realizadas pelos órgãos de controle interno e externo, incluindo prestações de contas relativas a exercícios anteriores."
     ],
     "origin": "real",
     "question": {
@@ -1306,7 +1282,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 7º, inc. VII",
     "title": "Lei 12.527/2011 — Acesso à Informação (LAI)",
     "parts": [
-      "Art. 7º O acesso à informação de que trata esta Lei compreende, entre outros, os direitos de obter: […] VII - informação relativa: […] b) ao resultado de inspeções, auditorias, prestações e tomadas de contas realizadas pelos órgãos de controle interno e externo, incluindo prestações de contas relativas a exercícios anteriores. 07/10/2026, 23:10 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 23/"
+      "Art. 7º O acesso à informação de que trata esta Lei compreende, entre outros, os direitos de obter: […] VII - informação relativa: […] b) ao resultado de inspeções, auditorias, prestações e tomadas de contas realizadas pelos órgãos de controle interno e externo, incluindo prestações de contas relativas a exercícios anteriores."
     ],
     "origin": "real",
     "question": {
@@ -1329,7 +1305,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 7º, § 1º",
     "title": "Lei 12.527/2011 — Acesso à Informação (LAI)",
     "parts": [
-      "Art. 7º O acesso à informação de que trata esta Lei compreende, entre outros, os direitos de obter: […] § 1º O acesso à informação previsto no caput não compreende as informações referentes a projetos de pesquisa e desenvolvimento científicos ou tecnológicos cujo sigilo seja imprescindível à segurança da sociedade e do Estado. 07/10/2026, 23:10 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 24/"
+      "Art. 7º O acesso à informação de que trata esta Lei compreende, entre outros, os direitos de obter: […] § 1º O acesso à informação previsto no caput não compreende as informações referentes a projetos de pesquisa e desenvolvimento científicos ou tecnológicos cujo sigilo seja imprescindível à segurança da sociedade e do Estado."
     ],
     "origin": "real",
     "question": {
@@ -1375,7 +1351,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 7º, § 2º",
     "title": "Lei 12.527/2011 — Acesso à Informação (LAI)",
     "parts": [
-      "Art. 7º O acesso à informação de que trata esta Lei compreende, entre outros, os direitos de obter: [...] § 2º Quando não for autorizado acesso integral à informação por ser ela parcialmente sigilosa, é assegurado o acesso à parte não sigilosa por meio de certidão, extrato ou cópia com ocultação da parte sob sigilo. 07/10/2026, 23:10 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 28/"
+      "Art. 7º O acesso à informação de que trata esta Lei compreende, entre outros, os direitos de obter: [...] § 2º Quando não for autorizado acesso integral à informação por ser ela parcialmente sigilosa, é assegurado o acesso à parte não sigilosa por meio de certidão, extrato ou cópia com ocultação da parte sob sigilo."
     ],
     "origin": "real",
     "question": {
@@ -1398,7 +1374,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 7º, § 2º",
     "title": "Lei 12.527/2011 — Acesso à Informação (LAI)",
     "parts": [
-      "Art. 7º O acesso à informação de que trata esta Lei compreende, entre outros, os direitos de obter: [...] § 2º Quando não for autorizado acesso integral à informação por ser ela parcialmente sigilosa, é assegurado o acesso à parte não sigilosa por meio de certidão, extrato ou cópia com ocultação da parte sob sigilo. 07/10/2026, 23:10 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 29/"
+      "Art. 7º O acesso à informação de que trata esta Lei compreende, entre outros, os direitos de obter: [...] § 2º Quando não for autorizado acesso integral à informação por ser ela parcialmente sigilosa, é assegurado o acesso à parte não sigilosa por meio de certidão, extrato ou cópia com ocultação da parte sob sigilo."
     ],
     "origin": "real",
     "question": {
@@ -1444,7 +1420,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 7º, § 3º",
     "title": "Lei 12.527/2011 — Acesso à Informação (LAI)",
     "parts": [
-      "Art. 7º […] § 3º O direito de acesso aos documentos ou às informações neles contidas utilizados como fundamento da tomada de decisão e do ato administrativo será assegurado com a edição do ato decisório respectivo. 07/10/2026, 23:10 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 31/"
+      "Art. 7º […] § 3º O direito de acesso aos documentos ou às informações neles contidas utilizados como fundamento da tomada de decisão e do ato administrativo será assegurado com a edição do ato decisório respectivo."
     ],
     "origin": "real",
     "question": {
@@ -1491,7 +1467,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 7º, § 5º",
     "title": "Lei 12.527/2011 — Acesso à Informação (LAI)",
     "parts": [
-      "Art. 7º, § 5º - Informado do extravio da informação solicitada, poderá o interessado requerer à autoridade competente a imediata abertura de sindicância para apurar o desaparecimento da respectiva documentação. 07/10/2026, 23:10 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 32/"
+      "Art. 7º, § 5º - Informado do extravio da informação solicitada, poderá o interessado requerer à autoridade competente a imediata abertura de sindicância para apurar o desaparecimento da respectiva documentação."
     ],
     "origin": "real",
     "question": {
@@ -1538,7 +1514,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 8º",
     "title": "Lei 12.527/2011 — Acesso à Informação (LAI)",
     "parts": [
-      "Art. 8º - É dever dos órgãos e entidades públicas promover, independentemente de requerimentos, a divulgação em local de fácil acesso, no âmbito de suas competências, de informações de interesse coletivo ou geral por eles produzidas ou custodiadas. 07/10/2026, 23:10 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 33/"
+      "Art. 8º - É dever dos órgãos e entidades públicas promover, independentemente de requerimentos, a divulgação em local de fácil acesso, no âmbito de suas competências, de informações de interesse coletivo ou geral por eles produzidas ou custodiadas."
     ],
     "origin": "real",
     "question": {
@@ -1584,7 +1560,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 1º",
     "title": "Lei 13.709/2018 — LGPD",
     "parts": [
-      "Art. 1º Esta Lei dispõe sobre o tratamento de dados pessoais, inclusive nos meios digitais, por pessoa natural ou por pessoa jurídica de direito público ou privado, com o objetivo de proteger os direitos fundamentais de liberdade e de privacidade e o livre desenvolvimento da personalidade da pessoa natural. 07/10/2026, 23:15 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 5/"
+      "Art. 1º Esta Lei dispõe sobre o tratamento de dados pessoais, inclusive nos meios digitais, por pessoa natural ou por pessoa jurídica de direito público ou privado, com o objetivo de proteger os direitos fundamentais de liberdade e de privacidade e o livre desenvolvimento da personalidade da pessoa natural."
     ],
     "origin": "real",
     "question": {
@@ -1634,14 +1610,14 @@ const DATA_ADM_PACK1 = [
     ],
     "origin": "real",
     "question": {
-      "statement": "TO) Para responder à questão, considere a Lei Geral de Proteção de Dados Pessoais (LGPD). É fundamento da disciplina de proteção de dados: O respeito à privacidade.",
+      "statement": "Para responder à questão, considere a Lei Geral de Proteção de Dados Pessoais (LGPD). É fundamento da disciplina de proteção de dados: O respeito à privacidade.",
       "answer": true,
       "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
       "source": "31.pdf · questão 12 · Art. 2º, I, LGPD",
-      "meta": "FUNDATEC 2025 - Guarda Municipal (Prefeitura Porto Nacional -",
+      "meta": "FUNDATEC 2025 - Guarda Municipal (Prefeitura Porto Nacional - TO)",
       "bank": "FUNDATEC",
       "year": 2025,
-      "role": "Guarda Municipal (Prefeitura Porto Nacional -",
+      "role": "Guarda Municipal (Prefeitura Porto Nacional - TO)",
       "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
     }
   },
@@ -1653,18 +1629,18 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 2º, inc. I",
     "title": "Lei 13.709/2018 — LGPD",
     "parts": [
-      "Art. 2º A disciplina da proteção de dados pessoais tem como fundamentos: I - o respeito à privacidade; 07/10/2026, 23:15 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 9/"
+      "Art. 2º A disciplina da proteção de dados pessoais tem como fundamentos: I - o respeito à privacidade;"
     ],
     "origin": "real",
     "question": {
-      "statement": "RS) Um dos fundamentos da proteção de dados, conforme a Lei Geral de Proteção de Dados Pessoais (LGPD), é o respeito à privacidade.",
+      "statement": "Um dos fundamentos da proteção de dados, conforme a Lei Geral de Proteção de Dados Pessoais (LGPD), é o respeito à privacidade.",
       "answer": true,
       "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
       "source": "31.pdf · questão 13 · Art. 2º, I, LGPD",
-      "meta": "FUNDATEC 2025 - Motorista (Câmara Municipal de Candiota -",
+      "meta": "FUNDATEC 2025 - Motorista (Câmara Municipal de Candiota - RS)",
       "bank": "FUNDATEC",
       "year": 2025,
-      "role": "Motorista (Câmara Municipal de Candiota -",
+      "role": "Motorista (Câmara Municipal de Candiota - RS)",
       "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
     }
   },
@@ -1699,7 +1675,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 2º, inc. II",
     "title": "Lei 13.709/2018 — LGPD",
     "parts": [
-      "Art. 2º A disciplina da proteção de dados pessoais tem como fundamentos: [...] II - a autodeterminação informativa; 07/10/2026, 23:15 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 11/"
+      "Art. 2º A disciplina da proteção de dados pessoais tem como fundamentos: [...] II - a autodeterminação informativa;"
     ],
     "origin": "real",
     "question": {
@@ -1745,18 +1721,18 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 2º",
     "title": "Lei 13.709/2018 — LGPD",
     "parts": [
-      "Art. 2º A disciplina da proteção de dados pessoais tem como fundamentos: [...] II - a autodeterminação informativa; III - a liberdade de expressão, de informação, de comunicação e de opinião; 07/10/2026, 23:15 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 12/"
+      "Art. 2º A disciplina da proteção de dados pessoais tem como fundamentos: [...] II - a autodeterminação informativa; III - a liberdade de expressão, de informação, de comunicação e de opinião;"
     ],
     "origin": "real",
     "question": {
-      "statement": "Região) Acerca de gestão de riscos e continuidade de negócio, julgue o item a seguir, com base na NBR ISO 27005:2019 e na Lei Geral de Proteção de Dados (LGPD). A LGPD disciplina a proteção de dados pessoais com fundamento na autodeterminação informativa e na liberdade de expressão, informação, comunicação e opinião.",
+      "statement": "Acerca de gestão de riscos e continuidade de negócio, julgue o item a seguir, com base na NBR ISO 27005:2019 e na Lei Geral de Proteção de Dados (LGPD). A LGPD disciplina a proteção de dados pessoais com fundamento na autodeterminação informativa e na liberdade de expressão, informação, comunicação e opinião.",
       "answer": true,
       "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
       "source": "31.pdf · questão 19 · Art. 2º, II e III, LGPD",
-      "meta": "CESPE/CEBRASPE 2025 - Técnico Judiciário (TRF - 6ª",
+      "meta": "CESPE/CEBRASPE 2025 - Técnico Judiciário (TRF - 6ª Região)",
       "bank": "CESPE/CEBRASPE",
       "year": 2025,
-      "role": "Técnico Judiciário (TRF - 6ª",
+      "role": "Técnico Judiciário (TRF - 6ª Região)",
       "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
     }
   },
@@ -1768,7 +1744,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 2º, inc. III",
     "title": "Lei 13.709/2018 — LGPD",
     "parts": [
-      "Art. 2º A disciplina da proteção de dados pessoais tem como fundamentos: [...] III - a liberdade de expressão, de informação, de comunicação e de opinião; 07/10/2026, 23:15 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 13/"
+      "Art. 2º A disciplina da proteção de dados pessoais tem como fundamentos: [...] III - a liberdade de expressão, de informação, de comunicação e de opinião;"
     ],
     "origin": "real",
     "question": {
@@ -1837,7 +1813,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 2º, inc. IV",
     "title": "Lei 13.709/2018 — LGPD",
     "parts": [
-      "Art. 2º A disciplina da proteção de dados pessoais tem como fundamentos: [...] IV - a inviolabilidade da intimidade, da honra e da imagem; 07/10/2026, 23:15 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 16/"
+      "Art. 2º A disciplina da proteção de dados pessoais tem como fundamentos: [...] IV - a inviolabilidade da intimidade, da honra e da imagem;"
     ],
     "origin": "real",
     "question": {
@@ -1887,14 +1863,14 @@ const DATA_ADM_PACK1 = [
     ],
     "origin": "real",
     "question": {
-      "statement": "Vicente do Sul - RS) Considerando a Lei nº 13.709/2018, Lei Geral de Proteção de dados (LGPD), marco importante no tratamento de dados pessoais, inclusive nos meios digitais, julgue o item. O desenvolvimento econômico e tecnológico e a inovação são princípios essenciais à disciplina da proteção de dados jurídicos.",
+      "statement": "Considerando a Lei nº 13.709/2018, Lei Geral de Proteção de dados (LGPD), marco importante no tratamento de dados pessoais, inclusive nos meios digitais, julgue o item. O desenvolvimento econômico e tecnológico e a inovação são princípios essenciais à disciplina da proteção de dados jurídicos.",
       "answer": false,
       "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
       "source": "31.pdf · questão 33 · Art. 2º, V, LGPD",
-      "meta": "FUNDATEC 2025 - Arquivista (Prefeitura Municipal de São",
+      "meta": "FUNDATEC 2025 - Arquivista (Prefeitura Municipal de São Vicente do Sul - RS)",
       "bank": "FUNDATEC",
       "year": 2025,
-      "role": "Arquivista (Prefeitura Municipal de São",
+      "role": "Arquivista (Prefeitura Municipal de São Vicente do Sul - RS)",
       "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
     }
   },
@@ -1906,7 +1882,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 2º, inc. VI",
     "title": "Lei 13.709/2018 — LGPD",
     "parts": [
-      "Art. 2º A disciplina da proteção de dados pessoais tem como fundamentos: I - o respeito à privacidade; II - a autodeterminação informativa; III - a liberdade de expressão, de informação, de comunicação e de opinião; IV - a inviolabilidade da intimidade, da honra e da imagem; V - o desenvolvimento econômico e tecnológico e a inovação; VI - a livre iniciativa, a livre concorrência e a defesa do consumidor; e VII - os direitos humanos, o livre desenvolvimento da personalidade, a dignidade e o exercício da cidadania pelas pessoas naturais. 07/10/2026, 23:15 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 23/"
+      "Art. 2º A disciplina da proteção de dados pessoais tem como fundamentos: I - o respeito à privacidade; II - a autodeterminação informativa; III - a liberdade de expressão, de informação, de comunicação e de opinião; IV - a inviolabilidade da intimidade, da honra e da imagem; V - o desenvolvimento econômico e tecnológico e a inovação; VI - a livre iniciativa, a livre concorrência e a defesa do consumidor; e VII - os direitos humanos, o livre desenvolvimento da personalidade, a dignidade e o exercício da cidadania pelas pessoas naturais."
     ],
     "origin": "real",
     "question": {
@@ -1929,7 +1905,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 2º, inc. VI",
     "title": "Lei 13.709/2018 — LGPD",
     "parts": [
-      "Art. 2º A disciplina da proteção de dados pessoais tem como fundamentos: [...] VI - a livre iniciativa, a livre concorrência e a defesa do consumidor; e 07/10/2026, 23:15 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 24/"
+      "Art. 2º A disciplina da proteção de dados pessoais tem como fundamentos: [...] VI - a livre iniciativa, a livre concorrência e a defesa do consumidor; e"
     ],
     "origin": "real",
     "question": {
@@ -1975,7 +1951,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 2º, inc. VII",
     "title": "Lei 13.709/2018 — LGPD",
     "parts": [
-      "Art. 2º A disciplina da proteção de dados pessoais tem como fundamentos: [...] VII - os direitos humanos, o livre desenvolvimento da personalidade, a dignidade e o exercício da cidadania pelas pessoas naturais. 07/10/2026, 23:15 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 25/"
+      "Art. 2º A disciplina da proteção de dados pessoais tem como fundamentos: [...] VII - os direitos humanos, o livre desenvolvimento da personalidade, a dignidade e o exercício da cidadania pelas pessoas naturais."
     ],
     "origin": "real",
     "question": {
@@ -1998,7 +1974,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 3º, inc. I",
     "title": "Lei 13.709/2018 — LGPD",
     "parts": [
-      "Art. 3º Esta Lei aplica-se a qualquer operação de tratamento realizada por pessoa natural ou por pessoa jurídica de direito público ou privado, independentemente do meio, do país de sua sede ou do país onde estejam localizados os dados, desde que: I - a operação de tratamento seja realizada no território nacional; 07/10/2026, 23:15 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 26/"
+      "Art. 3º Esta Lei aplica-se a qualquer operação de tratamento realizada por pessoa natural ou por pessoa jurídica de direito público ou privado, independentemente do meio, do país de sua sede ou do país onde estejam localizados os dados, desde que: I - a operação de tratamento seja realizada no território nacional;"
     ],
     "origin": "real",
     "question": {
@@ -2021,7 +1997,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 3º, inc. II",
     "title": "Lei 13.709/2018 — LGPD",
     "parts": [
-      "Art. 3º Esta Lei aplica-se a qualquer operação de tratamento realizada por pessoa natural ou por pessoa jurídica de direito público ou privado, independentemente do meio, do país de sua sede ou do país onde estejam localizados os dados, desde que: [...] II - a atividade de tratamento tenha por objetivo a oferta ou o fornecimento de bens ou serviços ou o tratamento de dados de indivíduos localizados no território nacional; ou 07/10/2026, 23:15 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 27/"
+      "Art. 3º Esta Lei aplica-se a qualquer operação de tratamento realizada por pessoa natural ou por pessoa jurídica de direito público ou privado, independentemente do meio, do país de sua sede ou do país onde estejam localizados os dados, desde que: [...] II - a atividade de tratamento tenha por objetivo a oferta ou o fornecimento de bens ou serviços ou o tratamento de dados de indivíduos localizados no território nacional; ou"
     ],
     "origin": "real",
     "question": {
@@ -2044,7 +2020,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 3º, inc. II",
     "title": "Lei 13.709/2018 — LGPD",
     "parts": [
-      "Art. 4º Esta Lei não se aplica ao tratamento de dados pessoais: [...] II - realizado para fins exclusivamente: a) jornalístico e artísticos; ou b) acadêmicos, aplicando-se a esta hipótese os arts. 7º e 11 desta Lei; 07/10/2026, 23:15 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 29/"
+      "Art. 4º Esta Lei não se aplica ao tratamento de dados pessoais: [...] II - realizado para fins exclusivamente: a) jornalístico e artísticos; ou b) acadêmicos, aplicando-se a esta hipótese os arts. 7º e 11 desta Lei;"
     ],
     "origin": "real",
     "question": {
@@ -2067,7 +2043,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 3º, inc. III",
     "title": "Lei 13.709/2018 — LGPD",
     "parts": [
-      "Art. 3º Esta Lei aplica-se a qualquer operação de tratamento realizada por pessoa natural ou por pessoa jurídica de direito público ou privado, independentemente do meio, do país de sua sede ou do país onde estejam localizados os dados, desde que: […] III - os dados pessoais objeto do tratamento tenham sido coletados no território nacional. 07/10/2026, 23:15 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 30/"
+      "Art. 3º Esta Lei aplica-se a qualquer operação de tratamento realizada por pessoa natural ou por pessoa jurídica de direito público ou privado, independentemente do meio, do país de sua sede ou do país onde estejam localizados os dados, desde que: […] III - os dados pessoais objeto do tratamento tenham sido coletados no território nacional."
     ],
     "origin": "real",
     "question": {
@@ -2113,7 +2089,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 4º, inc. I",
     "title": "Decreto-Lei 200/1967 — Organização administrativa",
     "parts": [
-      "Art. 4° A Administração Federal compreende: I - A Administração Direta, que se constitui dos serviços integrados na estrutura administrativa da Presidência da República e dos Ministérios. 07/10/2026, 21:39 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes?lei=265 1/"
+      "Art. 4° A Administração Federal compreende: I - A Administração Direta, que se constitui dos serviços integrados na estrutura administrativa da Presidência da República e dos Ministérios."
     ],
     "origin": "real",
     "question": {
@@ -2136,7 +2112,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 4º, parágrafo único",
     "title": "Decreto-Lei 200/1967 — Organização administrativa",
     "parts": [
-      "Art. 4º […] Parágrafo único. As entidades compreendidas na Administração Indireta vinculamse ao Ministério em cuja área de competência estiver enquadrada sua principal atividade. 07/10/2026, 21:39 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes?lei=265 2/"
+      "Art. 4º […] Parágrafo único. As entidades compreendidas na Administração Indireta vinculamse ao Ministério em cuja área de competência estiver enquadrada sua principal atividade."
     ],
     "origin": "real",
     "question": {
@@ -2159,7 +2135,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 5º",
     "title": "Decreto-Lei 200/1967 — Organização administrativa",
     "parts": [
-      "Art. 5º Para os fins desta lei, considera-se: I - Autarquia - o serviço autônomo, criado por lei, com personalidade jurídica, patrimônio e receita próprios, para executar atividades típicas da Administração Pública, que requeiram, para seu melhor funcionamento, gestão administrativa e financeira descentralizada. 07/10/2026, 21:39 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes?lei=265 3/"
+      "Art. 5º Para os fins desta lei, considera-se: I - Autarquia - o serviço autônomo, criado por lei, com personalidade jurídica, patrimônio e receita próprios, para executar atividades típicas da Administração Pública, que requeiram, para seu melhor funcionamento, gestão administrativa e financeira descentralizada."
     ],
     "origin": "real",
     "question": {
@@ -2205,7 +2181,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 5º, inc. I",
     "title": "Decreto-Lei 200/1967 — Organização administrativa",
     "parts": [
-      "Art. 5° Para os fins desta lei, considera-se: I - Autarquia - o serviço autônomo, criado por lei, com personalidade jurídica, patrimônio e receita próprios, para executar atividades típicas da Administração Pública, que requeiram, para seu melhor funcionamento, gestão administrativa e financeira descentralizada. 07/10/2026, 21:39 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes?lei=265 4/"
+      "Art. 5° Para os fins desta lei, considera-se: I - Autarquia - o serviço autônomo, criado por lei, com personalidade jurídica, patrimônio e receita próprios, para executar atividades típicas da Administração Pública, que requeiram, para seu melhor funcionamento, gestão administrativa e financeira descentralizada."
     ],
     "origin": "real",
     "question": {
@@ -2229,7 +2205,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 5º, inc. II",
     "title": "Decreto-Lei 200/1967 — Organização administrativa",
     "parts": [
-      "Art. 5° Para os fins desta lei, considera-se: […] II - Emprêsa Pública - a entidade dotada de personalidade jurídica de direito privado, com patrimônio próprio e capital exclusivo da União, criado por lei para a exploração de atividade econômica que o Govêrno seja levado a exercer por fôrça de contingência ou de conveniência administrativa podendo revestir-se de qualquer das formas admitidas em direito. 07/10/2026, 21:39 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes?lei=265 5/"
+      "Art. 5° Para os fins desta lei, considera-se: […] II - Emprêsa Pública - a entidade dotada de personalidade jurídica de direito privado, com patrimônio próprio e capital exclusivo da União, criado por lei para a exploração de atividade econômica que o Govêrno seja levado a exercer por fôrça de contingência ou de conveniência administrativa podendo revestir-se de qualquer das formas admitidas em direito."
     ],
     "origin": "real",
     "question": {
@@ -2252,7 +2228,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 5º, inc. II",
     "title": "Decreto-Lei 200/1967 — Organização administrativa",
     "parts": [
-      "Art. 5° Para os fins desta lei, considera-se: […] II - Emprêsa Pública - a entidade dotada de personalidade jurídica de direito privado, com patrimônio próprio e capital exclusivo da União, criado por lei para a exploração de atividade econômica que o Govêrno seja levado a exercer por fôrça de contingência ou de conveniência administrativa podendo revestir-se de qualquer das formas admitidas em direito. 07/10/2026, 21:39 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes?lei=265 6/"
+      "Art. 5° Para os fins desta lei, considera-se: […] II - Emprêsa Pública - a entidade dotada de personalidade jurídica de direito privado, com patrimônio próprio e capital exclusivo da União, criado por lei para a exploração de atividade econômica que o Govêrno seja levado a exercer por fôrça de contingência ou de conveniência administrativa podendo revestir-se de qualquer das formas admitidas em direito."
     ],
     "origin": "real",
     "question": {
@@ -2276,7 +2252,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 5º, inc. III",
     "title": "Decreto-Lei 200/1967 — Organização administrativa",
     "parts": [
-      "Art. 5° Para os fins desta lei, considera-se: […] III - Sociedade de Economia Mista - a entidade dotada de personalidade jurídica de direito privado, criada por lei para a exploração de atividade econômica, sob a forma de sociedade anônima, cujas ações com direito a voto pertençam em sua maioria à União ou a entidade da Administração Indireta. 07/10/2026, 21:39 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes?lei=265 7/"
+      "Art. 5° Para os fins desta lei, considera-se: […] III - Sociedade de Economia Mista - a entidade dotada de personalidade jurídica de direito privado, criada por lei para a exploração de atividade econômica, sob a forma de sociedade anônima, cujas ações com direito a voto pertençam em sua maioria à União ou a entidade da Administração Indireta."
     ],
     "origin": "real",
     "question": {
@@ -2299,7 +2275,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 5º, inc. IV",
     "title": "Decreto-Lei 200/1967 — Organização administrativa",
     "parts": [
-      "Art. 5º Para os fins desta lei, considera-se: […] IV - Fundação Pública - a entidade dotada de personalidade jurídica de direito privado, sem fins lucrativos, criada em virtude de autorização legislativa, para o desenvolvimento de atividades que não exijam execução por órgãos ou entidades de direito público, com autonomia administrativa, patrimônio próprio gerido pelos respectivos órgãos de direção, e funcionamento custeado por recursos da União e de outras fontes. 07/10/2026, 21:39 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes?lei=265 8/"
+      "Art. 5º Para os fins desta lei, considera-se: […] IV - Fundação Pública - a entidade dotada de personalidade jurídica de direito privado, sem fins lucrativos, criada em virtude de autorização legislativa, para o desenvolvimento de atividades que não exijam execução por órgãos ou entidades de direito público, com autonomia administrativa, patrimônio próprio gerido pelos respectivos órgãos de direção, e funcionamento custeado por recursos da União e de outras fontes."
     ],
     "origin": "real",
     "question": {
@@ -2346,7 +2322,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 6º, inc. IV",
     "title": "Decreto-Lei 200/1967 — Organização administrativa",
     "parts": [
-      "Art. 6° As atividades da Administração Federal obedecerão aos seguintes princípios fundamentais: […] IV - Delegação de Competência. 07/10/2026, 21:39 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes?lei=265 13/"
+      "Art. 6° As atividades da Administração Federal obedecerão aos seguintes princípios fundamentais: […] IV - Delegação de Competência."
     ],
     "origin": "real",
     "question": {
@@ -2393,7 +2369,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 12º",
     "title": "Decreto-Lei 200/1967 — Organização administrativa",
     "parts": [
-      "Art. 12. É facultado ao Presidente da República, aos Ministros de Estado e, em geral, às autoridades da Administração Federal delegar competência para a prática de atos administrativos, conforme se dispuser em regulamento. 07/10/2026, 21:39 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes?lei=265 14/"
+      "Art. 12. É facultado ao Presidente da República, aos Ministros de Estado e, em geral, às autoridades da Administração Federal delegar competência para a prática de atos administrativos, conforme se dispuser em regulamento."
     ],
     "origin": "real",
     "question": {
@@ -2464,7 +2440,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 18º",
     "title": "Decreto-Lei 200/1967 — Organização administrativa",
     "parts": [
-      "Art. 18. Toda atividade deverá ajustar-se à programação governamental e ao orçamento-programa e os compromissos financeiros só poderão ser assumidos em consonância com a programação financeira de desembôlso. 07/10/2026, 21:39 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes?lei=265 16/"
+      "Art. 18. Toda atividade deverá ajustar-se à programação governamental e ao orçamento-programa e os compromissos financeiros só poderão ser assumidos em consonância com a programação financeira de desembôlso."
     ],
     "origin": "real",
     "question": {
@@ -2511,7 +2487,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 36º",
     "title": "Decreto-Lei 200/1967 — Organização administrativa",
     "parts": [
-      "Art. 36. Para auxiliá-lo na coordenação de assuntos afins ou interdependentes, que interessem a mais de um Ministério, o Presidente da República poderá incumbir de missão coordenadora um dos Ministros de Estado, cabendo essa missão, na ausência de designação específica ao Ministro de Estado Chefe da Secretaria de Planejamento. 07/10/2026, 21:39 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes?lei=265 17/"
+      "Art. 36. Para auxiliá-lo na coordenação de assuntos afins ou interdependentes, que interessem a mais de um Ministério, o Presidente da República poderá incumbir de missão coordenadora um dos Ministros de Estado, cabendo essa missão, na ausência de designação específica ao Ministro de Estado Chefe da Secretaria de Planejamento."
     ],
     "origin": "real",
     "question": {
@@ -2559,7 +2535,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 72º",
     "title": "Decreto-Lei 200/1967 — Organização administrativa",
     "parts": [
-      "Art. 72. Com base na lei orçamentária, créditos adicionais e seus atos complementares, o órgão central da programação financeira fixará as cotas e prazos de utilização de recursos pelos órgãos da Presidência da República, pelos Ministérios e pelas autoridades dos Podêres Legislativo e Judiciário para atender à movimentação dos créditos orçamentários ou adicionais. 07/10/2026, 21:39 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes?lei=265 18/"
+      "Art. 72. Com base na lei orçamentária, créditos adicionais e seus atos complementares, o órgão central da programação financeira fixará as cotas e prazos de utilização de recursos pelos órgãos da Presidência da República, pelos Ministérios e pelas autoridades dos Podêres Legislativo e Judiciário para atender à movimentação dos créditos orçamentários ou adicionais."
     ],
     "origin": "real",
     "question": {
@@ -2607,7 +2583,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 89º",
     "title": "Decreto-Lei 200/1967 — Organização administrativa",
     "parts": [
-      "Art. 89. Todo aquêle que, a qualquer título, tenha a seu cargo serviço de contabilidade da União é pessoalmente responsável pela exatidão das contas e oportuna apresentação dos balancetes, balanços e demonstrações contábeis dos atos relativos à administração financeira e patrimonial do setor sob sua jurisdição. 07/10/2026, 21:39 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes?lei=265 19/"
+      "Art. 89. Todo aquêle que, a qualquer título, tenha a seu cargo serviço de contabilidade da União é pessoalmente responsável pela exatidão das contas e oportuna apresentação dos balancetes, balanços e demonstrações contábeis dos atos relativos à administração financeira e patrimonial do setor sob sua jurisdição."
     ],
     "origin": "real",
     "question": {
@@ -2654,7 +2630,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 183º",
     "title": "Decreto-Lei 200/1967 — Organização administrativa",
     "parts": [
-      "Art. 183. As entidades e organizações em geral, dotadas de personalidade jurídica de direito privado, que recebem contribuições para fiscais e prestam serviços de interêsse público ou social, estão sujeitas à fiscalização do Estado nos têrmos e condições estabelecidas na legislação pertinente a cada uma. 07/10/2026, 21:39 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes?lei=265 20/"
+      "Art. 183. As entidades e organizações em geral, dotadas de personalidade jurídica de direito privado, que recebem contribuições para fiscais e prestam serviços de interêsse público ou social, estão sujeitas à fiscalização do Estado nos têrmos e condições estabelecidas na legislação pertinente a cada uma."
     ],
     "origin": "real",
     "question": {
@@ -2678,7 +2654,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 4º, inc. II",
     "title": "Decreto-Lei 200/1967 — Organização administrativa",
     "parts": [
-      "Art. 4º, II - A Administração Indireta, que compreende as seguintes categorias de entidades, dotadas de personalidade jurídica própria: a) Autarquias; b) Empresas Públicas; c) Sociedades de Economia Mista. d) fundações públicas. (Incluído pela Lei nº 7.596, de 1987) 07/10/2026, 21:39 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes?lei=265 21/"
+      "Art. 4º, II - A Administração Indireta, que compreende as seguintes categorias de entidades, dotadas de personalidade jurídica própria: a) Autarquias; b) Empresas Públicas; c) Sociedades de Economia Mista. d) fundações públicas. (Incluído pela Lei nº 7.596, de 1987)"
     ],
     "origin": "real",
     "question": {
@@ -2702,7 +2678,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 5º, inc. IV",
     "title": "Decreto-Lei 200/1967 — Organização administrativa",
     "parts": [
-      "Art. 5º Para os fins desta lei, considera-se: [...] IV - Fundação Pública - a entidade dotada de personalidade jurídica de direito privado, sem fins lucrativos, criada em virtude de autorização legislativa, para o desenvolvimento de atividades que não exijam execução por órgãos ou entidades de direito público, com autonomia administrativa, patrimônio próprio gerido pelos respectivos órgãos de direção, e funcionamento custeado por recursos da União e de outras fontes. (Incluído pela Lei nº 7.596, de 1987) 07/10/2026, 21:39 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes?lei=265 22/"
+      "Art. 5º Para os fins desta lei, considera-se: [...] IV - Fundação Pública - a entidade dotada de personalidade jurídica de direito privado, sem fins lucrativos, criada em virtude de autorização legislativa, para o desenvolvimento de atividades que não exijam execução por órgãos ou entidades de direito público, com autonomia administrativa, patrimônio próprio gerido pelos respectivos órgãos de direção, e funcionamento custeado por recursos da União e de outras fontes. (Incluído pela Lei nº 7.596, de 1987)"
     ],
     "origin": "real",
     "question": {
@@ -2725,7 +2701,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 5º",
     "title": "Decreto-Lei 200/1967 — Organização administrativa",
     "parts": [
-      "Art. 5º Para os fins desta lei, considera-se: I - Autarquia - o serviço autônomo, criado por lei, com personalidade jurídica, patrimônio e receita próprios, para executar atividades típicas da Administração Pública, que requeiram, para seu melhor funcionamento, gestão administrativa e financeira descentralizada. [...] 07/10/2026, 21:39 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes?lei=265 23/"
+      "Art. 5º Para os fins desta lei, considera-se: I - Autarquia - o serviço autônomo, criado por lei, com personalidade jurídica, patrimônio e receita próprios, para executar atividades típicas da Administração Pública, que requeiram, para seu melhor funcionamento, gestão administrativa e financeira descentralizada. [...]"
     ],
     "origin": "real",
     "question": {
@@ -2748,7 +2724,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 6º",
     "title": "Decreto-Lei 200/1967 — Organização administrativa",
     "parts": [
-      "Art. 6º As atividades da Administração Federal obedecerão aos seguintes princípios fundamentais: I - Planejamento. II - Coordenação. III - Descentralização. IV - Delegação de Competência. V - Contrôle. 07/10/2026, 21:39 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes?lei=265 24/"
+      "Art. 6º As atividades da Administração Federal obedecerão aos seguintes princípios fundamentais: I - Planejamento. II - Coordenação. III - Descentralização. IV - Delegação de Competência. V - Contrôle."
     ],
     "origin": "real",
     "question": {
@@ -2771,7 +2747,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 22º",
     "title": "Decreto-Lei 200/1967 — Organização administrativa",
     "parts": [
-      "Art. 5º […] I - Autarquia - o serviço autônomo, criado por lei, com personalidade jurídica, patrimônio e receita próprios, para executar ATIVIDADES TÍPICAS da Administração Pública, que requeiram, para seu melhor funcionamento, gestão administrativa e financeira descentralizada. 07/10/2026, 21:39 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes?lei=265 25/25"
+      "Art. 5º […] I - Autarquia - o serviço autônomo, criado por lei, com personalidade jurídica, patrimônio e receita próprios, para executar ATIVIDADES TÍPICAS da Administração Pública, que requeiram, para seu melhor funcionamento, gestão administrativa e financeira descentralizada."
     ],
     "origin": "real",
     "question": {
@@ -2794,7 +2770,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 1º, parágrafo único",
     "title": "Lei 8.987/1995 — Serviços públicos",
     "parts": [
-      "Art. 1o As concessões de serviços públicos e de obras públicas e as permissões de serviços públicos reger-se-ão pelos termos do art. 175 da Constituição Federal, por esta Lei, pelas normas legais pertinentes e pelas cláusulas dos indispensáveis contratos. Parágrafo único. A União, os Estados, o Distrito Federal e os Municípios promoverão a revisão e as adaptações necessárias de sua legislação às prescrições desta Lei, buscando atender as peculiaridades das diversas modalidades dos seus serviços. 07/10/2026, 23:29 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 1/"
+      "Art. 1o As concessões de serviços públicos e de obras públicas e as permissões de serviços públicos reger-se-ão pelos termos do art. 175 da Constituição Federal, por esta Lei, pelas normas legais pertinentes e pelas cláusulas dos indispensáveis contratos. Parágrafo único. A União, os Estados, o Distrito Federal e os Municípios promoverão a revisão e as adaptações necessárias de sua legislação às prescrições desta Lei, buscando atender as peculiaridades das diversas modalidades dos seus serviços."
     ],
     "origin": "real",
     "question": {
@@ -2817,7 +2793,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 2º, inc. I",
     "title": "Lei 8.987/1995 — Serviços públicos",
     "parts": [
-      "Enunciado: \"Sobre o poder concedente, são eles a União, o Estado, o Distrito Federal, o Município ou o território, em cuja competência se encontre o serviço público, precedido ou não da execução de obra pública e licitação, objeto de concessão ou permissão.\" Art. 2º Para os fins do disposto nesta Lei, considera-se: I - poder concedente: a União, o Estado, o Distrito Federal ou o Município, em cuja competência se encontre o serviço público, precedido ou não da execução de obra pública, objeto de concessão ou permissão; 07/10/2026, 23:29 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 3/"
+      "Enunciado: \"Sobre o poder concedente, são eles a União, o Estado, o Distrito Federal, o Município ou o território, em cuja competência se encontre o serviço público, precedido ou não da execução de obra pública e licitação, objeto de concessão ou permissão.\" Art. 2º Para os fins do disposto nesta Lei, considera-se: I - poder concedente: a União, o Estado, o Distrito Federal ou o Município, em cuja competência se encontre o serviço público, precedido ou não da execução de obra pública, objeto de concessão ou permissão;"
     ],
     "origin": "real",
     "question": {
@@ -2841,7 +2817,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 2º, inc. I",
     "title": "Lei 8.987/1995 — Serviços públicos",
     "parts": [
-      "Art. 2º - Para os fins do disposto nesta Lei, considera-se: I - poder concedente: a União, o Estado, o Distrito Federal ou o Município, em cuja competência se encontre o serviço público, precedido ou não da execução de obra pública, objeto de concessão ou permissão; II - concessão de serviço público: a delegação de sua prestação, feita pelo poder concedente, mediante licitação, na modalidade concorrência ou diálogo competitivo, a pessoa jurídica ou consórcio de empresas que demonstre capacidade para seu desempenho, por sua conta e risco e por prazo determinado; III - concessão de serviço público precedida da execução de obra pública: a construção, total ou parcial, conservação, reforma, ampliação ou melhoramento de quaisquer obras de interesse público, delegados pelo poder concedente, mediante licitação, na modalidade concorrência ou diálogo competitivo, a pessoa jurídica ou consórcio de empresas que demonstre capacidade para a sua realização, por sua conta e risco, de forma que o investimento da concessionária seja remunerado e amortizado mediante a exploração do serviço ou da obra por prazo determinado; IV - permissão de serviço público: a delegação, a título precário, mediante licitação, da prestação de serviços públicos, feita pelo poder concedente à pessoa física ou jurídica que demonstre capacidade para seu desempenho, por sua conta e risco. 07/10/2026, 23:29 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 4/"
+      "Art. 2º - Para os fins do disposto nesta Lei, considera-se: I - poder concedente: a União, o Estado, o Distrito Federal ou o Município, em cuja competência se encontre o serviço público, precedido ou não da execução de obra pública, objeto de concessão ou permissão; II - concessão de serviço público: a delegação de sua prestação, feita pelo poder concedente, mediante licitação, na modalidade concorrência ou diálogo competitivo, a pessoa jurídica ou consórcio de empresas que demonstre capacidade para seu desempenho, por sua conta e risco e por prazo determinado; III - concessão de serviço público precedida da execução de obra pública: a construção, total ou parcial, conservação, reforma, ampliação ou melhoramento de quaisquer obras de interesse público, delegados pelo poder concedente, mediante licitação, na modalidade concorrência ou diálogo competitivo, a pessoa jurídica ou consórcio de empresas que demonstre capacidade para a sua realização, por sua conta e risco, de forma que o investimento da concessionária seja remunerado e amortizado mediante a exploração do serviço ou da obra por prazo determinado; IV - permissão de serviço público: a delegação, a título precário, mediante licitação, da prestação de serviços públicos, feita pelo poder concedente à pessoa física ou jurídica que demonstre capacidade para seu desempenho, por sua conta e risco."
     ],
     "origin": "real",
     "question": {
@@ -2887,7 +2863,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 2º, inc. II",
     "title": "Lei 8.987/1995 — Serviços públicos",
     "parts": [
-      "Art. 2° Para os fins do disposto nesta Lei, considera-se: [...] II - concessão de serviço público: a delegação de sua prestação, feita pelo poder concedente, mediante licitação, na modalidade concorrência ou diálogo competitivo, a pessoa jurídica ou consórcio de empresas que demonstre capacidade para seu desempenho, por sua conta e risco e por prazo determinado; (Redação dada pela Lei nº 14.133, de 2021) [...] 07/10/2026, 23:29 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 34/"
+      "Art. 2° Para os fins do disposto nesta Lei, considera-se: [...] II - concessão de serviço público: a delegação de sua prestação, feita pelo poder concedente, mediante licitação, na modalidade concorrência ou diálogo competitivo, a pessoa jurídica ou consórcio de empresas que demonstre capacidade para seu desempenho, por sua conta e risco e por prazo determinado; (Redação dada pela Lei nº 14.133, de 2021) [...]"
     ],
     "origin": "real",
     "question": {
@@ -2910,7 +2886,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 2º",
     "title": "Lei 8.987/1995 — Serviços públicos",
     "parts": [
-      "Art. 2º. […] II - concessão de serviço público: a delegação de sua prestação, feita pelo poder concedente, mediante licitação, na modalidade concorrência ou diálogo competitivo, a pessoa jurídica ou consórcio de empresas que demonstre capacidade para seu desempenho, por sua conta e risco e por prazo determinado; […] IV - permissão de serviço público: a delegação, a título precário, mediante licitação, da prestação de serviços públicos, feita pelo poder concedente à pessoa física ou jurídica que demonstre capacidade para seu desempenho, por sua conta e risco. 07/10/2026, 23:29 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 37/"
+      "Art. 2º. […] II - concessão de serviço público: a delegação de sua prestação, feita pelo poder concedente, mediante licitação, na modalidade concorrência ou diálogo competitivo, a pessoa jurídica ou consórcio de empresas que demonstre capacidade para seu desempenho, por sua conta e risco e por prazo determinado; […] IV - permissão de serviço público: a delegação, a título precário, mediante licitação, da prestação de serviços públicos, feita pelo poder concedente à pessoa física ou jurídica que demonstre capacidade para seu desempenho, por sua conta e risco."
     ],
     "origin": "real",
     "question": {
@@ -2933,7 +2909,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 2º",
     "title": "Lei 8.987/1995 — Serviços públicos",
     "parts": [
-      "Art. 2º Para os fins do disposto nesta Lei, considera-se: [...] II - concessão de serviço público: a delegação de sua prestação, feita pelo poder concedente, mediante licitação, na modalidade concorrência ou diálogo competitivo, a pessoa jurídica ou consórcio de empresas que demonstre capacidade para seu desempenho, por sua conta e risco e por prazo determinado; […] IV - permissão de serviço público: a delegação, a título precário, mediante licitação, da prestação de serviços públicos, feita pelo poder concedente à pessoa física ou jurídica que demonstre capacidade para seu desempenho, por sua conta e risco; 07/10/2026, 23:29 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 38/"
+      "Art. 2º Para os fins do disposto nesta Lei, considera-se: [...] II - concessão de serviço público: a delegação de sua prestação, feita pelo poder concedente, mediante licitação, na modalidade concorrência ou diálogo competitivo, a pessoa jurídica ou consórcio de empresas que demonstre capacidade para seu desempenho, por sua conta e risco e por prazo determinado; […] IV - permissão de serviço público: a delegação, a título precário, mediante licitação, da prestação de serviços públicos, feita pelo poder concedente à pessoa física ou jurídica que demonstre capacidade para seu desempenho, por sua conta e risco;"
     ],
     "origin": "real",
     "question": {
@@ -2979,7 +2955,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 1º",
     "title": "Lei 12.846/2013 — Anticorrupção",
     "parts": [
-      "Art. 1º Esta Lei dispõe sobre a responsabilização objetiva administrativa e civil de pessoas jurídicas pela prática de atos contra a administração pública, nacional ou estrangeira. 07/10/2026, 23:11 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 1/"
+      "Art. 1º Esta Lei dispõe sobre a responsabilização objetiva administrativa e civil de pessoas jurídicas pela prática de atos contra a administração pública, nacional ou estrangeira."
     ],
     "origin": "real",
     "question": {
@@ -3002,7 +2978,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 1º, parágrafo único",
     "title": "Lei 12.846/2013 — Anticorrupção",
     "parts": [
-      "Art. 1º. [...] Parágrafo único. Aplica-se o disposto nesta Lei às sociedades empresárias e às sociedades simples, personificadas ou não, independentemente da forma de organização ou modelo societário adotado, bem como a quaisquer fundações, associações de entidades ou pessoas, ou sociedades estrangeiras, que tenham sede, filial ou representação no território brasileiro, constituídas de fato ou de direito, ainda que temporariamente. 07/10/2026, 23:11 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 8/"
+      "Art. 1º. [...] Parágrafo único. Aplica-se o disposto nesta Lei às sociedades empresárias e às sociedades simples, personificadas ou não, independentemente da forma de organização ou modelo societário adotado, bem como a quaisquer fundações, associações de entidades ou pessoas, ou sociedades estrangeiras, que tenham sede, filial ou representação no território brasileiro, constituídas de fato ou de direito, ainda que temporariamente."
     ],
     "origin": "real",
     "question": {
@@ -3025,7 +3001,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 1º, parágrafo único",
     "title": "Lei 12.846/2013 — Anticorrupção",
     "parts": [
-      "Art. 1º […] Parágrafo único. Aplica-se o disposto nesta Lei às sociedades empresárias e às sociedades simples, personificadas ou não, independentemente da forma de organização ou modelo societário adotado, bem como a quaisquer fundações, associações de entidades ou pessoas, ou sociedades estrangeiras, que tenham sede, filial ou representação no território brasileiro, constituídas de fato ou de direito, ainda que temporariamente. 07/10/2026, 23:11 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 15/"
+      "Art. 1º […] Parágrafo único. Aplica-se o disposto nesta Lei às sociedades empresárias e às sociedades simples, personificadas ou não, independentemente da forma de organização ou modelo societário adotado, bem como a quaisquer fundações, associações de entidades ou pessoas, ou sociedades estrangeiras, que tenham sede, filial ou representação no território brasileiro, constituídas de fato ou de direito, ainda que temporariamente."
     ],
     "origin": "real",
     "question": {
@@ -3048,7 +3024,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 2º",
     "title": "Lei 12.846/2013 — Anticorrupção",
     "parts": [
-      "Art. 2º As pessoas jurídicas serão responsabilizadas objetivamente, nos âmbitos administrativo e civil, pelos atos lesivos previstos nesta Lei praticados em seu interesse ou benefício, exclusivo ou não. 07/10/2026, 23:11 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 28/"
+      "Art. 2º As pessoas jurídicas serão responsabilizadas objetivamente, nos âmbitos administrativo e civil, pelos atos lesivos previstos nesta Lei praticados em seu interesse ou benefício, exclusivo ou não."
     ],
     "origin": "real",
     "question": {
@@ -3071,7 +3047,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 2º",
     "title": "Lei 12.846/2013 — Anticorrupção",
     "parts": [
-      "Art. 2º As pessoas jurídicas serão responsabilizadas objetivamente, nos âmbitos administrativo e civil, pelos atos lesivos previstos nesta Lei praticados em seu interesse ou benefício, exclusivo ou não. 07/10/2026, 23:11 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 29/"
+      "Art. 2º As pessoas jurídicas serão responsabilizadas objetivamente, nos âmbitos administrativo e civil, pelos atos lesivos previstos nesta Lei praticados em seu interesse ou benefício, exclusivo ou não."
     ],
     "origin": "real",
     "question": {
@@ -3094,18 +3070,18 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 2º, inc. I",
     "title": "Lei 13.019/2014 — MROSC",
     "parts": [
-      "Art. 2º - Para os fins desta Lei, considera-se: I - organização da sociedade civil: a) entidade privada sem fins lucrativos que não distribua entre os seus sócios ou associados, conselheiros, diretores, empregados, doadores ou terceiros eventuais resultados, sobras, excedentes operacionais, brutos ou líquidos, dividendos, isenções de qualquer natureza, participações ou parcelas do seu patrimônio, auferidos mediante o exercício de suas atividades, e que os aplique integralmente na consecução do respectivo objeto social, de forma imediata ou por meio da constituição de fundo patrimonial ou fundo de reserva; [...] 07/10/2026, 23:12 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 2/"
+      "Art. 2º - Para os fins desta Lei, considera-se: I - organização da sociedade civil: a) entidade privada sem fins lucrativos que não distribua entre os seus sócios ou associados, conselheiros, diretores, empregados, doadores ou terceiros eventuais resultados, sobras, excedentes operacionais, brutos ou líquidos, dividendos, isenções de qualquer natureza, participações ou parcelas do seu patrimônio, auferidos mediante o exercício de suas atividades, e que os aplique integralmente na consecução do respectivo objeto social, de forma imediata ou por meio da constituição de fundo patrimonial ou fundo de reserva; [...]"
     ],
     "origin": "real",
     "question": {
-      "statement": "REGIÃO) Julgue o item a seguir. Para os fins da Lei nº 13.019/2014, considera-se organização da sociedade civil a entidade privada sem fins lucrativos que não distribua entre os seus sócios ou associados, conselheiros, diretores, empregados, doadores ou terceiros eventuais resultados, sobras, excedentes operacionais, brutos ou líquidos, dividendos, isenções de qualquer natureza, participações ou parcelas do seu patrimônio, auferidos mediante o exercício de suas atividades, e que os aplique integralmente na consecução do respectivo objeto social, de forma imediata ou por meio da constituição de fundo patrimonial ou fundo de reserva.",
+      "statement": "Julgue o item a seguir. Para os fins da Lei nº 13.019/2014, considera-se organização da sociedade civil a entidade privada sem fins lucrativos que não distribua entre os seus sócios ou associados, conselheiros, diretores, empregados, doadores ou terceiros eventuais resultados, sobras, excedentes operacionais, brutos ou líquidos, dividendos, isenções de qualquer natureza, participações ou parcelas do seu patrimônio, auferidos mediante o exercício de suas atividades, e que os aplique integralmente na consecução do respectivo objeto social, de forma imediata ou por meio da constituição de fundo patrimonial ou fundo de reserva.",
       "answer": true,
       "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
       "source": "24.pdf · questão 2 · Art. 2º, I, a, Lei 13.019/2014",
-      "meta": "FGV 2025 - Juiz Federal Substituto (TRF - 3º",
+      "meta": "FGV 2025 - Juiz Federal Substituto (TRF - 3º REGIÃO)",
       "bank": "FGV",
       "year": 2025,
-      "role": "Juiz Federal Substituto (TRF - 3º",
+      "role": "Juiz Federal Substituto (TRF - 3º REGIÃO)",
       "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
     }
   },
@@ -3117,7 +3093,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 2º, inc. I",
     "title": "Lei 13.019/2014 — MROSC",
     "parts": [
-      "Art. 2º Para os fins desta Lei, considera-se: I - organização da sociedade civil: [...] c) as organizações religiosas que se dediquem a atividades ou a projetos de interesse público e de cunho social distintas das destinadas a fins exclusivamente religiosos; 07/10/2026, 23:12 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 6/"
+      "Art. 2º Para os fins desta Lei, considera-se: I - organização da sociedade civil: [...] c) as organizações religiosas que se dediquem a atividades ou a projetos de interesse público e de cunho social distintas das destinadas a fins exclusivamente religiosos;"
     ],
     "origin": "real",
     "question": {
@@ -3140,7 +3116,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 2º, inc. III",
     "title": "Lei 13.019/2014 — MROSC",
     "parts": [
-      "Art. 2º […] III - parceria: conjunto de direitos, responsabilidades e obrigações decorrentes de relação jurídica estabelecida formalmente entre a administração pública e organizações da sociedade civil, em regime de mútua cooperação, para a consecução de finalidades de interesse público e recíproco, mediante a execução de atividade ou de projeto expressos em termos de colaboração, em termos de fomento ou em acordos de cooperação; 07/10/2026, 23:12 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 9/"
+      "Art. 2º […] III - parceria: conjunto de direitos, responsabilidades e obrigações decorrentes de relação jurídica estabelecida formalmente entre a administração pública e organizações da sociedade civil, em regime de mútua cooperação, para a consecução de finalidades de interesse público e recíproco, mediante a execução de atividade ou de projeto expressos em termos de colaboração, em termos de fomento ou em acordos de cooperação;"
     ],
     "origin": "real",
     "question": {
@@ -3163,7 +3139,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 2º",
     "title": "Lei 13.019/2014 — MROSC",
     "parts": [
-      "Art. 2º Para os fins desta Lei, considera-se: [...] III-A - atividade: conjunto de operações que se realizam de modo contínuo ou permanente, das quais resulta um produto ou serviço necessário à satisfação de interesses compartilhados pela administração pública e pela organização da sociedade civil; 07/10/2026, 23:12 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 11/"
+      "Art. 2º Para os fins desta Lei, considera-se: [...] III-A - atividade: conjunto de operações que se realizam de modo contínuo ou permanente, das quais resulta um produto ou serviço necessário à satisfação de interesses compartilhados pela administração pública e pela organização da sociedade civil;"
     ],
     "origin": "real",
     "question": {
@@ -3186,18 +3162,18 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 2º, inc. IV",
     "title": "Lei 13.019/2014 — MROSC",
     "parts": [
-      "Art. 2º Para os fins desta Lei, considera-se: [...] IV - dirigente: pessoa que detenha poderes de administração, gestão ou controle da organização da sociedade civil, habilitada a assinar termo de colaboração, termo de fomento ou acordo de cooperação com a administração pública para a consecução de finalidades de interesse público e recíproco, ainda que delegue essa competência a terceiros; [...] 07/10/2026, 23:12 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 12/"
+      "Art. 2º Para os fins desta Lei, considera-se: [...] IV - dirigente: pessoa que detenha poderes de administração, gestão ou controle da organização da sociedade civil, habilitada a assinar termo de colaboração, termo de fomento ou acordo de cooperação com a administração pública para a consecução de finalidades de interesse público e recíproco, ainda que delegue essa competência a terceiros; [...]"
     ],
     "origin": "real",
     "question": {
-      "statement": "Ferreira - SP) Sobre o regime jurídico das parcerias entre a Administração Pública e as organizações da sociedade civil, disciplinado pela Lei nº 13.019/2014, julgue o item a seguir. Dirigente é o agente público responsável pela gestão de parceria celebrada por meio de termo de colaboração ou termo de fomento, designado por ato publicado em meio oficial de comunicação, com poderes de controle e fiscalização.",
+      "statement": "Sobre o regime jurídico das parcerias entre a Administração Pública e as organizações da sociedade civil, disciplinado pela Lei nº 13.019/2014, julgue o item a seguir. Dirigente é o agente público responsável pela gestão de parceria celebrada por meio de termo de colaboração ou termo de fomento, designado por ato publicado em meio oficial de comunicação, com poderes de controle e fiscalização.",
       "answer": false,
       "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
       "source": "24.pdf · questão 13 · Art. 2º, IV, Lei 13.019/2014",
-      "meta": "VUNESP 2017 - Procurador (Câmara de Porto",
+      "meta": "VUNESP 2017 - Procurador (Câmara de Porto Ferreira - SP)",
       "bank": "VUNESP",
       "year": 2017,
-      "role": "Procurador (Câmara de Porto",
+      "role": "Procurador (Câmara de Porto Ferreira - SP)",
       "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
       "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
@@ -3210,7 +3186,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 2º, inc. VII",
     "title": "Lei 13.019/2014 — MROSC",
     "parts": [
-      "Art. 2º Para os fins desta Lei, considera-se: […] VII - termo de colaboração: instrumento por meio do qual são formalizadas as parcerias estabelecidas pela administração pública com organizações da sociedade civil para a consecução de finalidades de interesse público e recíproco propostas pela administração pública que envolvam a transferência de recursos financeiros. 07/10/2026, 23:12 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 14/"
+      "Art. 2º Para os fins desta Lei, considera-se: […] VII - termo de colaboração: instrumento por meio do qual são formalizadas as parcerias estabelecidas pela administração pública com organizações da sociedade civil para a consecução de finalidades de interesse público e recíproco propostas pela administração pública que envolvam a transferência de recursos financeiros."
     ],
     "origin": "real",
     "question": {
@@ -3233,7 +3209,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 2º, inc. VII",
     "title": "Lei 13.019/2014 — MROSC",
     "parts": [
-      "Art. 2º. […] VII - termo de colaboração: instrumento por meio do qual são formalizadas as parcerias estabelecidas pela administração pública com organizações da sociedade civil para a consecução de finalidades de interesse público e recíproco propostas pela administração pública que envolvam a transferência de recursos financeiros; […] 07/10/2026, 23:12 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 15/"
+      "Art. 2º. […] VII - termo de colaboração: instrumento por meio do qual são formalizadas as parcerias estabelecidas pela administração pública com organizações da sociedade civil para a consecução de finalidades de interesse público e recíproco propostas pela administração pública que envolvam a transferência de recursos financeiros; […]"
     ],
     "origin": "real",
     "question": {
@@ -3256,7 +3232,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 2º, inc. VIII",
     "title": "Lei 13.019/2014 — MROSC",
     "parts": [
-      "Art. 2º Para os fins desta Lei, considera-se: [...] VIII - termo de fomento: instrumento por meio do qual são formalizadas as parcerias estabelecidas pela administração pública com organizações da sociedade civil para a consecução de finalidades de interesse público e recíproco propostas pelas organizações da sociedade civil, que envolvam a transferência de recursos financeiros; 07/10/2026, 23:12 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 16/"
+      "Art. 2º Para os fins desta Lei, considera-se: [...] VIII - termo de fomento: instrumento por meio do qual são formalizadas as parcerias estabelecidas pela administração pública com organizações da sociedade civil para a consecução de finalidades de interesse público e recíproco propostas pelas organizações da sociedade civil, que envolvam a transferência de recursos financeiros;"
     ],
     "origin": "real",
     "question": {
@@ -3279,7 +3255,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 2º, inc. VIII",
     "title": "Lei 13.019/2014 — MROSC",
     "parts": [
-      "Art. 2º Para os fins desta Lei, considera-se: [...] VIII - termo de fomento: instrumento por meio do qual são formalizadas as parcerias estabelecidas pela administração pública com organizações da sociedade civil para a consecução de finalidades de interesse público e recíproco propostas pelas organizações da sociedade civil, que envolvam a transferência de recursos financeiros; 07/10/2026, 23:12 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 24/"
+      "Art. 2º Para os fins desta Lei, considera-se: [...] VIII - termo de fomento: instrumento por meio do qual são formalizadas as parcerias estabelecidas pela administração pública com organizações da sociedade civil para a consecução de finalidades de interesse público e recíproco propostas pelas organizações da sociedade civil, que envolvam a transferência de recursos financeiros;"
     ],
     "origin": "real",
     "question": {
@@ -3302,18 +3278,18 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 2º",
     "title": "Lei 13.019/2014 — MROSC",
     "parts": [
-      "Art. 2º Para os fins desta Lei, considera-se: […] VIII-A - acordo de cooperação: instrumento por meio do qual são formalizadas as parcerias estabelecidas pela administração pública com organizações da sociedade civil para a consecução de finalidades de interesse público e recíproco que não envolvam a transferência de recursos financeiros; […] 07/10/2026, 23:12 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 27/"
+      "Art. 2º Para os fins desta Lei, considera-se: […] VIII-A - acordo de cooperação: instrumento por meio do qual são formalizadas as parcerias estabelecidas pela administração pública com organizações da sociedade civil para a consecução de finalidades de interesse público e recíproco que não envolvam a transferência de recursos financeiros; […]"
     ],
     "origin": "real",
     "question": {
-      "statement": "REGIÃO) Julgue o item a seguir. No contexto da Lei nº 13.019/2014, acordo de cooperação é o instrumento por meio do qual são formalizadas as parcerias estabelecidas pela administração pública com organizações da sociedade civil para a consecução de finalidades de interesse público e recíproco propostas pelas organizações da sociedade civil, que envolvam a transferência de recursos financeiros.",
+      "statement": "Julgue o item a seguir. No contexto da Lei nº 13.019/2014, acordo de cooperação é o instrumento por meio do qual são formalizadas as parcerias estabelecidas pela administração pública com organizações da sociedade civil para a consecução de finalidades de interesse público e recíproco propostas pelas organizações da sociedade civil, que envolvam a transferência de recursos financeiros.",
       "answer": false,
       "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
       "source": "24.pdf · questão 28 · Art. 2º, VIII-A, Lei 13.019/2014",
-      "meta": "FGV 2025 - Juiz Federal Substituto (TRF - 3º",
+      "meta": "FGV 2025 - Juiz Federal Substituto (TRF - 3º REGIÃO)",
       "bank": "FGV",
       "year": 2025,
-      "role": "Juiz Federal Substituto (TRF - 3º",
+      "role": "Juiz Federal Substituto (TRF - 3º REGIÃO)",
       "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
     }
   },
@@ -3325,18 +3301,18 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 2º, inc. IX",
     "title": "Lei 13.019/2014 — MROSC",
     "parts": [
-      "Art. 2º Para os fins desta Lei, considera-se: [...] IX - conselho de política pública: órgão criado pelo poder público para atuar como instância consultiva, na respectiva área de atuação, na formulação, implementação, acompanhamento, monitoramento e avaliação de políticas públicas; [...] 07/10/2026, 23:12 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 40/"
+      "Art. 2º Para os fins desta Lei, considera-se: [...] IX - conselho de política pública: órgão criado pelo poder público para atuar como instância consultiva, na respectiva área de atuação, na formulação, implementação, acompanhamento, monitoramento e avaliação de políticas públicas; [...]"
     ],
     "origin": "real",
     "question": {
-      "statement": "Ferreira - SP) Sobre o regime jurídico das parcerias entre a Administração Pública e as organizações da sociedade civil, disciplinado pela Lei nº 13.019/2014, julgue o item a seguir. Conselho de política pública é o órgão colegiado destinado a monitorar e avaliar as parcerias celebradas com organizações da sociedade civil mediante termo de colaboração ou termo de fomento.",
+      "statement": "Sobre o regime jurídico das parcerias entre a Administração Pública e as organizações da sociedade civil, disciplinado pela Lei nº 13.019/2014, julgue o item a seguir. Conselho de política pública é o órgão colegiado destinado a monitorar e avaliar as parcerias celebradas com organizações da sociedade civil mediante termo de colaboração ou termo de fomento.",
       "answer": false,
       "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
       "source": "24.pdf · questão 41 · Art. 2º, IX, Lei 13.019/2014",
-      "meta": "VUNESP 2017 - Procurador (Câmara de Porto",
+      "meta": "VUNESP 2017 - Procurador (Câmara de Porto Ferreira - SP)",
       "bank": "VUNESP",
       "year": 2017,
-      "role": "Procurador (Câmara de Porto",
+      "role": "Procurador (Câmara de Porto Ferreira - SP)",
       "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
       "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
@@ -3349,18 +3325,18 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 2º, inc. X",
     "title": "Lei 13.019/2014 — MROSC",
     "parts": [
-      "Art. 2º Para os fins desta Lei, considera-se: [...] X - comissão de seleção: órgão colegiado destinado a processar e julgar chamamentos públicos, constituído por ato publicado em meio oficial de comunicação, assegurada a participação de pelo menos um servidor ocupante de cargo efetivo ou emprego permanente do quadro de pessoal da administração pública; [...] 07/10/2026, 23:12 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 41/"
+      "Art. 2º Para os fins desta Lei, considera-se: [...] X - comissão de seleção: órgão colegiado destinado a processar e julgar chamamentos públicos, constituído por ato publicado em meio oficial de comunicação, assegurada a participação de pelo menos um servidor ocupante de cargo efetivo ou emprego permanente do quadro de pessoal da administração pública; [...]"
     ],
     "origin": "real",
     "question": {
-      "statement": "Palma Sola - SC) Nos termos da Lei nº 13.019/14, o órgão colegiado destinado a processar e julgar chamamentos públicos, constituído por ato publicado em meio oficial de comunicação, assegurada a participação de pelo menos um servidor ocupante de cargo efetivo ou emprego permanente do quadro de pessoal da administração pública é denominado como comissão de seleção.",
+      "statement": "Nos termos da Lei nº 13.019/14, o órgão colegiado destinado a processar e julgar chamamentos públicos, constituído por ato publicado em meio oficial de comunicação, assegurada a participação de pelo menos um servidor ocupante de cargo efetivo ou emprego permanente do quadro de pessoal da administração pública é denominado como comissão de seleção.",
       "answer": true,
       "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
       "source": "24.pdf · questão 42 · Art. 2º, X, Lei 13.019/2014",
-      "meta": "AMEOSC 2020 - Controlador Interno (Prefeitura de",
+      "meta": "AMEOSC 2020 - Controlador Interno (Prefeitura de Palma Sola - SC)",
       "bank": "AMEOSC",
       "year": 2020,
-      "role": "Controlador Interno (Prefeitura de",
+      "role": "Controlador Interno (Prefeitura de Palma Sola - SC)",
       "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
       "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
@@ -3373,7 +3349,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 2º, inc. XII",
     "title": "Lei 13.019/2014 — MROSC",
     "parts": [
-      "Art. 2º Para os fins desta Lei, considera-se: [...] XII - chamamento público: procedimento destinado a selecionar organização da sociedade civil para firmar parceria por meio de termo de colaboração ou de fomento, no qual se garanta a observância dos princípios da isonomia, da legalidade, da impessoalidade, da moralidade, da igualdade, da publicidade, da probidade administrativa, da vinculação ao instrumento convocatório, do julgamento objetivo e dos que lhes são correlatos; 07/10/2026, 23:12 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 44/"
+      "Art. 2º Para os fins desta Lei, considera-se: [...] XII - chamamento público: procedimento destinado a selecionar organização da sociedade civil para firmar parceria por meio de termo de colaboração ou de fomento, no qual se garanta a observância dos princípios da isonomia, da legalidade, da impessoalidade, da moralidade, da igualdade, da publicidade, da probidade administrativa, da vinculação ao instrumento convocatório, do julgamento objetivo e dos que lhes são correlatos;"
     ],
     "origin": "real",
     "question": {
@@ -3396,7 +3372,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 2º, inc. XII",
     "title": "Lei 13.019/2014 — MROSC",
     "parts": [
-      "Art. 2º Para os fins desta Lei, considera-se: […] XII - chamamento público: procedimento destinado a selecionar organização da sociedade civil para firmar parceria por meio de termo de colaboração ou de fomento, no qual se garanta a observância dos princípios da isonomia, da legalidade, da impessoalidade, da moralidade, da igualdade, da publicidade, da probidade administrativa, da vinculação ao instrumento convocatório, do julgamento objetivo e dos que lhes são correlatos; […] 07/10/2026, 23:12 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 45/"
+      "Art. 2º Para os fins desta Lei, considera-se: […] XII - chamamento público: procedimento destinado a selecionar organização da sociedade civil para firmar parceria por meio de termo de colaboração ou de fomento, no qual se garanta a observância dos princípios da isonomia, da legalidade, da impessoalidade, da moralidade, da igualdade, da publicidade, da probidade administrativa, da vinculação ao instrumento convocatório, do julgamento objetivo e dos que lhes são correlatos; […]"
     ],
     "origin": "real",
     "question": {
@@ -3419,7 +3395,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 3º, inc. IX",
     "title": "Lei 13.019/2014 — MROSC",
     "parts": [
-      "Art. 3º Não se aplicam as exigências desta Lei: [...] IX - aos pagamentos realizados a título de anuidades, contribuições ou taxas associativas em favor de organismos internacionais ou entidades que sejam obrigatoriamente constituídas por: a) membros de Poder ou do Ministério Público; b) dirigentes de órgão ou de entidade da administração pública; c) pessoas jurídicas de direito público interno; d) pessoas jurídicas integrantes da administração pública; 07/10/2026, 23:12 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 47/"
+      "Art. 3º Não se aplicam as exigências desta Lei: [...] IX - aos pagamentos realizados a título de anuidades, contribuições ou taxas associativas em favor de organismos internacionais ou entidades que sejam obrigatoriamente constituídas por: a) membros de Poder ou do Ministério Público; b) dirigentes de órgão ou de entidade da administração pública; c) pessoas jurídicas de direito público interno; d) pessoas jurídicas integrantes da administração pública;"
     ],
     "origin": "real",
     "question": {
@@ -3443,7 +3419,7 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 5º",
     "title": "Lei 13.019/2014 — MROSC",
     "parts": [
-      "Art. 5º O regime jurídico de que trata esta Lei tem como fundamentos a gestão pública democrática, a participação social, o fortalecimento da sociedade civil, a transparência na aplicação dos recursos públicos, os princípios da legalidade, da legitimidade, da impessoalidade, da moralidade, da publicidade, da economicidade, da eficiência e da eficácia, destinando-se a assegurar: I - o reconhecimento da participação social como direito do cidadão; […] 07/10/2026, 23:12 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 48/"
+      "Art. 5º O regime jurídico de que trata esta Lei tem como fundamentos a gestão pública democrática, a participação social, o fortalecimento da sociedade civil, a transparência na aplicação dos recursos públicos, os princípios da legalidade, da legitimidade, da impessoalidade, da moralidade, da publicidade, da economicidade, da eficiência e da eficácia, destinando-se a assegurar: I - o reconhecimento da participação social como direito do cidadão; […]"
     ],
     "origin": "real",
     "question": {
