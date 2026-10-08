@@ -137,9 +137,13 @@ test("87 itens autorais ampliam 5 conjuntos sem novos identificadores de lei",()
 });
 
 test("banca e metadados não atribuem questões de concursos a plataformas de compilação",()=>{
- const real=data.filter(q=>q.origin!=="authorial"&&q.question.origin!=="authorial");
- assert.equal(real.length,321);
- const unidentified=real.filter(q=>q.question.bank==="Banca não identificada");
+ const real=data.filter(q=>q.origin==="real");
+ assert.equal(real.length,309);
+ const authorial=data.filter(q=>q.origin==="authorial");
+ const unverified=data.filter(q=>q.origin==="unverified");
+ assert.equal(authorial.length,444);
+ assert.equal(unverified.length,12);
+ const unidentified=unverified.filter(q=>q.question.bank==="Banca não identificada");
  assert.equal(unidentified.length,12);
  for(const q of data){
    const metadata=[q.question.bank,q.question.meta,q.question.source,q.question.role].join(" ");
@@ -153,7 +157,8 @@ test("banca e metadados não atribuem questões de concursos a plataformas de co
  const known=real.filter(q=>q.question.bank!=="Banca não identificada");
  assert.equal(known.length,309);
  const text=html.match(/supplementNotice:"([^"]+)"/)?.[1]||"";
- assert.ok(text.includes("321 questões importadas do acervo de concursos públicos"));
+ assert.ok(text.includes("309 questões de provas com banca identificada"));
  assert.ok(text.includes("444 exercícios autorais"));
+ assert.ok(text.includes("12 questões importadas cuja origem precisa ser confirmada"));
  assert.ok(!/decorando/i.test(text));
 });
