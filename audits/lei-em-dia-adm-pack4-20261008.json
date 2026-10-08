@@ -1,0 +1,66 @@
+{
+  "date": "2026-10-08",
+  "type": "auditoria de importação de Direito Administrativo — 6 conjuntos complementares",
+  "status": "preparação para publicação",
+  "questionCount": 83,
+  "topicCount": 6,
+  "perLegislation": [
+    {
+      "id": "adm-lei-13460",
+      "title": "Lei 13.460/2017 — Direitos dos Usuários de Serviços Públicos",
+      "count": 15,
+      "distinctDevices": 78
+    },
+    {
+      "id": "adm-lei-14129",
+      "title": "Lei 14.129/2021 — Governo Digital",
+      "count": 14,
+      "distinctDevices": 78
+    },
+    {
+      "id": "adm-lei-8745",
+      "title": "Lei 8.745/1993 — Contratação Temporária Federal",
+      "count": 16,
+      "distinctDevices": 78
+    },
+    {
+      "id": "adm-lei-12813",
+      "title": "Lei 12.813/2013 — Conflito de Interesses",
+      "count": 14,
+      "distinctDevices": 78
+    },
+    {
+      "id": "adm-lei-4717",
+      "title": "Lei 4.717/1965 — Ação Popular",
+      "count": 11,
+      "distinctDevices": 78
+    },
+    {
+      "id": "adm-lei-7347",
+      "title": "Lei 7.347/1985 — Ação Civil Pública",
+      "count": 13,
+      "distinctDevices": 78
+    }
+  ],
+  "validation": {
+    "maxPerArticleParagraphInciso": 2,
+    "uniqueIds": true,
+    "duplicateStatements": [],
+    "invalidRecords": [],
+    "bankMetadata": "questões autorais — não identificadas como questões reais de banca"
+  },
+  "sources": [
+    "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13460.htm",
+    "https://www2.camara.leg.br/legin/fed/lei/2021/lei-14129-29-marco-2021-791203-normaatualizada-pl.html",
+    "https://www2.camara.leg.br/legin/fed/lei/1993/lei-8745-9-dezembro-1993-363171-normaatualizada-pl.html",
+    "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2013/lei/l12813.htm",
+    "https://www2.camara.leg.br/legin/fed/lei/1960-1969/lei-4717-29-junho-1965-377818-normaatualizada-pl.html",
+    "https://www2.camara.leg.br/legin/fed/lei/1980-1987/lei-7347-24-julho-1985-356939-normaatualizada-pl.html"
+  ],
+  "notes": [
+    "Não representa cobertura integral das legislações.",
+    "Nenhum enunciado foi reproduzido de apostilas privadas na ampliação; são questões autorais.",
+    "Os 321 itens anteriores importados de PDFs mantêm necessidade de revisão jurídica individual e de direitos de reprodução.",
+    "Áreas de Direito Constitucional/Processual Civil possuem interface temática com ação popular e ação civil pública."
+  ]
+}
