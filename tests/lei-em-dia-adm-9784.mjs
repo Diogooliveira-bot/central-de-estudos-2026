@@ -9,7 +9,7 @@ const {DATA_ADM:questions, TOPICS_ADM:topics} = sandbox.testExport;
 test("piloto contém 26 questões distintas", () => {
   assert.equal(questions.length,26);
   assert.equal(new Set(questions.map(q=>q.id)).size,26);
-  assert.equal(new Set(questions.map(q=>q.question.statement.normalize("NFD").replace(/[\\u0300-\\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]/g,""))).size,26);
+  assert.equal(new Set(questions.map(q=>q.question.statement.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]/g,""))).size,26);
 });
 test("máximo de duas questões por artigo, parágrafo e inciso", () => {
   const sizes = new Map();
