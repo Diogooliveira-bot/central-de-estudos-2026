@@ -328,8 +328,8 @@ const DATA_ADM_PACK2 = [
     "id": "adm-11107-pdf9-q045",
     "discipline": "adm",
     "topicId": "adm-lei-11107",
-    "subtopic": "Lei 11.107/2005 · Art. 2º, § 1º",
-    "number": "Art. 2º, § 1º",
+    "subtopic": "Lei 11.107/2005 · Art. 2º, § 1º, incisos I e III",
+    "number": "Art. 2º, § 1º, incisos I e III",
     "title": "Lei 11.107/2005 — Consórcios públicos",
     "parts": [
       "Art. 2º […] § 1º Para o cumprimento de seus objetivos, o consórcio público poderá: I – firmar convênios, contratos, acordos de qualquer natureza, receber auxílios, contribuições e subvenções sociais ou econômicas de outras entidades e órgãos do governo; […] III – ser contratado pela administração direta ou indireta dos entes da Federação consorciados, dispensada a licitação."
@@ -907,8 +907,8 @@ const DATA_ADM_PACK2 = [
     "id": "adm-13303-pdf28-q022",
     "discipline": "adm",
     "topicId": "adm-lei-13303",
-    "subtopic": "Lei 13.303/2016 · Art. 8º, inc. IV",
-    "number": "Art. 8º, inc. IV",
+    "subtopic": "Lei 13.303/2016 · Art. 8º, incisos IV, V e VII",
+    "number": "Art. 8º, incisos IV, V e VII",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
       "Art. 8º As empresas públicas e as sociedades de economia mista deverão observar, no mínimo, os seguintes requisitos de transparência: [...] IV - elaboração e divulgação de política de divulgação de informações, em conformidade com a legislação em vigor e com as melhores práticas; V - elaboração de política de distribuição de dividendos, à luz do interesse público que justificou a criação da empresa pública ou da sociedade de economia mista; [...] VII - elaboração e divulgação da política de transações com partes relacionadas, em conformidade com os requisitos de competitividade, conformidade, transparência, equidade e comutatividade, que deverá ser revista, no mínimo, anualmente e aprovada pelo Conselho de Administração; [...]"
@@ -1531,8 +1531,8 @@ const DATA_ADM_PACK2 = [
     "id": "adm-13848-pdf32-q001",
     "discipline": "adm",
     "topicId": "adm-lei-13848",
-    "subtopic": "Lei 13.848/2019 · Art. 2º",
-    "number": "Art. 2º",
+    "subtopic": "Lei 13.848/2019 · Art. 2º, incisos III e IV",
+    "number": "Art. 2º, incisos III e IV",
     "title": "Lei 13.848/2019 — Agências reguladoras",
     "parts": [
       "Art. 2º Consideram-se agências reguladoras, para os fins desta Lei e para os fins da Lei nº 9.986, de 18 de julho de 2000: […] III - a Agência Nacional de Telecomunicações (Anatel); IV - a Agência Nacional de Vigilância Sanitária (Anvisa);"
@@ -2732,8 +2732,8 @@ const DATA_ADM_PACK2 = [
     "id": "adm-8443-pdf58-q017",
     "discipline": "adm",
     "topicId": "adm-lei-8443",
-    "subtopic": "Lei 8.443/1992 · Art. 12º",
-    "number": "Art. 12º",
+    "subtopic": "Lei 8.443/1992 · Art. 12º, incisos II e III",
+    "number": "Art. 12º, incisos II e III",
     "title": "Lei 8.443/1992 — Tribunal de Contas da União",
     "parts": [
       "Art. 12. Verificada irregularidade nas contas, o Relator ou o Tribunal: [...] II - se houver débito, ordenará a citação do responsável para, no prazo estabelecido no Regimento Interno, apresentar defesa ou recolher a quantia devida; III - se não houver débito, determinará a audiência do responsável para, no prazo estabelecido no Regimento Interno, apresentar razões de justificativa;"
@@ -3436,7 +3436,8 @@ const TOPICS_ADM_PACK2 = [
       "Lei 11.107/2005 · Art. 2º",
       "Lei 11.107/2005 · Art. 2º, § 1º",
       "Lei 11.107/2005 · Art. 2º, § 1º, inc. I",
-      "Lei 11.107/2005 · Art. 2º, § 1º, inc. II"
+      "Lei 11.107/2005 · Art. 2º, § 1º, inc. II",
+      "Lei 11.107/2005 · Art. 2º, § 1º, incisos I e III"
     ]
   },
   {
@@ -3465,13 +3466,13 @@ const TOPICS_ADM_PACK2 = [
       "Lei 13.303/2016 · Art. 7º",
       "Lei 13.303/2016 · Art. 8º, inc. I",
       "Lei 13.303/2016 · Art. 8º, inc. III",
-      "Lei 13.303/2016 · Art. 8º, inc. IV",
       "Lei 13.303/2016 · Art. 8º, inc. IX",
       "Lei 13.303/2016 · Art. 8º, inc. V",
       "Lei 13.303/2016 · Art. 8º, inc. VI",
       "Lei 13.303/2016 · Art. 8º, inc. VII",
       "Lei 13.303/2016 · Art. 8º, inc. VIII",
       "Lei 13.303/2016 · Art. 8º, inc. X",
+      "Lei 13.303/2016 · Art. 8º, incisos IV, V e VII",
       "Lei 13.303/2016 · Art. 9º, § 1º, inc. VI",
       "Lei 13.303/2016 · Art. 9º, § 3º, inc. II",
       "Lei 13.303/2016 · Art. 11º",
@@ -3495,8 +3496,8 @@ const TOPICS_ADM_PACK2 = [
     "label": "Lei 13.848/2019 — Agências reguladoras",
     "range": "PDF cobre apenas os dispositivos nele indicados",
     "subtopics": [
-      "Lei 13.848/2019 · Art. 2º",
       "Lei 13.848/2019 · Art. 2º, inc. XII",
+      "Lei 13.848/2019 · Art. 2º, incisos III e IV",
       "Lei 13.848/2019 · Art. 2º, parágrafo único",
       "Lei 13.848/2019 · Art. 3º",
       "Lei 13.848/2019 · Art. 3º, § 2º, inc. I",
@@ -3541,9 +3542,9 @@ const TOPICS_ADM_PACK2 = [
       "Lei 8.443/1992 · Art. 10º",
       "Lei 8.443/1992 · Art. 10º, § 2º",
       "Lei 8.443/1992 · Art. 10º, § 3º",
-      "Lei 8.443/1992 · Art. 12º",
       "Lei 8.443/1992 · Art. 12º, inc. I",
       "Lei 8.443/1992 · Art. 12º, inc. II",
+      "Lei 8.443/1992 · Art. 12º, incisos II e III",
       "Lei 8.443/1992 · Art. 16º",
       "Lei 8.443/1992 · Art. 16º, § 1º",
       "Lei 8.443/1992 · Art. 16º, inc. II",
