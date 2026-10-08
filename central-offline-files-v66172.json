@@ -1,5 +1,5 @@
 {
-  "build": "20261008-lei-em-dia-adm-pilot1",
+  "build": "20261008-lei-em-dia-adm-15leis",
   "files": [
     "/central-v119.html?direct=35",
     "/ui/discipline-standard.js?v=20261003penalnative1",
@@ -401,6 +401,8 @@
     "/content/civil/civil-native-content-packed.js?v=20261005civil1",
     "/content/civil/civil-native-images.js?v=20261005civil1",
     "/ui/civil-native-study-v1.css?v=20261005civil1",
-    "/tools/decorando-data-adm-9784.js?v=20261008pilot1"
+    "/tools/decorando-data-adm-9784.js?v=20261008pilot1",
+    "/tools/decorando-data-adm-pack1.js?v=20261008adm1",
+    "/tools/decorando-data-adm-pack2.js?v=20261008adm1"
   ]
 }
