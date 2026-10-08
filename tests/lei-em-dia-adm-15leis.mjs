@@ -114,7 +114,7 @@ test("auditoria dos 321 gabaritos importados preserva a cadeia de origem",()=>{
  assert.equal(audit.byFile.reduce((a,x)=>a+x.answerMatch,0),321);
  for(const [path,sha] of Object.entries(audit.datasetBlobShas)){
    const content=readFileSync(new URL(path,root));
-   const gitBlob=createHash("sha1").update("blob "+content.length+"\\0").update(content).digest("hex");
+   const gitBlob=createHash("sha1").update("blob "+content.length).update(Buffer.from([0])).update(content).digest("hex");
    assert.equal(gitBlob,sha,"Dataset alterado depois da auditoria: "+path);
  }
 });
