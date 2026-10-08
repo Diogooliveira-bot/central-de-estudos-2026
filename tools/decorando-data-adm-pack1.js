@@ -1648,8 +1648,8 @@ const DATA_ADM_PACK1 = [
     "id": "adm-13709-pdf31-q014",
     "discipline": "adm",
     "topicId": "adm-lei-13709",
-    "subtopic": "Lei 13.709/2018 · Art. 2º",
-    "number": "Art. 2º",
+    "subtopic": "Lei 13.709/2018 · Art. 2º, incisos I e IV",
+    "number": "Art. 2º, incisos I e IV",
     "title": "Lei 13.709/2018 — LGPD",
     "parts": [
       "Art. 2º A disciplina da proteção de dados pessoais tem como fundamentos: I - o respeito à privacidade; [...] IV - a inviolabilidade da intimidade, da honra e da imagem;"
@@ -1717,8 +1717,8 @@ const DATA_ADM_PACK1 = [
     "id": "adm-13709-pdf31-q019",
     "discipline": "adm",
     "topicId": "adm-lei-13709",
-    "subtopic": "Lei 13.709/2018 · Art. 2º",
-    "number": "Art. 2º",
+    "subtopic": "Lei 13.709/2018 · Art. 2º, incisos II e III",
+    "number": "Art. 2º, incisos II e III",
     "title": "Lei 13.709/2018 — LGPD",
     "parts": [
       "Art. 2º A disciplina da proteção de dados pessoais tem como fundamentos: [...] II - a autodeterminação informativa; III - a liberdade de expressão, de informação, de comunicação e de opinião;"
@@ -2294,8 +2294,8 @@ const DATA_ADM_PACK1 = [
     "id": "adm-dl200-pdf1-q015",
     "discipline": "adm",
     "topicId": "adm-lei-dl200",
-    "subtopic": "Decreto-Lei 200/1967 · Art. 6º",
-    "number": "Art. 6º",
+    "subtopic": "Decreto-Lei 200/1967 · Art. 6º, incisos I e II",
+    "number": "Art. 6º, incisos I e II",
     "title": "Decreto-Lei 200/1967 — Organização administrativa",
     "parts": [
       "Art. 6° As atividades da Administração Federal obedecerão aos seguintes princípios fundamentais: I - Planejamento. II - Coordenação."
@@ -2882,8 +2882,8 @@ const DATA_ADM_PACK1 = [
     "id": "adm-8987-pdf59-q047",
     "discipline": "adm",
     "topicId": "adm-lei-8987",
-    "subtopic": "Lei 8.987/1995 · Art. 2º",
-    "number": "Art. 2º",
+    "subtopic": "Lei 8.987/1995 · Art. 2º, incisos II e IV",
+    "number": "Art. 2º, incisos II e IV",
     "title": "Lei 8.987/1995 — Serviços públicos",
     "parts": [
       "Art. 2º. […] II - concessão de serviço público: a delegação de sua prestação, feita pelo poder concedente, mediante licitação, na modalidade concorrência ou diálogo competitivo, a pessoa jurídica ou consórcio de empresas que demonstre capacidade para seu desempenho, por sua conta e risco e por prazo determinado; […] IV - permissão de serviço público: a delegação, a título precário, mediante licitação, da prestação de serviços públicos, feita pelo poder concedente à pessoa física ou jurídica que demonstre capacidade para seu desempenho, por sua conta e risco."
@@ -2905,8 +2905,8 @@ const DATA_ADM_PACK1 = [
     "id": "adm-8987-pdf59-q048",
     "discipline": "adm",
     "topicId": "adm-lei-8987",
-    "subtopic": "Lei 8.987/1995 · Art. 2º",
-    "number": "Art. 2º",
+    "subtopic": "Lei 8.987/1995 · Art. 2º, incisos II e IV",
+    "number": "Art. 2º, incisos II e IV",
     "title": "Lei 8.987/1995 — Serviços públicos",
     "parts": [
       "Art. 2º Para os fins do disposto nesta Lei, considera-se: [...] II - concessão de serviço público: a delegação de sua prestação, feita pelo poder concedente, mediante licitação, na modalidade concorrência ou diálogo competitivo, a pessoa jurídica ou consórcio de empresas que demonstre capacidade para seu desempenho, por sua conta e risco e por prazo determinado; […] IV - permissão de serviço público: a delegação, a título precário, mediante licitação, da prestação de serviços públicos, feita pelo poder concedente à pessoa física ou jurídica que demonstre capacidade para seu desempenho, por sua conta e risco;"
@@ -3525,7 +3525,6 @@ const TOPICS_ADM_PACK1 = [
     "range": "PDF cobre apenas os dispositivos nele indicados",
     "subtopics": [
       "Lei 13.709/2018 · Art. 1º",
-      "Lei 13.709/2018 · Art. 2º",
       "Lei 13.709/2018 · Art. 2º, inc. I",
       "Lei 13.709/2018 · Art. 2º, inc. II",
       "Lei 13.709/2018 · Art. 2º, inc. III",
@@ -3533,6 +3532,8 @@ const TOPICS_ADM_PACK1 = [
       "Lei 13.709/2018 · Art. 2º, inc. V",
       "Lei 13.709/2018 · Art. 2º, inc. VI",
       "Lei 13.709/2018 · Art. 2º, inc. VII",
+      "Lei 13.709/2018 · Art. 2º, incisos I e IV",
+      "Lei 13.709/2018 · Art. 2º, incisos II e III",
       "Lei 13.709/2018 · Art. 3º, inc. I",
       "Lei 13.709/2018 · Art. 3º, inc. II",
       "Lei 13.709/2018 · Art. 3º, inc. III"
@@ -3553,6 +3554,7 @@ const TOPICS_ADM_PACK1 = [
       "Decreto-Lei 200/1967 · Art. 5º, inc. IV",
       "Decreto-Lei 200/1967 · Art. 6º",
       "Decreto-Lei 200/1967 · Art. 6º, inc. IV",
+      "Decreto-Lei 200/1967 · Art. 6º, incisos I e II",
       "Decreto-Lei 200/1967 · Art. 10º, § 1º",
       "Decreto-Lei 200/1967 · Art. 12º",
       "Decreto-Lei 200/1967 · Art. 13º",
@@ -3575,9 +3577,9 @@ const TOPICS_ADM_PACK1 = [
     "range": "PDF cobre apenas os dispositivos nele indicados",
     "subtopics": [
       "Lei 8.987/1995 · Art. 1º, parágrafo único",
-      "Lei 8.987/1995 · Art. 2º",
       "Lei 8.987/1995 · Art. 2º, inc. I",
-      "Lei 8.987/1995 · Art. 2º, inc. II"
+      "Lei 8.987/1995 · Art. 2º, inc. II",
+      "Lei 8.987/1995 · Art. 2º, incisos II e IV"
     ]
   },
   {
