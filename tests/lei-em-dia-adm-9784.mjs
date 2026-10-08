@@ -34,7 +34,7 @@ test("front-end carrega módulo administrativo sem mudar a chave de progresso", 
   const html=readFileSync(new URL("../tools/decorando.html",import.meta.url),"utf8");
   assert.ok(html.includes("decorando-data-adm-9784.js"));
   assert.ok(html.includes("...DATA_ADM"));
-  assert.ok(html.includes("adm:[...TOPICS_ADM"));
+  assert.ok(html.includes("adm:TOPICS_ADM_EXTENDED") && html.includes("const TOPICS_ADM_EXTENDED"));
   assert.ok(html.includes('id:"adm",badge:"ADM"'));
   assert.ok(html.includes('const STORAGE_KEY = "lei-seca-enxuta-state"'));
 });

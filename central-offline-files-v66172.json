@@ -1,5 +1,5 @@
 {
-  "build": "20261008-lei-em-dia-adm-25conjuntos",
+  "build": "20261008-lei-em-dia-adm-596",
   "files": [
     "/central-v119.html?direct=35",
     "/ui/discipline-standard.js?v=20261003penalnative1",
@@ -405,6 +405,9 @@
     "/tools/decorando-data-adm-pack1.js?v=20261008adm1",
     "/tools/decorando-data-adm-pack2.js?v=20261008adm1",
     "/tools/decorando-data-adm-pack3.js?v=20261008adm2",
-    "/tools/decorando-data-adm-pack4.js?v=20261008adm3"
+    "/tools/decorando-data-adm-pack4.js?v=20261008adm3",
+    "/tools/decorando-data-adm-14133-extra.js?v=20261008adm4",
+    "/tools/decorando-data-adm-8112-extra.js?v=20261008adm4",
+    "/tools/decorando-data-adm-8429-extra.js?v=20261008adm4"
   ]
 }

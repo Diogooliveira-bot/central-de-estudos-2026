@@ -1,0 +1,177 @@
+{
+  "buildDate": "2026-10-08",
+  "datasetCount": 8,
+  "totalQuestions": 596,
+  "existingQuestions": 462,
+  "newQuestions": 134,
+  "individualFileCounts": [
+    {
+      "path": "tools/decorando-data-adm-9784.js",
+      "count": 26
+    },
+    {
+      "path": "tools/decorando-data-adm-pack1.js",
+      "count": 149
+    },
+    {
+      "path": "tools/decorando-data-adm-pack2.js",
+      "count": 146
+    },
+    {
+      "path": "tools/decorando-data-adm-pack3.js",
+      "count": 58
+    },
+    {
+      "path": "tools/decorando-data-adm-pack4.js",
+      "count": 83
+    },
+    {
+      "path": "tools/decorando-data-adm-14133-extra.js",
+      "count": 40
+    },
+    {
+      "path": "tools/decorando-data-adm-8112-extra.js",
+      "count": 45
+    },
+    {
+      "path": "tools/decorando-data-adm-8429-extra.js",
+      "count": 49
+    }
+  ],
+  "perLaw": [
+    {
+      "id": "adm-lei-9784",
+      "items": 26,
+      "subtopics": 16
+    },
+    {
+      "id": "adm-lei-8112",
+      "items": 71,
+      "subtopics": 61
+    },
+    {
+      "id": "adm-lei-8429",
+      "items": 57,
+      "subtopics": 49
+    },
+    {
+      "id": "adm-lei-12527",
+      "items": 33,
+      "subtopics": 19
+    },
+    {
+      "id": "adm-lei-13709",
+      "items": 23,
+      "subtopics": 13
+    },
+    {
+      "id": "adm-lei-dl200",
+      "items": 29,
+      "subtopics": 25
+    },
+    {
+      "id": "adm-lei-8987",
+      "items": 7,
+      "subtopics": 4
+    },
+    {
+      "id": "adm-lei-12846",
+      "items": 6,
+      "subtopics": 3
+    },
+    {
+      "id": "adm-lei-13019",
+      "items": 17,
+      "subtopics": 12
+    },
+    {
+      "id": "adm-lei-11107",
+      "items": 17,
+      "subtopics": 10
+    },
+    {
+      "id": "adm-lei-11079",
+      "items": 8,
+      "subtopics": 4
+    },
+    {
+      "id": "adm-lei-13303",
+      "items": 41,
+      "subtopics": 33
+    },
+    {
+      "id": "adm-lei-13848",
+      "items": 37,
+      "subtopics": 26
+    },
+    {
+      "id": "adm-lei-8443",
+      "items": 42,
+      "subtopics": 34
+    },
+    {
+      "id": "adm-lei-d11462",
+      "items": 1,
+      "subtopics": 1
+    },
+    {
+      "id": "adm-lei-14133",
+      "items": 67,
+      "subtopics": 59
+    },
+    {
+      "id": "adm-lei-lindb20",
+      "items": 15,
+      "subtopics": 14
+    },
+    {
+      "id": "adm-lei-9637",
+      "items": 8,
+      "subtopics": 5
+    },
+    {
+      "id": "adm-lei-9790",
+      "items": 8,
+      "subtopics": 6
+    },
+    {
+      "id": "adm-lei-13460",
+      "items": 15,
+      "subtopics": 14
+    },
+    {
+      "id": "adm-lei-14129",
+      "items": 14,
+      "subtopics": 14
+    },
+    {
+      "id": "adm-lei-8745",
+      "items": 16,
+      "subtopics": 15
+    },
+    {
+      "id": "adm-lei-12813",
+      "items": 14,
+      "subtopics": 13
+    },
+    {
+      "id": "adm-lei-4717",
+      "items": 11,
+      "subtopics": 10
+    },
+    {
+      "id": "adm-lei-7347",
+      "items": 13,
+      "subtopics": 12
+    }
+  ],
+  "automaticQa": {
+    "uniqueIds": true,
+    "dupIds": [],
+    "duplicateStatementIds": [],
+    "overLimit": [],
+    "missingBasicData": [],
+    "allAuthorial": true
+  },
+  "warning": "Revisão automática de integridade não substitui auditoria individual dos gabaritos históricos, conferência jurídica humana nem avaliação de direitos autorais e atualizações posteriores."
+}
