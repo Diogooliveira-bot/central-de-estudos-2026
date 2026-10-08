@@ -1,0 +1,172 @@
+{
+  "type": "conferência mecânica de gabaritos extraídos — não avaliação jurídica",
+  "date": "2026-10-08",
+  "totalPdfQuestions": 321,
+  "verified": 321,
+  "byFile": [
+    {
+      "source": "72.pdf",
+      "sourceUrl": "https://drive.google.com/file/d/1R4nZouRxRZWocpnq2Yj4GbOSX9E5yMkY/view",
+      "indexedChunks": 50,
+      "selected": 26,
+      "answerMatch": 26,
+      "missing": 0,
+      "wrong": 0,
+      "sourceGabaritos": 50
+    },
+    {
+      "source": "53.pdf",
+      "sourceUrl": "https://drive.google.com/file/d/1hWQieOmuSRtv4wME5DF7ODAYGNGfSMcE/view",
+      "indexedChunks": 50,
+      "selected": 26,
+      "answerMatch": 26,
+      "missing": 0,
+      "wrong": 0,
+      "sourceGabaritos": 49
+    },
+    {
+      "source": "57.pdf",
+      "sourceUrl": "https://drive.google.com/file/d/1zueYcETfPoVgpmPmIA21DTXTkKu3oIl-/view",
+      "indexedChunks": 50,
+      "selected": 8,
+      "answerMatch": 8,
+      "missing": 0,
+      "wrong": 0,
+      "sourceGabaritos": 50
+    },
+    {
+      "source": "20.pdf",
+      "sourceUrl": "https://drive.google.com/file/d/1brjtZQbaT-iMXyM6pbS1uyoRrYtQK8iB/view",
+      "indexedChunks": 51,
+      "selected": 33,
+      "answerMatch": 33,
+      "missing": 0,
+      "wrong": 0,
+      "sourceGabaritos": 50
+    },
+    {
+      "source": "31.pdf",
+      "sourceUrl": "https://drive.google.com/file/d/1T4ZoG47GSp-dBiI8Iio2uydTicJocn4V/view",
+      "indexedChunks": 50,
+      "selected": 23,
+      "answerMatch": 23,
+      "missing": 0,
+      "wrong": 0,
+      "sourceGabaritos": 50
+    },
+    {
+      "source": "1.pdf",
+      "sourceUrl": "https://drive.google.com/file/d/1Cbf_A3K0JSozpp7X1zpf5_0R56aXEcWQ/view",
+      "indexedChunks": 37,
+      "selected": 29,
+      "answerMatch": 29,
+      "missing": 0,
+      "wrong": 0,
+      "sourceGabaritos": 35
+    },
+    {
+      "source": "59.pdf",
+      "sourceUrl": "https://drive.google.com/file/d/14--NrIcaMm1laBcoN1GKVaE84bwYANi-/view",
+      "indexedChunks": 50,
+      "selected": 7,
+      "answerMatch": 7,
+      "missing": 0,
+      "wrong": 0,
+      "sourceGabaritos": 47
+    },
+    {
+      "source": "22.pdf",
+      "sourceUrl": "https://drive.google.com/file/d/1MR0j9cvxhfxp1WJtVtxYxpYhONOAfQc3/view",
+      "indexedChunks": 50,
+      "selected": 6,
+      "answerMatch": 6,
+      "missing": 0,
+      "wrong": 0,
+      "sourceGabaritos": 50
+    },
+    {
+      "source": "24.pdf",
+      "sourceUrl": "https://drive.google.com/file/d/1hoMPkeZIPCuq6XB0kce9qQemQPEbggrP/view",
+      "indexedChunks": 50,
+      "selected": 17,
+      "answerMatch": 17,
+      "missing": 0,
+      "wrong": 0,
+      "sourceGabaritos": 48
+    },
+    {
+      "source": "9.pdf",
+      "sourceUrl": "https://drive.google.com/file/d/17IhBtoeqWs0KQcPnKeBOHdWHWdp7VWoz/view",
+      "indexedChunks": 50,
+      "selected": 17,
+      "answerMatch": 17,
+      "missing": 0,
+      "wrong": 0,
+      "sourceGabaritos": 50
+    },
+    {
+      "source": "8.pdf",
+      "sourceUrl": "https://drive.google.com/file/d/1l879_jkrsvDAjRLnH_TKfeoGCH4YqeTk/view",
+      "indexedChunks": 50,
+      "selected": 8,
+      "answerMatch": 8,
+      "missing": 0,
+      "wrong": 0,
+      "sourceGabaritos": 50
+    },
+    {
+      "source": "28.pdf",
+      "sourceUrl": "https://drive.google.com/file/d/1dVtxIJfvI43kwJPnkVhvCSKiT9dLgL5a/view",
+      "indexedChunks": 50,
+      "selected": 41,
+      "answerMatch": 41,
+      "missing": 0,
+      "wrong": 0,
+      "sourceGabaritos": 50
+    },
+    {
+      "source": "32.pdf",
+      "sourceUrl": "https://drive.google.com/file/d/1ff94w1KXr8vx1Vh3737953uNyDaWfePR/view",
+      "indexedChunks": 50,
+      "selected": 37,
+      "answerMatch": 37,
+      "missing": 0,
+      "wrong": 0,
+      "sourceGabaritos": 50
+    },
+    {
+      "source": "58.pdf",
+      "sourceUrl": "https://drive.google.com/file/d/1VmYpeeQSl0Gdt9HwZufrS-9zfMhF5nc9/view",
+      "indexedChunks": 46,
+      "selected": 42,
+      "answerMatch": 42,
+      "missing": 0,
+      "wrong": 0,
+      "sourceGabaritos": 46
+    },
+    {
+      "source": "34.pdf",
+      "sourceUrl": "https://drive.google.com/file/d/1tqD390MpY9O79VVfDqHnuACiHWdbiYIP/view",
+      "indexedChunks": 1,
+      "selected": 1,
+      "answerMatch": 1,
+      "missing": 0,
+      "wrong": 0,
+      "sourceGabaritos": 1
+    }
+  ],
+  "answerMismatches": [],
+  "unmatched": [],
+  "excerptWarnings": [],
+  "totalExcerptWarnings": 0,
+  "flags": [],
+  "warning": "Correspondência textual ao PDF não comprova correção jurídica, vigência, licitude de reprodução, autenticidade de banca ou integridade da extração do enunciado. Revisão jurídica e editorial pendentes.",
+  "flaggingCorrection": "Palavra 'recursos' em cargo de Recursos Humanos não indica questão anulada; dois alertas falsos positivos retirados.",
+  "flagsPolicy": "Apenas 'prova anulada', 'questão anulada' ou 'cancelada' exigem segregação; não considerar 'recurso' em cargos como anulação.",
+  "datasetBlobShas": {
+    "tools/decorando-data-adm-9784.js": "c75103f94a14d204c781663f84737a36db861623",
+    "tools/decorando-data-adm-pack1.js": "4b91e7b18b7d9d058ac26120b094e9078eda6089",
+    "tools/decorando-data-adm-pack2.js": "25846334550a95b04f34eb7edc32fb6d83249250"
+  },
+  "datasetIntegrityRule": "Para usar resultado desta auditoria, o SHA Git blob dos três datasets de PDFs deve continuar igual ao indicado."
+}
