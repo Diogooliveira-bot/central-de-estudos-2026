@@ -1074,7 +1074,7 @@ const DATA_ADM_PACK2 = [
     "parts": [
       "Art. 8º As empresas públicas e as sociedades de economia mista deverão observar, no mínimo, os seguintes requisitos de transparência: […] X – divulgação anual da política de igualdade entre homens e mulheres adotada, que deverá conter, entre outras informações relevantes: (Incluído pela Lei nº 15.177, de 2025) a) a quantidade e a proporção de mulheres empregadas, por níveis hierárquicos; (Incluído pela Lei nº 15.177, de 2025) b) a quantidade e a proporção de mulheres que ocupam cargos na administração; (Incluído pela Lei nº 15.177, de 2025) c) o demonstrativo da remuneração fixa, variável e eventual, segregada por sexo, relativa a cargos ou funções similares; (Incluído pela Lei nº 15.177, de 2025) d) a evolução comparativa dos indicadores previstos nas alíneas ‘a’, ‘b’ e ‘c’ deste inciso entre o exercício findo e o exercício anterior, especialmente na alta gestão. (Incluído pela Lei nº 15.177, de 2025)"
     ],
-    "origin": "authorial",
+    "origin": "unverified",
     "question": {
       "statement": "De acordo com a Lei 13.303/2016, que dispõe sobre o estatuto jurídico da empresa pública, da sociedade de economia mista e de suas subsidiárias, no âmbito da União, dos Estados, do Distrito Federal e dos Municípios, é correto afirmar que as empresas públicas e as sociedades de economia mista deverão observar, dentre outros, o seguinte requisito de transparência: a divulgação anual da política de igualdade entre homens e mulheres adotada, que deverá conter, entre outras informações relevantes: a quantidade e a proporção de mulheres empregadas, por níveis hierárquicos; a quantidade e a proporção de mulheres que ocupam cargos na administração; o demonstrativo da remuneração fixa, variável e eventual, segregada por sexo, relativa a cargos ou funções similares; a evolução comparativa dos indicadores mencionados entre o exercício findo e o exercício anterior, especialmente na alta gestão.",
       "answer": true,
@@ -1421,7 +1421,7 @@ const DATA_ADM_PACK2 = [
     "parts": [
       "Art. 19-A. Nos conselhos de administração das empresas públicas e das sociedades de economia mista de que trata esta Lei, pelo menos 30% (trinta por cento) dos membros titulares serão mulheres. (Incluído pela Lei nº 15.177, de 2025)"
     ],
-    "origin": "authorial",
+    "origin": "unverified",
     "question": {
       "statement": "De acordo com a Lei 13.303/2016, que dispõe sobre o estatuto jurídico da empresa pública, da sociedade de economia mista e de suas subsidiárias, no âmbito da União, dos Estados, do Distrito Federal e dos Municípios, é correto afirmar que nos conselhos de administração das empresas públicas e das sociedades de economia mista de que trata esta Lei, pelo menos 40% (quarenta por cento) dos membros titulares serão mulheres.",
       "answer": false,
@@ -1537,7 +1537,7 @@ const DATA_ADM_PACK2 = [
     "parts": [
       "Art. 2º Consideram-se agências reguladoras, para os fins desta Lei e para os fins da Lei nº 9.986, de 18 de julho de 2000: […] III - a Agência Nacional de Telecomunicações (Anatel); IV - a Agência Nacional de Vigilância Sanitária (Anvisa);"
     ],
-    "origin": "authorial",
+    "origin": "unverified",
     "question": {
       "statement": "De acordo com a Lei 13.848/2019 (Agências Reguladoras), é correto afirmar que a Agência Nacional de Telecomunicações (Anatel) e a Agência Nacional de Vigilância Sanitária (Anvisa) são consideradas agências reguladoras.",
       "answer": true,
@@ -1561,7 +1561,7 @@ const DATA_ADM_PACK2 = [
     "parts": [
       "Art. 2º Consideram-se agências reguladoras, para os fins desta Lei e para os fins da Lei nº 9.986, de 18 de julho de 2000: I - a Agência Nacional de Energia Elétrica (Aneel); II - a Agência Nacional do Petróleo, Gás Natural e Biocombustíveis (ANP); III - a Agência Nacional de Telecomunicações (Anatel); IV - a Agência Nacional de Vigilância Sanitária (Anvisa); V - a Agência Nacional de Saúde Suplementar (ANS); VI - a Agência Nacional de Águas (ANA); VII - a Agência Nacional de Transportes Aquaviários (Antaq); VIII - a Agência Nacional de Transportes Terrestres (ANTT); IX - a Agência Nacional do Cinema (Ancine); X - a Agência Nacional de Aviação Civil (Anac); XI - a Agência Nacional de Mineração (ANM). XII - a Agência Nacional de Proteção de Dados (ANPD). XII - a Agência Nacional de Proteção de Dados (ANPD). (Redação dada pela Lei nº 15.352, de 2026)"
     ],
-    "origin": "authorial",
+    "origin": "unverified",
     "question": {
       "statement": "De acordo com a Lei 13.848/2019 - Agências Reguladoras, é correto afirmar que a Agência Nacional de Proteção de Dados (ANPD) não é considerada uma agências reguladora, para os fins desta Lei e para os fins da Lei nº 9.986, de 18 de julho de 2000.",
       "answer": false,
@@ -1608,7 +1608,7 @@ const DATA_ADM_PACK2 = [
     "parts": [
       "Art. 2º […] Parágrafo único. Ressalvado o que dispuser a legislação específica, aplica-se o disposto nesta Lei às autarquias especiais caracterizadas, nos termos desta Lei, como agências reguladoras e criadas a partir de sua vigência."
     ],
-    "origin": "authorial",
+    "origin": "unverified",
     "question": {
       "statement": "De acordo com a Lei 13.848/2019 (Agências Reguladoras), é correto afirmar que não se aplica o disposto nesta Lei às autarquias especiais caracterizadas como agências reguladoras ainda que criadas a partir de sua vigência.",
       "answer": false,
@@ -1842,7 +1842,7 @@ const DATA_ADM_PACK2 = [
     "parts": [
       "Art. 5º A agência reguladora deverá indicar os pressupostos de fato e de direito que determinarem suas decisões, inclusive a respeito da edição ou não de atos normativos."
     ],
-    "origin": "authorial",
+    "origin": "unverified",
     "question": {
       "statement": "De acordo com a Lei 13.848/2019 (Agências Reguladoras), é correto afirmar que a agência reguladora deverá indicar os pressupostos de fato e de direito que determinarem suas decisões, inclusive a respeito da edição ou não de atos normativos.",
       "answer": true,
@@ -1981,7 +1981,7 @@ const DATA_ADM_PACK2 = [
     "parts": [
       "Art. 7º O processo de decisão da agência reguladora referente a regulação terá caráter colegiado."
     ],
-    "origin": "authorial",
+    "origin": "unverified",
     "question": {
       "statement": "De acordo com a Lei 13.848/2019 (Agências Reguladoras), é correto afirmar que o processo de decisão da agência reguladora referente a regulação terá caráter colegiado.",
       "answer": true,
@@ -2029,7 +2029,7 @@ const DATA_ADM_PACK2 = [
     "parts": [
       "Art. 7º […] § 2º É facultado à agência reguladora adotar processo de delegação interna de decisão, sendo assegurado ao conselho diretor ou à diretoria colegiada o direito de reexame das decisões delegadas."
     ],
-    "origin": "authorial",
+    "origin": "unverified",
     "question": {
       "statement": "De acordo com a Lei 13.848/2019 (Agências Reguladoras), é correto afirmar que é obrigatório à agência reguladora adotar processo de delegação interna de decisão, sendo assegurado ao conselho diretor ou à diretoria colegiada o direito de reexame das decisões delegadas.",
       "answer": false,
@@ -2099,7 +2099,7 @@ const DATA_ADM_PACK2 = [
     "parts": [
       "Art. 8º […] § 1º A pauta de reunião deliberativa deverá ser divulgada no sítio da agência na internet com antecedência mínima de 3 (três) dias úteis."
     ],
-    "origin": "authorial",
+    "origin": "unverified",
     "question": {
       "statement": "De acordo com a Lei 13.848/2019 (Agências Reguladoras), é correto afirmar que a pauta de reunião deliberativa deverá ser divulgada no sítio da agência na internet com antecedência mínima de 5 (cinco) dias úteis.",
       "answer": false,
@@ -2238,7 +2238,7 @@ const DATA_ADM_PACK2 = [
     "parts": [
       "Art. 9º […] § 5º O posicionamento da agência reguladora sobre as críticas ou as contribuições apresentadas no processo de consulta pública deverá ser disponibilizado na sede da agência e no respectivo sítio na internet em até 30 (trinta) dias úteis após a reunião do conselho diretor ou da diretoria colegiada para deliberação final sobre a matéria."
     ],
-    "origin": "authorial",
+    "origin": "unverified",
     "question": {
       "statement": "De acordo com a Lei 13.848/2019 (Agências Reguladoras), é correto afirmar que o posicionamento da agência reguladora sobre as críticas ou as contribuições apresentadas no processo de consulta pública deverá ser disponibilizado na sede da agência e no respectivo sítio na internet em até 30 (trinta) dias úteis após a reunião do conselho diretor ou da diretoria colegiada para deliberação final sobre a matéria.",
       "answer": true,
@@ -2285,7 +2285,7 @@ const DATA_ADM_PACK2 = [
     "parts": [
       "Art. 10 […] § 2º A abertura do período de audiência pública será precedida de despacho ou aviso de abertura publicado no Diário Oficial da União e em outros meios de comunicação com antecedência mínima de 5 (cinco) dias úteis."
     ],
-    "origin": "authorial",
+    "origin": "unverified",
     "question": {
       "statement": "De acordo com a Lei 13.848/2019 (Agências Reguladoras), é correto afirmar que a abertura do período de audiência pública será precedida de despacho ou aviso de abertura publicado no Diário Oficial da União e em outros meios de comunicação com antecedência mínima de 3 (três) dias úteis.",
       "answer": false,
@@ -2332,7 +2332,7 @@ const DATA_ADM_PACK2 = [
     "parts": [
       "Art. 13. A agência reguladora deverá decidir as matérias submetidas a sua apreciação nos prazos fixados na legislação e, em caso de omissão, nos prazos estabelecidos em seu regimento interno."
     ],
-    "origin": "authorial",
+    "origin": "unverified",
     "question": {
       "statement": "De acordo com a Lei 13.848/2019 (Agências Reguladoras), é correto afirmar que a agência reguladora deverá decidir as matérias submetidas a sua apreciação nos prazos fixados na legislação e, em caso de omissão, nos prazos estabelecidos em seu regimento interno.",
       "answer": true,
