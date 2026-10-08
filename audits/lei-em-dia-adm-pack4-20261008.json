@@ -1,7 +1,7 @@
 {
   "date": "2026-10-08",
   "type": "auditoria de importação de Direito Administrativo — 6 conjuntos complementares",
-  "status": "preparação para publicação",
+  "status": "pré-publicação — validação estrutural concluída; aguarda testes CI e implantação",
   "questionCount": 83,
   "topicCount": 6,
   "perLegislation": [
@@ -9,37 +9,37 @@
       "id": "adm-lei-13460",
       "title": "Lei 13.460/2017 — Direitos dos Usuários de Serviços Públicos",
       "count": 15,
-      "distinctDevices": 78
+      "distinctDevices": 14
     },
     {
       "id": "adm-lei-14129",
       "title": "Lei 14.129/2021 — Governo Digital",
       "count": 14,
-      "distinctDevices": 78
+      "distinctDevices": 14
     },
     {
       "id": "adm-lei-8745",
       "title": "Lei 8.745/1993 — Contratação Temporária Federal",
       "count": 16,
-      "distinctDevices": 78
+      "distinctDevices": 15
     },
     {
       "id": "adm-lei-12813",
       "title": "Lei 12.813/2013 — Conflito de Interesses",
       "count": 14,
-      "distinctDevices": 78
+      "distinctDevices": 13
     },
     {
       "id": "adm-lei-4717",
       "title": "Lei 4.717/1965 — Ação Popular",
       "count": 11,
-      "distinctDevices": 78
+      "distinctDevices": 10
     },
     {
       "id": "adm-lei-7347",
       "title": "Lei 7.347/1985 — Ação Civil Pública",
       "count": 13,
-      "distinctDevices": 78
+      "distinctDevices": 12
     }
   ],
   "validation": {
