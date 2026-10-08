@@ -1,5 +1,5 @@
 /* Base Completa — PWA autenticado e offline por sessão verificada. */
-var CACHE='central-20261008-adm15';
+var CACHE='central-20261008-adm19';
 var AUTH_CACHE='central-auth-session-v1';
 var AUTH_KEY='/__bc_offline_auth__';
 var AUTH_TTL_MS=72*60*60*1000;
