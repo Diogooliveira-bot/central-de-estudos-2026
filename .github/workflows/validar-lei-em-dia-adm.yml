@@ -21,7 +21,7 @@ permissions:
 jobs:
   validar:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
       - name: Checkout
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
@@ -35,3 +35,7 @@ jobs:
         run: |
           npm run test:lei-adm
           npm test
+      - name: Instalar Chromium para teste de interface
+        run: npx playwright install --with-deps chromium
+      - name: Simular aluno na Lei em Dia em desktop e celular
+        run: node tests/lei-em-dia-adm-browser.mjs
