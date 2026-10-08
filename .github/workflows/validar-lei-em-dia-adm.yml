@@ -1,0 +1,35 @@
+name: Validar Lei em Dia Administrativo
+on:
+  push:
+    branches:
+      - feat/lei-em-dia-adm-publicacao-20261008
+    paths:
+      - 'tools/decorando*'
+      - 'tests/lei-em-dia-adm*'
+      - 'central-offline-files-v66172.json'
+      - 'sw.js'
+      - 'package.json'
+      - '.github/workflows/validar-lei-em-dia-adm.yml'
+  pull_request:
+    paths:
+      - 'tools/decorando*'
+      - 'tests/lei-em-dia-adm*'
+      - 'central-offline-files-v66172.json'
+      - 'sw.js'
+permissions:
+  contents: read
+jobs:
+  validar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Node version
+        run: node --version
+      - name: Testes de dados, integração e regressão
+        run: |
+          npm run test:lei-adm
+          npm test
