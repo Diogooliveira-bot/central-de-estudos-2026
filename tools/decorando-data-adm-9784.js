@@ -8,7 +8,7 @@ const DATA_ADM = [
     "number": "Art. 1º",
     "title": "Lei nº 9.784/1999 — processo administrativo federal",
     "parts": [
-      "Art. 1 o Esta Lei estabelece normas básicas sobre o processo administrativo no âmbito da Administração Federal direta e indireta, visando, em especial, à proteção dos direitos dos administrados e ao melhor cumprimento dos fins da Administração."
+      "Art. 1º Esta Lei estabelece normas básicas sobre o processo administrativo no âmbito da Administração Federal direta e indireta, visando, em especial, à proteção dos direitos dos administrados e ao melhor cumprimento dos fins da Administração."
     ],
     "origin": "real",
     "question": {
@@ -32,7 +32,7 @@ const DATA_ADM = [
     "number": "Art. 1º",
     "title": "Lei nº 9.784/1999 — processo administrativo federal",
     "parts": [
-      "Art. 1 o Esta Lei estabelece normas básicas sobre o processo administrativo no âmbito da Administração Federal direta e indireta, visando, em especial, à proteção dos direitos dos administrados e ao melhor cumprimento dos fins da Administração."
+      "Art. 1º Esta Lei estabelece normas básicas sobre o processo administrativo no âmbito da Administração Federal direta e indireta, visando, em especial, à proteção dos direitos dos administrados e ao melhor cumprimento dos fins da Administração."
     ],
     "origin": "real",
     "question": {
@@ -60,14 +60,14 @@ const DATA_ADM = [
     ],
     "origin": "real",
     "question": {
-      "statement": "Administrativa - Sem Especialidade (TRF - 6ª Região) Com fundamento nas disposições da Lei Anticorrupção (Lei n.º 12.846/2013) e na Lei do Processo Administrativo (Lei n.º 9.784/1999), julgue o item a seguir. As disposições legais acerca do processo administrativo federal não se aplicam aos órgãos do TRF da 6.ª Região, mesmo quando no desempenho de função administrativa.",
+      "statement": "Com fundamento nas disposições da Lei Anticorrupção (Lei n.º 12.846/2013) e na Lei do Processo Administrativo (Lei n.º 9.784/1999), julgue o item a seguir. As disposições legais acerca do processo administrativo federal não se aplicam aos órgãos do TRF da 6.ª Região, mesmo quando no desempenho de função administrativa.",
       "answer": false,
       "explanation": "Gabarito conforme PDF de origem. A validação jurídica e a conferência de vigência ainda são pendentes.",
       "source": "PDF 72.pdf, questão 6 · Art. 1º, § 1º, Lei 9.784/99",
-      "meta": "CESPE/CEBRASPE 2025 - Técnico Judiciário - Área",
+      "meta": "CESPE/CEBRASPE 2025 - Técnico Judiciário - Área Administrativa - Sem Especialidade (TRF - 6ª Região)",
       "bank": "CESPE/CEBRASPE",
       "year": 2025,
-      "role": "Técnico Judiciário - Área",
+      "role": "Técnico Judiciário - Área Administrativa - Sem Especialidade (TRF - 6ª Região)",
       "origin": "real",
       "updateWarning": "Piloto em auditoria: conferir o gabarito e o dispositivo legal vigente antes da publicação definitiva."
     }
@@ -84,14 +84,14 @@ const DATA_ADM = [
     ],
     "origin": "real",
     "question": {
-      "statement": "Processo Legislativo e Gestão (Câmara dos Deputados) Julgue o item seguinte, com base nas disposições da Lei de Acesso à Informação (Lei n.º 12.527/2011), da Lei Geral de Proteção de Dados (Lei n.º 13.709/2018) e da lei que regula o processo administrativo (Lei n.º 9.784/1999). As regras previstas na lei que regula o processo administrativo federal não se aplicam ao Poder Legislativo da União, ainda que no desempenho de função administrativa.",
+      "statement": "Julgue o item seguinte, com base nas disposições da Lei de Acesso à Informação (Lei n.º 12.527/2011), da Lei Geral de Proteção de Dados (Lei n.º 13.709/2018) e da lei que regula o processo administrativo (Lei n.º 9.784/1999). As regras previstas na lei que regula o processo administrativo federal não se aplicam ao Poder Legislativo da União, ainda que no desempenho de função administrativa.",
       "answer": false,
       "explanation": "Gabarito conforme PDF de origem. A validação jurídica e a conferência de vigência ainda são pendentes.",
       "source": "PDF 72.pdf, questão 7 · Art. 1º, § 1º, Lei 9.784/99",
-      "meta": "CESPE/CEBRASPE 2026 - Analista Legislativo -",
+      "meta": "CESPE/CEBRASPE 2026 - Analista Legislativo - Processo Legislativo e Gestão (Câmara dos Deputados)",
       "bank": "CESPE/CEBRASPE",
       "year": 2026,
-      "role": "Analista Legislativo -",
+      "role": "Analista Legislativo - Processo Legislativo e Gestão (Câmara dos Deputados)",
       "origin": "real",
       "updateWarning": "Piloto em auditoria: conferir o gabarito e o dispositivo legal vigente antes da publicação definitiva."
     }
@@ -104,18 +104,18 @@ const DATA_ADM = [
     "number": "Art. 1º, § 2º, inc. I",
     "title": "Lei nº 9.784/1999 — processo administrativo federal",
     "parts": [
-      "Art. 1 o . [...] § 2 o Para os fins desta Lei, consideram-se: I - órgão - a unidade de atuação integrante da estrutura da Administração direta e da estrutura da Administração indireta;"
+      "Art. 1º . [...] § 2 o Para os fins desta Lei, consideram-se: I - órgão - a unidade de atuação integrante da estrutura da Administração direta e da estrutura da Administração indireta;"
     ],
     "origin": "real",
     "question": {
-      "statement": "(CRN – 8) Quanto à Lei n.º 9.784/1999, para fins relacionados ao processo administrativo, a unidade de atuação integrante da estrutura da Administração direta e da estrutura da administração indireta é chamada de órgão.",
+      "statement": "Quanto à Lei n.º 9.784/1999, para fins relacionados ao processo administrativo, a unidade de atuação integrante da estrutura da Administração direta e da estrutura da administração indireta é chamada de órgão.",
       "answer": true,
       "explanation": "Gabarito conforme PDF de origem. A validação jurídica e a conferência de vigência ainda são pendentes.",
       "source": "PDF 72.pdf, questão 12 · Art. 1º, § 2º, I, Lei 9.784/99",
-      "meta": "Quadrix 2024 - Assistente Administrativo Júnior",
+      "meta": "Quadrix 2024 - Assistente Administrativo Júnior (CRN – 8)",
       "bank": "Quadrix",
       "year": 2024,
-      "role": "Assistente Administrativo Júnior",
+      "role": "Assistente Administrativo Júnior (CRN – 8)",
       "origin": "real",
       "updateWarning": "Piloto em auditoria: conferir o gabarito e o dispositivo legal vigente antes da publicação definitiva."
     }
@@ -132,14 +132,14 @@ const DATA_ADM = [
     ],
     "origin": "real",
     "question": {
-      "statement": "(AGU) A respeito do processo administrativo no âmbito da Administração Pública Federal (Lei 9.784/99), julgue o seguinte item. Considera-se órgão, nos termos da Lei 9.784/99, a unidade de atuação dotada de personalidade jurídica.",
+      "statement": "A respeito do processo administrativo no âmbito da Administração Pública Federal (Lei 9.784/99), julgue o seguinte item. Considera-se órgão, nos termos da Lei 9.784/99, a unidade de atuação dotada de personalidade jurídica.",
       "answer": false,
       "explanation": "Gabarito conforme PDF de origem. A validação jurídica e a conferência de vigência ainda são pendentes.",
       "source": "PDF 72.pdf, questão 13 · Art. 1º, § 2º, I, Lei 9.784/99",
-      "meta": "IDECAN 2019 - Técnico em Comunicação Social",
+      "meta": "IDECAN 2019 - Técnico em Comunicação Social (AGU)",
       "bank": "IDECAN",
       "year": 2019,
-      "role": "Técnico em Comunicação Social",
+      "role": "Técnico em Comunicação Social (AGU)",
       "origin": "real",
       "updateWarning": "Piloto em auditoria: conferir o gabarito e o dispositivo legal vigente antes da publicação definitiva."
     }
@@ -152,18 +152,18 @@ const DATA_ADM = [
     "number": "Art. 1º, § 2º, inc. III",
     "title": "Lei nº 9.784/1999 — processo administrativo federal",
     "parts": [
-      "Art. 1 o . [...] § 2 o Para os fins desta Lei, consideram-se: [...] III - autoridade - o servidor ou agente público dotado de poder de decisão."
+      "Art. 1º . [...] § 2 o Para os fins desta Lei, consideram-se: [...] III - autoridade - o servidor ou agente público dotado de poder de decisão."
     ],
     "origin": "real",
     "question": {
-      "statement": "(CFN) A respeito da Lei nº 9.784/1999, julgue o item a seguir. Considera‑se autoridade o servidor ou o agente público dotado de poder de decisão.",
+      "statement": "A respeito da Lei nº 9.784/1999, julgue o item a seguir. Considera‑se autoridade o servidor ou o agente público dotado de poder de decisão.",
       "answer": true,
       "explanation": "Gabarito conforme PDF de origem. A validação jurídica e a conferência de vigência ainda são pendentes.",
       "source": "PDF 72.pdf, questão 15 · Art. 1º, § 2º, III, Lei 9.784/99",
-      "meta": "Quadrix 2024 - Profissional de Suporte Técnico",
+      "meta": "Quadrix 2024 - Profissional de Suporte Técnico (CFN)",
       "bank": "Quadrix",
       "year": 2024,
-      "role": "Profissional de Suporte Técnico",
+      "role": "Profissional de Suporte Técnico (CFN)",
       "origin": "real",
       "updateWarning": "Piloto em auditoria: conferir o gabarito e o dispositivo legal vigente antes da publicação definitiva."
     }
@@ -180,14 +180,14 @@ const DATA_ADM = [
     ],
     "origin": "real",
     "question": {
-      "statement": "(AGU) Considera-se entidade, nos termos da Lei 9.784/99, a unidade de atuação integrante da estrutura da Administração direta e da estrutura da Administração indireta.",
+      "statement": "Considera-se entidade, nos termos da Lei 9.784/99, a unidade de atuação integrante da estrutura da Administração direta e da estrutura da Administração indireta.",
       "answer": false,
       "explanation": "Gabarito conforme PDF de origem. A validação jurídica e a conferência de vigência ainda são pendentes.",
       "source": "PDF 72.pdf, questão 16 · Art. 1º, § 2º, II, Lei 9.784/99",
-      "meta": "IDECAN 2019 - Técnico em Comunicação Social",
+      "meta": "IDECAN 2019 - Técnico em Comunicação Social (AGU)",
       "bank": "IDECAN",
       "year": 2019,
-      "role": "Técnico em Comunicação Social",
+      "role": "Técnico em Comunicação Social (AGU)",
       "origin": "real",
       "updateWarning": "Piloto em auditoria: conferir o gabarito e o dispositivo legal vigente antes da publicação definitiva."
     }
@@ -224,7 +224,7 @@ const DATA_ADM = [
     "number": "Art. 2º",
     "title": "Lei nº 9.784/1999 — processo administrativo federal",
     "parts": [
-      "Art. 2 o A Administração Pública obedecerá, dentre outros, aos princípios da legalidade, finalidade, motivação, razoabilidade, proporcionalidade, moralidade, ampla defesa, contraditório, segurança jurídica, interesse público e eficiência."
+      "Art. 2º A Administração Pública obedecerá, dentre outros, aos princípios da legalidade, finalidade, motivação, razoabilidade, proporcionalidade, moralidade, ampla defesa, contraditório, segurança jurídica, interesse público e eficiência."
     ],
     "origin": "real",
     "question": {
@@ -248,18 +248,18 @@ const DATA_ADM = [
     "number": "Art. 2º, parágrafo único, inc. I",
     "title": "Lei nº 9.784/1999 — processo administrativo federal",
     "parts": [
-      "Art. 2 o A Administração Pública obedecerá, dentre outros, aos princípios da legalidade, finalidade, motivação, razoabilidade, proporcionalidade, moralidade, ampla defesa, contraditório, segurança jurídica, interesse público e eficiência. Parágrafo único. Nos processos administrativos serão observados, entre outros, os critérios de: I - atuação conforme a lei e o Direito;"
+      "Art. 2º A Administração Pública obedecerá, dentre outros, aos princípios da legalidade, finalidade, motivação, razoabilidade, proporcionalidade, moralidade, ampla defesa, contraditório, segurança jurídica, interesse público e eficiência. Parágrafo único. Nos processos administrativos serão observados, entre outros, os critérios de: I - atuação conforme a lei e o Direito;"
     ],
     "origin": "real",
     "question": {
-      "statement": "Iúna - ES) A Lei nº 9.784/1999, no parágrafo único do Art. 2º, define os critérios que devem ser observados no Processo Administrativo Federal. Considerando o tema, julgue o item a seguir: Atuação conforme a lei e o direito, este critério aparece como corolário do princípio da legalidade, vez que administrar é aplicar a lei de ofício, não podendo o administrador fugir desses preceitos.",
+      "statement": "A Lei nº 9.784/1999, no parágrafo único do Art. 2º, define os critérios que devem ser observados no Processo Administrativo Federal. Considerando o tema, julgue o item a seguir: Atuação conforme a lei e o direito, este critério aparece como corolário do princípio da legalidade, vez que administrar é aplicar a lei de ofício, não podendo o administrador fugir desses preceitos.",
       "answer": true,
       "explanation": "Gabarito conforme PDF de origem. A validação jurídica e a conferência de vigência ainda são pendentes.",
       "source": "PDF 72.pdf, questão 26 · Art. 2º, I, Lei 9.784/99",
-      "meta": "Instituto Consulplan - 2024 - Auditor Fiscal (Prefeitura de",
+      "meta": "Instituto Consulplan - 2024 - Auditor Fiscal (Prefeitura de Iúna - ES)",
       "bank": "Instituto Consulplan",
       "year": 2024,
-      "role": "Auditor Fiscal (Prefeitura de",
+      "role": "Auditor Fiscal (Prefeitura de Iúna - ES)",
       "origin": "real",
       "updateWarning": "Piloto em auditoria: conferir o gabarito e o dispositivo legal vigente antes da publicação definitiva."
     }
@@ -272,7 +272,7 @@ const DATA_ADM = [
     "number": "Art. 2º, parágrafo único, inc. II",
     "title": "Lei nº 9.784/1999 — processo administrativo federal",
     "parts": [
-      "Art. 2 o A Administração Pública obedecerá, dentre outros, aos princípios da legalidade, finalidade, motivação, razoabilidade, proporcionalidade, moralidade, ampla defesa, contraditório, segurança jurídica, interesse público e eficiência. [...] II - atendimento a fins de interesse geral, vedada a renúncia total ou parcial de poderes ou competências, salvo autorização em lei;"
+      "Art. 2º A Administração Pública obedecerá, dentre outros, aos princípios da legalidade, finalidade, motivação, razoabilidade, proporcionalidade, moralidade, ampla defesa, contraditório, segurança jurídica, interesse público e eficiência. [...] II - atendimento a fins de interesse geral, vedada a renúncia total ou parcial de poderes ou competências, salvo autorização em lei;"
     ],
     "origin": "real",
     "question": {
@@ -296,7 +296,7 @@ const DATA_ADM = [
     "number": "Art. 2º, parágrafo único, inc. V",
     "title": "Lei nº 9.784/1999 — processo administrativo federal",
     "parts": [
-      "Art. 2 o . [...] V - divulgação oficial dos atos administrativos, ressalvadas as hipóteses de sigilo previstas na Constituição;"
+      "Art. 2º . [...] V - divulgação oficial dos atos administrativos, ressalvadas as hipóteses de sigilo previstas na Constituição;"
     ],
     "origin": "real",
     "question": {
@@ -320,7 +320,7 @@ const DATA_ADM = [
     "number": "Art. 2º, parágrafo único, inc. V",
     "title": "Lei nº 9.784/1999 — processo administrativo federal",
     "parts": [
-      "Art. 2 o A Administração Pública obedecerá, dentre outros, aos princípios da legalidade, finalidade, motivação, razoabilidade, proporcionalidade, moralidade, ampla defesa, contraditório, segurança jurídica, interesse público e eficiência. [...] V - divulgação oficial dos atos administrativos, ressalvadas as hipóteses de sigilo previstas na Constituição;"
+      "Art. 2º A Administração Pública obedecerá, dentre outros, aos princípios da legalidade, finalidade, motivação, razoabilidade, proporcionalidade, moralidade, ampla defesa, contraditório, segurança jurídica, interesse público e eficiência. [...] V - divulgação oficial dos atos administrativos, ressalvadas as hipóteses de sigilo previstas na Constituição;"
     ],
     "origin": "real",
     "question": {
@@ -348,14 +348,14 @@ const DATA_ADM = [
     ],
     "origin": "real",
     "question": {
-      "statement": "Assuntos Corporativos (HEMOBRÁS) Tendo por base as disposições da Lei nº 9.784/1999, julgue o item a seguir. Na condução dos processos administrativos deverá ser feita a adequação entre meios e fins, vedada a imposição de obrigações, restrições e sanções de quaisquer espécies.",
+      "statement": "Tendo por base as disposições da Lei nº 9.784/1999, julgue o item a seguir. Na condução dos processos administrativos deverá ser feita a adequação entre meios e fins, vedada a imposição de obrigações, restrições e sanções de quaisquer espécies.",
       "answer": false,
       "explanation": "Gabarito conforme PDF de origem. A validação jurídica e a conferência de vigência ainda são pendentes.",
       "source": "PDF 72.pdf, questão 33 · Art. 2º, VI, Lei 9.784/99",
-      "meta": "Instituto Consulplan 2025 - Analista Administrativo de",
+      "meta": "Instituto Consulplan 2025 - Analista Administrativo de Assuntos Corporativos (HEMOBRÁS)",
       "bank": "Instituto Consulplan",
       "year": 2025,
-      "role": "Analista Administrativo de",
+      "role": "Analista Administrativo de Assuntos Corporativos (HEMOBRÁS)",
       "origin": "real",
       "updateWarning": "Piloto em auditoria: conferir o gabarito e o dispositivo legal vigente antes da publicação definitiva."
     }
@@ -368,18 +368,18 @@ const DATA_ADM = [
     "number": "Art. 2º, parágrafo único, inc. VI",
     "title": "Lei nº 9.784/1999 — processo administrativo federal",
     "parts": [
-      "Art. 2 o . [...] VI - adequação entre meios e fins, vedada a imposição de obrigações, restrições e sanções em medida superior àquelas estritamente necessárias ao atendimento do interesse público;"
+      "Art. 2º . [...] VI - adequação entre meios e fins, vedada a imposição de obrigações, restrições e sanções em medida superior àquelas estritamente necessárias ao atendimento do interesse público;"
     ],
     "origin": "real",
     "question": {
-      "statement": "Municipal de Maria da Fé - MG) De acordo com a Lei nº 9.784/1999, que regula o processo administrativo no âmbito da Administração Pública Federal o item a seguir é um critério que deve ser aplicado no processo administrativo. Adequação entre meios e fins, vedada a imposição de obrigações, restrições e sanções em medida superior àquelas estritamente necessárias ao atendimento do interesse público.",
+      "statement": "De acordo com a Lei nº 9.784/1999, que regula o processo administrativo no âmbito da Administração Pública Federal o item a seguir é um critério que deve ser aplicado no processo administrativo. Adequação entre meios e fins, vedada a imposição de obrigações, restrições e sanções em medida superior àquelas estritamente necessárias ao atendimento do interesse público.",
       "answer": true,
       "explanation": "Gabarito conforme PDF de origem. A validação jurídica e a conferência de vigência ainda são pendentes.",
       "source": "PDF 72.pdf, questão 34 · Art. 2º, VI, Lei 9.784/99",
-      "meta": "Instituto Consulplan - 2024 - Secretário Geral (Câmara",
+      "meta": "Instituto Consulplan - 2024 - Secretário Geral (Câmara Municipal de Maria da Fé - MG)",
       "bank": "Instituto Consulplan",
       "year": 2024,
-      "role": "Secretário Geral (Câmara",
+      "role": "Secretário Geral (Câmara Municipal de Maria da Fé - MG)",
       "origin": "real",
       "updateWarning": "Piloto em auditoria: conferir o gabarito e o dispositivo legal vigente antes da publicação definitiva."
     }
@@ -392,7 +392,7 @@ const DATA_ADM = [
     "number": "Art. 2º, parágrafo único, inc. VIII",
     "title": "Lei nº 9.784/1999 — processo administrativo federal",
     "parts": [
-      "Art. 2 o A Administração Pública obedecerá, dentre outros, aos princípios da legalidade, finalidade, motivação, razoabilidade, proporcionalidade, moralidade, ampla defesa, contraditório, segurança jurídica, interesse público e eficiência. [...] VIII – observância das formalidades essenciais à garantia dos direitos dos administrados;"
+      "Art. 2º A Administração Pública obedecerá, dentre outros, aos princípios da legalidade, finalidade, motivação, razoabilidade, proporcionalidade, moralidade, ampla defesa, contraditório, segurança jurídica, interesse público e eficiência. [...] VIII – observância das formalidades essenciais à garantia dos direitos dos administrados;"
     ],
     "origin": "real",
     "question": {
@@ -416,18 +416,18 @@ const DATA_ADM = [
     "number": "Art. 2º, parágrafo único, inc. X",
     "title": "Lei nº 9.784/1999 — processo administrativo federal",
     "parts": [
-      "Art. 2 o . [...] X - garantia dos direitos à comunicação, à apresentação de alegações finais, à produção de provas e à interposição de recursos, nos processos de que possam resultar sanções e nas situações de litígio;"
+      "Art. 2º . [...] X - garantia dos direitos à comunicação, à apresentação de alegações finais, à produção de provas e à interposição de recursos, nos processos de que possam resultar sanções e nas situações de litígio;"
     ],
     "origin": "real",
     "question": {
-      "statement": "Municipal de Maria da Fé - MG) De acordo com a Lei nº 9.784/1999, que regula o processo administrativo no âmbito da Administração Pública Federal o item a seguir é um critério que deve ser aplicado no processo administrativo. Garantia dos direitos à comunicação, à apresentação de alegações finais, à produção de provas e à interposição de recursos, nos processos de que possam resultar sanções e nas situações de litígio.",
+      "statement": "De acordo com a Lei nº 9.784/1999, que regula o processo administrativo no âmbito da Administração Pública Federal o item a seguir é um critério que deve ser aplicado no processo administrativo. Garantia dos direitos à comunicação, à apresentação de alegações finais, à produção de provas e à interposição de recursos, nos processos de que possam resultar sanções e nas situações de litígio.",
       "answer": true,
       "explanation": "Gabarito conforme PDF de origem. A validação jurídica e a conferência de vigência ainda são pendentes.",
       "source": "PDF 72.pdf, questão 36 · Art. 2º, X, Lei 9.784/99",
-      "meta": "Instituto Consulplan - 2024 - Secretário Geral (Câmara",
+      "meta": "Instituto Consulplan - 2024 - Secretário Geral (Câmara Municipal de Maria da Fé - MG)",
       "bank": "Instituto Consulplan",
       "year": 2024,
-      "role": "Secretário Geral (Câmara",
+      "role": "Secretário Geral (Câmara Municipal de Maria da Fé - MG)",
       "origin": "real",
       "updateWarning": "Piloto em auditoria: conferir o gabarito e o dispositivo legal vigente antes da publicação definitiva."
     }
@@ -440,7 +440,7 @@ const DATA_ADM = [
     "number": "Art. 2º, parágrafo único, inc. XI",
     "title": "Lei nº 9.784/1999 — processo administrativo federal",
     "parts": [
-      "Art. 2 o A Administração Pública obedecerá, dentre outros, aos princípios da legalidade, finalidade, motivação, razoabilidade, proporcionalidade, moralidade, ampla defesa, contraditório, segurança jurídica, interesse público e eficiência. [...] XI - proibição de cobrança de despesas processuais, ressalvadas as previstas em lei;"
+      "Art. 2º A Administração Pública obedecerá, dentre outros, aos princípios da legalidade, finalidade, motivação, razoabilidade, proporcionalidade, moralidade, ampla defesa, contraditório, segurança jurídica, interesse público e eficiência. [...] XI - proibição de cobrança de despesas processuais, ressalvadas as previstas em lei;"
     ],
     "origin": "real",
     "question": {
@@ -464,7 +464,7 @@ const DATA_ADM = [
     "number": "Art. 2º, parágrafo único, inc. XI",
     "title": "Lei nº 9.784/1999 — processo administrativo federal",
     "parts": [
-      "Art. 2 o . [...] XI - proibição de cobrança de despesas processuais, ressalvadas as previstas em lei;"
+      "Art. 2º . [...] XI - proibição de cobrança de despesas processuais, ressalvadas as previstas em lei;"
     ],
     "origin": "real",
     "question": {
@@ -488,7 +488,7 @@ const DATA_ADM = [
     "number": "Art. 2º, parágrafo único, inc. XII",
     "title": "Lei nº 9.784/1999 — processo administrativo federal",
     "parts": [
-      "Art. 2 o A Administração Pública obedecerá, dentre outros, aos princípios da legalidade, finalidade, motivação, razoabilidade, proporcionalidade, moralidade, ampla defesa, contraditório, segurança jurídica, interesse público e eficiência. [...] XII - impulsão, de ofício, do processo administrativo, sem prejuízo da atuação dos interessados;"
+      "Art. 2º A Administração Pública obedecerá, dentre outros, aos princípios da legalidade, finalidade, motivação, razoabilidade, proporcionalidade, moralidade, ampla defesa, contraditório, segurança jurídica, interesse público e eficiência. [...] XII - impulsão, de ofício, do processo administrativo, sem prejuízo da atuação dos interessados;"
     ],
     "origin": "real",
     "question": {
@@ -512,7 +512,7 @@ const DATA_ADM = [
     "number": "Art. 2º, parágrafo único, inc. XII",
     "title": "Lei nº 9.784/1999 — processo administrativo federal",
     "parts": [
-      "Art. 2 o A Administração Pública obedecerá, dentre outros, aos princípios da legalidade, finalidade, motivação, razoabilidade, proporcionalidade, moralidade, ampla defesa, contraditório, segurança jurídica, interesse público e eficiência. [...] XII - impulsão, de ofício, do processo administrativo, sem prejuízo da atuação dos interessados;"
+      "Art. 2º A Administração Pública obedecerá, dentre outros, aos princípios da legalidade, finalidade, motivação, razoabilidade, proporcionalidade, moralidade, ampla defesa, contraditório, segurança jurídica, interesse público e eficiência. [...] XII - impulsão, de ofício, do processo administrativo, sem prejuízo da atuação dos interessados;"
     ],
     "origin": "real",
     "question": {
@@ -540,14 +540,14 @@ const DATA_ADM = [
     ],
     "origin": "real",
     "question": {
-      "statement": "Região) João é técnico judiciário da Justiça Federal e está encarregado de movimentar os processos administrativos em trâmite no órgão em que atua. Conforme previsto na Lei nº 9.784/1999, que dispõe sobre o processo administrativo no âmbito da Administração Pública Federal, é correto afirmar que João poderá, com fundamento na referida lei, dar interpretação à norma administrativa da forma que melhor garanta o atendimento do fim público a que se dirige, permitida a aplicação retroativa de nova interpretação.",
+      "statement": "João é técnico judiciário da Justiça Federal e está encarregado de movimentar os processos administrativos em trâmite no órgão em que atua. Conforme previsto na Lei nº 9.784/1999, que dispõe sobre o processo administrativo no âmbito da Administração Pública Federal, é correto afirmar que João poderá, com fundamento na referida lei, dar interpretação à norma administrativa da forma que melhor garanta o atendimento do fim público a que se dirige, permitida a aplicação retroativa de nova interpretação.",
       "answer": false,
       "explanation": "Gabarito conforme PDF de origem. A validação jurídica e a conferência de vigência ainda são pendentes.",
       "source": "PDF 72.pdf, questão 42 · Art. 2º, XIII, Lei 9.784/99",
-      "meta": "Instituto AOCP 2024 - Técnico Judiciário (TRF - 2ª",
+      "meta": "Instituto AOCP 2024 - Técnico Judiciário (TRF - 2ª Região)",
       "bank": "Instituto AOCP",
       "year": 2024,
-      "role": "Técnico Judiciário (TRF - 2ª",
+      "role": "Técnico Judiciário (TRF - 2ª Região)",
       "origin": "real",
       "updateWarning": "Piloto em auditoria: conferir o gabarito e o dispositivo legal vigente antes da publicação definitiva."
     }
@@ -560,18 +560,18 @@ const DATA_ADM = [
     "number": "Art. 2º, parágrafo único, inc. XIII",
     "title": "Lei nº 9.784/1999 — processo administrativo federal",
     "parts": [
-      "Art. 2 o . [...] XIII - interpretação da norma administrativa da forma que melhor garanta o atendimento do fim público a que se dirige, vedada aplicação retroativa de nova interpretação."
+      "Art. 2º . [...] XIII - interpretação da norma administrativa da forma que melhor garanta o atendimento do fim público a que se dirige, vedada aplicação retroativa de nova interpretação."
     ],
     "origin": "real",
     "question": {
-      "statement": "Municipal de Maria da Fé - MG) De acordo com a Lei nº 9.784/1999, que regula o processo administrativo no âmbito da Administração Pública Federal o item a seguir é um critério que deve ser aplicado no processo administrativo. Interpretação da norma administrativa da forma que melhor garanta o atendimento do fim público a que se dirige, vedada aplicação retroativa de nova interpretação.",
+      "statement": "De acordo com a Lei nº 9.784/1999, que regula o processo administrativo no âmbito da Administração Pública Federal o item a seguir é um critério que deve ser aplicado no processo administrativo. Interpretação da norma administrativa da forma que melhor garanta o atendimento do fim público a que se dirige, vedada aplicação retroativa de nova interpretação.",
       "answer": true,
       "explanation": "Gabarito conforme PDF de origem. A validação jurídica e a conferência de vigência ainda são pendentes.",
       "source": "PDF 72.pdf, questão 43 · Art. 2º, XIII, Lei 9.784/99",
-      "meta": "Instituto Consulplan - 2024 - Secretário Geral (Câmara",
+      "meta": "Instituto Consulplan - 2024 - Secretário Geral (Câmara Municipal de Maria da Fé - MG)",
       "bank": "Instituto Consulplan",
       "year": 2024,
-      "role": "Secretário Geral (Câmara",
+      "role": "Secretário Geral (Câmara Municipal de Maria da Fé - MG)",
       "origin": "real",
       "updateWarning": "Piloto em auditoria: conferir o gabarito e o dispositivo legal vigente antes da publicação definitiva."
     }
@@ -612,14 +612,14 @@ const DATA_ADM = [
     ],
     "origin": "real",
     "question": {
-      "statement": "Processo Legislativo e Gestão (Câmara dos Deputados) Julgue o item seguinte, com base nas disposições da Lei de Acesso à Informação (Lei n.º 12.527/2011), da Lei Geral de Proteção de Dados (Lei n.º 13.709/2018) e da lei que regula o processo administrativo (Lei n.º 9.784/1999). No processo administrativo, deve-se observar, entre outros critérios, o de atendimento a fins de interesse geral, permitida a renúncia parcial de poderes ou competências, desde que autorizada por lei.",
+      "statement": "Julgue o item seguinte, com base nas disposições da Lei de Acesso à Informação (Lei n.º 12.527/2011), da Lei Geral de Proteção de Dados (Lei n.º 13.709/2018) e da lei que regula o processo administrativo (Lei n.º 9.784/1999). No processo administrativo, deve-se observar, entre outros critérios, o de atendimento a fins de interesse geral, permitida a renúncia parcial de poderes ou competências, desde que autorizada por lei.",
       "answer": true,
       "explanation": "Gabarito conforme PDF de origem. A validação jurídica e a conferência de vigência ainda são pendentes.",
       "source": "PDF 72.pdf, questão 50 · Art. 2º, § único, II, Lei 9.784/99",
-      "meta": "CESPE/CEBRASPE 2026 - Analista Legislativo -",
+      "meta": "CESPE/CEBRASPE 2026 - Analista Legislativo - Processo Legislativo e Gestão (Câmara dos Deputados)",
       "bank": "CESPE/CEBRASPE",
       "year": 2026,
-      "role": "Analista Legislativo -",
+      "role": "Analista Legislativo - Processo Legislativo e Gestão (Câmara dos Deputados)",
       "origin": "real",
       "updateWarning": "Piloto em auditoria: conferir o gabarito e o dispositivo legal vigente antes da publicação definitiva."
     }
