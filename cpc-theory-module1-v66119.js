@@ -88,7 +88,7 @@ function apply(){
       {title:'Carta rogatória e regras comuns',articles:'CPC, arts. 35 a 41',checkpoints:['art. 35 vetado','STJ e juízo de delibação','vedação à revisão do mérito','ordem pública','tradução e autenticidade documental']}
     ];
     w.questionGaps=['fontes do Direito Processual Civil','interpretação e integração da norma processual','direito processual intertemporal e normas híbridas','jurisdição x competência','teoria da asserção','substituição processual','jurisdição internacional concorrente x exclusiva','litispendência internacional','foro exclusivo estrangeiro','auxílio direto x carta rogatória','juízo de delibação','reciprocidade e autoridade central'];
-    w.coverageNotice='Teoria reconstruída para o módulo protegido da Central, cobrindo integralmente os arts. 1º a 41 e os conceitos de jurisdição e ação pertinentes. A identidade do módulo e os bancos de Anki, Decorando, TEC, questões, percentuais e histórico permanecem fora desta camada de atualização.';
+    w.coverageNotice='Teoria reconstruída para o módulo protegido da Central, cobrindo integralmente os arts. 1º a 41 e os conceitos de jurisdição e ação pertinentes. A identidade do módulo e os bancos de Anki, Lei em Dia, TEC, questões, percentuais e histórico permanecem fora desta camada de atualização.';
     w.cpcTheoryVersion='m01-v66119b';
     return true;
   }catch(e){console.error('[CPC m01 v6.6.119]',e);return false}
