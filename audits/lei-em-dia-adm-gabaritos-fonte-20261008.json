@@ -159,17 +159,8 @@
   "unmatched": [],
   "excerptWarnings": [],
   "totalExcerptWarnings": 0,
-  "flags": [
-    {
-      "file": "53.pdf",
-      "id": "adm-8112-pdf53-q026",
-      "meta": "AVANÇA SP 2024 - Analista de Recursos Humanos (CM Paraty)"
-    },
-    {
-      "file": "53.pdf",
-      "id": "adm-8112-pdf53-q044",
-      "meta": "CESPE/CEBRASPE 2025 - Especialista em Recursos"
-    }
-  ],
-  "warning": "Correspondência textual ao PDF não comprova correção jurídica, vigência, licitude de reprodução, autenticidade de banca ou integridade da extração do enunciado. Revisão jurídica e editorial pendentes."
+  "flags": [],
+  "warning": "Correspondência textual ao PDF não comprova correção jurídica, vigência, licitude de reprodução, autenticidade de banca ou integridade da extração do enunciado. Revisão jurídica e editorial pendentes.",
+  "flaggingCorrection": "Palavra 'recursos' em cargo de Recursos Humanos não indica questão anulada; dois alertas falsos positivos retirados.",
+  "flagsPolicy": "Apenas 'prova anulada', 'questão anulada' ou 'cancelada' exigem segregação; não considerar 'recurso' em cargos como anulação."
 }
