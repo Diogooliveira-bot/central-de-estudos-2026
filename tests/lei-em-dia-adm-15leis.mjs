@@ -4,17 +4,17 @@ import {readFileSync} from "node:fs";
 import vm from "node:vm";
 import {createHash} from "node:crypto";
 const root=new URL("../",import.meta.url),ctx=vm.createContext({});
-for(const p of ["tools/decorando-data-adm-9784.js","tools/decorando-data-adm-pack1.js","tools/decorando-data-adm-pack2.js","tools/decorando-data-adm-pack3.js","tools/decorando-data-adm-pack4.js","tools/decorando-data-adm-14133-extra.js","tools/decorando-data-adm-8112-extra.js","tools/decorando-data-adm-8429-extra.js","tools/decorando-data-adm-9784-expansao.js","tools/decorando-data-adm-12527-expansao.js","tools/decorando-data-adm-13709-expansao.js"]){
+for(const p of ["tools/decorando-data-adm-9784.js","tools/decorando-data-adm-pack1.js","tools/decorando-data-adm-pack2.js","tools/decorando-data-adm-pack3.js","tools/decorando-data-adm-pack4.js","tools/decorando-data-adm-14133-extra.js","tools/decorando-data-adm-8112-extra.js","tools/decorando-data-adm-8429-extra.js","tools/decorando-data-adm-9784-expansao.js","tools/decorando-data-adm-12527-expansao.js","tools/decorando-data-adm-13709-expansao.js","tools/decorando-data-adm-pack5.js"]){
   const src=readFileSync(new URL(p,root),"utf8");
   vm.runInContext(src,ctx,{filename:p});
 }
-const data=vm.runInContext("[...DATA_ADM,...DATA_ADM_PACK1,...DATA_ADM_PACK2,...DATA_ADM_PACK3,...DATA_ADM_PACK4,...DATA_ADM_14133_EXTRA,...DATA_ADM_8112_EXTRA,...DATA_ADM_8429_EXTRA,...DATA_ADM_9784_EXPANSAO,...DATA_ADM_12527_EXPANSAO,...DATA_ADM_13709_EXPANSAO]",ctx);
-const topics=vm.runInContext("[...TOPICS_ADM,...TOPICS_ADM_PACK1,...TOPICS_ADM_PACK2,...TOPICS_ADM_PACK3,...TOPICS_ADM_PACK4].map(topic=>({...topic,subtopics:[...new Set([...(topic.subtopics||[]),...[...DATA_ADM_14133_EXTRA,...DATA_ADM_8112_EXTRA,...DATA_ADM_8429_EXTRA,...DATA_ADM_9784_EXPANSAO,...DATA_ADM_12527_EXPANSAO,...DATA_ADM_13709_EXPANSAO].filter(q=>q.topicId===topic.id).map(q=>q.subtopic)])]}))",ctx);
+const data=vm.runInContext("[...DATA_ADM,...DATA_ADM_PACK1,...DATA_ADM_PACK2,...DATA_ADM_PACK3,...DATA_ADM_PACK4,...DATA_ADM_14133_EXTRA,...DATA_ADM_8112_EXTRA,...DATA_ADM_8429_EXTRA,...DATA_ADM_9784_EXPANSAO,...DATA_ADM_12527_EXPANSAO,...DATA_ADM_13709_EXPANSAO,...DATA_ADM_PACK5]",ctx);
+const topics=vm.runInContext("[...TOPICS_ADM,...TOPICS_ADM_PACK1,...TOPICS_ADM_PACK2,...TOPICS_ADM_PACK3,...TOPICS_ADM_PACK4].map(topic=>({...topic,subtopics:[...new Set([...(topic.subtopics||[]),...[...DATA_ADM_14133_EXTRA,...DATA_ADM_8112_EXTRA,...DATA_ADM_8429_EXTRA,...DATA_ADM_9784_EXPANSAO,...DATA_ADM_12527_EXPANSAO,...DATA_ADM_13709_EXPANSAO,...DATA_ADM_PACK5].filter(q=>q.topicId===topic.id).map(q=>q.subtopic)])]}))",ctx);
 const html=readFileSync(new URL("tools/decorando.html",root),"utf8");
 const offline=JSON.parse(readFileSync(new URL("central-offline-files-v66172.json",root),"utf8"));
-test("25 conjuntos e 678 questões com IDs únicos",()=>{
+test("25 conjuntos e 765 questões com IDs únicos",()=>{
   assert.equal(topics.length,25);
-  assert.equal(data.length,678);
+  assert.equal(data.length,765);
   assert.equal(new Set(data.map(x=>x.id)).size,data.length);
   assert.equal(new Set(topics.map(x=>x.id)).size,topics.length);
 });
@@ -43,7 +43,7 @@ test("gabarito, fundamento e filtro são coerentes com os dados",()=>{
   }
 });
 test("Lei em Dia e PWA carregam os três datasets sem alterar o progresso",()=>{
-  for(const name of ["decorando-data-adm-9784.js","decorando-data-adm-pack1.js","decorando-data-adm-pack2.js","decorando-data-adm-pack3.js","decorando-data-adm-pack4.js","decorando-data-adm-14133-extra.js","decorando-data-adm-8112-extra.js","decorando-data-adm-8429-extra.js","decorando-data-adm-9784-expansao.js","decorando-data-adm-12527-expansao.js","decorando-data-adm-13709-expansao.js"]){
+  for(const name of ["decorando-data-adm-9784.js","decorando-data-adm-pack1.js","decorando-data-adm-pack2.js","decorando-data-adm-pack3.js","decorando-data-adm-pack4.js","decorando-data-adm-14133-extra.js","decorando-data-adm-8112-extra.js","decorando-data-adm-8429-extra.js","decorando-data-adm-9784-expansao.js","decorando-data-adm-12527-expansao.js","decorando-data-adm-13709-expansao.js","decorando-data-adm-pack5.js"]){
     assert.ok(html.includes(name));
     assert.ok(offline.files.some(x=>x.includes(name)));
   }
@@ -117,4 +117,21 @@ test("auditoria dos 321 gabaritos importados preserva a cadeia de origem",()=>{
    const gitBlob=createHash("sha1").update("blob "+content.length).update(Buffer.from([0])).update(content).digest("hex");
    assert.equal(gitBlob,sha,"Dataset alterado depois da auditoria: "+path);
  }
+});
+
+
+test("87 itens autorais ampliam 5 conjuntos sem novos identificadores de lei",()=>{
+ const q=data.filter(x=>x.id.includes("-autoral-pack5-"));
+ assert.equal(q.length,87);
+ const counts=new Map();
+ for(const item of q){
+  counts.set(item.topicId,(counts.get(item.topicId)||0)+1);
+  assert.equal(item.origin,"authorial");
+  assert.equal(item.question.origin,"authorial");
+  assert.ok(item.question.source.includes("planalto.gov.br"),item.id);
+  assert.ok(item.question.source.includes(item.number),item.id);
+ }
+ const expected={"adm-lei-8987":22,"adm-lei-11079":16,"adm-lei-11107":16,"adm-lei-12846":19,"adm-lei-13019":14};
+ for(const [key,value] of Object.entries(expected))assert.equal(counts.get(key),value);
+ assert.equal(topics.length,25);
 });
