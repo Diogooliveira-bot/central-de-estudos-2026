@@ -39,7 +39,9 @@
       : null;
   }
 
-  function imageUrl(fileId){\n    return 'https://drive.google.com/file/d/'+encodeURIComponent(fileId)+'/preview';\n  }
+  function imageUrl(fileId){
+    return 'https://drive.google.com/file/d/'+encodeURIComponent(fileId)+'/preview';
+  }
 
   function close(){
     var ov=document.getElementById(OVERLAY_ID);
@@ -47,7 +49,9 @@
     document.body.style.overflow='';
   }
 
-  function setScale(value){ currentScale=1; }\n\n  function fit(){ currentScale=1; }
+  function setScale(value){ currentScale=1; }
+
+  function fit(){ currentScale=1; }
 
   function injectStyle(){
     if(document.getElementById('bcPenalInfographicStyle'))return;

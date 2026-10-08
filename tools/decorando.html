@@ -767,7 +767,7 @@ button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-vis
 .central-native-return a{display:inline-flex;align-items:center;gap:6px;padding:9px 12px;border-radius:10px;background:#111827;color:#fff;text-decoration:none;font-weight:800;font-size:13px;border:1px solid rgba(255,255,255,.18);box-shadow:0 4px 18px rgba(0,0,0,.18)}
 </style>
 <script>try{history.scrollRestoration='manual'}catch(e){};window.addEventListener('pageshow',()=>{scrollTo(0,0);setTimeout(()=>scrollTo(0,0),30)});</script>
-<script>window.__CENTRAL_EMBEDDED__=true;</script><link rel="stylesheet" href="../ui/tool-navigation.css?v=20261001fix1"><link rel="stylesheet" href="/ui/lei-em-dia-v1.css?v=20261004lei1"></head>
+<script>window.__CENTRAL_EMBEDDED__=true;</script><link rel="stylesheet" href="../ui/tool-navigation.css?v=20261001fix1"><link rel="stylesheet" href="/ui/lei-em-dia-v1.css?v=20261008lei1"></head>
 <body>
 <div id="app"></div>
 <script>
@@ -803,13 +803,13 @@ const DISCIPLINES={
 };
 const STORAGE_KEY = "lei-seca-enxuta-state";
 const DEFAULT_PREFS = {theme:"light",studyMode:"focus",answerOrder:"correct-left",discipline:"cpc"};
-const INITIAL = {importance:{},notes:{},highlights:{},answered:{},attempts:{},deleted:{},preferences:{...DEFAULT_PREFS}};
+const INITIAL = {importance:{},notes:{},highlights:{},textHighlights:{},answered:{},attempts:{},deleted:{},preferences:{...DEFAULT_PREFS}};
 
 function clone(v){return JSON.parse(JSON.stringify(v))}
 function normalize(v){
   const x=v&&typeof v==="object"?v:{};
   return {
-    importance:x.importance||{},notes:x.notes||{},highlights:x.highlights||{},
+    importance:x.importance||{},notes:x.notes||{},highlights:x.highlights||{},textHighlights:x.textHighlights&&typeof x.textHighlights==='object'&&!Array.isArray(x.textHighlights)?x.textHighlights:{},
     answered:x.answered||{},attempts:x.attempts||{},deleted:x.deleted||{},
     preferences:{...DEFAULT_PREFS,...(x.preferences||{})}
   };
@@ -848,6 +848,7 @@ let ui={
   discPicked:false,
   fBanks:new Set(),fYears:new Set(),fRoles:new Set(),fOrigin:"",dd:null,ddQuery:"",
   statusPicked:false,
+  optionsOpen:false,
   shuffleSeed:0,
   statusFilter:"all",
   articleIndex:0,
@@ -857,6 +858,8 @@ let ui={
   commentOpen:false,
   menuOpen:false,
   scrollChoices:{},
+  scrollPinnedId:null,
+  scrollPinnedIndex:0,
   scrollComments:{},
   scrollHistories:{},
   scrollLimit:40
@@ -881,7 +884,22 @@ function topicSubs(topicId){
   if(!_topicSubsCache){_topicSubsCache={};Object.values(TOPICS_BY_DISCIPLINE).forEach(list=>list.forEach(t=>{_topicSubsCache[t.id]=new Set(t.subtopics)}))}
   return _topicSubsCache[topicId]||new Set();
 }
-function statusFiltered(list){return list;}
+function attemptStats(id){
+  const attempts=saved.attempts[id]||[];
+  let streak=0;
+  for(let i=attempts.length-1;i>=0&&attempts[i].correct;i--)streak++;
+  return {attempts:attempts.length,streak,last:attempts.at(-1)||null,mastered:streak>=5};
+}
+function statusFiltered(list){
+  return list.filter(a=>{
+    const stats=attemptStats(a.id);
+    if(ui.statusFilter==='unseen')return !stats.attempts;
+    if(ui.statusFilter==='answered')return !!stats.attempts;
+    if(ui.statusFilter==='wrong')return stats.last?.correct===false;
+    if(ui.statusFilter==='mastered')return stats.mastered;
+    return true;
+  });
+}
 function shuffleKey(id){let h=(2166136261^ui.shuffleSeed)>>>0;for(let i=0;i<id.length;i++){h^=id.charCodeAt(i);h=Math.imul(h,16777619)}h^=h>>>13;h=Math.imul(h,1274126177);return (h^(h>>>16))>>>0}
 function visible(){
   const list=statusFiltered(selectedActive());
@@ -893,6 +911,10 @@ function visible(){
     const pinned=selectedActive().find(a=>a.id===ui.focusArticleId);
     if(pinned)list.splice(Math.min(ui.articleIndex,list.length),0,pinned)
   }
+  if(ui.scrollPinnedId&&!list.some(a=>a.id===ui.scrollPinnedId)){
+    const pinned=selectedActive().find(a=>a.id===ui.scrollPinnedId);
+    if(pinned)list.splice(Math.min(ui.scrollPinnedIndex,list.length),0,pinned);
+  }
   return list
 }
 function statusCounts(){
@@ -901,7 +923,8 @@ function statusCounts(){
     all:list.length,
     answered:list.filter(a=>hasAttempts(a.id)).length,
     wrong:list.filter(a=>lastAttempt(a.id)?.correct===false).length,
-    unseen:list.filter(a=>!hasAttempts(a.id)).length
+    unseen:list.filter(a=>!hasAttempts(a.id)).length,
+    mastered:list.filter(a=>attemptStats(a.id).mastered).length
   };
 }
 function completedCount(){return allActive().filter(a=>hasAttempts(a.id)).length}
@@ -941,12 +964,16 @@ function toggleAllSubtopics(){
   else available.forEach(x=>ui.selectedSubtopics.add(x));
   render()
 }
-function chooseStatus(v){ui.statusPicked=true;ui.statusFilter=v;ui.articleIndex=0;ui.choice=null;render()}
+function chooseStatus(v){
+  if(!['all','unseen','answered','wrong','mastered'].includes(v))return;
+  ui.statusPicked=v!=='all';ui.statusFilter=v;ui.articleIndex=0;ui.choice=null;ui.focusArticleId=null;
+  ui.scrollChoices={};ui.scrollPinnedId=null;render();
+}
 function startStudy(){
   if(!ui.discPicked||!visible().length)return;
   ui.shuffleSeed=Math.floor(Math.random()*4294967295)+1;
   ui.articleIndex=0;ui.choice=null;ui.historyOpen=false;ui.commentOpen=false;
-  ui.scrollChoices={};ui.scrollComments={};ui.scrollHistories={};ui.scrollLimit=40;
+  ui.scrollChoices={};ui.scrollPinnedId=null;ui.scrollComments={};ui.scrollHistories={};ui.scrollLimit=40;
   setScreen("study")
 }
 function record(article,value){
@@ -964,6 +991,7 @@ function answerFocus(value){
 function answerScroll(id,value){
   if(Object.prototype.hasOwnProperty.call(ui.scrollChoices,id))return;
   const a=DATA.find(x=>x.id===id);if(!a)return;
+  ui.scrollPinnedIndex=visible().findIndex(x=>x.id===id);ui.scrollPinnedId=id;
   ui.scrollChoices[id]=value;record(a,value);render()
 }
 function move(dir){
@@ -1007,10 +1035,85 @@ function toggleHighlight(id,index){
   if(current[index]===ui.marker)delete current[index];else current[index]=ui.marker;
   saved.highlights[id]=current;save();render()
 }
+const HIGHLIGHT_COLORS=['yellow','green','blue','pink'];
+let pendingTextSelection=null;
+function textHighlightRanges(id,scope,length){
+  const ranges=saved.textHighlights?.[id]?.[scope];
+  if(!Array.isArray(ranges))return [];
+  return ranges.filter(r=>r&&Number.isInteger(r.start)&&Number.isInteger(r.end)&&r.start>=0&&r.end<=length&&r.start<r.end&&HIGHLIGHT_COLORS.includes(r.color)).sort((a,b)=>a.start-b.start);
+}
+function renderMarkedText(id,scope,raw,legal=false){
+  const text=String(raw??''),ranges=textHighlightRanges(id,scope,text.length);
+  const output=part=>legal?lawHi(part):esc(part);
+  let html='',cursor=0;
+  for(const range of ranges){
+    if(range.start<cursor)continue;
+    html+=output(text.slice(cursor,range.start));
+    html+=`<mark class="user-highlight ${range.color}">${output(text.slice(range.start,range.end))}</mark>`;
+    cursor=range.end;
+  }
+  return html+output(text.slice(cursor));
+}
+function selectionHost(node){
+  const element=node?.nodeType===Node.ELEMENT_NODE?node:node?.parentElement;
+  return element?.closest?.('[data-highlight-id][data-highlight-scope]')||null;
+}
+function highlightToolbar(){
+  let bar=document.getElementById('lei-selection-toolbar');
+  if(bar)return bar;
+  bar=document.createElement('div');bar.id='lei-selection-toolbar';bar.hidden=true;
+  bar.setAttribute('role','toolbar');bar.setAttribute('aria-label','Destacar texto selecionado');
+  bar.innerHTML='<span>Destacar</span><button type="button" data-color="yellow" aria-label="Amarelo"></button><button type="button" data-color="green" aria-label="Verde"></button><button type="button" data-color="blue" aria-label="Azul"></button><button type="button" data-color="pink" aria-label="Rosa"></button><button type="button" data-remove="1">Remover</button><button type="button" data-cancel="1" aria-label="Fechar">×</button>';
+  bar.addEventListener('mousedown',event=>event.preventDefault());
+  bar.addEventListener('click',event=>{
+    const button=event.target.closest('button');if(!button)return;
+    if(button.dataset.cancel){pendingTextSelection=null;bar.hidden=true;return}
+    applyTextHighlight(button.dataset.remove?'remove':button.dataset.color);
+  });
+  document.body.appendChild(bar);return bar;
+}
+function captureTextSelection(){
+  const selection=window.getSelection();
+  if(!selection||selection.isCollapsed||!selection.toString().trim())return;
+  const range=selection.getRangeAt(0),host=selectionHost(range.startContainer);
+  if(!host||host!==selectionHost(range.endContainer)||!host.isConnected)return;
+  const before=range.cloneRange();before.selectNodeContents(host);before.setEnd(range.startContainer,range.startOffset);
+  const start=before.toString().length,end=start+range.toString().length;
+  if(start===end)return;
+  pendingTextSelection={id:host.dataset.highlightId,scope:host.dataset.highlightScope,start,end};
+  const bar=highlightToolbar(),rect=range.getBoundingClientRect();
+  bar.hidden=false;
+  bar.style.left=Math.max(8,Math.min(rect.left,window.innerWidth-bar.offsetWidth-8))+'px';
+  bar.style.top=Math.max(8,Math.min(rect.top>bar.offsetHeight+12?rect.top-bar.offsetHeight-8:rect.bottom+8,window.innerHeight-bar.offsetHeight-8))+'px';
+}
+function applyTextHighlight(action){
+  const chosen=pendingTextSelection;if(!chosen)return;
+  const {id,scope,start,end}=chosen;
+  const bucket=saved.textHighlights[id]||{},current=Array.isArray(bucket[scope])?bucket[scope]:[];
+  const next=[];
+  for(const r of current){
+    if(!r||!Number.isInteger(r.start)||!Number.isInteger(r.end)||!HIGHLIGHT_COLORS.includes(r.color))continue;
+    if(r.end<=start||r.start>=end){next.push(r);continue}
+    if(r.start<start)next.push({...r,end:start});
+    if(r.end>end)next.push({...r,start:end});
+  }
+  if(action!=='remove'&&HIGHLIGHT_COLORS.includes(action))next.push({start,end,color:action});
+  bucket[scope]=next.sort((a,b)=>a.start-b.start);saved.textHighlights[id]=bucket;
+  pendingTextSelection=null;window.getSelection()?.removeAllRanges();save();render();
+}
+function toggleWholeLawPart(event,id,index){
+  if(window.getSelection()?.toString().trim())return;
+  toggleHighlight(id,index);
+}
+document.addEventListener('selectionchange',()=>{
+  if(window.getSelection()?.isCollapsed)return;
+  clearTimeout(window.__leiSelectionTimer);
+  window.__leiSelectionTimer=setTimeout(captureTextSelection,120);
+});
 function deleteQuestion(id){
   if(!confirm("Excluir esta questão do seu caderno? Você poderá restaurá-la na Auditoria."))return;
   saved.deleted[id]=new Date().toISOString();save();
-  const v=visible();ui.articleIndex=Math.min(ui.articleIndex,Math.max(0,v.length-2));ui.choice=null;render()
+  const v=visible();ui.articleIndex=Math.min(ui.articleIndex,Math.max(0,v.length-1));ui.choice=null;ui.focusArticleId=null;ui.scrollPinnedId=null;render()
 }
 function restoreQuestion(id){delete saved.deleted[id];save();render()}
 function answerButtons(selected,fn){
@@ -1041,6 +1144,9 @@ function selectedActive(){
     if(ui.selectedTopics.size&&!ui.selectedTopics.has(a.topicId))return false;
     if(ui.selectedSubtopics.size&&!ui.selectedSubtopics.has(a.subtopic))return false;
     if(ui.fBanks.size&&!ui.fBanks.has(qcBank(a)))return false;
+    if(ui.fYears.size&&!ui.fYears.has(qcYear(a)))return false;
+    if(ui.fRoles.size&&!ui.fRoles.has(qcRole(a)))return false;
+    if(ui.fOrigin&&qcOrigin(a)!==ui.fOrigin)return false;
     return true;
   })
 }
@@ -1086,8 +1192,8 @@ function qcPick(f,key){
   ui.articleIndex=0;ui.choice=null;qcRerender();
 }
 function qcClearField(f){if(f==="disc")return;QC_FIELDS[f].set().clear();qcRerender()}
-function qcSeg(k,v){const cur=k==="status"?(ui.statusFilter==="all"?"":ui.statusFilter):ui.fOrigin;const nv=cur===v?"":v;if(k==="status"){ui.statusFilter=nv||"all";ui.statusPicked=!!nv}else ui.fOrigin=nv;ui.articleIndex=0;ui.choice=null;render()}
-function qcClearAll(){ui.selectedTopics=new Set();ui.selectedSubtopics=new Set();ui.fBanks=new Set();ui.fYears=new Set();ui.fRoles=new Set();ui.fOrigin="";ui.statusFilter="all";ui.statusPicked=false;ui.dd=null;render()}
+function qcSeg(k,v){const cur=k==="status"?(ui.statusFilter==="all"?"":ui.statusFilter):ui.fOrigin;const nv=cur===v?"":v;if(k==="status"){ui.statusFilter=nv||"all";ui.statusPicked=!!nv}else ui.fOrigin=nv;ui.articleIndex=0;ui.choice=null;ui.focusArticleId=null;ui.scrollPinnedId=null;render()}
+function qcClearAll(){ui.selectedTopics=new Set();ui.selectedSubtopics=new Set();ui.fBanks=new Set();ui.fYears=new Set();ui.fRoles=new Set();ui.fOrigin="";ui.statusFilter="all";ui.statusPicked=false;ui.dd=null;ui.articleIndex=0;ui.choice=null;ui.focusArticleId=null;ui.scrollPinnedId=null;render()}
 function qcPopover(f){
   const F=QC_FIELDS[f];let opts;
   if(f==="disc")opts=Object.values(DISCIPLINES).map(x=>({key:x.id,label:x.name,sub:x.subtitle,badge:x.badge,color:x.color,n:allActiveAll().filter(a=>a.discipline===x.id).length}));
@@ -1116,17 +1222,18 @@ function qcPopover(f){
 function rememberFilterSection(key,open){
   ui.filterOpen||={subjects:true,banks:false};
   ui.filterOpen[key]=open;
-  if(!open&&((key==="subjects"&&["topic","sub"].includes(ui.dd))||(key==="banks"&&ui.dd==="bank")))ui.dd=null;
+  if(!open&&((key==="subjects"&&["topic","sub"].includes(ui.dd))||(key==="banks"&&["bank","year","role"].includes(ui.dd))))ui.dd=null;
 }
 function renderFilters(){
   const d=currentDiscipline(),picked=ui.discPicked;
   ui.filterOpen||={subjects:true,banks:false};
-  const total=picked?selectedActive().length:0;
+  const total=picked?statusFiltered(selectedActive()).length:0;
+  const counts=picked?statusCounts():{all:0,unseen:0,answered:0,wrong:0,mastered:0};
   const field=f=>{const F=QC_FIELDS[f],sm=qcSummary(f),dis=f!=="disc"&&!picked;
     return `<div class="qc-field ${ui.dd===f?"open":""} ${dis?"disabled":""}"><label id="label-${f}">${F.label}</label>
       <button aria-labelledby="label-${f}" class="qc-select ${sm?"filled":""}" ${dis?"disabled":""} onclick="qcOpen('${f}')" aria-haspopup="dialog" aria-expanded="${ui.dd===f}"><span>${sm||F.ph}</span><i></i></button>
       ${ui.dd===f?qcPopover(f):""}</div>`};
-  const nf=ui.selectedTopics.size+ui.selectedSubtopics.size+ui.fBanks.size;
+  const nf=ui.selectedTopics.size+ui.selectedSubtopics.size+ui.fBanks.size+ui.fYears.size+ui.fRoles.size+(ui.fOrigin?1:0)+(ui.statusFilter==='all'?0:1);
   const subjects=ui.selectedTopics.size?`${ui.selectedTopics.size} ${ui.selectedTopics.size===1?"assunto":"assuntos"}${ui.selectedSubtopics.size?` · ${ui.selectedSubtopics.size} subassunto(s)`:""}`:ui.selectedSubtopics.size?`${ui.selectedSubtopics.size} subassunto(s)`:"Todos os assuntos";
   const bank=ui.fBanks.size===1?esc([...ui.fBanks][0]):ui.fBanks.size?`${ui.fBanks.size} bancas`:"Todas as bancas";
   return `<main class="filter-page compact-filter-page qc bc-steps">${topbar(false)}
@@ -1141,11 +1248,19 @@ function renderFilters(){
           <div class="bc-step-fields">${field("topic")}${field("sub")}</div>
         </details>
         <details class="bc-filter-section" ${ui.filterOpen.banks?"open":""} ontoggle="rememberFilterSection('banks',this.open)">
-          <summary><span class="bc-step-title"><span>03</span><strong>Banca</strong></span><small>${bank}</small><i aria-hidden="true"></i></summary>
-          <div class="bc-step-fields bank-only">${field("bank")}</div>
+          <summary><span class="bc-step-title"><span>03</span><strong>Banca e origem</strong></span><small>${bank}</small><i aria-hidden="true"></i></summary>
+          <div class="bc-step-fields qc-metadata-grid">${field("bank")}${field("year")}${qcOptions('role').length?field("role"):''}
+            <div class="qc-field"><label>Origem</label><div class="qc-origin-options" role="group" aria-label="Origem das questões">${Object.entries(QC_ORIGIN_LABEL).map(([key,label])=>`<button type="button" aria-pressed="${ui.fOrigin===key}" class="${ui.fOrigin===key?'selected':''}" onclick="qcSeg('origin','${key}')">${label}</button>`).join('')}</div></div>
+          </div>
         </details>
       </section>
-      <details class="qc-card qc-opts"><summary><strong>Opções de estudo</strong><span>${saved.preferences.studyMode==="focus"?"Foco":"Scroll"} · ${saved.preferences.order==="random"?"Aleatória":"Sequencial"}</span></summary>
+      <section class="qc-card qc-status" aria-label="Filtrar por histórico da questão">
+        <div class="qc-status-heading"><strong>Histórico das questões</strong><small>Dominada após 5 acertos consecutivos. Um erro reinicia a sequência.</small></div>
+        <div class="qc-status-options" role="group" aria-label="Situação das questões">${[
+          ['all','Todas'],['unseen','Não vistas'],['answered','Vistas'],['wrong','Errei por último'],['mastered','Dominadas']
+        ].map(([key,label])=>`<button type="button" aria-pressed="${ui.statusFilter===key}" class="${ui.statusFilter===key?'selected':''}" onclick="chooseStatus('${key}')">${label}<b>${counts[key].toLocaleString('pt-BR')}</b></button>`).join('')}</div>
+      </section>
+      <details class="qc-card qc-opts" ${ui.optionsOpen?'open':''} ontoggle="ui.optionsOpen=this.open"><summary><strong>Opções de estudo</strong><span>${saved.preferences.studyMode==="focus"?"Foco":"Scroll"} · ${saved.preferences.order==="random"?"Aleatória":"Sequencial"}</span></summary>
         <div class="preference-grid">
           <div><span>Exibição</span><div><button class="${saved.preferences.studyMode==="focus"?"selected":""}" onclick="setPref('studyMode','focus')">▣ Foco</button><button class="${saved.preferences.studyMode==="scroll"?"selected":""}" onclick="setPref('studyMode','scroll')">☷ Scroll</button></div></div>
           <div><span>Ordem das questões</span><div><button class="${saved.preferences.order!=="random"?"selected":""}" onclick="setPref('order','sequential')">≡ Sequencial</button><button class="${saved.preferences.order==="random"?"selected":""}" onclick="setPref('order','random')">⤮ Aleatória</button></div></div>
@@ -1163,7 +1278,7 @@ document.addEventListener("keydown",e=>{if(e.key==="Escape"&&typeof ui!=="undefi
 
 function feedback(article,choice){
   const ok=choice===article.question.answer;
-  return `<div class="feedback ${ok?"correct":"wrong"}"><strong>${ok?"Você acertou":"Você errou"}</strong>${article.question.explanation?`<p>${esc(article.question.explanation)}</p>`:""}${article.question.updateWarning?`<aside class="legal-update-warning"><strong>⚠ Atualização legislativa</strong><span>${esc(article.question.updateWarning)}</span></aside>`:""}${article.question.historicalNote?`<aside class="historical-question-note"><strong>Questão histórica</strong><span>${esc(article.question.historicalNote)}</span></aside>`:""}</div>`
+  return `<div class="feedback ${ok?"correct":"wrong"}"><strong>${ok?"Você acertou":"Você errou"}</strong>${article.question.explanation?`<p class="selectable-highlight" data-highlight-id="${esc(article.id)}" data-highlight-scope="explanation" onmouseup="captureTextSelection()" onkeyup="captureTextSelection()">${renderMarkedText(article.id,'explanation',article.question.explanation)}</p>`:""}${article.question.updateWarning?`<aside class="legal-update-warning"><strong>⚠ Atualização legislativa</strong><span>${esc(article.question.updateWarning)}</span></aside>`:""}${article.question.historicalNote?`<aside class="historical-question-note"><strong>Questão histórica</strong><span>${esc(article.question.historicalNote)}</span></aside>`:""}</div>`
 }
 
 function lawHi(raw){
@@ -1173,18 +1288,18 @@ function lawHi(raw){
   return tmp;
 }
 function domOf(id){
-  const at=(saved.attempts&&saved.attempts[id])?saved.attempts[id]:[];
-  if(!at.length)return ['red','nunca vista'];
-  if(at.length>=2&&at.slice(-2).every(function(a){return a.correct}))return ['green','dominado'];
-  if(at.some(function(a){return a.correct}))return ['yellow','visto · '+at.filter(function(a){return a.correct}).length+'/'+at.length+' acertos'];
-  return ['yellow','lido · '+at.length+' tentativa'+(at.length>1?'s':'')];
+  const stats=attemptStats(id);
+  if(!stats.attempts)return ['red','não vista'];
+  if(stats.last?.correct===false)return ['red','revisar · erro recente'];
+  if(stats.mastered)return ['green','dominada · '+stats.streak+' seguidos'];
+  return ['yellow','em progresso · '+stats.streak+'/5 seguidos'];
 }
 function domBadge(id){
   const d=domOf(id);
   return '<span class="dom-badge dom-'+d[0]+'">'+d[1]+'</span>';
 }
 function lawLegend(){
-  return '<div class="law-legend"><span><span class="sw" style="background:rgba(255,152,0,.5)"></span>conectivo crítico</span><span><span class="sw" style="background:rgba(66,146,255,.4)"></span>prazos</span><span>· clique em um trecho para usar o marcador</span></div>';
+  return '<div class="law-legend"><span><span class="sw" style="background:rgba(255,152,0,.5)"></span>conectivo crítico</span><span><span class="sw" style="background:rgba(66,146,255,.4)"></span>prazos</span><span>· selecione palavras para destacar; toque no parágrafo para marcá-lo inteiro</span></div>';
 }
 
 function legalBasis(article){
@@ -1193,8 +1308,8 @@ function legalBasis(article){
     <div class="article-header"><div><span class="eyebrow">FUNDAMENTO LEGAL</span><h2>${esc(article.number)}${domBadge(article.id)}</h2><p>${esc(article.title)}</p></div>
       <label class="importance"><span>Importância</span><select onchange="updateImportance('${article.id}',this.value)"><option value="">Não definida</option><option value="alta" ${saved.importance[article.id]==="alta"?"selected":""}>Alta</option><option value="media" ${saved.importance[article.id]==="media"?"selected":""}>Média</option><option value="baixa" ${saved.importance[article.id]==="baixa"?"selected":""}>Baixa</option></select></label>
     </div>
-    <div class="marker-tools"><span>Marcador:</span>${["yellow","green","blue","pink"].map(c=>`<button class="${c} ${ui.marker===c?"selected":""}" onclick="ui.marker='${c}';render()" aria-label="Marcador ${c}"></button>`).join("")}<small>Clique em um trecho para marcar</small></div>
-    <div class="law-text">${article.parts.map((p,i)=>`<button onclick="toggleHighlight('${article.id}',${i})" class="${marks[i]?`marked ${marks[i]}`:""}">${lawHi(p)}</button>`).join("")}</div>
+    <div class="marker-tools"><span>Marcador:</span>${HIGHLIGHT_COLORS.map(c=>`<button class="${c} ${ui.marker===c?"selected":""}" onclick="ui.marker='${c}';render()" aria-label="Marcador ${c}"></button>`).join("")}<small>Selecione palavras na explicação ou no texto legal</small></div>
+    <div class="law-text">${article.parts.map((p,i)=>`<span role="button" tabindex="0" aria-label="Marcar trecho legal inteiro" data-highlight-id="${esc(article.id)}" data-highlight-scope="part:${i}" onmouseup="captureTextSelection()" onkeyup="captureTextSelection()" onclick="toggleWholeLawPart(event,'${article.id}',${i})" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleHighlight('${article.id}',${i})}" class="law-part ${HIGHLIGHT_COLORS.includes(marks[i])?`marked ${marks[i]}`:""}">${renderMarkedText(article.id,`part:${i}`,p,true)}</span>`).join("")}</div>
     ${lawLegend()}
     <small class="legal-source">${esc(article.question.source||"")}</small>
   </section>`
@@ -1202,7 +1317,10 @@ function legalBasis(article){
 function historyBlock(article,open){
   const attempts=saved.attempts[article.id]||[];
   if(!open)return "";
-  return `<section class="history-card inline-history"><div class="history-list">${[...attempts].reverse().map(a=>`<div class="history-row"><span class="history-result ${a.correct?"correct":"wrong"}">${a.correct?"Acertou":"Errou"}</span><span>${a.choice?"Marcou Certo":"Marcou Errado"}</span><time>${fmtDate(a.date)}</time></div>`).join("")}</div></section>`
+  const stats=attemptStats(article.id);
+  return `<section class="history-card inline-history" aria-label="Histórico da questão">
+    <div class="history-progress"><strong>${stats.mastered?'Dominada':stats.last?.correct===false?'Revisar':'Em progresso'}</strong><span>${Math.min(stats.streak,5)} de 5 acertos consecutivos</span><div class="history-progress-track"><span style="width:${Math.min(stats.streak,5)*20}%"></span></div><small>${stats.last?.correct===false?'O último erro reiniciou a sequência. As tentativas anteriores continuam salvas.':'Um erro reinicia a sequência de domínio.'}</small></div>
+    <div class="history-list">${[...attempts].reverse().map(a=>`<div class="history-row"><span class="history-result ${a.correct?"correct":"wrong"}">${a.correct?"Acertou":"Errou"}</span><span>${a.choice?"Marcou Certo":"Marcou Errado"}</span><time>${fmtDate(a.date)}</time></div>`).join("")}</div></section>`
 }
 function studyHeader(){
   const d=currentDiscipline();
@@ -1228,7 +1346,7 @@ function renderFocus(){
   return `<div class="study-grid question-first">
     <article class="exercise-card">
       <div class="exercise-heading"><div><span class="question-number">QUESTÃO ${ui.articleIndex+1}</span>${originBadge(article)}${domBadge(article.id)}<h2>Julgue o item a seguir</h2>${article.question.meta?`<small class="question-meta">${esc(article.question.meta)}</small>`:""}</div>
-        <div class="question-actions"><span class="question-type">Certo ou errado</span><button onclick="ui.commentOpen=!ui.commentOpen;render()">▢ Comentário</button></div>
+        <div class="question-actions"><span class="question-type">Certo ou errado</span><button onclick="ui.commentOpen=!ui.commentOpen;render()">▢ Comentário</button><button class="delete-action" onclick="deleteQuestion('${article.id}')">Excluir</button></div>
       </div>
       ${ui.commentOpen?`<div class="comment-box"><div><strong>Comentário da questão</strong><small>Salvo automaticamente</small></div><textarea autofocus oninput="updateNote('${article.id}',this.value)" placeholder="Registre uma pegadinha, observação ou lembrete...">${esc(saved.notes[article.id]||"")}</textarea></div>`:""}
       <p class="statement main-statement">${esc(article.question.statement)}</p>
@@ -1246,7 +1364,7 @@ function renderScroll(){
       const selected=Object.prototype.hasOwnProperty.call(ui.scrollChoices,article.id)?ui.scrollChoices[article.id]:undefined;
       const open=!!ui.scrollHistories[article.id];
       return `<article class="scroll-question-card">
-        <div class="exercise-heading"><div><span class="question-number">QUESTÃO ${i+1}</span>${originBadge(article)}<h2>Julgue o item a seguir</h2>${article.question.meta?`<small class="question-meta">${esc(article.question.meta)}</small>`:""}</div><div class="question-actions"><span class="question-type">Certo ou errado</span><button onclick="ui.scrollComments['${article.id}']=!ui.scrollComments['${article.id}'];render()">▢ Comentário</button></div></div>
+        <div class="exercise-heading"><div><span class="question-number">QUESTÃO ${i+1}</span>${originBadge(article)}<h2>Julgue o item a seguir</h2>${article.question.meta?`<small class="question-meta">${esc(article.question.meta)}</small>`:""}</div><div class="question-actions"><span class="question-type">Certo ou errado</span><button onclick="ui.scrollComments['${article.id}']=!ui.scrollComments['${article.id}'];render()">▢ Comentário</button><button class="delete-action" onclick="deleteQuestion('${article.id}')">Excluir</button></div></div>
         ${ui.scrollComments[article.id]?`<div class="comment-box"><div><strong>Comentário da questão</strong><small>Salvo automaticamente</small></div><textarea oninput="updateNote('${article.id}',this.value)">${esc(saved.notes[article.id]||"")}</textarea></div>`:""}
         <p class="statement main-statement">${esc(article.question.statement)}</p>
         ${(()=>{const opts=saved.preferences.answerOrder==="correct-left"?[[true,"✓ Certo"],[false,"× Errado"]]:[[false,"× Errado"],[true,"✓ Certo"]];return `<div class="answer-buttons main-answers">${opts.map(([v,l])=>`<button ${selected!==undefined?"disabled":""} class="${selected===v?"chosen":""}" onclick="answerScroll('${article.id}',${v})">${l}</button>`).join("")}</div>`})()}
@@ -1267,6 +1385,7 @@ function renderStudy(){
 function renderAudit(){
   const attempts=auditAttempts(),correct=attempts.filter(a=>a.correct).length,accuracy=attempts.length?Math.round(correct/attempts.length*100):0;
   const allList=allActiveAll(),seenAll=allList.filter(a=>hasAttempts(a.id)).length;
+  const masteredAll=allList.filter(a=>attemptStats(a.id).mastered).length;
   const dayMap={};attempts.forEach(a=>{const k=dateOnly(a.date);dayMap[k]||={total:0,correct:0,latest:a.date};dayMap[k].total++;if(a.correct)dayMap[k].correct++;if(a.date>dayMap[k].latest)dayMap[k].latest=a.date});
   const days=Object.entries(dayMap).map(([date,d])=>({date,...d})).sort((a,b)=>b.latest.localeCompare(a.latest));
   const avg=days.length?(attempts.length/days.length).toFixed(1).replace(".",","):"0";
@@ -1282,6 +1401,7 @@ function renderAudit(){
       <article><span>Média por dia</span><strong>${avg}</strong><small>questões por dia ativo</small></article>
       <article><span>Dias de estudo</span><strong>${days.length}</strong><small>com respostas registradas</small></article>
       <article><span>Não vistas</span><strong>${Math.max(0,allList.length-seenAll)}</strong><small>questões restantes</small></article>
+      <article><span>Dominadas</span><strong>${masteredAll}</strong><small>5 acertos consecutivos</small></article>
     </div>
     <div class="audit-grid">
       <section class="audit-panel"><div class="audit-panel-title"><div><strong>Atividade por dia</strong><small>Quantidade e aproveitamento</small></div></div>${days.length?`<div class="daily-table">${days.map(d=>`<div class="daily-row"><strong>${d.date}</strong><div class="daily-bar"><span style="width:${Math.max(8,Math.round(d.correct/d.total*100))}%"></span></div><span>${d.total} questões</span><b>${Math.round(d.correct/d.total*100)}%</b></div>`).join("")}</div>`:`<div class="audit-empty">Responda a primeira questão para iniciar a auditoria.</div>`}</section>
@@ -1292,6 +1412,8 @@ function renderAudit(){
   </section></main>`
 }
 function render(){
+  pendingTextSelection=null;
+  const selectionToolbar=document.getElementById('lei-selection-toolbar');if(selectionToolbar)selectionToolbar.hidden=true;
   document.documentElement.dataset.theme=saved.preferences.theme;
   const app=document.getElementById("app");
   if(ui.screen==="audit")app.innerHTML=renderAudit();

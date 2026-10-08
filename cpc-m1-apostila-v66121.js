@@ -73,7 +73,7 @@ function insertStudyPanel(el){
   var target=body.querySelector(stage[2]);
   var done=target&&target.classList.contains('done');
   return '<a href="'+stage[2]+'"'+(done?' class="done"':'')+'><small>'+stage[0]+'</small><span>'+stage[1]+'</span><em>'+(done?'Concluído':'Abrir')+'</em></a>';
- }).join('')+'</nav><p class="cpc-apostila-tools">Anki · Decorando · TEC ficam disponíveis no final da apostila.</p>';
+ }).join('')+'</nav><p class="cpc-apostila-tools">Anki · Lei em Dia · TEC ficam disponíveis no final da apostila.</p>';
  panel.addEventListener('click',function(event){
   var link=event.target.closest('a');if(!link)return;
   var target=body.querySelector(link.getAttribute('href'));if(!target)return;

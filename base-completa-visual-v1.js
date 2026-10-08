@@ -66,7 +66,7 @@
   const renderTools=(id,extraClass='')=>{
     const items=(id==='pt'||id==='rlm')
       ? [['tec','Cadernos TEC']]
-      : [['decorando','Decorando'],['tec','Cadernos TEC'],['vade','Vade Mecum']];
+      : [['decorando','Lei em Dia'],['tec','Cadernos TEC'],['vade','Vade Mecum']];
     return '<div class="bc-kit-tools '+extraClass+'" aria-label="Atalhos da disciplina">'+items.map(item=>'<button type="button" onclick="return baseCompletaOpenTool(&quot;'+item[0]+'&quot;)">'+item[1]+'</button>').join('')+'</div>';
   };
   const renderDisciplineKits=()=>{

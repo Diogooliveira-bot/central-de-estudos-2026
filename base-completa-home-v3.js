@@ -63,7 +63,7 @@
     if(side){
       quickToolsCard = Array.from(side.querySelectorAll(':scope > .card')).find(card=>{
         const title=(card.querySelector('.card-head h3')?.textContent||'').trim().toLowerCase();
-        return title.includes('decorando a lei');
+        return title.includes('lei em dia');
       }) || null;
     } else {
       quickToolsCard = home.querySelector('.home-quick-tools-card');

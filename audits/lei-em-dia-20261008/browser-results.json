@@ -1,0 +1,160 @@
+{
+  "inventory": {
+    "all": 3034,
+    "withExplanation": 312,
+    "years": 23,
+    "roles": 0
+  },
+  "mastery": {
+    "mastered": true,
+    "resetStreak": 0,
+    "recovered": true,
+    "history": 12
+  },
+  "offline": {
+    "reloadStatus": 200,
+    "persisted": true,
+    "reconnected": true
+  },
+  "cases": [
+    {
+      "width": 390,
+      "screen": "filtros vazios",
+      "scroll": 390,
+      "viewport": 390
+    },
+    {
+      "width": 390,
+      "screen": "foco antes da resposta",
+      "scroll": 390,
+      "viewport": 390
+    },
+    {
+      "width": 390,
+      "screen": "foco respondido",
+      "scroll": 390,
+      "viewport": 390
+    },
+    {
+      "width": 390,
+      "screen": "scroll respondido",
+      "scroll": 390,
+      "viewport": 390
+    },
+    {
+      "width": 390,
+      "screen": "auditoria",
+      "scroll": 390,
+      "viewport": 390
+    },
+    {
+      "width": 390,
+      "screen": "filtros escuros",
+      "scroll": 390,
+      "viewport": 390
+    },
+    {
+      "width": 800,
+      "screen": "aleatório e ações",
+      "scroll": 800,
+      "viewport": 800
+    },
+    {
+      "width": 360,
+      "screen": "filtros",
+      "scroll": 360,
+      "viewport": 360
+    },
+    {
+      "width": 360,
+      "screen": "foco",
+      "scroll": 360,
+      "viewport": 360
+    },
+    {
+      "width": 360,
+      "screen": "resposta",
+      "scroll": 360,
+      "viewport": 360
+    },
+    {
+      "width": 360,
+      "screen": "auditoria",
+      "scroll": 360,
+      "viewport": 360
+    },
+    {
+      "width": 800,
+      "screen": "filtros",
+      "scroll": 800,
+      "viewport": 800
+    },
+    {
+      "width": 800,
+      "screen": "foco",
+      "scroll": 800,
+      "viewport": 800
+    },
+    {
+      "width": 800,
+      "screen": "resposta",
+      "scroll": 800,
+      "viewport": 800
+    },
+    {
+      "width": 800,
+      "screen": "auditoria",
+      "scroll": 800,
+      "viewport": 800
+    },
+    {
+      "width": 900,
+      "screen": "filtros",
+      "scroll": 900,
+      "viewport": 900
+    },
+    {
+      "width": 900,
+      "screen": "foco",
+      "scroll": 900,
+      "viewport": 900
+    },
+    {
+      "width": 900,
+      "screen": "resposta",
+      "scroll": 900,
+      "viewport": 900
+    },
+    {
+      "width": 900,
+      "screen": "auditoria",
+      "scroll": 900,
+      "viewport": 900
+    },
+    {
+      "width": 1440,
+      "screen": "filtros",
+      "scroll": 1440,
+      "viewport": 1440
+    },
+    {
+      "width": 1440,
+      "screen": "foco",
+      "scroll": 1440,
+      "viewport": 1440
+    },
+    {
+      "width": 1440,
+      "screen": "resposta",
+      "scroll": 1440,
+      "viewport": 1440
+    },
+    {
+      "width": 1440,
+      "screen": "auditoria",
+      "scroll": 1440,
+      "viewport": 1440
+    }
+  ],
+  "issues": []
+}

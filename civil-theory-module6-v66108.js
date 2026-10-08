@@ -543,7 +543,7 @@ function topicHtml(topic,index,state){
 }
 function shellHtml(state){
   var done=countDone(state),pct=TOPICS.length?Math.round(done/TOPICS.length*100):0;
-  return '<div class="ct-shell ct-shell-complete" data-ct-module="'+MODULE_ID+'" data-ct-module6-v="66108"><div class="ct-head"><div><span>TEORIA COMPLETA DO MÓDULO 6</span><b>'+TOPICS.length+' subtópicos para aprender e revisar</b><small>Obrigações: modalidades, transmissão, pagamento, extinção, inadimplemento, atos unilaterais e preferências. Anki, Decorando, TEC e histórico permanecem separados e preservados.</small></div><strong data-ct-count>'+done+'/'+TOPICS.length+'</strong></div><div class="ct-meter"><span data-ct-bar style="width:'+pct+'%"></span></div><div class="ct-list">'+TOPICS.map(function(topic,index){return topicHtml(topic,index,state)}).join('')+'</div></div>';
+  return '<div class="ct-shell ct-shell-complete" data-ct-module="'+MODULE_ID+'" data-ct-module6-v="66108"><div class="ct-head"><div><span>TEORIA COMPLETA DO MÓDULO 6</span><b>'+TOPICS.length+' subtópicos para aprender e revisar</b><small>Obrigações: modalidades, transmissão, pagamento, extinção, inadimplemento, atos unilaterais e preferências. Anki, Lei em Dia, TEC e histórico permanecem separados e preservados.</small></div><strong data-ct-count>'+done+'/'+TOPICS.length+'</strong></div><div class="ct-meter"><span data-ct-bar style="width:'+pct+'%"></span></div><div class="ct-list">'+TOPICS.map(function(topic,index){return topicHtml(topic,index,state)}).join('')+'</div></div>';
 }
 function enhance(html){
   try{

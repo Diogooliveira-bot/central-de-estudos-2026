@@ -87,11 +87,11 @@
   function progressPanel(module, meta) {
     const reading = readingStats(module, meta), questions = questionStats(module, meta), overall = percentage(module);
     const law = module.querySelector('button[onclick*="openLeiSeca"],button[onclick*="decorando"],a[onclick*="openLeiSeca"]');
-    const label = law ? 'Decorando' : (meta.subject === 'pt' ? 'Revisão' : 'Materiais');
+    const label = law ? 'Lei em Dia' : (meta.subject === 'pt' ? 'Revisão' : 'Materiais');
     const description = law ? 'Artigos e exercícios vinculados ao módulo' : (meta.subject === 'pt' ? 'Pontos de revisão disponíveis no módulo' : 'Consulte os materiais e recursos vinculados');
     return '<section class="csp-panel ds-progress" data-ds-summary><div class="csp-panel-head"><div><span>PROGRESSO DE ESTUDO</span><b>' + overall + '% do módulo</b></div><div class="csp-panel-note">Conclusão conforme os critérios desta disciplina</div></div>' + meter(overall) + '<div class="csp-grid">' +
       '<article class="csp-stage-card"><div class="csp-stage-head"><div><b>Leitura</b><small>' + esc(reading.text) + '</small></div><strong>' + (reading.pct === null ? '—' : reading.pct + '%') + '</strong></div>' + meter(reading.pct) + '</article>' +
-      '<article class="csp-stage-card"><div class="csp-stage-head"><div><b>' + label + '</b><small>' + description + '</small></div></div><button type="button" class="ds-action" data-ds-action="' + (meta.subject === 'pt' ? 'review' : 'resources') + '">Abrir ' + (law ? 'Decorando' : label.toLowerCase()) + '</button></article>' +
+      '<article class="csp-stage-card"><div class="csp-stage-head"><div><b>' + label + '</b><small>' + description + '</small></div></div><button type="button" class="ds-action" data-ds-action="' + (meta.subject === 'pt' ? 'review' : 'resources') + '">Abrir ' + (law ? 'Lei em Dia' : label.toLowerCase()) + '</button></article>' +
       '<article class="csp-stage-card csp-tec"><div class="csp-stage-head"><div><b>Questões / TEC</b><small>' + esc(questions.text) + '</small></div><strong>' + (questions.total && questions.correct !== null ? Math.round(questions.correct / questions.total * 100) + '% de acertos' : questions.total ? '—' : 'Sem registro') + '</strong></div><div class="ds-actions"><button type="button" class="ds-action" data-ds-action="questions">Abrir questões e registros</button></div></article></div></section>';
   }
   function notes(module, body, meta) {
@@ -140,7 +140,7 @@
   function footerTools(body, host) {
     if (host.children.length) return;
     const actions = [
-      {label:'📖 Decorando a Lei', selector:'[onclick*="openLeiSeca"],[onclick*="decorando"]', tool:'decorando'},
+      {label:'📖 Lei em Dia', selector:'[onclick*="openLeiSeca"],[onclick*="decorando"]', tool:'decorando'},
       {label:'⚖ Vade Mecum', selector:'[onclick*="vade"]', tool:'vade'},
       {label:'▤ Cadernos do TEC', selector:'[onclick*="tec-cadernos"]', tool:'tec'}
     ];
