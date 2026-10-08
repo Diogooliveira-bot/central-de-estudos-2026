@@ -4,7 +4,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-11107-pdf9-q001",
     "discipline": "adm",
     "topicId": "adm-lei-11107",
-    "subtopic": "Art. 1º",
+    "subtopic": "Lei 11.107/2005 · Art. 1º",
     "number": "Art. 1º",
     "title": "Lei 11.107/2005 — Consórcios públicos",
     "parts": [
@@ -27,7 +27,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-11107-pdf9-q002",
     "discipline": "adm",
     "topicId": "adm-lei-11107",
-    "subtopic": "Art. 1º",
+    "subtopic": "Lei 11.107/2005 · Art. 1º",
     "number": "Art. 1º",
     "title": "Lei 11.107/2005 — Consórcios públicos",
     "parts": [
@@ -50,7 +50,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-11107-pdf9-q006",
     "discipline": "adm",
     "topicId": "adm-lei-11107",
-    "subtopic": "Art. 1º, § 1º",
+    "subtopic": "Lei 11.107/2005 · Art. 1º, § 1º",
     "number": "Art. 1º, § 1º",
     "title": "Lei 11.107/2005 — Consórcios públicos",
     "parts": [
@@ -73,7 +73,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-11107-pdf9-q013",
     "discipline": "adm",
     "topicId": "adm-lei-11107",
-    "subtopic": "Art. 1º, § 1º",
+    "subtopic": "Lei 11.107/2005 · Art. 1º, § 1º",
     "number": "Art. 1º, § 1º",
     "title": "Lei 11.107/2005 — Consórcios públicos",
     "parts": [
@@ -96,7 +96,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-11107-pdf9-q026",
     "discipline": "adm",
     "topicId": "adm-lei-11107",
-    "subtopic": "Art. 1º, § 2º",
+    "subtopic": "Lei 11.107/2005 · Art. 1º, § 2º",
     "number": "Art. 1º, § 2º",
     "title": "Lei 11.107/2005 — Consórcios públicos",
     "parts": [
@@ -119,7 +119,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-11107-pdf9-q031",
     "discipline": "adm",
     "topicId": "adm-lei-11107",
-    "subtopic": "Art. 1º, § 2º",
+    "subtopic": "Lei 11.107/2005 · Art. 1º, § 2º",
     "number": "Art. 1º, § 2º",
     "title": "Lei 11.107/2005 — Consórcios públicos",
     "parts": [
@@ -142,7 +142,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-11107-pdf9-q035",
     "discipline": "adm",
     "topicId": "adm-lei-11107",
-    "subtopic": "Art. 1º, § 3º",
+    "subtopic": "Lei 11.107/2005 · Art. 1º, § 3º",
     "number": "Art. 1º, § 3º",
     "title": "Lei 11.107/2005 — Consórcios públicos",
     "parts": [
@@ -165,7 +165,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-11107-pdf9-q036",
     "discipline": "adm",
     "topicId": "adm-lei-11107",
-    "subtopic": "Art. 1º, § 3º",
+    "subtopic": "Lei 11.107/2005 · Art. 1º, § 3º",
     "number": "Art. 1º, § 3º",
     "title": "Lei 11.107/2005 — Consórcios públicos",
     "parts": [
@@ -188,7 +188,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-11107-pdf9-q038",
     "discipline": "adm",
     "topicId": "adm-lei-11107",
-    "subtopic": "Art. 1º, § 4º",
+    "subtopic": "Lei 11.107/2005 · Art. 1º, § 4º",
     "number": "Art. 1º, § 4º",
     "title": "Lei 11.107/2005 — Consórcios públicos",
     "parts": [
@@ -211,7 +211,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-11107-pdf9-q039",
     "discipline": "adm",
     "topicId": "adm-lei-11107",
-    "subtopic": "Art. 2º",
+    "subtopic": "Lei 11.107/2005 · Art. 2º",
     "number": "Art. 2º",
     "title": "Lei 11.107/2005 — Consórcios públicos",
     "parts": [
@@ -234,7 +234,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-11107-pdf9-q040",
     "discipline": "adm",
     "topicId": "adm-lei-11107",
-    "subtopic": "Art. 2º",
+    "subtopic": "Lei 11.107/2005 · Art. 2º",
     "number": "Art. 2º",
     "title": "Lei 11.107/2005 — Consórcios públicos",
     "parts": [
@@ -257,7 +257,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-11107-pdf9-q041",
     "discipline": "adm",
     "topicId": "adm-lei-11107",
-    "subtopic": "Art. 2º, § 1º, inc. I",
+    "subtopic": "Lei 11.107/2005 · Art. 2º, § 1º, inc. I",
     "number": "Art. 2º, § 1º, inc. I",
     "title": "Lei 11.107/2005 — Consórcios públicos",
     "parts": [
@@ -273,14 +273,15 @@ const DATA_ADM_PACK2 = [
       "bank": "ESAF",
       "year": 2013,
       "role": "Analista Administrativo (DNIT)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-11107-pdf9-q042",
     "discipline": "adm",
     "topicId": "adm-lei-11107",
-    "subtopic": "Art. 2º, § 1º",
+    "subtopic": "Lei 11.107/2005 · Art. 2º, § 1º",
     "number": "Art. 2º, § 1º",
     "title": "Lei 11.107/2005 — Consórcios públicos",
     "parts": [
@@ -296,14 +297,15 @@ const DATA_ADM_PACK2 = [
       "bank": "MPT",
       "year": 2020,
       "role": "Procurador do Trabalho",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-11107-pdf9-q043",
     "discipline": "adm",
     "topicId": "adm-lei-11107",
-    "subtopic": "Art. 2º, § 1º, inc. I",
+    "subtopic": "Lei 11.107/2005 · Art. 2º, § 1º, inc. I",
     "number": "Art. 2º, § 1º, inc. I",
     "title": "Lei 11.107/2005 — Consórcios públicos",
     "parts": [
@@ -326,7 +328,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-11107-pdf9-q045",
     "discipline": "adm",
     "topicId": "adm-lei-11107",
-    "subtopic": "Art. 2º, § 1º",
+    "subtopic": "Lei 11.107/2005 · Art. 2º, § 1º",
     "number": "Art. 2º, § 1º",
     "title": "Lei 11.107/2005 — Consórcios públicos",
     "parts": [
@@ -349,7 +351,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-11107-pdf9-q046",
     "discipline": "adm",
     "topicId": "adm-lei-11107",
-    "subtopic": "Art. 2º, § 1º, inc. II",
+    "subtopic": "Lei 11.107/2005 · Art. 2º, § 1º, inc. II",
     "number": "Art. 2º, § 1º, inc. II",
     "title": "Lei 11.107/2005 — Consórcios públicos",
     "parts": [
@@ -365,14 +367,15 @@ const DATA_ADM_PACK2 = [
       "bank": "FCC",
       "year": 2011,
       "role": "Promotor de Justiça (MPE-CE)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-11107-pdf9-q049",
     "discipline": "adm",
     "topicId": "adm-lei-11107",
-    "subtopic": "Art. 2º, § 1º, inc. II",
+    "subtopic": "Lei 11.107/2005 · Art. 2º, § 1º, inc. II",
     "number": "Art. 2º, § 1º, inc. II",
     "title": "Lei 11.107/2005 — Consórcios públicos",
     "parts": [
@@ -388,14 +391,15 @@ const DATA_ADM_PACK2 = [
       "bank": "FGV",
       "year": 2016,
       "role": "XX Exame da OAB",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-11079-pdf8-q001",
     "discipline": "adm",
     "topicId": "adm-lei-11079",
-    "subtopic": "Art. 1º, parágrafo único",
+    "subtopic": "Lei 11.079/2004 · Art. 1º, parágrafo único",
     "number": "Art. 1º, parágrafo único",
     "title": "Lei 11.079/2004 — Parcerias público-privadas",
     "parts": [
@@ -418,7 +422,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-11079-pdf8-q002",
     "discipline": "adm",
     "topicId": "adm-lei-11079",
-    "subtopic": "Art. 1º, parágrafo único",
+    "subtopic": "Lei 11.079/2004 · Art. 1º, parágrafo único",
     "number": "Art. 1º, parágrafo único",
     "title": "Lei 11.079/2004 — Parcerias público-privadas",
     "parts": [
@@ -441,7 +445,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-11079-pdf8-q003",
     "discipline": "adm",
     "topicId": "adm-lei-11079",
-    "subtopic": "Art. 1º",
+    "subtopic": "Lei 11.079/2004 · Art. 1º",
     "number": "Art. 1º",
     "title": "Lei 11.079/2004 — Parcerias público-privadas",
     "parts": [
@@ -457,14 +461,15 @@ const DATA_ADM_PACK2 = [
       "bank": "FCC",
       "year": 2019,
       "role": "Assistente Técnico (DPE-AM)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-11079-pdf8-q004",
     "discipline": "adm",
     "topicId": "adm-lei-11079",
-    "subtopic": "Art. 1º",
+    "subtopic": "Lei 11.079/2004 · Art. 1º",
     "number": "Art. 1º",
     "title": "Lei 11.079/2004 — Parcerias público-privadas",
     "parts": [
@@ -487,7 +492,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-11079-pdf8-q011",
     "discipline": "adm",
     "topicId": "adm-lei-11079",
-    "subtopic": "Art. 2º",
+    "subtopic": "Lei 11.079/2004 · Art. 2º",
     "number": "Art. 2º",
     "title": "Lei 11.079/2004 — Parcerias público-privadas",
     "parts": [
@@ -510,7 +515,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-11079-pdf8-q015",
     "discipline": "adm",
     "topicId": "adm-lei-11079",
-    "subtopic": "Art. 2º",
+    "subtopic": "Lei 11.079/2004 · Art. 2º",
     "number": "Art. 2º",
     "title": "Lei 11.079/2004 — Parcerias público-privadas",
     "parts": [
@@ -533,7 +538,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-11079-pdf8-q032",
     "discipline": "adm",
     "topicId": "adm-lei-11079",
-    "subtopic": "Art. 2º, § 1º",
+    "subtopic": "Lei 11.079/2004 · Art. 2º, § 1º",
     "number": "Art. 2º, § 1º",
     "title": "Lei 11.079/2004 — Parcerias público-privadas",
     "parts": [
@@ -556,7 +561,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-11079-pdf8-q033",
     "discipline": "adm",
     "topicId": "adm-lei-11079",
-    "subtopic": "Art. 2º, § 1º",
+    "subtopic": "Lei 11.079/2004 · Art. 2º, § 1º",
     "number": "Art. 2º, § 1º",
     "title": "Lei 11.079/2004 — Parcerias público-privadas",
     "parts": [
@@ -579,7 +584,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-13303-pdf28-q001",
     "discipline": "adm",
     "topicId": "adm-lei-13303",
-    "subtopic": "Art. 1º",
+    "subtopic": "Lei 13.303/2016 · Art. 1º",
     "number": "Art. 1º",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
@@ -595,14 +600,15 @@ const DATA_ADM_PACK2 = [
       "bank": "IDIB",
       "year": 2020,
       "role": "Agente Legislativo (Câmara Municipal - PE)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-13303-pdf28-q002",
     "discipline": "adm",
     "topicId": "adm-lei-13303",
-    "subtopic": "Art. 2º",
+    "subtopic": "Lei 13.303/2016 · Art. 2º",
     "number": "Art. 2º",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
@@ -625,7 +631,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-13303-pdf28-q003",
     "discipline": "adm",
     "topicId": "adm-lei-13303",
-    "subtopic": "Art. 2º, § 2º",
+    "subtopic": "Lei 13.303/2016 · Art. 2º, § 2º",
     "number": "Art. 2º, § 2º",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
@@ -648,7 +654,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-13303-pdf28-q005",
     "discipline": "adm",
     "topicId": "adm-lei-13303",
-    "subtopic": "Art. 3º",
+    "subtopic": "Lei 13.303/2016 · Art. 3º",
     "number": "Art. 3º",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
@@ -671,7 +677,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-13303-pdf28-q007",
     "discipline": "adm",
     "topicId": "adm-lei-13303",
-    "subtopic": "Art. 3º",
+    "subtopic": "Lei 13.303/2016 · Art. 3º",
     "number": "Art. 3º",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
@@ -694,7 +700,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-13303-pdf28-q009",
     "discipline": "adm",
     "topicId": "adm-lei-13303",
-    "subtopic": "Art. 3º, parágrafo único",
+    "subtopic": "Lei 13.303/2016 · Art. 3º, parágrafo único",
     "number": "Art. 3º, parágrafo único",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
@@ -717,7 +723,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-13303-pdf28-q013",
     "discipline": "adm",
     "topicId": "adm-lei-13303",
-    "subtopic": "Art. 4º",
+    "subtopic": "Lei 13.303/2016 · Art. 4º",
     "number": "Art. 4º",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
@@ -740,7 +746,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-13303-pdf28-q014",
     "discipline": "adm",
     "topicId": "adm-lei-13303",
-    "subtopic": "Art. 4º",
+    "subtopic": "Lei 13.303/2016 · Art. 4º",
     "number": "Art. 4º",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
@@ -763,7 +769,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-13303-pdf28-q015",
     "discipline": "adm",
     "topicId": "adm-lei-13303",
-    "subtopic": "Art. 6º",
+    "subtopic": "Lei 13.303/2016 · Art. 6º",
     "number": "Art. 6º",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
@@ -786,7 +792,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-13303-pdf28-q016",
     "discipline": "adm",
     "topicId": "adm-lei-13303",
-    "subtopic": "Art. 6º",
+    "subtopic": "Lei 13.303/2016 · Art. 6º",
     "number": "Art. 6º",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
@@ -809,7 +815,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-13303-pdf28-q017",
     "discipline": "adm",
     "topicId": "adm-lei-13303",
-    "subtopic": "Art. 7º",
+    "subtopic": "Lei 13.303/2016 · Art. 7º",
     "number": "Art. 7º",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
@@ -832,7 +838,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-13303-pdf28-q019",
     "discipline": "adm",
     "topicId": "adm-lei-13303",
-    "subtopic": "Art. 8º, inc. I",
+    "subtopic": "Lei 13.303/2016 · Art. 8º, inc. I",
     "number": "Art. 8º, inc. I",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
@@ -855,7 +861,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-13303-pdf28-q020",
     "discipline": "adm",
     "topicId": "adm-lei-13303",
-    "subtopic": "Art. 8º, inc. I",
+    "subtopic": "Lei 13.303/2016 · Art. 8º, inc. I",
     "number": "Art. 8º, inc. I",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
@@ -878,7 +884,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-13303-pdf28-q021",
     "discipline": "adm",
     "topicId": "adm-lei-13303",
-    "subtopic": "Art. 8º, inc. III",
+    "subtopic": "Lei 13.303/2016 · Art. 8º, inc. III",
     "number": "Art. 8º, inc. III",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
@@ -901,7 +907,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-13303-pdf28-q022",
     "discipline": "adm",
     "topicId": "adm-lei-13303",
-    "subtopic": "Art. 8º, inc. IV",
+    "subtopic": "Lei 13.303/2016 · Art. 8º, inc. IV",
     "number": "Art. 8º, inc. IV",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
@@ -924,7 +930,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-13303-pdf28-q023",
     "discipline": "adm",
     "topicId": "adm-lei-13303",
-    "subtopic": "Art. 8º, inc. V",
+    "subtopic": "Lei 13.303/2016 · Art. 8º, inc. V",
     "number": "Art. 8º, inc. V",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
@@ -947,7 +953,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-13303-pdf28-q024",
     "discipline": "adm",
     "topicId": "adm-lei-13303",
-    "subtopic": "Art. 8º, inc. VI",
+    "subtopic": "Lei 13.303/2016 · Art. 8º, inc. VI",
     "number": "Art. 8º, inc. VI",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
@@ -970,7 +976,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-13303-pdf28-q025",
     "discipline": "adm",
     "topicId": "adm-lei-13303",
-    "subtopic": "Art. 8º, inc. VII",
+    "subtopic": "Lei 13.303/2016 · Art. 8º, inc. VII",
     "number": "Art. 8º, inc. VII",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
@@ -993,7 +999,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-13303-pdf28-q026",
     "discipline": "adm",
     "topicId": "adm-lei-13303",
-    "subtopic": "Art. 8º, inc. VII",
+    "subtopic": "Lei 13.303/2016 · Art. 8º, inc. VII",
     "number": "Art. 8º, inc. VII",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
@@ -1016,7 +1022,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-13303-pdf28-q027",
     "discipline": "adm",
     "topicId": "adm-lei-13303",
-    "subtopic": "Art. 8º, inc. VIII",
+    "subtopic": "Lei 13.303/2016 · Art. 8º, inc. VIII",
     "number": "Art. 8º, inc. VIII",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
@@ -1039,7 +1045,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-13303-pdf28-q028",
     "discipline": "adm",
     "topicId": "adm-lei-13303",
-    "subtopic": "Art. 8º, inc. IX",
+    "subtopic": "Lei 13.303/2016 · Art. 8º, inc. IX",
     "number": "Art. 8º, inc. IX",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
@@ -1062,7 +1068,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-13303-pdf28-q029",
     "discipline": "adm",
     "topicId": "adm-lei-13303",
-    "subtopic": "Art. 8º, inc. X",
+    "subtopic": "Lei 13.303/2016 · Art. 8º, inc. X",
     "number": "Art. 8º, inc. X",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
@@ -1078,14 +1084,15 @@ const DATA_ADM_PACK2 = [
       "bank": "Decorando a Lei Seca",
       "year": null,
       "role": "",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-13303-pdf28-q030",
     "discipline": "adm",
     "topicId": "adm-lei-13303",
-    "subtopic": "Art. 9º, § 1º, inc. VI",
+    "subtopic": "Lei 13.303/2016 · Art. 9º, § 1º, inc. VI",
     "number": "Art. 9º, § 1º, inc. VI",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
@@ -1108,7 +1115,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-13303-pdf28-q031",
     "discipline": "adm",
     "topicId": "adm-lei-13303",
-    "subtopic": "Art. 9º, § 3º, inc. II",
+    "subtopic": "Lei 13.303/2016 · Art. 9º, § 3º, inc. II",
     "number": "Art. 9º, § 3º, inc. II",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
@@ -1131,7 +1138,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-13303-pdf28-q032",
     "discipline": "adm",
     "topicId": "adm-lei-13303",
-    "subtopic": "Art. 11º",
+    "subtopic": "Lei 13.303/2016 · Art. 11º",
     "number": "Art. 11º",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
@@ -1154,7 +1161,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-13303-pdf28-q033",
     "discipline": "adm",
     "topicId": "adm-lei-13303",
-    "subtopic": "Art. 11º, inc. I",
+    "subtopic": "Lei 13.303/2016 · Art. 11º, inc. I",
     "number": "Art. 11º, inc. I",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
@@ -1177,7 +1184,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-13303-pdf28-q035",
     "discipline": "adm",
     "topicId": "adm-lei-13303",
-    "subtopic": "Art. 11º, inc. I",
+    "subtopic": "Lei 13.303/2016 · Art. 11º, inc. I",
     "number": "Art. 11º, inc. I",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
@@ -1193,14 +1200,15 @@ const DATA_ADM_PACK2 = [
       "bank": "EDUCA",
       "year": 2020,
       "role": "Contador (Prefeitura de São Francisco -",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-13303-pdf28-q036",
     "discipline": "adm",
     "topicId": "adm-lei-13303",
-    "subtopic": "Art. 11º, inc. II",
+    "subtopic": "Lei 13.303/2016 · Art. 11º, inc. II",
     "number": "Art. 11º, inc. II",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
@@ -1223,7 +1231,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-13303-pdf28-q037",
     "discipline": "adm",
     "topicId": "adm-lei-13303",
-    "subtopic": "Art. 15º, § 1º",
+    "subtopic": "Lei 13.303/2016 · Art. 15º, § 1º",
     "number": "Art. 15º, § 1º",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
@@ -1246,7 +1254,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-13303-pdf28-q038",
     "discipline": "adm",
     "topicId": "adm-lei-13303",
-    "subtopic": "Art. 17º, inc. I",
+    "subtopic": "Lei 13.303/2016 · Art. 17º, inc. I",
     "number": "Art. 17º, inc. I",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
@@ -1269,7 +1277,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-13303-pdf28-q040",
     "discipline": "adm",
     "topicId": "adm-lei-13303",
-    "subtopic": "Art. 17º, § 2º, inc. I",
+    "subtopic": "Lei 13.303/2016 · Art. 17º, § 2º, inc. I",
     "number": "Art. 17º, § 2º, inc. I",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
@@ -1292,7 +1300,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-13303-pdf28-q041",
     "discipline": "adm",
     "topicId": "adm-lei-13303",
-    "subtopic": "Art. 17º, § 2º, inc. I",
+    "subtopic": "Lei 13.303/2016 · Art. 17º, § 2º, inc. I",
     "number": "Art. 17º, § 2º, inc. I",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
@@ -1315,7 +1323,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-13303-pdf28-q042",
     "discipline": "adm",
     "topicId": "adm-lei-13303",
-    "subtopic": "Art. 17º, § 2º, inc. II",
+    "subtopic": "Lei 13.303/2016 · Art. 17º, § 2º, inc. II",
     "number": "Art. 17º, § 2º, inc. II",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
@@ -1338,7 +1346,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-13303-pdf28-q043",
     "discipline": "adm",
     "topicId": "adm-lei-13303",
-    "subtopic": "Art. 17º, § 2º, inc. II",
+    "subtopic": "Lei 13.303/2016 · Art. 17º, § 2º, inc. II",
     "number": "Art. 17º, § 2º, inc. II",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
@@ -1361,7 +1369,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-13303-pdf28-q044",
     "discipline": "adm",
     "topicId": "adm-lei-13303",
-    "subtopic": "Art. 18º, inc. I",
+    "subtopic": "Lei 13.303/2016 · Art. 18º, inc. I",
     "number": "Art. 18º, inc. I",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
@@ -1384,7 +1392,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-13303-pdf28-q045",
     "discipline": "adm",
     "topicId": "adm-lei-13303",
-    "subtopic": "Art. 18º, inc. III",
+    "subtopic": "Lei 13.303/2016 · Art. 18º, inc. III",
     "number": "Art. 18º, inc. III",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
@@ -1407,7 +1415,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-13303-pdf28-q046",
     "discipline": "adm",
     "topicId": "adm-lei-13303",
-    "subtopic": "Art. 19º",
+    "subtopic": "Lei 13.303/2016 · Art. 19º",
     "number": "Art. 19º",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
@@ -1423,14 +1431,15 @@ const DATA_ADM_PACK2 = [
       "bank": "Decorando a Lei Seca",
       "year": null,
       "role": "",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-13303-pdf28-q047",
     "discipline": "adm",
     "topicId": "adm-lei-13303",
-    "subtopic": "Art. 22º, inc. IV",
+    "subtopic": "Lei 13.303/2016 · Art. 22º, inc. IV",
     "number": "Art. 22º, inc. IV",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
@@ -1453,7 +1462,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-13303-pdf28-q048",
     "discipline": "adm",
     "topicId": "adm-lei-13303",
-    "subtopic": "Art. 24º",
+    "subtopic": "Lei 13.303/2016 · Art. 24º",
     "number": "Art. 24º",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
@@ -1476,7 +1485,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-13303-pdf28-q049",
     "discipline": "adm",
     "topicId": "adm-lei-13303",
-    "subtopic": "Art. 24º, § 1º, inc. I",
+    "subtopic": "Lei 13.303/2016 · Art. 24º, § 1º, inc. I",
     "number": "Art. 24º, § 1º, inc. I",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
@@ -1499,7 +1508,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-13303-pdf28-q050",
     "discipline": "adm",
     "topicId": "adm-lei-13303",
-    "subtopic": "Art. 24º, § 1º, inc. II",
+    "subtopic": "Lei 13.303/2016 · Art. 24º, § 1º, inc. II",
     "number": "Art. 24º, § 1º, inc. II",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
@@ -1522,7 +1531,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-13848-pdf32-q001",
     "discipline": "adm",
     "topicId": "adm-lei-13848",
-    "subtopic": "Art. 2º",
+    "subtopic": "Lei 13.848/2019 · Art. 2º",
     "number": "Art. 2º",
     "title": "Lei 13.848/2019 — Agências reguladoras",
     "parts": [
@@ -1538,14 +1547,15 @@ const DATA_ADM_PACK2 = [
       "bank": "Decorando a Lei Seca",
       "year": null,
       "role": "",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-13848-pdf32-q002",
     "discipline": "adm",
     "topicId": "adm-lei-13848",
-    "subtopic": "Art. 2º, inc. XII",
+    "subtopic": "Lei 13.848/2019 · Art. 2º, inc. XII",
     "number": "Art. 2º, inc. XII",
     "title": "Lei 13.848/2019 — Agências reguladoras",
     "parts": [
@@ -1561,14 +1571,15 @@ const DATA_ADM_PACK2 = [
       "bank": "Decorando a Lei Seca",
       "year": null,
       "role": "",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-13848-pdf32-q003",
     "discipline": "adm",
     "topicId": "adm-lei-13848",
-    "subtopic": "Art. 2º, parágrafo único",
+    "subtopic": "Lei 13.848/2019 · Art. 2º, parágrafo único",
     "number": "Art. 2º, parágrafo único",
     "title": "Lei 13.848/2019 — Agências reguladoras",
     "parts": [
@@ -1591,7 +1602,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-13848-pdf32-q004",
     "discipline": "adm",
     "topicId": "adm-lei-13848",
-    "subtopic": "Art. 2º, parágrafo único",
+    "subtopic": "Lei 13.848/2019 · Art. 2º, parágrafo único",
     "number": "Art. 2º, parágrafo único",
     "title": "Lei 13.848/2019 — Agências reguladoras",
     "parts": [
@@ -1607,14 +1618,15 @@ const DATA_ADM_PACK2 = [
       "bank": "Decorando a Lei Seca",
       "year": null,
       "role": "",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-13848-pdf32-q012",
     "discipline": "adm",
     "topicId": "adm-lei-13848",
-    "subtopic": "Art. 3º",
+    "subtopic": "Lei 13.848/2019 · Art. 3º",
     "number": "Art. 3º",
     "title": "Lei 13.848/2019 — Agências reguladoras",
     "parts": [
@@ -1637,7 +1649,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-13848-pdf32-q013",
     "discipline": "adm",
     "topicId": "adm-lei-13848",
-    "subtopic": "Art. 3º",
+    "subtopic": "Lei 13.848/2019 · Art. 3º",
     "number": "Art. 3º",
     "title": "Lei 13.848/2019 — Agências reguladoras",
     "parts": [
@@ -1660,7 +1672,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-13848-pdf32-q014",
     "discipline": "adm",
     "topicId": "adm-lei-13848",
-    "subtopic": "Art. 3º, § 2º, inc. I",
+    "subtopic": "Lei 13.848/2019 · Art. 3º, § 2º, inc. I",
     "number": "Art. 3º, § 2º, inc. I",
     "title": "Lei 13.848/2019 — Agências reguladoras",
     "parts": [
@@ -1683,7 +1695,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-13848-pdf32-q015",
     "discipline": "adm",
     "topicId": "adm-lei-13848",
-    "subtopic": "Art. 3º, § 2º, inc. I",
+    "subtopic": "Lei 13.848/2019 · Art. 3º, § 2º, inc. I",
     "number": "Art. 3º, § 2º, inc. I",
     "title": "Lei 13.848/2019 — Agências reguladoras",
     "parts": [
@@ -1706,7 +1718,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-13848-pdf32-q016",
     "discipline": "adm",
     "topicId": "adm-lei-13848",
-    "subtopic": "Art. 3º, § 2º, inc. III",
+    "subtopic": "Lei 13.848/2019 · Art. 3º, § 2º, inc. III",
     "number": "Art. 3º, § 2º, inc. III",
     "title": "Lei 13.848/2019 — Agências reguladoras",
     "parts": [
@@ -1722,14 +1734,15 @@ const DATA_ADM_PACK2 = [
       "bank": "FUNDATEC",
       "year": 2019,
       "role": "Auditor Fiscal da Receita",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-13848-pdf32-q017",
     "discipline": "adm",
     "topicId": "adm-lei-13848",
-    "subtopic": "Art. 3º, § 3º",
+    "subtopic": "Lei 13.848/2019 · Art. 3º, § 3º",
     "number": "Art. 3º, § 3º",
     "title": "Lei 13.848/2019 — Agências reguladoras",
     "parts": [
@@ -1752,7 +1765,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-13848-pdf32-q020",
     "discipline": "adm",
     "topicId": "adm-lei-13848",
-    "subtopic": "Art. 3º, § 3º",
+    "subtopic": "Lei 13.848/2019 · Art. 3º, § 3º",
     "number": "Art. 3º, § 3º",
     "title": "Lei 13.848/2019 — Agências reguladoras",
     "parts": [
@@ -1775,7 +1788,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-13848-pdf32-q021",
     "discipline": "adm",
     "topicId": "adm-lei-13848",
-    "subtopic": "Art. 4º",
+    "subtopic": "Lei 13.848/2019 · Art. 4º",
     "number": "Art. 4º",
     "title": "Lei 13.848/2019 — Agências reguladoras",
     "parts": [
@@ -1791,14 +1804,15 @@ const DATA_ADM_PACK2 = [
       "bank": "IBFC",
       "year": 2019,
       "role": "Procurador Municipal (Prefeitura de Cabo",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-13848-pdf32-q022",
     "discipline": "adm",
     "topicId": "adm-lei-13848",
-    "subtopic": "Art. 5º",
+    "subtopic": "Lei 13.848/2019 · Art. 5º",
     "number": "Art. 5º",
     "title": "Lei 13.848/2019 — Agências reguladoras",
     "parts": [
@@ -1814,14 +1828,15 @@ const DATA_ADM_PACK2 = [
       "bank": "IBFC",
       "year": 2019,
       "role": "Procurador Municipal (Prefeitura de Cabo",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-13848-pdf32-q023",
     "discipline": "adm",
     "topicId": "adm-lei-13848",
-    "subtopic": "Art. 5º",
+    "subtopic": "Lei 13.848/2019 · Art. 5º",
     "number": "Art. 5º",
     "title": "Lei 13.848/2019 — Agências reguladoras",
     "parts": [
@@ -1837,14 +1852,15 @@ const DATA_ADM_PACK2 = [
       "bank": "Decorando a Lei Seca",
       "year": null,
       "role": "",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-13848-pdf32-q024",
     "discipline": "adm",
     "topicId": "adm-lei-13848",
-    "subtopic": "Art. 6º",
+    "subtopic": "Lei 13.848/2019 · Art. 6º",
     "number": "Art. 6º",
     "title": "Lei 13.848/2019 — Agências reguladoras",
     "parts": [
@@ -1867,7 +1883,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-13848-pdf32-q025",
     "discipline": "adm",
     "topicId": "adm-lei-13848",
-    "subtopic": "Art. 6º",
+    "subtopic": "Lei 13.848/2019 · Art. 6º",
     "number": "Art. 6º",
     "title": "Lei 13.848/2019 — Agências reguladoras",
     "parts": [
@@ -1890,7 +1906,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-13848-pdf32-q027",
     "discipline": "adm",
     "topicId": "adm-lei-13848",
-    "subtopic": "Art. 6º, § 1º",
+    "subtopic": "Lei 13.848/2019 · Art. 6º, § 1º",
     "number": "Art. 6º, § 1º",
     "title": "Lei 13.848/2019 — Agências reguladoras",
     "parts": [
@@ -1913,7 +1929,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-13848-pdf32-q028",
     "discipline": "adm",
     "topicId": "adm-lei-13848",
-    "subtopic": "Art. 6º, § 3º",
+    "subtopic": "Lei 13.848/2019 · Art. 6º, § 3º",
     "number": "Art. 6º, § 3º",
     "title": "Lei 13.848/2019 — Agências reguladoras",
     "parts": [
@@ -1936,7 +1952,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-13848-pdf32-q030",
     "discipline": "adm",
     "topicId": "adm-lei-13848",
-    "subtopic": "Art. 6º, § 4º",
+    "subtopic": "Lei 13.848/2019 · Art. 6º, § 4º",
     "number": "Art. 6º, § 4º",
     "title": "Lei 13.848/2019 — Agências reguladoras",
     "parts": [
@@ -1959,7 +1975,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-13848-pdf32-q031",
     "discipline": "adm",
     "topicId": "adm-lei-13848",
-    "subtopic": "Art. 7º",
+    "subtopic": "Lei 13.848/2019 · Art. 7º",
     "number": "Art. 7º",
     "title": "Lei 13.848/2019 — Agências reguladoras",
     "parts": [
@@ -1975,14 +1991,15 @@ const DATA_ADM_PACK2 = [
       "bank": "Decorando a Lei Seca",
       "year": null,
       "role": "",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-13848-pdf32-q032",
     "discipline": "adm",
     "topicId": "adm-lei-13848",
-    "subtopic": "Art. 7º",
+    "subtopic": "Lei 13.848/2019 · Art. 7º",
     "number": "Art. 7º",
     "title": "Lei 13.848/2019 — Agências reguladoras",
     "parts": [
@@ -1998,14 +2015,15 @@ const DATA_ADM_PACK2 = [
       "bank": "IBFC",
       "year": 2019,
       "role": "Procurador Municipal (Prefeitura de Cabo",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-13848-pdf32-q033",
     "discipline": "adm",
     "topicId": "adm-lei-13848",
-    "subtopic": "Art. 7º, § 2º",
+    "subtopic": "Lei 13.848/2019 · Art. 7º, § 2º",
     "number": "Art. 7º, § 2º",
     "title": "Lei 13.848/2019 — Agências reguladoras",
     "parts": [
@@ -2021,14 +2039,15 @@ const DATA_ADM_PACK2 = [
       "bank": "Decorando a Lei Seca",
       "year": null,
       "role": "",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-13848-pdf32-q034",
     "discipline": "adm",
     "topicId": "adm-lei-13848",
-    "subtopic": "Art. 7º, § 2º",
+    "subtopic": "Lei 13.848/2019 · Art. 7º, § 2º",
     "number": "Art. 7º, § 2º",
     "title": "Lei 13.848/2019 — Agências reguladoras",
     "parts": [
@@ -2051,7 +2070,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-13848-pdf32-q035",
     "discipline": "adm",
     "topicId": "adm-lei-13848",
-    "subtopic": "Art. 8º",
+    "subtopic": "Lei 13.848/2019 · Art. 8º",
     "number": "Art. 8º",
     "title": "Lei 13.848/2019 — Agências reguladoras",
     "parts": [
@@ -2074,7 +2093,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-13848-pdf32-q036",
     "discipline": "adm",
     "topicId": "adm-lei-13848",
-    "subtopic": "Art. 8º, § 1º",
+    "subtopic": "Lei 13.848/2019 · Art. 8º, § 1º",
     "number": "Art. 8º, § 1º",
     "title": "Lei 13.848/2019 — Agências reguladoras",
     "parts": [
@@ -2090,14 +2109,15 @@ const DATA_ADM_PACK2 = [
       "bank": "Decorando a Lei Seca",
       "year": null,
       "role": "",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-13848-pdf32-q037",
     "discipline": "adm",
     "topicId": "adm-lei-13848",
-    "subtopic": "Art. 8º, § 1º",
+    "subtopic": "Lei 13.848/2019 · Art. 8º, § 1º",
     "number": "Art. 8º, § 1º",
     "title": "Lei 13.848/2019 — Agências reguladoras",
     "parts": [
@@ -2120,7 +2140,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-13848-pdf32-q038",
     "discipline": "adm",
     "topicId": "adm-lei-13848",
-    "subtopic": "Art. 8º, § 6º",
+    "subtopic": "Lei 13.848/2019 · Art. 8º, § 6º",
     "number": "Art. 8º, § 6º",
     "title": "Lei 13.848/2019 — Agências reguladoras",
     "parts": [
@@ -2143,7 +2163,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-13848-pdf32-q039",
     "discipline": "adm",
     "topicId": "adm-lei-13848",
-    "subtopic": "Art. 9º",
+    "subtopic": "Lei 13.848/2019 · Art. 9º",
     "number": "Art. 9º",
     "title": "Lei 13.848/2019 — Agências reguladoras",
     "parts": [
@@ -2166,7 +2186,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-13848-pdf32-q041",
     "discipline": "adm",
     "topicId": "adm-lei-13848",
-    "subtopic": "Art. 9º",
+    "subtopic": "Lei 13.848/2019 · Art. 9º",
     "number": "Art. 9º",
     "title": "Lei 13.848/2019 — Agências reguladoras",
     "parts": [
@@ -2189,7 +2209,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-13848-pdf32-q042",
     "discipline": "adm",
     "topicId": "adm-lei-13848",
-    "subtopic": "Art. 9º, § 4º",
+    "subtopic": "Lei 13.848/2019 · Art. 9º, § 4º",
     "number": "Art. 9º, § 4º",
     "title": "Lei 13.848/2019 — Agências reguladoras",
     "parts": [
@@ -2212,7 +2232,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-13848-pdf32-q043",
     "discipline": "adm",
     "topicId": "adm-lei-13848",
-    "subtopic": "Art. 9º, § 5º",
+    "subtopic": "Lei 13.848/2019 · Art. 9º, § 5º",
     "number": "Art. 9º, § 5º",
     "title": "Lei 13.848/2019 — Agências reguladoras",
     "parts": [
@@ -2228,14 +2248,15 @@ const DATA_ADM_PACK2 = [
       "bank": "Decorando a Lei Seca",
       "year": null,
       "role": "",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-13848-pdf32-q044",
     "discipline": "adm",
     "topicId": "adm-lei-13848",
-    "subtopic": "Art. 9º, § 7º",
+    "subtopic": "Lei 13.848/2019 · Art. 9º, § 7º",
     "number": "Art. 9º, § 7º",
     "title": "Lei 13.848/2019 — Agências reguladoras",
     "parts": [
@@ -2258,7 +2279,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-13848-pdf32-q045",
     "discipline": "adm",
     "topicId": "adm-lei-13848",
-    "subtopic": "Art. 10º, § 2º",
+    "subtopic": "Lei 13.848/2019 · Art. 10º, § 2º",
     "number": "Art. 10º, § 2º",
     "title": "Lei 13.848/2019 — Agências reguladoras",
     "parts": [
@@ -2274,14 +2295,15 @@ const DATA_ADM_PACK2 = [
       "bank": "Decorando a Lei Seca",
       "year": null,
       "role": "",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-13848-pdf32-q046",
     "discipline": "adm",
     "topicId": "adm-lei-13848",
-    "subtopic": "Art. 11º",
+    "subtopic": "Lei 13.848/2019 · Art. 11º",
     "number": "Art. 11º",
     "title": "Lei 13.848/2019 — Agências reguladoras",
     "parts": [
@@ -2304,7 +2326,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-13848-pdf32-q047",
     "discipline": "adm",
     "topicId": "adm-lei-13848",
-    "subtopic": "Art. 13º",
+    "subtopic": "Lei 13.848/2019 · Art. 13º",
     "number": "Art. 13º",
     "title": "Lei 13.848/2019 — Agências reguladoras",
     "parts": [
@@ -2320,14 +2342,15 @@ const DATA_ADM_PACK2 = [
       "bank": "Decorando a Lei Seca",
       "year": null,
       "role": "",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-13848-pdf32-q049",
     "discipline": "adm",
     "topicId": "adm-lei-13848",
-    "subtopic": "Art. 14º",
+    "subtopic": "Lei 13.848/2019 · Art. 14º",
     "number": "Art. 14º",
     "title": "Lei 13.848/2019 — Agências reguladoras",
     "parts": [
@@ -2350,7 +2373,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-13848-pdf32-q050",
     "discipline": "adm",
     "topicId": "adm-lei-13848",
-    "subtopic": "Art. 14º",
+    "subtopic": "Lei 13.848/2019 · Art. 14º",
     "number": "Art. 14º",
     "title": "Lei 13.848/2019 — Agências reguladoras",
     "parts": [
@@ -2373,7 +2396,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-8443-pdf58-q002",
     "discipline": "adm",
     "topicId": "adm-lei-8443",
-    "subtopic": "Art. 1º, inc. VI",
+    "subtopic": "Lei 8.443/1992 · Art. 1º, inc. VI",
     "number": "Art. 1º, inc. VI",
     "title": "Lei 8.443/1992 — Tribunal de Contas da União",
     "parts": [
@@ -2389,14 +2412,15 @@ const DATA_ADM_PACK2 = [
       "bank": "Instituto Consulplan",
       "year": 2020,
       "role": "Controlador Interno (Câmara",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-8443-pdf58-q003",
     "discipline": "adm",
     "topicId": "adm-lei-8443",
-    "subtopic": "Art. 5º, inc. I",
+    "subtopic": "Lei 8.443/1992 · Art. 5º, inc. I",
     "number": "Art. 5º, inc. I",
     "title": "Lei 8.443/1992 — Tribunal de Contas da União",
     "parts": [
@@ -2412,14 +2436,15 @@ const DATA_ADM_PACK2 = [
       "bank": "BIO-RIO",
       "year": 2015,
       "role": "Administrador (IF-RJ)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-8443-pdf58-q004",
     "discipline": "adm",
     "topicId": "adm-lei-8443",
-    "subtopic": "Art. 5º, inc. V",
+    "subtopic": "Lei 8.443/1992 · Art. 5º, inc. V",
     "number": "Art. 5º, inc. V",
     "title": "Lei 8.443/1992 — Tribunal de Contas da União",
     "parts": [
@@ -2435,14 +2460,15 @@ const DATA_ADM_PACK2 = [
       "bank": "BIO-RIO",
       "year": 2015,
       "role": "Tecnólogo - Gestão Pública (IF-RJ)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-8443-pdf58-q006",
     "discipline": "adm",
     "topicId": "adm-lei-8443",
-    "subtopic": "Art. 5º, inc. IX",
+    "subtopic": "Lei 8.443/1992 · Art. 5º, inc. IX",
     "number": "Art. 5º, inc. IX",
     "title": "Lei 8.443/1992 — Tribunal de Contas da União",
     "parts": [
@@ -2458,14 +2484,15 @@ const DATA_ADM_PACK2 = [
       "bank": "BIO-RIO",
       "year": 2015,
       "role": "Tecnólogo - Gestão Pública (IF-RJ)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-8443-pdf58-q007",
     "discipline": "adm",
     "topicId": "adm-lei-8443",
-    "subtopic": "Art. 5º",
+    "subtopic": "Lei 8.443/1992 · Art. 5º",
     "number": "Art. 5º",
     "title": "Lei 8.443/1992 — Tribunal de Contas da União",
     "parts": [
@@ -2481,14 +2508,15 @@ const DATA_ADM_PACK2 = [
       "bank": "CESPE/CEBRASPE",
       "year": 2010,
       "role": "Auditor Federal de Controle",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-8443-pdf58-q008",
     "discipline": "adm",
     "topicId": "adm-lei-8443",
-    "subtopic": "Art. 1º, inc. I",
+    "subtopic": "Lei 8.443/1992 · Art. 1º, inc. I",
     "number": "Art. 1º, inc. I",
     "title": "Lei 8.443/1992 — Tribunal de Contas da União",
     "parts": [
@@ -2504,14 +2532,15 @@ const DATA_ADM_PACK2 = [
       "bank": "CESPE/CEBRASPE",
       "year": 2010,
       "role": "Analista - Ciências Contábeis",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-8443-pdf58-q009",
     "discipline": "adm",
     "topicId": "adm-lei-8443",
-    "subtopic": "Art. 3º",
+    "subtopic": "Lei 8.443/1992 · Art. 3º",
     "number": "Art. 3º",
     "title": "Lei 8.443/1992 — Tribunal de Contas da União",
     "parts": [
@@ -2527,14 +2556,15 @@ const DATA_ADM_PACK2 = [
       "bank": "CESPE/CEBRASPE",
       "year": 2010,
       "role": "Auditor Federal de Controle",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-8443-pdf58-q010",
     "discipline": "adm",
     "topicId": "adm-lei-8443",
-    "subtopic": "Art. 7º, parágrafo único",
+    "subtopic": "Lei 8.443/1992 · Art. 7º, parágrafo único",
     "number": "Art. 7º, parágrafo único",
     "title": "Lei 8.443/1992 — Tribunal de Contas da União",
     "parts": [
@@ -2550,14 +2580,15 @@ const DATA_ADM_PACK2 = [
       "bank": "BIO-RIO",
       "year": 2015,
       "role": "Tecnólogo - Gestão Pública (IF-RJ)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-8443-pdf58-q011",
     "discipline": "adm",
     "topicId": "adm-lei-8443",
-    "subtopic": "Art. 9º, inc. III",
+    "subtopic": "Lei 8.443/1992 · Art. 9º, inc. III",
     "number": "Art. 9º, inc. III",
     "title": "Lei 8.443/1992 — Tribunal de Contas da União",
     "parts": [
@@ -2573,14 +2604,15 @@ const DATA_ADM_PACK2 = [
       "bank": "IF-PA",
       "year": 2019,
       "role": "Auditor",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-8443-pdf58-q012",
     "discipline": "adm",
     "topicId": "adm-lei-8443",
-    "subtopic": "Art. 10º, § 2º",
+    "subtopic": "Lei 8.443/1992 · Art. 10º, § 2º",
     "number": "Art. 10º, § 2º",
     "title": "Lei 8.443/1992 — Tribunal de Contas da União",
     "parts": [
@@ -2596,14 +2628,15 @@ const DATA_ADM_PACK2 = [
       "bank": "BIO-RIO",
       "year": 2015,
       "role": "Auditor (IF-RJ)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-8443-pdf58-q013",
     "discipline": "adm",
     "topicId": "adm-lei-8443",
-    "subtopic": "Art. 10º, § 2º",
+    "subtopic": "Lei 8.443/1992 · Art. 10º, § 2º",
     "number": "Art. 10º, § 2º",
     "title": "Lei 8.443/1992 — Tribunal de Contas da União",
     "parts": [
@@ -2619,14 +2652,15 @@ const DATA_ADM_PACK2 = [
       "bank": "BIO-RIO",
       "year": 2015,
       "role": "Tecnólogo - Gestão Pública (IF-RJ)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-8443-pdf58-q014",
     "discipline": "adm",
     "topicId": "adm-lei-8443",
-    "subtopic": "Art. 10º, § 3º",
+    "subtopic": "Lei 8.443/1992 · Art. 10º, § 3º",
     "number": "Art. 10º, § 3º",
     "title": "Lei 8.443/1992 — Tribunal de Contas da União",
     "parts": [
@@ -2642,14 +2676,15 @@ const DATA_ADM_PACK2 = [
       "bank": "FUNIVERSA",
       "year": 2015,
       "role": "Especialista Socioeducativo -",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-8443-pdf58-q015",
     "discipline": "adm",
     "topicId": "adm-lei-8443",
-    "subtopic": "Art. 12º, inc. I",
+    "subtopic": "Lei 8.443/1992 · Art. 12º, inc. I",
     "number": "Art. 12º, inc. I",
     "title": "Lei 8.443/1992 — Tribunal de Contas da União",
     "parts": [
@@ -2665,14 +2700,15 @@ const DATA_ADM_PACK2 = [
       "bank": "BIO-RIO",
       "year": 2015,
       "role": "Tecnólogo - Gestão Pública (IF-RJ)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-8443-pdf58-q016",
     "discipline": "adm",
     "topicId": "adm-lei-8443",
-    "subtopic": "Art. 12º, inc. II",
+    "subtopic": "Lei 8.443/1992 · Art. 12º, inc. II",
     "number": "Art. 12º, inc. II",
     "title": "Lei 8.443/1992 — Tribunal de Contas da União",
     "parts": [
@@ -2688,14 +2724,15 @@ const DATA_ADM_PACK2 = [
       "bank": "CESPE/CEBRASPE",
       "year": 2018,
       "role": "Analista de Controle Interno",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-8443-pdf58-q017",
     "discipline": "adm",
     "topicId": "adm-lei-8443",
-    "subtopic": "Art. 12º",
+    "subtopic": "Lei 8.443/1992 · Art. 12º",
     "number": "Art. 12º",
     "title": "Lei 8.443/1992 — Tribunal de Contas da União",
     "parts": [
@@ -2711,14 +2748,15 @@ const DATA_ADM_PACK2 = [
       "bank": "CESPE/CEBRASPE",
       "year": 2019,
       "role": "Procurador de Contas",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-8443-pdf58-q018",
     "discipline": "adm",
     "topicId": "adm-lei-8443",
-    "subtopic": "Art. 16º",
+    "subtopic": "Lei 8.443/1992 · Art. 16º",
     "number": "Art. 16º",
     "title": "Lei 8.443/1992 — Tribunal de Contas da União",
     "parts": [
@@ -2734,14 +2772,15 @@ const DATA_ADM_PACK2 = [
       "bank": "CEPS",
       "year": 2019,
       "role": "Contador (UFPA)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-8443-pdf58-q019",
     "discipline": "adm",
     "topicId": "adm-lei-8443",
-    "subtopic": "Art. 16º, inc. III",
+    "subtopic": "Lei 8.443/1992 · Art. 16º, inc. III",
     "number": "Art. 16º, inc. III",
     "title": "Lei 8.443/1992 — Tribunal de Contas da União",
     "parts": [
@@ -2757,14 +2796,15 @@ const DATA_ADM_PACK2 = [
       "bank": "FUNIVERSA",
       "year": 2016,
       "role": "Técnico em Contabilidade (IF-AP)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-8443-pdf58-q020",
     "discipline": "adm",
     "topicId": "adm-lei-8443",
-    "subtopic": "Art. 16º, inc. III",
+    "subtopic": "Lei 8.443/1992 · Art. 16º, inc. III",
     "number": "Art. 16º, inc. III",
     "title": "Lei 8.443/1992 — Tribunal de Contas da União",
     "parts": [
@@ -2780,14 +2820,15 @@ const DATA_ADM_PACK2 = [
       "bank": "FUNIVERSA",
       "year": 2016,
       "role": "Contador (IF-AP)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-8443-pdf58-q022",
     "discipline": "adm",
     "topicId": "adm-lei-8443",
-    "subtopic": "Art. 16º, § 1º",
+    "subtopic": "Lei 8.443/1992 · Art. 16º, § 1º",
     "number": "Art. 16º, § 1º",
     "title": "Lei 8.443/1992 — Tribunal de Contas da União",
     "parts": [
@@ -2803,14 +2844,15 @@ const DATA_ADM_PACK2 = [
       "bank": "BIO-RIO",
       "year": 2015,
       "role": "Administrador (IF-RJ)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-8443-pdf58-q023",
     "discipline": "adm",
     "topicId": "adm-lei-8443",
-    "subtopic": "Art. 20º",
+    "subtopic": "Lei 8.443/1992 · Art. 20º",
     "number": "Art. 20º",
     "title": "Lei 8.443/1992 — Tribunal de Contas da União",
     "parts": [
@@ -2826,14 +2868,15 @@ const DATA_ADM_PACK2 = [
       "bank": "BIO-RIO",
       "year": 2015,
       "role": "Contador (IF-RJ)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-8443-pdf58-q024",
     "discipline": "adm",
     "topicId": "adm-lei-8443",
-    "subtopic": "Art. 32º",
+    "subtopic": "Lei 8.443/1992 · Art. 32º",
     "number": "Art. 32º",
     "title": "Lei 8.443/1992 — Tribunal de Contas da União",
     "parts": [
@@ -2849,14 +2892,15 @@ const DATA_ADM_PACK2 = [
       "bank": "AOCP",
       "year": 2015,
       "role": "Analista Judiciário - Área Contabilidade (TRE\u0002AC)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-8443-pdf58-q025",
     "discipline": "adm",
     "topicId": "adm-lei-8443",
-    "subtopic": "Art. 48º",
+    "subtopic": "Lei 8.443/1992 · Art. 48º",
     "number": "Art. 48º",
     "title": "Lei 8.443/1992 — Tribunal de Contas da União",
     "parts": [
@@ -2872,14 +2916,15 @@ const DATA_ADM_PACK2 = [
       "bank": "CESGRANRIO",
       "year": 2018,
       "role": "Profissional Júnior - Auditoria",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-8443-pdf58-q026",
     "discipline": "adm",
     "topicId": "adm-lei-8443",
-    "subtopic": "Art. 60º",
+    "subtopic": "Lei 8.443/1992 · Art. 60º",
     "number": "Art. 60º",
     "title": "Lei 8.443/1992 — Tribunal de Contas da União",
     "parts": [
@@ -2895,14 +2940,15 @@ const DATA_ADM_PACK2 = [
       "bank": "CESPE/CEBRASPE",
       "year": 2015,
       "role": "Técnico Federal de Controle",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-8443-pdf58-q028",
     "discipline": "adm",
     "topicId": "adm-lei-8443",
-    "subtopic": "Art. 10º",
+    "subtopic": "Lei 8.443/1992 · Art. 10º",
     "number": "Art. 10º",
     "title": "Lei 8.443/1992 — Tribunal de Contas da União",
     "parts": [
@@ -2918,14 +2964,15 @@ const DATA_ADM_PACK2 = [
       "bank": "CESPE/CEBRASPE",
       "year": 2009,
       "role": "Analista de Controle Externo",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-8443-pdf58-q029",
     "discipline": "adm",
     "topicId": "adm-lei-8443",
-    "subtopic": "Art. 7º, parágrafo único",
+    "subtopic": "Lei 8.443/1992 · Art. 7º, parágrafo único",
     "number": "Art. 7º, parágrafo único",
     "title": "Lei 8.443/1992 — Tribunal de Contas da União",
     "parts": [
@@ -2941,14 +2988,15 @@ const DATA_ADM_PACK2 = [
       "bank": "CESPE/CEBRASPE",
       "year": 2010,
       "role": "Auditor Federal de",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-8443-pdf58-q030",
     "discipline": "adm",
     "topicId": "adm-lei-8443",
-    "subtopic": "Art. 10º, § 3º",
+    "subtopic": "Lei 8.443/1992 · Art. 10º, § 3º",
     "number": "Art. 10º, § 3º",
     "title": "Lei 8.443/1992 — Tribunal de Contas da União",
     "parts": [
@@ -2964,14 +3012,15 @@ const DATA_ADM_PACK2 = [
       "bank": "CESPE/CEBRASPE",
       "year": 2010,
       "role": "Auditor Federal de Controle",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-8443-pdf58-q031",
     "discipline": "adm",
     "topicId": "adm-lei-8443",
-    "subtopic": "Art. 16º, inc. II",
+    "subtopic": "Lei 8.443/1992 · Art. 16º, inc. II",
     "number": "Art. 16º, inc. II",
     "title": "Lei 8.443/1992 — Tribunal de Contas da União",
     "parts": [
@@ -2987,14 +3036,15 @@ const DATA_ADM_PACK2 = [
       "bank": "CESPE/CEBRASPE",
       "year": 2010,
       "role": "Auditor Federal de Controle",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-8443-pdf58-q032",
     "discipline": "adm",
     "topicId": "adm-lei-8443",
-    "subtopic": "Art. 46º",
+    "subtopic": "Lei 8.443/1992 · Art. 46º",
     "number": "Art. 46º",
     "title": "Lei 8.443/1992 — Tribunal de Contas da União",
     "parts": [
@@ -3010,14 +3060,15 @@ const DATA_ADM_PACK2 = [
       "bank": "FUNIVERSA",
       "year": 2010,
       "role": "Contador (MTur)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-8443-pdf58-q033",
     "discipline": "adm",
     "topicId": "adm-lei-8443",
-    "subtopic": "Art. 61º",
+    "subtopic": "Lei 8.443/1992 · Art. 61º",
     "number": "Art. 61º",
     "title": "Lei 8.443/1992 — Tribunal de Contas da União",
     "parts": [
@@ -3033,14 +3084,15 @@ const DATA_ADM_PACK2 = [
       "bank": "FUNIVERSA",
       "year": 2010,
       "role": "Contador (MTur)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-8443-pdf58-q034",
     "discipline": "adm",
     "topicId": "adm-lei-8443",
-    "subtopic": "Art. 44º",
+    "subtopic": "Lei 8.443/1992 · Art. 44º",
     "number": "Art. 44º",
     "title": "Lei 8.443/1992 — Tribunal de Contas da União",
     "parts": [
@@ -3056,14 +3108,15 @@ const DATA_ADM_PACK2 = [
       "bank": "FUNIVERSA",
       "year": 2010,
       "role": "Contador (MTur)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-8443-pdf58-q035",
     "discipline": "adm",
     "topicId": "adm-lei-8443",
-    "subtopic": "Art. 57º",
+    "subtopic": "Lei 8.443/1992 · Art. 57º",
     "number": "Art. 57º",
     "title": "Lei 8.443/1992 — Tribunal de Contas da União",
     "parts": [
@@ -3079,14 +3132,15 @@ const DATA_ADM_PACK2 = [
       "bank": "FUNIVERSA",
       "year": 2010,
       "role": "Contador (MTur)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-8443-pdf58-q036",
     "discipline": "adm",
     "topicId": "adm-lei-8443",
-    "subtopic": "Art. 9º, inc. III",
+    "subtopic": "Lei 8.443/1992 · Art. 9º, inc. III",
     "number": "Art. 9º, inc. III",
     "title": "Lei 8.443/1992 — Tribunal de Contas da União",
     "parts": [
@@ -3102,14 +3156,15 @@ const DATA_ADM_PACK2 = [
       "bank": "CESPE/CEBRASPE",
       "year": 2010,
       "role": "Analista - Ciências Contábeis",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-8443-pdf58-q037",
     "discipline": "adm",
     "topicId": "adm-lei-8443",
-    "subtopic": "Art. 8º",
+    "subtopic": "Lei 8.443/1992 · Art. 8º",
     "number": "Art. 8º",
     "title": "Lei 8.443/1992 — Tribunal de Contas da União",
     "parts": [
@@ -3125,14 +3180,15 @@ const DATA_ADM_PACK2 = [
       "bank": "CESPE/CEBRASPE",
       "year": 2010,
       "role": "Analista - Ciências Contábeis",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-8443-pdf58-q038",
     "discipline": "adm",
     "topicId": "adm-lei-8443",
-    "subtopic": "Art. 23º, inc. III",
+    "subtopic": "Lei 8.443/1992 · Art. 23º, inc. III",
     "number": "Art. 23º, inc. III",
     "title": "Lei 8.443/1992 — Tribunal de Contas da União",
     "parts": [
@@ -3148,14 +3204,15 @@ const DATA_ADM_PACK2 = [
       "bank": "CESPE/CEBRASPE",
       "year": 2009,
       "role": "Procurador Especial de",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-8443-pdf58-q039",
     "discipline": "adm",
     "topicId": "adm-lei-8443",
-    "subtopic": "Art. 24º",
+    "subtopic": "Lei 8.443/1992 · Art. 24º",
     "number": "Art. 24º",
     "title": "Lei 8.443/1992 — Tribunal de Contas da União",
     "parts": [
@@ -3171,14 +3228,15 @@ const DATA_ADM_PACK2 = [
       "bank": "CESPE/CEBRASPE",
       "year": 2009,
       "role": "Analista de Controle Externo",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-8443-pdf58-q040",
     "discipline": "adm",
     "topicId": "adm-lei-8443",
-    "subtopic": "Art. 55º, § 2º",
+    "subtopic": "Lei 8.443/1992 · Art. 55º, § 2º",
     "number": "Art. 55º, § 2º",
     "title": "Lei 8.443/1992 — Tribunal de Contas da União",
     "parts": [
@@ -3194,14 +3252,15 @@ const DATA_ADM_PACK2 = [
       "bank": "CESPE/CEBRASPE",
       "year": 2009,
       "role": "Analista de Controle Externo",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-8443-pdf58-q041",
     "discipline": "adm",
     "topicId": "adm-lei-8443",
-    "subtopic": "Art. 17º",
+    "subtopic": "Lei 8.443/1992 · Art. 17º",
     "number": "Art. 17º",
     "title": "Lei 8.443/1992 — Tribunal de Contas da União",
     "parts": [
@@ -3217,14 +3276,15 @@ const DATA_ADM_PACK2 = [
       "bank": "CESPE/CEBRASPE",
       "year": 2010,
       "role": "Auditor Federal de Controle",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-8443-pdf58-q042",
     "discipline": "adm",
     "topicId": "adm-lei-8443",
-    "subtopic": "Art. 60º",
+    "subtopic": "Lei 8.443/1992 · Art. 60º",
     "number": "Art. 60º",
     "title": "Lei 8.443/1992 — Tribunal de Contas da União",
     "parts": [
@@ -3240,14 +3300,15 @@ const DATA_ADM_PACK2 = [
       "bank": "FUNIVERSA",
       "year": 2010,
       "role": "Contador (MTur)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-8443-pdf58-q043",
     "discipline": "adm",
     "topicId": "adm-lei-8443",
-    "subtopic": "Art. 12º, inc. II",
+    "subtopic": "Lei 8.443/1992 · Art. 12º, inc. II",
     "number": "Art. 12º, inc. II",
     "title": "Lei 8.443/1992 — Tribunal de Contas da União",
     "parts": [
@@ -3263,14 +3324,15 @@ const DATA_ADM_PACK2 = [
       "bank": "CESPE/CEBRASPE",
       "year": 2013,
       "role": "Auditor Federal de Controle",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-8443-pdf58-q044",
     "discipline": "adm",
     "topicId": "adm-lei-8443",
-    "subtopic": "Art. 57º",
+    "subtopic": "Lei 8.443/1992 · Art. 57º",
     "number": "Art. 57º",
     "title": "Lei 8.443/1992 — Tribunal de Contas da União",
     "parts": [
@@ -3293,7 +3355,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-8443-pdf58-q045",
     "discipline": "adm",
     "topicId": "adm-lei-8443",
-    "subtopic": "Art. 47º",
+    "subtopic": "Lei 8.443/1992 · Art. 47º",
     "number": "Art. 47º",
     "title": "Lei 8.443/1992 — Tribunal de Contas da União",
     "parts": [
@@ -3316,7 +3378,7 @@ const DATA_ADM_PACK2 = [
     "id": "adm-8443-pdf58-q046",
     "discipline": "adm",
     "topicId": "adm-lei-8443",
-    "subtopic": "Art. 69º",
+    "subtopic": "Lei 8.443/1992 · Art. 69º",
     "number": "Art. 69º",
     "title": "Lei 8.443/1992 — Tribunal de Contas da União",
     "parts": [
@@ -3332,14 +3394,15 @@ const DATA_ADM_PACK2 = [
       "bank": "IDECAN",
       "year": 2014,
       "role": "Auditor de Controle Interno (Câmara de",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
   },
   {
     "id": "adm-d11462-pdf34-q001",
     "discipline": "adm",
     "topicId": "adm-lei-d11462",
-    "subtopic": "Art. 33º",
+    "subtopic": "Decreto 11.462/2023 · Art. 33º",
     "number": "Art. 33º",
     "title": "Decreto 11.462/2023 — Registro de Preços",
     "parts": [
@@ -3365,15 +3428,15 @@ const TOPICS_ADM_PACK2 = [
     "label": "Lei 11.107/2005 — Consórcios públicos",
     "range": "PDF cobre apenas os dispositivos nele indicados",
     "subtopics": [
-      "Art. 1º",
-      "Art. 1º, § 1º",
-      "Art. 1º, § 2º",
-      "Art. 1º, § 3º",
-      "Art. 1º, § 4º",
-      "Art. 2º",
-      "Art. 2º, § 1º",
-      "Art. 2º, § 1º, inc. I",
-      "Art. 2º, § 1º, inc. II"
+      "Lei 11.107/2005 · Art. 1º",
+      "Lei 11.107/2005 · Art. 1º, § 1º",
+      "Lei 11.107/2005 · Art. 1º, § 2º",
+      "Lei 11.107/2005 · Art. 1º, § 3º",
+      "Lei 11.107/2005 · Art. 1º, § 4º",
+      "Lei 11.107/2005 · Art. 2º",
+      "Lei 11.107/2005 · Art. 2º, § 1º",
+      "Lei 11.107/2005 · Art. 2º, § 1º, inc. I",
+      "Lei 11.107/2005 · Art. 2º, § 1º, inc. II"
     ]
   },
   {
@@ -3381,10 +3444,10 @@ const TOPICS_ADM_PACK2 = [
     "label": "Lei 11.079/2004 — Parcerias público-privadas",
     "range": "PDF cobre apenas os dispositivos nele indicados",
     "subtopics": [
-      "Art. 1º",
-      "Art. 1º, parágrafo único",
-      "Art. 2º",
-      "Art. 2º, § 1º"
+      "Lei 11.079/2004 · Art. 1º",
+      "Lei 11.079/2004 · Art. 1º, parágrafo único",
+      "Lei 11.079/2004 · Art. 2º",
+      "Lei 11.079/2004 · Art. 2º, § 1º"
     ]
   },
   {
@@ -3392,39 +3455,39 @@ const TOPICS_ADM_PACK2 = [
     "label": "Lei 13.303/2016 — Empresas estatais",
     "range": "PDF cobre apenas os dispositivos nele indicados",
     "subtopics": [
-      "Art. 1º",
-      "Art. 2º",
-      "Art. 2º, § 2º",
-      "Art. 3º",
-      "Art. 3º, parágrafo único",
-      "Art. 4º",
-      "Art. 6º",
-      "Art. 7º",
-      "Art. 8º, inc. I",
-      "Art. 8º, inc. III",
-      "Art. 8º, inc. IV",
-      "Art. 8º, inc. IX",
-      "Art. 8º, inc. V",
-      "Art. 8º, inc. VI",
-      "Art. 8º, inc. VII",
-      "Art. 8º, inc. VIII",
-      "Art. 8º, inc. X",
-      "Art. 9º, § 1º, inc. VI",
-      "Art. 9º, § 3º, inc. II",
-      "Art. 11º",
-      "Art. 11º, inc. I",
-      "Art. 11º, inc. II",
-      "Art. 15º, § 1º",
-      "Art. 17º, § 2º, inc. I",
-      "Art. 17º, § 2º, inc. II",
-      "Art. 17º, inc. I",
-      "Art. 18º, inc. I",
-      "Art. 18º, inc. III",
-      "Art. 19º",
-      "Art. 22º, inc. IV",
-      "Art. 24º",
-      "Art. 24º, § 1º, inc. I",
-      "Art. 24º, § 1º, inc. II"
+      "Lei 13.303/2016 · Art. 1º",
+      "Lei 13.303/2016 · Art. 2º",
+      "Lei 13.303/2016 · Art. 2º, § 2º",
+      "Lei 13.303/2016 · Art. 3º",
+      "Lei 13.303/2016 · Art. 3º, parágrafo único",
+      "Lei 13.303/2016 · Art. 4º",
+      "Lei 13.303/2016 · Art. 6º",
+      "Lei 13.303/2016 · Art. 7º",
+      "Lei 13.303/2016 · Art. 8º, inc. I",
+      "Lei 13.303/2016 · Art. 8º, inc. III",
+      "Lei 13.303/2016 · Art. 8º, inc. IV",
+      "Lei 13.303/2016 · Art. 8º, inc. IX",
+      "Lei 13.303/2016 · Art. 8º, inc. V",
+      "Lei 13.303/2016 · Art. 8º, inc. VI",
+      "Lei 13.303/2016 · Art. 8º, inc. VII",
+      "Lei 13.303/2016 · Art. 8º, inc. VIII",
+      "Lei 13.303/2016 · Art. 8º, inc. X",
+      "Lei 13.303/2016 · Art. 9º, § 1º, inc. VI",
+      "Lei 13.303/2016 · Art. 9º, § 3º, inc. II",
+      "Lei 13.303/2016 · Art. 11º",
+      "Lei 13.303/2016 · Art. 11º, inc. I",
+      "Lei 13.303/2016 · Art. 11º, inc. II",
+      "Lei 13.303/2016 · Art. 15º, § 1º",
+      "Lei 13.303/2016 · Art. 17º, § 2º, inc. I",
+      "Lei 13.303/2016 · Art. 17º, § 2º, inc. II",
+      "Lei 13.303/2016 · Art. 17º, inc. I",
+      "Lei 13.303/2016 · Art. 18º, inc. I",
+      "Lei 13.303/2016 · Art. 18º, inc. III",
+      "Lei 13.303/2016 · Art. 19º",
+      "Lei 13.303/2016 · Art. 22º, inc. IV",
+      "Lei 13.303/2016 · Art. 24º",
+      "Lei 13.303/2016 · Art. 24º, § 1º, inc. I",
+      "Lei 13.303/2016 · Art. 24º, § 1º, inc. II"
     ]
   },
   {
@@ -3432,32 +3495,32 @@ const TOPICS_ADM_PACK2 = [
     "label": "Lei 13.848/2019 — Agências reguladoras",
     "range": "PDF cobre apenas os dispositivos nele indicados",
     "subtopics": [
-      "Art. 2º",
-      "Art. 2º, inc. XII",
-      "Art. 2º, parágrafo único",
-      "Art. 3º",
-      "Art. 3º, § 2º, inc. I",
-      "Art. 3º, § 2º, inc. III",
-      "Art. 3º, § 3º",
-      "Art. 4º",
-      "Art. 5º",
-      "Art. 6º",
-      "Art. 6º, § 1º",
-      "Art. 6º, § 3º",
-      "Art. 6º, § 4º",
-      "Art. 7º",
-      "Art. 7º, § 2º",
-      "Art. 8º",
-      "Art. 8º, § 1º",
-      "Art. 8º, § 6º",
-      "Art. 9º",
-      "Art. 9º, § 4º",
-      "Art. 9º, § 5º",
-      "Art. 9º, § 7º",
-      "Art. 10º, § 2º",
-      "Art. 11º",
-      "Art. 13º",
-      "Art. 14º"
+      "Lei 13.848/2019 · Art. 2º",
+      "Lei 13.848/2019 · Art. 2º, inc. XII",
+      "Lei 13.848/2019 · Art. 2º, parágrafo único",
+      "Lei 13.848/2019 · Art. 3º",
+      "Lei 13.848/2019 · Art. 3º, § 2º, inc. I",
+      "Lei 13.848/2019 · Art. 3º, § 2º, inc. III",
+      "Lei 13.848/2019 · Art. 3º, § 3º",
+      "Lei 13.848/2019 · Art. 4º",
+      "Lei 13.848/2019 · Art. 5º",
+      "Lei 13.848/2019 · Art. 6º",
+      "Lei 13.848/2019 · Art. 6º, § 1º",
+      "Lei 13.848/2019 · Art. 6º, § 3º",
+      "Lei 13.848/2019 · Art. 6º, § 4º",
+      "Lei 13.848/2019 · Art. 7º",
+      "Lei 13.848/2019 · Art. 7º, § 2º",
+      "Lei 13.848/2019 · Art. 8º",
+      "Lei 13.848/2019 · Art. 8º, § 1º",
+      "Lei 13.848/2019 · Art. 8º, § 6º",
+      "Lei 13.848/2019 · Art. 9º",
+      "Lei 13.848/2019 · Art. 9º, § 4º",
+      "Lei 13.848/2019 · Art. 9º, § 5º",
+      "Lei 13.848/2019 · Art. 9º, § 7º",
+      "Lei 13.848/2019 · Art. 10º, § 2º",
+      "Lei 13.848/2019 · Art. 11º",
+      "Lei 13.848/2019 · Art. 13º",
+      "Lei 13.848/2019 · Art. 14º"
     ]
   },
   {
@@ -3465,40 +3528,40 @@ const TOPICS_ADM_PACK2 = [
     "label": "Lei 8.443/1992 — Tribunal de Contas da União",
     "range": "PDF cobre apenas os dispositivos nele indicados",
     "subtopics": [
-      "Art. 1º, inc. I",
-      "Art. 1º, inc. VI",
-      "Art. 3º",
-      "Art. 5º",
-      "Art. 5º, inc. I",
-      "Art. 5º, inc. IX",
-      "Art. 5º, inc. V",
-      "Art. 7º, parágrafo único",
-      "Art. 8º",
-      "Art. 9º, inc. III",
-      "Art. 10º",
-      "Art. 10º, § 2º",
-      "Art. 10º, § 3º",
-      "Art. 12º",
-      "Art. 12º, inc. I",
-      "Art. 12º, inc. II",
-      "Art. 16º",
-      "Art. 16º, § 1º",
-      "Art. 16º, inc. II",
-      "Art. 16º, inc. III",
-      "Art. 17º",
-      "Art. 20º",
-      "Art. 23º, inc. III",
-      "Art. 24º",
-      "Art. 32º",
-      "Art. 44º",
-      "Art. 46º",
-      "Art. 47º",
-      "Art. 48º",
-      "Art. 55º, § 2º",
-      "Art. 57º",
-      "Art. 60º",
-      "Art. 61º",
-      "Art. 69º"
+      "Lei 8.443/1992 · Art. 1º, inc. I",
+      "Lei 8.443/1992 · Art. 1º, inc. VI",
+      "Lei 8.443/1992 · Art. 3º",
+      "Lei 8.443/1992 · Art. 5º",
+      "Lei 8.443/1992 · Art. 5º, inc. I",
+      "Lei 8.443/1992 · Art. 5º, inc. IX",
+      "Lei 8.443/1992 · Art. 5º, inc. V",
+      "Lei 8.443/1992 · Art. 7º, parágrafo único",
+      "Lei 8.443/1992 · Art. 8º",
+      "Lei 8.443/1992 · Art. 9º, inc. III",
+      "Lei 8.443/1992 · Art. 10º",
+      "Lei 8.443/1992 · Art. 10º, § 2º",
+      "Lei 8.443/1992 · Art. 10º, § 3º",
+      "Lei 8.443/1992 · Art. 12º",
+      "Lei 8.443/1992 · Art. 12º, inc. I",
+      "Lei 8.443/1992 · Art. 12º, inc. II",
+      "Lei 8.443/1992 · Art. 16º",
+      "Lei 8.443/1992 · Art. 16º, § 1º",
+      "Lei 8.443/1992 · Art. 16º, inc. II",
+      "Lei 8.443/1992 · Art. 16º, inc. III",
+      "Lei 8.443/1992 · Art. 17º",
+      "Lei 8.443/1992 · Art. 20º",
+      "Lei 8.443/1992 · Art. 23º, inc. III",
+      "Lei 8.443/1992 · Art. 24º",
+      "Lei 8.443/1992 · Art. 32º",
+      "Lei 8.443/1992 · Art. 44º",
+      "Lei 8.443/1992 · Art. 46º",
+      "Lei 8.443/1992 · Art. 47º",
+      "Lei 8.443/1992 · Art. 48º",
+      "Lei 8.443/1992 · Art. 55º, § 2º",
+      "Lei 8.443/1992 · Art. 57º",
+      "Lei 8.443/1992 · Art. 60º",
+      "Lei 8.443/1992 · Art. 61º",
+      "Lei 8.443/1992 · Art. 69º"
     ]
   },
   {
@@ -3506,7 +3569,7 @@ const TOPICS_ADM_PACK2 = [
     "label": "Decreto 11.462/2023 — Registro de Preços",
     "range": "PDF cobre apenas os dispositivos nele indicados",
     "subtopics": [
-      "Art. 33º"
+      "Decreto 11.462/2023 · Art. 33º"
     ]
   }
 ];
