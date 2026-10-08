@@ -1,0 +1,94 @@
+{
+  "date": "2026-10-08",
+  "sourceFolder": "https://drive.google.com/drive/folders/1P35q3-rGm8UA3-gzetuG9WTPSGFCYrCC",
+  "law": "Lei 9784/1999",
+  "sources": [
+    "66.pdf",
+    "72.pdf"
+  ],
+  "sourceIdenticalAfterTimestampNormalization": true,
+  "sourceQuestions": 50,
+  "selectedQuestions": 26,
+  "excludedOnDeviceCap": 22,
+  "heldForManualReview": [
+    {
+      "n": 14,
+      "ref": "Arts. 1º, I e 12, Lei 9.784/99",
+      "reason": "mais de um artigo na referência; classificação manual"
+    },
+    {
+      "n": 25,
+      "ref": "Art. 2º e 56, Lei 9.784/99",
+      "reason": "mais de um artigo na referência; classificação manual"
+    }
+  ],
+  "exactDuplicatesInSinglePDF": 0,
+  "selectionPolicy": "2 por artigo/parágrafo/inciso; quando o artigo tem incisos diferentes, cada inciso pode ter até 2; itens multiartigo revisados manualmente",
+  "deviceCounts": {
+    "1||": {
+      "found": 4,
+      "kept": 2
+    },
+    "1|1|": {
+      "found": 7,
+      "kept": 2
+    },
+    "1|2|I": {
+      "found": 2,
+      "kept": 2
+    },
+    "1|2|III": {
+      "found": 1,
+      "kept": 1
+    },
+    "1|2|II": {
+      "found": 1,
+      "kept": 1
+    },
+    "2||": {
+      "found": 8,
+      "kept": 2
+    },
+    "2|único|I": {
+      "found": 1,
+      "kept": 1
+    },
+    "2|único|II": {
+      "found": 6,
+      "kept": 2
+    },
+    "2|único|V": {
+      "found": 4,
+      "kept": 2
+    },
+    "2|único|VI": {
+      "found": 2,
+      "kept": 2
+    },
+    "2|único|VIII": {
+      "found": 1,
+      "kept": 1
+    },
+    "2|único|X": {
+      "found": 1,
+      "kept": 1
+    },
+    "2|único|XI": {
+      "found": 4,
+      "kept": 2
+    },
+    "2|único|XII": {
+      "found": 2,
+      "kept": 2
+    },
+    "2|único|XIII": {
+      "found": 3,
+      "kept": 2
+    },
+    "2|único|": {
+      "found": 1,
+      "kept": 1
+    }
+  },
+  "status": "DRAFT — não publicado nem juridicamente validado"
+}

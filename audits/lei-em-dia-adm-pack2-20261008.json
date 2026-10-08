@@ -1,0 +1,171 @@
+{
+  "date": "2026-10-08",
+  "status": "draft",
+  "policy": "máximo 2 por dispositivo específico; incisos distintos contam separadamente; casos multiartigo segregados",
+  "sources": [
+    {
+      "file": "9.pdf",
+      "headers": 50,
+      "withGabarito": 50,
+      "eligible": 48,
+      "selected": 17,
+      "devices": 9,
+      "excludedByLimit": 31,
+      "held": [
+        {
+          "n": 16,
+          "ref": "Arts. 1º § 1º, e 6º, Lei 11.107/2005",
+          "reason": "referência a múltiplos artigos ou parágrafos"
+        },
+        {
+          "n": 34,
+          "ref": "Art. 1º, § 3º e Art. 6º, I, II, Lei 11.107/2005",
+          "reason": "referência a múltiplos artigos ou parágrafos"
+        }
+      ],
+      "heldCount": 2
+    },
+    {
+      "file": "8.pdf",
+      "headers": 50,
+      "withGabarito": 50,
+      "eligible": 40,
+      "selected": 8,
+      "devices": 4,
+      "excludedByLimit": 32,
+      "held": [
+        {
+          "n": 40,
+          "ref": "Art. 2º, § 1º, Lei 11.079/2004",
+          "reason": "enunciado literalmente repetido"
+        },
+        {
+          "n": 41,
+          "ref": "Art. 2º, § 1º c/c Art. 10, Lei 11.079/2004",
+          "reason": "referência a múltiplos artigos ou parágrafos"
+        },
+        {
+          "n": 42,
+          "ref": "Art. 2º, § 1º e 2º, Lei 11.079/2004",
+          "reason": "referência a múltiplos artigos ou parágrafos"
+        },
+        {
+          "n": 43,
+          "ref": "Art. 2º, §§ 1º e 2º, Lei 11.079/2004",
+          "reason": "referência a múltiplos artigos ou parágrafos"
+        },
+        {
+          "n": 44,
+          "ref": "Art. 2º, §§ 1º e 2º, Lei 11.079/2004",
+          "reason": "referência a múltiplos artigos ou parágrafos"
+        },
+        {
+          "n": 45,
+          "ref": "Art. 2º, §§ 1º e 2º, Lei 11.079/2004",
+          "reason": "referência a múltiplos artigos ou parágrafos"
+        },
+        {
+          "n": 46,
+          "ref": "Arts. 2º, § 1º e 6º, § 2º, Lei 11.079/2004",
+          "reason": "referência a múltiplos artigos ou parágrafos"
+        },
+        {
+          "n": 47,
+          "ref": "Art. 2º, §§ 1º e 2º, Lei 11.079/2004",
+          "reason": "referência a múltiplos artigos ou parágrafos"
+        },
+        {
+          "n": 48,
+          "ref": "Art. 2º, §§ 1º e 2º, Lei 11.079/2004",
+          "reason": "referência a múltiplos artigos ou parágrafos"
+        },
+        {
+          "n": 50,
+          "ref": "Arts. 2º, § 1º e 6º, § 2º, Lei 11.079/2004",
+          "reason": "referência a múltiplos artigos ou parágrafos"
+        }
+      ],
+      "heldCount": 10
+    },
+    {
+      "file": "28.pdf",
+      "headers": 50,
+      "withGabarito": 50,
+      "eligible": 48,
+      "selected": 41,
+      "devices": 33,
+      "excludedByLimit": 7,
+      "held": [
+        {
+          "n": 18,
+          "ref": "Art. 7 º e 8º, § 3º, Lei 13.303/2016",
+          "reason": "referência a múltiplos artigos ou parágrafos"
+        },
+        {
+          "n": 39,
+          "ref": "Arts. 16, § único, c/c Art. 17, II, Lei 13.303/2016",
+          "reason": "referência a múltiplos artigos ou parágrafos"
+        }
+      ],
+      "heldCount": 2
+    },
+    {
+      "file": "32.pdf",
+      "headers": 50,
+      "withGabarito": 50,
+      "eligible": 49,
+      "selected": 37,
+      "devices": 26,
+      "excludedByLimit": 12,
+      "held": [
+        {
+          "n": 29,
+          "ref": "Arts. 6º, § 3º, 9º, § 3º e 10, § 3º, I, Lei 13.848/2019",
+          "reason": "referência a múltiplos artigos ou parágrafos"
+        }
+      ],
+      "heldCount": 1
+    },
+    {
+      "file": "58.pdf",
+      "headers": 46,
+      "withGabarito": 46,
+      "eligible": 44,
+      "selected": 42,
+      "devices": 34,
+      "excludedByLimit": 2,
+      "held": [
+        {
+          "n": 1,
+          "ref": "Arts. 1°, I, e 16, II, Lei 8.443/92",
+          "reason": "referência a múltiplos artigos ou parágrafos"
+        },
+        {
+          "n": 5,
+          "ref": "Art. 5°, V, Lei 8.443/92",
+          "reason": "enunciado literalmente repetido"
+        }
+      ],
+      "heldCount": 2
+    },
+    {
+      "file": "34.pdf",
+      "headers": 1,
+      "withGabarito": 1,
+      "eligible": 1,
+      "selected": 1,
+      "devices": 1,
+      "excludedByLimit": 0,
+      "held": [],
+      "heldCount": 0
+    }
+  ],
+  "postImportQA": {
+    "filesChecked": 1,
+    "selected": 146,
+    "manualAuditPending": true,
+    "footersRemoved": true,
+    "maxPerDevice": 2,
+    "notes": "Uma terceira questão do art. 3º, parágrafo único, da Lei 8.112 foi descartada após auditoria conjunta de dispositivos."
+  }
+}
