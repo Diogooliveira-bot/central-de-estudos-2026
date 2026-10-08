@@ -12,7 +12,7 @@
   },
   "scripts": {
     "prepare": "node scripts/build-home-progress.mjs",
-    "test": "node --test tests/auth-unit.mjs"
+    "test": "node --test tests/auth-unit.mjs tests/module-text-export-unit.mjs"
   },
   "devDependencies": {
     "playwright": "^1.63.0"
