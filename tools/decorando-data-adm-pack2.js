@@ -8,7 +8,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 1º",
     "title": "Lei 11.107/2005 — Consórcios públicos",
     "parts": [
-      "Art. 1º - Esta Lei dispõe sobre normas gerais para a União, os Estados, o Distrito Federal e os Municípios contratarem consórcios públicos para a realização de objetivos de interesse comum e dá outras providências. 07/10/2026, 23:03 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 1/"
+      "Art. 1º - Esta Lei dispõe sobre normas gerais para a União, os Estados, o Distrito Federal e os Municípios contratarem consórcios públicos para a realização de objetivos de interesse comum e dá outras providências."
     ],
     "origin": "real",
     "question": {
@@ -35,14 +35,14 @@ const DATA_ADM_PACK2 = [
     ],
     "origin": "real",
     "question": {
-      "statement": "de Guamiranga - PR) A lei 11.107/2005 dispõe sobre normas gerais de contratação de consórcios públicos e dá outras providências. Dito isso, julgue o item a seguir. Esta Lei dispõe sobre normas gerais para a União, os Estados, o Distrito Federal e os Municípios contratarem consórcios públicos para a realização de objetivos de interesse comum e dá outras providências.",
+      "statement": "A lei 11.107/2005 dispõe sobre normas gerais de contratação de consórcios públicos e dá outras providências. Dito isso, julgue o item a seguir. Esta Lei dispõe sobre normas gerais para a União, os Estados, o Distrito Federal e os Municípios contratarem consórcios públicos para a realização de objetivos de interesse comum e dá outras providências.",
       "answer": true,
       "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
       "source": "9.pdf · questão 2 · Art. 1º, Lei 11.107/2005",
-      "meta": "FAU UNICENTRO 2023 - Advogado (Câmara Municipal",
+      "meta": "FAU UNICENTRO 2023 - Advogado (Câmara Municipal de Guamiranga - PR)",
       "bank": "FAU UNICENTRO",
       "year": 2023,
-      "role": "Advogado (Câmara Municipal",
+      "role": "Advogado (Câmara Municipal de Guamiranga - PR)",
       "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
     }
   },
@@ -54,7 +54,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 1º, § 1º",
     "title": "Lei 11.107/2005 — Consórcios públicos",
     "parts": [
-      "Art. 1º[…] § 1º O consórcio público constituirá associação pública ou pessoa jurídica de direito privado. 07/10/2026, 23:03 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 4/"
+      "Art. 1º[…] § 1º O consórcio público constituirá associação pública ou pessoa jurídica de direito privado."
     ],
     "origin": "real",
     "question": {
@@ -77,7 +77,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 1º, § 1º",
     "title": "Lei 11.107/2005 — Consórcios públicos",
     "parts": [
-      "Art. 1º. [...] § 1º O consórcio público constituirá associação pública ou pessoa jurídica de direito privado. 07/10/2026, 23:03 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 8/"
+      "Art. 1º. [...] § 1º O consórcio público constituirá associação pública ou pessoa jurídica de direito privado."
     ],
     "origin": "real",
     "question": {
@@ -169,18 +169,18 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 1º, § 3º",
     "title": "Lei 11.107/2005 — Consórcios públicos",
     "parts": [
-      "Art. 1º, § 3º - Os consórcios públicos, na área de saúde, deverão obedecer aos princípios, diretrizes e normas que regulam o Sistema Único de Saúde – SUS. 07/10/2026, 23:03 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 23/"
+      "Art. 1º, § 3º - Os consórcios públicos, na área de saúde, deverão obedecer aos princípios, diretrizes e normas que regulam o Sistema Único de Saúde – SUS."
     ],
     "origin": "real",
     "question": {
-      "statement": "de Sinop - MT) O município de SINOP recebe proposta de consórcio público para atuar na área de saúde local. Nos termos da Lei Federal nº 11.107/05, a atuação dos consórcios, nessa área, deverá obedecer aos princípios, diretrizes e normas que regulam o Sistema Único de Saúde.",
+      "statement": "O município de SINOP recebe proposta de consórcio público para atuar na área de saúde local. Nos termos da Lei Federal nº 11.107/05, a atuação dos consórcios, nessa área, deverá obedecer aos princípios, diretrizes e normas que regulam o Sistema Único de Saúde.",
       "answer": true,
       "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
       "source": "9.pdf · questão 36 · Art. 1º, § 3º, Lei 11.107/2005",
-      "meta": "SELECON 2025 - Procurador Jurídico (Prefeitura",
+      "meta": "SELECON 2025 - Procurador Jurídico (Prefeitura de Sinop - MT)",
       "bank": "SELECON",
       "year": 2025,
-      "role": "Procurador Jurídico (Prefeitura",
+      "role": "Procurador Jurídico (Prefeitura de Sinop - MT)",
       "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
     }
   },
@@ -192,7 +192,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 1º, § 4º",
     "title": "Lei 11.107/2005 — Consórcios públicos",
     "parts": [
-      "Art. 1º, § 4º - Aplicam-se aos convênios de cooperação, no que couber, as disposições desta Lei relativas aos consórcios públicos. 07/10/2026, 23:03 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 24/"
+      "Art. 1º, § 4º - Aplicam-se aos convênios de cooperação, no que couber, as disposições desta Lei relativas aos consórcios públicos."
     ],
     "origin": "real",
     "question": {
@@ -238,7 +238,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 2º",
     "title": "Lei 11.107/2005 — Consórcios públicos",
     "parts": [
-      "Art. 2º - Os objetivos dos consórcios públicos serão determinados pelos entes da Federação que se consorciarem, observados os limites constitucionais. 07/10/2026, 23:03 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 25/"
+      "Art. 2º - Os objetivos dos consórcios públicos serão determinados pelos entes da Federação que se consorciarem, observados os limites constitucionais."
     ],
     "origin": "real",
     "question": {
@@ -285,7 +285,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 2º, § 1º",
     "title": "Lei 11.107/2005 — Consórcios públicos",
     "parts": [
-      "Art. 2º Os objetivos dos consórcios públicos serão determinados pelos entes da Federação que se consorciarem, observados os limites constitucionais. § 1º Para o cumprimento de seus objetivos, o consórcio público poderá: [...] II – nos termos do contrato de consórcio de direito público, promover desapropriações e instituir servidões nos termos de declaração de utilidade ou necessidade pública, ou interesse social, realizada pelo Poder Público; e [...] 07/10/2026, 23:03 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 26/"
+      "Art. 2º Os objetivos dos consórcios públicos serão determinados pelos entes da Federação que se consorciarem, observados os limites constitucionais. § 1º Para o cumprimento de seus objetivos, o consórcio público poderá: [...] II – nos termos do contrato de consórcio de direito público, promover desapropriações e instituir servidões nos termos de declaração de utilidade ou necessidade pública, ou interesse social, realizada pelo Poder Público; e [...]"
     ],
     "origin": "real",
     "question": {
@@ -313,14 +313,14 @@ const DATA_ADM_PACK2 = [
     ],
     "origin": "real",
     "question": {
-      "statement": "Municipal de Nova Iguaçu - PR) Sobre os consórcios públicos e o que prevê a Lei nº 11.107/2005, julgue o item a seguir. Para o cumprimento de seus objetivos, o consórcio público poderá firmar convênios, contratos, acordos de qualquer natureza, receber auxílios, contribuições e subvenções sociais ou econômicas de outras entidades e órgãos do governo.",
+      "statement": "Sobre os consórcios públicos e o que prevê a Lei nº 11.107/2005, julgue o item a seguir. Para o cumprimento de seus objetivos, o consórcio público poderá firmar convênios, contratos, acordos de qualquer natureza, receber auxílios, contribuições e subvenções sociais ou econômicas de outras entidades e órgãos do governo.",
       "answer": true,
       "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
       "source": "9.pdf · questão 43 · Art. 2º, § 1º, I, Lei 11.107/2005",
-      "meta": "Instituto AOCP 2024 - Procurador (Câmara",
+      "meta": "Instituto AOCP 2024 - Procurador (Câmara Municipal de Nova Iguaçu - PR)",
       "bank": "Instituto AOCP",
       "year": 2024,
-      "role": "Procurador (Câmara",
+      "role": "Procurador (Câmara Municipal de Nova Iguaçu - PR)",
       "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
     }
   },
@@ -332,7 +332,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 2º, § 1º",
     "title": "Lei 11.107/2005 — Consórcios públicos",
     "parts": [
-      "Art. 2º […] § 1º Para o cumprimento de seus objetivos, o consórcio público poderá: I – firmar convênios, contratos, acordos de qualquer natureza, receber auxílios, contribuições e subvenções sociais ou econômicas de outras entidades e órgãos do governo; […] III – ser contratado pela administração direta ou indireta dos entes da Federação consorciados, dispensada a licitação. 07/10/2026, 23:03 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 28/"
+      "Art. 2º […] § 1º Para o cumprimento de seus objetivos, o consórcio público poderá: I – firmar convênios, contratos, acordos de qualquer natureza, receber auxílios, contribuições e subvenções sociais ou econômicas de outras entidades e órgãos do governo; […] III – ser contratado pela administração direta ou indireta dos entes da Federação consorciados, dispensada a licitação."
     ],
     "origin": "real",
     "question": {
@@ -379,7 +379,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 2º, § 1º, inc. II",
     "title": "Lei 11.107/2005 — Consórcios públicos",
     "parts": [
-      "Art. 2º. [...] § 1º Para o cumprimento de seus objetivos, o consórcio público poderá: [...] II - nos termos do contrato de consórcio de direito público, promover desapropriações e instituir servidões nos termos de declaração de utilidade ou necessidade pública, ou interesse social, realizada pelo Poder Público; e 07/10/2026, 23:03 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 31/"
+      "Art. 2º. [...] § 1º Para o cumprimento de seus objetivos, o consórcio público poderá: [...] II - nos termos do contrato de consórcio de direito público, promover desapropriações e instituir servidões nos termos de declaração de utilidade ou necessidade pública, ou interesse social, realizada pelo Poder Público; e"
     ],
     "origin": "real",
     "question": {
@@ -403,7 +403,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 1º, parágrafo único",
     "title": "Lei 11.079/2004 — Parcerias público-privadas",
     "parts": [
-      "Art. 1º, Parágrafo único - Esta Lei aplica-se aos órgãos da administração pública direta dos Poderes Executivo e Legislativo, aos fundos especiais, às autarquias, às fundações públicas, às empresas públicas, às sociedades de economia mista e às demais entidades controladas direta ou indiretamente pela União, Estados, Distrito Federal e Municípios. 07/10/2026, 23:03 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 1/"
+      "Art. 1º, Parágrafo único - Esta Lei aplica-se aos órgãos da administração pública direta dos Poderes Executivo e Legislativo, aos fundos especiais, às autarquias, às fundações públicas, às empresas públicas, às sociedades de economia mista e às demais entidades controladas direta ou indiretamente pela União, Estados, Distrito Federal e Municípios."
     ],
     "origin": "real",
     "question": {
@@ -426,7 +426,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 1º, parágrafo único",
     "title": "Lei 11.079/2004 — Parcerias público-privadas",
     "parts": [
-      "Art. 1º, Parágrafo único - Esta Lei aplica-se aos órgãos da administração pública direta dos Poderes Executivo e Legislativo, aos fundos especiais, às autarquias, às fundações públicas, às empresas públicas, às sociedades de economia mista e às demais entidades controladas direta ou indiretamente pela União, Estados, Distrito Federal e Municípios. Obs: a definição prevista no art. 1º, § único não veda a participação de consórcios, empresas estrangeiras ou entidades fechadas de previdência complementar nem prevê restrições quanto à natureza jurídica dos interessados. 07/10/2026, 23:03 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 2/"
+      "Art. 1º, Parágrafo único - Esta Lei aplica-se aos órgãos da administração pública direta dos Poderes Executivo e Legislativo, aos fundos especiais, às autarquias, às fundações públicas, às empresas públicas, às sociedades de economia mista e às demais entidades controladas direta ou indiretamente pela União, Estados, Distrito Federal e Municípios. Obs: a definição prevista no art. 1º, § único não veda a participação de consórcios, empresas estrangeiras ou entidades fechadas de previdência complementar nem prevê restrições quanto à natureza jurídica dos interessados."
     ],
     "origin": "real",
     "question": {
@@ -473,7 +473,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 1º",
     "title": "Lei 11.079/2004 — Parcerias público-privadas",
     "parts": [
-      "Art. 1º Esta Lei institui normas gerais para licitação e contratação de parceria públicoprivada no âmbito dos Poderes da União, dos Estados, do Distrito Federal e dos Municípios. Parágrafo único. Esta Lei aplica-se aos órgãos da administração pública direta dos Poderes Executivo e Legislativo, aos fundos especiais, às autarquias, às fundações públicas, às empresas públicas, às sociedades de economia mista e às demais entidades controladas direta ou indiretamente pela União, Estados, Distrito Federal e Municípios. 07/10/2026, 23:03 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 3/"
+      "Art. 1º Esta Lei institui normas gerais para licitação e contratação de parceria públicoprivada no âmbito dos Poderes da União, dos Estados, do Distrito Federal e dos Municípios. Parágrafo único. Esta Lei aplica-se aos órgãos da administração pública direta dos Poderes Executivo e Legislativo, aos fundos especiais, às autarquias, às fundações públicas, às empresas públicas, às sociedades de economia mista e às demais entidades controladas direta ou indiretamente pela União, Estados, Distrito Federal e Municípios."
     ],
     "origin": "real",
     "question": {
@@ -496,7 +496,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 2º",
     "title": "Lei 11.079/2004 — Parcerias público-privadas",
     "parts": [
-      "Art. 2º Parceria público-privada é o contrato administrativo de concessão, na modalidade patrocinada ou administrativa. 07/10/2026, 23:03 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 8/"
+      "Art. 2º Parceria público-privada é o contrato administrativo de concessão, na modalidade patrocinada ou administrativa."
     ],
     "origin": "real",
     "question": {
@@ -519,18 +519,18 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 2º",
     "title": "Lei 11.079/2004 — Parcerias público-privadas",
     "parts": [
-      "Art. 2º - Parceria público-privada é o contrato administrativo de concessão, na modalidade patrocinada ou administrativa. 07/10/2026, 23:03 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 10/"
+      "Art. 2º - Parceria público-privada é o contrato administrativo de concessão, na modalidade patrocinada ou administrativa."
     ],
     "origin": "real",
     "question": {
-      "statement": "Centenário Sul - PR) Parceria público-privada é o contrato administrativo de concessão, na modalidade patrocinada ou administrativa.",
+      "statement": "Parceria público-privada é o contrato administrativo de concessão, na modalidade patrocinada ou administrativa.",
       "answer": true,
       "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
       "source": "8.pdf · questão 15 · Art. 2º, Lei 11.079/2004",
-      "meta": "Unifil 2026 - Agente Administrativo (Prefeitura",
+      "meta": "Unifil 2026 - Agente Administrativo (Prefeitura Centenário Sul - PR)",
       "bank": "Unifil",
       "year": 2026,
-      "role": "Agente Administrativo (Prefeitura",
+      "role": "Agente Administrativo (Prefeitura Centenário Sul - PR)",
       "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
     }
   },
@@ -565,7 +565,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 2º, § 1º",
     "title": "Lei 11.079/2004 — Parcerias público-privadas",
     "parts": [
-      "Art. 2º, § 1º - Concessão patrocinada é a concessão de serviços públicos ou de obras públicas de que trata a Lei nº 8.987, de 13 de fevereiro de 1995, quando envolver, adicionalmente à tarifa cobrada dos usuários contraprestação pecuniária do parceiro público ao parceiro privado. 07/10/2026, 23:03 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 21/"
+      "Art. 2º, § 1º - Concessão patrocinada é a concessão de serviços públicos ou de obras públicas de que trata a Lei nº 8.987, de 13 de fevereiro de 1995, quando envolver, adicionalmente à tarifa cobrada dos usuários contraprestação pecuniária do parceiro público ao parceiro privado."
     ],
     "origin": "real",
     "question": {
@@ -612,7 +612,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 2º",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
-      "Art. 2º A exploração de atividade econômica pelo Estado será exercida por meio de empresa pública, de sociedade de economia mista e de suas subsidiárias. 07/10/2026, 23:14 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 1/"
+      "Art. 2º A exploração de atividade econômica pelo Estado será exercida por meio de empresa pública, de sociedade de economia mista e de suas subsidiárias."
     ],
     "origin": "real",
     "question": {
@@ -750,7 +750,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 4º",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
-      "Art. 4º Sociedade de economia mista é a entidade dotada de personalidade jurídica de direito privado, com criação autorizada por lei, sob a forma de sociedade anônima, cujas ações com direito a voto pertençam em sua maioria à União, aos Estados, ao Distrito Federal, aos Municípios ou a entidade da administração indireta. 07/10/2026, 23:14 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 7/"
+      "Art. 4º Sociedade de economia mista é a entidade dotada de personalidade jurídica de direito privado, com criação autorizada por lei, sob a forma de sociedade anônima, cujas ações com direito a voto pertençam em sua maioria à União, aos Estados, ao Distrito Federal, aos Municípios ou a entidade da administração indireta."
     ],
     "origin": "real",
     "question": {
@@ -796,7 +796,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 6º",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
-      "Art. 6º O estatuto da empresa pública, da sociedade de economia mista e de suas subsidiárias deverá observar regras de governança corporativa, de transparência e de estruturas, práticas de gestão de riscos e de controle interno, composição da administração e, havendo acionistas, mecanismos para sua proteção, todos constantes desta Lei. 07/10/2026, 23:14 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 8/"
+      "Art. 6º O estatuto da empresa pública, da sociedade de economia mista e de suas subsidiárias deverá observar regras de governança corporativa, de transparência e de estruturas, práticas de gestão de riscos e de controle interno, composição da administração e, havendo acionistas, mecanismos para sua proteção, todos constantes desta Lei."
     ],
     "origin": "real",
     "question": {
@@ -819,7 +819,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 7º",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
-      "Art. 7º Aplicam-se a todas as empresas públicas, as sociedades de economia mista de capital fechado e as suas subsidiárias as disposições da Lei nº 6.404, de 15 de dezembro de 1976, e as normas da Comissão de Valores Mobiliários sobre escrituração e elaboração de demonstrações financeiras, inclusive a obrigatoriedade de auditoria independente por auditor registrado nesse órgão. 07/10/2026, 23:14 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 9/"
+      "Art. 7º Aplicam-se a todas as empresas públicas, as sociedades de economia mista de capital fechado e as suas subsidiárias as disposições da Lei nº 6.404, de 15 de dezembro de 1976, e as normas da Comissão de Valores Mobiliários sobre escrituração e elaboração de demonstrações financeiras, inclusive a obrigatoriedade de auditoria independente por auditor registrado nesse órgão."
     ],
     "origin": "real",
     "question": {
@@ -842,7 +842,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 8º, inc. I",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
-      "Art. 8º As empresas públicas e as sociedades de economia mista deverão observar, no mínimo, os seguintes requisitos de transparência: I - elaboração de carta anual, subscrita pelos membros do Conselho de Administração, com a explicitação dos compromissos de consecução de objetivos de políticas públicas pela empresa pública, pela sociedade de economia mista e por suas subsidiárias, em atendimento ao interesse coletivo ou ao imperativo de segurança nacional que justificou a autorização para suas respectivas criações, com definição clara dos recursos a serem empregados para esse fim, bem como dos impactos econômico-financeiros da consecução desses objetivos, mensuráveis por meio de indicadores objetivos; […] 07/10/2026, 23:14 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 11/"
+      "Art. 8º As empresas públicas e as sociedades de economia mista deverão observar, no mínimo, os seguintes requisitos de transparência: I - elaboração de carta anual, subscrita pelos membros do Conselho de Administração, com a explicitação dos compromissos de consecução de objetivos de políticas públicas pela empresa pública, pela sociedade de economia mista e por suas subsidiárias, em atendimento ao interesse coletivo ou ao imperativo de segurança nacional que justificou a autorização para suas respectivas criações, com definição clara dos recursos a serem empregados para esse fim, bem como dos impactos econômico-financeiros da consecução desses objetivos, mensuráveis por meio de indicadores objetivos; […]"
     ],
     "origin": "real",
     "question": {
@@ -865,7 +865,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 8º, inc. I",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
-      "Art. 8º As empresas públicas e as sociedades de economia mista deverão observar, no mínimo, os seguintes requisitos de transparência: […] § 1º O interesse público da empresa pública e da sociedade de economia mista, respeitadas as razões que motivaram a autorização legislativa, manifesta-se por meio do alinhamento entre seus objetivos e aqueles de políticas públicas, na forma explicitada na carta anual a que se refere o inciso I do caput . […] 07/10/2026, 23:14 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 12/"
+      "Art. 8º As empresas públicas e as sociedades de economia mista deverão observar, no mínimo, os seguintes requisitos de transparência: […] § 1º O interesse público da empresa pública e da sociedade de economia mista, respeitadas as razões que motivaram a autorização legislativa, manifesta-se por meio do alinhamento entre seus objetivos e aqueles de políticas públicas, na forma explicitada na carta anual a que se refere o inciso I do caput . […]"
     ],
     "origin": "real",
     "question": {
@@ -888,7 +888,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 8º, inc. III",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
-      "Art. 8º As empresas públicas e as sociedades de economia mista deverão observar, no mínimo, os seguintes requisitos de transparência: […] III - divulgação tempestiva e atualizada de informações relevantes, em especial as relativas a atividades desenvolvidas, estrutura de controle, fatores de risco, dados econômico-financeiros, comentários dos administradores sobre o desempenho, políticas e práticas de governança corporativa e descrição da composição e da remuneração da administração; 07/10/2026, 23:14 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 13/"
+      "Art. 8º As empresas públicas e as sociedades de economia mista deverão observar, no mínimo, os seguintes requisitos de transparência: […] III - divulgação tempestiva e atualizada de informações relevantes, em especial as relativas a atividades desenvolvidas, estrutura de controle, fatores de risco, dados econômico-financeiros, comentários dos administradores sobre o desempenho, políticas e práticas de governança corporativa e descrição da composição e da remuneração da administração;"
     ],
     "origin": "real",
     "question": {
@@ -911,7 +911,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 8º, inc. IV",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
-      "Art. 8º As empresas públicas e as sociedades de economia mista deverão observar, no mínimo, os seguintes requisitos de transparência: [...] IV - elaboração e divulgação de política de divulgação de informações, em conformidade com a legislação em vigor e com as melhores práticas; V - elaboração de política de distribuição de dividendos, à luz do interesse público que justificou a criação da empresa pública ou da sociedade de economia mista; [...] VII - elaboração e divulgação da política de transações com partes relacionadas, em conformidade com os requisitos de competitividade, conformidade, transparência, equidade e comutatividade, que deverá ser revista, no mínimo, anualmente e aprovada pelo Conselho de Administração; [...] 07/10/2026, 23:14 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 14/"
+      "Art. 8º As empresas públicas e as sociedades de economia mista deverão observar, no mínimo, os seguintes requisitos de transparência: [...] IV - elaboração e divulgação de política de divulgação de informações, em conformidade com a legislação em vigor e com as melhores práticas; V - elaboração de política de distribuição de dividendos, à luz do interesse público que justificou a criação da empresa pública ou da sociedade de economia mista; [...] VII - elaboração e divulgação da política de transações com partes relacionadas, em conformidade com os requisitos de competitividade, conformidade, transparência, equidade e comutatividade, que deverá ser revista, no mínimo, anualmente e aprovada pelo Conselho de Administração; [...]"
     ],
     "origin": "real",
     "question": {
@@ -934,7 +934,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 8º, inc. V",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
-      "Art. 8º As empresas públicas e as sociedades de economia mista deverão observar, no mínimo, os seguintes requisitos de transparência: […] V - elaboração de política de distribuição de dividendos, à luz do interesse público que justificou a criação da empresa pública ou da sociedade de economia mista; […] 07/10/2026, 23:14 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 15/"
+      "Art. 8º As empresas públicas e as sociedades de economia mista deverão observar, no mínimo, os seguintes requisitos de transparência: […] V - elaboração de política de distribuição de dividendos, à luz do interesse público que justificou a criação da empresa pública ou da sociedade de economia mista; […]"
     ],
     "origin": "real",
     "question": {
@@ -957,7 +957,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 8º, inc. VI",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
-      "Art. 8º As empresas públicas e as sociedades de economia mista deverão observar, no mínimo, os seguintes requisitos de transparência: […] VI - divulgação, em nota explicativa às demonstrações financeiras, dos dados operacionais e financeiros das atividades relacionadas à consecução dos fins de interesse coletivo ou de segurança nacional; […] 07/10/2026, 23:14 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 16/"
+      "Art. 8º As empresas públicas e as sociedades de economia mista deverão observar, no mínimo, os seguintes requisitos de transparência: […] VI - divulgação, em nota explicativa às demonstrações financeiras, dos dados operacionais e financeiros das atividades relacionadas à consecução dos fins de interesse coletivo ou de segurança nacional; […]"
     ],
     "origin": "real",
     "question": {
@@ -980,7 +980,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 8º, inc. VII",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
-      "Art. 8º As empresas públicas e as sociedades de economia mista deverão observar, no mínimo, os seguintes requisitos de transparência: […] VII - elaboração e divulgação da política de transações com partes relacionadas, em conformidade com os requisitos de competitividade, conformidade, transparência, equidade e comutatividade, que deverá ser revista, no mínimo, anualmente e aprovada pelo Conselho de Administração; 07/10/2026, 23:14 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 17/"
+      "Art. 8º As empresas públicas e as sociedades de economia mista deverão observar, no mínimo, os seguintes requisitos de transparência: […] VII - elaboração e divulgação da política de transações com partes relacionadas, em conformidade com os requisitos de competitividade, conformidade, transparência, equidade e comutatividade, que deverá ser revista, no mínimo, anualmente e aprovada pelo Conselho de Administração;"
     ],
     "origin": "real",
     "question": {
@@ -1003,7 +1003,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 8º, inc. VII",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
-      "Art. 8º As empresas públicas e as sociedades de economia mista deverão observar, no mínimo, os seguintes requisitos de transparência: […] VII - elaboração e divulgação da política de transações com partes relacionadas, em conformidade com os requisitos de competitividade, conformidade, transparência, equidade e comutatividade, que deverá ser revista, no mínimo, anualmente e aprovada pelo Conselho de Administração; […] 07/10/2026, 23:14 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 18/"
+      "Art. 8º As empresas públicas e as sociedades de economia mista deverão observar, no mínimo, os seguintes requisitos de transparência: […] VII - elaboração e divulgação da política de transações com partes relacionadas, em conformidade com os requisitos de competitividade, conformidade, transparência, equidade e comutatividade, que deverá ser revista, no mínimo, anualmente e aprovada pelo Conselho de Administração; […]"
     ],
     "origin": "real",
     "question": {
@@ -1026,7 +1026,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 8º, inc. VIII",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
-      "Art. 8º As empresas públicas e as sociedades de economia mista deverão observar, no mínimo, os seguintes requisitos de transparência: […] VIII - ampla divulgação, ao público em geral, de carta anual de governança corporativa, que consolide em um único documento escrito, em linguagem clara e direta, as informações de que trata o inciso III; […] 07/10/2026, 23:14 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 19/"
+      "Art. 8º As empresas públicas e as sociedades de economia mista deverão observar, no mínimo, os seguintes requisitos de transparência: […] VIII - ampla divulgação, ao público em geral, de carta anual de governança corporativa, que consolide em um único documento escrito, em linguagem clara e direta, as informações de que trata o inciso III; […]"
     ],
     "origin": "real",
     "question": {
@@ -1049,7 +1049,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 8º, inc. IX",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
-      "Art. 8º As empresas públicas e as sociedades de economia mista deverão observar, no mínimo, os seguintes requisitos de transparência: […] IX - divulgação anual de relatório integrado ou de sustentabilidade. […] 07/10/2026, 23:14 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 20/"
+      "Art. 8º As empresas públicas e as sociedades de economia mista deverão observar, no mínimo, os seguintes requisitos de transparência: […] IX - divulgação anual de relatório integrado ou de sustentabilidade. […]"
     ],
     "origin": "real",
     "question": {
@@ -1072,7 +1072,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 8º, inc. X",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
-      "Art. 8º As empresas públicas e as sociedades de economia mista deverão observar, no mínimo, os seguintes requisitos de transparência: […] X – divulgação anual da política de igualdade entre homens e mulheres adotada, que deverá conter, entre outras informações relevantes: (Incluído pela Lei nº 15.177, de 2025) a) a quantidade e a proporção de mulheres empregadas, por níveis hierárquicos; (Incluído pela Lei nº 15.177, de 2025) b) a quantidade e a proporção de mulheres que ocupam cargos na administração; (Incluído pela Lei nº 15.177, de 2025) c) o demonstrativo da remuneração fixa, variável e eventual, segregada por sexo, relativa a cargos ou funções similares; (Incluído pela Lei nº 15.177, de 2025) d) a evolução comparativa dos indicadores previstos nas alíneas ‘a’, ‘b’ e ‘c’ deste inciso entre o exercício findo e o exercício anterior, especialmente na alta gestão. (Incluído pela Lei nº 15.177, de 2025) 07/10/2026, 23:14 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 21/"
+      "Art. 8º As empresas públicas e as sociedades de economia mista deverão observar, no mínimo, os seguintes requisitos de transparência: […] X – divulgação anual da política de igualdade entre homens e mulheres adotada, que deverá conter, entre outras informações relevantes: (Incluído pela Lei nº 15.177, de 2025) a) a quantidade e a proporção de mulheres empregadas, por níveis hierárquicos; (Incluído pela Lei nº 15.177, de 2025) b) a quantidade e a proporção de mulheres que ocupam cargos na administração; (Incluído pela Lei nº 15.177, de 2025) c) o demonstrativo da remuneração fixa, variável e eventual, segregada por sexo, relativa a cargos ou funções similares; (Incluído pela Lei nº 15.177, de 2025) d) a evolução comparativa dos indicadores previstos nas alíneas ‘a’, ‘b’ e ‘c’ deste inciso entre o exercício findo e o exercício anterior, especialmente na alta gestão. (Incluído pela Lei nº 15.177, de 2025)"
     ],
     "origin": "authorial",
     "question": {
@@ -1096,7 +1096,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 9º, § 1º, inc. VI",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
-      "Art. 9º A empresa pública e a sociedade de economia mista adotarão regras de estruturas e práticas de gestão de riscos e controle interno que abranjam: […] § 1º. […] VI - previsão de treinamento periódico, no mínimo anual, sobre Código de Conduta e Integridade, a empregados e administradores, e sobre a política de gestão de riscos, a administradores. […] 07/10/2026, 23:14 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 22/"
+      "Art. 9º A empresa pública e a sociedade de economia mista adotarão regras de estruturas e práticas de gestão de riscos e controle interno que abranjam: […] § 1º. […] VI - previsão de treinamento periódico, no mínimo anual, sobre Código de Conduta e Integridade, a empregados e administradores, e sobre a política de gestão de riscos, a administradores. […]"
     ],
     "origin": "real",
     "question": {
@@ -1119,7 +1119,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 9º, § 3º, inc. II",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
-      "Art. 9º. [...] § 3º A auditoria interna deverá: [...] II - ser responsável por aferir a adequação do controle interno, a efetividade do gerenciamento dos riscos e dos processos de governança e a confiabilidade do processo de coleta, mensuração, classificação, acumulação, registro e divulgação de eventos e transações, visando ao preparo de demonstrações financeiras. 07/10/2026, 23:14 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 23/"
+      "Art. 9º. [...] § 3º A auditoria interna deverá: [...] II - ser responsável por aferir a adequação do controle interno, a efetividade do gerenciamento dos riscos e dos processos de governança e a confiabilidade do processo de coleta, mensuração, classificação, acumulação, registro e divulgação de eventos e transações, visando ao preparo de demonstrações financeiras."
     ],
     "origin": "real",
     "question": {
@@ -1146,14 +1146,14 @@ const DATA_ADM_PACK2 = [
     ],
     "origin": "real",
     "question": {
-      "statement": "dos Deputados) O Fundo de Investimento “Dex Capital”, de origem norte-americana, tem interesse em investir na República Federativa do Brasil, injetando milhões de dólares no mercado brasileiro, gerando externalidades positivas. Nesse contexto, a entidade realiza uma série de diligências in loco para tomar ciência dos riscos a que estará submetida. Surge, assim, uma dúvida quanto ao lançamento de debêntures e valores mobiliários e à emissão de partes beneficiárias pelas empresas públicas. Nesse cenário, considerando as disposições da Lei nº 13.303/16, é correto afirmar que as empresas públicas podem lançar debêntures ou outros títulos ou valores mobiliários, conversíveis em ações, mas não podem emitir partes beneficiárias.",
+      "statement": "O Fundo de Investimento “Dex Capital”, de origem norte-americana, tem interesse em investir na República Federativa do Brasil, injetando milhões de dólares no mercado brasileiro, gerando externalidades positivas. Nesse contexto, a entidade realiza uma série de diligências in loco para tomar ciência dos riscos a que estará submetida. Surge, assim, uma dúvida quanto ao lançamento de debêntures e valores mobiliários e à emissão de partes beneficiárias pelas empresas públicas. Nesse cenário, considerando as disposições da Lei nº 13.303/16, é correto afirmar que as empresas públicas podem lançar debêntures ou outros títulos ou valores mobiliários, conversíveis em ações, mas não podem emitir partes beneficiárias.",
       "answer": false,
       "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
       "source": "28.pdf · questão 32 · Art. 11, Lei 13.303/2026",
-      "meta": "FGV 2023 - Consultor Legislativo - Área VIII (Câmara",
+      "meta": "FGV 2023 - Consultor Legislativo - Área VIII (Câmara dos Deputados)",
       "bank": "FGV",
       "year": 2023,
-      "role": "Consultor Legislativo - Área VIII (Câmara",
+      "role": "Consultor Legislativo - Área VIII (Câmara dos Deputados)",
       "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
     }
   },
@@ -1165,7 +1165,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 11º, inc. I",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
-      "Art. 11. A empresa pública não poderá: I - lançar debêntures ou outros títulos ou valores mobiliários, conversíveis em ações; 07/10/2026, 23:14 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 24/"
+      "Art. 11. A empresa pública não poderá: I - lançar debêntures ou outros títulos ou valores mobiliários, conversíveis em ações;"
     ],
     "origin": "real",
     "question": {
@@ -1188,18 +1188,18 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 11º, inc. I",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
-      "Art. 11. A empresa pública não poderá: I - lançar debêntures ou outros títulos ou valores mobiliários, conversíveis em ações; [...] 07/10/2026, 23:14 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 25/"
+      "Art. 11. A empresa pública não poderá: I - lançar debêntures ou outros títulos ou valores mobiliários, conversíveis em ações; [...]"
     ],
     "origin": "real",
     "question": {
-      "statement": "PB) Segundo art. 11º da Lei 13.303/2016, a empresa pública não poderá lançar debêntures ou outros títulos ou valores mobiliários, conversíveis em ações;",
+      "statement": "Segundo art. 11º da Lei 13.303/2016, a empresa pública não poderá lançar debêntures ou outros títulos ou valores mobiliários, conversíveis em ações;",
       "answer": true,
       "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
       "source": "28.pdf · questão 35 · Art. 11, I, Lei 13.303/2016",
-      "meta": "EDUCA 2020 - Contador (Prefeitura de São Francisco -",
+      "meta": "EDUCA 2020 - Contador (Prefeitura de São Francisco - PB)",
       "bank": "EDUCA",
       "year": 2020,
-      "role": "Contador (Prefeitura de São Francisco -",
+      "role": "Contador (Prefeitura de São Francisco - PB)",
       "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
       "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
@@ -1212,18 +1212,18 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 11º, inc. II",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
-      "Art. 11. A empresa pública não poderá: I - lançar debêntures ou outros títulos ou valores mobiliários, conversíveis em ações; II - emitir partes beneficiárias. 07/10/2026, 23:14 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 26/"
+      "Art. 11. A empresa pública não poderá: I - lançar debêntures ou outros títulos ou valores mobiliários, conversíveis em ações; II - emitir partes beneficiárias."
     ],
     "origin": "real",
     "question": {
-      "statement": "Deputados) O Fundo de Investimento “Dex Capital”, de origem norte- americana, tem interesse em investir na República Federativa do Brasil, injetando milhões de dólares no mercado brasileiro, gerando externalidades positivas. Nesse contexto, a entidade realiza uma série de diligências in loco para tomar ciência dos riscos a que estará submetida. Surge, assim, uma dúvida quanto ao lançamento de debêntures e valores mobiliários e à emissão de partes beneficiárias pelas empresas públicas. Nesse cenário, considerando as disposições da Lei no 13.303/16, é correto afirmar que as empresas públicas não podem lançar debêntures ou outros títulos ou valores mobiliários, conversíveis em ações, nem tampouco podem emitir partes beneficiárias.",
+      "statement": "O Fundo de Investimento “Dex Capital”, de origem norte- americana, tem interesse em investir na República Federativa do Brasil, injetando milhões de dólares no mercado brasileiro, gerando externalidades positivas. Nesse contexto, a entidade realiza uma série de diligências in loco para tomar ciência dos riscos a que estará submetida. Surge, assim, uma dúvida quanto ao lançamento de debêntures e valores mobiliários e à emissão de partes beneficiárias pelas empresas públicas. Nesse cenário, considerando as disposições da Lei no 13.303/16, é correto afirmar que as empresas públicas não podem lançar debêntures ou outros títulos ou valores mobiliários, conversíveis em ações, nem tampouco podem emitir partes beneficiárias.",
       "answer": true,
       "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
       "source": "28.pdf · questão 36 · Art. 11, II, Lei 13.303/2016",
-      "meta": "FGV 2023 - Analista Legislativo (Câmara dos",
+      "meta": "FGV 2023 - Analista Legislativo (Câmara dos Deputados)",
       "bank": "FGV",
       "year": 2023,
-      "role": "Analista Legislativo (Câmara dos",
+      "role": "Analista Legislativo (Câmara dos Deputados)",
       "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
     }
   },
@@ -1235,7 +1235,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 15º, § 1º",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
-      "Art. 15. O acionista controlador da empresa pública e da sociedade de economia mista responderá pelos atos praticados com abuso de poder, nos termos da Lei nº 6.404, de 15 de dezembro de 1976. § 1º A ação de reparação poderá ser proposta pela sociedade, nos termos do art. 246 da Lei n° 6.404, de 15 de dezembro de 1976, pelo terceiro prejudicado ou pelos demais sócios, independentemente de autorização da assembleia-geral de acionistas. 07/10/2026, 23:14 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 27/"
+      "Art. 15. O acionista controlador da empresa pública e da sociedade de economia mista responderá pelos atos praticados com abuso de poder, nos termos da Lei nº 6.404, de 15 de dezembro de 1976. § 1º A ação de reparação poderá ser proposta pela sociedade, nos termos do art. 246 da Lei n° 6.404, de 15 de dezembro de 1976, pelo terceiro prejudicado ou pelos demais sócios, independentemente de autorização da assembleia-geral de acionistas."
     ],
     "origin": "real",
     "question": {
@@ -1258,7 +1258,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 17º, inc. I",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
-      "Art. 17. Os membros do Conselho de Administração e os indicados para os cargos de diretor, inclusive presidente, diretor-geral e diretor-presidente, serão escolhidos entre cidadãos de reputação ilibada e de notório conhecimento, devendo ser atendidos, alternativamente, um dos requisitos das alíneas “a”, “b” e “c” do inciso I e, cumulativamente, os requisitos dos incisos II e III: I - ter experiência profissional de, no mínimo: […] c) 4 (quatro) anos de experiência como profissional liberal em atividade direta ou indiretamente vinculada à área de atuação da empresa pública ou sociedade de economia mista; […] III - não se enquadrar nas hipóteses de inelegibilidade previstas nas alíneas do inciso I do caput do art. 1º da Lei Complementar nº 64, de 18 de maio de 1990 , com as alterações introduzidas pela Lei Complementar nº 135, de 4 de junho de 2010. 07/10/2026, 23:14 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 28/"
+      "Art. 17. Os membros do Conselho de Administração e os indicados para os cargos de diretor, inclusive presidente, diretor-geral e diretor-presidente, serão escolhidos entre cidadãos de reputação ilibada e de notório conhecimento, devendo ser atendidos, alternativamente, um dos requisitos das alíneas “a”, “b” e “c” do inciso I e, cumulativamente, os requisitos dos incisos II e III: I - ter experiência profissional de, no mínimo: […] c) 4 (quatro) anos de experiência como profissional liberal em atividade direta ou indiretamente vinculada à área de atuação da empresa pública ou sociedade de economia mista; […] III - não se enquadrar nas hipóteses de inelegibilidade previstas nas alíneas do inciso I do caput do art. 1º da Lei Complementar nº 64, de 18 de maio de 1990 , com as alterações introduzidas pela Lei Complementar nº 135, de 4 de junho de 2010."
     ],
     "origin": "real",
     "question": {
@@ -1281,7 +1281,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 17º, § 2º, inc. I",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
-      "Art. 17, § 2º É vedada a indicação, para o Conselho de Administração e para a diretoria: I - de representante do órgão regulador ao qual a empresa pública ou a sociedade de economia mista está sujeita, de Ministro de Estado, de Secretário de Estado, de Secretário Municipal, de titular de cargo, sem vínculo permanente com o serviço público, de natureza especial ou de direção e assessoramento superior na administração pública, de dirigente estatutário de partido político e de titular de mandato no Poder Legislativo de qualquer ente da federação, ainda que licenciados do cargo; [...] 07/10/2026, 23:14 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 30/"
+      "Art. 17, § 2º É vedada a indicação, para o Conselho de Administração e para a diretoria: I - de representante do órgão regulador ao qual a empresa pública ou a sociedade de economia mista está sujeita, de Ministro de Estado, de Secretário de Estado, de Secretário Municipal, de titular de cargo, sem vínculo permanente com o serviço público, de natureza especial ou de direção e assessoramento superior na administração pública, de dirigente estatutário de partido político e de titular de mandato no Poder Legislativo de qualquer ente da federação, ainda que licenciados do cargo; [...]"
     ],
     "origin": "real",
     "question": {
@@ -1304,7 +1304,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 17º, § 2º, inc. I",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
-      "Art. 17, § 2º É vedada a indicação, para o Conselho de Administração e para a diretoria: I - de representante do órgão regulador ao qual a empresa pública ou a sociedade de economia mista está sujeita, de Ministro de Estado, de Secretário de Estado, de Secretário Municipal, de titular de cargo, sem vínculo permanente com o serviço público, de natureza especial ou de direção e assessoramento superior na administração pública, de dirigente estatutário de partido político e de titular de mandato no Poder Legislativo de qualquer ente da federação, ainda que licenciados do cargo; [...] 07/10/2026, 23:14 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 31/"
+      "Art. 17, § 2º É vedada a indicação, para o Conselho de Administração e para a diretoria: I - de representante do órgão regulador ao qual a empresa pública ou a sociedade de economia mista está sujeita, de Ministro de Estado, de Secretário de Estado, de Secretário Municipal, de titular de cargo, sem vínculo permanente com o serviço público, de natureza especial ou de direção e assessoramento superior na administração pública, de dirigente estatutário de partido político e de titular de mandato no Poder Legislativo de qualquer ente da federação, ainda que licenciados do cargo; [...]"
     ],
     "origin": "real",
     "question": {
@@ -1327,7 +1327,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 17º, § 2º, inc. II",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
-      "Art. 17, § 2º É vedada a indicação, para o Conselho de Administração e para a diretoria: [...] II - de pessoa que atuou, nos últimos 36 (trinta e seis) meses, como participante de estrutura decisória de partido político ou em trabalho vinculado a organização, estruturação e realização de campanha eleitoral; [...] 07/10/2026, 23:14 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 32/"
+      "Art. 17, § 2º É vedada a indicação, para o Conselho de Administração e para a diretoria: [...] II - de pessoa que atuou, nos últimos 36 (trinta e seis) meses, como participante de estrutura decisória de partido político ou em trabalho vinculado a organização, estruturação e realização de campanha eleitoral; [...]"
     ],
     "origin": "real",
     "question": {
@@ -1350,7 +1350,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 17º, § 2º, inc. II",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
-      "Art. 17, § 2º É vedada a indicação, para o Conselho de Administração e para a diretoria: [...] II - de pessoa que atuou, nos últimos 36 (trinta e seis) meses, como participante de estrutura decisória de partido político ou em trabalho vinculado a organização, estruturação e realização de campanha eleitoral; [...] 07/10/2026, 23:14 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 33/"
+      "Art. 17, § 2º É vedada a indicação, para o Conselho de Administração e para a diretoria: [...] II - de pessoa que atuou, nos últimos 36 (trinta e seis) meses, como participante de estrutura decisória de partido político ou em trabalho vinculado a organização, estruturação e realização de campanha eleitoral; [...]"
     ],
     "origin": "real",
     "question": {
@@ -1373,7 +1373,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 18º, inc. I",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
-      "Art. 18. Sem prejuízo das competências previstas no art. 142 da Lei nº 6.404, de 15 de dezembro de 1976, e das demais atribuições previstas nesta Lei, compete ao Conselho de Administração: I - discutir, aprovar e monitorar decisões envolvendo práticas de governança corporativa, relacionamento com partes interessadas, política de gestão de pessoas e código de conduta dos agentes; 07/10/2026, 23:14 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 34/"
+      "Art. 18. Sem prejuízo das competências previstas no art. 142 da Lei nº 6.404, de 15 de dezembro de 1976, e das demais atribuições previstas nesta Lei, compete ao Conselho de Administração: I - discutir, aprovar e monitorar decisões envolvendo práticas de governança corporativa, relacionamento com partes interessadas, política de gestão de pessoas e código de conduta dos agentes;"
     ],
     "origin": "real",
     "question": {
@@ -1396,7 +1396,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 18º, inc. III",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
-      "Art. 18. Sem prejuízo das competências previstas no art. 142 da Lei nº 6.404, de 15 de dezembro de 1976 , e das demais atribuições previstas nesta Lei, compete ao Conselho de Administração: […] III - estabelecer política de porta-vozes visando a eliminar risco de contradição entre informações de diversas áreas e as dos executivos da empresa pública ou da sociedade de economia mista; […] 07/10/2026, 23:14 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 35/"
+      "Art. 18. Sem prejuízo das competências previstas no art. 142 da Lei nº 6.404, de 15 de dezembro de 1976 , e das demais atribuições previstas nesta Lei, compete ao Conselho de Administração: […] III - estabelecer política de porta-vozes visando a eliminar risco de contradição entre informações de diversas áreas e as dos executivos da empresa pública ou da sociedade de economia mista; […]"
     ],
     "origin": "real",
     "question": {
@@ -1419,7 +1419,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 19º",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
-      "Art. 19-A. Nos conselhos de administração das empresas públicas e das sociedades de economia mista de que trata esta Lei, pelo menos 30% (trinta por cento) dos membros titulares serão mulheres. (Incluído pela Lei nº 15.177, de 2025) 07/10/2026, 23:14 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 36/"
+      "Art. 19-A. Nos conselhos de administração das empresas públicas e das sociedades de economia mista de que trata esta Lei, pelo menos 30% (trinta por cento) dos membros titulares serão mulheres. (Incluído pela Lei nº 15.177, de 2025)"
     ],
     "origin": "authorial",
     "question": {
@@ -1443,7 +1443,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 22º, inc. IV",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
-      "Art. 22. O Conselho de Administração deve ser composto, no mínimo, por 25% (vinte e cinco por cento) de membros independentes ou por pelo menos 1 (um), caso haja decisão pelo exercício da faculdade do voto múltiplo pelos acionistas minoritários, nos termos do art. 141 da Lei nº 6.404, de 15 de dezembro de 1976 . [...] IV - não ser ou não ter sido, nos últimos 3 (três) anos, empregado ou diretor da empresa pública, da sociedade de economia mista ou de sociedade controlada, coligada ou subsidiária da empresa pública ou da sociedade de economia mista, exceto se o vínculo for exclusivamente com instituições públicas de ensino ou pesquisa; 07/10/2026, 23:14 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 37/"
+      "Art. 22. O Conselho de Administração deve ser composto, no mínimo, por 25% (vinte e cinco por cento) de membros independentes ou por pelo menos 1 (um), caso haja decisão pelo exercício da faculdade do voto múltiplo pelos acionistas minoritários, nos termos do art. 141 da Lei nº 6.404, de 15 de dezembro de 1976 . [...] IV - não ser ou não ter sido, nos últimos 3 (três) anos, empregado ou diretor da empresa pública, da sociedade de economia mista ou de sociedade controlada, coligada ou subsidiária da empresa pública ou da sociedade de economia mista, exceto se o vínculo for exclusivamente com instituições públicas de ensino ou pesquisa;"
     ],
     "origin": "real",
     "question": {
@@ -1489,7 +1489,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 24º, § 1º, inc. I",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
-      "Art. 24. § 1º Competirá ao Comitê de Auditoria Estatutário, sem prejuízo de outras competências previstas no estatuto da empresa pública ou da sociedade de economia mista: I - opinar sobre a contratação e destituição de auditor independente; 07/10/2026, 23:14 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 38/"
+      "Art. 24. § 1º Competirá ao Comitê de Auditoria Estatutário, sem prejuízo de outras competências previstas no estatuto da empresa pública ou da sociedade de economia mista: I - opinar sobre a contratação e destituição de auditor independente;"
     ],
     "origin": "real",
     "question": {
@@ -1535,7 +1535,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 2º",
     "title": "Lei 13.848/2019 — Agências reguladoras",
     "parts": [
-      "Art. 2º Consideram-se agências reguladoras, para os fins desta Lei e para os fins da Lei nº 9.986, de 18 de julho de 2000: […] III - a Agência Nacional de Telecomunicações (Anatel); IV - a Agência Nacional de Vigilância Sanitária (Anvisa); 07/10/2026, 23:16 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 1/"
+      "Art. 2º Consideram-se agências reguladoras, para os fins desta Lei e para os fins da Lei nº 9.986, de 18 de julho de 2000: […] III - a Agência Nacional de Telecomunicações (Anatel); IV - a Agência Nacional de Vigilância Sanitária (Anvisa);"
     ],
     "origin": "authorial",
     "question": {
@@ -1559,7 +1559,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 2º, inc. XII",
     "title": "Lei 13.848/2019 — Agências reguladoras",
     "parts": [
-      "Art. 2º Consideram-se agências reguladoras, para os fins desta Lei e para os fins da Lei nº 9.986, de 18 de julho de 2000: I - a Agência Nacional de Energia Elétrica (Aneel); II - a Agência Nacional do Petróleo, Gás Natural e Biocombustíveis (ANP); III - a Agência Nacional de Telecomunicações (Anatel); IV - a Agência Nacional de Vigilância Sanitária (Anvisa); V - a Agência Nacional de Saúde Suplementar (ANS); VI - a Agência Nacional de Águas (ANA); VII - a Agência Nacional de Transportes Aquaviários (Antaq); VIII - a Agência Nacional de Transportes Terrestres (ANTT); IX - a Agência Nacional do Cinema (Ancine); X - a Agência Nacional de Aviação Civil (Anac); XI - a Agência Nacional de Mineração (ANM). XII - a Agência Nacional de Proteção de Dados (ANPD). XII - a Agência Nacional de Proteção de Dados (ANPD). (Redação dada pela Lei nº 15.352, de 2026) 07/10/2026, 23:16 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 2/"
+      "Art. 2º Consideram-se agências reguladoras, para os fins desta Lei e para os fins da Lei nº 9.986, de 18 de julho de 2000: I - a Agência Nacional de Energia Elétrica (Aneel); II - a Agência Nacional do Petróleo, Gás Natural e Biocombustíveis (ANP); III - a Agência Nacional de Telecomunicações (Anatel); IV - a Agência Nacional de Vigilância Sanitária (Anvisa); V - a Agência Nacional de Saúde Suplementar (ANS); VI - a Agência Nacional de Águas (ANA); VII - a Agência Nacional de Transportes Aquaviários (Antaq); VIII - a Agência Nacional de Transportes Terrestres (ANTT); IX - a Agência Nacional do Cinema (Ancine); X - a Agência Nacional de Aviação Civil (Anac); XI - a Agência Nacional de Mineração (ANM). XII - a Agência Nacional de Proteção de Dados (ANPD). XII - a Agência Nacional de Proteção de Dados (ANPD). (Redação dada pela Lei nº 15.352, de 2026)"
     ],
     "origin": "authorial",
     "question": {
@@ -1606,7 +1606,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 2º, parágrafo único",
     "title": "Lei 13.848/2019 — Agências reguladoras",
     "parts": [
-      "Art. 2º […] Parágrafo único. Ressalvado o que dispuser a legislação específica, aplica-se o disposto nesta Lei às autarquias especiais caracterizadas, nos termos desta Lei, como agências reguladoras e criadas a partir de sua vigência. 07/10/2026, 23:16 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 3/"
+      "Art. 2º […] Parágrafo único. Ressalvado o que dispuser a legislação específica, aplica-se o disposto nesta Lei às autarquias especiais caracterizadas, nos termos desta Lei, como agências reguladoras e criadas a partir de sua vigência."
     ],
     "origin": "authorial",
     "question": {
@@ -1653,7 +1653,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 3º",
     "title": "Lei 13.848/2019 — Agências reguladoras",
     "parts": [
-      "Art. 3º A natureza especial conferida à agência reguladora é caracterizada pela ausência de tutela ou de subordinação hierárquica, pela autonomia funcional, decisória, administrativa e financeira e pela investidura a termo de seus dirigentes e estabilidade durante os mandatos, bem como pelas demais disposições constantes desta Lei ou de leis específicas voltadas à sua implementação. 07/10/2026, 23:16 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 8/"
+      "Art. 3º A natureza especial conferida à agência reguladora é caracterizada pela ausência de tutela ou de subordinação hierárquica, pela autonomia funcional, decisória, administrativa e financeira e pela investidura a termo de seus dirigentes e estabilidade durante os mandatos, bem como pelas demais disposições constantes desta Lei ou de leis específicas voltadas à sua implementação."
     ],
     "origin": "real",
     "question": {
@@ -1676,7 +1676,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 3º, § 2º, inc. I",
     "title": "Lei 13.848/2019 — Agências reguladoras",
     "parts": [
-      "Art. 3º […] § 2º A autonomia administrativa da agência reguladora é caracterizada pelas seguintes competências: I - solicitar diretamente ao Ministério da Economia: a) autorização para a realização de concursos públicos; 07/10/2026, 23:16 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 9/"
+      "Art. 3º […] § 2º A autonomia administrativa da agência reguladora é caracterizada pelas seguintes competências: I - solicitar diretamente ao Ministério da Economia: a) autorização para a realização de concursos públicos;"
     ],
     "origin": "real",
     "question": {
@@ -1699,18 +1699,18 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 3º, § 2º, inc. I",
     "title": "Lei 13.848/2019 — Agências reguladoras",
     "parts": [
-      "Art. 3º - A natureza especial conferida à agência reguladora é caracterizada pela ausência de tutela ou de subordinação hierárquica, pela autonomia funcional, decisória, administrativa e financeira e pela investidura a termo de seus dirigentes e estabilidade durante os mandatos, bem como pelas demais disposições constantes desta Lei ou de leis específicas voltadas à sua implementação. § 2º - A autonomia administrativa da agência reguladora é caracterizada pelas seguintes competências: I - solicitar diretamente ao Ministério da Economia: a) autorização para a realização de concursos públicos; b) provimento dos cargos autorizados em lei para seu quadro de pessoal, observada a disponibilidade orçamentária; […] 07/10/2026, 23:16 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 10/"
+      "Art. 3º - A natureza especial conferida à agência reguladora é caracterizada pela ausência de tutela ou de subordinação hierárquica, pela autonomia funcional, decisória, administrativa e financeira e pela investidura a termo de seus dirigentes e estabilidade durante os mandatos, bem como pelas demais disposições constantes desta Lei ou de leis específicas voltadas à sua implementação. § 2º - A autonomia administrativa da agência reguladora é caracterizada pelas seguintes competências: I - solicitar diretamente ao Ministério da Economia: a) autorização para a realização de concursos públicos; b) provimento dos cargos autorizados em lei para seu quadro de pessoal, observada a disponibilidade orçamentária; […]"
     ],
     "origin": "real",
     "question": {
-      "statement": "Região)) Julgue o item a seguir. No âmbito da Administração Federal, a natureza especial conferida à agência reguladora é caracterizada pela ausência de tutela ou de subordinação hierárquica e, assim sendo, pela desnecessidade de autorização ministerial específica para a realização de concursos públicos, ou para o provimento dos cargos relativos ao seu quadro de pessoal autorizados em lei.",
+      "statement": "Julgue o item a seguir. No âmbito da Administração Federal, a natureza especial conferida à agência reguladora é caracterizada pela ausência de tutela ou de subordinação hierárquica e, assim sendo, pela desnecessidade de autorização ministerial específica para a realização de concursos públicos, ou para o provimento dos cargos relativos ao seu quadro de pessoal autorizados em lei.",
       "answer": false,
       "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
       "source": "32.pdf · questão 15 · Art. 3º, § 2º, I, a, b, Lei 1`3.848/19",
-      "meta": "FGV 2025 - Juiz Federal Substituto (TRF - 3º",
+      "meta": "FGV 2025 - Juiz Federal Substituto (TRF - 3º Região))",
       "bank": "FGV",
       "year": 2025,
-      "role": "Juiz Federal Substituto (TRF - 3º",
+      "role": "Juiz Federal Substituto (TRF - 3º Região))",
       "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
     }
   },
@@ -1722,7 +1722,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 3º, § 2º, inc. III",
     "title": "Lei 13.848/2019 — Agências reguladoras",
     "parts": [
-      "Art. 3º […] § 2º A autonomia administrativa da agência reguladora é caracterizada pelas seguintes competências: […] III - celebrar contratos administrativos e prorrogar contratos em vigor relativos a atividades de custeio, independentemente do valor. 07/10/2026, 23:16 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 11/"
+      "Art. 3º […] § 2º A autonomia administrativa da agência reguladora é caracterizada pelas seguintes competências: […] III - celebrar contratos administrativos e prorrogar contratos em vigor relativos a atividades de custeio, independentemente do valor."
     ],
     "origin": "real",
     "question": {
@@ -1746,7 +1746,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 3º, § 3º",
     "title": "Lei 13.848/2019 — Agências reguladoras",
     "parts": [
-      "Art. 3º […] § 3º As agências reguladoras devem adotar práticas de gestão de riscos e de controle interno e elaborar e divulgar programa de integridade, com o objetivo de promover a adoção de medidas e ações institucionais destinadas à prevenção, à detecção, à punição e à remediação de fraudes e atos de corrupção. 07/10/2026, 23:16 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 12/"
+      "Art. 3º […] § 3º As agências reguladoras devem adotar práticas de gestão de riscos e de controle interno e elaborar e divulgar programa de integridade, com o objetivo de promover a adoção de medidas e ações institucionais destinadas à prevenção, à detecção, à punição e à remediação de fraudes e atos de corrupção."
     ],
     "origin": "real",
     "question": {
@@ -1792,18 +1792,18 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 4º",
     "title": "Lei 13.848/2019 — Agências reguladoras",
     "parts": [
-      "Art. 4º A agência reguladora deverá observar, em suas atividades, a devida adequação entre meios e fins, vedada a imposição de obrigações, restrições e sanções em medida superior àquela necessária ao atendimento do interesse público. 07/10/2026, 23:16 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 14/"
+      "Art. 4º A agência reguladora deverá observar, em suas atividades, a devida adequação entre meios e fins, vedada a imposição de obrigações, restrições e sanções em medida superior àquela necessária ao atendimento do interesse público."
     ],
     "origin": "real",
     "question": {
-      "statement": "de Santo Agostinho - PE) Recentemente foi publicada a Lei n° 13.848 de 25 de junho de 2019 que dispõe sobre a gestão, a organização, o processo decisório e o controle social das agências reguladoras. Sobre o assunto, julgue a assertiva. A agência reguladora deverá observar, em suas atividades, a devida adequação entre meios e fins, vedada a imposição de obrigações, restrições e sanções em medida superior àquela necessária ao atendimento do interesse público.",
+      "statement": "Recentemente foi publicada a Lei n° 13.848 de 25 de junho de 2019 que dispõe sobre a gestão, a organização, o processo decisório e o controle social das agências reguladoras. Sobre o assunto, julgue a assertiva. A agência reguladora deverá observar, em suas atividades, a devida adequação entre meios e fins, vedada a imposição de obrigações, restrições e sanções em medida superior àquela necessária ao atendimento do interesse público.",
       "answer": true,
       "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
       "source": "32.pdf · questão 21 · Art. 4º, Lei 13.848/2019",
-      "meta": "IBFC 2019 - Procurador Municipal (Prefeitura de Cabo",
+      "meta": "IBFC 2019 - Procurador Municipal (Prefeitura de Cabo de Santo Agostinho - PE)",
       "bank": "IBFC",
       "year": 2019,
-      "role": "Procurador Municipal (Prefeitura de Cabo",
+      "role": "Procurador Municipal (Prefeitura de Cabo de Santo Agostinho - PE)",
       "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
       "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
@@ -1820,14 +1820,14 @@ const DATA_ADM_PACK2 = [
     ],
     "origin": "real",
     "question": {
-      "statement": "de Santo Agostinho - PE) Recentemente foi publicada a Lei n° 13.848 de 25 de junho de 2019 que dispõe sobre a gestão, a organização, o processo decisório e o controle social das agências reguladoras. Sobre o assunto, julgue a assertiva. A agência reguladora deverá indicar os pressupostos de fato e de direito que determinarem suas decisões, inclusive a respeito da edição ou não de atos normativos.",
+      "statement": "Recentemente foi publicada a Lei n° 13.848 de 25 de junho de 2019 que dispõe sobre a gestão, a organização, o processo decisório e o controle social das agências reguladoras. Sobre o assunto, julgue a assertiva. A agência reguladora deverá indicar os pressupostos de fato e de direito que determinarem suas decisões, inclusive a respeito da edição ou não de atos normativos.",
       "answer": true,
       "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
       "source": "32.pdf · questão 22 · Art. 5º, Lei 13.848/2019",
-      "meta": "IBFC 2019 - Procurador Municipal (Prefeitura de Cabo",
+      "meta": "IBFC 2019 - Procurador Municipal (Prefeitura de Cabo de Santo Agostinho - PE)",
       "bank": "IBFC",
       "year": 2019,
-      "role": "Procurador Municipal (Prefeitura de Cabo",
+      "role": "Procurador Municipal (Prefeitura de Cabo de Santo Agostinho - PE)",
       "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
       "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
@@ -1840,7 +1840,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 5º",
     "title": "Lei 13.848/2019 — Agências reguladoras",
     "parts": [
-      "Art. 5º A agência reguladora deverá indicar os pressupostos de fato e de direito que determinarem suas decisões, inclusive a respeito da edição ou não de atos normativos. 07/10/2026, 23:16 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 15/"
+      "Art. 5º A agência reguladora deverá indicar os pressupostos de fato e de direito que determinarem suas decisões, inclusive a respeito da edição ou não de atos normativos."
     ],
     "origin": "authorial",
     "question": {
@@ -1864,7 +1864,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 6º",
     "title": "Lei 13.848/2019 — Agências reguladoras",
     "parts": [
-      "Art. 6º A adoção e as propostas de alteração de atos normativos de interesse geral dos agentes econômicos, consumidores ou usuários dos serviços prestados serão, nos termos de regulamento, precedidas da realização de Análise de Impacto Regulatório (AIR), que conterá informações e dados sobre os possíveis efeitos do ato normativo. 07/10/2026, 23:16 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 16/"
+      "Art. 6º A adoção e as propostas de alteração de atos normativos de interesse geral dos agentes econômicos, consumidores ou usuários dos serviços prestados serão, nos termos de regulamento, precedidas da realização de Análise de Impacto Regulatório (AIR), que conterá informações e dados sobre os possíveis efeitos do ato normativo."
     ],
     "origin": "real",
     "question": {
@@ -1887,7 +1887,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 6º",
     "title": "Lei 13.848/2019 — Agências reguladoras",
     "parts": [
-      "Art. 6º - A adoção e as propostas de alteração de atos normativos de interesse geral dos agentes econômicos, consumidores ou usuários dos serviços prestados serão, nos termos de regulamento, precedidas da realização de Análise de Impacto Regulatório (AIR), que conterá informações e dados sobre os possíveis efeitos do ato normativo. 07/10/2026, 23:16 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 17/"
+      "Art. 6º - A adoção e as propostas de alteração de atos normativos de interesse geral dos agentes econômicos, consumidores ou usuários dos serviços prestados serão, nos termos de regulamento, precedidas da realização de Análise de Impacto Regulatório (AIR), que conterá informações e dados sobre os possíveis efeitos do ato normativo."
     ],
     "origin": "real",
     "question": {
@@ -1910,7 +1910,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 6º, § 1º",
     "title": "Lei 13.848/2019 — Agências reguladoras",
     "parts": [
-      "Art. 6º A adoção e as propostas de alteração de atos normativos de interesse geral dos agentes econômicos, consumidores ou usuários dos serviços prestados serão, nos termos de regulamento, precedidas da realização de Análise de Impacto Regulatório (AIR), que conterá informações e dados sobre os possíveis efeitos do ato normativo. § 1º Regulamento disporá sobre o conteúdo e a metodologia da AIR, sobre os quesitos mínimos a serem objeto de exame, bem como sobre os casos em que será obrigatória sua realização e aqueles em que poderá ser dispensada. 07/10/2026, 23:16 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 18/"
+      "Art. 6º A adoção e as propostas de alteração de atos normativos de interesse geral dos agentes econômicos, consumidores ou usuários dos serviços prestados serão, nos termos de regulamento, precedidas da realização de Análise de Impacto Regulatório (AIR), que conterá informações e dados sobre os possíveis efeitos do ato normativo. § 1º Regulamento disporá sobre o conteúdo e a metodologia da AIR, sobre os quesitos mínimos a serem objeto de exame, bem como sobre os casos em que será obrigatória sua realização e aqueles em que poderá ser dispensada."
     ],
     "origin": "real",
     "question": {
@@ -1933,7 +1933,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 6º, § 3º",
     "title": "Lei 13.848/2019 — Agências reguladoras",
     "parts": [
-      "Art. 6º […] § 3º O conselho diretor ou a diretoria colegiada manifestar-se-á, em relação ao relatório de AIR, sobre a adequação da proposta de ato normativo aos objetivos pretendidos, indicando se os impactos estimados recomendam sua adoção, e, quando for o caso, quais os complementos necessários. 07/10/2026, 23:16 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 19/"
+      "Art. 6º […] § 3º O conselho diretor ou a diretoria colegiada manifestar-se-á, em relação ao relatório de AIR, sobre a adequação da proposta de ato normativo aos objetivos pretendidos, indicando se os impactos estimados recomendam sua adoção, e, quando for o caso, quais os complementos necessários."
     ],
     "origin": "real",
     "question": {
@@ -1979,7 +1979,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 7º",
     "title": "Lei 13.848/2019 — Agências reguladoras",
     "parts": [
-      "Art. 7º O processo de decisão da agência reguladora referente a regulação terá caráter colegiado. 07/10/2026, 23:16 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 21/"
+      "Art. 7º O processo de decisão da agência reguladora referente a regulação terá caráter colegiado."
     ],
     "origin": "authorial",
     "question": {
@@ -2007,14 +2007,14 @@ const DATA_ADM_PACK2 = [
     ],
     "origin": "real",
     "question": {
-      "statement": "de Santo Agostinho - PE) Recentemente foi publicada a Lei n° 13.848 de 25 de junho de 2019 que dispõe sobre a gestão, a organização, o processo decisório e o controle social das agências reguladoras. Sobre o assunto, julgue a assertiva. O processo de decisão da agência reguladora referente a regulação terá caráter individual e discricionário.",
+      "statement": "Recentemente foi publicada a Lei n° 13.848 de 25 de junho de 2019 que dispõe sobre a gestão, a organização, o processo decisório e o controle social das agências reguladoras. Sobre o assunto, julgue a assertiva. O processo de decisão da agência reguladora referente a regulação terá caráter individual e discricionário.",
       "answer": false,
       "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
       "source": "32.pdf · questão 32 · Art. 7º, Lei 13.848/2019",
-      "meta": "IBFC 2019 - Procurador Municipal (Prefeitura de Cabo",
+      "meta": "IBFC 2019 - Procurador Municipal (Prefeitura de Cabo de Santo Agostinho - PE)",
       "bank": "IBFC",
       "year": 2019,
-      "role": "Procurador Municipal (Prefeitura de Cabo",
+      "role": "Procurador Municipal (Prefeitura de Cabo de Santo Agostinho - PE)",
       "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
       "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
@@ -2027,7 +2027,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 7º, § 2º",
     "title": "Lei 13.848/2019 — Agências reguladoras",
     "parts": [
-      "Art. 7º […] § 2º É facultado à agência reguladora adotar processo de delegação interna de decisão, sendo assegurado ao conselho diretor ou à diretoria colegiada o direito de reexame das decisões delegadas. 07/10/2026, 23:16 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 22/"
+      "Art. 7º […] § 2º É facultado à agência reguladora adotar processo de delegação interna de decisão, sendo assegurado ao conselho diretor ou à diretoria colegiada o direito de reexame das decisões delegadas."
     ],
     "origin": "authorial",
     "question": {
@@ -2074,7 +2074,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 8º",
     "title": "Lei 13.848/2019 — Agências reguladoras",
     "parts": [
-      "Art. 8º As reuniões deliberativas do conselho diretor ou da diretoria colegiada da agência reguladora serão públicas e gravadas em meio eletrônico. 07/10/2026, 23:16 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 23/"
+      "Art. 8º As reuniões deliberativas do conselho diretor ou da diretoria colegiada da agência reguladora serão públicas e gravadas em meio eletrônico."
     ],
     "origin": "real",
     "question": {
@@ -2121,7 +2121,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 8º, § 1º",
     "title": "Lei 13.848/2019 — Agências reguladoras",
     "parts": [
-      "Art. 8º. […] § 1º A pauta de reunião deliberativa deverá ser divulgada no sítio da agência na internet com antecedência mínima de 3 (três) dias úteis. 07/10/2026, 23:16 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 24/"
+      "Art. 8º. […] § 1º A pauta de reunião deliberativa deverá ser divulgada no sítio da agência na internet com antecedência mínima de 3 (três) dias úteis."
     ],
     "origin": "real",
     "question": {
@@ -2144,7 +2144,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 8º, § 6º",
     "title": "Lei 13.848/2019 — Agências reguladoras",
     "parts": [
-      "Art. 8º As reuniões deliberativas do conselho diretor ou da diretoria colegiada da agência reguladora serão públicas e gravadas em meio eletrônico. […] § 6º Não se aplica o disposto neste artigo às deliberações do conselho diretor ou da diretoria colegiada que envolvam: I - documentos classificados como sigilosos; II - matéria de natureza administrativa. 07/10/2026, 23:16 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 25/"
+      "Art. 8º As reuniões deliberativas do conselho diretor ou da diretoria colegiada da agência reguladora serão públicas e gravadas em meio eletrônico. […] § 6º Não se aplica o disposto neste artigo às deliberações do conselho diretor ou da diretoria colegiada que envolvam: I - documentos classificados como sigilosos; II - matéria de natureza administrativa."
     ],
     "origin": "real",
     "question": {
@@ -2190,7 +2190,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 9º",
     "title": "Lei 13.848/2019 — Agências reguladoras",
     "parts": [
-      "Art. 9º Serão objeto de consulta pública, previamente à tomada de decisão pelo conselho diretor ou pela diretoria colegiada, as minutas e as propostas de alteração de atos normativos de interesse geral dos agentes econômicos, consumidores ou usuários dos serviços prestados. 07/10/2026, 23:16 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 27/"
+      "Art. 9º Serão objeto de consulta pública, previamente à tomada de decisão pelo conselho diretor ou pela diretoria colegiada, as minutas e as propostas de alteração de atos normativos de interesse geral dos agentes econômicos, consumidores ou usuários dos serviços prestados."
     ],
     "origin": "real",
     "question": {
@@ -2213,7 +2213,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 9º, § 4º",
     "title": "Lei 13.848/2019 — Agências reguladoras",
     "parts": [
-      "Art. 9º […] § 4º As críticas e as sugestões encaminhadas pelos interessados deverão ser disponibilizadas na sede da agência e no respectivo sítio na internet em até 10 (dez) dias úteis após o término do prazo da consulta pública. 07/10/2026, 23:16 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 28/"
+      "Art. 9º […] § 4º As críticas e as sugestões encaminhadas pelos interessados deverão ser disponibilizadas na sede da agência e no respectivo sítio na internet em até 10 (dez) dias úteis após o término do prazo da consulta pública."
     ],
     "origin": "real",
     "question": {
@@ -2236,7 +2236,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 9º, § 5º",
     "title": "Lei 13.848/2019 — Agências reguladoras",
     "parts": [
-      "Art. 9º […] § 5º O posicionamento da agência reguladora sobre as críticas ou as contribuições apresentadas no processo de consulta pública deverá ser disponibilizado na sede da agência e no respectivo sítio na internet em até 30 (trinta) dias úteis após a reunião do conselho diretor ou da diretoria colegiada para deliberação final sobre a matéria. 07/10/2026, 23:16 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 29/"
+      "Art. 9º […] § 5º O posicionamento da agência reguladora sobre as críticas ou as contribuições apresentadas no processo de consulta pública deverá ser disponibilizado na sede da agência e no respectivo sítio na internet em até 30 (trinta) dias úteis após a reunião do conselho diretor ou da diretoria colegiada para deliberação final sobre a matéria."
     ],
     "origin": "authorial",
     "question": {
@@ -2260,7 +2260,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 9º, § 7º",
     "title": "Lei 13.848/2019 — Agências reguladoras",
     "parts": [
-      "Art. 9º […] § 7º Compete ao órgão responsável no Ministério da Economia opinar, quando considerar pertinente, sobre os impactos regulatórios de minutas e propostas de alteração de atos normativos de interesse geral dos agentes econômicos, consumidores ou usuários dos serviços prestados submetidas a consulta pública pela agência reguladora. 07/10/2026, 23:16 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 30/"
+      "Art. 9º […] § 7º Compete ao órgão responsável no Ministério da Economia opinar, quando considerar pertinente, sobre os impactos regulatórios de minutas e propostas de alteração de atos normativos de interesse geral dos agentes econômicos, consumidores ou usuários dos serviços prestados submetidas a consulta pública pela agência reguladora."
     ],
     "origin": "real",
     "question": {
@@ -2307,7 +2307,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 11º",
     "title": "Lei 13.848/2019 — Agências reguladoras",
     "parts": [
-      "Art. 11. A agência reguladora poderá estabelecer, em regimento interno, outros meios de participação de interessados em suas decisões, diretamente ou por meio de organizações e associações legalmente reconhecidas, aplicando-se o § 5º do art. 9º às contribuições recebidas. 07/10/2026, 23:16 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 31/"
+      "Art. 11. A agência reguladora poderá estabelecer, em regimento interno, outros meios de participação de interessados em suas decisões, diretamente ou por meio de organizações e associações legalmente reconhecidas, aplicando-se o § 5º do art. 9º às contribuições recebidas."
     ],
     "origin": "real",
     "question": {
@@ -2400,18 +2400,18 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 1º, inc. VI",
     "title": "Lei 8.443/1992 — Tribunal de Contas da União",
     "parts": [
-      "Art. 1° Ao Tribunal de Contas da União, órgão de controle externo, compete, nos termos da Constituição Federal e na forma estabelecida nesta Lei: [...] VI - efetuar, observada a legislação pertinente, o cálculo das quotas referentes aos fundos de participação a que alude o parágrafo único do art. 161 da Constituição Federal, fiscalizando a entrega dos respectivos recursos; 07/10/2026, 23:29 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 2/"
+      "Art. 1° Ao Tribunal de Contas da União, órgão de controle externo, compete, nos termos da Constituição Federal e na forma estabelecida nesta Lei: [...] VI - efetuar, observada a legislação pertinente, o cálculo das quotas referentes aos fundos de participação a que alude o parágrafo único do art. 161 da Constituição Federal, fiscalizando a entrega dos respectivos recursos;"
     ],
     "origin": "real",
     "question": {
-      "statement": "de Amparo - SP) - Adaptada O Tribunal de Contas da União (TCU) é um órgão de controle externo do governo federal e que auxilia o Congresso Nacional na missão de acompanhar a execução orçamentária e financeira do país, contribuindo, assim, para o aprimoramento da Administração Pública. Além das funções constitucionais, o TCU possui também outras competências que são estabelecidas através de leis específicas, como a Lei de Responsabilidade Fiscal e a Lei de Licitações. Dentre as competências do TCU, estabelecidas por meio de sua Lei Orgânica (Lei n° 8.443/1992), incluem- -se efetuar, observada a legislação pertinente, o cálculo das quotas referentes aos fundos de participação a que alude o parágrafo único do Art. 161 da Constituição Federal, fiscalizando a entrega dos respectivos recursos.",
+      "statement": "- Adaptada O Tribunal de Contas da União (TCU) é um órgão de controle externo do governo federal e que auxilia o Congresso Nacional na missão de acompanhar a execução orçamentária e financeira do país, contribuindo, assim, para o aprimoramento da Administração Pública. Além das funções constitucionais, o TCU possui também outras competências que são estabelecidas através de leis específicas, como a Lei de Responsabilidade Fiscal e a Lei de Licitações. Dentre as competências do TCU, estabelecidas por meio de sua Lei Orgânica (Lei n° 8.443/1992), incluem- -se efetuar, observada a legislação pertinente, o cálculo das quotas referentes aos fundos de participação a que alude o parágrafo único do Art. 161 da Constituição Federal, fiscalizando a entrega dos respectivos recursos.",
       "answer": true,
       "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
       "source": "58.pdf · questão 2 · Art. 1°, VI, Lei 8.443/92",
-      "meta": "Instituto Consulplan 2020 - Controlador Interno (Câmara",
+      "meta": "Instituto Consulplan 2020 - Controlador Interno (Câmara de Amparo - SP)",
       "bank": "Instituto Consulplan",
       "year": 2020,
-      "role": "Controlador Interno (Câmara",
+      "role": "Controlador Interno (Câmara de Amparo - SP)",
       "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
       "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
@@ -2448,7 +2448,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 5º, inc. V",
     "title": "Lei 8.443/1992 — Tribunal de Contas da União",
     "parts": [
-      "Art. 5° A jurisdição do Tribunal abrange: […] V - os responsáveis por entidades dotadas de personalidade jurídica de direito privado que recebam contribuições parafiscais e prestem serviço de interesse público ou social; 07/10/2026, 23:29 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 3/"
+      "Art. 5° A jurisdição do Tribunal abrange: […] V - os responsáveis por entidades dotadas de personalidade jurídica de direito privado que recebam contribuições parafiscais e prestem serviço de interesse público ou social;"
     ],
     "origin": "real",
     "question": {
@@ -2472,7 +2472,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 5º, inc. IX",
     "title": "Lei 8.443/1992 — Tribunal de Contas da União",
     "parts": [
-      "Art. 5° A jurisdição do Tribunal abrange: […] IX - os representantes da União ou do Poder Público na Assembléia Geral das empresas estatais e sociedades anônimas de cujo capital a União ou o Poder Público participem, solidariamente, com os membros dos Conselhos Fiscal e de Administração, pela prática de atos de gestão ruinosa ou liberalidade à custa das respectivas sociedades. 07/10/2026, 23:29 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 4/"
+      "Art. 5° A jurisdição do Tribunal abrange: […] IX - os representantes da União ou do Poder Público na Assembléia Geral das empresas estatais e sociedades anônimas de cujo capital a União ou o Poder Público participem, solidariamente, com os membros dos Conselhos Fiscal e de Administração, pela prática de atos de gestão ruinosa ou liberalidade à custa das respectivas sociedades."
     ],
     "origin": "real",
     "question": {
@@ -2520,7 +2520,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 1º, inc. I",
     "title": "Lei 8.443/1992 — Tribunal de Contas da União",
     "parts": [
-      "Art. 1° Ao Tribunal de Contas da União, órgão de controle externo, compete, nos termos da Constituição Federal e na forma estabelecida nesta Lei: I - julgar as contas dos administradores e demais responsáveis por dinheiros, bens e valores públicos das unidades dos poderes da União e das entidades da administração indireta, incluídas as fundações e sociedades instituídas e mantidas pelo poder público federal, e as contas daqueles que derem causa a perda, extravio ou outra irregularidade de que resulte dano ao Erário; 07/10/2026, 23:29 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 5/"
+      "Art. 1° Ao Tribunal de Contas da União, órgão de controle externo, compete, nos termos da Constituição Federal e na forma estabelecida nesta Lei: I - julgar as contas dos administradores e demais responsáveis por dinheiros, bens e valores públicos das unidades dos poderes da União e das entidades da administração indireta, incluídas as fundações e sociedades instituídas e mantidas pelo poder público federal, e as contas daqueles que derem causa a perda, extravio ou outra irregularidade de que resulte dano ao Erário;"
     ],
     "origin": "real",
     "question": {
@@ -2568,7 +2568,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 7º, parágrafo único",
     "title": "Lei 8.443/1992 — Tribunal de Contas da União",
     "parts": [
-      "Art. 7°. [...] Parágrafo único. Nas tomadas ou prestações de contas a que alude este artigo devem ser incluídos todos os recursos, orçamentários e extra-orçamentários, geridos ou não pela unidade ou entidade. 07/10/2026, 23:29 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 6/"
+      "Art. 7°. [...] Parágrafo único. Nas tomadas ou prestações de contas a que alude este artigo devem ser incluídos todos os recursos, orçamentários e extra-orçamentários, geridos ou não pela unidade ou entidade."
     ],
     "origin": "real",
     "question": {
@@ -2616,7 +2616,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 10º, § 2º",
     "title": "Lei 8.443/1992 — Tribunal de Contas da União",
     "parts": [
-      "Art. 10 […] § 2° Definitiva é a decisão pela qual o Tribunal julga as contas regulares, regulares com ressalva, ou irregulares. 07/10/2026, 23:29 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 7/"
+      "Art. 10 […] § 2° Definitiva é a decisão pela qual o Tribunal julga as contas regulares, regulares com ressalva, ou irregulares."
     ],
     "origin": "real",
     "question": {
@@ -2664,7 +2664,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 10º, § 3º",
     "title": "Lei 8.443/1992 — Tribunal de Contas da União",
     "parts": [
-      "Art. 10. [...] § 3° Terminativa é a decisão pela qual o Tribunal ordena o trancamento das contas que forem consideradas iliquidáveis, nos termos dos arts. 20 e 21 desta Lei. 07/10/2026, 23:29 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 8/"
+      "Art. 10. [...] § 3° Terminativa é a decisão pela qual o Tribunal ordena o trancamento das contas que forem consideradas iliquidáveis, nos termos dos arts. 20 e 21 desta Lei."
     ],
     "origin": "real",
     "question": {
@@ -2712,7 +2712,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 12º, inc. II",
     "title": "Lei 8.443/1992 — Tribunal de Contas da União",
     "parts": [
-      "Art. 12. Verificada irregularidade nas contas, o Relator ou o Tribunal: [...] II - se houver débito, ordenará a citação do responsável para, no prazo estabelecido no Regimento Interno, apresentar defesa ou recolher a quantia devida; 07/10/2026, 23:29 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 9/"
+      "Art. 12. Verificada irregularidade nas contas, o Relator ou o Tribunal: [...] II - se houver débito, ordenará a citação do responsável para, no prazo estabelecido no Regimento Interno, apresentar defesa ou recolher a quantia devida;"
     ],
     "origin": "real",
     "question": {
@@ -2736,7 +2736,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 12º",
     "title": "Lei 8.443/1992 — Tribunal de Contas da União",
     "parts": [
-      "Art. 12. Verificada irregularidade nas contas, o Relator ou o Tribunal: [...] II - se houver débito, ordenará a citação do responsável para, no prazo estabelecido no Regimento Interno, apresentar defesa ou recolher a quantia devida; III - se não houver débito, determinará a audiência do responsável para, no prazo estabelecido no Regimento Interno, apresentar razões de justificativa; 07/10/2026, 23:29 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 10/"
+      "Art. 12. Verificada irregularidade nas contas, o Relator ou o Tribunal: [...] II - se houver débito, ordenará a citação do responsável para, no prazo estabelecido no Regimento Interno, apresentar defesa ou recolher a quantia devida; III - se não houver débito, determinará a audiência do responsável para, no prazo estabelecido no Regimento Interno, apresentar razões de justificativa;"
     ],
     "origin": "real",
     "question": {
@@ -2784,7 +2784,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 16º, inc. III",
     "title": "Lei 8.443/1992 — Tribunal de Contas da União",
     "parts": [
-      "Art. 16. As contas serão julgadas: [...] III - irregulares, quando comprovada qualquer das seguintes ocorrências: a) omissão no dever de prestar contas; 07/10/2026, 23:29 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 11/"
+      "Art. 16. As contas serão julgadas: [...] III - irregulares, quando comprovada qualquer das seguintes ocorrências: a) omissão no dever de prestar contas;"
     ],
     "origin": "real",
     "question": {
@@ -2856,7 +2856,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 20º",
     "title": "Lei 8.443/1992 — Tribunal de Contas da União",
     "parts": [
-      "Art. 20. As contas serão consideradas iliquidáveis quando caso fortuito ou de força maior, comprovadamente alheio à vontade do responsável, tornar materialmente impossível o julgamento de mérito a que se refere o art. 16 desta Lei. 07/10/2026, 23:29 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 13/"
+      "Art. 20. As contas serão consideradas iliquidáveis quando caso fortuito ou de força maior, comprovadamente alheio à vontade do responsável, tornar materialmente impossível o julgamento de mérito a que se refere o art. 16 desta Lei."
     ],
     "origin": "real",
     "question": {
@@ -2904,7 +2904,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 48º",
     "title": "Lei 8.443/1992 — Tribunal de Contas da União",
     "parts": [
-      "Art. 48. De decisão proferida em processos concernentes às matérias de que tratam as Seções III e IV deste capítulo caberá pedido de reexame, que terá efeito suspensivo. 07/10/2026, 23:29 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 14/"
+      "Art. 48. De decisão proferida em processos concernentes às matérias de que tratam as Seções III e IV deste capítulo caberá pedido de reexame, que terá efeito suspensivo."
     ],
     "origin": "real",
     "question": {
@@ -2976,7 +2976,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 7º, parágrafo único",
     "title": "Lei 8.443/1992 — Tribunal de Contas da União",
     "parts": [
-      "Art. 7° [...] Parágrafo único. Nas tomadas ou prestações de contas a que alude este artigo devem ser incluídos todos os recursos, orçamentários e extra-orçamentários, geridos ou não pela unidade ou entidade. 07/10/2026, 23:29 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 16/"
+      "Art. 7° [...] Parágrafo único. Nas tomadas ou prestações de contas a que alude este artigo devem ser incluídos todos os recursos, orçamentários e extra-orçamentários, geridos ou não pela unidade ou entidade."
     ],
     "origin": "real",
     "question": {
@@ -3024,7 +3024,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 16º, inc. II",
     "title": "Lei 8.443/1992 — Tribunal de Contas da União",
     "parts": [
-      "Art. 16. As contas serão julgadas: […] II - regulares com ressalva, quando evidenciarem impropriedade ou qualquer outra falta de natureza formal de que não resulte dano ao Erário; 07/10/2026, 23:29 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 17/"
+      "Art. 16. As contas serão julgadas: […] II - regulares com ressalva, quando evidenciarem impropriedade ou qualquer outra falta de natureza formal de que não resulte dano ao Erário;"
     ],
     "origin": "real",
     "question": {
@@ -3072,7 +3072,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 61º",
     "title": "Lei 8.443/1992 — Tribunal de Contas da União",
     "parts": [
-      "Art. 61. O Tribunal poderá, por intermédio do Ministério Público, solicitar à Advocacia-Geral da União ou, conforme o caso, aos dirigentes das entidades que lhe sejam jurisdicionadas, as medidas necessárias ao arresto dos bens dos responsáveis julgados em débito, devendo ser ouvido quanto à liberação dos bens arrestados e sua restituição. 07/10/2026, 23:29 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 18/"
+      "Art. 61. O Tribunal poderá, por intermédio do Ministério Público, solicitar à Advocacia-Geral da União ou, conforme o caso, aos dirigentes das entidades que lhe sejam jurisdicionadas, as medidas necessárias ao arresto dos bens dos responsáveis julgados em débito, devendo ser ouvido quanto à liberação dos bens arrestados e sua restituição."
     ],
     "origin": "real",
     "question": {
@@ -3120,7 +3120,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 57º",
     "title": "Lei 8.443/1992 — Tribunal de Contas da União",
     "parts": [
-      "Art. 57. Quando o responsável for julgado em débito, poderá ainda o Tribunal aplicar-lhe multa de até cem por cento do valor atualizado do dano causado ao Erário. 07/10/2026, 23:29 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 19/"
+      "Art. 57. Quando o responsável for julgado em débito, poderá ainda o Tribunal aplicar-lhe multa de até cem por cento do valor atualizado do dano causado ao Erário."
     ],
     "origin": "real",
     "question": {
@@ -3144,7 +3144,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 9º, inc. III",
     "title": "Lei 8.443/1992 — Tribunal de Contas da União",
     "parts": [
-      "Art. 9° Integrarão a tomada ou prestação de contas, inclusive a tomada de contas especial, dentre outros elementos estabelecidos no Regimento Interno, os seguintes: […] III - relatório e certificado de auditoria, com o parecer do dirigente do órgão de controle interno, que consignará qualquer irregularidade ou ilegalidade constatada, indicando as medidas adotadas para corrigir as faltas encontradas; 07/10/2026, 23:29 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 20/"
+      "Art. 9° Integrarão a tomada ou prestação de contas, inclusive a tomada de contas especial, dentre outros elementos estabelecidos no Regimento Interno, os seguintes: […] III - relatório e certificado de auditoria, com o parecer do dirigente do órgão de controle interno, que consignará qualquer irregularidade ou ilegalidade constatada, indicando as medidas adotadas para corrigir as faltas encontradas;"
     ],
     "origin": "real",
     "question": {
@@ -3168,7 +3168,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 8º",
     "title": "Lei 8.443/1992 — Tribunal de Contas da União",
     "parts": [
-      "Art. 8° Diante da omissão no dever de prestar contas, da não comprovação da aplicação dos recursos repassados pela União, na forma prevista no inciso VII do art. 5° desta Lei, da ocorrência de desfalque ou desvio de dinheiros, bens ou valores públicos, ou, ainda, da prática de qualquer ato ilegal, ilegítimo ou antieconômico de que resulte dano ao Erário, a autoridade administrativa competente, sob pena de responsabilidade solidária, deverá imediatamente adotar providências com vistas à instauração da tomada de contas especial para apuração dos fatos, identificação dos responsáveis e quantificação do dano. 07/10/2026, 23:29 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 21/"
+      "Art. 8° Diante da omissão no dever de prestar contas, da não comprovação da aplicação dos recursos repassados pela União, na forma prevista no inciso VII do art. 5° desta Lei, da ocorrência de desfalque ou desvio de dinheiros, bens ou valores públicos, ou, ainda, da prática de qualquer ato ilegal, ilegítimo ou antieconômico de que resulte dano ao Erário, a autoridade administrativa competente, sob pena de responsabilidade solidária, deverá imediatamente adotar providências com vistas à instauração da tomada de contas especial para apuração dos fatos, identificação dos responsáveis e quantificação do dano."
     ],
     "origin": "real",
     "question": {
@@ -3216,7 +3216,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 24º",
     "title": "Lei 8.443/1992 — Tribunal de Contas da União",
     "parts": [
-      "Art. 24. A decisão do Tribunal, de que resulte imputação de débito ou cominação de multa, torna a dívida líquida e certa e tem eficácia de título executivo, nos termos da alínea b do inciso III do art. 23 desta Lei. 07/10/2026, 23:29 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 22/"
+      "Art. 24. A decisão do Tribunal, de que resulte imputação de débito ou cominação de multa, torna a dívida líquida e certa e tem eficácia de título executivo, nos termos da alínea b do inciso III do art. 23 desta Lei."
     ],
     "origin": "real",
     "question": {
@@ -3264,7 +3264,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 17º",
     "title": "Lei 8.443/1992 — Tribunal de Contas da União",
     "parts": [
-      "Art. 17. Quando julgar as contas regulares, o Tribunal dará quitação plena ao responsável. 07/10/2026, 23:29 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 23/"
+      "Art. 17. Quando julgar as contas regulares, o Tribunal dará quitação plena ao responsável."
     ],
     "origin": "real",
     "question": {
@@ -3312,7 +3312,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 12º, inc. II",
     "title": "Lei 8.443/1992 — Tribunal de Contas da União",
     "parts": [
-      "Art. 12. Verificada irregularidade nas contas, o Relator ou o Tribunal: […] II - se houver débito, ordenará a citação do responsável para, no prazo estabelecido no Regimento Interno, apresentar defesa ou recolher a quantia devida; 07/10/2026, 23:29 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 24/"
+      "Art. 12. Verificada irregularidade nas contas, o Relator ou o Tribunal: […] II - se houver débito, ordenará a citação do responsável para, no prazo estabelecido no Regimento Interno, apresentar defesa ou recolher a quantia devida;"
     ],
     "origin": "real",
     "question": {
@@ -3359,7 +3359,7 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 47º",
     "title": "Lei 8.443/1992 — Tribunal de Contas da União",
     "parts": [
-      "Art. 47. Ao exercer a fiscalização, se configurada a ocorrência de desfalque, desvio de bens ou outra irregularidade de que resulte dano ao Erário, o Tribunal ordenará, desde logo, a conversão do processo em tomada de contas especial, salvo a hipótese prevista no art. 93 desta Lei. 07/10/2026, 23:29 Decorando a Lei Seca https://app.decorandoaleiseca.app/vade-mecum-de-questoes 25/"
+      "Art. 47. Ao exercer a fiscalização, se configurada a ocorrência de desfalque, desvio de bens ou outra irregularidade de que resulte dano ao Erário, o Tribunal ordenará, desde logo, a conversão do processo em tomada de contas especial, salvo a hipótese prevista no art. 93 desta Lei."
     ],
     "origin": "real",
     "question": {
@@ -3386,14 +3386,14 @@ const DATA_ADM_PACK2 = [
     ],
     "origin": "real",
     "question": {
-      "statement": "Pancas-ES) Os ministros do Tribunal de Contas da União elegerão o Presidente e o Vice-Presidente do Tribunal para mandato correspondente a dois anos civis, permitida a reeleição apenas por um período de igual duração.",
+      "statement": "Os ministros do Tribunal de Contas da União elegerão o Presidente e o Vice-Presidente do Tribunal para mandato correspondente a dois anos civis, permitida a reeleição apenas por um período de igual duração.",
       "answer": false,
       "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
       "source": "58.pdf · questão 46 · Art. 69, Lei 8.443/92",
-      "meta": "IDECAN 2014 - Auditor de Controle Interno (Câmara de",
+      "meta": "IDECAN 2014 - Auditor de Controle Interno (Câmara de Pancas-ES)",
       "bank": "IDECAN",
       "year": 2014,
-      "role": "Auditor de Controle Interno (Câmara de",
+      "role": "Auditor de Controle Interno (Câmara de Pancas-ES)",
       "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
       "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
     }
