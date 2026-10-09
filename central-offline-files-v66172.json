@@ -1,5 +1,5 @@
 {
-  "build": "20261009-lei-module-sync1",
+  "build": "20261009-lei-module-sync-civilsharing2",
   "files": [
     "/central-v119.html?direct=35",
     "/ui/discipline-standard.js?v=20261003penalnative1",
@@ -417,6 +417,10 @@
     "/tools/decorando-data-civil-leis.js?v=20261008civil1",
     "/tools/decorando-data-cpc-leis.js?v=20261008civil1",
     "/tools/decorando-data-restantes.js?v=20261009rest1",
-    "/tools/decorando-data-modulos.js?v=20261009sync1"
+    "/tools/decorando-data-modulos.js?v=20261009sync1",
+    "/central-lazy-theory-v66119.js?v=20261009civilsharing2",
+    "/content/civil/civil-sharing-links.js?v=20261009civilsharing2",
+    "/ui/civil-native-study-v1.js?v=20261009civilsharing2",
+    "/ui/civil-native-study-v1.css?v=20261009civilsharing2"
   ]
 }

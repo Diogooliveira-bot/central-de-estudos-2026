@@ -12,7 +12,7 @@
   },
   "scripts": {
     "prepare": "node scripts/build-home-progress.mjs",
-    "test": "node --test tests/auth-unit.mjs tests/module-text-export-unit.mjs",
+    "test": "node --test tests/auth-unit.mjs tests/module-text-export-unit.mjs tests/civil-sharing-links-unit.mjs",
     "test:lei-adm": "node --test tests/lei-em-dia-adm-9784.mjs tests/lei-em-dia-adm-15leis.mjs tests/lei-em-dia-adm-dispositivos.mjs tests/lei-em-dia-adm-encerramento.mjs",
     "test:lei-cf": "node --test tests/lei-em-dia-constitucional.mjs",
     "test:lei-civil": "node --test tests/lei-em-dia-civil-processo.mjs",
