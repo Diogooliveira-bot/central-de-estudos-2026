@@ -1,5 +1,5 @@
 {
-  "build": "20261008-lei-em-dia-civil-processo",
+  "build": "20261009-lei-em-dia-restantes",
   "files": [
     "/central-v119.html?direct=35",
     "/ui/discipline-standard.js?v=20261003penalnative1",
@@ -415,6 +415,7 @@
     "/tools/decorando-data-adm-pack5.js?v=20261008adm6",
     "/tools/decorando-data-cf-leis.js?v=20261008cf1",
     "/tools/decorando-data-civil-leis.js?v=20261008civil1",
-    "/tools/decorando-data-cpc-leis.js?v=20261008civil1"
+    "/tools/decorando-data-cpc-leis.js?v=20261008civil1",
+    "/tools/decorando-data-restantes.js?v=20261009rest1"
   ]
 }
