@@ -806,6 +806,7 @@ const TOPICS_CPC = [{"id":"cpc-m01","label":"Módulo 1 — Normas fundamentais, 
 <script src="./decorando-data-adm-pack5.js?v=20261008adm6"></script>
 <script src="./decorando-data-cf-leis.js?v=20261008cf1"></script>
 <script src="./decorando-data-restantes.js?v=20261009rest1"></script>
+<script src="./decorando-data-modulos.js?v=20261009sync1"></script>
 <script>
 const DATA_ADM_EXTRAS = [...DATA_ADM_14133_EXTRA,...DATA_ADM_8112_EXTRA,...DATA_ADM_8429_EXTRA,...DATA_ADM_9784_EXPANSAO,...DATA_ADM_12527_EXPANSAO,...DATA_ADM_13709_EXPANSAO,...DATA_ADM_PACK5];
 const DATA = [...DATA_CF,...DATA_CF_LEIS,...DATA_CIVIL,...DATA_CIVIL_LEIS,...DATA_PENAL,...DATA_CPC,...DATA_CPC_LEIS,...DATA_CPP,...DATA_ADM,...DATA_ADM_PACK1,...DATA_ADM_PACK2,...DATA_ADM_PACK3,...DATA_ADM_PACK4,...DATA_ADM_EXTRAS,...DATA_RESTANTES];
@@ -867,6 +868,7 @@ function currentDiscipline(){return DISCIPLINES[saved.preferences.discipline]||D
 function disciplineTopics(){return TOPICS_BY_DISCIPLINE[currentDiscipline().id]||[]}
 let ui={
   screen:"filters",
+  selectedModules:new Set(),
   selectedTopics:new Set(),
   selectedSubtopics:new Set(),
   discPicked:false,
@@ -963,7 +965,9 @@ function todayAttempts(){return auditAttempts().filter(a=>dateOnly(a.date)===tod
 
 function setPref(key,value){saved.preferences[key]=value;save();render()}
 function chooseDiscipline(id){
+  id=CENTRAL_LAW_MODULES.disciplineAliases[id]||id;
   if(!DISCIPLINES[id])return;
+  ui.selectedModules=new Set();
   saved.preferences.discipline=id;save();
   const ts=disciplineTopics();ui.selectedTopics=new Set(ts.map(t=>t.id));ui.selectedSubtopics=new Set(ts.flatMap(t=>t.subtopics));
   ui.statusFilter="all";ui.articleIndex=0;ui.choice=null;ui.historyOpen=false;ui.commentOpen=false;render();
@@ -1163,8 +1167,25 @@ function qcYear(a){const y=(a.question||{}).year;return y?String(y):"Sem ano"}
 function qcRole(a){const r=String((a.question||{}).role||"").trim();return r||""}
 function qcOrigin(a){return a.origin==="unverified"?"unverified":(a.origin==="authorial"||(a.question||{}).origin==="authorial")?"authorial":"real"}
 const QC_ORIGIN_LABEL={real:"Questões de prova",authorial:"Autorais",unverified:"Origem a confirmar"};
+const LAW_MODULE_LIST=[...CENTRAL_LAW_MODULES.modules,...CENTRAL_LAW_MODULES.complement];
+const LAW_MODULE_QUESTIONS=new Map(LAW_MODULE_LIST.map(m=>[m.id,new Set(m.questionIds)]));
+function disciplineModules(){return LAW_MODULE_LIST.filter(m=>m.discipline===currentDiscipline().id)}
+function matchesModule(article){return !ui.selectedModules.size||[...ui.selectedModules].some(id=>LAW_MODULE_QUESTIONS.get(id)?.has(article.id))}
+function centralOpenModule(id,discipline=null,direct=true){
+  discipline=CENTRAL_LAW_MODULES.disciplineAliases[discipline]||discipline;
+  const resolved=discipline?CENTRAL_LAW_MODULES.aliases[discipline+'|'+id]||id:id;
+  const module=LAW_MODULE_LIST.find(m=>m.id===resolved);
+  if(!module||discipline&&module.discipline!==discipline)return false;
+  chooseDiscipline(module.discipline);
+  ui.selectedModules=new Set([module.id]);ui.selectedTopics=new Set();ui.selectedSubtopics=new Set();
+  ui.fBanks=new Set();ui.fYears=new Set();ui.fRoles=new Set();ui.fOrigin='';ui.statusFilter='all';
+  ui.articleIndex=0;ui.choice=null;ui.focusArticleId=null;ui.scrollPinnedId=null;ui.discPicked=true;ui.statusPicked=true;
+  ui.screen=direct?'study':'filters';render();window.scrollTo(0,0);return true;
+}
+window.centralOpenModule=centralOpenModule;
 function selectedActive(){
   return allActive().filter(a=>{
+    if(!matchesModule(a))return false;
     if(ui.selectedTopics.size&&!ui.selectedTopics.has(a.topicId))return false;
     if(ui.selectedSubtopics.size&&!ui.selectedSubtopics.has(a.subtopic))return false;
     if(ui.fBanks.size&&!ui.fBanks.has(qcBank(a)))return false;
@@ -1176,9 +1197,10 @@ function selectedActive(){
 }
 function qcEsc(x){return esc(x).replace(/'/g,"&#39;")}
 function qcOptions(field){
-  const base=allActive();const d=currentDiscipline();const m=new Map();
+  const base=allActive().filter(matchesModule);const d=currentDiscipline();const m=new Map();
   const add=(k,label,extra)=>{const o=m.get(k)||{key:k,label,n:0,...extra};o.n++;m.set(k,o)};
-  if(field==="topic"){disciplineTopics().forEach(t=>m.set(t.id,{key:t.id,label:t.label,n:0}));base.forEach(a=>{const o=m.get(a.topicId);if(o)o.n++});return [...m.values()]}
+  if(field==="module"){return disciplineModules().map(module=>({key:module.id,label:(module.number?"M"+String(module.number).padStart(2,"0")+" — ":"")+module.title,n:allActive().filter(a=>LAW_MODULE_QUESTIONS.get(module.id).has(a.id)).length}))}
+  if(field==="topic"){disciplineTopics().forEach(t=>m.set(t.id,{key:t.id,label:t.label.replace(/^Módulo \d+ — /,""),n:0}));base.forEach(a=>{const o=m.get(a.topicId);if(o)o.n++});return [...m.values()]}
   if(field==="sub"){const pool=ui.selectedTopics.size?base.filter(a=>ui.selectedTopics.has(a.topicId)):base;const tl={};disciplineTopics().forEach(t=>tl[t.id]=t.label);pool.forEach(a=>add(a.subtopic,a.subtopic,{group:tl[a.topicId]||""}));return [...m.values()]}
   if(field==="bank"){base.forEach(a=>add(qcBank(a),qcBank(a)));return [...m.values()].sort((x,y)=>y.n-x.n)}
   if(field==="year"){base.forEach(a=>add(qcYear(a),qcYear(a)));return [...m.values()].sort((x,y)=>(y.key==="Sem ano"?-1:0)-(x.key==="Sem ano"?-1:0)||String(y.key).localeCompare(String(x.key)))}
@@ -1187,7 +1209,8 @@ function qcOptions(field){
 }
 const QC_FIELDS={
   disc:{label:"Disciplina",ph:"Selecione a disciplina",single:true},
-  topic:{label:"Assunto",ph:"Todos os assuntos",set:()=>ui.selectedTopics,search:true},
+  module:{label:"Módulo da Central",ph:"Todos os módulos e complementares",set:()=>ui.selectedModules,search:true},
+  topic:{label:"Lei ou assunto",ph:"Todas as leis e assuntos",set:()=>ui.selectedTopics,search:true},
   sub:{label:"Subassunto",ph:"Todos os subassuntos",set:()=>ui.selectedSubtopics,search:true},
   bank:{label:"Banca",ph:"Todas as bancas",set:()=>ui.fBanks,search:true},
   year:{label:"Ano",ph:"Todos os anos",set:()=>ui.fYears,search:false},
@@ -1196,7 +1219,8 @@ const QC_FIELDS={
 function qcSummary(f){
   if(f==="disc")return ui.discPicked?esc(currentDiscipline().name):"";
   const s=QC_FIELDS[f].set();if(!s.size)return "";
-  if(f==="topic"){const t=disciplineTopics().find(x=>s.has(x.id));return s.size===1?esc(t?t.label:""):`${s.size} selecionados`}
+  if(f==="module"){const m=disciplineModules().find(x=>s.has(x.id));return s.size===1?esc(m?(m.number?"M"+String(m.number).padStart(2,"0")+" — ":"")+m.title:""):`${s.size} módulos selecionados`}
+  if(f==="topic"){const t=disciplineTopics().find(x=>s.has(x.id));return s.size===1?esc(t?t.label.replace(/^Módulo \d+ — /,""):""):`${s.size} selecionados`}
   return s.size===1?esc([...s][0]):`${s.size} selecionados`;
 }
 function qcRerender(){
@@ -1217,7 +1241,7 @@ function qcPick(f,key){
 }
 function qcClearField(f){if(f==="disc")return;QC_FIELDS[f].set().clear();qcRerender()}
 function qcSeg(k,v){const cur=k==="status"?(ui.statusFilter==="all"?"":ui.statusFilter):ui.fOrigin;const nv=cur===v?"":v;if(k==="status"){ui.statusFilter=nv||"all";ui.statusPicked=!!nv}else ui.fOrigin=nv;ui.articleIndex=0;ui.choice=null;ui.focusArticleId=null;ui.scrollPinnedId=null;render()}
-function qcClearAll(){ui.selectedTopics=new Set();ui.selectedSubtopics=new Set();ui.fBanks=new Set();ui.fYears=new Set();ui.fRoles=new Set();ui.fOrigin="";ui.statusFilter="all";ui.statusPicked=false;ui.dd=null;ui.articleIndex=0;ui.choice=null;ui.focusArticleId=null;ui.scrollPinnedId=null;render()}
+function qcClearAll(){ui.selectedModules=new Set();ui.selectedTopics=new Set();ui.selectedSubtopics=new Set();ui.fBanks=new Set();ui.fYears=new Set();ui.fRoles=new Set();ui.fOrigin="";ui.statusFilter="all";ui.statusPicked=false;ui.dd=null;ui.articleIndex=0;ui.choice=null;ui.focusArticleId=null;ui.scrollPinnedId=null;render()}
 function qcPopover(f){
   const F=QC_FIELDS[f];let opts;
   if(f==="disc")opts=Object.values(DISCIPLINES).map(x=>({key:x.id,label:x.name,sub:x.subtitle,badge:x.badge,color:x.color,n:allActiveAll().filter(a=>a.discipline===x.id).length}));
@@ -1246,7 +1270,7 @@ function qcPopover(f){
 function rememberFilterSection(key,open){
   ui.filterOpen||={subjects:true,banks:false};
   ui.filterOpen[key]=open;
-  if(!open&&((key==="subjects"&&["topic","sub"].includes(ui.dd))||(key==="banks"&&["bank","year","role"].includes(ui.dd))))ui.dd=null;
+  if(!open&&((key==="subjects"&&["module","topic","sub"].includes(ui.dd))||(key==="banks"&&["bank","year","role"].includes(ui.dd))))ui.dd=null;
 }
 function renderFilters(){
   const d=currentDiscipline(),picked=ui.discPicked;
@@ -1257,8 +1281,8 @@ function renderFilters(){
     return `<div class="qc-field ${ui.dd===f?"open":""} ${dis?"disabled":""}"><label id="label-${f}">${F.label}</label>
       <button aria-labelledby="label-${f}" class="qc-select ${sm?"filled":""}" ${dis?"disabled":""} onclick="qcOpen('${f}')" aria-haspopup="dialog" aria-expanded="${ui.dd===f}"><span>${sm||F.ph}</span><i></i></button>
       ${ui.dd===f?qcPopover(f):""}</div>`};
-  const nf=ui.selectedTopics.size+ui.selectedSubtopics.size+ui.fBanks.size+ui.fYears.size+ui.fRoles.size+(ui.fOrigin?1:0)+(ui.statusFilter==='all'?0:1);
-  const subjects=ui.selectedTopics.size?`${ui.selectedTopics.size} ${ui.selectedTopics.size===1?"assunto":"assuntos"}${ui.selectedSubtopics.size?` · ${ui.selectedSubtopics.size} subassunto(s)`:""}`:ui.selectedSubtopics.size?`${ui.selectedSubtopics.size} subassunto(s)`:"Todos os assuntos";
+  const nf=ui.selectedModules.size+ui.selectedTopics.size+ui.selectedSubtopics.size+ui.fBanks.size+ui.fYears.size+ui.fRoles.size+(ui.fOrigin?1:0)+(ui.statusFilter==='all'?0:1);
+  const subjects=ui.selectedModules.size?`${ui.selectedModules.size} módulo(s) da Central`:ui.selectedTopics.size?`${ui.selectedTopics.size} ${ui.selectedTopics.size===1?"assunto":"assuntos"}${ui.selectedSubtopics.size?` · ${ui.selectedSubtopics.size} subassunto(s)`:""}`:ui.selectedSubtopics.size?`${ui.selectedSubtopics.size} subassunto(s)`:"Todos os assuntos";
   const bank=ui.fBanks.size===1?esc([...ui.fBanks][0]):ui.fBanks.size?`${ui.fBanks.size} bancas`:"Todas as bancas";
   return `<main class="filter-page compact-filter-page qc bc-steps">${topbar(false)}
     <section class="compact-filter-content qc-content">
@@ -1268,8 +1292,8 @@ function renderFilters(){
       <section class="qc-card bc-accordion" aria-label="Filtros do caderno">
         <div class="bc-discipline-step"><div class="bc-step-title"><span>01</span><strong>Disciplina</strong></div>${field("disc")}</div>
         <details class="bc-filter-section" ${ui.filterOpen.subjects?"open":""} ontoggle="rememberFilterSection('subjects',this.open)">
-          <summary><span class="bc-step-title"><span>02</span><strong>Assunto e subassunto</strong></span><small>${subjects}</small><i aria-hidden="true"></i></summary>
-          <div class="bc-step-fields">${field("topic")}${field("sub")}</div>
+          <summary><span class="bc-step-title"><span>02</span><strong>Módulo, lei e assunto</strong></span><small>${subjects}</small><i aria-hidden="true"></i></summary>
+          <div class="bc-step-fields">${field("module")}${field("topic")}${field("sub")}</div>
         </details>
         <details class="bc-filter-section" ${ui.filterOpen.banks?"open":""} ontoggle="rememberFilterSection('banks',this.open)">
           <summary><span class="bc-step-title"><span>03</span><strong>Banca e origem</strong></span><small>${bank}</small><i aria-hidden="true"></i></summary>
@@ -1347,8 +1371,8 @@ function historyBlock(article,open){
     <div class="history-list">${[...attempts].reverse().map(a=>`<div class="history-row"><span class="history-result ${a.correct?"correct":"wrong"}">${a.correct?"Acertou":"Errou"}</span><span>${a.choice?"Marcou Certo":"Marcou Errado"}</span><time>${fmtDate(a.date)}</time></div>`).join("")}</div></section>`
 }
 function studyHeader(){
-  const d=currentDiscipline();
-  return `<header class="topbar"><button class="menu-button" onclick="ui.menuOpen=!ui.menuOpen;render()">☰</button><div><span class="breadcrumb">Biblioteca / ${d.badge}</span><h1>${esc(d.law)}</h1></div><div class="study-header-actions"><span class="sync-indicator saved">✓ Salvo</span><button class="theme-toggle" onclick="setPref('theme','${saved.preferences.theme==="light"?"dark":"light"}')">${saved.preferences.theme==="light"?"☾":"☀"}</button><button class="topbar-audit" onclick="setScreen('audit')">Auditoria</button></div><div class="daily-goal"><span>Meta de hoje</span><strong>${Math.min(todayAttempts(),20)} / 20 questões</strong></div></header>`
+  const d=currentDiscipline(),module=ui.selectedModules.size===1?disciplineModules().find(m=>ui.selectedModules.has(m.id)):null;
+  return `<header class="topbar"><button class="menu-button" onclick="ui.menuOpen=!ui.menuOpen;render()">☰</button><div><span class="breadcrumb">Biblioteca / ${d.badge}${module?.number?" / M"+String(module.number).padStart(2,"0"):""}</span><h1>${esc(module?.title||d.law)}</h1></div><div class="study-header-actions"><span class="sync-indicator saved">✓ Salvo</span><button class="theme-toggle" onclick="setPref('theme','${saved.preferences.theme==="light"?"dark":"light"}')">${saved.preferences.theme==="light"?"☾":"☀"}</button><button class="topbar-audit" onclick="setScreen('audit')">Auditoria</button></div><div class="daily-goal"><span>Meta de hoje</span><strong>${Math.min(todayAttempts(),20)} / 20 questões</strong></div></header>`
 }
 function sidebar(){
   const d=currentDiscipline();
@@ -1400,8 +1424,9 @@ function renderScroll(){
   </div>`
 }
 function emptyStudy(){
-  const msg=ui.statusFilter==="wrong"?"Você não possui erros pendentes neste filtro.":ui.statusFilter==="unseen"?"Todas as questões deste filtro já foram vistas.":"Ainda não há questões neste filtro.";
-  return `<section class="empty-status"><div>✓</div><h2>Nenhuma questão neste filtro</h2><p>${msg}</p><button onclick="chooseStatus('all')">Mostrar todas</button></section>`
+  const missing=ui.selectedModules.size&&[...ui.selectedModules].every(id=>!LAW_MODULE_QUESTIONS.get(id)?.size);
+  const msg=missing?"Este módulo da Central ainda não possui questões vinculadas no banco atual. A teoria continua disponível na Central.":ui.statusFilter==="wrong"?"Você não possui erros pendentes neste filtro.":ui.statusFilter==="unseen"?"Todas as questões deste filtro já foram vistas.":"Ainda não há questões neste filtro.";
+  return `<section class="empty-status"><div>✓</div><h2>Nenhuma questão neste filtro</h2><p>${msg}</p><button onclick="${missing?"setScreen('filters')":"chooseStatus('all')"}">${missing?"Escolher outro módulo":"Mostrar todas"}</button></section>`
 }
 function renderStudy(){
   return `<main class="app-shell">${sidebar()}<section class="workspace">${studyHeader()}${visible().length?(saved.preferences.studyMode==="scroll"?renderScroll():renderFocus()):emptyStudy()}</section>${ui.menuOpen?`<button class="backdrop" onclick="ui.menuOpen=false;render()"></button>`:""}</main>`
@@ -1446,6 +1471,8 @@ function render(){
 }
 function centralOpenTopic(topicId,direct){
   topicId=String(topicId||"");
+  if(centralOpenModule(topicId,null,direct))return;
+  ui.selectedModules=new Set();
   const discipline=Object.entries(TOPICS_BY_DISCIPLINE).find(([,topics])=>topics.some(topic=>topic.id===topicId))?.[0]||"cf";
   saved.preferences.discipline=discipline;save();
   const topics=disciplineTopics();
@@ -1462,6 +1489,6 @@ window.centralOpenTopic=centralOpenTopic;
 render();
 
 </script>
-<script id="central-folder-activate-v6659">(function(){function run(){const q=new URLSearchParams(location.search),topic=q.get('topic'),discipline=q.get('discipline');if(topic&&typeof centralOpenTopic==='function')centralOpenTopic(topic,true);else if(discipline&&typeof chooseDiscipline==='function')chooseDiscipline(discipline)}if(document.readyState==='complete')setTimeout(run,0);else window.addEventListener('load',run)})();</script>
+<script id="central-folder-activate-v6659">(function(){function run(){const q=new URLSearchParams(location.search),topic=q.get('topic'),discipline=q.get('discipline'),module=q.get('module');if(module&&typeof centralOpenModule==='function'){if(!centralOpenModule(module,discipline,true)&&discipline)chooseDiscipline(discipline)}else if(topic&&typeof centralOpenTopic==='function')centralOpenTopic(topic,true);else if(discipline&&typeof chooseDiscipline==='function')chooseDiscipline(discipline)}if(document.readyState==='complete')setTimeout(run,0);else window.addEventListener('load',run)})();</script>
 <script defer src="../ui/tool-navigation.js?v=20261002navigation2"></script></body>
 </html>

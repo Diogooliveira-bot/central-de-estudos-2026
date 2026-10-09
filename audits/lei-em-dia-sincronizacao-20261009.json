@@ -1,0 +1,2497 @@
+{
+  "version": "20261009sync1",
+  "totalQuestions": 12044,
+  "centralModules": 138,
+  "disciplines": [
+    {
+      "id": "cf",
+      "totalQuestions": 3132,
+      "modules": 15,
+      "withoutQuestions": [
+        "cf-m13",
+        "cf-m14",
+        "cf-m15"
+      ],
+      "complementaryQuestions": 0
+    },
+    {
+      "id": "civil",
+      "totalQuestions": 1201,
+      "modules": 15,
+      "withoutQuestions": [],
+      "complementaryQuestions": 0
+    },
+    {
+      "id": "penal",
+      "totalQuestions": 1910,
+      "modules": 17,
+      "withoutQuestions": [],
+      "complementaryQuestions": 186
+    },
+    {
+      "id": "cpc",
+      "totalQuestions": 2779,
+      "modules": 20,
+      "withoutQuestions": [],
+      "complementaryQuestions": 0
+    },
+    {
+      "id": "cpp",
+      "totalQuestions": 2023,
+      "modules": 22,
+      "withoutQuestions": [
+        "cpp-m21"
+      ],
+      "complementaryQuestions": 57
+    },
+    {
+      "id": "adm",
+      "totalQuestions": 765,
+      "modules": 20,
+      "withoutQuestions": [],
+      "complementaryQuestions": 0
+    },
+    {
+      "id": "trabalho",
+      "totalQuestions": 165,
+      "modules": 18,
+      "withoutQuestions": [
+        "trab-m01",
+        "trab-m02",
+        "trab-m03",
+        "trab-m10",
+        "trab-m17"
+      ],
+      "complementaryQuestions": 39
+    },
+    {
+      "id": "ptrabalho",
+      "totalQuestions": 69,
+      "modules": 11,
+      "withoutQuestions": [
+        "ptra-a00",
+        "ptra-a01",
+        "ptra-a03",
+        "ptra-a04",
+        "ptra-a09",
+        "ptra-a10"
+      ],
+      "complementaryQuestions": 0
+    }
+  ],
+  "modules": [
+    {
+      "id": "cf-m01",
+      "discipline": "cf",
+      "number": 1,
+      "title": "CONSTITUIÇÃO, NORMAS E PRINCÍPIOS FUNDAMENTAIS",
+      "source": "central-structural-v66119/runtime.js#SUBJECTS",
+      "laws": [
+        {
+          "label": "CF/88 e fundamentos associados",
+          "questions": 125
+        }
+      ],
+      "questions": 125
+    },
+    {
+      "id": "cf-m02",
+      "discipline": "cf",
+      "number": 2,
+      "title": "DIREITOS E DEVERES INDIVIDUAIS E COLETIVOS",
+      "source": "central-structural-v66119/runtime.js#SUBJECTS",
+      "laws": [
+        {
+          "label": "CF/88 e fundamentos associados",
+          "questions": 432
+        },
+        {
+          "label": "Lei 12.016/2009",
+          "questions": 14
+        },
+        {
+          "label": "Lei 13.300/2016",
+          "questions": 15
+        },
+        {
+          "label": "Lei 4.717/1965",
+          "questions": 17
+        },
+        {
+          "label": "Lei 9.507/1997",
+          "questions": 12
+        }
+      ],
+      "questions": 490
+    },
+    {
+      "id": "cf-m03",
+      "discipline": "cf",
+      "number": 3,
+      "title": "DIREITOS SOCIAIS, NACIONALIDADE E DIREITOS POLÍTICOS",
+      "source": "central-structural-v66119/runtime.js#SUBJECTS",
+      "laws": [
+        {
+          "label": "CF/88 e fundamentos associados",
+          "questions": 406
+        }
+      ],
+      "questions": 406
+    },
+    {
+      "id": "cf-m04",
+      "discipline": "cf",
+      "number": 4,
+      "title": "ORGANIZAÇÃO DO ESTADO",
+      "source": "central-structural-v66119/runtime.js#SUBJECTS",
+      "laws": [
+        {
+          "label": "CF/88 e fundamentos associados",
+          "questions": 451
+        }
+      ],
+      "questions": 451
+    },
+    {
+      "id": "cf-m05",
+      "discipline": "cf",
+      "number": 5,
+      "title": "ADMINISTRAÇÃO PÚBLICA E SERVIDORES",
+      "source": "central-structural-v66119/runtime.js#SUBJECTS",
+      "laws": [
+        {
+          "label": "CF/88 e fundamentos associados",
+          "questions": 377
+        }
+      ],
+      "questions": 377
+    },
+    {
+      "id": "cf-m06",
+      "discipline": "cf",
+      "number": 6,
+      "title": "ORGANIZAÇÃO DOS PODERES E LEGISLATIVO — CONGRESSO E ATRIBUIÇÕES",
+      "source": "central-structural-v66119/runtime.js#SUBJECTS",
+      "laws": [
+        {
+          "label": "CF/88 e fundamentos associados",
+          "questions": 167
+        }
+      ],
+      "questions": 167
+    },
+    {
+      "id": "cf-m07",
+      "discipline": "cf",
+      "number": 7,
+      "title": "PROCESSO LEGISLATIVO E FISCALIZAÇÃO",
+      "source": "central-structural-v66119/runtime.js#SUBJECTS",
+      "laws": [
+        {
+          "label": "CF/88 e fundamentos associados",
+          "questions": 321
+        }
+      ],
+      "questions": 321
+    },
+    {
+      "id": "cf-m08",
+      "discipline": "cf",
+      "number": 8,
+      "title": "PODER EXECUTIVO",
+      "source": "central-structural-v66119/runtime.js#SUBJECTS",
+      "laws": [
+        {
+          "label": "CF/88 e fundamentos associados",
+          "questions": 105
+        },
+        {
+          "label": "Lei 1.079/1950",
+          "questions": 4
+        }
+      ],
+      "questions": 109
+    },
+    {
+      "id": "cf-m09",
+      "discipline": "cf",
+      "number": 9,
+      "title": "PODER JUDICIÁRIO — DISPOSIÇÕES GERAIS E STF",
+      "source": "central-structural-v66119/runtime.js#SUBJECTS",
+      "laws": [
+        {
+          "label": "CF/88 e fundamentos associados",
+          "questions": 249
+        },
+        {
+          "label": "Lei 11.417/2006",
+          "questions": 10
+        }
+      ],
+      "questions": 259
+    },
+    {
+      "id": "cf-m10",
+      "discipline": "cf",
+      "number": 10,
+      "title": "CNJ, STJ, JUSTIÇA DO TRABALHO, JUSTIÇA FEDERAL E JUSTIÇA DOS ESTADOS",
+      "source": "central-structural-v66119/runtime.js#SUBJECTS",
+      "laws": [
+        {
+          "label": "CF/88 e fundamentos associados",
+          "questions": 206
+        }
+      ],
+      "questions": 206
+    },
+    {
+      "id": "cf-m11",
+      "discipline": "cf",
+      "number": 11,
+      "title": "FUNÇÕES ESSENCIAIS À JUSTIÇA",
+      "source": "central-structural-v66119/runtime.js#SUBJECTS",
+      "laws": [
+        {
+          "label": "CF/88 e fundamentos associados",
+          "questions": 165
+        }
+      ],
+      "questions": 165
+    },
+    {
+      "id": "cf-m12",
+      "discipline": "cf",
+      "number": 12,
+      "title": "CONTROLE DE CONSTITUCIONALIDADE",
+      "source": "central-structural-v66119/runtime.js#SUBJECTS",
+      "laws": [
+        {
+          "label": "CF/88 e fundamentos associados",
+          "questions": 30
+        },
+        {
+          "label": "Lei 11.417/2006",
+          "questions": 10
+        },
+        {
+          "label": "Lei 9.868/1999",
+          "questions": 17
+        },
+        {
+          "label": "Lei 9.882/1999",
+          "questions": 9
+        }
+      ],
+      "questions": 66
+    },
+    {
+      "id": "cf-m13",
+      "discipline": "cf",
+      "number": 13,
+      "title": "ORDEM ECONÔMICA E FINANCEIRA",
+      "source": "central-structural-v66119/runtime.js#SUBJECTS",
+      "laws": [],
+      "questions": 0
+    },
+    {
+      "id": "cf-m14",
+      "discipline": "cf",
+      "number": 14,
+      "title": "ORDEM SOCIAL E SEGURIDADE SOCIAL",
+      "source": "central-structural-v66119/runtime.js#SUBJECTS",
+      "laws": [],
+      "questions": 0
+    },
+    {
+      "id": "cf-m15",
+      "discipline": "cf",
+      "number": 15,
+      "title": "MEIO AMBIENTE E PROTEÇÃO DA FAMÍLIA",
+      "source": "central-structural-v66119/runtime.js#SUBJECTS",
+      "laws": [],
+      "questions": 0
+    },
+    {
+      "id": "cpc-m01",
+      "discipline": "cpc",
+      "number": 1,
+      "title": "NORMAS FUNDAMENTAIS, FONTES E APLICAÇÃO",
+      "source": "central-structural-v66119/runtime.js#SUBJECTS",
+      "laws": [
+        {
+          "label": "CPC e fundamentos associados",
+          "questions": 92
+        }
+      ],
+      "questions": 92
+    },
+    {
+      "id": "cpc-m02",
+      "discipline": "cpc",
+      "number": 2,
+      "title": "JURISDIÇÃO, AÇÃO, PROCESSO E PRESSUPOSTOS",
+      "source": "central-structural-v66119/runtime.js#SUBJECTS",
+      "laws": [
+        {
+          "label": "CPC e fundamentos associados",
+          "questions": 107
+        },
+        {
+          "label": "Lei 9.307/1996",
+          "questions": 17
+        }
+      ],
+      "questions": 124
+    },
+    {
+      "id": "cpc-m03",
+      "discipline": "cpc",
+      "number": 3,
+      "title": "COMPETÊNCIA, CONEXÃO E CONFLITOS",
+      "source": "central-structural-v66119/runtime.js#SUBJECTS",
+      "laws": [
+        {
+          "label": "CPC e fundamentos associados",
+          "questions": 190
+        }
+      ],
+      "questions": 190
+    },
+    {
+      "id": "cpc-m04",
+      "discipline": "cpc",
+      "number": 4,
+      "title": "PARTES, PROCURADORES, DESPESAS E GRATUIDADE",
+      "source": "central-structural-v66119/runtime.js#SUBJECTS",
+      "laws": [
+        {
+          "label": "CPC e fundamentos associados",
+          "questions": 209
+        }
+      ],
+      "questions": 209
+    },
+    {
+      "id": "cpc-m05",
+      "discipline": "cpc",
+      "number": 5,
+      "title": "LITISCONSÓRCIO E INTERVENÇÃO DE TERCEIROS",
+      "source": "central-structural-v66119/runtime.js#SUBJECTS",
+      "laws": [
+        {
+          "label": "CPC e fundamentos associados",
+          "questions": 159
+        }
+      ],
+      "questions": 159
+    },
+    {
+      "id": "cpc-m06",
+      "discipline": "cpc",
+      "number": 6,
+      "title": "JUIZ, AUXILIARES, MP, ADVOCACIA E DEFENSORIA",
+      "source": "central-structural-v66119/runtime.js#SUBJECTS",
+      "laws": [
+        {
+          "label": "CPC e fundamentos associados",
+          "questions": 143
+        }
+      ],
+      "questions": 143
+    },
+    {
+      "id": "cpc-m07",
+      "discipline": "cpc",
+      "number": 7,
+      "title": "ATOS PROCESSUAIS, NEGÓCIOS E PRAZOS",
+      "source": "central-structural-v66119/runtime.js#SUBJECTS",
+      "laws": [
+        {
+          "label": "CPC e fundamentos associados",
+          "questions": 120
+        },
+        {
+          "label": "Lei 11.419/2006",
+          "questions": 14
+        }
+      ],
+      "questions": 134
+    },
+    {
+      "id": "cpc-m08",
+      "discipline": "cpc",
+      "number": 8,
+      "title": "COMUNICAÇÃO DOS ATOS E NULIDADES",
+      "source": "central-structural-v66119/runtime.js#SUBJECTS",
+      "laws": [
+        {
+          "label": "CPC e fundamentos associados",
+          "questions": 95
+        },
+        {
+          "label": "Lei 11.419/2006",
+          "questions": 10
+        }
+      ],
+      "questions": 105
+    },
+    {
+      "id": "cpc-m09",
+      "discipline": "cpc",
+      "number": 9,
+      "title": "TUTELA PROVISÓRIA",
+      "source": "central-structural-v66119/runtime.js#SUBJECTS",
+      "laws": [
+        {
+          "label": "CPC e fundamentos associados",
+          "questions": 138
+        }
+      ],
+      "questions": 138
+    },
+    {
+      "id": "cpc-m10",
+      "discipline": "cpc",
+      "number": 10,
+      "title": "FORMAÇÃO, SUSPENSÃO E PETIÇÃO INICIAL",
+      "source": "central-structural-v66119/runtime.js#SUBJECTS",
+      "laws": [
+        {
+          "label": "CPC e fundamentos associados",
+          "questions": 109
+        }
+      ],
+      "questions": 109
+    },
+    {
+      "id": "cpc-m11",
+      "discipline": "cpc",
+      "number": 11,
+      "title": "DEFESA, REVELIA, SANEAMENTO E JULGAMENTO",
+      "source": "central-structural-v66119/runtime.js#SUBJECTS",
+      "laws": [
+        {
+          "label": "CPC e fundamentos associados",
+          "questions": 145
+        }
+      ],
+      "questions": 145
+    },
+    {
+      "id": "cpc-m12",
+      "discipline": "cpc",
+      "number": 12,
+      "title": "PROVAS",
+      "source": "central-structural-v66119/runtime.js#SUBJECTS",
+      "laws": [
+        {
+          "label": "CPC e fundamentos associados",
+          "questions": 202
+        }
+      ],
+      "questions": 202
+    },
+    {
+      "id": "cpc-m13",
+      "discipline": "cpc",
+      "number": 13,
+      "title": "SENTENÇA, REMESSA, COISA JULGADA E LIQUIDAÇÃO",
+      "source": "central-structural-v66119/runtime.js#SUBJECTS",
+      "laws": [
+        {
+          "label": "CPC e fundamentos associados",
+          "questions": 160
+        }
+      ],
+      "questions": 160
+    },
+    {
+      "id": "cpc-m14",
+      "discipline": "cpc",
+      "number": 14,
+      "title": "CUMPRIMENTO DE SENTENÇA",
+      "source": "central-structural-v66119/runtime.js#SUBJECTS",
+      "laws": [
+        {
+          "label": "CPC e fundamentos associados",
+          "questions": 132
+        }
+      ],
+      "questions": 132
+    },
+    {
+      "id": "cpc-m15",
+      "discipline": "cpc",
+      "number": 15,
+      "title": "RECURSOS, PRECEDENTES E REPETITIVOS",
+      "source": "central-structural-v66119/runtime.js#SUBJECTS",
+      "laws": [
+        {
+          "label": "CPC e fundamentos associados",
+          "questions": 194
+        }
+      ],
+      "questions": 194
+    },
+    {
+      "id": "cpc-m16",
+      "discipline": "cpc",
+      "number": 16,
+      "title": "EXECUÇÃO, TÍTULOS, OBRIGAÇÕES E FAZENDA",
+      "source": "central-structural-v66119/runtime.js#SUBJECTS",
+      "laws": [
+        {
+          "label": "CPC e fundamentos associados",
+          "questions": 52
+        }
+      ],
+      "questions": 52
+    },
+    {
+      "id": "cpc-m17",
+      "discipline": "cpc",
+      "number": 17,
+      "title": "PENHORA, EXPROPRIAÇÃO E EMBARGOS",
+      "source": "central-structural-v66119/runtime.js#SUBJECTS",
+      "laws": [
+        {
+          "label": "CPC e fundamentos associados",
+          "questions": 131
+        }
+      ],
+      "questions": 131
+    },
+    {
+      "id": "cpc-m18",
+      "discipline": "cpc",
+      "number": 18,
+      "title": "PROCEDIMENTOS ESPECIAIS PREVISTOS",
+      "source": "central-structural-v66119/runtime.js#SUBJECTS",
+      "laws": [
+        {
+          "label": "CPC e fundamentos associados",
+          "questions": 84
+        },
+        {
+          "label": "Lei 9.099/1995",
+          "questions": 17
+        }
+      ],
+      "questions": 101
+    },
+    {
+      "id": "cpc-m19",
+      "discipline": "cpc",
+      "number": 19,
+      "title": "AÇÕES COLETIVAS, CONSTITUCIONAIS E CONTROLE",
+      "source": "central-structural-v66119/runtime.js#SUBJECTS",
+      "laws": [
+        {
+          "label": "CPC e fundamentos associados",
+          "questions": 2
+        },
+        {
+          "label": "Lei 7.347/1985",
+          "questions": 18
+        },
+        {
+          "label": "Lei 12.016/2009",
+          "questions": 14
+        },
+        {
+          "label": "Lei 13.300/2016",
+          "questions": 15
+        },
+        {
+          "label": "Lei 4.717/1965",
+          "questions": 16
+        },
+        {
+          "label": "Lei 9.507/1997",
+          "questions": 12
+        },
+        {
+          "label": "Lei 9.868/1999",
+          "questions": 17
+        },
+        {
+          "label": "Lei 9.882/1999",
+          "questions": 9
+        }
+      ],
+      "questions": 103
+    },
+    {
+      "id": "cpc-m20",
+      "discipline": "cpc",
+      "number": 20,
+      "title": "TRIBUNAIS, RESCISÓRIA, IAC, IRDR E RECLAMAÇÃO",
+      "source": "central-structural-v66119/runtime.js#SUBJECTS",
+      "laws": [
+        {
+          "label": "CPC e fundamentos associados",
+          "questions": 156
+        }
+      ],
+      "questions": 156
+    },
+    {
+      "id": "trab-m01",
+      "discipline": "trabalho",
+      "number": 1,
+      "title": "INTRODUÇÃO, ORIGEM E EVOLUÇÃO DO DIREITO DO TRABALHO",
+      "source": "central-structural-v66119/runtime.js#SUBJECTS",
+      "laws": [],
+      "questions": 0
+    },
+    {
+      "id": "trab-m02",
+      "discipline": "trabalho",
+      "number": 2,
+      "title": "FONTES, ORDENAMENTO JURÍDICO E PRINCÍPIOS DO DIREITO DO TRABALHO",
+      "source": "central-structural-v66119/runtime.js#SUBJECTS",
+      "laws": [],
+      "questions": 0
+    },
+    {
+      "id": "trab-m03",
+      "discipline": "trabalho",
+      "number": 3,
+      "title": "INTERPRETAÇÃO, INTEGRAÇÃO E APLICAÇÃO + PRESCRIÇÃO E DECADÊNCIA",
+      "source": "central-structural-v66119/runtime.js#SUBJECTS",
+      "laws": [],
+      "questions": 0
+    },
+    {
+      "id": "trab-m04",
+      "discipline": "trabalho",
+      "number": 4,
+      "title": "RELAÇÃO DE TRABALHO, RELAÇÃO DE EMPREGO, EMPREGADO E CTPS",
+      "source": "central-structural-v66119/runtime.js#SUBJECTS",
+      "laws": [
+        {
+          "label": "Lei 11.788/2008",
+          "questions": 17
+        },
+        {
+          "label": "Lei 9.029/1995",
+          "questions": 9
+        },
+        {
+          "label": "LC 150/2015",
+          "questions": 2
+        }
+      ],
+      "questions": 28
+    },
+    {
+      "id": "trab-m05",
+      "discipline": "trabalho",
+      "number": 5,
+      "title": "CONTRATO DE TRABALHO: TEORIA GERAL, FORMAÇÃO, ALTERAÇÃO E EFEITOS",
+      "source": "central-structural-v66119/runtime.js#SUBJECTS",
+      "laws": [
+        {
+          "label": "Lei 14.457/2022",
+          "questions": 1
+        }
+      ],
+      "questions": 1
+    },
+    {
+      "id": "trab-m06",
+      "discipline": "trabalho",
+      "number": 6,
+      "title": "CONTRATOS POR PRAZO DETERMINADO, INDETERMINADO E CONTRATOS A TERMO",
+      "source": "central-structural-v66119/runtime.js#SUBJECTS",
+      "laws": [
+        {
+          "label": "Lei 6.019/1974",
+          "questions": 15
+        },
+        {
+          "label": "LC 150/2015",
+          "questions": 1
+        }
+      ],
+      "questions": 16
+    },
+    {
+      "id": "trab-m07",
+      "discipline": "trabalho",
+      "number": 7,
+      "title": "INTERRUPÇÃO E SUSPENSÃO DO CONTRATO DE TRABALHO",
+      "source": "central-structural-v66119/runtime.js#SUBJECTS",
+      "laws": [
+        {
+          "label": "Lei 14.457/2022",
+          "questions": 2
+        }
+      ],
+      "questions": 2
+    },
+    {
+      "id": "trab-m08",
+      "discipline": "trabalho",
+      "number": 8,
+      "title": "TERCEIRIZAÇÃO, PEJOTIZAÇÃO, MEI E RESPONSABILIDADE TRABALHISTA",
+      "source": "central-structural-v66119/runtime.js#SUBJECTS",
+      "laws": [
+        {
+          "label": "Lei 6.019/1974",
+          "questions": 11
+        }
+      ],
+      "questions": 11
+    },
+    {
+      "id": "trab-m09",
+      "discipline": "trabalho",
+      "number": 9,
+      "title": "JORNADA DE TRABALHO I",
+      "source": "central-structural-v66119/runtime.js#SUBJECTS",
+      "laws": [
+        {
+          "label": "LC 150/2015",
+          "questions": 8
+        }
+      ],
+      "questions": 8
+    },
+    {
+      "id": "trab-m10",
+      "discipline": "trabalho",
+      "number": 10,
+      "title": "JORNADA DE TRABALHO II, JORNADAS ESPECIAIS E TRABALHO DO ARTISTA",
+      "source": "central-structural-v66119/runtime.js#SUBJECTS",
+      "laws": [],
+      "questions": 0
+    },
+    {
+      "id": "trab-m11",
+      "discipline": "trabalho",
+      "number": 11,
+      "title": "DESCANSOS, INTERVALOS E FÉRIAS",
+      "source": "central-structural-v66119/runtime.js#SUBJECTS",
+      "laws": [
+        {
+          "label": "LC 150/2015",
+          "questions": 11
+        }
+      ],
+      "questions": 11
+    },
+    {
+      "id": "trab-m12",
+      "discipline": "trabalho",
+      "number": 12,
+      "title": "SALÁRIO E REMUNERAÇÃO",
+      "source": "central-structural-v66119/runtime.js#SUBJECTS",
+      "laws": [
+        {
+          "label": "Lei 6.019/1974",
+          "questions": 1
+        },
+        {
+          "label": "Lei 14.457/2022",
+          "questions": 2
+        },
+        {
+          "label": "LC 150/2015",
+          "questions": 1
+        }
+      ],
+      "questions": 4
+    },
+    {
+      "id": "trab-m13",
+      "discipline": "trabalho",
+      "number": 13,
+      "title": "GARANTIAS SALARIAIS E DÉCIMO TERCEIRO SALÁRIO",
+      "source": "central-structural-v66119/runtime.js#SUBJECTS",
+      "laws": [
+        {
+          "label": "Lei 5.889/1973",
+          "questions": 1
+        },
+        {
+          "label": "Lei 8.036/1990",
+          "questions": 12
+        },
+        {
+          "label": "Lei 4.090/1962",
+          "questions": 5
+        },
+        {
+          "label": "Lei 14.611/2023",
+          "questions": 2
+        }
+      ],
+      "questions": 20
+    },
+    {
+      "id": "trab-m14",
+      "discipline": "trabalho",
+      "number": 14,
+      "title": "SEGURANÇA E MEDICINA DO TRABALHO",
+      "source": "central-structural-v66119/runtime.js#SUBJECTS",
+      "laws": [
+        {
+          "label": "Lei 14.457/2022",
+          "questions": 2
+        }
+      ],
+      "questions": 2
+    },
+    {
+      "id": "trab-m15",
+      "discipline": "trabalho",
+      "number": 15,
+      "title": "EXTINÇÃO DO CONTRATO: REGRAS GERAIS, AVISO-PRÉVIO, PEDIDO DE DEMISSÃO E RESCISÃO INDIRETA",
+      "source": "central-structural-v66119/runtime.js#SUBJECTS",
+      "laws": [
+        {
+          "label": "Lei 8.036/1990",
+          "questions": 6
+        }
+      ],
+      "questions": 6
+    },
+    {
+      "id": "trab-m16",
+      "discipline": "trabalho",
+      "number": 16,
+      "title": "DISPENSA SEM JUSTA CAUSA, JUSTA CAUSA, DISPENSA DISCRIMINATÓRIA E SEGURO-DESEMPREGO",
+      "source": "central-structural-v66119/runtime.js#SUBJECTS",
+      "laws": [
+        {
+          "label": "Lei 6.019/1974",
+          "questions": 1
+        },
+        {
+          "label": "Lei 8.036/1990",
+          "questions": 6
+        },
+        {
+          "label": "Lei 9.029/1995",
+          "questions": 10
+        }
+      ],
+      "questions": 17
+    },
+    {
+      "id": "trab-m17",
+      "discipline": "trabalho",
+      "number": 17,
+      "title": "DIREITO COLETIVO, SINDICATOS E ORGANIZAÇÃO SINDICAL",
+      "source": "central-structural-v66119/runtime.js#SUBJECTS",
+      "laws": [],
+      "questions": 0
+    },
+    {
+      "id": "trab-m18",
+      "discipline": "trabalho",
+      "number": 18,
+      "title": "NEGOCIAÇÃO COLETIVA, ACT, CCT E GREVE",
+      "source": "central-structural-v66119/runtime.js#SUBJECTS",
+      "laws": [
+        {
+          "label": "Lei 7.783/1989",
+          "questions": 15
+        }
+      ],
+      "questions": 15
+    },
+    {
+      "id": "ptra-a00",
+      "discipline": "ptrabalho",
+      "number": 1,
+      "title": "ORGANIZAÇÃO E COMPETÊNCIA DA JUSTIÇA DO TRABALHO",
+      "source": "central-structural-v66119/runtime.js#SUBJECTS",
+      "laws": [],
+      "questions": 0
+    },
+    {
+      "id": "ptra-a01",
+      "discipline": "ptrabalho",
+      "number": 2,
+      "title": "COMPETÊNCIA TERRITORIAL E MATERIAL",
+      "source": "central-structural-v66119/runtime.js#SUBJECTS",
+      "laws": [],
+      "questions": 0
+    },
+    {
+      "id": "ptra-a02",
+      "discipline": "ptrabalho",
+      "number": 3,
+      "title": "PARTES, PROCURADORES E AUDIÊNCIA",
+      "source": "central-structural-v66119/runtime.js#SUBJECTS",
+      "laws": [
+        {
+          "label": "Lei 5.584/1970",
+          "questions": 4
+        }
+      ],
+      "questions": 4
+    },
+    {
+      "id": "ptra-a03",
+      "discipline": "ptrabalho",
+      "number": 4,
+      "title": "ATOS, TERMOS, PRAZOS E NULIDADES",
+      "source": "central-structural-v66119/runtime.js#SUBJECTS",
+      "laws": [],
+      "questions": 0
+    },
+    {
+      "id": "ptra-a04",
+      "discipline": "ptrabalho",
+      "number": 5,
+      "title": "NOTIFICAÇÃO, RESPOSTA E REVELIA",
+      "source": "central-structural-v66119/runtime.js#SUBJECTS",
+      "laws": [],
+      "questions": 0
+    },
+    {
+      "id": "ptra-a05",
+      "discipline": "ptrabalho",
+      "number": 6,
+      "title": "PROVAS, AUDIÊNCIAS E SUMARÍSSIMO",
+      "source": "central-structural-v66119/runtime.js#SUBJECTS",
+      "laws": [
+        {
+          "label": "Lei 5.584/1970",
+          "questions": 7
+        }
+      ],
+      "questions": 7
+    },
+    {
+      "id": "ptra-a06",
+      "discipline": "ptrabalho",
+      "number": 7,
+      "title": "RECURSOS",
+      "source": "central-structural-v66119/runtime.js#SUBJECTS",
+      "laws": [
+        {
+          "label": "Lei 5.584/1970",
+          "questions": 4
+        }
+      ],
+      "questions": 4
+    },
+    {
+      "id": "ptra-a07",
+      "discipline": "ptrabalho",
+      "number": 8,
+      "title": "LIQUIDAÇÃO E EXECUÇÃO",
+      "source": "central-structural-v66119/runtime.js#SUBJECTS",
+      "laws": [
+        {
+          "label": "Lei 6.830/1980",
+          "questions": 26
+        }
+      ],
+      "questions": 26
+    },
+    {
+      "id": "ptra-a08",
+      "discipline": "ptrabalho",
+      "number": 9,
+      "title": "RESCISÓRIA, INQUÉRITO E PROCEDIMENTOS ESPECIAIS",
+      "source": "central-structural-v66119/runtime.js#SUBJECTS",
+      "laws": [
+        {
+          "label": "Lei 12.016/2009",
+          "questions": 14
+        },
+        {
+          "label": "Lei 7.347/1985",
+          "questions": 16
+        }
+      ],
+      "questions": 30
+    },
+    {
+      "id": "ptra-a09",
+      "discipline": "ptrabalho",
+      "number": 10,
+      "title": "DISSÍDIO COLETIVO E AÇÃO DE CUMPRIMENTO",
+      "source": "central-structural-v66119/runtime.js#SUBJECTS",
+      "laws": [],
+      "questions": 0
+    },
+    {
+      "id": "ptra-a10",
+      "discipline": "ptrabalho",
+      "number": 11,
+      "title": "PRESCRIÇÃO, DECADÊNCIA E PJE",
+      "source": "central-structural-v66119/runtime.js#SUBJECTS",
+      "laws": [],
+      "questions": 0
+    },
+    {
+      "id": "civil-m01",
+      "discipline": "civil",
+      "number": 1,
+      "title": "Pessoa Natural e Direitos da Personalidade",
+      "source": "content/civil/civil-native-index.js",
+      "laws": [
+        {
+          "label": "Código Civil e fundamentos associados",
+          "questions": 37
+        },
+        {
+          "label": "Lei 13.146/2015",
+          "questions": 6
+        }
+      ],
+      "questions": 43
+    },
+    {
+      "id": "civil-m02",
+      "discipline": "civil",
+      "number": 2,
+      "title": "Pessoas Jurídicas e Domicílio",
+      "source": "content/civil/civil-native-index.js",
+      "laws": [
+        {
+          "label": "Código Civil e fundamentos associados",
+          "questions": 66
+        }
+      ],
+      "questions": 66
+    },
+    {
+      "id": "civil-m03",
+      "discipline": "civil",
+      "number": 3,
+      "title": "Bens",
+      "source": "content/civil/civil-native-index.js",
+      "laws": [
+        {
+          "label": "Código Civil e fundamentos associados",
+          "questions": 44
+        }
+      ],
+      "questions": 44
+    },
+    {
+      "id": "civil-m04",
+      "discipline": "civil",
+      "number": 4,
+      "title": "Negócio Jurídico",
+      "source": "content/civil/civil-native-index.js",
+      "laws": [
+        {
+          "label": "Código Civil e fundamentos associados",
+          "questions": 55
+        }
+      ],
+      "questions": 55
+    },
+    {
+      "id": "civil-m05",
+      "discipline": "civil",
+      "number": 5,
+      "title": "Prescrição, Decadência e Prova",
+      "source": "content/civil/civil-native-index.js",
+      "laws": [
+        {
+          "label": "Código Civil e fundamentos associados",
+          "questions": 72
+        }
+      ],
+      "questions": 72
+    },
+    {
+      "id": "civil-m06",
+      "discipline": "civil",
+      "number": 6,
+      "title": "Obrigações",
+      "source": "content/civil/civil-native-index.js",
+      "laws": [
+        {
+          "label": "Código Civil e fundamentos associados",
+          "questions": 140
+        }
+      ],
+      "questions": 140
+    },
+    {
+      "id": "civil-m07",
+      "discipline": "civil",
+      "number": 7,
+      "title": "Contratos em Geral",
+      "source": "content/civil/civil-native-index.js",
+      "laws": [
+        {
+          "label": "Código Civil e fundamentos associados",
+          "questions": 47
+        }
+      ],
+      "questions": 47
+    },
+    {
+      "id": "civil-m08",
+      "discipline": "civil",
+      "number": 8,
+      "title": "Contratos em Espécie",
+      "source": "content/civil/civil-native-index.js",
+      "laws": [
+        {
+          "label": "Código Civil e fundamentos associados",
+          "questions": 120
+        },
+        {
+          "label": "Lei 9.307/1996",
+          "questions": 17
+        },
+        {
+          "label": "Lei 8.245/1991",
+          "questions": 23
+        }
+      ],
+      "questions": 160
+    },
+    {
+      "id": "civil-m09",
+      "discipline": "civil",
+      "number": 9,
+      "title": "Responsabilidade Civil",
+      "source": "content/civil/civil-native-index.js",
+      "laws": [
+        {
+          "label": "Código Civil e fundamentos associados",
+          "questions": 43
+        }
+      ],
+      "questions": 43
+    },
+    {
+      "id": "civil-m10",
+      "discipline": "civil",
+      "number": 10,
+      "title": "Direito de Empresa e Nome Empresarial",
+      "source": "content/civil/civil-native-index.js",
+      "laws": [
+        {
+          "label": "Código Civil e fundamentos associados",
+          "questions": 55
+        },
+        {
+          "label": "Lei 6.404/1976",
+          "questions": 13
+        }
+      ],
+      "questions": 68
+    },
+    {
+      "id": "civil-m11",
+      "discipline": "civil",
+      "number": 11,
+      "title": "Posse",
+      "source": "content/civil/civil-native-index.js",
+      "laws": [
+        {
+          "label": "Código Civil e fundamentos associados",
+          "questions": 45
+        }
+      ],
+      "questions": 45
+    },
+    {
+      "id": "civil-m12",
+      "discipline": "civil",
+      "number": 12,
+      "title": "Propriedade, Vizinhança e Condomínios",
+      "source": "content/civil/civil-native-index.js",
+      "laws": [
+        {
+          "label": "Código Civil e fundamentos associados",
+          "questions": 59
+        },
+        {
+          "label": "Lei 6.015/1973",
+          "questions": 20
+        },
+        {
+          "label": "Lei 13.465/2017",
+          "questions": 30
+        }
+      ],
+      "questions": 109
+    },
+    {
+      "id": "civil-m13",
+      "discipline": "civil",
+      "number": 13,
+      "title": "Outros Direitos Reais e Garantias",
+      "source": "content/civil/civil-native-index.js",
+      "laws": [
+        {
+          "label": "Código Civil e fundamentos associados",
+          "questions": 44
+        },
+        {
+          "label": "Lei 14.711/2023",
+          "questions": 4
+        }
+      ],
+      "questions": 48
+    },
+    {
+      "id": "civil-m14",
+      "discipline": "civil",
+      "number": 14,
+      "title": "Direito de Família",
+      "source": "content/civil/civil-native-index.js",
+      "laws": [
+        {
+          "label": "Código Civil e fundamentos associados",
+          "questions": 124
+        },
+        {
+          "label": "Lei 8.009/1990",
+          "questions": 13
+        },
+        {
+          "label": "Lei 5.478/1968",
+          "questions": 14
+        },
+        {
+          "label": "Lei 11.804/2008",
+          "questions": 5
+        }
+      ],
+      "questions": 156
+    },
+    {
+      "id": "civil-m15",
+      "discipline": "civil",
+      "number": 15,
+      "title": "Direito das Sucessões",
+      "source": "content/civil/civil-native-index.js",
+      "laws": [
+        {
+          "label": "Código Civil e fundamentos associados",
+          "questions": 105
+        }
+      ],
+      "questions": 105
+    },
+    {
+      "id": "cpp-m01",
+      "discipline": "cpp",
+      "number": 1,
+      "title": "Introdução ao Direito Processual Penal",
+      "source": "content/cpp/cpp-native-index.js",
+      "laws": [
+        {
+          "label": "CPP e fundamentos associados",
+          "questions": 49
+        }
+      ],
+      "questions": 49
+    },
+    {
+      "id": "cpp-m02",
+      "discipline": "cpp",
+      "number": 2,
+      "title": "Aplicação da Lei Processual Penal",
+      "source": "content/cpp/cpp-native-index.js",
+      "laws": [
+        {
+          "label": "CPP e fundamentos associados",
+          "questions": 49
+        }
+      ],
+      "questions": 49
+    },
+    {
+      "id": "cpp-m03",
+      "discipline": "cpp",
+      "number": 3,
+      "title": "Inquérito Policial",
+      "source": "content/cpp/cpp-native-index.js",
+      "laws": [
+        {
+          "label": "CPP e fundamentos associados",
+          "questions": 206
+        },
+        {
+          "label": "Lei 12.830/2013",
+          "questions": 7
+        }
+      ],
+      "questions": 213
+    },
+    {
+      "id": "cpp-m04",
+      "discipline": "cpp",
+      "number": 4,
+      "title": "Ação Penal",
+      "source": "content/cpp/cpp-native-index.js",
+      "laws": [
+        {
+          "label": "CPP e fundamentos associados",
+          "questions": 244
+        }
+      ],
+      "questions": 244
+    },
+    {
+      "id": "cpp-m05",
+      "discipline": "cpp",
+      "number": 5,
+      "title": "Sujeitos do Processo",
+      "source": "content/cpp/cpp-native-index.js",
+      "laws": [
+        {
+          "label": "CPP e fundamentos associados",
+          "questions": 75
+        }
+      ],
+      "questions": 75
+    },
+    {
+      "id": "cpp-m06",
+      "discipline": "cpp",
+      "number": 6,
+      "title": "Jurisdição e Competência",
+      "source": "content/cpp/cpp-native-index.js",
+      "laws": [
+        {
+          "label": "CPP e fundamentos associados",
+          "questions": 105
+        }
+      ],
+      "questions": 105
+    },
+    {
+      "id": "cpp-m07",
+      "discipline": "cpp",
+      "number": 7,
+      "title": "Questões e Processos Incidentes",
+      "source": "content/cpp/cpp-native-index.js",
+      "laws": [
+        {
+          "label": "CPP e fundamentos associados",
+          "questions": 131
+        }
+      ],
+      "questions": 131
+    },
+    {
+      "id": "cpp-m08",
+      "discipline": "cpp",
+      "number": 8,
+      "title": "Nulidades",
+      "source": "content/cpp/cpp-native-index.js",
+      "laws": [
+        {
+          "label": "CPP e fundamentos associados",
+          "questions": 35
+        }
+      ],
+      "questions": 35
+    },
+    {
+      "id": "cpp-m09",
+      "discipline": "cpp",
+      "number": 9,
+      "title": "Atos e Prazos Processuais",
+      "source": "content/cpp/cpp-native-index.js",
+      "laws": [
+        {
+          "label": "CPP e fundamentos associados",
+          "questions": 16
+        }
+      ],
+      "questions": 16
+    },
+    {
+      "id": "cpp-m10",
+      "discipline": "cpp",
+      "number": 10,
+      "title": "Comunicação dos Atos Processuais",
+      "source": "content/cpp/cpp-native-index.js",
+      "laws": [
+        {
+          "label": "CPP e fundamentos associados",
+          "questions": 85
+        }
+      ],
+      "questions": 85
+    },
+    {
+      "id": "cpp-m11",
+      "discipline": "cpp",
+      "number": 11,
+      "title": "Sentença Penal",
+      "source": "content/cpp/cpp-native-index.js",
+      "laws": [
+        {
+          "label": "CPP e fundamentos associados",
+          "questions": 60
+        }
+      ],
+      "questions": 60
+    },
+    {
+      "id": "cpp-m12",
+      "discipline": "cpp",
+      "number": 12,
+      "title": "Das Provas",
+      "source": "content/cpp/cpp-native-index.js",
+      "laws": [
+        {
+          "label": "CPP e fundamentos associados",
+          "questions": 357
+        }
+      ],
+      "questions": 357
+    },
+    {
+      "id": "cpp-m13",
+      "discipline": "cpp",
+      "number": 13,
+      "title": "Medidas Cautelares e Prisão em Flagrante",
+      "source": "content/cpp/cpp-native-index.js",
+      "laws": [
+        {
+          "label": "CPP e fundamentos associados",
+          "questions": 284
+        }
+      ],
+      "questions": 284
+    },
+    {
+      "id": "cpp-m14",
+      "discipline": "cpp",
+      "number": 14,
+      "title": "Prisão e Liberdade Provisória — Parte II",
+      "source": "content/cpp/cpp-native-index.js",
+      "laws": [
+        {
+          "label": "CPP e fundamentos associados",
+          "questions": 153
+        }
+      ],
+      "questions": 153
+    },
+    {
+      "id": "cpp-m15",
+      "discipline": "cpp",
+      "number": 15,
+      "title": "Processo Comum",
+      "source": "content/cpp/cpp-native-index.js",
+      "laws": [
+        {
+          "label": "CPP e fundamentos associados",
+          "questions": 66
+        }
+      ],
+      "questions": 66
+    },
+    {
+      "id": "cpp-m16",
+      "discipline": "cpp",
+      "number": 16,
+      "title": "Tribunal do Júri",
+      "source": "content/cpp/cpp-native-index.js",
+      "laws": [
+        {
+          "label": "CPP e fundamentos associados",
+          "questions": 100
+        }
+      ],
+      "questions": 100
+    },
+    {
+      "id": "cpp-m17",
+      "discipline": "cpp",
+      "number": 17,
+      "title": "Outros Procedimentos",
+      "source": "content/cpp/cpp-native-index.js",
+      "laws": [
+        {
+          "label": "CPP e fundamentos associados",
+          "questions": 22
+        }
+      ],
+      "questions": 22
+    },
+    {
+      "id": "cpp-m18",
+      "discipline": "cpp",
+      "number": 18,
+      "title": "Crimes de Responsabilidade de Funcionários Públicos",
+      "source": "content/cpp/cpp-native-index.js",
+      "laws": [
+        {
+          "label": "CPP e fundamentos associados",
+          "questions": 22
+        }
+      ],
+      "questions": 22
+    },
+    {
+      "id": "cpp-m19",
+      "discipline": "cpp",
+      "number": 19,
+      "title": "Teoria Geral dos Recursos",
+      "source": "content/cpp/cpp-native-index.js",
+      "laws": [
+        {
+          "label": "CPP e fundamentos associados",
+          "questions": 14
+        }
+      ],
+      "questions": 14
+    },
+    {
+      "id": "cpp-m20",
+      "discipline": "cpp",
+      "number": 20,
+      "title": "Recursos em Espécie",
+      "source": "content/cpp/cpp-native-index.js",
+      "laws": [
+        {
+          "label": "CPP e fundamentos associados",
+          "questions": 77
+        }
+      ],
+      "questions": 77
+    },
+    {
+      "id": "cpp-m21",
+      "discipline": "cpp",
+      "number": 21,
+      "title": "Juizados Especiais Criminais",
+      "source": "content/cpp/cpp-native-index.js",
+      "laws": [],
+      "questions": 0
+    },
+    {
+      "id": "cpp-m22",
+      "discipline": "cpp",
+      "number": 22,
+      "title": "Habeas Corpus e Ações Autônomas de Impugnação",
+      "source": "content/cpp/cpp-native-index.js",
+      "laws": [
+        {
+          "label": "CPP e fundamentos associados",
+          "questions": 24
+        }
+      ],
+      "questions": 24
+    },
+    {
+      "id": "adm-01-01-regime-juridico-e-principios",
+      "discipline": "adm",
+      "number": 1,
+      "title": "Regime Jurídico e Princípios Administrativos",
+      "source": "content/adm/adm-native-index.js",
+      "laws": [
+        {
+          "label": "Lei nº 9.784/1999",
+          "questions": 18
+        }
+      ],
+      "questions": 18
+    },
+    {
+      "id": "adm-02-02-organizacao-administrativa",
+      "discipline": "adm",
+      "number": 2,
+      "title": "Organização Administrativa",
+      "source": "content/adm/adm-native-index.js",
+      "laws": [
+        {
+          "label": "Decreto-Lei 200/1967",
+          "questions": 29
+        },
+        {
+          "label": "Lei 13.303/2016",
+          "questions": 41
+        },
+        {
+          "label": "Lei 13.848/2019",
+          "questions": 37
+        }
+      ],
+      "questions": 107
+    },
+    {
+      "id": "adm-03-03-atos-administrativos",
+      "discipline": "adm",
+      "number": 3,
+      "title": "Atos Administrativos",
+      "source": "content/adm/adm-native-index.js",
+      "laws": [
+        {
+          "label": "Lei nº 9.784/1999",
+          "questions": 11
+        }
+      ],
+      "questions": 11
+    },
+    {
+      "id": "adm-04-04-poderes-administrativos",
+      "discipline": "adm",
+      "number": 4,
+      "title": "Poderes Administrativos",
+      "source": "content/adm/adm-native-index.js",
+      "laws": [
+        {
+          "label": "Lei 8.112/1990",
+          "questions": 8
+        },
+        {
+          "label": "Lei nº 9.784/1999",
+          "questions": 6
+        }
+      ],
+      "questions": 14
+    },
+    {
+      "id": "adm-05-05-agentes-publicos",
+      "discipline": "adm",
+      "number": 5,
+      "title": "Agentes Públicos, Cargo, Emprego e Função Pública",
+      "source": "content/adm/adm-native-index.js",
+      "laws": [
+        {
+          "label": "Lei 8.112/1990",
+          "questions": 71
+        },
+        {
+          "label": "Lei 8.745/1993",
+          "questions": 16
+        },
+        {
+          "label": "Lei 12.813/2013",
+          "questions": 14
+        }
+      ],
+      "questions": 101
+    },
+    {
+      "id": "adm-06-06-processo-administrativo-lei-9-784",
+      "discipline": "adm",
+      "number": 6,
+      "title": "Processo Administrativo — Lei 9.784/1999",
+      "source": "content/adm/adm-native-index.js",
+      "laws": [
+        {
+          "label": "Lei nº 9.784/1999",
+          "questions": 69
+        },
+        {
+          "label": "Lei 14.129/2021",
+          "questions": 14
+        }
+      ],
+      "questions": 83
+    },
+    {
+      "id": "adm-07-07-lindb-aplicada-ao-direito-publico",
+      "discipline": "adm",
+      "number": 7,
+      "title": "LINDB aplicada à Administração Pública",
+      "source": "content/adm/adm-native-index.js",
+      "laws": [
+        {
+          "label": "LINDB",
+          "questions": 15
+        }
+      ],
+      "questions": 15
+    },
+    {
+      "id": "adm-08-08-controle-da-administracao",
+      "discipline": "adm",
+      "number": 8,
+      "title": "Controle da Administração Pública",
+      "source": "content/adm/adm-native-index.js",
+      "laws": [
+        {
+          "label": "Lei 12.846/2013",
+          "questions": 25
+        },
+        {
+          "label": "Lei 8.443/1992",
+          "questions": 42
+        },
+        {
+          "label": "Lei 4.717/1965",
+          "questions": 11
+        },
+        {
+          "label": "Lei 7.347/1985",
+          "questions": 13
+        }
+      ],
+      "questions": 91
+    },
+    {
+      "id": "adm-09-09-servicos-publicos-lei-8-987",
+      "discipline": "adm",
+      "number": 9,
+      "title": "Serviços Públicos — Lei 8.987/1995",
+      "source": "content/adm/adm-native-index.js",
+      "laws": [
+        {
+          "label": "Lei 8.987/1995",
+          "questions": 29
+        },
+        {
+          "label": "Lei 13.460/2017",
+          "questions": 15
+        }
+      ],
+      "questions": 44
+    },
+    {
+      "id": "adm-10-10-ppp-lei-11-079",
+      "discipline": "adm",
+      "number": 10,
+      "title": "Parcerias Público-Privadas (PPP) — Lei 11.079/2004",
+      "source": "content/adm/adm-native-index.js",
+      "laws": [
+        {
+          "label": "Lei 11.079/2004",
+          "questions": 24
+        }
+      ],
+      "questions": 24
+    },
+    {
+      "id": "adm-11-11-mrosc-lei-13-019",
+      "discipline": "adm",
+      "number": 11,
+      "title": "MROSC — Lei 13.019/2014",
+      "source": "content/adm/adm-native-index.js",
+      "laws": [
+        {
+          "label": "Lei 13.019/2014",
+          "questions": 31
+        }
+      ],
+      "questions": 31
+    },
+    {
+      "id": "adm-12-12-consorcios-e-terceiro-setor",
+      "discipline": "adm",
+      "number": 12,
+      "title": "Terceiro Setor e Consórcios Públicos",
+      "source": "content/adm/adm-native-index.js",
+      "laws": [
+        {
+          "label": "Lei 11.107/2005",
+          "questions": 33
+        },
+        {
+          "label": "Lei 9.637/1998",
+          "questions": 8
+        },
+        {
+          "label": "Lei 9.790/1999",
+          "questions": 8
+        }
+      ],
+      "questions": 49
+    },
+    {
+      "id": "adm-13-13-improbidade-lei-8-429",
+      "discipline": "adm",
+      "number": 13,
+      "title": "Improbidade Administrativa — Lei 8.429/1992",
+      "source": "content/adm/adm-native-index.js",
+      "laws": [
+        {
+          "label": "Lei 8.429/1992",
+          "questions": 57
+        }
+      ],
+      "questions": 57
+    },
+    {
+      "id": "adm-14-14-licitacoes-gerais-e-conceitos",
+      "discipline": "adm",
+      "number": 14,
+      "title": "Licitações — Gerais e Conceitos",
+      "source": "content/adm/adm-native-index.js",
+      "laws": [
+        {
+          "label": "Lei 14.133/2021",
+          "questions": 9
+        }
+      ],
+      "questions": 9
+    },
+    {
+      "id": "adm-15-15-licitacoes-planejamento",
+      "discipline": "adm",
+      "number": 15,
+      "title": "Licitações — Planejamento",
+      "source": "content/adm/adm-native-index.js",
+      "laws": [
+        {
+          "label": "Lei 14.133/2021",
+          "questions": 9
+        }
+      ],
+      "questions": 9
+    },
+    {
+      "id": "adm-16-16-licitacoes-procedimento-e-modalidades",
+      "discipline": "adm",
+      "number": 16,
+      "title": "Licitações — Procedimento e Modalidades",
+      "source": "content/adm/adm-native-index.js",
+      "laws": [
+        {
+          "label": "Decreto 11.462/2023",
+          "questions": 1
+        },
+        {
+          "label": "Lei 14.133/2021",
+          "questions": 26
+        }
+      ],
+      "questions": 27
+    },
+    {
+      "id": "adm-17-17-contratacao-direta",
+      "discipline": "adm",
+      "number": 17,
+      "title": "Licitações — Contratação Direta",
+      "source": "content/adm/adm-native-index.js",
+      "laws": [
+        {
+          "label": "Lei 14.133/2021",
+          "questions": 5
+        }
+      ],
+      "questions": 5
+    },
+    {
+      "id": "adm-18-18-contratos-administrativos",
+      "discipline": "adm",
+      "number": 18,
+      "title": "Contratos Administrativos — Lei 14.133/2021",
+      "source": "content/adm/adm-native-index.js",
+      "laws": [
+        {
+          "label": "Lei 14.133/2021",
+          "questions": 18
+        }
+      ],
+      "questions": 18
+    },
+    {
+      "id": "adm-19-19-lai-lei-12-527",
+      "discipline": "adm",
+      "number": 19,
+      "title": "Lei de Acesso à Informação — Lei 12.527/2011",
+      "source": "content/adm/adm-native-index.js",
+      "laws": [
+        {
+          "label": "Lei 12.527/2011",
+          "questions": 52
+        }
+      ],
+      "questions": 52
+    },
+    {
+      "id": "adm-20-20-lgpd-lei-13-709",
+      "discipline": "adm",
+      "number": 20,
+      "title": "Lei Geral de Proteção de Dados Pessoais — LGPD",
+      "source": "content/adm/adm-native-index.js",
+      "laws": [
+        {
+          "label": "Lei 13.709/2018",
+          "questions": 43
+        }
+      ],
+      "questions": 43
+    },
+    {
+      "id": "pen-m01",
+      "discipline": "penal",
+      "number": 1,
+      "title": "Princípios, interpretação, analogia e conflito aparente",
+      "source": "ui/penal-m01-m17-runtime-remap.js",
+      "laws": [
+        {
+          "label": "Código Penal e fundamentos associados",
+          "questions": 3
+        }
+      ],
+      "questions": 3
+    },
+    {
+      "id": "pen-m02",
+      "discipline": "penal",
+      "number": 2,
+      "title": "Aplicação da Lei Penal",
+      "source": "ui/penal-m01-m17-runtime-remap.js",
+      "laws": [
+        {
+          "label": "Código Penal e fundamentos associados",
+          "questions": 174
+        }
+      ],
+      "questions": 174
+    },
+    {
+      "id": "pen-m03",
+      "discipline": "penal",
+      "number": 3,
+      "title": "Teoria do Crime",
+      "source": "ui/penal-m01-m17-runtime-remap.js",
+      "laws": [
+        {
+          "label": "Código Penal e fundamentos associados",
+          "questions": 132
+        }
+      ],
+      "questions": 132
+    },
+    {
+      "id": "pen-m04",
+      "discipline": "penal",
+      "number": 4,
+      "title": "Ilicitude",
+      "source": "ui/penal-m01-m17-runtime-remap.js",
+      "laws": [
+        {
+          "label": "Código Penal e fundamentos associados",
+          "questions": 62
+        }
+      ],
+      "questions": 62
+    },
+    {
+      "id": "pen-m05",
+      "discipline": "penal",
+      "number": 5,
+      "title": "Culpabilidade e Teoria do Erro",
+      "source": "ui/penal-m01-m17-runtime-remap.js",
+      "laws": [
+        {
+          "label": "Código Penal e fundamentos associados",
+          "questions": 100
+        }
+      ],
+      "questions": 100
+    },
+    {
+      "id": "pen-m06",
+      "discipline": "penal",
+      "number": 6,
+      "title": "Concurso de Pessoas",
+      "source": "ui/penal-m01-m17-runtime-remap.js",
+      "laws": [
+        {
+          "label": "Código Penal e fundamentos associados",
+          "questions": 49
+        }
+      ],
+      "questions": 49
+    },
+    {
+      "id": "pen-m07",
+      "discipline": "penal",
+      "number": 7,
+      "title": "Concurso de Crimes e Penas",
+      "source": "ui/penal-m01-m17-runtime-remap.js",
+      "laws": [
+        {
+          "label": "Código Penal e fundamentos associados",
+          "questions": 301
+        }
+      ],
+      "questions": 301
+    },
+    {
+      "id": "pen-m08",
+      "discipline": "penal",
+      "number": 8,
+      "title": "Punibilidade e Prescrição",
+      "source": "ui/penal-m01-m17-runtime-remap.js",
+      "laws": [
+        {
+          "label": "Código Penal e fundamentos associados",
+          "questions": 149
+        }
+      ],
+      "questions": 149
+    },
+    {
+      "id": "pen-m09",
+      "discipline": "penal",
+      "number": 9,
+      "title": "Crimes contra a Pessoa",
+      "source": "ui/penal-m01-m17-runtime-remap.js",
+      "laws": [
+        {
+          "label": "Código Penal e fundamentos associados",
+          "questions": 167
+        },
+        {
+          "label": "Lei 7.716/1989",
+          "questions": 19
+        }
+      ],
+      "questions": 186
+    },
+    {
+      "id": "pen-m10",
+      "discipline": "penal",
+      "number": 10,
+      "title": "Crimes contra o Patrimônio",
+      "source": "ui/penal-m01-m17-runtime-remap.js",
+      "laws": [
+        {
+          "label": "Código Penal e fundamentos associados",
+          "questions": 147
+        }
+      ],
+      "questions": 147
+    },
+    {
+      "id": "pen-m11",
+      "discipline": "penal",
+      "number": 11,
+      "title": "Crimes contra a Fé Pública",
+      "source": "ui/penal-m01-m17-runtime-remap.js",
+      "laws": [
+        {
+          "label": "Código Penal e fundamentos associados",
+          "questions": 80
+        }
+      ],
+      "questions": 80
+    },
+    {
+      "id": "pen-m12",
+      "discipline": "penal",
+      "number": 12,
+      "title": "Crimes contra a Dignidade Sexual",
+      "source": "ui/penal-m01-m17-runtime-remap.js",
+      "laws": [
+        {
+          "label": "Código Penal e fundamentos associados",
+          "questions": 66
+        }
+      ],
+      "questions": 66
+    },
+    {
+      "id": "pen-m13",
+      "discipline": "penal",
+      "number": 13,
+      "title": "Crimes contra a Administração Pública",
+      "source": "ui/penal-m01-m17-runtime-remap.js",
+      "laws": [
+        {
+          "label": "Código Penal e fundamentos associados",
+          "questions": 224
+        }
+      ],
+      "questions": 224
+    },
+    {
+      "id": "pen-m14",
+      "discipline": "penal",
+      "number": 14,
+      "title": "Abuso de Autoridade",
+      "source": "ui/penal-m01-m17-runtime-remap.js",
+      "laws": [
+        {
+          "label": "Código Penal e fundamentos associados",
+          "questions": 2
+        },
+        {
+          "label": "Lei 13.869/2019",
+          "questions": 4
+        }
+      ],
+      "questions": 6
+    },
+    {
+      "id": "pen-m15",
+      "discipline": "penal",
+      "number": 15,
+      "title": "Lavagem de Dinheiro",
+      "source": "ui/penal-m01-m17-runtime-remap.js",
+      "laws": [
+        {
+          "label": "Código Penal e fundamentos associados",
+          "questions": 3
+        }
+      ],
+      "questions": 3
+    },
+    {
+      "id": "pen-m16",
+      "discipline": "penal",
+      "number": 16,
+      "title": "Crimes em Licitações e Contratos",
+      "source": "ui/penal-m01-m17-runtime-remap.js",
+      "laws": [
+        {
+          "label": "Código Penal e fundamentos associados",
+          "questions": 20
+        }
+      ],
+      "questions": 20
+    },
+    {
+      "id": "pen-m17",
+      "discipline": "penal",
+      "number": 17,
+      "title": "Constituição Penal, Responsabilidade Penal da Pessoa Jurídica, Súmulas e Consolidação",
+      "source": "ui/penal-m01-m17-runtime-remap.js",
+      "laws": [
+        {
+          "label": "Código Penal e fundamentos associados",
+          "questions": 5
+        },
+        {
+          "label": "Lei 9.605/1998",
+          "questions": 17
+        }
+      ],
+      "questions": 22
+    }
+  ],
+  "complement": [
+    {
+      "id": "penal-complementar",
+      "discipline": "penal",
+      "number": null,
+      "title": "Leis e assuntos complementares",
+      "source": "Questões preservadas sem encaixe seguro em um módulo da matriz atual",
+      "questionIds": [
+        "decorando-pen-autoral-031",
+        "decorando-pen-autoral-032",
+        "decorando-pen-autoral-033",
+        "decorando-pen-autoral-034",
+        "decorando-pen-autoral-035",
+        "decorando-pen-autoral-036",
+        "decorando-penal-dls-20260827-0927",
+        "decorando-penal-dls-20260827-1284",
+        "decorando-penal-dls-20260827-1285",
+        "decorando-penal-dls-20260827-1286",
+        "decorando-penal-dls-20260827-1287",
+        "decorando-penal-dls-20260827-1288",
+        "decorando-penal-dls-20260827-1289",
+        "decorando-penal-dls-20260827-1290",
+        "decorando-penal-dls-20260827-1291",
+        "decorando-penal-dls-20260827-1292",
+        "decorando-penal-dls-20260827-1293",
+        "decorando-penal-dls-20260827-1294",
+        "decorando-penal-dls-20260827-1295",
+        "decorando-penal-dls-20260827-1296",
+        "decorando-penal-dls-20260827-1297",
+        "decorando-penal-dls-20260827-1298",
+        "decorando-penal-dls-20260827-1299",
+        "decorando-penal-dls-20260827-1300",
+        "decorando-penal-dls-20260827-1301",
+        "decorando-penal-dls-20260827-1302",
+        "decorando-penal-dls-20260827-1303",
+        "decorando-penal-dls-20260827-1304",
+        "decorando-penal-dls-20260827-1343",
+        "decorando-penal-dls-20260827-1371",
+        "decorando-penal-dls-20260827-1372",
+        "decorando-penal-dls-20260827-1373",
+        "decorando-penal-dls-20260827-1374",
+        "decorando-penal-dls-20260827-1375",
+        "decorando-penal-dls-20260827-1376",
+        "decorando-penal-dls-20260827-1377",
+        "decorando-penal-dls-20260827-1378",
+        "decorando-penal-dls-20260827-1379",
+        "decorando-penal-dls-20260827-1380",
+        "decorando-penal-dls-20260827-1381",
+        "decorando-penal-dls-20260827-1382",
+        "decorando-penal-dls-20260827-1383",
+        "decorando-penal-dls-20260827-1384",
+        "decorando-penal-dls-20260827-1385",
+        "decorando-penal-dls-20260827-1386",
+        "decorando-penal-dls-20260827-1387",
+        "decorando-penal-dls-20260827-1388",
+        "decorando-penal-dls-20260827-1389",
+        "decorando-penal-dls-20260827-1390",
+        "decorando-penal-dls-20260827-1391",
+        "decorando-penal-dls-20260827-1392",
+        "decorando-penal-dls-20260827-1393",
+        "decorando-penal-dls-20260827-1394",
+        "decorando-penal-dls-20260827-1395",
+        "decorando-penal-dls-20260827-1396",
+        "decorando-penal-dls-20260827-1397",
+        "decorando-penal-dls-20260827-1398",
+        "decorando-penal-dls-20260827-1399",
+        "decorando-penal-dls-20260827-1400",
+        "decorando-penal-dls-20260827-1401",
+        "decorando-penal-dls-20260827-1402",
+        "decorando-penal-dls-20260827-1403",
+        "decorando-penal-dls-20260827-1404",
+        "decorando-penal-dls-20260827-1405",
+        "decorando-penal-dls-20260827-1406",
+        "decorando-penal-dls-20260827-1407",
+        "decorando-penal-dls-20260827-1408",
+        "decorando-penal-dls-20260827-1409",
+        "decorando-penal-dls-20260827-1410",
+        "decorando-penal-dls-20260827-1411",
+        "decorando-penal-dls-20260827-1412",
+        "decorando-penal-dls-20260827-1413",
+        "decorando-penal-dls-20260827-1414",
+        "decorando-penal-dls-20260827-1415",
+        "decorando-penal-dls-20260827-1416",
+        "decorando-penal-dls-20260827-1417",
+        "decorando-penal-dls-20260827-1418",
+        "decorando-penal-dls-20260827-1670",
+        "decorando-penal-dls-20260827-1674",
+        "pen-lei-11343-pdf14-q001",
+        "pen-lei-11343-pdf14-q004",
+        "pen-lei-11343-pdf14-q007",
+        "pen-lei-11343-pdf14-q012",
+        "pen-lei-11343-pdf14-q014",
+        "pen-lei-11343-pdf14-q016",
+        "pen-lei-11343-pdf14-q019",
+        "pen-lei-11343-pdf14-q022",
+        "pen-lei-11343-pdf14-q023",
+        "pen-lei-11343-pdf14-q026",
+        "pen-lei-11343-pdf14-q027",
+        "pen-lei-11343-pdf14-q029",
+        "pen-lei-11343-pdf14-q031",
+        "pen-lei-11343-pdf14-q032",
+        "pen-lei-11343-pdf14-q033",
+        "pen-lei-11343-pdf14-q034",
+        "pen-lei-11343-pdf14-q036",
+        "pen-lei-11343-pdf14-q039",
+        "pen-lei-11343-pdf14-q040",
+        "pen-lei-11343-pdf14-q041",
+        "pen-lei-11343-pdf14-q042",
+        "pen-lei-11343-pdf14-q043",
+        "pen-lei-11343-pdf14-q044",
+        "pen-lei-11343-pdf14-q048",
+        "pen-lei-12850-pdf23-q022",
+        "pen-lei-11340-pdf13-q001",
+        "pen-lei-11340-pdf13-q004",
+        "pen-lei-11340-pdf13-q006",
+        "pen-lei-11340-pdf13-q008",
+        "pen-lei-11340-pdf13-q009",
+        "pen-lei-11340-pdf13-q010",
+        "pen-lei-11340-pdf13-q015",
+        "pen-lei-11340-pdf13-q019",
+        "pen-lei-11340-pdf13-q021",
+        "pen-lei-11340-pdf13-q027",
+        "pen-lei-11340-pdf13-q033",
+        "pen-lei-11340-pdf13-q039",
+        "pen-lei-11340-pdf13-q040",
+        "pen-lei-11340-pdf13-q044",
+        "pen-lei-8072-pdf52-q001",
+        "pen-lei-8072-pdf52-q010",
+        "pen-lei-8072-pdf52-q013",
+        "pen-lei-8072-pdf52-q014",
+        "pen-lei-8072-pdf52-q015",
+        "pen-lei-8072-pdf52-q020",
+        "pen-lei-8072-pdf52-q025",
+        "pen-lei-8072-pdf52-q026",
+        "pen-lei-8072-pdf52-q027",
+        "pen-lei-8072-pdf52-q030",
+        "pen-lei-8072-pdf52-q031",
+        "pen-lei-8072-pdf52-q033",
+        "pen-lei-8072-pdf52-q040",
+        "pen-lei-8072-pdf52-q043",
+        "pen-lei-8072-pdf52-q047",
+        "pen-lei-8072-pdf52-q050",
+        "pen-lei-9455-pdf63-q001",
+        "pen-lei-9455-pdf63-q008",
+        "pen-lei-9455-pdf63-q009",
+        "pen-lei-9455-pdf63-q010",
+        "pen-lei-9455-pdf63-q011",
+        "pen-lei-9455-pdf63-q015",
+        "pen-lei-9455-pdf63-q016",
+        "pen-lei-9455-pdf63-q019",
+        "pen-lei-9455-pdf63-q029",
+        "pen-lei-9455-pdf63-q031",
+        "pen-lei-9455-pdf63-q033",
+        "pen-lei-9455-pdf63-q045",
+        "pen-lei-9455-pdf63-q047",
+        "pen-lei-9455-pdf63-q049",
+        "pen-lei-8137-pdf54-q001",
+        "pen-lei-8137-pdf54-q003",
+        "pen-lei-8137-pdf54-q005",
+        "pen-lei-8137-pdf54-q007",
+        "pen-lei-8137-pdf54-q010",
+        "pen-lei-8137-pdf54-q012",
+        "pen-lei-8137-pdf54-q013",
+        "pen-lei-8137-pdf54-q016",
+        "pen-lei-8137-pdf54-q018",
+        "pen-lei-8137-pdf54-q020",
+        "pen-lei-8137-pdf54-q022",
+        "pen-lei-8137-pdf54-q025",
+        "pen-lei-8137-pdf54-q028",
+        "pen-lei-8137-pdf54-q030",
+        "pen-lei-8137-pdf54-q032",
+        "pen-lei-8137-pdf54-q034",
+        "pen-lei-8137-pdf54-q035",
+        "pen-lei-8137-pdf54-q037",
+        "pen-lei-8137-pdf54-q038",
+        "pen-lei-8137-pdf54-q039",
+        "pen-lei-8137-pdf54-q040",
+        "pen-lei-8137-pdf54-q043",
+        "pen-lei-8137-pdf54-q046",
+        "pen-lei-8137-pdf54-q048",
+        "pen-lei-13344-pdf29-q001",
+        "pen-lei-13344-pdf29-q002",
+        "pen-lei-13344-pdf29-q003",
+        "pen-lei-13344-pdf29-q004",
+        "pen-lei-13344-pdf29-q005",
+        "pen-lei-13344-pdf29-q006",
+        "pen-lei-13344-pdf29-q007",
+        "pen-lei-13344-pdf29-q008",
+        "pen-lei-13344-pdf29-q009",
+        "pen-lei-13344-pdf29-q010",
+        "pen-lei-1079-pdf7-q001",
+        "pen-lei-1079-pdf7-q002",
+        "pen-lei-1079-pdf7-q003",
+        "pen-lei-1079-pdf7-q004"
+      ],
+      "questions": 186
+    },
+    {
+      "id": "cpp-complementar",
+      "discipline": "cpp",
+      "number": null,
+      "title": "Leis e assuntos complementares",
+      "source": "Questões preservadas sem encaixe seguro em um módulo da matriz atual",
+      "questionIds": [
+        "decorando-cpp-rev-1760",
+        "decorando-cpp-rev-1761",
+        "decorando-cpp-rev-1762",
+        "decorando-cpp-rev-1763",
+        "decorando-cpp-rev-1764",
+        "decorando-cpp-rev-1765",
+        "decorando-cpp-rev-1887",
+        "decorando-cpp-rev-1888",
+        "decorando-cpp-rev-1889",
+        "decorando-cpp-rev-1890",
+        "decorando-cpp-rev-1902",
+        "decorando-cpp-rev-1903",
+        "decorando-cpp-rev-1904",
+        "decorando-cpp-rev-1921",
+        "cpp-lei-11343-pdf14-q001",
+        "cpp-lei-11343-pdf14-q004",
+        "cpp-lei-11343-pdf14-q007",
+        "cpp-lei-11343-pdf14-q012",
+        "cpp-lei-11343-pdf14-q014",
+        "cpp-lei-11343-pdf14-q016",
+        "cpp-lei-11343-pdf14-q019",
+        "cpp-lei-11343-pdf14-q022",
+        "cpp-lei-11343-pdf14-q023",
+        "cpp-lei-11343-pdf14-q026",
+        "cpp-lei-11343-pdf14-q027",
+        "cpp-lei-11343-pdf14-q029",
+        "cpp-lei-11343-pdf14-q031",
+        "cpp-lei-11343-pdf14-q032",
+        "cpp-lei-11343-pdf14-q033",
+        "cpp-lei-11343-pdf14-q034",
+        "cpp-lei-11343-pdf14-q036",
+        "cpp-lei-11343-pdf14-q039",
+        "cpp-lei-11343-pdf14-q040",
+        "cpp-lei-11343-pdf14-q041",
+        "cpp-lei-11343-pdf14-q042",
+        "cpp-lei-11343-pdf14-q043",
+        "cpp-lei-11343-pdf14-q044",
+        "cpp-lei-11343-pdf14-q048",
+        "cpp-lei-12850-pdf23-q022",
+        "cpp-lei-11340-pdf13-q001",
+        "cpp-lei-11340-pdf13-q004",
+        "cpp-lei-11340-pdf13-q006",
+        "cpp-lei-11340-pdf13-q008",
+        "cpp-lei-11340-pdf13-q009",
+        "cpp-lei-11340-pdf13-q010",
+        "cpp-lei-11340-pdf13-q015",
+        "cpp-lei-11340-pdf13-q019",
+        "cpp-lei-11340-pdf13-q021",
+        "cpp-lei-11340-pdf13-q027",
+        "cpp-lei-11340-pdf13-q033",
+        "cpp-lei-11340-pdf13-q039",
+        "cpp-lei-11340-pdf13-q040",
+        "cpp-lei-11340-pdf13-q044",
+        "cpp-lei-13869-pdf33-q002",
+        "cpp-lei-13869-pdf33-q006",
+        "cpp-lei-13869-pdf33-q036",
+        "cpp-lei-13869-pdf33-q037"
+      ],
+      "questions": 57
+    },
+    {
+      "id": "trabalho-complementar",
+      "discipline": "trabalho",
+      "number": null,
+      "title": "Leis e assuntos complementares",
+      "source": "Questões preservadas sem encaixe seguro em um módulo da matriz atual",
+      "questionIds": [
+        "trab-lei-lc150-pdf5-q048",
+        "trab-lei-8213-pdf55-q001",
+        "trab-lei-8213-pdf55-q002",
+        "trab-lei-8213-pdf55-q003",
+        "trab-lei-8213-pdf55-q004",
+        "trab-lei-8213-pdf55-q005",
+        "trab-lei-8213-pdf55-q006",
+        "trab-lei-8213-pdf55-q007",
+        "trab-lei-8213-pdf55-q009",
+        "trab-lei-8213-pdf55-q010",
+        "trab-lei-8213-pdf55-q011",
+        "trab-lei-8213-pdf55-q012",
+        "trab-lei-8213-pdf55-q013",
+        "trab-lei-8213-pdf55-q015",
+        "trab-lei-8213-pdf55-q016",
+        "trab-lei-8213-pdf55-q017",
+        "trab-lei-8213-pdf55-q018",
+        "trab-lei-8213-pdf55-q019",
+        "trab-lei-8213-pdf55-q020",
+        "trab-lei-8213-pdf55-q021",
+        "trab-lei-8213-pdf55-q022",
+        "trab-lei-8213-pdf55-q023",
+        "trab-lei-8213-pdf55-q024",
+        "trab-lei-8213-pdf55-q025",
+        "trab-lei-8213-pdf55-q026",
+        "trab-lei-8213-pdf55-q027",
+        "trab-lei-8213-pdf55-q028",
+        "trab-lei-8213-pdf55-q031",
+        "trab-lei-8213-pdf55-q032",
+        "trab-lei-8213-pdf55-q034",
+        "trab-lei-8213-pdf55-q035",
+        "trab-lei-8213-pdf55-q036",
+        "trab-lei-8213-pdf55-q039",
+        "trab-lei-8213-pdf55-q041",
+        "trab-lei-8213-pdf55-q043",
+        "trab-lei-8213-pdf55-q044",
+        "trab-lei-8213-pdf55-q046",
+        "trab-lei-8213-pdf55-q047",
+        "trab-lei-8213-pdf55-q049"
+      ],
+      "questions": 39
+    }
+  ],
+  "rule": "Vínculo editorial pela matriz vigente da Central, dispositivo e tema; questões sem encaixe seguro permanecem complementares. Mais de um módulo pode estudar a mesma questão sem duplicar o registro ou o progresso.",
+  "scope": "Conferência estrutural completa do banco e do catálogo de módulos, não revisão jurídica integral da teoria ou dos gabaritos.",
+  "findings": [
+    "Civil enviava module ignorado pela rota.",
+    "Administrativo e CPP abriam banco geral sem módulo.",
+    "Penal ainda listava agrupamentos antigos de 24 módulos; matriz atual tem 17.",
+    "CPP usava 17 agrupamentos legados; matriz nativa atual tem 22.",
+    "CF tinha 12 agrupamentos legados, com ordem econômica/social/família sem módulos 13–15 próprios.",
+    "Trabalho e Processo do Trabalho usam IDs centrais trab/ptra, diferentes de trabalho/ptrabalho no banco."
+  ]
+}

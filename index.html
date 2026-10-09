@@ -1244,7 +1244,7 @@ window.centralBackupImport=function(inp){
 <script src="/central-structural-v66119/runtime.js?v=20261004cfg07v2"></script>
 <script src="/portugues-site.js?v=20261003ptnative2"></script>
 <script src="/ui/portuguese-reader.js?v=20261003ptnative2"></script>
-<script src="/ui/current-courses.js?v=20261003ptnative2"></script>
+<script src="/ui/current-courses.js?v=20261009sync1"></script>
 <script src="/central-reading-font-v66126.js?v=20260921font250"></script>
 <script src="/penal-full-theory-data-01.js?v=20260919b"></script>
 <script src="/penal-full-theory-data-02.js?v=20260919b"></script>
@@ -1966,7 +1966,8 @@ function centralToolPath(name,opts={}){
  const files={decorando:'tools/decorando.html',vade:'tools/vade.html',rlm:'tools/rlm.html'},base=files[name];
  if(!base)throw new Error('Ferramenta offline desconhecida: '+name);
  const query=new URLSearchParams();
- if(name==='decorando'&&opts.discipline)query.set('discipline',opts.discipline);
+ if(name==='decorando'&&opts.discipline)query.set('discipline',({trab:'trabalho',ptra:'ptrabalho',ptrab:'ptrabalho'})[opts.discipline]||opts.discipline);
+ if(name==='decorando'&&opts.module)query.set('module',opts.module);
  if(name==='decorando'&&opts.topicId)query.set('topic',opts.topicId);
  if(name==='vade'&&opts.lawId)query.set('law',opts.lawId);
  const suffix=query.toString()?'?'+query.toString():'';
