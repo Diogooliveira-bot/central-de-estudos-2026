@@ -1,0 +1,31 @@
+{
+  "version": "2026-10-10-R3",
+  "scope": "Revisão específica com fontes oficiais, não equivale à homologação das 270 questões.",
+  "reviewed": [
+    {
+      "id": "DT-M05-RESUMIDA-Q04",
+      "decision": "GABARITO B CONFIRMADO",
+      "basis": "TST Resolução 225/2025 cancelou apenas o item I da Súmula 372. Item II preservado.",
+      "sources": [
+        "https://juslaboris.tst.jus.br/handle/20.500.12178/251919",
+        "https://www.tst.jus.br/documents/10157/63003/LivroInternet%2811%29pdf.pdf/814fe229-718f-541f-f73c-7a8b03ce47bc?t=1752769398191"
+      ],
+      "pdf_alignment": "PENDENTE",
+      "release": false
+    },
+    {
+      "id": "DT-M05-COMPLETA-Q08",
+      "decision": "GABARITO C CONFIRMADO",
+      "basis": "Súmula 372 II mantém vedação à redução da gratificação enquanto empregado permanece na função comissionada; item I cancelado conforme Resolução 225/2025.",
+      "sources": [
+        "https://juslaboris.tst.jus.br/handle/20.500.12178/251919",
+        "https://www.tst.jus.br/documents/10157/63003/LivroInternet%2811%29pdf.pdf/814fe229-718f-541f-f73c-7a8b03ce47bc?t=1752769398191",
+        "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm"
+      ],
+      "pdf_alignment": "PENDENTE",
+      "release": false
+    }
+  ],
+  "remainingUncertified": 268,
+  "allowedForStudents": false
+}
