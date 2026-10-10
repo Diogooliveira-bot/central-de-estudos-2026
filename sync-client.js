@@ -1,5 +1,6 @@
 (function(){
 'use strict';
+if(new URLSearchParams(location.search).get('qa_ptra')==='1'&&location.hostname.endsWith('.vercel.app'))return;
 if(window.__centralUserSyncV1)return;window.__centralUserSyncV1=true;
 
 var DB_NAME='central-sync-device-v2',STORE='kv',localState=null,localReady=false;
