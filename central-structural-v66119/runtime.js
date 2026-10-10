@@ -3933,7 +3933,7 @@ function cfWeekPct(w){
 function cfPool(w){return CF_QUESTIONS.filter(q=>w.topics.includes(q.t))}
 function cfStats(){
  const st=cfState();let answered=0,correct=0,wrongIds=[];
- const ids=CF_QUESTIONS.length?CF_QUESTIONS.map(q=>q.id):(window.CentralHomeProgressData?.cfQuestionIds||[]);
+ const ids=CF_QUESTIONS.map(q=>q.id);
  ids.forEach(id=>{
    const a=st.answers?.[id];
    if(a?.attempts){answered++;if(a.lastCorrect)correct++;if(a.everWrong&&!a.lastCorrect)wrongIds.push(id)}
@@ -3998,9 +3998,11 @@ function openCfResource(id,kind){const r=cfResources(id),u=safeUrl(r[kind]);if(u
 function cfNoteKey(id){return `central-v6:cf-note:${id}`}
 function saveCfNote(id){const el=document.getElementById(`cf-note-${id}`);if(!el)return;localStorage.setItem(cfNoteKey(id),el.value);alert('Anotação salva.')}
 function cfStep(n,title,desc,done,body){
+ if([1,4,6,7].includes(n))return '';
  return `<section class="cf-step ${done?'done':''}"><div class="cf-step-head"><div class="cf-step-no">${done?'✓':n}</div><div class="cf-step-copy"><b>${title}</b><small>${desc}</small></div></div><div class="cf-step-body">${body}</div></section>`;
 }
 function renderConstitutionalMaster(){
+ if(!CF_QUESTIONS.length)return '<div class="cf-subtitle">Questões de fixação: 5 na versão resumida e 10 na completa de cada módulo.</div>';
  const st=cfStats(),real=CF_QUESTIONS.filter(q=>q.real!==false).length,ined=CF_QUESTIONS.length-real;
  return `<div class="cf-master-tools"><button onclick="renderCfErrorPanel()">⚠ Erros ${st.wrongIds.length?`(${st.wrongIds.length})`:''}</button></div>
  <div class="cf-metrics">
@@ -4037,7 +4039,7 @@ function renderCfModule(w){
  return `<section class="cf-module ${open?'open':''}" data-cf="${w.id}">
    <button class="cf-module-head" onclick="toggleCfModule('${w.id}')">
      <span class="cf-module-no">MÓDULO ${w.num}</span><span class="cf-module-title">${esc(w.title)}</span>
-     <span class="cf-module-stat">${pct}% • ${real.length} FCC + ${ined.length} inéditas</span><span class="chev">⌄</span>
+     <span class="cf-module-stat">${pct}% • fixação: 5 resumidas + 10 completas</span><span class="chev">⌄</span>
    </button>
    <div class="cf-module-body">
      <div class="cf-module-bar"><span style="width:${pct}%"></span></div>
@@ -4237,9 +4239,11 @@ function openPenalResource(id,kind){const r=penalResources(id),u=safeUrl(r[kind]
 function penalNoteKey(id){return `central-v6:penal-note:${id}`}
 function savePenalNote(id){const el=document.getElementById(`cf-note-${id}`);if(!el)return;localStorage.setItem(penalNoteKey(id),el.value);alert('Anotação salva.')}
 function penalStep(n,title,desc,done,body){
+ if([1,4,6,7].includes(n))return '';
  return `<section class="cf-step ${done?'done':''}"><div class="cf-step-head"><div class="cf-step-no">${done?'✓':n}</div><div class="cf-step-copy"><b>${title}</b><small>${desc}</small></div></div><div class="cf-step-body">${body}</div></section>`;
 }
 function renderPenalMaster(){
+ if(!PENAL_QUESTIONS.length)return '<div class="cf-subtitle">Questões de fixação: 5 na versão resumida e 10 na completa de cada módulo.</div>';
  const st=penalStats(),real=PENAL_QUESTIONS.filter(q=>q.real!==false).length,ined=PENAL_QUESTIONS.length-real;
  return `<div class="cf-master-tools"><button onclick="renderPenalErrorPanel()">⚠ Erros ${st.wrongIds.length?`(${st.wrongIds.length})`:''}</button></div>
  <div class="cf-metrics">
@@ -4349,7 +4353,7 @@ function renderPenalModule(w){
  return `<section class="cf-module ${open?'open':''}" data-cf="${w.id}">
    <button class="cf-module-head" onclick="togglePenalModule('${w.id}')">
      <span class="cf-module-no">MÓDULO ${w.num}</span><span class="cf-module-title">${esc(w.title)}</span>
-     <span class="cf-module-stat">${pct}% • ${real.length} FCC reais + ${ined.length} autorais</span><span class="chev">⌄</span>
+     <span class="cf-module-stat">${pct}% • fixação: 5 resumidas + 10 completas</span><span class="chev">⌄</span>
    </button>
    <div class="cf-module-body">
      <div class="cf-module-bar"><span style="width:${pct}%"></span></div>
@@ -4546,9 +4550,11 @@ function openCpcResource(id,kind){const r=cpcResources(id),u=safeUrl(r[kind]);if
 function cpcNoteKey(id){return `central-v6:cpc-note:${id}`}
 function saveCpcNote(id){const el=document.getElementById(`cf-note-${id}`);if(!el)return;localStorage.setItem(cpcNoteKey(id),el.value);alert('Anotação salva.')}
 function cpcStep(n,title,desc,done,body){
+ if([1,4,6,7].includes(n))return '';
  return `<section class="cf-step ${done?'done':''}"><div class="cf-step-head"><div class="cf-step-no">${done?'✓':n}</div><div class="cf-step-copy"><b>${title}</b><small>${desc}</small></div></div><div class="cf-step-body">${body}</div></section>`;
 }
 function renderCpcMaster(){
+ if(!CPC_QUESTIONS.length)return '<div class="cf-subtitle">Questões de fixação: 5 na versão resumida e 10 na completa de cada módulo.</div>';
  if(window.CpcStudyV1&&typeof window.CpcStudyV1.renderMaster==='function')return window.CpcStudyV1.renderMaster();
  const st=cpcStats(),real=CPC_QUESTIONS.filter(q=>q.real!==false).length,ined=CPC_QUESTIONS.length-real;
  return `<div class="cf-master-tools"><button onclick="renderCpcErrorPanel()">⚠ Erros ${st.wrongIds.length?`(${st.wrongIds.length})`:''}</button></div>
@@ -4573,7 +4579,7 @@ function renderCpcModule(w){
  return `<section class="cf-module ${open?'open':''}" data-cf="${w.id}">
    <button class="cf-module-head" onclick="toggleCpcModule('${w.id}')">
      <span class="cf-module-no">MÓDULO ${w.num}</span><span class="cf-module-title">${esc(w.title)}</span>
-     <span class="cf-module-stat">${pct}% • ${real.length} FCC reais</span><span class="chev">⌄</span>
+     <span class="cf-module-stat">${pct}% • fixação: 5 resumidas + 10 completas</span><span class="chev">⌄</span>
    </button>
    <div class="cf-module-body">
      <div class="cf-module-bar"><span style="width:${pct}%"></span></div>
