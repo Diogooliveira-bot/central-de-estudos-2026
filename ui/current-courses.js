@@ -72,6 +72,23 @@ if(global.BaseNativeReader&&!global.__centralCurrentPenal){
  };
  global.subjStats.__bcCounts=true;
 }
+if(global.CPP_NATIVE_INDEX&&typeof SUBJECTS!=='undefined'){
+ const subject=SUBJECTS.find(s=>s.id==='cpp');
+ if(subject){
+  subject.special='22 módulos • curso nativo completo';
+  subject.topics=global.CPP_NATIVE_INDEX.modules.map(m=>({
+   uid:m.uid,
+   title:String(m.number).padStart(2,'0')+' '+m.title.toUpperCase(),
+   origin:'Módulo '+String(m.number).padStart(2,'0')+' do curso nativo',
+   type:'Curso',
+   studyUrl:null,
+   ankiDeck:null,
+   sourceInfo:'Conteúdo resumido, teoria completa e questões de fixação do módulo.',
+   sourceStats:{cards:0,views:0,correct:0,wrong:0,accuracy:null},
+   tips:['Estude primeiro o conteúdo resumido e depois a teoria completa.','Finalize com 5 questões do resumido e 10 do completo.']
+  }));
+ }
+}
 if(typeof global.renderAll==='function')global.renderAll();
 if(typeof global.renderDisciplineGrid==='function')global.renderDisciplineGrid();
 })(window);
