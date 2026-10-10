@@ -828,6 +828,7 @@ setTimeout(syncInstallButton,1800);
 .central-settings-body>.central-backup-row~.central-settings-note{display:none!important}
 </style>
 <link rel="stylesheet" href="/base-completa-home-v3.css?v=20261001v5">
+<link rel="stylesheet" href="/ui/ptra-native-study-v1.css?v=20261010ptra3">
 </head>
 <body>
 
@@ -835,7 +836,7 @@ setTimeout(syncInstallButton,1800);
 (function(){
 'use strict';
 var VIEW_IDS=['homeView','disciplinesView','agendaView','performanceView','tecCadernosView','leiSecaView','vadeMecumView','moduleView'];
-var SUBJECTS_STATIC=[['pt','Português','24 módulos • Português Autodidata'],['cf','Direito Constitucional','curso integrado por módulos'],['adm','Direito Administrativo','tópicos do edital'],['civil','Direito Civil','curso integrado por módulos'],['cpc','Direito Processual Civil','curso integrado por módulos'],['penal','Direito Penal','curso integrado por módulos'],['cpp','Direito Processual Penal','tópicos do edital'],['rlm','Raciocínio Lógico-Matemático','9 módulos • cálculo rápido • questões FCC']];
+var SUBJECTS_STATIC=[['pt','Português','24 módulos • Português Autodidata'],['cf','Direito Constitucional','curso integrado por módulos'],['adm','Direito Administrativo','tópicos do edital'],['civil','Direito Civil','curso integrado por módulos'],['cpc','Direito Processual Civil','curso integrado por módulos'],['penal','Direito Penal','curso integrado por módulos'],['cpp','Direito Processual Penal','tópicos do edital'],['ptra','Direito Processual do Trabalho','21 módulos • curso integrado'],['rlm','Raciocínio Lógico-Matemático','9 módulos • cálculo rápido • questões FCC']];
 function el(id){return document.getElementById(id)}
 function esc(v){return String(v==null?'':v).replace(/[&<>\"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;'}[c]})}
 function setActive(btn){try{document.querySelectorAll('#centralSidebar .nav button').forEach(function(b){b.classList.remove('active')});if(btn)btn.classList.add('active')}catch(e){}}
@@ -1896,7 +1897,7 @@ function renderMap(hostId){
     +'<button type="button" class="mp-qbtn" onclick="event.stopPropagation();return tecRegTopic(\''+t.uid+'\')" title="Registrar questões deste tópico">📝+</button></div>';
   }).join('');
   var pct=topics.length?Math.round(soma/topics.length):0;
-  var cnt=(s.id==='trab'||s.id==='ptra')?(topics.length+' aulas'):(teal?'9 módulos + cálculo rápido':topics.length+' módulos');
+  var cnt=s.id==='ptra'?(topics.length+' módulos'):(s.id==='trab'?(topics.length+' aulas'):(teal?'9 módulos + cálculo rápido':topics.length+' módulos'));
   var sub=(st&&st.done?st.done+'/'+st.total+' '+st.unit+' · ':'')+cnt;
   return '<div class="mp-card'+(teal?' teal':'')+'" data-sid="'+esc(s.id)+'">'
    +'<span class="mp-hex">'+(ci+1)+'</span>'
@@ -2401,4 +2402,6 @@ window.moduleFrameRetry=function(){
 <!-- /DIREITO CONSTITUCIONAL — NOVO PADRÃO -->
 <!-- CF G07 COMPLETO — AUDITORIA FINAL V2 20261004 — BUILD CONSOLIDADO RETRY 20261004-2028 -->
 
+<script src="/content/ptra/ptra-native-index.js?v=20261010ptra3"></script>
+<script src="/ui/ptra-native-study-v1.js?v=20261010ptra3"></script>
 </body></html>
