@@ -69,20 +69,17 @@ function build(raw){
 }
 function chapters(mode){return source()?.chapters?.[mode]||[]}
 function findHeading(ch){
- if(!current)return null;
+ if(!current||!ch)return null;
  const ordered=Array.from(current.article.querySelectorAll('h2,h3'));
- const pos=String(ch?.id||'').match(/^[sc](\d+)$/);
- if(pos){const direct=ordered[Number(pos[1])-1];if(direct)return direct}
+ if(!ordered.length)return null;
+ const pos=String(ch.id||'').match(/^[sc](\d+)$/);
+ if(pos){const index=Math.max(0,Number(pos[1])-1),direct=ordered[Math.min(index,ordered.length-1)];if(direct)return direct}
  const target=normKey(ch.match||ch.title);
- const exact=ordered.find(el=>normKey(el.textContent)===target||normKey(el.textContent).startsWith(target));
+ const exact=ordered.find(el=>{const key=normKey(el.textContent);return key===target||key.startsWith(target)||target.startsWith(key)});
  if(exact)return exact;
- const words=target.split(' ').filter(Boolean);
- let best=null,score=0;
- ordered.forEach(el=>{
-   const k=normKey(el.textContent); let s=0; words.forEach(w=>{if(k.includes(w))s++});
-   if(s>score){score=s;best=el}
- });
- return best;
+ const words=target.split(' ').filter(Boolean);let best=null,score=0;
+ ordered.forEach(el=>{const key=normKey(el.textContent);let value=0;words.forEach(word=>{if(key.includes(word))value++});if(value>score){score=value;best=el}});
+ return best||ordered[0];
 }
 function stats(mode){const cs=chapters(mode);const done=cs.filter(c=>chapterDone(mode,c.id)).length;return {done,total:cs.length,pct:cs.length?Math.round(done/cs.length*100):0}}
 function refresh(){
