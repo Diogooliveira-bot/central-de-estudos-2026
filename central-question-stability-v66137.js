@@ -82,12 +82,16 @@ function wrapOldLeiSeca(){
 }
 function wrapAnswerDebounce(name){
   if(typeof window[name]!=='function'||window[name].__centralDebounced)return false;
-  var original=window[name],locked=false;
+  var original=window[name],previous=null,previousAt=0;
   var wrapped=function(){
-    if(locked)return;
-    locked=true;
-    try{return original.apply(this,arguments)}
-    finally{setTimeout(function(){locked=false},250)}
+    // Ignore apenas repeticoes identicas; uma nova alternativa ou questao
+    // deve responder imediatamente, inclusive dentro de 250 ms.
+    var args=Array.prototype.slice.call(arguments),signature;
+    try{signature=JSON.stringify(args)}catch(_){signature=null}
+    var now=Date.now();
+    if(signature!==null&&signature===previous&&now-previousAt<250)return;
+    previous=signature;previousAt=now;
+    return original.apply(this,arguments);
   };
   wrapped.__centralDebounced=true;
   window[name]=wrapped;
