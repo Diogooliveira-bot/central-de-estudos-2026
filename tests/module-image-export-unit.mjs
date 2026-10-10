@@ -11,7 +11,7 @@ function initialize(role){
 }
 test('somente administrador recebe o exportador',()=>{
  assert.equal(initialize('aluno').BaseCompletaImageExport,undefined);
- assert.equal(initialize('admin').BaseCompletaImageExport.imageFor instanceof Function,true);
+ assert.equal(typeof initialize('admin').BaseCompletaImageExport.imageFor,'function');
 });
 test('ZIP inclui bytes originais da imagem, nome UTF-8 e estrutura central',async()=>{
  const w=initialize('admin');
