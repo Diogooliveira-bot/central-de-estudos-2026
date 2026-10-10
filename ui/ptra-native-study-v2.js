@@ -17,7 +17,7 @@ function read(k,fallback=null){try{const x=JSON.parse(get(NS+k)||'null');return 
 function write(k,v){set(NS+k,JSON.stringify(v));}
 function readPct(n,kind){return clamp(read(`m${pad(n)}:reading:${kind}`,{}).pct||0)}
 function theoryPct(n){return Math.round((readPct(n,'resumido')+readPct(n,'completo'))/2)}
-function markGenericDone(n){const uid=`ptra-m${pad(n)}`;try{localStorage.setItem(`central-v6:done:${uid}`,theoryPct(n)>=100?'1':'0')}catch(_){}}`;if(theoryPct(n)>=100)set(`central-v6:done:${uid}`,'1')}
+function markGenericDone(n){const uid=`ptra-m${pad(n)}`;try{localStorage.setItem(`central-v6:done:${uid}`,theoryPct(n)>=100?'1':'0')}catch(_){}}
 function stats(){const total=INDEX.modules.length||21,values=INDEX.modules.map(m=>theoryPct(m.number)),done=values.filter(p=>p>=100).length;return {total,done,pct:total?Math.round(values.reduce((a,b)=>a+b,0)/total):0}}
 function extStats(n){const rows=read(`m${pad(n)}:tec:rounds`,[]);const done=rows.reduce((s,r)=>s+(Number(r?.done)||0),0),correct=rows.reduce((s,r)=>s+(Number(r?.correct)||0),0);return {done,correct,pct:done?Math.round(correct/done*100):0}}
 function noteList(n){return read(`m${pad(n)}:notes`,[])}
