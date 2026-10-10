@@ -3933,7 +3933,7 @@ function cfWeekPct(w){
 function cfPool(w){return CF_QUESTIONS.filter(q=>w.topics.includes(q.t))}
 function cfStats(){
  const st=cfState();let answered=0,correct=0,wrongIds=[];
- const ids=CF_QUESTIONS.length?CF_QUESTIONS.map(q=>q.id):(window.CentralHomeProgressData?.cfQuestionIds||[]);
+ const ids=CF_QUESTIONS.map(q=>q.id);
  ids.forEach(id=>{
    const a=st.answers?.[id];
    if(a?.attempts){answered++;if(a.lastCorrect)correct++;if(a.everWrong&&!a.lastCorrect)wrongIds.push(id)}
@@ -4039,7 +4039,7 @@ function renderCfModule(w){
  return `<section class="cf-module ${open?'open':''}" data-cf="${w.id}">
    <button class="cf-module-head" onclick="toggleCfModule('${w.id}')">
      <span class="cf-module-no">MÓDULO ${w.num}</span><span class="cf-module-title">${esc(w.title)}</span>
-     <span class="cf-module-stat">${pct}% • ${real.length} FCC + ${ined.length} inéditas</span><span class="chev">⌄</span>
+     <span class="cf-module-stat">${pct}% • fixação: 5 resumidas + 10 completas</span><span class="chev">⌄</span>
    </button>
    <div class="cf-module-body">
      <div class="cf-module-bar"><span style="width:${pct}%"></span></div>
@@ -4353,7 +4353,7 @@ function renderPenalModule(w){
  return `<section class="cf-module ${open?'open':''}" data-cf="${w.id}">
    <button class="cf-module-head" onclick="togglePenalModule('${w.id}')">
      <span class="cf-module-no">MÓDULO ${w.num}</span><span class="cf-module-title">${esc(w.title)}</span>
-     <span class="cf-module-stat">${pct}% • ${real.length} FCC reais + ${ined.length} autorais</span><span class="chev">⌄</span>
+     <span class="cf-module-stat">${pct}% • fixação: 5 resumidas + 10 completas</span><span class="chev">⌄</span>
    </button>
    <div class="cf-module-body">
      <div class="cf-module-bar"><span style="width:${pct}%"></span></div>
@@ -4579,7 +4579,7 @@ function renderCpcModule(w){
  return `<section class="cf-module ${open?'open':''}" data-cf="${w.id}">
    <button class="cf-module-head" onclick="toggleCpcModule('${w.id}')">
      <span class="cf-module-no">MÓDULO ${w.num}</span><span class="cf-module-title">${esc(w.title)}</span>
-     <span class="cf-module-stat">${pct}% • ${real.length} FCC reais</span><span class="chev">⌄</span>
+     <span class="cf-module-stat">${pct}% • fixação: 5 resumidas + 10 completas</span><span class="chev">⌄</span>
    </button>
    <div class="cf-module-body">
      <div class="cf-module-bar"><span style="width:${pct}%"></span></div>
