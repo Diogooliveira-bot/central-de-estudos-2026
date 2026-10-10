@@ -2,7 +2,7 @@
 // Pré-homologação: verifica estrutura; NÃO certifica mérito jurídico.
 'use strict';
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
-const base=path.resolve(__dirname,'../../modules/trabalho/native');
+const base=path.resolve(__dirname,'../modules/trabalho/native');
 const seen=new Set();let count=0,pages=0;
 for(let n=1;n<=18;n++){
  const id='m'+String(n).padStart(2,'0');
