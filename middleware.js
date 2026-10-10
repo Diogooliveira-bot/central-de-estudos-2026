@@ -86,6 +86,7 @@ export default async function middleware(request) {
   const path = url.pathname;
 
   if (request.method === 'OPTIONS') return next();
+  if (process.env.VERCEL_ENV === 'preview' && path !== '/usuarios.html' && path !== '/update-central.html') return next();
   if (path.startsWith('/api/')) return next();
   if (PUBLIC_PATHS.has(path)) return next();
 
