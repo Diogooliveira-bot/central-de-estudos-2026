@@ -14,6 +14,7 @@
 <link rel="apple-touch-icon" href="/assets/base-completa-symbol.webp?v=20261006icon2">
 <script id="base-completa-pwa-bootstrap">
 (function(){
+  if(new URLSearchParams(location.search).get('qa_ptra')==='1')return;
   if(!('serviceWorker' in navigator))return;
   if(location.protocol!=='https:'&&!/localhost|127\.0\.0\.1/.test(location.hostname))return;
   navigator.serviceWorker.register('/sw.js',{updateViaCache:'none'}).catch(function(){});
