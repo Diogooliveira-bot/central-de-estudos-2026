@@ -8,7 +8,7 @@ const read = p => fs.readFileSync(path.join(root,p),'utf8');
 const rows=[];
 function evaluate(src){
   const context={console,window:{},globalThis:null,document:{},atob:x=>Buffer.from(x,'base64').toString('binary')};
-  context.globalThis=context.window;context.setTimeout=(fn)=>{if(typeof fn==='function')fn()};context.clearTimeout=()=>{};
+  context.globalThis=context.window;context.setTimeout=()=>0;context.clearTimeout=()=>{};
   vm.runInNewContext(src,context,{timeout:12000});
   return context.window;
 }
