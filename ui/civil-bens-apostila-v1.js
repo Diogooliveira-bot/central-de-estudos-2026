@@ -18,7 +18,7 @@
     if (/^\d{1,2}\.\s+\S/.test(text)) return 'section';
     if (mode === 'summary' && SUMMARY_SUBHEADINGS.has(text)) return 'subsection';
     if (/^[•●▪]\s+/.test(text)) return 'bullet';
-    if (/^(?:NÃO|CAI MUITO|PEGADINHA|ATENÇÃO|REGRA DE|REGRA DE BOLSO|STJ|VOCÊ PRECISA|LEMBRAR)\b/i.test(text)) return 'callout';
+    if (/^(?:NÃO|CAI MUITO|PEGADINHA|ATENÇÃO|REGRA DE|REGRA DE BOLSO|EXEMPLO|STJ|VOCÊ PRECISA|LEMBRAR)\b/i.test(text)) return 'callout';
     if (/\S\s{3,}\S/.test(line)) return 'table';
     return 'paragraph';
   }
