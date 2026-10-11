@@ -51,3 +51,31 @@ test('M03 Bens: formatação é ativada somente neste módulo, sem migrar dados 
   assert.match(visual, /pre\.replaceWith\(output\)/);
   assert.doesNotMatch(visual, /localStorage|indexedDB|summaryQuestions|completeQuestions/);
 });
+
+
+test('M03 Bens: tabela termina antes de novo tópico e antes de EXEMPLO', async () => {
+  const scope={window:{}};
+  runInNewContext(await read('ui/civil-bens-apostila-v1.js'),scope);
+  const {toGroups}=scope.window.CivilBensApostila;
+  const lines=[
+    '  Elemento                               Características                    Exemplo',
+    '  Fruto natural                          Renovável.                        Cria de animal, frutos de',
+    '                                                                           árvore.',
+    '  Produto                                Extração reduz substância.        Minério.',
+    ' 2.10 Pertenças e partes integrantes — arts. 93 e 94',
+    ' Pertença é bem que não compõe a estrutura.',
+    '  Pertença                               Parte integrante',
+    '  Mantém individualidade                 Integra a estrutura.',
+    '  principal.',
+    ' EXEMPLO                 Máquina autônoma destinada ao serviço.',
+    '                         Não é parte integrante.',
+    ' 2.11 Benfeitorias — arts. 96 e 97'
+  ];
+  const groups=toGroups(lines,'complete');
+  const tableGroups=groups.filter(g=>g.type==='table');
+  assert.equal(tableGroups.length,2);
+  assert.deepEqual([tableGroups[0].start,tableGroups[0].end],[0,3]);
+  assert.deepEqual([tableGroups[1].start,tableGroups[1].end],[6,8]);
+  assert.ok(!tableGroups.some(g=>g.start<=9&&g.end>=9),'EXEMPLO não pode ficar dentro da tabela');
+  assert.ok(!tableGroups.some(g=>g.start<=4&&g.end>=4),'título não pode ficar dentro da tabela');
+});
