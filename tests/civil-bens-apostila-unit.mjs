@@ -43,7 +43,9 @@ test('M03 Bens: formatação é ativada somente neste módulo, sem migrar dados 
   const reader = await read('ui/civil-native-study-v1.js');
   const bootstrap = await read('central-v119.html');
   const visual = await read('ui/civil-bens-apostila-v1.js');
-  assert.match(reader, /n===3 && g\.CivilBensApostila\?\.enhance\(body,kind\)/);
+  assert.match(reader, /if\(n===3\)/);
+  assert.match(reader, /CivilBensApostila\.enhance\(body,kind\)/);
+  assert.match(reader, /await import\('\/ui\/civil-bens-apostila-v1\.js/);
   assert.match(bootstrap, /ui\/civil-bens-apostila-v1\.js/);
   assert.match(visual, /output\.textContent !== original/);
   assert.match(visual, /pre\.replaceWith\(output\)/);
