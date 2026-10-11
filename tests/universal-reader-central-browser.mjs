@@ -60,6 +60,26 @@ try{
           stageCount:stages.filter(x=>x.htmlLength>0).length,problems:problems.slice(0,6),samples:stages.slice(0,2)};
       });
       console.log('ADM_RUNTIME',JSON.stringify(adm));
+      assert.equal(adm.indexCount,20);
+      assert.equal(adm.legacyAvailable,20);
+      const attempts=await page.evaluate(async()=>{
+        const items=Object.keys(window.ADM_NATIVE_INDEX.modules),checks=[];
+        for(const uid of items){
+          for(const kind of ['summary','complete']){
+            try{
+              await window.AdmNative.open(uid,kind,false);
+              const node=document.querySelector('#adm-native-reader .bc-native-article');
+              checks.push({uid,kind,characters:node?.textContent?.length||0,
+                headings:node?.querySelectorAll('h1,h2,h3').length||0,
+                success:Boolean(node && node.textContent.length>250)});
+            }catch(e){checks.push({uid,kind,success:false,error:e.message.slice(0,100)})}
+            window.AdmNative.close();
+          }
+        }
+        return checks;
+      });
+      console.log('ADM_OPEN',JSON.stringify({total:attempts.length,passed:attempts.filter(x=>x.success).length,
+        failed:attempts.filter(x=>!x.success).slice(0,8)}));
     }catch(e){console.log('ADM_RUNTIME_BLOCKER',e.message.slice(0,300))}
    }
   }catch(e){const debug=await page.evaluate(()=>({url:location.href,ready:document.readyState,title:document.title,status:document.querySelector('#status')?.textContent,body:document.body?.textContent?.slice(0,280),hasIndex:!!document.querySelector('#subjects'),hasAsset:!!document.querySelector('script[src*=universal-reader]')})).catch(x=>({evalError:x.message}));rows.push({viewport:vp.name,pass:false,error:e.message.slice(0,300),debug,events:events.slice(-8),missingAssets:assetErrors})}
