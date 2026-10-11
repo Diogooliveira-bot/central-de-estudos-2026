@@ -33,7 +33,7 @@ async function openReader(n,kind){
   if(n===3){
    // Carregamento de segurança: não depender apenas do carregador de disciplina.
    if(!g.CivilBensApostila?.enhance){
-    await import('/ui/civil-bens-apostila-v1.js?v=20261011m03tables4');
+    await import('/ui/civil-bens-apostila-v1.js?v=20261011m03bounded5');
    }
    if(activeReader!==session)return;
    if(!g.CivilBensApostila?.enhance)throw new Error('Formatador da apostila de Bens indisponível');
