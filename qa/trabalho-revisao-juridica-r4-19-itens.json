@@ -1,0 +1,107 @@
+{
+  "date": "2026-10-10",
+  "release": false,
+  "reviewed_legal_individually": 19,
+  "awaiting_review": 251,
+  "reviewed": [
+    {
+      "id": "DT-M05-RESUMIDA-Q04",
+      "status": "recorte jurídico validado em rodada anterior, verificar relatório específico"
+    },
+    {
+      "id": "DT-M05-COMPLETA-Q08",
+      "status": "recorte jurídico validado em rodada anterior, verificar relatório específico"
+    },
+    {
+      "id": "DT-M08-COMPLETA-Q07",
+      "status": "recorte jurídico validado em rodada anterior, verificar relatório específico"
+    },
+    {
+      "id": "DT-M09-RESUMIDA-Q01",
+      "status": "recorte jurídico validado em rodada anterior, verificar relatório específico"
+    },
+    {
+      "id": "DT-M09-COMPLETA-Q02",
+      "status": "recorte jurídico validado em rodada anterior, verificar relatório específico"
+    },
+    {
+      "id": "DT-M10-COMPLETA-Q01",
+      "status": "recorte jurídico validado em rodada anterior, verificar relatório específico"
+    },
+    {
+      "id": "DT-M08-RESUMIDA-Q03",
+      "status": "recorte jurídico validado em rodada anterior, verificar relatório específico"
+    },
+    {
+      "id": "DT-M16-COMPLETA-Q08",
+      "status": "recorte jurídico validado em rodada anterior, verificar relatório específico"
+    },
+    {
+      "id": "DT-M02-COMPLETA-Q07",
+      "status": "gabarito conferido com lei federal consolidada",
+      "norm": "CLT art 614 §3",
+      "source": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm"
+    },
+    {
+      "id": "DT-M10-COMPLETA-Q06",
+      "status": "gabarito conferido com lei federal consolidada",
+      "norm": "Lei 8906/1994 art 20 (Lei 14365/2022)",
+      "source": "https://www.planalto.gov.br/ccivil_03/leis/l8906.htm"
+    },
+    {
+      "id": "DT-M07-RESUMIDA-Q02",
+      "status": "gabarito conferido com lei federal consolidada",
+      "norm": "CLT art 473 IV",
+      "source": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm"
+    },
+    {
+      "id": "DT-M07-COMPLETA-Q02",
+      "status": "gabarito conferido com lei federal consolidada",
+      "norm": "CLT art 473 II",
+      "source": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm"
+    },
+    {
+      "id": "DT-M07-COMPLETA-Q08",
+      "status": "gabarito conferido com lei federal consolidada",
+      "norm": "CLT art 853",
+      "source": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm"
+    },
+    {
+      "id": "DT-M11-COMPLETA-Q05",
+      "status": "gabarito conferido com lei federal consolidada",
+      "norm": "CLT art 71 §4",
+      "source": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm"
+    },
+    {
+      "id": "DT-M11-COMPLETA-Q08",
+      "status": "gabarito conferido com lei federal consolidada",
+      "norm": "CLT art 134 §1",
+      "source": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm"
+    },
+    {
+      "id": "DT-M11-COMPLETA-Q10",
+      "status": "gabarito conferido com lei federal consolidada",
+      "norm": "CLT arts 134 e 137",
+      "source": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm"
+    },
+    {
+      "id": "DT-M06-COMPLETA-Q02",
+      "status": "gabarito conferido com lei federal consolidada",
+      "norm": "CLT art 445 parágrafo único",
+      "source": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm"
+    },
+    {
+      "id": "DT-M12-RESUMIDA-Q05",
+      "status": "gabarito conferido com lei federal consolidada",
+      "norm": "CLT art 461 §1",
+      "source": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm"
+    },
+    {
+      "id": "DT-M12-COMPLETA-Q09",
+      "status": "gabarito conferido com lei federal consolidada",
+      "norm": "CLT art 461 §1",
+      "source": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm"
+    }
+  ],
+  "note": "Validação de gabarito sob o recorte da norma não dispensa revisão de distratores, comentários e PDFs. Produção bloqueada."
+}
