@@ -1172,6 +1172,33 @@ function qcYear(a){const y=(a.question||{}).year;return y?String(y):"Sem ano"}
 function qcRole(a){const r=String((a.question||{}).role||"").trim();return r||""}
 function qcOrigin(a){return a.origin==="unverified"?"unverified":(a.origin==="authorial"||(a.question||{}).origin==="authorial")?"authorial":"real"}
 const QC_ORIGIN_LABEL={real:"Questões de prova",authorial:"Autorais",unverified:"Origem a confirmar"};
+function registerApprovedLeiModules(){
+  const catalog=CENTRAL_LAW_MODULES;
+  for(const q of DATA_LED_APPROVED){
+    const a=Number(String(q.number||'').match(/\bArt\.\s*(\d+)/)?.[1]);
+    let numbers=[];
+    if(q.topicId==='led-cf-cf88')numbers=a>=170&&a<=192?[13]:a>=193&&a<=224?[14]:a>=225&&a<=232?[15]:[];
+    else if(q.topicId==='led-adm-licitacoes-14133')numbers=a===75?[17]:[];
+    else if(q.topicId==='led-adm-lgpd-13709')numbers=[20];
+    else if(q.topicId==='led-penal-abuso-13869')numbers=[14];
+    else if(q.topicId==='led-penal-lavagem-9613')numbers=[15];
+    const selected=numbers.map(n=>catalog.modules.find(m=>m.discipline===q.discipline&&m.number===n)).filter(Boolean);
+    if(!selected.length){
+      let m=catalog.complement.find(m=>m.discipline===q.discipline);
+      if(!m){m={id:q.discipline+'-complementar',discipline:q.discipline,number:null,title:'Leis e assuntos complementares',source:'Questões sem encaixe seguro em módulo da matriz atual',questionIds:[],laws:[]};catalog.complement.push(m)}
+      selected.push(m);
+      catalog.aliases[q.discipline+'|'+m.id]=m.id;
+    }
+    for(const m of selected){
+      if(m.questionIds.includes(q.id))continue;
+      m.questionIds.push(q.id);
+      m.laws ||= [];
+      const law=q.title||q.topicId,entry=m.laws.find(x=>x.label===law);
+      if(entry)entry.questions++;else m.laws.push({label:law,questions:1});
+    }
+  }
+}
+registerApprovedLeiModules();
 const LAW_MODULE_LIST=[...CENTRAL_LAW_MODULES.modules,...CENTRAL_LAW_MODULES.complement];
 const LAW_MODULE_QUESTIONS=new Map(LAW_MODULE_LIST.map(m=>[m.id,new Set(m.questionIds)]));
 function disciplineModules(){return LAW_MODULE_LIST.filter(m=>m.discipline===currentDiscipline().id)}
