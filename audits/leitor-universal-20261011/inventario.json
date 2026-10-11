@@ -1,0 +1,49 @@
+{
+  "generatedAt": "2026-10-11",
+  "scope": "Source presence and presentation only â€” not legal correctness",
+  "notes": [
+    "ADM complete modes require legacy runtime, verified separately with 40 successful openings.",
+    "Trabalho M03/M09 lack source main elements; Universal Reader wraps them at runtime.",
+    "Trabalho M17 is stored as preformatted source; Universal Reader projects semantic elements non-destructively.",
+    "PortuguÃªs has full text and in-document review rather than independently stored summary."
+  ],
+  "stats": {
+    "total": 152,
+    "bySubject": {
+      "penal": 17,
+      "cpc": 20,
+      "cf": 15,
+      "adm": 20,
+      "civil": 15,
+      "cpp": 22,
+      "trabalho": 18,
+      "portugues": 25
+    },
+    "textModesFullyConfirmed": 89,
+    "notConfirmed": 20,
+    "missingSource": 2,
+    "trabalhoFormatted": 18
+  },
+  "rows": [
+    {
+      "subject": "penal",
+      "module": "M01",
+      "summaryLength": 12399,
+      "completeLength": 45344,
+      "bothModes": true,
+      "source": "content/penal/m01-native-data.js",
+      "title": "PrincÃ­pios, interpretaÃ§Ã£o, analogia e conflito aparente",
+      "chaptersSummary": 9,
+      "chaptersComplete": 22,
+      "questionSummary": 5,
+      "questionComplete": 10,
+      "issue": ""
+    },
+    {
+      "subject": "penal",
+      "module": "M02",
+      "summaryLength": 12453,
+      "completeLength": 40371,
+      "bothModes": true,
+      "source": "content/penal/m02-native-data.js",
+      "title": "AplicaÃ§Ã£o da¶»§q«^
