@@ -51,7 +51,8 @@ try{
         const stages=[];
         for(const uid of uids) {
           try{
-            const html=typeof window.renderDetail==='function'?window.renderDetail(uid):'';
+            const entry=typeof window.topicByUid==='function'?window.topicByUid(uid):null;
+            const html=entry && typeof window.renderDetail==='function'?window.renderDetail(entry.s,entry.t,entry.r||{}):'';
             stages.push({uid,htmlLength:String(html||'').length,legacyLength:String(window.ADM_NATIVE_LEGACY?.[uid]||'').length});
           }catch(e){problems.push({uid,error:e.message})}
         }
