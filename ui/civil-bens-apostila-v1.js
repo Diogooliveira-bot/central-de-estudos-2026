@@ -45,6 +45,39 @@
     return groups;
   }
 
+  // Reconstrói as colunas delimitadas por espaçamento no texto de origem.
+  // Linhas de continuação são incorporadas à última linha da tabela.
+  function makeTable(source) {
+    const lines = source.split('\n');
+    const rows = [];
+    for (const line of lines) {
+      if (!line.trim()) continue;
+      const cells = line.trim().split(/\s{2,}/).map(v => v.trim()).filter(Boolean);
+      if (cells.length >= 2) rows.push(cells);
+      else if (rows.length) rows[rows.length - 1][rows[rows.length - 1].length - 1] += ' ' + line.trim();
+      else return null;
+    }
+    if (rows.length < 2) return null;
+    const cols = Math.max(...rows.map(r => r.length));
+    if (cols > 4 || cols < 2) return null;
+    const wrap = document.createElement('div');
+    wrap.className = 'bc-bens-table-wrap';
+    const table = document.createElement('table');
+    table.className = 'bc-bens-real-table';
+    rows.forEach((cells, i) => {
+      const tr = document.createElement('tr');
+      cells.forEach((value, j) => {
+        const cell = document.createElement(i === 0 ? 'th' : 'td');
+        if (i === 0) cell.scope = 'col';
+        cell.textContent = value;
+        tr.appendChild(cell);
+      });
+      table.appendChild(tr);
+    });
+    wrap.appendChild(table);
+    return wrap;
+  }
+
   function formatPre(pre, mode) {
     const original = pre.textContent;
     if (!original || !original.trim() || pre.dataset.bensFormatted === '1') return false;
@@ -58,13 +91,21 @@
         group.type === 'subsection' ? 'h3' : 'div';
       const block = document.createElement(tag);
       block.className = 'bc-bens-' + group.type;
-      block.textContent = lines.slice(group.start, group.end + 1).join('\n');
-      output.appendChild(block);
+      const raw = lines.slice(group.start, group.end + 1).join('\n');
+      const table = group.type === 'table' ? makeTable(raw) : null;
+      if (table) {
+        table.dataset.originalText = raw;
+        output.appendChild(table);
+      } else {
+        block.textContent = raw;
+        output.appendChild(block);
+      }
       if (group.end < lines.length - 1) output.appendChild(document.createTextNode('\n'));
     }
 
     // Garantia de integridade: nem um espaço, sinal ou artigo pode desaparecer.
-    if (output.textContent !== original) {
+    const reconstructed = [...output.childNodes].map(node => node.nodeType === 3 ? node.textContent : (node.dataset?.originalText ?? node.textContent)).join('');
+    if (reconstructed !== original) {
       console.error('[Base Completa] O M03 não foi reformatado: divergência no texto original.');
       return false;
     }
@@ -84,6 +125,12 @@
       '.bc-bens-apostila .bc-bens-bullet{margin:.65rem 0;padding:.65rem .9rem;border-left:3px solid #8aa5c7;border-radius:0 .45rem .45rem 0;background:rgba(93,125,176,.065);white-space:pre-line;line-height:1.8}',
       '.bc-bens-apostila .bc-bens-callout{margin:1rem 0;padding:1rem 1.12rem;border-left:4px solid #4a76b2;background:rgba(93,125,176,.08);border-radius:0 .55rem .55rem 0;white-space:pre-line;line-height:1.75}',
       '.bc-bens-apostila .bc-bens-table{display:block;box-sizing:border-box;margin:1rem 0 1.4rem;padding:1.05rem;border:1px solid var(--line,#d6dfeb);border-radius:.75rem;background:rgba(115,139,173,.055);font:inherit;font-size:.95rem;line-height:1.7;white-space:pre-line;overflow-wrap:break-word;word-break:normal;overflow-x:visible;max-width:100%;tab-size:4}',
+      '.bc-bens-apostila .bc-bens-table-wrap{margin:1rem 0 1.4rem;border:1px solid var(--line,#d6dfeb);border-radius:.7rem;overflow:hidden}',
+      '.bc-bens-apostila .bc-bens-real-table{width:100%;border-collapse:collapse;table-layout:fixed;font:inherit;font-size:.91rem;line-height:1.55}',
+      '.bc-bens-apostila .bc-bens-real-table th{background:#e5edf7;color:#17375b;text-align:left;font-weight:700}',
+      '.bc-bens-apostila .bc-bens-real-table th,.bc-bens-apostila .bc-bens-real-table td{padding:.8rem .7rem;border-bottom:1px solid #dce3ec;overflow-wrap:anywhere;vertical-align:top}',
+      '.bc-bens-apostila .bc-bens-real-table tr:last-child td{border-bottom:0}',
+      '.bc-bens-apostila .bc-bens-real-table tr:nth-child(even) td{background:rgba(115,139,173,.045)}',
       '.bc-bens-apostila .bc-bens-flow{min-width:0}',
       '.bc-bens-apostila .bc-bens-flow>:first-child{margin-top:1rem}',
       '@media(max-width:700px){.bc-bens-apostila .civil-source-content{font-size:.98rem;line-height:1.75}.bc-bens-apostila .bc-bens-section{font-size:1.2rem;margin-top:1.7rem}.bc-bens-apostila .bc-bens-subsection{font-size:1.07rem}.bc-bens-apostila .bc-bens-table{font-size:.8rem;padding:.8rem;white-space:pre-line;overflow-wrap:break-word}}'
