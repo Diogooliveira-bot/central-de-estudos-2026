@@ -1,5 +1,5 @@
 {
-  "build": "20261010-auditfix1",
+  "build": "20261011-lei-juridico-gate1",
   "files": [
     "/central-v119.html?direct=35",
     "/ui/discipline-standard.js?v=20261003penalnative1",
@@ -388,6 +388,7 @@
     "/tools/decorando-data-civil-leis.js?v=20261008civil1",
     "/tools/decorando-data-cpc-leis.js?v=20261008civil1",
     "/tools/decorando-data-restantes.js?v=20261009rest1",
+    "/tools/decorando-data-led-aprovadas.js?v=20261010ledgate1",
     "/tools/decorando-data-modulos.js?v=20261009sync1",
     "/central-lazy-theory-v66119.js?v=20261009civilsharing2",
     "/content/civil/civil-sharing-links.js?v=20261009civilsharing2",

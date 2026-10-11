@@ -8,8 +8,11 @@ const context=leiRuntime(root),data=vm.runInContext('DATA',context),index=vm.run
 const report=JSON.parse(read('audits/lei-em-dia-sincronizacao-20261009.json'));
 const allModules=[...index.modules,...index.complement],expected={cf:15,adm:20,civil:15,cpc:20,penal:17,cpp:22,trabalho:18,ptrabalho:11};
 const asJSON=x=>JSON.parse(JSON.stringify(x));
-test('138 módulos nas oito disciplinas correspondem à matriz corrente',()=>{
- assert.equal(data.length,12044);assert.equal(index.modules.length,138);assert.equal(new Set(data.map(q=>q.id)).size,data.length);
+test('138 módulos centrais e lote jurídico aprovado correspondem à matriz corrente',()=>{
+ const approved=vm.runInContext('DATA_LED_APPROVED',context);
+ assert.equal(data.length,12044+approved.length);assert.equal(index.modules.length,138);assert.equal(new Set(data.map(q=>q.id)).size,data.length);
+ assert.ok(approved.every(q=>q.id.startsWith('LED-')&&q.origin==='authorial'&&q.question?.source?.startsWith('https://')));
+ assert.equal(!!vm.runInContext('DISCIPLINES.consumidor',context),approved.some(q=>q.discipline==='consumidor'));
  for(const [d,n] of Object.entries(expected))assert.equal(index.modules.filter(m=>m.discipline===d).length,n);
  const sourceJSON=p=>JSON.parse(read(p).split('=').slice(1).join('=').trim().replace(/;$/,''));
  for(const d of ['civil','cpp','adm']){

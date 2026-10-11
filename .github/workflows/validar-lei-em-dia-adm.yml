@@ -34,6 +34,7 @@ jobs:
       - name: Testes de dados, integração e regressão
         run: |
           npm run test:lei-adm
+          node --test tests/lei-em-dia-sincronizacao.mjs
           npm test
       - name: Instalar Chromium para teste de interface
         run: npx playwright install --with-deps chromium
