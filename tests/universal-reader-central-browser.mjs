@@ -23,11 +23,11 @@ try{
  browser=await chromium.launch({headless:true,args:['--no-sandbox']});
  for(const vp of [{name:'celular',width:390,height:844},{name:'tablet',width:768,height:1024},{name:'computador',width:1366,height:768}]){
   const context=await browser.newContext({viewport:{width:vp.width,height:vp.height},serviceWorkers:'block'});
-  const page=await context.newPage();const assetErrors=[];
+  const page=await context.newPage();const assetErrors=[],events=[];page.on('pageerror',e=>events.push('pageerror:'+e.message.slice(0,130)));page.on('console',e=>{if(e.type()==='error')events.push('console:'+e.text().slice(0,120))});
   page.on('response',r=>{if(r.status()===404&&/universal-reader-v1/.test(r.url()))assetErrors.push(r.url())});
   try {
    const response=await page.goto(base+'/central-v119.html',{waitUntil:'domcontentloaded',timeout:35000});
-   await page.waitForFunction(()=>!!window.CentralUniversalReader,{timeout:35000});
+   await page.waitForFunction(()=>!!window.CentralUniversalReader,null,{timeout:12500});
    const result=await page.evaluate(()=>({
      reader:typeof window.CentralUniversalReader?.scan==='function',
      css:[...document.styleSheets].some(s=>s.href?.includes('universal-reader-v1.css')),
@@ -61,7 +61,7 @@ try{
       console.log('ADM_RUNTIME',JSON.stringify(adm));
     }catch(e){console.log('ADM_RUNTIME_BLOCKER',e.message.slice(0,300))}
    }
-  }catch(e){rows.push({viewport:vp.name,pass:false,error:e.message.slice(0,300),missingAssets:assetErrors})}
+  }catch(e){const debug=await page.evaluate(()=>({url:location.href,ready:document.readyState,title:document.title,status:document.querySelector('#status')?.textContent,body:document.body?.textContent?.slice(0,280),hasIndex:!!document.querySelector('#subjects'),hasAsset:!!document.querySelector('script[src*=universal-reader]')})).catch(x=>({evalError:x.message}));rows.push({viewport:vp.name,pass:false,error:e.message.slice(0,300),debug,events:events.slice(-8),missingAssets:assetErrors})}
   await context.close();
  }
 }finally{await browser?.close();await new Promise(r=>server.close(r))}
