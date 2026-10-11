@@ -23,20 +23,45 @@
     return 'paragraph';
   }
 
+  const TABLE_HEADINGS = [
+    /^Elemento\s+Características\s+Exemplo$/i,
+    /^Pertença\s+Parte integrante$/i,
+    /^Situação\s+Classificação\s+Motivo$/i
+  ];
+
+  function isTableHeader(line) {
+    const normalized = line.trim().replace(/\s+/g, ' ');
+    return TABLE_HEADINGS.some(pattern => pattern.test(normalized));
+  }
+
   function toGroups(lines, mode) {
     const groups = [];
     for (let i = 0; i < lines.length; i += 1) {
       const line = lines[i];
-      let type = lineType(line, mode);
+      let type = isTableHeader(line) ? 'table' : lineType(line, mode);
       const prev = groups[groups.length - 1];
-      // A linha com recuo após um item/quadros continua no mesmo bloco.
+
+      // Um cabeçalho de comparação determina toda a extensão da tabela,
+      // incluindo linhas quebradas com apenas um espaço entre palavras.
+      if (isTableHeader(line)) {
+        let end = i;
+        for (let j = i + 1; j < lines.length; j += 1) {
+          if (!lines[j].trim()) break;
+          if (/^\d{1,2}\.(?:\d{1,2})?\s+\S/.test(lines[j])) break;
+          if (/^(?:ATENÇÃO|REGRA DE BOLSO|EXEMPLO:)\s{2,}/i.test(lines[j])) break;
+          end = j;
+        }
+        groups.push({type: 'table', start: i, end});
+        i = end;
+        continue;
+      }
+
       if (type === 'paragraph' && /^\s{2,}\S/.test(line) &&
           (prev?.type === 'bullet' || prev?.type === 'table' || prev?.type === 'callout')) {
         type = prev.type;
       }
-      // Um título é sempre um bloco independente.
       if (prev && prev.type === type && type !== 'section' && type !== 'subsection' &&
-          (type !== 'paragraph' || line.trim())) {
+          (type !== 'paragraph' || line.trim()) && type !== 'table') {
         prev.end = i;
       } else {
         groups.push({type, start: i, end: i});
@@ -45,35 +70,69 @@
     return groups;
   }
 
-  // Reconstrói as colunas delimitadas por espaçamento no texto de origem.
-  // Linhas de continuação são incorporadas à última linha da tabela.
+  // Mantém os textos do PDF intactos no atributo originalText para auditoria,
+  // mas apresenta as células em uma estrutura real de tabela HTML.
   function makeTable(source) {
-    const lines = source.split('\n');
-    const rows = [];
-    for (const line of lines) {
-      if (!line.trim()) continue;
-      const cells = line.trim().split(/\s{2,}/).map(v => v.trim()).filter(Boolean);
-      if (cells.length >= 2) rows.push(cells);
-      else if (rows.length) rows[rows.length - 1][rows[rows.length - 1].length - 1] += ' ' + line.trim();
-      else return null;
+    const lines = source.split('\n').filter(line => line.trim());
+    if (lines.length < 2) return null;
+    const first = lines[0];
+    const headings = first.trim().split(/\s{2,}|\t+/).map(s => s.trim()).filter(Boolean);
+    if (headings.length < 2 || headings.length > 4) return null;
+    const boundaryPositions = [];
+    for (let i = 1, from = 0; i < headings.length; i += 1) {
+      const pos = first.indexOf(headings[i], from + headings[i - 1].length);
+      boundaryPositions.push(pos);
+      from = pos;
     }
-    if (rows.length < 2) return null;
-    const cols = Math.max(...rows.map(r => r.length));
-    if (cols > 4 || cols < 2) return null;
+    if (boundaryPositions.some(n => n <= 0)) return null;
+    const rows = [];
+    const normalizedHeading = first.trim().replace(/\s+/g, ' ').toLowerCase();
+    for (const line of lines.slice(1)) {
+      if (line.trim().replace(/\s+/g, ' ').toLowerCase() === normalizedHeading) continue;
+      const parts = [];
+      let prev = 0;
+      for (const boundary of boundaryPositions) {
+        parts.push(line.slice(prev, boundary).trim());
+        prev = boundary;
+      }
+      parts.push(line.slice(prev).trim());
+      if (parts.every(v => !v)) continue;
+      // O texto do PDF pode quebrar uma célula entre linhas: preserva a ordem
+      // e evita fabricar relações semânticas quando não for possível distingui-las.
+      const startsRow = !!parts[0] && (parts.some((v, i) => i > 0 && v) || !rows.length);
+      if (startsRow) rows.push(parts);
+      else if (rows.length) parts.forEach((v, i) => {
+        if (v) rows[rows.length - 1][i] += (rows[rows.length - 1][i] ? ' ' : '') + v;
+      });
+      else rows.push(parts);
+    }
+    if (!rows.length) return null;
     const wrap = document.createElement('div');
     wrap.className = 'bc-bens-table-wrap';
     const table = document.createElement('table');
     table.className = 'bc-bens-real-table';
-    rows.forEach((cells, i) => {
-      const tr = document.createElement('tr');
-      cells.forEach((value, j) => {
-        const cell = document.createElement(i === 0 ? 'th' : 'td');
-        if (i === 0) cell.scope = 'col';
-        cell.textContent = value;
-        tr.appendChild(cell);
-      });
-      table.appendChild(tr);
+    const thead = document.createElement('thead');
+    const headingRow = document.createElement('tr');
+    headings.forEach(label => {
+      const th = document.createElement('th');
+      th.scope = 'col';
+      th.textContent = label;
+      headingRow.appendChild(th);
     });
+    thead.appendChild(headingRow);
+    table.appendChild(thead);
+    const tbody = document.createElement('tbody');
+    rows.forEach(parts => {
+      const tr = document.createElement('tr');
+      headings.forEach((label, i) => {
+        const td = document.createElement('td');
+        td.textContent = parts[i] || '';
+        td.dataset.label = label;
+        tr.appendChild(td);
+      });
+      tbody.appendChild(tr);
+    });
+    table.appendChild(tbody);
     wrap.appendChild(table);
     return wrap;
   }
@@ -131,6 +190,7 @@
       '.bc-bens-apostila .bc-bens-real-table th,.bc-bens-apostila .bc-bens-real-table td{padding:.8rem .7rem;border-bottom:1px solid #dce3ec;overflow-wrap:anywhere;vertical-align:top}',
       '.bc-bens-apostila .bc-bens-real-table tr:last-child td{border-bottom:0}',
       '.bc-bens-apostila .bc-bens-real-table tr:nth-child(even) td{background:rgba(115,139,173,.045)}',
+      '@media(max-width:700px){.bc-bens-apostila .bc-bens-real-table,.bc-bens-apostila .bc-bens-real-table tbody,.bc-bens-apostila .bc-bens-real-table tr,.bc-bens-apostila .bc-bens-real-table td{display:block;width:100%;box-sizing:border-box}.bc-bens-apostila .bc-bens-real-table thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}.bc-bens-apostila .bc-bens-real-table tr{padding:.55rem 0;border-bottom:1px solid #cbd5e1}.bc-bens-apostila .bc-bens-real-table tr:last-child{border-bottom:0}.bc-bens-apostila .bc-bens-real-table td{padding:.35rem .8rem;border:0!important;background:transparent!important}.bc-bens-apostila .bc-bens-real-table td:before{content:attr(data-label);display:block;color:#17375b;font-weight:750;font-size:.76rem;margin-bottom:.1rem}}',
       '.bc-bens-apostila .bc-bens-flow{min-width:0}',
       '.bc-bens-apostila .bc-bens-flow>:first-child{margin-top:1rem}',
       '@media(max-width:700px){.bc-bens-apostila .civil-source-content{font-size:.98rem;line-height:1.75}.bc-bens-apostila .bc-bens-section{font-size:1.2rem;margin-top:1.7rem}.bc-bens-apostila .bc-bens-subsection{font-size:1.07rem}.bc-bens-apostila .bc-bens-table{font-size:.8rem;padding:.8rem;white-space:pre-line;overflow-wrap:break-word}}'
