@@ -15,7 +15,8 @@
     '.pen-theory-scroll article',
     '.pen-theory-scroll main',
     '.pen-theory-scroll .pen-m1-book',
-    '.pen-theory-scroll .pen-m2-book'
+    '.pen-theory-scroll .pen-m2-book',
+    'body.bc-universal-standalone main'
   ].join(',');
   const EXCLUDE = 'textarea,input,code,[contenteditable="true"],.cm-editor,.monaco-editor,.ace_editor,.question,.questao,.fixation-question';
   const mode = /\/modules\/trabalho\/base-completa\/m\d+\.html$/i.test(location.pathname) ? 'standalone' : 'central';
@@ -98,9 +99,22 @@
     });
     tools.appendChild(button);
   }
+  function normalizeStandalone() {
+    if (mode!=='standalone' || document.body.querySelector('main')) return;
+    const nodes=Array.from(document.body.childNodes).filter(node=>{
+      if(node.nodeType===3) return Boolean(node.textContent.trim());
+      if(node.nodeType!==1 || node.matches('script,style,link,.dt-central-bar,.dt-tec-panel,nav[aria-label="Ferramentas do módulo"]')) return false;
+      return true;
+    });
+    if (!nodes.length) return;
+    const main=document.createElement('main');
+    main.className='bc-universal-standalone-content';
+    nodes[0].before(main);
+    nodes.forEach(node=>main.appendChild(node));
+  }
   function scan(root) {
     if (!(root instanceof Element || root instanceof Document)) return;
-    if (mode === 'standalone' && document.body) document.body.classList.add('bc-universal-standalone');
+    if (mode === 'standalone' && document.body) {document.body.classList.add('bc-universal-standalone');normalizeStandalone();}
     if (root.matches && root.matches(SHEETS)) enhance(root);
     root.querySelectorAll(SHEETS).forEach(enhance);
     if (root.matches && root.matches('.bc-native-reader-overlay')) controls(root);
