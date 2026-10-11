@@ -83,10 +83,10 @@
       '.bc-bens-apostila .bc-bens-paragraph{margin:.72rem 0 1.12rem;line-height:1.85;white-space:normal;overflow-wrap:break-word;text-align:left}',
       '.bc-bens-apostila .bc-bens-bullet{margin:.65rem 0;padding:.65rem .9rem;border-left:3px solid #8aa5c7;border-radius:0 .45rem .45rem 0;background:rgba(93,125,176,.065);white-space:pre-line;line-height:1.8}',
       '.bc-bens-apostila .bc-bens-callout{margin:1rem 0;padding:1rem 1.12rem;border-left:4px solid #4a76b2;background:rgba(93,125,176,.08);border-radius:0 .55rem .55rem 0;white-space:pre-wrap;line-height:1.75}',
-      '.bc-bens-apostila .bc-bens-table{display:block;box-sizing:border-box;margin:1rem 0 1.4rem;padding:1.05rem;border:1px solid var(--line,#d6dfeb);border-radius:.75rem;background:rgba(115,139,173,.055);font:500 .88rem/1.75 ui-monospace,SFMono-Regular,Consolas,monospace;white-space:pre;overflow-x:auto;max-width:100%;tab-size:4}',
+      '.bc-bens-apostila .bc-bens-table{display:block;box-sizing:border-box;margin:1rem 0 1.4rem;padding:1.05rem;border:1px solid var(--line,#d6dfeb);border-radius:.75rem;background:rgba(115,139,173,.055);font:500 .88rem/1.75 ui-monospace,SFMono-Regular,Consolas,monospace;white-space:pre-wrap;overflow-wrap:anywhere;word-break:normal;overflow-x:hidden;max-width:100%;tab-size:4}',
       '.bc-bens-apostila .bc-bens-flow{min-width:0}',
       '.bc-bens-apostila .bc-bens-flow>:first-child{margin-top:1rem}',
-      '@media(max-width:700px){.bc-bens-apostila .civil-source-content{font-size:.98rem;line-height:1.75}.bc-bens-apostila .bc-bens-section{font-size:1.2rem;margin-top:1.7rem}.bc-bens-apostila .bc-bens-subsection{font-size:1.07rem}.bc-bens-apostila .bc-bens-table{font-size:.8rem;padding:.8rem}}'
+      '@media(max-width:700px){.bc-bens-apostila .civil-source-content{font-size:.98rem;line-height:1.75}.bc-bens-apostila .bc-bens-section{font-size:1.2rem;margin-top:1.7rem}.bc-bens-apostila .bc-bens-subsection{font-size:1.07rem}.bc-bens-apostila .bc-bens-table{font-size:.8rem;padding:.8rem;white-space:pre-wrap;overflow-wrap:anywhere}}'
     ].join('\n');
     document.head.appendChild(style);
   }
