@@ -31,7 +31,10 @@ test('nenhuma questão desaparece ou cruza de disciplina nos vínculos',()=>{
   for(const id of m.questionIds){assert.equal(byId.get(id)?.discipline,m.discipline,id);covered.add(id);}
  }
  assert.equal(covered.size,data.length);
- for(const m of report.modules)assert.equal(m.questions,index.modules.find(x=>x.id===m.id).questionIds.length);
+ for(const m of report.modules){
+  const ids=index.modules.find(x=>x.id===m.id).questionIds;
+  assert.equal(m.questions,ids.filter(id=>!id.startsWith('LED-')).length,m.id);
+ }
 });
 test('todos os módulos abrem seus próprios recortes, incluindo os vazios',()=>{
  const c=leiRuntime(root);
