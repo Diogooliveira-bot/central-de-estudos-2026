@@ -1,0 +1,163 @@
+/* Base Completa | Leitor Universal — somente apresentação.
+   Mantém DOM de questões, marcações, imagens, progresso e notas inalterado. */
+:root{
+  --bc-universal-paper:var(--bc-reading-paper,#f8f6f0);
+  --bc-universal-ink:var(--bc-reading-text,#273342);
+  --bc-universal-muted:var(--bc-reading-muted,#5b6675);
+  --bc-universal-line:var(--bc-reading-line,#dbe1e5);
+  --bc-universal-accent:var(--bc-reading-accent,#176e85);
+  --bc-universal-inset:var(--bc-reading-inset,#edf2f3);
+}
+:is(.bc-native-reader-overlay,.cf-native-overlay,.cf-native-reader){
+  max-width:100vw;box-sizing:border-box;
+}
+.bc-native-reader-overlay .bc-native-reader,
+.cf-native-reader{
+  min-width:0;max-width:100%;
+}
+.bc-native-reader-overlay .bc-native-reader-body,
+.bc-native-reader-overlay .bc-native-scroll,
+.cf-native-reader main{min-width:0;min-height:0;}
+:is(.bc-native-reader-overlay .bc-native-article,.cf-native-reader article,
+   .central-reading-active-topic .ct-body,.central-reading-active-topic .cf-theory-text,
+   #subjects .bc-universal-sheet){
+  overflow-wrap:break-word;word-break:normal;hyphens:auto;
+}
+.bc-universal-sheet{
+  max-width:88ch;
+  margin-inline:auto;
+  color:var(--bc-universal-ink);
+  font-family:Georgia,'Times New Roman',serif;
+  font-size:var(--bc-reading-size,17px);
+  line-height:1.74;
+}
+.bc-universal-sheet :is(h1,h2,h3,h4){
+  font-family:Georgia,'Times New Roman',serif;
+  color:var(--bc-universal-ink);text-wrap:pretty;
+  overflow-wrap:anywhere;
+  scroll-margin-top:90px;
+  break-after:avoid;
+}
+.bc-universal-sheet h1{font-size:clamp(1.7em,3vw,2.2em);line-height:1.2;margin:1.2em 0 .6em;}
+.bc-universal-sheet h2{font-size:1.5em;line-height:1.3;margin:1.8em 0 .65em;}
+.bc-universal-sheet h3{font-size:1.23em;line-height:1.4;margin:1.35em 0 .55em;}
+.bc-universal-sheet h4{font-size:1.08em;line-height:1.45;margin:1.2em 0 .45em;}
+.bc-universal-sheet :is(p,li,dt,dd,blockquote){
+  font-family:inherit;line-height:inherit;
+  overflow-wrap:break-word;
+}
+.bc-universal-sheet p{margin:.72em 0 1.05em;}
+.bc-universal-sheet :is(ul,ol){padding-inline-start:1.6em;margin:.85em 0 1.2em;}
+.bc-universal-sheet li{padding-inline-start:.2em;margin:.4em 0;}
+.bc-universal-sheet strong,.bc-universal-sheet b{font-weight:700;color:inherit;}
+.bc-universal-sheet :is(img,svg,video,canvas,iframe){max-width:100%;height:auto;}
+.bc-universal-sheet figure{max-width:100%;margin:1.25em auto;}
+.bc-universal-sheet figcaption{font-size:.87em;color:var(--bc-universal-muted);text-align:center;}
+.bc-universal-sheet :is(table,pre){max-width:100%;box-sizing:border-box;}
+.bc-universal-sheet table{
+  display:block;width:max-content;max-width:100%;
+  overflow-x:auto;border-collapse:collapse;margin:1.4em 0;
+  font-family:system-ui,sans-serif;font-size:.86em;line-height:1.5;
+}
+.bc-universal-sheet :is(td,th){border:1px solid var(--bc-universal-line);padding:.7em .8em;vertical-align:top;overflow-wrap:normal;}
+.bc-universal-sheet th{background:var(--bc-universal-inset);font-weight:700;}
+.bc-universal-sheet pre{
+  white-space:pre-wrap;overflow-wrap:anywhere;overflow-x:auto;
+  font-size:.87em;line-height:1.6;
+  border:1px solid var(--bc-universal-line);border-radius:8px;
+  padding:14px;background:var(--bc-universal-inset);
+}
+.bc-universal-sheet code{white-space:pre-wrap;overflow-wrap:anywhere;max-width:100%;}
+.bc-universal-sheet :is(blockquote,.bc-native-callout){
+  margin:1.2em 0;padding:1em 1.2em;
+  border:1px solid var(--bc-universal-line);border-left:4px solid var(--bc-universal-accent);
+  border-radius:0 9px 9px 0;background:var(--bc-universal-inset);
+}
+.bc-universal-sheet :is(.bc-native-callout.trap,.bc-universal-trap){border-left-color:#bb8830;}
+.bc-universal-sheet :is(.bc-native-callout.law,.bc-universal-law){
+  border-left:3px solid var(--bc-universal-accent);
+  background:var(--bc-universal-inset);padding:.8em 1em;
+}
+.bc-universal-sheet :is(a,button,input,textarea):focus-visible{
+  outline:3px solid var(--bc-universal-accent);outline-offset:3px;
+}
+.bc-universal-sheet :is(mark,.highlight){box-decoration-break:clone;}
+.bc-universal-projection{display:flow-root;font:inherit;color:inherit;}
+.bc-universal-projection p{white-space:pre-wrap;}
+.bc-universal-projection :is(h2,h3){white-space:pre-wrap;}
+.bc-universal-projection ul{list-style:none;padding-left:1em;}
+.bc-universal-projection li{white-space:pre-wrap;padding:.25em 0;}
+.bc-universal-raw-source[hidden]{display:none!important;}
+.bc-native-reader-tools .bc-universal-index{
+  min-height:40px;padding:8px 12px;white-space:nowrap;
+  border:1px solid var(--bc-universal-line);border-radius:8px;
+  background:var(--bc-universal-inset);color:var(--bc-universal-ink);
+  font-weight:650;cursor:pointer;
+}
+.bc-universal-index:focus-visible{outline:3px solid var(--bc-universal-accent);outline-offset:2px;}
+@media(max-width:900px){
+ .bc-native-reader-overlay.bc-universal-chapters-open .bc-native-reader-body{
+   display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto minmax(0,1fr);
+ }
+ .bc-native-reader-overlay.bc-universal-chapters-open .bc-native-toc{
+   display:block!important;max-height:29dvh;overflow:auto;
+   border-right:0;border-bottom:1px solid var(--bc-universal-line);
+   padding:10px 14px;
+ }
+ .bc-universal-sheet{width:100%;min-width:0;}
+ .bc-universal-sheet table{font-size:.78em;}
+}
+@media(max-width:600px){
+ .bc-universal-sheet{font-size:var(--bc-reading-size,16px);line-height:1.66;}
+ .bc-universal-sheet :is(h1,h2,h3){overflow-wrap:anywhere;}
+ .bc-native-reader-overlay .bc-native-reader-head{gap:8px;}
+ .bc-native-reader-overlay .bc-native-reader-title{min-width:0;flex:1;}
+ .bc-native-reader-overlay .bc-native-reader-tools{max-width:100vw;overflow-x:auto;}
+ .bc-universal-sheet table{margin-left:0;margin-right:0;}
+}
+@media(prefers-reduced-motion:reduce){
+ .bc-universal-sheet,.bc-native-scroll{scroll-behavior:auto!important;}
+}
+/* Leitores HTML já publicados de Direito do Trabalho: mesmo papel e hierarquia,
+   sem substituir ou reordenar qualquer conteúdo. */
+body.bc-universal-standalone{
+  background:var(--bc-universal-paper);color:var(--bc-universal-ink);
+  font-family:Georgia,'Times New Roman',serif;
+}
+body.bc-universal-standalone main{
+  box-sizing:border-box;width:min(100%,88ch);max-width:100%;
+  padding:clamp(18px,4vw,44px);margin-inline:auto;
+  font-size:clamp(16px,1.5vw,18px);line-height:1.75;
+  overflow-wrap:break-word;
+}
+body.bc-universal-standalone main :is(h1,h2,h3,h4){font-family:Georgia,'Times New Roman',serif;text-wrap:pretty;line-height:1.32;}
+body.bc-universal-standalone main h2{margin-top:2em;padding-top:.6em;border-top:1px solid var(--bc-universal-line);}
+body.bc-universal-standalone main :is(p,li){line-height:1.7;}
+body.bc-universal-standalone main :is(img,svg,iframe,canvas){max-width:100%;height:auto;}
+body.bc-universal-standalone main :is(table,pre){display:block;max-width:100%;overflow-x:auto;}
+body.bc-universal-standalone main pre{white-space:pre-wrap;overflow-wrap:anywhere;}
+body.bc-universal-standalone main blockquote{border-left:4px solid var(--bc-universal-accent);padding:1em;background:var(--bc-universal-inset);}
+body.bc-universal-standalone main :is(a,button):focus-visible{outline:3px solid var(--bc-universal-accent);outline-offset:3px;}
+@media print{
+ body.bc-universal-standalone main{width:100%;max-width:none;padding:0;font-size:11pt;}
+ .bc-native-reader-overlay .bc-native-toc,.bc-native-reader-tools{display:none!important;}
+}
+
+/* Penal: versões completas publicadas no leitor HTML próprio permanecem no mesmo sistema visual. */
+.pen-theory-shell{max-width:100vw;min-width:0;background:var(--bc-universal-paper)!important;color:var(--bc-universal-ink)!important;}
+.pen-theory-scroll{
+  min-width:0;overflow-y:auto;overflow-x:hidden;
+  background:var(--bc-universal-paper);color:var(--bc-universal-ink);
+  font:var(--bc-reading-size,17px)/1.74 Georgia,'Times New Roman',serif;
+}
+.pen-theory-scroll .bc-universal-sheet{max-width:85ch;margin:0 auto;box-sizing:border-box;}
+.pen-theory-scroll :is(h1,h2,h3,h4){color:var(--bc-universal-ink)!important;font-family:Georgia,'Times New Roman',serif!important;line-height:1.33!important;}
+.pen-theory-scroll :is(p,li,blockquote){font:inherit;}
+.pen-theory-scroll :is(img,svg,figure,iframe){max-width:100%;height:auto;}
+.pen-theory-scroll :is(table,pre){max-width:100%;overflow-x:auto;}
+.pen-theory-scroll pre{white-space:pre-wrap;overflow-wrap:anywhere;}
+@media(max-width:600px){
+  .pen-theory-overlay{padding:0!important;}
+  .pen-theory-shell{width:100%;height:100dvh;border-radius:0;}
+  .pen-theory-scroll{padding:18px 14px 64px!important;}
+}
