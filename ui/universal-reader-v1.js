@@ -11,7 +11,11 @@
     '.cpc-apostila-topic',
     '.cpp-source',
     '.ptn-session-body',
-    '.cv-reader article'
+    '.cv-reader article',
+    '.pen-theory-scroll article',
+    '.pen-theory-scroll main',
+    '.pen-theory-scroll .pen-m1-book',
+    '.pen-theory-scroll .pen-m2-book'
   ].join(',');
   const EXCLUDE = 'textarea,input,code,[contenteditable="true"],.cm-editor,.monaco-editor,.ace_editor,.question,.questao,.fixation-question';
   const mode = /\/modules\/trabalho\/base-completa\/m\d+\.html$/i.test(location.pathname) ? 'standalone' : 'central';
