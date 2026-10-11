@@ -25,7 +25,7 @@
 
   // Somente cabeçalhos tabulares explícitos iniciam tabelas.
   // Linhas comuns com espaçamento largo NÃO são tratadas como tabelas.
-  const TABLE_HEADINGS = /^(?:Situação|Elemento|Pertença|Tipo|Critério|Espécie|Categoria|Classificação|Bem|Benfeitoria|Natureza|Característica|Modalidade|Objeto|Hipótese|Exemplo)\s{2,}\S/i;
+  const TABLE_HEADINGS = /^(?:Situação|Elemento|Pertença|Tipo|Critério|Espécie|Categoria|Classificação|Bem|Benfeitoria|Natureza|Característica|Modalidade|Objeto|Hipótese)\s{2,}\S/i;
 
   function isTableHeader(line) {
     return TABLE_HEADINGS.test(line.trimStart());
