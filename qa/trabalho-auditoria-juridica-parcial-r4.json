@@ -1,0 +1,36 @@
+{
+  "revision": "R4",
+  "reviewDate": "2026-10-10",
+  "type": "revisão individual de mérito com confronto de norma oficial",
+  "certifiedKeys": [
+    {
+      "id": "DT-M08-COMPLETA-Q07",
+      "gabarito": "C",
+      "resultado": "CONFIRMADO NO RECORTE DE TERCEIRIZAÇÃO PRIVADA",
+      "fundamento": "Art. 5º-A, §5º, Lei 6.019/1974: responsabilidade subsidiária da contratante no período da prestação. Cancelamento do item I da Súmula 331 em 2025 não altera o texto legal.",
+      "fonte": "https://planalto.gov.br/ccivil_03/leis/l6019compilado.htm"
+    },
+    {
+      "id": "DT-M09-RESUMIDA-Q01",
+      "gabarito": "B",
+      "resultado": "CONFIRMADO PELA REGRA LEGAL PÓS-REFORMA",
+      "fundamento": "Art. 58, §2º, CLT: trajeto residência-posto de trabalho e retorno não integra jornada, inclusive transporte fornecido pelo empregador. Citações auxiliares a Súmula 429 devem ser apresentadas como históricas, pois foi cancelada.",
+      "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm"
+    },
+    {
+      "id": "DT-M09-COMPLETA-Q02",
+      "gabarito": "B",
+      "resultado": "CONFIRMADO QUANTO À TOLERÂNCIA LEGAL",
+      "fundamento": "Art. 58, §1º, CLT: até cinco minutos por registro, limitado a dez minutos diários. Comentário precisa explicitar que a Súmula 366 foi cancelada pela Resolução TST 225/2025, sem tratar a súmula como vigente.",
+      "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm"
+    },
+    {
+      "id": "DT-M10-COMPLETA-Q01",
+      "gabarito": "B",
+      "resultado": "CONFIRMADO QUANTO À REGRA CONSTITUCIONAL",
+      "fundamento": "Art. 7º, XIV, CF: jornada de seis horas em turnos ininterruptos salvo negociação coletiva. Comentário deve retirar interpretação da Súmula 423 como vigente, pois ela foi cancelada em 2025.",
+      "fonte": "https://www.planalto.gov.br/ccivil_03/constituicao/constituicaocompilado.htm"
+    }
+  ],
+  "conditions": "Gabaritos legalmente compatíveis nos recortes indicados; comentários e PDFs ainda exigem saneamento de referências jurisprudenciais canceladas; proibido liberar."
+}
