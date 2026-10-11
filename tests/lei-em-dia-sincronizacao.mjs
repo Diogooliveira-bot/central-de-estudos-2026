@@ -23,6 +23,11 @@ test('138 módulos centrais e lote jurídico aprovado correspondem à matriz cor
  }
  const penal=index.modules.filter(m=>m.discipline==='penal');assert.equal(penal.find(m=>m.number===3).title,'Teoria do Crime');assert.equal(penal.find(m=>m.number===14).title,'Abuso de Autoridade');
  assert.equal(new Set(index.modules.map(m=>m.id)).size,138);
+ for(const q of approved.filter(q=>q.topicId==='led-cf-cf88')){
+  const article=Number(q.number.match(/\bArt\.\s*(\d+)/)?.[1]);
+  const n=article<=192?13:article<=224?14:15;
+  assert.ok(index.modules.find(m=>m.id===`cf-m${n}`)?.questionIds.includes(q.id),q.id);
+ }
 });
 test('nenhuma questão desaparece ou cruza de disciplina nos vínculos',()=>{
  const byId=new Map(data.map(q=>[q.id,q])),covered=new Set();
