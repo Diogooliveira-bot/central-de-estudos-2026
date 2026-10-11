@@ -8,7 +8,7 @@ const read = p => fs.readFileSync(path.join(root,p),'utf8');
 const rows=[];
 function evaluate(src){
   const context={console,window:{},globalThis:null,document:{},atob:x=>Buffer.from(x,'base64').toString('binary')};
-  context.globalThis=context.window;
+  context.globalThis=context.window;context.setTimeout=(fn)=>{if(typeof fn==='function')fn()};context.clearTimeout=()=>{};
   vm.runInNewContext(src,context,{timeout:12000});
   return context.window;
 }
@@ -18,13 +18,15 @@ function record(subject,n,summary,complete,extra={}){
    summaryLength:String(summary||'').length,completeLength:String(complete||'').length,
    bothModes:valid,...extra});
 }
+let fullPenal={};
+try{const joined=[1,2,3,4].map(n=>read('penal-full-theory-data-0'+n+'.js')).join('\n');fullPenal=evaluate(joined).PENAL_FULL_THEORY||{}}catch(e){console.warn('Full penal theory load',e.message)}
 for(const [subject,count] of [['penal',17],['cpc',20],['cf',15]]){
  for(let n=1;n<=count;n++){
   const p='content/'+subject+'/m'+String(n).padStart(2,'0')+'-native-data.js';
   try {
    let src=read(p); if(subject==='cpc' && n===8 && fs.existsSync(path.join(root,'content/cpc/m08-native-data-part1.js'))) src=read('content/cpc/m08-native-data-part1.js')+'\n'+src;
    const data=evaluate(src).BASE_NATIVE_CONTENT?.[subject]?.['m'+String(n).padStart(2,'0')];
-   record(subject,n,data?.summary,data?.complete,{source:p,title:data?.title||null,
+   record(subject,n,data?.summary,data?.complete||(subject==='penal'?fullPenal['p'+n]?.html:''),{source:p,title:data?.title||null,
      chaptersSummary:data?.chapters?.summary?.length??null,
      chaptersComplete:data?.chapters?.complete?.length??null,
      questionSummary:data?.internalQuestions?.summary?.length??null,
@@ -76,6 +78,7 @@ const stats={total:rows.length,bySubject:Object.fromEntries([...new Set(rows.map
   missingSource:rows.filter(x=>x.issue && (/error|register|missing/.test(x.issue))).length,
   trabalhoFormatted:rows.filter(x=>x.subject==='trabalho'&&x.universalAssets).length};
 console.log('AUDIT_STATS',JSON.stringify(stats));
-for(const row of rows)console.log('AUDIT_ROW',JSON.stringify(row));
+if(process.env.AUDIT_COMPACT==='1')console.log('AUDIT_UNCONFIRMED',JSON.stringify(rows.filter(x=>!x.bothModes&&x.subject!=='trabalho').map(x=>({subject:x.subject,module:x.module,issue:x.issue}))));
+else for(const row of rows)console.log('AUDIT_ROW',JSON.stringify(row));
 assert.equal(rows.length,127,'expected modules: 17 penal+20 CPC+15 CF+20 ADM+15 Civil+22 CPP+18 Trabalho = 127');
 assert.equal(stats.trabalhoFormatted,18);
