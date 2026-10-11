@@ -1,0 +1,27 @@
+<!doctype html><html lang="pt-BR"><meta charset="utf-8"><title>Diagnóstico de tabelas M03</title><main id="output">Carregando diagnóstico...</main><script>
+(async()=>{
+try{
+const response=await fetch('/content/civil/civil-native-content-packed.js');
+const src=await response.text();
+const match=src.match(/CIVIL_NATIVE_PACKED_B64="([^"]+)"/);
+if(!match)throw new Error('Pacote não localizado');
+const compressed=Uint8Array.from(atob(match[1]),c=>c.charCodeAt(0));
+const stream=new Blob([compressed]).stream().pipeThrough(new DecompressionStream('gzip'));
+const obj=JSON.parse(await new Response(stream).text());
+const m=obj['civil-m03'];
+const result={};
+for(const [key,html] of Object.entries({summary:m.summaryHtml,complete:m.completeHtml})){
+const root=document.createElement('div');root.innerHTML=html;
+const pre=root.querySelector('pre.civil-source-table');
+const lines=pre.textContent.split('\n');
+const clips=[];
+for(let i=0;i<lines.length;i++){
+if(/Elemento\s+Características|Pertença\s+Parte integrante|Situação\s+Classificação|REGRA DE BOLSO/i.test(lines[i])){
+clips.push({index:i,lines:lines.slice(Math.max(0,i-2),Math.min(lines.length,i+12)).map((text,n)=>({row:Math.max(0,i-2)+n,text}))});
+}}
+result[key]={totalLines:lines.length,clips:clips.slice(0,25)};
+}
+document.getElementById('output').textContent=JSON.stringify(result,null,2);
+}catch(e){document.getElementById('output').textContent='ERROR '+e.stack}
+})();
+</script></html>
