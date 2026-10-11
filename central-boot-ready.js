@@ -22,6 +22,12 @@
     }
     // Apply the final render before revealing it; layout decorators use animation frames.
     try{window.renderAll()}catch(error){console.error('[Central startup]',error);fail();return;}
+    // Every fresh opening starts with expandable study groups collapsed.
+    // This changes presentation only; progress, notes and academic state are untouched.
+    try{
+      document.querySelectorAll('.subject.open,.cf-module.open,.civil-module.open,.cpc-module.open,.penal-module.open,.cpp-module.open,.adm-module.open').forEach(function(node){node.classList.remove('open')});
+      document.querySelectorAll('details[open].tec-group').forEach(function(node){node.removeAttribute('open')});
+    }catch(error){console.warn('[Central startup collapse]',error);}
     requestAnimationFrame(function(){requestAnimationFrame(function(){
       if(failed)return;
       root.classList.remove('central-boot-pending');
