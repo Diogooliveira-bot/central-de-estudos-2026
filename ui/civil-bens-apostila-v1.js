@@ -76,7 +76,13 @@
     const lines = source.split('\n').filter(line => line.trim());
     if (lines.length < 2) return null;
     const first = lines[0];
-    const headings = first.trim().split(/\s{2,}|\t+/).map(s => s.trim()).filter(Boolean);
+    let headings = first.trim().split(/\s{2,}|\t+/).map(s => s.trim()).filter(Boolean);
+    if (headings.length === 1) {
+      const normalized = first.trim().replace(/\s+/g, ' ').toLowerCase();
+      if (normalized === 'elemento características exemplo') headings = ['Elemento', 'Características', 'Exemplo'];
+      else if (normalized === 'pertença parte integrante') headings = ['Pertença', 'Parte integrante'];
+      else if (normalized === 'situação classificação motivo') headings = ['Situação', 'Classificação', 'Motivo'];
+    }
     if (headings.length < 2 || headings.length > 4) return null;
     const boundaryPositions = [];
     for (let i = 1, from = 0; i < headings.length; i += 1) {
