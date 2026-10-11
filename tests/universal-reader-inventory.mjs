@@ -90,6 +90,17 @@ const stats={total:rows.length,bySubject:Object.fromEntries([...new Set(rows.map
   missingSource:rows.filter(x=>x.issue && (/error|register|missing/.test(x.issue))).length,
   trabalhoFormatted:rows.filter(x=>x.subject==='trabalho'&&x.universalAssets).length};
 console.log('AUDIT_STATS',JSON.stringify(stats));
+if(process.env.AUDIT_EXPORT==='1'){
+ const dir=path.join(root,'audits/leitor-universal-20261011');
+ fs.mkdirSync(dir,{recursive:true});
+ fs.writeFileSync(path.join(dir,'inventario.json'),JSON.stringify({
+   generatedAt:'2026-10-11',scope:'Source presence and presentation only — not legal correctness',
+   notes:['ADM complete modes require legacy runtime, verified separately with 40 successful openings.',
+    'Trabalho M03/M09 lack source main elements; Universal Reader wraps them at runtime.',
+    'Trabalho M17 is stored as preformatted source; Universal Reader projects semantic elements non-destructively.',
+    'Português has full text and in-document review rather than independently stored summary.'],stats,rows
+ },null,2)+'\n');
+}
 if(process.env.AUDIT_COMPACT==='1')console.log('AUDIT_UNCONFIRMED',JSON.stringify(rows.filter(x=>!x.bothModes&&x.subject!=='trabalho'&&x.subject!=='portugues').map(x=>({subject:x.subject,module:x.module,issue:x.issue}))));
 else for(const row of rows)console.log('AUDIT_ROW',JSON.stringify(row));
 assert.equal(rows.length,152,'expected modules including 24 Portuguese + final review');
