@@ -30,6 +30,16 @@ const baseLaw=q=>String(q.number||'').match(/\bLei\s*(?:n[ºo.]*)?\s*(\d[\d.]*)/
 const oldPen={1:1,2:2,3:4,4:5,5:6,6:7,7:8,8:9,9:10,10:11,11:12,12:13,13:14,14:15,15:17,16:16,18:3};
 function classify(q){
  const d=q.discipline,k=code(q)||baseLaw(q),aa=arts(q),a=aa[0]?.n,letter=aa[0]?.suffix;
+ // Um artigo de outra lei não pode cair em módulo pelo número coincidente.
+ // Os IDs LED trazem a lei no topicId; somente os vínculos seguros entram na matriz.
+ if(q.id.startsWith('LED-')){
+  if(q.topicId==='led-cf-cf88')return a===undefined?[]:ranges(a,[[170,192,13],[193,224,14],[225,232,15]]);
+  if(q.topicId==='led-adm-licitacoes-14133')return a===75?[17]:[];
+  if(q.topicId==='led-adm-lgpd-13709')return [20];
+  if(q.topicId==='led-penal-abuso-13869')return [14];
+  if(q.topicId==='led-penal-lavagem-9613')return [15];
+  return []; // Leis sem vínculo editorial seguro ficam no módulo complementar.
+ }
  if(d==='civil'){
   const old=modules.find(m=>m.discipline===d&&aliases[d+'|'+q.topicId]===m.id);if(old)return [old.number];
   return {13146:[1],8245:[8],6015:[12],8009:[14],5478:[14],11804:[14],6404:[10],13465:[12],14711:[13],9307:[8]}[k]||[];

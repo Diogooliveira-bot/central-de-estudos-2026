@@ -8,8 +8,11 @@ const context=leiRuntime(root),data=vm.runInContext('DATA',context),index=vm.run
 const report=JSON.parse(read('audits/lei-em-dia-sincronizacao-20261009.json'));
 const allModules=[...index.modules,...index.complement],expected={cf:15,adm:20,civil:15,cpc:20,penal:17,cpp:22,trabalho:18,ptrabalho:11};
 const asJSON=x=>JSON.parse(JSON.stringify(x));
-test('138 módulos nas oito disciplinas correspondem à matriz corrente',()=>{
- assert.equal(data.length,12044);assert.equal(index.modules.length,138);assert.equal(new Set(data.map(q=>q.id)).size,data.length);
+test('138 módulos centrais e lote jurídico aprovado correspondem à matriz corrente',()=>{
+ const approved=vm.runInContext('DATA_LED_APPROVED',context);
+ assert.equal(data.length,12044+approved.length);assert.equal(index.modules.length,138);assert.equal(new Set(data.map(q=>q.id)).size,data.length);
+ assert.ok(approved.every(q=>q.id.startsWith('LED-')&&q.origin==='authorial'&&q.question?.source?.startsWith('https://')));
+ assert.equal(!!vm.runInContext('DISCIPLINES.consumidor',context),approved.some(q=>q.discipline==='consumidor'));
  for(const [d,n] of Object.entries(expected))assert.equal(index.modules.filter(m=>m.discipline===d).length,n);
  const sourceJSON=p=>JSON.parse(read(p).split('=').slice(1).join('=').trim().replace(/;$/,''));
  for(const d of ['civil','cpp','adm']){
@@ -20,6 +23,11 @@ test('138 módulos nas oito disciplinas correspondem à matriz corrente',()=>{
  }
  const penal=index.modules.filter(m=>m.discipline==='penal');assert.equal(penal.find(m=>m.number===3).title,'Teoria do Crime');assert.equal(penal.find(m=>m.number===14).title,'Abuso de Autoridade');
  assert.equal(new Set(index.modules.map(m=>m.id)).size,138);
+ for(const q of approved.filter(q=>q.topicId==='led-cf-cf88')){
+  const article=Number(q.number.match(/\bArt\.\s*(\d+)/)?.[1]);
+  const n=article<=192?13:article<=224?14:15;
+  assert.ok(index.modules.find(m=>m.id===`cf-m${n}`)?.questionIds.includes(q.id),q.id);
+ }
 });
 test('nenhuma questão desaparece ou cruza de disciplina nos vínculos',()=>{
  const byId=new Map(data.map(q=>[q.id,q])),covered=new Set();
@@ -28,7 +36,10 @@ test('nenhuma questão desaparece ou cruza de disciplina nos vínculos',()=>{
   for(const id of m.questionIds){assert.equal(byId.get(id)?.discipline,m.discipline,id);covered.add(id);}
  }
  assert.equal(covered.size,data.length);
- for(const m of report.modules)assert.equal(m.questions,index.modules.find(x=>x.id===m.id).questionIds.length);
+ for(const m of report.modules){
+  const ids=index.modules.find(x=>x.id===m.id).questionIds;
+  assert.equal(m.questions,ids.filter(id=>!id.startsWith('LED-')).length,m.id);
+ }
 });
 test('todos os módulos abrem seus próprios recortes, incluindo os vazios',()=>{
  const c=leiRuntime(root);
