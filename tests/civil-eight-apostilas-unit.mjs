@@ -11,7 +11,7 @@ test('oito módulos: nenhuma teoria perde caracteres na segmentação',async()=>
  const b64=src.match(/CIVIL_NATIVE_PACKED_B64="([^"]+)"/)?.[1];
  assert.ok(b64);
  const packed=JSON.parse(gunzipSync(Buffer.from(b64,'base64')).toString('utf8'));
- const scope={window:{}};
+ const scope={window:{},document:{readyState:'loading',addEventListener(){}}};
  runInNewContext(await read('ui/civil-eight-apostilas-v1.js'),scope);
  const format=scope.window.CivilEightApostilas;
  assert.equal(typeof format.enhance,'function');
