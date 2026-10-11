@@ -30,6 +30,9 @@ async function openReader(n,kind){
   const d=await load(n);if(activeReader!==session)return;
   const body=reader.show(o,kind==='summary'?d.summaryHtml:d.completeHtml,readerToc,Number(localStorage.getItem(k(n,kind,'scroll'))||0),onReaderScroll);
   body.querySelector('.bc-native-article').classList.add('cv-reader-content');
+  if(n===3 && g.CivilBensApostila?.enhance(body,kind)){
+   o.querySelector('.bc-native-toc').innerHTML=readerToc(body);
+  }
   localStorage.setItem('central-v6:last',JSON.stringify({civilModule:n,civilKind:kind,title:`Direito Civil · M${String(n).padStart(2,'0')} · ${m.title}`,at:Date.now()}));g.renderContinue?.();
  }catch(error){if(activeReader===session){console.warn('[Civil reader]',error);reader.fail(o,()=>openReader(n,kind))}}
 }
