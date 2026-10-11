@@ -23,123 +23,106 @@
     return 'paragraph';
   }
 
-  const TABLE_HEADINGS = [
-    /^Elemento\s+Características\s+Exemplo$/i,
-    /^Pertença\s+Parte integrante$/i,
-    /^Situação\s+Classificação\s+Motivo$/i
-  ];
+  // Somente cabeçalhos tabulares explícitos iniciam tabelas.
+  // Linhas comuns com espaçamento largo NÃO são tratadas como tabelas.
+  const TABLE_HEADINGS = /^(?:Situação|Elemento|Pertença|Tipo|Critério|Espécie|Categoria|Classificação|Bem|Benfeitoria|Natureza|Característica|Modalidade|Objeto|Hipótese|Exemplo)\s{2,}\S/i;
 
   function isTableHeader(line) {
-    const normalized = line.trim().replace(/\s+/g, ' ');
-    return TABLE_HEADINGS.some(pattern => pattern.test(normalized));
+    return TABLE_HEADINGS.test(line.trimStart());
+  }
+
+  function endsTable(line) {
+    if (!line.trim()) return true;
+    if (/^\s*\d{1,2}\.(?:\d{1,2})?\s+\S/.test(line)) return true;
+    if (/^\s*(?:EXEMPLO|ATENÇÃO|REGRA DE BOLSO|PEGADINHA|DICA|IMPORTANTE|NÃO CONFUNDA|CAI MUITO)\s{2,}/i.test(line)) return true;
+    // Narrativa do PDF tem um espaço inicial; as linhas tabulares têm dois
+    // ou mais, inclusive quando a célula ocupa uma linha complementar.
+    if (/^ \S/.test(line) && !/\S\s{3,}\S/.test(line)) return true;
+    return false;
   }
 
   function toGroups(lines, mode) {
     const groups = [];
     for (let i = 0; i < lines.length; i += 1) {
       const line = lines[i];
-      let type = isTableHeader(line) ? 'table' : lineType(line, mode);
-      const prev = groups[groups.length - 1];
-
-      // Um cabeçalho de comparação determina toda a extensão da tabela,
-      // incluindo linhas quebradas com apenas um espaço entre palavras.
       if (isTableHeader(line)) {
         let end = i;
         for (let j = i + 1; j < lines.length; j += 1) {
-          if (!lines[j].trim()) break;
-          if (/^\d{1,2}\.(?:\d{1,2})?\s+\S/.test(lines[j])) break;
-          if (/^(?:ATENÇÃO|REGRA DE BOLSO|EXEMPLO:)\s{2,}/i.test(lines[j])) break;
+          if (endsTable(lines[j])) break;
           end = j;
         }
-        groups.push({type: 'table', start: i, end});
-        i = end;
-        continue;
+        if (end > i) {
+          groups.push({type:'table',start:i,end});
+          i=end;
+          continue;
+        }
       }
-
-      if (type === 'paragraph' && /^\s{2,}\S/.test(line) &&
-          (prev?.type === 'bullet' || prev?.type === 'table' || prev?.type === 'callout')) {
-        type = prev.type;
-      }
+      let type = lineType(line, mode);
+      if (type === 'table') type = 'paragraph';
+      const prev = groups[groups.length - 1];
+      // Só agrupa linhas de continuação de quadros já identificados.
+      if (type === 'paragraph' && /^\s{2,}\S/.test(line) && prev?.type === 'callout') type = 'callout';
       if (prev && prev.type === type && type !== 'section' && type !== 'subsection' &&
-          (type !== 'paragraph' || line.trim()) && type !== 'table') {
-        prev.end = i;
+          (type !== 'paragraph' || line.trim())) {
+        prev.end=i;
       } else {
-        groups.push({type, start: i, end: i});
+        groups.push({type,start:i,end:i});
       }
     }
     return groups;
   }
 
-  // Mantém os textos do PDF intactos no atributo originalText para auditoria,
-  // mas apresenta as células em uma estrutura real de tabela HTML.
   function makeTable(source) {
     const lines = source.split('\n').filter(line => line.trim());
-    if (lines.length < 2) return null;
+    if (lines.length < 2 || !isTableHeader(lines[0])) return null;
     const first = lines[0];
-    let headings = first.trim().split(/\s{2,}|\t+/).map(s => s.trim()).filter(Boolean);
-    if (headings.length === 1) {
-      const normalized = first.trim().replace(/\s+/g, ' ').toLowerCase();
-      if (normalized === 'elemento características exemplo') headings = ['Elemento', 'Características', 'Exemplo'];
-      else if (normalized === 'pertença parte integrante') headings = ['Pertença', 'Parte integrante'];
-      else if (normalized === 'situação classificação motivo') headings = ['Situação', 'Classificação', 'Motivo'];
+    const heads = [];
+    const start = first.search(/\S/);
+    const segments = [...first.slice(start).matchAll(/\S(?:.*?\S)?(?=\s{2,}|$)/g)];
+    for (const seg of segments) {
+      const value = seg[0].trim();
+      if (value) heads.push({label:value, at:start+seg.index});
     }
-    if (headings.length < 2 || headings.length > 4) return null;
-    const boundaryPositions = [];
-    for (let i = 1, from = 0; i < headings.length; i += 1) {
-      const pos = first.indexOf(headings[i], from + headings[i - 1].length);
-      boundaryPositions.push(pos);
-      from = pos;
-    }
-    if (boundaryPositions.some(n => n <= 0)) return null;
+    if (heads.length < 2 || heads.length > 4) return null;
     const rows = [];
-    const normalizedHeading = first.trim().replace(/\s+/g, ' ').toLowerCase();
     for (const line of lines.slice(1)) {
-      if (line.trim().replace(/\s+/g, ' ').toLowerCase() === normalizedHeading) continue;
-      const parts = [];
-      let prev = 0;
-      for (const boundary of boundaryPositions) {
-        parts.push(line.slice(prev, boundary).trim());
-        prev = boundary;
+      if (isTableHeader(line) && line.trim().split(/\s{2,}/).length === heads.length) continue;
+      const parts=heads.map((head,i)=>line.slice(head.at,i+1<heads.length?heads[i+1].at:undefined).trim());
+      if (!parts.some(Boolean)) continue;
+      const newRow=!!parts[0] && parts.slice(1).some(Boolean);
+      if (newRow || !rows.length) {
+        rows.push(parts);
+      } else {
+        const row=rows[rows.length-1];
+        parts.forEach((part,i)=>{
+          if (part) row[i]+=(row[i]?' ':'')+part;
+        });
       }
-      parts.push(line.slice(prev).trim());
-      if (parts.every(v => !v)) continue;
-      // O texto do PDF pode quebrar uma célula entre linhas: preserva a ordem
-      // e evita fabricar relações semânticas quando não for possível distingui-las.
-      const startsRow = !!parts[0] && (parts.some((v, i) => i > 0 && v) || !rows.length);
-      if (startsRow) rows.push(parts);
-      else if (rows.length) parts.forEach((v, i) => {
-        if (v) rows[rows.length - 1][i] += (rows[rows.length - 1][i] ? ' ' : '') + v;
-      });
-      else rows.push(parts);
     }
     if (!rows.length) return null;
-    const wrap = document.createElement('div');
-    wrap.className = 'bc-bens-table-wrap';
-    const table = document.createElement('table');
-    table.className = 'bc-bens-real-table';
-    const thead = document.createElement('thead');
-    const headingRow = document.createElement('tr');
-    headings.forEach(label => {
-      const th = document.createElement('th');
-      th.scope = 'col';
-      th.textContent = label;
-      headingRow.appendChild(th);
+    const wrap=document.createElement('div');
+    wrap.className='bc-bens-table-wrap';
+    const table=document.createElement('table');
+    table.className='bc-bens-real-table';
+    const thead=document.createElement('thead');
+    const hr=document.createElement('tr');
+    heads.forEach(head=>{
+      const th=document.createElement('th');
+      th.scope='col';th.textContent=head.label;hr.appendChild(th);
     });
-    thead.appendChild(headingRow);
-    table.appendChild(thead);
-    const tbody = document.createElement('tbody');
-    rows.forEach(parts => {
-      const tr = document.createElement('tr');
-      headings.forEach((label, i) => {
-        const td = document.createElement('td');
-        td.textContent = parts[i] || '';
-        td.dataset.label = label;
+    thead.appendChild(hr);table.appendChild(thead);
+    const tbody=document.createElement('tbody');
+    rows.forEach(parts=>{
+      const tr=document.createElement('tr');
+      heads.forEach((head,i)=>{
+        const td=document.createElement('td');
+        td.textContent=parts[i]||'';
+        td.dataset.label=head.label;
         tr.appendChild(td);
       });
       tbody.appendChild(tr);
     });
-    table.appendChild(tbody);
-    wrap.appendChild(table);
+    table.appendChild(tbody);wrap.appendChild(table);
     return wrap;
   }
 
