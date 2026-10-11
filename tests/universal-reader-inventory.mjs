@@ -72,13 +72,25 @@ for(let n=1;n<=18;n++){
    universalAssets:s.includes('/ui/universal-reader-v1.js')&&s.includes('/ui/universal-reader-v1.css'),
    issue: text?'':'main missing'});
 }
+for(let n=1;n<=25;n++){
+ try{
+  const raw=read('portugues-autodidata-data.txt').trim();
+  const content=JSON.parse(zlib.gunzipSync(Buffer.from(raw,'base64')).toString('utf8'));
+  const key=n===25?'review':'m'+String(n).padStart(2,'0');
+  const item=content[key];
+  rows.push({subject:'portugues',module:n===25?'REVISÃO':key.toUpperCase(),
+    completeLength:String(item||'').length,format:'integral e revisão no mesmo HTML',
+    headings:(String(item||'').match(/<h[1-6][\\s>]/gi)||[]).length,
+    issue:item?'':'Portuguese package entry missing'});
+ }catch(e){rows.push({subject:'portugues',module:'M'+n,issue:'Portuguese pack error: '+e.message.slice(0,100)})}
+}
 const stats={total:rows.length,bySubject:Object.fromEntries([...new Set(rows.map(x=>x.subject))].map(name=>[name,rows.filter(x=>x.subject===name).length])),
   textModesFullyConfirmed:rows.filter(x=>x.bothModes).length,
-  notConfirmed:rows.filter(x=>!x.bothModes&&x.subject!=='trabalho').length,
+  notConfirmed:rows.filter(x=>!x.bothModes&&x.subject!=='trabalho'&&x.subject!=='portugues').length,
   missingSource:rows.filter(x=>x.issue && (/error|register|missing/.test(x.issue))).length,
   trabalhoFormatted:rows.filter(x=>x.subject==='trabalho'&&x.universalAssets).length};
 console.log('AUDIT_STATS',JSON.stringify(stats));
-if(process.env.AUDIT_COMPACT==='1')console.log('AUDIT_UNCONFIRMED',JSON.stringify(rows.filter(x=>!x.bothModes&&x.subject!=='trabalho').map(x=>({subject:x.subject,module:x.module,issue:x.issue}))));
+if(process.env.AUDIT_COMPACT==='1')console.log('AUDIT_UNCONFIRMED',JSON.stringify(rows.filter(x=>!x.bothModes&&x.subject!=='trabalho'&&x.subject!=='portugues').map(x=>({subject:x.subject,module:x.module,issue:x.issue}))));
 else for(const row of rows)console.log('AUDIT_ROW',JSON.stringify(row));
-assert.equal(rows.length,127,'expected modules: 17 penal+20 CPC+15 CF+20 ADM+15 Civil+22 CPP+18 Trabalho = 127');
+assert.equal(rows.length,152,'expected modules including 24 Portuguese + final review');
 assert.equal(stats.trabalhoFormatted,18);
