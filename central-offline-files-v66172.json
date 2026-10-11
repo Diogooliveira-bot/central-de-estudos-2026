@@ -398,6 +398,8 @@
     "/content/cpc/m08-native-data.js?v=20261010auditfix1",
     "/ui/cpc-m08-native-study-reader.js?v=20261010auditfix1",
     "/cpc-study-m08-lite.js?v=20261010auditfix1",
-    "/content/cpc/cpc-fixation-questions-v1.js?v=20261010auditfix1"
+    "/content/cpc/cpc-fixation-questions-v1.js?v=20261010auditfix1",
+    "/ui/universal-reader-v1.css?v=20261011a",
+    "/ui/universal-reader-v1.js?v=20261011a"
   ]
 }
