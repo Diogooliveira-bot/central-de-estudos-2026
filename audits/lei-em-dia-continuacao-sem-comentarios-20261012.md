@@ -8,6 +8,7 @@
 
 1. **Referências de Direito Administrativo** em `tools/decorando-data-adm-pack2.js`: corrigido `Lei 13.303/2026` para `Lei 13.303/2016` (uma ocorrência); `Lei 1\`3.848/19` para `Lei 13.848/19` (duas ocorrências); `3º Região` para `3ª Região` (quatro ocorrências) e dois parênteses excedentes. Apenas campos de referência e identificação foram alterados.
 2. **Metadado de Direito Processual Penal** em `tools/decorando-data-cpp.js`: duas referências da origem corrigidas de `3º Região` para `3ª Região`. O texto da questão, sua resposta e o comentário permanecem intactos.
+2-A. **Metadados de outras disciplinas** em `tools/decorando-data-restantes.js`: corrigidas mais seis ocorrências de `3º Região` para `3ª Região` nos campos de origem da banca, preservando enunciados, gabaritos e comentários.
 3. **Interface** em `tools/decorando.html`: Foco e Scroll agora compartilham a função `answerButtons`, evitando implementações divergentes; botões com acessibilidade (`aria-pressed`, `role="group"`, `type="button"`), fonte/tamanho de toque adequados, foco de teclado e melhor adaptação a larguras pequenas.
 4. **Avisos jurídicos**: mensagens de gabarito ainda pendente deixam de ser rotuladas indevidamente como mera atualização legislativa.
 5. **Testes**: ajustados os testes do leitor e preservada a cadeia de rastreabilidade entre o SHA original dos arquivos, no inventário, e o SHA após correções. Criado `tests/lei-em-dia-catalogo-integridade.mjs` e incluído no workflow da PR.
