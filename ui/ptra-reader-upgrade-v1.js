@@ -160,7 +160,7 @@
         result.innerHTML=state.completed?'<strong>Rodada registrada • '+correct+' acertos em '+done+' questões ('+(done?Math.round(correct/done*100):0)+'%)</strong><p>Seu histórico anterior foi preservado. Use “Recomeçar questões” para outra tentativa.</p>':'';
       }
     }
-    container.addEventListener('click',event=>{
+    container.onclick=event=>{
       const link=event.target.closest('[data-ptra-jump]');
       if(link){event.preventDefault();container.querySelector('#'+link.dataset.ptraJump)?.scrollIntoView({block:'start',behavior:'smooth'});return;}
       const option=event.target.closest('[data-ptra-option]');
@@ -190,7 +190,7 @@
         state.selected={};state.confirmed={};state.completed=false;
         save();refresh();container.querySelector('.ptra-book-review')?.scrollIntoView({block:'start',behavior:'smooth'});
       }
-    });
+    };
     refresh();
   }
   global.PtraReaderUpgrade={render,mount,formatTheory,splitTheory,validQuestions};
