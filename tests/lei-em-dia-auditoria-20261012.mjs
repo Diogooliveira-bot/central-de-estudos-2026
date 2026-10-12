@@ -42,5 +42,19 @@ test('Interface sinaliza pendências nos dois modos e não muda chave de progres
  assert.ok(html.includes('min-height:46px'));
  assert.ok(html.includes('const STORAGE_KEY = "lei-seca-enxuta-state"'));
  assert.ok(html.includes('${legalAuditBanner(article)}\n      ${answerButtons'));
- assert.ok(html.includes('${legalAuditBanner(article)}\n        ${(()=>{const opts'));
+ assert.ok(html.includes('answerButtons(selected,`answerScroll('));
+});
+
+
+test('Foco/Scroll compartilham botoes acessiveis e referencias administrativas saneadas',()=>{
+ const pack2=readFileSync(new URL('tools/decorando-data-adm-pack2.js',root),'utf8');
+ assert.ok(html.includes('aria-pressed='));
+ assert.ok(html.includes('role="group" aria-label="Responda: certo ou errado"'));
+ assert.ok(html.includes('answerButtons(ui.choice,"answerFocus(")'));
+ assert.ok(html.includes('answerButtons(selected,\`answerScroll('));
+ for(const typo of ['Lei 13.303/2026','Lei 1\`3.848/19','3º Região','3ª Região))']){
+   assert.equal(pack2.includes(typo),false,typo);
+ }
+ assert.ok(pack2.includes('Lei 13.303/2016'));
+ assert.ok(pack2.includes('Lei 13.848/19'));
 });
