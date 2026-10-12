@@ -485,20 +485,20 @@ function renderTrabalhoMaster(s){
   .bc-trabalho-module-body{display:none;border-top:1px solid var(--bc-color-border,#e4e7eb);padding:20px;background:var(--bc-color-surface,#fff)}
   .bc-trabalho-module.open .bc-trabalho-module-body{display:block}
   .bc-trabalho-module-hint{font-size:13px;color:var(--bc-color-text-secondary,#617283);margin:0 0 16px;line-height:1.6}
-  .bc-trabalho-materials{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .bc-trabalho-materials{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
   .bc-trabalho-material{padding:16px;border:1px solid var(--bc-color-border,#e0e5ea);border-radius:10px;background:var(--bc-color-surface-elevated,#f9fafb);display:flex;flex-direction:column;align-items:start;gap:7px}
   .bc-trabalho-material small{font-size:11px;font-weight:750;letter-spacing:.08em;color:var(--bc-color-text-secondary,#698)}
   .bc-trabalho-material strong{font-size:15px;line-height:1.35;color:inherit}
   .bc-trabalho-material p{font-size:12px;color:var(--bc-color-text-secondary,#678);line-height:1.5;margin:0 0 6px}
   .bc-trabalho-material .bc-trabalho-open-reader{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;margin-top:auto;border-radius:8px;border:1px solid var(--bc-color-border-interactive,#9eb7c9);padding:9px 13px;background:var(--bc-color-surface,#fff);color:var(--bc-color-text,#283b4d);font:650 12px/1.4 system-ui,-apple-system,"Segoe UI",sans-serif;cursor:pointer;min-height:38px}
   .bc-trabalho-material .bc-trabalho-open-reader:hover{border-color:#416e90;background:var(--bc-color-surface-elevated,#f1f6fa)}
+  @media(max-width:940px) and (min-width:751px){.bc-trabalho-materials{grid-template-columns:repeat(2,minmax(0,1fr))}}
   @media(max-width:750px){.bc-trabalho-materials{grid-template-columns:1fr}.bc-trabalho-module-head{grid-template-columns:52px minmax(0,1fr) 18px;gap:9px;padding:15px 13px}.bc-trabalho-module-state{display:none}.bc-trabalho-module-name{font-size:14px}.bc-trabalho-module-body{padding:13px}.bc-trabalho-intro{padding:16px}}
   </style>`;
   const materialOptions=[
     ['resumida','PRIMEIRA LEITURA','Teoria Resumida','Leitura objetiva e 5 questões de fixação.','Abrir leitura'],
     ['completa','APROFUNDAMENTO','Teoria Completa','Conteúdo integral e 10 questões de fixação.','Abrir leitura'],
-    ['infografico','REVISÃO VISUAL','Infográfico','Síntese visual do conteúdo do módulo.','Abrir infográfico'],
-    ['questoes','FIXAÇÃO','Questões Comentadas','5 questões da resumida ou 10 da completa.','Resolver questões']
+    ['infografico','REVISÃO VISUAL','Infográfico','Síntese visual do conteúdo do módulo.','Abrir infográfico']
   ];
   return '<section class="bc-trabalho-master" aria-label="Direito do Trabalho — módulos atualizados">'+styles
   +'<header class="bc-trabalho-intro"><h2>Direito do Trabalho — 18 módulos</h2><p>Escolha o módulo e depois o material de estudo. Leitura integrada à Central; o conteúdo jurídico e os registros de progresso permanecem preservados.</p></header>'
