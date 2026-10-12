@@ -106,7 +106,7 @@
           "B": "b e f.",
           "C": "c e e.",
           "D": "d e g.",
-          "E": "f e g.\n\nExtinção do Contrato                                                                                                    Página 9 de 11"
+          "E": "f e g."
         },
         "gabarito": "D",
         "comentario": "Questão 3 - D - Média\n\n   Fundamento: art. 483, § 3º.\n   Comentário: a fonte destaca as alíneas d e g. A pegadinha clássica é estender essa faculdade a\n   todas as hipóteses de rescisão indireta.",
@@ -135,13 +135,13 @@
         "enunciado": "Difícil\n\n   Assinale a alternativa integralmente compatível com o módulo:",
         "alternativas": {
           "A": "o aviso indenizado não sofre incidência de FGTS e não projeta a data de saída.",
-          "B": "o aviso trabalhado sofre FGTS, mas o indenizado não; a OJ 82 aplica-se apenas ao aviso traba‐\n   lhado.",
+          "B": "o aviso trabalhado sofre FGTS, mas o indenizado não; a OJ 82 aplica-se apenas ao aviso trabalhado.",
           "C": "a Súmula 305 alcança aviso trabalhado ou indenizado e a OJ 82 considera a projeção do aviso\n   para a data de saída, ainda que indenizado.",
-          "D": "o aviso é renunciável pelo empregado em qualquer situação e a projeção depende de homolo‐\n   gação.",
-          "E": "novo emprego elimina automaticamente o aviso em qualquer modalidade de ruptura.\n\nExtinção do Contrato                                                                                                   Página 10 de 11"
+          "D": "o aviso é renunciável pelo empregado em qualquer situação e a projeção depende de homologação.",
+          "E": "novo emprego elimina automaticamente o aviso em qualquer modalidade de ruptura."
         },
         "gabarito": "C",
-        "comentario": "Questão 5 - C - Difícil\n\n   Fundamento: Súmula 305 do TST e OJ 82 da SDI-1, ambas reproduzidas no conteúdo validado.\n   Comentário: a incidência de FGTS alcança o aviso trabalhado ou indenizado, e a data de saída\n   considera o término projetado do aviso mesmo quando ele é indenizado. As demais alternativas\n  negam uma dessas duas regras ou generalizam indevidamente a exceção relacionada a novo em‐\n   prego.\n\nExtinção do Contrato                                                                                                    Página 11 de 11",
+        "comentario": "Questão 5 - C - Difícil\n\n   Fundamento: Súmula 305 do TST e OJ 82 da SDI-1, ambas reproduzidas no conteúdo validado.\n   Comentário: a incidência de FGTS alcança o aviso trabalhado ou indenizado, e a data de saída\n   considera o término projetado do aviso mesmo quando ele é indenizado. As demais alternativas\n  negam uma dessas duas regras ou generalizam indevidamente a exceção relacionada a novo emprego.",
         "status": "PENDENTE_REVISAO_JURIDICA",
         "alertas": ""
       }
@@ -150,7 +150,7 @@
       {
         "id": "DT-M15-COMPLETA-Q01",
         "numero": 1,
-        "enunciado": "Fácil\n\n  Na extinção do contrato de trabalho, segundo o recorte estudado do art. 477 da CLT, o pagamen‐\n   to das verbas rescisórias e a entrega dos documentos de comunicação da extinção devem ocor‐\n    rer:",
+        "enunciado": "Fácil\n\n  Na extinção do contrato de trabalho, segundo o recorte estudado do art. 477 da CLT, o pagamento das verbas rescisórias e a entrega dos documentos de comunicação da extinção devem ocorrer:",
         "alternativas": {
           "A": "até o primeiro dia útil seguinte ao término do contrato.",
           "B": "em até 5 dias úteis após o término do contrato.",
@@ -159,7 +159,7 @@
           "E": "no prazo do aviso-prévio, ainda que indenizado."
         },
         "gabarito": "C",
-        "comentario": "Questão 1 - C - Fácil\n\n   Fundamento: art. 477, conforme reproduzido e organizado no módulo.\n   Comentário: a regra memorizável é pagamento + documentos em até 10 dias contados do\n   término do contrato. As alternativas A, B e D alteram o prazo ou sua forma de contagem; a alter‐\n   nativa E confunde prazo rescisório com duração do aviso-prévio.\n   Pegadinha: separar pagamento e documentação como se tivessem prazos distintos no recorte\n   estudado.",
+        "comentario": "Questão 1 - C - Fácil\n\n   Fundamento: art. 477, conforme reproduzido e organizado no módulo.\n   Comentário: a regra memorizável é pagamento + documentos em até 10 dias contados do\n   término do contrato. As alternativas A, B e D alteram o prazo ou sua forma de contagem; a alternativa E confunde prazo rescisório com duração do aviso-prévio.\n   Pegadinha: separar pagamento e documentação como se tivessem prazos distintos no recorte\n   estudado.",
         "status": "PENDENTE_REVISAO_JURIDICA",
         "alertas": ""
       },
@@ -175,7 +175,7 @@
           "E": "a redução é aplicável da mesma forma ao pedido de demissão."
         },
         "gabarito": "C",
-        "comentario": "Questão 2 - C - Fácil\n\n   Fundamento: art. 488 da CLT e Súmula 230 do TST, no recorte das fontes.\n   Comentário: quando a ruptura é promovida pelo empregador, a fonte trabalha a redução de 2 ho‐\n   ras diárias, sem prejuízo salarial. A Súmula 230 impede substituir essa redução por simples paga‐\n   mento. A alternativa E erra porque o módulo não aplica essa redução ao pedido de demissão.\n   Pegadinha: “trabalhar a jornada cheia e receber as duas horas” não corresponde à regra\n   consolidada no material.",
+        "comentario": "Questão 2 - C - Fácil\n\n   Fundamento: art. 488 da CLT e Súmula 230 do TST, no recorte das fontes.\n   Comentário: quando a ruptura é promovida pelo empregador, a fonte trabalha a redução de 2 horas diárias, sem prejuízo salarial. A Súmula 230 impede substituir essa redução por simples pagamento. A alternativa E erra porque o módulo não aplica essa redução ao pedido de demissão.\n   Pegadinha: “trabalhar a jornada cheia e receber as duas horas” não corresponde à regra\n   consolidada no material.\n\nComplemento: o parágrafo único do art. 488 da CLT permite ao empregado optar por faltar ao serviço durante sete dias corridos, sem prejuízo do salário integral, em lugar da redução diária de duas horas.",
         "status": "PENDENTE_REVISÃO_EDITORIA_E_JURÍDICA",
         "alertas": "Enunciado contém referência editorial ao material"
       },
@@ -188,7 +188,7 @@
           "B": "30 dias.",
           "C": "30 dias acrescidos de 3 dias por ano de serviço.",
           "D": "60 dias.",
-          "E": "90 dias.\n\nExtinção do Contrato                                                                                                  Página 26 de 32"
+          "E": "90 dias."
         },
         "gabarito": "B",
         "comentario": "Questão 3 - B - Fácil\n\n   Fundamento: art. 487, § 2º, e consolidação posterior da fonte 43164360.\n   Comentário: a versão auditada não reproduz a tese antiga de reciprocidade da proporcionalidade.\n   Para o pedido de demissão, a própria fonte consolida 30 dias, em regra, sem projetar contra o\n   empregado o acréscimo de 3 dias por ano.\n   Pegadinha: aplicar aviso proporcional de até 90 dias contra quem pede demissão.",
@@ -207,14 +207,14 @@
           "E": "o instituto é equivalente ao PDV/PDI previsto em norma coletiva."
         },
         "gabarito": "C",
-        "comentario": "Questão 4 - C - Fácil\n\n   Fundamento: art. 484-A da CLT, conforme reproduzido no módulo.\n   Comentário: são pagas pela metade duas consequências específicas: aviso-prévio, se indeniza‐\n   do, e indenização sobre o FGTS. As demais verbas são integrais; o saque do FGTS é limitado a\n  80% e a ruptura não gera ingresso no seguro-desemprego.\n   Pegadinha: transformar o acordo em uma “rescisão inteira pela metade”.\n\nExtinção do Contrato                                                                                                  Página 30 de 32",
+        "comentario": "Questão 4 - C - Fácil\n\n   Fundamento: art. 484-A da CLT, conforme reproduzido no módulo.\n   Comentário: são pagas pela metade duas consequências específicas: aviso-prévio, se indenizado, e indenização sobre o FGTS. As demais verbas são integrais; o saque do FGTS é limitado a\n  80% e a ruptura não gera ingresso no seguro-desemprego.\n   Pegadinha: transformar o acordo em uma “rescisão inteira pela metade”.",
         "status": "PENDENTE_REVISAO_JURIDICA",
         "alertas": "Lei 7.998/90: requisitos"
       },
       {
         "id": "DT-M15-COMPLETA-Q05",
         "numero": 5,
-        "enunciado": "Média\n\n  Nos termos do art. 483, § 3º, conforme reproduzido pelas fontes do módulo, a faculdade de plei‐\n   tear a rescisão permanecendo ou não no serviço até a decisão final é destacada para as\n   hipóteses das alíneas:",
+        "enunciado": "Média\n\n  Nos termos do art. 483, § 3º, conforme reproduzido pelas fontes do módulo, a faculdade de pleitear a rescisão permanecendo ou não no serviço até a decisão final é destacada para as\n   hipóteses das alíneas:",
         "alternativas": {
           "A": "a e b.",
           "B": "b e c.",
@@ -236,7 +236,7 @@
           "B": "a retratação só produz efeito se a outra parte aceitá-la.",
           "C": "a retratação é juridicamente impossível.",
           "D": "a retratação depende de homologação sindical.",
-          "E": "a retratação somente é admitida quando o aviso é indenizado.\n\nExtinção do Contrato                                                                                                  Página 27 de 32"
+          "E": "a retratação somente é admitida quando o aviso é indenizado."
         },
         "gabarito": "B",
         "comentario": "Questão 6 - B - Média\n\n   Fundamento: art. 489 da CLT no conteúdo validado.\n   Comentário: a reconsideração do aviso não restaura o contrato por decisão unilateral de quem\n   notificou. A outra parte pode aceitar ou recusar. Se aceita, ou se a prestação continua depois do\n   prazo, o contrato prossegue como se o aviso não tivesse sido dado.\n   Pegadinha: confundir direito de reconsiderar com direito unilateral de desfazer a ruptura.",
@@ -271,7 +271,7 @@
           "E": "pressupõem justa causa patronal."
         },
         "gabarito": "B",
-        "comentario": "Questão 8 - B - Média\n\n   Fundamento: art. 477-B da CLT no recorte das fontes.\n   Comentário: o módulo preserva a regra de que PDV/PDI previsto em Convenção Coletiva de\n   Trabalho (CCT) ou Acordo Coletivo de Trabalho (ACT) importa quitação plena e irrevogável dos\n    direitos decorrentes da relação empregatícia, salvo previsão em contrário. Não se deve equiparar\n   automaticamente esse regime ao acordo individual do art. 484-A.\n   Pegadinha: confundir dois instrumentos de desligamento com fundamentos diferentes.\n\nExtinção do Contrato                                                                                                  Página 31 de 32",
+        "comentario": "Questão 8 - B - Média\n\n   Fundamento: art. 477-B da CLT no recorte das fontes.\n   Comentário: o módulo preserva a regra de que PDV/PDI previsto em Convenção Coletiva de\n   Trabalho (CCT) ou Acordo Coletivo de Trabalho (ACT) importa quitação plena e irrevogável dos\n    direitos decorrentes da relação empregatícia, salvo previsão em contrário. Não se deve equiparar\n   automaticamente esse regime ao acordo individual do art. 484-A.\n   Pegadinha: confundir dois instrumentos de desligamento com fundamentos diferentes.",
         "status": "PENDENTE_REVISAO_JURIDICA",
         "alertas": ""
       },
@@ -281,10 +281,10 @@
         "enunciado": "Difícil\n\n   Assinale a alternativa que diferencia corretamente culpa recíproca e extinção por acordo no\n   recorte validado do módulo:",
         "alternativas": {
           "A": "em ambas, todas as verbas são pagas pela metade e o saque do FGTS é integral.",
-          "B": "na culpa recíproca, a Súmula 14 reduz a 50% aviso-prévio, décimo terceiro e férias proporcio‐\n   nais; no art. 484-A, a metade recai apenas sobre o aviso indenizado e a indenização do FGTS,\n   mantendo-se as demais verbas integrais.",
+          "B": "na culpa recíproca, a Súmula 14 reduz a 50% aviso-prévio, décimo terceiro e férias proporcionais; no art. 484-A, a metade recai apenas sobre o aviso indenizado e a indenização do FGTS,\n   mantendo-se as demais verbas integrais.",
           "C": "na culpa recíproca, inexiste qualquer repercussão no FGTS; no acordo, a indenização do FGTS\n   é de 40%.",
           "D": "culpa recíproca e acordo são sinônimos jurídicos.",
-          "E": "o art. 484-A garante seguro-desemprego, enquanto a culpa recíproca necessariamente o ex‐\n    clui.\n\nExtinção do Contrato                                                                                                  Página 28 de 32"
+          "E": "o art. 484-A garante seguro-desemprego, enquanto a culpa recíproca necessariamente o exclui."
         },
         "gabarito": "B",
         "comentario": "Questão 9 - B - Difícil\n\n   Fundamento: Súmula 14 do TST e art. 484-A, conforme organizados no módulo.\n   Comentário: na culpa recíproca, a fonte reproduz 50% de aviso-prévio, décimo terceiro e férias\n   proporcionais, além da associação a indenização de 20% sobre o FGTS. No acordo do art. 484-A,\n   a redução pela metade não atinge todas as verbas: recai sobre o aviso indenizado e a indenização\n   do FGTS, enquanto as demais verbas permanecem integrais.\n   Pegadinha: usar a palavra “metade” sem verificar quais parcelas estão sendo reduzidas em cada\n    instituto.",
@@ -294,16 +294,16 @@
       {
         "id": "DT-M15-COMPLETA-Q10",
         "numero": 10,
-        "enunciado": "Difícil\n\n  Um contrato por prazo determinado contém cláusula assecuratória de direito recíproco de resci‐\n   são antecipada. Uma das partes exerce essa faculdade. À luz da conexão feita pelo módulo com o\n    art. 481 da CLT:",
+        "enunciado": "Difícil\n\n  Um contrato por prazo determinado contém cláusula assecuratória de direito recíproco de rescisão antecipada. Uma das partes exerce essa faculdade. À luz da conexão feita pelo módulo com o\n    art. 481 da CLT:",
         "alternativas": {
-          "A": "aplicam-se, nesse caso, os princípios que regem a rescisão dos contratos por prazo indetermi‐\n   nado.",
+          "A": "aplicam-se, nesse caso, os princípios que regem a rescisão dos contratos por prazo indeterminado.",
           "B": "a cláusula é inválida por definição.",
           "C": "o contrato converte-se automaticamente em contrato intermitente.",
           "D": "o aviso-prévio é sempre excluído, ainda que a cláusula seja exercida.",
-          "E": "toda a disciplina da ruptura fica restrita ao art. 479.\n\nExtinção do Contrato                                                                                                  Página 29 de 32"
+          "E": "toda a disciplina da ruptura fica restrita ao art. 479."
         },
         "gabarito": "A",
-        "comentario": "Questão 10 - A - Difícil\n\n   Fundamento: art. 481 da CLT, na conexão mínima com contratos a termo preservada no M15.\n   Comentário: exercido o direito recíproco de rescisão antecipada previsto em contrato a termo,\n   aplicam-se os princípios que regem a rescisão dos contratos por prazo indeterminado. O\n   aprofundamento estrutural dos contratos a termo permanece no M6.\n   Pegadinha: concluir que todo contrato a termo exclui aviso-prévio em qualquer hipótese.\n\nExtinção do Contrato                                                                                                  Página 32 de 32",
+        "comentario": "Questão 10 - A - Difícil\n\n   Fundamento: art. 481 da CLT, na conexão mínima com contratos a termo preservada no M15.\n   Comentário: exercido o direito recíproco de rescisão antecipada previsto em contrato a termo,\n   aplicam-se os princípios que regem a rescisão dos contratos por prazo indeterminado. O\n   aprofundamento estrutural dos contratos a termo permanece no M6.\n   Pegadinha: concluir que todo contrato a termo exclui aviso-prévio em qualquer hipótese.",
         "status": "PENDENTE_REVISAO_JURIDICA",
         "alertas": ""
       }
