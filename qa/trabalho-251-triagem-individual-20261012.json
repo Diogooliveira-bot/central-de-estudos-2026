@@ -1,7 +1,7 @@
 {
   "schema": "base-completa-triagem-juridica-20261012-v1",
   "dataCorte": "2026-10-12",
-  "observacao": "TRIAGEM DOCUMENTAL, NÃO É CERTIFICAÇÃO INDIVIDUAL DE MÉRITO. As 251 questões foram inventariadas com suas cinco alternativas, gabarito, comentário e pontos de atenção. Não confundir triagem automatizada com validação jurídica conclusiva; cada item ainda exige cotejo individual de enunciado, todas as alternativas, gabarito, comentário e fundamentos atualizados. Cotejo normativo de 23 questões pendentes da R4 concluído (e quatro questões previamente revisadas rechecadas). O cotejo dos 228 itens restantes e a integração das erratas dos PDFs continuam pendentes. Adicionalmente, 27 questões dos módulos M01 e M02 foram cotejadas (inclusive princípios e cronologia), totalizando 50/251 com verificação individual de alternativas e comentários. Mais 27 enunciados, respostas, distratores e comentários dos módulos M03/M04 cotejados; conclusão acumulada 77/251. Foram cotejadas mais 24 questões dos M05 e M06 com fundamento e cinco alternativas, total 101/251. Cotejo dos módulos M07/M08 acrescentou 24 verificações individuais, total 125/251; core STF 246 não implica responsabilidade pública automática. M09 e M10: mais 23 questões cotejadas, totalizando 148/251, inclusive legislação do artista e teletrabalho.",
+  "observacao": "TRIAGEM DOCUMENTAL, NÃO É CERTIFICAÇÃO INDIVIDUAL DE MÉRITO. As 251 questões foram inventariadas com suas cinco alternativas, gabarito, comentário e pontos de atenção. Não confundir triagem automatizada com validação jurídica conclusiva; cada item ainda exige cotejo individual de enunciado, todas as alternativas, gabarito, comentário e fundamentos atualizados. Cotejo normativo de 23 questões pendentes da R4 concluído (e quatro questões previamente revisadas rechecadas). O cotejo dos 228 itens restantes e a integração das erratas dos PDFs continuam pendentes. Adicionalmente, 27 questões dos módulos M01 e M02 foram cotejadas (inclusive princípios e cronologia), totalizando 50/251 com verificação individual de alternativas e comentários. Mais 27 enunciados, respostas, distratores e comentários dos módulos M03/M04 cotejados; conclusão acumulada 77/251. Foram cotejadas mais 24 questões dos M05 e M06 com fundamento e cinco alternativas, total 101/251. Cotejo dos módulos M07/M08 acrescentou 24 verificações individuais, total 125/251; core STF 246 não implica responsabilidade pública automática. M09 e M10: mais 23 questões cotejadas, totalizando 148/251, inclusive legislação do artista e teletrabalho. Cotejadas mais 20 questões pendentes de M11/M12, total 168/251; férias, pagamentos, equiparação e Súmula 91.",
   "fontesCotejadas": [
     "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
     "https://www.planalto.gov.br/ccivil_03/constituicao/constituicaocompilado.htm",
@@ -25,8 +25,8 @@
     ],
     "certificadasIntegralmenteNestaRodada": 0,
     "homologacao": false,
-    "cotejosNormativosConcluidosNaRodada": 148,
-    "pendentesCotejoNormativoNaRodada": 103,
+    "cotejosNormativosConcluidosNaRodada": 168,
+    "pendentesCotejoNormativoNaRodada": 83,
     "rechecadosDaRodadaAnterior": 4
   },
   "registros": [
@@ -3029,11 +3029,18 @@
       "textoGabarito": "11h interjornada.",
       "enunciado": "Fácil O intervalo do art. 66 da CLT é de:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m11.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m11.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT art. 66",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "Gabarito B cotejado após leitura das cinco alternativas e comentário; hipóteses de exceção e precedentes cancelados distinguidos.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M11-RESUMIDA-Q02",
@@ -3064,11 +3071,18 @@
       "textoGabarito": "Podem ser gozadas em 2 períodos anuais, nenhum inferior a 10 dias; empregado com menos de 12 meses goza proporcionalmente e inicia novo aquisitivo.",
       "enunciado": "Média Assinale a alternativa correta sobre férias coletivas.",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m11.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m11.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT arts. 139 e 140",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "Gabarito C cotejado após leitura das cinco alternativas e comentário; hipóteses de exceção e precedentes cancelados distinguidos.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M11-RESUMIDA-Q04",
@@ -3101,13 +3115,20 @@
       "textoGabarito": "A redução eventual e ínfima de até 5 minutos no total não atrai a consequência do §4º segundo a tese reproduzida.",
       "enunciado": "Difícil Em jornada superior a 6h, o intervalo mínimo aplicável era de 1h. O empregado usufruiu 57 minutos por pequena variação de marcação, totalizando redução de 3 minutos. À luz do art. 71, §4º, e do IRR 14 reproduzido na fonte, assinale a alternativa correta.",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [
         "precedente_especifico_conferir_tese"
       ],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m11.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m11.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT art. 71 §4º; TST IRR 14",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "Gabarito C cotejado após leitura das cinco alternativas e comentário; hipóteses de exceção e precedentes cancelados distinguidos.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M11-COMPLETA-Q01",
@@ -3117,13 +3138,20 @@
       "textoGabarito": "11 horas consecutivas.",
       "enunciado": "Fácil À luz da Consolidação das Leis do Trabalho (CLT) reproduzida no módulo, o intervalo mínimo entre o término de uma jornada e o início da seguinte é de:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [
         "redacao_editorial"
       ],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m11.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m11.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT art. 66",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "Gabarito D cotejado após leitura das cinco alternativas e comentário; hipóteses de exceção e precedentes cancelados distinguidos.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M11-COMPLETA-Q02",
@@ -3133,13 +3161,20 @@
       "textoGabarito": "18 dias corridos de férias.",
       "enunciado": "Fácil Um empregado teve 18 faltas injustificadas durante o período aquisitivo. Considerando as faixas do art. 130 da CLT trabalhadas no módulo, terá direito, em regra, a:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [
         "redacao_editorial"
       ],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m11.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m11.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT art. 130",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "Gabarito C cotejado após leitura das cinco alternativas e comentário; hipóteses de exceção e precedentes cancelados distinguidos.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M11-COMPLETA-Q03",
@@ -3149,11 +3184,18 @@
       "textoGabarito": "A comunicação deve ocorrer com 30 dias de antecedência e o pagamento até 2 dias antes do início.",
       "enunciado": "Fácil Sobre os prazos ligados à concessão das férias individuais, assinale a alternativa correta.",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m11.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m11.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT arts. 135 e 145",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "Gabarito B cotejado após leitura das cinco alternativas e comentário; hipóteses de exceção e precedentes cancelados distinguidos.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M11-COMPLETA-Q04",
@@ -3186,13 +3228,20 @@
       "textoGabarito": "perde o direito às férias daquele período aquisitivo e, no retorno, inicia novo período aquisitivo.",
       "enunciado": "Média Durante o período aquisitivo, um empregado permaneceu em licença com percepção de salários por mais de 30 dias. Conforme o art. 133 da CLT reproduzido no módulo:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [
         "redacao_editorial"
       ],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m11.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m11.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT art. 133 II e §2º",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "Gabarito B cotejado após leitura das cinco alternativas e comentário; hipóteses de exceção e precedentes cancelados distinguidos.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M11-COMPLETA-Q07",
@@ -3202,11 +3251,18 @@
       "textoGabarito": "Podem abranger toda a empresa ou determinados estabelecimentos/setores e ser gozadas em até 2 períodos anuais, nenhum inferior a 10 dias.",
       "enunciado": "Média Sobre as férias coletivas, assinale a alternativa correta segundo o conteúdo validado.",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m11.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m11.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT arts. 139–140 e 143 §2º",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "Gabarito C cotejado após leitura das cinco alternativas e comentário; hipóteses de exceção e precedentes cancelados distinguidos.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M11-COMPLETA-Q09",
@@ -3216,13 +3272,20 @@
       "textoGabarito": "I, II e III.",
       "enunciado": "Difícil Considere as afirmações: I. O empregado que pede demissão antes de completar 12 meses de serviço pode ter direito a férias proporcionais, conforme o IRR 236 destacado pela fonte. II. Para férias proporcionais, conta-se 1/12 por mês de serviço ou fração superior a 14 dias. III. A Súmula 171 do Tribunal Superior do Trabalho (TST), no recorte do módulo, ressalva a dispensa por justa causa ao tratar das férias proporcionais na extinção do contrato. Está correto o que se afirma em:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [
         "precedente_especifico_conferir_tese"
       ],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m11.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m11.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT art. 146; TST Súmula 171 e IRR 236",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "Gabarito E cotejado após leitura das cinco alternativas e comentário; hipóteses de exceção e precedentes cancelados distinguidos.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M12-RESUMIDA-Q01",
@@ -3232,11 +3295,18 @@
       "textoGabarito": "Remuneracao corresponde ao salario acrescido das gorjetas.",
       "enunciado": "[FACIL] Assinale a alternativa correta sobre salario e remuneracao.",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m12.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m12.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT art. 457",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "Gabarito B cotejado após leitura das cinco alternativas e comentário; hipóteses de exceção e precedentes cancelados distinguidos.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M12-RESUMIDA-Q02",
@@ -3246,11 +3316,18 @@
       "textoGabarito": "Premio validamente enquadrado.",
       "enunciado": "[FACIL] Segundo o art. 457, §2º, qual verba pode nao integrar a remuneracao mesmo quando habitual?",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m12.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m12.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT art. 457 §§2º e 4º",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "Gabarito C cotejado após leitura das cinco alternativas e comentário; hipóteses de exceção e precedentes cancelados distinguidos.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M12-RESUMIDA-Q03",
@@ -3260,11 +3337,18 @@
       "textoGabarito": "Utilidade fornecida para viabilizar o trabalho tende a ser instrumental, e nao salario-utilidade.",
       "enunciado": "[MEDIO] Sobre salario-utilidade, assinale a alternativa correta.",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m12.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m12.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT art. 458; TST Súmula 367",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "Gabarito B cotejado após leitura das cinco alternativas e comentário; hipóteses de exceção e precedentes cancelados distinguidos.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M12-RESUMIDA-Q04",
@@ -3274,11 +3358,18 @@
       "textoGabarito": "a extincao do contrato nao prejudica a percepcao das comissoes devidas na forma do art. 466.",
       "enunciado": "[MEDIO] A respeito das comissoes, a CLT estabelece que:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m12.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m12.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT art. 466",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "Gabarito C cotejado após leitura das cinco alternativas e comentário; hipóteses de exceção e precedentes cancelados distinguidos.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M12-COMPLETA-Q01",
@@ -3288,11 +3379,18 @@
       "textoGabarito": "Remuneracao compreende o salario devido e pago diretamente pelo empregador e as gorjetas recebidas.",
       "enunciado": "[FACIL] De acordo com a matriz do art. 457 da CLT, assinale a alternativa correta.",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m12.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m12.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT art. 457 caput",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "Gabarito B cotejado após leitura das cinco alternativas e comentário; hipóteses de exceção e precedentes cancelados distinguidos.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M12-COMPLETA-Q02",
@@ -3302,11 +3400,18 @@
       "textoGabarito": "Premio definido nos termos legais.",
       "enunciado": "[FACIL] Qual parcela esta expressamente entre as verbas que nao integram a remuneracao pelo art. 457, §2º, quando validamente paga?",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m12.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m12.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT art. 457 §§2º e 4º",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "Gabarito D cotejado após leitura das cinco alternativas e comentário; hipóteses de exceção e precedentes cancelados distinguidos.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M12-COMPLETA-Q03",
@@ -3316,11 +3421,18 @@
       "textoGabarito": "A distincao central e verificar se a utilidade e fornecida pelo trabalho ou para o trabalho.",
       "enunciado": "[FACIL] Sobre salario-utilidade, assinale a afirmativa correta.",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m12.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m12.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT art. 458; TST Súmula 367",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "Gabarito C cotejado após leitura das cinco alternativas e comentário; hipóteses de exceção e precedentes cancelados distinguidos.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M12-COMPLETA-Q04",
@@ -3330,11 +3442,18 @@
       "textoGabarito": "o quinto dia util do mes subsequente.",
       "enunciado": "[FACIL] Quando o salario e estipulado por mes, a CLT determina que o pagamento seja efetuado, no maximo, ate:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m12.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m12.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT art. 459 §1º",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "Gabarito C cotejado após leitura das cinco alternativas e comentário; hipóteses de exceção e precedentes cancelados distinguidos.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M12-COMPLETA-Q05",
@@ -3344,11 +3463,18 @@
       "textoGabarito": "somente sao exigiveis apos ultimada a transacao e a extincao do contrato nao elimina comissoes devidas na forma do art. 466.",
       "enunciado": "[MEDIO] Um empregado recebe parcela fixa e percentuais sobre vendas. A respeito das comissoes, e correto afirmar que:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m12.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m12.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT art. 466",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "Gabarito B cotejado após leitura das cinco alternativas e comentário; hipóteses de exceção e precedentes cancelados distinguidos.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M12-COMPLETA-Q06",
@@ -3379,13 +3505,20 @@
       "textoGabarito": "integram a remuneracao, mas nao compoem a base de aviso-previo, adicional noturno, horas extras e repouso semanal remunerado.",
       "enunciado": "[MEDIO] Segundo a Sumula 354 do TST, reafirmada no IRR 234, as gorjetas:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [
         "precedente_especifico_conferir_tese"
       ],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m12.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m12.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "TST Súmula 354 e IRR 234",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "Gabarito D cotejado após leitura das cinco alternativas e comentário; hipóteses de exceção e precedentes cancelados distinguidos.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M12-COMPLETA-Q08",
@@ -3420,11 +3553,18 @@
       "textoGabarito": "A indispensabilidade para a prestacao do trabalho afasta, nas condicoes jurisprudenciais aplicaveis, a natureza salarial, mesmo havendo uso particular.",
       "enunciado": "[DIFICIL] A empresa fornece veiculo indispensavel a execucao do trabalho e permite uso particular fora do expediente. Considerando a logica do art. 458 e a referencia a Sumula 367 no modulo, assinale a melhor resposta.",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m12.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m12.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT art. 458; TST Súmula 367",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "Gabarito B cotejado após leitura das cinco alternativas e comentário; hipóteses de exceção e precedentes cancelados distinguidos.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M13-RESUMIDA-Q01",
