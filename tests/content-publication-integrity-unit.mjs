@@ -56,7 +56,7 @@ test('metadados de Português refletem as unidades existentes em M01 e M13',asyn
 
 test('manifesto offline só referencia arquivos publicados',async()=>{
  const manifest=JSON.parse(await read('central-offline-files-v66172.json'));
- assert.equal(manifest.build,'20261010-auditfix1');
+ assert.equal(manifest.build,'20261011-ptra4');
  for(const entry of manifest.files){
   if(!entry.startsWith('/')||entry.startsWith('//'))continue;
   const path=entry.slice(1).split(/[?#]/,1)[0];
