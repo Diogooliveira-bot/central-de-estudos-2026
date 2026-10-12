@@ -1,16 +1,305 @@
-/* Base Completa — Direito do Trabalho — integração nativa / pré-homologação.
- * Opcional: carregar APENAS numa branch de teste enquanto revisões jurídicas estiverem pendentes.
- * Não remove HTML legado, não grava nem modifica as chaves anteriores de progresso ou anotações.
- */
-(function(){'use strict';
-if(window.CentralTrabalhoNative)return;
+/* Direito do Trabalho — integração com o Leitor Universal da Base Completa.
+   Mantém os JSONs, perguntas, gabaritos e chaves individuais de armazenamento. */
+(function(g){
+'use strict';
+if(g.CentralTrabalhoUniversal)return;
 const BASE='/modules/trabalho/native/';
-const STYLE='\n.bc-dt-materials{margin:12px 0;padding:15px;background:#101f34;border:1px solid #2c506e;border-radius:12px;color:#eef8ff}.bc-dt-materials h4{font-size:13px;font-weight:900;margin:0 0 6px}.bc-dt-materials .bc-dt-caption{color:#a6bed3;font-size:11px;margin-bottom:9px}.bc-dt-material-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.bc-dt-material-grid button{font:inherit;text-align:left;padding:12px;border:1px solid #366484;border-radius:9px;background:#193957;color:#eef8ff;cursor:pointer}.bc-dt-material-grid button b{display:block;font-size:12px}.bc-dt-material-grid button span{font-size:10px;color:#b2d6ed}.bc-dt-mask{position:fixed;inset:0;background:rgba(5,10,22,.94);z-index:2147483000;display:grid;grid-template-rows:auto 1fr;padding:8px}.bc-dt-mask header{display:flex;justify-content:space-between;align-items:center;gap:12px;color:white;padding:8px 12px}.bc-dt-mask iframe{width:100%;height:100%;border:0;background:#081324;border-radius:10px}.bc-dt-mask button{background:#1e476a;color:white;padding:8px 14px;border:1px solid #71bce6;border-radius:8px;cursor:pointer}@media(max-width:650px){.bc-dt-material-grid{grid-template-columns:1fr}.bc-dt-mask{padding:0}.bc-dt-mask iframe{border-radius:0}}';
-const style=document.createElement('style');style.id='bc-dt-native-style';style.textContent=STYLE;document.head.appendChild(style);
-let lastActive=null,lockScroll='';
-function close(){const modal=document.getElementById('bc-dt-reader-mask');if(!modal)return;modal.remove();document.body.style.overflow=lockScroll;lastActive?.focus?.();}
-function open(moduleNum,kind){let nn=String(moduleNum).padStart(2,'0');if(!/^\d\d$/.test(nn)||Number(nn)<1||Number(nn)>18)return;close();lastActive=document.activeElement;lockScroll=document.body.style.overflow;document.body.style.overflow='hidden';let mask=document.createElement('section');mask.id='bc-dt-reader-mask';mask.className='bc-dt-mask';mask.setAttribute('role','dialog');mask.setAttribute('aria-modal','true');mask.setAttribute('aria-label','Leitor Direito do Trabalho M'+Number(nn));let h=document.createElement('header'),label=document.createElement('strong');label.textContent='BASE COMPLETA · Direito do Trabalho M'+Number(nn)+' · Pré-homologação';let button=document.createElement('button');button.textContent='Fechar ✕';button.type='button';button.onclick=close;h.append(label,button);let frame=document.createElement('iframe');frame.title='Conteúdo Direito do Trabalho M'+Number(nn);frame.src=BASE+'reader.html?modulo='+nn+'&material='+encodeURIComponent(kind||'resumida');frame.referrerPolicy='same-origin';mask.append(h,frame);document.body.appendChild(mask);button.focus();}
-window.CentralTrabalhoNative={open,close};window.addEventListener('message',e=>{if(e.origin===location.origin&&e.data?.type==='BC_TRABALHO_CLOSE_READER')close()});document.addEventListener('keydown',e=>{if(e.key==='Escape'&&document.getElementById('bc-dt-reader-mask'))close()});
-function enhance(){document.querySelectorAll('.topic-item[data-uid]').forEach(el=>{let id=el.getAttribute('data-uid')||'',m=/^trab-m0?(\d{1,2})$/i.exec(id);if(!m)return;let nn=Number(m[1]);if(nn<1||nn>18)return;let body=el.querySelector('.detail-panel')||el.querySelector('.topic-details');if(!body||body.querySelector('[data-bc-dt-native]'))return;let block=document.createElement('section');block.className='bc-dt-materials';block.setAttribute('data-bc-dt-native',String(nn));let title=document.createElement('h4');title.textContent='Materiais do módulo';let description=document.createElement('div');description.className='bc-dt-caption';description.textContent='Leitor nativo: revisões, teoria e questões comentadas.';let grid=document.createElement('div');grid.className='bc-dt-material-grid';for(const [kind,caption,detail] of [['resumida','Teoria resumida','5 questões de fixação'],['completa','Teoria completa','10 questões de fixação'],['infografico','Infográfico','Imagem com ampliação']]){let b=document.createElement('button');b.type='button';let strong=document.createElement('b');strong.textContent=caption;let small=document.createElement('span');small.textContent=detail;b.append(strong,small);b.onclick=()=>open(nn,kind);grid.appendChild(b)}block.append(title,description,grid);body.insertBefore(block,body.firstChild)})}
-let scheduled=false;function schedule(){if(scheduled)return;scheduled=true;requestAnimationFrame(()=>{scheduled=false;enhance()})}document.addEventListener('click',schedule,true);const obs=new MutationObserver(schedule);obs.observe(document.documentElement,{childList:true,subtree:true});enhance();
-})();
+let active=null,mode='resumida';
+const cache=new Map();
+function el(tag,cls,txt){const n=document.createElement(tag);if(cls)n.className=cls;if(txt!==undefined)n.textContent=String(txt);return n}
+function esc(s){return String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+function appendStructuredContent(target,raw){
+  const chunks=String(raw??'').replace(/\r/g,'').replace(/\f/g,'').split(/\n[ \t]*\n+/).map(v=>v.trim()).filter(Boolean);
+  const ignored=/^(?:BASE COMPLETA(?:\s*[|·•]\s*DIREITO DO TRABALHO(?:\s*[|·•]\s*M\d+)?)?|DIREITO DO TRABALHO|TEORIA RESUMIDA|TEORIA COMPLETA|REVISÃO INTEGRADA\s*-\s*NÃO HOMOLOGADO PARA PUBLICAÇÃO|PÁGINA\s+\d+(?:\s+DE\s+\d+)?)$/i;
+  const bullet=/^(?:[•●▪◦\uF0B7]|[-–](?=\s)|[✅❌])\s*/u;
+  for(const rawBlock of chunks){
+    const lines=rawBlock.split('\n').map(v=>v.trim()).filter(Boolean);
+    if(!lines.length)continue;
+    const flat=lines.join(' ').replace(/[ \t]{2,}/g,' ').trim();
+    if(!flat||ignored.test(flat))continue;
+    const numbered=flat.match(/^(\d{1,2}(?:\.\d{1,2}){0,3})[.)]?\s+(.+)$/);
+    const letters=flat.match(/[A-Za-zÀ-ÿ]/gu)||[];
+    const uppers=flat.match(/[A-ZÀ-Ý]/gu)||[];
+    const uppercase=letters.length>3 && uppers.length/letters.length>.86;
+    const label=/^(?:REGRA|ATENÇÃO|PEGADINHA|FUNDAMENTO|EXCEÇÃO|CONSEQUÊNCIA|ALERTA|ARTIGOS|BASE LEGAL|INTERPRETAÇÃO NO M\d+|DICA DE PROVA|NÃO CONFUNDIR|CHECKLIST|PONTO DE ATENÇÃO|CONTROLE DE PUBLICAÇÃO)$/i.test(flat);
+    if(label&&flat.length<58){
+      const h=el('h3','reader-label',flat);target.appendChild(h);continue;
+    }
+    if(numbered&&flat.length<165&&lines.length<=4&&!/^\d+(?:[.,]\d+)?\s*(?:%|anos|horas|minutos|dias|meses)\b/i.test(flat)){
+      const heading=el(numbered[1].includes('.')?'h3':'h2','reader-section-heading',flat);
+      target.appendChild(heading);continue;
+    }
+    if(uppercase&&flat.length<105&&lines.length<=3&&!/[.!?]$/.test(flat)){
+      target.appendChild(el('h2','reader-section-heading',flat));continue;
+    }
+    const spaced=lines.filter(line=>/\S[ \t]{4,}\S/.test(line)).length;
+    if(lines.length>=3&&spaced>=2&&spaced>=Math.ceil(lines.length/2)){
+      const wrap=el('div','reader-table-wrap'),table=el('table','reader-table'),body=el('tbody');
+      for(const line of lines){
+        const tr=el('tr');
+        for(const cell of line.split(/[ \t]{4,}/).filter(Boolean))tr.appendChild(el('td','',cell.trim()));
+        body.appendChild(tr);
+      }
+      table.appendChild(body);wrap.appendChild(table);target.appendChild(wrap);continue;
+    }
+    if(lines.some(line=>bullet.test(line))){
+      let list=null,last=null,buffer=[];
+      function flush(){
+        if(buffer.length){target.appendChild(el('p','reader-paragraph',buffer.join(' ')));buffer=[];}
+      }
+      for(const line of lines){
+        if(bullet.test(line)){
+          flush();
+          if(!list){list=el('ul','reader-list');target.appendChild(list);}
+          last=el('li',line.startsWith('❌')?'reader-wrong':line.startsWith('✅')?'reader-right':'',line.replace(bullet,''));
+          list.appendChild(last);
+        }else if(last){last.textContent+=' '+line;}else buffer.push(line);
+      }
+      flush();continue;
+    }
+    if(/^(?:NOTA DE ATUALIZAÇÃO JURISPRUDENCIAL|ATENÇÃO DE AUDITORIA|NOTA DE INTEGRIDADE|CONTROLE DE PUBLICAÇÃO)\b/i.test(flat)){
+      target.appendChild(el('aside','reader-legal-note',flat));continue;
+    }
+    if(/^M\d{1,2}\s*[-—–]\s*/i.test(flat)&&flat.length<200){
+      target.appendChild(el('h2','reader-section-heading',flat));continue;
+    }
+    if(lines.length<=2&&flat.length<100&&/^(?:[A-ZÀ-Ý][a-zà-ÿ].*)(?:\s[-—–]\s.+)?$/.test(flat)&&!/[.:;!?]$/.test(flat)&&!/\b(?:art|arts|lei|súmula|tema)\.?\s*\d/i.test(flat)){
+      // Títulos temáticos de aparência editorial; não altera a redação.
+      target.appendChild(el('h3','reader-topic-heading',flat));continue;
+    }
+    target.appendChild(el('p','reader-paragraph',flat));
+  }
+}
+function theoryPagesWithoutPrintedQuestions(pages){
+  // Os PDFs originais contêm perguntas e gabaritos impressos.
+  // Retiramos apenas a duplicação VISUAL, mantendo o JSON intacto;
+  // as questões estruturadas e atualizadas são exibidas ao final da apostila.
+  const questionHeading=/(?:^|\n)[ \t]*(?:#{1,3}[ \t]*)?(?:(?:\d{1,2})[.)]?[ \t]+|M\d{1,2}[ \t]*[—-][ \t]*)?(?:(?:5|10)[ \t]+)?quest[õo]es?(?:[ \t]+de)?[ \t]+fixa[çc][ãa]o\b/i;
+  let endPage=pages.length,endIndex=0,cut=false;
+  const start=Math.floor(pages.length*.59);
+  for(let i=start;i<pages.length;i++){
+    const match=questionHeading.exec(pages[i]);
+    if(match){endPage=i;endIndex=match.index;cut=true;break;}
+  }
+  const items=[];
+  for(let i=0;i<pages.length;i++){
+    if(cut&&i>endPage)break;
+    let part=cut&&i===endPage?pages[i].slice(0,endIndex):pages[i];
+    if(i===0){
+      const section=/\n[ \t]*(?:VISÃO GERAL|CONCEITOS ESSENCIAIS|FUNDAMENTO LEGAL PRINCIPAL)[ \t]*\n/i.exec(part);
+      if(section)part=part.slice(section.index);
+      else {
+        continue; // Evita repetir a capa do PDF; não omite páginas de teoria.
+      }
+    }
+    if(part.trim())items.push({index:i,text:part});
+  }
+  return items;
+}
+
+function documentHtml(d,kind){
+ mode=kind;
+ const root=el('div','bc-trabalho-book');
+ const head=el('header','bc-trabalho-book-head');
+ head.append(el('p','bc-native-kicker','BASE COMPLETA · DIREITO DO TRABALHO · M'+d.numero),
+   el('h1','',d.titulo),el('p','lead',kind==='completa'?'Teoria Completa':'Teoria Resumida'));
+ root.append(head);
+ if(kind==='infografico'){
+   const fig=el('figure','bc-trabalho-infografico'),img=el('img');
+   img.alt='Infográfico do módulo '+d.numero;
+   img.src=new URL(d.infografico,new URL(BASE+'modules/',location.origin)).href;
+   fig.append(img);root.append(fig);return root.innerHTML;
+ }
+ const pages=theoryPagesWithoutPrintedQuestions(d.tipos[kind].paginas);
+ for(const part of pages){
+   const page=el('section','bc-trabalho-page');
+   page.dataset.readerPage=String(part.index);
+   appendStructuredContent(page,part.text);
+   root.append(page);
+ }
+ const quiz=el('section','bc-trabalho-questions bc-native-internal-review');
+ quiz.id='bc-trabalho-questoes';
+ quiz.append(el('h2','','Questões de fixação'),el('p','','Responda e confira os comentários após estudar a teoria.'));
+ for(const q of d.questoes[kind]){
+   const card=el('section','question bc-trabalho-question');card.dataset.questionId=q.id;
+   card.append(el('h3','bc-trabalho-question-title',String(q.numero)+'. '+q.enunciado));
+   const opts=el('div','bc-trabalho-options');opts.setAttribute('role','radiogroup');opts.setAttribute('aria-label','Questão '+q.numero);
+   for(const [letter,text] of Object.entries(q.alternativas)){
+     const label=el('label','bc-trabalho-option'),input=el('input'),span=el('span','',letter+') '+text);
+     input.type='radio';input.value=letter;input.name='dt-'+q.id;
+     label.append(input,span);opts.append(label);
+   }
+   const check=el('button','bc-trabalho-check','Conferir resposta');check.type='button';
+   const feedback=el('div','bc-trabalho-feedback');feedback.hidden=true;feedback.setAttribute('role','status');
+   card.append(opts,check,feedback);quiz.append(card);
+ }
+ root.append(quiz);return root.innerHTML;
+}
+function toc(body){
+ const nodes=Array.from(body.querySelectorAll('.bc-trabalho-book h2,.bc-trabalho-book h3')).filter(h=>!h.closest('.bc-trabalho-questions')).slice(0,70);
+ return '<div class="bc-native-toc-label">Assuntos</div>'+nodes.map((node,i)=>{node.id='dt-toc-'+i;return '<button type="button" data-dt-toc="'+i+'">'+esc(node.textContent)+'</button>'}).join('');
+}
+async function accountStore(m){
+ let store=g.sessionStorage,scope='preview-session:';
+ try{const r=await fetch('/api/auth?action=me',{credentials:'same-origin',cache:'no-store'});if(r.ok){
+ const b=await r.json(),uid=String(b?.authenticated&&b?.user?.id||'').trim();
+ if(/^[a-zA-Z0-9_-]{1,120}$/.test(uid)){store=g.localStorage;scope='user:'+uid+':';}
+ }}catch(_){}
+ const prefix=scope+'base-completa:dt-reader:prehomologacao:m'+String(m).padStart(2,'0')+':';
+ return {get(key,fallback){try{const value=store.getItem(prefix+key);return value===null?fallback:JSON.parse(value)}catch(_){return fallback}},
+ put(key,value){try{store.setItem(prefix+key,JSON.stringify(value))}catch(e){console.warn('Falha ao salvar leitura',e)}}};
+}
+async function getModule(n){
+ const id=String(n).padStart(2,'0');
+ if(!cache.has(id)){
+  cache.set(id,fetch(BASE+'modules/m'+id+'.json',{cache:'no-cache',credentials:'same-origin'}).then(async r=>{
+    if(!r.ok)throw Error('HTTP '+r.status);
+    const d=await r.json();
+    if(Number(d.numero)!==n||d.questoes?.resumida?.length!==5||d.questoes?.completa?.length!==10||!d.tipos?.resumida?.paginas?.length||!d.tipos?.completa?.paginas?.length)throw Error('Dados incompletos do módulo');
+    return d;
+  }).catch(e=>{cache.delete(id);throw e}));
+ }
+ return cache.get(id);
+}
+function close(){
+ if(!active)return;
+ active.observer?.disconnect();
+ active.overlay?.remove();
+ active=null;
+}
+function percent(state){
+ if(active!==state||state.kind==='infografico')return;
+ const parts=Array.from(state.overlay.querySelectorAll('.bc-trabalho-page'));
+ const count=parts.filter(p=>state.allRead[state.kind][p.dataset.readerPage]).length;
+ const pct=parts.length?Math.round(count*100/parts.length):0;
+ g.CentralNativeReadingSession.percent(state.overlay,pct);
+}
+function finish(){
+ const state=active;
+ if(!state||!state.store||state.kind==='infografico')return;
+ for(const page of state.overlay.querySelectorAll('.bc-trabalho-page'))state.allRead[state.kind][page.dataset.readerPage]=true;
+ state.store.put('read-pages',state.allRead);percent(state);
+}
+function track(state,body){
+ if(state.kind==='infografico')return;
+ const segments=Array.from(body.querySelectorAll('.bc-trabalho-page'));
+ if(!('IntersectionObserver' in g))return;
+ state.observer=new IntersectionObserver(entries=>{
+   if(active!==state)return;
+   let changed=false;
+   for(const entry of entries){
+     const key=entry.target.dataset.readerPage;
+     if(entry.isIntersecting&&!state.allRead[state.kind][key]){state.allRead[state.kind][key]=true;changed=true;}
+   }
+   if(changed){state.store.put('read-pages',state.allRead);percent(state);}
+ },{root:body,threshold:0,rootMargin:'0px 0px -5% 0px'});
+ segments.forEach(s=>state.observer.observe(s));
+}
+function bindQuestions(state,body){
+ if(state.kind==='infografico')return;
+ const answers=state.store.get('answers',{}),index=new Map(state.data.questoes[state.kind].map(q=>[q.id,q]));
+ body.querySelectorAll('.bc-trabalho-question').forEach(card=>{
+   const answer=answers[card.dataset.questionId];
+   if(/^[A-E]$/.test(answer||'')){const input=card.querySelector('input[value="'+answer+'"]');if(input)input.checked=true;}
+ });
+ body.addEventListener('click',event=>{
+   const button=event.target.closest('.bc-trabalho-check');
+   if(!button||active!==state)return;
+   const card=button.closest('.bc-trabalho-question'),q=index.get(card.dataset.questionId);
+   if(!q)return;
+   const feedback=card.querySelector('.bc-trabalho-feedback'),choice=card.querySelector('input:checked');
+   feedback.hidden=false;
+   if(!choice){feedback.textContent='Selecione uma alternativa antes de conferir.';return;}
+   answers[q.id]=choice.value;state.store.put('answers',answers);
+   feedback.classList.toggle('wrong',choice.value!==q.gabarito);
+   feedback.replaceChildren(el('strong','',choice.value===q.gabarito?'Resposta correta.':'Confira o gabarito.'),
+     el('p','','Gabarito: '+q.gabarito),el('p','',q.comentario));
+ });
+}
+function bindNotes(state,body){
+ if(state.kind==='infografico')return;
+ const notes=el('details','bc-trabalho-notes'),area=el('textarea'),save=el('button','','Salvar anotação'),msg=el('small','','');
+ notes.append(el('summary','','Anotações pessoais deste módulo'));
+ area.value=state.store.get('notes','');area.setAttribute('aria-label','Anotações pessoais');
+ area.placeholder='Registre pontos para revisar.';save.type='button';
+ save.onclick=()=>{state.store.put('notes',area.value);msg.textContent='Anotação salva.'};
+ notes.append(area,save,msg);body.append(notes);
+}
+function bindTools(state,body){
+ const tools=state.overlay.querySelector('.bc-native-reader-tools');
+ const input=el('input');input.type='search';input.placeholder='Buscar no material…';input.setAttribute('aria-label','Buscar no material');
+ const top=el('button','','Topo');top.type='button';top.onclick=()=>body.scrollTo({top:0,behavior:'smooth'});
+ const next=el('button','','Próximo');next.type='button';next.hidden=true;
+ const count=el('output','','');
+ tools.insertBefore(input,tools.firstChild);input.after(next,count,top);
+ const article=body.querySelector('.bc-native-article');
+ let hits=[],selected=-1;
+ function reset(){article.querySelectorAll('mark.dt-reader-match').forEach(m=>m.replaceWith(document.createTextNode(m.textContent)));article.normalize();hits=[];selected=-1;}
+ function jump(){
+   if(!hits.length)return;
+   selected=(selected+1)%hits.length;
+   hits.forEach((m,i)=>m.classList.toggle('current',i===selected));
+   hits[selected].scrollIntoView({block:'center',behavior:'smooth'});
+   count.textContent=(selected+1)+'/'+hits.length;
+ }
+ function search(){
+   reset();const term=input.value.trim().toLocaleLowerCase('pt-BR');
+   if(term.length<2){next.hidden=true;count.textContent='';return;}
+   const walker=document.createTreeWalker(article,NodeFilter.SHOW_TEXT),texts=[];
+   while(walker.nextNode()){
+     const n=walker.currentNode;
+     if(n.parentElement&&!n.parentElement.closest('script,style,textarea,.bc-trabalho-feedback,[contenteditable]'))texts.push(n);
+   }
+   for(let node of texts){
+     let low=node.textContent.toLocaleLowerCase('pt-BR'),pos=low.indexOf(term);
+     while(pos>=0&&hits.length<180){
+       const middle=node.splitText(pos),tail=middle.splitText(term.length),mark=el('mark','dt-reader-match',middle.textContent);
+       middle.replaceWith(mark);hits.push(mark);node=tail;low=node.textContent.toLocaleLowerCase('pt-BR');pos=low.indexOf(term);
+     }
+     if(hits.length>=180)break;
+   }
+   count.textContent=hits.length+' ocorrência(s)';next.hidden=hits.length<2;
+   if(hits.length)jump();
+ }
+ input.addEventListener('input',()=>{clearTimeout(input._searchTimer);input._searchTimer=setTimeout(search,180)});
+ input.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();hits.length?jump():search()}});
+ next.onclick=jump;
+}
+function open(n,kind){
+ n=Number(n);kind=['resumida','completa','infografico'].includes(kind)?kind:'resumida';
+ if(!Number.isInteger(n)||n<1||n>18||!g.CentralNativeReadingSession)return false;
+ close();
+ const state={n,kind,overlay:null,observer:null,store:null,data:null,allRead:{}};
+ active=state;
+ const reader=g.CentralNativeReadingSession;
+ state.overlay=reader.create({id:'trab-native-reader',subject:'trab',title:'M'+String(n).padStart(2,'0')+' — Direito do Trabalho',
+ eyebrow:(kind==='resumida'?'TEORIA RESUMIDA':kind==='completa'?'TEORIA COMPLETA':'INFOGRÁFICO')+' · PRÉ-HOMOLOGAÇÃO',close,finish});
+ Promise.all([getModule(n),accountStore(n)]).then(([data,store])=>{
+   if(active!==state)return;
+   state.data=data;state.store=store;
+   state.allRead=store.get('read-pages',{});state.allRead[kind]??={};
+   state.overlay.querySelector('.bc-native-reader-title b').textContent='M'+String(n).padStart(2,'0')+' — '+data.titulo;
+   const body=reader.show(state.overlay,documentHtml(data,kind),toc,Number(store.get('scroll:'+kind,0))||0,()=>{
+     if(active!==state)return;
+     const b=state.overlay.querySelector('.bc-native-scroll');
+     if(reader.canTrack(state.overlay,b))store.put('scroll:'+kind,Math.round(b.scrollTop));
+   });
+   body.querySelector('.bc-native-article').classList.add('bc-trabalho-universal-content');
+   if(kind==='infografico')state.overlay.querySelector('[data-finish-reading]').hidden=true;
+   else{bindQuestions(state,body);bindNotes(state,body);track(state,body);percent(state);}
+   state.overlay.querySelector('.bc-native-toc').addEventListener('click',e=>{
+     const b=e.target.closest('[data-dt-toc]');if(!b)return;
+     body.querySelectorAll('.bc-trabalho-book h2,.bc-trabalho-book h3')[Number(b.dataset.dtToc)]?.scrollIntoView({block:'start',behavior:'smooth'});
+   });
+   bindTools(state,body);
+   g.CentralUniversalReader?.scan(state.overlay);
+ }).catch(error=>{
+   if(active!==state)return;
+   console.error('Falha no leitor universal de Direito do Trabalho',error);
+   reader.fail(state.overlay,()=>open(n,kind));
+ });
+ return true;
+}
+g.CentralTrabalhoUniversal=Object.freeze({open,close});
+g.CentralTrabalhoNative=g.CentralTrabalhoUniversal;
+})(window);
