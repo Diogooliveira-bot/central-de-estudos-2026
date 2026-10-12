@@ -398,6 +398,18 @@ function openCppLast(id,kind){
 }
 function openTopicFromLast(uid){const target=topicByUid(uid);if(target&&window.CentralDisciplineLoader&&!CentralDisciplineLoader.isReady(target.s.id))return CentralDisciplineLoader.open(target.s.id,()=>openTopicFromLast(uid));openHome();setTimeout(()=>{const found=topicByUid(uid);if(found){localStorage.setItem(`central-v6:open:${found.s.id}`,'1');renderSubjects();localStorage.setItem(topicOpenKey(uid),'1');renderSubjects();const el=document.querySelector(`.topic-item[data-uid="${uid}"]`);el?.scrollIntoView({behavior:'smooth',block:'center'})}},30)}
 
+function renderTrabalhoMaster(s){
+ const modules=s.topics.filter(t=>/^trab-m\d{2}$/.test(t.uid));
+ return '<section class="bc-trabalho-native" aria-label="Direito do Trabalho — 18 módulos atualizados">'
+ +'<style>.bc-trabalho-native{padding:18px 12px 24px}.bc-trabalho-native .bc-trabalho-intro{padding:15px 17px;margin-bottom:16px;border:1px solid var(--border,#d8dee4);border-radius:12px;background:var(--surface,#fff)}.bc-trabalho-native .bc-trabalho-intro strong{display:block;font-size:16px;margin-bottom:5px}.bc-trabalho-native .bc-trabalho-intro p{margin:0;color:var(--muted,#59636e);font-size:13px}.bc-trabalho-native .bc-trabalho-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(245px,1fr));gap:12px}.bc-trabalho-native .bc-trabalho-card{display:flex;flex-direction:column;gap:11px;border:1px solid var(--border,#d8dee4);background:var(--surface,#fff);border-radius:12px;padding:17px;min-width:0}.bc-trabalho-native .bc-trabalho-card small{font-size:11px;color:var(--muted,#59636e)}.bc-trabalho-native .bc-trabalho-card h3{font-size:16px;line-height:1.4;margin:0;overflow-wrap:anywhere}.bc-trabalho-native .bc-trabalho-card p{font-size:12px;color:var(--muted,#59636e);margin:0}.bc-trabalho-native .bc-trabalho-card a{margin-top:auto;display:inline-block;text-align:center;text-decoration:none;padding:11px 12px;background:var(--bc-primary,#2457a7);color:white;border-radius:8px;font-size:13px;font-weight:650}.bc-trabalho-native .bc-trabalho-card a:focus-visible{outline:3px solid #ffcb48;outline-offset:2px}@media(max-width:620px){.bc-trabalho-native{padding:12px 3px}.bc-trabalho-native .bc-trabalho-grid{grid-template-columns:1fr}}</style>'
+ +'<div class="bc-trabalho-intro"><strong>Direito do Trabalho — Nova organização • 18 módulos</strong><p>Teoria Resumida, Teoria Completa, infográfico e 15 questões de fixação por módulo. Versão de prévia para conferência; seus registros de progresso foram preservados.</p></div>'
+ +'<div class="bc-trabalho-grid">'+modules.map((t,index)=>{
+ const done=goalDone(t.uid);
+ const target='modules/trabalho/native/reader.html?modulo='+String(index+1).padStart(2,'0');
+ return '<article class="bc-trabalho-card" data-uid="'+escAttr(t.uid)+'"><small>MÓDULO '+String(index+1).padStart(2,'0')+' · '+(done?'CONCLUÍDO':'EM ESTUDO')+'</small><h3>'+esc(t.title.replace(/^\d{2}\s+/,''))+'</h3><p>Revisão + Teoria completa + Infográfico + Questões</p><a href="'+escAttr(target)+'" onclick="openInternal(\''+escJs(target)+'\',\''+escJs('Direito do Trabalho • '+t.title)+'\');return false">Abrir módulo atualizado →</a></article>';
+ }).join('')+'</div></section>';
+}
+
 function renderSubjects(){
  $('subjects').innerHTML=SUBJECTS.map(s=>{
   const st=subjStats(s),ready=!window.CentralDisciplineLoader||CentralDisciplineLoader.isReady(s.id),open=localStorage.getItem(`central-v6:open:${s.id}`)==='1'&&(ready||CentralDisciplineLoader.isLoading(s.id)||CentralDisciplineLoader.hasError(s.id));
@@ -405,7 +417,7 @@ function renderSubjects(){
   return `<section class="subject ${!ready?'central-subject-pending':''} ${open?'open':''}" data-id="${s.id}">
    <button class="subject-head" onclick="toggleSubject('${s.id}')"><span class="subject-name">${esc(s.name)}</span><span class="subject-count">${st.done}/${st.total} ${unit}</span><span class="subject-pct ${st.pct===100?'done':''}">${st.pct}%</span><span class="chev">⌄</span></button>
    <div class="subject-body"><div class="subject-bar"><span style="width:${st.pct}%"></span></div>
-    ${!ready ? CentralDisciplineLoader.placeholder(s) : !open ? '' : s.id==='pt' ? renderPortugueseMaster() : s.id==='cf' ? renderConstitutionalMaster() : s.id==='penal' ? renderPenalMaster() : s.id==='cpc' ? renderCpcMaster() : s.id==='civil' ? renderCivilMaster() : `
+    ${!ready ? CentralDisciplineLoader.placeholder(s) : !open ? '' : s.id==='pt' ? renderPortugueseMaster() : s.id==='cf' ? renderConstitutionalMaster() : s.id==='penal' ? renderPenalMaster() : s.id==='cpc' ? renderCpcMaster() : s.id==='civil' ? renderCivilMaster() : s.id==='trab' ? renderTrabalhoMaster(s) : `
       <div class="topic-header"><div></div><div>Tópico real</div><div>Origem</div><div>Tipo</div><div></div></div>
       ${s.topics.map(t=>renderTopic(s,t)).join('')}
     `}
