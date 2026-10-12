@@ -398,18 +398,71 @@ function openCppLast(id,kind){
 }
 function openTopicFromLast(uid){const target=topicByUid(uid);if(target&&window.CentralDisciplineLoader&&!CentralDisciplineLoader.isReady(target.s.id))return CentralDisciplineLoader.open(target.s.id,()=>openTopicFromLast(uid));openHome();setTimeout(()=>{const found=topicByUid(uid);if(found){localStorage.setItem(`central-v6:open:${found.s.id}`,'1');renderSubjects();localStorage.setItem(topicOpenKey(uid),'1');renderSubjects();const el=document.querySelector(`.topic-item[data-uid="${uid}"]`);el?.scrollIntoView({behavior:'smooth',block:'center'})}},30)}
 
-function renderTrabalhoMaster(s){
- const modules=s.topics.filter(t=>/^trab-m\d{2}$/.test(t.uid));
- return '<section class="bc-trabalho-native" aria-label="Direito do Trabalho — 18 módulos atualizados">'
- +'<style>.bc-trabalho-native{padding:18px 12px 24px}.bc-trabalho-native .bc-trabalho-intro{padding:15px 17px;margin-bottom:16px;border:1px solid var(--border,#d8dee4);border-radius:12px;background:var(--surface,#fff)}.bc-trabalho-native .bc-trabalho-intro strong{display:block;font-size:16px;margin-bottom:5px}.bc-trabalho-native .bc-trabalho-intro p{margin:0;color:var(--muted,#59636e);font-size:13px}.bc-trabalho-native .bc-trabalho-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(245px,1fr));gap:12px}.bc-trabalho-native .bc-trabalho-card{display:flex;flex-direction:column;gap:11px;border:1px solid var(--border,#d8dee4);background:var(--surface,#fff);border-radius:12px;padding:17px;min-width:0}.bc-trabalho-native .bc-trabalho-card small{font-size:11px;color:var(--muted,#59636e)}.bc-trabalho-native .bc-trabalho-card h3{font-size:16px;line-height:1.4;margin:0;overflow-wrap:anywhere}.bc-trabalho-native .bc-trabalho-card p{font-size:12px;color:var(--muted,#59636e);margin:0}.bc-trabalho-native .bc-trabalho-card a{margin-top:auto;display:inline-block;text-align:center;text-decoration:none;padding:11px 12px;background:var(--bc-primary,#2457a7);color:white;border-radius:8px;font-size:13px;font-weight:650}.bc-trabalho-native .bc-trabalho-card a:focus-visible{outline:3px solid #ffcb48;outline-offset:2px}@media(max-width:620px){.bc-trabalho-native{padding:12px 3px}.bc-trabalho-native .bc-trabalho-grid{grid-template-columns:1fr}}</style>'
- +'<div class="bc-trabalho-intro"><strong>Direito do Trabalho — Nova organização • 18 módulos</strong><p>Teoria Resumida, Teoria Completa, infográfico e 15 questões de fixação por módulo. Versão de prévia para conferência; seus registros de progresso foram preservados.</p></div>'
- +'<div class="bc-trabalho-grid">'+modules.map((t,index)=>{
- const done=goalDone(t.uid);
- const target='modules/trabalho/native/reader.html?modulo='+String(index+1).padStart(2,'0');
- return '<article class="bc-trabalho-card" data-uid="'+escAttr(t.uid)+'"><small>MÓDULO '+String(index+1).padStart(2,'0')+' · '+(done?'CONCLUÍDO':'EM ESTUDO')+'</small><h3>'+esc(t.title.replace(/^\d{2}\s+/,''))+'</h3><p>Revisão + Teoria completa + Infográfico + Questões</p><a href="'+escAttr(target)+'" onclick="openInternal(\''+escJs(target)+'\',\''+escJs('Direito do Trabalho • '+t.title)+'\');return false">Abrir módulo atualizado →</a></article>';
- }).join('')+'</div></section>';
+function toggleTrabalhoModule(uid){
+  const node=document.querySelector('.bc-trabalho-module[data-uid="'+uid+'"]');
+  if(!node)return false;
+  const open=!node.classList.contains('open');
+  node.classList.toggle('open',open);
+  const button=node.querySelector('.bc-trabalho-module-head');
+  if(button)button.setAttribute('aria-expanded',String(open));
+  try{localStorage.setItem('central-v6:trabalho-module-open:'+uid,open?'1':'0')}catch(_){}
+  return false;
 }
-
+function renderTrabalhoMaster(s){
+  const modules=s.topics.filter(t=>/^trab-m\d{2}$/.test(t.uid));
+  const styles=`<style id="bc-trabalho-master-v3">
+  .bc-trabalho-master{padding:8px 2px 22px;color:var(--bc-color-text,#263544)}
+  .bc-trabalho-master *{box-sizing:border-box}
+  .bc-trabalho-intro{border:1px solid var(--bc-color-border,#e0e5e9);border-radius:12px;background:var(--bc-color-surface,#fff);padding:19px 22px;margin:0 0 16px}
+  .bc-trabalho-intro h2{font-size:20px;line-height:1.35;margin:0 0 7px;color:inherit}
+  .bc-trabalho-intro p{font-size:13px;line-height:1.6;color:var(--bc-color-text-secondary,#617283);margin:0}
+  .bc-trabalho-module{border:1px solid var(--bc-color-border,#dce2e7);border-radius:12px;margin:0 0 12px;background:var(--bc-color-surface,#fff);overflow:hidden}
+  .bc-trabalho-module-head{display:grid;grid-template-columns:70px minmax(0,1fr) auto 20px;gap:15px;align-items:center;width:100%;padding:19px 20px;border:0;text-align:left;background:transparent;color:inherit;cursor:pointer;font:inherit;min-height:78px}
+  .bc-trabalho-module-head:hover{background:var(--bc-color-surface-elevated,#f8fafb)}
+  .bc-trabalho-module-n{font-size:12px;color:var(--bc-color-text-secondary,#607589);font-weight:750}
+  .bc-trabalho-module-name{font-size:16px;line-height:1.48;font-weight:700}
+  .bc-trabalho-module-state{font-size:12px;color:var(--bc-color-text-secondary,#678);white-space:nowrap}
+  .bc-trabalho-chevron{font-size:18px;color:var(--bc-color-text-secondary,#678);transition:transform .18s}
+  .bc-trabalho-module.open .bc-trabalho-chevron{transform:rotate(180deg)}
+  .bc-trabalho-module-body{display:none;border-top:1px solid var(--bc-color-border,#e4e7eb);padding:20px;background:var(--bc-color-surface,#fff)}
+  .bc-trabalho-module.open .bc-trabalho-module-body{display:block}
+  .bc-trabalho-module-hint{font-size:13px;color:var(--bc-color-text-secondary,#617283);margin:0 0 16px;line-height:1.6}
+  .bc-trabalho-materials{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .bc-trabalho-material{padding:16px;border:1px solid var(--bc-color-border,#e0e5ea);border-radius:10px;background:var(--bc-color-surface-elevated,#f9fafb);display:flex;flex-direction:column;align-items:start;gap:7px}
+  .bc-trabalho-material small{font-size:11px;font-weight:750;letter-spacing:.08em;color:var(--bc-color-text-secondary,#698)}
+  .bc-trabalho-material strong{font-size:15px;line-height:1.35;color:inherit}
+  .bc-trabalho-material p{font-size:12px;color:var(--bc-color-text-secondary,#678);line-height:1.5;margin:0 0 6px}
+  .bc-trabalho-material button{margin-top:auto;border-radius:8px;border:1px solid var(--bc-color-border-interactive,#9eb7c9);padding:9px 13px;background:var(--bc-color-surface,#fff);color:var(--bc-color-text,#283b4d);font:650 12px/1.4 system-ui,-apple-system,"Segoe UI",sans-serif;cursor:pointer;min-height:38px}
+  .bc-trabalho-material button:hover{border-color:#416e90;background:var(--bc-color-surface-elevated,#f1f6fa)}
+  @media(max-width:750px){.bc-trabalho-materials{grid-template-columns:1fr}.bc-trabalho-module-head{grid-template-columns:52px minmax(0,1fr) 18px;gap:9px;padding:15px 13px}.bc-trabalho-module-state{display:none}.bc-trabalho-module-name{font-size:14px}.bc-trabalho-module-body{padding:13px}.bc-trabalho-intro{padding:16px}}
+  </style>`;
+  const materialOptions=[
+    ['resumida','PRIMEIRA LEITURA','Teoria Resumida','Leitura objetiva e 5 questões de fixação.','Abrir leitura'],
+    ['completa','APROFUNDAMENTO','Teoria Completa','Conteúdo integral e 10 questões de fixação.','Abrir leitura'],
+    ['infografico','REVISÃO VISUAL','Infográfico','Síntese visual do conteúdo do módulo.','Abrir infográfico'],
+    ['questoes','FIXAÇÃO','Questões Comentadas','5 questões da resumida ou 10 da completa.','Resolver questões']
+  ];
+  return '<section class="bc-trabalho-master" aria-label="Direito do Trabalho — módulos atualizados">'+styles
+  +'<header class="bc-trabalho-intro"><h2>Direito do Trabalho — 18 módulos</h2><p>Escolha o módulo e depois o material de estudo. Leitura integrada à Central; o conteúdo jurídico e os registros de progresso permanecem preservados.</p></header>'
+  +modules.map((t,index)=>{
+    const n=String(index+1).padStart(2,'0'),done=goalDone(t.uid);
+    const open=localStorage.getItem('central-v6:trabalho-module-open:'+t.uid)==='1';
+    const cards=materialOptions.map(([key,kicker,label,desc,action])=>{
+      const url='modules/trabalho/native/reader.html?modulo='+n
+        +(key==='questoes'?'&material=resumida&questoes=1':'&material='+key);
+      return '<div class="bc-trabalho-material"><small>'+kicker+'</small><strong>'+label+'</strong><p>'+desc+'</p>'
+       +'<button type="button" onclick="openInternal(\''+escJs(url)+'\',\''+escJs('Direito do Trabalho • M'+n+' • '+label)+'\');return false">'+action+' →</button></div>';
+    }).join('');
+    return '<section class="bc-trabalho-module '+(open?'open':'')+'" data-uid="'+escAttr(t.uid)+'">'
+      +'<button type="button" class="bc-trabalho-module-head" aria-expanded="'+String(open)+'" onclick="return toggleTrabalhoModule(\''+escJs(t.uid)+'\')">'
+      +'<span class="bc-trabalho-module-n">M'+n+'</span>'
+      +'<span class="bc-trabalho-module-name">'+esc(t.title.replace(/^\d{2}\s+/,''))+'</span>'
+      +'<span class="bc-trabalho-module-state">'+(done?'Concluído':'Em estudo')+'</span>'
+      +'<span class="bc-trabalho-chevron" aria-hidden="true">⌄</span></button>'
+      +'<div class="bc-trabalho-module-body"><p class="bc-trabalho-module-hint">Escolha como estudar este módulo:</p>'
+      +'<div class="bc-trabalho-materials">'+cards+'</div></div></section>';
+  }).join('')+'</section>';
+}
 function renderSubjects(){
  $('subjects').innerHTML=SUBJECTS.map(s=>{
   const st=subjStats(s),ready=!window.CentralDisciplineLoader||CentralDisciplineLoader.isReady(s.id),open=localStorage.getItem(`central-v6:open:${s.id}`)==='1'&&(ready||CentralDisciplineLoader.isLoading(s.id)||CentralDisciplineLoader.hasError(s.id));
