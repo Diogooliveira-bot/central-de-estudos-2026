@@ -63,6 +63,13 @@ test('PTRA: 21 módulos, duas versões e questões interativas geradas de dados 
   }
   assert.equal(totalQuestions,315);
   assert.ok(totalCharacters>100000);
+  const cross=[];
+  for(const m of data.modules){
+    const a=m.resumido.pages.join('\\n').trim(),b=m.completo.pages.join('\\n').trim();
+    const markers=['TEORIA RESUMIDA','VERSÃO RESUMIDA','RESUMIDO','PRIMEIRA LEITURA','TEORIA COMPLETA','VERSÃO COMPLETA'];
+    cross.push({module:m.number,summaryLength:a.length,fullLength:b.length,fullIncludesSummaryStart:b.includes(a.slice(0,Math.min(1000,a.length))),summaryIncludesFullStart:a.includes(b.slice(0,Math.min(1000,b.length))),fullOpening:b.slice(0,260).replace(/\\n/g,' | '),shortOpening:a.slice(0,170).replace(/\\n/g,' | '),markers:markers.filter(x=>b.toUpperCase().includes(x))});
+  }
+  console.log('PTRA_SOURCE_ISOLATION',JSON.stringify(cross));
   console.log('PTRA AUDIT OK: 21 módulos / 42 versões / '+totalQuestions+' questões / '+totalCharacters+' caracteres de fontes originais');
   console.log('PTRA SECTION SPLIT',JSON.stringify({splitCount,unsplit}));
   assert.equal(splitCount,42,'Todas as versões devem mover a seção textual de questões para a revisão interativa');
