@@ -273,6 +273,11 @@ function routeIntegratedCentralModule(value,title,btn){
 }
 function openInternal(url,title,btn){
  const value=String(url||'');
+ if(/^(?:\/)?modules\/trabalho\/native\/reader\.html\?/.test(value)){
+  const match=/^(?:\/)?modules\/trabalho\/native\/reader\.html\?modulo=(0[1-9]|1[0-8])&material=(resumida|completa|infografico)(?:&questoes=1)?$/.exec(value);
+  const reader=window.CentralTrabalhoUniversal||window.CentralTrabalhoNative;
+  if(match&&reader&&reader.open(Number(match[1]),match[2]))return;
+ }
  if(routeIntegratedCentralModule(value,title,btn))return;
  hideViews();$('moduleView').classList.remove('hidden');try{$('moduleView').classList.add('central-view-visible')}catch(_){}$('crumb').textContent=title;setNav(btn);
  const f=$('moduleFrame'),isRlm=/^(?:\.\/)?rlm_disciplina\.html(?:[?#]|$)/.test(value);
@@ -416,6 +421,7 @@ function openTrabalhoNative(event,relativeUrl,label){
  if(!reader||typeof reader.open!=='function')return true;
  try{
    if(reader.open(Number(match[1]),match[2])){
+     try{saveLast({url:'/'+value,title:label||'Direito do Trabalho',at:Date.now()})}catch(_){}
      if(event&&typeof event.preventDefault==='function')event.preventDefault();
      return false;
    }
