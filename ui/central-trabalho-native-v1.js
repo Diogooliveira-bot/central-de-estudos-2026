@@ -227,11 +227,12 @@ function bindNotes(state,body){
 }
 function bindTools(state,body){
  const tools=state.overlay.querySelector('.bc-native-reader-tools');
+ const back=el('button','bc-trabalho-back','← Voltar');back.type='button';back.onclick=close;
  const input=el('input');input.type='search';input.placeholder='Buscar no material…';input.setAttribute('aria-label','Buscar no material');
- const top=el('button','','Topo');top.type='button';top.onclick=()=>body.scrollTo({top:0,behavior:'smooth'});
+ const top=el('button','bc-trabalho-top','Topo');top.type='button';top.onclick=()=>body.scrollTo({top:0,behavior:'smooth'});
  const next=el('button','','Próximo');next.type='button';next.hidden=true;
- const count=el('output','','');
- tools.insertBefore(input,tools.firstChild);input.after(next,count,top);
+ const count=el('output','bc-trabalho-search-count','');
+ tools.insertBefore(back,tools.firstChild);back.after(input,next,count,top);
  const article=body.querySelector('.bc-native-article');
  let hits=[],selected=-1;
  function reset(){article.querySelectorAll('mark.dt-reader-match').forEach(m=>m.replaceWith(document.createTextNode(m.textContent)));article.normalize();hits=[];selected=-1;}
