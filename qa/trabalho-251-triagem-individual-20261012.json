@@ -1,7 +1,7 @@
 {
   "schema": "base-completa-triagem-juridica-20261012-v1",
   "dataCorte": "2026-10-12",
-  "observacao": "TRIAGEM DOCUMENTAL, NÃO É CERTIFICAÇÃO INDIVIDUAL DE MÉRITO. As 251 questões foram inventariadas com suas cinco alternativas, gabarito, comentário e pontos de atenção. Não confundir triagem automatizada com validação jurídica conclusiva; cada item ainda exige cotejo individual de enunciado, todas as alternativas, gabarito, comentário e fundamentos atualizados. Cotejo normativo de 23 questões pendentes da R4 concluído (e quatro questões previamente revisadas rechecadas). O cotejo dos 228 itens restantes e a integração das erratas dos PDFs continuam pendentes. Adicionalmente, 27 questões dos módulos M01 e M02 foram cotejadas (inclusive princípios e cronologia), totalizando 50/251 com verificação individual de alternativas e comentários. Mais 27 enunciados, respostas, distratores e comentários dos módulos M03/M04 cotejados; conclusão acumulada 77/251. Foram cotejadas mais 24 questões dos M05 e M06 com fundamento e cinco alternativas, total 101/251. Cotejo dos módulos M07/M08 acrescentou 24 verificações individuais, total 125/251; core STF 246 não implica responsabilidade pública automática.",
+  "observacao": "TRIAGEM DOCUMENTAL, NÃO É CERTIFICAÇÃO INDIVIDUAL DE MÉRITO. As 251 questões foram inventariadas com suas cinco alternativas, gabarito, comentário e pontos de atenção. Não confundir triagem automatizada com validação jurídica conclusiva; cada item ainda exige cotejo individual de enunciado, todas as alternativas, gabarito, comentário e fundamentos atualizados. Cotejo normativo de 23 questões pendentes da R4 concluído (e quatro questões previamente revisadas rechecadas). O cotejo dos 228 itens restantes e a integração das erratas dos PDFs continuam pendentes. Adicionalmente, 27 questões dos módulos M01 e M02 foram cotejadas (inclusive princípios e cronologia), totalizando 50/251 com verificação individual de alternativas e comentários. Mais 27 enunciados, respostas, distratores e comentários dos módulos M03/M04 cotejados; conclusão acumulada 77/251. Foram cotejadas mais 24 questões dos M05 e M06 com fundamento e cinco alternativas, total 101/251. Cotejo dos módulos M07/M08 acrescentou 24 verificações individuais, total 125/251; core STF 246 não implica responsabilidade pública automática. M09 e M10: mais 23 questões cotejadas, totalizando 148/251, inclusive legislação do artista e teletrabalho.",
   "fontesCotejadas": [
     "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
     "https://www.planalto.gov.br/ccivil_03/constituicao/constituicaocompilado.htm",
@@ -25,8 +25,8 @@
     ],
     "certificadasIntegralmenteNestaRodada": 0,
     "homologacao": false,
-    "cotejosNormativosConcluidosNaRodada": 125,
-    "pendentesCotejoNormativoNaRodada": 126,
+    "cotejosNormativosConcluidosNaRodada": 148,
+    "pendentesCotejoNormativoNaRodada": 103,
     "rechecadosDaRodadaAnterior": 4
   },
   "registros": [
@@ -2457,13 +2457,20 @@
       "textoGabarito": "Acordo individual escrito, Acordo Coletivo de Trabalho ou Convenção Coletiva de Trabalho.",
       "enunciado": "[FÁCIL] A jornada 12x36, conforme o material validado, pode ser instituída por:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [
         "precedente_especifico_conferir_tese"
       ],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m09.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m09.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT art. 59-A",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "A alternativa C está compatível com a regra diferenciada no enunciado; distratores misturam prazos, sujeitos ou fontes.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M09-RESUMIDA-Q03",
@@ -2473,11 +2480,18 @@
       "textoGabarito": "Urbano: 22h-5h, +20%, hora 52min30s; rural agrícola: 21h-5h, +25%, hora 60min.",
       "enunciado": "[MÉDIA] Assinale a alternativa que compara corretamente trabalho noturno urbano e rural.",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m09.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m09.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT art. 73; Lei 5.889/1973 art. 7º",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "A alternativa A está compatível com a regra diferenciada no enunciado; distratores misturam prazos, sujeitos ou fontes.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M09-RESUMIDA-Q04",
@@ -2487,11 +2501,18 @@
       "textoGabarito": "Indenização compensatória, observados o período mínimo de habitualidade e a fórmula estudada.",
       "enunciado": "[MÉDIA] A supressão total ou parcial de horas extras habituais, nas condições da Súmula 291 reproduzida no M9, pode gerar:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m09.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m09.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "Súmula TST 291; IRR 137",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "A alternativa B está compatível com a regra diferenciada no enunciado; distratores misturam prazos, sujeitos ou fontes.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M09-RESUMIDA-Q05",
@@ -2501,13 +2522,20 @@
       "textoGabarito": "Declaração de inconstitucionalidade de pontos que excluíam o tempo de espera da jornada/horas extras e de regras de descanso indicadas pela fonte.",
       "enunciado": "[DIFÍCIL] No recorte sobre motorista profissional, qual efeito central da ADI 5322 foi preservado no M9?",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [
         "precedente_especifico_conferir_tese"
       ],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m09.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m09.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "STF ADI 5322",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "A alternativa C está compatível com a regra diferenciada no enunciado; distratores misturam prazos, sujeitos ou fontes.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M09-COMPLETA-Q01",
@@ -2517,11 +2545,18 @@
       "textoGabarito": "A jornada normal é de 8 horas diárias e 44 semanais, e o serviço extraordinário tem adicional mínimo de 50%.",
       "enunciado": "[FÁCIL] De acordo com os limites gerais trabalhados no M9, assinale a alternativa correta.",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m09.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m09.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CF art. 7º XIII e XVI",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/constituicao/constituicaocompilado.htm",
+        "conclusao": "A alternativa C está compatível com a regra diferenciada no enunciado; distratores misturam prazos, sujeitos ou fontes.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M09-COMPLETA-Q03",
@@ -2531,11 +2566,18 @@
       "textoGabarito": "Mais de 20 trabalhadores.",
       "enunciado": "[FÁCIL] A obrigatoriedade de registro de entrada e saída destacada no M9 aplica-se, na literalidade atual trabalhada pela fonte, a estabelecimentos com:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m09.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m09.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT art. 74 §2º",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "A alternativa D está compatível com a regra diferenciada no enunciado; distratores misturam prazos, sujeitos ou fontes.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M09-COMPLETA-Q04",
@@ -2545,11 +2587,18 @@
       "textoGabarito": "22h às 5h; adicional de pelo menos 20%; hora de 52min30s.",
       "enunciado": "[FÁCIL] No trabalho noturno urbano, a combinação correta é:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m09.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m09.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT art. 73",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "A alternativa A está compatível com a regra diferenciada no enunciado; distratores misturam prazos, sujeitos ou fontes.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M09-COMPLETA-Q05",
@@ -2559,11 +2608,18 @@
       "textoGabarito": "A existência de meios efetivos de controle impede que a simples externalidade seja suficiente para afastar horas extras.",
       "enunciado": "[MÉDIA] Um vendedor realiza atividade externa, mas recebe roteiros diários, registra visitas em aplicativo e tem seus horários efetivamente acompanhados pela empresa. À luz do M9, a conclusão mais adequada é:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m09.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m09.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT art. 62 I; TST IRR 73",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "A alternativa C está compatível com a regra diferenciada no enunciado; distratores misturam prazos, sujeitos ou fontes.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M09-COMPLETA-Q06",
@@ -2573,11 +2629,18 @@
       "textoGabarito": "A fonte atualizada diferencia teletrabalho por jornada de teletrabalho por produção ou tarefa; a exclusão do capítulo de duração é apresentada para produção ou tarefa.",
       "enunciado": "[MÉDIA] Sobre teletrabalho e duração do trabalho, assinale a alternativa compatível com a versão auditada do M9.",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m09.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m09.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT art. 62 III; Lei 14.442/2022",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "A alternativa C está compatível com a regra diferenciada no enunciado; distratores misturam prazos, sujeitos ou fontes.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M09-COMPLETA-Q07",
@@ -2587,11 +2650,18 @@
       "textoGabarito": "Banco de horas de até 6 meses pode ser ajustado por acordo individual escrito; o banco anual é associado à negociação coletiva.",
       "enunciado": "[MÉDIA] A respeito das formas de compensação estudadas, assinale a alternativa correta.",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m09.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m09.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT art. 59 §§5º–6º",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "A alternativa B está compatível com a regra diferenciada no enunciado; distratores misturam prazos, sujeitos ou fontes.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M09-COMPLETA-Q08",
@@ -2601,11 +2671,18 @@
       "textoGabarito": "O simples uso do celular não caracteriza sobreaviso por si só.",
       "enunciado": "[MÉDIA] Um empregado permanece com telefone celular fora do expediente, sem plantão organizado nem obrigação de aguardar chamado em estado de disponibilidade. Segundo o M9:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m09.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m09.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "Súmula TST 428",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "A alternativa D está compatível com a regra diferenciada no enunciado; distratores misturam prazos, sujeitos ou fontes.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M09-COMPLETA-Q09",
@@ -2615,11 +2692,18 @@
       "textoGabarito": "A habitualidade, por si só, não descaracteriza automaticamente o acordo de compensação nem o banco de horas na regra pós-Reforma reproduzida pela fonte.",
       "enunciado": "[DIFÍCIL] Uma empresa mantém acordo de compensação e exige horas extras com habitualidade. Considerando a correção adotada no M9 a partir do próprio material pós-Reforma, assinale a alternativa correta.",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m09.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m09.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT art. 59-B",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "A alternativa A está compatível com a regra diferenciada no enunciado; distratores misturam prazos, sujeitos ou fontes.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M09-COMPLETA-Q10",
@@ -2652,11 +2736,18 @@
       "textoGabarito": "Até 30h sem suplementares, ou até 26h com até 6 suplementares.",
       "enunciado": "Fácil No regime de tempo parcial, assinale a alternativa correta.",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m10.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m10.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT art. 58-A",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "A alternativa C está compatível com a regra diferenciada no enunciado; distratores misturam prazos, sujeitos ou fontes.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M10-RESUMIDA-Q02",
@@ -2666,13 +2757,20 @@
       "textoGabarito": "acordo individual escrito, ACT ou CCT.",
       "enunciado": "Fácil A escala 12x36 pode ser instituída, no regime estudado, por:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [
         "precedente_especifico_conferir_tese"
       ],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m10.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m10.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT art. 59-A",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "A alternativa D está compatível com a regra diferenciada no enunciado; distratores misturam prazos, sujeitos ou fontes.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M10-RESUMIDA-Q03",
@@ -2682,13 +2780,20 @@
       "textoGabarito": "Telefonista abrangida pelo art. 227 trabalha 6h/dia ou 36h/semana, e a OJ 213 citada no módulo refere-se a telex.",
       "enunciado": "Média Assinale a alternativa correta.",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "Enunciado contém referência editorial ao material",
       "riscos": [
         "alerta_existente_no_item"
       ],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m10.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m10.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT art. 227; TST OJ 213; NR 17 anexo II",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "A alternativa C está compatível com a regra diferenciada no enunciado; distratores misturam prazos, sujeitos ou fontes.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M10-RESUMIDA-Q04",
@@ -2698,11 +2803,18 @@
       "textoGabarito": "O acúmulo de funções gera adicional mínimo de 40% na hipótese estudada, com máximo de 2 funções no mesmo contrato.",
       "enunciado": "Média Sobre o trabalho do artista, assinale a alternativa correta.",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m10.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m10.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "Lei 6.533/1978 art. 22",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/leis/l6533.htm",
+        "conclusao": "A alternativa B está compatível com a regra diferenciada no enunciado; distratores misturam prazos, sujeitos ou fontes.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M10-RESUMIDA-Q05",
@@ -2712,14 +2824,21 @@
       "textoGabarito": "na ausência de regra diversa, o intervalo é em regra tempo à disposição, mas a presunção não é absoluta e admite prova de uso estritamente pessoal.",
       "enunciado": "Difícil Um professor utiliza integralmente o recreio para atividade pessoal, sem realizar tarefa docente, e o empregador pretende demonstrar esse fato. Segundo a atualização da ADPF 1058 consolidada no módulo, é correto afirmar que:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [
         "redacao_editorial",
         "precedente_especifico_conferir_tese"
       ],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m10.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m10.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "STF ADPF 1058",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "A alternativa B está compatível com a regra diferenciada no enunciado; distratores misturam prazos, sujeitos ou fontes.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M10-COMPLETA-Q02",
@@ -2753,11 +2872,18 @@
       "textoGabarito": "a modalidade de até 26 horas semanais pode admitir até 6 horas suplementares.",
       "enunciado": "Fácil No regime de tempo parcial, é correto afirmar que:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m10.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m10.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT art. 58-A",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "A alternativa C está compatível com a regra diferenciada no enunciado; distratores misturam prazos, sujeitos ou fontes.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M10-COMPLETA-Q04",
@@ -2767,11 +2893,18 @@
       "textoGabarito": "pode durar até 7 dias consecutivos, com restrição de nova contratação nessa forma pelo mesmo empregador nos 60 dias subsequentes.",
       "enunciado": "Fácil Segundo o regime do artista estudado, a nota contratual para substituição ou trabalho eventual:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m10.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m10.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "Lei 6.533/1978 art. 12",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/leis/l6533.htm",
+        "conclusao": "A alternativa B está compatível com a regra diferenciada no enunciado; distratores misturam prazos, sujeitos ou fontes.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M10-COMPLETA-Q05",
@@ -2781,11 +2914,18 @@
       "textoGabarito": "A OJ 213 citada no módulo refere-se ao operador de telex; telemarketing possui disciplina específica na NR-17, Anexo II.",
       "enunciado": "Média Assinale a alternativa que diferencia corretamente telefonista, telex e telemarketing.",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m10.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m10.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT art. 227; TST OJ 213; NR 17",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "A alternativa C está compatível com a regra diferenciada no enunciado; distratores misturam prazos, sujeitos ou fontes.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M10-COMPLETA-Q07",
@@ -2795,11 +2935,18 @@
       "textoGabarito": "adicional mínimo de 40%, calculado sobre a função mais bem remunerada, com máximo de 2 funções no mesmo contrato.",
       "enunciado": "Média No trabalho do artista, o acúmulo simultâneo de funções na mesma atividade, conforme a fonte, gera:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m10.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m10.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "Lei 6.533/1978 art. 22",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/leis/l6533.htm",
+        "conclusao": "A alternativa B está compatível com a regra diferenciada no enunciado; distratores misturam prazos, sujeitos ou fontes.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M10-COMPLETA-Q08",
@@ -2809,7 +2956,7 @@
       "textoGabarito": "Na ausência de lei ou negociação coletiva em sentido diverso, os intervalos são em regra tempo à disposição, mas o empregador pode provar uso estritamente pessoal pelo professor.",
       "enunciado": "Média A respeito da ADPF 1058/STF, tal como atualizada no módulo, assinale a alternativa correta.",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "Enunciado contém referência editorial ao material",
       "riscos": [
         "redacao_editorial",
@@ -2817,7 +2964,14 @@
         "alerta_existente_no_item"
       ],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m10.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m10.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "STF ADPF 1058",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "A alternativa C está compatível com a regra diferenciada no enunciado; distratores misturam prazos, sujeitos ou fontes.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M10-COMPLETA-Q09",
@@ -2852,13 +3006,20 @@
       "textoGabarito": "Nota eventual: 7 dias; nova contratação nessa forma pelo mesmo empregador: 60 dias; entrega de texto/roteiro/plano: 72h; acúmulo de funções: adicional mínimo de 40%.",
       "enunciado": "Difícil Assinale a alternativa que reúne apenas regras numéricas corretamente associadas ao trabalho do artista, conforme a fonte consolidada.",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [
         "redacao_editorial"
       ],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m10.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m10.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "Lei 6.533/1978 arts. 12, 22 e 30",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/leis/l6533.htm",
+        "conclusao": "A alternativa A está compatível com a regra diferenciada no enunciado; distratores misturam prazos, sujeitos ou fontes.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M11-RESUMIDA-Q01",
