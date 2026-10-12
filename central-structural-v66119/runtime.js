@@ -408,6 +408,64 @@ function toggleTrabalhoModule(uid){
   try{localStorage.setItem('central-v6:trabalho-module-open:'+uid,open?'1':'0')}catch(_){}
   return false;
 }
+function openTrabalhoNative(event, relativeUrl, label){
+  const path=String(relativeUrl||'');
+  const allowed=/^modules\/trabalho\/native\/reader\.html\?modulo=(?:0[1-9]|1[0-8])&material=(?:resumida|completa|infografico)(?:&questoes=1)?$/;
+  if(!allowed.test(path))return true;
+  let frame=null,host=null;
+  try{
+    frame=document.getElementById('moduleFrame');
+    host=document.getElementById('moduleView');
+    if(!frame||!host||typeof centralShowNativeView!=='function')return true;
+    const target=new URL('/'+path,location.origin);
+    const shown=centralShowNativeView('moduleView',label||'Direito do Trabalho');
+    if(!shown)return true;
+    let feedback=document.getElementById('bcTrabalhoReaderFallback');
+    if(!feedback){
+      feedback=document.createElement('aside');
+      feedback.id='bcTrabalhoReaderFallback';
+      feedback.style.cssText='display:none;position:absolute;z-index:20;left:50%;transform:translateX(-50%);top:60px;max-width:95%;padding:14px 20px;border-radius:10px;border:1px solid #d3dbe2;background:#fff;color:#283e55;box-shadow:0 8px 30px #0002;font:14px/1.5 system-ui,sans-serif';
+      feedback.innerHTML='<b>Não foi possível abrir o leitor nesta janela.</b><p style="margin:6px 0">Você pode abrir o mesmo material diretamente.</p><a id="bcTrabalhoReaderDirect" target="_blank" rel="noopener" style="color:#245a84;text-decoration:underline">Abrir leitura diretamente ↗</a>';
+      host.appendChild(feedback);
+    }
+    feedback.style.display='none';
+    feedback.querySelector('#bcTrabalhoReaderDirect').href=target.href;
+    const currentTicket=String(Date.now())+':'+path;
+    frame.dataset.trabalhoTicket=currentTicket;
+    const fail=()=>{if(frame.dataset.trabalhoTicket===currentTicket)feedback.style.display='block';};
+    // Esta rotina é exclusiva de Direito do Trabalho, sem modificar o roteamento das outras disciplinas.
+    frame.addEventListener('load',()=>{
+      if(frame.dataset.trabalhoTicket!==currentTicket)return;
+      try{
+        const doc=frame.contentDocument;
+        if(doc&&/Entrar\s*[—-]\s*Base Completa/i.test(doc.title)){fail();return;}
+        setTimeout(()=>{
+          if(frame.dataset.trabalhoTicket!==currentTicket)return;
+          try{
+            const inner=frame.contentDocument;
+            const title=inner?.getElementById('title')?.textContent||'';
+            if(/Erro ao abrir módulo/i.test(title))fail();
+          }catch(_){}
+        },1300);
+      }catch(_){}
+    },{once:true});
+    if(typeof window.moduleFrameWatch==='function')window.moduleFrameWatch(target.href);
+    frame.removeAttribute('srcdoc');
+    frame.src=target.href;
+    try{saveLast({url:target.pathname+target.search,title:label||'Direito do Trabalho',at:Date.now()})}catch(_){}
+    try{window.scrollTo(0,0)}catch(_){}
+    if(event&&typeof event.preventDefault==='function')event.preventDefault();
+    return false;
+  }catch(e){
+    console.error('Falha ao abrir teoria de Direito do Trabalho',e);
+    if(host&&host.classList.contains('hidden')===false){
+      const feedback=document.getElementById('bcTrabalhoReaderFallback');
+      if(feedback)feedback.style.display='block';
+    }
+    return true;
+  }
+}
+
 function renderTrabalhoMaster(s){
   const modules=s.topics.filter(t=>/^trab-m\d{2}$/.test(t.uid));
   const styles=`<style id="bc-trabalho-master-v3">
@@ -432,8 +490,8 @@ function renderTrabalhoMaster(s){
   .bc-trabalho-material small{font-size:11px;font-weight:750;letter-spacing:.08em;color:var(--bc-color-text-secondary,#698)}
   .bc-trabalho-material strong{font-size:15px;line-height:1.35;color:inherit}
   .bc-trabalho-material p{font-size:12px;color:var(--bc-color-text-secondary,#678);line-height:1.5;margin:0 0 6px}
-  .bc-trabalho-material button{margin-top:auto;border-radius:8px;border:1px solid var(--bc-color-border-interactive,#9eb7c9);padding:9px 13px;background:var(--bc-color-surface,#fff);color:var(--bc-color-text,#283b4d);font:650 12px/1.4 system-ui,-apple-system,"Segoe UI",sans-serif;cursor:pointer;min-height:38px}
-  .bc-trabalho-material button:hover{border-color:#416e90;background:var(--bc-color-surface-elevated,#f1f6fa)}
+  .bc-trabalho-material .bc-trabalho-open-reader{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;margin-top:auto;border-radius:8px;border:1px solid var(--bc-color-border-interactive,#9eb7c9);padding:9px 13px;background:var(--bc-color-surface,#fff);color:var(--bc-color-text,#283b4d);font:650 12px/1.4 system-ui,-apple-system,"Segoe UI",sans-serif;cursor:pointer;min-height:38px}
+  .bc-trabalho-material .bc-trabalho-open-reader:hover{border-color:#416e90;background:var(--bc-color-surface-elevated,#f1f6fa)}
   @media(max-width:750px){.bc-trabalho-materials{grid-template-columns:1fr}.bc-trabalho-module-head{grid-template-columns:52px minmax(0,1fr) 18px;gap:9px;padding:15px 13px}.bc-trabalho-module-state{display:none}.bc-trabalho-module-name{font-size:14px}.bc-trabalho-module-body{padding:13px}.bc-trabalho-intro{padding:16px}}
   </style>`;
   const materialOptions=[
@@ -451,7 +509,7 @@ function renderTrabalhoMaster(s){
       const url='modules/trabalho/native/reader.html?modulo='+n
         +(key==='questoes'?'&material=resumida&questoes=1':'&material='+key);
       return '<div class="bc-trabalho-material"><small>'+kicker+'</small><strong>'+label+'</strong><p>'+desc+'</p>'
-       +'<button type="button" onclick="openInternal(\''+escJs(url)+'\',\''+escJs('Direito do Trabalho • M'+n+' • '+label)+'\');return false">'+action+' →</button></div>';
+       +'<a class="bc-trabalho-open-reader" href="/'+escAttr(url)+'" onclick="return openTrabalhoNative(event,\''+escJs(url)+'\',\''+escJs('Direito do Trabalho • M'+n+' • '+label)+'\')">'+action+' →</a></div>';
     }).join('');
     return '<section class="bc-trabalho-module '+(open?'open':'')+'" data-uid="'+escAttr(t.uid)+'">'
       +'<button type="button" class="bc-trabalho-module-head" aria-expanded="'+String(open)+'" onclick="return toggleTrabalhoModule(\''+escJs(t.uid)+'\')">'
