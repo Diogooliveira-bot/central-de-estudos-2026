@@ -1,0 +1,53 @@
+/* Direito do Trabalho — somente componentes dentro do Leitor Universal. */
+html.bc-ui-v1 .trab-native-overlay .bc-trabalho-universal-content .bc-trabalho-book{
+  max-width:100%;font-family:Georgia,"Times New Roman",serif;line-height:1.75;
+}
+.trab-native-overlay .bc-trabalho-book-head{margin:0 0 36px;padding:0 0 23px;border-bottom:1px solid var(--bc-reading-line,#ded7ca)}
+.trab-native-overlay .bc-trabalho-book-head h1{font-weight:650;line-height:1.25;margin:12px 0 10px}
+.trab-native-overlay .bc-trabalho-book-head .lead{font-size:.93em;color:var(--bc-reading-muted,#726b60)}
+.trab-native-overlay .bc-trabalho-page{margin:0;padding:0;scroll-margin-top:90px}
+.trab-native-overlay .bc-trabalho-page h2{margin-top:1.65em}
+.trab-native-overlay .bc-trabalho-page h3{margin-top:1.25em}
+.trab-native-overlay .bc-trabalho-page .reader-label{display:inline-block;padding:5px 9px;border-left:3px solid var(--bc-reading-accent,#087584);background:var(--bc-reading-inset,#eee8dd);font-size:.75em;font-weight:700;letter-spacing:.035em}
+.trab-native-overlay .bc-trabalho-page .reader-paragraph{white-space:normal;line-height:1.8;margin:0 0 1em}
+.trab-native-overlay .bc-trabalho-page .reader-list{line-height:1.74;margin:0 0 1.25em;padding-inline-start:1.7em}
+.trab-native-overlay .bc-trabalho-page .reader-list li{margin:.35em 0}
+.trab-native-overlay .bc-trabalho-page .reader-legal-note{display:block;padding:13px 16px;margin:18px 0;border-left:3px solid #b38b38;background:var(--bc-reading-inset,#eee8dd);border-radius:0 7px 7px 0}
+.trab-native-overlay .bc-trabalho-page .reader-table-wrap{width:100%;max-width:100%;overflow-x:auto;margin:18px 0}
+.trab-native-overlay .bc-trabalho-page .reader-table{border-collapse:collapse;width:max-content;min-width:100%;font-size:.86em;line-height:1.5}
+.trab-native-overlay .bc-trabalho-page .reader-table td{border:1px solid var(--bc-reading-line,#ded7ca);padding:9px 11px;vertical-align:top}
+.trab-native-overlay .bc-trabalho-questions{margin:68px 0 18px;padding-top:24px;border-top:2px solid var(--bc-reading-line,#ded7ca);scroll-margin-top:60px}
+.trab-native-overlay .bc-trabalho-questions>h2{margin:8px 0 6px}
+.trab-native-overlay .bc-trabalho-questions>p{font-size:.9em;color:var(--bc-reading-muted,#726b60);margin:0 0 18px}
+.trab-native-overlay .bc-trabalho-question{border-bottom:1px solid var(--bc-reading-line,#ded7ca);padding:18px 0 24px}
+.trab-native-overlay .bc-trabalho-question:last-child{border-bottom:0}
+.trab-native-overlay .bc-trabalho-question h3{font-size:1.05em!important;font-weight:700;line-height:1.52;margin:4px 0 15px}
+.trab-native-overlay .bc-trabalho-options{display:grid;gap:8px}
+.trab-native-overlay .bc-trabalho-option{display:flex;gap:10px;align-items:flex-start;cursor:pointer;padding:11px 12px;border:1px solid var(--bc-reading-line,#ded7ca);border-radius:7px;font:.83em/1.6 system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--bc-reading-text,#34312d)}
+.trab-native-overlay .bc-trabalho-option:hover{background:var(--bc-reading-inset,#eee8dd)}
+.trab-native-overlay .bc-trabalho-option input{margin-top:4px;accent-color:var(--bc-reading-accent,#087584)}
+.trab-native-overlay .bc-trabalho-check{display:inline-block;padding:10px 15px;border-radius:7px;margin:16px 0 0;border:1px solid var(--bc-reading-accent,#087584);background:transparent;color:var(--bc-reading-accent,#087584);font:700 12px system-ui,sans-serif;cursor:pointer}
+.trab-native-overlay .bc-trabalho-feedback{margin:14px 0;padding:15px;border-radius:8px;border:1px solid var(--bc-reading-line,#ded7ca);background:var(--bc-reading-inset,#eee8dd);line-height:1.65;font-size:.86em;white-space:pre-wrap}
+.trab-native-overlay .bc-trabalho-feedback[hidden]{display:none!important}
+.trab-native-overlay .bc-trabalho-feedback.wrong{border-left:3px solid #c68253}
+.trab-native-overlay .bc-trabalho-feedback strong{display:block;margin-bottom:10px}
+.trab-native-overlay .bc-trabalho-infografico{margin:0 auto;text-align:center}
+.trab-native-overlay .bc-trabalho-infografico img{display:block;width:100%;height:auto;max-width:100%}
+.trab-native-overlay .bc-trabalho-notes{max-width:78ch;margin:10px auto 50px;padding:14px 22px;border:1px solid var(--bc-reading-line,#ded7ca);border-radius:9px;background:var(--bc-reading-inset,#eee8dd);color:var(--bc-reading-text,#34312d)}
+.trab-native-overlay .bc-trabalho-notes summary{font-weight:700;cursor:pointer;padding:5px 0}
+.trab-native-overlay .bc-trabalho-notes textarea{display:block;box-sizing:border-box;width:100%;min-height:135px;margin:14px 0;border:1px solid var(--bc-reading-line,#ded7ca);border-radius:7px;padding:12px;color:var(--bc-reading-text,#34312d);background:var(--bc-reading-paper,#f5f1e8);font:14px/1.65 system-ui,sans-serif}
+.trab-native-overlay .bc-trabalho-notes button{padding:10px 13px;border:1px solid var(--bc-reading-accent,#087584);background:transparent;color:var(--bc-reading-accent,#087584);border-radius:7px;cursor:pointer}
+.trab-native-overlay .bc-trabalho-notes small{margin-left:11px;font-size:12px}
+.trab-native-overlay .dt-reader-match{background:#ffe293;color:#2f2a20;border-radius:2px}
+.trab-native-overlay .dt-reader-match.current{background:#ffa942;outline:2px solid #dc8233}
+.trab-native-overlay .bc-native-reader-tools .bc-trabalho-search-count{font-size:11px;color:var(--bc-reading-muted,#726b60);min-width:38px}
+.trab-native-overlay .bc-native-reader-tools .bc-trabalho-top{margin-inline-end:auto}
+@media(max-width:650px){
+  .trab-native-overlay .bc-trabalho-questions{margin-top:42px}
+  .trab-native-overlay .bc-trabalho-notes{margin:10px 14px 40px;padding:12px}
+  .trab-native-overlay .bc-native-reader-tools .bc-trabalho-search-count{display:none}
+}
+@media print{
+ .trab-native-overlay .bc-trabalho-question{break-inside:avoid}
+ .trab-native-overlay .bc-trabalho-notes{display:none!important}
+}
