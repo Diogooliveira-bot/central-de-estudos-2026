@@ -19,8 +19,8 @@
 | Comentários identificados como mera transcrição do artigo nos arquivos lidos | 813 (145 Civil, 142 CPC, 98 CF, 428 disciplinas restantes) |
 | Erros de gabarito definitivamente comprovados neste lote | 0 |
 | Testes estáticos efetuados na branch | PASSOU: 26 IDs únicos, 23/3 status, zero comentários-padrão no piloto, tipos de gabarito, fontes e encaixe dos avisos no HTML |
-| Testes Node automatizados existentes executados | NÃO: execução remota indisponível nesta sessão; teste novo foi versionado |
-| Testes visuais do Lei em Dia autenticado | NÃO: URL publicada redireciona para login |
+| Testes automatizados no GitHub Actions | PASSOU: 63/63 na suíte completa da auditoria; workflow Administrativo adicional aprovado |
+| Testes de interface em Chromium CI | PASSOU: simulação de aluno em desktop 1280px e celular 390px (base isolada no runner); URL pública não autenticada redireciona para login |
 | Prévia Vercel gerada | NÃO: API `402 api-deployments-free-per-day`, limite diário de 100 deployments atingido |
 | Produção modificada | NÃO |
 
@@ -379,6 +379,15 @@ Há 295 questões de Direito Administrativo em `tools/decorando-data-adm-pack1.j
 1. Inventário imutável dos blobs originais: `audits/lei-em-dia-auditoria-20261012-inventario.json`.
 2. Primeira intervenção: `tools/decorando-data-adm-9784.js` com 23 fundamentações e 3 pendências.
 3. Leitor: `tools/decorando.html` com avisos antes das alternativas e layout responsivo pontual.
-4. Teste Node versionado: `tests/lei-em-dia-auditoria-20261012.mjs` (não executado em CI nesta sessão).
-5. Próxima etapa: executar `node --test tests/lei-em-dia-auditoria-20261012.mjs` e scripts do `package.json` (incluindo `test:lei-adm`, `test:lei-cf`, `test:lei-civil`, `test:lei-restantes`, `test:lei-sync`); continuar questão por questão, usando fontes oficiais atuais.
+4. Teste Node versionado: `tests/lei-em-dia-auditoria-20261012.mjs`, executado e aprovado no GitHub Actions.
+5. Suítes executadas e aprovadas: `node --test tests/lei-em-dia-auditoria-20261012.mjs`, `npm test`, `test:lei-adm`, `test:lei-cf`, `test:lei-civil`, `test:lei-restantes`, `test:lei-sync`. Próxima etapa: continuar conferência jurídica individual com fontes oficiais.
 6. Após desbloqueio da quota Vercel: implantar branch em preview, validar interação, tablets/celular/desktop, manter produção intocada.
+
+## Resultado de CI (verificado em 12/10/2026)
+
+- PR rascunho: https://github.com/Diogooliveira-bot/central-de-estudos-2026/pull/86 — **NÃO FAZER MERGE**.
+- Workflow de auditoria: https://github.com/Diogooliveira-bot/central-de-estudos-2026/actions/runs/38312980756 — sucesso, 63 testes aprovados, zero falhas. Testes de preservação de IDs, gabaritos, renderização, filtros, estatísticas e progresso são verificações técnicas, não certificação jurídica de todas as questões.
+- Workflow de Administração: https://github.com/Diogooliveira-bot/central-de-estudos-2026/actions/runs/38312980782 — sucesso. Chromium Playwright simulou aluno nas larguras de 390px e 1280px; banco com 856 questões administrativas apresentado em ambos.
+- Falhas iniciais das suítes: expectativas de contagem anteriores à integração dos itens LED e hash original da versão piloto. Testes reconciliados mantendo hash pré-correção documentado e contagens dinâmicas do catálogo LED. Resultado final verde.
+- **Prévia Vercel**: NÃO GERADA. HTTP 402, cota diária `api-deployments-free-per-day` atingida (mais de 100); listagem de deployments da branch retornou zero. Não há link de prévia a fornecer.
+- Produção não modificada. Nenhuma mesclagem ou promoção realizada.
