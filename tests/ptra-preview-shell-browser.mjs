@@ -55,6 +55,48 @@ test('PTRA: o bootstrap real da Central precisa mostrar leitor atualizado e não
   assert.equal(result.new,1);
   assert.equal(result.qs,5);
   assert.ok(result.buttons>=10);
+  // Alternar entre Resumida e Completa jamais pode misturar textos ou questões.
+  await page.evaluate(async()=>{
+    const first=window.PtraNative.openReader(1,'resumido');
+    const second=window.PtraNative.openReader(1,'completo');
+    await Promise.all([first,second]);
+  });
+  await page.waitForSelector('#ptra-native-overlay .ptra-book[data-ptra-mode="completo"]',{timeout:15000});
+  const full=await page.evaluate(()=>({
+    mode:document.querySelector('#ptra-native-overlay .ptra-book')?.dataset.ptraMode,
+    headers:[...document.querySelectorAll('#ptra-native-overlay .ptra-book-cover>p')].map(x=>x.textContent),
+    books:document.querySelectorAll('#ptra-native-overlay .ptra-book').length,
+    questions:document.querySelectorAll('#ptra-native-overlay .ptra-book-qcard').length,
+    old:document.querySelectorAll('#ptra-native-overlay .ptra-native-page').length,
+    original:document.querySelector('#ptra-native-overlay .ptra-book-source pre')?.textContent||''
+  }));
+  assert.equal(full.mode,'completo');
+  assert.equal(full.books,1,'Somente uma apostila deve existir no leitor');
+  assert.equal(full.questions,10,'Apostila Completa deve ter exclusivamente as 10 questões correspondentes');
+  assert.equal(full.old,0);
+  assert.match(full.headers[0],/TEORIA COMPLETA/);
+  assert.match(full.original,/PDF COMPLETO/);
+  assert.doesNotMatch(full.original,/PDF RESUMIDO/);
+  await page.evaluate(async()=>{
+    const first=window.PtraNative.openReader(1,'completo');
+    const second=window.PtraNative.openReader(1,'resumido');
+    await Promise.all([first,second]);
+  });
+  const short=await page.evaluate(()=>({
+    mode:document.querySelector('#ptra-native-overlay .ptra-book')?.dataset.ptraMode,
+    header:document.querySelector('#ptra-native-overlay .ptra-book-cover>p')?.textContent,
+    books:document.querySelectorAll('#ptra-native-overlay .ptra-book').length,
+    questions:document.querySelectorAll('#ptra-native-overlay .ptra-book-qcard').length,
+    original:document.querySelector('#ptra-native-overlay .ptra-book-source pre')?.textContent||''
+  }));
+  assert.equal(short.mode,'resumido');
+  assert.equal(short.books,1);
+  assert.equal(short.questions,5);
+  assert.match(short.header,/TEORIA RESUMIDA/);
+  assert.match(short.original,/PDF RESUMIDO/);
+  assert.doesNotMatch(short.original,/PDF COMPLETO/);
+  console.log('PTRA_VERSIONS_ISOLATED',JSON.stringify({fullQuestions:full.questions,shortQuestions:short.questions,fullLength:full.original.length,shortLength:short.original.length}));
+
  } finally {await page.close();await browser.close();}
 });
 test.after(()=>new Promise(resolve=>server.close(resolve)));
