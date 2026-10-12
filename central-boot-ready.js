@@ -7,7 +7,7 @@
     failed=true;
     if(!document.getElementById('status')){document.addEventListener('DOMContentLoaded',fail,{once:true});return;}
     document.getElementById('status').textContent='Não foi possível concluir o carregamento. Verifique a conexão e tente novamente.';
-    document.querySelector('#central-boot-screen .spinner').hidden=true;
+    var spinner=document.querySelector('#central-boot-screen .spinner');if(spinner)spinner.hidden=true;
     var retry=document.getElementById('retry');retry.hidden=false;retry.onclick=function(){location.reload()};
   }
   function ready(){
@@ -17,7 +17,7 @@
   function check(){
     if(failed)return;
     if(!ready()){
-      if(Date.now()-started>60000){fail();return;}
+      if(Date.now()-started>15000){fail();return;}
       timer=setTimeout(check,50);return;
     }
     // Apply the final render before revealing it; layout decorators use animation frames.

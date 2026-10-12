@@ -80,7 +80,7 @@
    return '';
   });
   groups.civil=groups.civil.filter(function(src){var path=src.split('?')[0].replace(/^\//,'');return path!=='content/civil/civil-native-index.js'&&path!=='content/civil/civil-sharing-links.js'&&path!=='ui/civil-native-study-v1.js'});
-  groups.civil=['content/civil/civil-native-index.js?v=20261005civil1'].concat(groups.civil,['content/civil/civil-sharing-links.js?v=20261009civilsharing2','ui/civil-bens-apostila-v1.js?v=20261011m03a1','ui/civil-native-study-v1.js?v=20261009civilsharing2']);
+  groups.civil=['content/civil/civil-native-index.js?v=20261005civil1'].concat(groups.civil,['content/civil/civil-sharing-links.js?v=20261009civilsharing2','ui/civil-bens-apostila-v1.js?v=20261011m03a1','ui/civil-native-study-v1.js?v=20261009civilsharing2','ui/civil-eight-apostilas-v1.js?v=20261011civil8v2']);
   var config='<scr'+'ipt>window.__centralDisciplineFiles='+JSON.stringify(groups)+';</scr'+'ipt>';
   return html.replace(/<head\b[^>]*>/i,function(head){return head+config+tag('central-home-progress-data.js?v='+BUILD).replace(' defer','')+tag('central-discipline-loader.js?v='+BUILD).replace(' defer','')});
  }
