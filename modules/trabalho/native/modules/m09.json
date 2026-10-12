@@ -283,16 +283,16 @@
       {
         "id": "DT-M09-COMPLETA-Q10",
         "numero": 10,
-        "enunciado": "[DIFÍCIL] Empregada tem filho de 5 anos e pleiteia vaga compatível com teletrabalho e,\nsimultaneamente, uma das medidas temporárias de flexibilização de jornada tratadas pela Lei\n14.457/2022. Conforme a distinção feita no M9:",
+        "enunciado": "[DIFÍCIL] Uma empregada tem filho de 5 anos e solicita prioridade para vaga compatível com teletrabalho e, ao mesmo tempo, prioridade para adoção do regime de tempo parcial previsto no art. 8º, I, da Lei nº 14.457/2022. Assinale a alternativa correta sobre os respectivos limites etários.",
         "alternativas": {
           "A": "Nenhuma medida é possível, pois todos os benefícios cessam aos 2 anos de idade.",
-          "B": "A prioridade para vaga de teletrabalho pode alcançar a referência de até 6 anos, enquanto as medidas de\n    flexibilização do bloco estudado têm marco temporal próprio de até o segundo ano do nascimento, adoção\n   ou guarda.",
+          "B": "A prioridade para vaga compatível com teletrabalho alcança filho de até 6 anos; já a prioridade para regime de tempo parcial do art. 8º, I, sujeita-se ao limite de até o segundo ano do nascimento, adoção ou guarda (art. 8º, § 1º).",
           "C": "A prioridade ao teletrabalho só existe até 2 anos, e as flexibilizações até 6 anos.",
           "D": "A existência de filho com deficiência está sujeita ao mesmo limite de 6 anos para prioridade de\n    teletrabalho.",
           "E": "Teletrabalho e medidas de flexibilização possuem exatamente o mesmo recorte temporal."
         },
         "gabarito": "B",
-        "comentario": "10. Alternativa B — Difícil\nFundamento: Lei 14.457/2022, no recorte reproduzido pela apostila e consolidado na auditoria.\nA pegadinha é confundir dois marcos diferentes dentro do mesmo bloco. A prioridade para vagas compatíveis com\nteletrabalho usa a referência de até 6 anos (e deficiência sem limite de idade para essa prioridade), enquanto as\nmedidas de flexibilização destacadas pela fonte são limitadas ao segundo ano do nascimento, adoção ou guarda.",
+        "comentario": "10. Alternativa B — Difícil.\nFundamento: Lei nº 14.457/2022, art. 7º, I e II, e art. 8º, caput, I e IV, e § 1º.\nPara vagas compatíveis com teletrabalho, a prioridade alcança empregados com filho, enteado ou criança sob guarda de até seis anos, e não há limite etário para pessoa com deficiência abrangida pelo art. 7º, II. Já a limitação ao segundo ano do nascimento, da adoção ou da guarda prevista no art. 8º, § 1º, aplica-se especificamente ao regime de tempo parcial (inciso I) e à antecipação de férias individuais (inciso IV), e NÃO indistintamente a todas as medidas de flexibilização do art. 8º. Neste caso, o filho de cinco anos dá ensejo à prioridade para a vaga compatível com teletrabalho, mas não à prioridade especial de regime de tempo parcial do art. 8º, I e § 1º. Fonte oficial: https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2022/lei/l14457.htm",
         "status": "PENDENTE_REVISAO_JURIDICA",
         "alertas": ""
       }
