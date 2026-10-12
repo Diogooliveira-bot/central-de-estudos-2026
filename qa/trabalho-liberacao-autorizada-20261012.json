@@ -1,0 +1,22 @@
+{
+  "schema": "base-completa-liberacao-com-ressalvas-1",
+  "data": "2026-10-12",
+  "escopo": "direito-do-trabalho-m01-m18",
+  "origem": "Autorização explícita do responsável pela Central na conversa após apresentação de pendências",
+  "autorizacaoPublicacao": true,
+  "homologacaoJuridicaIntegral": false,
+  "estadoAuditoria": {
+    "questoesTotal": 270,
+    "questoesComCotejoIndividual": 251,
+    "questoesPreviamenteTriadas": 19,
+    "anomaliasEstruturais": 0
+  },
+  "ressalvasConhecidas": [
+    "Correções dos JSONs ainda não sincronizadas com os PDFs-fonte; não declarar equivalência integral PDF/JSON.",
+    "Cotejos jurídicos documentais não são pareceres individuais independentes, e referências das teorias podem precisar de atualização.",
+    "Teste autenticado de ponta a ponta em dispositivo real e offline/PWA ainda não comprovado nesta rodada."
+  ],
+  "seguranca": "Publicar apenas via PR após conciliar main; preservar banco Lei em Dia e demais disciplinas. Manter acompanhamento das ressalvas no pós-publicação.",
+  "versaoAprovadaDaInterface": "cfd6cad0d358055e4d001267a5a2a2665bc43277",
+  "caminhoAuditoria": "qa/trabalho-251-triagem-individual-20261012.json"
+}
