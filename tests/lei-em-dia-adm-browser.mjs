@@ -31,9 +31,9 @@ try{
   await page.locator(".qc-pop .qc-opt").filter({hasText:"Direito Administrativo"}).click();
   const inventory=await page.evaluate(()=>({discipline:currentDiscipline().id,questions:allActive().length,laws:disciplineTopics().length,lawCounts:Object.fromEntries(["adm-lei-9784","adm-lei-12527","adm-lei-13709","adm-lei-14133"].map(id=>[id,allActive().filter(q=>q.topicId===id).length])),originCounts:Object.fromEntries(["real","authorial","unverified"].map(k=>[k,allActive().filter(q=>qcOrigin(q)===k).length]))}));
   assert.equal(inventory.discipline,"adm");
-  assert.equal(inventory.questions,765);
-  assert.equal(inventory.laws,25);
-  assert.deepEqual(inventory.originCounts,{"real":309,"authorial":444,"unverified":12});
+  assert.equal(inventory.questions,856);
+  assert.equal(inventory.laws,28);
+  assert.deepEqual(inventory.originCounts,{"real":309,"authorial":535,"unverified":12});
   assert.ok((await page.locator(".qc-origin-options").textContent()).includes("Origem a confirmar"));
   const unverifiedFiltered=await page.evaluate(()=>{ui.fOrigin="unverified";const result=selectedActive().length;ui.fOrigin="";return result});
   assert.equal(unverifiedFiltered,12);
