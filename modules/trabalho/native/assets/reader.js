@@ -9,11 +9,93 @@ function persist(key,value){try{store.setItem(storageKey(key),JSON.stringify(val
 function load(key,fallback){try{const s=store.getItem(storageKey(key));return s?JSON.parse(s):fallback}catch(_){return fallback}}
 function el(tag,cls,text){const e=document.createElement(tag);if(cls)e.className=cls;if(text!==undefined)e.textContent=text;return e}
 function clear(target){target.replaceChildren()}
-function setTabs(){const quiz=mode!=='infografico'&&data&&page>=data.tipos[mode].paginas.length;$('btnQuizTop').textContent=quiz?'Voltar à leitura':mode==='completa'?'Ir às 10 questões':'Ir às 5 questões';$('btnQuizTop').hidden=mode==='infografico';for(const b of document.querySelectorAll('[data-tab]'))b.setAttribute('aria-selected',String(b.dataset.tab===mode));$('pdfLink').hidden=true;$('pageLabel').hidden=mode==='infografico';$('prev').hidden=$('next').hidden=$('prevBottom').hidden=$('nextBottom').hidden=true;}
-function progress(){const total=data.tipos[mode]?.numero_paginas||0,v=Object.keys(readPages[mode]||{}).filter(k=>(readPages[mode]||{})[k]).length;const pct=total?Math.round(100*v/total):0;$('progress').querySelector('span').style.width=pct+'%';$('progressText').textContent=total?`${v}/${total} páginas visitadas (${pct}%)`:'Visualização do infográfico';}
-function renderSide(){clear($('sideNav'));for(const [key,name] of [['resumida','Teoria resumida'],['completa','Teoria completa'],['infografico','Infográfico']]){const b=el('button',mode===key?'active':'',name);b.type='button';b.onclick=()=>change(key);$('sideNav').appendChild(b)}if(mode!=='infografico'){const b=el('button','','Questões de fixação ('+data.questoes[mode].length+')');b.onclick=()=>{page=data.tipos[mode].paginas.length;render()};$('sideNav').appendChild(b)}}
-function change(next){if(!data)return;mode=next;page=0;render()}
-function markRead(){if(mode==='infografico'||page>=data.tipos[mode].numero_paginas)return;readPages[mode]??={};readPages[mode][String(page)]=true;persist('read-pages',readPages)}
+
+function progress(){
+  if(!data)return;
+  const root=$('studyFooter'),summary=$('progressText'),track=$('progress')?.querySelector('span');
+  if(mode==='infografico'){
+    root.querySelector('.reader-study-progress').hidden=true;
+    return;
+  }
+  root.querySelector('.reader-study-progress').hidden=false;
+  const total=data.tipos[mode].numero_paginas;
+  const visited=readPages[mode]||{};
+  const count=Object.keys(visited).filter(i=>visited[i]).length;
+  const pct=total?Math.min(100,Math.round(100*count/total)):0;
+  if(track)track.style.width=pct+'%';
+  if(summary)summary.textContent=count+' de '+total+' páginas de origem visitadas · '+pct+'%';
+}
+function theoryPagesWithoutPrintedQuestions(pages){
+  // Os PDFs originais contêm perguntas e gabaritos impressos.
+  // Retiramos apenas a duplicação VISUAL, mantendo o JSON intacto;
+  // as questões estruturadas e atualizadas são exibidas ao final da apostila.
+  const questionHeading=/(?:^|\n)[ \t]*(?:#{1,3}[ \t]*)?(?:(?:\d{1,2})[.)]?[ \t]+|M\d{1,2}[ \t]*[—-][ \t]*)?(?:(?:5|10)[ \t]+)?quest[õo]es?(?:[ \t]+de)?[ \t]+fixa[çc][ãa]o\b/i;
+  let endPage=pages.length,endIndex=0,cut=false;
+  const start=Math.floor(pages.length*.59);
+  for(let i=start;i<pages.length;i++){
+    const match=questionHeading.exec(pages[i]);
+    if(match){endPage=i;endIndex=match.index;cut=true;break;}
+  }
+  const items=[];
+  for(let i=0;i<pages.length;i++){
+    if(cut&&i>endPage)break;
+    let part=cut&&i===endPage?pages[i].slice(0,endIndex):pages[i];
+    if(i===0){
+      const section=/\n[ \t]*(?:VISÃO GERAL|CONCEITOS ESSENCIAIS|FUNDAMENTO LEGAL PRINCIPAL)[ \t]*\n/i.exec(part);
+      if(section)part=part.slice(section.index);
+      else {
+        readPages[mode]??={};
+        if(!readPages[mode]['0']){readPages[mode]['0']=true;persist('read-pages',readPages);}
+        continue; // Evita repetir a capa do PDF; não omite páginas de teoria.
+      }
+    }
+    if(part.trim())items.push({index:i,text:part});
+  }
+  return items;
+}
+function renderTheory(){
+  const pages=data.tipos[mode].paginas,content=$('content');
+  clear(content);
+  if(window.__dtPageObserver){window.__dtPageObserver.disconnect();window.__dtPageObserver=null;}
+  const article=el('article','textpage reader-document');
+  article.style.setProperty('--reader-font',size+'px');
+  const header=el('header','reader-document-heading');
+  header.append(
+    el('small','reader-eyebrow','BASE COMPLETA · DIREITO DO TRABALHO · M'+data.numero),
+    el('h1','',data.titulo),
+    el('p','reader-deck',mode==='completa'?'Teoria Completa':'Teoria Resumida'),
+    el('small','reader-document-status','Material em pré-homologação jurídica.'),
+  );
+  article.appendChild(header);
+  const segments=theoryPagesWithoutPrintedQuestions(pages);
+  for(const item of segments){
+    const section=el('section','reader-source-page');
+    section.dataset.readerPage=String(item.index);
+    section.id='dt-'+mod+'-'+mode+'-p'+(item.index+1);
+    appendStructuredContent(section,item.text);
+    article.appendChild(section);
+  }
+  const headings=Array.from(article.querySelectorAll('.reader-source-page h2')).filter(h=>h.textContent.length<125).slice(0,42);
+  if(headings.length>=3){
+    const toc=el('details','reader-toc'),summary=el('summary','','Navegar pelos assuntos desta apostila'),list=el('ol');
+    headings.forEach((h,i)=>{h.id='dt-'+mod+'-'+mode+'-sec'+(i+1);const li=el('li'),a=el('a','',h.textContent);a.href='#'+h.id;li.appendChild(a);list.appendChild(li);});
+    toc.append(summary,list);
+    article.insertBefore(toc,header.nextSibling);
+  }
+  const quiz=el('section','reader-questions');quiz.id='questoes';
+  quiz.append(
+    el('h2','reader-question-heading','Questões de fixação'),
+    el('p','reader-question-intro',mode==='completa'?'10 questões comentadas para fixar a teoria.':'5 questões comentadas para fixar a teoria.')
+  );
+  for(const q of data.questoes[mode])renderQuestion(q,quiz);
+  article.appendChild(quiz);
+  content.appendChild(article);
+  progress();
+  requestAnimationFrame(()=>{
+    observeReadingPages();
+    if(query.get('questoes')==='1')quiz.scrollIntoView({block:'start',behavior:'instant'});
+  });
+}
 function appendStructuredContent(target,raw){
   const chunks=String(raw??'').replace(/\r/g,'').replace(/\f/g,'').split(/\n[ \t]*\n+/).map(v=>v.trim()).filter(Boolean);
   const ignored=/^(?:BASE COMPLETA(?:\s*[|·•]\s*DIREITO DO TRABALHO(?:\s*[|·•]\s*M\d+)?)?|DIREITO DO TRABALHO|TEORIA RESUMIDA|TEORIA COMPLETA|REVISÃO INTEGRADA\s*-\s*NÃO HOMOLOGADO PARA PUBLICAÇÃO|PÁGINA\s+\d+(?:\s+DE\s+\d+)?)$/i;
@@ -94,49 +176,52 @@ function observeReadingPages(){
   sections.forEach(section=>observer.observe(section));
   window.__dtPageObserver=observer;
 }
-function textSection(){
-  const pages=data.tipos[mode].paginas,length=pages.length,content=$('content');
+function renderQuestion(q,root){const block=el('section','question'),title=el('div','q-title',`${q.numero}. ${q.enunciado}`);block.appendChild(title);const field=el('div');field.setAttribute('role','radiogroup');field.setAttribute('aria-label','Alternativas da questão '+q.numero);const key=q.id;for(const [letter,text] of Object.entries(q.alternativas)){const lab=el('label','choice');const radio=document.createElement('input');radio.type='radio';radio.name='q-'+key;radio.value=letter;radio.checked=answered.get(key)===letter;lab.append(radio,el('span','',`${letter}) ${text}`));field.appendChild(lab)}block.appendChild(field);const button=el('button','','Conferir resposta');button.type='button';const feedback=el('div','feedback hidden');feedback.setAttribute('role','status');button.onclick=()=>{const c=field.querySelector('input:checked');if(!c){feedback.className='feedback wrong';feedback.textContent='Selecione uma alternativa antes de conferir.';return}answered.set(key,c.value);persist('answers',Object.fromEntries(answered));const correct=c.value===q.gabarito;feedback.className=correct?'feedback':'feedback wrong';clear(feedback);feedback.append(el('strong','',correct?'Resposta conforme o gabarito original.':'Resposta diferente do gabarito original.'),el('div','',`Gabarito: ${q.gabarito}\n\n${q.comentario}`),el('small','muted','Revisão jurídica de mérito pendente.'));};block.append(button,feedback);root.appendChild(block)}
+
+function renderImage(){
+  const content=$('content');clear(content);
   if(window.__dtPageObserver){window.__dtPageObserver.disconnect();window.__dtPageObserver=null;}
-  clear(content);
-  $('pdfLink').href=data.tipos[mode].pdf;
-  if(page<length){
-    const article=el('article','textpage reader-document');
-    article.style.setProperty('--reader-font',size+'px');
-    const header=el('header','reader-document-heading');
-    header.appendChild(el('small','reader-eyebrow',`BASE COMPLETA · DIREITO DO TRABALHO · M${data.numero}`));
-    header.appendChild(el('h1','',data.titulo));
-    header.appendChild(el('p','reader-deck',mode==='completa'?'Teoria Completa · Leitura contínua':'Teoria Resumida · Revisão estratégica'));
-    header.appendChild(el('small','reader-document-status','Conteúdo em pré-homologação jurídica · Referências e erratas estão sinalizadas no material.'));
-    article.appendChild(header);
-    for(let i=0;i<length;i++){
-      const section=el('section','reader-source-page');
-      section.dataset.readerPage=String(i);
-      section.id=`dt-${mod}-${mode}-p${i+1}`;
-      appendStructuredContent(section,pages[i]);
-      article.appendChild(section);
-    }
-    const headings=Array.from(article.querySelectorAll('.reader-source-page h2')).filter(h=>h.textContent.length<125).slice(0,42);
-    if(headings.length>=3){
-      const toc=el('details','reader-toc'),summary=el('summary','','Navegar pelos assuntos desta apostila'),list=el('ol');
-      headings.forEach((h,index)=>{h.id=`dt-${mod}-${mode}-sec${index+1}`;const li=el('li'),a=el('a','',h.textContent);a.href='#'+h.id;li.appendChild(a);list.appendChild(li);});
-      toc.append(summary,list);article.insertBefore(toc,header.nextSibling);
-    }
-    content.appendChild(article);
-    $('pageLabel').textContent=`Leitura contínua · ${length} páginas de origem`;
-    requestAnimationFrame(observeReadingPages);
-  }else{
-    content.appendChild(el('h2','reader-question-heading',`Questões de fixação — ${mode==='completa'?10:5} itens`));
-    content.appendChild(el('p','muted','Selecione uma alternativa e clique em Conferir para visualizar o gabarito e o comentário.'));
-    data.questoes[mode].forEach(q=>renderQuestion(q,content));
-    $('pageLabel').textContent='Questões de fixação';
-  }
-  $('prev').disabled=$('prevBottom').disabled=true;
-  $('next').disabled=$('nextBottom').disabled=true;
+  const article=el('article','reader-infographic');
+  article.appendChild(el('h1','',data.titulo));
+  const wrap=el('div','image-wrap'),img=document.createElement('img');
+  img.alt='Infográfico de revisão do módulo '+data.numero;
+  img.src=new URL(data.infografico,new URL('modules/',location.href)).href;
+  img.loading='eager';
+  wrap.appendChild(img);article.appendChild(wrap);content.appendChild(article);
   progress();
 }
-function renderQuestion(q,root){const block=el('section','question'),title=el('div','q-title',`${q.numero}. ${q.enunciado}`);block.appendChild(title);const field=el('div');field.setAttribute('role','radiogroup');field.setAttribute('aria-label','Alternativas da questão '+q.numero);const key=q.id;for(const [letter,text] of Object.entries(q.alternativas)){const lab=el('label','choice');const radio=document.createElement('input');radio.type='radio';radio.name='q-'+key;radio.value=letter;radio.checked=answered.get(key)===letter;lab.append(radio,el('span','',`${letter}) ${text}`));field.appendChild(lab)}block.appendChild(field);const button=el('button','','Conferir resposta');button.type='button';const feedback=el('div','feedback hidden');feedback.setAttribute('role','status');button.onclick=()=>{const c=field.querySelector('input:checked');if(!c){feedback.className='feedback wrong';feedback.textContent='Selecione uma alternativa antes de conferir.';return}answered.set(key,c.value);persist('answers',Object.fromEntries(answered));const correct=c.value===q.gabarito;feedback.className=correct?'feedback':'feedback wrong';clear(feedback);feedback.append(el('strong','',correct?'Resposta conforme o gabarito original.':'Resposta diferente do gabarito original.'),el('div','',`Gabarito: ${q.gabarito}\n\n${q.comentario}`),el('small','muted','Revisão jurídica de mérito pendente.'));};block.append(button,feedback);root.appendChild(block)}
-function renderImage(){const content=$('content');clear(content);content.append(el('h2','','Infográfico de revisão — M'+data.numero),el('p','muted','Imagem preparada para revisão, ainda não homologada juridicamente.'));const wrap=el('div','image-wrap'),img=document.createElement('img');img.alt='Infográfico do módulo '+data.numero;img.src=new URL(data.infografico,new URL('modules/',location.href)).href;img.loading='eager';wrap.appendChild(img);content.appendChild(wrap);progress()}
-function render(){if(!data)return;setTabs();renderSide();if(mode==='infografico'){renderImage();return}textSection()}
-$('btnQuizTop').onclick=()=>{if(!data||mode==='infografico')return;page=page>=data.tipos[mode].paginas.length?0:data.tipos[mode].paginas.length;render();window.scrollTo({top:0,behavior:'instant'})};const step=delta=>{if(mode==='infografico')return;page=Math.max(0,Math.min(data.tipos[mode].paginas.length,page+delta));render();window.scrollTo({top:0,behavior:'instant'})};$('prev').onclick=$('prevBottom').onclick=()=>step(-1);$('next').onclick=$('nextBottom').onclick=()=>step(1);for(const b of document.querySelectorAll('[data-tab]'))b.onclick=()=>change(b.dataset.tab);$('minus').onclick=()=>{size=Math.max(13,size-2);const doc=document.querySelector('.reader-document');if(doc)doc.style.setProperty('--reader-font',size+'px');else render()};$('plus').onclick=()=>{size=Math.min(26,size+2);const doc=document.querySelector('.reader-document');if(doc)doc.style.setProperty('--reader-font',size+'px');else render()};$('saveNotes').onclick=()=>{persist('notes',$('notes').value);$('notesStatus').textContent='Anotação salva nesta sessão/conta.'};$('btnClose').onclick=()=>{if(window.parent!==window){window.parent.postMessage({type:'BC_TRABALHO_CLOSE_READER'},location.origin)}else location.href='index.html'};if(window.parent!==window)$('btnClose').classList.remove('hidden');
+function render(){
+  if(!data)return;
+  if(mode==='infografico')renderImage();else renderTheory();
+}
+function changeFont(delta){
+  size=Math.max(13,Math.min(26,size+delta));
+  const doc=document.querySelector('.reader-document');
+  if(doc)doc.style.setProperty('--reader-font',size+'px');
+}
+$('minus').onclick=()=>changeFont(-2);
+$('plus').onclick=()=>changeFont(2);
+$('saveNotes').onclick=()=>{persist('notes',$('notes').value);$('notesStatus').textContent='Anotação salva.';};
 if(window.parent!==window)document.documentElement.classList.add('reader-embedded');
-(async()=>{try{await initAccount();const response=await fetch('modules/m'+mod+'.json',{cache:'no-cache'});if(!response.ok)throw new Error('HTTP '+response.status);data=await response.json();$('title').textContent=`M${data.numero} — ${data.titulo}`;$('notes').value=load('notes','');readPages=load('read-pages',{});for(const [id,letter] of Object.entries(load('answers',{})))answered.set(id,letter);if(query.get('material')==='completa')mode='completa';else if(query.get('material')==='infografico')mode='infografico';if(query.get('questoes')==='1'&&mode!=='infografico')page=data.tipos[mode].paginas.length;render()}catch(e){$('title').textContent='Erro ao abrir módulo';$('content').textContent='Não foi possível carregar o material: '+e.message}})();})();
+(async()=>{
+  try{
+    await initAccount();
+    const response=await fetch('modules/m'+mod+'.json',{cache:'no-cache'});
+    if(!response.ok)throw new Error('HTTP '+response.status);
+    data=await response.json();
+    if(!data.tipos?.resumida?.paginas||!data.tipos?.completa?.paginas)throw new Error('Conteúdo incompleto no módulo.');
+    $('notes').value=load('notes','');
+    readPages=load('read-pages',{});
+    for(const [id,letter] of Object.entries(load('answers',{})))answered.set(id,letter);
+    mode=query.get('material')==='completa'?'completa':query.get('material')==='infografico'?'infografico':'resumida';
+    document.title='M'+data.numero+' — '+data.titulo+' | Base Completa';
+    render();
+  }catch(e){
+    console.error('Não foi possível carregar o módulo',e);
+    const host=$('content');clear(host);
+    const error=el('p','reader-load-error','Não foi possível carregar o material: '+e.message);
+    host.appendChild(error);
+    $('studyFooter').hidden=true;
+  }
+})();
+})();
