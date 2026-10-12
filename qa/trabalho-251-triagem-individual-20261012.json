@@ -1,7 +1,7 @@
 {
   "schema": "base-completa-triagem-juridica-20261012-v1",
   "dataCorte": "2026-10-12",
-  "observacao": "TRIAGEM DOCUMENTAL, NÃO É CERTIFICAÇÃO INDIVIDUAL DE MÉRITO. As 251 questões foram inventariadas com suas cinco alternativas, gabarito, comentário e pontos de atenção. Não confundir triagem automatizada com validação jurídica conclusiva; cada item ainda exige cotejo individual de enunciado, todas as alternativas, gabarito, comentário e fundamentos atualizados. Cotejo normativo de 23 questões pendentes da R4 concluído (e quatro questões previamente revisadas rechecadas). O cotejo dos 228 itens restantes e a integração das erratas dos PDFs continuam pendentes. Adicionalmente, 27 questões dos módulos M01 e M02 foram cotejadas (inclusive princípios e cronologia), totalizando 50/251 com verificação individual de alternativas e comentários. Mais 27 enunciados, respostas, distratores e comentários dos módulos M03/M04 cotejados; conclusão acumulada 77/251. Foram cotejadas mais 24 questões dos M05 e M06 com fundamento e cinco alternativas, total 101/251. Cotejo dos módulos M07/M08 acrescentou 24 verificações individuais, total 125/251; core STF 246 não implica responsabilidade pública automática. M09 e M10: mais 23 questões cotejadas, totalizando 148/251, inclusive legislação do artista e teletrabalho. Cotejadas mais 20 questões pendentes de M11/M12, total 168/251; férias, pagamentos, equiparação e Súmula 91. Cotejo dos M13/M14 acrescentou 29 itens, total 197/251, incluindo FGTS, 13º, segurança, NR 5/NR 15 e precedentes. M15 e M16: 26 cotejos documentais adicionais de cada enunciado, distratores, gabaritos e comentários, anotando efeito temporal do Tema 1022. Total: 223/251; pendentes 28.",
+  "observacao": "TRIAGEM DOCUMENTAL, NÃO É CERTIFICAÇÃO INDIVIDUAL DE MÉRITO. As 251 questões foram inventariadas com suas cinco alternativas, gabarito, comentário e pontos de atenção. Não confundir triagem automatizada com validação jurídica conclusiva; cada item ainda exige cotejo individual de enunciado, todas as alternativas, gabarito, comentário e fundamentos atualizados. Cotejo normativo de 23 questões pendentes da R4 concluído (e quatro questões previamente revisadas rechecadas). O cotejo dos 228 itens restantes e a integração das erratas dos PDFs continuam pendentes. Adicionalmente, 27 questões dos módulos M01 e M02 foram cotejadas (inclusive princípios e cronologia), totalizando 50/251 com verificação individual de alternativas e comentários. Mais 27 enunciados, respostas, distratores e comentários dos módulos M03/M04 cotejados; conclusão acumulada 77/251. Foram cotejadas mais 24 questões dos M05 e M06 com fundamento e cinco alternativas, total 101/251. Cotejo dos módulos M07/M08 acrescentou 24 verificações individuais, total 125/251; core STF 246 não implica responsabilidade pública automática. M09 e M10: mais 23 questões cotejadas, totalizando 148/251, inclusive legislação do artista e teletrabalho. Cotejadas mais 20 questões pendentes de M11/M12, total 168/251; férias, pagamentos, equiparação e Súmula 91. Cotejo dos M13/M14 acrescentou 29 itens, total 197/251, incluindo FGTS, 13º, segurança, NR 5/NR 15 e precedentes. M15 e M16: 26 cotejos documentais adicionais de cada enunciado, distratores, gabaritos e comentários, anotando efeito temporal do Tema 1022. Total: 223/251; pendentes 28. Em 12/10/2026 foram concluídos 28 registros de cotejo documental de M17/M18. Todos os 251 itens têm justificativa específica, fonte de referência e análise dos distratores. ISSO NÃO EQUIVALE À HOMOLOGAÇÃO JURÍDICA FINAL DAS APOSTILAS/PDFs.",
   "fontesCotejadas": [
     "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
     "https://www.planalto.gov.br/ccivil_03/constituicao/constituicaocompilado.htm",
@@ -25,8 +25,8 @@
     ],
     "certificadasIntegralmenteNestaRodada": 0,
     "homologacao": false,
-    "cotejosNormativosConcluidosNaRodada": 223,
-    "pendentesCotejoNormativoNaRodada": 28,
+    "cotejosNormativosConcluidosNaRodada": 251,
+    "pendentesCotejoNormativoNaRodada": 0,
     "rechecadosDaRodadaAnterior": 4
   },
   "registros": [
@@ -4900,11 +4900,20 @@
       "textoGabarito": "não pode ser inferior à área de um Município.",
       "enunciado": "Fácil A base territorial sindical, segundo o art. 8º estudado,",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_DOCUMENTAL_CONCLUIDO_COM_CONTROLES",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/constituicao/constituicaocompilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m17.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m17.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_DOCUMENTAL_DO_MERITO",
+        "fundamento": "CF art. 8º II",
+        "conclusao": "A base territorial sindical não pode ser inferior à área de um município; igualdade obrigatória e bases menores são falsas.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/constituicao/constituicaocompilado.htm",
+        "corte": "2026-10-12",
+        "checagem": "enunciado, alternativas A-E, gabarito e comentário",
+        "observacao": null
+      }
     },
     {
       "id": "DT-M17-RESUMIDA-Q02",
@@ -4914,11 +4923,20 @@
       "textoGabarito": "3 federações.",
       "enunciado": "Fácil Uma confederação organiza-se, conforme a CLT recuperada, com no mínimo",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_DOCUMENTAL_CONCLUIDO_COM_CONTROLES",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/constituicao/constituicaocompilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m17.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m17.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_DOCUMENTAL_DO_MERITO",
+        "fundamento": "CLT art. 535",
+        "conclusao": "Confederação exige pelo menos três federações, não três ou cinco sindicatos.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "corte": "2026-10-12",
+        "checagem": "enunciado, alternativas A-E, gabarito e comentário",
+        "observacao": null
+      }
     },
     {
       "id": "DT-M17-RESUMIDA-Q03",
@@ -4928,11 +4946,20 @@
       "textoGabarito": "A Súmula 369 recuperada exige pertinência entre a atividade exercida e a categoria do sindicato para o qual o empregado foi eleito.",
       "enunciado": "Média Assinale a alternativa correta sobre categoria profissional diferenciada e estabilidade sindical.",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_DOCUMENTAL_CONCLUIDO_COM_CONTROLES",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/constituicao/constituicaocompilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m17.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m17.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_DOCUMENTAL_DO_MERITO",
+        "fundamento": "TST Súmula 369 III",
+        "conclusao": "Estabilidade do dirigente de categoria diferenciada pressupõe atividade pertinente à categoria na empresa.",
+        "fonte": "https://www.tst.jus.br/documents/10157/c10e690e-08f5-44f5-a449-422b5460476b",
+        "corte": "2026-10-12",
+        "checagem": "enunciado, alternativas A-E, gabarito e comentário",
+        "observacao": null
+      }
     },
     {
       "id": "DT-M17-RESUMIDA-Q04",
@@ -4942,11 +4969,20 @@
       "textoGabarito": "deve ser apurada em inquérito judicial.",
       "enunciado": "Média Segundo a Súmula 379 recuperada, a falta grave do dirigente sindical",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_DOCUMENTAL_CONCLUIDO_COM_CONTROLES",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/constituicao/constituicaocompilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m17.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m17.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_DOCUMENTAL_DO_MERITO",
+        "fundamento": "CLT arts. 494, 543 §3º; TST Súmula 379; IRR 257",
+        "conclusao": "Falta grave de dirigente sindical requer inquérito judicial; tese reafirmada no IRR 257 em 2025.",
+        "fonte": "https://www.tst.jus.br/documents/d/guest/irr257temprandomsuffixhpawtiv7",
+        "corte": "2026-10-12",
+        "checagem": "enunciado, alternativas A-E, gabarito e comentário",
+        "observacao": null
+      }
     },
     {
       "id": "DT-M17-RESUMIDA-Q05",
@@ -4956,11 +4992,20 @@
       "textoGabarito": "O material associa a Convenção a liberdade/pluralidade, registra não ratificação e aponta tensão com a unicidade brasileira.",
       "enunciado": "Difícil Sobre Convenção 87 e sistema brasileiro, assinale a correta conforme o material.",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_DOCUMENTAL_CONCLUIDO_COM_CONTROLES",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/constituicao/constituicaocompilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m17.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m17.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_DOCUMENTAL_DO_MERITO",
+        "fundamento": "Convenção OIT 87; CF art. 8º II",
+        "conclusao": "A Convenção 87 prevê liberdade sindical, não foi ratificada pelo Brasil e contrasta com unicidade constitucional.",
+        "fonte": "https://normlex.ilo.org/dyn/nrmlx_en/f?p=1000:11210:0::NO:11210:P11210_COUNTRY_ID:102571",
+        "corte": "2026-10-12",
+        "checagem": "enunciado, alternativas A-E, gabarito e comentário",
+        "observacao": null
+      }
     },
     {
       "id": "DT-M17-COMPLETA-Q01",
@@ -4970,11 +5015,20 @@
       "textoGabarito": "é definida pelos interessados e não pode ser inferior à área de um Município.",
       "enunciado": "Fácil Nos termos do núcleo constitucional estudado, a base territorial de uma organização sindical",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_DOCUMENTAL_CONCLUIDO_COM_CONTROLES",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/constituicao/constituicaocompilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m17.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m17.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_DOCUMENTAL_DO_MERITO",
+        "fundamento": "CF art. 8º II",
+        "conclusao": "Base territorial definida pelos interessados, porém limitada pelo mínimo constitucional de um Município.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/constituicao/constituicaocompilado.htm",
+        "corte": "2026-10-12",
+        "checagem": "enunciado, alternativas A-E, gabarito e comentário",
+        "observacao": null
+      }
     },
     {
       "id": "DT-M17-COMPLETA-Q02",
@@ -4984,11 +5038,20 @@
       "textoGabarito": "exercem profissões ou funções diferenciadas por estatuto profissional especial ou condições de vida singulares.",
       "enunciado": "Fácil A categoria profissional diferenciada, segundo o art. 511, § 3º, da CLT recuperada, é formada por empregados que",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_DOCUMENTAL_CONCLUIDO_COM_CONTROLES",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/constituicao/constituicaocompilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m17.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m17.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_DOCUMENTAL_DO_MERITO",
+        "fundamento": "CLT art. 511 §3º",
+        "conclusao": "Categoria profissional diferenciada se relaciona a estatuto profissional especial ou condições de vida singulares.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "corte": "2026-10-12",
+        "checagem": "enunciado, alternativas A-E, gabarito e comentário",
+        "observacao": null
+      }
     },
     {
       "id": "DT-M17-COMPLETA-Q03",
@@ -4998,11 +5061,20 @@
       "textoGabarito": "5 sindicatos.",
       "enunciado": "Fácil Segundo a estrutura sindical recuperada da CLT, uma federação pode ser organizada por, no mínimo,",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_DOCUMENTAL_CONCLUIDO_COM_CONTROLES",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/constituicao/constituicaocompilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m17.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m17.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_DOCUMENTAL_DO_MERITO",
+        "fundamento": "CLT art. 534",
+        "conclusao": "Federação exige mínimo de cinco sindicatos, não três federações.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "corte": "2026-10-12",
+        "checagem": "enunciado, alternativas A-E, gabarito e comentário",
+        "observacao": null
+      }
     },
     {
       "id": "DT-M17-COMPLETA-Q04",
@@ -5012,11 +5084,20 @@
       "textoGabarito": "autorização prévia e expressa.",
       "enunciado": "Fácil Nos arts. 578 e 579 da CLT recuperada, a contribuição sindical depende de",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_DOCUMENTAL_CONCLUIDO_COM_CONTROLES",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/constituicao/constituicaocompilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m17.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m17.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_DOCUMENTAL_DO_MERITO",
+        "fundamento": "CLT arts. 578 e 579; STF Tema 935",
+        "conclusao": "Contribuição sindical exige autorização prévia expressa; não confundir com assistencial que admite direito de oposição.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "corte": "2026-10-12",
+        "checagem": "enunciado, alternativas A-E, gabarito e comentário",
+        "observacao": "Contribuição sindical da CLT difere de contribuição assistencial sob STF Tema 935, inclusive decisão integrativa 2025."
+      }
     },
     {
       "id": "DT-M17-COMPLETA-Q05",
@@ -5026,11 +5107,20 @@
       "textoGabarito": "A liberdade protege organização e adesão; a unicidade limita a multiplicidade de entidades da mesma categoria na mesma base.",
       "enunciado": "Média Assinale a alternativa compatível com a distinção entre liberdade sindical e unicidade sindical no material estudado.",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_DOCUMENTAL_CONCLUIDO_COM_CONTROLES",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/constituicao/constituicaocompilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m17.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m17.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_DOCUMENTAL_DO_MERITO",
+        "fundamento": "CF art. 8º I, II e V",
+        "conclusao": "Liberdade de associação convive com a unicidade de representação na mesma base e categoria.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/constituicao/constituicaocompilado.htm",
+        "corte": "2026-10-12",
+        "checagem": "enunciado, alternativas A-E, gabarito e comentário",
+        "observacao": null
+      }
     },
     {
       "id": "DT-M17-COMPLETA-Q06",
@@ -5040,11 +5130,20 @@
       "textoGabarito": "ele exerce na empresa atividade pertinente à categoria do sindicato para o qual foi eleito.",
       "enunciado": "Média Empregado eleito dirigente de sindicato de categoria profissional diferenciada pretende invocar estabilidade. Segundo o ponto recuperado da Súmula 369 do TST, é relevante verificar se",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_DOCUMENTAL_CONCLUIDO_COM_CONTROLES",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/constituicao/constituicaocompilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m17.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m17.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_DOCUMENTAL_DO_MERITO",
+        "fundamento": "TST Súmula 369 III",
+        "conclusao": "Pertinência entre atividade efetivamente exercida e categoria diferenciada representada condiciona estabilidade.",
+        "fonte": "https://www.tst.jus.br/documents/10157/c10e690e-08f5-44f5-a449-422b5460476b",
+        "corte": "2026-10-12",
+        "checagem": "enunciado, alternativas A-E, gabarito e comentário",
+        "observacao": null
+      }
     },
     {
       "id": "DT-M17-COMPLETA-Q07",
@@ -5054,11 +5153,20 @@
       "textoGabarito": "não gera a estabilidade indicada pela súmula.",
       "enunciado": "Média Conforme o ponto recuperado da Súmula 369 do TST, o registro de candidatura a cargo sindical durante o aviso-prévio",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_DOCUMENTAL_CONCLUIDO_COM_CONTROLES",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/constituicao/constituicaocompilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m17.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m17.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_DOCUMENTAL_DO_MERITO",
+        "fundamento": "TST Súmula 369 V",
+        "conclusao": "Candidatura durante aviso-prévio não cria estabilidade, mesmo indenizado.",
+        "fonte": "https://www.tst.jus.br/documents/10157/c10e690e-08f5-44f5-a449-422b5460476b",
+        "corte": "2026-10-12",
+        "checagem": "enunciado, alternativas A-E, gabarito e comentário",
+        "observacao": null
+      }
     },
     {
       "id": "DT-M17-COMPLETA-Q08",
@@ -5068,11 +5176,20 @@
       "textoGabarito": "apuração mediante inquérito judicial.",
       "enunciado": "Média Segundo o ponto recuperado da Súmula 379 do TST, a dispensa do dirigente sindical por falta grave exige",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_DOCUMENTAL_CONCLUIDO_COM_CONTROLES",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/constituicao/constituicaocompilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m17.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m17.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_DOCUMENTAL_DO_MERITO",
+        "fundamento": "CLT arts. 494, 543 §3º; TST Súmula 379; IRR 257",
+        "conclusao": "Inquérito judicial é necessário para ruptura por falta grave de dirigente sindical.",
+        "fonte": "https://www.tst.jus.br/documents/d/guest/irr257temprandomsuffixhpawtiv7",
+        "corte": "2026-10-12",
+        "checagem": "enunciado, alternativas A-E, gabarito e comentário",
+        "observacao": null
+      }
     },
     {
       "id": "DT-M17-COMPLETA-Q09",
@@ -5082,11 +5199,20 @@
       "textoGabarito": "A diretoria tem mínimo 3 e máximo 7 membros; a Súmula 369 recuperada limita a estabilidade a 7 dirigentes e igual número de suplentes.",
       "enunciado": "Difícil Sobre os números da administração sindical e da estabilidade, assinale a alternativa correta conforme o material consolidado.",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_DOCUMENTAL_CONCLUIDO_COM_CONTROLES",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/constituicao/constituicaocompilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m17.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m17.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_DOCUMENTAL_DO_MERITO",
+        "fundamento": "CLT art. 522; TST Súmula 369 II",
+        "conclusao": "Diretoria de três a sete membros, estabilidade limitada a sete dirigentes e igual número de suplentes segundo a Súmula 369.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "corte": "2026-10-12",
+        "checagem": "enunciado, alternativas A-E, gabarito e comentário",
+        "observacao": null
+      }
     },
     {
       "id": "DT-M17-COMPLETA-Q10",
@@ -5096,11 +5222,20 @@
       "textoGabarito": "o material a associa à liberdade/pluralidade sindical, registra sua não ratificação pelo Brasil e aponta tensão com a unicidade constitucional.",
       "enunciado": "Difícil À luz do material recuperado sobre a Convenção nº 87 da OIT e o sistema brasileiro, é correto afirmar que",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_DOCUMENTAL_CONCLUIDO_COM_CONTROLES",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/constituicao/constituicaocompilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m17.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m17.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_DOCUMENTAL_DO_MERITO",
+        "fundamento": "Convenção OIT 87; CF art. 8º II",
+        "conclusao": "OIT registra Convenção 87 entre instrumentos não ratificados pelo Brasil; a unicidade permanece na CF.",
+        "fonte": "https://normlex.ilo.org/dyn/nrmlx_en/f?p=1000:11210:0::NO:11210:P11210_COUNTRY_ID:102571",
+        "corte": "2026-10-12",
+        "checagem": "enunciado, alternativas A-E, gabarito e comentário",
+        "observacao": null
+      }
     },
     {
       "id": "DT-M18-RESUMIDA-Q01",
@@ -5110,11 +5245,20 @@
       "textoGabarito": "O ACT é celebrado entre sindicato profissional e empresa(s), e prevalece sobre a CCT.",
       "enunciado": "Questão 1 · FÁCIL · AUTORAL, ESTILO FCC Assinale a alternativa correta sobre ACT e CCT:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_DOCUMENTAL_CONCLUIDO_COM_CONTROLES",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m18.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m18.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_DOCUMENTAL_DO_MERITO",
+        "fundamento": "CLT art. 611 §1º e art. 620",
+        "conclusao": "ACT é sindicato profissional com empresa(s) e prevalece sobre CCT, que envolve sindicatos patronal e profissional.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "corte": "2026-10-12",
+        "checagem": "enunciado, alternativas A-E, gabarito e comentário",
+        "observacao": null
+      }
     },
     {
       "id": "DT-M18-RESUMIDA-Q02",
@@ -5124,11 +5268,20 @@
       "textoGabarito": "48h.",
       "enunciado": "Questão 2 · FÁCIL · AUTORAL, ESTILO FCC Na regra geral estudada, o aviso mínimo para greve não essencial é de:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_DOCUMENTAL_CONCLUIDO_COM_CONTROLES",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m18.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m18.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_DOCUMENTAL_DO_MERITO",
+        "fundamento": "Lei 7.783/1989 art. 3º parágrafo único",
+        "conclusao": "Aviso mínimo de 48h para paralisação fora de atividade essencial.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/leis/l7783.htm",
+        "corte": "2026-10-12",
+        "checagem": "enunciado, alternativas A-E, gabarito e comentário",
+        "observacao": null
+      }
     },
     {
       "id": "DT-M18-RESUMIDA-Q03",
@@ -5138,11 +5291,20 @@
       "textoGabarito": "o 611-A abre espaço negocial, mas deve ser aplicado em conjunto com o 611-B e a Constituição.",
       "enunciado": "Questão 3 · MÉDIA · AUTORAL, ESTILO FCC Sobre o art. 611-A e o art. 611-B da CLT:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_DOCUMENTAL_CONCLUIDO_COM_CONTROLES",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m18.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m18.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_DOCUMENTAL_DO_MERITO",
+        "fundamento": "CLT arts. 611-A e 611-B",
+        "conclusao": "Negociação coletiva amplia espaço normativo dentro de limites legais e constitucionais.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "corte": "2026-10-12",
+        "checagem": "enunciado, alternativas A-E, gabarito e comentário",
+        "observacao": null
+      }
     },
     {
       "id": "DT-M18-RESUMIDA-Q04",
@@ -5152,11 +5314,20 @@
       "textoGabarito": "exige aviso de 72h e preservação das necessidades inadiáveis da comunidade.",
       "enunciado": "Questão 4 · MÉDIA · AUTORAL, ESTILO FCC Em atividade essencial, a greve:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_DOCUMENTAL_CONCLUIDO_COM_CONTROLES",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m18.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m18.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_DOCUMENTAL_DO_MERITO",
+        "fundamento": "Lei 7.783/1989 arts. 11 e 13",
+        "conclusao": "Greve essencial exige comunicação 72h a empregadores e usuários e manutenção de serviços indispensáveis.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/leis/l7783.htm",
+        "corte": "2026-10-12",
+        "checagem": "enunciado, alternativas A-E, gabarito e comentário",
+        "observacao": null
+      }
     },
     {
       "id": "DT-M18-RESUMIDA-Q05",
@@ -5166,11 +5337,20 @@
       "textoGabarito": "o Tema 1046 prestigia a autonomia coletiva, respeitando direitos absolutamente indisponíveis; o hipersuficiente exige cumulativamente diploma superior e salário ≥ 2× teto do RGPS.",
       "enunciado": "Questão 5 · DIFÍCIL · AUTORAL, ESTILO FCC Assinale a alternativa que combina corretamente Tema 1046 e empregado hipersuficiente:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_DOCUMENTAL_CONCLUIDO_COM_CONTROLES",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m18.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m18.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_DOCUMENTAL_DO_MERITO",
+        "fundamento": "STF Tema 1046; CLT art. 444 parágrafo único",
+        "conclusao": "Autonomia coletiva respeita direitos absolutamente indisponíveis; empregado hipersuficiente exige diploma superior e renda >= 2 tetos RGPS.",
+        "fonte": "https://portal.stf.jus.br/jurisprudenciaRepercussao/tema.asp?num=1046",
+        "corte": "2026-10-12",
+        "checagem": "enunciado, alternativas A-E, gabarito e comentário",
+        "observacao": null
+      }
     },
     {
       "id": "DT-M18-COMPLETA-Q01",
@@ -5180,11 +5360,20 @@
       "textoGabarito": "Acordo Coletivo de Trabalho, porque envolve sindicato profissional e empresa.",
       "enunciado": "Questão 1 · FÁCIL · AUTORAL, ESTILO FCC Uma empresa pretende celebrar instrumento coletivo diretamente com o sindicato profissional para disciplinar condições aplicáveis apenas aos seus empregados. O instrumento, em regra, será:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_DOCUMENTAL_CONCLUIDO_COM_CONTROLES",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m18.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m18.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_DOCUMENTAL_DO_MERITO",
+        "fundamento": "CLT art. 611 §1º",
+        "conclusao": "ACT celebrado entre sindicato profissional e uma ou mais empresas, não necessariamente por dois sindicatos.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "corte": "2026-10-12",
+        "checagem": "enunciado, alternativas A-E, gabarito e comentário",
+        "observacao": null
+      }
     },
     {
       "id": "DT-M18-COMPLETA-Q02",
@@ -5215,11 +5404,20 @@
       "textoGabarito": "o prazo máximo estudado é de 2 anos e a ultratividade é vedada.",
       "enunciado": "Questão 3 · FÁCIL · AUTORAL, ESTILO FCC Sobre vigência de ACT e CCT, assinale a alternativa correta:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_DOCUMENTAL_CONCLUIDO_COM_CONTROLES",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m18.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m18.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_DOCUMENTAL_DO_MERITO",
+        "fundamento": "CLT art. 614 §3º",
+        "conclusao": "Duração máxima de ACT/CCT é de dois anos, vedada ultratividade automática.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "corte": "2026-10-12",
+        "checagem": "enunciado, alternativas A-E, gabarito e comentário",
+        "observacao": null
+      }
     },
     {
       "id": "DT-M18-COMPLETA-Q04",
@@ -5229,13 +5427,22 @@
       "textoGabarito": "48 horas.",
       "enunciado": "Questão 4 · FÁCIL · AUTORAL, ESTILO FCC No regime geral da Lei de Greve estudado no módulo, a comunicação da paralisação deve observar, em regra, antecedência mínima de:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_DOCUMENTAL_CONCLUIDO_COM_CONTROLES",
       "alertas": "",
       "riscos": [
         "redacao_editorial"
       ],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m18.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m18.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_DOCUMENTAL_DO_MERITO",
+        "fundamento": "Lei 7.783/1989 art. 3º parágrafo único e art. 13",
+        "conclusao": "Regra geral 48h; prazo especial em serviços essenciais é 72h.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/leis/l7783.htm",
+        "corte": "2026-10-12",
+        "checagem": "enunciado, alternativas A-E, gabarito e comentário",
+        "observacao": null
+      }
     },
     {
       "id": "DT-M18-COMPLETA-Q05",
@@ -5245,11 +5452,20 @@
       "textoGabarito": "a cláusula é inválida no ponto, porque o espaço negocial preserva mínimo de 30 minutos.",
       "enunciado": "Questão 5 · MÉDIA · AUTORAL, ESTILO FCC Uma CCT reduz o intervalo intrajornada de empregados com jornada superior a 6 horas para 20 minutos. À luz do conteúdo consolidado:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_DOCUMENTAL_CONCLUIDO_COM_CONTROLES",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m18.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m18.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_DOCUMENTAL_DO_MERITO",
+        "fundamento": "CLT art. 611-A III",
+        "conclusao": "Negociado não pode reduzir intervalo mínimo intrajornada de jornada superior a seis horas abaixo de 30min.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "corte": "2026-10-12",
+        "checagem": "enunciado, alternativas A-E, gabarito e comentário",
+        "observacao": null
+      }
     },
     {
       "id": "DT-M18-COMPLETA-Q06",
@@ -5259,11 +5475,20 @@
       "textoGabarito": "a autonomia coletiva pode limitar ou afastar direitos disponíveis sem exigir, como regra geral, vantagem compensatória expressa, respeitados direitos absolutamente indisponíveis.",
       "enunciado": "Questão 6 · MÉDIA · AUTORAL, ESTILO FCC O Tema 1046 do STF, conforme trabalhado no M18, significa que:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_DOCUMENTAL_CONCLUIDO_COM_CONTROLES",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m18.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m18.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_DOCUMENTAL_DO_MERITO",
+        "fundamento": "STF Tema 1046 ARE 1121633",
+        "conclusao": "Norma coletiva pode limitar direitos relativamente disponíveis sem contrapartida explícita geral, ressalvados absolutamente indisponíveis.",
+        "fonte": "https://portal.stf.jus.br/jurisprudenciaRepercussao/tema.asp?num=1046",
+        "corte": "2026-10-12",
+        "checagem": "enunciado, alternativas A-E, gabarito e comentário",
+        "observacao": null
+      }
     },
     {
       "id": "DT-M18-COMPLETA-Q07",
@@ -5273,11 +5498,20 @@
       "textoGabarito": "a participação em greve, observados os requisitos legais, suspende o contrato; os efeitos obrigacionais do período dependem da disciplina aplicável ao movimento.",
       "enunciado": "Questão 7 · MÉDIA · AUTORAL, ESTILO FCC Quanto aos efeitos da greve sobre o contrato de trabalho, a alternativa correta é:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_DOCUMENTAL_CONCLUIDO_COM_CONTROLES",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m18.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m18.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_DOCUMENTAL_DO_MERITO",
+        "fundamento": "Lei 7.783/1989 art. 7º",
+        "conclusao": "Greve suspende contrato; consequências salariais e obrigacionais dependem de negociação ou decisão.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/leis/l7783.htm",
+        "corte": "2026-10-12",
+        "checagem": "enunciado, alternativas A-E, gabarito e comentário",
+        "observacao": null
+      }
     },
     {
       "id": "DT-M18-COMPLETA-Q08",
@@ -5287,11 +5521,20 @@
       "textoGabarito": "aos empregadores e aos usuários, com antecedência mínima de 72 horas.",
       "enunciado": "Questão 8 · MÉDIA · AUTORAL, ESTILO FCC Em atividade essencial, a disciplina estudada exige que a decisão de greve seja comunicada:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_DOCUMENTAL_CONCLUIDO_COM_CONTROLES",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m18.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m18.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_DOCUMENTAL_DO_MERITO",
+        "fundamento": "Lei 7.783/1989 art. 13",
+        "conclusao": "Em atividade essencial, empregadores e usuários devem receber aviso de 72h.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/leis/l7783.htm",
+        "corte": "2026-10-12",
+        "checagem": "enunciado, alternativas A-E, gabarito e comentário",
+        "observacao": null
+      }
     },
     {
       "id": "DT-M18-COMPLETA-Q09",
@@ -5322,11 +5565,20 @@
       "textoGabarito": "não preenche os requisitos, pois diploma superior e salário igual ou superior a 2 vezes o teto do RGPS são cumulativos.",
       "enunciado": "Questão 10 · DIFÍCIL · AUTORAL, ESTILO FCC Empregado possui diploma de nível superior e recebe salário igual a 1,5 vez o teto do RGPS. Pretende pactuar individualmente matéria prevista no art. 611-A com a eficácia especial do art. 444, parágrafo único. À luz do M18:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_DOCUMENTAL_CONCLUIDO_COM_CONTROLES",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m18.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m18.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_DOCUMENTAL_DO_MERITO",
+        "fundamento": "CLT art. 444 parágrafo único",
+        "conclusao": "Diploma superior e salário mensal igual ou superior a duas vezes o teto do RGPS são cumulativos.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "corte": "2026-10-12",
+        "checagem": "enunciado, alternativas A-E, gabarito e comentário",
+        "observacao": null
+      }
     }
   ]
 }
