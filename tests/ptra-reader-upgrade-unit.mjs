@@ -95,10 +95,12 @@ test('PTRA: integração no bootstrap, andamento e histórico existentes preserv
   const bootstrap=get('central-v119.html');
   const native=get('ui/ptra-native-study-v1.js');
   const css=get('ui/ptra-reader-upgrade-v1.css');
-  assert.ok(bootstrap.includes('ui/ptra-reader-upgrade-v1.js?v=20261012ptra2'));
-  assert.ok(bootstrap.includes('ui/ptra-reader-upgrade-v1.css?v=20261012ptra2'));
+  assert.ok(bootstrap.includes('ui/ptra-reader-upgrade-v1.js?v=20261012ptra3'));
+  assert.ok(bootstrap.includes('ui/ptra-reader-upgrade-v1.css?v=20261012ptra3'));
   assert.ok(native.includes('PtraReaderUpgrade.render(meta,mat,kind)'));
   assert.ok(native.includes('Leitor Universal indisponível nesta versão'));
+  assert.ok(native.includes('viewRequestId'),'A troca de versões deve invalidar leituras pendentes');
+  assert.ok(native.includes('if(requestId!==viewRequestId)return'),'A leitura antiga não deve sobrepor a nova');
   assert.ok(!native.includes('c.innerHTML=global.PtraReaderUpgrade?'),'Não permitir fallback silencioso para leitor legado');
   assert.ok(native.includes('PtraReaderUpgrade.mount(c,n,kind,mat)'));
   assert.ok(native.includes("function updateRead(force)"),'A leitura do aluno permanece na implementação existente');
