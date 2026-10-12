@@ -1,7 +1,7 @@
 {
   "schema": "base-completa-triagem-juridica-20261012-v1",
   "dataCorte": "2026-10-12",
-  "observacao": "TRIAGEM DOCUMENTAL, NÃO É CERTIFICAÇÃO INDIVIDUAL DE MÉRITO. As 251 questões foram inventariadas com suas cinco alternativas, gabarito, comentário e pontos de atenção. Não confundir triagem automatizada com validação jurídica conclusiva; cada item ainda exige cotejo individual de enunciado, todas as alternativas, gabarito, comentário e fundamentos atualizados. Cotejo normativo de 23 questões pendentes da R4 concluído (e quatro questões previamente revisadas rechecadas). O cotejo dos 228 itens restantes e a integração das erratas dos PDFs continuam pendentes.",
+  "observacao": "TRIAGEM DOCUMENTAL, NÃO É CERTIFICAÇÃO INDIVIDUAL DE MÉRITO. As 251 questões foram inventariadas com suas cinco alternativas, gabarito, comentário e pontos de atenção. Não confundir triagem automatizada com validação jurídica conclusiva; cada item ainda exige cotejo individual de enunciado, todas as alternativas, gabarito, comentário e fundamentos atualizados. Cotejo normativo de 23 questões pendentes da R4 concluído (e quatro questões previamente revisadas rechecadas). O cotejo dos 228 itens restantes e a integração das erratas dos PDFs continuam pendentes. Adicionalmente, 27 questões dos módulos M01 e M02 foram cotejadas (inclusive princípios e cronologia), totalizando 50/251 com verificação individual de alternativas e comentários.",
   "fontesCotejadas": [
     "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
     "https://www.planalto.gov.br/ccivil_03/constituicao/constituicaocompilado.htm",
@@ -25,8 +25,8 @@
     ],
     "certificadasIntegralmenteNestaRodada": 0,
     "homologacao": false,
-    "cotejosNormativosConcluidosNaRodada": 23,
-    "pendentesCotejoNormativoNaRodada": 228,
+    "cotejosNormativosConcluidosNaRodada": 50,
+    "pendentesCotejoNormativoNaRodada": 201,
     "rechecadosDaRodadaAnterior": 4
   },
   "registros": [
@@ -38,11 +38,19 @@
       "textoGabarito": "consolidação.",
       "enunciado": "[FÁCIL] A CLT de 1943 deve ser entendida, no M1, principalmente como:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m01.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m01.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT 1943 e evolução normativa anterior",
+        "conclusao": "CLT de 1943 consolida legislação anterior, não inaugura direitos sociais.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "corte": "2026-10-12",
+        "natureza": "normativo"
+      }
     },
     {
       "id": "DT-M01-RESUMIDA-Q02",
@@ -52,11 +60,19 @@
       "textoGabarito": "Carta del Lavoro - 1927.",
       "enunciado": "[FÁCIL] Qual associação está correta?",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m01.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m01.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "México 1917; Weimar 1919; Carta del Lavoro 1927",
+        "conclusao": "Carta del Lavoro datada de 1927; demais associações de datas incorretas.",
+        "fonte": "https://www2.camara.leg.br/a-camara/conheca/historia/a2republica.html",
+        "corte": "2026-10-12",
+        "natureza": "normativo"
+      }
     },
     {
       "id": "DT-M01-RESUMIDA-Q03",
@@ -66,11 +82,19 @@
       "textoGabarito": "a autonomia existe, mas dentro de limites protetivos.",
       "enunciado": "[MÉDIA] No modelo democrático privatístico subordinado:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m01.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m01.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "Constituição 1988 arts. 7º a 11 e modelos doutrinários",
+        "conclusao": "Autonomia coletiva com limites protetivos, não autonomia absoluta.",
+        "fonte": "https://www2.camara.leg.br/a-camara/conheca/historia/a2republica.html",
+        "corte": "2026-10-12",
+        "natureza": "normativo"
+      }
     },
     {
       "id": "DT-M01-RESUMIDA-Q04",
@@ -80,11 +104,19 @@
       "textoGabarito": "Ampliou espaços de negociação e flexibilização, mas não criou autonomia irrestrita.",
       "enunciado": "[MÉDIA] Qual afirmação sobre a Reforma de 2017 está de acordo com o M1?",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m01.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m01.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT 611-A e 611-B, redação Lei 13.467/2017",
+        "conclusao": "Reforma amplia espaço coletivo mas preserva limites constitucionais e legais.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "corte": "2026-10-12",
+        "natureza": "normativo"
+      }
     },
     {
       "id": "DT-M01-RESUMIDA-Q05",
@@ -94,11 +126,19 @@
       "textoGabarito": "Industrialização → conflito social → ação coletiva → intervenção estatal → proteção normativa.",
       "enunciado": "[DIFÍCIL] Assinale a sequência que melhor representa a lógica histórica central do M1.",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m01.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m01.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "História social do trabalho, constitucionalização e CLT 1943",
+        "conclusao": "Industrialização e organização coletiva antecedem proteção normativa; demais sequências são inverossímeis.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "corte": "2026-10-12",
+        "natureza": "doutrinario_ou_historico"
+      }
     },
     {
       "id": "DT-M01-COMPLETA-Q01",
@@ -108,11 +148,19 @@
       "textoGabarito": "A CLT consolidou normas trabalhistas preexistentes.",
       "enunciado": "[FÁCIL] A respeito da Consolidação das Leis do Trabalho (CLT) de 1943, assinale a alternativa correta.",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m01.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m01.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT 1943, Constituição 1934",
+        "conclusao": "1943 consolidação; 1934 constitucionalização anterior.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "corte": "2026-10-12",
+        "natureza": "normativo"
+      }
     },
     {
       "id": "DT-M01-COMPLETA-Q02",
@@ -122,13 +170,21 @@
       "textoGabarito": "Constituição de 1934.",
       "enunciado": "[FÁCIL] No percurso histórico brasileiro adotado no módulo, qual marco corresponde à constitucionalização trabalhista?",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [
         "redacao_editorial"
       ],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m01.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m01.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "Constituição da República de 1934",
+        "conclusao": "Primeira constitucionalização trabalhista brasileira, marco 1934.",
+        "fonte": "https://www2.camara.leg.br/a-camara/conheca/historia/a2republica.html",
+        "corte": "2026-10-12",
+        "natureza": "normativo"
+      }
     },
     {
       "id": "DT-M01-COMPLETA-Q03",
@@ -138,13 +194,21 @@
       "textoGabarito": "1917.",
       "enunciado": "[FÁCIL] Entre os marcos mundiais destacados no módulo, a Constituição do México está associada ao ano de:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [
         "redacao_editorial"
       ],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m01.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m01.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "Constituição mexicana de 1917",
+        "conclusao": "México 1917, outras datas falsas.",
+        "fonte": "https://www2.camara.leg.br/a-camara/conheca/historia/a2republica.html",
+        "corte": "2026-10-12",
+        "natureza": "normativo"
+      }
     },
     {
       "id": "DT-M01-COMPLETA-Q04",
@@ -154,11 +218,19 @@
       "textoGabarito": "mais de 200 empregados.",
       "enunciado": "[FÁCIL] De acordo com a leitura orientada do art. 11 da Constituição Federal de 1988 apresentada no M1, a eleição de representante dos trabalhadores é destacada para empresas com:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m01.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m01.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CF/1988 art. 11",
+        "conclusao": "Representante dos empregados assegurado em empresas com mais de 200 empregados.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/constituicao/constituicaocompilado.htm",
+        "corte": "2026-10-12",
+        "natureza": "normativo"
+      }
     },
     {
       "id": "DT-M01-COMPLETA-Q05",
@@ -168,11 +240,19 @@
       "textoGabarito": "Democrático privatístico subordinado.",
       "enunciado": "[MÉDIA] Segundo a classificação adotada na fonte, a Constituição Federal de 1988 se enquadra em qual modelo de ordem jurídico-trabalhista?",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m01.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m01.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CF 1988 arts. 7º e 8º, modelo doutrinário",
+        "conclusao": "Democrático privatístico subordinado na classificação expressamente adotada.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "corte": "2026-10-12",
+        "natureza": "normativo"
+      }
     },
     {
       "id": "DT-M01-COMPLETA-Q06",
@@ -182,11 +262,19 @@
       "textoGabarito": "há espaço de negociação coletiva, mas o próprio sistema conserva limites.",
       "enunciado": "[MÉDIA] A relação entre os arts. 611-A e 611-B da CLT, conforme apresentada no M1, permite concluir que:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m01.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m01.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT arts. 611-A e 611-B",
+        "conclusao": "Negociação com limites legais e constitucionais; sem liberdade irrestrita.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "corte": "2026-10-12",
+        "natureza": "normativo"
+      }
     },
     {
       "id": "DT-M01-COMPLETA-Q07",
@@ -196,11 +284,19 @@
       "textoGabarito": "Flexibilização admite adaptações dentro de limites; desregulamentação reduz mais intensamente a regulação estatal.",
       "enunciado": "[MÉDIA] Assinale a alternativa que melhor diferencia flexibilização de desregulamentação no conteúdo do módulo.",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m01.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m01.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "Doutrina da flexibilização e desregulamentação",
+        "conclusao": "Flexibilização ajusta dentro de limites, desregulamentação retira maior parte de regulação.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "corte": "2026-10-12",
+        "natureza": "doutrinario_ou_historico"
+      }
     },
     {
       "id": "DT-M01-COMPLETA-Q08",
@@ -210,11 +306,19 @@
       "textoGabarito": "respostas emergenciais vinculadas ao contexto excepcional da pandemia.",
       "enunciado": "[MÉDIA] No M1, as medidas trabalhistas de 2020/2021 são estudadas principalmente como:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m01.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m01.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "MP 927/2020, Lei 14.020/2020, MPs 1.045 e 1.046/2021",
+        "conclusao": "Medidas históricas emergenciais de pandemia, não regime geral permanente.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "corte": "2026-10-12",
+        "natureza": "normativo"
+      }
     },
     {
       "id": "DT-M01-COMPLETA-Q09",
@@ -224,11 +328,19 @@
       "textoGabarito": "I, II e III, apenas.",
       "enunciado": "[DIFÍCIL] Considere as afirmações: I. A Constituição de 1934 é tratada como marco de constitucionalização trabalhista brasileira. II. A CLT de 1943 representa consolidação de normas preexistentes. III. A CF/1988 é classificada pela fonte como modelo democrático privatístico subordinado. IV. A Reforma de 2017 é apresentada como eliminação de todo limite estatal à negociação. Está correto o que se afirma em:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m01.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m01.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "Constituição 1934, CLT 1943, CF 1988, CLT 611-A/B",
+        "conclusao": "I, II, III verdadeiras e IV falsa, porque flexibilização não revoga limites.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "corte": "2026-10-12",
+        "natureza": "normativo"
+      }
     },
     {
       "id": "DT-M01-COMPLETA-Q10",
@@ -238,11 +350,19 @@
       "textoGabarito": "Incorreta, pois o módulo identifica conflito social, ação coletiva, intervenção estatal, legislação esparsa e constitucionalização antes da consolidação.",
       "enunciado": "[DIFÍCIL] Uma questão afirma que “a evolução do Direito do Trabalho se explica pela passagem direta da industrialização à CLT, sem etapas intermediárias relevantes”. À luz do M1, a melhor resposta é:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m01.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m01.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "História legislativa trabalhista brasileira",
+        "conclusao": "A evolução do Direito do Trabalho não salta direto da industrialização à CLT.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "corte": "2026-10-12",
+        "natureza": "doutrinario_ou_historico"
+      }
     },
     {
       "id": "DT-M02-RESUMIDA-Q01",
@@ -252,11 +372,19 @@
       "textoGabarito": "fonte formal heterônoma.",
       "enunciado": "FÁCIL No esquema de classificação adotado pelo módulo, a sentença normativa é:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m02.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m02.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CF art. 114 §2º e teoria das fontes",
+        "conclusao": "Sentença normativa é fonte formal heterônoma no esquema adotado.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "corte": "2026-10-12",
+        "natureza": "doutrinario_ou_historico"
+      }
     },
     {
       "id": "DT-M02-RESUMIDA-Q02",
@@ -266,11 +394,19 @@
       "textoGabarito": "Norma mais favorável - conflito entre normas.",
       "enunciado": "FÁCIL Assinale a associação correta.",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m02.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m02.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "Doutrina clássica do princípio da proteção",
+        "conclusao": "Norma mais favorável incide em conflito normativo, não prova ou condição.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "corte": "2026-10-12",
+        "natureza": "doutrinario_ou_historico"
+      }
     },
     {
       "id": "DT-M02-RESUMIDA-Q03",
@@ -301,11 +437,19 @@
       "textoGabarito": "A fonte associa a Súmula 12 à presunção relativa da CTPS, admitindo prova em contrário.",
       "enunciado": "MÉDIA Sobre primazia da realidade e CTPS, assinale a correta.",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m02.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m02.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "Súmula TST 12",
+        "conclusao": "CTPS cria presunção relativa, sujeito a prova contrária.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "corte": "2026-10-12",
+        "natureza": "normativo"
+      }
     },
     {
       "id": "DT-M02-RESUMIDA-Q05",
@@ -315,11 +459,19 @@
       "textoGabarito": "I, III e IV.",
       "enunciado": "DIFÍCIL Assinale a alternativa em que TODAS as afirmações estão de acordo com o módulo: I. O material registra prazo máximo de 2 anos para instrumento coletivo e veda ultratividade automática. II. In dubio pro operario altera automaticamente o ônus da prova. III. Irredutibilidade e intangibilidade são proteções distintas. IV. Costume é fonte formal e autônoma no material.",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m02.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m02.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT art. 614 §3º, art. 462, teoria das fontes",
+        "conclusao": "I, III, IV corretas e II falsa; in dubio não redistribui automaticamente ônus.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "corte": "2026-10-12",
+        "natureza": "doutrinario_ou_historico"
+      }
     },
     {
       "id": "DT-M02-COMPLETA-Q01",
@@ -329,11 +481,19 @@
       "textoGabarito": "Fonte material corresponde aos fatores que impulsionam a criação normativa, enquanto fonte formal é a manifestação jurídica da norma.",
       "enunciado": "FÁCIL Sobre a classificação das fontes do Direito do Trabalho, assinale a alternativa correta.",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m02.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m02.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "Teoria das fontes do Direito do Trabalho",
+        "conclusao": "Fontes materiais são fatores sociais; fontes formais manifestações jurídicas.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "corte": "2026-10-12",
+        "natureza": "normativo"
+      }
     },
     {
       "id": "DT-M02-COMPLETA-Q02",
@@ -343,11 +503,19 @@
       "textoGabarito": "Sentença normativa.",
       "enunciado": "FÁCIL Segundo a classificação adotada no material do módulo, constitui fonte formal heterônoma:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m02.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m02.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CF art. 114 §2º e teoria das fontes",
+        "conclusao": "Sentença normativa é heterônoma; CCT/ACT autônomas.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "corte": "2026-10-12",
+        "natureza": "doutrinario_ou_historico"
+      }
     },
     {
       "id": "DT-M02-COMPLETA-Q03",
@@ -378,13 +546,21 @@
       "textoGabarito": "Norma mais favorável, condição mais benéfica e in dubio pro operario.",
       "enunciado": "FÁCIL Assinale a alternativa que reúne corretamente os três desdobramentos clássicos do princípio da proteção trabalhados no módulo.",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [
         "redacao_editorial"
       ],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m02.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m02.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "Doutrina do princípio da proteção",
+        "conclusao": "Tríade norma mais favorável, condição mais benéfica, in dubio pro operario.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "corte": "2026-10-12",
+        "natureza": "doutrinario_ou_historico"
+      }
     },
     {
       "id": "DT-M02-COMPLETA-Q05",
@@ -394,11 +570,19 @@
       "textoGabarito": "in dubio pro operario.",
       "enunciado": "MÉDIA Em uma ação trabalhista, há dúvida sobre o sentido juridicamente possível de uma norma material. Não há, no enunciado, controvérsia sobre quem deveria produzir determinada prova. À luz do módulo, o princípio diretamente relacionado ao problema é:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m02.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m02.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "Doutrina da interpretação da norma material",
+        "conclusao": "Dúvida interpretativa relacionada a in dubio, não regra processual de prova.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "corte": "2026-10-12",
+        "natureza": "doutrinario_ou_historico"
+      }
     },
     {
       "id": "DT-M02-COMPLETA-Q06",
@@ -408,11 +592,19 @@
       "textoGabarito": "O documento continua relevante, mas a fonte associa a Súmula 12 do TST à presunção relativa, admitindo prova em contrário.",
       "enunciado": "MÉDIA A CTPS registra determinada condição, mas outras provas demonstram que a realidade efetiva era diferente. Considerando o conteúdo validado, assinale a alternativa correta.",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m02.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m02.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "Súmula TST 12; primazia da realidade",
+        "conclusao": "CTPS com presunção relativa sujeita a prova em sentido contrário.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "corte": "2026-10-12",
+        "natureza": "normativo"
+      }
     },
     {
       "id": "DT-M02-COMPLETA-Q08",
@@ -422,14 +614,22 @@
       "textoGabarito": "a afirmação está errada: irredutibilidade protege contra redução indevida do valor; intangibilidade, contra descontos indevidos.",
       "enunciado": "MÉDIA Uma questão afirma que irredutibilidade salarial e intangibilidade salarial são expressões equivalentes. Conforme o módulo:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "CF art. 7 VI",
       "riscos": [
         "redacao_editorial",
         "alerta_existente_no_item"
       ],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m02.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m02.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CF art. 7º VI; CLT art. 462",
+        "conclusao": "Irredutibilidade e intangibilidade salarial protegem aspectos distintos.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "corte": "2026-10-12",
+        "natureza": "normativo"
+      }
     },
     {
       "id": "DT-M02-COMPLETA-Q09",
@@ -439,13 +639,21 @@
       "textoGabarito": "deveria primeiro observar a regra específica do art. 620 da CLT e, além disso, o princípio da norma mais favorável não autoriza fracionamento livre de cláusulas para criar uma terceira disciplina.",
       "enunciado": "DIFÍCIL Uma CCT estabelece disciplina X e um ACT posterior estabelece disciplina Y sobre o mesmo ponto. O candidato, buscando a solução mais favorável, combina a parte mais vantajosa da CCT com a parte mais vantajosa do ACT. Segundo o módulo, a análise é inadequada porque:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "Enunciado contém referência editorial ao material",
       "riscos": [
         "alerta_existente_no_item"
       ],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m02.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m02.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT art. 620; teoria do conglobamento",
+        "conclusao": "Prevalência específica do ACT e vedação de escolher livremente partes de cada instrumento.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "corte": "2026-10-12",
+        "natureza": "doutrinario_ou_historico"
+      }
     },
     {
       "id": "DT-M02-COMPLETA-Q10",
@@ -455,11 +663,19 @@
       "textoGabarito": "I, II e IV.",
       "enunciado": "DIFÍCIL Considere as afirmações: I. Costume é classificado no material como fonte formal e autônoma. II. Sentença normativa é fonte formal e heterônoma. III. In dubio pro operario é usado no material como regra automática de distribuição do ônus da prova. IV. A Súmula 212 do TST é relacionada ao princípio da continuidade. Está correto o que se afirma APENAS em:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m02.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m02.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "Súmula TST 212; doutrina das fontes",
+        "conclusao": "I, II, IV corretas e III falsa: continuidade e dúvida normativa não alteram prova automaticamente.",
+        "fonte": "https://www.tst.jus.br/documents/d/guest/livrointernet-12-pdf",
+        "corte": "2026-10-12",
+        "natureza": "doutrinario_ou_historico"
+      }
     },
     {
       "id": "DT-M03-RESUMIDA-Q01",
