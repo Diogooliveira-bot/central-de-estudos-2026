@@ -28,6 +28,8 @@ jobs:
         run: npm ci
       - name: Testar invariantes novas da auditoria
         run: node --test tests/lei-em-dia-auditoria-20261012.mjs
+      - name: Conferir integridade de todos os bancos de questões (sem comentários)
+        run: node --test tests/lei-em-dia-catalogo-integridade.mjs
       - name: Executar suíte geral existente
         if: always()
         run: npm test
