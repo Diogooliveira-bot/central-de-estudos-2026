@@ -1,7 +1,7 @@
 {
   "schema": "base-completa-triagem-juridica-20261012-v1",
   "dataCorte": "2026-10-12",
-  "observacao": "TRIAGEM DOCUMENTAL, NÃO É CERTIFICAÇÃO INDIVIDUAL DE MÉRITO. As 251 questões foram inventariadas com suas cinco alternativas, gabarito, comentário e pontos de atenção. Não confundir triagem automatizada com validação jurídica conclusiva; cada item ainda exige cotejo individual de enunciado, todas as alternativas, gabarito, comentário e fundamentos atualizados. Cotejo normativo de 23 questões pendentes da R4 concluído (e quatro questões previamente revisadas rechecadas). O cotejo dos 228 itens restantes e a integração das erratas dos PDFs continuam pendentes. Adicionalmente, 27 questões dos módulos M01 e M02 foram cotejadas (inclusive princípios e cronologia), totalizando 50/251 com verificação individual de alternativas e comentários. Mais 27 enunciados, respostas, distratores e comentários dos módulos M03/M04 cotejados; conclusão acumulada 77/251. Foram cotejadas mais 24 questões dos M05 e M06 com fundamento e cinco alternativas, total 101/251. Cotejo dos módulos M07/M08 acrescentou 24 verificações individuais, total 125/251; core STF 246 não implica responsabilidade pública automática. M09 e M10: mais 23 questões cotejadas, totalizando 148/251, inclusive legislação do artista e teletrabalho. Cotejadas mais 20 questões pendentes de M11/M12, total 168/251; férias, pagamentos, equiparação e Súmula 91.",
+  "observacao": "TRIAGEM DOCUMENTAL, NÃO É CERTIFICAÇÃO INDIVIDUAL DE MÉRITO. As 251 questões foram inventariadas com suas cinco alternativas, gabarito, comentário e pontos de atenção. Não confundir triagem automatizada com validação jurídica conclusiva; cada item ainda exige cotejo individual de enunciado, todas as alternativas, gabarito, comentário e fundamentos atualizados. Cotejo normativo de 23 questões pendentes da R4 concluído (e quatro questões previamente revisadas rechecadas). O cotejo dos 228 itens restantes e a integração das erratas dos PDFs continuam pendentes. Adicionalmente, 27 questões dos módulos M01 e M02 foram cotejadas (inclusive princípios e cronologia), totalizando 50/251 com verificação individual de alternativas e comentários. Mais 27 enunciados, respostas, distratores e comentários dos módulos M03/M04 cotejados; conclusão acumulada 77/251. Foram cotejadas mais 24 questões dos M05 e M06 com fundamento e cinco alternativas, total 101/251. Cotejo dos módulos M07/M08 acrescentou 24 verificações individuais, total 125/251; core STF 246 não implica responsabilidade pública automática. M09 e M10: mais 23 questões cotejadas, totalizando 148/251, inclusive legislação do artista e teletrabalho. Cotejadas mais 20 questões pendentes de M11/M12, total 168/251; férias, pagamentos, equiparação e Súmula 91. Cotejo dos M13/M14 acrescentou 29 itens, total 197/251, incluindo FGTS, 13º, segurança, NR 5/NR 15 e precedentes.",
   "fontesCotejadas": [
     "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
     "https://www.planalto.gov.br/ccivil_03/constituicao/constituicaocompilado.htm",
@@ -25,8 +25,8 @@
     ],
     "certificadasIntegralmenteNestaRodada": 0,
     "homologacao": false,
-    "cotejosNormativosConcluidosNaRodada": 168,
-    "pendentesCotejoNormativoNaRodada": 83,
+    "cotejosNormativosConcluidosNaRodada": 197,
+    "pendentesCotejoNormativoNaRodada": 54,
     "rechecadosDaRodadaAnterior": 4
   },
   "registros": [
@@ -3574,11 +3574,18 @@
       "textoGabarito": "intangibilidade.",
       "enunciado": "FÁCIL A proteção contra desconto salarial sem fundamento corresponde, principalmente, à:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m13.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m13.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT art. 462",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "Alternativa B distingue corretamente situações legais; demais opções fazem generalizações não autorizadas ou trocam parâmetros.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M13-RESUMIDA-Q02",
@@ -3588,11 +3595,18 @@
       "textoGabarito": "mês integral para aquisição de 1/12.",
       "enunciado": "FÁCIL Um empregado trabalhou 15 dias em determinado mês. Para o décimo terceiro, a fonte considera essa fração:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m13.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m13.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "Lei 4.090/1962 art. 1º §2º",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/leis/l4090.htm",
+        "conclusao": "Alternativa C distingue corretamente situações legais; demais opções fazem generalizações não autorizadas ou trocam parâmetros.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M13-RESUMIDA-Q03",
@@ -3602,11 +3616,18 @@
       "textoGabarito": "deve-se verificar prévio ajuste ou dolo, conforme a estrutura da fonte.",
       "enunciado": "MÉDIA No desconto salarial por dano causado pelo empregado, a alternativa alinhada ao módulo é:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m13.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m13.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT art. 462 §1º",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "Alternativa B distingue corretamente situações legais; demais opções fazem generalizações não autorizadas ou trocam parâmetros.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M13-RESUMIDA-Q04",
@@ -3616,11 +3637,18 @@
       "textoGabarito": "4 anos no mesmo empregador e 2 anos na função.",
       "enunciado": "MÉDIA Em equiparação salarial, a fonte reproduz como limites temporais:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m13.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m13.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT art. 461 §1º",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "Alternativa B distingue corretamente situações legais; demais opções fazem generalizações não autorizadas ou trocam parâmetros.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M13-RESUMIDA-Q05",
@@ -3630,13 +3658,20 @@
       "textoGabarito": "Adiantamento uma vez entre fevereiro e novembro; pedido em janeiro pode vinculá-lo às férias; quitação até 20 de dezembro; 15 dias ou mais contam para o avo.",
       "enunciado": "DIFÍCIL Assinale a opção integralmente compatível com a sistemática do décimo terceiro consolidada no módulo.",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [
         "redacao_editorial"
       ],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m13.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m13.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "Leis 4.090/1962 e 4.749/1965",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "Alternativa B distingue corretamente situações legais; demais opções fazem generalizações não autorizadas ou trocam parâmetros.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M13-COMPLETA-Q01",
@@ -3646,11 +3681,18 @@
       "textoGabarito": "Irredutibilidade protege contra redução indevida; intangibilidade protege contra descontos ou retenções sem fundamento.",
       "enunciado": "FÁCIL Assinale a alternativa que distingue corretamente irredutibilidade e intangibilidade salarial.",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m13.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m13.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT arts. 7º VI (CF) e 462",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "Alternativa B distingue corretamente situações legais; demais opções fazem generalizações não autorizadas ou trocam parâmetros.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M13-COMPLETA-Q02",
@@ -3660,11 +3702,18 @@
       "textoGabarito": "até o 5º dia útil do mês subsequente.",
       "enunciado": "FÁCIL Na regra do salário mensal destacada pelas fontes, o pagamento deve ocorrer:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m13.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m13.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT art. 459 §1º",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "Alternativa C distingue corretamente situações legais; demais opções fazem generalizações não autorizadas ou trocam parâmetros.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M13-COMPLETA-Q03",
@@ -3695,11 +3744,18 @@
       "textoGabarito": "Pode ser pago uma vez entre fevereiro e novembro e corresponde à metade do salário recebido no mês anterior, segundo a fonte.",
       "enunciado": "FÁCIL Sobre o adiantamento do décimo terceiro salário, segundo a fonte, assinale a correta.",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m13.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m13.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "Lei 4.749/1965 art. 2º",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "Alternativa B distingue corretamente situações legais; demais opções fazem generalizações não autorizadas ou trocam parâmetros.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M13-COMPLETA-Q05",
@@ -3709,11 +3765,18 @@
       "textoGabarito": "prévio ajuste autorizador ou dolo do empregado, conforme a estrutura reproduzida da fonte.",
       "enunciado": "MÉDIA Um empregado causa prejuízo ao empregador. Para analisar a licitude do desconto salarial pelo dano, o raciocínio do módulo exige verificar, especialmente:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m13.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m13.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT art. 462 §1º",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "Alternativa C distingue corretamente situações legais; demais opções fazem generalizações não autorizadas ou trocam parâmetros.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M13-COMPLETA-Q06",
@@ -3723,13 +3786,20 @@
       "textoGabarito": "atende aos limites temporais de 4 anos para o mesmo empregador e 2 anos na função, sem prejuízo dos demais requisitos.",
       "enunciado": "MÉDIA Dois empregados exercem a mesma função para o mesmo empregador, no mesmo estabelecimento, com igual produtividade e perfeição técnica. A diferença de tempo para o mesmo empregador é de 3 anos e, na função, de 1 ano. São contemporâneos. À luz dos requisitos reproduzidos no módulo, essa situação:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [
         "redacao_editorial"
       ],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m13.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m13.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT art. 461 §1º",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "Alternativa C distingue corretamente situações legais; demais opções fazem generalizações não autorizadas ou trocam parâmetros.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M13-COMPLETA-Q07",
@@ -3739,13 +3809,20 @@
       "textoGabarito": "truck system, por restringir a livre disponibilidade do salário.",
       "enunciado": "MÉDIA O empregador paga parte relevante do salário por vales que só podem ser utilizados no armazém da própria empresa. Segundo o módulo, o problema central é:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "Enunciado contém referência editorial ao material",
       "riscos": [
         "alerta_existente_no_item"
       ],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m13.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m13.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT arts. 462 e 463; truck system",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "Alternativa C distingue corretamente situações legais; demais opções fazem generalizações não autorizadas ou trocam parâmetros.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M13-COMPLETA-Q08",
@@ -3755,13 +3832,20 @@
       "textoGabarito": "relatório semestral para pessoas jurídicas de direito privado com 100 ou mais empregados e plano de ação quando identificada desigualdade.",
       "enunciado": "MÉDIA Na edição da fonte que trata da Lei nº 14.611/2023, o módulo registra como núcleo seguro:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [
         "redacao_editorial"
       ],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m13.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m13.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "Lei 14.611/2023 — transparência semestral",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14611.htm",
+        "conclusao": "Alternativa B distingue corretamente situações legais; demais opções fazem generalizações não autorizadas ou trocam parâmetros.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M13-COMPLETA-Q09",
@@ -3771,11 +3855,18 @@
       "textoGabarito": "Na substituição não meramente eventual, a fonte reproduz direito ao salário contratual do substituído enquanto durar a substituição; isso não elimina os requisitos próprios da equiparação do art. 461.",
       "enunciado": "DIFÍCIL Assinale a alternativa correta sobre equiparação e substituição.",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m13.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m13.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT art. 461; Súmula TST 159",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "Alternativa B distingue corretamente situações legais; demais opções fazem generalizações não autorizadas ou trocam parâmetros.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M13-COMPLETA-Q10",
@@ -3785,11 +3876,18 @@
       "textoGabarito": "o empregador pode compensar o adiantamento com a gratificação devida e, se insuficiente, com outro crédito trabalhista do empregado, segundo a sistemática apresentada.",
       "enunciado": "DIFÍCIL Um empregado recebeu adiantamento do décimo terceiro e o contrato foi extinto antes da quitação anual. Segundo a disciplina específica preservada da fonte:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m13.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m13.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "Lei 4.749/1965 art. 3º",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "Alternativa B distingue corretamente situações legais; demais opções fazem generalizações não autorizadas ou trocam parâmetros.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M14-RESUMIDA-Q01",
@@ -3799,11 +3897,18 @@
       "textoGabarito": "não basta, por si só, sendo necessária efetividade das medidas de proteção.",
       "enunciado": "Fácil O simples fornecimento de EPI ao empregado:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m14.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m14.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "TST Súmulas 80 e 289",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "Alternativa C distingue corretamente situações legais; demais opções fazem generalizações não autorizadas ou trocam parâmetros.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M14-RESUMIDA-Q02",
@@ -3813,11 +3918,18 @@
       "textoGabarito": "10%, 20% e 40%.",
       "enunciado": "Fácil Os percentuais de insalubridade estudados são:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m14.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m14.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT art. 192",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "Alternativa A distingue corretamente situações legais; demais opções fazem generalizações não autorizadas ou trocam parâmetros.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M14-RESUMIDA-Q03",
@@ -3827,11 +3939,18 @@
       "textoGabarito": "convocação 60 dias antes, inscrições por no mínimo 15 dias corridos e eleição, em regra, 30 dias antes do término do mandato.",
       "enunciado": "Média Na eleição da CIPA, a fonte trabalha como sequência principal:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m14.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m14.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "NR 5 — processo eleitoral",
+        "fonte": "https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/inspecao-do-trabalho/seguranca-e-saude-no-trabalho/normas-regulamentadoras/nr-05.pdf",
+        "conclusao": "Alternativa A distingue corretamente situações legais; demais opções fazem generalizações não autorizadas ou trocam parâmetros.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M14-RESUMIDA-Q04",
@@ -3841,11 +3960,18 @@
       "textoGabarito": "a exposição intermitente pode gerar direito, enquanto a eventual/fortuita ou extremamente reduzida recebe tratamento diverso.",
       "enunciado": "Média Para a periculosidade, conforme a Súmula 364 do TST estudada:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m14.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m14.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "TST Súmula 364",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "Alternativa B distingue corretamente situações legais; demais opções fazem generalizações não autorizadas ou trocam parâmetros.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M14-RESUMIDA-Q05",
@@ -3855,11 +3981,18 @@
       "textoGabarito": "A fonte diferencia os regimes: a NR-5 trata o término regular do contrato a termo na CIPA de modo próprio, e a Súmula 378, III, é citada para admitir a garantia acidentária.",
       "enunciado": "Difícil Sobre contrato por prazo determinado, CIPA e acidente do trabalho, assinale a alternativa correta.",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m14.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m14.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "NR 5 e Súmula TST 378 III",
+        "fonte": "https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/inspecao-do-trabalho/seguranca-e-saude-no-trabalho/normas-regulamentadoras/nr-05.pdf",
+        "conclusao": "Alternativa C distingue corretamente situações legais; demais opções fazem generalizações não autorizadas ou trocam parâmetros.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M14-COMPLETA-Q01",
@@ -3869,11 +4002,18 @@
       "textoGabarito": "A empresa deve instruir os empregados sobre precauções e facilitar a fiscalização, enquanto o empregado deve observar as normas e colaborar com sua aplicação.",
       "enunciado": "Fácil Sobre os deveres de segurança e medicina do trabalho, assinale a alternativa correta.",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m14.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m14.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT arts. 157 e 158",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "Alternativa C distingue corretamente situações legais; demais opções fazem generalizações não autorizadas ou trocam parâmetros.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M14-COMPLETA-Q02",
@@ -3883,11 +4023,18 @@
       "textoGabarito": "não basta, por si só, para afastar a nocividade; é necessária efetividade das medidas de proteção.",
       "enunciado": "Fácil De acordo com o conteúdo estudado, o simples fornecimento de Equipamento de Proteção Individual (EPI):",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m14.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m14.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "TST Súmulas 80 e 289",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "Alternativa D distingue corretamente situações legais; demais opções fazem generalizações não autorizadas ou trocam parâmetros.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M14-COMPLETA-Q03",
@@ -3897,13 +4044,20 @@
       "textoGabarito": "10%, 20% e 40%.",
       "enunciado": "Fácil Os graus de insalubridade apresentados no módulo correspondem, respectivamente, a:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [
         "redacao_editorial"
       ],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m14.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m14.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT art. 192",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "Alternativa B distingue corretamente situações legais; demais opções fazem generalizações não autorizadas ou trocam parâmetros.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M14-COMPLETA-Q04",
@@ -3913,11 +4067,18 @@
       "textoGabarito": "os representantes da organização são designados e os representantes dos empregados são eleitos por voto secreto.",
       "enunciado": "Fácil Na composição da Comissão Interna de Prevenção de Acidentes e de Assédio (CIPA), conforme a NR-5 reproduzida nas fontes:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m14.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m14.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "NR 5 — composição da CIPA",
+        "fonte": "https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/inspecao-do-trabalho/seguranca-e-saude-no-trabalho/normas-regulamentadoras/nr-05.pdf",
+        "conclusao": "Alternativa C distingue corretamente situações legais; demais opções fazem generalizações não autorizadas ou trocam parâmetros.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M14-COMPLETA-Q05",
@@ -3927,11 +4088,18 @@
       "textoGabarito": "Havendo mais de um fator de insalubridade, a NR-15 reproduzida considera o de grau mais elevado, sem cumulação entre fatores.",
       "enunciado": "Média Em relação à insalubridade, assinale a alternativa correta.",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m14.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m14.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "NR 15 — insalubridade sem cumulação",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "Alternativa D distingue corretamente situações legais; demais opções fazem generalizações não autorizadas ou trocam parâmetros.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M14-COMPLETA-Q06",
@@ -3941,11 +4109,18 @@
       "textoGabarito": "pode ser devido na exposição intermitente, distinguindo-se da exposição eventual ou extremamente reduzida.",
       "enunciado": "Média Segundo a Súmula 364 do TST tal como reproduzida nas fontes, o adicional de periculosidade:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m14.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m14.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "TST Súmula 364 — intermitente ≠ eventual",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "Alternativa B distingue corretamente situações legais; demais opções fazem generalizações não autorizadas ou trocam parâmetros.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M14-COMPLETA-Q07",
@@ -3955,13 +4130,20 @@
       "textoGabarito": "convocação 60 dias; inscrição 15 dias corridos; eleição, em regra, 30 dias antes do fim do mandato.",
       "enunciado": "Média No processo eleitoral da CIPA estudado no módulo, a sequência correta de prazos mínimos é:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [
         "redacao_editorial"
       ],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m14.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m14.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "NR 5 — convocação, inscrições, eleições",
+        "fonte": "https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/inspecao-do-trabalho/seguranca-e-saude-no-trabalho/normas-regulamentadoras/nr-05.pdf",
+        "conclusao": "Alternativa B distingue corretamente situações legais; demais opções fazem generalizações não autorizadas ou trocam parâmetros.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M14-COMPLETA-Q08",
@@ -3971,11 +4153,18 @@
       "textoGabarito": "Doença profissional decorre do exercício de trabalho peculiar a determinada atividade; doença do trabalho relaciona-se às condições especiais em que o trabalho é realizado.",
       "enunciado": "Média Sobre acidente do trabalho e doenças ocupacionais, assinale a alternativa correta.",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m14.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m14.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "Lei 8.213/1991 art. 20 I e II",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm",
+        "conclusao": "Alternativa C distingue corretamente situações legais; demais opções fazem generalizações não autorizadas ou trocam parâmetros.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M14-COMPLETA-Q09",
@@ -3985,11 +4174,18 @@
       "textoGabarito": "a fonte diferencia as situações: o término regular do contrato a termo recebe tratamento próprio na CIPA, enquanto a Súmula 378, III, é citada como compatível com a garantia acidentária.",
       "enunciado": "Difícil Um empregado foi eleito suplente da CIPA durante contrato por prazo determinado. Em outro caso, empregado também contratado a termo sofreu acidente do trabalho e preencheu os requisitos da garantia acidentária trabalhados na fonte. Considerando somente o módulo estudado, é correto afirmar que:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m14.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m14.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "NR 5; TST Súmulas 339 e 378 III",
+        "fonte": "https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/inspecao-do-trabalho/seguranca-e-saude-no-trabalho/normas-regulamentadoras/nr-05.pdf",
+        "conclusao": "Alternativa C distingue corretamente situações legais; demais opções fazem generalizações não autorizadas ou trocam parâmetros.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M14-COMPLETA-Q10",
@@ -3999,11 +4195,18 @@
       "textoGabarito": "A jurisprudência apresentada não admite cumulação dos adicionais; além disso, a entrega de EPI, sem eficácia demonstrada, não basta para neutralizar a insalubridade.",
       "enunciado": "Difícil Um empregado trabalha exposto a agente insalubre em grau médio e, simultaneamente, a situação perigosa enquadrada na regulamentação. A empresa entrega EPI, mas não demonstra neutralização efetiva do agente insalubre. À luz do conteúdo validado do módulo, assinale a alternativa correta.",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m14.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m14.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT art. 193 §2º; TST Súmula 289",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "Alternativa C distingue corretamente situações legais; demais opções fazem generalizações não autorizadas ou trocam parâmetros.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M15-RESUMIDA-Q01",
