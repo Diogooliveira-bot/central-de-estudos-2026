@@ -1,7 +1,7 @@
 {
   "schema": "base-completa-triagem-juridica-20261012-v1",
   "dataCorte": "2026-10-12",
-  "observacao": "TRIAGEM DOCUMENTAL, NÃO É CERTIFICAÇÃO INDIVIDUAL DE MÉRITO. As 251 questões foram inventariadas com suas cinco alternativas, gabarito, comentário e pontos de atenção. Não confundir triagem automatizada com validação jurídica conclusiva; cada item ainda exige cotejo individual de enunciado, todas as alternativas, gabarito, comentário e fundamentos atualizados. Cotejo normativo de 23 questões pendentes da R4 concluído (e quatro questões previamente revisadas rechecadas). O cotejo dos 228 itens restantes e a integração das erratas dos PDFs continuam pendentes. Adicionalmente, 27 questões dos módulos M01 e M02 foram cotejadas (inclusive princípios e cronologia), totalizando 50/251 com verificação individual de alternativas e comentários.",
+  "observacao": "TRIAGEM DOCUMENTAL, NÃO É CERTIFICAÇÃO INDIVIDUAL DE MÉRITO. As 251 questões foram inventariadas com suas cinco alternativas, gabarito, comentário e pontos de atenção. Não confundir triagem automatizada com validação jurídica conclusiva; cada item ainda exige cotejo individual de enunciado, todas as alternativas, gabarito, comentário e fundamentos atualizados. Cotejo normativo de 23 questões pendentes da R4 concluído (e quatro questões previamente revisadas rechecadas). O cotejo dos 228 itens restantes e a integração das erratas dos PDFs continuam pendentes. Adicionalmente, 27 questões dos módulos M01 e M02 foram cotejadas (inclusive princípios e cronologia), totalizando 50/251 com verificação individual de alternativas e comentários. Mais 27 enunciados, respostas, distratores e comentários dos módulos M03/M04 cotejados; conclusão acumulada 77/251.",
   "fontesCotejadas": [
     "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
     "https://www.planalto.gov.br/ccivil_03/constituicao/constituicaocompilado.htm",
@@ -25,8 +25,8 @@
     ],
     "certificadasIntegralmenteNestaRodada": 0,
     "homologacao": false,
-    "cotejosNormativosConcluidosNaRodada": 50,
-    "pendentesCotejoNormativoNaRodada": 201,
+    "cotejosNormativosConcluidosNaRodada": 77,
+    "pendentesCotejoNormativoNaRodada": 174,
     "rechecadosDaRodadaAnterior": 4
   },
   "registros": [
@@ -685,11 +685,19 @@
       "textoGabarito": "interpretação.",
       "enunciado": "Fácil Quando existe norma aplicável, mas é necessário determinar seu sentido e alcance, o problema é de:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m03.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m03.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT art. 8º — interpretação de norma existente",
+        "conclusao": "Gabarito B compatível com fundamento; alternativas concorrentes negam requisito ou invertem conceitos descritos na base.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "corte": "2026-10-12",
+        "alerta": null
+      }
     },
     {
       "id": "DT-M03-RESUMIDA-Q02",
@@ -699,11 +707,19 @@
       "textoGabarito": "Prescrição relaciona-se à pretensão; decadência, ao direito potestativo.",
       "enunciado": "Fácil Assinale a alternativa correta.",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m03.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m03.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CC arts. 189 e 207 — prescrição da pretensão e decadência potestativa",
+        "conclusao": "Gabarito C compatível com fundamento; alternativas concorrentes negam requisito ou invertem conceitos descritos na base.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "corte": "2026-10-12",
+        "alerta": null
+      }
     },
     {
       "id": "DT-M03-RESUMIDA-Q03",
@@ -713,11 +729,19 @@
       "textoGabarito": "A suspensão preserva o tempo anterior e a contagem continua pelo restante quando cessa a causa.",
       "enunciado": "Média Sobre o curso da prescrição, assinale a alternativa correta.",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m03.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m03.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT arts. 440 e 625-G — suspensão sem perda do tempo já contado",
+        "conclusao": "Gabarito C compatível com fundamento; alternativas concorrentes negam requisito ou invertem conceitos descritos na base.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "corte": "2026-10-12",
+        "alerta": null
+      }
     },
     {
       "id": "DT-M03-RESUMIDA-Q04",
@@ -727,13 +751,21 @@
       "textoGabarito": "a parcela também está assegurada por preceito de lei?",
       "enunciado": "Média Na análise de prescrição total e parcial em prestações sucessivas, conforme a lógica estudada, a pergunta decisiva é:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "ALERTA: doutrina prescrição total/parcial apoiava-se na Súmula 294 (cancelada 2025)",
       "riscos": [
         "alerta_existente_no_item"
       ],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m03.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m03.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT art. 11 §2º — prestação sucessiva garantida por lei; Súmula 294 cancelada",
+        "conclusao": "Gabarito C compatível com fundamento; alternativas concorrentes negam requisito ou invertem conceitos descritos na base.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "corte": "2026-10-12",
+        "alerta": "A Súmula 294 foi cancelada pela Resolução 225/2025; questão apoiada na lei positiva art11§2º, não na súmula."
+      }
     },
     {
       "id": "DT-M03-RESUMIDA-Q05",
@@ -743,11 +775,19 @@
       "textoGabarito": "I, II, III e IV.",
       "enunciado": "Difícil Considere: I. analogia é técnica integrativa utilizada diante de lacuna; II. o quinquênio é trabalhado pela fonte como contagem retroativa a partir do ajuizamento, respeitado o biênio; III. contra menor de 18 anos não corre prescrição; IV. a prescrição intercorrente trabalhista é tratada com prazo de dois anos. Está correto o que se afirma em:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m03.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m03.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT arts. 11-A e 440; CF art. 7º XXIX — quatro proposições compatíveis",
+        "conclusao": "Gabarito E compatível com fundamento; alternativas concorrentes negam requisito ou invertem conceitos descritos na base.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/constituicao/constituicaocompilado.htm",
+        "corte": "2026-10-12",
+        "alerta": null
+      }
     },
     {
       "id": "DT-M03-COMPLETA-Q01",
@@ -757,11 +797,19 @@
       "textoGabarito": "A integração é utilizada diante de lacuna, enquanto a interpretação busca o sentido e o alcance de norma existente.",
       "enunciado": "Fácil Em relação aos institutos de interpretação e integração no Direito do Trabalho, assinale a alternativa correta.",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m03.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m03.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT art. 8º — interpretação versus integração e analogia",
+        "conclusao": "Gabarito B compatível com fundamento; alternativas concorrentes negam requisito ou invertem conceitos descritos na base.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "corte": "2026-10-12",
+        "alerta": null
+      }
     },
     {
       "id": "DT-M03-COMPLETA-Q02",
@@ -771,11 +819,19 @@
       "textoGabarito": "axiológica.",
       "enunciado": "Fácil A interpretação que considera valores e princípios jurídicos relevantes é denominada, na classificação estudada:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m03.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m03.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "Teoria da interpretação jurídica — método axiológico considera valores",
+        "conclusao": "Gabarito D compatível com fundamento; alternativas concorrentes negam requisito ou invertem conceitos descritos na base.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "corte": "2026-10-12",
+        "alerta": null
+      }
     },
     {
       "id": "DT-M03-COMPLETA-Q03",
@@ -785,13 +841,21 @@
       "textoGabarito": "há prazo quinquenal para os créditos, observado o limite de dois anos após a extinção do contrato para o ajuizamento.",
       "enunciado": "Fácil Considerada a regra prescricional central trabalhada no módulo, é correto afirmar que:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [
         "redacao_editorial"
       ],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m03.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m03.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CF art. 7º XXIX e CLT art. 11 — bienal e quinquenal coexistentes",
+        "conclusao": "Gabarito C compatível com fundamento; alternativas concorrentes negam requisito ou invertem conceitos descritos na base.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/constituicao/constituicaocompilado.htm",
+        "corte": "2026-10-12",
+        "alerta": null
+      }
     },
     {
       "id": "DT-M03-COMPLETA-Q04",
@@ -801,11 +865,19 @@
       "textoGabarito": "não corre prescrição.",
       "enunciado": "Fácil Segundo a Consolidação das Leis do Trabalho (CLT), contra empregado menor de 18 anos:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m03.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m03.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT art. 440 — não corre prescrição contra menor de 18 anos",
+        "conclusao": "Gabarito E compatível com fundamento; alternativas concorrentes negam requisito ou invertem conceitos descritos na base.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "corte": "2026-10-12",
+        "alerta": null
+      }
     },
     {
       "id": "DT-M03-COMPLETA-Q05",
@@ -815,11 +887,19 @@
       "textoGabarito": "A provocação da Comissão de Conciliação Prévia, na hipótese legal, suspende o prazo prescricional.",
       "enunciado": "Média Sobre impedimento, suspensão e interrupção da prescrição, assinale a alternativa correta.",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m03.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m03.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT art. 625-G — CCP suspende prescrição",
+        "conclusao": "Gabarito C compatível com fundamento; alternativas concorrentes negam requisito ou invertem conceitos descritos na base.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "corte": "2026-10-12",
+        "alerta": null
+      }
     },
     {
       "id": "DT-M03-COMPLETA-Q06",
@@ -829,11 +909,19 @@
       "textoGabarito": "I, II e III.",
       "enunciado": "Média A respeito da analogia, considere: I. pressupõe ausência de disciplina específica suficiente para o caso; II. busca norma ou princípio relacionado a situação semelhante; III. exige elemento comum relevante que justifique a aproximação; IV. é técnica de interpretação extensiva de norma já diretamente aplicável. Está correto o que se afirma APENAS em:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m03.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m03.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT art. 8º — analogia como técnica integrativa diante de lacuna",
+        "conclusao": "Gabarito B compatível com fundamento; alternativas concorrentes negam requisito ou invertem conceitos descritos na base.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "corte": "2026-10-12",
+        "alerta": null
+      }
     },
     {
       "id": "DT-M03-COMPLETA-Q07",
@@ -843,13 +931,21 @@
       "textoGabarito": "se a parcela também está assegurada por preceito de lei.",
       "enunciado": "Média Na distinção entre prescrição total e parcial adotada na fonte do módulo, o ponto central para as prestações sucessivas é verificar:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "ALERTA: doutrina prescrição total/parcial apoiava-se na Súmula 294 (cancelada 2025)",
       "riscos": [
         "alerta_existente_no_item"
       ],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m03.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m03.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT art. 11 §2º — prestação sucessiva garantida por lei; Súmula 294 cancelada",
+        "conclusao": "Gabarito B compatível com fundamento; alternativas concorrentes negam requisito ou invertem conceitos descritos na base.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "corte": "2026-10-12",
+        "alerta": "A Súmula 294 foi cancelada pela Resolução 225/2025; questão apoiada na lei positiva art11§2º, não na súmula."
+      }
     },
     {
       "id": "DT-M03-COMPLETA-Q08",
@@ -859,11 +955,19 @@
       "textoGabarito": "O inquérito para apuração de falta grave, nas hipóteses legais, constitui exemplo trabalhado de prazo decadencial de 30 dias contado da suspensão.",
       "enunciado": "Média Assinale a alternativa correta sobre decadência no Direito do Trabalho, conforme o conteúdo estudado.",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m03.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m03.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT art. 853 — decadência de trinta dias após suspensão para inquérito",
+        "conclusao": "Gabarito C compatível com fundamento; alternativas concorrentes negam requisito ou invertem conceitos descritos na base.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "corte": "2026-10-12",
+        "alerta": null
+      }
     },
     {
       "id": "DT-M03-COMPLETA-Q09",
@@ -873,11 +977,19 @@
       "textoGabarito": "A ação foi proposta dentro do biênio e, na lógica da fonte, o quinquênio alcança retroativamente as parcelas a partir de 01/02/2023, ressalvadas regras específicas.",
       "enunciado": "Difícil Um contrato de trabalho foi extinto em 10/03/2026. O empregado ajuizou reclamação em 01/02/2028. Considere, exclusivamente para fins didáticos, que não houve causa impeditiva, suspensiva ou interruptiva e que a pretensão se sujeita à regra geral estudada. Assinale a alternativa correta.",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m03.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m03.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CF art. 7º XXIX, CLT art. 11 e Súmula 308 — ajuizamento dentro do biênio e quinquênio retroativo",
+        "conclusao": "Gabarito D compatível com fundamento; alternativas concorrentes negam requisito ou invertem conceitos descritos na base.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/constituicao/constituicaocompilado.htm",
+        "corte": "2026-10-12",
+        "alerta": null
+      }
     },
     {
       "id": "DT-M03-COMPLETA-Q10",
@@ -887,11 +999,19 @@
       "textoGabarito": "I, II, III e IV.",
       "enunciado": "Difícil Considere as afirmações: I. Preclusão é perda de faculdade processual. II. Perempção trabalhista é instituto processual distinto da prescrição, sendo mencionado pela fonte com prazo de seis meses em hipótese específica. III. O ajuizamento da reclamação produz efeito interruptivo, na disciplina estudada, em relação aos pedidos idênticos. IV. As causas que impedem, suspendem ou interrompem a prescrição não se aplicam automaticamente à decadência. Está correto o que se afirma em:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m03.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m03.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT arts. 731, 732, 11 §3º; CC arts. 207 e 208 — distinção perempção, prescrição e decadência",
+        "conclusao": "Gabarito E compatível com fundamento; alternativas concorrentes negam requisito ou invertem conceitos descritos na base.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "corte": "2026-10-12",
+        "alerta": null
+      }
     },
     {
       "id": "DT-M04-RESUMIDA-Q01",
@@ -901,11 +1021,19 @@
       "textoGabarito": "Pessoa física, pessoalidade, onerosidade, não eventualidade e subordinação jurídica.",
       "enunciado": "Questão 1 FÁCIL Assinale a alternativa que apresenta os cinco requisitos clássicos da relação de emprego.",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m04.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m04.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT arts. 2º e 3º — cinco elementos clássicos do vínculo",
+        "conclusao": "Gabarito A compatível com fundamento; alternativas concorrentes negam requisito ou invertem conceitos descritos na base.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "corte": "2026-10-12",
+        "alerta": null
+      }
     },
     {
       "id": "DT-M04-RESUMIDA-Q02",
@@ -936,11 +1064,19 @@
       "textoGabarito": "continuidade e exclusividade, isoladamente, não substituem a análise da subordinação e dos demais requisitos.",
       "enunciado": "Questão 3 MÉDIA Um profissional presta serviços de forma contínua e exclusiva, mas organiza a própria atividade, define a execução e não se submete ao poder jurídico de direção do tomador. À luz do M4:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m04.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m04.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT art. 442-B, arts. 2º e 3º — continuidade e exclusividade não bastam",
+        "conclusao": "Gabarito C compatível com fundamento; alternativas concorrentes negam requisito ou invertem conceitos descritos na base.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "corte": "2026-10-12",
+        "alerta": null
+      }
     },
     {
       "id": "DT-M04-RESUMIDA-Q04",
@@ -950,11 +1086,19 @@
       "textoGabarito": "estágio regular pode não gerar vínculo quando observados os requisitos legais.",
       "enunciado": "Questão 4 MÉDIA Sobre estágio, é correto afirmar que:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m04.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m04.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "Lei 11.788/2008 arts. 3º e 15 — estágio regular não configura emprego",
+        "conclusao": "Gabarito B compatível com fundamento; alternativas concorrentes negam requisito ou invertem conceitos descritos na base.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2008/lei/l11788.htm",
+        "corte": "2026-10-12",
+        "alerta": null
+      }
     },
     {
       "id": "DT-M04-RESUMIDA-Q05",
@@ -964,11 +1108,19 @@
       "textoGabarito": "OJ 199: trabalho inerente ao jogo do bicho é paradigma de objeto ilícito.",
       "enunciado": "Questão 5 DIFÍCIL Assinale a alternativa correta sobre a jurisprudência estudada.",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m04.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m04.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "TST OJ 199; Súmulas 12, 386 e 363 — jogo do bicho, CTPS, policial militar, nulidade",
+        "conclusao": "Gabarito C compatível com fundamento; alternativas concorrentes negam requisito ou invertem conceitos descritos na base.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "corte": "2026-10-12",
+        "alerta": null
+      }
     },
     {
       "id": "DT-M04-COMPLETA-Q01",
@@ -978,11 +1130,19 @@
       "textoGabarito": "Relação de emprego é espécie da relação de trabalho e exige requisitos jurídicos próprios.",
       "enunciado": "Questão 1 FÁCIL Sobre relação de trabalho e relação de emprego, assinale a alternativa correta.",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m04.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m04.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT arts. 2º e 3º — emprego é espécie da relação de trabalho",
+        "conclusao": "Gabarito C compatível com fundamento; alternativas concorrentes negam requisito ou invertem conceitos descritos na base.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "corte": "2026-10-12",
+        "alerta": null
+      }
     },
     {
       "id": "DT-M04-COMPLETA-Q02",
@@ -992,11 +1152,19 @@
       "textoGabarito": "Pessoa física, pessoalidade, onerosidade, não eventualidade e subordinação jurídica.",
       "enunciado": "Questão 2 FÁCIL Qual conjunto corresponde aos requisitos clássicos da relação de emprego estudados no M4?",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m04.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m04.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT arts. 2º e 3º — cinco elementos do emprego",
+        "conclusao": "Gabarito B compatível com fundamento; alternativas concorrentes negam requisito ou invertem conceitos descritos na base.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "corte": "2026-10-12",
+        "alerta": null
+      }
     },
     {
       "id": "DT-M04-COMPLETA-Q03",
@@ -1048,11 +1216,19 @@
       "textoGabarito": "a situação deve ser analisada pelos requisitos do vínculo, e o art. 6º admite comando, controle e supervisão por meios telemáticos.",
       "enunciado": "Questão 5 MÉDIA Uma trabalhadora presta serviços de casa, recebe ordens por plataforma digital, tem tarefas supervisionadas e responde a uma chefia. À luz do M4, a conclusão correta é:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m04.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m04.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT art. 6º — controle telemático e subordinação a distância",
+        "conclusao": "Gabarito C compatível com fundamento; alternativas concorrentes negam requisito ou invertem conceitos descritos na base.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "corte": "2026-10-12",
+        "alerta": null
+      }
     },
     {
       "id": "DT-M04-COMPLETA-Q06",
@@ -1062,11 +1238,19 @@
       "textoGabarito": "O art. 442-B admite contratação regular com ou sem exclusividade e de forma contínua ou não, sem legitimar fraude.",
       "enunciado": "Questão 6 MÉDIA Sobre o trabalhador autônomo, assinale a alternativa correta.",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m04.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m04.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT art. 442-B; arts. 2º, 3º e 9º — autonomia real versus fraude",
+        "conclusao": "Gabarito C compatível com fundamento; alternativas concorrentes negam requisito ou invertem conceitos descritos na base.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "corte": "2026-10-12",
+        "alerta": null
+      }
     },
     {
       "id": "DT-M04-COMPLETA-Q07",
@@ -1076,11 +1260,19 @@
       "textoGabarito": "a presença dos requisitos legais é compatível com estágio regular sem vínculo empregatício.",
       "enunciado": "Questão 7 MÉDIA Um estudante recebe bolsa, possui termo de compromisso, matrícula e frequência regulares, atividades compatíveis com o curso e acompanhamento efetivo. Nesse quadro:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m04.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m04.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "Lei 11.788/2008 art. 3º — estágio regular e ausência de vínculo",
+        "conclusao": "Gabarito C compatível com fundamento; alternativas concorrentes negam requisito ou invertem conceitos descritos na base.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2008/lei/l11788.htm",
+        "corte": "2026-10-12",
+        "alerta": null
+      }
     },
     {
       "id": "DT-M04-COMPLETA-Q08",
@@ -1090,11 +1282,19 @@
       "textoGabarito": "o ressarcimento é compatível com o voluntariado nas condições legais.",
       "enunciado": "Questão 8 MÉDIA Em serviço voluntário verdadeiro, o prestador recebe ressarcimento de despesas comprovadamente realizadas e previamente autorizadas pela entidade. Segundo o M4:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m04.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m04.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "Lei 9.608/1998 arts. 1º a 3º — reembolso autorizado em voluntariado",
+        "conclusao": "Gabarito B compatível com fundamento; alternativas concorrentes negam requisito ou invertem conceitos descritos na base.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/leis/l9608.htm",
+        "corte": "2026-10-12",
+        "alerta": null
+      }
     },
     {
       "id": "DT-M04-COMPLETA-Q09",
@@ -1104,11 +1304,19 @@
       "textoGabarito": "Contraprestação pactuada pelas horas trabalhadas, respeitado o valor da hora do salário mínimo, e depósitos do FGTS.",
       "enunciado": "Questão 9 DIFÍCIL Servidor foi contratado por ente público após a Constituição de 1988 sem prévia aprovação em con‐ curso, em hipótese abrangida pela Súmula 363 do TST. Assinale a alternativa que reproduz os efeitos reconhecidos pela súmula.",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m04.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m04.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CF art. 37 II e §2º; TST Súmula 363 — contrato público nulo e efeitos limitados",
+        "conclusao": "Gabarito C compatível com fundamento; alternativas concorrentes negam requisito ou invertem conceitos descritos na base.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/constituicao/constituicaocompilado.htm",
+        "corte": "2026-10-12",
+        "alerta": null
+      }
     },
     {
       "id": "DT-M04-COMPLETA-Q10",
@@ -1118,11 +1326,19 @@
       "textoGabarito": "II e III, apenas.",
       "enunciado": "Questão 10 DIFÍCIL Considere as afirmações: I. As anotações da CTPS geram presunção absoluta. II. Preenchidos os re‐ quisitos do art. 3º da CLT, pode haver vínculo entre policial militar e empresa privada, independente‐ mente de eventual penalidade disciplinar. III. O contrato para atividade inerente à prática do jogo do bicho é paradigma de objeto ilícito tratado pela OJ 199. Está correto o que se afirma em:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m04.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m04.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "Súmulas TST 12 e 386; OJ 199 — CTPS, policial militar e jogo do bicho",
+        "conclusao": "Gabarito D compatível com fundamento; alternativas concorrentes negam requisito ou invertem conceitos descritos na base.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "corte": "2026-10-12",
+        "alerta": null
+      }
     },
     {
       "id": "DT-M05-RESUMIDA-Q01",
