@@ -765,6 +765,16 @@ button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-vis
 <style id="central-native-return-style">
 .central-native-return{position:fixed;top:10px;left:10px;z-index:2147483647;font-family:Arial,sans-serif}
 .central-native-return a{display:inline-flex;align-items:center;gap:6px;padding:9px 12px;border-radius:10px;background:#111827;color:#fff;text-decoration:none;font-weight:800;font-size:13px;border:1px solid rgba(255,255,255,.18);box-shadow:0 4px 18px rgba(0,0,0,.18)}
+
+/* Lei em Dia — avisos de revisão e legibilidade, 12/10/2026. */
+.legal-review-notice{display:flex;flex-direction:column;gap:5px;margin:12px 0;padding:12px 15px;border:1px solid #d5a55d;border-radius:10px;background:#fff5e2;color:#634111;line-height:1.5;font-size:13px}
+.legal-review-notice strong{font-weight:800;letter-spacing:.015em}
+.feedback.pending{background:#fff5e2;border-color:#d5a55d;color:#634111}
+[data-theme="dark"] .legal-review-notice,[data-theme="dark"] .feedback.pending{background:#342b1e;border-color:#927348;color:#f3d8aa}
+.answer-buttons.main-answers button{min-height:46px;white-space:normal;overflow-wrap:anywhere}
+.exercise-card,.scroll-question-card,.answer-reveal,.legal-basis{min-width:0;max-width:100%}
+.statement,.feedback p,.law-text,.legal-source{overflow-wrap:anywhere;word-break:normal}
+@media (max-width:560px){.legal-review-notice{font-size:12px;padding:11px 12px}.answer-buttons.main-answers{max-width:100%}.answer-buttons.main-answers button{min-width:0}}
 </style>
 <script>try{history.scrollRestoration='manual'}catch(e){};window.addEventListener('pageshow',()=>{scrollTo(0,0);setTimeout(()=>scrollTo(0,0),30)});</script>
 <script>window.__CENTRAL_EMBEDDED__=true;</script><link rel="stylesheet" href="../ui/tool-navigation.css?v=20261001fix1"><link rel="stylesheet" href="/ui/lei-em-dia-v1.css?v=20261008lei1"></head>
@@ -1356,9 +1366,10 @@ function renderFilters(){
 }
 document.addEventListener("keydown",e=>{if(e.key==="Escape"&&typeof ui!=="undefined"&&ui.dd){qcClose()}});
 
+function legalAuditBanner(article){return article.question?.legalAudit?.status==='pendente' ? '<aside class="legal-review-notice" role="status"><strong>⚠ PENDENTE DE REVISÃO JURÍDICA</strong><span>Gabarito anterior ainda não certificado. O resultado registrado nesta questão é provisório.</span></aside>' : '';}
 function feedback(article,choice){
   const ok=choice===article.question.answer;
-  return `<div class="feedback ${ok?"correct":"wrong"}"><strong>${ok?"Você acertou":"Você errou"}</strong>${article.question.explanation?`<p class="selectable-highlight" data-highlight-id="${esc(article.id)}" data-highlight-scope="explanation" onmouseup="captureTextSelection()" onkeyup="captureTextSelection()">${renderMarkedText(article.id,'explanation',article.question.explanation)}</p>`:""}${article.question.updateWarning?`<aside class="legal-update-warning"><strong>⚠ Atualização legislativa</strong><span>${esc(article.question.updateWarning)}</span></aside>`:""}${article.question.historicalNote?`<aside class="historical-question-note"><strong>Questão histórica</strong><span>${esc(article.question.historicalNote)}</span></aside>`:""}</div>`
+  return `<div class="feedback ${article.question?.legalAudit?.status==='pendente'?'pending':(ok?'correct':'wrong')}"><strong>${article.question?.legalAudit?.status==='pendente'?'Gabarito em revisão':(ok?'Você acertou':'Você errou')}</strong>${article.question.explanation?`<p class="selectable-highlight" data-highlight-id="${esc(article.id)}" data-highlight-scope="explanation" onmouseup="captureTextSelection()" onkeyup="captureTextSelection()">${renderMarkedText(article.id,'explanation',article.question.explanation)}</p>`:""}${article.question.updateWarning?`<aside class="legal-update-warning"><strong>⚠ Atualização legislativa</strong><span>${esc(article.question.updateWarning)}</span></aside>`:""}${article.question.historicalNote?`<aside class="historical-question-note"><strong>Questão histórica</strong><span>${esc(article.question.historicalNote)}</span></aside>`:""}</div>`
 }
 
 function lawHi(raw){
@@ -1430,6 +1441,7 @@ function renderFocus(){
       </div>
       ${ui.commentOpen?`<div class="comment-box"><div><strong>Comentário da questão</strong><small>Salvo automaticamente</small></div><textarea autofocus oninput="updateNote('${article.id}',this.value)" placeholder="Registre uma pegadinha, observação ou lembrete...">${esc(saved.notes[article.id]||"")}</textarea></div>`:""}
       <p class="statement main-statement">${esc(article.question.statement)}</p>
+      ${legalAuditBanner(article)}
       ${answerButtons(ui.choice,"answerFocus")}
       ${ui.choice!==null?`<div class="answer-reveal">${feedback(article,ui.choice)}${legalBasis(article)}</div>`:""}
       <div class="article-footer"><button ${ui.articleIndex===0?"disabled":""} onclick="move(-1)">← Anterior</button><span>${ui.articleIndex+1} de ${v.length}</span><div class="footer-right"><button class="btn-random" ${v.length<2?"disabled":""} onclick="randomQuestion()" title="Ir para uma questão aleatória">⤮ Aleatória</button><button class="btn-next" ${ui.articleIndex===v.length-1?"disabled":""} onclick="move(1)">Próximo →</button></div></div>
@@ -1447,6 +1459,7 @@ function renderScroll(){
         <div class="exercise-heading"><div><span class="question-number">QUESTÃO ${i+1}</span>${originBadge(article)}<h2>Julgue o item a seguir</h2>${article.question.meta?`<small class="question-meta">${esc(article.question.meta)}</small>`:""}</div><div class="question-actions"><span class="question-type">Certo ou errado</span><button onclick="ui.scrollComments['${article.id}']=!ui.scrollComments['${article.id}'];render()">▢ Comentário</button><button class="delete-action" onclick="deleteQuestion('${article.id}')">Excluir</button></div></div>
         ${ui.scrollComments[article.id]?`<div class="comment-box"><div><strong>Comentário da questão</strong><small>Salvo automaticamente</small></div><textarea oninput="updateNote('${article.id}',this.value)">${esc(saved.notes[article.id]||"")}</textarea></div>`:""}
         <p class="statement main-statement">${esc(article.question.statement)}</p>
+        ${legalAuditBanner(article)}
         ${(()=>{const opts=saved.preferences.answerOrder==="correct-left"?[[true,"✓ Certo"],[false,"× Errado"]]:[[false,"× Errado"],[true,"✓ Certo"]];return `<div class="answer-buttons main-answers">${opts.map(([v,l])=>`<button ${selected!==undefined?"disabled":""} class="${selected===v?"chosen":""}" onclick="answerScroll('${article.id}',${v})">${l}</button>`).join("")}</div>`})()}
         ${selected!==undefined?`<div class="answer-reveal">${feedback(article,selected)}${legalBasis(article)}<button class="inline-history-toggle" onclick="ui.scrollHistories['${article.id}']=!ui.scrollHistories['${article.id}'];render()">${open?"Fechar histórico ↑":`Ver histórico (${(saved.attempts[article.id]||[]).length}) ↓`}</button>${historyBlock(article,open)}</div>`:""}
         <div class="scroll-card-footer" data-qid="${esc(article.id)}"><button class="btn-random" ${v.length<2?"disabled":""} onclick="scrollRandom('${article.id}')">⤮ Aleatória</button><button class="btn-next" ${i===v.length-1?"disabled":""} onclick="scrollNext('${article.id}')">Próxima ↓</button></div>
