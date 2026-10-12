@@ -30,7 +30,7 @@ test('Conferência documental de 23 itens e 3 pendências explícitas',()=>{
  const reviewed=data.filter(q=>q.question.legalAudit?.status==='conferido_na_literalidade');
  const pending=data.filter(q=>q.question.legalAudit?.status==='pendente');
  assert.equal(reviewed.length,23);assert.equal(pending.length,3);
- assert.deepEqual(pending.map(q=>q.id.slice(-3)).sort(),['003','032','048']);
+ assert.deepEqual(Array.from(pending,q=>q.id.slice(-3)).sort(),['003','032','048']);
  assert.ok(reviewed.every(q=>q.question.legalAudit.referenceDate==='2026-10-12'));
  assert.ok(reviewed.every(q=>q.question.explanation.length>70));
  assert.ok(pending.every(q=>q.question.updateWarning.includes('PENDENTE DE REVISÃO')));
