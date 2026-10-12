@@ -258,3 +258,25 @@
   #ptra-native-overlay .ptra-book-qactions button{width:100%}
   #ptra-native-overlay .ptra-book-round-actions{display:grid}
 }
+/* Evita que o cabeçalho antigo do modal (grid de três colunas)
+   seja aplicado às seções editoriais da nova apostila. */
+#ptra-native-overlay .ptra-book-cover,
+#ptra-native-overlay .ptra-book-review>header{
+  display:block!important;
+  grid-template-columns:none!important;
+  padding-left:0!important;padding-right:0!important;
+  background:transparent!important;
+}
+#ptra-native-overlay .ptra-book-cover{
+  border-top:0!important;border-left:0!important;border-right:0!important;
+}
+#ptra-native-overlay .ptra-book-review>header{
+  border:0!important;padding:0!important;
+}
+#ptra-native-overlay .ptra-book-review>header h2{
+  width:auto!important;
+  white-space:normal!important;
+  overflow:visible!important;
+  text-overflow:clip!important;
+  max-width:none!important;
+}
