@@ -1,7 +1,7 @@
 {
   "schema": "base-completa-triagem-juridica-20261012-v1",
   "dataCorte": "2026-10-12",
-  "observacao": "TRIAGEM DOCUMENTAL, NÃO É CERTIFICAÇÃO INDIVIDUAL DE MÉRITO. As 251 questões foram inventariadas com suas cinco alternativas, gabarito, comentário e pontos de atenção. Não confundir triagem automatizada com validação jurídica conclusiva; cada item ainda exige cotejo individual de enunciado, todas as alternativas, gabarito, comentário e fundamentos atualizados. Cotejo normativo de 23 questões pendentes da R4 concluído (e quatro questões previamente revisadas rechecadas). O cotejo dos 228 itens restantes e a integração das erratas dos PDFs continuam pendentes. Adicionalmente, 27 questões dos módulos M01 e M02 foram cotejadas (inclusive princípios e cronologia), totalizando 50/251 com verificação individual de alternativas e comentários. Mais 27 enunciados, respostas, distratores e comentários dos módulos M03/M04 cotejados; conclusão acumulada 77/251. Foram cotejadas mais 24 questões dos M05 e M06 com fundamento e cinco alternativas, total 101/251. Cotejo dos módulos M07/M08 acrescentou 24 verificações individuais, total 125/251; core STF 246 não implica responsabilidade pública automática. M09 e M10: mais 23 questões cotejadas, totalizando 148/251, inclusive legislação do artista e teletrabalho. Cotejadas mais 20 questões pendentes de M11/M12, total 168/251; férias, pagamentos, equiparação e Súmula 91. Cotejo dos M13/M14 acrescentou 29 itens, total 197/251, incluindo FGTS, 13º, segurança, NR 5/NR 15 e precedentes.",
+  "observacao": "TRIAGEM DOCUMENTAL, NÃO É CERTIFICAÇÃO INDIVIDUAL DE MÉRITO. As 251 questões foram inventariadas com suas cinco alternativas, gabarito, comentário e pontos de atenção. Não confundir triagem automatizada com validação jurídica conclusiva; cada item ainda exige cotejo individual de enunciado, todas as alternativas, gabarito, comentário e fundamentos atualizados. Cotejo normativo de 23 questões pendentes da R4 concluído (e quatro questões previamente revisadas rechecadas). O cotejo dos 228 itens restantes e a integração das erratas dos PDFs continuam pendentes. Adicionalmente, 27 questões dos módulos M01 e M02 foram cotejadas (inclusive princípios e cronologia), totalizando 50/251 com verificação individual de alternativas e comentários. Mais 27 enunciados, respostas, distratores e comentários dos módulos M03/M04 cotejados; conclusão acumulada 77/251. Foram cotejadas mais 24 questões dos M05 e M06 com fundamento e cinco alternativas, total 101/251. Cotejo dos módulos M07/M08 acrescentou 24 verificações individuais, total 125/251; core STF 246 não implica responsabilidade pública automática. M09 e M10: mais 23 questões cotejadas, totalizando 148/251, inclusive legislação do artista e teletrabalho. Cotejadas mais 20 questões pendentes de M11/M12, total 168/251; férias, pagamentos, equiparação e Súmula 91. Cotejo dos M13/M14 acrescentou 29 itens, total 197/251, incluindo FGTS, 13º, segurança, NR 5/NR 15 e precedentes. M15 e M16: 26 cotejos documentais adicionais de cada enunciado, distratores, gabaritos e comentários, anotando efeito temporal do Tema 1022. Total: 223/251; pendentes 28.",
   "fontesCotejadas": [
     "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
     "https://www.planalto.gov.br/ccivil_03/constituicao/constituicaocompilado.htm",
@@ -25,8 +25,8 @@
     ],
     "certificadasIntegralmenteNestaRodada": 0,
     "homologacao": false,
-    "cotejosNormativosConcluidosNaRodada": 197,
-    "pendentesCotejoNormativoNaRodada": 54,
+    "cotejosNormativosConcluidosNaRodada": 223,
+    "pendentesCotejoNormativoNaRodada": 28,
     "rechecadosDaRodadaAnterior": 4
   },
   "registros": [
@@ -4216,11 +4216,20 @@
       "textoGabarito": "10 dias contados do término do contrato.",
       "enunciado": "Fácil O prazo estudado no art. 477 para pagamento das verbas rescisórias e entrega dos documentos correspondentes é de:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_DOCUMENTAL_CONCLUIDO_COM_CONTROLES",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m15.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m15.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_DOCUMENTAL_DO_MERITO",
+        "fundamento": "CLT art. 477 §6º",
+        "conclusao": "Prazo legal de 10 dias para entrega documental e pagamento rescisório; as demais respostas erram prazo e contagem.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "corte": "2026-10-12",
+        "checagem": "enunciado, alternativas A-E, gabarito e comentário",
+        "observacao": null
+      }
     },
     {
       "id": "DT-M15-RESUMIDA-Q02",
@@ -4253,11 +4262,20 @@
       "textoGabarito": "d e g.",
       "enunciado": "Média Conforme o art. 483, § 3º, na forma destacada pelas fontes do módulo, a possibilidade de pleitear a rescisão permanecendo ou não no serviço até a decisão final aparece para as alíneas:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_DOCUMENTAL_CONCLUIDO_COM_CONTROLES",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m15.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m15.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_DOCUMENTAL_DO_MERITO",
+        "fundamento": "CLT art. 483 §3º",
+        "conclusao": "A faculdade legal de permanecer ou não no emprego se refere às alíneas d e g.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "corte": "2026-10-12",
+        "checagem": "enunciado, alternativas A-E, gabarito e comentário",
+        "observacao": null
+      }
     },
     {
       "id": "DT-M15-RESUMIDA-Q04",
@@ -4267,13 +4285,22 @@
       "textoGabarito": "o aviso é, em regra, de 30 dias e a ausência pode autorizar desconto na forma do art. 487, § 2º.",
       "enunciado": "Média No pedido de demissão de contrato por prazo indeterminado, o módulo consolida que:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_DOCUMENTAL_CONCLUIDO_COM_CONTROLES",
       "alertas": "Lei 7.998/90: requisitos",
       "riscos": [
         "alerta_existente_no_item"
       ],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m15.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m15.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_DOCUMENTAL_DO_MERITO",
+        "fundamento": "CLT art. 487 §2º; Lei 12.506/2011",
+        "conclusao": "Aviso de 30 dias no pedido de demissão e possibilidade de desconto pelo não cumprimento; não se aplica proporcionalidade contra empregado.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "corte": "2026-10-12",
+        "checagem": "enunciado, alternativas A-E, gabarito e comentário",
+        "observacao": null
+      }
     },
     {
       "id": "DT-M15-RESUMIDA-Q05",
@@ -4283,11 +4310,20 @@
       "textoGabarito": "a Súmula 305 alcança aviso trabalhado ou indenizado e a OJ 82 considera a projeção do aviso para a data de saída, ainda que indenizado.",
       "enunciado": "Difícil Assinale a alternativa integralmente compatível com o módulo:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_DOCUMENTAL_CONCLUIDO_COM_CONTROLES",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m15.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m15.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_DOCUMENTAL_DO_MERITO",
+        "fundamento": "TST Súmula 305; TST OJ 82",
+        "conclusao": "FGTS no aviso trabalhado ou indenizado e projeção de saída na CTPS; conferir íntegra dos verbetes na publicação.",
+        "fonte": "https://www.tst.jus.br/documents/d/guest/livrointernet-12-pdf",
+        "corte": "2026-10-12",
+        "checagem": "enunciado, alternativas A-E, gabarito e comentário",
+        "observacao": "Referência aos verbetes TST com necessidade de consulta individual à íntegra atualizada."
+      }
     },
     {
       "id": "DT-M15-COMPLETA-Q01",
@@ -4297,11 +4333,20 @@
       "textoGabarito": "em até 10 dias contados do término do contrato.",
       "enunciado": "Fácil Na extinção do contrato de trabalho, segundo o recorte estudado do art. 477 da CLT, o pagamento das verbas rescisórias e a entrega dos documentos de comunicação da extinção devem ocorrer:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_DOCUMENTAL_CONCLUIDO_COM_CONTROLES",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m15.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m15.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_DOCUMENTAL_DO_MERITO",
+        "fundamento": "CLT art. 477 §6º",
+        "conclusao": "Pagamento e documentação em 10 dias contados do término do contrato.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "corte": "2026-10-12",
+        "checagem": "enunciado, alternativas A-E, gabarito e comentário",
+        "observacao": null
+      }
     },
     {
       "id": "DT-M15-COMPLETA-Q02",
@@ -4311,13 +4356,22 @@
       "textoGabarito": "o horário normal é reduzido em 2 horas diárias, sem prejuízo do salário integral.",
       "enunciado": "Fácil Sobre o aviso-prévio trabalhado quando a rescisão é promovida pelo empregador, assinale a alternativa correta segundo o módulo:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_DOCUMENTAL_CONCLUIDO_COM_CONTROLES",
       "alertas": "Enunciado contém referência editorial ao material",
       "riscos": [
         "alerta_existente_no_item"
       ],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m15.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m15.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_DOCUMENTAL_DO_MERITO",
+        "fundamento": "CLT art. 488 e parágrafo único",
+        "conclusao": "No aviso trabalhado dado pelo empregador reduz-se 2h diárias ou se opta por 7 dias corridos; não substituível por pagamento.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "corte": "2026-10-12",
+        "checagem": "enunciado, alternativas A-E, gabarito e comentário",
+        "observacao": null
+      }
     },
     {
       "id": "DT-M15-COMPLETA-Q03",
@@ -4327,11 +4381,20 @@
       "textoGabarito": "30 dias.",
       "enunciado": "Fácil No pedido de demissão de empregado contratado por prazo indeterminado, a consolidação posterior da própria fonte trabalha, em regra, com aviso-prévio de:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_DOCUMENTAL_CONCLUIDO_COM_CONTROLES",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m15.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m15.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_DOCUMENTAL_DO_MERITO",
+        "fundamento": "CLT art. 487 §2º; Lei 12.506/2011",
+        "conclusao": "No pedido de demissão o aviso devido em regra é de 30 dias e não inclui os acréscimos de proporcionalidade.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "corte": "2026-10-12",
+        "checagem": "enunciado, alternativas A-E, gabarito e comentário",
+        "observacao": null
+      }
     },
     {
       "id": "DT-M15-COMPLETA-Q04",
@@ -4364,11 +4427,20 @@
       "textoGabarito": "d e g.",
       "enunciado": "Média Nos termos do art. 483, § 3º, conforme reproduzido pelas fontes do módulo, a faculdade de pleitear a rescisão permanecendo ou não no serviço até a decisão final é destacada para as hipóteses das alíneas:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_DOCUMENTAL_CONCLUIDO_COM_CONTROLES",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m15.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m15.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_DOCUMENTAL_DO_MERITO",
+        "fundamento": "CLT art. 483 §3º",
+        "conclusao": "Alíneas d e g são as únicas citadas pela norma para permanência opcional no serviço até a decisão.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "corte": "2026-10-12",
+        "checagem": "enunciado, alternativas A-E, gabarito e comentário",
+        "observacao": null
+      }
     },
     {
       "id": "DT-M15-COMPLETA-Q06",
@@ -4378,13 +4450,22 @@
       "textoGabarito": "a retratação só produz efeito se a outra parte aceitá-la.",
       "enunciado": "Média Depois de dado o aviso-prévio, o empregador reconsidera a ruptura antes do termo final. Segundo o art. 489, no recorte estudado:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_DOCUMENTAL_CONCLUIDO_COM_CONTROLES",
       "alertas": "",
       "riscos": [
         "redacao_editorial"
       ],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m15.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m15.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_DOCUMENTAL_DO_MERITO",
+        "fundamento": "CLT art. 489",
+        "conclusao": "Reconsideração de aviso-prévio exige aceitação pela outra parte.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "corte": "2026-10-12",
+        "checagem": "enunciado, alternativas A-E, gabarito e comentário",
+        "observacao": null
+      }
     },
     {
       "id": "DT-M15-COMPLETA-Q07",
@@ -4394,13 +4475,22 @@
       "textoGabarito": "do empregador, em razão da presunção favorável à continuidade na hipótese descrita.",
       "enunciado": "Média Em reclamação trabalhista, empregador e empregado divergem sobre quem encerrou o vínculo, estando negados a prestação de serviços e o despedimento na hipótese tratada pela Súmula 212 do TST. Segundo o módulo, o ônus de provar o término do contrato é:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_DOCUMENTAL_CONCLUIDO_COM_CONTROLES",
       "alertas": "Enunciado contém referência editorial ao material",
       "riscos": [
         "alerta_existente_no_item"
       ],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m15.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m15.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_DOCUMENTAL_DO_MERITO",
+        "fundamento": "TST Súmula 212; CLT art. 818",
+        "conclusao": "Negados prestação e despedimento na hipótese do verbete, o empregador prova término do contrato, em consonância com continuidade.",
+        "fonte": "https://www.tst.jus.br/documents/d/guest/livrointernet-12-pdf",
+        "corte": "2026-10-12",
+        "checagem": "enunciado, alternativas A-E, gabarito e comentário",
+        "observacao": null
+      }
     },
     {
       "id": "DT-M15-COMPLETA-Q08",
@@ -4410,11 +4500,20 @@
       "textoGabarito": "quando previstos em CCT ou ACT, a fonte reproduz quitação plena e irrevogável dos direitos decorrentes da relação empregatícia, salvo previsão em contrário.",
       "enunciado": "Média Sobre Plano de Demissão Voluntária (PDV) e Plano de Demissão Incentivada (PDI), segundo o art. 477-B reproduzido pela fonte, assinale a alternativa correta:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_DOCUMENTAL_CONCLUIDO_COM_CONTROLES",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m15.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m15.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_DOCUMENTAL_DO_MERITO",
+        "fundamento": "CLT art. 477-B",
+        "conclusao": "PDV/PDI previsto em ACT/CCT produz quitação nos limites legais, salvo estipulação em contrário.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "corte": "2026-10-12",
+        "checagem": "enunciado, alternativas A-E, gabarito e comentário",
+        "observacao": null
+      }
     },
     {
       "id": "DT-M15-COMPLETA-Q09",
@@ -4424,13 +4523,22 @@
       "textoGabarito": "na culpa recíproca, a Súmula 14 reduz a 50% aviso-prévio, décimo terceiro e férias proporcionais; no art. 484-A, a metade recai apenas sobre o aviso indenizado e a indenização do FGTS, mantendo-se as demais verbas integrais.",
       "enunciado": "Difícil Assinale a alternativa que diferencia corretamente culpa recíproca e extinção por acordo no recorte validado do módulo:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_DOCUMENTAL_CONCLUIDO_COM_CONTROLES",
       "alertas": "Lei 7.998/90: requisitos",
       "riscos": [
         "alerta_existente_no_item"
       ],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m15.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m15.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_DOCUMENTAL_DO_MERITO",
+        "fundamento": "TST Súmula 14; CLT arts. 484 e 484-A; Lei 8.036 art. 18 §2º",
+        "conclusao": "Culpa recíproca difere da extinção consensual; proporcionalidade, aviso e FGTS obedecem regimes distintos.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "corte": "2026-10-12",
+        "checagem": "enunciado, alternativas A-E, gabarito e comentário",
+        "observacao": null
+      }
     },
     {
       "id": "DT-M15-COMPLETA-Q10",
@@ -4440,11 +4548,20 @@
       "textoGabarito": "aplicam-se, nesse caso, os princípios que regem a rescisão dos contratos por prazo indeterminado.",
       "enunciado": "Difícil Um contrato por prazo determinado contém cláusula assecuratória de direito recíproco de rescisão antecipada. Uma das partes exerce essa faculdade. À luz da conexão feita pelo módulo com o art. 481 da CLT:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_DOCUMENTAL_CONCLUIDO_COM_CONTROLES",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m15.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m15.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_DOCUMENTAL_DO_MERITO",
+        "fundamento": "CLT art. 481",
+        "conclusao": "Em contrato a termo com cláusula assecuratória exercida aplicam-se princípios da rescisão de prazo indeterminado.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "corte": "2026-10-12",
+        "checagem": "enunciado, alternativas A-E, gabarito e comentário",
+        "observacao": null
+      }
     },
     {
       "id": "DT-M16-RESUMIDA-Q01",
@@ -4454,13 +4571,22 @@
       "textoGabarito": "Saldo de salários, férias vencidas + 1/3 e 13º vencido.",
       "enunciado": "Fácil Na justa causa, qual conjunto de parcelas o módulo indica como preservado quando existente?",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_DOCUMENTAL_CONCLUIDO_COM_CONTROLES",
       "alertas": "Lei 7.998/90: requisitos | Enunciado contém referência editorial ao material",
       "riscos": [
         "alerta_existente_no_item"
       ],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m16.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m16.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_DOCUMENTAL_DO_MERITO",
+        "fundamento": "CLT art. 482; regras das parcelas vencidas",
+        "conclusao": "Justa causa preserva saldo de salários, férias vencidas + terço e 13º vencido, mas não verbas típicas da dispensa imotivada.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "corte": "2026-10-12",
+        "checagem": "enunciado, alternativas A-E, gabarito e comentário",
+        "observacao": null
+      }
     },
     {
       "id": "DT-M16-RESUMIDA-Q02",
@@ -4470,13 +4596,22 @@
       "textoGabarito": "não é devido segundo o módulo.",
       "enunciado": "Fácil No acordo do art. 484-A da CLT, o seguro-desemprego:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_DOCUMENTAL_CONCLUIDO_COM_CONTROLES",
       "alertas": "Lei 7.998/90: requisitos | Enunciado contém referência editorial ao material",
       "riscos": [
         "alerta_existente_no_item"
       ],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m16.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m16.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_DOCUMENTAL_DO_MERITO",
+        "fundamento": "CLT art. 484-A §2º",
+        "conclusao": "A extinção por acordo não dá acesso ao seguro-desemprego.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "corte": "2026-10-12",
+        "checagem": "enunciado, alternativas A-E, gabarito e comentário",
+        "observacao": null
+      }
     },
     {
       "id": "DT-M16-RESUMIDA-Q03",
@@ -4486,11 +4621,20 @@
       "textoGabarito": "Súmula 77 do TST.",
       "enunciado": "Média Se o regulamento da empresa exige sindicância interna antes da aplicação de determinada punição e o empregador ignora esse procedimento, qual verbete reproduzido no M16 é diretamente relevante?",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_DOCUMENTAL_CONCLUIDO_COM_CONTROLES",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m16.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m16.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_DOCUMENTAL_DO_MERITO",
+        "fundamento": "TST Súmula 77",
+        "conclusao": "Havendo exigência regulamentar de inquérito/sindicância para punir, a sanção deve observar a condição autoimposta.",
+        "fonte": "https://www.tst.jus.br/documents/d/guest/livrointernet-12-pdf",
+        "corte": "2026-10-12",
+        "checagem": "enunciado, alternativas A-E, gabarito e comentário",
+        "observacao": null
+      }
     },
     {
       "id": "DT-M16-RESUMIDA-Q04",
@@ -4500,11 +4644,20 @@
       "textoGabarito": "Ato estatal com nexo e impossibilidade efetiva de continuidade.",
       "enunciado": "Média Qual alternativa contém requisito que o M16 associa especificamente ao fato do príncipe?",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_DOCUMENTAL_CONCLUIDO_COM_CONTROLES",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m16.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m16.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_DOCUMENTAL_DO_MERITO",
+        "fundamento": "CLT art. 486",
+        "conclusao": "Fato do príncipe pressupõe ato normativo ou de autoridade pública que impossibilite a atividade e nexo causal.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "corte": "2026-10-12",
+        "checagem": "enunciado, alternativas A-E, gabarito e comentário",
+        "observacao": null
+      }
     },
     {
       "id": "DT-M16-RESUMIDA-Q05",
@@ -4514,11 +4667,20 @@
       "textoGabarito": "possível perdão tácito e comprometimento da imediaticidade da punição.",
       "enunciado": "Difícil Empregado é punido por falta grave somente após longa demora injustificada; além disso, durante a apuração, recebe promoção por merecimento e assume função de confiança. Segundo o M16, esses elementos apontam principalmente para:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_DOCUMENTAL_CONCLUIDO_COM_CONTROLES",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m16.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m16.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_DOCUMENTAL_DO_MERITO",
+        "fundamento": "CLT art. 482; teoria da justa causa",
+        "conclusao": "Demora injustificada após ciência e promoção incompatível com punição podem indicar perdão tácito; apuração razoável não o caracteriza automaticamente.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "corte": "2026-10-12",
+        "checagem": "enunciado, alternativas A-E, gabarito e comentário",
+        "observacao": null
+      }
     },
     {
       "id": "DT-M16-COMPLETA-Q01",
@@ -4528,11 +4690,20 @@
       "textoGabarito": "30 dias.",
       "enunciado": "Fácil Segundo o conteúdo validado do M16, a suspensão disciplinar do empregado não pode exceder:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_DOCUMENTAL_CONCLUIDO_COM_CONTROLES",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m16.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m16.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_DOCUMENTAL_DO_MERITO",
+        "fundamento": "CLT art. 474",
+        "conclusao": "Suspensão disciplinar superior a 30 dias importa rescisão injusta.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "corte": "2026-10-12",
+        "checagem": "enunciado, alternativas A-E, gabarito e comentário",
+        "observacao": null
+      }
     },
     {
       "id": "DT-M16-COMPLETA-Q02",
@@ -4542,11 +4713,20 @@
       "textoGabarito": "Indisciplina envolve ordem geral legítima; insubordinação envolve ordem específica legítima dirigida ao empregado.",
       "enunciado": "Fácil Assinale a alternativa que apresenta corretamente a distinção entre indisciplina e insubordinação.",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_DOCUMENTAL_CONCLUIDO_COM_CONTROLES",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m16.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m16.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_DOCUMENTAL_DO_MERITO",
+        "fundamento": "CLT art. 482 h",
+        "conclusao": "Indisciplina descumpre ordem geral legítima; insubordinação descumpre comando individual legítimo.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "corte": "2026-10-12",
+        "checagem": "enunciado, alternativas A-E, gabarito e comentário",
+        "observacao": null
+      }
     },
     {
       "id": "DT-M16-COMPLETA-Q03",
@@ -4580,11 +4760,20 @@
       "textoGabarito": "Há presunção de dispensa discriminatória nas hipóteses de HIV ou outra doença grave que suscite estigma ou preconceito, admitindo demonstração de motivo lícito diverso.",
       "enunciado": "Fácil Sobre a Súmula 443 do TST, conforme reproduzida no material, assinale a correta.",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_DOCUMENTAL_CONCLUIDO_COM_CONTROLES",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m16.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m16.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_DOCUMENTAL_DO_MERITO",
+        "fundamento": "TST Súmula 443; Lei 9.029/1995",
+        "conclusao": "Presunção de dispensa discriminatória em casos de HIV ou doença grave estigmatizante admite prova em contrário.",
+        "fonte": "https://www.tst.jus.br/documents/d/guest/livrointernet-12-pdf",
+        "corte": "2026-10-12",
+        "checagem": "enunciado, alternativas A-E, gabarito e comentário",
+        "observacao": null
+      }
     },
     {
       "id": "DT-M16-COMPLETA-Q05",
@@ -4594,11 +4783,20 @@
       "textoGabarito": "viola a singularidade da punição e o non bis in idem.",
       "enunciado": "Média Uma empresa aplica suspensão disciplinar a um empregado por determinado fato. Dias depois, sem fato novo, decide dispensá-lo por justa causa com fundamento exatamente na mesma conduta. Segundo os requisitos trabalhados no M16, a nova punição:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_DOCUMENTAL_CONCLUIDO_COM_CONTROLES",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m16.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m16.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_DOCUMENTAL_DO_MERITO",
+        "fundamento": "CLT art. 482; princípio non bis in idem",
+        "conclusao": "É vedada dupla punição patronal pela mesma conduta já sancionada.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "corte": "2026-10-12",
+        "checagem": "enunciado, alternativas A-E, gabarito e comentário",
+        "observacao": null
+      }
     },
     {
       "id": "DT-M16-COMPLETA-Q06",
@@ -4608,11 +4806,20 @@
       "textoGabarito": "a dispensa deve ser formalmente motivada, sem que isso se confunda com estabilidade ou imponha processo administrativo.",
       "enunciado": "Média Empregado admitido por concurso em empresa pública é dispensado sem justa causa. De acordo com o Tema 1.022 do STF tal como reproduzido nas fontes do M16:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_DOCUMENTAL_CONCLUIDO_COM_CONTROLES",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m16.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m16.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_DOCUMENTAL_DO_MERITO",
+        "fundamento": "STF Tema 1022 RE 688267",
+        "conclusao": "Empresas públicas e sociedades de economia mista devem motivar formalmente dispensa de concursados, sem PAD obrigatório, efeitos prospectivos conforme decisão.",
+        "fonte": "https://portal.stf.jus.br/jurisprudenciaRepercussao/verAndamentoProcesso.asp?incidente=4245763&numeroProcesso=688267&numeroTema=1022",
+        "corte": "2026-10-12",
+        "checagem": "enunciado, alternativas A-E, gabarito e comentário",
+        "observacao": "A tese do Tema 1022 tem efeitos temporais conforme ata de julgamento; o enunciado refere-se ao regime geral atual."
+      }
     },
     {
       "id": "DT-M16-COMPLETA-Q07",
@@ -4622,11 +4829,20 @@
       "textoGabarito": "Força maior exige acontecimento inevitável sem contribuição patronal; fato do príncipe envolve ato estatal, nexo causal e impossibilidade de continuidade, também sem contribuição patronal.",
       "enunciado": "Média Assinale a alternativa que melhor distingue força maior e fato do príncipe no recorte do M16.",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_DOCUMENTAL_CONCLUIDO_COM_CONTROLES",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m16.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m16.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_DOCUMENTAL_DO_MERITO",
+        "fundamento": "CLT arts. 486, 501 e 502",
+        "conclusao": "Força maior sem concurso patronal difere de fato do príncipe que depende de ato estatal impeditivo.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "corte": "2026-10-12",
+        "checagem": "enunciado, alternativas A-E, gabarito e comentário",
+        "observacao": null
+      }
     },
     {
       "id": "DT-M16-COMPLETA-Q09",
@@ -4636,11 +4852,20 @@
       "textoGabarito": "30 dias contados da suspensão.",
       "enunciado": "Difícil No contexto especial de inquérito para apuração de falta grave tratado no M16, o empregador suspende empregado protegido e pretende ajuizar o inquérito. Conforme o art. 853 da CLT e a Súmula 403 do STF reproduzidos no material, o prazo destacado é de:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_DOCUMENTAL_CONCLUIDO_COM_CONTROLES",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m16.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m16.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_DOCUMENTAL_DO_MERITO",
+        "fundamento": "CLT art. 853; STF Súmula 403",
+        "conclusao": "Inquérito após suspensão deve ser proposto em até trinta dias; não confundir com art. 474.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "corte": "2026-10-12",
+        "checagem": "enunciado, alternativas A-E, gabarito e comentário",
+        "observacao": null
+      }
     },
     {
       "id": "DT-M16-COMPLETA-Q10",
@@ -4650,13 +4875,22 @@
       "textoGabarito": "50% do aviso-prévio, do 13º proporcional e das férias proporcionais; FGTS com indenização de 20%; sem seguro-desemprego segundo as fontes.",
       "enunciado": "Difícil Em hipótese reconhecida como culpa recíproca, qual conjunto de efeitos corresponde ao conteúdo validado do M16?",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_DOCUMENTAL_CONCLUIDO_COM_CONTROLES",
       "alertas": "Lei 7.998/90: requisitos",
       "riscos": [
         "alerta_existente_no_item"
       ],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m16.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m16.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_DOCUMENTAL_DO_MERITO",
+        "fundamento": "CLT art. 484; Lei 8.036/1990 art. 18 §2º; TST Súmula 14",
+        "conclusao": "Culpa recíproca implica 50% das parcelas proporcionais indicadas e multa FGTS 20%, não regime de acordo.",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/leis/l8036consol.htm",
+        "corte": "2026-10-12",
+        "checagem": "enunciado, alternativas A-E, gabarito e comentário",
+        "observacao": null
+      }
     },
     {
       "id": "DT-M17-RESUMIDA-Q01",
