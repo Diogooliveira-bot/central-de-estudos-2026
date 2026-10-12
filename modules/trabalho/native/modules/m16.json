@@ -137,7 +137,7 @@
           "E": "fato do príncipe."
         },
         "gabarito": "D",
-        "comentario": "Questão 5 - D - Difícil\n\n Fundamento: Requisitos circunstanciais da justa causa validados no módulo.\n\n A imediaticidade é medida a partir do conhecimento suficiente da falta, admitindo investigação razoável.\n Demora injustificada e atos patronais incompatíveis com a intenção de punir, como a promoção\n exemplificada no material, podem revelar perdão tácito.",
+        "comentario": "Questão 5 - D - Difícil\n\n Fundamento: Requisitos circunstanciais da justa causa validados no módulo.\n\n A imediaticidade é medida a partir do conhecimento suficiente da falta, admitindo investigação razoável.\n Demora injustificada e atos patronais incompatíveis com a intenção de punir, como a promoção\n exemplificada no material, podem revelar perdão tácito.\n\nPrecisão: o tempo razoavelmente necessário à investigação da falta, contado do conhecimento suficiente do fato, não configura automaticamente perdão tácito; é necessário avaliar eventual demora injustificada e atos incompatíveis com a intenção de punir.",
         "status": "PENDENTE_REVISAO_JURIDICA",
         "alertas": ""
       }
@@ -203,7 +203,7 @@
           "E": "A súmula impede qualquer dispensa sem justa causa."
         },
         "gabarito": "D",
-        "comentario": "Questão 4 - D - Fácil\n\n Fundamento: Súmula 443 do TST, nos limites reproduzidos pelas fontes.\n\n O ponto central é a presunção nas hipóteses descritas e seu caráter não absoluto. A banca tende a\n inserir palavras como 'toda', 'sempre' ou 'automaticamente' para tornar a assertiva errada.",
+        "comentario": "Questão 4 - D - Fácil\n\n Fundamento: Súmula 443 do TST, nos limites reproduzidos pelas fontes.\n\n O ponto central é a presunção nas hipóteses descritas e seu caráter não absoluto. A banca tende a\n inserir palavras como 'toda', 'sempre' ou 'automaticamente' para tornar a assertiva errada.\n\nFundamentação complementar: Lei nº 9.029/1995, observada a presunção relativa da Súmula 443 do TST.",
         "status": "PENDENTE_REVISAO_JURIDICA",
         "alertas": ""
       },
@@ -299,7 +299,7 @@
           "E": "Saque de até 80% do FGTS e seguro-desemprego."
         },
         "gabarito": "C",
-        "comentario": "Questão 10 - C - Difícil\n\n Fundamento: CLT, art. 484, e Súmula 14 do TST, conforme o módulo.\n\n A Súmula 14 é trabalhada com redução de 50% para aviso-prévio, 13º proporcional e férias\n proporcionais. As parcelas vencidas permanecem preservadas; as fontes relacionam a indenização do\n FGTS a 20% e afastam o seguro-desemprego.",
+        "comentario": "Questão 10 - C - Difícil\n\n Fundamento: CLT, art. 484, e Súmula 14 do TST, conforme o módulo.\n\n A Súmula 14 é trabalhada com redução de 50% para aviso-prévio, 13º proporcional e férias\n proporcionais. As parcelas vencidas permanecem preservadas; as fontes relacionam a indenização do\n FGTS a 20% e afastam o seguro-desemprego.\n\nFundamentação complementar: art. 18, § 2º, da Lei nº 8.036/1990, quanto à indenização do FGTS na culpa recíproca.",
         "status": "PENDENTE_REVISAO_JURIDICA",
         "alertas": "Lei 7.998/90: requisitos"
       }
