@@ -54,7 +54,7 @@ test('revisão remove repetições de dispositivo e mantém incisos distintos',(
 });
 test('interface e pacote offline carregam as leis mantendo a chave do progresso',()=>{
   const html=readFileSync(new URL('tools/decorando.html',root),'utf8');
-  assert.ok(html.includes('...DATA_CF,...DATA_CF_LEIS,'));assert.ok(html.includes('cf:TOPICS_CF_EXTENDED'));
+  assert.ok(html.includes('...DATA_CF,...DATA_CF_LEIS,'));assert.ok(html.includes('cf:[...TOPICS_CF_EXTENDED,...ledTopicsFor("cf")]'));
   assert.ok(html.includes('const TOPICS_CF_EXTENDED = [...TOPICS_CF,...TOPICS_CF_LEIS]'));
   assert.equal((html.match(/<script src="\.\/decorando-data-cf-leis\.js/g)||[]).length,1);
   assert.ok(html.includes('const STORAGE_KEY = "lei-seca-enxuta-state"'));
@@ -79,7 +79,7 @@ test('filtros das oito leis, resposta e recarga preservam o progresso anterior',
     return context;
   };
   let context=makeContext();
-  assert.equal(vm.runInContext('allActive().length',context),3132);
+  assert.equal(vm.runInContext('allActive().length',context),base.length+added.length+vm.runInContext('DATA_LED_APPROVED.filter(q=>q.discipline==="cf").length',context));
   for(const topic of topics){
     vm.runInContext(`centralOpenTopic(${JSON.stringify(topic.id)},true)`,context);
     const items=vm.runInContext('visible()',context);
