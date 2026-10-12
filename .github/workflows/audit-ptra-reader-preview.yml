@@ -1,0 +1,20 @@
+name: Audit PTRA Reader Preview
+on:
+  push:
+    branches:
+      - preview/ptra-leitor-universal-20261012
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit-ptra:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout candidate
+        uses: actions/checkout@v4
+      - name: Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate modules, questions and source preservation
+        run: node --test tests/ptra-reader-upgrade-unit.mjs
