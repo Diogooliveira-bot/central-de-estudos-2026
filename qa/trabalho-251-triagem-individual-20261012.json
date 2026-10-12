@@ -1,7 +1,7 @@
 {
   "schema": "base-completa-triagem-juridica-20261012-v1",
   "dataCorte": "2026-10-12",
-  "observacao": "TRIAGEM DOCUMENTAL, NÃO É CERTIFICAÇÃO INDIVIDUAL DE MÉRITO. As 251 questões foram inventariadas com suas cinco alternativas, gabarito, comentário e pontos de atenção. Não confundir triagem automatizada com validação jurídica conclusiva; cada item ainda exige cotejo individual de enunciado, todas as alternativas, gabarito, comentário e fundamentos atualizados. Cotejo normativo de 23 questões pendentes da R4 concluído (e quatro questões previamente revisadas rechecadas). O cotejo dos 228 itens restantes e a integração das erratas dos PDFs continuam pendentes. Adicionalmente, 27 questões dos módulos M01 e M02 foram cotejadas (inclusive princípios e cronologia), totalizando 50/251 com verificação individual de alternativas e comentários. Mais 27 enunciados, respostas, distratores e comentários dos módulos M03/M04 cotejados; conclusão acumulada 77/251. Foram cotejadas mais 24 questões dos M05 e M06 com fundamento e cinco alternativas, total 101/251.",
+  "observacao": "TRIAGEM DOCUMENTAL, NÃO É CERTIFICAÇÃO INDIVIDUAL DE MÉRITO. As 251 questões foram inventariadas com suas cinco alternativas, gabarito, comentário e pontos de atenção. Não confundir triagem automatizada com validação jurídica conclusiva; cada item ainda exige cotejo individual de enunciado, todas as alternativas, gabarito, comentário e fundamentos atualizados. Cotejo normativo de 23 questões pendentes da R4 concluído (e quatro questões previamente revisadas rechecadas). O cotejo dos 228 itens restantes e a integração das erratas dos PDFs continuam pendentes. Adicionalmente, 27 questões dos módulos M01 e M02 foram cotejadas (inclusive princípios e cronologia), totalizando 50/251 com verificação individual de alternativas e comentários. Mais 27 enunciados, respostas, distratores e comentários dos módulos M03/M04 cotejados; conclusão acumulada 77/251. Foram cotejadas mais 24 questões dos M05 e M06 com fundamento e cinco alternativas, total 101/251. Cotejo dos módulos M07/M08 acrescentou 24 verificações individuais, total 125/251; core STF 246 não implica responsabilidade pública automática.",
   "fontesCotejadas": [
     "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
     "https://www.planalto.gov.br/ccivil_03/constituicao/constituicaocompilado.htm",
@@ -25,8 +25,8 @@
     ],
     "certificadasIntegralmenteNestaRodada": 0,
     "homologacao": false,
-    "cotejosNormativosConcluidosNaRodada": 101,
-    "pendentesCotejoNormativoNaRodada": 150,
+    "cotejosNormativosConcluidosNaRodada": 125,
+    "pendentesCotejoNormativoNaRodada": 126,
     "rechecadosDaRodadaAnterior": 4
   },
   "registros": [
@@ -1928,11 +1928,18 @@
       "textoGabarito": "o vínculo continua existente.",
       "enunciado": "Fácil Na interrupção e na suspensão do contrato de trabalho:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m07.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m07.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT arts. 4º e 476; teoria de suspensão/interrupção",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "Alternativa B compatível com o fundamento específico; não se observa segunda resposta correta entre os distratores.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M07-RESUMIDA-Q03",
@@ -1942,11 +1949,18 @@
       "textoGabarito": "a exceção impede a aplicação automática da suspensão.",
       "enunciado": "Média Empregado eleito diretor mantém subordinação jurídica típica perante a empresa. À luz da Súmula 269 do TST, a conclusão correta é:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m07.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m07.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "TST Súmula 269 — diretor e subordinação",
+        "fonte": "https://www.tst.jus.br/documents/d/guest/livrointernet-12-pdf",
+        "conclusao": "Alternativa C compatível com o fundamento específico; não se observa segunda resposta correta entre os distratores.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M07-RESUMIDA-Q04",
@@ -1956,11 +1970,18 @@
       "textoGabarito": "o § 7º admite extensão do período nas condições legais.",
       "enunciado": "Média Quanto ao art. 476-A da CLT, é correto afirmar que:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m07.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m07.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT art. 476-A §7º",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "Alternativa C compatível com o fundamento específico; não se observa segunda resposta correta entre os distratores.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M07-RESUMIDA-Q05",
@@ -1970,11 +1991,18 @@
       "textoGabarito": "interrupção nos primeiros 15 dias e suspensão depois, com FGTS preservado no afastamento acidentário.",
       "enunciado": "Difícil Empregado sofre acidente do trabalho e permanece afastado por 45 dias, com benefício previdenciário após o 15º dia. A classificação e o efeito correto são:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m07.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m07.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT art. 4º §1º; Lei 8.036/1990 art. 15 §5º",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/leis/l8036consol.htm",
+        "conclusao": "Alternativa C compatível com o fundamento específico; não se observa segunda resposta correta entre os distratores.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M07-COMPLETA-Q01",
@@ -1984,11 +2012,18 @@
       "textoGabarito": "Em ambas o vínculo permanece existente, embora a prestação laboral possa ficar paralisada.",
       "enunciado": "Fácil Em relação à interrupção e à suspensão do contrato de trabalho, assinale a alternativa correta.",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m07.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m07.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT arts. 4º e 476",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "Alternativa C compatível com o fundamento específico; não se observa segunda resposta correta entre os distratores.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M07-COMPLETA-Q03",
@@ -1998,11 +2033,18 @@
       "textoGabarito": "interrupção.",
       "enunciado": "Fácil Empregado fica incapacitado por doença comum durante 12 dias. Segundo a sistemática estudada, esse período é classificado como:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m07.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m07.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "Lei 8.213/1991 art. 60 §3º",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "Alternativa B compatível com o fundamento específico; não se observa segunda resposta correta entre os distratores.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M07-COMPLETA-Q04",
@@ -2012,11 +2054,18 @@
       "textoGabarito": "importa rescisão injusta do contrato de trabalho.",
       "enunciado": "Fácil A suspensão disciplinar por mais de 30 dias consecutivos, segundo o art. 474 da CLT:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m07.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m07.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT art. 474",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "Alternativa C compatível com o fundamento específico; não se observa segunda resposta correta entre os distratores.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M07-COMPLETA-Q05",
@@ -2026,11 +2075,18 @@
       "textoGabarito": "Os primeiros 15 dias são interrupção; o período posterior é suspensão, com preservação legal do FGTS no afastamento acidentário.",
       "enunciado": "Média Um empregado sofre acidente do trabalho, permanece afastado por 40 dias e recebe benefício previdenciário após os primeiros 15 dias. Assinale a alternativa correta.",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m07.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m07.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT art. 4º §1º; Lei 8.036/1990 art. 15 §5º",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/leis/l8036consol.htm",
+        "conclusao": "Alternativa C compatível com o fundamento específico; não se observa segunda resposta correta entre os distratores.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M07-COMPLETA-Q06",
@@ -2040,11 +2096,18 @@
       "textoGabarito": "período de 2 a 5 meses, previsão em ACT ou CCT e aquiescência formal do empregado.",
       "enunciado": "Média A suspensão do contrato para qualificação profissional prevista, como regra geral, no art. 476-A da CLT exige:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m07.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m07.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT art. 476-A",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "Alternativa B compatível com o fundamento específico; não se observa segunda resposta correta entre os distratores.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M07-COMPLETA-Q07",
@@ -2054,11 +2117,18 @@
       "textoGabarito": "tem o contrato suspenso, salvo se permanecer a subordinação jurídica característica da relação de emprego.",
       "enunciado": "Média Segundo a Súmula 269 do TST, o empregado eleito para cargo de diretor:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m07.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m07.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "TST Súmula 269",
+        "fonte": "https://www.tst.jus.br/documents/d/guest/livrointernet-12-pdf",
+        "conclusao": "Alternativa B compatível com o fundamento específico; não se observa segunda resposta correta entre os distratores.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M07-COMPLETA-Q09",
@@ -2068,11 +2138,18 @@
       "textoGabarito": "Além das parcelas indenizatórias normais, pode incidir a multa prevista no instrumento coletivo, não inferior a 100% da última remuneração mensal anterior à suspensão.",
       "enunciado": "Difícil Uma empresa suspende o contrato de empregado por qualificação profissional nos termos do art. 476-A. Dois meses após o retorno, promove dispensa. Considerando a regra estudada, assinale a alternativa correta.",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m07.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m07.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT art. 476-A §5º",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "Alternativa C compatível com o fundamento específico; não se observa segunda resposta correta entre os distratores.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M07-COMPLETA-Q10",
@@ -2082,11 +2159,18 @@
       "textoGabarito": "Acidente do trabalho após o 15º dia: suspensão, com preservação do FGTS e contagem especial prevista no art. 4º, § 1º, da CLT.",
       "enunciado": "Difícil Assinale a alternativa que apresenta corretamente uma suspensão com efeitos legais especiais.",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m07.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m07.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT art. 4º §1º; Lei 8.036/1990 art. 15 §5º",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/leis/l8036consol.htm",
+        "conclusao": "Alternativa B compatível com o fundamento específico; não se observa segunda resposta correta entre os distratores.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M08-RESUMIDA-Q01",
@@ -2096,11 +2180,18 @@
       "textoGabarito": "é admitida pela Lei nº 6.019/1974.",
       "enunciado": "A terceirização de atividade principal, no regime estudado: [Fácil]",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/leis/l6019compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m08.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m08.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "Lei 6.019/1974 art. 4º-A",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/leis/l6019compilado.htm",
+        "conclusao": "Alternativa B compatível com o fundamento específico; não se observa segunda resposta correta entre os distratores.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M08-RESUMIDA-Q02",
@@ -2110,11 +2201,18 @@
       "textoGabarito": "qualificação das partes, especificação do serviço, prazo quando aplicável e valor.",
       "enunciado": "O contrato de prestação de serviços do art. 5º-B deve conter, entre outros elementos: [Fácil]",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/leis/l6019compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m08.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m08.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "Lei 6.019/1974 art. 5º-B",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/leis/l6019compilado.htm",
+        "conclusao": "Alternativa A compatível com o fundamento específico; não se observa segunda resposta correta entre os distratores.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M08-RESUMIDA-Q04",
@@ -2124,11 +2222,18 @@
       "textoGabarito": "Pode durar até 180 dias e ser prorrogado por até 90, se mantidas as condições legais.",
       "enunciado": "Assinale a alternativa correta sobre trabalho temporário. [Média]",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/leis/l6019compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m08.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m08.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "Lei 6.019/1974 art. 10 §§1º–2º",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/leis/l6019compilado.htm",
+        "conclusao": "Alternativa C compatível com o fundamento específico; não se observa segunda resposta correta entre os distratores.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M08-RESUMIDA-Q05",
@@ -2138,11 +2243,18 @@
       "textoGabarito": "II e III, apenas.",
       "enunciado": "Analise: I. Mera identidade de sócios basta para grupo econômico. II. A contratante privada responde subsidiariamente pelo período da prestação. III. O mero inadimplemento da contratada não transfere automaticamente encargos à Administração Pública. Está correto o que se afirma em: [Difícil]",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/leis/l6019compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m08.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m08.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT art. 2º §§2º–3º; Lei 6.019/1974 art. 5º-A §5º; STF Tema 246",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/leis/l6019compilado.htm",
+        "conclusao": "Alternativa D compatível com o fundamento específico; não se observa segunda resposta correta entre os distratores.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M08-COMPLETA-Q01",
@@ -2152,11 +2264,18 @@
       "textoGabarito": "Contrata, remunera e dirige seus trabalhadores, podendo subcontratar outras empresas.",
       "enunciado": "À luz da Lei nº 6.019/1974, assinale a alternativa correta sobre a empresa prestadora de serviços a terceiros. [Fácil]",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/leis/l6019compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m08.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m08.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "Lei 6.019/1974 art. 4º-A §1º",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/leis/l6019compilado.htm",
+        "conclusao": "Alternativa C compatível com o fundamento específico; não se observa segunda resposta correta entre os distratores.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M08-COMPLETA-Q02",
@@ -2166,11 +2285,18 @@
       "textoGabarito": "inscrição no CNPJ, registro na Junta Comercial e capital social compatível com o número de empregados.",
       "enunciado": "Constitui requisito da empresa prestadora de serviços a terceiros, segundo o art. 4º-B da Lei nº 6.019/1974: [Fácil]",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/leis/l6019compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m08.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m08.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "Lei 6.019/1974 art. 4º-B",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/leis/l6019compilado.htm",
+        "conclusao": "Alternativa A compatível com o fundamento específico; não se observa segunda resposta correta entre os distratores.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M08-COMPLETA-Q03",
@@ -2203,11 +2329,18 @@
       "textoGabarito": "Pode durar até 180 dias e ser prorrogado por até 90 dias, se mantidas as condições legais.",
       "enunciado": "Sobre o prazo do trabalho temporário, assinale a alternativa correta. [Fácil]",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/leis/l6019compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m08.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m08.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "Lei 6.019/1974 art. 10 §1º",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/leis/l6019compilado.htm",
+        "conclusao": "Alternativa C compatível com o fundamento específico; não se observa segunda resposta correta entre os distratores.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M08-COMPLETA-Q05",
@@ -2217,11 +2350,18 @@
       "textoGabarito": "disponibilizar alimentação e atendimento ambulatorial em outros locais apropriados e com igual padrão de atendimento.",
       "enunciado": "Em contrato que mobiliza empregados da prestadora em número igual ou superior a 20% dos empregados da contratante, a regra estudada do art. 4º-C permite, nas condições legais: [Média]",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/leis/l6019compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m08.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m08.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "Lei 6.019/1974 art. 4º-C §2º",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/leis/l6019compilado.htm",
+        "conclusao": "Alternativa C compatível com o fundamento específico; não se observa segunda resposta correta entre os distratores.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M08-COMPLETA-Q06",
@@ -2231,11 +2371,18 @@
       "textoGabarito": "As regras tratam de situações distintas: uma alcança, nas condições legais, empresa cujos titulares ou sócios prestaram serviços à contratante; outra impede o retorno do empregado demitido, antes de 18 meses, como empregado de prestadora.",
       "enunciado": "A respeito das regras de 18 meses da Lei nº 6.019/1974, assinale a alternativa correta. [Média]",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/leis/l6019compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m08.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m08.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "Lei 6.019/1974 arts. 5º-C e 5º-D",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/leis/l6019compilado.htm",
+        "conclusao": "Alternativa B compatível com o fundamento específico; não se observa segunda resposta correta entre os distratores.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M08-COMPLETA-Q08",
@@ -2245,13 +2392,20 @@
       "textoGabarito": "não transfere automaticamente as obrigações trabalhistas ao ente público.",
       "enunciado": "Em terceirização envolvendo a Administração Pública, o mero inadimplemento da empresa contratada: [Média]",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [
         "sumula_com_cancelamento_parcial_verificar_item"
       ],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/leis/l6019compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m08.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m08.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "STF Tema 246; CF art. 37 §6º; TST Súmula 331 V",
+        "fonte": "https://www.tst.jus.br/documents/d/guest/livrointernet-12-pdf",
+        "conclusao": "Alternativa B compatível com o fundamento específico; não se observa segunda resposta correta entre os distratores.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M08-COMPLETA-Q09",
@@ -2261,11 +2415,18 @@
       "textoGabarito": "I e III, apenas.",
       "enunciado": "Considere as assertivas: I. A relação cooperativa, por si só, não gera vínculo entre associado e tomador. II. O dono da obra deve ser tratado sempre como tomador terceirizante e responder subsidiariamente. III. Franquia regular não se converte automaticamente em terceirização. Está correto o que se afirma em: [Difícil]",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/leis/l6019compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m08.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m08.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT art. 442 parágrafo único; TST OJ 191",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "Alternativa C compatível com o fundamento específico; não se observa segunda resposta correta entre os distratores.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M08-COMPLETA-Q10",
@@ -2275,11 +2436,18 @@
       "textoGabarito": "a mera identidade de sócios não basta para grupo econômico; é necessário demonstrar os requisitos legais, e a terceirização, por si só, não cria solidariedade.",
       "enunciado": "Duas empresas possuem sócio em comum. Uma presta serviços à outra, e um empregado pretende responsabilizá-las solidariamente apenas por essa circunstância. Segundo o conteúdo estudado: [Difícil]",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/leis/l6019compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m08.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m08.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT art. 2º §§2º–3º",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "Alternativa B compatível com o fundamento específico; não se observa segunda resposta correta entre os distratores.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M09-RESUMIDA-Q02",
