@@ -775,6 +775,12 @@ button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-vis
 .exercise-card,.scroll-question-card,.answer-reveal,.legal-basis{min-width:0;max-width:100%}
 .statement,.feedback p,.law-text,.legal-source{overflow-wrap:anywhere;word-break:normal}
 @media (max-width:560px){.legal-review-notice{font-size:12px;padding:11px 12px}.answer-buttons.main-answers{max-width:100%}.answer-buttons.main-answers button{min-width:0}}
+
+/* Mesmo componente interativo nos modos Foco e Scroll; ajustes para telas estreitas. */
+.answer-buttons.main-answers{grid-template-columns:repeat(2,minmax(0,1fr));max-width:100%}
+.answer-buttons.main-answers button{font-size:clamp(14px,1.2vw,16px);min-height:48px;line-height:1.4;touch-action:manipulation}
+.answer-buttons.main-answers button:focus-visible{outline:3px solid #316854;outline-offset:3px}
+@media (max-width:560px){.exercise-heading,.scroll-question-card .exercise-heading{flex-wrap:wrap}.question-actions{justify-content:flex-start}.scroll-question-card .main-answers{max-width:100%}.statement.main-statement{overflow-wrap:break-word}}
 </style>
 <script>try{history.scrollRestoration='manual'}catch(e){};window.addEventListener('pageshow',()=>{scrollTo(0,0);setTimeout(()=>scrollTo(0,0),30)});</script>
 <script>window.__CENTRAL_EMBEDDED__=true;</script><link rel="stylesheet" href="../ui/tool-navigation.css?v=20261001fix1"><link rel="stylesheet" href="/ui/lei-em-dia-v1.css?v=20261008lei1"></head>
@@ -1163,7 +1169,7 @@ function answerButtons(selected,fn){
   const opts=saved.preferences.answerOrder==="correct-left"
     ? [[true,"✓ Certo"],[false,"× Errado"]]
     : [[false,"× Errado"],[true,"✓ Certo"]];
-  return `<div class="answer-buttons main-answers">${opts.map(([v,l])=>`<button ${selected!==null&&selected!==undefined?"disabled":""} class="${selected===v?"chosen":""}" onclick="${fn}(${v})">${l}</button>`).join("")}</div>`;
+  return `<div class="answer-buttons main-answers" role="group" aria-label="Responda: certo ou errado">${opts.map(([v,l])=>`<button type="button" ${selected!==null&&selected!==undefined?"disabled":""} aria-pressed="${selected===v}" class="${selected===v?"chosen":""}" onclick="${fn}${v})">${l}</button>`).join("")}</div>`;
 }
 function topbar(audit=false){
   return `<header class="filter-topbar">
@@ -1443,7 +1449,7 @@ function renderFocus(){
       ${ui.commentOpen?`<div class="comment-box"><div><strong>Comentário da questão</strong><small>Salvo automaticamente</small></div><textarea autofocus oninput="updateNote('${article.id}',this.value)" placeholder="Registre uma pegadinha, observação ou lembrete...">${esc(saved.notes[article.id]||"")}</textarea></div>`:""}
       <p class="statement main-statement">${esc(article.question.statement)}</p>
       ${legalAuditBanner(article)}
-      ${answerButtons(ui.choice,"answerFocus")}
+      ${answerButtons(ui.choice,"answerFocus(")}
       ${ui.choice!==null?`<div class="answer-reveal">${feedback(article,ui.choice)}${legalBasis(article)}</div>`:""}
       <div class="article-footer"><button ${ui.articleIndex===0?"disabled":""} onclick="move(-1)">← Anterior</button><span>${ui.articleIndex+1} de ${v.length}</span><div class="footer-right"><button class="btn-random" ${v.length<2?"disabled":""} onclick="randomQuestion()" title="Ir para uma questão aleatória">⤮ Aleatória</button><button class="btn-next" ${ui.articleIndex===v.length-1?"disabled":""} onclick="move(1)">Próximo →</button></div></div>
     </article>
@@ -1461,7 +1467,7 @@ function renderScroll(){
         ${ui.scrollComments[article.id]?`<div class="comment-box"><div><strong>Comentário da questão</strong><small>Salvo automaticamente</small></div><textarea oninput="updateNote('${article.id}',this.value)">${esc(saved.notes[article.id]||"")}</textarea></div>`:""}
         <p class="statement main-statement">${esc(article.question.statement)}</p>
         ${legalAuditBanner(article)}
-        ${(()=>{const opts=saved.preferences.answerOrder==="correct-left"?[[true,"✓ Certo"],[false,"× Errado"]]:[[false,"× Errado"],[true,"✓ Certo"]];return `<div class="answer-buttons main-answers">${opts.map(([v,l])=>`<button ${selected!==undefined?"disabled":""} class="${selected===v?"chosen":""}" onclick="answerScroll('${article.id}',${v})">${l}</button>`).join("")}</div>`})()}
+        ${answerButtons(selected,`answerScroll('${article.id}',`)}
         ${selected!==undefined?`<div class="answer-reveal">${feedback(article,selected)}${legalBasis(article)}<button class="inline-history-toggle" onclick="ui.scrollHistories['${article.id}']=!ui.scrollHistories['${article.id}'];render()">${open?"Fechar histórico ↑":`Ver histórico (${(saved.attempts[article.id]||[]).length}) ↓`}</button>${historyBlock(article,open)}</div>`:""}
         <div class="scroll-card-footer" data-qid="${esc(article.id)}"><button class="btn-random" ${v.length<2?"disabled":""} onclick="scrollRandom('${article.id}')">⤮ Aleatória</button><button class="btn-next" ${i===v.length-1?"disabled":""} onclick="scrollNext('${article.id}')">Próxima ↓</button></div>
       </article>`
