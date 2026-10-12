@@ -25,7 +25,7 @@ test('PTRA: 21 módulos, duas versões e questões interativas geradas de dados 
   const metadata=index(),data=packed(),upgrade=reader();
   assert.equal(metadata.modules.length,21);
   assert.equal(data.modules.length,21);
-  let totalQuestions=0,totalCharacters=0;
+  let totalQuestions=0,totalCharacters=0,splitCount=0;const unsplit=[];
   for(const meta of metadata.modules){
     const module=data.modules.find(x=>Number(x.number)===Number(meta.number));
     assert.ok(module,'Falta M'+meta.number);
@@ -36,6 +36,13 @@ test('PTRA: 21 módulos, duas versões e questões interativas geradas de dados 
       assert.ok(Array.isArray(part.questions),'Faltam questões '+kind+' M'+meta.number);
       assert.equal(part.questions.length,expected,'Quantidade de questões '+kind+' M'+meta.number);
       totalQuestions+=part.questions.length;
+      const split=upgrade.splitTheory(part.pages,part.questions);
+      if(split.questionsText)splitCount++;
+      else {
+        const candidates=part.pages.join('\n\n').split('\n')
+          .map(x=>x.trim()).filter(x=>/quest[oõ]es|fixa[cç][aã]o|gabarito|exerc[ií]cios/i.test(x)).slice(-6).map(x=>x.slice(0,110));
+        unsplit.push({m:meta.number,kind,candidates});
+      }
       const html=upgrade.render(meta,part,kind);
       assert.match(html,/ptra-book-flow/);
       assert.match(html,/bc-universal-sheet/);
@@ -57,6 +64,7 @@ test('PTRA: 21 módulos, duas versões e questões interativas geradas de dados 
   assert.equal(totalQuestions,315);
   assert.ok(totalCharacters>100000);
   console.log('PTRA AUDIT OK: 21 módulos / 42 versões / '+totalQuestions+' questões / '+totalCharacters+' caracteres de fontes originais');
+  console.log('PTRA SECTION SPLIT',JSON.stringify({splitCount,unsplit}));
 });
 test('PTRA: transcrição segura, hierarquia editorial e seção de questões separada',()=>{
   const upgrade=reader();
