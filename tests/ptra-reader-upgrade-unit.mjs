@@ -65,6 +65,7 @@ test('PTRA: 21 módulos, duas versões e questões interativas geradas de dados 
   assert.ok(totalCharacters>100000);
   console.log('PTRA AUDIT OK: 21 módulos / 42 versões / '+totalQuestions+' questões / '+totalCharacters+' caracteres de fontes originais');
   console.log('PTRA SECTION SPLIT',JSON.stringify({splitCount,unsplit}));
+  assert.equal(splitCount,42,'Todas as versões devem mover a seção textual de questões para a revisão interativa');
 });
 test('PTRA: transcrição segura, hierarquia editorial e seção de questões separada',()=>{
   const upgrade=reader();
