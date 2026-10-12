@@ -408,64 +408,20 @@ function toggleTrabalhoModule(uid){
   try{localStorage.setItem('central-v6:trabalho-module-open:'+uid,open?'1':'0')}catch(_){}
   return false;
 }
-function openTrabalhoNative(event, relativeUrl, label){
-  const path=String(relativeUrl||'');
-  const allowed=/^modules\/trabalho\/native\/reader\.html\?modulo=(?:0[1-9]|1[0-8])&material=(?:resumida|completa|infografico)(?:&questoes=1)?$/;
-  if(!allowed.test(path))return true;
-  let frame=null,host=null;
-  try{
-    frame=document.getElementById('moduleFrame');
-    host=document.getElementById('moduleView');
-    if(!frame||!host||typeof centralShowNativeView!=='function')return true;
-    const target=new URL('/'+path,location.origin);
-    const shown=centralShowNativeView('moduleView',label||'Direito do Trabalho');
-    if(!shown)return true;
-    let feedback=document.getElementById('bcTrabalhoReaderFallback');
-    if(!feedback){
-      feedback=document.createElement('aside');
-      feedback.id='bcTrabalhoReaderFallback';
-      feedback.style.cssText='display:none;position:absolute;z-index:20;left:50%;transform:translateX(-50%);top:60px;max-width:95%;padding:14px 20px;border-radius:10px;border:1px solid #d3dbe2;background:#fff;color:#283e55;box-shadow:0 8px 30px #0002;font:14px/1.5 system-ui,sans-serif';
-      feedback.innerHTML='<b>Não foi possível abrir o leitor nesta janela.</b><p style="margin:6px 0">Você pode abrir o mesmo material diretamente.</p><a id="bcTrabalhoReaderDirect" target="_blank" rel="noopener" style="color:#245a84;text-decoration:underline">Abrir leitura diretamente ↗</a>';
-      host.appendChild(feedback);
-    }
-    feedback.style.display='none';
-    feedback.querySelector('#bcTrabalhoReaderDirect').href=target.href;
-    const currentTicket=String(Date.now())+':'+path;
-    frame.dataset.trabalhoTicket=currentTicket;
-    const fail=()=>{if(frame.dataset.trabalhoTicket===currentTicket)feedback.style.display='block';};
-    // Esta rotina é exclusiva de Direito do Trabalho, sem modificar o roteamento das outras disciplinas.
-    frame.addEventListener('load',()=>{
-      if(frame.dataset.trabalhoTicket!==currentTicket)return;
-      try{
-        const doc=frame.contentDocument;
-        if(doc&&/Entrar\s*[—-]\s*Base Completa/i.test(doc.title)){fail();return;}
-        setTimeout(()=>{
-          if(frame.dataset.trabalhoTicket!==currentTicket)return;
-          try{
-            const inner=frame.contentDocument;
-            const title=inner?.getElementById('title')?.textContent||'';
-            if(/Erro ao abrir módulo/i.test(title))fail();
-          }catch(_){}
-        },1300);
-      }catch(_){}
-    },{once:true});
-    if(typeof window.moduleFrameWatch==='function')window.moduleFrameWatch(target.href);
-    frame.removeAttribute('srcdoc');
-    frame.src=target.href;
-    try{saveLast({url:target.pathname+target.search,title:label||'Direito do Trabalho',at:Date.now()})}catch(_){}
-    try{window.scrollTo(0,0)}catch(_){}
-    if(event&&typeof event.preventDefault==='function')event.preventDefault();
-    return false;
-  }catch(e){
-    console.error('Falha ao abrir teoria de Direito do Trabalho',e);
-    if(host&&host.classList.contains('hidden')===false){
-      const feedback=document.getElementById('bcTrabalhoReaderFallback');
-      if(feedback)feedback.style.display='block';
-    }
-    return true;
-  }
+function openTrabalhoNative(event,relativeUrl,label){
+ const value=String(relativeUrl||'');
+ const match=/^modules\/trabalho\/native\/reader\.html\?modulo=(0[1-9]|1[0-8])&material=(resumida|completa|infografico)(?:&questoes=1)?$/.exec(value);
+ if(!match)return true;
+ const reader=window.CentralTrabalhoUniversal||window.CentralTrabalhoNative;
+ if(!reader||typeof reader.open!=='function')return true;
+ try{
+   if(reader.open(Number(match[1]),match[2])){
+     if(event&&typeof event.preventDefault==='function')event.preventDefault();
+     return false;
+   }
+ }catch(error){console.error('Falha ao abrir Leitor Universal de Direito do Trabalho',error);}
+ return true;
 }
-
 function renderTrabalhoMaster(s){
   const modules=s.topics.filter(t=>/^trab-m\d{2}$/.test(t.uid));
   const styles=`<style id="bc-trabalho-master-v3">
