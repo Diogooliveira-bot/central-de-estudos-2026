@@ -43,7 +43,19 @@ test('PTRA: desktop e celular preservam teoria e permitem responder com botões'
    await page.evaluate(render,{meta,mat:moduleData.resumido,kind:'resumido'});
    assert.equal(await page.locator('.ptra-book-qcard').count(),5,'M01 resumida precisa ter 5 questões');
    assert.equal(await page.locator('.ptra-native-page').count(),0,'Não pode mostrar cartões de páginas PDF');
-   assert.ok(await page.locator('.ptra-book-cover h1').isVisible());
+   const visible=await page.locator('.ptra-book-cover h1').isVisible();
+   if(!visible){
+     const diagnostic=await page.evaluate(()=>{
+       const el=document.querySelector('.ptra-book-cover h1');
+       if(!el)return {missing:true};
+       const chain=[];for(let x=el;x&&chain.length<9;x=x.parentElement){
+         const c=getComputedStyle(x),r=x.getBoundingClientRect();
+         chain.push({tag:x.tagName,className:x.className,id:x.id,display:c.display,visibility:c.visibility,width:r.width,height:r.height});
+       }return {chain};
+     });
+     console.log('PTRA VISIBILITY DIAGNOSTIC',JSON.stringify(diagnostic));
+   }
+   assert.ok(visible,'O título da apostila precisa estar visível');
    const metrics=await page.evaluate(()=>({inner:window.innerWidth,scroll:document.documentElement.scrollWidth,book:document.querySelector('.ptra-book').getBoundingClientRect().width}));
    assert.ok(metrics.scroll<=metrics.inner+2,'Overflow horizontal: '+JSON.stringify({size,metrics}));
    const option=page.locator('.ptra-book-qcard').first().locator('[data-ptra-option]').first();
