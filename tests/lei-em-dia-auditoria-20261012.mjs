@@ -49,6 +49,8 @@ test('Interface sinaliza pendências nos dois modos e não muda chave de progres
 test('Foco/Scroll compartilham botoes acessiveis e referencias administrativas saneadas',()=>{
  const pack2=readFileSync(new URL('tools/decorando-data-adm-pack2.js',root),'utf8');
  assert.ok(html.includes('aria-pressed='));
+ assert.ok(html.includes('Revisão do gabarito'));
+ assert.ok(html.includes('Atualização legislativa'));
  assert.ok(html.includes('role="group" aria-label="Responda: certo ou errado"'));
  assert.ok(html.includes('answerButtons(ui.choice,"answerFocus(")'));
  assert.ok(html.includes('answerButtons(selected,\`answerScroll('));
