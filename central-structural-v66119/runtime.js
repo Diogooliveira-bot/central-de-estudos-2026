@@ -4873,6 +4873,8 @@ function installExternalLinkRouter(){
  window.__centralExternalLinkRouterInstalled=true;
  document.addEventListener('click',event=>{
   const anchor=event.target?.closest?.('a[href]');if(!anchor)return;
+  // Os links de apostila de Trabalho são tratados pelo Leitor Universal na própria Central.
+  if(anchor.matches('.bc-trabalho-open-reader')&&anchor.closest('.bc-trabalho-master'))return;
   const raw=anchor.getAttribute('href');if(!raw||raw==='#'||/^javascript:/i.test(raw))return;
   const valid=safeUrl(raw);if(!/^https?:/i.test(valid))return;
   event.preventDefault();openExternalUrl(valid);
