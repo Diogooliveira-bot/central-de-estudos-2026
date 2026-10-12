@@ -11,7 +11,7 @@ for(let n=1;n<=18;n++){
  const mod=JSON.parse(fs.readFileSync(path.join(root,'modules/trabalho/native/modules/m'+id+'.json'),'utf8'));
  for(const q of [...mod.questoes.resumida,...mod.questoes.completa]){assert(!map.has(q.id),'ID duplicado '+q.id);map.set(q.id,q)}
 }
-const norm=x=>String(x??'').replace(/\\s+/g,' ').trim();
+const norm=x=>String(x??'').replace(/\s+/g,' ').trim();
 assert.equal(map.size,270,'Banco incompleto');
 assert.equal(audit.registros.length,251,'Inventário incompleto');
 for(const a of audit.registros){
