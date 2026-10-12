@@ -256,9 +256,9 @@
           "E": "Sumula 354 - gorjetas."
         },
         "gabarito": "B",
-        "comentario": "Questao 8 - B - medio\n\n FUNDAMENTO\n Sumula 91 do TST.\n\nO salario complessivo, com englobamento de direitos distintos sem discriminacao adequada, e a pratica\ncombatida pela Sumula 91.\n\nAlternativas incorretas: As demais Sumulas tratam de equiparacao, gratificacao, utilidades e gorjetas.\n\n PEGADINHA\n O nome “pacote” nao salva o pagamento complessivo.",
-        "status": "PENDENTE_ATUALIZACAO_JURISPRUDENCIAL",
-        "alertas": "Referência potencial a súmula cancelada"
+        "comentario": "Questao 8 - B - medio\n\n FUNDAMENTO\n Sumula 91 do TST.\n\nO salario complessivo, com englobamento de direitos distintos sem discriminacao adequada, e a pratica\ncombatida pela Sumula 91.\n\nAlternativas incorretas: As demais Sumulas tratam de equiparacao, gratificacao, utilidades e gorjetas.\n\n PEGADINHA\n O nome “pacote” nao salva o pagamento complessivo.\n\nAtualização jurisprudencial (12/10/2026): a Súmula 91 do TST permanece aplicável à vedação do salário complessivo. A Súmula 152, citada apenas na alternativa C como distrator, foi cancelada pela Resolução TST nº 225/2025 e NÃO deve ser tratada como precedente vigente. Fonte oficial: https://juslaboris.tst.jus.br/handle/20.500.12178/251919",
+        "status": "GABARITO_COTEJADO_PENDENTE_HOMOLOGACAO_INTEGRAL",
+        "alertas": "Súmula 91 vigente; Súmula 152 cancelada em 2025, mencionada somente como alternativa incorreta."
       },
       {
         "id": "DT-M12-COMPLETA-Q09",
