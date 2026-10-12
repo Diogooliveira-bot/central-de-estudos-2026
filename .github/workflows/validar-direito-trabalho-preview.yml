@@ -1,0 +1,46 @@
+name: Validar Direito do Trabalho - preview
+on:
+  push:
+    branches: [feat/direito-trabalho-m01-m18-preview-20261010]
+  pull_request:
+    paths:
+      - 'modules/trabalho/native/**'
+      - 'ui/central-trabalho-native-v1.js'
+      - 'qa/trabalho-*.json'
+      - '.github/workflows/validar-direito-trabalho-preview.yml'
+jobs:
+  estrutura:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validar os 18 módulos e 270 questões
+        run: node qa/trabalho-native-validate.cjs
+      - name: Sintaxe do leitor e PWA
+        run: |
+          node --check modules/trabalho/native/assets/reader.js
+          node --check ui/central-trabalho-native-v1.js
+          node --check sw.js
+      - name: Conferir os 41 recursos offline
+        run: |
+          node - <<'NODE'
+          const fs=require('node:fs'),assert=require('node:assert/strict');
+          const d=JSON.parse(fs.readFileSync('central-offline-files-v66172.json','utf8'));
+          const resources=['/ui/central-trabalho-native-v1.js','/modules/trabalho/native/index.html','/modules/trabalho/native/reader.html','/modules/trabalho/native/assets/reader.js','/modules/trabalho/native/assets/reader.css',...Array.from({length:18},(_,i)=>'/modules/trabalho/native/modules/m'+String(i+1).padStart(2,'0')+'.json'),...Array.from({length:18},(_,i)=>'/modules/trabalho/native/infograficos/m'+String(i+1).padStart(2,'0')+'.webp')];
+          for(const p of resources){assert(d.files.includes(p),'Offline manifest missing '+p);assert(fs.existsSync('.'+p),'Missing asset '+p)}
+          console.log('PASS: 41 recursos preparados para cache autenticado');
+          NODE
+  bloqueio-de-liberacao:
+    if: ${{ github.event_name == 'pull_request' && github.event.pull_request.draft == false }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Bloquear publicação sem auditoria jurídica completa
+        run: |
+          node - <<'NODE'
+          const fs=require('node:fs');
+          const d=JSON.parse(fs.readFileSync('qa/trabalho-auditoria-integracao-r3.json','utf8'));
+          if(d.status!=='HOMOLOGADO_PARA_PUBLICACAO'){console.error('BLOQUEADO: auditoria jurídica e testes autenticados pendentes.');process.exit(1)}
+          NODE

@@ -1,0 +1,28 @@
+{
+  "date": "2026-10-10",
+  "status": "BLOQUEADO_PARA_PUBLICACAO",
+  "version": "R3",
+  "checks": {
+    "modules": 18,
+    "questions": 270,
+    "question_pdf_exact_stem_prefix_after_errata": 269,
+    "pdf_text_format_variation": 1,
+    "pdf_corrective_errata_inserted_locally": [
+      "DT-M08-RESUMIDA-Q03",
+      "DT-M16-COMPLETA-Q08"
+    ],
+    "pdf_corrections_on_github": false,
+    "local_isolated_reader_device_module_tests": 36,
+    "local_isolated_reader_failures": 0,
+    "authenticated_preview_qa": "PENDENTE",
+    "question_merit_certified": 8,
+    "question_merit_pending": 262,
+    "original_legal_editorial_alerts": 42
+  },
+  "notes": "O leitor não foi homologado em produção; as páginas substitutivas de dois PDFs constam no pacote local R3, não no GitHub; divergências e referências jurisprudenciais ainda precisam de conferência. Não mesclar.",
+  "sources": [
+    "https://juslaboris.tst.jus.br/handle/20.500.12178/251919",
+    "https://www.planalto.gov.br/ccivil_03/leis/l6019compilado.htm",
+    "https://www.planalto.gov.br/ccivil_03/leis/l6858.htm"
+  ]
+}
