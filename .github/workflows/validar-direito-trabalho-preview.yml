@@ -1,7 +1,7 @@
 name: Validar Direito do Trabalho - preview
 on:
   push:
-    branches: [feat/direito-trabalho-m01-m18-preview-20261010]
+    branches: [feat/direito-trabalho-m01-m18-preview-20261010, feat/direito-trabalho-m01-m18-release-candidate-20261012]
   pull_request:
     paths:
       - 'modules/trabalho/native/**'
@@ -18,6 +18,8 @@ jobs:
           node-version: '22'
       - name: Validar os 18 módulos e 270 questões
         run: node qa/trabalho-native-validate.cjs
+      - name: Consistência entre cotejo jurídico e questões instaladas
+        run: node qa/trabalho-cotejo-sync.cjs
       - name: Sintaxe do leitor e PWA
         run: |
           node --check modules/trabalho/native/assets/reader.js
