@@ -18,12 +18,13 @@ function progress(){
     return;
   }
   root.querySelector('.reader-study-progress').hidden=false;
-  const total=data.tipos[mode].numero_paginas;
+  const displayed=Array.from(document.querySelectorAll('.reader-source-page'));
+  const total=displayed.length;
   const visited=readPages[mode]||{};
-  const count=Object.keys(visited).filter(i=>visited[i]).length;
+  const count=displayed.filter(section=>visited[section.dataset.readerPage]).length;
   const pct=total?Math.min(100,Math.round(100*count/total)):0;
   if(track)track.style.width=pct+'%';
-  if(summary)summary.textContent=count+' de '+total+' páginas de origem visitadas · '+pct+'%';
+  if(summary)summary.textContent=count+' de '+total+' trechos de teoria visitados · '+pct+'%';
 }
 function theoryPagesWithoutPrintedQuestions(pages){
   // Os PDFs originais contêm perguntas e gabaritos impressos.
@@ -170,13 +171,13 @@ function observeReadingPages(){
   if(!('IntersectionObserver' in window)){visited(0);return;}
   const observer=new IntersectionObserver(entries=>{
     for(const entry of entries){
-      if(entry.isIntersecting&&entry.intersectionRatio>=.05)visited(entry.target.dataset.readerPage);
+      if(entry.isIntersecting)visited(entry.target.dataset.readerPage);
     }
-  },{root:null,rootMargin:'0px 0px -8% 0px',threshold:[0,.05,.2]});
+  },{root:null,rootMargin:'0px 0px -8% 0px',threshold:0});
   sections.forEach(section=>observer.observe(section));
   window.__dtPageObserver=observer;
 }
-function renderQuestion(q,root){const block=el('section','question'),title=el('div','q-title',`${q.numero}. ${q.enunciado}`);block.appendChild(title);const field=el('div');field.setAttribute('role','radiogroup');field.setAttribute('aria-label','Alternativas da questão '+q.numero);const key=q.id;for(const [letter,text] of Object.entries(q.alternativas)){const lab=el('label','choice');const radio=document.createElement('input');radio.type='radio';radio.name='q-'+key;radio.value=letter;radio.checked=answered.get(key)===letter;lab.append(radio,el('span','',`${letter}) ${text}`));field.appendChild(lab)}block.appendChild(field);const button=el('button','','Conferir resposta');button.type='button';const feedback=el('div','feedback hidden');feedback.setAttribute('role','status');button.onclick=()=>{const c=field.querySelector('input:checked');if(!c){feedback.className='feedback wrong';feedback.textContent='Selecione uma alternativa antes de conferir.';return}answered.set(key,c.value);persist('answers',Object.fromEntries(answered));const correct=c.value===q.gabarito;feedback.className=correct?'feedback':'feedback wrong';clear(feedback);feedback.append(el('strong','',correct?'Resposta conforme o gabarito original.':'Resposta diferente do gabarito original.'),el('div','',`Gabarito: ${q.gabarito}\n\n${q.comentario}`),el('small','muted','Revisão jurídica de mérito pendente.'));};block.append(button,feedback);root.appendChild(block)}
+function renderQuestion(q,root){const block=el('section','question'),title=el('div','q-title',`${q.numero}. ${q.enunciado}`);block.appendChild(title);const field=el('div');field.setAttribute('role','radiogroup');field.setAttribute('aria-label','Alternativas da questão '+q.numero);const key=q.id;for(const [letter,text] of Object.entries(q.alternativas)){const lab=el('label','choice');const radio=document.createElement('input');radio.type='radio';radio.name='q-'+key;radio.value=letter;radio.checked=answered.get(key)===letter;lab.append(radio,el('span','',`${letter}) ${text}`));field.appendChild(lab)}block.appendChild(field);const button=el('button','','Conferir resposta');button.type='button';const feedback=el('div','feedback hidden');feedback.setAttribute('role','status');button.onclick=()=>{const c=field.querySelector('input:checked');if(!c){feedback.className='feedback wrong';feedback.textContent='Selecione uma alternativa antes de conferir.';return}answered.set(key,c.value);persist('answers',Object.fromEntries(answered));const correct=c.value===q.gabarito;feedback.className=correct?'feedback':'feedback wrong';clear(feedback);feedback.append(el('strong','',correct?'Resposta correta conforme o gabarito do módulo.':'Resposta diferente do gabarito do módulo.'),el('div','',`Gabarito: ${q.gabarito}\n\n${q.comentario}`),el('small','muted','Revisão jurídica de mérito pendente.'));};block.append(button,feedback);root.appendChild(block)}
 
 function renderImage(){
   const content=$('content');clear(content);
