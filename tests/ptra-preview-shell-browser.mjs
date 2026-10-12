@@ -28,13 +28,14 @@ test('PTRA: o bootstrap real da Central precisa mostrar leitor atualizado e não
   await page.goto(url,{waitUntil:'domcontentloaded'});
   await page.waitForFunction(()=>!!window.PtraNative&&!!window.PtraReaderUpgrade,{timeout:60000});
   await page.waitForFunction(()=>!!document.querySelector('.subject[data-id="ptra"]'),{timeout:30000});
+  try{await page.waitForFunction(()=>document.querySelectorAll('.subject[data-id="ptra"] [data-ptra-module]').length===21,{timeout:16000});}catch(e){console.log('SHELL_LOAD_TIMEOUT',e.message.slice(0,80));}
   const version=await page.evaluate(()=>({
     upgrade:typeof window.PtraReaderUpgrade?.render,
     native:typeof window.PtraNative?.openReader,
     count:window.PTRA_NATIVE_INDEX?.modules?.length,
     ready:document.documentElement.dataset.centralReady,
     moduleHeaders:document.querySelectorAll('.subject[data-id="ptra"] [data-ptra-module]').length,
-    pageUrl:location.href
+    pageUrl:location.href,sections:document.querySelectorAll('.subject').length,ptraElement:document.querySelector('.subject[data-id="ptra"]')?.outerHTML?.slice(0,300),bodyLength:document.body.innerHTML.length
   }));
   console.log('PTRA_REAL_SHELL',JSON.stringify(version),'PAGE_ERRORS',JSON.stringify(errors.slice(0,7)));
   assert.equal(version.count,21);
