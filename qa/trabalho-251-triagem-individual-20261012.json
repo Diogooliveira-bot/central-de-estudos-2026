@@ -1,7 +1,7 @@
 {
   "schema": "base-completa-triagem-juridica-20261012-v1",
   "dataCorte": "2026-10-12",
-  "observacao": "TRIAGEM DOCUMENTAL, NÃO É CERTIFICAÇÃO INDIVIDUAL DE MÉRITO. As 251 questões foram inventariadas com suas cinco alternativas, gabarito, comentário e pontos de atenção. Não confundir triagem automatizada com validação jurídica conclusiva; cada item ainda exige cotejo individual de enunciado, todas as alternativas, gabarito, comentário e fundamentos atualizados. Cotejo normativo de 23 questões pendentes da R4 concluído (e quatro questões previamente revisadas rechecadas). O cotejo dos 228 itens restantes e a integração das erratas dos PDFs continuam pendentes. Adicionalmente, 27 questões dos módulos M01 e M02 foram cotejadas (inclusive princípios e cronologia), totalizando 50/251 com verificação individual de alternativas e comentários. Mais 27 enunciados, respostas, distratores e comentários dos módulos M03/M04 cotejados; conclusão acumulada 77/251.",
+  "observacao": "TRIAGEM DOCUMENTAL, NÃO É CERTIFICAÇÃO INDIVIDUAL DE MÉRITO. As 251 questões foram inventariadas com suas cinco alternativas, gabarito, comentário e pontos de atenção. Não confundir triagem automatizada com validação jurídica conclusiva; cada item ainda exige cotejo individual de enunciado, todas as alternativas, gabarito, comentário e fundamentos atualizados. Cotejo normativo de 23 questões pendentes da R4 concluído (e quatro questões previamente revisadas rechecadas). O cotejo dos 228 itens restantes e a integração das erratas dos PDFs continuam pendentes. Adicionalmente, 27 questões dos módulos M01 e M02 foram cotejadas (inclusive princípios e cronologia), totalizando 50/251 com verificação individual de alternativas e comentários. Mais 27 enunciados, respostas, distratores e comentários dos módulos M03/M04 cotejados; conclusão acumulada 77/251. Foram cotejadas mais 24 questões dos M05 e M06 com fundamento e cinco alternativas, total 101/251.",
   "fontesCotejadas": [
     "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
     "https://www.planalto.gov.br/ccivil_03/constituicao/constituicaocompilado.htm",
@@ -25,8 +25,8 @@
     ],
     "certificadasIntegralmenteNestaRodada": 0,
     "homologacao": false,
-    "cotejosNormativosConcluidosNaRodada": 77,
-    "pendentesCotejoNormativoNaRodada": 174,
+    "cotejosNormativosConcluidosNaRodada": 101,
+    "pendentesCotejoNormativoNaRodada": 150,
     "rechecadosDaRodadaAnterior": 4
   },
   "registros": [
@@ -1348,11 +1348,18 @@
       "textoGabarito": "tácito ou expresso; o expresso pode ser verbal ou escrito.",
       "enunciado": "O contrato individual de trabalho pode ser: Nível: Fácil",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m05.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m05.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT art. 442",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "A alternativa C corresponde à regra descrita; as outras alternativas introduzem conceitos, efeitos ou limites incompatíveis.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M05-RESUMIDA-Q02",
@@ -1383,11 +1390,18 @@
       "textoGabarito": "Transferência provisória pode gerar adicional mínimo de 25%, e a OJ 113 destaca a provisoriedade.",
       "enunciado": "Sobre transferência, assinale a correta: Nível: Média",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m05.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m05.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT art. 469 §3º; OJ TST 113",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "A alternativa C corresponde à regra descrita; as outras alternativas introduzem conceitos, efeitos ou limites incompatíveis.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M05-RESUMIDA-Q05",
@@ -1397,11 +1411,18 @@
       "textoGabarito": "O art. 223-G trabalha 12 critérios; seus parâmetros são orientativos segundo o STF; e o art. 468 exige consentimento e ausência de prejuízo.",
       "enunciado": "Assinale a alternativa integralmente correta: Nível: Difícil",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m05.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m05.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT art. 223-G; STF ADIs 6050/6069/6082; CLT art. 468",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "A alternativa C corresponde à regra descrita; as outras alternativas introduzem conceitos, efeitos ou limites incompatíveis.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M05-COMPLETA-Q01",
@@ -1411,11 +1432,18 @@
       "textoGabarito": "6 meses no mesmo tipo de atividade.",
       "enunciado": "À luz do art. 442-A da CLT, para fins de contratação o empregador não pode exigir do candidato comprovação de experiência prévia superior a: Nível: Fácil",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m05.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m05.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT art. 442-A",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "A alternativa B corresponde à regra descrita; as outras alternativas introduzem conceitos, efeitos ou limites incompatíveis.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M05-COMPLETA-Q02",
@@ -1425,11 +1453,18 @@
       "textoGabarito": "O contrato pode ser tácito ou expresso; quando expresso, pode ser verbal ou escrito.",
       "enunciado": "Sobre a forma do contrato individual de trabalho, assinale a alternativa correta: Nível: Fácil",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m05.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m05.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT art. 442",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "A alternativa C corresponde à regra descrita; as outras alternativas introduzem conceitos, efeitos ou limites incompatíveis.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M05-COMPLETA-Q03",
@@ -1439,11 +1474,18 @@
       "textoGabarito": "Alteridade.",
       "enunciado": "A característica do contrato de trabalho segundo a qual os riscos da atividade econômica recaem sobre o empregador denomina-se: Nível: Fácil",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m05.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m05.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT art. 2º — alteridade",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "A alternativa B corresponde à regra descrita; as outras alternativas introduzem conceitos, efeitos ou limites incompatíveis.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M05-COMPLETA-Q04",
@@ -1474,11 +1516,18 @@
       "textoGabarito": "Do empregador, quando a invenção resulta do objeto ou da natureza do serviço contratado.",
       "enunciado": "Um empregado é contratado especificamente para desenvolver atividade inventiva. De acordo com o regime estudado da Lei nº 9.279/1996, a regra geral de titularidade é: Nível: Média",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m05.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m05.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "Lei 9.279/1996 art. 88",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/leis/l9279.htm",
+        "conclusao": "A alternativa C corresponde à regra descrita; as outras alternativas introduzem conceitos, efeitos ou limites incompatíveis.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M05-COMPLETA-Q06",
@@ -1488,13 +1537,20 @@
       "textoGabarito": "O art. 223-F admite cumulação de reparação extrapatrimonial e danos materiais, com discriminação dos valores.",
       "enunciado": "Assinale a alternativa que descreve corretamente a disciplina dos danos extrapatrimoniais no módulo: Nível: Média",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [
         "redacao_editorial"
       ],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m05.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m05.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT arts. 223-F, 223-G e 223-D",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "A alternativa C corresponde à regra descrita; as outras alternativas introduzem conceitos, efeitos ou limites incompatíveis.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M05-COMPLETA-Q07",
@@ -1504,11 +1560,18 @@
       "textoGabarito": "Não é considerada transferência para esse efeito.",
       "enunciado": "Para os efeitos do art. 469 da CLT, uma mudança de local de trabalho que não acarrete necessariamente mudança de domicílio: Nível: Média",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m05.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m05.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT art. 469",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "A alternativa B corresponde à regra descrita; as outras alternativas introduzem conceitos, efeitos ou limites incompatíveis.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M05-COMPLETA-Q09",
@@ -1518,11 +1581,18 @@
       "textoGabarito": "A provisoriedade pode gerar adicional de pelo menos 25%, e a OJ 113 afasta a tese de que cargo de confiança ou cláusula eliminem esse direito.",
       "enunciado": "Empregado em cargo de confiança possui cláusula contratual de transferência e é deslocado provisoriamente, com real necessidade de serviço, para localidade diversa. À luz do núcleo estudado, é correto afirmar que: Nível: Difícil",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m05.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m05.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT art. 469 §3º; OJ TST 113",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "A alternativa C corresponde à regra descrita; as outras alternativas introduzem conceitos, efeitos ou limites incompatíveis.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M05-COMPLETA-Q10",
@@ -1532,11 +1602,18 @@
       "textoGabarito": "II, apenas.",
       "enunciado": "Analise as afirmações: I. A opção por um de dois regulamentos empresariais coexistentes permite ao empregado somar as cláusulas mais favoráveis de ambos. II. A reversão da função de confiança para o cargo efetivo é admitida pelo art. 468, §1º. III. O consentimento do empregado torna válida qualquer alteração prejudicial. Está correto o que se afirma em: Nível: Difícil",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m05.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m05.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT art. 468 §1º; TST Súmula 51, II",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "A alternativa B corresponde à regra descrita; as outras alternativas introduzem conceitos, efeitos ou limites incompatíveis.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M06-RESUMIDA-Q01",
@@ -1546,13 +1623,20 @@
       "textoGabarito": "90 dias.",
       "enunciado": "Fácil O prazo máximo do contrato de experiência, conforme o módulo, é:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [
         "redacao_editorial"
       ],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/leis/l6019compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m06.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m06.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT art. 445 parágrafo único",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "A alternativa D corresponde à regra descrita; as outras alternativas introduzem conceitos, efeitos ou limites incompatíveis.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M06-RESUMIDA-Q02",
@@ -1562,11 +1646,18 @@
       "textoGabarito": "o prazo indeterminado é a regra e o determinado é excepcional.",
       "enunciado": "Fácil No Direito do Trabalho estudado neste módulo:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/leis/l6019compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m06.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m06.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT arts. 443 e 445",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "A alternativa B corresponde à regra descrita; as outras alternativas introduzem conceitos, efeitos ou limites incompatíveis.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M06-RESUMIDA-Q03",
@@ -1576,11 +1667,18 @@
       "textoGabarito": "Prorrogação prolonga o mesmo vínculo; sucessividade pressupõe contrato anterior encerrado e outro posterior.",
       "enunciado": "Média Assinale a alternativa correta.",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/leis/l6019compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m06.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m06.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT arts. 451 e 452",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "A alternativa C corresponde à regra descrita; as outras alternativas introduzem conceitos, efeitos ou limites incompatíveis.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M06-RESUMIDA-Q04",
@@ -1590,13 +1688,20 @@
       "textoGabarito": "possui estrutura triangular e trabalha-se com o limite de 180 dias, mais até 90 dias nas condições estudadas.",
       "enunciado": "Média Sobre trabalho temporário, conforme o módulo:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [
         "redacao_editorial"
       ],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/leis/l6019compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m06.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m06.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "Lei 6.019/1974 art. 10 §§1º–2º",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/leis/l6019compilado.htm",
+        "conclusao": "A alternativa C corresponde à regra descrita; as outras alternativas introduzem conceitos, efeitos ou limites incompatíveis.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M06-RESUMIDA-Q05",
@@ -1606,11 +1711,18 @@
       "textoGabarito": "art. 481.",
       "enunciado": "Difícil Um contrato a termo contém cláusula assegurando a ambas as partes o direito de ruptura antecipada. Exercida a cláusula, qual é o dispositivo-chave do módulo?",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/leis/l6019compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m06.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m06.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT art. 481",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "A alternativa E corresponde à regra descrita; as outras alternativas introduzem conceitos, efeitos ou limites incompatíveis.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M06-COMPLETA-Q01",
@@ -1620,11 +1732,18 @@
       "textoGabarito": "O contrato por prazo indeterminado constitui a regra geral, enquanto o contrato por prazo determinado é excepcional.",
       "enunciado": "Fácil No regime comum da Consolidação das Leis do Trabalho (CLT), assinale a alternativa correta.",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/leis/l6019compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m06.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m06.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT arts. 443 e 445",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "A alternativa B corresponde à regra descrita; as outras alternativas introduzem conceitos, efeitos ou limites incompatíveis.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M06-COMPLETA-Q03",
@@ -1634,11 +1753,18 @@
       "textoGabarito": "passa a vigorar sem determinação de prazo.",
       "enunciado": "Fácil Na disciplina comum da CLT, o contrato por prazo determinado prorrogado, tácita ou expressamente, mais de uma vez:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/leis/l6019compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m06.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m06.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT art. 451",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "A alternativa C corresponde à regra descrita; as outras alternativas introduzem conceitos, efeitos ou limites incompatíveis.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M06-COMPLETA-Q04",
@@ -1648,11 +1774,18 @@
       "textoGabarito": "indenização equivalente à metade da remuneração que seria devida até o término.",
       "enunciado": "Fácil Um empregador encerra, sem justa causa, antes do termo, contrato por prazo determinado que não possui cláusula asseguratória. Segundo o art. 479 da CLT, na hipótese estudada, a consequência central é:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/leis/l6019compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m06.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m06.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT art. 479",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "A alternativa A corresponde à regra descrita; as outras alternativas introduzem conceitos, efeitos ou limites incompatíveis.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M06-COMPLETA-Q05",
@@ -1662,11 +1795,18 @@
       "textoGabarito": "A prorrogação prolonga o mesmo vínculo; a sucessividade pressupõe um contrato encerrado e outro posterior.",
       "enunciado": "Média Sobre prorrogação e sucessividade dos contratos a termo no regime comum da CLT, assinale a alternativa correta.",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/leis/l6019compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m06.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m06.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT arts. 451 e 452",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "A alternativa D corresponde à regra descrita; as outras alternativas introduzem conceitos, efeitos ou limites incompatíveis.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M06-COMPLETA-Q06",
@@ -1676,13 +1816,20 @@
       "textoGabarito": "pode durar até 180 dias, consecutivos ou não, admitindo-se prorrogação por até 90 dias nas condições estudadas.",
       "enunciado": "Média Em relação ao trabalho temporário disciplinado pela Lei nº 6.019/1974, conforme o módulo, é correto afirmar que:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [
         "redacao_editorial"
       ],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/leis/l6019compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m06.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m06.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "Lei 6.019/1974 art. 10 §§1º–2º",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/leis/l6019compilado.htm",
+        "conclusao": "A alternativa C corresponde à regra descrita; as outras alternativas introduzem conceitos, efeitos ou limites incompatíveis.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M06-COMPLETA-Q07",
@@ -1692,11 +1839,18 @@
       "textoGabarito": "2 meses dentro do período de 1 ano.",
       "enunciado": "Média Na contratação do trabalhador rural por pequeno prazo, a apostila estudada destaca que, superado determinado limite temporal, ocorre conversão para contrato por prazo indeterminado. Esse limite é:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/leis/l6019compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m06.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m06.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "Lei 5.889/1973 art. 14-A §1º",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/leis/l5889.htm",
+        "conclusao": "A alternativa D corresponde à regra descrita; as outras alternativas introduzem conceitos, efeitos ou limites incompatíveis.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M06-COMPLETA-Q08",
@@ -1706,11 +1860,18 @@
       "textoGabarito": "art. 481 da CLT.",
       "enunciado": "Média Em um contrato por prazo determinado existe cláusula assegurando às partes o direito de rescindi-lo antes do termo. Exercido esse direito, o dispositivo central para definir a alteração do regime de ruptura é:",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "",
       "riscos": [],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/leis/l6019compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m06.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m06.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "CLT art. 481",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+        "conclusao": "A alternativa E corresponde à regra descrita; as outras alternativas introduzem conceitos, efeitos ou limites incompatíveis.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M06-COMPLETA-Q09",
@@ -1744,13 +1905,20 @@
       "textoGabarito": "Pode ser instituído por Convenção Coletiva de Trabalho ou Acordo Coletivo de Trabalho e está associado a admissões que representem acréscimo no número de empregados.",
       "enunciado": "Difícil Sobre o contrato especial por prazo determinado da Lei nº 9.601/1998, tal como consolidado a partir da apostila e das correções desta conversa, assinale a alternativa que pode ser afirmada sem depender dos pontos mantidos em verificação futura.",
       "resultadoTecnico": "OK",
-      "statusJuridico": "TRIAGEM_DOCUMENTAL_FEITA_MERITO_AINDA_NAO_HOMOLOGADO",
+      "statusJuridico": "COTEJO_NORMATIVO_CONCLUIDO",
       "alertas": "Lei 9.601/98 | Enunciado contém referência editorial ao material",
       "riscos": [
         "alerta_existente_no_item"
       ],
       "fonteGeralDeReferencia": "https://www.planalto.gov.br/ccivil_03/leis/l6019compilado.htm",
-      "arquivoOrigem": "modules/trabalho/native/modules/m06.json"
+      "arquivoOrigem": "modules/trabalho/native/modules/m06.json",
+      "cotejoNormativo": {
+        "status": "COTEJO_CONTEUDO_ENUNCIADO_ALTERNATIVAS_GABARITO_COMENTARIO",
+        "fundamento": "Lei 9.601/1998 art. 1º §1º",
+        "fonte": "https://www.planalto.gov.br/ccivil_03/leis/l9601.htm",
+        "conclusao": "A alternativa A corresponde à regra descrita; as outras alternativas introduzem conceitos, efeitos ou limites incompatíveis.",
+        "corte": "2026-10-12"
+      }
     },
     {
       "id": "DT-M07-RESUMIDA-Q01",
