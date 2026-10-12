@@ -1,0 +1,30 @@
+name: Audit PTRA Reader Preview
+on:
+  push:
+    branches:
+      - preview/ptra-leitor-universal-20261012
+      - release/ptra-universal-approved-20261012
+      - main
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit-ptra:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout candidate
+        uses: actions/checkout@v4
+      - name: Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate modules, questions and source preservation
+        run: node --test tests/ptra-reader-upgrade-unit.mjs
+      - name: Install browser testing dependencies
+        run: npm install --ignore-scripts --no-audit --no-fund
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Browser test responsive theory and answer interactions
+        run: node --test tests/ptra-reader-upgrade-browser.mjs
+      - name: Verify the real Central bootstrap and PTRA content
+        run: node --test tests/ptra-preview-shell-browser.mjs

@@ -1,0 +1,282 @@
+/* Base Completa — Processo do Trabalho: Leitor Universal / apostila fluida */
+#ptra-native-overlay .ptra-native-overlay-content.ptra-native-reader{
+  padding:clamp(12px,3vw,36px) 16px 72px;
+  scroll-behavior:smooth;
+  background:var(--bc-reading-paper,var(--ptra-bg,#f7f8fa));
+  scroll-padding-top:26px;
+}
+#ptra-native-overlay .ptra-book{
+  box-sizing:border-box;width:min(100%,940px);max-width:940px;margin:0 auto;
+  background:var(--bc-color-surface,#fff);
+  border:1px solid var(--bc-color-border,#dee3e8);
+  border-radius:15px;
+  padding:clamp(24px,5.5vw,64px);
+  box-shadow:0 10px 38px rgba(10,36,52,.045);
+  color:var(--bc-reading-text,var(--bc-color-text,#273342));
+  font-family:var(--bc-font,Inter,system-ui,sans-serif);
+  font-size:var(--ptra-reader-font,16px);
+  line-height:1.78;
+  overflow-wrap:break-word;
+}
+#ptra-native-overlay .ptra-book-cover{
+  padding:0 0 28px;
+  border-bottom:1px solid var(--bc-color-border,#dee3e8);
+  margin-bottom:30px;
+}
+#ptra-native-overlay .ptra-book-cover>span,
+#ptra-native-overlay .ptra-book-review>header>span{
+  display:block;
+  font-size:.72em;font-weight:800;letter-spacing:.12em;
+  color:var(--bc-color-accent,#176e85);
+}
+#ptra-native-overlay .ptra-book-cover h1{
+  font-family:var(--bc-font,Inter,system-ui,sans-serif);
+  font-size:clamp(1.6em,3vw,2.35em)!important;
+  line-height:1.24!important;
+  margin:12px 0!important;
+  color:inherit!important;font-weight:780!important;
+}
+#ptra-native-overlay .ptra-book-cover p{
+  font-size:.8em!important;font-weight:750;letter-spacing:.075em;
+  color:var(--bc-color-text-secondary,#6b7380)!important;
+  margin:0!important;
+}
+#ptra-native-overlay .ptra-book-toc{
+  border:1px solid var(--bc-color-border,#dee3e8);
+  border-radius:10px;
+  background:var(--bc-color-surface-elevated,#f5f8fa);
+  margin:0 0 30px;
+}
+#ptra-native-overlay .ptra-book-toc>summary{
+  padding:13px 17px;
+  cursor:pointer;font-size:.86em;font-weight:800;
+}
+#ptra-native-overlay .ptra-book-toc nav{
+  display:grid;gap:1px;padding:0 16px 16px;
+  max-height:340px;overflow:auto;
+}
+#ptra-native-overlay .ptra-book-toc a{
+  display:block;padding:8px 9px;text-decoration:none;
+  font-size:.86em;line-height:1.5;border-radius:7px;
+  color:var(--bc-color-text,#273342);
+}
+#ptra-native-overlay .ptra-book-toc a:hover,
+#ptra-native-overlay .ptra-book-toc a:focus-visible{
+  background:var(--bc-color-bg,#eaf4f5);
+  color:var(--bc-color-accent,#176e85);
+}
+#ptra-native-overlay .ptra-book-flow>h2,
+#ptra-native-overlay .ptra-book-flow>h3{
+  color:inherit!important;
+  font-family:var(--bc-font,Inter,system-ui,sans-serif);
+  font-weight:800;
+  text-wrap:pretty;
+  scroll-margin-top:24px;
+}
+#ptra-native-overlay .ptra-book-flow>h2{
+  font-size:1.5em!important;
+  line-height:1.37!important;
+  margin:1.85em 0 .7em!important;
+  padding-bottom:.28em;
+  border-bottom:1px solid var(--bc-color-border,#dee3e8);
+}
+#ptra-native-overlay .ptra-book-flow>h3{
+  font-size:1.18em!important;line-height:1.4!important;
+  margin:1.45em 0 .6em!important;
+}
+#ptra-native-overlay .ptra-book-flow p{
+  font-size:1em!important;line-height:1.78!important;
+  margin:.1em 0 1.12em!important;
+  text-align:left!important;
+  white-space:normal;
+  color:inherit!important;
+}
+#ptra-native-overlay .ptra-book-flow .ptra-book-list{
+  margin:.5em 0 1.25em;padding:0 0 0 1.3em;
+  list-style:none;display:grid;gap:.45em;
+}
+#ptra-native-overlay .ptra-book-flow .ptra-book-list li{
+  font-size:1em;line-height:1.65;
+  padding:0 0 0 .3em;
+}
+#ptra-native-overlay .ptra-book-law{
+  padding:.95em 1.05em;
+  border-left:4px solid var(--bc-reading-accent,var(--bc-color-accent,#176e85));
+  border-radius:0 9px 9px 0;
+  background:var(--bc-reading-inset,var(--bc-color-surface-elevated,#f1f6f8));
+  color:inherit;
+  margin:.9em 0 1.2em;
+  font-size:.95em;line-height:1.75;
+}
+#ptra-native-overlay .ptra-book-source{
+  border-top:1px solid var(--bc-color-border,#dee3e8);
+  margin:36px 0 34px;padding-top:12px;
+}
+#ptra-native-overlay .ptra-book-source summary{
+  cursor:pointer;
+  font-size:.75em;
+  color:var(--bc-color-text-secondary,#717b84);
+  font-weight:650;
+}
+#ptra-native-overlay .ptra-book-source p{
+  font-size:.82em!important;
+  color:var(--bc-color-text-secondary,#717b84)!important;
+}
+#ptra-native-overlay .ptra-book-source pre{
+  box-sizing:border-box;
+  background:var(--bc-color-surface-elevated,#f5f8fa);
+  border:1px solid var(--bc-color-border,#dee3e8);
+  border-radius:8px;padding:16px;
+  white-space:pre-wrap;
+  overflow-wrap:anywhere;
+  max-height:450px;overflow:auto;
+  font:400 .79em/1.65 ui-monospace,Consolas,monospace;
+}
+#ptra-native-overlay .ptra-book-review{
+  border-top:2px solid var(--bc-color-accent,#176e85);
+  margin:46px 0 0;padding-top:29px;
+}
+#ptra-native-overlay .ptra-book-review>header h2{
+  font-size:1.72em!important;line-height:1.34!important;
+  margin:8px 0!important;color:inherit!important;
+}
+#ptra-native-overlay .ptra-book-review>header p{
+  margin:0 0 20px!important;font-size:.88em!important;
+  color:var(--bc-color-text-secondary,#717b84)!important;
+}
+#ptra-native-overlay .ptra-book-score{
+  border-radius:8px;
+  padding:10px 13px;
+  background:var(--bc-color-surface-elevated,#f5f8fa);
+  font-size:.84em;font-weight:700;
+  margin:0 0 17px;
+}
+#ptra-native-overlay .ptra-book-qcard{
+  margin:0 0 22px;
+  padding:clamp(16px,2.7vw,26px);
+  border:1px solid var(--bc-color-border,#dee3e8);
+  border-radius:12px;
+  background:var(--bc-color-surface,#fff);
+}
+#ptra-native-overlay .ptra-book-qnumber{
+  font-size:.72em;font-weight:900;letter-spacing:.11em;
+  color:var(--bc-color-accent,#176e85);
+  margin-bottom:9px;
+}
+#ptra-native-overlay .ptra-book-qcard h3{
+  margin:0 0 18px!important;
+  font-size:1em!important;
+  line-height:1.7!important;font-weight:700!important;
+  color:inherit!important;
+}
+#ptra-native-overlay .ptra-book-options{display:grid;gap:10px}
+#ptra-native-overlay .ptra-book-option{
+  box-sizing:border-box;display:flex;align-items:flex-start;
+  width:100%;min-height:52px;gap:12px;
+  padding:12px 14px;
+  border:1px solid var(--bc-color-border,#d8dfe5);
+  border-radius:10px;
+  background:var(--bc-color-surface,#fff);
+  color:var(--bc-color-text,#273342);
+  font:inherit;font-size:.89em;line-height:1.55;
+  text-align:left;cursor:pointer;transition:background .12s,border-color .12s;
+  white-space:normal;
+}
+#ptra-native-overlay .ptra-book-option b{
+  flex:0 0 31px;display:grid;place-items:center;
+  height:31px;width:31px;
+  border-radius:50%;font-weight:800;
+  color:var(--bc-color-accent,#176e85);
+  background:var(--bc-color-surface-elevated,#eff4f5);
+}
+#ptra-native-overlay .ptra-book-option>span{flex:1;min-width:0;padding-top:2px}
+#ptra-native-overlay .ptra-book-option:not(:disabled):hover,
+#ptra-native-overlay .ptra-book-option.selected{
+  background:var(--bc-reading-inset,#eaf4f5);
+  border-color:var(--bc-color-accent,#176e85);
+}
+#ptra-native-overlay .ptra-book-option.correct{
+  background:color-mix(in srgb,var(--bc-color-success,#16855a) 12%,var(--bc-color-surface,#fff));
+  border-color:var(--bc-color-success,#16855a);
+}
+#ptra-native-overlay .ptra-book-option.wrong{
+  background:color-mix(in srgb,var(--bc-color-error,#b42333) 11%,var(--bc-color-surface,#fff));
+  border-color:var(--bc-color-error,#b42333);
+}
+#ptra-native-overlay .ptra-book-option:disabled{cursor:default;opacity:1}
+#ptra-native-overlay .ptra-book-option:focus-visible,
+#ptra-native-overlay .ptra-book button:focus-visible{
+  outline:3px solid var(--bc-color-accent,#176e85);outline-offset:2px;
+}
+#ptra-native-overlay .ptra-book-qactions{display:flex;justify-content:flex-end;margin-top:14px}
+#ptra-native-overlay .ptra-book-qactions button,
+#ptra-native-overlay .ptra-book-round-actions button{
+  background:var(--bc-color-primary,#0d7777);
+  color:var(--button-text,#fff);
+  border:1px solid transparent;
+  border-radius:8px;
+  padding:12px 16px;
+  min-height:43px;
+  font-size:.75em;letter-spacing:.03em;font-weight:800;
+  cursor:pointer;
+}
+#ptra-native-overlay .ptra-book-round-actions button[data-ptra-reset]{
+  background:var(--bc-color-surface-elevated,#f5f8fa);
+  color:var(--bc-color-text,#273342);
+  border-color:var(--bc-color-border,#d8dfe5);
+}
+#ptra-native-overlay .ptra-book-qactions button:disabled,
+#ptra-native-overlay .ptra-book-round-actions button:disabled{opacity:.46;cursor:not-allowed}
+#ptra-native-overlay .ptra-book-feedback{
+  margin-top:14px;padding:14px;
+  border-radius:9px;
+  border-left:4px solid var(--bc-color-border,#d8dfe5);
+  background:var(--bc-color-surface-elevated,#f5f8fa);
+  font-size:.88em;line-height:1.65;
+}
+#ptra-native-overlay .ptra-book-feedback[hidden],
+#ptra-native-overlay .ptra-book-round-result[hidden]{display:none!important}
+#ptra-native-overlay .ptra-book-feedback.right{border-left-color:var(--bc-color-success,#16855a)}
+#ptra-native-overlay .ptra-book-feedback.wrong{border-left-color:var(--bc-color-error,#b42333)}
+#ptra-native-overlay .ptra-book-feedback strong{display:block;margin:0 0 5px}
+#ptra-native-overlay .ptra-book-feedback p{margin:.35em 0!important;white-space:pre-wrap}
+#ptra-native-overlay .ptra-book-round-actions{display:flex;flex-wrap:wrap;gap:9px;margin:20px 0}
+#ptra-native-overlay .ptra-book-round-result{
+  border-radius:9px;padding:16px;
+  background:var(--bc-color-surface-elevated,#f5f8fa);
+  font-size:.86em;
+}
+@media(max-width:680px){
+  #ptra-native-overlay .ptra-native-overlay-content.ptra-native-reader{padding:9px 6px 55px}
+  #ptra-native-overlay .ptra-book{padding:24px 17px;border-radius:8px;box-shadow:none}
+  #ptra-native-overlay .ptra-book-cover{margin-bottom:20px}
+  #ptra-native-overlay .ptra-book-flow>h2{font-size:1.3em!important}
+  #ptra-native-overlay .ptra-book-flow>h3{font-size:1.11em!important}
+  #ptra-native-overlay .ptra-book-qcard{padding:15px 12px}
+  #ptra-native-overlay .ptra-book-option{padding:12px 10px;gap:9px}
+  #ptra-native-overlay .ptra-book-option b{flex-basis:28px;height:28px;width:28px}
+  #ptra-native-overlay .ptra-book-qactions button{width:100%}
+  #ptra-native-overlay .ptra-book-round-actions{display:grid}
+}
+/* Evita que o cabeçalho antigo do modal (grid de três colunas)
+   seja aplicado às seções editoriais da nova apostila. */
+#ptra-native-overlay .ptra-book-cover,
+#ptra-native-overlay .ptra-book-review>header{
+  display:block!important;
+  grid-template-columns:none!important;
+  padding-left:0!important;padding-right:0!important;
+  background:transparent!important;
+}
+#ptra-native-overlay .ptra-book-cover{
+  border-top:0!important;border-left:0!important;border-right:0!important;
+}
+#ptra-native-overlay .ptra-book-review>header{
+  border:0!important;padding:0!important;
+}
+#ptra-native-overlay .ptra-book-review>header h2{
+  width:auto!important;
+  white-space:normal!important;
+  overflow:visible!important;
+  text-overflow:clip!important;
+  max-width:none!important;
+}
