@@ -276,7 +276,12 @@ function openInternal(url,title,btn){
  if(/^(?:\/)?modules\/trabalho\/native\/reader\.html\?/.test(value)){
   const match=/^(?:\/)?modules\/trabalho\/native\/reader\.html\?modulo=(0[1-9]|1[0-8])&material=(resumida|completa|infografico)(?:&questoes=1)?$/.exec(value);
   const reader=window.CentralTrabalhoUniversal||window.CentralTrabalhoNative;
-  if(match&&reader&&reader.open(Number(match[1]),match[2]))return;
+  if(match){
+   try{if(reader&&typeof reader.open==='function')reader.open(Number(match[1]),match[2]);}
+   catch(error){console.error('Falha na leitura interna de Direito do Trabalho',error);}
+   return; // Nunca desviar a disciplina para iframe, página ou segunda aba.
+  }
+  return;
  }
  if(routeIntegratedCentralModule(value,title,btn))return;
  hideViews();$('moduleView').classList.remove('hidden');try{$('moduleView').classList.add('central-view-visible')}catch(_){}$('crumb').textContent=title;setNav(btn);
@@ -414,19 +419,24 @@ function toggleTrabalhoModule(uid){
   return false;
 }
 function openTrabalhoNative(event,relativeUrl,label){
+ // A teoria de Direito do Trabalho NUNCA deve navegar para outra página ou aba.
+ if(event&&typeof event.preventDefault==='function')event.preventDefault();
+ if(event&&typeof event.stopPropagation==='function')event.stopPropagation();
  const value=String(relativeUrl||'');
  const match=/^modules\/trabalho\/native\/reader\.html\?modulo=(0[1-9]|1[0-8])&material=(resumida|completa|infografico)(?:&questoes=1)?$/.exec(value);
- if(!match)return true;
- const reader=window.CentralTrabalhoUniversal||window.CentralTrabalhoNative;
- if(!reader||typeof reader.open!=='function')return true;
+ if(!match)return false;
  try{
-   if(reader.open(Number(match[1]),match[2])){
-     try{saveLast({url:'/'+value,title:label||'Direito do Trabalho',at:Date.now()})}catch(_){}
-     if(event&&typeof event.preventDefault==='function')event.preventDefault();
+   const reader=window.CentralTrabalhoUniversal||window.CentralTrabalhoNative;
+   if(!reader||typeof reader.open!=='function'){
+     console.error('Leitor Universal de Direito do Trabalho ainda não está disponível.');
      return false;
    }
+   const opened=reader.open(Number(match[1]),match[2]);
+   if(opened){
+     try{saveLast({url:'/'+value,title:label||'Direito do Trabalho',at:Date.now()})}catch(_){}
+   }
  }catch(error){console.error('Falha ao abrir Leitor Universal de Direito do Trabalho',error);}
- return true;
+ return false;
 }
 function renderTrabalhoMaster(s){
   const modules=s.topics.filter(t=>/^trab-m\d{2}$/.test(t.uid));
@@ -471,7 +481,7 @@ function renderTrabalhoMaster(s){
       const url='modules/trabalho/native/reader.html?modulo='+n
         +(key==='questoes'?'&material=resumida&questoes=1':'&material='+key);
       return '<div class="bc-trabalho-material"><small>'+kicker+'</small><strong>'+label+'</strong><p>'+desc+'</p>'
-       +'<a class="bc-trabalho-open-reader" href="/'+escAttr(url)+'" onclick="return openTrabalhoNative(event,\''+escJs(url)+'\',\''+escJs('Direito do Trabalho • M'+n+' • '+label)+'\')">'+action+' →</a></div>';
+       +'<button type="button" class="bc-trabalho-open-reader" onclick="return openTrabalhoNative(event,\''+escJs(url)+'\',\''+escJs('Direito do Trabalho • M'+n+' • '+label)+'\')">'+action+' →</button></div>';
     }).join('');
     return '<section class="bc-trabalho-module '+(open?'open':'')+'" data-uid="'+escAttr(t.uid)+'">'
       +'<button type="button" class="bc-trabalho-module-head" aria-expanded="'+String(open)+'" onclick="return toggleTrabalhoModule(\''+escJs(t.uid)+'\')">'
