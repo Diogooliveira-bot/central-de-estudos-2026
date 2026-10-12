@@ -24,3 +24,5 @@ jobs:
         run: npx playwright install --with-deps chromium
       - name: Browser test responsive theory and answer interactions
         run: node --test tests/ptra-reader-upgrade-browser.mjs
+      - name: Verify the real Central bootstrap and PTRA content
+        run: node --test tests/ptra-preview-shell-browser.mjs
