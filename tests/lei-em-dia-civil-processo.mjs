@@ -44,7 +44,7 @@ test(discipline+' — filtros, respostas e progresso, resposta e recarga preserv
     return context;
   };
   let context=makeContext();
-  assert.equal(vm.runInContext('allActive().length',context),base.length+added.length+(discipline==='cpc'?17:0));
+  assert.equal(vm.runInContext('allActive().length',context),base.length+added.length+(discipline==='cpc'?17:0)+vm.runInContext(`DATA_LED_APPROVED.filter(q=>q.discipline===${JSON.stringify(discipline)}).length`,context));
   for(const topic of topics){
     vm.runInContext(`centralOpenTopic(${JSON.stringify(topic.id)},true)`,context);
     const items=vm.runInContext('visible()',context);
