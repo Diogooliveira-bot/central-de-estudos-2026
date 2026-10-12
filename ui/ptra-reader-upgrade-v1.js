@@ -30,7 +30,13 @@
     const lines=sourceLines(all);
     const headingAt=lines.findIndex((line,index)=>{
       if(index<lines.length*.35)return false;
-      return /^(?:\s*(?:\d+[.)]\s*)?)?(?:(?:QUEST[OÕ]ES?\s+(?:DE\s+)?(?:FIXA[CÇ][AÃ]O|ASSIMILA[CÇ][AÃ]O|REVIS[AÃ]O|M[UÚ]LTIPLA\s+ESCOLHA|TREINAMENTO|COMENTADAS))|(?:EXERC[IÍ]CIOS\s+DE\s+FIXA[CÇ][AÃ]O))\s*[:\-–—]?\s*$/i.test(line.trim());
+      // Os 21 módulos usam variações: "5 QUESTÕES", "11. 5 QUESTÕES
+      // OBJETIVAS", "Questões autorais" e "QUESTÕES DO MÓDULO".
+      // Reconhecer a seção terminal, sem retirar menções a questões da teoria.
+      const s=normalize(line).replace(/^\d{1,2}\s*[.)]\s*/,'').trim();
+      if(s.length>110)return false;
+      return /^(?:\d{1,2}\s+)?questoes?(?:\s+(?:objetivas?|autorais?|comentadas?|de\s+fixacao|de\s+assimilacao|de\s+revisao|do\s+modulo|de\s+treinamento))?(?:\s+(?:autorais?|comentadas?))?(?:\s*[-–—:]\s*.*)?$/i.test(s) ||
+        /^exercicios?\s+de\s+(?:fixacao|revisao|assimilacao)\s*$/i.test(s);
     });
     if (headingAt<0) return {theory:all,questionsText:''};
     return {theory:lines.slice(0,headingAt).join('\n'),questionsText:lines.slice(headingAt).join('\n')};
