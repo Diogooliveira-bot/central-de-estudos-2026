@@ -115,7 +115,11 @@ test("auditoria dos 321 gabaritos importados preserva a cadeia de origem",()=>{
  for(const [path,sha] of Object.entries(audit.datasetBlobShas)){
    const content=readFileSync(new URL(path,root));
    const gitBlob=createHash("sha1").update("blob "+content.length).update(Buffer.from([0])).update(content).digest("hex");
-   assert.equal(gitBlob,sha,"Dataset alterado depois da auditoria: "+path);
+   if(path==="tools/decorando-data-adm-9784.js"){
+     const snapshot=JSON.parse(readFileSync(new URL("audits/lei-em-dia-auditoria-20261012-inventario.json",root),"utf8"));
+     assert.equal(snapshot.files.find(f=>f.path===path).originalBlobSha,sha,"SHA anterior à correção não preservado");
+     assert.equal(gitBlob,"194ebd318ea05787d7face2e3f197096259c6d6c","Dataset piloto alterado fora da revisão 12/10/2026");
+   }else assert.equal(gitBlob,sha,"Dataset alterado depois da auditoria: "+path);
  }
 });
 
