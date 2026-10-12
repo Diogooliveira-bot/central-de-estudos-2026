@@ -18,3 +18,9 @@ jobs:
           node-version: '22'
       - name: Validate modules, questions and source preservation
         run: node --test tests/ptra-reader-upgrade-unit.mjs
+      - name: Install browser testing dependencies
+        run: npm install --ignore-scripts --no-audit --no-fund
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Browser test responsive theory and answer interactions
+        run: node --test tests/ptra-reader-upgrade-browser.mjs
