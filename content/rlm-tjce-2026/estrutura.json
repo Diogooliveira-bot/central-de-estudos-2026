@@ -1,0 +1,1346 @@
+{
+  "schema": "rlm-tjce2026-esqueleto-v1",
+  "created": "2026-10-13",
+  "status": "planejamento — conteúdo não homologado",
+  "reference": {
+    "concurso": "TJCE 2026",
+    "cargo": "Analista Judiciário — Área Judiciária",
+    "banca": "FCC",
+    "edital": "01/2026",
+    "anexo": "III",
+    "url": "https://djea-con.tjce.jus.br/materias/170430"
+  },
+  "ensino": {
+    "ordem": [
+      "Teoria completa",
+      "Resumo, dicas e bizus + prática crescente",
+      "Mapa mental",
+      "Links de questões (TEC/QC) e progresso"
+    ],
+    "praticaResumo": {
+      "alvoPorModulo": 10,
+      "facil": 3,
+      "medio": 4,
+      "dificil": 3,
+      "exigeCorrecaoImediata": true,
+      "exigeExplicacao": true
+    },
+    "questoesProva": "Somente múltipla escolha; a resposta correta e o comentário aparecem após a tentativa.",
+    "tipologia": "M01 é a única funcionalidade da versão antiga preservada; M02–M15 seguem o novo padrão."
+  },
+  "preservacao": {
+    "motorTreinoVelocidade": "tools/rlm.html#calculo",
+    "chaveProgresso": "central-v6:rlm-calculo-rapido-v6638",
+    "teoriaLegada": "tools/rlm.html",
+    "bancoFCC": {
+      "total": 200,
+      "porOrigem": {
+        "rlm6": 65,
+        "rlm8": 51,
+        "rlm9": 84
+      },
+      "camposOriginais": [
+        "id",
+        "tecId",
+        "number",
+        "url",
+        "source",
+        "topic",
+        "module",
+        "page",
+        "prompt",
+        "options",
+        "answer",
+        "kind",
+        "bank",
+        "visualRequired"
+      ],
+      "comentariosIndividualizadosDisponiveis": false,
+      "precisamValidacao": true,
+      "questoesVisuais": 3
+    },
+    "fontePdf": {
+      "arquivoEsperado": "tools/RLM_QUESTOES_FCC_FONTE.pdf",
+      "status": "não localizado em main no caminho usado pela interface; localizar repositório/fornecer PDF antes de extrair conteúdo",
+      "imagensEmbutidasNoHtml": 3
+    },
+    "qc": "RLM ausente de content/qc-sharing-links.js; nenhum filtro QC da nova versão validado",
+    "tec": "Cadernos registrados em index.html são candidatos; revalidar escopo para cada novo módulo antes de exibir como filtro."
+  },
+  "revisaoFinal": {
+    "id": "RF",
+    "titulo": "Revisão cumulativa e simulado FCC",
+    "status": "estrutura",
+    "cobertura": "M02–M15",
+    "etapas": [
+      "Mapa geral dos conceitos",
+      "Questões fáceis, médias e difíceis misturadas",
+      "Simulado temático estilo FCC",
+      "Correção imediata comentada",
+      "Caderno de erros e revisão dirigida"
+    ]
+  },
+  "modulos": [
+    {
+      "id": "M01",
+      "titulo": "Treino de Velocidade",
+      "eixo": "Aquecimento e cálculo rápido",
+      "tipo": "ferramenta-legada-preservada",
+      "legado": {
+        "uid": "rlm-calculo-rapido-v6638",
+        "urlAtual": "tools/rlm.html#calculo",
+        "chaveProgresso": "central-v6:rlm-calculo-rapido-v6638",
+        "blocos": [
+          "Operações, sinais e expressões",
+          "Tabuada, divisibilidade, MDC e MMC",
+          "Frações e números decimais",
+          "Razões, proporções e regra de três",
+          "Porcentagem e variações",
+          "Bateria mista de prova"
+        ]
+      },
+      "politica": "Preservar lógica de seis treinos, cronômetro, desempenho e chave de progresso; adaptar abertura para dentro da Central em fase de implementação; não reescrever motor.",
+      "etapas": {
+        "teoriaCompleta": {
+          "status": "não se aplica ao treino legado"
+        },
+        "resumoBizus": {
+          "status": "não se aplica ao treino legado"
+        },
+        "mapaMental": {
+          "status": "não se aplica ao treino legado"
+        }
+      }
+    },
+    {
+      "id": "M02",
+      "titulo": "Fundamentos da Lógica",
+      "eixo": "Lógica (base complementar)",
+      "tipo": "curso",
+      "origemLegada": [
+        "rlm8"
+      ],
+      "capitulosTeoria": [
+        "Proposição, frase aberta e valor lógico",
+        "Conectivos e leitura em linguagem comum",
+        "Operadores: e, ou, ou exclusivo, se...então, se e somente se",
+        "Tradução do enunciado em símbolos",
+        "Tabelas-verdade como recurso de análise"
+      ],
+      "bizusAProduzir": [
+        "Distinguir condição necessária e suficiente",
+        "Ler o 'ou' do enunciado antes de simbolizar",
+        "Não confundir inversa, recíproca e contrapositiva"
+      ],
+      "mapaMentalRamos": [
+        "Proposições",
+        "Conectivos",
+        "Tradução",
+        "Tabela-verdade"
+      ],
+      "tecCandidatos": [
+        "rlm-01"
+      ],
+      "questoesFccLegadas": 0,
+      "questoesFccStatus": "sem questões locais; pesquisar ou criar prática autoral identificada",
+      "pesquisaPendente": [
+        "Conteúdo auxiliar: verificar extensão necessária para o edital sem superdimensionar formalização."
+      ],
+      "etapas": {
+        "teoriaCompleta": {
+          "status": "estrutura",
+          "incluir": [
+            "abordagem do zero até nível FCC",
+            "definições e conceitos",
+            "exemplos progressivos totalmente resolvidos",
+            "exercícios resolvidos e armadilhas da FCC",
+            "figuras/tabelas quando necessárias",
+            "síntese do que o edital exige"
+          ]
+        },
+        "resumoBizus": {
+          "status": "estrutura",
+          "incluir": [
+            "primeira leitura rápida",
+            "dicas práticas de reconhecimento do método",
+            "bizus com limitações explicitadas",
+            "fórmulas e passos com interpretação",
+            "erros frequentes",
+            "prática progressiva embutida"
+          ],
+          "praticaProgressiva": {
+            "status": "vazia",
+            "totalAlvo": 10,
+            "niveis": [
+              {
+                "nivel": "fácil",
+                "alvo": 3
+              },
+              {
+                "nivel": "médio",
+                "alvo": 4
+              },
+              {
+                "nivel": "difícil",
+                "alvo": 3
+              }
+            ],
+            "interacao": "alternativas com correção imediata e explicação, ou resolução guiada com resposta oculta; nunca inventar gabarito"
+          }
+        },
+        "mapaMental": {
+          "status": "estrutura",
+          "formato": "árvore semântica, responsiva e imprimível",
+          "ramos": [
+            "Proposições",
+            "Conectivos",
+            "Tradução",
+            "Tabela-verdade"
+          ]
+        }
+      }
+    },
+    {
+      "id": "M03",
+      "titulo": "Negações e Equivalências Lógicas",
+      "eixo": "Lógica (base complementar)",
+      "tipo": "curso",
+      "origemLegada": [
+        "rlm8"
+      ],
+      "capitulosTeoria": [
+        "Negação simples e dupla negação",
+        "Leis de De Morgan",
+        "Negação da condicional",
+        "Contrapositiva, equivalências e bicondicional",
+        "Equivalências com tabelas-verdade e exercícios FCC"
+      ],
+      "bizusAProduzir": [
+        "Negar 'se P então Q' resulta em P e não Q",
+        "Negar 'todo' exige contraexemplo",
+        "Provar equivalência conferindo valores de verdade"
+      ],
+      "mapaMentalRamos": [
+        "Negações",
+        "De Morgan",
+        "Condicionais",
+        "Equivalências"
+      ],
+      "tecCandidatos": [
+        "rlm-02"
+      ],
+      "questoesFccLegadas": 51,
+      "questoesFccStatus": "reaproveitar após auditoria de gabarito, relevância, comentário e imagem",
+      "pesquisaPendente": [
+        "Reaproveitar 51 questões do antigo rlm8; criar comentários explicativos e verificar aderência ao edital."
+      ],
+      "etapas": {
+        "teoriaCompleta": {
+          "status": "estrutura",
+          "incluir": [
+            "abordagem do zero até nível FCC",
+            "definições e conceitos",
+            "exemplos progressivos totalmente resolvidos",
+            "exercícios resolvidos e armadilhas da FCC",
+            "figuras/tabelas quando necessárias",
+            "síntese do que o edital exige"
+          ]
+        },
+        "resumoBizus": {
+          "status": "estrutura",
+          "incluir": [
+            "primeira leitura rápida",
+            "dicas práticas de reconhecimento do método",
+            "bizus com limitações explicitadas",
+            "fórmulas e passos com interpretação",
+            "erros frequentes",
+            "prática progressiva embutida"
+          ],
+          "praticaProgressiva": {
+            "status": "vazia",
+            "totalAlvo": 10,
+            "niveis": [
+              {
+                "nivel": "fácil",
+                "alvo": 3
+              },
+              {
+                "nivel": "médio",
+                "alvo": 4
+              },
+              {
+                "nivel": "difícil",
+                "alvo": 3
+              }
+            ],
+            "interacao": "alternativas com correção imediata e explicação, ou resolução guiada com resposta oculta; nunca inventar gabarito"
+          }
+        },
+        "mapaMental": {
+          "status": "estrutura",
+          "formato": "árvore semântica, responsiva e imprimível",
+          "ramos": [
+            "Negações",
+            "De Morgan",
+            "Condicionais",
+            "Equivalências"
+          ]
+        }
+      }
+    },
+    {
+      "id": "M04",
+      "titulo": "Argumentação e Dedução Lógica",
+      "eixo": "Relações, hipóteses e conclusões",
+      "tipo": "curso",
+      "origemLegada": [
+        "rlm9"
+      ],
+      "capitulosTeoria": [
+        "Premissas, hipóteses e conclusão",
+        "Validade e consistência de argumentos",
+        "Raciocínio condicional e regras de inferência",
+        "Contradição, contraexemplo e encadeamento",
+        "Métodos de tabela-verdade aplicados às questões"
+      ],
+      "bizusAProduzir": [
+        "Validade não é o mesmo que verdade factual",
+        "Organizar premissas antes de concluir",
+        "Contraexemplo invalida dedução"
+      ],
+      "mapaMentalRamos": [
+        "Premissas",
+        "Inferências",
+        "Validade",
+        "Conclusão"
+      ],
+      "tecCandidatos": [
+        "rlm-03",
+        "rlm-06"
+      ],
+      "questoesFccLegadas": 84,
+      "questoesFccStatus": "reaproveitar após auditoria de gabarito, relevância, comentário e imagem",
+      "pesquisaPendente": [
+        "Reaproveitar 84 questões do antigo rlm9 com comentários e auditoria individual."
+      ],
+      "etapas": {
+        "teoriaCompleta": {
+          "status": "estrutura",
+          "incluir": [
+            "abordagem do zero até nível FCC",
+            "definições e conceitos",
+            "exemplos progressivos totalmente resolvidos",
+            "exercícios resolvidos e armadilhas da FCC",
+            "figuras/tabelas quando necessárias",
+            "síntese do que o edital exige"
+          ]
+        },
+        "resumoBizus": {
+          "status": "estrutura",
+          "incluir": [
+            "primeira leitura rápida",
+            "dicas práticas de reconhecimento do método",
+            "bizus com limitações explicitadas",
+            "fórmulas e passos com interpretação",
+            "erros frequentes",
+            "prática progressiva embutida"
+          ],
+          "praticaProgressiva": {
+            "status": "vazia",
+            "totalAlvo": 10,
+            "niveis": [
+              {
+                "nivel": "fácil",
+                "alvo": 3
+              },
+              {
+                "nivel": "médio",
+                "alvo": 4
+              },
+              {
+                "nivel": "difícil",
+                "alvo": 3
+              }
+            ],
+            "interacao": "alternativas com correção imediata e explicação, ou resolução guiada com resposta oculta; nunca inventar gabarito"
+          }
+        },
+        "mapaMental": {
+          "status": "estrutura",
+          "formato": "árvore semântica, responsiva e imprimível",
+          "ramos": [
+            "Premissas",
+            "Inferências",
+            "Validade",
+            "Conclusão"
+          ]
+        }
+      }
+    },
+    {
+      "id": "M05",
+      "titulo": "Conjuntos e Diagramas Lógicos",
+      "eixo": "Relações e classificações",
+      "tipo": "curso",
+      "origemLegada": [
+        "rlm6"
+      ],
+      "capitulosTeoria": [
+        "Conjuntos, pertinência, inclusão e interseção",
+        "Diagramas de Venn e Euler",
+        "Quantificadores: todo, algum e nenhum",
+        "Negação de quantificadores",
+        "Relações categóricas aplicadas"
+      ],
+      "bizusAProduzir": [
+        "Todo A é B não implica todo B é A",
+        "Desenhar regiões antes de concluir",
+        "Negação de universal usa ao menos um contraexemplo"
+      ],
+      "mapaMentalRamos": [
+        "Conjuntos",
+        "Diagramas",
+        "Quantificadores",
+        "Conclusões"
+      ],
+      "tecCandidatos": [
+        "rlm-03",
+        "mat-01"
+      ],
+      "questoesFccLegadas": 65,
+      "questoesFccStatus": "reaproveitar após auditoria de gabarito, relevância, comentário e imagem",
+      "pesquisaPendente": [
+        "Reaproveitar 65 questões do antigo rlm6; revisar 3 questões com elementos visuais que requerem fonte/figura."
+      ],
+      "etapas": {
+        "teoriaCompleta": {
+          "status": "estrutura",
+          "incluir": [
+            "abordagem do zero até nível FCC",
+            "definições e conceitos",
+            "exemplos progressivos totalmente resolvidos",
+            "exercícios resolvidos e armadilhas da FCC",
+            "figuras/tabelas quando necessárias",
+            "síntese do que o edital exige"
+          ]
+        },
+        "resumoBizus": {
+          "status": "estrutura",
+          "incluir": [
+            "primeira leitura rápida",
+            "dicas práticas de reconhecimento do método",
+            "bizus com limitações explicitadas",
+            "fórmulas e passos com interpretação",
+            "erros frequentes",
+            "prática progressiva embutida"
+          ],
+          "praticaProgressiva": {
+            "status": "vazia",
+            "totalAlvo": 10,
+            "niveis": [
+              {
+                "nivel": "fácil",
+                "alvo": 3
+              },
+              {
+                "nivel": "médio",
+                "alvo": 4
+              },
+              {
+                "nivel": "difícil",
+                "alvo": 3
+              }
+            ],
+            "interacao": "alternativas com correção imediata e explicação, ou resolução guiada com resposta oculta; nunca inventar gabarito"
+          }
+        },
+        "mapaMental": {
+          "status": "estrutura",
+          "formato": "árvore semântica, responsiva e imprimível",
+          "ramos": [
+            "Conjuntos",
+            "Diagramas",
+            "Quantificadores",
+            "Conclusões"
+          ]
+        }
+      }
+    },
+    {
+      "id": "M06",
+      "titulo": "Associação de Informações",
+      "eixo": "Estrutura lógica de relações arbitrárias",
+      "tipo": "curso",
+      "origemLegada": [
+        "rlm6",
+        "rlm7"
+      ],
+      "capitulosTeoria": [
+        "Associação entre pessoas, objetos, lugares e eventos",
+        "Tabelas de possibilidades",
+        "Ordenação, posições e restrições",
+        "Problemas de verdade e mentira",
+        "Inferências condicionais de relacionamentos"
+      ],
+      "bizusAProduzir": [
+        "Transformar enunciado em tabela",
+        "Registrar impossível antes de marcar possível",
+        "Conferir todas as restrições ao final"
+      ],
+      "mapaMentalRamos": [
+        "Entidades",
+        "Restrições",
+        "Tabelas",
+        "Dedução"
+      ],
+      "tecCandidatos": [
+        "rlm-04",
+        "rlm-06"
+      ],
+      "questoesFccLegadas": 0,
+      "questoesFccStatus": "sem questões locais; pesquisar ou criar prática autoral identificada",
+      "pesquisaPendente": [
+        "Desenvolver teoria integral, resumo e explicações; conferir exemplos e questões FCC do edital."
+      ],
+      "etapas": {
+        "teoriaCompleta": {
+          "status": "estrutura",
+          "incluir": [
+            "abordagem do zero até nível FCC",
+            "definições e conceitos",
+            "exemplos progressivos totalmente resolvidos",
+            "exercícios resolvidos e armadilhas da FCC",
+            "figuras/tabelas quando necessárias",
+            "síntese do que o edital exige"
+          ]
+        },
+        "resumoBizus": {
+          "status": "estrutura",
+          "incluir": [
+            "primeira leitura rápida",
+            "dicas práticas de reconhecimento do método",
+            "bizus com limitações explicitadas",
+            "fórmulas e passos com interpretação",
+            "erros frequentes",
+            "prática progressiva embutida"
+          ],
+          "praticaProgressiva": {
+            "status": "vazia",
+            "totalAlvo": 10,
+            "niveis": [
+              {
+                "nivel": "fácil",
+                "alvo": 3
+              },
+              {
+                "nivel": "médio",
+                "alvo": 4
+              },
+              {
+                "nivel": "difícil",
+                "alvo": 3
+              }
+            ],
+            "interacao": "alternativas com correção imediata e explicação, ou resolução guiada com resposta oculta; nunca inventar gabarito"
+          }
+        },
+        "mapaMental": {
+          "status": "estrutura",
+          "formato": "árvore semântica, responsiva e imprimível",
+          "ramos": [
+            "Entidades",
+            "Restrições",
+            "Tabelas",
+            "Dedução"
+          ]
+        }
+      }
+    },
+    {
+      "id": "M07",
+      "titulo": "Raciocínio Verbal e Formação de Conceitos",
+      "eixo": "Raciocínio verbal e discriminação",
+      "tipo": "curso",
+      "origemLegada": [
+        "rlm7"
+      ],
+      "capitulosTeoria": [
+        "Raciocínio verbal e interpretação lógica",
+        "Analogias e relações entre conceitos",
+        "Classificação e critérios de agrupamento",
+        "Identificação do elemento discrepante",
+        "Formação e discriminação de conceitos"
+      ],
+      "bizusAProduzir": [
+        "Nomear o critério antes de escolher",
+        "Descartar propriedades acidentais",
+        "Testar regra em todos os elementos"
+      ],
+      "mapaMentalRamos": [
+        "Analogias",
+        "Critérios",
+        "Classificação",
+        "Discriminação"
+      ],
+      "tecCandidatos": [
+        "rlm-06"
+      ],
+      "questoesFccLegadas": 0,
+      "questoesFccStatus": "sem questões locais; pesquisar ou criar prática autoral identificada",
+      "pesquisaPendente": [
+        "Desenvolver teoria integral, resumo e explicações; conferir exemplos e questões FCC do edital."
+      ],
+      "etapas": {
+        "teoriaCompleta": {
+          "status": "estrutura",
+          "incluir": [
+            "abordagem do zero até nível FCC",
+            "definições e conceitos",
+            "exemplos progressivos totalmente resolvidos",
+            "exercícios resolvidos e armadilhas da FCC",
+            "figuras/tabelas quando necessárias",
+            "síntese do que o edital exige"
+          ]
+        },
+        "resumoBizus": {
+          "status": "estrutura",
+          "incluir": [
+            "primeira leitura rápida",
+            "dicas práticas de reconhecimento do método",
+            "bizus com limitações explicitadas",
+            "fórmulas e passos com interpretação",
+            "erros frequentes",
+            "prática progressiva embutida"
+          ],
+          "praticaProgressiva": {
+            "status": "vazia",
+            "totalAlvo": 10,
+            "niveis": [
+              {
+                "nivel": "fácil",
+                "alvo": 3
+              },
+              {
+                "nivel": "médio",
+                "alvo": 4
+              },
+              {
+                "nivel": "difícil",
+                "alvo": 3
+              }
+            ],
+            "interacao": "alternativas com correção imediata e explicação, ou resolução guiada com resposta oculta; nunca inventar gabarito"
+          }
+        },
+        "mapaMental": {
+          "status": "estrutura",
+          "formato": "árvore semântica, responsiva e imprimível",
+          "ramos": [
+            "Analogias",
+            "Critérios",
+            "Classificação",
+            "Discriminação"
+          ]
+        }
+      }
+    },
+    {
+      "id": "M08",
+      "titulo": "Sequências e Padrões Lógicos",
+      "eixo": "Raciocínio sequencial",
+      "tipo": "curso",
+      "origemLegada": [
+        "rlm7"
+      ],
+      "capitulosTeoria": [
+        "Sequências aritméticas e multiplicativas",
+        "Alternância e recorrência",
+        "Padrões alfanuméricos",
+        "Sequências figurais e matrizes",
+        "Regularidades e ciclos"
+      ],
+      "bizusAProduzir": [
+        "Testar diferenças antes de razões",
+        "Analisar posições ímpares e pares separadamente",
+        "Ciclo e posição não são o mesmo"
+      ],
+      "mapaMentalRamos": [
+        "Números",
+        "Letras",
+        "Figuras",
+        "Ciclos"
+      ],
+      "tecCandidatos": [
+        "rlm-05"
+      ],
+      "questoesFccLegadas": 0,
+      "questoesFccStatus": "sem questões locais; pesquisar ou criar prática autoral identificada",
+      "pesquisaPendente": [
+        "Desenvolver teoria integral, resumo e explicações; conferir exemplos e questões FCC do edital."
+      ],
+      "etapas": {
+        "teoriaCompleta": {
+          "status": "estrutura",
+          "incluir": [
+            "abordagem do zero até nível FCC",
+            "definições e conceitos",
+            "exemplos progressivos totalmente resolvidos",
+            "exercícios resolvidos e armadilhas da FCC",
+            "figuras/tabelas quando necessárias",
+            "síntese do que o edital exige"
+          ]
+        },
+        "resumoBizus": {
+          "status": "estrutura",
+          "incluir": [
+            "primeira leitura rápida",
+            "dicas práticas de reconhecimento do método",
+            "bizus com limitações explicitadas",
+            "fórmulas e passos com interpretação",
+            "erros frequentes",
+            "prática progressiva embutida"
+          ],
+          "praticaProgressiva": {
+            "status": "vazia",
+            "totalAlvo": 10,
+            "niveis": [
+              {
+                "nivel": "fácil",
+                "alvo": 3
+              },
+              {
+                "nivel": "médio",
+                "alvo": 4
+              },
+              {
+                "nivel": "difícil",
+                "alvo": 3
+              }
+            ],
+            "interacao": "alternativas com correção imediata e explicação, ou resolução guiada com resposta oculta; nunca inventar gabarito"
+          }
+        },
+        "mapaMental": {
+          "status": "estrutura",
+          "formato": "árvore semântica, responsiva e imprimível",
+          "ramos": [
+            "Números",
+            "Letras",
+            "Figuras",
+            "Ciclos"
+          ]
+        }
+      }
+    },
+    {
+      "id": "M09",
+      "titulo": "Orientação Espacial e Temporal",
+      "eixo": "Orientação espacial e temporal",
+      "tipo": "curso",
+      "origemLegada": [
+        "rlm7"
+      ],
+      "capitulosTeoria": [
+        "Pontos cardeais e deslocamentos",
+        "Rotação e posição relativa",
+        "Sequência de eventos e horários",
+        "Dias da semana e calendários",
+        "Resolução por linha do tempo e esboços"
+      ],
+      "bizusAProduzir": [
+        "Fixar direção inicial",
+        "Usar módulo 7 para dias da semana",
+        "Esboçar linha do tempo antes do cálculo"
+      ],
+      "mapaMentalRamos": [
+        "Direções",
+        "Posições",
+        "Horários",
+        "Calendários"
+      ],
+      "tecCandidatos": [
+        "rlm-05"
+      ],
+      "questoesFccLegadas": 0,
+      "questoesFccStatus": "sem questões locais; pesquisar ou criar prática autoral identificada",
+      "pesquisaPendente": [
+        "Desenvolver teoria integral, resumo e explicações; conferir exemplos e questões FCC do edital."
+      ],
+      "etapas": {
+        "teoriaCompleta": {
+          "status": "estrutura",
+          "incluir": [
+            "abordagem do zero até nível FCC",
+            "definições e conceitos",
+            "exemplos progressivos totalmente resolvidos",
+            "exercícios resolvidos e armadilhas da FCC",
+            "figuras/tabelas quando necessárias",
+            "síntese do que o edital exige"
+          ]
+        },
+        "resumoBizus": {
+          "status": "estrutura",
+          "incluir": [
+            "primeira leitura rápida",
+            "dicas práticas de reconhecimento do método",
+            "bizus com limitações explicitadas",
+            "fórmulas e passos com interpretação",
+            "erros frequentes",
+            "prática progressiva embutida"
+          ],
+          "praticaProgressiva": {
+            "status": "vazia",
+            "totalAlvo": 10,
+            "niveis": [
+              {
+                "nivel": "fácil",
+                "alvo": 3
+              },
+              {
+                "nivel": "médio",
+                "alvo": 4
+              },
+              {
+                "nivel": "difícil",
+                "alvo": 3
+              }
+            ],
+            "interacao": "alternativas com correção imediata e explicação, ou resolução guiada com resposta oculta; nunca inventar gabarito"
+          }
+        },
+        "mapaMental": {
+          "status": "estrutura",
+          "formato": "árvore semântica, responsiva e imprimível",
+          "ramos": [
+            "Direções",
+            "Posições",
+            "Horários",
+            "Calendários"
+          ]
+        }
+      }
+    },
+    {
+      "id": "M10",
+      "titulo": "Fundamentos Matemáticos",
+      "eixo": "Base auxiliar para raciocínio matemático",
+      "tipo": "curso",
+      "origemLegada": [
+        "rlm1",
+        "rlm2",
+        "rlm3"
+      ],
+      "capitulosTeoria": [
+        "Operações e hierarquia de expressões",
+        "Inteiros, racionais e decimais",
+        "Frações, equivalência e operações",
+        "Múltiplos, divisores, MDC e MMC",
+        "Expressões e problemas com unidades"
+      ],
+      "bizusAProduzir": [
+        "Conferir o todo de cada fração",
+        "Não misturar unidade antes de converter",
+        "MDC para agrupamento máximo; MMC para ciclos coincidentes"
+      ],
+      "mapaMentalRamos": [
+        "Operações",
+        "Frações",
+        "Divisibilidade",
+        "Problemas"
+      ],
+      "tecCandidatos": [
+        "mat-02"
+      ],
+      "questoesFccLegadas": 0,
+      "questoesFccStatus": "sem questões locais; pesquisar ou criar prática autoral identificada",
+      "pesquisaPendente": [
+        "Unificar a teoria dos antigos módulos 1, 2 e 3, sem duplicação."
+      ],
+      "etapas": {
+        "teoriaCompleta": {
+          "status": "estrutura",
+          "incluir": [
+            "abordagem do zero até nível FCC",
+            "definições e conceitos",
+            "exemplos progressivos totalmente resolvidos",
+            "exercícios resolvidos e armadilhas da FCC",
+            "figuras/tabelas quando necessárias",
+            "síntese do que o edital exige"
+          ]
+        },
+        "resumoBizus": {
+          "status": "estrutura",
+          "incluir": [
+            "primeira leitura rápida",
+            "dicas práticas de reconhecimento do método",
+            "bizus com limitações explicitadas",
+            "fórmulas e passos com interpretação",
+            "erros frequentes",
+            "prática progressiva embutida"
+          ],
+          "praticaProgressiva": {
+            "status": "vazia",
+            "totalAlvo": 10,
+            "niveis": [
+              {
+                "nivel": "fácil",
+                "alvo": 3
+              },
+              {
+                "nivel": "médio",
+                "alvo": 4
+              },
+              {
+                "nivel": "difícil",
+                "alvo": 3
+              }
+            ],
+            "interacao": "alternativas com correção imediata e explicação, ou resolução guiada com resposta oculta; nunca inventar gabarito"
+          }
+        },
+        "mapaMental": {
+          "status": "estrutura",
+          "formato": "árvore semântica, responsiva e imprimível",
+          "ramos": [
+            "Operações",
+            "Frações",
+            "Divisibilidade",
+            "Problemas"
+          ]
+        }
+      }
+    },
+    {
+      "id": "M11",
+      "titulo": "Razão, Proporção e Regra de Três",
+      "eixo": "Proporcionalidade exigida",
+      "tipo": "curso",
+      "origemLegada": [
+        "rlm4"
+      ],
+      "capitulosTeoria": [
+        "Conceito de razão",
+        "Proporções e propriedade fundamental",
+        "Grandezas direta e inversamente proporcionais",
+        "Regra de três simples",
+        "Problemas contextualizados e leitura das unidades"
+      ],
+      "bizusAProduzir": [
+        "Identificar as grandezas antes da conta",
+        "Diretamente proporcional cresce junto; inversa troca o sentido",
+        "Montar tabela das grandezas com unidades"
+      ],
+      "mapaMentalRamos": [
+        "Razão",
+        "Grandezas",
+        "Regra de três",
+        "Aplicações"
+      ],
+      "tecCandidatos": [
+        "mat-04"
+      ],
+      "questoesFccLegadas": 0,
+      "questoesFccStatus": "sem questões locais; pesquisar ou criar prática autoral identificada",
+      "pesquisaPendente": [
+        "Regra de três composta é complementar, não tratar como núcleo literal do edital de 2026."
+      ],
+      "etapas": {
+        "teoriaCompleta": {
+          "status": "estrutura",
+          "incluir": [
+            "abordagem do zero até nível FCC",
+            "definições e conceitos",
+            "exemplos progressivos totalmente resolvidos",
+            "exercícios resolvidos e armadilhas da FCC",
+            "figuras/tabelas quando necessárias",
+            "síntese do que o edital exige"
+          ]
+        },
+        "resumoBizus": {
+          "status": "estrutura",
+          "incluir": [
+            "primeira leitura rápida",
+            "dicas práticas de reconhecimento do método",
+            "bizus com limitações explicitadas",
+            "fórmulas e passos com interpretação",
+            "erros frequentes",
+            "prática progressiva embutida"
+          ],
+          "praticaProgressiva": {
+            "status": "vazia",
+            "totalAlvo": 10,
+            "niveis": [
+              {
+                "nivel": "fácil",
+                "alvo": 3
+              },
+              {
+                "nivel": "médio",
+                "alvo": 4
+              },
+              {
+                "nivel": "difícil",
+                "alvo": 3
+              }
+            ],
+            "interacao": "alternativas com correção imediata e explicação, ou resolução guiada com resposta oculta; nunca inventar gabarito"
+          }
+        },
+        "mapaMental": {
+          "status": "estrutura",
+          "formato": "árvore semântica, responsiva e imprimível",
+          "ramos": [
+            "Razão",
+            "Grandezas",
+            "Regra de três",
+            "Aplicações"
+          ]
+        }
+      }
+    },
+    {
+      "id": "M12",
+      "titulo": "Porcentagem, Acréscimos e Descontos",
+      "eixo": "Porcentagem exigida",
+      "tipo": "curso",
+      "origemLegada": [
+        "rlm5"
+      ],
+      "capitulosTeoria": [
+        "Frações e decimais percentuais",
+        "Porcentagem de uma quantidade",
+        "Acréscimos e descontos simples",
+        "Variações sucessivas e preço inicial",
+        "Comparação de taxas e aplicações"
+      ],
+      "bizusAProduzir": [
+        "Usar fatores 1+p e 1-p",
+        "Percentuais sucessivos multiplicam, não somam",
+        "Taxa de retorno usa a base correta"
+      ],
+      "mapaMentalRamos": [
+        "Percentual",
+        "Acréscimo",
+        "Desconto",
+        "Variação"
+      ],
+      "tecCandidatos": [
+        "mat-04"
+      ],
+      "questoesFccLegadas": 0,
+      "questoesFccStatus": "sem questões locais; pesquisar ou criar prática autoral identificada",
+      "pesquisaPendente": [
+        "Desenvolver teoria integral, resumo e explicações; conferir exemplos e questões FCC do edital."
+      ],
+      "etapas": {
+        "teoriaCompleta": {
+          "status": "estrutura",
+          "incluir": [
+            "abordagem do zero até nível FCC",
+            "definições e conceitos",
+            "exemplos progressivos totalmente resolvidos",
+            "exercícios resolvidos e armadilhas da FCC",
+            "figuras/tabelas quando necessárias",
+            "síntese do que o edital exige"
+          ]
+        },
+        "resumoBizus": {
+          "status": "estrutura",
+          "incluir": [
+            "primeira leitura rápida",
+            "dicas práticas de reconhecimento do método",
+            "bizus com limitações explicitadas",
+            "fórmulas e passos com interpretação",
+            "erros frequentes",
+            "prática progressiva embutida"
+          ],
+          "praticaProgressiva": {
+            "status": "vazia",
+            "totalAlvo": 10,
+            "niveis": [
+              {
+                "nivel": "fácil",
+                "alvo": 3
+              },
+              {
+                "nivel": "médio",
+                "alvo": 4
+              },
+              {
+                "nivel": "difícil",
+                "alvo": 3
+              }
+            ],
+            "interacao": "alternativas com correção imediata e explicação, ou resolução guiada com resposta oculta; nunca inventar gabarito"
+          }
+        },
+        "mapaMental": {
+          "status": "estrutura",
+          "formato": "árvore semântica, responsiva e imprimível",
+          "ramos": [
+            "Percentual",
+            "Acréscimo",
+            "Desconto",
+            "Variação"
+          ]
+        }
+      }
+    },
+    {
+      "id": "M13",
+      "titulo": "Tabelas e Gráficos",
+      "eixo": "Estatística: leitura e interpretação",
+      "tipo": "curso",
+      "origemLegada": [],
+      "capitulosTeoria": [
+        "Tabela simples e de dupla entrada",
+        "Frequência absoluta, relativa e percentual",
+        "Histogramas e distribuição de frequências",
+        "Gráficos de setores e infográficos",
+        "Leitura crítica: escalas, eixos e conclusões"
+      ],
+      "bizusAProduzir": [
+        "Conferir total e unidade",
+        "Não confundir frequência absoluta com relativa",
+        "Inspecionar escala truncada de eixos"
+      ],
+      "mapaMentalRamos": [
+        "Tabelas",
+        "Histogramas",
+        "Setores",
+        "Infográficos"
+      ],
+      "tecCandidatos": [
+        "mat-05"
+      ],
+      "questoesFccLegadas": 0,
+      "questoesFccStatus": "sem questões locais; pesquisar ou criar prática autoral identificada",
+      "pesquisaPendente": [
+        "Não há módulo antigo de teoria específico para estatística; procurar PDF e questões FCC."
+      ],
+      "etapas": {
+        "teoriaCompleta": {
+          "status": "estrutura",
+          "incluir": [
+            "abordagem do zero até nível FCC",
+            "definições e conceitos",
+            "exemplos progressivos totalmente resolvidos",
+            "exercícios resolvidos e armadilhas da FCC",
+            "figuras/tabelas quando necessárias",
+            "síntese do que o edital exige"
+          ]
+        },
+        "resumoBizus": {
+          "status": "estrutura",
+          "incluir": [
+            "primeira leitura rápida",
+            "dicas práticas de reconhecimento do método",
+            "bizus com limitações explicitadas",
+            "fórmulas e passos com interpretação",
+            "erros frequentes",
+            "prática progressiva embutida"
+          ],
+          "praticaProgressiva": {
+            "status": "vazia",
+            "totalAlvo": 10,
+            "niveis": [
+              {
+                "nivel": "fácil",
+                "alvo": 3
+              },
+              {
+                "nivel": "médio",
+                "alvo": 4
+              },
+              {
+                "nivel": "difícil",
+                "alvo": 3
+              }
+            ],
+            "interacao": "alternativas com correção imediata e explicação, ou resolução guiada com resposta oculta; nunca inventar gabarito"
+          }
+        },
+        "mapaMental": {
+          "status": "estrutura",
+          "formato": "árvore semântica, responsiva e imprimível",
+          "ramos": [
+            "Tabelas",
+            "Histogramas",
+            "Setores",
+            "Infográficos"
+          ]
+        }
+      }
+    },
+    {
+      "id": "M14",
+      "titulo": "Média, Mediana e Moda",
+      "eixo": "Estatística: tendência central",
+      "tipo": "curso",
+      "origemLegada": [],
+      "capitulosTeoria": [
+        "Média aritmética simples",
+        "Média aritmética ponderada",
+        "Mediana em amostras pares e ímpares",
+        "Moda e distribuições sem moda ou multimodais",
+        "Cálculo a partir de tabelas e gráficos"
+      ],
+      "bizusAProduzir": [
+        "Ordenar dados antes de achar mediana",
+        "Usar pesos na média ponderada",
+        "Média sofre influência de extremos"
+      ],
+      "mapaMentalRamos": [
+        "Média simples",
+        "Média ponderada",
+        "Mediana",
+        "Moda"
+      ],
+      "tecCandidatos": [
+        "mat-05"
+      ],
+      "questoesFccLegadas": 0,
+      "questoesFccStatus": "sem questões locais; pesquisar ou criar prática autoral identificada",
+      "pesquisaPendente": [
+        "Sem fonte teórica estatística explícita no arquivo legado de RLM; pesquisar."
+      ],
+      "etapas": {
+        "teoriaCompleta": {
+          "status": "estrutura",
+          "incluir": [
+            "abordagem do zero até nível FCC",
+            "definições e conceitos",
+            "exemplos progressivos totalmente resolvidos",
+            "exercícios resolvidos e armadilhas da FCC",
+            "figuras/tabelas quando necessárias",
+            "síntese do que o edital exige"
+          ]
+        },
+        "resumoBizus": {
+          "status": "estrutura",
+          "incluir": [
+            "primeira leitura rápida",
+            "dicas práticas de reconhecimento do método",
+            "bizus com limitações explicitadas",
+            "fórmulas e passos com interpretação",
+            "erros frequentes",
+            "prática progressiva embutida"
+          ],
+          "praticaProgressiva": {
+            "status": "vazia",
+            "totalAlvo": 10,
+            "niveis": [
+              {
+                "nivel": "fácil",
+                "alvo": 3
+              },
+              {
+                "nivel": "médio",
+                "alvo": 4
+              },
+              {
+                "nivel": "difícil",
+                "alvo": 3
+              }
+            ],
+            "interacao": "alternativas com correção imediata e explicação, ou resolução guiada com resposta oculta; nunca inventar gabarito"
+          }
+        },
+        "mapaMental": {
+          "status": "estrutura",
+          "formato": "árvore semântica, responsiva e imprimível",
+          "ramos": [
+            "Média simples",
+            "Média ponderada",
+            "Mediana",
+            "Moda"
+          ]
+        }
+      }
+    },
+    {
+      "id": "M15",
+      "titulo": "Amplitude, Desvio Médio, Variância e Desvio Padrão",
+      "eixo": "Estatística: dispersão",
+      "tipo": "curso",
+      "origemLegada": [],
+      "capitulosTeoria": [
+        "Amplitude total",
+        "Desvios em relação à média",
+        "Desvio médio absoluto",
+        "Variância populacional e amostral — diferenças e contexto",
+        "Desvio padrão, unidades e interpretação"
+      ],
+      "bizusAProduzir": [
+        "Desvio padrão tem a unidade original",
+        "Variância tem unidade ao quadrado",
+        "Verificar se o exercício usa população ou amostra"
+      ],
+      "mapaMentalRamos": [
+        "Amplitude",
+        "Desvios",
+        "Variância",
+        "Desvio padrão"
+      ],
+      "tecCandidatos": [],
+      "questoesFccLegadas": 0,
+      "questoesFccStatus": "sem questões locais; pesquisar ou criar prática autoral identificada",
+      "pesquisaPendente": [
+        "Pesquisar fontes completas e FCC; não há filtro TEC específico validado para essas medidas."
+      ],
+      "etapas": {
+        "teoriaCompleta": {
+          "status": "estrutura",
+          "incluir": [
+            "abordagem do zero até nível FCC",
+            "definições e conceitos",
+            "exemplos progressivos totalmente resolvidos",
+            "exercícios resolvidos e armadilhas da FCC",
+            "figuras/tabelas quando necessárias",
+            "síntese do que o edital exige"
+          ]
+        },
+        "resumoBizus": {
+          "status": "estrutura",
+          "incluir": [
+            "primeira leitura rápida",
+            "dicas práticas de reconhecimento do método",
+            "bizus com limitações explicitadas",
+            "fórmulas e passos com interpretação",
+            "erros frequentes",
+            "prática progressiva embutida"
+          ],
+          "praticaProgressiva": {
+            "status": "vazia",
+            "totalAlvo": 10,
+            "niveis": [
+              {
+                "nivel": "fácil",
+                "alvo": 3
+              },
+              {
+                "nivel": "médio",
+                "alvo": 4
+              },
+              {
+                "nivel": "difícil",
+                "alvo": 3
+              }
+            ],
+            "interacao": "alternativas com correção imediata e explicação, ou resolução guiada com resposta oculta; nunca inventar gabarito"
+          }
+        },
+        "mapaMental": {
+          "status": "estrutura",
+          "formato": "árvore semântica, responsiva e imprimível",
+          "ramos": [
+            "Amplitude",
+            "Desvios",
+            "Variância",
+            "Desvio padrão"
+          ]
+        }
+      }
+    }
+  ]
+}
