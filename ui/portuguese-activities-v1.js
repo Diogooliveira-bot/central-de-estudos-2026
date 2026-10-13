@@ -3,9 +3,10 @@
 'use strict';
 if (global.BasePortugueseActivities) return;
 
-const VERSION = '1.0.0';
+const VERSION = '1.1.0';
 const STYLE_ID = 'base-portuguese-activities-v1-style';
 const ROOT_CLASS = 'pta-v1';
+const MAX_PER_STYLE = 10;
 const stateByArticle = new WeakMap();
 
 const CSS = `
@@ -265,6 +266,11 @@ function markAnswerSource(start, end) {
   start.classList.add('pta-source-answer'); start.setAttribute('aria-hidden', 'true');
   followingUntil(start, end).forEach(node => { node.dataset.ptaSourceHidden = 'true'; node.setAttribute('aria-hidden', 'true'); });
 }
+function hideRange(start, end) {
+  for (let node = start; node && node !== end; node = node.nextElementSibling) {
+    node.dataset.ptaSourceHidden = 'true'; node.setAttribute('aria-hidden', 'true');
+  }
+}
 function processQuestionSection(articleState, start, answerStart, answerEnd, kind) {
   const starts = findQuestionStarts(start, answerStart);
   if (!starts.length) return 0;
@@ -304,6 +310,16 @@ function processMastery(articleState) {
     if (count) addSectionSummary(articleState, start, answerStart, 'mastery');
   });
 }
+function applyExamPolicy(articleState) {
+  const exam = articleState.records.filter(record => record.kind === 'independent' || record.kind === 'mastery');
+  const keep = new Set(exam.filter(record => record.type === 'objective').slice(0, MAX_PER_STYLE).map(record => record.id));
+  exam.forEach(record => {
+    if (keep.has(record.id)) return;
+    const card = articleState.article.querySelector('[data-pta-id="' + record.id + '"]');
+    if (card) { card.dataset.ptaSourceHidden = 'true'; card.setAttribute('aria-hidden', 'true'); }
+  });
+  articleState.records = articleState.records.filter(record => !exam.includes(record) || keep.has(record.id));
+}
 function guidedSplit(nodes) {
   const marker = /^(?:passo(?:\s+a\s+passo|\s*\d*)?|primeiro|agora|an[aá]lise|resolu[cç][aã]o|resposta|conclus[aã]o|logo|portanto|resultado)\b/i;
   let index = nodes.findIndex((node, i) => i > 0 && marker.test(clean(node.textContent)));
@@ -333,24 +349,100 @@ function processGuided(articleState) {
     if (subQuestions.length) {
       subQuestions.forEach((sub, index) => {
         const subEnd = subQuestions[index + 1] || end;
+        if (articleState.counters.guided > MAX_PER_STYLE) { hideRange(sub, subEnd); return; }
         const nodes = followingUntil(sub, subEnd); const split = guidedSplit(nodes);
         wrapGuided(articleState, nodes[split], subEnd, articleState.counters.guided++);
       });
     } else if (section.length) {
+      if (articleState.counters.guided > MAX_PER_STYLE) { heading.dataset.ptaSourceHidden = 'true'; heading.setAttribute('aria-hidden', 'true'); hideRange(section[0], end); continue; }
       const split = guidedSplit(section);
       wrapGuided(articleState, section[split], end, articleState.counters.guided++);
     }
     heading.dataset.ptaProcessed = 'true';
   }
 }
+const REVIEW_STOP_WORDS = new Set(fold('o a os as um uma de do da dos das e ou em no na nos nas por para com sem que qual quais quem quando onde como porque se sua seu suas seus ser foi pode deve precisa entre antes depois apenas mais menos dê exemplo explique significa dizer característica estrutural mínima termos iniciais').split(' '));
+const REVIEW_HEADING_HINTS = {
+  'm01:3': 'o que é uma oração', 'm01:8': 'o que é um termo', 'm01:10': 'o que é o núcleo de um termo',
+  'm02:3': 'armadilha importante: qu e gu', 'm02:5': 'comparação decisiva', 'm02:6': 'regra de bolso dos encontros vocálicos', 'm02:9': 'dígrafos vocálicos e nasalização', 'm02:10': 'método de análise',
+  'm03:2': 'paroxítona', 'm03:3': 'proparoxítona', 'm03:5': 'o procedimento que organiza toda a acentuação', 'm03:9': 'algoritmo seguro para o hiato', 'm03:10': 'exceção com nh',
+  'm04:1': 'radical: a parte central da família', 'm04:6': 'antes de h', 'm04:7': 'co e re: não crie hífen', 'm04:9': '-ês/-esa', 'm04:10': '-isar × -izar',
+  'm05:1': 'o que é substantivo', 'm05:8': 'comuns de dois', 'm05:9': 'quadro comparativo', 'm05:10': 'guarda-chuva × guarda-civil',
+  'm06:1': 'o que é adjetivo', 'm06:2': 'característica objetiva × avaliação subjetiva', 'm06:6': 'o que é locução adjetiva', 'm06:8': 'adjetivos uniformes', 'm06:9': 'adjetivos biformes', 'm06:10': 'comparativo',
+  'm07:1': 'por que os pronomes existem', 'm07:2': 'pronome que acompanha × pronome que substitui', 'm07:4': 'pronomes interrogativos',
+  'm10:4': 'o que é oração', 'm10:10': 'o verbo frequentemente denuncia o sujeito',
+  'm11:3': 'verbo transitivo direto', 'm11:4': 'verbo transitivo indireto', 'm11:5': 'verbo transitivo direto e indireto',
+  'm13:3': 'três relações fundamentais', 'm13:5': 'as correlações que você realmente precisa dominar', 'm13:7': 'quando + fato futuro',
+  'm14:4': 'coordenadas assindéticas', 'm14:5': 'coordenadas sindéticas',
+  'm15:2': 'o que é próclise', 'm15:3': 'o que é ênclise', 'm15:4': 'o que é mesóclise', 'm15:5': 'método-mestre do módulo', 'm15:7': 'atratores centrais',
+  'm17:7': 'determinante antes da porcentagem', 'm17:8': 'numerais decimais', 'm17:9': 'frações', 'm17:10': 'mais de um, menos de dois',
+  'm18:3': 'quem manda na concordância', 'm18:7': 'a função sintática muda a regra',
+  'm19:1': 'o que é regência', 'm19:2': 'o que é regência', 'm19:3': 'o que é regência', 'm19:7': 'agradar', 'm19:8': 'aspirar', 'm19:9': 'assistir',
+  'm20:1': 'o que é crase', 'm20:2': 'os dois “a”', 'm20:3': 'os dois “a”', 'm20:4': 'os dois “a”', 'm20:9': 'horas determinadas',
+  'm21:9': 'quatro testes para sinônimos',
+  'm23:9': 'a imagem “foto × filme”', 'm23:10': 'ação também pode descrever',
+  'm24:10': 'a palavra “ainda”'
+};
+function reviewTerms(value) {
+  return [...new Set(fold(value).replace(/[^a-z0-9ç ]/g, ' ').split(/\s+/).filter(word => word.length > 2 && !REVIEW_STOP_WORDS.has(word)))];
+}
+function theoryBlocks(article, stop) {
+  const children = directChildren(article); const stopIndex = children.indexOf(stop);
+  const levelOf = node => node.tagName === 'H2' && node.classList.contains('pt-doc-h1') ? 2 : Number(node.tagName.slice(1)) + 1;
+  const headings = children.slice(0, stopIndex).filter(node => /^H[2-4]$/.test(node.tagName) && !/pr[aá]tica|gabarito|mini\s*teste|teste (?:de sa[ií]da|final|de dom[ií]nio)|revis[aã]o ativa/i.test(clean(node.textContent)));
+  return headings.map(heading => {
+    const level = levelOf(heading); const pieces = [];
+    for (let node = heading.nextElementSibling; node && node !== stop; node = node.nextElementSibling) {
+      if (/^H[2-4]$/.test(node.tagName) && levelOf(node) <= level) break;
+      if (!/^H[1-6]$/.test(node.tagName) && !node.matches('[data-pta-source-hidden="true"],.pta-question,.pta-guided,.pta-section-summary') && clean(node.textContent)) pieces.push(clean(node.textContent));
+    }
+    return { heading: clean(heading.textContent), body: clean(pieces.join(' ')) };
+  }).filter(block => block.body.length >= 20);
+}
+function groundedReviewAnswer(blocks, prompt, hint) {
+  const query = reviewTerms(prompt); const foldedPrompt = fold(prompt); const quoted = [...prompt.matchAll(/[“\"]([^”\"]{3,})[”\"]/g)].map(match => fold(match[1]));
+  const bigrams = query.slice(0, 8).map((word, index) => index ? query[index - 1] + ' ' + word : '').filter(Boolean);
+  const ranked = blocks.map(block => {
+    const heading = fold(block.heading), body = fold(block.body); let score = 0;
+    if (hint && heading.includes(fold(hint))) score += 100;
+    query.forEach(word => { if (heading.split(/\s+/).includes(word)) score += 5; if (body.split(/\s+/).includes(word)) score += 1; });
+    if (query.length && query.every(word => heading.includes(word) || body.includes(word))) score += 3;
+    quoted.forEach(value => { if (body.includes(value) || heading.includes(value)) score += 20; });
+    bigrams.forEach(value => { if (body.includes(value) || heading.includes(value)) score += 4; });
+    if (/o que (?:e|sao)|qual (?:e|a|o)/.test(foldedPrompt) && query.some(word => new RegExp('\\b' + word + '\\s+(?:e|sao|consiste|corresponde)').test(body))) score += 4;
+    return { ...block, score };
+  }).sort((a, b) => b.score - a.score);
+  const best = ranked[0]; if (!best || best.score <= 0) return null;
+  const limit = 1100; let text = best.body.slice(0, limit);
+  if (best.body.length > limit) { const boundary = Math.max(text.lastIndexOf('. '), text.lastIndexOf('; ')); if (boundary > 280) text = text.slice(0, boundary + 1); }
+  const safe = value => value.replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char]);
+  return { text, html: '<p>' + safe(text) + '</p><small>Resposta localizada na seção “' + safe(best.heading) + '” da teoria deste módulo.</small>', sourceHeading: best.heading, score: best.score };
+}
+function makeReviewReveal(articleState, start, end, config) {
+  const id = stableId(articleState.moduleId, config.kind, config.ordinal); const saved = readState(id);
+  const reuseListItem = start.tagName === 'LI' && end === start.nextElementSibling;
+  const card = reuseListItem ? start : document.createElement('section'); card.className = 'pta-question'; card.dataset.ptaId = id; card.dataset.ptaKind = config.kind;
+  const kicker = document.createElement('div'); kicker.className = 'pta-question-kicker'; kicker.innerHTML = '<span>' + sectionLabel(config.kind) + '</span><span class="pta-question-id">' + id.toUpperCase() + '</span>';
+  const content = document.createElement('div'); content.className = 'pta-question-content';
+  if (reuseListItem) { while (card.firstChild) content.appendChild(card.firstChild); card.append(kicker, content); }
+  else { start.before(card); card.append(kicker, content); moveRangeToContainer(start, end, content); }
+  const answer = config.answer; const details = document.createElement('details'); details.className = 'pta-guided pta-review-answer';
+  const summary = document.createElement('summary'); summary.textContent = 'Resposta'; const body = document.createElement('div'); body.className = 'pta-guided-body'; body.innerHTML = answer?.html || '<p>Resposta não localizada com segurança no material original.</p>';
+  details.append(summary, body); details.open = !!saved.revealed; card.appendChild(details);
+  details.addEventListener('toggle', () => { const state = readState(id); state.revealed = details.open; state.responded = details.open; state.updatedAt = new Date().toISOString(); writeState(id, state); articleState.update(); });
+  articleState.records.push({ id, moduleId: articleState.moduleId, kind: config.kind, type: 'reveal', prompt: clean(content.textContent), answer: answer?.text || '', autoCorrect: false, status: answer?.text ? 'associated' : 'missing-answer', answerSource: answer?.sourceHeading || 'gabarito original', answerScore: Number.isFinite(answer?.score) ? answer.score : null });
+}
 function processActiveReview(articleState) {
   const article = articleState.article;
   directChildren(article).filter(node => isH2(node) && /revis[aã]o ativa/i.test(clean(node.textContent))).forEach(start => {
     const end = nextH2(start); const listItems = followingUntil(start, end).flatMap(node => node.tagName === 'LI' ? [node] : [...node.querySelectorAll('li')]);
-    listItems.forEach(item => {
+    const blocks = theoryBlocks(article, start);
+    listItems.forEach((item, index) => {
+      if (index >= MAX_PER_STYLE) { item.dataset.ptaSourceHidden = 'true'; item.setAttribute('aria-hidden', 'true'); return; }
       const itemEnd = item.nextElementSibling;
       const placeholder = document.createElement('span'); item.before(placeholder);
-      makeQuestion(articleState, item, itemEnd, { kind: 'active', ordinal: articleState.counters.active++, answer: null });
+      const ordinal = articleState.counters.active++;
+      makeReviewReveal(articleState, item, itemEnd, { kind: 'active', ordinal, answer: groundedReviewAnswer(blocks, clean(item.textContent), REVIEW_HEADING_HINTS[articleState.moduleId + ':' + ordinal]) });
       placeholder.remove();
     });
   });
@@ -376,16 +468,18 @@ function processCumulative(articleState) {
   const diagnosticItems = followingUntil(part1, part2).flatMap(node => node.tagName === 'LI' ? [node] : [...node.querySelectorAll('li')]);
   let index = 0;
   diagnosticItems.forEach(item => {
+    if (index >= MAX_PER_STYLE) { item.dataset.ptaSourceHidden = 'true'; item.setAttribute('aria-hidden', 'true'); index++; return; }
     const itemEnd = item.nextElementSibling;
-    makeQuestion(articleState, item, itemEnd, { kind: 'cumulative', ordinal: articleState.counters.cumulative++, answer: answers[index++] });
+    makeReviewReveal(articleState, item, itemEnd, { kind: 'cumulative', ordinal: articleState.counters.cumulative++, answer: answers[index++] });
   });
   const integrationStarts = followingUntil(part2, answerStart).filter(node => isH2(node) && numberFrom(node.textContent) != null);
   integrationStarts.forEach((start, position) => {
     const end = integrationStarts[position + 1] || answerStart;
-    makeQuestion(articleState, start, end, { kind: 'cumulative', ordinal: articleState.counters.cumulative++, answer: answers[index++] });
+    if (articleState.counters.cumulative > MAX_PER_STYLE) { hideRange(start, end); index++; return; }
+    makeReviewReveal(articleState, start, end, { kind: 'cumulative', ordinal: articleState.counters.cumulative++, answer: answers[index++] });
   });
   const cumulative = articleState.records.filter(record => record.kind === 'cumulative');
-  if (cumulative.length && cumulative.every(record => record.status === 'associated') && cumulative.length === answers.length) markAnswerSource(answerStart, answerEnd);
+  if (cumulative.length && cumulative.every(record => record.status === 'associated')) markAnswerSource(answerStart, answerEnd);
   addSectionSummary(articleState, part1, answerStart, 'cumulative');
 }
 function addSectionSummary(articleState, start, end, kind) {
@@ -394,7 +488,7 @@ function addSectionSummary(articleState, start, end, kind) {
 }
 function addModuleSummary(articleState) {
   const first = articleState.article.querySelector('[data-pta-id]'); if (!first) return;
-  const box = document.createElement('section'); box.className = 'pta-module-summary'; box.innerHTML = '<div><h3>Questões do módulo</h3><p>Questões guiadas, estilo prova e revisão — responda antes de conferir.</p></div><div class="pta-module-score"><strong>0%</strong><span>0 de 0 respondidas</span></div>';
+  const box = document.createElement('section'); box.className = 'pta-module-summary'; box.innerHTML = '<div><h3>Questões do módulo</h3><p>Até 10 guiadas, 10 de prova com alternativas e 10 de revisão com resposta oculta.</p></div><div class="pta-module-score"><strong>0%</strong><span>0 de 0 respondidas</span></div>';
   first.before(box); articleState.moduleSummary = box;
 }
 function updateState(articleState) {
@@ -408,7 +502,7 @@ function updateState(articleState) {
   }
   articleState.sectionSummaries.forEach(box => {
     const kind = box.dataset.ptaSummaryKind; const subset = records.filter(record => record.kind === kind);
-    const done = subset.filter(record => { const state = readState(record.id); return !!(state.responded || state.checked); }).length;
+    const done = subset.filter(record => { const state = readState(record.id); return !!(state.responded || state.checked || state.revealed); }).length;
     const scored = subset.filter(record => record.autoCorrect); const hits = scored.filter(record => readState(record.id).correct === true).length;
     const pending = subset.length - done;
     box.innerHTML = '<strong>Resumo: ' + done + '/' + subset.length + ' concluídas</strong><p>' + (scored.length ? hits + ' acertos em ' + scored.length + ' questões com correção automática. ' : '') + pending + ' pendente(s).</p>';
@@ -425,6 +519,7 @@ function enhance(article, options) {
   else {
     processPractice(articleState);
     processMastery(articleState);
+    applyExamPolicy(articleState);
     processActiveReview(articleState);
     hideExitTests(articleState);
   }

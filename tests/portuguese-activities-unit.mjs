@@ -26,18 +26,24 @@ test('todos os 24 módulos e a revisão recebem atividades com IDs únicos', () 
     const { dom, host, records } = render(moduleId);
     assert.ok(records.length > 0, moduleId + ' ficou sem atividades');
     assert.equal(Number(host.dataset.ptaRecordCount), records.length);
+    assert.ok(records.filter(item => item.kind === 'guided').length <= 10, moduleId + ' excedeu 10 guiadas');
+    assert.ok(records.filter(item => item.kind === 'independent' || item.kind === 'mastery').length <= 10, moduleId + ' excedeu 10 questões estilo prova');
+    assert.ok(records.filter(item => item.kind === 'active' || item.kind === 'cumulative').length <= 10, moduleId + ' excedeu 10 revisões');
+    assert.ok(records.filter(item => item.kind === 'independent' || item.kind === 'mastery').every(item => item.type === 'objective'), moduleId + ' manteve questão de prova sem alternativas');
     for (const record of records) { assert.ok(!ids.has(record.id), 'ID duplicado: ' + record.id); ids.add(record.id); }
     assert.equal(host.querySelectorAll('.pta-module-summary').length, 1);
     dom.window.close();
   }
 });
 
-test('M01 tem revelação guiada, correção objetiva e revisão ativa sem gabarito inventado', () => {
+test('M01 tem guiadas preservadas, prova objetiva e revisão com resposta teórica oculta', () => {
   const { dom, host, records } = render('m01');
   assert.ok(records.some(item => item.kind === 'guided' && item.answer));
-  assert.ok(records.some(item => item.kind === 'mastery' && item.autoCorrect));
-  assert.ok(records.some(item => item.kind === 'active' && item.status === 'missing-answer'));
+  assert.ok(records.some(item => (item.kind === 'independent' || item.kind === 'mastery') && item.autoCorrect));
+  assert.equal(records.filter(item => item.kind === 'active').length, 10);
+  assert.ok(records.filter(item => item.kind === 'active').every(item => item.status === 'associated' && item.answerSource));
   assert.ok(host.querySelector('.pta-guided:not([open])'));
+  assert.equal(host.querySelector('.pta-review-answer[open]'), null);
   dom.window.close();
 });
 
@@ -65,11 +71,12 @@ test('persistência é isolada pelo usuário autenticado', () => {
   first.dom.window.close();
 });
 
-test('revisão cumulativa preserva e associa os 84 itens', () => {
-  const { dom, records } = render('review');
+test('revisão cumulativa exibe 10 itens com respostas ocultas associadas', () => {
+  const { dom, host, records } = render('review');
   const cumulative = records.filter(item => item.kind === 'cumulative');
-  assert.equal(cumulative.length, 84);
-  assert.equal(cumulative.filter(item => item.status === 'associated').length, 84);
+  assert.equal(cumulative.length, 10);
+  assert.equal(cumulative.filter(item => item.status === 'associated').length, 10);
+  assert.equal(host.querySelectorAll('.pta-review-answer:not([open])').length, 10);
   dom.window.close();
 });
 

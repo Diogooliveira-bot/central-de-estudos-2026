@@ -55,14 +55,14 @@ totals.userFacing = {
   examStyle: totals.byKind.independent + totals.byKind.mastery,
   moduleReview: totals.byKind.active + totals.byKind.cumulative
 };
-const inventory = { generatedAt: new Date().toISOString(), source: 'portugues-autodidata-data.txt', componentVersion: '1.0.0', modules, totals, exercises: records };
+const inventory = { generatedAt: new Date().toISOString(), source: 'portugues-autodidata-data.txt', componentVersion: '1.1.0', modules, totals, exercises: records };
 const outDir = path.join(root, 'reports');
 fs.mkdirSync(outDir, { recursive: true });
 fs.writeFileSync(path.join(outDir, 'portuguese-activities-inventory.json'), JSON.stringify(inventory, null, 2) + '\n');
 
 const lines = [
   '# Inventário — Atividades Interativas de Português', '',
-  `Gerado a partir de \`portugues-autodidata-data.txt\`. Total identificado: **${totals.exercises} atividades**.`, '',
+  `Gerado a partir de \`portugues-autodidata-data.txt\`. A interface exibe no máximo 10 questões de cada bloco por módulo. Total exibido: **${totals.exercises} atividades**.`, '',
   '| Módulo | Total | Questões guiadas | Estilo prova | Revisão do módulo | Correção automática | Sem resposta original |',
   '|---|---:|---:|---:|---:|---:|---:|'
 ];
@@ -79,6 +79,8 @@ lines.push(
   `- Autoavaliações/checklists exibidos: ${totals.selfAssessment}`,
   '', '## Implementação e segurança', '',
   '- Um único componente reutilizável atende M01–M24 e a revisão cumulativa.',
+  '- Questões estilo prova são exclusivamente objetivas, com alternativas.',
+  '- Revisões ativas exibem apenas a pergunta e uma resposta inicialmente oculta, vinculada à teoria do próprio módulo.',
   '- IDs estáveis seguem o padrão `pt-<módulo>-<modalidade>-<ordem>`.',
   '- Tentativas e textos usam chaves sincronizáveis com escopo explícito do usuário autenticado.',
   '- Gabaritos antigos permanecem no DOM e só são ocultados quando todas as respostas da seção foram associadas.',
@@ -89,12 +91,13 @@ lines.push(
   '- Revelação da prática guiada e ocultação inicial da resposta.',
   '- Correção objetiva, feedback imediato e histórico de tentativas.',
   '- Persistência isolada por usuário.',
-  '- Associação integral dos 84 itens da revisão cumulativa.',
+  '- Limite de 10 itens por bloco, prova somente objetiva e resposta de revisão inicialmente oculta.',
+  '- Associação dos 10 itens exibidos na revisão cumulativa.',
   '- Suíte completa do repositório: 36 testes aprovados.',
   '', '## Limitações do conteúdo original', '',
-  `- As ${totals.missingAnswer} perguntas de revisão ativa não possuem resposta-modelo ou comentário no material-fonte. Elas aceitam e salvam a tentativa, mas não recebem correção inventada.`,
+  `- Questões sem resposta segura localizada na teoria: ${totals.missingAnswer}.`,
   '- Os testes de saída em formato de checklist permanecem preservados na fonte, mas não são exibidos como atividades.',
-  '- Questões discursivas exibem resposta-modelo para comparação e não atribuem acerto/erro semanticamente.',
+  '- Módulos com menos de 10 práticas guiadas ou menos de 10 questões objetivas mantêm apenas os itens existentes; nenhum exercício novo foi inventado.',
   ''
 );
 fs.writeFileSync(path.join(outDir, 'portuguese-activities-report.md'), lines.join('\n'));
