@@ -40,6 +40,7 @@ async function open(id,mode='complete'){
  const shell=overlay.querySelector('.bc-native-reader');overlay.querySelector('.pt-native-loading').remove();
  shell.insertAdjacentHTML('beforeend','<div class="bc-native-reader-tools"><input type="search" placeholder="Buscar neste material…" aria-label="Buscar no conteúdo"><button type="button" data-pt-font="-1" aria-label="Diminuir fonte">A−</button><button type="button" data-pt-font="1" aria-label="Aumentar fonte">A+</button><button type="button" class="primary" data-pt-top>Ir ao topo</button></div><div class="bc-native-reader-body"><nav class="bc-native-toc" aria-label="Índice do material"><div class="bc-native-toc-label">Índice do módulo</div>'+headings.map(h=>'<button type="button" data-pt-jump="'+h.id+'">'+esc(h.textContent)+'</button>').join('')+'</nav><main class="bc-native-scroll"><div class="bc-native-article"></div></main></div>');
  const article=overlay.querySelector('.bc-native-article');article.appendChild(template.content);
+ if(id==='m01'&&global.BasePtM01Activities)global.BasePtM01Activities.enhance(article);
  const scroll=overlay.querySelector('.bc-native-scroll');active={id,scroll};
  let size=Math.max(85,Math.min(180,Number(localStorage.getItem('central-v6:reading-font-size'))||100));
  const applyFont=()=>article.style.fontSize=size/100+'em';applyFont();
