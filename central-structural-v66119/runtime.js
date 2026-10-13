@@ -4338,7 +4338,7 @@ function penalStep(n,title,desc,done,body){
  return `<section class="cf-step ${done?'done':''}"><div class="cf-step-head"><div class="cf-step-no">${done?'✓':n}</div><div class="cf-step-copy"><b>${title}</b><small>${desc}</small></div></div><div class="cf-step-body">${body}</div></section>`;
 }
 function renderPenalMaster(){
- if(!PENAL_QUESTIONS.length)return '<div class="cf-subtitle">Questões de fixação: 5 na versão resumida e 10 na completa de cada módulo.</div>';
+ if(!PENAL_QUESTIONS.length)return '<div class="cf-subtitle">Questões de fixação: 5 na versão resumida e 10 na completa de cada módulo.</div><div class="cf-modules">'+PENAL_WEEKS.map(renderPenalModule).join('')+'</div>';
  const st=penalStats(),real=PENAL_QUESTIONS.filter(q=>q.real!==false).length,ined=PENAL_QUESTIONS.length-real;
  return `<div class="cf-master-tools"><button onclick="renderPenalErrorPanel()">⚠ Erros ${st.wrongIds.length?`(${st.wrongIds.length})`:''}</button></div>
  <div class="cf-metrics">
