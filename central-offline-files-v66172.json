@@ -1,5 +1,5 @@
 {
-  "build": "20261012-trabalho-rc2",
+  "build": "20261013-qc-sharing-v1",
   "files": [
     "/central-v119.html?direct=35",
     "/ui/discipline-standard.js?v=20261003penalnative1",
@@ -101,7 +101,7 @@
     "/central-structural-v66119/cf-final-audit-integration-20260920.js",
     "/portugues-tec-data-v1.js?v=20260921n2",
     "/civil-decorando-index-v1.js?v=20261009sync1",
-    "/central-lazy-theory-v66119.js?v=66160adm20",
+    "/central-lazy-theory-v66119.js?v=20261013qclinks1",
     "/cpc-m1-apostila-v66121.js?v=66122a1",
     "/central-reading-fullscreen-v66123.js?v=66140cpc1",
     "/cpc-flow-visual-v1.js?v=20260930civil1",
@@ -333,7 +333,6 @@
     "/central-boot-ready.js?v=20261005-civil-native-v1",
     "/study-cycle-planner-v1.js",
     "/tools/cpc-m01-mapa.html?preview=1",
-    "/central-lazy-theory-v66119.js?v=20261009sync1",
     "/content/adm/adm-native-index.js?v=20261005adm1",
     "/ui/adm-native-layer.js?v=20261009sync1",
     "/ui/adm-native-layer.css?v=20261005adm1",
@@ -390,7 +389,6 @@
     "/tools/decorando-data-restantes.js?v=20261009rest1",
     "/tools/decorando-data-led-aprovadas.js?v=20261010ledgate1",
     "/tools/decorando-data-modulos.js?v=20261009sync1",
-    "/central-lazy-theory-v66119.js?v=20261009civilsharing2",
     "/content/civil/civil-sharing-links.js?v=20261009civilsharing2",
     "/ui/civil-native-study-v1.js?v=20261009civilsharing2",
     "/ui/civil-native-study-v1.css?v=20261009civilsharing2",
@@ -477,6 +475,11 @@
     "/modules/trabalho/native/infograficos/m15.webp",
     "/modules/trabalho/native/infograficos/m16.webp",
     "/modules/trabalho/native/infograficos/m17.webp",
-    "/modules/trabalho/native/infograficos/m18.webp"
+    "/modules/trabalho/native/infograficos/m18.webp",
+    "/content/cpc/cpc-sharing-links.js?v=20261010cpcsharing1",
+    "/ui/cpc-sharing-links.js?v=20261010cpcsharing1",
+    "/content/qc-sharing-links.json?v=20261013qclinks1",
+    "/content/qc-sharing-links.js?v=20261013qclinks1",
+    "/ui/qc-sharing-links.js?v=20261013qclinks1"
   ]
 }
