@@ -24,10 +24,16 @@ const kinds = ['guided', 'independent', 'active', 'mastery', 'exit', 'cumulative
 const types = ['reveal', 'objective', 'discursive', 'short', 'classification', 'self-assessment'];
 const modules = Object.keys(materials).map(moduleId => {
   const items = records.filter(item => item.moduleId === moduleId);
+  const byKind = Object.fromEntries(kinds.map(kind => [kind, items.filter(item => item.kind === kind).length]));
   return {
     moduleId,
     total: items.length,
-    byKind: Object.fromEntries(kinds.map(kind => [kind, items.filter(item => item.kind === kind).length])),
+    byKind,
+    userFacing: {
+      guided: byKind.guided,
+      examStyle: byKind.independent + byKind.mastery,
+      moduleReview: byKind.active + byKind.cumulative
+    },
     byType: Object.fromEntries(types.map(type => [type, items.filter(item => item.type === type).length])),
     associated: items.filter(item => item.status === 'associated').length,
     autoCorrect: items.filter(item => item.autoCorrect).length,
@@ -44,6 +50,11 @@ const totals = {
   missingAnswer: records.filter(item => item.status === 'missing-answer').length,
   selfAssessment: records.filter(item => item.status === 'self-assessment').length
 };
+totals.userFacing = {
+  guided: totals.byKind.guided,
+  examStyle: totals.byKind.independent + totals.byKind.mastery,
+  moduleReview: totals.byKind.active + totals.byKind.cumulative
+};
 const inventory = { generatedAt: new Date().toISOString(), source: 'portugues-autodidata-data.txt', componentVersion: '1.0.0', modules, totals, exercises: records };
 const outDir = path.join(root, 'reports');
 fs.mkdirSync(outDir, { recursive: true });
@@ -52,17 +63,20 @@ fs.writeFileSync(path.join(outDir, 'portuguese-activities-inventory.json'), JSON
 const lines = [
   '# Inventário — Atividades Interativas de Português', '',
   `Gerado a partir de \`portugues-autodidata-data.txt\`. Total identificado: **${totals.exercises} atividades**.`, '',
-  '| Módulo | Total | Guiada | Independente | Revisão ativa | Miniteste | Saída | Cumulativa | Auto | Sem resposta original |',
-  '|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|'
+  '| Módulo | Total | Questões guiadas | Estilo prova | Revisão do módulo | Correção automática | Sem resposta original |',
+  '|---|---:|---:|---:|---:|---:|---:|'
 ];
-for (const module of modules) lines.push(`| ${module.moduleId} | ${module.total} | ${module.byKind.guided} | ${module.byKind.independent} | ${module.byKind.active} | ${module.byKind.mastery} | ${module.byKind.exit} | ${module.byKind.cumulative} | ${module.autoCorrect} | ${module.missingAnswer} |`);
+for (const module of modules) lines.push(`| ${module.moduleId} | ${module.total} | ${module.userFacing.guided} | ${module.userFacing.examStyle} | ${module.userFacing.moduleReview} | ${module.autoCorrect} | ${module.missingAnswer} |`);
 lines.push(
-  '', '## Totais por modalidade', '', ...kinds.map(kind => `- ${kind}: ${totals.byKind[kind]}`),
+  '', '## Três blocos exibidos ao aluno', '',
+  `- Questões guiadas: ${totals.userFacing.guided}`,
+  `- Questões estilo prova: ${totals.userFacing.examStyle}`,
+  `- Questões de revisão do módulo: ${totals.userFacing.moduleReview}`,
   '', '## Situação editorial', '',
   `- Respostas associadas: ${totals.associated}`,
   `- Correção objetiva automática: ${totals.autoCorrect}`,
   `- Sem resposta-modelo no original: ${totals.missingAnswer}`,
-  `- Autoavaliações/checklists: ${totals.selfAssessment}`,
+  `- Autoavaliações/checklists exibidos: ${totals.selfAssessment}`,
   '', '## Implementação e segurança', '',
   '- Um único componente reutilizável atende M01–M24 e a revisão cumulativa.',
   '- IDs estáveis seguem o padrão `pt-<módulo>-<modalidade>-<ordem>`.',
@@ -76,10 +90,10 @@ lines.push(
   '- Correção objetiva, feedback imediato e histórico de tentativas.',
   '- Persistência isolada por usuário.',
   '- Associação integral dos 84 itens da revisão cumulativa.',
-  '- Suíte completa do repositório: 35 testes aprovados.',
+  '- Suíte completa do repositório: 36 testes aprovados.',
   '', '## Limitações do conteúdo original', '',
   `- As ${totals.missingAnswer} perguntas de revisão ativa não possuem resposta-modelo ou comentário no material-fonte. Elas aceitam e salvam a tentativa, mas não recebem correção inventada.`,
-  `- Os ${totals.selfAssessment} itens de teste de saída são critérios/checklists de domínio, não perguntas com gabarito; por isso registram autoavaliação.`,
+  '- Os testes de saída em formato de checklist permanecem preservados na fonte, mas não são exibidos como atividades.',
   '- Questões discursivas exibem resposta-modelo para comparação e não atribuem acerto/erro semanticamente.',
   ''
 );

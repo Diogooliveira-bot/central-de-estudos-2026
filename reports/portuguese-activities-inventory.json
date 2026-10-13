@@ -1,18 +1,23 @@
 {
-  "generatedAt": "2026-10-13T21:20:52.824Z",
+  "generatedAt": "2026-10-13T22:16:15.896Z",
   "source": "portugues-autodidata-data.txt",
   "componentVersion": "1.0.0",
   "modules": [
     {
       "moduleId": "m01",
-      "total": 72,
+      "total": 62,
       "byKind": {
         "guided": 8,
         "independent": 24,
         "active": 20,
         "mastery": 10,
-        "exit": 10,
+        "exit": 0,
         "cumulative": 0
+      },
+      "userFacing": {
+        "guided": 8,
+        "examStyle": 34,
+        "moduleReview": 20
       },
       "byType": {
         "reveal": 8,
@@ -20,23 +25,28 @@
         "discursive": 23,
         "short": 10,
         "classification": 5,
-        "self-assessment": 10
+        "self-assessment": 0
       },
       "associated": 42,
       "autoCorrect": 16,
       "missingAnswer": 20,
-      "selfAssessment": 10
+      "selfAssessment": 0
     },
     {
       "moduleId": "m02",
-      "total": 32,
+      "total": 26,
       "byKind": {
         "guided": 5,
         "independent": 6,
         "active": 10,
         "mastery": 5,
-        "exit": 6,
+        "exit": 0,
         "cumulative": 0
+      },
+      "userFacing": {
+        "guided": 5,
+        "examStyle": 11,
+        "moduleReview": 10
       },
       "byType": {
         "reveal": 5,
@@ -44,23 +54,28 @@
         "discursive": 10,
         "short": 2,
         "classification": 3,
-        "self-assessment": 6
+        "self-assessment": 0
       },
       "associated": 16,
       "autoCorrect": 6,
       "missingAnswer": 10,
-      "selfAssessment": 6
+      "selfAssessment": 0
     },
     {
       "moduleId": "m03",
-      "total": 44,
+      "total": 34,
       "byKind": {
         "guided": 4,
         "independent": 8,
         "active": 15,
         "mastery": 7,
-        "exit": 10,
+        "exit": 0,
         "cumulative": 0
+      },
+      "userFacing": {
+        "guided": 4,
+        "examStyle": 15,
+        "moduleReview": 15
       },
       "byType": {
         "reveal": 4,
@@ -68,23 +83,28 @@
         "discursive": 14,
         "short": 5,
         "classification": 3,
-        "self-assessment": 10
+        "self-assessment": 0
       },
       "associated": 19,
       "autoCorrect": 8,
       "missingAnswer": 15,
-      "selfAssessment": 10
+      "selfAssessment": 0
     },
     {
       "moduleId": "m04",
-      "total": 75,
+      "total": 58,
       "byKind": {
         "guided": 6,
         "independent": 24,
         "active": 20,
         "mastery": 8,
-        "exit": 17,
+        "exit": 0,
         "cumulative": 0
+      },
+      "userFacing": {
+        "guided": 6,
+        "examStyle": 32,
+        "moduleReview": 20
       },
       "byType": {
         "reveal": 6,
@@ -92,23 +112,28 @@
         "discursive": 22,
         "short": 12,
         "classification": 0,
-        "self-assessment": 17
+        "self-assessment": 0
       },
       "associated": 38,
       "autoCorrect": 18,
       "missingAnswer": 20,
-      "selfAssessment": 17
+      "selfAssessment": 0
     },
     {
       "moduleId": "m05",
-      "total": 71,
+      "total": 53,
       "byKind": {
         "guided": 10,
         "independent": 15,
         "active": 20,
         "mastery": 8,
-        "exit": 18,
+        "exit": 0,
         "cumulative": 0
+      },
+      "userFacing": {
+        "guided": 10,
+        "examStyle": 23,
+        "moduleReview": 20
       },
       "byType": {
         "reveal": 10,
@@ -116,23 +141,28 @@
         "discursive": 24,
         "short": 3,
         "classification": 1,
-        "self-assessment": 18
+        "self-assessment": 0
       },
       "associated": 33,
       "autoCorrect": 15,
       "missingAnswer": 20,
-      "selfAssessment": 18
+      "selfAssessment": 0
     },
     {
       "moduleId": "m06",
-      "total": 54,
+      "total": 41,
       "byKind": {
         "guided": 6,
         "independent": 10,
         "active": 18,
         "mastery": 7,
-        "exit": 13,
+        "exit": 0,
         "cumulative": 0
+      },
+      "userFacing": {
+        "guided": 6,
+        "examStyle": 17,
+        "moduleReview": 18
       },
       "byType": {
         "reveal": 6,
@@ -140,23 +170,28 @@
         "discursive": 23,
         "short": 1,
         "classification": 1,
-        "self-assessment": 13
+        "self-assessment": 0
       },
       "associated": 23,
       "autoCorrect": 10,
       "missingAnswer": 18,
-      "selfAssessment": 13
+      "selfAssessment": 0
     },
     {
       "moduleId": "m07",
-      "total": 74,
+      "total": 56,
       "byKind": {
         "guided": 11,
         "independent": 14,
         "active": 23,
         "mastery": 8,
-        "exit": 18,
+        "exit": 0,
         "cumulative": 0
+      },
+      "userFacing": {
+        "guided": 11,
+        "examStyle": 22,
+        "moduleReview": 23
       },
       "byType": {
         "reveal": 11,
@@ -164,23 +199,28 @@
         "discursive": 20,
         "short": 9,
         "classification": 2,
-        "self-assessment": 18
+        "self-assessment": 0
       },
       "associated": 33,
       "autoCorrect": 14,
       "missingAnswer": 23,
-      "selfAssessment": 18
+      "selfAssessment": 0
     },
     {
       "moduleId": "m08",
-      "total": 65,
+      "total": 50,
       "byKind": {
         "guided": 7,
         "independent": 10,
         "active": 25,
         "mastery": 8,
-        "exit": 15,
+        "exit": 0,
         "cumulative": 0
+      },
+      "userFacing": {
+        "guided": 7,
+        "examStyle": 18,
+        "moduleReview": 25
       },
       "byType": {
         "reveal": 7,
@@ -188,23 +228,28 @@
         "discursive": 24,
         "short": 9,
         "classification": 0,
-        "self-assessment": 15
+        "self-assessment": 0
       },
       "associated": 25,
       "autoCorrect": 10,
       "missingAnswer": 25,
-      "selfAssessment": 15
+      "selfAssessment": 0
     },
     {
       "moduleId": "m09",
-      "total": 76,
+      "total": 60,
       "byKind": {
         "guided": 7,
         "independent": 20,
         "active": 25,
         "mastery": 8,
-        "exit": 16,
+        "exit": 0,
         "cumulative": 0
+      },
+      "userFacing": {
+        "guided": 7,
+        "examStyle": 28,
+        "moduleReview": 25
       },
       "byType": {
         "reveal": 7,
@@ -212,23 +257,28 @@
         "discursive": 29,
         "short": 3,
         "classification": 1,
-        "self-assessment": 16
+        "self-assessment": 0
       },
       "associated": 35,
       "autoCorrect": 20,
       "missingAnswer": 25,
-      "selfAssessment": 16
+      "selfAssessment": 0
     },
     {
       "moduleId": "m10",
-      "total": 68,
+      "total": 50,
       "byKind": {
         "guided": 8,
         "independent": 10,
         "active": 24,
         "mastery": 8,
-        "exit": 18,
+        "exit": 0,
         "cumulative": 0
+      },
+      "userFacing": {
+        "guided": 8,
+        "examStyle": 18,
+        "moduleReview": 24
       },
       "byType": {
         "reveal": 8,
@@ -236,23 +286,28 @@
         "discursive": 26,
         "short": 5,
         "classification": 1,
-        "self-assessment": 18
+        "self-assessment": 0
       },
       "associated": 26,
       "autoCorrect": 10,
       "missingAnswer": 24,
-      "selfAssessment": 18
+      "selfAssessment": 0
     },
     {
       "moduleId": "m11",
-      "total": 67,
+      "total": 54,
       "byKind": {
         "guided": 8,
         "independent": 15,
         "active": 21,
         "mastery": 10,
-        "exit": 13,
+        "exit": 0,
         "cumulative": 0
+      },
+      "userFacing": {
+        "guided": 8,
+        "examStyle": 25,
+        "moduleReview": 21
       },
       "byType": {
         "reveal": 8,
@@ -260,23 +315,28 @@
         "discursive": 26,
         "short": 2,
         "classification": 3,
-        "self-assessment": 13
+        "self-assessment": 0
       },
       "associated": 33,
       "autoCorrect": 15,
       "missingAnswer": 21,
-      "selfAssessment": 13
+      "selfAssessment": 0
     },
     {
       "moduleId": "m12",
-      "total": 67,
+      "total": 53,
       "byKind": {
         "guided": 3,
         "independent": 15,
         "active": 25,
         "mastery": 10,
-        "exit": 14,
+        "exit": 0,
         "cumulative": 0
+      },
+      "userFacing": {
+        "guided": 3,
+        "examStyle": 25,
+        "moduleReview": 25
       },
       "byType": {
         "reveal": 3,
@@ -284,23 +344,28 @@
         "discursive": 25,
         "short": 6,
         "classification": 9,
-        "self-assessment": 14
+        "self-assessment": 0
       },
       "associated": 28,
       "autoCorrect": 10,
       "missingAnswer": 25,
-      "selfAssessment": 14
+      "selfAssessment": 0
     },
     {
       "moduleId": "m13",
-      "total": 72,
+      "total": 57,
       "byKind": {
         "guided": 10,
         "independent": 12,
         "active": 25,
         "mastery": 10,
-        "exit": 15,
+        "exit": 0,
         "cumulative": 0
+      },
+      "userFacing": {
+        "guided": 10,
+        "examStyle": 22,
+        "moduleReview": 25
       },
       "byType": {
         "reveal": 10,
@@ -308,23 +373,28 @@
         "discursive": 35,
         "short": 5,
         "classification": 6,
-        "self-assessment": 15
+        "self-assessment": 0
       },
       "associated": 32,
       "autoCorrect": 1,
       "missingAnswer": 25,
-      "selfAssessment": 15
+      "selfAssessment": 0
     },
     {
       "moduleId": "m14",
-      "total": 88,
+      "total": 66,
       "byKind": {
         "guided": 10,
         "independent": 20,
         "active": 26,
         "mastery": 10,
-        "exit": 22,
+        "exit": 0,
         "cumulative": 0
+      },
+      "userFacing": {
+        "guided": 10,
+        "examStyle": 30,
+        "moduleReview": 26
       },
       "byType": {
         "reveal": 10,
@@ -332,23 +402,28 @@
         "discursive": 24,
         "short": 10,
         "classification": 2,
-        "self-assessment": 22
+        "self-assessment": 0
       },
       "associated": 40,
       "autoCorrect": 20,
       "missingAnswer": 26,
-      "selfAssessment": 22
+      "selfAssessment": 0
     },
     {
       "moduleId": "m15",
-      "total": 80,
+      "total": 64,
       "byKind": {
         "guided": 8,
         "independent": 20,
         "active": 26,
         "mastery": 10,
-        "exit": 16,
+        "exit": 0,
         "cumulative": 0
+      },
+      "userFacing": {
+        "guided": 8,
+        "examStyle": 30,
+        "moduleReview": 26
       },
       "byType": {
         "reveal": 8,
@@ -356,23 +431,28 @@
         "discursive": 31,
         "short": 5,
         "classification": 0,
-        "self-assessment": 16
+        "self-assessment": 0
       },
       "associated": 38,
       "autoCorrect": 20,
       "missingAnswer": 26,
-      "selfAssessment": 16
+      "selfAssessment": 0
     },
     {
       "moduleId": "m16",
-      "total": 71,
+      "total": 52,
       "byKind": {
         "guided": 10,
         "independent": 10,
         "active": 24,
         "mastery": 8,
-        "exit": 19,
+        "exit": 0,
         "cumulative": 0
+      },
+      "userFacing": {
+        "guided": 10,
+        "examStyle": 18,
+        "moduleReview": 24
       },
       "byType": {
         "reveal": 10,
@@ -380,23 +460,28 @@
         "discursive": 28,
         "short": 4,
         "classification": 0,
-        "self-assessment": 19
+        "self-assessment": 0
       },
       "associated": 28,
       "autoCorrect": 10,
       "missingAnswer": 24,
-      "selfAssessment": 19
+      "selfAssessment": 0
     },
     {
       "moduleId": "m17",
-      "total": 76,
+      "total": 59,
       "byKind": {
         "guided": 10,
         "independent": 10,
         "active": 29,
         "mastery": 10,
-        "exit": 17,
+        "exit": 0,
         "cumulative": 0
+      },
+      "userFacing": {
+        "guided": 10,
+        "examStyle": 20,
+        "moduleReview": 29
       },
       "byType": {
         "reveal": 10,
@@ -404,23 +489,28 @@
         "discursive": 30,
         "short": 9,
         "classification": 0,
-        "self-assessment": 17
+        "self-assessment": 0
       },
       "associated": 30,
       "autoCorrect": 10,
       "missingAnswer": 29,
-      "selfAssessment": 17
+      "selfAssessment": 0
     },
     {
       "moduleId": "m18",
-      "total": 85,
+      "total": 70,
       "byKind": {
         "guided": 11,
         "independent": 20,
         "active": 29,
         "mastery": 10,
-        "exit": 15,
+        "exit": 0,
         "cumulative": 0
+      },
+      "userFacing": {
+        "guided": 11,
+        "examStyle": 30,
+        "moduleReview": 29
       },
       "byType": {
         "reveal": 11,
@@ -428,23 +518,28 @@
         "discursive": 29,
         "short": 10,
         "classification": 0,
-        "self-assessment": 15
+        "self-assessment": 0
       },
       "associated": 41,
       "autoCorrect": 20,
       "missingAnswer": 29,
-      "selfAssessment": 15
+      "selfAssessment": 0
     },
     {
       "moduleId": "m19",
-      "total": 82,
+      "total": 68,
       "byKind": {
         "guided": 8,
         "independent": 20,
         "active": 30,
         "mastery": 10,
-        "exit": 14,
+        "exit": 0,
         "cumulative": 0
+      },
+      "userFacing": {
+        "guided": 8,
+        "examStyle": 30,
+        "moduleReview": 30
       },
       "byType": {
         "reveal": 8,
@@ -452,23 +547,28 @@
         "discursive": 33,
         "short": 7,
         "classification": 0,
-        "self-assessment": 14
+        "self-assessment": 0
       },
       "associated": 38,
       "autoCorrect": 20,
       "missingAnswer": 30,
-      "selfAssessment": 14
+      "selfAssessment": 0
     },
     {
       "moduleId": "m20",
-      "total": 85,
+      "total": 65,
       "byKind": {
         "guided": 10,
         "independent": 15,
         "active": 30,
         "mastery": 10,
-        "exit": 20,
+        "exit": 0,
         "cumulative": 0
+      },
+      "userFacing": {
+        "guided": 10,
+        "examStyle": 25,
+        "moduleReview": 30
       },
       "byType": {
         "reveal": 10,
@@ -476,23 +576,28 @@
         "discursive": 31,
         "short": 9,
         "classification": 0,
-        "self-assessment": 20
+        "self-assessment": 0
       },
       "associated": 35,
       "autoCorrect": 15,
       "missingAnswer": 30,
-      "selfAssessment": 20
+      "selfAssessment": 0
     },
     {
       "moduleId": "m21",
-      "total": 71,
+      "total": 56,
       "byKind": {
         "guided": 9,
         "independent": 10,
         "active": 27,
         "mastery": 10,
-        "exit": 15,
+        "exit": 0,
         "cumulative": 0
+      },
+      "userFacing": {
+        "guided": 9,
+        "examStyle": 20,
+        "moduleReview": 27
       },
       "byType": {
         "reveal": 9,
@@ -500,23 +605,28 @@
         "discursive": 34,
         "short": 3,
         "classification": 0,
-        "self-assessment": 15
+        "self-assessment": 0
       },
       "associated": 29,
       "autoCorrect": 10,
       "missingAnswer": 27,
-      "selfAssessment": 15
+      "selfAssessment": 0
     },
     {
       "moduleId": "m22",
-      "total": 76,
+      "total": 62,
       "byKind": {
         "guided": 6,
         "independent": 20,
         "active": 26,
         "mastery": 10,
-        "exit": 14,
+        "exit": 0,
         "cumulative": 0
+      },
+      "userFacing": {
+        "guided": 6,
+        "examStyle": 30,
+        "moduleReview": 26
       },
       "byType": {
         "reveal": 6,
@@ -524,23 +634,28 @@
         "discursive": 28,
         "short": 7,
         "classification": 1,
-        "self-assessment": 14
+        "self-assessment": 0
       },
       "associated": 36,
       "autoCorrect": 20,
       "missingAnswer": 26,
-      "selfAssessment": 14
+      "selfAssessment": 0
     },
     {
       "moduleId": "m23",
-      "total": 71,
+      "total": 57,
       "byKind": {
         "guided": 8,
         "independent": 10,
         "active": 29,
         "mastery": 10,
-        "exit": 14,
+        "exit": 0,
         "cumulative": 0
+      },
+      "userFacing": {
+        "guided": 8,
+        "examStyle": 20,
+        "moduleReview": 29
       },
       "byType": {
         "reveal": 8,
@@ -548,23 +663,28 @@
         "discursive": 25,
         "short": 11,
         "classification": 3,
-        "self-assessment": 14
+        "self-assessment": 0
       },
       "associated": 28,
       "autoCorrect": 10,
       "missingAnswer": 29,
-      "selfAssessment": 14
+      "selfAssessment": 0
     },
     {
       "moduleId": "m24",
-      "total": 96,
+      "total": 78,
       "byKind": {
         "guided": 8,
         "independent": 25,
         "active": 35,
         "mastery": 10,
-        "exit": 18,
+        "exit": 0,
         "cumulative": 0
+      },
+      "userFacing": {
+        "guided": 8,
+        "examStyle": 35,
+        "moduleReview": 35
       },
       "byType": {
         "reveal": 8,
@@ -572,12 +692,12 @@
         "discursive": 38,
         "short": 6,
         "classification": 1,
-        "self-assessment": 18
+        "self-assessment": 0
       },
       "associated": 43,
       "autoCorrect": 25,
       "missingAnswer": 35,
-      "selfAssessment": 18
+      "selfAssessment": 0
     },
     {
       "moduleId": "review",
@@ -589,6 +709,11 @@
         "mastery": 0,
         "exit": 0,
         "cumulative": 84
+      },
+      "userFacing": {
+        "guided": 0,
+        "examStyle": 0,
+        "moduleReview": 84
       },
       "byType": {
         "reveal": 0,
@@ -605,13 +730,13 @@
     }
   ],
   "totals": {
-    "exercises": 1802,
+    "exercises": 1435,
     "byKind": {
       "guided": 191,
       "independent": 363,
       "active": 582,
       "mastery": 215,
-      "exit": 367,
+      "exit": 0,
       "cumulative": 84
     },
     "byType": {
@@ -620,12 +745,17 @@
       "discursive": 709,
       "short": 157,
       "classification": 45,
-      "self-assessment": 367
+      "self-assessment": 0
     },
     "associated": 853,
     "autoCorrect": 333,
     "missingAnswer": 582,
-    "selfAssessment": 367
+    "selfAssessment": 0,
+    "userFacing": {
+      "guided": 191,
+      "examStyle": 578,
+      "moduleReview": 666
+    }
   },
   "exercises": [
     {
@@ -1249,106 +1379,6 @@
       "status": "missing-answer"
     },
     {
-      "id": "pt-m01-exit-001",
-      "moduleId": "m01",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "Criar uma frase sem verbo.",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m01-exit-002",
-      "moduleId": "m01",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "Criar um período simples.",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m01-exit-003",
-      "moduleId": "m01",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "Criar um período composto com duas orações.",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m01-exit-004",
-      "moduleId": "m01",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "Criar uma frase com uma locução verbal e explicar por que ela não contém duas orações apenas por causa das duas formas.",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m01-exit-005",
-      "moduleId": "m01",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "Escolher um termo de quatro ou mais palavras e apontar seu núcleo.",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m01-exit-006",
-      "moduleId": "m01",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "Dar um exemplo de palavra com dois sentidos diferentes conforme o contexto.",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m01-exit-007",
-      "moduleId": "m01",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "Dar um exemplo de forma que mude de classe conforme o uso, como “estudo” ou “caminho”.",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m01-exit-008",
-      "moduleId": "m01",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "Explicar em voz alta, sem ler, a diferença entre classe, função e sentido.",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m01-exit-009",
-      "moduleId": "m01",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "Analisar uma frase de pelo menos quinze palavras usando o protocolo: sentido → verbo → oração → blocos → núcleo.",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m01-exit-010",
-      "moduleId": "m01",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "Dizer qual seção revisar quando cometer cada tipo de erro.",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
       "id": "pt-m02-guided-001",
       "moduleId": "m02",
       "kind": "guided",
@@ -1607,66 +1637,6 @@
       "answer": "",
       "autoCorrect": false,
       "status": "missing-answer"
-    },
-    {
-      "id": "pt-m02-exit-001",
-      "moduleId": "m02",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "identificar a sílaba tônica;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m02-exit-002",
-      "moduleId": "m02",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "explicar letra × fonema;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m02-exit-003",
-      "moduleId": "m02",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "distinguir dígrafo × encontro consonantal;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m02-exit-004",
-      "moduleId": "m02",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "separar pais de país conceitualmente;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m02-exit-005",
-      "moduleId": "m02",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "explicar ditongo, tritongo e hiato;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m02-exit-006",
-      "moduleId": "m02",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "analisar uma palavra olhando primeiro para a pronúncia, não apenas para sua grafia.",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
     },
     {
       "id": "pt-m03-guided-001",
@@ -2007,106 +1977,6 @@
       "answer": "",
       "autoCorrect": false,
       "status": "missing-answer"
-    },
-    {
-      "id": "pt-m03-exit-001",
-      "moduleId": "m03",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "encontrar a sílaba tônica;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m03-exit-002",
-      "moduleId": "m03",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "classificar palavras em oxítona, paroxítona e proparoxítona;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m03-exit-003",
-      "moduleId": "m03",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "aplicar o procedimento \"tonicidade → terminação → regra\";",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m03-exit-004",
-      "moduleId": "m03",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "explicar a regra das proparoxítonas;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m03-exit-005",
-      "moduleId": "m03",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer a regra especial do hiato;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m03-exit-006",
-      "moduleId": "m03",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "diferenciar regra geral de regra especial;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m03-exit-007",
-      "moduleId": "m03",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "explicar ideia × herói;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m03-exit-008",
-      "moduleId": "m03",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer creem, leem, voo e enjoo sem os antigos acentos;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m03-exit-009",
-      "moduleId": "m03",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "distinguir pode/pôde, pôr/por, tem/têm e vem/vêm;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m03-exit-010",
-      "moduleId": "m03",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "justificar o acento com raciocínio, e não apenas dizer \"porque é a regra\".",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
     },
     {
       "id": "pt-m04-guided-001",
@@ -2689,176 +2559,6 @@
       "status": "missing-answer"
     },
     {
-      "id": "pt-m04-exit-001",
-      "moduleId": "m04",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "explicar radical, prefixo e a ideia básica de sufixo;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m04-exit-002",
-      "moduleId": "m04",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "distinguir simples/composto de primitivo/derivado;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m04-exit-003",
-      "moduleId": "m04",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "aplicar a árvore principal do hífen;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m04-exit-004",
-      "moduleId": "m04",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer o padrão de R/S;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m04-exit-005",
-      "moduleId": "m04",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer a regra diante de H;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m04-exit-006",
-      "moduleId": "m04",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "lembrar que CO e RE exigem atenção;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m04-exit-007",
-      "moduleId": "m04",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "diferenciar prefixação de composição;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m04-exit-008",
-      "moduleId": "m04",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "usar família da palavra para ajudar na grafia;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m04-exit-009",
-      "moduleId": "m04",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "aplicar os padrões -ês/-esa × -ez/-eza e -isar × -izar;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m04-exit-010",
-      "moduleId": "m04",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer que ortografia possui exceções e convenções;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m04-exit-011",
-      "moduleId": "m04",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "usar corretamente os testes de mal/mau e há/a;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m04-exit-012",
-      "moduleId": "m04",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "diferenciar os quatro porquês;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m04-exit-013",
-      "moduleId": "m04",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "diferenciar onde/aonde;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m04-exit-014",
-      "moduleId": "m04",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "diferenciar a fim de/afim;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m04-exit-015",
-      "moduleId": "m04",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "diferenciar cessão/sessão/seção;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m04-exit-016",
-      "moduleId": "m04",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "diferenciar de encontro a/ao encontro de;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m04-exit-017",
-      "moduleId": "m04",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "explicar por que algumas grafias precisam de memória visual.",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
       "id": "pt-m05-guided-001",
       "moduleId": "m05",
       "kind": "guided",
@@ -3389,186 +3089,6 @@
       "status": "missing-answer"
     },
     {
-      "id": "pt-m05-exit-001",
-      "moduleId": "m05",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "identificar substantivos em contexto;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m05-exit-002",
-      "moduleId": "m05",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "encontrar o núcleo de um grupo nominal simples;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m05-exit-003",
-      "moduleId": "m05",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "diferenciar comum/próprio;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m05-exit-004",
-      "moduleId": "m05",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "diferenciar concreto/abstrato pelo sentido;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m05-exit-005",
-      "moduleId": "m05",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "diferenciar simples/composto de primitivo/derivado;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m05-exit-006",
-      "moduleId": "m05",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer coletivo;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m05-exit-007",
-      "moduleId": "m05",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "explicar substantivação;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m05-exit-008",
-      "moduleId": "m05",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "distinguir biforme, comum de dois, sobrecomum e epiceno;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m05-exit-009",
-      "moduleId": "m05",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "analisar plural de compostos básicos;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m05-exit-010",
-      "moduleId": "m05",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "entender valores de diminutivo e aumentativo;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m05-exit-011",
-      "moduleId": "m05",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer artigos definidos e indefinidos;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m05-exit-012",
-      "moduleId": "m05",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "explicar o efeito da presença ou ausência do artigo;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m05-exit-013",
-      "moduleId": "m05",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "diferenciar todo/todo o;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m05-exit-014",
-      "moduleId": "m05",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "distinguir artigo de pronome ou preposição quando a forma gráfica é igual;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m05-exit-015",
-      "moduleId": "m05",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer numeral cardinal, ordinal, multiplicativo e fracionário;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m05-exit-016",
-      "moduleId": "m05",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "diferenciar numeral com papel substantivo de substantivo como classe;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m05-exit-017",
-      "moduleId": "m05",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "analisar “um” pelo contexto;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m05-exit-018",
-      "moduleId": "m05",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer que nem toda ideia de posição pertence à classe numeral.",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
       "id": "pt-m06-guided-001",
       "moduleId": "m06",
       "kind": "guided",
@@ -3977,136 +3497,6 @@
       "answer": "",
       "autoCorrect": false,
       "status": "missing-answer"
-    },
-    {
-      "id": "pt-m06-exit-001",
-      "moduleId": "m06",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "identificar adjetivos em contexto;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m06-exit-002",
-      "moduleId": "m06",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "diferenciar adjetivo de pronome ou numeral com valor adjetivo;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m06-exit-003",
-      "moduleId": "m06",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer adjetivo relacional;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m06-exit-004",
-      "moduleId": "m06",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "explicar locução adjetiva;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m06-exit-005",
-      "moduleId": "m06",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "evitar a falsa regra “preposição + substantivo = locução adjetiva”;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m06-exit-006",
-      "moduleId": "m06",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "distinguir uniforme de biforme;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m06-exit-007",
-      "moduleId": "m06",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer padrões básicos de flexão de compostos;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m06-exit-008",
-      "moduleId": "m06",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "distinguir comparativo de superlativo;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m06-exit-009",
-      "moduleId": "m06",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer superlativo relativo e absoluto;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m06-exit-010",
-      "moduleId": "m06",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "entender intensificação por repetição e outros recursos;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m06-exit-011",
-      "moduleId": "m06",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "perceber mudança de sentido pela posição;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m06-exit-012",
-      "moduleId": "m06",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "perceber mudança de núcleo pela ordem;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m06-exit-013",
-      "moduleId": "m06",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "aplicar o método CLASSE → NÚCLEO → SENTIDO.",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
     },
     {
       "id": "pt-m07-guided-001",
@@ -4669,186 +4059,6 @@
       "status": "missing-answer"
     },
     {
-      "id": "pt-m07-exit-001",
-      "moduleId": "m07",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "explicar por que os pronomes existem;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m07-exit-002",
-      "moduleId": "m07",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "distinguir pronome que acompanha de pronome que substitui;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m07-exit-003",
-      "moduleId": "m07",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "localizar o referente;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m07-exit-004",
-      "moduleId": "m07",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer interrogativos;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m07-exit-005",
-      "moduleId": "m07",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer indefinidos básicos;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m07-exit-006",
-      "moduleId": "m07",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "analisar certo/bastante conforme o contexto;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m07-exit-007",
-      "moduleId": "m07",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer possessivos;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m07-exit-008",
-      "moduleId": "m07",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "identificar ambiguidade de posse;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m07-exit-009",
-      "moduleId": "m07",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer demonstrativos;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m07-exit-010",
-      "moduleId": "m07",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "diferenciar anáfora e catáfora;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m07-exit-011",
-      "moduleId": "m07",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer pronomes pessoais retos;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m07-exit-012",
-      "moduleId": "m07",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer oblíquos em nível introdutório;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m07-exit-013",
-      "moduleId": "m07",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "usar eu/mim nos casos básicos estudados;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m07-exit-014",
-      "moduleId": "m07",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "compreender pronomes de tratamento;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m07-exit-015",
-      "moduleId": "m07",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "diferenciar Vossa/Sua;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m07-exit-016",
-      "moduleId": "m07",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer a função básica de um relativo;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m07-exit-017",
-      "moduleId": "m07",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "identificar o antecedente de um relativo;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m07-exit-018",
-      "moduleId": "m07",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "explicar o valor de posse de “cujo” sem entrar ainda em regência avançada.",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
       "id": "pt-m08-guided-001",
       "moduleId": "m08",
       "kind": "guided",
@@ -5347,156 +4557,6 @@
       "answer": "",
       "autoCorrect": false,
       "status": "missing-answer"
-    },
-    {
-      "id": "pt-m08-exit-001",
-      "moduleId": "m08",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer um verbo;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m08-exit-002",
-      "moduleId": "m08",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "explicar ação, estado, fenômeno e processo;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m08-exit-003",
-      "moduleId": "m08",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "identificar pessoa e número;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m08-exit-004",
-      "moduleId": "m08",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer os três modos;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m08-exit-005",
-      "moduleId": "m08",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer as três conjugações;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m08-exit-006",
-      "moduleId": "m08",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "diferenciar forma verbal de valor contextual;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m08-exit-007",
-      "moduleId": "m08",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "explicar presente, perfeito, imperfeito e mais-que-perfeito;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m08-exit-008",
-      "moduleId": "m08",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "compreender futuro do presente e futuro do pretérito;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m08-exit-009",
-      "moduleId": "m08",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer presente, imperfeito e futuro do subjuntivo;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m08-exit-010",
-      "moduleId": "m08",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer o imperativo;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m08-exit-011",
-      "moduleId": "m08",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "identificar infinitivo, gerúndio e particípio;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m08-exit-012",
-      "moduleId": "m08",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer locuções verbais;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m08-exit-013",
-      "moduleId": "m08",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "identificar auxiliar e principal;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m08-exit-014",
-      "moduleId": "m08",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "distinguir regular, irregular, anômalo e defectivo em nível introdutório;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m08-exit-015",
-      "moduleId": "m08",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "evitar os erros básicos com VER/VIR, TER e derivados e REQUERER.",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
     },
     {
       "id": "pt-m09-guided-001",
@@ -6099,166 +5159,6 @@
       "status": "missing-answer"
     },
     {
-      "id": "pt-m09-exit-001",
-      "moduleId": "m09",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "explicar o que é classe invariável;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m09-exit-002",
-      "moduleId": "m09",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer advérbios básicos;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m09-exit-003",
-      "moduleId": "m09",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer locuções adverbiais;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m09-exit-004",
-      "moduleId": "m09",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer preposições;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m09-exit-005",
-      "moduleId": "m09",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "diferenciar preposição relacional e nocional;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m09-exit-006",
-      "moduleId": "m09",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer conjunções;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m09-exit-007",
-      "moduleId": "m09",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "identificar relações de adição, adversidade, alternativa, conclusão e explicação;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m09-exit-008",
-      "moduleId": "m09",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "identificar condição, conformidade e finalidade;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m09-exit-009",
-      "moduleId": "m09",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "diferenciar finalidade de consequência;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m09-exit-010",
-      "moduleId": "m09",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer proporção e tempo;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m09-exit-011",
-      "moduleId": "m09",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "identificar comparação, causa e consequência;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m09-exit-012",
-      "moduleId": "m09",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "compreender concessão;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m09-exit-013",
-      "moduleId": "m09",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "explicar os vários sentidos de “como”;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m09-exit-014",
-      "moduleId": "m09",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "compreender o teste do ISTO em nível introdutório;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m09-exit-015",
-      "moduleId": "m09",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer interjeição;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m09-exit-016",
-      "moduleId": "m09",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "analisar conectivos pelo sentido, e não apenas pela lista.",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
       "id": "pt-m10-guided-001",
       "moduleId": "m10",
       "kind": "guided",
@@ -6757,186 +5657,6 @@
       "answer": "",
       "autoCorrect": false,
       "status": "missing-answer"
-    },
-    {
-      "id": "pt-m10-exit-001",
-      "moduleId": "m10",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "diferenciar morfologia de sintaxe;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m10-exit-002",
-      "moduleId": "m10",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "distinguir frase, oração e período;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m10-exit-003",
-      "moduleId": "m10",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer locução verbal sem contar orações mecanicamente;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m10-exit-004",
-      "moduleId": "m10",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reorganizar uma frase na ordem direta;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m10-exit-005",
-      "moduleId": "m10",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "identificar o sujeito pela concordância;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m10-exit-006",
-      "moduleId": "m10",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "localizar o núcleo;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m10-exit-007",
-      "moduleId": "m10",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "distinguir sujeito simples e composto;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m10-exit-008",
-      "moduleId": "m10",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer sujeito posposto;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m10-exit-009",
-      "moduleId": "m10",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer sujeito oculto;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m10-exit-010",
-      "moduleId": "m10",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "distinguir oculto de indeterminado;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m10-exit-011",
-      "moduleId": "m10",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer oração sem sujeito;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m10-exit-012",
-      "moduleId": "m10",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "aplicar HAVER × EXISTIR;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m10-exit-013",
-      "moduleId": "m10",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer FAZER impessoal;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m10-exit-014",
-      "moduleId": "m10",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "analisar fenômeno natural em uso próprio e figurado;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m10-exit-015",
-      "moduleId": "m10",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer sujeito oracional;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m10-exit-016",
-      "moduleId": "m10",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "usar o teste do ISTO;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m10-exit-017",
-      "moduleId": "m10",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "dividir uma oração simples em sujeito e predicado básico;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m10-exit-018",
-      "moduleId": "m10",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "analisar cada verbo separadamente.",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
     },
     {
       "id": "pt-m11-guided-001",
@@ -7479,136 +6199,6 @@
       "status": "missing-answer"
     },
     {
-      "id": "pt-m11-exit-001",
-      "moduleId": "m11",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "distinguir VI, VTD, VTI e VTDI;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m11-exit-002",
-      "moduleId": "m11",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "diferenciar complemento de circunstância;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m11-exit-003",
-      "moduleId": "m11",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "identificar OD e OI;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m11-exit-004",
-      "moduleId": "m11",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "explicar por que preposição sozinha não decide;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m11-exit-005",
-      "moduleId": "m11",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer objeto direto preposicionado em nível introdutório;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m11-exit-006",
-      "moduleId": "m11",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer verbo de ligação em contexto;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m11-exit-007",
-      "moduleId": "m11",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "diferenciar verbo de ligação de verbo nocional;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m11-exit-008",
-      "moduleId": "m11",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "identificar predicativo do sujeito;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m11-exit-009",
-      "moduleId": "m11",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "identificar predicativo do objeto;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m11-exit-010",
-      "moduleId": "m11",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer predicado verbal, nominal e verbo-nominal;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m11-exit-011",
-      "moduleId": "m11",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "entender que predicado verbal pode conter objetos;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m11-exit-012",
-      "moduleId": "m11",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer predicado verbo-nominal com predicativo do sujeito ou do objeto;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m11-exit-013",
-      "moduleId": "m11",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "analisar transitividade no uso concreto, sem decorar etiqueta fixa.",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
       "id": "pt-m12-guided-001",
       "moduleId": "m12",
       "kind": "guided",
@@ -8137,146 +6727,6 @@
       "answer": "",
       "autoCorrect": false,
       "status": "missing-answer"
-    },
-    {
-      "id": "pt-m12-exit-001",
-      "moduleId": "m12",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "encontrar o regente de um termo;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m12-exit-002",
-      "moduleId": "m12",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "distinguir complemento verbal de complemento nominal;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m12-exit-003",
-      "moduleId": "m12",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "identificar complemento nominal;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m12-exit-004",
-      "moduleId": "m12",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "identificar adjunto adnominal;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m12-exit-005",
-      "moduleId": "m12",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "diferenciar CN × AA;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m12-exit-006",
-      "moduleId": "m12",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "transformar substantivo abstrato de ação em verbo quando necessário;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m12-exit-007",
-      "moduleId": "m12",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "usar agente × paciente sem mecanizar;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m12-exit-008",
-      "moduleId": "m12",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer adjunto adverbial;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m12-exit-009",
-      "moduleId": "m12",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer vocativo;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m12-exit-010",
-      "moduleId": "m12",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "diferenciar vocativo de sujeito;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m12-exit-011",
-      "moduleId": "m12",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer aposto;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m12-exit-012",
-      "moduleId": "m12",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "diferenciar aposto de predicativo;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m12-exit-013",
-      "moduleId": "m12",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer agente da passiva em nível introdutório;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m12-exit-014",
-      "moduleId": "m12",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "aplicar o funil do termo preposicionado.",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
     },
     {
       "id": "pt-m13-guided-001",
@@ -8847,156 +7297,6 @@
       "answer": "",
       "autoCorrect": false,
       "status": "missing-answer"
-    },
-    {
-      "id": "pt-m13-exit-001",
-      "moduleId": "m13",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "explicar correlação verbal com uma linha do tempo;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m13-exit-002",
-      "moduleId": "m13",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "identificar um marco temporal;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m13-exit-003",
-      "moduleId": "m13",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "distinguir simultaneidade, anterioridade e posterioridade;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m13-exit-004",
-      "moduleId": "m13",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "distinguir possibilidade futura, hipótese e hipótese passada;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m13-exit-005",
-      "moduleId": "m13",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "interpretar PUDER → FAREI, PUDESSE → FARIA e TIVESSE FEITO → TERIA FEITO;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m13-exit-006",
-      "moduleId": "m13",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer futuro visto do passado;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m13-exit-007",
-      "moduleId": "m13",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "diferenciar locução verbal, tempo composto e passiva;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m13-exit-008",
-      "moduleId": "m13",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "transformar ativa em passiva e passiva em ativa;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m13-exit-009",
-      "moduleId": "m13",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "preservar tempo, modo e valor modal;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m13-exit-010",
-      "moduleId": "m13",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "refazer concordância com o novo sujeito;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m13-exit-011",
-      "moduleId": "m13",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer passiva sintética;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m13-exit-012",
-      "moduleId": "m13",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "diferenciar partícula apassivadora de índice de indeterminação;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m13-exit-013",
-      "moduleId": "m13",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer se reflexivo, recíproco, pronominal, integrante e condicional;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m13-exit-014",
-      "moduleId": "m13",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "distinguir voz reflexiva de verbo pronominal;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m13-exit-015",
-      "moduleId": "m13",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "analisar correlação e voz na mesma frase.",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
     },
     {
       "id": "pt-m14-guided-001",
@@ -9659,226 +7959,6 @@
       "status": "missing-answer"
     },
     {
-      "id": "pt-m14-exit-001",
-      "moduleId": "m14",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "separar corretamente as orações;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m14-exit-002",
-      "moduleId": "m14",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "distinguir locução verbal de duas orações;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m14-exit-003",
-      "moduleId": "m14",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "diferenciar coordenação e subordinação;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m14-exit-004",
-      "moduleId": "m14",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "classificar as cinco coordenadas centrais;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m14-exit-005",
-      "moduleId": "m14",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "diferenciar explicação × causa;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m14-exit-006",
-      "moduleId": "m14",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "diferenciar conclusão × consequência;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m14-exit-007",
-      "moduleId": "m14",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer as seis substantivas;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m14-exit-008",
-      "moduleId": "m14",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "aplicar o teste do ISTO;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m14-exit-009",
-      "moduleId": "m14",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "diferenciar OI × completiva nominal;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m14-exit-010",
-      "moduleId": "m14",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "distinguir subjetiva × predicativa;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m14-exit-011",
-      "moduleId": "m14",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer adjetiva restritiva e explicativa;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m14-exit-012",
-      "moduleId": "m14",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "encontrar antecedente;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m14-exit-013",
-      "moduleId": "m14",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconstruir a oração relativa;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m14-exit-014",
-      "moduleId": "m14",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "identificar função do relativo;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m14-exit-015",
-      "moduleId": "m14",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer as nove adverbiais centrais;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m14-exit-016",
-      "moduleId": "m14",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "diferenciar condição × concessão;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m14-exit-017",
-      "moduleId": "m14",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "diferenciar tempo × proporção;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m14-exit-018",
-      "moduleId": "m14",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "diferenciar comparação × conformidade;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m14-exit-019",
-      "moduleId": "m14",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "desenvolver orações reduzidas preservando sentido;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m14-exit-020",
-      "moduleId": "m14",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer problemas de paralelismo;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m14-exit-021",
-      "moduleId": "m14",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "analisar QUE, SE e COMO por testes;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m14-exit-022",
-      "moduleId": "m14",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "aplicar o método completo em períodos longos.",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
       "id": "pt-m15-guided-001",
       "moduleId": "m15",
       "kind": "guided",
@@ -10519,166 +8599,6 @@
       "status": "missing-answer"
     },
     {
-      "id": "pt-m15-exit-001",
-      "moduleId": "m15",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "distinguir próclise, ênclise e mesóclise;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m15-exit-002",
-      "moduleId": "m15",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "identificar os principais elementos atrativos;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m15-exit-003",
-      "moduleId": "m15",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer as quatro proibições centrais;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m15-exit-004",
-      "moduleId": "m15",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "usar ênclise em início de oração com verbo;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m15-exit-005",
-      "moduleId": "m15",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "usar próclise com palavras negativas e relativos;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m15-exit-006",
-      "moduleId": "m15",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "entender mesóclise com futuros sem atrator;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m15-exit-007",
-      "moduleId": "m15",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "analisar infinitivo sem aplicar regra cega;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m15-exit-008",
-      "moduleId": "m15",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer “em se tratando de”;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m15-exit-009",
-      "moduleId": "m15",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "analisar pausa e intercalação com cautela;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m15-exit-010",
-      "moduleId": "m15",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "analisar locuções verbais;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m15-exit-011",
-      "moduleId": "m15",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "evitar pronome depois de particípio;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m15-exit-012",
-      "moduleId": "m15",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "escolher o pronome correto pela transitividade;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m15-exit-013",
-      "moduleId": "m15",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "aplicar lo/la/los/las;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m15-exit-014",
-      "moduleId": "m15",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "aplicar no/na/nos/nas;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m15-exit-015",
-      "moduleId": "m15",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "aplicar -mos + nos;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m15-exit-016",
-      "moduleId": "m15",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "resolver uma reescrita completa preservando correção e sentido.",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
       "id": "pt-m16-guided-001",
       "moduleId": "m16",
       "kind": "guided",
@@ -11197,196 +9117,6 @@
       "answer": "",
       "autoCorrect": false,
       "status": "missing-answer"
-    },
-    {
-      "id": "pt-m16-exit-001",
-      "moduleId": "m16",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "explicar pontuação por estrutura e sentido;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m16-exit-002",
-      "moduleId": "m16",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "identificar vírgula indevida entre sujeito e verbo;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m16-exit-003",
-      "moduleId": "m16",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "identificar vírgula indevida entre verbo e complemento;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m16-exit-004",
-      "moduleId": "m16",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer intercalações legítimas;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m16-exit-005",
-      "moduleId": "m16",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "aplicar o teste da retirada;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m16-exit-006",
-      "moduleId": "m16",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "pontuar adjuntos deslocados;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m16-exit-007",
-      "moduleId": "m16",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "pontuar orações adverbiais antepostas;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m16-exit-008",
-      "moduleId": "m16",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "analisar escopo;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m16-exit-009",
-      "moduleId": "m16",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "pontuar enumerações e coordenações;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m16-exit-010",
-      "moduleId": "m16",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "analisar vírgula antes de “e” sem regra absoluta;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m16-exit-011",
-      "moduleId": "m16",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "pontuar conectores intercalados;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m16-exit-012",
-      "moduleId": "m16",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer vocativo, aposto e elipse;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m16-exit-013",
-      "moduleId": "m16",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "diferenciar relativa restritiva e explicativa pela pontuação;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m16-exit-014",
-      "moduleId": "m16",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer ponto e vírgula e dois-pontos;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m16-exit-015",
-      "moduleId": "m16",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "analisar travessões e parênteses;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m16-exit-016",
-      "moduleId": "m16",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer usos de aspas e reticências;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m16-exit-017",
-      "moduleId": "m16",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "verificar se o ponto final cria fragmento;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m16-exit-018",
-      "moduleId": "m16",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "testar correção e sentido separadamente;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m16-exit-019",
-      "moduleId": "m16",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "aplicar o protocolo completo em períodos longos.",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
     },
     {
       "id": "pt-m17-guided-001",
@@ -11977,176 +9707,6 @@
       "answer": "",
       "autoCorrect": false,
       "status": "missing-answer"
-    },
-    {
-      "id": "pt-m17-exit-001",
-      "moduleId": "m17",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "localizar sujeito e núcleo antes de flexionar;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m17-exit-002",
-      "moduleId": "m17",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "ignorar distratores próximos ao verbo;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m17-exit-003",
-      "moduleId": "m17",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "analisar sujeito posposto;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m17-exit-004",
-      "moduleId": "m17",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer dupla concordância em partitivos previstos;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m17-exit-005",
-      "moduleId": "m17",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "analisar porcentagens, decimais e frações conforme o padrão da fonte;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m17-exit-006",
-      "moduleId": "m17",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "usar corretamente QUE e QUEM;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m17-exit-007",
-      "moduleId": "m17",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "usar pronomes de tratamento com 3ª pessoa;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m17-exit-008",
-      "moduleId": "m17",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "diferenciar tem/têm, vem/vêm e derivados;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m17-exit-009",
-      "moduleId": "m17",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer HAVER e FAZER impessoais;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m17-exit-010",
-      "moduleId": "m17",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "manter singular em locução com verbo impessoal;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m17-exit-011",
-      "moduleId": "m17",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer sujeito oracional;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m17-exit-012",
-      "moduleId": "m17",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "diferenciar passiva sintética de sujeito indeterminado;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m17-exit-013",
-      "moduleId": "m17",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "aplicar concordância a sujeito composto anteposto e posposto;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m17-exit-014",
-      "moduleId": "m17",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "interpretar OU, NEM e COM;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m17-exit-015",
-      "moduleId": "m17",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer reciprocidade;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m17-exit-016",
-      "moduleId": "m17",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "aplicar os casos especiais do verbo SER;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m17-exit-017",
-      "moduleId": "m17",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "seguir o método VERBO → SUJEITO → NÚCLEO → NÚMERO/PESSOA → REGRA ESPECIAL → CONFIRMAÇÃO.",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
     },
     {
       "id": "pt-m18-guided-001",
@@ -12849,156 +10409,6 @@
       "status": "missing-answer"
     },
     {
-      "id": "pt-m18-exit-001",
-      "moduleId": "m18",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "identificar o substantivo controlador;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m18-exit-002",
-      "moduleId": "m18",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "aplicar a regra geral de gênero e número;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m18-exit-003",
-      "moduleId": "m18",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "analisar adjetivo anteposto e posposto;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m18-exit-004",
-      "moduleId": "m18",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "diferenciar adjunto adnominal de predicativo;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m18-exit-005",
-      "moduleId": "m18",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "concordar predicativos;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m18-exit-006",
-      "moduleId": "m18",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "distinguir particípio passivo de particípio com TER/HAVER;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m18-exit-007",
-      "moduleId": "m18",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "analisar adjetivos compostos e cores;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m18-exit-008",
-      "moduleId": "m18",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "classificar antes de flexionar meio, bastante, só, mesmo, junto, caro e barato;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m18-exit-009",
-      "moduleId": "m18",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "usar corretamente anexo/em anexo;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m18-exit-010",
-      "moduleId": "m18",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer menos e alerta conforme o padrão da fonte;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m18-exit-011",
-      "moduleId": "m18",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "analisar é bom/necessário/proibido;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m18-exit-012",
-      "moduleId": "m18",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "usar possível;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m18-exit-013",
-      "moduleId": "m18",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "analisar tal/qual;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m18-exit-014",
-      "moduleId": "m18",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer mil, milhão, milhar e percentuais;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m18-exit-015",
-      "moduleId": "m18",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "verificar se a flexão preserva o referente e o sentido.",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
       "id": "pt-m19-guided-001",
       "moduleId": "m19",
       "kind": "guided",
@@ -13679,146 +11089,6 @@
       "status": "missing-answer"
     },
     {
-      "id": "pt-m19-exit-001",
-      "moduleId": "m19",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "identificar regente e regido;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m19-exit-002",
-      "moduleId": "m19",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "diferenciar regência verbal e nominal;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m19-exit-003",
-      "moduleId": "m19",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer preposição exigida;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m19-exit-004",
-      "moduleId": "m19",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "recalcular regência quando o sentido muda;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m19-exit-005",
-      "moduleId": "m19",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "analisar agradar, aspirar, assistir, implicar, preferir, obedecer, pagar, perdoar, lembrar, esquecer, proceder e visar;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m19-exit-006",
-      "moduleId": "m19",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "analisar chegar, morar, residir e outros verbos recorrentes da fonte;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m19-exit-007",
-      "moduleId": "m19",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "evitar compartilhar complemento entre regentes diferentes;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m19-exit-008",
-      "moduleId": "m19",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconstruir orações relativas;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m19-exit-009",
-      "moduleId": "m19",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "usar a que/de que/em que/com que;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m19-exit-010",
-      "moduleId": "m19",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "transportar corretamente para o qual/a qual;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m19-exit-011",
-      "moduleId": "m19",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "tratar crase como consequência da regência;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m19-exit-012",
-      "moduleId": "m19",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer famílias frequentes de regência nominal;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m19-exit-013",
-      "moduleId": "m19",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "manter preposição diante de oração iniciada por QUE quando o regente a exige;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m19-exit-014",
-      "moduleId": "m19",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "testar correção gramatical e sentido separadamente.",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
       "id": "pt-m20-guided-001",
       "moduleId": "m20",
       "kind": "guided",
@@ -14469,206 +11739,6 @@
       "status": "missing-answer"
     },
     {
-      "id": "pt-m20-exit-001",
-      "moduleId": "m20",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "explicar crase como fusão;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m20-exit-002",
-      "moduleId": "m20",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "provar preposição e artigo antes do acento;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m20-exit-003",
-      "moduleId": "m20",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "distinguir artigo, preposição e fusão;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m20-exit-004",
-      "moduleId": "m20",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "usar o teste do masculino;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m20-exit-005",
-      "moduleId": "m20",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer casos obrigatórios;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m20-exit-006",
-      "moduleId": "m20",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer casos proibidos;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m20-exit-007",
-      "moduleId": "m20",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "analisar locuções femininas;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m20-exit-008",
-      "moduleId": "m20",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "diferenciar horário de intervalo;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m20-exit-009",
-      "moduleId": "m20",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer “à moda de”;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m20-exit-010",
-      "moduleId": "m20",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "analisar topônimos;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m20-exit-011",
-      "moduleId": "m20",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "analisar casa, terra e distância;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m20-exit-012",
-      "moduleId": "m20",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer àquele/àquela/àquilo;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m20-exit-013",
-      "moduleId": "m20",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer à qual/às quais;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m20-exit-014",
-      "moduleId": "m20",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "identificar casos facultativos;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m20-exit-015",
-      "moduleId": "m20",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "analisar possessivos, nomes próprios e “até”;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m20-exit-016",
-      "moduleId": "m20",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "diferenciar a essa/esta de àquela;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m20-exit-017",
-      "moduleId": "m20",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "resolver lacunas em série;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m20-exit-018",
-      "moduleId": "m20",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "verificar paralelismo;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m20-exit-019",
-      "moduleId": "m20",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "refazer a análise em reescritas;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m20-exit-020",
-      "moduleId": "m20",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "testar correção e sentido separadamente.",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
       "id": "pt-m21-guided-001",
       "moduleId": "m21",
       "kind": "guided",
@@ -15227,156 +12297,6 @@
       "answer": "",
       "autoCorrect": false,
       "status": "missing-answer"
-    },
-    {
-      "id": "pt-m21-exit-001",
-      "moduleId": "m21",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "identificar o sentido atual de uma palavra pelo contexto;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m21-exit-002",
-      "moduleId": "m21",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "distinguir denotação de conotação;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m21-exit-003",
-      "moduleId": "m21",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "testar sinonímia contextual;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m21-exit-004",
-      "moduleId": "m21",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer diferença de intensidade, registro e avaliação;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m21-exit-005",
-      "moduleId": "m21",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "distinguir antonímia de negação;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m21-exit-006",
-      "moduleId": "m21",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer hiperônimo e hipônimo;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m21-exit-007",
-      "moduleId": "m21",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "usar o teste “X é um tipo de Y”;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m21-exit-008",
-      "moduleId": "m21",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer parônimos;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m21-exit-009",
-      "moduleId": "m21",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "diferenciar ratificar de retificar;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m21-exit-010",
-      "moduleId": "m21",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer polissemia;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m21-exit-011",
-      "moduleId": "m21",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "diferenciar polissemia de ambiguidade;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m21-exit-012",
-      "moduleId": "m21",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "identificar ambiguidade lexical, estrutural, referencial e de escopo;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m21-exit-013",
-      "moduleId": "m21",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "provar ambiguidade com duas paráfrases;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m21-exit-014",
-      "moduleId": "m21",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "avaliar se uma substituição preserva precisão e efeito;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m21-exit-015",
-      "moduleId": "m21",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "aplicar o método CONTEXTO → SENTIDO → RELAÇÃO → SUBSTITUIÇÃO → EFEITO → CONFIRMAÇÃO.",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
     },
     {
       "id": "pt-m22-guided-001",
@@ -15999,146 +12919,6 @@
       "status": "missing-answer"
     },
     {
-      "id": "pt-m22-exit-001",
-      "moduleId": "m22",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "distinguir coesão de coerência;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m22-exit-002",
-      "moduleId": "m22",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer coesão referencial e sequencial;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m22-exit-003",
-      "moduleId": "m22",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "identificar anáfora, catáfora e dêixis;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m22-exit-004",
-      "moduleId": "m22",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "encontrar referentes por substituição e contexto;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m22-exit-005",
-      "moduleId": "m22",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "rastrear cadeias referenciais;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m22-exit-006",
-      "moduleId": "m22",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer elipse e expressão resumidora;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m22-exit-007",
-      "moduleId": "m22",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "classificar relações entre ideias pelo contexto;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m22-exit-008",
-      "moduleId": "m22",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "diferenciar oposição, concessão, causa, consequência e conclusão;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m22-exit-009",
-      "moduleId": "m22",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "testar coerência interna e externa;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m22-exit-010",
-      "moduleId": "m22",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer contradições e quebras de expectativa;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m22-exit-011",
-      "moduleId": "m22",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "distinguir mudança de sentido de incoerência;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m22-exit-012",
-      "moduleId": "m22",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "separar correção, sentido, coerência e clareza;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m22-exit-013",
-      "moduleId": "m22",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "analisar reescritas pelo comando;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m22-exit-014",
-      "moduleId": "m22",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "aplicar o método REFERENTE → RELAÇÃO → PROGRESSÃO → SENTIDO GLOBAL → REESCRITURA → CONFIRMAÇÃO.",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
       "id": "pt-m23-guided-001",
       "moduleId": "m23",
       "kind": "guided",
@@ -16707,146 +13487,6 @@
       "answer": "",
       "autoCorrect": false,
       "status": "missing-answer"
-    },
-    {
-      "id": "pt-m23-exit-001",
-      "moduleId": "m23",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "distinguir gênero de tipo textual;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m23-exit-002",
-      "moduleId": "m23",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "analisar textos mistos;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m23-exit-003",
-      "moduleId": "m23",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "respeitar o recorte do comando;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m23-exit-004",
-      "moduleId": "m23",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer narração por progressão temporal;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m23-exit-005",
-      "moduleId": "m23",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer descrição por caracterização e simultaneidade;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m23-exit-006",
-      "moduleId": "m23",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer injunção por programa de ação;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m23-exit-007",
-      "moduleId": "m23",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "distinguir exposição de argumentação;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m23-exit-008",
-      "moduleId": "m23",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "localizar tese e argumentos;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m23-exit-009",
-      "moduleId": "m23",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer função de exemplos e relatos;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m23-exit-010",
-      "moduleId": "m23",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "distinguir tipo textual de função da linguagem;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m23-exit-011",
-      "moduleId": "m23",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer as seis funções;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m23-exit-012",
-      "moduleId": "m23",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "escolher a função predominante pela finalidade;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m23-exit-013",
-      "moduleId": "m23",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "evitar classificação por marca isolada;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m23-exit-014",
-      "moduleId": "m23",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "aplicar o método RECORTE → FINALIDADE → TRAÇOS → ORGANIZAÇÃO → MARCAS → CLASSIFICAÇÃO → CONFERÊNCIA.",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
     },
     {
       "id": "pt-m24-guided-001",
@@ -17627,186 +14267,6 @@
       "answer": "",
       "autoCorrect": false,
       "status": "missing-answer"
-    },
-    {
-      "id": "pt-m24-exit-001",
-      "moduleId": "m24",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "ler o comando antes de resolver;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m24-exit-002",
-      "moduleId": "m24",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "localizar trecho-base;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m24-exit-003",
-      "moduleId": "m24",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "distinguir explícito e implícito;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m24-exit-004",
-      "moduleId": "m24",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer paráfrase válida;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m24-exit-005",
-      "moduleId": "m24",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "inferir apenas com pista;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m24-exit-006",
-      "moduleId": "m24",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "identificar extrapolação;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m24-exit-007",
-      "moduleId": "m24",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "interpretar pressupostos;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m24-exit-008",
-      "moduleId": "m24",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "distinguir pressuposto de subentendido;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m24-exit-009",
-      "moduleId": "m24",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "integrar linguagem verbal e não verbal;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m24-exit-010",
-      "moduleId": "m24",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer ironia;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m24-exit-011",
-      "moduleId": "m24",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "distinguir literário de não literário pela função dominante;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m24-exit-012",
-      "moduleId": "m24",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "reconhecer formas centrais de intertextualidade;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m24-exit-013",
-      "moduleId": "m24",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "detectar generalização, intensificação, causalidade inventada e apagamento de ressalva;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m24-exit-014",
-      "moduleId": "m24",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "usar SIM / NÃO / EXTRAPOLA;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m24-exit-015",
-      "moduleId": "m24",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "controlar quantificadores e modalizadores;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m24-exit-016",
-      "moduleId": "m24",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "identificar passagem-prova;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m24-exit-017",
-      "moduleId": "m24",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "respeitar o recorte temático;",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
-    },
-    {
-      "id": "pt-m24-exit-018",
-      "moduleId": "m24",
-      "kind": "exit",
-      "type": "self-assessment",
-      "prompt": "chegar ao gabarito por evidência textual.",
-      "answer": "",
-      "autoCorrect": false,
-      "status": "self-assessment"
     },
     {
       "id": "pt-review-cumulative-001",

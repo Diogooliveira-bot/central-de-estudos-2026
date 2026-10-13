@@ -84,7 +84,7 @@ function writeState(id, value) {
 }
 function stableId(moduleId, kind, ordinal) { return 'pt-' + moduleId + '-' + kind + '-' + String(ordinal).padStart(3, '0'); }
 function sectionLabel(kind) {
-  return ({ guided: 'Prática guiada', independent: 'Prática independente', active: 'Revisão ativa', mastery: 'Miniteste de domínio', exit: 'Teste de saída', cumulative: 'Revisão cumulativa' })[kind] || 'Atividade';
+  return ({ guided: 'Questões guiadas', independent: 'Questões estilo prova', mastery: 'Questões estilo prova', active: 'Questões de revisão do módulo', cumulative: 'Questões de revisão do módulo' })[kind] || 'Atividade';
 }
 function createFeedback() {
   const box = document.createElement('div');
@@ -355,21 +355,12 @@ function processActiveReview(articleState) {
     });
   });
 }
-function processExitTests(articleState) {
+function hideExitTests(articleState) {
   const article = articleState.article;
   directChildren(article).filter(node => isH2(node) && /teste (?:de sa[ií]da|de dom[ií]nio\s*[—-]\s*produ[cç][aã]o pr[oó]pria)/i.test(clean(node.textContent))).forEach(start => {
-    const end = nextH2(start); const items = followingUntil(start, end).flatMap(node => node.tagName === 'LI' ? [node] : [...node.querySelectorAll('li')]);
-    items.forEach(item => {
-      const id = stableId(articleState.moduleId, 'exit', articleState.counters.exit++); const saved = readState(id);
-      item.classList.add('pta-question'); item.dataset.ptaId = id; item.dataset.ptaKind = 'exit';
-      const content = item.innerHTML; item.innerHTML = '';
-      const label = document.createElement('label'); label.className = 'pta-self-check';
-      const input = document.createElement('input'); input.type = 'checkbox'; input.checked = !!saved.checked;
-      const span = document.createElement('span'); span.innerHTML = content; label.append(input, span); item.appendChild(label);
-      input.addEventListener('change', () => { writeState(id, { checked: input.checked, responded: input.checked, updatedAt: new Date().toISOString() }); articleState.update(); });
-      articleState.records.push({ id, moduleId: articleState.moduleId, kind: 'exit', type: 'self-assessment', prompt: clean(span.textContent), answer: '', autoCorrect: false, status: 'self-assessment' });
-    });
-    if (items.length) addSectionSummary(articleState, start, end, 'exit');
+    const end = nextH2(start);
+    start.dataset.ptaSourceHidden = 'true'; start.setAttribute('aria-hidden', 'true');
+    followingUntil(start, end).forEach(node => { node.dataset.ptaSourceHidden = 'true'; node.setAttribute('aria-hidden', 'true'); });
   });
 }
 function processCumulative(articleState) {
@@ -403,7 +394,7 @@ function addSectionSummary(articleState, start, end, kind) {
 }
 function addModuleSummary(articleState) {
   const first = articleState.article.querySelector('[data-pta-id]'); if (!first) return;
-  const box = document.createElement('section'); box.className = 'pta-module-summary'; box.innerHTML = '<div><h3>Atividades interativas</h3><p>Responda e confira cada item sem consultar um gabarito separado.</p></div><div class="pta-module-score"><strong>0%</strong><span>0 de 0 respondidas</span></div>';
+  const box = document.createElement('section'); box.className = 'pta-module-summary'; box.innerHTML = '<div><h3>Questões do módulo</h3><p>Questões guiadas, estilo prova e revisão — responda antes de conferir.</p></div><div class="pta-module-score"><strong>0%</strong><span>0 de 0 respondidas</span></div>';
   first.before(box); articleState.moduleSummary = box;
 }
 function updateState(articleState) {
@@ -435,7 +426,7 @@ function enhance(article, options) {
     processPractice(articleState);
     processMastery(articleState);
     processActiveReview(articleState);
-    processExitTests(articleState);
+    hideExitTests(articleState);
   }
   addModuleSummary(articleState); articleState.update();
   article.dataset.ptaRecordCount = String(articleState.records.length); contentRoot.dataset.ptaRecordCount = String(articleState.records.length);

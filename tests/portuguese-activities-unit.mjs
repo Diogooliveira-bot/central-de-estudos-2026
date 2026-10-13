@@ -72,3 +72,14 @@ test('revisão cumulativa preserva e associa os 84 itens', () => {
   assert.equal(cumulative.filter(item => item.status === 'associated').length, 84);
   dom.window.close();
 });
+
+test('interface exibe somente guiadas, estilo prova e revisão do módulo', () => {
+  const { dom, host, records } = render('m01');
+  assert.equal(records.some(item => item.kind === 'exit'), false);
+  assert.equal(host.querySelectorAll('[data-pta-kind="exit"]').length, 0);
+  assert.equal(host.querySelectorAll('[data-pta-source-hidden="true"]').length > 0, true);
+  const labels = [...host.querySelectorAll('.pta-question-kicker span:first-child')].map(node => node.textContent);
+  assert.equal(labels.length > 0, true);
+  assert.ok(labels.every(label => ['Questões estilo prova', 'Questões de revisão do módulo'].includes(label)));
+  dom.window.close();
+});
