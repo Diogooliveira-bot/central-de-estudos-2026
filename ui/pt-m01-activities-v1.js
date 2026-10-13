@@ -29,67 +29,73 @@ function addStyle(){if(document.getElementById('pta-m01-style'))return;let s=doc
 function enhance(article){
  if(!article||article.dataset.ptaM01Enhanced==='1')return;
  article.dataset.ptaM01Enhanced='1';addStyle();
- const headings=[...article.querySelectorAll('h2,h3,h4')];
- const guided=headings.find(h=>/prática guiada/i.test(clean(h.textContent)));
- const independent=headings.find(h=>/prática independente/i.test(clean(h.textContent)));
- if(guided){
-  const all=[...article.querySelectorAll('h2,h3,h4,p,blockquote,div')];
-  const guideQuestions=headings.filter(h=>/^questão guiada\s*\d+/i.test(clean(h.textContent))&&!!(guided.compareDocumentPosition(h)&Node.DOCUMENT_POSITION_FOLLOWING)&&(!independent||!!(h.compareDocumentPosition(independent)&Node.DOCUMENT_POSITION_FOLLOWING)));
-  guideQuestions.forEach((h)=>{
-   const candidates=[];let node=h.nextElementSibling;
-   while(node&&!/^H[234]$/.test(node.tagName)){
-    if(/^(?:passo\s*\d+\s*:|conclusão\s*:)/i.test(clean(node.textContent)))candidates.push(node);
-    node=node.nextElementSibling;
-   }
-   if(!candidates.length)return;
+ const tidy=el=>clean(el?.innerText||el?.textContent||'');
+ const heading=el=>/^(H[1-6])$/.test(el.tagName);
+ const blocks=[...article.querySelectorAll('h2,h3,h4,h5,p,li,blockquote')].filter(el=>!el.parentElement?.closest('p,li,blockquote'));
+ const guidedStart=blocks.find(el=>/^(?:16\.\s*)?prática guiada$/i.test(tidy(el)));
+ const independentStart=blocks.find(el=>/^(?:17\.\s*)?prática independente$/i.test(tidy(el)));
+ const after=(a,b)=>!!(a.compareDocumentPosition(b)&Node.DOCUMENT_POSITION_FOLLOWING);
+ const inRange=(el,start,end)=>!!start&&after(start,el)&&(!end||after(el,end));
+ // Respostas guiadas são passos e conclusões; manter o enunciado visível.
+ if(guidedStart){
+  const qs=blocks.filter(el=>inRange(el,guidedStart,independentStart)&&/^questão guiada\s*\d+/i.test(tidy(el)));
+  qs.forEach((q,i)=>{
+   const next=qs[i+1]||independentStart;
+   const segment=blocks.filter(el=>inRange(el,q,next));
+   const responses=segment.filter(el=>/^(?:passo\s*\d+\s*:|conclusão\s*:)/i.test(tidy(el)));
+   if(!responses.length)return;
+   const first=responses[0];
    const details=document.createElement('details');details.className='pta-reveal';
-   const sum=document.createElement('summary');sum.textContent='Mostrar raciocínio e resposta';details.appendChild(sum);
-   const answer=document.createElement('div');answer.className='pta-reveal-answer';details.appendChild(answer);
-   candidates[0].before(details);candidates.forEach(p=>answer.appendChild(p));
+   const summary=document.createElement('summary');summary.textContent='Mostrar raciocínio e resposta';
+   const answer=document.createElement('div');answer.className='pta-reveal-answer';
+   details.append(summary,answer);first.before(details);responses.forEach(el=>answer.append(el));
   });
  }
- if(!independent)return;
- // A seção de gabarito permanece intacta. Intervenções somente antes dela.
- const following=headings.filter(h=>!!(independent.compareDocumentPosition(h)&Node.DOCUMENT_POSITION_FOLLOWING));
- const answerHeading=following.find(h=>/^(?:\d+\.\s*)?(?:gabarito|respostas? comentadas?|correção)/i.test(clean(h.textContent)));
- const elements=[...article.querySelectorAll('p,li')].filter(el=>{
-  const pos=independent.compareDocumentPosition(el);
-  return !!(pos&Node.DOCUMENT_POSITION_FOLLOWING)&&(!answerHeading||!!(el.compareDocumentPosition(answerHeading)&Node.DOCUMENT_POSITION_FOLLOWING));
- });
- const questions=elements.filter(el=>/^\d{1,3}\.\s+\S/.test(clean(el.textContent))&&
-   !el.closest('.pta-reveal,.pta-writing')&&!(el.tagName==='LI'&&el.parentElement?.closest('li')));
- questions.forEach((q)=>{
-  const title=clean(q.textContent);const key=hash(title);
-  const candidates=[];let node=q.nextElementSibling;
-  while(node&&candidates.length<5){
-   const tx=clean(node.textContent);
-   if(/^[A-E][).]\s+\S/i.test(tx)){candidates.push(node);node=node.nextElementSibling;continue}
-   break;
-  }
-  if(candidates.length>=2){
-   candidates.forEach((el)=>{
-    const letter=clean(el.textContent).match(/^([A-E])[).]/i)?.[1]?.toUpperCase();
-    if(!letter)return;
-    el.classList.add('pta-choice');el.setAttribute('role','button');el.tabIndex=0;
-    const choose=()=>{
-      candidates.forEach(p=>p.setAttribute('aria-pressed',p===el?'true':'false'));
-      write('choice:'+key,letter);
-    };
-    el.setAttribute('aria-pressed',read('choice:'+key)===letter?'true':'false');
-    el.addEventListener('click',choose);
-    el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();choose()}});
-   });
-   const note=document.createElement('p');note.className='pta-choice-note';note.textContent='Toque em uma alternativa para registrar sua escolha. Confira o gabarito ao final do módulo.';
-   candidates[candidates.length-1].after(note);
-  }else{
-   const box=document.createElement('div');box.className='pta-writing';
-   const label=document.createElement('label');const id='pta-answer-'+key;label.htmlFor=id;label.textContent='Sua resposta / anotação';
-   const textarea=document.createElement('textarea');textarea.id=id;textarea.placeholder='Escreva seu raciocínio aqui…';textarea.value=read('text:'+key);
+ if(!independentStart)return;
+ const later=blocks.filter(el=>after(independentStart,el));
+ const answerHeading=later.find(el=>/^(?:\d+\.\s*)?(?:gabarito|respostas? comentadas?|correção)(?:\s|$)/i.test(tidy(el)));
+ const until=answerHeading||null;
+ const work=blocks.filter(el=>inRange(el,independentStart,until));
+ const questions=work.filter(el=>/^\d{1,3}\.\s+\S/.test(tidy(el))&&(!el.closest('ol')||el.tagName==='LI'));
+ questions.forEach((q,i)=>{
+   const key=hash(tidy(q));const next=questions[i+1]||until;
+   const siblings=work.filter(el=>inRange(el,q,next)&&!el.closest('.pta-writing,.pta-reveal'));
+   const choices=[];
+   for(const el of siblings){
+     if(/^[A-E][).]\s*\S/i.test(tidy(el)))choices.push(el);
+   }
+   // Alguns exercícios usam alternativas separadas apenas por <br>.
+   for(const el of siblings){
+     if(choices.length>=2)break;
+     if(!el.querySelector('br'))continue;
+     const parts=el.innerHTML.split(/<br\s*\/?\s*>/i);
+     if(parts.filter(s=>/^(?:\s|<[^>]*>)*[A-E][).]/i.test(s)).length<2)continue;
+     const fragment=document.createDocumentFragment();
+     parts.forEach(part=>{if(!part.trim())return;const p=document.createElement('p');p.innerHTML=part;fragment.append(p);if(/^[A-E][).]/i.test(tidy(p)))choices.push(p)});
+     el.replaceWith(fragment);
+   }
+   if(choices.length>=2){
+     choices.forEach(el=>{
+       const letter=tidy(el).match(/^([A-E])[).]/i)?.[1]?.toUpperCase();if(!letter)return;
+       el.classList.add('pta-choice');el.setAttribute('role','button');el.tabIndex=0;
+       const choose=()=>{choices.forEach(p=>p.setAttribute('aria-pressed',p===el?'true':'false'));write('choice:'+key,letter)};
+       el.setAttribute('aria-pressed',read('choice:'+key)===letter?'true':'false');
+       el.addEventListener('click',choose);
+       el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();choose()}});
+     });
+     const note=document.createElement('p');note.className='pta-choice-note';note.textContent='Marque a alternativa e confira o gabarito no final.';
+     choices[choices.length-1].after(note);return;
+   }
+   // Sem opções identificáveis: somente perguntas de resposta livre recebem campo.
+   const field=document.createElement('div');field.className='pta-writing';
+   const label=document.createElement('label'),textarea=document.createElement('textarea'),tip=document.createElement('small');
+   textarea.id='pta-answer-'+key;label.htmlFor=textarea.id;label.textContent='Sua resposta / anotação';
+   textarea.placeholder='Escreva seu raciocínio aqui…';textarea.value=read('text:'+key);
    textarea.addEventListener('input',()=>write('text:'+key,textarea.value));
-   const hint=document.createElement('small');hint.textContent='Salvo automaticamente neste navegador.';
-   box.append(label,textarea,hint);q.after(box);
-  }
+   tip.textContent='Salvo automaticamente neste navegador.';field.append(label,textarea,tip);
+   q.after(field);
  });
 }
+
 global.BasePtM01Activities={enhance};
 })(window);
