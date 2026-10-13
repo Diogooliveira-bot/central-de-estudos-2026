@@ -3,7 +3,7 @@
 'use strict';
 if (global.BasePortugueseActivities) return;
 
-const VERSION = '1.1.0';
+const VERSION = '1.1.1';
 const STYLE_ID = 'base-portuguese-activities-v1-style';
 const ROOT_CLASS = 'pta-v1';
 const MAX_PER_STYLE = 10;
@@ -482,6 +482,31 @@ function processCumulative(articleState) {
   if (cumulative.length && cumulative.every(record => record.status === 'associated')) markAnswerSource(answerStart, answerEnd);
   addSectionSummary(articleState, part1, answerStart, 'cumulative');
 }
+function replaceVisibleOrdinal(container, ordinal) {
+  const target = container?.querySelector?.('.pta-question-content > h2:first-child,.pta-question-content > h3:first-child,.pta-question-content > h4:first-child,.pta-question-content > p:first-child');
+  if (!target || numberFrom(target.textContent) == null) return;
+  const walker = document.createTreeWalker(target, global.NodeFilter.SHOW_TEXT); const textNode = walker.nextNode();
+  if (!textNode) return;
+  textNode.nodeValue = textNode.nodeValue.replace(/^(\s*)(?:quest[aã]o\s*)?\d{1,3}(\s*[.ªº):—-]\s*)/i, '$1' + ordinal + '$2');
+}
+function organizeVisibleNumbering(articleState) {
+  const groups = [
+    articleState.records.filter(record => record.kind === 'independent' || record.kind === 'mastery'),
+    articleState.records.filter(record => record.kind === 'active' || record.kind === 'cumulative')
+  ];
+  groups.forEach(records => records.forEach((record, index) => {
+    const card = articleState.article.querySelector('[data-pta-id="' + record.id + '"]'); if (!card) return;
+    const label = card.querySelector('.pta-question-id'); if (label) label.textContent = 'Questão ' + (index + 1) + ' de ' + records.length;
+    replaceVisibleOrdinal(card, index + 1);
+  }));
+  const guided = articleState.records.filter(record => record.kind === 'guided');
+  guided.forEach((record, index) => {
+    const details = articleState.article.querySelector('[data-pta-id="' + record.id + '"]'); if (!details) return;
+    const summary = details.querySelector(':scope > summary'); if (summary) summary.textContent = 'Questão guiada ' + (index + 1) + ' — raciocínio e resposta';
+    const heading = details.previousElementSibling;
+    if (heading && /^H[2-4]$/.test(heading.tagName) && /quest[aã]o guiada\s*\d+/i.test(clean(heading.textContent))) heading.textContent = heading.textContent.replace(/quest[aã]o guiada\s*\d+/i, 'Questão guiada ' + (index + 1));
+  });
+}
 function addSectionSummary(articleState, start, end, kind) {
   const box = document.createElement('div'); box.className = 'pta-section-summary'; box.dataset.ptaSummaryKind = kind;
   end?.before(box); articleState.sectionSummaries.push(box); articleState.update();
@@ -523,6 +548,7 @@ function enhance(article, options) {
     processActiveReview(articleState);
     hideExitTests(articleState);
   }
+  organizeVisibleNumbering(articleState);
   addModuleSummary(articleState); articleState.update();
   article.dataset.ptaRecordCount = String(articleState.records.length); contentRoot.dataset.ptaRecordCount = String(articleState.records.length);
   return articleState.records.slice();

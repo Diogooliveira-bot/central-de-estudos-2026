@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-13T22:31:38.531Z",
+  "generatedAt": "2026-10-13T22:45:10.017Z",
   "source": "portugues-autodidata-data.txt",
-  "componentVersion": "1.1.0",
+  "componentVersion": "1.1.1",
   "modules": [
     {
       "moduleId": "m01",

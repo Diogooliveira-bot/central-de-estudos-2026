@@ -55,7 +55,7 @@ totals.userFacing = {
   examStyle: totals.byKind.independent + totals.byKind.mastery,
   moduleReview: totals.byKind.active + totals.byKind.cumulative
 };
-const inventory = { generatedAt: new Date().toISOString(), source: 'portugues-autodidata-data.txt', componentVersion: '1.1.0', modules, totals, exercises: records };
+const inventory = { generatedAt: new Date().toISOString(), source: 'portugues-autodidata-data.txt', componentVersion: '1.1.1', modules, totals, exercises: records };
 const outDir = path.join(root, 'reports');
 fs.mkdirSync(outDir, { recursive: true });
 fs.writeFileSync(path.join(outDir, 'portuguese-activities-inventory.json'), JSON.stringify(inventory, null, 2) + '\n');
@@ -81,6 +81,7 @@ lines.push(
   '- Um único componente reutilizável atende M01–M24 e a revisão cumulativa.',
   '- Questões estilo prova são exclusivamente objetivas, com alternativas.',
   '- Revisões ativas exibem apenas a pergunta e uma resposta inicialmente oculta, vinculada à teoria do próprio módulo.',
+  '- A numeração visível é reorganizada de 1 até o total de cada bloco, sem alterar os IDs persistentes.',
   '- IDs estáveis seguem o padrão `pt-<módulo>-<modalidade>-<ordem>`.',
   '- Tentativas e textos usam chaves sincronizáveis com escopo explícito do usuário autenticado.',
   '- Gabaritos antigos permanecem no DOM e só são ocultados quando todas as respostas da seção foram associadas.',
@@ -93,7 +94,7 @@ lines.push(
   '- Persistência isolada por usuário.',
   '- Limite de 10 itens por bloco, prova somente objetiva e resposta de revisão inicialmente oculta.',
   '- Associação dos 10 itens exibidos na revisão cumulativa.',
-  '- Suíte completa do repositório: 36 testes aprovados.',
+  '- Suíte completa do repositório: 37 testes aprovados.',
   '', '## Limitações do conteúdo original', '',
   `- Questões sem resposta segura localizada na teoria: ${totals.missingAnswer}.`,
   '- Os testes de saída em formato de checklist permanecem preservados na fonte, mas não são exibidos como atividades.',

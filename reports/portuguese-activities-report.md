@@ -48,6 +48,7 @@ Gerado a partir de `portugues-autodidata-data.txt`. A interface exibe no máximo
 - Um único componente reutilizável atende M01–M24 e a revisão cumulativa.
 - Questões estilo prova são exclusivamente objetivas, com alternativas.
 - Revisões ativas exibem apenas a pergunta e uma resposta inicialmente oculta, vinculada à teoria do próprio módulo.
+- A numeração visível é reorganizada de 1 até o total de cada bloco, sem alterar os IDs persistentes.
 - IDs estáveis seguem o padrão `pt-<módulo>-<modalidade>-<ordem>`.
 - Tentativas e textos usam chaves sincronizáveis com escopo explícito do usuário autenticado.
 - Gabaritos antigos permanecem no DOM e só são ocultados quando todas as respostas da seção foram associadas.
@@ -62,7 +63,7 @@ Gerado a partir de `portugues-autodidata-data.txt`. A interface exibe no máximo
 - Persistência isolada por usuário.
 - Limite de 10 itens por bloco, prova somente objetiva e resposta de revisão inicialmente oculta.
 - Associação dos 10 itens exibidos na revisão cumulativa.
-- Suíte completa do repositório: 36 testes aprovados.
+- Suíte completa do repositório: 37 testes aprovados.
 
 ## Limitações do conteúdo original
 

@@ -90,3 +90,19 @@ test('interface exibe somente guiadas, estilo prova e revisão do módulo', () =
   assert.ok(labels.every(label => ['Questões estilo prova', 'Questões de revisão do módulo'].includes(label)));
   dom.window.close();
 });
+
+test('numeração visual é sequencial mesmo após filtrar questões sem alternativas', () => {
+  for (const moduleId of ['m01', 'm02', 'm13', 'review']) {
+    const { dom, host } = render(moduleId);
+    const groups = [
+      [...host.querySelectorAll('[data-pta-kind="independent"]:not([data-pta-source-hidden="true"]),[data-pta-kind="mastery"]:not([data-pta-source-hidden="true"])')],
+      [...host.querySelectorAll('[data-pta-kind="active"]:not([data-pta-source-hidden="true"]),[data-pta-kind="cumulative"]:not([data-pta-source-hidden="true"])')]
+    ];
+    groups.filter(group => group.length).forEach(group => {
+      assert.deepEqual(group.map(card => card.querySelector('.pta-question-id')?.textContent), group.map((_, index) => `Questão ${index + 1} de ${group.length}`));
+    });
+    const guided = [...host.querySelectorAll('.pta-guided[data-pta-id^="pt-"]:not(.pta-review-answer) > summary')];
+    assert.deepEqual(guided.map(node => node.textContent), guided.map((_, index) => `Questão guiada ${index + 1} — raciocínio e resposta`));
+    dom.window.close();
+  }
+});
