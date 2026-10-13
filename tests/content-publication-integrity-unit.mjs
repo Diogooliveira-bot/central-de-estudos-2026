@@ -36,6 +36,12 @@ test('bateria interna do CPC tem 15 questões válidas em cada módulo M07-M17',
  }
 });
 
+test('gerador de progresso localiza a declaraÃ§Ã£o CPC_WEEKS e carrega sua fonte de questÃµes',async()=>{
+ const builder=await read('scripts/build-home-progress.mjs');
+ assert.match(builder,/lastIndexOf\('const CPC_WEEKS='\)/);
+ assert.match(builder,/run\('content\/cpc\/cpc-fixation-questions-v1\.js'\)/);
+});
+
 test('índice de Processo Penal e registro da Central usam os 22 módulos',async()=>{
  const indexSource=await read('content/cpp/cpp-native-index.js');
  const context={window:{}};
