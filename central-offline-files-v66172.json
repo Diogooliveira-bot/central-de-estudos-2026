@@ -1,5 +1,5 @@
 {
-  "build": "20261013-qc-sharing-v1",
+  "build": "20261013-portuguese-activities-v1",
   "files": [
     "/central-v119.html?direct=35",
     "/ui/discipline-standard.js?v=20261003penalnative1",
@@ -203,6 +203,7 @@
     "/ui/study-navigation.css?v=20261007agenda1",
     "/ui/mind-map.css?v=20261002p3",
     "/central-v119.html",
+    "/ui/portuguese-activities-v1.js?v=20261013ptactivities1",
     "/ui/portuguese-reader.js?v=20261003ptnative2",
     "/ui/portuguese-reader.css?v=20261003ptnative2",
     "/tools/cpc-m01-mapa.html",
