@@ -2752,10 +2752,10 @@ const DATA_RESTANTES = [
       "answer": false,
       "explanation": "Art. 4° - Constitui crime contra a ordem econômica: I - abusar do poder econômico, dominando o mercado ou eliminando, total ou parcialmente, a concorrência mediante qualquer forma de ajuste ou acordo de empresas; II - formar acordo, convênio, ajuste ou aliança entre ofertantes, visando: a) à fixação artificial de preços ou quantidades vendidas ou produzidas; III - (revogado); IV - (revogado); V - (revogado); VI - (revogado); VII - (revogado). Pena - reclusão, de 2 (dois) a 5 (cinco) anos e multa.",
       "source": "54.pdf · questão 32 · Art. 4º, Lei 8.137/90",
-      "meta": "FGV 2025 - Juiz Federal Substituto (TRF - 3º Região)",
+      "meta": "FGV 2025 - Juiz Federal Substituto (TRF - 3ª Região)",
       "bank": "FGV",
       "year": 2025,
-      "role": "Juiz Federal Substituto (TRF - 3º Região)",
+      "role": "Juiz Federal Substituto (TRF - 3ª Região)",
       "origin": "real"
     }
   },
@@ -7973,10 +7973,10 @@ const DATA_RESTANTES = [
       "answer": false,
       "explanation": "Art. 11. [...] § 8º - Não descaracteriza a condição de segurado especial: [...] II – a exploração da atividade turística da propriedade rural, inclusive com hospedagem, por não mais de 120 (cento e vinte) dias ao ano;",
       "source": "55.pdf · questão 25 · Art. 11, § 8º, II, Lei 8.213/91",
-      "meta": "FGV 2025 - Juiz Federal Substituto (TRF - 3º Região)",
+      "meta": "FGV 2025 - Juiz Federal Substituto (TRF - 3ª Região)",
       "bank": "FGV",
       "year": 2025,
-      "role": "Juiz Federal Substituto (TRF - 3º Região)",
+      "role": "Juiz Federal Substituto (TRF - 3ª Região)",
       "origin": "real"
     }
   },
@@ -8019,10 +8019,10 @@ const DATA_RESTANTES = [
       "answer": false,
       "explanation": "Art. 11, § 9º - Não é segurado especial o membro de grupo familiar que possuir outra fonte de rendimento, exceto se decorrente de: [...] III - exercício de atividade remunerada em período não superior a 120 (cento e vinte) dias, corridos ou intercalados, no ano civil, observado o disposto no § 13 do art. 12 da Lei nº 8.212, de 24 de julho de 1991;",
       "source": "55.pdf · questão 27 · Art. 11, § 9º, III, Lei 8.213/91",
-      "meta": "FGV 2025 - Juiz Federal Substituto (TRF - 3º Região)",
+      "meta": "FGV 2025 - Juiz Federal Substituto (TRF - 3ª Região)",
       "bank": "FGV",
       "year": 2025,
-      "role": "Juiz Federal Substituto (TRF - 3º Região)",
+      "role": "Juiz Federal Substituto (TRF - 3ª Região)",
       "origin": "real"
     }
   },

@@ -1149,7 +1149,7 @@ const DATA_ADM_PACK2 = [
       "statement": "O Fundo de Investimento “Dex Capital”, de origem norte-americana, tem interesse em investir na República Federativa do Brasil, injetando milhões de dólares no mercado brasileiro, gerando externalidades positivas. Nesse contexto, a entidade realiza uma série de diligências in loco para tomar ciência dos riscos a que estará submetida. Surge, assim, uma dúvida quanto ao lançamento de debêntures e valores mobiliários e à emissão de partes beneficiárias pelas empresas públicas. Nesse cenário, considerando as disposições da Lei nº 13.303/16, é correto afirmar que as empresas públicas podem lançar debêntures ou outros títulos ou valores mobiliários, conversíveis em ações, mas não podem emitir partes beneficiárias.",
       "answer": false,
       "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
-      "source": "28.pdf · questão 32 · Art. 11, Lei 13.303/2026",
+      "source": "28.pdf · questão 32 · Art. 11, Lei 13.303/2016",
       "meta": "FGV 2023 - Consultor Legislativo - Área VIII (Câmara dos Deputados)",
       "bank": "FGV",
       "year": 2023,
@@ -1706,11 +1706,11 @@ const DATA_ADM_PACK2 = [
       "statement": "Julgue o item a seguir. No âmbito da Administração Federal, a natureza especial conferida à agência reguladora é caracterizada pela ausência de tutela ou de subordinação hierárquica e, assim sendo, pela desnecessidade de autorização ministerial específica para a realização de concursos públicos, ou para o provimento dos cargos relativos ao seu quadro de pessoal autorizados em lei.",
       "answer": false,
       "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
-      "source": "32.pdf · questão 15 · Art. 3º, § 2º, I, a, b, Lei 1`3.848/19",
-      "meta": "FGV 2025 - Juiz Federal Substituto (TRF - 3º Região))",
+      "source": "32.pdf · questão 15 · Art. 3º, § 2º, I, a, b, Lei 13.848/19",
+      "meta": "FGV 2025 - Juiz Federal Substituto (TRF - 3ª Região)",
       "bank": "FGV",
       "year": 2025,
-      "role": "Juiz Federal Substituto (TRF - 3º Região))",
+      "role": "Juiz Federal Substituto (TRF - 3ª Região)",
       "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
     }
   },
@@ -1894,11 +1894,11 @@ const DATA_ADM_PACK2 = [
       "statement": "Julgue o item a seguir. No âmbito das agências reguladoras federais, a adoção e as propostas de alteração de atos normativos de interesse geral dos agentes econômicos, consumidores ou usuários dos serviços prestados serão precedidas, nos termos da regulamentação específica, da realização de Análise de Impacto Regulatório (AIR), que conterá informações e dados sobre os possíveis efeitos do ato normativo.",
       "answer": true,
       "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
-      "source": "32.pdf · questão 25 · Art. 6º, Lei 1`3.848/19",
-      "meta": "FGV 2025 - Juiz Federal Substituto (TRF - 3º Região)",
+      "source": "32.pdf · questão 25 · Art. 6º, Lei 13.848/19",
+      "meta": "FGV 2025 - Juiz Federal Substituto (TRF - 3ª Região)",
       "bank": "FGV",
       "year": 2025,
-      "role": "Juiz Federal Substituto (TRF - 3º Região)",
+      "role": "Juiz Federal Substituto (TRF - 3ª Região)",
       "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
     }
   },

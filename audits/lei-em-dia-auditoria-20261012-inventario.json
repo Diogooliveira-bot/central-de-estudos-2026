@@ -1,0 +1,172 @@
+{
+  "referenceDate": "2026-10-12",
+  "sourceBranch": "main",
+  "auditBranch": "audit/lei-em-dia-integral-20261012",
+  "baseline": "SHA dos arquivos originais em main; não alterar progresso/IDs",
+  "caveat": "Estimativa de objetos nos scripts, não total de IDs ativos sem duplicação; algumas quantidades base provêm dos testes existentes, não de leitura integral",
+  "sumOfScriptObjectCounts": 12408,
+  "files": [
+    {
+      "path": "tools/decorando-data-cf.js",
+      "originalBlobSha": "9279a3a20c1d6de4f1e2e9d5454b2c11f168ca85",
+      "questionObjectCount": 3034,
+      "measurement": "quantidade afirmada por teste existente; conteúdo grande não retornado pela API",
+      "readableCharacters": null
+    },
+    {
+      "path": "tools/decorando-data-civil.js",
+      "originalBlobSha": "3f7eb06f1c63c9f10f40d507c323a3fedba3041c",
+      "questionObjectCount": 1056,
+      "measurement": "quantidade afirmada por teste existente; conteúdo grande não retornado pela API",
+      "readableCharacters": null
+    },
+    {
+      "path": "tools/decorando-data-penal.js",
+      "originalBlobSha": "fb2a4ca1e4133d890825229cb7be58435bd1c44e",
+      "questionObjectCount": 1763,
+      "measurement": "quantidade afirmada por teste existente; conteúdo grande não retornado pela API",
+      "readableCharacters": null
+    },
+    {
+      "path": "tools/decorando-data-cpc.js",
+      "originalBlobSha": "6101ad48e4467574610a680060fc5b612e412848",
+      "questionObjectCount": 2620,
+      "measurement": "quantidade afirmada por teste existente; conteúdo grande não retornado pela API",
+      "readableCharacters": null
+    },
+    {
+      "path": "tools/decorando-data-cpp.js",
+      "originalBlobSha": "e693b4ef313f8b13339a90755e6bfe621277ae28",
+      "questionObjectCount": 1973,
+      "measurement": "quantidade afirmada por teste existente; conteúdo grande não retornado pela API",
+      "readableCharacters": null
+    },
+    {
+      "path": "tools/decorando-data-civil-leis.js",
+      "originalBlobSha": "b3079a42a00ad9328e611f2b641ae878de2985cd",
+      "questionObjectCount": 145,
+      "measurement": "contagem de objetos com chave statement",
+      "readableCharacters": 231494
+    },
+    {
+      "path": "tools/decorando-data-cpc-leis.js",
+      "originalBlobSha": "125a5310a2c84577bf13b591ea34fcf2ac415672",
+      "questionObjectCount": 142,
+      "measurement": "contagem de objetos com chave statement",
+      "readableCharacters": 216763
+    },
+    {
+      "path": "tools/decorando-data-cf-leis.js",
+      "originalBlobSha": "c2f0125bd6e11250a8c69fd0ebcb9742fa928417",
+      "questionObjectCount": 98,
+      "measurement": "contagem de objetos com chave statement",
+      "readableCharacters": 152531
+    },
+    {
+      "path": "tools/decorando-data-adm-9784.js",
+      "originalBlobSha": "c75103f94a14d204c781663f84737a36db861623",
+      "questionObjectCount": 26,
+      "measurement": "contagem de objetos com chave statement",
+      "readableCharacters": 39404
+    },
+    {
+      "path": "tools/decorando-data-adm-pack1.js",
+      "originalBlobSha": "4b91e7b18b7d9d058ac26120b094e9078eda6089",
+      "questionObjectCount": 149,
+      "measurement": "contagem de objetos com chave statement",
+      "readableCharacters": 228714
+    },
+    {
+      "path": "tools/decorando-data-adm-pack2.js",
+      "originalBlobSha": "e98f679f7bfe52d2e0ff0be62356faccd5fae22c",
+      "questionObjectCount": 146,
+      "measurement": "contagem de objetos com chave statement",
+      "readableCharacters": 231301
+    },
+    {
+      "path": "tools/decorando-data-adm-pack3.js",
+      "originalBlobSha": "4969c8fe9547d532562543dd11123ef234efacc6",
+      "questionObjectCount": 58,
+      "measurement": "contagem de objetos com chave statement",
+      "readableCharacters": 67143
+    },
+    {
+      "path": "tools/decorando-data-adm-pack4.js",
+      "originalBlobSha": "5374b7ff817b37e29ad876f994dbb05cdfc353e3",
+      "questionObjectCount": 83,
+      "measurement": "contagem de objetos com chave statement",
+      "readableCharacters": 101605
+    },
+    {
+      "path": "tools/decorando-data-adm-14133-extra.js",
+      "originalBlobSha": "c8636c440b09254d11781982d780fbf6f5951168",
+      "questionObjectCount": 40,
+      "measurement": "contagem de objetos com chave statement",
+      "readableCharacters": 39830
+    },
+    {
+      "path": "tools/decorando-data-adm-8112-extra.js",
+      "originalBlobSha": "c5fc1f0d3ab79430157478ad25f93eb106f29bec",
+      "questionObjectCount": 45,
+      "measurement": "contagem de objetos com chave statement",
+      "readableCharacters": 41428
+    },
+    {
+      "path": "tools/decorando-data-adm-8429-extra.js",
+      "originalBlobSha": "57090213757cc24fdf3a82fd0208c9145425f2ae",
+      "questionObjectCount": 49,
+      "measurement": "contagem de objetos com chave statement",
+      "readableCharacters": 56308
+    },
+    {
+      "path": "tools/decorando-data-adm-9784-expansao.js",
+      "originalBlobSha": "261fba8f32cb2b198b16ed327cccb7e7857128f7",
+      "questionObjectCount": 43,
+      "measurement": "contagem de objetos com chave statement",
+      "readableCharacters": 49125
+    },
+    {
+      "path": "tools/decorando-data-adm-12527-expansao.js",
+      "originalBlobSha": "c6802ed8cf0a0e0d6d03178ba703f7ebd60c41c4",
+      "questionObjectCount": 19,
+      "measurement": "contagem de objetos com chave statement",
+      "readableCharacters": 21809
+    },
+    {
+      "path": "tools/decorando-data-adm-13709-expansao.js",
+      "originalBlobSha": "8686641af0e9b87a875a751853ee01d61a810cd7",
+      "questionObjectCount": 20,
+      "measurement": "contagem de objetos com chave statement",
+      "readableCharacters": 22617
+    },
+    {
+      "path": "tools/decorando-data-adm-pack5.js",
+      "originalBlobSha": "42feb341bfcd4595e2bf2e4eef3d776e1eaed031",
+      "questionObjectCount": 87,
+      "measurement": "contagem de objetos com chave statement",
+      "readableCharacters": 84333
+    },
+    {
+      "path": "tools/decorando-data-restantes.js",
+      "originalBlobSha": "1098299e6bb071e1161053d4ded76ff61ebb89e0",
+      "questionObjectCount": 448,
+      "measurement": "contagem de objetos com chave statement",
+      "readableCharacters": 708639
+    },
+    {
+      "path": "tools/decorando-data-led-aprovadas.js",
+      "originalBlobSha": "fe18256824b6c6c42ea62ec5677d46315493ad79",
+      "questionObjectCount": 364,
+      "measurement": "contagem de objetos com chave statement",
+      "readableCharacters": 398281
+    },
+    {
+      "path": "tools/decorando-data-modulos.js",
+      "originalBlobSha": "4ca736cb334278beda1e88efc60a3fa42b0c5180",
+      "questionObjectCount": 0,
+      "measurement": "contagem de objetos com chave statement",
+      "readableCharacters": 348302
+    }
+  ],
+  "status": "Inventário inicial completo para 23 scripts usados pela ferramenta; certificação jurídica individual pendente"
+}

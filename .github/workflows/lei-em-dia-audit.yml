@@ -1,0 +1,50 @@
+name: Auditoria Lei em Dia (branch/PR)
+on:
+  pull_request:
+    paths:
+      - 'tools/decorando.html'
+      - 'tools/decorando-data-*.js'
+      - 'tests/lei-em-dia-*.mjs'
+      - 'audits/lei-em-dia-*'
+      - '.github/workflows/lei-em-dia-audit.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lei-em-dia-regressao:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout branch sob teste
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: Instalar Node 20
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '20'
+          cache: npm
+      - name: Instalar dependências existentes
+        run: npm ci
+      - name: Testar invariantes novas da auditoria
+        run: node --test tests/lei-em-dia-auditoria-20261012.mjs
+      - name: Conferir integridade de todos os bancos de questões (sem comentários)
+        run: node --test tests/lei-em-dia-catalogo-integridade.mjs
+      - name: Executar suíte geral existente
+        if: always()
+        run: npm test
+      - name: Executar suíte Lei em Dia Administrativo
+        if: always()
+        run: npm run test:lei-adm
+      - name: Executar suíte Lei em Dia Constitucional
+        if: always()
+        run: npm run test:lei-cf
+      - name: Executar suíte Lei em Dia Civil e Processo Civil
+        if: always()
+        run: npm run test:lei-civil
+      - name: Executar suíte Lei em Dia demais disciplinas
+        if: always()
+        run: npm run test:lei-restantes
+      - name: Executar suíte de sincronização
+        if: always()
+        run: npm run test:lei-sync
