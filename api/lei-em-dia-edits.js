@@ -1,6 +1,12 @@
-import {database, requireSession, sameOriginRequest, readJsonBody} from '../lib/auth.js';
+import {database, requireSession, sameOriginRequest, readJsonBody, readCookie} from '../lib/auth.js';
 
-const send=(res,status,body)=>{res.statusCode=status;res.setHeader('Content-Type','application/json; charset=utf-8');res.setHeader('Cache-Control','no-store');res.end(JSON.stringify(body));};
+function send(res,status,body){
+ res.statusCode=status;
+ res.setHeader('Content-Type','application/json; charset=utf-8');
+ res.setHeader('Cache-Control','private, no-store');
+ res.setHeader('X-Content-Type-Options','nosniff');
+ res.end(JSON.stringify(body));
+}
 async function ensure(sql){
  await sql`CREATE TABLE IF NOT EXISTS lei_em_dia_edits (
   question_id TEXT PRIMARY KEY, data JSONB NOT NULL, revision INTEGER NOT NULL DEFAULT 1,
@@ -11,31 +17,67 @@ async function ensure(sql){
   data JSONB NOT NULL, editor_id TEXT NOT NULL, changed_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
  )`;
 }
+export function validateEditPayload(body){
+ const id=String(body?.id||''),data=body?.data,revision=body?.revision;
+ if(!/^[a-zA-Z0-9_.:-]{1,200}$/.test(id))return 'Identificador inválido';
+ if(!data||typeof data!=='object'||Array.isArray(data))return 'Dados da questão inválidos';
+ const allowed=['statement','explanation','answer','discipline','topicId','subtopic','moduleId'];
+ if(Object.keys(data).some(k=>!allowed.includes(k)))return 'Campo de edição não permitido';
+ if(typeof data.statement!=='string'||data.statement.trim().length<10||data.statement.length>20000)return 'Enunciado inválido';
+ if(typeof data.explanation!=='string'||data.explanation.length>30000)return 'Explicação inválida';
+ if(typeof data.answer!=='boolean')return 'Gabarito inválido';
+ const classification=['discipline','topicId','subtopic','moduleId'];
+ const supplied=classification.filter(k=>Object.hasOwn(data,k));
+ if(supplied.length&&supplied.length!==4)return 'Classificação incompleta';
+ if(supplied.length){
+  if(!/^(cf|adm|civil|cpc|penal|cpp|trabalho|ptrabalho|consumidor)$/.test(data.discipline))return 'Disciplina inválida';
+  if(typeof data.topicId!=='string'||!/^[-a-zA-Z0-9_.:]{1,180}$/.test(data.topicId))return 'Assunto inválido';
+  if(typeof data.subtopic!=='string'||!data.subtopic.trim()||data.subtopic.length>600)return 'Subassunto inválido';
+  if(typeof data.moduleId!=='string'||(data.moduleId!==''&&!/^[-a-zA-Z0-9_.:]{1,150}$/.test(data.moduleId)))return 'Módulo inválido';
+ }
+ if(!Number.isSafeInteger(revision)||revision<0)return 'Revisão inválida';
+ return '';
+}
 export default async function handler(req,res){
  try{
-  if(req.method!=='GET'&&req.method!=='PUT'){res.setHeader('Allow','GET, PUT');return send(res,405,{error:'Método inválido'});}
-  const session=await requireSession(req);
-  if(!session.ok)return send(res,401,{error:'Entre na Central para acessar as questões'});
-  const sql=database();await ensure(sql);
+  if(!['GET','PUT'].includes(req.method)){res.setHeader('Allow','GET, PUT');return send(res,405,{error:'Método não permitido'});}
+  // A leitura das correções é pública; apenas salvar exige sessão administrativa.
   if(req.method==='GET'){
-   const rows=await sql`SELECT question_id,data,revision FROM lei_em_dia_edits`;
-   return send(res,200,{edits:rows,canEdit:session.user.role==='admin'});
+   const sql=database();await ensure(sql);
+   const edits=await sql`SELECT question_id,data,revision FROM lei_em_dia_edits`;
+   let canEdit=false;
+   if(readCookie(req)){
+    try{const auth=await requireSession(req,['admin']);canEdit=auth.ok===true}catch(_){}
+   }
+   return send(res,200,{edits,canEdit});
   }
   if(!sameOriginRequest(req))return send(res,403,{error:'Origem não autorizada'});
-  if(session.user.role!=='admin')return send(res,403,{error:'Edição exclusiva do administrador'});
-  const body=await readJsonBody(req),id=String(body.id||'');
-  const data=body.data,revision=Number(body.revision||0);
-  if(!/^[a-zA-Z0-9_-]{1,150}$/.test(id)||!data||typeof data!=='object'||Array.isArray(data))return send(res,400,{error:'Dados inválidos'});
-  if(Object.keys(data).some(k=>!['statement','explanation','answer'].includes(k))||typeof data.statement!=='string'||data.statement.trim().length<10||data.statement.length>20000||typeof data.explanation!=='string'||data.explanation.length>30000||typeof data.answer!=='boolean'||!Number.isSafeInteger(revision)||revision<0)return send(res,400,{error:'Campos de edição inválidos'});
-  const existing=await sql`SELECT revision FROM lei_em_dia_edits WHERE question_id=${id}`;
-  const current=Number(existing[0]?.revision||0);
-  if(current!==revision)return send(res,409,{error:'Questão alterada em outra sessão. Atualize antes de salvar.'});
-  const newRevision=revision+1,encoded=JSON.stringify(data),actor=session.user.user_id;
-  const rows=await sql`INSERT INTO lei_em_dia_edits(question_id,data,revision,editor_id) VALUES(${id},${encoded}::jsonb,1)
-   ON CONFLICT(question_id) DO UPDATE SET data=EXCLUDED.data,revision=lei_em_dia_edits.revision+1,editor_id=EXCLUDED.editor_id,updated_at=NOW()
-   WHERE lei_em_dia_edits.revision=${revision} RETURNING revision`;
-  if(!rows.length)return send(res,409,{error:'Edição concorrente. Recarregue a questão.'});
-  await sql`INSERT INTO lei_em_dia_edit_history(question_id,revision,data,editor_id) VALUES(${id},${rows[0].revision},${encoded}::jsonb,${actor})`;
-  return send(res,200,{ok:true,revision:rows[0].revision});
- }catch(e){console.error('lei em dia editor',e);return send(res,500,{error:'Não foi possível acessar o banco de edições'});}
+  const session=await requireSession(req,['admin']);
+  if(!session.ok)return send(res,session.status||403,{error:session.error||'Edição exclusiva do administrador'});
+  const body=await readJsonBody(req);
+  const validation=validateEditPayload(body);
+  if(validation)return send(res,400,{error:validation});
+  const {id,data,revision}=body;
+  const sql=session.sql||database();await ensure(sql);
+  const encoded=JSON.stringify(data),actor=session.user.id;
+  // Edição e registro de histórico acontecem na mesma instrução atômica.
+  const rows=await sql`WITH change AS (
+    INSERT INTO lei_em_dia_edits(question_id,data,revision,editor_id)
+    VALUES(${id},${encoded}::jsonb,1,${actor})
+    ON CONFLICT(question_id) DO UPDATE SET
+      data=EXCLUDED.data,revision=lei_em_dia_edits.revision+1,
+      editor_id=EXCLUDED.editor_id,updated_at=NOW()
+    WHERE lei_em_dia_edits.revision=${revision}
+    RETURNING question_id,data,revision,editor_id
+   ), recorded AS (
+    INSERT INTO lei_em_dia_edit_history(question_id,revision,data,editor_id)
+    SELECT question_id,revision,data,editor_id FROM change
+    RETURNING revision
+   ) SELECT revision FROM recorded`;
+  if(!rows.length)return send(res,409,{error:'Questão já alterada em outra sessão. Recarregue para não sobrescrever.'});
+  return send(res,200,{ok:true,revision:Number(rows[0].revision)});
+ }catch(e){
+  console.error('lei em dia editor',e);
+  return send(res,500,{error:'Não foi possível acessar o banco de edições'});
+ }
 }
