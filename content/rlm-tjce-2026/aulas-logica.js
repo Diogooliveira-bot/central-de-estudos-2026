@@ -5,7 +5,7 @@ window.RLM_CURSO_AULAS=Object.assign(window.RLM_CURSO_AULAS||{}, {
       {
         "title": "Proposição e valor lógico",
         "paragraphs": [
-          "Na lógica clássica, uma proposição é uma sentença declarativa à qual se pode atribuir exatamente um dos valores verdadeiros: verdadeiro (V) ou falso (F). 'Fortaleza fica no Ceará' é uma proposição; 'Feche a porta' (ordem), 'Qual é sua idade?' (pergunta) e 'x é maior que 5', sem valor fixado para x, não são proposições fechadas.",
+          "Na lógica clássica, uma proposição é uma sentença declarativa à qual se pode atribuir exatamente um dos valores de verdade: verdadeiro (V) ou falso (F). 'Fortaleza fica no Ceará' é uma proposição; 'Feche a porta' (ordem), 'Qual é sua idade?' (pergunta) e 'x é maior que 5', sem valor fixado para x, não são proposições fechadas.",
           "O princípio da não contradição impede que uma mesma proposição seja V e F simultaneamente, no mesmo sentido. O terceiro excluído estabelece, nesse sistema, que ela é V ou F. O fato de não sabermos o valor de verdade não transforma uma frase declarativa em pergunta. Classifique a estrutura primeiro, investigue o valor depois."
         ],
         "example": "Exemplo resolvido: '2 + 3 = 5' é proposição verdadeira. '2 + x = 5' é sentença aberta; com x = 3, transforma-se em proposição verdadeira."
