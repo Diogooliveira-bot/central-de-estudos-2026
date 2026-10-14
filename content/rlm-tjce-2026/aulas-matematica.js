@@ -200,7 +200,7 @@ window.RLM_CURSO_AULAS=Object.assign(window.RLM_CURSO_AULAS||{}, {
           "11"
         ],
         "answer": 2,
-        "explanation": "3x−7=20 →3x=27→x=9.",
+        "explanation": "Traduzindo: 3x−7=20. Somando 7 nos dois lados, 3x=27; dividindo por 3, temos x=9.",
         "origin": "autoral"
       },
       {
@@ -621,7 +621,7 @@ window.RLM_CURSO_AULAS=Object.assign(window.RLM_CURSO_AULAS||{}, {
           "R$ 90"
         ],
         "answer": 3,
-        "explanation": "80×1,10=88 reais.",
+        "explanation": "O novo preço resulta do fator 1,10 aplicado sobre 80 reais: 80×1,10=88. O aumento isolado foi de R$ 8.",
         "origin": "autoral"
       },
       {
