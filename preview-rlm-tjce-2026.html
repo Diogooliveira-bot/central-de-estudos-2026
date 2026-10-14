@@ -30,7 +30,7 @@ main{max-width:1390px;width:100%;margin:auto;padding:22px clamp(17px,3.5vw,51px)
 <div class="nav-title">Estatística</div><div id="navStats"></div>
 <hr class="nav-divider">
 <button class="nav-item" id="navRF" onclick="goReview()"><span class="number">RF</span> Revisão cumulativa</button>
-<div class="side-note"><b>PRÉVIA DE ESTRUTURA</b><p style="color:#b4c6db;margin:7px 0 0">A teoria e as questões ainda não foram publicadas. Esta página mostra a organização que será implementada.</p></div>
+<div class="side-note"><b>PRÉVIA DE ESTRUTURA</b><p style="color:#b4c6db;margin:7px 0 0">As aulas e as questões autorais já podem ser testadas aqui. Esta edição não substitui a Central publicada.</p></div>
 </aside>
 <main id="main"><div class="top"><div style="display:flex;align-items:center;gap:9px"><button class="menu" aria-label="Abrir menu de módulos" onclick="document.getElementById('sidebar').classList.toggle('show')">☰</button><small>Central de Estudos / Disciplinas / RLM</small></div><span class="tag orange">Prévia · não publicada</span></div><div id="content"><div class="empty">Carregando estrutura dos módulos…</div></div><footer class="foot">Esta prévia salva respostas apenas neste navegador e não altera a Central publicada ou cadernos.</footer></main>
 </div>
@@ -54,10 +54,10 @@ function nav(){
 }
 function closeMenu(){$('sidebar').classList.remove('show')}
 function commitView(html){$('content').innerHTML=html;window.scrollTo({top:0,behavior:'instant'});nav();closeMenu()}
-function card(m){return '<button class="module-card" onclick="goModule(\''+m.id+'\')"><span class="topline">'+m.id+(m.id==='M01'?' · PRESERVADO':' · ESTRUTURA')+'</span><b>'+esc(m.titulo)+'</b><small>'+esc(m.eixo)+'</small><span class="meta">'+(m.id==='M01'?'Experimentar treino existente →':'Ler teoria e praticar →')+'</span></button>'}
+function card(m){return '<button class="module-card" onclick="goModule(\''+m.id+'\')"><span class="topline">'+m.id+(m.id==='M01'?' · PRESERVADO':' · CONTEÚDO')+'</span><b>'+esc(m.titulo)+'</b><small>'+esc(m.eixo)+'</small><span class="meta">'+(m.id==='M01'?'Experimentar treino existente →':'Ler teoria e praticar →')+'</span></button>'}
 function goHome(){
  selected='home';
- commitView('<div class="hero"><div class="eyebrow">Analista Judiciário · TJCE 2026</div><h1>Raciocínio Lógico-Matemático</h1><p>A nova disciplina da Base Completa, organizada pelo edital da FCC. Você pode abrir cada módulo para visualizar os capítulos previstos, o resumo com bizus, a prática progressiva e o mapa mental.</p><div class="hero-actions"><button class="btn primary" onclick="goModule(\'M01\')">Abrir treino de velocidade</button><button class="btn" onclick="goModule(\'M02\')">Explorar teoria dos módulos</button></div></div><div class="stats"><div class="stat"><strong>15</strong><small>módulos, incluindo o treino original</small></div><div class="stat"><strong>14</strong><small>apostilas na primeira edição</small></div><div class="stat"><strong>200</strong><small>questões FCC antigas catalogadas</small></div><div class="stat"><strong>1</strong><small>revisão cumulativa final</small></div></div><div class="note"><b>O que você está vendo:</b> a primeira versão navegável dos conteúdos. Já há teoria, resumos, 140 questões autorais corrigidas imediatamente e mapas conceituais. O banco original FCC permanece separado para auditoria.</div>'+group('Ferramenta preservada','M01',manifest.modulos.slice(0,1))+group('Bloco I · Lógica e raciocínio','M02–M09',manifest.modulos.slice(1,9))+group('Bloco II · Matemática aplicada','M10–M12',manifest.modulos.slice(9,12))+group('Bloco III · Estatística','M13–M15',manifest.modulos.slice(12))+'<div class="group-head"><h2>Revisão final</h2></div><div class="cards"><button class="module-card" onclick="goReview()"><span class="topline">RF · CUMULATIVA</span><b>Revisão e Simulado FCC</b><small>Integração de todos os assuntos do edital.</small><span class="meta">Consultar estrutura →</span></button></div>');
+ commitView('<div class="hero"><div class="eyebrow">Analista Judiciário · TJCE 2026</div><h1>Raciocínio Lógico-Matemático</h1><p>A primeira edição da nova disciplina da Base Completa para o edital da FCC. Leia as aulas, pratique 10 questões interativas por módulo, explore mapas mentais e confira seu desempenho.</p><div class="hero-actions"><button class="btn primary" onclick="goModule(\'M01\')">Abrir treino de velocidade</button><button class="btn" onclick="goModule(\'M02\')">Explorar teoria dos módulos</button></div></div><div class="stats"><div class="stat"><strong>15</strong><small>módulos, incluindo o treino original</small></div><div class="stat"><strong>14</strong><small>apostilas na primeira edição</small></div><div class="stat"><strong>200</strong><small>questões FCC antigas catalogadas</small></div><div class="stat"><strong>1</strong><small>revisão cumulativa final</small></div></div><div class="note"><b>O que você está vendo:</b> a primeira versão navegável dos conteúdos. Já há teoria, resumos, 140 questões autorais corrigidas imediatamente e mapas conceituais. O banco original FCC permanece separado para auditoria.</div>'+group('Ferramenta preservada','M01',manifest.modulos.slice(0,1))+group('Bloco I · Lógica e raciocínio','M02–M09',manifest.modulos.slice(1,9))+group('Bloco II · Matemática aplicada','M10–M12',manifest.modulos.slice(9,12))+group('Bloco III · Estatística','M13–M15',manifest.modulos.slice(12))+'<div class="group-head"><h2>Revisão final</h2></div><div class="cards"><button class="module-card" onclick="goReview()"><span class="topline">RF · CUMULATIVA</span><b>Revisão e Simulado FCC</b><small>Integração de todos os assuntos do edital.</small><span class="meta">Consultar estrutura →</span></button></div>');
 }
 function group(label,span,arr){return '<div class="group-head"><h2>'+label+'</h2><small>'+span+'</small></div><div class="cards">'+arr.map(card).join('')+'</div>'}
 function goModule(id){
@@ -92,7 +92,24 @@ function renderSpeed(m){
  let blocks=m.legado.blocos;
  return '<section class="section"><div class="eyebrow">M01 · Preservado da Central anterior</div><h2>Treino de velocidade</h2><p>Este será o único módulo funcional do curso antigo mantido na nova RLM. O motor possui cronômetro e questões geradas para automatizar o cálculo.</p><div class="grid2">'+blocks.map((x,i)=>'<div class="tip"><b>Treino '+String(i+1).padStart(2,'0')+'</b>'+esc(x)+'</div>').join('')+'</div><div class="hero-actions"><button class="btn primary" onclick="startSpeed()">Experimentar o treino original ↓</button></div><div id="speedMount" class="empty">O treino funcional é carregado aqui quando você clicar em “Experimentar”. Na versão final, será integrado sem abrir outra página.</div><div class="note warning">O treino é carregado da implementação antiga para demonstração. A navegação e a identidade visual ainda serão adaptadas na etapa funcional.</div></section>';
 }
-function startSpeed(){$('speedMount').outerHTML='<div class="speed-holder"><iframe title="Treino original de velocidade" src="./tools/rlm.html#calculo" loading="lazy"></iframe></div>'}
+function startSpeed(){
+ const mount=$('speedMount'); if(!mount)return;
+ mount.outerHTML='<div class="speed-holder"><iframe id="speedOriginalFrame" title="Treino original de velocidade" src="./tools/rlm.html#calculo" loading="lazy" onload="isolateSpeed(this)"></iframe></div>';
+}
+function isolateSpeed(frame){
+ try{
+  const doc=frame.contentDocument,win=frame.contentWindow;
+  if(!doc||!win)return;
+  let style=doc.getElementById('only-speed-preview-style');
+  if(!style){
+   style=doc.createElement('style');style.id='only-speed-preview-style';
+   style.textContent='main.wrap > :not(#fastView){display:none!important} main.wrap{margin:0!important;max-width:none!important;padding:12px!important} #fastView{display:block!important;position:static!important}';
+   doc.head.appendChild(style);
+  }
+  win.fastClose=()=>{goHome();};
+  if(typeof win.openFastHome==='function')win.openFastHome();
+ }catch(e){ /* frame may be cross-origin in other hosting arrangements */ }
+}
 function goReview(){
  selected='RF';commitView('<div class="hero"><div class="eyebrow">Revisão final</div><h1>Revisão cumulativa e simulado FCC</h1><p>Integração dos 14 módulos teóricos, questões combinadas por dificuldade, correção imediata e orientação do que revisar antes da prova.</p><div class="hero-actions"><button class="btn" onclick="goHome()">← Voltar ao mapa</button></div></div><section class="section"><h2>Estrutura da revisão final</h2>'+(manifest.revisaoFinal.etapas||[]).map((x,i)=>'<div class="chapter"><span class="circle">'+String(i+1).padStart(2,'0')+'</span><strong>'+esc(x)+'</strong></div>').join('')+'<div class="note warning">Rascunho de organização, não um simulado pronto.</div></section>') }
 async function init(){
