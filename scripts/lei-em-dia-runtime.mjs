@@ -9,7 +9,7 @@ export function leiRuntime(root,storage=new Map(),search=''){
  for(const m of html.matchAll(/<script([^>]*)>([\s\S]*?)<\/script>/g)){
   const external=m[1].match(/src="\.\/((?:decorando-data-[^"?]+|lei-em-dia-admin-editor\.js))(?:\?[^" ]*)?"/);
   if(external)vm.runInContext(readFileSync(new URL('tools/'+external[1],root),'utf8'),context);
-  else if(m[2].includes('const TOPICS_CF')||m[2].includes('const DATA_ADM_EXTRAS'))vm.runInContext(m[2].replace(/\nrender\(\);\s*loadAdminEdits\(\);\s*$/, '\nrender=()=>{};'),context);
+  else if(m[2].includes('const TOPICS_CF')||m[2].includes('const DATA_ADM_EXTRAS'))vm.runInContext(m[2].replace(/\nrender\(\);\s*$/, '\nrender=()=>{};'),context);
  }
  return context;
 }
