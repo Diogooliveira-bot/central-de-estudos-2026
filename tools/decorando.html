@@ -781,6 +781,7 @@ button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-vis
 .answer-buttons.main-answers button{font-size:clamp(14px,1.2vw,16px);min-height:48px;line-height:1.4;touch-action:manipulation}
 .answer-buttons.main-answers button:focus-visible{outline:3px solid #316854;outline-offset:3px}
 @media (max-width:560px){.exercise-heading,.scroll-question-card .exercise-heading{flex-wrap:wrap}.question-actions{justify-content:flex-start}.scroll-question-card .main-answers{max-width:100%}.statement.main-statement{overflow-wrap:break-word}}
+.app-shell{display:block;min-height:100vh}.app-shell>.workspace{width:100%;min-width:0}.statement.main-statement{white-space:pre-line}.topbar .menu-button{width:auto;white-space:nowrap;padding-inline:14px}
 </style>
 <script>try{history.scrollRestoration='manual'}catch(e){};window.addEventListener('pageshow',()=>{scrollTo(0,0);setTimeout(()=>scrollTo(0,0),30)});</script>
 <script>window.__CENTRAL_EMBEDDED__=true;</script><link rel="stylesheet" href="../ui/tool-navigation.css?v=20261001fix1"><link rel="stylesheet" href="/ui/lei-em-dia-v1.css?v=20261008lei1"></head>
@@ -913,6 +914,13 @@ let ui={
 };
 
 const esc=(v="")=>String(v).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]));
+// Remove apenas quebras artificiais; preserve parágrafos e listas estruturadas.
+function readableStatement(value){
+  return String(value??"").replace(/\r\n?/g,"\n").split(/(\n\s*\n)/).map(part=>{
+    if(/^\n\s*\n$/.test(part))return "\n\n";
+    return part.replace(/([^\n])\n(?=[^\n])/g,(_m,prev)=> /[:;]$/.test(prev)?"\n":prev+" ");
+  }).join("");
+}
 const fmtDate=(v)=>new Intl.DateTimeFormat("pt-BR",{dateStyle:"short",timeStyle:"short"}).format(new Date(v));
 const dateOnly=(v)=>new Intl.DateTimeFormat("pt-BR",{dateStyle:"short"}).format(new Date(v));
 
@@ -1422,7 +1430,7 @@ function historyBlock(article,open){
 }
 function studyHeader(){
   const d=currentDiscipline(),module=ui.selectedModules.size===1?disciplineModules().find(m=>ui.selectedModules.has(m.id)):null;
-  return `<header class="topbar"><button class="menu-button" onclick="ui.menuOpen=!ui.menuOpen;render()">☰</button><div><span class="breadcrumb">Biblioteca / ${d.badge}${module?.number?" / M"+String(module.number).padStart(2,"0"):""}</span><h1>${esc(module?.title||d.law)}</h1></div><div class="study-header-actions"><span class="sync-indicator saved">✓ Salvo</span><button class="theme-toggle" onclick="setPref('theme','${saved.preferences.theme==="light"?"dark":"light"}')">${saved.preferences.theme==="light"?"☾":"☀"}</button><button class="topbar-audit" onclick="setScreen('audit')">Auditoria</button></div><div class="daily-goal"><span>Meta de hoje</span><strong>${Math.min(todayAttempts(),20)} / 20 questões</strong></div></header>`
+  return `<header class="topbar"><button class="menu-button" onclick="setScreen('filters')" aria-label="Abrir filtros de questões" title="Abrir filtros de questões">☰ Filtrar questões</button><div><span class="breadcrumb">Biblioteca / ${d.badge}${module?.number?" / M"+String(module.number).padStart(2,"0"):""}</span><h1>${esc(module?.title||d.law)}</h1></div><div class="study-header-actions"><span class="sync-indicator saved">✓ Salvo</span><button class="theme-toggle" onclick="setPref('theme','${saved.preferences.theme==="light"?"dark":"light"}')">${saved.preferences.theme==="light"?"☾":"☀"}</button><button class="topbar-audit" onclick="setScreen('audit')">Auditoria</button></div><div class="daily-goal"><span>Meta de hoje</span><strong>${Math.min(todayAttempts(),20)} / 20 questões</strong></div></header>`
 }
 function sidebar(){
   const d=currentDiscipline();
@@ -1447,7 +1455,7 @@ function renderFocus(){
         <div class="question-actions"><span class="question-type">Certo ou errado</span><button onclick="ui.commentOpen=!ui.commentOpen;render()">▢ Comentário</button><button class="delete-action" onclick="deleteQuestion('${article.id}')">Excluir</button></div>
       </div>
       ${ui.commentOpen?`<div class="comment-box"><div><strong>Comentário da questão</strong><small>Salvo automaticamente</small></div><textarea autofocus oninput="updateNote('${article.id}',this.value)" placeholder="Registre uma pegadinha, observação ou lembrete...">${esc(saved.notes[article.id]||"")}</textarea></div>`:""}
-      <p class="statement main-statement">${esc(article.question.statement)}</p>
+      <p class="statement main-statement">${esc(readableStatement(article.question.statement))}</p>
       ${legalAuditBanner(article)}
       ${answerButtons(ui.choice,"answerFocus(")}
       ${ui.choice!==null?`<div class="answer-reveal">${feedback(article,ui.choice)}${legalBasis(article)}</div>`:""}
@@ -1465,7 +1473,7 @@ function renderScroll(){
       return `<article class="scroll-question-card">
         <div class="exercise-heading"><div><span class="question-number">QUESTÃO ${i+1}</span>${originBadge(article)}<h2>Julgue o item a seguir</h2>${article.question.meta?`<small class="question-meta">${esc(article.question.meta)}</small>`:""}</div><div class="question-actions"><span class="question-type">Certo ou errado</span><button onclick="ui.scrollComments['${article.id}']=!ui.scrollComments['${article.id}'];render()">▢ Comentário</button><button class="delete-action" onclick="deleteQuestion('${article.id}')">Excluir</button></div></div>
         ${ui.scrollComments[article.id]?`<div class="comment-box"><div><strong>Comentário da questão</strong><small>Salvo automaticamente</small></div><textarea oninput="updateNote('${article.id}',this.value)">${esc(saved.notes[article.id]||"")}</textarea></div>`:""}
-        <p class="statement main-statement">${esc(article.question.statement)}</p>
+        <p class="statement main-statement">${esc(readableStatement(article.question.statement))}</p>
         ${legalAuditBanner(article)}
         ${answerButtons(selected,`answerScroll('${article.id}',`)}
         ${selected!==undefined?`<div class="answer-reveal">${feedback(article,selected)}${legalBasis(article)}<button class="inline-history-toggle" onclick="ui.scrollHistories['${article.id}']=!ui.scrollHistories['${article.id}'];render()">${open?"Fechar histórico ↑":`Ver histórico (${(saved.attempts[article.id]||[]).length}) ↓`}</button>${historyBlock(article,open)}</div>`:""}
@@ -1481,7 +1489,7 @@ function emptyStudy(){
   return `<section class="empty-status"><div>✓</div><h2>Nenhuma questão neste filtro</h2><p>${msg}</p><button onclick="${missing?"setScreen('filters')":"chooseStatus('all')"}">${missing?"Escolher outro módulo":"Mostrar todas"}</button></section>`
 }
 function renderStudy(){
-  return `<main class="app-shell">${sidebar()}<section class="workspace">${studyHeader()}${visible().length?(saved.preferences.studyMode==="scroll"?renderScroll():renderFocus()):emptyStudy()}</section>${ui.menuOpen?`<button class="backdrop" onclick="ui.menuOpen=false;render()"></button>`:""}</main>`
+  return `<main class="app-shell"><section class="workspace">${studyHeader()}${visible().length?(saved.preferences.studyMode==="scroll"?renderScroll():renderFocus()):emptyStudy()}</section>${ui.menuOpen?`<button class="backdrop" onclick="ui.menuOpen=false;render()"></button>`:""}</main>`
 }
 function renderAudit(){
   const attempts=auditAttempts(),correct=attempts.filter(a=>a.correct).length,accuracy=attempts.length?Math.round(correct/attempts.length*100):0;
