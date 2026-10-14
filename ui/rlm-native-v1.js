@@ -301,4 +301,9 @@ try{
   try{centralResumeLast=g.centralResumeLast}catch(_){}
  }
 }catch(_){}
+if(document.readyState==='loading'){
+ document.addEventListener('DOMContentLoaded',()=>setTimeout(syncCentral,0),{once:true});
+}else{
+ setTimeout(syncCentral,0);
+}
 })(window);
