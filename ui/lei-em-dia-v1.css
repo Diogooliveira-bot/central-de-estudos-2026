@@ -382,3 +382,6 @@ mark.user-highlight.blue{background:#c8e7f4}mark.user-highlight.pink{background:
 .app-shell>.sidebar{display:none!important}
 .topbar>.menu-button{width:auto!important;min-width:0;white-space:nowrap;padding:10px 14px!important;font-size:12px;font-weight:700}
 @media(max-width:650px){.topbar>.menu-button{font-size:11px;padding:9px!important;white-space:normal;line-height:1.25}}
+
+/* Mostrar retorno aos filtros também em desktop: CSS legado oculta .menu-button. */
+.app-shell .topbar>.menu-button{display:inline-flex!important;align-items:center;justify-content:center;gap:8px;flex:0 0 auto;visibility:visible!important;opacity:1!important;border:1px solid var(--line);border-radius:9px;background:var(--surface-2);color:var(--ink);cursor:pointer}
