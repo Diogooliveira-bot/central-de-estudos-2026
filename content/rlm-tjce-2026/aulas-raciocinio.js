@@ -421,7 +421,7 @@ window.RLM_CURSO_AULAS=Object.assign(window.RLM_CURSO_AULAS||{}, {
           "Tecidos"
         ],
         "answer": 1,
-        "explanation": "Todas são frutas.",
+        "explanation": "Maçã, banana e pera pertencem à categoria botânica e alimentar denominada frutas; as demais categorias não abrangem os três exemplos.",
         "origin": "autoral"
       },
       {
@@ -666,7 +666,7 @@ window.RLM_CURSO_AULAS=Object.assign(window.RLM_CURSO_AULAS||{}, {
           "31"
         ],
         "answer": 2,
-        "explanation": "a6 =7+(6−1)×4=27.",
+        "explanation": "Na progressão aritmética, a6= a1+(6−1)r =7+5×4=27, pois existem cinco intervalos até o sexto termo.",
         "origin": "autoral"
       },
       {
