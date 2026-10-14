@@ -1,8 +1,11 @@
 <!doctype html>
-<html lang="pt-BR"><head>
+<html lang="pt-BR" class="bc-ui-v1"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Base Completa • Integração nativa RLM • Prévia</title>
+<title>Base Completa • Visual padronizado de RLM • Prévia</title>
+<link rel="stylesheet" href="./ui/discipline-standard.css">
+<link rel="stylesheet" href="./ui/native-study-reader.css">
 <link rel="stylesheet" href="./ui/rlm-native-v1.css">
+<link rel="stylesheet" href="./ui/rlm-visual-standard-v2.css">
 <style>
 :root{--text:#1e334a;--muted:#75879a;--line:#d9e3ec;--card:#fff}*{box-sizing:border-box}
 body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;background:#f1f5f8;color:#253a50}
@@ -26,9 +29,9 @@ main>p{color:#71869a;max-width:750px;line-height:1.55}
 </head><body>
 <div class="central-shell"><aside class="central-side"><div><small>Plataforma de estudos</small><strong>BASE COMPLETA</strong></div><span class="item">Início</span><span class="item active">Disciplinas</span><span class="item">Cronograma</span><span class="item">Questões</span></aside>
 <main><div class="route">Central de Estudos / Disciplinas / Raciocínio Lógico-Matemático</div>
-<h1>Disciplinas</h1><p>Esta é uma demonstração da RLM com os mesmos cartões e o mesmo leitor nativo instalados na branch de integração da Central.</p>
-<div class="tip-banner"><b>Prévia de integração:</b> a RLM aparece dentro da área de disciplinas; ao clicar em qualquer módulo, teoria, resumo, questões, mapa mental e banco FCC abrem em uma janela do próprio sistema. Esta demonstração não substitui a autenticação nem publica alterações na Central principal.</div>
-<div class="central-area"><section class="central-discipline"><header><b>Raciocínio Lógico-Matemático</b><span id="courseStat"></span></header><div id="rlmMaster">Preparando os módulos…</div></section></div>
+<h1>Disciplinas</h1><p>Esta prévia demonstra a RLM com o padrão visual das outras disciplinas: cartões expansíveis, materiais e leitor com índice e busca.</p>
+<div class="tip-banner"><b>Prévia visual:</b> clique no cabeçalho de cada módulo e escolha um material. Todos os textos, perguntas, mapas e respostas foram mantidos; esta versão não altera a Central principal.</div>
+<div class="central-area" id="subjects"><section class="central-discipline subject" data-id="rlm"><header><b>Raciocínio Lógico-Matemático</b><span id="courseStat"></span></header><div id="rlmMaster">Preparando os módulos…</div></section></div>
 </main></div>
 <script src="./content/rlm-tjce-2026/estrutura.js"></script>
 <script src="./content/rlm-tjce-2026/aulas-logica.js"></script>
