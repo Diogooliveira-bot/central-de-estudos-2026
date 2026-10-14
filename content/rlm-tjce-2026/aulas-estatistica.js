@@ -187,7 +187,7 @@ window.RLM_CURSO_AULAS=Object.assign(window.RLM_CURSO_AULAS||{}, {
           "30%"
         ],
         "answer": 2,
-        "explanation": "72/360=1/5=20%.",
+        "explanation": "O gráfico inteiro tem 360°. A classe ocupa 72°, então a proporção é 72/360=0,20, equivalente a 20%.",
         "origin": "autoral"
       },
       {
@@ -364,7 +364,7 @@ window.RLM_CURSO_AULAS=Object.assign(window.RLM_CURSO_AULAS||{}, {
           "8"
         ],
         "answer": 2,
-        "explanation": "(4+6+8)/3=18/3=6.",
+        "explanation": "Somando os valores 4, 6 e 8 encontramos 18; dividindo pelo total de três observações, a média é 6.",
         "origin": "autoral"
       },
       {
@@ -615,7 +615,7 @@ window.RLM_CURSO_AULAS=Object.assign(window.RLM_CURSO_AULAS||{}, {
           "12"
         ],
         "answer": 2,
-        "explanation": "Amplitude =12−3=9.",
+        "explanation": "Amplitude é a diferença entre o maior e o menor elemento: 12−3=9 unidades. Os valores intermediários não entram no cálculo.",
         "origin": "autoral"
       },
       {
