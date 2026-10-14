@@ -1,6 +1,7 @@
 
 /* Lei em Dia — correções compartilhadas e edição estritamente administrativa. */
-const adminEditor={canEdit:false,revisions:{},moduleOverrides:{},original:{},open:null,busy:false,loadError:''};
+var adminEditor=window.leiAdminEditor||{canEdit:false,revisions:{},moduleOverrides:{},original:{},open:null,busy:false,loadError:''};
+window.leiAdminEditor=adminEditor;
 function editorOptions(items,selected,allowEmpty=false){
  return (allowEmpty?'<option value="">Preservar vínculos existentes</option>':'')+
  items.map(item=>'<option value="'+esc(item.id)+'"'+(selected===item.id?' selected':'')+'>'+esc(item.label)+'</option>').join('');
