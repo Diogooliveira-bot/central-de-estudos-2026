@@ -205,16 +205,16 @@ window.RLM_CURSO_AULAS=Object.assign(window.RLM_CURSO_AULAS||{}, {
       },
       {
         "level": "difícil",
-        "prompt": "A fórmula (P → Q) ∧ P é falsa em qual atribuição?",
+        "prompt": "Em que atribuição a fórmula (P → Q) ∧ P é verdadeira?",
         "options": [
-          "P = V, Q = V",
-          "P = F, Q = V",
-          "P = V, Q = F",
-          "P = F, Q = F, pois apenas nesse caso",
-          "Nunca é falsa"
+          "P = V e Q = V",
+          "P = V e Q = F",
+          "P = F e Q = V",
+          "P = F e Q = F",
+          "P e Q são sempre independentes da fórmula"
         ],
-        "answer": 2,
-        "explanation": "P → Q é F para VF, e a conjunção torna-se falsa. Observe também que FF torna a conjunção falsa porque P é F; como a pergunta pede uma atribuição, há mais de uma! Esta alternativa não é exclusiva.",
+        "answer": 0,
+        "explanation": "Para a conjunção ser verdadeira, P deve ser V. Para P → Q ser V com P verdadeiro, Q também deve ser V. Só VV satisfaz ambas as parcelas.",
         "origin": "autoral"
       },
       {
