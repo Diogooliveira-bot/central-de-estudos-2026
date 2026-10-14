@@ -375,3 +375,10 @@ mark.user-highlight.blue{background:#c8e7f4}mark.user-highlight.pink{background:
 #lei-selection-toolbar button[data-color="blue"]{background:#c8e7f4}#lei-selection-toolbar button[data-color="pink"]{background:#f7d3d9}
 #lei-selection-toolbar button:focus-visible{outline:2px solid var(--green);outline-offset:2px}
 @media(max-width:580px){.qc-status{padding:16px}.qc-status-heading{display:block}.qc-status-heading small{display:block;margin-top:5px}.qc-status-options button{flex:1 1 auto;justify-content:center}.qc-metadata-grid{grid-template-columns:1fr}}
+
+/* Lei em Dia: estudo sem barra lateral, inclusive nos breakpoints antigos. */
+.app-shell{display:block!important;grid-template-columns:minmax(0,1fr)!important}
+.app-shell>.workspace{width:100%;max-width:100%;min-width:0;margin:0 auto}
+.app-shell>.sidebar{display:none!important}
+.topbar>.menu-button{width:auto!important;min-width:0;white-space:nowrap;padding:10px 14px!important;font-size:12px;font-weight:700}
+@media(max-width:650px){.topbar>.menu-button{font-size:11px;padding:9px!important;white-space:normal;line-height:1.25}}
