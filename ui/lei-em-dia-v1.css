@@ -385,3 +385,17 @@ mark.user-highlight.blue{background:#c8e7f4}mark.user-highlight.pink{background:
 
 /* Mostrar retorno aos filtros também em desktop: CSS legado oculta .menu-button. */
 .app-shell .topbar>.menu-button{display:inline-flex!important;align-items:center;justify-content:center;gap:8px;flex:0 0 auto;visibility:visible!important;opacity:1!important;border:1px solid var(--line);border-radius:9px;background:var(--surface-2);color:var(--ink);cursor:pointer}
+
+/* Layout responsivo do estudo: cabeçalho com botão de filtros permanente. */
+@media(max-width:650px){
+ .app-shell .topbar{display:flex;flex-wrap:wrap;gap:8px 10px;padding:12px 14px;min-height:0;align-items:center}
+ .app-shell .topbar>.menu-button{margin:0!important;flex:0 0 auto;min-width:0;max-width:100%;font-size:11px;white-space:nowrap}
+ .app-shell .topbar>div:nth-child(2){min-width:0;flex:1 1 130px;overflow-wrap:anywhere}
+ .app-shell .topbar h1{overflow-wrap:anywhere;line-height:1.25;font-size:17px}
+ .app-shell .topbar .study-header-actions{order:3;width:100%;margin:0;min-width:0;justify-content:flex-end;flex-wrap:wrap}
+ .app-shell .topbar .daily-goal{display:none}
+ .app-shell .study-grid.question-first{width:100%;max-width:100%;grid-template-columns:minmax(0,1fr);padding:18px 12px 36px;min-width:0}
+ .app-shell .exercise-card{width:100%;max-width:100%;min-width:0;padding:20px 15px 0}
+ .app-shell .exercise-heading,.app-shell .question-actions{flex-wrap:wrap;min-width:0}
+ .app-shell .statement.main-statement,.app-shell .answer-reveal{overflow-wrap:anywhere;min-width:0}
+}
