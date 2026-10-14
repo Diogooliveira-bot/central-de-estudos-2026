@@ -1,6 +1,6 @@
 
 /* Lei em Dia — correções compartilhadas e edição estritamente administrativa. */
-const adminEditor={canEdit:false,revisions:{},moduleOverrides:{},open:null,busy:false,loadError:''};
+const adminEditor={canEdit:false,revisions:{},moduleOverrides:{},original:{},open:null,busy:false,loadError:''};
 function editorOptions(items,selected,allowEmpty=false){
  return (allowEmpty?'<option value="">Preservar vínculos existentes</option>':'')+
  items.map(item=>'<option value="'+esc(item.id)+'"'+(selected===item.id?' selected':'')+'>'+esc(item.label)+'</option>').join('');
@@ -22,9 +22,17 @@ function applyQuestionEdit(article,data){
   const validTopic=(TOPICS_BY_DISCIPLINE[newDiscipline]||[]).some(t=>t.id===data.topicId);
   const validModule=!data.moduleId||LAW_MODULE_LIST.some(m=>m.id===data.moduleId&&m.discipline===newDiscipline);
   if(DISCIPLINES[newDiscipline]&&validTopic&&validModule){
-   if(data.moduleId||article.discipline!==newDiscipline){
-    for(const set of LAW_MODULE_QUESTIONS.values())set.delete(article.id);
-    if(data.moduleId)LAW_MODULE_QUESTIONS.get(data.moduleId)?.add(article.id);
+   if(!adminEditor.original[article.id]){
+    adminEditor.original[article.id]={
+     discipline:article.discipline,
+     moduleIds:LAW_MODULE_LIST.filter(m=>LAW_MODULE_QUESTIONS.get(m.id)?.has(article.id)).map(m=>m.id)
+    };
+   }
+   const base=adminEditor.original[article.id];
+   for(const set of LAW_MODULE_QUESTIONS.values())set.delete(article.id);
+   if(data.moduleId)LAW_MODULE_QUESTIONS.get(data.moduleId)?.add(article.id);
+   else if(newDiscipline===base.discipline){
+    for(const id of base.moduleIds)LAW_MODULE_QUESTIONS.get(id)?.add(article.id);
    }
    article.discipline=newDiscipline;
    article.topicId=data.topicId;
@@ -70,7 +78,7 @@ function updateEditorDiscipline(value){
  const modules=editorModules(value);
  const moduleEl=document.getElementById('admin-module');
  const changed=value!==article.discipline;
- moduleEl.innerHTML=editorOptions(modules,changed?'':(adminEditor.moduleOverrides[article.id]||''),!changed);
+ moduleEl.innerHTML=changed?'<option value="" selected disabled>Selecione o módulo de destino</option>'+editorOptions(modules,''):editorOptions(modules,adminEditor.moduleOverrides[article.id]||'',true);
  moduleEl.required=changed;
 }
 function updateEditorTopic(){
@@ -126,6 +134,7 @@ async function saveQuestionEdit(id){
   if(data.discipline!==saved.preferences.discipline){
    ui.selectedModules.clear();ui.selectedTopics.clear();ui.selectedSubtopics.clear();
    ui.articleIndex=0;ui.choice=null;ui.screen='filters';
+   saved.preferences.discipline=data.discipline;ui.discPicked=true;save();
   }
   render();
  }catch(e){editorNotice(e.message||'Não foi possível salvar. Tente novamente.')}
