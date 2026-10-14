@@ -55,5 +55,45 @@ try{
   report.push({width,...inventory,answeredId:target.id,result:"ok"});
   await context.close();
  }
+
+ const adminContext=await browser.newContext({viewport:{width:1280,height:900},serviceWorkers:"block"});
+ const adminPage=await adminContext.newPage();
+ let savedEdit=null,editorSaves=0;
+ await adminPage.route("**/api/lei-em-dia-edits",async route=>{
+  if(route.request().method()==="GET"){
+   const edits=savedEdit?[{question_id:savedEdit.id,data:savedEdit.data,revision:1}]:[];
+   await route.fulfill({status:200,contentType:"application/json",body:JSON.stringify({edits,canEdit:true})});
+  }else if(route.request().method()==="PUT"){
+   savedEdit=JSON.parse(route.request().postData()||"{}");
+   editorSaves++;
+   await route.fulfill({status:200,contentType:"application/json",body:JSON.stringify({ok:true,revision:1})});
+  }
+ });
+ await adminPage.goto(base+"/tools/decorando.html",{waitUntil:"domcontentloaded"});
+ await adminPage.waitForFunction(()=>typeof adminEditor!=="undefined"&&adminEditor.canEdit===true,{timeout:10000});
+ await adminPage.evaluate(()=>{
+  const module=LAW_MODULE_LIST.find(m=>m.discipline==="adm"&&m.questionIds.length);
+  centralOpenModule(module.id,"adm",true);
+ });
+ await adminPage.locator(".admin-edit-button").first().click();
+ await adminPage.locator("#admin-statement").fill("A Administração Pública observará o princípio da legalidade ao atuar.");
+ await adminPage.locator("#admin-explanation").fill("Explicação corrigida durante o teste de interface.");
+ await adminPage.locator("#admin-save").click();
+ await adminPage.waitForFunction(()=>document.querySelector(".lei-admin-editor")===null,{timeout:10000});
+ assert.equal(editorSaves,1);
+ assert.ok(savedEdit?.id&&savedEdit?.data?.statement.includes("princípio da legalidade"));
+ const changedId=savedEdit.id;
+ await adminPage.reload({waitUntil:"domcontentloaded"});
+ await adminPage.waitForFunction(()=>typeof DATA!=="undefined"&&Object.keys(adminEditor.revisions).length>0,{timeout:10000});
+ const online=await adminPage.evaluate(id=>{
+  const article=DATA.find(a=>a.id===id);
+  return {statement:article?.question.statement,revision:adminEditor.revisions[id],id:article?.id};
+ },changedId);
+ assert.equal(online.id,changedId);
+ assert.equal(online.revision,1);
+ assert.match(online.statement,/princípio da legalidade/);
+ report.push({editorSmoke:"ok",editsSaved:editorSaves});
+ await adminContext.close();
+
  console.log(JSON.stringify({result:"PASS",screens:report},null,2));
 }finally{if(browser)await browser.close();await new Promise(ok=>server.close(ok));}
