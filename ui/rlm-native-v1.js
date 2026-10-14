@@ -68,7 +68,7 @@ function card(m){
  const sub=m.id==='M01'?'Treino original preservado · cálculo rápido':m.eixo;
  return '<section class="cf-module ds-module bc-rlm-module'+(openState?' open':'')+'" data-rlm-module="'+m.id+'">'+
  '<button class="cf-module-head ds-module-head" type="button" aria-expanded="'+openState+'" onclick="return RlmNative.toggleModule(\''+m.id+'\')">'+
- '<span class="cf-module-no">'+(m.id==='M01'?'TREINO':'MÓDULO '+Number(m.id.slice(1)))+'</span>'+
+ '<span class="cf-module-no">'+(m.id==='M01'?'MÓDULO 01':'MÓDULO '+Number(m.id.slice(1)))+'</span>'+
  '<span class="cf-module-title">'+esc(m.titulo)+'</span>'+
  '<span class="cf-module-stat">'+(done?'100%':p?p+'% prática':'0%')+'</span><span class="chev" aria-hidden="true">⌄</span></button>'+
  '<div class="cf-module-body ds-module-body"><div class="cf-subtitle">'+esc(sub)+'</div>'+
