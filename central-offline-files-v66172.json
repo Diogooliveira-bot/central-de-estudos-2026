@@ -320,7 +320,7 @@
     "/assets/cf/m15-infografico.svg?v=20261004cfg07v2",
     "/assets/cf/m07-infografico-v2.svg?v=20261004cfg07v2",
     "/assets/cf/m10-infografico-v2.svg?v=20261004cfg07v2",
-    "/ui/lei-em-dia-v1.css?v=20261008lei1",
+    "/ui/lei-em-dia-v1.css?v=20261014filter3",
     "/tools/decorando.html",
     "/ui/tool-navigation.js?v=20261002navigation2",
     "/tools/decorando-data-cf.js?v=20261001fix1",
@@ -484,6 +484,7 @@
     "/ui/qc-sharing-links.js?v=20261013qclinks1",
     "/content/penal-cpp-tec-links.js?v=20261014tec1",
     "/ui/tec-penal-cpp-links.js?v=20261014tec1",
-    "/ui/penal-cpp-tec-links.css?v=20261014tec1"
+    "/ui/penal-cpp-tec-links.css?v=20261014tec1",
+    "/tools/lei-em-dia-admin-editor.js?v=20261014edit2"
   ]
 }
