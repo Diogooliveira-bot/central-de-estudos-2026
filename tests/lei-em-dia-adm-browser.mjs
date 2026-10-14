@@ -84,7 +84,7 @@ try{
  assert.ok(savedEdit?.id&&savedEdit?.data?.statement.includes("princípio da legalidade"));
  const changedId=savedEdit.id;
  await adminPage.reload({waitUntil:"domcontentloaded"});
- await adminPage.waitForFunction(()=>typeof DATA!=="undefined"&&Object.keys(adminEditor.revisions).length>0,{timeout:10000}).catch(()=>{});
+ await adminPage.waitForFunction(()=>typeof DATA!=="undefined"&&Object.keys(adminEditor.revisions).length>0,{timeout:10000});
  const online=await adminPage.evaluate(id=>{
   const article=DATA.find(a=>a.id===id);
   return {statement:article?.question.statement,revision:adminEditor.revisions[id],id:article?.id};
