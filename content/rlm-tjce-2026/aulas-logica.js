@@ -897,7 +897,7 @@ window.RLM_CURSO_AULAS=Object.assign(window.RLM_CURSO_AULAS||{}, {
           "11"
         ],
         "answer": 1,
-        "explanation": "19 + 16 − 8 = 27.",
+        "explanation": "Somam-se as duas frequências e subtrai-se a interseção: 19+16−8=27 pessoas em pelo menos uma atividade.",
         "origin": "autoral"
       },
       {
