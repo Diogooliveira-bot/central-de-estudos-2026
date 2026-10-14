@@ -40,6 +40,10 @@ main>p{color:#71869a;max-width:750px;line-height:1.55}
 <script>
 function renderSubjects(){document.getElementById('rlmMaster').innerHTML=RlmNative.renderMaster();const s=RlmNative.stats();document.getElementById('courseStat').textContent=s.done+'/'+s.total+' concluídos';}
 function renderDisciplineGrid(){}
-document.addEventListener('DOMContentLoaded',renderSubjects);
+document.addEventListener('DOMContentLoaded',function(){
+ renderSubjects();
+ const q=location.hash.match(/^#(M(?:0[1-9]|1[0-5])|RF)(?:-(theory|summary|map|sources))?$/i);
+ if(q)RlmNative.open(q[1].toUpperCase(),q[2]||'theory');
+});
 </script>
 </body></html>
