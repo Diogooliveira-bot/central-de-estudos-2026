@@ -14,6 +14,9 @@ main{max-width:1390px;width:100%;margin:auto;padding:22px clamp(17px,3.5vw,51px)
 @media(max-width:1020px){.shell{grid-template-columns:235px minmax(0,1fr)}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.practice{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:730px){.shell{display:block}.sidebar{position:fixed;inset:0 auto 0 0;width:min(300px,87vw);z-index:10;transform:translateX(-110%);transition:transform .2s;box-shadow:10px 0 35px #0003}.sidebar.show{transform:none}.menu{display:inline-block}main{padding:14px 12px 45px}.top{margin-bottom:13px}.stats{gap:7px}.stat{padding:12px}.stat strong{font-size:24px}.grid2{grid-template-columns:1fr}.practice{grid-template-columns:repeat(2,minmax(0,1fr))}.speed-holder iframe{height:650px}.hero-actions .btn{flex:1}.tag{font-size:9px}}
 @media print{.sidebar,.menu,.top,.tabs,.hero-actions,.foot{display:none!important}.shell{display:block}main{max-width:100%;padding:0}.section,.hero{break-inside:avoid}body{background:#fff}}
+
+.lesson{padding:20px 0 22px;border-top:1px solid var(--line)}.lesson:first-of-type{border-top:0;padding-top:8px}.lesson-head{display:flex;gap:12px;align-items:flex-start}.lesson-head .num{flex:0 0 35px;width:35px;height:35px;border-radius:10px;display:grid;place-content:center;background:#eaf3fa;color:#185d8d;font-weight:850;font-size:12px}.lesson h3{font-size:18px;margin:0 0 12px}.lesson p{font-size:14px;line-height:1.79;color:#384d62;margin:0 0 11px;max-width:88ch}.worked{background:#f2f8fc;border:1px solid #c9e1ee;border-radius:12px;padding:0 15px;margin:15px 0 4px;max-width:88ch}.worked summary{cursor:pointer;font-size:13px;font-weight:800;color:#226a94;padding:13px 0}.worked p{font-size:13px;color:#365b73;margin:0 0 13px}.bizu{margin-top:9px;background:#edf8f4;color:#266e56;padding:10px;border-radius:8px;font-size:12px;border:1px solid #b9ddcf}.tip p{font-size:13px;margin:0;color:#456173}.tip{height:100%}.quiz-sep{border-top:1px solid var(--line);padding-top:22px;margin-top:24px}.practice-list{display:grid;gap:14px}.quiz-card{background:#fff;border:1px solid #d6e2ec;border-radius:14px;padding:19px;scroll-margin-top:15px}.quiz-card[data-level="fácil"]{border-left:4px solid #36977d}.quiz-card[data-level="médio"]{border-left:4px solid #c38e3c}.quiz-card[data-level="difícil"]{border-left:4px solid #bb6b75}.quiz-info{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:10px}.quiz-info span{font-size:10px;font-weight:850;text-transform:uppercase;letter-spacing:.08em;color:#54728a}.quiz-info .lev{background:#edf3f8;padding:4px 8px;border-radius:100px}.quiz-card h3{font-size:14px;line-height:1.6;margin:0 0 13px}.options{display:grid;gap:8px}.opt{display:flex;align-items:flex-start;gap:10px;text-align:left;width:100%;border:1px solid #d9e4ec;border-radius:9px;background:#fafcfe;color:#2c4359;padding:11px 13px;min-height:45px;font-size:13px;line-height:1.52}.opt b{flex:0 0 20px;color:#3f789b}.opt:not(:disabled):hover{background:#eaf4fa;border-color:#6f9eae}.opt:disabled{opacity:1;cursor:default}.opt.correct{border-color:#36957b;background:#ecf8f3;color:#205c48}.opt.wrong{border-color:#cf8383;background:#fff0f0;color:#8b3939}.feedback{border-radius:10px;background:#f2f7fb;border:1px solid #cbdde9;color:#244a66;padding:13px;margin-top:13px;font-size:13px;line-height:1.7}.feedback b{display:block;margin-bottom:5px}.feedback.is-correct{background:#eef8f2;border-color:#b6ddc8;color:#1f6043}.feedback.is-wrong{background:#fff4ef;border-color:#eacdb8;color:#8b5433}.progress-line{margin:12px 0 20px;padding:12px 14px;background:#f5f9fc;border-radius:10px;border:1px solid var(--line);font-size:13px;color:#3a6079}.mindmap-branch{background:white;border:1px solid #c5dce7;border-top:4px solid var(--cyan);border-radius:12px;padding:16px}.mindmap-branch h3{text-align:center;font-size:14px;color:#245778;margin:0 0 13px}.mindmap-branch ul{padding:0;margin:0;list-style:none;display:grid;gap:6px}.mindmap-branch li{font-size:12px;color:#52708a;background:#f2f8fc;border-radius:7px;padding:8px;text-align:center}.page-controls{display:flex;gap:10px;justify-content:space-between;align-items:center;flex-wrap:wrap;padding:14px 0}.page-controls small{font-size:12px;color:#657b8d}.imported{border:1px dashed #b4c9d9;border-radius:12px;background:#fafcfd;padding:16px;margin:12px 0}.source-link{font-size:12px;font-weight:750}.legend{font-size:12px;color:#668094;margin:10px 0}.scorecard{display:flex;align-items:center;gap:12px;flex-wrap:wrap;background:#e8f4f9;border:1px solid #c1dce8;border-radius:12px;padding:12px 15px;margin:16px 0;font-size:13px}.scorecard strong{font-size:18px;color:#1a597c}.lesson-nav{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+@media(max-width:730px){.lesson{padding:15px 0 18px}.lesson-head .num{flex-basis:30px;width:30px;height:30px}.lesson h3{font-size:16px}.quiz-card{padding:14px}.opt{font-size:12px}.mindmap-branch{padding:11px}}
 </style>
 </head>
 <body>
@@ -29,8 +32,13 @@ main{max-width:1390px;width:100%;margin:auto;padding:22px clamp(17px,3.5vw,51px)
 <button class="nav-item" id="navRF" onclick="goReview()"><span class="number">RF</span> Revisão cumulativa</button>
 <div class="side-note"><b>PRÉVIA DE ESTRUTURA</b><p style="color:#b4c6db;margin:7px 0 0">A teoria e as questões ainda não foram publicadas. Esta página mostra a organização que será implementada.</p></div>
 </aside>
-<main id="main"><div class="top"><div style="display:flex;align-items:center;gap:9px"><button class="menu" aria-label="Abrir menu de módulos" onclick="document.getElementById('sidebar').classList.toggle('show')">☰</button><small>Central de Estudos / Disciplinas / RLM</small></div><span class="tag orange">Prévia · não publicada</span></div><div id="content"><div class="empty">Carregando estrutura dos módulos…</div></div><footer class="foot">Esta prévia apresenta a arquitetura dos conteúdos. Não registra progresso, não altera cadernos e não modifica a versão publicada da Central.</footer></main>
+<main id="main"><div class="top"><div style="display:flex;align-items:center;gap:9px"><button class="menu" aria-label="Abrir menu de módulos" onclick="document.getElementById('sidebar').classList.toggle('show')">☰</button><small>Central de Estudos / Disciplinas / RLM</small></div><span class="tag orange">Prévia · não publicada</span></div><div id="content"><div class="empty">Carregando estrutura dos módulos…</div></div><footer class="foot">Esta prévia salva respostas apenas neste navegador e não altera a Central publicada ou cadernos.</footer></main>
 </div>
+<script src="./content/rlm-tjce-2026/aulas-logica.js"></script>
+<script src="./content/rlm-tjce-2026/aulas-raciocinio.js"></script>
+<script src="./content/rlm-tjce-2026/aulas-matematica.js"></script>
+<script src="./content/rlm-tjce-2026/aulas-estatistica.js"></script>
+<script src="./content/rlm-tjce-2026/banco-fcc-legado.js"></script>
 <script>
 'use strict';
 let manifest=null, selected='home', tab='theory';
@@ -46,10 +54,10 @@ function nav(){
 }
 function closeMenu(){$('sidebar').classList.remove('show')}
 function commitView(html){$('content').innerHTML=html;window.scrollTo({top:0,behavior:'instant'});nav();closeMenu()}
-function card(m){return '<button class="module-card" onclick="goModule(\''+m.id+'\')"><span class="topline">'+m.id+(m.id==='M01'?' · PRESERVADO':' · ESTRUTURA')+'</span><b>'+esc(m.titulo)+'</b><small>'+esc(m.eixo)+'</small><span class="meta">'+(m.id==='M01'?'Experimentar treino existente →':'Consultar capítulos e recursos →')+'</span></button>'}
+function card(m){return '<button class="module-card" onclick="goModule(\''+m.id+'\')"><span class="topline">'+m.id+(m.id==='M01'?' · PRESERVADO':' · ESTRUTURA')+'</span><b>'+esc(m.titulo)+'</b><small>'+esc(m.eixo)+'</small><span class="meta">'+(m.id==='M01'?'Experimentar treino existente →':'Ler teoria e praticar →')+'</span></button>'}
 function goHome(){
  selected='home';
- commitView('<div class="hero"><div class="eyebrow">Analista Judiciário · TJCE 2026</div><h1>Raciocínio Lógico-Matemático</h1><p>A nova disciplina da Base Completa, organizada pelo edital da FCC. Você pode abrir cada módulo para visualizar os capítulos previstos, o resumo com bizus, a prática progressiva e o mapa mental.</p><div class="hero-actions"><button class="btn primary" onclick="goModule(\'M01\')">Abrir treino de velocidade</button><button class="btn" onclick="goModule(\'M02\')">Explorar teoria dos módulos</button></div></div><div class="stats"><div class="stat"><strong>15</strong><small>módulos, incluindo o treino original</small></div><div class="stat"><strong>14</strong><small>teorias completas planejadas</small></div><div class="stat"><strong>200</strong><small>questões FCC antigas catalogadas</small></div><div class="stat"><strong>1</strong><small>revisão cumulativa final</small></div></div><div class="note"><b>O que você está vendo:</b> a prévia navegável do esqueleto. Os textos integrais, mapas definitivos e exercícios comentados serão preenchidos depois da pesquisa e auditoria dos materiais.</div>'+group('Ferramenta preservada','M01',manifest.modulos.slice(0,1))+group('Bloco I · Lógica e raciocínio','M02–M09',manifest.modulos.slice(1,9))+group('Bloco II · Matemática aplicada','M10–M12',manifest.modulos.slice(9,12))+group('Bloco III · Estatística','M13–M15',manifest.modulos.slice(12))+'<div class="group-head"><h2>Revisão final</h2></div><div class="cards"><button class="module-card" onclick="goReview()"><span class="topline">RF · CUMULATIVA</span><b>Revisão e Simulado FCC</b><small>Integração de todos os assuntos do edital.</small><span class="meta">Consultar estrutura →</span></button></div>');
+ commitView('<div class="hero"><div class="eyebrow">Analista Judiciário · TJCE 2026</div><h1>Raciocínio Lógico-Matemático</h1><p>A nova disciplina da Base Completa, organizada pelo edital da FCC. Você pode abrir cada módulo para visualizar os capítulos previstos, o resumo com bizus, a prática progressiva e o mapa mental.</p><div class="hero-actions"><button class="btn primary" onclick="goModule(\'M01\')">Abrir treino de velocidade</button><button class="btn" onclick="goModule(\'M02\')">Explorar teoria dos módulos</button></div></div><div class="stats"><div class="stat"><strong>15</strong><small>módulos, incluindo o treino original</small></div><div class="stat"><strong>14</strong><small>apostilas na primeira edição</small></div><div class="stat"><strong>200</strong><small>questões FCC antigas catalogadas</small></div><div class="stat"><strong>1</strong><small>revisão cumulativa final</small></div></div><div class="note"><b>O que você está vendo:</b> a primeira versão navegável dos conteúdos. Já há teoria, resumos, 140 questões autorais corrigidas imediatamente e mapas conceituais. O banco original FCC permanece separado para auditoria.</div>'+group('Ferramenta preservada','M01',manifest.modulos.slice(0,1))+group('Bloco I · Lógica e raciocínio','M02–M09',manifest.modulos.slice(1,9))+group('Bloco II · Matemática aplicada','M10–M12',manifest.modulos.slice(9,12))+group('Bloco III · Estatística','M13–M15',manifest.modulos.slice(12))+'<div class="group-head"><h2>Revisão final</h2></div><div class="cards"><button class="module-card" onclick="goReview()"><span class="topline">RF · CUMULATIVA</span><b>Revisão e Simulado FCC</b><small>Integração de todos os assuntos do edital.</small><span class="meta">Consultar estrutura →</span></button></div>');
 }
 function group(label,span,arr){return '<div class="group-head"><h2>'+label+'</h2><small>'+span+'</small></div><div class="cards">'+arr.map(card).join('')+'</div>'}
 function goModule(id){
@@ -59,7 +67,7 @@ function goModule(id){
 function renderModule(m){
  const speed=m.id==='M01';
  const tabs=speed?'':'<div class="tabs" role="tablist" aria-label="Conteúdo do módulo">'+[['theory','1. Teoria completa'],['summary','2. Resumo, bizus e prática'],['map','3. Mapa mental'],['sources','4. Questões e fontes']].map(([key,label])=>'<button class="tab'+(tab===key?' active':'')+'" role="tab" aria-selected="'+(tab===key)+'" onclick="setTab(\''+key+'\')">'+label+'</button>').join('')+'</div>';
- const header='<div class="hero"><div class="eyebrow">'+esc(m.eixo)+' · '+m.id+'</div><h1>'+esc(m.titulo)+'</h1><p>'+(speed?'Ferramenta original preservada. A versão definitiva a incorporará ao leitor da Central, mantendo os seis treinos e o motor de velocidade.':'Estrutura didática do novo módulo: teoria integral, resumo com dicas e bizus, exercícios em dificuldade crescente e mapa mental.')+'</p><span class="tag">'+(speed?'Motor original':'Conteúdo em preparação')+'</span><div class="hero-actions"><button class="btn" onclick="goHome()">← Todos os módulos</button><button class="btn primary" onclick="nextModule()">Próximo módulo →</button></div></div>';
+ const header='<div class="hero"><div class="eyebrow">'+esc(m.eixo)+' · '+m.id+'</div><h1>'+esc(m.titulo)+'</h1><p>'+(speed?'Ferramenta original preservada. A versão definitiva a incorporará ao leitor da Central, mantendo os seis treinos e o motor de velocidade.':'Teoria redigida, resumo com dicas e bizus, 10 questões autorais de dificuldade crescente com correção imediata e mapa mental.')+'</p><span class="tag">'+(speed?'Motor original':'Primeira edição')+'</span><div class="hero-actions"><button class="btn" onclick="goHome()">← Todos os módulos</button><button class="btn primary" onclick="nextModule()">Próximo módulo →</button></div></div>';
  commitView(header+(speed?renderSpeed(m):tabs+'<div id="moduleSection">'+sectionFor(m)+'</div>'));
 }
 function nextModule(){let i=manifest.modulos.findIndex(x=>x.id===selected);if(i>=0&&i<manifest.modulos.length-1)goModule(manifest.modulos[i+1].id);else goReview()}
@@ -97,6 +105,133 @@ async function init(){
  $('content').innerHTML='<div class="hero"><h1>Não foi possível carregar o roteiro</h1><p>Os arquivos da estrutura devem estar na mesma implantação desta prévia.</p><code>'+esc(e.message)+'</code></div>';
  }
 }
+
+/* Conteúdo RLM: aulas completas primeira edição e prática instantânea. */
+const autoral = id => (window.RLM_CURSO_AULAS||{})[id]||null;
+const BANK = () => window.RLM_FCC_LEGADO || [];
+const letters = ["A","B","C","D","E"];
+let fccPageIndex={};
+function savedAnswers(area){
+ try{return JSON.parse(localStorage.getItem("rlm-tjce-2026:preview:"+area)||"{}")||{}}catch(e){return {}}
+}
+function saveAnswers(area,obj){
+ try{localStorage.setItem("rlm-tjce-2026:preview:"+area,JSON.stringify(obj))}catch(e){}
+}
+function authoredCard(m,i,reviewKey){
+ let item=autoral(m.id)?.questions?.[i];
+ if(!item)return "";
+ const area=reviewKey || m.id;
+ const key=(reviewKey?"R"+m.id+"-"+i:String(i));
+ const done=savedAnswers(area)[key];
+ const questionId="q-"+area+"-"+m.id+"-"+i;
+ const level=esc(item.level);
+ let opts=item.options.map((o,j)=>{
+  const sel=done!==undefined&&done===j,correct=done!==undefined&&j===item.answer;
+  let clas=correct?" correct":sel?" wrong":"";
+  return '<button class="opt'+clas+'" '+(done!==undefined?"disabled":"")+' onclick="chooseAuthored(\''+m.id+'\','+i+','+j+','+(reviewKey?"'RF'":"null")+')"><b>'+letters[j]+'</b><span>'+esc(o)+'</span></button>';
+ }).join('');
+ const result=done===undefined?"":'<div class="feedback '+(done===item.answer?"is-correct":"is-wrong")+'" role="status"><b>'+(done===item.answer?"✓ Você acertou.":"✕ Resposta incorreta.")+' Alternativa correta: '+letters[item.answer]+'</b>'+esc(item.explanation)+'</div>';
+ return '<article id="'+questionId+'" class="quiz-card" data-level="'+level+'"><div class="quiz-info"><span>'+(reviewKey?"Simulado misto · "+m.id:"Questão "+String(i+1).padStart(2,"0"))+'</span><span class="lev">'+level+'</span><span>Autoral · estilo FCC</span></div><h3>'+esc(item.prompt)+'</h3><div class="options">'+opts+'</div>'+result+'</article>';
+}
+function chooseAuthored(id,i,j,reviewKey){
+ const a=autoral(id)?.questions?.[i];if(!a||j<0||j>=a.options.length)return;
+ const area=reviewKey||id,key=reviewKey?"R"+id+"-"+i:String(i),record=savedAnswers(area);
+ if(record[key]!==undefined)return;
+ record[key]=j;saveAnswers(area,record);
+ const m=manifest.modulos.find(x=>x.id===id);
+ const oldEl=$("q-"+area+"-"+id+"-"+i);
+ if(oldEl&&m)oldEl.outerHTML=authoredCard(m,i,reviewKey);
+ const p=$("quizProgress");if(p && !reviewKey)p.innerHTML=progressHtml(id);
+ const rf=$("rfProgress");if(rf&&reviewKey)rf.innerHTML=reviewProgressHtml();
+}
+function progressHtml(id){
+ const qs=autoral(id)?.questions||[],rec=savedAnswers(id);
+ let count=0,correct=0;
+ qs.forEach((q,i)=>{if(rec[i]!==undefined){count++;if(rec[i]===q.answer)correct++;}});
+ return '<strong>'+count+' de '+qs.length+' respondidas</strong> · '+correct+' acertos · '+(count?Math.round(correct/count*100):0)+'% nas respondidas. As escolhas permanecem registradas neste dispositivo de prévia.';
+}
+function theory(m){
+ const d=autoral(m.id);
+ if(!d)return '<section class="section"><div class="empty">Aula não localizada. Verifique os arquivos da prévia.</div></section>';
+ return '<section class="section"><div class="eyebrow">Etapa 1 · Apostila digital</div><h2>Teoria completa — primeira edição</h2><p class="section-lead">Leitura integral estruturada, com conceitos, método, exemplos resolvidos e observações de prova. O texto poderá ser ampliado e auditado antes da publicação.</p>'+
+ d.theory.map((part,i)=>'<article class="lesson"><div class="lesson-head"><span class="num">'+String(i+1).padStart(2,"0")+'</span><div><h3>'+esc(part.title)+'</h3>'+
+ part.paragraphs.map(p=>'<p>'+esc(p)+'</p>').join('')+
+ '<details class="worked"><summary>Exemplo aplicado · revelar resolução</summary><p>'+esc(part.example)+'</p></details></div></div></article>').join('')+
+ '<div class="note">Estude os conceitos, tente resolver cada exemplo antes de abrir a explicação e depois siga para o resumo com prática.</div>'+
+ '<div class="lesson-nav"><button class="btn primary" onclick="setTab(\'summary\')">Avançar para resumo e questões →</button><button class="btn" onclick="setTab(\'map\')">Ver mapa mental</button></div></section>';
+}
+function summary(m){
+ const d=autoral(m.id);if(!d)return '<div class="empty">Resumo em preparação.</div>';
+ let count=0;
+ const group=x=>x==='fácil'?"Fácil":x==='médio'?"Médio":"Difícil";
+ const practice=d.questions.map((q,i)=>{let header="";
+ if(i===0||q.level!==d.questions[i-1]?.level)header='<div class="level-head">'+group(q.level)+' · '+d.questions.filter(z=>z.level===q.level).length+' questões</div>';
+ return header+authoredCard(m,i,null);
+ }).join('');
+ return '<section class="section"><div class="eyebrow">Etapa 2 · Revisão estratégica</div><h2>Resumo com dicas e bizus</h2><p class="section-lead">Síntese dos conceitos de maior aplicação, com métodos, atalhos e suas condições de validade.</p><div class="grid2">'+d.summary.map((s,i)=>'<div class="tip"><b>'+String(i+1).padStart(2,"0")+' · '+esc(s.title)+'</b><p>'+esc(s.text)+'</p><div class="bizu"><strong>BIZU: </strong>'+esc(s.bizu)+'</div></div>').join('')+
+ '</div><div class="quiz-sep"><div class="eyebrow">Etapa 2.1 · Treinamento progressivo</div><h2>Prática: do fácil ao difícil</h2><p class="section-lead">10 questões autorais com cinco alternativas, no formato de treino inspirado na FCC. Clique em uma alternativa para receber o resultado e a explicação imediatamente. Estas perguntas <b>não são questões oficiais da banca</b>.</p><div class="scorecard" id="quizProgress">'+progressHtml(m.id)+'</div><div class="practice-list">'+practice+'</div></div>'+
+ '<div class="lesson-nav"><button class="btn primary" onclick="setTab(\'map\')">Continuar para o mapa mental →</button><button class="btn" onclick="setTab(\'theory\')">Voltar à teoria</button></div></section>';
+}
+function mindmap(m){
+ const d=autoral(m.id);
+ if(!d)return '<div class="empty">Mapa em elaboração.</div>';
+ return '<section class="section"><div class="eyebrow">Etapa 3 · Organização mental</div><h2>Mapa mental comentado</h2><p class="section-lead">Os ramos representam os conceitos centrais da apostila. Cada folha resume um vínculo ou uma regra.</p><div class="map-box"><div class="map-center">'+esc(m.titulo)+'</div><div class="branches">'+d.mindmap.map(node=>'<div class="mindmap-branch"><h3>'+esc(node.name)+'</h3><ul>'+node.branches.map(b=>'<li>'+esc(b)+'</li>').join('')+'</ul></div>').join('')+'</div></div><div class="lesson-nav"><button class="btn primary" onclick="setTab(\'sources\')">Ver banco FCC e fontes →</button><button class="btn" onclick="setTab(\'summary\')">Revisar questões</button></div></section>';
+}
+function fccList(id){return BANK().filter(q=>q.module===id)}
+function realFccCard(q){
+ const safe=(q.id||"").replace(/[^a-z0-9_-]/gi,"");
+ const area="fcc-"+q.module;
+ const chosen=savedAnswers(area)[q.id];
+ const unusable=q.visualRequired;
+ const opts=Object.entries(q.options||{}).filter(([k])=>letters.includes(k)).map(([letter,text])=>{
+ const chosenThis=chosen===letter, correct=chosen!==undefined&&q.answer===letter;
+ return '<button class="opt'+(correct?' correct':chosenThis?' wrong':'')+'" '+(chosen!==undefined||unusable?'disabled':'')+' onclick="chooseReal(\''+q.module+'\',\''+safe+'\',\''+letter+'\')"><b>'+letter+'</b><span>'+esc(text)+'</span></button>';
+ }).join('');
+ const fb=chosen===undefined?"":'<div class="feedback '+(chosen===q.answer?"is-correct":"is-wrong")+'"><b>'+(chosen===q.answer?"✓ Conforme gabarito legado.":"✕ Conforme gabarito legado, alternativa "+esc(q.answer)+".")+'</b>O gabarito importado ainda não passou por auditoria individual. O comentário explicativo desta questão real está pendente; a prática autoral acima já oferece resolução comentada.</div>';
+ return '<article class="quiz-card" style="margin:12px 0"><div class="quiz-info"><span>FCC · Banco legado</span><span>'+esc(q.source)+'</span></div><h3>'+esc(q.prompt)+'</h3>'+(unusable?'<div class="note warning">Questão depende de imagem ainda não recuperada. Consulte a fonte original antes de responder.</div>':'<div class="options">'+opts+'</div>')+fb+'<div class="legend">'+esc(q.topic)+' · Fonte/página '+esc(q.page)+'</div>'+(q.url?'<a class="source-link" target="_blank" rel="noopener noreferrer" href="'+esc(q.url)+'">Ver questão no TEC ↗</a>':'')+'</article>';
+}
+function chooseReal(id,questionId,choice){
+ const q=fccList(id).find(x=>x.id===questionId), area="fcc-"+id;
+ if(!q||q.visualRequired)return;
+ const ans=savedAnswers(area);if(ans[questionId]!==undefined)return;
+ ans[questionId]=choice;saveAnswers(area,ans);
+ const node=$("fccLegacyList");if(node)node.innerHTML=renderFccPage(id);
+}
+function renderFccPage(id){
+ let list=fccList(id),p=fccPageIndex[id]||0,each=5,total=Math.max(1,Math.ceil(list.length/each));
+ p=Math.min(total-1,Math.max(0,p));fccPageIndex[id]=p;
+ return list.slice(p*each,(p+1)*each).map(realFccCard).join('')+
+ '<div class="page-controls"><button class="btn" '+(p===0?'disabled':'')+' onclick="stepFcc(-1)">← Anteriores</button><small>Página '+(p+1)+' de '+total+' · '+list.length+' questões FCC</small><button class="btn" '+(p>=total-1?'disabled':'')+' onclick="stepFcc(1)">Próximas →</button></div>';
+}
+function stepFcc(delta){let id=selected;fccPageIndex[id]=Math.max(0,(fccPageIndex[id]||0)+delta);const el=$('fccLegacyList');if(el){el.innerHTML=renderFccPage(id);el.scrollIntoView({behavior:"smooth",block:"start"})}}
+function sources(m){
+ const candidates=m.tecCandidatos||[], q=fccList(m.id);
+ let html='<section class="section"><div class="eyebrow">Etapa 4 · Fontes e banco</div><h2>Questões originais FCC e materiais</h2><p class="section-lead">O banco FCC foi preservado como legado da Central antiga; a prática de 10 questões autorais comentadas está na aba anterior.</p>'+
+ '<div class="source"><div><b>Questões originais FCC</b><small>'+q.length+' itens localizados para este módulo. Gabaritos antigos a revisar.</small></div><span class="pill">'+(q.length?'Importadas':'Sem itens locais')+'</span></div>'+
+ '<div class="source"><div><b>TEC · Cadernos candidatos</b><small>'+esc(candidates.length?candidates.join(", "):"Nenhum candidato específico")+'</small></div><span class="pill">Filtros a validar</span></div>'+
+ '<div class="source"><div><b>QConcursos</b><small>Não há links de filtro RLM confirmados na Central.</small></div><span class="pill">Pendente</span></div>'+
+ '<div class="source"><div><b>PDF-fonte FCC</b><small>O antigo caminho do PDF não foi localizado no repositório.</small></div><span class="pill">Pendente</span></div>';
+ if(q.length)html+='<div class="quiz-sep"><h3>Banco de questões FCC — gabarito legado ainda não auditado</h3><p>Questões reais importadas do acervo existente. As respostas marcadas refletem o cadastro anterior; comentários e imagens de três itens ainda precisam ser conferidos.</p><div id="fccLegacyList">'+renderFccPage(m.id)+'</div></div>';
+ else html+='<div class="empty" style="margin-top:20px">Ainda não existem questões reais FCC recuperadas para este novo módulo. As dez questões autorais comentadas estão na aba de prática.</div>';
+ return html+'</section>';
+}
+const reviewSpecs=()=>[
+ ["M02",4],["M03",4],["M04",4],["M05",4],["M06",4],["M07",4],["M08",4],["M09",4],["M10",4],["M11",4],["M12",4],["M13",4],["M14",4],["M15",4],
+ ["M03",7],["M04",7],["M05",7],["M11",7],["M12",7],["M14",7]
+];
+function reviewProgressHtml(){
+ let rec=savedAnswers("RF"),n=0,c=0;
+ reviewSpecs().forEach(([id,i])=>{let q=autoral(id)?.questions?.[i],k="R"+id+"-"+i;if(q&&rec[k]!==undefined){n++;if(rec[k]===q.answer)c++;}});
+ return '<strong>'+n+'/20 respondidas</strong> · '+c+' acertos · '+(n?Math.round(c/n*100):0)+'% nas respondidas.';
+}
+function goReview(){
+ selected="RF";
+ let all=reviewSpecs(),missing=all.filter(([id,i])=>!autoral(id)?.questions?.[i]);
+ if(missing.length){commitView('<div class="empty">Simulado indisponível por falta de arquivos de aula.</div>');return;}
+ const html='<div class="hero"><div class="eyebrow">Revisão cumulativa · Estilo FCC</div><h1>Simulado de RLM · 20 questões</h1><p>Questões autorais selecionadas de todos os 14 módulos teóricos. Cada resposta recebe gabarito e comentário imediatamente.</p><div class="hero-actions"><button class="btn" onclick="goHome()">← Voltar aos módulos</button></div></div><div class="scorecard" id="rfProgress">'+reviewProgressHtml()+'</div><div class="practice-list">'+all.map(([id,i])=>authoredCard(manifest.modulos.find(m=>m.id===id),i,"RF")).join('')+'</div>';
+ commitView(html);
+}
+
 init();
 </script>
 </body>
