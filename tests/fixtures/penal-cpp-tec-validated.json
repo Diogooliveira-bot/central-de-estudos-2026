@@ -1,0 +1,435 @@
+{
+  "sources": [
+    "checkpoint_direito_penal_tec.json",
+    "checkpoint_direito_processual_penal_tec.json",
+    "relatorio_execucao_modulos_penal_cpp_tec.md"
+  ],
+  "checkpoints": [
+    {
+      "discipline": "Direito Penal",
+      "item": {
+        "title": "BASE COMPLETA | PENAL | Geral | Direito Penal",
+        "cadernoId": "105789730",
+        "quantity": 787,
+        "shareUrl": "https://www.tecconcursos.com.br/s/Q79sjy"
+      },
+      "moduleItems": {
+        "TEC|Direito Penal|MODULO|M01|PARTE|1": {
+          "moduleCode": "M01",
+          "part": 1,
+          "title": "BASE COMPLETA | PENAL | M01 | Princípios, interpretação, analogia e conflito aparente",
+          "quantity": 31
+        },
+        "TEC|Direito Penal|MODULO|M02|PARTE|1": {
+          "moduleCode": "M02",
+          "part": 1,
+          "title": "BASE COMPLETA | PENAL | M02 | Aplicação da Lei Penal",
+          "cadernoId": "105849626",
+          "quantity": 43,
+          "shareUrl": "https://www.tecconcursos.com.br/s/Q7A8K2"
+        },
+        "TEC|Direito Penal|MODULO|M03|PARTE|1": {
+          "moduleCode": "M03",
+          "part": 1,
+          "title": "BASE COMPLETA | PENAL | M03 | Teoria do Crime",
+          "cadernoId": "105849634",
+          "quantity": 39,
+          "shareUrl": "https://www.tecconcursos.com.br/s/Q7A8KA"
+        },
+        "TEC|Direito Penal|MODULO|M04|PARTE|1": {
+          "moduleCode": "M04",
+          "part": 1,
+          "title": "BASE COMPLETA | PENAL | M04 | Ilicitude",
+          "cadernoId": "105849646",
+          "quantity": 25,
+          "shareUrl": "https://www.tecconcursos.com.br/s/Q7A8KM"
+        },
+        "TEC|Direito Penal|MODULO|M05|PARTE|1": {
+          "moduleCode": "M05",
+          "part": 1,
+          "title": "BASE COMPLETA | PENAL | M05 | Culpabilidade e Teoria do Erro",
+          "cadernoId": "105849655",
+          "quantity": 24,
+          "shareUrl": "https://www.tecconcursos.com.br/s/Q7A8KV"
+        },
+        "TEC|Direito Penal|MODULO|M06|PARTE|1": {
+          "moduleCode": "M06",
+          "part": 1,
+          "title": "BASE COMPLETA | PENAL | M06 | Concurso de Pessoas",
+          "cadernoId": "105849668",
+          "quantity": 10,
+          "shareUrl": "https://www.tecconcursos.com.br/s/Q7A8Ki"
+        },
+        "TEC|Direito Penal|MODULO|M07|PARTE|1": {
+          "moduleCode": "M07",
+          "part": 1,
+          "title": "BASE COMPLETA | PENAL | M07 | Concurso de Crimes e Penas | Parte 1: Concurso de Crimes",
+          "cadernoId": "105849679",
+          "quantity": 11,
+          "shareUrl": "https://www.tecconcursos.com.br/s/Q7A8Kt"
+        },
+        "TEC|Direito Penal|MODULO|M07|PARTE|2": {
+          "moduleCode": "M07",
+          "part": 2,
+          "title": "BASE COMPLETA | PENAL | M07 | Concurso de Crimes e Penas | Parte 2: Penas: espécies, aplicação e efeitos",
+          "cadernoId": "105849708",
+          "quantity": 43,
+          "shareUrl": "https://www.tecconcursos.com.br/s/Q7A8LM"
+        },
+        "TEC|Direito Penal|MODULO|M08|PARTE|1": {
+          "moduleCode": "M08",
+          "part": 1,
+          "title": "BASE COMPLETA | PENAL | M08 | Punibilidade e Prescrição",
+          "cadernoId": "105849716",
+          "quantity": 36,
+          "shareUrl": "https://www.tecconcursos.com.br/s/Q7A8LU"
+        },
+        "TEC|Direito Penal|MODULO|M09|PARTE|1": {
+          "moduleCode": "M09",
+          "part": 1,
+          "title": "BASE COMPLETA | PENAL | M09 | Crimes contra a Pessoa",
+          "cadernoId": "105849727",
+          "quantity": 65,
+          "shareUrl": "https://www.tecconcursos.com.br/s/Q7A8Lf"
+        },
+        "TEC|Direito Penal|MODULO|M10|PARTE|1": {
+          "moduleCode": "M10",
+          "part": 1,
+          "title": "BASE COMPLETA | PENAL | M10 | Crimes contra o Patrimônio",
+          "cadernoId": "105849743",
+          "quantity": 64,
+          "shareUrl": "https://www.tecconcursos.com.br/s/Q7A8Lv"
+        },
+        "TEC|Direito Penal|MODULO|M11|PARTE|1": {
+          "moduleCode": "M11",
+          "part": 1,
+          "title": "BASE COMPLETA | PENAL | M11 | Crimes contra a Fé Pública",
+          "cadernoId": "105849757",
+          "quantity": 42,
+          "shareUrl": "https://www.tecconcursos.com.br/s/Q7A8M9"
+        },
+        "TEC|Direito Penal|MODULO|M12|PARTE|1": {
+          "moduleCode": "M12",
+          "part": 1,
+          "title": "BASE COMPLETA | PENAL | M12 | Crimes contra a Dignidade Sexual",
+          "cadernoId": "105849770",
+          "quantity": 18,
+          "shareUrl": "https://www.tecconcursos.com.br/s/Q7A8MM"
+        },
+        "TEC|Direito Penal|MODULO|M13|PARTE|1": {
+          "moduleCode": "M13",
+          "part": 1,
+          "title": "BASE COMPLETA | PENAL | M13 | Crimes contra a Administração Pública",
+          "cadernoId": "105849797",
+          "quantity": 162,
+          "shareUrl": "https://www.tecconcursos.com.br/s/Q7A8Mn"
+        },
+        "TEC|Direito Penal|MODULO|M14|PARTE|1": {
+          "moduleCode": "M14",
+          "part": 1,
+          "title": "BASE COMPLETA | PENAL | M14 | Abuso de Autoridade",
+          "cadernoId": "105849847",
+          "quantity": 64,
+          "shareUrl": "https://www.tecconcursos.com.br/s/Q7A8Nb"
+        },
+        "TEC|Direito Penal|MODULO|M15|PARTE|1": {
+          "moduleCode": "M15",
+          "part": 1,
+          "title": "BASE COMPLETA | PENAL | M15 | Lavagem de Dinheiro",
+          "cadernoId": "105849870",
+          "quantity": 7,
+          "shareUrl": "https://www.tecconcursos.com.br/s/Q7A8Ny"
+        },
+        "TEC|Direito Penal|MODULO|M16|PARTE|1": {
+          "moduleCode": "M16",
+          "part": 1,
+          "title": "BASE COMPLETA | PENAL | M16 | Crimes em Licitações e Contratos",
+          "cadernoId": "105849882",
+          "quantity": 9,
+          "shareUrl": "https://www.tecconcursos.com.br/s/Q7A8OA"
+        },
+        "TEC|Direito Penal|MODULO|M17|PENDENTE": {
+          "moduleCode": "M17",
+          "title": "Constituição Penal, Responsabilidade Penal da Pessoa Jurídica, Súmulas e Consolidação"
+        }
+      }
+    },
+    {
+      "discipline": "Direito Processual Penal",
+      "item": {
+        "title": "BASE COMPLETA | PROCESSUAL PENAL | Geral | Direito Processual Penal",
+        "cadernoId": "105790863",
+        "quantity": 602,
+        "shareUrl": "https://www.tecconcursos.com.br/s/Q79t2F"
+      },
+      "moduleItems": {
+        "TEC|Direito Processual Penal|MODULO|M01|PARTE|1": {
+          "moduleCode": "M01",
+          "part": 1,
+          "title": "BASE COMPLETA | PROCESSUAL PENAL | M01 | Introdução ao Direito Processual Penal",
+          "cadernoId": "105849897",
+          "quantity": 10,
+          "shareUrl": "https://www.tecconcursos.com.br/s/Q7A8OP"
+        },
+        "TEC|Direito Processual Penal|MODULO|M02|PARTE|1": {
+          "moduleCode": "M02",
+          "part": 1,
+          "title": "BASE COMPLETA | PROCESSUAL PENAL | M02 | Aplicação da Lei Processual Penal",
+          "cadernoId": "105849915",
+          "quantity": 6,
+          "shareUrl": "https://www.tecconcursos.com.br/s/Q7A8Oh"
+        },
+        "TEC|Direito Processual Penal|MODULO|M03|PARTE|1": {
+          "moduleCode": "M03",
+          "part": 1,
+          "title": "BASE COMPLETA | PROCESSUAL PENAL | M03 | Inquérito Policial",
+          "cadernoId": "105849938",
+          "quantity": 30,
+          "shareUrl": "https://www.tecconcursos.com.br/s/Q7A8P4"
+        },
+        "TEC|Direito Processual Penal|MODULO|M04|PARTE|1": {
+          "moduleCode": "M04",
+          "part": 1,
+          "title": "BASE COMPLETA | PROCESSUAL PENAL | M04 | Ação Penal",
+          "cadernoId": "105850002",
+          "quantity": 57,
+          "shareUrl": "https://www.tecconcursos.com.br/s/Q7A8Q6"
+        },
+        "TEC|Direito Processual Penal|MODULO|M05|PARTE|1": {
+          "moduleCode": "M05",
+          "part": 1,
+          "title": "BASE COMPLETA | PROCESSUAL PENAL | M05 | Sujeitos do Processo",
+          "cadernoId": "105850015",
+          "quantity": 36,
+          "shareUrl": "https://www.tecconcursos.com.br/s/Q7A8QJ"
+        },
+        "TEC|Direito Processual Penal|MODULO|M06|PARTE|1": {
+          "moduleCode": "M06",
+          "part": 1,
+          "title": "BASE COMPLETA | PROCESSUAL PENAL | M06 | Jurisdição e Competência | Parte 1: Jurisdição e conceitos gerais",
+          "cadernoId": "105850033",
+          "quantity": 3,
+          "shareUrl": "https://www.tecconcursos.com.br/s/Q7A8Qb"
+        },
+        "TEC|Direito Processual Penal|MODULO|M06|PARTE|2": {
+          "moduleCode": "M06",
+          "part": 2,
+          "title": "BASE COMPLETA | PROCESSUAL PENAL | M06 | Jurisdição e Competência | Parte 2: Competência, conexão e continência",
+          "cadernoId": "105850053",
+          "quantity": 22,
+          "shareUrl": "https://www.tecconcursos.com.br/s/Q7A8Qv"
+        },
+        "TEC|Direito Processual Penal|MODULO|M07|PARTE|1": {
+          "moduleCode": "M07",
+          "part": 1,
+          "title": "BASE COMPLETA | PROCESSUAL PENAL | M07 | Questões e Processos Incidentes",
+          "cadernoId": "105850066",
+          "quantity": 14,
+          "shareUrl": "https://www.tecconcursos.com.br/s/Q7A8R8"
+        },
+        "TEC|Direito Processual Penal|MODULO|M08|PARTE|1": {
+          "moduleCode": "M08",
+          "part": 1,
+          "title": "BASE COMPLETA | PROCESSUAL PENAL | M08 | Nulidades",
+          "cadernoId": "105850084",
+          "quantity": 7,
+          "shareUrl": "https://www.tecconcursos.com.br/s/Q7A8RQ"
+        },
+        "TEC|Direito Processual Penal|MODULO|M09|PARTE|1": {
+          "moduleCode": "M09",
+          "part": 1,
+          "title": "BASE COMPLETA | PROCESSUAL PENAL | M09 | Atos e Prazos Processuais",
+          "cadernoId": "105850264",
+          "quantity": 1,
+          "shareUrl": "https://www.tecconcursos.com.br/s/Q7A8UK"
+        },
+        "TEC|Direito Processual Penal|MODULO|M10|PARTE|1": {
+          "moduleCode": "M10",
+          "part": 1,
+          "title": "BASE COMPLETA | PROCESSUAL PENAL | M10 | Comunicação dos Atos Processuais",
+          "cadernoId": "105850133",
+          "quantity": 29,
+          "shareUrl": "https://www.tecconcursos.com.br/s/Q7A8SD"
+        },
+        "TEC|Direito Processual Penal|MODULO|M11|PARTE|1": {
+          "moduleCode": "M11",
+          "part": 1,
+          "title": "BASE COMPLETA | PROCESSUAL PENAL | M11 | Sentença Penal",
+          "cadernoId": "105850155",
+          "quantity": 14,
+          "shareUrl": "https://www.tecconcursos.com.br/s/Q7A8SZ"
+        },
+        "TEC|Direito Processual Penal|MODULO|M12|PARTE|1": {
+          "moduleCode": "M12",
+          "part": 1,
+          "title": "BASE COMPLETA | PROCESSUAL PENAL | M12 | Das Provas | Parte 1: Teoria geral da prova penal",
+          "cadernoId": "105850175",
+          "quantity": 9,
+          "shareUrl": "https://www.tecconcursos.com.br/s/Q7A8St"
+        },
+        "TEC|Direito Processual Penal|MODULO|M12|PARTE|2": {
+          "moduleCode": "M12",
+          "part": 2,
+          "title": "BASE COMPLETA | PROCESSUAL PENAL | M12 | Das Provas | Parte 2: Provas em espécie",
+          "cadernoId": "105850189",
+          "quantity": 47,
+          "shareUrl": "https://www.tecconcursos.com.br/s/Q7A8T7"
+        },
+        "TEC|Direito Processual Penal|MODULO|M13|PARTE|1": {
+          "moduleCode": "M13",
+          "part": 1,
+          "title": "BASE COMPLETA | PROCESSUAL PENAL | M13 | Medidas Cautelares e Prisão em Flagrante | Parte 1: Regras cautelares gerais tema compartilhado",
+          "cadernoId": "105850211",
+          "quantity": 4,
+          "shareUrl": "https://www.tecconcursos.com.br/s/Q7A8TT"
+        },
+        "TEC|Direito Processual Penal|MODULO|M13|PARTE|2": {
+          "moduleCode": "M13",
+          "part": 2,
+          "title": "BASE COMPLETA | PROCESSUAL PENAL | M13 | Medidas Cautelares e Prisão em Flagrante | Parte 2: Flagrante e cautelares diversas",
+          "cadernoId": "105850282",
+          "quantity": 31,
+          "shareUrl": "https://www.tecconcursos.com.br/s/Q7A8Uc"
+        },
+        "TEC|Direito Processual Penal|MODULO|M14|PARTE|1": {
+          "moduleCode": "M14",
+          "part": 1,
+          "title": "BASE COMPLETA | PROCESSUAL PENAL | M14 | Prisão e Liberdade Provisória — Parte II | Parte 1: Regras cautelares gerais — tema compartilhado",
+          "cadernoId": "105850211",
+          "quantity": 4,
+          "shareUrl": "https://www.tecconcursos.com.br/s/Q7A8TT"
+        },
+        "TEC|Direito Processual Penal|MODULO|M14|PARTE|2": {
+          "moduleCode": "M14",
+          "part": 2,
+          "title": "BASE COMPLETA | PROCESSUAL PENAL | M14 | Prisão e Liberdade Provisória Parte II | Parte 2: Preventiva, domiciliar e liberdade provisória",
+          "cadernoId": "105850302",
+          "quantity": 32,
+          "shareUrl": "https://www.tecconcursos.com.br/s/Q7A8Uw"
+        },
+        "TEC|Direito Processual Penal|MODULO|M15|PARTE|1": {
+          "moduleCode": "M15",
+          "part": 1,
+          "title": "BASE COMPLETA | PROCESSUAL PENAL | M15 | Processo Comum | Parte 1: Procedimento ordinário fases anteriores à sentença",
+          "cadernoId": "105850319",
+          "quantity": 20,
+          "shareUrl": "https://www.tecconcursos.com.br/s/Q7A8VD"
+        },
+        "TEC|Direito Processual Penal|MODULO|M15|PARTE|2": {
+          "moduleCode": "M15",
+          "part": 2,
+          "title": "BASE COMPLETA | PROCESSUAL PENAL | M15 | Processo Comum | Parte 2: Procedimento sumário",
+          "cadernoId": "105850331",
+          "quantity": 1,
+          "shareUrl": "https://www.tecconcursos.com.br/s/Q7A8VP"
+        },
+        "TEC|Direito Processual Penal|MODULO|M16|PARTE|1": {
+          "moduleCode": "M16",
+          "part": 1,
+          "title": "BASE COMPLETA | PROCESSUAL PENAL | M16 | Tribunal do Júri",
+          "cadernoId": "105850347",
+          "quantity": 36,
+          "shareUrl": "https://www.tecconcursos.com.br/s/Q7A8Vf"
+        },
+        "TEC|Direito Processual Penal|MODULO|M17|PARTE|1": {
+          "moduleCode": "M17",
+          "part": 1,
+          "title": "BASE COMPLETA | PROCESSUAL PENAL | M17 | Outros Procedimentos",
+          "cadernoId": "105850360",
+          "quantity": 2,
+          "shareUrl": "https://www.tecconcursos.com.br/s/Q7A8Vs"
+        },
+        "TEC|Direito Processual Penal|MODULO|M18|PARTE|1": {
+          "moduleCode": "M18",
+          "part": 1,
+          "title": "BASE COMPLETA | PROCESSUAL PENAL | M18 | Crimes de Responsabilidade de Funcionários Públicos",
+          "cadernoId": "105850376",
+          "quantity": 2,
+          "shareUrl": "https://www.tecconcursos.com.br/s/Q7A8W8"
+        },
+        "TEC|Direito Processual Penal|MODULO|M19|PARTE|1": {
+          "moduleCode": "M19",
+          "part": 1,
+          "title": "BASE COMPLETA | PROCESSUAL PENAL | M19 | Teoria Geral dos Recursos",
+          "quantity": 0
+        },
+        "TEC|Direito Processual Penal|MODULO|M20|PARTE|1": {
+          "moduleCode": "M20",
+          "part": 1,
+          "title": "BASE COMPLETA | PROCESSUAL PENAL | M20 | Recursos em Espécie",
+          "cadernoId": "105850403",
+          "quantity": 24,
+          "shareUrl": "https://www.tecconcursos.com.br/s/Q7A8WZ"
+        },
+        "TEC|Direito Processual Penal|MODULO|M21|PARTE|1": {
+          "moduleCode": "M21",
+          "part": 1,
+          "title": "BASE COMPLETA | PROCESSUAL PENAL | M21 | Juizados Especiais Criminais",
+          "cadernoId": "105850421",
+          "quantity": 75,
+          "shareUrl": "https://www.tecconcursos.com.br/s/Q7A8Wr"
+        },
+        "TEC|Direito Processual Penal|MODULO|M22|PARTE|1": {
+          "moduleCode": "M22",
+          "part": 1,
+          "title": "BASE COMPLETA | PROCESSUAL PENAL | M22 | Habeas Corpus e Ações Autônomas de Impugnação | Parte 1: Habeas Corpus",
+          "cadernoId": "105850434",
+          "quantity": 10,
+          "shareUrl": "https://www.tecconcursos.com.br/s/Q7A8X4"
+        },
+        "TEC|Direito Processual Penal|MODULO|M22|PARTE|2": {
+          "moduleCode": "M22",
+          "part": 2,
+          "title": "BASE COMPLETA | PROCESSUAL PENAL | M22 | Habeas Corpus e Ações Autônomas de Impugnação | Parte 2: Revisão Criminal",
+          "cadernoId": "105850453",
+          "quantity": 5,
+          "shareUrl": "https://www.tecconcursos.com.br/s/Q7A8XN"
+        }
+      }
+    }
+  ],
+  "reportLinks": [
+    "https://www.tecconcursos.com.br/s/Q7A8K2",
+    "https://www.tecconcursos.com.br/s/Q7A8KA",
+    "https://www.tecconcursos.com.br/s/Q7A8KM",
+    "https://www.tecconcursos.com.br/s/Q7A8KV",
+    "https://www.tecconcursos.com.br/s/Q7A8Ki",
+    "https://www.tecconcursos.com.br/s/Q7A8Kt",
+    "https://www.tecconcursos.com.br/s/Q7A8LM",
+    "https://www.tecconcursos.com.br/s/Q7A8LU",
+    "https://www.tecconcursos.com.br/s/Q7A8Lf",
+    "https://www.tecconcursos.com.br/s/Q7A8Lv",
+    "https://www.tecconcursos.com.br/s/Q7A8M9",
+    "https://www.tecconcursos.com.br/s/Q7A8MM",
+    "https://www.tecconcursos.com.br/s/Q7A8Mn",
+    "https://www.tecconcursos.com.br/s/Q7A8Nb",
+    "https://www.tecconcursos.com.br/s/Q7A8Ny",
+    "https://www.tecconcursos.com.br/s/Q7A8OA",
+    "https://www.tecconcursos.com.br/s/Q7A8OP",
+    "https://www.tecconcursos.com.br/s/Q7A8Oh",
+    "https://www.tecconcursos.com.br/s/Q7A8P4",
+    "https://www.tecconcursos.com.br/s/Q7A8Q6",
+    "https://www.tecconcursos.com.br/s/Q7A8QJ",
+    "https://www.tecconcursos.com.br/s/Q7A8Qb",
+    "https://www.tecconcursos.com.br/s/Q7A8Qv",
+    "https://www.tecconcursos.com.br/s/Q7A8R8",
+    "https://www.tecconcursos.com.br/s/Q7A8RQ",
+    "https://www.tecconcursos.com.br/s/Q7A8UK",
+    "https://www.tecconcursos.com.br/s/Q7A8SD",
+    "https://www.tecconcursos.com.br/s/Q7A8SZ",
+    "https://www.tecconcursos.com.br/s/Q7A8St",
+    "https://www.tecconcursos.com.br/s/Q7A8T7",
+    "https://www.tecconcursos.com.br/s/Q7A8TT",
+    "https://www.tecconcursos.com.br/s/Q7A8Uc",
+    "https://www.tecconcursos.com.br/s/Q7A8Uw",
+    "https://www.tecconcursos.com.br/s/Q7A8VD",
+    "https://www.tecconcursos.com.br/s/Q7A8VP",
+    "https://www.tecconcursos.com.br/s/Q7A8Vf",
+    "https://www.tecconcursos.com.br/s/Q7A8Vs",
+    "https://www.tecconcursos.com.br/s/Q7A8W8",
+    "https://www.tecconcursos.com.br/s/Q7A8WZ",
+    "https://www.tecconcursos.com.br/s/Q7A8Wr",
+    "https://www.tecconcursos.com.br/s/Q7A8X4",
+    "https://www.tecconcursos.com.br/s/Q7A8XN"
+  ]
+}

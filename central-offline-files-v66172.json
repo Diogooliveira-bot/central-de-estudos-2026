@@ -1,5 +1,5 @@
 {
-  "build": "20261013-portuguese-activities-v1",
+  "build": "20261014-penal-cpp-tec-v1",
   "files": [
     "/central-v119.html?direct=35",
     "/ui/discipline-standard.js?v=20261003penalnative1",
@@ -481,6 +481,9 @@
     "/ui/cpc-sharing-links.js?v=20261010cpcsharing1",
     "/content/qc-sharing-links.json?v=20261013qclinks1",
     "/content/qc-sharing-links.js?v=20261013qclinks1",
-    "/ui/qc-sharing-links.js?v=20261013qclinks1"
+    "/ui/qc-sharing-links.js?v=20261013qclinks1",
+    "/content/penal-cpp-tec-links.js?v=20261014tec1",
+    "/ui/tec-penal-cpp-links.js?v=20261014tec1",
+    "/ui/penal-cpp-tec-links.css?v=20261014tec1"
   ]
 }
