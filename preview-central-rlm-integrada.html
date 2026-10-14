@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="pt-BR"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Base Completa • Integração nativa RLM • Prévia</title>
+<link rel="stylesheet" href="./ui/rlm-native-v1.css">
+<style>
+:root{--text:#1e334a;--muted:#75879a;--line:#d9e3ec;--card:#fff}*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;background:#f1f5f8;color:#253a50}
+.central-shell{display:grid;grid-template-columns:230px 1fr;min-height:100dvh}
+.central-side{background:#172b42;color:#ebf3fa;padding:25px 18px}
+.central-side small{display:block;color:#a3bed0;font-size:10px;letter-spacing:.12em;font-weight:850;text-transform:uppercase}
+.central-side strong{display:block;margin:7px 0 26px;font-size:17px}
+.central-side .item{display:block;border-radius:9px;padding:12px 14px;font-size:13px;color:#c9dce9;margin:5px 0}
+.central-side .item.active{background:#2a506c;color:white;font-weight:800}
+main{padding:28px clamp(16px,4vw,58px);max-width:1460px;width:100%;min-width:0;margin:auto}
+.route{font-size:12px;color:#617c93;margin-bottom:19px}
+main>h1{font-size:clamp(24px,3vw,37px);letter-spacing:-.04em;margin:0 0 8px}
+main>p{color:#71869a;max-width:750px;line-height:1.55}
+.central-area{max-width:1160px}
+.central-discipline{border:1px solid #d8e3eb;background:#fff;border-radius:16px;padding:14px;margin-top:23px}
+.central-discipline>header{padding:9px 12px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.central-discipline>header b{font-size:18px}.central-discipline>header span{font-size:12px;color:#5c8198}
+.tip-banner{background:#e9f4f7;border-left:4px solid #2c94a0;border-radius:9px;padding:13px 16px;font-size:12px;color:#31566c;line-height:1.65}
+@media(max-width:850px){.central-shell{display:block}.central-side{padding:14px;position:static;display:flex;gap:10px;align-items:center;flex-wrap:wrap}.central-side small{display:none}.central-side strong{margin:0 12px 0 0}.central-side .item{font-size:11px;margin:0}.central-discipline{padding:8px}main{padding:17px 12px}}
+</style>
+</head><body>
+<div class="central-shell"><aside class="central-side"><div><small>Plataforma de estudos</small><strong>BASE COMPLETA</strong></div><span class="item">Início</span><span class="item active">Disciplinas</span><span class="item">Cronograma</span><span class="item">Questões</span></aside>
+<main><div class="route">Central de Estudos / Disciplinas / Raciocínio Lógico-Matemático</div>
+<h1>Disciplinas</h1><p>Esta é uma demonstração da RLM com os mesmos cartões e o mesmo leitor nativo instalados na branch de integração da Central.</p>
+<div class="tip-banner"><b>Prévia de integração:</b> a RLM aparece dentro da área de disciplinas; ao clicar em qualquer módulo, teoria, resumo, questões, mapa mental e banco FCC abrem em uma janela do próprio sistema. Esta demonstração não substitui a autenticação nem publica alterações na Central principal.</div>
+<div class="central-area"><section class="central-discipline"><header><b>Raciocínio Lógico-Matemático</b><span id="courseStat"></span></header><div id="rlmMaster">Preparando os módulos…</div></section></div>
+</main></div>
+<script src="./content/rlm-tjce-2026/estrutura.js"></script>
+<script src="./content/rlm-tjce-2026/aulas-logica.js"></script>
+<script src="./content/rlm-tjce-2026/aulas-raciocinio.js"></script>
+<script src="./content/rlm-tjce-2026/aulas-matematica.js"></script>
+<script src="./content/rlm-tjce-2026/aulas-estatistica.js"></script>
+<script src="./content/rlm-tjce-2026/banco-fcc-legado.js"></script>
+<script src="./ui/rlm-native-v1.js"></script>
+<script>
+function renderSubjects(){document.getElementById('rlmMaster').innerHTML=RlmNative.renderMaster();const s=RlmNative.stats();document.getElementById('courseStat').textContent=s.done+'/'+s.total+' concluídos';}
+function renderDisciplineGrid(){}
+document.addEventListener('DOMContentLoaded',renderSubjects);
+</script>
+</body></html>
