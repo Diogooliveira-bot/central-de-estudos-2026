@@ -1,5 +1,6 @@
 import {database, requireSession, sameOriginRequest, readJsonBody, readCookie} from '../lib/auth.js';
 
+const IS_PREVIEW=process.env.VERCEL_ENV!=='production';
 function send(res,status,body){
  res.statusCode=status;
  res.setHeader('Content-Type','application/json; charset=utf-8');
@@ -13,6 +14,16 @@ async function ensure(sql){
   editor_id TEXT NOT NULL, updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
  )`;
  await sql`CREATE TABLE IF NOT EXISTS lei_em_dia_edit_history (
+  id BIGSERIAL PRIMARY KEY, question_id TEXT NOT NULL, revision INTEGER NOT NULL,
+  data JSONB NOT NULL, editor_id TEXT NOT NULL, changed_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+ )`;
+}
+async function ensurePreview(sql){
+ await sql`CREATE TABLE IF NOT EXISTS lei_em_dia_edits_preview (
+  question_id TEXT PRIMARY KEY, data JSONB NOT NULL, revision INTEGER NOT NULL DEFAULT 1,
+  editor_id TEXT NOT NULL, updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+ )`;
+ await sql`CREATE TABLE IF NOT EXISTS lei_em_dia_edit_history_preview (
   id BIGSERIAL PRIMARY KEY, question_id TEXT NOT NULL, revision INTEGER NOT NULL,
   data JSONB NOT NULL, editor_id TEXT NOT NULL, changed_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
  )`;
@@ -43,8 +54,10 @@ export default async function handler(req,res){
   if(!['GET','PUT'].includes(req.method)){res.setHeader('Allow','GET, PUT');return send(res,405,{error:'Método não permitido'});}
   // A leitura das correções é pública; apenas salvar exige sessão administrativa.
   if(req.method==='GET'){
-   const sql=database();await ensure(sql);
-   const edits=await sql`SELECT question_id,data,revision FROM lei_em_dia_edits`;
+   const sql=database();await (IS_PREVIEW?ensurePreview:ensure)(sql);
+   const edits=IS_PREVIEW
+    ? await sql`SELECT question_id,data,revision FROM lei_em_dia_edits_preview`
+    : await sql`SELECT question_id,data,revision FROM lei_em_dia_edits`;
    let canEdit=false;
    if(readCookie(req)){
     try{const auth=await requireSession(req,['admin']);canEdit=auth.ok===true}catch(_){}
@@ -58,10 +71,24 @@ export default async function handler(req,res){
   const validation=validateEditPayload(body);
   if(validation)return send(res,400,{error:validation});
   const {id,data,revision}=body;
-  const sql=session.sql||database();await ensure(sql);
+  const sql=session.sql||database();await (IS_PREVIEW?ensurePreview:ensure)(sql);
   const encoded=JSON.stringify(data),actor=session.user.id;
   // Edição e registro de histórico acontecem na mesma instrução atômica.
-  const rows=await sql`WITH change AS (
+  const rows=IS_PREVIEW
+    ? await sql`WITH change AS (
+    INSERT INTO lei_em_dia_edits_preview(question_id,data,revision,editor_id)
+    VALUES(${id},${encoded}::jsonb,1,${actor})
+    ON CONFLICT(question_id) DO UPDATE SET
+      data=EXCLUDED.data,revision=lei_em_dia_edits_preview.revision+1,
+      editor_id=EXCLUDED.editor_id,updated_at=NOW()
+    WHERE lei_em_dia_edits_preview.revision=${revision}
+    RETURNING question_id,data,revision,editor_id
+   ), recorded AS (
+    INSERT INTO lei_em_dia_edit_history_preview(question_id,revision,data,editor_id)
+    SELECT question_id,revision,data,editor_id FROM change
+    RETURNING revision
+   ) SELECT revision FROM recorded`
+    : await sql`WITH change AS (
     INSERT INTO lei_em_dia_edits(question_id,data,revision,editor_id)
     VALUES(${id},${encoded}::jsonb,1,${actor})
     ON CONFLICT(question_id) DO UPDATE SET
