@@ -840,7 +840,7 @@ function el(id){return document.getElementById(id)}
 function esc(v){return String(v==null?'':v).replace(/[&<>\"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;'}[c]})}
 function setActive(btn){try{document.querySelectorAll('#centralSidebar .nav button').forEach(function(b){b.classList.remove('active')});if(btn)btn.classList.add('active')}catch(e){}}
 function removeBlockingOverlay(){try{var o=el('centralDirectLaunch');if(o)o.remove()}catch(e){}}
-function show(id,label,btn){removeBlockingOverlay();VIEW_IDS.forEach(function(v){var n=el(v);if(n)n.classList.add('hidden')});var target=el(id);if(!target)return false;target.classList.remove('hidden');try{target.classList.add('central-view-visible')}catch(_){ }var c=el('crumb');if(c)c.textContent=label||'';setActive(btn);try{if(typeof window.closeMobileSidebar==='function')window.closeMobileSidebar()}catch(e){}try{window.scrollTo(0,0)}catch(e){}try{target.scrollTop=0}catch(e){}return true}
+function show(id,label,btn){removeBlockingOverlay();VIEW_IDS.forEach(function(v){var n=el(v);if(n)n.classList.add('hidden')});var target=el(id);if(!target)return false;target.classList.remove('hidden');try{target.classList.add('central-view-visible')}catch(_){ }var c=el('crumb');if(c)c.textContent=label||'';setActive(btn);try{if(typeof window.closeMobileSidebar==='function')window.closeMobileSidebar()}catch(e){}try{window.scrollTo(0,0)}catch(e){}try{target.scrollTop=0}catch(e){}try{window.centralUpdateViewRoute&&window.centralUpdateViewRoute(id)}catch(e){}return true}
 function ensureDisciplineGrid(){var host=el('disciplineGrid');if(!host||host.children.length)return;host.innerHTML=SUBJECTS_STATIC.map(function(s){return `<button type="button" class="disc-card" data-id="${s[0]}" onclick="return centralHardSubject('${s[0]}')"><b>${esc(s[1])}</b><small>${esc(s[2])}</small><span class="disc-meta">Abrir disciplina</span></button>`}).join('')}
 function localISODate(){var d=new Date(),m=String(d.getMonth()+1).padStart(2,'0'),day=String(d.getDate()).padStart(2,'0');return d.getFullYear()+'-'+m+'-'+day}
 function ensureAgenda(){var date=el('agendaDate');if(date&&!date.value)date.value=localISODate();var sel=el('agendaDisc');if(sel&&!sel.options.length)sel.innerHTML=SUBJECTS_STATIC.map(function(s){return '<option value="'+s[0]+'">'+esc(s[1])+'</option>'}).join('');var host=el('agendaEditor');if(host&&!host.innerHTML.trim())host.innerHTML='<div class="muted small">Nenhuma tarefa neste dia.</div>';try{if(typeof window.renderAgendaEditor==='function')window.renderAgendaEditor()}catch(e){}}
@@ -1869,7 +1869,11 @@ window.mapaOpenTopic=function(sid,uid,idx){
 window.mpToggleCard=function(btn){
  try{
   var card=btn.closest('.mp-card');
-  if(card)card.classList.toggle('collapsed');
+  if(card){
+   var opening=card.classList.contains('collapsed');
+   if(opening)card.parentElement.querySelectorAll('.mp-card').forEach(function(item){item.classList.add('collapsed')});
+   card.classList.toggle('collapsed',!opening);
+  }
  }catch(e){}
 };
 var IC={pt:'📖',cf:'🏛️',adm:'💼',civil:'👥',cpc:'⚖️',penal:'🔎',cpp:'🔍',trab:'👷',ptra:'📑',rlm:'💡'};
@@ -1899,7 +1903,7 @@ function renderMap(hostId){
   var pct=topics.length?Math.round(soma/topics.length):0;
   var cnt=(s.id==='trab'||s.id==='ptra')?(topics.length+' aulas'):(teal?'9 módulos + cálculo rápido':topics.length+' módulos');
   var sub=(st&&st.done?st.done+'/'+st.total+' '+st.unit+' · ':'')+cnt;
-  return '<div class="mp-card'+(teal?' teal':'')+'" data-sid="'+esc(s.id)+'">'
+  return '<div class="mp-card'+(teal?' teal':'')+(hostId==='mapaEstudosDisc'?' collapsed':'')+'" data-sid="'+esc(s.id)+'">'
    +'<span class="mp-hex">'+(ci+1)+'</span>'
    +'<div class="mp-bar" onclick="mpToggleCard(this)" title="Abrir/fechar módulos">'
    +esc(s.name)+'<small>'+esc(sub)+'</small>'
@@ -1954,7 +1958,7 @@ function centralToolPath(name,opts={}){
 }
 function openEmbeddedTool(name,opts={},btn=null){
  try{if(window.CentralStudyNavigation)window.CentralStudyNavigation.rememberReturn()}catch(_){}
- try{if(typeof saveLast==='function')saveLast({url:'folder:'+name,title:name,at:Date.now(),opts:opts||{}})}catch(_){}
+ try{if(typeof saveLast==='function')saveLast({url:'folder:'+name,title:({decorando:'Lei em Dia',vade:'Vade Mecum'})[name]||name,at:Date.now(),opts:opts||{}})}catch(_){}
  try{if(typeof setNav==='function')setNav(btn);else if(typeof closeMobileSidebar==='function')closeMobileSidebar()}catch(_){}
  location.href=centralToolPath(name,opts||{});return false;
 }
@@ -2186,6 +2190,7 @@ window.openEmbeddedTool=openEmbeddedTool;
     currentDate();
     status('');
     render();
+    try { window.centralUpdateViewRoute?.('agendaView'); } catch (_) {}
     return false;
   }
 

@@ -8,7 +8,8 @@ const localDateISO=date=>`${date.getFullYear()}-${String(date.getMonth()+1).padS
 const todayISO=()=>localDateISO(new Date());
 $('today').textContent=new Intl.DateTimeFormat('pt-BR',{weekday:'long',day:'2-digit',month:'long',year:'numeric'}).format(new Date());
 $('agendaDate').value=todayISO();
-$('agendaDisc').innerHTML=SUBJECTS.map(s=>`<option>${esc(s.name)}</option>`).join('');
+const agendaSubjects=[{id:'pt',name:'Português'},...SUBJECTS].filter((s,index,list)=>list.findIndex(x=>x.id===s.id)===index);
+$('agendaDisc').innerHTML=agendaSubjects.map(s=>`<option value="${escAttr(s.id)}">${esc(s.name)}</option>`).join('');
 
 
 
@@ -121,6 +122,17 @@ function applyCentralTheme(){
 }
 function hideViews(){['homeView','disciplinesView','agendaView','performanceView','tecCadernosView','ankiView','leiSecaView','vadeMecumView','moduleView'].forEach(id=>$(id).classList.add('hidden'))}
 function setNav(btn){document.querySelectorAll('.nav button').forEach(b=>b.classList.remove('active'));if(btn)btn.classList.add('active');closeMobileSidebar()}
+const CENTRAL_VIEW_ROUTES={homeView:'home',disciplinesView:'disciplines',agendaView:'agenda',performanceView:'performance',tecCadernosView:'tec-cadernos'};
+let centralApplyingHistory=false;
+function centralUpdateViewRoute(viewId){
+ if(centralApplyingHistory)return;
+ const route=CENTRAL_VIEW_ROUTES[viewId];if(!route)return;
+ try{
+  const url=new URL(location.href);if(url.searchParams.get('view')===route)return;
+  url.searchParams.set('view',route);history.pushState({centralView:route},'',url.pathname+url.search+url.hash);
+ }catch(_){ }
+}
+window.centralUpdateViewRoute=centralUpdateViewRoute;
 function centralShowNativeView(viewId,label,btn){
  try{
   ['homeView','disciplinesView','agendaView','performanceView','tecCadernosView','ankiView','leiSecaView','vadeMecumView','moduleView'].forEach(id=>{
@@ -133,6 +145,7 @@ function centralShowNativeView(viewId,label,btn){
   try{setNav(btn)}catch(_){try{closeMobileSidebar()}catch(__){}}
   try{view.scrollTop=0}catch(_){}
   try{window.scrollTo(0,0)}catch(_){}
+  centralUpdateViewRoute(viewId);
   return view;
  }catch(e){console.error('Falha ao exibir tela interna',viewId,e);return null}
 }
@@ -158,6 +171,7 @@ function centralSidebarAction(action,btn){
  return false;
 }
 function openHome(btn){
+ try{for(const s of SUBJECTS)localStorage.setItem(`central-v6:open:${s.id}`,'0')}catch(_){}
  const view=centralShowNativeView('homeView','Início',btn||document.querySelector('.nav button'));
  if(!view)return false;
  try{renderAll()}catch(e){console.warn('Renderização parcial do Início',e)}
@@ -167,7 +181,10 @@ function openDisciplines(btn){
  const view=centralShowNativeView('disciplinesView','Disciplinas',btn);
  if(!view)return false;
  // A tela aparece primeiro. A leitura de progresso não pode impedir a navegação.
- setTimeout(()=>{try{renderDisciplineGrid()}catch(e){console.error('Falha ao montar Disciplinas',e);centralNativeError('disciplineGrid',e?.message||e)}},0);
+ const refresh=()=>{try{window.renderDisciplineGrid?.();window.renderMapaEstudos?.()}catch(e){console.error('Falha ao montar Disciplinas',e);centralNativeError('disciplineGrid',e?.message||e)}};
+ setTimeout(refresh,0);
+ // Leitores carregados no mesmo ciclo podem atualizar a matriz depois do primeiro desenho.
+ setTimeout(refresh,180);
  return false;
 }
 function openAgenda(btn){
@@ -356,7 +373,14 @@ function subjStats(s){
  const total=s.topics.length,done=s.topics.filter(t=>goalDone(t.uid)).length;
  return {total,done,pct:total?Math.round(done/total*100):0,unit:(s.id==='trab'||s.id==='ptra')?'aulas':'metas'};
 }
-function toggleSubject(id){if(window.CentralDisciplineLoader&&!CentralDisciplineLoader.isReady(id)){CentralDisciplineLoader.open(id);return false;}const el=document.querySelector(`.subject[data-id="${id}"]`);const o=!el.classList.contains('open');el.classList.toggle('open');localStorage.setItem(`central-v6:open:${id}`,o?'1':'0');if(o&&window.CentralDisciplineLoader)renderSubjects()}
+function toggleSubject(id){
+ if(window.CentralDisciplineLoader&&!CentralDisciplineLoader.isReady(id)){CentralDisciplineLoader.open(id);return false;}
+ const el=document.querySelector(`.subject[data-id="${id}"]`);if(!el)return false;
+ const opening=!el.classList.contains('open');
+ if(opening){for(const s of SUBJECTS)localStorage.setItem(`central-v6:open:${s.id}`,s.id===id?'1':'0');renderSubjects()}
+ else{localStorage.setItem(`central-v6:open:${id}`,'0');el.classList.remove('open')}
+ return false;
+}
 function toggleGoal(uid,v,e){e?.stopPropagation();setDone(uid,v);renderAll()}
 function topicOpenKey(uid){return `central-v6:topic-open:${uid}`}
 function toggleTopic(uid){
@@ -371,12 +395,17 @@ function topicByUid(uid){for(const s of SUBJECTS){const t=s.topics.find(x=>x.uid
 
 function saveLastTopic(uid){const x=topicByUid(uid);if(x)saveLast({topicUid:uid,title:x.s.name+' • '+x.t.title,at:Date.now()})}
 function saveLast(x){localStorage.setItem('central-v6:last',JSON.stringify(x));renderContinue()}
+function friendlyLastTitle(x){
+ const title=String(x&&x.title||'').trim();
+ const labels={decorando:'Lei em Dia',vade:'Vade Mecum'};
+ return labels[title]||labels[String(x&&x.url||'').replace(/^folder:/,'')]||title||'Último estudo';
+}
 function renderContinue(){
  const host=$('continueBox');if(!host)return;
  let x=null;try{x=JSON.parse(localStorage.getItem('central-v6:last')||'null')}catch(_){}
  if(!x||typeof x!=='object'){host.innerHTML='<div class="muted small">Nenhuma sessão recente.</div>';return}
  const date=new Date(x.at);
- host.innerHTML=`<b style="display:block;font-size:12px">${esc(x.title||'Último estudo')}</b><span class="muted small">${Number.isNaN(date.getTime())?'':date.toLocaleString('pt-BR')}</span><div style="margin-top:9px"><button type="button" class="btn primary sm" onclick="centralResumeLast()">Continuar</button></div>`;
+ host.innerHTML=`<b style="display:block;font-size:12px">${esc(friendlyLastTitle(x))}</b><span class="muted small">${Number.isNaN(date.getTime())?'':date.toLocaleString('pt-BR')}</span><div style="margin-top:9px"><button type="button" class="btn primary sm" onclick="centralResumeLast()">Continuar</button></div>`;
 }
 function centralResumeLast(){
  let x=null;try{x=JSON.parse(localStorage.getItem('central-v6:last')||'null')}catch(_){}
@@ -5052,13 +5081,21 @@ function renderSummary(){
 }
 function renderPerformance(){const p=allPerf(),q=p.reduce((a,x)=>a+x.q,0),c=p.reduce((a,x)=>a+x.c,0);$('gpSessions').textContent=p.length;$('gpQ').textContent=q;$('gpC').textContent=c;$('gpA').textContent=q?Math.round(c/q*1000)/10+'%':'—';$('perfBySubject').innerHTML=SUBJECTS.map(s=>{const a=p.filter(x=>x.sid===s.id),sq=a.reduce((z,x)=>z+x.q,0),sc=a.reduce((z,x)=>z+x.c,0);return `<div class="hist"><span>${esc(s.name)}</span><span>${sq} questões</span><span class="rate ${sq&&sc/sq>=.8?'good':sq&&sc/sq>=.6?'mid':'bad'}">${sq?Math.round(sc/sq*1000)/10+'%':'—'}</span><span></span></div>`}).join('');try{if(typeof window.renderMapaEstudos==='function')window.renderMapaEstudos()}catch(e){console.warn('mapa',e)}
 }
+function disciplineOverviewStats(s){
+ const percentages=window.CentralDisciplineLoader?.percentages(s);
+ if(Array.isArray(percentages)){
+  const total=percentages.length,done=percentages.filter(p=>p===100).length;
+  return {total,done,pct:total?Math.round(percentages.reduce((sum,p)=>sum+(Number(p)||0),0)/total):0,unit:'módulos'};
+ }
+ return subjStats(s);
+}
 function renderDisciplineGrid(){
  const host=$('disciplineGrid');if(!host)return;
  let list=[];try{list=Array.isArray(SUBJECTS)?SUBJECTS:[]}catch(e){console.warn('SUBJECTS indisponível',e)}
  if(!list.length){host.innerHTML='<div class="card" style="padding:18px"><b>Disciplinas</b><div class="muted small" style="margin-top:7px">O conteúdo ainda está terminando de carregar. Toque novamente em Disciplinas.</div></div>';return}
  host.innerHTML=list.map(s=>{
   try{
-   let st;try{st=subjStats(s)}catch(err){st={done:0,total:(s.topics?.length||0),pct:0}}
+   let st;try{st=disciplineOverviewStats(s)}catch(err){st={done:0,total:(s.topics?.length||0),pct:0}}
    const cards=(s.topics||[]).reduce((a,t)=>a+(t.sourceStats?.cards||0),0),guided=['pt','cf','civil','penal','cpc','adm','cpp'].includes(s.id);
    const desc=guided?`${st.total} módulos • curso integrado`:s.id==='rlm'?'15 módulos integrados • 14 apostilas • 140 exercícios • 200 FCC':(s.id==='trab'||s.id==='ptra')?`${s.topics.length} aulas • Mentoria AJAJ`:`${s.topics.length} tópicos reais recuperados`;
    const unit=guided?'módulos':s.id==='rlm'?'módulos':(s.id==='trab'||s.id==='ptra')?'aulas':'tópicos';
@@ -5066,6 +5103,7 @@ function renderDisciplineGrid(){
   }catch(e){console.warn('Falha em cartão de disciplina',s?.id,e);return ''}
  }).join('')
 }
+window.renderDisciplineGrid=renderDisciplineGrid;
 function jumpSubject(id){
  try{
   const sid=String(id||'');
@@ -5146,3 +5184,18 @@ try{renderAll()}catch(e){
  console.error('Inicialização parcial da Central',e);
  try{renderDisciplineGrid()}catch(_){}
 }
+function openCentralRouteFromLocation(){
+ let route='';try{route=new URLSearchParams(location.search).get('view')||'home'}catch(_){route='home'}
+ centralApplyingHistory=true;
+ try{
+  const nav=document.querySelectorAll('#centralSidebar .nav button');
+  const button=needle=>Array.from(nav).find(b=>String(b.getAttribute('onclick')||'').includes(needle))||null;
+  if(route==='agenda')openAgenda(button('CentralAgenda.open'));
+  else if(route==='disciplines')openDisciplines(button("'disciplines'"));
+  else if(route==='performance')openPerformance(button("'performance'"));
+  else if(route==='tec-cadernos')openTecCadernos(button("'tec-cadernos'"));
+  else openHome(button("'home'"));
+ }finally{centralApplyingHistory=false}
+}
+window.addEventListener('popstate',openCentralRouteFromLocation);
+setTimeout(openCentralRouteFromLocation,0);

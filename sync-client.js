@@ -9,7 +9,7 @@ var user=window.BASE_COMPLETA_USER||null;
 var userId=String(window.__BASE_COMPLETA_USER_ID__||user&&user.id||'');
 var meta={device:'',revision:0,hash:''};
 
-function currentVersion(){return String(window.CENTRAL_VERSION||'6.6.120').replace(/^v/,'')}
+function currentVersion(){return String(window.CENTRAL_VERSION||'6.6.122').replace(/^v/,'')}
 function mk(k){return 'u:'+userId+':'+k}
 function dbOpen(){return new Promise(function(resolve,reject){var r=indexedDB.open(DB_NAME,1);r.onupgradeneeded=function(){if(!r.result.objectStoreNames.contains(STORE))r.result.createObjectStore(STORE)};r.onsuccess=function(){resolve(r.result)};r.onerror=function(){reject(r.error)}})}
 async function kvGet(k){var db=await dbOpen();return new Promise(function(resolve,reject){var tx=db.transaction(STORE,'readonly'),r=tx.objectStore(STORE).get(mk(k));r.onsuccess=function(){resolve(r.result)};r.onerror=function(){reject(r.error)}})}
@@ -23,8 +23,9 @@ function status(msg,type){var el=document.getElementById('centralSyncStatus');if
 async function saveMeta(){await Promise.all([kvSet('device',meta.device),kvSet('revision',meta.revision),kvSet('hash',meta.hash),kvSet('local-snapshot',collect())])}
 async function request(path,opt){opt=opt||{};var r=await fetch(path,opt),txt=await r.text(),j={};try{j=txt?JSON.parse(txt):{}}catch(_){j={error:txt||('HTTP '+r.status)}}if(r.status===401){location.replace('/login.html?next='+encodeURIComponent(location.pathname+location.search));throw new Error('Sessão expirada')}if(!r.ok){var e=new Error(j.error||('HTTP '+r.status));e.status=r.status;e.body=j;throw e}return j}
 function jsonObject(v){try{var x=JSON.parse(String(v||''));return x&&typeof x==='object'&&!Array.isArray(x)?x:null}catch(_){return null}}
-function mergeCronogramaValue(localValue,cloudValue){
+function mergeCronogramaValue(localValue,cloudValue,preferLocal){
  if(localValue==null)return cloudValue;if(cloudValue==null)return localValue;
+ if(!preferLocal)return cloudValue;
  var l=jsonObject(localValue),c=jsonObject(cloudValue);if(!l||!c)return localValue;
  if(l.version&&c.version&&l.version!==c.version)return cloudValue;
  var out=Object.assign({},c,l);out.version=c.version||l.version;
@@ -33,20 +34,20 @@ function mergeCronogramaValue(localValue,cloudValue){
  out.selected=l.selected!=null?l.selected:(c.selected!=null?c.selected:null);
  try{return JSON.stringify(out)}catch(_){return localValue}
 }
-function mergeAgendaValue(localValue,cloudValue){
+function mergeAgendaValue(localValue,cloudValue,preferLocal){
  if(localValue==null)return cloudValue;if(cloudValue==null)return localValue;
  try{
   var l=JSON.parse(localValue),c=JSON.parse(cloudValue);
-  if(Array.isArray(l)&&Array.isArray(c))return localValue;
-  if(l&&c&&typeof l==='object'&&typeof c==='object'&&!Array.isArray(l)&&!Array.isArray(c))return JSON.stringify(Object.assign({},c,l));
+  if(Array.isArray(l)&&Array.isArray(c))return preferLocal?localValue:cloudValue;
+  if(l&&c&&typeof l==='object'&&typeof c==='object'&&!Array.isArray(l)&&!Array.isArray(c))return JSON.stringify(preferLocal?Object.assign({},c,l):c);
  }catch(_){}
- return localValue;
+ return preferLocal?localValue:cloudValue;
 }
 function mergePayload(local,cloud,preferLocal){
  var src=sanitizePayload(local||{}),remote=sanitizePayload(cloud||{});
  var out=preferLocal?Object.assign({},remote,src):Object.assign({},src,remote);
- if(Object.prototype.hasOwnProperty.call(src,CRONO_KEY))out[CRONO_KEY]=mergeCronogramaValue(src[CRONO_KEY],out[CRONO_KEY]);
- Object.keys(src).forEach(function(k){if(k.indexOf(AGENDA_PREFIX)===0)out[k]=mergeAgendaValue(src[k],out[k])});
+ if(Object.prototype.hasOwnProperty.call(src,CRONO_KEY))out[CRONO_KEY]=mergeCronogramaValue(src[CRONO_KEY],out[CRONO_KEY],preferLocal);
+ Object.keys(src).forEach(function(k){if(k.indexOf(AGENDA_PREFIX)===0)out[k]=mergeAgendaValue(src[k],out[k],preferLocal)});
  return out;
 }
 function applyCloud(payload){
@@ -78,7 +79,11 @@ async function sync(reason){
    try{
     var sent2=await push(local,localHash,meta.revision);meta.revision=sent2.revision;meta.hash=localHash;lastCheckHash=localHash;await saveMeta();status('Sua conta está sincronizada.','ok');
    }catch(e){
-    if(e.status===409){meta.revision=0;meta.hash='';await saveMeta();return sync('conflict')}
+    if(e.status===409){
+     meta.revision=0;meta.hash='';await saveMeta();
+     if(reason==='conflict')throw new Error('Conflito repetido. Tente sincronizar novamente.');
+     setTimeout(function(){sync('conflict')},0);return;
+    }
     throw e;
    }
   }else{lastCheckHash=localHash;status('Sincronizado • nenhuma alteração pendente.','ok')}

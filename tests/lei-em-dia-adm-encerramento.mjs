@@ -34,7 +34,7 @@ test("encerramento não declara verificação jurídica ou direitos autorais ine
  assert.equal(report.validation.lawSpotChecks.status,"PARTIAL_CHECK");
  const html=readFileSync(new URL("tools/decorando.html",root),"utf8");
  assert.ok(html.includes("309 questões de provas com banca identificada"));
- assert.ok(html.includes("444 exercícios autorais da Base Completa"));
+ assert.ok(html.includes("535 exercícios autorais da Base Completa"));
  assert.ok(html.includes("12 questões importadas cuja origem precisa ser confirmada"));
  assert.ok(!html.includes("Decorando a Lei Seca"));
 });

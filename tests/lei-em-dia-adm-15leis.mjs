@@ -113,7 +113,7 @@ test("auditoria dos 321 gabaritos importados preserva a cadeia de origem",()=>{
  assert.equal(audit.totalExcerptWarnings,0);
  assert.equal(audit.byFile.reduce((a,x)=>a+x.answerMatch,0),321);
  for(const [path,sha] of Object.entries(audit.datasetBlobShas)){
-   const content=readFileSync(new URL(path,root));
+   const content=Buffer.from(readFileSync(new URL(path,root),"utf8").replace(/\r\n/g,"\n"),"utf8");
    const gitBlob=createHash("sha1").update("blob "+content.length).update(Buffer.from([0])).update(content).digest("hex");
    if(path==="tools/decorando-data-adm-9784.js"){
      const snapshot=JSON.parse(readFileSync(new URL("audits/lei-em-dia-auditoria-20261012-inventario.json",root),"utf8"));
@@ -166,7 +166,7 @@ test("banca e metadados não atribuem questões de concursos a plataformas de co
  assert.equal(known.length,309);
  const text=html.match(/supplementNotice:"([^"]+)"/)?.[1]||"";
  assert.ok(text.includes("309 questões de provas com banca identificada"));
- assert.ok(text.includes("444 exercícios autorais"));
+ assert.ok(text.includes("535 exercícios autorais"));
  assert.ok(text.includes("12 questões importadas cuja origem precisa ser confirmada"));
  assert.ok(!/decorando/i.test(text));
 });

@@ -1,5 +1,5 @@
 {
-  "build": "20261014-penal-cpp-tec-v1",
+  "build": "20261014-final-student-polish-v1",
   "files": [
     "/central-v119.html?direct=35",
     "/ui/discipline-standard.js?v=20261003penalnative1",
@@ -285,6 +285,7 @@
     "/tools/cpc-m20-mapa.html",
     "/ui/home-topnav-v1.css?v=20261004a8",
     "/ui/home-topnav-v1.js?v=20261004a8",
+    "/ui/student-polish-v1.js?v=20261014-final-student-polish-v1",
     "/ui/reading-appearance-v1.css?v=20261005headings1",
     "/ui/reading-appearance-v1.js?v=20261004r5",
     "/assets/base-completa-symbol.png",
