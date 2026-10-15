@@ -150,3 +150,10 @@ html.bc-ui-v1.bc-topnav #appRoot #homeView #continueBox>div:last-child:has(>.btn
   html.bc-ui-v1.bc-topnav #appRoot #homeView .home-continue-card { padding-right:14px!important; }
   html.bc-ui-v1.bc-topnav #appRoot #homeView #continueBox>div:last-child:has(>.btn) { position:static; transform:none; margin-top:8px!important; }
 }
+@media(max-width:480px) {
+  html.bc-ui-v1.bc-topnav #appRoot #homeView .home-today-card { grid-template-columns:minmax(0,1fr)!important; }
+  html.bc-ui-v1.bc-topnav #appRoot #homeView .home-today-card>.card-head>div { grid-column:1!important; grid-row:1!important; }
+  html.bc-ui-v1.bc-topnav #appRoot #homeView .home-today-card>.agenda { grid-column:1!important; grid-row:2!important; }
+  html.bc-ui-v1.bc-topnav #appRoot #homeView .home-today-card>.card-head>.btn { grid-column:1!important; grid-row:3!important; width:100%!important; align-self:stretch!important; }
+  html.bc-ui-v1.bc-topnav #appRoot #homeView .home-today-card:has(.agenda-row)>.home-progress-card { grid-row:4!important; }
+}
