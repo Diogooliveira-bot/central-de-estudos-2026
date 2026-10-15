@@ -80,6 +80,21 @@ test('módulo, biblioteca e histórico usam o mesmo filtro e a mesma sessão', a
   assert.equal(dom.window.document.querySelectorAll('[data-bcq-manage]').length, 0);
 });
 
+test('catálogo organiza QC e TEC em colunas próprias por módulo', async () => {
+  const dom = setup();
+  await settle(dom.window);
+  dom.window.document.querySelector('[data-bcq-tab="disciplines"]').click();
+  const module = dom.window.document.querySelector('.bcq-discipline-module');
+  const columns = module.querySelectorAll(':scope > .bcq-discipline-columns > .bcq-discipline-platform');
+  assert.equal(columns.length, 2);
+  assert.equal(columns[0].dataset.platform, 'qc');
+  assert.equal(columns[1].dataset.platform, 'tec');
+  assert.match(columns[0].querySelector('header').textContent, /QConcursos/);
+  assert.match(columns[1].querySelector('header').textContent, /TEC Concursos/);
+  assert.equal(columns[0].querySelectorAll('[data-bcq-select]').length, 1);
+  assert.equal(columns[1].querySelectorAll('[data-bcq-select]').length, 1);
+});
+
 test('somente administrador recebe gestão e sobreposição compartilhada', async () => {
   const override = {
     stableKey: 'qc:15288411', revision: 3,

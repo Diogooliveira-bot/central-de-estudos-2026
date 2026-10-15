@@ -653,7 +653,12 @@
     const host = page.querySelector('[data-bcq-panel="disciplines"]');
     host.innerHTML = `<section class="bcq-center-panel"><header><div><span>CATÁLOGO COMPLETO</span><h2>Disciplinas e módulos</h2><p>Os mesmos filtros exibidos no final de cada módulo.</p></div></header><div class="bcq-discipline-list">${Array.from(groups.values()).map((group, index) => {
       const filters = Array.from(group.modules.values()).flat();
-      return `<details class="bcq-discipline"${index === 0 ? ' open' : ''}><summary><span><b>${esc(group.label)}</b><small>${group.modules.size} módulos com filtros</small></span><strong>${filters.length} filtros</strong></summary><div>${Array.from(group.modules.entries()).map(([module, rows]) => `<section class="bcq-discipline-module"><header><b>${esc(module)}</b><span>${rows.filter((row) => row.platform === 'qc').length} QC · ${rows.filter((row) => row.platform === 'tec').length} TEC</span></header><div>${rows.map(filterListButton).join('')}</div></section>`).join('')}</div></details>`;
+      return `<details class="bcq-discipline"${index === 0 ? ' open' : ''}><summary><span><b>${esc(group.label)}</b><small>${group.modules.size} módulos com filtros</small></span><strong>${filters.length} filtros</strong></summary><div>${Array.from(group.modules.entries()).map(([module, rows]) => {
+        const qc = rows.filter((row) => row.platform === 'qc');
+        const tec = rows.filter((row) => row.platform === 'tec');
+        const platformColumn = (platform, items) => `<section class="bcq-discipline-platform" data-platform="${platform}"><header><span class="bcq-page-platform" data-platform="${platform}">${platform === 'qc' ? 'QC' : 'TEC'}</span><div><b>${platform === 'qc' ? 'QConcursos' : 'TEC Concursos'}</b><small>${items.length} ${items.length === 1 ? 'filtro' : 'filtros'}</small></div></header><div class="bcq-discipline-platform-list">${items.length ? items.map(filterListButton).join('') : '<p class="bcq-discipline-platform-empty">Nenhum filtro neste módulo.</p>'}</div></section>`;
+        return `<section class="bcq-discipline-module"><header><b>${esc(module)}</b><span>${qc.length} QC · ${tec.length} TEC</span></header><div class="bcq-discipline-columns">${platformColumn('qc', qc)}${platformColumn('tec', tec)}</div></section>`;
+      }).join('')}</div></details>`;
     }).join('')}</div></section>`;
   }
   function renderFilterLibrary(page) {
