@@ -9,7 +9,7 @@ var user=window.BASE_COMPLETA_USER||null;
 var userId=String(window.__BASE_COMPLETA_USER_ID__||user&&user.id||'');
 var meta={device:'',revision:0,hash:''};
 
-function currentVersion(){return String(window.CENTRAL_VERSION||'6.6.122').replace(/^v/,'')}
+function currentVersion(){return String(window.CENTRAL_VERSION||'6.6.123').replace(/^v/,'')}
 function mk(k){return 'u:'+userId+':'+k}
 function dbOpen(){return new Promise(function(resolve,reject){var r=indexedDB.open(DB_NAME,1);r.onupgradeneeded=function(){if(!r.result.objectStoreNames.contains(STORE))r.result.createObjectStore(STORE)};r.onsuccess=function(){resolve(r.result)};r.onerror=function(){reject(r.error)}})}
 async function kvGet(k){var db=await dbOpen();return new Promise(function(resolve,reject){var tx=db.transaction(STORE,'readonly'),r=tx.objectStore(STORE).get(mk(k));r.onsuccess=function(){resolve(r.result)};r.onerror=function(){reject(r.error)}})}

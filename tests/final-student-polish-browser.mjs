@@ -54,10 +54,13 @@ try {
   await page.waitForFunction(() => document.documentElement.dataset.centralReady === 'true' && typeof openPerformance === 'function');
   await page.waitForSelector('#performanceView:not(.hidden)');
   assert.equal(new URL(page.url()).searchParams.get('view'), 'performance');
-  assert.equal(await page.locator('meta[name="central-source-version"]').getAttribute('content'), '6.6.122');
-  assert.match(await page.locator('.central-version-v41').innerText(), /6\.6\.122/);
+  assert.equal(await page.locator('meta[name="central-source-version"]').getAttribute('content'), '6.6.123');
+  assert.match(await page.locator('.central-version-v41').innerText(), /6\.6\.123/);
+  assert.deepEqual(await page.locator('#centralSidebar [data-student-primary-nav] .nav-text').allTextContents(), ['Hoje','Plano','Disciplinas','Progresso','Mais']);
+  assert.equal(await page.locator('#mapaEstudos').evaluate((node) => getComputedStyle(node.closest('.card')).display), 'none');
+  assert.equal(await page.locator('#studentPerformanceInsight').count(), 1);
 
-  await page.locator('#centralSidebar .nav button').filter({ hasText:'Início' }).click();
+  await page.locator('#centralSidebar .nav button').filter({ hasText:'Hoje' }).click();
   await page.waitForSelector('#homeView:not(.hidden)');
   assert.equal(new URL(page.url()).searchParams.get('view'), 'home');
   assert.equal(await page.locator('#subjects > .subject.open').count(), 0);
@@ -66,12 +69,26 @@ try {
     renderContinue();
   });
   assert.match(await page.locator('#continueBox').innerText(), /Lei em Dia/);
+  assert.equal(await page.locator('#studentNextStep').count(), 1);
+  assert.equal(await page.locator('#studentWeekSummary').count(), 1);
+  assert.equal(await page.locator('#subjects > .subject').count(), 10);
+  assert.match(await page.locator('#subjects > .subject[data-id="cpp"] .subject-count').innerText(), /\/22 módulos/);
   assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1));
+
+  await page.locator('#studentMoreButton').click();
+  assert.equal(await page.locator('#studentMorePanel').getAttribute('hidden'), null);
+  assert.deepEqual(await page.locator('#studentMorePanel [data-student-more-action] b').allTextContents(), ['Cadernos TEC','Lei em Dia','Vade Mecum','Configurações','Sair da conta']);
+  await page.keyboard.press('Escape');
+  assert.notEqual(await page.locator('#studentMorePanel').getAttribute('hidden'), null);
 
   await page.locator('[data-central-agenda]').click();
   await page.waitForSelector('#agendaView:not(.hidden)');
   assert.equal(new URL(page.url()).searchParams.get('view'), 'agenda');
   assert.equal(await page.locator('#agendaDisc option[value="pt"]').innerText(), 'Português');
+  assert.equal(await page.locator('#studentAgendaWeek .student-agenda-day').count(), 7);
+  assert.notEqual(await page.locator('.student-agenda-form-card').getAttribute('hidden'), null);
+  await page.locator('#studentAgendaAddToggle').click();
+  assert.equal(await page.locator('.student-agenda-form-card').getAttribute('hidden'), null);
   await page.evaluate(() => {
     localStorage.setItem('central-v6:cpp:curso22:v1', JSON.stringify({ modules:{ 1:{ reading:true }, 2:{ reading:true } } }));
   });
@@ -88,6 +105,7 @@ try {
   }));
   assert.equal(mapCounts.collapsed, mapCounts.total);
   assert.ok(mapCounts.visibleButtons < 50, `Disciplinas ainda está densa: ${JSON.stringify(mapCounts)}`);
+  assert.equal(await page.locator('#mapaEstudosDisc').evaluate((node) => getComputedStyle(node.closest('.card')).display), 'none');
   const topCpp = await page.locator('.disc-card[data-id="cpp"] .disc-meta').innerText();
   const mapCpp = await page.locator('#mapaEstudosDisc .mp-card[data-sid="cpp"] .mp-badge').innerText();
   assert.match(topCpp, /2\/22 módulos/);
@@ -96,6 +114,24 @@ try {
   await page.goBack();
   await page.waitForSelector('#agendaView:not(.hidden)');
   assert.equal(new URL(page.url()).searchParams.get('view'), 'agenda');
+
+  await page.evaluate(() => {
+    const overlay = document.createElement('div');
+    overlay.id = 'student-reader-test';
+    overlay.className = 'bc-native-reader-overlay';
+    overlay.innerHTML = '<div class="bc-native-reader"><header class="bc-native-reader-head"><div class="bc-native-reader-title"><b>Leitura teste</b></div><button class="bc-native-reader-close">×</button></header><div class="bc-native-reader-tools"><input type="search"></div><div class="bc-native-reader-body"><main class="bc-native-scroll"><article class="bc-native-article">Conteúdo</article></main></div></div>';
+    document.body.appendChild(overlay);
+  });
+  await page.waitForSelector('#student-reader-test .student-reader-options-toggle');
+  assert.equal(await page.locator('html').evaluate((node) => node.classList.contains('student-reader-active')), true);
+  assert.equal(await page.locator('#centralSidebar').evaluate((node) => getComputedStyle(node).display), 'none');
+  await page.locator('#student-reader-test .student-reader-options-toggle').click();
+  assert.equal(await page.locator('#student-reader-test .bc-native-reader-tools').evaluate((node) => getComputedStyle(node).display), 'flex');
+  await page.evaluate(() => document.getElementById('student-reader-test')?.remove());
+  await page.waitForFunction(() => !document.documentElement.classList.contains('student-reader-active'));
+
+  await page.setViewportSize({ width:1280, height:800 });
+  assert.ok(await page.locator('#centralSidebar .nav').evaluate((node) => node.scrollWidth <= node.clientWidth + 1));
 
   await page.goto(`${base}/tools/vade.html`, { waitUntil:'domcontentloaded' });
   await page.waitForFunction(() => document.querySelector('.vm-brand'));
