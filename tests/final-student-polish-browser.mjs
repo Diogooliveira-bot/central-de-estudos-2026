@@ -51,14 +51,17 @@ try {
   const errors = [];
   page.on('pageerror', (error) => errors.push(error.message));
   await page.goto(`${base}/central-v119.html?view=performance`, { waitUntil:'domcontentloaded' });
-  await page.waitForFunction(() => document.documentElement.dataset.centralReady === 'true' && typeof openPerformance === 'function');
+  await page.waitForFunction(() => document.documentElement.dataset.centralReady === 'true' && typeof openPerformance === 'function' && window.CentralStudentUX?.version === '3');
   await page.waitForSelector('#performanceView:not(.hidden)');
   assert.equal(new URL(page.url()).searchParams.get('view'), 'performance');
-  assert.equal(await page.locator('meta[name="central-source-version"]').getAttribute('content'), '6.6.123');
-  assert.match(await page.locator('.central-version-v41').innerText(), /6\.6\.123/);
+  assert.equal(await page.locator('meta[name="central-source-version"]').getAttribute('content'), '6.6.124');
+  assert.match(await page.locator('.central-version-v41').innerText(), /6\.6\.124/);
+  assert.equal(await page.locator('html').evaluate((node) => node.classList.contains('student-experience-v3')), true);
   assert.deepEqual(await page.locator('#centralSidebar [data-student-primary-nav] .nav-text').allTextContents(), ['Hoje','Plano','Disciplinas','Progresso','Mais']);
   assert.equal(await page.locator('#mapaEstudos').evaluate((node) => getComputedStyle(node.closest('.card')).display), 'none');
   assert.equal(await page.locator('#studentPerformanceInsight').count(), 1);
+  assert.equal(await page.locator('#studentProgressWeek').count(), 1);
+  assert.equal(await page.locator('#studentSkipLink').innerText(), 'Pular para o conteúdo');
 
   await page.locator('#centralSidebar .nav button').filter({ hasText:'Hoje' }).click();
   await page.waitForSelector('#homeView:not(.hidden)');
@@ -72,14 +75,21 @@ try {
   assert.equal(await page.locator('#studentNextStep').count(), 1);
   assert.equal(await page.locator('#studentWeekSummary').count(), 1);
   assert.equal(await page.locator('#subjects > .subject').count(), 10);
+  assert.equal(await page.locator('#subjects > .subject .student-subject-summary').count(), 9);
+  assert.equal(await page.locator('#subjects > .subject[data-id="rlm"] .student-subject-summary').count(), 0);
   assert.match(await page.locator('#subjects > .subject[data-id="cpp"] .subject-count').innerText(), /\/22 módulos/);
   assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1));
 
   await page.locator('#studentMoreButton').click();
   assert.equal(await page.locator('#studentMorePanel').getAttribute('hidden'), null);
-  assert.deepEqual(await page.locator('#studentMorePanel [data-student-more-action] b').allTextContents(), ['Cadernos TEC','Lei em Dia','Vade Mecum','Configurações','Sair da conta']);
+  assert.deepEqual(await page.locator('#studentMorePanel [data-student-more-action] b').allTextContents(), ['Cadernos TEC','Lei em Dia','Vade Mecum','Meu plano','Configurações','Sair da conta']);
   await page.keyboard.press('Escape');
   assert.notEqual(await page.locator('#studentMorePanel').getAttribute('hidden'), null);
+  await page.evaluate(() => window.CentralStudentOnboarding.open());
+  await page.waitForSelector('[data-student-onboarding]');
+  assert.match(await page.locator('#studentOnboardingTitle').innerText(), /organizar seus estudos/i);
+  assert.equal(await page.locator('input[name="priorities"]:checked').count(), 3);
+  await page.locator('[data-onboarding-close]').first().click();
 
   await page.locator('[data-central-agenda]').click();
   await page.waitForSelector('#agendaView:not(.hidden)');
@@ -89,6 +99,10 @@ try {
   assert.notEqual(await page.locator('.student-agenda-form-card').getAttribute('hidden'), null);
   await page.locator('#studentAgendaAddToggle').click();
   assert.equal(await page.locator('.student-agenda-form-card').getAttribute('hidden'), null);
+  await page.locator('#agendaDisc').selectOption('pt');
+  await page.locator('#agendaTask').fill('Leitura de teste');
+  await page.locator('#agendaAddButton').click();
+  assert.match(await page.locator('#agendaEditor').innerText(), /Português/);
   await page.evaluate(() => {
     localStorage.setItem('central-v6:cpp:curso22:v1', JSON.stringify({ modules:{ 1:{ reading:true }, 2:{ reading:true } } }));
   });
@@ -106,6 +120,8 @@ try {
   assert.equal(mapCounts.collapsed, mapCounts.total);
   assert.ok(mapCounts.visibleButtons < 50, `Disciplinas ainda está densa: ${JSON.stringify(mapCounts)}`);
   assert.equal(await page.locator('#mapaEstudosDisc').evaluate((node) => getComputedStyle(node.closest('.card')).display), 'none');
+  assert.equal(await page.locator('#disciplineGrid .student-discipline-details').count(), 9);
+  assert.equal(await page.locator('#disciplineGrid .disc-card[data-id="rlm"] .student-discipline-details').count(), 0);
   const topCpp = await page.locator('.disc-card[data-id="cpp"] .disc-meta').innerText();
   const mapCpp = await page.locator('#mapaEstudosDisc .mp-card[data-sid="cpp"] .mp-badge').innerText();
   assert.match(topCpp, /2\/22 módulos/);
@@ -130,6 +146,8 @@ try {
   await page.evaluate(() => document.getElementById('student-reader-test')?.remove());
   await page.waitForFunction(() => !document.documentElement.classList.contains('student-reader-active'));
 
+  await page.setViewportSize({ width:320, height:700 });
+  assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1));
   await page.setViewportSize({ width:1280, height:800 });
   assert.ok(await page.locator('#centralSidebar .nav').evaluate((node) => node.scrollWidth <= node.clientWidth + 1));
 
@@ -144,7 +162,24 @@ try {
   assert.equal(await page.locator('.admin-edit-button:visible').count(), 0);
   assert.deepEqual(errors, []);
   await context.close();
-  console.log(JSON.stringify({ mapCounts, topCpp, mapCpp, errors }));
+
+  const firstAccessContext = await browser.newContext({ viewport:{ width:390, height:844 }, serviceWorkers:'block' });
+  const firstAccess = await firstAccessContext.newPage();
+  await firstAccess.goto(`${base}/central-v119.html?view=home`, { waitUntil:'domcontentloaded' });
+  await firstAccess.waitForFunction(() => window.CentralStudentUX?.version === '3');
+  await firstAccess.waitForSelector('[data-student-onboarding]', { timeout:5000 });
+  await firstAccess.locator('input[name="objective"]').fill('TJCE — teste de entrada');
+  await firstAccess.locator('#studentOnboardingForm button[type="submit"]').click();
+  await firstAccess.waitForSelector('[data-student-onboarding]', { state:'detached' });
+  const firstPlan = await firstAccess.evaluate(() => ({
+    profile:JSON.parse(localStorage.getItem('central-v6:student-profile-v1') || 'null'),
+    taskDays:Array.from({ length:localStorage.length }, (_, index) => localStorage.key(index)).filter((key) => key?.startsWith('central-v6:agenda:')).filter((key) => JSON.parse(localStorage.getItem(key) || '[]').length > 0).length,
+  }));
+  assert.equal(firstPlan.profile.objective, 'TJCE — teste de entrada');
+  assert.equal(firstPlan.profile.priorities.length, 3);
+  assert.ok(firstPlan.taskDays >= 4 && firstPlan.taskDays <= 5, JSON.stringify(firstPlan));
+  await firstAccessContext.close();
+  console.log(JSON.stringify({ mapCounts, topCpp, mapCpp, firstPlan, errors }));
 } finally {
   await browser.close();
   server.close();

@@ -1,5 +1,5 @@
 {
-  "build": "20261015-student-experience-v2",
+  "build": "20261015-student-ux-v3",
   "files": [
     "/central-v119.html?direct=35",
     "/ui/discipline-standard.js?v=20261003penalnative1",
@@ -285,7 +285,6 @@
     "/tools/cpc-m20-mapa.html",
     "/ui/home-topnav-v1.css?v=20261004a8",
     "/ui/home-topnav-v1.js?v=20261004a8",
-    "/ui/student-polish-v1.js?v=20261015-student-experience-v2",
     "/ui/reading-appearance-v1.css?v=20261005headings1",
     "/ui/reading-appearance-v1.js?v=20261004r5",
     "/assets/base-completa-symbol.png",
@@ -487,7 +486,10 @@
     "/ui/tec-penal-cpp-links.js?v=20261014tec1",
     "/ui/penal-cpp-tec-links.css?v=20261014tec1",
     "/tools/lei-em-dia-admin-editor.js?v=20261014edit3",
-    "/ui/student-experience-v2.css?v=20261015-student-experience-v2",
-    "/ui/student-experience-v2.js?v=20261015-student-experience-v2"
+    "/ui/student-experience-v3.css?v=20261015-student-ux-v3",
+    "/ui/student-ux-core-v3.js?v=20261015-student-ux-v3",
+    "/ui/student-shell-v3.js?v=20261015-student-ux-v3",
+    "/ui/student-dashboard-v3.js?v=20261015-student-ux-v3",
+    "/ui/student-plan-v3.js?v=20261015-student-ux-v3"
   ]
 }
