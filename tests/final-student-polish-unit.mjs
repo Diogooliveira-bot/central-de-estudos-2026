@@ -102,13 +102,13 @@ test('conflito 409 agenda nova tentativa depois de liberar o bloqueio', async ()
 });
 
 test('contratos de acabamento permanecem ligados à experiência do aluno', async () => {
-  const [runtime, index, vade, decorando, boot, polish, offline] = await Promise.all([
+  const [runtime, index, vade, decorando, boot, dashboard, offline] = await Promise.all([
     read('central-structural-v66119/runtime.js'),
     read('index.html'),
     read('tools/vade.html'),
     read('tools/decorando.html'),
     read('central-v119.html'),
-    read('ui/student-polish-v1.js'),
+    read('ui/student-dashboard-v3.js'),
     read('central-offline-files-v66172.json'),
   ]);
   assert.match(runtime, /\{id:'pt',name:'Português'\},\.\.\.SUBJECTS/);
@@ -120,7 +120,7 @@ test('contratos de acabamento permanecem ligados à experiência do aluno', asyn
   assert.doesNotMatch(vade, /class="vm-sync-status ok">Offline</);
   assert.match(decorando, /856 questões de estudo ativo/);
   assert.match(decorando, /535 exercícios autorais/);
-  assert.match(boot, /var APP_VERSION='6\.6\.123'/);
-  assert.match(polish, /new MutationObserver\(refreshDisciplineCards\)/);
-  assert.match(offline, /student-polish-v1\.js\?v=20261015-student-experience-v2/);
+  assert.match(boot, /var APP_VERSION='6\.6\.124'/);
+  assert.match(dashboard, /function canonicalProgress\(\)/);
+  assert.match(offline, /student-dashboard-v3\.js\?v=20261015-student-ux-v3/);
 });

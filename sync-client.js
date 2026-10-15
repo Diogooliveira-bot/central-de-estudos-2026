@@ -9,7 +9,7 @@ var user=window.BASE_COMPLETA_USER||null;
 var userId=String(window.__BASE_COMPLETA_USER_ID__||user&&user.id||'');
 var meta={device:'',revision:0,hash:''};
 
-function currentVersion(){return String(window.CENTRAL_VERSION||'6.6.123').replace(/^v/,'')}
+function currentVersion(){return String(window.CENTRAL_VERSION||'6.6.124').replace(/^v/,'')}
 function mk(k){return 'u:'+userId+':'+k}
 function dbOpen(){return new Promise(function(resolve,reject){var r=indexedDB.open(DB_NAME,1);r.onupgradeneeded=function(){if(!r.result.objectStoreNames.contains(STORE))r.result.createObjectStore(STORE)};r.onsuccess=function(){resolve(r.result)};r.onerror=function(){reject(r.error)}})}
 async function kvGet(k){var db=await dbOpen();return new Promise(function(resolve,reject){var tx=db.transaction(STORE,'readonly'),r=tx.objectStore(STORE).get(mk(k));r.onsuccess=function(){resolve(r.result)};r.onerror=function(){reject(r.error)}})}
@@ -19,7 +19,7 @@ function isSyncKey(k){return !!localState&&localState.isSyncKey(k)}
 function sanitizePayload(payload){var out={};if(!payload||typeof payload!=='object'||Array.isArray(payload))return out;Object.keys(payload).forEach(function(k){if(isSyncKey(k))out[k]=payload[k]});return out}
 function collect(){return localState?localState.collectSyncStorage():{}}
 function hashObject(obj){var s=JSON.stringify(obj),h=2166136261;for(var i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619)}return (h>>>0).toString(16)+'-'+s.length}
-function status(msg,type){var el=document.getElementById('centralSyncStatus');if(el){el.textContent=msg;el.className='central-backup-status'+(type?' '+type:'')}}
+function status(msg,type){var el=document.getElementById('centralSyncStatus');if(el){el.textContent=msg;el.className='central-backup-status'+(type?' '+type:'')}try{window.dispatchEvent(new CustomEvent('central:sync-status',{detail:{message:String(msg||''),type:type||''}}))}catch(_){}}
 async function saveMeta(){await Promise.all([kvSet('device',meta.device),kvSet('revision',meta.revision),kvSet('hash',meta.hash),kvSet('local-snapshot',collect())])}
 async function request(path,opt){opt=opt||{};var r=await fetch(path,opt),txt=await r.text(),j={};try{j=txt?JSON.parse(txt):{}}catch(_){j={error:txt||('HTTP '+r.status)}}if(r.status===401){location.replace('/login.html?next='+encodeURIComponent(location.pathname+location.search));throw new Error('Sessão expirada')}if(!r.ok){var e=new Error(j.error||('HTTP '+r.status));e.status=r.status;e.body=j;throw e}return j}
 function jsonObject(v){try{var x=JSON.parse(String(v||''));return x&&typeof x==='object'&&!Array.isArray(x)?x:null}catch(_){return null}}
