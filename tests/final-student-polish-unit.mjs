@@ -120,7 +120,7 @@ test('contratos de acabamento permanecem ligados à experiência do aluno', asyn
   assert.doesNotMatch(vade, /class="vm-sync-status ok">Offline</);
   assert.match(decorando, /856 questões de estudo ativo/);
   assert.match(decorando, /535 exercícios autorais/);
-  assert.match(boot, /var APP_VERSION='6\.6\.122'/);
+  assert.match(boot, /var APP_VERSION='6\.6\.123'/);
   assert.match(polish, /new MutationObserver\(refreshDisciplineCards\)/);
-  assert.match(offline, /student-polish-v1\.js\?v=20261014-final-student-polish-v1/);
+  assert.match(offline, /student-polish-v1\.js\?v=20261015-student-experience-v2/);
 });
