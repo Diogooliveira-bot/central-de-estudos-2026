@@ -34,7 +34,9 @@ O pacote de Processo do Trabalho mantém 21 módulos e 315 questões. Foram comp
 
 Os 16 módulos de Processo do Trabalho fora desta rodada são idênticos à base quando comparados pelo hash do objeto descompactado. IDs de módulos, números das questões, quantidade de páginas e referências aos PDFs foram preservados. Os testes de interação conferem que B é aceita nas duas questões iniciais corrigidas e que o histórico anterior não é apagado.
 
-PDFs de origem e infográficos originais **não foram reeditados**. Os textos de leitura corrigidos deixam essa diferença explícita; o leitor já não chama a versão revisada de “transcrição preservada do original”. Antes de uma publicação integral do acervo, é necessário reconciliar também esses materiais visuais e fontes históricas. O cache do texto e o manifesto offline foram versionados de forma coordenada.
+**Escopo esclarecido pelo usuário em 16/10/2026:** revisar somente o que os alunos conseguem acessar na central. Inclui teoria completa, resumida, questões/comentários vinculados e infográficos efetivamente exibidos. Os PDFs usados apenas como fonte não são entregáveis nem pendências desta revisão.
+
+O leitor de Processo do Trabalho abre os textos de `pages`, as questões estruturadas e o infográfico do módulo; não há ação de abertura do campo `pdf` nesse leitor. A conferência visual dos infográficos acessíveis permanece pendente. O cache do texto e o manifesto offline foram versionados de forma coordenada.
 
 ## Validação
 
@@ -53,3 +55,7 @@ Continuar o cotejo jurídico módulo por módulo nas oito disciplinas de Direito
 ## Conciliação com a versão atual da central
 
 A branch incorporou `main` em `6d7f238dcdf5ffab3b2b280d0cb7217915651c8e`, que contém a Central de Questões nativa (#98). Preservados rota, API, recursos de interface e versão 6.6.129. Seis conflitos de versão/cache/testes foram conciliados sem reverter o trabalho de main. Após essa integração, `npm test` passou com 76 testes e o leitor com mais 3 testes. As teorias corrigidas permaneceram idênticas à rodada anterior.
+
+## Critério para continuar a revisão
+
+Usar os leitores e rotas disponíveis ao perfil de aluno como fronteira do conteúdo. Conferir os textos realmente renderizados, quadros de revisão e perguntas/comentários que repetem a regra. Não contabilizar como revisão pendente a edição de PDF-fonte, ZIP de origem, rascunho antigo ou recurso exclusivo de administração sem acesso pelo aluno. As normas oficiais continuam sendo consultadas para verificar a correção do conteúdo visível.

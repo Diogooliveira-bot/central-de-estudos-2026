@@ -45,5 +45,23 @@
   },
   "productionChanged": false,
   "integratedMain": "6d7f238dcdf5ffab3b2b280d0cb7217915651c8e",
-  "appVersionPreserved": "6.6.129"
+  "appVersionPreserved": "6.6.129",
+  "reviewScope": {
+    "requestedByUser": "2026-10-16",
+    "audience": "student-accessible-content-only",
+    "included": [
+      "teoria completa exibida",
+      "teoria resumida exibida",
+      "questões e comentários vinculados",
+      "infográficos exibidos"
+    ],
+    "excluded": [
+      "PDF usado somente como fonte",
+      "ZIP de origem",
+      "rascunho fora dos leitores ativos",
+      "recurso exclusivo de administrador"
+    ],
+    "sourcePdfEditingRequired": false,
+    "studentInfographicReview": "pending"
+  }
 }
