@@ -1,0 +1,450 @@
+{
+  "referenceDate": "2026-10-15 America/Fortaleza",
+  "findings": [
+    {
+      "id": "J01",
+      "type": "jurídico",
+      "severity": "alta",
+      "scope": [
+        "cf-5-summary",
+        "cf-5-complete"
+      ],
+      "title": "Acumulação de professor: regra constitucional anterior à EC 138/2025",
+      "evidence": "Resumo, teoria completa e revisão ativa restringiam professor + outro cargo a técnico/científico.",
+      "proposedCorrection": "Atualizar para professor + outro cargo de qualquer natureza; manter compatibilidade de horários e regras constitucionais sobre teto. A mudança é anterior ao edital indicado no material.",
+      "status": "corrigido na branch",
+      "sources": [
+        "https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc138.htm"
+      ]
+    },
+    {
+      "id": "J02",
+      "type": "jurídico",
+      "severity": "alta",
+      "scope": [
+        "adm-5-complete"
+      ],
+      "title": "A mesma restrição antiga aparece em Administrativo",
+      "evidence": "Regra do art. 37, XVI, quadro comparativo e revisão final repetiam técnico/científico.",
+      "proposedCorrection": "Aplicar a redação da EC 138/2025 também nas três ocorrências da teoria completa.",
+      "status": "corrigido na branch",
+      "sources": [
+        "https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc138.htm"
+      ]
+    },
+    {
+      "id": "J03",
+      "type": "jurídico",
+      "severity": "alta",
+      "scope": [
+        "ptra-4-summary",
+        "ptra-4-complete"
+      ],
+      "title": "ADI 5766: alcance da inconstitucionalidade simplificado em excesso",
+      "evidence": "O M04 apresenta o art. 791-A, §4º, como inconstitucional sem delimitar a expressão atingida. O M11 da própria disciplina explica a condição suspensiva de exigibilidade, criando divergência entre módulos.",
+      "proposedCorrection": "Explicar que a decisão não elimina automaticamente toda condenação em honorários: distinguir condenação, vedação à compensação automática de créditos e suspensão de exigibilidade pelo prazo legal. Revisar simultaneamente a teoria, o quadro de revisão e a questão 5 do resumido que reproduz a leitura da fonte. A responsabilidade por perícia exige tratamento próprio.",
+      "status": "pendente — requer edição coordenada do pacote e da questão associada",
+      "sources": [
+        "https://www.trt3.jus.br/publicacoes_ej/revista_111/files/basic-html/page863.html"
+      ]
+    },
+    {
+      "id": "J04",
+      "type": "jurídico",
+      "severity": "alta",
+      "scope": [
+        "ptra-10-summary",
+        "ptra-10-complete"
+      ],
+      "title": "Honorários periciais: referência normativa revogada mantida como lacuna",
+      "evidence": "A teoria preserva a Resolução CSJT 66/2010 e o parâmetro de R$ 1.000,00, expressamente marcados como verificação futura.",
+      "proposedCorrection": "Encerrar a lacuna com a Resolução CSJT 247/2019 consolidada e atos posteriores. A ficha oficial confirma a revogação da 66/2010; o TRT11 informa reajuste para R$1.500 em 2026. A consolidação de julho/2026 e a Resolução 450/2026 também precisam ser consideradas. Não substituir o teto geral de qualquer perícia por esse valor: a referência é assistência custeada pelo orçamento da União.",
+      "status": "pendente — referência revogada confirmada; consolidar disciplina atual antes de reescrever",
+      "sources": [
+        "https://juslaboris.tst.jus.br/handle/20.500.12178/164654",
+        "https://portal.trt11.jus.br/index.php/comunicacao/11021-csjt-altera-resolucao-n-247-2019-e-reajusta-honorarios-periciais-para-ate-r-1-5-mil-em-2026",
+        "https://juslaboris.tst.jus.br/handle/20.500.12178/267856"
+      ]
+    },
+    {
+      "id": "J05",
+      "type": "jurídico",
+      "severity": "alta",
+      "scope": [
+        "ptra-15-summary",
+        "ptra-15-complete",
+        "ptra-16-summary",
+        "ptra-16-complete"
+      ],
+      "title": "Recurso de revista: fluxo denegado → AI precisa das exceções atuais",
+      "evidence": "M15 descreve a denegação no TRT seguida de agravo de instrumento. M16 associa agravo interno à decisão monocrática do relator, sem integrar o regime atual da IN40 ao fluxo do M15.",
+      "proposedCorrection": "Distinguir o fundamento de cada capítulo da negativa: precedentes qualificados do TST podem exigir agravo interno no Regional; precedente vinculante do STF tem disciplina de AIRR na Resolução226/2026. Decisão mista pode exigir os dois recursos, cada qual para o seu capítulo. Atualizar o esquema, não apenas acrescentar nota isolada.",
+      "status": "pendente — fluxo atual confirmado; editar M15/M16 de forma conjunta",
+      "sources": [
+        "https://portal.trt11.jus.br/index.php/comunicacao/11409-trt-11-orienta-sobre-novos-procedimentos-do-tst-para-recursos-de-revista",
+        "https://juslaboris.tst.jus.br/handle/20.500.12178/81842?locale-attribute=fr"
+      ]
+    },
+    {
+      "id": "J06",
+      "type": "completude jurídica",
+      "severity": "média",
+      "scope": [
+        "cf-7-summary",
+        "cf-7-complete"
+      ],
+      "title": "Tribunais de Contas: falta integração expressa da EC139/2026",
+      "evidence": "O M07 aborda arts.70–75 e controle externo, mas não explicita a nova permanência/essencialidade e a disciplina do art.75. Administrativo M08 já contém essa atualização.",
+      "proposedCorrection": "Acrescentar a atualização com os limites exatos do texto constitucional, harmonizando os dois cursos. Classificação: omissão relevante no tema estudado, e não afirmação de que toda a exposição do módulo é falsa.",
+      "status": "pendente",
+      "sources": [
+        "https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc139.htm"
+      ]
+    },
+    {
+      "id": "E01",
+      "type": "ortografia",
+      "severity": "baixa",
+      "scope": [
+        "cf-1-complete"
+      ],
+      "title": "Erro de digitação: Verbros",
+      "evidence": "Verbros finalísticos facilitam memorização.",
+      "proposedCorrection": "Verbos finalísticos facilitam memorização.",
+      "status": "corrigido na branch",
+      "sources": []
+    },
+    {
+      "id": "E02",
+      "type": "ortografia",
+      "severity": "baixa",
+      "scope": [
+        "penal-13-complete"
+      ],
+      "title": "Acento indevido em licitante",
+      "evidence": "concorrente/licítante",
+      "proposedCorrection": "concorrente/licitante",
+      "status": "corrigido na branch",
+      "sources": []
+    },
+    {
+      "id": "E03",
+      "type": "terminologia",
+      "severity": "baixa",
+      "scope": [
+        "penal-2-summary",
+        "penal-2-complete",
+        "cpp-19-complete"
+      ],
+      "title": "Grafia latina: melius",
+      "evidence": "Ocorrências de in mellius em novatio legis/reformatio.",
+      "proposedCorrection": "Padronizar in melius. Dez ocorrências foram ajustadas nas fontes de Penal; o pacote compactado de CPP M19 permanece para edição coordenada.",
+      "status": "parcial — Penal corrigido; CPP pendente",
+      "sources": [
+        "https://www.stj.jus.br/docs_internet/revista/eletronica/stj-revista-eletronica-2000_126.pdf"
+      ]
+    },
+    {
+      "id": "E04",
+      "type": "extração de texto",
+      "severity": "média",
+      "scope": [
+        "penal-1-complete",
+        "penal-7-summary",
+        "cpc-1-complete",
+        "cpc-4-complete",
+        "cpc-6-summary",
+        "cpc-6-complete"
+      ],
+      "title": "Sete caracteres de controle no lugar de hífen",
+      "evidence": "político[U+0002]criminal; fala[U+0002]se; boa[U+0002]fé; salários[U+0002]mínimos; sub[U+0002]rogatórias em duas versões; regras[U+0002]base.",
+      "proposedCorrection": "Restaurar o hífen em cada uma das sete ocorrências.",
+      "status": "corrigido na branch",
+      "sources": []
+    },
+    {
+      "id": "E05",
+      "type": "acentuação",
+      "severity": "média",
+      "scope": [
+        "penal-1-summary"
+      ],
+      "title": "Resumo com perda extensa de acentos",
+      "evidence": "Exemplos localizados: PRINCIPIOS, INTERPRETACAO, Visao, juridicos, intervencao, criterios.",
+      "proposedCorrection": "Revisar o texto completo do resumo e reconstruir acentos com leitura contextual. A ausência de acento não pode ser corrigida por regras gerais para palavras como e/é, esta/está e analise/análise.",
+      "status": "pendente",
+      "sources": []
+    },
+    {
+      "id": "E06",
+      "type": "acentuação",
+      "severity": "média",
+      "scope": [
+        "ptra-13-summary",
+        "ptra-13-complete"
+      ],
+      "title": "Recursos I: muitas palavras sem acentos",
+      "evidence": "Exemplos: decisao, remuneracao, inexistencia, jurisprudencia, merito, representacao, desercao.",
+      "proposedCorrection": "Revisão contextual das duas versões; preservar números, prazos, nomes de precedentes e opções das questões. A data-base declarada de 2022 também exige revisão jurídica própria.",
+      "status": "pendente",
+      "sources": []
+    },
+    {
+      "id": "E07",
+      "type": "acentuação",
+      "severity": "média",
+      "scope": [
+        "trabalho-12-summary",
+        "trabalho-12-complete"
+      ],
+      "title": "Salário e remuneração: perda extensa de acentos",
+      "evidence": "Exemplos: remuneracao, comissoes, equiparacao, funcao, jurisprudencia, rescisao.",
+      "proposedCorrection": "Reconstruir a acentuação nas duas versões sem modificar o conteúdo jurídico por substituição automática. Revisar as relações entre a teoria e os quadros.",
+      "status": "pendente",
+      "sources": []
+    },
+    {
+      "id": "E08",
+      "type": "extração de texto",
+      "severity": "média",
+      "scope": [
+        "trabalho-4-summary",
+        "trabalho-4-complete"
+      ],
+      "title": "Palavras cortadas na extração",
+      "evidence": "No resumido aparecem fragmentos como dependên e automaticamen; no completo também existem separações no meio de palavras.",
+      "proposedCorrection": "Confrontar a frase e o PDF correspondente antes de recompor a palavra; não unir todos os finais de linha indiscriminadamente.",
+      "status": "pendente",
+      "sources": []
+    },
+    {
+      "id": "E09",
+      "type": "extração de texto",
+      "severity": "média",
+      "scope": [
+        "trabalho-15-summary"
+      ],
+      "title": "Fragmentos de palavras em Rescisão",
+      "evidence": "Fragmentos traba e resci aparecem no material extraído.",
+      "proposedCorrection": "Cotejar os blocos com a fonte e reconstituir a leitura integral de cada frase.",
+      "status": "pendente",
+      "sources": []
+    },
+    {
+      "id": "E10",
+      "type": "referências",
+      "severity": "média",
+      "scope": [
+        "trabalho-8-summary",
+        "trabalho-8-complete"
+      ],
+      "title": "Endereço de fonte deformado",
+      "evidence": "Referência LC123 contém normas.receisulta/link.action; endereço do Tema1389 fica partido entre linhas.",
+      "proposedCorrection": "Revalidar os destinos em fontes oficiais e armazenar os links completos em campos próprios. Não corrigir a URL por aproximação sem conferir o destino.",
+      "status": "pendente",
+      "sources": []
+    },
+    {
+      "id": "D01",
+      "type": "lacuna documental",
+      "severity": "alta",
+      "scope": [
+        "trabalho-8-summary",
+        "trabalho-8-complete"
+      ],
+      "title": "MEI/pejotização constam do título, mas têm cobertura substantiva pendente",
+      "evidence": "O material declara que a fonte Gran71461710 não foi recuperada e que os blocos ficaram fora da teoria substantiva.",
+      "proposedCorrection": "Completar o conteúdo e conferir legislação/jurisprudência aplicáveis; a nota existente não equivale a uma revisão jurídica concluída. O status atual do Tema1389 não foi validado integralmente nesta rodada.",
+      "status": "pendente",
+      "sources": []
+    },
+    {
+      "id": "D02",
+      "type": "lacuna documental",
+      "severity": "alta",
+      "scope": [
+        "ptra-8-summary",
+        "ptra-8-complete"
+      ],
+      "title": "M08 de Processo do Trabalho declarado parcial",
+      "evidence": "O índice do curso e o conteúdo mantêm a sinalização de lacuna da fonte principal.",
+      "proposedCorrection": "Resolver a fonte e a cobertura da teoria completa antes de classificar o módulo como integralmente revisado.",
+      "status": "pendente",
+      "sources": []
+    },
+    {
+      "id": "D03",
+      "type": "edição",
+      "severity": "média",
+      "scope": [
+        "trabalho — M01 a M18",
+        "ptra — materiais com notas offline"
+      ],
+      "title": "Notas internas ainda presentes no texto de estudo",
+      "evidence": "Há frases como NÃO HOMOLOGADO PARA PUBLICAÇÃO, documento de controle, versão validada nesta conversa e material OFFLINE não publicado/não integrado.",
+      "proposedCorrection": "Separar o histórico editorial do conteúdo do aluno e harmonizar os metadados com o estado real da publicação. Isso não demonstra ausência de autorização do usuário para publicação; aponta uma divergência editorial.",
+      "status": "pendente",
+      "sources": []
+    }
+  ],
+  "targetedChecks": [
+    [
+      "Direito Constitucional",
+      "M03 — aquisição de outra nacionalidade não implica perda automática",
+      "O material já diferencia o regime da EC131/2023. Conferência pontual do tema; não homologação do módulo.",
+      "https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm"
+    ],
+    [
+      "Direito Administrativo",
+      "M18 — contrato verbal de pronto pagamento",
+      "O valor de R$13.098,41 indicado para 2026 coincide com o Decreto12.807/2025.",
+      "https://planalto.gov.br/ccivil_03/_ato2023-2026/2025/decreto/d12807.htm"
+    ],
+    [
+      "Direito Administrativo",
+      "M20 — ANPD",
+      "O material já menciona a Agência Nacional de Proteção de Dados e a Lei15.352/2026.",
+      "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15352.htm"
+    ],
+    [
+      "Direito Civil",
+      "M06 — juros e atualização monetária",
+      "O material não usa 1% ao mês como regra geral e identifica o novo regime do art.406.",
+      "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2024/lei/l14905.htm"
+    ],
+    [
+      "Direito Civil",
+      "M08 — seguro privado",
+      "Já registra a Lei15.040/2024 e a revogação dos arts.757–802 do Código Civil.",
+      "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2024/lei/l15040.htm"
+    ],
+    [
+      "Direito Processual Civil",
+      "M01/M15/M20 — relevância do REsp",
+      "O curso já incorpora a Lei15.484/2026; não foi classificado como erro por manter a explicação constitucional anterior em trecho histórico.",
+      "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15484.htm"
+    ],
+    [
+      "Direito Penal",
+      "M09 — feminicídio",
+      "Já está apresentado como tipo autônomo do art.121-A, com faixa de20–40 anos; não foi necessário reintroduzir correção já existente.",
+      "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2024/lei/l14994.htm"
+    ],
+    [
+      "Direito Penal",
+      "M10 — crimes patrimoniais",
+      "Já considera mudanças da Lei15.397/2026, inclusive pena básica de roubo e repouso noturno.",
+      "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15397.htm"
+    ],
+    [
+      "Direito Processual Penal",
+      "M01/M13 — audiência de custódia",
+      "O texto registra a alteração legislativa de2026 e diferencia a controvérsia constitucional. Foi conferida a existência da alteração legal; não foi encerrada a revisão dos andamentos das ADIs.",
+      "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15358.htm"
+    ],
+    [
+      "Direito do Trabalho",
+      "M07 — licença-paternidade",
+      "O material sinaliza corretamente que a Lei15.371/2026 entra em vigor em1º/1/2027; não se deve aplicar antecipadamente o regime futuro.",
+      "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15371.htm"
+    ],
+    [
+      "Raciocínio Lógico e Matemática",
+      "M02–M15 — resumos",
+      "Leitura dos14 resumos: conectivos, negações, argumentos, conjuntos, sequências, aritmética, percentuais, gráficos, medidas de posição e dispersão. Não foi constatado erro nas fórmulas expressamente examinadas. Teorias completas e exercícios não receberam validação integral.",
+      ""
+    ],
+    [
+      "Português",
+      "M01–M24 e revisão final — triagem",
+      "Foram localizadas todas as25 unidades. Exemplos propositalmente errados em ortografia e flexão foram mantidos como exemplos; a triagem lexical não equivale a erro confirmado. Revisão pedagógica linha a linha permanece pendente.",
+      ""
+    ]
+  ],
+  "appliedChanges": [
+    {
+      "file": "content/cf/m05-native-data.js",
+      "old": "professor + técnico/científico",
+      "new": "professor + outro cargo de qualquer natureza",
+      "occurrences": 3
+    },
+    {
+      "file": "content/cf/m05-native-data.js",
+      "old": "um cargo de professor com outro técnico ou científico",
+      "new": "um cargo de professor com outro de qualquer natureza (EC 138/2025)",
+      "occurrences": 1
+    },
+    {
+      "file": "adm-m5-content-p4-v66146.js",
+      "old": "um cargo de professor com outro técnico ou científico",
+      "new": "um cargo de professor com outro de qualquer natureza (EC 138/2025)",
+      "occurrences": 1
+    },
+    {
+      "file": "adm-m5-content-p4-v66146.js",
+      "old": "Professor + técnico ou científico.",
+      "new": "Professor + outro cargo de qualquer natureza.",
+      "occurrences": 1
+    },
+    {
+      "file": "adm-m5-content-p5-v66146.js",
+      "old": "professor+técnico/científico",
+      "new": "professor + outro cargo de qualquer natureza (EC 138/2025)",
+      "occurrences": 1
+    },
+    {
+      "file": "content/cf/m01-native-data.js",
+      "old": "Verbros finalísticos",
+      "new": "Verbos finalísticos",
+      "occurrences": 1
+    },
+    {
+      "file": "penal-full-theory-data-04.js",
+      "old": "concorrente/licítante",
+      "new": "concorrente/licitante",
+      "occurrences": 1
+    },
+    {
+      "file": "content/cpc/m04-native-data.js",
+      "old": "U+0002",
+      "new": "-",
+      "occurrences": 1
+    },
+    {
+      "file": "content/cpc/m01-native-data.js",
+      "old": "U+0002",
+      "new": "-",
+      "occurrences": 1
+    },
+    {
+      "file": "content/cpc/m06-native-data.js",
+      "old": "U+0002",
+      "new": "-",
+      "occurrences": 2
+    },
+    {
+      "file": "content/penal/m01-native-data.js",
+      "old": "U+0002",
+      "new": "-",
+      "occurrences": 2
+    },
+    {
+      "file": "content/penal/m07-native-data.js",
+      "old": "U+0002",
+      "new": "-",
+      "occurrences": 1
+    },
+    {
+      "file": "penal-full-theory-data-02.js",
+      "old": "mellius",
+      "new": "melius",
+      "occurrences": 4
+    },
+    {
+      "file": "content/penal/m02-native-data.js",
+      "old": "mellius",
+      "new": "melius",
+      "occurrences": 6
+    }
+  ]
+}
