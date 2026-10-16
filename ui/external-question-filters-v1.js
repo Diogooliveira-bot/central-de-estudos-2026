@@ -745,6 +745,38 @@
       <div class="bcq-overview-grid"><section class="bcq-center-panel"><header><div><span>DESEMPENHO</span><h2>Evolução das sessões</h2></div><button type="button" data-bcq-go-tab="history">Ver histórico</button></header>${evolutionSvg(sessions.map((entry) => entry.session), 'all')}</section><section class="bcq-center-panel"><header><div><span>PLATAFORMAS</span><h2>Biblioteca de filtros</h2></div></header><div class="bcq-platform-summary"><article data-platform="qc"><b>${qc.length}</b><span>QConcursos</span><small>${aggregateFilters(qc).sessions} sessões</small></article><article data-platform="tec"><b>${tec.length}</b><span>TEC Concursos</span><small>${aggregateFilters(tec).sessions} sessões</small></article></div></section></div>
       <section class="bcq-center-panel"><header><div><span>ATIVIDADE RECENTE</span><h2>Últimas sessões</h2></div><button type="button" data-bcq-go-tab="history">Ver todas</button></header>${sessions.length ? `<div class="bcq-center-history">${sessions.slice(0, 5).map(historyRow).join('')}</div>` : '<div class="bcq-empty">Nenhuma sessão registrada. Use o botão + em um filtro para começar.</div>'}</section>`;
   }
+  function disciplineDetails(host) {
+    return Array.from(host?.querySelectorAll('.bcq-discipline') || []);
+  }
+  function syncDisciplineToggle(host) {
+    const toggle = host?.querySelector('[data-bcq-toggle-disciplines]');
+    if (!toggle) return;
+    const expanded = disciplineDetails(host).some((item) => item.open);
+    toggle.textContent = expanded ? 'Recolher disciplinas' : 'Expandir disciplinas';
+    toggle.setAttribute('aria-expanded', String(expanded));
+  }
+  function setDisciplinesExpanded(host, expanded) {
+    disciplineDetails(host).forEach((item) => { item.open = expanded; });
+    syncDisciplineToggle(host);
+  }
+  function bindDisciplineControls(host) {
+    const toggle = host.querySelector('[data-bcq-toggle-disciplines]');
+    toggle?.addEventListener('click', (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      setDisciplinesExpanded(host, !disciplineDetails(host).some((item) => item.open));
+    });
+    host.querySelectorAll('.bcq-discipline > summary,.bcq-discipline-module > summary').forEach((summary) => {
+      summary.addEventListener('click', (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        const details = summary.parentElement;
+        details.open = !details.open;
+        summary.setAttribute('aria-expanded', String(details.open));
+        syncDisciplineToggle(host);
+      });
+    });
+  }
   function renderDisciplines(page) {
     const groups = new Map();
     registry.forEach((filter) => {
@@ -763,6 +795,7 @@
         return `<details class="bcq-discipline-module"><summary><div class="bcq-discipline-module-title"><b>${esc(module)}</b><strong>${esc(catalogModuleTitle(rows))}</strong></div><span>${qc.length} QC · ${tec.length} TEC</span></summary><div class="bcq-discipline-columns">${platformColumn('qc', qc)}${platformColumn('tec', tec)}</div></details>`;
       }).join('')}</div></details>`;
     }).join('')}</div></section>`;
+    bindDisciplineControls(host);
   }
   function renderFilterLibrary(page) {
     const items = pageFilters();
@@ -944,11 +977,8 @@
     if (goTab) { switchTab(goTab.dataset.bcqGoTab); return; }
     const toggleDisciplines = event.target.closest('[data-bcq-toggle-disciplines]');
     if (toggleDisciplines) {
-      const details = Array.from(document.querySelectorAll('[data-bcq-panel="disciplines"] .bcq-discipline'));
-      const expand = !details.some((item) => item.open);
-      details.forEach((item) => { item.open = expand; });
-      toggleDisciplines.textContent = expand ? 'Recolher disciplinas' : 'Expandir disciplinas';
-      toggleDisciplines.setAttribute('aria-expanded', String(expand));
+      const host = toggleDisciplines.closest('[data-bcq-panel="disciplines"]');
+      setDisciplinesExpanded(host, !disciplineDetails(host).some((item) => item.open));
       return;
     }
     const add = event.target.closest('[data-bcq-add]');

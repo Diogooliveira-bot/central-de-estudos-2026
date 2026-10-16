@@ -163,6 +163,7 @@ test('catálogo organiza QC e TEC em colunas próprias por módulo', async () =>
   assert.equal(module.open, false);
   module.querySelector(':scope > summary').click();
   assert.equal(module.open, true);
+  dom.window.document.body.addEventListener('click', (event) => event.stopPropagation());
   const toggle = dom.window.document.querySelector('[data-bcq-toggle-disciplines]');
   toggle.click();
   assert.equal(dom.window.document.querySelectorAll('.bcq-discipline[open]').length, 0);
