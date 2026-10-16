@@ -84,3 +84,18 @@ body.bc-rlm-open{overflow:hidden!important}
 @media(max-width:750px){.bc-rlm-grid{grid-template-columns:1fr}.bc-rlm-overlay{padding:0}.bc-rlm-reader{border-radius:0;width:100vw;height:100dvh}.bc-rlm-reader-header{padding:10px 14px}.bc-rlm-reader-content{padding:17px 15px 65px}.bc-rlm-reader-footer{padding:10px}.bc-rlm-tips,.bc-rlm-map-grid{grid-template-columns:1fr}.bc-rlm-article{font-size:14px}.bc-rlm-tab{font-size:11px;padding:9px 10px}.bc-rlm-card{min-height:0}.bc-rlm-quiz{padding:13px}}
 @media(prefers-reduced-motion:reduce){.bc-rlm-overlay *, .bc-rlm-course *{scroll-behavior:auto!important;transition:none!important}}
 @media print{.bc-rlm-reader-header,.bc-rlm-reader-nav,.bc-rlm-reader-footer{display:none!important}.bc-rlm-overlay{position:static;padding:0;display:block;background:#fff}.bc-rlm-reader{overflow:visible;height:auto;box-shadow:none;width:100%}.bc-rlm-reader-content{overflow:visible;padding:0}.bc-rlm-quiz,.bc-rlm-lesson{break-inside:avoid}}
+/* Tabelas e ilustrações da teoria ampliada. */
+.bc-rlm-table-wrap{max-width:100%;overflow-x:auto;margin:20px 0;border:1px solid var(--bc-color-border,#d5e2e9);border-radius:10px;outline-offset:3px}
+.bc-rlm-table{width:100%;border-collapse:collapse;font-size:.88em;line-height:1.55;background:var(--bc-color-surface,#fff)}
+.bc-rlm-table caption{text-align:left;font-weight:750;padding:12px 14px;background:var(--bc-color-surface-elevated,#edf5f8);color:var(--bc-color-text,#244458)}
+.bc-rlm-table :is(th,td){padding:10px 12px;border-bottom:1px solid var(--bc-color-border,#dce6ec);text-align:left;vertical-align:top;min-width:58px}
+.bc-rlm-table thead{background:var(--bc-color-surface-elevated,#f2f7fa)}
+.bc-rlm-table tbody th{font-weight:650}.bc-rlm-table tr:last-child :is(th,td){border-bottom:0}
+.bc-rlm-method,.bc-rlm-pitfall,.bc-rlm-references{padding:16px 18px;margin:18px 0;border-radius:10px;background:var(--bc-color-surface-elevated,#f0f7f9);border:1px solid var(--bc-color-border,#d4e4e9);font-size:.94em}
+.bc-rlm-method h4{font-size:1em;margin:0 0 9px}.bc-rlm-method ol,.bc-rlm-worked ol{padding-left:23px;margin:9px 0}.bc-rlm-method li,.bc-rlm-worked li{margin:8px 0;line-height:1.65}
+.bc-rlm-pitfall{border-left:4px solid #b9843e}.bc-rlm-worked-answer{border-top:1px solid var(--bc-color-border,#d4e4e9);padding-top:12px}.bc-rlm-example summary{line-height:1.6;white-space:normal;overflow-wrap:anywhere}
+.bc-rlm-figure{margin:20px 0;padding:12px;border:1px solid var(--bc-color-border,#d5e2e9);border-radius:10px;background:var(--bc-color-surface,#fff);color:var(--bc-color-text,#253d52)}
+.bc-rlm-figure svg{display:block;width:100%;max-width:600px;height:auto;margin:auto;font:16px system-ui,sans-serif}.bc-rlm-figure svg text{fill:currentColor}.bc-rlm-figure figcaption{font-size:.84em;line-height:1.6;color:var(--bc-color-text-secondary,#586e7e);margin-top:12px}
+.bc-rlm-references a{color:var(--bc-color-primary,#166e99);overflow-wrap:anywhere}.bc-rlm-references li{margin:8px 0}
+@media(max-width:600px){.bc-rlm-table :is(th,td){padding:8px;font-size:12px}.bc-rlm-method,.bc-rlm-pitfall{padding:12px}.bc-rlm-figure{padding:6px}}
+@media print{.bc-rlm-table-wrap{overflow:visible}.bc-rlm-figure,.bc-rlm-method,.bc-rlm-worked{break-inside:avoid}.bc-rlm-figure svg{max-height:240px}}

@@ -4,7 +4,7 @@
 <title>Base Completa • Visual padronizado de RLM • Prévia</title>
 <link rel="stylesheet" href="./ui/discipline-standard.css">
 <link rel="stylesheet" href="./ui/native-study-reader.css">
-<link rel="stylesheet" href="./ui/rlm-native-v1.css">
+<link rel="stylesheet" href="./ui/rlm-native-v1.css?v=20261016amp1">
 <link rel="stylesheet" href="./ui/rlm-visual-standard-v2.css">
 <style>
 :root{--text:#1e334a;--muted:#75879a;--line:#d9e3ec;--card:#fff}*{box-sizing:border-box}
@@ -30,16 +30,18 @@ main>p{color:#71869a;max-width:750px;line-height:1.55}
 <div class="central-shell"><aside class="central-side"><div><small>Plataforma de estudos</small><strong>BASE COMPLETA</strong></div><span class="item">Início</span><span class="item active">Disciplinas</span><span class="item">Cronograma</span><span class="item">Questões</span></aside>
 <main><div class="route">Central de Estudos / Disciplinas / Raciocínio Lógico-Matemático</div>
 <h1>Disciplinas</h1><p>Esta prévia demonstra a RLM com o padrão visual das outras disciplinas: cartões expansíveis, materiais e leitor com índice e busca.</p>
-<div class="tip-banner"><b>Prévia visual:</b> clique no cabeçalho de cada módulo e escolha um material. Todos os textos, perguntas, mapas e respostas foram mantidos; esta versão não altera a Central principal.</div>
+<div class="tip-banner"><b>Prévia visual:</b> clique no cabeçalho de cada módulo e escolha um material. A teoria foi ampliada com métodos, tabelas, diagramas e exemplos guiados. O treino e as questões foram preservados. Esta prévia não altera a Central principal.</div>
 <div class="central-area" id="subjects"><section class="central-discipline subject" data-id="rlm"><header><b>Raciocínio Lógico-Matemático</b><span id="courseStat"></span></header><div id="rlmMaster">Preparando os módulos…</div></section></div>
 </main></div>
-<script src="./content/rlm-tjce-2026/estrutura.js"></script>
+<script src="./content/rlm-tjce-2026/estrutura.js?v=20261016amp1"></script>
 <script src="./content/rlm-tjce-2026/aulas-logica.js"></script>
 <script src="./content/rlm-tjce-2026/aulas-raciocinio.js?v=20261016cor1"></script>
 <script src="./content/rlm-tjce-2026/aulas-matematica.js"></script>
 <script src="./content/rlm-tjce-2026/aulas-estatistica.js?v=20261016cor1"></script>
+<script src="./content/rlm-tjce-2026/complementos-teoria.js?v=20261016amp1"></script>
+<script src="./ui/rlm-theory-resources.js?v=20261016amp1"></script>
 <script src="./content/rlm-tjce-2026/banco-fcc-legado.js"></script>
-<script src="./ui/rlm-native-v1.js"></script>
+<script src="./ui/rlm-native-v1.js?v=20261016amp1"></script>
 <script>
 function renderSubjects(){document.getElementById('rlmMaster').innerHTML=RlmNative.renderMaster();const s=RlmNative.stats();document.getElementById('courseStat').textContent=s.done+'/'+s.total+' concluídos';}
 function renderDisciplineGrid(){}

@@ -287,10 +287,10 @@ function bodyFor(m,stage){
 }
 function title(txt,desc){return '<span class="bc-rlm-kicker">Base Completa · edição de estudos</span><h2>'+esc(txt)+'</h2><p class="bc-rlm-article-lead">'+esc(desc)+'</p>'}
 function theory(m,d){
- return title('Teoria completa','Cinco unidades com conceitos, demonstrações, métodos FCC e exemplos resolvidos. O texto está na primeira edição e passará por revisão editorial.')+
+ return title('Teoria completa','Conceitos, métodos de resolução, exemplos guiados e recursos visuais. Abra as resoluções depois de tentar cada exemplo e use o índice para retomar um capítulo.')+
  d.theory.map((ch,i)=>'<section class="bc-rlm-lesson"><h3>'+String(i+1).padStart(2,'0')+' · '+esc(ch.title)+'</h3>'+
- ch.paragraphs.map(p=>'<p>'+esc(p)+'</p>').join('')+
- '<details class="bc-rlm-example"><summary>Ver exemplo resolvido</summary><p>'+esc(ch.example)+'</p></details></section>').join('')+
+ (g.RlmTheoryResources?g.RlmTheoryResources.chapter(ch):ch.paragraphs.map(p=>'<p>'+esc(p)+'</p>').join('')+'<details class="bc-rlm-example"><summary>Ver exemplo resolvido</summary><p>'+esc(ch.example)+'</p></details>')+'</section>').join('')+
+ (g.RlmTheoryResources?.references(d)||'')+
  '<div class="bc-rlm-module-next"><button class="bc-rlm-btn primary" onclick="RlmNative.tab(\'summary\')">Resumo com dicas e prática →</button></div>';
 }
 function summary(m,d){

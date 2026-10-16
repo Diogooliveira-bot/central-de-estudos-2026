@@ -1,5 +1,5 @@
 :root{--bcq-qc:#ff6b0b;--bcq-qc-soft:#fff7f1;--bcq-qc-line:#f1cdb6;--bcq-tec:#087bc9;--bcq-tec-soft:#f1f9fe;--bcq-tec-line:#b8deef}
-[data-bcq-original="1"]{display:none!important}
+[data-bcq-module-host="1"] [data-bcq-original="1"]{display:none!important}
 .bcq-module-panels{display:grid;gap:14px;margin:18px 0}
 .bcq-platform{--bcq-color:var(--bcq-tec);--bcq-soft:var(--bcq-tec-soft);--bcq-line:var(--bcq-tec-line);padding:16px;border:1px solid var(--bcq-line);border-left:4px solid var(--bcq-color);border-radius:14px;background:linear-gradient(135deg,var(--bcq-soft),#fff 72%);box-sizing:border-box;color:var(--text,#172033)}
 .bcq-platform[data-bcq-platform="qc"]{--bcq-color:var(--bcq-qc);--bcq-soft:var(--bcq-qc-soft);--bcq-line:var(--bcq-qc-line)}

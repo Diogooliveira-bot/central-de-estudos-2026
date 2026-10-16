@@ -432,8 +432,14 @@
 
   function filtersForModule(disciplineKey, module) {
     const code = baseModule(module);
-    return registry.filter((item) => item.disciplineKey === disciplineKey && item.module === code)
-      .filter((item) => !(disciplineKey === 'rlm' && item.source === 'tec-general' && global.RLM_TJCE_STRUCTURE));
+    const unique = new Map();
+    registry.filter((item) => item.disciplineKey === disciplineKey && item.module === code)
+      .filter((item) => !(disciplineKey === 'rlm' && item.source === 'tec-general' && global.RLM_TJCE_STRUCTURE))
+      .forEach((item) => {
+        const key = `${item.platform}|${item.id || item.url}`;
+        if (!unique.has(key)) unique.set(key, item);
+      });
+    return Array.from(unique.values());
   }
 
   function inferModuleNumber(element) {
@@ -462,7 +468,14 @@
     return disciplineKey && number ? { disciplineKey, module: `M${pad(number)}` } : null;
   }
   function moduleBody(element) {
-    return element.matches('[data-adm-native]') ? element : element.querySelector(':scope > .cf-module-body,:scope > .detail-panel,:scope > .ptra-native-mod-body,:scope > .civil-module-body') || element;
+    return element.matches('[data-adm-native]') ? element : element.querySelector(':scope > .cf-module-body,:scope > .detail-panel,:scope > .topic-detail > .detail-panel,:scope > .ptra-native-mod-body,:scope > .civil-module-body') || element;
+  }
+  function moduleTargetPriority(element) {
+    if (element.matches('[data-adm-native]')) return 60;
+    if (element.matches('[data-cpp-native-module],[data-ptra-module],[data-rlm-module]')) return 50;
+    if (element.matches('.civil-module[data-civil-analista],.civil-module[data-civil]')) return 40;
+    if (element.matches('.cf-module[data-cf]')) return 30;
+    return 10;
   }
   function moduleTargets() {
     const selectors = [
@@ -472,10 +485,32 @@
       '#subjects .subject[data-id="cpc"] .cf-module[data-cf]',
       '#subjects .topic-item[data-uid]'
     ];
-    return Array.from(new Set(document.querySelectorAll(selectors.join(','))));
+    const selected = new Map();
+    Array.from(new Set(document.querySelectorAll(selectors.join(',')))).forEach((element) => {
+      const identity = identityFor(element);
+      if (!identity) return;
+      const key = `${identity.disciplineKey}:${identity.module}`;
+      const current = selected.get(key);
+      if (!current || moduleTargetPriority(element) > moduleTargetPriority(current)) selected.set(key, element);
+    });
+    return Array.from(selected.values());
   }
+  const ORIGINAL_PANEL_SELECTOR = '.qc-platform-sharing,.cpc-sharing-panel,.tec-validated-panel,.tec-context-panel,.adm-native-sharing,.adm-native-tec-filter,.cpp-native-tec-panel,.civil-native-sharing,.ptra-native-panel.ptra-native-tec,.adm-native-external-entry,.csp-tec-panel';
   function hideOriginalPanels(body) {
-    body.querySelectorAll('.qc-platform-sharing,.cpc-sharing-panel,.tec-validated-panel,.tec-context-panel,.adm-native-sharing,.adm-native-tec-filter,.cpp-native-tec-panel,.civil-native-sharing,.ptra-native-panel.ptra-native-tec,.adm-native-external-entry,.csp-tec-panel').forEach((node) => node.setAttribute('data-bcq-original', '1'));
+    body.querySelectorAll(ORIGINAL_PANEL_SELECTOR).forEach((node) => node.setAttribute('data-bcq-original', '1'));
+    body.setAttribute('data-bcq-module-host', '1');
+  }
+  function showOriginalPanels(body) {
+    body.removeAttribute('data-bcq-module-host');
+    body.querySelectorAll(ORIGINAL_PANEL_SELECTOR).forEach((node) => node.removeAttribute('data-bcq-original'));
+  }
+  function restoreMissingModuleFallbacks(root) {
+    const hosts = [];
+    if (root?.matches?.('[data-bcq-module-host="1"]')) hosts.push(root);
+    root?.querySelectorAll?.('[data-bcq-module-host="1"]').forEach((node) => hosts.push(node));
+    hosts.forEach((body) => {
+      if (!body.querySelector(':scope > [data-bcq-module-panel]')) showOriginalPanels(body);
+    });
   }
   function updateModuleMetric(element, filters) {
     const unique = new Map();
@@ -504,21 +539,36 @@
       const filters = filtersForModule(identity.disciplineKey, identity.module);
       const body = moduleBody(element);
       if (!body) return;
-      hideOriginalPanels(body);
-      let panel = body.querySelector(':scope > [data-bcq-module-panel]');
+      const mountedPanels = Array.from(body.querySelectorAll(':scope > [data-bcq-module-panel]'));
+      let panel = mountedPanels.shift() || null;
+      mountedPanels.forEach((duplicate) => duplicate.remove());
       if (!filters.length) {
-        panel?.remove();
+        panel?.remove(); showOriginalPanels(body);
         return;
       }
-      const signature = filters.map((filter) => { const stats = statsFor(filter); return `${filter.stableKey}:${filter.title}:${filter.count}:${filter.url}:${filter.status}:${filter.revision}:${stats.answered}:${stats.correct}`; }).join('|');
-      const markup = `<div class="bcq-module-panels" data-bcq-module-panel="${identity.disciplineKey}:${identity.module}" data-bcq-signature="${attr(signature)}">${platformPanel(filters, 'qc')}${platformPanel(filters, 'tec')}</div>`;
-      if (panel && panel.dataset.bcqSignature === signature) { updateModuleMetric(element, filters); return; }
-      if (panel) panel.outerHTML = markup;
-      else {
-        const notes = body.querySelector('.cms-note-final,.adm-native-notes,.ptra-native-notes');
-        if (notes) notes.insertAdjacentHTML('beforebegin', markup); else body.insertAdjacentHTML('beforeend', markup);
+      try {
+        const signature = `approved-v1|${filters.map((filter) => { const stats = statsFor(filter); return `${filter.stableKey}:${filter.title}:${filter.count}:${filter.url}:${filter.status}:${filter.revision}:${stats.answered}:${stats.correct}`; }).join('|')}`;
+        if (panel && panel.dataset.bcqSignature === signature) {
+          hideOriginalPanels(body); updateModuleMetric(element, filters); return;
+        }
+        const markup = `<div class="bcq-module-panels" data-bcq-module-panel="${identity.disciplineKey}:${identity.module}" data-bcq-signature="${attr(signature)}">${platformPanel(filters, 'qc')}${platformPanel(filters, 'tec')}</div>`;
+        const template = document.createElement('template');
+        template.innerHTML = markup.trim();
+        const replacement = template.content.firstElementChild;
+        if (!replacement?.matches('[data-bcq-module-panel]')) throw new Error('Painel compacto inválido');
+        if (panel) panel.replaceWith(replacement);
+        else {
+          const notes = body.querySelector('.cms-note-final,.adm-native-notes,.ptra-native-notes');
+          if (notes) notes.before(replacement); else body.append(replacement);
+        }
+        if (!replacement.isConnected) throw new Error('Painel compacto não foi inserido');
+        hideOriginalPanels(body);
+        updateModuleMetric(element, filters);
+      } catch (reason) {
+        panel = body.querySelector(':scope > [data-bcq-module-panel]');
+        if (panel) hideOriginalPanels(body); else showOriginalPanels(body);
+        console.warn('[Central de Questões] Mantendo os filtros originais do módulo.', reason);
       }
-      updateModuleMetric(element, filters);
     });
   }
 
@@ -955,6 +1005,7 @@
       else if (!document.getElementById('questionFiltersView')?.classList.contains('hidden')) global.openHome?.();
     });
     new MutationObserver((records) => {
+      records.forEach((record) => restoreMissingModuleFallbacks(record.target instanceof Element ? record.target : record.target.parentElement));
       const externalMutation = records.some((record) => {
         const target = record.target instanceof Element ? record.target : record.target.parentElement;
         return !target?.closest('#questionFiltersView,#bcqSessionModal,#bcqAdminModal,[data-bcq-module-panel]');
