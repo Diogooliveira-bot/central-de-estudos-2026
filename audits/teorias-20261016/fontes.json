@@ -1,0 +1,45 @@
+{
+  "checkedAt": "2026-10-16",
+  "sources": [
+    {
+      "title": "CLT compilada",
+      "url": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+      "sha256DownloadedPdf": null
+    },
+    {
+      "title": "ADC 80 — decisão e publicação da ata",
+      "url": "https://portal.stf.jus.br/processos/detalhe.asp?incidente=6383356",
+      "sha256DownloadedPdf": null
+    },
+    {
+      "title": "ADC 80 — comunicação do STF",
+      "url": "https://noticias.stf.jus.br/postsnoticias/stf-define-criterios-para-concessao-da-justica-gratuita-em-todo-o-judiciario/",
+      "sha256DownloadedPdf": null
+    },
+    {
+      "title": "ADI 5766 — jurisprudência oficial do TST publicada pelo TRT3",
+      "url": "https://www.trt3.jus.br/publicacoes_ej/revista_111/files/basic-html/page863.html",
+      "sha256DownloadedPdf": null
+    },
+    {
+      "title": "IN 40 multivigente — Resoluções 224/2024 e 226/2026",
+      "url": "https://juslaboris.tst.jus.br/bitstream/handle/20.500.12178/81842/2016_res0205_in0040_multivigente.pdf?isAllowed=y&sequence=3",
+      "sha256DownloadedPdf": "27b178eca4b50a3c3e365149a9fb14870862c5bda81a2adf30cc14af16a1cdae"
+    },
+    {
+      "title": "Resolução CSJT 247/2019 — republicação de 29/7/2026",
+      "url": "https://juslaboris.tst.jus.br/bitstream/handle/20.500.12178/164654/2019_res0247_csjt_rep07.pdf?isAllowed=y&sequence=19",
+      "sha256DownloadedPdf": "267f3a5f04b1a436e560e7b1f0041db4577121b8b770051dd6e5f8990a085718"
+    },
+    {
+      "title": "Ato CSJT 97/2025 e tabela",
+      "url": "https://juslaboris.tst.jus.br/bitstream/handle/20.500.12178/258471/2025_ato0097_csjt.pdf?sequence=1&isAllowed=y",
+      "sha256DownloadedPdf": "7403808f245aadd73a18fd7515a0aaf69bde3200c701ca6552c228930ae97c8b"
+    },
+    {
+      "title": "EC 139/2026",
+      "url": "https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc139.htm",
+      "sha256DownloadedPdf": null
+    }
+  ]
+}

@@ -1,0 +1,3720 @@
+--- antes/ptra/M04/resumido/pages
++++ depois/ptra/M04/resumido/pages
+@@ -18,7 +18,13 @@
+ 
+ Fonte-base validada: F05 - Gustavo Deitos - Código Gran 240122271601
+ 
+-Material OFFLINE - não publicado / não integrado
++Texto de estudo com revisão jurídica pontual indicada abaixo.
++
++REVISÃO JURÍDICA PONTUAL — 16/10/2026
++Temas conferidos: alcance da ADI 5766.
++A leitura contém correções posteriores à fonte-base. O PDF de origem e o infográfico original não foram atualizados nesta rodada. Demais temas: revisão integral pendente.
++Fontes oficiais: https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm ; https://www.trt3.jus.br/publicacoes_ej/revista_111/files/basic-html/page863.html
++Atualização adicional: critérios de gratuidade da ADC 80 e marco de 16/9/2026. Fonte: https://portal.stf.jus.br/processos/detalhe.asp?incidente=6383356
+ 
+ 1. O QUE VOCÊ PRECISA SABER
+ Este módulo responde quatro perguntas centrais: quem pode estar no processo, quem pode atuar em nome
+@@ -223,28 +229,21 @@
+ profissional. A fonte trabalha o critério de salário igual ou inferior ao dobro do mínimo legal, ou demonstração
+ de prejuízo ao sustento próprio/familiar. Também registra que a assistência não depende de filiação ao sindicato.
+ 
+-JUSTIÇA GRATUITA
+-A F05 trabalha o art. 790, §§ 3º e 4º, da CLT:
+-
+-    • salário igual ou inferior a 40% do teto do RGPS: parâmetro da regra apresentada;
+-    • acima desse patamar: possibilidade de concessão mediante comprovação de insuficiência de recursos.
+-
+-A fonte apresenta jurisprudência do TST reconhecendo à declaração de hipossuficiência da pessoa natural
+-presunção relativa de veracidade.
+-
+-ADI 5766 - como a F05 apresenta
+-    • art. 790-B, caput e § 4º -> inconstitucionais;
+-    • art. 791-A, § 4º -> inconstitucional;
+-    • art. 844, § 2º -> constitucional.
+-
+-Na leitura da apostila, o beneficiário sucumbente na pretensão objeto de perícia não deve sofrer desconto de
+-seus créditos para pagar honorários periciais; o encargo é atribuído à União conforme a construção apresentada.
+-
+-A ausência injustificada do reclamante à audiência continua podendo gerar custas mesmo para beneficiário da
+-justiça gratuita, salvo comprovação de motivo legalmente justificável em 15 dias, conforme o art. 844, § 2º
+-trabalhado pela F05.
+-
+-
++ADC 80 — justiça gratuita para processos novos
++O STF julgou a ADC 80 em 3/9/2026. A ata foi publicada em 16/9/2026: o novo regime alcança somente processos ajuizados a partir dessa data, sem aplicação retroativa automática aos anteriores.
++• Salário mensal de até R$ 5.000,00: presunção relativa de insuficiência. O interessado deve comprovar sua renda; patrimônio ou renda familiar incompatíveis podem afastar a presunção, com análise proporcional do caso.
++• Acima de R$ 5.000,00: é possível obter o benefício, mas deve ser demonstrada concretamente a insuficiência. O valor acompanha a legislação do imposto de renda; sem atualização anual da tabela, corrige-se pelo IPCA.
++• A presunção também alcança assistidos pela Defensoria Pública. O requerente suporta o ônus da prova de renda ou insuficiência; o juiz pode exigir documentação adicional, conforme art. 99, § 2º, do CPC.
++• O STF afastou o parâmetro de 40% do teto do RGPS e declarou inconstitucional o item I da Súmula 463/TST. A declaração isolada não dispensa os critérios probatórios do novo regime.
++• Os parâmetros se aplicam aos demais ramos do Judiciário até adequação legislativa. A decisão ressalva o primeiro grau dos Juizados Especiais (arts. 54 e 55 da Lei 9.099/1995).
++Para processos anteriores ao marco, situe as regras e os precedentes no tempo. O texto literal anterior da CLT, a Súmula 463, I, e o Tema 21/TST não devem ser apresentados como regime atual irrestrito.
++
++Regra de estudo: não confundir a assistência sindical da Lei 5.584/1970 com os critérios atuais de concessão da gratuidade, definidos pela ADC 80.
++
++ADI 5766 — alcance da decisão
++• Honorários periciais: foi afastada a cobrança do beneficiário da justiça gratuita fundada no art. 790-B, inclusive o uso automático de créditos judiciais previsto no § 4º. Permanece a regra de sucumbência no objeto da perícia para quem não é beneficiário; o custeio do beneficiário cabe à União, conforme a regulamentação aplicável.
++• Honorários advocatícios: a decisão não elimina a condenação do beneficiário. O art. 791-A, § 4º, mantém a exigibilidade suspensa por dois anos após o trânsito em julgado. O credor deve provar que cessou a insuficiência; a obtenção de créditos judiciais, por si só, não autoriza desconto. Decorrido o prazo sem essa demonstração, extingue-se a obrigação.
++• Art. 844, § 2º: permanece constitucional a cobrança de custas pela ausência do reclamante, mesmo beneficiário, salvo motivo legalmente justificável comprovado em 15 dias.
+ 
+ 4. LEI SECA ESSENCIAL
+ 
+@@ -260,7 +259,7 @@
+ 
+  CLT, art. 855-B                          acordo extrajudicial com advogado       exceção ao jus postulandi
+ 
+- CLT, art. 790, §§ 3º e 4º                justiça gratuita                        40% do teto / insuficiência
++ CLT, art. 790, §§ 3º e 4º    justiça gratuita    aplicar ADC 80 e marco de 16/9/2026
+ 
+  CLT, art. 844, § 2º                      ausência do reclamante e custas         15 dias para motivo justificável
+ 
+@@ -287,8 +286,7 @@
+                                         15 dias     art. 844, § 2º                            comprovar motivo justificável da
+                                                                                               ausência à audiência
+ 
+-                          40% do teto do RGPS       art. 790, § 3º                            parâmetro econômico da justiça
+-                                                                                              gratuita na F05
++                          R$ 5.000,00    ADC 80    presunção relativa; processos ajuizados desde 16/9/2026, com atualização do patamar na forma da decisão
+ 
+                          dobro do mínimo legal      Lei 5.584/1970                            parâmetro trabalhado para
+                                                                                               assistência judiciária
+@@ -340,7 +338,7 @@
+ 
+  sindicato                                               órgão julgador
+ 
+- dobro do mínimo ou prejuízo ao sustento                 40% do teto do RGPS ou insuficiência
++ dobro do mínimo ou prejuízo ao sustento                 ADC 80: R$ 5 mil / prova da insuficiência; marco temporal
+ 
+ 
+ 
+@@ -371,9 +369,8 @@
+ Processo do Trabalho.
+ Pegadinha: não importar automaticamente a regra civil.
+ 
+-Súmula 463 / OJ 269
+-Entendimento: a F05 utiliza a Súmula 463 na análise da hipossuficiência e a OJ 269 para o momento do pedido
+-de justiça gratuita.
++ADC 80 / Súmula 463 / OJ 269
++O item I da Súmula 463 foi declarado inconstitucional na ADC 80, com modulação para processos ajuizados desde 16/9/2026. A OJ 269 trata do momento do pedido.
+ Regra prática: o benefício pode ser requerido em qualquer tempo ou grau; na fase recursal, dentro do prazo do
+ recurso.
+ 
+@@ -391,7 +388,7 @@
+     • Litisconsórcio: ativo/passivo; facultativo/necessário; simples/unitário; originário/posterior.
+     • Reclamação plúrima = reclamação individual com litisconsórcio ativo.
+     • Assistência judiciária ≠ justiça gratuita.
+-    • ADI 5766: memorize o contraste entre art. 790-B/791-A §4º e art. 844 §2º conforme a F05.
++    • ADI 5766: distinga custeio da perícia, suspensão dos honorários advocatícios por dois anos e custas por ausência injustificada.
+ 
+ 
+ 
+@@ -404,7 +401,7 @@
+    6. Sindicato x associação.
+    7. OJ 310: sem prazo em dobro trabalhista.
+    8. Art. 842: reclamação plúrima.
+-   9. Dobro do mínimo x 40% do teto do RGPS.
++   9. Assistência sindical x ADC 80: R$ 5 mil, presunção relativa e marco temporal.
+   10. 15 dias do art. 844, § 2º.
+ 
+ 10. PEGADINHAS
+@@ -425,8 +422,7 @@
+ FONTE E NOTA DE FIDELIDADE
+ Fonte principal: F05 - Partes, Procuradores, Litisconsórcio, Jus Postulandi e Justiça Gratuita, Gustavo Deitos,
+ Código Gran 240122271601, 104 páginas. A duplicata identificada na pasta de origem foi descartada como fonte
+-independente. Este material preserva o conteúdo previamente validado nesta conversa e não realiza atualização
+-jurídica externa silenciosa. Pontos sensíveis continuam marcados para verificação futura.
++independente. Revisão jurídica pontual em 16/10/2026: ADI 5766, sem declaração de revisão integral das demais matérias. Fontes oficiais: https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm ; https://www.trt3.jus.br/publicacoes_ej/revista_111/files/basic-html/page863.html
+ 
+ 5 QUESTÕES OBJETIVAS
+ Questão 1
+@@ -470,11 +466,10 @@
+    5. Litisconsórcio necessário e facultativo distinguem-se pelo momento de formação.
+ 
+ Questão 5
+-Considere a leitura da ADI 5766 feita pela F05. Assinale a alternativa correta.
++Sobre os efeitos da ADI 5766 na justiça gratuita trabalhista, assinale a alternativa correta.
+ 
+    1. O art. 844, § 2º, da CLT foi declarado inconstitucional.
+-   2. A F05 apresenta como inconstitucionais o caput e § 4º do art. 790-B e o § 4º do art. 791-A, enquanto
+-      mantém como constitucional o art. 844, § 2º.
++   2. É possível condenar o beneficiário em honorários advocatícios, com exigibilidade suspensa por dois anos e sem desconto automático de créditos; permanece constitucional o art. 844, § 2º.
+    3. A decisão eliminou todas as custas para beneficiários da justiça gratuita.
+    4. A decisão tornou obrigatória a assistência sindical para concessão da justiça gratuita.
+    5. A decisão revogou a OJ 269.
+@@ -495,5 +490,4 @@
+ Comentário: a principal armadilha é importar o art. 229 do CPC sem considerar a OJ 310, que a F05 apresenta como
+ incompatível com a celeridade trabalhista.
+ Questão 5 - alternativa B
+-Comentário: a F05 destaca exatamente esse contraste. A principal pegadinha é afirmar que o art. 844, § 2º, também teria
+-sido invalidado.+Comentário: A ADI 5766 não suprimiu toda condenação em honorários advocatícios. Permanece a suspensão por dois anos, cabendo ao credor provar a cessação da insuficiência. O art. 844, § 2º, foi considerado constitucional.--- antes/ptra/M04/resumido/questions
++++ depois/ptra/M04/resumido/questions
+@@ -113,7 +113,7 @@
+   },
+   {
+     "n": 5,
+-    "stem": "Considere a leitura da ADI 5766 feita pela F05. Assinale a alternativa correta.",
++    "stem": "Sobre os efeitos da ADI 5766 na justiça gratuita trabalhista, assinale a alternativa correta.",
+     "options": [
+       {
+         "letter": "A",
+@@ -121,7 +121,7 @@
+       },
+       {
+         "letter": "B",
+-        "text": "A F05 apresenta como inconstitucionais o caput e § 4º do art. 790-B e o § 4º do art. 791-A, enquanto mantém como constitucional o art. 844, § 2º."
++        "text": "É possível condenar o beneficiário em honorários advocatícios, com exigibilidade suspensa por dois anos e sem desconto automático de créditos; permanece constitucional o art. 844, § 2º."
+       },
+       {
+         "letter": "C",
+@@ -137,6 +137,6 @@
+       }
+     ],
+     "answer": "B",
+-    "comment": "a F05 destaca exatamente esse contraste. A principal pegadinha é afirmar que o art. 844, § 2º, também teria sido invalidado."
++    "comment": "A ADI 5766 não suprimiu toda condenação em honorários advocatícios. Permanece a suspensão por dois anos, cabendo ao credor provar a cessação da insuficiência. O art. 844, § 2º, foi considerado constitucional."
+   }
+ ]--- antes/ptra/M04/completo/pages
++++ depois/ptra/M04/completo/pages
+@@ -18,7 +18,13 @@
+ 
+ Fonte-base validada: F05 - Gustavo Deitos - Código Gran 240122271601
+ 
+-Material OFFLINE - não publicado / não integrado
++Texto de estudo com revisão jurídica pontual indicada abaixo.
++
++REVISÃO JURÍDICA PONTUAL — 16/10/2026
++Temas conferidos: alcance da ADI 5766.
++A leitura contém correções posteriores à fonte-base. O PDF de origem e o infográfico original não foram atualizados nesta rodada. Demais temas: revisão integral pendente.
++Fontes oficiais: https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm ; https://www.trt3.jus.br/publicacoes_ej/revista_111/files/basic-html/page863.html
++Atualização adicional: critérios de gratuidade da ADC 80 e marco de 16/9/2026. Fonte: https://portal.stf.jus.br/processos/detalhe.asp?incidente=6383356
+ 
+ 1. VISÃO GERAL
+ O M04 estuda os sujeitos e a forma como eles atuam no Processo do Trabalho. A sequência é intencional:
+@@ -588,18 +594,15 @@
+ trabalhador mesmo que ele não seja associado ao sindicato.
+ 
+ 
+-49. Súmula 463 do TST
+-
++49. Súmula 463 do TST e ADC 80
+ Pessoa natural
+-A fonte admite declaração de hipossuficiência: - firmada pela própria parte; ou - por advogado com poderes
+-específicos.
++O item I do verbete admitia declaração de hipossuficiência. Esse regime histórico foi atingido pela ADC 80: o STF declarou o item I inconstitucional, com efeitos para processos ajuizados desde 16/9/2026. Aplicar os critérios expostos na seção seguinte.
+ 
+ Pessoa jurídica
+ A mera declaração não basta; exige demonstração efetiva da impossibilidade de suportar as despesas
+ processuais.
+ 
+-A própria F05 observa que o verbete é utilizado na análise da justiça gratuita, embora fale em “assistência
+-judiciária”.
++A denominação histórica do verbete não afasta a distinção entre assistência judiciária e gratuidade. Para processos novos, observar a ADC 80.
+ 
+ 
+ 50. Mandato tácito × declaração de hipossuficiência
+@@ -607,21 +610,16 @@
+ advogado assinar essa declaração em nome da parte, segundo a construção da F05.
+ 
+ 
+-51. Justiça gratuita - regra da F05
+-A apostila estrutura a matéria a partir do art. 790, §§ 3º e 4º, da CLT.
+-
+-Até 40% do teto do RGPS
+-A fonte apresenta a possibilidade de concessão do benefício, a requerimento ou de ofício, àqueles que percebam
+-salário igual ou inferior a 40% do limite máximo dos benefícios do RGPS.
+-
+-
+-52. Acima dos 40%
+-A F05 admite concessão à parte que comprovar insuficiência de recursos para pagar as custas.
+-
+-
+-53. Declaração de hipossuficiência
+-A fonte apresenta jurisprudência do TST no sentido de admitir a declaração de hipossuficiência econômica da
+-pessoa natural como elemento suficiente, com presunção relativa de veracidade.
++51–53. Justiça gratuita — regime atual e marco temporal
++ADC 80 — justiça gratuita para processos novos
++O STF julgou a ADC 80 em 3/9/2026. A ata foi publicada em 16/9/2026: o novo regime alcança somente processos ajuizados a partir dessa data, sem aplicação retroativa automática aos anteriores.
++• Salário mensal de até R$ 5.000,00: presunção relativa de insuficiência. O interessado deve comprovar sua renda; patrimônio ou renda familiar incompatíveis podem afastar a presunção, com análise proporcional do caso.
++• Acima de R$ 5.000,00: é possível obter o benefício, mas deve ser demonstrada concretamente a insuficiência. O valor acompanha a legislação do imposto de renda; sem atualização anual da tabela, corrige-se pelo IPCA.
++• A presunção também alcança assistidos pela Defensoria Pública. O requerente suporta o ônus da prova de renda ou insuficiência; o juiz pode exigir documentação adicional, conforme art. 99, § 2º, do CPC.
++• O STF afastou o parâmetro de 40% do teto do RGPS e declarou inconstitucional o item I da Súmula 463/TST. A declaração isolada não dispensa os critérios probatórios do novo regime.
++• Os parâmetros se aplicam aos demais ramos do Judiciário até adequação legislativa. A decisão ressalva o primeiro grau dos Juizados Especiais (arts. 54 e 55 da Lei 9.099/1995).
++Para processos anteriores ao marco, situe as regras e os precedentes no tempo. O texto literal anterior da CLT, a Súmula 463, I, e o Tema 21/TST não devem ser apresentados como regime atual irrestrito.
++Fonte oficial: https://portal.stf.jus.br/processos/detalhe.asp?incidente=6383356
+ 
+ Assistência judiciária × justiça gratuita
+ 
+@@ -633,22 +631,17 @@
+ 
+  Lei 5.584/1970                                              CLT, especialmente art. 790 na construção da F05
+ 
+- Dobro do mínimo ou demonstração de prejuízo ao sustento     40% do teto do RGPS ou comprovação de insuficiência
++ Dobro do mínimo ou demonstração de prejuízo ao sustento     ADC 80: R$ 5 mil / prova da insuficiência; observar marco temporal
+ 
+  Não depende de filiação sindical, segundo a fonte           Não se confunde com assistência sindical
+ 
+ 
+ 
+-54. Justiça gratuita e honorários periciais - ADI 5766
+-A F05 apresenta primeiro a disciplina trazida pela Reforma e depois os efeitos da ADI 5766.
+-
+-Segundo a apostila, o STF declarou inconstitucionais: - caput do art. 790-B; - § 4º do art. 790-B; - § 4º do art. 791-
+-A.
+-
+-A consequência tratada no M4 é que o beneficiário da justiça gratuita sucumbente na pretensão objeto da perícia
+-não deve sofrer desconto de seus créditos para pagar honorários periciais, recaindo o encargo sobre a União
+-conforme a construção apresentada pela fonte.
+-
++54. Justiça gratuita e honorários — ADI 5766
++ADI 5766 — alcance da decisão
++• Honorários periciais: foi afastada a cobrança do beneficiário da justiça gratuita fundada no art. 790-B, inclusive o uso automático de créditos judiciais previsto no § 4º. Permanece a regra de sucumbência no objeto da perícia para quem não é beneficiário; o custeio do beneficiário cabe à União, conforme a regulamentação aplicável.
++• Honorários advocatícios: a decisão não elimina a condenação do beneficiário. O art. 791-A, § 4º, mantém a exigibilidade suspensa por dois anos após o trânsito em julgado. O credor deve provar que cessou a insuficiência; a obtenção de créditos judiciais, por si só, não autoriza desconto. Decorrido o prazo sem essa demonstração, extingue-se a obrigação.
++• Art. 844, § 2º: permanece constitucional a cobrança de custas pela ausência do reclamante, mesmo beneficiário, salvo motivo legalmente justificável comprovado em 15 dias.
+ 
+ 55. Ausência do reclamante e custas
+ A F05 trabalha o art. 844, § 2º, da CLT:
+@@ -659,9 +652,7 @@
+ A apostila informa que essa regra foi considerada constitucional pelo STF na ADI 5766.
+ 
+ Não confunda na ADI 5766
+-Segundo a F05: - art. 790-B, caput e § 4º -> inconstitucionais; - art. 791-A, § 4º -> inconstitucional; - art. 844, § 2º
+--> constitucional.
+-
++Perícia do beneficiário: custeio pela União. Honorários advocatícios: condenação possível, com suspensão de exigibilidade por dois anos e sem desconto automático de créditos. Custas por ausência injustificada: art. 844, § 2º, constitucional.
+ 
+ 56. Pedido de justiça gratuita - OJ 269
+ A fonte registra que o benefício pode ser pedido em qualquer tempo ou grau de jurisdição.
+@@ -771,10 +762,10 @@
+     • OJ 310.
+ 
+ Justiça gratuita
+-    • 40% do teto do RGPS na regra apresentada;
++    • ADC 80: R$ 5 mil, presunção relativa e marco de 16/9/2026;
+     • insuficiência de recursos;
+-    • declaração de hipossuficiência;
+-    • Súmula 463;
++    • prova de renda ou insuficiência conforme ADC 80;
++    • Súmula 463, I: atingida pela ADC 80;
+     • ADI 5766;
+     • OJ 269.
+ 
+@@ -879,9 +870,8 @@
+       Preservado conforme a fonte.
+    3. Assistência judiciária - Lei 5.584/1970: critério do dobro do salário mínimo preservado conforme a
+       apostila.
+-   4. Justiça gratuita: critérios da CLT, Súmula 463 e jurisprudência sobre declaração de hipossuficiência
+-      preservados conforme a F05.
+-   5. ADI 5766: tratamento do art. 790-B, art. 791-A, § 4º, e art. 844, § 2º segue a leitura da apostila.
++   4. Justiça gratuita: regime revisado com a ADC 80, julgamento de 3/9/2026 e publicação da ata em 16/9/2026. A regra anterior deve ser lida conforme a modulação.
++   5. ADI 5766: alcance corrigido em 16/10/2026 a partir da CLT compilada e da jurisprudência oficial; honorários advocatícios mantêm suspensão por dois anos.
+    6. Súmulas e OJs: incorporadas conforme apresentadas na F05. Eventual alteração/cancelamento posterior
+       fica para auditoria jurídica futura.
+ 
+@@ -889,12 +879,12 @@
+ 
+ 
+ RELATÓRIO DE FIDELIDADE
+-    • Fonte utilizada: exclusivamente F05.
++    • Fonte-base: F05, com revisão pontual da ADI 5766 em 16/10/2026.
+     • Duplicata: ignorada.
+-    • Conhecimento jurídico externo: não incorporado como conteúdo do módulo.
++    • Atualização jurídica incorporada: alcance da ADI 5766. Fontes: https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm ; https://www.trt3.jus.br/publicacoes_ej/revista_111/files/basic-html/page863.html
+     • Estrutura: reorganizada pedagogicamente.
+-    • Jurisprudência: limitada aos entendimentos presentes na F05.
+-    • Legislação: limitada aos dispositivos utilizados pela fonte.
++    • Jurisprudência: F05, com correções da ADI 5766 e da ADC 80 nesta rodada.
++    • Legislação: cotejo pontual com CLT compilada e normas indicadas na revisão.
+     • Questões: usadas para identificar pontos de risco e recorrência, sem reprodução integral.
+ 
+ 
+@@ -970,8 +960,7 @@
+ 
+ 18 anos                 capacidade processual    regra da F05; emancipação é ressalva
+ 
+-40% do teto do RGPS     justiça gratuita         parâmetro do art. 790, § 3º trabalhado
+-                                                 pela fonte
++R$ 5.000,00    justiça gratuita / ADC 80    presunção relativa para processos ajuizados desde 16/9/2026; atualização na forma da decisão
+ 
+ dobro do mínimo legal   assistência judiciária   critério da Lei 5.584/1970 na F05
+ 
+@@ -1026,8 +1015,7 @@
+ 
+ OJ 310 SDI-I           litisconsórcio                    sem prazo em dobro trabalhista
+ 
+-Súmula 463 TST         hipossuficiência                  declaração da pessoa natural / prova
+-                                                         da pessoa jurídica
++ADC 80 / Súmula 463 TST    hipossuficiência    item I inconstitucional; regime atual com marco temporal; pessoa jurídica exige prova
+ 
+ Súmula 457 TST         perícia                           consequência retomada pela F05 após
+                                                          ADI 5766
+--- antes/ptra/M10/resumido/pages
++++ depois/ptra/M10/resumido/pages
+@@ -16,11 +16,14 @@
+ 
+ BASE COMPLETA | Direito Processual do Trabalho | M10                    1
+ 
++REVISÃO JURÍDICA PONTUAL — 16/10/2026
++Temas conferidos: honorários periciais, jornada, prazos do sumaríssimo e gabaritos.
++A leitura contém correções posteriores à fonte-base. O PDF de origem e o infográfico original não foram atualizados nesta rodada. Demais temas: revisão integral pendente.
++Fontes oficiais: https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm ; https://juslaboris.tst.jus.br/handle/20.500.12178/164654 ; https://juslaboris.tst.jus.br/handle/20.500.12178/258471
++
+  1. O QUE VOCÊ PRECISA SABER
+  O M10 organiza a prova em quatro perguntas: o que precisa ser provado, quem suporta o ônus, qual meio
+- pode demonstrar o fato e qual efeito decorre da produção ou da falta da prova. A fonte F22 é a base
+- exclusiva desta versão; pontos potencialmente desatualizados são preservados e marcados para verificação
+- futura.
++ pode demonstrar o fato e qual efeito decorre da produção ou da falta da prova. A F22 é a fonte-base, complementada pela revisão jurídica pontual de 16/10/2026 sobre jornada, honorários periciais e prazos do sumaríssimo.
+ 
+  LÓGICA DO MÓDULO
+  FATO CONTROVERTIDO → ÔNUS → MEIO DE PROVA → PRODUÇÃO/CONTRADITÓRIO → VALORAÇÃO →
+@@ -105,12 +108,12 @@
+  assistente técnico, laudo, honorários, possibilidade de parcelamento, vedação de adiantamento e a repercussão
+  da ADI 5766 na disciplina dos honorários.
+ 
+- LACUNA / VERIFICAÇÃO FUTURA
+- A F22 também cita a Resolução CSJT 66/2010 e o parâmetro de R$ 1.000,00. O dado é preservado como conteúdo
+- da fonte, mas não deve ser tratado como atualização jurídica definitiva.
+-
+-
+- 3.7 Outros meios e incidentes
++ HONORÁRIOS PERICIAIS — CUSTEIO PELA UNIÃO
++A Resolução CSJT 247/2019, consolidada com as alterações de 2026, substituiu a Resolução 66/2010, expressamente revogada. O Ato CSJT 97/2025 fixa o limite nacional de R$ 1.500,00 para arbitramentos a partir de 1º/1/2026, conforme a data da decisão de arbitramento.
++Esse limite se refere ao pagamento com recursos da União vinculados à justiça gratuita; não é teto geral de perícias pagas pelas partes (art. 21, § 3º). O TRT pode fixar parâmetros dentro do limite nacional. Em perícias de saúde com deslocamento do perito ao local de trabalho, o art. 21, § 5º, admite acréscimo de até 30%.
++O art. 22 exige cumulativamente concessão de justiça gratuita, fixação judicial dos honorários, sucumbência do beneficiário no objeto da perícia e trânsito em julgado. A redação consolidada considera a Resolução CSJT 450/2026; não se aplica indistintamente antecipação de pagamento suspensa por essa resolução.
++
++3.7 Outros meios e incidentes
+  Inspeção judicial: contato direto do juiz com pessoa ou coisa para esclarecer fato relevante. Acareação:
+  confronto entre declarações divergentes nos limites tratados pela fonte. Ata notarial: documento lavrado por
+  tabelião para registrar fatos constatados. Incidente de falsidade: mecanismo para discutir
+@@ -161,11 +164,11 @@
+ 
+   Notificação - Súmula 16/TST               48 horas                       Presunção após a postagem.
+ 
+-  Perícia no sumaríssimo                    20 dias                        Prazo comum no contexto do art. 852-H, §6º, conforme
+-                                                                           fonte.
+-
+-  Honorários periciais - Res. CSJT          R$ 1.000,00                    Parâmetro citado pela F22; NECESSITA VERIFICAÇÃO
+-  66/2010                                                                  FUTURA.
++  Manifestação sobre laudo no sumaríssimo    5 dias    CLT, art. 852-H, § 6º.
++
++  Continuação da audiência interrompida    até 30 dias    CLT, art. 852-H, § 7º; ressalvado motivo relevante justificado.
++
++  Honorários periciais custeados pela União    R$ 1.500,00    Ato CSJT 97/2025: arbitramento desde 1º/1/2026; observar a exceção de até 30% do art. 21, § 5º, da Resolução 247/2019.
+ 
+ 
+  6. COMPARATIVOS
+@@ -196,8 +199,7 @@
+  o ônus de provar o término do contrato, em razão da presunção de continuidade.
+  Súmula 16/TST — Presunção de recebimento da notificação 48 horas após a postagem; o ônus de provar não
+  recebimento ou entrega tardia é do destinatário.
+- Súmula 338/TST — Controles de jornada e presunções probatórias. A F22 usa a referência 'mais de 10
+- empregados'; manter como conteúdo da fonte e submeter a verificação futura.
++ Súmula 338/TST — Controles de jornada e presunções probatórias. O art. 74, § 2º, da CLT exige registro de entrada e saída nos estabelecimentos com mais de 20 trabalhadores, desde a Lei 13.874/2019. A redação histórica do item I da Súmula 338 menciona mais de 10 empregados e deve ser situada no período dos fatos. A falta injustificada dos controles obrigatórios gera presunção relativa da jornada alegada, admitida prova em contrário. Não confundir o texto histórico do verbete com o limite legal atual.
+  Súmula 6, VIII/TST — Na equiparação salarial, o empregador prova fato impeditivo, modificativo ou extintivo da
+  equiparação.
+ 
+@@ -216,12 +218,10 @@
+     Súmula 357/TST — O simples fato de a testemunha litigar ou ter litigado contra o mesmo empregador não a
+     torna suspeita.
+ 
+-    VERIFICAÇÃO FUTURA - SÚMULA 338
+-    A F22 emprega a referência a 'mais de 10 empregados'. Este PDF não atualiza o dado silenciosamente; ele deve ser
+-    auditado antes da integração final.
+-
+-
+-    8. MÓDULO EM 1 MINUTO
++    REGISTRO DE JORNADA
++Art. 74, § 2º: mais de 20 trabalhadores por estabelecimento. Considere a legislação aplicável ao período dos fatos ao ler a referência histórica da Súmula 338.
++
++8. MÓDULO EM 1 MINUTO
+     Provar é demonstrar fatos relevantes sob contraditório. A regra-base do ônus está no art. 818 da CLT, com
+     possibilidade de distribuição dinâmica. Depoimento pessoal pode produzir confissão; documentos podem ser
+     impugnados e sua falsidade tem incidente próprio; testemunhas seguem regras de quantidade, capacidade,
+@@ -256,7 +256,7 @@
+ •
+       Honorários periciais não se confundem com honorários advocatícios (M11).
+ •
+-      Não tratar a referência da F22 na Súmula 338 como atualização normativa definitiva.
++      Não confundir o limite legal atual de mais de 20 trabalhadores com a redação histórica da Súmula 338.
+ 
+ 
+ 
+@@ -298,15 +298,10 @@
+     Questão 5 — D. A F22 trabalha o prazo de 15 dias no regime dos arts. 430-433 do CPC.
+ 
+ 
+-    LACUNAS / VERIFICAÇÃO FUTURA
+-•
+-      Súmula 338/TST: conferir, em auditoria jurídica posterior, a referência quantitativa usada pela F22.
+-•
+-      Resolução CSJT 66/2010 / R$ 1.000,00: conferir vigência e atualização antes da integração definitiva.
+-•
+-      Não houve atualização externa silenciosa nesta versão.
+-
+-
+-
++    FONTES DA REVISÃO JURÍDICA PONTUAL — 16/10/2026
++CLT, arts. 74, § 2º, 790-B e 852-H, §§ 6º e 7º: https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm
++Resolução CSJT 247/2019 consolidada: https://juslaboris.tst.jus.br/handle/20.500.12178/164654
++Ato CSJT 97/2025: https://juslaboris.tst.jus.br/handle/20.500.12178/258471
++Revisão limitada aos temas indicados; os demais pontos não receberam validação integral.
+ 
+ BASE COMPLETA | Direito Processual do Trabalho | M10                                                                      6--- antes/ptra/M10/resumido/questions
++++ depois/ptra/M10/resumido/questions
+@@ -137,6 +137,6 @@
+       }
+     ],
+     "answer": "D",
+-    "comment": "A F22 trabalha o prazo de 15 dias no regime dos arts. 430-433 do CPC. LACUNAS / VERIFICAÇÃO FUTURA • Súmula 338/TST: conferir, em auditoria jurídica posterior, a referência quantitativa usada pela F22. • Resolução CSJT 66/2010 / R$ 1.000,00: conferir vigência e atualização antes da integração definitiva. • Não houve atualização externa silenciosa nesta versão. BASE COMPLETA | Direito Processual do Trabalho | M10 6"
++    "comment": "O CPC, arts. 430 e 432, prevê 15 dias para arguição após intimação da juntada e para ouvir a parte contrária, nas hipóteses legais."
+   }
+ ]--- antes/ptra/M10/completo/pages
++++ depois/ptra/M10/completo/pages
+@@ -15,6 +15,11 @@
+ 
+ 
+ BASE COMPLETA | Direito Processual do Trabalho | M10                    1
++
++REVISÃO JURÍDICA PONTUAL — 16/10/2026
++Temas conferidos: honorários periciais, jornada, prazos do sumaríssimo e gabaritos.
++A leitura contém correções posteriores à fonte-base. O PDF de origem e o infográfico original não foram atualizados nesta rodada. Demais temas: revisão integral pendente.
++Fontes oficiais: https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm ; https://juslaboris.tst.jus.br/handle/20.500.12178/164654 ; https://juslaboris.tst.jus.br/handle/20.500.12178/258471
+ 
+  1. VISÃO GERAL
+  A prova é o elo entre a narrativa das partes e a decisão judicial. O M10 estuda o direito probatório trabalhista em
+@@ -133,8 +138,7 @@
+  ônus de provar o término do contrato, em razão da presunção de continuidade.
+  Súmula 16/TST. Presunção de recebimento da notificação 48 horas após a postagem; o ônus de provar não
+  recebimento ou entrega tardia é do destinatário.
+- Súmula 338/TST. Controles de jornada e presunções probatórias. A F22 usa a referência 'mais de 10
+- empregados'; manter como conteúdo da fonte e submeter a verificação futura.
++ Súmula 338/TST — Controles de jornada e presunções probatórias. O art. 74, § 2º, da CLT exige registro de entrada e saída nos estabelecimentos com mais de 20 trabalhadores, desde a Lei 13.874/2019. A redação histórica do item I da Súmula 338 menciona mais de 10 empregados e deve ser situada no período dos fatos. A falta injustificada dos controles obrigatórios gera presunção relativa da jornada alegada, admitida prova em contrário. Não confundir o texto histórico do verbete com o limite legal atual.
+  Súmula 6, VIII/TST. Na equiparação salarial, o empregador prova fato impeditivo, modificativo ou extintivo da
+  equiparação.
+ 
+@@ -149,12 +153,10 @@
+  Súmula 12/TST. As anotações da CTPS feitas pelo empregador têm presunção relativa, segundo a exposição
+  da fonte.
+ 
+- LACUNA / VERIFICAÇÃO FUTURA
+- Na Súmula 338/TST, a F22 utiliza a referência 'mais de 10 empregados'. O dado é mantido por fidelidade histórica à
+- fonte e deve ser confrontado com a legislação/jurisprudência vigente na auditoria jurídica geral.
+-
+-
+- 3.6 Depoimento pessoal
++ REGISTRO DE JORNADA
++Art. 74, § 2º: mais de 20 trabalhadores por estabelecimento. Considere a legislação aplicável ao período dos fatos ao ler a referência histórica da Súmula 338.
++
++3.6 Depoimento pessoal
+  O depoimento pessoal é meio de prova oral produzido pela própria parte. Sua função probatória é colher
+  declarações sobre fatos relevantes do litígio. A condução ocorre em contexto de instrução, sob direção judicial.
+  O M10 limita-se ao valor probatório e à conexão com a confissão; regras gerais de audiência permanecem no
+@@ -256,27 +258,21 @@
+  nos limites processuais tratados pela fonte.
+  O laudo concentra as conclusões técnicas do expert. A prova pericial não elimina a valoração judicial: integra o
+  conjunto probatório e se submete ao contraditório.
+- No procedimento sumaríssimo, a fonte menciona prazo comum de 20 dias no contexto do art. 852-H, §6º. O
+- dado é mantido no quadro de números do módulo.
++ No procedimento sumaríssimo, as partes têm prazo comum de 5 dias para manifestação sobre o laudo (CLT, art. 852-H, § 6º). Se a audiência for interrompida, seu prosseguimento e a solução do processo devem ocorrer em até 30 dias, salvo motivo relevante justificado pelo juiz (§ 7º). São prazos de atos diferentes.
+ 
+  3.13 Honorários periciais
+ 
+ 
+ BASE COMPLETA | Direito Processual do Trabalho | M10                                                                 5
+ 
+- A F22 trabalha o art. 790-B da CLT e registra, na literalidade apresentada, a responsabilidade da parte
+- sucumbente na pretensão objeto da perícia, inclusive beneficiário da justiça gratuita, além de regras sobre limite,
+- parcelamento, vedação de adiantamento e pagamento pela União em determinadas hipóteses.
+- Entretanto, a própria fonte chama atenção para a ADI 5766, julgada pelo STF em 20/10/2021, com publicação
+- em 5/11/2021, e orienta que o entendimento vinculante do STF seja considerado nas provas. Portanto, a leitura
+- do art. 790-B no material não pode ignorar a ressalva jurisprudencial feita pela própria F22.
+-
+- LACUNA / VERIFICAÇÃO FUTURA
+- A F22 cita a Resolução CSJT 66/2010 e parâmetro de R$ 1.000,00 para honorários periciais em assistência
+- judiciária. Este valor é preservado como dado da fonte, mas marcado para auditoria normativa posterior.
+-
+-
+- 3.14 Perito x intérprete
++ A regra do art. 790-B é a responsabilidade da parte sucumbente no objeto da perícia, ressalvada a justiça gratuita após a ADI 5766. O beneficiário não deve suportar a despesa por desconto automático de créditos: o encargo é custeado pela União, nos termos da regulamentação. O § 3º veda exigir adiantamento para realização de perícia.
++
++HONORÁRIOS PERICIAIS — CUSTEIO PELA UNIÃO
++A Resolução CSJT 247/2019, consolidada com as alterações de 2026, substituiu a Resolução 66/2010, expressamente revogada. O Ato CSJT 97/2025 fixa o limite nacional de R$ 1.500,00 para arbitramentos a partir de 1º/1/2026, conforme a data da decisão de arbitramento.
++Esse limite se refere ao pagamento com recursos da União vinculados à justiça gratuita; não é teto geral de perícias pagas pelas partes (art. 21, § 3º). O TRT pode fixar parâmetros dentro do limite nacional. Em perícias de saúde com deslocamento do perito ao local de trabalho, o art. 21, § 5º, admite acréscimo de até 30%.
++O art. 22 exige cumulativamente concessão de justiça gratuita, fixação judicial dos honorários, sucumbência do beneficiário no objeto da perícia e trânsito em julgado. A redação consolidada considera a Resolução CSJT 450/2026; não se aplica indistintamente antecipação de pagamento suspensa por essa resolução.
++
++3.14 Perito x intérprete
+  A fonte faz comparação específica. No regime por ela exposto, os honorários do perito se vinculam à
+  sucumbência no objeto da perícia, enquanto os honorários do intérprete se relacionam à sucumbência na causa.
+  A F22 também trata a situação do beneficiário da justiça gratuita no contexto do intérprete.
+@@ -304,8 +300,7 @@
+  o ônus de provar o término do contrato, em razão da presunção de continuidade.
+  Súmula 16/TST — Presunção de recebimento da notificação 48 horas após a postagem; o ônus de provar não
+  recebimento ou entrega tardia é do destinatário.
+- Súmula 338/TST — Controles de jornada e presunções probatórias. A F22 usa a referência 'mais de 10
+- empregados'; manter como conteúdo da fonte e submeter a verificação futura.
++ Súmula 338/TST — Controles de jornada e presunções probatórias. O art. 74, § 2º, da CLT exige registro de entrada e saída nos estabelecimentos com mais de 20 trabalhadores, desde a Lei 13.874/2019. A redação histórica do item I da Súmula 338 menciona mais de 10 empregados e deve ser situada no período dos fatos. A falta injustificada dos controles obrigatórios gera presunção relativa da jornada alegada, admitida prova em contrário. Não confundir o texto histórico do verbete com o limite legal atual.
+  Súmula 6, VIII/TST — Na equiparação salarial, o empregador prova fato impeditivo, modificativo ou extintivo da
+  equiparação.
+  Súmula 460/TST — Ônus do empregador quanto à demonstração de que o empregado não satisfaz os
+@@ -376,7 +371,9 @@
+   15 dias                    Arguição de falsidade após intimação da juntada; e resposta,        CPC 430-432 / F22
+                              conforme sistemática recuperada.
+ 
+-  20 dias                    Prazo comum no contexto pericial do sumaríssimo.                    CLT 852-H, §6º / F22
++  5 dias    Manifestação comum das partes sobre o laudo no sumaríssimo.    CLT 852-H, § 6º
++
++  Até 30 dias    Prosseguimento da audiência interrompida e solução, salvo motivo relevante justificado.    CLT 852-H, § 7º
+ 
+   48 horas                   Presunção de recebimento da notificação após postagem.              Súmula 16/TST / F22
+ 
+@@ -402,11 +399,11 @@
+ 
+     Notificação - Súmula 16/TST                 48 horas                      Presunção após a postagem.
+ 
+-    Perícia no sumaríssimo                      20 dias                       Prazo comum no contexto do art. 852-H, §6º, conforme
+-                                                                              fonte.
+-
+-    Honorários periciais - Res. CSJT            R$ 1.000,00                   Parâmetro citado pela F22; NECESSITA VERIFICAÇÃO
+-    66/2010                                                                   FUTURA.
++    Manifestação sobre laudo no sumaríssimo    5 dias    CLT, art. 852-H, § 6º.
++
++  Continuação da audiência interrompida    até 30 dias    CLT, art. 852-H, § 7º; ressalvado motivo relevante justificado.
++
++    Honorários periciais custeados pela União    R$ 1.500,00    Ato CSJT 97/2025: arbitramento desde 1º/1/2026; observar a exceção de até 30% do art. 21, § 5º, da Resolução 247/2019.
+ 
+ 
+     8. MAPA-MESTRE DOS MEIOS DE PROVA
+@@ -486,7 +483,7 @@
+ •
+       48 horas - Súmula 16.
+ •
+-      20 dias - contexto pericial do sumaríssimo segundo a F22.
++      5 dias: manifestação comum sobre o laudo no sumaríssimo; até 30 dias: continuação da audiência interrompida e solução, com ressalva do art. 852-H, § 7º.
+ •
+       Súmulas 212, 338 e 357 como eixos de ônus/testemunha.
+ 
+@@ -507,7 +504,7 @@
+ •
+       Não transportar para M10 toda a disciplina de audiência (M9) ou honorários advocatícios (M11).
+ •
+-      Não tratar os dois pontos marcados como 'verificação futura' como atualização definitiva.
++      Não aplicar o limite de honorários custeados pela União a toda perícia paga pelas partes; observar o art. 21, §§ 3º e 5º, da Resolução CSJT 247/2019.
+ 
+ 
+     13. ERROS QUE EU NÃO POSSO COMETER
+@@ -555,7 +552,7 @@
+ 
+   Reconheço as súmulas essenciais do módulo                                             ■
+ 
+-  Lembro das duas verificações futuras                                                  ■
++  Diferencio os critérios atuais de jornada, perícia e os prazos do sumaríssimo                                                  ■
+ 
+ 
+ 
+@@ -589,15 +586,10 @@
+  fatos essenciais. D) divergência com outra testemunha. E) ausência de documento escrito.
+  9. A prova mais diretamente destinada a esclarecer fato que depende de conhecimento técnico especializado é:
+  A) inspeção judicial. B) ata notarial. C) perícia. D) depoimento pessoal. E) confissão.
+- 10. Qual alternativa representa corretamente uma cautela metodológica deste M10?
+- A) Atualizar silenciosamente toda divergência encontrada. B) Substituir a F22 por conhecimento geral. C) Tratar a
+- referência da Súmula 338 e o parâmetro da Resolução CSJT 66/2010 como pontos de verificação futura. D) Excluir
+- esses pontos do material. E) Transferir toda prova oral ao M9.
+-
+-
+-
+-
+- GABARITO COMENTADO
++ 10. No procedimento sumaríssimo, qual é o prazo comum para as partes se manifestarem sobre o laudo pericial?
++A) 2 dias. B) 3 dias. C) 5 dias. D) 20 dias. E) 30 dias.
++
++GABARITO COMENTADO
+  Questão 1 — B. Fato impeditivo, modificativo ou extintivo é encargo primário do reclamado. A alternativa A inverte a
+  regra.
+ 
+@@ -625,21 +617,15 @@
+ 
+     Questão 9 — C. A perícia utiliza conhecimento técnico especializado. A inspeção é percepção direta do julgador.
+ 
+-    Questão 10 — C. A regra do projeto é fidelidade: preservar a fonte e sinalizar necessidade de auditoria, sem
+-    atualização silenciosa.
+-
+-
+-    16. LACUNAS / VERIFICAÇÃO FUTURA
+-•
+-      Súmula 338/TST: a F22 registra referência quantitativa que deve ser auditada em etapa posterior.
+-•
+-      Resolução CSJT 66/2010 e parâmetro de R$ 1.000,00: verificar atualização/vigência antes da integração.
+-•
+-      Os enunciados jurisprudenciais reunidos pela F22 foram preservados dentro do alcance seguro recuperado;
+-      não foram completados por memória onde o texto integral não foi necessário.
+-
+-
+-    17. FONTE E FIDELIDADE
++    Questão 10 — C. O art. 852-H, § 6º, da CLT fixa prazo comum de 5 dias. Os 30 dias do § 7º dizem respeito ao prosseguimento da audiência interrompida e à solução do processo, salvo motivo relevante justificado pelo juiz.
++
++16. FONTES DA REVISÃO JURÍDICA PONTUAL — 16/10/2026
++https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm
++https://juslaboris.tst.jus.br/handle/20.500.12178/164654
++https://juslaboris.tst.jus.br/handle/20.500.12178/258471
++Temas: jornada, perícias, prazos e divergências de gabarito. Revisão integral do módulo ainda pendente.
++
++17. FONTE E FIDELIDADE
+     Fonte principal: F22 - 2025-06-13-09-40-49-73343610-provas-no-processo-do-trabalho-e1749818449.pdf.
+     Título interno: Provas no Processo do Trabalho. Autor: Gustavo Deitos. Código Gran: 250523139236. Extensão:
+     109 páginas. Origem: Google Drive.
+--- antes/ptra/M10/completo/questions
++++ depois/ptra/M10/completo/questions
+@@ -24,7 +24,7 @@
+         "text": "exclusivamente fatos documentais."
+       }
+     ],
+-    "answer": "A",
++    "answer": "B",
+     "comment": "Fato impeditivo, modificativo ou extintivo é encargo primário do reclamado. A alternativa A inverte a regra."
+   },
+   {
+@@ -108,7 +108,7 @@
+         "text": "6."
+       }
+     ],
+-    "answer": "B",
++    "answer": "C",
+     "comment": "Ordinário: 3 por parte. A alternativa B corresponde ao sumaríssimo; E, ao inquérito para falta grave."
+   },
+   {
+@@ -253,30 +253,30 @@
+   },
+   {
+     "n": 10,
+-    "stem": "Qual alternativa representa corretamente uma cautela metodológica deste M10?",
+-    "options": [
+-      {
+-        "letter": "A",
+-        "text": "Atualizar silenciosamente toda divergência encontrada."
+-      },
+-      {
+-        "letter": "B",
+-        "text": "Substituir a F22 por conhecimento geral."
+-      },
+-      {
+-        "letter": "C",
+-        "text": "Tratar a referência da Súmula 338 e o parâmetro da Resolução CSJT 66/2010 como pontos de verificação futura."
+-      },
+-      {
+-        "letter": "D",
+-        "text": "Excluir esses pontos do material."
+-      },
+-      {
+-        "letter": "E",
+-        "text": "Transferir toda prova oral ao M9."
+-      }
+-    ],
+-    "answer": "C",
+-    "comment": "A regra do projeto é fidelidade: preservar a fonte e sinalizar necessidade de auditoria, sem atualização silenciosa. 16. LACUNAS / VERIFICAÇÃO FUTURA • Súmula 338/TST: a F22 registra referência quantitativa que deve ser auditada em etapa posterior. • Resolução CSJT 66/2010 e parâmetro de R$ 1.000,00: verificar atualização/vigência antes da integração. • Os enunciados jurisprudenciais reunidos pela F22 foram preservados dentro do alcance seguro recuperado; não foram completados por memória onde o texto integral não foi necessário. 17. FONTE E FIDELIDADE Fonte principal: F22 - 2025-06-13-09-40-49-73343610-provas-no-processo-do-trabalho-e1749818449.pdf. Título interno: Provas no Processo do Trabalho. Autor: Gustavo Deitos. Código Gran: 250523139236. Extensão: 109 páginas. Origem: Google Drive. Este PDF reorganiza o conteúdo previamente validado do M10. Não houve publicação, alteração de GitHub/Vercel, deploy ou integração à BASE COMPLETA. BASE COMPLETA | Direito Processual do Trabalho | M10 12"
++    "stem": "No procedimento sumaríssimo, qual é o prazo comum para as partes se manifestarem sobre o laudo pericial?",
++    "options": [
++      {
++        "letter": "A",
++        "text": "2 dias."
++      },
++      {
++        "letter": "B",
++        "text": "3 dias."
++      },
++      {
++        "letter": "C",
++        "text": "5 dias."
++      },
++      {
++        "letter": "D",
++        "text": "20 dias."
++      },
++      {
++        "letter": "E",
++        "text": "30 dias."
++      }
++    ],
++    "answer": "C",
++    "comment": "O art. 852-H, § 6º, da CLT fixa prazo comum de 5 dias. Os 30 dias do § 7º dizem respeito ao prosseguimento da audiência interrompida e à solução do processo, salvo motivo relevante justificado pelo juiz."
+   }
+ ]--- antes/ptra/M14/resumido/pages
++++ depois/ptra/M14/resumido/pages
+@@ -23,6 +23,10 @@
+ 
+ 
+ BASE COMPLETA • Direito Processual do Trabalho • M14                                                           1
++
++REVISÃO JURÍDICA PONTUAL — 16/10/2026
++Tema: AI e exceções da IN 40; demais temas sujeitos a revisão integral. O PDF de origem e o infográfico não foram atualizados nesta rodada.
++Fonte oficial: https://juslaboris.tst.jus.br/bitstream/handle/20.500.12178/81842/2016_res0205_in0040_multivigente.pdf?isAllowed=y&sequence=3
+ 
+  1. O QUE VOCÊ PRECISA SABER
+  O M14 organiza três recursos com funções diferentes: o Recurso Ordinário (RO) reabre o exame de
+@@ -96,8 +100,7 @@
+    Destrancar recurso inadmitido por ausência de pressuposto de admissibilidade. No processo do trabalho,
+    não é o agravo do art. 1.015 do CPC.
+ 
+- Cabimento: art. 897, b, CLT: despacho/decisão que denega interposição de recurso. Pode destrancar RO,
+- AP, RR e outros recursos conforme o contexto.
++ Cabimento: art. 897, b, CLT: despacho/decisão que denega interposição de recurso. Pode destrancar RO, AP, RR e outros recursos nas hipóteses próprias, observadas as exceções da IN 40 para RR.
+  Julgamento: pelo tribunal que seria competente para conhecer o recurso denegado. A F14 enfatiza que o
+  órgão recorrido não faz juízo de admissibilidade do próprio AI; deve remetê-lo.
+  Efeito: devolutivo. Provido o AI, o tribunal passa ao recurso principal conforme o procedimento próprio.
+@@ -107,14 +110,10 @@
+  situações já respondidas.
+  Depósito: quando devido, 50% do depósito do recurso que se pretende destrancar (art. 899, §7º). A fonte
+  também registra a hipótese do §8º ligada ao AIRR e jurisprudência uniforme do TST.
+-   IN 40 - RECORTE MÍNIMO
+-   Se o RR é admitido apenas parcialmente, o capítulo denegado deve ser impugnado por AI, sob pena de
+-   preclusão. Se houver omissão no juízo de admissibilidade, a fonte manda primeiro provocar o órgão por
+-   embargos de declaração; persistindo a omissão, o recorte da IN 40 a equipara à denegação para fins de AI.
+-   Recurso de Revista será aprofundado no M15.
+-
+-
+- 4. LEI SECA ESSENCIAL
++   IN 40 — negativa do RR conforme o fundamento de cada capítulo
++Conformidade com entendimento do TST em repetitivos, IRDR ou IAC: agravo interno no TRT (art. 1º-A). Conformidade com decisão vinculante do STF em matéria constitucional: AI ao TST (art. 1º-B). Demais negativas: AI nas hipóteses próprias. Capítulos diferentes podem exigir simultaneamente interno e AI, cada qual para sua fração, sob pena de preclusão. O AI é processado após o julgamento do interno. Omissão: ED primeiro; persistindo após os ED, AI (art. 1º, §§ 1º a 3º). Fluxo completo no M15; revisão conforme Resoluções TST 224/2024 e 226/2026.
++
++4. LEI SECA ESSENCIAL
+   Dispositivo               Regra essencial                                                      Como cai
+ 
+   CLT, art. 895             RO em 8 dias nas hipóteses dos incisos I e II.                       Identificar origem e tribunal destinatário.
+@@ -157,7 +156,7 @@
+ 
+   Situação                                        Prazo / número              Observação da fonte
+ 
+-  AI contra capítulo denegado do RR               8 dias                      Recorte da IN 40 utilizado apenas para compreender o AI.
++  AI contra capítulo denegado do RR nas hipóteses próprias               8 dias                      Recorte da IN 40 utilizado apenas para compreender o AI.
+ 
+   Depósito do AI, quando devido                   50%                         Do valor do depósito do recurso que se pretende destrancar;
+                                                                               art. 899, §7º, CLT.
+@@ -244,8 +243,7 @@
+  10. PEGADINHAS
+  1) AI trabalhista não é o AI do CPC. 2) AP não é recurso da fase de conhecimento. 3) Falta de delimitação
+  impede o recebimento do AP. 4) Garantia do juízo não é depósito recursal. 5) Competência originária do
+- TRT pode levar RO ao TST. 6) RR parcialmente denegado: AI no capítulo denegado; aprofundamento do
+- RR fica no M15.
++ TRT pode levar RO ao TST. 6) RR parcialmente denegado: definir AI ou interno pelo fundamento de cada capítulo; ver fluxo atualizado do M15.
+ 
+ 
+  LACUNA / VERIFICAÇÃO FUTURA
+@@ -287,8 +285,7 @@
+  D) 15 dias.
+  E) 30 dias.
+ 
+- 5. Segundo o recorte da IN 40 usado no módulo, se o RR for admitido apenas em parte, o capítulo denegado
+- deve ser impugnado por:
++ 5. Em decisão parcialmente admissiva do RR, o capítulo denegado por conformidade com decisão vinculante do STF em matéria constitucional deve ser impugnado por:
+  A) novo recurso ordinário.
+  B) agravo de petição.
+  C) embargos de declaração em qualquer caso.
+@@ -319,8 +316,7 @@
+  Comentário: No sumaríssimo, a fonte registra prazo máximo de 10 dias para o relator liberar o RO, após distribuição
+  imediata.
+  Questão 5 — alternativa D
+- Comentário: A IN 40 estabelece o ônus de agravar o capítulo denegado do RR, sob pena de preclusão. O RR em si é
+- aprofundado no M15.
++ Comentário: O art. 1º-B da IN 40, incluído pela Resolução TST 226/2026, prevê agravo de instrumento nesse fundamento. O agravo interno do art. 1º-A corresponde aos precedentes qualificados do TST; cada capítulo exige sua própria via.
+ 
+ 
+ 
+--- antes/ptra/M14/resumido/questions
++++ depois/ptra/M14/resumido/questions
+@@ -113,7 +113,7 @@
+   },
+   {
+     "n": 5,
+-    "stem": "Segundo o recorte da IN 40 usado no módulo, se o RR for admitido apenas em parte, o capítulo denegado deve ser impugnado por:",
++    "stem": "Em decisão parcialmente admissiva do RR, o capítulo denegado por conformidade com decisão vinculante do STF em matéria constitucional deve ser impugnado por:",
+     "options": [
+       {
+         "letter": "A",
+@@ -129,14 +129,14 @@
+       },
+       {
+         "letter": "D",
+-        "text": "agravo de instrumento, sob pena de preclusão. BASE COMPLETA • Direito Processual do Trabalho • M14 5"
++        "text": "agravo de instrumento, sob pena de preclusão."
+       },
+       {
+         "letter": "E",
+-        "text": "reclamação correcional. BASE COMPLETA • Direito Processual do Trabalho • M14 6"
++        "text": "reclamação correcional."
+       }
+     ],
+     "answer": "D",
+-    "comment": "A IN 40 estabelece o ônus de agravar o capítulo denegado do RR, sob pena de preclusão. O RR em si é aprofundado no M15. BASE COMPLETA • Direito Processual do Trabalho • M14 7"
++    "comment": "O art. 1º-B da IN 40, incluído pela Resolução TST 226/2026, prevê agravo de instrumento nesse fundamento. O agravo interno do art. 1º-A corresponde aos precedentes qualificados do TST; cada capítulo exige sua própria via."
+   }
+ ]--- antes/ptra/M14/completo/pages
++++ depois/ptra/M14/completo/pages
+@@ -23,6 +23,10 @@
+ 
+ 
+ BASE COMPLETA • Direito Processual do Trabalho • M14                                                           1
++
++REVISÃO JURÍDICA PONTUAL — 16/10/2026
++Tema: AI e exceções da IN 40; demais temas sujeitos a revisão integral. O PDF de origem e o infográfico não foram atualizados nesta rodada.
++Fonte oficial: https://juslaboris.tst.jus.br/bitstream/handle/20.500.12178/81842/2016_res0205_in0040_multivigente.pdf?isAllowed=y&sequence=3
+ 
+  1. VISÃO GERAL
+  Este módulo sucede a teoria geral dos recursos do M13 e aplica seus conceitos a três instrumentos
+@@ -251,16 +255,10 @@
+    A F14 contém exemplo monetário de 2022. Ele não é reproduzido como valor atual neste material. O dado
+    estrutural preservado é o percentual de 50% previsto no §7º.
+ 
+- 3.16 IN 40 - apenas o que o M14 precisa
+- A F09 é usada transversalmente. Quando o RR é admitido apenas parcialmente, o art. 1º da IN 40,
+- conforme a fonte, atribui à parte o ônus de impugnar por AI o capítulo denegatório, sob pena de
+- preclusão. Sem o AI, seguem ao TST apenas os temas admitidos.
+- Se houver omissão no juízo de admissibilidade quanto a tema do RR, a F09 registra que a parte deve
+- primeiro opor embargos de declaração para suprir a omissão. Persistindo a omissão, a fonte a equipara à
+- decisão denegatória para viabilizar AI. Esse ponto é mantido apenas para explicar o AI; Recurso de
+- Revista será aprofundado no M15.
+-
+- 3.17 Jurisprudência do AI
++ 3.16 IN 40 — negativa do RR conforme o fundamento de cada capítulo
++Conformidade com entendimento do TST em repetitivos, IRDR ou IAC: agravo interno no TRT (art. 1º-A). Conformidade com decisão vinculante do STF em matéria constitucional: AI ao TST (art. 1º-B). Demais negativas: AI nas hipóteses próprias. Capítulos diferentes podem exigir simultaneamente interno e AI, cada qual para sua fração, sob pena de preclusão. O AI é processado após o julgamento do interno. Omissão: ED primeiro; persistindo após os ED, AI (art. 1º, §§ 1º a 3º). Fluxo completo no M15; revisão conforme Resoluções TST 224/2024 e 226/2026.
++
++3.17 Jurisprudência do AI
+   Enunciado                       Núcleo preservado
+ 
+   OJ 283/SDI-I                    Formação do AI: peças essenciais podem ser trasladadas pelo agravado.
+@@ -369,7 +367,7 @@
+ 
+   AI                                          8 dias                      Art. 897, b, CLT.
+ 
+-  AI contra capítulo denegado do RR           8 dias                      Recorte da IN 40 utilizado apenas para compreender o AI.
++  AI contra capítulo denegado do RR nas hipóteses próprias           8 dias                      Recorte da IN 40 utilizado apenas para compreender o AI.
+ 
+   Depósito do AI, quando devido               50%                         Do valor do depósito do recurso que se pretende destrancar;
+                                                                           art. 899, §7º, CLT.
+@@ -444,8 +442,7 @@
+  AP: art. 897, a; 8 dias; execução; delimitar matéria + valor; remanescente executa; sem depósito
+  recursal/custas como preparo; aumento do débito pode exigir complemento da garantia.
+  AI: art. 897, b; 8 dias; destranca; tribunal competente é o do recurso trancado; efeito devolutivo;
+- formação/resposta; depósito de 50% quando devido; IN 40 somente para capítulo de RR
+- denegado/omissão persistente.
++ formação/resposta; depósito de 50% quando devido; IN 40: AI ou interno conforme fundamento do capítulo; ED primeiro para tema omitido.
+ 
+ 
+  11. MÓDULO EM 1 MINUTO
+@@ -462,8 +459,7 @@
+  13. PEGADINHAS
+  RO não é recurso universal contra interlocutórias. AP não existe na fase de conhecimento. AP genérico
+  sem delimitação não é recebido. Complementação da garantia não é depósito recursal. AI trabalhista não
+- replica o CPC. O tribunal julgador do AI acompanha a competência do recurso trancado. RR parcialmente
+- denegado exige AI no capítulo denegado segundo o recorte da IN 40.
++ replica o CPC. O tribunal julgador do AI acompanha a competência do recurso trancado. RR parcialmente denegado exige AI ou interno conforme o fundamento de cada capítulo da decisão; ver IN 40 atualizada.
+ 
+ 
+  14. ERROS QUE EU NÃO POSSO COMETER
+@@ -522,8 +518,7 @@
+  D) 15 dias.
+  E) 30 dias.
+ 
+- 5. Segundo o recorte da IN 40 usado no módulo, se o RR for admitido apenas em parte, o capítulo denegado
+- deve ser impugnado por:
++ 5. Em decisão parcialmente admissiva do RR, o capítulo denegado por conformidade com decisão vinculante do STF em matéria constitucional deve ser impugnado por:
+  A) novo recurso ordinário.
+  B) agravo de petição.
+  C) embargos de declaração em qualquer caso.
+@@ -591,8 +586,7 @@
+  Comentário: No sumaríssimo, a fonte registra prazo máximo de 10 dias para o relator liberar o RO, após distribuição
+  imediata.
+  Questão 5 — alternativa D
+- Comentário: A IN 40 estabelece o ônus de agravar o capítulo denegado do RR, sob pena de preclusão. O RR em si é
+- aprofundado no M15.
++ Comentário: O art. 1º-B da IN 40, incluído pela Resolução TST 226/2026, prevê agravo de instrumento nesse fundamento. O agravo interno do art. 1º-A corresponde aos precedentes qualificados do TST; cada capítulo exige sua própria via.
+  Questão 6 — alternativa A
+  Comentário: Art. 895, II: decisões definitivas/terminativas do TRT em competência originária comportam RO ao TST em 8
+  dias.
+--- antes/ptra/M14/completo/questions
++++ depois/ptra/M14/completo/questions
+@@ -113,7 +113,7 @@
+   },
+   {
+     "n": 5,
+-    "stem": "Segundo o recorte da IN 40 usado no módulo, se o RR for admitido apenas em parte, o capítulo denegado deve ser impugnado por:",
++    "stem": "Em decisão parcialmente admissiva do RR, o capítulo denegado por conformidade com decisão vinculante do STF em matéria constitucional deve ser impugnado por:",
+     "options": [
+       {
+         "letter": "A",
+@@ -137,7 +137,7 @@
+       }
+     ],
+     "answer": "D",
+-    "comment": "A IN 40 estabelece o ônus de agravar o capítulo denegado do RR, sob pena de preclusão. O RR em si é aprofundado no M15."
++    "comment": "O art. 1º-B da IN 40, incluído pela Resolução TST 226/2026, prevê agravo de instrumento nesse fundamento. O agravo interno do art. 1º-A corresponde aos precedentes qualificados do TST; cada capítulo exige sua própria via."
+   },
+   {
+     "n": 6,
+--- antes/ptra/M15/resumido/pages
++++ depois/ptra/M15/resumido/pages
+@@ -15,6 +15,11 @@
+ 
+ 
+ BASE COMPLETA - Direito Processual do Trabalho - M15                          1
++
++REVISÃO JURÍDICA PONTUAL — 16/10/2026
++Temas conferidos: fluxo de admissibilidade do RR, IN 40 e gabarito.
++A leitura contém correções posteriores à fonte-base. O PDF de origem e o infográfico original não foram atualizados nesta rodada. Demais temas: revisão integral pendente.
++Fontes oficiais: https://juslaboris.tst.jus.br/bitstream/handle/20.500.12178/81842/2016_res0205_in0040_multivigente.pdf?isAllowed=y&sequence=3
+ 
+  1. O QUE VOCÊ PRECISA SABER
+  O M15 reúne dois recursos com funções muito diferentes. O Recurso de Revista (RR) é extraordinário,
+@@ -75,12 +80,16 @@
+ 
+ BASE COMPLETA - Direito Processual do Trabalho - M15                                                                                 2
+ 
+- RR em 8 dias contrarrazões em 8 dias Presidente/Vice do TRT realiza o primeiro juízo de admissibilidade
+- se denegado, a resposta processual indicada pela fonte é o Agravo de Instrumento se admitido, segue ao
+- TST relator realiza novo juízo eventual decisão monocrática pode ensejar Agravo Interno em 8 dias, nos
+- limites descritos na F14.
+-
+- 3.2 Embargos de Declaração
++ RR: fluxo de admissibilidade atualizado
++Interposição e contrarrazões: 8 dias. O Presidente ou Vice-Presidente do TRT faz o primeiro exame. Se admitido, o RR segue ao TST, que realiza novo exame de admissibilidade.
++Na negativa, examine o fundamento de cada capítulo (IN 40/2016, atualizada pelas Resoluções TST 224/2024 e 226/2026):
++• Conformidade com entendimento do TST em recursos repetitivos, IRDR ou IAC: agravo interno no próprio TRT (art. 1º-A).
++• Conformidade com decisão vinculante do STF em matéria constitucional: agravo de instrumento ao TST (art. 1º-B).
++• Demais negativas: agravo de instrumento, observadas as regras de cabimento.
++• Capítulos distintos: pode ser necessário interpor simultaneamente agravo interno e agravo de instrumento, cada qual para a fração correspondente, sob pena de preclusão. O processamento do AI ocorre após o julgamento do interno (art. 1º-A, §§ 1º e 2º).
++Omissão no exame de tema: ED ao órgão prolator primeiro; persistindo a omissão após os ED, AI (art. 1º, §§ 1º a 3º). No TST, a decisão monocrática deve ser impugnada pela via interna cabível, conforme sua hipótese.
++
++3.2 Embargos de Declaração
+    Cabimento                    Sentença ou acórdão com omissão, contradição, obscuridade ou manifesto
+                                 equívoco no exame dos pressupostos extrínsecos do recurso.
+ 
+@@ -236,8 +245,7 @@
+  D) efeito modificativo independe de contraditório.
+  E) só cabem contra acórdão.
+ 
+- 4. Persistindo omissão do TRT no juízo de admissibilidade de tema do RR, a sistemática da IN
+- 40 destacada na fonte exige inicialmente:
++ 4. Se o TRT omitir um tema no primeiro juízo de admissibilidade do RR, a IN 40 exige inicialmente:
+  A) Recurso Ordinário.
+  B) novo RR.
+  C) Embargos de Declaração ao órgão prolator, sob pena de preclusão.
+@@ -265,7 +273,7 @@
+  exceção do §10.
+ 
+  LACUNA / VERIFICAÇÃO FUTURA
+- Sem atualização externa nesta etapa; alterações posteriores às fontes ficam para auditoria jurídica futura.
++ Revisão pontual em 16/10/2026: fluxo da IN 40, sem homologação integral dos demais temas. Fonte oficial: https://juslaboris.tst.jus.br/bitstream/handle/20.500.12178/81842/2016_res0205_in0040_multivigente.pdf?isAllowed=y&sequence=3
+ 
+ 
+ 
+--- antes/ptra/M15/resumido/questions
++++ depois/ptra/M15/resumido/questions
+@@ -85,7 +85,7 @@
+   },
+   {
+     "n": 4,
+-    "stem": "Persistindo omissão do TRT no juízo de admissibilidade de tema do RR, a sistemática da IN 40 destacada na fonte exige inicialmente:",
++    "stem": "Se o TRT omitir um tema no primeiro juízo de admissibilidade do RR, a IN 40 exige inicialmente:",
+     "options": [
+       {
+         "letter": "A",
+@@ -137,6 +137,6 @@
+       }
+     ],
+     "answer": "B",
+-    "comment": "A execução comum é restrita à ofensa direta e literal à CF; execução fiscal/CNDT segue a exceção do §10. LACUNA / VERIFICAÇÃO FUTURA Sem atualização externa nesta etapa; alterações posteriores às fontes ficam para auditoria jurídica futura. BASE COMPLETA - Direito Processual do Trabalho - M15 6"
++    "comment": "A execução comum é restrita à ofensa direta e literal à CF; execução fiscal/CNDT segue a exceção do §10."
+   }
+ ]--- antes/ptra/M15/completo/pages
++++ depois/ptra/M15/completo/pages
+@@ -15,6 +15,11 @@
+ 
+ 
+ BASE COMPLETA - Direito Processual do Trabalho - M15                          1
++
++REVISÃO JURÍDICA PONTUAL — 16/10/2026
++Temas conferidos: fluxo de admissibilidade do RR, IN 40 e gabarito.
++A leitura contém correções posteriores à fonte-base. O PDF de origem e o infográfico original não foram atualizados nesta rodada. Demais temas: revisão integral pendente.
++Fontes oficiais: https://juslaboris.tst.jus.br/bitstream/handle/20.500.12178/81842/2016_res0205_in0040_multivigente.pdf?isAllowed=y&sequence=3
+ 
+  1. VISÃO GERAL
+  O módulo fecha o núcleo formado pelo Recurso de Revista e pelos Embargos de Declaração. O RR é o recurso
+@@ -140,24 +145,17 @@
+ 
+ BASE COMPLETA - Direito Processual do Trabalho - M15                                                                                3
+ 
+- O RR é interposto em 8 dias da ciência do acórdão do TRT e possui, conforme a F14, efeito apenas devolutivo.
+- É apresentado perante o Presidente do TRT (ou Vice-Presidente, conforme regimento), que realiza o primeiro
+- juízo de admissibilidade. Admitido, segue ao TST; denegado, a fonte aponta o Agravo de Instrumento como
+- via para destrancamento. No TST ocorre novo juízo de admissibilidade pelo relator. A F14 ainda registra a
+- possibilidade de saneamento de defeito formal não grave e Agravo Interno em 8 dias contra a decisão
+- monocrática de inadmissão ali descrita.
+-
+-   FLUXO                        ACÓRDÃO TRT RR (8 dias) contrarrazões (8 dias) 1º juízo no TRT admitido:
+-                                remessa ao TST / denegado: AI 2º juízo no TST admitido: prossegue / inadmitido
+-                                pelo relator: medida interna indicada na fonte.
+-
+- 3.11 IN 40 - admissibilidade parcial e omissão
+- A F09 é usada apenas no ponto de conexão com o M15. Na admissibilidade parcial do RR, o capítulo
+- denegatório deve ser impugnado pelo meio adequado. Se o TRT omitir o exame de um ou mais temas, a IN
+- 40, conforme a apostila, impõe à parte o ônus de opor Embargos de Declaração ao órgão prolator para
+- suprir a omissão, sob pena de preclusão. Persistindo a omissão após os ED, a fonte descreve a impugnação
+- subsequente e a possibilidade, em determinadas condições, de retorno ao TRT para complementação do
+- juízo.
++ RR: fluxo de admissibilidade atualizado
++Interposição e contrarrazões: 8 dias. O Presidente ou Vice-Presidente do TRT faz o primeiro exame. Se admitido, o RR segue ao TST, que realiza novo exame de admissibilidade.
++Na negativa, examine o fundamento de cada capítulo (IN 40/2016, atualizada pelas Resoluções TST 224/2024 e 226/2026):
++• Conformidade com entendimento do TST em recursos repetitivos, IRDR ou IAC: agravo interno no próprio TRT (art. 1º-A).
++• Conformidade com decisão vinculante do STF em matéria constitucional: agravo de instrumento ao TST (art. 1º-B).
++• Demais negativas: agravo de instrumento, observadas as regras de cabimento.
++• Capítulos distintos: pode ser necessário interpor simultaneamente agravo interno e agravo de instrumento, cada qual para a fração correspondente, sob pena de preclusão. O processamento do AI ocorre após o julgamento do interno (art. 1º-A, §§ 1º e 2º).
++Omissão no exame de tema: ED ao órgão prolator primeiro; persistindo a omissão após os ED, AI (art. 1º, §§ 1º a 3º). No TST, a decisão monocrática deve ser impugnada pela via interna cabível, conforme sua hipótese.
++
++3.11 IN 40 - admissibilidade parcial e omissão
++ Na admissibilidade parcial, impugne o capítulo denegado pelo recurso adequado ao fundamento, conforme os arts. 1º, 1º-A e 1º-B da IN 40. Se o TRT omitir tema, oponha ED primeiro, sob pena de preclusão. Persistindo a omissão, cabe AI após a intimação dos ED; o relator do TST pode determinar complementação pelo TRT. O regime do art. 1º-A depende da data de publicação da decisão de admissibilidade, conforme seu § 5º. A Resolução 226/2026 criou transição de 60 dias para conversão de internos na hipótese do art. 1º-B; esse prazo transitório já se encerrou na data desta revisão.
+ 
+    PEGADINHA IN 40              Capítulo expressamente denegado e tema simplesmente omitido não recebem a
+                                 mesma resposta imediata. Omissão ED primeiro.
+@@ -486,10 +484,7 @@
+  demais recursos subsequentes; M17/M18 = execução aprofundada.
+ 
+  LACUNA / VERIFICAÇÃO FUTURA
+- Esta edição não promove atualização jurídica externa. Súmulas, OJs, dispositivos e entendimentos foram
+- preservados conforme as fontes previamente validadas. Eventual alteração legislativa,
+- cancelamento/superação jurisprudencial ou mudança posterior deve ser tratada na auditoria jurídica geral
+- da BASE COMPLETA.
++ Revisão pontual em 16/10/2026: fluxo da IN 40, com as Resoluções 224/2024 e 226/2026, e correção do gabarito interativo da questão 1 (B). Fonte oficial: https://juslaboris.tst.jus.br/bitstream/handle/20.500.12178/81842/2016_res0205_in0040_multivigente.pdf?isAllowed=y&sequence=3 . Os demais temas permanecem sujeitos a revisão integral.
+ 
+ 
+ 
+--- antes/ptra/M15/completo/questions
++++ depois/ptra/M15/completo/questions
+@@ -24,7 +24,7 @@
+         "text": "recurso sem pressupostos específicos."
+       }
+     ],
+-    "answer": "A",
++    "answer": "B",
+     "comment": "O RR é extraordinário e vinculado. A alternativa A tenta transformá-lo em nova instância ordinária."
+   },
+   {
+@@ -277,6 +277,6 @@
+       }
+     ],
+     "answer": "C",
+-    "comment": "O efeito é de interrupção, não mera suspensão; o prazo recomeça integralmente. 16. FONTES, FRONTEIRAS E LACUNAS F14 - Recursos Trabalhistas - Parte II, Gustavo Deitos, código Gran 250523135223, 123 páginas: fonte principal, especialmente pp. 33-68. F09 - Instruções Normativas 40 e 41 do TST: uso restrito à admissibilidade parcial/omissão do RR e pontos diretamente conexos. F15 - Recursos Trabalhistas - Parte I: apoio mínimo à teoria geral, sem repetição do M13. Fronteiras: M13 = teoria geral; M14 = RO/AP/AI; M16 = Embargos ao TST, Agravo Interno/Regimental e demais recursos subsequentes; M17/M18 = execução aprofundada. LACUNA / VERIFICAÇÃO FUTURA Esta edição não promove atualização jurídica externa. Súmulas, OJs, dispositivos e entendimentos foram preservados conforme as fontes previamente validadas. Eventual alteração legislativa, cancelamento/superação jurisprudencial ou mudança posterior deve ser tratada na auditoria jurídica geral da BASE COMPLETA. BASE COMPLETA - Direito Processual do Trabalho - M15 9"
++    "comment": "O efeito é de interrupção, não mera suspensão; o prazo recomeça integralmente."
+   }
+ ]--- antes/ptra/M16/resumido/pages
++++ depois/ptra/M16/resumido/pages
+@@ -13,12 +13,17 @@
+ 
+ 
+  Material reorganizado a partir do conteúdo e das fontes já validadas no módulo.
+- Sem atualização jurídica silenciosa. Pontos mutáveis permanecem sujeitos a auditoria jurídica geral posterior.
++ Revisão jurídica pontual em 16/10/2026: cabimento do agravo interno conforme IN 40 atualizada. Demais temas sujeitos a revisão integral.
+ 
+ 
+ 
+ 
+ BASE COMPLETA • Direito Processual do Trabalho • M16                                                              1
++
++REVISÃO JURÍDICA PONTUAL — 16/10/2026
++Temas conferidos: cabimento do agravo interno na IN 40.
++A leitura contém correções posteriores à fonte-base. O PDF de origem e o infográfico original não foram atualizados nesta rodada. Demais temas: revisão integral pendente.
++Fontes oficiais: https://juslaboris.tst.jus.br/bitstream/handle/20.500.12178/81842/2016_res0205_in0040_multivigente.pdf?isAllowed=y&sequence=3
+ 
+  1. O QUE VOCÊ PRECISA SABER
+  O M16 fecha o bloco recursal iniciado nos módulos anteriores. A lógica é identificar qual decisão foi
+@@ -70,11 +75,10 @@
+ 
+ 
+  3.2 Agravo Interno (ou Regimental)
+- O agravo interno é o recurso contra decisão monocrática do relator, para que a matéria seja
+- submetida ao respectivo órgão colegiado. O nome atual é agravo interno; 'agravo regimental'
+- permanece em precedentes e enunciados mais antigos.
+-
+- No processo do trabalho, a fonte aplica prazo de 8 dias para interposição e 8 dias para
++ O agravo interno submete ao colegiado a decisão monocrática do relator (CPC, art. 1.021). Há também a hipótese do art. 1º-A da IN 40: negativa de RR fundada em conformidade com entendimento do TST em repetitivos, IRDR ou IAC, impugnável por agravo interno no TRT.
++Negativa fundada em decisão vinculante do STF em matéria constitucional exige AI ao TST (art. 1º-B). Em decisão com capítulos distintos, os dois recursos podem ser exigidos simultaneamente, cada qual para seu capítulo. Ver o fluxo do M15.
++
++No processo do trabalho, a fonte aplica prazo de 8 dias para interposição e 8 dias para
+  contrarrazões, afastando o prazo de 15 dias do CPC. Em regra, o efeito é devolutivo.
+ 
+    PEGADINHA
+--- antes/ptra/M16/completo/pages
++++ depois/ptra/M16/completo/pages
+@@ -13,12 +13,17 @@
+ 
+ 
+  Material reorganizado a partir do conteúdo e das fontes já validadas no módulo.
+- Sem atualização jurídica silenciosa. Pontos mutáveis permanecem sujeitos a auditoria jurídica geral posterior.
++ Revisão jurídica pontual em 16/10/2026: cabimento do agravo interno conforme IN 40 atualizada. Demais temas sujeitos a revisão integral.
+ 
+ 
+ 
+ 
+ BASE COMPLETA • Direito Processual do Trabalho • M16                                                              1
++
++REVISÃO JURÍDICA PONTUAL — 16/10/2026
++Temas conferidos: cabimento do agravo interno na IN 40.
++A leitura contém correções posteriores à fonte-base. O PDF de origem e o infográfico original não foram atualizados nesta rodada. Demais temas: revisão integral pendente.
++Fontes oficiais: https://juslaboris.tst.jus.br/bitstream/handle/20.500.12178/81842/2016_res0205_in0040_multivigente.pdf?isAllowed=y&sequence=3
+ 
+  1. VISÃO GERAL
+  O M16 encerra o bloco recursal M13-M16. Reúne quatro lógicas diferentes: (1) Embargos ao TST,
+@@ -153,10 +158,10 @@
+  F27 explica a expressão histórica 'agravo regimental', mas adota como nome atual Agravo Interno,
+  previsto no art. 1.021 do CPC e aplicado subsidiariamente ao processo do trabalho.
+ 
+- Cabimento: decisão monocrática do relator, com submissão ao respectivo órgão colegiado. A
+- pergunta-chave é: a decisão foi singular do relator?
+-
+- Prazo: 8 dias para interposição e 8 dias para contrarrazões, segundo a IN 39 reproduzida em F27. O
++ O agravo interno submete ao colegiado a decisão monocrática do relator (CPC, art. 1.021). Há também a hipótese do art. 1º-A da IN 40: negativa de RR fundada em conformidade com entendimento do TST em repetitivos, IRDR ou IAC, impugnável por agravo interno no TRT.
++Negativa fundada em decisão vinculante do STF em matéria constitucional exige AI ao TST (art. 1º-B). Em decisão com capítulos distintos, os dois recursos podem ser exigidos simultaneamente, cada qual para seu capítulo. Ver o fluxo do M15.
++
++Prazo: 8 dias para interposição e 8 dias para contrarrazões, segundo a IN 39 reproduzida em F27. O
+  prazo de 15 dias do CPC não é transportado ao processo do trabalho.
+ 
+  Efeito: em regra, devolutivo. A fonte admite pedido de efeito suspensivo à luz do art. 995,
+@@ -168,8 +173,7 @@
+ 
+    AGRAVO INTERNO x AGRAVO DE INSTRUMENTO
+ 
+-   Interno: decisão monocrática do relator -> colegiado. Instrumento: aprofundado no M14; no sistema
+-   trabalhista, é associado ao destrancamento de recurso. Não são intercambiáveis.
++   Interno: decisão do relator ou hipótese do art. 1º-A da IN 40 -> colegiado competente. Instrumento: negativa de seguimento de recurso nas hipóteses próprias, inclusive art. 1º-B da IN 40 para precedente vinculante constitucional do STF. O fundamento de cada capítulo define a via; consultar M15.
+ 
+ 
+  3.3 Recurso Adesivo
+@@ -398,7 +402,7 @@
+ 
+  • Denegação dos embargos = Agravo Interno em 8 dias.
+ 
+- • Agravo Interno = decisão monocrática -> colegiado; 8 dias.
++ • Agravo Interno = decisão monocrática -> colegiado; também art. 1º-A da IN 40 no TRT; 8 dias.
+ 
+  • Adesivo = Súmula 283; RO/AP/RR/Embargos; 8 dias; sem identidade temática obrigatória.
+ 
+@@ -475,7 +479,7 @@
+ 
+ 
+  15. LACUNA / VERIFICAÇÃO FUTURA
+- O módulo preserva o conteúdo das fontes validadas e não realiza atualização jurídica silenciosa.
++ A fonte-base foi complementada pela revisão pontual da IN 40 em 16/10/2026.
+  Súmulas, OJs, regimentos, instruções normativas e redações legais potencialmente mutáveis
+  devem passar por auditoria jurídica geral antes da publicação definitiva.
+ 
+--- antes/ptra/M16/completo/questions
++++ depois/ptra/M16/completo/questions
+@@ -277,6 +277,6 @@
+       }
+     ],
+     "answer": "C",
+-    "comment": "F13 reproduz o art. 896-C, § 17: mudança econômica, social ou jurídica pode justificar revisão, com segurança jurídica e eventual modulação. FONTES E AUDITORIA DO MÓDULO ID Fonte Autor Uso F27 Recursos Trabalhistas - Parte III Gustavo Deitos Principal: embargos, agravo interno e adesivo F13 Recursos Repetitivos no Processo do Gustavo Deitos Principal complementar: repetitivos / IN Trabalho 38 F09 Instruções Normativas 40 e 41 do TST Gustavo Deitos Auxiliar pontual; sem reabrir RR/AI Auditoria final: fidelidade, completude, fronteiras, didática e questões verificadas. M13-M15 foram apenas referenciados; as questões são autorais e os gabaritos estão somente no final. BASE COMPLETA • Direito Processual do Trabalho • M16 11"
++    "comment": "F13 reproduz o art. 896-C, § 17: mudança econômica, social ou jurídica pode justificar revisão, com segurança jurídica e eventual modulação."
+   }
+ ]--- antes/cf/M07/summary
++++ depois/cf/M07/summary
+@@ -25,6 +25,10 @@
+ 2.8 Registro e Tema 445 O TCU aprecia admissões de pessoal, exceto cargos em comissão, e concessões iniciais de aposentadoria, reforma e pensão. O STF fixou prazo de 5 anos, contado da chegada do processo à Corte de Contas, para o julgamento da legalidade desses atos concessórios iniciais.
+ 
+ 2.9 Controle interno Legislativo, Executivo e Judiciário mantêm sistemas integrados de controle interno. Eles avaliam metas e resultados, controlam operações financeiras e apoiam o controle externo. Se o responsável souber de irregularidade e não comunicar ao TCU, pode responder solidariamente.
++
++EC 139/2026 — Tribunais de Contas
++Desde 6/5/2026, o art. 75 afirma que os Tribunais de Contas são instituições permanentes e essenciais ao controle externo. As regras da seção aplicam-se, no que couber, aos Tribunais de Contas dos Estados e do Distrito Federal e aos Tribunais e Conselhos de Contas dos Municípios; o dispositivo veda sua extinção, criação ou instalação.
++O art. 31, § 1º, mantém o controle externo municipal a cargo da Câmara com auxílio dos órgãos de contas competentes, onde existirem, também vedando extinção, criação ou instalação. A alteração não autoriza novos órgãos municipais. Fonte: https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc139.htm
+ 
+ 2.10 PPA, LDO e LOA PPA = planejamento de médio prazo; LDO = orienta o orçamento e conecta planejamento à execução anual; LOA = estima receita e fixa despesa. Os projetos passam pelo Congresso e pela comissão mista orçamentária. Emendas precisam observar requisitos constitucionais.
+ 
+@@ -58,7 +62,7 @@
+ 
+ Art. 74                Controle interno integrado; dever de comunicar irregularidade ao TCU; legitimados para denúncia.
+ 
+-Art. 75                Simetria dos Tribunais de Contas estaduais e distrital.
++Art. 75                Permanência e essencialidade dos Tribunais de Contas; simetria e vedação de extinção, criação ou instalação (EC 139/2026).
+ 
+ Art. 166               Tramitação orçamentária; comissão mista; emendas; limite das emendas individuais.
+ 
+--- antes/cf/M07/complete
++++ depois/cf/M07/complete
+@@ -138,6 +138,10 @@
+ 
+ A Constituição veda a criação de Tribunais, Conselhos ou órgãos de Contas Municipais. Essa vedação não se confunde com a existência de Tribunais de Contas dos Municípios criados no âmbito estadual ou de órgãos que já existiam nos termos constitucionais.
+ 
++EC 139/2026 — Tribunais de Contas
++Desde 6/5/2026, o art. 75 afirma que os Tribunais de Contas são instituições permanentes e essenciais ao controle externo. As regras da seção aplicam-se, no que couber, aos Tribunais de Contas dos Estados e do Distrito Federal e aos Tribunais e Conselhos de Contas dos Municípios; o dispositivo veda sua extinção, criação ou instalação.
++O art. 31, § 1º, mantém o controle externo municipal a cargo da Câmara com auxílio dos órgãos de contas competentes, onde existirem, também vedando extinção, criação ou instalação. A alteração não autoriza novos órgãos municipais. Fonte: https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc139.htm
++
+ 2.18 Finanças públicas: PPA, LDO e LOA
+ 
+ O sistema orçamentário constitucional articula planejamento e autorização de gasto por meio do plano plurianual, da lei de diretrizes orçamentárias e da lei orçamentária anual. O PPA estrutura diretrizes, objetivos e metas de médio prazo; a LDO faz a ponte entre planejamento e orçamento anual; a LOA estima receitas e fixa despesas do exercício.
+@@ -190,7 +194,7 @@
+ 
+ Art. 74                Controle interno integrado; dever de comunicar irregularidade ao TCU; legitimados para denúncia.
+ 
+-Art. 75                Simetria dos Tribunais de Contas estaduais e distrital.
++Art. 75                Permanência e essencialidade dos Tribunais de Contas; simetria e vedação de extinção, criação ou instalação (EC 139/2026).
+ 
+ Art. 166               Tramitação orçamentária; comissão mista; emendas; limite das emendas individuais.
+ 
+--- antes/cpc/M04/summary
++++ depois/cpc/M04/summary
+@@ -1,186 +1,197 @@
+-BASE COMPLETA • DIREITO PROCESSUAL CIVIL
+-BASE COMPLETA | CPC M04 | 1
+-CPC M04
+-PARTES, PROCURADORES, DESPESAS, HONORÁRIOS E GRATUIDADE
+-Resumo para primeira leitura + revisão rápida | CPC, arts. 70 a 112 | Atualizado em 01/10/2026
+-1. VISÃO GERAL
+-MAPA DO MÓDULO: Arts. 70-76 = capacidade e representação; 77-81 = deveres e sanções; 82-102 = despesas, honorários e 
+-gratuidade; 103-112 = procuradores e sucessão.
+-A lógica do M04 é identificar quem pode atuar no processo, quem o representa, quais deveres devem ser cumpridos, quem paga 
+-os custos do processo e o que acontece quando há troca de parte ou de advogado.
+-Capacidades: não misture
+-Instituto Ideia-chave Exemplo
+-Capacidade de ser parte Aptidão para ocupar posição processual. Espólio pode ser parte.
+-Capacidade processual Aptidão para exercer pessoalmente direitos e 
+-deveres no processo. Incapaz atua por representação/assistência.
+-Capacidade postulatória Aptidão técnica para postular. Regra: advogado habilitado.
+-DECORE: ser parte ≠ estar pessoalmente em juízo ≠ postular tecnicamente.
+-Incapaz, curador especial e cônjuge
+-• Art. 71: o incapaz será representado ou assistido por pais, tutor ou curador.
+-• Art. 72: curador especial ao incapaz sem representante ou em conflito com ele; ao réu preso revel; e ao revel citado por edital ou
+-hora certa enquanto não constituir advogado.
+-• Art. 73: para propor ação sobre direito real imobiliário, exige-se consentimento do cônjuge, salvo separação absoluta. Em 
+-possessórias, a participação só é indispensável em caso de composse ou ato praticado por ambos.
+-• Art. 74: o juiz pode suprir consentimento recusado sem justo motivo ou impossível de obter.
+-Art. 76: primeiro corrige, depois sanciona
+-Constatada incapacidade processual ou irregularidade de representação, o juiz deve suspender o processo e dar prazo razoável 
+-para saneamento. Só depois vêm as consequências: autor → extinção; réu → revelia; recorrente → recurso não conhecido; 
+-recorrido → contrarrazões desentranhadas.BASE COMPLETA • DIREITO PROCESSUAL CIVIL
+-BASE COMPLETA | CPC M04 | 2
+-2. TEORIA ESSENCIAL — DEVERES, SANÇÕES E CUSTOS
+-Deveres processuais — art. 77
+-Todos os participantes devem agir com verdade, evitar pretensões sem fundamento, não praticar atos inúteis, cumprir decisões, 
+-manter endereço/dados atualizados e não alterar ilegalmente o estado de fato de bem ou direito litigioso.
+-Ato atentatório à dignidade da justiça: destaque para violação dos incisos IV (descumprir decisão/criar embaraço) e VI (inovação 
+-ilegal). Multa de até 20% do valor da causa; se irrisório ou inestimável, até 10 salários-mínimos.
+-ATENÇÃO: advogados, defensores públicos e membros do MP não recebem diretamente as multas dos §§ 2º a 5º do art. 77; eventual
+-responsabilidade disciplinar segue o órgão competente.
+-Litigância de má-fé — arts. 79 a 81
+-É má-fé, entre outras hipóteses: contrariar texto expresso de lei ou fato incontroverso; alterar a verdade; usar o processo para 
+-objetivo ilegal; resistir injustificadamente; agir de modo temerário; provocar incidente infundado; recorrer com intuito 
+-manifestamente protelatório.
+-Comparação Ato atentatório Má-fé
+-Base Art. 77, IV e VI Art. 80
+-Multa Até 20% >1% e <10%
+-Valor irrisório/inestimável Até 10 salários-mínimos Até 10 salários-mínimos
+-Destino Fundos públicos Parte contrária
+-Outros efeitos Pode coexistir com outras sanções Indenização + honorários + despesas
+-Despesas — arts. 82 a 97
+-Regra: salvo gratuidade, cada parte adianta as despesas dos atos que realizar ou requerer; ao final, o vencido reembolsa as 
+-despesas antecipadas pelo vencedor.
+-ATUALIZAÇÃO 2025: art. 82, §3º: em cobrança, execução ou cumprimento de sentença de honorários advocatícios, o advogado é 
+-dispensado de adiantar custas; ao final, o réu/executado as supre se tiver dado causa ao processo. Isso NÃO é gratuidade.
+-Art. 83: autor que reside fora do Brasil, sem imóvel suficiente no país, presta caução para custas e honorários. Exceções: 
+-tratado/acordo, execução de título extrajudicial, cumprimento de sentença e reconvenção.
+-Art. 95: cada parte adianta seu assistente técnico; a remuneração do perito é adiantada por quem requereu a perícia ou rateada 
+-se determinada de ofício/requerida por ambas.BASE COMPLETA • DIREITO PROCESSUAL CIVIL
+-BASE COMPLETA | CPC M04 | 3
+-2. TEORIA ESSENCIAL — HONORÁRIOS E GRATUIDADE
+-Honorários — art. 85
+-Regra geral: 10% a 20% sobre o valor da condenação; não sendo possível, sobre o proveito econômico; se não mensurável, 
+-sobre o valor atualizado da causa. Honorários pertencem ao advogado, têm natureza alimentar e não podem ser compensados 
+-na sucumbência parcial.
+-Fazenda Pública: aplicação por faixas progressivas — 10%-20% até 200 salários-mínimos; 8%-10% de 200 a 2.000; 5%-8% de 
+-2.000 a 20.000; 3%-5% de 20.000 a 100.000; 1%-3% acima de 100.000.
+-Equidade: Tema 1.076/STJ — valor elevado, por si só, não autoriza equidade; observam-se os percentuais legais. Equidade fica 
+-para proveito inestimável/irrisório ou valor da causa muito baixo. Há repercussão geral no STF (Tema 1.255) quanto à 
+-controvérsia constitucional em causas com Fazenda Pública.
+-Honorários recursais: Tema 1.059/STJ — majoração do §11 quando o recurso é integralmente desprovido ou não conhecido; não 
+-cabe se houver provimento total ou parcial.
+-ATUALIZAÇÃO 2026: Lei 15.472/2026 reforçou no Estatuto da OAB a natureza alimentar dos honorários profissionais.
+-Gratuidade da justiça — arts. 98 a 102
+-Pode ser concedida a pessoa natural ou jurídica, brasileira ou estrangeira, com insuficiência de recursos. Pode ser total, parcial, 
+-por redução percentual ou parcelamento.
+-A gratuidade NÃO elimina a sucumbência: despesas e honorários ficam, em regra, sob condição suspensiva de exigibilidade. 
+-Dentro de 5 anos do trânsito em julgado, podem ser cobrados se o credor provar que cessou a insuficiência. Multas processuais 
+-continuam devidas.
+-Pessoa natural: a alegação de insuficiência tem presunção relativa. Tema 1.178/STJ — critérios objetivos não podem gerar 
+-indeferimento automático; havendo elementos contrários, o juiz deve indicar as razões e permitir comprovação.
+-Pessoa jurídica: não há a mesma presunção. Súmula 481/STJ + Tema 1.424/STJ — deve comprovar efetiva insuficiência 
+-econômico-financeira; mera inatividade ou queda de faturamento não basta isoladamente.
+-Art. 100: a parte contrária pode impugnar em 15 dias, sem suspensão do processo. Revogada a gratuidade por má-fé, pode haver
+-multa de até o décuplo do valor devido.
+-Art. 101: indeferimento ou revogação → agravo de instrumento; se decidido na sentença → apelação. Confirmada a negativa em 
+-grau recursal, custas em 5 dias, sob pena de não conhecimento.BASE COMPLETA • DIREITO PROCESSUAL CIVIL
+-BASE COMPLETA | CPC M04 | 4
+-2. TEORIA ESSENCIAL — PROCURADORES E SUCESSÃO
+-Procuração — arts. 103 a 107
+-Regra: a parte é representada por advogado regularmente inscrito na OAB, salvo hipóteses legais de postulação em causa 
+-própria.
+-Art. 104: em urgência, para evitar preclusão, decadência ou prescrição, o advogado pode atuar sem procuração. Deve juntá-la em
+-15 dias, prorrogáveis por mais 15. Sem ratificação, o ato é ineficaz e o advogado responde por despesas e perdas e danos.
+-Art. 105: exigem poderes especiais: receber citação; confessar; reconhecer procedência; transigir; desistir; renunciar ao direito; 
+-receber; dar quitação; firmar compromisso; assinar declaração de hipossuficiência econômica.
+-MACETE: “citação + disposição + dinheiro + hipossuficiência” → pense em poderes especiais.
+-Sucessão e alienação — arts. 108 a 112
+-Art. 108: sucessão voluntária de partes só nos casos previstos em lei.
+-Art. 109: alienar a coisa ou o direito litigioso NÃO troca automaticamente a parte. O adquirente só sucede o alienante com 
+-consentimento da parte contrária; sem isso, pode intervir como assistente litisconsorcial e fica sujeito aos efeitos da sentença.
+-Art. 110: morte da parte → sucessão pelo espólio ou sucessores, conforme as regras do CPC.
+-Situação Quem rompe? Prazo/regra
+-Revogação — art. 111 Cliente Constitui novo advogado no mesmo ato; se 
+-não, 15 dias e art. 76.
+-Renúncia — art. 112 Advogado Comunica o cliente e continua por até 10 dias,
+-se necessário para evitar prejuízo.
+-DECORE: revogação = cliente (15 dias). Renúncia = advogado (10 dias).
+-Três conceitos que a prova mistura
+-Fenômeno Como funciona
+-Representação Alguém atua em nome da própria parte representada; não há troca de 
+-parte.
+-Substituição processual Alguém atua em nome próprio defendendo direito alheio, por 
+-autorização normativa.
+-Sucessão processual Outro sujeito passa a ocupar a posição processual do anterior.BASE COMPLETA • DIREITO PROCESSUAL CIVIL
+-BASE COMPLETA | CPC M04 | 5
+-3. ARTIGOS PARA DECORAR
+-Art. Núcleo para memorizar
+-70 Capacidade para estar em juízo.
+-71 Incapaz: representação ou assistência.
+-72 Curador especial.
+-73-74 Consentimento/citação do cônjuge + suprimento judicial.
+-75 Representação de entes e pessoas.
+-76 Saneamento da incapacidade/representação.
+-77 Deveres + ato atentatório; multa até 20%.
+-80-81 Hipóteses e sanções da litigância de má-fé.
+-82 Adiantamento de despesas; §3º = honorários sem adiantamento de 
+-custas pelo advogado.
+-83 Caução do autor residente fora do Brasil.
+-85 Honorários: regra 10%-20%, Fazenda, equidade, natureza alimentar, 
+-recursais.
+-86 Sucumbência recíproca; sem compensação de honorários.
+-90 Desistência/renúncia/reconhecimento; reconhecimento + cumprimento
+-integral → honorários pela metade.
+-95 Adiantamento da perícia.
+-98 Quem pode obter e alcance da gratuidade.
+-99 Pedido; pessoa natural com presunção relativa.
+-100 Impugnação em 15 dias; revogação e má-fé.
+-101 Recurso: AI; sentença: apelação; custas em 5 dias após confirmação.
+-102 Gratuidade é pessoal.
+-104 Atuação urgente sem procuração: 15 + 15.
+-105 Poderes especiais.
+-109 Alienação litigiosa não altera automaticamente a parte.
+-111 Revogação: cliente; 15 dias se não houver novo advogado.
+-112 Renúncia: advogado; até 10 dias para evitar prejuízo.
+-PRAZOS-CHAVE: 15+15 (procuração urgente) • 15 (impugnação à gratuidade) • 5 (custas após negativa em recurso) • 15 (novo 
+-advogado após revogação) • 10 (renúncia) • 5 anos (suspensão da sucumbência do beneficiário).BASE COMPLETA • DIREITO PROCESSUAL CIVIL
+-BASE COMPLETA | CPC M04 | 6
+-4. PEGADINHAS DE PROVAS
+- Capacidade de ser parte, capacidade processual e capacidade postulatória são institutos diferentes.
+- Curador especial ao citado por edital/hora certa exige revelia e ausência de advogado constituído.
+- No art. 76, a sanção não vem de imediato: primeiro deve haver oportunidade de regularização.
+- Ato atentatório: multa até 20%. Má-fé: multa superior a 1% e inferior a 10%. Não troque os regimes.
+- Advogado, defensor público e membro do MP não recebem diretamente a multa dos §§2º-5º do art. 77.
+- A dispensa do art. 82, §3º, nas ações de honorários não é gratuidade da justiça.
+- Honorários sucumbenciais pertencem ao advogado, têm natureza alimentar e não se compensam na sucumbência parcial.
+- Honorários contra a Fazenda são calculados por faixas progressivas.
+- Recurso parcialmente provido não gera honorários recursais do art. 85, §11, conforme Tema 1.059/STJ.
+- Gratuidade não apaga a dívida de sucumbência e não elimina multas processuais.
+- Pessoa natural: presunção relativa. Pessoa jurídica: precisa comprovar hipossuficiência.
+- Contratar advogado particular não impede gratuidade.
+- Gratuidade pode ser parcial ou parcelada.
+- Procuração geral para o foro não inclui automaticamente os poderes especiais do art. 105.
+- Alienação da coisa litigiosa não troca automaticamente o polo processual.
+- Revogação parte do cliente; renúncia parte do advogado.
+-5. REVISÃO ATIVA — CUBRA A COLUNA DA DIREITA E RESPONDA
+-Pergunta Resposta-relâmpago
+-1. Quais são as três capacidades? Ser parte; processual; postulatória.
+-2. Quando há curador especial? Incapaz sem representante/conflito; preso revel; revel citado fictamente 
+-sem advogado.
+-3. O que o art. 76 exige antes da sanção? Prazo razoável para saneamento.
+-4. Multa do ato atentatório? Até 20% do valor da causa.
+-5. Multa da má-fé? Superior a 1% e inferior a 10%.
+-6. Regra geral de honorários? 10% a 20%.
+-7. Gratuidade elimina sucumbência? Não; em regra suspende a exigibilidade por até 5 anos.
+-8. Pessoa natural x jurídica? Natural: presunção relativa; jurídica: prova da insuficiência.
+-9. Atuação urgente sem procuração? 15 dias + possível prorrogação por mais 15.
+-10. Alienação do direito litigioso troca a parte? Não automaticamente; sucessão depende do consentimento da parte 
+-contrária.
+-11. Revogação x renúncia? Revogação = cliente/15 dias; renúncia = advogado/10 dias.
+-12. Quais atos exigem poder especial?
+-Receber citação, confessar, reconhecer, transigir, desistir, renunciar ao 
+-direito, receber, dar quitação, firmar compromisso e declarar 
+-hipossuficiência.
+-FECHAMENTO DE 60 SEGUNDOS
+-70-76 = capacidade/representação • 77-81 = deveres/sanções • 82-97 = despesas/honorários • 98-102 = gratuidade • 103-112 = 
+-procuradores/sucessão.
+-Fontes de atualização: CPC compilado; Leis 15.109/2025 e 15.472/2026; STJ Temas 1.059, 1.076, 1.178 e 1.424; Súmula 481/STJ. Material de revisão, não substitui a
+-leitura da lei seca.+BASE COMPLETA • DIREITO PROCESSUAL CIVIL
++BASE COMPLETA | CPC M04 | 1
++CPC M04
++PARTES, PROCURADORES, DESPESAS, HONORÁRIOS E GRATUIDADE
++Resumo para primeira leitura + revisão rápida | CPC, arts. 70 a 112 | Atualizado em 01/10/2026
++1. VISÃO GERAL
++MAPA DO MÓDULO: Arts. 70-76 = capacidade e representação; 77-81 = deveres e sanções; 82-102 = despesas, honorários e 
++gratuidade; 103-112 = procuradores e sucessão.
++A lógica do M04 é identificar quem pode atuar no processo, quem o representa, quais deveres devem ser cumpridos, quem paga 
++os custos do processo e o que acontece quando há troca de parte ou de advogado.
++Capacidades: não misture
++Instituto Ideia-chave Exemplo
++Capacidade de ser parte Aptidão para ocupar posição processual. Espólio pode ser parte.
++Capacidade processual Aptidão para exercer pessoalmente direitos e 
++deveres no processo. Incapaz atua por representação/assistência.
++Capacidade postulatória Aptidão técnica para postular. Regra: advogado habilitado.
++DECORE: ser parte ≠ estar pessoalmente em juízo ≠ postular tecnicamente.
++Incapaz, curador especial e cônjuge
++• Art. 71: o incapaz será representado ou assistido por pais, tutor ou curador.
++• Art. 72: curador especial ao incapaz sem representante ou em conflito com ele; ao réu preso revel; e ao revel citado por edital ou
++hora certa enquanto não constituir advogado.
++• Art. 73: para propor ação sobre direito real imobiliário, exige-se consentimento do cônjuge, salvo separação absoluta. Em 
++possessórias, a participação só é indispensável em caso de composse ou ato praticado por ambos.
++• Art. 74: o juiz pode suprir consentimento recusado sem justo motivo ou impossível de obter.
++Art. 76: primeiro corrige, depois sanciona
++Constatada incapacidade processual ou irregularidade de representação, o juiz deve suspender o processo e dar prazo razoável 
++para saneamento. Só depois vêm as consequências: autor → extinção; réu → revelia; recorrente → recurso não conhecido; 
++recorrido → contrarrazões desentranhadas.BASE COMPLETA • DIREITO PROCESSUAL CIVIL
++BASE COMPLETA | CPC M04 | 2
++2. TEORIA ESSENCIAL — DEVERES, SANÇÕES E CUSTOS
++Deveres processuais — art. 77
++Todos os participantes devem agir com verdade, evitar pretensões sem fundamento, não praticar atos inúteis, cumprir decisões, 
++manter endereço/dados atualizados e não alterar ilegalmente o estado de fato de bem ou direito litigioso.
++Ato atentatório à dignidade da justiça: destaque para violação dos incisos IV (descumprir decisão/criar embaraço) e VI (inovação 
++ilegal). Multa de até 20% do valor da causa; se irrisório ou inestimável, até 10 salários-mínimos.
++ATENÇÃO: advogados, defensores públicos e membros do MP não recebem diretamente as multas dos §§ 2º a 5º do art. 77; eventual
++responsabilidade disciplinar segue o órgão competente.
++Litigância de má-fé — arts. 79 a 81
++É má-fé, entre outras hipóteses: contrariar texto expresso de lei ou fato incontroverso; alterar a verdade; usar o processo para 
++objetivo ilegal; resistir injustificadamente; agir de modo temerário; provocar incidente infundado; recorrer com intuito 
++manifestamente protelatório.
++Comparação Ato atentatório Má-fé
++Base Art. 77, IV e VI Art. 80
++Multa Até 20% >1% e <10%
++Valor irrisório/inestimável Até 10 salários-mínimos Até 10 salários-mínimos
++Destino Fundos públicos Parte contrária
++Outros efeitos Pode coexistir com outras sanções Indenização + honorários + despesas
++Despesas — arts. 82 a 97
++Regra: salvo gratuidade, cada parte adianta as despesas dos atos que realizar ou requerer; ao final, o vencido reembolsa as 
++despesas antecipadas pelo vencedor.
++ATUALIZAÇÃO 2025: art. 82, §3º: em cobrança, execução ou cumprimento de sentença de honorários advocatícios, o advogado é 
++dispensado de adiantar custas; ao final, o réu/executado as supre se tiver dado causa ao processo. Isso NÃO é gratuidade.
++Art. 83: autor que reside fora do Brasil, sem imóvel suficiente no país, presta caução para custas e honorários. Exceções: 
++tratado/acordo, execução de título extrajudicial, cumprimento de sentença e reconvenção.
++Art. 95: cada parte adianta seu assistente técnico; a remuneração do perito é adiantada por quem requereu a perícia ou rateada 
++se determinada de ofício/requerida por ambas.BASE COMPLETA • DIREITO PROCESSUAL CIVIL
++BASE COMPLETA | CPC M04 | 3
++2. TEORIA ESSENCIAL — HONORÁRIOS E GRATUIDADE
++Honorários — art. 85
++Regra geral: 10% a 20% sobre o valor da condenação; não sendo possível, sobre o proveito econômico; se não mensurável, 
++sobre o valor atualizado da causa. Honorários pertencem ao advogado, têm natureza alimentar e não podem ser compensados 
++na sucumbência parcial.
++Fazenda Pública: aplicação por faixas progressivas — 10%-20% até 200 salários-mínimos; 8%-10% de 200 a 2.000; 5%-8% de 
++2.000 a 20.000; 3%-5% de 20.000 a 100.000; 1%-3% acima de 100.000.
++Equidade: Tema 1.076/STJ — valor elevado, por si só, não autoriza equidade; observam-se os percentuais legais. Equidade fica 
++para proveito inestimável/irrisório ou valor da causa muito baixo. Há repercussão geral no STF (Tema 1.255) quanto à 
++controvérsia constitucional em causas com Fazenda Pública.
++Honorários recursais: Tema 1.059/STJ — majoração do §11 quando o recurso é integralmente desprovido ou não conhecido; não 
++cabe se houver provimento total ou parcial.
++ATUALIZAÇÃO 2026: Lei 15.472/2026 reforçou no Estatuto da OAB a natureza alimentar dos honorários profissionais.
++Gratuidade da justiça — arts. 98 a 102
++Pode ser concedida a pessoa natural ou jurídica, brasileira ou estrangeira, com insuficiência de recursos. Pode ser total, parcial, 
++por redução percentual ou parcelamento.
++A gratuidade NÃO elimina a sucumbência: despesas e honorários ficam, em regra, sob condição suspensiva de exigibilidade. 
++Dentro de 5 anos do trânsito em julgado, podem ser cobrados se o credor provar que cessou a insuficiência. Multas processuais 
++continuam devidas.
++ADC 80 — justiça gratuita para processos novos
++O STF julgou a ADC 80 em 3/9/2026. A ata foi publicada em 16/9/2026: o novo regime alcança somente processos ajuizados a partir dessa data, sem aplicação retroativa automática aos anteriores.
++• Salário mensal de até R$ 5.000,00: presunção relativa de insuficiência. O interessado deve comprovar sua renda; patrimônio ou renda familiar incompatíveis podem afastar a presunção, com análise proporcional do caso.
++• Acima de R$ 5.000,00: é possível obter o benefício, mas deve ser demonstrada concretamente a insuficiência. O valor acompanha a legislação do imposto de renda; sem atualização anual da tabela, corrige-se pelo IPCA.
++• A presunção também alcança assistidos pela Defensoria Pública. O requerente suporta o ônus da prova de renda ou insuficiência; o juiz pode exigir documentação adicional, conforme art. 99, § 2º, do CPC.
++• O STF afastou o parâmetro de 40% do teto do RGPS e declarou inconstitucional o item I da Súmula 463/TST. A declaração isolada não dispensa os critérios probatórios do novo regime.
++• Os parâmetros se aplicam aos demais ramos do Judiciário até adequação legislativa. A decisão ressalva o primeiro grau dos Juizados Especiais (arts. 54 e 55 da Lei 9.099/1995).
++Para processos anteriores ao marco, situe as regras e os precedentes no tempo. O texto literal anterior da CLT, a Súmula 463, I, e o Tema 21/TST não devem ser apresentados como regime atual irrestrito.
++Fonte oficial: https://portal.stf.jus.br/processos/detalhe.asp?incidente=6383356
++Pessoa jurídica: não há a mesma presunção. Súmula 481/STJ + Tema 1.424/STJ — deve comprovar efetiva insuficiência 
++econômico-financeira; mera inatividade ou queda de faturamento não basta isoladamente.
++Art. 100: a parte contrária pode impugnar em 15 dias, sem suspensão do processo. Revogada a gratuidade por má-fé, pode haver
++multa de até o décuplo do valor devido.
++Art. 101: indeferimento ou revogação → agravo de instrumento; se decidido na sentença → apelação. Confirmada a negativa em 
++grau recursal, custas em 5 dias, sob pena de não conhecimento.BASE COMPLETA • DIREITO PROCESSUAL CIVIL
++BASE COMPLETA | CPC M04 | 4
++2. TEORIA ESSENCIAL — PROCURADORES E SUCESSÃO
++Procuração — arts. 103 a 107
++Regra: a parte é representada por advogado regularmente inscrito na OAB, salvo hipóteses legais de postulação em causa 
++própria.
++Art. 104: em urgência, para evitar preclusão, decadência ou prescrição, o advogado pode atuar sem procuração. Deve juntá-la em
++15 dias, prorrogáveis por mais 15. Sem ratificação, o ato é ineficaz e o advogado responde por despesas e perdas e danos.
++Art. 105: exigem poderes especiais: receber citação; confessar; reconhecer procedência; transigir; desistir; renunciar ao direito; 
++receber; dar quitação; firmar compromisso; assinar declaração de hipossuficiência econômica.
++MACETE: “citação + disposição + dinheiro + hipossuficiência” → pense em poderes especiais.
++Sucessão e alienação — arts. 108 a 112
++Art. 108: sucessão voluntária de partes só nos casos previstos em lei.
++Art. 109: alienar a coisa ou o direito litigioso NÃO troca automaticamente a parte. O adquirente só sucede o alienante com 
++consentimento da parte contrária; sem isso, pode intervir como assistente litisconsorcial e fica sujeito aos efeitos da sentença.
++Art. 110: morte da parte → sucessão pelo espólio ou sucessores, conforme as regras do CPC.
++Situação Quem rompe? Prazo/regra
++Revogação — art. 111 Cliente Constitui novo advogado no mesmo ato; se 
++não, 15 dias e art. 76.
++Renúncia — art. 112 Advogado Comunica o cliente e continua por até 10 dias,
++se necessário para evitar prejuízo.
++DECORE: revogação = cliente (15 dias). Renúncia = advogado (10 dias).
++Três conceitos que a prova mistura
++Fenômeno Como funciona
++Representação Alguém atua em nome da própria parte representada; não há troca de 
++parte.
++Substituição processual Alguém atua em nome próprio defendendo direito alheio, por 
++autorização normativa.
++Sucessão processual Outro sujeito passa a ocupar a posição processual do anterior.BASE COMPLETA • DIREITO PROCESSUAL CIVIL
++BASE COMPLETA | CPC M04 | 5
++3. ARTIGOS PARA DECORAR
++Art. Núcleo para memorizar
++70 Capacidade para estar em juízo.
++71 Incapaz: representação ou assistência.
++72 Curador especial.
++73-74 Consentimento/citação do cônjuge + suprimento judicial.
++75 Representação de entes e pessoas.
++76 Saneamento da incapacidade/representação.
++77 Deveres + ato atentatório; multa até 20%.
++80-81 Hipóteses e sanções da litigância de má-fé.
++82 Adiantamento de despesas; §3º = honorários sem adiantamento de 
++custas pelo advogado.
++83 Caução do autor residente fora do Brasil.
++85 Honorários: regra 10%-20%, Fazenda, equidade, natureza alimentar, 
++recursais.
++86 Sucumbência recíproca; sem compensação de honorários.
++90 Desistência/renúncia/reconhecimento; reconhecimento + cumprimento
++integral → honorários pela metade.
++95 Adiantamento da perícia.
++98 Quem pode obter e alcance da gratuidade.
++99 Pedido e prova; observar ADC 80 para processos desde 16/9/2026.
++100 Impugnação em 15 dias; revogação e má-fé.
++101 Recurso: AI; sentença: apelação; custas em 5 dias após confirmação.
++102 Gratuidade é pessoal.
++104 Atuação urgente sem procuração: 15 + 15.
++105 Poderes especiais.
++109 Alienação litigiosa não altera automaticamente a parte.
++111 Revogação: cliente; 15 dias se não houver novo advogado.
++112 Renúncia: advogado; até 10 dias para evitar prejuízo.
++PRAZOS-CHAVE: 15+15 (procuração urgente) • 15 (impugnação à gratuidade) • 5 (custas após negativa em recurso) • 15 (novo 
++advogado após revogação) • 10 (renúncia) • 5 anos (suspensão da sucumbência do beneficiário).BASE COMPLETA • DIREITO PROCESSUAL CIVIL
++BASE COMPLETA | CPC M04 | 6
++4. PEGADINHAS DE PROVAS
++ Capacidade de ser parte, capacidade processual e capacidade postulatória são institutos diferentes.
++ Curador especial ao citado por edital/hora certa exige revelia e ausência de advogado constituído.
++ No art. 76, a sanção não vem de imediato: primeiro deve haver oportunidade de regularização.
++ Ato atentatório: multa até 20%. Má-fé: multa superior a 1% e inferior a 10%. Não troque os regimes.
++ Advogado, defensor público e membro do MP não recebem diretamente a multa dos §§2º-5º do art. 77.
++ A dispensa do art. 82, §3º, nas ações de honorários não é gratuidade da justiça.
++ Honorários sucumbenciais pertencem ao advogado, têm natureza alimentar e não se compensam na sucumbência parcial.
++ Honorários contra a Fazenda são calculados por faixas progressivas.
++ Recurso parcialmente provido não gera honorários recursais do art. 85, §11, conforme Tema 1.059/STJ.
++ Gratuidade não apaga a dívida de sucumbência e não elimina multas processuais.
++ Pessoa natural: critérios e marco temporal da ADC 80. Pessoa jurídica: prova da insuficiência.
++ Contratar advogado particular não impede gratuidade.
++ Gratuidade pode ser parcial ou parcelada.
++ Procuração geral para o foro não inclui automaticamente os poderes especiais do art. 105.
++ Alienação da coisa litigiosa não troca automaticamente o polo processual.
++ Revogação parte do cliente; renúncia parte do advogado.
++5. REVISÃO ATIVA — CUBRA A COLUNA DA DIREITA E RESPONDA
++Pergunta Resposta-relâmpago
++1. Quais são as três capacidades? Ser parte; processual; postulatória.
++2. Quando há curador especial? Incapaz sem representante/conflito; preso revel; revel citado fictamente 
++sem advogado.
++3. O que o art. 76 exige antes da sanção? Prazo razoável para saneamento.
++4. Multa do ato atentatório? Até 20% do valor da causa.
++5. Multa da má-fé? Superior a 1% e inferior a 10%.
++6. Regra geral de honorários? 10% a 20%.
++7. Gratuidade elimina sucumbência? Não; em regra suspende a exigibilidade por até 5 anos.
++8. Pessoa natural x jurídica? Natural: ADC 80, R$ 5 mil e marco temporal; jurídica: prova da insuficiência.
++9. Atuação urgente sem procuração? 15 dias + possível prorrogação por mais 15.
++10. Alienação do direito litigioso troca a parte? Não automaticamente; sucessão depende do consentimento da parte 
++contrária.
++11. Revogação x renúncia? Revogação = cliente/15 dias; renúncia = advogado/10 dias.
++12. Quais atos exigem poder especial?
++Receber citação, confessar, reconhecer, transigir, desistir, renunciar ao 
++direito, receber, dar quitação, firmar compromisso e declarar 
++hipossuficiência.
++FECHAMENTO DE 60 SEGUNDOS
++70-76 = capacidade/representação • 77-81 = deveres/sanções • 82-97 = despesas/honorários • 98-102 = gratuidade • 103-112 = 
++procuradores/sucessão.
++Fontes de atualização: CPC compilado; Leis 15.109/2025 e 15.472/2026; STJ Temas 1.059, 1.076, 1.178 e 1.424; Súmula 481/STJ. Material de revisão, não substitui a
++leitura da lei seca.
++
++REVISÃO JURÍDICA PONTUAL — 16/10/2026
++Tema: ADC 80 e repercussões na gratuidade; demais temas do módulo sujeitos a revisão integral.
++Fonte oficial: https://portal.stf.jus.br/processos/detalhe.asp?incidente=6383356
+--- antes/cpc/M04/complete
++++ depois/cpc/M04/complete
+@@ -1,1040 +1,1034 @@
+-M04 Partes, procuradores, responsabilidades, despesas e gratuidade
+-BASE
+-COMPLETA
+-M04
+-Partes, procuradores, responsabilidades,
+-despesas e gratuidade
+-A P O ST I L A C O M P L E TA
+-D I R E I TO P R O C E S S U A L C I V I L
+-M A T E R I A L D I D Á T I C OB A S E C O M P L E TA · D I R E I T O P R O C E S S U A L C I V I L · M 0 4
+-Partes, procuradores, responsabilidades,
+-despesas e gratuidade
+-Apostila completa · teoria integral do módulo, com quadros, jurisprudência, atualizações e
+-revisão
+-Base normativa principal: CPC, arts. 70 a 112
+-Atualização: 27/09/2026
+-Foco: concursos — teoria objetiva + lei seca orientada + jurisprudência qualificada + pegadinhas FCC
+-1. MATRIZ DO EDITAL
+-Este módulo concentra:
+-capacidade de ser parte, capacidade processual e capacidade postulatória;
+-incapazes e curador especial;
+-consentimento conjugal;
+-representação de pessoas e entes;
+-regularização da incapacidade ou da representação;
+-deveres processuais;
+-ato atentatório à dignidade da justiça;
+-responsabilidade por dano processual;
+-litigância de má-fé;
+-despesas processuais;
+-honorários advocatícios;
+-multas;
+-gratuidade da justiça;
+-procuradores e mandato;
+-poderes especiais;
+-atuação sem procuração em situação urgente;
+-revogação e renúncia do mandato;
+-sucessão das partes e dos procuradores;
+-alienação da coisa ou do direito litigioso;
+-distinção entre representação, substituição e sucessão processual.
+-Fronteiras do módulo
+-Fica no M04: partes, procuradores, capacidades, custos, honorários, gratuidade, sucessão e
+-alienação litigiosa.
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• Remeter ao M05: teoria geral do litisconsórcio e intervenção de terceiros. A assistência litisconsorcial
+-aparece aqui apenas porque o art. 109, §2º, a utiliza como efeito da alienação da coisa litigiosa.
+-Remeter ao M06: juiz, Ministério Público e demais sujeitos institucionais, salvo referências
+-indispensáveis para compreender despesas e sanções.
+-Remeter ao módulo de recursos: aprofundamento de honorários recursais, embora a regra do art. 85,
+-§11, e o Tema 1.059/STJ devam ser conhecidos aqui.
+-2. VISÃO GERAL
+-O CPC separa quatro grandes problemas dentro dos arts. 70 a 112:
+-quem pode estar em juízo e como é representado — arts. 70 a 76;
+-como as partes e seus procuradores devem se comportar e quais sanções podem sofrer —
+-arts. 77 a 81;
+-quem suporta despesas, honorários e gratuidade — arts. 82 a 102;
+-como funciona a representação por advogado e a sucessão das partes/procuradores — arts.
+-103 a 112.
+-Para prova, não basta decorar os artigos isoladamente. É essencial comparar institutos parecidos.
+-3. CAPACIDADES PROCESSUAIS
+-3.1. Três planos diferentes
+-Capacidade de ser parte
+-É a aptidão para figurar como sujeito de uma relação processual.
+-É conceito mais amplo que personalidade civil: o próprio CPC admite atuação processual de certos
+-entes sem personalidade jurídica, como massa falida, espólio, herança jacente ou vacante,
+-condomínio e sociedade irregular.
+-Capacidade processual
+-É a aptidão para exercer pessoalmente direitos e deveres no processo.
+-O art. 70 dispõe que toda pessoa que esteja no exercício de seus direitos tem capacidade para estar
+-em juízo.
+-Capacidade postulatória
+-É a aptidão técnica para formular postulações perante o Poder Judiciário.
+-Como regra, pertence ao advogado regularmente inscrito na OAB, ressalvadas hipóteses legais
+-específicas.
+-1. 
+-2. 
+-3. 
+-4. Quadro essencial
+-Instituto Pergunta-chave Exemplo
+-Capacidade de ser
+-parte
+-Pode ocupar posição processual? espólio pode ser parte
+-Capacidade processual Pode atuar sozinho no processo? incapaz precisa de representação/
+-assistência
+-Capacidade postulatória Pode formular postulações
+-técnicas?
+-regra: advogado
+-PEGADINHA: possuir capacidade de ser parte não significa possuir capacidade processual nem
+-capacidade postulatória.
+-4. INCAPAZ E CURADOR ESPECIAL
+-4.1. Incapaz — art. 71
+-O incapaz será representado ou assistido por seus pais, tutor ou curador, conforme a lei material
+-aplicável.
+-A distinção entre representação e assistência acompanha o regime de capacidade civil.
+-4.2. Curador especial — art. 72
+-O juiz nomeará curador especial:
+-ao incapaz, quando:
+-não houver representante legal; ou
+-houver colisão entre os interesses do incapaz e os de seu representante;
+-ao réu preso revel;
+-ao réu revel citado por edital ou com hora certa, enquanto não constituído advogado.
+-A curatela especial é exercida pela Defensoria Pública, nos termos da lei.
+-Decore
+-Curador especial = incapaz desprotegido/conflitado + réu preso revel + revel citado fictamente
+-sem advogado.
+-PEGADINHA: citação por edital ou hora certa, sozinha, não basta. O dispositivo exige revelia e
+-ausência de advogado constituído.
+-1. 
+-◦ 
+-◦ 
+-2. 
+-3. 5. CONSENTIMENTO DO CÔNJUGE — ARTS. 73 E 74
+-5.1. Regra para o autor
+-O cônjuge necessita do consentimento do outro para propor ação que verse sobre direito real
+-imobiliário, salvo casamento sob o regime de separação absoluta de bens.
+-5.2. Citação necessária de ambos os cônjuges
+-Ambos devem ser citados nas ações:
+-sobre direito real imobiliário, ressalvada a separação absoluta;
+-resultantes de fato que diga respeito a ambos ou de ato por ambos praticado;
+-fundadas em dívida contraída por um deles a bem da família;
+-que tenham por objeto reconhecimento, constituição ou extinção de ônus sobre imóvel de um
+-ou de ambos.
+-Nas ações possessórias, a participação do cônjuge é indispensável apenas quando houver:
+-composse; ou
+-ato praticado por ambos.
+-As regras do art. 73 aplicam-se à união estável comprovada nos autos.
+-5.3. Suprimento judicial
+-O consentimento pode ser suprido judicialmente quando:
+-houver recusa sem justo motivo; ou
+-for impossível obtê-lo.
+-Se o consentimento for necessário, não houver suprimento judicial e mesmo assim o processo
+-prosseguir, a falta invalida o processo.
+-FCC: diferencie “consentimento para propor” de “citação necessária de ambos”. São comandos
+-distintos do art. 73.
+-6. REPRESENTAÇÃO EM JUÍZO — ART. 75
+-O CPC define quem representa diversos sujeitos e entes.
+-Sujeito/ente Representação em juízo
+-União Advocacia-Geral da União, diretamente ou por órgão vinculado
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• Sujeito/ente Representação em juízo
+-Estado e Distrito Federal respectivos procuradores
+-Município prefeito, procurador ou, nos requisitos legais, Associação de
+-Representação de Municípios
+-Autarquia e fundação de direito público quem a lei do ente federado designar
+-Massa falida administrador judicial
+-Herança jacente ou vacante curador
+-Espólio inventariante
+-Pessoa jurídica quem os atos constitutivos designarem; na falta, seus diretores
+-Sociedade/associação irregular e ente sem
+-personalidade
+-pessoa responsável pela administração dos bens
+-Pessoa jurídica estrangeira gerente, representante ou administrador de filial, agência ou
+-sucursal no Brasil
+-Condomínio administrador ou síndico
+-Pontos de atenção
+-Se o inventariante for dativo, os sucessores do falecido serão intimados no processo em que o
+-espólio seja parte.
+-Sociedade ou associação sem personalidade não pode, quando demandada, usar a própria
+-irregularidade de constituição como defesa para negar sua capacidade de estar em juízo.
+-O gerente de filial ou agência presume-se autorizado a receber citação da pessoa jurídica
+-estrangeira.
+-A representação de Município por Associação de Representação de Municípios depende de
+-requisitos específicos do art. 75, §5º, inclusive autorização do chefe do Executivo municipal e
+-indicação do direito ou obrigação discutidos.
+-7. REGULARIZAÇÃO DA CAPACIDADE E DA REPRESENTAÇÃO
+-— ART. 76
+-O CPC privilegia o saneamento do vício.
+-Verificada incapacidade processual ou irregularidade de representação, o juiz:
+-suspende o processo; e
+-concede prazo razoável para correção.
+-• 
+-• 
+-• 
+-• 
+-1. 
+-2. Somente depois do descumprimento surgem as consequências.
+-7.1. Instância originária
+-Se o vício não for sanado:
+-autor: processo extinto;
+-réu: revelia;
+-terceiro: revelia ou exclusão do processo, conforme o polo ocupado.
+-7.2. Fase recursal
+-Se o vício não for sanado:
+-problema do recorrente: recurso não conhecido;
+-problema do recorrido: contrarrazões desentranhadas.
+-PEGADINHA: o CPC não autoriza a consequência extrema automaticamente. Primeiro deve ser
+-oportunizada a regularização.
+-8. REPRESENTAÇÃO, SUBSTITUIÇÃO E SUCESSÃO
+-PROCESSUAL
+-Esses conceitos são frequentemente misturados em prova.
+-Fenômeno Quem atua? Em nome de quem? Direito defendido
+-Representação representante em nome da parte
+-representada
+-da própria parte representada
+-Substituição
+-processual
+-substituto
+-processual
+-em nome próprio direito alheio, por autorização
+-normativa
+-Sucessão
+-processual
+-sucessor passa a ocupar a posição
+-processual
+-posição antes ocupada pelo
+-sucedido
+-Representação
+-Não há mudança de parte. A parte continua sendo o representado.
+-Substituição processual
+-Há legitimidade extraordinária: alguém atua em nome próprio defendendo direito alheio quando o
+-ordenamento autoriza.
+-Sucessão processual
+-Há alteração do sujeito que ocupa determinada posição no processo.
+-• 
+-• 
+-• 
+-• 
+-• DECORE: representação = “por alguém”; substituição = “em nome próprio por direito alheio”;
+-sucessão = “troca de sujeito processual”.
+-9. DEVERES DAS PARTES E DOS DEMAIS PARTICIPANTES —
+-ART. 77
+-São deveres das partes, procuradores e de todos que participem do processo:
+-expor os fatos conforme a verdade;
+-não formular pretensão ou defesa sabidamente destituída de fundamento;
+-não produzir provas nem praticar atos inúteis ou desnecessários;
+-cumprir exatamente as decisões jurisdicionais e não criar embaraços à sua efetivação;
+-informar endereço para intimações e mantê-lo atualizado;
+-não praticar inovação ilegal no estado de fato de bem ou direito litigioso;
+-manter atualizados os dados cadastrais exigidos pela legislação para recebimento de citações e
+-intimações.
+-10. ATO ATENTATÓRIO À DIGNIDADE DA JUSTIÇA
+-No regime do art. 77, constituem ato atentatório as violações aos deveres de:
+-cumprir decisões e não criar embaraços à sua efetivação — inciso IV;
+-não praticar inovação ilegal no estado de fato de bem ou direito litigioso — inciso VI.
+-10.1. Multa
+-A multa pode chegar a 20% do valor da causa, segundo a gravidade da conduta.
+-Se o valor da causa for irrisório ou inestimável, pode chegar a 10 salários-mínimos.
+-A multa pode coexistir com outras sanções processuais legalmente previstas.
+-10.2. Destinação
+-Se não paga no prazo fixado, após o trânsito em julgado a multa será inscrita como dívida ativa da
+-União ou do Estado e seguirá execução fiscal, revertendo aos fundos legalmente previstos.
+-10.3. Advogados, defensores e membros do MP
+-Aos advogados públicos ou privados e aos membros da Defensoria Pública e do Ministério Público 
+-não se aplicam diretamente as multas dos §§2º a 5º do art. 77.
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• A eventual responsabilidade disciplinar será apurada pelo respectivo órgão de classe ou
+-corregedoria, ao qual o juiz oficiará.
+-O representante judicial da parte também não pode ser compelido a cumprir decisão em lugar da
+-própria parte.
+-PEGADINHA FCC: “todos os participantes” possuem deveres processuais, mas a multa
+-específica por ato atentatório do art. 77 não é aplicada diretamente a advogado, defensor
+-público ou membro do MP.
+-11. EXPRESSÕES OFENSIVAS — ART. 78
+-É vedado a qualquer participante do processo empregar expressões ofensivas nos escritos
+-apresentados.
+-Se a ofensa for oral ou presencial, o juiz advertirá o ofensor e poderá cassar-lhe a palavra em caso
+-de repetição.
+-Nos escritos, o juiz pode determinar que as expressões ofensivas sejam riscadas. A requerimento do
+-ofendido, poderá ser expedida certidão com o inteiro teor da expressão.
+-12. RESPONSABILIDADE POR DANO PROCESSUAL E
+-LITIGÂNCIA DE MÁ-FÉ
+-12.1. Quem pode responder — art. 79
+-Responde por perdas e danos quem litigar de má-fé como:
+-autor;
+-réu;
+-interveniente.
+-12.2. Hipóteses do art. 80
+-É litigante de má-fé quem:
+-deduz pretensão ou defesa contra texto expresso de lei ou fato incontroverso;
+-altera a verdade dos fatos;
+-usa o processo para objetivo ilegal;
+-opõe resistência injustificada ao andamento do processo;
+-procede de modo temerário em incidente ou ato processual;
+-provoca incidente manifestamente infundado;
+-interpõe recurso com intuito manifestamente protelatório.
+-• 
+-• 
+-• 
+-1. 
+-2. 
+-3. 
+-4. 
+-5. 
+-6. 
+-7. 12.3. Consequências — art. 81
+-O juiz, de ofício ou a requerimento, poderá impor cumulativamente:
+-multa superior a 1% e inferior a 10% do valor corrigido da causa;
+-indenização pelos prejuízos sofridos pela parte contrária;
+-honorários advocatícios;
+-todas as despesas efetuadas.
+-Quando o valor da causa for irrisório ou inestimável, a multa pode ser fixada em até 10 salários-mínimos.
+-Havendo vários litigantes de má-fé:
+-cada um responde na proporção de seu interesse; ou
+-haverá solidariedade se tiverem se coligado para lesar a parte contrária.
+-A mera derrota processual não deve ser confundida com má-fé: a decisão sancionatória precisa
+-enquadrar concretamente a conduta em uma das hipóteses legais.
+-13. ATO ATENTATÓRIO × LITIGÂNCIA DE MÁ-FÉ
+-Ponto Ato atentatório — art. 77 Litigância de má-fé — arts. 79–81
+-Condutas violação dos incisos IV e VI do art.
+-77
+-hipóteses do art. 80
+-Multa até 20% do valor da causa >1% e <10% do valor corrigido da causa
+-Valor irrisório/
+-inestimável
+-até 10 salários-mínimos até 10 salários-mínimos
+-Destinação da
+-multa
+-fundos públicos previstos no art. 97 parte contrária
+-Advogado/DP/MP sem aplicação direta dos §§2º–5º;
+-responsabilidade disciplinar
+-art. 79 menciona autor, réu e interveniente; não se
+-confunde com sanção disciplinar do procurador
+-Pode gerar
+-indenização?
+-sem prejuízo de outras sanções
+-cabíveis
+-sim, expressamente no art. 81
+-PEGADINHA: não transporte automaticamente percentuais, destinatários ou consequências de
+-um regime para o outro.
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 14. DESPESAS PROCESSUAIS — ARTS. 82 A 97
+-14.1. Regra de adiantamento — art. 82
+-Salvo gratuidade, as partes adiantam as despesas dos atos que realizarem ou requererem.
+-O autor adianta as despesas dos atos determinados de ofício pelo juiz ou requeridos pelo Ministério
+-Público quando este atua como fiscal da ordem jurídica.
+-Ao final, a sentença condena o vencido a reembolsar ao vencedor as despesas que este antecipou.
+-14.2. Atualização — Lei 15.109/2025
+-O art. 82, §3º, passou a determinar que, nas ações de cobrança — por procedimento comum ou
+-especial — e nas execuções ou cumprimentos de sentença de honorários advocatícios, o advogado
+-fica dispensado de adiantar custas processuais.
+-Ao final, o réu ou executado deverá suprir o pagamento se tiver dado causa ao processo.
+-ATUALIZAÇÃO 2025 — ALTA COBRANÇA: não confunda “dispensa de adiantamento” com
+-gratuidade da justiça. São institutos diferentes.
+-15. CAUÇÃO DO AUTOR RESIDENTE FORA DO BRASIL — ART.
+-83
+-O autor, brasileiro ou estrangeiro, que:
+-residir fora do Brasil; ou
+-deixar de residir no Brasil durante o processo,
+-prestará caução suficiente para custas e honorários da parte contrária, se não possuir no Brasil bens
+-imóveis que assegurem o pagamento.
+-Não se exige a caução:
+-quando houver dispensa por tratado ou acordo internacional;
+-na execução fundada em título extrajudicial;
+-no cumprimento de sentença;
+-na reconvenção.
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 16. HONORÁRIOS ADVOCATÍCIOS — ART. 85
+-16.1. Regra geral
+-A sentença condenará o vencido a pagar honorários ao advogado do vencedor.
+-Também são devidos honorários:
+-na reconvenção;
+-no cumprimento de sentença, provisório ou definitivo;
+-na execução, resistida ou não;
+-nos recursos interpostos,
+-cumulativamente, conforme o regime legal.
+-16.2. Percentual da regra geral
+-Os honorários serão fixados entre 10% e 20% sobre, nesta ordem lógica:
+-valor da condenação;
+-proveito econômico obtido;
+-se não mensurável, valor atualizado da causa.
+-São considerados:
+-grau de zelo do profissional;
+-local da prestação do serviço;
+-natureza e importância da causa;
+-trabalho realizado e tempo exigido.
+-17. HONORÁRIOS CONTRA A FAZENDA PÚBLICA
+-Nas causas em que a Fazenda Pública seja parte, o art. 85, §3º, prevê faixas próprias:
+-Base econômica Percentual
+-até 200 salários-mínimos 10% a 20%
+-acima de 200 até 2.000 8% a 10%
+-acima de 2.000 até 20.000 5% a 8%
+-acima de 20.000 até 100.000 3% a 5%
+-acima de 100.000 1% a 3%
+-• 
+-• 
+-• 
+-• 
+-1. 
+-2. 
+-3. 
+-• 
+-• 
+-• 
+-• A aplicação é progressiva por faixas. Não se escolhe simplesmente o percentual da última faixa para
+-incidir sobre todo o montante.
+-Se a sentença for ilíquida, a definição do percentual ocorrerá quando o julgado for liquidado.
+-REMISSÃO: execução contra a Fazenda e remessa necessária devem ser estudadas nos
+-módulos próprios. Aqui interessa o regime de honorários.
+-18. EQUIDADE NA FIXAÇÃO DOS HONORÁRIOS
+-18.1. CPC
+-Quando condenação, proveito econômico ou valor da causa forem líquidos ou liquidáveis, é vedada a
+-apreciação equitativa fora das hipóteses legais.
+-A equidade é admitida quando:
+-o proveito econômico for inestimável;
+-o proveito econômico for irrisório; ou
+-o valor da causa for muito baixo.
+-No regime do art. 85, §8º-A, a fixação equitativa deve observar os parâmetros legais ali previstos.
+-18.2. Tema 1.076/STJ
+-O STJ firmou que valores elevados, por si sós, não autorizam reduzir os honorários por equidade.
+-Devem ser observados os percentuais legais, salvo as hipóteses excepcionais do §8º.
+-Atualização constitucional
+-A discussão constitucional sobre a aplicação dessa orientação em hipóteses de valor elevado,
+-especialmente envolvendo a Fazenda Pública, está relacionada ao Tema 1.255/STF. Portanto, em
+-material atualizado, não se deve apresentar a matéria como se não houvesse questão constitucional
+-submetida ao Supremo.
+-19. HONORÁRIOS RECURSAIS — ART. 85, §11
+-O tribunal, ao julgar recurso, pode majorar honorários anteriormente fixados levando em conta o
+-trabalho adicional realizado em grau recursal, respeitados os limites legais.
+-Tema 1.059/STJ
+-A majoração pressupõe que o recurso seja:
+-integralmente desprovido; ou
+-• 
+-• 
+-• 
+-• não conhecido.
+-Não há majoração recursal com fundamento no §11 quando o recurso é provido total ou parcialmente,
+-ainda que a alteração seja mínima ou recaia apenas sobre consectários.
+-REMISSÃO: aprofundar no módulo de recursos.
+-20. OUTRAS REGRAS DE HONORÁRIOS QUE A FCC PODE
+-COBRAR
+-Perda do objeto
+-Os honorários são devidos por quem deu causa ao processo — art. 85, §10.
+-Natureza e titularidade
+-Os honorários:
+-pertencem ao advogado;
+-possuem natureza alimentar;
+-têm privilégios de créditos trabalhistas;
+-não podem ser compensados em caso de sucumbência parcial.
+-Em 2026, a Lei 15.472/2026 também alterou o Estatuto da Advocacia para explicitar a natureza
+-alimentar dos honorários de prestação profissional, reforçando o regime protetivo já existente no
+-CPC.
+-Advogado em causa própria
+-Honorários também são devidos quando o advogado atua em causa própria.
+-Omissão no título judicial
+-Se a decisão transitada em julgado for omissa quanto ao direito aos honorários ou ao seu valor, cabe
+-ação autônoma para definição e cobrança.
+-Advogados públicos
+-Podem perceber honorários de sucumbência nos termos da lei.
+-21. SUCUMBÊNCIA RECÍPROCA, DESISTÊNCIA E
+-RECONHECIMENTO
+-21.1. Sucumbência parcial — art. 86
+-Se cada litigante for em parte vencedor e vencido, despesas e honorários são distribuídos
+-proporcionalmente.
+-• 
+-• 
+-• 
+-• 
+-• Os honorários não são compensados.
+-Se um litigante sucumbir em parte mínima do pedido, o outro responderá integralmente pelas
+-despesas e honorários.
+-21.2. Vários vencidos — art. 87
+-A sentença deve distribuir expressamente a responsabilidade proporcional entre os vencidos.
+-Se não fizer essa distribuição, os vencidos responderão solidariamente pelas despesas e honorários.
+-21.3. Desistência, renúncia ou reconhecimento — art. 90
+-Em regra, despesas e honorários são pagos pela parte que:
+-desistiu;
+-renunciou;
+-reconheceu o pedido.
+-Se o réu reconhecer a procedência do pedido e simultaneamente cumprir integralmente a prestação
+-reconhecida, os honorários serão reduzidos pela metade.
+-22. PERÍCIA E DESPESAS — ART. 95
+-Cada parte adianta a remuneração de seu próprio assistente técnico.
+-A remuneração do perito é adiantada:
+-pela parte que requereu a perícia; ou
+-rateada quando a perícia for determinada de ofício ou requerida por ambas as partes.
+-Quando o responsável for beneficiário da gratuidade, o CPC prevê custeio por estrutura ou recursos
+-públicos, conforme os §§3º a 5º do art. 95.
+-23. GRATUIDADE DA JUSTIÇA — ARTS. 98 A 102
+-23.1. Quem pode receber
+-Pode receber gratuidade a pessoa:
+-natural ou jurídica;
+-brasileira ou estrangeira;
+-que demonstre, conforme o regime aplicável, insuficiência de recursos para custas, despesas
+-processuais e honorários advocatícios.
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 24. ALCANCE DA GRATUIDADE
+-A gratuidade pode abranger, entre outros itens legais:
+-taxas e custas judiciais;
+-selos postais;
+-publicação na imprensa oficial;
+-indenização de testemunha;
+-exames essenciais, inclusive DNA;
+-honorários de advogado e perito;
+-intérprete e tradutor;
+-memória de cálculo;
+-depósitos exigidos por lei para recurso, ação ou outros atos inerentes à defesa;
+-certos emolumentos notariais e registrais vinculados à decisão ou ao processo.
+-24.1. Pode ser parcial
+-A gratuidade pode:
+-abranger todos os atos;
+-abranger apenas alguns atos;
+-consistir em redução percentual das despesas;
+-admitir parcelamento das despesas processuais.
+-PEGADINHA: gratuidade não é necessariamente “tudo ou nada”.
+-25. GRATUIDADE NÃO APAGA A SUCUMBÊNCIA
+-A concessão da gratuidade não afasta a responsabilidade do beneficiário pelas despesas
+-processuais e honorários decorrentes de sua sucumbência.
+-Se vencido, essas obrigações ficam sob condição suspensiva de exigibilidade.
+-Elas poderão ser executadas se, nos 5 anos seguintes ao trânsito em julgado, o credor demonstrar
+-que deixou de existir a insuficiência de recursos que justificou o benefício.
+-Passado esse prazo nas condições legais, as obrigações se extinguem.
+-A gratuidade também não afasta o dever de pagar multas processuais impostas ao beneficiário.
+-DECORE: gratuidade ≠ inexistência da dívida. Em regra, altera a exigibilidade.
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 26. PEDIDO DE GRATUIDADE — ART. 99
+-Pode ser formulado:
+-na petição inicial;
+-na contestação;
+-na petição de ingresso de terceiro;
+-em recurso.
+-Se superveniente à primeira manifestação, pode ser pedido por petição simples e não suspende o
+-processo.
+-O juiz somente pode indeferir o pedido se houver elementos nos autos que indiquem ausência dos
+-pressupostos legais e, antes do indeferimento, deve oportunizar à parte a comprovação de sua
+-situação.
+-27. PESSOA NATURAL — PRESUNÇÃO RELATIVA
+-A alegação de insuficiência formulada por pessoa natural possui presunção relativa de veracidade.
+-A contratação de advogado particular não impede a gratuidade.
+-Tema 1.178/STJ — atualização 2026
+-O STJ fixou três ideias essenciais:
+-não se pode indeferir imediatamente o benefício de pessoa natural usando apenas critérios
+-objetivos;
+-se houver elementos concretos capazes de afastar a presunção, o juiz deve indicar
+-precisamente as razões e determinar que o requerente comprove sua situação;
+-depois dessa oportunidade, parâmetros objetivos podem ser usados apenas de forma
+-suplementar, nunca como fundamento exclusivo para o indeferimento.
+-PEGADINHA: renda, patrimônio ou outros parâmetros podem integrar a análise, mas não
+-funcionam como “corte automático” exclusivo para a pessoa natural.
+-28. PESSOA JURÍDICA — PROVA DA INSUFICIÊNCIA
+-A presunção do art. 99, §3º, é exclusiva da pessoa natural.
+-Por isso, a pessoa jurídica deve comprovar sua impossibilidade de arcar com os encargos
+-processuais.
+-• 
+-• 
+-• 
+-• 
+-1. 
+-2. 
+-3. Súmula 481/STJ
+-A pessoa jurídica, com ou sem fins lucrativos, pode obter gratuidade se demonstrar a impossibilidade
+-de suportar os encargos processuais.
+-Tema 1.424/STJ — atualização 2026
+-O STJ aprofundou a exigência probatória: mera inatividade ou simples queda de faturamento não é
+-suficiente, por si só, para demonstrar hipossuficiência da pessoa jurídica.
+-A análise deve considerar a situação financeira e patrimonial de maneira ampla, com elementos aptos
+-a revelar a efetiva incapacidade econômica.
+-Comparação
+-Requerente Regime probatório
+-Pessoa natural declaração possui presunção relativa
+-Pessoa jurídica deve comprovar a insuficiência
+-29. IMPUGNAÇÃO E REVOGAÇÃO DA GRATUIDADE
+-Deferido o benefício, a parte contrária pode impugnar:
+-na contestação;
+-na réplica;
+-nas contrarrazões de recurso;
+-ou por petição simples, nas hipóteses legais.
+-O prazo da impugnação é de 15 dias, sem suspensão do processo.
+-Se o benefício for revogado:
+-a parte deve suportar as despesas de cujo adiantamento foi dispensada;
+-em caso de má-fé, pode sofrer multa de até o décuplo do valor, conforme art. 100, parágrafo
+-único.
+-30. RECURSO CONTRA DECISÃO SOBRE GRATUIDADE
+-Contra decisão que:
+-indefere gratuidade; ou
+-acolhe pedido de revogação,
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• cabe agravo de instrumento, salvo se a questão for resolvida na sentença, hipótese em que caberá 
+-apelação.
+-O recorrente fica dispensado de recolher custas até a decisão do relator sobre a gratuidade.
+-Confirmada a negativa ou revogação, o relator ou colegiado determinará o recolhimento das custas
+-em 5 dias, sob pena de não conhecimento do recurso.
+-31. CARÁTER PESSOAL DA GRATUIDADE
+-O direito à gratuidade é pessoal.
+-Não se estende automaticamente a:
+-litisconsorte;
+-sucessor do beneficiário.
+-É necessário requerimento e deferimento expressos para quem pretende usufruir do benefício.
+-32. PROCURADORES — ARTS. 103 A 107
+-32.1. Regra de representação por advogado
+-A parte será representada em juízo por advogado regularmente inscrito na OAB.
+-A parte somente pode postular em causa própria quando tiver habilitação legal.
+-33. ATUAÇÃO SEM PROCURAÇÃO — ART. 104
+-O advogado, em regra, não pode atuar sem procuração.
+-Excepcionalmente, pode fazê-lo para:
+-evitar preclusão;
+-evitar decadência;
+-evitar prescrição;
+-praticar ato considerado urgente.
+-Nessas hipóteses, deve apresentar a procuração em 15 dias, prazo prorrogável por igual período por
+-despacho do juiz.
+-Se o ato não for ratificado:
+-será ineficaz em relação à pessoa em cujo nome foi praticado;
+-o advogado responderá pelas despesas e por perdas e danos.
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• DECORE: urgência sem mandato = 15 + 15.
+-34. PROCURAÇÃO E PODERES ESPECIAIS — ART. 105
+-A procuração geral para o foro autoriza os atos processuais em geral, mas alguns atos exigem 
+-cláusula específica.
+-Exigem poder especial:
+-receber citação;
+-confessar;
+-reconhecer a procedência do pedido;
+-transigir;
+-desistir;
+-renunciar ao direito sobre o qual se funda a ação;
+-receber;
+-dar quitação;
+-firmar compromisso;
+-assinar declaração de hipossuficiência econômica.
+-Salvo disposição expressa em contrário no instrumento, a procuração dada na fase de conhecimento
+-permanece eficaz para as demais fases do processo, inclusive cumprimento de sentença.
+-PEGADINHA: “procuração geral para o foro” não equivale a autorização universal para atos de
+-disposição.
+-35. DIREITOS DO ADVOGADO NOS AUTOS — ART. 107
+-Entre os direitos previstos no CPC estão:
+-examinar autos, inclusive sem procuração, ressalvado segredo de justiça;
+-obter cópias e fazer anotações;
+-requerer vista como procurador;
+-retirar autos físicos nas hipóteses legais.
+-O direito de exame previsto no art. 107 também se aplica aos processos eletrônicos.
+-As regras sobre retirada física de autos permanecem relevantes para literalidade legal, embora sua
+-incidência prática seja menor em processos integralmente eletrônicos.
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 36. SUCESSÃO DAS PARTES E DOS PROCURADORES — ARTS.
+-108 A 112
+-36.1. Sucessão voluntária — art. 108
+-Durante o processo, a sucessão voluntária das partes somente é permitida nos casos expressamente
+-previstos em lei.
+-37. ALIENAÇÃO DA COISA OU DO DIREITO LITIGIOSO — ART.
+-109
+-A alienação da coisa ou do direito litigioso por ato entre vivos, a título particular, não altera
+-automaticamente a legitimidade das partes.
+-O adquirente ou cessionário:
+-não pode suceder o alienante ou cedente no processo sem consentimento da parte contrária;
+-pode intervir como assistente litisconsorcial do alienante ou cedente;
+-fica sujeito aos efeitos da sentença proferida entre as partes originárias.
+-Lógica de prova
+-Alienou o bem litigioso ≠ saiu automaticamente do processo.
+-A sucessão pelo adquirente depende do consentimento da parte contrária.
+-REMISSÃO M05: estudar ali a assistência litisconsorcial em profundidade.
+-38. MORTE DA PARTE — ART. 110
+-Ocorrendo a morte de qualquer das partes, haverá sucessão pelo:
+-espólio; ou
+-sucessores,
+-observadas as regras de suspensão e regularização previstas no CPC.
+-Aqui há verdadeira sucessão processual.
+-39. REVOGAÇÃO DO MANDATO — ART. 111
+-A revogação parte do cliente/mandante.
+-• 
+-• 
+-• 
+-• 
+-• Quem revoga o mandato deve constituir outro advogado no mesmo ato.
+-Se não constituir novo procurador, dispõe de 15 dias; depois disso, aplicam-se as consequências do
+-art. 76.
+-40. RENÚNCIA DO ADVOGADO — ART. 112
+-A renúncia parte do advogado.
+-O advogado pode renunciar a qualquer momento, mas deve comprovar que comunicou a renúncia ao
+-mandante para que este nomeie sucessor.
+-Durante os 10 dias seguintes, o advogado continua representando o cliente, se isso for necessário
+-para evitar prejuízo.
+-A comunicação é dispensada se:
+-a procuração foi outorgada a vários advogados; e
+-a parte continuar representada por outro, apesar da renúncia.
+-41. REVOGAÇÃO × RENÚNCIA
+-Situação Quem rompe o
+-mandato?
+-Regra principal
+-Revogação parte/cliente deve constituir outro advogado; se não o fizer, prazo de 15 dias e
+-aplicação do art. 76
+-Renúncia advogado deve comunicar o cliente e, quando necessário, continua por 10 dias
+-para evitar prejuízo
+-DECORE: revogação = cliente; renúncia = advogado.
+-42. QUADRO DE PRAZOS QUE MERECEM MEMORIZAÇÃO
+-Situação Prazo
+-Regularização de procuração após atuação urgente 15 dias, prorrogáveis por igual
+-período
+-Impugnação à gratuidade 15 dias
+-• 
+-• Situação Prazo
+-Recolhimento de custas após confirmação da negativa/revogação em grau
+-recursal
+-5 dias
+-Constituição de novo procurador após revogação, se não feita no mesmo ato 15 dias
+-Permanência do advogado após renúncia, se necessária para evitar prejuízo 10 dias
+-Período de possível execução da sucumbência do beneficiário, se
+-demonstrada superação da insuficiência
+-5 anos após o trânsito em
+-julgado
+-43. JURISPRUDÊNCIA ESSENCIAL DO M04 — ATUALIZADA
+-Tema 1.059/STJ
+-Honorários recursais do art. 85, §11: majoração somente quando o recurso for integralmente
+-desprovido ou não conhecido; não incide diante de provimento total ou parcial.
+-Tema 1.076/STJ
+-Em causas de valor elevado, não se substituem os percentuais legais por equidade apenas porque o
+-resultado seria alto; equidade é excepcional nas hipóteses do §8º.
+-Atenção: Tema 1.255/STF deve ser acompanhado quanto à controvérsia constitucional relacionada à
+-matéria.
+-Tema 1.178/STJ
+-Pessoa natural: critérios objetivos não podem causar indeferimento automático da gratuidade. Se
+-houver elementos contrários à presunção, deve haver fundamentação específica e oportunidade de
+-comprovação.
+-Súmula 481/STJ
+-Pessoa jurídica, com ou sem fins lucrativos, pode obter gratuidade, desde que prove impossibilidade
+-de arcar com os encargos processuais.
+-Tema 1.424/STJ
+-Pessoa jurídica: mera inatividade ou queda de faturamento não basta, isoladamente, para provar
+-hipossuficiência; é necessária demonstração mais ampla da situação econômico-financeira.44. ATUALIZAÇÕES LEGISLATIVAS DE ALTA RELEVÂNCIA
+-Lei 15.109/2025
+-Incluiu o art. 82, §3º, do CPC, dispensando o advogado do adiantamento de custas em cobrança,
+-execução e cumprimento de sentença de honorários advocatícios, com responsabilização final de
+-quem deu causa ao processo nos termos legais.
+-Lei 15.472/2026
+-Alterou o Estatuto da Advocacia para explicitar a natureza alimentar dos honorários decorrentes da
+-prestação profissional e reforçar seu regime privilegiado.
+-45. PEGADINHAS FCC
+-Capacidade de ser parte não é capacidade processual.
+-Capacidade processual não é capacidade postulatória.
+-Curador especial ao réu citado por edital/hora certa depende de revelia e ausência de
+-advogado.
+-Separação absoluta de bens afasta a exigência de consentimento conjugal do art. 73 para ação
+-real imobiliária.
+-O art. 76 exige oportunidade de saneamento antes da extinção, revelia ou não conhecimento do
+-recurso.
+-A multa do art. 77 pode chegar a 20%; a multa da litigância de má-fé fica, em regra, acima de
+-1% e abaixo de 10%.
+-Advogados, defensores e membros do MP não recebem diretamente a multa dos §§2º–5º do
+-art. 77.
+-Gratuidade não apaga sucumbência; em regra, suspende a exigibilidade.
+-Gratuidade não afasta multas processuais.
+-Pessoa natural possui presunção relativa; pessoa jurídica precisa provar insuficiência.
+-Advogado particular não impede gratuidade.
+-Gratuidade pode ser parcial ou por parcelamento.
+-Ação de honorários: após a Lei 15.109/2025, não confundir dispensa de adiantamento de custas
+-com gratuidade.
+-Sucumbência parcial não permite compensação dos honorários.
+-Honorários pertencem ao advogado e têm natureza alimentar.
+-Honorários contra Fazenda obedecem a faixas progressivas.
+-Recurso parcialmente provido não gera majoração do §11 segundo o Tema 1.059/STJ.
+-Procuração geral para o foro não inclui automaticamente poderes especiais do art. 105.
+-Atuação urgente sem procuração exige regularização em 15 dias, prorrogáveis por mais 15.
+-Alienação da coisa litigiosa não troca automaticamente a parte.
+-1. 
+-2. 
+-3. 
+-4. 
+-5. 
+-6. 
+-7. 
+-8. 
+-9. 
+-10. 
+-11. 
+-12. 
+-13. 
+-14. 
+-15. 
+-16. 
+-17. 
+-18. 
+-19. 
+-20. Sucessão pelo adquirente depende de consentimento da parte contrária.
+-Revogação do mandato vem do cliente; renúncia vem do advogado.
+-Após renunciar, o advogado pode ter de continuar atuando por 10 dias para evitar prejuízo.
+-46. DECORE — REVISÃO DE 2 MINUTOS
+-Capacidade
+-art. 70: capacidade para estar em juízo;
+-art. 71: incapaz representado/assistido;
+-art. 72: curador especial;
+-art. 73: consentimento/citação de cônjuge;
+-art. 75: quem representa cada ente;
+-art. 76: primeiro sana, depois sanciona.
+-Conduta
+-art. 77: deveres;
+-ato atentatório: IV e VI + multa até 20%;
+-art. 80: hipóteses de má-fé;
+-art. 81: multa >1% e <10% + indenização + honorários + despesas.
+-Custos e honorários
+-art. 82: adiantamento;
+-Lei 15.109/2025: §3º, honorários sem adiantamento de custas pelo advogado;
+-art. 85: honorários;
+-regra: 10% a 20%;
+-Fazenda: faixas progressivas;
+-honorários pertencem ao advogado;
+-natureza alimentar;
+-sem compensação.
+-Gratuidade
+-pessoa natural ou jurídica pode receber;
+-natural: presunção relativa;
+-jurídica: precisa provar;
+-não elimina sucumbência;
+-exigibilidade pode ficar suspensa por 5 anos;
+-não elimina multas;
+-pode ser parcial/parcelada.
+-21. 
+-22. 
+-23. 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• Procuradores
+-art. 104: urgência sem procuração = 15 + 15;
+-art. 105: poderes especiais;
+-revogação = cliente;
+-renúncia = advogado + 10 dias se necessário.
+-Alienação litigiosa
+-não muda automaticamente legitimidade;
+-sucessão do adquirente exige consentimento da parte contrária;
+-adquirente pode ser assistente litisconsorcial;
+-sentença alcança adquirente/cessionário.
+-47. QUESTÕES DE FIXAÇÃO — ESTILO FCC
+-Questão 1
+-Um réu revel foi citado pessoalmente e não constituiu advogado. Nessa situação, somente a revelia
+-impõe nomeação de curador especial.
+-Gabarito: ERRADO. O art. 72 prevê hipóteses específicas: réu preso revel e réu revel citado por edital
+-ou com hora certa, enquanto não houver advogado. Revelia decorrente de citação pessoal,
+-isoladamente, não basta.
+-Questão 2
+-Detectada irregularidade na representação do autor, o juiz deve extinguir imediatamente o processo
+-sem resolução do mérito.
+-Gabarito: ERRADO. Primeiro deve suspender o processo e conceder prazo razoável para
+-saneamento. A consequência somente aparece se o vício não for corrigido.
+-Questão 3
+-A multa decorrente de ato atentatório à dignidade da justiça previsto no art. 77 pode atingir 20% do
+-valor da causa.
+-Gabarito: CERTO. É o limite legal, conforme a gravidade da conduta.
+-Questão 4
+-A litigância de má-fé gera apenas multa, sendo vedada indenização em favor da parte contrária.
+-Gabarito: ERRADO. O art. 81 permite multa, indenização, honorários e despesas.
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• Questão 5
+-A gratuidade da justiça afasta definitivamente a responsabilidade do beneficiário por honorários
+-sucumbenciais.
+-Gabarito: ERRADO. A responsabilidade permanece; a exigibilidade fica submetida ao regime do art.
+-98, §3º.
+-Questão 6
+-A pessoa jurídica sem fins lucrativos goza da mesma presunção de hipossuficiência da pessoa
+-natural.
+-Gabarito: ERRADO. A presunção do art. 99, §3º, é exclusiva da pessoa natural. A pessoa jurídica
+-deve comprovar insuficiência.
+-Questão 7
+-Segundo o Tema 1.178/STJ, o juiz pode usar uma renda mensal fixa como critério automático e
+-exclusivo para negar gratuidade à pessoa natural.
+-Gabarito: ERRADO. Critérios objetivos não podem fundamentar indeferimento automático; podem
+-atuar de modo suplementar, após oportunidade de comprovação quando houver elementos que
+-afastem a presunção.
+-Questão 8
+-A procuração geral para o foro autoriza automaticamente o advogado a confessar, transigir e receber
+-citação.
+-Gabarito: ERRADO. Esses atos exigem poderes especiais expressos no instrumento.
+-Questão 9
+-O advogado pode praticar ato urgente sem procuração e apresentá-la no prazo de 15 dias,
+-prorrogável por igual período.
+-Gabarito: CERTO. Regra do art. 104.
+-Questão 10
+-A alienação da coisa litigiosa transfere automaticamente ao adquirente a posição processual do
+-alienante.
+-Gabarito: ERRADO. A alienação não altera automaticamente a legitimidade. A sucessão depende do
+-consentimento da parte contrária.
+-Questão 11
+-Segundo o Tema 1.059/STJ, recurso parcialmente provido autoriza majoração dos honorários
+-recursais se a alteração for mínima.Gabarito: ERRADO. O provimento total ou parcial afasta a majoração do art. 85, §11, segundo a tese
+-repetitiva.
+-Questão 12
+-Depois da Lei 15.109/2025, o advogado que cobra judicialmente seus honorários tornou-se
+-automaticamente beneficiário da gratuidade da justiça.
+-Gabarito: ERRADO. A lei criou dispensa de adiantamento de custas nas hipóteses do art. 82, §3º; isso
+-não equivale à concessão de gratuidade.
+-48. CHECKLIST FINAL DE DOMÍNIO
+-Antes de encerrar o M04, o aluno deve conseguir responder sem consulta:
+-Qual a diferença entre capacidade de ser parte, processual e postulatória?
+-Em quais hipóteses existe curador especial?
+-Quando o cônjuge precisa consentir e quando ambos precisam ser citados?
+-Quem representa União, Município, espólio, massa falida e condomínio?
+-O que o juiz deve fazer antes de extinguir por irregularidade de representação?
+-Quais condutas geram ato atentatório à dignidade da justiça?
+-Qual a diferença entre multa do art. 77 e multa dos arts. 80–81?
+-O que mudou com a Lei 15.109/2025?
+-Quais são as faixas de honorários contra a Fazenda Pública?
+-Quando é possível apreciação equitativa?
+-Qual é a tese do Tema 1.059/STJ?
+-Por que gratuidade não significa perdão da sucumbência?
+-Qual a diferença de prova entre pessoa natural e pessoa jurídica para gratuidade?
+-O que dizem os Temas 1.178 e 1.424/STJ?
+-Quais atos exigem poder especial na procuração?
+-Quanto tempo o advogado tem para juntar procuração após ato urgente?
+-O que ocorre com a legitimidade após alienação da coisa litigiosa?
+-Qual a diferença entre representação, substituição e sucessão?
+-Qual a diferença entre revogação e renúncia do mandato?
+-Se essas respostas estiverem firmes, o núcleo de prova do módulo está dominado.
+-49. FONTES DE ATUALIZAÇÃO DA VERSÃO FINAL
+-Código de Processo Civil, Lei 13.105/2015, texto compilado vigente em 27/09/2026.
+-Lei 15.109/2025.
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• Lei 15.472/2026 e Estatuto da Advocacia compilado.
+-STJ, Tema Repetitivo 1.059.
+-STJ, Tema Repetitivo 1.076.
+-STJ, Tema Repetitivo 1.178.
+-STJ, Tema Repetitivo 1.424.
+-STJ, Súmula 481.
+-STF, Tema de Repercussão Geral 1.255.
+-Fonte Central M04 da BASE COMPLETA.
+-Mapa temático do PDF doutrinário de 2024 constante do pacote.
+-Nota editorial: como as páginas do livro de 2024 não vieram incorporadas ao ZIP, esta versão não
+-atribui ao autor trechos ou conclusões específicas que não possam ser conferidos diretamente. A
+-doutrina foi usada apenas no nível temático já validado pelo mapa do pacote; legislação e
+-jurisprudência atual prevalecem.
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• 
+-• +M04 Partes, procuradores, responsabilidades, despesas e gratuidade
++BASE
++COMPLETA
++M04
++Partes, procuradores, responsabilidades,
++despesas e gratuidade
++A P O ST I L A C O M P L E TA
++D I R E I TO P R O C E S S U A L C I V I L
++M A T E R I A L D I D Á T I C OB A S E C O M P L E TA · D I R E I T O P R O C E S S U A L C I V I L · M 0 4
++Partes, procuradores, responsabilidades,
++despesas e gratuidade
++Apostila completa · teoria integral do módulo, com quadros, jurisprudência, atualizações e
++revisão
++Base normativa principal: CPC, arts. 70 a 112
++Atualização: 27/09/2026
++Foco: concursos — teoria objetiva + lei seca orientada + jurisprudência qualificada + pegadinhas FCC
++1. MATRIZ DO EDITAL
++Este módulo concentra:
++capacidade de ser parte, capacidade processual e capacidade postulatória;
++incapazes e curador especial;
++consentimento conjugal;
++representação de pessoas e entes;
++regularização da incapacidade ou da representação;
++deveres processuais;
++ato atentatório à dignidade da justiça;
++responsabilidade por dano processual;
++litigância de má-fé;
++despesas processuais;
++honorários advocatícios;
++multas;
++gratuidade da justiça;
++procuradores e mandato;
++poderes especiais;
++atuação sem procuração em situação urgente;
++revogação e renúncia do mandato;
++sucessão das partes e dos procuradores;
++alienação da coisa ou do direito litigioso;
++distinção entre representação, substituição e sucessão processual.
++Fronteiras do módulo
++Fica no M04: partes, procuradores, capacidades, custos, honorários, gratuidade, sucessão e
++alienação litigiosa.
++• 
++• 
++• 
++• 
++• 
++• 
++• 
++• 
++• 
++• 
++• 
++• 
++• 
++• 
++• 
++• 
++• 
++• 
++• 
++• Remeter ao M05: teoria geral do litisconsórcio e intervenção de terceiros. A assistência litisconsorcial
++aparece aqui apenas porque o art. 109, §2º, a utiliza como efeito da alienação da coisa litigiosa.
++Remeter ao M06: juiz, Ministério Público e demais sujeitos institucionais, salvo referências
++indispensáveis para compreender despesas e sanções.
++Remeter ao módulo de recursos: aprofundamento de honorários recursais, embora a regra do art. 85,
++§11, e o Tema 1.059/STJ devam ser conhecidos aqui.
++2. VISÃO GERAL
++O CPC separa quatro grandes problemas dentro dos arts. 70 a 112:
++quem pode estar em juízo e como é representado — arts. 70 a 76;
++como as partes e seus procuradores devem se comportar e quais sanções podem sofrer —
++arts. 77 a 81;
++quem suporta despesas, honorários e gratuidade — arts. 82 a 102;
++como funciona a representação por advogado e a sucessão das partes/procuradores — arts.
++103 a 112.
++Para prova, não basta decorar os artigos isoladamente. É essencial comparar institutos parecidos.
++3. CAPACIDADES PROCESSUAIS
++3.1. Três planos diferentes
++Capacidade de ser parte
++É a aptidão para figurar como sujeito de uma relação processual.
++É conceito mais amplo que personalidade civil: o próprio CPC admite atuação processual de certos
++entes sem personalidade jurídica, como massa falida, espólio, herança jacente ou vacante,
++condomínio e sociedade irregular.
++Capacidade processual
++É a aptidão para exercer pessoalmente direitos e deveres no processo.
++O art. 70 dispõe que toda pessoa que esteja no exercício de seus direitos tem capacidade para estar
++em juízo.
++Capacidade postulatória
++É a aptidão técnica para formular postulações perante o Poder Judiciário.
++Como regra, pertence ao advogado regularmente inscrito na OAB, ressalvadas hipóteses legais
++específicas.
++1. 
++2. 
++3. 
++4. Quadro essencial
++Instituto Pergunta-chave Exemplo
++Capacidade de ser
++parte
++Pode ocupar posição processual? espólio pode ser parte
++Capacidade processual Pode atuar sozinho no processo? incapaz precisa de representação/
++assistência
++Capacidade postulatória Pode formular postulações
++técnicas?
++regra: advogado
++PEGADINHA: possuir capacidade de ser parte não significa possuir capacidade processual nem
++capacidade postulatória.
++4. INCAPAZ E CURADOR ESPECIAL
++4.1. Incapaz — art. 71
++O incapaz será representado ou assistido por seus pais, tutor ou curador, conforme a lei material
++aplicável.
++A distinção entre representação e assistência acompanha o regime de capacidade civil.
++4.2. Curador especial — art. 72
++O juiz nomeará curador especial:
++ao incapaz, quando:
++não houver representante legal; ou
++houver colisão entre os interesses do incapaz e os de seu representante;
++ao réu preso revel;
++ao réu revel citado por edital ou com hora certa, enquanto não constituído advogado.
++A curatela especial é exercida pela Defensoria Pública, nos termos da lei.
++Decore
++Curador especial = incapaz desprotegido/conflitado + réu preso revel + revel citado fictamente
++sem advogado.
++PEGADINHA: citação por edital ou hora certa, sozinha, não basta. O dispositivo exige revelia e
++ausência de advogado constituído.
++1. 
++◦ 
++◦ 
++2. 
++3. 5. CONSENTIMENTO DO CÔNJUGE — ARTS. 73 E 74
++5.1. Regra para o autor
++O cônjuge necessita do consentimento do outro para propor ação que verse sobre direito real
++imobiliário, salvo casamento sob o regime de separação absoluta de bens.
++5.2. Citação necessária de ambos os cônjuges
++Ambos devem ser citados nas ações:
++sobre direito real imobiliário, ressalvada a separação absoluta;
++resultantes de fato que diga respeito a ambos ou de ato por ambos praticado;
++fundadas em dívida contraída por um deles a bem da família;
++que tenham por objeto reconhecimento, constituição ou extinção de ônus sobre imóvel de um
++ou de ambos.
++Nas ações possessórias, a participação do cônjuge é indispensável apenas quando houver:
++composse; ou
++ato praticado por ambos.
++As regras do art. 73 aplicam-se à união estável comprovada nos autos.
++5.3. Suprimento judicial
++O consentimento pode ser suprido judicialmente quando:
++houver recusa sem justo motivo; ou
++for impossível obtê-lo.
++Se o consentimento for necessário, não houver suprimento judicial e mesmo assim o processo
++prosseguir, a falta invalida o processo.
++FCC: diferencie “consentimento para propor” de “citação necessária de ambos”. São comandos
++distintos do art. 73.
++6. REPRESENTAÇÃO EM JUÍZO — ART. 75
++O CPC define quem representa diversos sujeitos e entes.
++Sujeito/ente Representação em juízo
++União Advocacia-Geral da União, diretamente ou por órgão vinculado
++• 
++• 
++• 
++• 
++• 
++• 
++• 
++• Sujeito/ente Representação em juízo
++Estado e Distrito Federal respectivos procuradores
++Município prefeito, procurador ou, nos requisitos legais, Associação de
++Representação de Municípios
++Autarquia e fundação de direito público quem a lei do ente federado designar
++Massa falida administrador judicial
++Herança jacente ou vacante curador
++Espólio inventariante
++Pessoa jurídica quem os atos constitutivos designarem; na falta, seus diretores
++Sociedade/associação irregular e ente sem
++personalidade
++pessoa responsável pela administração dos bens
++Pessoa jurídica estrangeira gerente, representante ou administrador de filial, agência ou
++sucursal no Brasil
++Condomínio administrador ou síndico
++Pontos de atenção
++Se o inventariante for dativo, os sucessores do falecido serão intimados no processo em que o
++espólio seja parte.
++Sociedade ou associação sem personalidade não pode, quando demandada, usar a própria
++irregularidade de constituição como defesa para negar sua capacidade de estar em juízo.
++O gerente de filial ou agência presume-se autorizado a receber citação da pessoa jurídica
++estrangeira.
++A representação de Município por Associação de Representação de Municípios depende de
++requisitos específicos do art. 75, §5º, inclusive autorização do chefe do Executivo municipal e
++indicação do direito ou obrigação discutidos.
++7. REGULARIZAÇÃO DA CAPACIDADE E DA REPRESENTAÇÃO
++— ART. 76
++O CPC privilegia o saneamento do vício.
++Verificada incapacidade processual ou irregularidade de representação, o juiz:
++suspende o processo; e
++concede prazo razoável para correção.
++• 
++• 
++• 
++• 
++1. 
++2. Somente depois do descumprimento surgem as consequências.
++7.1. Instância originária
++Se o vício não for sanado:
++autor: processo extinto;
++réu: revelia;
++terceiro: revelia ou exclusão do processo, conforme o polo ocupado.
++7.2. Fase recursal
++Se o vício não for sanado:
++problema do recorrente: recurso não conhecido;
++problema do recorrido: contrarrazões desentranhadas.
++PEGADINHA: o CPC não autoriza a consequência extrema automaticamente. Primeiro deve ser
++oportunizada a regularização.
++8. REPRESENTAÇÃO, SUBSTITUIÇÃO E SUCESSÃO
++PROCESSUAL
++Esses conceitos são frequentemente misturados em prova.
++Fenômeno Quem atua? Em nome de quem? Direito defendido
++Representação representante em nome da parte
++representada
++da própria parte representada
++Substituição
++processual
++substituto
++processual
++em nome próprio direito alheio, por autorização
++normativa
++Sucessão
++processual
++sucessor passa a ocupar a posição
++processual
++posição antes ocupada pelo
++sucedido
++Representação
++Não há mudança de parte. A parte continua sendo o representado.
++Substituição processual
++Há legitimidade extraordinária: alguém atua em nome próprio defendendo direito alheio quando o
++ordenamento autoriza.
++Sucessão processual
++Há alteração do sujeito que ocupa determinada posição no processo.
++• 
++• 
++• 
++• 
++• DECORE: representação = “por alguém”; substituição = “em nome próprio por direito alheio”;
++sucessão = “troca de sujeito processual”.
++9. DEVERES DAS PARTES E DOS DEMAIS PARTICIPANTES —
++ART. 77
++São deveres das partes, procuradores e de todos que participem do processo:
++expor os fatos conforme a verdade;
++não formular pretensão ou defesa sabidamente destituída de fundamento;
++não produzir provas nem praticar atos inúteis ou desnecessários;
++cumprir exatamente as decisões jurisdicionais e não criar embaraços à sua efetivação;
++informar endereço para intimações e mantê-lo atualizado;
++não praticar inovação ilegal no estado de fato de bem ou direito litigioso;
++manter atualizados os dados cadastrais exigidos pela legislação para recebimento de citações e
++intimações.
++10. ATO ATENTATÓRIO À DIGNIDADE DA JUSTIÇA
++No regime do art. 77, constituem ato atentatório as violações aos deveres de:
++cumprir decisões e não criar embaraços à sua efetivação — inciso IV;
++não praticar inovação ilegal no estado de fato de bem ou direito litigioso — inciso VI.
++10.1. Multa
++A multa pode chegar a 20% do valor da causa, segundo a gravidade da conduta.
++Se o valor da causa for irrisório ou inestimável, pode chegar a 10 salários-mínimos.
++A multa pode coexistir com outras sanções processuais legalmente previstas.
++10.2. Destinação
++Se não paga no prazo fixado, após o trânsito em julgado a multa será inscrita como dívida ativa da
++União ou do Estado e seguirá execução fiscal, revertendo aos fundos legalmente previstos.
++10.3. Advogados, defensores e membros do MP
++Aos advogados públicos ou privados e aos membros da Defensoria Pública e do Ministério Público 
++não se aplicam diretamente as multas dos §§2º a 5º do art. 77.
++• 
++• 
++• 
++• 
++• 
++• 
++• 
++• 
++• A eventual responsabilidade disciplinar será apurada pelo respectivo órgão de classe ou
++corregedoria, ao qual o juiz oficiará.
++O representante judicial da parte também não pode ser compelido a cumprir decisão em lugar da
++própria parte.
++PEGADINHA FCC: “todos os participantes” possuem deveres processuais, mas a multa
++específica por ato atentatório do art. 77 não é aplicada diretamente a advogado, defensor
++público ou membro do MP.
++11. EXPRESSÕES OFENSIVAS — ART. 78
++É vedado a qualquer participante do processo empregar expressões ofensivas nos escritos
++apresentados.
++Se a ofensa for oral ou presencial, o juiz advertirá o ofensor e poderá cassar-lhe a palavra em caso
++de repetição.
++Nos escritos, o juiz pode determinar que as expressões ofensivas sejam riscadas. A requerimento do
++ofendido, poderá ser expedida certidão com o inteiro teor da expressão.
++12. RESPONSABILIDADE POR DANO PROCESSUAL E
++LITIGÂNCIA DE MÁ-FÉ
++12.1. Quem pode responder — art. 79
++Responde por perdas e danos quem litigar de má-fé como:
++autor;
++réu;
++interveniente.
++12.2. Hipóteses do art. 80
++É litigante de má-fé quem:
++deduz pretensão ou defesa contra texto expresso de lei ou fato incontroverso;
++altera a verdade dos fatos;
++usa o processo para objetivo ilegal;
++opõe resistência injustificada ao andamento do processo;
++procede de modo temerário em incidente ou ato processual;
++provoca incidente manifestamente infundado;
++interpõe recurso com intuito manifestamente protelatório.
++• 
++• 
++• 
++1. 
++2. 
++3. 
++4. 
++5. 
++6. 
++7. 12.3. Consequências — art. 81
++O juiz, de ofício ou a requerimento, poderá impor cumulativamente:
++multa superior a 1% e inferior a 10% do valor corrigido da causa;
++indenização pelos prejuízos sofridos pela parte contrária;
++honorários advocatícios;
++todas as despesas efetuadas.
++Quando o valor da causa for irrisório ou inestimável, a multa pode ser fixada em até 10 salários-mínimos.
++Havendo vários litigantes de má-fé:
++cada um responde na proporção de seu interesse; ou
++haverá solidariedade se tiverem se coligado para lesar a parte contrária.
++A mera derrota processual não deve ser confundida com má-fé: a decisão sancionatória precisa
++enquadrar concretamente a conduta em uma das hipóteses legais.
++13. ATO ATENTATÓRIO × LITIGÂNCIA DE MÁ-FÉ
++Ponto Ato atentatório — art. 77 Litigância de má-fé — arts. 79–81
++Condutas violação dos incisos IV e VI do art.
++77
++hipóteses do art. 80
++Multa até 20% do valor da causa >1% e <10% do valor corrigido da causa
++Valor irrisório/
++inestimável
++até 10 salários-mínimos até 10 salários-mínimos
++Destinação da
++multa
++fundos públicos previstos no art. 97 parte contrária
++Advogado/DP/MP sem aplicação direta dos §§2º–5º;
++responsabilidade disciplinar
++art. 79 menciona autor, réu e interveniente; não se
++confunde com sanção disciplinar do procurador
++Pode gerar
++indenização?
++sem prejuízo de outras sanções
++cabíveis
++sim, expressamente no art. 81
++PEGADINHA: não transporte automaticamente percentuais, destinatários ou consequências de
++um regime para o outro.
++• 
++• 
++• 
++• 
++• 
++• 14. DESPESAS PROCESSUAIS — ARTS. 82 A 97
++14.1. Regra de adiantamento — art. 82
++Salvo gratuidade, as partes adiantam as despesas dos atos que realizarem ou requererem.
++O autor adianta as despesas dos atos determinados de ofício pelo juiz ou requeridos pelo Ministério
++Público quando este atua como fiscal da ordem jurídica.
++Ao final, a sentença condena o vencido a reembolsar ao vencedor as despesas que este antecipou.
++14.2. Atualização — Lei 15.109/2025
++O art. 82, §3º, passou a determinar que, nas ações de cobrança — por procedimento comum ou
++especial — e nas execuções ou cumprimentos de sentença de honorários advocatícios, o advogado
++fica dispensado de adiantar custas processuais.
++Ao final, o réu ou executado deverá suprir o pagamento se tiver dado causa ao processo.
++ATUALIZAÇÃO 2025 — ALTA COBRANÇA: não confunda “dispensa de adiantamento” com
++gratuidade da justiça. São institutos diferentes.
++15. CAUÇÃO DO AUTOR RESIDENTE FORA DO BRASIL — ART.
++83
++O autor, brasileiro ou estrangeiro, que:
++residir fora do Brasil; ou
++deixar de residir no Brasil durante o processo,
++prestará caução suficiente para custas e honorários da parte contrária, se não possuir no Brasil bens
++imóveis que assegurem o pagamento.
++Não se exige a caução:
++quando houver dispensa por tratado ou acordo internacional;
++na execução fundada em título extrajudicial;
++no cumprimento de sentença;
++na reconvenção.
++• 
++• 
++• 
++• 
++• 
++• 16. HONORÁRIOS ADVOCATÍCIOS — ART. 85
++16.1. Regra geral
++A sentença condenará o vencido a pagar honorários ao advogado do vencedor.
++Também são devidos honorários:
++na reconvenção;
++no cumprimento de sentença, provisório ou definitivo;
++na execução, resistida ou não;
++nos recursos interpostos,
++cumulativamente, conforme o regime legal.
++16.2. Percentual da regra geral
++Os honorários serão fixados entre 10% e 20% sobre, nesta ordem lógica:
++valor da condenação;
++proveito econômico obtido;
++se não mensurável, valor atualizado da causa.
++São considerados:
++grau de zelo do profissional;
++local da prestação do serviço;
++natureza e importância da causa;
++trabalho realizado e tempo exigido.
++17. HONORÁRIOS CONTRA A FAZENDA PÚBLICA
++Nas causas em que a Fazenda Pública seja parte, o art. 85, §3º, prevê faixas próprias:
++Base econômica Percentual
++até 200 salários-mínimos 10% a 20%
++acima de 200 até 2.000 8% a 10%
++acima de 2.000 até 20.000 5% a 8%
++acima de 20.000 até 100.000 3% a 5%
++acima de 100.000 1% a 3%
++• 
++• 
++• 
++• 
++1. 
++2. 
++3. 
++• 
++• 
++• 
++• A aplicação é progressiva por faixas. Não se escolhe simplesmente o percentual da última faixa para
++incidir sobre todo o montante.
++Se a sentença for ilíquida, a definição do percentual ocorrerá quando o julgado for liquidado.
++REMISSÃO: execução contra a Fazenda e remessa necessária devem ser estudadas nos
++módulos próprios. Aqui interessa o regime de honorários.
++18. EQUIDADE NA FIXAÇÃO DOS HONORÁRIOS
++18.1. CPC
++Quando condenação, proveito econômico ou valor da causa forem líquidos ou liquidáveis, é vedada a
++apreciação equitativa fora das hipóteses legais.
++A equidade é admitida quando:
++o proveito econômico for inestimável;
++o proveito econômico for irrisório; ou
++o valor da causa for muito baixo.
++No regime do art. 85, §8º-A, a fixação equitativa deve observar os parâmetros legais ali previstos.
++18.2. Tema 1.076/STJ
++O STJ firmou que valores elevados, por si sós, não autorizam reduzir os honorários por equidade.
++Devem ser observados os percentuais legais, salvo as hipóteses excepcionais do §8º.
++Atualização constitucional
++A discussão constitucional sobre a aplicação dessa orientação em hipóteses de valor elevado,
++especialmente envolvendo a Fazenda Pública, está relacionada ao Tema 1.255/STF. Portanto, em
++material atualizado, não se deve apresentar a matéria como se não houvesse questão constitucional
++submetida ao Supremo.
++19. HONORÁRIOS RECURSAIS — ART. 85, §11
++O tribunal, ao julgar recurso, pode majorar honorários anteriormente fixados levando em conta o
++trabalho adicional realizado em grau recursal, respeitados os limites legais.
++Tema 1.059/STJ
++A majoração pressupõe que o recurso seja:
++integralmente desprovido; ou
++• 
++• 
++• 
++• não conhecido.
++Não há majoração recursal com fundamento no §11 quando o recurso é provido total ou parcialmente,
++ainda que a alteração seja mínima ou recaia apenas sobre consectários.
++REMISSÃO: aprofundar no módulo de recursos.
++20. OUTRAS REGRAS DE HONORÁRIOS QUE A FCC PODE
++COBRAR
++Perda do objeto
++Os honorários são devidos por quem deu causa ao processo — art. 85, §10.
++Natureza e titularidade
++Os honorários:
++pertencem ao advogado;
++possuem natureza alimentar;
++têm privilégios de créditos trabalhistas;
++não podem ser compensados em caso de sucumbência parcial.
++Em 2026, a Lei 15.472/2026 também alterou o Estatuto da Advocacia para explicitar a natureza
++alimentar dos honorários de prestação profissional, reforçando o regime protetivo já existente no
++CPC.
++Advogado em causa própria
++Honorários também são devidos quando o advogado atua em causa própria.
++Omissão no título judicial
++Se a decisão transitada em julgado for omissa quanto ao direito aos honorários ou ao seu valor, cabe
++ação autônoma para definição e cobrança.
++Advogados públicos
++Podem perceber honorários de sucumbência nos termos da lei.
++21. SUCUMBÊNCIA RECÍPROCA, DESISTÊNCIA E
++RECONHECIMENTO
++21.1. Sucumbência parcial — art. 86
++Se cada litigante for em parte vencedor e vencido, despesas e honorários são distribuídos
++proporcionalmente.
++• 
++• 
++• 
++• 
++• Os honorários não são compensados.
++Se um litigante sucumbir em parte mínima do pedido, o outro responderá integralmente pelas
++despesas e honorários.
++21.2. Vários vencidos — art. 87
++A sentença deve distribuir expressamente a responsabilidade proporcional entre os vencidos.
++Se não fizer essa distribuição, os vencidos responderão solidariamente pelas despesas e honorários.
++21.3. Desistência, renúncia ou reconhecimento — art. 90
++Em regra, despesas e honorários são pagos pela parte que:
++desistiu;
++renunciou;
++reconheceu o pedido.
++Se o réu reconhecer a procedência do pedido e simultaneamente cumprir integralmente a prestação
++reconhecida, os honorários serão reduzidos pela metade.
++22. PERÍCIA E DESPESAS — ART. 95
++Cada parte adianta a remuneração de seu próprio assistente técnico.
++A remuneração do perito é adiantada:
++pela parte que requereu a perícia; ou
++rateada quando a perícia for determinada de ofício ou requerida por ambas as partes.
++Quando o responsável for beneficiário da gratuidade, o CPC prevê custeio por estrutura ou recursos
++públicos, conforme os §§3º a 5º do art. 95.
++23. GRATUIDADE DA JUSTIÇA — ARTS. 98 A 102
++23.1. Quem pode receber
++Pode receber gratuidade a pessoa:
++natural ou jurídica;
++brasileira ou estrangeira;
++que demonstre, conforme o regime aplicável, insuficiência de recursos para custas, despesas
++processuais e honorários advocatícios.
++• 
++• 
++• 
++• 
++• 
++• 
++• 24. ALCANCE DA GRATUIDADE
++A gratuidade pode abranger, entre outros itens legais:
++taxas e custas judiciais;
++selos postais;
++publicação na imprensa oficial;
++indenização de testemunha;
++exames essenciais, inclusive DNA;
++honorários de advogado e perito;
++intérprete e tradutor;
++memória de cálculo;
++depósitos exigidos por lei para recurso, ação ou outros atos inerentes à defesa;
++certos emolumentos notariais e registrais vinculados à decisão ou ao processo.
++24.1. Pode ser parcial
++A gratuidade pode:
++abranger todos os atos;
++abranger apenas alguns atos;
++consistir em redução percentual das despesas;
++admitir parcelamento das despesas processuais.
++PEGADINHA: gratuidade não é necessariamente “tudo ou nada”.
++25. GRATUIDADE NÃO APAGA A SUCUMBÊNCIA
++A concessão da gratuidade não afasta a responsabilidade do beneficiário pelas despesas
++processuais e honorários decorrentes de sua sucumbência.
++Se vencido, essas obrigações ficam sob condição suspensiva de exigibilidade.
++Elas poderão ser executadas se, nos 5 anos seguintes ao trânsito em julgado, o credor demonstrar
++que deixou de existir a insuficiência de recursos que justificou o benefício.
++Passado esse prazo nas condições legais, as obrigações se extinguem.
++A gratuidade também não afasta o dever de pagar multas processuais impostas ao beneficiário.
++DECORE: gratuidade ≠ inexistência da dívida. Em regra, altera a exigibilidade.
++• 
++• 
++• 
++• 
++• 
++• 
++• 
++• 
++• 
++• 
++• 
++• 
++• 
++• 26. PEDIDO DE GRATUIDADE — ART. 99
++Pode ser formulado:
++na petição inicial;
++na contestação;
++na petição de ingresso de terceiro;
++em recurso.
++Se superveniente à primeira manifestação, pode ser pedido por petição simples e não suspende o
++processo.
++O juiz somente pode indeferir o pedido se houver elementos nos autos que indiquem ausência dos
++pressupostos legais e, antes do indeferimento, deve oportunizar à parte a comprovação de sua
++situação.
++27. PESSOA NATURAL — PRESUNÇÃO RELATIVA E ADC 80
++ADC 80 — justiça gratuita para processos novos
++O STF julgou a ADC 80 em 3/9/2026. A ata foi publicada em 16/9/2026: o novo regime alcança somente processos ajuizados a partir dessa data, sem aplicação retroativa automática aos anteriores.
++• Salário mensal de até R$ 5.000,00: presunção relativa de insuficiência. O interessado deve comprovar sua renda; patrimônio ou renda familiar incompatíveis podem afastar a presunção, com análise proporcional do caso.
++• Acima de R$ 5.000,00: é possível obter o benefício, mas deve ser demonstrada concretamente a insuficiência. O valor acompanha a legislação do imposto de renda; sem atualização anual da tabela, corrige-se pelo IPCA.
++• A presunção também alcança assistidos pela Defensoria Pública. O requerente suporta o ônus da prova de renda ou insuficiência; o juiz pode exigir documentação adicional, conforme art. 99, § 2º, do CPC.
++• O STF afastou o parâmetro de 40% do teto do RGPS e declarou inconstitucional o item I da Súmula 463/TST. A declaração isolada não dispensa os critérios probatórios do novo regime.
++• Os parâmetros se aplicam aos demais ramos do Judiciário até adequação legislativa. A decisão ressalva o primeiro grau dos Juizados Especiais (arts. 54 e 55 da Lei 9.099/1995).
++Para processos anteriores ao marco, situe as regras e os precedentes no tempo. O texto literal anterior da CLT, a Súmula 463, I, e o Tema 21/TST não devem ser apresentados como regime atual irrestrito.
++A contratação de advogado particular não impede a gratuidade.
++Tema 1.178/STJ: a tese anterior deve ser estudada no seu âmbito temporal e harmonizada com a ADC 80; não a aplicar como se o STF não houvesse definido novos parâmetros.
++Fonte oficial: https://portal.stf.jus.br/processos/detalhe.asp?incidente=6383356
++28. PESSOA JURÍDICA — PROVA DA INSUFICIÊNCIA
++A pessoa jurídica não recebe a presunção relativa descrita para a pessoa natural; deve comprovar insuficiência. Para a pessoa natural, observar ADC 80 e modulação temporal.
++Por isso, a pessoa jurídica deve comprovar sua impossibilidade de arcar com os encargos
++processuais.
++• 
++• 
++• 
++• 
++1. 
++2. 
++3. Súmula 481/STJ
++A pessoa jurídica, com ou sem fins lucrativos, pode obter gratuidade se demonstrar a impossibilidade
++de suportar os encargos processuais.
++Tema 1.424/STJ — atualização 2026
++O STJ aprofundou a exigência probatória: mera inatividade ou simples queda de faturamento não é
++suficiente, por si só, para demonstrar hipossuficiência da pessoa jurídica.
++A análise deve considerar a situação financeira e patrimonial de maneira ampla, com elementos aptos
++a revelar a efetiva incapacidade econômica.
++Comparação
++Requerente Regime probatório
++Pessoa natural critérios da ADC 80, conforme marco temporal de 16/9/2026
++Pessoa jurídica deve comprovar a insuficiência
++29. IMPUGNAÇÃO E REVOGAÇÃO DA GRATUIDADE
++Deferido o benefício, a parte contrária pode impugnar:
++na contestação;
++na réplica;
++nas contrarrazões de recurso;
++ou por petição simples, nas hipóteses legais.
++O prazo da impugnação é de 15 dias, sem suspensão do processo.
++Se o benefício for revogado:
++a parte deve suportar as despesas de cujo adiantamento foi dispensada;
++em caso de má-fé, pode sofrer multa de até o décuplo do valor, conforme art. 100, parágrafo
++único.
++30. RECURSO CONTRA DECISÃO SOBRE GRATUIDADE
++Contra decisão que:
++indefere gratuidade; ou
++acolhe pedido de revogação,
++• 
++• 
++• 
++• 
++• 
++• 
++• 
++• cabe agravo de instrumento, salvo se a questão for resolvida na sentença, hipótese em que caberá 
++apelação.
++O recorrente fica dispensado de recolher custas até a decisão do relator sobre a gratuidade.
++Confirmada a negativa ou revogação, o relator ou colegiado determinará o recolhimento das custas
++em 5 dias, sob pena de não conhecimento do recurso.
++31. CARÁTER PESSOAL DA GRATUIDADE
++O direito à gratuidade é pessoal.
++Não se estende automaticamente a:
++litisconsorte;
++sucessor do beneficiário.
++É necessário requerimento e deferimento expressos para quem pretende usufruir do benefício.
++32. PROCURADORES — ARTS. 103 A 107
++32.1. Regra de representação por advogado
++A parte será representada em juízo por advogado regularmente inscrito na OAB.
++A parte somente pode postular em causa própria quando tiver habilitação legal.
++33. ATUAÇÃO SEM PROCURAÇÃO — ART. 104
++O advogado, em regra, não pode atuar sem procuração.
++Excepcionalmente, pode fazê-lo para:
++evitar preclusão;
++evitar decadência;
++evitar prescrição;
++praticar ato considerado urgente.
++Nessas hipóteses, deve apresentar a procuração em 15 dias, prazo prorrogável por igual período por
++despacho do juiz.
++Se o ato não for ratificado:
++será ineficaz em relação à pessoa em cujo nome foi praticado;
++o advogado responderá pelas despesas e por perdas e danos.
++• 
++• 
++• 
++• 
++• 
++• 
++• 
++• DECORE: urgência sem mandato = 15 + 15.
++34. PROCURAÇÃO E PODERES ESPECIAIS — ART. 105
++A procuração geral para o foro autoriza os atos processuais em geral, mas alguns atos exigem 
++cláusula específica.
++Exigem poder especial:
++receber citação;
++confessar;
++reconhecer a procedência do pedido;
++transigir;
++desistir;
++renunciar ao direito sobre o qual se funda a ação;
++receber;
++dar quitação;
++firmar compromisso;
++assinar declaração de hipossuficiência econômica.
++Salvo disposição expressa em contrário no instrumento, a procuração dada na fase de conhecimento
++permanece eficaz para as demais fases do processo, inclusive cumprimento de sentença.
++PEGADINHA: “procuração geral para o foro” não equivale a autorização universal para atos de
++disposição.
++35. DIREITOS DO ADVOGADO NOS AUTOS — ART. 107
++Entre os direitos previstos no CPC estão:
++examinar autos, inclusive sem procuração, ressalvado segredo de justiça;
++obter cópias e fazer anotações;
++requerer vista como procurador;
++retirar autos físicos nas hipóteses legais.
++O direito de exame previsto no art. 107 também se aplica aos processos eletrônicos.
++As regras sobre retirada física de autos permanecem relevantes para literalidade legal, embora sua
++incidência prática seja menor em processos integralmente eletrônicos.
++• 
++• 
++• 
++• 
++• 
++• 
++• 
++• 
++• 
++• 
++• 
++• 
++• 
++• 36. SUCESSÃO DAS PARTES E DOS PROCURADORES — ARTS.
++108 A 112
++36.1. Sucessão voluntária — art. 108
++Durante o processo, a sucessão voluntária das partes somente é permitida nos casos expressamente
++previstos em lei.
++37. ALIENAÇÃO DA COISA OU DO DIREITO LITIGIOSO — ART.
++109
++A alienação da coisa ou do direito litigioso por ato entre vivos, a título particular, não altera
++automaticamente a legitimidade das partes.
++O adquirente ou cessionário:
++não pode suceder o alienante ou cedente no processo sem consentimento da parte contrária;
++pode intervir como assistente litisconsorcial do alienante ou cedente;
++fica sujeito aos efeitos da sentença proferida entre as partes originárias.
++Lógica de prova
++Alienou o bem litigioso ≠ saiu automaticamente do processo.
++A sucessão pelo adquirente depende do consentimento da parte contrária.
++REMISSÃO M05: estudar ali a assistência litisconsorcial em profundidade.
++38. MORTE DA PARTE — ART. 110
++Ocorrendo a morte de qualquer das partes, haverá sucessão pelo:
++espólio; ou
++sucessores,
++observadas as regras de suspensão e regularização previstas no CPC.
++Aqui há verdadeira sucessão processual.
++39. REVOGAÇÃO DO MANDATO — ART. 111
++A revogação parte do cliente/mandante.
++• 
++• 
++• 
++• 
++• Quem revoga o mandato deve constituir outro advogado no mesmo ato.
++Se não constituir novo procurador, dispõe de 15 dias; depois disso, aplicam-se as consequências do
++art. 76.
++40. RENÚNCIA DO ADVOGADO — ART. 112
++A renúncia parte do advogado.
++O advogado pode renunciar a qualquer momento, mas deve comprovar que comunicou a renúncia ao
++mandante para que este nomeie sucessor.
++Durante os 10 dias seguintes, o advogado continua representando o cliente, se isso for necessário
++para evitar prejuízo.
++A comunicação é dispensada se:
++a procuração foi outorgada a vários advogados; e
++a parte continuar representada por outro, apesar da renúncia.
++41. REVOGAÇÃO × RENÚNCIA
++Situação Quem rompe o
++mandato?
++Regra principal
++Revogação parte/cliente deve constituir outro advogado; se não o fizer, prazo de 15 dias e
++aplicação do art. 76
++Renúncia advogado deve comunicar o cliente e, quando necessário, continua por 10 dias
++para evitar prejuízo
++DECORE: revogação = cliente; renúncia = advogado.
++42. QUADRO DE PRAZOS QUE MERECEM MEMORIZAÇÃO
++Situação Prazo
++Regularização de procuração após atuação urgente 15 dias, prorrogáveis por igual
++período
++Impugnação à gratuidade 15 dias
++• 
++• Situação Prazo
++Recolhimento de custas após confirmação da negativa/revogação em grau
++recursal
++5 dias
++Constituição de novo procurador após revogação, se não feita no mesmo ato 15 dias
++Permanência do advogado após renúncia, se necessária para evitar prejuízo 10 dias
++Período de possível execução da sucumbência do beneficiário, se
++demonstrada superação da insuficiência
++5 anos após o trânsito em
++julgado
++43. JURISPRUDÊNCIA ESSENCIAL DO M04 — ATUALIZADA
++Tema 1.059/STJ
++Honorários recursais do art. 85, §11: majoração somente quando o recurso for integralmente
++desprovido ou não conhecido; não incide diante de provimento total ou parcial.
++Tema 1.076/STJ
++Em causas de valor elevado, não se substituem os percentuais legais por equidade apenas porque o
++resultado seria alto; equidade é excepcional nas hipóteses do §8º.
++Atenção: Tema 1.255/STF deve ser acompanhado quanto à controvérsia constitucional relacionada à
++matéria.
++Tema 1.178/STJ e ADC 80
++A jurisprudência anterior sobre declaração e critérios objetivos deve ser harmonizada com a ADC 80 nos processos ajuizados desde 16/9/2026. Presunção relativa até R$ 5 mil; acima disso, prova concreta, sem proibição absoluta de concessão.
++Tema 1.424/STJ
++Pessoa jurídica: mera inatividade ou queda de faturamento não basta, isoladamente, para provar
++hipossuficiência; é necessária demonstração mais ampla da situação econômico-financeira.44. ATUALIZAÇÕES LEGISLATIVAS DE ALTA RELEVÂNCIA
++Lei 15.109/2025
++Incluiu o art. 82, §3º, do CPC, dispensando o advogado do adiantamento de custas em cobrança,
++execução e cumprimento de sentença de honorários advocatícios, com responsabilização final de
++quem deu causa ao processo nos termos legais.
++Lei 15.472/2026
++Alterou o Estatuto da Advocacia para explicitar a natureza alimentar dos honorários decorrentes da
++prestação profissional e reforçar seu regime privilegiado.
++45. PEGADINHAS FCC
++Capacidade de ser parte não é capacidade processual.
++Capacidade processual não é capacidade postulatória.
++Curador especial ao réu citado por edital/hora certa depende de revelia e ausência de
++advogado.
++Separação absoluta de bens afasta a exigência de consentimento conjugal do art. 73 para ação
++real imobiliária.
++O art. 76 exige oportunidade de saneamento antes da extinção, revelia ou não conhecimento do
++recurso.
++A multa do art. 77 pode chegar a 20%; a multa da litigância de má-fé fica, em regra, acima de
++1% e abaixo de 10%.
++Advogados, defensores e membros do MP não recebem diretamente a multa dos §§2º–5º do
++art. 77.
++Gratuidade não apaga sucumbência; em regra, suspende a exigibilidade.
++Gratuidade não afasta multas processuais.
++Pessoa natural: observar os critérios e o marco temporal da ADC 80; pessoa jurídica: prova da insuficiência.
++Advogado particular não impede gratuidade.
++Gratuidade pode ser parcial ou por parcelamento.
++Ação de honorários: após a Lei 15.109/2025, não confundir dispensa de adiantamento de custas
++com gratuidade.
++Sucumbência parcial não permite compensação dos honorários.
++Honorários pertencem ao advogado e têm natureza alimentar.
++Honorários contra Fazenda obedecem a faixas progressivas.
++Recurso parcialmente provido não gera majoração do §11 segundo o Tema 1.059/STJ.
++Procuração geral para o foro não inclui automaticamente poderes especiais do art. 105.
++Atuação urgente sem procuração exige regularização em 15 dias, prorrogáveis por mais 15.
++Alienação da coisa litigiosa não troca automaticamente a parte.
++1. 
++2. 
++3. 
++4. 
++5. 
++6. 
++7. 
++8. 
++9. 
++10. 
++11. 
++12. 
++13. 
++14. 
++15. 
++16. 
++17. 
++18. 
++19. 
++20. Sucessão pelo adquirente depende de consentimento da parte contrária.
++Revogação do mandato vem do cliente; renúncia vem do advogado.
++Após renunciar, o advogado pode ter de continuar atuando por 10 dias para evitar prejuízo.
++46. DECORE — REVISÃO DE 2 MINUTOS
++Capacidade
++art. 70: capacidade para estar em juízo;
++art. 71: incapaz representado/assistido;
++art. 72: curador especial;
++art. 73: consentimento/citação de cônjuge;
++art. 75: quem representa cada ente;
++art. 76: primeiro sana, depois sanciona.
++Conduta
++art. 77: deveres;
++ato atentatório: IV e VI + multa até 20%;
++art. 80: hipóteses de má-fé;
++art. 81: multa >1% e <10% + indenização + honorários + despesas.
++Custos e honorários
++art. 82: adiantamento;
++Lei 15.109/2025: §3º, honorários sem adiantamento de custas pelo advogado;
++art. 85: honorários;
++regra: 10% a 20%;
++Fazenda: faixas progressivas;
++honorários pertencem ao advogado;
++natureza alimentar;
++sem compensação.
++Gratuidade
++pessoa natural ou jurídica pode receber;
++natural: ADC 80, R$ 5 mil e marco temporal;
++jurídica: precisa provar;
++não elimina sucumbência;
++exigibilidade pode ficar suspensa por 5 anos;
++não elimina multas;
++pode ser parcial/parcelada.
++21. 
++22. 
++23. 
++• 
++• 
++• 
++• 
++• 
++• 
++• 
++• 
++• 
++• 
++• 
++• 
++• 
++• 
++• 
++• 
++• 
++• 
++• 
++• 
++• 
++• 
++• 
++• 
++• Procuradores
++art. 104: urgência sem procuração = 15 + 15;
++art. 105: poderes especiais;
++revogação = cliente;
++renúncia = advogado + 10 dias se necessário.
++Alienação litigiosa
++não muda automaticamente legitimidade;
++sucessão do adquirente exige consentimento da parte contrária;
++adquirente pode ser assistente litisconsorcial;
++sentença alcança adquirente/cessionário.
++47. QUESTÕES DE FIXAÇÃO — ESTILO FCC
++Questão 1
++Um réu revel foi citado pessoalmente e não constituiu advogado. Nessa situação, somente a revelia
++impõe nomeação de curador especial.
++Gabarito: ERRADO. O art. 72 prevê hipóteses específicas: réu preso revel e réu revel citado por edital
++ou com hora certa, enquanto não houver advogado. Revelia decorrente de citação pessoal,
++isoladamente, não basta.
++Questão 2
++Detectada irregularidade na representação do autor, o juiz deve extinguir imediatamente o processo
++sem resolução do mérito.
++Gabarito: ERRADO. Primeiro deve suspender o processo e conceder prazo razoável para
++saneamento. A consequência somente aparece se o vício não for corrigido.
++Questão 3
++A multa decorrente de ato atentatório à dignidade da justiça previsto no art. 77 pode atingir 20% do
++valor da causa.
++Gabarito: CERTO. É o limite legal, conforme a gravidade da conduta.
++Questão 4
++A litigância de má-fé gera apenas multa, sendo vedada indenização em favor da parte contrária.
++Gabarito: ERRADO. O art. 81 permite multa, indenização, honorários e despesas.
++• 
++• 
++• 
++• 
++• 
++• 
++• 
++• Questão 5
++A gratuidade da justiça afasta definitivamente a responsabilidade do beneficiário por honorários
++sucumbenciais.
++Gabarito: ERRADO. A responsabilidade permanece; a exigibilidade fica submetida ao regime do art.
++98, §3º.
++Questão 6
++A pessoa jurídica sem fins lucrativos goza da mesma presunção de hipossuficiência da pessoa
++natural.
++Gabarito: ERRADO. A pessoa jurídica deve demonstrar insuficiência; não recebe a presunção da pessoa natural, hoje delimitada pela ADC 80 nos processos novos.
++Questão 7
++Segundo a ADC 80, salário acima de R$ 5.000,00 impede em qualquer caso a concessão de gratuidade em processo ajuizado desde 16/9/2026.
++Gabarito: ERRADO. Acima do patamar, cabe demonstração concreta da insuficiência; não há impedimento absoluto. A presunção relativa e seu marco temporal devem ser observados.
++Questão 8
++A procuração geral para o foro autoriza automaticamente o advogado a confessar, transigir e receber
++citação.
++Gabarito: ERRADO. Esses atos exigem poderes especiais expressos no instrumento.
++Questão 9
++O advogado pode praticar ato urgente sem procuração e apresentá-la no prazo de 15 dias,
++prorrogável por igual período.
++Gabarito: CERTO. Regra do art. 104.
++Questão 10
++A alienação da coisa litigiosa transfere automaticamente ao adquirente a posição processual do
++alienante.
++Gabarito: ERRADO. A alienação não altera automaticamente a legitimidade. A sucessão depende do
++consentimento da parte contrária.
++Questão 11
++Segundo o Tema 1.059/STJ, recurso parcialmente provido autoriza majoração dos honorários
++recursais se a alteração for mínima.Gabarito: ERRADO. O provimento total ou parcial afasta a majoração do art. 85, §11, segundo a tese
++repetitiva.
++Questão 12
++Depois da Lei 15.109/2025, o advogado que cobra judicialmente seus honorários tornou-se
++automaticamente beneficiário da gratuidade da justiça.
++Gabarito: ERRADO. A lei criou dispensa de adiantamento de custas nas hipóteses do art. 82, §3º; isso
++não equivale à concessão de gratuidade.
++48. CHECKLIST FINAL DE DOMÍNIO
++Antes de encerrar o M04, o aluno deve conseguir responder sem consulta:
++Qual a diferença entre capacidade de ser parte, processual e postulatória?
++Em quais hipóteses existe curador especial?
++Quando o cônjuge precisa consentir e quando ambos precisam ser citados?
++Quem representa União, Município, espólio, massa falida e condomínio?
++O que o juiz deve fazer antes de extinguir por irregularidade de representação?
++Quais condutas geram ato atentatório à dignidade da justiça?
++Qual a diferença entre multa do art. 77 e multa dos arts. 80–81?
++O que mudou com a Lei 15.109/2025?
++Quais são as faixas de honorários contra a Fazenda Pública?
++Quando é possível apreciação equitativa?
++Qual é a tese do Tema 1.059/STJ?
++Por que gratuidade não significa perdão da sucumbência?
++Qual a diferença de prova entre pessoa natural e pessoa jurídica para gratuidade?
++O que dizem os Temas 1.178 e 1.424/STJ?
++Quais atos exigem poder especial na procuração?
++Quanto tempo o advogado tem para juntar procuração após ato urgente?
++O que ocorre com a legitimidade após alienação da coisa litigiosa?
++Qual a diferença entre representação, substituição e sucessão?
++Qual a diferença entre revogação e renúncia do mandato?
++Se essas respostas estiverem firmes, o núcleo de prova do módulo está dominado.
++49. FONTES DE ATUALIZAÇÃO DA VERSÃO FINAL
++Código de Processo Civil, Lei 13.105/2015, texto compilado vigente em 27/09/2026.
++Lei 15.109/2025.
++• 
++• 
++• 
++• 
++• 
++• 
++• 
++• 
++• 
++• 
++• 
++• 
++• 
++• 
++• 
++• 
++• 
++• 
++• 
++• 
++• Lei 15.472/2026 e Estatuto da Advocacia compilado.
++STJ, Tema Repetitivo 1.059.
++STJ, Tema Repetitivo 1.076.
++STJ, Tema Repetitivo 1.178.
++STJ, Tema Repetitivo 1.424.
++STJ, Súmula 481.
++STF, Tema de Repercussão Geral 1.255.
++Fonte Central M04 da BASE COMPLETA.
++Mapa temático do PDF doutrinário de 2024 constante do pacote.
++Nota editorial: como as páginas do livro de 2024 não vieram incorporadas ao ZIP, esta versão não
++atribui ao autor trechos ou conclusões específicas que não possam ser conferidos diretamente. A
++doutrina foi usada apenas no nível temático já validado pelo mapa do pacote; legislação e
++jurisprudência atual prevalecem.
++• 
++• 
++• 
++• 
++• 
++• 
++• 
++• 
++• 
++
++REVISÃO JURÍDICA PONTUAL — 16/10/2026
++Tema: ADC 80 e repercussões na gratuidade; demais temas do módulo sujeitos a revisão integral.
++Fonte oficial: https://portal.stf.jus.br/processos/detalhe.asp?incidente=6383356

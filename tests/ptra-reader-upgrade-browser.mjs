@@ -82,3 +82,25 @@ test('PTRA: desktop e celular preservam teoria e permitem responder com botões'
   }
  }finally{await browser.close();}
 });
+test('PTRA: revisão jurídica aparece no leitor móvel e os gabaritos corrigidos funcionam',async()=>{
+ const browser=await chromium.launch({headless:true});
+ try{
+  const page=await browser.newPage({viewport:{width:390,height:844}});
+  await setup(page);
+  for(const n of [4,10,15,16])for(const kind of ['resumido','completo']){
+   const m=packed.modules.find(m=>m.number===n),meta=w.PTRA_NATIVE_INDEX.modules.find(m=>m.number===n);
+   await page.evaluate(render,{meta,mat:m[kind],kind});
+   assert.ok((await page.locator('.ptra-book-flow').innerText()).includes('REVISÃO JURÍDICA PONTUAL'));
+   assert.equal(await page.locator('.ptra-book-source summary').innerText(),'Conferir texto integral com as revisões indicadas');
+   const dimensions=await page.evaluate(()=>({width:innerWidth,scroll:document.documentElement.scrollWidth}));
+   assert.ok(dimensions.scroll<=dimensions.width+2,'Overflow M'+n+' '+kind+': '+JSON.stringify(dimensions));
+   if(kind==='completo'&&[10,15].includes(n)){
+    const card=page.locator('.ptra-book-qcard').first();
+    await card.locator('[data-letter="B"]').click();
+    await card.locator('[data-ptra-check]').click();
+    assert.ok(await card.locator('[data-letter="B"]').evaluate(el=>el.classList.contains('correct')));
+   }
+  }
+  await page.close();
+ }finally{await browser.close();}
+});

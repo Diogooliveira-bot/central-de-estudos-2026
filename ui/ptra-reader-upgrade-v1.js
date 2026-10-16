@@ -1,5 +1,5 @@
 /* Base Completa — Processo do Trabalho: apostila contínua e revisão interativa.
-   Camada apenas de apresentação; o pacote jurídico original permanece intacto. */
+   A revisão pontual do texto é identificada pelos metadados do material. */
 (function (global) {
   'use strict';
   if (global.PtraReaderUpgrade) return;
@@ -112,8 +112,8 @@
       '<header class="ptra-book-cover"><span>BASE COMPLETA • DIREITO PROCESSUAL DO TRABALHO</span>'+
       '<h1>'+esc(meta.title)+'</h1><p>'+(kind==='resumido'?'TEORIA RESUMIDA • PRIMEIRA LEITURA E REVISÃO':'TEORIA COMPLETA • ESTUDO INTEGRAL')+'</p></header>'+
       nav+'<div class="ptra-book-flow">'+formatted.html+'</div>'+
-      '<details class="ptra-book-source"><summary>Conferir transcrição integral do PDF original</summary>'+
-      '<p>Transcrição preservada para conferência de fidelidade, inclusive os enunciados, gabaritos e eventuais seções não identificadas automaticamente.</p>'+
+      '<details class="ptra-book-source"><summary>'+(mat?.legalReview?'Conferir texto integral com as revisões indicadas':'Conferir transcrição integral do PDF original')+'</summary>'+
+      '<p>'+(mat?.legalReview?'Texto com revisão jurídica pontual em '+esc(mat.legalReview.date)+'. O PDF de origem e o infográfico permanecem na edição original.':'Transcrição preservada para conferência de fidelidade, inclusive os enunciados, gabaritos e eventuais seções não identificadas automaticamente.')+'</p>'+
       '<pre>'+esc(original)+'</pre></details>'+
       review+'</article>';
   }

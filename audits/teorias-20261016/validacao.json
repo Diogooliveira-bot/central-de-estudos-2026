@@ -1,0 +1,49 @@
+{
+  "date": "2026-10-16",
+  "generalTests": {
+    "command": "npm test",
+    "passed": 76,
+    "failed": 0
+  },
+  "readerTests": {
+    "command": "node --test tests/ptra-reader-upgrade-unit.mjs",
+    "passed": 3,
+    "failed": 0
+  },
+  "syntaxChecks": {
+    "passed": [
+      "content/cf/m07-native-data.js",
+      "content/cpc/m04-native-data.js",
+      "ui/ptra-native-study-v1.js",
+      "ui/ptra-reader-upgrade-v1.js",
+      "sw.js"
+    ]
+  },
+  "sourceExtraction": {
+    "texts": 349,
+    "empty": 0,
+    "words": 1171738
+  },
+  "ptraIntegrity": {
+    "modules": 21,
+    "questions": 315,
+    "writtenKeysCompared": 300,
+    "keyMismatchesAfter": 0,
+    "interactiveKeysCorrected": 3,
+    "unchangedModules": 16,
+    "progressIdentifiersPreserved": true
+  },
+  "coverage": {
+    "modulesWithTargetedCorrections": 7,
+    "textModesWithTargetedCorrections": 14,
+    "modulesIntegrallyCertified": 0
+  },
+  "visualBrowser": {
+    "status": "blocked",
+    "reason": "Chromium ausente; playwright install chromium falhou com download inválido/truncado",
+    "domInteraction": "passed"
+  },
+  "productionChanged": false,
+  "integratedMain": "6d7f238dcdf5ffab3b2b280d0cb7217915651c8e",
+  "appVersionPreserved": "6.6.129"
+}

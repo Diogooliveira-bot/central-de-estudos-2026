@@ -1,0 +1,11 @@
+{
+  "suite": "npm test",
+  "passed": 64,
+  "failed": 0,
+  "modifiedContentFilesSyntaxChecked": 12,
+  "exactSourceReplacementOccurrences": 26,
+  "diffCheck": "passed",
+  "productionPublished": false,
+  "legalReviewComplete": false,
+  "browserAllModulesValidated": false
+}
