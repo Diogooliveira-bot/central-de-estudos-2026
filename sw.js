@@ -126,7 +126,7 @@ self.addEventListener('fetch',function(event){
 
   if(request.method!=='GET'||url.pathname.startsWith('/api/'))return;
 
-  if(request.mode==='navigate'&&(url.pathname==='/'||url.pathname==='/index.html'||url.pathname==='/central-v119.html')){
+  if(request.mode==='navigate'&&(url.pathname==='/'||url.pathname==='/index.html'||url.pathname==='/central-v119.html'||url.pathname==='/central-de-questoes')){
     event.respondWith(
       caches.open(CACHE).then(function(cache){
         var entry=new URL(request.url);entry.pathname=BOOT;entry.searchParams.delete('direct');

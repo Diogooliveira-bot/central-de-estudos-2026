@@ -2,7 +2,7 @@
   "date": "2026-10-16",
   "generalTests": {
     "command": "npm test",
-    "passed": 71,
+    "passed": 76,
     "failed": 0
   },
   "readerTests": {
@@ -43,5 +43,7 @@
     "reason": "Chromium ausente; playwright install chromium falhou com download inválido/truncado",
     "domInteraction": "passed"
   },
-  "productionChanged": false
+  "productionChanged": false,
+  "integratedMain": "6d7f238dcdf5ffab3b2b280d0cb7217915651c8e",
+  "appVersionPreserved": "6.6.129"
 }

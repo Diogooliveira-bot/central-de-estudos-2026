@@ -1,4 +1,10 @@
 {
+  "rewrites": [
+    {
+      "source": "/central-de-questoes",
+      "destination": "/central-v119.html"
+    }
+  ],
   "redirects": [
     {
       "source": "/portugues",

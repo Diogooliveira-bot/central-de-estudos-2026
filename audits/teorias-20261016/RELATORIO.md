@@ -38,7 +38,7 @@ PDFs de origem e infográficos originais **não foram reeditados**. Os textos de
 
 ## Validação
 
-**71 testes gerais aprovados e 3 testes adicionais do leitor aprovados, sem falhas nessas execuções finais.** Resultados em `validacao.json`:
+**76 testes gerais aprovados e 3 testes adicionais do leitor aprovados, sem falhas nessas execuções finais.** Resultados em `validacao.json`:
 
 - Testes gerais e regressões de conteúdo jurídico e interação do leitor.
 - Checagem sintática dos quatro arquivos JS alterados e do service worker.
@@ -49,3 +49,7 @@ PDFs de origem e infográficos originais **não foram reeditados**. Os textos de
 ## Trabalho ainda necessário
 
 Continuar o cotejo jurídico módulo por módulo nas oito disciplinas de Direito. As lacunas de Trabalho M08 e Processo do Trabalho M08 e as pendências editoriais/ortográficas anteriores não foram encerradas nesta rodada. Português e RLM demandam revisão linguística e pedagógica, não jurídica. O relatório de 15/10 permanece como histórico; os estados atuais dos achados estão no inventário e em `achados.json` desta rodada.
+
+## Conciliação com a versão atual da central
+
+A branch incorporou `main` em `6d7f238dcdf5ffab3b2b280d0cb7217915651c8e`, que contém a Central de Questões nativa (#98). Preservados rota, API, recursos de interface e versão 6.6.129. Seis conflitos de versão/cache/testes foram conciliados sem reverter o trabalho de main. Após essa integração, `npm test` passou com 76 testes e o leitor com mais 3 testes. As teorias corrigidas permaneceram idênticas à rodada anterior.

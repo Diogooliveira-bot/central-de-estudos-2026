@@ -8,7 +8,7 @@ test('a experiência v3 modular é carregada em ordem e participa do modo offlin
   const [boot, offline, serviceWorker, pkg] = await Promise.all([
     read('central-v119.html'), read('central-offline-files-v66172.json'), read('sw.js'), read('package.json'),
   ]);
-  assert.match(boot, /var APP_VERSION='6\.6\.125'/);
+  assert.match(boot, /var APP_VERSION='6\.6\.129'/);
   const build=JSON.parse(offline).build;
   assert.ok(boot.includes(`var BUILD='${build}'`));
   const ordered = [
@@ -27,7 +27,7 @@ test('a experiência v3 modular é carregada em ordem e participa do modo offlin
   assert.doesNotMatch(boot, /student-polish-v1|student-experience-v2\.js/);
   assert.doesNotMatch(offline, /student-polish-v1|student-experience-v2/);
   assert.ok(serviceWorker.includes(`central-${build}`));
-  assert.equal(JSON.parse(pkg).version, '6.6.125');
+  assert.equal(JSON.parse(pkg).version, '6.6.129');
 });
 
 test('núcleo separa execução, armazenamento e falhas das interfaces', async () => {
