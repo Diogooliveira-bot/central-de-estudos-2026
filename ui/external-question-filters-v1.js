@@ -82,7 +82,7 @@
       .trim();
     return text;
   }
-  const catalogFilterTitle = (filter) => simpleCatalogTitle(filter.displayTitle) || simpleCatalogTitle(filter.title) || simpleCatalogTitle(filter.moduleTitle) || filter.title;
+  const catalogFilterTitle = (filter) => (filter.revision > 0 ? simpleCatalogTitle(filter.title) : '') || simpleCatalogTitle(filter.displayTitle) || simpleCatalogTitle(filter.title) || simpleCatalogTitle(filter.moduleTitle) || filter.title;
   function catalogModuleTitle(rows) {
     const explicit = rows.map((row) => simpleCatalogTitle(row.moduleTitle)).find(Boolean);
     if (explicit) return explicit;
@@ -410,9 +410,10 @@
   }
   function filterCard(filter) {
     const stats = statsFor(filter);
+    const title = catalogFilterTitle(filter);
     return `<article class="bcq-card" data-bcq-platform="${filter.platform}" data-bcq-key="${attr(filter.stableKey)}">
       ${filter.status === 'available' ? `<a class="bcq-card-copy" href="${attr(filter.url)}" target="_blank" rel="noopener noreferrer" title="Abrir filtro original">` : '<span class="bcq-card-copy" aria-disabled="true">'}
-        <b>${esc(filter.code)} · ${esc(filter.title)}</b>
+        <b title="${attr(title)}">${esc(title)}</b>
         <small>ID ${esc(filter.id)} · ${filter.count.toLocaleString('pt-BR')} questões${filter.status === 'unavailable' ? ' · indisponível' : ''}</small>
       ${filter.status === 'available' ? '</a>' : '</span>'}
       ${ringMarkup(stats.percent)}

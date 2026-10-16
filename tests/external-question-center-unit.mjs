@@ -95,8 +95,9 @@ test('rodapé do módulo preserva o visual aprovado e não repete filtros', asyn
   await settle(dom.window);
   const panel = dom.window.document.querySelector('[data-bcq-module-panel="penal:M03"]');
   assert.equal(panel.querySelector('.bcq-module-filter-head'), null);
-  assert.equal(panel.querySelector('[data-bcq-platform="qc"] .bcq-card-copy b').textContent, 'M03 · PEN M03 Teor. Crim.');
-  assert.match(panel.querySelector('[data-bcq-platform="tec"] .bcq-card-copy b').textContent, /^M03\.1 · PENAL M03 Teoria do Crime$/);
+  assert.equal(panel.querySelector('[data-bcq-platform="qc"] .bcq-card-copy b').textContent, 'Teoria do Crime');
+  assert.equal(panel.querySelector('[data-bcq-platform="tec"] .bcq-card-copy b').textContent, 'Teoria do Crime');
+  assert.doesNotMatch(panel.querySelector('.bcq-card-copy b').textContent, /M03|PEN/);
   assert.equal(panel.querySelectorAll('[data-bcq-key="qc:15288411"]').length, 1);
   assert.equal(panel.querySelectorAll('[data-bcq-key="tec:105849634"]').length, 1);
   assert.equal(dom.window.document.querySelector('[data-test-original]').getAttribute('data-bcq-original'), '1');
@@ -118,7 +119,7 @@ test('módulo nativo com tópico interno recebe somente um painel QC/TEC', async
   await settle(dom.window);
   dom.window.QC_CENTRAL_SHARING_LINKS.items.push({
     discipline: 'Direito Administrativo', disciplineKey: 'administrativo', code: 'M03', status: 'VALIDADO', public: true,
-    moduleTitle: 'Atos Administrativos', title: 'ADM M03 Geral', kind: 'general', id: '15270003', quantity: 90,
+    moduleTitle: 'Atos Administrativos', title: 'Atos Administrativos', notebookTitle: 'ADM M03 Geral', kind: 'general', id: '15270003', quantity: 90,
     link: 'https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15270003'
   });
   const subject = dom.window.document.createElement('article');
@@ -130,6 +131,7 @@ test('módulo nativo com tópico interno recebe somente um painel QC/TEC', async
   assert.equal(subject.querySelectorAll('[data-bcq-module-panel="administrativo:M03"]').length, 1);
   assert.equal(subject.querySelector('[data-adm-native] > [data-bcq-module-panel]')?.dataset.bcqModulePanel, 'administrativo:M03');
   assert.equal(subject.querySelector('.topic-item > [data-bcq-module-panel]'), null);
+  assert.equal(subject.querySelector('[data-bcq-platform="qc"] .bcq-card-copy b')?.textContent, 'Atos Administrativos');
 });
 
 test('mantém os filtros originais visíveis se o painel compacto não puder ser montado', async () => {
