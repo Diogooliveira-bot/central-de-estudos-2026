@@ -63,16 +63,18 @@ test('IN 40: distinção entre TST, STF e capítulos mistos permanece nas quatro
 
 test('Pacote: módulos fora da revisão e identificadores de progresso foram preservados',()=>{
  const baseline=JSON.parse(read('audits/teorias-20261016/integridade-base.json'));
+ const roundBaseline=JSON.parse(read('audits/teorias-20261016-alunos/integridade-base.json'));
  assert.equal(data.modules.length,21);
  for(const m of data.modules){
   const old=baseline.modules.find(b=>b.number===m.number);
+  if(![7,17].includes(m.number))assert.equal(crypto.createHash('sha256').update(JSON.stringify(m)).digest('hex'),roundBaseline.modules.find(b=>b.number===m.number).sha256,'M'+m.number+' alterado nesta rodada');
   assert.equal(m.uid,old.uid);
   for(const kind of ['resumido','completo']){
    assert.equal(m[kind].pdf,old[kind].pdf);
    assert.equal(m[kind].pages.length,old[kind].pageCount);
    assert.deepEqual(m[kind].questions.map(q=>q.n),old[kind].questionNumbers);
   }
-  if(![4,10,14,15,16].includes(m.number))assert.equal(crypto.createHash('sha256').update(JSON.stringify(m)).digest('hex'),old.sha256,'M'+m.number+' alterado fora do escopo');
+  if(![4,7,10,14,15,16,17].includes(m.number))assert.equal(crypto.createHash('sha256').update(JSON.stringify(m)).digest('hex'),old.sha256,'M'+m.number+' alterado fora do escopo');
  }
 });
 
@@ -92,5 +94,52 @@ test('Leitor: resposta corrigida é reconhecida e histórico anterior permanece 
    assert.equal(w.localStorage.getItem(key),old);
    assert.equal(el.querySelector('.ptra-book-source summary').textContent,'Conferir texto integral com as revisões indicadas');
   }
+ }finally{dom.window.close();}
+});
+
+test('Prescrição: intervalo legal, protesto e cancelamentos aparecem no material estudado',()=>{
+ for(const kind of ['resumido','completo']){
+  const mat=module(7)[kind],t=mat.pages.join('\n');
+  assert.doesNotMatch(t,/10\/06/);assert.match(t,/12\/06\/2020/);assert.match(t,/141 dias/);
+  for(const theme of [39,46,91,170])assert.match(t,new RegExp('Tema '+theme+'\\/TST'));
+  assert.match(t,/268[^\n]*cancelada|268 cancelada/);
+  assert.match(t,/independentemente de prova de dificuldade|sem exigir prova de dificuldade/);
+  assert.match(t,/protesto[\s\S]*interrompe|Protesto[\s\S]*interruptivo/);
+ }
+ const q=module(7).completo.questions[9];assert.equal(q.answer,'B');
+ assert.match(q.options.find(o=>o.letter==='B').text,/12\/06\/2020/);
+ assert.match(q.comment,/141 dias/);
+});
+
+test('Prescrição intercorrente: execução e questões dependentes incluem garantias do Tema 39',()=>{
+ for(const n of [7,17])for(const kind of ['resumido','completo']){
+  const t=text(n,kind);
+  for(const rule of [/inércia qualificada/,/intimação pessoal do credor/,/advertência|advertir/,/ouvir|ouvida|oitiva/])assert.match(t,rule);
+  assert.equal(module(n)[kind].legalReview.scope,'targeted');
+ }
+ const q=module(17).completo.questions[5];assert.equal(q.answer,'B');
+ assert.match(q.stem,/11\/11\/2017/);assert.match(q.stem,/oitiva prévia/);
+});
+
+test('Infográficos: correções são exibidas ao abrir a imagem e não afetam histórico do aluno',async()=>{
+ const dom=new JSDOM('<main></main>',{runScripts:'outside-only',url:'https://central.test/'});
+ try{
+  const w=dom.window;w.URL.createObjectURL=()=> 'blob:infographic-test';w.URL.revokeObjectURL=()=>{};
+  w.fetch=async()=>({ok:true,blob:async()=>new w.Blob(['image'])});
+  w.eval(read('content/ptra/ptra-native-index.js'));w.eval(read('ui/ptra-native-study-v1.js'));
+  const key='base-completa:ptra:v2:m07:reading:completo',history='{"pct":52,"scroll":901}';
+  w.localStorage.setItem(key,history);
+  await w.PtraNative.openImage(7);
+  const notes=w.document.querySelector('.ptra-infographic-corrections');
+  assert.equal(notes.querySelectorAll('li').length,3);
+  assert.ok(w.document.querySelector('.ptra-native-image-viewer').classList.contains('ptra-image-with-corrections'));
+  assert.equal(w.document.querySelector('#ptra-ov-pct').textContent,'COM CORREÇÕES');
+  assert.match(notes.textContent,/12\/06\/2020/);assert.match(notes.textContent,/Tema 170/);assert.match(notes.textContent,/Tema 39/);
+  assert.ok(notes.compareDocumentPosition(w.document.querySelector('.ptra-native-image-viewer img')) & w.Node.DOCUMENT_POSITION_FOLLOWING);
+  w.document.querySelector('[data-img-plus]').click();
+  assert.equal(w.document.querySelector('.ptra-native-image-viewer img').style.width,'125%');
+  await w.PtraNative.openImage(17);assert.equal(w.document.querySelectorAll('.ptra-infographic-corrections li').length,1);
+  await w.PtraNative.openImage(1);assert.equal(w.document.querySelector('.ptra-infographic-corrections'),null);
+  assert.equal(w.localStorage.getItem(key),history);
  }finally{dom.window.close();}
 });

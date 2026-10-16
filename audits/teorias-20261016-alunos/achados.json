@@ -1,0 +1,95 @@
+{
+  "referenceDate": "2026-10-16",
+  "findings": [
+    {
+      "id": "J11",
+      "title": "Data inicial da Lei 14.010/2020 e Tema 46",
+      "modules": [
+        7
+      ],
+      "modes": [
+        "resumido",
+        "completo"
+      ],
+      "status": "corrigido pontualmente na branch de auditoria",
+      "sources": [
+        "Lei14010",
+        "Tema46"
+      ],
+      "report": "RELATORIO.md",
+      "integralReviewComplete": false
+    },
+    {
+      "id": "J12",
+      "title": "Protesto judicial e Tema 170",
+      "modules": [
+        7
+      ],
+      "modes": [
+        "resumido",
+        "completo"
+      ],
+      "status": "corrigido pontualmente na branch de auditoria",
+      "sources": [
+        "Tema170"
+      ],
+      "report": "RELATORIO.md",
+      "integralReviewComplete": false
+    },
+    {
+      "id": "J13",
+      "title": "Prescrição de ofício e Tema 91",
+      "modules": [
+        7
+      ],
+      "modes": [
+        "resumido",
+        "completo"
+      ],
+      "status": "corrigido pontualmente na branch de auditoria",
+      "sources": [
+        "Tema91"
+      ],
+      "report": "RELATORIO.md",
+      "integralReviewComplete": false
+    },
+    {
+      "id": "J14",
+      "title": "Garantias da prescrição intercorrente no Tema 39",
+      "modules": [
+        7,
+        17
+      ],
+      "modes": [
+        "resumido",
+        "completo"
+      ],
+      "status": "corrigido pontualmente na branch de auditoria",
+      "sources": [
+        "CLT",
+        "Tema39",
+        "Tema39noticia"
+      ],
+      "report": "RELATORIO.md",
+      "integralReviewComplete": false
+    },
+    {
+      "id": "J15",
+      "title": "Enunciados cancelados pela Resolução 225/2025",
+      "modules": [
+        7,
+        17
+      ],
+      "modes": [
+        "resumido",
+        "completo"
+      ],
+      "status": "corrigido pontualmente na branch de auditoria",
+      "sources": [
+        "Res225"
+      ],
+      "report": "RELATORIO.md",
+      "integralReviewComplete": false
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "date": "2026-10-16",
+  "baseSha": "8145f11baf4559204b601211920a41c82680dc83",
+  "generalTests": {
+    "command": "npm test",
+    "passed": 79,
+    "failed": 0
+  },
+  "readerTests": {
+    "command": "node --test tests/ptra-reader-upgrade-unit.mjs",
+    "passed": 3,
+    "failed": 0
+  },
+  "extractedTexts": 349,
+  "emptyTexts": 0,
+  "ptraModules": 21,
+  "ptraQuestions": 315,
+  "writtenKeysCompared": 300,
+  "unchangedModulesThisRound": 19,
+  "changedModules": [
+    7,
+    17
+  ],
+  "preserved": [
+    "module UID",
+    "question numbers",
+    "page counts",
+    "answer letters in this round",
+    "localStorage namespaces and existing progress/history"
+  ],
+  "infographics": {
+    "visuallyInspected": [
+      7,
+      17
+    ],
+    "sourceImagesRedrawn": false,
+    "correctionsShownBeforeImage": true,
+    "domInteractionTest": true
+  },
+  "visualBrowserTest": {
+    "status": "not-run",
+    "reason": "Chromium indisponível; falha de download já registrada na rodada anterior"
+  },
+  "productionPublished": false,
+  "integralLegalReviewComplete": false
+}

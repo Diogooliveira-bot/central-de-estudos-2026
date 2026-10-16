@@ -1,0 +1,54 @@
+{
+  "referenceDate": "2026-10-16",
+  "sources": [
+    {
+      "id": "CLT",
+      "url": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+      "scope": "arts. 11 e 11-A",
+      "consultation": "texto legal oficial compilado"
+    },
+    {
+      "id": "Lei14010",
+      "url": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2020/lei/l14010.htm",
+      "scope": "arts. 3 e 21; DOU 12/06/2020",
+      "consultation": "conteúdo oficial recuperado integralmente pelo mecanismo de pesquisa"
+    },
+    {
+      "id": "Tema46",
+      "url": "https://ww2.trt2.jus.br/noticias/noticias/noticia/tst-determina-que-suspensao-de-prazos-prescricionais-da-pandemia-aplica-se-a-justica-do-trabalho",
+      "scope": "bienal, quinquenal, 141 dias e ausência de exigência de dificuldade de acesso",
+      "consultation": "conteúdo indexado oficial; abertura direta 403"
+    },
+    {
+      "id": "Tema170",
+      "url": "https://portal.trt3.jus.br/internet/jurisprudencia/incidentes-suscitados-irr-iac-arginc-tst/casos-repetitivos-tst",
+      "scope": "protesto judicial após a Reforma",
+      "consultation": "tabela oficial indexada; abertura direta 403"
+    },
+    {
+      "id": "Tema39",
+      "url": "https://www.tst.jus.br/documents/d/guest/irr039",
+      "scope": "requisitos da prescrição intercorrente; tese divulgada em setembro/2026",
+      "consultation": "trechos indexados da ficha oficial e notícia do TST; abertura direta 403"
+    },
+    {
+      "id": "Tema39noticia",
+      "url": "https://www.tst.jus.br/-/tst-define-tese-sobre-extincao-do-direito-de-cobrar-divida-trabalhista",
+      "scope": "notícia institucional de 22/09/2026",
+      "consultation": "trechos indexados oficiais; não afirmada leitura integral do acórdão"
+    },
+    {
+      "id": "Tema91",
+      "url": "https://www.tst.jus.br/documents/d/guest/irr091",
+      "scope": "ofício, arguição, instância ordinária e exceção intercorrente",
+      "consultation": "trechos indexados da ficha oficial e notícia institucional de 24/09/2026"
+    },
+    {
+      "id": "Res225",
+      "url": "https://juslaboris.tst.jus.br/bitstream/handle/20.500.12178/251919/2025_res0225.pdf?sequence=1&isAllowed=y",
+      "scope": "cancelamentos; especialmente Súmulas 114, 268, 294, 452",
+      "consultation": "PDF oficial baixado; texto integral extraído e lido",
+      "sha256": "5b8230476360ee4fbfd1c8c6a45ae8447a36ba4a7c62a9aab8a42f7f9f19f7e4"
+    }
+  ]
+}

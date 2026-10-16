@@ -1,0 +1,110 @@
+{
+  "baseSha": "8145f11baf4559204b601211920a41c82680dc83",
+  "modules": [
+    {
+      "number": 1,
+      "uid": "ptra-m01",
+      "sha256": "6d4f89c2e3970df01f774c3cb3f26405629f5a208774c14f9a4e5f39a76838a8"
+    },
+    {
+      "number": 2,
+      "uid": "ptra-m02",
+      "sha256": "bb879e9fe8b7fc907cd616985b6662c34dded4c0e4400f41a800eab0928537a9"
+    },
+    {
+      "number": 3,
+      "uid": "ptra-m03",
+      "sha256": "3edd60e2f85955558d374b38a1b43df7ac2acc44b23a59a74bc5f9fd1f8569f9"
+    },
+    {
+      "number": 4,
+      "uid": "ptra-m04",
+      "sha256": "ddf2f34833438d56e3e71a70ec63f774e8a4e9c923764d19b96ffe2fc024502a"
+    },
+    {
+      "number": 5,
+      "uid": "ptra-m05",
+      "sha256": "12919a65688622fa727dcc31e625eec56039ea83b492158e2b0234339ff493b5"
+    },
+    {
+      "number": 6,
+      "uid": "ptra-m06",
+      "sha256": "0699c6396113cb36fc42e946315c3941d6b9c8dba0e292b002ae8044e033fe4c"
+    },
+    {
+      "number": 7,
+      "uid": "ptra-m07",
+      "sha256": "123e66975c941689b2dad35b4fd501b5e6037b6a6ad2b99830618fba356ce7cb"
+    },
+    {
+      "number": 8,
+      "uid": "ptra-m08",
+      "sha256": "3edb4d2f45179bf91327d4932f28f0a83410cd5f50a059cc85be6a7af28dd653"
+    },
+    {
+      "number": 9,
+      "uid": "ptra-m09",
+      "sha256": "d6b032e6cebfcc4809d55d26605bb83663715e3caed9f0b9f1e1b203acdb8bc6"
+    },
+    {
+      "number": 10,
+      "uid": "ptra-m10",
+      "sha256": "5de5c236b9b58209365ba3a5ad18ac8029cccc108ee66b28876c48b25fc2b79f"
+    },
+    {
+      "number": 11,
+      "uid": "ptra-m11",
+      "sha256": "ad52b6b90860a66f2a47ba81684dd4619598fa67b9c15129385d28da305b7a40"
+    },
+    {
+      "number": 12,
+      "uid": "ptra-m12",
+      "sha256": "4bfc7f92f750b01b7d97ba044daf332df73dae8e4fd4eda4ed88b5ea40b1b581"
+    },
+    {
+      "number": 13,
+      "uid": "ptra-m13",
+      "sha256": "041a43d6b6ad20fde553ca445e989e8ef06b72959e2c3e18309c4467b5f9a5dd"
+    },
+    {
+      "number": 14,
+      "uid": "ptra-m14",
+      "sha256": "e7baeecc6baf43239c45820df1b4332dec11eecc875ee52bce2898d325da10c7"
+    },
+    {
+      "number": 15,
+      "uid": "ptra-m15",
+      "sha256": "356c3df9f6de9fab6cecfdb1a092dc277756692d08ab4fcbfa96a755cfbe08cc"
+    },
+    {
+      "number": 16,
+      "uid": "ptra-m16",
+      "sha256": "2115e4dd71b8fa24c8e841b038658f18262dc8b6640e1f49cf385deef217620d"
+    },
+    {
+      "number": 17,
+      "uid": "ptra-m17",
+      "sha256": "dd4b09a5346d3e98dbc22f028c60b55d6c1c53c87292ea4afe9a69925e30e8c6"
+    },
+    {
+      "number": 18,
+      "uid": "ptra-m18",
+      "sha256": "f483dac1dcbee1799b9eb56198244750e882ec81cb3b4aab829b52ea91e056eb"
+    },
+    {
+      "number": 19,
+      "uid": "ptra-m19",
+      "sha256": "c23f1bda33fc99ee7a20f4e9987c3345fd6839a4f772a74d9c127476ac172d26"
+    },
+    {
+      "number": 20,
+      "uid": "ptra-m20",
+      "sha256": "bdb26d65c5f5aee52407c1f6dfff27a8ac25803a6ed6a5914e4ea2976e17c2e5"
+    },
+    {
+      "number": 21,
+      "uid": "ptra-m21",
+      "sha256": "0c3a3534cdf421c132fc261f52a819978a65b90d656316b585517ac711cdcfba"
+    }
+  ]
+}
