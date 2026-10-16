@@ -24,12 +24,12 @@ function filterData() {
   };
 }
 
-function setup({ role = 'aluno', overrides = [] } = {}) {
+function setup({ role = 'aluno', overrides = [], failModuleMount = false } = {}) {
   const dom = new JSDOM(`<!doctype html><html><body>
     <div id="centralSidebar"><div class="nav"><button>Hoje</button><div class="label">Ferramentas</div></div></div>
     <div class="workspace"><section id="homeView" class="view"></section></div><span id="crumb"></span>
     <section id="studentMorePanel"><div class="student-more-grid"></div></section>
-    <section id="subjects"><article class="subject" data-id="penal"><div class="cf-module open" data-cf="p3"><div class="cf-module-body"></div></div></article></section>
+    <section id="subjects"><article class="subject" data-id="penal"><div class="cf-module open" data-cf="p3"><div class="cf-module-body"><section class="qc-platform-sharing" data-test-original>Filtro original</section></div></div></article></section>
   </body></html>`, { url: 'https://preview.example.test/central-de-questoes', runScripts: 'outside-only', pretendToBeVisual: true });
   const { window } = dom;
   const data = filterData();
@@ -46,6 +46,13 @@ function setup({ role = 'aluno', overrides = [] } = {}) {
     }
     return { ok: true, json: async () => ({ canManage: role === 'admin', overrides }) };
   };
+  if (failModuleMount) {
+    const append = window.Element.prototype.append;
+    window.Element.prototype.append = function (...nodes) {
+      if (nodes.some((node) => node?.matches?.('[data-bcq-module-panel]'))) throw new Error('Falha de montagem simulada');
+      return append.apply(this, nodes);
+    };
+  }
   window.eval(source);
   window.document.dispatchEvent(new window.Event('DOMContentLoaded'));
   return dom;
@@ -92,6 +99,14 @@ test('rodapé do módulo usa um único título e nomes curtos sem repetir códig
   assert.equal(panel.querySelector('[data-bcq-platform="tec"] .bcq-card-copy b').textContent, 'Filtro geral');
   assert.doesNotMatch(Array.from(panel.querySelectorAll('.bcq-card-copy b')).map((node) => node.textContent).join(' '), /PENAL M03|PEN M03/);
   assert.equal(panel.querySelectorAll('[data-bcq-key="qc:15288411"]').length, 1);
+  assert.equal(dom.window.document.querySelector('[data-test-original]').getAttribute('data-bcq-original'), '1');
+});
+
+test('mantém os filtros originais visíveis se o painel compacto não puder ser montado', async () => {
+  const dom = setup({ failModuleMount: true });
+  await settle(dom.window);
+  assert.equal(dom.window.document.querySelector('[data-bcq-module-panel]'), null);
+  assert.equal(dom.window.document.querySelector('[data-test-original]').hasAttribute('data-bcq-original'), false);
 });
 
 test('catálogo organiza QC e TEC em colunas próprias por módulo', async () => {

@@ -54,7 +54,7 @@ try {
   await page.waitForFunction(() => document.documentElement.dataset.centralReady === 'true' && typeof openPerformance === 'function' && window.CentralStudentUX?.version === '3');
   await page.waitForSelector('#performanceView:not(.hidden)');
   assert.equal(new URL(page.url()).searchParams.get('view'), 'performance');
-  assert.equal(await page.locator('meta[name="central-source-version"]').getAttribute('content'), '6.6.130');
+  assert.equal(await page.locator('meta[name="central-source-version"]').getAttribute('content'), '6.6.131');
   assert.match(await page.locator('.central-version-v41').innerText(), /6\.6\.126/);
   assert.equal(await page.locator('html').evaluate((node) => node.classList.contains('student-experience-v3')), true);
   assert.deepEqual(await page.locator('#centralSidebar [data-student-primary-nav] .nav-text').allTextContents(), ['Hoje','Plano','Disciplinas','Progresso','Mais']);

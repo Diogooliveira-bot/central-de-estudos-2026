@@ -495,8 +495,12 @@
     ];
     return Array.from(new Set(document.querySelectorAll(selectors.join(','))));
   }
+  const ORIGINAL_PANEL_SELECTOR = '.qc-platform-sharing,.cpc-sharing-panel,.tec-validated-panel,.tec-context-panel,.adm-native-sharing,.adm-native-tec-filter,.cpp-native-tec-panel,.civil-native-sharing,.ptra-native-panel.ptra-native-tec,.adm-native-external-entry,.csp-tec-panel';
   function hideOriginalPanels(body) {
-    body.querySelectorAll('.qc-platform-sharing,.cpc-sharing-panel,.tec-validated-panel,.tec-context-panel,.adm-native-sharing,.adm-native-tec-filter,.cpp-native-tec-panel,.civil-native-sharing,.ptra-native-panel.ptra-native-tec,.adm-native-external-entry,.csp-tec-panel').forEach((node) => node.setAttribute('data-bcq-original', '1'));
+    body.querySelectorAll(ORIGINAL_PANEL_SELECTOR).forEach((node) => node.setAttribute('data-bcq-original', '1'));
+  }
+  function showOriginalPanels(body) {
+    body.querySelectorAll(ORIGINAL_PANEL_SELECTOR).forEach((node) => node.removeAttribute('data-bcq-original'));
   }
   function updateModuleMetric(element, filters) {
     const unique = new Map();
@@ -525,25 +529,41 @@
       const filters = filtersForModule(identity.disciplineKey, identity.module);
       const body = moduleBody(element);
       if (!body) return;
-      hideOriginalPanels(body);
       const mountedPanels = Array.from(body.querySelectorAll(':scope > [data-bcq-module-panel]'));
       let panel = mountedPanels.shift() || null;
-      mountedPanels.forEach((duplicate) => duplicate.remove());
       if (!filters.length) {
-        panel?.remove();
+        mountedPanels.forEach((duplicate) => duplicate.remove());
+        panel?.remove(); showOriginalPanels(body);
         return;
       }
-      const signature = filters.map((filter) => { const stats = statsFor(filter); return `${filter.stableKey}:${filter.title}:${filter.count}:${filter.url}:${filter.status}:${filter.revision}:${stats.answered}:${stats.correct}`; }).join('|');
-      const discipline = filters[0]?.discipline || DISCIPLINES[identity.disciplineKey] || identity.disciplineKey;
-      const topic = catalogModuleTitle(filters);
-      const markup = `<section class="bcq-module-panels" data-bcq-module-panel="${identity.disciplineKey}:${identity.module}" data-bcq-signature="${attr(signature)}" aria-label="Filtros de questões de ${attr(discipline)}, ${attr(topic)}"><header class="bcq-module-filter-head"><span>QUESTÕES EXTERNAS</span><h3>${esc(discipline)} · ${esc(identity.module)}${topic ? ` — ${esc(topic)}` : ''}</h3><p>Escolha a plataforma e abra o filtro desejado.</p></header><div class="bcq-module-platforms">${platformPanel(filters, 'qc')}${platformPanel(filters, 'tec')}</div></section>`;
-      if (panel && panel.dataset.bcqSignature === signature) { updateModuleMetric(element, filters); return; }
-      if (panel) panel.outerHTML = markup;
-      else {
-        const notes = body.querySelector('.cms-note-final,.adm-native-notes,.ptra-native-notes');
-        if (notes) notes.insertAdjacentHTML('beforebegin', markup); else body.insertAdjacentHTML('beforeend', markup);
+      try {
+        // O token de apresentação força a reconstrução de painéis gerados por versões anteriores.
+        const signature = `compact-v2|${filters.map((filter) => { const stats = statsFor(filter); return `${filter.stableKey}:${filter.title}:${filter.count}:${filter.url}:${filter.status}:${filter.revision}:${stats.answered}:${stats.correct}`; }).join('|')}`;
+        if (panel && panel.dataset.bcqSignature === signature) {
+          mountedPanels.forEach((duplicate) => duplicate.remove());
+          hideOriginalPanels(body); updateModuleMetric(element, filters); return;
+        }
+        const discipline = filters[0]?.discipline || DISCIPLINES[identity.disciplineKey] || identity.disciplineKey;
+        const topic = catalogModuleTitle(filters);
+        const markup = `<section class="bcq-module-panels" data-bcq-module-panel="${identity.disciplineKey}:${identity.module}" data-bcq-signature="${attr(signature)}" aria-label="Filtros de questões de ${attr(discipline)}, ${attr(topic)}"><header class="bcq-module-filter-head"><span>QUESTÕES EXTERNAS</span><h3>${esc(discipline)} · ${esc(identity.module)}${topic ? ` — ${esc(topic)}` : ''}</h3><p>Escolha a plataforma e abra o filtro desejado.</p></header><div class="bcq-module-platforms">${platformPanel(filters, 'qc')}${platformPanel(filters, 'tec')}</div></section>`;
+        const template = document.createElement('template');
+        template.innerHTML = markup.trim();
+        const replacement = template.content.firstElementChild;
+        if (!replacement?.matches('[data-bcq-module-panel]')) throw new Error('Painel compacto inválido');
+        if (panel) panel.replaceWith(replacement);
+        else {
+          const notes = body.querySelector('.cms-note-final,.adm-native-notes,.ptra-native-notes');
+          if (notes) notes.before(replacement); else body.append(replacement);
+        }
+        if (!replacement.isConnected) throw new Error('Painel compacto não foi inserido');
+        mountedPanels.forEach((duplicate) => duplicate.remove());
+        hideOriginalPanels(body);
+        updateModuleMetric(element, filters);
+      } catch (reason) {
+        body.querySelectorAll(':scope > [data-bcq-module-panel]').forEach((node) => node.remove());
+        showOriginalPanels(body);
+        console.warn('[Central de Questões] Mantendo os filtros originais do módulo.', reason);
       }
-      updateModuleMetric(element, filters);
     });
   }
 
