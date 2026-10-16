@@ -1,0 +1,567 @@
+[
+  {
+    "subject": "ptra",
+    "module": 4,
+    "mode": "resumido",
+    "page": 6,
+    "before": "ADI 5766 - como a F05 apresenta\n    • art. 790-B, caput e § 4º -> inconstitucionais;\n    • art. 791-A, § 4º -> inconstitucional;\n    • art. 844, § 2º -> constitucional.\n\nNa leitura da apostila, o beneficiário sucumbente na pretensão objeto de perícia não deve sofrer desconto de\nseus créditos para pagar honorários periciais; o encargo é atribuído à União conforme a construção apresentada.\n\nA ausência injustificada do reclamante à audiência continua podendo gerar custas mesmo para beneficiário da\njustiça gratuita, salvo comprovação de motivo legalmente justificável em 15 dias, conforme o art. 844, § 2º\ntrabalhado pela F05.\n\n\n\n",
+    "after": "ADI 5766 — alcance da decisão\n• Honorários periciais: foi afastada a cobrança do beneficiário da justiça gratuita fundada no art. 790-B, inclusive o uso automático de créditos judiciais previsto no § 4º. Permanece a regra de sucumbência no objeto da perícia para quem não é beneficiário; o custeio do beneficiário cabe à União, conforme a regulamentação aplicável.\n• Honorários advocatícios: a decisão não elimina a condenação do beneficiário. O art. 791-A, § 4º, mantém a exigibilidade suspensa por dois anos após o trânsito em julgado. O credor deve provar que cessou a insuficiência; a obtenção de créditos judiciais, por si só, não autoriza desconto. Decorrido o prazo sem essa demonstração, extingue-se a obrigação.\n• Art. 844, § 2º: permanece constitucional a cobrança de custas pela ausência do reclamante, mesmo beneficiário, salvo motivo legalmente justificável comprovado em 15 dias.\n\n",
+    "occurrences": 1
+  },
+  {
+    "subject": "ptra",
+    "module": 4,
+    "mode": "completo",
+    "page": 13,
+    "before": "54. Justiça gratuita e honorários periciais - ADI 5766\nA F05 apresenta primeiro a disciplina trazida pela Reforma e depois os efeitos da ADI 5766.\n\nSegundo a apostila, o STF declarou inconstitucionais: - caput do art. 790-B; - § 4º do art. 790-B; - § 4º do art. 791-\nA.\n\nA consequência tratada no M4 é que o beneficiário da justiça gratuita sucumbente na pretensão objeto da perícia\nnão deve sofrer desconto de seus créditos para pagar honorários periciais, recaindo o encargo sobre a União\nconforme a construção apresentada pela fonte.\n\n\n",
+    "after": "54. Justiça gratuita e honorários — ADI 5766\nADI 5766 — alcance da decisão\n• Honorários periciais: foi afastada a cobrança do beneficiário da justiça gratuita fundada no art. 790-B, inclusive o uso automático de créditos judiciais previsto no § 4º. Permanece a regra de sucumbência no objeto da perícia para quem não é beneficiário; o custeio do beneficiário cabe à União, conforme a regulamentação aplicável.\n• Honorários advocatícios: a decisão não elimina a condenação do beneficiário. O art. 791-A, § 4º, mantém a exigibilidade suspensa por dois anos após o trânsito em julgado. O credor deve provar que cessou a insuficiência; a obtenção de créditos judiciais, por si só, não autoriza desconto. Decorrido o prazo sem essa demonstração, extingue-se a obrigação.\n• Art. 844, § 2º: permanece constitucional a cobrança de custas pela ausência do reclamante, mesmo beneficiário, salvo motivo legalmente justificável comprovado em 15 dias.\n\n",
+    "occurrences": 1
+  },
+  {
+    "subject": "ptra",
+    "module": 4,
+    "mode": "completo",
+    "page": 14,
+    "before": "Não confunda na ADI 5766\nSegundo a F05: - art. 790-B, caput e § 4º -> inconstitucionais; - art. 791-A, § 4º -> inconstitucional; - art. 844, § 2º\n-> constitucional.\n\n\n",
+    "after": "Não confunda na ADI 5766\nPerícia do beneficiário: custeio pela União. Honorários advocatícios: condenação possível, com suspensão de exigibilidade por dois anos e sem desconto automático de créditos. Custas por ausência injustificada: art. 844, § 2º, constitucional.\n\n",
+    "occurrences": 1
+  },
+  {
+    "subject": "ptra",
+    "module": 4,
+    "mode": "resumido",
+    "page": 9,
+    "before": "ADI 5766: memorize o contraste entre art. 790-B/791-A §4º e art. 844 §2º conforme a F05.",
+    "after": "ADI 5766: distinga custeio da perícia, suspensão dos honorários advocatícios por dois anos e custas por ausência injustificada.",
+    "occurrences": 1
+  },
+  {
+    "subject": "ptra",
+    "module": 4,
+    "mode": "resumido",
+    "page": 12,
+    "before": "Considere a leitura da ADI 5766 feita pela F05. Assinale a alternativa correta.",
+    "after": "Sobre os efeitos da ADI 5766 na justiça gratuita trabalhista, assinale a alternativa correta.",
+    "occurrences": 1
+  },
+  {
+    "subject": "ptra",
+    "module": 4,
+    "mode": "resumido",
+    "page": 12,
+    "before": "A F05 apresenta como inconstitucionais o caput.*?mantém como constitucional o art\\. 844, § 2º\\.",
+    "after": "É possível condenar o beneficiário em honorários advocatícios, com exigibilidade suspensa por dois anos e sem desconto automático de créditos; permanece constitucional o art. 844, § 2º.",
+    "occurrences": 1
+  },
+  {
+    "subject": "ptra",
+    "module": 4,
+    "mode": "resumido",
+    "page": 12,
+    "before": "a F05 destaca exatamente esse contraste\\..*?sido invalidado\\.",
+    "after": "A ADI 5766 não suprimiu toda condenação em honorários advocatícios. Permanece a suspensão por dois anos, cabendo ao credor provar a cessação da insuficiência. O art. 844, § 2º, foi considerado constitucional.",
+    "occurrences": 1
+  },
+  {
+    "subject": "ptra",
+    "module": 4,
+    "mode": "resumido",
+    "page": 10,
+    "before": "Este material preserva o conteúdo previamente validado.*?Pontos sensíveis continuam marcados para verificação futura\\.",
+    "after": "Revisão jurídica pontual em 16/10/2026: ADI 5766, sem declaração de revisão integral das demais matérias. Fontes oficiais: https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm ; https://www.trt3.jus.br/publicacoes_ej/revista_111/files/basic-html/page863.html",
+    "occurrences": 1
+  },
+  {
+    "subject": "ptra",
+    "module": 4,
+    "mode": "completo",
+    "page": 19,
+    "before": "5. ADI 5766: tratamento do art. 790-B, art. 791-A, § 4º, e art. 844, § 2º segue a leitura da apostila.",
+    "after": "5. ADI 5766: alcance corrigido em 16/10/2026 a partir da CLT compilada e da jurisprudência oficial; honorários advocatícios mantêm suspensão por dois anos.",
+    "occurrences": 1
+  },
+  {
+    "subject": "ptra",
+    "module": 4,
+    "mode": "completo",
+    "page": 19,
+    "before": "Fonte utilizada: exclusivamente F05.",
+    "after": "Fonte-base: F05, com revisão pontual da ADI 5766 em 16/10/2026.",
+    "occurrences": 1
+  },
+  {
+    "subject": "ptra",
+    "module": 4,
+    "mode": "completo",
+    "page": 19,
+    "before": "Conhecimento jurídico externo: não incorporado como conteúdo do módulo.",
+    "after": "Atualização jurídica incorporada: alcance da ADI 5766. Fontes: https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm ; https://www.trt3.jus.br/publicacoes_ej/revista_111/files/basic-html/page863.html",
+    "occurrences": 1
+  },
+  {
+    "subject": "ptra",
+    "module": 10,
+    "mode": "resumido",
+    "page": 4,
+    "before": "Súmula 338/TST\\s*[—.]\\s*Controles.*?verificação futura\\.",
+    "after": "Súmula 338/TST — Controles de jornada e presunções probatórias. O art. 74, § 2º, da CLT exige registro de entrada e saída nos estabelecimentos com mais de 20 trabalhadores, desde a Lei 13.874/2019. A redação histórica do item I da Súmula 338 menciona mais de 10 empregados e deve ser situada no período dos fatos. A falta injustificada dos controles obrigatórios gera presunção relativa da jornada alegada, admitida prova em contrário. Não confundir o texto histórico do verbete com o limite legal atual.",
+    "occurrences": 1
+  },
+  {
+    "subject": "ptra",
+    "module": 10,
+    "mode": "completo",
+    "page": 3,
+    "before": "Súmula 338/TST\\s*[—.]\\s*Controles.*?verificação futura\\.",
+    "after": "Súmula 338/TST — Controles de jornada e presunções probatórias. O art. 74, § 2º, da CLT exige registro de entrada e saída nos estabelecimentos com mais de 20 trabalhadores, desde a Lei 13.874/2019. A redação histórica do item I da Súmula 338 menciona mais de 10 empregados e deve ser situada no período dos fatos. A falta injustificada dos controles obrigatórios gera presunção relativa da jornada alegada, admitida prova em contrário. Não confundir o texto histórico do verbete com o limite legal atual.",
+    "occurrences": 1
+  },
+  {
+    "subject": "ptra",
+    "module": 10,
+    "mode": "completo",
+    "page": 6,
+    "before": "Súmula 338/TST\\s*[—.]\\s*Controles.*?verificação futura\\.",
+    "after": "Súmula 338/TST — Controles de jornada e presunções probatórias. O art. 74, § 2º, da CLT exige registro de entrada e saída nos estabelecimentos com mais de 20 trabalhadores, desde a Lei 13.874/2019. A redação histórica do item I da Súmula 338 menciona mais de 10 empregados e deve ser situada no período dos fatos. A falta injustificada dos controles obrigatórios gera presunção relativa da jornada alegada, admitida prova em contrário. Não confundir o texto histórico do verbete com o limite legal atual.",
+    "occurrences": 1
+  },
+  {
+    "subject": "ptra",
+    "module": 10,
+    "mode": "resumido",
+    "page": 3,
+    "before": "LACUNA / VERIFICAÇÃO FUTURA\n A F22 também cita a Resolução CSJT 66/2010 e o parâmetro de R$ 1.000,00. O dado é preservado como conteúdo\n da fonte, mas não deve ser tratado como atualização jurídica definitiva.\n\n\n ",
+    "after": "HONORÁRIOS PERICIAIS — CUSTEIO PELA UNIÃO\nA Resolução CSJT 247/2019, consolidada com as alterações de 2026, substituiu a Resolução 66/2010, expressamente revogada. O Ato CSJT 97/2025 fixa o limite nacional de R$ 1.500,00 para arbitramentos a partir de 1º/1/2026, conforme a data da decisão de arbitramento.\nEsse limite se refere ao pagamento com recursos da União vinculados à justiça gratuita; não é teto geral de perícias pagas pelas partes (art. 21, § 3º). O TRT pode fixar parâmetros dentro do limite nacional. Em perícias de saúde com deslocamento do perito ao local de trabalho, o art. 21, § 5º, admite acréscimo de até 30%.\nO art. 22 exige cumulativamente concessão de justiça gratuita, fixação judicial dos honorários, sucumbência do beneficiário no objeto da perícia e trânsito em julgado. A redação consolidada considera a Resolução CSJT 450/2026; não se aplica indistintamente antecipação de pagamento suspensa por essa resolução.\n\n",
+    "occurrences": 1
+  },
+  {
+    "subject": "ptra",
+    "module": 10,
+    "mode": "completo",
+    "page": 6,
+    "before": "A F22 trabalha o art. 790-B da CLT e registra, na literalidade apresentada, a responsabilidade da parte\n sucumbente na pretensão objeto da perícia, inclusive beneficiário da justiça gratuita, além de regras sobre limite,\n parcelamento, vedação de adiantamento e pagamento pela União em determinadas hipóteses.\n Entretanto, a própria fonte chama atenção para a ADI 5766, julgada pelo STF em 20/10/2021, com publicação\n em 5/11/2021, e orienta que o entendimento vinculante do STF seja considerado nas provas. Portanto, a leitura\n do art. 790-B no material não pode ignorar a ressalva jurisprudencial feita pela própria F22.\n\n LACUNA / VERIFICAÇÃO FUTURA\n A F22 cita a Resolução CSJT 66/2010 e parâmetro de R$ 1.000,00 para honorários periciais em assistência\n judiciária. Este valor é preservado como dado da fonte, mas marcado para auditoria normativa posterior.\n\n\n ",
+    "after": "A regra do art. 790-B é a responsabilidade da parte sucumbente no objeto da perícia, ressalvada a justiça gratuita após a ADI 5766. O beneficiário não deve suportar a despesa por desconto automático de créditos: o encargo é custeado pela União, nos termos da regulamentação. O § 3º veda exigir adiantamento para realização de perícia.\n\nHONORÁRIOS PERICIAIS — CUSTEIO PELA UNIÃO\nA Resolução CSJT 247/2019, consolidada com as alterações de 2026, substituiu a Resolução 66/2010, expressamente revogada. O Ato CSJT 97/2025 fixa o limite nacional de R$ 1.500,00 para arbitramentos a partir de 1º/1/2026, conforme a data da decisão de arbitramento.\nEsse limite se refere ao pagamento com recursos da União vinculados à justiça gratuita; não é teto geral de perícias pagas pelas partes (art. 21, § 3º). O TRT pode fixar parâmetros dentro do limite nacional. Em perícias de saúde com deslocamento do perito ao local de trabalho, o art. 21, § 5º, admite acréscimo de até 30%.\nO art. 22 exige cumulativamente concessão de justiça gratuita, fixação judicial dos honorários, sucumbência do beneficiário no objeto da perícia e trânsito em julgado. A redação consolidada considera a Resolução CSJT 450/2026; não se aplica indistintamente antecipação de pagamento suspensa por essa resolução.\n\n",
+    "occurrences": 1
+  },
+  {
+    "subject": "ptra",
+    "module": 10,
+    "mode": "resumido",
+    "page": 5,
+    "before": "VERIFICAÇÃO FUTURA - SÚMULA 338\n    A F22 emprega a referência a 'mais de 10 empregados'. Este PDF não atualiza o dado silenciosamente; ele deve ser\n    auditado antes da integração final.\n\n\n    ",
+    "after": "REGISTRO DE JORNADA\nArt. 74, § 2º: mais de 20 trabalhadores por estabelecimento. Considere a legislação aplicável ao período dos fatos ao ler a referência histórica da Súmula 338.\n\n",
+    "occurrences": 1
+  },
+  {
+    "subject": "ptra",
+    "module": 10,
+    "mode": "completo",
+    "page": 4,
+    "before": "LACUNA / VERIFICAÇÃO FUTURA\n Na Súmula 338/TST, a F22 utiliza a referência 'mais de 10 empregados'. O dado é mantido por fidelidade histórica à\n fonte e deve ser confrontado com a legislação/jurisprudência vigente na auditoria jurídica geral.\n\n\n ",
+    "after": "REGISTRO DE JORNADA\nArt. 74, § 2º: mais de 20 trabalhadores por estabelecimento. Considere a legislação aplicável ao período dos fatos ao ler a referência histórica da Súmula 338.\n\n",
+    "occurrences": 1
+  },
+  {
+    "subject": "ptra",
+    "module": 10,
+    "mode": "completo",
+    "page": 5,
+    "before": "No procedimento sumaríssimo, a fonte menciona prazo comum de 20 dias.*?dado é mantido no quadro de números do módulo\\.",
+    "after": "No procedimento sumaríssimo, as partes têm prazo comum de 5 dias para manifestação sobre o laudo (CLT, art. 852-H, § 6º). Se a audiência for interrompida, seu prosseguimento e a solução do processo devem ocorrer em até 30 dias, salvo motivo relevante justificado pelo juiz (§ 7º). São prazos de atos diferentes.",
+    "occurrences": 1
+  },
+  {
+    "subject": "ptra",
+    "module": 10,
+    "mode": "resumido",
+    "page": 4,
+    "before": "Perícia no sumaríssimo\\s+20 dias\\s+Prazo comum.*?fonte\\.",
+    "after": "Manifestação sobre laudo no sumaríssimo    5 dias    CLT, art. 852-H, § 6º.\n\n  Continuação da audiência interrompida    até 30 dias    CLT, art. 852-H, § 7º; ressalvado motivo relevante justificado.",
+    "occurrences": 1
+  },
+  {
+    "subject": "ptra",
+    "module": 10,
+    "mode": "resumido",
+    "page": 4,
+    "before": "Honorários periciais - Res\\. CSJT\\s+R\\$ 1\\.000,00.*?FUTURA\\.",
+    "after": "Honorários periciais custeados pela União    R$ 1.500,00    Ato CSJT 97/2025: arbitramento desde 1º/1/2026; observar a exceção de até 30% do art. 21, § 5º, da Resolução 247/2019.",
+    "occurrences": 1
+  },
+  {
+    "subject": "ptra",
+    "module": 10,
+    "mode": "completo",
+    "page": 8,
+    "before": "Perícia no sumaríssimo\\s+20 dias\\s+Prazo comum.*?fonte\\.",
+    "after": "Manifestação sobre laudo no sumaríssimo    5 dias    CLT, art. 852-H, § 6º.\n\n  Continuação da audiência interrompida    até 30 dias    CLT, art. 852-H, § 7º; ressalvado motivo relevante justificado.",
+    "occurrences": 1
+  },
+  {
+    "subject": "ptra",
+    "module": 10,
+    "mode": "completo",
+    "page": 8,
+    "before": "Honorários periciais - Res\\. CSJT\\s+R\\$ 1\\.000,00.*?FUTURA\\.",
+    "after": "Honorários periciais custeados pela União    R$ 1.500,00    Ato CSJT 97/2025: arbitramento desde 1º/1/2026; observar a exceção de até 30% do art. 21, § 5º, da Resolução 247/2019.",
+    "occurrences": 1
+  },
+  {
+    "subject": "ptra",
+    "module": 10,
+    "mode": "completo",
+    "page": 7,
+    "before": "20 dias\\s+Prazo comum no contexto pericial do sumaríssimo\\.\\s+CLT 852-H, §6º / F22",
+    "after": "5 dias    Manifestação comum das partes sobre o laudo no sumaríssimo.    CLT 852-H, § 6º\n\n  Até 30 dias    Prosseguimento da audiência interrompida e solução, salvo motivo relevante justificado.    CLT 852-H, § 7º",
+    "occurrences": 1
+  },
+  {
+    "subject": "ptra",
+    "module": 10,
+    "mode": "completo",
+    "page": 9,
+    "before": "20 dias - contexto pericial do sumaríssimo segundo a F22.",
+    "after": "5 dias: manifestação comum sobre o laudo no sumaríssimo; até 30 dias: continuação da audiência interrompida e solução, com ressalva do art. 852-H, § 7º.",
+    "occurrences": 1
+  },
+  {
+    "subject": "ptra",
+    "module": 10,
+    "mode": "resumido",
+    "page": 5,
+    "before": "Não tratar a referência da F22 na Súmula 338 como atualização normativa definitiva.",
+    "after": "Não confundir o limite legal atual de mais de 20 trabalhadores com a redação histórica da Súmula 338.",
+    "occurrences": 1
+  },
+  {
+    "subject": "ptra",
+    "module": 10,
+    "mode": "completo",
+    "page": 9,
+    "before": "Não tratar os dois pontos marcados como 'verificação futura' como atualização definitiva.",
+    "after": "Não aplicar o limite de honorários custeados pela União a toda perícia paga pelas partes; observar o art. 21, §§ 3º e 5º, da Resolução CSJT 247/2019.",
+    "occurrences": 1
+  },
+  {
+    "subject": "ptra",
+    "module": 10,
+    "mode": "resumido",
+    "page": 6,
+    "before": "LACUNAS / VERIFICAÇÃO FUTURA\n•\n      Súmula 338/TST: conferir, em auditoria jurídica posterior, a referência quantitativa usada pela F22.\n•\n      Resolução CSJT 66/2010 / R$ 1.000,00: conferir vigência e atualização antes da integração definitiva.\n•\n      Não houve atualização externa silenciosa nesta versão.\n\n\n\n\n",
+    "after": "FONTES DA REVISÃO JURÍDICA PONTUAL — 16/10/2026\nCLT, arts. 74, § 2º, 790-B e 852-H, §§ 6º e 7º: https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm\nResolução CSJT 247/2019 consolidada: https://juslaboris.tst.jus.br/handle/20.500.12178/164654\nAto CSJT 97/2025: https://juslaboris.tst.jus.br/handle/20.500.12178/258471\nRevisão limitada aos temas indicados; os demais pontos não receberam validação integral.\n\n",
+    "occurrences": 1
+  },
+  {
+    "subject": "ptra",
+    "module": 10,
+    "mode": "resumido",
+    "page": 2,
+    "before": "A fonte F22 é a base\\n exclusiva desta versão;.*?futura\\.",
+    "after": "A F22 é a fonte-base, complementada pela revisão jurídica pontual de 16/10/2026 sobre jornada, honorários periciais e prazos do sumaríssimo.",
+    "occurrences": 1
+  },
+  {
+    "subject": "ptra",
+    "module": 10,
+    "mode": "completo",
+    "page": 11,
+    "before": "10. Qual alternativa representa corretamente uma cautela metodológica deste M10?\n A) Atualizar silenciosamente toda divergência encontrada. B) Substituir a F22 por conhecimento geral. C) Tratar a\n referência da Súmula 338 e o parâmetro da Resolução CSJT 66/2010 como pontos de verificação futura. D) Excluir\n esses pontos do material. E) Transferir toda prova oral ao M9.\n\n\n\n\n ",
+    "after": "10. No procedimento sumaríssimo, qual é o prazo comum para as partes se manifestarem sobre o laudo pericial?\nA) 2 dias. B) 3 dias. C) 5 dias. D) 20 dias. E) 30 dias.\n\n",
+    "occurrences": 1
+  },
+  {
+    "subject": "ptra",
+    "module": 10,
+    "mode": "completo",
+    "page": 12,
+    "before": "Questão 10 — C. A regra do projeto é fidelidade: preservar a fonte e sinalizar necessidade de auditoria, sem\n    atualização silenciosa.\n\n\n    16. LACUNAS / VERIFICAÇÃO FUTURA\n•\n      Súmula 338/TST: a F22 registra referência quantitativa que deve ser auditada em etapa posterior.\n•\n      Resolução CSJT 66/2010 e parâmetro de R$ 1.000,00: verificar atualização/vigência antes da integração.\n•\n      Os enunciados jurisprudenciais reunidos pela F22 foram preservados dentro do alcance seguro recuperado;\n      não foram completados por memória onde o texto integral não foi necessário.\n\n\n    ",
+    "after": "Questão 10 — C. O art. 852-H, § 6º, da CLT fixa prazo comum de 5 dias. Os 30 dias do § 7º dizem respeito ao prosseguimento da audiência interrompida e à solução do processo, salvo motivo relevante justificado pelo juiz.\n\n16. FONTES DA REVISÃO JURÍDICA PONTUAL — 16/10/2026\nhttps://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm\nhttps://juslaboris.tst.jus.br/handle/20.500.12178/164654\nhttps://juslaboris.tst.jus.br/handle/20.500.12178/258471\nTemas: jornada, perícias, prazos e divergências de gabarito. Revisão integral do módulo ainda pendente.\n\n",
+    "occurrences": 1
+  },
+  {
+    "subject": "ptra",
+    "module": 15,
+    "mode": "resumido",
+    "page": 3,
+    "before": "RR em 8 dias contrarrazões em 8 dias Presidente/Vice do TRT realiza o primeiro juízo de admissibilidade\n se denegado, a resposta processual indicada pela fonte é o Agravo de Instrumento se admitido, segue ao\n TST relator realiza novo juízo eventual decisão monocrática pode ensejar Agravo Interno em 8 dias, nos\n limites descritos na F14.\n\n ",
+    "after": "RR: fluxo de admissibilidade atualizado\nInterposição e contrarrazões: 8 dias. O Presidente ou Vice-Presidente do TRT faz o primeiro exame. Se admitido, o RR segue ao TST, que realiza novo exame de admissibilidade.\nNa negativa, examine o fundamento de cada capítulo (IN 40/2016, atualizada pelas Resoluções TST 224/2024 e 226/2026):\n• Conformidade com entendimento do TST em recursos repetitivos, IRDR ou IAC: agravo interno no próprio TRT (art. 1º-A).\n• Conformidade com decisão vinculante do STF em matéria constitucional: agravo de instrumento ao TST (art. 1º-B).\n• Demais negativas: agravo de instrumento, observadas as regras de cabimento.\n• Capítulos distintos: pode ser necessário interpor simultaneamente agravo interno e agravo de instrumento, cada qual para a fração correspondente, sob pena de preclusão. O processamento do AI ocorre após o julgamento do interno (art. 1º-A, §§ 1º e 2º).\nOmissão no exame de tema: ED ao órgão prolator primeiro; persistindo a omissão após os ED, AI (art. 1º, §§ 1º a 3º). No TST, a decisão monocrática deve ser impugnada pela via interna cabível, conforme sua hipótese.\n\n",
+    "occurrences": 1
+  },
+  {
+    "subject": "ptra",
+    "module": 15,
+    "mode": "completo",
+    "page": 4,
+    "before": "O RR é interposto em 8 dias da ciência do acórdão do TRT e possui, conforme a F14, efeito apenas devolutivo.\n É apresentado perante o Presidente do TRT (ou Vice-Presidente, conforme regimento), que realiza o primeiro\n juízo de admissibilidade. Admitido, segue ao TST; denegado, a fonte aponta o Agravo de Instrumento como\n via para destrancamento. No TST ocorre novo juízo de admissibilidade pelo relator. A F14 ainda registra a\n possibilidade de saneamento de defeito formal não grave e Agravo Interno em 8 dias contra a decisão\n monocrática de inadmissão ali descrita.\n\n   FLUXO                        ACÓRDÃO TRT RR (8 dias) contrarrazões (8 dias) 1º juízo no TRT admitido:\n                                remessa ao TST / denegado: AI 2º juízo no TST admitido: prossegue / inadmitido\n                                pelo relator: medida interna indicada na fonte.\n\n ",
+    "after": "RR: fluxo de admissibilidade atualizado\nInterposição e contrarrazões: 8 dias. O Presidente ou Vice-Presidente do TRT faz o primeiro exame. Se admitido, o RR segue ao TST, que realiza novo exame de admissibilidade.\nNa negativa, examine o fundamento de cada capítulo (IN 40/2016, atualizada pelas Resoluções TST 224/2024 e 226/2026):\n• Conformidade com entendimento do TST em recursos repetitivos, IRDR ou IAC: agravo interno no próprio TRT (art. 1º-A).\n• Conformidade com decisão vinculante do STF em matéria constitucional: agravo de instrumento ao TST (art. 1º-B).\n• Demais negativas: agravo de instrumento, observadas as regras de cabimento.\n• Capítulos distintos: pode ser necessário interpor simultaneamente agravo interno e agravo de instrumento, cada qual para a fração correspondente, sob pena de preclusão. O processamento do AI ocorre após o julgamento do interno (art. 1º-A, §§ 1º e 2º).\nOmissão no exame de tema: ED ao órgão prolator primeiro; persistindo a omissão após os ED, AI (art. 1º, §§ 1º a 3º). No TST, a decisão monocrática deve ser impugnada pela via interna cabível, conforme sua hipótese.\n\n",
+    "occurrences": 1
+  },
+  {
+    "subject": "ptra",
+    "module": 15,
+    "mode": "completo",
+    "page": 4,
+    "before": "A F09 é usada apenas no ponto de conexão com o M15. Na admissibilidade parcial do RR, o capítulo\n denegatório deve ser impugnado pelo meio adequado. Se o TRT omitir o exame de um ou mais temas, a IN\n 40, conforme a apostila, impõe à parte o ônus de opor Embargos de Declaração ao órgão prolator para\n suprir a omissão, sob pena de preclusão. Persistindo a omissão após os ED, a fonte descreve a impugnação\n subsequente e a possibilidade, em determinadas condições, de retorno ao TRT para complementação do\n juízo.\n\n",
+    "after": "Na admissibilidade parcial, impugne o capítulo denegado pelo recurso adequado ao fundamento, conforme os arts. 1º, 1º-A e 1º-B da IN 40. Se o TRT omitir tema, oponha ED primeiro, sob pena de preclusão. Persistindo a omissão, cabe AI após a intimação dos ED; o relator do TST pode determinar complementação pelo TRT. O regime do art. 1º-A depende da data de publicação da decisão de admissibilidade, conforme seu § 5º. A Resolução 226/2026 criou transição de 60 dias para conversão de internos na hipótese do art. 1º-B; esse prazo transitório já se encerrou na data desta revisão.\n\n",
+    "occurrences": 1
+  },
+  {
+    "subject": "ptra",
+    "module": 15,
+    "mode": "resumido",
+    "page": 6,
+    "before": "4\\. Persistindo omissão do TRT.*?destacada na fonte exige inicialmente:",
+    "after": "4. Se o TRT omitir um tema no primeiro juízo de admissibilidade do RR, a IN 40 exige inicialmente:",
+    "occurrences": 1
+  },
+  {
+    "subject": "ptra",
+    "module": 15,
+    "mode": "resumido",
+    "page": 6,
+    "before": "Sem atualização externa nesta etapa; alterações posteriores às fontes ficam para auditoria jurídica futura.",
+    "after": "Revisão pontual em 16/10/2026: fluxo da IN 40, sem homologação integral dos demais temas. Fonte oficial: https://juslaboris.tst.jus.br/bitstream/handle/20.500.12178/81842/2016_res0205_in0040_multivigente.pdf?isAllowed=y&sequence=3",
+    "occurrences": 1
+  },
+  {
+    "subject": "ptra",
+    "module": 15,
+    "mode": "completo",
+    "page": 9,
+    "before": "Esta edição não promove atualização jurídica externa\\..*?da BASE COMPLETA\\.",
+    "after": "Revisão pontual em 16/10/2026: fluxo da IN 40, com as Resoluções 224/2024 e 226/2026, e correção do gabarito interativo da questão 1 (B). Fonte oficial: https://juslaboris.tst.jus.br/bitstream/handle/20.500.12178/81842/2016_res0205_in0040_multivigente.pdf?isAllowed=y&sequence=3 . Os demais temas permanecem sujeitos a revisão integral.",
+    "occurrences": 1
+  },
+  {
+    "subject": "ptra",
+    "module": 16,
+    "mode": "resumido",
+    "page": 2,
+    "before": "O agravo interno é o recurso contra decisão monocrática do relator, para que a matéria seja\n submetida ao respectivo órgão colegiado. O nome atual é agravo interno; 'agravo regimental'\n permanece em precedentes e enunciados mais antigos.\n\n ",
+    "after": "O agravo interno submete ao colegiado a decisão monocrática do relator (CPC, art. 1.021). Há também a hipótese do art. 1º-A da IN 40: negativa de RR fundada em conformidade com entendimento do TST em repetitivos, IRDR ou IAC, impugnável por agravo interno no TRT.\nNegativa fundada em decisão vinculante do STF em matéria constitucional exige AI ao TST (art. 1º-B). Em decisão com capítulos distintos, os dois recursos podem ser exigidos simultaneamente, cada qual para seu capítulo. Ver o fluxo do M15.\n\n",
+    "occurrences": 1
+  },
+  {
+    "subject": "ptra",
+    "module": 16,
+    "mode": "completo",
+    "page": 4,
+    "before": "Cabimento: decisão monocrática do relator, com submissão ao respectivo órgão colegiado. A\n pergunta-chave é: a decisão foi singular do relator?\n\n ",
+    "after": "O agravo interno submete ao colegiado a decisão monocrática do relator (CPC, art. 1.021). Há também a hipótese do art. 1º-A da IN 40: negativa de RR fundada em conformidade com entendimento do TST em repetitivos, IRDR ou IAC, impugnável por agravo interno no TRT.\nNegativa fundada em decisão vinculante do STF em matéria constitucional exige AI ao TST (art. 1º-B). Em decisão com capítulos distintos, os dois recursos podem ser exigidos simultaneamente, cada qual para seu capítulo. Ver o fluxo do M15.\n\n",
+    "occurrences": 1
+  },
+  {
+    "subject": "ptra",
+    "module": 16,
+    "mode": "completo",
+    "page": 4,
+    "before": "Interno: decisão monocrática do relator -> colegiado\\. Instrumento:.*?Não são intercambiáveis\\.",
+    "after": "Interno: decisão do relator ou hipótese do art. 1º-A da IN 40 -> colegiado competente. Instrumento: negativa de seguimento de recurso nas hipóteses próprias, inclusive art. 1º-B da IN 40 para precedente vinculante constitucional do STF. O fundamento de cada capítulo define a via; consultar M15.",
+    "occurrences": 1
+  },
+  {
+    "subject": "ptra",
+    "module": 10,
+    "mode": "completo",
+    "question": 1,
+    "before": "A",
+    "after": "B",
+    "reason": "gabarito interativo divergente da regra, comentário e gabarito escrito"
+  },
+  {
+    "subject": "ptra",
+    "module": 10,
+    "mode": "completo",
+    "question": 4,
+    "before": "B",
+    "after": "C",
+    "reason": "gabarito interativo divergente da regra, comentário e gabarito escrito"
+  },
+  {
+    "subject": "ptra",
+    "module": 15,
+    "mode": "completo",
+    "question": 1,
+    "before": "A",
+    "after": "B",
+    "reason": "gabarito interativo divergente da regra, comentário e gabarito escrito"
+  },
+  {
+    "subject": "cf",
+    "module": 7,
+    "mode": "summary",
+    "change": "EC 139/2026 integrada na teoria e no quadro do art. 75",
+    "source": "https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc139.htm"
+  },
+  {
+    "subject": "cf",
+    "module": 7,
+    "mode": "complete",
+    "change": "EC 139/2026 integrada na teoria e no quadro do art. 75",
+    "source": "https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc139.htm"
+  },
+  {
+    "subject": "ptra",
+    "module": 4,
+    "mode": "resumido",
+    "page": 5,
+    "before": "JUSTIÇA GRATUITA\nA F05 trabalha o art. 790, §§ 3º e 4º, da CLT:\n\n    • salário igual ou inferior a 40% do teto do RGPS: parâmetro da regra apresentada;\n    • acima desse patamar: possibilidade de concessão mediante comprovação de insuficiência de recursos.\n\n",
+    "after": "ADC 80 — justiça gratuita para processos novos\nO STF julgou a ADC 80 em 3/9/2026. A ata foi publicada em 16/9/2026: o novo regime alcança somente processos ajuizados a partir dessa data, sem aplicação retroativa automática aos anteriores.\n• Salário mensal de até R$ 5.000,00: presunção relativa de insuficiência. O interessado deve comprovar sua renda; patrimônio ou renda familiar incompatíveis podem afastar a presunção, com análise proporcional do caso.\n• Acima de R$ 5.000,00: é possível obter o benefício, mas deve ser demonstrada concretamente a insuficiência. O valor acompanha a legislação do imposto de renda; sem atualização anual da tabela, corrige-se pelo IPCA.\n• A presunção também alcança assistidos pela Defensoria Pública. O requerente suporta o ônus da prova de renda ou insuficiência; o juiz pode exigir documentação adicional, conforme art. 99, § 2º, do CPC.\n• O STF afastou o parâmetro de 40% do teto do RGPS e declarou inconstitucional o item I da Súmula 463/TST. A declaração isolada não dispensa os critérios probatórios do novo regime.\n• Os parâmetros se aplicam aos demais ramos do Judiciário até adequação legislativa. A decisão ressalva o primeiro grau dos Juizados Especiais (arts. 54 e 55 da Lei 9.099/1995).\nPara processos anteriores ao marco, situe as regras e os precedentes no tempo. O texto literal anterior da CLT, a Súmula 463, I, e o Tema 21/TST não devem ser apresentados como regime atual irrestrito.\n\n"
+  },
+  {
+    "subject": "ptra",
+    "module": 4,
+    "mode": "resumido",
+    "page": 5,
+    "before": "A fonte apresenta jurisprudência.*?presunção relativa de veracidade\\.",
+    "after": "Regra de estudo: não confundir a assistência sindical da Lei 5.584/1970 com os critérios atuais de concessão da gratuidade, definidos pela ADC 80."
+  },
+  {
+    "subject": "ptra",
+    "module": 4,
+    "mode": "completo",
+    "page": 12,
+    "before": "49. Súmula 463 do TST\n\nPessoa natural\nA fonte admite declaração de hipossuficiência: - firmada pela própria parte; ou - por advogado com poderes\nespecíficos.\n\n",
+    "after": "49. Súmula 463 do TST e ADC 80\nPessoa natural\nO item I do verbete admitia declaração de hipossuficiência. Esse regime histórico foi atingido pela ADC 80: o STF declarou o item I inconstitucional, com efeitos para processos ajuizados desde 16/9/2026. Aplicar os critérios expostos na seção seguinte.\n\n"
+  },
+  {
+    "subject": "ptra",
+    "module": 4,
+    "mode": "completo",
+    "page": 13,
+    "before": "A própria F05 observa que o verbete é utilizado na análise da justiça gratuita, embora fale em “assistência\njudiciária”.",
+    "after": "A denominação histórica do verbete não afasta a distinção entre assistência judiciária e gratuidade. Para processos novos, observar a ADC 80."
+  },
+  {
+    "subject": "ptra",
+    "module": 4,
+    "mode": "completo",
+    "page": 13,
+    "before": "51. Justiça gratuita - regra da F05\nA apostila estrutura a matéria a partir do art. 790, §§ 3º e 4º, da CLT.\n\nAté 40% do teto do RGPS\nA fonte apresenta a possibilidade de concessão do benefício, a requerimento ou de ofício, àqueles que percebam\nsalário igual ou inferior a 40% do limite máximo dos benefícios do RGPS.\n\n\n52. Acima dos 40%\nA F05 admite concessão à parte que comprovar insuficiência de recursos para pagar as custas.\n\n\n53. Declaração de hipossuficiência\nA fonte apresenta jurisprudência do TST no sentido de admitir a declaração de hipossuficiência econômica da\npessoa natural como elemento suficiente, com presunção relativa de veracidade.\n\n",
+    "after": "51–53. Justiça gratuita — regime atual e marco temporal\nADC 80 — justiça gratuita para processos novos\nO STF julgou a ADC 80 em 3/9/2026. A ata foi publicada em 16/9/2026: o novo regime alcança somente processos ajuizados a partir dessa data, sem aplicação retroativa automática aos anteriores.\n• Salário mensal de até R$ 5.000,00: presunção relativa de insuficiência. O interessado deve comprovar sua renda; patrimônio ou renda familiar incompatíveis podem afastar a presunção, com análise proporcional do caso.\n• Acima de R$ 5.000,00: é possível obter o benefício, mas deve ser demonstrada concretamente a insuficiência. O valor acompanha a legislação do imposto de renda; sem atualização anual da tabela, corrige-se pelo IPCA.\n• A presunção também alcança assistidos pela Defensoria Pública. O requerente suporta o ônus da prova de renda ou insuficiência; o juiz pode exigir documentação adicional, conforme art. 99, § 2º, do CPC.\n• O STF afastou o parâmetro de 40% do teto do RGPS e declarou inconstitucional o item I da Súmula 463/TST. A declaração isolada não dispensa os critérios probatórios do novo regime.\n• Os parâmetros se aplicam aos demais ramos do Judiciário até adequação legislativa. A decisão ressalva o primeiro grau dos Juizados Especiais (arts. 54 e 55 da Lei 9.099/1995).\nPara processos anteriores ao marco, situe as regras e os precedentes no tempo. O texto literal anterior da CLT, a Súmula 463, I, e o Tema 21/TST não devem ser apresentados como regime atual irrestrito.\nFonte oficial: https://portal.stf.jus.br/processos/detalhe.asp?incidente=6383356\n\n"
+  },
+  {
+    "subject": "ptra",
+    "module": 4,
+    "mode": "resumido",
+    "page": 6,
+    "before": "CLT, art\\. 790, §§ 3º e 4º\\s+justiça gratuita\\s+40% do teto / insuficiência",
+    "after": "CLT, art. 790, §§ 3º e 4º    justiça gratuita    aplicar ADC 80 e marco de 16/9/2026"
+  },
+  {
+    "subject": "ptra",
+    "module": 4,
+    "mode": "resumido",
+    "page": 7,
+    "before": "40% do teto do RGPS\\s+art\\. 790, § 3º\\s+parâmetro econômico da justiça\\s+gratuita na F05",
+    "after": "R$ 5.000,00    ADC 80    presunção relativa; processos ajuizados desde 16/9/2026, com atualização do patamar na forma da decisão"
+  },
+  {
+    "subject": "ptra",
+    "module": 4,
+    "mode": "resumido",
+    "page": 8,
+    "before": "40% do teto do RGPS ou insuficiência",
+    "after": "ADC 80: R$ 5 mil / prova da insuficiência; marco temporal"
+  },
+  {
+    "subject": "ptra",
+    "module": 4,
+    "mode": "resumido",
+    "page": 9,
+    "before": "Súmula 463 / OJ 269\\nEntendimento:.*?de justiça gratuita\\.",
+    "after": "ADC 80 / Súmula 463 / OJ 269\nO item I da Súmula 463 foi declarado inconstitucional na ADC 80, com modulação para processos ajuizados desde 16/9/2026. A OJ 269 trata do momento do pedido."
+  },
+  {
+    "subject": "ptra",
+    "module": 4,
+    "mode": "resumido",
+    "page": 9,
+    "before": "Dobro do mínimo x 40% do teto do RGPS.",
+    "after": "Assistência sindical x ADC 80: R$ 5 mil, presunção relativa e marco temporal."
+  },
+  {
+    "subject": "ptra",
+    "module": 4,
+    "mode": "completo",
+    "page": 13,
+    "before": "40% do teto do RGPS ou comprovação de insuficiência",
+    "after": "ADC 80: R$ 5 mil / prova da insuficiência; observar marco temporal"
+  },
+  {
+    "subject": "ptra",
+    "module": 4,
+    "mode": "completo",
+    "page": 16,
+    "before": "40% do teto do RGPS na regra apresentada;",
+    "after": "ADC 80: R$ 5 mil, presunção relativa e marco de 16/9/2026;"
+  },
+  {
+    "subject": "ptra",
+    "module": 4,
+    "mode": "completo",
+    "page": 16,
+    "before": "declaração de hipossuficiência;",
+    "after": "prova de renda ou insuficiência conforme ADC 80;"
+  },
+  {
+    "subject": "ptra",
+    "module": 4,
+    "mode": "completo",
+    "page": 16,
+    "before": "Súmula 463;",
+    "after": "Súmula 463, I: atingida pela ADC 80;"
+  },
+  {
+    "subject": "ptra",
+    "module": 4,
+    "mode": "completo",
+    "page": 19,
+    "before": "4\\. Justiça gratuita: critérios da CLT, Súmula 463.*?preservados conforme a F05\\.",
+    "after": "4. Justiça gratuita: regime revisado com a ADC 80, julgamento de 3/9/2026 e publicação da ata em 16/9/2026. A regra anterior deve ser lida conforme a modulação."
+  },
+  {
+    "subject": "ptra",
+    "module": 4,
+    "mode": "completo",
+    "page": 21,
+    "before": "40% do teto do RGPS\\s+justiça gratuita\\s+parâmetro do art\\. 790, § 3º trabalhado\\s+pela fonte",
+    "after": "R$ 5.000,00    justiça gratuita / ADC 80    presunção relativa para processos ajuizados desde 16/9/2026; atualização na forma da decisão"
+  },
+  {
+    "subject": "ptra",
+    "module": 4,
+    "mode": "completo",
+    "page": 22,
+    "before": "Súmula 463 TST\\s+hipossuficiência\\s+declaração da pessoa natural / prova\\s+da pessoa jurídica",
+    "after": "ADC 80 / Súmula 463 TST    hipossuficiência    item I inconstitucional; regime atual com marco temporal; pessoa jurídica exige prova"
+  },
+  {
+    "subject": "cpc",
+    "module": 4,
+    "mode": "summary",
+    "change": "ADC 80 integrada em teoria, quadros, revisão e questão dependente",
+    "source": "https://portal.stf.jus.br/processos/detalhe.asp?incidente=6383356"
+  },
+  {
+    "subject": "cpc",
+    "module": 4,
+    "mode": "complete",
+    "change": "ADC 80 integrada em teoria, quadros, revisão e questão dependente",
+    "source": "https://portal.stf.jus.br/processos/detalhe.asp?incidente=6383356"
+  },
+  {
+    "subject": "ptra",
+    "module": 14,
+    "mode": "resumido",
+    "change": "IN 40 harmonizada com M15/M16 em teoria, quadro, revisão e questão 5",
+    "source": "https://juslaboris.tst.jus.br/bitstream/handle/20.500.12178/81842/2016_res0205_in0040_multivigente.pdf?isAllowed=y&sequence=3"
+  },
+  {
+    "subject": "ptra",
+    "module": 14,
+    "mode": "completo",
+    "change": "IN 40 harmonizada com M15/M16 em teoria, quadro, revisão e questão 5",
+    "source": "https://juslaboris.tst.jus.br/bitstream/handle/20.500.12178/81842/2016_res0205_in0040_multivigente.pdf?isAllowed=y&sequence=3"
+  }
+]

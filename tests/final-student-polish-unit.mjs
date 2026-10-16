@@ -122,5 +122,5 @@ test('contratos de acabamento permanecem ligados à experiência do aluno', asyn
   assert.match(decorando, /535 exercícios autorais/);
   assert.match(boot, /var APP_VERSION='6\.6\.125'/);
   assert.match(dashboard, /function canonicalProgress\(\)/);
-  assert.match(offline, /student-dashboard-v3\.js\?v=20261015-external-filters-v1/);
+  assert.ok(offline.includes(`/ui/student-dashboard-v3.js?v=${JSON.parse(offline).build}`));
 });

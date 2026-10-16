@@ -1,6 +1,8 @@
 # Base Completa — revisão das teorias completas e resumidas
 
-**Data de referência: 15/10/2026 · Resultado parcial, com cobertura e pendências explícitas.**
+**Data de referência: 15/10/2026 · Relatório histórico.**
+
+**Atualização de 16/10/2026:** as pendências J03–J06 receberam correções coordenadas nos textos. Veja [a rodada jurídica seguinte](../teorias-20261016/RELATORIO.md), que também incorpora ADC 80, prazos, jornada e gabaritos. Os estados abaixo retratam a rodada de 15/10.
 
 A varredura alcançou as fontes textuais das 10 disciplinas. Foram preparados 26 ajustes pontuais em 12 arquivos, em uma branch de trabalho. Nenhuma alteração foi publicada em produção. A revisão jurídica integral de todas as frases, módulos e questões ainda não foi concluída. Os resultados abaixo distinguem erros confirmados, correções preparadas, verificações pontuais e trabalho pendente.
 

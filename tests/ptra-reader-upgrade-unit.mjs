@@ -95,7 +95,10 @@ test('PTRA: integração no bootstrap, andamento e histórico existentes preserv
   const bootstrap=get('central-v119.html');
   const native=get('ui/ptra-native-study-v1.js');
   const css=get('ui/ptra-reader-upgrade-v1.css');
-  assert.ok(bootstrap.includes('ui/ptra-reader-upgrade-v1.js?v=20261012ptra3'));
+  const manifest=JSON.parse(get('central-offline-files-v66172.json'));
+  const readerAsset=manifest.files.find(p=>p.startsWith('/ui/ptra-reader-upgrade-v1.js?v='));
+  assert.ok(readerAsset,'Leitor revisado deve estar no pacote offline');
+  assert.ok(bootstrap.includes(readerAsset.slice(1)),'Bootstrap e pacote offline devem usar a mesma revisão');
   assert.ok(bootstrap.includes('ui/ptra-reader-upgrade-v1.css?v=20261012ptra3'));
   assert.ok(native.includes('PtraReaderUpgrade.render(meta,mat,kind)'));
   assert.ok(native.includes('Leitor Universal indisponível nesta versão'));
