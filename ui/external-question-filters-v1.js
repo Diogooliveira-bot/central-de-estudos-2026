@@ -468,7 +468,14 @@
     return disciplineKey && number ? { disciplineKey, module: `M${pad(number)}` } : null;
   }
   function moduleBody(element) {
-    return element.matches('[data-adm-native]') ? element : element.querySelector(':scope > .cf-module-body,:scope > .detail-panel,:scope > .ptra-native-mod-body,:scope > .civil-module-body') || element;
+    return element.matches('[data-adm-native]') ? element : element.querySelector(':scope > .cf-module-body,:scope > .detail-panel,:scope > .topic-detail > .detail-panel,:scope > .ptra-native-mod-body,:scope > .civil-module-body') || element;
+  }
+  function moduleTargetPriority(element) {
+    if (element.matches('[data-adm-native]')) return 60;
+    if (element.matches('[data-cpp-native-module],[data-ptra-module],[data-rlm-module]')) return 50;
+    if (element.matches('.civil-module[data-civil-analista],.civil-module[data-civil]')) return 40;
+    if (element.matches('.cf-module[data-cf]')) return 30;
+    return 10;
   }
   function moduleTargets() {
     const selectors = [
@@ -478,7 +485,15 @@
       '#subjects .subject[data-id="cpc"] .cf-module[data-cf]',
       '#subjects .topic-item[data-uid]'
     ];
-    return Array.from(new Set(document.querySelectorAll(selectors.join(','))));
+    const selected = new Map();
+    Array.from(new Set(document.querySelectorAll(selectors.join(',')))).forEach((element) => {
+      const identity = identityFor(element);
+      if (!identity) return;
+      const key = `${identity.disciplineKey}:${identity.module}`;
+      const current = selected.get(key);
+      if (!current || moduleTargetPriority(element) > moduleTargetPriority(current)) selected.set(key, element);
+    });
+    return Array.from(selected.values());
   }
   const ORIGINAL_PANEL_SELECTOR = '.qc-platform-sharing,.cpc-sharing-panel,.tec-validated-panel,.tec-context-panel,.adm-native-sharing,.adm-native-tec-filter,.cpp-native-tec-panel,.civil-native-sharing,.ptra-native-panel.ptra-native-tec,.adm-native-external-entry,.csp-tec-panel';
   function hideOriginalPanels(body) {

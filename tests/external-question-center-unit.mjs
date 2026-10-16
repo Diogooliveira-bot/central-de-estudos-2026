@@ -113,6 +113,25 @@ test('atualizações externas não remontam nem fazem o painel piscar', async ()
   assert.equal(dom.window.document.querySelector('[data-test-original]').getAttribute('data-bcq-original'), '1');
 });
 
+test('módulo nativo com tópico interno recebe somente um painel QC/TEC', async () => {
+  const dom = setup();
+  await settle(dom.window);
+  dom.window.QC_CENTRAL_SHARING_LINKS.items.push({
+    discipline: 'Direito Administrativo', disciplineKey: 'administrativo', code: 'M03', status: 'VALIDADO', public: true,
+    moduleTitle: 'Atos Administrativos', title: 'ADM M03 Geral', kind: 'general', id: '15270003', quantity: 90,
+    link: 'https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15270003'
+  });
+  const subject = dom.window.document.createElement('article');
+  subject.className = 'subject'; subject.dataset.id = 'adm';
+  subject.innerHTML = '<div class="topic-item open" data-uid="adm-m03"><div class="topic-detail"><div class="detail-panel"><section class="adm-native-zone" data-adm-native="adm-m03"><section class="adm-native-sharing">Filtro original</section></section></div></div></div>';
+  dom.window.document.getElementById('subjects').append(subject);
+  dom.window.ExternalQuestionFilters.refresh();
+  await settle(dom.window);
+  assert.equal(subject.querySelectorAll('[data-bcq-module-panel="administrativo:M03"]').length, 1);
+  assert.equal(subject.querySelector('[data-adm-native] > [data-bcq-module-panel]')?.dataset.bcqModulePanel, 'administrativo:M03');
+  assert.equal(subject.querySelector('.topic-item > [data-bcq-module-panel]'), null);
+});
+
 test('mantém os filtros originais visíveis se o painel compacto não puder ser montado', async () => {
   const dom = setup({ failModuleMount: true });
   await settle(dom.window);
