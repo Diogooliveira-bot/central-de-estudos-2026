@@ -12,6 +12,7 @@ function filterData() {
   return {
     qc: { items: [{
       discipline: 'Direito Penal', disciplineKey: 'penal', code: 'M03', status: 'VALIDADO', public: true,
+      moduleTitle: 'Teoria do Crime', title: 'Teoria do Crime', kind: 'general',
       id: '15288411', quantity: 127,
       link: 'https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15288411',
       notebookTitle: 'PEN M03 Teoria do Crime'
@@ -93,6 +94,15 @@ test('catálogo organiza QC e TEC em colunas próprias por módulo', async () =>
   assert.match(columns[1].querySelector('header').textContent, /TEC Concursos/);
   assert.equal(columns[0].querySelectorAll('[data-bcq-select]').length, 1);
   assert.equal(columns[1].querySelectorAll('[data-bcq-select]').length, 1);
+  assert.match(module.querySelector('.bcq-discipline-module-title').textContent, /M03.*Teoria do Crime/);
+  assert.equal(columns[0].querySelector('.bcq-page-filter b').textContent, 'Teoria do Crime');
+  assert.doesNotMatch(columns[0].querySelector('.bcq-page-filter b').textContent, /M03|PEN/);
+  const toggle = dom.window.document.querySelector('[data-bcq-toggle-disciplines]');
+  toggle.click();
+  assert.equal(dom.window.document.querySelectorAll('.bcq-discipline[open]').length, 0);
+  assert.equal(toggle.textContent, 'Expandir disciplinas');
+  toggle.click();
+  assert.equal(dom.window.document.querySelectorAll('.bcq-discipline[open]').length, 1);
 });
 
 test('somente administrador recebe gestão e sobreposição compartilhada', async () => {

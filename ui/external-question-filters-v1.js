@@ -50,6 +50,37 @@
     return match ? 'M' + pad(match[1]) : '';
   };
   const baseModule = (value) => String(value || '').toUpperCase().match(/^M\d{2}/)?.[0] || moduleCode(value);
+  function simpleCatalogTitle(value) {
+    let text = String(value || '').replace(/\s+/g, ' ').trim();
+    const parts = text.split('|').map((part) => part.trim()).filter(Boolean);
+    if (parts.length > 1) {
+      const partTitle = parts.find((part) => /^parte\s*\d+\s*:/i.test(part));
+      if (partTitle) text = partTitle.replace(/^parte\s*\d+\s*:\s*/i, '');
+      else {
+        const moduleIndex = parts.findIndex((part) => /^M\d{1,2}(?:\.\d+)?$/i.test(part));
+        text = moduleIndex >= 0 && parts[moduleIndex + 1] ? parts[moduleIndex + 1] : parts[parts.length - 1];
+      }
+    }
+    text = text
+      .replace(/^base completa\s*[-–—:|·]*\s*/i, '')
+      .replace(/^(?:direito\s+)?(?:administrativo|constitucional|civil|empresarial|penal|processual\s+civil|processual\s+penal|processual\s+do\s+trabalho|do\s+trabalho|processo\s+civil|adm|cf|civ|cpc|pc|pen|cpp|ptra|trab|port|rlm|matem[aá]tica)\s*[-–—:|·]*\s*/i, '')
+      .replace(/^M?0*\d{1,2}(?:\.\d+)?\s*[-–—:|·]*\s*/i, '')
+      .replace(/^geral\s*[-–—:|·]*\s*/i, '')
+      .trim();
+    return text;
+  }
+  const catalogFilterTitle = (filter) => simpleCatalogTitle(filter.title) || simpleCatalogTitle(filter.moduleTitle) || filter.title;
+  function catalogModuleTitle(rows) {
+    const explicit = rows.map((row) => simpleCatalogTitle(row.moduleTitle)).find(Boolean);
+    if (explicit) return explicit;
+    for (const row of rows) {
+      const parts = String(row.title || '').split('|').map((part) => part.trim()).filter(Boolean);
+      const moduleIndex = parts.findIndex((part) => part.toUpperCase() === row.module);
+      const title = moduleIndex >= 0 ? simpleCatalogTitle(parts[moduleIndex + 1]) : simpleCatalogTitle(row.title);
+      if (title) return title;
+    }
+    return 'Conteúdo do módulo';
+  }
   const safeUrl = (value, platform) => {
     try {
       const url = new URL(String(value || ''), location.href);
@@ -130,6 +161,7 @@
       module,
       code: String(input.code || module).toUpperCase(),
       title: String(input.title || input.code || id).trim(),
+      moduleTitle: String(input.moduleTitle || '').trim(),
       id,
       count: Math.max(0, Number(input.count) || 0),
       url,
@@ -156,6 +188,7 @@
       pushFilter(list, seen, {
         platform: 'qc', disciplineKey: item.disciplineKey, discipline: item.discipline,
         module: item.code, code: item.code, title: item.notebookTitle || item.title,
+        moduleTitle: item.kind === 'general' ? item.title : item.moduleTitle,
         id: item.id, count: item.quantity, url: item.link, source: 'qc-central'
       });
     });
@@ -167,7 +200,7 @@
         if (!(row.public === true && row.id && Number(row.count) > 0 && row.link)) return;
         pushFilter(list, seen, {
           platform: 'qc', disciplineKey: 'processual-civil', module: code, code: row.code,
-          title: row.title, id: row.id, count: row.count, url: row.link, source: 'qc-cpc'
+          title: row.title, moduleTitle: item.title, id: row.id, count: row.count, url: row.link, source: 'qc-cpc'
         });
       });
     });
@@ -179,6 +212,7 @@
       pushFilter(list, seen, {
         platform: 'tec', disciplineKey: 'administrativo', module: item.modulo,
         code: item.subdivisao || item.modulo, title: item.cadernoTitulo || item.titulo,
+        moduleTitle: item.moduloTitulo,
         id: item.idCaderno, count: item.quantidade, url: item.link, source: 'tec-adm-curated'
       });
     });
@@ -188,6 +222,7 @@
       pushFilter(list, seen, {
         platform: 'tec', disciplineKey: 'civil', module: item.modulo,
         code: item.subdivisao || item.modulo, title: item.cadernoTitulo || item.titulo,
+        moduleTitle: item.moduloTitulo,
         id: item.idCaderno, count: item.quantidade, url: item.link, source: 'tec-civil-curated'
       });
     });
@@ -212,6 +247,7 @@
         pushFilter(list, seen, {
           platform: 'tec', disciplineKey: 'processual-trabalho', module: `M${pad(module.number)}`,
           code: String(tecId).toUpperCase().replace('PROC-TRAB-', 'M'), title: item.name,
+          moduleTitle: module.title,
           id: notebookIdFromUrl(item.url) || tecId, count: item.count, url: item.url,
           legacyCid: tecId, source: 'tec-ptra-native'
         });
@@ -623,9 +659,10 @@
     select.innerHTML = '<option value="">Todas</option>' + options.map(([key, label]) => `<option value="${attr(key)}">${esc(label)}</option>`).join('');
     if (options.some(([key]) => key === value)) select.value = value;
   }
-  function filterListButton(filter) {
+  function filterListButton(filter, simple = false) {
     const stats = statsFor(filter);
-    return `<button type="button" class="bcq-page-filter${selectedKey === filter.stableKey ? ' active' : ''}" data-bcq-select="${attr(filter.stableKey)}"><span class="bcq-page-platform" data-platform="${filter.platform}">${filter.platform === 'qc' ? 'QC' : 'TEC'}</span><span><b>${esc(filter.code)} · ${esc(filter.title)}</b><small>${filter.count.toLocaleString('pt-BR')} questões · ID ${esc(filter.id)}${filter.status === 'unavailable' ? ' · indisponível' : ''}</small></span><strong>${stats.percent == null ? '—' : `${stats.percent}%`}</strong></button>`;
+    const title = simple ? catalogFilterTitle(filter) : `${filter.code} · ${filter.title}`;
+    return `<button type="button" class="bcq-page-filter${selectedKey === filter.stableKey ? ' active' : ''}" data-bcq-select="${attr(filter.stableKey)}"><span class="bcq-page-platform" data-platform="${filter.platform}">${filter.platform === 'qc' ? 'QC' : 'TEC'}</span><span><b>${esc(title)}</b><small>${filter.count.toLocaleString('pt-BR')} questões · ID ${esc(filter.id)}${filter.status === 'unavailable' ? ' · indisponível' : ''}</small></span><strong>${stats.percent == null ? '—' : `${stats.percent}%`}</strong></button>`;
   }
   function historyRow(entry) {
     const { filter, session } = entry;
@@ -651,13 +688,13 @@
       modules.get(filter.module).push(filter);
     });
     const host = page.querySelector('[data-bcq-panel="disciplines"]');
-    host.innerHTML = `<section class="bcq-center-panel"><header><div><span>CATÁLOGO COMPLETO</span><h2>Disciplinas e módulos</h2><p>Os mesmos filtros exibidos no final de cada módulo.</p></div></header><div class="bcq-discipline-list">${Array.from(groups.values()).map((group, index) => {
+    host.innerHTML = `<section class="bcq-center-panel"><header><div><span>CATÁLOGO COMPLETO</span><h2>Disciplinas e módulos</h2><p>Os mesmos filtros exibidos no final de cada módulo.</p></div><button type="button" data-bcq-toggle-disciplines aria-expanded="true">Recolher disciplinas</button></header><div class="bcq-discipline-list">${Array.from(groups.values()).map((group, index) => {
       const filters = Array.from(group.modules.values()).flat();
       return `<details class="bcq-discipline"${index === 0 ? ' open' : ''}><summary><span><b>${esc(group.label)}</b><small>${group.modules.size} módulos com filtros</small></span><strong>${filters.length} filtros</strong></summary><div>${Array.from(group.modules.entries()).map(([module, rows]) => {
         const qc = rows.filter((row) => row.platform === 'qc');
         const tec = rows.filter((row) => row.platform === 'tec');
-        const platformColumn = (platform, items) => `<section class="bcq-discipline-platform" data-platform="${platform}"><header><span class="bcq-page-platform" data-platform="${platform}">${platform === 'qc' ? 'QC' : 'TEC'}</span><div><b>${platform === 'qc' ? 'QConcursos' : 'TEC Concursos'}</b><small>${items.length} ${items.length === 1 ? 'filtro' : 'filtros'}</small></div></header><div class="bcq-discipline-platform-list">${items.length ? items.map(filterListButton).join('') : '<p class="bcq-discipline-platform-empty">Nenhum filtro neste módulo.</p>'}</div></section>`;
-        return `<section class="bcq-discipline-module"><header><b>${esc(module)}</b><span>${qc.length} QC · ${tec.length} TEC</span></header><div class="bcq-discipline-columns">${platformColumn('qc', qc)}${platformColumn('tec', tec)}</div></section>`;
+        const platformColumn = (platform, items) => `<section class="bcq-discipline-platform" data-platform="${platform}"><header><span class="bcq-page-platform" data-platform="${platform}">${platform === 'qc' ? 'QC' : 'TEC'}</span><div><b>${platform === 'qc' ? 'QConcursos' : 'TEC Concursos'}</b><small>${items.length} ${items.length === 1 ? 'filtro' : 'filtros'}</small></div></header><div class="bcq-discipline-platform-list">${items.length ? items.map((item) => filterListButton(item, true)).join('') : '<p class="bcq-discipline-platform-empty">Nenhum filtro neste módulo.</p>'}</div></section>`;
+        return `<section class="bcq-discipline-module"><header><div class="bcq-discipline-module-title"><b>${esc(module)}</b><strong>${esc(catalogModuleTitle(rows))}</strong></div><span>${qc.length} QC · ${tec.length} TEC</span></header><div class="bcq-discipline-columns">${platformColumn('qc', qc)}${platformColumn('tec', tec)}</div></section>`;
       }).join('')}</div></details>`;
     }).join('')}</div></section>`;
   }
@@ -839,6 +876,15 @@
     if (tab) { switchTab(tab.dataset.bcqTab); return; }
     const goTab = event.target.closest('[data-bcq-go-tab]');
     if (goTab) { switchTab(goTab.dataset.bcqGoTab); return; }
+    const toggleDisciplines = event.target.closest('[data-bcq-toggle-disciplines]');
+    if (toggleDisciplines) {
+      const details = Array.from(document.querySelectorAll('[data-bcq-panel="disciplines"] .bcq-discipline'));
+      const expand = !details.some((item) => item.open);
+      details.forEach((item) => { item.open = expand; });
+      toggleDisciplines.textContent = expand ? 'Recolher disciplinas' : 'Expandir disciplinas';
+      toggleDisciplines.setAttribute('aria-expanded', String(expand));
+      return;
+    }
     const add = event.target.closest('[data-bcq-add]');
     if (add) { event.preventDefault(); openModal(filterByKey(add.getAttribute('data-bcq-add')), null); return; }
     const select = event.target.closest('[data-bcq-select]');
