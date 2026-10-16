@@ -15,7 +15,7 @@ function filterData() {
       moduleTitle: 'Teoria do Crime', title: 'Teoria do Crime', kind: 'general',
       id: '15288411', quantity: 127,
       link: 'https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15288411',
-      notebookTitle: 'PEN M03 Teoria do Crime'
+      notebookTitle: 'PEN M03 Teor. Crim.'
     }] },
     tec: { records: [{
       discipline: 'penal', module: 'M03', part: 1, title: 'PENAL M03 Teoria do Crime', id: '105849634',
@@ -97,6 +97,9 @@ test('catálogo organiza QC e TEC em colunas próprias por módulo', async () =>
   assert.match(module.querySelector('.bcq-discipline-module-title').textContent, /M03.*Teoria do Crime/);
   assert.equal(columns[0].querySelector('.bcq-page-filter b').textContent, 'Teoria do Crime');
   assert.doesNotMatch(columns[0].querySelector('.bcq-page-filter b').textContent, /M03|PEN/);
+  assert.equal(module.open, false);
+  module.querySelector(':scope > summary').click();
+  assert.equal(module.open, true);
   const toggle = dom.window.document.querySelector('[data-bcq-toggle-disciplines]');
   toggle.click();
   assert.equal(dom.window.document.querySelectorAll('.bcq-discipline[open]').length, 0);

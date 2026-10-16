@@ -24,6 +24,19 @@
     penal: 'penal', cpp: 'processual-penal', trab: 'trabalho', ptra: 'processual-trabalho',
     rlm: 'rlm', mat: 'matematica'
   };
+  const CATALOG_DISCIPLINE_LABELS = {
+    'Direito Administrativo': 'Administrativo',
+    'Direito Constitucional': 'Constitucional',
+    'Direito Civil': 'Civil',
+    'Direito Empresarial': 'Empresarial',
+    'Direito Processual Civil': 'Processo Civil',
+    'Direito Penal': 'Penal',
+    'Direito Processual Penal': 'Processo Penal',
+    'Direito do Trabalho': 'Trabalho',
+    'Direito Processual do Trabalho': 'Processo do Trabalho',
+    'Raciocínio Lógico-Matemático': 'Raciocínio Lógico',
+    'Raciocínio Lógico': 'Raciocínio Lógico'
+  };
 
   let registry = [];
   let registrySignature = '';
@@ -69,7 +82,7 @@
       .trim();
     return text;
   }
-  const catalogFilterTitle = (filter) => simpleCatalogTitle(filter.title) || simpleCatalogTitle(filter.moduleTitle) || filter.title;
+  const catalogFilterTitle = (filter) => simpleCatalogTitle(filter.displayTitle) || simpleCatalogTitle(filter.title) || simpleCatalogTitle(filter.moduleTitle) || filter.title;
   function catalogModuleTitle(rows) {
     const explicit = rows.map((row) => simpleCatalogTitle(row.moduleTitle)).find(Boolean);
     if (explicit) return explicit;
@@ -161,6 +174,7 @@
       module,
       code: String(input.code || module).toUpperCase(),
       title: String(input.title || input.code || id).trim(),
+      displayTitle: String(input.displayTitle || '').trim(),
       moduleTitle: String(input.moduleTitle || '').trim(),
       id,
       count: Math.max(0, Number(input.count) || 0),
@@ -188,6 +202,7 @@
       pushFilter(list, seen, {
         platform: 'qc', disciplineKey: item.disciplineKey, discipline: item.discipline,
         module: item.code, code: item.code, title: item.notebookTitle || item.title,
+        displayTitle: item.title,
         moduleTitle: item.kind === 'general' ? item.title : item.moduleTitle,
         id: item.id, count: item.quantity, url: item.link, source: 'qc-central'
       });
@@ -200,7 +215,7 @@
         if (!(row.public === true && row.id && Number(row.count) > 0 && row.link)) return;
         pushFilter(list, seen, {
           platform: 'qc', disciplineKey: 'processual-civil', module: code, code: row.code,
-          title: row.title, moduleTitle: item.title, id: row.id, count: row.count, url: row.link, source: 'qc-cpc'
+          title: row.title, displayTitle: row.title, moduleTitle: item.title, id: row.id, count: row.count, url: row.link, source: 'qc-cpc'
         });
       });
     });
@@ -212,7 +227,7 @@
       pushFilter(list, seen, {
         platform: 'tec', disciplineKey: 'administrativo', module: item.modulo,
         code: item.subdivisao || item.modulo, title: item.cadernoTitulo || item.titulo,
-        moduleTitle: item.moduloTitulo,
+        displayTitle: item.titulo, moduleTitle: item.moduloTitulo,
         id: item.idCaderno, count: item.quantidade, url: item.link, source: 'tec-adm-curated'
       });
     });
@@ -222,7 +237,7 @@
       pushFilter(list, seen, {
         platform: 'tec', disciplineKey: 'civil', module: item.modulo,
         code: item.subdivisao || item.modulo, title: item.cadernoTitulo || item.titulo,
-        moduleTitle: item.moduloTitulo,
+        displayTitle: item.titulo, moduleTitle: item.moduloTitulo,
         id: item.idCaderno, count: item.quantidade, url: item.link, source: 'tec-civil-curated'
       });
     });
@@ -690,11 +705,11 @@
     const host = page.querySelector('[data-bcq-panel="disciplines"]');
     host.innerHTML = `<section class="bcq-center-panel"><header><div><span>CATÁLOGO COMPLETO</span><h2>Disciplinas e módulos</h2><p>Os mesmos filtros exibidos no final de cada módulo.</p></div><button type="button" data-bcq-toggle-disciplines aria-expanded="true">Recolher disciplinas</button></header><div class="bcq-discipline-list">${Array.from(groups.values()).map((group, index) => {
       const filters = Array.from(group.modules.values()).flat();
-      return `<details class="bcq-discipline"${index === 0 ? ' open' : ''}><summary><span><b>${esc(group.label)}</b><small>${group.modules.size} módulos com filtros</small></span><strong>${filters.length} filtros</strong></summary><div>${Array.from(group.modules.entries()).map(([module, rows]) => {
+      return `<details class="bcq-discipline"${index === 0 ? ' open' : ''}><summary><span><b>${esc(CATALOG_DISCIPLINE_LABELS[group.label] || group.label)}</b><small>${group.modules.size} módulos com filtros</small></span><strong>${filters.length} filtros</strong></summary><div>${Array.from(group.modules.entries()).map(([module, rows]) => {
         const qc = rows.filter((row) => row.platform === 'qc');
         const tec = rows.filter((row) => row.platform === 'tec');
         const platformColumn = (platform, items) => `<section class="bcq-discipline-platform" data-platform="${platform}"><header><span class="bcq-page-platform" data-platform="${platform}">${platform === 'qc' ? 'QC' : 'TEC'}</span><div><b>${platform === 'qc' ? 'QConcursos' : 'TEC Concursos'}</b><small>${items.length} ${items.length === 1 ? 'filtro' : 'filtros'}</small></div></header><div class="bcq-discipline-platform-list">${items.length ? items.map((item) => filterListButton(item, true)).join('') : '<p class="bcq-discipline-platform-empty">Nenhum filtro neste módulo.</p>'}</div></section>`;
-        return `<section class="bcq-discipline-module"><header><div class="bcq-discipline-module-title"><b>${esc(module)}</b><strong>${esc(catalogModuleTitle(rows))}</strong></div><span>${qc.length} QC · ${tec.length} TEC</span></header><div class="bcq-discipline-columns">${platformColumn('qc', qc)}${platformColumn('tec', tec)}</div></section>`;
+        return `<details class="bcq-discipline-module"><summary><div class="bcq-discipline-module-title"><b>${esc(module)}</b><strong>${esc(catalogModuleTitle(rows))}</strong></div><span>${qc.length} QC · ${tec.length} TEC</span></summary><div class="bcq-discipline-columns">${platformColumn('qc', qc)}${platformColumn('tec', tec)}</div></details>`;
       }).join('')}</div></details>`;
     }).join('')}</div></section>`;
   }
