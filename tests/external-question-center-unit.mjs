@@ -7,6 +7,7 @@ import { validateFilterOverride } from '../api/external-question-filters.js';
 
 const root = path.resolve(import.meta.dirname, '..');
 const source = fs.readFileSync(path.join(root, 'ui/external-question-filters-v1.js'), 'utf8');
+const styles = fs.readFileSync(path.join(root, 'ui/external-question-filters-v1.css'), 'utf8');
 
 function filterData() {
   const qc = {
@@ -102,6 +103,8 @@ test('rodapé do módulo preserva o visual aprovado e não repete filtros', asyn
   assert.equal(panel.querySelectorAll('[data-bcq-key="tec:105849634"]').length, 1);
   assert.equal(dom.window.document.querySelector('[data-test-original]').getAttribute('data-bcq-original'), '1');
   assert.equal(dom.window.document.querySelector('.cf-module-body').getAttribute('data-bcq-module-host'), '1');
+  assert.match(styles, /\.bcq-card-copy b\{[^}]*white-space:normal;[^}]*overflow-wrap:anywhere/);
+  assert.doesNotMatch(styles, /\.bcq-card-copy b\{[^}]*text-overflow:ellipsis/);
 });
 
 test('atualizações externas não remontam nem fazem o painel piscar', async () => {
