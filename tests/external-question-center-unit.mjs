@@ -9,18 +9,20 @@ const root = path.resolve(import.meta.dirname, '..');
 const source = fs.readFileSync(path.join(root, 'ui/external-question-filters-v1.js'), 'utf8');
 
 function filterData() {
+  const qc = {
+    discipline: 'Direito Penal', disciplineKey: 'penal', code: 'M03', status: 'VALIDADO', public: true,
+    moduleTitle: 'Teoria do Crime', title: 'Teoria do Crime', kind: 'general',
+    id: '15288411', quantity: 127,
+    link: 'https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15288411',
+    notebookTitle: 'PEN M03 Teor. Crim.'
+  };
+  const tec = {
+    discipline: 'penal', module: 'M03', part: 1, title: 'PENAL M03 Teoria do Crime', id: '105849634',
+    quantity: 39, url: 'https://www.tecconcursos.com.br/s/Q7A8KA', status: 'VALIDADO_NA_CONTA_CRIADORA'
+  };
   return {
-    qc: { items: [{
-      discipline: 'Direito Penal', disciplineKey: 'penal', code: 'M03', status: 'VALIDADO', public: true,
-      moduleTitle: 'Teoria do Crime', title: 'Teoria do Crime', kind: 'general',
-      id: '15288411', quantity: 127,
-      link: 'https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15288411',
-      notebookTitle: 'PEN M03 Teor. Crim.'
-    }] },
-    tec: { records: [{
-      discipline: 'penal', module: 'M03', part: 1, title: 'PENAL M03 Teoria do Crime', id: '105849634',
-      quantity: 39, url: 'https://www.tecconcursos.com.br/s/Q7A8KA', status: 'VALIDADO_NA_CONTA_CRIADORA'
-    }] }
+    qc: { items: [qc, { ...qc }] },
+    tec: { records: [tec, { ...tec }] }
   };
 }
 
@@ -88,17 +90,26 @@ test('módulo, biblioteca e histórico usam o mesmo filtro e a mesma sessão', a
   assert.equal(dom.window.document.querySelectorAll('[data-bcq-manage]').length, 0);
 });
 
-test('rodapé do módulo usa um único título e nomes curtos sem repetir códigos', async () => {
+test('rodapé do módulo preserva o visual aprovado e não repete filtros', async () => {
   const dom = setup();
   await settle(dom.window);
   const panel = dom.window.document.querySelector('[data-bcq-module-panel="penal:M03"]');
-  const heading = panel.querySelector('.bcq-module-filter-head h3').textContent;
-  assert.match(heading, /Direito Penal.*M03.*Teoria do Crime/);
-  assert.equal(panel.querySelectorAll('.bcq-module-filter-head').length, 1);
-  assert.equal(panel.querySelector('[data-bcq-platform="qc"] .bcq-card-copy b').textContent, 'Filtro geral');
-  assert.equal(panel.querySelector('[data-bcq-platform="tec"] .bcq-card-copy b').textContent, 'Filtro geral');
-  assert.doesNotMatch(Array.from(panel.querySelectorAll('.bcq-card-copy b')).map((node) => node.textContent).join(' '), /PENAL M03|PEN M03/);
+  assert.equal(panel.querySelector('.bcq-module-filter-head'), null);
+  assert.equal(panel.querySelector('[data-bcq-platform="qc"] .bcq-card-copy b').textContent, 'M03 · PEN M03 Teor. Crim.');
+  assert.match(panel.querySelector('[data-bcq-platform="tec"] .bcq-card-copy b').textContent, /^M03\.1 · PENAL M03 Teoria do Crime$/);
   assert.equal(panel.querySelectorAll('[data-bcq-key="qc:15288411"]').length, 1);
+  assert.equal(panel.querySelectorAll('[data-bcq-key="tec:105849634"]').length, 1);
+  assert.equal(dom.window.document.querySelector('[data-test-original]').getAttribute('data-bcq-original'), '1');
+  assert.equal(dom.window.document.querySelector('.cf-module-body').getAttribute('data-bcq-module-host'), '1');
+});
+
+test('atualizações externas não remontam nem fazem o painel piscar', async () => {
+  const dom = setup();
+  await settle(dom.window);
+  const firstPanel = dom.window.document.querySelector('[data-bcq-module-panel="penal:M03"]');
+  dom.window.document.body.append(dom.window.document.createElement('aside'));
+  await settle(dom.window);
+  assert.equal(dom.window.document.querySelector('[data-bcq-module-panel="penal:M03"]'), firstPanel);
   assert.equal(dom.window.document.querySelector('[data-test-original]').getAttribute('data-bcq-original'), '1');
 });
 
