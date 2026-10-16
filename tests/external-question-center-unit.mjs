@@ -81,6 +81,19 @@ test('módulo, biblioteca e histórico usam o mesmo filtro e a mesma sessão', a
   assert.equal(dom.window.document.querySelectorAll('[data-bcq-manage]').length, 0);
 });
 
+test('rodapé do módulo usa um único título e nomes curtos sem repetir códigos', async () => {
+  const dom = setup();
+  await settle(dom.window);
+  const panel = dom.window.document.querySelector('[data-bcq-module-panel="penal:M03"]');
+  const heading = panel.querySelector('.bcq-module-filter-head h3').textContent;
+  assert.match(heading, /Direito Penal.*M03.*Teoria do Crime/);
+  assert.equal(panel.querySelectorAll('.bcq-module-filter-head').length, 1);
+  assert.equal(panel.querySelector('[data-bcq-platform="qc"] .bcq-card-copy b').textContent, 'Filtro geral');
+  assert.equal(panel.querySelector('[data-bcq-platform="tec"] .bcq-card-copy b').textContent, 'Filtro geral');
+  assert.doesNotMatch(Array.from(panel.querySelectorAll('.bcq-card-copy b')).map((node) => node.textContent).join(' '), /PENAL M03|PEN M03/);
+  assert.equal(panel.querySelectorAll('[data-bcq-key="qc:15288411"]').length, 1);
+});
+
 test('catálogo organiza QC e TEC em colunas próprias por módulo', async () => {
   const dom = setup();
   await settle(dom.window);

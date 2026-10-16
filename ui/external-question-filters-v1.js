@@ -408,11 +408,26 @@
     const pct = value == null ? 0 : value;
     return `<span class="bcq-ring" style="--bcq-pct:${pct}" aria-label="${value == null ? 'Sem histórico' : `${value}% de acertos`}"><span><b>${value == null ? '—' : `${value}%`}</b><small>acertos</small></span></span>`;
   }
-  function filterCard(filter) {
+  function normalizedLabel(value) {
+    return String(value || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/gi, ' ').trim().toLowerCase();
+  }
+  function moduleFilterTitle(filter, moduleFilters) {
+    const topic = catalogModuleTitle(moduleFilters);
+    let title = filter.revision > 0 ? simpleCatalogTitle(filter.title) : catalogFilterTitle(filter);
+    const generic = /^(?:quest(?:ão|ões|ao|oes) do módulo|filtro do módulo|quest(?:ão|ões|ao|oes) externa(?:s)?)$/i;
+    if (!title || generic.test(title) || normalizedLabel(title) === normalizedLabel(topic)) return 'Filtro geral';
+    if (topic) {
+      const escapedTopic = topic.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      title = title.replace(new RegExp(`^${escapedTopic}\\s*[-–—:|·]*\\s*`, 'i'), '').trim();
+    }
+    return title && normalizedLabel(title) !== normalizedLabel(topic) ? title : 'Filtro geral';
+  }
+  function filterCard(filter, moduleFilters) {
     const stats = statsFor(filter);
+    const shortTitle = moduleFilterTitle(filter, moduleFilters);
     return `<article class="bcq-card" data-bcq-platform="${filter.platform}" data-bcq-key="${attr(filter.stableKey)}">
       ${filter.status === 'available' ? `<a class="bcq-card-copy" href="${attr(filter.url)}" target="_blank" rel="noopener noreferrer" title="Abrir filtro original">` : '<span class="bcq-card-copy" aria-disabled="true">'}
-        <b>${esc(filter.code)} · ${esc(filter.title)}</b>
+        <b>${esc(shortTitle)}</b>
         <small>ID ${esc(filter.id)} · ${filter.count.toLocaleString('pt-BR')} questões${filter.status === 'unavailable' ? ' · indisponível' : ''}</small>
       ${filter.status === 'available' ? '</a>' : '</span>'}
       ${ringMarkup(stats.percent)}
@@ -426,14 +441,20 @@
     const icon = platform === 'qc' ? 'Q' : 'T';
     return `<section class="bcq-platform" data-bcq-platform="${platform}">
       <header class="bcq-platform-head"><span class="bcq-platform-icon" aria-hidden="true">${icon}</span><span><b>${name}</b><small>Selecione um filtro para praticar questões.</small></span><em>${rows.length} filtro${rows.length === 1 ? '' : 's'} disponíve${rows.length === 1 ? 'l' : 'is'}</em></header>
-      <div class="bcq-card-grid">${rows.map(filterCard).join('')}</div>
+      <div class="bcq-card-grid">${rows.map((filter) => filterCard(filter, filters)).join('')}</div>
     </section>`;
   }
 
   function filtersForModule(disciplineKey, module) {
     const code = baseModule(module);
-    return registry.filter((item) => item.disciplineKey === disciplineKey && item.module === code)
-      .filter((item) => !(disciplineKey === 'rlm' && item.source === 'tec-general' && global.RLM_TJCE_STRUCTURE));
+    const unique = new Map();
+    registry.filter((item) => item.disciplineKey === disciplineKey && item.module === code)
+      .filter((item) => !(disciplineKey === 'rlm' && item.source === 'tec-general' && global.RLM_TJCE_STRUCTURE))
+      .forEach((item) => {
+        const key = `${item.platform}|${item.id || item.url}`;
+        if (!unique.has(key)) unique.set(key, item);
+      });
+    return Array.from(unique.values());
   }
 
   function inferModuleNumber(element) {
@@ -505,13 +526,17 @@
       const body = moduleBody(element);
       if (!body) return;
       hideOriginalPanels(body);
-      let panel = body.querySelector(':scope > [data-bcq-module-panel]');
+      const mountedPanels = Array.from(body.querySelectorAll(':scope > [data-bcq-module-panel]'));
+      let panel = mountedPanels.shift() || null;
+      mountedPanels.forEach((duplicate) => duplicate.remove());
       if (!filters.length) {
         panel?.remove();
         return;
       }
       const signature = filters.map((filter) => { const stats = statsFor(filter); return `${filter.stableKey}:${filter.title}:${filter.count}:${filter.url}:${filter.status}:${filter.revision}:${stats.answered}:${stats.correct}`; }).join('|');
-      const markup = `<div class="bcq-module-panels" data-bcq-module-panel="${identity.disciplineKey}:${identity.module}" data-bcq-signature="${attr(signature)}">${platformPanel(filters, 'qc')}${platformPanel(filters, 'tec')}</div>`;
+      const discipline = filters[0]?.discipline || DISCIPLINES[identity.disciplineKey] || identity.disciplineKey;
+      const topic = catalogModuleTitle(filters);
+      const markup = `<section class="bcq-module-panels" data-bcq-module-panel="${identity.disciplineKey}:${identity.module}" data-bcq-signature="${attr(signature)}" aria-label="Filtros de questões de ${attr(discipline)}, ${attr(topic)}"><header class="bcq-module-filter-head"><span>QUESTÕES EXTERNAS</span><h3>${esc(discipline)} · ${esc(identity.module)}${topic ? ` — ${esc(topic)}` : ''}</h3><p>Escolha a plataforma e abra o filtro desejado.</p></header><div class="bcq-module-platforms">${platformPanel(filters, 'qc')}${platformPanel(filters, 'tec')}</div></section>`;
       if (panel && panel.dataset.bcqSignature === signature) { updateModuleMetric(element, filters); return; }
       if (panel) panel.outerHTML = markup;
       else {
