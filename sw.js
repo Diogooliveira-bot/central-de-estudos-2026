@@ -1,11 +1,11 @@
 /* Base Completa — PWA autenticado e offline por sessão verificada. */
-var CACHE='central-20261015-external-filters-v1';
+var CACHE='central-20261015-central-questoes-v4';
 var AUTH_CACHE='central-auth-session-v1';
 var AUTH_KEY='/__bc_offline_auth__';
 var AUTH_TTL_MS=72*60*60*1000;
 var BOOT='/central-v119.html';
-var OFFLINE_MANIFEST='/central-offline-files-v66172.json?v=20261014tec1';
-var OFFLINE_READY='/central-offline-ready?v=20261014tec1';
+var OFFLINE_MANIFEST='/central-offline-files-v66172.json?v=20261015-central-questoes-v4';
+var OFFLINE_READY='/central-offline-ready?v=20261015-central-questoes-v4';
 
 function publicPath(path){
   return path==='/login.html'||path==='/favicon.ico'||path==='/robots.txt'||path==='/assets/base-completa-symbol.webp';
@@ -126,7 +126,7 @@ self.addEventListener('fetch',function(event){
 
   if(request.method!=='GET'||url.pathname.startsWith('/api/'))return;
 
-  if(request.mode==='navigate'&&(url.pathname==='/'||url.pathname==='/index.html'||url.pathname==='/central-v119.html')){
+  if(request.mode==='navigate'&&(url.pathname==='/'||url.pathname==='/index.html'||url.pathname==='/central-v119.html'||url.pathname==='/central-de-questoes')){
     event.respondWith(
       caches.open(CACHE).then(function(cache){
         var entry=new URL(request.url);entry.pathname=BOOT;entry.searchParams.delete('direct');
