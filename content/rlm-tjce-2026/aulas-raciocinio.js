@@ -286,7 +286,7 @@ window.RLM_CURSO_AULAS=Object.assign(window.RLM_CURSO_AULAS||{}, {
       {
         "title": "Conceitos com condições combinadas",
         "paragraphs": [
-          "Um enunciado pode definir um objeto por vários atributos: 'elemento que é par, múltiplo de 3 e menor que 20'. A solução é a interseção de três critérios. Liste candidatos por uma característica forte (múltiplos de 6) e filtre a restrição restante (6, 12 e 18).",
+          "Um enunciado pode definir um objeto por vários atributos: 'inteiro positivo que é par, múltiplo de 3 e menor que 20'. Fixe primeiro o universo dos inteiros positivos. Ser par e múltiplo de 3 equivale a ser múltiplo de 6; menores que 20, restam 6, 12 e 18. Sem a restrição de positividade, zero e inteiros negativos também poderiam satisfazer as condições.",
           "Em exercícios FCC, o principal risco é generalizar indevidamente. A prova permite usar exatamente as regras explícitas ou demonstravelmente inferidas. Se vários objetos satisfazem as condições, informe que a escolha não é única em vez de inventar um dado ausente."
         ],
         "example": "Exemplo resolvido: inteiros positivos pares e múltiplos de 5 menores que 25 são 10 e 20; um único elemento não pode ser inferido."
@@ -502,9 +502,9 @@ window.RLM_CURSO_AULAS=Object.assign(window.RLM_CURSO_AULAS||{}, {
         "title": "Identificação de padrões em sequências",
         "paragraphs": [
           "Uma sequência é uma lista ordenada de elementos produzidos por alguma regra. O mesmo conjunto numérico pode gerar sequências diferentes dependendo da ordem. Em concursos, procure primeiro diferenças consecutivas (progressão aritmética), depois razões multiplicativas (progressão geométrica), operações alternadas e relações entre termos distantes.",
-          "Anote índices (posição 1, 2, 3...) para não confundir valor do termo com posição. Uma regra só é útil se explica todos os termos observados e determina o próximo dentro do critério explícito."
+          "Anote índices (posição 1, 2, 3...) para não confundir valor do termo com posição. Uma regra deve explicar todos os termos observados. Um trecho finito pode admitir diferentes regras de continuação: confira o critério informado ou sustentado pelo contexto e pelas alternativas. Reconhecer um padrão plausível não demonstra que ele seja a única continuação matematicamente possível."
         ],
-        "example": "Exemplo resolvido: 4, 7, 10, 13, ... cresce de 3 em 3. O próximo termo é 16."
+        "example": "Exemplo resolvido: seguindo o critério de somar 3 a cada termo, 4, 7, 10, 13, ... continua com 13+3=16. A conclusão depende desse critério de formação."
       },
       {
         "title": "Diferenças e multiplicações",
