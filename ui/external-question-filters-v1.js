@@ -51,6 +51,7 @@
   let adminFilter = null;
   let scheduled = false;
   const disciplineOpenState = new Map();
+  const moduleOpenState = new Map();
   const ROUTE = '/central-de-questoes';
   const TABS = new Set(['overview', 'disciplines', 'filters', 'history', 'review']);
 
@@ -774,6 +775,7 @@
         const details = summary.parentElement;
         details.open = !details.open;
         if (details.classList.contains('bcq-discipline')) disciplineOpenState.set(details.dataset.bcqDiscipline, details.open);
+        if (details.classList.contains('bcq-discipline-module')) moduleOpenState.set(details.dataset.bcqModule, details.open);
         summary.setAttribute('aria-expanded', String(details.open));
         syncDisciplineToggle(host);
       });
@@ -794,7 +796,7 @@
         const qc = rows.filter((row) => row.platform === 'qc');
         const tec = rows.filter((row) => row.platform === 'tec');
         const platformColumn = (platform, items) => `<section class="bcq-discipline-platform" data-platform="${platform}"><header><span class="bcq-page-platform" data-platform="${platform}">${platform === 'qc' ? 'QC' : 'TEC'}</span><div><b>${platform === 'qc' ? 'QConcursos' : 'TEC Concursos'}</b><small>${items.length} ${items.length === 1 ? 'filtro' : 'filtros'}</small></div></header><div class="bcq-discipline-platform-list">${items.length ? items.map((item) => filterListButton(item, true)).join('') : '<p class="bcq-discipline-platform-empty">Nenhum filtro neste módulo.</p>'}</div></section>`;
-        return `<details class="bcq-discipline-module"><summary><div class="bcq-discipline-module-title"><b>${esc(module)}</b><strong>${esc(catalogModuleTitle(rows))}</strong></div><span>${qc.length} QC · ${tec.length} TEC</span></summary><div class="bcq-discipline-columns">${platformColumn('qc', qc)}${platformColumn('tec', tec)}</div></details>`;
+        return `<details class="bcq-discipline-module" data-bcq-module="${esc(Array.from(groups.keys())[index] + "|" + module)}"${moduleOpenState.get(Array.from(groups.keys())[index] + "|" + module) ? " open" : ""}><summary><div class="bcq-discipline-module-title"><b>${esc(module)}</b><strong>${esc(catalogModuleTitle(rows))}</strong></div><span>${qc.length} QC · ${tec.length} TEC</span></summary><div class="bcq-discipline-columns">${platformColumn('qc', qc)}${platformColumn('tec', tec)}</div></details>`;
       }).join('')}</div></details>`;
     }).join('')}</div></section>`;
     bindDisciplineControls(host);
