@@ -277,10 +277,10 @@ window.RLM_CURSO_AULAS=Object.assign(window.RLM_CURSO_AULAS||{}, {
       {
         "title": "Moda e interpretação conjunta",
         "paragraphs": [
-          "Moda é o valor ou categoria mais frequente. Uma amostra pode ser amodal (sem frequência máxima única, por exemplo todos aparecem uma vez), unimodal (um pico) ou multimodal (mais de um valor empatado na maior frequência). Empate no máximo impede que se escolha uma moda exclusiva.",
+          "Moda é o valor ou categoria de maior frequência. Uma distribuição é unimodal quando tem uma moda; bimodal quando dois valores se destacam empatados na maior frequência; e multimodal quando há várias modas. Pela convenção introdutória adotada neste curso, quando nenhum valor se repete, a distribuição é amodal. Ter duas ou mais modas não significa ausência de moda.",
           "Média, mediana e moda respondem a perguntas diferentes. Em salários com alguns valores extremos muito altos, a mediana pode representar melhor a observação central. A moda identifica o valor mais comum, útil também para variáveis qualitativas, para as quais média não faz sentido."
         ],
-        "example": "Exemplo resolvido: 2, 2, 3, 4, 4 tem duas modas: 2 e 4. A mediana é 3 e a média é 3."
+        "example": "Exemplo resolvido: 2, 2, 3, 4, 4 tem duas modas, 2 e 4, cada uma com frequência 2; portanto, é bimodal. A mediana é 3 e a média é 3. Já 1, 2, 3, 4 é amodal pela convenção adotada, pois nenhum valor se repete."
       },
       {
         "title": "Tendência central em tabelas",
@@ -309,8 +309,8 @@ window.RLM_CURSO_AULAS=Object.assign(window.RLM_CURSO_AULAS||{}, {
       },
       {
         "title": "Moda",
-        "text": "Maior frequência observada.",
-        "bizu": "Pode existir empate de modas."
+        "text": "Valor ou categoria de maior frequência, não a frequência em si.",
+        "bizu": "Duas modas: bimodal. Nenhum valor repetido: amodal, pela convenção do curso."
       },
       {
         "title": "Conferência",
@@ -338,9 +338,9 @@ window.RLM_CURSO_AULAS=Object.assign(window.RLM_CURSO_AULAS||{}, {
       {
         "name": "Moda",
         "branches": [
-          "frequência",
-          "empates",
-          "amodal"
+          "valor de maior frequência",
+          "bimodal: duas modas",
+          "amodal: nenhum valor repetido (convenção do curso)"
         ]
       },
       {
@@ -524,10 +524,10 @@ window.RLM_CURSO_AULAS=Object.assign(window.RLM_CURSO_AULAS||{}, {
       {
         "title": "Variância: população e amostra",
         "paragraphs": [
-          "Variância é média de quadrados dos desvios em relação à média. Para uma população de N valores: σ² = Σ(xi−μ)²/N. Para estimar variância populacional por uma amostra, a variância amostral usual é s² = Σ(xi−x̄)²/(n−1), para n>1. A diferença de denominador é essencial.",
+          "A variância descritiva de um conjunto de dados é a média dos quadrados dos desvios em relação à sua média: divide-se a soma por sua quantidade de valores. Para uma população de N valores: σ² = Σ(xi−μ)²/N. Quando o objetivo é estimar a variância populacional a partir de uma amostra, usa-se usualmente a variância amostral corrigida s² = Σ(xi−x̄)²/(n−1), para n>1. Identifique o objetivo e a convenção do enunciado: a palavra 'amostra', isoladamente, não determina qual cálculo foi solicitado.",
           "A variância nunca é negativa, já que cada parcela é um quadrado. Ela é zero somente quando todos os dados são iguais. Sua unidade é a unidade original ao quadrado, de modo que interpretação em reais ou minutos costuma ficar mais intuitiva com o desvio padrão."
         ],
-        "example": "Exemplo resolvido: população 2,4,6 tem média 4; soma quadrática 4+0+4=8; variância populacional 8/3 ≈2,67."
+        "example": "Exemplo resolvido: os dados 2,4,6 têm média 4 e soma dos quadrados dos desvios 4+0+4=8. Para descrever os três valores como população, a variância é 8/3 ≈2,67. Se forem uma amostra usada para estimar a variância populacional pela fórmula corrigida, s²=8/(3−1)=4. O objetivo do cálculo explica a mudança de denominador."
       },
       {
         "title": "Desvio padrão e transformações",
@@ -555,9 +555,9 @@ window.RLM_CURSO_AULAS=Object.assign(window.RLM_CURSO_AULAS||{}, {
         "bizu": "O denominador é N para população."
       },
       {
-        "title": "Variância amostral",
+        "title": "Variância amostral corrigida",
         "text": "Σ(x−x̄)²/(n−1).",
-        "bizu": "Verifique se é amostral ou populacional."
+        "bizu": "Use n−1 para a estimativa corrigida; confira o objetivo e a convenção do enunciado."
       },
       {
         "title": "Desvio padrão",

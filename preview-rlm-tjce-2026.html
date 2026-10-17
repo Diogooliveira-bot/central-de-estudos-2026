@@ -18,6 +18,7 @@ main{max-width:1390px;width:100%;margin:auto;padding:22px clamp(17px,3.5vw,51px)
 .lesson{padding:20px 0 22px;border-top:1px solid var(--line)}.lesson:first-of-type{border-top:0;padding-top:8px}.lesson-head{display:flex;gap:12px;align-items:flex-start}.lesson-head .num{flex:0 0 35px;width:35px;height:35px;border-radius:10px;display:grid;place-content:center;background:#eaf3fa;color:#185d8d;font-weight:850;font-size:12px}.lesson h3{font-size:18px;margin:0 0 12px}.lesson p{font-size:14px;line-height:1.79;color:#384d62;margin:0 0 11px;max-width:88ch}.worked{background:#f2f8fc;border:1px solid #c9e1ee;border-radius:12px;padding:0 15px;margin:15px 0 4px;max-width:88ch}.worked summary{cursor:pointer;font-size:13px;font-weight:800;color:#226a94;padding:13px 0}.worked p{font-size:13px;color:#365b73;margin:0 0 13px}.bizu{margin-top:9px;background:#edf8f4;color:#266e56;padding:10px;border-radius:8px;font-size:12px;border:1px solid #b9ddcf}.tip p{font-size:13px;margin:0;color:#456173}.tip{height:100%}.quiz-sep{border-top:1px solid var(--line);padding-top:22px;margin-top:24px}.practice-list{display:grid;gap:14px}.quiz-card{background:#fff;border:1px solid #d6e2ec;border-radius:14px;padding:19px;scroll-margin-top:15px}.quiz-card[data-level="fácil"]{border-left:4px solid #36977d}.quiz-card[data-level="médio"]{border-left:4px solid #c38e3c}.quiz-card[data-level="difícil"]{border-left:4px solid #bb6b75}.quiz-info{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:10px}.quiz-info span{font-size:10px;font-weight:850;text-transform:uppercase;letter-spacing:.08em;color:#54728a}.quiz-info .lev{background:#edf3f8;padding:4px 8px;border-radius:100px}.quiz-card h3{font-size:14px;line-height:1.6;margin:0 0 13px}.options{display:grid;gap:8px}.opt{display:flex;align-items:flex-start;gap:10px;text-align:left;width:100%;border:1px solid #d9e4ec;border-radius:9px;background:#fafcfe;color:#2c4359;padding:11px 13px;min-height:45px;font-size:13px;line-height:1.52}.opt b{flex:0 0 20px;color:#3f789b}.opt:not(:disabled):hover{background:#eaf4fa;border-color:#6f9eae}.opt:disabled{opacity:1;cursor:default}.opt.correct{border-color:#36957b;background:#ecf8f3;color:#205c48}.opt.wrong{border-color:#cf8383;background:#fff0f0;color:#8b3939}.feedback{border-radius:10px;background:#f2f7fb;border:1px solid #cbdde9;color:#244a66;padding:13px;margin-top:13px;font-size:13px;line-height:1.7}.feedback b{display:block;margin-bottom:5px}.feedback.is-correct{background:#eef8f2;border-color:#b6ddc8;color:#1f6043}.feedback.is-wrong{background:#fff4ef;border-color:#eacdb8;color:#8b5433}.progress-line{margin:12px 0 20px;padding:12px 14px;background:#f5f9fc;border-radius:10px;border:1px solid var(--line);font-size:13px;color:#3a6079}.mindmap-branch{background:white;border:1px solid #c5dce7;border-top:4px solid var(--cyan);border-radius:12px;padding:16px}.mindmap-branch h3{text-align:center;font-size:14px;color:#245778;margin:0 0 13px}.mindmap-branch ul{padding:0;margin:0;list-style:none;display:grid;gap:6px}.mindmap-branch li{font-size:12px;color:#52708a;background:#f2f8fc;border-radius:7px;padding:8px;text-align:center}.page-controls{display:flex;gap:10px;justify-content:space-between;align-items:center;flex-wrap:wrap;padding:14px 0}.page-controls small{font-size:12px;color:#657b8d}.imported{border:1px dashed #b4c9d9;border-radius:12px;background:#fafcfd;padding:16px;margin:12px 0}.source-link{font-size:12px;font-weight:750}.legend{font-size:12px;color:#668094;margin:10px 0}.scorecard{display:flex;align-items:center;gap:12px;flex-wrap:wrap;background:#e8f4f9;border:1px solid #c1dce8;border-radius:12px;padding:12px 15px;margin:16px 0;font-size:13px}.scorecard strong{font-size:18px;color:#1a597c}.lesson-nav{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
 @media(max-width:730px){.lesson{padding:15px 0 18px}.lesson-head .num{flex-basis:30px;width:30px;height:30px}.lesson h3{font-size:16px}.quiz-card{padding:14px}.opt{font-size:12px}.mindmap-branch{padding:11px}}
 </style>
+<link rel="stylesheet" href="./ui/rlm-native-v1.css?v=20261016amp1">
 </head>
 <body>
 <div class="shell">
@@ -35,9 +36,11 @@ main{max-width:1390px;width:100%;margin:auto;padding:22px clamp(17px,3.5vw,51px)
 <main id="main"><div class="top"><div style="display:flex;align-items:center;gap:9px"><button class="menu" aria-label="Abrir menu de módulos" onclick="document.getElementById('sidebar').classList.toggle('show')">☰</button><small>Central de Estudos / Disciplinas / RLM</small></div><span class="tag orange">Prévia · não publicada</span></div><div id="content"><div class="empty">Carregando estrutura dos módulos…</div></div><footer class="foot">Esta prévia salva respostas apenas neste navegador e não altera a Central publicada ou cadernos.</footer></main>
 </div>
 <script src="./content/rlm-tjce-2026/aulas-logica.js"></script>
-<script src="./content/rlm-tjce-2026/aulas-raciocinio.js"></script>
+<script src="./content/rlm-tjce-2026/aulas-raciocinio.js?v=20261016cor1"></script>
 <script src="./content/rlm-tjce-2026/aulas-matematica.js"></script>
-<script src="./content/rlm-tjce-2026/aulas-estatistica.js"></script>
+<script src="./content/rlm-tjce-2026/aulas-estatistica.js?v=20261016cor1"></script>
+<script src="./content/rlm-tjce-2026/complementos-teoria.js?v=20261016amp1"></script>
+<script src="./ui/rlm-theory-resources.js?v=20261016amp1"></script>
 <script src="./content/rlm-tjce-2026/banco-fcc-legado.js"></script>
 <script>
 'use strict';
@@ -170,11 +173,11 @@ function progressHtml(id){
 function theory(m){
  const d=autoral(m.id);
  if(!d)return '<section class="section"><div class="empty">Aula não localizada. Verifique os arquivos da prévia.</div></section>';
- return '<section class="section"><div class="eyebrow">Etapa 1 · Apostila digital</div><h2>Teoria completa — primeira edição</h2><p class="section-lead">Leitura integral estruturada, com conceitos, método, exemplos resolvidos e observações de prova. O texto poderá ser ampliado e auditado antes da publicação.</p>'+
+ return '<section class="section"><div class="eyebrow">Etapa 1 · Apostila digital</div><h2>Teoria completa — edição ampliada</h2><p class="section-lead">Leitura integral estruturada, com conceitos, método, exemplos resolvidos e observações de prova. Abra as resoluções após tentar os exemplos e consulte as fontes de apoio ao final.</p>'+
  d.theory.map((part,i)=>'<article class="lesson"><div class="lesson-head"><span class="num">'+String(i+1).padStart(2,"0")+'</span><div><h3>'+esc(part.title)+'</h3>'+
- part.paragraphs.map(p=>'<p>'+esc(p)+'</p>').join('')+
- '<details class="worked"><summary>Exemplo aplicado · revelar resolução</summary><p>'+esc(part.example)+'</p></details></div></div></article>').join('')+
- '<div class="note">Estude os conceitos, tente resolver cada exemplo antes de abrir a explicação e depois siga para o resumo com prática.</div>'+
+ RlmTheoryResources.chapter(part)+
+ '</div></div></article>').join('')+
+ RlmTheoryResources.references(d)+'<div class="note">Estude os conceitos, tente resolver cada exemplo antes de abrir a explicação e depois siga para o resumo com prática.</div>'+
  '<div class="lesson-nav"><button class="btn primary" onclick="setTab(\'summary\')">Avançar para resumo e questões →</button><button class="btn" onclick="setTab(\'map\')">Ver mapa mental</button></div></section>';
 }
 function summary(m){
