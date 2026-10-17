@@ -188,6 +188,10 @@
       Array.from(footer.children).find(el => el.querySelector('.resource-label')?.textContent === 'Revisão')?.classList.add('ds-footer-review');
       body.appendChild(footer);
     }
+    if (meta.subject === 'cf') {
+      // Remove only the redundant manual question entry/history UI; keep stored rounds intact.
+      footer.querySelector(':scope > .ds-footer-questions')?.remove();
+    }
     if (body.lastElementChild !== footer) body.appendChild(footer);
     const history = footer.querySelector('[data-ds-footer-history]');
     if (history) { const html = footerHistory(meta); if (history.innerHTML !== html) history.innerHTML = html; }
