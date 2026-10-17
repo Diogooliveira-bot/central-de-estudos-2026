@@ -50,6 +50,7 @@
   let modalReturnFocus = null;
   let adminFilter = null;
   let scheduled = false;
+  const disciplineOpenState = new Map();
   const ROUTE = '/central-de-questoes';
   const TABS = new Set(['overview', 'disciplines', 'filters', 'history', 'review']);
 
@@ -756,7 +757,7 @@
     toggle.setAttribute('aria-expanded', String(expanded));
   }
   function setDisciplinesExpanded(host, expanded) {
-    disciplineDetails(host).forEach((item) => { item.open = expanded; });
+    disciplineDetails(host).forEach((item) => { item.open = expanded; disciplineOpenState.set(item.dataset.bcqDiscipline, expanded); });
     syncDisciplineToggle(host);
   }
   function bindDisciplineControls(host) {
@@ -772,6 +773,7 @@
         event.stopPropagation();
         const details = summary.parentElement;
         details.open = !details.open;
+        if (details.classList.contains('bcq-discipline')) disciplineOpenState.set(details.dataset.bcqDiscipline, details.open);
         summary.setAttribute('aria-expanded', String(details.open));
         syncDisciplineToggle(host);
       });
@@ -788,7 +790,7 @@
     const host = page.querySelector('[data-bcq-panel="disciplines"]');
     host.innerHTML = `<section class="bcq-center-panel"><header><div><span>CATÁLOGO COMPLETO</span><h2>Disciplinas e módulos</h2><p>Os mesmos filtros exibidos no final de cada módulo.</p></div><button type="button" data-bcq-toggle-disciplines aria-expanded="true">Recolher disciplinas</button></header><div class="bcq-discipline-list">${Array.from(groups.values()).map((group, index) => {
       const filters = Array.from(group.modules.values()).flat();
-      return `<details class="bcq-discipline"${index === 0 ? ' open' : ''}><summary><span><b>${esc(CATALOG_DISCIPLINE_LABELS[group.label] || group.label)}</b><small>${group.modules.size} módulos com filtros</small></span><strong>${filters.length} filtros</strong></summary><div>${Array.from(group.modules.entries()).map(([module, rows]) => {
+      return `<details class="bcq-discipline" data-bcq-discipline="${esc(Array.from(groups.keys())[index])}"${(disciplineOpenState.has(Array.from(groups.keys())[index]) ? disciplineOpenState.get(Array.from(groups.keys())[index]) : index === 0) ? ' open' : ''}><summary><span><b>${esc(CATALOG_DISCIPLINE_LABELS[group.label] || group.label)}</b><small>${group.modules.size} módulos com filtros</small></span><strong>${filters.length} filtros</strong></summary><div>${Array.from(group.modules.entries()).map(([module, rows]) => {
         const qc = rows.filter((row) => row.platform === 'qc');
         const tec = rows.filter((row) => row.platform === 'tec');
         const platformColumn = (platform, items) => `<section class="bcq-discipline-platform" data-platform="${platform}"><header><span class="bcq-page-platform" data-platform="${platform}">${platform === 'qc' ? 'QC' : 'TEC'}</span><div><b>${platform === 'qc' ? 'QConcursos' : 'TEC Concursos'}</b><small>${items.length} ${items.length === 1 ? 'filtro' : 'filtros'}</small></div></header><div class="bcq-discipline-platform-list">${items.length ? items.map((item) => filterListButton(item, true)).join('') : '<p class="bcq-discipline-platform-empty">Nenhum filtro neste módulo.</p>'}</div></section>`;
@@ -796,6 +798,7 @@
       }).join('')}</div></details>`;
     }).join('')}</div></section>`;
     bindDisciplineControls(host);
+    syncDisciplineToggle(host);
   }
   function renderFilterLibrary(page) {
     const items = pageFilters();
