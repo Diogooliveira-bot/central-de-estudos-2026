@@ -728,7 +728,13 @@
   function filterListButton(filter, simple = false) {
     const stats = statsFor(filter);
     const title = simple ? catalogFilterTitle(filter) : `${filter.code} · ${filter.title}`;
-    return `<button type="button" class="bcq-page-filter${selectedKey === filter.stableKey ? ' active' : ''}" data-bcq-select="${attr(filter.stableKey)}"><span class="bcq-page-platform" data-platform="${filter.platform}">${filter.platform === 'qc' ? 'QC' : 'TEC'}</span><span><b>${esc(title)}</b><small>${filter.count.toLocaleString('pt-BR')} questões · ID ${esc(filter.id)}${filter.status === 'unavailable' ? ' · indisponível' : ''}</small></span><strong>${stats.percent == null ? '—' : `${stats.percent}%`}</strong></button>`;
+    const content = `<span class="bcq-page-platform" data-platform="${filter.platform}">${filter.platform === 'qc' ? 'QC' : 'TEC'}</span><span><b>${esc(title)}</b><small>${filter.count.toLocaleString('pt-BR')} questões · ID ${esc(filter.id)}${filter.status === 'unavailable' ? ' · indisponível' : ''}</small></span><strong aria-label="${stats.percent == null ? 'Sem resultados registrados' : stats.percent + '% de acertos'}">${stats.percent == null ? '—' : `${stats.percent}%`}</strong>`;
+    if (simple) {
+      return filter.status === 'available'
+        ? `<a class="bcq-page-filter" href="${attr(filter.url)}" target="_blank" rel="noopener noreferrer" title="Abrir filtro no ${filter.platform === 'qc' ? 'QConcursos' : 'TEC Concursos'}">${content}</a>`
+        : `<span class="bcq-page-filter" aria-disabled="true">${content}</span>`;
+    }
+    return `<button type="button" class="bcq-page-filter${selectedKey === filter.stableKey ? ' active' : ''}" data-bcq-select="${attr(filter.stableKey)}">${content}</button>`;
   }
   function historyRow(entry) {
     const { filter, session } = entry;
