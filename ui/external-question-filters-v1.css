@@ -61,3 +61,7 @@
 @media(max-width:760px){#questionFiltersView{padding-bottom:88px}.bcq-center-tabs{position:sticky;top:0;z-index:5}.bcq-center-stats{gap:8px}.bcq-center-stats article{padding:14px}.bcq-center-history-row{grid-template-columns:36px minmax(0,1fr) 45px}.bcq-center-history-row>span:not(.bcq-page-platform),.bcq-center-history-row>div:last-child{display:none}.bcq-review-list>article{grid-template-columns:36px minmax(0,1fr) 58px}.bcq-review-list>article>div:last-child{grid-column:2/-1}.bcq-platform-summary{padding:12px}.bcq-discipline-list{padding:10px}}
 @media(max-width:620px){.bcq-discipline-columns{grid-template-columns:1fr}.bcq-discipline-platform+ .bcq-discipline-platform{border-top:1px solid var(--line,#e1e5ea);border-left:0}}
 @media(max-width:500px){.bcq-center-stats{grid-template-columns:1fr 1fr}.bcq-center-stats b{font-size:21px}.bcq-center-stats small{display:none}.bcq-platform-summary{grid-template-columns:1fr}.bcq-center-panel>header{padding:14px}.bcq-review-list .bcq-ring{width:52px;height:52px}}
+
+/* Respect the native closed state of discipline and module details. */
+.bcq-discipline:not([open]) > div,
+.bcq-discipline-module:not([open]) > .bcq-discipline-columns { display:none; }
