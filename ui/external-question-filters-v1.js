@@ -687,8 +687,18 @@
     renderPage();
   }
   function leavePage() {
-    global.history.pushState({ centralQuestions: false }, '', '/');
-    global.openHome?.();
+    const page = document.getElementById('questionFiltersView');
+    if (page) {
+      page.classList.add('hidden');
+      page.classList.remove('central-view-visible');
+    }
+    if (global.location.pathname === ROUTE) global.history.replaceState({ centralQuestions: false }, '', '/');
+    if (typeof global.openHome === 'function') global.openHome();
+    else {
+      document.getElementById('homeView')?.classList.remove('hidden');
+      const crumb = document.getElementById('crumb');
+      if (crumb) crumb.textContent = 'Início';
+    }
   }
   function openPage(button, options = {}) {
     refreshRegistry(); injectPage();
