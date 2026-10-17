@@ -629,8 +629,6 @@
       <nav class="bcq-center-tabs" role="tablist" aria-label="Seções da Central de Questões">
         <button type="button" role="tab" data-bcq-tab="overview">Visão geral</button>
         <button type="button" role="tab" data-bcq-tab="disciplines">Disciplinas</button>
-        <button type="button" role="tab" data-bcq-tab="filters">Meus filtros</button>
-        <button type="button" role="tab" data-bcq-tab="history">Histórico</button>
         <button type="button" role="tab" data-bcq-tab="review">Revisão</button>
       </nav>
       <div class="bcq-center-content">
@@ -792,7 +790,15 @@
     const host = page.querySelector('[data-bcq-panel="disciplines"]');
     host.innerHTML = `<section class="bcq-center-panel"><header><div><span>CATÁLOGO COMPLETO</span><h2>Disciplinas e módulos</h2><p>Os mesmos filtros exibidos no final de cada módulo.</p></div><button type="button" data-bcq-toggle-disciplines aria-expanded="true">Recolher disciplinas</button></header><div class="bcq-discipline-list">${Array.from(groups.values()).map((group, index) => {
       const filters = Array.from(group.modules.values()).flat();
-      return `<details class="bcq-discipline" data-bcq-discipline="${esc(Array.from(groups.keys())[index])}"${(disciplineOpenState.has(Array.from(groups.keys())[index]) ? disciplineOpenState.get(Array.from(groups.keys())[index]) : index === 0) ? ' open' : ''}><summary><span><b>${esc(CATALOG_DISCIPLINE_LABELS[group.label] || group.label)}</b><small>${group.modules.size} módulos com filtros</small></span><strong>${filters.length} filtros</strong></summary><div>${Array.from(group.modules.entries()).map(([module, rows]) => {
+      const unique = new Map(filters.map((filter) => [filter.stableKey, filter]));
+      const totals = Array.from(unique.values()).reduce((sum, filter) => {
+        const stats = statsFor(filter);
+        sum.answered += stats.answered;
+        sum.correct += stats.correct;
+        return sum;
+      }, { answered: 0, correct: 0 });
+      const accuracy = percent(totals.answered, totals.correct);
+      return `<details class="bcq-discipline" data-bcq-discipline="${esc(Array.from(groups.keys())[index])}"${(disciplineOpenState.has(Array.from(groups.keys())[index]) ? disciplineOpenState.get(Array.from(groups.keys())[index]) : index === 0) ? ' open' : ''}><summary><span><b>${esc(CATALOG_DISCIPLINE_LABELS[group.label] || group.label)}</b><small>${group.modules.size} módulos com filtros</small></span><strong>${accuracy === null ? "—" : accuracy + "%"} acertos <span aria-hidden="true">·</span> ${filters.length} filtros</strong></summary><div>${Array.from(group.modules.entries()).map(([module, rows]) => {
         const qc = rows.filter((row) => row.platform === 'qc');
         const tec = rows.filter((row) => row.platform === 'tec');
         const platformColumn = (platform, items) => `<section class="bcq-discipline-platform" data-platform="${platform}"><header><span class="bcq-page-platform" data-platform="${platform}">${platform === 'qc' ? 'QC' : 'TEC'}</span><div><b>${platform === 'qc' ? 'QConcursos' : 'TEC Concursos'}</b><small>${items.length} ${items.length === 1 ? 'filtro' : 'filtros'}</small></div></header><div class="bcq-discipline-platform-list">${items.length ? items.map((item) => filterListButton(item, true)).join('') : '<p class="bcq-discipline-platform-empty">Nenhum filtro neste módulo.</p>'}</div></section>`;
