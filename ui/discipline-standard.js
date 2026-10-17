@@ -85,14 +85,14 @@
     return goal ? (goal.checked ? 100 : 0) : 0;
   }
   function progressPanel(module, meta) {
-    const reading = readingStats(module, meta), questions = questionStats(module, meta), overall = percentage(module);
+    const reading = readingStats(module, meta), questions = meta.subject === 'cf' ? null : questionStats(module, meta), overall = percentage(module);
     const law = module.querySelector('button[onclick*="openLeiSeca"],button[onclick*="decorando"],a[onclick*="openLeiSeca"]');
     const label = law ? 'Lei em Dia' : (meta.subject === 'pt' ? 'Revisão' : 'Materiais');
     const description = law ? 'Artigos e exercícios vinculados ao módulo' : (meta.subject === 'pt' ? 'Pontos de revisão disponíveis no módulo' : 'Consulte os materiais e recursos vinculados');
     return '<section class="csp-panel ds-progress" data-ds-summary><div class="csp-panel-head"><div><span>PROGRESSO DE ESTUDO</span><b>' + overall + '% do módulo</b></div><div class="csp-panel-note">Conclusão conforme os critérios desta disciplina</div></div>' + meter(overall) + '<div class="csp-grid">' +
       '<article class="csp-stage-card"><div class="csp-stage-head"><div><b>Leitura</b><small>' + esc(reading.text) + '</small></div><strong>' + (reading.pct === null ? '—' : reading.pct + '%') + '</strong></div>' + meter(reading.pct) + '</article>' +
       '<article class="csp-stage-card"><div class="csp-stage-head"><div><b>' + label + '</b><small>' + description + '</small></div></div><button type="button" class="ds-action" data-ds-action="' + (meta.subject === 'pt' ? 'review' : 'resources') + '">Abrir ' + (law ? 'Lei em Dia' : label.toLowerCase()) + '</button></article>' +
-      '<article class="csp-stage-card csp-tec"><div class="csp-stage-head"><div><b>Questões / TEC</b><small>' + esc(questions.text) + '</small></div><strong>' + (questions.total && questions.correct !== null ? Math.round(questions.correct / questions.total * 100) + '% de acertos' : questions.total ? '—' : 'Sem registro') + '</strong></div><div class="ds-actions"><button type="button" class="ds-action" data-ds-action="questions">Abrir questões e registros</button></div></article></div></section>';
+      (meta.subject === 'cf' ? '' : '<article class="csp-stage-card csp-tec"><div class="csp-stage-head"><div><b>Questões / TEC</b><small>' + esc(questions.text) + '</small></div><strong>' + (questions.total && questions.correct !== null ? Math.round(questions.correct / questions.total * 100) + '% de acertos' : questions.total ? '—' : 'Sem registro') + '</strong></div><div class="ds-actions"><button type="button" class="ds-action" data-ds-action="questions">Abrir questões e registros</button></div></article>') + '</div></section>';
   }
   function notes(module, body, meta) {
     const host = body.querySelector(':scope > .ds-module-footer') || body;
@@ -240,7 +240,10 @@
       const panel = body.querySelector('[data-ds-summary]');
       if (panel) { const html = progressPanel(module,meta); if (panel.outerHTML !== html) panel.outerHTML = html; }
     }
-    if (!body.querySelector(':scope > .ds-module-nav')) {
+    if (meta.subject === 'cf') {
+      // The native Constitutional module already presents its study content directly.
+      body.querySelector(':scope > .ds-module-nav')?.remove();
+    } else if (!body.querySelector(':scope > .ds-module-nav')) {
       const nav = document.createElement('nav'); nav.className = 'ds-module-nav'; nav.setAttribute('aria-label','Navegação do módulo');
       nav.innerHTML = '<button type="button" data-ds-action="content">Conteúdo</button><button type="button" data-ds-action="questions">Questões / TEC</button><button type="button" data-ds-action="resources">Ferramentas</button><button type="button" data-ds-action="notes">Anotações</button>';
       const panel = body.querySelector('.csp-panel'); if (panel) panel.after(nav); else body.prepend(nav);
