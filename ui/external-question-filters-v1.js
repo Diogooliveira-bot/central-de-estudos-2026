@@ -1040,6 +1040,16 @@
   }
   function init() {
     ensureLegacyTecIds(); refreshRegistry(); injectNavigation(); injectPage(); injectModal(); injectAdminModal(); mountModules();
+    document.addEventListener('click', (event) => {
+      const target = event.target instanceof Element ? event.target : event.target?.parentElement;
+      if (!target || !document.getElementById('questionFiltersView') || document.getElementById('questionFiltersView').classList.contains('hidden')) return;
+      const outsideNav = target.closest('#centralSidebar .nav button, #studentMorePanel button, .top-actions button[onclick*="openHome"]');
+      if (!outsideNav || outsideNav.matches('[data-bcq-nav]')) return;
+      // Liberar a rota e ocultar a Central de Questões antes da navegação original.
+      document.getElementById('questionFiltersView').classList.add('hidden');
+      document.getElementById('questionFiltersView').classList.remove('central-view-visible');
+      if (global.location.pathname === ROUTE) global.history.replaceState({ centralQuestions: false }, '', '/');
+    }, true);
     document.addEventListener('click', onClick);
     document.addEventListener('keydown', (event) => {
       if (event.key === 'Escape' && !document.getElementById('bcqSessionModal')?.hidden) closeModal();
