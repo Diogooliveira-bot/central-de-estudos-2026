@@ -39,7 +39,39 @@ async function bootstrapStatus(res) {
   return send(res, 200, { needsBootstrap: Number(rows[0]?.count || 0) === 0 });
 }
 
+/**
+ * Preview-only synthetic identity. It has no database account, admin access,
+ * or permission to call any other API (middleware rejects guest requests).
+ */
+function isPreviewGuest(req) {
+  const secret = String(process.env.BC_PREVIEW_GUEST_TOKEN || '');
+  if (process.env.VERCEL_ENV !== 'preview' || secret.length < 40) return false;
+  const encoded = String(req.headers?.cookie || '').split(';').map(s => s.trim())
+    .find(s => s.startsWith('bc_preview_guest='));
+  if (!encoded) return false;
+  let supplied;
+  try { supplied = decodeURIComponent(encoded.slice('bc_preview_guest='.length)); }
+  catch (_) { return false; }
+  if (supplied.length < 40 || supplied.length > 128) return false;
+  const actualHash = crypto.createHash('sha256').update(supplied).digest();
+  const expectedHash = crypto.createHash('sha256').update(secret).digest();
+  return crypto.timingSafeEqual(actualHash, expectedHash);
+}
+
 async function currentUser(req, res) {
+  if (isPreviewGuest(req)) {
+    return send(res, 200, {
+      authenticated: true,
+      previewGuest: true,
+      user: {
+        id: 'base-completa-preview-guest',
+        name: 'Modo de testes',
+        email: 'preview@local.invalid',
+        role: 'aluno',
+        active: true,
+      },
+    });
+  }
   const session = await requireSession(req);
   if (!session.ok) return send(res, 200, { authenticated: false });
   return send(res, 200, { authenticated: true, user: session.user });
