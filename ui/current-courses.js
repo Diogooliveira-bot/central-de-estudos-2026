@@ -39,14 +39,71 @@ function openPtInfographic(num){
  document.addEventListener('keydown',onKey);
  return false;
 }
+/**
+ * 24-module Portuguese visual shell, aligned with the approved CF layout.
+ * The lessons, interactive question state, review and downloadable infographic
+ * remain managed by their existing, authoritative components.
+ */
 function ptMaster(){
- const course=global.CentralPortugueseCourse;if(!course)return '';
- return '<div class="cf-modules">'+course.modules.concat([course.review]).map(m=>{
- const done=localStorage.getItem('central-v6:pt:auto24:done:'+m.id)==='1';
- const open=localStorage.getItem('central-v6:pt:auto24:open')===m.id;
- const card=(mode,title,text,icon)=>'<button type="button" class="bc-native-material-card" data-pt-material="'+mode+'" onclick="CentralPortugueseReader.open(\''+m.id+'\',\''+mode+'\')"><span class="bc-native-material-icon">'+icon+'</span><span><strong>'+title+'</strong><small>'+text+'</small></span><span class="bc-native-material-action">Abrir →</span></button>';
- return '<section class="cf-module '+(open?'open':'')+'" data-pt-current="'+m.id+'"><button type="button" class="cf-module-head" onclick="return togglePtCurrentModule(\''+m.id+'\')"><span class="cf-module-no">'+(m.review?'REVISÃO FINAL':'MÓDULO '+m.num)+'</span><span class="cf-module-title">'+esc(m.title)+'</span><span class="cf-module-stat">'+(done?'100%':'0%')+'</span><span class="chev">⌄</span></button><div class="cf-module-body"><div class="cf-subtitle">'+(m.review?'Revisão cumulativa dos 24 módulos.':m.lessons?m.lessons+' aulas • Português Autodidata':'Português Autodidata')+'</div><section class="bc-native-materials"><section class="bc-native-metrics"><article class="bc-native-metric-card"><div class="bc-native-ring" style="--pct:'+(done?100:0)+'"><div class="bc-native-ring-inner"><b>'+ (done?'100%':'0%')+'</b><span>módulo</span></div></div><div class="bc-native-metric-copy"><small>CONCLUSÃO DO MÓDULO</small><strong>'+(done?'Concluído':'Em estudo')+'</strong><span>Marque a conclusão ao terminar o material.</span></div></article></section><div class="bc-native-materials-head"><div><b>Materiais do módulo</b><small>Escolha como estudar</small></div><small>'+ (m.review?'REVISÃO':m.id.toUpperCase())+' • conteúdo nativo</small></div><div class="bc-native-material-grid">'+card('complete','Conteúdo completo','Apostila integral com índice, busca e ajuste de fonte.','📚')+card('review','Revisão e exercícios','Acesse a consolidação e a prática do próprio módulo.','⚡')+(ptInfographicModules[Number(m.num)]?('<button type="button" class="bc-native-material-card" data-pt-material="infographic" onclick="return openPtInfographic('+Number(m.num)+')"><span class="bc-native-material-icon">🖼️</span><span><strong>Infográfico</strong><small>Imagem do módulo com opção de download.</small></span><span class="bc-native-material-action">Abrir →</span></button>'):'')+'</div></section></div></section>';
- }).join('');
+ const course=global.CentralPortugueseCourse;
+ if(!course)return '';
+ const all=course.modules.concat([course.review]);
+ const card=(id,type,icon,title,description,labels,actionLabel,mode,quizLabel,quizMode)=>{
+  const action=type==='map'
+   ? 'return openPtInfographic('+Number(id.slice(1))+')'
+   : 'return CentralPortugueseReader.open(\''+id+'\',\''+mode+'\')';
+  const quiz=quizMode
+   ? '<button type="button" class="pt-cf-button pt-cf-button-quiz" data-pt-cf-quiz="'+esc(quizMode)+'" onclick="return CentralPortugueseReader.open(\''+id+'\',\''+quizMode+'\')">'+esc(quizLabel)+'</button>'
+   : '';
+  return '<article class="pt-cf-card pt-cf-card-'+type+'">'+
+    '<span class="pt-cf-icon" aria-hidden="true">'+icon+'</span>'+
+    '<b>'+esc(title)+'</b><small>'+esc(description)+'</small>'+
+    '<span class="pt-cf-tags" aria-hidden="true">'+labels.map(x=>'<span>'+esc(x)+'</span>').join('')+'</span>'+
+    '<div class="pt-cf-actions"><button type="button" class="pt-cf-button pt-cf-button-open" data-pt-cf-open="'+type+'" onclick="'+action+'">'+esc(actionLabel)+'</button>'+quiz+'</div>'+
+    '</article>';
+ };
+ return '<div class="cf-modules pt-cf-modules">'+all.map(m=>{
+  const done=localStorage.getItem('central-v6:pt:auto24:done:'+m.id)==='1';
+  const open=localStorage.getItem('central-v6:pt:auto24:open')===m.id;
+  const pct=done?100:0,review=!!m.review,hasInfographic=!review&&Boolean(ptInfographicModules[Number(m.num)]);
+  const orientation=review?[
+   'Retome os principais conceitos estudados do M01 ao M24.',
+   'Resolva a revisão cumulativa antes de consultar as respostas.',
+   'Identifique os assuntos que ainda precisam de reforço.'
+  ]:[
+   'Estude o assunto "'+m.title+'" por meio da teoria completa.',
+   'Destaque regras, conceitos e exemplos que costumam aparecer em provas.',
+   'Resolva os exercícios e use a revisão ativa para verificar o que aprendeu.'
+  ];
+  const oriented='<section class="pt-cf-oriented" aria-label="Leitura orientada inicial">'+
+   '<div class="pt-cf-oriented-top"><span class="pt-cf-oriented-symbol" aria-hidden="true">📖</span>'+
+   '<div><b>'+(review?'Leitura orientada da revisão final':'Leitura orientada inicial')+'</b>'+
+   '<small>'+(review?'Organize sua revisão cumulativa em etapas.':'Comece entendendo o tema antes de praticar.')+'</small></div></div>'+
+   '<details><summary>Ver pontos para observar</summary><ul>'+orientation.map(line=>'<li>'+esc(line)+'</li>').join('')+'</ul></details></section>';
+  const reading='<section class="pt-cf-reading" aria-label="Progresso de leitura do módulo">'+
+   '<div class="pt-cf-reading-line"><div><b>Leitura</b><small>'+(done?'Módulo concluído.':'Marque a conclusão ao terminar o conteúdo.')+'</small></div>'+
+   '<strong>'+pct+'%</strong></div><div class="pt-cf-progress-track" role="progressbar" aria-label="Conclusão de leitura" aria-valuemin="0" aria-valuemax="100" aria-valuenow="'+pct+'"><span style="width:'+pct+'%"></span></div></section>';
+  const full=card(m.id,'primary','📚',review?'Revisão cumulativa completa':'Teoria completa',
+   review?'Material integral de revisão dos 24 módulos, com índice e busca.':'Apostila integral do módulo, com índice, busca e ajuste de fonte.',
+   review?['Revisão final','Conteúdo integral']:['Apostila','Conteúdo completo'],
+   review?'Estudar revisão':'Estudar conteúdo','complete',
+   review?'Resolver questões cumulativas':'Resolver 10 questões',review?'cumulative':'exam');
+  const summary=card(m.id,'review','⚡',review?'Revisão ativa final':'Versão de revisão',
+   review?'Recupere os conteúdos estudados com perguntas e respostas comentadas.':'Retome os pontos essenciais e faça recuperação ativa.',
+   ['Resumo','Revisão ativa'],review?'Revisar conteúdos':'Revisar conteúdo','review',
+   review?'Praticar revisão final':'Resolver 5 questões',review?'cumulative':'active');
+  const infographic=hasInfographic?card(m.id,'map','🧠','Infográfico',
+   'Imagem de revisão visual do módulo, com opção de download.',
+   ['Imagem','Revisão visual'],'Visualizar infográfico','infographic','',''):'';
+  const content='<div class="pt-cf-module-inside">'+reading+oriented+
+   '<section class="pt-cf-cards" aria-label="Materiais e exercícios do módulo">'+full+summary+infographic+'</section></div>';
+  return '<section class="cf-module pt-cf-module '+(open?'open':'')+'" data-pt-current="'+esc(m.id)+'">'+
+   '<button type="button" class="cf-module-head" onclick="return togglePtCurrentModule(\''+m.id+'\')" aria-expanded="'+(open?'true':'false')+'">'+
+    '<span class="cf-module-no">'+(review?'REVISÃO FINAL':'MÓDULO '+m.num)+'</span>'+
+    '<span class="cf-module-title">'+esc(m.title)+'</span>'+
+    '<span class="cf-module-stat">'+pct+'%</span><span class="chev">⌄</span></button>'+
+   '<div class="cf-module-body">'+content+'</div></section>';
+ }).join('')+'</div>';
 }
 if(!global.__centralCurrentPortuguese){
  global.__centralCurrentPortuguese=true;
