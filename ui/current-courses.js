@@ -3,6 +3,7 @@
 'use strict';
 function esc(value){return String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function modules(){return global.CentralPortugueseCourse?.modules||[]}
+const ptInfographicModules={6:'/assets/portugues-infograficos/m06.webp',8:'/assets/portugues-infograficos/m08.webp',9:'/assets/portugues-infograficos/m09.webp',10:'/assets/portugues-infograficos/m10.webp',11:'/assets/portugues-infograficos/m11.webp',12:'/assets/portugues-infograficos/m12.webp',14:'/assets/portugues-infograficos/m14.webp',15:'/assets/portugues-infograficos/m15.webp',16:'/assets/portugues-infograficos/m16.webp',17:'/assets/portugues-infograficos/m17.webp',18:'/assets/portugues-infograficos/m18.webp',19:'/assets/portugues-infograficos/m19.webp',20:'/assets/portugues-infograficos/m20.webp',21:'/assets/portugues-infograficos/m21.webp',22:'/assets/portugues-infograficos/m22.webp',23:'/assets/portugues-infograficos/m23.webp',24:'/assets/portugues-infograficos/m24.webp'}
 function ptStats(){const total=modules().length,done=modules().filter(m=>localStorage.getItem('central-v6:pt:auto24:done:'+m.id)==='1').length;return {total,done,pct:total?Math.round(done/total*100):0,unit:'módulos'}}
 function openPt(id){
  const course=global.CentralPortugueseCourse;
@@ -22,13 +23,29 @@ function togglePt(id){
  if(el?.classList.contains('open')){el.classList.remove('open');localStorage.removeItem('central-v6:pt:auto24:open');const url=new URL(location.href);url.searchParams.delete('module');history.replaceState(null,'',url);return false}
  return openPt(id);
 }
+function openPtInfographic(num){
+ const image=ptInfographicModules[Number(num)];if(!image)return false;
+ const module=modules().find(m=>Number(m.num)===Number(num));
+ const title=module?.title||('Módulo '+num);
+ const label='Português M'+String(num).padStart(2,'0')+' — '+title;
+ const filename='Portugues-M'+String(num).padStart(2,'0')+'-Infografico.webp';
+ const overlay=document.createElement('div');overlay.id='pt-infographic-overlay';overlay.className='cf-native-overlay';
+ overlay.innerHTML='<section class="cf-native-shell" role="dialog" aria-modal="true" aria-label="'+esc(label)+'"><header><div><b>'+esc(label)+'</b><small>Infográfico do módulo • imagem para visualizar e baixar</small></div><button type="button" data-close aria-label="Fechar infográfico">×</button></header><div class="cf-native-map"><img src="'+image+'?v=20261018ptinfographics1" alt="'+esc(label)+'" decoding="async"></div><footer style="display:flex;justify-content:center;padding:10px 14px 14px;border-top:1px solid var(--line)"><a class="cf-btn primary" href="'+image+'?v=20261018ptinfographics1" download="'+filename+'">⬇ Baixar infográfico</a></footer></section>';
+ document.body.appendChild(overlay);document.body.style.overflow='hidden';
+ const close=()=>{overlay.remove();document.body.style.overflow='';document.removeEventListener('keydown',onKey)};
+ const onKey=e=>{if(e.key==='Escape')close()};
+ overlay.querySelector('[data-close]').onclick=close;
+ overlay.addEventListener('click',e=>{if(e.target===overlay)close()});
+ document.addEventListener('keydown',onKey);
+ return false;
+}
 function ptMaster(){
  const course=global.CentralPortugueseCourse;if(!course)return '';
  return '<div class="cf-modules">'+course.modules.concat([course.review]).map(m=>{
  const done=localStorage.getItem('central-v6:pt:auto24:done:'+m.id)==='1';
  const open=localStorage.getItem('central-v6:pt:auto24:open')===m.id;
  const card=(mode,title,text,icon)=>'<button type="button" class="bc-native-material-card" data-pt-material="'+mode+'" onclick="CentralPortugueseReader.open(\''+m.id+'\',\''+mode+'\')"><span class="bc-native-material-icon">'+icon+'</span><span><strong>'+title+'</strong><small>'+text+'</small></span><span class="bc-native-material-action">Abrir →</span></button>';
- return '<section class="cf-module '+(open?'open':'')+'" data-pt-current="'+m.id+'"><button type="button" class="cf-module-head" onclick="return togglePtCurrentModule(\''+m.id+'\')"><span class="cf-module-no">'+(m.review?'REVISÃO FINAL':'MÓDULO '+m.num)+'</span><span class="cf-module-title">'+esc(m.title)+'</span><span class="cf-module-stat">'+(done?'100%':'0%')+'</span><span class="chev">⌄</span></button><div class="cf-module-body"><div class="cf-subtitle">'+(m.review?'Revisão cumulativa dos 24 módulos.':m.lessons?m.lessons+' aulas • Português Autodidata':'Português Autodidata')+'</div><section class="bc-native-materials"><section class="bc-native-metrics"><article class="bc-native-metric-card"><div class="bc-native-ring" style="--pct:'+(done?100:0)+'"><div class="bc-native-ring-inner"><b>'+ (done?'100%':'0%')+'</b><span>módulo</span></div></div><div class="bc-native-metric-copy"><small>CONCLUSÃO DO MÓDULO</small><strong>'+(done?'Concluído':'Em estudo')+'</strong><span>Marque a conclusão ao terminar o material.</span></div></article></section><div class="bc-native-materials-head"><div><b>Materiais do módulo</b><small>Escolha como estudar</small></div><small>'+ (m.review?'REVISÃO':m.id.toUpperCase())+' • conteúdo nativo</small></div><div class="bc-native-material-grid">'+card('complete','Conteúdo completo','Apostila integral com índice, busca e ajuste de fonte.','📚')+card('review','Revisão e exercícios','Acesse a consolidação e a prática do próprio módulo.','⚡')+card('mindmap','Mapa mental','Mapa dos tópicos do módulo com zoom e tela cheia.','🧠')+'</div></section></div></section>';
+ return '<section class="cf-module '+(open?'open':'')+'" data-pt-current="'+m.id+'"><button type="button" class="cf-module-head" onclick="return togglePtCurrentModule(\''+m.id+'\')"><span class="cf-module-no">'+(m.review?'REVISÃO FINAL':'MÓDULO '+m.num)+'</span><span class="cf-module-title">'+esc(m.title)+'</span><span class="cf-module-stat">'+(done?'100%':'0%')+'</span><span class="chev">⌄</span></button><div class="cf-module-body"><div class="cf-subtitle">'+(m.review?'Revisão cumulativa dos 24 módulos.':m.lessons?m.lessons+' aulas • Português Autodidata':'Português Autodidata')+'</div><section class="bc-native-materials"><section class="bc-native-metrics"><article class="bc-native-metric-card"><div class="bc-native-ring" style="--pct:'+(done?100:0)+'"><div class="bc-native-ring-inner"><b>'+ (done?'100%':'0%')+'</b><span>módulo</span></div></div><div class="bc-native-metric-copy"><small>CONCLUSÃO DO MÓDULO</small><strong>'+(done?'Concluído':'Em estudo')+'</strong><span>Marque a conclusão ao terminar o material.</span></div></article></section><div class="bc-native-materials-head"><div><b>Materiais do módulo</b><small>Escolha como estudar</small></div><small>'+ (m.review?'REVISÃO':m.id.toUpperCase())+' • conteúdo nativo</small></div><div class="bc-native-material-grid">'+card('complete','Conteúdo completo','Apostila integral com índice, busca e ajuste de fonte.','📚')+card('review','Revisão e exercícios','Acesse a consolidação e a prática do próprio módulo.','⚡')+(ptInfographicModules[Number(m.num)]?('<button type="button" class="bc-native-material-card" data-pt-material="infographic" onclick="return openPtInfographic('+Number(m.num)+')"><span class="bc-native-material-icon">🖼️</span><span><strong>Infográfico</strong><small>Imagem do módulo com opção de download.</small></span><span class="bc-native-material-action">Abrir →</span></button>'):'')+'</div></section></div></section>';
  }).join('');
 }
 if(!global.__centralCurrentPortuguese){
@@ -37,6 +54,7 @@ if(!global.__centralCurrentPortuguese){
  const originalGoalDone=global.goalDone;
  global.goalDone=function(uid){if(/^pt-auto24-/.test(uid))return localStorage.getItem('central-v6:pt:auto24:done:'+uid.replace('pt-auto24-',''))==='1';return originalGoalDone(uid)};
  global.renderPortugueseMaster=ptMaster;
+ global.openPtInfographic=openPtInfographic;
  global.openPtCurrentModule=openPt;
  global.togglePtCurrentModule=togglePt;
  // Old saved module numbers belong to a different syllabus. Retain their data,
