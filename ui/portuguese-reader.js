@@ -12,6 +12,42 @@ function finish(id,value){
  if(typeof global.renderAll==='function')global.renderAll();
  if(typeof global.renderDisciplineGrid==='function')global.renderDisciplineGrid();
 }
+
+const PRACTICE_MODES={
+ exam:{title:'Questões estilo prova',kind:'exam',limit:10,description:'Questões de múltipla escolha com correção imediata.'},
+ active:{title:'Revisão ativa',kind:'active',limit:5,description:'Tente responder antes de revelar a resposta.'},
+ cumulative:{title:'Questões cumulativas',kind:'cumulative',limit:10,description:'Pratique questões sobre os 24 módulos.'},
+ 'cumulative-review':{title:'Revisão cumulativa ativa',kind:'cumulative',limit:5,description:'Recupere os pontos essenciais da revisão final.'},
+};
+function focusedPractice(article,records,mode,id){
+ const config=PRACTICE_MODES[mode];
+ if(!config)return null;
+ const subset=records.filter(record=>config.kind==='exam'
+  ? (record.kind==='independent'||record.kind==='mastery')&&record.type==='objective'
+  : record.kind===config.kind).slice(0,config.limit);
+ const cards=subset.map(r=>[...article.querySelectorAll('[data-pta-id]')].find(node=>node.dataset.ptaId===r.id)).filter(Boolean);
+ const root=document.createElement('section');
+ root.className='pt-native-practice-collection';
+ root.innerHTML='<header class="pt-native-practice-intro"><span class="pt-doc-kicker">PORTUGUÊS • ATIVIDADE INTERATIVA</span>'+
+  '<h2>'+esc(config.title)+'</h2><p>'+esc(config.description)+'</p>'+
+  '<small>'+cards.length+' atividade(s) disponível(is) neste módulo'+(cards.length<config.limit?' • quantidade real do material':'')+'.</small></header>';
+ if(cards.length)cards.forEach(card=>root.appendChild(card));
+ else{
+  const empty=document.createElement('p');
+  empty.className='pt-native-practice-empty';
+  empty.textContent='Esta modalidade de questões não está disponível neste módulo. Consulte os exercícios do conteúdo original.';
+  root.appendChild(empty);
+ }
+ const nav=document.createElement('div');
+ nav.className='pt-native-practice-navigation';
+ const back=document.createElement('button');
+ back.type='button';back.className='btn primary';back.textContent='Abrir conteúdo completo';
+ back.addEventListener('click',()=>open(id,'complete'));
+ nav.appendChild(back);root.appendChild(nav);
+ article.replaceChildren(root);
+ return {count:cards.length,limit:config.limit};
+}
+
 function prepare(markup){
  const template=document.createElement('template');template.innerHTML=markup;
  template.content.querySelectorAll('script').forEach(el=>el.remove());
@@ -22,9 +58,10 @@ function prepare(markup){
 }
 async function open(id,mode='complete'){
  const module=item(id);if(!module)return;
+ const practiceMode=PRACTICE_MODES[mode]||null;
  close();
  const overlay=document.createElement('div');overlay.id=ID;overlay.className='bc-native-reader-overlay pt-native-reader';
- overlay.innerHTML='<section class="bc-native-reader" role="dialog" aria-modal="true" aria-label="'+esc(module.title)+'"><header class="bc-native-reader-head"><div class="bc-native-reader-title"><b>Português • '+esc(module.title)+'</b><small>'+(mode==='review'?'Revisão e exercícios':'Conteúdo completo')+'</small></div><button type="button" class="bc-native-reader-close" aria-label="Fechar conteúdo">×</button></header><div class="pt-native-loading" role="status">Carregando conteúdo…</div></section>';
+ overlay.innerHTML='<section class="bc-native-reader" role="dialog" aria-modal="true" aria-label="'+esc(module.title)+'"><header class="bc-native-reader-head"><div class="bc-native-reader-title"><b>Português • '+esc(module.title)+'</b><small>'+(practiceMode?esc(practiceMode.title):mode==='review'?'Revisão e exercícios':'Conteúdo completo')+'</small></div><button type="button" class="bc-native-reader-close" aria-label="Fechar conteúdo">×</button></header><div class="pt-native-loading" role="status">Carregando conteúdo…</div></section>';
  document.body.appendChild(overlay);overlay.querySelector('.bc-native-reader-close').onclick=close;
  overlay.addEventListener('click',e=>{if(e.target===overlay)close()});
  try{
@@ -32,15 +69,17 @@ async function open(id,mode='complete'){
  if(!data[id])throw Error('Conteúdo indisponível. Tente novamente.');
  if(!overlay.isConnected)return;
  const {template,headings}=prepare(data[id]);
+ if(practiceMode)overlay.dataset.ptPractice=mode;
  if(mode==='mindmap'){
   const root={label:module.title,children:[],expanded:true},stack=[{level:1,node:root}];
   headings.forEach(h=>{const level=Number(h.tagName.slice(1));while(stack.length>1&&stack.at(-1).level>=level)stack.pop();const node={label:h.textContent.trim(),children:[]};stack.at(-1).node.children.push(node);stack.push({level,node})});
   close();global.BaseMindMap.register('pt',id,root);global.BaseMindMap.open('pt',id);return;
  }
  const shell=overlay.querySelector('.bc-native-reader');overlay.querySelector('.pt-native-loading').remove();
- shell.insertAdjacentHTML('beforeend','<div class="bc-native-reader-tools"><input type="search" placeholder="Buscar neste material…" aria-label="Buscar no conteúdo"><button type="button" data-pt-font="-1" aria-label="Diminuir fonte">A−</button><button type="button" data-pt-font="1" aria-label="Aumentar fonte">A+</button><button type="button" class="primary" data-pt-top>Ir ao topo</button></div><div class="bc-native-reader-body"><nav class="bc-native-toc" aria-label="Índice do material"><div class="bc-native-toc-label">Índice do módulo</div>'+headings.map(h=>'<button type="button" data-pt-jump="'+h.id+'">'+esc(h.textContent)+'</button>').join('')+'</nav><main class="bc-native-scroll"><div class="bc-native-article"></div></main></div>');
+ shell.insertAdjacentHTML('beforeend','<div class="bc-native-reader-tools"><input type="search" placeholder="Buscar neste material…" aria-label="Buscar no conteúdo"><button type="button" data-pt-font="-1" aria-label="Diminuir fonte">A−</button><button type="button" data-pt-font="1" aria-label="Aumentar fonte">A+</button><button type="button" class="primary" data-pt-top>Ir ao topo</button></div><div class="bc-native-reader-body"><nav class="bc-native-toc" aria-label="Índice do material"><div class="bc-native-toc-label">Índice do módulo</div>'+(practiceMode?'':headings.map(h=>'<button type="button" data-pt-jump="'+h.id+'">'+esc(h.textContent)+'</button>').join(''))+'</nav><main class="bc-native-scroll"><div class="bc-native-article"></div></main></div>');
  const article=overlay.querySelector('.bc-native-article');article.appendChild(template.content);
- if(global.BasePortugueseActivities)global.BasePortugueseActivities.enhance(article,{moduleId:id});
+ const exerciseRecords=global.BasePortugueseActivities?.enhance(article,{moduleId:id})||[];
+ if(practiceMode)focusedPractice(article,exerciseRecords,mode,id);
  const scroll=overlay.querySelector('.bc-native-scroll');active={id,scroll};
  let size=Math.max(85,Math.min(180,Number(localStorage.getItem('central-v6:reading-font-size'))||100));
  const applyFont=()=>article.style.fontSize=size/100+'em';applyFont();
@@ -58,7 +97,8 @@ async function open(id,mode='complete'){
  article.querySelectorAll('a[href]').forEach(a=>{if(/^https?:/.test(a.href)&&new URL(a.href).origin!==location.origin){a.target='_blank';a.rel='noopener noreferrer'}});
  requestAnimationFrame(()=>{
   const reviewHeading=mode==='review'?headings.find(h=>/CONSOLIDAR|DOMINAR|REVISÃO|REVIS[AÃ]O|EXERC[IÍ]C|QUEST[OÕ]ES/i.test(h.textContent)):null;
-  if(reviewHeading)article.querySelector('#'+reviewHeading.id)?.scrollIntoView({block:'start',behavior:'auto'});
+  if(practiceMode)scroll.scrollTop=0;
+  else if(reviewHeading)article.querySelector('#'+reviewHeading.id)?.scrollIntoView({block:'start',behavior:'auto'});
   else scroll.scrollTop=Number(localStorage.getItem('central-v6:pt:auto24:scroll:'+id))||0;
  });
  overlay.querySelector('.bc-native-reader-close').focus();
