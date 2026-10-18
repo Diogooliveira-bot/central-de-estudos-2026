@@ -35,7 +35,7 @@ Fazer fungível: coerção e possível execução por terceiro. Fazer infungíve
 Não fazer: desfazimento do ato; se impossível, perdas e danos.
 Fazenda Pública, art. 910: título extrajudicial é executável; embargos em 30 dias; pagamento por precatório ou RPV.
 Alimentos extrajudiciais, arts. 911-913: 3 dias para pagar, provar ou justificar. Prisão civil: 3 prestações anteriores ao ajuizamento + vincendas, conforme Súmula 309/STJ.
-O material alerta que a alteração da Lei 15.479/2026 no art. 913 só entra em vigor em 31/07/2027.
+O material alerta que a alteração da Lei 15.479/2026 no art. 913 só entra em vigor em 30/07/2027.
 
 5. ARTIGOS, PEGADINHAS E REVISÃO
 771 subsidiariedade; 774 multa até 20%; 780 cumulação; 783 certa+líquida+exigível; 784 títulos; 785 opção por conhecimento; 789 patrimônio; 792 fraude; 797 interesse do exequente; 805 menor onerosidade; 806 coisa certa; 814 multa em fazer/não fazer; 822-823 não fazer; 910 Fazenda 30 dias; 911 alimentos 3 dias; 913 rito alternativo; CF 100 precatórios/RPV.
@@ -117,7 +117,7 @@ Art. 911: 3 dias para pagar, provar pagamento ou justificar.
 Súmula 309/STJ: 3 prestações anteriores ao ajuizamento + vincendas.
 Art. 912: desconto em folha.
 Art. 913: possibilidade de seguir execução por quantia.
-O material alerta para vigência futura da alteração da Lei 15.479/2026 em 31/07/2027.
+O material alerta para vigência futura da alteração da Lei 15.479/2026 em 30/07/2027.
 
 19. QUADRO COMPARATIVO DAS ESPÉCIES
 Coisa certa: 15 dias + imissão/busca.
@@ -163,7 +163,7 @@ Lei 15.479/2026 no art. 913 ainda não vigente em 2026.
 30 dias Fazenda.
 3 dias alimentos.
 3 prestações anteriores + vincendas.
-31/07/2027 vigência futura da alteração do art. 913.
+30/07/2027 vigência futura da alteração do art. 913.
 
 24. REVISÃO RÁPIDA
 Título extrajudicial exige certeza, liquidez e exigibilidade. Art. 784 admite títulos eletrônicos e lei especial. Responsabilidade patrimonial pode alcançar terceiros nos casos legais. Fraude gera ineficácia perante o exequente. Menor onerosidade não afasta efetividade. Medidas atípicas exigem filtros. Coisa certa: 15 dias; móvel=busca; imóvel=imissão. Fazenda: 30 dias. Alimentos: 3 dias.

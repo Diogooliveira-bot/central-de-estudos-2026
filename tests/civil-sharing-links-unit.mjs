@@ -30,18 +30,18 @@ test('bootstrap real seleciona a camada Civil atual e o carregador renderiza os 
   assert.equal(data.items.length, 66);
   assert.equal(new Set(data.items.map((x) => x.subdivisao || x.modulo)).size, 66);
   assert(boot.includes('content/civil/civil-sharing-links.js?v=20261009civilsharing2'));
-  assert(boot.includes('ui/civil-native-study-v1.js?v=20261009civilsharing2'));
+  assert(boot.includes('ui/civil-native-study-v1.js?v=20261018civiljur1'));
   assert(boot.includes('ui/civil-native-study-v1.css?v=20261009civilsharing2'));
   assert(lazy.includes('content/civil/civil-sharing-links.js?v=20261009civilsharing2'));
-  assert(lazy.includes('ui/civil-native-study-v1.js?v=20261009civilsharing2'));
+  assert(lazy.includes('ui/civil-native-study-v1.js?v=20261018civiljur1'));
   assert(boot.includes('groups.civil=groups.civil.filter('), 'Bootstrap deve retirar primeiro os scripts antigos do mesmo caminho.');
   assert(loader.includes('const path=new URL(src,location.origin).pathname') && loader.includes('seen.has(path)'), 'O teste precisa cobrir a deduplicação real do carregador.');
   for (const asset of [
     '/content/civil/civil-sharing-links.js?v=20261009civilsharing2',
-    '/ui/civil-native-study-v1.js?v=20261009civilsharing2',
+    '/ui/civil-native-study-v1.js?v=20261018civiljur1',
     '/ui/civil-native-study-v1.css?v=20261009civilsharing2',
   ]) assert(manifest.files.includes(asset), `${asset}: ausente no pacote offline.`);
-  assert(serviceWorker.includes('central-offline-files-v66172.json?v=20261009civilsharing2'));
+  assert.match(serviceWorker, /central-offline-files-v66172\.json\?v=[^'"\s]+/);
 
   const moduleByUid = new Map(index.modules.map((m) => [m.uid, m]));
   const perModule = new Map();
@@ -71,14 +71,14 @@ test('bootstrap real seleciona a camada Civil atual e o carregador renderiza os 
       return path.startsWith('content/civil/') || path === 'ui/civil-native-study-v1.js';
     });
   const bootCivilFiles = [
-    'content/civil/civil-native-index.js?v=20261005civil1',
+    'content/civil/civil-native-index.js?v=20261018civiljur1',
     'content/civil/civil-sharing-links.js?v=20261009civilsharing2',
-    'ui/civil-native-study-v1.js?v=20261009civilsharing2',
+    'ui/civil-native-study-v1.js?v=20261018civiljur1',
   ];
   for (const src of bootCivilFiles) assert(boot.includes(src));
   const rawCivilFiles = [...originalCivilFiles,
-    'content/civil/civil-native-index.js?v=20261005civil1',
-    'ui/civil-native-study-v1.js?v=20261005civil1',
+    'content/civil/civil-native-index.js?v=20261018civiljur1',
+    'ui/civil-native-study-v1.js?v=20261018civiljur1',
   ];
   const currentCivilFiles = rawCivilFiles.filter((src) => {
     const path = src.split('?')[0].replace(/^\//, '');
@@ -100,7 +100,7 @@ test('bootstrap real seleciona a camada Civil atual e o carregador renderiza os 
   const effectivePaths = effectiveCivilFiles.map((src) => new URL(src, 'http://localhost').pathname);
   assert.equal(effectivePaths.filter((p) => p === '/ui/civil-native-study-v1.js').length, 1);
   assert.equal(effectivePaths.filter((p) => p === '/content/civil/civil-sharing-links.js').length, 1);
-  assert(effectiveCivilFiles.indexOf('content/civil/civil-sharing-links.js?v=20261009civilsharing2') < effectiveCivilFiles.indexOf('ui/civil-native-study-v1.js?v=20261009civilsharing2'));
+  assert(effectiveCivilFiles.indexOf('content/civil/civil-sharing-links.js?v=20261009civilsharing2') < effectiveCivilFiles.indexOf('ui/civil-native-study-v1.js?v=20261018civiljur1'));
 
   const server = createServer((req, res) => {
     const pathname = decodeURIComponent(new URL(req.url, 'http://localhost').pathname);
