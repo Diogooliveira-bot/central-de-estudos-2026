@@ -6,6 +6,7 @@ var DB_NAME='central-sync-device-v2',STORE='kv',localState=null,localReady=false
 var busy=false,lastCheckHash='',timers=[];
 var CRONO_KEY='CENTRAL_CRONOGRAMA_6M_V2',AGENDA_PREFIX='central-v6:agenda:';
 var user=window.BASE_COMPLETA_USER||null;
+var previewGuest=window.__BASE_COMPLETA_PREVIEW_GUEST__===true;
 var userId=String(window.__BASE_COMPLETA_USER_ID__||user&&user.id||'');
 var meta={device:'',revision:0,hash:''};
 
@@ -58,7 +59,7 @@ async function push(local,hash,base){return request('/api/sync',{method:'POST',h
 async function safetyBackup(local,note){try{await request('/api/backups',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'save',note:note,backup:{formato:'central-backup-v3-user',app:'Base Completa',versao:'v'+currentVersion(),exportadoEm:new Date().toISOString(),origem:'sync',userId:userId,dados:local}})})}catch(_){}}
 
 async function sync(reason){
- if(!userId||!localReady||busy||!navigator.onLine)return;
+ if(previewGuest||!userId||!localReady||busy||!navigator.onLine)return;
  busy=true;status('Sincronizando sua conta...','warn');
  try{
   var local=collect(),localHash=hashObject(local),cloud=await request('/api/sync');
@@ -102,6 +103,23 @@ function injectUi(){
 function observe(){var h=hashObject(collect());if(!lastCheckHash)lastCheckHash=h;if(h!==lastCheckHash){lastCheckHash=h;status(navigator.onLine?'Alteração detectada; salvando na sua conta...':'Alteração salva neste aparelho; aguardando internet.','warn');setTimeout(function(){sync('change')},900)}}
 
 async function init(){
+ if(previewGuest){
+  // No database request or cloud sync in preview guest mode.
+  injectUi();
+  var panel=document.getElementById('centralSyncPanel');
+  var button=document.getElementById('centralSyncNow');
+  if(button){button.hidden=true;button.disabled=true}
+  if(panel){
+   var label=panel.querySelector('.central-setting-label');
+   if(label)label.textContent='Modo de testes';
+   var note=panel.querySelector('.central-settings-note');
+   if(note)note.textContent='Navegação de demonstração: dados locais neste navegador; sem sincronização com contas reais.';
+  }
+  var brand=document.querySelector('.brand-copy small');
+  if(brand)brand.textContent='Modo de testes • dados locais';
+  status('Modo de testes — dados locais, sem sincronização.','ok');
+  return;
+ }
  if(!userId){
   try{var r=await fetch('/api/auth?action=me',{cache:'no-store'}),j=await r.json();if(j&&j.authenticated&&j.user){user=j.user;userId=String(j.user.id||'')}}catch(_){}
  }
@@ -123,8 +141,8 @@ async function init(){
  timers.push(setInterval(function(){sync('poll')},120000));
 }
 
-window.addEventListener('online',function(){status('Internet restaurada; sincronizando...','warn');sync('online')});
-window.addEventListener('offline',function(){status('Sem internet. Alterações ficam salvas somente na sua conta neste aparelho até reconectar.','warn')});
-document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')sync('visible')});
+window.addEventListener('online',function(){if(previewGuest)return;status('Internet restaurada; sincronizando...','warn');sync('online')});
+window.addEventListener('offline',function(){if(previewGuest)return;status('Sem internet. Alterações ficam salvas somente na sua conta neste aparelho até reconectar.','warn')});
+document.addEventListener('visibilitychange',function(){if(previewGuest)return;if(document.visibilityState==='visible')sync('visible')});
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 })();
