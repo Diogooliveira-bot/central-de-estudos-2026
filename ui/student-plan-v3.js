@@ -7,8 +7,8 @@
 
   function ensureStudyPath() {
     // CF has its own native study flow; do not duplicate the general suggested sequence.
-    document.querySelectorAll('#subjects > .subject[data-id="cf"] > .subject-body > .student-study-path').forEach(guide => guide.remove());
-    document.querySelectorAll('#subjects > .subject.open:not([data-id="rlm"]):not([data-id="cf"])').forEach((section) => {
+    document.querySelectorAll('#subjects > .subject[data-id="cf"] > .subject-body > .student-study-path, #subjects > .subject[data-id="pt"] > .subject-body > .student-study-path').forEach(guide => guide.remove());
+    document.querySelectorAll('#subjects > .subject.open:not([data-id="rlm"]):not([data-id="cf"]):not([data-id="pt"])').forEach((section) => {
       const body = section.querySelector(':scope > .subject-body');
       if (!body || body.querySelector(':scope > .student-study-path')) return;
       const guide = document.createElement('aside');
