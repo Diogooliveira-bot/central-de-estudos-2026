@@ -1,6 +1,48 @@
 import { next } from '@vercel/functions';
 
 const COOKIE_NAME = 'bc_session';
+
+/**
+ * Preview-only bearer-link access for visual testing.
+ * BC_PREVIEW_GUEST_TOKEN is configured ONLY for the Vercel Preview target.
+ * A token never grants database privileges or an authenticated site account.
+ */
+const PREVIEW_GUEST_COOKIE = 'bc_preview_guest';
+const PREVIEW_GUEST_QUERY = 'bc_preview';
+const PREVIEW_GUEST_MAX_AGE = 7 * 24 * 60 * 60;
+const PREVIEW_GUEST_SECRET = String(process.env.BC_PREVIEW_GUEST_TOKEN || '');
+const PREVIEW_GUEST_ENABLED = process.env.VERCEL_ENV === 'preview' && PREVIEW_GUEST_SECRET.length >= 40;
+
+async function previewTokenMatches(token) {
+  if (!PREVIEW_GUEST_ENABLED || typeof token !== 'string' || token.length < 40 || token.length > 128) return false;
+  try {
+    const [given, expected] = await Promise.all(
+      [token, PREVIEW_GUEST_SECRET].map(value =>
+        crypto.subtle.digest('SHA-256', new TextEncoder().encode(value))
+          .then(buffer => new Uint8Array(buffer))
+      )
+    );
+    return safeEqualBytes(given, expected);
+  } catch (_) {
+    return false;
+  }
+}
+
+async function hasPreviewGuestCookie(request) {
+  try {
+    return await previewTokenMatches(parseCookie(request.headers.get('cookie'), PREVIEW_GUEST_COOKIE));
+  } catch (_) {
+    return false;
+  }
+}
+
+function previewForbidden() {
+  return new Response(JSON.stringify({ error: 'Modo de teste: ação indisponível sem login de usuário real.' }), {
+    status: 403,
+    headers: { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' },
+  });
+}
+
 const PUBLIC_PATHS = new Set([
   '/login.html',
   '/favicon.ico',
@@ -84,6 +126,43 @@ export const config = {
 export default async function middleware(request) {
   const url = new URL(request.url);
   const path = url.pathname;
+
+
+  // Preview links grant a read-only, browser-local demonstration.
+  // The query token is exchanged once for a secure cookie and then removed
+  // from the address bar so it is not forwarded as a Referer.
+  if (PREVIEW_GUEST_ENABLED && url.searchParams.has(PREVIEW_GUEST_QUERY)) {
+    const entryPathAllowed = path === '/' || path === '/central-v119.html' || path === '/index.html';
+    const token = url.searchParams.get(PREVIEW_GUEST_QUERY) || '';
+    if (request.method !== 'GET' || !entryPathAllowed || !(await previewTokenMatches(token))) {
+      return previewForbidden();
+    }
+    const cleanUrl = new URL(request.url);
+    cleanUrl.searchParams.delete(PREVIEW_GUEST_QUERY);
+    return new Response(null, {
+      status: 303,
+      headers: {
+        Location: cleanUrl.toString(),
+        'Set-Cookie': PREVIEW_GUEST_COOKIE + '=' + encodeURIComponent(token) +
+          '; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=' + PREVIEW_GUEST_MAX_AGE,
+        'Cache-Control': 'no-store',
+        'Referrer-Policy': 'no-referrer',
+      },
+    });
+  }
+
+  if (await hasPreviewGuestCookie(request)) {
+    if (path.startsWith('/api/')) {
+      // The synthetic identity is deliberately the ONLY API allowed.
+      // In particular, guest users cannot read/sync/write real database data.
+      if (request.method === 'GET' && path === '/api/auth' &&
+          url.searchParams.get('action') === 'me') return next();
+      return previewForbidden();
+    }
+    if (path === '/usuarios.html' || path === '/update-central.html') return previewForbidden();
+    if (path === '/login.html') return Response.redirect(new URL('/central-v119.html', request.url), 302);
+    return next();
+  }
 
   if (request.method === 'OPTIONS') return next();
   if (path.startsWith('/api/')) return next();
