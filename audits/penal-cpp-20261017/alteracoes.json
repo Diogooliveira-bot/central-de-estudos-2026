@@ -1,0 +1,200 @@
+[
+  {
+    "where": "penal-m01:complete",
+    "before": "político\u0002criminal",
+    "after": "político-criminal",
+    "occurrences": 1
+  },
+  {
+    "where": "penal-m01:complete",
+    "before": "fala\u0002se",
+    "after": "fala-se",
+    "occurrences": 1
+  },
+  {
+    "where": "penal-m02:summary",
+    "type": "Latin: melius",
+    "occurrences": 2
+  },
+  {
+    "where": "penal-m02:completeHtml",
+    "type": "Latin: melius",
+    "occurrences": 4
+  },
+  {
+    "where": "penal-m02:html",
+    "type": "Latin: melius",
+    "occurrences": 4
+  },
+  {
+    "where": "penal-m07:summary",
+    "before": "regras\u0002base",
+    "after": "regras-base",
+    "occurrences": 1
+  },
+  {
+    "where": "cpp-m19:summaryHtml",
+    "type": "Latin: melius",
+    "occurrences": 1
+  },
+  {
+    "where": "cpp-m19:completeHtml",
+    "type": "Latin: melius",
+    "occurrences": 8
+  },
+  {
+    "where": "penal-m01:summary",
+    "type": "Restauração de acentos e cópula é após leitura integral do resumo",
+    "beforeHash": "95a2278dfd54a33d661b657818ec89151134acb01c7818918539f04f5ac124ab",
+    "afterHash": "34512fb4005841a61c529dfc3a3348801a89107b33b03a8f6dfda831a779220e"
+  },
+  {
+    "where": "penal-m07:complete",
+    "before": "<h3>Atenuante abaixo do mínimo</h3>",
+    "after": "<p><strong>Modulação temporal — Tema 1.194/STJ:</strong> Os efeitos desfavoráveis da tese do Tema 1.194/STJ só alcançam fatos posteriores à publicação do acórdão em 16/09/2025. Não aplique retroativamente a menor redução ou a perda de preponderância para prejudicar o réu; a modulação não elimina os efeitos favoráveis da orientação.</p>\n<h3>Atenuante abaixo do mínimo</h3>",
+    "occurrences": 1
+  },
+  {
+    "where": "penal-m07:summary",
+    "before": "Confissão só atenua se tiver sido usada na condenação. Falso. Súmula 545/STJ, revisada, não exige esse uso.",
+    "after": "Confissão só atenua se tiver sido usada na condenação. Falso. Súmula 545/STJ, revisada, não exige esse uso.\r\nOs efeitos desfavoráveis da tese do Tema 1.194/STJ só alcançam fatos posteriores à publicação do acórdão em 16/09/2025. Não aplique retroativamente a menor redução ou a perda de preponderância para prejudicar o réu; a modulação não elimina os efeitos favoráveis da orientação.",
+    "occurrences": 1
+  },
+  {
+    "where": "penal-m10:complete",
+    "before": "Qualificadora introduzida em 2026.",
+    "after": "Qualificadora introduzida pela Lei 15.181/2025 e posteriormente ajustada pela Lei 15.397/2026.",
+    "occurrences": 1
+  },
+  {
+    "where": "penal-m10:complete",
+    "before": "<li>§ 9º: subtração em contexto legal específico por integrante de organização criminosa ultraviolenta, grupo paramilitar ou milícia privada → <strong>4 a 10 anos e multa</strong>.</li>",
+    "after": "<li>§ 9º: subtração em contexto legal específico por integrante de organização criminosa ultraviolenta, grupo paramilitar ou milícia privada → <strong>4 a 10 anos e multa</strong>.</li>\n<li><strong>§ 10 — Lei 15.517/2026:</strong> furto de petróleo e derivados, gás natural e frações recuperáveis, álcool etílico hidratado carburante, outros combustíveis fluidos carburantes, inclusive biocombustíveis, e óleos lubrificantes, removidos de estabelecimentos de produção ou instalações de armazenamento/transporte, incluídos dutos e unidades de transporte em qualquer modal → <strong>4 a 10 anos e multa</strong>.</li>\n<li><strong>§ 11:</strong> na hipótese do § 10, aumento de <strong>1/3</strong> por destruição/rompimento de obstáculo ou dano de qualquer natureza, concurso de duas ou mais pessoas, abuso de confiança/vínculo com o ente lesado ou prática por ocupante de cargo, emprego ou função pública.</li>\n<li><strong>§ 12:</strong> na hipótese do § 10, aumento de <strong>2/3</strong> se resultar paralisação/suspensão das atividades, desabastecimento, incêndio, poluição efetiva ou potencial, lesão corporal grave ou morte.</li>",
+    "occurrences": 1
+  },
+  {
+    "where": "penal-m10:complete",
+    "before": "<h2>9. Roubo qualificado pelo resultado e latrocínio</h2>",
+    "after": "<aside><strong>Atualização de 23/09/2026 — roubo de combustíveis:</strong> a Lei 15.517/2026 acrescentou o inciso XI ao art. 157, § 2º, submetendo a subtração dos combustíveis e lubrificantes ali especificados ao aumento de 1/3 a 1/2. Se desse roubo resultar suspensão/paralisação das atividades, desabastecimento, incêndio ou poluição efetiva ou potencial, o § 2º-A, III, prevê aumento de 2/3. Esse inciso não inclui lesão grave ou morte: a alínea correspondente foi vetada, e os resultados pessoais exigem exame das figuras legais próprias. Não confunda o regime do roubo com o art. 155, § 12, do furto.</aside>\n<h2>9. Roubo qualificado pelo resultado e latrocínio</h2>",
+    "occurrences": 1
+  },
+  {
+    "where": "penal-m17:complete",
+    "before": "<li><strong>Súmula 545 (REVISADA em 2025):</strong> a confissão possibilita a atenuação prevista no art. 65, III, d, do CP independentemente de ter sido utilizada para formar o convencimento do julgador.",
+    "after": "<li><strong>Súmula 545 (REVISADA em 2025):</strong> a confissão possibilita a atenuação prevista no art. 65, III, d, do CP independentemente de ter sido utilizada para formar o convencimento do julgador. Os efeitos desfavoráveis da tese do Tema 1.194/STJ só alcançam fatos posteriores à publicação do acórdão em 16/09/2025. Não aplique retroativamente a menor redução ou a perda de preponderância para prejudicar o réu; a modulação não elimina os efeitos favoráveis da orientação.",
+    "occurrences": 1
+  },
+  {
+    "where": "cpp-m06:summary",
+    "before": "A regra atual do STF exige crime praticado <strong>no cargo e em razão das funções</strong>.",
+    "after": "Na orientação do HC 232.627 e do Inq 4.787-QO sobre a manutenção do foro após a saída do cargo, exige-se crime praticado <strong>no cargo e em razão das funções</strong>.",
+    "occurrences": 1
+  },
+  {
+    "where": "cpp-m06:summary",
+    "before": "<h2>5.7",
+    "after": "<p><strong>Ressalva — carreiras vitalícias:</strong> Para magistrados e membros do Ministério Público, não se deve aplicar automaticamente a restrição da AP 937 a todo crime sem relação funcional. Na Rcl 84.738 AgR, julgada em 14/04/2026, a Segunda Turma do STF manteve no TJ ação contra promotor por crime sem relação com o cargo, em atenção à garantia institucional da carreira vitalícia. O Tema 1.147 trata da competência para crime comum de desembargador sem nexo com a função: não confundir essa controvérsia com a manutenção do foro por crime funcional após cessar o exercício.</p>\n<h2>5.7",
+    "occurrences": 1
+  },
+  {
+    "where": "cpp-m06:complete",
+    "before": "O vínculo entre fato e função continua sendo requisito central.",
+    "after": "O vínculo entre fato e função é central na tese sobre crime funcional e cessação do exercício. Não transforme essa baliza em exclusão automática do foro para todo crime de magistrado ou membro do Ministério Público.",
+    "occurrences": 1
+  },
+  {
+    "where": "cpp-m06:complete",
+    "before": "<h3>Corréu sem prerrogativa</h3>",
+    "after": "<p><strong>Carreiras vitalícias — distinção necessária:</strong> Para magistrados e membros do Ministério Público, não se deve aplicar automaticamente a restrição da AP 937 a todo crime sem relação funcional. Na Rcl 84.738 AgR, julgada em 14/04/2026, a Segunda Turma do STF manteve no TJ ação contra promotor por crime sem relação com o cargo, em atenção à garantia institucional da carreira vitalícia. O Tema 1.147 trata da competência para crime comum de desembargador sem nexo com a função: não confundir essa controvérsia com a manutenção do foro por crime funcional após cessar o exercício.</p>\n<h3>Corréu sem prerrogativa</h3>",
+    "occurrences": 1
+  },
+  {
+    "where": "cpp-m06:complete",
+    "before": "<strong>Foro por prerrogativa exige relação funcional do crime.</strong>",
+    "after": "<strong>Crime funcional e saída do cargo:</strong> aplicar HC 232.627/Inq 4.787-QO; para crimes sem nexo funcional de magistrados e membros do MP, verificar a disciplina constitucional e o precedente específico, sem generalização automática da AP 937.",
+    "occurrences": 1
+  },
+  {
+    "where": "cpp-m06:summary",
+    "before": "a tese atual exige vínculo funcional; para o corréu,",
+    "after": "a tese sobre permanência do foro por crime funcional exige vínculo funcional; isso não resolve automaticamente o foro de carreiras vitalícias por crimes sem nexo. Para o corréu,",
+    "occurrences": 1
+  },
+  {
+    "where": "cpp-m09:summary",
+    "before": "<p>Lei 11.419/2006:</p>",
+    "after": "<p>Na disciplina atual da Resolução CNJ 455/2022, com as alterações posteriores, as intimações que dispensam ciência pessoal são publicadas no DJEN; eventual aviso no portal tem valor informativo. O Domicílio Judicial Eletrônico é utilizado para comunicações que exigem vista ou intimação pessoal. A janela de 10 dias corridos para consulta não é prazo adicional para ler qualquer publicação no DJEN. A regra especial da citação criminal continua exigindo o exame do CPP e da ressalva do art. 6º da Lei 11.419/2006.</p>\n<p>Lei 11.419/2006 — intimação e transmissão de atos:</p>",
+    "occurrences": 1
+  },
+  {
+    "where": "cpp-m09:summary",
+    "before": "<li>DJe: publicação legal",
+    "after": "<li>DJEN, para atos que dispensam intimação pessoal: publicação legal",
+    "occurrences": 1
+  },
+  {
+    "where": "cpp-m09:summary",
+    "before": "<li>portal: consulta efetiva gera intimação;",
+    "after": "<li>intimação pessoal eletrônica, na hipótese legal: consulta efetiva gera intimação;",
+    "occurrences": 1
+  },
+  {
+    "where": "cpp-m09:complete",
+    "before": "<h3>3.16.1 Diário da Justiça eletrônico — art. 4º</h3>",
+    "after": "<p><strong>Atualização — DJEN e intimação pessoal:</strong> Na disciplina atual da Resolução CNJ 455/2022, com as alterações posteriores, as intimações que dispensam ciência pessoal são publicadas no DJEN; eventual aviso no portal tem valor informativo. O Domicílio Judicial Eletrônico é utilizado para comunicações que exigem vista ou intimação pessoal. A janela de 10 dias corridos para consulta não é prazo adicional para ler qualquer publicação no DJEN. A regra especial da citação criminal continua exigindo o exame do CPP e da ressalva do art. 6º da Lei 11.419/2006.</p>\n<h3>3.16.1 Diário de Justiça Eletrônico Nacional — art. 4º e Resolução CNJ 455/2022</h3>",
+    "occurrences": 1
+  },
+  {
+    "where": "cpp-m09:complete",
+    "before": "<h3>3.16.2 Portal próprio — art. 5º</h3>",
+    "after": "<h3>3.16.2 Intimação pessoal eletrônica — art. 5º, na disciplina do Domicílio</h3>",
+    "occurrences": 1
+  },
+  {
+    "where": "cpp-m10:summary",
+    "before": "<h3>5.9. Comunicação eletrônica</h3>",
+    "after": "<h3>5.9. Comunicação eletrônica</h3>\n<p>Na disciplina atual da Resolução CNJ 455/2022, com as alterações posteriores, as intimações que dispensam ciência pessoal são publicadas no DJEN; eventual aviso no portal tem valor informativo. O Domicílio Judicial Eletrônico é utilizado para comunicações que exigem vista ou intimação pessoal. A janela de 10 dias corridos para consulta não é prazo adicional para ler qualquer publicação no DJEN. A regra especial da citação criminal continua exigindo o exame do CPP e da ressalva do art. 6º da Lei 11.419/2006.</p>",
+    "occurrences": 1
+  },
+  {
+    "where": "cpp-m10:complete",
+    "before": "<h4>12.1. Intimação eletrônica</h4>",
+    "after": "<h4>12.1. Intimação eletrônica</h4>\n<p>Na disciplina atual da Resolução CNJ 455/2022, com as alterações posteriores, as intimações que dispensam ciência pessoal são publicadas no DJEN; eventual aviso no portal tem valor informativo. O Domicílio Judicial Eletrônico é utilizado para comunicações que exigem vista ou intimação pessoal. A janela de 10 dias corridos para consulta não é prazo adicional para ler qualquer publicação no DJEN. A regra especial da citação criminal continua exigindo o exame do CPP e da ressalva do art. 6º da Lei 11.419/2006.</p>",
+    "occurrences": 1
+  },
+  {
+    "where": "cpp-m12:summary",
+    "before": "<p>A confissão é <strong>divisível e retratável</strong>, não possui valor absoluto e deve ser confrontada com as demais provas. Não dispensa corpo de delito quando necessário.</p>",
+    "after": "<p>A confissão é <strong>divisível e retratável</strong>, não possui valor absoluto e deve ser confrontada com as demais provas. Não dispensa corpo de delito quando necessário.</p>\n<p><strong>Confissão extrajudicial — STJ:</strong> A confissão extrajudicial exige exame próprio de admissibilidade e valoração. No AREsp 2.123.334/MG, a Terceira Seção do STJ exigiu formalização e documentação em estabelecimento estatal público e oficial; relato policial em juízo não contorna a inadmissibilidade de confissão informal. A confissão extrajudicial admissível pode indicar fontes de prova à investigação, mas não deve integrar a fundamentação da condenação, conforme o precedente e sua modulação temporal. A confissão judicial também deve ser confrontada com as demais provas. Não confunda aptidão para provar autoria com o regime da atenuante penal da confissão.</p>",
+    "occurrences": 1
+  },
+  {
+    "where": "cpp-m12:complete",
+    "before": "<h5>🔄 QUADRO 12 — INTERROGATÓRIO × CONFISSÃO</h5>",
+    "after": "<p><strong>Limites da confissão extrajudicial — AREsp 2.123.334/MG:</strong> A confissão extrajudicial exige exame próprio de admissibilidade e valoração. No AREsp 2.123.334/MG, a Terceira Seção do STJ exigiu formalização e documentação em estabelecimento estatal público e oficial; relato policial em juízo não contorna a inadmissibilidade de confissão informal. A confissão extrajudicial admissível pode indicar fontes de prova à investigação, mas não deve integrar a fundamentação da condenação, conforme o precedente e sua modulação temporal. A confissão judicial também deve ser confrontada com as demais provas. Não confunda aptidão para provar autoria com o regime da atenuante penal da confissão.</p>\n<h5>🔄 QUADRO 12 — INTERROGATÓRIO × CONFISSÃO</h5>",
+    "occurrences": 1
+  },
+  {
+    "where": "penal-m01:summary",
+    "type": "Polimento final: critério, É necessário, É critério, critério é estrutural; pena de caráter perpétuo e de trabalhos forçados",
+    "finalSha256": "9b211add1f66236837f31ea270cfc6515de95f945ce614641036f0c8f10adca9"
+  },
+  {
+    "where": "cpp-m09:infografico",
+    "type": "Errata visível antes do infográfico: prerrogativas da Defensoria Pública; distinção DJEN/Domicílio. Raster original preservado."
+  },
+  {
+    "where": "penal-m07,m10,m17:full",
+    "type": "Recontagem de palavras e títulos após acréscimos"
+  },
+  {
+    "where": "penal-m01,m02,m03,m04,m05,m06,m07,m08,m10:summary",
+    "type": "Restauração de 35 separadores entre o fim do texto de uma página e o cabeçalho da página seguinte"
+  },
+  {
+    "where": "penal-m01:summary",
+    "before": "checklist matematico",
+    "after": "checklist matemático",
+    "occurrences": 1
+  }
+]

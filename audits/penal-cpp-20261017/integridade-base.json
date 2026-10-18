@@ -1,0 +1,219 @@
+{
+  "baseSha": "015a48519e267c32204fdb0a7ba468b643e55934",
+  "penal": [
+    {
+      "number": 1,
+      "nativeSha256": "a3f09fecf53a267812770db5cb944769b0fff781a256c72f6360be14265108d6",
+      "fullSha256": "9218e8c79685db1dbef6dcf6561d4d62622030cd270b62ee40f5d4422d86c834",
+      "questionSha256": "d982343722de3d505850e8ec2eef0142e4880ee6e2581a3779ed59bf3cc381d6"
+    },
+    {
+      "number": 2,
+      "nativeSha256": "c11372285fd4cd6cb6960fa1efc386af620e39d7d78301cf026f256c9b93ead3",
+      "fullSha256": "02bf9a4cdd213c07bb29fda76890d76f620f3294837b66556fe3f45f37803564",
+      "questionSha256": "9cdf31f2ad2a57594e8419a89717ac8320d06f007484faa3edaf0322abac7429"
+    },
+    {
+      "number": 3,
+      "nativeSha256": "46e85576399b0483e5a98781b7a640aa991295f597d0746d3273605aa9576f40",
+      "fullSha256": "5e3b5319ad57cd8682b4dd780775398d446f2d711928eaa2b4183147b1d97ec5",
+      "questionSha256": "c9fcabfbf0cf3660a69d7f36762ae28535ac794db5fa6d0b5af49f2c001e9685"
+    },
+    {
+      "number": 4,
+      "nativeSha256": "986c117962cd43240439c3e1990b2e6a96c247d171c97be45e11dfb0b3d3574b",
+      "fullSha256": "d1565c734c943bc8e7925cc5e6bc63bbe0fdf19e41059f8ee5d95e40c3b04688",
+      "questionSha256": "fc28b3d2658a51a19113c4718f49b42be3e77397c7b84ee3e6fcbf0dfefe9660"
+    },
+    {
+      "number": 5,
+      "nativeSha256": "23bfdbc56180dcc10010fe659a39d2f97a0b9aa722356f6d254244985ef70bbb",
+      "fullSha256": "caff2d68a65bd1d2dfeacf51a1656d1813929f556292a437c368169117474248",
+      "questionSha256": "1ba5b5600b831364072d72e0e3f937641aaaeefda815ccbf3861f9936726193c"
+    },
+    {
+      "number": 6,
+      "nativeSha256": "0bfda1c052ae8807a64c7bbc850778c19ce441e2966ffa619260cc53989f32bf",
+      "fullSha256": "5cc7e08c3cbeaf590b16fed27e0bdbfb8f8bc171fe8b02de9a9ac7bb4460eb4f",
+      "questionSha256": "902b96a02dd044aa810fabdca3e6ade70142e804dabf46efca2cbcbe7ab139e5"
+    },
+    {
+      "number": 7,
+      "nativeSha256": "83f52331b5c978773c8f59ceb017c18ef8f659f063312e32c345de6052fc728a",
+      "fullSha256": "fa227740290d7c57f8b50c7a55fe3cd47e0b30ee8828411e4a953bfd3dffdb29",
+      "questionSha256": "ce91118e4976cb394da84437dc62ce9f272c87eb9f6395c45ad8b76d6f2041cc"
+    },
+    {
+      "number": 8,
+      "nativeSha256": "0b712eae0eb9d758951c3f950fc8bdbb8d804a2169581a1a2314cad9c14ba56c",
+      "fullSha256": "5309ae32a354f46a6bd5a5c17416f44efd2e2a88b2ced706eb3510127857284b",
+      "questionSha256": "02b86980aa2c79251e3a0d2e2504e1994367237d7fd5041b674c620d820644fd"
+    },
+    {
+      "number": 9,
+      "nativeSha256": "27b5e8fe6ce6be56c5afd4323e0365090361fbd695f704dd1f0cf8ed5b7db79d",
+      "fullSha256": "affb810039fd0d171125e4d3518e191727ac86380dc4f7fadbda19220301684b",
+      "questionSha256": "ce7c73e3119afce7e63d24861b8f37a5f66b7e0a723eac213a9495600ae03f54"
+    },
+    {
+      "number": 10,
+      "nativeSha256": "57f1bef741d602fd9cf732b5d7ed59c754d9e0da9de5679f4cd2f9e8593d5fcd",
+      "fullSha256": "0ded4a7c53b8f6a292abaf2ffed1524875a6810322506bd76767578964994f7d",
+      "questionSha256": "a32cdb7455d7f821d0d29113e5d858ab2c636147526c69465371d35142fcaad6"
+    },
+    {
+      "number": 11,
+      "nativeSha256": "8417068f39d4695c319a3d6f0e13eee0879e0e0a93618f807a1708ab1d5f9583",
+      "fullSha256": "27ba695710b657367751cb5c8e83ef9ec2fd58263f899954f40e3e3dfc887bdc",
+      "questionSha256": "99aa7044f701ce9e9e1b13801dc7bf585282032bf2f531302fba7e97e4301dd3"
+    },
+    {
+      "number": 12,
+      "nativeSha256": "1984568bfdc43164dcc03b843ae5f1f5241562b829860576054e0f2dab62509a",
+      "fullSha256": "4261c7a50fa9bca377fa1d6a19083ef76881048d83f8fe27a82bd6ba4da05fad",
+      "questionSha256": "df234acd315e6b1147c186158cbbc091a22ba7dce4bd168c552e0ddf089ade14"
+    },
+    {
+      "number": 13,
+      "nativeSha256": "f5837b327cace3666ad963ca08ca1581a9d089cbae073395a666327a35539afe",
+      "fullSha256": "3e1234d98676fb9c034ab676b5a88081651e333701424281f250b9f5c55a2ec0",
+      "questionSha256": "e29086fa0b10f73c64e4199d0abd83e9ca4d34f47f144f12530766a06eaa81a0"
+    },
+    {
+      "number": 14,
+      "nativeSha256": "f43568df9ec580b5b9f85938c08de2b366c7482dd306df781948d8f8bcad7b09",
+      "fullSha256": "8dada5a37a6e035887c26606c8f2ec9e99b5c08f9bea8ddfd8a4642605c0af2f",
+      "questionSha256": "a6e65605549f3e9504731ad625cd16ffff62b802832fc9b94c4fdaf25c3793a4"
+    },
+    {
+      "number": 15,
+      "nativeSha256": "b2deb87a4450fbbd4447b26b1a068e2a76588b2c579e6b140560e35e8449342b",
+      "fullSha256": "95a6e212a23c0030589ccda0787f7a20196c88f1427244bc382c5f985aeaa5a9",
+      "questionSha256": "4eda8755595ecf7b65df1413dad628e22e05f550aaa02779da9d2c3b77292ad8"
+    },
+    {
+      "number": 16,
+      "nativeSha256": "81bdebf7c5ea19ffde4a9d1dca9b1b38647a48248f77e554e9c57b50d2374077",
+      "fullSha256": "4fc8698e606247552423ba23756bb79c79103d1b4fcc556417bcf06618e5cb23",
+      "questionSha256": "3fdda49f7585f5ee6e9e28489d3565f91bc44152a3abc328cc8c551249dabd8e"
+    },
+    {
+      "number": 17,
+      "nativeSha256": "015fc55492cfcf7ad41689ed235424275c23bbac40be1c1299877e1b5a7111cd",
+      "fullSha256": "e2a57b7761856c42f2b95250204859783796fe92c943eb42044f152d8f8309f5",
+      "questionSha256": "2ea88078fb16124fbcbaa1ca6d0f0a39c3aed460ee0f4f963c7c93a751f440e2"
+    }
+  ],
+  "cpp": [
+    {
+      "number": 1,
+      "uid": "cpp-m01",
+      "sha256": "f82ce6fd037941a6294fd02cfb4d36bd4103bb6dd84f3a52c17f571a8b93bd5e"
+    },
+    {
+      "number": 2,
+      "uid": "cpp-m02",
+      "sha256": "91602497a04e4e45b9363726254f48d422c94df118b33e323e645c2e7df27c62"
+    },
+    {
+      "number": 3,
+      "uid": "cpp-m03",
+      "sha256": "b8b10aa3888e9841d20528d82f02a0591b8fb0a46a3f26bda45d2f58df8345e6"
+    },
+    {
+      "number": 4,
+      "uid": "cpp-m04",
+      "sha256": "473725d9c9c65f860acef8848dc170528caf497280bbb7f407ab5c099382c5fb"
+    },
+    {
+      "number": 5,
+      "uid": "cpp-m05",
+      "sha256": "58c3646955f47edc1a9957ddfbfa2b22425f0d6fce68aca2bae496f755e8cb31"
+    },
+    {
+      "number": 6,
+      "uid": "cpp-m06",
+      "sha256": "31e01b49a02f7331bf37fc8b85818856d2ba336793e3fdf24531d2045a77b3fa"
+    },
+    {
+      "number": 7,
+      "uid": "cpp-m07",
+      "sha256": "cde8f8d8123a4a57a92383731ce6e50e0f94f45cc3b5a1f76dd3a9eb7003cc16"
+    },
+    {
+      "number": 8,
+      "uid": "cpp-m08",
+      "sha256": "268da797c50d0342bfff27fb34447ff92d9993fe3f9c3932bf770cf8981cd488"
+    },
+    {
+      "number": 9,
+      "uid": "cpp-m09",
+      "sha256": "0f50779d1643e1ed355ffb24af1580eb7debc78fdce1e7146c0fef72579b31db"
+    },
+    {
+      "number": 10,
+      "uid": "cpp-m10",
+      "sha256": "e693654cf8239661c9a91790b852e36f47b0acea2adaabcfd678c4df2a9367f9"
+    },
+    {
+      "number": 11,
+      "uid": "cpp-m11",
+      "sha256": "e4ec64cb1be7325a0bb3786e2ae9c0a8fea631b116a26d4e078e2148bdbd5c30"
+    },
+    {
+      "number": 12,
+      "uid": "cpp-m12",
+      "sha256": "16f766adaacfea688ed34aadc436dfa53b7aae74705ea3f097c558b1b6534928"
+    },
+    {
+      "number": 13,
+      "uid": "cpp-m13",
+      "sha256": "43521b8fc930c70fca0f853388329ecb32c7c8c0d1d986904e033150652aa2d6"
+    },
+    {
+      "number": 14,
+      "uid": "cpp-m14",
+      "sha256": "ec8952824d0fe81dc95b09e980aa93a19b491a105c3f3ede68453c4f31f2b1c2"
+    },
+    {
+      "number": 15,
+      "uid": "cpp-m15",
+      "sha256": "4f74a3a060d1ec5d4b9e7b91ce6a5e175001836e6a21c4ba876fd0f7cb6fb2de"
+    },
+    {
+      "number": 16,
+      "uid": "cpp-m16",
+      "sha256": "e430cfad9f143bf57f0580f8e964864b19fd1312960a48f3196610c1c1ff5e39"
+    },
+    {
+      "number": 17,
+      "uid": "cpp-m17",
+      "sha256": "9b5190f7ad5c90d404f5fe7da0355cdbbec3a72d40ede2cbe58cdec88beac28e"
+    },
+    {
+      "number": 18,
+      "uid": "cpp-m18",
+      "sha256": "51ca32a3468df2177dcde6794a9939fafc46838f8c6993e6773fba25ee99a2b7"
+    },
+    {
+      "number": 19,
+      "uid": "cpp-m19",
+      "sha256": "bcae484b2f311b5d926165f3286729f4b51dc5db4f4d6e90cc0d754ec1c3d83f"
+    },
+    {
+      "number": 20,
+      "uid": "cpp-m20",
+      "sha256": "d7dcef6c3bb7ff87b1c03c006460b5ff8b9fbc5c048edca4eae9d7da2779bc5f"
+    },
+    {
+      "number": 21,
+      "uid": "cpp-m21",
+      "sha256": "028f89806755cf483d125f45e78a108024b98d9cc0ed58e2132aef564805e35b"
+    },
+    {
+      "number": 22,
+      "uid": "cpp-m22",
+      "sha256": "08de585cdc19d89b7c02a3e0aa73ed74de52422cda36bc3a152c64ae41489cd9"
+    }
+  ]
+}
