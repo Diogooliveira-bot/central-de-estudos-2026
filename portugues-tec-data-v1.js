@@ -7,6 +7,7 @@ function install(){
  const ids=new Set(d.cadernos.map(x=>x&&x.id));
  PT_TEC.forEach(x=>{if(!ids.has(x.id))d.cadernos.push(x)});
  try{if(typeof window.tecCadernosRender==='function')window.tecCadernosRender()}catch(_){}
+  try{window.dispatchEvent(new CustomEvent('central:external-filter-catalog-ready'))}catch(_){}
 }
 install();
 window.PT_TEC_CADERNOS=PT_TEC;
