@@ -3,7 +3,36 @@
 'use strict';
 function esc(value){return String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function modules(){return global.CentralPortugueseCourse?.modules||[]}
-const ptInfographicModules={1:"/assets/portugues-infograficos/m01.webp",2:"/assets/portugues-infograficos/m02.webp",3:"/assets/portugues-infograficos/m03.webp",4:"/assets/portugues-infograficos/m04.webp",5:"/assets/portugues-infograficos/m05.webp",6:"/assets/portugues-infograficos/m06.webp",7:"/assets/portugues-infograficos/m07.webp",8:"/assets/portugues-infograficos/m08.webp",9:"/assets/portugues-infograficos/m09.webp",10:"/assets/portugues-infograficos/m10.webp",11:"/assets/portugues-infograficos/m11.webp",12:"/assets/portugues-infograficos/m12.webp",13:"/assets/portugues-infograficos/m13.webp",14:"/assets/portugues-infograficos/m14.webp",15:"/assets/portugues-infograficos/m15.webp",16:"/assets/portugues-infograficos/m16.webp",17:"/assets/portugues-infograficos/m17.webp",18:"/assets/portugues-infograficos/m18.webp",19:"/assets/portugues-infograficos/m19.webp",20:"/assets/portugues-infograficos/m20.webp",21:"/assets/portugues-infograficos/m21.webp",22:"/assets/portugues-infograficos/m22.webp",23:"/assets/portugues-infograficos/m23.webp",24:"/assets/portugues-infograficos/m24.webp"};
+const ptInfographicModules={1:'/assets/portugues-infograficos/m01.webp',2:'/assets/portugues-infograficos/m02.webp',3:'/assets/portugues-infograficos/m03.webp',4:'/assets/portugues-infograficos/m04.webp',5:'/assets/portugues-infograficos/m05.webp',6:'/assets/portugues-infograficos/m06.webp',7:'/assets/portugues-infograficos/m07.webp',8:'/assets/portugues-infograficos/m08.webp',9:'/assets/portugues-infograficos/m09.webp',10:'/assets/portugues-infograficos/m10.webp',11:'/assets/portugues-infograficos/m11.webp',12:'/assets/portugues-infograficos/m12.webp',13:'/assets/portugues-infograficos/m13.webp',14:'/assets/portugues-infograficos/m14.webp',15:'/assets/portugues-infograficos/m15.webp',16:'/assets/portugues-infograficos/m16.webp',17:'/assets/portugues-infograficos/m17.webp',18:'/assets/portugues-infograficos/m18.webp',19:'/assets/portugues-infograficos/m19.webp',20:'/assets/portugues-infograficos/m20.webp',21:'/assets/portugues-infograficos/m21.webp',22:'/assets/portugues-infograficos/m22.webp',23:'/assets/portugues-infograficos/m23.webp',24:'/assets/portugues-infograficos/m24.webp'};
+function ptStats(){const total=modules().length,done=modules().filter(m=>localStorage.getItem('central-v6:pt:auto24:done:'+m.id)==='1').length;return {total,done,pct:total?Math.round(done/total*100):0,unit:'módulos'}}
+function openPt(id){
+ const course=global.CentralPortugueseCourse;
+ if(!course)return false;
+ const item=course.modules.concat([course.review]).find(m=>m.id===id);
+ if(typeof global.jumpSubject==='function')global.jumpSubject('pt');
+ if(!item)return false;
+ localStorage.setItem('central-v6:pt:auto24:open',id);
+ const url=new URL(location.href);url.searchParams.set('subject','pt');url.searchParams.set('module',id);history.replaceState(null,'',url);
+ if(typeof global.renderSubjects==='function')global.renderSubjects();
+ if(typeof global.saveLast==='function')global.saveLast({ptAutoModule:id,title:'Português • '+item.title,at:Date.now()});
+ requestAnimationFrame(()=>document.querySelector('[data-pt-current="'+id+'"]')?.scrollIntoView({block:'start',behavior:'auto'}));
+ return false;
+}
+function togglePt(id){
+ const el=document.querySelector('[data-pt-current="'+id+'"]');
+ if(el?.classList.contains('open')){el.classList.remove('open');localStorage.removeItem('central-v6:pt:auto24:open');const url=new URL(location.href);url.searchParams.delete('module');history.replaceState(null,'',url);return false}
+ return openPt(id);
+}
+function openPtInfographic(num){
+ const image=ptInfographicModules[Number(num)];if(!image)return false;
+ const module=modules().find(m=>Number(m.num)===Number(num));
+ const title=module?.title||('Módulo '+num);
+ const label='Português M'+String(num).padStart(2,'0')+' — '+title;
+ const filename='Portugues-M'+String(num).padStart(2,'0')+'-Infografico.webp';
+ const overlay=document.createElement('div');overlay.id='pt-infographic-overlay';overlay.className='cf-native-overlay';
+ overlay.innerHTML='<section class="cf-native-shell" role="dialog" aria-modal="true" aria-label="'+esc(label)+'"><header><div><b>'+esc(label)+'</b><small>Infográfico do módulo • imagem para visualizar e baixar</small></div><button type="button" data-close aria-label="Fechar infográfico">×</button></header><div class="cf-native-map"><img src="'+image+'?v=20261018ptinfographics1" alt="'+esc(label)+'" decoding="async"></div><footer style="display:flex;justify-content:center;padding:10px 14px 14px;border-top:1px solid var(--line)"><a class="cf-btn primary" href="'+image+'?v=20261018ptinfographics1" download="'+filename+'">⬇ Baixar infográfico</a></footer></section>';
+ document.body.appendChild(overlay);document.body.style.overflow='hidden';
+ const close=()=>{overlay.remove();document.body.style.overflow='';document.removeEventListener('keydown',onKey)};
  const onKey=e=>{if(e.key==='Escape')close()};
  overlay.querySelector('[data-close]').onclick=close;
  overlay.addEventListener('click',e=>{if(e.target===overlay)close()});
