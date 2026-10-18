@@ -4,7 +4,9 @@
   if (!UX || global.__centralStudentShellV3) return;
   global.__centralStudentShellV3 = true;
   const { byId, setText } = UX;
-  let syncState = { message:'Dados salvos automaticamente.', type:'ok' };
+  let syncState = global.__BASE_COMPLETA_PREVIEW_GUEST__ === true
+    ? { message:'Modo de testes · dados locais, sem sincronização.', type:'ok' }
+    : { message:'Dados salvos automaticamente.', type:'ok' };
 
   function renameNavButton(button, text, key) {
     if (!button) return;
