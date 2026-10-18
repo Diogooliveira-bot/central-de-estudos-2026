@@ -24,6 +24,25 @@ function send(res, status, body, extraHeaders = {}) {
   res.end(JSON.stringify(body));
 }
 
+/* Deliberately synthetic, read-only preview identity for the dedicated test branch.
+ * Other APIs still require a signed, database-backed session.
+ */
+const CF_PREVIEW_BRANCH = 'test/cf-preview-no-login-20261018';
+const CF_PREVIEW_ENABLED = process.env.VERCEL_ENV === 'preview' && process.env.VERCEL_GIT_COMMIT_REF === CF_PREVIEW_BRANCH;
+const CF_PREVIEW_SHA256 = 'a578690e8c9960d119327657e0180968fa127841fc1a93460f861c5dcfb1c21c';
+function validCFPreviewCookie(req) {
+  if (!CF_PREVIEW_ENABLED) return false;
+  const pair = String(req.headers?.cookie || '').split(';').map(s => s.trim()).find(s => s.startsWith('bc_cf_preview_token='));
+  if (!pair) return false;
+  let token = '';
+  try { token = decodeURIComponent(pair.slice('bc_cf_preview_token='.length)); }
+  catch (_) { return false; }
+  if (!token || token.length > 128) return false;
+  const actual = crypto.createHash('sha256').update(token).digest();
+  const expected = Buffer.from(CF_PREVIEW_SHA256,'hex');
+  return actual.length === expected.length && crypto.timingSafeEqual(actual,expected);
+}
+
 function cleanName(value) {
   return String(value || '').trim().replace(/\s+/g, ' ').slice(0, 120);
 }
@@ -40,6 +59,20 @@ async function bootstrapStatus(res) {
 }
 
 async function currentUser(req, res) {
+  // The preview user has no production database identity or privileged role.
+  if (validCFPreviewCookie(req)) {
+    return send(res, 200, {
+      authenticated: true,
+      previewGuest: true,
+      user: {
+        id: 'cf-visual-preview-guest',
+        name: 'Modo de teste',
+        email: 'preview@local.invalid',
+        role: 'aluno',
+        active: true,
+      },
+    });
+  }
   const session = await requireSession(req);
   if (!session.ok) return send(res, 200, { authenticated: false });
   return send(res, 200, { authenticated: true, user: session.user });
