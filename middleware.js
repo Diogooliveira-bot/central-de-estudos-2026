@@ -1,6 +1,25 @@
 import { next } from '@vercel/functions';
 
 const COOKIE_NAME = 'bc_session';
+
+/* Temporary access to the CF visual-testing preview.
+ * Never used in production, and never creates an authenticated app session.
+ * Remove this branch to revoke this capability.
+ */
+const CF_PREVIEW_BRANCH = 'test/cf-preview-no-login-20261018';
+const CF_PREVIEW_ENABLED = process.env.VERCEL_ENV === 'preview' && process.env.VERCEL_GIT_COMMIT_REF === CF_PREVIEW_BRANCH;
+const CF_PREVIEW_COOKIE = 'bc_cf_preview_token';
+const CF_PREVIEW_QUERY = 'bc_cf_preview';
+const CF_PREVIEW_SHA256 = 'a578690e8c9960d119327657e0180968fa127841fc1a93460f861c5dcfb1c21c';
+async function validCFPreviewToken(raw) {
+  if (!CF_PREVIEW_ENABLED || !raw || raw.length > 128) return false;
+  try {
+    const hash = new Uint8Array(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(raw)));
+    const expected = new Uint8Array(CF_PREVIEW_SHA256.match(/../g).map(v => parseInt(v, 16)));
+    return safeEqualBytes(hash, expected);
+  } catch (_) { return false; }
+}
+
 const PUBLIC_PATHS = new Set([
   '/login.html',
   '/favicon.ico',
@@ -84,6 +103,40 @@ export const config = {
 export default async function middleware(request) {
   const url = new URL(request.url);
   const path = url.pathname;
+
+
+  // A unique one-click link establishes a browser-only testing capability.
+  // Its 256-bit token is never committed; only the one-way hash is in code.
+  if (CF_PREVIEW_ENABLED && url.searchParams.has(CF_PREVIEW_QUERY)) {
+    const token = url.searchParams.get(CF_PREVIEW_QUERY) || '';
+    if (request.method !== 'GET' || !(await validCFPreviewToken(token))) {
+      return new Response('Link de teste inválido.', {
+        status: 403, headers: { 'Cache-Control': 'no-store', 'Content-Type': 'text/plain; charset=utf-8' }
+      });
+    }
+    const cleanUrl = new URL(request.url);
+    cleanUrl.searchParams.delete(CF_PREVIEW_QUERY);
+    return new Response(null, {
+      status: 302,
+      headers: {
+        'Location': cleanUrl.toString(),
+        'Set-Cookie': CF_PREVIEW_COOKIE + '=' + encodeURIComponent(token) +
+          '; Path=/; Max-Age=604800; HttpOnly; Secure; SameSite=Lax',
+        'Cache-Control': 'no-store',
+        'Referrer-Policy': 'no-referrer'
+      }
+    });
+  }
+  if (CF_PREVIEW_ENABLED && await validCFPreviewToken(parseCookie(request.headers.get('cookie'), CF_PREVIEW_COOKIE))) {
+    // API endpoints keep their own authentication requirements. Only the
+    // /api/auth?action=me action returns a synthetic preview user.
+    if (path.startsWith('/api/')) return next();
+    if (path === '/usuarios.html' || path === '/update-central.html') {
+      return Response.redirect(new URL('/central-v119.html',request.url),302);
+    }
+    if (path === '/login.html') return Response.redirect(new URL('/central-v119.html',request.url),302);
+    return next();
+  }
 
   if (request.method === 'OPTIONS') return next();
   if (path.startsWith('/api/')) return next();
