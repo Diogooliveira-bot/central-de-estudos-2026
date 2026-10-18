@@ -17,12 +17,22 @@
     trabalho: 'Direito do Trabalho',
     'processual-trabalho': 'Direito Processual do Trabalho',
     rlm: 'Raciocínio Lógico-Matemático',
-    matematica: 'Matemática'
+    matematica: 'Matemática',
+    portugues: 'Língua Portuguesa'
   };
   const SUBJECT_DISCIPLINE = {
+    pt: 'portugues', port: 'portugues', portugues: 'portugues',
     adm: 'administrativo', cf: 'constitucional', civil: 'civil', cpc: 'processual-civil',
     penal: 'penal', cpp: 'processual-penal', trab: 'trabalho', ptra: 'processual-trabalho',
     rlm: 'rlm', mat: 'matematica'
+  };
+  const DISCIPLINE_ALIASES = {
+    pt: 'portugues', port: 'portugues', portugues: 'portugues',
+    português: 'portugues', 'língua portuguesa': 'portugues'
+  };
+  const canonicalDisciplineKey = (value) => {
+    const key = String(value || '').trim().toLowerCase();
+    return DISCIPLINE_ALIASES[key] || key;
   };
   const CATALOG_DISCIPLINE_LABELS = {
     'Direito Administrativo': 'Administrativo',
@@ -35,7 +45,9 @@
     'Direito do Trabalho': 'Trabalho',
     'Direito Processual do Trabalho': 'Processo do Trabalho',
     'Raciocínio Lógico-Matemático': 'Raciocínio Lógico',
-    'Raciocínio Lógico': 'Raciocínio Lógico'
+    'Raciocínio Lógico': 'Raciocínio Lógico',
+    'Língua Portuguesa': 'Português',
+    'Português': 'Português'
   };
 
   let registry = [];
@@ -166,13 +178,14 @@
     const url = safeUrl(input.url, platform);
     const id = String(input.id || notebookIdFromUrl(url) || input.legacyCid || '').trim();
     const module = baseModule(input.module);
-    if (!url || !id || !module || !input.disciplineKey) return null;
+    const disciplineKey = canonicalDisciplineKey(input.disciplineKey);
+    if (!url || !id || !module || !disciplineKey) return null;
     return {
       platform,
       platformLabel: PLATFORM_LABEL[platform],
       stableKey: `${platform}:${id}`,
-      disciplineKey: input.disciplineKey,
-      discipline: input.discipline || DISCIPLINES[input.disciplineKey] || input.disciplineKey,
+      disciplineKey,
+      discipline: input.discipline || DISCIPLINES[disciplineKey] || disciplineKey,
       module,
       code: String(input.code || module).toUpperCase(),
       title: String(input.title || input.code || id).trim(),
@@ -278,9 +291,21 @@
 
   function collectGeneralTec(list, seen) {
     const curated = curatedModuleSet(list);
-    (global.TEC_CADERNOS_DATA?.cadernos || []).forEach((item) => {
-      const disciplineKey = String(item.grupo || '');
-      const codeMatch = String(item.id || '').match(/-(\d{1,2})$/);
+    const catalog = [];
+    const catalogSeen = new Set();
+    const sources = [
+      ...(Array.isArray(global.PT_TEC_CADERNOS) ? global.PT_TEC_CADERNOS : []),
+      ...(global.TEC_CADERNOS_DATA?.cadernos || [])
+    ];
+    sources.forEach((item) => {
+      const key = String(item?.id || item?.url || '');
+      if (key && catalogSeen.has(key)) return;
+      if (key) catalogSeen.add(key);
+      catalog.push(item);
+    });
+    catalog.forEach((item) => {
+      const disciplineKey = canonicalDisciplineKey(item?.grupo);
+      const codeMatch = String(item?.id || '').match(/-(\d{1,2})$/);
       const module = codeMatch ? `M${pad(codeMatch[1])}` : '';
       if (!module || curated.has(`${disciplineKey}|${module}`)) return;
       pushFilter(list, seen, {
@@ -436,8 +461,7 @@
   function filtersForModule(disciplineKey, module) {
     const code = baseModule(module);
     const unique = new Map();
-    registry.filter((item) => item.disciplineKey === disciplineKey && item.module === code)
-      .filter((item) => !(disciplineKey === 'rlm' && item.source === 'tec-general' && global.RLM_TJCE_STRUCTURE))
+    registry.filter((item) => item.disciplineKey === canonicalDisciplineKey(disciplineKey) && item.module === code)
       .forEach((item) => {
         const key = `${item.platform}|${item.id || item.url}`;
         if (!unique.has(key)) unique.set(key, item);
@@ -450,7 +474,8 @@
       element.getAttribute('data-adm-native'), element.getAttribute('data-cpp-native-module'),
       element.getAttribute('data-ptra-module'), element.getAttribute('data-rlm-module'),
       element.getAttribute('data-civil-analista'), element.getAttribute('data-civil'),
-      element.getAttribute('data-cf'), element.getAttribute('data-uid')
+      element.getAttribute('data-cf'), element.getAttribute('data-uid'),
+      element.getAttribute('data-module-card')
     ].filter(Boolean).join(' ');
     if (/^p\d+$/i.test(raw)) return Number(raw.slice(1));
     if (/^cpc\d+$/i.test(raw)) return Number(raw.slice(3));
@@ -462,6 +487,7 @@
   function identityFor(element) {
     let subjectId = element.closest('.subject[data-id]')?.getAttribute('data-id') || '';
     let disciplineKey = SUBJECT_DISCIPLINE[subjectId] || '';
+    if (element.matches('.pt-module-card[data-module-card]')) disciplineKey = 'portugues';
     if (element.hasAttribute('data-adm-native')) disciplineKey = 'administrativo';
     else if (element.hasAttribute('data-cpp-native-module')) disciplineKey = 'processual-penal';
     else if (element.hasAttribute('data-ptra-module')) disciplineKey = 'processual-trabalho';
@@ -471,11 +497,12 @@
     return disciplineKey && number ? { disciplineKey, module: `M${pad(number)}` } : null;
   }
   function moduleBody(element) {
-    return element.matches('[data-adm-native]') ? element : element.querySelector(':scope > .cf-module-body,:scope > .detail-panel,:scope > .topic-detail > .detail-panel,:scope > .ptra-native-mod-body,:scope > .civil-module-body') || element;
+    return element.matches('[data-adm-native]') ? element : element.querySelector(':scope > .cf-module-body,:scope > .detail-panel,:scope > .topic-detail > .detail-panel,:scope > .ptra-native-mod-body,:scope > .civil-module-body,:scope > .pt-module-body') || element;
   }
   function moduleTargetPriority(element) {
     if (element.matches('[data-adm-native]')) return 60;
     if (element.matches('[data-cpp-native-module],[data-ptra-module],[data-rlm-module]')) return 50;
+    if (element.matches('.pt-module-card[data-module-card]')) return 45;
     if (element.matches('.civil-module[data-civil-analista],.civil-module[data-civil]')) return 40;
     if (element.matches('.cf-module[data-cf]')) return 30;
     return 10;
@@ -486,7 +513,9 @@
       '.civil-module[data-civil-analista]', '.civil-module[data-civil]',
       '#subjects .subject[data-id="penal"] .cf-module[data-cf]',
       '#subjects .subject[data-id="cpc"] .cf-module[data-cf]',
-      '#subjects .topic-item[data-uid]'
+      '#subjects .subject[data-id="cf"] .cf-module[data-cf]',
+      '#subjects .topic-item[data-uid]',
+      '.pt-module-card[data-module-card]'
     ];
     const selected = new Map();
     Array.from(new Set(document.querySelectorAll(selectors.join(',')))).forEach((element) => {
@@ -542,6 +571,7 @@
       const filters = filtersForModule(identity.disciplineKey, identity.module);
       const body = moduleBody(element);
       if (!body) return;
+      if (element.matches('.pt-module-card[data-module-card]') && body.dataset.loaded !== '1') return;
       const mountedPanels = Array.from(body.querySelectorAll(':scope > [data-bcq-module-panel]'));
       let panel = mountedPanels.shift() || null;
       mountedPanels.forEach((duplicate) => duplicate.remove());
@@ -629,6 +659,8 @@
       <nav class="bcq-center-tabs" role="tablist" aria-label="Seções da Central de Questões">
         <button type="button" role="tab" data-bcq-tab="overview">Visão geral</button>
         <button type="button" role="tab" data-bcq-tab="disciplines">Disciplinas</button>
+        <button type="button" role="tab" data-bcq-tab="filters">Meus filtros</button>
+        <button type="button" role="tab" data-bcq-tab="history">Histórico</button>
         <button type="button" role="tab" data-bcq-tab="review">Revisão</button>
       </nav>
       <div class="bcq-center-content">
@@ -1067,6 +1099,7 @@
     });
     document.addEventListener('central:discipline-ready', scheduleRefresh);
     global.addEventListener('central-cloud-applied', scheduleRefresh);
+    global.addEventListener('central:external-filter-catalog-ready', scheduleRefresh);
     global.addEventListener('central:external-filter-history-changed', scheduleRefresh);
     global.addEventListener('popstate', () => {
       if (global.location.pathname === ROUTE) openPage(document.querySelector('[data-bcq-nav]'), { replace: true, tab: tabFromLocation() });
