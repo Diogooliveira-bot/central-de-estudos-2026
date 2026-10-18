@@ -95,6 +95,35 @@
       (meta.subject === 'cf' ? '' : '<article class="csp-stage-card csp-tec"><div class="csp-stage-head"><div><b>Questões / TEC</b><small>' + esc(questions.text) + '</small></div><strong>' + (questions.total && questions.correct !== null ? Math.round(questions.correct / questions.total * 100) + '% de acertos' : questions.total ? '—' : 'Sem registro') + '</strong></div><div class="ds-actions"><button type="button" class="ds-action" data-ds-action="questions">Abrir questões e registros</button></div></article>') + '</div></section>';
   }
   function notes(module, body, meta) {
+    // Constitutional modules already provide a native note with their own save handler.
+    // Keep that note in its existing position and do not create a second footer note.
+    if (meta.subject === 'cf') {
+      const native = body.querySelector(':scope > .cf-native-note');
+      if (native) {
+        const duplicate = body.querySelector(':scope > .ds-module-footer > .ds-notes[data-ds-notes]');
+        const area = native.querySelector('textarea');
+        const oldKey = 'central-v6:module-notes:' + meta.key;
+        const newKey = 'central-v6:cf-note:' + meta.id;
+        const importKey = 'central-v6:cf-standard-note-imported:' + meta.id;
+        // Non-destructive one-time import if a student used the older, redundant note.
+        // The previous storage key is intentionally not deleted.
+        try {
+          if (area && localStorage.getItem(importKey) !== '1') {
+            const previous = duplicate?.querySelector('textarea')?.value || localStorage.getItem(oldKey) || '';
+            if (previous.trim() && !area.value.includes(previous.trim())) {
+              const combined = area.value.trim()
+                ? area.value.trim() + '\n\n--- Anotação anterior ---\n' + previous.trim()
+                : previous.trim();
+              localStorage.setItem(newKey, combined);
+              area.value = combined;
+            }
+            localStorage.setItem(importKey, '1');
+          }
+        } catch (_) { /* Keep both original saved notes intact if storage is unavailable. */ }
+        duplicate?.remove();
+        return;
+      }
+    }
     const host = body.querySelector(':scope > .ds-module-footer') || body;
     const native = body.querySelector('.notes,.cpp-note,.cf-resource-box:has(textarea),[data-ds-notes]');
     if (native) {
