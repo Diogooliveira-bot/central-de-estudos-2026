@@ -44,6 +44,7 @@ function focusedPractice(article,records,mode,id){
  back.type='button';back.className='btn primary';back.textContent='Abrir conteúdo completo';
  back.addEventListener('click',()=>open(id,'complete'));
  nav.appendChild(back);root.appendChild(nav);
+ article.classList.add('pta-v1');
  article.replaceChildren(root);
  return {count:cards.length,limit:config.limit};
 }
