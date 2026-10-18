@@ -517,7 +517,7 @@ window.RLM_CURSO_AULAS=Object.assign(window.RLM_CURSO_AULAS||{}, {
       {
         "title": "Alternância e intercalamento",
         "paragraphs": [
-          "Em uma sequência como 2, 10, 4, 20, 6, 30, ..., os termos de índices ímpares seguem 2,4,6,...; os de índices pares, 10,20,30,... . Tratar tudo como uma progressão única produz respostas erradas.",
+          "Em uma sequência como 2, 10, 4, 20, 6, 30, ..., os termos de índices ímpares seguem 2,4,6,...; os de índices pares, 10,20,30,... Tratar tudo como uma progressão única produz respostas erradas.",
           "Separe posições 1,3,5... e 2,4,6..., teste transformações por etapas (+2, ×3, −1...), e confira a continuação. Se houver elementos de três em três, o ciclo pode ter três subsequências."
         ],
         "example": "Exemplo resolvido: 2, 10, 4, 20, 6, 30, 8, ...; a próxima posição par é 40."

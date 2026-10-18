@@ -1,0 +1,785 @@
+{
+  "generatedAt": "2026-10-18T14:01:54.781Z",
+  "scope": {
+    "cf": "15 módulos; campos summary e complete; questões excluídas",
+    "rlm": "M02–M15; campos summary e theory; questões e banco FCC legado excluídos",
+    "portugues": "M01–M24 e revisão final; texto visível extraído do HTML"
+  },
+  "counts": {
+    "units": 83,
+    "characters": 1393706,
+    "localFindings": 110
+  },
+  "local": [
+    {
+      "subject": "cf",
+      "unit": "m01.summary",
+      "rule": "repeated-word",
+      "offset": 420,
+      "excerpt": "tes de memorizar a literalidade. 2. TEORIA RESUMIDA EM BLOCOS CURTOS 2.1 Constituição e constitucionalismo Constitucionalismo é a ideia de limitar o poder político por normas superiores e proteger direitos. Constitu"
+    },
+    {
+      "subject": "cf",
+      "unit": "m03.complete",
+      "rule": "repeated-word",
+      "offset": 3284,
+      "excerpt": " Seguro-desemprego em caso de desemprego involuntário; FGTS como direito constitucional. Salário Salário mínimo nacionalmente unificado; piso proporcional à extensão e complexidade; irredutibili"
+    },
+    {
+      "subject": "cf",
+      "unit": "m03.complete",
+      "rule": "repeated-word",
+      "offset": 4301,
+      "excerpt": "e compensatório constitucional. Serviço extraordinário com adicional de, no mínimo, 50%. Férias Férias anuais remuneradas com, pelo menos, 1/3 a mais que o salário normal. Licenças "
+    },
+    {
+      "subject": "cf",
+      "unit": "m03.complete",
+      "rule": "repeated-word",
+      "offset": 11035,
+      "excerpt": "as Forças Armadas oficialato Ministro de Estado da Defesa Defesa REGRA DE BOLSO A lista do art. 12, § 3º é taxativa. Atenção: a Constituição também exig"
+    },
+    {
+      "subject": "cf",
+      "unit": "m05.complete",
+      "rule": "repeated-word",
+      "offset": 19931,
+      "excerpt": " Necessidade temporária de excepcional interesse público. Art. 37, XI Teto Teto e subtetos remuneratórios. Art. 37, XVI-XVII Acumulação Exceções + compati"
+    },
+    {
+      "subject": "cf",
+      "unit": "m05.complete",
+      "rule": "repeated-word",
+      "offset": 20226,
+      "excerpt": "itos políticos, perda da função, indisponibilidade e ressarcimento. Art. 37, § 6º Responsabilidade Responsabilidade objetiva + regresso por dolo/culpa. Art. 41 Estabilidade 3 anos + "
+    },
+    {
+      "subject": "cf",
+      "unit": "m09.complete",
+      "rule": "repeated-word",
+      "offset": 12517,
+      "excerpt": "União e DF, ou entre uns e outros, inclusive certas entidades da administração indireta. Extradição Extradição solicitada por Estado estrangeiro. Revisão criminal e ação rescisória de seus julgados; "
+    },
+    {
+      "subject": "cf",
+      "unit": "m09.complete",
+      "rule": "repeated-word",
+      "offset": 18688,
+      "excerpt": " Diferença decisiva Vitaliciedade protege o cargo; Vitaliciedade Inamovibilidade inamovibilidade protege contra remoção arbitrária. 2/3: recusa do mais antigo na promoção; recusa da rep"
+    },
+    {
+      "subject": "cf",
+      "unit": "m09.complete",
+      "rule": "repeated-word",
+      "offset": 19511,
+      "excerpt": "tório. Originária: ação começa no STF. Competência originária Competência recursal Recursal: o STF revisa decisão de outro órgão nas hipóteses constitucionais. 6. PEGADINHAS DE PRO"
+    },
+    {
+      "subject": "cf",
+      "unit": "m11.summary",
+      "rule": "repeated-word",
+      "offset": 7062,
+      "excerpt": "l. PGJ estadual: lista tríplice + escolha pelo Chefe do Executivo; uma recondução. MPU x MPDFT MPDFT é ramo do MPU, apesar de atuar no Distrito Federal e Territórios. MP comum x MP de Conta"
+    },
+    {
+      "subject": "cf",
+      "unit": "m11.complete",
+      "rule": "repeated-word",
+      "offset": 22561,
+      "excerpt": "l. PGJ estadual: lista tríplice + escolha pelo Chefe do Executivo; uma recondução. MPU x MPDFT MPDFT é ramo do MPU, apesar de atuar no Distrito Federal e Territórios. MP comum x MP de Conta"
+    },
+    {
+      "subject": "cf",
+      "unit": "m12.summary",
+      "rule": "repeated-word",
+      "offset": 5472,
+      "excerpt": " ADI: federal/estadual; ADC: só federal + controvérsia relevante. ADI x ADPF ADPF é subsidiária e alcança objeto mais amplo, inclusive municipal/pré-CF. ADO x MI "
+    },
+    {
+      "subject": "cf",
+      "unit": "m12.complete",
+      "rule": "repeated-word",
+      "offset": 19756,
+      "excerpt": "constitucionalidade diante de controvérsia relevante. ADI ADPF ADPF tem objeto mais amplo e subsidiário; alcança ato municipal e norma pré- constitucional. A"
+    },
+    {
+      "subject": "rlm",
+      "unit": "M07.theory",
+      "rule": "space-before-punctuation",
+      "offset": 155,
+      "excerpt": "econhecer relações precisas entre termos, afirmações e categorias. Uma analogia como 'juiz : julgamento :: professor : aula' relaciona profissão e atividade, não proximidade fonética"
+    },
+    {
+      "subject": "rlm",
+      "unit": "M07.theory",
+      "rule": "space-before-punctuation",
+      "offset": 168,
+      "excerpt": "ações precisas entre termos, afirmações e categorias. Uma analogia como 'juiz : julgamento :: professor : aula' relaciona profissão e atividade, não proximidade fonética ou opinião p"
+    },
+    {
+      "subject": "rlm",
+      "unit": "M07.theory",
+      "rule": "space-before-punctuation",
+      "offset": 181,
+      "excerpt": "s entre termos, afirmações e categorias. Uma analogia como 'juiz : julgamento :: professor : aula' relaciona profissão e atividade, não proximidade fonética ou opinião pessoal. É pre"
+    },
+    {
+      "subject": "rlm",
+      "unit": "M07.theory",
+      "rule": "space-before-punctuation",
+      "offset": 638,
+      "excerpt": "onhecimento de mundo presumido sobre personagens fictícios. Exemplo resolvido: 'termômetro : temperatura :: relógio : tempo' usa a relação instrumento–grandeza medida. Uma relação ve"
+    },
+    {
+      "subject": "rlm",
+      "unit": "M07.theory",
+      "rule": "space-before-punctuation",
+      "offset": 652,
+      "excerpt": " mundo presumido sobre personagens fictícios. Exemplo resolvido: 'termômetro : temperatura :: relógio : tempo' usa a relação instrumento–grandeza medida. Uma relação verbal possui pa"
+    },
+    {
+      "subject": "rlm",
+      "unit": "M07.theory",
+      "rule": "space-before-punctuation",
+      "offset": 663,
+      "excerpt": "umido sobre personagens fictícios. Exemplo resolvido: 'termômetro : temperatura :: relógio : tempo' usa a relação instrumento–grandeza medida. Uma relação verbal possui participantes"
+    },
+    {
+      "subject": "rlm",
+      "unit": "M07.theory",
+      "rule": "space-before-punctuation",
+      "offset": 1430,
+      "excerpt": "cos ou circunstanciais. Complete pela relação instrumento–grandeza: termômetro:temperatura :: balança: ? O termômetro mede temperatura: o vínculo não é “está em um laboratório”. A ba"
+    },
+    {
+      "subject": "rlm",
+      "unit": "M07.theory",
+      "rule": "space-before-punctuation",
+      "offset": 1442,
+      "excerpt": "nstanciais. Complete pela relação instrumento–grandeza: termômetro:temperatura :: balança: ? O termômetro mede temperatura: o vínculo não é “está em um laboratório”. A balança mede m"
+    },
+    {
+      "subject": "rlm",
+      "unit": "M07.theory",
+      "rule": "space-before-punctuation",
+      "offset": 5864,
+      "excerpt": "e' e 'a classe conter o indivíduo' descrevem direções inversas. Exemplo resolvido: 'página : livro :: capítulo : livro' ilustra partes de um todo, mas página e capítulo são partes de"
+    },
+    {
+      "subject": "rlm",
+      "unit": "M07.theory",
+      "rule": "space-before-punctuation",
+      "offset": 5872,
+      "excerpt": "classe conter o indivíduo' descrevem direções inversas. Exemplo resolvido: 'página : livro :: capítulo : livro' ilustra partes de um todo, mas página e capítulo são partes de naturez"
+    },
+    {
+      "subject": "rlm",
+      "unit": "M07.theory",
+      "rule": "space-before-punctuation",
+      "offset": 5884,
+      "excerpt": "r o indivíduo' descrevem direções inversas. Exemplo resolvido: 'página : livro :: capítulo : livro' ilustra partes de um todo, mas página e capítulo são partes de naturezas diferente"
+    },
+    {
+      "subject": "rlm",
+      "unit": "M08.theory",
+      "rule": "space-before-punctuation",
+      "offset": 845,
+      "excerpt": "te possível. Exemplo resolvido: seguindo o critério de somar 3 a cada termo, 4, 7, 10, 13, ... continua com 13+3=16. A conclusão depende desse critério de formação. Uma sequência pod"
+    },
+    {
+      "subject": "rlm",
+      "unit": "M08.theory",
+      "rule": "space-before-punctuation",
+      "offset": 2092,
+      "excerpt": "azão constante q: a_n = a_1·q^(n−1). Nem todo padrão é PA ou PG; a sequência 2, 5, 10, 17, ... tem diferenças 3, 5, 7 e próxima diferença 9. Quando diferenças não são constantes, cal"
+    },
+    {
+      "subject": "rlm",
+      "unit": "M08.theory",
+      "rule": "space-before-punctuation",
+      "offset": 3581,
+      "excerpt": " n Termo 7+(n−1)×4 Alternância e intercalamento Em uma sequência como 2, 10, 4, 20, 6, 30, ..., os termos de índices ímpares seguem 2,4,6,...; os de índices pares, 10,20,30,... Trata"
+    },
+    {
+      "subject": "rlm",
+      "unit": "M08.theory",
+      "rule": "space-before-punctuation",
+      "offset": 3959,
+      "excerpt": "s em três, o ciclo pode ter três subsequências. Exemplo resolvido: 2, 10, 4, 20, 6, 30, 8, ...; a próxima posição par é 40. Uma sequência intercalada reúne subsequências em posições "
+    },
+    {
+      "subject": "rlm",
+      "unit": "M08.theory",
+      "rule": "space-before-punctuation",
+      "offset": 5041,
+      "excerpt": "pares. Sequências alfabéticas e ciclos Para letras, associe posições no alfabeto A=1, B=2, ..., Z=26 (considerando 26 letras) e identifique saltos. Evite supor letras acentuadas como"
+    },
+    {
+      "subject": "rlm",
+      "unit": "M08.theory",
+      "rule": "space-before-punctuation",
+      "offset": 5507,
+      "excerpt": "símbolo. Resto zero corresponde ao último símbolo do ciclo. Exemplo resolvido: A, C, E, G, ... corresponde a posições 1,3,5,7 e segue I. Um ciclo de k símbolos repete posições com o "
+    },
+    {
+      "subject": "rlm",
+      "unit": "M10.theory",
+      "rule": "repeated-word",
+      "offset": 8880,
+      "excerpt": "r 2/5+1/3 como se os dois gastos incidissem no total inicial. Atualização da base em cada etapa Etapa Antes Retirada Restante Primeira Segunda"
+    },
+    {
+      "subject": "rlm",
+      "unit": "M11.theory",
+      "rule": "space-before-punctuation",
+      "offset": 7027,
+      "excerpt": "e 160. Se as partes forem inversamente proporcionais a 2 e 3, a relação das parcelas é 1/2 : 1/3 = 3:2. Resolva cada problema em três linhas: grandezas e unidades, tipo de relação, c"
+    },
+    {
+      "subject": "rlm",
+      "unit": "M15.theory",
+      "rule": "repeated-word",
+      "offset": 6992,
+      "excerpt": "² sem dividir a soma dos quadrados por n. Variância da população 2,4,4,6 Valor Frequência Desvio Desvio² × frequência −2 Total — Desvio padrão e transformações Desvio padrão é a raiz quadrada d"
+    },
+    {
+      "subject": "portugues",
+      "unit": "m01",
+      "rule": "repeated-word",
+      "offset": 16965,
+      "excerpt": ": aqueles três excelentes candidatos do concurso três excelentes candidatos excelentes candidatos candidatos A palavra candidatos permanece como centro do grupo. 8.2 Núcleo não é “a palavra mais i"
+    },
+    {
+      "subject": "portugues",
+      "unit": "m01",
+      "rule": "repeated-word",
+      "offset": 49723,
+      "excerpt": "exige núcleo verbal oração = período um período pode conter várias orações palavra = termo termo pode ser formado por várias palavras núcleo = termo inteiro núcleo é a palavra central"
+    },
+    {
+      "subject": "portugues",
+      "unit": "m01",
+      "rule": "space-before-punctuation",
+      "offset": 46142,
+      "excerpt": "oração? Dê dois exemplos contrastivos. Repita, de memória, o método-base: sentido geral → ... 23. Mini teste de domínio Faça sem consultar a teoria. 1. Em “Boa sorte!”, temos: "
+    },
+    {
+      "subject": "portugues",
+      "unit": "m01",
+      "rule": "space-before-punctuation",
+      "offset": 50508,
+      "excerpt": " várias orações? Revise 4.4 e 5.2. Não encontrou o verbo em “O estudo...” ou “O canto...” ? Revise 4.3 e as questões guiadas 6 e 10. Confundiu palavra e termo? Revise 7.1 e 7.2. N"
+    },
+    {
+      "subject": "portugues",
+      "unit": "m02",
+      "rule": "repeated-word",
+      "offset": 6467,
+      "excerpt": "los: sa-ú-de pa-í-ses ve-í-cu-lo Comparação decisiva Palavra Separação Fenômeno pais pais ditongo país pa-ís hiato saúde sa-ú-de hiato meu meu ditongo Teste prático "
+    },
+    {
+      "subject": "portugues",
+      "unit": "m02",
+      "rule": "repeated-word",
+      "offset": 6534,
+      "excerpt": " Separação Fenômeno pais pais ditongo país pa-ís hiato saúde sa-ú-de hiato meu meu ditongo Teste prático Não pergunte primeiro: “Tem duas vogais juntas na escrita?” Pe"
+    },
+    {
+      "subject": "portugues",
+      "unit": "m02",
+      "rule": "repeated-word",
+      "offset": 8271,
+      "excerpt": "em ficar na mesma sílaba ou em sílabas diferentes. Dígrafo × encontro consonantal SS em processo processo O grupo SS possui: duas letras → um som. Logo: dígrafo. PR em processo O grupo PR p"
+    },
+    {
+      "subject": "portugues",
+      "unit": "m03",
+      "rule": "repeated-word",
+      "offset": 549,
+      "excerpt": "gumas palavras recebem acento gráfico e outras não. Antes de começar Você precisa saber antes Antes de estudar este módulo, você precisa conseguir: separar uma palavra em sílabas; localiz"
+    },
+    {
+      "subject": "portugues",
+      "unit": "m03",
+      "rule": "repeated-word",
+      "offset": 11745,
+      "excerpt": "ona e aparece no final da palavra ou seguido de S, o acento permanece. Exemplos: Piauí teiú teiús tuiuiú tuiuiús Cuidado: nem toda palavra parecida pertence a esse caso Palavras como"
+    },
+    {
+      "subject": "portugues",
+      "unit": "m03",
+      "rule": "repeated-word",
+      "offset": 11758,
+      "excerpt": " no final da palavra ou seguido de S, o acento permanece. Exemplos: Piauí teiú teiús tuiuiú tuiuiús Cuidado: nem toda palavra parecida pertence a esse caso Palavras como Guaíba, Guaíra e"
+    },
+    {
+      "subject": "portugues",
+      "unit": "m04",
+      "rule": "common-typo",
+      "offset": 25411,
+      "excerpt": " base: análise já possui S. O padrão trabalhado é: análise → analisar Não se escreve analizar dentro do padrão apresentado. Prática guiada 5 — mau candidato Pergunte: cabe \"bom\"? "
+    },
+    {
+      "subject": "portugues",
+      "unit": "m06",
+      "rule": "repeated-word",
+      "offset": 593,
+      "excerpt": " Neste módulo, tudo é reconstruído a partir do M05. Antes de começar Você precisa saber antes Antes de estudar este módulo, você precisa conseguir: identificar um substantivo em contexto; "
+    },
+    {
+      "subject": "portugues",
+      "unit": "m06",
+      "rule": "repeated-word",
+      "offset": 15552,
+      "excerpt": "rva algumas tendências. Adjetivos opinativos Têm maior mobilidade. Exemplo: excelente profissional profissional excelente Adjetivos relacionais Tendem à posição pós-nominal. Exemplo: movimento estu"
+    },
+    {
+      "subject": "portugues",
+      "unit": "m06",
+      "rule": "repeated-word",
+      "offset": 16801,
+      "excerpt": ": valor adjetivo não significa classe adjetiva. Prática guiada 4 — céu azul × o azul do céu céu azul “azul” caracteriza céu. Adjetivo. o azul do céu O artigo transforma “azul” em nú"
+    },
+    {
+      "subject": "portugues",
+      "unit": "m06",
+      "rule": "repeated-word",
+      "offset": 20091,
+      "excerpt": "a classificação fica insegura. Armadilha 3 — posição pode mudar sentido Compare: pobre candidato candidato pobre A classe permanece adjetiva, mas o sentido pode mudar profundamente. Armadilha 4 "
+    },
+    {
+      "subject": "portugues",
+      "unit": "m06",
+      "rule": "repeated-word",
+      "offset": 20249,
+      "excerpt": "do pode mudar profundamente. Armadilha 4 — posição pode mudar o núcleo Compare: alemão comunista comunista alemão O problema não é apenas semântico. A palavra central do grupo pode mudar. Isso "
+    },
+    {
+      "subject": "portugues",
+      "unit": "m07",
+      "rule": "repeated-word",
+      "offset": 5670,
+      "excerpt": "re; interprete o sentido produzido; só depois faça a classificação. AULA 11 — Pronomes possessivos Possessivos indicam, em regra: posse; pertencimento; relação entre possuidor e possuído. Exemplo:"
+    },
+    {
+      "subject": "portugues",
+      "unit": "m07",
+      "rule": "repeated-word",
+      "offset": 17414,
+      "excerpt": "butida. Logo: “quem” = pronome interrogativo. Prática guiada 3 — certa pessoa × pessoa certa Certa pessoa telefonou. “certa” ≈ alguma. Pronome indefinido. A pessoa certa telefonou. “ce"
+    },
+    {
+      "subject": "portugues",
+      "unit": "m07",
+      "rule": "repeated-word",
+      "offset": 17973,
+      "excerpt": " Retoma a ideia inteira: o servidor perdeu o prazo. Logo: anáfora. Prática guiada 6 — isto Isto é necessário: revisar diariamente. “Isto” anuncia o conteúdo que virá. Logo: catáfora."
+    },
+    {
+      "subject": "portugues",
+      "unit": "m08",
+      "rule": "repeated-word",
+      "offset": 15550,
+      "excerpt": "te: preserve a irregularidade da família. AULA 44 — VER × VIR: revisão VER: quando eu vir VIR: quando eu vier Esse contraste precisa ser memorizado com contexto. AULA 45 — O que fi"
+    },
+    {
+      "subject": "portugues",
+      "unit": "m09",
+      "rule": "repeated-word",
+      "offset": 23195,
+      "excerpt": "tudou tanto que passou. Passar é resultado. Relação: consequência. Prática guiada 7 — embora Embora estivesse cansado, continuou. Cansaço = obstáculo. Mesmo assim, continuou. Relação: c"
+    },
+    {
+      "subject": "portugues",
+      "unit": "m10",
+      "rule": "repeated-word",
+      "offset": 1237,
+      "excerpt": "úcleo → ordem → tipo de sujeito → predicado básico. Antes de começar Você precisa saber antes Antes deste módulo, você precisa conseguir: reconhecer verbos e locuções verbais; distinguir "
+    },
+    {
+      "subject": "portugues",
+      "unit": "m10",
+      "rule": "repeated-word",
+      "offset": 26859,
+      "excerpt": " aprofundados depois. Confusões que você não pode cometer morfologia ≠ sintaxe frase ≠ oração oração ≠ período sujeito ≠ agente termo depois do verbo ≠ objeto automaticamente sujeito simp"
+    },
+    {
+      "subject": "portugues",
+      "unit": "m10",
+      "rule": "repeated-word",
+      "offset": 27041,
+      "excerpt": "sujeito simples ≠ sujeito curto sujeito composto ≠ sujeito com muitas palavras oculto ≠ indeterminado indeterminado ≠ oração sem sujeito HAVER = existir ≠ EXISTIR quanto à concordância Revisão ativa Res"
+    },
+    {
+      "subject": "portugues",
+      "unit": "m10",
+      "rule": "common-typo",
+      "offset": 15343,
+      "excerpt": "tivo virá depois. AULA 38 — Antecedente não é função sintática Observe: O processo que analisei estava incompleto. “que” retoma “processo”. Mas reconstruindo: Analisei o processo. “"
+    },
+    {
+      "subject": "portugues",
+      "unit": "m10",
+      "rule": "common-typo",
+      "offset": 15418,
+      "excerpt": "O processo que analisei estava incompleto. “que” retoma “processo”. Mas reconstruindo: Analisei o processo. “o processo” não é sujeito de “analisei”. Portanto, antecedente e função si"
+    },
+    {
+      "subject": "portugues",
+      "unit": "m10",
+      "rule": "common-typo",
+      "offset": 15471,
+      "excerpt": "oma “processo”. Mas reconstruindo: Analisei o processo. “o processo” não é sujeito de “analisei”. Portanto, antecedente e função sintática do relativo não são a mesma coisa. Esse pont"
+    },
+    {
+      "subject": "portugues",
+      "unit": "m11",
+      "rule": "repeated-word",
+      "offset": 748,
+      "excerpt": "verbo de ligação → predicativo → tipo de predicado. Antes de começar Você precisa saber antes Antes deste módulo, você precisa conseguir: localizar o verbo ou locução verbal; identificar "
+    },
+    {
+      "subject": "portugues",
+      "unit": "m11",
+      "rule": "repeated-word",
+      "offset": 15257,
+      "excerpt": "“de apoio” = objeto indireto. Prática guiada 4 — Entreguei o relatório ao chefe Verbo: entreguei Entreguei o quê? o relatório = OD. Entreguei a quem? ao chefe = OI. Conclusão: VTDI. Prática "
+    },
+    {
+      "subject": "portugues",
+      "unit": "m12",
+      "rule": "repeated-word",
+      "offset": 19484,
+      "excerpt": "go: pelo servidor = agente da passiva. O agente da passiva costuma aparecer introduzido por por e, em algumas construções, por de. Exemplo tradicional: A sala estava cercada de polici"
+    },
+    {
+      "subject": "portugues",
+      "unit": "m14",
+      "rule": "repeated-word",
+      "offset": 23047,
+      "excerpt": "ois que o relatório foi concluído, ele foi enviado. A passiva foi preservada. AULA 71 — Paralelismo Paralelismo é busca de simetria entre elementos equivalentes. Exemplo assimétrico: Tenho um primo i"
+    },
+    {
+      "subject": "portugues",
+      "unit": "m14",
+      "rule": "repeated-word",
+      "offset": 29728,
+      "excerpt": "a. → integrante. O aluno que veio... Há antecedente. → relativo. Prática guiada 10 — COMO Como estava cansado, dormiu. → já que. Causa. Fez como o regulamento determina. → conforme"
+    },
+    {
+      "subject": "portugues",
+      "unit": "m14",
+      "rule": "space-before-punctuation",
+      "offset": 15642,
+      "excerpt": " impede restrição automaticamente Exemplo: Machado de Assis, que escreveu Quincas Borba, ... Nesse contexto, a referência é única. Explicativa. Mas: O João que trabalha no fina"
+    },
+    {
+      "subject": "portugues",
+      "unit": "m14",
+      "rule": "common-typo",
+      "offset": 16325,
+      "excerpt": "r chegou. Logo: “que” = sujeito. AULA 44 — Relativo como objeto direto O processo que analisei... Reconstrução: Analisei o processo. Logo: “que” = objeto direto. AULA 45 — Relativ"
+    },
+    {
+      "subject": "portugues",
+      "unit": "m14",
+      "rule": "common-typo",
+      "offset": 16353,
+      "excerpt": "jeito. AULA 44 — Relativo como objeto direto O processo que analisei... Reconstrução: Analisei o processo. Logo: “que” = objeto direto. AULA 45 — Relativo como objeto indireto O as"
+    },
+    {
+      "subject": "portugues",
+      "unit": "m14",
+      "rule": "common-typo",
+      "offset": 29105,
+      "excerpt": "rescenta comentário. → explicativa. Prática guiada 5 — pronome relativo O processo que analisei... Reconstrução: Analisei o processo. “que” = objeto direto. Prática guiada 6 — causa"
+    },
+    {
+      "subject": "portugues",
+      "unit": "m14",
+      "rule": "common-typo",
+      "offset": 29133,
+      "excerpt": "icativa. Prática guiada 5 — pronome relativo O processo que analisei... Reconstrução: Analisei o processo. “que” = objeto direto. Prática guiada 6 — causa × consequência Como choveu"
+    },
+    {
+      "subject": "portugues",
+      "unit": "m14",
+      "rule": "common-typo",
+      "offset": 39487,
+      "excerpt": "tudaram passaram e Os candidatos, que estudaram, passaram 6 Na frase: O processo que analisei estava incompleto qual é a função do “que”? 7 Explique: Como choveu, a rua alagou ve"
+    },
+    {
+      "subject": "portugues",
+      "unit": "m14",
+      "rule": "common-typo",
+      "offset": 40520,
+      "excerpt": "ulas, acrescenta comentário sobre referência já definida: explicativa. 6 Reconstrução: “Analisei o processo”. “O processo” é objeto direto. Logo, “que” é objeto direto da oração relativa"
+    },
+    {
+      "subject": "portugues",
+      "unit": "m15",
+      "rule": "repeated-word",
+      "offset": 780,
+      "excerpt": "TRATOR → PROIBIÇÕES → POSIÇÃO → ADAPTAÇÃO → SENTIDO Antes de começar Você precisa saber antes Antes deste módulo, você precisa conseguir: reconhecer pronomes oblíquos átonos; distinguir o"
+    },
+    {
+      "subject": "portugues",
+      "unit": "m16",
+      "rule": "repeated-word",
+      "offset": 12714,
+      "excerpt": " conjunção explícita, há valor circunstancial. A pontuação segue a estrutura. AULA 16 — Escopo Escopo é o alcance de uma expressão: qual palavra, oração ou afirmação ela modifica? Compare: "
+    },
+    {
+      "subject": "portugues",
+      "unit": "m16",
+      "rule": "repeated-word",
+      "offset": 25187,
+      "excerpt": "duzem graus diferentes de destaque e nem sempre podem ser trocados sem efeito. AULA 44 — Aspas Aspas são sinais de marcação discursiva, não uma prova automática de discurso citado. Usos fre"
+    },
+    {
+      "subject": "portugues",
+      "unit": "m16",
+      "rule": "repeated-word",
+      "offset": 25859,
+      "excerpt": "nto; emprego especial. Estar entre aspas não prova, sozinho, que há citação. AULA 45 — Reticências Reticências indicam que o enunciado foi deliberadamente deixado suspenso ou incompleto no plano discu"
+    },
+    {
+      "subject": "portugues",
+      "unit": "m16",
+      "rule": "space-before-punctuation",
+      "offset": 1967,
+      "excerpt": "esume, identifica ou especifica outro termo: Machado de Assis, grande escritor brasileiro, ... vocativo: chamamento: ***Candidatos**, leiam o edital.* O princípio que evita a maior"
+    },
+    {
+      "subject": "portugues",
+      "unit": "m16",
+      "rule": "space-before-punctuation",
+      "offset": 29605,
+      "excerpt": "al é a diferença entre “Os servidores que recorreram...” e “Os servidores, que recorreram, ...”? Em “Ontem a comissão decidiu”, a ausência da vírgula é necessariamente erro? A exis"
+    },
+    {
+      "subject": "portugues",
+      "unit": "m17",
+      "rule": "repeated-word",
+      "offset": 11316,
+      "excerpt": "ém / eles mantêm ele provém / eles provêm O acento também denuncia o número. AULA 32 — Silepse Silepse é uma concordância feita com a ideia que o falante tem em mente, e não estritamente com a"
+    },
+    {
+      "subject": "portugues",
+      "unit": "m17",
+      "rule": "repeated-word",
+      "offset": 27145,
+      "excerpt": "ficar no singular. Confusões que você não pode cometer palavra mais próxima ≠ núcleo do sujeito sujeito longo ≠ sujeito composto HAVER existencial ≠ EXISTIR partitivo ≠ uma única concordância"
+    },
+    {
+      "subject": "portugues",
+      "unit": "m18",
+      "rule": "common-typo",
+      "offset": 4971,
+      "excerpt": "inal. Se atribui característica: → predicativo. AULA 12 — Adjunto adnominal Exemplo: Analisei as novas decisões administrativas. “novas” e “administrativas” ficam dentro do grupo nom"
+    },
+    {
+      "subject": "portugues",
+      "unit": "m18",
+      "rule": "common-typo",
+      "offset": 10043,
+      "excerpt": " — MENOS A fonte trata: menos como invariável. Exemplo: menos questões Não existe: menas questões no padrão estudado. AULA 38 — ALERTA A fonte adota a tradição normativa: os "
+    },
+    {
+      "subject": "portugues",
+      "unit": "m18",
+      "rule": "common-typo",
+      "offset": 18455,
+      "excerpt": "s informações. Questão 8 A forma adequada no padrão da fonte é: A) menos questões. B) menas questões. Questão 9 A forma correta é: A) As soluções as mais simples possível. B) As"
+    },
+    {
+      "subject": "portugues",
+      "unit": "m18",
+      "rule": "common-typo",
+      "offset": 24065,
+      "excerpt": "variável bastante ≠ sempre invariável só ≠ sempre invariável anexo ≠ em anexo menos ≠ menas cor composta ≠ regra única para toda cor gramaticalidade ≠ preservação do sentido Revi"
+    },
+    {
+      "subject": "portugues",
+      "unit": "m19",
+      "rule": "repeated-word",
+      "offset": 11200,
+      "excerpt": " cidade em que resido Reconstrução: resido na cidade Logo: em que AULA 34 — Relativo com COM o recurso com que conto Reconstrução: conto com o recurso Logo: com que AULA 35 — Q"
+    },
+    {
+      "subject": "portugues",
+      "unit": "m19",
+      "rule": "repeated-word",
+      "offset": 13217,
+      "excerpt": "passível de; saudade de. Exemplo: convencido de que haverá mudanças AULA 44 — Família com COM Exemplos da fonte: compatível com; coerente com; contente com; relacionado com; sat"
+    },
+    {
+      "subject": "portugues",
+      "unit": "m19",
+      "rule": "space-before-punctuation",
+      "offset": 26563,
+      "excerpt": "almejar. qual é a moldura? → aspirar a algo. qual é o complemento? → o cargo. a + o = ? → ao. Agora a preposição deixa de parecer arbitrária. Você precisa lembrar Regência "
+    },
+    {
+      "subject": "portugues",
+      "unit": "m20",
+      "rule": "repeated-word",
+      "offset": 23479,
+      "excerpt": "nfusões que você não pode cometer palavra feminina ≠ crase artigo ≠ crase preposição ≠ crase crase ≠ acento decorativo a essa ≠ à essa àquela ≠ artigo feminino comum horário ≠ intervalo"
+    },
+    {
+      "subject": "portugues",
+      "unit": "m21",
+      "rule": "repeated-word",
+      "offset": 3082,
+      "excerpt": "o. Lição frase correta não significa substituição semanticamente equivalente. AULA 7 — Denotação Denotação privilegia o sentido literal ou referencial. Exemplo: A porta está aberta. A porta mat"
+    },
+    {
+      "subject": "portugues",
+      "unit": "m21",
+      "rule": "repeated-word",
+      "offset": 3233,
+      "excerpt": "ial. Exemplo: A porta está aberta. A porta material está fisicamente aberta. AULA 8 — Conotação Conotação envolve sentido figurado, transferido, expressivo ou associado. Exemplo: A decisão abri"
+    },
+    {
+      "subject": "portugues",
+      "unit": "m21",
+      "rule": "repeated-word",
+      "offset": 4173,
+      "excerpt": "negociações. A ideia básica permanece. Mas a imagem de “esfriar” desaparece. AULA 12 — Sinonímia Sinonímia é aproximação de sentidos. A fonte alerta: sinonímia absoluta é rara. Em prova, o impo"
+    },
+    {
+      "subject": "portugues",
+      "unit": "m21",
+      "rule": "repeated-word",
+      "offset": 4881,
+      "excerpt": " aproximar-se em certos contextos. Lição associação de dicionário não basta. AULA 16 — Antonímia Antonímia é relação lexical de oposição. Exemplo simples: claro × escuro Mas cuidado: negar uma"
+    },
+    {
+      "subject": "portugues",
+      "unit": "m21",
+      "rule": "repeated-word",
+      "offset": 5278,
+      "excerpt": "ros estados. Regra de bolso oposição lexical é diferente de simples negação. AULA 18 — Hiperônimo Hiperônimo é o termo mais geral. Exemplo: fruta em relação a: maçã AULA 19 — Hipônimo Hipônimo"
+    },
+    {
+      "subject": "portugues",
+      "unit": "m21",
+      "rule": "repeated-word",
+      "offset": 5372,
+      "excerpt": "rônimo Hiperônimo é o termo mais geral. Exemplo: fruta em relação a: maçã AULA 19 — Hipônimo Hipônimo é o termo mais específico dentro de uma classe maior. Exemplo: maçã é hipônimo de: fr"
+    },
+    {
+      "subject": "portugues",
+      "unit": "m21",
+      "rule": "repeated-word",
+      "offset": 6255,
+      "excerpt": " bolso generalizar costuma perder detalhe; especificar pode inventar detalhe. AULA 24 — Homônimos Homônimos são palavras que coincidem na escrita, na pronúncia ou nas duas coisas, mas apresentam se"
+    },
+    {
+      "subject": "portugues",
+      "unit": "m21",
+      "rule": "repeated-word",
+      "offset": 8285,
+      "excerpt": "o principal continua sendo: forma semelhante não garante sentido relacionado. AULA 25 — Parônimos Parônimos têm forma parecida, mas significado diferente. Exemplos da fonte: descrição = ato de de"
+    },
+    {
+      "subject": "portugues",
+      "unit": "m21",
+      "rule": "repeated-word",
+      "offset": 8663,
+      "excerpt": ": corrigir o dado Se trocar por: ratificar o sentido muda para: confirmar AULA 27 — Polissemia Polissemia ocorre quando uma mesma palavra apresenta vários sentidos relacionados. Exemplo: cabeça"
+    },
+    {
+      "subject": "portugues",
+      "unit": "m21",
+      "rule": "repeated-word",
+      "offset": 22386,
+      "excerpt": " polissemia pode depender do critério adotado; o contexto continua soberano polissemia ≠ ambiguidade ambiguidade ≠ frase apenas “confusa” gramaticalidade ≠ equivalência semântica Revisão ativa O que "
+    },
+    {
+      "subject": "portugues",
+      "unit": "m22",
+      "rule": "repeated-word",
+      "offset": 5109,
+      "excerpt": "ncia; concessão; explicação. Conectores e pontuação são recursos frequentes. AULA 7 — Anáfora Anáfora olha para trás. Exemplo: A decisão saiu. Ela foi publicada. “Ela” retoma: a decisão "
+    },
+    {
+      "subject": "portugues",
+      "unit": "m22",
+      "rule": "repeated-word",
+      "offset": 5224,
+      "excerpt": "a trás. Exemplo: A decisão saiu. Ela foi publicada. “Ela” retoma: a decisão AULA 8 — Catáfora Catáfora olha para frente. Exemplo: Só desejo isto: que o processo termine. “Isto” anuncia o co"
+    },
+    {
+      "subject": "portugues",
+      "unit": "m23",
+      "rule": "repeated-word",
+      "offset": 5615,
+      "excerpt": "a no texto...”. Sempre descubra primeiro: qual parte está sendo classificada? AULA 9 — Narração Narração organiza acontecimentos em progressão temporal. Pergunta central: o que aconteceu? AUL"
+    },
+    {
+      "subject": "portugues",
+      "unit": "m23",
+      "rule": "repeated-word",
+      "offset": 7440,
+      "excerpt": "ositivo. Lição segmento e texto inteiro podem ter classificações diferentes. AULA 15 — Descrição Descrição caracteriza: pessoa; objeto; lugar; situação; sensação; estado. Pergunta central: "
+    },
+    {
+      "subject": "portugues",
+      "unit": "m23",
+      "rule": "repeated-word",
+      "offset": 9433,
+      "excerpt": " A diferença não está na quantidade de verbos, mas no papel que eles cumprem. AULA 21 — Injunção Injunção organiza ações que o destinatário deve realizar. Pergunta central: o que fazer e como f"
+    },
+    {
+      "subject": "portugues",
+      "unit": "m23",
+      "rule": "repeated-word",
+      "offset": 13063,
+      "excerpt": "xpositivo. Só há argumentação quando existe: posição + sustentação AULA 36 — Função do exemplo Exemplo: No ano passado, uma enchente fechou o prédio por dois dias. O episódio mostra por que s"
+    },
+    {
+      "subject": "portugues",
+      "unit": "m23",
+      "rule": "repeated-word",
+      "offset": 26880,
+      "excerpt": "inância; finalidade; recorte do comando. Confusões que você não pode cometer gênero ≠ tipo tipo ≠ função da linguagem narração ≠ presença de verbos descrição ≠ quantidade de adjetivos"
+    },
+    {
+      "subject": "portugues",
+      "unit": "m24",
+      "rule": "repeated-word",
+      "offset": 3356,
+      "excerpt": "do programa aumentou. Se o sentido é preservado, há recorrência por paráfrase. AULA 6 — Inferência Inferência é uma conclusão apoiada em indícios textuais. Exemplo: O índice continuou elevado. A p"
+    },
+    {
+      "subject": "portugues",
+      "unit": "m24",
+      "rule": "repeated-word",
+      "offset": 3550,
+      "excerpt": "do. A palavra: continuou permite inferir: o índice já estava elevado antes. AULA 7 — Extrapolação Extrapolação ocorre quando a alternativa acrescenta algo que o texto não autorizou. Exemplo: Douglas"
+    },
+    {
+      "subject": "portugues",
+      "unit": "m24",
+      "rule": "repeated-word",
+      "offset": 7095,
+      "excerpt": "formativo. Texto sobre rotina administrativa pode ser poema. Tema não basta. AULA 23 — Intertextualidade Intertextualidade é o diálogo entre textos. Esse diálogo pode ser: explícito; implícito. AULA 24 — Cita"
+    },
+    {
+      "subject": "portugues",
+      "unit": "m24",
+      "rule": "repeated-word",
+      "offset": 8603,
+      "excerpt": "lícita. Interpretação depreensão de informação implícita a partir de pistas. AULA 34 — Pressuposto Pressuposto costuma ter marca linguística. Exemplo: Douglas parou de fumar. “parou” pressupõe: fu"
+    },
+    {
+      "subject": "portugues",
+      "unit": "m24",
+      "rule": "repeated-word",
+      "offset": 8990,
+      "excerpt": "rimeira... → há ou houve uma série. tornou-se... → houve mudança de estado. AULA 36 — Subentendido Subentendido depende mais da situação comunicativa. Exemplo: Você tem relógio? Num ponto de ônibus,"
+    }
+  ]
+}
