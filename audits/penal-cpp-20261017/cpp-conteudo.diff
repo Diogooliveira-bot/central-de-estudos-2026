@@ -1,0 +1,195 @@
+--- antes/cpp-m06/summaryHtml
++++ depois/cpp-m06/summaryHtml
+@@ -54,5 +54,5 @@
+ O STJ, no CC 218.865/DF, tratou o feminicídio como crime doloso contra a vida na hipótese examinada.</p>
+ <h2>5.6 Prerrogativa de função</h2>
+-<p>A regra atual do STF exige crime praticado <strong>no cargo e em razão das funções</strong>.
++<p>Na orientação do HC 232.627 e do Inq 4.787-QO sobre a manutenção do foro após a saída do cargo, exige-se crime praticado <strong>no cargo e em razão das funções</strong>.
+ Preenchidos esses requisitos, o foro <strong>subsiste após a saída do cargo</strong>, mesmo se o inquérito ou ação forem iniciados depois.</p>
+ <p>Em 2026, no HC 232.627 ED, o STF esclareceu, entre outros pontos:</p>
+@@ -71,4 +71,8 @@
+ <li>corréu sem prerrogativa não é automaticamente reunido nem automaticamente separado — analisar conexão/continência e desmembramento; Súmula 704/STF afasta a alegação de violação automática ao juiz natural.</li>
+ </ul>
++<p>
++<strong>Ressalva — carreiras vitalícias:</strong> Para magistrados e membros do Ministério Público, não se deve aplicar automaticamente a restrição da AP 937 a todo crime sem relação funcional.
++Na Rcl 84.738 AgR, julgada em 14/04/2026, a Segunda Turma do STF manteve no TJ ação contra promotor por crime sem relação com o cargo, em atenção à garantia institucional da carreira vitalícia.
++O Tema 1.147 trata da competência para crime comum de desembargador sem nexo com a função: não confundir essa controvérsia com a manutenção do foro por crime funcional após cessar o exercício.</p>
+ <h2>5.7 Competência territorial</h2>
+ <h3>Art. 70</h3>
+@@ -223,5 +227,6 @@
+ <strong>Gabarito: B.</strong>
+ <br />
+-<strong>Explicação:</strong> a tese atual exige vínculo funcional; para o corréu, a Súmula 704 afasta a tese de inconstitucionalidade automática da atração, mas não cria reunião obrigatória em qualquer caso.</p>
++<strong>Explicação:</strong> a tese sobre permanência do foro por crime funcional exige vínculo funcional; isso não resolve automaticamente o foro de carreiras vitalícias por crimes sem nexo.
++Para o corréu, a Súmula 704 afasta a tese de inconstitucionalidade automática da atração, mas não cria reunião obrigatória em qualquer caso.</p>
+ <p>
+ <strong>Auditoria das 5 questões:</strong> 2 fáceis, 2 médias e 1 difícil; sem repetição mecânica das 10 questões anteriores.</p>
+--- antes/cpp-m06/completeHtml
++++ depois/cpp-m06/completeHtml
+@@ -310,5 +310,10 @@
+ A orientação atual do <strong>HC 232.627</strong> e do <strong>Inq 4.787-QO</strong> não “restaura” aqueles dispositivos: ela decorre de construção jurisprudencial constitucional posterior e exige, como núcleo, que o crime tenha sido praticado <strong>no exercício do cargo e em razão das funções</strong>.</p>
+ <p>⚠️ <strong>PEGADINHA DE CONCURSO:</strong> foro por prerrogativa <strong>não é privilégio pessoal nem acompanha qualquer crime do agente</strong>.
+-O vínculo entre fato e função continua sendo requisito central.</p>
++O vínculo entre fato e função é central na tese sobre crime funcional e cessação do exercício.
++Não transforme essa baliza em exclusão automática do foro para todo crime de magistrado ou membro do Ministério Público.</p>
++<p>
++<strong>Carreiras vitalícias — distinção necessária:</strong> Para magistrados e membros do Ministério Público, não se deve aplicar automaticamente a restrição da AP 937 a todo crime sem relação funcional.
++Na Rcl 84.738 AgR, julgada em 14/04/2026, a Segunda Turma do STF manteve no TJ ação contra promotor por crime sem relação com o cargo, em atenção à garantia institucional da carreira vitalícia.
++O Tema 1.147 trata da competência para crime comum de desembargador sem nexo com a função: não confundir essa controvérsia com a manutenção do foro por crime funcional após cessar o exercício.</p>
+ <h3>Corréu sem prerrogativa</h3>
+ <p>A existência de um acusado com foro por prerrogativa não significa, em todo caso, atração automática de todos os corréus.</p>
+@@ -1099,6 +1104,5 @@
+ <strong>Crime eleitoral pode atrair crime comum conexo</strong>, desde que a conexão efetivamente exista.</li>
+ <li>
+-<strong>Foro por prerrogativa exige relação funcional do crime.</strong>
+-</li>
++<strong>Crime funcional e saída do cargo:</strong> aplicar HC 232.627/Inq 4.787-QO; para crimes sem nexo funcional de magistrados e membros do MP, verificar a disciplina constitucional e o precedente específico, sem generalização automática da AP 937.</li>
+ <li>
+ <strong>Após HC 232.627, o foro pode subsistir após a saída do cargo</strong> quando o crime foi praticado no cargo e em razão das funções.</li>
+--- antes/cpp-m09/summaryHtml
++++ depois/cpp-m09/summaryHtml
+@@ -50,8 +50,12 @@
+ A prerrogativa da Defensoria não se estende automaticamente a toda defesa criminal.</p>
+ <h2>5.6 Processo eletrônico</h2>
+-<p>Lei 11.419/2006:</p>
++<p>Na disciplina atual da Resolução CNJ 455/2022, com as alterações posteriores, as intimações que dispensam ciência pessoal são publicadas no DJEN; eventual aviso no portal tem valor informativo.
++O Domicílio Judicial Eletrônico é utilizado para comunicações que exigem vista ou intimação pessoal.
++A janela de 10 dias corridos para consulta não é prazo adicional para ler qualquer publicação no DJEN.
++A regra especial da citação criminal continua exigindo o exame do CPP e da ressalva do art. 6º da Lei 11.419/2006.</p>
++<p>Lei 11.419/2006 — intimação e transmissão de atos:</p>
+ <ul>
+-<li>DJe: publicação legal = primeiro dia útil após disponibilização; prazo inicia no primeiro dia útil seguinte à publicação;</li>
+-<li>portal: consulta efetiva gera intimação; sem consulta, intimação automática após <strong>10 dias corridos do envio</strong>;</li>
++<li>DJEN, para atos que dispensam intimação pessoal: publicação legal = primeiro dia útil após disponibilização; prazo inicia no primeiro dia útil seguinte à publicação;</li>
++<li>intimação pessoal eletrônica, na hipótese legal: consulta efetiva gera intimação; sem consulta, intimação automática após <strong>10 dias corridos do envio</strong>;</li>
+ <li>petição sujeita a prazo pode ser transmitida até <strong>24h do último dia</strong>;</li>
+ <li>indisponibilidade técnica, nas condições legais, pode prorrogar o prazo.</li>
+--- antes/cpp-m09/completeHtml
++++ depois/cpp-m09/completeHtml
+@@ -501,5 +501,10 @@
+ <h3>FUNDAMENTO LEGAL — LEI 11.419/2006</h3>
+ <p>A Lei 11.419/2006 aplica-se também ao processo penal e interfere no momento de prática e comunicação de atos.</p>
+-<h3>3.16.1 Diário da Justiça eletrônico — art. 4º</h3>
++<p>
++<strong>Atualização — DJEN e intimação pessoal:</strong> Na disciplina atual da Resolução CNJ 455/2022, com as alterações posteriores, as intimações que dispensam ciência pessoal são publicadas no DJEN; eventual aviso no portal tem valor informativo.
++O Domicílio Judicial Eletrônico é utilizado para comunicações que exigem vista ou intimação pessoal.
++A janela de 10 dias corridos para consulta não é prazo adicional para ler qualquer publicação no DJEN.
++A regra especial da citação criminal continua exigindo o exame do CPP e da ressalva do art. 6º da Lei 11.419/2006.</p>
++<h3>3.16.1 Diário de Justiça Eletrônico Nacional — art. 4º e Resolução CNJ 455/2022</h3>
+ <ul>
+ <li>considera-se data da publicação o <strong>primeiro dia útil seguinte</strong> ao da disponibilização;</li>
+@@ -514,5 +519,5 @@
+ ↓<br />
+ INÍCIO DO PRAZO</p>
+-<h3>3.16.2 Portal próprio — art. 5º</h3>
++<h3>3.16.2 Intimação pessoal eletrônica — art. 5º, na disciplina do Domicílio</h3>
+ <ul>
+ <li>intimação ocorre quando o intimando consulta eletronicamente o teor;</li>
+--- antes/cpp-m10/summaryHtml
++++ depois/cpp-m10/summaryHtml
+@@ -96,4 +96,8 @@
+ <h3>5.9.
+ Comunicação eletrônica</h3>
++<p>Na disciplina atual da Resolução CNJ 455/2022, com as alterações posteriores, as intimações que dispensam ciência pessoal são publicadas no DJEN; eventual aviso no portal tem valor informativo.
++O Domicílio Judicial Eletrônico é utilizado para comunicações que exigem vista ou intimação pessoal.
++A janela de 10 dias corridos para consulta não é prazo adicional para ler qualquer publicação no DJEN.
++A regra especial da citação criminal continua exigindo o exame do CPP e da ressalva do art. 6º da Lei 11.419/2006.</p>
+ <p>A Lei 11.419/2006 permite intimações e comunicações oficiais eletrônicas, mas seu art. 6º <strong>exclui a citação nos Direitos Processuais Criminal e Infracional</strong>.
+ Isso não impede que jurisprudência reconheça formas eletrônicas atípicas em casos concretos.
+--- antes/cpp-m10/completeHtml
++++ depois/cpp-m10/completeHtml
+@@ -856,4 +856,8 @@
+ <h4>12.1.
+ Intimação eletrônica</h4>
++<p>Na disciplina atual da Resolução CNJ 455/2022, com as alterações posteriores, as intimações que dispensam ciência pessoal são publicadas no DJEN; eventual aviso no portal tem valor informativo.
++O Domicílio Judicial Eletrônico é utilizado para comunicações que exigem vista ou intimação pessoal.
++A janela de 10 dias corridos para consulta não é prazo adicional para ler qualquer publicação no DJEN.
++A regra especial da citação criminal continua exigindo o exame do CPP e da ressalva do art. 6º da Lei 11.419/2006.</p>
+ <p>A lei admite publicação e intimação por meios eletrônicos, inclusive em portal próprio, observadas as regras específicas do sistema.
+ O art. 7º ainda estabelece que cartas precatórias, rogatórias, de ordem e comunicações oficiais entre órgãos do Poder Judiciário — e entre estes e outros Poderes — sejam feitas <strong>preferentemente por meio eletrônico</strong>.</p>
+--- antes/cpp-m12/summaryHtml
++++ depois/cpp-m12/summaryHtml
+@@ -126,4 +126,10 @@
+ <p>A confissão é <strong>divisível e retratável</strong>, não possui valor absoluto e deve ser confrontada com as demais provas.
+ Não dispensa corpo de delito quando necessário.</p>
++<p>
++<strong>Confissão extrajudicial — STJ:</strong> A confissão extrajudicial exige exame próprio de admissibilidade e valoração.
++No AREsp 2.123.334/MG, a Terceira Seção do STJ exigiu formalização e documentação em estabelecimento estatal público e oficial; relato policial em juízo não contorna a inadmissibilidade de confissão informal.
++A confissão extrajudicial admissível pode indicar fontes de prova à investigação, mas não deve integrar a fundamentação da condenação, conforme o precedente e sua modulação temporal.
++A confissão judicial também deve ser confrontada com as demais provas.
++Não confunda aptidão para provar autoria com o regime da atenuante penal da confissão.</p>
+ <h2>5.8.
+ Ofendido e testemunhas</h2>
+--- antes/cpp-m12/completeHtml
++++ depois/cpp-m12/completeHtml
+@@ -985,4 +985,10 @@
+ <li>não transforma o silêncio em reconhecimento de culpa.</li>
+ </ul>
++<p>
++<strong>Limites da confissão extrajudicial — AREsp 2.123.334/MG:</strong> A confissão extrajudicial exige exame próprio de admissibilidade e valoração.
++No AREsp 2.123.334/MG, a Terceira Seção do STJ exigiu formalização e documentação em estabelecimento estatal público e oficial; relato policial em juízo não contorna a inadmissibilidade de confissão informal.
++A confissão extrajudicial admissível pode indicar fontes de prova à investigação, mas não deve integrar a fundamentação da condenação, conforme o precedente e sua modulação temporal.
++A confissão judicial também deve ser confrontada com as demais provas.
++Não confunda aptidão para provar autoria com o regime da atenuante penal da confissão.</p>
+ <h5>🔄 QUADRO 12 — INTERROGATÓRIO × CONFISSÃO</h5>
+ <table>
+--- antes/cpp-m19/summaryHtml
++++ depois/cpp-m19/summaryHtml
+@@ -64,5 +64,5 @@
+ <strong>Direta:</strong> tribunal agrava em recurso exclusivamente defensivo → vedada.<br />
+ <strong>Indireta:</strong> após anulação obtida somente pela defesa, novo julgamento ultrapassa o limite desfavorável protegido → vedada nos limites reconhecidos.<br />
+-<strong>In mellius:</strong> melhora da situação do réu; admitida em hipóteses jurisprudenciais.</p>
++<strong>In melius:</strong> melhora da situação do réu; admitida em hipóteses jurisprudenciais.</p>
+ <p>
+ <strong>Art. 617:</strong> a pena não pode ser agravada quando somente o réu apelou.<br />
+--- antes/cpp-m19/completeHtml
++++ depois/cpp-m19/completeHtml
+@@ -529,5 +529,5 @@
+ <p>🧭 <strong>DOUTRINA — AURY LOPES JR.</strong>
+ </p>
+-<p>Aury sustenta que, no processo penal, a regra deve ser lida em conjunto com a vedação da reformatio in pejus e com a possibilidade de reformatio in mellius, funcionando com especial intensidade como <strong>limite à pretensão acusatória</strong>.</p>
++<p>Aury sustenta que, no processo penal, a regra deve ser lida em conjunto com a vedação da reformatio in pejus e com a possibilidade de reformatio in melius, funcionando com especial intensidade como <strong>limite à pretensão acusatória</strong>.</p>
+ <p>⚠️ <strong>DIVERGÊNCIA / CAUTELA:</strong> essa formulação é doutrinária.
+ Em prova objetiva, parta primeiro da legislação, do efeito devolutivo da espécie e da jurisprudência indicada no enunciado.</p>
+@@ -679,10 +679,10 @@
+ O M19 deve fornecer a regra geral, mas não transformar essa tensão em fórmula absoluta.</p>
+ <p>📌 Este ponto é aprofundado no <strong>M16 — Tribunal do Júri</strong>.</p>
+-<h3>3.15 — REFORMATIO IN MELLIUS</h3>
+-<p>Reformatio in mellius é a <strong>reforma para melhor</strong> da situação do acusado.</p>
++<h3>3.15 — REFORMATIO IN MELIUS</h3>
++<p>Reformatio in melius é a <strong>reforma para melhor</strong> da situação do acusado.</p>
+ <p>Ela deve ser estudada separadamente da proibição do art. 617, porque o dispositivo legal veda a reforma para pior em recurso exclusivamente defensivo, mas não contém proibição simétrica de benefício ao réu.</p>
+ <p>🏛️ <strong>JURISPRUDÊNCIA — STJ</strong>
+ </p>
+-<p>Há precedentes do STJ admitindo <strong>reformatio in mellius em recurso exclusivo da acusação</strong>, inclusive quando identificada ilegalidade manifesta favorável ao acusado.
++<p>Há precedentes do STJ admitindo <strong>reformatio in melius em recurso exclusivo da acusação</strong>, inclusive quando identificada ilegalidade manifesta favorável ao acusado.
+ Entre os precedentes estão o <strong>REsp 628.971/PR</strong> e o <strong>AgRg no REsp 666.732/RS</strong>.</p>
+ <p>🧭 <strong>DOUTRINA — AURY LOPES JR.</strong>
+@@ -694,5 +694,5 @@
+ <strong>AURY:</strong> formula leitura garantista ampla da reforma favorável.</p>
+ <p>
+-<strong>STJ:</strong> admite reformatio in mellius em hipóteses reconhecidas, especialmente diante de ilegalidade manifesta, mas isso não significa autorização genérica para ignorar regras de competência, devolução ou preclusão.</p>
++<strong>STJ:</strong> admite reformatio in melius em hipóteses reconhecidas, especialmente diante de ilegalidade manifesta, mas isso não significa autorização genérica para ignorar regras de competência, devolução ou preclusão.</p>
+ <p>
+ <strong>PARA PROVA:</strong> art. 617 <strong>veda a piora</strong>, não a melhora.
+@@ -724,5 +724,5 @@
+ <tr>
+   <td>
+-<strong>Reformatio in mellius</strong>
++<strong>Reformatio in melius</strong>
+ </td>
+   <td>situação do réu é melhorada</td>
+@@ -950,5 +950,5 @@
+ </p>
+ <p>O Ministério Público recorre buscando agravamento.
+-O tribunal examina a matéria devolvida pelo recurso acusatório, mas precedentes do STJ admitem <strong>reformatio in mellius</strong> quando identificada ilegalidade manifesta favorável ao acusado.</p>
++O tribunal examina a matéria devolvida pelo recurso acusatório, mas precedentes do STJ admitem <strong>reformatio in melius</strong> quando identificada ilegalidade manifesta favorável ao acusado.</p>
+ <p>✅ <strong>EXEMPLO 3 — dois corréus</strong>
+ </p>
+@@ -1180,5 +1180,5 @@
+ </tr>
+ <tr>
+-  <td>in mellius</td>
++  <td>in melius</td>
+   <td>melhora da situação do réu</td>
+   <td>admitida em hipóteses jurisprudenciais</td>
