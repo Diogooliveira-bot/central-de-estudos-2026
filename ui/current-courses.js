@@ -91,7 +91,7 @@ function ptMaster(){
   const summary=card(m.id,'review','⚡',review?'Revisão ativa final':'Versão de revisão',
    review?'Recupere os conteúdos estudados com perguntas e respostas comentadas.':'Retome os pontos essenciais e faça recuperação ativa.',
    ['Resumo','Revisão ativa'],review?'Revisar conteúdos':'Revisar conteúdo','review',
-   review?'Praticar revisão final':'Resolver 5 questões',review?'cumulative':'active');
+   review?'Praticar revisão final':'Resolver 5 questões',review?'cumulative-review':'active');
   const infographic=hasInfographic?card(m.id,'map','🧠','Infográfico',
    'Imagem de revisão visual do módulo, com opção de download.',
    ['Imagem','Revisão visual'],'Visualizar infográfico','infographic','',''):'';
