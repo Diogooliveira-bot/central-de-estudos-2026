@@ -114,7 +114,7 @@ if(typeof global.renderDisciplineGrid==='function')global.renderDisciplineGrid()
 (function(){
  if(window.CentralDisciplineLoader||window.__cpcM07Autoload)return;window.__cpcM07Autoload=true;
  const files=[
-  '/content/cpc/m07-native-data.js?v=20261003cpcm07v1',
+  '/content/cpc/m07-native-data.js?v=20261018cpcjur1',
   '/ui/cpc-m07-native-study-reader.js?v=20261003cpcm07v1',
   '/cpc-study-m07-lite.js?v=20261003cpcm07v1'
  ];

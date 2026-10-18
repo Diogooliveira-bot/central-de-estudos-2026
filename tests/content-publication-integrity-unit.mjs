@@ -12,7 +12,7 @@ test('CPC M08 instala o conteúdo integral e encerra o carregamento',async()=>{
  assert.match(source,/g\.__M08Installed=true/);
  assert.ok(source.length>20000,'o arquivo integral do M08 não pode ser substituído pelo fragmento curto');
  const boot=await read('central-v119.html');
- assert.match(boot,/content\/cpc\/m08-native-data\.js\?v=20261010auditfix1/);
+ assert.match(boot,/content\/cpc\/m08-native-data\.js\?v=20261018cpcjur1/);
  assert.doesNotMatch(boot,/m08-native-data-part1\.js/);
 });
 
