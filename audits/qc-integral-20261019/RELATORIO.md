@@ -73,6 +73,8 @@ O acesso à tela de login do QC foi encontrado, mas a revisão automática bloqu
 
 Os testes de unidade da Central verificaram a rota da Central de Questões, suas cinco abas, renderização por módulo, separação QC/TEC, destinos/IDs catalogados, histórico, fallback e estabilidade de montagem. Eles passam. O teste de navegador Playwright não pôde rodar: Chromium não estava instalado, e a distribuição do binário falhou com arquivo incompleto (0 MiB). Um teste browser de Civil foi, portanto, ignorado. A página real autenticada também não pôde ser testada.
 
+Após o deploy de preview da branch, fiz uma verificação manual na interface: a página de produção do preview retornou HTTP 200; a Central de Questões montou e mostrou as cinco abas, sem títulos corrompidos no texto observado. O resumo exibiu 497 vínculos, 484 cadernos únicos, 246 registros QC e 238 TEC. Em Processo Civil M09, o carregamento terminou e o painel mostrou os três links QC registrados (IDs `15267572`, `15267575`, `15267579`) e um link TEC. Isso confirma a presença/renderização dos filtros no módulo; não confirma que os links QC abram os cadernos corretos no QC.
+
 ## Codificação dos títulos
 
 O mapa principal tinha 65 `moduleTitle` corrompidos; os títulos gerais legíveis do próprio mapa permitiram regenerar esse campo sem alterar IDs, URLs, filtros, status ou contagens. Os espelhos JSON/JS foram mantidos sincronizados. A interface agora prioriza `title` limpo antes de `notebookTitle`, pois 14 valores de `notebookTitle` continuam corrompidos/truncados na fonte. O inventário preservado contém 19 títulos com mojibake; não foi editado nem “corrigido” por suposição. Há um título geral com marcador de codificação a revisar manualmente.
