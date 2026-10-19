@@ -1,4 +1,4 @@
-/* Shared presentation: approved CF/Portuguese references remain native; other renderers keep their content and storage. */
+/* Shared study presentation: every renderer keeps its content, handlers, and storage. */
 (function () {
   'use strict';
   if (window.CentralDisciplineStandard) return;
@@ -14,9 +14,10 @@
   }
   function bodyOf(module) { return module.querySelector('.civil-module-body,.cv-module-body,.cf-module-body,.cpp-mod-body,.ptra-native-mod-body,.detail-panel'); }
   function standardizeStudyCards(body, meta) {
-    // Keep the already approved references untouched and retain RLM's M01 speed-training order.
-    if (meta.subject === 'cf' || meta.subject === 'pt' || (meta.subject === 'rlm' && /^M0?1$/i.test(meta.id))) return;
-    const containers = body.querySelectorAll('.bc-native-material-grid,.adm-native-material-grid,.cv-cards,.ptra-native-card-grid,.cf-native-cards');
+    // Preserve RLM M01's special speed-training sequence; all remaining study
+    // cards follow the approved Administrative module order without replacing nodes.
+    if (meta.subject === 'rlm' && /^M0?1$/i.test(meta.id)) return;
+    const containers = body.querySelectorAll('.bc-native-material-grid,.adm-native-material-grid,.cv-cards,.ptra-native-card-grid,.cf-native-cards,.pt-cf-cards');
     containers.forEach((container) => {
       const cards = Array.from(container.children).filter((node) => node.matches('article,button'));
       if (!cards.length) return;
@@ -26,7 +27,7 @@
         const text = (card.textContent || '').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
         if (/infografico|mapa mental|visual real/.test(text)) return 'infographic';
         if (/teoria completa|conteudo completo|versao completa/.test(text)) return 'complete';
-        if (/versao resumida|conteudo resumido|resumo/.test(text)) return 'summary';
+        if (/versao resumida|versao de revisao|teoria resumida|conteudo resumido|resumo/.test(text)) return 'summary';
         return 'other';
       };
       const rank = { complete:0, summary:1, infographic:2, other:3 };
@@ -47,14 +48,88 @@
       .forEach(node => node.remove());
     const zone = body.querySelector(':scope > .adm-native-zone');
     if (!zone) return;
+    const head = zone.querySelector(':scope > .adm-native-zone-head');
+    const progress = zone.querySelector(':scope > .adm-native-progress-panel');
     const materials = zone.querySelector(':scope > .adm-native-material-grid');
-    const notes = body.querySelector(':scope > .adm-native-notes');
+    const notes = body.querySelector(':scope > .adm-native-notes') || zone.querySelector(':scope > .adm-native-notes');
     const tools = zone.querySelector(':scope > .adm-native-module-tools');
     zone.querySelector(':scope > .adm-native-hint')?.remove();
-    // Keep the module-specific controls and links, but put notes after the three
-    // study cards and the extra tools after the filter resources.
-    if (materials && notes && materials.nextElementSibling !== notes) materials.after(notes);
+    // Match the approved ADM screenshot: progress, complete, summary, infographic,
+    // notes, QC/TEC panels, then tools. Moving native nodes keeps their handlers.
+    if (head && progress && head.nextElementSibling !== progress) head.after(progress);
+    if (materials) {
+      const cards = Array.from(materials.children);
+      const rank = node => (node.dataset.dsMaterialKind || node.dataset.kind) === 'complete' ? 0 : (node.dataset.dsMaterialKind || node.dataset.kind) === 'summary' ? 1 : (node.dataset.dsMaterialKind || node.dataset.kind) === 'infographic' || /infograf|visual/i.test(node.textContent || '') ? 2 : 3;
+      cards.sort((a,b) => rank(a)-rank(b)).forEach(node => materials.appendChild(node));
+      if (progress && progress.nextElementSibling !== materials) progress.after(materials);
+      if (notes && notes.parentElement !== zone) zone.appendChild(notes);
+      if (notes && materials.nextElementSibling !== notes) materials.after(notes);
+    }
+    const filterPanels = Array.from(zone.querySelectorAll(':scope > .bcq-module-panels'));
+    filterPanels.forEach(panel => { if (notes && notes.nextElementSibling !== panel) notes.after(panel); });
     if (tools) zone.appendChild(tools);
+  }
+
+  function arrangeStudySections(body, meta) {
+    if (body.querySelector(':scope > .adm-native-zone')) return;
+    const materials = body.querySelector('.ds-study-material-grid');
+    const footer = body.querySelector(':scope > .ds-module-footer');
+    if (!materials) return;
+    const nativeNote = body.querySelector(':scope > .ds-notes,:scope > .cf-native-note,:scope > .ptra-native-notes,:scope > .cms-note-final');
+    let notesNode = nativeNote;
+    const footerNotes = footer?.querySelector('.ds-notes');
+    if (!notesNode && footerNotes) {
+      notesNode = footerNotes;
+      body.insertBefore(notesNode, footer);
+    }
+    if (notesNode && materials.nextElementSibling !== notesNode) materials.after(notesNode);
+
+    const panels = Array.from(body.querySelectorAll(':scope > [data-bcq-module-panel]'));
+    panels.forEach(panel => { if (notesNode && notesNode.nextElementSibling !== panel) notesNode.after(panel); });
+
+    const tools = footer?.querySelector('.ds-footer-tools');
+    if (footer && panels.length && footer.previousElementSibling !== panels[panels.length - 1]) {
+      body.appendChild(footer);
+    }
+    if (tools && tools.parentElement === footer) {
+      body.appendChild(tools);
+    }
+    const review = footer?.querySelector('.ds-footer-review');
+    if (review && tools && tools.nextElementSibling !== review) body.appendChild(review);
+    // The per-filter + controls are the live entry point. Keep legacy round data
+    // and its summary, while suppressing a second manual entry form only when a
+    // module actually has filter cards.
+    const questionPanel = footer?.querySelector(':scope > .ds-footer-questions');
+    if (questionPanel) questionPanel.hidden = panels.some(panel => panel.querySelector('.bcq-card'));
+  }
+
+  function arrangeNativeCourseLayouts(root) {
+    root.querySelectorAll('.subject[data-id="civil"] .cv-module[data-civil-native-module]').forEach(module => {
+      const body = module.querySelector('.cv-module-body'), zone = body?.querySelector('.cv-zone');
+      if (!body || !zone) return;
+      const cards = zone.querySelector('.cv-cards'), tools = zone.querySelector('.cv-tools');
+      const below = body.querySelector('.cv-below');
+      const note = below?.querySelector('.cv-panel:not([data-civil-tec])');
+      const tec = below?.querySelector('[data-civil-tec]');
+      if (cards && note) { zone.appendChild(note); cards.after(note); }
+      if (note && tec) note.after(tec); else if (cards && tec) cards.after(tec);
+      const panel = body.querySelector(':scope > [data-bcq-module-panel]');
+      if (panel && note) note.after(panel); else if (panel && cards) cards.after(panel);
+      if (tools) zone.appendChild(tools);
+    });
+    root.querySelectorAll('.subject[data-id="ptra"] .ptra-native-mod[data-ptra-module]').forEach(module => {
+      const body = module.querySelector('.ptra-native-mod-body'), zone = body?.querySelector('.ptra-native-zone');
+      if (!body || !zone) return;
+      const cards = zone.querySelector('.ptra-native-card-grid'), tools = zone.querySelector('.ptra-native-tools');
+      const notes = zone.querySelector('.ptra-native-notes'), tec = zone.querySelector('.ptra-native-tec');
+      const bottom = zone.querySelector('.ptra-native-bottom');
+      if (notes && cards && notes.parentElement !== zone) { zone.appendChild(notes); cards.after(notes); }
+      if (tec && notes) notes.after(tec);
+      if (bottom && !bottom.querySelector('.ptra-native-notes,.ptra-native-tec')) bottom.remove();
+      const panel = body.querySelector(':scope > [data-bcq-module-panel]');
+      if (panel && notes) notes.after(panel); else if (panel && cards) cards.after(panel);
+      if (tools) zone.appendChild(tools);
+    });
   }
   function readingStats(module, meta) {
     if (meta.subject === 'cpp' && window.CppCourseV1) {
@@ -128,14 +203,13 @@
     return goal ? (goal.checked ? 100 : 0) : 0;
   }
   function progressPanel(module, meta) {
-    const reading = readingStats(module, meta), questions = meta.subject === 'cf' ? null : questionStats(module, meta), overall = percentage(module);
-    const law = module.querySelector('button[onclick*="openLeiSeca"],button[onclick*="decorando"],a[onclick*="openLeiSeca"]');
-    const label = law ? 'Lei em Dia' : (meta.subject === 'pt' ? 'Revisão' : 'Materiais');
-    const description = law ? 'Artigos e exercícios vinculados ao módulo' : (meta.subject === 'pt' ? 'Pontos de revisão disponíveis no módulo' : 'Consulte os materiais e recursos vinculados');
-    return '<section class="csp-panel ds-progress" data-ds-summary><div class="csp-panel-head"><div><span>PROGRESSO DE ESTUDO</span><b>' + overall + '% do módulo</b></div><div class="csp-panel-note">Conclusão conforme os critérios desta disciplina</div></div>' + meter(overall) + '<div class="csp-grid">' +
-      '<article class="csp-stage-card"><div class="csp-stage-head"><div><b>Leitura</b><small>' + esc(reading.text) + '</small></div><strong>' + (reading.pct === null ? '—' : reading.pct + '%') + '</strong></div>' + meter(reading.pct) + '</article>' +
-      (meta.subject === 'cf' ? '' : '<article class="csp-stage-card"><div class="csp-stage-head"><div><b>' + label + '</b><small>' + description + '</small></div></div><button type="button" class="ds-action" data-ds-action="' + (meta.subject === 'pt' ? 'review' : 'resources') + '">Abrir ' + (law ? 'Lei em Dia' : label.toLowerCase()) + '</button></article>') +
-      (meta.subject === 'cf' ? '' : '<article class="csp-stage-card csp-tec"><div class="csp-stage-head"><div><b>Questões / TEC</b><small>' + esc(questions.text) + '</small></div><strong>' + (questions.total && questions.correct !== null ? Math.round(questions.correct / questions.total * 100) + '% de acertos' : questions.total ? '—' : 'Sem registro') + '</strong></div><div class="ds-actions"><button type="button" class="ds-action" data-ds-action="questions">Abrir questões e registros</button></div></article>') + '</div></section>';
+    const reading = readingStats(module, meta);
+    const rounds = footerRounds(meta);
+    const total = rounds.reduce((sum,row) => sum + row.done,0), correct = rounds.reduce((sum,row) => sum + row.correct,0);
+    const questions = { total, correct, text:total ? total + ' questões em rodadas · ' + correct + ' acertos' : 'Nenhuma rodada registrada ainda' };
+    return '<section class="csp-panel ds-progress" data-ds-summary><div class="csp-grid">' +
+      '<article class="csp-stage-card"><div class="csp-stage-head"><div><b>Progresso da teoria</b><small>' + esc(reading.text) + '</small></div><strong>' + (reading.pct === null ? '—' : reading.pct + '%') + '</strong></div>' + meter(reading.pct) + '</article>' +
+      '<article class="csp-stage-card csp-tec"><div class="csp-stage-head"><div><b>Questões externas</b><small>' + esc(questions.text) + '</small></div><strong>' + (questions.total && questions.correct !== null ? Math.round(questions.correct / questions.total * 100) + '% de acertos' : questions.total ? '—' : 'Sem registro') + '</strong></div>' + meter(questions.total && questions.correct !== null ? Math.round(questions.correct / questions.total * 100) : 0) + '</article></div></section>';
   }
   function notes(module, body, meta) {
     // Constitutional modules already provide a native note with their own save handler.
@@ -312,24 +386,23 @@
       body.querySelector(':scope > .ds-module-nav')?.remove();
       moduleFooter(module,body,meta);
       notes(module,body,meta);
+      arrangeStudySections(body,meta);
       return;
     }
 
-    if (!body.querySelector('.csp-panel')) body.insertAdjacentHTML('afterbegin',progressPanel(module,meta));
+    const nativeProgress = body.querySelector('.bc-native-metrics,.bc-native-study-progress,.cv-progress-grid,.ptra-native-progress-grid,.adm-native-progress-panel');
+    if (nativeProgress) body.querySelector(':scope > .csp-panel[data-ds-summary]')?.remove();
+    else if (!body.querySelector('.csp-panel')) body.insertAdjacentHTML('afterbegin',progressPanel(module,meta));
     else {
       const panel = body.querySelector('[data-ds-summary]');
       if (panel) { const html = progressPanel(module,meta); if (panel.outerHTML !== html) panel.outerHTML = html; }
     }
-    if (meta.subject === 'cf') {
-      // The native Constitutional module already presents its study content directly.
-      body.querySelector(':scope > .ds-module-nav')?.remove();
-    } else if (!body.querySelector(':scope > .ds-module-nav')) {
-      const nav = document.createElement('nav'); nav.className = 'ds-module-nav'; nav.setAttribute('aria-label','Navegação do módulo');
-      nav.innerHTML = '<button type="button" data-ds-action="content">Conteúdo</button><button type="button" data-ds-action="questions">Questões / TEC</button><button type="button" data-ds-action="resources">Ferramentas</button><button type="button" data-ds-action="notes">Anotações</button>';
-      const panel = body.querySelector('.csp-panel'); if (panel) panel.after(nav); else body.prepend(nav);
-    }
+    // The approved module layout places its tools and external filters in flow;
+    // remove only the redundant jump strip introduced by the earlier layer.
+    body.querySelector(':scope > .ds-module-nav')?.remove();
     moduleFooter(module,body,meta);
     notes(module,body,meta);
+    arrangeStudySections(body,meta);
   }
   function refresh() {
     scheduled = false;
@@ -364,6 +437,13 @@
       root.querySelectorAll('.subject[data-id="rlm"] .cf-module[data-rlm-module]').forEach(module => {
         const body = bodyOf(module);
         if (body) standardizeStudyCards(body,identity(module));
+      });
+      arrangeNativeCourseLayouts(root);
+      root.querySelectorAll(MODULES).forEach(module => {
+        const body = bodyOf(module);
+        if (body && module.classList.contains('open') && module.closest('.subject')?.classList.contains('open')) {
+          arrangeStudySections(body,identity(module));
+        }
       });
     }
     finally { observer?.observe(root,{childList:true,subtree:true}); }
@@ -457,7 +537,7 @@
       catch (_) { box.querySelector('[role=status]').textContent = 'Não foi possível salvar'; }
     }
   });
-  window.CentralDisciplineStandard = { refresh, standardizeStudyCards, version:'1.2.0' };
+  window.CentralDisciplineStandard = { refresh, standardizeStudyCards, version:'1.3.0' };
   function start() { observer = new MutationObserver(schedule); refresh(); }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded',start,{once:true}); else start();
 })();
