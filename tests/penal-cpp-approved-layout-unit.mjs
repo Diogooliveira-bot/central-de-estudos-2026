@@ -89,6 +89,7 @@ test('Penal transforma o renderizador nativo em cards aprovados e preserva açõ
     '</div></section>',
     '<div class="cf-resource-box"><h4>Lei em Dia</h4><button>Abrir questões deste módulo</button></div>',
     '<section class="tec-validated-panel" data-tec-validated-panel="penal:M01"><header><b>TEC Concursos</b></header></section>',
+    '<div class="bcq-module-panels" data-bcq-module-panel="penal:M01"><section>Filtros oficiais</section></div>',
     '</div></section></div></section></div>'
   ].join(''),{url:'https://study.test/',runScripts:'dangerously'});
   const w=dom.window;
@@ -141,8 +142,10 @@ test('Penal transforma o renderizador nativo em cards aprovados e preserva açõ
   w.CentralDisciplineStandard.refresh();
   assert.equal(footer.firstElementChild,footer.querySelector('.ds-notes'));
   const filters=footer.querySelector('.tec-validated-panel');
-  assert.ok(filters);
+  const externalFilters=footer.querySelector('.bcq-module-panels');
+  assert.ok(filters&&externalFilters);
   assert.equal(filters.previousElementSibling,footer.querySelector('.ds-notes'));
+  assert.equal(externalFilters.previousElementSibling,filters);
   assert.equal(footer.querySelectorAll('.ds-notes textarea').length,1);
   const css=read('ui/discipline-standard.css');
   assert.match(css,/\.penal-approved-card\.penal-approved-review\s*\{[^}]*display:grid/s);
