@@ -1,9 +1,9 @@
 {
   "schema": "qc-pending-creation-progress-v1",
-  "updatedAt": "2026-10-20T00:10:00Z",
+  "updatedAt": "2026-10-20T00:20:00Z",
   "initialPending": 57,
-  "createdAndValidated": 6,
-  "remainingPending": 51,
+  "createdAndValidated": 7,
+  "remainingPending": 50,
   "records": [
     {
       "discipline": "Direito Penal",
@@ -163,6 +163,35 @@
       },
       "url": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15350670",
       "status": "criado, questão adicionada, salvo, reaberto; 1 questão e compartilhamento confirmado na listagem QC"
+    },
+    {
+      "discipline": "Direito Penal",
+      "module": "M17.3",
+      "moduleTitle": "Constituição Penal, Responsabilidade Penal da Pessoa Jurídica, Súmulas e Consolidação",
+      "subject": "Crimes ambientais e Lei 9.605/1998",
+      "qcId": "15351070",
+      "shareCode": "0EM-F8Y",
+      "notebookTitle": "DP M17.3 Crimes ambientais",
+      "questionCount": 3,
+      "criteria": {
+        "method": "busca por legislação/palavras-chave e seleção manual após leitura individual",
+        "search": "Lei 9.605 crimes ambientais",
+        "subjectTaxonomy": "Direito Penal; resultados selecionados pelo conteúdo integral, sem assunto nativo exclusivo adequado",
+        "yearRange": "questões pertinentes localizadas em 2023 e 2026",
+        "excluded": [
+          "anuladas",
+          "desatualizadas"
+        ],
+        "selectedQuestions": [
+          "Q4225466 (2026)",
+          "Q4125328 (2026)",
+          "Q2635383 (2023)"
+        ],
+        "minimumQuestionCount": 0,
+        "note": "Somente as três questões diretamente relacionadas à Lei 9.605/1998/crimes ambientais foram selecionadas; questões de infração administrativa ambiental e outros temas foram excluídas."
+      },
+      "url": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15351070",
+      "status": "criado, salvo, reaberto; 3 questões pertinentes visíveis e compartilhamento confirmado na listagem autenticada"
     }
   ],
   "attempts": [

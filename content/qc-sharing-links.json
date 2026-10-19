@@ -1,6 +1,6 @@
 {
   "schema": "qc-central-sharing-v1",
-  "generatedAt": "2026-10-20T00:10:00.000Z",
+  "generatedAt": "2026-10-20T00:20:00.000Z",
   "platform": "QConcursos",
   "counts": {
     "administrativo": {
@@ -10,8 +10,8 @@
     },
     "penal": {
       "items": 64,
-      "linked": 57,
-      "pending": 7
+      "linked": 58,
+      "pending": 6
     },
     "processualPenal": {
       "items": 74,
@@ -19,8 +19,8 @@
       "pending": 9
     },
     "totalItems": 393,
-    "totalValidatedPublicLinks": 342,
-    "totalPending": 51,
+    "totalValidatedPublicLinks": 343,
+    "totalPending": 50,
     "constitucional": {
       "items": 19,
       "linked": 19,
@@ -2512,14 +2512,13 @@
       "kind": "subdivisao",
       "moduleTitle": "Constituição Penal, Responsabilidade Penal da Pessoa Jurídica, Súmulas e Consolidação",
       "title": "Crimes ambientais e Lei 9.605/1998",
-      "notebookTitle": null,
-      "id": null,
-      "quantity": null,
-      "link": null,
-      "status": "Pendente",
-      "public": false,
-      "source": "checkpoint_direito_penal_qc.json",
-      "pendingReason": "Lacuna tem?tica sem filtro nativo exclusivo."
+      "notebookTitle": "DP M17.3 Crimes ambientais",
+      "id": "15351070",
+      "quantity": 3,
+      "link": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15351070",
+      "status": "VALIDADO",
+      "public": true,
+      "source": "QC autenticado: caderno reaberto, 3 questões pertinentes e compartilhamento confirmado (0EM-F8Y)"
     },
     {
       "discipline": "Direito Penal",
