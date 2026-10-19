@@ -26,3 +26,75 @@ html.bc-ui-v1 .civil-source-content h3{color:var(--cv-accent)}
 .cv-sharing{margin-top:10px}.cv-sharing-head{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:8px}.cv-sharing-head h4{margin:0}.cv-sharing-head>small,.cv-sharing-link small{color:var(--cv-muted)}.cv-sharing-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.cv-sharing-link{min-width:0;display:flex;justify-content:space-between;align-items:center;gap:10px;padding:9px 10px;border:1px solid var(--cv-line);border-radius:8px;color:var(--cv-text);text-decoration:none;background:var(--cv-card2)}.cv-sharing-link:hover,.cv-sharing-link:focus-visible{border-color:var(--cv-accent);color:var(--cv-accent);outline:none}.cv-sharing-link>span:first-child{min-width:0;display:grid;gap:3px}.cv-sharing-link b{overflow-wrap:anywhere}.cv-sharing-link small{font-size:11px}.cv-sharing-action{flex:none;font-size:11px;font-weight:850;color:var(--cv-accent)}
 @media(max-width:780px){.cv-sharing-list{grid-template-columns:1fr}.cv-sharing-head{display:block}.cv-sharing-head>small{display:block;margin-top:3px}}
 @media(max-width:780px){html.bc-ui-v1 #subjects .cv-module-head{grid-template-columns:58px minmax(0,1fr) 22px;gap:7px}}
+.cv-image-actions{display:flex;align-items:center;gap:7px;flex-wrap:wrap}.cv-image-actions button,.cv-image-actions a{display:inline-flex;align-items:center;justify-content:center;min-height:36px;padding:6px 11px;border:1px solid #536274;border-radius:8px;background:transparent;color:#fff;text-decoration:none;font:700 12px system-ui,sans-serif;cursor:pointer}
+.cv-image-viewer>div{display:flex;align-items:flex-start;justify-content:center}.cv-image-viewer img{display:block;width:100%;max-width:1055px;height:auto;object-fit:contain}
+
+/* Direito Civil segue a hierarquia visual aprovada em Constitucional/Português
+   e aplicada a Administrativo. Todo o escopo fica limitado a esta disciplina. */
+html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-zone{
+  --cv-standard-text:#17283c;--cv-standard-muted:#53687b;--cv-standard-line:#d7ded9;
+  padding:14px;border:1px solid #d0dbc9;border-radius:16px;background:#e8eee2;color:var(--cv-standard-text)
+}
+html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-zone-head{margin:0 2px 12px}
+html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-zone-head span{color:#627182}
+html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-zone-head b{font-size:15px}
+html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-zone-head strong{color:#16805a}
+html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-progress-grid{margin:0 0 14px;gap:10px}
+html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-progress-card{padding:12px;border-color:#d8dfd6;border-radius:13px;background:#fffefa}
+html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-progress-card .row b{color:#17283c}
+html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-progress-card .row span{font-weight:850;color:#23aeb3}
+html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-progress-card small{color:#657486}
+html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-meter{background:#e7e9e8}
+html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-meter i{background:#22aeb2}
+html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-meter.external i{background:#22885d}
+html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-oriented{
+  box-sizing:border-box;padding:16px 18px;margin:0 0 14px;border:1px solid #d9d9e8;border-radius:15px;
+  background:linear-gradient(110deg,#f8f8fc,#fcfcff);color:#17283c
+}
+html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-oriented-top{display:flex;align-items:center;gap:12px}
+html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-oriented-top>span{display:grid;place-items:center;flex:none;width:42px;height:42px;border-radius:12px;background:#edf0fa;font-size:22px}
+html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-oriented-top b{display:block;font-size:14px;line-height:1.35}
+html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-oriented-top small{display:block;color:#53687b;font-size:12px;line-height:1.5}
+html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-oriented details{margin:10px 0 0 54px}
+html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-oriented summary{cursor:pointer;font-size:12px;font-weight:700;color:#175f9d}
+html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-oriented ul{margin:8px 0;padding-left:18px;font-size:12px;line-height:1.6}
+html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-cards{display:grid;grid-template-columns:minmax(0,1fr);gap:12px;width:100%;margin:0 0 14px}
+html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-standard-card{
+  box-sizing:border-box;display:grid;width:100%;min-width:0;min-height:150px;
+  grid-template-columns:104px minmax(0,1fr) 190px;grid-template-rows:auto auto auto;align-items:center;
+  gap:4px 18px;padding:18px 22px;border:1px solid #a8d0ef;border-radius:16px;
+  background:linear-gradient(105deg,#e9f4ff,#f8fbff 92%);color:#17283c;box-shadow:0 4px 14px rgba(24,66,92,.045)
+}
+html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-card-review{border-color:#efd7a6;background:linear-gradient(105deg,#fffaf0,#fffefa 90%)}
+html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-card-infographic{border-color:#abdccb;background:linear-gradient(105deg,#effaf5,#fbfffc 90%)}
+html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-standard-icon{grid-column:1;grid-row:1/4;display:grid;place-items:center;width:88px;height:88px;border-radius:20px;background:#dcecff;font-size:42px}
+html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-card-review .cv-standard-icon{background:#fff1d5}
+html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-card-infographic .cv-standard-icon{background:#dbf4e9}
+html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-standard-card>b{grid-column:2;grid-row:1;min-width:0;font-size:19px;line-height:1.25;font-weight:760;overflow-wrap:anywhere}
+html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-standard-card>small{grid-column:2;grid-row:2;min-width:0;max-width:46ch;font-size:13px;line-height:1.55;color:#53687b}
+html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-standard-tags{grid-column:2;grid-row:3;display:flex;flex-wrap:wrap;gap:7px;min-width:0;margin-top:5px}
+html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-standard-tags>span{display:inline-flex;align-items:center;min-height:24px;padding:2px 10px;border:1px solid rgba(46,74,105,.12);border-radius:100px;background:rgba(255,255,255,.5);color:#435f78;font-size:11px}
+html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-standard-actions{grid-column:3;grid-row:1/4;display:flex;flex-direction:column;align-items:stretch;gap:8px}
+html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-standard-button{box-sizing:border-box;display:block;width:100%;min-height:48px;margin:0;padding:10px;border:1px solid #0a63ba;border-radius:11px;background:linear-gradient(180deg,#1488e2,#075dbd);color:#fff;font:700 14px/1.3 var(--bc-font,system-ui,sans-serif);text-align:center;cursor:pointer;overflow-wrap:anywhere;box-shadow:0 4px 10px rgba(11,89,165,.13)}
+html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-standard-button.cv-standard-quiz{background:#deefff;color:#174f83;border-color:#96c8f4;box-shadow:none}
+html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-standard-button:focus-visible,html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-oriented-done:focus-visible{outline:3px solid #087e8b;outline-offset:3px}
+html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-standard-progress{grid-column:2;grid-row:4;height:4px;overflow:hidden;border-radius:99px;background:#e5edf5}
+html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-standard-progress i{display:block;height:100%;border-radius:inherit;background:#2a88d8}
+html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-oriented-done{margin-top:10px;min-height:42px;padding:8px 14px;border:1px solid #aeb8c0;border-radius:10px;background:#fff;color:#17283c;font:700 14px var(--bc-font,system-ui,sans-serif);cursor:pointer}
+html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-oriented-done.is-done{border-color:#16805a;background:#16805a;color:white}
+html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-panel{margin:0 0 12px;padding:14px;border-color:#d7ded9;border-radius:14px;background:#fff;color:#17283c}
+html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-panel h4{font-size:14px}
+html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-note-input{min-height:96px;background:#fff9ed!important;border-color:#e4d8be!important;color:#17283c!important;font-size:14px}
+html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-panel .cv-btn{padding:10px 14px;border:0;background:#20b6bd;color:#064e54;font-size:14px}
+html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-sharing{margin-bottom:12px;background:#fff}
+html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-sharing-link{background:#fbfcff;color:#17283c}
+html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-sharing-head>small,html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-sharing-link small{color:#53687b}
+html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-tec-panel{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:10px}
+html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-tec-panel h4{margin:0 0 3px}
+html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-tec-panel small{color:#53687b}
+html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-tec-chip{background:#e6f3fc;color:#175f9d;border-color:#bfd8ed}
+html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-question-center{border:0;border-radius:9px;padding:10px 13px;background:#0876c9;color:#fff;font-weight:800;cursor:pointer}
+html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-tools{margin:0;min-width:0;border-color:#d7ded9;background:rgba(255,255,255,.25)}
+html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-tool-buttons button{background:#fff;color:#17283c;border-color:#d7ded9}
+@media(max-width:780px){html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-progress-grid{grid-template-columns:1fr}html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-tools{align-items:flex-start;flex-direction:column}html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-standard-card{grid-template-columns:74px minmax(0,1fr) 146px;gap:4px 12px;padding:16px;min-height:142px}html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-standard-icon{width:64px;height:64px;font-size:31px}html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-standard-card>b{font-size:16px}html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-standard-card>small{font-size:12px}html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-standard-button{font-size:12px}}
+@media(max-width:540px){html.bc-ui-v1 #subjects .subject[data-id="civil"] [data-civil-native-module]{padding:10px}html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-oriented{padding:14px}html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-oriented details{margin-left:0}html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-standard-card{grid-template-columns:58px minmax(0,1fr);grid-template-rows:auto auto auto auto;gap:5px 10px;padding:14px;min-height:0}html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-standard-icon{grid-row:1/3;width:50px;height:50px;font-size:27px}html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-standard-card>b{grid-column:2;grid-row:1}html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-standard-card>small{grid-column:2;grid-row:2}html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-standard-tags{grid-column:2;grid-row:3}html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-standard-actions{grid-column:2;grid-row:4;width:min(230px,100%);justify-self:start;margin-top:5px}html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-standard-progress{grid-column:2;grid-row:5}html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-image-viewer header{align-items:flex-start;gap:8px;flex-direction:column}html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-tec-panel{grid-template-columns:1fr}html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-question-center{justify-self:start}}
