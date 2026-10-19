@@ -29,8 +29,8 @@ O sistema contém dez disciplinas na ordem de navegação, sem disciplina adicio
 
 ## Achados de implementação
 
-1. CF e Português já usam cartões de estudo próprios aprovados e devem ser mantidos como referência.
-2. A camada `ui/discipline-standard.js` já consolida parte do cabeçalho, progresso, rodapé, revisão e anotações em vários renderizadores. Nesta branch ela também coloca os cartões completos, resumidos e visuais na ordem aprovada e adiciona uma apresentação vertical comum quando um renderizador nativo tem esses cartões. CF e Português ficam intactos; o treino de velocidade de RLM M01 mantém a ordem original.
+1. A referência visual agora é o módulo de Direito Administrativo das capturas: progresso, teoria completa, revisão, infográfico real, uma área de anotações, filtros QC/TEC e ferramentas ao final. CF e Português mantêm seus leitores, questões e armazenamento originais; seus cartões entram na ordem e no estilo compartilhados.
+2. A camada `ui/discipline-standard.js` padroniza a ordem e os estilos dos cartões nativos, organiza progresso/anotações/filtros/ferramentas sem trocar os elementos que carregam os handlers e mantém o treino de velocidade do RLM M01. Civil e Processo do Trabalho têm organizadores específicos para seus renderizadores nativos.
 3. Os leitores e componentes de imagem são heterogêneos. CF, Civil, ADM e CPP abrem visualizações de imagem/SVG sem controles uniformes de zoom e download; PTRA já tem zoom próprio. Nenhum conteúdo ou imagem foi substituído.
 4. A estrutura de filtros e os links públicos TEC/QConcursos estão em catálogo compartilhado. O teste do catálogo foi atualizado para conferir links externos válidos, já que as colunas do catálogo abrem diretamente o filtro e não são controles de seleção.
 5. O caminho de visitante de prévia continua restrito ao ambiente Vercel Preview e ao bloqueio de APIs descrito em `docs/PREVIEW_ACCESS.md`.
@@ -40,14 +40,14 @@ O sistema contém dez disciplinas na ordem de navegação, sem disciplina adicio
 | Critério | Estado | Evidência |
 |---|---|---|
 | Inventário das disciplinas e contagens | CORRIGIDO / inventariado | Índices nativos e catálogo principal; divergências CPP e PTRA registradas acima |
-| Cartões CF/Português como referência | CORRIGIDO / preservado | Não alterados; os renderizadores de referência ficam fora da adaptação comum |
-| Cartões dos demais renderizadores nativos | CORRIGIDO PARCIALMENTE | Civil, ADM, PTRA, RLM, CPC e Penal são adaptados por classes do componente; Trabalho e estruturas sem cartões seguem pendentes |
+| Layout de estudo no padrão da captura de Administrativo | CORRIGIDO PARCIALMENTE | Sequência, ordem dos cartões, ferramentas e painéis compartilhados foram alinhados no código; validação de navegador por todos os módulos segue pendente |
+| Cartões CF/Português e questões especiais | PRESERVADO COM ADAPTAÇÃO VISUAL | Nós, ações, atividades orientadas, respostas ocultas, correção e histórico mantidos; a ordem dos cartões segue o padrão Administrativo |
 | Questões, gabaritos e histórico | PENDENTE | Nenhuma questão ou armazenamento foi alterado nesta etapa |
 | Filtros TEC/QC e links | CORRIGIDO / teste | Teste valida links públicos do catálogo e separação de plataformas |
 | Anotações | PENDENTE | Nenhum armazenamento migrado; duplicações devem ser analisadas por módulo |
 | Leitores | PENDENTE | A implementação exige testes de abertura, fechamento, busca, fonte e rolagem por renderizador |
 | Infográficos | CORRIGIDO PARCIALMENTE | Controles compartilhados de zoom/download implementados para visualizadores de imagem existentes; testes de navegador e auditoria de disponibilidade ainda pendentes |
-| Testes automatizados | CORRIGIDO PARCIALMENTE | `npm test`: 91 aprovados; inclui ordem dos cartões, handlers, ADM M01, RLM M01 e regressões de questões. Testes visuais/e2e nas quatro larguras ainda pendentes |
+| Testes automatizados | CORRIGIDO PARCIALMENTE | `npm test`: 92 aprovados; inclui ordem dos cartões, handlers, sequência do módulo e regressões de questões. Testes visuais/e2e nas quatro larguras ainda pendentes |
 | Produção | PRESERVADA | Branch isolada; sem merge, alias de produção ou publicação |
 
 ## Inventário real de módulos carregados na prévia
@@ -85,3 +85,11 @@ Esta enumeração confirma nomes/contagens e renderizadores ativos. Não aprova 
 - O infográfico real do M01 abriu integral, com rolagem, zoom, ajuste e botão de download. Não houve substituição de imagem.
 - Viewport efetivamente observado: 1363 × 936 px. O console do app não apresentou erros; os únicos erros listados vieram de uma extensão do navegador.
 - Não foi possível simular 1440, 1024, 768 e 390 px nesta sessão, nem executar as ações individualmente nas outras 188 unidades. A enumeração estrutural de todas as 189 está registrada acima; a auditoria funcional por módulo segue **PENDENTE** e a branch/PR permanece em rascunho.
+
+## Atualização após a referência visual do usuário
+
+- A captura de Direito Administrativo passa a ser a referência obrigatória para todas as disciplinas.
+- A implementação em revisão alinha os cartões completos → revisão → infográfico, o posicionamento de progresso, anotações, painéis QC/TEC e ferramentas nos renderizadores reconhecidos. O RLM M01 conserva o treino de velocidade e as demais ações existentes.
+- Os testes automatizados passaram: **92/92**. O relatório continua distinguindo cobertura unitária de validação em navegador: os 189 módulos ainda não foram testados individualmente após esta alteração.
+- As quatro resoluções solicitadas, a ausência de erros de console na nova prévia, a ordem funcional dos painéis em cada renderizador e as ações dos leitores permanecem **PENDENTES** até execução real.
+- Nenhum gabarito, resposta, registro ou chave de armazenamento foi editado por esta alteração. A produção continua sem mudanças; PR em rascunho, sem merge.
