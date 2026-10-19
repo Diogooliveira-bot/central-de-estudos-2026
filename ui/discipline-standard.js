@@ -2,7 +2,7 @@
 (function () {
   'use strict';
   if (window.CentralDisciplineStandard) return;
-  const MODULES = '.civil-module[data-civil-analista],.cf-module[data-cf],.cf-module[data-penal],.cf-module[data-cpc],.cf-module[data-ptn-module],.cf-module[data-pt-current],.cpp-mod[data-cpp-num],.topic-item[data-uid],.topic-item[data-cpp-native-module]';
+  const MODULES = '.civil-module[data-civil-analista],.cf-module[data-cf],.cf-module[data-penal],.cf-module[data-cpc],.cf-module[data-ptn-module],.cf-module[data-pt-current],.cpp-mod[data-cpp-num],.bc-trabalho-module[data-uid],.topic-item[data-uid],.topic-item[data-cpp-native-module]';
   let observer, scheduled = false;
   const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const read = key => { try { return JSON.parse(localStorage.getItem(key) || 'null'); } catch (_) { return null; } };
@@ -374,7 +374,7 @@
     const id = module.dataset.civilAnalista || module.dataset.ptCurrent || module.dataset.ptnModule || module.dataset.cf || module.dataset.penal || module.dataset.cpc || module.dataset.cppNativeModule || module.dataset.cppNum || module.dataset.uid;
     return { subject, id, key: subject + ':' + id };
   }
-  function bodyOf(module) { return module.querySelector('.civil-module-body,.cf-module-body,.cpp-mod-body,.detail-panel'); }
+  function bodyOf(module) { return module.querySelector('.civil-module-body,.cf-module-body,.cpp-mod-body,.bc-trabalho-module-body,.detail-panel'); }
   function readingStats(module, meta) {
     if (meta.subject === 'cpp' && window.CppCourseV1) {
       const state = window.CppCourseV1.state().modules[meta.id];
@@ -636,7 +636,7 @@
     if (!number || number > 18 || !window.CentralTrabalhoUniversal) return false;
     const existing = body.querySelector(':scope > .work-approved-layout');
     if (existing) { updateWorkProgress(module, body, number, meta); return true; }
-    const title = (module.querySelector('.topic-title')?.textContent || '').replace(/\s*·\s*\d+\s*cards?\s*$/i,'').trim();
+    const title = (module.querySelector('.topic-title,.bc-trabalho-module-name')?.textContent || '').replace(/\s*·\s*\d+\s*cards?\s*$/i,'').trim();
     const oldResources = Array.from(body.querySelectorAll('.resource'));
     const findResource = label => oldResources.find(node => (node.querySelector('.resource-label')?.textContent || '').trim().toLocaleLowerCase('pt-BR') === label);
     const filterResource = findResource('filtro do tec');
@@ -677,7 +677,9 @@
     if (!note) {
       note = document.createElement('section');
       note.className = 'notes';
-      note.innerHTML = '<div class="resource-label">Anotações do módulo</div><div class="field"><textarea id="note-' + esc(meta.id) + '" placeholder="Regra, dúvida, pegadinha, observação..."></textarea></div><div class="action-row"><button class="btn primary sm" onclick="saveNote(\'' + esc(meta.id) + '\')">Salvar anotação</button></div>';
+      const savedNotes = typeof window.getNotes === 'function' ? window.getNotes(meta.id) : [];
+      const savedNotesHtml = (Array.isArray(savedNotes) ? savedNotes : []).map(item => '<article class="work-approved-saved-note"><p>' + esc(item.text || '') + '</p><small>' + esc(item.at || '') + '</small></article>').join('');
+      note.innerHTML = '<div class="resource-label">Anotações do módulo</div><div class="field"><textarea id="note-' + esc(meta.id) + '" placeholder="Regra, dúvida, pegadinha, observação..."></textarea></div><div class="action-row"><button class="btn primary sm" onclick="saveNote(\'' + esc(meta.id) + '\')">Salvar anotação</button></div>' + savedNotesHtml;
     }
     note.classList.add('ds-notes','work-approved-note');
     const noteHeading = note.querySelector('.resource-label');
@@ -700,17 +702,17 @@
     tools.className = 'work-approved-tools';
     tools.innerHTML = '<span>FERRAMENTAS DO MÓDULO</span><div></div>';
     const toolHost = tools.querySelector('div');
-    if (WORK_LAW_MODULES.has(number)) {
+    if (lawLinks.length) {
+      lawLinks.forEach(node => toolHost.appendChild(node));
+    } else if (WORK_LAW_MODULES.has(number)) {
       const lawButton = document.createElement('button');
       lawButton.type = 'button'; lawButton.textContent = '📖 Lei em Dia'; lawButton.dataset.workAction = 'law';
       toolHost.appendChild(lawButton);
-    } else if (!lawLinks.length) {
+    } else {
       const pending = document.createElement('button'); pending.type = 'button'; pending.disabled = true; pending.setAttribute('aria-disabled','true'); pending.className = 'work-approved-pending'; pending.textContent = '📖 Lei em Dia · Pendente'; toolHost.appendChild(pending);
     }
-    lawLinks.forEach(node => toolHost.appendChild(node));
     const vade = document.createElement('button'); vade.type = 'button'; vade.textContent = '⚖ Vade Mecum'; vade.dataset.workAction = 'vade'; toolHost.appendChild(vade);
     const tec = document.createElement('button'); tec.type = 'button'; tec.textContent = '▤ Cadernos TEC'; tec.dataset.workAction = 'tec'; toolHost.appendChild(tec);
-    const center = document.createElement('button'); center.type = 'button'; center.textContent = 'Central de Questões'; center.dataset.workAction = 'questions-center'; toolHost.appendChild(center);
     const reviewDate = localStorage.getItem(key(meta.id,'review')) || todayISO();
     const reviewCard = review || document.createElement('section');
     reviewCard.classList.add('work-approved-review-date');
@@ -762,7 +764,7 @@
     const body = bodyOf(module); if (!body) return;
     const meta = identity(module);
     module.classList.add('ds-module'); body.classList.add('ds-module-body');
-    const head = module.querySelector('.civil-module-head,.cf-module-head,.cpp-mod-head,.topic-row');
+    const head = module.querySelector('.civil-module-head,.cf-module-head,.cpp-mod-head,.bc-trabalho-module-head,.topic-row');
     if (head) {
       head.classList.add('ds-module-head');
       const toggle = head.matches('button') ? head : head.querySelector('.open-topic');
@@ -883,7 +885,7 @@
   document.addEventListener('click',function (event) {
     const workAction = event.target.closest('[data-work-action]');
     if (workAction) {
-      const module = workAction.closest('.topic-item[data-uid^="trab-m"]');
+      const module = workAction.closest('.bc-trabalho-module[data-uid^="trab-m"]');
       const number = Number(module?.dataset.uid.match(/\d+/)?.[0] || 0);
       const api = window.CentralTrabalhoUniversal;
       const action = workAction.dataset.workAction;
@@ -898,7 +900,7 @@
       else if (action === 'questions-center') window.ExternalQuestionFilters?.openPage?.(null,{tab:'disciplines'});
       else if (action === 'schedule-review') {
         const uid = module?.dataset.uid, date = workAction.closest('.work-approved-review-date')?.querySelector('input[type="date"]')?.value;
-        const ok = uid && date && window.scheduleModuleReview?.(uid,date,{discipline:'Direito do Trabalho',task:'Revisão — '+(module.querySelector('.topic-title')?.textContent || '').trim()});
+        const ok = uid && date && window.scheduleModuleReview?.(uid,date,{discipline:'Direito do Trabalho',task:'Revisão — '+(module.querySelector('.topic-title,.bc-trabalho-module-name')?.textContent || '').trim()});
         const status = workAction.closest('.work-approved-review-date')?.querySelector('[role="status"]');
         if (status) status.textContent = ok ? 'Revisão agendada para ' + window.formatDate(date) : 'Não foi possível agendar a revisão.';
       }
@@ -906,7 +908,7 @@
     }
     const guided = event.target.closest('[data-work-guided-toggle]');
     if (guided) {
-      const module = guided.closest('.topic-item[data-uid^="trab-m"]');
+      const module = guided.closest('.bc-trabalho-module[data-uid^="trab-m"]');
       if (!module) return;
       const uid = module.dataset.uid, storeKey = 'central-v6:guided-reading:' + uid;
       const done = localStorage.getItem(storeKey) !== '1';
