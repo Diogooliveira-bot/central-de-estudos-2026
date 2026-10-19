@@ -71,3 +71,11 @@ html.bc-ui-v1 #subjects .subject[data-id="cpc"] .cf-feedback.bad { background:#f
   html.bc-ui-v1 #subjects .subject[data-id="cpc"] .cpc-approved-reading-actions { flex-direction:column; align-items:stretch; }
   html.bc-ui-v1 #subjects .subject[data-id="cpc"] .cpc-approved-reading .cpc-approved-secondary { width:100%; }
 }
+html.bc-ui-v1 #subjects .subject[data-id="cpc"] .cpc-approved-progress { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; margin:0 0 14px; }
+html.bc-ui-v1 #subjects .subject[data-id="cpc"] .cpc-approved-progress-card { min-width:0; padding:13px 14px; border:1px solid #d9e1e6; border-radius:14px; background:#fff; }
+html.bc-ui-v1 #subjects .subject[data-id="cpc"] .cpc-approved-progress-head { display:flex; align-items:center; justify-content:space-between; gap:8px; margin-bottom:8px; color:#263442; font-size:12px; }
+html.bc-ui-v1 #subjects .subject[data-id="cpc"] .cpc-approved-progress-head strong { color:#12a8ad; font-size:11px; text-align:right; }
+html.bc-ui-v1 #subjects .subject[data-id="cpc"] .cpc-approved-progress-card small { display:block; margin-top:6px; color:#687582; font-size:10px; line-height:1.4; }
+html.bc-ui-v1 #subjects .subject[data-id="cpc"] .cpc-approved-progress-track { height:7px; overflow:hidden; border-radius:99px; background:#e9edf0; }
+html.bc-ui-v1 #subjects .subject[data-id="cpc"] .cpc-approved-progress-track span { display:block; height:100%; border-radius:inherit; background:#16824a; transition:width .2s ease; }
+@media(max-width:560px) { html.bc-ui-v1 #subjects .subject[data-id="cpc"] .cpc-approved-progress { grid-template-columns:1fr; } }
