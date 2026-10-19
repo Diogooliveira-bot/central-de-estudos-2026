@@ -141,7 +141,7 @@ test('Penal transforma o renderizador nativo em cards aprovados e preserva açõ
   assert.equal(footer.firstElementChild,footer.querySelector('.ds-notes'));
   assert.equal(footer.querySelectorAll('.ds-notes textarea').length,1);
   const css=read('ui/discipline-standard.css');
-  assert.match(css,/\.penal-approved-card\.penal-approved-review\\s*\\{[^}]*display:grid/s);
+  assert.match(css,/\.penal-approved-card\.penal-approved-review\s*\{[^}]*display:grid/s);
   assert.equal(footer.querySelector('.ds-notes textarea').value,'anotação nativa preservada');
   assert.ok(footer.querySelector('.cf-resource-box h4')?.textContent.includes('Lei em Dia'));
   assert.equal(w.localStorage.getItem('central-v6:module-rounds:penal:p1'),oldRounds);
