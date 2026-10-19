@@ -8,6 +8,182 @@
   const read = key => { try { return JSON.parse(localStorage.getItem(key) || 'null'); } catch (_) { return null; } };
   const meter = value => Number.isFinite(value) ? '<div class="csp-meter" aria-hidden="true"><span style="width:' + Math.max(0, Math.min(100, value)) + '%"></span></div>' : '';
 
+  function penalApprovedProgress(module, week) {
+    const body = bodyOf(module);
+    if (!body || !week) return;
+    const state = typeof window.penalWeekState === 'function' ? window.penalWeekState(week.id) : {};
+    const theorySteps = ['reading','theory','deep'].filter(key => !!state?.[key]).length;
+    const theoryPct = Math.round(theorySteps / 3 * 100);
+    const rounds = footerRounds(identity(module));
+    const roundCount = Math.min(rounds.length,3);
+    const roundPct = Math.round(roundCount / 3 * 100);
+    const done = rounds.reduce((sum,row) => sum + row.done, 0);
+    const correct = rounds.reduce((sum,row) => sum + row.correct, 0);
+    let panel = body.querySelector(':scope > .penal-approved-progress');
+    if (!panel) {
+      panel = document.createElement('section');
+      panel.className = 'penal-approved-progress';
+      panel.setAttribute('aria-label','Progresso do módulo');
+      body.insertBefore(panel,body.firstElementChild);
+    }
+    panel.innerHTML = '<article class="penal-approved-progress-card"><div class="penal-approved-progress-head"><b>Progresso da teoria</b><strong>' + theoryPct + '% concluído</strong></div><div class="penal-approved-progress-track" role="progressbar" aria-label="Progresso da teoria" aria-valuemin="0" aria-valuemax="100" aria-valuenow="' + theoryPct + '"><span style="width:' + theoryPct + '%"></span></div><small>Leitura orientada + revisão + aprofundamento · ' + theorySteps + '/3 etapas</small></article>' +
+      '<article class="penal-approved-progress-card"><div class="penal-approved-progress-head"><b>Questões externas</b><strong>' + roundPct + '% · ' + roundCount + '/3 rodadas</strong></div><div class="penal-approved-progress-track" role="progressbar" aria-label="Progresso das questões externas" aria-valuemin="0" aria-valuemax="3" aria-valuenow="' + roundCount + '"><span style="width:' + roundPct + '%"></span></div><small>' + (roundCount ? done + ' questões registradas · ' + correct + ' certas' : 'Nenhuma rodada registrada ainda') + '</small></article>';
+  }
+
+  function penalQuestionAction(week, desired, mode) {
+    const pool = typeof penalPool === 'function' ? penalPool(week) : [];
+    const real = pool.filter(question => question.real !== false);
+    const available = real.length ? real : pool.filter(question => question.real === false);
+    const count = Math.min(desired,available.length);
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'cf-btn penal-approved-secondary';
+    button.dataset.penalApprovedQuestions = String(desired);
+    if (!count) {
+      button.textContent = 'Questões indisponíveis';
+      button.disabled = true;
+      return button;
+    }
+    button.textContent = 'Resolver ' + count + ' questões';
+    button.addEventListener('click',function () {
+      if (typeof window.startPenalQuiz === 'function') window.startPenalQuiz(week.id,real.length ? mode : 'coverage',count);
+    });
+    return button;
+  }
+
+  function penalApprovedLayout(module, week) {
+    const body = bodyOf(module);
+    if (!body || !week) return;
+    penalApprovedProgress(module,week);
+    if (body.dataset.penalApprovedLayout === '1') return;
+    const steps = body.querySelector(':scope > .cf-steps');
+    if (!steps) return;
+    const stepTitle = step => (step?.querySelector('.cf-step-copy b')?.textContent || '').trim().toLocaleLowerCase('pt-BR');
+    const reading = Array.from(steps.querySelectorAll(':scope > .cf-step')).find(step => stepTitle(step).startsWith('leitura orientada'));
+    const review = Array.from(steps.querySelectorAll(':scope > .cf-step')).find(step => stepTitle(step) === 'teoria completa');
+    const extra = Array.from(steps.querySelectorAll(':scope > .cf-step')).find(step => stepTitle(step).startsWith('aprofundamento'));
+    const full = body.querySelector(':scope > .pen-full-entry');
+    if (!reading || !review) return;
+
+    reading.classList.add('penal-approved-reading');
+    review.classList.add('penal-approved-review');
+    const subtitle = body.querySelector(':scope > .cf-subtitle');
+    const readingBody = reading.querySelector('.cf-step-body');
+    if (subtitle && readingBody) {
+      subtitle.classList.add('penal-approved-topic');
+      readingBody.prepend(subtitle);
+    }
+    const readLabel = reading.querySelector('.cf-step-copy b');
+    if (readLabel) readLabel.textContent = 'Leitura orientada inicial';
+    const readDesc = reading.querySelector('.cf-step-copy small');
+    if (readDesc) readDesc.textContent = 'Dispositivos e pontos para observar na legislação penal.';
+    reading.querySelectorAll('.cf-actions button[onclick*="openLeiSecaEnxuta"]').forEach(button => button.remove());
+
+    const reviewLabel = review.querySelector('.cf-step-copy b');
+    if (reviewLabel) reviewLabel.textContent = 'Versão de revisão';
+    const reviewDesc = review.querySelector('.cf-step-copy small');
+    if (reviewDesc && !reviewDesc.textContent.trim()) reviewDesc.textContent = 'Revisão objetiva para retomar os pontos essenciais do módulo.';
+    const reviewDone = review.querySelector('.cf-actions button[onclick*="penalUpdateWeek"]');
+    if (reviewDone) reviewDone.textContent = reviewDone.textContent.replace(/teoria/ig,'revisão');
+    const reviewActions = document.createElement('div');
+    reviewActions.className = 'penal-approved-actions';
+    const reviewButton = document.createElement('button');
+    reviewButton.type = 'button';
+    reviewButton.className = 'cf-btn primary penal-approved-primary';
+    reviewButton.textContent = 'Revisar conteúdo';
+    reviewButton.addEventListener('click',function () {
+      const details = Array.from(review.querySelectorAll('.cf-theory'));
+      const open = details.some(item => !item.open);
+      details.forEach(item => { item.open = open; });
+      review.scrollIntoView?.({block:'center',behavior:'smooth'});
+    });
+    reviewActions.appendChild(reviewButton);
+    reviewActions.appendChild(penalQuestionAction(week,5,'intermediate'));
+    review.querySelector('.cf-step-head')?.after(reviewActions);
+
+    if (full) {
+      full.classList.add('penal-approved-card','penal-approved-complete');
+      const existingButton = full.querySelector('button');
+      const description = full.querySelector('small')?.textContent.trim() || 'Apostila integral do módulo para estudo aprofundado.';
+      const icon = document.createElement('div');
+      icon.className = 'penal-approved-icon';
+      icon.setAttribute('aria-hidden','true');
+      icon.textContent = '📚';
+      const copy = document.createElement('div');
+      copy.className = 'penal-approved-copy';
+      copy.innerHTML = '<h3>Teoria completa</h3><p></p><div class="penal-approved-tags"><span>Apostila</span><span>Conteúdo completo</span></div>';
+      copy.querySelector('p').textContent = description;
+      const actions = document.createElement('div');
+      actions.className = 'penal-approved-card-actions';
+      if (existingButton) {
+        existingButton.type = 'button';
+        existingButton.className = 'cf-btn primary penal-approved-primary';
+        existingButton.textContent = 'Estudar conteúdo';
+        actions.appendChild(existingButton);
+      }
+      actions.appendChild(penalQuestionAction(week,10,'fixation'));
+      full.replaceChildren(icon,copy,actions);
+    }
+
+    reading.remove();
+    review.remove();
+    if (extra) {
+      extra.classList.add('penal-approved-extra');
+      extra.remove();
+      body.appendChild(extra);
+    }
+    if (full) {
+      full.after(reading);
+      reading.after(full);
+      full.after(review);
+    } else {
+      reading.after(review);
+    }
+    if (!steps.children.length) steps.remove();
+    body.querySelector(':scope > .cf-module-bar')?.setAttribute('data-penal-legacy-progress','1');
+    body.dataset.penalApprovedLayout = '1';
+  }
+
+  function penalApprovedFooter(body) {
+    const footer = body.querySelector(':scope > .ds-module-footer');
+    if (!footer || footer.dataset.penalApprovedFooter === '1') return;
+    footer.dataset.penalApprovedFooter = '1';
+    footer.querySelector(':scope > .ds-footer-questions')?.remove();
+
+    const note = footer.querySelector(':scope > .ds-notes');
+    const review = footer.querySelector(':scope > .ds-footer-review');
+    const tools = footer.querySelector(':scope > .ds-footer-tools');
+    const resources = body.querySelector(':scope > .cf-resources');
+    const module = body.closest('.cf-module');
+    const extra = body.querySelector(':scope > .penal-approved-extra');
+
+    if (resources) {
+      resources.classList.add('penal-approved-external-filters');
+      resources.open = true;
+      const title = resources.querySelector(':scope > summary');
+      if (title) title.textContent = 'Filtros de questões';
+      resources.querySelectorAll('.bc-module-rounds').forEach(node => node.remove());
+      const saved = read('central-v6:penal-res:' + (module?.dataset.cf || '')) || {};
+      resources.querySelectorAll('.cf-resource-box').forEach(box => {
+        const heading = (box.querySelector('h4')?.textContent || '').trim().toLocaleLowerCase('pt-BR');
+        if (/^(lei em dia|vade mecum|cadernos tec)$/.test(heading)) { box.remove(); return; }
+        if (/filtro do tec/.test(heading)) {
+          const label = box.querySelector('h4');
+          if (label) label.textContent = 'TEC e QConcursos';
+          box.querySelectorAll('button[onclick*="openPenalResource"]').forEach(button => {
+            const action = button.getAttribute('onclick') || '';
+            const kind = /,'qc'/.test(action) ? 'qc' : 'tec';
+            if (/^\s*\+/.test(button.textContent.trim()) && !saved[kind]) button.remove();
+          });
+        }
+      });
+    }
+
+    const ordered = [note,extra,tools,resources,review].filter(Boolean);
+    const others = Array.from(footer.children).filter(node => !ordered.includes(node));
+    footer.replaceChildren(...ordered,...others);
+  }
+
   function cpcApprovedProgress(module, week) {
     const body = bodyOf(module);
     if (!body || !week) return;
@@ -372,7 +548,17 @@
     // Direito Penal M01-M17 usa o fluxo nativo aprovado.
     // Mantém apenas o rodapé padrão (questões externas, revisão, ferramentas e anotações),
     // sem recriar o painel/progresso e a navegação legados por cima dos cards nativos.
-    if ((meta.subject === 'penal' && /^p(?:[1-9]|1[0-7])$/.test(meta.id)) || (meta.subject === 'pt' && module.dataset.ptCurrent)) {
+    if (meta.subject === 'penal' && /^p(?:[1-9]|1[0-7])$/.test(meta.id)) {
+      const week = typeof PENAL_WEEKS !== 'undefined' ? PENAL_WEEKS.find(item => item.id === meta.id) : null;
+      penalApprovedLayout(module,week);
+      body.querySelector(':scope > .csp-panel[data-ds-summary]')?.remove();
+      body.querySelector(':scope > .ds-module-nav')?.remove();
+      moduleFooter(module,body,meta);
+      notes(module,body,meta);
+      penalApprovedFooter(body);
+      return;
+    }
+    if (meta.subject === 'pt' && module.dataset.ptCurrent) {
       body.querySelector(':scope > .csp-panel[data-ds-summary]')?.remove();
       body.querySelector(':scope > .ds-module-nav')?.remove();
       moduleFooter(module,body,meta);

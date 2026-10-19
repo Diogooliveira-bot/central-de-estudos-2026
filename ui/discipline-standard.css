@@ -211,3 +211,178 @@ html.bc-ui-v1 #subjects .adm-native-module-row > .topic-detail {
     grid-row:1/3;
   }
 }
+
+
+/* Penal and CPP use the same vertical study-card hierarchy as the approved CPC layout. */
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-module-bar { display:none!important; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-progress {
+  display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; margin:0 0 14px;
+}
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-progress-card {
+  min-width:0; padding:13px 14px; border:1px solid #d9e1e6; border-radius:14px; background:#fff;
+}
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-progress-head {
+  display:flex; align-items:center; justify-content:space-between; gap:8px; margin-bottom:8px; color:#263442; font-size:12px;
+}
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-progress-head strong { color:#12a8ad; font-size:11px; text-align:right; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-progress-card small { display:block; margin-top:6px; color:#687582; font-size:10px; line-height:1.4; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-progress-track { height:7px; overflow:hidden; border-radius:99px; background:#e9edf0; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-progress-track span { display:block; height:100%; border-radius:inherit; background:#16824a; transition:width .2s ease; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-progress-card:nth-child(2) .penal-approved-progress-track span { background:#16824a; }
+
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-reading {
+  display:block; margin:0 0 14px; padding:16px; border:1px solid #d8d5e4; border-radius:16px; background:#f8f7fc; color:#17212f;
+}
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-reading .cf-step-head { padding:0; border:0; background:transparent; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-reading .cf-step-no { display:grid; flex:0 0 42px; width:42px; height:42px; place-items:center; border-radius:12px; background:#ebe8f5; font-size:0!important; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-reading .cf-step-no::before { content:'📖'; font-size:22px; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-reading .cf-step-copy b { color:#17212f; font-size:15px; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-reading .cf-step-copy small { color:#53606f; font-size:13px; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-reading .cf-step-body { padding:10px 0 0 56px; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-topic { margin:0 0 8px; color:#53606f; font-size:13px; line-height:1.5; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-reading .cf-reading { color:#53606f; font-size:13px; line-height:1.55; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-reading .cf-reading ul { margin:6px 0 0; padding-left:20px; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-reading .cf-actions { display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
+
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-card {
+  display:grid; grid-template-columns:82px minmax(0,1fr) 210px; align-items:center; gap:18px;
+  min-width:0; margin:0 0 12px; padding:20px 22px; border:1px solid; border-radius:18px;
+  box-shadow:0 4px 12px rgba(21,45,65,.05);
+}
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-complete { border-color:#c5dceb; background:#eef7fd; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-icon { display:grid; width:82px; height:82px; place-items:center; border-radius:22px; background:rgba(13,116,210,.08); font-size:39px; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-copy { min-width:0; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-copy h3 { margin:0 0 6px; color:#142234; font-size:21px; line-height:1.25; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-copy p { margin:0; color:#596676; font-size:14px; line-height:1.55; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-tags { display:flex; flex-wrap:wrap; gap:7px; margin-top:10px; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-tags span { padding:4px 9px; border:1px solid rgba(91,112,132,.12); border-radius:999px; background:rgba(255,255,255,.65); color:#5d6a78; font-size:11px; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-card-actions { display:flex; flex-direction:column; gap:9px; width:100%; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-primary,
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-secondary {
+  display:flex; width:100%; min-height:48px; align-items:center; justify-content:center; padding:10px 14px;
+  border:1px solid #cbd7e1; border-radius:12px; font-family:inherit; font-size:14px; font-weight:600;
+  line-height:1.35; text-align:center; cursor:pointer; white-space:normal;
+}
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-primary { border-color:#0876d2; background:linear-gradient(180deg,#168be8,#0867c3); color:#fff; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-secondary { border-color:#c7dceb; background:#e5f3fc; color:#245477; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-secondary:disabled { opacity:.62; cursor:not-allowed; }
+
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-review {
+  display:block; margin:0 0 12px; padding:18px 20px; border:1px solid #eee3c7; border-radius:18px; background:#fffaf0;
+}
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-review .cf-step-head { padding:0; border:0; background:transparent; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-review .cf-step-no { display:grid; flex:0 0 56px; width:56px; height:56px; place-items:center; border-radius:17px; background:#fff0cf; font-size:0!important; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-review .cf-step-no::before { content:'⚡'; font-size:30px; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-review .cf-step-copy b { color:#142234; font-size:21px; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-review .cf-step-copy small { color:#596676; font-size:14px; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-review .cf-step-body { padding:12px 0 0; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-actions { display:flex; flex-direction:column; gap:9px; margin:12px 0; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-review .cf-theory-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-review .cf-actions { display:flex; flex-wrap:wrap; gap:8px; margin-top:12px; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-extra { margin:0; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-resources.penal-approved-external-filters { margin:0; padding:14px; border:1px solid #d9e1e6; border-radius:14px; background:#fff; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-resources.penal-approved-external-filters > summary { color:#263442; font-size:14px; font-weight:700; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-resources.penal-approved-external-filters .cf-resource-grid { display:grid; grid-template-columns:minmax(0,1fr); gap:10px; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-resources.penal-approved-external-filters .cf-resource-box { min-width:0; border:1px solid #d9e1e6; border-radius:12px; background:#f8fafc; padding:12px; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-resources.penal-approved-external-filters .cf-resource-box h4 { margin:0 0 8px; color:#263442; font-size:14px; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .ds-module-footer { gap:12px; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .ds-module-footer .ds-footer-review { order:5; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .ds-module-footer .ds-footer-tools { order:3; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .ds-module-footer .ds-notes { order:1; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .ds-module-footer .penal-approved-extra { order:2; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .ds-module-footer .cf-resources { order:4; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .ds-module-footer .ds-footer-questions { display:none!important; }
+
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-zone { margin:12px 0 14px; padding:14px; border:1px solid #d7e1d1; border-radius:14px; background:#e9efe2; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-zone-head { margin-bottom:10px; color:#17212f; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-zone-head span { color:#63717c; font-size:10px; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-zone-head b { color:#17212f; font-size:14px; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-zone-head strong { color:#12a8ad; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-progress-panel { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; margin:0 0 14px; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-progress-line { padding:13px 14px; border:1px solid #d9e1e6; border-radius:14px; background:#fff; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-progress-copy b { color:#263442; font-size:12px; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-progress-copy span { color:#12a8ad; font-size:11px; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-progress-line small { color:#687582; font-size:10px; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-wide-bar { background:#e9edf0; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-wide-bar i { background:#16824a; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-wide-bar.external i { background:#16824a; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-guided-reading {
+  display:flex; align-items:flex-start; gap:14px; margin:0 0 14px; padding:16px;
+  border:1px solid #d8d5e4; border-radius:16px; background:#f8f7fc; color:#17212f;
+}
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-reading-icon {
+  display:grid; flex:0 0 42px; width:42px; height:42px; place-items:center; border-radius:12px; background:#ebe8f5; font-size:24px;
+}
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-guided-reading b { display:block; margin-bottom:4px; color:#17212f; font-size:15px; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-guided-reading p { margin:0; color:#53606f; font-size:13px; line-height:1.5; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-material-grid { display:flex!important; flex-direction:column!important; gap:12px!important; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-card {
+  display:grid; grid-template-columns:82px minmax(0,1fr) 210px; align-items:center; gap:18px;
+  min-width:0; min-height:0; padding:20px 22px; border:1px solid; border-radius:18px; box-shadow:0 4px 12px rgba(21,45,65,.05);
+}
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-card[data-kind="complete"] { border-color:#c5dceb; background:#eef7fd; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-card[data-kind="summary"] { border-color:#eee3c7; background:#fffaf0; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-visual { border-color:#c8e4d9; background:#f0fbf6; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-card-icon { display:grid; width:82px; height:82px; place-items:center; border-radius:22px; background:rgba(13,116,210,.08); font-size:39px; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-card[data-kind="summary"] .adm-native-card-icon { background:#fff0cf; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-visual .adm-native-card-icon { background:#dcf4e9; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-card-copy { min-width:0; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-card-top { color:#637384; font-size:10px; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-card h4 { margin:6px 0; color:#142234; font-size:21px; line-height:1.25; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-card p { margin:0; color:#596676; font-size:14px; line-height:1.55; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-tags { display:flex; flex-wrap:wrap; gap:7px; margin-top:10px; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-tags span { padding:4px 9px; border:1px solid rgba(91,112,132,.12); border-radius:999px; background:rgba(255,255,255,.65); color:#5d6a78; font-size:11px; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-mini-bar { margin:10px 0 0; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-card-actions { display:flex; flex-direction:column; gap:9px; width:100%; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-card-actions button {
+  display:flex; width:100%; min-height:48px; align-items:center; justify-content:center; padding:10px 14px;
+  border:1px solid #cbd7e1; border-radius:12px; font-family:inherit; font-size:14px; font-weight:600; line-height:1.35; text-align:center; cursor:pointer; white-space:normal;
+}
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-card-actions button.primary { border-color:#0876d2; background:linear-gradient(180deg,#168be8,#0867c3); color:#fff; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-card-actions button.ghost { border-color:#c7dceb; background:#e5f3fc; color:#245477; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-visual .adm-native-card-actions button { border-color:#0876d2; background:linear-gradient(180deg,#168be8,#0867c3); color:#fff; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-notes { background:#fff; border-color:#d9e1e6; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-notes-head span { color:#637384; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-notes-head b { color:#142234; font-size:14px; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-notes-head small { color:#637384; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-notes textarea { min-height:110px; border-color:#e4dcc8; border-radius:10px; background:#fffaf0; color:#17212f; font-size:15px; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-notes button { min-height:42px; border-radius:10px; background:#0fb9bd; color:#06474a; font-size:14px; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-module-tools {
+  display:flex; align-items:center; justify-content:space-between; gap:10px; margin:12px 0; padding:13px 14px;
+  border:1px solid #d9e1d6; border-radius:14px; background:#f0f5eb;
+}
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-module-tools>span { color:#637384; font-size:11px; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-module-tools>div { justify-content:flex-start; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-module-tools button { min-height:40px; padding:8px 12px; border:1px solid #d9e1e6; border-radius:9px; background:#fff; color:#263442; font-size:14px; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .cpp-native-tec-panel { margin-top:12px; padding:14px; border-color:#d9e1e6; background:#fff; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .cpp-native-tec-panel .adm-native-preserved-head b { color:#263442; font-size:14px; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .cpp-native-tec-panel .adm-native-preserved-head small { color:#637384; font-size:12px; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .cpp-native-tec-panel .chips { display:flex; flex-wrap:wrap; gap:8px; }
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .cpp-native-tec-panel .chip { min-height:40px; border-radius:10px; font-size:13px; }
+html.bc-ui-v1 .cpp-native-image-viewer .cpp-native-image-controls { display:flex; flex-wrap:wrap; gap:7px; justify-content:flex-end; }
+html.bc-ui-v1 .cpp-native-image-viewer header { display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; }
+html.bc-ui-v1 .cpp-native-image-viewer>div { overflow:auto; align-items:flex-start; justify-content:center; }
+html.bc-ui-v1 .cpp-native-infographic-svg { width:min(100%,700px); height:auto; }
+@media(max-width:700px) {
+  html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-progress { grid-template-columns:1fr; }
+  html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-card { grid-template-columns:58px minmax(0,1fr); gap:12px; padding:15px; }
+  html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-icon { width:56px; height:56px; border-radius:16px; font-size:29px; }
+  html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-copy h3 { font-size:18px; }
+  html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-card-actions { grid-column:1/-1; }
+  html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-review .cf-theory-grid { grid-template-columns:minmax(0,1fr); }
+  html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-reading .cf-step-body { padding-left:0; }
+  html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-progress-panel { grid-template-columns:1fr; }
+  html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-card { grid-template-columns:58px minmax(0,1fr); gap:12px; padding:15px; }
+  html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-card-icon { width:56px; height:56px; border-radius:16px; font-size:29px; }
+  html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-card h4 { font-size:18px; }
+  html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-card-actions { grid-column:1/-1; }
+  html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-guided-reading { padding:13px; }
+  html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-module-tools { align-items:flex-start; flex-direction:column; }
+}
+@media(max-width:420px) {
+  html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-reading { padding:13px; }
+  html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-review { padding:15px; }
+  html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-progress-head { align-items:flex-start; }
+  html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-guided-reading { gap:9px; }
+  html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-reading-icon { flex-basis:34px; width:34px; height:34px; font-size:20px; }
+}
