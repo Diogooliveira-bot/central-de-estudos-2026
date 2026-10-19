@@ -14,7 +14,7 @@ const PREVIEW_GUEST_SECRET = String(process.env.BC_PREVIEW_GUEST_TOKEN || '');
 const PREVIEW_GUEST_ENABLED = process.env.VERCEL_ENV === 'preview' && PREVIEW_GUEST_SECRET.length >= 40;
 
 async function previewTokenMatches(token) {
-  if (!PREVIEW_GUEST_ENABLED || typeof token !== 'string' || token.length < 40 || token.length > 128) return false;
+  if (!PREVIEW_GUEST_ENABLED || typeof token !== 'string' || token.length < 40 || token.length > 2048) return false;
   try {
     const [given, expected] = await Promise.all(
       [token, PREVIEW_GUEST_SECRET].map(value =>
