@@ -24,7 +24,7 @@ test('mapa tem exatamente 20 gerais, 54 subdivisões e cobre M01–M20', () => {
   assert.equal(allItems().length, 74);
 });
 
-test('os 74 destinos são públicos, únicos e apontam para o ID real do caderno', () => {
+test('os 74 registros têm IDs únicos e URLs QC coerentes com o catálogo', () => {
   const items = allItems();
   const ids = new Set();
   const links = new Set();

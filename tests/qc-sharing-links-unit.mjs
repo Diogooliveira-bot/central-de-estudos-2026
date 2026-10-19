@@ -11,7 +11,7 @@ const table = JSON.parse(read('content/qc-sharing-links.json'));
 const context = { window: {} };
 vm.runInNewContext(read('content/qc-sharing-links.js'), context);
 
-test('tabela preserva as 118 validações criminais e somente registros QC elegíveis de ADM', () => {
+test('tabela preserva os totais e os registros QC catalogados', () => {
   assert.equal(table.platform, 'QConcursos');
   assert.equal(table.counts.penal.linked, 53);
   assert.equal(table.counts.processualPenal.linked, 65);
@@ -21,7 +21,7 @@ test('tabela preserva as 118 validações criminais e somente registros QC eleg�
   assert.deepEqual(JSON.parse(JSON.stringify(context.window.QC_CENTRAL_SHARING_LINKS)), table);
 });
 
-test('cada link validado tem ID, quantidade e destino público QC; pendências não inventam URL', () => {
+test('cada link catalogado tem ID, quantidade e formato de URL QC; pendências não inventam URL', () => {
   const keys = new Set();
   for (const item of table.items) {
     const key = `${item.disciplineKey}|${item.code}`;
@@ -43,6 +43,20 @@ test('cada link validado tem ID, quantidade e destino público QC; pendências n
     }
   }
   assert.equal(keys.size, 236);
+});
+
+test('títulos dos módulos usam texto íntegro do registro geral correspondente', () => {
+  const moduleTitles = new Map(table.items
+    .filter((item) => ['general', 'geral'].includes(item.kind))
+    .map((item) => [`${item.disciplineKey}|${item.code}`, item.title]));
+  for (const item of table.items) {
+    const moduleCode = item.code.match(/^M\d+/)?.[0];
+    if (!moduleCode) continue;
+    const expected = moduleTitles.get(`${item.disciplineKey}|${moduleCode}`);
+    assert.ok(expected, `módulo sem título geral: ${item.disciplineKey} ${item.code}`);
+    assert.equal(item.moduleTitle, expected, `${item.disciplineKey} ${item.code}`);
+    assert.doesNotMatch(item.moduleTitle, /Ã|â€|\u00ad|\u008d/);
+  }
 });
 
 test('integração mantém os painéis TEC e QConcursos separados e responsivos', () => {

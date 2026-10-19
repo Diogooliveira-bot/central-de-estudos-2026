@@ -216,7 +216,7 @@
       if (!(item.status === 'VALIDADO' && item.public === true && item.id && Number(item.quantity) > 0 && item.link)) return;
       pushFilter(list, seen, {
         platform: 'qc', disciplineKey: item.disciplineKey, discipline: item.discipline,
-        module: item.code, code: item.code, title: item.notebookTitle || item.title,
+        module: item.code, code: item.code, title: item.title || item.notebookTitle,
         displayTitle: item.title,
         moduleTitle: item.kind === 'general' ? item.title : item.moduleTitle,
         id: item.id, count: item.quantity, url: item.link, source: 'qc-central'

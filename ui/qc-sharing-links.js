@@ -42,7 +42,7 @@
     section.setAttribute('aria-label', `Cadernos QConcursos de ${moduleCode}`);
     const content = rows.map((x) => {
       const label = x.kind === 'general' ? `${x.code} geral` : x.code;
-      const title = x.notebookTitle || x.title || x.code;
+      const title = x.title || x.notebookTitle || x.code;
       if (x.status === 'VALIDADO' && x.public && x.id && x.quantity > 0 && x.link) {
         return `<a class="qc-platform-sharing-link" href="${esc(x.link)}" target="_blank" rel="noopener noreferrer" data-qc-sharing="${esc(x.code)}"><span><b>${esc(label)} · ${esc(title)}</b><small>ID ${esc(x.id)} · ${Number(x.quantity)} questões · Público</small></span><span class="qc-platform-sharing-action">Abrir no QConcursos ↗</span></a>`;
       }
