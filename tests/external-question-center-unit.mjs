@@ -155,8 +155,14 @@ test('catálogo organiza QC e TEC em colunas próprias por módulo', async () =>
   assert.equal(columns[1].dataset.platform, 'tec');
   assert.match(columns[0].querySelector('header').textContent, /QConcursos/);
   assert.match(columns[1].querySelector('header').textContent, /TEC Concursos/);
-  assert.equal(columns[0].querySelectorAll('[data-bcq-select]').length, 1);
-  assert.equal(columns[1].querySelectorAll('[data-bcq-select]').length, 1);
+  // Catalog columns open the public TEC/QC filter directly. Selection controls
+  // belong to the filter-library tab and should not intercept these links.
+  assert.equal(columns[0].querySelectorAll('[data-bcq-select]').length, 0);
+  assert.equal(columns[1].querySelectorAll('[data-bcq-select]').length, 0);
+  assert.match(columns[0].querySelector('a.bcq-page-filter').href, /qconcursos\.com/);
+  assert.match(columns[1].querySelector('a.bcq-page-filter').href, /tecconcursos\.com\.br/);
+  assert.equal(columns[0].querySelector('a.bcq-page-filter').target, '_blank');
+  assert.equal(columns[1].querySelector('a.bcq-page-filter').target, '_blank');
   assert.match(module.querySelector('.bcq-discipline-module-title').textContent, /M03.*Teoria do Crime/);
   assert.equal(columns[0].querySelector('.bcq-page-filter b').textContent, 'Teoria do Crime');
   assert.doesNotMatch(columns[0].querySelector('.bcq-page-filter b').textContent, /M03|PEN/);

@@ -1,4 +1,4 @@
-/* Shared presentation based on Direito Civil. Native content, handlers and storage stay authoritative. */
+/* Shared presentation: approved CF/Portuguese references remain native; other renderers keep their content and storage. */
 (function () {
   'use strict';
   if (window.CentralDisciplineStandard) return;
@@ -9,10 +9,36 @@
   const meter = value => Number.isFinite(value) ? '<div class="csp-meter" aria-hidden="true"><span style="width:' + Math.max(0, Math.min(100, value)) + '%"></span></div>' : '';
   function identity(module) {
     const subject = module.closest('.subject').dataset.id;
-    const id = module.dataset.civilAnalista || module.dataset.ptCurrent || module.dataset.ptnModule || module.dataset.cf || module.dataset.penal || module.dataset.cpc || module.dataset.cppNativeModule || module.dataset.cppNum || module.dataset.uid;
+    const id = module.dataset.civilAnalista || module.dataset.civilNativeModule || module.dataset.ptCurrent || module.dataset.ptnModule || module.dataset.cf || module.dataset.penal || module.dataset.cpc || module.dataset.rlmModule || module.dataset.cppNativeModule || module.dataset.cppNum || module.dataset.ptraModule || module.dataset.uid;
     return { subject, id, key: subject + ':' + id };
   }
-  function bodyOf(module) { return module.querySelector('.civil-module-body,.cf-module-body,.cpp-mod-body,.detail-panel'); }
+  function bodyOf(module) { return module.querySelector('.civil-module-body,.cv-module-body,.cf-module-body,.cpp-mod-body,.ptra-native-mod-body,.detail-panel'); }
+  function standardizeStudyCards(body, meta) {
+    // Keep the already approved references untouched and retain RLM's M01 speed-training order.
+    if (meta.subject === 'cf' || meta.subject === 'pt' || (meta.subject === 'rlm' && /^M0?1$/i.test(meta.id))) return;
+    const containers = body.querySelectorAll('.bc-native-material-grid,.adm-native-material-grid,.cv-cards,.ptra-native-card-grid,.cf-native-cards');
+    containers.forEach((container) => {
+      const cards = Array.from(container.children).filter((node) => node.matches('article,button'));
+      if (!cards.length) return;
+      container.classList.add('ds-study-material-grid');
+      if (!container.hasAttribute('aria-label')) container.setAttribute('aria-label','Materiais e exercícios do módulo');
+      const kindOf = (card) => {
+        const text = (card.textContent || '').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+        if (/infografico|mapa mental|visual real/.test(text)) return 'infographic';
+        if (/teoria completa|conteudo completo|versao completa/.test(text)) return 'complete';
+        if (/versao resumida|conteudo resumido|resumo/.test(text)) return 'summary';
+        return 'other';
+      };
+      const rank = { complete:0, summary:1, infographic:2, other:3 };
+      const identified = cards.map((card, index) => ({ card, index, kind:kindOf(card) }));
+      identified.forEach(({ card, kind }) => {
+        card.classList.add('ds-study-material-card');
+        card.dataset.dsMaterialKind = kind;
+      });
+      const ordered = identified.slice().sort((a,b) => rank[a.kind]-rank[b.kind] || a.index-b.index);
+      if (ordered.some((item,index) => item.card !== cards[index])) ordered.forEach(({card}) => container.appendChild(card));
+    });
+  }
   function readingStats(module, meta) {
     if (meta.subject === 'cpp' && window.CppCourseV1) {
       const state = window.CppCourseV1.state().modules[meta.id];
@@ -243,6 +269,7 @@
     const body = bodyOf(module); if (!body) return;
     const meta = identity(module);
     module.classList.add('ds-module'); body.classList.add('ds-module-body');
+    standardizeStudyCards(body, meta);
     const head = module.querySelector('.civil-module-head,.cf-module-head,.cpp-mod-head,.topic-row');
     if (head) {
       head.classList.add('ds-module-head');
@@ -293,6 +320,10 @@
         const body = subject.querySelector('.subject-body');
         if (!body) return;
         if (subject.dataset.id === 'civil') { body.querySelector('.civil-master-intro')?.classList.add('ds-course-intro'); return; }
+        if (body.querySelector('.ptra-native-intro,.bc-rlm-intro')) {
+          body.querySelector(':scope > .ds-course-intro')?.remove();
+          return;
+        }
         let intro = body.querySelector(':scope > .ds-course-intro');
         if (!intro) {
           intro = document.createElement('header'); intro.className = 'ds-course-intro';
@@ -305,6 +336,15 @@
         if (intro.querySelector('p').textContent !== count) intro.querySelector('p').textContent = count;
       });
       root.querySelectorAll(MODULES).forEach(module => { try { enhance(module); } catch (error) { console.warn('Apresentação do módulo',error); } });
+      root.querySelectorAll('.subject[data-id="civil"] .cv-module[data-civil-native-module],.subject[data-id="ptra"] .ptra-native-mod[data-ptra-module]').forEach(module => {
+        const body = bodyOf(module);
+        if (body) standardizeStudyCards(body,identity(module));
+      });
+      // RLM owns its reader, progress, notes, and speed-training flow; only align existing M02+ cards.
+      root.querySelectorAll('.subject[data-id="rlm"] .cf-module[data-rlm-module]').forEach(module => {
+        const body = bodyOf(module);
+        if (body) standardizeStudyCards(body,identity(module));
+      });
     }
     finally { observer?.observe(root,{childList:true,subtree:true}); }
   }
@@ -397,7 +437,7 @@
       catch (_) { box.querySelector('[role=status]').textContent = 'Não foi possível salvar'; }
     }
   });
-  window.CentralDisciplineStandard = { refresh, version:'1.1.2' };
+  window.CentralDisciplineStandard = { refresh, standardizeStudyCards, version:'1.2.0' };
   function start() { observer = new MutationObserver(schedule); refresh(); }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded',start,{once:true}); else start();
 })();
