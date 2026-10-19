@@ -88,6 +88,7 @@ test('Penal transforma o renderizador nativo em cards aprovados e preserva açõ
     '<button class="bc-native-material-card" data-native-kind="mindmap" onclick="BaseMindMap.open(\'penal\',\'p1\')">Mapa mental</button>',
     '</div></section>',
     '<div class="cf-resource-box"><h4>Lei em Dia</h4><button>Abrir questões deste módulo</button></div>',
+    '<section class="tec-validated-panel" data-tec-validated-panel="penal:M01"><header><b>TEC Concursos</b></header></section>',
     '</div></section></div></section></div>'
   ].join(''),{url:'https://study.test/',runScripts:'dangerously'});
   const w=dom.window;
@@ -139,9 +140,13 @@ test('Penal transforma o renderizador nativo em cards aprovados e preserva açõ
   // Repeated native renders must keep the note before optional resources and review.
   w.CentralDisciplineStandard.refresh();
   assert.equal(footer.firstElementChild,footer.querySelector('.ds-notes'));
+  const filters=footer.querySelector('.tec-validated-panel');
+  assert.ok(filters);
+  assert.equal(filters.previousElementSibling,footer.querySelector('.ds-notes'));
   assert.equal(footer.querySelectorAll('.ds-notes textarea').length,1);
   const css=read('ui/discipline-standard.css');
   assert.match(css,/\.penal-approved-card\.penal-approved-review\s*\{[^}]*display:grid/s);
+  assert.match(css,/\.penal-approved-primary\s*\{[^}]*background:linear-gradient\([^}]+\)!important/s);
   assert.equal(footer.querySelector('.ds-notes textarea').value,'anotação nativa preservada');
   assert.ok(footer.querySelector('.cf-resource-box h4')?.textContent.includes('Lei em Dia'));
   assert.equal(w.localStorage.getItem('central-v6:module-rounds:penal:p1'),oldRounds);
