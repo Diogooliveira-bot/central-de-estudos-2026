@@ -218,7 +218,7 @@
     }
 
     const note = footer.querySelector(':scope > .ds-notes');
-    const filterPanels = Array.from(body.querySelectorAll(':scope > .tec-validated-panel,:scope > .ds-module-footer > .tec-validated-panel'));
+    const filterPanels = Array.from(body.querySelectorAll(':scope > .tec-validated-panel,:scope > .bcq-module-panels,:scope > .ds-module-footer > .tec-validated-panel,:scope > .ds-module-footer > .bcq-module-panels'));
     filterPanels.forEach(panel => panel.classList.add('penal-approved-filter-panel'));
     const moduleLaw = Array.from(body.querySelectorAll(':scope > .cf-resource-box,:scope > .ds-module-footer > .cf-resource-box')).find(box => (box.querySelector('h4')?.textContent || '').trim().toLocaleLowerCase('pt-BR') === 'lei em dia');
     moduleLaw?.classList.add('penal-approved-extra');
