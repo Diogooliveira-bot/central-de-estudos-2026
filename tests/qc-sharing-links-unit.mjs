@@ -13,11 +13,11 @@ vm.runInNewContext(read('content/qc-sharing-links.js'), context);
 
 test('tabela preserva os totais e os registros QC catalogados', () => {
   assert.equal(table.platform, 'QConcursos');
-  assert.equal(table.counts.penal.linked, 56);
+  assert.equal(table.counts.penal.linked, 57);
   assert.equal(table.counts.processualPenal.linked, 65);
   assert.equal(table.counts.administrativo.linked, 63);
-  assert.equal(table.counts.totalValidatedPublicLinks, 341);
-  assert.equal(table.counts.totalPending, 52);
+  assert.equal(table.counts.totalValidatedPublicLinks, 342);
+  assert.equal(table.counts.totalPending, 51);
   assert.deepEqual(JSON.parse(JSON.stringify(context.window.QC_CENTRAL_SHARING_LINKS)), table);
 });
 
@@ -70,9 +70,9 @@ test('integração mantém os painéis TEC e QConcursos separados e responsivos'
   assert.match(ui, /data-cpp-native-module/);
   assert.match(admUi, /ADM_SHARING_LINKS/);
   assert.match(admUi, /sharingPanel\(uid\)/);
-  assert.match(central, /content\/qc-sharing-links\.js\?v=20261019qccreate3/);
-  assert.match(central, /content\/qc-notebook-catalog\.js\?v=20261019qccreate3/);
-  assert.match(central, /ui\/qc-sharing-links\.js\?v=20261019qccreate3/);
+  assert.match(central, /content\/qc-sharing-links\.js\?v=20261020qcm14p1/);
+  assert.match(central, /content\/qc-notebook-catalog\.js\?v=20261020qcm14p1/);
+  assert.match(central, /ui\/qc-sharing-links\.js\?v=20261020qcm14p1/);
 });
 
 test('pendências de Administrativo sem filtro exclusivo não expõem o caderno amplo', () => {
@@ -94,6 +94,7 @@ test('cadernos validados dos módulos auditados ficam visíveis na Central de Qu
   assert.ok(table.items.some((x) => x.disciplineKey === 'administrativo' && x.code === 'M19.3' && x.id === '15350419' && x.quantity === 1 && x.status === 'VALIDADO'));
   assert.ok(table.items.some((x) => x.disciplineKey === 'administrativo' && x.code === 'M06.3' && x.id === '15350502' && x.quantity === 1 && x.status === 'VALIDADO'));
   assert.ok(table.items.some((x) => x.disciplineKey === 'penal' && x.code === 'M01.2' && x.id === '15350527' && x.quantity === 1 && x.status === 'VALIDADO'));
+  assert.ok(table.items.some((x) => x.disciplineKey === 'penal' && x.code === 'M14' && x.id === '15350670' && x.quantity === 1 && x.status === 'VALIDADO'));
   for (const [disciplineKey, expected] of Object.entries({
     civil: 61, portugues: 27, constitucional: 19, trabalho: 18,
     'processual-trabalho': 18, rlm: 14

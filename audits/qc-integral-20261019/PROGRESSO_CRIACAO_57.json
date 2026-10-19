@@ -1,9 +1,9 @@
 {
   "schema": "qc-pending-creation-progress-v1",
-  "updatedAt": "2026-10-19T23:59:00Z",
+  "updatedAt": "2026-10-20T00:10:00Z",
   "initialPending": 57,
-  "createdAndValidated": 5,
-  "remainingPending": 52,
+  "createdAndValidated": 6,
+  "remainingPending": 51,
   "records": [
     {
       "discipline": "Direito Penal",
@@ -137,6 +137,32 @@
       },
       "url": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15350527",
       "status": "criado, salvo, reaberto e integrado; 1 questão confirmada; compartilhamento ativo verificado"
+    },
+    {
+      "discipline": "Direito Penal",
+      "module": "M14",
+      "moduleTitle": "Abuso de Autoridade — Lei 13.869/2019",
+      "subject": "Crimes de abuso de autoridade — Lei 13.869/2019",
+      "qcId": "15350670",
+      "shareCode": "0EM-EWE",
+      "notebookTitle": "DP M14 Abuso de Autoridade",
+      "questionCount": 1,
+      "criteria": {
+        "method": "busca por legislação e seleção manual após leitura integral",
+        "search": "Lei 13.869 abuso de autoridade",
+        "questionId": "Q4306900",
+        "subjectTaxonomy": "Direito Penal > Legislação Penal Especial > Lei do Abuso de Autoridade – Lei nº 4.898/1965 e Lei nº 13.869/2019",
+        "board": "Fundação CETAP",
+        "year": 2026,
+        "excluded": [
+          "anuladas",
+          "desatualizadas"
+        ],
+        "minimumQuestionCount": 0,
+        "note": "Questão direta sobre os elementos e efeitos dos crimes da Lei 13.869/2019; nenhuma questão extra foi incluída."
+      },
+      "url": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15350670",
+      "status": "criado, questão adicionada, salvo, reaberto; 1 questão e compartilhamento confirmado na listagem QC"
     }
   ],
   "attempts": [

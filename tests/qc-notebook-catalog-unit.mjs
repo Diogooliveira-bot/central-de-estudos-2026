@@ -14,10 +14,10 @@ const catalog = context.window.QC_NOTEBOOK_CATALOG;
 const source = read('ui/external-question-filters-v1.js');
 
 test('catálogo QC inclui o catálogo e os cadernos criados, com seis itens sem vínculo confirmado', () => {
-  assert.equal(catalog.total, 421);
-  assert.equal(catalog.items.length, 421);
-  assert.equal(new Set(catalog.items.map((item) => item.id)).size, 421);
-  assert.equal(catalog.items.filter((item) => item.linkedInExistingMap).length, 415);
+  assert.equal(catalog.total, 422);
+  assert.equal(catalog.items.length, 422);
+  assert.equal(new Set(catalog.items.map((item) => item.id)).size, 422);
+  assert.equal(catalog.items.filter((item) => item.linkedInExistingMap).length, 416);
   assert.equal(catalog.items.filter((item) => item.reviewStatus === 'no-confirmed-module-match').length, 6);
   for (const item of catalog.items) {
     const url = new URL(item.url);
@@ -29,6 +29,7 @@ test('catálogo QC inclui o catálogo e os cadernos criados, com seis itens sem 
   assert.ok(catalog.items.some((item) => item.id === '15350419' && item.reviewStatus === 'created-validated-integrated' && item.linkedInExistingMap));
   assert.ok(catalog.items.some((item) => item.id === '15350502' && item.reviewStatus === 'created-validated-integrated' && item.linkedInExistingMap));
   assert.ok(catalog.items.some((item) => item.id === '15350527' && item.reviewStatus === 'created-validated-integrated' && item.linkedInExistingMap));
+  assert.ok(catalog.items.some((item) => item.id === '15350670' && item.reviewStatus === 'created-validated-integrated' && item.linkedInExistingMap));
   assert.equal(catalog.items.filter((item) => item.pendingCandidateCode).length, 3);
   assert.ok(catalog.items.some((item) => item.id === '15285197' && item.pendingCandidateCode === 'M16.5'));
   assert.ok(catalog.items.some((item) => item.id === '15285069' && item.linkedInExistingMap && item.reviewStatus === 'validated-and-integrated'));
@@ -65,7 +66,7 @@ test('catálogo completo só aparece na seção administrativa e mantém os iten
   await settle(admin.window);
   const section = admin.window.document.querySelector('[data-bcq-qc-inventory]');
   assert.equal(section.hidden, false);
-  assert.equal(section.querySelectorAll('[data-bcq-qc-inventory-row]').length, 421);
+  assert.equal(section.querySelectorAll('[data-bcq-qc-inventory-row]').length, 422);
   assert.equal(section.querySelectorAll('[data-status="unconfirmed"]').length, 6);
   const pendingCandidate = section.querySelector('[data-bcq-qc-inventory-row][data-search*="15285197"]');
   assert.match(pendingCandidate.textContent, /candidato à pendência M16\.5/);

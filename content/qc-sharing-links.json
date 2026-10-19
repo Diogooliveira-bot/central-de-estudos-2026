@@ -1,6 +1,6 @@
 {
   "schema": "qc-central-sharing-v1",
-  "generatedAt": "2026-10-19T22:50:00.000Z",
+  "generatedAt": "2026-10-20T00:10:00.000Z",
   "platform": "QConcursos",
   "counts": {
     "administrativo": {
@@ -10,8 +10,8 @@
     },
     "penal": {
       "items": 64,
-      "linked": 56,
-      "pending": 8
+      "linked": 57,
+      "pending": 7
     },
     "processualPenal": {
       "items": 74,
@@ -19,8 +19,8 @@
       "pending": 9
     },
     "totalItems": 393,
-    "totalValidatedPublicLinks": 341,
-    "totalPending": 52,
+    "totalValidatedPublicLinks": 342,
+    "totalPending": 51,
     "constitucional": {
       "items": 19,
       "linked": 19,
@@ -2418,13 +2418,13 @@
       "kind": "geral",
       "moduleTitle": "Abuso de Autoridade — Lei 13.869/2019",
       "title": "Abuso de Autoridade — Lei 13.869/2019",
-      "notebookTitle": null,
-      "id": null,
-      "quantity": null,
-      "link": null,
-      "status": "Pendente",
-      "public": false,
-      "source": "checkpoint_direito_penal_qc.json",
+      "notebookTitle": "DP M14 Abuso de Autoridade",
+      "id": "15350670",
+      "quantity": 1,
+      "link": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15350670",
+      "status": "VALIDADO",
+      "public": true,
+      "source": "QC autenticado em 2026-10-19: Q4306900 lida, adicionada ao caderno, e listagem reaberta; 1 questão; compartilhamento ativo (0EM-EWE).",
       "pendingReason": "Lacuna tem?tica sem filtro nativo exclusivo."
     },
     {
