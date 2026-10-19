@@ -85,7 +85,7 @@ async function open(uid,kind,jump){
   if(!content)throw new Error('Teoria ADM não localizada');
   if(kind==='complete'&&d.completeAppendHtml)content+=d.completeAppendHtml;
   const body=reader.show(o,content,buildToc,Number(localStorage.getItem(k(uid,kind,'scroll'))||0),onScroll);
-  if(jump)requestAnimationFrame(()=>requestAnimationFrame(()=>{if(active!==session)return;const q=[...body.querySelectorAll('h1,h2,h3')].find(h=>/quest/i.test(h.textContent));q?.scrollIntoView({block:'start'})}));
+  if(jump)requestAnimationFrame(()=>requestAnimationFrame(()=>{if(active!==session)return;const hs=[...body.querySelectorAll('h1,h2,h3')],q=hs.find(h=>/^(?:\d+\s*)?quest(?:ões|ao)\b/i.test(h.textContent.trim()))||hs.find(h=>/questões internas|questões de fixação/i.test(h.textContent))||body.querySelector('details.question');q?.scrollIntoView({block:'start'})}));
   localStorage.setItem('central-v6:last',JSON.stringify({topicUid:uid,title:`Direito Administrativo · Módulo ${d.number} · ${d.title}`,at:Date.now()}));
   g.renderContinue?.();
  }catch(error){if(active===session){console.warn('[ADM reader]',error);reader.fail(o,()=>open(uid,kind,jump))}}
