@@ -149,6 +149,24 @@ async function accountStore(m){
  return {get(key,fallback){try{const value=store.getItem(prefix+key);return value===null?fallback:JSON.parse(value)}catch(_){return fallback}},
  put(key,value){try{store.setItem(prefix+key,JSON.stringify(value))}catch(e){console.warn('Falha ao salvar leitura',e)}}};
 }
+async function stats(n){
+ n=Number(n);const [data,store]=await Promise.all([getModule(n),accountStore(n)]),pages=store.get('read-pages',{});
+ const percent=kind=>{const total=data.tipos?.[kind]?.paginas?.length||0,done=Object.values(pages?.[kind]||{}).filter(Boolean).length;return total?Math.min(100,Math.round(done*100/total)):0};
+ const answers=store.get('answers',{}),result=kind=>{const qs=data.questoes?.[kind]||[],chosen=qs.filter(q=>/^[A-E]$/.test(answers?.[q.id]||'')),correct=chosen.filter(q=>answers[q.id]===q.gabarito).length;return {total:qs.length,answered:chosen.length,correct}};
+ const summaryPct=percent('resumida'),completePct=percent('completa');
+ return {title:data.titulo,summaryPct,completePct,theoryPct:Math.round((summaryPct+completePct)/2),summaryQuestions:data.questoes.resumida.length,completeQuestions:data.questoes.completa.length,summaryResults:result('resumida'),completeResults:result('completa'),hasInfographic:!!data.infografico,infographic:data.infografico};
+}
+function openQuestions(n,kind){return open(n,kind==='resumida'?'resumida':'completa',true)}
+function bindImageControls(state,body,data){
+ const img=body.querySelector('.bc-trabalho-infografico img');if(!img)return;
+ const controls=el('div','bc-trabalho-image-controls'),label=el('span','','Visualização integral do infográfico');
+ let zoom=1;const apply=()=>{img.style.width=(zoom*100)+'%';img.style.maxWidth=zoom===1?'min(100%,1050px)':'none';img.style.height='auto';img.style.objectFit='contain'};
+ const minus=el('button','','−');minus.type='button';minus.setAttribute('aria-label','Diminuir infográfico');minus.onclick=()=>{zoom=Math.max(.5,zoom-.25);apply()};
+ const plus=el('button','','+');plus.type='button';plus.setAttribute('aria-label','Ampliar infográfico');plus.onclick=()=>{zoom=Math.min(3,zoom+.25);apply()};
+ const fit=el('button','','Ajustar');fit.type='button';fit.onclick=()=>{zoom=1;apply()};
+ const download=el('a','','Baixar infográfico');download.href=img.src;download.download='direito-do-trabalho-m'+String(state.n).padStart(2,'0')+'-infografico.webp';download.rel='noopener';
+ controls.append(label,minus,plus,fit,download);body.prepend(controls);apply();
+}
 async function getModule(n){
  const id=String(n).padStart(2,'0');
  if(!cache.has(id)){
@@ -163,9 +181,12 @@ async function getModule(n){
 }
 function close(){
  if(!active)return;
- active.observer?.disconnect();
- active.overlay?.remove();
+ const finished=active;
+ finished.observer?.disconnect();
+ finished.overlay?.remove();
  active=null;
+ try{document.dispatchEvent(new CustomEvent('bc-trabalho-reader-change',{detail:{module:finished.n,kind:finished.kind}}))}catch(_){}
+ setTimeout(()=>g.CentralDisciplineStandard?.refresh?.(),0);
 }
 function percent(state){
  if(active!==state||state.kind==='infografico')return;
@@ -266,11 +287,11 @@ function bindTools(state,body){
  input.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();hits.length?jump():search()}});
  next.onclick=jump;
 }
-function open(n,kind){
+function open(n,kind,focusQuestions){
  n=Number(n);kind=['resumida','completa','infografico'].includes(kind)?kind:'resumida';
  if(!Number.isInteger(n)||n<1||n>18||!g.CentralNativeReadingSession)return false;
  close();
- const state={n,kind,overlay:null,observer:null,store:null,data:null,allRead:{}};
+ const state={n,kind,overlay:null,observer:null,store:null,data:null,allRead:{},focusQuestions:!!focusQuestions};
  active=state;
  const reader=g.CentralNativeReadingSession;
  state.overlay=reader.create({id:'trab-native-reader',subject:'trab',title:'M'+String(n).padStart(2,'0')+' — Direito do Trabalho',
@@ -293,6 +314,8 @@ function open(n,kind){
      body.querySelectorAll('.bc-trabalho-book h2,.bc-trabalho-book h3')[Number(b.dataset.dtToc)]?.scrollIntoView({block:'start',behavior:'smooth'});
    });
    bindTools(state,body);
+   if(kind==='infografico')bindImageControls(state,body,data);
+   if(state.focusQuestions)requestAnimationFrame(()=>{const q=body.querySelector('#bc-trabalho-questoes');if(q)body.scrollTo({top:q.offsetTop,behavior:'smooth'})});
    g.CentralUniversalReader?.scan(state.overlay);
  }).catch(error=>{
    if(active!==state)return;
@@ -301,6 +324,6 @@ function open(n,kind){
  });
  return true;
 }
-g.CentralTrabalhoUniversal=Object.freeze({open,close});
+g.CentralTrabalhoUniversal=Object.freeze({open,openQuestions,stats,close});
 g.CentralTrabalhoNative=g.CentralTrabalhoUniversal;
 })(window);
