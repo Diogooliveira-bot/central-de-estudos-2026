@@ -66,6 +66,9 @@ test('padroniza os 20 módulos CPC sem duplicar a leitura e preserva conteúdo e
     }
     assert.equal(module.querySelectorAll('.cpc-approved-reading').length, 1);
     assert.equal(module.querySelectorAll('.cpc-study-intro').length, 0);
+    assert.equal(module.querySelector('.bc-native-metrics'), null, 'o painel de progresso duplicado não aparece no corpo do módulo');
+    assert.equal(module.querySelector('.cpc-approved-reading [data-cpc-law]'), null, 'o link de Lei em Dia permanece no card próprio, sem duplicar na leitura');
+    assert.equal(module.querySelector('.cpc-bottom-grid button').textContent, 'Lei em Dia', 'o vínculo nativo de Lei em Dia permanece disponível');
     assert.equal(module.querySelector('.cpc-approved-reading p').textContent, `Leitura legal M${index+1}`);
     assert.equal(module.querySelector('#cf-note-cpc' + (index+1)).value, `Nota preservada ${index+1}`);
     module.querySelector('[data-cpc-reading-toggle]').click();
