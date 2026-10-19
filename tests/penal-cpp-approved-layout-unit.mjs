@@ -28,7 +28,7 @@ test('Penal reaproveita os leitores, links e dados no padrão vertical aprovado'
     '<div class="cf-resource-box"><h4>Anotações do módulo</h4><textarea id="cf-note-p1">anotação preservada</textarea><button onclick="savePenalNote(&quot;p1&quot;)">Salvar anotação</button></div>',
     '<section class="bc-module-rounds"><input value="15"></section>',
     '</div></details></div></section></div></section></div>'
-  ].join(''),{url:'https://study.test/',runScripts:'outside-only'});
+  ].join(''),{url:'https://study.test/',runScripts:'dangerously'});
   const w=dom.window;
   const oldRounds='[{"done":"10","correct":"8"},{"done":"5","correct":"4"}]';
   const oldResources='{"qc":"https://qconcursos.test/filter"}';
@@ -89,7 +89,7 @@ test('Penal transforma o renderizador nativo em cards aprovados e preserva açõ
     '</div></section>',
     '<div class="cf-resource-box"><h4>Lei em Dia</h4><button>Abrir questões deste módulo</button></div>',
     '</div></section></div></section></div>'
-  ].join(''),{url:'https://study.test/',runScripts:'outside-only'});
+  ].join(''),{url:'https://study.test/',runScripts:'dangerously'});
   const w=dom.window;
   const readingState={reading:false,theory:false,deep:false};
   const oldRounds='[{"done":"10","correct":"8"}]';
