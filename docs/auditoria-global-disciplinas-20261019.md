@@ -50,6 +50,25 @@ O sistema contém dez disciplinas na ordem de navegação, sem disciplina adicio
 | Testes automatizados | CORRIGIDO PARCIALMENTE | `npm test`: 91 aprovados; inclui ordem dos cartões, handlers, ADM M01, RLM M01 e regressões de questões. Testes visuais/e2e nas quatro larguras ainda pendentes |
 | Produção | PRESERVADA | Branch isolada; sem merge, alias de produção ou publicação |
 
+## Inventário real de módulos carregados na prévia
+
+Em navegação automatizada, os dez corpos de disciplina foram carregados e seus módulos/revisões enumerados no DOM da prévia. O total observado foi 189 unidades:
+
+| Disciplina | Unidades enumeradas | Estado da inspeção |
+|---|---:|---|
+| Língua Portuguesa | 25 (24 módulos + revisão cumulativa) | Estrutura enumerada; ações e armazenamento por módulo pendentes |
+| Direito Constitucional | 15 | Estrutura enumerada; ações e armazenamento por módulo pendentes |
+| Direito Administrativo | 20 | Estrutura enumerada; QA de ações realizado apenas no M01 |
+| Direito Civil | 15 | Estrutura enumerada; ações e armazenamento por módulo pendentes |
+| Direito Processual Civil | 20 | Estrutura enumerada; ações e armazenamento por módulo pendentes |
+| Direito Penal | 17 | Estrutura enumerada; ações e armazenamento por módulo pendentes |
+| Direito Processual Penal | 22 | Estrutura enumerada; ações e armazenamento por módulo pendentes |
+| Raciocínio Lógico-Matemático | 16 (15 módulos + revisão final) | Estrutura enumerada; treino do M01 preservado; ações por módulo pendentes |
+| Direito do Trabalho | 18 | Estrutura enumerada; ações e armazenamento por módulo pendentes |
+| Direito Processual do Trabalho | 21 | Estrutura enumerada; ações e armazenamento por módulo pendentes |
+
+Esta enumeração confirma nomes/contagens e renderizadores ativos. Não aprova quantidade de questões, conteúdo de infográfico, gravação de anotações, links ou leitores em cada unidade, porque esses comportamentos exigem abrir e testar cada módulo individualmente. Os estados por módulo permanecem PENDENTE até essas verificações.
+
 ## Próximas verificações
 
 - Conferir cada módulo aberto em 1440, 1024, 768 e 390 px e registrar os botões, quantidade real de questões, notas, infográfico e filtros.
@@ -65,4 +84,4 @@ O sistema contém dez disciplinas na ordem de navegação, sem disciplina adicio
 - O M01 exibiu apenas um card de anotações. A ordem observada ficou materiais → anotações → filtros/compartilhamentos → ferramentas adicionais.
 - O infográfico real do M01 abriu integral, com rolagem, zoom, ajuste e botão de download. Não houve substituição de imagem.
 - Viewport efetivamente observado: 1363 × 936 px. O console do app não apresentou erros; os únicos erros listados vieram de uma extensão do navegador.
-- Não foi possível simular 1440, 1024, 768 e 390 px nesta sessão, nem abrir individualmente as outras 188 unidades. Por isso, a auditoria por módulo segue **PENDENTE** e a branch/PR permanece em rascunho.
+- Não foi possível simular 1440, 1024, 768 e 390 px nesta sessão, nem executar as ações individualmente nas outras 188 unidades. A enumeração estrutural de todas as 189 está registrada acima; a auditoria funcional por módulo segue **PENDENTE** e a branch/PR permanece em rascunho.
