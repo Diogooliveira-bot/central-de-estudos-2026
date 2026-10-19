@@ -5,14 +5,19 @@ import { JSDOM } from 'jsdom';
 
 const source = await readFile(new URL('../ui/discipline-standard.js', import.meta.url), 'utf8');
 
-function setup() {
+function setup(extraHtml = '') {
   const dom = new JSDOM(`<!doctype html><html><body><section id="subjects">
     <section class="subject" data-id="civil"><header class="subject-name">Direito Civil</header><div class="subject-body"><article class="cv-module" data-civil-native-module="1"><button class="cv-module-head">M01</button><div class="cv-module-body"><div class="cv-cards"><article class="cv-card" id="summary">Versão resumida</article><article class="cv-card" id="complete">Versão completa</article><article class="cv-card" id="map">Infográfico</article></div></div></article></div></section>
     <section class="subject" data-id="adm"><header class="subject-name">Direito Administrativo</header><div class="subject-body"><article class="topic-item" data-uid="M01"><button class="topic-row">M01</button><div class="detail-panel"><section class="adm-native-zone"><div class="adm-native-module-tools" id="adm-tools">Recursos adicionais</div><div class="adm-native-material-grid"><article class="adm-native-card" id="adm-summary">RESUMO</article><article class="adm-native-card" id="adm-complete">TEORIA COMPLETA</article><article class="adm-native-card" id="adm-map">VISUAL REAL Infográfico</article></div><section class="adm-native-sharing" id="adm-valid-sharing">Links válidos</section></section><section class="adm-native-preserved" id="adm-legacy-tec">Filtro do TEC deste módulo</section><section class="adm-native-preserved adm-native-external-entry" id="adm-legacy-form">Registrar questões externas</section><section class="adm-native-notes" id="adm-notes">Anotações preservadas</section></div></article></div></section>
     <section class="subject" data-id="ptra"><header class="subject-name">Direito Processual do Trabalho</header><div class="subject-body"><div class="ptra-native-intro">Trilha oficial preservada</div><header class="ds-course-intro"><h3>Introdução duplicada</h3></header><section class="ptra-native-mod" data-ptra-module="1"><button class="ptra-native-mod-head">M01</button><div class="ptra-native-mod-body"><div class="ptra-native-zone"><div class="ptra-native-card-grid"><article class="ptra-native-card" id="ptra-summary">VERSÃO RESUMIDA</article><article class="ptra-native-card" id="ptra-complete">VERSÃO COMPLETA</article><article class="ptra-native-card" id="ptra-map">INFOGRÁFICO / MAPA VISUAL</article></div></div></div></section></div></section>
     <section class="subject" data-id="rlm"><header class="subject-name">RLM</header><div class="subject-body"><div class="bc-rlm-intro">Matriz TJCE preservada</div><header class="ds-course-intro"><h3>Introdução duplicada</h3></header><section class="cf-module" data-rlm-module="M01"><button class="cf-module-head">M01</button><div class="cf-module-body"><div class="bc-native-material-grid"><button id="speed" class="bc-native-material-card">Treino de velocidade</button><button id="rlm-complete" class="bc-native-material-card">Teoria completa</button></div></div></section><section class="cf-module" data-rlm-module="M02"><button class="cf-module-head">M02</button><div class="cf-module-body"><div class="bc-native-material-grid"><button id="rlm-summary" class="bc-native-material-card">Conteúdo resumido</button><button id="rlm-main" class="bc-native-material-card">Teoria completa</button></div></div></section></div></section>
+    ${extraHtml}
   </section></body></html>`, { url: 'https://preview.example.test/central-v119.html', runScripts: 'outside-only', pretendToBeVisual: true });
   dom.window.BASE_COMPLETA_USER = { id:'preview-guest', role:'aluno' };
+  dom.window.key = (...parts) => parts.join(':');
+  dom.window.todayISO = () => '2026-10-19';
+  dom.window.formatDate = value => value;
+  dom.window.scheduleModuleReview = () => true;
   dom.window.requestAnimationFrame = (fn) => dom.window.setTimeout(fn, 0);
   dom.window.eval(source);
   dom.window.CentralDisciplineStandard.refresh();
@@ -26,7 +31,7 @@ test('cartões dos renderizadores adicionais ficam em ordem comum sem trocar seu
     const container = document.querySelector(selector);
     assert.ok(container.classList.contains('ds-study-material-grid'));
     const cards = Array.from(container.children);
-    assert.equal(cards[0].dataset.dsMaterialKind, 'complete');
+    assert.equal(cards[0].dataset.dsMaterialKind, 'complete', selector);
     assert.equal(cards[1].dataset.dsMaterialKind, 'summary');
     if (cards[2]) assert.equal(cards[2].dataset.dsMaterialKind, 'infographic');
   }
@@ -50,6 +55,19 @@ test('RLM M01 mantém ordem e handlers originais', () => {
   assert.equal(m02.firstElementChild, complete);
   assert.equal(dom.window.document.querySelector('[data-rlm-module="M02"] .ds-module-footer'), null);
   assert.equal(dom.window.document.querySelector('[data-rlm-module="M02"] .ds-module-nav'), null);
+  dom.window.close();
+});
+
+test('módulo aberto usa a sequência do padrão Administrativo e preserva os nós de ação', () => {
+  const dom = setup(`<section class="subject open" data-id="cpc"><header class="subject-name">Direito Processual Civil</header><div class="subject-body"><section class="cf-module open" data-cpc="cpc1"><button class="cf-module-head">M01</button><div class="cf-module-body"><div class="cf-native-cards"><article id="cpc-map">Infográfico</article><article id="cpc-summary">Versão de revisão · teoria resumida</article><article id="cpc-complete">Teoria completa</article></div><section class="cf-native-note" id="cpc-note"><textarea></textarea><button>Salvar</button></section></div></section></div></section>`);
+  const { document } = dom.window;
+  const body = document.querySelector('[data-cpc="cpc1"] .cf-module-body');
+  const cards = Array.from(body.querySelector('.cf-native-cards').children);
+  assert.deepEqual(cards.map(node => node.id), ['cpc-complete','cpc-summary','cpc-map']);
+  assert.equal(body.querySelector('.cf-native-cards').nextElementSibling.id, 'cpc-note');
+  assert.ok(body.querySelectorAll('.ds-notes').length <= 1);
+  assert.ok(body.querySelector('.ds-footer-tools'));
+  assert.equal(document.querySelector('#cpc-complete').tagName, 'ARTICLE');
   dom.window.close();
 });
 
