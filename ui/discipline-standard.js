@@ -687,8 +687,8 @@
     filters.innerHTML = '<div><h4>Filtros TEC e QConcursos</h4><p>Os cadernos e registros disponíveis continuam na Central de Questões.</p></div><div class="work-approved-filter-links"></div><button type="button" class="work-approved-center" data-work-action="questions-center">Abrir Central de Questões</button>';
     const filterHost = filters.querySelector('.work-approved-filter-links');
     filterLinks.forEach(node => filterHost.appendChild(node));
-    if (!hasTec) filterHost.insertAdjacentHTML('beforeend','<span class="work-approved-pending">TEC deste módulo · Pendente</span>');
-    if (!hasQc) filterHost.insertAdjacentHTML('beforeend','<span class="work-approved-pending">QConcursos · Pendente</span>');
+    if (!hasTec) filterHost.insertAdjacentHTML('beforeend','<button type="button" class="work-approved-pending" disabled aria-disabled="true">TEC deste módulo · Pendente</button>');
+    if (!hasQc) filterHost.insertAdjacentHTML('beforeend','<button type="button" class="work-approved-pending" disabled aria-disabled="true">QConcursos · Pendente</button>');
     const extras = document.createElement('details');
     extras.className = 'work-approved-extras';
     const extraLinks = videoLinks.concat(materialLinks);
@@ -705,7 +705,7 @@
       lawButton.type = 'button'; lawButton.textContent = '📖 Lei em Dia'; lawButton.dataset.workAction = 'law';
       toolHost.appendChild(lawButton);
     } else if (!lawLinks.length) {
-      const pending = document.createElement('span'); pending.className = 'work-approved-pending'; pending.textContent = '📖 Lei em Dia · Pendente'; toolHost.appendChild(pending);
+      const pending = document.createElement('button'); pending.type = 'button'; pending.disabled = true; pending.setAttribute('aria-disabled','true'); pending.className = 'work-approved-pending'; pending.textContent = '📖 Lei em Dia · Pendente'; toolHost.appendChild(pending);
     }
     lawLinks.forEach(node => toolHost.appendChild(node));
     const vade = document.createElement('button'); vade.type = 'button'; vade.textContent = '⚖ Vade Mecum'; vade.dataset.workAction = 'vade'; toolHost.appendChild(vade);
