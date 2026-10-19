@@ -13,11 +13,11 @@ vm.runInNewContext(read('content/qc-sharing-links.js'), context);
 
 test('tabela preserva os totais e os registros QC catalogados', () => {
   assert.equal(table.platform, 'QConcursos');
-  assert.equal(table.counts.penal.linked, 60);
+  assert.equal(table.counts.penal.linked, 61);
   assert.equal(table.counts.processualPenal.linked, 65);
   assert.equal(table.counts.administrativo.linked, 63);
-  assert.equal(table.counts.totalValidatedPublicLinks, 345);
-  assert.equal(table.counts.totalPending, 48);
+  assert.equal(table.counts.totalValidatedPublicLinks, 346);
+  assert.equal(table.counts.totalPending, 47);
   assert.deepEqual(JSON.parse(JSON.stringify(context.window.QC_CENTRAL_SHARING_LINKS)), table);
 });
 
@@ -70,9 +70,9 @@ test('integração mantém os painéis TEC e QConcursos separados e responsivos'
   assert.match(ui, /data-cpp-native-module/);
   assert.match(admUi, /ADM_SHARING_LINKS/);
   assert.match(admUi, /sharingPanel\(uid\)/);
-  assert.match(central, /content\/qc-sharing-links\.js\?v=20261020qcm172p1/);
-  assert.match(central, /content\/qc-notebook-catalog\.js\?v=20261020qcm172p1/);
-  assert.match(central, /ui\/qc-sharing-links\.js\?v=20261020qcm172p1/);
+  assert.match(central, /content\/qc-sharing-links\.js\?v=20261020qcm134p1/);
+  assert.match(central, /content\/qc-notebook-catalog\.js\?v=20261020qcm134p1/);
+  assert.match(central, /ui\/qc-sharing-links\.js\?v=20261020qcm134p1/);
 });
 
 test('pendências de Administrativo sem filtro exclusivo não expõem o caderno amplo', () => {
@@ -104,4 +104,12 @@ test('cadernos validados dos módulos auditados ficam visíveis na Central de Qu
   })) {
     assert.equal(table.items.filter(x => x.disciplineKey === disciplineKey && x.status === 'VALIDADO').length, expected);
   }
+});
+
+
+test('Penal M13.4 finanças públicas is validated and public', () => {
+  const item = table.items.find((x) => x.disciplineKey === 'penal' && x.code === 'M13.4');
+  assert.equal(item.id, '15351620');
+  assert.equal(item.status, 'VALIDADO');
+  assert.equal(item.public, true);
 });
