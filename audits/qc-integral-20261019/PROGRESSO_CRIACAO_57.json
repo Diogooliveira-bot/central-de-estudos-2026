@@ -1,9 +1,9 @@
 {
   "schema": "qc-pending-creation-progress-v1",
-  "updatedAt": "2026-10-20T00:40:00Z",
+  "updatedAt": "2026-10-20T00:55:00Z",
   "initialPending": 57,
-  "createdAndValidated": 8,
-  "remainingPending": 49,
+  "createdAndValidated": 9,
+  "remainingPending": 48,
   "records": [
     {
       "discipline": "Direito Penal",
@@ -213,6 +213,40 @@
       },
       "url": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15351251",
       "status": "criado, salvo, reaberto e integrado; 1 questão confirmada e compartilhamento ativo (0EM-FEK)"
+    },
+    {
+      "discipline": "Direito Penal",
+      "module": "M17.2",
+      "moduleTitle": "Constituição Penal, Responsabilidade Penal da Pessoa Jurídica, Súmulas e Consolidação",
+      "subject": "Princípios constitucionais penais",
+      "qcId": "15351442",
+      "shareCode": "0EM-FMJ",
+      "notebookTitle": "DP M17.2 Princípios constitucionais penais",
+      "questionCount": 4,
+      "criteria": {
+        "method": "pesquisa por palavra-chave e seleção manual após conferência individual",
+        "search": "princípios constitucionais penais",
+        "subjectTaxonomy": "Direito Penal > Noções Fundamentais > Princípios limitadores do poder punitivo estatal",
+        "yearRange": "questões pertinentes de 2021 e 2025",
+        "boards": [
+          "FUNDATEC",
+          "CESPE / CEBRASPE"
+        ],
+        "excluded": [
+          "anuladas",
+          "desatualizadas"
+        ],
+        "selectedQuestions": [
+          "Q3676254",
+          "Q1826454",
+          "Q1826457",
+          "Q1826460"
+        ],
+        "minimumQuestionCount": 0,
+        "note": "As quatro questões tratam diretamente de princípios penais (intranscendência, irretroatividade, individualização, ultima ratio, alteridade, proteção de bens jurídicos, lesividade e limites à criminalização). Foram excluídas questões de culpabilidade/dosimetria, taxatividade e responsabilidade penal da pessoa jurídica por pertencerem a recortes distintos."
+      },
+      "url": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15351442",
+      "status": "criado, salvo, reaberto; 4 questões pertinentes confirmadas; compartilhamento ativo confirmado na listagem autenticada (0EM-FMJ); integrado à Central"
     }
   ],
   "attempts": [
