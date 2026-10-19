@@ -1,0 +1,66 @@
+.bc-infographic-viewer .bc-infographic-controls {
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 8px 12px;
+  border-bottom: 1px solid rgba(135, 153, 174, .35);
+  background: var(--bc-color-surface, #f7faff);
+  color: var(--bc-color-text, #17283c);
+}
+.bc-infographic-viewer .bc-infographic-controls button {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 1px solid #b7c9dc;
+  border-radius: 9px;
+  background: #fff;
+  color: #174f83;
+  font: 700 14px/1.25 system-ui, sans-serif;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+.bc-infographic-viewer .bc-infographic-controls [data-bc-download] {
+  border-color: #0a63ba;
+  background: #0a63ba;
+  color: #fff;
+}
+.bc-infographic-viewer .bc-infographic-controls [data-bc-zoom-value] {
+  min-width: 48px;
+  text-align: center;
+  font: 700 13px/1.4 system-ui, sans-serif;
+}
+/* PTRA already has its own tested zoom controls; retain only the shared download action. */
+.ptra-native-image-viewer .bc-infographic-controls [data-bc-zoom],
+.ptra-native-image-viewer .bc-infographic-controls [data-bc-zoom-value] { display: none!important; }
+.bc-infographic-viewer .bc-infographic-controls button:focus-visible {
+  outline: 3px solid #087e8b;
+  outline-offset: 2px;
+}
+.bc-infographic-viewer .bc-infographic-stage {
+  box-sizing: border-box;
+  min-width: 0;
+  max-width: 100%;
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+.bc-infographic-viewer .bc-infographic-graphic {
+  display: block;
+  width: calc(var(--bc-infographic-zoom, 1) * 100%);
+  max-width: 100%;
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+  margin-inline: auto;
+}
+.bc-infographic-viewer .bc-infographic-graphic[data-bc-zoom]:not([data-bc-zoom="1"]) {
+  max-width: none;
+  margin-inline: 0;
+}
+@media (max-width: 540px) {
+  .bc-infographic-viewer .bc-infographic-controls { gap: 6px; padding: 8px; }
+  .bc-infographic-viewer .bc-infographic-controls button { padding: 8px; }
+}
