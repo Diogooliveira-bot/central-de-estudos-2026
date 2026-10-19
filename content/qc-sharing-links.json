@@ -1,6 +1,6 @@
 {
   "schema": "qc-central-sharing-v1",
-  "generatedAt": "2026-10-20T00:55:00.000Z",
+  "generatedAt": "2026-10-20T01:10:00.000Z",
   "platform": "QConcursos",
   "counts": {
     "administrativo": {
@@ -10,8 +10,8 @@
     },
     "penal": {
       "items": 64,
-      "linked": 60,
-      "pending": 4
+      "linked": 61,
+      "pending": 3
     },
     "processualPenal": {
       "items": 74,
@@ -19,8 +19,8 @@
       "pending": 9
     },
     "totalItems": 393,
-    "totalValidatedPublicLinks": 345,
-    "totalPending": 48,
+    "totalValidatedPublicLinks": 346,
+    "totalPending": 47,
     "constitucional": {
       "items": 19,
       "linked": 19,
@@ -2402,14 +2402,13 @@
       "kind": "subdivisao",
       "moduleTitle": "DP M13 Crimes contra a Adminis",
       "title": "Crimes contra finanças públicas",
-      "notebookTitle": null,
-      "id": null,
-      "quantity": null,
-      "link": null,
-      "status": "Pendente",
-      "public": false,
-      "source": "checkpoint_direito_penal_qc.json",
-      "pendingReason": "Sem quest?es no recorte aprovado."
+      "notebookTitle": "DP M13.4 Crimes contra as finanças públicas",
+      "id": "15351620",
+      "quantity": 1,
+      "link": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15351620",
+      "status": "VALIDADO",
+      "public": true,
+      "source": "QC autenticado: assunto nativo conferido e caderno reaberto em 2026-10-20"
     },
     {
       "discipline": "Direito Penal",
