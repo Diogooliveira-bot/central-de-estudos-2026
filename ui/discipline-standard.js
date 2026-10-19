@@ -46,8 +46,12 @@
       const pattern = type === 'summary' ? /5\s*(?:do|questões|questoes)/i : /10\s*(?:do|questões|questoes)/i;
       const button = Array.from(intro?.querySelectorAll('button') || []).find(item => pattern.test(item.textContent));
       if (!button) return null;
-      const count = button.textContent.match(/(\d+)\s*\/\s*(\d+)/);
-      return {button,count:count ? Number(count[2]) : 0};
+      const explicit = button.textContent.match(/(\d+)\s*\/\s*(\d+)/);
+      const requested = Number(button.getAttribute('onclick')?.match(/,\s*(\d+)\s*\)/)?.[1]) || (type === 'summary' ? 5 : 10);
+      const weekPool = typeof window.__cpcPool === 'function' ? window.__cpcPool(week) : [];
+      const verifiedPoolSize = weekPool.length || (Number(week.num) >= 7 && Number(week.num) <= 17 ? 15 : 0);
+      const count = explicit ? (Number(explicit[2]) ? Math.min(requested,Number(explicit[2])) : 0) : Math.min(requested,verifiedPoolSize);
+      return {button,count};
     };
     const card = (original,type,quiz) => {
       const tone = type === 'complete' ? 'complete' : type === 'summary' ? 'summary' : 'map';

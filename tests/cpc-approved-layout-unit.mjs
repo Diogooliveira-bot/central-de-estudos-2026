@@ -14,7 +14,7 @@ const weeks = Array.from({ length:20 }, (_, index) => ({
   read_focus:readFocus
 }));
 
-function fixture(emptyQuestions = false) {
+function fixture(emptyQuestions = false, questionLabelsWithoutTotals = false) {
   const modules = weeks.map((week, index) => {
     const n = String(index+1).padStart(2, '0');
     const id = week.id;
@@ -26,7 +26,7 @@ function fixture(emptyQuestions = false) {
         <button class="bc-native-material-card" onclick="Reader${n}.open('complete')"><span>📚</span><span><strong>Conteúdo completo</strong><small>Teoria integral do módulo</small></span><span class="bc-native-material-action">10/12 →</span></button>
         ${index === 7 ? '' : `<button class="bc-native-material-card" onclick="Map${n}.open()"><span>🧠</span><span><strong>Mapa mental</strong><small>Carrossel real do módulo</small></span><span class="bc-native-material-action">Abrir →</span></button>`}
       </div></section>
-        <section class="cpc-study-intro"><button onclick="Quiz${n}.open('${summary}','summary')">5 do resumido · ${emptyQuestions ? '0/0' : '5/5'}</button><button onclick="Quiz${n}.open('${summary}','full')">10 do completo · ${emptyQuestions ? '0/0' : '10/10'}</button></section>
+        <section class="cpc-study-intro"><button onclick="${index >= 6 && index <= 16 ? `startCpcQuiz('${id}','intermediate',5)` : `Quiz${n}.open('${summary}','summary')`}">5 do resumido · ${emptyQuestions ? '0/0' : questionLabelsWithoutTotals ? '' : '5/5'}</button><button onclick="${index >= 6 && index <= 16 ? `startCpcQuiz('${id}','fixation',10)` : `Quiz${n}.open('${summary}','full')`}">10 do completo · ${emptyQuestions ? '0/0' : questionLabelsWithoutTotals ? '' : '10/10'}</button></section>
       <div class="cpc-bottom-grid"><button>Lei em Dia</button></div><details class="cf-resources"><div class="cf-resource-box"><textarea id="cf-note-${id}">Nota preservada ${index+1}</textarea></div></details>
     </div></section>`;
   }).join('');
@@ -82,5 +82,19 @@ test('não anuncia quantidades quando a bateria real não tem questões', async 
   const questions = [...dom.window.document.querySelectorAll('.cpc-approved-card .cpc-approved-secondary')];
   assert.equal(questions.length, 40);
   assert.ok(questions.every(button => button.disabled && button.textContent === 'Questões internas indisponíveis'));
+  dom.window.close();
+});
+
+test('usa o banco validado para habilitar as baterias CPC M07–M17 sem depender do rótulo 0/0', async () => {
+  const dom = fixture(false,true);
+  await new Promise(resolve => dom.window.requestAnimationFrame(() => dom.window.requestAnimationFrame(resolve)));
+  for (let index=0;index<20;index++) {
+    const module=dom.window.document.querySelector(`.cf-module[data-cf="cpc${index+1}"]`);
+    const buttons=[...module.querySelectorAll('.cpc-approved-card .cpc-approved-secondary')];
+    const available=index>=6&&index<=16;
+    assert.equal(buttons[0].textContent,available?'Resolver 10 questões':'Questões internas indisponíveis');
+    assert.equal(buttons[1].textContent,available?'Resolver 5 questões':'Questões internas indisponíveis');
+    assert.equal(buttons.every(button=>button.disabled),!available);
+  }
   dom.window.close();
 });
