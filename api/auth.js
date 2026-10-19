@@ -52,7 +52,7 @@ function isPreviewGuest(req) {
   let supplied;
   try { supplied = decodeURIComponent(encoded.slice('bc_preview_guest='.length)); }
   catch (_) { return false; }
-  if (supplied.length < 40 || supplied.length > 128) return false;
+  if (supplied.length < 40 || supplied.length > 2048) return false;
   const actualHash = crypto.createHash('sha256').update(supplied).digest();
   const expectedHash = crypto.createHash('sha256').update(secret).digest();
   return crypto.timingSafeEqual(actualHash, expectedHash);
