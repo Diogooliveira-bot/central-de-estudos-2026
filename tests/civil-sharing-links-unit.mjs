@@ -16,7 +16,7 @@ function readWindowValue(file, key) {
   return context.window[key];
 }
 
-test('bootstrap real seleciona a camada Civil atual e o carregador renderiza os 66 destinos', async (t) => {
+test('bootstrap Civil preserva os 66 destinos e remove sua exibição antiga do módulo', async (t) => {
   const data = readWindowValue('content/civil/civil-sharing-links.js', 'CIVIL_SHARING_LINKS');
   const index = readWindowValue('content/civil/civil-native-index.js', 'CIVIL_NATIVE_INDEX');
   const boot = read('central-v119.html');
@@ -145,7 +145,7 @@ test('bootstrap real seleciona a camada Civil atual e o carregador renderiza os 
 
     const moduleAudit = await page.locator('[data-civil-native-module]').evaluateAll((modules) => modules.map((module) => {
       const zone = module.querySelector('.cv-zone');
-      const children = [...zone.children].map((node) => node.classList[0]);
+      const children = [...zone.children].map((node) => node.matches('[data-bcq-module-panel]') ? 'bcq-module-panels' : node.classList[0]);
       return {
         number: Number(module.dataset.civilNativeModule),
         children,
@@ -160,7 +160,7 @@ test('bootstrap real seleciona a camada Civil atual e o carregador renderiza os 
     }));
     assert.equal(moduleAudit.length, 15, 'A auditoria deve conferir os 15 módulos reais.');
     for (const module of moduleAudit) {
-      assert.deepEqual(module.children, ['cv-zone-head', 'cv-progress-grid', 'cv-oriented', 'cv-cards', 'cv-panel', 'cv-sharing', 'cv-panel', 'cv-tools'], `M${module.number}: ordem visual diferente do padrão.`);
+      assert.deepEqual(module.children, ['cv-zone-head', 'cv-progress-grid', 'cv-oriented', 'cv-cards', 'cv-panel', 'bcq-module-panels', 'cv-tools'], `M${module.number}: ordem visual diferente do padrão.`);
       assert.equal(module.complete, 'Teoria completa', `M${module.number}: card completo ausente.`);
       assert.equal(module.review, 'Versão de revisão', `M${module.number}: card de revisão ausente.`);
       assert.equal(module.infographic, 'Infográfico', `M${module.number}: card de infográfico ausente.`);
@@ -181,48 +181,11 @@ test('bootstrap real seleciona a camada Civil atual e o carregador renderiza os 
     assert.equal(styleAudit.actionsDirection, 'column');
     assert.match(styleAudit.gridColumns, /104px/);
 
-    const actual = await page.locator('a[data-civil-share]').evaluateAll((anchors) => anchors.map((anchor) => ({
-      key: anchor.dataset.civilShare,
-      href: anchor.href,
-      label: anchor.querySelector('b')?.textContent || '',
-      detail: anchor.querySelector('small')?.textContent || '',
-      module: anchor.closest('[data-civil-native-module]')?.dataset.civilNativeModule,
-      target: anchor.target,
-      rel: anchor.rel,
-    })));
-    assert.equal(actual.length, 66, 'A interface não renderizou os 66 links.');
-    for (const item of data.items) {
-      const code = item.subdivisao || item.modulo;
-      const row = actual.find((x) => x.key === code);
-      assert(row, `${code}: link não apareceu no painel.`);
-      assert.equal(row.href, item.link, `${code}: URL divergente.`);
-      assert.equal(Number(row.module), Number(item.modulo.slice(1)), `${code}: associação ao módulo incorreta.`);
-      assert(row.label.includes(item.titulo), `${code}: título divergente.`);
-      assert(row.detail.includes(String(item.quantidade)), `${code}: quantidade não exibida.`);
-      assert.equal(row.target, '_blank');
-      assert(row.rel.includes('noopener') && row.rel.includes('noreferrer'));
-    }
-
-    await page.evaluate(() => {
-      window.__civilClicked = [];
-      document.addEventListener('click', (event) => {
-        const anchor = event.target.closest('a[data-civil-share]');
-        if (anchor) {
-          event.preventDefault();
-          window.__civilClicked.push({ key: anchor.dataset.civilShare, href: anchor.href });
-        }
-      }, true);
-    });
-    const beforeLinks = await page.evaluate(() => Object.fromEntries(Object.entries(localStorage)));
-    await page.locator('a[data-civil-share]').evaluateAll((anchors) => anchors.forEach((anchor) => anchor.dispatchEvent(new MouseEvent('click', { bubbles: true, cancelable: true }))));
-    const destinations = await page.evaluate(() => window.__civilClicked);
-    assert.equal(destinations.length, 66, 'Nem todos os destinos foram acionados no interceptador local.');
-    for (const item of data.items) {
-      const code = item.subdivisao || item.modulo;
-      assert(destinations.some((x) => x.key === code && x.href === item.link), `${code}: destino não foi interceptado com a URL correta.`);
-    }
-    assert.deepEqual(await page.evaluate(() => Object.fromEntries(Object.entries(localStorage))), beforeLinks,
-      'Abrir links alterou progresso, notas ou estado de estudo.');
+    const oldLinks = await page.locator('a[data-civil-share], .cv-sharing, .cv-tec-panel').count();
+    assert.equal(oldLinks, 0, 'Os links e painéis antigos não devem aparecer no módulo.');
+    assert.equal(data.items.length, 66, 'Os destinos oficiais seguem preservados no catálogo.');
+    const actual = data.items;
+    const destinations = [];
 
     const preserved = await page.evaluate(() => ({
       note: JSON.parse(localStorage.getItem('central-v6:civil-native:m01:notes:history'))[0].text,
@@ -269,7 +232,7 @@ test('bootstrap real seleciona a camada Civil atual e o carregador renderiza os 
     assert.equal(await page.locator('#civil-native-image-viewer').getAttribute('data-zoom'), '1.5');
     await page.evaluate(() => CivilNative.closeImage());
     assert.deepEqual(pageErrors, []);
-    console.log(JSON.stringify({ loadedThrough: 'CentralDisciplineLoader.load(civil)', rendered: actual.length, interceptedDestinations: destinations.length, modules: 15, general: 15, subdivisions: 51, standardOrderAndCards: moduleAudit.length, responsiveWidths: [1440, 1024, 768, 390], infographic: `${image.width}x${image.height}`, studentData: 'preserved', browserErrors: pageErrors }, null, 2));
+    console.log(JSON.stringify({ loadedThrough: 'CentralDisciplineLoader.load(civil)', retainedFilterRecords: actual.length, oldLinksRendered: oldLinks, modules: 15, general: 15, subdivisions: 51, standardOrderAndCards: moduleAudit.length, responsiveWidths: [1440, 1024, 768, 390], infographic: `${image.width}x${image.height}`, studentData: 'preserved', browserErrors: pageErrors }, null, 2));
   } finally {
     await browser.close();
     await new Promise((resolve) => server.close(resolve));
