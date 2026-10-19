@@ -7,6 +7,113 @@
   const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const read = key => { try { return JSON.parse(localStorage.getItem(key) || 'null'); } catch (_) { return null; } };
   const meter = value => Number.isFinite(value) ? '<div class="csp-meter" aria-hidden="true"><span style="width:' + Math.max(0, Math.min(100, value)) + '%"></span></div>' : '';
+
+  function cpcApprovedProgress(module, week) {
+    const body = bodyOf(module);
+    if (!body || !week) return;
+    const meta = identity(module);
+    const state = typeof window.cpcWeekState === 'function' ? window.cpcWeekState(week.id) : {};
+    const theorySteps = ['reading','theory','deep'].filter(key => !!state?.[key]).length;
+    const theoryPct = Math.round(theorySteps / 3 * 100);
+    const rounds = footerRounds(meta);
+    const roundCount = rounds.length;
+    const roundPct = Math.round(Math.min(roundCount,3) / 3 * 100);
+    const done = rounds.reduce((sum,row) => sum + row.done,0);
+    const correct = rounds.reduce((sum,row) => sum + row.correct,0);
+    let panel = body.querySelector(':scope > .cpc-approved-progress');
+    if (!panel) {
+      panel = document.createElement('section');
+      panel.className = 'cpc-approved-progress';
+      panel.setAttribute('aria-label','Progresso do módulo');
+      const anchor = body.querySelector(':scope > .cpc-approved-reading,:scope > .bc-native-materials');
+      body.insertBefore(panel,anchor || body.firstElementChild);
+    }
+    panel.innerHTML = '<article class="cpc-approved-progress-card"><div class="cpc-approved-progress-head"><b>Progresso da teoria</b><strong>' + theoryPct + '% concluído</strong></div><div class="cpc-approved-progress-track" role="progressbar" aria-label="Progresso da teoria" aria-valuemin="0" aria-valuemax="100" aria-valuenow="' + theoryPct + '"><span style="width:' + theoryPct + '%"></span></div><small>Versão resumida + versão completa · ' + theorySteps + '/3 etapas</small></article>' +
+      '<article class="cpc-approved-progress-card"><div class="cpc-approved-progress-head"><b>Questões externas</b><strong>' + roundPct + '% · ' + Math.min(roundCount,3) + '/3 rodadas</strong></div><div class="cpc-approved-progress-track" role="progressbar" aria-label="Progresso das questões externas" aria-valuemin="0" aria-valuemax="3" aria-valuenow="' + Math.min(roundCount,3) + '"><span style="width:' + roundPct + '%"></span></div><small>' + (roundCount ? done + ' questões registradas · ' + correct + ' certas' : 'Nenhuma rodada registrada ainda') + '</small></article>';
+  }
+  function cpcApprovedLayout(module) {
+    const body = bodyOf(module);
+    const materials = body?.querySelector(':scope > .bc-native-materials');
+    if (!body || !materials) return;
+    const week = (window.__CPC_WEEKS || []).find(item => item.id === module.dataset.cf);
+    if (materials.dataset.cpcApproved === '1') { cpcApprovedProgress(module,week); return; }
+    const grid = materials.querySelector('.bc-native-material-grid');
+    const originals = Array.from(grid?.querySelectorAll('.bc-native-material-card') || []);
+    if (!week || originals.length < 2) return;
+
+    const complete = originals.find(button => /complete/i.test(button.getAttribute('onclick') || '') || /conteúdo completo/i.test(button.textContent));
+    const summary = originals.find(button => button !== complete && (/summary/i.test(button.getAttribute('onclick') || '') || /resumido|resumo/i.test(button.textContent)));
+    const map = originals.find(button => button !== complete && button !== summary) || null;
+    if (!complete || !summary) return;
+
+    const state = typeof window.cpcWeekState === 'function' ? window.cpcWeekState(week.id) : {};
+    const completed = !!state.reading;
+    const number = String(week.num).padStart(2,'0');
+    const reading = document.createElement('section');
+    reading.className = 'cpc-approved-reading';
+    reading.innerHTML = '<div class="cpc-approved-reading-icon" aria-hidden="true">📖</div>' +
+      '<div class="cpc-approved-reading-copy"><h3>Leitura orientada inicial</h3><p>' + esc(week.read || '') + '</p>' +
+      '<details><summary>Ver pontos para observar</summary><ul>' + (week.read_focus || []).map(point => '<li>' + esc(point) + '</li>').join('') +
+      '</ul></details><div class="cpc-approved-reading-actions">' +
+      '<button type="button" class="cpc-approved-secondary" data-cpc-reading-toggle>' + (completed ? '✓ Leitura concluída' : 'Marcar concluída') + '</button>' +
+      '</div></div>';
+    reading.querySelector('[data-cpc-reading-toggle]').addEventListener('click', () => {
+      if (typeof window.cpcUpdateWeek === 'function') window.cpcUpdateWeek(week.id,{reading:!completed});
+    });
+    body.insertBefore(reading,materials);
+
+    const intro = body.querySelector(':scope > .cpc-study-intro');
+    const question = (type) => {
+      const pattern = type === 'summary' ? /5\s*(?:do|questões|questoes)/i : /10\s*(?:do|questões|questoes)/i;
+      const button = Array.from(intro?.querySelectorAll('button') || []).find(item => pattern.test(item.textContent));
+      if (!button) return null;
+      const explicit = button.textContent.match(/(\d+)\s*\/\s*(\d+)/);
+      const requested = Number(button.getAttribute('onclick')?.match(/,\s*(\d+)\s*\)/)?.[1]) || (type === 'summary' ? 5 : 10);
+      const weekPool = typeof window.__cpcPool === 'function' ? window.__cpcPool(week) : [];
+      const verifiedPoolSize = weekPool.length || (Number(week.num) >= 7 && Number(week.num) <= 17 ? 15 : 0);
+      const count = explicit ? (Number(explicit[2]) ? Math.min(requested,Number(explicit[2])) : 0) : Math.min(requested,verifiedPoolSize);
+      return {button,count};
+    };
+    const card = (original,type,quiz) => {
+      const tone = type === 'complete' ? 'complete' : type === 'summary' ? 'summary' : 'map';
+      const title = type === 'complete' ? 'Teoria completa' : type === 'summary' ? 'Versão de revisão' : 'Mapa mental';
+      const action = type === 'complete' ? 'Estudar conteúdo' : type === 'summary' ? 'Revisar conteúdo' : 'Visualizar mapa mental';
+      const icon = type === 'complete' ? '📚' : type === 'summary' ? '⚡' : '🧠';
+      const description = original.querySelector('span:nth-of-type(2) small')?.textContent.trim() || (type === 'map' ? 'Revise visualmente os principais pontos do módulo.' : 'Retome os pontos principais do módulo.');
+      const sourceTitle = original.querySelector('strong')?.textContent.trim() || title;
+      const progress = original.querySelector('.bc-native-material-action')?.textContent.replace(/→/g,'').trim() || '';
+      const article = document.createElement('article');
+      article.className = 'cpc-approved-card cpc-approved-' + tone;
+      article.dataset.cpcApprovedCard = type;
+      article.innerHTML = '<div class="cpc-approved-icon" aria-hidden="true">' + icon + '</div>' +
+        '<div class="cpc-approved-copy"><h3>' + title + '</h3><p>' + esc(description) + '</p>' +
+        (progress ? '<small class="cpc-approved-progress-label">' + esc(progress) + '</small>' : '') +
+        '<div class="cpc-approved-tags"><span>' + esc(sourceTitle) + '</span><span>Processo Civil</span></div></div><div class="cpc-approved-actions"></div>';
+      const primary = document.createElement('button');
+      primary.type = 'button'; primary.className = 'cpc-approved-primary'; primary.textContent = action;
+      const handler = original.getAttribute('onclick'); if (handler) primary.setAttribute('onclick',handler);
+      article.querySelector('.cpc-approved-actions').append(primary);
+      if (quiz?.button) {
+        quiz.button.classList.remove('good'); quiz.button.classList.add('cpc-approved-secondary');
+        quiz.button.textContent = quiz.count ? 'Resolver ' + quiz.count + ' questões' : 'Questões internas indisponíveis';
+        if (!quiz.count) { quiz.button.disabled = true; quiz.button.setAttribute('aria-label','Não há questões disponíveis nesta bateria'); }
+        article.querySelector('.cpc-approved-actions').append(quiz.button);
+      }
+      return article;
+    };
+    grid.replaceChildren(card(complete,'complete',question('complete')),card(summary,'summary',question('summary')));
+    if (map) grid.append(card(map,'map',null));
+    materials.classList.add('cpc-approved-materials'); materials.querySelector('.bc-native-materials-head')?.remove();
+    intro?.remove(); body.querySelector(':scope > .cf-module-bar')?.remove();
+    // Render the approved two-bar progress summary; native counters/history remain untouched.
+    body.querySelector(':scope > .bc-native-metrics')?.remove();
+    body.querySelectorAll('.cpc-mini-panel').forEach(panel => {
+      // This is only the manual external-question entry card. The actual QC/TEC filters stay intact.
+      if (panel.querySelector('.cpc-external-form')) panel.remove();
+    });
+    cpcApprovedProgress(module,week);
+    materials.dataset.cpcApproved = '1';
+  }
   function identity(module) {
     const subject = module.closest('.subject').dataset.id;
     const id = module.dataset.civilAnalista || module.dataset.ptCurrent || module.dataset.ptnModule || module.dataset.cf || module.dataset.penal || module.dataset.cpc || module.dataset.cppNativeModule || module.dataset.cppNum || module.dataset.uid;
@@ -142,7 +249,8 @@
     let value = ''; try {
       const current = localStorage.getItem('central-v6:module-notes:' + meta.key);
       const oldId = meta.subject === 'cpp' ? 'cpp-' + meta.id : meta.id;
-      value = current ?? localStorage.getItem('central-v6:module-standard-notes:v1:' + oldId) ??
+      value = current ?? (meta.subject === 'cpc' ? localStorage.getItem('central-v6:cpc-note:' + meta.id) : null) ??
+        localStorage.getItem('central-v6:module-standard-notes:v1:' + oldId) ??
         (meta.subject === 'civil' ? localStorage.getItem('central-v6:civil-note:' + meta.id) : null) ?? '';
     } catch (_) {}
     note.innerHTML = '<label for="' + id + '">Anotações do módulo</label><textarea id="' + id + '" placeholder="Regra, dúvida, pegadinha, observação...">' + esc(value) + '</textarea><div class="ds-actions"><button type="button" class="ds-action" data-ds-save-note>Salvar anotação</button><span role="status" aria-live="polite" class="ds-note-status"></span></div>';
@@ -221,6 +329,10 @@
       // Remove only the redundant manual question entry/history UI; keep stored rounds intact.
       footer.querySelector(':scope > .ds-footer-questions')?.remove();
     }
+    if (meta.subject === 'cpc') {
+      // Remove the duplicate entry form, preserving the round history and saved records.
+      footer.querySelector(':scope > .ds-footer-questions form.perf-form')?.remove();
+    }
     if (body.lastElementChild !== footer) body.appendChild(footer);
     const history = footer.querySelector('[data-ds-footer-history]');
     if (history) { const html = footerHistory(meta); if (history.innerHTML !== html) history.innerHTML = html; }
@@ -261,6 +373,18 @@
     // Mantém apenas o rodapé padrão (questões externas, revisão, ferramentas e anotações),
     // sem recriar o painel/progresso e a navegação legados por cima dos cards nativos.
     if ((meta.subject === 'penal' && /^p(?:[1-9]|1[0-7])$/.test(meta.id)) || (meta.subject === 'pt' && module.dataset.ptCurrent)) {
+      body.querySelector(':scope > .csp-panel[data-ds-summary]')?.remove();
+      body.querySelector(':scope > .ds-module-nav')?.remove();
+      moduleFooter(module,body,meta);
+      notes(module,body,meta);
+      return;
+    }
+
+    // CPC already renders its native progress and linked study actions. Keep
+    // those controls as the source of truth and avoid adding a second progress
+    // panel and navigation strip over the approved module layout.
+    if (meta.subject === 'cpc') {
+      cpcApprovedLayout(module);
       body.querySelector(':scope > .csp-panel[data-ds-summary]')?.remove();
       body.querySelector(':scope > .ds-module-nav')?.remove();
       moduleFooter(module,body,meta);
@@ -397,7 +521,7 @@
       catch (_) { box.querySelector('[role=status]').textContent = 'Não foi possível salvar'; }
     }
   });
-  window.CentralDisciplineStandard = { refresh, version:'1.1.2' };
+  window.CentralDisciplineStandard = { refresh, cpcApprovedLayout, version:'1.1.3' };
   function start() { observer = new MutationObserver(schedule); refresh(); }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded',start,{once:true}); else start();
 })();

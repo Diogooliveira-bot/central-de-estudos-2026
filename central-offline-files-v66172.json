@@ -491,6 +491,8 @@
     "/ui/student-dashboard-v3.js?v=20261019-filter-runtime-repair",
     "/ui/student-plan-v3.js?v=20261019-filter-runtime-repair",
     "/ui/external-question-filters-v1.css?v=20261019-filter-runtime-repair",
-    "/ui/external-question-filters-v1.js?v=20261019-filter-runtime-repair"
+    "/ui/external-question-filters-v1.js?v=20261019-filter-runtime-repair",
+    "/ui/cpc-approved-layout-v1.css?v=20261019cpcstandard1",
+    "/ui/approved-cpc-layout-v1.js?v=20261019cpcstandard2"
   ]
 }
