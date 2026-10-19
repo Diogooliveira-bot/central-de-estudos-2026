@@ -1,6 +1,6 @@
 {
   "schema": "qc-central-sharing-v1",
-  "generatedAt": "2026-10-20T00:40:00.000Z",
+  "generatedAt": "2026-10-20T00:55:00.000Z",
   "platform": "QConcursos",
   "counts": {
     "administrativo": {
@@ -10,8 +10,8 @@
     },
     "penal": {
       "items": 64,
-      "linked": 59,
-      "pending": 5
+      "linked": 60,
+      "pending": 4
     },
     "processualPenal": {
       "items": 74,
@@ -19,8 +19,8 @@
       "pending": 9
     },
     "totalItems": 393,
-    "totalValidatedPublicLinks": 344,
-    "totalPending": 49,
+    "totalValidatedPublicLinks": 345,
+    "totalPending": 48,
     "constitucional": {
       "items": 19,
       "linked": 19,
@@ -2495,14 +2495,13 @@
       "kind": "subdivisao",
       "moduleTitle": "Constituição Penal, Responsabilidade Penal da Pessoa Jurídica, Súmulas e Consolidação",
       "title": "Princípios constitucionais penais",
-      "notebookTitle": null,
-      "id": null,
-      "quantity": null,
-      "link": null,
-      "status": "Pendente",
-      "public": false,
-      "source": "checkpoint_direito_penal_qc.json",
-      "pendingReason": "Lacuna tem?tica sem filtro nativo exclusivo."
+      "notebookTitle": "DP M17.2 Princípios constitucionais penais",
+      "id": "15351442",
+      "quantity": 4,
+      "link": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15351442",
+      "status": "VALIDADO",
+      "public": true,
+      "source": "QC autenticado em 2026-10-20: caderno reaberto com 4 questões pertinentes (Q3676254, Q1826454, Q1826457, Q1826460); compartilhamento ativo confirmado na listagem (0EM-FMJ)."
     },
     {
       "discipline": "Direito Penal",
