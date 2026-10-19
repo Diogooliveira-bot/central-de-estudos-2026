@@ -2,7 +2,7 @@
 
 Base: padrão visual aprovado de Constitucional/Português. Escopo: 20 módulos reais identificados em `content/adm/adm-native-index.js`.
 
-Todos os módulos usam o mesmo renderer nativo; a tabela registra a inspeção de metadados e estrutura disponível. Os testes de interação no navegador são descritos após serem executados na prévia.
+Todos os módulos usam o mesmo renderer nativo; a estrutura e os metadados dos 20 módulos foram conferidos individualmente. O teste automatizado confirma em todos os módulos os botões, quantidades reais (10/5), infográfico real, estrutura única de anotações e preservação dos dados/identificadores.
 
 | Módulo | Estrutura | Botões e questões | Infográfico | Anotações | Filtros TEC/QC | Status |
 |---|---|---|---|---|---|---|
@@ -37,4 +37,22 @@ Todos os módulos usam o mesmo renderer nativo; a tabela registra a inspeção d
 
 ## Pendências de validação
 
-- Os testes em navegador de prévia e as quatro larguras pedidas serão acrescentados ao relatório ao concluir o deploy.
+### Testes automatizados
+
+- `node --test tests/adm-standardization-unit.mjs`: aprovado (1/1). O teste percorre os 20 módulos e verifica estrutura, ações e preservação de dados.
+- `npm test`: 85 aprovados e 1 falha. A falha é `tests/external-question-center-unit.mjs` (“catálogo organiza QC e TEC em colunas próprias por módulo”, linha 158); reproduz-se fora deste trabalho e está em componente/teste fora do escopo. Nenhuma alteração foi feita nesse componente.
+- `git diff --check` e `node --check ui/adm-native-layer.js`: aprovados.
+
+### Testes na prévia Vercel
+
+- M01 aberto no navegador real da prévia: ordem e hierarquia dos cards confirmadas; painel de questões conserva 10 questões completas e 5 de revisão; filtros oficiais exibem 4 QC e 4 TEC com IDs, contagens e links; ferramentas ficam após os recursos do módulo; blocos legados não aparecem.
+- Teoria completa e revisão abrem leitores distintos com seus conteúdos próprios; leitor expõe sumário, fonte e fechar. “Resolver 10 questões” leva ao título “10 Questões Internas — Conteúdo Completo”.
+- Infográfico real do M01 aberto: proporção intrínseca 600×959 preservada, imagem não cortada no visualizador; controles de ampliação e download testados, download concluído.
+- Anotações: uma seção por módulo. Nota descartável de QA salvou e permaneceu após recarga; ficou somente na sessão convidada isolada da prévia, sem acesso a dados de alunos.
+- Console: nenhum erro JavaScript da aplicação observado durante a jornada.
+- Inspeção visual feita a 1363×936 (desktop). A interface declara layout de coluna única e estilos responsivos; a sessão do navegador não oferece redimensionamento para 1440, 1024, 768 e 390 px. Tablet e celular nesses tamanhos permanecem pendentes de validação visual direta.
+
+### Pendências
+
+- Validar visualmente em 1440, 1024, 768 e 390 px em navegador com viewport redimensionável. O renderer é compartilhado nos 20 módulos e os estilos são isolados em `adm-*`, mas isso não substitui essa checagem.
+- A falha preexistente do teste de catálogo QC/TEC precisa de investigação separada; nesta mudança, a associação dos filtros e os painéis da Central de Questões foram mantidos.
