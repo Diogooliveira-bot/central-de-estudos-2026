@@ -268,6 +268,17 @@
       return;
     }
 
+    // CPC already renders its native progress and linked study actions. Keep
+    // those controls as the source of truth and avoid adding a second progress
+    // panel and navigation strip over the approved module layout.
+    if (meta.subject === 'cpc') {
+      body.querySelector(':scope > .csp-panel[data-ds-summary]')?.remove();
+      body.querySelector(':scope > .ds-module-nav')?.remove();
+      moduleFooter(module,body,meta);
+      notes(module,body,meta);
+      return;
+    }
+
     if (!body.querySelector('.csp-panel')) body.insertAdjacentHTML('afterbegin',progressPanel(module,meta));
     else {
       const panel = body.querySelector('[data-ds-summary]');
