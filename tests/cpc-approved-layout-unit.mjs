@@ -27,7 +27,7 @@ function fixture(emptyQuestions = false, questionLabelsWithoutTotals = false) {
         ${index === 7 ? '' : `<button class="bc-native-material-card" onclick="Map${n}.open()"><span>🧠</span><span><strong>Mapa mental</strong><small>Carrossel real do módulo</small></span><span class="bc-native-material-action">Abrir →</span></button>`}
       </div></section>
         <section class="cpc-study-intro"><button onclick="${index >= 6 && index <= 16 ? `startCpcQuiz('${id}','intermediate',5)` : `Quiz${n}.open('${summary}','summary')`}">5 do resumido · ${emptyQuestions ? '0/0' : questionLabelsWithoutTotals ? '' : '5/5'}</button><button onclick="${index >= 6 && index <= 16 ? `startCpcQuiz('${id}','fixation',10)` : `Quiz${n}.open('${summary}','full')`}">10 do completo · ${emptyQuestions ? '0/0' : questionLabelsWithoutTotals ? '' : '10/10'}</button></section>
-      <div class="cpc-bottom-grid"><button>Lei em Dia</button></div><details class="cf-resources"><div class="cf-resource-box"><textarea id="cf-note-${id}">Nota preservada ${index+1}</textarea></div></details>
+      <div class="cpc-bottom-grid"><button>Lei em Dia</button><section class="cpc-mini-panel"><h3>Questões externas</h3><div class="cpc-external-form"><label>Feitas<input id="cpc-ext-done-w${index+1}" value="4"></label><label>Acertos<input id="cpc-ext-correct-w${index+1}" value="3"></label><button>Salvar</button></div></section></div><details class="cf-resources"><div class="cf-resource-box"><textarea id="cf-note-${id}">Nota preservada ${index+1}</textarea></div></details>
     </div></section>`;
   }).join('');
   const dom = new JSDOM(`<!doctype html><html><body><main id="subjects"><section class="subject" data-id="cpc"><div class="subject-body">${modules}</div></section></main></body></html>`, {
@@ -66,7 +66,14 @@ test('padroniza os 20 módulos CPC sem duplicar a leitura e preserva conteúdo e
     }
     assert.equal(module.querySelectorAll('.cpc-approved-reading').length, 1);
     assert.equal(module.querySelectorAll('.cpc-study-intro').length, 0);
-    assert.equal(module.querySelector('.bc-native-metrics'), null, 'o painel de progresso duplicado não aparece no corpo do módulo');
+    assert.equal(module.querySelector('.bc-native-metrics'), null, 'o painel nativo duplicado não aparece no corpo do módulo');
+    const progress = module.querySelector('.cpc-approved-progress');
+    assert.ok(progress, 'as duas barras de progresso CPC aparecem no módulo');
+    assert.equal(progress.querySelectorAll('[role="progressbar"]').length, 2);
+    assert.match(progress.textContent, /Progresso da teoria/);
+    assert.match(progress.textContent, /Questões externas/);
+    assert.equal(module.querySelector('.cpc-mini-panel .cpc-external-form'), null, 'o formulário manual externo é removido da interface');
+    assert.equal(module.querySelectorAll('.cpc-bottom-grid button').length, 1, 'Lei em Dia continua acessível');
     assert.equal(module.querySelector('.cpc-approved-reading [data-cpc-law]'), null, 'o link de Lei em Dia permanece no card próprio, sem duplicar na leitura');
     assert.equal(module.querySelector('.cpc-bottom-grid button').textContent, 'Lei em Dia', 'o vínculo nativo de Lei em Dia permanece disponível');
     assert.equal(module.querySelector('.cpc-approved-reading p').textContent, `Leitura legal M${index+1}`);
