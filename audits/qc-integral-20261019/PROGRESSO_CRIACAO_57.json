@@ -1,0 +1,199 @@
+{
+  "schema": "qc-pending-creation-progress-v1",
+  "updatedAt": "2026-10-19T23:59:00Z",
+  "initialPending": 57,
+  "createdAndValidated": 5,
+  "remainingPending": 52,
+  "records": [
+    {
+      "discipline": "Direito Penal",
+      "module": "M01.1",
+      "moduleTitle": "Princípios, interpretação, analogia e conflito aparente",
+      "subject": "Princípios limitadores do poder punitivo estatal",
+      "qcId": "15349719",
+      "notebookTitle": "Direito Penal - Princípios lim",
+      "questionCount": 15,
+      "criteria": {
+        "area": "Jurídica",
+        "subjectTaxonomy": "Direito Penal > Noções Fundamentais > Princípios limitadores do poder punitivo estatal",
+        "yearRange": "2019-2026",
+        "priorityBoards": [
+          "FCC",
+          "Cebraspe",
+          "FGV",
+          "Vunesp",
+          "Instituto AOCP"
+        ],
+        "additionalRelevantBoards": [
+          "IBFC",
+          "Instituto Consulplan",
+          "Fundatec",
+          "FUMARC",
+          "IBADE"
+        ],
+        "excluded": [
+          "anuladas",
+          "desatualizadas"
+        ]
+      },
+      "url": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15349719",
+      "status": "criado, salvo, reaberto e integrado; link compartilhável confirmado na listagem autenticada"
+    },
+    {
+      "discipline": "Direito Penal",
+      "module": "M01.3",
+      "moduleTitle": "Princípios, interpretação, analogia e conflito aparente",
+      "subject": "Conflito aparente de normas",
+      "qcId": "15349881",
+      "shareCode": "0EM-E3S",
+      "notebookTitle": "Direito Penal M01.3 Conflito aparente",
+      "questionCount": 19,
+      "criteria": {
+        "area": "Direito",
+        "subjectTaxonomy": "Direito Penal > Noções Fundamentais > 1.4 Conflito aparente de normas",
+        "yearRange": "2019-2026",
+        "priorityBoards": [
+          "FCC",
+          "Cebraspe",
+          "FGV",
+          "Vunesp",
+          "Instituto AOCP"
+        ],
+        "additionalRelevantBoards": "Sem restrição de banca: o conjunto ficou abaixo de 60 questões após ampliar a oito anos.",
+        "excluded": [
+          "anuladas",
+          "desatualizadas"
+        ]
+      },
+      "url": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15349881",
+      "status": "criado, salvo, reaberto e integrado; 19 questões visíveis; caderno compartilhável confirmado na listagem autenticada"
+    },
+    {
+      "discipline": "Direito Administrativo",
+      "module": "M19.3",
+      "moduleTitle": "Lei de Acesso à Informação — Lei 12.527/2011",
+      "subject": "Restrições, classificação e informações pessoais",
+      "qcId": "15350419",
+      "shareCode": "0EM-EMK",
+      "notebookTitle": "ADM M19.3 Informações pessoais",
+      "questionCount": 1,
+      "criteria": {
+        "method": "seleção manual após busca por tema/legislação",
+        "questionId": "Q4385514",
+        "questionTopic": "Acesso a dados funcionais de agente público, publicidade, proteção de dados e sigilo; tags LAI e LGPD",
+        "board": "ISET",
+        "year": 2026,
+        "minimumQuestionCount": 0,
+        "note": "Questão conferida individualmente como pertinente ao recorte; sem questões adicionais para elevar quantidade."
+      },
+      "url": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15350419",
+      "status": "criado, salvo, reaberto e integrado; 1 questão conferida; opção “Tornar Privado” observada na listagem, indicando compartilhamento ativo"
+    },
+    {
+      "discipline": "Direito Administrativo",
+      "module": "M06.3",
+      "moduleTitle": "Processo Administrativo — Lei 9.784/1999",
+      "subject": "Extinção, revisão, prazos e disposições finais; questão individual selecionada sobre prazos de recurso e revisão",
+      "qcId": "15350502",
+      "shareCode": "0EM-EQ6",
+      "notebookTitle": "ADM M06.3 Revisão e prazos",
+      "questionCount": 1,
+      "criteria": {
+        "method": "busca por palavra-chave e seleção manual após leitura integral",
+        "search": "Lei 9.784 extinção revisão",
+        "questionId": "Q3129382",
+        "questionSubjectLabelInQC": "Início e interessados no processo administrativo, delegação e avocação de competências (rótulo amplo que não descreve o conteúdo da questão)",
+        "questionContent": "Enunciado pergunta expressamente prazos e procedimentos do recurso administrativo e da revisão; alternativas tratam de prazo recursal, decisão e revisão do ato ilegal.",
+        "board": "IV - UFG",
+        "year": 2024,
+        "minimumQuestionCount": 0,
+        "note": "Selecionada unicamente a questão que coincide com revisão e prazos; nenhuma questão extra foi incluída."
+      },
+      "url": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15350502",
+      "status": "criado, salvo, reaberto e integrado; 1 questão visível; link compartilhável confirmado na listagem QC"
+    },
+    {
+      "discipline": "Direito Penal",
+      "module": "M01.2",
+      "moduleTitle": "Princípios, interpretação, analogia e conflito aparente",
+      "subject": "Interpretação da lei penal e analogia in bonam partem",
+      "qcId": "15350527",
+      "shareCode": "0EM-EQZ",
+      "notebookTitle": "DP M01.2 Interpretação e analogia",
+      "questionCount": 1,
+      "criteria": {
+        "method": "questão individual selecionada após busca e leitura integral",
+        "search": "interpretação analogia direito penal",
+        "questionId": "Q3961243",
+        "subjectTag": "Direito Penal > Noções Fundamentais",
+        "board": "CESPE / CEBRASPE",
+        "year": 2026,
+        "excluded": [
+          "anuladas",
+          "desatualizadas"
+        ],
+        "minimumQuestionCount": 0,
+        "note": "Uma questão diretamente alinhada ao submódulo; sem questões extras para elevar a quantidade."
+      },
+      "url": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15350527",
+      "status": "criado, salvo, reaberto e integrado; 1 questão confirmada; compartilhamento ativo verificado"
+    }
+  ],
+  "attempts": [
+    {
+      "discipline": "Direito Administrativo",
+      "module": "M06.3",
+      "status": "superado: caderno 15350502 criado, reaberto, validado e integrado",
+      "evidence": "QC oferece o assunto amplo Processo Administrativo/Lei 9.784 e itens de início/interessados ou recursos, sem recorte de extinção, revisão, prazos e disposições finais. Nenhum caderno criado.",
+      "status_historico": "bloqueado: assunto nativo específico não localizado",
+      "supersededBy": "15350502"
+    },
+    {
+      "discipline": "Direito Administrativo",
+      "module": "M15.2",
+      "status": "bloqueado: assunto nativo específico não localizado",
+      "evidence": "Busca da disciplina por “planejamento” e “fase preparatória” não retornou assunto. “9.5 Fases e Processo Licitatório” é amplo e inclui fases além de planejamento setorial; não foi usado como substituto."
+    },
+    {
+      "discipline": "Direito Administrativo",
+      "module": "M04.4",
+      "status": "bloqueado: assunto nativo específico não localizado",
+      "evidence": "Busca por “Abuso de Autoridade” dentro de Direito Administrativo retornou nenhum resultado."
+    },
+    {
+      "discipline": "Direito Penal",
+      "module": "M01.2",
+      "status": "superado: caderno 15350527 criado, reaberto, validado e integrado",
+      "evidence": "O assunto nativo 1.3 A norma penal traz 39 questões em 2022-2026 e 19 em 2019-2026, mas inclui recortes de lei penal no tempo, espaço, fontes e normas em branco além de interpretação/analogia. Não foi criado caderno por não isolar com confiança o submódulo.",
+      "status_historico": "mantido pendente: correspondência específica não confirmada",
+      "supersededBy": "15350527"
+    },
+    {
+      "discipline": "Direito Penal",
+      "module": "M13.4",
+      "status": "não criado: taxonomia específica não localizada",
+      "evidence": "Na disciplina Direito Penal, a busca rápida pela expressão Crimes contra as finanças públicas não retornou assunto nativo; nenhum caderno foi salvo."
+    },
+    {
+      "discipline": "Direito Penal",
+      "module": "M14",
+      "status": "não criado: taxonomia específica não localizada",
+      "evidence": "Na disciplina Direito Penal, a busca rápida por Abuso de Autoridade não retornou assunto nativo; nenhum caderno foi salvo."
+    },
+    {
+      "discipline": "Direito Penal",
+      "module": "M17.1",
+      "status": "não criado: resultado do filtro contaminado por questões de outros assuntos",
+      "evidence": "O assunto nativo 3.2 Crime praticado por pessoa jurídica existe. Com o recorte temporal de 8 anos, o QC retornou 3 questões; a inspeção mostrou apenas uma claramente sobre responsabilidade penal da pessoa jurídica e duas de outros tópicos. Nenhum caderno foi salvo."
+    }
+  ],
+  "testResults": {
+    "command": "npm test",
+    "passed": 100,
+    "failed": 0,
+    "skipped": 1,
+    "skipReason": "Chromium do Playwright não instalado; uma verificação de navegador real foi ignorada pelo repositório.",
+    "targetedTests": "28 aprovados, 0 falhas após a última integração",
+    "diffCheck": "passed"
+  }
+}

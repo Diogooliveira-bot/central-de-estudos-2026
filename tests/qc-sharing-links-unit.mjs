@@ -13,11 +13,11 @@ vm.runInNewContext(read('content/qc-sharing-links.js'), context);
 
 test('tabela preserva os totais e os registros QC catalogados', () => {
   assert.equal(table.platform, 'QConcursos');
-  assert.equal(table.counts.penal.linked, 53);
+  assert.equal(table.counts.penal.linked, 56);
   assert.equal(table.counts.processualPenal.linked, 65);
-  assert.equal(table.counts.administrativo.linked, 61);
-  assert.equal(table.counts.totalValidatedPublicLinks, 336);
-  assert.equal(table.counts.totalPending, 57);
+  assert.equal(table.counts.administrativo.linked, 63);
+  assert.equal(table.counts.totalValidatedPublicLinks, 341);
+  assert.equal(table.counts.totalPending, 52);
   assert.deepEqual(JSON.parse(JSON.stringify(context.window.QC_CENTRAL_SHARING_LINKS)), table);
 });
 
@@ -70,14 +70,14 @@ test('integração mantém os painéis TEC e QConcursos separados e responsivos'
   assert.match(ui, /data-cpp-native-module/);
   assert.match(admUi, /ADM_SHARING_LINKS/);
   assert.match(admUi, /sharingPanel\(uid\)/);
-  assert.match(central, /content\/qc-sharing-links\.js\?v=20261013qclinks1/);
-  assert.match(central, /content\/qc-notebook-catalog\.js\?v=20261019qcnotebooks1/);
-  assert.match(central, /ui\/qc-sharing-links\.js\?v=20261013qclinks1/);
+  assert.match(central, /content\/qc-sharing-links\.js\?v=20261019qccreate3/);
+  assert.match(central, /content\/qc-notebook-catalog\.js\?v=20261019qccreate3/);
+  assert.match(central, /ui\/qc-sharing-links\.js\?v=20261019qccreate3/);
 });
 
 test('pendências de Administrativo sem filtro exclusivo não expõem o caderno amplo', () => {
   const pending = new Set(table.items.filter(x => x.disciplineKey === 'administrativo' && x.status === 'Pendente').map(x => x.code));
-  for (const code of ['M06.3','M15.2','M16.5','M07','M11','M19','M20']) {
+  for (const code of ['M15.2','M16.5','M07','M11','M19','M20']) {
     assert.ok(pending.has(code), `${code} deve aparecer como Pendente`);
   }
   const m055 = table.items.find(x => x.disciplineKey === 'administrativo' && x.code === 'M05.5');
@@ -90,6 +90,10 @@ test('pendências de Administrativo sem filtro exclusivo não expõem o caderno 
 });
 
 test('cadernos validados dos módulos auditados ficam visíveis na Central de Questões', () => {
+  assert.ok(table.items.some((x) => x.disciplineKey === 'penal' && x.code === 'M01.3' && x.id === '15349881' && x.quantity === 19 && x.status === 'VALIDADO'));
+  assert.ok(table.items.some((x) => x.disciplineKey === 'administrativo' && x.code === 'M19.3' && x.id === '15350419' && x.quantity === 1 && x.status === 'VALIDADO'));
+  assert.ok(table.items.some((x) => x.disciplineKey === 'administrativo' && x.code === 'M06.3' && x.id === '15350502' && x.quantity === 1 && x.status === 'VALIDADO'));
+  assert.ok(table.items.some((x) => x.disciplineKey === 'penal' && x.code === 'M01.2' && x.id === '15350527' && x.quantity === 1 && x.status === 'VALIDADO'));
   for (const [disciplineKey, expected] of Object.entries({
     civil: 61, portugues: 27, constitucional: 19, trabalho: 18,
     'processual-trabalho': 18, rlm: 14
