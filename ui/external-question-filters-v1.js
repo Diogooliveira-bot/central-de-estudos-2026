@@ -573,7 +573,7 @@
       const body = moduleBody(element);
       if (!body) return;
       if (element.matches('.pt-module-card[data-module-card]') && body.dataset.loaded !== '1') return;
-      const mountedPanels = Array.from(body.querySelectorAll(':scope > [data-bcq-module-panel]'));
+      const mountedPanels = Array.from(body.querySelectorAll('[data-bcq-module-panel]'));
       let panel = mountedPanels.shift() || null;
       mountedPanels.forEach((duplicate) => duplicate.remove());
       if (!filters.length) {
@@ -599,7 +599,7 @@
         hideOriginalPanels(body);
         updateModuleMetric(element, filters);
       } catch (reason) {
-        panel = body.querySelector(':scope > [data-bcq-module-panel]');
+        panel = body.querySelector('[data-bcq-module-panel]');
         if (panel) hideOriginalPanels(body); else showOriginalPanels(body);
         console.warn('[Central de Questões] Mantendo os filtros originais do módulo.', reason);
       }
