@@ -219,7 +219,15 @@
 
     const note = footer.querySelector(':scope > .ds-notes');
     const filterPanels = Array.from(body.querySelectorAll(':scope > .tec-validated-panel,:scope > .bcq-module-panels,:scope > .ds-module-footer > .tec-validated-panel,:scope > .ds-module-footer > .bcq-module-panels'));
-    filterPanels.forEach(panel => panel.classList.add('penal-approved-filter-panel'));
+    const mountedBcqPanels = new Set();
+    filterPanels.forEach(panel => {
+      if (!panel.matches('.bcq-module-panels')) return;
+      const key = panel.getAttribute('data-bcq-module-panel') || 'module';
+      if (mountedBcqPanels.has(key)) panel.remove();
+      else mountedBcqPanels.add(key);
+    });
+    const uniqueFilterPanels = filterPanels.filter(panel => panel.isConnected);
+    uniqueFilterPanels.forEach(panel => panel.classList.add('penal-approved-filter-panel'));
     const moduleLaw = Array.from(body.querySelectorAll(':scope > .cf-resource-box,:scope > .ds-module-footer > .cf-resource-box')).find(box => (box.querySelector('h4')?.textContent || '').trim().toLocaleLowerCase('pt-BR') === 'lei em dia');
     moduleLaw?.classList.add('penal-approved-extra');
     const review = footer.querySelector(':scope > .ds-footer-review');
@@ -250,7 +258,7 @@
       });
     }
 
-    const ordered = [note,...filterPanels,moduleLaw,extra,tools,resources,review].filter(Boolean);
+    const ordered = [note,...uniqueFilterPanels,moduleLaw,extra,tools,resources,review].filter(Boolean);
     const others = Array.from(footer.children).filter(node => !ordered.includes(node));
     footer.replaceChildren(...ordered,...others);
   }
