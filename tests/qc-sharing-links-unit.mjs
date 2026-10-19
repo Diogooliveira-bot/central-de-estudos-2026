@@ -71,6 +71,7 @@ test('integração mantém os painéis TEC e QConcursos separados e responsivos'
   assert.match(admUi, /ADM_SHARING_LINKS/);
   assert.match(admUi, /sharingPanel\(uid\)/);
   assert.match(central, /content\/qc-sharing-links\.js\?v=20261013qclinks1/);
+  assert.match(central, /content\/qc-notebook-catalog\.js\?v=20261019qcnotebooks1/);
   assert.match(central, /ui\/qc-sharing-links\.js\?v=20261013qclinks1/);
 });
 

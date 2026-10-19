@@ -668,6 +668,7 @@
         <section data-bcq-panel="overview"></section>
         <section data-bcq-panel="disciplines" hidden></section>
         <section data-bcq-panel="filters" hidden>
+          <details class="bcq-qc-inventory" data-bcq-qc-inventory hidden></details>
           <div class="bcq-toolbar"><label><span>Pesquisar</span><input type="search" data-bcq-search placeholder="Disciplina, módulo, título ou ID"></label><label><span>Disciplina</span><select data-bcq-discipline><option value="">Todas</option></select></label><label><span>Plataforma</span><select data-bcq-platform-select><option value="">QC e TEC</option><option value="qc">QConcursos</option><option value="tec">TEC Concursos</option></select></label></div>
           <div class="bcq-page-layout"><div class="bcq-page-list" data-bcq-page-list></div><aside class="bcq-detail" data-bcq-detail><div class="bcq-detail-empty"><b>Selecione um filtro</b><span>O histórico completo aparecerá aqui.</span></div></aside></div>
         </section>
@@ -876,6 +877,45 @@
     host.innerHTML = Array.from(groups.values()).map((group) => `<section class="bcq-page-group"><header><b>${esc(group.discipline)}</b><span>${esc(group.module)}</span></header><div>${group.filters.map(filterListButton).join('')}</div></section>`).join('');
     renderDetail(items.find((item) => item.stableKey === selectedKey) || items[0]);
   }
+  function renderQcNotebookInventory(page) {
+    const section = page.querySelector('[data-bcq-qc-inventory]');
+    const catalog = global.QC_NOTEBOOK_CATALOG;
+    if (!section) return;
+    section.hidden = !canManageFilters || !Array.isArray(catalog?.items);
+    if (section.hidden || section.dataset.ready === '1') return;
+    const linked = catalog.items.filter((item) => item.linkedInExistingMap).length;
+    const unconfirmed = catalog.items.length - linked;
+    const rows = [...catalog.items].sort((a, b) =>
+      String(a.candidateDiscipline || '').localeCompare(String(b.candidateDiscipline || ''), 'pt-BR') ||
+      String(a.candidateModule || '').localeCompare(String(b.candidateModule || ''), 'pt-BR', { numeric: true }) ||
+      String(a.title || '').localeCompare(String(b.title || ''), 'pt-BR')
+    );
+    section.innerHTML = `<summary><span><b>Catálogo administrativo QC</b><small>${catalog.items.length} cadernos inventariados · ${linked} já constam dos mapas · ${unconfirmed} sem vínculo confirmado</small></span><span aria-hidden="true">⌄</span></summary>
+      <div class="bcq-qc-inventory-body"><p>As sugestões de disciplina/módulo vêm da matriz estrutural. Itens não confirmados não são filtros dos alunos. A validação do destino exige conferir o caderno no QC.</p>
+      <label class="bcq-qc-inventory-search"><span>Buscar por título, disciplina, módulo ou ID</span><input type="search" data-bcq-qc-inventory-search placeholder="Ex.: M08.1, 15285091"></label>
+      <div class="bcq-qc-inventory-scroll"><table><thead><tr><th>Caderno QC</th><th>Associação sugerida</th><th>Situação</th><th>Link original</th></tr></thead><tbody data-bcq-qc-inventory-rows>${rows.map((item) => {
+        const suggestion = [item.candidateDiscipline, item.candidateModule, item.candidateSubmodule].filter(Boolean).join(' · ') || 'Sem sugestão estrutural';
+        const status = item.linkedInExistingMap ? 'Já consta em mapa existente; destino a validar' : 'Sem correspondência confirmada';
+        const pending = item.pendingCandidateCode ? ` · candidato à pendência ${item.pendingCandidateCode}` : '';
+        const search = [item.title, item.id, item.candidateDiscipline, item.candidateModule, item.candidateSubmodule, item.candidateModuleTitle, item.pendingCandidateCode].join(' ');
+        const url = safeUrl(item.url, 'qc');
+        return `<tr data-bcq-qc-inventory-row data-search="${attr(search)}"><td><b>${esc(item.title || 'Caderno sem título')}</b><small>ID ${esc(item.id)}${pending}</small></td><td>${esc(suggestion)}<small>${esc(item.candidateModuleTitle || '')}</small></td><td><span data-status="${item.linkedInExistingMap ? 'linked' : 'unconfirmed'}">${esc(status)}</span></td><td>${url ? `<a href="${attr(url)}" target="_blank" rel="noopener noreferrer">Abrir original no QC ↗</a>` : 'Link inválido'}</td></tr>`;
+      }).join('')}</tbody></table></div><small class="bcq-qc-inventory-count" data-bcq-qc-inventory-count>Exibindo ${rows.length} de ${catalog.items.length}</small></div>`;
+    const search = section.querySelector('[data-bcq-qc-inventory-search]');
+    const body = section.querySelector('[data-bcq-qc-inventory-rows]');
+    const count = section.querySelector('[data-bcq-qc-inventory-count]');
+    search?.addEventListener('input', () => {
+      const term = search.value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
+      let shown = 0;
+      body?.querySelectorAll('[data-bcq-qc-inventory-row]').forEach((row) => {
+        const text = String(row.dataset.search || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+        row.hidden = Boolean(term && !text.includes(term));
+        if (!row.hidden) shown += 1;
+      });
+      if (count) count.textContent = `Exibindo ${shown} de ${rows.length}`;
+    });
+    section.dataset.ready = '1';
+  }
   function renderHistory(page) {
     const sessions = allSessionEntries();
     page.querySelector('[data-bcq-panel="history"]').innerHTML = `<section class="bcq-center-panel"><header><div><span>EVOLUÇÃO</span><h2>Desempenho por sessão</h2><p>Percentual das últimas tentativas em ordem cronológica.</p></div></header>${evolutionSvg(sessions.map((entry) => entry.session), 'all')}</section><section class="bcq-center-panel"><header><div><span>SESSÕES REGISTRADAS</span><h2>Histórico completo</h2><p>Somente os resultados do usuário autenticado.</p></div></header>${sessions.length ? `<div class="bcq-center-history">${sessions.map(historyRow).join('')}</div>` : '<div class="bcq-empty">Seu histórico aparecerá após o primeiro registro.</div>'}</section>`;
@@ -888,6 +928,7 @@
     const page = document.getElementById('questionFiltersView');
     if (!page || page.classList.contains('hidden')) return;
     syncDisciplineOptions();
+    renderQcNotebookInventory(page);
     const filters = uniqueFilters();
     const total = page.querySelector('[data-bcq-page-total]');
     if (total) total.innerHTML = `<b>${registry.length}</b><span>vínculos de filtros</span>`;

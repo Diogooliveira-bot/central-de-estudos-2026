@@ -67,7 +67,7 @@ test('manifesto offline só referencia arquivos publicados',async()=>{
  const worker=await read('sw.js');
  assert.ok(central.includes(`var BUILD='${manifest.build}'`));
  assert.ok(worker.includes(`var CACHE='central-${manifest.build}'`));
- for(const asset of ["/content/cpc/cpc-sharing-links.js?v=20261010cpcsharing1","/ui/cpc-sharing-links.js?v=20261010cpcsharing1","/content/qc-sharing-links.json?v=20261013qclinks1","/content/qc-sharing-links.js?v=20261013qclinks1","/ui/qc-sharing-links.js?v=20261013qclinks1"]) assert.ok(manifest.files.includes(asset),`manifesto deve incluir ${asset}`);
+ for(const asset of ["/content/cpc/cpc-sharing-links.js?v=20261010cpcsharing1","/ui/cpc-sharing-links.js?v=20261010cpcsharing1","/content/qc-sharing-links.json?v=20261013qclinks1","/content/qc-sharing-links.js?v=20261013qclinks1","/content/qc-notebook-catalog.js?v=20261019qcnotebooks1","/ui/qc-sharing-links.js?v=20261013qclinks1"]) assert.ok(manifest.files.includes(asset),`manifesto deve incluir ${asset}`);
  for(const entry of manifest.files){
   if(!entry.startsWith('/')||entry.startsWith('//'))continue;
   const path=entry.slice(1).split(/[?#]/,1)[0];

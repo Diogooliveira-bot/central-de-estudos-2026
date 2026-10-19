@@ -152,7 +152,7 @@ def main():
             unmapped = [x for x in candidates if x["id"] not in integrations]
             pending_rows = pending_by_module.get((discipline, code.split(".")[0]), [])
             status = ("Necessita validação manual" if mapped else
-                      "Existente no QC, mas não integrado" if unmapped else
+                      "Sem correspondência confirmada" if unmapped else
                       "Pendente sem filtro exclusivo" if pending_rows else
                       "Não localizado")
             rows.append({
@@ -173,7 +173,7 @@ def main():
         parent = code.split(".")[0] if code else ""
         module = modules.get(discipline, {}).get(parent, {})
         integration = integrations.get(notebook["id"])
-        status = "Necessita validação manual" if integration else "Existente no QC, mas não integrado"
+        status = "Necessita validação manual" if integration else "Sem correspondência confirmada"
         rows.append({
             "tipo_registro": "Caderno existente no QC", "disciplina": discipline,
             "modulo": parent, "titulo_modulo_central": module.get("title", ""),
@@ -183,7 +183,7 @@ def main():
             "origem_integracao": integration["source"] if integration else "",
             "comparacao_codigo": "código do módulo confere; questão/assunto do filtro requer validação humana" if integration else "candidato por disciplina/código; título não comprova o tema",
             "cadernos_candidatos_mesmo_codigo": "",
-            "observacao": "O link direto foi aberto sem sessão e não mostrou o caderno; exige validação autenticada no QC." if integration else "Caderno não consta em um registro QC integrado no código atual.",
+            "observacao": "Caderno já consta nos mapas do código; a abertura autenticada no QC segue necessária para confirmar destino/filtro." if integration else "Caderno e código são sugestões de correspondência; conteúdo do filtro QC não confirmado.",
         })
         summary[discipline][status] += 1
 
@@ -213,7 +213,7 @@ def main():
     output.mkdir(parents=True, exist_ok=True)
     fields = ["tipo_registro", "disciplina", "modulo", "titulo_modulo_central", "submodulo", "id_caderno_qc", "titulo_caderno_qc", "status", "integrado_no_codigo", "origem_integracao", "comparacao_codigo", "cadernos_candidatos_mesmo_codigo", "observacao"]
     with (output / "matriz-qc-central.csv").open("w", newline="", encoding="utf-8-sig") as stream:
-        writer = csv.DictWriter(stream, fieldnames=fields)
+        writer = csv.DictWriter(stream, fieldnames=fields, lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows)
     print(json.dumps({

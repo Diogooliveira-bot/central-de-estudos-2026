@@ -9,7 +9,7 @@ test('a experiência v3 modular é carregada em ordem e participa do modo offlin
     read('central-v119.html'), read('central-offline-files-v66172.json'), read('sw.js'), read('package.json'),
   ]);
   assert.match(boot, /var APP_VERSION='6\.6\.134'/);
-  assert.match(boot, /var BUILD='20261019-trab-ptra-standard3'/);
+  assert.match(boot, /var BUILD='20261019-qc-catalog1'/);
   const ordered = [
     'ui/student-ux-core-v3.js', 'ui/student-shell-v3.js',
     'ui/student-dashboard-v3.js', 'ui/student-plan-v3.js',
@@ -19,13 +19,13 @@ test('a experiência v3 modular é carregada em ordem e participa do modo offlin
     const index = boot.indexOf(file);
     assert.ok(index > previous, `${file} deve carregar depois do módulo anterior`);
     previous = index;
-    assert.ok(offline.includes(`/${file}?v=20261019-trab-ptra-standard3`));
+    assert.ok(offline.includes(`/${file}?v=20261019-qc-catalog1`));
   }
   assert.match(boot, /student-experience-v3\.css\?v='\+BUILD/);
-  assert.match(offline, /student-experience-v3\.css\?v=20261019-trab-ptra-standard3/);
+  assert.match(offline, /student-experience-v3\.css\?v=20261019-qc-catalog1/);
   assert.doesNotMatch(boot, /student-polish-v1|student-experience-v2\.js/);
   assert.doesNotMatch(offline, /student-polish-v1|student-experience-v2/);
-  assert.match(serviceWorker, /central-20261019-trab-ptra-standard3/);
+  assert.match(serviceWorker, /central-20261019-qc-catalog1/);
   assert.equal(JSON.parse(pkg).version, '6.6.134');
 });
 
