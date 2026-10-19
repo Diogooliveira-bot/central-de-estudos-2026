@@ -1,9 +1,9 @@
 {
   "schema": "qc-pending-creation-progress-v1",
-  "updatedAt": "2026-10-20T00:55:00Z",
+  "updatedAt": "2026-10-20T01:10:00Z",
   "initialPending": 57,
-  "createdAndValidated": 9,
-  "remainingPending": 48,
+  "createdAndValidated": 10,
+  "remainingPending": 47,
   "records": [
     {
       "discipline": "Direito Penal",
@@ -247,6 +247,35 @@
       },
       "url": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15351442",
       "status": "criado, salvo, reaberto; 4 questões pertinentes confirmadas; compartilhamento ativo confirmado na listagem autenticada (0EM-FMJ); integrado à Central"
+    },
+    {
+      "discipline": "Direito Penal",
+      "module": "M13.4",
+      "moduleTitle": "Crimes contra a Administração Pública",
+      "subject": "Crimes contra as finanças públicas (CP, arts. 359-A a 359-H)",
+      "qcId": "15351620",
+      "shareCode": "0EM-FT4",
+      "notebookTitle": "DP M13.4 Crimes contra as finanças públicas",
+      "questionCount": 1,
+      "criteria": {
+        "area": "Jurídica",
+        "subjectTaxonomy": "Direito Penal > Crimes contra a administração pública > Crimes contra as finanças públicas",
+        "yearRange": "2019-2026 (ampliado de 2022-2026; quantidade permaneceu abaixo de 70)",
+        "boards": [
+          "CESPE/CEBRASPE"
+        ],
+        "excluded": [
+          "anuladas",
+          "desatualizadas"
+        ],
+        "selectedQuestions": [
+          "Q3775044"
+        ],
+        "minimumQuestionCount": 0,
+        "note": "Questão sobre condenação e consequências penais do crime de operação de crédito sem autorização (CP, art. 359-A), dentro do submódulo."
+      },
+      "url": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15351620",
+      "status": "Criado, salvo, reaberto e validado; 1 questão pertinente; compartilhamento ativo confirmado (0EM-FT4); integrado à Central"
     }
   ],
   "attempts": [
@@ -297,6 +326,13 @@
       "evidence": "Assunto nativo 3.2 Crime praticado por pessoa jurídica; após inspeção dos resultados, caderno salvo com Q1987413 (FGV, Senado Federal, 2022), questão direta sobre responsabilidade penal da pessoa jurídica por crimes ambientais. Reaberto com 1 questão e compartilhamento ativo.",
       "status_historico": "superado: caderno 15351251 criado, reaberto, validado e integrado",
       "supersededBy": "15351251"
+    },
+    {
+      "discipline": "Direito Penal",
+      "module": "M13.4",
+      "status": "superado: caderno 15351620 criado, reaberto, validado e integrado",
+      "evidence": "Assunto nativo Crimes contra as finanças públicas; caderno reaberto com uma questão pertinente Q3775044 e compartilhamento ativo.",
+      "supersededBy": "15351620"
     }
   ],
   "testResults": {
