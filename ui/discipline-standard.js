@@ -491,9 +491,19 @@
     let value = ''; try {
       const current = localStorage.getItem('central-v6:module-notes:' + meta.key);
       const oldId = meta.subject === 'cpp' ? 'cpp-' + meta.id : meta.id;
-      value = current ?? (meta.subject === 'cpc' ? localStorage.getItem('central-v6:cpc-note:' + meta.id) : null) ??
-        localStorage.getItem('central-v6:module-standard-notes:v1:' + oldId) ??
-        (meta.subject === 'civil' ? localStorage.getItem('central-v6:civil-note:' + meta.id) : null) ?? '';
+      const standard = localStorage.getItem('central-v6:module-standard-notes:v1:' + oldId);
+      if (meta.subject === 'penal') {
+        const candidates = [current, standard, localStorage.getItem('central-v6:penal-note:' + meta.id)].filter(item => typeof item === 'string' && item.trim());
+        value = candidates.reduce((saved,item) => {
+          const note = item.trim();
+          if (!note || saved.includes(note)) return saved;
+          return saved ? saved + '\n\n--- Anotação anterior preservada ---\n' + note : note;
+        }, '');
+      } else {
+        value = current ?? (meta.subject === 'cpc' ? localStorage.getItem('central-v6:cpc-note:' + meta.id) : null) ??
+          standard ??
+          (meta.subject === 'civil' ? localStorage.getItem('central-v6:civil-note:' + meta.id) : null) ?? '';
+      }
     } catch (_) {}
     note.innerHTML = '<label for="' + id + '">Anotações do módulo</label><textarea id="' + id + '" placeholder="Regra, dúvida, pegadinha, observação...">' + esc(value) + '</textarea><div class="ds-actions"><button type="button" class="ds-action" data-ds-save-note>Salvar anotação</button><span role="status" aria-live="polite" class="ds-note-status"></span></div>';
     host.appendChild(note);
