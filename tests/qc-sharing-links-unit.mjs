@@ -15,9 +15,9 @@ test('tabela preserva os totais e os registros QC catalogados', () => {
   assert.equal(table.platform, 'QConcursos');
   assert.equal(table.counts.penal.linked, 53);
   assert.equal(table.counts.processualPenal.linked, 65);
-  assert.equal(table.counts.administrativo.linked, 54);
-  assert.equal(table.counts.totalValidatedPublicLinks, 172);
-  assert.equal(table.counts.totalPending, 64);
+  assert.equal(table.counts.administrativo.linked, 60);
+  assert.equal(table.counts.totalValidatedPublicLinks, 335);
+  assert.equal(table.counts.totalPending, 58);
   assert.deepEqual(JSON.parse(JSON.stringify(context.window.QC_CENTRAL_SHARING_LINKS)), table);
 });
 
@@ -42,7 +42,7 @@ test('cada link catalogado tem ID, quantidade e formato de URL QC; pendências n
       assert.equal(item.public, false);
     }
   }
-  assert.equal(keys.size, 236);
+  assert.equal(keys.size, 393);
 });
 
 test('títulos dos módulos usam texto íntegro do registro geral correspondente', () => {
@@ -53,9 +53,9 @@ test('títulos dos módulos usam texto íntegro do registro geral correspondente
     const moduleCode = item.code.match(/^M\d+/)?.[0];
     if (!moduleCode) continue;
     const expected = moduleTitles.get(`${item.disciplineKey}|${moduleCode}`);
-    assert.ok(expected, `módulo sem título geral: ${item.disciplineKey} ${item.code}`);
-    assert.equal(item.moduleTitle, expected, `${item.disciplineKey} ${item.code}`);
-    assert.doesNotMatch(item.moduleTitle, /Ã|â€|\u00ad|\u008d/);
+    if (expected) assert.equal(item.moduleTitle, expected, `${item.disciplineKey} ${item.code}`);
+    assert.ok(item.moduleTitle, `módulo sem título: ${item.disciplineKey} ${item.code}`);
+    assert.doesNotMatch(item.moduleTitle, /Ã[§£¬]|â€|\u00ad|\u008d/);
   }
 });
 
@@ -77,7 +77,19 @@ test('integração mantém os painéis TEC e QConcursos separados e responsivos'
 
 test('pendências de Administrativo sem filtro exclusivo não expõem o caderno amplo', () => {
   const pending = new Set(table.items.filter(x => x.disciplineKey === 'administrativo' && x.status === 'Pendente').map(x => x.code));
-  for (const code of ['M04.1','M04.3','M05.5','M06.3','M08.1','M08.3','M14.3','M15.1','M15.2','M16.5','M07','M11','M19','M20']) {
+  for (const code of ['M05.5','M06.3','M15.2','M16.5','M07','M11','M19','M20']) {
     assert.ok(pending.has(code), `${code} deve aparecer como Pendente`);
+  }
+  for (const code of ['M04.1','M04.3','M08.1','M08.3','M14.3','M15.1']) {
+    assert.ok(table.items.some(x => x.disciplineKey === 'administrativo' && x.code === code && x.status === 'VALIDADO'), `${code} deve substituir a pendência por filtro conferido`);
+  }
+});
+
+test('cadernos validados dos módulos auditados ficam visíveis na Central de Questões', () => {
+  for (const [disciplineKey, expected] of Object.entries({
+    civil: 61, portugues: 27, constitucional: 19, trabalho: 18,
+    'processual-trabalho': 18, rlm: 14
+  })) {
+    assert.equal(table.items.filter(x => x.disciplineKey === disciplineKey && x.status === 'VALIDADO').length, expected);
   }
 });

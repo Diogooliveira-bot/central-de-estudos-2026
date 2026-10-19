@@ -118,6 +118,7 @@ def main():
             integrations[str(item["id"])] = {
                 "discipline": item["discipline"], "code": item["code"],
                 "source": "content/qc-sharing-links.json",
+                "validated": str(item.get("source", "")).startswith("QC autenticado:"),
             }
     for module in cpc_map["modules"].values():
         for item in [module.get("general"), *module.get("subdivisions", [])]:
@@ -125,6 +126,7 @@ def main():
                 integrations[str(item["id"])] = {
                     "discipline": "Direito Processual Civil", "code": item["code"],
                     "source": "content/cpc/cpc-sharing-links.js",
+                    "validated": False,
                 }
 
     pending = [item for item in main_map["items"] if item.get("status") == "Pendente"]
@@ -151,7 +153,8 @@ def main():
             mapped = [x for x in candidates if x["id"] in integrations]
             unmapped = [x for x in candidates if x["id"] not in integrations]
             pending_rows = pending_by_module.get((discipline, code.split(".")[0]), [])
-            status = ("Necessita validação manual" if mapped else
+            status = ("Validado e integrado" if any(integrations[x["id"]].get("validated") for x in mapped) else
+                      "Necessita validação manual" if mapped else
                       "Sem correspondência confirmada" if unmapped else
                       "Pendente sem filtro exclusivo" if pending_rows else
                       "Não localizado")
@@ -173,7 +176,8 @@ def main():
         parent = code.split(".")[0] if code else ""
         module = modules.get(discipline, {}).get(parent, {})
         integration = integrations.get(notebook["id"])
-        status = "Necessita validação manual" if integration else "Sem correspondência confirmada"
+        status = ("Validado e integrado" if integration and integration.get("validated") else
+                  "Necessita validação manual" if integration else "Sem correspondência confirmada")
         rows.append({
             "tipo_registro": "Caderno existente no QC", "disciplina": discipline,
             "modulo": parent, "titulo_modulo_central": module.get("title", ""),
@@ -181,9 +185,11 @@ def main():
             "id_caderno_qc": notebook["id"], "titulo_caderno_qc": notebook["titulo"],
             "status": status, "integrado_no_codigo": "sim" if integration else "não",
             "origem_integracao": integration["source"] if integration else "",
-            "comparacao_codigo": "código do módulo confere; questão/assunto do filtro requer validação humana" if integration else "candidato por disciplina/código; título não comprova o tema",
+            "comparacao_codigo": ("conteúdo das questões conferido em sessão autenticada do QC" if integration and integration.get("validated") else
+                                  "código do módulo confere; questão/assunto do filtro requer validação humana" if integration else "candidato por disciplina/código; título não comprova o tema"),
             "cadernos_candidatos_mesmo_codigo": "",
-            "observacao": "Caderno já consta nos mapas do código; a abertura autenticada no QC segue necessária para confirmar destino/filtro." if integration else "Caderno e código são sugestões de correspondência; conteúdo do filtro QC não confirmado.",
+            "observacao": ("Filtro aberto no QC autenticado; quantidade e assuntos das questões conferidos." if integration and integration.get("validated") else
+                           "Caderno já consta nos mapas do código; a abertura autenticada no QC segue necessária para confirmar destino/filtro." if integration else "Caderno e código são sugestões de correspondência; conteúdo do filtro QC não confirmado."),
         })
         summary[discipline][status] += 1
 

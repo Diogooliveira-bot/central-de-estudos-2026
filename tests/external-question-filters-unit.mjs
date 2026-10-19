@@ -61,13 +61,13 @@ test('catálogo real cobre todas as disciplinas com filtros publicados', () => {
   dom.window.eval(source);
   const rows = dom.window.ExternalQuestionFilters.buildRegistry();
   const disciplines = new Set(rows.map((row) => row.discipline));
-  assert.equal(rows.length, 609);
-  assert.equal(rows.filter((row) => row.platform === 'qc').length, 246);
+  assert.equal(rows.length, 772);
+  assert.equal(rows.filter((row) => row.platform === 'qc').length, 409);
   assert.equal(rows.filter((row) => row.platform === 'tec').length, 363);
   assert.deepEqual(Array.from(disciplines).sort((a, b) => a.localeCompare(b, 'pt-BR')), [
     'Direito Administrativo', 'Direito Civil', 'Direito Constitucional', 'Direito do Trabalho',
     'Direito Empresarial', 'Direito Penal', 'Direito Processual Civil',
-    'Direito Processual do Trabalho', 'Direito Processual Penal', 'Matemática', 'Raciocínio Lógico'
+    'Direito Processual do Trabalho', 'Direito Processual Penal', 'Matemática', 'Português', 'Raciocínio Lógico'
   ].sort((a, b) => a.localeCompare(b, 'pt-BR')));
   assert.ok(rows.every((row) => row.id && row.count > 0 && row.url.startsWith('https://')));
 });

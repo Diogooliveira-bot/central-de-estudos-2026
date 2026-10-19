@@ -1,58 +1,54 @@
-# Implementação do catálogo e integração segura dos 170 cadernos QC
+# Integração QC — validação autenticada dos 170 candidatos
 
 **Branch:** `audit/qc-integral-20261019`
-**Base:** auditoria integral dos 416 cadernos e matriz `matriz-qc-central.csv`
 **Produção:** não publicada
+**Base de cadernos:** captura existente de 416 itens; não houve nova coleta.
 
-## Resultado nesta branch
+## Resultado
 
-Os **416 cadernos** agora estão em `content/qc-notebook-catalog.js`, com IDs e URLs originais preservados. O catálogo administrativo da Central de Questões mostra os itens existentes nos mapas e os **170 sem correspondência temática confirmada**. A disciplina e o módulo derivados da matriz aparecem somente como sugestão de conferência.
+- **163 novos filtros integrados** após abrir os cadernos em sessão autenticada e conferir a matéria das questões.
+- **409 cadernos/links QC disponíveis aos alunos** contando os 335 do mapa principal e os 74 de Processo Civil, mantidos no mapa específico.
+- **7 cadernos sem correspondência confirmada** permanecem apenas no catálogo administrativo.
+- **58 pendências sem filtro exclusivo** continuam sem link de aluno (64 iniciais menos seis resolvidas com correspondência comprovada).
+- O catálogo continua com os **416 IDs e URLs originais**; 409 estão vinculados e sete não são exibidos como filtro validado.
 
-| Situação | Quantidade | Tratamento |
+| Disciplina | Candidatos analisados | Novos filtros integrados |
+|---|---:|---:|
+| Direito Civil | 61 | 61 |
+| Português | 27 | 27 |
+| Direito Constitucional | 19 | 19 |
+| Direito do Trabalho | 18 | 18 |
+| Processo do Trabalho | 18 | 18 |
+| Raciocínio Lógico | 17 | 14 |
+| Direito Administrativo | 10 | 6 |
+| **Total** | **170** | **163** |
+
+## Sem correspondência confirmada
+
+| Disciplina | ID | Motivo resumido |
 |---|---:|---|
-| IDs já presentes em mapas QC existentes | 246 | Mantidos nos módulos e na Central de Questões; destino autenticado não revalidado nesta etapa |
-| Cadernos sem correspondência confirmada | 170 | Inventariados na área administrativa; não apresentados como filtros ao aluno |
-| Pendências de filtro exclusivo | 64 | Mantidas no estado Pendente |
-| Módulos/códigos sem caderno localizado no inventário | 11 | Permanecem sem QC |
+| Raciocínio Lógico | 15293311 | Etiquetas das questões são de fundamentos/negações lógicas; não correspondem a M08 (sequências). |
+| Raciocínio Lógico | 15292720 | Questões de argumentação lógica; não correspondem a M09 (orientação espacial/temporal). |
+| Raciocínio Lógico | 15292598 | Caderno amplo de M06; as questões amostradas não isolam com segurança o subtema de associação esperado. |
+| Administrativo | 15285197 | Resultado concentra fases do processo licitatório, não impugnações/recursos de M16.5. |
+| Administrativo | 15285176 | Resultado concentra sistema de registro de preços; vínculo com planejamento setorial M15.2 não ficou demonstrado. |
+| Administrativo | 15285086 | Filtro amplo de aspectos da Lei 9.784/99, sem isolar extinção/revisão de M06.3. |
+| Administrativo | 15285069 | Mistura responsabilidades e tópicos de agentes públicos; não confirma exclusivamente M05.5. |
 
-Os 170 distribuem-se assim:
+Em RLM, os IDs corretos 15313089 (M08) e 15313108 (M09) foram integrados com base nos tópicos mostrados pelo QC. Os dois IDs históricos conflitantes acima foram preservados no catálogo, sem associação incorreta.
 
-| Disciplina | Cadernos sem vínculo confirmado |
-|---|---:|
-| Direito Civil | 61 |
-| Língua Portuguesa | 27 |
-| Direito Constitucional | 19 |
-| Direito do Trabalho | 18 |
-| Direito Processual do Trabalho | 18 |
-| Raciocínio Lógico-Matemático | 17 |
-| Direito Administrativo | 10 |
-| **Total** | **170** |
+## Pendências e módulos sem QC confirmado
 
-Os dez cadernos de Administrativo compartilham códigos com dez pendências específicas (M04.1, M04.3, M05.5, M06.3, M08.1, M08.3, M14.3, M15.1, M15.2 e M16.5). Eles aparecem no catálogo administrativo como candidatos à revisão. Os mapas de aluno continuam sem esses links, pois o inventário não traz contagem nem evidência do filtro interno. Assim, as 64 pendências não foram rebaixadas por inferência.
+As seis pendências administrativas M04.1, M04.3, M08.1, M08.3, M14.3 e M15.1 foram resolvidas com filtro compatível. Permanecem 58 entradas pendentes no mapa, incluindo filtros específicos para os quais nenhum caderno exclusivo foi confirmado.
 
-Os dois cadernos de RLM M08 e os dois de RLM M09 continuam preservados no inventário, sem escolha automática de principal. A integração não altera os IDs QC existentes, mapas TEC, filtros internos ou conteúdo teórico.
+Módulos sem QC confirmado no inventário: Administrativo M07, M11, M19 e M20; Civil M03 e M10; Penal M01, M14 e M17; Processo Penal M02, M09 e M18; RLM M07 e RF; Processo do Trabalho M01, M06 e M11; Português M01, M13, M17 e M18. As pendências por submódulo continuam sinalizadas separadamente na matriz completa.
 
-## Códigos ainda sem caderno localizado
+## Interface, links e preservação
 
-- Direito Civil: M03, M10.
-- Raciocínio Lógico-Matemático: M07, RF.
-- Direito Processual do Trabalho: M01, M06, M11.
-- Língua Portuguesa: M01, M13, M17, M18.
+Os 163 links novos usam os IDs e URLs capturados do QC. A camada comum de filtros lê o mapa QC para os módulos e a Central de Questões; os itens sem confirmação não entram no registro de aluno. Os filtros TEC e o mapa separado de CPC foram preservados. Os títulos QC com codificação corrompida recuperável foram corrigidos para exibição, mantendo a captura bruta no inventário.
 
-## Alterações realizadas
-
-- Adicionado o catálogo completo dos 416 IDs/URLs e a fonte de captura mantida em `fontes/qc_todos_cadernos_416.json`.
-- Criado gerador reproduzível do catálogo administrativo a partir da captura e da matriz.
-- Adicionada seção pesquisável de conferência à aba “Meus filtros” da Central de Questões. Ela só aparece para administradores e separa status do mapa de sugestão estrutural.
-- Corrigida a apresentação dos títulos com mojibake recuperável no catálogo; o título bruto permanece no campo `sourceTitle` e a fonte original não é alterada.
-- Incluído o arquivo no carregamento da Central e no manifesto offline; atualizada a chave de build/cache.
-- Atualizada a matriz: cadernos não integrados passaram a “Sem correspondência confirmada”.
-- Nenhum filtro QC ou TEC novo foi ativado para alunos; nenhum dos 64 registros pendentes foi alterado.
-
-## Validação pendente no QC
-
-Não foi feita abertura autenticada dos 416 cadernos. Os URLs no catálogo correspondem aos URLs da captura, mas isso não prova que cada página aplique o caderno ou o filtro esperado. A conferência do conteúdo/quantidade no QC e a ativação de links novos permanecem pendentes de evidência. A prévia local e os testes automatizados verificam o catálogo e a interface administrativa, não a conta nem a resposta final do QC.
+A lista completa dos links está em `links-qc-integrados-novos.csv`. A matriz `matriz-qc-central.csv` e o catálogo administrativo derivam dos mesmos 416 registros; a seção administrativa conserva os sete não confirmados.
 
 ## Testes
 
-`npm test`: **99 aprovados, 0 falhas e 1 ignorado**. O caso ignorado requer Chromium no teste de navegador. `tests/qc-notebook-catalog-unit.mjs` valida os 416 IDs únicos, URLs ligados ao mesmo ID, totais 246/170, os dez candidatos de Administrativo e a visibilidade administrativa do catálogo; também verifica que a camada de módulos não recebe itens sem vínculo confirmado. Os testes existentes da Central, CPC, TEC, filtros e integridade do manifesto também passaram. A navegação efetiva dos links externos dentro do QC ainda depende de sessão autenticada e não foi declarada verificada.
+Foram executados os testes unitários da Central de Questões, catálogo, mapa QC, Central de filtros externos e os testes gerais do repositório. A navegação para cada caderno foi aberta na sessão autenticada do QC; quantidade exibida e assuntos das questões foram conferidos. A navegação até uma página de questão, que pode depender de permissões e disponibilidade do QC, não foi usada como promessa de acessibilidade universal. Nenhum deploy de produção foi feito.
