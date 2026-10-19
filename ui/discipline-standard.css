@@ -465,7 +465,7 @@ html.bc-ui-v1 #subjects .work-approved-tools button,
 html.bc-ui-v1 #subjects .work-approved-review-date button {
   display:inline-flex; min-height:42px; align-items:center; justify-content:center; padding:9px 12px;
   border:1px solid #d9e1e6; border-radius:10px; background:#fff; color:#263442;
-  font:600 14px/1.35 inherit; text-decoration:none; white-space:normal;
+  font-family:inherit; font-size:14px; font-weight:600; line-height:1.35; text-decoration:none; white-space:normal;
 }
 html.bc-ui-v1 #subjects .work-approved-pending { border-style:dashed; background:#f8fafc; color:#637384; cursor:not-allowed; }
 html.bc-ui-v1 #subjects .work-approved-center { width:100%; border-color:#0876d2; background:linear-gradient(180deg,#168be8,#0867c3); color:#fff; cursor:pointer; }
