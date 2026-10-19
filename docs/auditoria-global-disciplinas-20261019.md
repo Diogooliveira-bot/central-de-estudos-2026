@@ -47,7 +47,7 @@ O sistema contém dez disciplinas na ordem de navegação, sem disciplina adicio
 | Anotações | PENDENTE | Nenhum armazenamento migrado; duplicações devem ser analisadas por módulo |
 | Leitores | PENDENTE | A implementação exige testes de abertura, fechamento, busca, fonte e rolagem por renderizador |
 | Infográficos | CORRIGIDO PARCIALMENTE | Controles compartilhados de zoom/download implementados para visualizadores de imagem existentes; testes de navegador e auditoria de disponibilidade ainda pendentes |
-| Testes automatizados | CORRIGIDO PARCIALMENTE | Suíte de unidade atual passa, incluindo ordem dos cartões, handlers e RLM M01; testes visuais/e2e nas quatro larguras ainda pendentes |
+| Testes automatizados | CORRIGIDO PARCIALMENTE | `npm test`: 91 aprovados; inclui ordem dos cartões, handlers, ADM M01, RLM M01 e regressões de questões. Testes visuais/e2e nas quatro larguras ainda pendentes |
 | Produção | PRESERVADA | Branch isolada; sem merge, alias de produção ou publicação |
 
 ## Próximas verificações
@@ -56,3 +56,13 @@ O sistema contém dez disciplinas na ordem de navegação, sem disciplina adicio
 - Testar navegação e console no deploy Preview com visitante fictício; não usar conta nem dados reais de aluno.
 - Adaptar a estrutura apenas onde os controles reais possam ser associados sem duplicar ou apagar handlers e armazenamento.
 - Atualizar esta auditoria com APROVADO, CORRIGIDO, PENDENTE ou NÃO APLICÁVEL somente após teste efetivo.
+
+## Verificação real na prévia — checkpoint parcial
+
+- Implantação Preview do commit `01dcb793b7973c8eecc46f7ff4b837a777823197`: READY. A versão de produção não recebeu esse commit.
+- Em Direito Administrativo M01, a automação abriu a teoria completa e a versão resumida; o leitor exibiu respectivamente 10 e 5 questões. Nenhuma questão foi respondida.
+- O M01 exibiu 4 filtros QConcursos e 4 filtros TEC com links e controles de resultado. Foram removidos visualmente do DOM o filtro TEC legado e o formulário manual antigo; o painel consolidado, histórico armazenado, compartilhamentos válidos e anotações permaneceram.
+- O M01 exibiu apenas um card de anotações. A ordem observada ficou materiais → anotações → filtros/compartilhamentos → ferramentas adicionais.
+- O infográfico real do M01 abriu integral, com rolagem, zoom, ajuste e botão de download. Não houve substituição de imagem.
+- Viewport efetivamente observado: 1363 × 936 px. O console do app não apresentou erros; os únicos erros listados vieram de uma extensão do navegador.
+- Não foi possível simular 1440, 1024, 768 e 390 px nesta sessão, nem abrir individualmente as outras 188 unidades. Por isso, a auditoria por módulo segue **PENDENTE** e a branch/PR permanece em rascunho.

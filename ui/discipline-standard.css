@@ -1,4 +1,4 @@
-/* Direito Civil is the shared visual reference for every discipline. */
+/* Português and Constitutional Law are the approved study-card references. */
 html.bc-ui-v1 #subjects { --ds-accent:var(--bc-color-success); display:grid; gap:16px; }
 html.bc-ui-v1 #subjects .bc-discipline-kit { display:none; }
 html.bc-ui-v1 #subjects .bc-civil-legacy-intro.ds-course-intro { display:block!important; }
