@@ -7,7 +7,7 @@ import { fileURLToPath } from 'node:url';
 import { JSDOM } from 'jsdom';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const source = fs.readFileSync(path.join(root, 'ui/cpc-approved-layout-v1.js'), 'utf8');
+const source = fs.readFileSync(path.join(root, 'ui/approved-cpc-layout-v1.js'), 'utf8');
 const readFocus = ['Distinguir a regra geral', 'Observar a exceção aplicável'];
 const weeks = Array.from({ length:20 }, (_, index) => ({
   id:`cpc${index+1}`, num:index+1, title:`Módulo ${index+1}`, read:`Leitura legal M${index+1}`,
