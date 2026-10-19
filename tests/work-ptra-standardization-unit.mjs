@@ -15,6 +15,11 @@ const parseAssignedJson = (file, expression) => {
 };
 
 test('Direito do Trabalho usa o renderer próprio e mantém dados e links pendentes corretos', async () => {
+  const workStyles = read('ui/discipline-standard.css');
+  assert.match(workStyles, /subject\[data-id="trab"\] \.work-approved-card\.penal-approved-complete/);
+  assert.match(workStyles, /subject\[data-id="trab"\] \.work-approved-card\.penal-approved-review/);
+  assert.match(workStyles, /subject\[data-id="trab"\] \.work-approved-card\.penal-approved-visual/);
+  assert.match(workStyles, /@media\(max-width:700px\)\s*\{[^}]*subject\[data-id="trab"\] \.work-approved-card/s);
   const modulesDir = path.join(root, 'modules/trabalho/native/modules');
   const moduleFiles = fs.readdirSync(modulesDir).filter((name) => /^m\d+\.json$/.test(name));
   assert.equal(moduleFiles.length, 18);
@@ -109,14 +114,15 @@ test('Processo do Trabalho mantém 21 módulos, cards verticais, mapas e lacunas
     assert.deepEqual([...module.querySelectorAll('.ptra-native-card[data-kind="complete"] .penal-approved-card-actions button')].map((node) => node.textContent), ['Estudar conteúdo', 'Resolver 10 questões']);
     assert.deepEqual([...module.querySelectorAll('.ptra-native-card[data-kind="summary"] .penal-approved-card-actions button')].map((node) => node.textContent), ['Revisar conteúdo', 'Resolver 5 questões']);
     assert.equal(module.querySelectorAll('.ptra-native-notes').length, 1);
-    assert.equal(module.querySelector('.ptra-native-tools .ptra-native-pending-link').textContent, '📖 Lei em Dia · Pendente');
-    assert.equal(module.querySelector('.ptra-native-tec-list .ptra-native-pending-link:last-child').textContent, 'QConcursos · Pendente');
+    assert.ok([...module.querySelectorAll('.ptra-native-tools .ptra-native-pending-link')].some((node) => node.textContent === '📖 Lei em Dia · Pendente'));
+    assert.ok([...module.querySelectorAll('.ptra-native-tools .ptra-native-pending-link')].some((node) => node.textContent === 'QConcursos · Pendente'));
   }
-  for (const n of [6, 12]) assert.match(modules[n - 1].querySelector('.ptra-native-tec-list').textContent, /TEC deste módulo · Pendente/);
-  assert.equal(modules[0].querySelector('.ptra-native-filters .ptra-native-tec-chip'), null, 'links TEC ativos não são repetidos no painel do módulo');
-  assert.ok(modules[0].querySelector('.ptra-native-filters [data-ptra-tool="questions"]'), 'Central de Questões continua acessível');
+  for (const n of [6, 12]) assert.match(modules[n - 1].querySelector('.ptra-native-tools').textContent, /TEC deste módulo · Pendente/);
+  assert.equal(modules[0].querySelector('.ptra-native-filters'), null, 'o painel duplicado de filtros e links é removido');
+  assert.ok(modules[0].querySelector('.ptra-native-tools [data-ptra-tool="questions"]'), 'Central de Questões continua acessível');
+  assert.ok(modules[0].querySelector('.ptra-native-tools .ptra-native-pending-link'), 'links sem integração ficam identificados como pendentes');
   assert.match(modules[0].querySelector('.ptra-native-notes').textContent, /Nota preservada/);
-  assert.match(modules[0].querySelector('.ptra-native-history').textContent, /12 feitas · 9 acertos/);
+  assert.match(modules[0].querySelector('.ptra-native-tools .ptra-native-history').textContent, /12 feitas · 9 acertos/);
   for (const n of [8, 10, 13]) assert.ok(modules[n - 1].querySelector('.ptra-native-warning'));
 
   let revoked = [];

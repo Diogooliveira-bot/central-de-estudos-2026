@@ -70,8 +70,10 @@ html.ptra-native-reader-open{overflow:hidden!important}.ptra-native-overlay{posi
 .subject[data-id="ptra"] :is(.ptra-native-tec-chip,.ptra-native-pending-link,.ptra-native-filters [data-ptra-tool="questions"],.ptra-native-tools button,.ptra-native-review-card button) { min-height:42px; padding:9px 12px; border:1px solid #d9e1e6; border-radius:10px; background:#fff; color:#263442; font-family:inherit; font-size:14px; font-weight:600; line-height:1.35; }
 .subject[data-id="ptra"] .ptra-native-pending-link { border-style:dashed!important; color:#637384!important; background:#f8fafc!important; cursor:not-allowed!important; opacity:1!important; }
 .subject[data-id="ptra"] .ptra-native-filters [data-ptra-tool="questions"] { width:100%; background:linear-gradient(180deg,#168be8,#0867c3); border-color:#0876d2; color:#fff; }
-.subject[data-id="ptra"] .ptra-native-history { margin-top:10px; color:#263442; font-size:13px; }
+.subject[data-id="ptra"] .ptra-native-history { margin:0; color:#263442; font-size:13px; }
 .subject[data-id="ptra"] .ptra-native-history summary { cursor:pointer; font-weight:700; }
+.subject[data-id="ptra"] .ptra-native-tools .ptra-native-history { align-self:center; padding:8px 10px; border:1px solid #d9e1e6; border-radius:10px; background:#fff; }
+.subject[data-id="ptra"] .ptra-native-tools .ptra-native-history[open] { flex:1 1 100%; }
 .subject[data-id="ptra"] .ptra-native-round-summary { display:grid; grid-template-columns:auto 1fr; gap:6px 10px; padding:9px; border-bottom:1px solid #e9edf0; }
 .subject[data-id="ptra"] .ptra-native-round-summary small { grid-column:1/-1; color:#687582; }
 .subject[data-id="ptra"] .ptra-native-tools { display:flex; align-items:center; justify-content:space-between; gap:10px; background:#f0f5eb; }
