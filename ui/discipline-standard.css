@@ -386,3 +386,23 @@ html.bc-ui-v1 .cpp-native-infographic-svg { width:min(100%,700px); height:auto; 
   html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-guided-reading { gap:9px; }
   html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-reading-icon { flex-basis:34px; width:34px; height:34px; font-size:20px; }
 }
+
+/* Direito Penal: reuse the approved vertical card layout over its native reader buttons. */
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .bc-native-materials.penal-approved-native-materials {
+  margin:0!important;
+  padding:0!important;
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+}
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-native-materials .bc-native-material-grid {
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr)!important;
+  gap:12px!important;
+  margin:0!important;
+}
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-native-materials .bc-native-material-grid > .penal-approved-card {
+  width:100%;
+  margin:0;
+}
