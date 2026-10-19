@@ -90,6 +90,7 @@ test('Penal transforma o renderizador nativo em cards aprovados e preserva açõ
     '<div class="cf-resource-box"><h4>Lei em Dia</h4><button>Abrir questões deste módulo</button></div>',
     '<section class="tec-validated-panel" data-tec-validated-panel="penal:M01"><header><b>TEC Concursos</b></header></section>',
     '<div class="bcq-module-panels" data-bcq-module-panel="penal:M01"><section>Filtros oficiais</section></div>',
+    '<div class="bcq-module-panels" data-bcq-module-panel="penal:M01"><section>Filtro duplicado de teste</section></div>',
     '</div></section></div></section></div>'
   ].join(''),{url:'https://study.test/',runScripts:'dangerously'});
   const w=dom.window;
@@ -138,11 +139,11 @@ test('Penal transforma o renderizador nativo em cards aprovados e preserva açõ
   assert.deepEqual(w.lastPenalQuiz,['p1','intermediate',5]);
   const footer=body.querySelector('.ds-module-footer');
   assert.ok(footer);
-  // Repeated native renders must keep the note before optional resources and review.
   w.CentralDisciplineStandard.refresh();
   assert.equal(footer.firstElementChild,footer.querySelector('.ds-notes'));
   const filters=footer.querySelector('.tec-validated-panel');
   const externalFilters=footer.querySelector('.bcq-module-panels');
+  assert.equal(footer.querySelectorAll('.bcq-module-panels').length,1,'mantém um único card para os filtros oficiais');
   assert.ok(filters&&externalFilters);
   assert.equal(filters.previousElementSibling,footer.querySelector('.ds-notes'));
   assert.equal(externalFilters.previousElementSibling,filters);
@@ -155,6 +156,25 @@ test('Penal transforma o renderizador nativo em cards aprovados e preserva açõ
   assert.equal(w.localStorage.getItem('central-v6:module-rounds:penal:p1'),oldRounds);
   assert.equal(w.localStorage.getItem('central-v6:penal-note:p1'),'anotação nativa preservada');
   dom.window.close();
+});
+
+test('runtime de filtros reutiliza painel aninhado e não duplica após atualizações',async()=>{
+  const dom=new JSDOM('<!doctype html><div id="subjects"><section class="subject" data-id="penal"><section class="cf-module" data-cf="p1"><div class="cf-module-body"><div class="ds-module-footer"><div class="ds-notes adm-native-notes"></div></div></div></section></section></div><div class="workspace"></div>',{url:'https://study.test/',runScripts:'dangerously',pretendToBeVisual:true});
+  const w=dom.window;
+  w.TEC_PENAL_CPP_LINKS={records:[{status:'VALIDADO_NA_CONTA_CRIADORA',discipline:'penal',module:'M01',id:'101897431',quantity:55,url:'https://www.tecconcursos.com.br/questoes/cadernos/101897431',title:'CP 01 - Conceitos, princípios e lei penal'}]};
+  w.requestAnimationFrame=callback=>callback();
+  w.eval(read('ui/external-question-filters-v1.js'));
+  await new Promise(resolve=>w.setTimeout(resolve,20));
+  const body=w.document.querySelector('.cf-module-body');
+  const footer=body.querySelector('.ds-module-footer');
+  const note=footer.querySelector('.ds-notes');
+  const panel=body.querySelector('[data-bcq-module-panel]');
+  assert.ok(panel,'painel de filtro TEC real foi criado');
+  note.after(panel);
+  for(let i=0;i<8;i++)w.ExternalQuestionFilters.refresh();
+  await new Promise(resolve=>w.setTimeout(resolve,20));
+  assert.equal(body.querySelectorAll('[data-bcq-module-panel]').length,1);
+  assert.ok(body.querySelector('[data-bcq-module-panel] a[href*="101897431"]'));
 });
 
 test('Processo Penal rende os 22 módulos na ordem aprovada sem formulário manual',()=>{
@@ -194,3 +214,4 @@ test('Processo Penal rende os 22 módulos na ordem aprovada sem formulário manu
   assert.match(read('ui/cpp-native-study-v1.js'),/zoomImage,downloadImage/);
   assert.equal(localStorage.getItem('central-v6:cpp:curso22:v1'),JSON.stringify({modules:{1:{rounds:[{valid:'12',correct:'9'}]}}}));
 });
+
