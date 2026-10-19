@@ -13,7 +13,9 @@
     if (!body || !week) return;
     const state = typeof window.penalWeekState === 'function' ? window.penalWeekState(week.id) : {};
     const theorySteps = ['reading','theory','deep'].filter(key => !!state?.[key]).length;
-    const theoryPct = Math.round(theorySteps / 3 * 100);
+    const readerName = week.num === 1 ? 'BaseNativeReader' : 'BaseNativeReaderM' + String(week.num).padStart(2,'0');
+    const readerStats = window[readerName]?.theoryStats?.();
+    const theoryPct = Number.isFinite(readerStats?.pct) ? Math.max(0,Math.min(100,readerStats.pct)) : Math.round(theorySteps / 3 * 100);
     const rounds = footerRounds(identity(module));
     const roundCount = Math.min(rounds.length,3);
     const roundPct = Math.round(roundCount / 3 * 100);
@@ -26,7 +28,7 @@
       panel.setAttribute('aria-label','Progresso do módulo');
       body.insertBefore(panel,body.firstElementChild);
     }
-    panel.innerHTML = '<article class="penal-approved-progress-card"><div class="penal-approved-progress-head"><b>Progresso da teoria</b><strong>' + theoryPct + '% concluído</strong></div><div class="penal-approved-progress-track" role="progressbar" aria-label="Progresso da teoria" aria-valuemin="0" aria-valuemax="100" aria-valuenow="' + theoryPct + '"><span style="width:' + theoryPct + '%"></span></div><small>Leitura orientada + revisão + aprofundamento · ' + theorySteps + '/3 etapas</small></article>' +
+    panel.innerHTML = '<article class="penal-approved-progress-card"><div class="penal-approved-progress-head"><b>Progresso da teoria</b><strong>' + theoryPct + '% concluído</strong></div><div class="penal-approved-progress-track" role="progressbar" aria-label="Progresso da teoria" aria-valuemin="0" aria-valuemax="100" aria-valuenow="' + theoryPct + '"><span style="width:' + theoryPct + '%"></span></div><small>' + (Number.isFinite(readerStats?.pct) ? 'Leitura resumida + teoria completa' : 'Leitura orientada + revisão + aprofundamento · ' + theorySteps + '/3 etapas') + '</small></article>' +
       '<article class="penal-approved-progress-card"><div class="penal-approved-progress-head"><b>Questões externas</b><strong>' + roundPct + '% · ' + roundCount + '/3 rodadas</strong></div><div class="penal-approved-progress-track" role="progressbar" aria-label="Progresso das questões externas" aria-valuemin="0" aria-valuemax="3" aria-valuenow="' + roundCount + '"><span style="width:' + roundPct + '%"></span></div><small>' + (roundCount ? done + ' questões registradas · ' + correct + ' certas' : 'Nenhuma rodada registrada ainda') + '</small></article>';
   }
 
@@ -51,10 +53,73 @@
     return button;
   }
 
+  function penalApprovedNativeLayout(module, week, body) {
+    const materials = body.querySelector(':scope > .bc-native-materials');
+    const grid = materials?.querySelector(':scope > .bc-native-material-grid');
+    if (!materials || !grid) return false;
+    if (materials.dataset.penalApproved === '1') return true;
+    const originals = Array.from(grid.querySelectorAll(':scope > .bc-native-material-card'));
+    const complete = originals.find(button => button.dataset.nativeKind === 'complete' || /conteúdo completo/i.test(button.textContent));
+    const summary = originals.find(button => button.dataset.nativeKind === 'summary' || /conteúdo resumido/i.test(button.textContent));
+    const mindmap = originals.find(button => button.dataset.nativeKind === 'mindmap' || /mapa mental/i.test(button.textContent));
+    if (!complete || !summary) return false;
+
+    const state = typeof window.penalWeekState === 'function' ? window.penalWeekState(week.id) : {};
+    const subtitle = body.querySelector(':scope > .cf-subtitle');
+    const statute = week.read || subtitle?.textContent?.trim() || '';
+    const focus = Array.isArray(week.read_focus) ? week.read_focus : [];
+    const reading = document.createElement('section');
+    reading.className = 'cf-step penal-approved-reading' + (state.reading ? ' done' : '');
+    reading.innerHTML = '<div class="cf-step-head"><div class="cf-step-no">' + (state.reading ? '✓' : '1') + '</div><div class="cf-step-copy"><b>Leitura orientada inicial</b><small>Leia os dispositivos indicados e observe os pontos centrais do módulo.</small></div></div>' +
+      '<div class="cf-step-body"><div class="cf-reading"><strong>' + esc(statute) + '</strong><details><summary>Ver pontos para observar</summary><ul>' + focus.map(point => '<li>' + esc(point) + '</li>').join('') + '</ul></details></div><div class="cf-actions"><button type="button" class="cf-btn ' + (state.reading ? 'good' : '') + '" data-penal-reading-toggle>' + (state.reading ? '✓ Concluída' : 'Marcar concluída') + '</button></div></div>';
+    reading.querySelector('[data-penal-reading-toggle]').addEventListener('click', function () {
+      const current = typeof window.penalWeekState === 'function' ? window.penalWeekState(week.id) : {};
+      if (typeof window.penalUpdateWeek === 'function') window.penalUpdateWeek(week.id, {reading: !current.reading});
+    });
+    subtitle?.remove();
+    body.insertBefore(reading, materials);
+
+    const makeCard = (original, type) => {
+      const isComplete = type === 'complete';
+      const title = isComplete ? 'Teoria completa' : 'Versão de revisão';
+      const action = isComplete ? 'Estudar conteúdo' : 'Revisar conteúdo';
+      const description = original.querySelector('small')?.textContent?.trim() ||
+        (isComplete ? 'Apostila integral para estudar o conteúdo em profundidade.' : 'Retome os pontos essenciais e revise rapidamente.');
+      const article = document.createElement('article');
+      article.className = 'penal-approved-card ' + (isComplete ? 'penal-approved-complete' : 'penal-approved-review');
+      article.dataset.penalApprovedCard = type;
+      article.innerHTML = '<div class="penal-approved-icon" aria-hidden="true">' + (isComplete ? '📚' : '⚡') + '</div>' +
+        '<div class="penal-approved-copy"><h3>' + title + '</h3><p>' + esc(description) + '</p><div class="penal-approved-tags"><span>' +
+        (isComplete ? 'Apostila' : 'Resumo') + '</span><span>' + (isComplete ? 'Conteúdo completo' : 'Pontos essenciais') +
+        '</span></div></div><div class="penal-approved-card-actions"></div>';
+      const actions = article.querySelector('.penal-approved-card-actions');
+      const primary = document.createElement('button');
+      primary.type = 'button';
+      primary.className = 'cf-btn primary penal-approved-primary';
+      primary.textContent = action;
+      const handler = original.getAttribute('onclick');
+      if (handler) primary.setAttribute('onclick', handler);
+      else primary.addEventListener('click', () => original.click());
+      actions.appendChild(primary);
+      actions.appendChild(penalQuestionAction(week, isComplete ? 10 : 5, isComplete ? 'fixation' : 'intermediate'));
+      return article;
+    };
+    const fullCard = makeCard(complete, 'complete');
+    const reviewCard = makeCard(summary, 'summary');
+    const preservedExtras = mindmap ? [mindmap] : [];
+    grid.replaceChildren(fullCard, reviewCard, ...preservedExtras);
+    materials.querySelector(':scope > .bc-native-metrics')?.remove();
+    materials.querySelector(':scope > .bc-native-materials-head')?.remove();
+    materials.classList.add('penal-approved-native-materials');
+    materials.dataset.penalApproved = '1';
+    return true;
+  }
+
   function penalApprovedLayout(module, week) {
     const body = bodyOf(module);
     if (!body || !week) return;
     penalApprovedProgress(module,week);
+    if (penalApprovedNativeLayout(module,week,body)) return;
     if (body.dataset.penalApprovedLayout === '1') return;
     const steps = body.querySelector(':scope > .cf-steps');
     if (!steps) return;
@@ -151,6 +216,7 @@
     footer.querySelector(':scope > .ds-footer-questions')?.remove();
 
     const note = footer.querySelector(':scope > .ds-notes');
+    const moduleLaw = Array.from(body.querySelectorAll(':scope > .cf-resource-box')).find(box => (box.querySelector('h4')?.textContent || '').trim().toLocaleLowerCase('pt-BR') === 'lei em dia');
     const review = footer.querySelector(':scope > .ds-footer-review');
     const tools = footer.querySelector(':scope > .ds-footer-tools');
     const resources = body.querySelector(':scope > .cf-resources');
@@ -179,7 +245,7 @@
       });
     }
 
-    const ordered = [note,extra,tools,resources,review].filter(Boolean);
+    const ordered = [note,moduleLaw,extra,tools,resources,review].filter(Boolean);
     const others = Array.from(footer.children).filter(node => !ordered.includes(node));
     footer.replaceChildren(...ordered,...others);
   }
