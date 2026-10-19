@@ -8,11 +8,35 @@
   const read = key => { try { return JSON.parse(localStorage.getItem(key) || 'null'); } catch (_) { return null; } };
   const meter = value => Number.isFinite(value) ? '<div class="csp-meter" aria-hidden="true"><span style="width:' + Math.max(0, Math.min(100, value)) + '%"></span></div>' : '';
 
+  function cpcApprovedProgress(module, week) {
+    const body = bodyOf(module);
+    if (!body || !week) return;
+    const meta = identity(module);
+    const state = typeof window.cpcWeekState === 'function' ? window.cpcWeekState(week.id) : {};
+    const theorySteps = ['reading','theory','deep'].filter(key => !!state?.[key]).length;
+    const theoryPct = Math.round(theorySteps / 3 * 100);
+    const rounds = footerRounds(meta);
+    const roundCount = rounds.length;
+    const roundPct = Math.round(Math.min(roundCount,3) / 3 * 100);
+    const done = rounds.reduce((sum,row) => sum + row.done,0);
+    const correct = rounds.reduce((sum,row) => sum + row.correct,0);
+    let panel = body.querySelector(':scope > .cpc-approved-progress');
+    if (!panel) {
+      panel = document.createElement('section');
+      panel.className = 'cpc-approved-progress';
+      panel.setAttribute('aria-label','Progresso do módulo');
+      const anchor = body.querySelector(':scope > .cpc-approved-reading,:scope > .bc-native-materials');
+      body.insertBefore(panel,anchor || body.firstElementChild);
+    }
+    panel.innerHTML = '<article class="cpc-approved-progress-card"><div class="cpc-approved-progress-head"><b>Progresso da teoria</b><strong>' + theoryPct + '% concluído</strong></div><div class="cpc-approved-progress-track" role="progressbar" aria-label="Progresso da teoria" aria-valuemin="0" aria-valuemax="100" aria-valuenow="' + theoryPct + '"><span style="width:' + theoryPct + '%"></span></div><small>Versão resumida + versão completa · ' + theorySteps + '/3 etapas</small></article>' +
+      '<article class="cpc-approved-progress-card"><div class="cpc-approved-progress-head"><b>Questões externas</b><strong>' + roundPct + '% · ' + Math.min(roundCount,3) + '/3 rodadas</strong></div><div class="cpc-approved-progress-track" role="progressbar" aria-label="Progresso das questões externas" aria-valuemin="0" aria-valuemax="3" aria-valuenow="' + Math.min(roundCount,3) + '"><span style="width:' + roundPct + '%"></span></div><small>' + (roundCount ? done + ' questões registradas · ' + correct + ' certas' : 'Nenhuma rodada registrada ainda') + '</small></article>';
+  }
   function cpcApprovedLayout(module) {
     const body = bodyOf(module);
     const materials = body?.querySelector(':scope > .bc-native-materials');
-    if (!body || !materials || materials.dataset.cpcApproved === '1') return;
+    if (!body || !materials) return;
     const week = (window.__CPC_WEEKS || []).find(item => item.id === module.dataset.cf);
+    if (materials.dataset.cpcApproved === '1') { cpcApprovedProgress(module,week); return; }
     const grid = materials.querySelector('.bc-native-material-grid');
     const originals = Array.from(grid?.querySelectorAll('.bc-native-material-card') || []);
     if (!week || originals.length < 2) return;
@@ -81,8 +105,13 @@
     if (map) grid.append(card(map,'map',null));
     materials.classList.add('cpc-approved-materials'); materials.querySelector('.bc-native-materials-head')?.remove();
     intro?.remove(); body.querySelector(':scope > .cf-module-bar')?.remove();
-    // Remove the duplicate progress strip from view without touching saved progress.
+    // Render the approved two-bar progress summary; native counters/history remain untouched.
     body.querySelector(':scope > .bc-native-metrics')?.remove();
+    body.querySelectorAll('.cpc-mini-panel').forEach(panel => {
+      // This is only the manual external-question entry card. The actual QC/TEC filters stay intact.
+      if (panel.querySelector('.cpc-external-form')) panel.remove();
+    });
+    cpcApprovedProgress(module,week);
     materials.dataset.cpcApproved = '1';
   }
   function identity(module) {
