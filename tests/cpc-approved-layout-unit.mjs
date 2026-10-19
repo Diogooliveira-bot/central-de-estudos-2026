@@ -7,7 +7,7 @@ import { fileURLToPath } from 'node:url';
 import { JSDOM } from 'jsdom';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const source = fs.readFileSync(path.join(root, 'ui/approved-cpc-layout-v1.js'), 'utf8');
+const source = fs.readFileSync(path.join(root, 'ui/discipline-standard.js'), 'utf8');
 const readFocus = ['Distinguir a regra geral', 'Observar a exceção aplicável'];
 const weeks = Array.from({ length:20 }, (_, index) => ({
   id:`cpc${index+1}`, num:index+1, title:`Módulo ${index+1}`, read:`Leitura legal M${index+1}`,
@@ -39,7 +39,8 @@ function fixture(emptyQuestions = false) {
   window.readingState = {};
   window.cpcUpdateWeek = (id, patch) => { window.readingState[id] = patch.reading; };
   window.openLeiSecaEnxuta = () => {};
-  vm.runInContext(source, dom.getInternalVMContext(), { filename:'cpc-approved-layout-v1.js' });
+  vm.runInContext(source, dom.getInternalVMContext(), { filename:'discipline-standard.js' });
+  for (const module of dom.window.document.querySelectorAll('.cf-module[data-cf]')) dom.window.CentralDisciplineStandard.cpcApprovedLayout(module);
   return dom;
 }
 
@@ -68,7 +69,7 @@ test('padroniza os 20 módulos CPC sem duplicar a leitura e preserva conteúdo e
     module.querySelector('[data-cpc-reading-toggle]').click();
     assert.equal(dom.window.readingState['cpc' + (index+1)], true);
   }
-  dom.window.CpcApprovedLayout.refresh();
+  dom.window.CentralDisciplineStandard.refresh();
   assert.equal(dom.window.document.querySelectorAll('.cpc-approved-reading').length, 20);
   dom.window.close();
 });

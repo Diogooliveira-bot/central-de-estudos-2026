@@ -7,6 +7,81 @@
   const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const read = key => { try { return JSON.parse(localStorage.getItem(key) || 'null'); } catch (_) { return null; } };
   const meter = value => Number.isFinite(value) ? '<div class="csp-meter" aria-hidden="true"><span style="width:' + Math.max(0, Math.min(100, value)) + '%"></span></div>' : '';
+
+  function cpcApprovedLayout(module) {
+    const body = bodyOf(module);
+    const materials = body?.querySelector(':scope > .bc-native-materials');
+    if (!body || !materials || materials.dataset.cpcApproved === '1') return;
+    const week = (window.__CPC_WEEKS || []).find(item => item.id === module.dataset.cf);
+    const grid = materials.querySelector('.bc-native-material-grid');
+    const originals = Array.from(grid?.querySelectorAll('.bc-native-material-card') || []);
+    if (!week || originals.length < 3) return;
+
+    const complete = originals.find(button => /complete/i.test(button.getAttribute('onclick') || '') || /conteúdo completo/i.test(button.textContent));
+    const summary = originals.find(button => button !== complete && (/summary/i.test(button.getAttribute('onclick') || '') || /resumido|resumo/i.test(button.textContent)));
+    const map = originals.find(button => button !== complete && button !== summary);
+    if (!complete || !summary || !map) return;
+
+    const state = typeof window.cpcWeekState === 'function' ? window.cpcWeekState(week.id) : {};
+    const completed = !!state.reading;
+    const number = String(week.num).padStart(2,'0');
+    const reading = document.createElement('section');
+    reading.className = 'cpc-approved-reading';
+    reading.innerHTML = '<div class="cpc-approved-reading-icon" aria-hidden="true">📖</div>' +
+      '<div class="cpc-approved-reading-copy"><h3>Leitura orientada inicial</h3><p>' + esc(week.read || '') + '</p>' +
+      '<details><summary>Ver pontos para observar</summary><ul>' + (week.read_focus || []).map(point => '<li>' + esc(point) + '</li>').join('') +
+      '</ul></details><div class="cpc-approved-reading-actions">' +
+      '<button type="button" class="cpc-approved-secondary" data-cpc-reading-toggle>' + (completed ? '✓ Leitura concluída' : 'Marcar concluída') + '</button>' +
+      '<button type="button" class="cpc-approved-secondary" data-cpc-law>📖 Lei em Dia deste módulo</button></div></div>';
+    reading.querySelector('[data-cpc-reading-toggle]').addEventListener('click', () => {
+      if (typeof window.cpcUpdateWeek === 'function') window.cpcUpdateWeek(week.id,{reading:!completed});
+    });
+    reading.querySelector('[data-cpc-law]').addEventListener('click', () => {
+      if (typeof window.openLeiSecaEnxuta === 'function') window.openLeiSecaEnxuta(null,'cpc','cpc-m' + number.toLowerCase());
+    });
+    body.insertBefore(reading,materials);
+
+    const intro = body.querySelector(':scope > .cpc-study-intro');
+    const question = (type) => {
+      const pattern = type === 'summary' ? /5\s*(?:do|questões|questoes)/i : /10\s*(?:do|questões|questoes)/i;
+      const button = Array.from(intro?.querySelectorAll('button') || []).find(item => pattern.test(item.textContent));
+      if (!button) return null;
+      const count = button.textContent.match(/(\d+)\s*\/\s*(\d+)/);
+      return {button,count:count ? Number(count[2]) : 0};
+    };
+    const card = (original,type,quiz) => {
+      const tone = type === 'complete' ? 'complete' : type === 'summary' ? 'summary' : 'map';
+      const title = type === 'complete' ? 'Teoria completa' : type === 'summary' ? 'Versão de revisão' : 'Mapa mental';
+      const action = type === 'complete' ? 'Estudar conteúdo' : type === 'summary' ? 'Revisar conteúdo' : 'Visualizar mapa mental';
+      const icon = type === 'complete' ? '📚' : type === 'summary' ? '⚡' : '🧠';
+      const description = original.querySelector('span:nth-of-type(2) small')?.textContent.trim() || (type === 'map' ? 'Revise visualmente os principais pontos do módulo.' : 'Retome os pontos principais do módulo.');
+      const sourceTitle = original.querySelector('strong')?.textContent.trim() || title;
+      const progress = original.querySelector('.bc-native-material-action')?.textContent.replace(/→/g,'').trim() || '';
+      const article = document.createElement('article');
+      article.className = 'cpc-approved-card cpc-approved-' + tone;
+      article.dataset.cpcApprovedCard = type;
+      article.innerHTML = '<div class="cpc-approved-icon" aria-hidden="true">' + icon + '</div>' +
+        '<div class="cpc-approved-copy"><h3>' + title + '</h3><p>' + esc(description) + '</p>' +
+        (progress ? '<small class="cpc-approved-progress-label">' + esc(progress) + '</small>' : '') +
+        '<div class="cpc-approved-tags"><span>' + esc(sourceTitle) + '</span><span>Processo Civil</span></div></div><div class="cpc-approved-actions"></div>';
+      const primary = document.createElement('button');
+      primary.type = 'button'; primary.className = 'cpc-approved-primary'; primary.textContent = action;
+      const handler = original.getAttribute('onclick'); if (handler) primary.setAttribute('onclick',handler);
+      article.querySelector('.cpc-approved-actions').append(primary);
+      if (quiz?.button) {
+        quiz.button.classList.remove('good'); quiz.button.classList.add('cpc-approved-secondary');
+        quiz.button.textContent = quiz.count ? 'Resolver ' + quiz.count + ' questões' : 'Questões internas indisponíveis';
+        if (!quiz.count) { quiz.button.disabled = true; quiz.button.setAttribute('aria-label','Não há questões disponíveis nesta bateria'); }
+        article.querySelector('.cpc-approved-actions').append(quiz.button);
+      }
+      return article;
+    };
+    grid.replaceChildren(card(complete,'complete',question('complete')),card(summary,'summary',question('summary')),card(map,'map',null));
+    materials.classList.add('cpc-approved-materials'); materials.querySelector('.bc-native-materials-head')?.remove();
+    intro?.remove(); body.querySelector(':scope > .cf-module-bar')?.remove();
+    body.querySelector(':scope > .bc-native-metrics')?.classList.add('cpc-approved-metrics');
+    materials.dataset.cpcApproved = '1';
+  }
   function identity(module) {
     const subject = module.closest('.subject').dataset.id;
     const id = module.dataset.civilAnalista || module.dataset.ptCurrent || module.dataset.ptnModule || module.dataset.cf || module.dataset.penal || module.dataset.cpc || module.dataset.cppNativeModule || module.dataset.cppNum || module.dataset.uid;
@@ -272,6 +347,7 @@
     // those controls as the source of truth and avoid adding a second progress
     // panel and navigation strip over the approved module layout.
     if (meta.subject === 'cpc') {
+      cpcApprovedLayout(module);
       body.querySelector(':scope > .csp-panel[data-ds-summary]')?.remove();
       body.querySelector(':scope > .ds-module-nav')?.remove();
       moduleFooter(module,body,meta);
@@ -408,7 +484,7 @@
       catch (_) { box.querySelector('[role=status]').textContent = 'Não foi possível salvar'; }
     }
   });
-  window.CentralDisciplineStandard = { refresh, version:'1.1.2' };
+  window.CentralDisciplineStandard = { refresh, cpcApprovedLayout, version:'1.1.3' };
   function start() { observer = new MutationObserver(schedule); refresh(); }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded',start,{once:true}); else start();
 })();
