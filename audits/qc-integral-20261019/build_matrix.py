@@ -217,7 +217,7 @@ def main():
         writer.writeheader()
         writer.writerows(rows)
     print(json.dumps({
-        "inventory": len(notebooks), "valid_integrated_ids": len(integrations),
+        "inventory": len(notebooks), "integrated_ids_in_code": len(integrations),
         "pending": len(pending), "matrix_rows": len(rows),
         "module_counts": {d: len(v) for d, v in modules.items()},
         "inventory_counts": dict(Counter(inventory_discipline(x["titulo"]) for x in notebooks)),
