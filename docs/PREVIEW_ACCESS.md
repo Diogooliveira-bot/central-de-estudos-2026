@@ -38,7 +38,7 @@ precisa ser restabelecida.
 
 ### Limites de segurança e revisão
 
-- `VERCEL_ENV === 'preview'` **e** chave entre 40 e 2.048 caracteres são verificações
+- `VERCEL_ENV === 'preview'` **e** chave de 40+ caracteres são verificações
   obrigatórias nos arquivos `middleware.js` e `api/auth.js`. A produção não
   libera o modo visitante mesmo que alguém acrescente `bc_preview` à URL.
 - O visitante **não recebe conta no banco**, perfil de administrador,
