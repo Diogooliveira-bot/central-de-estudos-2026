@@ -263,8 +263,8 @@ html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-secondary {
   border:1px solid #cbd7e1; border-radius:12px; font-family:inherit; font-size:14px; font-weight:600;
   line-height:1.35; text-align:center; cursor:pointer; white-space:normal;
 }
-html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-primary { border-color:#0876d2; background:linear-gradient(180deg,#168be8,#0867c3); color:#fff; }
-html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-secondary { border-color:#c7dceb; background:#e5f3fc; color:#245477; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-primary { border-color:#0876d2!important; background:linear-gradient(180deg,#168be8,#0867c3)!important; color:#fff!important; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-secondary { border-color:#c7dceb!important; background:#e5f3fc!important; color:#245477!important; }
 html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-secondary:disabled { opacity:.62; cursor:not-allowed; }
 
 html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-review {
@@ -290,6 +290,7 @@ html.bc-ui-v1 #subjects .subject[data-id="penal"] .ds-module-footer .ds-footer-r
 html.bc-ui-v1 #subjects .subject[data-id="penal"] .ds-module-footer .ds-footer-tools { order:3; }
 html.bc-ui-v1 #subjects .subject[data-id="penal"] .ds-module-footer .ds-notes { order:1; }
 html.bc-ui-v1 #subjects .subject[data-id="penal"] .ds-module-footer .penal-approved-extra { order:2; }
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .ds-module-footer .penal-approved-filter-panel { order:2; }
 html.bc-ui-v1 #subjects .subject[data-id="penal"] .ds-module-footer .cf-resources { order:4; }
 html.bc-ui-v1 #subjects .subject[data-id="penal"] .ds-module-footer .ds-footer-questions { display:none!important; }
 
