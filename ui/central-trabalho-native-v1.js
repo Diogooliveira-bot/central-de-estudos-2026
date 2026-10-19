@@ -326,4 +326,7 @@ function open(n,kind,focusQuestions){
 }
 g.CentralTrabalhoUniversal=Object.freeze({open,openQuestions,stats,close});
 g.CentralTrabalhoNative=g.CentralTrabalhoUniversal;
+// If the presentation adapter ran before this deferred reader script, apply
+// the approved cards now that reader actions and progress are available.
+setTimeout(()=>g.CentralDisciplineStandard?.refresh?.(),0);
 })(window);

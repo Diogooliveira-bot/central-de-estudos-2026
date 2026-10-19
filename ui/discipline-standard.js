@@ -633,7 +633,7 @@
   }
   function workApprovedLayout(module, body, meta) {
     const number = Number((meta.id.match(/\d+/) || [])[0]);
-    if (!number || number > 18 || !window.CentralTrabalhoUniversal) return false;
+    if (!number || number > 18) return false;
     const existing = body.querySelector(':scope > .work-approved-layout');
     if (existing) { updateWorkProgress(module, body, number, meta); return true; }
     const title = (module.querySelector('.topic-title,.bc-trabalho-module-name')?.textContent || '').replace(/\s*·\s*\d+\s*cards?\s*$/i,'').trim();

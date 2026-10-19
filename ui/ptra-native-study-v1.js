@@ -51,8 +51,6 @@ function moduleHTML(m){
 }
 function roundRows(n){const rows=read(`m${pad(n)}:tec:rounds`,[]);return [0,1,2].map(i=>{const r=rows[i]||{};return `<div class="ptra-native-round" data-round="${i}"><label>FEITAS<input type="number" min="0" inputmode="numeric" value="${r.done??''}"></label><label>ACERTOS<input type="number" min="0" inputmode="numeric" value="${r.correct??''}"></label><label>OBSERVAÇÃO<input type="text" value="${esc(r.note||'')}"></label><button type="button" class="ptra-native-btn" data-ptra-save-round="${i}">Salvar ${i+1}</button></div>`}).join('')}
 function notesHTML(n){const notes=noteList(n);return notes.length?notes.slice().reverse().map(x=>`<article class="ptra-native-note"><p>${esc(x.text)}</p><small>${new Date(x.at).toLocaleString('pt-BR')}</small></article>`).join(''):'<small class="ptra-native-empty">Nenhuma anotação salva.</small>'}
-function tecHTML(m){const tecs=(m.tec||[]).map(tecMeta).filter(Boolean);if(!tecs.length)return '<button type="button" class="ptra-native-pending-link" disabled aria-disabled="true">Caderno TEC deste módulo · Pendente</button>';return tecs.map(x=>`<button type="button" class="ptra-native-tec-chip" data-ptra-tec="${esc(x.id)}">${esc(x.name)} <small>${x.count}q</small></button>`).join('')}
-
 function guidedDone(n){return read('guided:m'+pad(n),false)===true}
 function toggleGuided(n){write('guided:m'+pad(n),!guidedDone(n));hydrate()}
 function roundHistoryHTML(n){
@@ -69,7 +67,7 @@ function guidedHTML(m,n){
  return '<section class="ptra-native-guided-reading"><div class="ptra-native-reading-icon" aria-hidden="true">📖</div><div><b>Leitura orientada inicial</b><p>Leia o sumário e identifique competências, requisitos, prazos e exceções apresentados neste módulo.</p><details><summary>Ver pontos para observar</summary><ul><li>Distinga os atos, sujeitos e fases processuais mencionados na teoria.</li><li>Marque requisitos, prazos e exceções destacados no material.</li><li>Confira os fundamentos legais citados pelo conteúdo do módulo.</li></ul></details><button type="button" class="ptra-native-btn" data-ptra-guided="'+n+'" aria-pressed="'+done+'">'+(done?'✓ Leitura orientada concluída':'Marcar concluída')+'</button></div></section>';
 }
 function zoneHTML(m,rp,cp,tp,ex){
- const n=m.number,tecs=tecHTML(m),hasTec=!!(m.tec||[]).length;
+ const n=m.number,hasTec=!!(m.tec||[]).length;
  return '<div class="ptra-native-zone ptra-approved-zone">'+
   '<div class="ptra-native-progress-grid" aria-label="Progresso do módulo"><article><div><b>Progresso da teoria</b><strong>'+tp+'% concluído</strong></div>'+meter(tp)+'<small>Versão resumida '+rp+'% · versão completa '+cp+'%.</small></article><article><div><b>Questões externas</b><strong>'+(ex.done?ex.pct:0)+'% de acertos</strong></div>'+meter(ex.pct,'external')+'<small>'+ex.done+' feitas · '+ex.correct+' acertos. Não interfere na teoria.</small></article></div>'+
   guidedHTML(m,n)+
@@ -80,7 +78,7 @@ function zoneHTML(m,rp,cp,tp,ex){
   '</div>'+
   (m.warning?'<div class="ptra-native-warning"><b>ALERTA PRESERVADO:</b> '+esc(m.warning)+'</div>':'')+
   '<section class="ptra-native-panel ptra-native-notes"><h4>Anotações do módulo</h4><textarea placeholder="Regra, dúvida, pegadinha, observação..."></textarea><div class="ptra-native-note-actions"><button type="button" class="ptra-native-btn primary" data-ptra-save-note>Salvar anotação</button></div><div class="ptra-native-note-list">'+notesHTML(n)+'</div></section>'+
-  '<section class="ptra-native-panel ptra-native-filters"><h4>Filtros TEC e QConcursos</h4><p>Filtros e resultados permanecem disponíveis na Central de Questões.</p><div class="ptra-native-tec-list">'+(hasTec?tecs:'<button type="button" class="ptra-native-pending-link" disabled aria-disabled="true">TEC deste módulo · Pendente</button>')+'<button type="button" class="ptra-native-pending-link" disabled aria-disabled="true">QConcursos · Pendente</button></div><button type="button" class="ptra-native-btn" data-ptra-tool="questions">Abrir Central de Questões</button><details class="ptra-native-history"><summary>Registros externos deste módulo</summary><div>'+roundHistoryHTML(n)+'</div></details></section>'+
+  '<section class="ptra-native-panel ptra-native-filters"><h4>Filtros TEC e QConcursos</h4><p>Os filtros TEC vinculados aparecem acima. Acesse a Central de Questões para consultar os cadernos e resultados.</p><div class="ptra-native-tec-list">'+(hasTec?'':'<button type="button" class="ptra-native-pending-link" disabled aria-disabled="true">TEC deste módulo · Pendente</button>')+'<button type="button" class="ptra-native-pending-link" disabled aria-disabled="true">QConcursos · Pendente</button></div><button type="button" class="ptra-native-btn" data-ptra-tool="questions">Abrir Central de Questões</button><details class="ptra-native-history"><summary>Registros externos deste módulo</summary><div>'+roundHistoryHTML(n)+'</div></details></section>'+
   '<div class="ptra-native-tools"><span>FERRAMENTAS DO MÓDULO</span><div><button type="button" class="ptra-native-pending-link" disabled aria-disabled="true">📖 Lei em Dia · Pendente</button><button type="button" data-ptra-tool="vade">⚖ Vade Mecum</button><button type="button" data-ptra-tool="tec">▤ Cadernos TEC</button></div></div>'+
   revisionHTML(m)+
  '</div>';

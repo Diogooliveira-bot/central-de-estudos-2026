@@ -35,11 +35,6 @@ test('Direito do Trabalho usa o renderer próprio e mantém dados e links penden
   window.key = (uid, field) => `central-v6:${uid}:${field}`;
   window.getPerf = () => [{ q: 20, c: 16, pct: 80 }];
   window.getNotes = (uid) => JSON.parse(window.localStorage.getItem(`central-v6:${uid}:notes`) || '[]');
-  window.CentralTrabalhoUniversal = {
-    open: (...args) => calls.push(['open', ...args]),
-    openQuestions: (...args) => calls.push(['questions', ...args]),
-    stats: async () => ({ summaryPct: 25, completePct: 50, theoryPct: 38 }),
-  };
   window.ExternalQuestionFilters = { openPage: (...args) => calls.push(['center', ...args]) };
   window.openEmbeddedTool = (...args) => calls.push(['tool', ...args]);
   window.tecAbrirListaContexto = (...args) => calls.push(['tec-list', ...args]);
@@ -64,6 +59,18 @@ test('Direito do Trabalho usa o renderer próprio e mantém dados e links penden
   assert.equal(body.querySelector('.work-approved-tools .work-approved-pending').textContent, '📖 Lei em Dia · Pendente');
   assert.equal(body.querySelector('.work-approved-tools [data-work-action="law"]'), null);
 
+  // The reader is deferred in the real app. Cards must render before it loads,
+  // then hydrate the progress text when its API becomes available.
+  window.CentralTrabalhoUniversal = {
+    open: (...args) => calls.push(['open', ...args]),
+    openQuestions: (...args) => calls.push(['questions', ...args]),
+    stats: async () => ({ summaryPct: 25, completePct: 50, theoryPct: 38 }),
+  };
+  window.CentralDisciplineStandard.refresh();
+  await new Promise((resolve) => window.setTimeout(resolve, 0));
+  assert.equal(body.querySelector('[data-work-overall]').textContent, '38% concluído');
+  assert.equal(body.querySelector('[data-work-complete-pct]').textContent, '50% lido');
+
   const m04 = window.document.querySelector('[data-uid="trab-m04"]');
   assert.ok(m04.querySelector('.work-approved-tools [data-work-action="law"]'), 'Lei em Dia segue ativo nos módulos com vínculo real');
   m01.querySelector('[data-work-action="read-complete"]').click();
@@ -79,6 +86,7 @@ test('Processo do Trabalho mantém 21 módulos, cards verticais, mapas e lacunas
   assert.ok(index.modules.every((module) => module.summaryQuestions === 5 && module.completeQuestions === 10));
   assert.equal(index.modules.filter((module) => module.infographic).length, 21);
   assert.deepEqual(index.modules.filter((module) => !module.tec.length).map((module) => module.number), [6, 12]);
+  assert.ok(index.modules[0].tec.length > 0, 'associação TEC real preservada nos dados do módulo');
   assert.deepEqual(index.modules.filter((module) => module.warning).map((module) => module.number), [8, 10, 13]);
 
   const dom = new JSDOM('<!doctype html><html class="bc-ui-v1"><body><main id="subjects"><section class="subject open" data-id="ptra"><div class="subject-body"></div></section></main></body></html>', {
@@ -105,7 +113,8 @@ test('Processo do Trabalho mantém 21 módulos, cards verticais, mapas e lacunas
     assert.equal(module.querySelector('.ptra-native-tec-list .ptra-native-pending-link:last-child').textContent, 'QConcursos · Pendente');
   }
   for (const n of [6, 12]) assert.match(modules[n - 1].querySelector('.ptra-native-tec-list').textContent, /TEC deste módulo · Pendente/);
-  assert.ok(modules[0].querySelector('.ptra-native-tec-chip'), 'TEC ativo aparece quando há associação real');
+  assert.equal(modules[0].querySelector('.ptra-native-filters .ptra-native-tec-chip'), null, 'links TEC ativos não são repetidos no painel do módulo');
+  assert.ok(modules[0].querySelector('.ptra-native-filters [data-ptra-tool="questions"]'), 'Central de Questões continua acessível');
   assert.match(modules[0].querySelector('.ptra-native-notes').textContent, /Nota preservada/);
   assert.match(modules[0].querySelector('.ptra-native-history').textContent, /12 feitas · 9 acertos/);
   for (const n of [8, 10, 13]) assert.ok(modules[n - 1].querySelector('.ptra-native-warning'));
