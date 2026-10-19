@@ -15,12 +15,12 @@
     const week = (window.__CPC_WEEKS || []).find(item => item.id === module.dataset.cf);
     const grid = materials.querySelector('.bc-native-material-grid');
     const originals = Array.from(grid?.querySelectorAll('.bc-native-material-card') || []);
-    if (!week || originals.length < 3) return;
+    if (!week || originals.length < 2) return;
 
     const complete = originals.find(button => /complete/i.test(button.getAttribute('onclick') || '') || /conteúdo completo/i.test(button.textContent));
     const summary = originals.find(button => button !== complete && (/summary/i.test(button.getAttribute('onclick') || '') || /resumido|resumo/i.test(button.textContent)));
-    const map = originals.find(button => button !== complete && button !== summary);
-    if (!complete || !summary || !map) return;
+    const map = originals.find(button => button !== complete && button !== summary) || null;
+    if (!complete || !summary) return;
 
     const state = typeof window.cpcWeekState === 'function' ? window.cpcWeekState(week.id) : {};
     const completed = !!state.reading;
@@ -76,7 +76,8 @@
       }
       return article;
     };
-    grid.replaceChildren(card(complete,'complete',question('complete')),card(summary,'summary',question('summary')),card(map,'map',null));
+    grid.replaceChildren(card(complete,'complete',question('complete')),card(summary,'summary',question('summary')));
+    if (map) grid.append(card(map,'map',null));
     materials.classList.add('cpc-approved-materials'); materials.querySelector('.bc-native-materials-head')?.remove();
     intro?.remove(); body.querySelector(':scope > .cf-module-bar')?.remove();
     body.querySelector(':scope > .bc-native-metrics')?.classList.add('cpc-approved-metrics');
@@ -217,7 +218,8 @@
     let value = ''; try {
       const current = localStorage.getItem('central-v6:module-notes:' + meta.key);
       const oldId = meta.subject === 'cpp' ? 'cpp-' + meta.id : meta.id;
-      value = current ?? localStorage.getItem('central-v6:module-standard-notes:v1:' + oldId) ??
+      value = current ?? (meta.subject === 'cpc' ? localStorage.getItem('central-v6:cpc-note:' + meta.id) : null) ??
+        localStorage.getItem('central-v6:module-standard-notes:v1:' + oldId) ??
         (meta.subject === 'civil' ? localStorage.getItem('central-v6:civil-note:' + meta.id) : null) ?? '';
     } catch (_) {}
     note.innerHTML = '<label for="' + id + '">Anotações do módulo</label><textarea id="' + id + '" placeholder="Regra, dúvida, pegadinha, observação...">' + esc(value) + '</textarea><div class="ds-actions"><button type="button" class="ds-action" data-ds-save-note>Salvar anotação</button><span role="status" aria-live="polite" class="ds-note-status"></span></div>';

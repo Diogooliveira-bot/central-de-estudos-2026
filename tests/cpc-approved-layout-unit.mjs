@@ -24,7 +24,7 @@ function fixture(emptyQuestions = false) {
       <section class="bc-native-materials"><div class="bc-native-materials-head">Materiais</div><div class="bc-native-material-grid">
         <button class="bc-native-material-card" onclick="Reader${n}.open('summary')"><span>⚡</span><span><strong>Conteúdo resumido</strong><small>5 capítulos</small></span><span class="bc-native-material-action">5/5 →</span></button>
         <button class="bc-native-material-card" onclick="Reader${n}.open('complete')"><span>📚</span><span><strong>Conteúdo completo</strong><small>Teoria integral do módulo</small></span><span class="bc-native-material-action">10/12 →</span></button>
-        <button class="bc-native-material-card" onclick="Map${n}.open()"><span>🧠</span><span><strong>Mapa mental</strong><small>Carrossel real do módulo</small></span><span class="bc-native-material-action">Abrir →</span></button>
+        ${index === 7 ? '' : `<button class="bc-native-material-card" onclick="Map${n}.open()"><span>🧠</span><span><strong>Mapa mental</strong><small>Carrossel real do módulo</small></span><span class="bc-native-material-action">Abrir →</span></button>`}
       </div></section>
         <section class="cpc-study-intro"><button onclick="Quiz${n}.open('${summary}','summary')">5 do resumido · ${emptyQuestions ? '0/0' : '5/5'}</button><button onclick="Quiz${n}.open('${summary}','full')">10 do completo · ${emptyQuestions ? '0/0' : '10/10'}</button></section>
       <div class="cpc-bottom-grid"><button>Lei em Dia</button></div><details class="cf-resources"><div class="cf-resource-box"><textarea id="cf-note-${id}">Nota preservada ${index+1}</textarea></div></details>
@@ -51,17 +51,19 @@ test('padroniza os 20 módulos CPC sem duplicar a leitura e preserva conteúdo e
   assert.equal(modules.length, 20);
   for (const [index, module] of modules.entries()) {
     const cards = [...module.querySelectorAll('.cpc-approved-card')];
-    assert.deepEqual(cards.map(card => card.dataset.cpcApprovedCard), ['complete','summary','map']);
+    assert.deepEqual(cards.map(card => card.dataset.cpcApprovedCard), index === 7 ? ['complete','summary'] : ['complete','summary','map']);
     assert.equal(cards[0].querySelector('h3').textContent, 'Teoria completa');
     assert.equal(cards[0].querySelector('.cpc-approved-primary').textContent, 'Estudar conteúdo');
     assert.equal(cards[0].querySelector('.cpc-approved-secondary').textContent, 'Resolver 10 questões');
     assert.equal(cards[1].querySelector('h3').textContent, 'Versão de revisão');
     assert.equal(cards[1].querySelector('.cpc-approved-primary').textContent, 'Revisar conteúdo');
     assert.equal(cards[1].querySelector('.cpc-approved-secondary').textContent, 'Resolver 5 questões');
-    assert.match(cards[2].querySelector('.cpc-approved-primary').textContent, /mapa mental/i);
     assert.match(cards[0].querySelector('.cpc-approved-primary').getAttribute('onclick'), /complete/);
     assert.match(cards[1].querySelector('.cpc-approved-primary').getAttribute('onclick'), /summary/);
-    assert.match(cards[2].querySelector('.cpc-approved-primary').getAttribute('onclick'), /Map/);
+    if (index !== 7) {
+      assert.match(cards[2].querySelector('.cpc-approved-primary').textContent, /mapa mental/i);
+      assert.match(cards[2].querySelector('.cpc-approved-primary').getAttribute('onclick'), /Map/);
+    }
     assert.equal(module.querySelectorAll('.cpc-approved-reading').length, 1);
     assert.equal(module.querySelectorAll('.cpc-study-intro').length, 0);
     assert.equal(module.querySelector('.cpc-approved-reading p').textContent, `Leitura legal M${index+1}`);
