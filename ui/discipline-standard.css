@@ -406,3 +406,14 @@ html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-native-materia
   width:100%;
   margin:0;
 }
+
+/* Keep Penal's native review card aligned with the approved desktop card layout. */
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-card.penal-approved-review {
+  display:grid!important; grid-template-columns:82px minmax(0,1fr) 210px; align-items:center; gap:18px;
+}
+@media(max-width:700px) {
+  html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-card.penal-approved-review {
+    grid-template-columns:58px minmax(0,1fr)!important;
+  }
+  html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-card.penal-approved-review .penal-approved-card-actions { grid-column:1/-1; }
+}
