@@ -45,6 +45,16 @@
     // current filters, curated sharing links, and the native notes store untouched.
     body.querySelectorAll(':scope > .adm-native-preserved:not(.adm-native-sharing),:scope > .adm-native-external-entry')
       .forEach(node => node.remove());
+    const zone = body.querySelector(':scope > .adm-native-zone');
+    if (!zone) return;
+    const materials = zone.querySelector(':scope > .adm-native-material-grid');
+    const notes = body.querySelector(':scope > .adm-native-notes');
+    const tools = zone.querySelector(':scope > .adm-native-module-tools');
+    zone.querySelector(':scope > .adm-native-hint')?.remove();
+    // Keep the module-specific controls and links, but put notes after the three
+    // study cards and the extra tools after the filter resources.
+    if (materials && notes && materials.nextElementSibling !== notes) materials.after(notes);
+    if (tools) zone.appendChild(tools);
   }
   function readingStats(module, meta) {
     if (meta.subject === 'cpp' && window.CppCourseV1) {
