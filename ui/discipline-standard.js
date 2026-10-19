@@ -218,6 +218,8 @@
     }
 
     const note = footer.querySelector(':scope > .ds-notes');
+    const filterPanels = Array.from(body.querySelectorAll(':scope > .tec-validated-panel,:scope > .ds-module-footer > .tec-validated-panel'));
+    filterPanels.forEach(panel => panel.classList.add('penal-approved-filter-panel'));
     const moduleLaw = Array.from(body.querySelectorAll(':scope > .cf-resource-box,:scope > .ds-module-footer > .cf-resource-box')).find(box => (box.querySelector('h4')?.textContent || '').trim().toLocaleLowerCase('pt-BR') === 'lei em dia');
     moduleLaw?.classList.add('penal-approved-extra');
     const review = footer.querySelector(':scope > .ds-footer-review');
@@ -248,7 +250,7 @@
       });
     }
 
-    const ordered = [note,moduleLaw,extra,tools,resources,review].filter(Boolean);
+    const ordered = [note,...filterPanels,moduleLaw,extra,tools,resources,review].filter(Boolean);
     const others = Array.from(footer.children).filter(node => !ordered.includes(node));
     footer.replaceChildren(...ordered,...others);
   }
