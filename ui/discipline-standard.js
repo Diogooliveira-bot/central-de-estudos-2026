@@ -616,6 +616,148 @@
       if (nav && nav.nextElementSibling !== el) nav.after(el);
     });
   }
+
+  const WORK_LAW_MODULES = new Set([4,5,6,7,8,9,11,12,13,14,15,16,18]);
+  function workResourceLinks(resource, kind) {
+    if (!resource) return [];
+    return Array.from(resource.querySelectorAll('a[href],button')).filter(node => {
+      if (node.closest('.edit-link') || node.matches('.edit-link,[onclick*="editLink"],[onclick*="editNamedLinks"]')) return false;
+      const label = (node.textContent || '').trim();
+      if (!label || /adicionar|editar link|editar dicas|manual/i.test(label)) return false;
+      const href = node.getAttribute('href') || '';
+      const action = node.getAttribute('onclick') || '';
+      if (!/^https?:\/\//i.test(href) && !/tecAbrirCaderno|openExternalUrl|openInternal|openLeiSeca/i.test(action)) return false;
+      if (kind === 'law' && /biblioteca geral/i.test(label)) return false;
+      return true;
+    }).map(node => node.cloneNode(true));
+  }
+  function workApprovedLayout(module, body, meta) {
+    const number = Number((meta.id.match(/\d+/) || [])[0]);
+    if (!number || number > 18 || !window.CentralTrabalhoUniversal) return false;
+    const existing = body.querySelector(':scope > .work-approved-layout');
+    if (existing) { updateWorkProgress(module, body, number, meta); return true; }
+    const title = (module.querySelector('.topic-title')?.textContent || '').replace(/\s*·\s*\d+\s*cards?\s*$/i,'').trim();
+    const oldResources = Array.from(body.querySelectorAll('.resource'));
+    const findResource = label => oldResources.find(node => (node.querySelector('.resource-label')?.textContent || '').trim().toLocaleLowerCase('pt-BR') === label);
+    const filterResource = findResource('filtro do tec');
+    const lawResource = findResource('lei seca');
+    const videoResource = findResource('videoaulas');
+    const materialResource = findResource('materiais');
+    const filterLinks = workResourceLinks(filterResource, 'filter');
+    const lawLinks = workResourceLinks(lawResource, 'law');
+    const videoLinks = workResourceLinks(videoResource, 'other');
+    const materialLinks = workResourceLinks(materialResource, 'other');
+    let note = body.querySelector('.notes');
+    const review = findResource('revisão');
+    const historyLabel = body.querySelector(':scope > .history-label');
+    const historyRows = Array.from(body.querySelectorAll(':scope > .hist'));
+    const guidedLinks = body.querySelectorAll('.prestudy a[href]:not([href="#"])');
+    const tips = Array.from(body.querySelectorAll('.tips li')).map(item => item.textContent.trim()).filter(Boolean);
+    const q = questionStats(module, meta);
+    const pct = q.total && q.correct !== null ? Math.round(q.correct / q.total * 100) : 0;
+    const guidedKey = 'central-v6:guided-reading:' + meta.id;
+    const guidedDone = localStorage.getItem(guidedKey) === '1';
+    const hasTec = filterLinks.some(node => /tecconcursos|\btec\b/i.test((node.textContent || '') + ' ' + (node.getAttribute('href') || '') + ' ' + (node.getAttribute('onclick') || '')));
+    const hasQc = filterLinks.some(node => /qconcursos|\bqc\b/i.test((node.textContent || '') + ' ' + (node.getAttribute('href') || '') + ' ' + (node.getAttribute('onclick') || '')));
+    const layout = document.createElement('div');
+    layout.className = 'work-approved-layout';
+    layout.dataset.workModule = String(number);
+    layout.innerHTML =
+      '<section class="work-approved-progress" aria-label="Progresso do módulo">' +
+        '<article><div><b>Progresso da teoria</b><strong data-work-overall>—</strong></div><div class="work-approved-track"><i data-work-overall-bar></i></div><small data-work-progress-copy>Leitura resumida e completa</small></article>' +
+        '<article><div><b>Questões externas</b><strong>' + (q.total && q.correct !== null ? pct + '% de acertos' : q.total ? '—' : 'Sem registro') + '</strong></div><div class="work-approved-track external"><i style="width:' + pct + '%"></i></div><small>' + esc(q.text) + '</small></article>' +
+      '</section>' +
+      '<section class="work-approved-reading"><div class="work-approved-reading-icon" aria-hidden="true">📖</div><div class="work-approved-reading-copy"><b>Leitura orientada inicial</b><p>Leia o sumário e identifique conceitos, requisitos, prazos e exceções indicados no material deste módulo.</p>' +
+        '<details><summary>Ver pontos para observar</summary><ul>' + (tips.length ? tips.map(item => '<li>' + esc(item) + '</li>').join('') : '<li>Conceitos centrais do tema.</li><li>Requisitos, prazos e exceções destacados na teoria.</li><li>Fundamentos legais citados no próprio material.</li>') + '</ul>' +
+        (guidedLinks.length ? '<div class="work-approved-guided-links">' + Array.from(guidedLinks).map(a => '<a href="' + esc(a.href) + '" target="_blank" rel="noopener noreferrer">' + esc(a.textContent) + '</a>').join('') + '</div>' : '') +
+        '</details><button type="button" class="work-approved-mark" data-work-guided-toggle aria-pressed="' + guidedDone + '">' + (guidedDone ? '✓ Leitura orientada concluída' : 'Marcar concluída') + '</button></div></section>' +
+      '<article class="penal-approved-card penal-approved-complete work-approved-card" data-work-card="complete"><div class="penal-approved-icon" aria-hidden="true">📚</div><div class="penal-approved-copy"><h3>Teoria completa</h3><p>Conteúdo integral do módulo para estudar em profundidade.</p><div class="penal-approved-tags"><span>Apostila</span><span>Conteúdo completo</span><span data-work-complete-pct>0% lido</span></div></div><div class="penal-approved-card-actions"><button type="button" class="penal-approved-primary" data-work-action="read-complete">Estudar conteúdo</button><button type="button" class="penal-approved-secondary" data-work-action="quiz-complete">Resolver 10 questões</button></div></article>' +
+      '<article class="penal-approved-card penal-approved-review work-approved-card" data-work-card="review"><div class="penal-approved-icon" aria-hidden="true">⚡</div><div class="penal-approved-copy"><h3>Versão de revisão</h3><p>Retome os pontos essenciais do módulo com uma leitura objetiva.</p><div class="penal-approved-tags"><span>Resumo</span><span>Pontos essenciais</span><span data-work-summary-pct>0% lido</span></div></div><div class="penal-approved-card-actions"><button type="button" class="penal-approved-primary" data-work-action="read-review">Revisar conteúdo</button><button type="button" class="penal-approved-secondary" data-work-action="quiz-review">Resolver 5 questões</button></div></article>' +
+      '<article class="penal-approved-card penal-approved-visual work-approved-card" data-work-card="infographic"><div class="penal-approved-icon" aria-hidden="true">🧠</div><div class="penal-approved-copy"><h3>Infográfico</h3><p>Imagem original do módulo, com ampliação e opção de download.</p><div class="penal-approved-tags"><span>Mapa visual</span><span>Revisão visual</span></div></div><div class="penal-approved-card-actions"><button type="button" class="penal-approved-primary" data-work-action="infographic">Visualizar infográfico</button></div></article>';
+    if (!note) {
+      note = document.createElement('section');
+      note.className = 'notes';
+      note.innerHTML = '<div class="resource-label">Anotações do módulo</div><div class="field"><textarea id="note-' + esc(meta.id) + '" placeholder="Regra, dúvida, pegadinha, observação..."></textarea></div><div class="action-row"><button class="btn primary sm" onclick="saveNote(\'' + esc(meta.id) + '\')">Salvar anotação</button></div>';
+    }
+    note.classList.add('ds-notes','work-approved-note');
+    const noteHeading = note.querySelector('.resource-label');
+    if (noteHeading) noteHeading.textContent = 'Anotações do módulo';
+    const filters = document.createElement('section');
+    filters.className = 'work-approved-filters';
+    filters.innerHTML = '<div><h4>Filtros TEC e QConcursos</h4><p>Os cadernos e registros disponíveis continuam na Central de Questões.</p></div><div class="work-approved-filter-links"></div><button type="button" class="work-approved-center" data-work-action="questions-center">Abrir Central de Questões</button>';
+    const filterHost = filters.querySelector('.work-approved-filter-links');
+    filterLinks.forEach(node => filterHost.appendChild(node));
+    if (!hasTec) filterHost.insertAdjacentHTML('beforeend','<span class="work-approved-pending">TEC deste módulo · Pendente</span>');
+    if (!hasQc) filterHost.insertAdjacentHTML('beforeend','<span class="work-approved-pending">QConcursos · Pendente</span>');
+    const extras = document.createElement('details');
+    extras.className = 'work-approved-extras';
+    const extraLinks = videoLinks.concat(materialLinks);
+    if (extraLinks.length) {
+      extras.innerHTML = '<summary>Recursos adicionais já cadastrados</summary><div class="work-approved-extra-links"></div>';
+      extraLinks.forEach(node => extras.querySelector('.work-approved-extra-links').appendChild(node));
+    }
+    const tools = document.createElement('section');
+    tools.className = 'work-approved-tools';
+    tools.innerHTML = '<span>FERRAMENTAS DO MÓDULO</span><div></div>';
+    const toolHost = tools.querySelector('div');
+    if (WORK_LAW_MODULES.has(number)) {
+      const lawButton = document.createElement('button');
+      lawButton.type = 'button'; lawButton.textContent = '📖 Lei em Dia'; lawButton.dataset.workAction = 'law';
+      toolHost.appendChild(lawButton);
+    } else if (!lawLinks.length) {
+      const pending = document.createElement('span'); pending.className = 'work-approved-pending'; pending.textContent = '📖 Lei em Dia · Pendente'; toolHost.appendChild(pending);
+    }
+    lawLinks.forEach(node => toolHost.appendChild(node));
+    const vade = document.createElement('button'); vade.type = 'button'; vade.textContent = '⚖ Vade Mecum'; vade.dataset.workAction = 'vade'; toolHost.appendChild(vade);
+    const tec = document.createElement('button'); tec.type = 'button'; tec.textContent = '▤ Cadernos TEC'; tec.dataset.workAction = 'tec'; toolHost.appendChild(tec);
+    const center = document.createElement('button'); center.type = 'button'; center.textContent = 'Central de Questões'; center.dataset.workAction = 'questions-center'; toolHost.appendChild(center);
+    const reviewDate = localStorage.getItem(key(meta.id,'review')) || todayISO();
+    const reviewCard = review || document.createElement('section');
+    reviewCard.classList.add('work-approved-review-date');
+    if (!review) {
+      reviewCard.innerHTML = '<div class="resource-label">Revisão programada</div><div class="chips"><input type="date" value="' + esc(reviewDate) + '" aria-label="Data da revisão"><button class="btn sm" type="button" data-work-action="schedule-review">Agendar revisão</button><span class="muted small" role="status"></span></div>';
+    } else {
+      const heading = reviewCard.querySelector('.resource-label'); if (heading) heading.textContent = 'Revisão programada';
+      const input = reviewCard.querySelector('input[type="date"]'); if (input) input.value = reviewDate;
+      const button = reviewCard.querySelector('button'); if (button) { button.removeAttribute('onclick'); button.dataset.workAction = 'schedule-review'; button.type = 'button'; button.textContent = 'Agendar revisão'; }
+      reviewCard.querySelectorAll('.edit-link').forEach(node => node.remove());
+    }
+    const history = document.createElement('details');
+    history.className = 'work-approved-history';
+    if (historyLabel || historyRows.length) {
+      history.innerHTML = '<summary>Histórico de questões externas</summary><div class="work-approved-history-content"></div>';
+      const host = history.querySelector('.work-approved-history-content');
+      if (historyLabel) host.appendChild(historyLabel);
+      historyRows.forEach(row => host.appendChild(row));
+    } else history.remove();
+    body.replaceChildren(layout);
+    body.appendChild(note);
+    body.appendChild(filters);
+    if (history.children.length) body.appendChild(history);
+    if (extras.children.length) body.appendChild(extras);
+    body.appendChild(tools);
+    body.appendChild(reviewCard);
+    updateWorkProgress(module, body, number, meta);
+    return true;
+  }
+  function updateWorkProgress(module, body, number, meta) {
+    const api = window.CentralTrabalhoUniversal;
+    if (!api || typeof api.stats !== 'function') return;
+    Promise.resolve(api.stats(number)).then(stats => {
+      if (!module.isConnected || !body.querySelector(':scope > .work-approved-layout')) return;
+      const overall = body.querySelector('[data-work-overall]');
+      const overallBar = body.querySelector('[data-work-overall-bar]');
+      const copy = body.querySelector('[data-work-progress-copy]');
+      const complete = body.querySelector('[data-work-complete-pct]');
+      const summary = body.querySelector('[data-work-summary-pct]');
+      if (overall) overall.textContent = stats.theoryPct + '% concluído';
+      if (overallBar) overallBar.style.width = stats.theoryPct + '%';
+      if (copy) copy.textContent = 'Versão resumida ' + stats.summaryPct + '% · versão completa ' + stats.completePct + '%';
+      if (complete) complete.textContent = stats.completePct + '% lido';
+      if (summary) summary.textContent = stats.summaryPct + '% lido';
+    }).catch(() => {});
+  }
+
   function enhance(module) {
     const body = bodyOf(module); if (!body) return;
     const meta = identity(module);
@@ -652,6 +794,11 @@
       body.querySelector(':scope > .ds-module-nav')?.remove();
       moduleFooter(module,body,meta);
       notes(module,body,meta);
+      return;
+    }
+
+    if (meta.subject === 'trab' && /^trab-m\d{2}$/.test(meta.id)) {
+      workApprovedLayout(module, body, meta);
       return;
     }
 
@@ -734,6 +881,40 @@
     target.scrollIntoView({block:'start'});
   }
   document.addEventListener('click',function (event) {
+    const workAction = event.target.closest('[data-work-action]');
+    if (workAction) {
+      const module = workAction.closest('.topic-item[data-uid^="trab-m"]');
+      const number = Number(module?.dataset.uid.match(/\d+/)?.[0] || 0);
+      const api = window.CentralTrabalhoUniversal;
+      const action = workAction.dataset.workAction;
+      if (action === 'read-complete') api?.open(number,'completa');
+      else if (action === 'read-review') api?.open(number,'resumida');
+      else if (action === 'quiz-complete') api?.openQuestions(number,'completa');
+      else if (action === 'quiz-review') api?.openQuestions(number,'resumida');
+      else if (action === 'infographic') api?.open(number,'infografico');
+      else if (action === 'law') window.openEmbeddedTool?.('decorando',{discipline:'trab',module:'trab-m'+String(number).padStart(2,'0')},workAction);
+      else if (action === 'vade') window.openEmbeddedTool?.('vade',{},workAction);
+      else if (action === 'tec') window.tecAbrirListaContexto?.('Direito do Trabalho','');
+      else if (action === 'questions-center') window.ExternalQuestionFilters?.openPage?.(null,{tab:'disciplines'});
+      else if (action === 'schedule-review') {
+        const uid = module?.dataset.uid, date = workAction.closest('.work-approved-review-date')?.querySelector('input[type="date"]')?.value;
+        const ok = uid && date && window.scheduleModuleReview?.(uid,date,{discipline:'Direito do Trabalho',task:'Revisão — '+(module.querySelector('.topic-title')?.textContent || '').trim()});
+        const status = workAction.closest('.work-approved-review-date')?.querySelector('[role="status"]');
+        if (status) status.textContent = ok ? 'Revisão agendada para ' + window.formatDate(date) : 'Não foi possível agendar a revisão.';
+      }
+      return;
+    }
+    const guided = event.target.closest('[data-work-guided-toggle]');
+    if (guided) {
+      const module = guided.closest('.topic-item[data-uid^="trab-m"]');
+      if (!module) return;
+      const uid = module.dataset.uid, storeKey = 'central-v6:guided-reading:' + uid;
+      const done = localStorage.getItem(storeKey) !== '1';
+      localStorage.setItem(storeKey,done?'1':'0');
+      guided.setAttribute('aria-pressed',String(done));
+      guided.textContent = done ? '✓ Leitura orientada concluída' : 'Marcar concluída';
+      return;
+    }
     const cppNote = event.target.closest('[data-ds-footer-save-note]');
     if (cppNote) {
       const module = cppNote.closest('.ds-module'), box = cppNote.closest('.ds-notes');
