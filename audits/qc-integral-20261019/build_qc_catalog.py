@@ -33,7 +33,8 @@ DISCIPLINE_KEYS = {
 def main() -> None:
     source = json.loads(SOURCE.read_text(encoding="utf-8"))
     main_map = json.loads(MAIN_MAP.read_text(encoding="utf-8"))
-    linked_ids = {str(item["id"]) for item in main_map["items"] if item.get("id")}
+    linked_items = {str(item["id"]): item for item in main_map["items"] if item.get("id")}
+    linked_ids = set(linked_items)
     cpc_source = CPC_MAP.read_text(encoding="utf-8")
     linked_ids.update(re.findall(r'"id":"(\d+)"', cpc_source))
 
@@ -74,6 +75,8 @@ def main() -> None:
             and (item.get("submodulo") or item.get("modulo")) == code
         ), None)
         linked = notebook_id in linked_ids
+        linked_item = linked_items.get(notebook_id, {})
+        verified = str(linked_item.get("source", "")).startswith("QC autenticado:")
         rows.append({
             "id": notebook_id,
             "title": display_title(notebook.get("titulo", "")),
@@ -86,11 +89,12 @@ def main() -> None:
             "candidateSubmodule": match.get("submodulo", ""),
             "candidateModuleTitle": match.get("titulo_modulo_central", ""),
             "linkedInExistingMap": linked,
-            "reviewStatus": "linked-in-existing-map" if linked else "no-confirmed-module-match",
+            "reviewStatus": "validated-and-integrated" if verified else "linked-in-existing-map" if linked else "no-confirmed-module-match",
             "pendingCandidateCode": (exact_pending.get("submodulo") or exact_pending.get("modulo")) if exact_pending else "",
             "pendingCandidateTitle": exact_pending.get("titulo_caderno_qc", "") if exact_pending else "",
             "evidenceNote": (
-                "ID encontrado em um mapa QC existente; a validação do destino requer abertura autenticada."
+                ("Filtro QC aberto em sessão autenticada; quantidade e assuntos conferidos." if verified else
+                 "ID encontrado em um mapa QC existente; validação do destino ainda pendente.")
                 if linked else
                 "A disciplina/código é apenas sugestão da matriz; não exibir como filtro do aluno sem validação temática."
             ),

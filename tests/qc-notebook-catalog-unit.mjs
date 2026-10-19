@@ -13,19 +13,21 @@ vm.runInNewContext(catalogScript, context);
 const catalog = context.window.QC_NOTEBOOK_CATALOG;
 const source = read('ui/external-question-filters-v1.js');
 
-test('catálogo QC preserva os 416 IDs e URLs, com sete itens sem vínculo confirmado', () => {
+test('catálogo QC preserva os 416 IDs e URLs, com seis itens sem vínculo confirmado', () => {
   assert.equal(catalog.total, 416);
   assert.equal(catalog.items.length, 416);
   assert.equal(new Set(catalog.items.map((item) => item.id)).size, 416);
-  assert.equal(catalog.items.filter((item) => item.linkedInExistingMap).length, 409);
-  assert.equal(catalog.items.filter((item) => item.reviewStatus === 'no-confirmed-module-match').length, 7);
+  assert.equal(catalog.items.filter((item) => item.linkedInExistingMap).length, 410);
+  assert.equal(catalog.items.filter((item) => item.reviewStatus === 'no-confirmed-module-match').length, 6);
   for (const item of catalog.items) {
     const url = new URL(item.url);
     assert.equal(url.hostname, 'www.qconcursos.com');
     assert.equal(url.searchParams.get('notebook_ids[]'), item.id);
   }
-  assert.equal(catalog.items.filter((item) => item.pendingCandidateCode).length, 4);
+  assert.equal(catalog.items.filter((item) => item.pendingCandidateCode).length, 3);
   assert.ok(catalog.items.some((item) => item.id === '15285197' && item.pendingCandidateCode === 'M16.5'));
+  assert.ok(catalog.items.some((item) => item.id === '15285069' && item.linkedInExistingMap && item.reviewStatus === 'validated-and-integrated'));
+  assert.match(catalog.items.find((item) => item.id === '15285069').evidenceNote, /autenticada/);
   const repaired = catalog.items.find((item) => item.sourceTitle !== item.title);
   assert.ok(repaired, 'títulos recuperáveis devem ser limpos para exibição');
   assert.notEqual(repaired.sourceTitle, repaired.title, 'o título original permanece preservado');
@@ -59,7 +61,7 @@ test('catálogo completo só aparece na seção administrativa e mantém os iten
   const section = admin.window.document.querySelector('[data-bcq-qc-inventory]');
   assert.equal(section.hidden, false);
   assert.equal(section.querySelectorAll('[data-bcq-qc-inventory-row]').length, 416);
-  assert.equal(section.querySelectorAll('[data-status="unconfirmed"]').length, 7);
+  assert.equal(section.querySelectorAll('[data-status="unconfirmed"]').length, 6);
   const pendingCandidate = section.querySelector('[data-bcq-qc-inventory-row][data-search*="15285197"]');
   assert.match(pendingCandidate.textContent, /candidato à pendência M16\.5/);
   assert.equal(section.querySelector('a[href*="notebook_ids%5B%5D=15285197"]')?.getAttribute('href'), catalog.items.find((item) => item.id === '15285197').url);

@@ -15,9 +15,9 @@ test('tabela preserva os totais e os registros QC catalogados', () => {
   assert.equal(table.platform, 'QConcursos');
   assert.equal(table.counts.penal.linked, 53);
   assert.equal(table.counts.processualPenal.linked, 65);
-  assert.equal(table.counts.administrativo.linked, 60);
-  assert.equal(table.counts.totalValidatedPublicLinks, 335);
-  assert.equal(table.counts.totalPending, 58);
+  assert.equal(table.counts.administrativo.linked, 61);
+  assert.equal(table.counts.totalValidatedPublicLinks, 336);
+  assert.equal(table.counts.totalPending, 57);
   assert.deepEqual(JSON.parse(JSON.stringify(context.window.QC_CENTRAL_SHARING_LINKS)), table);
 });
 
@@ -77,9 +77,13 @@ test('integração mantém os painéis TEC e QConcursos separados e responsivos'
 
 test('pendências de Administrativo sem filtro exclusivo não expõem o caderno amplo', () => {
   const pending = new Set(table.items.filter(x => x.disciplineKey === 'administrativo' && x.status === 'Pendente').map(x => x.code));
-  for (const code of ['M05.5','M06.3','M15.2','M16.5','M07','M11','M19','M20']) {
+  for (const code of ['M06.3','M15.2','M16.5','M07','M11','M19','M20']) {
     assert.ok(pending.has(code), `${code} deve aparecer como Pendente`);
   }
+  const m055 = table.items.find(x => x.disciplineKey === 'administrativo' && x.code === 'M05.5');
+  assert.equal(m055.status, 'VALIDADO');
+  assert.equal(m055.id, '15285069');
+  assert.equal(m055.quantity, 30);
   for (const code of ['M04.1','M04.3','M08.1','M08.3','M14.3','M15.1']) {
     assert.ok(table.items.some(x => x.disciplineKey === 'administrativo' && x.code === code && x.status === 'VALIDADO'), `${code} deve substituir a pendência por filtro conferido`);
   }
