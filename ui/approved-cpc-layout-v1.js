@@ -56,7 +56,10 @@
     if (!intro) return null;
     const buttons = Array.from(intro.querySelectorAll('button'));
     const matcher = type === 'summary' ? /5\s*(?:do|questões|questoes)/i : /10\s*(?:do|questões|questoes)/i;
-    return buttons.find(button => matcher.test(button.textContent)) || null;
+    const button = buttons.find(item => matcher.test(item.textContent));
+    if (!button) return null;
+    const counts = button.textContent.match(/(\d+)\s*\/\s*(\d+)/);
+    return { button, count:counts ? Number(counts[2]) : 0 };
   }
 
   function materialCard(info, question, type) {
@@ -74,11 +77,17 @@
       '<div class="cpc-approved-tags"><span>' + esc(info.sourceTitle) + '</span><span>Processo Civil</span></div></div>' +
       '<div class="cpc-approved-actions"></div>';
     article.querySelector('.cpc-approved-actions').append(primary);
-    if (question) {
-      question.classList.remove('good');
-      question.classList.add('cpc-approved-secondary');
-      question.textContent = type === 'summary' ? 'Resolver 5 questões' : 'Resolver 10 questões';
-      article.querySelector('.cpc-approved-actions').append(question);
+    if (question?.button) {
+      question.button.classList.remove('good');
+      question.button.classList.add('cpc-approved-secondary');
+      question.button.textContent = question.count
+        ? 'Resolver ' + question.count + ' questões'
+        : 'Questões internas indisponíveis';
+      if (!question.count) {
+        question.button.disabled = true;
+        question.button.setAttribute('aria-label', 'Não há questões disponíveis nesta bateria');
+      }
+      article.querySelector('.cpc-approved-actions').append(question.button);
     }
     return article;
   }

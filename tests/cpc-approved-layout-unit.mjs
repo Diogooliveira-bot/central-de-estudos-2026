@@ -14,7 +14,7 @@ const weeks = Array.from({ length:20 }, (_, index) => ({
   read_focus:readFocus
 }));
 
-function fixture() {
+function fixture(emptyQuestions = false) {
   const modules = weeks.map((week, index) => {
     const n = String(index+1).padStart(2, '0');
     const id = week.id;
@@ -26,7 +26,7 @@ function fixture() {
         <button class="bc-native-material-card" onclick="Reader${n}.open('complete')"><span>📚</span><span><strong>Conteúdo completo</strong><small>Teoria integral do módulo</small></span><span class="bc-native-material-action">10/12 →</span></button>
         <button class="bc-native-material-card" onclick="Map${n}.open()"><span>🧠</span><span><strong>Mapa mental</strong><small>Carrossel real do módulo</small></span><span class="bc-native-material-action">Abrir →</span></button>
       </div></section>
-      <section class="cpc-study-intro"><button onclick="Quiz${n}.open('${summary}','summary')">5 do resumido · 5/5</button><button onclick="Quiz${n}.open('${summary}','full')">10 do completo · 10/10</button></section>
+        <section class="cpc-study-intro"><button onclick="Quiz${n}.open('${summary}','summary')">5 do resumido · ${emptyQuestions ? '0/0' : '5/5'}</button><button onclick="Quiz${n}.open('${summary}','full')">10 do completo · ${emptyQuestions ? '0/0' : '10/10'}</button></section>
       <div class="cpc-bottom-grid"><button>Lei em Dia</button></div><details class="cf-resources"><div class="cf-resource-box"><textarea id="cf-note-${id}">Nota preservada ${index+1}</textarea></div></details>
     </div></section>`;
   }).join('');
@@ -70,5 +70,14 @@ test('padroniza os 20 módulos CPC sem duplicar a leitura e preserva conteúdo e
   }
   dom.window.CpcApprovedLayout.refresh();
   assert.equal(dom.window.document.querySelectorAll('.cpc-approved-reading').length, 20);
+  dom.window.close();
+});
+
+test('não anuncia quantidades quando a bateria real não tem questões', async () => {
+  const dom = fixture(true);
+  await new Promise(resolve => dom.window.requestAnimationFrame(() => dom.window.requestAnimationFrame(resolve)));
+  const questions = [...dom.window.document.querySelectorAll('.cpc-approved-card .cpc-approved-secondary')];
+  assert.equal(questions.length, 40);
+  assert.ok(questions.every(button => button.disabled && button.textContent === 'Questões internas indisponíveis'));
   dom.window.close();
 });
