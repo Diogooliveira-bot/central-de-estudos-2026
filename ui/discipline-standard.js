@@ -211,15 +211,18 @@
 
   function penalApprovedFooter(body) {
     const footer = body.querySelector(':scope > .ds-module-footer');
-    if (!footer || footer.dataset.penalApprovedFooter === '1') return;
-    footer.dataset.penalApprovedFooter = '1';
-    footer.querySelector(':scope > .ds-footer-questions')?.remove();
+    if (!footer) return;
+    if (footer.dataset.penalApprovedFooter !== '1') {
+      footer.dataset.penalApprovedFooter = '1';
+      footer.querySelector(':scope > .ds-footer-questions')?.remove();
+    }
 
     const note = footer.querySelector(':scope > .ds-notes');
-    const moduleLaw = Array.from(body.querySelectorAll(':scope > .cf-resource-box')).find(box => (box.querySelector('h4')?.textContent || '').trim().toLocaleLowerCase('pt-BR') === 'lei em dia');
+    const moduleLaw = Array.from(body.querySelectorAll(':scope > .cf-resource-box,:scope > .ds-module-footer > .cf-resource-box')).find(box => (box.querySelector('h4')?.textContent || '').trim().toLocaleLowerCase('pt-BR') === 'lei em dia');
+    moduleLaw?.classList.add('penal-approved-extra');
     const review = footer.querySelector(':scope > .ds-footer-review');
     const tools = footer.querySelector(':scope > .ds-footer-tools');
-    const resources = body.querySelector(':scope > .cf-resources');
+    const resources = body.querySelector(':scope > .cf-resources,:scope > .ds-module-footer > .cf-resources');
     const module = body.closest('.cf-module');
     const extra = body.querySelector(':scope > .penal-approved-extra');
 
