@@ -1,9 +1,9 @@
 {
   "schema": "qc-pending-creation-progress-v1",
-  "updatedAt": "2026-10-20T00:20:00Z",
+  "updatedAt": "2026-10-20T00:40:00Z",
   "initialPending": 57,
-  "createdAndValidated": 7,
-  "remainingPending": 50,
+  "createdAndValidated": 8,
+  "remainingPending": 49,
   "records": [
     {
       "discipline": "Direito Penal",
@@ -192,6 +192,27 @@
       },
       "url": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15351070",
       "status": "criado, salvo, reaberto; 3 questões pertinentes visíveis e compartilhamento confirmado na listagem autenticada"
+    },
+    {
+      "discipline": "Direito Penal",
+      "module": "M17.1",
+      "moduleTitle": "Constituição Penal, Responsabilidade Penal da Pessoa Jurídica, Súmulas e Consolidação",
+      "subject": "Responsabilidade penal da pessoa jurídica",
+      "qcId": "15351251",
+      "shareCode": "0EM-FEK",
+      "notebookTitle": "DP M17.1 Responsabilidade penal PJ",
+      "questionCount": 1,
+      "criteria": {
+        "subjectTaxonomy": "Direito Penal > Tipicidade > 3.2 Crime praticado por pessoa jurídica",
+        "questionId": "Q1987413",
+        "board": "FGV",
+        "institution": "Senado Federal",
+        "year": 2022,
+        "minimumQuestionCount": 0,
+        "note": "Questão conferida integralmente sobre responsabilidade penal da pessoa jurídica por crimes ambientais."
+      },
+      "url": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15351251",
+      "status": "criado, salvo, reaberto e integrado; 1 questão confirmada e compartilhamento ativo (0EM-FEK)"
     }
   ],
   "attempts": [
@@ -238,8 +259,10 @@
     {
       "discipline": "Direito Penal",
       "module": "M17.1",
-      "status": "não criado: resultado do filtro contaminado por questões de outros assuntos",
-      "evidence": "O assunto nativo 3.2 Crime praticado por pessoa jurídica existe. Com o recorte temporal de 8 anos, o QC retornou 3 questões; a inspeção mostrou apenas uma claramente sobre responsabilidade penal da pessoa jurídica e duas de outros tópicos. Nenhum caderno foi salvo."
+      "status": "superado: caderno 15351251 criado, reaberto, validado e integrado",
+      "evidence": "Assunto nativo 3.2 Crime praticado por pessoa jurídica; após inspeção dos resultados, caderno salvo com Q1987413 (FGV, Senado Federal, 2022), questão direta sobre responsabilidade penal da pessoa jurídica por crimes ambientais. Reaberto com 1 questão e compartilhamento ativo.",
+      "status_historico": "superado: caderno 15351251 criado, reaberto, validado e integrado",
+      "supersededBy": "15351251"
     }
   ],
   "testResults": {
@@ -248,7 +271,7 @@
     "failed": 0,
     "skipped": 1,
     "skipReason": "Chromium do Playwright não instalado; uma verificação de navegador real foi ignorada pelo repositório.",
-    "targetedTests": "28 aprovados, 0 falhas após a última integração",
+    "targetedTests": "17 testes de QC/central aprovados, 0 falhas",
     "diffCheck": "passed"
   }
 }
