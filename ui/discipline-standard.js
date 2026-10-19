@@ -39,6 +39,13 @@
       if (ordered.some((item,index) => item.card !== cards[index])) ordered.forEach(({card}) => container.appendChild(card));
     });
   }
+  function removeAdmLegacyDuplicates(body) {
+    // ADM now has consolidated TEC/QC filters and per-filter performance controls
+    // inside its native zone. Drop only the obsolete parallel blocks; keep records,
+    // current filters, curated sharing links, and the native notes store untouched.
+    body.querySelectorAll(':scope > .adm-native-preserved:not(.adm-native-sharing),:scope > .adm-native-external-entry')
+      .forEach(node => node.remove());
+  }
   function readingStats(module, meta) {
     if (meta.subject === 'cpp' && window.CppCourseV1) {
       const state = window.CppCourseV1.state().modules[meta.id];
@@ -281,7 +288,10 @@
       const toggleOnly = head.querySelector('.open-topic');
       if (toggleOnly) toggleOnly.setAttribute('aria-label',(module.classList.contains('open') ? 'Recolher' : 'Abrir') + ' módulo');
     }
-    if(body.querySelector('.adm-native-zone'))return;
+    if(body.querySelector('.adm-native-zone')) {
+      removeAdmLegacyDuplicates(body);
+      return;
+    }
     if (!module.classList.contains('open') || !module.closest('.subject').classList.contains('open')) return;
 
     // Direito Penal M01-M17 usa o fluxo nativo aprovado.
