@@ -32,12 +32,9 @@
       '<details><summary>Ver pontos para observar</summary><ul>' + (week.read_focus || []).map(point => '<li>' + esc(point) + '</li>').join('') +
       '</ul></details><div class="cpc-approved-reading-actions">' +
       '<button type="button" class="cpc-approved-secondary" data-cpc-reading-toggle>' + (completed ? '✓ Leitura concluída' : 'Marcar concluída') + '</button>' +
-      '<button type="button" class="cpc-approved-secondary" data-cpc-law>📖 Lei em Dia deste módulo</button></div></div>';
+      '</div></div>';
     reading.querySelector('[data-cpc-reading-toggle]').addEventListener('click', () => {
       if (typeof window.cpcUpdateWeek === 'function') window.cpcUpdateWeek(week.id,{reading:!completed});
-    });
-    reading.querySelector('[data-cpc-law]').addEventListener('click', () => {
-      if (typeof window.openLeiSecaEnxuta === 'function') window.openLeiSecaEnxuta(null,'cpc','cpc-m' + number.toLowerCase());
     });
     body.insertBefore(reading,materials);
 
@@ -84,7 +81,8 @@
     if (map) grid.append(card(map,'map',null));
     materials.classList.add('cpc-approved-materials'); materials.querySelector('.bc-native-materials-head')?.remove();
     intro?.remove(); body.querySelector(':scope > .cf-module-bar')?.remove();
-    body.querySelector(':scope > .bc-native-metrics')?.classList.add('cpc-approved-metrics');
+    // Remove the duplicate progress strip from view without touching saved progress.
+    body.querySelector(':scope > .bc-native-metrics')?.remove();
     materials.dataset.cpcApproved = '1';
   }
   function identity(module) {
@@ -301,6 +299,10 @@
     if (meta.subject === 'cf') {
       // Remove only the redundant manual question entry/history UI; keep stored rounds intact.
       footer.querySelector(':scope > .ds-footer-questions')?.remove();
+    }
+    if (meta.subject === 'cpc') {
+      // Remove the duplicate entry form, preserving the round history and saved records.
+      footer.querySelector(':scope > .ds-footer-questions form.perf-form')?.remove();
     }
     if (body.lastElementChild !== footer) body.appendChild(footer);
     const history = footer.querySelector('[data-ds-footer-history]');
