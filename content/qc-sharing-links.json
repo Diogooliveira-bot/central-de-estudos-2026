@@ -1,12 +1,12 @@
 {
   "schema": "qc-central-sharing-v1",
-  "generatedAt": "2026-10-20T00:51:36.983846+00:00",
+  "generatedAt": "2026-10-20T00:52:59.434838+00:00",
   "platform": "QConcursos",
   "counts": {
     "administrativo": {
       "items": 98,
-      "linked": 68,
-      "pending": 30
+      "linked": 69,
+      "pending": 29
     },
     "penal": {
       "items": 64,
@@ -19,8 +19,8 @@
       "pending": 9
     },
     "totalItems": 393,
-    "totalValidatedPublicLinks": 351,
-    "totalPending": 42,
+    "totalValidatedPublicLinks": 352,
+    "totalPending": 41,
     "constitucional": {
       "items": 19,
       "linked": 19,
@@ -1507,14 +1507,13 @@
       "kind": "general",
       "moduleTitle": "LINDB e consequencias no Direito Publico",
       "title": "LINDB e consequencias no Direito Publico",
-      "notebookTitle": null,
-      "id": null,
-      "quantity": null,
-      "link": null,
-      "status": "Pendente",
-      "public": false,
-      "source": "checkpoint_adm_qc.json.thematicAudit.missingGenerals",
-      "pendingReason": "Sem filtro exclusivo nativo; mantido como Pendente."
+      "notebookTitle": "ADM M07 LINDB Direito Público",
+      "id": "15352538",
+      "quantity": 2,
+      "link": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15352538",
+      "status": "VALIDADO",
+      "public": true,
+      "source": "QC autenticado: Caderno geral reúne LINDB/decisões no Direito Público (Q4378318, FGV, 2026) e regulamentação pelo Decreto 9.830/2019 (Q4177712, OBJETIVA, 2026). Ambas lidas integralmente; reaberto com 2 questões e compartilhamento ativo 0EM-GPT."
     },
     {
       "discipline": "Direito Administrativo",

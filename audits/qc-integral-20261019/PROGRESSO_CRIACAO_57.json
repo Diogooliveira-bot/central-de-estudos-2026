@@ -1,9 +1,9 @@
 {
   "schema": "qc-pending-creation-progress-v1",
-  "updatedAt": "2026-10-20T00:51:36.983846+00:00",
+  "updatedAt": "2026-10-20T00:52:59.434838+00:00",
   "initialPending": 57,
-  "createdAndValidated": 15,
-  "remainingPending": 42,
+  "createdAndValidated": 16,
+  "remainingPending": 41,
   "records": [
     {
       "discipline": "Direito Penal",
@@ -401,6 +401,31 @@
         ],
         "minimumQuestionCount": 0,
         "note": "OBJETIVA/PGM Canoas, Procurador Municipal, 2026; questão específica do Decreto 9.830/2019 sobre dolo, erro grosseiro e circunstâncias práticas do gestor. Seleção manual após leitura integral; salvo e reaberto, público (0EM-GPC)."
+      },
+      "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
+    },
+    {
+      "discipline": "Direito Administrativo",
+      "module": "M07",
+      "moduleTitle": "LINDB e consequencias no Direito Publico",
+      "subject": "LINDB e consequencias no Direito Publico",
+      "qcId": "15352538",
+      "shareCode": "0EM-GPT",
+      "notebookTitle": "ADM M07 LINDB Direito Público",
+      "questionCount": 2,
+      "url": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15352538",
+      "criteria": {
+        "method": "seleção manual após leitura integral",
+        "selectedQuestions": [
+          "Q4378318",
+          "Q4177712"
+        ],
+        "excluded": [
+          "anuladas",
+          "desatualizadas"
+        ],
+        "minimumQuestionCount": 0,
+        "note": "Caderno geral reúne LINDB/decisões no Direito Público (Q4378318, FGV, 2026) e regulamentação pelo Decreto 9.830/2019 (Q4177712, OBJETIVA, 2026). Ambas lidas integralmente; reaberto com 2 questões e compartilhamento ativo 0EM-GPT."
       },
       "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
     }
