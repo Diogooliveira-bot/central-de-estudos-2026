@@ -1,9 +1,9 @@
 {
   "schema": "qc-pending-creation-progress-v1",
-  "updatedAt": "2026-10-20T01:11:42.736173+00:00",
+  "updatedAt": "2026-10-20T09:47:48+00:00",
   "initialPending": 57,
-  "createdAndValidated": 37,
-  "remainingPending": 20,
+  "createdAndValidated": 38,
+  "remainingPending": 19,
   "records": [
     {
       "discipline": "Direito Penal",
@@ -936,6 +936,30 @@
         ],
         "minimumQuestionCount": 0,
         "note": "Geral LAI com transparência ativa, pedidos e recursos, restrições de acesso (FCC/TJCE, 2026) e responsabilidades. Quatro questões lidas integralmente, todas de 2026. Salvo, reaberto com 4 questões e público 0EM-GZW."
+      },
+      "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
+    },
+    {
+      "discipline": "Direito Administrativo",
+      "module": "M20.1",
+      "moduleTitle": "Lei Geral de Protecao de Dados - LGPD",
+      "subject": "Fundamentos, incidência, conceitos e princípios",
+      "qcId": "15354462",
+      "shareCode": "0EM-JJY",
+      "notebookTitle": "ADM M20.1 Fundamentos, incidência e princípios",
+      "questionCount": 1,
+      "url": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15354462",
+      "criteria": {
+        "method": "filtro por palavra-chave e seleção manual após leitura integral",
+        "selectedQuestions": [
+          "Q4218757"
+        ],
+        "excluded": [
+          "anuladas",
+          "desatualizadas"
+        ],
+        "minimumQuestionCount": 0,
+        "note": "Questão de 2026 da banca Instituto AOCP, IF-CE, Analista de TI; texto trata de âmbito material da LGPD e aplicação a pessoas naturais/jurídicas, bases físicas/digitais, definições e atribuições. Busca com exclusão explícita de anuladas e desatualizadas; revisão manual do enunciado e alternativas. Salvo, reaberto, com quantidade confirmada e compartilhamento público ativo 0EM-JJY."
       },
       "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
     }
