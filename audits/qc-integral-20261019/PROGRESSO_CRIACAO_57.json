@@ -1,9 +1,9 @@
 {
   "schema": "qc-pending-creation-progress-v1",
-  "updatedAt": "2026-10-20T10:07:01+00:00",
+  "updatedAt": "2026-10-20T10:07:58+00:00",
   "initialPending": 57,
-  "createdAndValidated": 47,
-  "remainingPending": 10,
+  "createdAndValidated": 48,
+  "remainingPending": 9,
   "records": [
     {
       "discipline": "Direito Penal",
@@ -1187,6 +1187,33 @@
         ],
         "minimumQuestionCount": 0,
         "note": "Consolidação de três questões já validadas em M01.1, M01.2 e M01.3: princípios/lei penal no tempo (FGV 2026), interpretação e analogia (Cebraspe 2026) e conflito aparente (Cebraspe 2025). Filtro confirmou 3 questões. Salvo, reaberto, com quantidade confirmada e compartilhamento público ativo 0EM-JND."
+      },
+      "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
+    },
+    {
+      "discipline": "Direito Penal",
+      "module": "M17",
+      "moduleTitle": "Constituição Penal, Responsabilidade Penal da Pessoa Jurídica, Súmulas e Consolidação",
+      "subject": "Constituição Penal, Responsabilidade Penal da Pessoa Jurídica, Súmulas e Consolidação",
+      "qcId": "15354550",
+      "shareCode": "0EM-JNP",
+      "notebookTitle": "DP M17 Geral Constituição e Consolidação",
+      "questionCount": 4,
+      "url": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15354550",
+      "criteria": {
+        "method": "filtro por palavra-chave e seleção manual após leitura integral",
+        "selectedQuestions": [
+          "Q3676254",
+          "Q1987413",
+          "Q4225466",
+          "Q4289360"
+        ],
+        "excluded": [
+          "anuladas",
+          "desatualizadas"
+        ],
+        "minimumQuestionCount": 0,
+        "note": "Caderno geral consolida princípios constitucionais penais, responsabilidade penal da pessoa jurídica, crimes ambientais e Súmula 711, com questões já validadas nos submódulos M17.1–M17.4; filtro confirmou 4 questões. Salvo, reaberto, com quantidade confirmada e compartilhamento público ativo 0EM-JNP."
       },
       "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
     }

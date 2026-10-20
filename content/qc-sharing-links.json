@@ -1,9 +1,9 @@
-Warning: truncated output (original token count: 59026)
-Total output lines: 5974
+Warning: truncated output (original token count: 59039)
+Total output lines: 5973
 
 {
   "schema": "qc-central-sharing-v1",
-  "generatedAt": "2026-10-20T10:07:01+00:00",
+  "generatedAt": "2026-10-20T10:07:58+00:00",
   "platform": "QConcursos",
   "counts": {
     "administrativo": {
@@ -13,8 +13,8 @@ Total output lines: 5974
     },
     "penal": {
       "items": 64,
-      "linked": 63,
-      "pending": 1
+      "linked": 64,
+      "pending": 0
     },
     "processualPenal": {
       "items": 74,
@@ -22,8 +22,8 @@ Total output lines: 5974
       "pending": 9
     },
     "totalItems": 393,
-    "totalValidatedPublicLinks": 383,
-    "totalPending": 10,
+    "totalValidatedPublicLinks": 384,
+    "totalPending": 9,
     "constitucional": {
       "items": 19,
       "linked": 19,
@@ -2430,14 +2430,13 @@ Total output lines: 5974
       "kind": "geral",
       "moduleTitle": "Constituição Penal, Responsabilidade Penal da Pessoa Jurídica, Súmulas e Consolidação",
       "title": "Constituição Penal, Responsabilidade Penal da Pessoa Jurídica, Súmulas e Consolidação",
-      "notebookTitle": null,
-      "id": null,
-      "quantity": null,
-      "link": null,
-      "status": "Pendente",
-      "public": false,
-      "source": "checkpoint_direito_penal_qc.json",
-      "pendingReason": "Lacuna tem?tica sem filtro nativo exclusivo."
+      "notebookTitle": "DP M17 Geral Constituição e Consolidação",
+      "id": "15354550",
+      "quantity": 4,
+      "link": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15354550",
+      "status": "VALIDADO",
+      "public": true,
+      "source": "checkpoint_direito_penal_qc.json"
     },
     {
       "discipline": "Direito Penal",
@@ -2467,7 +2466,7 @@ Total output lines: 5974
       "link": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15351442",
       "status": "VALIDADO",
       "public": true,
-      "source": "QC autenticado em 2026-10-20: caderno reaberto com 4 questões pertinentes (Q3676254, Q1826454, Q1826457, Q1826460); compartilhamento ativo confirmado na…9026 tokens truncated…ids%5B%5D=15290033",
+      "source": "QC autenticado em 2026-10-20: caderno reaberto com 4 questões pertinentes (Q3676254, Q1826454, Q1…9039 tokens truncated…ids%5B%5D=15290033",
       "status": "VALIDADO",
       "public": true,
       "source": "checkpoint_direito_processual_penal_qc.json"
