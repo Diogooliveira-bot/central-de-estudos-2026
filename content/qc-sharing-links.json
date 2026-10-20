@@ -1,12 +1,12 @@
 {
   "schema": "qc-central-sharing-v1",
-  "generatedAt": "2026-10-20T01:00:25.281776+00:00",
+  "generatedAt": "2026-10-20T01:01:10.952126+00:00",
   "platform": "QConcursos",
   "counts": {
     "administrativo": {
       "items": 98,
-      "linked": 76,
-      "pending": 22
+      "linked": 77,
+      "pending": 21
     },
     "penal": {
       "items": 64,
@@ -19,8 +19,8 @@
       "pending": 9
     },
     "totalItems": 393,
-    "totalValidatedPublicLinks": 359,
-    "totalPending": 34,
+    "totalValidatedPublicLinks": 360,
+    "totalPending": 33,
     "constitucional": {
       "items": 19,
       "linked": 19,
@@ -1181,14 +1181,13 @@
       "kind": "subdivision",
       "moduleTitle": "MROSC / Lei 13.019/2014",
       "title": "Execução, monitoramento e prestação de contas",
-      "notebookTitle": null,
-      "id": null,
-      "quantity": null,
-      "link": null,
-      "status": "Pendente",
-      "public": false,
-      "source": "checkpoint_adm_qc.json.thematicAudit.pendingSubdivisions",
-      "pendingReason": "Sem filtro exclusivo nativo; mantido como Pendente."
+      "notebookTitle": "ADM M11.3 MROSC Prestação contas",
+      "id": "15352682",
+      "quantity": 1,
+      "link": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15352682",
+      "status": "VALIDADO",
+      "public": true,
+      "source": "QC autenticado: FGV/TCE-SC Auditor Fiscal de Controle Externo, 2026; análise financeira e nexo receita-despesa na prestação de contas de parceria regida pela Lei 13.019/2014. Salvo, reaberto público com 1 questão, 0EM-GVA."
     },
     {
       "discipline": "Direito Administrativo",

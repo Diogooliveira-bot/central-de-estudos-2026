@@ -1,9 +1,9 @@
 {
   "schema": "qc-pending-creation-progress-v1",
-  "updatedAt": "2026-10-20T01:00:25.281776+00:00",
+  "updatedAt": "2026-10-20T01:01:10.952126+00:00",
   "initialPending": 57,
-  "createdAndValidated": 23,
-  "remainingPending": 34,
+  "createdAndValidated": 24,
+  "remainingPending": 33,
   "records": [
     {
       "discipline": "Direito Penal",
@@ -594,6 +594,30 @@
         ],
         "minimumQuestionCount": 0,
         "note": "CEBRASPE/TJ-MT Outorga por Remoção, 2026; questão específica do chamamento público na seleção da OSC para termo de fomento ou colaboração. Salvo, reaberto com uma questão e público (0EM-GTY)."
+      },
+      "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
+    },
+    {
+      "discipline": "Direito Administrativo",
+      "module": "M11.3",
+      "moduleTitle": "MROSC / Lei 13.019/2014",
+      "subject": "Execução, monitoramento e prestação de contas",
+      "qcId": "15352682",
+      "shareCode": "0EM-GVA",
+      "notebookTitle": "ADM M11.3 MROSC Prestação contas",
+      "questionCount": 1,
+      "url": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15352682",
+      "criteria": {
+        "method": "seleção manual após leitura integral",
+        "selectedQuestions": [
+          "Q4088743"
+        ],
+        "excluded": [
+          "anuladas",
+          "desatualizadas"
+        ],
+        "minimumQuestionCount": 0,
+        "note": "FGV/TCE-SC Auditor Fiscal de Controle Externo, 2026; análise financeira e nexo receita-despesa na prestação de contas de parceria regida pela Lei 13.019/2014. Salvo, reaberto público com 1 questão, 0EM-GVA."
       },
       "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
     }
