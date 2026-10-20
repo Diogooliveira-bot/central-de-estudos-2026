@@ -2,7 +2,10 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { webcrypto } from 'node:crypto';
-import { authorizeAdminOnlyInfographicRequest, isAdminOnlyInfographicPath } from '../middleware.js';
+import { authorizeAdminOnlyInfographicRequest } from '../middleware.js';
+import { isAdminOnlyInfographicPath, normalizeAdminInfographicPath } from '../lib/admin-infographics.js';
+import { createAdminInfographicHandler } from '../api/admin-infographic.js';
+import { shouldRunInfographicMigration } from '../scripts/migrate-admin-infographics-preview.mjs';
 
 if (!globalThis.crypto) Object.defineProperty(globalThis, 'crypto', { value: webcrypto });
 const secret = 'unit-test-only-auth-secret-that-is-long-enough';
@@ -83,4 +86,74 @@ test('a Central carrega a camada visual e o offline mantém seus arquivos', () =
   assert.match(central, /admin-infographics-access-v1\.js\?v=20261020admininfographics1/);
   assert.ok(manifest.files.includes('/ui/admin-infographics-access-v1.css?v=20261020admininfographics1'));
   assert.ok(manifest.files.includes('/ui/admin-infographics-access-v1.js?v=20261020admininfographics1'));
+});
+
+test('rotas dos infográficos só normalizam caminhos catalogados', () => {
+  assert.equal(normalizeAdminInfographicPath('/assets/cf/m01-infografico.webp'), 'assets/cf/m01-infografico.webp');
+  assert.equal(normalizeAdminInfographicPath('/content/civil/civil-native-images.js'), 'content/civil/civil-native-images.js');
+  assert.equal(normalizeAdminInfographicPath('/api/auth?action=me'), null);
+  assert.equal(normalizeAdminInfographicPath('/assets/../api/auth'), null);
+});
+
+test('API nega aluno antes de buscar dados e transmite bytes somente a administrador', async () => {
+  let reads = 0;
+  const deniedResponse = { headers:{}, setHeader(k,v){this.headers[k]=v}, end(body){this.body=body} };
+  const deniedHandler = createAdminInfographicHandler({
+    authorize: async () => ({ok:false,status:403,error:'Você não tem permissão'}),
+    readAsset: async () => { reads++; return [] }
+  });
+  await deniedHandler({method:'GET',query:{path:'/assets/cf/m01-infografico.webp'}},deniedResponse);
+  assert.equal(deniedResponse.statusCode,403);
+  assert.equal(reads,0);
+  assert.match(deniedResponse.headers['Cache-Control'],/no-store/);
+
+  const payload = Buffer.from([0,1,2,250,255]);
+  const allowedResponse = { headers:{}, setHeader(k,v){this.headers[k]=v}, end(body){this.body=body} };
+  const allowedHandler = createAdminInfographicHandler({
+    authorize: async () => ({ok:true,sql:{}}),
+    readAsset: async (_sql,key) => { reads++; assert.equal(key,'assets/cf/m01-infografico.webp'); return [{content_type:'image/webp',content:payload,byte_length:payload.length}] }
+  });
+  await allowedHandler({method:'GET',query:{path:'/assets/cf/m01-infografico.webp'}},allowedResponse);
+  assert.equal(allowedResponse.statusCode,200);
+  assert.deepEqual(allowedResponse.body,payload);
+  assert.equal(allowedResponse.headers['Content-Type'],'image/webp');
+  assert.match(allowedResponse.headers['Cache-Control'],/no-store/);
+  assert.equal(reads,1);
+});
+
+test('a carga automática só pode escrever na Preview da branch e no Neon de homologação', () => {
+  const preview = {
+    VERCEL_ENV:'preview',
+    VERCEL_GIT_COMMIT_REF:'integration/objetivos-prod-20261020',
+    VERCEL_GIT_REPO_OWNER:'Diogooliveira-bot',
+    VERCEL_GIT_REPO_SLUG:'central-de-estudos-2026'
+  };
+  assert.equal(shouldRunInfographicMigration(preview),true);
+  assert.equal(shouldRunInfographicMigration({...preview,VERCEL_ENV:'production'}),false);
+  assert.equal(shouldRunInfographicMigration({...preview,VERCEL_GIT_COMMIT_REF:'main'}),false);
+  assert.equal(shouldRunInfographicMigration({...preview,VERCEL_GIT_REPO_OWNER:'attacker'}),false);
+});
+
+test('manifest inventoriza 82 imagens e o pacote adicional de imagens civis', () => {
+  const manifest = JSON.parse(read('content/admin-infographics-manifest.json'));
+  const staticImages = manifest.assets.filter(asset => asset.path !== 'content/civil/civil-native-images.js');
+  assert.equal(staticImages.length, 82);
+  assert.equal(manifest.assets.length, 83);
+  assert.equal(manifest.assets.reduce((sum,asset)=>sum+asset.size,0),13668895);
+  assert.ok(manifest.assets.every(asset => isAdminOnlyInfographicPath('/'+asset.path)), 'cada arquivo precisa estar coberto pela barreira do servidor');
+});
+
+test('o PWA mantém a política sem cache para os novos caminhos de imagens protegidos', () => {
+  const sw = read('sw.js');
+  assert.match(sw, /if\(request\.method==='GET'&&isAdminOnlyInfographicPath\(url\.pathname\)\)/);
+  assert.match(sw, /return fetch\(request,\{cache:'no-store'\}\)\.catch\(function\(\)\{return Response\.error\(\)\}\)/);
+});
+
+test('a migração rejeita ambiente errado antes de qualquer gravação', () => {
+  const script = read('scripts/migrate-admin-infographics-preview.mjs');
+  assert.match(script, /current_setting\('neon\.project_id'/);
+  assert.match(script, /current_setting\('neon\.branch_id'/);
+  assert.match(script, /identity\.project_id!==manifest\.expectedNeonProject/);
+  assert.match(script, /identity\.branch_id!==manifest\.expectedNeonBranch/);
+  assert.match(script, /fromGitBlobSha\(bytes\)!==asset\.gitBlobSha/);
 });

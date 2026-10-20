@@ -1,4 +1,5 @@
 import { next } from '@vercel/functions';
+import { isAdminOnlyInfographicPath } from './lib/admin-infographics.js';
 
 const COOKIE_NAME = 'bc_session';
 
@@ -41,13 +42,6 @@ function previewForbidden() {
     status: 403,
     headers: { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' },
   });
-}
-
-export function isAdminOnlyInfographicPath(pathname) {
-  let path = String(pathname || '').split('?')[0].replace(/\\/g, '/');
-  try { path = decodeURIComponent(path); } catch (_) {}
-  if (/^\/content\/civil\/civil-native-images\.js$/i.test(path)) return true;
-  return /^\/(?:assets|modules)\/.*(?:infograf|infographic|mapa[-_]?mental|mindmap)/i.test(path);
 }
 
 function infographicForbidden() {
@@ -204,16 +198,23 @@ export default async function middleware(request) {
     return next();
   }
 
-  if (request.method === 'OPTIONS') return next();
   if (isAdminOnlyInfographicPath(path)) {
     const denied = await authorizeAdminOnlyInfographicRequest(request);
     if (denied) return denied;
-    const response = await next();
-    response.headers.set('Cache-Control', 'private, no-store, max-age=0');
-    response.headers.set('Vercel-CDN-Cache-Control', 'private, no-store');
-    response.headers.set('Vary', 'Cookie');
-    return response;
+    const target = new URL('/api/admin-infographic', request.url);
+    target.searchParams.set('path', path);
+    return new Response(null, {
+      status: 307,
+      headers: {
+        Location: target.toString(),
+        'Cache-Control': 'private, no-store, max-age=0',
+        'Vercel-CDN-Cache-Control': 'private, no-store',
+        Vary: 'Cookie',
+        'Referrer-Policy': 'no-referrer',
+      },
+    });
   }
+  if (request.method === 'OPTIONS') return next();
   if (path.startsWith('/api/')) return next();
   if (PUBLIC_PATHS.has(path)) return next();
 
