@@ -1,9 +1,9 @@
 {
   "schema": "qc-pending-creation-progress-v1",
-  "updatedAt": "2026-10-20T01:02:02.798381+00:00",
+  "updatedAt": "2026-10-20T01:03:01.654757+00:00",
   "initialPending": 57,
-  "createdAndValidated": 25,
-  "remainingPending": 32,
+  "createdAndValidated": 26,
+  "remainingPending": 31,
   "records": [
     {
       "discipline": "Direito Penal",
@@ -642,6 +642,33 @@
         ],
         "minimumQuestionCount": 0,
         "note": "IV-UFG/Assistente de Procuradoria, 2026; questão específica da declaração de inidoneidade e reabilitação na Lei 13.019/2014. Salvo, reaberto público com 1 questão, 0EM-GVJ."
+      },
+      "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
+    },
+    {
+      "discipline": "Direito Administrativo",
+      "module": "M11",
+      "moduleTitle": "MROSC / Lei 13.019/2014",
+      "subject": "MROSC / Lei 13.019/2014",
+      "qcId": "15352699",
+      "shareCode": "0EM-GVV",
+      "notebookTitle": "ADM M11 Geral MROSC",
+      "questionCount": 4,
+      "url": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15352699",
+      "criteria": {
+        "method": "seleção manual após leitura integral",
+        "selectedQuestions": [
+          "Q4231630",
+          "Q4304861",
+          "Q4088743",
+          "Q4133748"
+        ],
+        "excluded": [
+          "anuladas",
+          "desatualizadas"
+        ],
+        "minimumQuestionCount": 0,
+        "note": "Caderno geral consolidado com os quatro recortes conferidos: instrumentos (FCC/TJCE), chamamento (CEBRASPE/TJMT), prestação de contas (FGV/TCESC), sanções (IV-UFG), todas de 2026. Reaberto com 4 questões e compartilhamento ativo 0EM-GVV."
       },
       "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
     }

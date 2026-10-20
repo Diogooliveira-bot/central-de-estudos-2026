@@ -1,12 +1,12 @@
 {
   "schema": "qc-central-sharing-v1",
-  "generatedAt": "2026-10-20T01:02:02.798381+00:00",
+  "generatedAt": "2026-10-20T01:03:01.654757+00:00",
   "platform": "QConcursos",
   "counts": {
     "administrativo": {
       "items": 98,
-      "linked": 78,
-      "pending": 20
+      "linked": 79,
+      "pending": 19
     },
     "penal": {
       "items": 64,
@@ -19,8 +19,8 @@
       "pending": 9
     },
     "totalItems": 393,
-    "totalValidatedPublicLinks": 361,
-    "totalPending": 32,
+    "totalValidatedPublicLinks": 362,
+    "totalPending": 31,
     "constitucional": {
       "items": 19,
       "linked": 19,
@@ -1513,14 +1513,13 @@
       "kind": "general",
       "moduleTitle": "MROSC / Lei 13.019/2014",
       "title": "MROSC / Lei 13.019/2014",
-      "notebookTitle": null,
-      "id": null,
-      "quantity": null,
-      "link": null,
-      "status": "Pendente",
-      "public": false,
-      "source": "checkpoint_adm_qc.json.thematicAudit.missingGenerals",
-      "pendingReason": "Sem filtro exclusivo nativo; mantido como Pendente."
+      "notebookTitle": "ADM M11 Geral MROSC",
+      "id": "15352699",
+      "quantity": 4,
+      "link": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15352699",
+      "status": "VALIDADO",
+      "public": true,
+      "source": "QC autenticado: Caderno geral consolidado com os quatro recortes conferidos: instrumentos (FCC/TJCE), chamamento (CEBRASPE/TJMT), prestação de contas (FGV/TCESC), sanções (IV-UFG), todas de 2026. Reaberto com 4 questões e compartilhamento ativo 0EM-GVV."
     },
     {
       "discipline": "Direito Administrativo",
