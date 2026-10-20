@@ -1,15 +1,15 @@
-Warning: truncated output (original token count: 58971)
-Total output lines: 5980
+Warning: truncated output (original token count: 58980)
+Total output lines: 5979
 
 {
   "schema": "qc-central-sharing-v1",
-  "generatedAt": "2026-10-20T10:00:05+00:00",
+  "generatedAt": "2026-10-20T10:00:57+00:00",
   "platform": "QConcursos",
   "counts": {
     "administrativo": {
       "items": 98,
-      "linked": 94,
-      "pending": 4
+      "linked": 95,
+      "pending": 3
     },
     "penal": {
       "items": 64,
@@ -22,8 +22,8 @@ Total output lines: 5980
       "pending": 9
     },
     "totalItems": 393,
-    "totalValidatedPublicLinks": 377,
-    "totalPending": 16,
+    "totalValidatedPublicLinks": 378,
+    "totalPending": 15,
     "constitucional": {
       "items": 19,
       "linked": 19,
@@ -1439,14 +1439,13 @@ Total output lines: 5980
       "kind": "subdivision",
       "moduleTitle": "Lei Geral de Protecao de Dados - LGPD",
       "title": "Agentes de tratamento, encarregado e responsabilidade civil",
-      "notebookTitle": null,
-      "id": null,
-      "quantity": null,
-      "link": null,
-      "status": "Pendente",
-      "public": false,
-      "source": "checkpoint_adm_qc.json.thematicAudit.pendingSubdivisions",
-      "pendingReason": "Sem filtro exclusivo nativo; mantido como Pendente."
+      "notebookTitle": "ADM M20.5 Agentes e encarregado",
+      "id": "15354522",
+      "quantity": 1,
+      "link": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15354522",
+      "status": "VALIDADO",
+      "public": true,
+      "source": "checkpoint_adm_qc.json.thematicAudit.pendingSubdivisions"
     },
     {
       "discipline": "Direito Administrativo",
@@ -2478,8 +2477,7 @@ Total output lines: 5980
       "discipline": "Direito Penal",
       "disciplineKey": "penal",
       "code": "M17.3",
-      "kind": "subdivisao",
-      "moduleTitle": "Consti…8971 tokens truncated…ids%5B%5D=15290033",
+      "kind": "subdi…8980 tokens truncated…ids%5B%5D=15290033",
       "status": "VALIDADO",
       "public": true,
       "source": "checkpoint_direito_processual_penal_qc.json"

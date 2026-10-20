@@ -1,9 +1,9 @@
 {
   "schema": "qc-pending-creation-progress-v1",
-  "updatedAt": "2026-10-20T10:00:05+00:00",
+  "updatedAt": "2026-10-20T10:00:57+00:00",
   "initialPending": 57,
-  "createdAndValidated": 41,
-  "remainingPending": 16,
+  "createdAndValidated": 42,
+  "remainingPending": 15,
   "records": [
     {
       "discipline": "Direito Penal",
@@ -1035,6 +1035,30 @@
         ],
         "minimumQuestionCount": 0,
         "note": "Questão IDCAP/UEFS 2026 sobre finalidade pública legítima e aplicação dos princípios da LGPD ao tratamento por órgãos públicos; filtro confirmou 1 questão. Salvo, reaberto, com quantidade confirmada e compartilhamento público ativo 0EM-JMN."
+      },
+      "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
+    },
+    {
+      "discipline": "Direito Administrativo",
+      "module": "M20.5",
+      "moduleTitle": "Lei Geral de Protecao de Dados - LGPD",
+      "subject": "Agentes de tratamento, encarregado e responsabilidade civil",
+      "qcId": "15354522",
+      "shareCode": "0EM-JMT",
+      "notebookTitle": "ADM M20.5 Agentes e encarregado",
+      "questionCount": 1,
+      "url": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15354522",
+      "criteria": {
+        "method": "filtro por palavra-chave e seleção manual após leitura integral",
+        "selectedQuestions": [
+          "Q4001019"
+        ],
+        "excluded": [
+          "anuladas",
+          "desatualizadas"
+        ],
+        "minimumQuestionCount": 0,
+        "note": "Questão CONSULPAM/GHC-RS 2026 sobre controlador, operador, encarregado e titular; o filtro do caderno confirmou 1 questão. Salvo, reaberto, com quantidade confirmada e compartilhamento público ativo 0EM-JMT."
       },
       "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
     }
