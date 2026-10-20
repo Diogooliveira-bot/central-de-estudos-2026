@@ -1,9 +1,9 @@
 {
   "schema": "qc-pending-creation-progress-v1",
-  "updatedAt": "2026-10-20T00:44:13.459773+00:00",
+  "updatedAt": "2026-10-20T00:46:20.969071+00:00",
   "initialPending": 57,
-  "createdAndValidated": 12,
-  "remainingPending": 45,
+  "createdAndValidated": 13,
+  "remainingPending": 44,
   "records": [
     {
       "discipline": "Direito Penal",
@@ -329,6 +329,31 @@
         "note": "FUNDATEC/CRA-RS, 2026; duas questões sobre impugnação, esclarecimentos e recursos da Lei 14.133/2021; reaberto com 2 questões, Tornar Privado visível (0EM-GK3). Caderno antigo 15285197 reaberto com questões de outras fases, preservado sem associação indevida."
       },
       "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
+    },
+    {
+      "discipline": "Direito Administrativo",
+      "module": "M07.1",
+      "moduleTitle": "LINDB e consequencias no Direito Publico",
+      "subject": "Seguranca juridica e decisoes no direito publico",
+      "qcId": "15352451",
+      "shareCode": "0EM-GM3",
+      "notebookTitle": "ADM M07.1 LINDB Decisões públicas",
+      "questionCount": 2,
+      "url": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15352451",
+      "criteria": {
+        "method": "seleção manual após leitura integral",
+        "selectedQuestions": [
+          "Q4378318",
+          "Q4205632"
+        ],
+        "excluded": [
+          "anuladas",
+          "desatualizadas"
+        ],
+        "minimumQuestionCount": 0,
+        "note": "Q4378318 (FGV/PC-PR, 2026) sobre obstáculos e circunstâncias reais do gestor; Q4205632 (FAFIPA/Procurador Jurídico, 2026) sobre consequências jurídicas e administrativas da invalidação (LINDB, art. 21). Leitura integral e seleção manual; reaberto com 2 questões; Tornar Privado visível, código 0EM-GM3."
+      },
+      "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
     }
   ],
   "attempts": [
@@ -396,7 +421,7 @@
     "failed": 0,
     "skipped": 1,
     "skipReason": "Chromium do Playwright não instalado; uma verificação de navegador real foi ignorada pelo repositório.",
-    "targetedTests": "M15.2 e M13.4 conferidos no registro efetivo da Central; totais QC 421/TEC 363",
+    "targetedTests": "24 aprovados, 0 falhas após integrar Administrativo M16.5 e M07.1; suíte completa na rodada: 102 aprovados, 0 falhas, 1 ignorado",
     "diffCheck": "passed"
   }
 }

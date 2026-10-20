@@ -15,9 +15,9 @@ test('tabela preserva os totais e os registros QC catalogados', () => {
   assert.equal(table.platform, 'QConcursos');
   assert.equal(table.counts.penal.linked, 61);
   assert.equal(table.counts.processualPenal.linked, 65);
-  assert.equal(table.counts.administrativo.linked, 65);
-  assert.equal(table.counts.totalValidatedPublicLinks, 348);
-  assert.equal(table.counts.totalPending, 45);
+  assert.equal(table.counts.administrativo.linked, 66);
+  assert.equal(table.counts.totalValidatedPublicLinks, 349);
+  assert.equal(table.counts.totalPending, 44);
   assert.deepEqual(JSON.parse(JSON.stringify(context.window.QC_CENTRAL_SHARING_LINKS)), table);
 });
 
@@ -70,9 +70,9 @@ test('integração mantém os painéis TEC e QConcursos separados e responsivos'
   assert.match(ui, /data-cpp-native-module/);
   assert.match(admUi, /ADM_SHARING_LINKS/);
   assert.match(admUi, /sharingPanel\(uid\)/);
-  assert.match(central, /content\/qc-sharing-links\.js\?v=20261020qcadm165p1/);
-  assert.match(central, /content\/qc-notebook-catalog\.js\?v=20261020qcadm165p1/);
-  assert.match(central, /ui\/qc-sharing-links\.js\?v=20261020qcadm165p1/);
+  assert.match(central, /content\/qc-sharing-links\.js\?v=20261020qcadm071p1/);
+  assert.match(central, /content\/qc-notebook-catalog\.js\?v=20261020qcadm071p1/);
+  assert.match(central, /ui\/qc-sharing-links\.js\?v=20261020qcadm071p1/);
 });
 
 test('pendências de Administrativo sem filtro exclusivo não expõem o caderno amplo', () => {
@@ -89,6 +89,10 @@ test('pendências de Administrativo sem filtro exclusivo não expõem o caderno 
   assert.equal(appeals.id, '15352419');
   assert.equal(appeals.quantity, 2);
   assert.equal(appeals.status, 'VALIDADO');
+  const lindb = table.items.find(x => x.disciplineKey === 'administrativo' && x.code === 'M07.1');
+  assert.equal(lindb.id, '15352451');
+  assert.equal(lindb.quantity, 2);
+  assert.equal(lindb.status, 'VALIDADO');
   const m055 = table.items.find(x => x.disciplineKey === 'administrativo' && x.code === 'M05.5');
   assert.equal(m055.status, 'VALIDADO');
   assert.equal(m055.id, '15285069');
