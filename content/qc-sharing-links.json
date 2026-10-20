@@ -1,12 +1,12 @@
 {
   "schema": "qc-central-sharing-v1",
-  "generatedAt": "2026-10-20T00:56:47.157686+00:00",
+  "generatedAt": "2026-10-20T00:58:26.477227+00:00",
   "platform": "QConcursos",
   "counts": {
     "administrativo": {
       "items": 98,
-      "linked": 73,
-      "pending": 25
+      "linked": 74,
+      "pending": 24
     },
     "penal": {
       "items": 64,
@@ -19,8 +19,8 @@
       "pending": 9
     },
     "totalItems": 393,
-    "totalValidatedPublicLinks": 356,
-    "totalPending": 37,
+    "totalValidatedPublicLinks": 357,
+    "totalPending": 36,
     "constitucional": {
       "items": 19,
       "linked": 19,
@@ -1136,14 +1136,13 @@
       "kind": "subdivision",
       "moduleTitle": "Parcerias Público-Privadas (PPP) — Lei 11.079/2004",
       "title": "Controle, responsabilidade fiscal e encerramento",
-      "notebookTitle": null,
-      "id": null,
-      "quantity": null,
-      "link": null,
-      "status": "Pendente",
-      "public": false,
-      "source": "checkpoint_adm_qc.json.thematicAudit.pendingSubdivisions",
-      "pendingReason": "Sem filtro exclusivo nativo; mantido como Pendente."
+      "notebookTitle": "ADM M10.4 PPP Controle fiscal",
+      "id": "15352636",
+      "quantity": 1,
+      "link": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15352636",
+      "status": "VALIDADO",
+      "public": true,
+      "source": "QC autenticado: VUNESP/Auditor Fiscal Tributário Municipal, 2026; questão do limite de 5% da receita corrente líquida e consequências fiscais da Lei 11.079/2004. Excluídas anuladas e desatualizadas na busca; reaberto com 1 questão pertinente, público 0EM-GSW."
     },
     {
       "discipline": "Direito Administrativo",

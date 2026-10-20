@@ -1,9 +1,9 @@
 {
   "schema": "qc-pending-creation-progress-v1",
-  "updatedAt": "2026-10-20T00:56:47.157686+00:00",
+  "updatedAt": "2026-10-20T00:58:26.477227+00:00",
   "initialPending": 57,
-  "createdAndValidated": 20,
-  "remainingPending": 37,
+  "createdAndValidated": 21,
+  "remainingPending": 36,
   "records": [
     {
       "discipline": "Direito Penal",
@@ -522,6 +522,30 @@
         ],
         "minimumQuestionCount": 0,
         "note": "VUNESP/Auditor de Controle Interno, 2026; questão específica da Lei 11.079/2004 sobre SPE, forma societária, controle acionário e governança. Pertinência confirmada pelo enunciado integral; desconsiderada tag imprecisa do QC. Reaberto público, 0EM-GS7."
+      },
+      "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
+    },
+    {
+      "discipline": "Direito Administrativo",
+      "module": "M10.4",
+      "moduleTitle": "Parcerias Público-Privadas (PPP) — Lei 11.079/2004",
+      "subject": "Controle, responsabilidade fiscal e encerramento",
+      "qcId": "15352636",
+      "shareCode": "0EM-GSW",
+      "notebookTitle": "ADM M10.4 PPP Controle fiscal",
+      "questionCount": 1,
+      "url": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15352636",
+      "criteria": {
+        "method": "seleção manual após leitura integral",
+        "selectedQuestions": [
+          "Q3847502"
+        ],
+        "excluded": [
+          "anuladas",
+          "desatualizadas"
+        ],
+        "minimumQuestionCount": 0,
+        "note": "VUNESP/Auditor Fiscal Tributário Municipal, 2026; questão do limite de 5% da receita corrente líquida e consequências fiscais da Lei 11.079/2004. Excluídas anuladas e desatualizadas na busca; reaberto com 1 questão pertinente, público 0EM-GSW."
       },
       "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
     }
