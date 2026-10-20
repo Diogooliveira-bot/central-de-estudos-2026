@@ -47,7 +47,7 @@
     if (syncing || isGuest() || !navigator.onLine) return false;
     syncing = true;
     try {
-      const response = await fetch('/api/exam-progress', {cache:'no-store'});
+      const response = await fetch('/api/objective?resource=exam-progress', {cache:'no-store'});
       if (!response.ok) throw new Error('Não foi possível carregar o progresso do edital.');
       const remote = await response.json();
       const local = parseSaved();
@@ -55,7 +55,7 @@
       localStorage.setItem(storageKey(), JSON.stringify(state));
       const payload = changes();
       if (payload.length) {
-        const saved = await fetch('/api/exam-progress', {method:'PUT',cache:'no-store',headers:{'Content-Type':'application/json'},body:JSON.stringify({changes:payload})});
+        const saved = await fetch('/api/objective?resource=exam-progress', {method:'PUT',cache:'no-store',headers:{'Content-Type':'application/json'},body:JSON.stringify({changes:payload})});
         if (!saved.ok) throw new Error('Não foi possível sincronizar as marcações.');
       }
       localStorage.removeItem(pendingKey());

@@ -80,12 +80,13 @@ test('progresso permanece no aparelho e fica isolado por identidade do aluno',()
 });
 
 test('API aplica isolamento por user_id, guarda marcações por tópico e aceita desmarcar',()=>{
- const api=read('api/exam-progress.js');
+ const api=read('api/objective.js');
  assert.match(api,/REFERENCES central_users\(user_id\) ON DELETE CASCADE/);
  assert.match(api,/PRIMARY KEY \(user_id, exam_id, topic_id, marker\)/);
  assert.match(api,/WHERE user_id=\$\{session\.user\.id\}/);
  assert.match(api,/completed=EXCLUDED\.completed/);
- assert.match(api,/CREATE TABLE IF NOT EXISTS/);
+ assert.match(api,/CREATE TABLE IF NOT EXISTS central_exam_topic_progress/);
  assert.match(api,/VERCEL_ENV === 'preview'.*EXAM_PROGRESS_PREVIEW_DB_ISOLATED !== 'true'/s,'Preview without a verified isolated database must stop before SQL/session access');
+ assert.match(api,/req\.query\?\.resource === 'exam-progress'/);
  assert.doesNotMatch(api,/DROP TABLE|TRUNCATE/);
 });
