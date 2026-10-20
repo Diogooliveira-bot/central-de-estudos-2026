@@ -1,9 +1,9 @@
 {
   "schema": "qc-pending-creation-progress-v1",
-  "updatedAt": "2026-10-20T00:35:44.199726+00:00",
+  "updatedAt": "2026-10-20T00:44:13.459773+00:00",
   "initialPending": 57,
-  "createdAndValidated": 11,
-  "remainingPending": 46,
+  "createdAndValidated": 12,
+  "remainingPending": 45,
   "records": [
     {
       "discipline": "Direito Penal",
@@ -304,6 +304,31 @@
         "note": "Caderno antigo 15285176 reaberto: registro de preços, incompatível com planejamento; preservado. Nova seleção sobre ETP, TR e fase preparatória."
       },
       "status": "criado, salvo, reaberto com 2 questões; Tornar Privado visível na listagem; integrado"
+    },
+    {
+      "discipline": "Direito Administrativo",
+      "module": "M16.5",
+      "moduleTitle": "Licitações — Procedimento e Modalidades",
+      "subject": "Impugnações, esclarecimentos e recursos",
+      "qcId": "15352419",
+      "shareCode": "0EM-GK3",
+      "notebookTitle": "ADM M16.5 Impugnações e recursos",
+      "questionCount": 2,
+      "url": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15352419",
+      "criteria": {
+        "method": "seleção manual após leitura integral",
+        "selectedQuestions": [
+          "Q4244258",
+          "Q4244272"
+        ],
+        "excluded": [
+          "anuladas",
+          "desatualizadas"
+        ],
+        "minimumQuestionCount": 0,
+        "note": "FUNDATEC/CRA-RS, 2026; duas questões sobre impugnação, esclarecimentos e recursos da Lei 14.133/2021; reaberto com 2 questões, Tornar Privado visível (0EM-GK3). Caderno antigo 15285197 reaberto com questões de outras fases, preservado sem associação indevida."
+      },
+      "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
     }
   ],
   "attempts": [

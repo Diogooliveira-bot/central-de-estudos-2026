@@ -15,9 +15,9 @@ test('tabela preserva os totais e os registros QC catalogados', () => {
   assert.equal(table.platform, 'QConcursos');
   assert.equal(table.counts.penal.linked, 61);
   assert.equal(table.counts.processualPenal.linked, 65);
-  assert.equal(table.counts.administrativo.linked, 64);
-  assert.equal(table.counts.totalValidatedPublicLinks, 347);
-  assert.equal(table.counts.totalPending, 46);
+  assert.equal(table.counts.administrativo.linked, 65);
+  assert.equal(table.counts.totalValidatedPublicLinks, 348);
+  assert.equal(table.counts.totalPending, 45);
   assert.deepEqual(JSON.parse(JSON.stringify(context.window.QC_CENTRAL_SHARING_LINKS)), table);
 });
 
@@ -70,14 +70,14 @@ test('integração mantém os painéis TEC e QConcursos separados e responsivos'
   assert.match(ui, /data-cpp-native-module/);
   assert.match(admUi, /ADM_SHARING_LINKS/);
   assert.match(admUi, /sharingPanel\(uid\)/);
-  assert.match(central, /content\/qc-sharing-links\.js\?v=20261020qcadm152p1/);
-  assert.match(central, /content\/qc-notebook-catalog\.js\?v=20261020qcadm152p1/);
-  assert.match(central, /ui\/qc-sharing-links\.js\?v=20261020qcadm152p1/);
+  assert.match(central, /content\/qc-sharing-links\.js\?v=20261020qcadm165p1/);
+  assert.match(central, /content\/qc-notebook-catalog\.js\?v=20261020qcadm165p1/);
+  assert.match(central, /ui\/qc-sharing-links\.js\?v=20261020qcadm165p1/);
 });
 
 test('pendências de Administrativo sem filtro exclusivo não expõem o caderno amplo', () => {
   const pending = new Set(table.items.filter(x => x.disciplineKey === 'administrativo' && x.status === 'Pendente').map(x => x.code));
-  for (const code of ['M16.5','M07','M11','M19','M20']) {
+  for (const code of ['M07','M11','M19','M20']) {
     assert.ok(pending.has(code), `${code} deve aparecer como Pendente`);
   }
   const planning = table.items.find(x => x.disciplineKey === 'administrativo' && x.code === 'M15.2');
@@ -85,6 +85,10 @@ test('pendências de Administrativo sem filtro exclusivo não expõem o caderno 
   assert.equal(planning.quantity, 2);
   assert.equal(planning.status, 'VALIDADO');
   assert.notEqual(planning.id, '15285176');
+  const appeals = table.items.find(x => x.disciplineKey === 'administrativo' && x.code === 'M16.5');
+  assert.equal(appeals.id, '15352419');
+  assert.equal(appeals.quantity, 2);
+  assert.equal(appeals.status, 'VALIDADO');
   const m055 = table.items.find(x => x.disciplineKey === 'administrativo' && x.code === 'M05.5');
   assert.equal(m055.status, 'VALIDADO');
   assert.equal(m055.id, '15285069');

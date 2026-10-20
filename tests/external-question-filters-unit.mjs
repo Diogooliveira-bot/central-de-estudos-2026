@@ -63,8 +63,9 @@ test('catálogo real cobre todas as disciplinas com filtros publicados', () => {
   const disciplines = new Set(rows.map((row) => row.discipline));
   assert.ok(rows.some((row) => row.platform === 'qc' && row.id === '15351620'));
   assert.ok(rows.some((row) => row.platform === 'qc' && row.id === '15352286' && row.count === 2));
-  assert.equal(rows.length, 784);
-  assert.equal(rows.filter((row) => row.platform === 'qc').length, 421);
+  assert.ok(rows.some((row) => row.platform === 'qc' && row.id === '15352419' && row.count === 2));
+  assert.equal(rows.length, 785);
+  assert.equal(rows.filter((row) => row.platform === 'qc').length, 422);
   assert.equal(rows.filter((row) => row.platform === 'tec').length, 363);
   assert.deepEqual(Array.from(disciplines).sort((a, b) => a.localeCompare(b, 'pt-BR')), [
     'Direito Administrativo', 'Direito Civil', 'Direito Constitucional', 'Direito do Trabalho',
