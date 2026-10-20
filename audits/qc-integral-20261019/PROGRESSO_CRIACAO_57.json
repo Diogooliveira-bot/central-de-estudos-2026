@@ -1,9 +1,9 @@
 {
   "schema": "qc-pending-creation-progress-v1",
-  "updatedAt": "2026-10-20T00:59:40.769924+00:00",
+  "updatedAt": "2026-10-20T01:00:25.281776+00:00",
   "initialPending": 57,
-  "createdAndValidated": 22,
-  "remainingPending": 35,
+  "createdAndValidated": 23,
+  "remainingPending": 34,
   "records": [
     {
       "discipline": "Direito Penal",
@@ -570,6 +570,30 @@
         ],
         "minimumQuestionCount": 0,
         "note": "FCC/TJ-CE Técnico Judiciário Área Judiciária, 2026; identificação do termo de fomento em proposta originada de OSC, Lei 13.019/2014. Questão lida integralmente, selecionada com exclusão de anuladas/desatualizadas; reaberto, público 0EM-GTK."
+      },
+      "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
+    },
+    {
+      "discipline": "Direito Administrativo",
+      "module": "M11.2",
+      "moduleTitle": "MROSC / Lei 13.019/2014",
+      "subject": "Seleção, celebração e plano de trabalho",
+      "qcId": "15352670",
+      "shareCode": "0EM-GTY",
+      "notebookTitle": "ADM M11.2 MROSC Chamamento",
+      "questionCount": 1,
+      "url": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15352670",
+      "criteria": {
+        "method": "seleção manual após leitura integral",
+        "selectedQuestions": [
+          "Q4304861"
+        ],
+        "excluded": [
+          "anuladas",
+          "desatualizadas"
+        ],
+        "minimumQuestionCount": 0,
+        "note": "CEBRASPE/TJ-MT Outorga por Remoção, 2026; questão específica do chamamento público na seleção da OSC para termo de fomento ou colaboração. Salvo, reaberto com uma questão e público (0EM-GTY)."
       },
       "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
     }

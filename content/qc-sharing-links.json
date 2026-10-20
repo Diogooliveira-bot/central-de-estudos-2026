@@ -1,12 +1,12 @@
 {
   "schema": "qc-central-sharing-v1",
-  "generatedAt": "2026-10-20T00:59:40.769924+00:00",
+  "generatedAt": "2026-10-20T01:00:25.281776+00:00",
   "platform": "QConcursos",
   "counts": {
     "administrativo": {
       "items": 98,
-      "linked": 75,
-      "pending": 23
+      "linked": 76,
+      "pending": 22
     },
     "penal": {
       "items": 64,
@@ -19,8 +19,8 @@
       "pending": 9
     },
     "totalItems": 393,
-    "totalValidatedPublicLinks": 358,
-    "totalPending": 35,
+    "totalValidatedPublicLinks": 359,
+    "totalPending": 34,
     "constitucional": {
       "items": 19,
       "linked": 19,
@@ -1166,14 +1166,13 @@
       "kind": "subdivision",
       "moduleTitle": "MROSC / Lei 13.019/2014",
       "title": "Seleção, celebração e plano de trabalho",
-      "notebookTitle": null,
-      "id": null,
-      "quantity": null,
-      "link": null,
-      "status": "Pendente",
-      "public": false,
-      "source": "checkpoint_adm_qc.json.thematicAudit.pendingSubdivisions",
-      "pendingReason": "Sem filtro exclusivo nativo; mantido como Pendente."
+      "notebookTitle": "ADM M11.2 MROSC Chamamento",
+      "id": "15352670",
+      "quantity": 1,
+      "link": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15352670",
+      "status": "VALIDADO",
+      "public": true,
+      "source": "QC autenticado: CEBRASPE/TJ-MT Outorga por Remoção, 2026; questão específica do chamamento público na seleção da OSC para termo de fomento ou colaboração. Salvo, reaberto com uma questão e público (0EM-GTY)."
     },
     {
       "discipline": "Direito Administrativo",
