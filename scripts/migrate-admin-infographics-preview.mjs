@@ -4,7 +4,9 @@ import { neon } from '@neondatabase/serverless';
 
 export function shouldRunInfographicMigration(env=process.env){
   return env.VERCEL_ENV==='preview' &&
-    env.VERCEL_GIT_COMMIT_REF==='integration/objetivos-prod-20261020';
+    env.VERCEL_GIT_COMMIT_REF==='integration/objetivos-prod-20261020' &&
+    env.VERCEL_GIT_REPO_OWNER==='Diogooliveira-bot' &&
+    env.VERCEL_GIT_REPO_SLUG==='central-de-estudos-2026';
 }
 
 function fromGitBlobSha(bytes){

@@ -146,7 +146,7 @@ test('manifest inventoriza 82 imagens e o pacote adicional de imagens civis', ()
 test('o PWA mantém a política sem cache para os novos caminhos de imagens protegidos', () => {
   const sw = read('sw.js');
   assert.match(sw, /if\(request\.method==='GET'&&isAdminOnlyInfographicPath\(url\.pathname\)\)/);
-  assert.match(sw, /return fetch\(request,\{cache:'no-store'\}\)\.catch\(function\(\)\{return Response\.error\(\)\}\)/);
+  assert.match(sw, /event\.respondWith\(fetch\(request,\{cache:'no-store'\}\)\.catch\(function\(\)\{return Response\.error\(\)\}\)\)/);
 });
 
 test('a migração rejeita ambiente errado antes de qualquer gravação', () => {
