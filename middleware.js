@@ -1,5 +1,4 @@
 import { next } from '@vercel/functions';
-import { isAdminOnlyInfographicPath } from './lib/admin-infographics.js';
 
 const COOKIE_NAME = 'bc_session';
 
@@ -42,24 +41,6 @@ function previewForbidden() {
     status: 403,
     headers: { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' },
   });
-}
-
-function infographicForbidden() {
-  return new Response(JSON.stringify({ error: 'Este material está disponível somente para administradores.' }), {
-    status: 403,
-    headers: {
-      'Content-Type': 'application/json; charset=utf-8',
-      'Cache-Control': 'private, no-store, max-age=0',
-      'Vercel-CDN-Cache-Control': 'private, no-store',
-    },
-  });
-}
-
-export async function authorizeAdminOnlyInfographicRequest(request) {
-  const token = parseCookie(request.headers.get('cookie'), COOKIE_NAME);
-  const session = await verifyToken(token);
-  if (!session || session.role !== 'admin') return infographicForbidden();
-  return null;
 }
 
 const PUBLIC_PATHS = new Set([
@@ -185,7 +166,6 @@ export default async function middleware(request) {
   }
 
   if (await hasPreviewGuestCookie(request)) {
-    if (isAdminOnlyInfographicPath(path)) return previewForbidden();
     if (path.startsWith('/api/')) {
       // The synthetic identity is deliberately the ONLY API allowed.
       // In particular, guest users cannot read/sync/write real database data.
@@ -198,23 +178,6 @@ export default async function middleware(request) {
     return next();
   }
 
-  if (isAdminOnlyInfographicPath(path)) {
-    const denied = await authorizeAdminOnlyInfographicRequest(request);
-    if (denied) return denied;
-    const target = new URL('/api/auth', request.url);
-    target.searchParams.set('action', 'admin-infographic');
-    target.searchParams.set('path', path);
-    return new Response(null, {
-      status: 307,
-      headers: {
-        Location: target.toString(),
-        'Cache-Control': 'private, no-store, max-age=0',
-        'Vercel-CDN-Cache-Control': 'private, no-store',
-        Vary: 'Cookie',
-        'Referrer-Policy': 'no-referrer',
-      },
-    });
-  }
   if (request.method === 'OPTIONS') return next();
   if (path.startsWith('/api/')) return next();
   if (PUBLIC_PATHS.has(path)) return next();
