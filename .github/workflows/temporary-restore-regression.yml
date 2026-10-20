@@ -1,0 +1,37 @@
+name: Temporary restore regression tests
+
+on:
+  push:
+    branches:
+      - integration/objetivos-prod-20261020
+    paths:
+      - ".github/workflows/temporary-restore-regression.yml"
+      - "api/**"
+      - "assets/**"
+      - "central-offline-files-v66172.json"
+      - "central-v119.html"
+      - "content/**"
+      - "lib/**"
+      - "middleware.js"
+      - "modules/**"
+      - "package.json"
+      - "package-lock.json"
+      - "scripts/**"
+      - "sw.js"
+      - "tests/**"
+      - "ui/**"
+
+permissions:
+  contents: read
+
+jobs:
+  unit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm test
