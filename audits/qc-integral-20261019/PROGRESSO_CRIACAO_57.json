@@ -1,9 +1,9 @@
 {
   "schema": "qc-pending-creation-progress-v1",
-  "updatedAt": "2026-10-20T01:10:47.635851+00:00",
+  "updatedAt": "2026-10-20T01:11:42.736173+00:00",
   "initialPending": 57,
-  "createdAndValidated": 36,
-  "remainingPending": 21,
+  "createdAndValidated": 37,
+  "remainingPending": 20,
   "records": [
     {
       "discipline": "Direito Penal",
@@ -909,6 +909,33 @@
         ],
         "minimumQuestionCount": 0,
         "note": "FURB/Controlador Interno, 2026; infrações, sanções e responsabilidades de agentes e particulares na Lei 12.527/2011. Salvo, reaberto público com uma questão, 0EM-GZG."
+      },
+      "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
+    },
+    {
+      "discipline": "Direito Administrativo",
+      "module": "M19",
+      "moduleTitle": "Lei de Acesso a Informacao - Lei 12.527/2011",
+      "subject": "Lei de Acesso a Informacao - Lei 12.527/2011",
+      "qcId": "15352828",
+      "shareCode": "0EM-GZW",
+      "notebookTitle": "ADM M19 Geral Lei de Acesso",
+      "questionCount": 4,
+      "url": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15352828",
+      "criteria": {
+        "method": "seleção manual após leitura integral",
+        "selectedQuestions": [
+          "Q4178847",
+          "Q4179565",
+          "Q4231757",
+          "Q4246969"
+        ],
+        "excluded": [
+          "anuladas",
+          "desatualizadas"
+        ],
+        "minimumQuestionCount": 0,
+        "note": "Geral LAI com transparência ativa, pedidos e recursos, restrições de acesso (FCC/TJCE, 2026) e responsabilidades. Quatro questões lidas integralmente, todas de 2026. Salvo, reaberto com 4 questões e público 0EM-GZW."
       },
       "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
     }
