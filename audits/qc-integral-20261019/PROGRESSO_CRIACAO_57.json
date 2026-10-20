@@ -1,9 +1,9 @@
 {
   "schema": "qc-pending-creation-progress-v1",
-  "updatedAt": "2026-10-20T10:15:59+00:00",
+  "updatedAt": "2026-10-20T10:16:32+00:00",
   "initialPending": 57,
-  "createdAndValidated": 55,
-  "remainingPending": 2,
+  "createdAndValidated": 56,
+  "remainingPending": 1,
   "records": [
     {
       "discipline": "Direito Penal",
@@ -1387,6 +1387,30 @@
         ],
         "minimumQuestionCount": 0,
         "note": "Caderno geral com uma questão FGV/TJ-RS 2026 sobre atos e poderes judiciais e duas questões de prazo, uma FCC/TJ-CE 2026 e outra Cebraspe/TJ-PA 2020; filtro confirmou 3 questões. Salvo, reaberto, com quantidade confirmada e compartilhamento público ativo 0EM-JQM."
+      },
+      "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
+    },
+    {
+      "discipline": "Direito Processual Penal",
+      "module": "M18",
+      "moduleTitle": "Crimes de Responsabilidade de Funcionários Públicos",
+      "subject": "Crimes de Responsabilidade de Funcionários Públicos",
+      "qcId": "15354618",
+      "shareCode": "0EM-JQT",
+      "notebookTitle": "CPP M18 Crimes funcionais",
+      "questionCount": 1,
+      "url": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15354618",
+      "criteria": {
+        "method": "filtro por palavra-chave e seleção manual após leitura integral",
+        "selectedQuestions": [
+          "Q3999580"
+        ],
+        "excluded": [
+          "anuladas",
+          "desatualizadas"
+        ],
+        "minimumQuestionCount": 0,
+        "note": "Questão VUNESP/FUNAP-SP 2026 sobre rito aplicável aos crimes de abuso de autoridade e procedimento especial dos crimes de responsabilidade de funcionários públicos, inclusive quando precedido de inquérito; filtro confirmou 1 questão. Salvo, reaberto, com quantidade confirmada e compartilhamento público ativo 0EM-JQT."
       },
       "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
     }
