@@ -1,9 +1,9 @@
 {
   "schema": "qc-pending-creation-progress-v1",
-  "updatedAt": "2026-10-20T00:46:20.969071+00:00",
+  "updatedAt": "2026-10-20T00:49:44.478678+00:00",
   "initialPending": 57,
-  "createdAndValidated": 13,
-  "remainingPending": 44,
+  "createdAndValidated": 14,
+  "remainingPending": 43,
   "records": [
     {
       "discipline": "Direito Penal",
@@ -354,6 +354,31 @@
         "note": "Q4378318 (FGV/PC-PR, 2026) sobre obstáculos e circunstâncias reais do gestor; Q4205632 (FAFIPA/Procurador Jurídico, 2026) sobre consequências jurídicas e administrativas da invalidação (LINDB, art. 21). Leitura integral e seleção manual; reaberto com 2 questões; Tornar Privado visível, código 0EM-GM3."
       },
       "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
+    },
+    {
+      "discipline": "Direito Administrativo",
+      "module": "M04.4",
+      "moduleTitle": "Poderes Administrativos",
+      "subject": "Lei de Abuso de Autoridade",
+      "qcId": "15350670",
+      "shareCode": "0EM-EWE",
+      "notebookTitle": "DP M14 Abuso de Autoridade",
+      "questionCount": 1,
+      "url": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15350670",
+      "criteria": {
+        "method": "seleção manual após leitura integral",
+        "selectedQuestions": [
+          "Q4306900"
+        ],
+        "excluded": [
+          "anuladas",
+          "desatualizadas"
+        ],
+        "minimumQuestionCount": 0,
+        "note": "Caderno já existente de Penal M14 reutilizado sem duplicação: Q4306900 (CETAP, 2026) trata do abuso do poder atribuído a agente público, elementos do abuso de autoridade e perda de cargo/função. Conteúdo pertinente a Administrativo M04.4; reaberto em sessão autenticada com 1 questão. Compartilhamento já validado (0EM-EWE)."
+      },
+      "status": "caderno existente reutilizado, reaberto, validado e integrado sem duplicar o catálogo",
+      "reusedExistingNotebook": true
     }
   ],
   "attempts": [
@@ -376,8 +401,10 @@
     {
       "discipline": "Direito Administrativo",
       "module": "M04.4",
-      "status": "bloqueado: assunto nativo específico não localizado",
-      "evidence": "Busca por “Abuso de Autoridade” dentro de Direito Administrativo retornou nenhum resultado."
+      "status": "superado: caderno 15350670 validado e integrado",
+      "evidence": "Busca por “Abuso de Autoridade” dentro de Direito Administrativo retornou nenhum resultado.",
+      "status_historico": "bloqueado: assunto nativo específico não localizado",
+      "supersededBy": "15350670"
     },
     {
       "discipline": "Direito Penal",
