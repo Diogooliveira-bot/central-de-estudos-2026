@@ -5,6 +5,10 @@ if(window.__bcAuthShellV1)return;window.__bcAuthShellV1=true;
 
 function roleLabel(role){return role==='admin'?'Administrador':role==='editor'?'Editor':'Aluno'}
 async function logout(){
+ if(window.__BASE_COMPLETA_PREVIEW_GUEST__===true){
+  try{navigator.serviceWorker&&navigator.serviceWorker.controller&&navigator.serviceWorker.controller.postMessage({type:'CLEAR_OFFLINE_AUTH'})}catch(_){}
+  location.replace('/central-v119.html?bc_preview_logout=1');return;
+ }
  try{
   var r=await fetch('/api/auth?action=logout',{method:'POST'});
   if(!r.ok){var j={};try{j=await r.json()}catch(_){}throw new Error(j.error||'Não foi possível sair')}

@@ -609,9 +609,19 @@
   function uniqueFilters() {
     return Array.from(new Map(registry.map((filter) => [filter.stableKey, filter])).values());
   }
+  // The registry and each TEC/QC notebook remain unchanged; this is a view
+  // scope for the student's selected objective only.
+  function objectiveScopedFilters(filters = uniqueFilters()) {
+    const keys = global.CentralStudyObjectives?.questionDisciplineKeys?.();
+    return keys instanceof Set ? filters.filter((filter) => keys.has(filter.disciplineKey)) : filters;
+  }
   function allSessionEntries() {
     return uniqueFilters().flatMap((filter) => sessionsFor(filter).map((session) => ({ filter, session })))
       .sort((a, b) => String(b.session.date).localeCompare(String(a.session.date)) || String(b.session.createdAt || '').localeCompare(String(a.session.createdAt || '')));
+  }
+  function objectiveScopedSessions() {
+    const keys = global.CentralStudyObjectives?.questionDisciplineKeys?.();
+    return allSessionEntries().filter(({ filter }) => !(keys instanceof Set) || keys.has(filter.disciplineKey));
   }
   function aggregateFilters(filters) {
     return filters.reduce((total, filter) => {
@@ -756,7 +766,7 @@
     const search = String(page.querySelector('[data-bcq-search]')?.value || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
     const discipline = page.querySelector('[data-bcq-discipline]')?.value || '';
     const platform = page.querySelector('[data-bcq-platform-select]')?.value || '';
-    return registry.filter((filter) => !discipline || filter.disciplineKey === discipline).filter((filter) => !platform || filter.platform === platform).filter((filter) => {
+    return objectiveScopedFilters().filter((filter) => !discipline || filter.disciplineKey === discipline).filter((filter) => !platform || filter.platform === platform).filter((filter) => {
       if (!search) return true;
       return `${filter.discipline} ${filter.module} ${filter.code} ${filter.title} ${filter.id} ${filter.platformLabel}`.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().includes(search);
     });
@@ -765,7 +775,7 @@
     const select = document.querySelector('[data-bcq-discipline]');
     if (!select) return;
     const value = select.value;
-    const options = Array.from(new Map(registry.map((filter) => [filter.disciplineKey, filter.discipline])).entries()).sort((a, b) => a[1].localeCompare(b[1], 'pt-BR'));
+    const options = Array.from(new Map(objectiveScopedFilters().map((filter) => [filter.disciplineKey, filter.discipline])).entries()).sort((a, b) => a[1].localeCompare(b[1], 'pt-BR'));
     select.innerHTML = '<option value="">Todas</option>' + options.map(([key, label]) => `<option value="${attr(key)}">${esc(label)}</option>`).join('');
     if (options.some(([key]) => key === value)) select.value = value;
   }
@@ -785,13 +795,13 @@
     return `<article class="bcq-center-history-row"><span class="bcq-page-platform" data-platform="${filter.platform}">${filter.platform === 'qc' ? 'QC' : 'TEC'}</span><div><b>${esc(filter.code)} · ${esc(filter.title)}</b><small>${esc(filter.discipline)} · ${esc(filter.module)} · ${fmtDate(session.date)}</small></div><span>${session.answered} respondidas</span><span>${session.correct} acertos</span><span>${session.answered - session.correct} erros</span><strong>${percent(session.answered, session.correct)}%</strong><div><button type="button" data-bcq-history-edit="${attr(session.id)}" data-bcq-history-key="${attr(filter.stableKey)}">Editar</button><button type="button" data-bcq-history-delete="${attr(session.id)}" data-bcq-history-key="${attr(filter.stableKey)}">Excluir</button></div></article>`;
   }
   function renderOverview(page) {
-    const filters = uniqueFilters();
+    const filters = objectiveScopedFilters();
     const totals = aggregateFilters(filters);
-    const sessions = allSessionEntries();
+    const sessions = objectiveScopedSessions();
     const qc = filters.filter((filter) => filter.platform === 'qc');
     const tec = filters.filter((filter) => filter.platform === 'tec');
     const overview = page.querySelector('[data-bcq-panel="overview"]');
-    overview.innerHTML = `<div class="bcq-center-stats"><article><span>Questões resolvidas</span><b>${totals.answered.toLocaleString('pt-BR')}</b><small>Em ${totals.sessions} sessões</small></article><article><span>Acertos</span><b>${totals.correct.toLocaleString('pt-BR')}</b><small>${totals.errors.toLocaleString('pt-BR')} erros</small></article><article><span>Aproveitamento</span><b>${percent(totals.answered, totals.correct) == null ? '—' : `${percent(totals.answered, totals.correct)}%`}</b><small>Média acumulada</small></article><article><span>Cadernos únicos</span><b>${filters.filter((filter) => filter.status === 'available').length}</b><small>${registry.length} vínculos nos módulos</small></article></div>
+    overview.innerHTML = `<div class="bcq-center-stats"><article><span>Questões resolvidas</span><b>${totals.answered.toLocaleString('pt-BR')}</b><small>Em ${totals.sessions} sessões</small></article><article><span>Acertos</span><b>${totals.correct.toLocaleString('pt-BR')}</b><small>${totals.errors.toLocaleString('pt-BR')} erros</small></article><article><span>Aproveitamento</span><b>${percent(totals.answered, totals.correct) == null ? '—' : `${percent(totals.answered, totals.correct)}%`}</b><small>Média acumulada</small></article><article><span>Cadernos únicos</span><b>${filters.filter((filter) => filter.status === 'available').length}</b><small>${filters.length} vínculos neste objetivo</small></article></div>
       <div class="bcq-overview-grid"><section class="bcq-center-panel"><header><div><span>DESEMPENHO</span><h2>Evolução das sessões</h2></div><button type="button" data-bcq-go-tab="history">Ver histórico</button></header>${evolutionSvg(sessions.map((entry) => entry.session), 'all')}</section><section class="bcq-center-panel"><header><div><span>PLATAFORMAS</span><h2>Biblioteca de filtros</h2></div></header><div class="bcq-platform-summary"><article data-platform="qc"><b>${qc.length}</b><span>QConcursos</span><small>${aggregateFilters(qc).sessions} sessões</small></article><article data-platform="tec"><b>${tec.length}</b><span>TEC Concursos</span><small>${aggregateFilters(tec).sessions} sessões</small></article></div></section></div>
       <section class="bcq-center-panel"><header><div><span>ATIVIDADE RECENTE</span><h2>Últimas sessões</h2></div><button type="button" data-bcq-go-tab="history">Ver todas</button></header>${sessions.length ? `<div class="bcq-center-history">${sessions.slice(0, 5).map(historyRow).join('')}</div>` : '<div class="bcq-empty">Nenhuma sessão registrada. Use o botão + em um filtro para começar.</div>'}</section>`;
   }
@@ -831,7 +841,7 @@
   }
   function renderDisciplines(page) {
     const groups = new Map();
-    registry.forEach((filter) => {
+    objectiveScopedFilters().forEach((filter) => {
       if (!groups.has(filter.disciplineKey)) groups.set(filter.disciplineKey, { label: filter.discipline, modules: new Map() });
       const modules = groups.get(filter.disciplineKey).modules;
       if (!modules.has(filter.module)) modules.set(filter.module, []);
@@ -917,21 +927,24 @@
     section.dataset.ready = '1';
   }
   function renderHistory(page) {
-    const sessions = allSessionEntries();
+    const sessions = objectiveScopedSessions();
     page.querySelector('[data-bcq-panel="history"]').innerHTML = `<section class="bcq-center-panel"><header><div><span>EVOLUÇÃO</span><h2>Desempenho por sessão</h2><p>Percentual das últimas tentativas em ordem cronológica.</p></div></header>${evolutionSvg(sessions.map((entry) => entry.session), 'all')}</section><section class="bcq-center-panel"><header><div><span>SESSÕES REGISTRADAS</span><h2>Histórico completo</h2><p>Somente os resultados do usuário autenticado.</p></div></header>${sessions.length ? `<div class="bcq-center-history">${sessions.map(historyRow).join('')}</div>` : '<div class="bcq-empty">Seu histórico aparecerá após o primeiro registro.</div>'}</section>`;
   }
   function renderReview(page) {
-    const rows = uniqueFilters().map((filter) => ({ filter, stats: statsFor(filter) })).filter((item) => item.stats.answered > 0).sort((a, b) => a.stats.percent - b.stats.percent || b.stats.answered - a.stats.answered);
+    const rows = objectiveScopedFilters().map((filter) => ({ filter, stats: statsFor(filter) })).filter((item) => item.stats.answered > 0).sort((a, b) => a.stats.percent - b.stats.percent || b.stats.answered - a.stats.answered);
     page.querySelector('[data-bcq-panel="review"]').innerHTML = `<section class="bcq-center-panel"><header><div><span>PRIORIDADE DE ESTUDO</span><h2>Revisão por desempenho</h2><p>Filtros com menor aproveitamento aparecem primeiro.</p></div></header>${rows.length ? `<div class="bcq-review-list">${rows.map(({ filter, stats }) => `<article data-platform="${filter.platform}"><span class="bcq-page-platform" data-platform="${filter.platform}">${filter.platform === 'qc' ? 'QC' : 'TEC'}</span><div><b>${esc(filter.code)} · ${esc(filter.title)}</b><small>${esc(filter.discipline)} · ${stats.answered} respondidas · ${stats.errors} erros</small></div>${ringMarkup(stats.percent)}<div><a${filter.status === 'available' ? ` href="${attr(filter.url)}" target="_blank" rel="noopener noreferrer"` : ' aria-disabled="true"'}>${filter.status === 'available' ? 'Abrir filtro ↗' : 'Indisponível'}</a><button type="button" data-bcq-add="${attr(filter.stableKey)}">+</button></div></article>`).join('')}</div>` : '<div class="bcq-empty">Registre sessões para que a Central identifique suas prioridades de revisão.</div>'}</section>`;
   }
   function renderPage() {
     const page = document.getElementById('questionFiltersView');
     if (!page || page.classList.contains('hidden')) return;
     syncDisciplineOptions();
+    syncDisciplineOptions();
     renderQcNotebookInventory(page);
-    const filters = uniqueFilters();
+    const filters = objectiveScopedFilters();
     const total = page.querySelector('[data-bcq-page-total]');
-    if (total) total.innerHTML = `<b>${registry.length}</b><span>vínculos de filtros</span>`;
+    if (total) total.innerHTML = `<b>${filters.length}</b><span>filtros relacionados ao objetivo</span>`;
+    const total = page.querySelector('[data-bcq-page-total]');
+    if (total) total.innerHTML = `<b>${filters.length}</b><span>filtros relacionados ao objetivo</span>`;
     if (activeTab === 'overview') renderOverview(page);
     else if (activeTab === 'disciplines') renderDisciplines(page);
     else if (activeTab === 'filters') renderFilterLibrary(page);
@@ -1140,6 +1153,7 @@
       if (event.key === 'Escape' && !document.getElementById('bcqAdminModal')?.hidden) closeAdminModal();
     });
     document.addEventListener('central:discipline-ready', scheduleRefresh);
+    document.addEventListener('central:study-objective-changed', scheduleRefresh);
     global.addEventListener('central-cloud-applied', scheduleRefresh);
     global.addEventListener('central:external-filter-catalog-ready', scheduleRefresh);
     global.addEventListener('central:external-filter-history-changed', scheduleRefresh);

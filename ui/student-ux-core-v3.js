@@ -35,7 +35,13 @@
     catch (error) { report('storage', error); return false; }
   }
   function subjects() {
-    try { return Array.isArray(SUBJECTS) ? SUBJECTS : []; } catch (_) { return []; }
+    try {
+      const list = Array.isArray(SUBJECTS) ? SUBJECTS : [];
+      const objective = global.CentralStudyObjectives;
+      if (!objective?.hasActiveObjective?.()) return list;
+      const allowed = new Set(objective.activeSubjectIds());
+      return list.filter((subject) => allowed.has(subject.id));
+    } catch (_) { return []; }
   }
   function subjectId(value) {
     const text = String(value || '').trim().toLocaleLowerCase('pt-BR');

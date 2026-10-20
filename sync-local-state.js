@@ -4,6 +4,7 @@ const DB_NAME='central-sync-device-v2', STORE='kv', OWNER_KEY='central-v6:local-
 export function isSyncKey(key){
   return !!key && key!==OWNER_KEY && key!=='__central_folder_probe__' &&
     key!=='__central_storage_probe__' && !/^central-v6:pt(?::|-)/.test(key) &&
+    !/^central-v6:study-objective(?::|-)/.test(key) &&
     !/^dominio_portugues/i.test(key);
 }
 export function collectSyncStorage(){

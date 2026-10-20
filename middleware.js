@@ -127,6 +127,20 @@ export default async function middleware(request) {
   const url = new URL(request.url);
   const path = url.pathname;
 
+  // End the synthetic Preview session without calling any API or touching a
+  // student account. Re-entering through the private preview link starts it again.
+  if (PREVIEW_GUEST_ENABLED && url.searchParams.get('bc_preview_logout') === '1') {
+    if (request.method !== 'GET' || !(await hasPreviewGuestCookie(request))) return previewForbidden();
+    return new Response(null, {
+      status:303,
+      headers:{
+        Location:new URL('/login.html', request.url).toString(),
+        'Set-Cookie':PREVIEW_GUEST_COOKIE + '=; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=0',
+        'Cache-Control':'no-store',
+        'Referrer-Policy':'no-referrer',
+      },
+    });
+  }
 
   // Preview links grant a read-only, browser-local demonstration.
   // The query token is exchanged once for a secure cookie and then removed

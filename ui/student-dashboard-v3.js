@@ -274,6 +274,9 @@
     setTimeout(() => form.elements.objective?.focus(), 0);
   }
   function ensureOnboarding() {
+    // The required career/exam/free-study choice replaces the legacy free-text
+    // objective prompt; keep its routine planner from opening a second modal.
+    if (global.CentralStudyObjectives) return;
     const home = byId('homeView');
     if (!home || home.classList.contains('hidden')) return;
     if (readJSON(PROFILE_KEY, null) || hasStudentActivity() || document.querySelector('[data-student-onboarding]')) return;
