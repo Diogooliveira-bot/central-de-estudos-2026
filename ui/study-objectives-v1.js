@@ -98,7 +98,7 @@
     host.innerHTML = html;
   }
   function renderTopbar() {
-    const host = document.querySelector('#appRoot .view.central-view-visible') || document.querySelector('#appRoot .view:not(.hidden)') || document.getElementById('homeView') || document.getElementById('appRoot') || document.body;
+    const host = document.querySelector('#appRoot .view.central-view-visible:not(.hidden)') || document.querySelector('#appRoot .view:not(.hidden)') || document.getElementById('homeView') || document.getElementById('appRoot') || document.body;
     if (!host) return;
     let control = document.getElementById('studyObjectiveTopbar');
     if (!control) {
