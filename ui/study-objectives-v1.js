@@ -108,8 +108,10 @@
     }
     if (control.parentElement !== host || host.firstElementChild !== control) host.insertBefore(control, host.firstElementChild);
     const label = control.querySelector('[data-study-objective-label]');
-    label.textContent = goal()?.shortLabel || 'Escolher';
-    control.setAttribute('aria-label', 'Objetivo ativo: ' + (goal()?.title || 'nenhum'));
+    const shortLabel = goal()?.shortLabel || 'Escolher';
+    const accessibleLabel = 'Objetivo ativo: ' + (goal()?.title || 'nenhum');
+    if (label.textContent !== shortLabel) label.textContent = shortLabel;
+    if (control.getAttribute('aria-label') !== accessibleLabel) control.setAttribute('aria-label', accessibleLabel);
   }
   function applyObjective() {
     const allowed = new Set(activeSubjectIds());
@@ -148,7 +150,7 @@
     const app = document.getElementById('appRoot');
     if (app && !app.__studyObjectiveViewObserver) {
       const viewObserver = new MutationObserver(() => renderTopbar());
-      viewObserver.observe(app, { subtree:true, childList:true, attributes:true, attributeFilter:['class'] });
+      viewObserver.observe(app, { subtree:true, attributes:true, attributeFilter:['class'] });
       app.__studyObjectiveViewObserver = viewObserver;
     }
   }
