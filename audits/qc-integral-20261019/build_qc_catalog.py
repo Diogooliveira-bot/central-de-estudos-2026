@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the admin-only QC notebook inventory from the retained 416-item capture."""
+"""Build the admin-only QC catalog from the 416-item capture and later map entries."""
 
 from __future__ import annotations
 
@@ -49,8 +49,24 @@ def main() -> None:
         if row["tipo_registro"] == "Filtro esperado sem link QC integrado"
         and row["status"] == "Pendente sem filtro exclusivo"
     ]
+    # Keep the legacy inventory candidate visible when its module/code entry
+    # has since received a different integrated notebook. This preserves the
+    # audit trail without presenting the old candidate as a student filter.
+    unlinked_codes = {
+        (row["disciplina"], row.get("submodulo") or row.get("modulo"))
+        for row in matrix_rows
+        if row["tipo_registro"] == "Caderno existente no QC"
+        and row["integrado_no_codigo"] != "sim"
+    }
+    pending.extend(
+        row for row in matrix_rows
+        if row["tipo_registro"] == "Filtro esperado sem link QC integrado"
+        and row["status"] == "Validado e integrado"
+        and (row["disciplina"], row.get("submodulo") or row.get("modulo")) in unlinked_codes
+    )
 
     rows = []
+    source_ids = {str(item["id"]) for item in source["cadernos"]}
 
     def display_title(value: str) -> str:
         """Repair common UTF-8-as-Latin-1 mojibake while retaining sourceTitle."""
@@ -100,8 +116,44 @@ def main() -> None:
             ),
         })
 
-    if len(rows) != 416 or len({row["id"] for row in rows}) != 416:
-        raise SystemExit("Inventário inesperado: esperado 416 IDs únicos.")
+    # The 416-item capture predates 56 notebooks later created and integrated
+    # directly into the Central. Keep the original capture intact and append
+    # those exact IDs from the validated sharing map; do not infer a match from
+    # a similar title. The map's ID/code/module fields are the source of truth.
+    for item in main_map["items"]:
+        notebook_id = str(item.get("id", ""))
+        if not notebook_id or notebook_id in source_ids:
+            continue
+        code = str(item.get("code", ""))
+        code_match = re.match(r"^(M\d+)(?:\.(\d+))?$", code)
+        source_note = str(item.get("source", ""))
+        verified = source_note.startswith("QC autenticado")
+        rows.append({
+            "id": notebook_id,
+            "title": str(item.get("title", "")),
+            "sourceTitle": str(item.get("notebookTitle", "")),
+            "url": str(item.get("link", "")),
+            "page": None,
+            "candidateDiscipline": str(item.get("discipline", "")),
+            "candidateDisciplineKey": str(item.get("disciplineKey", "")),
+            "candidateModule": code_match.group(1) if code_match else "",
+            "candidateSubmodule": code if code_match and code_match.group(2) else "",
+            "candidateModuleTitle": str(item.get("moduleTitle", "")),
+            "linkedInExistingMap": notebook_id in linked_ids,
+            "reviewStatus": "created-validated-integrated" if verified else "linked-in-existing-map",
+            "pendingCandidateCode": "",
+            "pendingCandidateTitle": "",
+            "questionCount": item.get("quantity"),
+            "evidenceNote": (
+                "Filtro QC aberto em sessão autenticada; quantidade e assuntos conferidos."
+                if verified else
+                "ID encontrado em um mapa QC existente; validação do destino ainda pendente."
+            ),
+        })
+        source_ids.add(notebook_id)
+
+    if len(rows) != 472 or len({row["id"] for row in rows}) != 472:
+        raise SystemExit("Inventário inesperado: esperado 472 IDs únicos (416 capturados + 56 integrados posteriormente).")
     payload = {
         "schema": "qc-notebook-inventory-v1",
         "capturedAt": source.get("extraidoEm", ""),
