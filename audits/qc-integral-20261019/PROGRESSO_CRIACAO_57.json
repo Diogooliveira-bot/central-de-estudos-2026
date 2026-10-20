@@ -1,9 +1,9 @@
 {
   "schema": "qc-pending-creation-progress-v1",
-  "updatedAt": "2026-10-20T10:13:39+00:00",
+  "updatedAt": "2026-10-20T10:14:18+00:00",
   "initialPending": 57,
-  "createdAndValidated": 53,
-  "remainingPending": 4,
+  "createdAndValidated": 54,
+  "remainingPending": 3,
   "records": [
     {
       "discipline": "Direito Penal",
@@ -1336,6 +1336,31 @@
         ],
         "minimumQuestionCount": 0,
         "note": "Questão FGV/TJ-RS 2026 sobre impedimento, suspeição e poderes do juiz nos atos processuais; filtro confirmou 1 questão. Salvo, reaberto, com quantidade confirmada e compartilhamento público ativo 0EM-JQ9."
+      },
+      "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
+    },
+    {
+      "discipline": "Direito Processual Penal",
+      "module": "M09.2",
+      "moduleTitle": "Atos e Prazos Processuais",
+      "subject": "Prazos processuais",
+      "qcId": "15354607",
+      "shareCode": "0EM-JQF",
+      "notebookTitle": "CPP M09.2 Prazos processuais",
+      "questionCount": 2,
+      "url": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15354607",
+      "criteria": {
+        "method": "filtro por palavra-chave e seleção manual após leitura integral",
+        "selectedQuestions": [
+          "Q4240035",
+          "Q1120538"
+        ],
+        "excluded": [
+          "anuladas",
+          "desatualizadas"
+        ],
+        "minimumQuestionCount": 0,
+        "note": "Duas questões: FCC/TJ-CE 2026 sobre termo inicial e final do prazo para resposta à acusação, e Cebraspe/TJ-PA 2020 sobre regras gerais da contagem de prazos penais. Filtro confirmou 2 questões. Salvo, reaberto, com quantidade confirmada e compartilhamento público ativo 0EM-JQF."
       },
       "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
     }
