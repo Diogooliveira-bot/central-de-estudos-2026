@@ -1,9 +1,9 @@
 {
   "schema": "qc-pending-creation-progress-v1",
-  "updatedAt": "2026-10-20T10:10:58+00:00",
+  "updatedAt": "2026-10-20T10:11:28+00:00",
   "initialPending": 57,
-  "createdAndValidated": 49,
-  "remainingPending": 8,
+  "createdAndValidated": 50,
+  "remainingPending": 7,
   "records": [
     {
       "discipline": "Direito Penal",
@@ -1238,6 +1238,30 @@
         ],
         "minimumQuestionCount": 0,
         "note": "Questão INIDE/Prefeitura de Murici 2025 testa aplicação imediata da lei processual penal no tempo e preservação dos atos já praticados; filtro confirmou 1 questão. Salvo, reaberto, com quantidade confirmada e compartilhamento público ativo 0EM-JPE."
+      },
+      "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
+    },
+    {
+      "discipline": "Direito Processual Penal",
+      "module": "M02.2",
+      "moduleTitle": "Aplicação da Lei Processual Penal",
+      "subject": "Lei processual no espaço",
+      "qcId": "15354579",
+      "shareCode": "0EM-JPK",
+      "notebookTitle": "CPP M02.2 Lei processual no espaço",
+      "questionCount": 1,
+      "url": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15354579",
+      "criteria": {
+        "method": "filtro por palavra-chave e seleção manual após leitura integral",
+        "selectedQuestions": [
+          "Q3058554"
+        ],
+        "excluded": [
+          "anuladas",
+          "desatualizadas"
+        ],
+        "minimumQuestionCount": 0,
+        "note": "Questão UPENET/IAUPE 2024 aborda diretamente territorialidade e aplicação da lei processual penal no espaço; filtro confirmou 1 questão. Salvo, reaberto, com quantidade confirmada e compartilhamento público ativo 0EM-JPK."
       },
       "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
     }
