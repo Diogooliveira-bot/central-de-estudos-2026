@@ -1,9 +1,9 @@
 {
   "schema": "qc-pending-creation-progress-v1",
-  "updatedAt": "2026-10-20T00:52:59.434838+00:00",
+  "updatedAt": "2026-10-20T00:54:21.769409+00:00",
   "initialPending": 57,
-  "createdAndValidated": 16,
-  "remainingPending": 41,
+  "createdAndValidated": 17,
+  "remainingPending": 40,
   "records": [
     {
       "discipline": "Direito Penal",
@@ -426,6 +426,30 @@
         ],
         "minimumQuestionCount": 0,
         "note": "Caderno geral reúne LINDB/decisões no Direito Público (Q4378318, FGV, 2026) e regulamentação pelo Decreto 9.830/2019 (Q4177712, OBJETIVA, 2026). Ambas lidas integralmente; reaberto com 2 questões e compartilhamento ativo 0EM-GPT."
+      },
+      "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
+    },
+    {
+      "discipline": "Direito Administrativo",
+      "module": "M09.5",
+      "moduleTitle": "Serviços Públicos — Lei 8.987/1995",
+      "subject": "Intervencao, extincao e reversao",
+      "qcId": "15352569",
+      "shareCode": "0EM-GQS",
+      "notebookTitle": "ADM M09.5 Intervenção e extinção",
+      "questionCount": 1,
+      "url": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15352569",
+      "criteria": {
+        "method": "seleção manual após leitura integral",
+        "selectedQuestions": [
+          "Q4244259"
+        ],
+        "excluded": [
+          "anuladas",
+          "desatualizadas"
+        ],
+        "minimumQuestionCount": 0,
+        "note": "FUNDATEC/CRA-RS Advogado, 2026; questão integral sobre intervenção, encampação e caducidade da concessão (Lei 8.987/1995). Salvo, reaberto com uma questão e público, 0EM-GQS. Resultado antigo de 2008 não utilizado por estar fora do recorte temporal."
       },
       "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
     }
