@@ -1,15 +1,15 @@
-Warning: truncated output (original token count: 58936)
-Total output lines: 5983
+Warning: truncated output (original token count: 58950)
+Total output lines: 5982
 
 {
   "schema": "qc-central-sharing-v1",
-  "generatedAt": "2026-10-20T09:47:48+00:00",
+  "generatedAt": "2026-10-20T09:52:58+00:00",
   "platform": "QConcursos",
   "counts": {
     "administrativo": {
       "items": 98,
-      "linked": 91,
-      "pending": 7
+      "linked": 92,
+      "pending": 6
     },
     "penal": {
       "items": 64,
@@ -22,8 +22,8 @@ Total output lines: 5983
       "pending": 9
     },
     "totalItems": 393,
-    "totalValidatedPublicLinks": 374,
-    "totalPending": 19,
+    "totalValidatedPublicLinks": 375,
+    "totalPending": 18,
     "constitucional": {
       "items": 19,
       "linked": 19,
@@ -1394,14 +1394,13 @@ Total output lines: 5983
       "kind": "subdivision",
       "moduleTitle": "Lei Geral de Protecao de Dados - LGPD",
       "title": "Bases legais, sensíveis, crianças e término",
-      "notebookTitle": null,
-      "id": null,
-      "quantity": null,
-      "link": null,
-      "status": "Pendente",
-      "public": false,
-      "source": "checkpoint_adm_qc.json.thematicAudit.pendingSubdivisions",
-      "pendingReason": "Sem filtro exclusivo nativo; mantido como Pendente."
+      "notebookTitle": "ADM M20.2 Bases legais, dados sensíveis e crianças",
+      "id": "15354479",
+      "quantity": 3,
+      "link": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15354479",
+      "status": "VALIDADO",
+      "public": true,
+      "source": "checkpoint_adm_qc.json.thematicAudit.pendingSubdivisions"
     },
     {
       "discipline": "Direito Administrativo",
@@ -2482,8 +2481,7 @@ Total output lines: 5983
       "disciplineKey": "penal",
       "code": "M17.3",
       "kind": "subdivisao",
-      "moduleTitle": "Constituição Penal, Responsabilidade Penal da Pessoa Jurídica, Súmulas e Consolidação",
-      "title": "Crimes ambientais e Lei 9.605/1998"…8936 tokens truncated…ids%5B%5D=15290033",
+      "moduleTitle": "Constituição Penal, Responsabilidade Penal da Pessoa Jurídica, Súmulas e Consolidaç…8950 tokens truncated…ids%5B%5D=15290033",
       "status": "VALIDADO",
       "public": true,
       "source": "checkpoint_direito_processual_penal_qc.json"
