@@ -1,9 +1,9 @@
 {
   "schema": "qc-pending-creation-progress-v1",
-  "updatedAt": "2026-10-20T01:03:01.654757+00:00",
+  "updatedAt": "2026-10-20T01:03:50.639343+00:00",
   "initialPending": 57,
-  "createdAndValidated": 26,
-  "remainingPending": 31,
+  "createdAndValidated": 27,
+  "remainingPending": 30,
   "records": [
     {
       "discipline": "Direito Penal",
@@ -669,6 +669,30 @@
         ],
         "minimumQuestionCount": 0,
         "note": "Caderno geral consolidado com os quatro recortes conferidos: instrumentos (FCC/TJCE), chamamento (CEBRASPE/TJMT), prestação de contas (FGV/TCESC), sanções (IV-UFG), todas de 2026. Reaberto com 4 questões e compartilhamento ativo 0EM-GVV."
+      },
+      "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
+    },
+    {
+      "discipline": "Direito Administrativo",
+      "module": "M13.3",
+      "moduleTitle": "Improbidade Administrativa — Lei 8.429/1992",
+      "subject": "Sancoes e efeitos entre instancias",
+      "qcId": "15352709",
+      "shareCode": "0EM-GW5",
+      "notebookTitle": "ADM M13.3 Sanções e instâncias",
+      "questionCount": 1,
+      "url": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15352709",
+      "criteria": {
+        "method": "seleção manual após leitura integral",
+        "selectedQuestions": [
+          "Q4145357"
+        ],
+        "excluded": [
+          "anuladas",
+          "desatualizadas"
+        ],
+        "minimumQuestionCount": 0,
+        "note": "Quadrix/Agente Fiscal, 2026; questão direta sobre sanções da Lei de Improbidade e independência do julgamento pelo Tribunal de Contas. Leitura integral, reaberto com 1 questão e público 0EM-GW5."
       },
       "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
     }
