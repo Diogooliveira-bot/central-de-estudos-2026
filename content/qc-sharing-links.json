@@ -1,15 +1,15 @@
-Warning: truncated output (original token count: 58990)
-Total output lines: 5978
+Warning: truncated output (original token count: 58997)
+Total output lines: 5977
 
 {
   "schema": "qc-central-sharing-v1",
-  "generatedAt": "2026-10-20T10:02:00+00:00",
+  "generatedAt": "2026-10-20T10:02:32+00:00",
   "platform": "QConcursos",
   "counts": {
     "administrativo": {
       "items": 98,
-      "linked": 96,
-      "pending": 2
+      "linked": 97,
+      "pending": 1
     },
     "penal": {
       "items": 64,
@@ -22,8 +22,8 @@ Total output lines: 5978
       "pending": 9
     },
     "totalItems": 393,
-    "totalValidatedPublicLinks": 379,
-    "totalPending": 14,
+    "totalValidatedPublicLinks": 380,
+    "totalPending": 13,
     "constitucional": {
       "items": 19,
       "linked": 19,
@@ -1469,14 +1469,13 @@ Total output lines: 5978
       "kind": "subdivision",
       "moduleTitle": "Lei Geral de Protecao de Dados - LGPD",
       "title": "Sanções, ANPD e transferência internacional",
-      "notebookTitle": null,
-      "id": null,
-      "quantity": null,
-      "link": null,
-      "status": "Pendente",
-      "public": false,
-      "source": "checkpoint_adm_qc.json.thematicAudit.pendingSubdivisions",
-      "pendingReason": "Sem filtro exclusivo nativo; mantido como Pendente."
+      "notebookTitle": "ADM M20.7 Sanções e ANPD",
+      "id": "15354532",
+      "quantity": 1,
+      "link": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15354532",
+      "status": "VALIDADO",
+      "public": true,
+      "source": "checkpoint_adm_qc.json.thematicAudit.pendingSubdivisions"
     },
     {
       "discipline": "Direito Administrativo",
@@ -2474,8 +2473,7 @@ Total output lines: 5978
     },
     {
       "discipline": "Direito Penal",
-      "disciplineKey": "penal",
-    …8990 tokens truncated…ids%5B%5D=15290033",
+     …8997 tokens truncated…ids%5B%5D=15290033",
       "status": "VALIDADO",
       "public": true,
       "source": "checkpoint_direito_processual_penal_qc.json"

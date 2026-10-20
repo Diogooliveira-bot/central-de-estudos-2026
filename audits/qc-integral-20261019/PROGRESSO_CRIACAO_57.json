@@ -1,9 +1,9 @@
 {
   "schema": "qc-pending-creation-progress-v1",
-  "updatedAt": "2026-10-20T10:02:00+00:00",
+  "updatedAt": "2026-10-20T10:02:32+00:00",
   "initialPending": 57,
-  "createdAndValidated": 43,
-  "remainingPending": 14,
+  "createdAndValidated": 44,
+  "remainingPending": 13,
   "records": [
     {
       "discipline": "Direito Penal",
@@ -1083,6 +1083,30 @@
         ],
         "minimumQuestionCount": 0,
         "note": "Questão FCC/AL-RR 2026 sobre estudos para políticas públicas, governança, anonimização e uso de ambiente controlado; filtro confirmou 1 questão. Salvo, reaberto, com quantidade confirmada e compartilhamento público ativo 0EM-JN1."
+      },
+      "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
+    },
+    {
+      "discipline": "Direito Administrativo",
+      "module": "M20.7",
+      "moduleTitle": "Lei Geral de Protecao de Dados - LGPD",
+      "subject": "Sanções, ANPD e transferência internacional",
+      "qcId": "15354532",
+      "shareCode": "0EM-JN4",
+      "notebookTitle": "ADM M20.7 Sanções e ANPD",
+      "questionCount": 1,
+      "url": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15354532",
+      "criteria": {
+        "method": "filtro por palavra-chave e seleção manual após leitura integral",
+        "selectedQuestions": [
+          "Q4063551"
+        ],
+        "excluded": [
+          "anuladas",
+          "desatualizadas"
+        ],
+        "minimumQuestionCount": 0,
+        "note": "Questão CEFET-MG 2026 testa as sanções administrativas da LGPD aplicadas pela autoridade nacional, incluindo a alternativa inexistente de prisão civil; filtro confirmou 1 questão. Salvo, reaberto, com quantidade confirmada e compartilhamento público ativo 0EM-JN4."
       },
       "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
     }
