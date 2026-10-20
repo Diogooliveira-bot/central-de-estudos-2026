@@ -1,9 +1,9 @@
 {
   "schema": "qc-pending-creation-progress-v1",
-  "updatedAt": "2026-10-20T10:14:18+00:00",
+  "updatedAt": "2026-10-20T10:15:59+00:00",
   "initialPending": 57,
-  "createdAndValidated": 54,
-  "remainingPending": 3,
+  "createdAndValidated": 55,
+  "remainingPending": 2,
   "records": [
     {
       "discipline": "Direito Penal",
@@ -1361,6 +1361,32 @@
         ],
         "minimumQuestionCount": 0,
         "note": "Duas questões: FCC/TJ-CE 2026 sobre termo inicial e final do prazo para resposta à acusação, e Cebraspe/TJ-PA 2020 sobre regras gerais da contagem de prazos penais. Filtro confirmou 2 questões. Salvo, reaberto, com quantidade confirmada e compartilhamento público ativo 0EM-JQF."
+      },
+      "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
+    },
+    {
+      "discipline": "Direito Processual Penal",
+      "module": "M09",
+      "moduleTitle": "Atos e Prazos Processuais",
+      "subject": "Atos e Prazos Processuais",
+      "qcId": "15354612",
+      "shareCode": "0EM-JQM",
+      "notebookTitle": "CPP M09 Geral Atos e Prazos",
+      "questionCount": 3,
+      "url": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15354612",
+      "criteria": {
+        "method": "filtro por palavra-chave e seleção manual após leitura integral",
+        "selectedQuestions": [
+          "Q3980528",
+          "Q4240035",
+          "Q1120538"
+        ],
+        "excluded": [
+          "anuladas",
+          "desatualizadas"
+        ],
+        "minimumQuestionCount": 0,
+        "note": "Caderno geral com uma questão FGV/TJ-RS 2026 sobre atos e poderes judiciais e duas questões de prazo, uma FCC/TJ-CE 2026 e outra Cebraspe/TJ-PA 2020; filtro confirmou 3 questões. Salvo, reaberto, com quantidade confirmada e compartilhamento público ativo 0EM-JQM."
       },
       "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
     }
