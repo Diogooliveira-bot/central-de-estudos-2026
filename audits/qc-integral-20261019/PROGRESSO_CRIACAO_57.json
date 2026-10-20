@@ -1,9 +1,9 @@
 {
   "schema": "qc-pending-creation-progress-v1",
-  "updatedAt": "2026-10-20T10:13:01+00:00",
+  "updatedAt": "2026-10-20T10:13:39+00:00",
   "initialPending": 57,
-  "createdAndValidated": 52,
-  "remainingPending": 5,
+  "createdAndValidated": 53,
+  "remainingPending": 4,
   "records": [
     {
       "discipline": "Direito Penal",
@@ -1312,6 +1312,30 @@
         ],
         "minimumQuestionCount": 0,
         "note": "Questão FGV/TJ-PE 2026 sobre ação penal privada subsidiária da pública e prazo, à luz das alterações da Lei nº 15.438/2026; filtro confirmou 1 questão. Salvo, reaberto, com quantidade confirmada e compartilhamento público ativo 0EM-JQ3."
+      },
+      "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
+    },
+    {
+      "discipline": "Direito Processual Penal",
+      "module": "M09.1",
+      "moduleTitle": "Atos e Prazos Processuais",
+      "subject": "Atos jurisdicionais",
+      "qcId": "15354601",
+      "shareCode": "0EM-JQ9",
+      "notebookTitle": "CPP M09.1 Atos jurisdicionais",
+      "questionCount": 1,
+      "url": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15354601",
+      "criteria": {
+        "method": "filtro por palavra-chave e seleção manual após leitura integral",
+        "selectedQuestions": [
+          "Q3980528"
+        ],
+        "excluded": [
+          "anuladas",
+          "desatualizadas"
+        ],
+        "minimumQuestionCount": 0,
+        "note": "Questão FGV/TJ-RS 2026 sobre impedimento, suspeição e poderes do juiz nos atos processuais; filtro confirmou 1 questão. Salvo, reaberto, com quantidade confirmada e compartilhamento público ativo 0EM-JQ9."
       },
       "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
     }
