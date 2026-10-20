@@ -61,8 +61,10 @@ test('catálogo real cobre todas as disciplinas com filtros publicados', () => {
   dom.window.eval(source);
   const rows = dom.window.ExternalQuestionFilters.buildRegistry();
   const disciplines = new Set(rows.map((row) => row.discipline));
-  assert.equal(rows.length, 783);
-  assert.equal(rows.filter((row) => row.platform === 'qc').length, 420);
+  assert.ok(rows.some((row) => row.platform === 'qc' && row.id === '15351620'));
+  assert.ok(rows.some((row) => row.platform === 'qc' && row.id === '15352286' && row.count === 2));
+  assert.equal(rows.length, 784);
+  assert.equal(rows.filter((row) => row.platform === 'qc').length, 421);
   assert.equal(rows.filter((row) => row.platform === 'tec').length, 363);
   assert.deepEqual(Array.from(disciplines).sort((a, b) => a.localeCompare(b, 'pt-BR')), [
     'Direito Administrativo', 'Direito Civil', 'Direito Constitucional', 'Direito do Trabalho',
@@ -116,10 +118,4 @@ test('componente compartilhado substitui a apresentação antiga no módulo', as
   assert.ok(dom.window.document.getElementById('questionFiltersView'));
   assert.equal(body.querySelector('[data-native-metric-detail="external"]').textContent, 'Histórico legado preservado');
   await settle(dom.window);
-});
-
-
-
-test('external filter index includes Penal M13.4', () => {
-  assert.ok(rows.some((row) => row.platform === 'qc' && row.id === '15351620'));
 });

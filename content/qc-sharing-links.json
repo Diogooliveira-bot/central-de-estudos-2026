@@ -1,12 +1,12 @@
 {
   "schema": "qc-central-sharing-v1",
-  "generatedAt": "2026-10-20T01:10:00.000Z",
+  "generatedAt": "2026-10-20T00:35:44.199726+00:00",
   "platform": "QConcursos",
   "counts": {
     "administrativo": {
       "items": 98,
-      "linked": 63,
-      "pending": 35
+      "linked": 64,
+      "pending": 34
     },
     "penal": {
       "items": 64,
@@ -19,8 +19,8 @@
       "pending": 9
     },
     "totalItems": 393,
-    "totalValidatedPublicLinks": 346,
-    "totalPending": 47,
+    "totalValidatedPublicLinks": 347,
+    "totalPending": 46,
     "constitucional": {
       "items": 19,
       "linked": 19,
@@ -851,14 +851,13 @@
       "kind": "subdivision",
       "moduleTitle": "Licitações — Planejamento",
       "title": "Planejamento setorial: compras, serviços e engenharia",
-      "notebookTitle": null,
-      "id": null,
-      "quantity": null,
-      "link": null,
-      "status": "Pendente",
-      "public": false,
-      "source": "tabela_final_adm_qc.csv + checkpoint_adm_qc.json",
-      "pendingReason": "Sem filtro exclusivo nativo; mantido como Pendente."
+      "notebookTitle": "ADM M15.2 Planejamento ETP e TR",
+      "id": "15352286",
+      "quantity": 2,
+      "link": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15352286",
+      "status": "VALIDADO",
+      "public": true,
+      "source": "QC autenticado: seleção manual Q4378182 e Q4339057 (ISET, 2026); reaberto com 2 questões; compartilhamento ativo 0EM-GEY"
     },
     {
       "discipline": "Direito Administrativo",

@@ -1,9 +1,9 @@
 {
   "schema": "qc-pending-creation-progress-v1",
-  "updatedAt": "2026-10-20T01:10:00Z",
+  "updatedAt": "2026-10-20T00:35:44.199726+00:00",
   "initialPending": 57,
-  "createdAndValidated": 10,
-  "remainingPending": 47,
+  "createdAndValidated": 11,
+  "remainingPending": 46,
   "records": [
     {
       "discipline": "Direito Penal",
@@ -276,6 +276,34 @@
       },
       "url": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15351620",
       "status": "Criado, salvo, reaberto e validado; 1 questão pertinente; compartilhamento ativo confirmado (0EM-FT4); integrado à Central"
+    },
+    {
+      "discipline": "Direito Administrativo",
+      "module": "M15.2",
+      "moduleTitle": "Licitações — Planejamento",
+      "subject": "Planejamento setorial: compras, serviços e engenharia",
+      "qcId": "15352286",
+      "shareCode": "0EM-GEY",
+      "notebookTitle": "ADM M15.2 Planejamento ETP e TR",
+      "questionCount": 2,
+      "url": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15352286",
+      "criteria": {
+        "method": "seleção manual após leitura integral",
+        "search": "planejamento contratação estudo técnico preliminar",
+        "selectedQuestions": [
+          "Q4378182",
+          "Q4339057"
+        ],
+        "year": 2026,
+        "board": "ISET",
+        "excluded": [
+          "anuladas",
+          "desatualizadas"
+        ],
+        "minimumQuestionCount": 0,
+        "note": "Caderno antigo 15285176 reaberto: registro de preços, incompatível com planejamento; preservado. Nova seleção sobre ETP, TR e fase preparatória."
+      },
+      "status": "criado, salvo, reaberto com 2 questões; Tornar Privado visível na listagem; integrado"
     }
   ],
   "attempts": [
@@ -290,8 +318,10 @@
     {
       "discipline": "Direito Administrativo",
       "module": "M15.2",
-      "status": "bloqueado: assunto nativo específico não localizado",
-      "evidence": "Busca da disciplina por “planejamento” e “fase preparatória” não retornou assunto. “9.5 Fases e Processo Licitatório” é amplo e inclui fases além de planejamento setorial; não foi usado como substituto."
+      "status": "superado: caderno 15352286 criado, reaberto, validado e integrado",
+      "evidence": "Busca da disciplina por “planejamento” e “fase preparatória” não retornou assunto. “9.5 Fases e Processo Licitatório” é amplo e inclui fases além de planejamento setorial; não foi usado como substituto.",
+      "status_historico": "bloqueado: assunto nativo específico não localizado",
+      "supersededBy": "15352286"
     },
     {
       "discipline": "Direito Administrativo",
@@ -337,11 +367,11 @@
   ],
   "testResults": {
     "command": "npm test",
-    "passed": 100,
+    "passed": 102,
     "failed": 0,
     "skipped": 1,
     "skipReason": "Chromium do Playwright não instalado; uma verificação de navegador real foi ignorada pelo repositório.",
-    "targetedTests": "17 testes de QC/central aprovados, 0 falhas",
+    "targetedTests": "M15.2 e M13.4 conferidos no registro efetivo da Central; totais QC 421/TEC 363",
     "diffCheck": "passed"
   }
 }
