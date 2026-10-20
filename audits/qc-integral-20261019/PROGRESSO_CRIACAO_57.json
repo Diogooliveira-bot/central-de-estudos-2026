@@ -1,9 +1,9 @@
 {
   "schema": "qc-pending-creation-progress-v1",
-  "updatedAt": "2026-10-20T00:49:44.478678+00:00",
+  "updatedAt": "2026-10-20T00:51:36.983846+00:00",
   "initialPending": 57,
-  "createdAndValidated": 14,
-  "remainingPending": 43,
+  "createdAndValidated": 15,
+  "remainingPending": 42,
   "records": [
     {
       "discipline": "Direito Penal",
@@ -379,6 +379,30 @@
       },
       "status": "caderno existente reutilizado, reaberto, validado e integrado sem duplicar o catálogo",
       "reusedExistingNotebook": true
+    },
+    {
+      "discipline": "Direito Administrativo",
+      "module": "M07.2",
+      "moduleTitle": "LINDB e consequencias no Direito Publico",
+      "subject": "Regulamentacao dos arts. 20 a 30 da LINDB",
+      "qcId": "15352524",
+      "shareCode": "0EM-GPC",
+      "notebookTitle": "ADM M07.2 Decreto 9.830 LINDB",
+      "questionCount": 1,
+      "url": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15352524",
+      "criteria": {
+        "method": "seleção manual após leitura integral",
+        "selectedQuestions": [
+          "Q4177712"
+        ],
+        "excluded": [
+          "anuladas",
+          "desatualizadas"
+        ],
+        "minimumQuestionCount": 0,
+        "note": "OBJETIVA/PGM Canoas, Procurador Municipal, 2026; questão específica do Decreto 9.830/2019 sobre dolo, erro grosseiro e circunstâncias práticas do gestor. Seleção manual após leitura integral; salvo e reaberto, público (0EM-GPC)."
+      },
+      "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
     }
   ],
   "attempts": [
