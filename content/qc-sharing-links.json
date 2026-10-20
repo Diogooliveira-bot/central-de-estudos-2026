@@ -1,12 +1,12 @@
 {
   "schema": "qc-central-sharing-v1",
-  "generatedAt": "2026-10-20T01:03:50.639343+00:00",
+  "generatedAt": "2026-10-20T01:04:40.681387+00:00",
   "platform": "QConcursos",
   "counts": {
     "administrativo": {
       "items": 98,
-      "linked": 80,
-      "pending": 18
+      "linked": 81,
+      "pending": 17
     },
     "penal": {
       "items": 64,
@@ -19,8 +19,8 @@
       "pending": 9
     },
     "totalItems": 393,
-    "totalValidatedPublicLinks": 363,
-    "totalPending": 30,
+    "totalValidatedPublicLinks": 364,
+    "totalPending": 29,
     "constitucional": {
       "items": 19,
       "linked": 19,
@@ -1226,14 +1226,13 @@
       "kind": "subdivision",
       "moduleTitle": "Licitações — Contratação Direta",
       "title": "Processo, motivação e responsabilidade",
-      "notebookTitle": null,
-      "id": null,
-      "quantity": null,
-      "link": null,
-      "status": "Pendente",
-      "public": false,
-      "source": "checkpoint_adm_qc.json.thematicAudit.pendingSubdivisions",
-      "pendingReason": "Sem filtro exclusivo nativo; mantido como Pendente."
+      "notebookTitle": "ADM M17.1 Instrução contratação",
+      "id": "15352720",
+      "quantity": 1,
+      "link": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15352720",
+      "status": "VALIDADO",
+      "public": true,
+      "source": "QC autenticado: ISET/Agente de Contratações Públicas, 2026; questão do art. 72 da Lei 14.133/2021 sobre instrução, justificativa de preço, escolha do contratado, recursos e publicidade. Salvo, reaberto e público, 0EM-GWG."
     },
     {
       "discipline": "Direito Administrativo",

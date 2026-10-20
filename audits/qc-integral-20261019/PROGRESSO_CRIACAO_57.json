@@ -1,9 +1,9 @@
 {
   "schema": "qc-pending-creation-progress-v1",
-  "updatedAt": "2026-10-20T01:03:50.639343+00:00",
+  "updatedAt": "2026-10-20T01:04:40.681387+00:00",
   "initialPending": 57,
-  "createdAndValidated": 27,
-  "remainingPending": 30,
+  "createdAndValidated": 28,
+  "remainingPending": 29,
   "records": [
     {
       "discipline": "Direito Penal",
@@ -693,6 +693,30 @@
         ],
         "minimumQuestionCount": 0,
         "note": "Quadrix/Agente Fiscal, 2026; questão direta sobre sanções da Lei de Improbidade e independência do julgamento pelo Tribunal de Contas. Leitura integral, reaberto com 1 questão e público 0EM-GW5."
+      },
+      "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
+    },
+    {
+      "discipline": "Direito Administrativo",
+      "module": "M17.1",
+      "moduleTitle": "Licitações — Contratação Direta",
+      "subject": "Processo, motivação e responsabilidade",
+      "qcId": "15352720",
+      "shareCode": "0EM-GWG",
+      "notebookTitle": "ADM M17.1 Instrução contratação",
+      "questionCount": 1,
+      "url": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15352720",
+      "criteria": {
+        "method": "seleção manual após leitura integral",
+        "selectedQuestions": [
+          "Q4378185"
+        ],
+        "excluded": [
+          "anuladas",
+          "desatualizadas"
+        ],
+        "minimumQuestionCount": 0,
+        "note": "ISET/Agente de Contratações Públicas, 2026; questão do art. 72 da Lei 14.133/2021 sobre instrução, justificativa de preço, escolha do contratado, recursos e publicidade. Salvo, reaberto e público, 0EM-GWG."
       },
       "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
     }
