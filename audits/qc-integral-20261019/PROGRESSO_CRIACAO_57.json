@@ -1,9 +1,9 @@
 {
   "schema": "qc-pending-creation-progress-v1",
-  "updatedAt": "2026-10-20T10:02:32+00:00",
+  "updatedAt": "2026-10-20T10:04:09+00:00",
   "initialPending": 57,
-  "createdAndValidated": 44,
-  "remainingPending": 13,
+  "createdAndValidated": 45,
+  "remainingPending": 12,
   "records": [
     {
       "discipline": "Direito Penal",
@@ -1107,6 +1107,36 @@
         ],
         "minimumQuestionCount": 0,
         "note": "Questão CEFET-MG 2026 testa as sanções administrativas da LGPD aplicadas pela autoridade nacional, incluindo a alternativa inexistente de prisão civil; filtro confirmou 1 questão. Salvo, reaberto, com quantidade confirmada e compartilhamento público ativo 0EM-JN4."
+      },
+      "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
+    },
+    {
+      "discipline": "Direito Administrativo",
+      "module": "M20",
+      "moduleTitle": "Lei Geral de Protecao de Dados - LGPD",
+      "subject": "Lei Geral de Protecao de Dados - LGPD",
+      "qcId": "15354535",
+      "shareCode": "0EM-JN7",
+      "notebookTitle": "ADM M20 Geral LGPD",
+      "questionCount": 7,
+      "url": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15354535",
+      "criteria": {
+        "method": "filtro por palavra-chave e seleção manual após leitura integral",
+        "selectedQuestions": [
+          "Q4218757",
+          "Q4078780",
+          "Q4124884",
+          "Q4056690",
+          "Q4001019",
+          "Q4158826",
+          "Q4063551"
+        ],
+        "excluded": [
+          "anuladas",
+          "desatualizadas"
+        ],
+        "minimumQuestionCount": 0,
+        "note": "Caderno geral consolidado com 7 questões de 2026, uma representativa de cada recorte M20.1–M20.7; o filtro confirmou todas as 7. Salvo, reaberto, com quantidade confirmada e compartilhamento público ativo 0EM-JN7."
       },
       "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
     }
