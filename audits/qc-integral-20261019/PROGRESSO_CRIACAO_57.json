@@ -1,9 +1,9 @@
 {
   "schema": "qc-pending-creation-progress-v1",
-  "updatedAt": "2026-10-20T01:05:51.881571+00:00",
+  "updatedAt": "2026-10-20T01:06:47.738200+00:00",
   "initialPending": 57,
-  "createdAndValidated": 30,
-  "remainingPending": 27,
+  "createdAndValidated": 31,
+  "remainingPending": 26,
   "records": [
     {
       "discipline": "Direito Penal",
@@ -765,6 +765,30 @@
         ],
         "minimumQuestionCount": 0,
         "note": "IDECAN/AL-CE Analista Legislativo Direito, 2026; hipótese de dispensa por emergência ou calamidade com requisitos e limitação ao objeto necessário, Lei 14.133/2021. Salvo, reaberto e público, 0EM-GX4."
+      },
+      "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
+    },
+    {
+      "discipline": "Direito Administrativo",
+      "module": "M18.4",
+      "moduleTitle": "Contratos Administrativos — Lei 14.133/2021",
+      "subject": "Recebimento e pagamentos",
+      "qcId": "15352751",
+      "shareCode": "0EM-GXF",
+      "notebookTitle": "ADM M18.4 Recebimento e pagamento",
+      "questionCount": 1,
+      "url": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15352751",
+      "criteria": {
+        "method": "seleção manual após leitura integral",
+        "selectedQuestions": [
+          "Q4210297"
+        ],
+        "excluded": [
+          "anuladas",
+          "desatualizadas"
+        ],
+        "minimumQuestionCount": 0,
+        "note": "FUNDATEC/IPE Prev, 2026; questão específica do recebimento provisório de obras e serviços, Lei 14.133/2021. Salvo, reaberto com uma questão e compartilhamento ativo 0EM-GXF."
       },
       "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
     }
