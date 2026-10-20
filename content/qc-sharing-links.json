@@ -1,12 +1,12 @@
 {
   "schema": "qc-central-sharing-v1",
-  "generatedAt": "2026-10-20T00:54:21.769409+00:00",
+  "generatedAt": "2026-10-20T00:55:29.953513+00:00",
   "platform": "QConcursos",
   "counts": {
     "administrativo": {
       "items": 98,
-      "linked": 70,
-      "pending": 28
+      "linked": 71,
+      "pending": 27
     },
     "penal": {
       "items": 64,
@@ -19,8 +19,8 @@
       "pending": 9
     },
     "totalItems": 393,
-    "totalValidatedPublicLinks": 353,
-    "totalPending": 40,
+    "totalValidatedPublicLinks": 354,
+    "totalPending": 39,
     "constitucional": {
       "items": 19,
       "linked": 19,
@@ -1091,14 +1091,13 @@
       "kind": "subdivision",
       "moduleTitle": "Parcerias Público-Privadas (PPP) — Lei 11.079/2004",
       "title": "Conceito, modalidades e limites",
-      "notebookTitle": null,
-      "id": null,
-      "quantity": null,
-      "link": null,
-      "status": "Pendente",
-      "public": false,
-      "source": "checkpoint_adm_qc.json.thematicAudit.pendingSubdivisions",
-      "pendingReason": "Sem filtro exclusivo nativo; mantido como Pendente."
+      "notebookTitle": "ADM M10.1 PPP Conceito e limites",
+      "id": "15352586",
+      "quantity": 1,
+      "link": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15352586",
+      "status": "VALIDADO",
+      "public": true,
+      "source": "QC autenticado: FUNDATEC/PGE-SP Residente Jurídico, 2026; questão sobre limites legais e objetos vedados da PPP, Lei 11.079/2004. Leitura integral; salvo, reaberto e público (0EM-GRA)."
     },
     {
       "discipline": "Direito Administrativo",

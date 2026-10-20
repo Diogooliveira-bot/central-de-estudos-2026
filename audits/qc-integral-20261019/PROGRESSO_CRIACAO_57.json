@@ -1,9 +1,9 @@
 {
   "schema": "qc-pending-creation-progress-v1",
-  "updatedAt": "2026-10-20T00:54:21.769409+00:00",
+  "updatedAt": "2026-10-20T00:55:29.953513+00:00",
   "initialPending": 57,
-  "createdAndValidated": 17,
-  "remainingPending": 40,
+  "createdAndValidated": 18,
+  "remainingPending": 39,
   "records": [
     {
       "discipline": "Direito Penal",
@@ -450,6 +450,30 @@
         ],
         "minimumQuestionCount": 0,
         "note": "FUNDATEC/CRA-RS Advogado, 2026; questão integral sobre intervenção, encampação e caducidade da concessão (Lei 8.987/1995). Salvo, reaberto com uma questão e público, 0EM-GQS. Resultado antigo de 2008 não utilizado por estar fora do recorte temporal."
+      },
+      "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
+    },
+    {
+      "discipline": "Direito Administrativo",
+      "module": "M10.1",
+      "moduleTitle": "Parcerias Público-Privadas (PPP) — Lei 11.079/2004",
+      "subject": "Conceito, modalidades e limites",
+      "qcId": "15352586",
+      "shareCode": "0EM-GRA",
+      "notebookTitle": "ADM M10.1 PPP Conceito e limites",
+      "questionCount": 1,
+      "url": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15352586",
+      "criteria": {
+        "method": "seleção manual após leitura integral",
+        "selectedQuestions": [
+          "Q4203227"
+        ],
+        "excluded": [
+          "anuladas",
+          "desatualizadas"
+        ],
+        "minimumQuestionCount": 0,
+        "note": "FUNDATEC/PGE-SP Residente Jurídico, 2026; questão sobre limites legais e objetos vedados da PPP, Lei 11.079/2004. Leitura integral; salvo, reaberto e público (0EM-GRA)."
       },
       "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
     }
