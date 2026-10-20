@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import { webcrypto } from 'node:crypto';
 import { authorizeAdminOnlyInfographicRequest } from '../middleware.js';
 import { isAdminOnlyInfographicPath, normalizeAdminInfographicPath } from '../lib/admin-infographics.js';
-import { createAdminInfographicHandler } from '../api/admin-infographic.js';
+import { createAdminInfographicHandler } from '../lib/admin-infographic-handler.js';
 import { shouldRunInfographicMigration } from '../scripts/migrate-admin-infographics-preview.mjs';
 
 if (!globalThis.crypto) Object.defineProperty(globalThis, 'crypto', { value: webcrypto });

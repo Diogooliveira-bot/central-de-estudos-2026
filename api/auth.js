@@ -1,4 +1,5 @@
 import crypto from 'node:crypto';
+import { createAdminInfographicHandler } from '../lib/admin-infographic-handler.js';
 import {
   clearSessionCookie,
   createSessionToken,
@@ -23,6 +24,11 @@ function send(res, status, body, extraHeaders = {}) {
   for (const [key, value] of Object.entries(extraHeaders)) res.setHeader(key, value);
   res.end(JSON.stringify(body));
 }
+
+const adminInfographicHandler = createAdminInfographicHandler({
+  authorize: req => requireSession(req, ['admin']),
+  readAsset: (sql, key) => sql`SELECT content_type,content,byte_length FROM public.central_private_infographics WHERE path=${key} LIMIT 1`,
+});
 
 function cleanName(value) {
   return String(value || '').trim().replace(/\s+/g, ' ').slice(0, 120);
@@ -168,6 +174,7 @@ export default async function handler(req, res) {
     const action = String(req.query?.action || '').toLowerCase();
     if (req.method === 'POST' && !sameOriginRequest(req)) return send(res, 403, { error: 'Origem da requisição não permitida' });
 
+    if ((req.method === 'GET' || req.method === 'HEAD') && action === 'admin-infographic') return adminInfographicHandler(req, res);
     if (req.method === 'GET' && action === 'me') return currentUser(req, res);
     if (req.method === 'GET' && action === 'bootstrap-status') return bootstrapStatus(res);
 

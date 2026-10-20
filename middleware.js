@@ -201,7 +201,8 @@ export default async function middleware(request) {
   if (isAdminOnlyInfographicPath(path)) {
     const denied = await authorizeAdminOnlyInfographicRequest(request);
     if (denied) return denied;
-    const target = new URL('/api/admin-infographic', request.url);
+    const target = new URL('/api/auth', request.url);
+    target.searchParams.set('action', 'admin-infographic');
     target.searchParams.set('path', path);
     return new Response(null, {
       status: 307,
