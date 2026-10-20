@@ -1,9 +1,9 @@
 {
   "schema": "qc-pending-creation-progress-v1",
-  "updatedAt": "2026-10-20T01:08:30.710900+00:00",
+  "updatedAt": "2026-10-20T01:09:32.984155+00:00",
   "initialPending": 57,
-  "createdAndValidated": 33,
-  "remainingPending": 24,
+  "createdAndValidated": 34,
+  "remainingPending": 23,
   "records": [
     {
       "discipline": "Direito Penal",
@@ -837,6 +837,30 @@
         ],
         "minimumQuestionCount": 0,
         "note": "Quadrix/CREF-MA Advogado, 2026; multa por inexecução contratual e oportunidade prévia de defesa na Lei 14.133/2021. Salvo, reaberto público com uma questão, 0EM-GYF."
+      },
+      "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
+    },
+    {
+      "discipline": "Direito Administrativo",
+      "module": "M19.1",
+      "moduleTitle": "Lei de Acesso a Informacao - Lei 12.527/2011",
+      "subject": "Fundamentos, abrangência e transparência ativa",
+      "qcId": "15352798",
+      "shareCode": "0EM-GYY",
+      "notebookTitle": "ADM M19.1 LAI Transparência ativa",
+      "questionCount": 1,
+      "url": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15352798",
+      "criteria": {
+        "method": "seleção manual após leitura integral",
+        "selectedQuestions": [
+          "Q4178847"
+        ],
+        "excluded": [
+          "anuladas",
+          "desatualizadas"
+        ],
+        "minimumQuestionCount": 0,
+        "note": "AMEOSC/Agente Administrativo, 2026; questão específica de transparência ativa e divulgação independentemente de requerimento, Lei 12.527/2011. Salvo, reaberto público, 0EM-GYY."
       },
       "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
     }
