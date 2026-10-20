@@ -98,7 +98,7 @@
     host.innerHTML = html;
   }
   function renderTopbar() {
-    const host = document.querySelector('#appRoot > .shell') || document.getElementById('appRoot') || document.body;
+    const host = document.querySelector('#appRoot .view.central-view-visible') || document.querySelector('#appRoot .view:not(.hidden)') || document.getElementById('homeView') || document.getElementById('appRoot') || document.body;
     if (!host) return;
     let control = document.getElementById('studyObjectiveTopbar');
     if (!control) {
@@ -144,6 +144,12 @@
       const gridObserver = new MutationObserver(() => renderDisciplineCards());
       gridObserver.observe(grid, { childList:true });
       grid.__studyObjectiveGridObserver = gridObserver;
+    }
+    const app = document.getElementById('appRoot');
+    if (app && !app.__studyObjectiveViewObserver) {
+      const viewObserver = new MutationObserver(() => renderTopbar());
+      viewObserver.observe(app, { subtree:true, childList:true, attributes:true, attributeFilter:['class'] });
+      app.__studyObjectiveViewObserver = viewObserver;
     }
   }
   function renderChooser(step = 'types', type = '') {
