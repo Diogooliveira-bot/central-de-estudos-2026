@@ -1,9 +1,9 @@
 {
   "schema": "qc-pending-creation-progress-v1",
-  "updatedAt": "2026-10-20T01:09:32.984155+00:00",
+  "updatedAt": "2026-10-20T01:10:03.630187+00:00",
   "initialPending": 57,
-  "createdAndValidated": 34,
-  "remainingPending": 23,
+  "createdAndValidated": 35,
+  "remainingPending": 22,
   "records": [
     {
       "discipline": "Direito Penal",
@@ -861,6 +861,30 @@
         ],
         "minimumQuestionCount": 0,
         "note": "AMEOSC/Agente Administrativo, 2026; questão específica de transparência ativa e divulgação independentemente de requerimento, Lei 12.527/2011. Salvo, reaberto público, 0EM-GYY."
+      },
+      "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
+    },
+    {
+      "discipline": "Direito Administrativo",
+      "module": "M19.2",
+      "moduleTitle": "Lei de Acesso a Informacao - Lei 12.527/2011",
+      "subject": "Pedido, resposta, prazos e recursos",
+      "qcId": "15352805",
+      "shareCode": "0EM-GZ5",
+      "notebookTitle": "ADM M19.2 LAI Pedidos e recursos",
+      "questionCount": 1,
+      "url": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15352805",
+      "criteria": {
+        "method": "seleção manual após leitura integral",
+        "selectedQuestions": [
+          "Q4179565"
+        ],
+        "excluded": [
+          "anuladas",
+          "desatualizadas"
+        ],
+        "minimumQuestionCount": 0,
+        "note": "Instituto UniFil/Assistente Administrativo, 2026; pedidos de acesso, gratuidade, recurso em dez dias e decisão de negativa na Lei 12.527/2011. Salvo, reaberto com uma questão, público 0EM-GZ5."
       },
       "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
     }
