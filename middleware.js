@@ -43,6 +43,31 @@ function previewForbidden() {
   });
 }
 
+export function isAdminOnlyInfographicPath(pathname) {
+  let path = String(pathname || '').split('?')[0].replace(/\\/g, '/');
+  try { path = decodeURIComponent(path); } catch (_) {}
+  if (/^\/content\/civil\/civil-native-images\.js$/i.test(path)) return true;
+  return /^\/(?:assets|modules)\/.*(?:infograf|infographic|mapa[-_]?mental|mindmap)/i.test(path);
+}
+
+function infographicForbidden() {
+  return new Response(JSON.stringify({ error: 'Este material está disponível somente para administradores.' }), {
+    status: 403,
+    headers: {
+      'Content-Type': 'application/json; charset=utf-8',
+      'Cache-Control': 'private, no-store, max-age=0',
+      'Vercel-CDN-Cache-Control': 'private, no-store',
+    },
+  });
+}
+
+export async function authorizeAdminOnlyInfographicRequest(request) {
+  const token = parseCookie(request.headers.get('cookie'), COOKIE_NAME);
+  const session = await verifyToken(token);
+  if (!session || session.role !== 'admin') return infographicForbidden();
+  return null;
+}
+
 const PUBLIC_PATHS = new Set([
   '/login.html',
   '/favicon.ico',
@@ -166,6 +191,7 @@ export default async function middleware(request) {
   }
 
   if (await hasPreviewGuestCookie(request)) {
+    if (isAdminOnlyInfographicPath(path)) return previewForbidden();
     if (path.startsWith('/api/')) {
       // The synthetic identity is deliberately the ONLY API allowed.
       // In particular, guest users cannot read/sync/write real database data.
@@ -179,6 +205,15 @@ export default async function middleware(request) {
   }
 
   if (request.method === 'OPTIONS') return next();
+  if (isAdminOnlyInfographicPath(path)) {
+    const denied = await authorizeAdminOnlyInfographicRequest(request);
+    if (denied) return denied;
+    const response = await next();
+    response.headers.set('Cache-Control', 'private, no-store, max-age=0');
+    response.headers.set('Vercel-CDN-Cache-Control', 'private, no-store');
+    response.headers.set('Vary', 'Cookie');
+    return response;
+  }
   if (path.startsWith('/api/')) return next();
   if (PUBLIC_PATHS.has(path)) return next();
 

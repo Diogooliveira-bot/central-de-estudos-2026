@@ -4,9 +4,26 @@ var AUTH_CACHE='central-auth-session-v1';
 var AUTH_KEY='/__bc_offline_auth__';
 var AUTH_TTL_MS=72*60*60*1000;
 var BOOT='/central-v119.html';
-var OFFLINE_MANIFEST='/central-offline-files-v66172.json?v=20261020-study-objectives-v1';
-var OFFLINE_READY='/central-offline-ready.json?v=20261020-study-objectives-v1';
+var OFFLINE_MANIFEST='/central-offline-files-v66172.json?v=20261020admininfographics1';
+var OFFLINE_READY='/central-offline-ready.json?v=20261020admininfographics1';
 
+function isAdminOnlyInfographicPath(path){
+  path=String(path||'').split('?')[0];
+  return /^\/content\/civil\/civil-native-images\.js$/i.test(path)||
+    /^\/(?:assets|modules)\/.*(?:infograf|infographic|mapa[-_]?mental|mindmap)/i.test(path);
+}
+async function purgeInfographicCacheEntries(){
+  var names=await caches.keys();
+  await Promise.all(names.map(async function(name){
+    try{
+      var cache=await caches.open(name),requests=await cache.keys();
+      await Promise.all(requests.map(function(request){
+        var url=new URL(request.url);
+        return url.origin===self.location.origin&&isAdminOnlyInfographicPath(url.pathname)?cache.delete(request):false;
+      }));
+    }catch(_){}
+  }));
+}
 function publicPath(path){
   return path==='/login.html'||path==='/favicon.ico'||path==='/robots.txt'||path==='/assets/base-completa-symbol.webp';
 }
@@ -66,12 +83,13 @@ async function prepareOffline(){
     if(response&&response.ok&&!response.redirected){
       var manifestResponse=response.clone();
       var manifest=await response.json(),files=Array.isArray(manifest.files)?manifest.files:[];
-      var index=0,saved=0,failed=[];
+      var index=0,saved=0,skippedProtected=0,failed=[];
       async function worker(){
         while(index<files.length){
           await yieldToStudy();
           var url=files[index++];
           try{
+            if(isAdminOnlyInfographicPath(new URL(url,self.location.origin).pathname)){skippedProtected++;continue;}
             var asset=await fetch(url,{cache:'no-store'});
             if(asset&&asset.ok&&!asset.redirected){await cache.put(url,asset.clone());saved++}else failed.push(url+': HTTP '+asset.status);
           }catch(error){failed.push(url+': '+error.message)}
@@ -79,7 +97,7 @@ async function prepareOffline(){
       }
       await Promise.all([worker(),worker()]);
       await cache.put(OFFLINE_MANIFEST,manifestResponse);
-      await cache.put(OFFLINE_READY,new Response(JSON.stringify({total:files.length,saved:saved,failed:failed.slice(0,10)})));
+      await cache.put(OFFLINE_READY,new Response(JSON.stringify({total:files.length-skippedProtected,saved:saved,skippedProtected:skippedProtected,failed:failed.slice(0,10)})));
     }
   }catch(_){}
   await self.skipWaiting();
@@ -98,13 +116,18 @@ self.addEventListener('activate',function(event){
       return Promise.all(keys.filter(function(key){
         return key!==CACHE&&key!==AUTH_CACHE&&key.indexOf('central-')===0;
       }).map(function(key){return caches.delete(key)}));
-    }).then(function(){return self.clients.claim()})
+    }).then(purgeInfographicCacheEntries).then(function(){return self.clients.claim()})
   );
 });
 
 self.addEventListener('fetch',function(event){
   var request=event.request,url=new URL(request.url);
   if(url.origin!==self.location.origin)return;
+
+  if(request.method==='GET'&&isAdminOnlyInfographicPath(url.pathname)){
+    event.respondWith(fetch(request,{cache:'no-store'}).catch(function(){return Response.error()}));
+    return;
+  }
 
   if(url.pathname==='/api/auth'&&url.searchParams.get('action')==='me'&&request.method==='GET'){
     event.respondWith(fetch(request,{cache:'no-store'}).then(cacheOfflineAuth).catch(function(){return offlineAuthResponse()}));
