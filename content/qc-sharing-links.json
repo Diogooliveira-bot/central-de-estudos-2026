@@ -1,15 +1,15 @@
-Warning: truncated output (original token count: 58980)
-Total output lines: 5979
+Warning: truncated output (original token count: 58990)
+Total output lines: 5978
 
 {
   "schema": "qc-central-sharing-v1",
-  "generatedAt": "2026-10-20T10:00:57+00:00",
+  "generatedAt": "2026-10-20T10:02:00+00:00",
   "platform": "QConcursos",
   "counts": {
     "administrativo": {
       "items": 98,
-      "linked": 95,
-      "pending": 3
+      "linked": 96,
+      "pending": 2
     },
     "penal": {
       "items": 64,
@@ -22,8 +22,8 @@ Total output lines: 5979
       "pending": 9
     },
     "totalItems": 393,
-    "totalValidatedPublicLinks": 378,
-    "totalPending": 15,
+    "totalValidatedPublicLinks": 379,
+    "totalPending": 14,
     "constitucional": {
       "items": 19,
       "linked": 19,
@@ -1454,14 +1454,13 @@ Total output lines: 5979
       "kind": "subdivision",
       "moduleTitle": "Lei Geral de Protecao de Dados - LGPD",
       "title": "Segurança, incidentes e governança",
-      "notebookTitle": null,
-      "id": null,
-      "quantity": null,
-      "link": null,
-      "status": "Pendente",
-      "public": false,
-      "source": "checkpoint_adm_qc.json.thematicAudit.pendingSubdivisions",
-      "pendingReason": "Sem filtro exclusivo nativo; mantido como Pendente."
+      "notebookTitle": "ADM M20.6 Segurança e governança",
+      "id": "15354529",
+      "quantity": 1,
+      "link": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15354529",
+      "status": "VALIDADO",
+      "public": true,
+      "source": "checkpoint_adm_qc.json.thematicAudit.pendingSubdivisions"
     },
     {
       "discipline": "Direito Administrativo",
@@ -2476,8 +2475,7 @@ Total output lines: 5979
     {
       "discipline": "Direito Penal",
       "disciplineKey": "penal",
-      "code": "M17.3",
-      "kind": "subdi…8980 tokens truncated…ids%5B%5D=15290033",
+    …8990 tokens truncated…ids%5B%5D=15290033",
       "status": "VALIDADO",
       "public": true,
       "source": "checkpoint_direito_processual_penal_qc.json"

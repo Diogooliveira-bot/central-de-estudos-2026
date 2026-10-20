@@ -1,9 +1,9 @@
 {
   "schema": "qc-pending-creation-progress-v1",
-  "updatedAt": "2026-10-20T10:00:57+00:00",
+  "updatedAt": "2026-10-20T10:02:00+00:00",
   "initialPending": 57,
-  "createdAndValidated": 42,
-  "remainingPending": 15,
+  "createdAndValidated": 43,
+  "remainingPending": 14,
   "records": [
     {
       "discipline": "Direito Penal",
@@ -1059,6 +1059,30 @@
         ],
         "minimumQuestionCount": 0,
         "note": "Questão CONSULPAM/GHC-RS 2026 sobre controlador, operador, encarregado e titular; o filtro do caderno confirmou 1 questão. Salvo, reaberto, com quantidade confirmada e compartilhamento público ativo 0EM-JMT."
+      },
+      "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
+    },
+    {
+      "discipline": "Direito Administrativo",
+      "module": "M20.6",
+      "moduleTitle": "Lei Geral de Protecao de Dados - LGPD",
+      "subject": "Segurança, incidentes e governança",
+      "qcId": "15354529",
+      "shareCode": "0EM-JN1",
+      "notebookTitle": "ADM M20.6 Segurança e governança",
+      "questionCount": 1,
+      "url": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15354529",
+      "criteria": {
+        "method": "filtro por palavra-chave e seleção manual após leitura integral",
+        "selectedQuestions": [
+          "Q4158826"
+        ],
+        "excluded": [
+          "anuladas",
+          "desatualizadas"
+        ],
+        "minimumQuestionCount": 0,
+        "note": "Questão FCC/AL-RR 2026 sobre estudos para políticas públicas, governança, anonimização e uso de ambiente controlado; filtro confirmou 1 questão. Salvo, reaberto, com quantidade confirmada e compartilhamento público ativo 0EM-JN1."
       },
       "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
     }
