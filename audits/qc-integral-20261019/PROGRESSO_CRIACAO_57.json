@@ -1,9 +1,9 @@
 {
   "schema": "qc-pending-creation-progress-v1",
-  "updatedAt": "2026-10-20T00:55:29.953513+00:00",
+  "updatedAt": "2026-10-20T00:56:08.342492+00:00",
   "initialPending": 57,
-  "createdAndValidated": 18,
-  "remainingPending": 39,
+  "createdAndValidated": 19,
+  "remainingPending": 38,
   "records": [
     {
       "discipline": "Direito Penal",
@@ -474,6 +474,30 @@
         ],
         "minimumQuestionCount": 0,
         "note": "FUNDATEC/PGE-SP Residente Jurídico, 2026; questão sobre limites legais e objetos vedados da PPP, Lei 11.079/2004. Leitura integral; salvo, reaberto e público (0EM-GRA)."
+      },
+      "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
+    },
+    {
+      "discipline": "Direito Administrativo",
+      "module": "M10.2",
+      "moduleTitle": "Parcerias Público-Privadas (PPP) — Lei 11.079/2004",
+      "subject": "Riscos, licitação e contrato",
+      "qcId": "15352597",
+      "shareCode": "0EM-GRN",
+      "notebookTitle": "ADM M10.2 PPP Riscos e contrato",
+      "questionCount": 1,
+      "url": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15352597",
+      "criteria": {
+        "method": "seleção manual após leitura integral",
+        "selectedQuestions": [
+          "Q3787396"
+        ],
+        "excluded": [
+          "anuladas",
+          "desatualizadas"
+        ],
+        "minimumQuestionCount": 0,
+        "note": "VUNESP/ARSESP Especialista em Regulação, 2025; questão sobre matriz de riscos e reequilíbrio econômico-financeiro da PPP na concessão administrativa. Texto integral conferido apesar de tag ampla do QC; reaberto com 1 questão, público 0EM-GRN."
       },
       "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
     }
