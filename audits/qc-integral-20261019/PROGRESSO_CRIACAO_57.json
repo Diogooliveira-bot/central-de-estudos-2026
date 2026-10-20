@@ -1,9 +1,9 @@
 {
   "schema": "qc-pending-creation-progress-v1",
-  "updatedAt": "2026-10-20T09:56:31+00:00",
+  "updatedAt": "2026-10-20T10:00:05+00:00",
   "initialPending": 57,
-  "createdAndValidated": 40,
-  "remainingPending": 17,
+  "createdAndValidated": 41,
+  "remainingPending": 16,
   "records": [
     {
       "discipline": "Direito Penal",
@@ -1011,6 +1011,30 @@
         ],
         "minimumQuestionCount": 0,
         "note": "Caderno público reaberto; filtro do próprio caderno mostrou 2 questões: Q4124884 e Q4326533, ambas pertinentes a direitos do titular na LGPD. Salvo, reaberto, com quantidade confirmada e compartilhamento público ativo 0EM-JM0."
+      },
+      "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
+    },
+    {
+      "discipline": "Direito Administrativo",
+      "module": "M20.4",
+      "moduleTitle": "Lei Geral de Protecao de Dados - LGPD",
+      "subject": "Poder Público e compartilhamento",
+      "qcId": "15354517",
+      "shareCode": "0EM-JMN",
+      "notebookTitle": "ADM M20.4 Poder Público e compartilhamento",
+      "questionCount": 1,
+      "url": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15354517",
+      "criteria": {
+        "method": "filtro por palavra-chave e seleção manual após leitura integral",
+        "selectedQuestions": [
+          "Q4056690"
+        ],
+        "excluded": [
+          "anuladas",
+          "desatualizadas"
+        ],
+        "minimumQuestionCount": 0,
+        "note": "Questão IDCAP/UEFS 2026 sobre finalidade pública legítima e aplicação dos princípios da LGPD ao tratamento por órgãos públicos; filtro confirmou 1 questão. Salvo, reaberto, com quantidade confirmada e compartilhamento público ativo 0EM-JMN."
       },
       "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
     }
