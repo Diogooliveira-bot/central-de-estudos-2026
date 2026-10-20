@@ -8,25 +8,30 @@ test('a experiência v3 modular é carregada em ordem e participa do modo offlin
   const [boot, offline, serviceWorker, pkg] = await Promise.all([
     read('central-v119.html'), read('central-offline-files-v66172.json'), read('sw.js'), read('package.json'),
   ]);
-  assert.match(boot, /var APP_VERSION='6\.6\.134'/);
-  assert.match(boot, /var BUILD='20261019-trab-ptra-standard3'/);
+  assert.match(boot, /var APP_VERSION='6\.7\.0'/);
+  assert.match(boot, /var BUILD='20261020-study-objectives-v1'/);
   const ordered = [
+    'ui/study-objectives-catalog-v1.js', 'ui/external-question-filters-v1.js',
     'ui/student-ux-core-v3.js', 'ui/student-shell-v3.js',
-    'ui/student-dashboard-v3.js', 'ui/student-plan-v3.js',
+    'ui/student-dashboard-v3.js', 'ui/student-plan-v3.js', 'ui/study-objectives-v1.js',
   ];
   let previous = -1;
   for (const file of ordered) {
     const index = boot.indexOf(file);
     assert.ok(index > previous, `${file} deve carregar depois do módulo anterior`);
     previous = index;
-    assert.ok(offline.includes(`/${file}?v=20261019-trab-ptra-standard3`));
+    const fileVersion = file.includes('study-objectives') ? '20261020studyobj1'
+      : file.includes('external-question-filters') || file.includes('student-ux-core') || file.includes('student-dashboard') ? '20261020-study-objectives-v1'
+        : file.includes('student-shell') ? '20261018previewguest1'
+          : file.includes('student-plan') ? '20261018ptcfstyle1' : '';
+    assert.ok(offline.includes(`/${file}?v=${fileVersion}`), `${file} deve estar no manifesto offline`);
   }
   assert.match(boot, /student-experience-v3\.css\?v='\+BUILD/);
-  assert.match(offline, /student-experience-v3\.css\?v=20261019-trab-ptra-standard3/);
+  assert.match(offline, /student-experience-v3\.css\?v=20261020-study-objectives-v1/);
   assert.doesNotMatch(boot, /student-polish-v1|student-experience-v2\.js/);
   assert.doesNotMatch(offline, /student-polish-v1|student-experience-v2/);
-  assert.match(serviceWorker, /central-20261019-trab-ptra-standard3/);
-  assert.equal(JSON.parse(pkg).version, '6.6.134');
+  assert.match(serviceWorker, /central-20261020-study-objectives-v1/);
+  assert.equal(JSON.parse(pkg).version, '6.7.0');
 });
 
 test('núcleo separa execução, armazenamento e falhas das interfaces', async () => {

@@ -1,5 +1,5 @@
 {
-  "build": "20261019-trab-ptra-standard3",
+  "build": "20261020-study-objectives-v1",
   "files": [
     "/central-v119.html?direct=35",
     "/ui/discipline-standard.js?v=20261003penalnative1",
@@ -390,8 +390,6 @@
     "/tools/decorando-data-led-aprovadas.js?v=20261010ledgate1",
     "/tools/decorando-data-modulos.js?v=20261009sync1",
     "/content/civil/civil-sharing-links.js?v=20261009civilsharing2",
-    "/ui/civil-native-study-v1.js?v=20261019civilstandard1",
-    "/ui/civil-native-study-v1.css?v=20261019civilstandard1",
     "/index.html?central_source=20261010-cpc-m08-fix1",
     "/content/cpc/m08-native-data.js?v=20261018cpcjur1",
     "/ui/cpc-m08-native-study-reader.js?v=20261010auditfix1",
@@ -485,16 +483,19 @@
     "/ui/tec-penal-cpp-links.js?v=20261014tec1",
     "/ui/penal-cpp-tec-links.css?v=20261014tec1",
     "/tools/lei-em-dia-admin-editor.js?v=20261014edit3",
-    "/ui/student-experience-v3.css?v=20261019-trab-ptra-standard3",
-    "/ui/student-ux-core-v3.js?v=20261019-trab-ptra-standard3",
-    "/ui/student-shell-v3.js?v=20261019-trab-ptra-standard3",
-    "/ui/student-dashboard-v3.js?v=20261019-trab-ptra-standard3",
-    "/ui/student-plan-v3.js?v=20261019-trab-ptra-standard3",
-    "/ui/external-question-filters-v1.css?v=20261019-trab-ptra-standard3",
-    "/ui/external-question-filters-v1.js?v=20261019-trab-ptra-standard3",
+    "/ui/student-experience-v3.css?v=20261020-study-objectives-v1",
+    "/ui/student-ux-core-v3.js?v=20261020-study-objectives-v1",
+    "/ui/student-shell-v3.js?v=20261018previewguest1",
+    "/ui/student-dashboard-v3.js?v=20261020-study-objectives-v1",
+    "/ui/student-plan-v3.js?v=20261018ptcfstyle1",
+    "/ui/external-question-filters-v1.css?v=20261020-study-objectives-v1",
+    "/ui/external-question-filters-v1.js?v=20261020-study-objectives-v1",
     "/ui/cpc-approved-layout-v1.css?v=20261019cpcstandard1",
     "/ui/approved-cpc-layout-v1.js?v=20261019cpcstandard2",
     "/ui/ptra-reader-upgrade-v1.css?v=20261019trabptra1",
-    "/ui/ptra-reader-upgrade-v1.js?v=20261019trabptra1"
+    "/ui/ptra-reader-upgrade-v1.js?v=20261019trabptra1",
+    "/ui/study-objectives-catalog-v1.js?v=20261020studyobj1",
+    "/ui/study-objectives-v1.js?v=20261020studyobj1",
+    "/ui/study-objectives-v1.css?v=20261020studyobj1"
   ]
 }

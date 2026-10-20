@@ -31,7 +31,7 @@
     if (action === 'law') return global.openEmbeddedTool?.('decorando', {});
     if (action === 'vade') return global.openEmbeddedTool?.('vade', {});
     if (action === 'settings') return global.openCentralSettings?.();
-    if (action === 'onboarding') return global.CentralStudentOnboarding?.open();
+    if (action === 'onboarding') return (global.CentralStudyObjectives?.open || global.CentralStudentOnboarding?.open)?.();
     if (action === 'logout') return document.querySelector('[data-bc-logout]')?.click();
     return false;
   }

@@ -155,8 +155,8 @@ test('catálogo organiza QC e TEC em colunas próprias por módulo', async () =>
   assert.equal(columns[1].dataset.platform, 'tec');
   assert.match(columns[0].querySelector('header').textContent, /QConcursos/);
   assert.match(columns[1].querySelector('header').textContent, /TEC Concursos/);
-  assert.equal(columns[0].querySelectorAll('[data-bcq-select]').length, 1);
-  assert.equal(columns[1].querySelectorAll('[data-bcq-select]').length, 1);
+  assert.equal(columns[0].querySelectorAll('.bcq-page-filter').length, 1);
+  assert.equal(columns[1].querySelectorAll('.bcq-page-filter').length, 1);
   assert.match(module.querySelector('.bcq-discipline-module-title').textContent, /M03.*Teoria do Crime/);
   assert.equal(columns[0].querySelector('.bcq-page-filter b').textContent, 'Teoria do Crime');
   assert.doesNotMatch(columns[0].querySelector('.bcq-page-filter b').textContent, /M03|PEN/);
@@ -190,6 +190,54 @@ test('somente administrador recebe gestão e sobreposição compartilhada', asyn
   assert.match(dom.window.document.querySelector('[data-bcq-module-panel] [data-bcq-key="qc:15288411"]').textContent, /Título administrativo validado/);
   dom.window.document.querySelector('[data-bcq-tab="filters"]').click();
   assert.ok(dom.window.document.querySelector('[data-bcq-manage="qc:15288411"]'));
+});
+
+test('objetivo restringe apenas a visualização da Central de Questões e preserva filtros e histórico', async () => {
+  const dom = setup();
+  await settle(dom.window);
+  const { window } = dom;
+  const api = window.ExternalQuestionFilters;
+  const penal = api.buildRegistry().find((item) => item.disciplineKey === 'penal' && item.platform === 'qc');
+  window.QC_CENTRAL_SHARING_LINKS.items.push({
+    discipline:'Direito Administrativo', disciplineKey:'administrativo', code:'M03', status:'VALIDADO', public:true,
+    moduleTitle:'Atos Administrativos', title:'Atos Administrativos', kind:'general', id:'15270003', quantity:90,
+    link:'https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15270003', notebookTitle:'ADM M03 Atos',
+  });
+  api.refresh(); await settle(window);
+  const administrative = api.buildRegistry().find((item) => item.disciplineKey === 'administrativo');
+  api.saveSession(penal, { date:'2026-10-20', answered:10, correct:8 });
+  api.saveSession(administrative, { date:'2026-10-20', answered:20, correct:15 });
+  await settle(window);
+  const registrySize = api.buildRegistry().length;
+
+  let allowed = new window.Set(['penal']);
+  window.CentralStudyObjectives = { questionDisciplineKeys:() => allowed };
+  window.document.dispatchEvent(new window.Event('central:study-objective-changed'));
+  await settle(window);
+  assert.equal(api.buildRegistry().length, registrySize, 'catalog and cadernos are unchanged');
+  window.document.querySelector('[data-bcq-tab="filters"]').click();
+  await settle(window);
+  const values = Array.from(window.document.querySelector('[data-bcq-discipline]').options).map((option) => option.value);
+  assert.deepEqual(Array.from(values), ['', 'penal']);
+  assert.equal(window.document.querySelectorAll('[data-bcq-page-list] .bcq-page-filter').length, 2, 'QC e TEC do assunto ativo continuam disponíveis');
+
+  window.document.querySelector('[data-bcq-tab="history"]').click();
+  await settle(window);
+  const history = window.document.querySelector('[data-bcq-panel="history"]').textContent;
+  assert.match(history, /10 respondidas/);
+  assert.doesNotMatch(history, /20 respondidas/);
+
+  allowed = null;
+  window.document.dispatchEvent(new window.Event('central:study-objective-changed'));
+  await settle(window);
+  window.document.querySelector('[data-bcq-tab="history"]').click();
+  await settle(window);
+  const restoredHistory = window.document.querySelector('[data-bcq-panel="history"]').textContent;
+  assert.match(restoredHistory, /10 respondidas/);
+  assert.match(restoredHistory, /20 respondidas/);
+  assert.equal(api.buildRegistry().length, registrySize);
+  await settle(window);
+  await new Promise((resolve) => window.setTimeout(resolve, 60));
 });
 
 test('API administrativa valida domínio, quantidade, status e revisão', () => {
