@@ -1,9 +1,9 @@
 {
   "schema": "qc-pending-creation-progress-v1",
-  "updatedAt": "2026-10-20T01:06:47.738200+00:00",
+  "updatedAt": "2026-10-20T01:07:34.633089+00:00",
   "initialPending": 57,
-  "createdAndValidated": 31,
-  "remainingPending": 26,
+  "createdAndValidated": 32,
+  "remainingPending": 25,
   "records": [
     {
       "discipline": "Direito Penal",
@@ -789,6 +789,30 @@
         ],
         "minimumQuestionCount": 0,
         "note": "FUNDATEC/IPE Prev, 2026; questão específica do recebimento provisório de obras e serviços, Lei 14.133/2021. Salvo, reaberto com uma questão e compartilhamento ativo 0EM-GXF."
+      },
+      "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
+    },
+    {
+      "discipline": "Direito Administrativo",
+      "module": "M18.5",
+      "moduleTitle": "Contratos Administrativos — Lei 14.133/2021",
+      "subject": "Extincao, nulidade e controversias contratuais",
+      "qcId": "15352767",
+      "shareCode": "0EM-GXZ",
+      "notebookTitle": "ADM M18.5 Extinção contratual",
+      "questionCount": 1,
+      "url": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15352767",
+      "criteria": {
+        "method": "seleção manual após leitura integral",
+        "selectedQuestions": [
+          "Q4244275"
+        ],
+        "excluded": [
+          "anuladas",
+          "desatualizadas"
+        ],
+        "minimumQuestionCount": 0,
+        "note": "FUNDATEC/CRA-RS Agente de Contratação, 2026; hipóteses e efeitos da extinção de contrato administrativo na Lei 14.133/2021. Leitura integral, salvo, reaberto público, 0EM-GXZ."
       },
       "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
     }

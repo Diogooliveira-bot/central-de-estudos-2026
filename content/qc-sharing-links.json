@@ -1,12 +1,12 @@
 {
   "schema": "qc-central-sharing-v1",
-  "generatedAt": "2026-10-20T01:06:47.738200+00:00",
+  "generatedAt": "2026-10-20T01:07:34.633089+00:00",
   "platform": "QConcursos",
   "counts": {
     "administrativo": {
       "items": 98,
-      "linked": 84,
-      "pending": 14
+      "linked": 85,
+      "pending": 13
     },
     "penal": {
       "items": 64,
@@ -19,8 +19,8 @@
       "pending": 9
     },
     "totalItems": 393,
-    "totalValidatedPublicLinks": 367,
-    "totalPending": 26,
+    "totalValidatedPublicLinks": 368,
+    "totalPending": 25,
     "constitucional": {
       "items": 19,
       "linked": 19,
@@ -1286,14 +1286,13 @@
       "kind": "subdivision",
       "moduleTitle": "Contratos Administrativos — Lei 14.133/2021",
       "title": "Extincao, nulidade e controversias contratuais",
-      "notebookTitle": null,
-      "id": null,
-      "quantity": null,
-      "link": null,
-      "status": "Pendente",
-      "public": false,
-      "source": "checkpoint_adm_qc.json.thematicAudit.pendingSubdivisions",
-      "pendingReason": "Sem filtro exclusivo nativo; mantido como Pendente."
+      "notebookTitle": "ADM M18.5 Extinção contratual",
+      "id": "15352767",
+      "quantity": 1,
+      "link": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15352767",
+      "status": "VALIDADO",
+      "public": true,
+      "source": "QC autenticado: FUNDATEC/CRA-RS Agente de Contratação, 2026; hipóteses e efeitos da extinção de contrato administrativo na Lei 14.133/2021. Leitura integral, salvo, reaberto público, 0EM-GXZ."
     },
     {
       "discipline": "Direito Administrativo",
