@@ -938,11 +938,8 @@
     const page = document.getElementById('questionFiltersView');
     if (!page || page.classList.contains('hidden')) return;
     syncDisciplineOptions();
-    syncDisciplineOptions();
     renderQcNotebookInventory(page);
     const filters = objectiveScopedFilters();
-    const total = page.querySelector('[data-bcq-page-total]');
-    if (total) total.innerHTML = `<b>${filters.length}</b><span>filtros relacionados ao objetivo</span>`;
     const total = page.querySelector('[data-bcq-page-total]');
     if (total) total.innerHTML = `<b>${filters.length}</b><span>filtros relacionados ao objetivo</span>`;
     if (activeTab === 'overview') renderOverview(page);
