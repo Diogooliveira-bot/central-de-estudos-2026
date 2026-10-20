@@ -1,12 +1,12 @@
 {
   "schema": "qc-central-sharing-v1",
-  "generatedAt": "2026-10-20T01:10:03.630187+00:00",
+  "generatedAt": "2026-10-20T01:10:47.635851+00:00",
   "platform": "QConcursos",
   "counts": {
     "administrativo": {
       "items": 98,
-      "linked": 88,
-      "pending": 10
+      "linked": 89,
+      "pending": 9
     },
     "penal": {
       "items": 64,
@@ -19,8 +19,8 @@
       "pending": 9
     },
     "totalItems": 393,
-    "totalValidatedPublicLinks": 371,
-    "totalPending": 22,
+    "totalValidatedPublicLinks": 372,
+    "totalPending": 21,
     "constitucional": {
       "items": 19,
       "linked": 19,
@@ -1361,14 +1361,13 @@
       "kind": "subdivision",
       "moduleTitle": "Lei de Acesso a Informacao - Lei 12.527/2011",
       "title": "Responsabilidades e mecanismos finais",
-      "notebookTitle": null,
-      "id": null,
-      "quantity": null,
-      "link": null,
-      "status": "Pendente",
-      "public": false,
-      "source": "checkpoint_adm_qc.json.thematicAudit.pendingSubdivisions",
-      "pendingReason": "Sem filtro exclusivo nativo; mantido como Pendente."
+      "notebookTitle": "ADM M19.4 LAI Responsabilidades",
+      "id": "15352816",
+      "quantity": 1,
+      "link": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15352816",
+      "status": "VALIDADO",
+      "public": true,
+      "source": "QC autenticado: FURB/Controlador Interno, 2026; infrações, sanções e responsabilidades de agentes e particulares na Lei 12.527/2011. Salvo, reaberto público com uma questão, 0EM-GZG."
     },
     {
       "discipline": "Direito Administrativo",

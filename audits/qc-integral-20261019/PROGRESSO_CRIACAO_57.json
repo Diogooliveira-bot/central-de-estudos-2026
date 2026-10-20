@@ -1,9 +1,9 @@
 {
   "schema": "qc-pending-creation-progress-v1",
-  "updatedAt": "2026-10-20T01:10:03.630187+00:00",
+  "updatedAt": "2026-10-20T01:10:47.635851+00:00",
   "initialPending": 57,
-  "createdAndValidated": 35,
-  "remainingPending": 22,
+  "createdAndValidated": 36,
+  "remainingPending": 21,
   "records": [
     {
       "discipline": "Direito Penal",
@@ -885,6 +885,30 @@
         ],
         "minimumQuestionCount": 0,
         "note": "Instituto UniFil/Assistente Administrativo, 2026; pedidos de acesso, gratuidade, recurso em dez dias e decisão de negativa na Lei 12.527/2011. Salvo, reaberto com uma questão, público 0EM-GZ5."
+      },
+      "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
+    },
+    {
+      "discipline": "Direito Administrativo",
+      "module": "M19.4",
+      "moduleTitle": "Lei de Acesso a Informacao - Lei 12.527/2011",
+      "subject": "Responsabilidades e mecanismos finais",
+      "qcId": "15352816",
+      "shareCode": "0EM-GZG",
+      "notebookTitle": "ADM M19.4 LAI Responsabilidades",
+      "questionCount": 1,
+      "url": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15352816",
+      "criteria": {
+        "method": "seleção manual após leitura integral",
+        "selectedQuestions": [
+          "Q4246969"
+        ],
+        "excluded": [
+          "anuladas",
+          "desatualizadas"
+        ],
+        "minimumQuestionCount": 0,
+        "note": "FURB/Controlador Interno, 2026; infrações, sanções e responsabilidades de agentes e particulares na Lei 12.527/2011. Salvo, reaberto público com uma questão, 0EM-GZG."
       },
       "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
     }
