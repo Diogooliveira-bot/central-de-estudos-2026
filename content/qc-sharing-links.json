@@ -1,12 +1,12 @@
 {
   "schema": "qc-central-sharing-v1",
-  "generatedAt": "2026-10-20T00:58:26.477227+00:00",
+  "generatedAt": "2026-10-20T00:59:40.769924+00:00",
   "platform": "QConcursos",
   "counts": {
     "administrativo": {
       "items": 98,
-      "linked": 74,
-      "pending": 24
+      "linked": 75,
+      "pending": 23
     },
     "penal": {
       "items": 64,
@@ -19,8 +19,8 @@
       "pending": 9
     },
     "totalItems": 393,
-    "totalValidatedPublicLinks": 357,
-    "totalPending": 36,
+    "totalValidatedPublicLinks": 358,
+    "totalPending": 35,
     "constitucional": {
       "items": 19,
       "linked": 19,
@@ -1151,14 +1151,13 @@
       "kind": "subdivision",
       "moduleTitle": "MROSC / Lei 13.019/2014",
       "title": "OSC, instrumentos, princípios e transparência",
-      "notebookTitle": null,
-      "id": null,
-      "quantity": null,
-      "link": null,
-      "status": "Pendente",
-      "public": false,
-      "source": "checkpoint_adm_qc.json.thematicAudit.pendingSubdivisions",
-      "pendingReason": "Sem filtro exclusivo nativo; mantido como Pendente."
+      "notebookTitle": "ADM M11.1 MROSC Instrumentos",
+      "id": "15352659",
+      "quantity": 1,
+      "link": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15352659",
+      "status": "VALIDADO",
+      "public": true,
+      "source": "QC autenticado: FCC/TJ-CE Técnico Judiciário Área Judiciária, 2026; identificação do termo de fomento em proposta originada de OSC, Lei 13.019/2014. Questão lida integralmente, selecionada com exclusão de anuladas/desatualizadas; reaberto, público 0EM-GTK."
     },
     {
       "discipline": "Direito Administrativo",

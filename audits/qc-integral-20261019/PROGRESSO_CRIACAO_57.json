@@ -1,9 +1,9 @@
 {
   "schema": "qc-pending-creation-progress-v1",
-  "updatedAt": "2026-10-20T00:58:26.477227+00:00",
+  "updatedAt": "2026-10-20T00:59:40.769924+00:00",
   "initialPending": 57,
-  "createdAndValidated": 21,
-  "remainingPending": 36,
+  "createdAndValidated": 22,
+  "remainingPending": 35,
   "records": [
     {
       "discipline": "Direito Penal",
@@ -546,6 +546,30 @@
         ],
         "minimumQuestionCount": 0,
         "note": "VUNESP/Auditor Fiscal Tributário Municipal, 2026; questão do limite de 5% da receita corrente líquida e consequências fiscais da Lei 11.079/2004. Excluídas anuladas e desatualizadas na busca; reaberto com 1 questão pertinente, público 0EM-GSW."
+      },
+      "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
+    },
+    {
+      "discipline": "Direito Administrativo",
+      "module": "M11.1",
+      "moduleTitle": "MROSC / Lei 13.019/2014",
+      "subject": "OSC, instrumentos, princípios e transparência",
+      "qcId": "15352659",
+      "shareCode": "0EM-GTK",
+      "notebookTitle": "ADM M11.1 MROSC Instrumentos",
+      "questionCount": 1,
+      "url": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15352659",
+      "criteria": {
+        "method": "seleção manual após leitura integral",
+        "selectedQuestions": [
+          "Q4231630"
+        ],
+        "excluded": [
+          "anuladas",
+          "desatualizadas"
+        ],
+        "minimumQuestionCount": 0,
+        "note": "FCC/TJ-CE Técnico Judiciário Área Judiciária, 2026; identificação do termo de fomento em proposta originada de OSC, Lei 13.019/2014. Questão lida integralmente, selecionada com exclusão de anuladas/desatualizadas; reaberto, público 0EM-GTK."
       },
       "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
     }
