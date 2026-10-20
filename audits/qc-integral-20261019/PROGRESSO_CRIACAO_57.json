@@ -1,9 +1,9 @@
 {
   "schema": "qc-pending-creation-progress-v1",
-  "updatedAt": "2026-10-20T09:52:58+00:00",
+  "updatedAt": "2026-10-20T09:56:31+00:00",
   "initialPending": 57,
-  "createdAndValidated": 39,
-  "remainingPending": 18,
+  "createdAndValidated": 40,
+  "remainingPending": 17,
   "records": [
     {
       "discipline": "Direito Penal",
@@ -986,6 +986,31 @@
         ],
         "minimumQuestionCount": 0,
         "note": "Seleção manual de três questões atuais sob exclusão de anuladas e desatualizadas: FURB/SED-SC 2026 sobre melhor interesse de crianças e adolescentes e segurança escolar (Q4078780); ISET/Prefeitura de Lajedinho 2026 sobre dado biométrico sensível (Q4351306); CEFET-MG 2026 sobre consentimento e bases de tratamento/compartilhamento (Q4027744). Enunciados e alternativas revisados. Salvo, reaberto, com quantidade confirmada e compartilhamento público ativo 0EM-JKF."
+      },
+      "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
+    },
+    {
+      "discipline": "Direito Administrativo",
+      "module": "M20.3",
+      "moduleTitle": "Lei Geral de Protecao de Dados - LGPD",
+      "subject": "Direitos do titular",
+      "qcId": "15354496",
+      "shareCode": "0EM-JM0",
+      "notebookTitle": "ADM M20.3 Direitos do titular",
+      "questionCount": 2,
+      "url": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15354496",
+      "criteria": {
+        "method": "filtro por palavra-chave e seleção manual após leitura integral",
+        "selectedQuestions": [
+          "Q4124884",
+          "Q4326533"
+        ],
+        "excluded": [
+          "anuladas",
+          "desatualizadas"
+        ],
+        "minimumQuestionCount": 0,
+        "note": "Caderno público reaberto; filtro do próprio caderno mostrou 2 questões: Q4124884 e Q4326533, ambas pertinentes a direitos do titular na LGPD. Salvo, reaberto, com quantidade confirmada e compartilhamento público ativo 0EM-JM0."
       },
       "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
     }

@@ -1,15 +1,15 @@
-Warning: truncated output (original token count: 58950)
-Total output lines: 5982
+Warning: truncated output (original token count: 58959)
+Total output lines: 5981
 
 {
   "schema": "qc-central-sharing-v1",
-  "generatedAt": "2026-10-20T09:52:58+00:00",
+  "generatedAt": "2026-10-20T09:56:31+00:00",
   "platform": "QConcursos",
   "counts": {
     "administrativo": {
       "items": 98,
-      "linked": 92,
-      "pending": 6
+      "linked": 93,
+      "pending": 5
     },
     "penal": {
       "items": 64,
@@ -22,8 +22,8 @@ Total output lines: 5982
       "pending": 9
     },
     "totalItems": 393,
-    "totalValidatedPublicLinks": 375,
-    "totalPending": 18,
+    "totalValidatedPublicLinks": 376,
+    "totalPending": 17,
     "constitucional": {
       "items": 19,
       "linked": 19,
@@ -1409,14 +1409,13 @@ Total output lines: 5982
       "kind": "subdivision",
       "moduleTitle": "Lei Geral de Protecao de Dados - LGPD",
       "title": "Direitos do titular",
-      "notebookTitle": null,
-      "id": null,
-      "quantity": null,
-      "link": null,
-      "status": "Pendente",
-      "public": false,
-      "source": "checkpoint_adm_qc.json.thematicAudit.pendingSubdivisions",
-      "pendingReason": "Sem filtro exclusivo nativo; mantido como Pendente."
+      "notebookTitle": "ADM M20.3 Direitos do titular",
+      "id": "15354496",
+      "quantity": 2,
+      "link": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15354496",
+      "status": "VALIDADO",
+      "public": true,
+      "source": "checkpoint_adm_qc.json.thematicAudit.pendingSubdivisions"
     },
     {
       "discipline": "Direito Administrativo",
@@ -2481,7 +2480,7 @@ Total output lines: 5982
       "disciplineKey": "penal",
       "code": "M17.3",
       "kind": "subdivisao",
-      "moduleTitle": "Constituição Penal, Responsabilidade Penal da Pessoa Jurídica, Súmulas e Consolidaç…8950 tokens truncated…ids%5B%5D=15290033",
+      "moduleTitle": "Constituição Penal, Responsabilidade Penal da Pessoa…8959 tokens truncated…ids%5B%5D=15290033",
       "status": "VALIDADO",
       "public": true,
       "source": "checkpoint_direito_processual_penal_qc.json"
