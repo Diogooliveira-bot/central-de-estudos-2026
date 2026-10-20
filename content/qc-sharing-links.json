@@ -1,9 +1,9 @@
-Warning: truncated output (original token count: 59003)
-Total output lines: 5976
+Warning: truncated output (original token count: 59012)
+Total output lines: 5975
 
 {
   "schema": "qc-central-sharing-v1",
-  "generatedAt": "2026-10-20T10:04:09+00:00",
+  "generatedAt": "2026-10-20T10:06:08+00:00",
   "platform": "QConcursos",
   "counts": {
     "administrativo": {
@@ -13,8 +13,8 @@ Total output lines: 5976
     },
     "penal": {
       "items": 64,
-      "linked": 61,
-      "pending": 3
+      "linked": 62,
+      "pending": 2
     },
     "processualPenal": {
       "items": 74,
@@ -22,8 +22,8 @@ Total output lines: 5976
       "pending": 9
     },
     "totalItems": 393,
-    "totalValidatedPublicLinks": 381,
-    "totalPending": 12,
+    "totalValidatedPublicLinks": 382,
+    "totalPending": 11,
     "constitucional": {
       "items": 19,
       "linked": 19,
@@ -2471,7 +2471,7 @@ Total output lines: 5976
       "source": "QC autenticado em 2026-10-20: caderno reaberto com 4 questões pertinentes (Q3676254, Q1826454, Q1826457, Q1826460); compartilhamento ativo confirmado na listagem (0EM-FMJ)."
     },
     {
-      "discipline":…9003 tokens truncated…ids%5B%5D=15290033",
+      "discipline":…9012 tokens truncated…ids%5B%5D=15290033",
       "status": "VALIDADO",
       "public": true,
       "source": "checkpoint_direito_processual_penal_qc.json"

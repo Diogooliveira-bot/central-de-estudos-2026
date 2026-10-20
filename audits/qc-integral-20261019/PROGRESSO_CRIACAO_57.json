@@ -1,9 +1,9 @@
 {
   "schema": "qc-pending-creation-progress-v1",
-  "updatedAt": "2026-10-20T10:04:09+00:00",
+  "updatedAt": "2026-10-20T10:06:08+00:00",
   "initialPending": 57,
-  "createdAndValidated": 45,
-  "remainingPending": 12,
+  "createdAndValidated": 46,
+  "remainingPending": 11,
   "records": [
     {
       "discipline": "Direito Penal",
@@ -1137,6 +1137,30 @@
         ],
         "minimumQuestionCount": 0,
         "note": "Caderno geral consolidado com 7 questões de 2026, uma representativa de cada recorte M20.1–M20.7; o filtro confirmou todas as 7. Salvo, reaberto, com quantidade confirmada e compartilhamento público ativo 0EM-JN7."
+      },
+      "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
+    },
+    {
+      "discipline": "Direito Penal",
+      "module": "M17.4",
+      "moduleTitle": "Constituição Penal, Responsabilidade Penal da Pessoa Jurídica, Súmulas e Consolidação",
+      "subject": "Súmulas e consolidação",
+      "qcId": "15354539",
+      "shareCode": "0EM-JNB",
+      "notebookTitle": "DP M17.4 Súmulas penais",
+      "questionCount": 1,
+      "url": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15354539",
+      "criteria": {
+        "method": "filtro por palavra-chave e seleção manual após leitura integral",
+        "selectedQuestions": [
+          "Q4289360"
+        ],
+        "excluded": [
+          "anuladas",
+          "desatualizadas"
+        ],
+        "minimumQuestionCount": 0,
+        "note": "Questão FGV/DPE-RJ 2026 sobre crime continuado sob leis sucessivas; o enunciado aplica expressamente a Súmula 711 do STF. Filtro confirmou 1 questão. Salvo, reaberto, com quantidade confirmada e compartilhamento público ativo 0EM-JNB."
       },
       "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
     }
