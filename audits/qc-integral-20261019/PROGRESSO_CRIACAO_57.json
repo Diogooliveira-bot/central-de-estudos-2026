@@ -1,9 +1,9 @@
 {
   "schema": "qc-pending-creation-progress-v1",
-  "updatedAt": "2026-10-20T10:06:08+00:00",
+  "updatedAt": "2026-10-20T10:07:01+00:00",
   "initialPending": 57,
-  "createdAndValidated": 46,
-  "remainingPending": 11,
+  "createdAndValidated": 47,
+  "remainingPending": 10,
   "records": [
     {
       "discipline": "Direito Penal",
@@ -1161,6 +1161,32 @@
         ],
         "minimumQuestionCount": 0,
         "note": "Questão FGV/DPE-RJ 2026 sobre crime continuado sob leis sucessivas; o enunciado aplica expressamente a Súmula 711 do STF. Filtro confirmou 1 questão. Salvo, reaberto, com quantidade confirmada e compartilhamento público ativo 0EM-JNB."
+      },
+      "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
+    },
+    {
+      "discipline": "Direito Penal",
+      "module": "M01",
+      "moduleTitle": "Princípios, interpretação, analogia e conflito aparente",
+      "subject": "Princípios, interpretação, analogia e conflito aparente",
+      "qcId": "15354541",
+      "shareCode": "0EM-JND",
+      "notebookTitle": "DP M01 Geral Princípios e Interpretação",
+      "questionCount": 3,
+      "url": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15354541",
+      "criteria": {
+        "method": "filtro por palavra-chave e seleção manual após leitura integral",
+        "selectedQuestions": [
+          "Q4102465",
+          "Q3961243",
+          "Q3383764"
+        ],
+        "excluded": [
+          "anuladas",
+          "desatualizadas"
+        ],
+        "minimumQuestionCount": 0,
+        "note": "Consolidação de três questões já validadas em M01.1, M01.2 e M01.3: princípios/lei penal no tempo (FGV 2026), interpretação e analogia (Cebraspe 2026) e conflito aparente (Cebraspe 2025). Filtro confirmou 3 questões. Salvo, reaberto, com quantidade confirmada e compartilhamento público ativo 0EM-JND."
       },
       "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
     }
