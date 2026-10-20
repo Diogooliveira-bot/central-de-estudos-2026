@@ -1,12 +1,12 @@
 {
   "schema": "qc-central-sharing-v1",
-  "generatedAt": "2026-10-20T00:56:08.342492+00:00",
+  "generatedAt": "2026-10-20T00:56:47.157686+00:00",
   "platform": "QConcursos",
   "counts": {
     "administrativo": {
       "items": 98,
-      "linked": 72,
-      "pending": 26
+      "linked": 73,
+      "pending": 25
     },
     "penal": {
       "items": 64,
@@ -19,8 +19,8 @@
       "pending": 9
     },
     "totalItems": 393,
-    "totalValidatedPublicLinks": 355,
-    "totalPending": 38,
+    "totalValidatedPublicLinks": 356,
+    "totalPending": 37,
     "constitucional": {
       "items": 19,
       "linked": 19,
@@ -1121,14 +1121,13 @@
       "kind": "subdivision",
       "moduleTitle": "Parcerias Público-Privadas (PPP) — Lei 11.079/2004",
       "title": "Remuneração, garantias e SPE",
-      "notebookTitle": null,
-      "id": null,
-      "quantity": null,
-      "link": null,
-      "status": "Pendente",
-      "public": false,
-      "source": "checkpoint_adm_qc.json.thematicAudit.pendingSubdivisions",
-      "pendingReason": "Sem filtro exclusivo nativo; mantido como Pendente."
+      "notebookTitle": "ADM M10.3 PPP Garantias e SPE",
+      "id": "15352615",
+      "quantity": 1,
+      "link": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15352615",
+      "status": "VALIDADO",
+      "public": true,
+      "source": "QC autenticado: VUNESP/Auditor de Controle Interno, 2026; questão específica da Lei 11.079/2004 sobre SPE, forma societária, controle acionário e governança. Pertinência confirmada pelo enunciado integral; desconsiderada tag imprecisa do QC. Reaberto público, 0EM-GS7."
     },
     {
       "discipline": "Direito Administrativo",
