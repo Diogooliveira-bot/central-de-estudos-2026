@@ -1,9 +1,9 @@
 {
   "schema": "qc-pending-creation-progress-v1",
-  "updatedAt": "2026-10-20T01:04:40.681387+00:00",
+  "updatedAt": "2026-10-20T01:05:18.891872+00:00",
   "initialPending": 57,
-  "createdAndValidated": 28,
-  "remainingPending": 29,
+  "createdAndValidated": 29,
+  "remainingPending": 28,
   "records": [
     {
       "discipline": "Direito Penal",
@@ -717,6 +717,30 @@
         ],
         "minimumQuestionCount": 0,
         "note": "ISET/Agente de Contratações Públicas, 2026; questão do art. 72 da Lei 14.133/2021 sobre instrução, justificativa de preço, escolha do contratado, recursos e publicidade. Salvo, reaberto e público, 0EM-GWG."
+      },
+      "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
+    },
+    {
+      "discipline": "Direito Administrativo",
+      "module": "M17.2",
+      "moduleTitle": "Licitações — Contratação Direta",
+      "subject": "Inexigibilidade",
+      "qcId": "15352734",
+      "shareCode": "0EM-GWY",
+      "notebookTitle": "ADM M17.2 Inexigibilidade",
+      "questionCount": 1,
+      "url": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15352734",
+      "criteria": {
+        "method": "seleção manual após leitura integral",
+        "selectedQuestions": [
+          "Q4243474"
+        ],
+        "excluded": [
+          "anuladas",
+          "desatualizadas"
+        ],
+        "minimumQuestionCount": 0,
+        "note": "IDECAN/AL-CE Analista Legislativo Direito, 2026; questão específica de inexigibilidade por inviabilidade de competição sob a Lei 14.133/2021, sem incluir Lei 8.666 revogada. Salvo, reaberto e público, 0EM-GWY; superada limitação do filtro nativo amplo por seleção individual."
       },
       "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
     }
