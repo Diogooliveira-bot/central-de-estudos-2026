@@ -1,5 +1,5 @@
 {
-  "build": "20261020-study-objectives-v1",
+  "build": "20261020-exam-verticalized-v1",
   "files": [
     "/central-v119.html",
     "/ui/discipline-standard.js?v=20261019trabptra2",
@@ -476,19 +476,22 @@
     "/ui/tec-penal-cpp-links.js?v=20261014tec1",
     "/ui/penal-cpp-tec-links.css?v=20261014tec1",
     "/tools/lei-em-dia-admin-editor.js?v=20261014edit3",
-    "/ui/student-experience-v3.css?v=20261020-study-objectives-v1",
-    "/ui/student-ux-core-v3.js?v=20261020-study-objectives-v1",
+    "/ui/student-experience-v3.css?v=20261020-exam-verticalized-v1",
+    "/ui/student-ux-core-v3.js?v=20261020-exam-verticalized-v1",
     "/ui/student-shell-v3.js?v=20261020studyobj1",
-    "/ui/student-dashboard-v3.js?v=20261020-study-objectives-v1",
+    "/ui/student-dashboard-v3.js?v=20261020-exam-verticalized-v1",
     "/ui/student-plan-v3.js?v=20261019-qc-catalog1",
-    "/ui/external-question-filters-v1.css?v=20261020-study-objectives-v1",
-    "/ui/external-question-filters-v1.js?v=20261020-study-objectives-v1",
+    "/ui/external-question-filters-v1.css?v=20261020-exam-verticalized-v1",
+    "/ui/external-question-filters-v1.js?v=20261020-exam-verticalized-v1",
     "/ui/cpc-approved-layout-v1.css?v=20261019cpcstandard1",
     "/ui/approved-cpc-layout-v1.js?v=20261019cpcstandard2",
     "/ui/ptra-reader-upgrade-v1.css?v=20261019trabptra1",
     "/ui/ptra-reader-upgrade-v1.js?v=20261019trabptra1",
     "/ui/study-objectives-catalog-v1.js?v=20261020studyobj1",
     "/ui/study-objectives-v1.js?v=20261020studyobj1",
-    "/ui/study-objectives-v1.css?v=20261020studyobj1"
+    "/ui/study-objectives-v1.css?v=20261020studyobj1",
+    "/content/tjpb-2026-verticalized.js?v=20261020exam1",
+    "/ui/exam-verticalized-v1.js?v=20261020exam1",
+    "/ui/exam-verticalized-v1.css?v=20261020exam1"
   ]
 }
