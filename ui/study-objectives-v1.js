@@ -98,15 +98,15 @@
     host.innerHTML = html;
   }
   function renderTopbar() {
-    const topbar = document.querySelector('.topbar,.central-topbar,.bc-topbar,header.topbar');
-    if (!topbar) return;
+    const host = document.querySelector('#appRoot > .shell') || document.getElementById('appRoot') || document.body;
+    if (!host) return;
     let control = document.getElementById('studyObjectiveTopbar');
     if (!control) {
       control = document.createElement('div'); control.id = 'studyObjectiveTopbar'; control.className = 'study-objective-topbar';
       control.innerHTML = '<span class="study-objective-topbar-label">Objetivo</span><span data-study-objective-label></span><button type="button">Alterar</button>';
       control.querySelector('button').addEventListener('click', () => open());
-      topbar.appendChild(control);
     }
+    if (control.parentElement !== host || host.firstElementChild !== control) host.insertBefore(control, host.firstElementChild);
     const label = control.querySelector('[data-study-objective-label]');
     label.textContent = goal()?.shortLabel || 'Escolher';
     control.setAttribute('aria-label', 'Objetivo ativo: ' + (goal()?.title || 'nenhum'));
