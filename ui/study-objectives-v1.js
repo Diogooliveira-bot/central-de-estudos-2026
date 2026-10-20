@@ -34,7 +34,12 @@
     return catalog.goals[saved] ? saved : '';
   }
   async function persistRemote(id) {
-    if (global.__BASE_COMPLETA_PREVIEW_GUEST__ === true || !navigator.onLine) return false;
+    if (global.__BASE_COMPLETA_PREVIEW_GUEST__ === true) return false;
+    if (!navigator.onLine) {
+      localStorage.setItem(PENDING_KEY, '1');
+      setSyncMessage('Objetivo salvo neste aparelho; será sincronizado quando a conexão voltar.');
+      return false;
+    }
     try {
       const response = await fetch('/api/objective', {
         method:'PUT', cache:'no-store', headers:{ 'Content-Type':'application/json' },

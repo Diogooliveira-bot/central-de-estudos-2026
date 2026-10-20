@@ -122,3 +122,24 @@ test('preferência local reaparece após recriar a sessão de demonstração', a
   await settle(second.dom.window); await settle(second.dom.window);
   second.dom.window.close();
 });
+
+test('objetivo escolhido sem conexão entra na fila e sincroniza quando a conexão volta', async () => {
+  const { dom, storage } = setup();
+  const { window } = dom;
+  await settle(window);
+  window.__BASE_COMPLETA_PREVIEW_GUEST__ = false;
+  Object.defineProperty(window.navigator, 'onLine', { value:false, configurable:true });
+  chooseType(window, 'career');
+  chooseGoal(window, 'career-tribunais-analista');
+  await settle(window);
+  assert.equal(storage.getItem('central-v6:study-objective:pending:v1'), '1');
+
+  let saved = null;
+  window.fetch = async (_url, options) => { saved = JSON.parse(options.body); return { ok:true }; };
+  Object.defineProperty(window.navigator, 'onLine', { value:true, configurable:true });
+  window.dispatchEvent(new window.Event('online'));
+  await settle(window); await settle(window);
+  assert.deepEqual(saved, { objectiveId:'career-tribunais-analista' });
+  assert.equal(storage.getItem('central-v6:study-objective:pending:v1'), null);
+  dom.window.close();
+});
