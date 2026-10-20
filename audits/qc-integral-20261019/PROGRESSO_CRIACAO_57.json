@@ -1,9 +1,9 @@
 {
   "schema": "qc-pending-creation-progress-v1",
-  "updatedAt": "2026-10-20T10:07:58+00:00",
+  "updatedAt": "2026-10-20T10:10:58+00:00",
   "initialPending": 57,
-  "createdAndValidated": 48,
-  "remainingPending": 9,
+  "createdAndValidated": 49,
+  "remainingPending": 8,
   "records": [
     {
       "discipline": "Direito Penal",
@@ -1214,6 +1214,30 @@
         ],
         "minimumQuestionCount": 0,
         "note": "Caderno geral consolida princípios constitucionais penais, responsabilidade penal da pessoa jurídica, crimes ambientais e Súmula 711, com questões já validadas nos submódulos M17.1–M17.4; filtro confirmou 4 questões. Salvo, reaberto, com quantidade confirmada e compartilhamento público ativo 0EM-JNP."
+      },
+      "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
+    },
+    {
+      "discipline": "Direito Processual Penal",
+      "module": "M02.1",
+      "moduleTitle": "Aplicação da Lei Processual Penal",
+      "subject": "Lei processual no tempo",
+      "qcId": "15354574",
+      "shareCode": "0EM-JPE",
+      "notebookTitle": "CPP M02.1 Lei processual no tempo",
+      "questionCount": 1,
+      "url": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15354574",
+      "criteria": {
+        "method": "filtro por palavra-chave e seleção manual após leitura integral",
+        "selectedQuestions": [
+          "Q3846704"
+        ],
+        "excluded": [
+          "anuladas",
+          "desatualizadas"
+        ],
+        "minimumQuestionCount": 0,
+        "note": "Questão INIDE/Prefeitura de Murici 2025 testa aplicação imediata da lei processual penal no tempo e preservação dos atos já praticados; filtro confirmou 1 questão. Salvo, reaberto, com quantidade confirmada e compartilhamento público ativo 0EM-JPE."
       },
       "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
     }

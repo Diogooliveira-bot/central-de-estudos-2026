@@ -1,9 +1,9 @@
-Warning: truncated output (original token count: 59039)
-Total output lines: 5973
+Warning: truncated output (original token count: 59053)
+Total output lines: 5972
 
 {
   "schema": "qc-central-sharing-v1",
-  "generatedAt": "2026-10-20T10:07:58+00:00",
+  "generatedAt": "2026-10-20T10:10:58+00:00",
   "platform": "QConcursos",
   "counts": {
     "administrativo": {
@@ -18,12 +18,12 @@ Total output lines: 5973
     },
     "processualPenal": {
       "items": 74,
-      "linked": 65,
-      "pending": 9
+      "linked": 66,
+      "pending": 8
     },
     "totalItems": 393,
-    "totalValidatedPublicLinks": 384,
-    "totalPending": 9,
+    "totalValidatedPublicLinks": 385,
+    "totalPending": 8,
     "constitucional": {
       "items": 19,
       "linked": 19,
@@ -56,8 +56,8 @@ Total output lines: 5973
     },
     "processual-penal": {
       "items": 74,
-      "linked": 65,
-      "pending": 9
+      "linked": 66,
+      "pending": 8
     }
   },
   "items": [
@@ -2466,7 +2466,7 @@ Total output lines: 5973
       "link": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15351442",
       "status": "VALIDADO",
       "public": true,
-      "source": "QC autenticado em 2026-10-20: caderno reaberto com 4 questões pertinentes (Q3676254, Q1826454, Q1…9039 tokens truncated…ids%5B%5D=15290033",
+      "source": "QC autenticado em 2026-10-20: caderno reaberto com 4 questões pertinentes (Q3676254, Q1826454, Q1…9053 tokens truncated…ids%5B%5D=15290033",
       "status": "VALIDADO",
       "public": true,
       "source": "checkpoint_direito_processual_penal_qc.json"
