@@ -1,0 +1,30 @@
+name: Admin infographic protection tests
+on:
+  push:
+    branches:
+      - integration/objetivos-prod-20261020
+    paths:
+      - 'api/auth.js'
+      - 'lib/admin-infographics.js'
+      - 'lib/admin-infographic-handler.js'
+      - 'middleware.js'
+      - 'sw.js'
+      - 'ui/admin-infographics-access-v1.*'
+      - 'tests/admin-infographics-access-unit.mjs'
+      - '.github/workflows/admin-infographics-guard-check.yml'
+      - 'package.json'
+      - 'package-lock.json'
+permissions:
+  contents: read
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: node --test tests/admin-infographics-access-unit.mjs
+      - run: npm test
