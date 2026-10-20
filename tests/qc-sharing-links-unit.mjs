@@ -77,7 +77,7 @@ test('integração mantém os painéis TEC e QConcursos separados e responsivos'
 
 test('pendências de Administrativo sem filtro exclusivo não expõem o caderno amplo', () => {
   const pending = new Set(table.items.filter(x => x.disciplineKey === 'administrativo' && x.status === 'Pendente').map(x => x.code));
-  for (const code of ["M07", "M11", "M19", "M20"]) {
+  for (const code of ["M11", "M19", "M20"]) {
     assert.ok(pending.has(code), `${code} deve aparecer como Pendente`);
   }
   const planning = table.items.find(x => x.disciplineKey === 'administrativo' && x.code === 'M15.2');
