@@ -1,9 +1,9 @@
 {
   "schema": "qc-pending-creation-progress-v1",
-  "updatedAt": "2026-10-20T10:11:28+00:00",
+  "updatedAt": "2026-10-20T10:12:18+00:00",
   "initialPending": 57,
-  "createdAndValidated": 50,
-  "remainingPending": 7,
+  "createdAndValidated": 51,
+  "remainingPending": 6,
   "records": [
     {
       "discipline": "Direito Penal",
@@ -1262,6 +1262,32 @@
         ],
         "minimumQuestionCount": 0,
         "note": "Questão UPENET/IAUPE 2024 aborda diretamente territorialidade e aplicação da lei processual penal no espaço; filtro confirmou 1 questão. Salvo, reaberto, com quantidade confirmada e compartilhamento público ativo 0EM-JPK."
+      },
+      "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
+    },
+    {
+      "discipline": "Direito Processual Penal",
+      "module": "M02",
+      "moduleTitle": "Aplicação da Lei Processual Penal",
+      "subject": "Aplicação da Lei Processual Penal",
+      "qcId": "15354583",
+      "shareCode": "0EM-JPQ",
+      "notebookTitle": "CPP M02 Geral Aplicação da lei",
+      "questionCount": 3,
+      "url": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15354583",
+      "criteria": {
+        "method": "filtro por palavra-chave e seleção manual após leitura integral",
+        "selectedQuestions": [
+          "Q4150726",
+          "Q3846704",
+          "Q3058554"
+        ],
+        "excluded": [
+          "anuladas",
+          "desatualizadas"
+        ],
+        "minimumQuestionCount": 0,
+        "note": "Caderno geral com a questão FGV/TJ-SC 2026 que integra aplicação no tempo e no espaço, mais uma questão específica de cada submódulo M02.1 e M02.2; filtro confirmou 3 questões. Salvo, reaberto, com quantidade confirmada e compartilhamento público ativo 0EM-JPQ."
       },
       "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
     }
