@@ -14,10 +14,10 @@ vm.runInNewContext(read('content/qc-sharing-links.js'), context);
 test('tabela preserva os totais e os registros QC catalogados', () => {
   assert.equal(table.platform, 'QConcursos');
   assert.equal(table.counts.penal.linked, 64);
-  assert.equal(table.counts.processualPenal.linked, 68);
+  assert.equal(table.counts.processualPenal.linked, 69);
   assert.equal(table.counts.administrativo.linked, 98);
-  assert.equal(table.counts.totalValidatedPublicLinks, 387);
-  assert.equal(table.counts.totalPending, 6);
+  assert.equal(table.counts.totalValidatedPublicLinks, 388);
+  assert.equal(table.counts.totalPending, 5);
   assert.deepEqual(JSON.parse(JSON.stringify(context.window.QC_CENTRAL_SHARING_LINKS)), table);
 });
 
@@ -70,9 +70,9 @@ test('integração mantém os painéis TEC e QConcursos separados e responsivos'
   assert.match(ui, /data-cpp-native-module/);
   assert.match(admUi, /ADM_SHARING_LINKS/);
   assert.match(admUi, /sharingPanel\(uid\)/);
-  assert.match(central, /content\/qc-sharing-links\.js\?v=20261020qcpend6p1/);
-  assert.match(central, /content\/qc-notebook-catalog\.js\?v=20261020qcpend6p1/);
-  assert.match(central, /ui\/qc-sharing-links\.js\?v=20261020qcpend6p1/);
+  assert.match(central, /content\/qc-sharing-links\.js\?v=20261020qcpend5p1/);
+  assert.match(central, /content\/qc-notebook-catalog\.js\?v=20261020qcpend5p1/);
+  assert.match(central, /ui\/qc-sharing-links\.js\?v=20261020qcpend5p1/);
 });
 
 test('pendências de Administrativo sem filtro exclusivo não expõem o caderno amplo', () => {

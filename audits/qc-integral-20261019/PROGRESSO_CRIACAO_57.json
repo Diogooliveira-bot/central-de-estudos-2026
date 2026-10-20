@@ -1,9 +1,9 @@
 {
   "schema": "qc-pending-creation-progress-v1",
-  "updatedAt": "2026-10-20T10:12:18+00:00",
+  "updatedAt": "2026-10-20T10:13:01+00:00",
   "initialPending": 57,
-  "createdAndValidated": 51,
-  "remainingPending": 6,
+  "createdAndValidated": 52,
+  "remainingPending": 5,
   "records": [
     {
       "discipline": "Direito Penal",
@@ -1288,6 +1288,30 @@
         ],
         "minimumQuestionCount": 0,
         "note": "Caderno geral com a questão FGV/TJ-SC 2026 que integra aplicação no tempo e no espaço, mais uma questão específica de cada submódulo M02.1 e M02.2; filtro confirmou 3 questões. Salvo, reaberto, com quantidade confirmada e compartilhamento público ativo 0EM-JPQ."
+      },
+      "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
+    },
+    {
+      "discipline": "Direito Processual Penal",
+      "module": "M04.4",
+      "moduleTitle": "DPP M04 Ação Penal",
+      "subject": "Outras modalidades de acao penal",
+      "qcId": "15354595",
+      "shareCode": "0EM-JQ3",
+      "notebookTitle": "CPP M04.4 Outras ações penais",
+      "questionCount": 1,
+      "url": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15354595",
+      "criteria": {
+        "method": "filtro por palavra-chave e seleção manual após leitura integral",
+        "selectedQuestions": [
+          "Q4349516"
+        ],
+        "excluded": [
+          "anuladas",
+          "desatualizadas"
+        ],
+        "minimumQuestionCount": 0,
+        "note": "Questão FGV/TJ-PE 2026 sobre ação penal privada subsidiária da pública e prazo, à luz das alterações da Lei nº 15.438/2026; filtro confirmou 1 questão. Salvo, reaberto, com quantidade confirmada e compartilhamento público ativo 0EM-JQ3."
       },
       "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
     }
