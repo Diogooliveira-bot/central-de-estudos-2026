@@ -1,9 +1,9 @@
 {
   "schema": "qc-pending-creation-progress-v1",
-  "updatedAt": "2026-10-20T01:05:18.891872+00:00",
+  "updatedAt": "2026-10-20T01:05:51.881571+00:00",
   "initialPending": 57,
-  "createdAndValidated": 29,
-  "remainingPending": 28,
+  "createdAndValidated": 30,
+  "remainingPending": 27,
   "records": [
     {
       "discipline": "Direito Penal",
@@ -741,6 +741,30 @@
         ],
         "minimumQuestionCount": 0,
         "note": "IDECAN/AL-CE Analista Legislativo Direito, 2026; questão específica de inexigibilidade por inviabilidade de competição sob a Lei 14.133/2021, sem incluir Lei 8.666 revogada. Salvo, reaberto e público, 0EM-GWY; superada limitação do filtro nativo amplo por seleção individual."
+      },
+      "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
+    },
+    {
+      "discipline": "Direito Administrativo",
+      "module": "M17.3",
+      "moduleTitle": "Licitações — Contratação Direta",
+      "subject": "Dispensa",
+      "qcId": "15352740",
+      "shareCode": "0EM-GX4",
+      "notebookTitle": "ADM M17.3 Dispensa de licitação",
+      "questionCount": 1,
+      "url": "https://www.qconcursos.com/questoes-de-concursos/questoes?notebook_ids%5B%5D=15352740",
+      "criteria": {
+        "method": "seleção manual após leitura integral",
+        "selectedQuestions": [
+          "Q4243497"
+        ],
+        "excluded": [
+          "anuladas",
+          "desatualizadas"
+        ],
+        "minimumQuestionCount": 0,
+        "note": "IDECAN/AL-CE Analista Legislativo Direito, 2026; hipótese de dispensa por emergência ou calamidade com requisitos e limitação ao objeto necessário, Lei 14.133/2021. Salvo, reaberto e público, 0EM-GX4."
       },
       "status": "criado, salvo, reaberto e validado; compartilhamento ativo confirmado; integrado"
     }
