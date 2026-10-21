@@ -54,10 +54,29 @@ test('admin enxerga acesso administrativo único e estudante nunca recebe esse l
   win.close();
 });
 
-test('visitante de prévia nunca recebe o menu administrativo', async () => {
-  const { win } = await setup('admin', true);
+test('visitante de prévia vê atalho informativo, nunca controles administrativos', async () => {
+  const { win, enhance } = await setup('admin', true);
+  const entry = win.document.querySelector('[data-student-more-action="admin-preview"]');
+  assert.ok(entry, 'Atalho da Central oficial deve estar visível na prévia sem login');
+  assert.match(entry.textContent, /Administração/);
+  assert.match(entry.textContent, /login obrigatório/);
   assert.equal(win.document.querySelector('[data-student-more-action="admin"]'), null);
+  enhance();
+  assert.equal(win.document.querySelectorAll('[data-student-more-action="admin-preview"]').length, 1);
   win.close();
+});
+
+test('aluno autenticado não recebe opção administrativa nem o atalho da prévia', async () => {
+  const { win } = await setup('aluno', false);
+  assert.equal(win.document.querySelector('.student-more-admin'), null);
+  win.close();
+});
+
+test('modo demonstração nunca autoriza rota administrativa local', async () => {
+  const src = await read('ui/student-shell-v3.js');
+  assert.match(src, /action === 'admin' && isAdmin\(\)/);
+  assert.match(src, /action === 'admin-preview' && global\.__BASE_COMPLETA_PREVIEW_GUEST__ === true/);
+  assert.match(src, /central-de-estudos-ecru\.vercel\.app\/usuarios\.html#convites/);
 });
 
 test('o visual desktop é compacto e o menu móvel continua responsivo', async () => {
@@ -71,6 +90,6 @@ test('o visual desktop é compacto e o menu móvel continua responsivo', async (
 test('recursos editados estão no carregador e no manifesto offline', async () => {
   const boot = await read('central-v119.html');
   const offline = await read('central-offline-files-v66172.json');
-  assert.match(boot, /student-shell-v3\.js\?v=20261021nav2/);
-  assert.match(offline, /student-shell-v3\.js\?v=20261021nav2/);
+  assert.match(boot, /student-shell-v3\.js\?v=20261021nav3/);
+  assert.match(offline, /student-shell-v3\.js\?v=20261021nav3/);
 });
