@@ -58,7 +58,7 @@ test('acesso público limitado ao resgate: páginas administrativas seguem prote
 test('scripts das telas de convite e administração possuem sintaxe JavaScript válida', () => {
   for (const path of ['../convite.html', '../usuarios.html']) {
     const html = readFileSync(new URL(path, import.meta.url), 'utf8');
-    const scripts = [...html.matchAll(/<script(?:\\s[^>]*)?>([\\s\\S]*?)<\\/script>/g)];
+    const scripts = [...html.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g)];
     assert.ok(scripts.length > 0, 'Script ausente: ' + path);
     for (const script of scripts) assert.doesNotThrow(() => new vm.Script(script[1]));
   }
