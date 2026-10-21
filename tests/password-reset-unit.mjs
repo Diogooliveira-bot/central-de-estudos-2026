@@ -5,6 +5,7 @@ import vm from 'node:vm';
 import {
   PASSWORD_RESET_TTL_MINUTES,
   emailConfig,
+  gmailSmtpOptions,
   newResetToken,
   rateIdentity,
   resetPageBase,
@@ -40,32 +41,45 @@ test('limites HMAC não expõem e-mail e variam por identidade',()=>{
  assert.throws(()=>rateIdentity('email','a','short'),/Segredo/);
 });
 
-test('configuração do provedor e URL confiável não são aceitas sem ambiente seguro',()=>{
+test('senha de app Gmail é lida com segurança e SMTP usa TLS na porta 465',()=>{
  assert.equal(emailConfig({}),null);
  assert.equal(emailConfig({RESEND_API_KEY:'re_dummy',PASSWORD_RESET_FROM:'x'}),null);
- assert.deepEqual(emailConfig({RESEND_API_KEY:'re_test',PASSWORD_RESET_FROM:'Base Completa <suporte@example.test>'}),{
-  key:'re_test',from:'Base Completa <suporte@example.test>',
+ assert.equal(emailConfig({GMAIL_USER:'basecompleta.estudos@gmail.com',GMAIL_APP_PASSWORD:'invalid'}),null);
+ const config = emailConfig({
+  GMAIL_USER:'basecompleta.estudos@gmail.com',
+  GMAIL_APP_PASSWORD:'abcd efgh ijkl mnop',
  });
+ assert.deepEqual(config,{
+  user:'basecompleta.estudos@gmail.com',
+  password:'abcdefghijklmnop',
+  from:'Base Completa <basecompleta.estudos@gmail.com>',
+ });
+ const smtp=gmailSmtpOptions(config);
+ assert.equal(smtp.host,'smtp.gmail.com');
+ assert.equal(smtp.port,465);
+ assert.equal(smtp.secure,true);
+ assert.equal(smtp.auth.user,config.user);
+ assert.equal(smtp.auth.pass,config.password);
+ assert.equal(smtp.tls.servername,'smtp.gmail.com');
  assert.equal(resetPageBase({VERCEL_ENV:'production'}),'https://central-de-estudos-ecru.vercel.app');
  assert.equal(resetPageBase({VERCEL_ENV:'preview',VERCEL_URL:'my-preview.vercel.app'}),'https://my-preview.vercel.app');
  assert.throws(()=>resetPageBase({VERCEL_ENV:'preview',VERCEL_URL:'untrusted.example.org'}),/seguro/);
 });
 
-test('envio Resend produz mensagem com link e sem divulgar senha; falhas interrompem envio',async()=>{
+test('envio SMTP prepara mensagem segura e utiliza transporte mockado',async()=>{
  const calls=[];
- const send=async(url,opt)=>{calls.push({url,opt});return {ok:true,json:async()=>({id:'email_123'})}};
- const config={key:'re_for_test',from:'Base Completa <suporte@example.test>'};
+ const config={user:'basecompleta.estudos@gmail.com',password:'abcdefghijklmnop',from:'Base Completa <basecompleta.estudos@gmail.com>'};
  const link='https://central-de-estudos-ecru.vercel.app/recuperar-senha.html#token=abc';
+ const send=async(message,cfg)=>{calls.push({message,cfg});return 'smtp-message-id-1'};
  const result=await sendResetEmail({to:'aluno@example.test',link,id:'mock-request-1',config,transport:send});
- assert.equal(result,'email_123');
- assert.equal(calls[0].url,'https://api.resend.com/emails');
- assert.equal(calls[0].opt.headers['Idempotency-Key'],'mock-request-1');
- const body=JSON.parse(calls[0].opt.body);
- assert.deepEqual(body.to,['aluno@example.test']);
- assert.match(body.text,/30 minutos/);
- assert.ok(body.html.includes(link));
- assert.ok(!JSON.stringify(body).includes('SenhaAntigaDoAluno'));
- await assert.rejects(sendResetEmail({to:'aluno@example.test',link,id:'2',config,transport:async()=>({ok:false,status:401})}),/Falha de envio/);
+ assert.equal(result,'smtp-message-id-1');
+ assert.equal(calls[0].message.to,'aluno@example.test');
+ assert.equal(calls[0].message.from,config.from);
+ assert.match(calls[0].message.text,/30 minutos/);
+ assert.ok(calls[0].message.html.includes(link));
+ assert.ok(!JSON.stringify(calls[0].message).includes('SenhaAntigaDoAluno'));
+ assert.equal(calls[0].cfg,config);
+ await assert.rejects(sendResetEmail({to:'aluno@example.test',link,id:'2',config,transport:async()=>{throw new Error('Falha SMTP simulada')}}),/Falha SMTP simulada/);
 });
 
 test('o fluxo usa resgate SQL atômico, invalida sessões e exige role aluno',async()=>{
