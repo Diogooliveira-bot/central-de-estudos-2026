@@ -289,3 +289,140 @@ html.student-onboarding-open {overflow:hidden!important;}
   html.student-experience-v3 #disciplinesView .student-discipline-card {transition:none!important;}
 }
 
+
+/* Base Completa — navegação premium e menu administrativo (2026-10-21).
+   Camada restrita à navegação: não altera conteúdo, módulos nem progresso. */
+@media (min-width:801px) {
+  html.student-experience-v3.bc-ui-v1.bc-topnav { --bc-nav-height:74px!important; }
+  html.student-experience-v3.bc-topnav #centralSidebar {
+    gap:24px!important; padding:0 30px!important;
+    background:#08283b!important;
+    border-bottom:1px solid rgba(183,222,238,.14)!important;
+    box-shadow:0 6px 22px rgba(9,30,46,.08)!important;
+  }
+  html.student-experience-v3.bc-topnav #centralSidebar .brand {min-width:230px;}
+  html.student-experience-v3.bc-topnav #centralSidebar .brand-icon {
+    width:46px!important;height:48px!important;flex-basis:46px!important;
+  }
+  html.student-experience-v3.bc-topnav #centralSidebar .brand-copy b {
+    font:750 15px/1.2 system-ui,-apple-system,"Segoe UI",sans-serif!important;
+    letter-spacing:.075em!important;color:#f1f8fc!important;
+  }
+  html.student-experience-v3.bc-topnav #centralSidebar .brand-copy small {
+    font-size:10px!important;color:#60bdbd!important;opacity:.9;
+  }
+  html.student-experience-v3.bc-topnav #centralSidebar .nav {
+    justify-content:flex-end!important;gap:4px!important;overflow:visible!important;
+  }
+  html.student-experience-v3.bc-topnav #centralSidebar .nav button[data-student-primary-nav] {
+    min-width:0!important;min-height:40px!important;padding:9px 13px!important;
+    gap:8px!important;border:1px solid transparent!important;border-radius:9px!important;
+    background:transparent!important;color:#aec5d2!important;
+    font:650 13px/1.2 system-ui,-apple-system,"Segoe UI",sans-serif!important;
+    letter-spacing:0!important;box-shadow:none!important;
+    transition:background-color .15s ease,color .15s ease,border-color .15s ease!important;
+  }
+  html.student-experience-v3.bc-topnav #centralSidebar .nav button[data-student-primary-nav="subjects"] {min-width:0!important;}
+  html.student-experience-v3.bc-topnav #centralSidebar .nav button[data-student-primary-nav] .nav-icon {
+    width:19px!important;height:19px!important;flex:0 0 19px!important;
+  }
+  html.student-experience-v3.bc-topnav #centralSidebar .nav button[data-student-primary-nav] .nav-icon svg {
+    width:19px!important;height:19px!important;stroke-width:1.8;
+  }
+  html.student-experience-v3.bc-topnav #centralSidebar .nav button[data-student-primary-nav]:hover {
+    color:#fff!important;background:rgba(199,231,239,.09)!important;
+  }
+  html.student-experience-v3.bc-topnav #centralSidebar .nav button[data-student-primary-nav]:is(.active,[aria-current="page"]) {
+    background:rgba(42,177,179,.12)!important;color:#66ded5!important;
+    border-color:rgba(94,203,205,.18)!important;
+  }
+  html.student-experience-v3.bc-topnav #centralSidebar .nav #studentMoreButton {
+    margin-left:10px!important;padding:9px 15px!important;
+    border:1px solid rgba(167,211,231,.28)!important;
+    color:#eff9fb!important;background:rgba(255,255,255,.035)!important;
+  }
+  html.student-experience-v3.bc-topnav #centralSidebar .nav #studentMoreButton[aria-expanded="true"] {
+    background:rgba(42,177,179,.16)!important;border-color:#4bbec4!important;color:#7ce7df!important;
+  }
+  html.student-experience-v3.bc-topnav #centralSidebar .student-more-icon {
+    font-size:17px!important;letter-spacing:1px!important;line-height:1!important;
+  }
+}
+html.student-experience-v3 .student-more-panel {
+  width:min(382px,calc(100vw - 28px));
+  padding:19px!important;border:1px solid #d9e4ed!important;
+  background:#fff!important;border-radius:17px!important;
+  box-shadow:0 20px 65px rgba(9,33,52,.20)!important;
+}
+@media(min-width:801px) {
+  html.student-experience-v3 .student-more-panel {top:81px!important;right:24px!important;}
+}
+html.student-experience-v3 .student-more-head {margin-bottom:15px!important;}
+html.student-experience-v3 .student-more-head small {
+  font-size:10px!important;letter-spacing:.14em!important;color:#688294!important;
+}
+html.student-experience-v3 .student-more-head b {
+  font:750 20px/1.2 system-ui,-apple-system,"Segoe UI",sans-serif!important;
+  letter-spacing:-.035em;color:#132e44;
+}
+html.student-experience-v3 .student-more-head>button {
+  width:33px!important;height:33px!important;border-radius:9px!important;
+  border:1px solid #d8e4eb!important;background:#f7fafc!important;
+  color:#29435a!important;font-size:21px!important;
+}
+html.student-experience-v3 .student-more-grid {gap:8px!important;}
+html.student-experience-v3 .student-more-grid>button {
+  min-width:0;min-height:61px!important;
+  padding:10px!important;gap:10px!important;
+  border:1px solid #e1e8ee!important;border-radius:11px!important;
+  background:#fafcfd!important;color:#1a364c!important;
+  box-shadow:none!important;transition:border-color .15s ease,background-color .15s ease!important;
+}
+html.student-experience-v3 .student-more-grid>button:hover {
+  background:#f1f8fa!important;border-color:#91cbd0!important;
+}
+html.student-experience-v3 .student-more-grid>button>span:first-child {
+  width:33px!important;height:33px!important;flex:0 0 33px;
+  background:#10364c!important;border-radius:8px!important;
+  font-size:17px!important;
+}
+html.student-experience-v3 .student-more-grid>button b {
+  font-size:13px!important;font-weight:750!important;line-height:1.25!important;
+}
+html.student-experience-v3 .student-more-grid>button small {
+  color:#687d8b!important;font-size:10px!important;line-height:1.3!important;
+}
+html.student-experience-v3 .student-more-grid>[data-student-more-action="settings"] {
+  grid-column:1/-1;
+}
+html.student-experience-v3 .student-more-grid>button.student-more-admin {
+  grid-column:1/-1;min-height:66px!important;
+  background:#eaf6f5!important;border-color:#c1e0dd!important;
+}
+html.student-experience-v3 .student-more-grid>button.student-more-admin>span:first-child {
+  background:#126c74!important;
+}
+html.student-experience-v3 .student-more-admin .student-more-arrow {
+  margin-left:auto;font-size:19px!important;color:#166d73!important;
+}
+html.student-experience-v3 .student-more-grid>[data-student-more-action="logout"] {
+  grid-column:1/-1;min-height:48px!important;
+  background:#fff!important;border:1px solid #e1e8ee!important;
+}
+html.student-experience-v3 .student-more-grid>[data-student-more-action="logout"]>span:first-child {
+  width:28px!important;height:28px!important;flex-basis:28px;background:#eaf0f4!important;color:#26475a!important;
+}
+html.student-experience-v3 .student-more-panel button:focus-visible {
+  outline:2px solid #15a9af!important;outline-offset:2px!important;
+}
+@media (max-width:800px) {
+  html.student-experience-v3 .student-more-panel {
+    top:auto!important;bottom:calc(var(--student-bottom-nav,72px) + 10px)!important;
+    left:10px!important;right:10px!important;width:auto!important;
+    max-height:calc(100dvh - var(--student-bottom-nav,72px) - 28px)!important;overflow:auto!important;
+  }
+}
+@media (max-width:460px) {
+  html.student-experience-v3 .student-more-grid {grid-template-columns:1fr!important;}
+  html.student-experience-v3 .student-more-grid>button {grid-column:1/-1!important;}
+}

@@ -1,0 +1,27 @@
+name: Validar navegação premium da Central
+
+on:
+  push:
+    branches: [feature/navegacao-premium-admin-20261021]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  navigation-regression:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Instalar dependências
+        run: npm ci --ignore-scripts
+      - name: Sintaxe JavaScript
+        run: |
+          node --check ui/student-shell-v3.js
+          node --check tests/navigation-premium-unit.mjs
+      - name: Suite de regressão da Central
+        run: npm test
