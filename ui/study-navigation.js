@@ -3,7 +3,7 @@
   'use strict';
   if (window.CentralStudyNavigation) return;
   const moduleSelector = '.topic-item,.cf-module,.civil-module,.cpp-mod,.cv-module,.bc-trabalho-module';
-  const attributes = ['data-uid','data-pt-current','data-ptn-module','data-civil-native-module','data-civil-analista','data-civil','data-cf','data-penal','data-cpc','data-cpp-num','data-cpp-native-module'];
+  const attributes = ['data-uid','data-rlm-module','data-pt-current','data-ptn-module','data-civil-native-module','data-civil-analista','data-civil','data-cf','data-penal','data-cpc','data-cpp-num','data-cpp-native-module'];
   const views = {home:'homeView',agenda:'agendaView',disciplines:'disciplinesView',tec:'tecCadernosView',performance:'performanceView'};
   let sourceModule = null;
   function moduleId(module) {
