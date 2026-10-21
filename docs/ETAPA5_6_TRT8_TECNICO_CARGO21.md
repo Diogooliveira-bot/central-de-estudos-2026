@@ -36,3 +36,11 @@ Os números entre parênteses são divisões editoriais para o checklist. **Não
 3. Testar 3 editais no navegador com dois alunos, sincronização de progresso e troca entre editais, usando Neon homologação isolado.
 4. Homologar navegação, marcações e cache PWA da nova branch.
 5. Solicitar autorização específica **antes de publicar Técnico**. A publicação Multi-Editais Analista de 21/10/2026 permanece intocada.
+
+## Verificação e homologação — 21/10/2026
+
+- **Testes automatizados:** GitHub Actions https://github.com/Diogooliveira-bot/central-de-estudos-2026/actions/runs/39638094960: **132 testes; 131 aprovados, 0 falhas e 1 ignorado**.
+- **Infra de Preview:** variáveis `DATABASE_URL`, `AUTH_SECRET`, `BACKUP_SECRET` e `EXAM_PROGRESS_PREVIEW_DB_ISOLATED` definidas **somente** para a branch de Técnico, apontando para Neon `raspy-pond-46403448` de homologação.
+- **Preview bloqueada:** Vercel retornou `402 payment_required` em `api-deployments-free-per-day`, não há nova implantação dessa branch disponível. Não afirmar que a tela de Técnico foi homologada no navegador.
+- **PR rascunho:** https://github.com/Diogooliveira-bot/central-de-estudos-2026/pull/133 — **não mesclar automaticamente**.
+- **Produção:** o commit `2140429e7fa3860a3bb1bc97b9ede567bebcb006` já foi publicado para os editais de Analista. Os dados e a interface de Técnico ainda não foram enviados a `main`.
