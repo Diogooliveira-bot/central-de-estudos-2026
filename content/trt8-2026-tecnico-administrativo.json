@@ -1,0 +1,1713 @@
+{
+  "schemaVersion": 1,
+  "examId": "trt8-2026-tecnico-administrativa-21",
+  "goalId": "exam-trt8-2026-tecnico-administrativa",
+  "title": "TRT-8 2026 — Técnico Judiciário, Área Administrativa",
+  "cargoCode": "21",
+  "source": "FCC Edital 01/2026, Anexo II, cargo 21, pp. 47–48 e 73–74; retificação Edital 02/2026, DOU 08/10/2026.",
+  "sourceUrls": [
+    "https://www.concursosfcc.com.br/concursos/trt8r126/trt8r126_edital_de_abertura.pdf",
+    "https://www.in.gov.br/web/dou/-/edital-n-2-de-7-de-outubro-de-2026-737300524"
+  ],
+  "status": "draft_not_published",
+  "subjectCount": 11,
+  "itemsCount": 176,
+  "notice": "Segmentação editorial para o checklist; não corresponde à numeração do edital. Sem vínculos habilitados antes da auditoria. Disciplina correspondente não significa teoria integral conferida.",
+  "subjects": [
+    {
+      "id": "trt8-tec-21-pt",
+      "title": "Língua Portuguesa",
+      "disciplineId": "pt",
+      "group": "general",
+      "originalProgram": "Redação Oficial. Ortografia e acentuação. Emprego do sinal indicativo de crase. Compreensão e interpretação de textos de gêneros variados. Relação do texto com seu contexto histórico. Denotação e conotação. Discurso direto, discurso indireto e discurso in direto livre. Intertextualidade. Figuras de linguagem. Morfossintaxe. Elementos estruturais e processos de formação de palavras. Sinonímia e antonímia. Pontuação. Pronomes. Concordância nominal e concordância verbal. Flexão nominal e flex ão verbal. Vozes do verbo. Correlação de tempos e modos verbais. Regência nominal e regência verbal. Coordenação e subordinação. Conectivos. Redação (confronto e reconhecimento de frases corretas e incorretas; organização e reorganização de orações e perío dos; equivalência e transformação de estruturas).",
+      "items": [
+        {
+          "id": "trt8-tec-21-pt-001",
+          "ordinal": 1,
+          "text": "Redação Oficial. Ortografia e acentuação.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-pt-002",
+          "ordinal": 2,
+          "text": "Emprego do sinal indicativo de crase.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-pt-003",
+          "ordinal": 3,
+          "text": "Compreensão e interpretação de textos de gêneros variados.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-pt-004",
+          "ordinal": 4,
+          "text": "Relação do texto com seu contexto histórico. Denotação e conotação.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-pt-005",
+          "ordinal": 5,
+          "text": "Discurso direto, discurso indireto e discurso in direto livre. Intertextualidade. Figuras de linguagem. Morfossintaxe.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-pt-006",
+          "ordinal": 6,
+          "text": "Elementos estruturais e processos de formação de palavras. Sinonímia e antonímia. Pontuação. Pronomes.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-pt-007",
+          "ordinal": 7,
+          "text": "Concordância nominal e concordância verbal.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-pt-008",
+          "ordinal": 8,
+          "text": "Flexão nominal e flex ão verbal. Vozes do verbo.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-pt-009",
+          "ordinal": 9,
+          "text": "Correlação de tempos e modos verbais.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-pt-010",
+          "ordinal": 10,
+          "text": "Regência nominal e regência verbal. Coordenação e subordinação. Conectivos.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-pt-011",
+          "ordinal": 11,
+          "text": "Redação (confronto e reconhecimento de frases corretas e incorretas",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-pt-012",
+          "ordinal": 12,
+          "text": "organização e reorganização de orações e perío dos",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-pt-013",
+          "ordinal": 13,
+          "text": "equivalência e transformação de estruturas).",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        }
+      ],
+      "coverage": "partial"
+    },
+    {
+      "id": "trt8-tec-21-rlm",
+      "title": "Matemática e Raciocínio lógico",
+      "disciplineId": "rlm",
+      "group": "general",
+      "originalProgram": "Estrutura lógica de relações arbitrárias entre pessoas, lugares, objetos ou eventos fictícios; deduzir novas informações das relações fornecidas e avaliar as condições usadas para estabelecer a estrutura daquelas relações. Compreensão e elaboração da lógic a das situações por meio de: raciocínio verbal, raciocínio matemático, raciocínio sequencial, orientação espacial e temporal, formação de conceitos, discriminação de elementos. Compreensão do processo lógico que, a partir de um conjunto de hipóteses, conduz, de forma válida, a conclusões determinadas. Números inteiros e racionais: operações (adição, subtração, multiplicação, divisão, potenciação); expressões numéricas; múltiplos e divisores de números naturais; problemas. Frações e operações com frações. Números e grandezas proporcionais: razões e proporções; divisão em partes proporcionais; regra de três; porcentagem e problemas envolvendo regra de três simples, cálculos de porcentagem, acréscimos e descontos. Noções de Estat ísticas: medidas de tendência central (moda, mediana, média aritmética simples e ponderada) e de dispersão (desvio médio, amplitude, variância, desvio padrão); leitura e interpretação de gráficos (histogramas, setores, infográficos) e tabelas.",
+      "items": [
+        {
+          "id": "trt8-tec-21-rlm-001",
+          "ordinal": 1,
+          "text": "Estrutura lógica de relações arbitrárias entre pessoas, lugares, objetos ou eventos fictícios",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-rlm-002",
+          "ordinal": 2,
+          "text": "deduzir novas informações das relações fornecidas e avaliar as condições usadas para estabelecer a estrutura daquelas relações.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-rlm-003",
+          "ordinal": 3,
+          "text": "Compreensão e elaboração da lógic a das situações por meio de: raciocínio verbal, raciocínio matemático, raciocínio sequencial, orientação espacial e temporal, formação de conceitos, discriminação de elementos.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-rlm-004",
+          "ordinal": 4,
+          "text": "Compreensão do processo lógico que, a partir de um conjunto de hipóteses, conduz, de forma válida, a conclusões determinadas.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-rlm-005",
+          "ordinal": 5,
+          "text": "Números inteiros e racionais: operações (adição, subtração, multiplicação, divisão, potenciação) expressões numéricas",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-rlm-006",
+          "ordinal": 6,
+          "text": "múltiplos e divisores de números naturais problemas.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-rlm-007",
+          "ordinal": 7,
+          "text": "Frações e operações com frações.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-rlm-008",
+          "ordinal": 8,
+          "text": "Números e grandezas proporcionais: razões e proporções",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-rlm-009",
+          "ordinal": 9,
+          "text": "divisão em partes proporcionais regra de três",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-rlm-010",
+          "ordinal": 10,
+          "text": "porcentagem e problemas envolvendo regra de três simples, cálculos de porcentagem, acréscimos e descontos.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-rlm-011",
+          "ordinal": 11,
+          "text": "Noções de Estat ísticas: medidas de tendência central (moda, mediana, média aritmética simples e ponderada) e de dispersão (desvio médio, amplitude, variância, desvio padrão)",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-rlm-012",
+          "ordinal": 12,
+          "text": "leitura e interpretação de gráficos (histogramas, setores, infográficos) e tabelas.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        }
+      ],
+      "coverage": "partial"
+    },
+    {
+      "id": "trt8-tec-21-leg",
+      "title": "Noções de Legislação",
+      "disciplineId": null,
+      "group": "general",
+      "originalProgram": "Noções de Sustentabilidade: Resolução CNJ nº 400/2021 (Dispõe sobre a política de sustentabilidade no âmbito do Poder Judiciário). Código de Ética do Tribunal Regional do Trabalho da 8ª Região (Resolução TRT8 nº 88/2012). Regimento Interno do Egrégio Tribunal Regional do Trabalho da Oitava Região (atualizado em 22 de junho de 2026). Política de Prevenção e Enfrentamento da Violência, do Assédio e de Todas as Formas de Discriminação no âmbito do Tribunal Regional do Trabalho da 8ª Região, regulamentada pela Resolução TRT8 nº 065/2025 alterada pela Resolução TRT8 nº 23/2026 e alinhada às diretrizes nacionais do Conselho Nacional de Justiça (Resolução CNJ nº 351/2020) e do Conselho Superior da Justiça do Trabalho (Resolução CSJT nº 360/2023). Perspectiva de Gênero no Poder Judiciário e o Comitê de Incentivo à Participação Institucional Feminina no Poder Judiciário (Resolução CNJ nº 492/2023); Programa de Equidade de Raça, Gênero e Diversidade no âmbito da Justiça do Trabalho (Resolução CSJT nº 368/2023). Tribunal Penal Internacional: Estatuto de Roma e Decreto nº 4.388/2002. Carta das Naç ões Unidas, da qual faz parte integrante o anexo Estatuto da Corte Internacional de Justiça (Decreto nº 19.841/1945).",
+      "rectified": true,
+      "items": [
+        {
+          "id": "trt8-tec-21-leg-001",
+          "ordinal": 1,
+          "text": "Noções de Sustentabilidade: Resolução CNJ nº 400/2021 (Dispõe sobre a política de sustentabilidade no âmbito do Poder Judiciário).",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-leg-002",
+          "ordinal": 2,
+          "text": "Código de Ética do Tribunal Regional do Trabalho da 8ª Região (Resolução TRT8 nº 88/2012).",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-leg-003",
+          "ordinal": 3,
+          "text": "Regimento Interno do Egrégio Tribunal Regional do Trabalho da Oitava Região (atualizado em 22 de junho de 2026).",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-leg-004",
+          "ordinal": 4,
+          "text": "Política de Prevenção e Enfrentamento da Violência, do Assédio e de Todas as Formas de Discriminação no âmbito do Tribunal Regional do Trabalho da 8ª Região, regulamentada pela Resolução TRT8 nº 065/2025 alterada pela Resolução TRT8 nº 23/2026 e alinhada às diretrizes nacionais do Conselho Nacional de Justiça (Resolução CNJ nº 351/2020) e do Conselho Superior da Justiça do Trabalho (Resolução CSJT nº 360/2023).",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-leg-005",
+          "ordinal": 5,
+          "text": "Perspectiva de Gênero no Poder Judiciário e o Comitê de Incentivo à Participação Institucional Feminina no Poder Judiciário (Resolução CNJ nº 492/2023)",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-leg-006",
+          "ordinal": 6,
+          "text": "Programa de Equidade de Raça, Gênero e Diversidade no âmbito da Justiça do Trabalho (Resolução CSJT nº 368/2023).",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-leg-007",
+          "ordinal": 7,
+          "text": "Tribunal Penal Internacional: Estatuto de Roma e Decreto nº 4.388/2002.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-leg-008",
+          "ordinal": 8,
+          "text": "Carta das Naç ões Unidas, da qual faz parte integrante o anexo Estatuto da Corte Internacional de Justiça (Decreto nº 19.841/1945).",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        }
+      ],
+      "coverage": "preparation"
+    },
+    {
+      "id": "trt8-tec-21-dh",
+      "title": "Noções de Direitos Humanos",
+      "disciplineId": null,
+      "group": "general",
+      "originalProgram": "Direitos Humanos: Evolução histórica dos Direitos Humanos. Os fundamentos filosóficos dos Direitos Humanos. Fontes, classificação, princípios, características e gerações de direitos humanos. Interpretação dos tratados de Direitos Humanos. Colisão entre direitos humanos: Teorias para resolução. Tratados internacionais de Direitos Humanos em face da Constituição da República Federativa do Brasil de 1988. Controle de convencionalidade. Declaração Universal dos Direitos Humanos. Pacto Internacional dos Direitos Civis e Políticos (PIDCP) e protocolos facultativos. Pacto Internacional dos Direitos Econômicos, Sociais e Culturais (PIDESC) e protocolos facultativos.",
+      "items": [
+        {
+          "id": "trt8-tec-21-dh-001",
+          "ordinal": 1,
+          "text": "Direitos Humanos: Evolução histórica dos Direitos Humanos.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-dh-002",
+          "ordinal": 2,
+          "text": "Os fundamentos filosóficos dos Direitos Humanos.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-dh-003",
+          "ordinal": 3,
+          "text": "Fontes, classificação, princípios, características e gerações de direitos humanos.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-dh-004",
+          "ordinal": 4,
+          "text": "Interpretação dos tratados de Direitos Humanos.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-dh-005",
+          "ordinal": 5,
+          "text": "Colisão entre direitos humanos: Teorias para resolução.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-dh-006",
+          "ordinal": 6,
+          "text": "Tratados internacionais de Direitos Humanos em face da Constituição da República Federativa do Brasil de 1988.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-dh-007",
+          "ordinal": 7,
+          "text": "Controle de convencionalidade.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-dh-008",
+          "ordinal": 8,
+          "text": "Declaração Universal dos Direitos Humanos.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-dh-009",
+          "ordinal": 9,
+          "text": "Pacto Internacional dos Direitos Civis e Políticos (PIDCP) e protocolos facultativos.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-dh-010",
+          "ordinal": 10,
+          "text": "Pacto Internacional dos Direitos Econômicos, Sociais e Culturais (PIDESC) e protocolos facultativos.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        }
+      ],
+      "coverage": "preparation"
+    },
+    {
+      "id": "trt8-tec-21-pcd",
+      "title": "Noções sobre direitos das pessoas com deficiência",
+      "disciplineId": null,
+      "group": "general",
+      "originalProgram": "Inclusão, direitos e garantias legais e constitucionais das pessoas com deficiência. Lei nº 13.146/2015 institui a Lei Brasileira de Inclusão da Pessoa com Deficiência (Estatuto da Pessoa com Deficiência); Lei nº 11.126/2005 e Constituição Federal de 1988. Normas gerais e critérios básicos para a promoção da acessibilidade das pessoas portadoras de deficiência ou com mobilidade reduzida (Lei nº 10.098/2000 e Decreto 5.296/2004). Prioridade de atendimento às pessoas p ortadoras de deficiência (Lei nº 10.048/2000 e Decreto 5.296/2004). Símbolo de identificação de pessoas portadoras de deficiência auditiva (Lei nº 8.160/1991). Normas de apoio às pessoas portadoras de deficiência e sua integração social (Lei nº 7.853/1989 e alterações e Decreto 3.298/1999 e alterações).",
+      "items": [
+        {
+          "id": "trt8-tec-21-pcd-001",
+          "ordinal": 1,
+          "text": "Inclusão, direitos e garantias legais e constitucionais das pessoas com deficiência.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-pcd-002",
+          "ordinal": 2,
+          "text": "Lei nº 13.146/2015 institui a Lei Brasileira de Inclusão da Pessoa com Deficiência (Estatuto da Pessoa com Deficiência)",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-pcd-003",
+          "ordinal": 3,
+          "text": "Lei nº 11.126/2005 e Constituição Federal de 1988.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-pcd-004",
+          "ordinal": 4,
+          "text": "Normas gerais e critérios básicos para a promoção da acessibilidade das pessoas portadoras de deficiência ou com mobilidade reduzida (Lei nº 10.098/2000 e Decreto 5.296/2004).",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-pcd-005",
+          "ordinal": 5,
+          "text": "Prioridade de atendimento às pessoas p ortadoras de deficiência (Lei nº 10.048/2000 e Decreto 5.296/2004).",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-pcd-006",
+          "ordinal": 6,
+          "text": "Símbolo de identificação de pessoas portadoras de deficiência auditiva (Lei nº 8.160/1991).",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-pcd-007",
+          "ordinal": 7,
+          "text": "Normas de apoio às pessoas portadoras de deficiência e sua integração social (Lei nº 7.853/1989 e alterações e Decreto 3.298/1999 e alterações).",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        }
+      ],
+      "coverage": "preparation"
+    },
+    {
+      "id": "trt8-tec-21-info",
+      "title": "Noções de Informática",
+      "disciplineId": null,
+      "group": "general",
+      "originalProgram": "Noções de sistema operacional: Windows 10 e 11. E-mail, edição de textos, planilhas, agenda e apresentações: Google Workspace . Compartilhamento de arquivos: Google Workspace . Google Drive: Criar arquivos, editar, compartilhamento de arquivos e permissões; Agenda: Criar eventos, convidar participantes, ajustar horários, anexar documentos, adicionar videoconferência; Tarefas; Google Meet ; Gmail: Configurações rápidas, painel de visualização, marcadores; editor de texto (documentos Google). Redes de Computadores: Conceitos básicos, ferramentas, aplicativos e procedimentos de internet e intranet. Navegadores web: Mozilla Firefox, Google Chrome, Microsoft Edge. Sítios de busca e pesquisa na internet: Utilização de mecanismos de busca como Google, Bing. Conceitos de organização e de gerenciamento de informações: Arquivos, pastas e programas. Segurança da informação: Procedimentos de segurança; noções de vírus, worms e outras pragas virtuais; aplicativos para segurança (antivírus, firewall, antispyware etc.); boas práticas de segurança cibernética, incluindo autenticação de dois fatores e gestão de senhas.",
+      "items": [
+        {
+          "id": "trt8-tec-21-info-001",
+          "ordinal": 1,
+          "text": "Noções de sistema operacional: Windows 10 e 11.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-info-002",
+          "ordinal": 2,
+          "text": "E-mail, edição de textos, planilhas, agenda e apresentações: Google Workspace .",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-info-003",
+          "ordinal": 3,
+          "text": "Compartilhamento de arquivos: Google Workspace .",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-info-004",
+          "ordinal": 4,
+          "text": "Google Drive: Criar arquivos, editar, compartilhamento de arquivos e permissões",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-info-005",
+          "ordinal": 5,
+          "text": "Agenda: Criar eventos, convidar participantes, ajustar horários, anexar documentos, adicionar videoconferência Tarefas Google Meet",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-info-006",
+          "ordinal": 6,
+          "text": "Gmail: Configurações rápidas, painel de visualização, marcadores",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-info-007",
+          "ordinal": 7,
+          "text": "editor de texto (documentos Google).",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-info-008",
+          "ordinal": 8,
+          "text": "Redes de Computadores: Conceitos básicos, ferramentas, aplicativos e procedimentos de internet e intranet.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-info-009",
+          "ordinal": 9,
+          "text": "Navegadores web: Mozilla Firefox, Google Chrome, Microsoft Edge.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-info-010",
+          "ordinal": 10,
+          "text": "Sítios de busca e pesquisa na internet: Utilização de mecanismos de busca como Google, Bing.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-info-011",
+          "ordinal": 11,
+          "text": "Conceitos de organização e de gerenciamento de informações: Arquivos, pastas e programas.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-info-012",
+          "ordinal": 12,
+          "text": "Segurança da informação: Procedimentos de segurança",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-info-013",
+          "ordinal": 13,
+          "text": "noções de vírus, worms e outras pragas virtuais",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-info-014",
+          "ordinal": 14,
+          "text": "aplicativos para segurança (antivírus, firewall, antispyware etc.)",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-info-015",
+          "ordinal": 15,
+          "text": "boas práticas de segurança cibernética, incluindo autenticação de dois fatores e gestão de senhas.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        }
+      ],
+      "coverage": "preparation"
+    },
+    {
+      "id": "trt8-tec-21-cf",
+      "title": "Noções de Direito Constitucional",
+      "disciplineId": "cf",
+      "group": "specific",
+      "originalProgram": "Da aplicabilidade das normas constitucionais: normas de eficácia plena, contida e limitada; normas programáticas. Controle de constitucionalidade: ação direta de inconstitucionalidade; ação declaratória de constitucionalidade e arguição de descumprimento de preceito fundamental. Princípios fundamentais. Dos direitos e garantias fundamentais: dos direitos e deveres individuais e coletivos; dos direitos sociais; dos direitos de nacionalidade; dos direitos políticos; dos partidos políticos. Da organização do Estado: da organização político -administrativa: da União; dos Estados Federados; dos Municípios; Do Distrito Federal; dos Territórios; da intervenção. Da Administração Pública: disposições gerais; dos servidores públicos. Da organização dos Poderes. Do Poder Executivo: do Presidente e do Vice - Presidente da República; Das atribuições e responsabilidades do Presidente da República. Do Poder Legislativo: do processo legislativo. Da fiscalização contábil, financeira e orçamentária. Do Poder Judiciário: disposições gerais; do Supremo Tribunal Federal; do Conselho Nacional de Justiça: organização e competência. Do Superior Tribunal de Justiça. Do Tribunal Superior do Trabalho, dos Tribunais Regionais do Trabalho e dos Juízes do Trabalho. Do Conselho Superior da Justiça do Trabalho: organização e competência. Das funções essenciais à Justiça: do Ministério Público; da Advocacia Pública; da Advocacia e da Defensoria Pública.",
+      "items": [
+        {
+          "id": "trt8-tec-21-cf-001",
+          "ordinal": 1,
+          "text": "Da aplicabilidade das normas constitucionais: normas de eficácia plena, contida e limitada normas programáticas.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-cf-002",
+          "ordinal": 2,
+          "text": "Controle de constitucionalidade: ação direta de inconstitucionalidade",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-cf-003",
+          "ordinal": 3,
+          "text": "ação declaratória de constitucionalidade e arguição de descumprimento de preceito fundamental. Princípios fundamentais.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-cf-004",
+          "ordinal": 4,
+          "text": "Dos direitos e garantias fundamentais: dos direitos e deveres individuais e coletivos dos direitos sociais",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-cf-005",
+          "ordinal": 5,
+          "text": "dos direitos de nacionalidade dos direitos políticos dos partidos políticos.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-cf-006",
+          "ordinal": 6,
+          "text": "Da organização do Estado: da organização político -administrativa: da União dos Estados Federados dos Municípios Do Distrito Federal dos Territórios da intervenção.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-cf-007",
+          "ordinal": 7,
+          "text": "Da Administração Pública: disposições gerais dos servidores públicos. Da organização dos Poderes.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-cf-008",
+          "ordinal": 8,
+          "text": "Do Poder Executivo: do Presidente e do Vice - Presidente da República",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-cf-009",
+          "ordinal": 9,
+          "text": "Das atribuições e responsabilidades do Presidente da República.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-cf-010",
+          "ordinal": 10,
+          "text": "Do Poder Legislativo: do processo legislativo.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-cf-011",
+          "ordinal": 11,
+          "text": "Da fiscalização contábil, financeira e orçamentária.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-cf-012",
+          "ordinal": 12,
+          "text": "Do Poder Judiciário: disposições gerais do Supremo Tribunal Federal",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-cf-013",
+          "ordinal": 13,
+          "text": "do Conselho Nacional de Justiça: organização e competência.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-cf-014",
+          "ordinal": 14,
+          "text": "Do Superior Tribunal de Justiça.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-cf-015",
+          "ordinal": 15,
+          "text": "Do Tribunal Superior do Trabalho, dos Tribunais Regionais do Trabalho e dos Juízes do Trabalho.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-cf-016",
+          "ordinal": 16,
+          "text": "Do Conselho Superior da Justiça do Trabalho: organização e competência.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-cf-017",
+          "ordinal": 17,
+          "text": "Das funções essenciais à Justiça: do Ministério Público da Advocacia Pública",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-cf-018",
+          "ordinal": 18,
+          "text": "da Advocacia e da Defensoria Pública.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        }
+      ],
+      "coverage": "partial"
+    },
+    {
+      "id": "trt8-tec-21-adm",
+      "title": "Noções de Direito Administrativo",
+      "disciplineId": "adm",
+      "group": "specific",
+      "originalProgram": "Administração Pública. Regime jurídico administrativo. Princípios constitucionais e legais da Administração Pública. Princípios administrativos implícitos. Lei de Introdução às normas do Direito Brasileiro e sua aplicação na Administração Pública (Decreto-Lei nº 4.657/1942 e suas alterações). Poderes da Administração Pública: poder hierárquico, poder disciplinar, poder regulamentar, poder de polícia. Poderes e deveres dos administradores públicos. Uso e abuso do poder. Crimes de abuso de autoridade (Lei nº 13.869/2019 e suas alterações). Ato administrativo: conceito, características e atributos; elementos e requisitos de validade; classificação dos atos administrativos; formação e efeitos; extinção, revogação, invalidação e convalidação; cassação e caducidade. Processo administrativo no âmbito da Administração Pública Federal (Lei nº 9.784/1999 e suas alterações). Controle da Administração Pública. Classificações relativas ao controle da Administração Pública. Controle exerc ido pelo Poder Judiciário, pelo Poder Legislativo e pelos Tribunais de Contas. Sanções aplicáveis em virtude da prática de atos de improbidade administrativa (Lei nº 8.429/1992 e suas alterações). Lei de licitações e contratos administrativos (Lei nº 14.133/2021 e suas alterações). Licitação: conceito, natureza jurídica, objeto e finalidade; princípios básicos e correlatos; modalidades; obrigatoriedade, dispensa e inexigibilidade; procedimento licitatório; anulação, revogação e recursos administrativos; san ções e procedimento sancionatório; crimes em licitações e contratos administrativos. Contrato administrativo: conceito, principais características e espécies; formalização, execução e inexecução; duração, prorrogação, renovação e extinção; revisão e rescisão; reajustamento. A gentes públicos: classificação; cargo, emprego e função pública; provimento e investidura; exercício e afastamentos. Direito de Greve. Regime jurídico dos servidores públicos civis da União, das autarquias e das fundações públicas federais (Lei nº 8.112/19 90 consolidada nos termos da Lei nº 9.527/1997 e alterações). Lei nº 11.416/2006 (dispõe sobre as carreiras dos servidores públicos do Poder Judiciário Federal). Regime constitucional dos servidores públicos na Constituição Federal de 1988. Regime de emprego público e disposições da Consolidação das Leis do Trabalho (CLT) aplicáveis. Responsabilidade civil, administrativa e penal dos agentes públicos. Regime e processo administrativo disciplinar.",
+      "items": [
+        {
+          "id": "trt8-tec-21-adm-001",
+          "ordinal": 1,
+          "text": "Administração Pública.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-adm-002",
+          "ordinal": 2,
+          "text": "Regime jurídico administrativo.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-adm-003",
+          "ordinal": 3,
+          "text": "Princípios constitucionais e legais da Administração Pública.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-adm-004",
+          "ordinal": 4,
+          "text": "Princípios administrativos implícitos.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-adm-005",
+          "ordinal": 5,
+          "text": "Lei de Introdução às normas do Direito Brasileiro e sua aplicação na Administração Pública (Decreto-Lei nº 4.657/1942 e suas alterações).",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-adm-006",
+          "ordinal": 6,
+          "text": "Poderes da Administração Pública: poder hierárquico, poder disciplinar, poder regulamentar, poder de polícia.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-adm-007",
+          "ordinal": 7,
+          "text": "Poderes e deveres dos administradores públicos. Uso e abuso do poder.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-adm-008",
+          "ordinal": 8,
+          "text": "Crimes de abuso de autoridade (Lei nº 13.869/2019 e suas alterações).",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-adm-009",
+          "ordinal": 9,
+          "text": "Ato administrativo: conceito, características e atributos",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-adm-010",
+          "ordinal": 10,
+          "text": "elementos e requisitos de validade",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-adm-011",
+          "ordinal": 11,
+          "text": "classificação dos atos administrativos formação e efeitos",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-adm-012",
+          "ordinal": 12,
+          "text": "extinção, revogação, invalidação e convalidação cassação e caducidade.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-adm-013",
+          "ordinal": 13,
+          "text": "Processo administrativo no âmbito da Administração Pública Federal (Lei nº 9.784/1999 e suas alterações).",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-adm-014",
+          "ordinal": 14,
+          "text": "Controle da Administração Pública.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-adm-015",
+          "ordinal": 15,
+          "text": "Classificações relativas ao controle da Administração Pública.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-adm-016",
+          "ordinal": 16,
+          "text": "Controle exerc ido pelo Poder Judiciário, pelo Poder Legislativo e pelos Tribunais de Contas.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-adm-017",
+          "ordinal": 17,
+          "text": "Sanções aplicáveis em virtude da prática de atos de improbidade administrativa (Lei nº 8.429/1992 e suas alterações).",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-adm-018",
+          "ordinal": 18,
+          "text": "Lei de licitações e contratos administrativos (Lei nº 14.133/2021 e suas alterações).",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-adm-019",
+          "ordinal": 19,
+          "text": "Licitação: conceito, natureza jurídica, objeto e finalidade",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-adm-020",
+          "ordinal": 20,
+          "text": "princípios básicos e correlatos modalidades",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-adm-021",
+          "ordinal": 21,
+          "text": "obrigatoriedade, dispensa e inexigibilidade procedimento licitatório",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-adm-022",
+          "ordinal": 22,
+          "text": "anulação, revogação e recursos administrativos",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-adm-023",
+          "ordinal": 23,
+          "text": "san ções e procedimento sancionatório",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-adm-024",
+          "ordinal": 24,
+          "text": "crimes em licitações e contratos administrativos.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-adm-025",
+          "ordinal": 25,
+          "text": "Contrato administrativo: conceito, principais características e espécies",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-adm-026",
+          "ordinal": 26,
+          "text": "formalização, execução e inexecução",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-adm-027",
+          "ordinal": 27,
+          "text": "duração, prorrogação, renovação e extinção revisão e rescisão reajustamento.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-adm-028",
+          "ordinal": 28,
+          "text": "A gentes públicos: classificação",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-adm-029",
+          "ordinal": 29,
+          "text": "cargo, emprego e função pública provimento e investidura exercício e afastamentos. Direito de Greve.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-adm-030",
+          "ordinal": 30,
+          "text": "Regime jurídico dos servidores públicos civis da União, das autarquias e das fundações públicas federais (Lei nº 8.112/19 90 consolidada nos termos da Lei nº 9.527/1997 e alterações).",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-adm-031",
+          "ordinal": 31,
+          "text": "Lei nº 11.416/2006 (dispõe sobre as carreiras dos servidores públicos do Poder Judiciário Federal).",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-adm-032",
+          "ordinal": 32,
+          "text": "Regime constitucional dos servidores públicos na Constituição Federal de 1988.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-adm-033",
+          "ordinal": 33,
+          "text": "Regime de emprego público e disposições da Consolidação das Leis do Trabalho (CLT) aplicáveis.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-adm-034",
+          "ordinal": 34,
+          "text": "Responsabilidade civil, administrativa e penal dos agentes públicos.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-adm-035",
+          "ordinal": 35,
+          "text": "Regime e processo administrativo disciplinar.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        }
+      ],
+      "coverage": "partial"
+    },
+    {
+      "id": "trt8-tec-21-gestao",
+      "title": "Noções de Administração Pública",
+      "disciplineId": null,
+      "group": "specific",
+      "originalProgram": "Características básicas das organizações formais modernas: tipos de estrutura organizacional, natureza, finalidades e critérios de departamentalização. Evolução das Teorias das Organizações. Convergências e diferenças entre a gestão pública e a gestão privada. Princípios básicos da Administração Pública. Gestão de resultados na produção de serviços públicos. Comunicação na gestão pública e gestão de redes organizacionais. Gestão e avaliação de desempenho. Modelos de Avaliação de Desempenho. Processo organiz acional: planejamento, direção, coordenação, comunicação, controle e avaliação. Gestão estratégica: planejamento estratégico, tático e operacional. Gestão de pessoas do quadro próprio e terceirizadas. Gestão por Processos. Gestão por Projetos. Gestão de co ntratos. Gestão da Qualidade: excelência nos serviços públicos. Motivação. Liderança. Tipos de decisão e processo decisório.",
+      "items": [
+        {
+          "id": "trt8-tec-21-gestao-001",
+          "ordinal": 1,
+          "text": "Características básicas das organizações formais modernas: tipos de estrutura organizacional, natureza, finalidades e critérios de departamentalização.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-gestao-002",
+          "ordinal": 2,
+          "text": "Evolução das Teorias das Organizações.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-gestao-003",
+          "ordinal": 3,
+          "text": "Convergências e diferenças entre a gestão pública e a gestão privada.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-gestao-004",
+          "ordinal": 4,
+          "text": "Princípios básicos da Administração Pública.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-gestao-005",
+          "ordinal": 5,
+          "text": "Gestão de resultados na produção de serviços públicos.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-gestao-006",
+          "ordinal": 6,
+          "text": "Comunicação na gestão pública e gestão de redes organizacionais.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-gestao-007",
+          "ordinal": 7,
+          "text": "Gestão e avaliação de desempenho.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-gestao-008",
+          "ordinal": 8,
+          "text": "Modelos de Avaliação de Desempenho.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-gestao-009",
+          "ordinal": 9,
+          "text": "Processo organiz acional: planejamento, direção, coordenação, comunicação, controle e avaliação.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-gestao-010",
+          "ordinal": 10,
+          "text": "Gestão estratégica: planejamento estratégico, tático e operacional.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-gestao-011",
+          "ordinal": 11,
+          "text": "Gestão de pessoas do quadro próprio e terceirizadas. Gestão por Processos. Gestão por Projetos. Gestão de co ntratos.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-gestao-012",
+          "ordinal": 12,
+          "text": "Gestão da Qualidade: excelência nos serviços públicos. Motivação. Liderança.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-gestao-013",
+          "ordinal": 13,
+          "text": "Tipos de decisão e processo decisório.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        }
+      ],
+      "coverage": "preparation"
+    },
+    {
+      "id": "trt8-tec-21-trab",
+      "title": "Noções de Direito do Trabalho",
+      "disciplineId": "trab",
+      "group": "specific",
+      "originalProgram": "Dos princípios e fontes do Direito do Trabalho. Dos direitos constitucionais dos trabalhadores (artigo 7º da Constituição Federal de 1988). Da relação de trabalho e da relação de emprego: requisitos e distinção. Dos sujeitos do contrato de trabalho stricto sensu: do empregado e do empregador: conceito e caracterização; dos poderes do empregador no contrato de trabalho. Do grupo econômico; da sucessão de empregadores; da responsabilidade solidária. Do contrato individual de tra balho: conceito, classificação e características. Da alteração do contrato de trabalho: alteração unilateral e bilateral; o jus variandi. Da suspensão e interrupção do contrato de trabalho: caracterização e distinção. Da rescisão do contrato de trabalho: das justas causas; da despedida indireta; da dispensa arbitrária; da culpa recíproca; da indenização. Do aviso prévio. Da duração do trabalho; da jornada de trabalho; dos períodos de descanso; do intervalo para repouso e alimentação; do descanso semanal remunerado; do trabalho noturno e do trabalho extraordinário. Do salário mínimo; irredutibilidade e garantia. Das férias: do direito a férias e da sua duração; da concessão e da época das férias; da remuneração e do abono de férias. Do salário e da remuneração: conceito e distinções; composição do salário; modalidades de salário; formas e meios de pagamento do salário; 13º salário. Do Fundo de Garantia do Tempo de Serviço (FGTS). Da prescrição e decadência. Da segurança e medicina no trabalho: das atividades perigosas ou insalubres. Da proteção ao trabalho do menor. Da proteção ao trabalho da mul her; da estabilidade da gestante; da licença-maternidade. Do direito coletivo do trabalho: das convenções e acordos coletivos de trabalho. Das comissões de Conciliação Prévia. Da renúncia e transação. Do teletrabalho (Lei nº 13.467/2017). Dano moral e material nas relações de trabalho. Precedentes vinculantes (IRDR e IAC). Súmulas e Orientações da Jurisprudência uniformizada do Tribunal Superior do Trabalho sobre Direito do Trabalho. Súmulas Vinculantes do Supremo Tribunal Federal relativas ao Direito do Trabalho. Instruções e atos Normativos do TST em matéria de Direito do Trabalho. Reforma Trabalhista – Lei nº 13.467/2017.",
+      "items": [
+        {
+          "id": "trt8-tec-21-trab-001",
+          "ordinal": 1,
+          "text": "Dos princípios e fontes do Direito do Trabalho.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-trab-002",
+          "ordinal": 2,
+          "text": "Dos direitos constitucionais dos trabalhadores (artigo 7º da Constituição Federal de 1988).",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-trab-003",
+          "ordinal": 3,
+          "text": "Da relação de trabalho e da relação de emprego: requisitos e distinção.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-trab-004",
+          "ordinal": 4,
+          "text": "Dos sujeitos do contrato de trabalho stricto sensu: do empregado e do empregador: conceito e caracterização",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-trab-005",
+          "ordinal": 5,
+          "text": "dos poderes do empregador no contrato de trabalho. Do grupo econômico da sucessão de empregadores",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-trab-006",
+          "ordinal": 6,
+          "text": "da responsabilidade solidária.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-trab-007",
+          "ordinal": 7,
+          "text": "Do contrato individual de tra balho: conceito, classificação e características.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-trab-008",
+          "ordinal": 8,
+          "text": "Da alteração do contrato de trabalho: alteração unilateral e bilateral o jus variandi.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-trab-009",
+          "ordinal": 9,
+          "text": "Da suspensão e interrupção do contrato de trabalho: caracterização e distinção.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-trab-010",
+          "ordinal": 10,
+          "text": "Da rescisão do contrato de trabalho: das justas causas da despedida indireta da dispensa arbitrária da culpa recíproca da indenização. Do aviso prévio. Da duração do trabalho da jornada de trabalho dos períodos de descanso",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-trab-011",
+          "ordinal": 11,
+          "text": "do intervalo para repouso e alimentação",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-trab-012",
+          "ordinal": 12,
+          "text": "do descanso semanal remunerado",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-trab-013",
+          "ordinal": 13,
+          "text": "do trabalho noturno e do trabalho extraordinário. Do salário mínimo",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-trab-014",
+          "ordinal": 14,
+          "text": "irredutibilidade e garantia.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-trab-015",
+          "ordinal": 15,
+          "text": "Das férias: do direito a férias e da sua duração",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-trab-016",
+          "ordinal": 16,
+          "text": "da concessão e da época das férias",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-trab-017",
+          "ordinal": 17,
+          "text": "da remuneração e do abono de férias.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-trab-018",
+          "ordinal": 18,
+          "text": "Do salário e da remuneração: conceito e distinções composição do salário modalidades de salário",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-trab-019",
+          "ordinal": 19,
+          "text": "formas e meios de pagamento do salário; 13º salário.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-trab-020",
+          "ordinal": 20,
+          "text": "Do Fundo de Garantia do Tempo de Serviço (FGTS). Da prescrição e decadência.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-trab-021",
+          "ordinal": 21,
+          "text": "Da segurança e medicina no trabalho: das atividades perigosas ou insalubres.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-trab-022",
+          "ordinal": 22,
+          "text": "Da proteção ao trabalho do menor.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-trab-023",
+          "ordinal": 23,
+          "text": "Da proteção ao trabalho da mul her da estabilidade da gestante da licença-maternidade.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-trab-024",
+          "ordinal": 24,
+          "text": "Do direito coletivo do trabalho: das convenções e acordos coletivos de trabalho.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-trab-025",
+          "ordinal": 25,
+          "text": "Das comissões de Conciliação Prévia. Da renúncia e transação.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-trab-026",
+          "ordinal": 26,
+          "text": "Do teletrabalho (Lei nº 13.467/2017).",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-trab-027",
+          "ordinal": 27,
+          "text": "Dano moral e material nas relações de trabalho.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-trab-028",
+          "ordinal": 28,
+          "text": "Precedentes vinculantes (IRDR e IAC).",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-trab-029",
+          "ordinal": 29,
+          "text": "Súmulas e Orientações da Jurisprudência uniformizada do Tribunal Superior do Trabalho sobre Direito do Trabalho.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-trab-030",
+          "ordinal": 30,
+          "text": "Súmulas Vinculantes do Supremo Tribunal Federal relativas ao Direito do Trabalho.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-trab-031",
+          "ordinal": 31,
+          "text": "Instruções e atos Normativos do TST em matéria de Direito do Trabalho.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-trab-032",
+          "ordinal": 32,
+          "text": "Reforma Trabalhista – Lei nº 13.467/2017.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        }
+      ],
+      "coverage": "partial"
+    },
+    {
+      "id": "trt8-tec-21-ptra",
+      "title": "Noções de Direito Processual de Trabalho",
+      "disciplineId": "ptra",
+      "group": "specific",
+      "originalProgram": "Da Justiça do Trabalho: organização e competência. Das Varas do Trabalho e dos Tribunais Regionais do Trabalho: jurisdição e competência. Dos serviços auxiliares da Justiça do Trabalho: das secretarias das Varas do Trabalho e dos distribuidores. Do processo judiciário do trabalho: princípios gerais do processo trabalhista (aplicação subsidiária do Código de Processo Civil). Dos atos, termos e prazos processuais. Das custas e emolumentos. Das partes e procuradores; do jus postulandi; da substituição e representação processuais; da assistência judiciária; dos honorários de advogado. Das audiências: de conciliação, de instrução e de julgamento; da notificação das partes; do arquivamento do processo; da revelia e confissão. Dos dissídios individuais: da forma de reclamação e notificação; da reclamação escrita e verbal; da legitimidade para ajuizar. Do procedimento ordinário e sumaríssimo. Execução: Procedimentos; Embargos à execução; Praça e leilão; Arrematação. Recursos no processo do trabalho. Informatização do Processo Judicial (Lei nº 11.419/2006 e alterações).",
+      "items": [
+        {
+          "id": "trt8-tec-21-ptra-001",
+          "ordinal": 1,
+          "text": "Da Justiça do Trabalho: organização e competência.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-ptra-002",
+          "ordinal": 2,
+          "text": "Das Varas do Trabalho e dos Tribunais Regionais do Trabalho: jurisdição e competência.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-ptra-003",
+          "ordinal": 3,
+          "text": "Dos serviços auxiliares da Justiça do Trabalho: das secretarias das Varas do Trabalho e dos distribuidores.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-ptra-004",
+          "ordinal": 4,
+          "text": "Do processo judiciário do trabalho: princípios gerais do processo trabalhista (aplicação subsidiária do Código de Processo Civil).",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-ptra-005",
+          "ordinal": 5,
+          "text": "Dos atos, termos e prazos processuais. Das custas e emolumentos. Das partes e procuradores do jus postulandi",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-ptra-006",
+          "ordinal": 6,
+          "text": "da substituição e representação processuais da assistência judiciária dos honorários de advogado.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-ptra-007",
+          "ordinal": 7,
+          "text": "Das audiências: de conciliação, de instrução e de julgamento da notificação das partes do arquivamento do processo da revelia e confissão.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-ptra-008",
+          "ordinal": 8,
+          "text": "Dos dissídios individuais: da forma de reclamação e notificação",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-ptra-009",
+          "ordinal": 9,
+          "text": "da reclamação escrita e verbal",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-ptra-010",
+          "ordinal": 10,
+          "text": "da legitimidade para ajuizar.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-ptra-011",
+          "ordinal": 11,
+          "text": "Do procedimento ordinário e sumaríssimo. Execução: Procedimentos Embargos à execução Praça e leilão Arrematação.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-ptra-012",
+          "ordinal": 12,
+          "text": "Recursos no processo do trabalho.",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        },
+        {
+          "id": "trt8-tec-21-ptra-013",
+          "ordinal": 13,
+          "text": "Informatização do Processo Judicial (Lei nº 11.419/2006 e alterações).",
+          "organizational": false,
+          "moduleIds": [],
+          "mappingStatus": "pending_review",
+          "coverage": "to_audit"
+        }
+      ],
+      "coverage": "partial"
+    }
+  ]
+}
