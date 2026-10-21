@@ -146,7 +146,7 @@
   function ensureEntry() {
     const current=OBJECTIVES.getActive();
     const grid=document.getElementById('disciplineGrid');
-    if (!grid || current!==GOAL_ID) { document.getElementById(entryId)?.remove(); return; }
+    if (!grid || current!==GOAL_ID) { document.getElementById(entryId)?.remove(); if (current!==GOAL_ID) close(); return; }
     let button=document.getElementById(entryId);
     if (!button) { button=document.createElement('button'); button.id=entryId; button.type='button'; button.className='exam-verticalized-entry'; button.textContent='Abrir Edital Verticalizado'; button.addEventListener('click',open); }
     if (grid.previousElementSibling!==button) grid.before(button);
