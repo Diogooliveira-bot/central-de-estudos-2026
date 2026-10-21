@@ -1,0 +1,378 @@
+{
+  "schemaVersion": 1,
+  "examId": "trt8-2026-tecnico-administrativa-21",
+  "disciplineId": "trt8-tec-21-dh",
+  "title": "Noções de Direitos Humanos — TRT-8 Técnico Judiciário, Área Administrativa",
+  "edition": "2026-10-21",
+  "releaseStatus": "draft_editorial_review",
+  "pedagogicalApproach": "Explicação da primeira leitura, funcionamento jurídico, exemplo do tribunal, aprofundamento, revisão, pegadinhas, 2 questões autorais comentadas e checklist por aula.",
+  "sources": [
+    {
+      "label": "Constituição Federal de 1988, arts. 1º, III, 4º, II, e 5º, §§ 1º a 4º",
+      "url": "https://www.planalto.gov.br/ccivil_03/constituicao/constituicaocompilado.htm",
+      "scope": "Fundamentos, abertura constitucional aos direitos humanos e hierarquia dos tratados."
+    },
+    {
+      "label": "Declaração Universal dos Direitos Humanos — Nações Unidas",
+      "url": "https://brasil.un.org/pt-br/91601-declara%C3%A7%C3%A3o-universal-dos-direitos-humanos",
+      "scope": "DUDH, aprovada em 10 de dezembro de 1948: natureza, 30 artigos e conteúdo."
+    },
+    {
+      "label": "Pacto Internacional sobre Direitos Civis e Políticos — Decreto nº 592/1992",
+      "url": "https://www.planalto.gov.br/ccivil_03/decreto/1990-1994/d0592.htm",
+      "scope": "PIDCP promulgado no Brasil."
+    },
+    {
+      "label": "Pacto Internacional sobre Direitos Econômicos, Sociais e Culturais — Decreto nº 591/1992",
+      "url": "https://www.planalto.gov.br/ccivil_03/decreto/1990-1994/d0591.htm",
+      "scope": "PIDESC promulgado no Brasil."
+    },
+    {
+      "label": "Protocolos Facultativos do PIDCP — Decreto nº 11.777/2023",
+      "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/decreto/d11777.htm",
+      "scope": "Comunicações individuais e abolição da pena de morte, observada reserva do segundo protocolo."
+    },
+    {
+      "label": "Convenção de Viena sobre o Direito dos Tratados — Decreto nº 7.030/2009",
+      "url": "https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2009/decreto/d7030.htm",
+      "scope": "Arts. 31 a 33: interpretação, boa-fé, contexto, objeto, finalidade e meios suplementares."
+    },
+    {
+      "label": "Supremo Tribunal Federal — Súmula Vinculante 25 e jurisprudência selecionada",
+      "url": "https://portal.stf.jus.br/jurisprudencia/sumariosumulas.asp?base=26&sumula=1268",
+      "scope": "Supralegalidade dos tratados de direitos humanos sem rito do art. 5º, §3º, conforme a jurisprudência destacada."
+    },
+    {
+      "label": "ONU — Depositário, Protocolo Facultativo ao PIDESC (status até outubro de 2026)",
+      "url": "https://treaties-prod.un.org/PAGES/ViewDetails.aspx?chapter=4&clang=_en&mtdsg_no=IV-3-a&src=TREATY",
+      "scope": "Na lista de signatários e partes consultada em 21/10/2026 não consta Brasil; não confundir o protocolo com o PIDESC ratificado."
+    },
+    {
+      "label": "Convenção Americana sobre Direitos Humanos — Decreto nº 678/1992",
+      "url": "https://www.planalto.gov.br/ccivil_03/decreto/d0678.htm",
+      "scope": "Tratado regional usado como exemplo de controle de convencionalidade."
+    }
+  ],
+  "lessons": [
+    {
+      "topicId": "trt8-tec-21-dh-001",
+      "moduleId": "dh-m01",
+      "number": 1,
+      "title": "Evolução histórica dos direitos humanos",
+      "goal": "Compreender a formação histórica dos direitos humanos e localizar marcos essenciais sem tratar história como uma linha linear.",
+      "complete": {
+        "firstRead": [
+          "Direitos humanos não nasceram em uma única data. São reivindicações e garantias voltadas à dignidade das pessoas, construídas em conflitos sociais e decisões políticas. A expressão ganhou centralidade internacional sobretudo após a Segunda Guerra Mundial; antes disso, já havia experiências de limitação do poder e de afirmação de liberdades, como documentos constitucionais e declarações de direitos.",
+          "Na história moderna, costumam ser lembrados os constitucionalismos inglês, norte-americano e francês, relacionados a limites do poder, participação e liberdades. No século XIX e início do XX, lutas sociais ressaltaram trabalho, educação, condições materiais de vida e proteção de grupos vulnerabilizados. Após 1945, a criação da ONU e a Declaração Universal de 1948 reforçaram a ideia de direitos de toda pessoa, e não só dos cidadãos de um Estado."
+        ],
+        "howItWorks": [
+          "Uma sequência didática útil é: limitação do poder estatal → direitos individuais e políticos → reivindicações sociais → internacionalização após 1945 → ampliação de mecanismos de proteção. A sequência não é universal nem indica que uma etapa apagou a anterior. A proteção internacional tem sistemas globais e regionais, enquanto o direito interno continua relevante.",
+          "Distinga três marcos: a Carta das Nações Unidas (1945) estabelece propósitos de promoção dos direitos humanos; a DUDH (1948) proclama um catálogo abrangente de direitos; o PIDCP e o PIDESC (1966) são tratados internacionais posteriormente incorporados pelo Brasil em 1992, respectivamente pelos Decretos 592 e 591."
+        ],
+        "workedExample": [
+          "Um servidor recebe reclamação de que um atendimento desconsiderou direitos de uma pessoa. Ele não precisa decorar todos os marcos históricos para agir, mas deve perceber por que o problema pode envolver direitos constitucionais e compromissos internacionais. A evolução histórica ensina que acesso, igualdade e dignidade são critérios para avaliar práticas concretas."
+        ],
+        "advanced": [
+          "Os sistemas de proteção aumentaram a atenção a discriminações estruturais e a sujeitos em situação de vulnerabilidade. A positivação jurídica e a efetividade prática são fenômenos diferentes: o direito estar previsto não garante automaticamente sua realização. Em provas, diferencie a declaração de 1948, que não é o mesmo ato que os Pactos de 1966, e não atribua caráter de tratado à DUDH."
+        ]
+      },
+      "summary": [
+        "1945: Carta da ONU; 1948: Declaração Universal; 1966: adoção dos dois Pactos da ONU.",
+        "1992: promulgação brasileira do PIDCP (Decreto 592) e do PIDESC (Decreto 591).",
+        "Evolução histórica não é substituição total dos direitos anteriores.",
+        "Reconhecimento formal e realização efetiva são etapas diferentes."
+      ],
+      "examTraps": [
+        "Dizer que a DUDH foi adotada em 1966 confunde declaração com Pactos.",
+        "Afirmar que direitos sociais só passaram a existir depois de todos os direitos civis oculta que as reivindicações históricas se sobrepõem."
+      ],
+      "questions": [
+        {
+          "stem": "O marco de 1948 mais diretamente associado à internacionalização do catálogo universal de direitos é:",
+          "options": [
+            "O PIDCP",
+            "A Declaração Universal dos Direitos Humanos",
+            "O Decreto brasileiro nº 592/1992",
+            "A Emenda Constitucional nº 45/2004"
+          ],
+          "correct": 1,
+          "commentary": "A DUDH foi adotada em 10 de dezembro de 1948. Os Pactos foram adotados em 1966 e incorporados ao Brasil em 1992."
+        },
+        {
+          "stem": "A leitura adequada da evolução dos direitos humanos é:",
+          "options": [
+            "Cada etapa revoga completamente a anterior",
+            "A proteção ampliou dimensões e instrumentos de forma histórica e não linear",
+            "Os direitos sociais são incompatíveis com liberdades individuais",
+            "Somente atos nacionais podem proteger pessoas"
+          ],
+          "correct": 1,
+          "commentary": "A história registra acumulação, tensões e complementaridade entre direitos e instrumentos, não revogação de liberdades em cada fase."
+        }
+      ],
+      "checklist": [
+        "Consigo explicar o assunto sem apenas repetir definições.",
+        "Sei aplicar as regras em uma situação concreta de tribunal.",
+        "Diferencio a posição do STF, o texto normativo e exemplos doutrinários.",
+        "Resolvi as questões e compreendi por que as alternativas erradas estão incorretas."
+      ],
+      "normativeNotes": []
+    },
+    {
+      "topicId": "trt8-tec-21-dh-002",
+      "moduleId": "dh-m02",
+      "number": 2,
+      "title": "Fundamentos filosóficos dos direitos humanos",
+      "goal": "Entender as justificações morais dos direitos e distingui-las de sua positivação jurídica.",
+      "complete": {
+        "firstRead": [
+          "O fundamento mais invocado dos direitos humanos é a dignidade da pessoa humana: uma pessoa não pode ser tratada apenas como objeto de decisões alheias. Ideias filosóficas distintas chegaram a essa proteção por caminhos diferentes, por exemplo, pelo jusnaturalismo (direitos anteriores ou superiores ao Estado), pelo racionalismo e pela autonomia moral, pela igualdade e pela justiça social.",
+          "Em linguagem simples, fundamento filosófico responde à pergunta 'por que uma pessoa merece proteção?'. Já fonte jurídica responde 'qual norma reconhece e organiza a proteção?'. A Constituição brasileira e os tratados são fontes de direito; a dignidade e as teorias da justiça ajudam a justificar o sentido das normas."
+        ],
+        "howItWorks": [
+          "Jusnaturalismo destaca parâmetros de justiça não reduzidos ao ato estatal. Positivismo jurídico observa as normas criadas e reconhecidas segundo procedimentos válidos, mas não implica necessariamente negar a importância moral dos direitos. Abordagens históricas e críticas ressaltam disputas sociais e condições de realização. O universalismo defende igual valor de todas as pessoas; o debate com o relativismo cultural exige atenção à diversidade sem naturalizar violência ou discriminação.",
+          "Na Constituição, a dignidade da pessoa humana figura como fundamento da República (art. 1º, III). Direitos humanos internacionais não se confundem com opiniões filosóficas isoladas; ao entrar em um ordenamento, uma norma depende de formas válidas de reconhecimento e aplicação."
+        ],
+        "workedExample": [
+          "Imagine um usuário que não domina linguagem jurídica. O atendimento respeitoso e acessível não depende de o servidor concordar com as ideias dessa pessoa. O valor intrínseco da dignidade justifica ouvi-la e assegurar atendimento sem discriminação, enquanto normas específicas definem os procedimentos concretos."
+        ],
+        "advanced": [
+          "Evite simplificações como 'direitos humanos são apenas direitos naturais' ou 'todo direito tem a mesma justificação filosófica'. As teorias explicam aspectos diferentes. Em conflitos práticos, razão, igualdade, autonomia e proteção de pessoas vulnerabilizadas podem orientar a interpretação sem afastar os limites normativos aplicáveis."
+        ]
+      },
+      "summary": [
+        "Fundamento filosófico = justificativa; fonte jurídica = norma reconhecida.",
+        "Dignidade humana é fundamento da República (CF, art. 1º, III).",
+        "Universalismo protege o igual valor de todas as pessoas.",
+        "Positivação não substitui o debate ético; o debate ético não dispensa a norma."
+      ],
+      "examTraps": [
+        "Confundir dignidade como fundamento da República com uma lei infraconstitucional específica.",
+        "Tratar toda teoria de direitos humanos como idêntica ao jusnaturalismo."
+      ],
+      "questions": [
+        {
+          "stem": "A dignidade da pessoa humana, na CF/1988, é:",
+          "options": [
+            "Fundamento da República",
+            "Apenas objetivo de uma lei ordinária",
+            "Um protocolo facultativo da ONU",
+            "Uma regra de administração apenas privada"
+          ],
+          "correct": 0,
+          "commentary": "O art. 1º, III, reconhece a dignidade da pessoa humana como fundamento da República Federativa do Brasil."
+        },
+        {
+          "stem": "Qual alternativa distingue corretamente fundamento e fonte?",
+          "options": [
+            "Fundamento é sempre decreto; fonte é opinião moral",
+            "Fundamento justifica a proteção; fonte identifica a norma jurídica aplicável",
+            "São conceitos sem qualquer diferença",
+            "Fonte jurídica é sempre anterior à Constituição"
+          ],
+          "correct": 1,
+          "commentary": "As teorias justificam por que se protegem os direitos; constituições e tratados são exemplos de fontes que os positivam."
+        }
+      ],
+      "checklist": [
+        "Consigo explicar o assunto sem apenas repetir definições.",
+        "Sei aplicar as regras em uma situação concreta de tribunal.",
+        "Diferencio a posição do STF, o texto normativo e exemplos doutrinários.",
+        "Resolvi as questões e compreendi por que as alternativas erradas estão incorretas."
+      ],
+      "normativeNotes": []
+    },
+    {
+      "topicId": "trt8-tec-21-dh-003",
+      "moduleId": "dh-m03",
+      "number": 3,
+      "title": "Fontes, classificações, princípios e dimensões dos direitos humanos",
+      "goal": "Sistematizar os direitos sem reduzir a matéria a uma lista de gerações.",
+      "complete": {
+        "firstRead": [
+          "As fontes dos direitos humanos incluem tratados internacionais, normas constitucionais e outros instrumentos jurídicos. No direito internacional também são relevantes, conforme o caso, costumes e princípios gerais; declarações e diretrizes podem ter influência interpretativa mesmo quando não são tratados. Por isso, é incorreto tratar todos os documentos internacionais como juridicamente idênticos.",
+          "Uma classificação de estudo associa os direitos civis e políticos às liberdades e à participação; direitos econômicos, sociais e culturais às condições materiais e à vida social; e direitos coletivos ou de solidariedade a interesses de titularidade e realização complexas. A organização didática não cria uma hierarquia de dignidade entre os grupos."
+        ],
+        "howItWorks": [
+          "Características normalmente destacadas: universalidade (todas as pessoas), indivisibilidade e interdependência (os direitos se relacionam), historicidade (seu reconhecimento evolui), inalienabilidade e irrenunciabilidade como diretrizes gerais de proteção, e proibição de discriminação. O alcance jurídico concreto dessas expressões depende do direito em questão e das regras aplicáveis; não são palavras mágicas que resolvem qualquer controvérsia.",
+          "É comum falar em 'primeira', 'segunda' e 'terceira' dimensões ou gerações. Primeira costuma vincular-se a liberdades civis e políticas; segunda, aos direitos sociais; terceira, a interesses coletivos e difusos. Prefere-se falar em 'dimensões' para reforçar coexistência, não sucessão excludente."
+        ],
+        "workedExample": [
+          "Se um cidadão não tem acesso à informação sobre um serviço público, sua participação política e seu acesso a serviços sociais podem ser prejudicados. O caso mostra interdependência: transparência, igualdade e acesso a políticas não funcionam como compartimentos fechados."
+        ],
+        "advanced": [
+          "Diferencie universalidade do sentido de 'todos os direitos são absolutamente ilimitados'. Direitos podem apresentar condições e restrições legalmente justificáveis, mas nunca por mera conveniência administrativa. Também não confunda 'fonte declaratória' com 'tratado em vigor': a DUDH é declaração da Assembleia Geral da ONU; PIDCP e PIDESC são tratados."
+        ]
+      },
+      "summary": [
+        "Fontes não possuem todas a mesma natureza jurídica.",
+        "Universalidade, indivisibilidade e interdependência ajudam a interpretar o sistema.",
+        "Dimensões coexistem: primeira (liberdades), segunda (sociais), terceira (coletivos), na classificação tradicional.",
+        "Nenhuma geração elimina a precedente."
+      ],
+      "examTraps": [
+        "Confundir uma declaração internacional com tratado promulgado no Brasil.",
+        "Interpretar terceira dimensão como 'direitos mais importantes' ou substitutos dos primeiros."
+      ],
+      "questions": [
+        {
+          "stem": "A classificação tradicional em dimensões dos direitos humanos indica:",
+          "options": [
+            "Acúmulo e coexistência das proteções",
+            "Revogação dos direitos anteriores",
+            "Que direitos políticos não são humanos",
+            "Que só a terceira dimensão importa"
+          ],
+          "correct": 0,
+          "commentary": "As dimensões são recurso didático para identificar ênfases históricas e não sucessão que extingue direitos."
+        },
+        {
+          "stem": "A relação entre acesso à educação, liberdade de expressão e participação política ilustra:",
+          "options": [
+            "Incompatibilidade necessária",
+            "Interdependência dos direitos",
+            "Somente direito penal",
+            "Inexistência de direitos sociais"
+          ],
+          "correct": 1,
+          "commentary": "O exercício de um direito pode depender da realização de outros, característica de interdependência."
+        }
+      ],
+      "checklist": [
+        "Consigo explicar o assunto sem apenas repetir definições.",
+        "Sei aplicar as regras em uma situação concreta de tribunal.",
+        "Diferencio a posição do STF, o texto normativo e exemplos doutrinários.",
+        "Resolvi as questões e compreendi por que as alternativas erradas estão incorretas."
+      ],
+      "normativeNotes": []
+    },
+    {
+      "topicId": "trt8-tec-21-dh-004",
+      "moduleId": "dh-m04",
+      "number": 4,
+      "title": "Interpretação dos tratados internacionais de direitos humanos",
+      "goal": "Aplicar boa-fé, contexto, objeto e finalidade sem inventar regras absolutas de interpretação.",
+      "complete": {
+        "firstRead": [
+          "Interpretar um tratado é identificar o sentido de seus dispositivos e como eles se aplicam a um caso. Não basta escolher uma frase isolada; é necessário considerar as palavras do texto, seu contexto e a finalidade do documento. A Convenção de Viena sobre o Direito dos Tratados, promulgada pelo Decreto 7.030/2009, fornece regras gerais importantes nos arts. 31 a 33.",
+          "Em direitos humanos, a interpretação costuma enfatizar a proteção efetiva da pessoa. O chamado princípio pro persona ou pro homine orienta, em termos gerais, a preferência por leitura mais protetiva quando juridicamente cabível. Isso não autoriza ignorar o texto, suprimir regras processuais ou afirmar que qualquer pretensão individual vence automaticamente."
+        ],
+        "howItWorks": [
+          "O art. 31 da Convenção de Viena combina boa-fé, sentido comum das palavras, contexto, objeto e finalidade. No contexto entram preâmbulo e anexos e instrumentos pertinentes; a norma também considera acordos posteriores, prática ulterior e regras relevantes de direito internacional. Pelo art. 32, meios suplementares, como trabalhos preparatórios, ajudam a confirmar um sentido ou solucionar obscuridade e resultados manifestamente absurdos ou desarrazoados. O art. 33 trata de versões autênticas em vários idiomas.",
+          "Para resolver uma questão: (1) identifique o tratado e o artigo; (2) leia o texto e seu contexto; (3) verifique a finalidade protetiva e outras normas relevantes; (4) examine se há reserva, regra especial ou limites aplicáveis; (5) formule interpretação coerente sem desconsiderar a Constituição e a jurisprudência pertinentes."
+        ],
+        "workedExample": [
+          "Um órgão interpreta uma regra de atendimento sem considerar que ela protege pessoas com dificuldade de comunicação. Uma leitura meramente literal pode esvaziar a finalidade de proteção. O intérprete deve considerar sentido, contexto, finalidade e normas complementares, fundamentando a decisão, e não apenas afirmar que escolheu a opção 'mais humana'."
+        ],
+        "advanced": [
+          "O princípio pro persona é uma diretriz interpretativa relevante, mas não equivale a uma ordem automática que dispense a análise jurídica completa. As regras da Convenção de Viena referem-se à interpretação de tratados em geral. Interpretação conforme normas de direitos humanos e controle de convencionalidade são operações relacionadas, mas não idênticas."
+        ]
+      },
+      "summary": [
+        "Art. 31, Viena: boa-fé, contexto, objeto e finalidade.",
+        "Art. 32: meios suplementares; art. 33: tratados em vários idiomas.",
+        "Pro persona = orientação protetiva dentro das regras aplicáveis.",
+        "Não decidir por um trecho isolado do tratado."
+      ],
+      "examTraps": [
+        "Tratar pro persona como licença para ignorar qualquer norma.",
+        "Afirmar que o art. 32 é sempre o primeiro passo antes da leitura do texto."
+      ],
+      "questions": [
+        {
+          "stem": "Conforme o art. 31 da Convenção de Viena, deve-se interpretar um tratado:",
+          "options": [
+            "De boa-fé, segundo termos, contexto e objeto e finalidade",
+            "Somente pela intenção subjetiva do aplicador",
+            "Sem considerar preâmbulo",
+            "Pelas regras de direito interno exclusivamente"
+          ],
+          "correct": 0,
+          "commentary": "Boa-fé, sentido comum dos termos, contexto, objeto e finalidade são elementos centrais da regra geral."
+        },
+        {
+          "stem": "A utilização de trabalhos preparatórios como meio suplementar de interpretação está relacionada principalmente ao:",
+          "options": [
+            "Art. 5º, III, da CF",
+            "Art. 32 da Convenção de Viena",
+            "Decreto nº 592/1992, art. 1º",
+            "Art. 37, caput, da CF"
+          ],
+          "correct": 1,
+          "commentary": "O art. 32 prevê meios suplementares para confirmar interpretação ou lidar com ambiguidade e resultados desarrazoados."
+        }
+      ],
+      "checklist": [
+        "Consigo explicar o assunto sem apenas repetir definições.",
+        "Sei aplicar as regras em uma situação concreta de tribunal.",
+        "Diferencio a posição do STF, o texto normativo e exemplos doutrinários.",
+        "Resolvi as questões e compreendi por que as alternativas erradas estão incorretas."
+      ],
+      "normativeNotes": []
+    },
+    {
+      "topicId": "trt8-tec-21-dh-005",
+      "moduleId": "dh-m05",
+      "number": 5,
+      "title": "Colisão entre direitos humanos e critérios de solução",
+      "goal": "Aprender a fundamentar uma colisão sem dizer que um direito sempre vence outro.",
+      "complete": {
+        "firstRead": [
+          "Uma colisão ocorre quando duas posições protegidas parecem exigir respostas incompatíveis no mesmo caso. Exemplos clássicos envolvem liberdade de expressão e direitos da personalidade, publicidade e privacidade, segurança e liberdades. O problema não significa que um dos direitos deixe de existir: é necessário delimitar o conteúdo de cada proteção e as condições concretas.",
+          "Não existe um 'catálogo simples' que declare sempre vencedora a liberdade, a privacidade ou a segurança. Algumas garantias têm regras específicas particularmente rigorosas, inclusive proibições absolutas em seus âmbitos, como a proibição da tortura. Portanto, a frase 'todos os direitos podem ser relativizados indiscriminadamente' é incorreta."
+        ],
+        "howItWorks": [
+          "Uma técnica frequentemente ensinada é a proporcionalidade: (1) adequação — a medida contribui para o fim legítimo? (2) necessidade — há alternativa igualmente eficaz e menos restritiva? (3) proporcionalidade em sentido estrito — a intensidade da restrição é justificável diante do benefício e da proteção em jogo? A aplicação deve examinar o conjunto normativo, a base legal e os fatos; não é cálculo matemático automático.",
+          "Distinga conflito aparente resolvido pela interpretação sistemática, incidência de regras específicas e situações em que a ponderação de princípios é pertinente. Em direitos humanos, tratados e a CF fornecem parâmetros adicionais de proteção. Caso haja disposição de proteção inequívoca, não se pode substituí-la livremente por conveniência."
+        ],
+        "workedExample": [
+          "Um tribunal quer publicar relatório para prestar contas, mas o documento contém dados pessoais sensíveis de usuários. A transparência é relevante; a privacidade também. O órgão pode disponibilizar resultados agregados, suprimir dados que identifiquem pessoas e justificar as informações efetivamente necessárias. Isso preserva o objetivo de transparência com menor sacrifício à privacidade."
+        ],
+        "advanced": [
+          "Na doutrina, regras e princípios podem exigir técnicas diferentes, e não existe concordância absoluta entre todos os autores. O candidato deve conhecer a ideia de ponderação sem apresentá-la como autorização para arbitrariedade. A motivação, a evidência e o respeito a proibições normativas limitam o raciocínio de quem decide."
+        ]
+      },
+      "summary": [
+        "Primeiro identifique os direitos e os fatos concretos.",
+        "Proporcionalidade: adequação, necessidade e proporcionalidade estrita.",
+        "Fundamentação e meios menos restritivos são essenciais.",
+        "Nem todo direito pode ser afastado por ponderação; proibições específicas continuam exigíveis."
+      ],
+      "examTraps": [
+        "Equivaler ponderação a 'decidir pelo que parece melhor'.",
+        "Confundir colisão entre direitos com supressão permanente de um deles."
+      ],
+      "questions": [
+        {
+          "stem": "Para proteger privacidade em relatório público, a opção mais compatível com necessidade é:",
+          "options": [
+            "Publicar identificadores pessoais desnecessários",
+            "Eliminar todo dever de transparência para sempre",
+            "Anonimizar dados e divulgar resultados pertinentes",
+            "Não fundamentar a decisão"
+          ],
+          "correct": 2,
+          "commentary": "A anonimização dos dados desnecessários pode preservar simultaneamente transparência e privacidade."
+        },
+        {
+          "stem": "A etapa da proporcionalidade que pergunta se existe alternativa menos restritiva e igualmente eficaz é:",
+          "options": [
+            "Adequação",
+            "Necessidade",
+            "Tipicidade penal",
+            "Competência administrativa"
+          ],
+          "correct": 1,
+          "commentary": "Necessidade exige comparar opções e evitar sacrifício maior do que o exigido para atingir o fim legítimo."
+        }
+      ],
+      "checklist": [
+        "Consigo explicar o assunto sem apenas repetir definições.",
+        "Sei aplicar as regras em uma situação concreta de tribunal.",
+        "Diferencio a posição do STF, o texto normativo e exemplos doutrinários.",
+        "Resolvi as questões e compreendi por que as alternativas erradas estão incorretas."
+      ],
+      "normativeNotes": []
+    }
+  ]
+}
