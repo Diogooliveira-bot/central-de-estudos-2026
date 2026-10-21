@@ -31,3 +31,6 @@ jobs:
           node --check tests/invites-unit.mjs
       - name: Testar convites e autenticação
         run: node --test tests/invites-unit.mjs tests/auth-unit.mjs
+
+      - name: Regressão global da Central
+        run: npm test
