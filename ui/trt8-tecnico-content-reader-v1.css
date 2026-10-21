@@ -1,0 +1,50 @@
+/* Base Completa — apostilas TRT-8 Técnico. Layout limpo para celular/tablet. */
+html.tt-reader-open{overflow:hidden}
+.tt-reader-backdrop{position:fixed;inset:0;z-index:2147483646;background:rgba(8,22,42,.83);overflow-y:auto;overscroll-behavior:contain;padding:clamp(8px,2vw,24px);color:#14263e}
+.tt-reader-panel{max-width:920px;margin:0 auto;background:#f7f9fc;border-radius:16px;box-shadow:0 16px 60px rgba(0,0,0,.28);overflow:hidden;min-height:85vh;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
+.tt-reader-header{background:#112a4c;color:#f7fbff;padding:clamp(22px,4vw,40px);position:relative}
+.tt-reader-meta{font-size:10px;letter-spacing:.16em;font-weight:750;color:#b6cae6}
+.tt-reader-close{border:1px solid #8ba7cf;background:transparent;color:white;border-radius:9px;padding:9px 12px;font-size:13px;cursor:pointer;float:right}
+.tt-reader-eyebrow{margin:25px 0 8px;font-size:11px;letter-spacing:.08em;color:#b6d5fb;font-weight:700}
+.tt-reader-header h1{font-size:clamp(23px,3vw,34px);line-height:1.17;margin:0 0 13px;letter-spacing:-.03em;font-weight:750;color:#fff}
+.tt-reader-header p{font-size:14px;line-height:1.6;max-width:650px;color:#e4edf9}
+.tt-reader-header .tt-reader-review-status{margin:18px 0 0;color:#d8e5f6;font-size:11px}
+.tt-reader-nav{display:flex;gap:8px;overflow-x:auto;white-space:nowrap;padding:13px clamp(17px,4vw,38px);background:#fff;border-bottom:1px solid #e1e9f2;position:sticky;top:-1px;z-index:1}
+.tt-reader-nav a{text-decoration:none;color:#264b79;padding:8px 12px;background:#eef3fa;border-radius:9px;font-weight:650;font-size:12px}
+.tt-reader-nav a:focus-visible,.tt-reader-close:focus-visible,.tt-reader-answer:focus-visible,.tt-reader-footer button:focus-visible{outline:3px solid #579bff;outline-offset:2px}
+.tt-reader-body{padding:10px clamp(16px,4vw,46px) 40px}
+.tt-reader-section,.tt-reader-questions{scroll-margin-top:85px;margin-top:30px}
+.tt-reader-section h2,.tt-reader-questions h2,.tt-reader-sources h2{font-size:19px;color:#132d4e;letter-spacing:-.02em}
+.tt-reader-card{border:1px solid #e3eaf3;background:#fff;border-radius:12px;padding:clamp(18px,3vw,26px);margin:13px 0;box-shadow:0 2px 10px rgba(12,37,70,.035)}
+.tt-reader-card h3{color:#163861;font-size:15px;margin:0 0 15px}
+.tt-reader-card p{font-size:14px;line-height:1.8;color:#293d54;margin:10px 0}
+.tt-reader-card li{font-size:14px;line-height:1.8;margin:7px 0;color:#293d54}
+.tt-reader-card ul{padding-left:20px;margin:8px 0}
+.tt-reader-example{border-left:4px solid #376dbe;background:#f0f5fc}
+.tt-reader-traps{border-left:4px solid #c59a4b}
+.tt-reader-question{padding:22px;border:1px solid #e3eaf3;border-radius:12px;background:#fff;margin:15px 0}
+.tt-reader-question h3{font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:#55708f;margin:0 0 9px}
+.tt-reader-question p{font-size:14px;line-height:1.7}
+.tt-reader-alternatives{display:grid;gap:8px}
+.tt-reader-answer{font-size:13px;text-align:left;line-height:1.45;border:1px solid #d5e0ed;border-radius:9px;background:#f7f9fd;color:#183a60;padding:12px 14px;cursor:pointer}
+.tt-reader-answer:hover{background:#edf4ff}
+.tt-reader-answer.tt-reader-correct{border-color:#27836d;background:#eaf8f3;color:#195e4f}
+.tt-reader-answer.tt-reader-wrong{border-color:#a95652;background:#fff0ef;color:#853936}
+.tt-reader-feedback{margin-top:11px!important;padding:13px;border-radius:9px;background:#f2f6fb;border:1px solid #d7e5f2;color:#173857}
+.tt-reader-checklist{margin-top:30px;scroll-margin-top:85px}
+.tt-reader-checklist>p{margin-bottom:18px}
+.tt-reader-checklist label{display:flex;align-items:flex-start;gap:12px;margin:11px 0;padding:10px;border-radius:8px;background:#f4f7fb;cursor:pointer}
+.tt-reader-checklist input{width:18px;height:18px;accent-color:#1e528e;margin-top:3px;flex-shrink:0}
+.tt-reader-checklist span{font-size:13px;line-height:1.6}
+#tt-check-progress{display:block;font-weight:700;color:#1d4a79;margin-top:16px;font-size:13px}
+.tt-reader-sources{margin-top:35px;padding:22px;border-top:1px solid #d9e4f1}
+.tt-reader-sources ul{padding-left:18px}
+.tt-reader-sources li{line-height:1.65;font-size:12px;margin:7px 0}
+.tt-reader-sources a{color:#164f93;overflow-wrap:anywhere}
+.tt-reader-sources p{font-size:12px;color:#53677c}
+.tt-reader-footer{text-align:center;padding:30px;background:#eaf0f8}
+.tt-reader-footer button{background:#153961;color:white;border:0;padding:13px 20px;border-radius:9px;font-size:13px;font-weight:700;cursor:pointer}
+.tt-reader-footer p{font-size:12px;color:#53677c;margin:13px auto 0;max-width:560px;line-height:1.5}
+.exam-module-link[data-exam-theory-topic]{background:#183c66;color:#fff}
+@media(max-width:650px){.tt-reader-backdrop{padding:0}.tt-reader-panel{border-radius:0;min-height:100vh}.tt-reader-close{float:none;display:block;margin:0 0 12px auto}.tt-reader-nav{top:0}.tt-reader-body{padding:10px 15px 35px}.tt-reader-header{padding:22px 18px}.tt-reader-card{padding:17px}.tt-reader-answer{padding:12px}}
+@media(prefers-reduced-motion:reduce){.tt-reader-panel *{scroll-behavior:auto!important;transition:none!important}}
