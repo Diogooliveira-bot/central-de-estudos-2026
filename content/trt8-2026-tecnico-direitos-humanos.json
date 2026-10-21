@@ -373,6 +373,343 @@
         "Resolvi as questões e compreendi por que as alternativas erradas estão incorretas."
       ],
       "normativeNotes": []
+    },
+    {
+      "topicId": "trt8-tec-21-dh-006",
+      "moduleId": "dh-m06",
+      "number": 6,
+      "title": "Tratados internacionais de direitos humanos e a Constituição de 1988",
+      "goal": "Aprender o rito de aprovação e a hierarquia dos tratados sem confundir assinatura, ratificação, promulgação e valor constitucional.",
+      "complete": {
+        "firstRead": [
+          "A Constituição de 1988 coloca a dignidade humana entre os fundamentos da República (art. 1º, III) e prevê a prevalência dos direitos humanos como princípio das relações internacionais (art. 4º, II). O art. 5º, §2º, afirma que o catálogo expresso na Constituição não exclui outros direitos decorrentes do regime, de seus princípios ou dos tratados internacionais de que o Brasil seja parte. Portanto, direitos internacionais podem complementar a proteção constitucional, observadas as regras sobre incorporação e hierarquia.",
+          "Assinar um tratado não é a mesma coisa que ratificá-lo: assinatura geralmente manifesta intenção inicial, enquanto ratificação ou adesão expressa consentimento definitivo conforme o procedimento aplicável. No Brasil, a incorporação envolve procedimentos constitucionais de aprovação e atos de conclusão do vínculo internacional, com promulgação no plano interno conforme a prática jurídica brasileira. Em prova, não misture os momentos."
+        ],
+        "howItWorks": [
+          "O art. 5º, §3º, introduzido pela EC 45/2004, prevê que tratados e convenções internacionais sobre direitos humanos aprovados EM CADA CASA do Congresso, EM DOIS TURNOS e por TRÊS QUINTOS dos votos dos respectivos membros são equivalentes às emendas constitucionais. Os requisitos são cumulativos. Não basta a matéria versar sobre direitos humanos para o instrumento automaticamente receber equivalência constitucional.",
+          "Para tratados internacionais de direitos humanos ratificados e internalizados sem o procedimento do §3º, o STF firmou a posição da supralegalidade: acima das leis ordinárias e abaixo da Constituição. Um exemplo central é a Convenção Americana sobre Direitos Humanos, relacionada à superação da prisão civil do depositário infiel e à Súmula Vinculante 25. A tese é da jurisprudência, não uma frase literal do art. 5º."
+        ],
+        "workedExample": [
+          "Suponha que uma lei antiga admita uma medida que colide com um tratado de direitos humanos de status supralegal. O aplicador não deve afirmar que o tratado é uma 'lei ordinária como qualquer outra' ou uma 'emenda constitucional'. Examina a incompatibilidade com o parâmetro supralegal, a interpretação do STF e as demais normas envolvidas. Se for tratado aprovado pelo rito do art. 5º, §3º, a classificação jurídica será distinta."
+        ],
+        "advanced": [
+          "O §4º do art. 5º trata de submissão à jurisdição de Tribunal Penal Internacional a cuja criação o Brasil tenha manifestado adesão — não é requisito para equivalência de tratado a emenda. A hierarquia supralegal não é estendida automaticamente a todos os tratados comuns: é posição jurisprudencial especificamente consolidada para tratados de direitos humanos internalizados sem o rito qualificado. As categorias precisam ser examinadas com precisão."
+        ]
+      },
+      "summary": [
+        "CF, art. 5º, §2º: abertura material a direitos oriundos de tratados.",
+        "CF, art. 5º, §3º: dois turnos + três quintos em cada Casa = equivalência a emenda constitucional.",
+        "STF: demais tratados de direitos humanos internalizados sem rito qualificado têm status supralegal.",
+        "Assinatura, ratificação e promulgação não são sinônimos."
+      ],
+      "examTraps": [
+        "Dizer que basta maioria simples em votação única para o art. 5º, §3º.",
+        "Apresentar 'supralegal' como palavra expressa do art. 5º, quando é resultado da interpretação do STF."
+      ],
+      "questions": [
+        {
+          "stem": "Para que tratado de direitos humanos seja equivalente a emenda constitucional, o art. 5º, §3º, exige:",
+          "options": [
+            "Votação simples e única na Câmara",
+            "Dois turnos em cada Casa e três quintos de seus membros",
+            "Decreto presidencial sem aprovação",
+            "Apenas ratificação perante a ONU"
+          ],
+          "correct": 1,
+          "commentary": "O rito constitucional qualificado exige aprovação em dois turnos em cada Casa do Congresso, por três quintos dos votos dos respectivos membros."
+        },
+        {
+          "stem": "Segundo a posição consolidada do STF, tratado de direitos humanos ratificado e internalizado sem o rito do §3º ocupa, como regra:",
+          "options": [
+            "Nível infralegal abaixo dos decretos",
+            "Status supralegal, inferior à Constituição e superior à lei",
+            "Equivalência automática à emenda",
+            "Somente valor político sem efeito jurídico"
+          ],
+          "correct": 1,
+          "commentary": "A posição jurisprudencial é de supralegalidade para esses instrumentos; não se confunde com o rito qualificado constitucional."
+        }
+      ],
+      "checklist": [
+        "Consigo explicar o assunto sem apenas repetir definições.",
+        "Sei aplicar as regras em uma situação concreta de tribunal.",
+        "Diferencio a posição do STF, o texto normativo e exemplos doutrinários.",
+        "Resolvi as questões e compreendi por que as alternativas erradas estão incorretas."
+      ],
+      "normativeNotes": [
+        "Referências: CF art. 5º, §§2º a 4º; STF RE 466.343, ADI 5.240 e SV 25.",
+        "Não presumir que todo instrumento internacional de direitos humanos é automaticamente tratado ratificado."
+      ]
+    },
+    {
+      "topicId": "trt8-tec-21-dh-007",
+      "moduleId": "dh-m07",
+      "number": 7,
+      "title": "Controle de convencionalidade",
+      "goal": "Entender como verificar se normas internas são compatíveis com os tratados internacionais de direitos humanos em vigor.",
+      "complete": {
+        "firstRead": [
+          "Controle de constitucionalidade verifica a compatibilidade de uma norma com a Constituição. Controle de convencionalidade, por sua vez, analisa a conformidade de normas ou práticas internas com tratados internacionais de direitos humanos aplicáveis ao Estado. As duas análises podem aparecer no mesmo problema, porque Constituição e tratados são parâmetros distintos e complementares.",
+          "É importante que o tratado seja juridicamente aplicável no país e ao caso. Não basta citar uma declaração, uma recomendação internacional ou um tratado que o Brasil não ratificou como se todos tivessem idêntico peso normativo. O controle pode ocorrer na discussão de casos concretos, com respeito às competências e aos instrumentos processuais próprios."
+        ],
+        "howItWorks": [
+          "Passo 1: identifique a norma interna ou a prática questionada. Passo 2: confira o tratado vigente e pertinente, incluindo seu texto, reservas e possíveis obrigações aplicáveis. Passo 3: compare o conteúdo das duas regras segundo técnicas de interpretação adequadas. Passo 4: examine as consequências jurídicas da incompatibilidade à luz da hierarquia reconhecida no Brasil e da jurisprudência aplicável. Passo 5: respeite a competência do órgão julgador e o procedimento.",
+          "Um caso paradigmático envolve prisão civil de depositário infiel: a Convenção Americana, tratada como supralegal na posição do STF, alterou os efeitos de normas internas infraconstitucionais em conflito com sua proteção, contribuindo para a Súmula Vinculante 25. Isso não significa que qualquer servidor possa, por decisão pessoal, afastar normas de competência de outros órgãos."
+        ],
+        "workedExample": [
+          "Imagine uma norma administrativa interna que determina procedimento incompatível com um tratado de direitos humanos já incorporado ao Brasil. Ao identificar o problema, o servidor registra a possível incompatibilidade e encaminha a análise à autoridade competente, em vez de inventar solução fora de suas atribuições. O tribunal deverá avaliar texto interno, tratado, interpretação vigente e eventual norma constitucional."
+        ],
+        "advanced": [
+          "A doutrina e a jurisprudência discutem alcance e vias do controle de convencionalidade, inclusive os efeitos de diferentes graus de hierarquia dos tratados. Não misture controle de convencionalidade com fiscalização política de organismos internacionais. Uma decisão da Corte Interamericana e uma interpretação de comitê da ONU tampouco são intercambiáveis em natureza, competência e efeitos jurídicos."
+        ]
+      },
+      "summary": [
+        "Constitucionalidade = comparação com Constituição; convencionalidade = comparação com tratado aplicável.",
+        "Identificar texto do tratado, incorporação, reserva, alcance e hierarquia.",
+        "A incompatibilidade exige raciocínio jurídico e órgão competente.",
+        "SV 25 e CADH são exemplo recorrente de eficácia supralegal."
+      ],
+      "examTraps": [
+        "Declarar convencional qualquer documento da ONU sem investigar sua natureza jurídica.",
+        "Confundir um controle jurídico no caso concreto com liberdade irrestrita para descumprir atos administrativos."
+      ],
+      "questions": [
+        {
+          "stem": "O controle de convencionalidade busca principalmente verificar:",
+          "options": [
+            "Compatibilidade entre norma interna e tratado de direitos humanos aplicável",
+            "O resultado financeiro de contrato público",
+            "Somente a competência territorial dos juízes",
+            "A conveniência política do orçamento"
+          ],
+          "correct": 0,
+          "commentary": "O parâmetro é o compromisso convencional válido e pertinente, distinto da Constituição embora relacionado a ela."
+        },
+        {
+          "stem": "A Súmula Vinculante 25 costuma ser lembrada em aula como exemplo de:",
+          "options": [
+            "Primazia de lei ordinária sobre a CADH",
+            "Consequências de proteção internacional supralegal em face de norma interna",
+            "Revogação de toda competência do Congresso",
+            "Equivalência da DUDH a emenda"
+          ],
+          "correct": 1,
+          "commentary": "A jurisprudência do STF reconheceu a eficácia supralegal da Convenção Americana para afastar efeitos de normas infraconstitucionais conflitantes."
+        }
+      ],
+      "checklist": [
+        "Consigo explicar o assunto sem apenas repetir definições.",
+        "Sei aplicar as regras em uma situação concreta de tribunal.",
+        "Diferencio a posição do STF, o texto normativo e exemplos doutrinários.",
+        "Resolvi as questões e compreendi por que as alternativas erradas estão incorretas."
+      ],
+      "normativeNotes": [
+        "A extensão processual do controle depende de competência e caso concreto; o roteiro aqui é pedagógico, não parecer de aplicação direta a um processo."
+      ]
+    },
+    {
+      "topicId": "trt8-tec-21-dh-008",
+      "moduleId": "dh-m08",
+      "number": 8,
+      "title": "Declaração Universal dos Direitos Humanos (DUDH)",
+      "goal": "Ler a Declaração de 1948, sua natureza e seus grupos de direitos sem confundi-la com os Pactos da ONU.",
+      "complete": {
+        "firstRead": [
+          "A Declaração Universal dos Direitos Humanos foi adotada pela Assembleia Geral das Nações Unidas em 10 de dezembro de 1948. É composta por 30 artigos e apresenta, em linguagem universal, direitos e liberdades fundamentais ligados à dignidade e à igualdade de todas as pessoas. Não se trata, por si só, de um tratado internacional assinado e ratificado como o PIDCP ou o PIDESC.",
+          "Nos primeiros artigos aparecem dignidade e igualdade (arts. 1º e 2º). O texto segue com vida, liberdade, segurança, proibição de escravidão e tortura, personalidade jurídica, igualdade perante a lei e proteção jurisdicional. Também protege vida privada, circulação, pensamento, consciência, religião, opinião, expressão, reunião e participação política, bem como direitos sociais, trabalho, educação, participação cultural e ordem social compatível com esses direitos."
+        ],
+        "howItWorks": [
+          "Para estudar com facilidade, divida a DUDH em blocos temáticos, sem afirmar que a numeração abaixo é uma divisão oficialmente intitulada pela ONU: igualdade e dignidade; integridade e proteção contra abusos; justiça e garantias; liberdades e vida pública; direitos econômicos, sociais e culturais; deveres e limites do exercício de direitos. O art. 29 trata de deveres para com a comunidade e de limitações juridicamente justificadas, e o art. 30 impede interpretar a Declaração para destruir os direitos proclamados.",
+          "A DUDH é instrumento de referência internacional e inspira tratados e constituições. A Carta Internacional de Direitos Humanos costuma ser descrita como DUDH + Pactos de 1966 + respectivos protocolos. O status jurídico de regras específicas pode envolver outras fontes; isso não converte a DUDH inteira, automaticamente, em tratado ratificado."
+        ],
+        "workedExample": [
+          "Uma pessoa procura o tribunal e não entende a língua utilizada nos avisos do atendimento. A dignidade, a igualdade e o acesso à proteção jurídica presentes no espírito da DUDH ajudam a compreender por que comunicação acessível importa. Para decidir o procedimento concreto, contudo, é preciso consultar também Constituição, legislação brasileira e demais normas aplicáveis."
+        ],
+        "advanced": [
+          "Os arts. 22 a 27 contêm direitos sociais e culturais; não reduza a Declaração apenas a 'direitos de primeira geração'. O art. 28 afirma o direito a uma ordem social e internacional em que os direitos possam realizar-se. A proteção abrange direitos civis e políticos e direitos econômicos, sociais e culturais no mesmo instrumento."
+        ]
+      },
+      "summary": [
+        "DUDH = 10/12/1948; 30 artigos; Assembleia Geral da ONU.",
+        "Não é o mesmo ato jurídico que PIDCP e PIDESC de 1966.",
+        "Abrange liberdades, garantias, participação e direitos sociais/culturais.",
+        "Arts. 29 e 30 tratam de deveres, limites e proteção contra destruição dos direitos."
+      ],
+      "examTraps": [
+        "Afirmar que a DUDH é tratado promulgado no Brasil pelo Decreto 592/1992 — este decreto refere-se ao PIDCP.",
+        "Afirmar que a DUDH protege apenas liberdades individuais e ignora trabalho ou educação."
+      ],
+      "questions": [
+        {
+          "stem": "A natureza do ato de 10 de dezembro de 1948 é:",
+          "options": [
+            "Tratado ratificado com a sigla PIDCP",
+            "Declaração adotada pela Assembleia Geral da ONU",
+            "Emenda à Constituição brasileira",
+            "Protocolo do PIDESC ratificado pelo Brasil"
+          ],
+          "correct": 1,
+          "commentary": "A DUDH foi adotada pela Assembleia Geral da ONU em 1948 e não se confunde com os tratados de 1966."
+        },
+        {
+          "stem": "É correto afirmar que a DUDH:",
+          "options": [
+            "Possui somente garantias penais",
+            "É formada por 30 artigos e inclui direitos sociais e culturais",
+            "Foi promulgada pelo Decreto 591/1992",
+            "Revoga todas as normas constitucionais nacionais"
+          ],
+          "correct": 1,
+          "commentary": "O texto contém 30 artigos e protege um catálogo amplo de direitos civis, políticos, sociais e culturais."
+        }
+      ],
+      "checklist": [
+        "Consigo explicar o assunto sem apenas repetir definições.",
+        "Sei aplicar as regras em uma situação concreta de tribunal.",
+        "Diferencio a posição do STF, o texto normativo e exemplos doutrinários.",
+        "Resolvi as questões e compreendi por que as alternativas erradas estão incorretas."
+      ],
+      "normativeNotes": [
+        "Fonte oficial ONU Brasil apresenta a DUDH e sua relação com a Carta Internacional de Direitos Humanos."
+      ]
+    },
+    {
+      "topicId": "trt8-tec-21-dh-009",
+      "moduleId": "dh-m09",
+      "number": 9,
+      "title": "Pacto Internacional sobre Direitos Civis e Políticos e protocolos",
+      "goal": "Compreender o PIDCP, o Comitê de Direitos Humanos da ONU e a diferença entre os dois protocolos facultativos.",
+      "complete": {
+        "firstRead": [
+          "O Pacto Internacional sobre Direitos Civis e Políticos (PIDCP) foi adotado pela ONU em 1966 e promulgado no Brasil pelo Decreto nº 592, de 6 de julho de 1992. Ele estabelece compromissos de proteção a direitos como vida, liberdade, integridade, devido processo, igualdade, liberdade de pensamento e de expressão e participação política, respeitados os detalhes e as condições de cada dispositivo.",
+          "O Pacto prevê obrigações dos Estados e um mecanismo internacional de acompanhamento pelo Comitê de Direitos Humanos. O Comitê integra o sistema de tratados das Nações Unidas e não deve ser confundido com a Corte Interamericana de Direitos Humanos, que pertence ao sistema regional americano. A existência de obrigação internacional não dispensa analisar competência, regras processuais e o direito interno pertinente."
+        ],
+        "howItWorks": [
+          "O primeiro Protocolo Facultativo do PIDCP reconhece a competência do Comitê de Direitos Humanos para receber e examinar comunicações de indivíduos que alegam ser vítimas de violação dos direitos do Pacto por Estado parte no protocolo, observados requisitos de admissibilidade como esgotamento dos recursos internos disponíveis e inexistência da mesma matéria sob exame em outra instância internacional de investigação ou decisão.",
+          "O Segundo Protocolo Facultativo tem como objetivo a abolição da pena de morte. Seu art. 2º admite reserva específica para pena de morte em tempo de guerra por crime militar de extrema gravidade cometido em tempo de guerra. O Decreto brasileiro nº 11.777/2023 promulgou ambos os protocolos, com reserva ao art. 2º no segundo. Portanto, cuidado com a afirmativa absoluta 'o Brasil aderiu ao protocolo sem ressalvas'."
+        ],
+        "workedExample": [
+          "Um candidato encontra a expressão 'comunicações individuais'. Deve pensar no primeiro Protocolo Facultativo do PIDCP e no Comitê de Direitos Humanos da ONU. Se a alternativa menciona compromisso de abolição da pena capital e ressalva militar em guerra, trata do segundo protocolo. O cargo de Técnico exige identificar exatamente o objeto de cada instrumento."
+        ],
+        "advanced": [
+          "Não é correto dizer que 'protocolo facultativo' significa sempre norma sem qualquer obrigação jurídica: o caráter facultativo refere-se à opção do Estado de tornar-se parte do instrumento. Para o Estado parte, incidem as obrigações aplicáveis. A Constituição brasileira, art. 5º, XLVII, 'a', proíbe pena de morte salvo caso de guerra declarada nos termos constitucionais; não transforme essa exceção em permissão comum fora das condições legais."
+        ]
+      },
+      "summary": [
+        "PIDCP: Decreto nº 592/1992; direitos civis e políticos.",
+        "1º Protocolo: comunicações individuais perante o Comitê de Direitos Humanos.",
+        "2º Protocolo: abolição da pena de morte, com hipótese restrita de reserva.",
+        "Ambos foram promulgados pelo Brasil via Decreto nº 11.777/2023; existe reserva ao art. 2º."
+      ],
+      "examTraps": [
+        "Confundir Comitê de Direitos Humanos da ONU com Corte Interamericana.",
+        "Dizer que primeiro e segundo protocolos tratam do mesmo procedimento de queixas.",
+        "Afirmar que o Brasil promulgou os protocolos em 1992: o decreto de promulgação dos protocolos é de 2023."
+      ],
+      "questions": [
+        {
+          "stem": "O primeiro Protocolo Facultativo do PIDCP está ligado sobretudo:",
+          "options": [
+            "Ao procedimento de comunicações individuais ao Comitê de Direitos Humanos",
+            "À criação de um tributo internacional",
+            "À equivalência automática dos tratados a emendas constitucionais",
+            "À competência exclusiva da Corte Interamericana"
+          ],
+          "correct": 0,
+          "commentary": "O instrumento faculta ao Comitê receber e examinar comunicações de pessoas, respeitados seus requisitos."
+        },
+        {
+          "stem": "O Segundo Protocolo Facultativo do PIDCP, promulgado pelo Decreto 11.777/2023, tem por objetivo:",
+          "options": [
+            "Regulamentar apenas eleições municipais",
+            "Abolir a pena de morte, observada a disciplina de reserva prevista",
+            "Promover exclusivamente a educação superior",
+            "Revogar a CF de 1988"
+          ],
+          "correct": 1,
+          "commentary": "O segundo protocolo tem objetivo abolicionista e seu art. 2º prevê a reserva estrita relativa a situação de guerra; o Brasil promulgou com reserva."
+        }
+      ],
+      "checklist": [
+        "Consigo explicar o assunto sem apenas repetir definições.",
+        "Sei aplicar as regras em uma situação concreta de tribunal.",
+        "Diferencio a posição do STF, o texto normativo e exemplos doutrinários.",
+        "Resolvi as questões e compreendi por que as alternativas erradas estão incorretas."
+      ],
+      "normativeNotes": [
+        "Os protocolos não são a mesma coisa que o PIDCP: promulgação do Pacto no Brasil em 1992; promulgação dos protocolos em 2023.",
+        "Na fonte oficial do Decreto 11.777/2023, a reserva está expressamente vinculada ao art. 2º do Segundo Protocolo."
+      ]
+    },
+    {
+      "topicId": "trt8-tec-21-dh-010",
+      "moduleId": "dh-m10",
+      "number": 10,
+      "title": "PIDESC e protocolo facultativo: direitos sociais, progressividade e situação brasileira",
+      "goal": "Distinguir as obrigações do PIDESC das do seu Protocolo Facultativo e compreender seu regime jurídico no Brasil.",
+      "complete": {
+        "firstRead": [
+          "O Pacto Internacional sobre Direitos Econômicos, Sociais e Culturais (PIDESC) foi adotado pela ONU em 1966 e promulgado no Brasil pelo Decreto nº 591, de 6 de julho de 1992. É tratado distinto do PIDCP, embora ambos tenham o reconhecimento da dignidade humana como base. Ele abrange temas como trabalho, condições justas e favoráveis, segurança social, família, nível de vida adequado, saúde, educação e cultura.",
+          "O Pacto estabelece compromissos de ação progressiva: os Estados devem adotar medidas por meios apropriados, até o máximo dos recursos de que disponham, com vistas à realização progressiva dos direitos (art. 2º, 1). Isso NÃO significa liberdade para nada fazer até o futuro. A obrigação de não discriminar é central, e o Estado deve justificar medidas e adotar providências concretas, acompanhando seus resultados."
+        ],
+        "howItWorks": [
+          "Para estudar o PIDESC, associe artigos a áreas: trabalho e condições laborais (arts. 6º e 7º), associação sindical (art. 8º), segurança social (art. 9º), proteção da família, mães e crianças (art. 10), alimentação/moradia e nível de vida (art. 11), saúde (art. 12), educação (arts. 13 e 14), cultura e benefícios da ciência (art. 15). Os dispositivos têm redações e condições específicas; a lista é roteiro de revisão, não transcrição literal.",
+          "O Protocolo Facultativo ao PIDESC, adotado em 2008 e em vigor internacional desde 2013, criou procedimentos adicionais de acompanhamento, inclusive comunicações em seu âmbito. Diferentemente do PIDESC, a lista oficial de depositários da ONU consultada em outubro de 2026 não indica o Brasil como parte desse protocolo. Assim, NÃO se deve ensinar que ele foi promulgado ou ratificado pelo Brasil. Um Estado ser parte do Pacto não significa automaticamente ser parte de seu protocolo."
+        ],
+        "workedExample": [
+          "Uma política pública atende um número crescente de usuários, mas deixa determinado grupo sem acesso por barreiras injustificadas. A equipe não pode usar a expressão 'realização progressiva' como desculpa para discriminar. Deve investigar desigualdades, priorizar medidas factíveis, justificar decisões e acompanhar se os grupos estão efetivamente recebendo o serviço."
+        ],
+        "advanced": [
+          "Há discussões doutrinárias e jurisprudenciais sobre conteúdo mínimo e proteção contra retrocessos injustificados, mas evite convertê-las em alegação de que o art. 2º impõe idêntico prazo ou forma de prestação em qualquer situação. A obrigação estatal combina uso de recursos disponíveis, progressividade, não discriminação e mecanismos de prestação de contas. Para prova, separe 'existência do protocolo internacional' de 'situação de adesão brasileira'."
+        ]
+      },
+      "summary": [
+        "PIDESC: Decreto nº 591/1992; direitos econômicos, sociais e culturais.",
+        "Art. 2º, 1: medidas e realização progressiva até o máximo dos recursos disponíveis.",
+        "Progressividade não significa autorização para inércia ou discriminação.",
+        "Protocolo Facultativo ao PIDESC: instrumento internacional em vigor, mas Brasil NÃO consta como parte na consulta oficial de 21/10/2026."
+      ],
+      "examTraps": [
+        "Confundir PIDESC ratificado pelo Brasil com seu protocolo facultativo sem ratificação brasileira comprovada.",
+        "Dizer que progressividade elimina a obrigação de adotar medidas e respeitar igualdade.",
+        "Afirmar que PIDESC e PIDCP foram promulgados pelo mesmo decreto: são 591 e 592, respectivamente."
+      ],
+      "questions": [
+        {
+          "stem": "No Brasil, o PIDESC foi promulgado por:",
+          "options": [
+            "Decreto nº 591/1992",
+            "Decreto nº 592/1992",
+            "Decreto nº 11.777/2023",
+            "Decreto nº 7.030/2009"
+          ],
+          "correct": 0,
+          "commentary": "O Decreto 591/1992 promulgou o PIDESC; o Decreto 592/1992 refere-se ao PIDCP."
+        },
+        {
+          "stem": "Quanto ao Protocolo Facultativo ao PIDESC, é adequado afirmar, segundo lista de depositários da ONU consultada em outubro de 2026:",
+          "options": [
+            "Que o Brasil se tornou parte automaticamente ao promulgar o PIDESC",
+            "Que o Brasil não figura na lista consultada de partes do protocolo",
+            "Que o protocolo é a mesma coisa que o segundo protocolo do PIDCP",
+            "Que substituiu todos os direitos sociais previstos no PIDESC"
+          ],
+          "correct": 1,
+          "commentary": "A lista oficial de partes do protocolo facultativo ao PIDESC não indica adesão brasileira; o Pacto e o protocolo são instrumentos juridicamente distintos."
+        }
+      ],
+      "checklist": [
+        "Consigo explicar o assunto sem apenas repetir definições.",
+        "Sei aplicar as regras em uma situação concreta de tribunal.",
+        "Diferencio a posição do STF, o texto normativo e exemplos doutrinários.",
+        "Resolvi as questões e compreendi por que as alternativas erradas estão incorretas."
+      ],
+      "normativeNotes": [
+        "Situação do Protocolo Facultativo ao PIDESC verificada na ONU em 21/10/2026, disponível em https://treaties-prod.un.org/PAGES/ViewDetails.aspx?chapter=4&clang=_en&mtdsg_no=IV-3-a&src=TREATY.",
+        "Verificar novamente status de adesão se o conteúdo for utilizado após a data de consulta."
+      ]
     }
-  ]
+  ],
+  "productionStatus": "10_authorial_lessons_ready_for_review",
+  "lastLegalVerification": "2026-10-21"
 }
