@@ -1,5 +1,5 @@
 {
-  "build": "20261021-multiexam-trt8-v2",
+  "build": "20261021-multiexam-tech21-v1",
   "files": [
     "/central-v119.html",
     "/ui/discipline-standard.js?v=20261019trabptra2",
@@ -476,23 +476,24 @@
     "/ui/tec-penal-cpp-links.js?v=20261014tec1",
     "/ui/penal-cpp-tec-links.css?v=20261014tec1",
     "/tools/lei-em-dia-admin-editor.js?v=20261014edit3",
-    "/ui/student-experience-v3.css?v=20261021-multiexam-trt8-v2",
-    "/ui/student-ux-core-v3.js?v=20261021-multiexam-trt8-v2",
+    "/ui/student-experience-v3.css?v=20261021-multiexam-tech21-v1",
+    "/ui/student-ux-core-v3.js?v=20261021-multiexam-tech21-v1",
     "/ui/student-shell-v3.js?v=20261021nav3",
-    "/ui/student-dashboard-v3.js?v=20261021-multiexam-trt8-v2",
+    "/ui/student-dashboard-v3.js?v=20261021-multiexam-tech21-v1",
     "/ui/student-plan-v3.js?v=20261019-qc-catalog1",
-    "/ui/external-question-filters-v1.css?v=20261021-multiexam-trt8-v2",
-    "/ui/external-question-filters-v1.js?v=20261021-multiexam-trt8-v2",
+    "/ui/external-question-filters-v1.css?v=20261021-multiexam-tech21-v1",
+    "/ui/external-question-filters-v1.js?v=20261021-multiexam-tech21-v1",
     "/ui/cpc-approved-layout-v1.css?v=20261019cpcstandard1",
     "/ui/approved-cpc-layout-v1.js?v=20261019cpcstandard2",
     "/ui/ptra-reader-upgrade-v1.css?v=20261019trabptra1",
     "/ui/ptra-reader-upgrade-v1.js?v=20261019trabptra1",
-    "/ui/study-objectives-catalog-v1.js?v=20261021multiexam1",
+    "/ui/study-objectives-catalog-v1.js?v=20261021tec21obj1",
     "/ui/study-objectives-v1.js?v=20261020studyobj1",
     "/ui/study-objectives-v1.css?v=20261020studyobj1",
     "/content/tjpb-2026-verticalized.js?v=20261020exam1",
     "/content/trt8-2026-verticalized.js?v=20261021multiexam2",
-    "/ui/exam-verticalized-v1.js?v=20261021multiexam2",
+    "/content/trt8-2026-tecnico-administrativo.js?v=20261021tec21data1",
+    "/ui/exam-verticalized-v1.js?v=20261021tec21screen1",
     "/ui/exam-verticalized-v1.css?v=20261020exam1"
   ]
 }
