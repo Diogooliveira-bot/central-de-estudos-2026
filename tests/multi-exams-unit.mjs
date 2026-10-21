@@ -8,7 +8,6 @@ const root=path.resolve(import.meta.dirname,'..');
 const read=p=>readFileSync(path.join(root,p),'utf8');
 const tjp=JSON.parse(read('content/tjpb-2026-verticalized.json'));
 const trt=JSON.parse(read('content/trt8-2026-verticalized.json'));
-const all=requireJson => Object.values(requireJson).length;
 const goalT='exam-tjpb-2026-analista-judiciaria',goalR='exam-trt8-2026-analista-judiciaria';
 function setup(user='aluno-A',storage){
  const dom=new JSDOM('<!doctype html><html><body><div id="subjects"></div><div id="disciplinesView"><div id="disciplineGrid"></div></div><div id="homeView"></div><div id="moduleView" class="hidden"></div></body></html>',{url:'https://preview.example.test/central-v119.html',runScripts:'outside-only',pretendToBeVisual:true});
@@ -99,4 +98,16 @@ test('navegação admite módulo nativo de Direito do Trabalho',()=>{
  const nav=read('ui/study-navigation.js');
  assert.match(nav,/moduleSelector = '[^']*\.bc-trabalho-module'/);
  assert.match(nav,/\.bc-trabalho-module-head'/);
+});
+
+test('RLM usa IDs nativos Mnn e o JS publicado reflete a última auditoria',()=>{
+ const runtime=read('ui/rlm-native-v1.js'),nav=read('ui/study-navigation.js');
+ const js=read('content/trt8-2026-verticalized.js');
+ const browser={};(new Function('window',js))(browser);
+ const json=trt.subjects.find(s=>s.id==='trt8-rlm').items.flatMap(i=>i.moduleIds);
+ const published=browser.TRT82026Verticalized.subjects.find(s=>s.id==='trt8-rlm').items.flatMap(i=>i.moduleIds);
+ assert.deepEqual(json,['M07','M09','M12','M14','M15','M13']);
+ assert.deepEqual(published,json);
+ assert.match(runtime,/data-rlm-module=/);
+ assert.match(nav,/'data-rlm-module'/);
 });
