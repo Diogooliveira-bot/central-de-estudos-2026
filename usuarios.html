@@ -154,7 +154,7 @@ async function loadInvites(){
  var list=document.getElementById('inviteList');
  list.textContent='Carregando convites...';
  try{
-  var data=await fetchJson('/api/invites?action=admin');
+  var data=await fetchJson('/api/auth?action=invite-admin');
   list.innerHTML='';
   if(!data.invites.length){list.innerHTML='<div class="empty">Nenhum convite criado.</div>';return}
   data.invites.forEach(function(item){
@@ -170,7 +170,7 @@ async function loadInvites(){
     revoke.onclick=async function(){
      if(!confirm('Revogar este convite? O link deixará de funcionar.'))return;
      revoke.disabled=true;
-     try{await fetchJson('/api/invites?action=revoke',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({id:item.id})});await loadInvites()}
+     try{await fetchJson('/api/auth?action=invite-revoke',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({id:item.id})});await loadInvites()}
      catch(e){status(document.getElementById('inviteStatus'),e.message,'err');revoke.disabled=false}
     };
     row.appendChild(revoke);
@@ -184,7 +184,7 @@ document.getElementById('inviteForm').addEventListener('submit',async function(e
  var btn=document.getElementById('inviteCreateBtn'),output=document.getElementById('inviteCreated'),msg=document.getElementById('inviteStatus');
  btn.disabled=true;status(msg,'Gerando convite...');output.hidden=true;
  try{
-  var response=await fetchJson('/api/invites?action=create',{
+  var response=await fetchJson('/api/auth?action=invite-create',{
    method:'POST',headers:{'Content-Type':'application/json'},
    body:JSON.stringify({recipientName:document.getElementById('inviteName').value,email:document.getElementById('inviteEmail').value})
   });
