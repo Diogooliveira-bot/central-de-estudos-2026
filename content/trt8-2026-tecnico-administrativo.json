@@ -26,121 +26,314 @@
           "ordinal": 1,
           "text": "Redação Oficial. Ortografia e acentuação.",
           "organizational": false,
-          "moduleIds": [],
-          "mappingStatus": "pending_content_review",
-          "coverage": "to_audit"
+          "moduleIds": [
+            "m03",
+            "m04"
+          ],
+          "mappingStatus": "thematic_title_matched_content_review_pending",
+          "coverage": "partial",
+          "moduleEvidence": [
+            {
+              "moduleId": "m03",
+              "canonicalTitle": "M03 — Acentuação",
+              "canonicalSource": "portugues-site.js",
+              "warning": null
+            },
+            {
+              "moduleId": "m04",
+              "canonicalTitle": "M04 — Estrutura da palavra e ortografia",
+              "canonicalSource": "portugues-site.js",
+              "warning": null
+            }
+          ],
+          "mappingEvidence": "IDs e títulos conferidos no curso atual de 24 módulos; a cobertura de subtópicos e da teoria integral não foi auditada.",
+          "uncoveredSubtopics": [
+            "Redação oficial: tema ainda sem cobertura confirmada."
+          ]
         },
         {
           "id": "trt8-tec-21-pt-002",
           "ordinal": 2,
           "text": "Emprego do sinal indicativo de crase.",
           "organizational": false,
-          "moduleIds": [],
-          "mappingStatus": "pending_content_review",
-          "coverage": "to_audit"
+          "moduleIds": [
+            "m20"
+          ],
+          "mappingStatus": "thematic_title_matched_content_review_pending",
+          "coverage": "partial",
+          "moduleEvidence": [
+            {
+              "moduleId": "m20",
+              "canonicalTitle": "M20 — Crase",
+              "canonicalSource": "portugues-site.js",
+              "warning": null
+            }
+          ],
+          "mappingEvidence": "IDs e títulos conferidos no curso atual de 24 módulos; a cobertura de subtópicos e da teoria integral não foi auditada."
         },
         {
           "id": "trt8-tec-21-pt-003",
           "ordinal": 3,
           "text": "Compreensão e interpretação de textos de gêneros variados.",
           "organizational": false,
-          "moduleIds": [],
-          "mappingStatus": "pending_content_review",
-          "coverage": "to_audit"
+          "moduleIds": [
+            "m24"
+          ],
+          "mappingStatus": "thematic_title_matched_content_review_pending",
+          "coverage": "partial",
+          "moduleEvidence": [
+            {
+              "moduleId": "m24",
+              "canonicalTitle": "M24 — Interpretação de textos para prova",
+              "canonicalSource": "portugues-site.js",
+              "warning": null
+            }
+          ],
+          "mappingEvidence": "IDs e títulos conferidos no curso atual de 24 módulos; a cobertura de subtópicos e da teoria integral não foi auditada."
         },
         {
           "id": "trt8-tec-21-pt-004",
           "ordinal": 4,
           "text": "Relação do texto com seu contexto histórico. Denotação e conotação.",
           "organizational": false,
-          "moduleIds": [],
-          "mappingStatus": "pending_content_review",
-          "coverage": "to_audit"
+          "moduleIds": [
+            "m21",
+            "m24"
+          ],
+          "mappingStatus": "thematic_title_matched_content_review_pending",
+          "coverage": "partial",
+          "moduleEvidence": [
+            {
+              "moduleId": "m21",
+              "canonicalTitle": "M21 — Semântica",
+              "canonicalSource": "portugues-site.js",
+              "warning": null
+            },
+            {
+              "moduleId": "m24",
+              "canonicalTitle": "M24 — Interpretação de textos para prova",
+              "canonicalSource": "portugues-site.js",
+              "warning": null
+            }
+          ],
+          "mappingEvidence": "IDs e títulos conferidos no curso atual de 24 módulos; a cobertura de subtópicos e da teoria integral não foi auditada."
         },
         {
           "id": "trt8-tec-21-pt-005",
           "ordinal": 5,
-          "text": "Discurso direto, discurso indireto e discurso in direto livre. Intertextualidade. Figuras de linguagem. Morfossintaxe.",
+          "text": "Discurso direto, discurso indireto e discurso indireto livre. Intertextualidade. Figuras de linguagem. Morfossintaxe.",
           "organizational": false,
           "moduleIds": [],
           "mappingStatus": "pending_content_review",
-          "coverage": "to_audit"
+          "coverage": "to_audit",
+          "sourceExtractedText": "Discurso direto, discurso indireto e discurso in direto livre. Intertextualidade. Figuras de linguagem. Morfossintaxe.",
+          "editorialNormalization": "Espaços e fragmentação da extração corrigidos para legibilidade; itens numerados apenas para estudo."
         },
         {
           "id": "trt8-tec-21-pt-006",
           "ordinal": 6,
           "text": "Elementos estruturais e processos de formação de palavras. Sinonímia e antonímia. Pontuação. Pronomes.",
           "organizational": false,
-          "moduleIds": [],
-          "mappingStatus": "pending_content_review",
-          "coverage": "to_audit"
+          "moduleIds": [
+            "m04",
+            "m21",
+            "m16",
+            "m07"
+          ],
+          "mappingStatus": "thematic_title_matched_content_review_pending",
+          "coverage": "partial",
+          "moduleEvidence": [
+            {
+              "moduleId": "m04",
+              "canonicalTitle": "M04 — Estrutura da palavra e ortografia",
+              "canonicalSource": "portugues-site.js",
+              "warning": null
+            },
+            {
+              "moduleId": "m21",
+              "canonicalTitle": "M21 — Semântica",
+              "canonicalSource": "portugues-site.js",
+              "warning": null
+            },
+            {
+              "moduleId": "m16",
+              "canonicalTitle": "M16 — Pontuação pela estrutura",
+              "canonicalSource": "portugues-site.js",
+              "warning": null
+            },
+            {
+              "moduleId": "m07",
+              "canonicalTitle": "M07 — Pronomes: fundamentos",
+              "canonicalSource": "portugues-site.js",
+              "warning": null
+            }
+          ],
+          "mappingEvidence": "IDs e títulos conferidos no curso atual de 24 módulos; a cobertura de subtópicos e da teoria integral não foi auditada."
         },
         {
           "id": "trt8-tec-21-pt-007",
           "ordinal": 7,
           "text": "Concordância nominal e concordância verbal.",
           "organizational": false,
-          "moduleIds": [],
-          "mappingStatus": "pending_content_review",
-          "coverage": "to_audit"
+          "moduleIds": [
+            "m17",
+            "m18"
+          ],
+          "mappingStatus": "thematic_title_matched_content_review_pending",
+          "coverage": "partial",
+          "moduleEvidence": [
+            {
+              "moduleId": "m17",
+              "canonicalTitle": "M17 — Concordância verbal",
+              "canonicalSource": "portugues-site.js",
+              "warning": null
+            },
+            {
+              "moduleId": "m18",
+              "canonicalTitle": "M18 — Concordância nominal",
+              "canonicalSource": "portugues-site.js",
+              "warning": null
+            }
+          ],
+          "mappingEvidence": "IDs e títulos conferidos no curso atual de 24 módulos; a cobertura de subtópicos e da teoria integral não foi auditada."
         },
         {
           "id": "trt8-tec-21-pt-008",
           "ordinal": 8,
-          "text": "Flexão nominal e flex ão verbal. Vozes do verbo.",
+          "text": "Flexão nominal e flexão verbal. Vozes do verbo.",
           "organizational": false,
-          "moduleIds": [],
-          "mappingStatus": "pending_content_review",
-          "coverage": "to_audit"
+          "moduleIds": [
+            "m05",
+            "m08",
+            "m13"
+          ],
+          "mappingStatus": "thematic_title_matched_content_review_pending",
+          "coverage": "partial",
+          "sourceExtractedText": "Flexão nominal e flex ão verbal. Vozes do verbo.",
+          "editorialNormalization": "Espaços e fragmentação da extração corrigidos para legibilidade; itens numerados apenas para estudo.",
+          "moduleEvidence": [
+            {
+              "moduleId": "m05",
+              "canonicalTitle": "M05 — Substantivo, artigo e numeral",
+              "canonicalSource": "portugues-site.js",
+              "warning": null
+            },
+            {
+              "moduleId": "m08",
+              "canonicalTitle": "M08 — Verbos: fundamentos",
+              "canonicalSource": "portugues-site.js",
+              "warning": null
+            },
+            {
+              "moduleId": "m13",
+              "canonicalTitle": "M13 — Sistema verbal avançado e vozes",
+              "canonicalSource": "portugues-site.js",
+              "warning": null
+            }
+          ],
+          "mappingEvidence": "IDs e títulos conferidos no curso atual de 24 módulos; a cobertura de subtópicos e da teoria integral não foi auditada."
         },
         {
           "id": "trt8-tec-21-pt-009",
           "ordinal": 9,
           "text": "Correlação de tempos e modos verbais.",
           "organizational": false,
-          "moduleIds": [],
-          "mappingStatus": "pending_content_review",
-          "coverage": "to_audit"
+          "moduleIds": [
+            "m13"
+          ],
+          "mappingStatus": "thematic_title_matched_content_review_pending",
+          "coverage": "partial",
+          "moduleEvidence": [
+            {
+              "moduleId": "m13",
+              "canonicalTitle": "M13 — Sistema verbal avançado e vozes",
+              "canonicalSource": "portugues-site.js",
+              "warning": null
+            }
+          ],
+          "mappingEvidence": "IDs e títulos conferidos no curso atual de 24 módulos; a cobertura de subtópicos e da teoria integral não foi auditada."
         },
         {
           "id": "trt8-tec-21-pt-010",
           "ordinal": 10,
           "text": "Regência nominal e regência verbal. Coordenação e subordinação. Conectivos.",
           "organizational": false,
-          "moduleIds": [],
-          "mappingStatus": "pending_content_review",
-          "coverage": "to_audit"
+          "moduleIds": [
+            "m19",
+            "m14",
+            "m09"
+          ],
+          "mappingStatus": "thematic_title_matched_content_review_pending",
+          "coverage": "partial",
+          "moduleEvidence": [
+            {
+              "moduleId": "m19",
+              "canonicalTitle": "M19 — Regência verbal e nominal",
+              "canonicalSource": "portugues-site.js",
+              "warning": null
+            },
+            {
+              "moduleId": "m14",
+              "canonicalTitle": "M14 — Período composto",
+              "canonicalSource": "portugues-site.js",
+              "warning": null
+            },
+            {
+              "moduleId": "m09",
+              "canonicalTitle": "M09 — Classes invariáveis e conectivos",
+              "canonicalSource": "portugues-site.js",
+              "warning": null
+            }
+          ],
+          "mappingEvidence": "IDs e títulos conferidos no curso atual de 24 módulos; a cobertura de subtópicos e da teoria integral não foi auditada."
         },
         {
           "id": "trt8-tec-21-pt-011",
           "ordinal": 11,
-          "text": "Redação (confronto e reconhecimento de frases corretas e incorretas",
+          "text": "Redação: confronto e reconhecimento de frases corretas e incorretas.",
           "organizational": false,
           "moduleIds": [],
           "mappingStatus": "pending_content_review",
-          "coverage": "to_audit"
+          "coverage": "to_audit",
+          "sourceExtractedText": "Redação (confronto e reconhecimento de frases corretas e incorretas",
+          "editorialNormalization": "Espaços e fragmentação da extração corrigidos para legibilidade; itens numerados apenas para estudo."
         },
         {
           "id": "trt8-tec-21-pt-012",
           "ordinal": 12,
-          "text": "organização e reorganização de orações e perío dos",
+          "text": "Organização e reorganização de orações e períodos.",
           "organizational": false,
-          "moduleIds": [],
-          "mappingStatus": "pending_content_review",
-          "coverage": "to_audit"
+          "moduleIds": [
+            "m14"
+          ],
+          "mappingStatus": "thematic_title_matched_content_review_pending",
+          "coverage": "partial",
+          "sourceExtractedText": "organização e reorganização de orações e perío dos",
+          "editorialNormalization": "Espaços e fragmentação da extração corrigidos para legibilidade; itens numerados apenas para estudo.",
+          "moduleEvidence": [
+            {
+              "moduleId": "m14",
+              "canonicalTitle": "M14 — Período composto",
+              "canonicalSource": "portugues-site.js",
+              "warning": null
+            }
+          ],
+          "mappingEvidence": "IDs e títulos conferidos no curso atual de 24 módulos; a cobertura de subtópicos e da teoria integral não foi auditada."
         },
         {
           "id": "trt8-tec-21-pt-013",
           "ordinal": 13,
-          "text": "equivalência e transformação de estruturas).",
+          "text": "Equivalência e transformação de estruturas.",
           "organizational": false,
           "moduleIds": [],
           "mappingStatus": "pending_content_review",
-          "coverage": "to_audit"
+          "coverage": "to_audit",
+          "sourceExtractedText": "equivalência e transformação de estruturas).",
+          "editorialNormalization": "Espaços e fragmentação da extração corrigidos para legibilidade; itens numerados apenas para estudo."
         }
       ],
-      "coverage": "preparation",
-      "mappedItemCount": 0
+      "coverage": "partial",
+      "mappedItemCount": 10
     },
     {
       "id": "trt8-tec-21-rlm",
@@ -2883,7 +3076,7 @@
       "mappedItemCount": 12
     }
   ],
-  "curatedLinkedTopics": 91,
-  "curatedModuleDestinations": 114,
-  "mappingNotice": "Os links foram conferidos por título e ID real de módulo, mas o conteúdo jurídico integral ainda não foi auditado; cobertura sempre parcial. Assuntos sem correspondência segura continuam em preparação."
+  "curatedLinkedTopics": 101,
+  "curatedModuleDestinations": 134,
+  "mappingNotice": "101 assuntos com links temáticos parciais conferidos por ID/título; 75 sem vínculo. Cobertura integral da teoria, questões e redação oficial pendente."
 }
