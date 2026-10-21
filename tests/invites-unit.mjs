@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
+import vm from 'node:vm';
 import {
   createInviteToken, hashInviteToken, validInviteToken, inviteStatus,
   INVITE_TTL_DAYS,
@@ -51,4 +52,14 @@ test('acesso público limitado ao resgate: páginas administrativas seguem prote
   assert.match(html, /base-completa-symbol\.webp/);
   assert.match(html, /history\.replaceState/);
   assert.match(html, /\/api\/auth\?action=invite-redeem/);
+});
+
+
+test('scripts das telas de convite e administração possuem sintaxe JavaScript válida', () => {
+  for (const path of ['../convite.html', '../usuarios.html']) {
+    const html = readFileSync(new URL(path, import.meta.url), 'utf8');
+    const scripts = [...html.matchAll(/<script(?:\\s[^>]*)?>([\\s\\S]*?)<\\/script>/g)];
+    assert.ok(scripts.length > 0, 'Script ausente: ' + path);
+    for (const script of scripts) assert.doesNotThrow(() => new vm.Script(script[1]));
+  }
 });
