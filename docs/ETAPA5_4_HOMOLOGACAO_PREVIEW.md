@@ -32,3 +32,16 @@
 ## Bloqueios até homologação
 
 Aprovação da suíte automatizada **não substitui H03–H11**, que dependem de testes autenticados em navegador. Não afirmar que foram aprovados sem executá-los.
+
+## Execução em 21/10/2026 — resultado parcial
+
+- **Aprovado — Isolamento de configuração:** quatro variáveis criadas e novamente lidas com `gitBranch=feature/multi-editais-trt8-2026` e `target=['preview']`, sem alterar as globais de produção.
+- **Aprovado — banco separado:** credenciais `DATABASE_URL` herdadas da Preview anterior verificadas como referentes ao projeto Neon de homologação `raspy-pond-46403448`, distinto da produção.
+- **Aprovado — contas artificiais disponíveis:** 8 contas no total no banco isolado; 3 alunos de teste ativos. Não foram criadas contas reais.
+- **Aprovado — estrutura dos dados:** chave primária da tabela `central_exam_topic_progress` é `(user_id,exam_id,topic_id,marker)`. Há 24 marcações existentes do edital TJPB associadas a 1 aluno no banco isolado, sem alterações.
+- **Aprovado — testes automatizados anteriores:** 122 aprovados, 0 falhas, 1 ignorado (suíte da Etapa 5.3); sem validação autenticada de ponta a ponta nesta etapa.
+- **BLOQUEADO — nova Preview:** Vercel respondeu `402 payment_required`, `api-deployments-free-per-day`, limite de mais de 100 deployments nas últimas 24 horas. Não é possível confirmar a branch atual online; nenhuma build deste período deve ser declarada testada. Não há Vercel CLI autenticada disponível no ambiente para alternativa.
+- **PENDENTES:** H01–H12 no navegador com dois alunos. H13 (isolamento de configuração/banco) foi parcialmente verificado, mas precisa de smoke test do deployment efetivo.
+- **Segurança:** não foi feita chamada SQL contra o projeto Neon de produção, nenhuma conta foi desativada, nenhum merge/publicação foi executado.
+
+**Próxima ação permitida:** após o limite da Vercel ser liberado, construir nova Preview especificamente no SHA da branch, confirmar `READY`, verificar HTTP 401 para API não autenticada (em vez de 503), autenticar as contas fictícias e executar H03–H12. Não publicar produção sem autorização.
