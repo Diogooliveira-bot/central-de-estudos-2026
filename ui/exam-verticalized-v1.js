@@ -128,19 +128,17 @@
     else render();
     return true;
   }
-  async function openModule(disciplineId,moduleId) {
-    close();
-    global.centralHardSubject?.(disciplineId);
-    for (let i=0;i<40;i++) {
-      await new Promise(resolve=>global.setTimeout(resolve,100));
-      const found=Array.from(document.querySelectorAll('#subjects [data-cf],#subjects [data-penal],#subjects [data-cpc],#subjects [data-cpp-native-module],#subjects [data-civil-analista],#subjects [data-uid],#subjects [data-pt-current],#subjects [data-ptn-module]')).find(node=>Object.values(node.dataset).includes(moduleId));
-      if (!found) continue;
-      const details=found.closest('details'); if(details)details.open=true;
-      found.scrollIntoView?.({behavior:'smooth',block:'center'});
-      found.querySelector('summary')?.focus?.({preventScroll:true});
-      return true;
+  function openModule(disciplineId,moduleId) {
+    // A Central usa expansores nativos (.open e estado persistido), não <details>.
+    // CentralStudyNavigation já conhece os módulos de CF, ADM, Civil, CPC, Penal e CPP.
+    const navigation = global.CentralStudyNavigation;
+    if (!disciplineId || !moduleId || typeof navigation?.openContext !== 'function') {
+      console.warn('[Edital verticalizado] Navegação para módulo indisponível', disciplineId, moduleId);
+      return false;
     }
-    return false;
+    close();
+    navigation.openContext({ subject:disciplineId, module:moduleId });
+    return true;
   }
   function ensureEntry() {
     const current=OBJECTIVES.getActive();
