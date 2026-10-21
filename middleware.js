@@ -45,6 +45,7 @@ function previewForbidden() {
 
 const PUBLIC_PATHS = new Set([
   '/login.html',
+  '/apresentacao.html',
   '/favicon.ico',
   '/robots.txt',
   '/assets/base-completa-symbol.webp',
