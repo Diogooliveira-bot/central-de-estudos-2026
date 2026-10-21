@@ -100,7 +100,7 @@ test('vínculos do TRT8 são reais e sem alegações de cobertura total',()=>{
 });
 test('navegação admite módulo nativo de Direito do Trabalho',()=>{
  const nav=read('ui/study-navigation.js');
- assert.match(nav,/moduleSelector = '[^']*\.bc-trabalho-module'/);
+ assert.match(nav,/moduleSelector = '[^']*\.bc-trabalho-module[^']*'/);
  assert.match(nav,/\.bc-trabalho-module-head'/);
 });
 
