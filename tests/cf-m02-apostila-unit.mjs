@@ -59,7 +59,7 @@ test('botão Lei em Dia usa o filtro explícito do módulo e mantém as chaves d
   const offline = JSON.parse(read('central-offline-files-v66172.json'));
   for (const asset of [
     '/content/cf/m02-native-data.js?v=20261021cfm02v1',
-    '/ui/cf-native-study-v2.js?v=20261021cfm02v1',
+    '/ui/cf-native-study-v2.js?v=20261021cfm02v2',
   ]) {
     assert.ok(index.includes(`src="${asset}"`), asset);
     assert.ok(offline.files.includes(asset), asset);
@@ -86,6 +86,20 @@ test('CF M02 renderiza o material didático e abre o filtro correto do Lei em Di
   assert.equal(dom.window.document.querySelector('.cf-native-shell header b').textContent, 'CF M02 — Direitos e deveres individuais e coletivos');
   assert.equal(dom.window.document.querySelector('.cf-native-callout.question strong').textContent, 'Teste de compreensão.');
   assert.ok(dom.window.document.querySelectorAll('.cf-native-callout').length >= 20);
+  assert.ok(dom.window.document.querySelectorAll('.cf-native-table').length >= 8);
+  assert.equal(dom.window.document.querySelector('.cf-native-table td').dataset.label, 'Dimensão');
+
+  const checks = dom.window.document.querySelectorAll('[data-cf-check]');
+  assert.equal(checks.length, 10);
+  checks[0].click();
+  assert.equal(dom.window.document.querySelector('[data-check-progress]').textContent, '1/10 concluídos');
+  assert.equal(checks[0].closest('label').classList.contains('done'), true);
+  const savedChecks = JSON.parse(dom.window.localStorage.getItem('central-v6:cf-reader-checks:2:complete'));
+  assert.equal(savedChecks[checks[0].dataset.cfCheck], true);
+
+  dom.window.CfNativeStudy.close();
+  dom.window.CfNativeStudy.openReader(2, 'complete');
+  assert.equal(dom.window.document.querySelector('[data-cf-check]').checked, true);
 
   dom.window.CfNativeStudy.openDecorando(2);
   assert.deepEqual(lawArgs, [null, 'cf', 'cf-m02']);
