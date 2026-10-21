@@ -16,6 +16,7 @@ import {
   verifyPassword,
 } from '../lib/auth.js';
 import handleInviteAction from '../lib/invite-handler.js';
+import handlePasswordReset from '../lib/password-reset.js';
 
 function send(res, status, body, extraHeaders = {}) {
   res.statusCode = status;
@@ -170,6 +171,7 @@ export default async function handler(req, res) {
     if (req.method === 'POST' && !sameOriginRequest(req)) return send(res, 403, { error: 'Origem da requisição não permitida' });
 
     if (action.startsWith('invite-')) return handleInviteAction(req, res, action.slice('invite-'.length));
+    if (action.startsWith('password-reset-')) return handlePasswordReset(req, res, action.slice('password-reset-'.length));
 
     if (req.method === 'GET' && action === 'me') return currentUser(req, res);
     if (req.method === 'GET' && action === 'bootstrap-status') return bootstrapStatus(res);

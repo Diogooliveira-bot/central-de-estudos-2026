@@ -1,0 +1,29 @@
+name: Homologar recuperação de senha
+
+on:
+  push:
+    branches:
+      - feature/recuperacao-senha-email-20261021
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  reset-security:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Instalar dependências
+        run: npm ci --ignore-scripts
+      - name: Verificar sintaxe
+        run: |
+          node --check api/auth.js
+          node --check lib/password-reset.js
+          node --check tests/password-reset-unit.mjs
+      - name: Verificar autenticação, e-mail mockado e regressão completa
+        run: npm test

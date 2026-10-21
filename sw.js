@@ -8,7 +8,7 @@ var OFFLINE_MANIFEST='/central-offline-files-v66172.json?v=20261021-exam-module-
 var OFFLINE_READY='/central-offline-ready.json?v=20261021-exam-module-deeplink-v2';
 
 function publicPath(path){
-  return path==='/login.html'||path==='/favicon.ico'||path==='/robots.txt'||path==='/assets/base-completa-symbol.webp';
+  return path==='/login.html'||path==='/recuperar-senha.html'||path==='/favicon.ico'||path==='/robots.txt'||path==='/assets/base-completa-symbol.webp';
 }
 function cacheResponse(cache,request,response){
   if(response&&response.ok&&!response.redirected)cache.put(request,response.clone()).catch(function(){});
@@ -125,6 +125,7 @@ self.addEventListener('fetch',function(event){
   }
 
   if(request.method!=='GET'||url.pathname.startsWith('/api/'))return;
+  if(url.pathname==='/recuperar-senha.html')return;
 
   if(request.mode==='navigate'&&(url.pathname==='/'||url.pathname==='/index.html'||url.pathname==='/central-v119.html'||url.pathname==='/central-de-questoes')){
     event.respondWith(
