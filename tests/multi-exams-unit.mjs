@@ -124,9 +124,9 @@ test('cargo 21 da FCC tem 11 disciplinas e 176 assuntos com retificação sem v�
  assert.equal(technician.subjects.filter(x=>x.group==='specific').length,5);
  assert.equal(technician.itemsCount,176);
  assert.equal(new Set(technician.subjects.flatMap(s=>s.items.map(i=>i.id))).size,176);
- assert.equal(technician.curatedLinkedTopics,91);
- assert.equal(technician.curatedModuleDestinations,114);
- assert.equal(technician.subjects.flatMap(s=>s.items).filter(i=>!i.moduleIds.length).length,85);
+ assert.equal(technician.curatedLinkedTopics,101);
+ assert.equal(technician.curatedModuleDestinations,134);
+ assert.equal(technician.subjects.flatMap(s=>s.items).filter(i=>!i.moduleIds.length).length,75);
  assert.ok(technician.subjects.every(s=>s.items.every(i=>i.coverage!=='complete')));
  assert.ok(technician.subjects.filter(s=>!s.disciplineId).every(s=>s.items.every(i=>!i.moduleIds.length)));
  assert.ok(technician.subjects.flatMap(s=>s.items).filter(i=>i.moduleIds.length).every(i=>i.moduleEvidence?.length===i.moduleIds.length&&i.mappingStatus==='thematic_title_matched_content_review_pending'));
@@ -140,7 +140,7 @@ test('TRT8 técnico e analista possuem telas e estados separados',()=>{
  assert.equal(w.CentralTRT8TecnicoVerticalized.open(),true);
  assert.equal(w.CentralTRT8Verticalized.open(),false);
  assert.equal(w.document.querySelectorAll('#trt8TecnicoVerticalizedDialog .exam-subject').length,11);
- assert.equal(w.document.querySelectorAll('#trt8TecnicoVerticalizedDialog [data-exam-module]').length,114);
+ assert.equal(w.document.querySelectorAll('#trt8TecnicoVerticalizedDialog [data-exam-module]').length,134);
  assert.equal(w.document.querySelectorAll('#trt8TecnicoVerticalizedDialog .exam-topic small').length,176);
  assert.match(w.document.getElementById('trt8TecnicoVerticalizedDialog').textContent,/Técnico Judiciário/);
  const item=technician.subjects[0].items[0];
@@ -178,4 +178,38 @@ test('RLM, Constitucional, Administrativo e Trabalho referenciam módulos válid
  for(const subj of technician.subjects.filter(s=>sourceIds[s.disciplineId])){
    for(const item of subj.items)for(const id of item.moduleIds)assert.ok(sourceIds[subj.disciplineId].has(id),item.id+' apontou para módulo ausente '+id);
  }
+});
+
+test('Português usa somente os IDs atuais do curso de 24 módulos e sinaliza lacunas',()=>{
+ const file=read('portugues-site.js'),found=file.match(/var MODULES=(\[[\s\S]*?\]);\s*var REVIEW=/);
+ assert.ok(found);
+ const modules=JSON.parse(found[1]);assert.equal(modules.length,24);
+ const ids=new Set(modules.map(m=>m.id));
+ const pt=technician.subjects.find(s=>s.id==='trt8-tec-21-pt');
+ assert.equal(pt.items.filter(i=>i.moduleIds.length).length,10);
+ assert.ok(pt.items.flatMap(i=>i.moduleIds).every(id=>ids.has(id)));
+ assert.deepEqual(pt.items.find(i=>i.ordinal===2).moduleIds,['m20']);
+ assert.deepEqual(pt.items.find(i=>i.ordinal===3).moduleIds,['m24']);
+ assert.deepEqual(pt.items.find(i=>i.ordinal===7).moduleIds,['m17','m18']);
+ assert.equal(pt.items.find(i=>i.ordinal===11).moduleIds.length,0);
+ assert.ok(pt.items.find(i=>i.ordinal===1).uncoveredSubtopics.some(t=>t.includes('Redação oficial')));
+ assert.ok(pt.items.find(i=>i.ordinal===12).text.includes('períodos'));
+});
+test('Aluno vê aviso de atualização jurídica em PTRA e lacuna de Redação oficial',()=>{
+ const {w,dom}=setup();w.CentralStudyObjectives.setActive(goalTech);
+ assert.equal(w.CentralTRT8TecnicoVerticalized.open(),true);
+ const root=w.document.getElementById('trt8TecnicoVerticalizedDialog');
+ const ptra=root.querySelector('[data-exam-topic-row="trt8-tec-21-ptra-008"]');
+ const pt=root.querySelector('[data-exam-topic-row="trt8-tec-21-pt-001"]');
+ assert.ok(ptra?.querySelector('.exam-topic-audit-note'));
+ assert.ok(pt?.querySelector('.exam-topic-audit-note'));
+ assert.match(pt.textContent,/Redação oficial/);
+ assert.match(ptra.textContent,/ATUALIZAÇÃO JURÍDICA/);
+ dom.window.close();
+});
+test('Dados técnicos do navegador correspondem integralmente ao inventário JSON auditado',()=>{
+ const js=read('content/trt8-2026-tecnico-administrativo.js');
+ const browser={};new Function('window',js)(browser);
+ assert.equal(browser.TRT82026TecnicoVerticalized.curatedLinkedTopics,101);
+ assert.deepEqual(browser.TRT82026TecnicoVerticalized.subjects,technician.subjects);
 });
