@@ -86,8 +86,8 @@ test('carregador e PWA incluem TRT8, não esquecem TJPB e mantêm versão do cac
  assert.ok(boot.indexOf('content/trt8-2026-verticalized.js')<boot.indexOf("tag('ui/exam-verticalized-v1.js"));
  assert.ok(manifest.files.some(s=>s.includes('/content/trt8-2026-verticalized.js?v=')));
  assert.ok(manifest.files.some(s=>s.includes('/ui/study-navigation.js?v=20261021tec21nav2')));
- assert.equal(manifest.build,'20261021-multiexam-tech21-v2');
- assert.match(sw,/var CACHE='central-20261021-multiexam-tech21-v2'/);
+ assert.equal(manifest.build,'20261021-multiexam-tech21-v3');
+ assert.match(sw,/var CACHE='central-20261021-multiexam-tech21-v3'/);
 });
 test('vínculos do TRT8 são reais e sem alegações de cobertura total',()=>{
  const bySubject=Object.fromEntries(trt.subjects.map(s=>[s.id,s]));
