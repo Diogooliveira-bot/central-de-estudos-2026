@@ -16,6 +16,23 @@
     button.setAttribute('aria-label', text);
     button.setAttribute('title', text);
   }
+  function isAdmin() {
+    const role = global.BASE_COMPLETA_USER?.role || global.__BASE_COMPLETA_USER_ROLE__;
+    return role === 'admin' && global.__BASE_COMPLETA_PREVIEW_GUEST__ !== true;
+  }
+  function ensureAdminEntry() {
+    const grid = byId('studentMorePanel')?.querySelector('.student-more-grid');
+    if (!grid) return;
+    const existing = grid.querySelector('[data-student-more-action="admin"]');
+    if (!isAdmin()) { existing?.remove(); return; }
+    if (existing) return;
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'student-more-admin';
+    button.dataset.studentMoreAction = 'admin';
+    button.innerHTML = '<span aria-hidden="true">⚑</span><span><b>Administração</b><small>Usuários, convites e acessos</small></span><span class="student-more-arrow" aria-hidden="true">→</span>';
+    grid.insertBefore(button, grid.querySelector('[data-student-more-action="logout"]'));
+  }
   function closeMore(restoreFocus = false) {
     const panel = byId('studentMorePanel');
     const trigger = byId('studentMoreButton');
@@ -27,12 +44,12 @@
   }
   function runMoreAction(action) {
     closeMore(false);
-    if (action === 'tec') return global.centralSidebarAction?.('tec-cadernos');
     if (action === 'law') return global.openEmbeddedTool?.('decorando', {});
     if (action === 'vade') return global.openEmbeddedTool?.('vade', {});
     if (action === 'settings') return global.openCentralSettings?.();
     if (action === 'onboarding') return (global.CentralStudyObjectives?.open || global.CentralStudentOnboarding?.open)?.();
     if (action === 'logout') return document.querySelector('[data-bc-logout]')?.click();
+    if (action === 'admin' && isAdmin()) return global.location.assign('/usuarios.html');
     return false;
   }
   function ensureNavigation() {
@@ -75,9 +92,8 @@
       panel.setAttribute('aria-modal', 'false');
       panel.setAttribute('aria-label', 'Mais opções');
       panel.innerHTML = `
-        <div class="student-more-head"><div><small>Mais opções</small><b>Ferramentas da Central</b></div><button type="button" data-student-close-more aria-label="Fechar">×</button></div>
+        <div class="student-more-head"><div><small>BASE COMPLETA</small><b>Ferramentas</b></div><button type="button" data-student-close-more aria-label="Fechar">×</button></div>
         <div class="student-more-grid">
-          <button type="button" data-student-more-action="tec"><span aria-hidden="true">▤</span><span><b>Cadernos TEC</b><small>Questões e registros</small></span></button>
           <button type="button" data-student-more-action="law"><span aria-hidden="true">✓</span><span><b>Lei em Dia</b><small>Revisão de lei seca</small></span></button>
           <button type="button" data-student-more-action="vade"><span aria-hidden="true">§</span><span><b>Vade Mecum</b><small>Consulta rápida</small></span></button>
           <button type="button" data-student-more-action="onboarding"><span aria-hidden="true">◎</span><span><b>Meu plano</b><small>Objetivo e rotina</small></span></button>
@@ -92,6 +108,7 @@
       });
       document.body.appendChild(panel);
     }
+    ensureAdminEntry();
   }
   function ensureSkipLink() {
     if (!byId('studentSkipLink')) {
@@ -179,6 +196,7 @@
     ensureNavigation(); ensureSkipLink(); ensureConnectionState(); ensureReaders(); ensureAccessibility(); syncVisibleLabels();
   }
 
+  global.addEventListener('base-completa-auth-ready', () => UX.schedule());
   global.addEventListener('central:sync-status', (event) => {
     const type = String(event.detail?.type || 'ok');
     syncState = { message:String(event.detail?.message || 'Dados salvos automaticamente.'), type:type === 'err' ? 'error' : type };
