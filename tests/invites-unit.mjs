@@ -30,7 +30,7 @@ test('convite tem prazo padrão e estados consistentes', () => {
 });
 
 test('API: somente admin gera convite; cadastro sempre cria aluno; resgate atômico', () => {
-  const source = readFileSync(new URL('../api/invites.js', import.meta.url), 'utf8');
+  const source = readFileSync(new URL('../lib/invite-handler.js', import.meta.url), 'utf8');
   assert.match(source, /requireSession\(req, \['admin'\]\)/);
   assert.match(source, /role,password_hash,active/);
   assert.match(source, /'aluno',/);
@@ -44,9 +44,11 @@ test('API: somente admin gera convite; cadastro sempre cria aluno; resgate atôm
 test('acesso público limitado ao resgate: páginas administrativas seguem protegidas', () => {
   const middleware = readFileSync(new URL('../middleware.js', import.meta.url), 'utf8');
   const html = readFileSync(new URL('../convite.html', import.meta.url), 'utf8');
+  const auth = readFileSync(new URL('../api/auth.js', import.meta.url), 'utf8');
+  assert.match(auth, /handleInviteAction/);
   assert.match(middleware, /'\/convite\.html'/);
   assert.match(middleware, /session\.role !== 'admin'/);
   assert.match(html, /base-completa-symbol\.webp/);
   assert.match(html, /history\.replaceState/);
-  assert.match(html, /\/api\/invites\?action=redeem/);
+  assert.match(html, /\/api\/auth\?action=invite-redeem/);
 });
