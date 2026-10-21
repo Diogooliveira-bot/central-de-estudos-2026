@@ -1,0 +1,26 @@
+name: Etapa 4 - verificacao antes da publicacao
+on:
+  push:
+    branches:
+      - feature/edital-verticalizado-tjpb-2026
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  testes:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Obter repositorio
+        uses: actions/checkout@v4
+      - name: Configurar Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Instalar dependencias
+        run: npm ci --ignore-scripts
+      - name: Executar suite completa
+        run: npm test
