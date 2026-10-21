@@ -100,7 +100,9 @@
     const coverage = item.coverage === 'complete' ? 'Cobertura completa' : item.coverage === 'partial' ? 'Cobertura parcial' : 'Em preparação';
     const checks = MARKERS.map(([marker,label]) => '<label class="exam-check"><input type="checkbox" data-exam-topic="'+esc(item.id)+'" data-exam-marker="'+marker+'"'+(state[item.id]?.[marker]?.value ? ' checked' : '')+'><span>'+label+'</span></label>').join('');
     const links = (item.moduleIds || []).map(id => '<button type="button" class="exam-module-link" data-exam-module="'+esc(id)+'" data-exam-discipline="'+esc(subject.disciplineId || '')+'">Abrir módulo</button>').join('');
-    return '<article class="exam-topic" data-exam-topic-row="'+esc(item.id)+'"><div class="exam-topic-copy"><span class="exam-topic-number">'+esc(item.number || String(item.ordinal || ''))+'</span><span>'+esc(item.text)+'</span><small>'+coverage+'</small>'+links+'</div><div class="exam-checks">'+checks+'</div></article>';
+    const warnings = (item.moduleEvidence || []).filter(e => e && e.warning).map(e => e.warning).concat(item.uncoveredSubtopics || []);
+    const disclaimer = warnings.length ? '<details class="exam-topic-audit-note"><summary>ATUALIZAÇÃO JURÍDICA / CONTEÚDO PENDENTE</summary><p>'+warnings.map(esc).join(' ')+'</p></details>' : '';
+    return '<article class="exam-topic" data-exam-topic-row="'+esc(item.id)+'"><div class="exam-topic-copy"><span class="exam-topic-number">'+esc(item.number || String(item.ordinal || ''))+'</span><span>'+esc(item.text)+'</span><small>'+coverage+'</small>'+disclaimer+links+'</div><div class="exam-checks">'+checks+'</div></article>';
   }
   function render() {
     const host = document.getElementById(dialogId);
