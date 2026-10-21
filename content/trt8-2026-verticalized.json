@@ -204,8 +204,8 @@
           "text": "Compreensão e elaboração da lógica das situações por meio de: raciocínio verbal, raciocínio matemático, raciocínio sequencial, orientação espacial e temporal, formação de conceitos, discriminação de elementos.",
           "organizational": false,
           "moduleIds": [
-            "rlm-tjce2026-m07",
-            "rlm-tjce2026-m09"
+            "M07",
+            "M09"
           ],
           "candidateModules": [
             {
@@ -223,7 +223,7 @@
           ],
           "mappingStatus": "thematic_module_verified",
           "coverage": "partial",
-          "mappingEvidence": "Módulo com ID canônico existente e título com correspondência temática direta; cobertura da teoria NÃO auditada integralmente."
+          "mappingEvidence": "Conferido contra ui/rlm-native-v1.js: atributo data-rlm-module usa ID Mnn. Cobertura temática parcial, sem auditoria integral da teoria."
         },
         {
           "id": "trt8-rlm-004",
@@ -305,7 +305,7 @@
           "text": "porcentagem e problemas envolvendo regra de três simples, cálculos de porcenta gem, acréscimos e descontos.",
           "organizational": false,
           "moduleIds": [
-            "rlm-tjce2026-m12"
+            "M12"
           ],
           "candidateModules": [
             {
@@ -323,7 +323,7 @@
           ],
           "mappingStatus": "thematic_module_verified",
           "coverage": "partial",
-          "mappingEvidence": "Módulo com ID canônico existente e título com correspondência temática direta; cobertura da teoria NÃO auditada integralmente."
+          "mappingEvidence": "Conferido contra ui/rlm-native-v1.js: atributo data-rlm-module usa ID Mnn. Cobertura temática parcial, sem auditoria integral da teoria."
         },
         {
           "id": "trt8-rlm-011",
@@ -332,8 +332,8 @@
           "text": "Noções de Estatísticas: medidas de tendência central (moda, mediana, média aritmética simples e ponderada) e de dispersão (desvio médio, amplitude, variância, desvio padrão)",
           "organizational": false,
           "moduleIds": [
-            "rlm-tjce2026-m14",
-            "rlm-tjce2026-m15"
+            "M14",
+            "M15"
           ],
           "candidateModules": [
             {
@@ -351,7 +351,7 @@
           ],
           "mappingStatus": "thematic_module_verified",
           "coverage": "partial",
-          "mappingEvidence": "Módulo com ID canônico existente e título com correspondência temática direta; cobertura da teoria NÃO auditada integralmente."
+          "mappingEvidence": "Conferido contra ui/rlm-native-v1.js: atributo data-rlm-module usa ID Mnn. Cobertura temática parcial, sem auditoria integral da teoria."
         },
         {
           "id": "trt8-rlm-012",
@@ -360,7 +360,7 @@
           "text": "leitura e interpretação de gráficos (histogramas, se tores, infográficos) e tabelas.",
           "organizational": false,
           "moduleIds": [
-            "rlm-tjce2026-m13"
+            "M13"
           ],
           "candidateModules": [
             {
@@ -372,7 +372,7 @@
           ],
           "mappingStatus": "thematic_module_verified",
           "coverage": "partial",
-          "mappingEvidence": "Módulo com ID canônico existente e título com correspondência temática direta; cobertura da teoria NÃO auditada integralmente."
+          "mappingEvidence": "Conferido contra ui/rlm-native-v1.js: atributo data-rlm-module usa ID Mnn. Cobertura temática parcial, sem auditoria integral da teoria."
         }
       ],
       "coverage": "partial",
