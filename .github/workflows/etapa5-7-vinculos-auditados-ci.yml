@@ -1,0 +1,19 @@
+name: Etapa 5.7 - Vínculos Técnico TRT8
+on:
+  push:
+    branches: [feature/trt8-2026-tecnico-administrativo]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: npm test
