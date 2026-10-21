@@ -1,0 +1,845 @@
+{
+  "schemaVersion": 1,
+  "examId": "trt8-2026-tecnico-administrativa-21",
+  "disciplineId": "trt8-tec-21-gestao",
+  "title": "Noções de Administração Pública — TRT-8 Técnico",
+  "edition": "2026-10-21",
+  "releaseStatus": "draft_editorial_review",
+  "pedagogicalApproach": "Primeira leitura explicativa → aplicação passo a passo → aprofundamento → revisão e questões comentadas",
+  "sources": [
+    {
+      "label": "Constituição Federal de 1988, art. 37, caput",
+      "url": "https://www.planalto.gov.br/ccivil_03/constituicao/constituicaocompilado.htm",
+      "scope": "Princípios constitucionais gerais da Administração Pública"
+    },
+    {
+      "label": "Decreto federal 9.203/2017, arts. 1º a 5º",
+      "url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/decreto/d9203.htm",
+      "scope": "Referência conceitual de governança do Executivo federal. Não presumir aplicação direta ao TRT-8."
+    },
+    {
+      "label": "Enap — Percepções sobre gestão do desempenho no setor público",
+      "url": "https://revista.enap.gov.br/index.php/RSP/article/view/6864",
+      "scope": "Diferenças entre gestão e avaliação do desempenho"
+    },
+    {
+      "label": "Enap — Avaliação de desempenho orientada a valor público (2025)",
+      "url": "https://repositorio.enap.gov.br/items/8e3ea3f1-ba80-4598-9dd5-5f687d53d4e6",
+      "scope": "Resultados, indicadores e valor público"
+    },
+    {
+      "label": "Enap — Plano de Desenvolvimento de Pessoas",
+      "url": "https://www2.enap.gov.br/acesso-a-informacao/acoes-e-programas/pol%C3%ADtica-nacional-de-desenvolvimento-de-pessoas-pndp/",
+      "scope": "Gestão e desenvolvimento de pessoas no setor público"
+    }
+  ],
+  "lessons": [
+    {
+      "topicId": "trt8-tec-21-gestao-001",
+      "moduleId": "gestao-m01",
+      "number": 1,
+      "title": "Estruturas organizacionais e departamentalização",
+      "goal": "Entender como um tribunal distribui autoridade, setores e fluxos sem decorar uma lista isolada.",
+      "complete": {
+        "firstRead": [
+          "Uma organização formal existe quando pessoas e atividades são coordenadas para cumprir objetivos. A estrutura define quem responde a quem, quem decide e como o trabalho passa de uma unidade a outra. Organograma é a representação dessa estrutura, não o trabalho real em si. No tribunal, secretarias, unidades judiciárias e setores administrativos dependem uns dos outros para transformar pedidos em serviços.",
+          "Uma estrutura funcional agrupa pessoas pela especialidade (pessoas, orçamento, tecnologia). A divisional agrupa por produtos, públicos ou regiões. A matricial combina dois eixos de coordenação; o colaborador pode responder ao gestor funcional e ao gestor do projeto. Estruturas em rede cooperam com parceiros e dependem de integração e pactuação. Nenhum arranjo é sempre o melhor: a escolha depende do objetivo e da coordenação necessária."
+        ],
+        "howItWorks": [
+          "Departamentalizar significa escolher o critério de agrupamento: função, serviço, território, clientela, processo ou projeto. A estrutura funcional aumenta especialização, mas pode criar silos. A divisional aproxima decisões do público atendido, mas pode duplicar recursos. A matricial favorece colaboração, porém exige resolver conflitos de prioridades e autoridade. Centralização concentra decisões em poucas instâncias; descentralização distribui decisões conforme regras. Delegação é atribuição de competências, não abandono de responsabilidade de supervisão."
+        ],
+        "workedExample": [
+          "Exemplo: o tribunal decide implantar atendimento digital. Primeiro identifica tarefas de TI, atendimento, jurídico e treinamento; depois define responsáveis e interfaces. Em estrutura funcional, cada setor cuida de sua parte e exige coordenação. Em projeto matricial, o líder do projeto articula pessoas de setores distintos, sem eliminar as responsabilidades funcionais. O erro é achar que um novo organograma, sozinho, resolve falhas de processo."
+        ],
+        "advanced": [
+          "Amplitude de controle é o número de subordinados diretamente coordenados por um gestor; amplitude maior tende a reduzir níveis hierárquicos, mas pode sobrecarregar a chefia. Formalização é o grau em que normas e rotinas orientam as tarefas. Organizações públicas combinam especialização e formalização com colaboração transversal. Em prova, diferencie organograma (posições e vínculos) de fluxograma (etapas de um processo)."
+        ]
+      },
+      "summary": [
+        "Funcional = especialidades; divisional = produtos/públicos/regiões.",
+        "Matricial = dupla coordenação, não necessariamente dupla chefia absoluta.",
+        "Departamentalização agrupa; fluxo de processo atravessa departamentos.",
+        "Centralização/descentralização dizem respeito à distribuição das decisões."
+      ],
+      "examTraps": [
+        "Estrutura matricial não elimina a necessidade de definir autoridade.",
+        "Fluxograma não é sinônimo de organograma."
+      ],
+      "questions": [
+        {
+          "stem": "Um tribunal organiza uma equipe temporária com servidores de TI, orçamento e atendimento, preservando suas unidades de origem. Qual estrutura se aproxima do caso?",
+          "options": [
+            "Funcional pura",
+            "Matricial",
+            "Divisional territorial",
+            "Informal sem coordenação"
+          ],
+          "correct": 1,
+          "commentary": "A combinação de especialidades com coordenação por projeto caracteriza uma estrutura matricial, que exige definição de prioridades."
+        },
+        {
+          "stem": "A principal vantagem de departamentalizar por função é:",
+          "options": [
+            "Especialização técnica",
+            "Eliminar conflitos entre setores",
+            "Eliminar toda chefia",
+            "Impedir padronização"
+          ],
+          "correct": 0,
+          "commentary": "O agrupamento funcional favorece domínio técnico e padronização; a integração entre setores continua necessária."
+        }
+      ],
+      "checklist": [
+        "Consigo explicar o conceito em palavras próprias.",
+        "Consigo resolver um exemplo aplicado ao tribunal.",
+        "Sei distinguir os termos confundidos pela banca.",
+        "Resolvi as questões e compreendi o comentário."
+      ]
+    },
+    {
+      "topicId": "trt8-tec-21-gestao-002",
+      "moduleId": "gestao-m02",
+      "number": 2,
+      "title": "Evolução das teorias das organizações",
+      "goal": "Compreender por que diferentes escolas enfatizam tarefas, pessoas, ambiente e resultados.",
+      "complete": {
+        "firstRead": [
+          "As teorias da administração nasceram para explicar problemas reais de coordenação. A Administração Científica (Taylor) analisa métodos de trabalho, tempos, padrões e produtividade. A Teoria Clássica (Fayol) observa funções gerenciais, como planejar, organizar, dirigir e controlar. A burocracia em Weber é um tipo ideal baseado em regras impessoais, competências definidas, hierarquia e profissionalização: não significa automaticamente lentidão ou papelada desnecessária.",
+          "A Escola das Relações Humanas chamou atenção para grupos, reconhecimento, comunicação e aspectos sociais do desempenho. Enfoques comportamentais aprofundaram motivação e decisão. A abordagem sistêmica interpreta a organização como conjunto de partes interdependentes e em interação com seu ambiente. Já a contingencial afirma que não há um único desenho estrutural ou estilo gerencial ótimo para todas as situações."
+        ],
+        "howItWorks": [
+          "Para identificar a teoria na questão, procure o foco dominante: 'tempos e movimentos' sugere Taylor; 'funções administrativas' remete a Fayol; 'regras impessoais e cargos' indica Weber; 'clima, grupo e liderança' remete às relações humanas; 'entradas, transformação e saídas' indica sistema; 'depende da situação' aponta contingência. Teorias posteriores não tornam automaticamente inúteis as anteriores; organizações modernas combinam elementos de várias."
+        ],
+        "workedExample": [
+          "Imagine uma secretaria com atrasos. A análise científica observa gargalos repetitivos; a clássica revisa distribuição de responsabilidades; a burocrática garante padronização e igualdade de tratamento; a humana ouve a equipe; a sistêmica investiga dependências com outras unidades; a contingencial escolhe intervenções adequadas ao tipo de serviço. Cada lente revela uma parte diferente do problema."
+        ],
+        "advanced": [
+          "A 'disfunção burocrática' ocorre quando meios formais — carimbos, procedimentos e controles — são tratados como fins. O modelo burocrático ideal, porém, visa previsibilidade e impessoalidade. Não confunda crítica à burocratização excessiva com defesa de decisões arbitrárias sem critérios. Em órgãos judiciais, a legalidade e o devido processo são exigências institucionais, independentemente da escola de administração usada como lente analítica."
+        ]
+      },
+      "summary": [
+        "Taylor: racionalização das tarefas.",
+        "Fayol: funções e estrutura da direção.",
+        "Weber: autoridade racional-legal e impessoalidade.",
+        "Relações humanas: grupos e fatores sociais.",
+        "Sistemas e contingência: interdependência e adequação ao contexto."
+      ],
+      "examTraps": [
+        "Burocracia weberiana não é sinônimo de ineficiência.",
+        "A abordagem contingencial não diz que tudo é permitido; diz que o arranjo adequado depende das condições."
+      ],
+      "questions": [
+        {
+          "stem": "A referência à hierarquia de cargos, regras impessoais e seleção por competência remete especialmente a:",
+          "options": [
+            "Taylor",
+            "Weber",
+            "Mayo",
+            "Maslow"
+          ],
+          "correct": 1,
+          "commentary": "O modelo burocrático de Weber enfatiza racionalidade legal, atribuições formais e impessoalidade."
+        },
+        {
+          "stem": "A afirmação 'não existe uma única estrutura ideal para qualquer organização' traduz a abordagem:",
+          "options": [
+            "Contingencial",
+            "Clássica em sentido estrito",
+            "Científica",
+            "Patrimonialista"
+          ],
+          "correct": 0,
+          "commentary": "O enfoque contingencial relaciona desenho administrativo a ambiente, tarefa, tecnologia e circunstâncias."
+        }
+      ],
+      "checklist": [
+        "Consigo explicar o conceito em palavras próprias.",
+        "Consigo resolver um exemplo aplicado ao tribunal.",
+        "Sei distinguir os termos confundidos pela banca.",
+        "Resolvi as questões e compreendi o comentário."
+      ]
+    },
+    {
+      "topicId": "trt8-tec-21-gestao-003",
+      "moduleId": "gestao-m03",
+      "number": 3,
+      "title": "Gestão pública e gestão privada",
+      "goal": "Diferenciar finalidades e limites sem reduzir a comparação a 'pública é lenta' e 'privada é eficiente'.",
+      "complete": {
+        "firstRead": [
+          "Toda organização precisa planejar, coordenar pessoas, empregar recursos e medir resultados. O que muda é o sistema de finalidades e restrições. Uma empresa pode buscar lucro, sustentabilidade financeira e objetivos contratualmente definidos. A gestão pública tem como referência o interesse público, a legalidade, a universalidade ou equidade de direitos quando cabíveis, o controle democrático e a prestação de contas à sociedade.",
+          "Uma unidade do tribunal não pode simplesmente abandonar atendimentos complexos por serem caros, nem escolher livremente quem terá acesso a um serviço público. Eficiência continua essencial: gastar menos recursos para entregar um serviço adequado pode ser positivo, desde que não viole direitos, qualidade, acesso e normas. O desempenho público tem múltiplos critérios, como qualidade, confiança institucional, acesso, tempestividade e efetividade."
+        ],
+        "howItWorks": [
+          "Convergências: ambas empregam metas, avaliação de desempenho, planejamento, tecnologia, comunicação e gestão de riscos. Diferenças: o setor público opera sob princípios constitucionais e responsabilidade por decisões de interesse coletivo; a iniciativa privada responde a seu regime jurídico e a objetivos de seus proprietários e demais partes interessadas. Parcerias e terceirizações não apagam o dever de fiscalização do gestor público."
+        ],
+        "workedExample": [
+          "Exemplo: um canal de atendimento reduz custo ao substituir balcão presencial por aplicação digital. No setor privado, a eficiência pode ser avaliada por custo e satisfação do cliente; no tribunal, além de custo e satisfação, devem ser examinados acessibilidade, inclusão digital, segurança das informações, disponibilidade e garantia do serviço a quem não consegue usar o aplicativo."
+        ],
+        "advanced": [
+          "A noção de valor público pergunta o que a sociedade recebe de útil e legítimo. Economizar tempo de um servidor não é suficiente se a população passa a esperar mais. Indicadores precisam captar benefícios ao usuário, não só atividade interna. O cidadão é titular de direitos, e não apenas consumidor de um serviço."
+        ]
+      },
+      "summary": [
+        "Ferramentas gerenciais podem ser comuns aos dois setores.",
+        "No público, legalidade e direitos condicionam metas e escolhas.",
+        "Eficiência não autoriza exclusão de públicos vulneráveis.",
+        "Resultado público inclui acesso, qualidade e confiança."
+      ],
+      "examTraps": [
+        "Lucratividade não é finalidade geral da Administração Pública.",
+        "Eficiência financeira sozinha não prova efetividade social."
+      ],
+      "questions": [
+        {
+          "stem": "Ao avaliar atendimento eletrônico de um tribunal, o indicador mais alinhado ao valor público inclui:",
+          "options": [
+            "Somente custo mensal da plataforma",
+            "Acesso, qualidade e tempo de solução para usuários",
+            "Número de reuniões da equipe",
+            "Volume de relatórios internos"
+          ],
+          "correct": 1,
+          "commentary": "Valor público exige considerar efeitos reais sobre o destinatário e a legitimidade do serviço."
+        },
+        {
+          "stem": "É correto afirmar que gestão pública e privada:",
+          "options": [
+            "Não compartilham ferramentas de planejamento",
+            "Sempre perseguem idêntica finalidade",
+            "Podem usar técnicas semelhantes sob regimes e finalidades distintas",
+            "Não precisam avaliar riscos"
+          ],
+          "correct": 2,
+          "commentary": "Planejamento, indicadores e liderança servem em ambos, mas metas e limites são distintos."
+        }
+      ],
+      "checklist": [
+        "Consigo explicar o conceito em palavras próprias.",
+        "Consigo resolver um exemplo aplicado ao tribunal.",
+        "Sei distinguir os termos confundidos pela banca.",
+        "Resolvi as questões e compreendi o comentário."
+      ]
+    },
+    {
+      "topicId": "trt8-tec-21-gestao-004",
+      "moduleId": "gestao-m04",
+      "number": 4,
+      "title": "Princípios básicos da Administração Pública",
+      "goal": "Aplicar os princípios constitucionais a decisões práticas de gestão.",
+      "complete": {
+        "firstRead": [
+          "O art. 37, caput, da Constituição determina que a Administração Pública direta e indireta de qualquer dos Poderes obedeça a legalidade, impessoalidade, moralidade, publicidade e eficiência. A sigla 'LIMPE' auxilia a memória, mas decorar letras não basta. Na prática, uma medida só pode ser gerencialmente boa se respeitar o regime jurídico e os destinatários legítimos da atividade pública.",
+          "Legalidade: a atuação administrativa exige fundamento jurídico adequado. Impessoalidade: a decisão não pode privilegiar ou punir alguém por afinidade pessoal. Moralidade: condutas devem obedecer padrões éticos juridicamente relevantes. Publicidade: transparência é regra, resguardadas hipóteses legais de sigilo. Eficiência: o serviço deve aproveitar bem os recursos e buscar resultados adequados."
+        ],
+        "howItWorks": [
+          "Há também princípios como motivação, razoabilidade, proporcionalidade, segurança jurídica e interesse público, com expressão em normas e na jurisprudência; não confunda essa enumeração ampliada com o rol literal do caput do art. 37. Publicidade não autoriza expor dados pessoais protegidos. Impessoalidade não significa tratar desigualmente situações equivalentes; admite diferenciações juridicamente justificadas."
+        ],
+        "workedExample": [
+          "Exemplo: uma chefia cria fila paralela para amigos receberem atendimento antes dos demais. Mesmo que o procedimento acelere um caso, há afronta à impessoalidade e possivelmente à moralidade. Se uma decisão afeta uma pessoa, deve ser examinada também quanto à competência, motivação e procedimento aplicável. Velocidade isolada não sana irregularidade."
+        ],
+        "advanced": [
+          "No Decreto federal 9.203/2017, liderança, estratégia e controle estruturam a governança da administração federal executiva, com princípios próprios de governança. Trata-se de referência de estudo, não de transplante automático de regras do Executivo para o TRT-8. Na FCC, separe 'princípios da administração pública' (CF art. 37) de 'princípios da governança pública' (art. 3º do Decreto 9.203/2017)."
+        ]
+      },
+      "summary": [
+        "LIMPE = legalidade, impessoalidade, moralidade, publicidade, eficiência.",
+        "Publicação de dados observa limites de sigilo e privacidade.",
+        "Eficiência funciona com legalidade, nunca contra ela.",
+        "O Decreto 9.203/2017 tem âmbito federal executivo específico."
+      ],
+      "examTraps": [
+        "Confundir eficiência com licença para descumprir norma.",
+        "Confundir princípios do art. 37 com a lista do decreto de governança."
+      ],
+      "questions": [
+        {
+          "stem": "Uma chefia escolhe atendimento prioritário por amizade. O princípio diretamente comprometido é:",
+          "options": [
+            "Impessoalidade",
+            "Publicidade",
+            "Continuidade apenas",
+            "Efetividade contratual"
+          ],
+          "correct": 0,
+          "commentary": "A seleção por amizade viola a exigência de tratamento impessoal."
+        },
+        {
+          "stem": "O art. 37, caput, da Constituição inclui expressamente:",
+          "options": [
+            "Capacidade de resposta",
+            "Integridade",
+            "Eficiência",
+            "Melhoria regulatória"
+          ],
+          "correct": 2,
+          "commentary": "Eficiência integra o caput do art. 37; os demais aparecem entre princípios da governança no Decreto 9.203/2017."
+        }
+      ],
+      "checklist": [
+        "Consigo explicar o conceito em palavras próprias.",
+        "Consigo resolver um exemplo aplicado ao tribunal.",
+        "Sei distinguir os termos confundidos pela banca.",
+        "Resolvi as questões e compreendi o comentário."
+      ]
+    },
+    {
+      "topicId": "trt8-tec-21-gestao-005",
+      "moduleId": "gestao-m05",
+      "number": 5,
+      "title": "Gestão por resultados e serviços públicos",
+      "goal": "Sair da contagem de atividades e avaliar entregas úteis ao cidadão.",
+      "complete": {
+        "firstRead": [
+          "Uma equipe pode executar muitas tarefas e, ainda assim, não resolver os problemas que justificaram sua existência. Por isso, gestão por resultados começa pelo efeito pretendido: melhor acesso, prazos menores, atendimento mais claro ou menos retrabalho. Insumos são recursos (pessoas, tempo, orçamento); atividades são ações realizadas; produtos são entregas; resultados são mudanças obtidas pelos usuários; impacto é a transformação mais ampla, sujeita a diversos fatores.",
+          "Economicidade relaciona custo e escolhas prudentes; eficiência compara recursos com produtos; eficácia analisa o alcance das metas planejadas; efetividade observa os efeitos reais para o público-alvo. Os termos não são totalmente intercambiáveis. Resolver mil solicitações dentro do prazo pode indicar eficácia, mas ainda é necessário verificar se o problema de quem solicitou foi de fato resolvido."
+        ],
+        "howItWorks": [
+          "Um indicador deve ter definição, unidade, fonte de dados, periodicidade, responsável e meta plausível. A média pode ocultar casos extremos: atendimento 'em média 2 dias' pode esconder usuários aguardando um mês. Sempre combine quantidade com qualidade e equidade. Metas também podem criar comportamentos indesejados se premiam apenas números."
+        ],
+        "workedExample": [
+          "Caso passo a passo: o tribunal quer reduzir atrasos no fornecimento de certidões. 1) Define prazo e qualidade desejados. 2) Mede tempo de emissão, taxa de correções e reclamações. 3) Identifica gargalos no processo. 4) Redesenha procedimentos. 5) Compara antes/depois e escuta os usuários. Ter emitido mais certidões sem diminuir erros não basta para concluir sucesso."
+        ],
+        "advanced": [
+          "O Decreto 9.203/2017 associa valor público a entregas que respondam a necessidades legítimas da sociedade; o material da Enap debate avaliação de desempenho orientada à criação desse valor. Governança avalia, direciona e monitora; gestão executa planos e operações. A distinção ajuda a interpretar questões com os verbos 'produzir' e 'direcionar'."
+        ]
+      },
+      "summary": [
+        "Insumo → atividade → produto → resultado → impacto.",
+        "Eficiência = relação recursos/produtos; eficácia = meta atingida.",
+        "Efetividade = benefício ou efeito alcançado.",
+        "Metas precisam evitar incentivo a volume sem qualidade."
+      ],
+      "examTraps": [
+        "Contar atendimentos não é, sozinho, medir satisfação ou solução.",
+        "Eficácia e efetividade não são sinônimos perfeitos."
+      ],
+      "questions": [
+        {
+          "stem": "Um setor cumpriu 100% da meta de processos analisados, mas usuários continuam sem solução. O resultado indica:",
+          "options": [
+            "Eficácia da meta, mas efetividade questionável",
+            "Efetividade completa comprovada",
+            "Ausência de qualquer produto",
+            "Ilegalidade automática"
+          ],
+          "correct": 0,
+          "commentary": "A meta quantitativa foi alcançada, mas o efeito no público precisa ser verificado."
+        },
+        {
+          "stem": "Qual item é exemplo de indicador de resultado para atendimento?",
+          "options": [
+            "Número de computadores",
+            "Quantidade de reuniões",
+            "Percentual de solicitações resolvidas no prazo com qualidade",
+            "Nomes dos integrantes do setor"
+          ],
+          "correct": 2,
+          "commentary": "O indicador conecta a entrega à solução efetiva e oportuna percebida pelo usuário."
+        }
+      ],
+      "checklist": [
+        "Consigo explicar o conceito em palavras próprias.",
+        "Consigo resolver um exemplo aplicado ao tribunal.",
+        "Sei distinguir os termos confundidos pela banca.",
+        "Resolvi as questões e compreendi o comentário."
+      ]
+    },
+    {
+      "topicId": "trt8-tec-21-gestao-006",
+      "moduleId": "gestao-m06",
+      "number": 6,
+      "title": "Comunicação na gestão e redes organizacionais",
+      "goal": "Identificar falhas na circulação de informação e entender cooperação entre unidades.",
+      "complete": {
+        "firstRead": [
+          "Comunicar não é apenas enviar mensagem; é alcançar entendimento suficiente para a ação correta. O processo envolve emissor, mensagem, canal, receptor, contexto e retorno. Ruídos surgem de linguagem ambígua, excesso de informação, escolha inadequada do canal ou diferenças de conhecimento. No tribunal, comunicação interna deficiente pode gerar duplicidade de tarefas, erros no atendimento e retrabalho.",
+          "Comunicação vertical acompanha fluxos hierárquicos; horizontal ocorre entre setores de mesmo nível; diagonal atravessa áreas e níveis. Comunicação formal usa canais institucionais; a informal também influencia a organização, mas não substitui registros exigidos. Feedback confirma entendimento, identifica resistência e permite ajustar procedimentos. Uma ordem tecnicamente correta, mas incompreensível, tende a falhar na execução."
+        ],
+        "howItWorks": [
+          "Redes organizacionais são relações de cooperação entre órgãos, unidades ou parceiros que compartilham informações e coordenam ações. A rede não equivale à ausência de responsabilidade. É preciso pactuar papéis, fluxos, prazos, padrões de informação e mecanismos de governança. A interdependência aumenta a importância de confiança, interoperabilidade e prestação de contas."
+        ],
+        "workedExample": [
+          "Exemplo: para atender uma pessoa com deficiência, recepção, segurança, tecnologia e secretaria precisam compartilhar responsabilidades. Primeiro, mapeiam jornada do usuário; em seguida, definem quem recebe solicitação, quem adapta o atendimento e quem valida a solução. Sem fluxo explícito, cada unidade pode acreditar que a outra resolverá o problema."
+        ],
+        "advanced": [
+          "Ferramentas digitais ampliam velocidade, mas não garantem comunicação de qualidade. Canal deve ser escolhido conforme urgência, necessidade de registro, segurança e sensibilidade do conteúdo. Indicadores úteis incluem retrabalho por erro de comunicação, tempo para encaminhamento e taxa de resolução na primeira interação."
+        ]
+      },
+      "summary": [
+        "Emissor, mensagem, canal, receptor e feedback.",
+        "Ruído = barreira que altera ou dificulta compreensão.",
+        "Horizontal não significa informal.",
+        "Rede organizacional = coordenação sem apagar responsabilidades."
+      ],
+      "examTraps": [
+        "Envio de e-mail não comprova compreensão.",
+        "Redes colaborativas precisam de regras de atuação e definição de responsabilidade."
+      ],
+      "questions": [
+        {
+          "stem": "Um procedimento mudou e dois setores passaram a agir de forma contraditória. O primeiro diagnóstico gerencial adequado é:",
+          "options": [
+            "Verificar canal, mensagem, responsabilidades e feedback",
+            "Suspender toda comunicação formal",
+            "Excluir qualquer registro",
+            "Substituir imediatamente todos os servidores"
+          ],
+          "correct": 0,
+          "commentary": "A divergência pode resultar de ruídos, responsabilidades ambíguas ou ausência de confirmação do entendimento."
+        },
+        {
+          "stem": "Comunicação horizontal ocorre sobretudo:",
+          "options": [
+            "Entre níveis exclusivamente superiores e inferiores",
+            "Entre unidades no mesmo nível organizacional",
+            "Apenas em conversas informais",
+            "Apenas com cidadãos"
+          ],
+          "correct": 1,
+          "commentary": "Horizontal descreve a posição organizacional dos participantes, não o caráter formal ou informal da comunicação."
+        }
+      ],
+      "checklist": [
+        "Consigo explicar o conceito em palavras próprias.",
+        "Consigo resolver um exemplo aplicado ao tribunal.",
+        "Sei distinguir os termos confundidos pela banca.",
+        "Resolvi as questões e compreendi o comentário."
+      ]
+    },
+    {
+      "topicId": "trt8-tec-21-gestao-007",
+      "moduleId": "gestao-m07",
+      "number": 7,
+      "title": "Gestão e avaliação de desempenho",
+      "goal": "Entender o ciclo de desempenho, e não somente o preenchimento anual de formulário.",
+      "complete": {
+        "firstRead": [
+          "Desempenho é o que pessoas, equipes e organizações efetivamente entregam em relação a expectativas relevantes. Gestão de desempenho é um ciclo contínuo: combinar objetivos, definir critérios, acompanhar o trabalho, oferecer feedback, identificar obstáculos, desenvolver competências e ajustar metas. Avaliação de desempenho é um dos instrumentos desse ciclo, realizada com periodicidade e método definidos.",
+          "Medir apenas esforço individual pode ser injusto quando a infraestrutura, o processo ou a equipe não oferecem condições adequadas. Um servidor pode trabalhar muito e depender de autorizações externas; por isso, indicadores de atividade devem ser interpretados com contexto. Avaliação não deve se tornar ritual punitivo nem distribuição automática de notas altas."
+        ],
+        "howItWorks": [
+          "O ciclo começa com objetivos compreendidos pelo avaliado. Depois, escolhe-se uma combinação de metas e comportamentos observáveis, coletam-se evidências confiáveis, conversa-se sobre resultados e pactua-se um plano de desenvolvimento. Critérios precisam evitar discriminação, favoritismo e avaliação de atributos pessoais irrelevantes. Para decisões formais sobre servidores, prevalece o regime legal específico, não um modelo gerencial genérico."
+        ],
+        "workedExample": [
+          "Exemplo: uma equipe atrasou entregas porque houve mudança no sistema de processos. A chefia separa desempenho individual, dependências sistêmicas e prioridades reais. Ajusta o treinamento, reprograma parte das metas, acompanha prazo e qualidade. Atribuir nota ruim sem verificar causas confundiria avaliação com penalidade sem diagnóstico."
+        ],
+        "advanced": [
+          "A literatura da Enap observa que gestão do desempenho não se resume à avaliação isolada: exige lideranças preparadas, regras claras e alinhamento entre desempenho individual, de equipe e institucional. Scorecards podem combinar aprendizado, processo, atendimento e resultados; não confundir quantidade de indicadores com maturidade da gestão."
+        ]
+      },
+      "summary": [
+        "Gestão de desempenho = ciclo; avaliação = momento/instrumento.",
+        "Critérios devem ser claros, observáveis e comparáveis.",
+        "Feedback serve para correção e desenvolvimento.",
+        "Desempenho resulta também de condições organizacionais."
+      ],
+      "examTraps": [
+        "Não confundir avaliação com punição automática.",
+        "Cumprir tarefa individual não garante objetivo institucional."
+      ],
+      "questions": [
+        {
+          "stem": "Uma chefia realiza avaliação anual e nunca dá feedback ou estabelece metas. O que falta principalmente?",
+          "options": [
+            "Gestão contínua do desempenho",
+            "Mais formulários iguais",
+            "Mais níveis hierárquicos",
+            "Menos evidências"
+          ],
+          "correct": 0,
+          "commentary": "A avaliação é apenas uma parte do processo, que exige planejamento, acompanhamento e desenvolvimento."
+        },
+        {
+          "stem": "Uma meta individual depende de sistema frequentemente indisponível. Na avaliação, deve-se:",
+          "options": [
+            "Ignorar as condições de trabalho",
+            "Analisar fatores do processo e evidências",
+            "Atribuir nota mínima automaticamente",
+            "Avaliar apenas simpatia"
+          ],
+          "correct": 1,
+          "commentary": "A gestão responsável distingue contribuição individual e condições externas que afetam o resultado."
+        }
+      ],
+      "checklist": [
+        "Consigo explicar o conceito em palavras próprias.",
+        "Consigo resolver um exemplo aplicado ao tribunal.",
+        "Sei distinguir os termos confundidos pela banca.",
+        "Resolvi as questões e compreendi o comentário."
+      ]
+    },
+    {
+      "topicId": "trt8-tec-21-gestao-008",
+      "moduleId": "gestao-m08",
+      "number": 8,
+      "title": "Modelos de avaliação de desempenho",
+      "goal": "Comparar avaliação por objetivos, competências, escalas e múltiplas fontes.",
+      "complete": {
+        "firstRead": [
+          "Modelos de avaliação respondem a perguntas diferentes. Escalas gráficas classificam dimensões predefinidas (por exemplo, qualidade, cooperação) em níveis; são simples, mas podem sofrer subjetividade. Escolha forçada utiliza conjuntos de afirmações estruturadas para reduzir certos vieses. Incidentes críticos registram comportamentos relevantes observados ao longo do período, positivos ou negativos. Avaliação por objetivos analisa metas pactuadas e resultados mensuráveis.",
+          "Avaliação por competências observa conhecimentos, habilidades e atitudes manifestos em contexto. Avaliação 180 graus costuma reunir gestor e avaliado; 360 graus acrescenta múltiplas perspectivas, que podem incluir pares, clientes internos e subordinados, conforme o programa. Um número maior de avaliadores não garante justiça ou precisão se os critérios forem mal desenhados."
+        ],
+        "howItWorks": [
+          "Os erros típicos são efeito halo (uma impressão domina todas as notas), tendência central (todos recebem nota média), leniência/severidade, recência (últimos fatos pesam demais) e comparação indevida entre colegas. Para atenuá-los, defina descritores observáveis, treine avaliadores, registre evidências e permita diálogo. A escolha depende da finalidade e do marco normativo de cada órgão."
+        ],
+        "workedExample": [
+          "Caso: um chefe considera uma servidora 'muito organizada' e dá nota máxima também em inovação sem evidências. Trata-se de possível efeito halo. Um sistema com exemplos concretos por critério, documentação do trabalho e feedback reduz o risco de extrapolação. Se a meta é reduzir retrabalho, o gestor pode combinar avaliação por objetivos com competências de colaboração."
+        ],
+        "advanced": [
+          "O desenho não precisa escolher um único modelo: metas individuais, comportamentos observáveis e resultados de equipe podem coexistir. Diferencie avaliação de desempenho (atividade/resultados) de avaliação de potencial (capacidade futura) e de análise de clima (percepção coletiva), evitando tratá-las como instrumentos idênticos."
+        ]
+      },
+      "summary": [
+        "Escalas = níveis; incidentes críticos = registros relevantes.",
+        "Objetivos = metas; competências = comportamentos e capacidades.",
+        "360 graus = múltiplas fontes, não sinônimo de precisão automática.",
+        "Efeito halo = impressão em uma dimensão contamina outras."
+      ],
+      "examTraps": [
+        "360 graus não é obrigatório em toda Administração Pública.",
+        "Avaliação por metas sem contexto pode premiar atalhos."
+      ],
+      "questions": [
+        {
+          "stem": "Dar nota máxima em todas as dimensões por causa de um único traço positivo é erro de:",
+          "options": [
+            "Tendência central",
+            "Efeito halo",
+            "Validade convergente",
+            "Amostragem aleatória"
+          ],
+          "correct": 1,
+          "commentary": "O efeito halo ocorre quando a impressão geral ou uma característica interfere nas notas das demais."
+        },
+        {
+          "stem": "O uso de chefia, pares e subordinados como fontes de feedback é típico de:",
+          "options": [
+            "Avaliação 360 graus",
+            "Incidente crítico apenas",
+            "Organograma funcional",
+            "Curva ABC"
+          ],
+          "correct": 0,
+          "commentary": "A avaliação multifuentes reúne perspectivas distintas, desde que o desenho do instrumento as preveja."
+        }
+      ],
+      "checklist": [
+        "Consigo explicar o conceito em palavras próprias.",
+        "Consigo resolver um exemplo aplicado ao tribunal.",
+        "Sei distinguir os termos confundidos pela banca.",
+        "Resolvi as questões e compreendi o comentário."
+      ]
+    },
+    {
+      "topicId": "trt8-tec-21-gestao-009",
+      "moduleId": "gestao-m09",
+      "number": 9,
+      "title": "Processo organizacional: planejar, dirigir, coordenar e controlar",
+      "goal": "Compreender o ciclo administrativo e distinguir processo organizacional de processo de trabalho.",
+      "complete": {
+        "firstRead": [
+          "As funções administrativas se conectam. Planejar define objetivos e caminhos; organizar distribui pessoas, recursos e atribuições; dirigir mobiliza e orienta equipes; coordenar integra esforços; comunicar reduz incerteza; controlar compara resultados com padrões; avaliar interpreta o que funcionou e o que deve ser corrigido. Não se trata de etapas rigidamente isoladas: em uma situação real, o gestor planeja e replaneja enquanto acompanha a execução.",
+          "Processo organizacional, nesse contexto, designa o conjunto de funções de gestão. Já processo de trabalho é uma sequência de atividades que transforma entradas em saídas para um destinatário, como protocolar, conferir e emitir uma certidão. Confundir as duas expressões é pegadinha comum. O primeiro pergunta como administrar; o segundo, como a entrega acontece ponta a ponta."
+        ],
+        "howItWorks": [
+          "No controle, estabelece-se padrão, mede-se execução, compara-se o resultado e corrige-se o desvio. Controle prévio busca prevenir erros; concomitante observa atividades em andamento; posterior avalia resultados concluídos. Um sistema de indicadores que só registra números, mas não gera correção, ainda não fecha o ciclo gerencial."
+        ],
+        "workedExample": [
+          "Exemplo: uma secretaria quer melhorar atendimento. Planejamento: objetivo e prazo. Organização: revezamento e ferramentas. Direção: orientar pessoas. Coordenação: integrar secretaria e TI. Comunicação: explicar a mudança. Controle: acompanhar filas e erros. Avaliação: ouvir usuários e ajustar o serviço. Cada verbo corresponde a uma atividade gerencial, mas todos devem conversar entre si."
+        ],
+        "advanced": [
+          "A análise também pode ser apresentada pelo ciclo PDCA: Plan (planejar), Do (executar), Check (verificar) e Act (agir corretivamente/padronizar). O PDCA reforça melhoria contínua, mas não substitui competências e controles jurídicos. Indicadores de processo não dispensam verificar o resultado final."
+        ]
+      },
+      "summary": [
+        "Planejar = decidir antecipadamente; organizar = alocar meios.",
+        "Dirigir = orientar; coordenar = integrar.",
+        "Controlar = comparar com padrões e corrigir desvios.",
+        "Processo de trabalho é fluxo de entrega, diferente das funções de gestão."
+      ],
+      "examTraps": [
+        "Controle não é apenas 'achar culpados'.",
+        "PDCA não é sinônimo de fase única e definitiva."
+      ],
+      "questions": [
+        {
+          "stem": "O gestor compara prazo real com prazo esperado e ajusta escala de trabalho. Predomina a função:",
+          "options": [
+            "Controle",
+            "Organização apenas",
+            "Seleção de pessoas",
+            "Formalização legislativa"
+          ],
+          "correct": 0,
+          "commentary": "Medição, comparação e ação corretiva caracterizam o controle gerencial."
+        },
+        {
+          "stem": "Mapear 'pedido → conferência → emissão → entrega' descreve:",
+          "options": [
+            "Fluxo de processo de trabalho",
+            "Apenas níveis de decisão",
+            "Estrutura societária",
+            "Hierarquia funcional em si"
+          ],
+          "correct": 0,
+          "commentary": "As etapas descrevem o processo que gera um serviço, não o organograma."
+        }
+      ],
+      "checklist": [
+        "Consigo explicar o conceito em palavras próprias.",
+        "Consigo resolver um exemplo aplicado ao tribunal.",
+        "Sei distinguir os termos confundidos pela banca.",
+        "Resolvi as questões e compreendi o comentário."
+      ]
+    },
+    {
+      "topicId": "trt8-tec-21-gestao-010",
+      "moduleId": "gestao-m10",
+      "number": 10,
+      "title": "Planejamento estratégico, tático e operacional",
+      "goal": "Transformar missão e objetivos de longo prazo em atividades verificáveis.",
+      "complete": {
+        "firstRead": [
+          "Planejamento estratégico trata de direção geral e horizonte mais amplo: missão (razão de existir), visão (situação desejada), valores, prioridades e objetivos institucionais. Planejamento tático traduz essa direção para áreas ou unidades, geralmente em horizontes intermediários. Planejamento operacional organiza atividades, responsáveis, procedimentos e prazos do cotidiano. Os três níveis precisam ser coerentes.",
+          "Uma instituição pode declarar a melhoria do acesso à Justiça como objetivo estratégico. Uma unidade administrativa estabelece, no nível tático, meta de inclusão digital em determinado serviço. No operacional, equipes programam treinamento, atualizam formulários, publicam instruções e acompanham chamados. Sem essa ligação, o plano estratégico vira documento decorativo."
+        ],
+        "howItWorks": [
+          "A análise SWOT considera fatores internos (forças e fraquezas) e externos (oportunidades e ameaças); não confunda origem de cada variável. O mapa estratégico organiza relações entre objetivos. Indicadores medem resultados e metas quantificam níveis pretendidos em determinado prazo. Projetos estratégicos precisam de responsáveis, recursos e acompanhamento."
+        ],
+        "workedExample": [
+          "Exemplo passo a passo: 1) identificar problema de espera elevada. 2) definir objetivo estratégico de atendimento tempestivo. 3) desdobrar meta tática por secretaria. 4) criar ação operacional com pessoal, prazos e sistema. 5) definir indicador de tempo e de qualidade. 6) revisar periodicamente e corrigir fatores que impedem a entrega."
+        ],
+        "advanced": [
+          "O planejamento público demanda alinhamento institucional, coerência com orçamento e atenção ao regime legal. Uma iniciativa útil não vira juridicamente viável só por constar do plano. Estratégia também envolve escolhas: priorizar ações implica renunciar ou adiar outras, com critérios transparentes e avaliação de riscos."
+        ]
+      },
+      "summary": [
+        "Estratégico = instituição/direção; tático = unidades; operacional = execução.",
+        "SWOT: forças/fraquezas internas; oportunidades/ameaças externas.",
+        "Objetivo descreve o que buscar; indicador mede; meta fixa alvo.",
+        "Plano requer acompanhamento, não apenas aprovação."
+      ],
+      "examTraps": [
+        "Confundir indicador (medida) com meta (valor-alvo).",
+        "Tomar oportunidade de mercado ou ambiente como força interna da organização."
+      ],
+      "questions": [
+        {
+          "stem": "Criar escala semanal de atendimento para executar plano institucional é medida principalmente:",
+          "options": [
+            "Estratégica",
+            "Operacional",
+            "Constitucional abstrata",
+            "Exclusivamente de governança"
+          ],
+          "correct": 1,
+          "commentary": "Escalas e rotinas são instrumentos de execução operacional."
+        },
+        {
+          "stem": "Na matriz SWOT, perda de conectividade regional fora do controle da organização é:",
+          "options": [
+            "Fraqueza interna",
+            "Ameaça externa",
+            "Força interna",
+            "Meta tática"
+          ],
+          "correct": 1,
+          "commentary": "O fator descrito provém do ambiente externo e dificulta o objetivo: ameaça."
+        }
+      ],
+      "checklist": [
+        "Consigo explicar o conceito em palavras próprias.",
+        "Consigo resolver um exemplo aplicado ao tribunal.",
+        "Sei distinguir os termos confundidos pela banca.",
+        "Resolvi as questões e compreendi o comentário."
+      ]
+    },
+    {
+      "topicId": "trt8-tec-21-gestao-011",
+      "moduleId": "gestao-m11",
+      "number": 11,
+      "title": "Pessoas, processos, projetos e contratos na gestão pública",
+      "goal": "Diferenciar quatro dimensões administrativas que a banca reúne no mesmo assunto.",
+      "complete": {
+        "firstRead": [
+          "Gestão de pessoas procura alinhar capacidades, desenvolvimento, ambiente de trabalho e objetivos institucionais. Servidores do quadro próprio e trabalhadores terceirizados podem cooperar, mas possuem vínculos e regimes jurídicos distintos. A organização não pode tratar terceirização como simples transferência de deveres de fiscalização, nem presumir as mesmas regras funcionais de ingresso, carreira ou subordinação direta.",
+          "Gestão por processos organiza trabalho de ponta a ponta para entregar um resultado repetível. Mapear processo significa identificar início, fim, responsáveis, entradas, saídas, riscos e pontos de controle. Gestão de projetos cuida de esforços temporários destinados a produzir resultado único, como implantar novo sistema. Processos tendem a ser contínuos; projetos têm início e encerramento definidos."
+        ],
+        "howItWorks": [
+          "Gestão de contratos acompanha se o contratado cumpre obrigações pactuadas, observando as regras jurídicas pertinentes e evitando pagamento por entrega defeituosa. A análise gerencial deve distinguir fiscalizar a execução, gerenciar riscos, verificar qualidade e aplicar medidas previstas no regime jurídico. Não transformar conceitos gerenciais em regras legais de contratação sem base normativa."
+        ],
+        "workedExample": [
+          "Caso: um tribunal implanta sistema de filas. O projeto envolve escopo, prazo e entregáveis. Depois de instalado, o atendimento torna-se processo contínuo, monitorado por indicadores. Servidores devem ser capacitados e a prestação de serviços externos, se houver, fiscalizada conforme contrato. São quatro ângulos do mesmo objetivo, não quatro nomes para a mesma atividade."
+        ],
+        "advanced": [
+          "Gestão de pessoas exige planejar competências e necessidade de força de trabalho. Há diferença entre treinar (desenvolver habilidade específica) e desenvolver (ampliar capacidade de atuação). Gestão por processos pode usar PDCA, diagramas de fluxo e medição de gargalos. Projetos podem lidar com escopo, riscos, cronograma e partes interessadas. Em todos, a finalidade pública guia a escolha dos instrumentos."
+        ]
+      },
+      "summary": [
+        "Processo = atividade recorrente; projeto = esforço temporário e singular.",
+        "Gestão de pessoas = competências e condições para entregar resultados.",
+        "Contrato exige acompanhamento de obrigações e qualidade.",
+        "Terceirizado e servidor estatutário não têm vínculo funcional idêntico."
+      ],
+      "examTraps": [
+        "Projeto não é qualquer tarefa rotineira com prazo.",
+        "Terceirização não afasta deveres administrativos de controle."
+      ],
+      "questions": [
+        {
+          "stem": "A implantação de um novo sistema durante seis meses, com entrega única, caracteriza sobretudo:",
+          "options": [
+            "Processo operacional repetitivo",
+            "Projeto",
+            "Rotina permanente de protocolo",
+            "Avaliação 360 graus"
+          ],
+          "correct": 1,
+          "commentary": "Esforço temporário com produto singular corresponde à gestão de projetos."
+        },
+        {
+          "stem": "Depois da implantação, o atendimento diário aos usuários corresponde principalmente a:",
+          "options": [
+            "Processo contínuo",
+            "Projeto sempre temporário",
+            "Apenas organograma",
+            "Matriz SWOT"
+          ],
+          "correct": 0,
+          "commentary": "A operação regular e repetida é processo de trabalho."
+        }
+      ],
+      "checklist": [
+        "Consigo explicar o conceito em palavras próprias.",
+        "Consigo resolver um exemplo aplicado ao tribunal.",
+        "Sei distinguir os termos confundidos pela banca.",
+        "Resolvi as questões e compreendi o comentário."
+      ]
+    },
+    {
+      "topicId": "trt8-tec-21-gestao-012",
+      "moduleId": "gestao-m12",
+      "number": 12,
+      "title": "Qualidade, motivação e liderança no serviço público",
+      "goal": "Conectar experiência do usuário, melhoria de processos e gestão de equipes.",
+      "complete": {
+        "firstRead": [
+          "Qualidade em serviços públicos não é apenas aparência ou simpatia no atendimento. Envolve utilidade da entrega, confiabilidade, clareza, segurança, tempestividade, acessibilidade e capacidade de resolver a demanda. Uma fila menor é desejável, mas se o serviço contém erros que obrigam retorno do usuário, a qualidade pode ter piorado. Indicadores devem combinar prazo, precisão e satisfação.",
+          "Melhoria contínua exige conhecer expectativas legítimas, mapear falhas, priorizar causas relevantes, executar mudanças pequenas e medir seus efeitos. Ferramentas como ciclo PDCA, Diagrama de Ishikawa (causas potenciais) e Pareto (priorização por frequência ou impacto) ajudam a investigar, mas não substituem evidência de solução."
+        ],
+        "howItWorks": [
+          "Motivação é processo que energiza, orienta e sustenta o comportamento. Teorias como necessidades de Maslow, dois fatores de Herzberg e expectativa de Vroom são modelos explicativos; não servem como fórmula universal para 'motivar qualquer pessoa'. Liderança trata da influência sobre a equipe, da comunicação de propósito, de feedback e da construção de condições para o trabalho. Chefiar é ocupar posição formal; liderar é exercer influência, embora uma mesma pessoa possa fazer ambos."
+        ],
+        "workedExample": [
+          "Exemplo: aumentam reclamações de informação incorreta. A chefia analisa os registros, identifica que o formulário é ambíguo e capacita a equipe. Em seguida simplifica a linguagem e acompanha a taxa de correções. Ao envolver os servidores na solução e reconhecer contribuições, melhora tanto o processo quanto as condições motivacionais. Apenas cobrar 'mais empenho' sem corrigir o formulário tende a falhar."
+        ],
+        "advanced": [
+          "Liderança situacional propõe adaptar orientação e apoio à necessidade de acompanhamento e autonomia dos liderados; não confundir flexibilidade com arbitrariedade. Motivação e qualidade também dependem de cultura institucional, ambiente seguro e práticas justas. Excelência é compromisso com melhoria contínua e resultado útil, não perfeição abstrata sem custos."
+        ]
+      },
+      "summary": [
+        "Qualidade = atender necessidades legítimas com segurança e confiabilidade.",
+        "PDCA = planejar, executar, verificar, agir.",
+        "Motivação não depende só de remuneração.",
+        "Chefia formal e liderança são conceitos diferentes."
+      ],
+      "examTraps": [
+        "Atendimento rápido com erro pode ser serviço de baixa qualidade.",
+        "Liderança não é sinônimo de autoridade autoritária."
+      ],
+      "questions": [
+        {
+          "stem": "A equipe conclui atendimento rápido, mas solicitações precisam ser refeitas. O indicador ausente mais importante é:",
+          "options": [
+            "Taxa de erros/retrabalho",
+            "Número de gestores",
+            "Quantidade de mensagens",
+            "Quantidade de móveis"
+          ],
+          "correct": 0,
+          "commentary": "Velocidade sem precisão não basta para medir qualidade do serviço."
+        },
+        {
+          "stem": "O diagrama de causa e efeito (Ishikawa) auxilia principalmente a:",
+          "options": [
+            "Investigar causas potenciais de problema",
+            "Realizar concurso público",
+            "Fixar salários",
+            "Substituir o controle legal"
+          ],
+          "correct": 0,
+          "commentary": "A ferramenta organiza hipóteses de causas para investigação baseada em evidências."
+        }
+      ],
+      "checklist": [
+        "Consigo explicar o conceito em palavras próprias.",
+        "Consigo resolver um exemplo aplicado ao tribunal.",
+        "Sei distinguir os termos confundidos pela banca.",
+        "Resolvi as questões e compreendi o comentário."
+      ]
+    },
+    {
+      "topicId": "trt8-tec-21-gestao-013",
+      "moduleId": "gestao-m13",
+      "number": 13,
+      "title": "Tipos de decisão e processo decisório",
+      "goal": "Resolver situações administrativas distinguindo problema, alternativas, riscos e critérios.",
+      "complete": {
+        "firstRead": [
+          "Decidir é escolher uma alternativa diante de um problema, com informação e restrições. Decisões programadas tratam situações repetitivas e podem seguir procedimentos padronizados; não programadas lidam com situações novas, complexas ou pouco estruturadas. Decisões estratégicas afetam a direção da organização; táticas alcançam unidades; operacionais solucionam a rotina.",
+          "No modelo racional, identifica-se o problema, definem-se objetivos e critérios, levantam-se alternativas, estimam-se consequências, escolhe-se uma opção e acompanha-se o resultado. Na prática, informação é incompleta, tempo é limitado e pessoas têm capacidades cognitivas finitas. A racionalidade limitada, associada a Herbert Simon, explica por que muitas decisões buscam solução satisfatória em vez de 'ótimo absoluto' calculado."
+        ],
+        "howItWorks": [
+          "Há decisões sob certeza (consequências bem conhecidas), risco (probabilidades podem ser estimadas) e incerteza (faltam bases confiáveis para estimar resultados). Ferramentas como matriz de critérios, análise de custo-benefício, cenário e registro de riscos ajudam, mas a decisão pública deve respeitar competência, motivação, finalidade e demais exigências legais. A solução que parece mais barata pode criar prejuízos de acesso e qualidade."
+        ],
+        "workedExample": [
+          "Exemplo: o tribunal precisa decidir entre duas formas de atendimento. 1) Define o problema: prazo elevado. 2) Recolhe dados de demanda e acessibilidade. 3) Define critérios: custo, segurança, qualidade e inclusão. 4) Examina alternativas, riscos e restrições. 5) Justifica escolha e designa responsáveis. 6) Monitora resultados para permitir correção. Sem a etapa de monitoramento, a decisão não gera aprendizado institucional."
+        ],
+        "advanced": [
+          "Armadilhas cognitivas: ancoragem (primeira informação pesa demais), viés de confirmação (buscar só evidências favoráveis) e aversão à perda podem distorcer escolhas. Discussão colegiada e uso de dados diversos ajudam, mas não eliminam riscos. Em questões FCC, diferencie 'tipo de decisão' (programada ou não) de 'nível da decisão' (estratégica, tática e operacional)."
+        ]
+      },
+      "summary": [
+        "Programada = repetitiva; não programada = nova/complexa.",
+        "Estratégica, tática e operacional = níveis organizacionais.",
+        "Racionalidade limitada = informação e capacidade finitas.",
+        "Decidir exige definir problema, critérios, opções, escolha e monitoramento."
+      ],
+      "examTraps": [
+        "Racionalidade limitada não significa ausência de racionalidade.",
+        "Certeza, risco e incerteza descrevem informações sobre consequências, não a hierarquia da chefia."
+      ],
+      "questions": [
+        {
+          "stem": "Uma solicitação rotineira resolvida por procedimento padronizado é decisão:",
+          "options": [
+            "Não programada",
+            "Programada",
+            "Necessariamente estratégica",
+            "Sem controle"
+          ],
+          "correct": 1,
+          "commentary": "Problema repetitivo com resposta prevista permite decisão programada."
+        },
+        {
+          "stem": "Segundo a ideia de racionalidade limitada, gestores:",
+          "options": [
+            "Sempre conhecem todas as alternativas",
+            "Decidem sem qualquer objetivo",
+            "Trabalham com limitações de informação, tempo e cognição",
+            "Dispensam critérios legais"
+          ],
+          "correct": 2,
+          "commentary": "A racionalidade é exercida sob restrições concretas; por isso, a otimização perfeita raramente é alcançável."
+        }
+      ],
+      "checklist": [
+        "Consigo explicar o conceito em palavras próprias.",
+        "Consigo resolver um exemplo aplicado ao tribunal.",
+        "Sei distinguir os termos confundidos pela banca.",
+        "Resolvi as questões e compreendi o comentário."
+      ]
+    }
+  ]
+}
