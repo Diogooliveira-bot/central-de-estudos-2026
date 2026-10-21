@@ -15,6 +15,7 @@ import {
   validatePassword,
   verifyPassword,
 } from '../lib/auth.js';
+import handleInviteAction from '../lib/invite-handler.js';
 
 function send(res, status, body, extraHeaders = {}) {
   res.statusCode = status;
@@ -167,6 +168,8 @@ export default async function handler(req, res) {
   try {
     const action = String(req.query?.action || '').toLowerCase();
     if (req.method === 'POST' && !sameOriginRequest(req)) return send(res, 403, { error: 'Origem da requisição não permitida' });
+
+    if (action.startsWith('invite-')) return handleInviteAction(req, res, action.slice('invite-'.length));
 
     if (req.method === 'GET' && action === 'me') return currentUser(req, res);
     if (req.method === 'GET' && action === 'bootstrap-status') return bootstrapStatus(res);

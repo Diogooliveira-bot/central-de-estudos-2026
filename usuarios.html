@@ -25,7 +25,7 @@ label{display:block;font-size:11px;font-weight:800;margin:12px 0 5px;color:#5f57
 <div class="shell">
 <header class="top">
 <div><h1>Administração de usuários</h1><p>Controle os acessos e acompanhe o progresso dos usuários da Base Completa.</p></div>
-<div class="actions"><a class="btn" href="/">← Voltar à Central</a><button id="refresh">Atualizar</button><button id="logout">Sair</button></div>
+<div class="actions"><a class="btn primary" href="#convites">Convites de alunos</a><a class="btn" href="/">← Voltar à Central</a><button id="refresh">Atualizar</button><button id="logout">Sair</button></div>
 </header>
 
 <section class="metrics" id="metrics">
@@ -60,6 +60,28 @@ label{display:block;font-size:11px;font-weight:800;margin:12px 0 5px;color:#5f57
 <div id="users" class="list"><div class="hint">Carregando...</div></div>
 </section>
 </div>
+
+<section class="panel" id="convites" style="margin-top:18px" aria-labelledby="invitesTitle">
+ <h2 id="invitesTitle">Convites individuais para alunos</h2>
+ <p class="hint" style="font-size:12px;margin:-4px 0 16px">Envie um link exclusivo pelo WhatsApp. O aluno cria seu próprio nome de usuário, e-mail e senha; o convite vale por 7 dias e só pode ser utilizado uma vez.</p>
+ <form id="inviteForm" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;align-items:end">
+  <div><label for="inviteName">Nome do convidado</label><input id="inviteName" maxlength="120" placeholder="Ex.: Maria (opcional)"></div>
+  <div><label for="inviteEmail">E-mail do convidado</label><input id="inviteEmail" type="email" maxlength="240" placeholder="Ex.: maria@email.com (opcional)"></div>
+  <button class="primary" id="inviteCreateBtn" type="submit" style="height:40px">Gerar link individual</button>
+ </form>
+ <p class="hint">Informe ao menos o nome ou o e-mail. Se informar o e-mail, somente ele poderá usar o convite. Sem e-mail vinculado, quem usar primeiro o link poderá criar a conta.</p>
+ <div id="inviteStatus" class="status" role="status" aria-live="polite"></div>
+ <div id="inviteCreated" hidden style="margin-top:13px;padding:14px;background:#f1f6fb;border:1px solid #cbdbe9;border-radius:12px">
+  <b style="font-size:12px">Link gerado — copie e envie agora</b>
+  <p class="hint">Por segurança, este link só é exibido no momento da criação. Se perdê-lo, revogue o convite e gere outro.</p>
+  <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:10px">
+   <input id="inviteUrl" aria-label="Link individual do convite" readonly style="flex:1;min-width:190px">
+   <button id="inviteCopy" type="button">Copiar link</button>
+  </div>
+ </div>
+ <h2 style="margin-top:26px">Histórico de convites</h2>
+ <div class="list" id="inviteList"><div class="hint">Carregando convites...</div></div>
+</section>
 </div>
 
 <script>
@@ -127,11 +149,63 @@ document.getElementById('createForm').addEventListener('submit',async function(e
   e.target.reset();document.getElementById('role').value='aluno';status(formStatus,'Usuário criado com sucesso.','ok');await load();
  }catch(err){status(formStatus,err.message,'err')}
 });
+function inviteStatusLabel(value){return value==='pendente'?'Pendente':value==='utilizado'?'Utilizado':value==='expirado'?'Expirado':'Revogado'}
+async function loadInvites(){
+ var list=document.getElementById('inviteList');
+ list.textContent='Carregando convites...';
+ try{
+  var data=await fetchJson('/api/auth?action=invite-admin');
+  list.innerHTML='';
+  if(!data.invites.length){list.innerHTML='<div class="empty">Nenhum convite criado.</div>';return}
+  data.invites.forEach(function(item){
+   var row=document.createElement('div');row.className='user';row.style.display='flex';row.style.alignItems='center';row.style.justifyContent='space-between';row.style.gap='12px';row.style.flexWrap='wrap';
+   var details=document.createElement('div');
+   var title=document.createElement('b');title.textContent=item.recipientName||item.email||'Convite individual';
+   var note=document.createElement('small');note.style.display='block';note.style.color='var(--muted)';
+   note.textContent=(item.email?item.email+' · ':'')+'Criado em '+dt(item.createdAt)+' · Válido até '+dt(item.expiresAt)+(item.usedByName?' · Utilizado por '+item.usedByName:'');
+   var badge=document.createElement('span');badge.className='pill '+(item.status==='pendente'?'ok':'warn');badge.textContent=inviteStatusLabel(item.status);badge.style.marginTop='5px';
+   details.appendChild(title);details.appendChild(note);details.appendChild(badge);row.appendChild(details);
+   if(item.status==='pendente'){
+    var revoke=document.createElement('button');revoke.type='button';revoke.textContent='Revogar convite';
+    revoke.onclick=async function(){
+     if(!confirm('Revogar este convite? O link deixará de funcionar.'))return;
+     revoke.disabled=true;
+     try{await fetchJson('/api/auth?action=invite-revoke',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({id:item.id})});await loadInvites()}
+     catch(e){status(document.getElementById('inviteStatus'),e.message,'err');revoke.disabled=false}
+    };
+    row.appendChild(revoke);
+   }
+   list.appendChild(row);
+  });
+ }catch(e){list.textContent='Falha ao carregar convites: '+e.message}
+}
+document.getElementById('inviteForm').addEventListener('submit',async function(event){
+ event.preventDefault();
+ var btn=document.getElementById('inviteCreateBtn'),output=document.getElementById('inviteCreated'),msg=document.getElementById('inviteStatus');
+ btn.disabled=true;status(msg,'Gerando convite...');output.hidden=true;
+ try{
+  var response=await fetchJson('/api/auth?action=invite-create',{
+   method:'POST',headers:{'Content-Type':'application/json'},
+   body:JSON.stringify({recipientName:document.getElementById('inviteName').value,email:document.getElementById('inviteEmail').value})
+  });
+  var url=location.origin+'/convite.html?token='+encodeURIComponent(response.token);
+  document.getElementById('inviteUrl').value=url;output.hidden=false;event.target.reset();
+  status(msg,'Convite gerado. Copie e envie o link individual.','ok');await loadInvites();
+ }catch(e){status(msg,e.message,'err')}finally{btn.disabled=false}
+});
+document.getElementById('inviteCopy').onclick=async function(){
+ var field=document.getElementById('inviteUrl'),msg=document.getElementById('inviteStatus');
+ try{
+  if(navigator.clipboard&&navigator.clipboard.writeText)await navigator.clipboard.writeText(field.value);
+  else{field.focus();field.select();if(!document.execCommand('copy'))throw new Error('Selecione o link e copie manualmente')}
+  status(msg,'Link copiado. Envie apenas à pessoa convidada.','ok');
+ }catch(e){field.focus();field.select();status(msg,'Não foi possível copiar automaticamente. Selecione o link e copie.','err')}
+};
 document.getElementById('search').addEventListener('input',render);
 document.getElementById('filter').addEventListener('change',render);
-document.getElementById('refresh').onclick=load;
+document.getElementById('refresh').onclick=function(){load();loadInvites()};
 document.getElementById('logout').onclick=async function(){await fetch('/api/auth?action=logout',{method:'POST'});location.replace('/login.html')};
-load();
+load();loadInvites();
 })();
 </script>
 </body>
