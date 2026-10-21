@@ -1,4 +1,5 @@
 import { requireSession, readJsonBody, sameOriginRequest } from '../lib/auth.js';
+import { EXAM_TOPIC_IDS } from '../lib/exam-progress-topic-ids.js';
 
 function validObjectiveId(value) {
   const id = String(value || '');
@@ -22,11 +23,18 @@ async function ensureTable(sql) {
   `;
 }
 
-const EXAM_ID = 'tjp-2026-aj-area-judiciaria';
+const DEFAULT_EXAM_ID = 'tjp-2026-aj-area-judiciaria';
 const EXAM_MARKERS = new Set(['studied','reviewed','questions']);
-const EXAM_TOPIC_ID = /^tjp-[a-z0-9]+(?:-[a-z0-9]+)*$/;
+const EXAM_TOPIC_SETS = Object.fromEntries(Object.entries(EXAM_TOPIC_IDS).map(([id, topics]) => [id,new Set(topics)]));
 
 async function handleExamProgress(req, res) {
+  // Keep the original TJPB API contract: an omitted examId selects TJPB.
+  // Explicit IDs are allowlisted; never use user input as a table identifier.
+  const EXAM_ID = req.query?.examId === undefined ? DEFAULT_EXAM_ID : req.query.examId;
+  if (typeof EXAM_ID !== 'string' || !Object.hasOwn(EXAM_TOPIC_SETS,EXAM_ID)) {
+    return send(res, 400, { error:'Edital inválido ou não cadastrado' });
+  }
+  const topicIds = EXAM_TOPIC_SETS[EXAM_ID];
   // Preview deployments inherit shared project variables unless a branch-specific
   // database has been verified. Fail closed before session lookup can touch SQL.
   if (process.env.VERCEL_ENV === 'preview' && process.env.EXAM_PROGRESS_PREVIEW_DB_ISOLATED !== 'true') {
@@ -65,7 +73,7 @@ async function handleExamProgress(req, res) {
     const body = await readJsonBody(req);
     if (!body || !Array.isArray(body.changes) || body.changes.length > 1200) return send(res, 400, { error:'Lista de marcações inválida' });
     for (const change of body.changes) {
-      if (!change || !EXAM_TOPIC_ID.test(String(change.topicId || '')) || !EXAM_MARKERS.has(change.marker) || typeof change.value !== 'boolean') {
+      if (!change || !topicIds.has(change.topicId) || !EXAM_MARKERS.has(change.marker) || typeof change.value !== 'boolean') {
         return send(res, 400, { error:'Marcação de assunto inválida' });
       }
     }
