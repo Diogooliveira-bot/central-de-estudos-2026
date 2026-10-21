@@ -23,14 +23,20 @@
   function ensureAdminEntry() {
     const grid = byId('studentMorePanel')?.querySelector('.student-more-grid');
     if (!grid) return;
-    const existing = grid.querySelector('[data-student-more-action="admin"]');
-    if (!isAdmin()) { existing?.remove(); return; }
-    if (existing) return;
+    // O visitante da Preview recebe apenas um atalho para a Central oficial.
+    // Gerenciamento verdadeiro exige sessão admin verificada pelo servidor.
+    const mode = isAdmin() ? 'admin' : global.__BASE_COMPLETA_PREVIEW_GUEST__ === true ? 'admin-preview' : null;
+    const existing = grid.querySelector('[data-student-more-action="admin"],[data-student-more-action="admin-preview"]');
+    if (!mode) { existing?.remove(); return; }
+    if (existing?.dataset.studentMoreAction === mode) return;
+    existing?.remove();
     const button = document.createElement('button');
     button.type = 'button';
     button.className = 'student-more-admin';
-    button.dataset.studentMoreAction = 'admin';
-    button.innerHTML = '<span aria-hidden="true">⚑</span><span><b>Administração</b><small>Usuários, convites e acessos</small></span><span class="student-more-arrow" aria-hidden="true">→</span>';
+    button.dataset.studentMoreAction = mode;
+    const subtitle = mode === 'admin' ? 'Usuários, convites e acessos' : 'Gerenciar alunos na Central oficial · login obrigatório';
+    const title = mode === 'admin' ? 'Administração' : 'Administração · acesso oficial';
+    button.innerHTML = '<span aria-hidden="true">⚑</span><span><b>'+title+'</b><small>'+subtitle+'</small></span><span class="student-more-arrow" aria-hidden="true">→</span>';
     grid.insertBefore(button, grid.querySelector('[data-student-more-action="logout"]'));
   }
   function closeMore(restoreFocus = false) {
@@ -50,6 +56,9 @@
     if (action === 'onboarding') return (global.CentralStudyObjectives?.open || global.CentralStudentOnboarding?.open)?.();
     if (action === 'logout') return document.querySelector('[data-bc-logout]')?.click();
     if (action === 'admin' && isAdmin()) return global.location.assign('/usuarios.html');
+    if (action === 'admin-preview' && global.__BASE_COMPLETA_PREVIEW_GUEST__ === true) {
+      return global.location.assign('https://central-de-estudos-ecru.vercel.app/usuarios.html#convites');
+    }
     return false;
   }
   function ensureNavigation() {
