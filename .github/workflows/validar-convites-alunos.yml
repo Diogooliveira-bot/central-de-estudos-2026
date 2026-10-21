@@ -24,7 +24,8 @@ jobs:
         run: npm ci --ignore-scripts
       - name: Validar sintaxe
         run: |
-          node --check api/invites.js
+          node --check lib/invite-handler.js
+          node --check api/auth.js
           node --check lib/invites.js
           node --check middleware.js
           node --check tests/invites-unit.mjs
