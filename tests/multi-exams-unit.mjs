@@ -124,7 +124,13 @@ test('cargo 21 da FCC tem 11 disciplinas e 176 assuntos com retificação sem v�
  assert.equal(technician.subjects.filter(x=>x.group==='specific').length,5);
  assert.equal(technician.itemsCount,176);
  assert.equal(new Set(technician.subjects.flatMap(s=>s.items.map(i=>i.id))).size,176);
- assert.ok(technician.subjects.every(s=>s.items.every(i=>i.moduleIds.length===0&&i.coverage==='to_audit')));
+ assert.equal(technician.curatedLinkedTopics,91);
+ assert.equal(technician.curatedModuleDestinations,114);
+ assert.equal(technician.subjects.flatMap(s=>s.items).filter(i=>!i.moduleIds.length).length,85);
+ assert.ok(technician.subjects.every(s=>s.items.every(i=>i.coverage!=='complete')));
+ assert.ok(technician.subjects.filter(s=>!s.disciplineId).every(s=>s.items.every(i=>!i.moduleIds.length)));
+ assert.ok(technician.subjects.flatMap(s=>s.items).filter(i=>i.moduleIds.length).every(i=>i.moduleEvidence?.length===i.moduleIds.length&&i.mappingStatus==='thematic_title_matched_content_review_pending'));
+ assert.ok(technician.subjects.flatMap(s=>s.items).every(i=>i.moduleIds.length||i.mappingStatus==='pending_content_review'));
  assert.ok(technician.subjects.find(s=>s.id.endsWith('-leg')).originalProgram.includes('TRT8 nº 065/2025 alterada pela Resolução TRT8 nº 23/2026'));
 });
 test('TRT8 técnico e analista possuem telas e estados separados',()=>{
@@ -134,7 +140,8 @@ test('TRT8 técnico e analista possuem telas e estados separados',()=>{
  assert.equal(w.CentralTRT8TecnicoVerticalized.open(),true);
  assert.equal(w.CentralTRT8Verticalized.open(),false);
  assert.equal(w.document.querySelectorAll('#trt8TecnicoVerticalizedDialog .exam-subject').length,11);
- assert.equal(w.document.querySelectorAll('#trt8TecnicoVerticalizedDialog [data-exam-module]').length,0);
+ assert.equal(w.document.querySelectorAll('#trt8TecnicoVerticalizedDialog [data-exam-module]').length,114);
+ assert.equal(w.document.querySelectorAll('#trt8TecnicoVerticalizedDialog .exam-topic small').length,176);
  assert.match(w.document.getElementById('trt8TecnicoVerticalizedDialog').textContent,/Técnico Judiciário/);
  const item=technician.subjects[0].items[0];
  w.document.querySelector('[data-exam-topic="'+item.id+'"][data-exam-marker="studied"]').click();
@@ -144,4 +151,31 @@ test('TRT8 técnico e analista possuem telas e estados separados',()=>{
  w.CentralStudyObjectives.setActive(goalTech);assert.equal(w.CentralTRT8TecnicoVerticalized.open(),true);
  assert.equal(w.CentralTRT8TecnicoVerticalized.getState()[item.id].studied.value,true);
  dom.window.close();
+});
+
+test('Processo do Trabalho vincula módulos com número verdadeiro do leitor nativo (1 a 21)',()=>{
+ const native=read('content/ptra/ptra-native-index.js'),navigation=read('ui/study-navigation.js');
+ const parsed=(new Function('window',native+';return window.PTRA_NATIVE_INDEX;'))({});
+ const validNumbers=new Set(parsed.modules.map(m=>String(m.number)));
+ const ptra=technician.subjects.find(s=>s.id==='trt8-tec-21-ptra');
+ assert.equal(ptra.items.filter(i=>i.moduleIds.length).length,12);
+ assert.ok(ptra.items.flatMap(i=>i.moduleIds).every(x=>validNumbers.has(x)));
+ assert.match(read('ui/ptra-native-study-v1.js'),/data-ptra-module=/);
+ assert.match(navigation,/\.ptra-native-mod/);
+ assert.match(navigation,/'data-ptra-module'/);
+ assert.match(navigation,/\.ptra-native-mod-head'/);
+ const warningItems=ptra.items.filter(i=>i.moduleEvidence?.some(e=>e.warning));
+ assert.ok(warningItems.length>=1);
+ assert.ok(warningItems.every(i=>i.coverage==='partial'));
+});
+test('RLM, Constitucional, Administrativo e Trabalho referenciam módulos válidos',()=>{
+ const runtime=read('central-structural-v66119/runtime.js');
+ assert.match(runtime,/const SUBJECTS=/);
+ const match=runtime.match(/const SUBJECTS=(\[[\s\S]*?\]);\s*\n/);
+ assert.ok(match);
+ const modules=JSON.parse(match[1]);
+ const sourceIds=Object.fromEntries(modules.filter(s=>['cf','rlm','adm','trab'].includes(s.id)).map(s=>[s.id,new Set(s.topics.map(t=>s.id==='cf'?t.studyUrl.match(/week=(w\d+)/)?.[1]:s.id==='rlm'?t.title.match(/M\d\d/)?.[0]:t.uid))]));
+ for(const subj of technician.subjects.filter(s=>sourceIds[s.disciplineId])){
+   for(const item of subj.items)for(const id of item.moduleIds)assert.ok(sourceIds[subj.disciplineId].has(id),item.id+' apontou para módulo ausente '+id);
+ }
 });
