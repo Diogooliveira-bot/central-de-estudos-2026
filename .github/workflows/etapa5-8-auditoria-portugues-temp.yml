@@ -1,0 +1,34 @@
+name: Etapa 5.8 - Inspecao curso Portugues
+on:
+  push:
+    branches:
+      - feature/trt8-2026-tecnico-administrativo
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Extrair indice do curso atual
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json,gzip,base64
+          from pathlib import Path
+          content=Path('portugues-autodidata-data.txt').read_text().strip()
+          decoded=gzip.decompress(base64.b64decode(content)).decode('utf-8')
+          data=json.loads(decoded)
+          print("TYPE",type(data).__name__,"TOP_LEVEL", list(data)[:30] if isinstance(data,dict) else len(data))
+          course=data.get('CentralPortugueseCourse',data) if isinstance(data,dict) else data
+          print('COURSE_TYPE',type(course).__name__)
+          if isinstance(course,dict):
+            print('COURSE_KEYS',list(course.keys())[:40])
+            mods=course.get('modules',course.get('modulos',[]))
+            print('MODULE_COUNT',len(mods))
+            for m in mods:
+              print('MODULE',json.dumps({k:v for k,v in m.items() if k in ('id','title','name','num','number','topics','description') and (not isinstance(v,(list,dict)) or k=='topics' and len(str(v))<180)},ensure_ascii=False))
+            print('REVIEW',json.dumps({k:v for k,v in (course.get('review') or {}).items() if k in ('id','num','title')},ensure_ascii=False))
+          PY
