@@ -9,10 +9,10 @@
     "https://www.concursosfcc.com.br/concursos/trt8r126/trt8r126_edital_de_abertura.pdf",
     "https://www.in.gov.br/web/dou/-/edital-n-2-de-7-de-outubro-de-2026-737300524"
   ],
-  "status": "mapping_review_required",
+  "status": "curated_links_partial_audit",
   "subjectCount": 12,
   "itemsCount": 300,
-  "notice": "A segmentação por assunto e os ordinais foram acrescentados apenas para estudo; o edital FCC apresenta blocos textuais sem numeração por tópico. Sugestões automáticas não são links auditados e só poderão ser ativadas após revisão humana.",
+  "notice": "Foram ativados somente vínculos temáticos conservadores para módulos reais, com cobertura PARCIAL. Os demais permanecem em preparação. A revisão da teoria integral e de todas as questões por tópico continua pendente.",
   "subjects": [
     {
       "id": "trt8-pt",
@@ -164,7 +164,9 @@
           "mappingStatus": "pending_review",
           "coverage": "to_audit"
         }
-      ]
+      ],
+      "coverage": "preparation",
+      "mappedItemCount": 0
     },
     {
       "id": "trt8-rlm",
@@ -201,7 +203,10 @@
           "ordinal": 3,
           "text": "Compreensão e elaboração da lógica das situações por meio de: raciocínio verbal, raciocínio matemático, raciocínio sequencial, orientação espacial e temporal, formação de conceitos, discriminação de elementos.",
           "organizational": false,
-          "moduleIds": [],
+          "moduleIds": [
+            "rlm-tjce2026-m07",
+            "rlm-tjce2026-m09"
+          ],
           "candidateModules": [
             {
               "id": "rlm-tjce2026-m07",
@@ -216,8 +221,9 @@
               "overlap": 3
             }
           ],
-          "mappingStatus": "pending_review",
-          "coverage": "to_audit"
+          "mappingStatus": "thematic_module_verified",
+          "coverage": "partial",
+          "mappingEvidence": "Módulo com ID canônico existente e título com correspondência temática direta; cobertura da teoria NÃO auditada integralmente."
         },
         {
           "id": "trt8-rlm-004",
@@ -298,7 +304,9 @@
           "ordinal": 10,
           "text": "porcentagem e problemas envolvendo regra de três simples, cálculos de porcenta gem, acréscimos e descontos.",
           "organizational": false,
-          "moduleIds": [],
+          "moduleIds": [
+            "rlm-tjce2026-m12"
+          ],
           "candidateModules": [
             {
               "id": "rlm-tjce2026-m12",
@@ -313,8 +321,9 @@
               "overlap": 2
             }
           ],
-          "mappingStatus": "pending_review",
-          "coverage": "to_audit"
+          "mappingStatus": "thematic_module_verified",
+          "coverage": "partial",
+          "mappingEvidence": "Módulo com ID canônico existente e título com correspondência temática direta; cobertura da teoria NÃO auditada integralmente."
         },
         {
           "id": "trt8-rlm-011",
@@ -322,7 +331,10 @@
           "ordinal": 11,
           "text": "Noções de Estatísticas: medidas de tendência central (moda, mediana, média aritmética simples e ponderada) e de dispersão (desvio médio, amplitude, variância, desvio padrão)",
           "organizational": false,
-          "moduleIds": [],
+          "moduleIds": [
+            "rlm-tjce2026-m14",
+            "rlm-tjce2026-m15"
+          ],
           "candidateModules": [
             {
               "id": "rlm-tjce2026-m15",
@@ -337,8 +349,9 @@
               "overlap": 3
             }
           ],
-          "mappingStatus": "pending_review",
-          "coverage": "to_audit"
+          "mappingStatus": "thematic_module_verified",
+          "coverage": "partial",
+          "mappingEvidence": "Módulo com ID canônico existente e título com correspondência temática direta; cobertura da teoria NÃO auditada integralmente."
         },
         {
           "id": "trt8-rlm-012",
@@ -346,7 +359,9 @@
           "ordinal": 12,
           "text": "leitura e interpretação de gráficos (histogramas, se tores, infográficos) e tabelas.",
           "organizational": false,
-          "moduleIds": [],
+          "moduleIds": [
+            "rlm-tjce2026-m13"
+          ],
           "candidateModules": [
             {
               "id": "rlm-tjce2026-m13",
@@ -355,10 +370,13 @@
               "overlap": 2
             }
           ],
-          "mappingStatus": "pending_review",
-          "coverage": "to_audit"
+          "mappingStatus": "thematic_module_verified",
+          "coverage": "partial",
+          "mappingEvidence": "Módulo com ID canônico existente e título com correspondência temática direta; cobertura da teoria NÃO auditada integralmente."
         }
-      ]
+      ],
+      "coverage": "partial",
+      "mappedItemCount": 4
     },
     {
       "id": "trt8-leg",
@@ -456,7 +474,9 @@
           "mappingStatus": "pending_review",
           "coverage": "to_audit"
         }
-      ]
+      ],
+      "coverage": "preparation",
+      "mappedItemCount": 0
     },
     {
       "id": "trt8-dh",
@@ -575,7 +595,9 @@
           "mappingStatus": "pending_review",
           "coverage": "to_audit"
         }
-      ]
+      ],
+      "coverage": "preparation",
+      "mappedItemCount": 0
     },
     {
       "id": "trt8-pcd",
@@ -661,7 +683,9 @@
           "mappingStatus": "pending_review",
           "coverage": "to_audit"
         }
-      ]
+      ],
+      "coverage": "preparation",
+      "mappedItemCount": 0
     },
     {
       "id": "trt8-info",
@@ -835,7 +859,9 @@
           "mappingStatus": "pending_review",
           "coverage": "to_audit"
         }
-      ]
+      ],
+      "coverage": "preparation",
+      "mappedItemCount": 0
     },
     {
       "id": "trt8-cf",
@@ -872,7 +898,9 @@
           "ordinal": 3,
           "text": "Controle de constitucionalidade: sistemas difuso e concentrado",
           "organizational": false,
-          "moduleIds": [],
+          "moduleIds": [
+            "w12"
+          ],
           "candidateModules": [
             {
               "id": "w12",
@@ -881,8 +909,9 @@
               "overlap": 2
             }
           ],
-          "mappingStatus": "pending_review",
-          "coverage": "to_audit"
+          "mappingStatus": "thematic_module_verified",
+          "coverage": "partial",
+          "mappingEvidence": "Módulo com ID canônico existente e título com correspondência temática direta; cobertura da teoria NÃO auditada integralmente."
         },
         {
           "id": "trt8-cf-004",
@@ -919,7 +948,9 @@
           "ordinal": 6,
           "text": "Dos direitos e garantias fundamentais: dos direitos e deveres individuais e coletivos dos direitos sociais",
           "organizational": false,
-          "moduleIds": [],
+          "moduleIds": [
+            "w2"
+          ],
           "candidateModules": [
             {
               "id": "w2",
@@ -934,8 +965,9 @@
               "overlap": 3
             }
           ],
-          "mappingStatus": "pending_review",
-          "coverage": "to_audit"
+          "mappingStatus": "thematic_module_verified",
+          "coverage": "partial",
+          "mappingEvidence": "Módulo com ID canônico existente e título com correspondência temática direta; cobertura da teoria NÃO auditada integralmente."
         },
         {
           "id": "trt8-cf-007",
@@ -961,7 +993,9 @@
           "ordinal": 8,
           "text": "Da organização do Estado: da organização político administrativa: da União dos Estados Federados dos Municípios Do Distrito Federal dos Territórios da intervenção.",
           "organizational": false,
-          "moduleIds": [],
+          "moduleIds": [
+            "w4"
+          ],
           "candidateModules": [
             {
               "id": "w4",
@@ -970,8 +1004,9 @@
               "overlap": 2
             }
           ],
-          "mappingStatus": "pending_review",
-          "coverage": "to_audit"
+          "mappingStatus": "thematic_module_verified",
+          "coverage": "partial",
+          "mappingEvidence": "Módulo com ID canônico existente e título com correspondência temática direta; cobertura da teoria NÃO auditada integralmente."
         },
         {
           "id": "trt8-cf-009",
@@ -979,7 +1014,9 @@
           "ordinal": 9,
           "text": "Da Administração Pública: disposições gerais dos servidores públicos. Da Organização dos Poderes.",
           "organizational": false,
-          "moduleIds": [],
+          "moduleIds": [
+            "w5"
+          ],
           "candidateModules": [
             {
               "id": "w5",
@@ -994,8 +1031,9 @@
               "overlap": 2
             }
           ],
-          "mappingStatus": "pending_review",
-          "coverage": "to_audit"
+          "mappingStatus": "thematic_module_verified",
+          "coverage": "partial",
+          "mappingEvidence": "Módulo com ID canônico existente e título com correspondência temática direta; cobertura da teoria NÃO auditada integralmente."
         },
         {
           "id": "trt8-cf-010",
@@ -1003,7 +1041,9 @@
           "ordinal": 10,
           "text": "Do Poder Executivo: do Presidente e do Vice-Presidente da República",
           "organizational": false,
-          "moduleIds": [],
+          "moduleIds": [
+            "w8"
+          ],
           "candidateModules": [
             {
               "id": "w8",
@@ -1012,8 +1052,9 @@
               "overlap": 2
             }
           ],
-          "mappingStatus": "pending_review",
-          "coverage": "to_audit"
+          "mappingStatus": "thematic_module_verified",
+          "coverage": "partial",
+          "mappingEvidence": "Módulo com ID canônico existente e título com correspondência temática direta; cobertura da teoria NÃO auditada integralmente."
         },
         {
           "id": "trt8-cf-011",
@@ -1061,7 +1102,9 @@
           "ordinal": 14,
           "text": "Do Poder Judiciário: disposições gerais do Supremo Tribunal Federal",
           "organizational": false,
-          "moduleIds": [],
+          "moduleIds": [
+            "w9"
+          ],
           "candidateModules": [
             {
               "id": "w9",
@@ -1070,8 +1113,9 @@
               "overlap": 4
             }
           ],
-          "mappingStatus": "pending_review",
-          "coverage": "to_audit"
+          "mappingStatus": "thematic_module_verified",
+          "coverage": "partial",
+          "mappingEvidence": "Módulo com ID canônico existente e título com correspondência temática direta; cobertura da teoria NÃO auditada integralmente."
         },
         {
           "id": "trt8-cf-015",
@@ -1144,7 +1188,9 @@
           "ordinal": 19,
           "text": "Das funções essenciais à Justiça: do Ministério Público da Advocacia Pública",
           "organizational": false,
-          "moduleIds": [],
+          "moduleIds": [
+            "w11"
+          ],
           "candidateModules": [
             {
               "id": "w11",
@@ -1159,8 +1205,9 @@
               "overlap": 3
             }
           ],
-          "mappingStatus": "pending_review",
-          "coverage": "to_audit"
+          "mappingStatus": "thematic_module_verified",
+          "coverage": "partial",
+          "mappingEvidence": "Módulo com ID canônico existente e título com correspondência temática direta; cobertura da teoria NÃO auditada integralmente."
         },
         {
           "id": "trt8-cf-020",
@@ -1173,7 +1220,9 @@
           "mappingStatus": "pending_review",
           "coverage": "to_audit"
         }
-      ]
+      ],
+      "coverage": "partial",
+      "mappedItemCount": 7
     },
     {
       "id": "trt8-adm",
@@ -1305,7 +1354,9 @@
           "ordinal": 11,
           "text": "Classificação dos atos administrativos. Formação e efeitos.",
           "organizational": false,
-          "moduleIds": [],
+          "moduleIds": [
+            "adm-03-03-atos-administrativos"
+          ],
           "candidateModules": [
             {
               "id": "adm-03-03-atos-administrativos",
@@ -1314,8 +1365,9 @@
               "overlap": 2
             }
           ],
-          "mappingStatus": "pending_review",
-          "coverage": "to_audit"
+          "mappingStatus": "thematic_module_verified",
+          "coverage": "partial",
+          "mappingEvidence": "Módulo com ID canônico existente e título com correspondência temática direta; cobertura da teoria NÃO auditada integralmente."
         },
         {
           "id": "trt8-adm-012",
@@ -1334,7 +1386,9 @@
           "ordinal": 13,
           "text": "Processo administrativo no âmbito da Administração Pública Federal (Lei nº 9.784/1999 e suas alterações).",
           "organizational": false,
-          "moduleIds": [],
+          "moduleIds": [
+            "adm-06-06-processo-administrativo-lei-9-784"
+          ],
           "candidateModules": [
             {
               "id": "adm-06-06-processo-administrativo-lei-9-784",
@@ -1343,8 +1397,9 @@
               "overlap": 2
             }
           ],
-          "mappingStatus": "pending_review",
-          "coverage": "to_audit"
+          "mappingStatus": "thematic_module_verified",
+          "coverage": "partial",
+          "mappingEvidence": "Módulo com ID canônico existente e título com correspondência temática direta; cobertura da teoria NÃO auditada integralmente."
         },
         {
           "id": "trt8-adm-014",
@@ -1352,7 +1407,9 @@
           "ordinal": 14,
           "text": "Controle da Administração Pública.",
           "organizational": false,
-          "moduleIds": [],
+          "moduleIds": [
+            "adm-08-08-controle-da-administracao"
+          ],
           "candidateModules": [
             {
               "id": "adm-08-08-controle-da-administracao",
@@ -1361,8 +1418,9 @@
               "overlap": 2
             }
           ],
-          "mappingStatus": "pending_review",
-          "coverage": "to_audit"
+          "mappingStatus": "thematic_module_verified",
+          "coverage": "partial",
+          "mappingEvidence": "Módulo com ID canônico existente e título com correspondência temática direta; cobertura da teoria NÃO auditada integralmente."
         },
         {
           "id": "trt8-adm-015",
@@ -1370,7 +1428,9 @@
           "ordinal": 15,
           "text": "Classificações relativas ao controle da Administração Pública.",
           "organizational": false,
-          "moduleIds": [],
+          "moduleIds": [
+            "adm-08-08-controle-da-administracao"
+          ],
           "candidateModules": [
             {
               "id": "adm-08-08-controle-da-administracao",
@@ -1379,8 +1439,9 @@
               "overlap": 2
             }
           ],
-          "mappingStatus": "pending_review",
-          "coverage": "to_audit"
+          "mappingStatus": "thematic_module_verified",
+          "coverage": "partial",
+          "mappingEvidence": "Módulo com ID canônico existente e título com correspondência temática direta; cobertura da teoria NÃO auditada integralmente."
         },
         {
           "id": "trt8-adm-016",
@@ -1410,7 +1471,9 @@
           "ordinal": 18,
           "text": "Licitações e contratos administrativos (Lei nº 14.133/2021 e suas alterações).",
           "organizational": false,
-          "moduleIds": [],
+          "moduleIds": [
+            "adm-18-18-contratos-administrativos"
+          ],
           "candidateModules": [
             {
               "id": "adm-18-18-contratos-administrativos",
@@ -1419,8 +1482,9 @@
               "overlap": 2
             }
           ],
-          "mappingStatus": "pending_review",
-          "coverage": "to_audit"
+          "mappingStatus": "thematic_module_verified",
+          "coverage": "partial",
+          "mappingEvidence": "Módulo com ID canônico existente e título com correspondência temática direta; cobertura da teoria NÃO auditada integralmente."
         },
         {
           "id": "trt8-adm-019",
@@ -1574,7 +1638,9 @@
           "ordinal": 31,
           "text": "Concessão e permissão de serviços públicos (Lei nº 8.987/1995 e suas alter ações).",
           "organizational": false,
-          "moduleIds": [],
+          "moduleIds": [
+            "adm-09-09-servicos-publicos-lei-8-987"
+          ],
           "candidateModules": [
             {
               "id": "adm-09-09-servicos-publicos-lei-8-987",
@@ -1583,8 +1649,9 @@
               "overlap": 2
             }
           ],
-          "mappingStatus": "pending_review",
-          "coverage": "to_audit"
+          "mappingStatus": "thematic_module_verified",
+          "coverage": "partial",
+          "mappingEvidence": "Módulo com ID canônico existente e título com correspondência temática direta; cobertura da teoria NÃO auditada integralmente."
         },
         {
           "id": "trt8-adm-032",
@@ -1614,7 +1681,9 @@
           "ordinal": 34,
           "text": "Agentes públicos: classificação",
           "organizational": false,
-          "moduleIds": [],
+          "moduleIds": [
+            "adm-05-05-agentes-publicos"
+          ],
           "candidateModules": [
             {
               "id": "adm-05-05-agentes-publicos",
@@ -1623,8 +1692,9 @@
               "overlap": 2
             }
           ],
-          "mappingStatus": "pending_review",
-          "coverage": "to_audit"
+          "mappingStatus": "thematic_module_verified",
+          "coverage": "partial",
+          "mappingEvidence": "Módulo com ID canônico existente e título com correspondência temática direta; cobertura da teoria NÃO auditada integralmente."
         },
         {
           "id": "trt8-adm-035",
@@ -1779,7 +1849,9 @@
           "mappingStatus": "pending_review",
           "coverage": "to_audit"
         }
-      ]
+      ],
+      "coverage": "partial",
+      "mappedItemCount": 7
     },
     {
       "id": "trt8-trab",
@@ -1794,7 +1866,9 @@
           "ordinal": 1,
           "text": "Dos princípios e fontes do Direito do Trabalho.",
           "organizational": false,
-          "moduleIds": [],
+          "moduleIds": [
+            "trab-m02"
+          ],
           "candidateModules": [
             {
               "id": "trab-m02",
@@ -1803,8 +1877,9 @@
               "overlap": 3
             }
           ],
-          "mappingStatus": "pending_review",
-          "coverage": "to_audit"
+          "mappingStatus": "thematic_module_verified",
+          "coverage": "partial",
+          "mappingEvidence": "Módulo com ID canônico existente e título com correspondência temática direta; cobertura da teoria NÃO auditada integralmente."
         },
         {
           "id": "trt8-trab-002",
@@ -1928,7 +2003,9 @@
           "ordinal": 9,
           "text": "Do contrato individual de trabalho: conceito, classificação e características.",
           "organizational": false,
-          "moduleIds": [],
+          "moduleIds": [
+            "trab-m05"
+          ],
           "candidateModules": [
             {
               "id": "trab-m05",
@@ -1943,8 +2020,9 @@
               "overlap": 2
             }
           ],
-          "mappingStatus": "pending_review",
-          "coverage": "to_audit"
+          "mappingStatus": "thematic_module_verified",
+          "coverage": "partial",
+          "mappingEvidence": "Módulo com ID canônico existente e título com correspondência temática direta; cobertura da teoria NÃO auditada integralmente."
         },
         {
           "id": "trt8-trab-010",
@@ -1963,7 +2041,9 @@
           "ordinal": 11,
           "text": "Da suspensão e interrupção do contrato de trabalho: caracterização e distinção.",
           "organizational": false,
-          "moduleIds": [],
+          "moduleIds": [
+            "trab-m07"
+          ],
           "candidateModules": [
             {
               "id": "trab-m07",
@@ -1978,8 +2058,9 @@
               "overlap": 2
             }
           ],
-          "mappingStatus": "pending_review",
-          "coverage": "to_audit"
+          "mappingStatus": "thematic_module_verified",
+          "coverage": "partial",
+          "mappingEvidence": "Módulo com ID canônico existente e título com correspondência temática direta; cobertura da teoria NÃO auditada integralmente."
         },
         {
           "id": "trt8-trab-012",
@@ -2139,7 +2220,9 @@
           "ordinal": 24,
           "text": "Do salário e da remuneração: conceito e distinções composição do salário modalidades de salário",
           "organizational": false,
-          "moduleIds": [],
+          "moduleIds": [
+            "trab-m12"
+          ],
           "candidateModules": [
             {
               "id": "trab-m12",
@@ -2148,8 +2231,9 @@
               "overlap": 2
             }
           ],
-          "mappingStatus": "pending_review",
-          "coverage": "to_audit"
+          "mappingStatus": "thematic_module_verified",
+          "coverage": "partial",
+          "mappingEvidence": "Módulo com ID canônico existente e título com correspondência temática direta; cobertura da teoria NÃO auditada integralmente."
         },
         {
           "id": "trt8-trab-025",
@@ -2208,7 +2292,9 @@
           "ordinal": 29,
           "text": "Da segurança e medicina no trabalho: da CIPA",
           "organizational": false,
-          "moduleIds": [],
+          "moduleIds": [
+            "trab-m14"
+          ],
           "candidateModules": [
             {
               "id": "trab-m14",
@@ -2217,8 +2303,9 @@
               "overlap": 3
             }
           ],
-          "mappingStatus": "pending_review",
-          "coverage": "to_audit"
+          "mappingStatus": "thematic_module_verified",
+          "coverage": "partial",
+          "mappingEvidence": "Módulo com ID canônico existente e título com correspondência temática direta; cobertura da teoria NÃO auditada integralmente."
         },
         {
           "id": "trt8-trab-030",
@@ -2536,7 +2623,9 @@
           "mappingStatus": "pending_review",
           "coverage": "to_audit"
         }
-      ]
+      ],
+      "coverage": "partial",
+      "mappedItemCount": 5
     },
     {
       "id": "trt8-ptra",
@@ -2551,7 +2640,9 @@
           "ordinal": 1,
           "text": "Da Justiça do Trabalho: organização e competência.",
           "organizational": false,
-          "moduleIds": [],
+          "moduleIds": [
+            "ptra-a00"
+          ],
           "candidateModules": [
             {
               "id": "ptra-a00",
@@ -2560,8 +2651,9 @@
               "overlap": 4
             }
           ],
-          "mappingStatus": "pending_review",
-          "coverage": "to_audit"
+          "mappingStatus": "thematic_module_verified",
+          "coverage": "partial",
+          "mappingEvidence": "Módulo com ID canônico existente e título com correspondência temática direta; cobertura da teoria NÃO auditada integralmente."
         },
         {
           "id": "trt8-ptra-002",
@@ -2833,7 +2925,9 @@
           "ordinal": 21,
           "text": "Dos procedimentos especiais: inquérito para apuração de falta grave, ação rescisória e mandado de segurança. Da ação civil pública.",
           "organizational": false,
-          "moduleIds": [],
+          "moduleIds": [
+            "ptra-a08"
+          ],
           "candidateModules": [
             {
               "id": "ptra-a08",
@@ -2842,8 +2936,9 @@
               "overlap": 4
             }
           ],
-          "mappingStatus": "pending_review",
-          "coverage": "to_audit"
+          "mappingStatus": "thematic_module_verified",
+          "coverage": "partial",
+          "mappingEvidence": "Módulo com ID canônico existente e título com correspondência temática direta; cobertura da teoria NÃO auditada integralmente."
         },
         {
           "id": "trt8-ptra-022",
@@ -3087,7 +3182,9 @@
           "mappingStatus": "pending_review",
           "coverage": "to_audit"
         }
-      ]
+      ],
+      "coverage": "partial",
+      "mappedItemCount": 2
     },
     {
       "id": "trt8-civil",
@@ -3102,7 +3199,10 @@
           "ordinal": 1,
           "text": "Da Pessoa Natural. Personalidade e Capacidade. Direitos da Personalidade. Das Pessoas Jurídicas. Domicílio Civil.",
           "organizational": false,
-          "moduleIds": [],
+          "moduleIds": [
+            "civil-m01",
+            "civil-m02"
+          ],
           "candidateModules": [
             {
               "id": "civil-m01",
@@ -3117,8 +3217,9 @@
               "overlap": 3
             }
           ],
-          "mappingStatus": "pending_review",
-          "coverage": "to_audit"
+          "mappingStatus": "thematic_module_verified",
+          "coverage": "partial",
+          "mappingEvidence": "Módulo com ID canônico existente e título com correspondência temática direta; cobertura da teoria NÃO auditada integralmente."
         },
         {
           "id": "trt8-civil-002",
@@ -3137,7 +3238,9 @@
           "ordinal": 3,
           "text": "Do Negócio Jurídico: Conceito. Classificação.",
           "organizational": false,
-          "moduleIds": [],
+          "moduleIds": [
+            "civil-m04"
+          ],
           "candidateModules": [
             {
               "id": "civil-m04",
@@ -3146,8 +3249,9 @@
               "overlap": 2
             }
           ],
-          "mappingStatus": "pending_review",
-          "coverage": "to_audit"
+          "mappingStatus": "thematic_module_verified",
+          "coverage": "partial",
+          "mappingEvidence": "Módulo com ID canônico existente e título com correspondência temática direta; cobertura da teoria NÃO auditada integralmente."
         },
         {
           "id": "trt8-civil-004",
@@ -3177,7 +3281,9 @@
           "ordinal": 6,
           "text": "Defeitos do negócio jurídico (erro ou ignorância, dolo, coação, estado de perigo, lesão, fraude contra credores), invalidade do negócio jurídico.",
           "organizational": false,
-          "moduleIds": [],
+          "moduleIds": [
+            "civil-m04"
+          ],
           "candidateModules": [
             {
               "id": "civil-m04",
@@ -3186,8 +3292,9 @@
               "overlap": 2
             }
           ],
-          "mappingStatus": "pending_review",
-          "coverage": "to_audit"
+          "mappingStatus": "thematic_module_verified",
+          "coverage": "partial",
+          "mappingEvidence": "Módulo com ID canônico existente e título com correspondência temática direta; cobertura da teoria NÃO auditada integralmente."
         },
         {
           "id": "trt8-civil-007",
@@ -3195,7 +3302,9 @@
           "ordinal": 7,
           "text": "Da prescrição e da decadência. Da prova. Do Direito das Obrigações.",
           "organizational": false,
-          "moduleIds": [],
+          "moduleIds": [
+            "civil-m05"
+          ],
           "candidateModules": [
             {
               "id": "civil-m05",
@@ -3204,8 +3313,9 @@
               "overlap": 3
             }
           ],
-          "mappingStatus": "pending_review",
-          "coverage": "to_audit"
+          "mappingStatus": "thematic_module_verified",
+          "coverage": "partial",
+          "mappingEvidence": "Módulo com ID canônico existente e título com correspondência temática direta; cobertura da teoria NÃO auditada integralmente."
         },
         {
           "id": "trt8-civil-008",
@@ -3213,7 +3323,10 @@
           "ordinal": 8,
           "text": "Dos contratos em geral e em espécie.",
           "organizational": false,
-          "moduleIds": [],
+          "moduleIds": [
+            "civil-m07",
+            "civil-m08"
+          ],
           "candidateModules": [
             {
               "id": "civil-m07",
@@ -3228,8 +3341,9 @@
               "overlap": 2
             }
           ],
-          "mappingStatus": "pending_review",
-          "coverage": "to_audit"
+          "mappingStatus": "thematic_module_verified",
+          "coverage": "partial",
+          "mappingEvidence": "Módulo com ID canônico existente e título com correspondência temática direta; cobertura da teoria NÃO auditada integralmente."
         },
         {
           "id": "trt8-civil-009",
@@ -3237,7 +3351,10 @@
           "ordinal": 9,
           "text": "Dos vícios redibitórios e da Evicção. Da responsabilidade civil. Do Direito de Empresa. Do nome empresarial. Direito das coisas. Posse. Teorias da posse.",
           "organizational": false,
-          "moduleIds": [],
+          "moduleIds": [
+            "civil-m09",
+            "civil-m10"
+          ],
           "candidateModules": [
             {
               "id": "civil-m10",
@@ -3252,8 +3369,9 @@
               "overlap": 2
             }
           ],
-          "mappingStatus": "pending_review",
-          "coverage": "to_audit"
+          "mappingStatus": "thematic_module_verified",
+          "coverage": "partial",
+          "mappingEvidence": "Módulo com ID canônico existente e título com correspondência temática direta; cobertura da teoria NÃO auditada integralmente."
         },
         {
           "id": "trt8-civil-010",
@@ -3536,7 +3654,9 @@
           "mappingStatus": "pending_review",
           "coverage": "to_audit"
         }
-      ]
+      ],
+      "coverage": "partial",
+      "mappedItemCount": 6
     },
     {
       "id": "trt8-cpc",
@@ -3691,7 +3811,9 @@
           "ordinal": 10,
           "text": "Dos atos processuais: da forma dos atos dos prazos da comunicação dos atos das nulidades. Preclusão.",
           "organizational": false,
-          "moduleIds": [],
+          "moduleIds": [
+            "cpc8"
+          ],
           "candidateModules": [
             {
               "id": "cpc8",
@@ -3706,8 +3828,9 @@
               "overlap": 3
             }
           ],
-          "mappingStatus": "pending_review",
-          "coverage": "to_audit"
+          "mappingStatus": "thematic_module_verified",
+          "coverage": "partial",
+          "mappingEvidence": "Módulo com ID canônico existente e título com correspondência temática direta; cobertura da teoria NÃO auditada integralmente."
         },
         {
           "id": "trt8-cpc-011",
@@ -3820,7 +3943,9 @@
           "ordinal": 18,
           "text": "Da liquidação e do cumprimento da sentença.",
           "organizational": false,
-          "moduleIds": [],
+          "moduleIds": [
+            "cpc14"
+          ],
           "candidateModules": [
             {
               "id": "cpc14",
@@ -3829,8 +3954,9 @@
               "overlap": 2
             }
           ],
-          "mappingStatus": "pending_review",
-          "coverage": "to_audit"
+          "mappingStatus": "thematic_module_verified",
+          "coverage": "partial",
+          "mappingEvidence": "Módulo com ID canônico existente e título com correspondência temática direta; cobertura da teoria NÃO auditada integralmente."
         },
         {
           "id": "trt8-cpc-019",
@@ -3838,7 +3964,9 @@
           "ordinal": 19,
           "text": "Impugnação ao cumprimento de sentença. Da ação rescisória.",
           "organizational": false,
-          "moduleIds": [],
+          "moduleIds": [
+            "cpc14"
+          ],
           "candidateModules": [
             {
               "id": "cpc14",
@@ -3847,8 +3975,9 @@
               "overlap": 2
             }
           ],
-          "mappingStatus": "pending_review",
-          "coverage": "to_audit"
+          "mappingStatus": "thematic_module_verified",
+          "coverage": "partial",
+          "mappingEvidence": "Módulo com ID canônico existente e título com correspondência temática direta; cobertura da teoria NÃO auditada integralmente."
         },
         {
           "id": "trt8-cpc-020",
@@ -4102,7 +4231,10 @@
           "mappingStatus": "pending_review",
           "coverage": "to_audit"
         }
-      ]
+      ],
+      "coverage": "partial",
+      "mappedItemCount": 3
     }
-  ]
+  ],
+  "curatedLinkCount": 34
 }
