@@ -22,7 +22,7 @@ test('a experiência v3 modular é carregada em ordem e participa do modo offlin
     previous = index;
     const fileVersion = file.includes('study-objectives') ? '20261020studyobj1'
       : file.includes('student-plan') ? '20261019-qc-catalog1'
-        : file.includes('student-shell') ? '20261021nav2' : file.includes('auth-shell') ? '20261020studyobj1'
+        : file.includes('student-shell') ? '20261021nav3' : file.includes('auth-shell') ? '20261020studyobj1'
           : file.includes('external-question-filters') || file.includes('student-ux-core') || file.includes('student-dashboard') ? '20261021-exam-module-deeplink-v2' : '';
     assert.ok(offline.includes(`/${file}?v=${fileVersion}`), `${file} deve estar no manifesto offline`);
   }
