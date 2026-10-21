@@ -45,3 +45,25 @@ Aprovação da suíte automatizada **não substitui H03–H11**, que dependem de
 - **Segurança:** não foi feita chamada SQL contra o projeto Neon de produção, nenhuma conta foi desativada, nenhum merge/publicação foi executado.
 
 **Próxima ação permitida:** após o limite da Vercel ser liberado, construir nova Preview especificamente no SHA da branch, confirmar `READY`, verificar HTTP 401 para API não autenticada (em vez de 503), autenticar as contas fictícias e executar H03–H12. Não publicar produção sem autorização.
+
+## Retomada da Preview — homologação acompanhada pelo aluno (21/10/2026)
+
+**Preview testada:** https://central-de-estudos-brx4qi1d5-estudotd.vercel.app (deployment `dpl_4k3AgJCm3NSpCnyVAgjGdmBdrwEn`, commit `d8b489747473c0f1e6c86cd9d3910743a6dfc850`, `READY`).
+
+**Resultados confirmados pelo usuário na interface:**
+- [x] H03 — TRT-8 aparece na seleção e o Edital Verticalizado abre (sem contagem manual relatada de todos os 300 assuntos).
+- [x] H05 — as três marcações permanecem ao atualizar a página.
+- [x] H07 — ao entrar com Aluno 2, as marcações do Aluno 1 não aparecem.
+- [x] H04 — alternar TJPB ↔ TRT-8 preserva os progressos independentes.
+- [x] H02 — sem autenticação, `/api/objective?resource=exam-progress` respondeu HTTP 401; a Preview não está travada pelo bloqueio de 503.
+- [x] H13 — variáveis limitadas à branch e banco Neon separado verificados; Vercel deploy `READY`.
+
+**Evidência adicional de banco:** consulta somente leitura do Neon homologação retornou 24 marcações do TJPB (1 aluno) e 4 do TRT-8 (1 aluno), este último com persistência na nuvem.
+
+**Testes manuais dispensados por solicitação explícita do usuário:** H06 logout/login, H08 modo offline + sincronização, H09 persistência em novo navegador, H10 abertura de cada tipo de módulo e H11 ferramentas TEC/QC/Lei em Dia/infográficos. H12 recebeu verificação automatizada de dados, mas não conferência visual integral. **Não caracterizar essas verificações como aprovadas.**
+
+**Decisão:** seguir à preparação de release sem exigir novos testes manuais. Há risco residual aceito de comportamento não conferido em browser. A produção não foi alterada aqui.
+
+**Bloqueio de integração detectado na verificação do repositório:** a branch `feature/multi-editais-trt8-2026` divergiu da `main` em 1 commit. A main contém o commit `171b76baa828666d9fa48ed4ff3f3a0e26193116` (“menu superior premium e Administração para gestores”), que modifica `central-v119.html`, `central-offline-files-v66172.json`, `package.json` e `tests/student-experience-v3-unit.mjs`, além de CSS/JS do menu. **Antes de publicar, reconciliar esses arquivos sem perder a navegação e o painel administrativo recém-aprovados.** Não realizar merge automático cego.
+
+**Estado de entrega:** Etapa 5.4 validada parcialmente (itens acima) e testes restantes dispensados. Etapa 5.5: preparar integração, registrar conflitos e solicitar autorização específica para publicar.
