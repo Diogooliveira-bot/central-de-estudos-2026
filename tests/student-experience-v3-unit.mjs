@@ -9,7 +9,7 @@ test('a experiência v3 modular é carregada em ordem e participa do modo offlin
     read('central-v119.html'), read('central-offline-files-v66172.json'), read('sw.js'), read('package.json'),
   ]);
   assert.match(boot, /var APP_VERSION='6\.7\.0'/);
-  assert.match(boot, /var BUILD='20261021-multiexam-tech21-v2'/);
+  assert.match(boot, /var BUILD='20261021-multiexam-tech21-v3'/);
   const ordered = [
     'ui/study-objectives-catalog-v1.js', 'ui/external-question-filters-v1.js',
     'ui/student-ux-core-v3.js', 'ui/student-shell-v3.js',
@@ -23,14 +23,14 @@ test('a experiência v3 modular é carregada em ordem e participa do modo offlin
     const fileVersion = file.includes('study-objectives-catalog') ? '20261021tec21obj1' : file.includes('study-objectives') ? '20261020studyobj1'
       : file.includes('student-plan') ? '20261019-qc-catalog1'
         : file.includes('student-shell') ? '20261021nav3' : file.includes('auth-shell') ? '20261020studyobj1'
-          : file.includes('external-question-filters') || file.includes('student-ux-core') || file.includes('student-dashboard') ? '20261021-multiexam-tech21-v2' : '';
+          : file.includes('external-question-filters') || file.includes('student-ux-core') || file.includes('student-dashboard') ? '20261021-multiexam-tech21-v3' : '';
     assert.ok(offline.includes(`/${file}?v=${fileVersion}`), `${file} deve estar no manifesto offline`);
   }
   assert.match(boot, /student-experience-v3\.css\?v='\+BUILD/);
-  assert.match(offline, /student-experience-v3\.css\?v=20261021-multiexam-tech21-v2/);
+  assert.match(offline, /student-experience-v3\.css\?v=20261021-multiexam-tech21-v3/);
   assert.doesNotMatch(boot, /student-polish-v1|student-experience-v2\.js/);
   assert.doesNotMatch(offline, /student-polish-v1|student-experience-v2/);
-  assert.match(serviceWorker, /central-20261021-multiexam-tech21-v2/);
+  assert.match(serviceWorker, /central-20261021-multiexam-tech21-v3/);
   assert.equal(JSON.parse(pkg).version, '6.7.0');
 });
 
