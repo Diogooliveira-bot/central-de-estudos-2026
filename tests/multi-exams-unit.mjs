@@ -8,7 +8,8 @@ const root=path.resolve(import.meta.dirname,'..');
 const read=p=>readFileSync(path.join(root,p),'utf8');
 const tjp=JSON.parse(read('content/tjpb-2026-verticalized.json'));
 const trt=JSON.parse(read('content/trt8-2026-verticalized.json'));
-const goalT='exam-tjpb-2026-analista-judiciaria',goalR='exam-trt8-2026-analista-judiciaria';
+const technician=JSON.parse(read('content/trt8-2026-tecnico-administrativo.json'));
+const goalT='exam-tjpb-2026-analista-judiciaria',goalR='exam-trt8-2026-analista-judiciaria',goalTech='exam-trt8-2026-tecnico-administrativa';
 function setup(user='aluno-A',storage){
  const dom=new JSDOM('<!doctype html><html><body><div id="subjects"></div><div id="disciplinesView"><div id="disciplineGrid"></div></div><div id="homeView"></div><div id="moduleView" class="hidden"></div></body></html>',{url:'https://preview.example.test/central-v119.html',runScripts:'outside-only',pretendToBeVisual:true});
  const w=dom.window;
@@ -17,15 +18,16 @@ function setup(user='aluno-A',storage){
  w.__BASE_COMPLETA_USER_ID__=user;w.__BASE_COMPLETA_PREVIEW_GUEST__=true;w.SUBJECTS=[];
  w.requestAnimationFrame=()=>0;w.cancelAnimationFrame=()=>{};
  w.fetch=async()=>{throw Error('Preview guest should never access network');};
- for(const p of ['ui/student-ux-core-v3.js','ui/study-objectives-catalog-v1.js','content/tjpb-2026-verticalized.js','content/trt8-2026-verticalized.js','ui/study-objectives-v1.js','ui/exam-verticalized-v1.js'])w.eval(read(p));
+ for(const p of ['ui/student-ux-core-v3.js','ui/study-objectives-catalog-v1.js','content/tjpb-2026-verticalized.js','content/trt8-2026-verticalized.js','content/trt8-2026-tecnico-administrativo.js','ui/study-objectives-v1.js','ui/exam-verticalized-v1.js'])w.eval(read(p));
  return {dom,w};
 }
 function firstBy(d){return d.subjects.flatMap(s=>s.items).find(x=>!x.organizational).id;}
-test('duas opções de edital independentes no catálogo',()=>{
+test('três opções de edital independentes no catálogo',()=>{
  const {w,dom}=setup();
- assert.equal(Object.values(w.CentralStudyObjectiveCatalog.goals).filter(x=>x.type==='exam').length,2);
+ assert.equal(Object.values(w.CentralStudyObjectiveCatalog.goals).filter(x=>x.type==='exam').length,3);
  assert.equal(w.CentralStudyObjectiveCatalog.goals[goalR].examSubjects.length,12);
  assert.equal(w.CentralStudyObjectiveCatalog.goals[goalT].examSubjects.length,10);
+ assert.equal(w.CentralStudyObjectiveCatalog.goals[goalTech].examSubjects.length,11);
  assert.deepEqual(Object.keys(w.CentralStudyObjectiveCatalog.subjects).sort(),['pt','cf','adm','civil','cpc','penal','cpp','trab','ptra','rlm'].sort());
  dom.window.close();
 });
@@ -74,16 +76,18 @@ test('API valida edital e lista de assuntos antes de gravar, sem misturar alunos
  assert.doesNotMatch(source,/TRUNCATE|DROP TABLE/);
  assert.match(allow,/tjp-2026-aj-area-judiciaria/);
  assert.match(allow,/trt8-2026-aj-area-judiciaria/);
+ assert.match(allow,/trt8-2026-tecnico-administrativa-21/);
 });
 test('carregador e PWA incluem TRT8, não esquecem TJPB e mantêm versão do cache',()=>{
  const boot=read('central-v119.html'),manifest=JSON.parse(read('central-offline-files-v66172.json')),sw=read('sw.js');
  assert.match(boot,/content\/trt8-2026-verticalized\.js/);
+ assert.match(boot,/content\/trt8-2026-tecnico-administrativo\.js/);
  assert.match(boot,/content\/tjpb-2026-verticalized\.js/);
  assert.ok(boot.indexOf('content/trt8-2026-verticalized.js')<boot.indexOf("tag('ui/exam-verticalized-v1.js"));
  assert.ok(manifest.files.some(s=>s.includes('/content/trt8-2026-verticalized.js?v=')));
  assert.ok(manifest.files.some(s=>s.includes('/ui/study-navigation.js?v=20261021multiexam2')));
- assert.equal(manifest.build,'20261021-multiexam-trt8-v2');
- assert.match(sw,/var CACHE='central-20261021-multiexam-trt8-v2'/);
+ assert.equal(manifest.build,'20261021-multiexam-tech21-v1');
+ assert.match(sw,/var CACHE='central-20261021-multiexam-tech21-v1'/);
 });
 test('vínculos do TRT8 são reais e sem alegações de cobertura total',()=>{
  const bySubject=Object.fromEntries(trt.subjects.map(s=>[s.id,s]));
@@ -110,4 +114,34 @@ test('RLM usa IDs nativos Mnn e o JS publicado reflete a última auditoria',()=>
  assert.deepEqual(published,json);
  assert.match(runtime,/data-rlm-module=/);
  assert.match(nav,/'data-rlm-module'/);
+});
+
+test('cargo 21 da FCC tem 11 disciplinas e 176 assuntos com retificação sem vínculos não auditados',()=>{
+ assert.equal(technician.examId,'trt8-2026-tecnico-administrativa-21');
+ assert.equal(technician.cargoCode,'21');
+ assert.equal(technician.subjects.length,11);
+ assert.equal(technician.subjects.filter(x=>x.group==='general').length,6);
+ assert.equal(technician.subjects.filter(x=>x.group==='specific').length,5);
+ assert.equal(technician.itemsCount,176);
+ assert.equal(new Set(technician.subjects.flatMap(s=>s.items.map(i=>i.id))).size,176);
+ assert.ok(technician.subjects.every(s=>s.items.every(i=>i.moduleIds.length===0&&i.coverage==='to_audit')));
+ assert.ok(technician.subjects.find(s=>s.id.endsWith('-leg')).originalProgram.includes('TRT8 nº 065/2025 alterada pela Resolução TRT8 nº 23/2026'));
+});
+test('TRT8 técnico e analista possuem telas e estados separados',()=>{
+ const {w,dom}=setup();
+ assert.ok(w.CentralTRT8TecnicoVerticalized);
+ w.CentralStudyObjectives.setActive(goalTech);
+ assert.equal(w.CentralTRT8TecnicoVerticalized.open(),true);
+ assert.equal(w.CentralTRT8Verticalized.open(),false);
+ assert.equal(w.document.querySelectorAll('#trt8TecnicoVerticalizedDialog .exam-subject').length,11);
+ assert.equal(w.document.querySelectorAll('#trt8TecnicoVerticalizedDialog [data-exam-module]').length,0);
+ assert.match(w.document.getElementById('trt8TecnicoVerticalizedDialog').textContent,/Técnico Judiciário/);
+ const item=technician.subjects[0].items[0];
+ w.document.querySelector('[data-exam-topic="'+item.id+'"][data-exam-marker="studied"]').click();
+ assert.ok(w.localStorage.getItem('central-v6:exam-progress:trt8-2026-tecnico-administrativa-21:aluno-A:pending'));
+ w.CentralStudyObjectives.setActive(goalR);assert.equal(w.CentralTRT8Verticalized.open(),true);
+ assert.equal(w.CentralTRT8Verticalized.overall(),0);
+ w.CentralStudyObjectives.setActive(goalTech);assert.equal(w.CentralTRT8TecnicoVerticalized.open(),true);
+ assert.equal(w.CentralTRT8TecnicoVerticalized.getState()[item.id].studied.value,true);
+ dom.window.close();
 });
