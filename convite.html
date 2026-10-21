@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Cache-Control" content="no-store">
+<title>Convite para estudar — Base Completa</title>
+<link rel="icon" href="/favicon.ico">
+<style>
+:root{--navy:#12253c;--muted:#627186;--line:#dce4ed;--bg:#f5f7fa;--blue:#244d78;--white:#fff;--bad:#a23b3b;--good:#18644f}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;background:var(--bg);color:var(--navy);font:400 15px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+.page{min-height:100vh;display:grid;place-items:center;padding:32px 18px}
+.card{width:min(460px,100%);background:var(--white);border:1px solid var(--line);border-radius:18px;box-shadow:0 24px 70px rgba(18,37,60,.08);padding:34px}
+.logo{display:block;width:165px;height:76px;object-fit:contain;margin:0 auto 14px}
+.eyebrow{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.11em;color:#44698f;text-align:center}
+h1{font-size:29px;font-weight:700;line-height:1.15;letter-spacing:-.035em;text-align:center;margin:9px 0 11px}
+.intro{font-size:14px;line-height:1.7;color:var(--muted);text-align:center;margin:0 0 26px}
+label{display:block;font-size:12px;font-weight:700;margin:16px 0 6px}
+input{width:100%;border:1px solid #cad6e3;border-radius:10px;background:#fff;padding:12px 13px;color:var(--navy);font:inherit;outline:none}
+input:focus{border-color:#517da8;box-shadow:0 0 0 3px rgba(53,104,155,.12)}
+input[readonly]{background:#f0f4f8;color:#52647b}
+button,.button{display:block;width:100%;border:0;border-radius:10px;padding:13px 14px;background:var(--navy);color:white;font:700 14px system-ui;cursor:pointer;text-decoration:none;text-align:center;margin-top:22px}
+button:disabled{opacity:.55;cursor:wait}
+.note{font-size:12px;line-height:1.6;color:var(--muted);margin:8px 0 0}
+.state{padding:12px 14px;border:1px solid var(--line);background:#f6f9fc;border-radius:10px;font-size:13px;line-height:1.6;color:var(--muted);margin:18px 0}
+.state.bad{color:var(--bad);border-color:#efd0d0;background:#fdf6f6}
+.state.good{color:var(--good);border-color:#cde7dd;background:#f5fcf8}
+a.secondary{display:block;margin-top:18px;text-align:center;color:var(--blue);font-size:13px;font-weight:700;text-decoration:none}
+.foot{margin:24px 0 0;text-align:center;font-size:11px;color:#8795a5}
+@media(max-width:520px){.card{padding:26px 22px;border-radius:15px}h1{font-size:25px}}
+</style>
+</head>
+<body>
+<main class="page"><section class="card" aria-labelledby="title">
+<img class="logo" src="/assets/base-completa-symbol.webp" alt="Base Completa">
+<div class="eyebrow">Acesso individual por convite</div>
+<h1 id="title">Seu espaço de estudos começa aqui.</h1>
+<p class="intro">Você foi convidado para a Base Completa. Crie sua conta para estudar, registrar seu progresso e continuar de onde parou.</p>
+<div id="state" class="state" role="status" aria-live="polite">Verificando seu convite...</div>
+<form id="form" hidden>
+<label for="name">Nome completo</label>
+<input id="name" name="name" autocomplete="name" maxlength="120" required placeholder="Como deseja ser chamado">
+<label for="email">E-mail</label>
+<input id="email" name="email" type="email" autocomplete="email" maxlength="240" required placeholder="voce@exemplo.com">
+<div class="note" id="emailNote" hidden>Este convite está reservado para o e-mail indicado.</div>
+<label for="password">Crie sua senha</label>
+<input id="password" name="password" type="password" autocomplete="new-password" minlength="8" maxlength="200" required placeholder="Pelo menos 8 caracteres">
+<label for="confirm">Confirme a senha</label>
+<input id="confirm" name="confirm" type="password" autocomplete="new-password" minlength="8" maxlength="200" required>
+<button id="submit" type="submit">Criar minha conta e entrar</button>
+<p class="note">Este convite permite apenas um cadastro. Sua conta será criada com acesso de aluno.</p>
+</form>
+<a class="secondary" href="/login.html">Já tem conta? Entrar</a>
+<p class="foot">Base Completa · Central de Estudos</p>
+</section></main>
+<script>
+(function(){
+'use strict';
+var form=document.getElementById('form'),box=document.getElementById('state'),submit=document.getElementById('submit');
+var params=new URLSearchParams(location.search);
+var token=params.get('token')||'';
+try{
+ if(token){sessionStorage.setItem('bc_invite_token',token);history.replaceState(null,'',location.pathname)}
+ else token=sessionStorage.getItem('bc_invite_token')||'';
+}catch(_){}
+function message(text,kind){box.textContent=text;box.className='state'+(kind?' '+kind:'')}
+async function json(url,options){var r=await fetch(url,Object.assign({cache:'no-store'},options||{})),data={};try{data=await r.json()}catch(_){}if(!r.ok)throw new Error(data.error||'Não foi possível concluir a solicitação');return data}
+async function init(){
+ if(!/^[a-zA-Z0-9_-]{43}$/.test(token)){message('Este endereço não contém um convite válido. Solicite um novo link ao responsável.','bad');return}
+ try{
+  var me=await json('/api/auth?action=me');
+  if(me.authenticated&&!me.previewGuest){message('Você já está conectado a uma conta. Para cadastrar outra pessoa, saia da conta atual antes de usar o convite.');return}
+  var info=await json('/api/invites?action=check&token='+encodeURIComponent(token));
+  if(info.invitedEmail){document.getElementById('email').value=info.invitedEmail;document.getElementById('email').readOnly=true;document.getElementById('emailNote').hidden=false}
+  if(info.recipientName)document.getElementById('name').value=info.recipientName;
+  form.hidden=false;
+  var exp=info.expiresAt?new Date(info.expiresAt).toLocaleDateString('pt-BR'):'';
+  message('Convite válido'+(exp?' até '+exp:'')+'. Preencha seus dados abaixo.','good');
+ }catch(error){message(error.message,'bad')}
+}
+form.addEventListener('submit',async function(e){
+ e.preventDefault();
+ if(document.getElementById('password').value!==document.getElementById('confirm').value){
+  message('As senhas não coincidem.','bad');return;
+ }
+ submit.disabled=true;message('Criando sua conta...');
+ try{
+  var data=await json('/api/invites?action=redeem',{
+   method:'POST',headers:{'Content-Type':'application/json'},
+   body:JSON.stringify({
+    token:token,name:document.getElementById('name').value,
+    email:document.getElementById('email').value,password:document.getElementById('password').value,
+   })
+  });
+  if(!data.ok)throw new Error('Não foi possível concluir seu cadastro');
+  try{sessionStorage.removeItem('bc_invite_token')}catch(_){}
+  message('Conta criada! Abrindo sua Central de Estudos...','good');
+  location.replace('/central-v119.html');
+ }catch(error){message(error.message,'bad');submit.disabled=false}
+});
+init();
+})();
+</script>
+</body>
+</html>
