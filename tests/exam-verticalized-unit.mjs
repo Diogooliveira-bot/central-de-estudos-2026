@@ -90,3 +90,50 @@ test('API aplica isolamento por user_id, guarda marcações por tópico e aceita
  assert.match(api,/req\.query\?\.resource === 'exam-progress'/);
  assert.doesNotMatch(api,/DROP TABLE|TRUNCATE/);
 });
+
+test('Abrir módulo usa navegação nativa e expande o módulo, não apenas a disciplina',async()=>{
+ const {dom,w}=setup();
+ w.HTMLElement.prototype.scrollIntoView=()=>{};
+ w.CentralDisciplineLoader={isReady:()=>true};
+ const targets=[
+  {subject:'cf',id:'w1',topic:'tjp-cf-1',attr:'data-cf'},
+  {subject:'cpc',id:'cpc1',topic:'tjp-cpc-1',attr:'data-cf'},
+  {subject:'penal',id:'p1',topic:'tjp-penal-1-1',attr:'data-cf'},
+  {subject:'adm',id:'adm-01-01-regime-juridico-e-principios',topic:'tjp-adm-1-1',attr:'data-uid'},
+ ];
+ w.SUBJECTS=[...targets.map(x=>({id:x.subject})),{id:'civil'},{id:'cpp'}];
+ const root=w.document.getElementById('subjects');
+ for(const t of targets){
+  const section=w.document.createElement('section');
+  section.className='subject open';section.dataset.id=t.subject;
+  section.innerHTML='<div class="subject-body"><section class="'+(t.subject==='adm'?'topic-item':'cf-module')+'" '+t.attr+'="'+t.id+'"><button class="'+(t.subject==='adm'?'open-topic':'cf-module-head')+'">Abrir</button></section></div>';
+  section.querySelector('button').addEventListener('click',()=>section.querySelector('section').classList.add('open'));
+  root.appendChild(section);
+ }
+ let civilCalled=0,cppCalled=0;
+ w.CIVIL_NATIVE_INDEX={modules:[{id:'civil-m01',number:1}]};
+ w.CivilNative={openModule(n){assert.equal(n,1);civilCalled++;}};
+ w.CppNative={};
+ w.openCppLast=id=>{assert.equal(id,'cpp-m01');cppCalled++;};
+ w.jumpSubject=id=>{assert.ok(w.SUBJECTS.some(s=>s.id===id));return false;};
+ w.eval(read('ui/study-navigation.js'));
+ assert.equal(typeof w.CentralStudyNavigation?.openContext,'function');
+ for(const t of targets){
+  assert.equal(w.CentralExamVerticalized.open(),true);
+  const button=w.document.querySelector('[data-exam-discipline="'+t.subject+'"][data-exam-module="'+t.id+'"]');
+  assert.ok(button,'Botão de '+t.subject+' encontrado');
+  button.click();
+  await new Promise(resolve=>setTimeout(resolve,175));
+  const module=root.querySelector('[data-id="'+t.subject+'"] ['+t.attr+'="'+t.id+'"]');
+  assert.ok(module.classList.contains('open'),'Módulo '+t.id+' expandido');
+ }
+ for(const t of [{subject:'civil',id:'civil-m01'},{subject:'cpp',id:'cpp-m01'}]){
+  assert.equal(w.CentralExamVerticalized.open(),true);
+  const button=w.document.querySelector('[data-exam-discipline="'+t.subject+'"][data-exam-module="'+t.id+'"]');
+  assert.ok(button,'Botão nativo de '+t.subject+' encontrado');
+  button.click();
+ }
+ assert.equal(civilCalled,1,'Navegação invoca expansor nativo de Civil');
+ assert.equal(cppCalled,1,'Navegação invoca expansor nativo de Processo Penal');
+ dom.window.close();
+});
