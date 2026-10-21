@@ -1,4 +1,4 @@
-/* Editais TJPB e TRT-8: instâncias isoladas por aluno e por concurso. */
+/* Editais TJPB e TRT-8: instâncias isoladas por aluno, concurso e cargo. */
 (function (global) {
   'use strict';
   if (global.CentralExamVerticalized) return;
@@ -110,8 +110,9 @@
       const percent = progressFor(subject);
       return '<details class="exam-subject" data-exam-subject="'+esc(subject.id)+'"'+(opened.has(subject.id)?' open':'')+'><summary><span><b>'+esc(subject.title)+'</b><small>'+subjectTopics(subject).length+' assuntos · '+(subject.coverage==='complete'?'Cobertura completa':subject.coverage==='partial'?'Cobertura parcial':'Em preparação')+'</small></span><span class="exam-subject-progress"><b>'+percent+'%</b><i><em style="width:'+percent+'%"></em></i></span></summary><div class="exam-topic-list">'+subject.items.map(item=>topicMarkup(subject,item)).join('')+'</div></details>';
     }).join('');
-    const headerLabel = DATA.cargoCode === '01' && DATA.examId?.startsWith('trt8') ? 'EDITAL 01/2026 + RETIFICAÇÃO · TRT-8' : 'EDITAL 01/2026 · TJPB';
-    host.innerHTML = '<section class="exam-verticalized-panel" role="dialog" aria-modal="true" aria-labelledby="examVerticalizedTitle"><header class="exam-screen-header"><button type="button" data-exam-close aria-label="Fechar edital">← Voltar</button><span>'+esc(headerLabel)+'</span><h1 id="examVerticalizedTitle">Edital Verticalizado</h1><p>Analista Judiciário · Área Judiciária</p></header><section class="exam-overview"><div><span>Progresso do edital</span><b>'+overall()+'%</b></div><i><em style="width:'+overall()+'%"></em></i><small>Avanço pessoal nas marcações de estudo, revisão e questões.</small></section><p class="exam-source">'+esc(DATA.source)+'</p><p class="exam-sync-status" data-exam-sync-status></p><div class="exam-subject-list">'+subjectMarkup+'</div></section>';
+    const headerLabel = DATA.examId?.startsWith('trt8') ? 'EDITAL 01/2026 + RETIFICAÇÃO · TRT-8 · CARGO ' + esc(DATA.cargoCode || '') : 'EDITAL 01/2026 · TJPB';
+    const cargoLabel = DATA.cargoCode === '21' ? 'Técnico Judiciário · Área Administrativa' : 'Analista Judiciário · Área Judiciária';
+    host.innerHTML = '<section class="exam-verticalized-panel" role="dialog" aria-modal="true" aria-labelledby="examVerticalizedTitle"><header class="exam-screen-header"><button type="button" data-exam-close aria-label="Fechar edital">← Voltar</button><span>'+esc(headerLabel)+'</span><h1 id="examVerticalizedTitle">Edital Verticalizado</h1><p>'+esc(cargoLabel)+'</p></header><section class="exam-overview"><div><span>Progresso do edital</span><b>'+overall()+'%</b></div><i><em style="width:'+overall()+'%"></em></i><small>Avanço pessoal nas marcações de estudo, revisão e questões.</small></section><p class="exam-source">'+esc(DATA.source)+'</p><p class="exam-sync-status" data-exam-sync-status></p><div class="exam-subject-list">'+subjectMarkup+'</div></section>';
     host.hidden = false;
     host.querySelector('[data-exam-close]').addEventListener('click', close);
     host.querySelectorAll('[data-exam-topic]').forEach(input => input.addEventListener('change', () => {
@@ -160,4 +161,5 @@
   }
   global.CentralExamVerticalized=createExam(global.TJPB2026Verticalized,'exam-tjpb-2026-analista-judiciaria','examVerticalizedDialog','examVerticalizedEntry');
   global.CentralTRT8Verticalized=createExam(global.TRT82026Verticalized,'exam-trt8-2026-analista-judiciaria','trt8VerticalizedDialog','trt8VerticalizedEntry');
+  global.CentralTRT8TecnicoVerticalized=createExam(global.TRT82026TecnicoVerticalized,'exam-trt8-2026-tecnico-administrativa','trt8TecnicoVerticalizedDialog','trt8TecnicoVerticalizedEntry');
 })(window);
