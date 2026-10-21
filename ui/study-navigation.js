@@ -2,8 +2,8 @@
 (function () {
   'use strict';
   if (window.CentralStudyNavigation) return;
-  const moduleSelector = '.topic-item,.cf-module,.civil-module,.cpp-mod,.cv-module,.bc-trabalho-module';
-  const attributes = ['data-uid','data-rlm-module','data-pt-current','data-ptn-module','data-civil-native-module','data-civil-analista','data-civil','data-cf','data-penal','data-cpc','data-cpp-num','data-cpp-native-module'];
+  const moduleSelector = '.topic-item,.cf-module,.civil-module,.cpp-mod,.cv-module,.bc-trabalho-module,.ptra-native-mod';
+  const attributes = ['data-uid','data-ptra-module','data-rlm-module','data-pt-current','data-ptn-module','data-civil-native-module','data-civil-analista','data-civil','data-cf','data-penal','data-cpc','data-cpp-num','data-cpp-native-module'];
   const views = {home:'homeView',agenda:'agendaView',disciplines:'disciplinesView',tec:'tecCadernosView',performance:'performanceView'};
   let sourceModule = null;
   function moduleId(module) {
@@ -55,7 +55,7 @@
           if (!module && ++attempts < 20) { setTimeout(openModule, 100); return; }
           if (!module) return;
           if (!module.classList.contains('open')) {
-            const head = module.querySelector('.open-topic,.cf-module-head,.civil-module-head,.cpp-mod-head,.cv-module-head,.bc-trabalho-module-head');
+            const head = module.querySelector('.open-topic,.cf-module-head,.civil-module-head,.cpp-mod-head,.cv-module-head,.bc-trabalho-module-head,.ptra-native-mod-head');
             head?.click();
           }
           setTimeout(() => module.scrollIntoView({block:'start',behavior:'auto'}), 100);
