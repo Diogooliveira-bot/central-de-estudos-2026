@@ -12,6 +12,11 @@ jobs:
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
+      - name: Localizar atribuicao do catalogo de Portugues
+        shell: bash
+        run: |
+          git grep -n -I -F 'CentralPortugueseCourse' -- '*.js' '*.html' | head -n 30 || true
+          git grep -n -I -F 'portugues-autodidata-data.txt' -- '*.js' '*.html' | head -n 25 || true
       - name: Extrair indice do curso atual
         shell: bash
         run: |
