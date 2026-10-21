@@ -1,12 +1,14 @@
-/* Edital TJPB verticalizado e progresso individual do aluno. */
+/* Editais TJPB e TRT-8: instâncias isoladas por aluno e por concurso. */
 (function (global) {
   'use strict';
   if (global.CentralExamVerticalized) return;
-  const DATA = global.TJPB2026Verticalized;
   const OBJECTIVES = global.CentralStudyObjectives;
-  const GOAL_ID = 'exam-tjpb-2026-analista-judiciaria';
   const MARKERS = [['studied','Estudei'],['reviewed','Revisei'],['questions','Fiz questões']];
-  if (!DATA || !OBJECTIVES) return;
+  if (!OBJECTIVES) return;
+  function createExam(DATA,GOAL_ID,dialogId,entryId) {
+  if (!DATA) return null;
+  const EXAM_ID = DATA.examId || 'tjp-2026-aj-area-judiciaria';
+  const examQuery = '/api/objective?resource=exam-progress&examId=' + encodeURIComponent(EXAM_ID);
 
   const identity = () => String(global.__BASE_COMPLETA_USER_ID__ || 'local-student');
   const storageKey = () => 'central-v6:exam-progress:' + DATA.examId + ':' + identity();
@@ -47,7 +49,7 @@
     if (syncing || isGuest() || !navigator.onLine) return false;
     syncing = true;
     try {
-      const response = await fetch('/api/objective?resource=exam-progress', {cache:'no-store'});
+      const response = await fetch(examQuery, {cache:'no-store'});
       if (!response.ok) throw new Error('Não foi possível carregar o progresso do edital.');
       const remote = await response.json();
       const local = parseSaved();
@@ -55,7 +57,7 @@
       localStorage.setItem(storageKey(), JSON.stringify(state));
       const payload = changes();
       if (payload.length) {
-        const saved = await fetch('/api/objective?resource=exam-progress', {method:'PUT',cache:'no-store',headers:{'Content-Type':'application/json'},body:JSON.stringify({changes:payload})});
+        const saved = await fetch(examQuery, {method:'PUT',cache:'no-store',headers:{'Content-Type':'application/json'},body:JSON.stringify({changes:payload})});
         if (!saved.ok) throw new Error('Não foi possível sincronizar as marcações.');
       }
       localStorage.removeItem(pendingKey());
@@ -76,7 +78,7 @@
     syncTimer = global.setTimeout(syncNow, 350);
   }
   function setSyncStatus(text) {
-    const node = document.querySelector('[data-exam-sync-status]');
+    const node = document.getElementById(dialogId)?.querySelector('[data-exam-sync-status]');
     if (node) node.textContent = isGuest() ? 'Prévia: marcações armazenadas apenas neste navegador.' : text;
   }
   const subjectTopics = subject => subject.items.filter(item => !item.organizational);
@@ -98,17 +100,18 @@
     const coverage = item.coverage === 'complete' ? 'Cobertura completa' : item.coverage === 'partial' ? 'Cobertura parcial' : 'Em preparação';
     const checks = MARKERS.map(([marker,label]) => '<label class="exam-check"><input type="checkbox" data-exam-topic="'+esc(item.id)+'" data-exam-marker="'+marker+'"'+(state[item.id]?.[marker]?.value ? ' checked' : '')+'><span>'+label+'</span></label>').join('');
     const links = (item.moduleIds || []).map(id => '<button type="button" class="exam-module-link" data-exam-module="'+esc(id)+'" data-exam-discipline="'+esc(subject.disciplineId || '')+'">Abrir módulo</button>').join('');
-    return '<article class="exam-topic" data-exam-topic-row="'+esc(item.id)+'"><div class="exam-topic-copy"><span class="exam-topic-number">'+esc(item.number)+'</span><span>'+esc(item.text)+'</span><small>'+coverage+'</small>'+links+'</div><div class="exam-checks">'+checks+'</div></article>';
+    return '<article class="exam-topic" data-exam-topic-row="'+esc(item.id)+'"><div class="exam-topic-copy"><span class="exam-topic-number">'+esc(item.number || String(item.ordinal || ''))+'</span><span>'+esc(item.text)+'</span><small>'+coverage+'</small>'+links+'</div><div class="exam-checks">'+checks+'</div></article>';
   }
   function render() {
-    const host = document.getElementById('examVerticalizedDialog');
+    const host = document.getElementById(dialogId);
     if (!host || host.hidden) return;
     const opened = new Set(Array.from(host.querySelectorAll('.exam-subject[open]'), node => node.dataset.examSubject));
     const subjectMarkup = DATA.subjects.map(subject => {
       const percent = progressFor(subject);
       return '<details class="exam-subject" data-exam-subject="'+esc(subject.id)+'"'+(opened.has(subject.id)?' open':'')+'><summary><span><b>'+esc(subject.title)+'</b><small>'+subjectTopics(subject).length+' assuntos · '+(subject.coverage==='complete'?'Cobertura completa':subject.coverage==='partial'?'Cobertura parcial':'Em preparação')+'</small></span><span class="exam-subject-progress"><b>'+percent+'%</b><i><em style="width:'+percent+'%"></em></i></span></summary><div class="exam-topic-list">'+subject.items.map(item=>topicMarkup(subject,item)).join('')+'</div></details>';
     }).join('');
-    host.innerHTML = '<section class="exam-verticalized-panel" role="dialog" aria-modal="true" aria-labelledby="examVerticalizedTitle"><header class="exam-screen-header"><button type="button" data-exam-close aria-label="Fechar edital">← Voltar</button><span>EDITAL 01/2026 · TJPB</span><h1 id="examVerticalizedTitle">Edital Verticalizado</h1><p>Analista Judiciário · Área Judiciária</p></header><section class="exam-overview"><div><span>Progresso do edital</span><b>'+overall()+'%</b></div><i><em style="width:'+overall()+'%"></em></i><small>Avanço pessoal nas marcações de estudo, revisão e questões.</small></section><p class="exam-source">'+esc(DATA.source)+'</p><p class="exam-sync-status" data-exam-sync-status></p><div class="exam-subject-list">'+subjectMarkup+'</div></section>';
+    const headerLabel = DATA.cargoCode === '01' && DATA.examId?.startsWith('trt8') ? 'EDITAL 01/2026 + RETIFICAÇÃO · TRT-8' : 'EDITAL 01/2026 · TJPB';
+    host.innerHTML = '<section class="exam-verticalized-panel" role="dialog" aria-modal="true" aria-labelledby="examVerticalizedTitle"><header class="exam-screen-header"><button type="button" data-exam-close aria-label="Fechar edital">← Voltar</button><span>'+esc(headerLabel)+'</span><h1 id="examVerticalizedTitle">Edital Verticalizado</h1><p>Analista Judiciário · Área Judiciária</p></header><section class="exam-overview"><div><span>Progresso do edital</span><b>'+overall()+'%</b></div><i><em style="width:'+overall()+'%"></em></i><small>Avanço pessoal nas marcações de estudo, revisão e questões.</small></section><p class="exam-source">'+esc(DATA.source)+'</p><p class="exam-sync-status" data-exam-sync-status></p><div class="exam-subject-list">'+subjectMarkup+'</div></section>';
     host.hidden = false;
     host.querySelector('[data-exam-close]').addEventListener('click', close);
     host.querySelectorAll('[data-exam-topic]').forEach(input => input.addEventListener('change', () => {
@@ -118,11 +121,11 @@
     }));
     host.querySelectorAll('[data-exam-module]').forEach(button => button.addEventListener('click', () => openModule(button.dataset.examDiscipline,button.dataset.examModule)));
   }
-  function close() { const host=document.getElementById('examVerticalizedDialog'); if(host)host.hidden=true; document.documentElement.classList.remove('exam-verticalized-open'); }
+  function close() { const host=document.getElementById(dialogId); if(host)host.hidden=true; document.documentElement.classList.remove('exam-verticalized-open'); }
   function open() {
     if (OBJECTIVES.getActive() !== GOAL_ID) return false;
-    let host=document.getElementById('examVerticalizedDialog');
-    if (!host) { host=document.createElement('div'); host.id='examVerticalizedDialog'; host.className='exam-verticalized-backdrop'; document.body.appendChild(host); }
+    let host=document.getElementById(dialogId);
+    if (!host) { host=document.createElement('div'); host.id=dialogId; host.className='exam-verticalized-backdrop'; document.body.appendChild(host); }
     host.hidden=false; document.documentElement.classList.add('exam-verticalized-open');
     if (!loaded) { state=parseSaved(); render(); if (!isGuest()) syncNow(); else {loaded=true; render();} }
     else render();
@@ -143,15 +146,18 @@
   function ensureEntry() {
     const current=OBJECTIVES.getActive();
     const grid=document.getElementById('disciplineGrid');
-    if (!grid || current!==GOAL_ID) { document.getElementById('examVerticalizedEntry')?.remove(); return; }
-    let button=document.getElementById('examVerticalizedEntry');
-    if (!button) { button=document.createElement('button'); button.id='examVerticalizedEntry'; button.type='button'; button.className='exam-verticalized-entry'; button.textContent='Abrir Edital Verticalizado'; button.addEventListener('click',open); }
+    if (!grid || current!==GOAL_ID) { document.getElementById(entryId)?.remove(); if (current!==GOAL_ID) close(); return; }
+    let button=document.getElementById(entryId);
+    if (!button) { button=document.createElement('button'); button.id=entryId; button.type='button'; button.className='exam-verticalized-entry'; button.textContent='Abrir Edital Verticalizado'; button.addEventListener('click',open); }
     if (grid.previousElementSibling!==button) grid.before(button);
   }
   document.addEventListener('central:study-objective-changed',ensureEntry);
   document.addEventListener('central:discipline-ready',ensureEntry);
   global.addEventListener('online',()=>{if(localStorage.getItem(pendingKey())==='1')syncNow();});
-  document.addEventListener('click',event=>{if(event.target===document.getElementById('examVerticalizedDialog'))close();});
-  global.CentralExamVerticalized={open,close,data:DATA,progressFor,overall,getState:()=>JSON.parse(JSON.stringify(state))};
+  document.addEventListener('click',event=>{if(event.target===document.getElementById(dialogId))close();});
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',ensureEntry,{once:true});else ensureEntry();
+  return {open,close,data:DATA,progressFor,overall,getState:()=>JSON.parse(JSON.stringify(state))};
+  }
+  global.CentralExamVerticalized=createExam(global.TJPB2026Verticalized,'exam-tjpb-2026-analista-judiciaria','examVerticalizedDialog','examVerticalizedEntry');
+  global.CentralTRT8Verticalized=createExam(global.TRT82026Verticalized,'exam-trt8-2026-analista-judiciaria','trt8VerticalizedDialog','trt8VerticalizedEntry');
 })(window);
