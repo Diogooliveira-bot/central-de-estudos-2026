@@ -88,8 +88,16 @@ test('Português preserva M01–M24 e revisão sem corrupção de caracteres', (
 test('carregadores ativos apontam para a revisão e o manifesto offline acompanha CF', () => {
   const index = read('index.html');
   const manifest = JSON.parse(read('central-offline-files-v66172.json'));
-  for (const id of ['m03', 'm04', 'm05', 'm07', 'm09', 'm14']) {
-    const asset = `/content/cf/${id}-native-data.js?v=20261018cfjur1`;
+  const reviewed = {
+    m03:'20261022cfm01m05apostila1',
+    m04:'20261022cfm01m05apostila1',
+    m05:'20261022cfm01m05apostila1',
+    m07:'20261018cfjur1',
+    m09:'20261018cfjur1',
+    m14:'20261018cfjur1',
+  };
+  for (const [id, version] of Object.entries(reviewed)) {
+    const asset = `/content/cf/${id}-native-data.js?v=${version}`;
     assert.ok(index.includes(`src="${asset}"`), id);
     assert.ok(manifest.files.includes(asset), id);
   }
