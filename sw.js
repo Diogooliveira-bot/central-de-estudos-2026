@@ -156,8 +156,8 @@ self.addEventListener('fetch',function(event){
     return;
   }
 
-  var html=/\\.html$/.test(url.pathname);
-  var dynamic=/\\.(?:js|css|json|woff2?|png|webp|avif|ico|svg)$/.test(url.pathname)||/\\.txt$/.test(url.pathname)||url.search;
+  var html=/\.html$/.test(url.pathname);
+  var dynamic=/\.(?:js|css|json|woff2?|png|webp|avif|ico|svg)$/.test(url.pathname)||/\.txt$/.test(url.pathname)||url.search;
   if(html||dynamic){
     event.respondWith((async function(){
       try{
