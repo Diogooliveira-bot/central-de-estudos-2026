@@ -99,7 +99,7 @@ function schedule(){
 function styles(){
  if(document.getElementById('bc-guided-2-15-css'))return;
  const el=document.createElement('style');
- el.id='bc-guided-2-5-css';
+ el.id='bc-guided-2-15-css';
  el.textContent=[
  '.cf-module[data-cf="w2"] .cf-study-actions .bc-m01-pilot-launch,.cf-module[data-cf="w3"] .cf-study-actions .bc-m01-pilot-launch,.cf-module[data-cf="w4"] .cf-study-actions .bc-m01-pilot-launch,.cf-module[data-cf="w5"] .cf-study-actions .bc-m01-pilot-launch,.cf-module[data-cf="w6"] .cf-study-actions .bc-m01-pilot-launch,.cf-module[data-cf="w7"] .cf-study-actions .bc-m01-pilot-launch,.cf-module[data-cf="w8"] .cf-study-actions .bc-m01-pilot-launch,.cf-module[data-cf="w9"] .cf-study-actions .bc-m01-pilot-launch,.cf-module[data-cf="w10"] .cf-study-actions .bc-m01-pilot-launch,.cf-module[data-cf="w11"] .cf-study-actions .bc-m01-pilot-launch,.cf-module[data-cf="w12"] .cf-study-actions .bc-m01-pilot-launch,.cf-module[data-cf="w13"] .cf-study-actions .bc-m01-pilot-launch,.cf-module[data-cf="w14"] .cf-study-actions .bc-m01-pilot-launch,.cf-module[data-cf="w15"] .cf-study-actions .bc-m01-pilot-launch{border:1px solid #94b3d3!important;background:#f0f6fc!important;color:#1b527f!important;box-shadow:none!important;min-height:40px!important;font-size:12px!important;}',
  '.bc-guided-overlay .bc-m01-toolbar{background:#fff;}',
