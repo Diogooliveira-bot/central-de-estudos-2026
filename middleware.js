@@ -149,8 +149,16 @@ export default async function middleware(request) {
   if (PREVIEW_GUEST_ENABLED && url.searchParams.has(PREVIEW_GUEST_QUERY)) {
     const entryPathAllowed = path === '/' || path === '/central-v119.html' || path === '/index.html';
     const token = url.searchParams.get(PREVIEW_GUEST_QUERY) || '';
-    if (request.method !== 'GET' || !entryPathAllowed || !(await previewTokenMatches(token))) {
-      return previewForbidden();
+    const validToken = await previewTokenMatches(token);
+    if (request.method !== 'GET' || !entryPathAllowed || !validToken) {
+      // Diagnóstico temporário, restrito ao deployment Preview: não revela credenciais.
+      return new Response(JSON.stringify({ error: 'Acesso de teste bloqueado', diagnostic: {
+        requestAllowed: request.method === 'GET', entryPathAllowed: entryPathAllowed,
+        previewEnabled: PREVIEW_GUEST_ENABLED,
+        tokenLengthMatches: token.length === PREVIEW_GUEST_SECRET.length,
+        tokenLength: token.length, configuredLength: PREVIEW_GUEST_SECRET.length,
+        bytesEqual: token === PREVIEW_GUEST_SECRET
+      }}), { status: 403, headers: { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' } });
     }
     const cleanUrl = new URL(request.url);
     cleanUrl.searchParams.delete(PREVIEW_GUEST_QUERY);
