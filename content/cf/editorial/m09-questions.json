@@ -1,0 +1,216 @@
+{
+  "summary": [
+    {
+      "n": 1,
+      "difficulty": "Fácil",
+      "q": "A vitaliciedade do juiz de primeiro grau é adquirida, em regra, após:",
+      "options": [
+        "2 anos.",
+        "1 ano.",
+        "3 anos.",
+        "5 anos.",
+        "10 anos."
+      ],
+      "answer": 0,
+      "explanation": "Art. 95, I: dois anos no primeiro grau. Fundamento: CF, art. 95, I."
+    },
+    {
+      "n": 2,
+      "difficulty": "Fácil",
+      "q": "O STF é composto por:",
+      "options": [
+        "9 Ministros.",
+        "11 Ministros.",
+        "10 Ministros.",
+        "12 Ministros.",
+        "15 Ministros."
+      ],
+      "answer": 1,
+      "explanation": "O STF possui 11 Ministros. Fundamento: CF, art. 101."
+    },
+    {
+      "n": 3,
+      "difficulty": "Média",
+      "q": "No quinto constitucional, o tribunal recebe lista sêxtupla e:",
+      "options": [
+        "encaminha a lista ao CNJ.",
+        "nomeia diretamente um candidato.",
+        "forma lista tríplice.",
+        "convoca concurso.",
+        "submete os seis nomes ao Senado."
+      ],
+      "answer": 2,
+      "explanation": "A classe envia seis nomes; o tribunal reduz para três; o Executivo escolhe um. Fundamento: CF, art. 94."
+    },
+    {
+      "n": 4,
+      "difficulty": "Média",
+      "q": "O STF somente pode recusar a repercussão geral mediante manifestação de:",
+      "options": [
+        "maioria simples.",
+        "maioria absoluta.",
+        "três quintos.",
+        "dois terços.",
+        "unanimidade."
+      ],
+      "answer": 3,
+      "explanation": "A repercussão geral só pode ser recusada por 2/3. Fundamento: CF, art. 102, § 3º."
+    },
+    {
+      "n": 5,
+      "difficulty": "Difícil",
+      "q": "Assinale a alternativa correta sobre precatórios após a EC 136/2025:",
+      "options": [
+        "o prazo do art. 100, § 5º, permaneceu em 2 de abril.",
+        "RPVs submetem-se sempre à ordem de precatórios.",
+        "a EC eliminou a superpreferência.",
+        "créditos alimentares perderam preferência.",
+        "o art. 100 passou a prever 1º de fevereiro como marco para inclusão orçamentária e ganhou nova sistemática de limites para Estados, DF e Municípios."
+      ],
+      "answer": 4,
+      "explanation": "A EC 136/2025 alterou o marco para 1º de fevereiro e criou limites de pagamento para entes subnacionais. Fundamento: CF, art. 100, §§ 5º e 23–30."
+    }
+  ],
+  "complete": [
+    {
+      "n": 1,
+      "difficulty": "Fácil",
+      "q": "Segundo a Constituição Federal, a vitaliciedade do juiz de primeiro grau é adquirida, em regra, após:",
+      "options": [
+        "dois anos de exercício.",
+        "um ano de exercício.",
+        "seis meses de exercício.",
+        "três anos de exercício.",
+        "cinco anos de exercício."
+      ],
+      "answer": 0,
+      "explanation": "Art. 95, I: no primeiro grau, vitaliciedade após dois anos. Fundamento: CF, art. 95, I."
+    },
+    {
+      "n": 2,
+      "difficulty": "Fácil",
+      "q": "O Supremo Tribunal Federal é composto por:",
+      "options": [
+        "9 Ministros.",
+        "11 Ministros.",
+        "10 Ministros.",
+        "12 Ministros.",
+        "15 Ministros."
+      ],
+      "answer": 1,
+      "explanation": "O STF tem onze Ministros. Fundamento: CF, art. 101."
+    },
+    {
+      "n": 3,
+      "difficulty": "Fácil",
+      "q": "No procedimento do quinto constitucional, após receber a lista sêxtupla, o tribunal deverá:",
+      "options": [
+        "nomear diretamente um candidato.",
+        "encaminhar a lista integral ao Senado.",
+        "formar lista tríplice e encaminhá-la ao Poder Executivo.",
+        "realizar concurso público específico.",
+        "submeter os nomes ao CNJ."
+      ],
+      "answer": 2,
+      "explanation": "A classe forma lista sêxtupla; o tribunal forma lista tríplice; o Executivo escolhe um integrante. Fundamento: CF, art. 94 e parágrafo único."
+    },
+    {
+      "n": 4,
+      "difficulty": "Fácil",
+      "q": "A cláusula de reserva de plenário exige, para declaração de inconstitucionalidade por tribunal:",
+      "options": [
+        "maioria simples do órgão fracionário.",
+        "dois terços do órgão fracionário.",
+        "unanimidade do plenário.",
+        "maioria absoluta dos membros do tribunal ou do órgão especial.",
+        "maioria absoluta apenas quando se tratar de lei federal."
+      ],
+      "answer": 3,
+      "explanation": "A declaração exige maioria absoluta dos membros do tribunal ou do órgão especial. Fundamento: CF, art. 97."
+    },
+    {
+      "n": 5,
+      "difficulty": "Média",
+      "q": "Um tribunal pretende recusar, na promoção por antiguidade, o juiz mais antigo. Nos termos do art. 93, a recusa exige:",
+      "options": [
+        "maioria simples e decisão secreta.",
+        "maioria absoluta, sem necessidade de fundamentação.",
+        "unanimidade dos membros presentes.",
+        "três quintos e homologação do CNJ.",
+        "dois terços, voto fundamentado e ampla defesa."
+      ],
+      "answer": 4,
+      "explanation": "A recusa do mais antigo exige voto fundamentado de 2/3, procedimento próprio e ampla defesa. Fundamento: CF, art. 93, II, d."
+    },
+    {
+      "n": 6,
+      "difficulty": "Média",
+      "q": "Em relação ao recurso extraordinário, assinale a alternativa correta:",
+      "options": [
+        "Pode caber quando decisão julgar válida lei local contestada em face de lei federal.",
+        "Somente cabe contra acórdão de tribunal.",
+        "A repercussão geral pode ser recusada por maioria absoluta.",
+        "É cabível contra qualquer violação de lei federal.",
+        "É sempre julgado inicialmente pelo STJ."
+      ],
+      "answer": 0,
+      "explanation": "O art. 102, III, d, prevê RE quando a decisão julga válida lei local contestada em face de lei federal. Fundamento: CF, art. 102, III, d e § 3º."
+    },
+    {
+      "n": 7,
+      "difficulty": "Média",
+      "q": "Após a EC 136/2025, a Constituição prevê que, em regra, devem ser incluídos no orçamento para pagamento até o final do exercício seguinte os precatórios apresentados até:",
+      "options": [
+        "1º de janeiro.",
+        "1º de fevereiro.",
+        "31 de março.",
+        "2 de abril.",
+        "1º de julho."
+      ],
+      "answer": 1,
+      "explanation": "A EC 136/2025 alterou o § 5º do art. 100 para 1º de fevereiro. Fundamento: CF, art. 100, § 5º, redação da EC 136/2025."
+    },
+    {
+      "n": 8,
+      "difficulty": "Média",
+      "q": "Sobre súmula vinculante, é correto afirmar que:",
+      "options": [
+        "pode ser aprovada por maioria absoluta do STF.",
+        "vincula apenas órgãos do Poder Judiciário.",
+        "exige decisão de dois terços dos membros do STF e reiteradas decisões sobre matéria constitucional.",
+        "não pode ser cancelada após sua edição.",
+        "somente pode ser proposta pelo Procurador-Geral da República."
+      ],
+      "answer": 2,
+      "explanation": "Súmula vinculante exige 2/3 e reiteradas decisões sobre matéria constitucional. Fundamento: CF, art. 103-A."
+    },
+    {
+      "n": 9,
+      "difficulty": "Difícil",
+      "q": "Um órgão fracionário de tribunal deixa de aplicar lei ao caso concreto porque entende que ela viola a Constituição, mas evita declarar expressamente sua inconstitucionalidade. À luz da Constituição e da orientação vinculante do STF:",
+      "options": [
+        "a reserva de plenário não incide, porque não houve declaração expressa.",
+        "a decisão é válida se tomada por unanimidade do órgão fracionário.",
+        "a questão depende apenas de maioria absoluta do órgão fracionário.",
+        "há violação da reserva de plenário quando o afastamento da incidência decorre de juízo de inconstitucionalidade.",
+        "a reserva de plenário só vale no controle concentrado."
+      ],
+      "answer": 3,
+      "explanation": "A reserva de plenário não pode ser contornada por decisão fracionária que afaste a norma por incompatibilidade constitucional. Fundamento: CF, art. 97; Súmula Vinculante 10."
+    },
+    {
+      "n": 10,
+      "difficulty": "Difícil",
+      "q": "Considere: I. O STF julga, em recurso ordinário, mandado de segurança decidido em única instância por Tribunal Superior, se denegatória a decisão. II. O STF julga, em recurso extraordinário, causa decidida em única ou última instância quando a decisão declara a inconstitucionalidade de lei federal. III. O STF pode recusar a repercussão geral por maioria absoluta. Está correto o que se afirma em:",
+      "options": [
+        "I, apenas.",
+        "II, apenas.",
+        "I, II e III.",
+        "II e III, apenas.",
+        "I e II, apenas."
+      ],
+      "answer": 4,
+      "explanation": "I e II reproduzem hipóteses constitucionais; III é falsa porque a recusa da repercussão geral exige 2/3. Fundamento: CF, art. 102, II, a; III, b; § 3º."
+    }
+  ]
+}

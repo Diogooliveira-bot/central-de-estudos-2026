@@ -92,9 +92,9 @@ test('carregadores ativos apontam para a revisão e o manifesto offline acompanh
     m03:'20261022cfm01m05apostila1',
     m04:'20261022cfm01m05apostila1',
     m05:'20261022cfm01m05apostila1',
-    m07:'20261018cfjur1',
-    m09:'20261018cfjur1',
-    m14:'20261018cfjur1',
+    m07:'20261022cfm07apostila1',
+    m09:'20261022cfm08m15apostila1',
+    m14:'20261022cfm08m15apostila1',
   };
   for (const [id, version] of Object.entries(reviewed)) {
     const asset = `/content/cf/${id}-native-data.js?v=${version}`;

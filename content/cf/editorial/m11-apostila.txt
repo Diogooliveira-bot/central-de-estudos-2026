@@ -1,0 +1,458 @@
+LEITURA ORIENTADA
+
+Esta apostila reescreve o texto original do módulo CF M11 para que o iniciante entenda tudo e o avançado se aprofunde. O conteúdo segue a ordem do próprio módulo, em treze capítulos (arquitetura, Ministério Público, Advocacia Pública e privada, Defensoria e quadro comparado), e termina em um fechamento de revisão. Cada capítulo traz prosa, uma tabela e, no máximo, duas caixas didáticas; os quadros do texto original (Cai muito, Risco de erro, Atenção, Não confundir, Exceção importante, Regra de bolso) aparecem no capítulo a que pertencem.
+
+TRÊS SITUAÇÕES-PROBLEMA
+
+Tente responder antes de ler. Errar faz parte: a resposta está no capítulo indicado.
+
+Núcleo   Situação-problema   Resposta
+Ministério Público   O Presidente escolhe o novo PGR sem lista tríplice e já pensa em reconduzi-lo duas vezes. Algo disso é inconstitucional? E se fosse um PGJ estadual?   Capítulo 5
+Advocacia Pública   Um procurador do Estado com quatro anos de exercício diz ter “vitaliciedade”. Está certo? E uma lei estadual pode criar órgão paralelo para representar o Estado em juízo?   Capítulo 10
+Defensoria   Um juiz determina que a Defensoria desloque defensores para uma comarca específica. A ordem é válida? A Defensoria pode ajuizar ação civil pública?   Capítulo 12
+
+CAMINHO DO INICIANTE E CAMINHO DO AVANÇADO
+
+Etapa   Caminho do iniciante   Caminho do avançado
+Antes   Leia o capítulo 1 e tente as três situações-problema, mesmo que erre.   Responda sem consultar; depois confira nos capítulos 5, 10 e 12.
+Em cada capítulo   Prosa, tabela e caixa de Caso ou Exemplo; só depois o Erro comum.   Comece pela tabela; leia Jurisprudência, Caso explicado e Erro comum; volte à prosa onde errar.
+Ordem   Siga a numeração: Parte I (capítulo 2), Parte II (3 a 8), Parte III (9 a 11) e Parte IV (12 e 13).   Comece pelo quadro comparado (capítulo 13) e volte aos capítulos onde errar.
+Fechamento   Faça o Resumo e o Checklist; releia as regras de bolso.   Estude as Pegadinhas e treine o roteiro de Como resolver questões.
+
+Como ler as caixas. Caso explicado e Exemplo (os exemplos aplicados do texto original, Casos 1 a 6) mostram o raciocínio em uma situação; Jurisprudência (os entendimentos-chave do STF) é para quem quer ir além; Erro comum aponta a troca que a banca explora; Como estudar é dica de revisão; Cai muito, Risco de erro, Atenção, Não confundir, Exceção importante, Regra de bolso e Artigos para lembrar são quadros do texto original. Nesta apostila não foi acrescentado conteúdo jurídico novo.
+
+ROTEIRO DE ESTUDO
+
+PERCURSO DO MÓDULO
+
+A numeração das aulas é a mesma dos capítulos: a aula 9 corresponde ao capítulo 9. Use o tema como índice para localizar o capítulo correspondente.
+
+Aula   Tema do capítulo   Base constitucional
+Visão geral   Visão geral   Visão geral
+1   Visão geral e método de estudo   Não se aplica.
+Parte I · Arquitetura das funções essenciais (aula 2)   Parte I · Arquitetura das funções essenciais (aula 2)   Parte I · Arquitetura das funções essenciais (aula 2)
+2   Arquitetura constitucional das funções essenciais à Justiça   arts. 127 a 135
+Parte II · Ministério Público (aulas 3 a 8)   Parte II · Ministério Público (aulas 3 a 8)   Parte II · Ministério Público (aulas 3 a 8)
+3   Ministério Público: conceito, missão e princípios institucionais   art. 127, caput e § 1º
+4   Autonomias e estrutura constitucional do Ministério Público   art. 127, §§ 2º e 3º; arts. 128, I e II, e 130
+5   Chefias: PGR, PGJs e pontos de prova   art. 128, §§ 1º a 4º
+6   Funções institucionais do MP   art. 129
+7   Carreira, garantias e vedações dos membros do MP   art. 128, § 5º; art. 95, parágrafo único, V
+8   Conselho Nacional do Ministério Público (CNMP)   art. 130-A
+Parte III · Advocacia Pública e privada (aulas 9 a 11)   Parte III · Advocacia Pública e privada (aulas 9 a 11)   Parte III · Advocacia Pública e privada (aulas 9 a 11)
+9   Advocacia-Geral da União e Advocacia Pública   art. 131
+10   Procuradores dos Estados e do Distrito Federal   art. 132
+11   Advocacia privada: indispensabilidade e inviolabilidade   art. 133
+Parte IV · Defensoria Pública e comparação final (aulas 12 e 13)   Parte IV · Defensoria Pública e comparação final (aulas 12 e 13)   Parte IV · Defensoria Pública e comparação final (aulas 12 e 13)
+12   Defensoria Pública: missão, autonomia e princípios   arts. 134 e 135
+13   Quadro funcional comparado   arts. 127 a 135
+Fechamento (sem numeração de aula)   Fechamento (sem numeração de aula)   Fechamento (sem numeração de aula)
+Não se aplica.   Resumo; O que decorar; Pegadinhas de prova; Como resolver questões; Checklist; Referências e links oficiais   Não se aplica.
+
+VISÃO GERAL DO MÓDULO
+
+CAPÍTULO 1 — VISÃO GERAL E MÉTODO DE ESTUDO
+
+A Constituição de 1988 reuniu, no Capítulo IV do Título IV, instituições e atividades que dão suporte à realização da Justiça: Ministério Público, Advocacia Pública, Advocacia e Defensoria Pública. Elas não se confundem entre si, nem com o Poder Judiciário. O núcleo da prova está em identificar quem defende qual interesse, qual é o desenho institucional de cada função, quais garantias e vedações existem e como a Constituição distribui competências, chefias, autonomia e controles.
+
+Cai muito. A prova mistura literalidade dos arts. 127 a 135 com comparações: PGR x PGJ; MP x Defensoria; MPU x MPDFT; vitaliciedade x estabilidade; AGU x Procuradorias estaduais; indispensabilidade do advogado x exceções legais.
+
+Comparação cobrada   Onde se resolve
+PGR x PGJ   Cap. 5
+MP x Defensoria   Caps. 12 e 13
+MPU x MPDFT   Cap. 4
+Vitaliciedade x estabilidade   Caps. 7 e 10
+AGU x Procuradorias estaduais   Caps. 9 e 10
+Indispensabilidade do advogado x exceções legais   Cap. 11
+
+Risco de erro. Não trate “função essencial à Justiça” como sinônimo de órgão do Judiciário. O ponto central é a missão constitucional de cada instituição e sua autonomia/estrutura.
+
+Atenção. Uso da jurisprudência Jurisprudência é usada aqui apenas quando altera a forma de resolver a questão. Priorize primeiro a literalidade constitucional e depois use os precedentes como critério de desempate.
+
+PARTE I · ARQUITETURA DAS FUNÇÕES ESSENCIAIS
+
+CAPÍTULO 2 — ARQUITETURA CONSTITUCIONAL DAS FUNÇÕES ESSENCIAIS À JUSTIÇA
+
+Base constitucional: arts. 127 a 135
+
+A expressão “funções essenciais à Justiça” descreve atividades constitucionalmente relevantes para o acesso à ordem jurídica e para o funcionamento da jurisdição. A essencialidade não transforma todas essas instituições em órgãos do Poder Judiciário. Ao contrário, a Constituição separa suas posições:
+
+Instituição   Posição constitucional
+Ministério Público   Atua na defesa da ordem jurídica, do regime democrático e de interesses sociais e individuais indisponíveis.
+Advocacia Pública   Representa e presta consultoria jurídica aos entes públicos.
+Advocacia privada   Realiza a defesa técnica de interesses de seus constituintes.
+Defensoria Pública   Presta orientação jurídica e defesa integral e gratuita aos necessitados, além de promover direitos humanos.
+
+Para prova, a pergunta decisiva costuma ser funcional: quem é o titular constitucional da atribuição? A banca frequentemente troca o destinatário da atuação (União x Poder Executivo; Estado x necessitado), transforma autonomia em independência absoluta ou atribui a uma instituição prerrogativa típica de outra.
+
+Erro comum. Três trocas típicas da banca Trocar o destinatário: União x Poder Executivo (capítulo 9); Estado x necessitado (capítulos 10 e 12). Transformar autonomia em independência absoluta. Atribuir a uma instituição prerrogativa típica de outra.
+
+PARTE II · MINISTÉRIO PÚBLICO
+
+CAPÍTULO 3 — MINISTÉRIO PÚBLICO: CONCEITO, MISSÃO E PRINCÍPIOS INSTITUCIONAIS
+
+Base constitucional: art. 127, caput e § 1º
+
+CONCEITO, POSIÇÃO E MISSÃO
+
+O art. 127 define o Ministério Público como instituição permanente e essencial à função jurisdicional do Estado. Sua missão constitucional é tríplice: defesa da ordem jurídica, do regime democrático e dos interesses sociais e individuais indisponíveis. A posição segura para concursos é tratá-lo como instituição autônoma, não subordinada aos Poderes Executivo, Legislativo ou Judiciário.
+
+A permanência impede que o legislador trate o Ministério Público como estrutura eventual. A essencialidade refere-se à função jurisdicional do Estado e ao sistema constitucional de tutela de direitos, mas não significa que o MP deva atuar em todo processo judicial. A atuação depende das hipóteses constitucionais e legais.
+
+PRINCÍPIOS INSTITUCIONAIS
+
+Unidade, indivisibilidade e independência funcional são os três princípios expressos do art. 127, § 1º.
+
+Princípio   Significado
+Unidade   Dentro de cada ramo ou Ministério Público, os membros integram uma só instituição voltada às finalidades constitucionais. Não há, porém, um único Ministério Público nacional sob chefia funcional do PGR.
+Indivisibilidade   A atuação pertence à instituição, e não pessoalmente ao membro que iniciou o caso; observadas as regras de atribuição, membros podem substituir-se.
+Independência funcional   O membro forma sua convicção jurídica no exercício das atribuições e não recebe ordens hierárquicas sobre o conteúdo de sua manifestação. Existe hierarquia administrativa, mas não submissão funcional do convencimento jurídico.
+
+O princípio do promotor natural, reconhecido pela jurisprudência como decorrência do modelo constitucional, repele designações casuísticas e exige critérios prévios de atribuição. Em prova, ele funciona como proteção contra o “acusador de encomenda”.
+
+Jurisprudência. MP e autonomia O STF enfatiza que a conformação constitucional do MP impede subordinar sua atuação a outros órgãos ou autoridades. A independência funcional e a autonomia institucional protegem a decisão do órgão dentro de suas atribuições.
+
+Erro comum. Ler “unidade” como MP nacional único Unidade vale dentro de cada ramo. Não existe um único Ministério Público nacional sob chefia funcional do PGR. E independência funcional não elimina a hierarquia administrativa.
+
+PARTE II · MINISTÉRIO PÚBLICO
+
+CAPÍTULO 4 — AUTONOMIAS E ESTRUTURA CONSTITUCIONAL DO MINISTÉRIO PÚBLICO
+
+Base constitucional: art. 127, §§ 2º e 3º; arts. 128, I e II, e 130
+
+AUTONOMIAS
+
+O art. 127, § 2º, assegura autonomia funcional e administrativa. A instituição pode propor ao Legislativo a criação e extinção de seus cargos e serviços auxiliares, observadas as condicionantes constitucionais, e organiza sua atuação sem subordinação funcional a outro Poder.
+
+No plano orçamentário, o MP elabora sua proposta dentro dos limites estabelecidos na lei de diretrizes orçamentárias. Se a proposta não for enviada no prazo, o Executivo considera os valores aprovados na lei orçamentária vigente, ajustados conforme os limites legais; se vier em desacordo com os limites, cabe ao Executivo proceder aos ajustes necessários para consolidação da proposta orçamentária anual. A autonomia não elimina a disciplina fiscal e orçamentária constitucional.
+
+ESTRUTURA
+
+O Ministério Público abrange o Ministério Público da União e os Ministérios Públicos dos Estados. O MPU compreende MP Federal, MP do Trabalho, MP Militar e MP do Distrito Federal e Territórios. O MPDFT integra o MPU, pegadinha recorrente.
+
+O Ministério Público Eleitoral não aparece no art. 128 como ramo autônomo com estrutura própria: suas funções são exercidas por membros do MPF e dos MPs estaduais segundo a legislação. O Ministério Público junto aos Tribunais de Contas não integra o MPU nem os MPs estaduais comuns. O art. 130 determina que aos seus membros se aplicam as disposições da Seção do MP pertinentes a direitos, vedações e forma de investidura. O STF o compreende como instituição vinculada à intimidade estrutural do respectivo Tribunal de Contas, e não como ramo do MPU.
+
+Estrutura   Composição / observação
+MPU   MPF • MPT • MPM • MPDFT
+MPs dos Estados   Um por Estado, organizados segundo o modelo constitucional
+MP Eleitoral   Função exercida por membros do MPF e dos MPs estaduais; não é ramo autônomo do art. 128
+MP de Contas   Não integra o MPU; atua junto ao respectivo Tribunal de Contas
+
+Jurisprudência. MP junto aos Tribunais de Contas O STF afirma que o Ministério Público especial está estruturalmente ligado ao respectivo Tribunal de Contas e não integra o MPU; aos seus membros aplicam-se direitos, vedações e forma de investidura do regime constitucional do MP.
+
+Caso explicado. Classifique o ramo MPDFT → MPU (apesar de atuar no DF e Territórios). MP Eleitoral → não é ramo; a função é exercida por membros do MPF e dos MPs estaduais. MP de Contas → não é MPU nem MP estadual comum; recebe, pelo art. 130, direitos, vedações e forma de investidura.
+
+PARTE II · MINISTÉRIO PÚBLICO
+
+CAPÍTULO 5 — CHEFIAS: PGR, PGJS E PONTOS DE PROVA
+
+Base constitucional: art. 128, §§ 1º a 4º
+
+O Procurador-Geral da República chefia o MPU. É nomeado pelo Presidente da República dentre integrantes da carreira maiores de 35 anos, após aprovação de seu nome pela maioria absoluta do Senado Federal, para mandato de dois anos, permitida recondução. O texto constitucional não exige lista tríplice nem fixa limite numérico de reconduções. A destituição, por iniciativa do Presidente, depende de autorização da maioria absoluta do Senado.
+
+Nos Ministérios Públicos dos Estados, forma-se lista tríplice dentre integrantes da carreira; o Chefe do Poder Executivo escolhe e nomeia o Procurador-Geral para mandato de dois anos, permitida uma recondução. A destituição do PGJ, por iniciativa da maioria absoluta do Legislativo, segue a forma da lei complementar respectiva. O MPDFT exige atenção porque integra o MPU e não segue, de modo automático, a lógica de um MPE.
+
+Ponto   PGR   PGJ estadual
+Chefia   MPU.   MP do Estado.
+Escolha   Presidente da República, dentre integrantes da carreira maiores de 35 anos; sem lista tríplice.   Lista tríplice dentre integrantes da carreira; o Chefe do Poder Executivo escolhe e nomeia.
+Senado   Aprovação pela maioria absoluta.   Não se aplica.
+Mandato   Dois anos.   Dois anos.
+Recondução   Permitida, sem limite numérico no texto constitucional.   Uma recondução.
+Destituição   Iniciativa do Presidente; autorização da maioria absoluta do Senado.   Iniciativa da maioria absoluta do Legislativo, na forma da lei complementar respectiva.
+
+Não confundir. PGR: Presidente + Senado (maioria absoluta), sem lista tríplice constitucional. PGJ estadual: lista tríplice + Chefe do Executivo; uma recondução.
+
+Exemplo explicado. Caso 2: PGR e lista tríplice O Presidente escolhe integrante da carreira do MPU maior de 35 anos, sem lista tríplice, e submete o nome ao Senado. A sequência é constitucionalmente possível: lista tríplice não é requisito do art. 128, § 1º.
+
+PARTE II · MINISTÉRIO PÚBLICO
+
+CAPÍTULO 6 — FUNÇÕES INSTITUCIONAIS DO MP
+
+Base constitucional: art. 129
+
+A lista do art. 129 combina atribuições privativas e não privativas. É privativa do Ministério Público a promoção da ação penal pública, na forma da lei. Já a ação civil pública não é monopólio do MP: outros legitimados previstos em lei também podem propô-la.
+
+Entre as funções constitucionais estão:
+
+• zelar pelo respeito dos Poderes Públicos e dos serviços de relevância pública aos direitos constitucionais;
+
+• promover inquérito civil e ação civil pública;
+
+• promover ação de inconstitucionalidade e representação para intervenção nos casos constitucionais;
+
+• defender judicialmente direitos e interesses das populações indígenas;
+
+• expedir notificações e requisitar informações e documentos em procedimentos administrativos;
+
+• exercer controle externo da atividade policial;
+
+• requisitar diligências investigatórias e instauração de inquérito policial;
+
+• e exercer outras funções compatíveis com sua finalidade.
+
+A cláusula de abertura do art. 129, IX, não autoriza atribuições incompatíveis com a finalidade constitucional. A própria Constituição veda ao MP a representação judicial e a consultoria jurídica de entidades públicas, tarefas típicas da Advocacia Pública.
+
+Privativa do MP   Não privativa / vedada
+• Promoção da ação penal pública, na forma da lei.   • Ação civil pública: não é monopólio; outros legitimados previstos em lei. • Vedadas ao MP: representação judicial e consultoria jurídica de entidades públicas.
+
+Exemplo explicado. Caso 1: ACP ambiental Um órgão ministerial ajuíza ação civil pública por dano ambiental. A defesa sustenta nulidade porque a ACP seria exclusiva do MP e, portanto, apenas ele poderia agir. A premissa está errada: o MP possui legitimidade, mas a ação civil pública não é monopólio constitucional do MP.
+
+PARTE II · MINISTÉRIO PÚBLICO
+
+CAPÍTULO 7 — CARREIRA, GARANTIAS E VEDAÇÕES DOS MEMBROS DO MP
+
+Base constitucional: art. 128, § 5º; art. 95, parágrafo único, V
+
+O ingresso ocorre por concurso público de provas e títulos, com participação da OAB, exigindo-se do bacharel em Direito, no mínimo, três anos de atividade jurídica. As garantias funcionais são vitaliciedade, inamovibilidade e irredutibilidade de subsídio.
+
+A vitaliciedade é adquirida após dois anos de exercício; depois disso, a perda do cargo exige sentença judicial transitada em julgado. A inamovibilidade admite exceção por motivo de interesse público, mediante decisão do órgão colegiado competente pela maioria absoluta, assegurada ampla defesa. A irredutibilidade protege nominalmente o subsídio, sem assegurar recomposição automática contra inflação.
+
+Entre as vedações estão receber honorários, percentagens ou custas; exercer advocacia; participar de sociedade comercial, na forma da lei; exercer outra função pública, salvo uma de magistério; exercer atividade político-partidária; e receber auxílios ou contribuições vedados, ressalvadas as hipóteses legais. A quarentena do art. 95, parágrafo único, V, aplicada ao MP por remissão constitucional, impede advocacia no juízo ou tribunal do qual o membro se afastou antes de três anos da aposentadoria ou exoneração.
+
+Garantia / vedação   Regra de prova
+Vitaliciedade   após 2 anos; perda do cargo por sentença judicial transitada em julgado
+Inamovibilidade   exceção por interesse público + decisão por maioria absoluta do colegiado competente + ampla defesa
+Irredutibilidade   proteção nominal do subsídio
+Advocacia   vedada durante o cargo; quarentena de 3 anos no juízo/tribunal de afastamento
+Outra função pública   vedada, salvo uma de magistério
+Atividade político-partidária   vedada
+
+Erro comum. Trocar os 2 anos pelos 3 anos 2 anos = vitaliciedade. 3 anos = atividade jurídica para o ingresso e quarentena para advogar. E vitaliciedade é do MP: procuradores estaduais têm estabilidade (capítulo 10) e defensores têm inamovibilidade (capítulo 12).
+
+PARTE II · MINISTÉRIO PÚBLICO
+
+CAPÍTULO 8 — CONSELHO NACIONAL DO MINISTÉRIO PÚBLICO (CNMP)
+
+Base constitucional: art. 130-A
+
+O CNMP exerce controle da atuação administrativa e financeira do Ministério Público e do cumprimento dos deveres funcionais de seus membros. Não é órgão jurisdicional e não funciona como instância recursal de decisões judiciais.
+
+A composição constitucional é de 14 membros. O PGR o preside; integram-no quatro membros do MPU, assegurada representação de cada carreira; três membros dos MPs dos Estados; dois juízes (um indicado pelo STF e outro pelo STJ); dois advogados indicados pelo Conselho Federal da OAB; e dois cidadãos de notável saber jurídico e reputação ilibada, indicados um pela Câmara e outro pelo Senado. Os membros são nomeados pelo Presidente da República após aprovação por maioria absoluta do Senado, para mandato de dois anos, admitida uma recondução.
+
+Componente do CNMP   Quantidade
+PGR (preside)   1
+Membros do MPU   4
+Membros dos MPs estaduais   3
+Juízes (STF e STJ)   2
+Advogados indicados pelo CFOAB   2
+Cidadãos indicados Câmara/Senado   2
+TOTAL   14
+
+Entre suas competências estão zelar pela autonomia funcional e administrativa do MP; controlar a observância do art. 37; apreciar a legalidade de atos administrativos praticados por membros ou órgãos do MP; receber reclamações contra membros e serviços auxiliares; avocar processos disciplinares, determinar remoção ou disponibilidade e aplicar outras sanções administrativas previstas em lei, assegurada ampla defesa.
+
+Como estudar. Some para conferir: 1 + 4 + 3 + 2 + 2 + 2 = 14 Monte a soma na hora da prova, começando pelo PGR, que preside o Conselho. Se a conta não fechar em 14, a alternativa trocou algum número.
+
+PARTE III · ADVOCACIA PÚBLICA E PRIVADA
+
+CAPÍTULO 9 — ADVOCACIA-GERAL DA UNIÃO E ADVOCACIA PÚBLICA
+
+Base constitucional: art. 131
+
+A Advocacia-Geral da União, nos termos do art. 131, representa a União judicial e extrajudicialmente, diretamente ou por órgão vinculado. Também exerce, nos termos da lei complementar, consultoria e assessoramento jurídico do Poder Executivo. Pegadinha: representação da União é mais ampla que a consultoria, pois esta é constitucionalmente referida ao Poder Executivo.
+
+O Advogado-Geral da União é chefe da AGU e é livremente nomeado pelo Presidente da República dentre cidadãos maiores de 35 anos, de notável saber jurídico e reputação ilibada. A Constituição não exige que seja integrante de carreira, nem sabatina do Senado. O ingresso nas classes iniciais das carreiras da instituição ocorre mediante concurso público de provas e títulos.
+
+Na execução da dívida ativa de natureza tributária, a representação da União cabe à Procuradoria-Geral da Fazenda Nacional, observado o disposto em lei. Em provas, atenção para não atribuir essa atividade genericamente a qualquer órgão da AGU.
+
+Ponto   Regra
+Representação   Da União, judicial e extrajudicialmente, diretamente ou por órgão vinculado.
+Consultoria e assessoramento   Do Poder Executivo, nos termos da lei complementar.
+Advogado-Geral da União   Livre nomeação pelo Presidente; cidadão maior de 35 anos, de notável saber jurídico e reputação ilibada; sem exigência de carreira nem sabatina do Senado.
+Carreiras   Ingresso nas classes iniciais por concurso público de provas e títulos.
+Dívida ativa tributária   Representação da União pela Procuradoria-Geral da Fazenda Nacional, observado o disposto em lei.
+
+Erro comum. Comparar o AGU com o PGR O PGR é integrante da carreira e depende de aprovação do Senado (capítulo 5). O Advogado-Geral da União é livremente nomeado dentre cidadãos, sem exigência de carreira nem sabatina.
+
+PARTE III · ADVOCACIA PÚBLICA E PRIVADA
+
+CAPÍTULO 10 — PROCURADORES DOS ESTADOS E DO DISTRITO FEDERAL
+
+Base constitucional: art. 132
+
+O art. 132 reserva aos Procuradores dos Estados e do Distrito Federal, organizados em carreira, a representação judicial e a consultoria jurídica das respectivas unidades federadas. O ingresso depende de concurso público de provas e títulos, com participação da OAB em todas as fases.
+
+Os procuradores estaduais e distritais adquirem estabilidade após três anos de efetivo exercício, mediante avaliação de desempenho perante órgãos próprios e relatório circunstanciado das corregedorias. Não possuem a vitaliciedade típica de magistrados e membros do MP.
+
+Jurisprudência recente do STF reforça a unicidade orgânica da advocacia pública estadual: a representação judicial e a consultoria jurídica da administração não podem ser pulverizadas em órgãos paralelos que esvaziem a carreira constitucional. Quanto aos municípios, a Constituição não impõe a criação de Procuradoria municipal própria; essa é escolha de auto-organização local, embora eventual carreira esteja submetida às exigências constitucionais pertinentes.
+
+Ponto   AGU   Procuradores dos Estados/DF
+Representa   A União.   As respectivas unidades federadas.
+Consultoria   Do Poder Executivo.   Das respectivas unidades federadas.
+Ingresso   Concurso público de provas e títulos.   Concurso público de provas e títulos, com participação da OAB em todas as fases.
+Garantia   Não se aplica.   Estabilidade após três anos, com avaliação de desempenho; sem vitaliciedade.
+
+Jurisprudência. Jurisprudência e entendimentos-chave Advocacia Pública estadual. O STF tem protegido a unicidade orgânica das Procuradorias estaduais para representação judicial e consultoria jurídica, repelindo a criação de estruturas paralelas destinadas às mesmas funções. Procuradorias municipais. O STF assentou que a Constituição não obriga todos os Municípios a criar Procuradoria própria; a instituição do órgão depende de opção de auto-organização municipal.
+
+Exemplo explicado. Caso 3: procurador estadual Lei estadual cria órgão paralelo para representar judicialmente o Estado em matérias amplas, retirando atribuições da Procuradoria. O desenho tende a colidir com o art. 132 e com a jurisprudência que protege a unicidade da advocacia pública estadual.
+
+PARTE III · ADVOCACIA PÚBLICA E PRIVADA
+
+CAPÍTULO 11 — ADVOCACIA PRIVADA: INDISPENSABILIDADE E INVIOLABILIDADE
+
+Base constitucional: art. 133
+
+O art. 133 afirma que o advogado é indispensável à administração da Justiça e inviolável por seus atos e manifestações no exercício da profissão, nos limites da lei.
+
+A inviolabilidade é funcional e qualificada: não é imunidade absoluta para práticas ilícitas ou manifestações desconectadas do exercício profissional. A indispensabilidade também não deve ser lida de modo absoluto. O sistema admite hipóteses legais excepcionais de atuação sem advogado, compatíveis com acesso à Justiça. Em 2024, por exemplo, o STF reconheceu a constitucionalidade da dispensa de advogado na audiência inicial da ação de alimentos como medida excepcional e prévia, permanecendo a exigência profissional nas etapas subsequentes previstas em lei.
+
+Garantia   O que protege   Limite
+Indispensabilidade   A presença do advogado na administração da Justiça.   Admite hipóteses legais excepcionais de atuação sem advogado, compatíveis com acesso à Justiça.
+Inviolabilidade   Atos e manifestações no exercício da profissão.   Nos limites da lei; não é imunidade absoluta para práticas ilícitas ou manifestações desconectadas do exercício profissional.
+
+Exceção importante. A indispensabilidade do advogado não é absoluta. Quando lei válida prevê via excepcional de acesso à Justiça sem advogado, o art. 133 não deve ser usado de modo mecânico para invalidá-la.
+
+Jurisprudência. Advocacia: art. 133 A indispensabilidade do advogado admite exceções legais justificadas pelo acesso à Justiça. Na ação de alimentos, o STF validou a dispensa na audiência inicial, sem transformar a exceção em regra geral.
+
+Exemplo explicado. Caso 4: advogado e ofensa gratuita A inviolabilidade do art. 133 protege atos e manifestações profissionais dentro dos limites legais. Não transforma ofensa gratuita ou conduta ilícita estranha à defesa técnica em imunidade constitucional absoluta.
+
+PARTE IV · DEFENSORIA PÚBLICA E COMPARAÇÃO FINAL
+
+CAPÍTULO 12 — DEFENSORIA PÚBLICA: MISSÃO, AUTONOMIA E PRINCÍPIOS
+
+Base constitucional: arts. 134 e 135
+
+MISSÃO
+
+O art. 134, com redação fortalecida pela EC 80/2014, define a Defensoria Pública como instituição permanente, essencial à função jurisdicional do Estado e expressão e instrumento do regime democrático. Incumbe-lhe, fundamentalmente, a orientação jurídica, a promoção dos direitos humanos e a defesa, em todos os graus, judicial e extrajudicial, dos direitos individuais e coletivos, de forma integral e gratuita, aos necessitados.
+
+PRINCÍPIOS, AUTONOMIA E CARREIRA
+
+São princípios institucionais da Defensoria Pública a unidade, a indivisibilidade e a independência funcional. As Defensorias Públicas estaduais possuem autonomia funcional e administrativa e iniciativa de sua proposta orçamentária dentro dos limites da LDO; a Constituição estendeu o regime de autonomia às Defensorias Públicas da União e do Distrito Federal.
+
+O ingresso na carreira ocorre mediante concurso público de provas e títulos. Aos integrantes é assegurada inamovibilidade e é vedado o exercício da advocacia fora das atribuições institucionais. Não há vitaliciedade constitucional para defensores públicos.
+
+A Defensoria pode ajuizar ação civil pública para tutela de interesses difusos, coletivos e individuais homogêneos quando houver pertinência com sua missão constitucional. O STF também reconhece prerrogativas institucionais, como requisitar de autoridades públicas documentos e informações necessários à atuação, e protege sua autonomia contra interferências externas indevidas.
+
+Ponto   Regra
+Missão   Orientação jurídica, promoção dos direitos humanos e defesa, em todos os graus, judicial e extrajudicial, dos direitos individuais e coletivos, de forma integral e gratuita, aos necessitados.
+Princípios   Unidade, indivisibilidade e independência funcional.
+Autonomia   Funcional e administrativa, com iniciativa da proposta orçamentária dentro dos limites da LDO (estaduais; estendida à DPU e à DPDF).
+Garantia   Inamovibilidade; sem vitaliciedade constitucional.
+Vedação   Exercício da advocacia fora das atribuições institucionais.
+Tutela coletiva   Ação civil pública para interesses difusos, coletivos e individuais homogêneos, com pertinência à missão.
+
+Jurisprudência. Jurisprudência e entendimentos-chave Defensoria e ação coletiva. O STF reconhece legitimidade ampla da Defensoria para ação civil pública, compatível com sua missão constitucional de acesso à Justiça e tutela de necessitados, inclusive em direitos transindividuais. Defensoria e poder de requisição. O STF reconheceu a constitucionalidade da prerrogativa de a Defensoria requisitar documentos, informações e providências de órgãos públicos necessários ao desempenho de suas funções. Autonomia da Defensoria. A autonomia funcional e administrativa impede ingerências que substituam decisões internas de gestão. O STF, em repercussão geral, afastou imposição judicial de lotação de defensores em comarca específica. Representação institucional da DPU. Em 2025, o STF confirmou ser constitucional atribuir ao Defensor Público-Geral da União a representação judicial e extrajudicial da própria DPU para defesa de prerrogativas institucionais, sem invadir a competência do art. 131 da CF.
+
+Exemplo explicado. Casos 5 e 6: tutela coletiva e lotação Caso 5 (tutela coletiva). A Defensoria ajuíza ACP em favor de grupo vulnerável atingido por prática massificada. A atuação é compatível com o art. 134 e com a jurisprudência do STF sobre tutela coletiva, desde que exista pertinência com sua missão institucional. Caso 6 (lotação de defensores). Decisão judicial determina que a Defensoria desloque defensores para comarca específica, substituindo o planejamento interno. O STF entende que esse tipo de imposição invade a autonomia funcional e administrativa da instituição.
+
+PARTE IV · DEFENSORIA PÚBLICA E COMPARAÇÃO FINAL
+
+CAPÍTULO 13 — QUADRO FUNCIONAL COMPARADO
+
+Base constitucional: arts. 127 a 135
+
+A comparação final evita os erros mais frequentes: MP não representa juridicamente o Estado; Advocacia Pública não tutela necessitados por condição econômica; advogado privado não recebe autonomia institucional constitucional equivalente à do MP ou da Defensoria; e Defensoria não se limita à defesa judicial individual, pois também orienta juridicamente, promove direitos humanos e atua extrajudicial e coletivamente.
+
+Regra de bolso. MP acusa e tutela interesses constitucionalmente qualificados; Advocacia Pública defende o ente público; Advocacia privada defende o constituinte; Defensoria garante assistência jurídica integral aos necessitados.
+
+NÃO CONFUNDIR
+
+Institutos   Diferença objetiva
+MP x Advocacia Pública   MP tutela ordem jurídica, democracia e interesses indisponíveis; Advocacia Pública representa o ente federado e presta consultoria jurídica.
+MP x Defensoria   Ambos têm unidade, indivisibilidade e independência funcional, mas missões distintas: MP atua em interesses públicos qualificados; Defensoria presta assistência jurídica integral aos necessitados e promove direitos humanos.
+PGR x PGJ   PGR: nomeação pelo Presidente + aprovação do Senado; sem lista tríplice constitucional. PGJ estadual: lista tríplice + escolha pelo Chefe do Executivo; uma recondução.
+MPU x MPDFT   MPDFT é ramo do MPU, apesar de atuar no Distrito Federal e Territórios.
+MP comum x MP de Contas   MP de Contas não integra o MPU; atua junto ao Tribunal de Contas e recebe, por art. 130, direitos, vedações e forma de investidura pertinentes.
+AGU x PGE   AGU representa a União; procuradores estaduais/DF representam e consultam as respectivas unidades federadas.
+Vitaliciedade x estabilidade   MP: vitaliciedade após 2 anos. Procuradores estaduais/DF: estabilidade após 3 anos e avaliação. Defensores: inamovibilidade, não vitaliciedade.
+Indispensabilidade x exclusividade   O advogado é indispensável à administração da Justiça, mas a ordem jurídica pode prever hipóteses excepcionais de postulação sem advogado.
+
+FECHAMENTO
+
+FECHAMENTO DO MÓDULO
+
+1. RESUMO DO MÓDULO
+
+A missão de cada instituição está no quadro comparado do capítulo 13. Aqui ficam os números e as escolhas que a banca troca.
+
+Instituição   O essencial em números e regras
+Ministério Público (capítulos 3 a 8)   Unidade, indivisibilidade e independência funcional; MPU = MPF + MPT + MPM + MPDFT. PGR: Presidente + maioria absoluta do Senado, 2 anos, recondução sem limite constitucional; PGJ: lista tríplice, 2 anos, uma recondução. Vitaliciedade após 2 anos; 3 anos de atividade jurídica e quarentena de 3 anos. CNMP: 14 membros, presidido pelo PGR.
+Advocacia Pública (capítulos 9 e 10)   AGU representa a União e presta consultoria ao Poder Executivo; Advogado-Geral livremente nomeado, maior de 35 anos. Procuradores dos Estados/DF: OAB em todas as fases do concurso; estabilidade após 3 anos.
+Advocacia (capítulo 11)   Indispensável e inviolável, nos limites da lei; admite exceções legais.
+Defensoria (capítulo 12)   EC 80/2014; unidade, indivisibilidade e independência funcional; autonomia; inamovibilidade, sem vitaliciedade; ação civil pública com pertinência à missão.
+
+2. O QUE DECORAR
+
+Lei seca essencial: mapa artigo a artigo.
+
+Dispositivo   Núcleo   Palavras-chave   Pegadinha
+127, caput e §§ 1º-3º   MP: missão + princípios + autonomias   unidade • indivisibilidade • independência funcional; proposta orçamentária nos limites da LDO   Confundir independência funcional com ausência de organização administrativa.
+128, I e II   Estrutura do MP   MPU + MPs dos Estados; MPU inclui MPF, MPT, MPM e MPDFT   Tratar MPDFT como MPE.
+128, §§ 1º-4º   Chefias   PGR: PR + Senado/MA; 2 anos; recondução. PGJ: lista tríplice; 2 anos; uma recondução   Inventar lista tríplice para PGR ou sabatina para PGJ estadual.
+128, § 5º   Garantias e vedações   vitaliciedade, inamovibilidade, irredutibilidade; vedações funcionais   Trocar vitaliciedade do MP pela estabilidade dos procuradores estaduais.
+129   Funções do MP   ação penal pública privativa; ACP não exclusiva; controle externo da polícia; requisições   Dizer que ACP é monopólio do MP.
+130   MP de Contas   direitos, vedações e investidura do MP aplicáveis aos membros do MP de Contas   Afirmar que integra o MPU.
+130-A   CNMP   14 membros; controle administrativo/financeiro e disciplinar   Tratá-lo como tribunal ou órgão do Judiciário.
+131   AGU   representa a União; consultoria e assessoramento jurídico do Executivo   Dizer que consultoria constitucional abrange todos os Poderes da União.
+132   PGE/PGDF   representação judicial e consultoria da unidade; concurso com OAB em todas as fases   Atribuir vitaliciedade aos procuradores.
+133   Advocacia   indispensabilidade e inviolabilidade nos limites da lei   Converter inviolabilidade em imunidade absoluta.
+134-135   Defensoria   orientação jurídica + DH + defesa judicial/extrajudicial individual/coletiva; autonomia e princípios   Reduzir a Defensoria a patrocínio judicial individual.
+
+Quadros de memorização.
+
+Artigos para lembrar. 127 = identidade, princípios e autonomia do MP • 128 = estrutura, chefias, garantias e vedações • 129 = funções do MP • 130 = MP de Contas • 130-A = CNMP • 131 = AGU • 132 = PGE/PGDF • 133 = advocacia • 134-135 = Defensoria.
+
+Cai muito. MPDFT = MPU. Procurador de Estado = estabilidade, não vitaliciedade. Defensor = inamovibilidade, não vitaliciedade. CNMP = controle administrativo/financeiro/disciplinar, não jurisdição.
+
+3. PEGADINHAS DE PROVA
+
+Todas as afirmações estão erradas; o importante é saber por quê.
+
+Afirmação da banca   Veredicto e motivo   Cap.
+“O CNMP integra o Poder Judiciário.”   Errado: é órgão de controle do Ministério Público e não exerce jurisdição.   8
+“A ação civil pública é privativa do MP.”   Errado: privativa é a ação penal pública; a ACP possui outros legitimados legais.   6
+“O MPDFT é Ministério Público estadual.”   Errado: integra o MPU.   4
+“O PGR é escolhido em lista tríplice.”   Errado: a Constituição não prevê lista tríplice para o PGR.   5
+“A Constituição limita o PGR a uma recondução.”   Errado no texto constitucional; esse limite aparece para PGJ estadual.   5
+“Procurador do Estado tem vitaliciedade.”   Errado: estabilidade, nos termos constitucionais.   10
+“A AGU presta consultoria a todos os Poderes da União.”   A literalidade do art. 131 associa consultoria e assessoramento jurídico ao Poder Executivo.   9
+“A inviolabilidade do advogado é absoluta.”   Errado: o próprio art. 133 diz “nos limites da lei”.   11
+“A Defensoria só atua em processos judiciais.”   Errado: atuação também extrajudicial, coletiva, orientação jurídica e promoção de direitos humanos.   12
+“A autonomia da Defensoria autoriza o Judiciário a determinar a lotação de defensores.”   Errado: a autonomia inclui decisões de gestão e alocação institucional.   12
+
+4. COMO RESOLVER QUESTÕES DESTE MÓDULO
+
+Passo   O que fazer
+1   Identifique a instituição mencionada e pergunte qual interesse ela constitucionalmente tutela.
+2   Localize o artigo-base: 127-130-A para MP/CNMP; 131-132 para Advocacia Pública; 133 para advocacia; 134-135 para Defensoria.
+3   Procure palavras absolutas: “sempre”, “exclusivamente”, “em qualquer hipótese”, “sem limites”. Elas costumam esconder a pegadinha.
+4   Em chefias, separe PGR de PGJ e memorize quem participa da nomeação, duração do mandato e recondução.
+5   Em carreiras, não misture vitaliciedade (MP) com estabilidade (procuradores) nem atribua vitaliciedade à Defensoria.
+6   Em competências, diferencie representação judicial/consultoria (Advocacia Pública) de tutela da ordem jurídica (MP) e assistência integral aos necessitados (Defensoria).
+7   Quando aparecer jurisprudência, verifique se ela reforça autonomia institucional, tutela coletiva ou limites de uma prerrogativa; não abandone a literalidade sem necessidade.
+
+5. CHECKLIST DE REVISÃO FINAL: O QUE NÃO PODE ERRAR
+
+Marque cada item quando conseguir explicá-lo sem consultar a apostila.
+
+• ☐ MP: unidade, indivisibilidade e independência funcional; autonomia funcional e administrativa; proposta orçamentária nos limites da LDO. (capítulos 3 e 4)
+
+• ☐ MPU = MPF + MPT + MPM + MPDFT; MPDFT não é MPE. (capítulo 4)
+
+• ☐ PGR: Presidente da República + aprovação do Senado por maioria absoluta; 2 anos; recondução permitida. (capítulo 5)
+
+• ☐ PGJ estadual: lista tríplice; 2 anos; uma recondução. (capítulo 5)
+
+• ☐ Ação penal pública é privativa do MP; ACP não é exclusiva. (capítulo 6)
+
+• ☐ CNMP: 14 membros; controle administrativo, financeiro e disciplinar; sem jurisdição. (capítulo 8)
+
+• ☐ AGU representa a União e presta consultoria/assessoramento jurídico ao Executivo. (capítulo 9)
+
+• ☐ Procuradores estaduais/DF: concurso com OAB em todas as fases; estabilidade após 3 anos, não vitaliciedade. (capítulo 10)
+
+• ☐ Advogado: indispensável e inviolável nos limites da lei. (capítulo 11)
+
+• ☐ Defensoria: orientação jurídica + direitos humanos + defesa judicial/extrajudicial individual/coletiva; autonomia e princípios; inamovibilidade; sem vitaliciedade. (capítulo 12)
+
+6. REFERÊNCIAS E LINKS OFICIAIS
+
+Fontes oficiais para conferir o texto e a jurisprudência.
+
+Fonte oficial   Para que usar   Link
+Constituição Federal de 1988 (Planalto)   Arts. 127 a 135.   https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm
+Emenda Constitucional nº 80, de 2014 (Planalto)   Defensoria Pública (capítulo 12).   https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc80.htm
+Conselho Nacional do Ministério Público   CNMP (capítulo 8).   https://www.cnmp.mp.br/
+Advocacia-Geral da União   AGU e PGFN (capítulo 9).   https://www.gov.br/agu/pt-br
+Defensoria Pública da União   Defensoria (capítulo 12).   https://www.dpu.def.br/
+STF: A Constituição e o Supremo, art. 134   Jurisprudência sobre a Defensoria (capítulo 12).   https://portal.stf.jus.br/constituicao-supremo/artigo.asp?abrirBase=CF&abrirArtigo=134

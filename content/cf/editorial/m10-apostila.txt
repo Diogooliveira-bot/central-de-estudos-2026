@@ -1,0 +1,428 @@
+LEITURA ORIENTADA
+
+Esta apostila reescreve o texto original do módulo CF M10 para que o iniciante entenda tudo e o avançado se aprofunde. O conteúdo foi reorganizado em ordem de aprendizado, em nove capítulos (CNJ, STJ, recurso especial, Justiça do Trabalho, Justiça Federal e Justiça dos Estados), e termina em um fechamento de revisão. Cada capítulo traz prosa, uma tabela e, no máximo, duas caixas didáticas; os quadros do texto original (Regra de bolso, Atenção, Não confundir, Pegadinha, Exceção importante, Atualização e outros) aparecem no capítulo a que pertencem.
+
+TRÊS SITUAÇÕES-PROBLEMA
+
+Tente responder antes de ler. Errar faz parte: a resposta está no capítulo indicado.
+
+Núcleo   Situação-problema   Resposta
+CNJ   Uma parte perde um processo no Tribunal de Justiça e quer “recorrer ao CNJ” contra o acórdão. É possível? E se o problema fosse um ato administrativo do tribunal que viola o art. 37?   Capítulo 2
+STJ   Acórdão de TJ julga válido um ato de governo local contestado em face de lei federal. Qual recurso cabe? E se fosse uma lei local? A causa de 600 salários mínimos tem relevância presumida?   Capítulo 4
+Justiça do Trabalho   Servidor estatutário de um Município quer discutir vantagens funcionais. A ação vai para a Justiça do Trabalho por envolver trabalho humano?   Capítulo 6
+
+CAMINHO DO INICIANTE E CAMINHO DO AVANÇADO
+
+Etapa   Caminho do iniciante   Caminho do avançado
+Antes   Leia o capítulo 1 e tente as três situações-problema, mesmo que erre.   Responda sem consultar; depois confira nos capítulos 2, 4 e 6.
+Em cada capítulo   Prosa, tabela e caixa de Caso ou Exemplo; só depois o Erro comum.   Comece pela tabela; leia Jurisprudência, Caso explicado e Erro comum; volte à prosa onde errar.
+Ordem   Siga a numeração: Parte I (capítulos 2 a 4), Parte II (5 e 6), Parte III (7 e 8) e Parte IV (9).   Comece pelos capítulos dos maiores riscos (2 a 6) e complete com os demais.
+Fechamento   Faça o Resumo e o Checklist; releia as regras de bolso.   Estude as Pegadinhas e treine o roteiro de Como resolver questões.
+
+Como ler as caixas. Caso explicado e Exemplo (os exemplos aplicados do texto original, Exemplos 1 a 3) mostram o raciocínio em uma situação; Jurisprudência (os entendimentos-chave do STF) é para quem quer ir além; Erro comum aponta a troca que a banca explora; Como estudar é dica de revisão; Regra de bolso, Atenção, Não confundir, Pegadinha, Atualização, Exceção importante, Cai muito e Artigos para lembrar são quadros do texto original; Atenção à atualização marca o que não consta do texto original e foi acrescentado (confira sempre).
+
+ROTEIRO DE ESTUDO
+
+PERCURSO DO MÓDULO
+
+A numeração das aulas é a mesma dos capítulos: a aula 5 corresponde ao capítulo 5. Use o tema como índice para localizar o capítulo correspondente.
+
+Aula   Tema do capítulo   Base constitucional
+Visão geral   Visão geral   Visão geral
+1   Visão geral e método de estudo   Não se aplica.
+Parte I · CNJ e STJ (aulas 2 a 4)   Parte I · CNJ e STJ (aulas 2 a 4)   Parte I · CNJ e STJ (aulas 2 a 4)
+2   Conselho Nacional de Justiça (CNJ)   art. 103-B
+3   Superior Tribunal de Justiça (STJ): composição e competências   arts. 104 e 105, I e II
+4   Recurso especial e relevância   art. 105, III, e §§ 2º e 3º
+Parte II · Justiça do Trabalho (aulas 5 e 6)   Parte II · Justiça do Trabalho (aulas 5 e 6)   Parte II · Justiça do Trabalho (aulas 5 e 6)
+5   Justiça do Trabalho: estrutura   arts. 111, 111-A, 115 e 116
+6   Competência material da Justiça do Trabalho   art. 114
+Parte III · Justiça Federal (aulas 7 e 8)   Parte III · Justiça Federal (aulas 7 e 8)   Parte III · Justiça Federal (aulas 7 e 8)
+7   Justiça Federal: TRFs, composição e competência   arts. 106 a 108
+8   Juízes federais e seções judiciárias   arts. 109 e 110
+Parte IV · Justiça dos Estados (aula 9)   Parte IV · Justiça dos Estados (aula 9)   Parte IV · Justiça dos Estados (aula 9)
+9   Justiça dos Estados   arts. 125 e 126
+Fechamento (sem numeração de aula)   Fechamento (sem numeração de aula)   Fechamento (sem numeração de aula)
+Não se aplica.   Resumo; O que decorar; Pegadinhas de prova; Como resolver questões; Checklist; Referências e links oficiais   Não se aplica.
+
+VISÃO GERAL DO MÓDULO
+
+CAPÍTULO 1 — VISÃO GERAL E MÉTODO DE ESTUDO
+
+Este módulo fecha a parte do Poder Judiciário que, em provas de tribunais, costuma ser cobrada por meio de comparações entre órgãos, competências originárias e recursais, composição dos tribunais e literalidade constitucional. O eixo central é distinguir CNJ (controle administrativo, financeiro e disciplinar), STJ (uniformização do direito federal infraconstitucional), Justiça do Trabalho (jurisdição especializada) e Justiça dos Estados.
+
+Regra de bolso. STF = Constituição. STJ = lei federal infraconstitucional. CNJ = controle administrativo/financeiro e deveres funcionais da magistratura; não é tribunal recursal. Justiça do Trabalho = competência material do art. 114 da CF.
+
+MAIORES RISCOS DE ERRO
+
+Maiores riscos de erro: trocar competência do CNJ por função jurisdicional; confundir recurso especial com recurso extraordinário; esquecer a composição e o quinto constitucional no STJ/TST/TRTs; errar a extensão da competência trabalhista; e ignorar a nova disciplina da relevância no recurso especial.
+
+Risco   Onde se resolve
+Trocar competência do CNJ por função jurisdicional   Cap. 2
+Confundir recurso especial com recurso extraordinário   Cap. 4
+Esquecer a composição e o quinto constitucional no STJ/TST/TRTs   Caps. 3 e 5
+Errar a extensão da competência trabalhista   Cap. 6
+Ignorar a nova disciplina da relevância no recurso especial   Cap. 4
+
+Como estudar. Duas perguntas antes de tudo Diante de qualquer item, pergunte: qual órgão está em jogo? e a função é jurisdicional ou administrativa/disciplinar? A maioria das pegadinhas do módulo cai quando essas duas respostas estão claras.
+
+PARTE I · CNJ E STJ
+
+CAPÍTULO 2 — CONSELHO NACIONAL DE JUSTIÇA (CNJ)
+
+Base constitucional: art. 103-B
+
+NATUREZA E COMPOSIÇÃO
+
+O CNJ integra o Poder Judiciário, mas não exerce função jurisdicional típica de tribunal. Sua missão constitucional é controlar a atuação administrativa e financeira do Judiciário e o cumprimento dos deveres funcionais dos juízes. Foi criado pela EC 45/2004 e está disciplinado no art. 103-B da Constituição.
+
+A composição é de 15 membros, com mandato de 2 anos, admitida uma recondução. O Presidente do STF preside o Conselho. Integram-no representantes da magistratura (STF/STJ/TST, Justiça estadual, federal e do trabalho), do Ministério Público, da advocacia e dois cidadãos de notável saber jurídico e reputação ilibada, indicados um pela Câmara e outro pelo Senado.
+
+Atenção. O Vice-Presidente do STF não integra o CNJ só por ocupar a Vice-Presidência. Ele apenas substitui o Presidente do STF na presidência do Conselho nas ausências e impedimentos.
+
+Os demais membros são nomeados pelo Presidente da República, após aprovação pela maioria absoluta do Senado. Se as indicações não forem feitas no prazo legal, cabe ao STF efetuar a escolha. Junto ao CNJ oficiam o Procurador-Geral da República e o Presidente do Conselho Federal da OAB.
+
+Atenção à atualização. As 15 vagas do CNJ, uma a uma O texto original resume a composição. O art. 103-B, I a XIII, da Constituição a detalha: o Presidente do STF; um Ministro do STJ; um Ministro do TST; um desembargador de TJ; um juiz estadual; um juiz de TRF; um juiz federal; um juiz de TRT; um juiz do trabalho; um membro do Ministério Público da União; um membro do Ministério Público estadual; dois advogados; e dois cidadãos (um indicado pela Câmara dos Deputados e outro pelo Senado Federal).
+
+CORREGEDOR NACIONAL DE JUSTIÇA
+
+O Ministro do STJ integrante do Conselho exerce a função de Corregedor Nacional de Justiça e fica excluído da distribuição de processos no STJ. Entre suas atribuições constitucionais estão receber reclamações e denúncias relativas a magistrados e serviços judiciários; realizar inspeções e correições; e requisitar/designar magistrados e servidores para atuação na Corregedoria.
+
+COMPETÊNCIAS (ART. 103-B, §4º)
+
+As competências do CNJ estão concentradas no art. 103-B, §4º. Ele pode zelar pela autonomia do Judiciário, expedir atos regulamentares dentro de sua competência, fiscalizar a observância do art. 37, controlar legalidade de atos administrativos, receber reclamações, avocar processos disciplinares em curso, aplicar sanções administrativas, representar ao Ministério Público quando houver crime contra a administração pública ou abuso de autoridade e rever processos disciplinares julgados há menos de um ano.
+
+O CNJ pode   O CNJ não pode
+• zelar pela autonomia do Judiciário; • expedir atos regulamentares dentro de sua competência; • fiscalizar a observância do art. 37; • controlar legalidade de atos administrativos; • receber reclamações; • avocar processos disciplinares em curso; • aplicar sanções administrativas; • representar ao Ministério Público (crime contra a administração pública ou abuso de autoridade); • rever processos disciplinares julgados há menos de um ano.   • funcionar como instância revisora de decisões judiciais; • receber “recurso” contra decisão judicial; • reformar sentença/acórdão; • tornar-se órgão hierarquicamente superior aos tribunais na função jurisdicional.
+
+Não confundir. O CNJ pode controlar a legalidade de atos administrativos do Judiciário, mas não funciona como instância revisora de decisões judiciais. Decisão judicial é impugnada pelos meios processuais adequados, não por “recurso ao CNJ”.
+
+A competência disciplinar do CNJ é concorrente com a dos tribunais: o Conselho pode agir sem depender do esgotamento da via administrativa local. Isso não converte o CNJ em órgão hierarquicamente superior aos tribunais na função jurisdicional.
+
+Jurisprudência. Jurisprudência e entendimentos-chave CNJ: controle administrativo e disciplinar não transforma o Conselho em órgão jurisdicional nem em instância recursal. CNJ possui competência disciplinar autônoma/concorrente, não condicionada ao encerramento de processo administrativo no tribunal local.
+
+Exemplo explicado. Exemplo 1: ato administrativo de tribunal estadual Tribunal estadual mantém ato administrativo de seu próprio órgão que viola princípio do art. 37. O CNJ pode controlar a legalidade do ato administrativo, sem que isso signifique reexaminar o mérito de uma sentença judicial.
+
+PARTE I · CNJ E STJ
+
+CAPÍTULO 3 — SUPERIOR TRIBUNAL DE JUSTIÇA (STJ): COMPOSIÇÃO E COMPETÊNCIAS
+
+Base constitucional: arts. 104 e 105, I e II
+
+COMPOSIÇÃO
+
+O STJ é o tribunal superior vocacionado à uniformização da interpretação do direito federal infraconstitucional. Sua composição mínima é de 33 Ministros. Os Ministros são nomeados pelo Presidente da República, dentre brasileiros com mais de 35 e menos de 70 anos, de notável saber jurídico e reputação ilibada, após aprovação pela maioria absoluta do Senado.
+
+A origem das vagas segue a Constituição: um terço dentre juízes dos TRFs; um terço dentre desembargadores dos TJs; e um terço, em partes iguais, dentre advogados e membros do Ministério Público Federal, Estadual, do Distrito Federal e Territórios, observados os requisitos do art. 94.
+
+Fração   Origem das vagas
+1/3   Juízes dos TRFs.
+1/3   Desembargadores dos TJs.
+1/3   Em partes iguais, advogados e membros do Ministério Público Federal, Estadual, do Distrito Federal e Territórios, observados os requisitos do art. 94.
+
+COMPETÊNCIAS DO ART. 105
+
+As competências do art. 105 dividem-se em originárias, recurso ordinário e recurso especial. Em prova, o melhor método é perguntar primeiro: “o processo começa no STJ?”, “chega por recurso ordinário?” ou “chega por recurso especial?”.
+
+Entre as competências originárias mais cobradas estão processos contra certas autoridades, habeas corpus em situações constitucionais específicas, conflitos de competência entre tribunais (salvas as hipóteses do STF), revisões criminais e ações rescisórias de seus julgados, reclamação para preservação de sua competência, mandado de injunção em hipóteses federais e homologação de sentença estrangeira/concessão de exequatur às cartas rogatórias.
+
+No recurso ordinário constitucional, o STJ julga, entre outras hipóteses, habeas corpus decididos por TRFs ou tribunais estaduais quando denegatória a decisão; mandados de segurança decididos em única instância por esses tribunais quando denegatórios; e causas entre Estado estrangeiro ou organismo internacional e Município ou pessoa residente/domiciliada no País.
+
+Erro comum. Ler “no mínimo 33” como “exatamente 33” e o terço como quinto A Constituição fala em no mínimo 33 Ministros. E advogados e MP não ocupam “um quinto” do STJ: dividem um terço das vagas, em partes iguais.
+
+PARTE I · CNJ E STJ
+
+CAPÍTULO 4 — RECURSO ESPECIAL E RELEVÂNCIA
+
+Base constitucional: art. 105, III, e §§ 2º e 3º
+
+O recurso especial (REsp) destina-se à proteção da lei federal e à uniformização de sua interpretação. Cabe contra causas decididas em única ou última instância pelos TRFs ou pelos tribunais dos Estados, DF e Territórios quando a decisão:
+
+Alínea   A decisão recorrida...
+a   contrariar tratado ou lei federal, ou negar-lhes vigência;
+b   julgar válido ato de governo local contestado em face de lei federal; ou
+c   der à lei federal interpretação divergente da atribuída por outro tribunal.
+
+Pegadinha. Clássica Lei local contestada em face de lei federal é matéria de recurso extraordinário ao STF (art. 102, III, d). No REsp do STJ, a alínea b fala em ato de governo local contestado em face de lei federal.
+
+RELEVÂNCIA DA QUESTÃO FEDERAL (EC 125/2022)
+
+A EC 125/2022 inseriu o requisito da relevância das questões de direito federal infraconstitucional. A Constituição exige demonstração da relevância, e o STJ somente pode não conhecer do recurso por ausência de relevância mediante manifestação de 2/3 dos membros do órgão competente para o julgamento.
+
+A Constituição presume a relevância em:
+
+• ações penais;
+
+• ações de improbidade administrativa;
+
+• ações cujo valor da causa ultrapasse 500 salários mínimos;
+
+• ações que possam gerar inelegibilidade;
+
+• hipóteses em que o acórdão recorrido contrariar jurisprudência dominante do STJ;
+
+• e outras previstas em lei.
+
+Atualização. Atualização pós-edital A Lei 15.484/2026 regulamentou o filtro de relevância do REsp após a publicação do edital G07. Ela é útil para estudo constitucional atual, mas não integrava a legislação vigente na data de publicação do edital. O núcleo do recorte TJCE 2026 permanece no art. 105, §§ 2º e 3º, introduzidos pela EC 125/2022.
+
+Jurisprudência. Entendimento-chave Recurso especial: o STJ uniformiza direito federal infraconstitucional; a relevância da questão federal tornou-se requisito regulamentado em 2026.
+
+Exemplo explicado. Exemplo 2: divergência na interpretação de lei federal Acórdão de TJ interpreta lei federal de modo divergente de outro tribunal. Em tese, a via constitucional é o recurso especial, desde que presentes os demais requisitos, inclusive a relevância quando exigível.
+
+Caso explicado. REsp ou RE? Um teste rápido Ato de governo local contestado em face de lei federal → REsp (art. 105, III, b). Lei local contestada em face de lei federal → RE (art. 102, III, d). Questão sobre a Constituição → RE; sobre lei federal ou tratado → REsp.
+
+PARTE II · JUSTIÇA DO TRABALHO
+
+CAPÍTULO 5 — JUSTIÇA DO TRABALHO: ESTRUTURA
+
+Base constitucional: arts. 111, 111-A, 115 e 116
+
+TST
+
+São órgãos da Justiça do Trabalho: TST, TRTs e juízes do trabalho. O TST compõe-se de 27 Ministros, brasileiros com mais de 35 e menos de 70 anos, de notável saber jurídico e reputação ilibada, nomeados pelo Presidente da República após aprovação pela maioria absoluta do Senado.
+
+No TST, um quinto das vagas é destinado a advogados com mais de dez anos de efetiva atividade profissional e membros do Ministério Público do Trabalho com mais de dez anos de efetivo exercício, observado o art. 94. Os demais são escolhidos entre juízes dos TRTs oriundos da magistratura da carreira, indicados pelo próprio TST.
+
+Junto ao TST funcionam a Escola Nacional de Formação e Aperfeiçoamento de Magistrados do Trabalho (ENAMAT) e o Conselho Superior da Justiça do Trabalho (CSJT). O CSJT exerce, na forma da lei, supervisão administrativa, orçamentária, financeira e patrimonial da Justiça do Trabalho de primeiro e segundo graus, como órgão central do sistema, e suas decisões têm efeito vinculante.
+
+Não confundir. CNJ controla administrativamente todo o Poder Judiciário nos limites constitucionais. CSJT é órgão central de supervisão da Justiça do Trabalho de 1º e 2º graus. O CSJT não substitui o CNJ e não exerce jurisdição.
+
+TRTS E VARAS DO TRABALHO
+
+Os TRTs compõem-se de, no mínimo, sete juízes, recrutados, quando possível, na respectiva região, nomeados pelo Presidente da República dentre brasileiros com mais de 30 e menos de 70 anos. Aplica-se o quinto constitucional a advogados e membros do MPT; os demais provêm da promoção de juízes do trabalho por antiguidade e merecimento, alternadamente.
+
+A Constituição prevê justiça itinerante e a possibilidade de funcionamento descentralizado dos TRTs por Câmaras regionais, para ampliar o acesso à Justiça. Nas Varas do Trabalho, a jurisdição é exercida por juiz singular (art. 116).
+
+Ponto   TST   TRTs
+Composição   27 Ministros.   No mínimo, sete juízes, recrutados, quando possível, na respectiva região.
+Idade   Mais de 35 e menos de 70 anos.   Mais de 30 e menos de 70 anos.
+Nomeação   Presidente da República, após aprovação pela maioria absoluta do Senado.   Presidente da República.
+Quinto   Advogados e membros do MPT com mais de dez anos, observado o art. 94.   Advogados e membros do MPT.
+Demais vagas   Juízes dos TRTs oriundos da magistratura da carreira, indicados pelo próprio TST.   Promoção de juízes do trabalho por antiguidade e merecimento, alternadamente.
+Junto a ele   ENAMAT e CSJT.   Justiça itinerante e Câmaras regionais.
+
+Erro comum. Dar ao CSJT função jurisdicional O CSJT supervisiona (administrativa, orçamentária, financeira e patrimonialmente) a Justiça do Trabalho de 1º e 2º graus. Não julga processos e não substitui o CNJ.
+
+PARTE II · JUSTIÇA DO TRABALHO
+
+CAPÍTULO 6 — COMPETÊNCIA MATERIAL DA JUSTIÇA DO TRABALHO
+
+Base constitucional: art. 114
+
+A competência trabalhista é definida principalmente pela matéria. O art. 114 atribui à Justiça do Trabalho:
+
+• as ações oriundas da relação de trabalho;
+
+• ações sobre exercício do direito de greve;
+
+• representação sindical;
+
+• mandados de segurança/habeas corpus/habeas data quando o ato envolver matéria sujeita à sua jurisdição;
+
+• conflitos de competência entre órgãos trabalhistas;
+
+• ações de indenização por dano moral ou patrimonial decorrentes da relação de trabalho;
+
+• ações relativas às penalidades administrativas impostas aos empregadores pelos órgãos de fiscalização das relações de trabalho;
+
+• além de outras controvérsias previstas em lei decorrentes da relação de trabalho.
+
+Também lhe compete executar, de ofício, as contribuições sociais previstas no art. 195, I, a, e II, e seus acréscimos legais, decorrentes das sentenças que proferir.
+
+Exceção importante. A expressão “administração pública” no art. 114, I, não significa que toda controvérsia envolvendo servidor público vá para a Justiça do Trabalho. O STF consolidou que causas entre o Poder Público e servidores submetidos a vínculo jurídico-estatutário ou jurídico-administrativo não pertencem à Justiça do Trabalho.
+
+DISSÍDIOS COLETIVOS
+
+Nos dissídios coletivos, frustrada a negociação coletiva, as partes podem eleger árbitros. Recusada a negociação coletiva ou a arbitragem, é possível ajuizar dissídio coletivo de natureza econômica, exigindo-se comum acordo, e a Justiça do Trabalho pode estabelecer normas e condições, respeitadas as disposições mínimas legais de proteção ao trabalho e as convencionadas anteriormente. Em greve em atividade essencial com possibilidade de lesão ao interesse público, o Ministério Público do Trabalho pode ajuizar dissídio coletivo.
+
+Situação   Consequência
+Negociação coletiva frustrada   As partes podem eleger árbitros.
+Negociação coletiva ou arbitragem recusada   Dissídio coletivo de natureza econômica, exigindo-se comum acordo; a Justiça do Trabalho pode estabelecer normas e condições, respeitadas as disposições mínimas legais e as convencionadas anteriormente.
+Greve em atividade essencial com possibilidade de lesão ao interesse público   O Ministério Público do Trabalho pode ajuizar dissídio coletivo.
+
+Jurisprudência. Entendimento-chave Justiça do Trabalho: vínculo jurídico-estatutário ou jurídico-administrativo entre servidor e Poder Público fica fora de sua competência.
+
+Exemplo explicado. Exemplo 3: servidor estatutário e Município Município e servidor estatutário discutem vantagens funcionais. O simples fato de existir trabalho humano não desloca a causa para a Justiça do Trabalho; o vínculo jurídico-administrativo afasta a competência trabalhista.
+
+PARTE III · JUSTIÇA FEDERAL
+
+CAPÍTULO 7 — JUSTIÇA FEDERAL: TRFS, COMPOSIÇÃO E COMPETÊNCIA
+
+Base constitucional: arts. 106 a 108
+
+ÓRGÃOS E COMPOSIÇÃO DOS TRFS (ARTS. 106–107)
+
+A Justiça Federal comum é formada pelos Tribunais Regionais Federais e pelos Juízes Federais. Os TRFs compõem-se de, no mínimo, sete juízes, recrutados, quando possível, na respectiva região e nomeados pelo Presidente da República dentre brasileiros com mais de 30 e menos de 70 anos. Um quinto é preenchido por advogados com mais de dez anos de atividade profissional e membros do Ministério Público Federal com mais de dez anos de carreira. Os demais ingressam mediante promoção de juízes federais com mais de cinco anos de exercício, alternadamente por antiguidade e merecimento.
+
+Os TRFs devem instalar justiça itinerante e podem funcionar descentralizadamente por Câmaras regionais. Essas previsões concretizam acesso à justiça e interiorização da jurisdição federal.
+
+COMPETÊNCIA DOS TRFS (ART. 108)
+
+O art. 108 possui duas chaves de leitura. Na competência originária, o TRF processa e julga, entre outras hipóteses, juízes federais da região em crimes comuns e de responsabilidade, membros do MPU nos casos constitucionais, revisões criminais e rescisórias de seus julgados, mandados de segurança e habeas data contra ato do próprio tribunal ou de juiz federal, habeas corpus quando a autoridade coatora for juiz federal e conflitos de competência entre juízes federais vinculados ao tribunal. Em grau de recurso, julga as causas decididas pelos juízes federais e pelos juízes estaduais no exercício de competência federal.
+
+Chave de leitura   O que o TRF julga
+Originária   Juízes federais da região em crimes comuns e de responsabilidade; membros do MPU nos casos constitucionais; revisões criminais e rescisórias de seus julgados; MS e HD contra ato do próprio tribunal ou de juiz federal; HC quando a autoridade coatora for juiz federal; conflitos de competência entre juízes federais vinculados ao tribunal.
+Recursal   Causas decididas pelos juízes federais e pelos juízes estaduais no exercício de competência federal.
+
+Erro comum. Trocar os requisitos do TRF pelos do TST TRF e TRT: no mínimo sete juízes, mais de 30 e menos de 70 anos. TST e STJ: mais de 35 e menos de 70 anos. No TRF, a promoção exige juiz federal com mais de cinco anos de exercício.
+
+PARTE III · JUSTIÇA FEDERAL
+
+CAPÍTULO 8 — JUÍZES FEDERAIS E SEÇÕES JUDICIÁRIAS
+
+Base constitucional: arts. 109 e 110
+
+COMPETÊNCIA DOS JUÍZES FEDERAIS (ART. 109)
+
+A regra mais cobrada está no inciso I: causas em que União, autarquia federal ou empresa pública federal sejam interessadas como autoras, rés, assistentes ou oponentes, com exceções constitucionais, entre elas falência, acidentes de trabalho e matérias sujeitas às Justiças Eleitoral e do Trabalho. Atenção: sociedade de economia mista federal não aparece nessa regra simplesmente por ser federal.
+
+Também são relevantes:
+
+• causas entre Estado estrangeiro ou organismo internacional e Município ou pessoa domiciliada/residente no País;
+
+• causas fundadas em tratado ou contrato da União com Estado estrangeiro ou organismo internacional;
+
+• crimes políticos e infrações praticadas em detrimento de bens, serviços ou interesse da União, autarquias e empresas públicas federais, ressalvadas competências especiais;
+
+• crimes previstos em tratado ou convenção internacional nas condições constitucionais;
+
+• causas relativas a direitos humanos na hipótese de incidente de deslocamento de competência;
+
+• disputa sobre direitos indígenas;
+
+• e mandados de segurança e habeas data contra autoridade federal, ressalvadas competências dos tribunais.
+
+O § 3º admite delegação legal à Justiça estadual para determinadas causas previdenciárias quando preenchidos os requisitos constitucionais; o recurso, nessa hipótese, dirige-se ao TRF. O § 5º disciplina o incidente de deslocamento de competência por grave violação de direitos humanos, suscitado pelo PGR perante o STJ.
+
+Entra no art. 109, I   Não entra (ou é exceção)
+• União; • autarquia federal; • empresa pública federal; • como autoras, rés, assistentes ou oponentes.   • sociedade de economia mista federal (não aparece na regra só por ser federal); • falência; • acidentes de trabalho; • matérias sujeitas às Justiças Eleitoral e do Trabalho.
+
+SEÇÕES JUDICIÁRIAS (ART. 110)
+
+Cada Estado e o Distrito Federal constituem uma seção judiciária, com sede na respectiva capital, além das varas definidas em lei. Nos Territórios Federais, a jurisdição e as atribuições dos juízes federais cabem aos juízes da Justiça local, na forma da lei.
+
+Caso explicado. A causa é federal? 1. Há União, autarquia federal ou empresa pública federal como autora, ré, assistente ou oponente? Se a parte é sociedade de economia mista federal, a regra do inciso I não se aplica só por isso. 2. A causa é de falência, acidente de trabalho ou matéria eleitoral ou trabalhista? Então é exceção. 3. Se for causa previdenciária delegada à Justiça estadual (§ 3º), o recurso vai ao TRF.
+
+PARTE IV · JUSTIÇA DOS ESTADOS
+
+CAPÍTULO 9 — JUSTIÇA DOS ESTADOS
+
+Base constitucional: arts. 125 e 126
+
+Os Estados organizam sua Justiça, observados os princípios constitucionais. A competência dos tribunais é definida na Constituição estadual e a lei de organização judiciária é de iniciativa do Tribunal de Justiça. O art. 125 autoriza a instituição de representação de inconstitucionalidade de leis ou atos normativos estaduais ou municipais em face da Constituição estadual, vedada atribuição da legitimação para agir a um único órgão.
+
+A Justiça Militar estadual pode ser criada por lei estadual, mediante proposta do Tribunal de Justiça, nos parâmetros constitucionais. O art. 126 permite a criação de varas especializadas para dirimir conflitos fundiários; quando necessário à eficiente prestação jurisdicional, o juiz pode comparecer ao local do litígio.
+
+Cabe ao Tribunal de Justiça propor a criação de varas especializadas, e a Constituição prevê regras próprias para Justiça Militar estadual quando existentes os pressupostos constitucionais. Para o M10, o foco é perceber que o TJ é o vértice da Justiça estadual ordinária, sujeito ao STF/STJ apenas pelas vias constitucionais próprias, e não a uma hierarquia jurisdicional administrativa do CNJ.
+
+Ponto   Regra
+Organização   Os Estados organizam sua Justiça observando os princípios da Constituição Federal.
+Competência dos tribunais   Definida na Constituição do Estado.
+Lei de organização judiciária   Iniciativa do Tribunal de Justiça.
+Representação de inconstitucionalidade   De leis ou atos normativos estaduais ou municipais em face da Constituição Estadual; vedada a atribuição da legitimação para agir a um único órgão.
+Justiça Militar estadual   Criada por lei estadual, mediante proposta do TJ, nos parâmetros constitucionais.
+Conflitos fundiários (art. 126)   Varas especializadas; o juiz pode comparecer ao local do litígio quando necessário.
+Posição do TJ   Vértice da Justiça estadual ordinária, sujeito ao STF/STJ apenas pelas vias constitucionais próprias.
+
+Não confundir. TRF/juiz federal integram Justiça Federal; TJ/juiz estadual integram Justiça estadual. STJ não funciona como tribunal regional federal e CNJ não é instância recursal das decisões judiciais.
+
+Erro comum. Legitimação para um só órgão O Estado pode instituir a representação de inconstitucionalidade, mas não pode atribuir a legitimação para agir a um único órgão.
+
+FECHAMENTO
+
+FECHAMENTO DO MÓDULO
+
+1. RESUMO DO MÓDULO: CADA ÓRGÃO, SUA FUNÇÃO E SUA PEGADINHA
+
+Órgão   Função central   Pegadinha
+STF   Guarda da Constituição.   RE não é recurso para rediscutir mera lei federal.
+STJ   Uniformiza lei federal infraconstitucional.   REsp não substitui recurso ordinário nem alcança qualquer decisão.
+CNJ   Controle administrativo/financeiro e disciplinar.   Não reforma sentença/acórdão.
+TST/TRTs   Jurisdição trabalhista.   CSJT é administrativo, não jurisdicional.
+TJ   Vértice da Justiça estadual.   Recursos excepcionais seguem para STJ/STF conforme a matéria.
+
+2. O QUE DECORAR
+
+Lei seca essencial: mapa artigo a artigo.
+
+Dispositivo   Núcleo para memorizar
+Art. 103-B   CNJ: 15 membros; 2 anos; 1 recondução; composição e competências de controle.
+Art. 104   STJ: mínimo 33 Ministros; origem constitucional das vagas.
+Art. 105, I-II   Competências originárias e recurso ordinário do STJ.
+Art. 105, III   Hipóteses do recurso especial.
+Art. 105, §§2º-3º   Relevância da questão federal e hipóteses de relevância presumida.
+Art. 111   Órgãos da Justiça do Trabalho.
+Art. 111-A   TST: 27 Ministros; requisitos; quinto; ENAMAT e CSJT.
+Art. 114   Competência material da Justiça do Trabalho.
+Art. 115   TRTs: mínimo 7 membros e composição.
+Art. 116   Varas do Trabalho: jurisdição exercida por juiz singular.
+Art. 125   Organização da Justiça dos Estados.
+
+Quadros de memorização.
+
+Cai muito. CNJ: composição + competências do §4º + Corregedor. STJ: composição + art. 105 + REsp. Trabalho: TST/TRTs + art. 114 + CSJT. Estados: art. 125.
+
+Artigos para lembrar. 103-B = CNJ • 104-105 = STJ • 106-110 = Justiça Federal • 111/111-A/114/115/116 = Justiça do Trabalho • 125-126 = Justiça dos Estados.
+
+3. PEGADINHAS DE PROVA
+
+Todas as afirmações estão erradas ou exigem cuidado; o importante é saber por quê.
+
+Afirmação da banca   Veredicto e motivo   Cap.
+Dizer que o CNJ é “tribunal superior”.   Falso. Integra o Judiciário, mas não exerce função jurisdicional.   2
+Afirmar que CNJ revisa decisão judicial.   Falso. Não é instância revisora de decisões judiciais.   2
+Trocar 15 membros/2 anos/uma recondução do CNJ.   Errado. São 15 membros, mandato de 2 anos, uma recondução.   2
+Dizer que STJ tem exatamente 33 Ministros.   A Constituição diz “no mínimo 33”.   3
+Aplicar quinto constitucional como se ocupasse apenas 1/5 do STJ inteiro.   A Constituição estrutura um terço destinado, em partes iguais, à advocacia e ao MP.   3
+Confundir ato de governo local (REsp) com lei local em face de lei federal (RE).   Ato de governo local → REsp (art. 105, III, b); lei local → RE (art. 102, III, d).   4
+Cobrar a Lei 15.484/2026 como se integrasse o recorte do edital.   No recorte do edital, cobre-se a disciplina constitucional da EC 125/2022; a regulamentação da Lei 15.484/2026 é atualização posterior.   4
+Dizer que CSJT exerce jurisdição.   Falso. É órgão de supervisão administrativa.   5
+Afirmar que todo servidor público litiga na Justiça do Trabalho.   Falso. Vínculo estatutário ou jurídico-administrativo fica fora.   6
+
+4. COMO RESOLVER QUESTÕES
+
+Passo   O que fazer
+1)   Identifique o órgão citado.
+2)   Pergunte se a função é jurisdicional ou administrativa/disciplinar.
+3)   Se for STJ, classifique: competência originária, recurso ordinário ou recurso especial.
+4)   No REsp, cheque a alínea constitucional e a relevância.
+5)   Em Justiça do Trabalho, comece pela matéria do art. 114 e procure exceções.
+6)   Confira números: CNJ 15; STJ mínimo 33; TST 27; TRT mínimo 7.
+7)   Elimine alternativas absolutas (“sempre”, “qualquer”, “exclusivamente”) quando a Constituição traz exceções.
+
+5. CHECKLIST DE REVISÃO FINAL: O QUE NÃO PODE ERRAR
+
+Marque cada item quando conseguir explicá-lo sem consultar a apostila.
+
+• ☐ CNJ não é tribunal recursal. (capítulo 2)
+
+• ☐ CNJ: 15 membros, mandato 2 anos, 1 recondução. (capítulo 2)
+
+• ☐ Corregedor Nacional: Ministro do STJ integrante do CNJ. (capítulo 2)
+
+• ☐ STJ: mínimo 33 Ministros; art. 105 é central. (capítulo 3)
+
+• ☐ REsp: lei federal/tratado, ato de governo local e divergência interpretativa. (capítulo 4)
+
+• ☐ Relevância do REsp no edital: requisito constitucional da EC 125/2022; regulamentação legal posterior é atualização. (capítulo 4)
+
+• ☐ TST: 27 Ministros; 1/5 advocacia + MPT. (capítulo 5)
+
+• ☐ CSJT: supervisão administrativa/orçamentária/financeira/patrimonial da JT de 1º e 2º graus. (capítulo 5)
+
+• ☐ Art. 114: competência material trabalhista e exceção dos vínculos estatutários. (capítulo 6)
+
+• ☐ Art. 125: Estados organizam sua Justiça conforme princípios da CF. (capítulo 9)
+
+6. REFERÊNCIAS E LINKS OFICIAIS
+
+Fontes oficiais para conferir o texto e a jurisprudência.
+
+Fonte oficial   Para que usar   Link
+Constituição Federal de 1988 (Planalto)   Arts. 103-B a 126.   https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm
+Emenda Constitucional nº 125, de 2022 (Planalto)   Relevância no recurso especial (capítulo 4).   https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc125.htm
+Emenda Constitucional nº 45, de 2004 (Planalto)   Criação do CNJ (capítulo 2).   https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc45.htm
+Conselho Nacional de Justiça   Atos e Corregedoria Nacional (capítulo 2).   https://www.cnj.jus.br/
+Superior Tribunal de Justiça   Recurso especial e relevância (capítulos 3 e 4).   https://www.stj.jus.br/
+Tribunal Superior do Trabalho   TST, ENAMAT e CSJT (capítulos 5 e 6).   https://www.tst.jus.br/
+Conselho da Justiça Federal   Justiça Federal (capítulos 7 e 8).   https://www.cjf.jus.br/

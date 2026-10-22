@@ -30,7 +30,7 @@ test('bootstrap Civil preserva os 66 destinos e remove sua exibição antiga do 
   assert.equal(data.items.length, 66);
   assert.equal(new Set(data.items.map((x) => x.subdivisao || x.modulo)).size, 66);
   assert(boot.includes('content/civil/civil-sharing-links.js?v=20261009civilsharing2'));
-  assert(boot.includes('ui/civil-native-study-v1.js?v=20261019civilstandard1'));
+  assert(boot.includes('ui/civil-native-study-v1.js?v=20261022civilpilot3'));
   assert(boot.includes('ui/civil-native-study-v1.css?v=20261019civilstandard1'));
   assert(lazy.includes('content/civil/civil-sharing-links.js?v=20261009civilsharing2'));
   assert(lazy.includes('ui/civil-native-study-v1.js?v=20261019civilstandard1'));
@@ -73,7 +73,7 @@ test('bootstrap Civil preserva os 66 destinos e remove sua exibição antiga do 
   const bootCivilFiles = [
     'content/civil/civil-native-index.js?v=20261018civiljur1',
     'content/civil/civil-sharing-links.js?v=20261009civilsharing2',
-    'ui/civil-native-study-v1.js?v=20261019civilstandard1',
+    'ui/civil-native-study-v1.js?v=20261022civilpilot3',
   ];
   for (const src of bootCivilFiles) assert(boot.includes(src));
   const rawCivilFiles = [...originalCivilFiles,
@@ -100,7 +100,7 @@ test('bootstrap Civil preserva os 66 destinos e remove sua exibição antiga do 
   const effectivePaths = effectiveCivilFiles.map((src) => new URL(src, 'http://localhost').pathname);
   assert.equal(effectivePaths.filter((p) => p === '/ui/civil-native-study-v1.js').length, 1);
   assert.equal(effectivePaths.filter((p) => p === '/content/civil/civil-sharing-links.js').length, 1);
-  assert(effectiveCivilFiles.indexOf('content/civil/civil-sharing-links.js?v=20261009civilsharing2') < effectiveCivilFiles.indexOf('ui/civil-native-study-v1.js?v=20261019civilstandard1'));
+  assert(effectiveCivilFiles.indexOf('content/civil/civil-sharing-links.js?v=20261009civilsharing2') < effectiveCivilFiles.indexOf('ui/civil-native-study-v1.js?v=20261022civilpilot3'));
 
   const server = createServer((req, res) => {
     const pathname = decodeURIComponent(new URL(req.url, 'http://localhost').pathname);
@@ -162,11 +162,11 @@ test('bootstrap Civil preserva os 66 destinos e remove sua exibição antiga do 
     for (const module of moduleAudit) {
       assert.deepEqual(module.children, ['cv-zone-head', 'cv-progress-grid', 'cv-oriented', 'cv-cards', 'cv-panel', 'bcq-module-panels', 'cv-tools'], `M${module.number}: ordem visual diferente do padrão.`);
       assert.equal(module.complete, 'Teoria completa', `M${module.number}: card completo ausente.`);
-      assert.equal(module.review, 'Versão de revisão', `M${module.number}: card de revisão ausente.`);
+      assert.equal(module.review, 'Teoria guiada', `M${module.number}: card de teoria guiada ausente.`);
       assert.equal(module.infographic, 'Infográfico', `M${module.number}: card de infográfico ausente.`);
       assert(module.completeActions[0].startsWith('Estudar conteúdo'));
       assert.equal(module.completeActions[1], 'Resolver 10 questões');
-      assert(module.reviewActions[0].startsWith('Revisar conteúdo'));
+      assert(module.reviewActions[0].startsWith('Abrir teoria guiada'));
       assert.equal(module.reviewActions[1], 'Resolver 5 questões');
       assert.equal(module.notes, 1, `M${module.number}: notas duplicadas ou ausentes.`);
       assert.equal(module.legacyManualEntry, false, `M${module.number}: formulário manual redundante permaneceu.`);

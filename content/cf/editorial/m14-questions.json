@@ -1,0 +1,216 @@
+{
+  "summary": [
+    {
+      "n": 1,
+      "difficulty": "Fácil",
+      "q": "A seguridade social compreende, constitucionalmente,",
+      "options": [
+        "saúde, previdência e assistência social.",
+        "saúde, educação e previdência.",
+        "previdência, habitação e assistência.",
+        "saúde, trabalho e educação.",
+        "assistência, segurança pública e previdência."
+      ],
+      "answer": 0,
+      "explanation": "Art. 194: seguridade social integra saúde, previdência e assistência social."
+    },
+    {
+      "n": 2,
+      "difficulty": "Fácil",
+      "q": "A assistência social será prestada",
+      "options": [
+        "somente a contribuintes da seguridade.",
+        "a quem dela necessitar, independentemente de contribuição.",
+        "apenas a trabalhadores formais.",
+        "exclusivamente a idosos.",
+        "somente por entidades privadas."
+      ],
+      "answer": 1,
+      "explanation": "Art. 203: a assistência social independe de contribuição prévia."
+    },
+    {
+      "n": 3,
+      "difficulty": "Média",
+      "q": "É diretriz constitucional do SUS:",
+      "options": [
+        "centralização administrativa em órgão federal único.",
+        "atendimento apenas contributivo.",
+        "descentralização, com direção única em cada esfera de governo.",
+        "prioridade absoluta para atividades curativas.",
+        "exclusão da participação da comunidade."
+      ],
+      "answer": 2,
+      "explanation": "Art. 198: descentralização, atendimento integral e participação da comunidade são diretrizes do SUS."
+    },
+    {
+      "n": 4,
+      "difficulty": "Média",
+      "q": "O Regime Geral de Previdência Social possui caráter",
+      "options": [
+        "assistencial e facultativo.",
+        "privado e compulsório.",
+        "universal e não contributivo.",
+        "contributivo e de filiação obrigatória.",
+        "complementar e autônomo."
+      ],
+      "answer": 3,
+      "explanation": "Art. 201: RGPS é contributivo e de filiação obrigatória, preservado o equilíbrio financeiro e atuarial."
+    },
+    {
+      "n": 5,
+      "difficulty": "Difícil",
+      "q": "A criação, majoração ou extensão de benefício da seguridade social",
+      "options": [
+        "independe de previsão financeira.",
+        "somente pode ocorrer por emenda constitucional.",
+        "depende apenas de decreto.",
+        "é vedada em qualquer hipótese.",
+        "exige a correspondente fonte de custeio total."
+      ],
+      "answer": 4,
+      "explanation": "Art. 195: a expansão de benefício ou serviço exige correspondente"
+    }
+  ],
+  "complete": [
+    {
+      "n": 1,
+      "difficulty": "Fácil",
+      "q": "A ordem social tem como base o",
+      "options": [
+        "primado do trabalho.",
+        "primado do capital.",
+        "planejamento privado.",
+        "federalismo fiscal.",
+        "monopólio estatal."
+      ],
+      "answer": 0,
+      "explanation": "Art. 193: a ordem social tem como base o primado do trabalho."
+    },
+    {
+      "n": 2,
+      "difficulty": "Fácil",
+      "q": "A saúde, segundo a Constituição, é",
+      "options": [
+        "benefício previdenciário contributivo.",
+        "direito de todos e dever do Estado.",
+        "serviço reservado aos segurados.",
+        "atividade exclusivamente privada.",
+        "direito condicionado à filiação ao RGPS."
+      ],
+      "answer": 1,
+      "explanation": "Art. 196: saúde é direito de todos e dever do Estado."
+    },
+    {
+      "n": 3,
+      "difficulty": "Fácil",
+      "q": "A previdência complementar do art. 202 é",
+      "options": [
+        "obrigatória e integrada ao RGPS.",
+        "não contributiva.",
+        "facultativa e autônoma em relação ao RGPS.",
+        "exclusiva do Poder Público.",
+        "organizada sem reservas."
+      ],
+      "answer": 2,
+      "explanation": "Art. 202: regime complementar privado é facultativo, autônomo e baseado em reservas."
+    },
+    {
+      "n": 4,
+      "difficulty": "Fácil",
+      "q": "Entre os objetivos da seguridade social está",
+      "options": [
+        "concentração do financiamento em uma única fonte.",
+        "redução nominal de benefícios.",
+        "exclusão das populações rurais.",
+        "universalidade da cobertura e do atendimento.",
+        "gestão exclusivamente centralizada."
+      ],
+      "answer": 3,
+      "explanation": "Universalidade da cobertura e do atendimento é objetivo expresso do art. 194."
+    },
+    {
+      "n": 5,
+      "difficulty": "Média",
+      "q": "Instituição privada sem fins lucrativos pretende participar do SUS. A Constituição",
+      "options": [
+        "proíbe qualquer participação privada.",
+        "exige transformação da entidade em autarquia.",
+        "admite apenas participação substitutiva do Estado.",
+        "dispensa observância das regras do SUS.",
+        "admite participação complementar segundo as diretrizes do SUS, mediante contrato ou convênio."
+      ],
+      "answer": 4,
+      "explanation": "Art. 199 admite participação complementar de instituições privadas, com preferência constitucional para filantrópicas e sem fins lucrativos."
+    },
+    {
+      "n": 6,
+      "difficulty": "Média",
+      "q": "A expressão “equilíbrio financeiro e atuarial” associa-se diretamente, no art. 201, ao",
+      "options": [
+        "RGPS.",
+        "SUS.",
+        "benefício assistencial.",
+        "ensino público.",
+        "sistema tributário municipal."
+      ],
+      "answer": 0,
+      "explanation": "O RGPS deve preservar equilíbrio financeiro e atuarial."
+    },
+    {
+      "n": 7,
+      "difficulty": "Média",
+      "q": "Assinale a alternativa correta sobre saúde e assistência social.",
+      "options": [
+        "Ambas exigem contribuição prévia.",
+        "Saúde é universal e assistência é prestada a quem dela necessitar, sem contribuição prévia.",
+        "Saúde integra apenas a previdência complementar.",
+        "Assistência é restrita a trabalhadores empregados.",
+        "Nenhuma integra a seguridade social."
+      ],
+      "answer": 1,
+      "explanation": "Saúde e assistência integram a seguridade e não dependem de contribuição prévia do beneficiário."
+    },
+    {
+      "n": 8,
+      "difficulty": "Média",
+      "q": "A participação da comunidade é constitucionalmente prevista como",
+      "options": [
+        "objetivo exclusivo da previdência privada.",
+        "requisito de filiação ao RGPS.",
+        "diretriz do SUS.",
+        "condição de benefício assistencial.",
+        "vedação à descentralização."
+      ],
+      "answer": 2,
+      "explanation": "Art. 198 inclui participação da comunidade entre as diretrizes do SUS."
+    },
+    {
+      "n": 9,
+      "difficulty": "Difícil",
+      "q": "Lei cria novo benefício de seguridade sem indicar fonte correspondente de custeio. À luz da Constituição, a medida",
+      "options": [
+        "é compatível por decorrer da universalidade.",
+        "depende apenas de regulamentação do Executivo.",
+        "é válida se o benefício for temporário.",
+        "viola a exigência de fonte de custeio total.",
+        "é obrigatória se houver superávit anual."
+      ],
+      "answer": 3,
+      "explanation": "A Constituição exige"
+    },
+    {
+      "n": 10,
+      "difficulty": "Difícil",
+      "q": "Sobre a organização da assistência social, é correto afirmar que ela combina",
+      "options": [
+        "centralização federal e ausência de controle social.",
+        "prestação condicionada à contribuição previdenciária.",
+        "gestão exclusivamente municipal.",
+        "financiamento apenas privado.",
+        "descentralização político-administrativa e participação da população na formulação e controle das ações."
+      ],
+      "answer": 4,
+      "explanation": "Art. 204 adota descentralização político-administrativa e participação popular."
+    }
+  ]
+}

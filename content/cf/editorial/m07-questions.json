@@ -1,0 +1,201 @@
+{
+  "complete": [
+    {
+      "n": 1,
+      "difficulty": "Fácil",
+      "q": "Segundo o art. 59 da Constituição, qual alternativa reúne apenas espécies normativas integrantes do processo legislativo?",
+      "options": [
+        "Lei ordinária, portaria ministerial e decreto regulamentar do Presidente.",
+        "Emenda constitucional, lei complementar e decreto legislativo.",
+        "Instrução normativa, resolução administrativa e portaria de autarquia.",
+        "Decreto regulamentar, circular interna e medida provisória."
+      ],
+      "answer": 1,
+      "explanation": "O art. 59 inclui emendas constitucionais, leis complementares e ordinárias, leis delegadas, medidas provisórias, decretos legislativos e resoluções. B reúne apenas espécies desse rol. A e D incluem decreto regulamentar, que não se confunde com decreto legislativo. A e C incluem portarias; C também traz instrução normativa e resolução administrativa, sem que qualquer ato com esse nome se torne automaticamente a espécie legislativa do art. 59. A autoridade e a função do ato importam."
+    },
+    {
+      "n": 2,
+      "difficulty": "Fácil",
+      "q": "Um colegiado hipotético possui 100 membros. Comparecem 60, todos votando validamente e sem abstenções. Para uma deliberação pela regra geral do art. 47 e outra que exija maioria absoluta, os mínimos de votos favoráveis são, respectivamente:",
+      "options": [
+        "31 e 51, pois a segunda decisão considera o total de membros.",
+        "31 e 31, pois toda maioria considera apenas os presentes.",
+        "51 e 60, pois a lei exige unanimidade quando o quórum é absoluto.",
+        "60 e 61, pois a presença reduz o total considerado para aprovação."
+      ],
+      "answer": 0,
+      "explanation": "A presença de 60 satisfaz a exigência de maioria absoluta para deliberar, que seria 51. Sem abstenções, a maioria simples entre 60 votos é 31. Já a aprovação por maioria absoluta exige 51 votos, porque a base continua sendo o total de 100 membros. A está correta. B confunde as bases de cálculo. C troca maioria absoluta por unanimidade. D usa números sem correspondência com as exigências e chega a exigir mais votos que os presentes, com fundamentação incorreta."
+    },
+    {
+      "n": 3,
+      "difficulty": "Fácil",
+      "q": "Para apresentar projeto de lei de iniciativa popular federal à Câmara dos Deputados, a Constituição exige:",
+      "options": [
+        "Assinaturas de 1% dos eleitores de um único Estado, sem requisito nacional.",
+        "Apoio de 5% do eleitorado nacional, distribuído livremente entre Municípios.",
+        "Subscrição de 1% do eleitorado nacional, em pelo menos cinco Estados, com ao menos 0,3% dos eleitores de cada um deles.",
+        "Aprovação prévia por maioria absoluta das Assembleias Legislativas, independentemente de assinaturas."
+      ],
+      "answer": 2,
+      "explanation": "C reproduz a combinação de requisitos do art. 61, § 2º: percentual nacional mínimo, distribuição por pelo menos cinco Estados e percentual mínimo de eleitores em cada um deles. A elimina a exigência nacional e a distribuição territorial. B troca os percentuais e o critério territorial. D confunde participação popular com manifestações institucionais de Assembleias, ligadas a outra hipótese de iniciativa. As assinaturas iniciam o procedimento e não dispensam votação parlamentar."
+    },
+    {
+      "n": 4,
+      "difficulty": "Fácil",
+      "q": "Quanto às contas prestadas anualmente pelo Presidente da República, qual é a distribuição constitucional de atribuições?",
+      "options": [
+        "O TCU julga definitivamente as contas, sem participação do Congresso.",
+        "O Senado emite parecer prévio e o Presidente da Câmara realiza o julgamento.",
+        "O Congresso emite parecer consultivo e o STF realiza o julgamento ordinário das contas.",
+        "O TCU emite parecer prévio em sessenta dias do recebimento, e o Congresso julga as contas."
+      ],
+      "answer": 3,
+      "explanation": "D está correta pela combinação dos arts. 71, I, e 49, IX. O TCU aprecia as contas anuais do Presidente e emite parecer prévio; o julgamento é do Congresso. A transporta para esse caso a competência do Tribunal de julgar contas de administradores prevista no art. 71, II. B atribui funções a órgãos que não receberam essa competência. C inventa um julgamento ordinário dessas contas pelo STF e altera a função constitucional do Congresso."
+    },
+    {
+      "n": 5,
+      "difficulty": "Média",
+      "q": "O Presidente veta apenas uma palavra de um inciso aprovado pelo Congresso e afirma que o veto será mantido automaticamente se não for apreciado em trinta dias. Assinale a avaliação correta.",
+      "options": [
+        "As duas afirmações são corretas, porque veto parcial admite qualquer recorte e o prazo parlamentar é fatal.",
+        "O recorte é inválido, pois deve alcançar unidade textual integral; o decurso do prazo provoca inclusão na ordem do dia e sobrestamento, não manutenção automática.",
+        "O recorte é válido, mas o veto será automaticamente derrubado depois dos trinta dias.",
+        "O veto só poderia abranger a lei inteira e seria apreciado pelo Senado em votação secreta."
+      ],
+      "answer": 1,
+      "explanation": "B está correta. O veto parcial deve abranger texto integral de artigo, parágrafo, inciso ou alínea, não uma palavra isolada. O prazo de trinta dias não cria decisão tácita: vencido sem deliberação, incide a disciplina da ordem do dia e do sobrestamento do art. 66, § 6º. A aceita dois erros. C aceita o recorte e inventa rejeição tácita. D ignora a possibilidade de veto parcial e troca a sessão conjunta com votação aberta por decisão exclusiva e secreta do Senado."
+    },
+    {
+      "n": 6,
+      "difficulty": "Média",
+      "q": "Uma medida provisória não foi convertida em lei. O Congresso também não editou decreto legislativo nos sessenta dias posteriores à sua perda de eficácia. Como ficam as relações constituídas e os atos praticados durante sua vigência?",
+      "options": [
+        "Todos se tornam automaticamente inexistentes, sem qualquer regra constitucional de preservação.",
+        "A MP volta a vigorar para criar novas relações até o fim da legislatura.",
+        "Conservam-se regidos pela MP, sem que isso autorize a criação indefinida de novas relações sob a norma que perdeu eficácia.",
+        "O Presidente deve reeditar obrigatoriamente a mesma MP na mesma sessão legislativa."
+      ],
+      "answer": 2,
+      "explanation": "C aplica o art. 62, § 11. A regra de perda de eficácia desde a edição convive com uma disciplina constitucional das relações jurídicas produzidas na vigência. Se não houver decreto legislativo no prazo, essas relações e atos conservam-se regidos pela MP. A ignora essa preservação. B transforma preservação de efeitos em renovação da vigência. D contraria a vedação de reedição, na mesma sessão legislativa, de MP rejeitada ou que perdeu eficácia por decurso de prazo."
+    },
+    {
+      "n": 7,
+      "difficulty": "Média",
+      "q": "O Presidente pretende modificar uma parte do projeto de LOA. A votação dessa parte já começou na comissão mista, mas ainda não ocorreu em Plenário. Ao mesmo tempo, uma emenda parlamentar indica anulação de dotação de serviço da dívida como fonte para aumentar outra despesa. À luz da Constituição:",
+      "options": [
+        "A mensagem presidencial ultrapassa o marco permitido e a fonte indicada pela emenda parlamentar é constitucionalmente protegida contra essa anulação.",
+        "A mensagem ainda é livremente admitida até a votação em Plenário e qualquer dotação pode financiar a emenda.",
+        "A mensagem é tardia, mas a fonte da emenda é sempre válida se a nova despesa for socialmente relevante.",
+        "A mensagem depende apenas de autorização do TCU, e a emenda depende de autorização do Banco Central."
+      ],
+      "answer": 0,
+      "explanation": "A reúne as duas conclusões corretas. O art. 166, § 5º, permite a mensagem antes do início, na comissão mista, da votação da parte que se pretende alterar. O § 3º protege dotações de serviço da dívida contra a anulação usada como fonte para essa emenda. B desloca o marco para o Plenário e ignora a proteção. C usa relevância social para afastar uma restrição expressa. D atribui ao TCU e ao Banco Central autorizações que não correspondem ao procedimento constitucional."
+    },
+    {
+      "n": 8,
+      "difficulty": "Média",
+      "q": "Sobre as competências monetárias e as disponibilidades de caixa, assinale a alternativa correta.",
+      "options": [
+        "O Banco Central pode emprestar diretamente ao Tesouro sempre que houver déficit aprovado no orçamento.",
+        "As disponibilidades de caixa de todos os Municípios devem ser obrigatoriamente depositadas no Banco Central.",
+        "A autorização de comprar títulos do Tesouro elimina a proibição de empréstimos ao governo.",
+        "O Banco Central pode comprar e vender títulos do Tesouro para regular moeda ou juros, sem afastar a proibição constitucional de empréstimos ao Tesouro."
+      ],
+      "answer": 3,
+      "explanation": "D distingue a operação de política monetária autorizada pelo art. 164, § 2º, da proibição de empréstimos do § 1º. A inventa uma exceção geral por déficit orçamentário. B troca a regra das disponibilidades de caixa: as da União ficam no Banco Central; as dos demais entes abrangidos pelo § 3º ficam em instituições financeiras oficiais, ressalvados os casos legais. C trata competências distintas como se uma revogasse a limitação da outra."
+    },
+    {
+      "n": 9,
+      "difficulty": "Difícil",
+      "q": "Analise duas situações. I: Congresso e Executivo não efetivam, por noventa dias, as medidas cabíveis referentes à sustação de um contrato. II: um processo de concessão inicial de aposentadoria chega à Corte de Contas dois anos após a concessão administrativa. Qual conclusão observa o art. 71 e o Tema 445 do STF?",
+      "options": [
+        "Em I, o TCU nunca poderá decidir; em II, os cinco anos começam sempre na concessão administrativa.",
+        "Em I, o TCU decidirá a respeito; em II, os cinco anos para julgamento da legalidade contam da chegada do processo à Corte de Contas.",
+        "Em I, o TCU substitui o Congresso desde o primeiro dia em qualquer sustação contratual; em II, não há limite temporal para o exame inicial.",
+        "Em I, o contrato se torna definitivamente regular; em II, os cinco anos começam apenas quando o interessado pedir prioridade."
+      ],
+      "answer": 1,
+      "explanation": "B combina corretamente a consequência da omissão prevista no art. 71, § 2º, com o marco inicial do Tema 445. A sustação contratual tem atuação inicial do Congresso, mas a inércia por noventa dias não impede o TCU de decidir a respeito. Para concessão inicial de aposentadoria, reforma ou pensão, o prazo da tese conta da chegada à Corte de Contas. A nega a competência posterior e usa marco incorreto. C apaga a sequência contratual e o limite temporal. D inventa regularização automática e marco dependente de requerimento."
+    },
+    {
+      "n": 10,
+      "difficulty": "Difícil",
+      "q": "Uma emenda individual ao projeto de LOA respeita o limite constitucional de 2% da receita corrente líquida do exercício anterior ao encaminhamento, considerada no conjunto das emendas individuais. Seu autor afirma que a execução obrigatória dispensa comprovar a aplicação dos recursos e permite ignorar impedimentos técnicos. Assinale a conclusão adequada.",
+      "options": [
+        "A afirmação é correta, pois orçamento impositivo substitui todas as exigências de fiscalização.",
+        "O limite de 2% é aplicado separadamente a cada parlamentar, que decide se deseja prestar contas.",
+        "O respeito ao percentual não dispensa controle, transparência nem as condições constitucionais de execução, inclusive o tratamento dos impedimentos técnicos.",
+        "As emendas individuais nunca possuem execução obrigatória, ainda que preencham todos os requisitos."
+      ],
+      "answer": 2,
+      "explanation": "C é correta. Percentual de aprovação e condições de execução são planos diferentes. O regime obrigatório do art. 166 convive com impedimentos técnicos, limites fiscais, execução equitativa e fiscalização; a jurisprudência da ADPF 854 reforça transparência e rastreabilidade. A torna o regime impositivo uma imunidade ao controle. B confunde o limite global com uma cota de 2% para cada parlamentar e torna facultativo o dever de prestar contas. D nega a obrigatoriedade constitucional em vez de reconhecer suas condições."
+    }
+  ],
+  "summary": [
+    {
+      "n": 1,
+      "difficulty": "Fácil",
+      "q": "Uma proposta de emenda à Constituição foi regularmente apresentada. Qual procedimento de aprovação e promulgação está correto?",
+      "options": [
+        "Maioria absoluta em turno único de cada Casa, seguida de sanção presidencial.",
+        "Três quintos em dois turnos em cada Casa, com promulgação pelas Mesas da Câmara e do Senado, sem sanção presidencial.",
+        "Maioria simples em sessão conjunta, com promulgação exclusiva pelo Presidente.",
+        "Dois terços apenas no Senado, dispensada a votação na Câmara."
+      ],
+      "answer": 1,
+      "explanation": "B corresponde ao art. 60, §§ 2º e 3º. Cada Casa precisa aprovar a PEC em dois turnos por três quintos de seus membros. As Mesas promulgam a emenda e não há sanção ou veto. A confunde o quórum da lei complementar e acrescenta sanção inexistente. C troca votação em cada Casa por sessão conjunta com maioria simples. D utiliza fração incorreta e elimina a participação da Câmara."
+    },
+    {
+      "n": 2,
+      "difficulty": "Fácil",
+      "q": "Qual alternativa descreve corretamente a relação entre PPA, LDO e LOA?",
+      "options": [
+        "A LOA substitui integralmente o PPA quando prevê recursos suficientes.",
+        "A LDO executa pagamentos e dispensa autorização anual de despesas.",
+        "O PPA julga contas, a LDO arrecada impostos e a LOA disciplina crimes financeiros.",
+        "O PPA organiza diretrizes, objetivos e metas; a LDO orienta prioridades e a elaboração do orçamento; a LOA estima receitas e fixa despesas."
+      ],
+      "answer": 3,
+      "explanation": "D apresenta as funções complementares das três peças. O PPA organiza planejamento; a LDO orienta a elaboração orçamentária com prioridades e diretrizes fiscais; a LOA trata da programação anual de receitas e despesas. A elimina indevidamente a compatibilidade entre as peças. B confunde lei de diretrizes com execução financeira. C atribui às leis funções de órgãos e conteúdos que não definem sua função constitucional."
+    },
+    {
+      "n": 3,
+      "difficulty": "Média",
+      "q": "Uma lei de iniciativa parlamentar cria cargos na administração direta federal, em matéria constitucionalmente reservada à iniciativa presidencial. Posteriormente, o Presidente a sanciona. Segundo o entendimento do STF:",
+      "options": [
+        "A sanção não convalida a usurpação da iniciativa reservada, permanecendo o vício formal.",
+        "A sanção corrige necessariamente o vício, pois equivale à apresentação retroativa do projeto.",
+        "A lei só teria vício se também contrariasse materialmente algum direito fundamental.",
+        "O defeito desaparece se o projeto tiver sido aprovado por unanimidade."
+      ],
+      "answer": 0,
+      "explanation": "A está correta. A reserva constitucional de iniciativa integra o processo de formação da lei e não é suprida por concordância posterior. B trata a sanção como iniciativa retroativa, em desacordo com o STF. C confunde inconstitucionalidade formal e material: o vício de origem pode existir independentemente de conteúdo materialmente incompatível. D usa o tamanho da maioria para afastar uma exigência que não depende do número de votos. O Tema 917 não autoriza ignorar reserva expressa sobre criação de cargos."
+    },
+    {
+      "n": 4,
+      "difficulty": "Média",
+      "q": "A respeito de créditos adicionais e duodécimos, assinale a alternativa correta.",
+      "options": [
+        "Crédito suplementar cria dotação para despesa sem previsão específica e pode ser aberto sem indicar recursos.",
+        "Crédito especial reforça dotação já existente e dispensa autorização legislativa.",
+        "Crédito extraordinário atende despesa imprevisível e urgente; os recursos do art. 168 devem ser entregues até o dia vinte de cada mês.",
+        "Duodécimos são liberados livremente pelo Executivo depois que ele avaliar a conveniência política de cada órgão."
+      ],
+      "answer": 2,
+      "explanation": "C combina a hipótese constitucional do crédito extraordinário com o prazo dos duodécimos. A inverte a função do suplementar, que reforça dotação existente, e afasta indevidamente a indicação de recursos. B atribui ao especial a função do suplementar e elimina a autorização legislativa. D contraria a garantia de autonomia financeira: a entrega não fica subordinada à conveniência política do Executivo. A abertura extraordinária depende dos requisitos constitucionais, e não apenas do nome dado ao crédito."
+    },
+    {
+      "n": 5,
+      "difficulty": "Difícil",
+      "q": "Uma MP perdeu eficácia por decurso de prazo. Na mesma sessão legislativa, o Presidente pretende reeditá-la, alegando apoio da maioria absoluta da Câmara. Paralelamente, uma emenda à LOA busca anular dotação de pessoal para financiar nova ação. Qual avaliação é correta?",
+      "options": [
+        "As duas iniciativas são válidas porque a maioria parlamentar pode afastar qualquer restrição procedimental ou orçamentária.",
+        "A reedição é vedada na mesma sessão legislativa, e a dotação de pessoal não pode ser anulada como fonte nessa hipótese de emenda à LOA.",
+        "A reedição depende apenas de maioria absoluta, e a anulação só seria proibida se atingisse recursos de saúde.",
+        "A reedição é livre depois de quinze dias úteis, e a anulação depende exclusivamente de autorização do Presidente."
+      ],
+      "answer": 1,
+      "explanation": "B está correta. O art. 62, § 10, proíbe reeditar MP caduca ou rejeitada na mesma sessão legislativa. A exceção de maioria absoluta do art. 67 refere-se a matéria de projeto de lei rejeitado e não se transfere à MP. O art. 166, § 3º, protege dotações de pessoal e encargos contra a anulação usada como fonte nessa emenda. A e C ignoram limites constitucionais. D importa o prazo de sanção ou veto para hipótese diferente e inventa autorização presidencial suficiente para afastar a proteção."
+    }
+  ]
+}

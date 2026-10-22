@@ -1,0 +1,549 @@
+1 COMO ESTUDAR ESTE MÓDULO
+
+O Poder Legislativo decide regras que organizam a vida coletiva e fiscaliza quem governa. Para compreender seu funcionamento, você precisa saber quem participa de cada decisão, qual procedimento deve ser seguido e quais limites protegem as instituições e as pessoas envolvidas. É esse percurso que faremos: da organização do Congresso às garantias e responsabilidades de seus integrantes.
+
+Na primeira leitura, acompanhe as explicações e os exemplos antes de tentar decorar números. Quando aparecer uma palavra técnica, procure a situação concreta que ela descreve. Na segunda leitura, resolva os testes sem olhar a resposta. Para aprofundar, volte aos trechos de jurisprudência e compare cada entendimento com o artigo constitucional indicado.
+
+Ao terminar, você deve conseguir explicar por que a Câmara e o Senado representam interesses diferentes, distinguir suas competências e resolver casos sobre quórum, CPI, imunidades e perda de mandato. O núcleo de lei seca está nos arts. 2º e 44 a 58 da Constituição. O processo legislativo será estudado em módulo próprio; aqui entram apenas as conexões necessárias ao funcionamento das Casas. [1]
+
+LEITURA ORIENTADA
+
+• Primeiro percurso: organização dos Poderes, composição do Congresso e cálculo de maiorias.
+• Segundo percurso: reuniões, Mesas e competências do Congresso, da Câmara e do Senado.
+• Terceiro percurso: comissões, investigação parlamentar e direitos de quem presta depoimento.
+• Quarto percurso: imunidades, incompatibilidades, perda do mandato e substituição por suplente.
+• Ao final: 10 questões de fixação, 5 de revisão, sínteses e checklist de domínio.
+
+2 SEPARAÇÃO DOS PODERES E FUNÇÕES DO LEGISLATIVO
+
+Imagine que a mesma autoridade pudesse criar todas as regras, executá-las e decidir sozinha se as cumpriu. Faltaria um controle independente sobre sua atuação. A separação dos Poderes distribui funções entre instituições e organiza mecanismos de fiscalização recíproca. A Constituição identifica Legislativo, Executivo e Judiciário como Poderes da União independentes e harmônicos entre si.
+
+Independência significa que um Poder não está hierarquicamente subordinado a outro. Harmonia exige que cada um exerça suas atribuições respeitando o espaço constitucional dos demais. Isso não impede divergências: uma fiscalização pode ser incômoda ao governante e, ainda assim, constituir exercício legítimo da competência parlamentar.
+
+As funções típicas do Legislativo são legislar e fiscalizar. Legislar é participar da produção de normas; fiscalizar é controlar a atuação estatal, especialmente a execução de políticas e o uso dos recursos públicos. Por isso, estudar o Legislativo apenas como uma fábrica de leis deixa de fora parte essencial de sua atuação.
+
+Funções atípicas são tarefas que não correspondem à atividade predominante daquele Poder, mas que a Constituição lhe atribui. Ao organizar seus serviços e administrar seus servidores, uma Casa exerce atividade administrativa. Ao processar e julgar autoridades por crime de responsabilidade nas hipóteses constitucionais, o Senado exerce função julgadora de natureza político-jurídica.
+
+Exemplo explicado. O Senado abre concurso para preencher cargos administrativos: está administrando sua estrutura. Uma comissão realiza audiência pública sobre política de saúde: está exercendo fiscalização e participação no debate legislativo. O Senado julga o Presidente por crime de responsabilidade: exerce a competência específica do art. 52, I. Identificar o órgão, sozinho, não revela qual função está sendo desempenhada.
+
+Aprofundamento. O sistema de freios e contrapesos permite controles recíprocos previstos na Constituição. O veto presidencial e sua apreciação pelo Congresso são um exemplo. A aprovação, pelo Senado, de determinadas autoridades indicadas pelo Executivo é outro. Esses controles não autorizam a criação de poderes de intervenção sem fundamento constitucional. Uma discordância política não transforma qualquer medida em controle legítimo.
+
+Teste de compreensão. A afirmação de que o Legislativo fiscaliza o Executivo contradiz a independência entre os Poderes?
+
+Resposta comentada. Não. A independência afasta a subordinação hierárquica, mas convive com controles constitucionais. A fiscalização integra o desenho da separação dos Poderes, desde que respeite suas competências e limites.
+
+Guarde o essencial. Classifique a atividade pelo que o órgão faz naquele caso. No Legislativo, produção normativa e fiscalização são típicas; administração interna e determinados julgamentos são atípicos.
+
+3 CONGRESSO NACIONAL E REPRESENTAÇÃO POLÍTICA
+
+O Congresso Nacional é composto pela Câmara dos Deputados e pelo Senado Federal. A existência de duas Casas recebe o nome de bicameralismo. As Casas participam da organização do Legislativo federal com bases representativas diferentes, sem relação de superioridade entre elas. [1]
+
+A Câmara representa o povo. Seus integrantes são eleitos pelo sistema proporcional em cada Estado, no Distrito Federal e em cada Território. Nesse sistema, a distribuição das cadeiras considera a votação das organizações partidárias e dos candidatos segundo as regras eleitorais. Não basta identificar isoladamente os nomes mais votados para explicar toda a distribuição das vagas.
+
+O mandato de deputado federal dura quatro anos. A Constituição determina que lei complementar estabeleça o número total de deputados e a representação de cada Estado e do Distrito Federal, proporcionalmente à população, respeitados os limites de oito a setenta por unidade. Cada Território elege quatro deputados. Território e Estado não têm a mesma regra de representação.
+
+O Senado representa os Estados e o Distrito Federal. Cada um elege três senadores, pelo princípio majoritário, com mandato de oito anos. A representação é igual para as unidades federativas abrangidas, independentemente da população. Cada senador é eleito com dois suplentes. Os Territórios não elegem senadores.
+
+Exemplo explicado. Um Estado bastante populoso e outro pouco populoso elegem três senadores cada. Na Câmara, a população influencia a distribuição das cadeiras dentro dos limites constitucionais. As duas Casas combinam representação popular e equilíbrio federativo. Não se trata de reproduzir duas vezes exatamente a mesma lógica.
+
+Critério   Câmara dos Deputados   Senado Federal
+Representação   Povo   Estados e Distrito Federal
+Sistema eleitoral   Proporcional   Majoritário
+Mandato   Quatro anos   Oito anos
+Distribuição   Proporcional à população com limites constitucionais   Três por Estado e pelo Distrito Federal
+Territórios   Quatro deputados por Território   Sem representação própria
+Renovação   Integral a cada quatro anos   Alternada por um terço e dois terços a cada quatro anos
+
+No Senado, o mandato de oito anos convive com eleições a cada quatro anos. Em uma eleição, renova-se uma das três vagas da unidade; na seguinte, renovam-se as outras duas. Assim, o início de uma legislatura não provoca a substituição integral dos senadores. Legislatura é um período de quatro anos de funcionamento parlamentar, não o prazo de todos os mandatos.
+
+Aprofundamento. O total de cadeiras da Câmara depende da legislação e de decisões aplicáveis ao período eleitoral. O art. 45 não fixa, por si, um total permanente. Para resolver questão de lei seca, priorize a fonte normativa indicada no enunciado e os limites de oito e setenta. Se a questão pedir a composição concreta de determinada eleição, confira a regra vigente para aquele pleito.
+
+Teste de compreensão. Um senador eleito para oito anos precisa deixar o cargo quando terminar a legislatura de quatro anos em que tomou posse?
+
+Resposta comentada. Não. O mandato senatorial atravessa duas legislaturas. O período de organização dos trabalhos parlamentares e o prazo do mandato são conceitos diferentes.
+
+4 QUÓRUM DE PRESENÇA E QUÓRUM DE APROVAÇÃO
+
+Quórum é a quantidade exigida para que um ato parlamentar possa ocorrer ou uma proposta seja aprovada. A primeira pergunta é quantos membros precisam estar presentes; a segunda é quantos votos favoráveis são necessários. Misturar essas perguntas é uma fonte frequente de erro. [1]
+
+O art. 47 estabelece a regra geral: as Casas e suas comissões deliberam por maioria dos votos, desde que esteja presente a maioria absoluta de seus membros. A presença mínima usa a composição total do órgão. Já a maioria simples, nessa regra, acompanha os votos computáveis na deliberação. As regras regimentais disciplinam abstenções e outros detalhes; não presuma que toda pessoa presente necessariamente votou a favor ou contra.
+
+Maioria absoluta é o primeiro número inteiro superior à metade do total de membros. Em um colegiado hipotético com 100 integrantes, corresponde a 51; com 101, também corresponde a 51. A expressão informal “metade mais um” pode confundir quando o total é ímpar. A base é sempre o total de membros, e não apenas os presentes.
+
+Exemplo explicado. Uma comissão hipotética possui 20 membros e 12 estão presentes. A exigência de presença de maioria absoluta foi atendida, pois seriam necessários 11. Se todos os 12 votarem validamente, sem abstenções, sete votos favoráveis bastam para a maioria simples. Se a Constituição exigir maioria absoluta para aprovar aquela matéria, serão necessários 11 votos favoráveis, mesmo com apenas 12 presentes.
+
+Maioria qualificada é uma fração especial, como dois terços ou três quintos, exigida pela Constituição para determinada decisão. Não substitua uma fração por outra porque ambas parecem indicar uma votação mais rigorosa. A autorização da Câmara prevista no art. 51, I exige dois terços. O requerimento de CPI exige um terço; trata-se de requisito para criar a investigação, e não de uma maioria de aprovação em Plenário.
+
+Regra   Base de cálculo   Aplicação neste módulo
+Maioria absoluta   Total de membros do órgão   Presença mínima do art. 47 e hipóteses expressas de decisão
+Maioria simples   Votos computáveis na deliberação   Regra de aprovação do art. 47 com presença mínima satisfeita
+Dois terços   Total de membros da Casa nas hipóteses constitucionais   Autorização da Câmara e condenação no Senado nos casos estudados
+Um terço   Membros da Casa ou de cada Casa em CPI mista   Requerimento de criação de CPI
+
+Aprofundamento. No Senado, composto por 81 membros, a maioria absoluta corresponde a 41 e dois terços correspondem a 54. Se a questão descreve uma comissão, utilize a composição da comissão. O número de integrantes do Senado não serve automaticamente de base para todos os seus órgãos internos.
+
+Teste de compreensão. Em uma votação que exige maioria absoluta, a presença de menos parlamentares reduz o número de votos favoráveis necessário?
+
+Resposta comentada. Não. A maioria absoluta considera a composição total. A redução da presença pode impedir a aprovação ou mesmo a deliberação, mas não diminui a exigência constitucional.
+
+5 LEGISLATURA REUNIÕES E MESAS
+
+5.1 Os diferentes períodos de trabalho
+
+Legislatura é o período de quatro anos. Sessão legislativa ordinária é o ciclo anual de trabalhos. Sessão, em sentido de reunião parlamentar, é um encontro concreto para debater ou deliberar. Uma mesma sessão legislativa contém várias reuniões. Essa diferença explica por que faltar a sessões ordinárias não significa faltar a anos inteiros de trabalho. [1]
+
+O Congresso reúne-se anualmente de 2 de fevereiro a 17 de julho e de 1º de agosto a 22 de dezembro. Se as datas de reunião recaírem em sábado, domingo ou feriado, transfere-se a reunião para o primeiro dia útil subsequente. A interrupção da sessão legislativa depende da aprovação do projeto da Lei de Diretrizes Orçamentárias, a LDO. O detalhe cobrado é a LDO, não a aprovação de qualquer peça orçamentária.
+
+Cada Casa realiza sessões preparatórias a partir de 1º de fevereiro do primeiro ano da legislatura para posse e eleição da Mesa. A Mesa é o órgão de direção dos trabalhos da Casa. Seu mandato é de dois anos, enquanto a legislatura dura quatro. Portanto, não confunda o tempo do mandato parlamentar, o período da legislatura e o mandato na direção da Casa.
+
+5.2 Eleição das Mesas e presidência do Congresso
+
+O art. 57, § 4º veda a recondução para o mesmo cargo na eleição imediatamente subsequente. Na ADI 6.524, o STF aplicou essa vedação às Casas federais dentro da mesma legislatura, admitindo nova eleição para o mesmo cargo quando se inicia legislatura diferente. Essa distinção precisa aparecer na resposta: a palavra “reeleição”, isolada, não resolve a questão. [2]
+
+Exemplo explicado. Um integrante da Mesa da Câmara ocupa determinado cargo no primeiro biênio de uma legislatura. Ele não pode ser reconduzido ao mesmo cargo no segundo biênio dessa mesma legislatura. Uma eleição em nova legislatura tem enquadramento diferente segundo a interpretação firmada para as Casas federais.
+
+Aprofundamento. Não transporte automaticamente esse resultado para Assembleias Legislativas. O STF estabeleceu para as Mesas estaduais o limite de uma reeleição ou recondução consecutiva para o mesmo cargo, independentemente de mudança de legislatura, com regras de aplicação temporal nos julgados. Em prova, identifique primeiro se o enunciado trata da Câmara, do Senado ou de uma Assembleia. [2]
+
+A Mesa do Congresso Nacional é presidida pelo Presidente do Senado. Os demais cargos são exercidos alternadamente pelos ocupantes de cargos equivalentes da Câmara e do Senado. Essa composição não cria uma hierarquia do Senado sobre a Câmara. É uma regra de direção dos trabalhos do Congresso.
+
+5.3 Sessão conjunta e atuação unicameral
+
+Em sessão conjunta, deputados e senadores reúnem-se para uma finalidade comum, mas as Casas preservam sua identidade. A reunião conjunta não permite somar indistintamente todos os votos quando a Constituição e o procedimento exigem manifestação de cada Casa. Conhecer e deliberar sobre veto é um exemplo: a rejeição depende da maioria absoluta de deputados e de senadores.
+
+O art. 57, § 3º prevê reunião conjunta para inaugurar a sessão legislativa, elaborar o regimento comum e regular serviços comuns, receber o compromisso do Presidente e do Vice-Presidente da República e apreciar veto. Há outras hipóteses constitucionais. Por isso, não memorize essa lista como se ela esgotasse todas as reuniões conjuntas.
+
+Atuação unicameral significa deliberar como um único corpo. O art. 3º do ADCT previu essa forma para a revisão constitucional realizada após cinco anos da promulgação da Constituição. Essa revisão histórica não é o procedimento atual ordinário de reforma constitucional. A distinção importante aqui é que sessão conjunta e sessão unicameral não são sinônimos.
+
+5.4 Convocação extraordinária
+
+A convocação extraordinária permite trabalho parlamentar fora do período ordinário nas hipóteses do art. 57, § 6º. O Presidente do Senado convoca em situações expressas, como decretação de estado de defesa ou intervenção federal, pedido de autorização para estado de sítio e compromisso e posse do Presidente e do Vice-Presidente da República.
+
+Por urgência ou interesse público relevante, a convocação pode partir do Presidente da República, dos Presidentes da Câmara e do Senado ou de requerimento da maioria dos membros de ambas as Casas. Nas hipóteses do inciso II, exige-se aprovação da maioria absoluta de cada Casa. Durante a sessão extraordinária, o Congresso delibera apenas sobre a matéria da convocação, ressalvada a inclusão automática das medidas provisórias em vigor. É vedado o pagamento de parcela indenizatória em razão da convocação.
+
+Teste de compreensão. A existência de sessão conjunta transforma deputados e senadores em um único grupo de votos, sem distinção entre as Casas?
+
+Resposta comentada. Não. A identidade das Casas permanece. A sessão conjunta descreve a forma da reunião; ela não equivale à atuação unicameral nem elimina os quóruns próprios exigidos para cada Casa.
+
+6 QUEM DECIDE CADA MATÉRIA
+
+6.1 Congresso com participação presidencial e competências exclusivas
+
+Para localizar uma competência, procure o verbo utilizado. “Legislar”, “autorizar”, “julgar”, “tomar contas”, “aprovar escolha” e “sustar” indicam atos diferentes. Duas frases podem mencionar a mesma autoridade e, ainda assim, atribuir atos a órgãos distintos. [1]
+
+O art. 48 trata das matérias de competência da União sobre as quais o Congresso dispõe com sanção presidencial, ressalvadas as competências dos arts. 49, 51 e 52. Abrange, entre outros assuntos, tributos, orçamento e dívida pública, planos de desenvolvimento, limites territoriais, anistia, organização administrativa e judiciária, cargos públicos, criação e extinção de Ministérios, telecomunicações, sistema financeiro, moeda e subsídio dos ministros do STF.
+
+O art. 49 reúne competências exclusivas do Congresso, que não dependem de sanção presidencial. Faz sentido: se o Congresso fiscaliza o Executivo, a eficácia de certos atos de controle não pode depender de aprovação do próprio fiscalizado. Contudo, ausência de sanção não dispensa o procedimento parlamentar constitucionalmente adequado.
+
+Exemplo explicado. Uma lei sobre matéria tributária percorre o processo legislativo com a participação presidencial pertinente. Já a sustação de ato normativo do Executivo que excedeu o poder regulamentar decorre de competência exclusiva do Congresso. O segundo ato não precisa ser sancionado pelo Presidente para que o controle exista.
+
+O Congresso resolve definitivamente sobre tratados, acordos ou atos internacionais que acarretem encargos ou compromissos gravosos ao patrimônio nacional; autoriza guerra e paz nos termos constitucionais; e autoriza Presidente e Vice-Presidente a se ausentarem do País por período superior a quinze dias. A participação do Congresso na formação dos compromissos internacionais não significa que uma Casa isoladamente represente todo o Legislativo.
+
+Quanto às medidas de crise, é preciso distinguir a sequência de cada instituto. O estado de defesa é decretado pelo Presidente e submetido ao Congresso; o estado de sítio depende de autorização prévia do Congresso para sua decretação. O art. 49, IV também contempla a aprovação da intervenção federal e a suspensão dessas medidas. A expressão genérica “o Congresso aprova tudo depois” apagaria uma diferença decisiva. O detalhamento das crises constitucionais pertence ao módulo específico.
+
+Também são competências exclusivas fiscalizar e controlar atos do Executivo, inclusive da administração indireta; julgar anualmente as contas do Presidente e apreciar os relatórios de execução dos planos de governo; sustar atos normativos exorbitantes; escolher dois terços dos membros do TCU; autorizar referendo e convocar plebiscito. Referendo é consulta posterior ao ato; plebiscito, consulta prévia. Os verbos constitucionais associados são diferentes.
+
+A lista inclui ainda competências sobre concessões de rádio e televisão, atividades nucleares, terras indígenas, alienação ou concessão de grandes extensões de terras públicas, fixação de subsídios nas hipóteses constitucionais e estado de calamidade pública de âmbito nacional previsto no regime fiscal constitucional. Use os incisos do art. 49 para a memorização detalhada e os exemplos para compreender sua função institucional.
+
+Dispositivo   Órgão e característica   Referência para resolver a questão
+Art. 48   Congresso com participação presidencial   Dispor sobre matérias de competência da União
+Art. 49   Congresso em competência exclusiva   Atos próprios sem sanção presidencial
+Art. 51   Câmara em competência privativa   Autorização do processo e tomada de contas na omissão
+Art. 52   Senado em competência privativa   Julgamentos de responsabilidade e competências federativas
+
+6.2 Fiscalização e pedidos de informação
+
+O art. 50 permite à Câmara, ao Senado e a qualquer de suas comissões convocar Ministros de Estado, titulares de órgãos diretamente subordinados à Presidência e o Presidente do Comitê Gestor do Imposto sobre Bens e Serviços para prestar pessoalmente informações sobre assunto previamente determinado. A inclusão desse último cargo decorre da EC 132/2023. Ausência sem justificativa adequada importa crime de responsabilidade.
+
+As Mesas da Câmara e do Senado podem encaminhar pedidos escritos de informação às autoridades abrangidas. Recusa, falta de resposta no prazo de trinta dias ou prestação de informação falsa também recebem a consequência constitucional indicada no art. 50, § 2º. Repare na diferença: convocação pode partir da Casa ou de comissão; o pedido escrito previsto nesse parágrafo é atribuído à Mesa.
+
+Um Ministro também pode comparecer por iniciativa própria, mediante entendimento com a Mesa, para expor assunto relevante de seu Ministério. Comparecimento espontâneo, convite e convocação não devem ser tratados como uma única figura. A consequência jurídica de desatender convocação formal não pode ser automaticamente atribuída a qualquer convite.
+
+Exemplo explicado. Uma comissão convoca um Ministro para explicar atrasos em programa de sua área. O tema deve estar previamente definido. Já uma Mesa envia requerimento escrito de informações: nesse caso, a prova pode cobrar o prazo de trinta dias. Não confunda esse prazo com os sessenta dias das contas presidenciais nem com os quarenta e cinco dias da sustação da ação penal.
+
+6.3 Competências da Câmara dos Deputados
+
+A Câmara autoriza, por dois terços de seus membros, a instauração de processo contra o Presidente, o Vice-Presidente e Ministros de Estado nas hipóteses constitucionais. Essa autorização não é uma sentença condenatória. No caso do Presidente, o julgamento por crime comum cabe ao STF e o julgamento por crime de responsabilidade cabe ao Senado, conforme o enquadramento constitucional. Não use “a Câmara autoriza e o Senado julga” para todo e qualquer crime. [1]
+
+Se as contas do Presidente não forem apresentadas ao Congresso dentro de sessenta dias após a abertura da sessão legislativa, a Câmara procede à tomada de contas. Tomar contas, nesse contexto, é atuar diante da omissão. Julgar anualmente as contas é competência do Congresso, com auxílio técnico do TCU. A mesma matéria envolve funções diferentes em órgãos diferentes.
+
+A Câmara elabora seu regimento, dispõe sobre organização, funcionamento, polícia e criação, transformação ou extinção dos cargos, empregos e funções de seus serviços. O art. 51, IV lhe atribui iniciativa de lei para fixar a remuneração desses serviços, observados os parâmetros da LDO. Não converta a autonomia organizacional em poder irrestrito de fixar remuneração por simples ato interno. Também elege dois cidadãos para o Conselho da República nos termos do art. 89, VII.
+
+6.4 Competências do Senado Federal
+
+O Senado processa e julga o Presidente e o Vice-Presidente por crimes de responsabilidade. Julga também Ministros de Estado e Comandantes da Marinha, do Exército e da Aeronáutica por crimes dessa natureza conexos com os atribuídos ao Presidente ou ao Vice-Presidente. A conexão é parte da regra; sua retirada modifica o alcance da competência.
+
+O art. 52, II inclui, em crimes de responsabilidade, ministros do STF, membros do CNJ e do CNMP, Procurador-Geral da República e Advogado-Geral da União. Nos julgamentos dos incisos I e II, a presidência é exercida pelo Presidente do STF. A condenação exige dois terços dos votos do Senado e o texto constitucional prevê perda do cargo com inabilitação por oito anos para função pública, sem prejuízo das demais sanções judiciais cabíveis. [1]
+
+Outra competência é aprovar previamente a escolha de autoridades. O art. 52, III prevê voto secreto após arguição pública, por exemplo, nos casos constitucionais de magistrados, ministros do TCU indicados pelo Presidente, Governador de Território, direção do Banco Central e PGR. A lei pode indicar outros cargos. Para chefes de missão diplomática permanente, o inciso IV prevê voto secreto e arguição em sessão secreta. A prova costuma trocar o caráter público ou secreto da arguição.
+
+O Senado autoriza operações externas de natureza financeira de interesse dos entes indicados na Constituição, inclusive Municípios e Territórios. Estabelece limites e condições para dívida, crédito e garantias conforme cada inciso. A função se relaciona ao equilíbrio federativo e financeiro, mas não se deve substituir os destinatários de um inciso pelos de outro: as enumerações constitucionais não são idênticas.
+
+O art. 52, X atribui ao Senado a suspensão da execução, no todo ou em parte, de lei declarada inconstitucional por decisão definitiva do STF. A competência pertence ao Senado, não à Câmara. A relação desse dispositivo com modalidades e efeitos do controle de constitucionalidade será aprofundada no módulo próprio; aqui, identifique o órgão e o ato constitucional.
+
+O Senado também aprova a exoneração de ofício do PGR antes do fim do mandato, por maioria absoluta e voto secreto; organiza seus próprios serviços e elabora regimento; elege dois cidadãos para o Conselho da República; e avalia periodicamente a funcionalidade do Sistema Tributário Nacional e o desempenho das administrações tributárias indicadas no art. 52, XV.
+
+Situação   Órgão competente   O que não confundir
+Autorização constitucional para processo contra o Presidente   Câmara por dois terços   Autorizar não significa condenar
+Crime de responsabilidade do Presidente   Senado   Crime comum segue competência constitucional diversa
+Contas presidenciais apresentadas regularmente   Congresso julga   TCU auxilia com parecer prévio
+Omissão das contas por sessenta dias   Câmara toma contas   Tomada por omissão não é julgamento anual
+Operação externa financeira municipal   Senado autoriza   Competência não restrita à União
+Sustação de ato normativo exorbitante do Executivo   Congresso   Não atribuir isoladamente a uma Casa
+
+Teste de compreensão. O Presidente apresentou regularmente as contas anuais. A Câmara pode julgá-las sozinha porque tem competência para tomar contas?
+
+Resposta comentada. Não. O julgamento anual compete ao Congresso. A tomada de contas pela Câmara atende à hipótese específica de omissão prevista no art. 51, II. A distinção exige observar tanto o verbo quanto a circunstância do caso.
+
+7 COMISSÕES E DIVISÃO DO TRABALHO PARLAMENTAR
+
+Uma Casa legislativa examina muitos assuntos simultaneamente. As comissões distribuem esse trabalho por temas ou finalidades e permitem análise mais concentrada. Há comissões permanentes, ligadas à organização contínua da Casa, e temporárias, criadas para finalidade delimitada. Uma CPI é uma espécie de comissão temporária com função investigativa. [1]
+
+Na formação das Mesas e comissões, deve-se assegurar, tanto quanto possível, a representação proporcional dos partidos ou blocos parlamentares. Essa regra conecta a composição dos órgãos internos à distribuição política de cadeiras. A expressão “tanto quanto possível” não equivale a liberdade de excluir arbitrariamente as minorias.
+
+As comissões podem realizar audiências públicas, receber petições, reclamações e representações, solicitar depoimentos e apreciar programas de obras e planos de desenvolvimento. A Constituição também lhes atribui discussão e votação de projetos que dispensarem a competência do Plenário segundo o regimento, salvo recurso de um décimo dos membros da Casa. Não existe uma regra geral segundo a qual todo projeto deve necessariamente ser votado pelo Plenário.
+
+Exemplo explicado. Um projeto sujeito a deliberação conclusiva é aprovado pela comissão competente. Se não houver o recurso regimental e constitucionalmente cabível, pode prosseguir sem votação do Plenário daquela Casa. Já uma audiência pública recolhe informações e posições da sociedade, sem se confundir com uma votação conclusiva de projeto.
+
+Aprofundamento. Durante o recesso, funciona uma comissão representativa do Congresso, eleita por suas Casas na última sessão ordinária do período legislativo. Suas atribuições são definidas no regimento comum, e sua composição reproduz, tanto quanto possível, a proporcionalidade partidária. Recesso não significa inexistência de qualquer organização parlamentar. [1]
+
+Teste de compreensão. Toda comissão possui automaticamente os mesmos poderes especiais de investigação de uma CPI?
+
+Resposta comentada. Não. As atribuições gerais das comissões e o regime específico de CPI são relacionados, mas distintos. Os poderes especiais do art. 58, § 3º dependem da constituição da comissão de inquérito segundo seus requisitos.
+
+8 CPI COMO INVESTIGAÇÃO PARLAMENTAR
+
+8.1 Requisitos e proteção das minorias
+
+CPI significa Comissão Parlamentar de Inquérito. Seu objetivo é investigar um fato de interesse público relacionado às competências parlamentares. A comissão reúne elementos para fiscalização, eventual produção legislativa e encaminhamento aos órgãos responsáveis pela responsabilização. Investigar não equivale a condenar. [1][3]
+
+A criação exige requerimento de um terço dos membros, fato determinado e prazo certo. Fato determinado delimita o que será apurado; prazo certo delimita a duração dos trabalhos. Na Câmara ou no Senado, o requerimento considera um terço dos integrantes da respectiva Casa. Na comissão mista, formada por deputados e senadores, exige-se um terço de cada Casa, e não um terço de uma soma indistinta.
+
+Preenchidos os requisitos constitucionais, a instalação constitui direito das minorias parlamentares. A maioria não pode transformar a criação em escolha inteiramente discricionária. Isso explica a fração de um terço: a investigação não depende de convencer previamente a maioria que poderá ser fiscalizada ou que sustenta politicamente o governo.
+
+Exemplo explicado. Parlamentares conseguem as assinaturas constitucionais e descrevem suspeitas em contratos identificados de determinado programa público, com prazo definido de investigação. Não basta a maioria alegar desinteresse político para impedir a CPI. Já uma proposta genérica para investigar tudo o que estiver errado no país carece da delimitação exigida.
+
+Aprofundamento. O fato determinado admite investigação de acontecimentos intimamente ligados ao núcleo inicialmente delimitado. Isso não autoriza uma devassa ilimitada. A conexão e o interesse público devem ser justificados. Prazo certo admite prorrogações nos limites constitucionais e regimentais; não significa investigação sem encerramento. [3]
+
+8.2 O alcance dos poderes de investigação
+
+A Constituição atribui à CPI poderes de investigação próprios das autoridades judiciais. A expressão reconhece instrumentos relevantes para apuração, mas não converte a comissão em órgão do Judiciário. A CPI pode requisitar documentos e informações, ouvir pessoas e, observados os requisitos jurídicos, deliberar sobre afastamento de determinados sigilos.
+
+A quebra de sigilo bancário permite acesso a movimentações financeiras; a de sigilo fiscal, a informações protegidas da esfera tributária; a de registros telefônicos, a dados como números, datas e duração das chamadas. As medidas precisam de decisão colegiada, fundamentação concreta e relação com o objeto investigado. A vontade isolada do presidente da CPI não substitui deliberação do colegiado.
+
+Dados sobre chamadas não são o conteúdo de uma conversa interceptada. Interceptação telefônica significa captar a comunicação nas condições legalmente disciplinadas e depende de ordem judicial. A CPI não pode determiná-la por conta própria. Também não pode ordenar busca e apreensão domiciliar nem decretar prisão preventiva: são exemplos de reserva de jurisdição.
+
+Medida   Competência da CPI   Condição ou limite
+Requisitar documentos   Admitida no âmbito da investigação   Pertinência com o objeto e respeito às proteções legais
+Afastar sigilo bancário ou fiscal   Admitida com requisitos   Decisão colegiada fundamentada e proporcional
+Obter dados e registros de chamadas   Admitida com requisitos   Não confundir com captar o conteúdo da comunicação
+Determinar interceptação telefônica   Não admitida diretamente   Depende de ordem judicial e requisitos legais
+Ordenar busca domiciliar   Não admitida diretamente   Proteção constitucional do domicílio
+Decretar prisão preventiva   Não admitida   CPI não exerce jurisdição cautelar penal
+Proferir condenação civil ou criminal   Não admitida   Responsabilização cabe aos órgãos competentes
+
+Exemplo explicado. A CPI relaciona depósitos específicos a contratos investigados e aprova, com fundamentação, acesso aos extratos pertinentes. O ato pode estar dentro de sua competência. Se a mesma comissão determina que a operadora passe a gravar futuras conversas de todos os familiares do investigado, altera tanto a natureza da medida quanto seu alcance: não basta chamá-la de quebra de sigilo para torná-la válida.
+
+Aprofundamento. Reserva de jurisdição é a exigência de decisão judicial para certas intervenções em direitos. Ela é mais específica que a possibilidade geral de o Judiciário revisar ilegalidades. A CPI também está sujeita a controle judicial quando ultrapassa seus poderes, mesmo em medidas que, em princípio, poderia adotar.
+
+8.3 Testemunha investigado e assistência jurídica
+
+Quem presta depoimento não perde seus direitos fundamentais. A testemunha tem dever de dizer a verdade sobre fatos que não a incriminem. Se a resposta puder produzir autoincriminação, a proteção ao silêncio incide também em seu favor. O investigado não deve ser submetido ao compromisso de dizer a verdade próprio da testemunha e pode ser assistido por advogado. [3]
+
+O silêncio protegido não é confissão nem fundamento suficiente para prisão. A presença de advogado deve permitir assistência efetiva e comunicação com o depoente. A CPI não pode substituir uma prisão cautelar que não tem competência para decretar por ameaça de flagrante simplesmente porque não gostou da resposta ou do exercício de um direito.
+
+Pode ocorrer prisão em flagrante em situação legalmente cabível. Essa possibilidade não dá à CPI competência geral para decretar prisão. A análise do comparecimento compulsório de investigado e de medidas de condução envolve jurisprudência própria e a condição concreta do depoente; não presuma que os deveres da testemunha possam ser integralmente impostos ao investigado.
+
+As conclusões da CPI são encaminhadas ao Ministério Público quando for o caso, para promover a responsabilidade civil ou criminal. O relatório não é uma sentença, não impõe automaticamente pena e não dispensa a análise dos órgãos competentes. A apuração pode ainda fundamentar providências legislativas e de controle.
+
+Teste de compreensão. Uma CPI pode prender preventivamente um investigado para garantir que ele responda a todas as perguntas?
+
+Resposta comentada. Não. A comissão não pode decretar prisão preventiva e deve respeitar a não autoincriminação. A frase contém dois erros independentes: atribui poder reservado ao Judiciário e transforma o dever de investigar em obrigação de o investigado produzir prova contra si.
+
+9 IMUNIDADES E OUTRAS PRERROGATIVAS
+
+9.1 O motivo das garantias
+
+Um representante precisa ter condições de fiscalizar autoridades e discutir temas controversos sem que mecanismos de intimidação paralisem o mandato. As imunidades parlamentares protegem a função institucional. Não são um certificado de impunidade nem uma vantagem disponível para ser usada em qualquer ato da vida privada. [1]
+
+Antes de resolver a questão, pergunte qual problema está em análise. Responsabilidade por opinião, palavra ou voto conduz à imunidade material. Prisão e sustação da ação penal conduzem às garantias formais. Competência do tribunal conduz ao foro. Uma dessas proteções não substitui a outra.
+
+Instituto   Pergunta principal   Efeito central
+Imunidade material   A manifestação está protegida pela função parlamentar   Inviolabilidade civil e penal no campo protegido
+Imunidade formal relativa à prisão   A prisão observa o regime constitucional   Proteção e controle parlamentar nas hipóteses previstas
+Sustação do processo   O crime é posterior à diplomação e houve deliberação válida   Possível suspensão do andamento da ação
+Foro por prerrogativa de função   Qual órgão judicial é competente   Define competência sem afastar responsabilidade
+
+9.2 Imunidade material e nexo funcional
+
+Deputados e senadores são invioláveis civil e penalmente por suas opiniões, palavras e votos no campo de proteção constitucional. A expressão nexo funcional significa ligação entre a manifestação e o exercício do mandato. Fora do recinto parlamentar, essa relação precisa ser examinada: uma publicação em rede social não se torna protegida apenas porque seu autor foi eleito. [4]
+
+Exemplo explicado. Uma deputada divulga o resultado de fiscalização de contrato público e critica a execução da política examinada. O caso apresenta relação com a atividade parlamentar, a ser analisada em seu contexto. Outra manifestação envolve desavença estritamente pessoal sem ligação com o mandato. O simples cargo da autora não basta para igualar as duas situações.
+
+As manifestações no interior da Casa recebem proteção especialmente ampla. Ainda assim, não se deve converter esse dado em imunidade automática para qualquer fato posterior. No Inq. 4.999, em 2026, a Primeira Turma do STF distinguiu o pronunciamento no Parlamento de sua divulgação posterior pelo próprio autor fora dele, ao receber denúncia por ofensas. Recebimento de denúncia permite o prosseguimento da ação; não equivale a condenação. [4]
+
+Aprofundamento. No Tema 950, o STF afastou a responsabilização civil objetiva do Estado por opiniões, palavras e votos cobertos pela imunidade. Quando a conduta ultrapassa seus limites, a eventual responsabilidade civil recai pessoalmente sobre o parlamentar, de forma direta e subjetiva. Não se transfere automaticamente ao Estado a indenização por se tratar de fala de agente político. [5]
+
+A prerrogativa protege a instituição e é irrenunciável. Isso significa que o titular não pode tratá-la como um direito patrimonial disponível para afastar conforme sua conveniência. A proteção civil e penal também não exclui, por si, a fiscalização político-disciplinar da própria Casa sobre decoro e abuso de prerrogativas.
+
+9.3 Prisão e o significado das vinte e quatro horas
+
+Desde a expedição do diploma, membros do Congresso não podem ser presos, salvo em flagrante de crime inafiançável, conforme o art. 53, § 2º. Diplomação é o ato da Justiça Eleitoral que certifica o resultado e a habilitação do eleito; posse é o ingresso no exercício do mandato. O marco constitucional da garantia não deve ser trocado pela posse. [1]
+
+Na hipótese excepcional prevista, os autos devem ser remetidos à Casa respectiva dentro de vinte e quatro horas. A Casa resolve sobre a prisão pelo voto da maioria de seus membros. A redação constitucional vincula as vinte e quatro horas à remessa dos autos. Ela não fixa nesse parágrafo um prazo de vinte e quatro horas para a Casa votar.
+
+Exemplo explicado. Uma questão afirma que, após receber os autos, a Câmara dispõe necessariamente de vinte e quatro horas para deliberar. A afirmação desloca o prazo: o texto constitucional exige o envio dos autos em vinte e quatro horas. Trocar o destinatário da obrigação altera o sentido da norma.
+
+Aprofundamento. Não extraia desse parágrafo a conclusão de que condenação criminal definitiva jamais pode resultar em prisão ou execução de pena. Prisão cautelar, flagrante e execução penal pertencem a momentos e regimes distintos. Questões jurisprudenciais sobre medidas cautelares impostas a parlamentares exigem exame do tipo de medida e de seu impacto no mandato. Para a literalidade, domine primeiro o fluxo do § 2º.
+
+9.4 Sustação da ação penal
+
+Recebida denúncia por crime ocorrido após a diplomação, o STF comunica a Casa respectiva. Partido político nela representado pode provocar o procedimento, e a Casa pode sustar o andamento da ação pelo voto da maioria de seus membros, até a decisão final. Trata-se de possibilidade constitucional sujeita a requisitos, não de suspensão automática sempre que alguém é eleito. [1]
+
+O pedido de sustação deve ser apreciado em quarenta e cinco dias, contados de seu recebimento pela Mesa Diretora. A sustação suspende a prescrição enquanto durar o mandato. Prescrição é a perda, pelo decurso do prazo legal, da possibilidade de exercício da pretensão punitiva ou executória nas condições previstas em lei. A Constituição impede que o tempo de suspensão parlamentar simplesmente funcione em favor da prescrição durante o mandato.
+
+Caso de comparação. Crime anterior à diplomação com denúncia recebida depois: o marco relevante do § 3º é a data do crime, não apenas a data da denúncia. Crime posterior à diplomação: pode entrar no mecanismo de sustação, desde que cumpridos os demais requisitos. Essa distinção foi aplicada pelo STF na AP 2.668, ao limitar a suspensão aos delitos posteriores à diplomação. [6]
+
+Etapa   Regra constitucional   Erro que deve ser evitado
+Marco do fato   Crime ocorrido após a diplomação   Usar apenas a data do recebimento da denúncia
+Iniciativa   Partido representado na Casa respectiva   Presumir suspensão automática pelo mandato
+Deliberação   Maioria dos membros da Casa   Trocar por maioria simples dos presentes
+Prazo do pedido   Quarenta e cinco dias do recebimento pela Mesa   Confundir com as vinte e quatro horas da remessa da prisão
+Prescrição   Suspensa enquanto durar o mandato em caso de sustação   Tratar a suspensão como extinção do crime
+
+9.5 Foro e permanência da competência
+
+O art. 53, § 1º estabelece julgamento perante o STF desde a expedição do diploma. A jurisprudência delimita a prerrogativa aos crimes praticados no cargo e em razão das funções. Há dois requisitos: vínculo temporal com o exercício do cargo e vínculo funcional entre o fato e a atividade exercida. Foro não é imunidade material: a conduta continua sujeita a julgamento. [1][7]
+
+O entendimento firmado em 2025 passou a preservar o foro para crimes praticados no cargo e em razão das funções mesmo depois de o agente deixar a função, inclusive quando a investigação ou a ação começa posteriormente. A orientação continuou sendo aplicada pelo STF em 2026. Por isso, a saída do cargo não deve ser usada, isoladamente, como motivo de remessa automática à primeira instância. [7]
+
+Exemplo explicado. Considere um delito hipotético cometido por parlamentar durante o mandato e diretamente relacionado a suas funções, cuja apuração se inicia após o encerramento do exercício. A saída do cargo, sozinha, não elimina o foro segundo essa orientação. Se o fato for exclusivamente privado e sem relação funcional, falta um dos pressupostos da prerrogativa. A análise deve começar pela natureza e pelo momento do fato.
+
+9.6 Testemunho Forças Armadas e estado de sítio
+
+Parlamentares não são obrigados a testemunhar sobre informações recebidas ou prestadas em razão do mandato, nem sobre as pessoas que lhes confiaram ou deles receberam informações. A proteção tem objeto específico; não significa dispensa geral de qualquer dever de testemunhar sobre toda situação da vida. [1]
+
+A incorporação de deputados e senadores às Forças Armadas depende de licença prévia da Casa respectiva, mesmo que sejam militares e mesmo em tempo de guerra. A Constituição preserva o exercício parlamentar diante dessa possibilidade de afastamento.
+
+As imunidades subsistem durante o estado de sítio. A suspensão exige voto de dois terços dos membros da Casa respectiva e somente alcança atos praticados fora do recinto do Congresso que sejam incompatíveis com a execução da medida. Os requisitos devem ser lidos em conjunto. Estado de sítio não produz suspensão automática, e o texto não estabelece autorização equivalente de suspensão no estado de defesa.
+
+Teste de compreensão. Um parlamentar pode invocar o foro para afirmar que uma acusação funcional não poderá ser julgada por ninguém?
+
+Resposta comentada. Não. Foro define o órgão judicial competente. Ele não elimina responsabilidade nem transforma uma acusação em fato protegido por imunidade material. A proteção por manifestação funcional, quando cabível, exige análise própria.
+
+10 INCOMPATIBILIDADES E MARCOS TEMPORAIS
+
+Incompatibilidades são proibições constitucionais destinadas a evitar conflitos entre interesses privados, vínculos administrativos e o exercício independente do mandato. O art. 54 distribui essas proibições entre dois momentos: a expedição do diploma e a posse. A cronologia integra a regra e precisa ser estudada junto com o conteúdo da vedação. [1]
+
+Desde a diplomação, o parlamentar não pode firmar ou manter contrato com pessoa jurídica de direito público, autarquia, empresa pública, sociedade de economia mista ou concessionária de serviço público, salvo contrato com cláusulas uniformes. Também não pode aceitar ou exercer cargo, função ou emprego remunerado, inclusive os demissíveis ad nutum, nessas entidades.
+
+Cláusulas uniformes são condições padronizadas, aplicáveis de forma geral, sem negociação de vantagem particular fundada no mandato. Um contrato comum de fornecimento de serviço em condições gerais ajuda a entender a exceção. A exceção contratual não transforma qualquer contrato com o poder público em permitido: verifique a padronização efetiva e o enquadramento da hipótese.
+
+Desde a posse, não pode ser proprietário, controlador ou diretor de empresa favorecida por contrato com pessoa jurídica de direito público, nem exercer nela função remunerada. Também não pode ocupar cargo ou função demissível ad nutum nas entidades mencionadas no inciso I, patrocinar causa em que uma delas seja interessada nem ser titular de mais de um cargo ou mandato público eletivo.
+
+Ad nutum designa a possibilidade de dispensa pela autoridade competente sem a estabilidade própria de certos vínculos. Patrocinar causa significa atuar na defesa de interesses na situação jurídica considerada. A proibição busca impedir que o mandato seja acumulado com atuação conflitante nos termos descritos pela Constituição.
+
+Marco   Grupo de proibições   Atenção ao texto
+Diplomação   Contratos com entidades enumeradas   Há exceção para cláusulas uniformes
+Diplomação   Cargo função ou emprego remunerado nessas entidades   Inclui vínculo demissível ad nutum
+Posse   Direção controle propriedade ou função remunerada em empresa favorecida   Exige o vínculo contratual constitucionalmente descrito
+Posse   Cargo ou função ad nutum patrocínio de causa e pluralidade de mandatos eletivos   Conferir cada alínea do inciso II
+
+Exemplo explicado. O eleito pretende continuar como diretor de empresa favorecida por contrato com pessoa jurídica de direito público depois de tomar posse. A análise não termina ao constatar que o emprego é privado: a Constituição alcança justamente o vínculo empresarial descrito no art. 54, II, a.
+
+Aprofundamento. As incompatibilidades do art. 54 precisam ser lidas com as hipóteses de preservação do mandato do art. 56. O parlamentar pode assumir determinadas funções expressamente enumeradas sem perder o mandato, com substituição nas condições constitucionais. Não se resolve a questão ignorando o dispositivo específico que autoriza o afastamento.
+
+Teste de compreensão. Todas as incompatibilidades constitucionais começam apenas depois da posse?
+
+Resposta comentada. Não. Parte delas já incide desde a expedição do diploma. Para memorizar com precisão, organize os impedimentos pelos dois marcos e confira a redação de cada alínea.
+
+11 PERDA DO MANDATO LICENÇAS E SUPLÊNCIA
+
+11.1 Decisão da Casa e declaração da Mesa
+
+O art. 55 prevê causas de perda do mandato e distribui a forma de reconhecimento da perda. Em alguns casos, a Casa decide; em outros, a Mesa declara. O fato de ambas as situações terminarem com a perda não torna iguais seus procedimentos. [1]
+
+Nos incisos I, II e VI, o texto prevê decisão da Câmara ou do Senado por maioria absoluta, mediante provocação da respectiva Mesa ou de partido representado no Congresso, assegurada ampla defesa. São as hipóteses de violação das incompatibilidades, procedimento incompatível com o decoro e condenação criminal transitada em julgado.
+
+Nos incisos III, IV e V, a perda é declarada pela Mesa: faltas a um terço das sessões ordinárias na sessão legislativa, ressalvadas licença ou missão autorizada; perda ou suspensão dos direitos políticos; e decretação pela Justiça Eleitoral nas hipóteses constitucionais. A Mesa age de ofício ou por provocação de qualquer de seus membros ou de partido representado no Congresso, assegurada ampla defesa.
+
+Hipótese   Referência   Regra do texto constitucional
+Violação de incompatibilidades   Art. 55 inciso I   Casa decide por maioria absoluta
+Quebra de decoro   Art. 55 inciso II   Casa decide por maioria absoluta
+Faltas nas condições constitucionais   Art. 55 inciso III   Mesa declara com ampla defesa
+Perda ou suspensão de direitos políticos   Art. 55 inciso IV   Mesa declara com ampla defesa
+Decretação pela Justiça Eleitoral   Art. 55 inciso V   Mesa declara com ampla defesa
+Condenação criminal definitiva   Art. 55 inciso VI   Regra expressa do § 2º exige decisão da Casa
+
+Decoro é o padrão de conduta compatível com a dignidade e as responsabilidades do mandato. Além das situações regimentais, a Constituição considera incompatíveis com o decoro o abuso de prerrogativas e a percepção de vantagens indevidas. A imunidade não impede que a própria Casa examine esse tipo de responsabilidade.
+
+Exemplo explicado. Uma deputada deixa de comparecer, sem licença ou missão autorizada, a um terço das sessões ordinárias da sessão legislativa. A hipótese é a do inciso III, cuja perda é declarada pela Mesa. Não se deve inventar votação por maioria absoluta no Plenário apenas porque ela existe em outros incisos.
+
+Aprofundamento. A aplicação do art. 55 a condenações criminais envolve decisões judiciais e hipóteses concretas discutidas na jurisprudência. O quadro reproduz a distribuição expressa dos §§ 2º e 3º para estudo de lei seca. Não a utilize como afirmação de que toda consequência de qualquer condenação penal depende sempre de escolha política da Casa. Questões que tragam precedente específico ou execução penal exigem exame desse contexto.
+
+Outro detalhe é a renúncia. Quando o parlamentar está submetido a processo que vise ou possa levar à perda do mandato nos termos do art. 55, os efeitos da renúncia ficam suspensos até as deliberações finais pertinentes. A simples entrega de uma carta não torna automaticamente sem objeto o procedimento constitucional em curso.
+
+11.2 Afastamentos que preservam o mandato
+
+O art. 56 permite ao deputado ou senador assumir certos cargos sem perder o mandato: Ministro de Estado, Governador de Território, Secretário de Estado, do Distrito Federal, de Território ou de Prefeitura de Capital, e chefe de missão diplomática temporária. A enumeração é específica. Secretário de qualquer Município não equivale a Secretário de Prefeitura de Capital; missão permanente não equivale a missão temporária. [1]
+
+Também não perde o mandato o parlamentar licenciado por doença ou, sem remuneração, para tratar de interesse particular, desde que este último afastamento não ultrapasse cento e vinte dias por sessão legislativa. A limitação de cento e vinte dias incide sobre o interesse particular nessa hipótese, não como prazo máximo geral de toda licença por doença.
+
+O suplente é convocado em caso de vaga, investidura nas funções previstas no artigo ou licença superior a cento e vinte dias. A regra de convocação não autoriza conceder licença particular além do limite constitucional: é preciso combinar os dispositivos. Uma licença por doença superior a cento e vinte dias, por exemplo, permite compreender a hipótese de convocação sem essa contradição.
+
+Se houver vaga sem suplente, realiza-se eleição para preenchê-la quando faltarem mais de quinze meses para o término do mandato. Quinze meses exatos não satisfazem a expressão “mais de quinze”. Na investidura em função do art. 56, I, o parlamentar pode optar pela remuneração do mandato. Opção não equivale a autorização de acumulação das duas remunerações.
+
+Exemplo explicado. Um senador assume o cargo de Ministro de Estado. O mandato pode ser preservado conforme o art. 56 e o suplente é convocado. Essa situação difere de perda do mandato: o afastamento admite retorno ao exercício parlamentar quando cessar a causa, observadas as regras pertinentes.
+
+Teste de compreensão. Uma licença particular de cento e cinquenta dias pode ser concedida sem perda do mandato apenas porque existe suplente disponível?
+
+Resposta comentada. Não. O art. 56, II preserva o mandato nessa modalidade apenas dentro do limite de cento e vinte dias por sessão legislativa, sem remuneração. A regra sobre suplência não elimina a condição da licença.
+
+12 LEITURA DA CONSTITUIÇÃO COM OBJETIVO
+
+Leia os dispositivos procurando respostas, não apenas palavras conhecidas. Primeiro identifique o sujeito da norma; depois o verbo, a condição, o prazo e a maioria exigida. Essa sequência ajuda a perceber pequenas trocas feitas pelas bancas. O botão Lei em Dia do M06 direciona ao conjunto do módulo na Central. [1]
+
+Trecho   Pergunta que a leitura deve responder   Ponto de atenção
+Arts. 2º e 44 a 46   Como se organizam os Poderes e a representação parlamentar   Povo Estados DF mandato e renovação
+Art. 47   Quantos precisam comparecer e quantos precisam votar favoravelmente   Presença e aprovação são exigências diferentes
+Arts. 48 e 49   Qual atuação exige participação presidencial   Sanção não se estende às competências exclusivas
+Art. 50   Quem convoca e quem pede informação escrita   Autoridades abrangidas e prazo de trinta dias
+Arts. 51 e 52   A Câmara autoriza toma contas ou julga   Distinguir competências da Câmara do Senado e do Congresso
+Art. 53   Qual garantia se aplica e a partir de quando   Diplomação remessa em vinte e quatro horas e sustação
+Arts. 54 a 56   O mandato é incompatível perdido ou preservado   Dois marcos e duas formas de reconhecer a perda
+Art. 57   Quando o Congresso funciona e quem o dirige   Calendário LDO Mesa e convocação extraordinária
+Art. 58   Como se organizam comissões e CPI   Um décimo para recurso e um terço para CPI
+
+13 QUESTÕES DE FIXAÇÃO
+
+As dez questões seguintes tratam apenas do conteúdo deste módulo. Resolva sem consultar o texto e explique por que as outras alternativas não servem. Distribuição: quatro fáceis, quatro médias e duas difíceis. As letras abaixo correspondem à ordem impressa; no exercício interativo, as alternativas podem aparecer em outra ordem.
+
+{{QUESTIONS}}
+
+14 SÍNTESE PARA REVISÃO
+
+O Congresso possui duas Casas. A Câmara representa o povo, com eleição proporcional e mandato de quatro anos. O Senado representa Estados e Distrito Federal, com três integrantes por unidade, eleitos majoritariamente por oito anos; a renovação alterna um e dois terços a cada quatro anos. A legislatura dura quatro anos.
+
+O art. 47 combina presença da maioria absoluta com aprovação pela maioria dos votos, salvo exigência constitucional diferente. Os arts. 48 e 49 separam a atuação legislativa com participação presidencial das competências exclusivas do Congresso. A Câmara autoriza o processo nas hipóteses do art. 51 e toma contas quando há omissão. O Senado julga crimes de responsabilidade que lhe são atribuídos e exerce importantes competências federativas e financeiras.
+
+As comissões dividem os trabalhos parlamentares. A CPI nasce de requerimento de um terço, fato determinado e prazo certo. Pode investigar e acessar determinados dados mediante decisão fundamentada; não pode decretar interceptação telefônica, busca domiciliar, prisão preventiva ou condenação. O direito ao silêncio contra autoincriminação e a assistência de advogado permanecem protegidos.
+
+A imunidade material protege manifestações funcionalmente abrangidas. As garantias formais disciplinam prisão e sustação de ação por crime posterior à diplomação. Vinte e quatro horas é prazo de remessa dos autos; quarenta e cinco dias é prazo para apreciar o pedido de sustação. O foro considera crime cometido no cargo e em razão das funções, com permanência após a saída conforme a orientação atual.
+
+Incompatibilidades começam na diplomação ou na posse conforme o art. 54. No art. 55, a divisão expressa é I, II e VI para decisão da Casa; III, IV e V para declaração da Mesa. O art. 56 prevê funções e licenças que preservam o mandato, com regras próprias de suplência. O art. 57 organiza o calendário, as Mesas e a convocação extraordinária.
+
+15 CINCO QUESTÕES DE REVISÃO
+
+Estas questões combinam assuntos já estudados. Distribuição: duas fáceis, duas médias e uma difícil. Revise o fundamento de cada alternativa antes de considerar o tema dominado.
+
+{{REVIEW_QUESTIONS}}
+
+16 REVISÃO ATIVA
+
+REVISÃO DE CINCO MINUTOS
+
+• No primeiro minuto, explique Câmara e Senado sem consultar o quadro. Diga quem representam, como são eleitos e quanto dura o mandato.
+• No segundo minuto, invente um pequeno colegiado e calcule presença mínima, maioria simples e maioria absoluta.
+• No terceiro minuto, associe Congresso, Câmara e Senado a uma competência de cada e reconstrua os três requisitos de CPI.
+• No quarto minuto, separe imunidade material, prisão, sustação da ação e foro. Explique a que se referem vinte e quatro horas e quarenta e cinco dias.
+• No quinto minuto, recite os dois grupos do art. 55 e dê um exemplo de afastamento que preserva o mandato.
+
+O MÓDULO EM UM MINUTO
+
+O Legislativo federal é bicameral e combina representação popular com representação federativa. A maioria exigida depende do ato. Congresso, Câmara e Senado têm competências próprias. CPI investiga com limites e não condena. Imunidades protegem o exercício do mandato sem eliminar responsabilidades. Diplomação e posse são marcos diferentes; decisão da Casa e declaração da Mesa também são. Para acertar a questão, identifique órgão, ato, condição, prazo e quórum.
+
+O QUE DECORAR
+
+• Câmara: povo, sistema proporcional, quatro anos, limites de oito a setenta por Estado ou DF; quatro deputados por Território.
+• Senado: Estados e DF, três por unidade, sistema majoritário, oito anos, dois suplentes; renovação de um e dois terços.
+• Legislatura: quatro anos. Mesa: dois anos. Sessão legislativa: ciclo anual de trabalhos.
+• Calendário: 2 de fevereiro a 17 de julho; 1º de agosto a 22 de dezembro. Atenção à LDO.
+• Art. 47: maioria dos votos, presente maioria absoluta, salvo regra constitucional especial.
+• Câmara autoriza por dois terços nas hipóteses do art. 51, I; Senado condena por dois terços nos julgamentos dos incisos I e II do art. 52.
+• Contas presidenciais omitidas: sessenta dias. Informações escritas do art. 50: trinta dias.
+• CPI: um terço, fato determinado, prazo certo. Recurso ao Plenário do art. 58, § 2º, I: um décimo dos membros da Casa.
+• Prisão do art. 53, § 2º: flagrante inafiançável, remessa em vinte e quatro horas e decisão pela maioria dos membros.
+• Sustação: crime posterior à diplomação; pedido em quarenta e cinco dias; prescrição suspensa enquanto durar o mandato.
+• Estado de sítio: imunidades subsistem; suspensão excepcional por dois terços e requisitos do § 8º.
+• Perda no texto do art. 55: I, II e VI decidida pela Casa; III, IV e V declarada pela Mesa.
+• Interesse particular: sem remuneração e até cento e vinte dias por sessão legislativa. Vaga sem suplente: eleição se faltarem mais de quinze meses.
+
+PEGADINHAS COM EXPLICAÇÃO
+
+“A Câmara representa os Estados.” Errado. Ela representa o povo; a representação federativa pertence ao Senado.
+
+“Uma sessão conjunta elimina a distinção entre as Casas.” Errado. As Casas conservam identidade e seus quóruns quando exigidos. Não confunda reunião conjunta com atuação unicameral.
+
+“Poderes de investigação judicial permitem à CPI interceptar telefonemas.” Errado. A competência investigativa não elimina a reserva de jurisdição. Registros de chamadas e conteúdo interceptado são medidas diferentes.
+
+“O silêncio do investigado autoriza prisão para obrigá-lo a responder.” Errado. A não autoincriminação limita a investigação e não pode ser punida como simples recusa ilegítima.
+
+“A Casa deve decidir sobre a prisão dentro das vinte e quatro horas do art. 53.” Errado. O prazo está ligado à remessa dos autos à Casa.
+
+“A imunidade protege qualquer postagem feita por parlamentar.” Errado. A proteção depende do enquadramento funcional e não acompanha automaticamente todo ato pessoal ou toda divulgação posterior.
+
+“Quando o mandato acaba, todo processo obrigatoriamente sai do STF.” Errado. A orientação atual preserva o foro para os crimes cometidos no cargo e em razão das funções nas condições explicadas.
+
+“Toda perda de mandato depende de votação do Plenário.” Errado segundo a divisão textual do art. 55: há hipóteses de declaração pela Mesa, com ampla defesa.
+
+ERROS DE ESTUDO A CORRIGIR
+
+Decorar apenas o número. Correção: associe cada prazo a um ato e a seu responsável. Escreva “remeter autos em vinte e quatro horas”, não apenas “prisão vinte e quatro horas”.
+
+Misturar autorização e julgamento. Correção: descreva a sequência e identifique a natureza da infração. A competência do Senado para crimes de responsabilidade não abrange automaticamente todo crime comum.
+
+Tratar jurisprudência como se fosse a redação do artigo. Correção: leia separadamente o texto constitucional e o entendimento que delimita sua aplicação. Essa separação é essencial em foro, imunidades e Mesas.
+
+Marcar o checklist porque o termo parece familiar. Correção: crie um exemplo próprio e resolva uma hipótese que contenha uma exceção. Reconhecimento visual da palavra não equivale a compreensão.
+
+17 REFERÊNCIAS PARA CONFERÊNCIA
+
+[1] Constituição Federal de 1988, texto compilado, especialmente arts. 2º, 44 a 58, 66, 71, 86 e 89 e art. 3º do ADCT. Conferência em 22 de outubro de 2026. Os quadros e exemplos são explicações didáticas; a leitura dos incisos continua necessária.
+
+Fonte oficial: https://www.planalto.gov.br/ccivil_03/constituicao/constituicaocompilado.htm
+
+[2] STF, A Constituição e o Supremo, comentários ao art. 57. ADI 6.524 sobre Mesas federais e julgados relativos às Mesas estaduais. Os regimes devem ser diferenciados.
+
+Fonte oficial: https://portal.stf.jus.br/constituicao-supremo/artigo.asp?abrirArtigo=57&abrirBase=CF
+
+[3] STF, A Constituição e o Supremo, comentários ao art. 58. Requisitos da CPI, direito das minorias, pertinência da investigação, reserva de jurisdição e garantias do depoente.
+
+Fonte oficial: https://portal.stf.jus.br/constituicao-supremo/artigo.asp?abrirArtigo=58&abrirBase=CF
+
+[4] STF, Inq. 4.999, notícia institucional de 18 de agosto de 2026. Distinção entre pronunciamento parlamentar e divulgação posterior fora da Casa; decisão de recebimento de denúncia.
+
+Fonte oficial: https://noticias.stf.jus.br/postsnoticias/stf-recebe-denuncia-contra-deputado-gilvan-da-federal-pl-es-por-ofensas-ao-presidente-lula/
+
+[5] STF, RE 632.115, Tema 950, notícia institucional de 16 de outubro de 2025. Imunidade material e responsabilidade civil por manifestações parlamentares.
+
+Fonte oficial: https://noticias.stf.jus.br/postsnoticias/estado-nao-deve-indenizar-pessoas-ofendidas-por-discursos-de-parlamentares-decide-stf/
+
+[6] STF, AP 2.668, notícia institucional de 13 de maio de 2025. Sustação limitada aos delitos posteriores à diplomação.
+
+Fonte oficial: https://noticias.stf.jus.br/postsnoticias/primeira-turma-suspende-acao-penal-contra-o-deputado-alexandre-ramagem-exclusivamente-por-crimes-apos-diplomacao/
+
+[7] STF, orientação sobre foro firmada em 2025 e aplicada na PET 10.476, conforme notícia institucional de 28 de abril de 2026. Permanência da competência por fatos praticados no cargo e em razão das funções.
+
+Fonte oficial: https://noticias.stf.jus.br/postsnoticias/stf-vai-julgar-queixa-crime-de-procuradora-contra-ex-presidente-jair-bolsonaro-por-calunia/
+
+CHECKLIST DE DOMÍNIO
+
+Marque o item quando conseguir explicá-lo sem consultar a resposta. Na Central, as caixas são interativas e as marcações ficam salvas neste navegador. Elas servem à autoavaliação e não substituem o registro de estudo do módulo.
+
+• ☐ Explico independência harmonia funções típicas e funções atípicas com exemplos.
+• ☐ Distingo a representação da Câmara e do Senado e seus sistemas eleitorais.
+• ☐ Explico mandato legislatura sessão legislativa e renovação do Senado.
+• ☐ Calculo quórum de presença e de aprovação sem trocar a base de cálculo.
+• ☐ Distingo sessão conjunta atuação unicameral e convocação extraordinária.
+• ☐ Identifico as regras de Mesa e separo o regime federal do estadual.
+• ☐ Diferencio as competências dos arts. 48 49 51 e 52 pelo órgão e pelo verbo.
+• ☐ Separo pedido escrito convocação tomada de contas e julgamento de contas.
+• ☐ Explico os três requisitos de CPI e a proteção das minorias.
+• ☐ Distingo registros telefônicos interceptação e reserva de jurisdição.
+• ☐ Reconheço os direitos da testemunha e do investigado em CPI.
+• ☐ Distingo imunidade material imunidade formal e foro.
+• ☐ Explico a que atos correspondem vinte e quatro horas e quarenta e cinco dias.
+• ☐ Aplico o marco da diplomação e o entendimento atual sobre permanência do foro.
+• ☐ Organizo as incompatibilidades entre diplomação e posse.
+• ☐ Distingo decisão da Casa declaração da Mesa e preservação do mandato.
+• ☐ Resolvo licenças suplência e vaga sem suplente com os limites constitucionais.
+• ☐ Justifico as respostas das quinze questões do módulo.
