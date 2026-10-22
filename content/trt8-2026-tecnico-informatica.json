@@ -1,0 +1,957 @@
+{
+  "schemaVersion": 1,
+  "examId": "trt8-2026-tecnico-administrativa-21",
+  "disciplineId": "trt8-tec-21-info",
+  "title": "Noções de Informática — TRT-8 Técnico",
+  "edition": "2026-10-22",
+  "status": "draft_editorial_review",
+  "sources": [
+    {
+      "label": "Microsoft — encerramento de suporte do Windows 10",
+      "url": "https://support.microsoft.com/pt-br/windows/deployment/updates-lifecycle/windows-10-support-has-ended-on-october-14-2025"
+    },
+    {
+      "label": "Google Workspace — Central de aprendizagem",
+      "url": "https://support.google.com/a/users/"
+    },
+    {
+      "label": "Google — permissões de drives compartilhados",
+      "url": "https://support.google.com/a/users/answer/12380484?hl=pt-br"
+    },
+    {
+      "label": "CERT.br — Cartilha de Segurança para Internet",
+      "url": "https://cartilha.cert.br/"
+    }
+  ],
+  "notes": [
+    "Interface de produtos digitais muda; conferir a versão aplicável antes da publicação.",
+    "As questões são autorais, não copiadas da FCC."
+  ],
+  "lessons": [
+    {
+      "topicId": "trt8-tec-21-info-001",
+      "moduleId": "info-m01",
+      "number": 1,
+      "title": "Windows 10 e Windows 11",
+      "goal": "Compreender e aplicar: Windows 10 e Windows 11",
+      "complete": {
+        "firstRead": [
+          "Sistema operacional é o conjunto de programas que coordena hardware, memória, arquivos, aplicativos, usuários e dispositivos. Windows 10 e 11 compartilham conceitos como área de trabalho, Explorador de Arquivos, configurações, gerenciamento de janelas e permissões."
+        ],
+        "howItWorks": [
+          "Ao abrir um documento, o sistema associa um tipo de arquivo ao aplicativo e solicita acesso aos recursos. Gerenciador de Tarefas apresenta processos e consumo de recursos. Atalhos como Ctrl+C/Ctrl+V copiam/colam, enquanto Win+E abre o Explorador; lixeira não é substituto de backup."
+        ],
+        "workedExample": [
+          "Uma secretaria guarda atas em pasta comum. Cria subpastas, diferencia atalho de arquivo original e confere permissões antes de mover documentos. Se apagar item por engano, a recuperação depende de local e política de retenção."
+        ],
+        "advanced": [
+          "O suporte convencional do Windows 10 terminou em 14/10/2025; o sistema continua funcionando, mas sem atualizações padrão de segurança. Há programas específicos de atualizações estendidas; diferenciar término de suporte de desativação automática. Atualizações e recursos do Windows 11 variam conforme edição."
+        ]
+      },
+      "summary": [
+        "SO administra recursos e executa programas; atalhos não são arquivos originais."
+      ],
+      "examTraps": [
+        "Windows 10 não deixou de funcionar automaticamente em 2025."
+      ],
+      "questions": [
+        {
+          "stem": "O término do suporte padrão ao Windows 10 implica:",
+          "options": [
+            "Fim do funcionamento do computador",
+            "Fim das atualizações padrão de segurança, com exceções específicas",
+            "Exclusão de todos os arquivos",
+            "Conversão obrigatória em Windows 11"
+          ],
+          "correct": 1,
+          "commentary": "Término de suporte não equivale ao desligamento do sistema."
+        },
+        {
+          "stem": "Qual método de estudo e segurança é mais confiável para este assunto?",
+          "options": [
+            "Conferir documentação oficial e atualizações de versão",
+            "Tomar qualquer menu antigo como definitivo",
+            "Assumir que toda opção é igual em todas as contas",
+            "Desconsiderar permissões e condições de acesso"
+          ],
+          "correct": 0,
+          "commentary": "Produtos, permissões e normas de segurança evoluem; a documentação e a configuração real são indispensáveis."
+        }
+      ],
+      "checklist": [
+        "Compreendi o conceito e seu funcionamento.",
+        "Sei resolver o exemplo prático.",
+        "Reconheço a principal pegadinha.",
+        "Respondi e entendi as questões comentadas."
+      ],
+      "sourceIds": [
+        0
+      ],
+      "reviewNote": "Conferir versões atuais, nomenclaturas de menus e políticas da conta na revisão final."
+    },
+    {
+      "topicId": "trt8-tec-21-info-002",
+      "moduleId": "info-m02",
+      "number": 2,
+      "title": "Google Workspace: visão geral",
+      "goal": "Compreender e aplicar: Google Workspace: visão geral",
+      "complete": {
+        "firstRead": [
+          "Google Workspace reúne serviços para criar documentos, planilhas, apresentações, enviar mensagens, organizar agenda e colaborar com outras pessoas. Cada aplicativo tem finalidade própria: Gmail para mensagens, Drive para arquivos, Docs para textos, Sheets para planilhas, Slides para apresentações e Calendar para compromissos."
+        ],
+        "howItWorks": [
+          "Trabalhar em nuvem significa usar serviço acessível pela rede, conforme credenciais, permissões e conectividade. Em documentos compartilhados, alterações podem ser colaborativas e o histórico ajuda a rastrear revisões; acesso offline depende de configuração e do aplicativo."
+        ],
+        "workedExample": [
+          "Uma equipe elabora relatório: Drive organiza a pasta, Docs recebe texto, Sheets consolida números, Slides apresenta resultados e Calendar agenda reunião. O mesmo arquivo pode ter diferentes níveis de acesso para cada participante."
+        ],
+        "advanced": [
+          "Google Workspace não é sinônimo de Google Drive: Drive organiza armazenamento e compartilhamento; os editores operam sobre arquivos. Nem toda funcionalidade está disponível em todos os planos, contas institucionais ou dispositivos."
+        ]
+      },
+      "summary": [
+        "Gmail, Drive, Docs, Sheets, Slides e Calendar têm funções diferentes."
+      ],
+      "examTraps": [
+        "Armazenamento e edição colaborativa não equivalem a permissão pública automática."
+      ],
+      "questions": [
+        {
+          "stem": "Para criar planilha colaborativa, a aplicação específica é:",
+          "options": [
+            "Docs",
+            "Sheets",
+            "Calendar",
+            "Meet"
+          ],
+          "correct": 1,
+          "commentary": "Sheets é o editor de planilhas do Google Workspace."
+        },
+        {
+          "stem": "Qual método de estudo e segurança é mais confiável para este assunto?",
+          "options": [
+            "Conferir documentação oficial e atualizações de versão",
+            "Tomar qualquer menu antigo como definitivo",
+            "Assumir que toda opção é igual em todas as contas",
+            "Desconsiderar permissões e condições de acesso"
+          ],
+          "correct": 0,
+          "commentary": "Produtos, permissões e normas de segurança evoluem; a documentação e a configuração real são indispensáveis."
+        }
+      ],
+      "checklist": [
+        "Compreendi o conceito e seu funcionamento.",
+        "Sei resolver o exemplo prático.",
+        "Reconheço a principal pegadinha.",
+        "Respondi e entendi as questões comentadas."
+      ],
+      "sourceIds": [
+        1,
+        2
+      ],
+      "reviewNote": "Conferir versões atuais, nomenclaturas de menus e políticas da conta na revisão final."
+    },
+    {
+      "topicId": "trt8-tec-21-info-003",
+      "moduleId": "info-m03",
+      "number": 3,
+      "title": "Compartilhamento no Workspace",
+      "goal": "Compreender e aplicar: Compartilhamento no Workspace",
+      "complete": {
+        "firstRead": [
+          "Compartilhar permite conceder acesso a arquivos sem necessariamente enviar cópias por e-mail. Permissões determinam se uma pessoa pode apenas visualizar, comentar ou editar, dependendo das opções disponíveis e das políticas da organização."
+        ],
+        "howItWorks": [
+          "Ao compartilhar, confira destinatário, função autorizada, eventual prazo e condição do link. A opção 'qualquer pessoa com link' não equivale a 'restrito a pessoas adicionadas'. Em drives compartilhados, regras e papéis podem diferir dos arquivos pessoais."
+        ],
+        "workedExample": [
+          "Um relatório sigiloso deve ser aberto somente a integrantes autorizados, com permissão de leitura quando não houver necessidade de edição. Antes de enviar link, teste quem pode acessá-lo."
+        ],
+        "advanced": [
+          "Um arquivo em drive compartilhado pode herdar permissões e estar sujeito a administradores. Remover um endereço de uma lista não garante revogação se a pessoa ainda recebe acesso por grupo ou por outra regra de compartilhamento."
+        ]
+      },
+      "summary": [
+        "Visualizar, comentar e editar são papéis diferentes."
+      ],
+      "examTraps": [
+        "Link compartilhado não é necessariamente link público."
+      ],
+      "questions": [
+        {
+          "stem": "Para impedir edição indevida de relatório, a medida mais direta é:",
+          "options": [
+            "Habilitar edição para qualquer pessoa",
+            "Conceder somente visualização aos destinatários adequados",
+            "Enviar link sem revisar acesso",
+            "Desativar login de todos"
+          ],
+          "correct": 1,
+          "commentary": "Privilégio mínimo limita capacidade conforme necessidade."
+        },
+        {
+          "stem": "Qual método de estudo e segurança é mais confiável para este assunto?",
+          "options": [
+            "Conferir documentação oficial e atualizações de versão",
+            "Tomar qualquer menu antigo como definitivo",
+            "Assumir que toda opção é igual em todas as contas",
+            "Desconsiderar permissões e condições de acesso"
+          ],
+          "correct": 0,
+          "commentary": "Produtos, permissões e normas de segurança evoluem; a documentação e a configuração real são indispensáveis."
+        }
+      ],
+      "checklist": [
+        "Compreendi o conceito e seu funcionamento.",
+        "Sei resolver o exemplo prático.",
+        "Reconheço a principal pegadinha.",
+        "Respondi e entendi as questões comentadas."
+      ],
+      "sourceIds": [
+        1,
+        2
+      ],
+      "reviewNote": "Conferir versões atuais, nomenclaturas de menus e políticas da conta na revisão final."
+    },
+    {
+      "topicId": "trt8-tec-21-info-004",
+      "moduleId": "info-m04",
+      "number": 4,
+      "title": "Google Drive: arquivos e permissões",
+      "goal": "Compreender e aplicar: Google Drive: arquivos e permissões",
+      "complete": {
+        "firstRead": [
+          "Google Drive organiza arquivos e pastas, permite criar itens nos editores conectados, localizar documentos e compartilhar com níveis de acesso definidos. Pasta é contêiner lógico; atalho aponta para arquivo ou pasta sem duplicar necessariamente o conteúdo."
+        ],
+        "howItWorks": [
+          "Para criar documento, use Novo ou um editor; para organizar, mova-o para a pasta adequada; para colaborar, abra Compartilhar, escolha pessoas/grupos e sua permissão. Verifique se há herança de acesso da pasta ou do drive compartilhado."
+        ],
+        "workedExample": [
+          "Na Central de atendimento, uma planilha de escalas pode ser editada pela coordenação e visualizada por servidores. Um erro comum é conceder edição a toda a instituição por conveniência."
+        ],
+        "advanced": [
+          "Dono de arquivo, gerente de drive compartilhado e editor não são papéis idênticos. Recuperação, exclusão e restrição de compartilhamento também dependem das políticas administrativas da conta Workspace."
+        ]
+      },
+      "summary": [
+        "Drive guarda e organiza; permissões determinam ações possíveis."
+      ],
+      "examTraps": [
+        "Atalho não duplica necessariamente os dados."
+      ],
+      "questions": [
+        {
+          "stem": "Um colaborador precisa apenas ler a escala. O acesso mínimo apropriado é:",
+          "options": [
+            "Editor",
+            "Leitor/visualizador",
+            "Administrador de domínio",
+            "Proprietário"
+          ],
+          "correct": 1,
+          "commentary": "Apenas visualização atende ao requisito sem permitir alteração."
+        },
+        {
+          "stem": "Qual método de estudo e segurança é mais confiável para este assunto?",
+          "options": [
+            "Conferir documentação oficial e atualizações de versão",
+            "Tomar qualquer menu antigo como definitivo",
+            "Assumir que toda opção é igual em todas as contas",
+            "Desconsiderar permissões e condições de acesso"
+          ],
+          "correct": 0,
+          "commentary": "Produtos, permissões e normas de segurança evoluem; a documentação e a configuração real são indispensáveis."
+        }
+      ],
+      "checklist": [
+        "Compreendi o conceito e seu funcionamento.",
+        "Sei resolver o exemplo prático.",
+        "Reconheço a principal pegadinha.",
+        "Respondi e entendi as questões comentadas."
+      ],
+      "sourceIds": [
+        1,
+        2
+      ],
+      "reviewNote": "Conferir versões atuais, nomenclaturas de menus e políticas da conta na revisão final."
+    },
+    {
+      "topicId": "trt8-tec-21-info-005",
+      "moduleId": "info-m05",
+      "number": 5,
+      "title": "Google Agenda, Tarefas e Meet",
+      "goal": "Compreender e aplicar: Google Agenda, Tarefas e Meet",
+      "complete": {
+        "firstRead": [
+          "Google Agenda registra eventos com título, data, fuso, convidados e opções de conferência. Uma tarefa é diferente de um evento: ela representa atividade a concluir, que pode ou não exigir um encontro marcado."
+        ],
+        "howItWorks": [
+          "Ao criar evento, defina horário inicial e final, confira o fuso, adicione participantes e consulte a disponibilidade. Links do Meet podem ser incluídos, conforme configuração e conta. Anexos podem ter permissões próprias e não ficam automaticamente abertos a todos."
+        ],
+        "workedExample": [
+          "Um gestor marca reunião virtual para 14h e anexa minuta do relatório. Antes de enviar convite, confere se convidados podem abrir o arquivo e se o fuso está correto."
+        ],
+        "advanced": [
+          "Alterar apenas o título ou a descrição não ajusta necessariamente convidados, horário e permissão do arquivo anexado. Convite não garante comparecimento, e link do Meet não concede automaticamente acesso a todos os documentos."
+        ]
+      },
+      "summary": [
+        "Evento possui horário, convidados e pode incluir Meet."
+      ],
+      "examTraps": [
+        "Tarefa representa compromisso de execução, não necessariamente reunião."
+      ],
+      "questions": [
+        {
+          "stem": "Ao anexar arquivo a evento, deve-se:",
+          "options": [
+            "Presumir acesso de todos",
+            "Conferir permissão separada do anexo",
+            "Remover os convidados",
+            "Desabilitar o fuso"
+          ],
+          "correct": 1,
+          "commentary": "As permissões do arquivo e as do evento são conceitos diferentes."
+        },
+        {
+          "stem": "Qual método de estudo e segurança é mais confiável para este assunto?",
+          "options": [
+            "Conferir documentação oficial e atualizações de versão",
+            "Tomar qualquer menu antigo como definitivo",
+            "Assumir que toda opção é igual em todas as contas",
+            "Desconsiderar permissões e condições de acesso"
+          ],
+          "correct": 0,
+          "commentary": "Produtos, permissões e normas de segurança evoluem; a documentação e a configuração real são indispensáveis."
+        }
+      ],
+      "checklist": [
+        "Compreendi o conceito e seu funcionamento.",
+        "Sei resolver o exemplo prático.",
+        "Reconheço a principal pegadinha.",
+        "Respondi e entendi as questões comentadas."
+      ],
+      "sourceIds": [
+        1,
+        2
+      ],
+      "reviewNote": "Conferir versões atuais, nomenclaturas de menus e políticas da conta na revisão final."
+    },
+    {
+      "topicId": "trt8-tec-21-info-006",
+      "moduleId": "info-m06",
+      "number": 6,
+      "title": "Gmail: marcadores e painel de visualização",
+      "goal": "Compreender e aplicar: Gmail: marcadores e painel de visualização",
+      "complete": {
+        "firstRead": [
+          "Gmail permite enviar e receber mensagens, organizar conversas por marcadores, pesquisar e configurar a caixa de entrada. Marcadores identificam mensagens e podem coexistir; não funcionam necessariamente como pastas físicas exclusivas."
+        ],
+        "howItWorks": [
+          "O painel de visualização permite ler mensagens em área de leitura em configurações compatíveis; sua disponibilidade pode variar. Configurações rápidas alteram aspectos de apresentação, mas políticas de segurança dependem também de controles da organização."
+        ],
+        "workedExample": [
+          "Uma servidora aplica marcadores 'urgente' e 'processo administrativo' à mesma conversa; ela continua uma única conversa, com duas classificações úteis."
+        ],
+        "advanced": [
+          "Arquivar não significa necessariamente excluir. Spam, lixeira e marcadores são mecanismos distintos; verificar remetente real e links é indispensável antes de abrir anexos."
+        ]
+      },
+      "summary": [
+        "Marcadores podem ser múltiplos; arquivar difere de excluir."
+      ],
+      "examTraps": [
+        "Painel de visualização não prova que mensagem é confiável."
+      ],
+      "questions": [
+        {
+          "stem": "Um mesmo e-mail pode:",
+          "options": [
+            "Ter vários marcadores",
+            "Estar limitado a exatamente uma pasta exclusiva",
+            "Dispensar identificação de remetente",
+            "Virar documento público automaticamente"
+          ],
+          "correct": 0,
+          "commentary": "Gmail permite aplicar múltiplos marcadores a mensagens."
+        },
+        {
+          "stem": "Qual método de estudo e segurança é mais confiável para este assunto?",
+          "options": [
+            "Conferir documentação oficial e atualizações de versão",
+            "Tomar qualquer menu antigo como definitivo",
+            "Assumir que toda opção é igual em todas as contas",
+            "Desconsiderar permissões e condições de acesso"
+          ],
+          "correct": 0,
+          "commentary": "Produtos, permissões e normas de segurança evoluem; a documentação e a configuração real são indispensáveis."
+        }
+      ],
+      "checklist": [
+        "Compreendi o conceito e seu funcionamento.",
+        "Sei resolver o exemplo prático.",
+        "Reconheço a principal pegadinha.",
+        "Respondi e entendi as questões comentadas."
+      ],
+      "sourceIds": [
+        1,
+        2
+      ],
+      "reviewNote": "Conferir versões atuais, nomenclaturas de menus e políticas da conta na revisão final."
+    },
+    {
+      "topicId": "trt8-tec-21-info-007",
+      "moduleId": "info-m07",
+      "number": 7,
+      "title": "Documentos Google: edição e colaboração",
+      "goal": "Compreender e aplicar: Documentos Google: edição e colaboração",
+      "complete": {
+        "firstRead": [
+          "Documentos Google é editor de textos com recursos de formatação, títulos, listas, comentários, sugestões e colaboração. Escrever de modo conjunto requer conceder acesso apropriado, não somente enviar o endereço do arquivo."
+        ],
+        "howItWorks": [
+          "Para preparar relatório, use títulos para estruturar seções, comentários para perguntas e modo de sugestão quando for melhor propor alterações sem substituir imediatamente o texto final. Histórico de versões ajuda a compreender revisões."
+        ],
+        "workedExample": [
+          "Uma equipe revisa minuta: servidor A edita; servidor B comenta; supervisor examina sugestões e aprova alterações necessárias. Uma pessoa apenas leitora não deve ser presumida apta a alterar o documento."
+        ],
+        "advanced": [
+          "Comentários, sugestões e edição direta não são a mesma ação. A função exata depende da permissão da pessoa, das configurações da organização e da evolução do produto."
+        ]
+      },
+      "summary": [
+        "Docs edita texto; comentários comunicam; sugestões propõem mudanças."
+      ],
+      "examTraps": [
+        "Permissão de visualização não equivale à de edição."
+      ],
+      "questions": [
+        {
+          "stem": "Para propor ajuste sem substituir diretamente o texto final, o modo adequado é:",
+          "options": [
+            "Sugestões",
+            "Excluir histórico",
+            "Somente leitura de disco",
+            "Limpar cache"
+          ],
+          "correct": 0,
+          "commentary": "Sugestões permitem propor alterações passíveis de apreciação."
+        },
+        {
+          "stem": "Qual método de estudo e segurança é mais confiável para este assunto?",
+          "options": [
+            "Conferir documentação oficial e atualizações de versão",
+            "Tomar qualquer menu antigo como definitivo",
+            "Assumir que toda opção é igual em todas as contas",
+            "Desconsiderar permissões e condições de acesso"
+          ],
+          "correct": 0,
+          "commentary": "Produtos, permissões e normas de segurança evoluem; a documentação e a configuração real são indispensáveis."
+        }
+      ],
+      "checklist": [
+        "Compreendi o conceito e seu funcionamento.",
+        "Sei resolver o exemplo prático.",
+        "Reconheço a principal pegadinha.",
+        "Respondi e entendi as questões comentadas."
+      ],
+      "sourceIds": [
+        1,
+        2
+      ],
+      "reviewNote": "Conferir versões atuais, nomenclaturas de menus e políticas da conta na revisão final."
+    },
+    {
+      "topicId": "trt8-tec-21-info-008",
+      "moduleId": "info-m08",
+      "number": 8,
+      "title": "Redes, internet e intranet",
+      "goal": "Compreender e aplicar: Redes, internet e intranet",
+      "complete": {
+        "firstRead": [
+          "Uma rede de computadores interliga dispositivos para troca de dados e acesso a serviços. Internet é rede mundial de redes; intranet é ambiente de serviços restritos à organização, embora possa usar tecnologias semelhantes às da internet."
+        ],
+        "howItWorks": [
+          "Endereços IP identificam pontos de comunicação em determinada rede; DNS resolve nomes de domínio; HTTPS é protocolo de aplicação web com proteção criptográfica da conexão, não certificado de honestidade do conteúdo do site."
+        ],
+        "workedExample": [
+          "Um servidor acessa portal interno do tribunal por conexão autorizada. A intranet não se torna automaticamente pública por usar navegador. A política de acesso pode envolver rede corporativa, VPN e autenticação."
+        ],
+        "advanced": [
+          "Não confundir Wi‑Fi (meio de acesso à rede) com internet (interconexão de redes). Proxy, roteador, firewall e servidor atendem a papéis diferentes. A proteção HTTPS não dispensa verificar domínio e legitimidade da página."
+        ]
+      },
+      "summary": [
+        "Internet e intranet não são sinônimos; DNS e IP têm funções diferentes."
+      ],
+      "examTraps": [
+        "HTTPS não assegura que o site seja legítimo."
+      ],
+      "questions": [
+        {
+          "stem": "A intranet de uma organização é:",
+          "options": [
+            "Uma rede ou conjunto de serviços internos restritos",
+            "Toda a internet pública",
+            "Sinônimo de antivírus",
+            "Sistema operacional"
+          ],
+          "correct": 0,
+          "commentary": "A intranet serve a usuários autorizados do ambiente institucional."
+        },
+        {
+          "stem": "Qual método de estudo e segurança é mais confiável para este assunto?",
+          "options": [
+            "Conferir documentação oficial e atualizações de versão",
+            "Tomar qualquer menu antigo como definitivo",
+            "Assumir que toda opção é igual em todas as contas",
+            "Desconsiderar permissões e condições de acesso"
+          ],
+          "correct": 0,
+          "commentary": "Produtos, permissões e normas de segurança evoluem; a documentação e a configuração real são indispensáveis."
+        }
+      ],
+      "checklist": [
+        "Compreendi o conceito e seu funcionamento.",
+        "Sei resolver o exemplo prático.",
+        "Reconheço a principal pegadinha.",
+        "Respondi e entendi as questões comentadas."
+      ],
+      "sourceIds": [
+        1,
+        3
+      ],
+      "reviewNote": "Conferir versões atuais, nomenclaturas de menus e políticas da conta na revisão final."
+    },
+    {
+      "topicId": "trt8-tec-21-info-009",
+      "moduleId": "info-m09",
+      "number": 9,
+      "title": "Firefox, Chrome e Edge",
+      "goal": "Compreender e aplicar: Firefox, Chrome e Edge",
+      "complete": {
+        "firstRead": [
+          "Navegador é o programa que interpreta páginas e permite visitar serviços web. Firefox, Chrome e Edge compartilham funções como abas, favoritos, histórico, downloads, navegação privada e gerenciamento de permissões de sites."
+        ],
+        "howItWorks": [
+          "A barra de endereços recebe URL ou consulta, conforme o navegador. Cookies podem manter sessões; cache guarda recursos; histórico registra páginas. Limpar cache não equivale a apagar arquivos pessoais salvos nem a remover necessariamente todas as sessões."
+        ],
+        "workedExample": [
+          "Ao encontrar página desatualizada, um servidor verifica se abriu o endereço correto e, se necessário, atualiza. Se o problema ocorre apenas em um perfil, extensões ou dados locais podem influenciar o comportamento."
+        ],
+        "advanced": [
+          "Modo privado reduz certos rastros no dispositivo após encerrar sessão, mas não torna a conexão anônima para o site, provedor ou rede institucional. Permissões de câmera, localização e notificações devem ser conferidas por domínio."
+        ]
+      },
+      "summary": [
+        "Navegador é cliente web; cache, cookies e histórico têm funções distintas."
+      ],
+      "examTraps": [
+        "Modo anônimo não garante anonimato na rede."
+      ],
+      "questions": [
+        {
+          "stem": "A navegação privada:",
+          "options": [
+            "Apaga registros em todos os servidores",
+            "Reduz registros locais da sessão, sem assegurar anonimato",
+            "Desativa qualquer monitoramento de rede",
+            "Dispensa HTTPS"
+          ],
+          "correct": 1,
+          "commentary": "A sessão privada não impede que servidores e redes observem atividades."
+        },
+        {
+          "stem": "Qual método de estudo e segurança é mais confiável para este assunto?",
+          "options": [
+            "Conferir documentação oficial e atualizações de versão",
+            "Tomar qualquer menu antigo como definitivo",
+            "Assumir que toda opção é igual em todas as contas",
+            "Desconsiderar permissões e condições de acesso"
+          ],
+          "correct": 0,
+          "commentary": "Produtos, permissões e normas de segurança evoluem; a documentação e a configuração real são indispensáveis."
+        }
+      ],
+      "checklist": [
+        "Compreendi o conceito e seu funcionamento.",
+        "Sei resolver o exemplo prático.",
+        "Reconheço a principal pegadinha.",
+        "Respondi e entendi as questões comentadas."
+      ],
+      "sourceIds": [
+        1,
+        3
+      ],
+      "reviewNote": "Conferir versões atuais, nomenclaturas de menus e políticas da conta na revisão final."
+    },
+    {
+      "topicId": "trt8-tec-21-info-010",
+      "moduleId": "info-m10",
+      "number": 10,
+      "title": "Mecanismos de busca: Google e Bing",
+      "goal": "Compreender e aplicar: Mecanismos de busca: Google e Bing",
+      "complete": {
+        "firstRead": [
+          "Buscador localiza páginas indexadas por palavras-chave, significado da consulta e outros critérios. Resultados podem incluir anúncios, respostas automáticas e páginas orgânicas; aparecer primeiro não torna informação oficial."
+        ],
+        "howItWorks": [
+          "Use termos específicos e confira endereço institucional. Operadores como aspas para expressão exata e site:dominio podem refinar resultados em sistemas que os suportem. A data da publicação é relevante quando norma ou interface foi alterada."
+        ],
+        "workedExample": [
+          "Para encontrar resolução, procure nome, número e domínio do órgão emissor; depois compare a página com o texto oficial compilado e eventuais atos modificadores."
+        ],
+        "advanced": [
+          "Não confunda buscador com navegador: Chrome acessa páginas, Google Search pesquisa informações. Trechos exibidos no resultado não substituem a leitura do documento completo."
+        ]
+      },
+      "summary": [
+        "Buscadores indexam conteúdos e exibem resultados ranqueados."
+      ],
+      "examTraps": [
+        "Ranking não comprova veracidade ou vigência jurídica."
+      ],
+      "questions": [
+        {
+          "stem": "Para verificar um ato normativo recente, a fonte prioritária é:",
+          "options": [
+            "Página do órgão emissor com texto oficial",
+            "Primeiro anúncio da busca",
+            "Comentário sem data",
+            "Resumo sem autoria"
+          ],
+          "correct": 0,
+          "commentary": "Confirmação requer fonte confiável e redação vigente."
+        },
+        {
+          "stem": "Qual método de estudo e segurança é mais confiável para este assunto?",
+          "options": [
+            "Conferir documentação oficial e atualizações de versão",
+            "Tomar qualquer menu antigo como definitivo",
+            "Assumir que toda opção é igual em todas as contas",
+            "Desconsiderar permissões e condições de acesso"
+          ],
+          "correct": 0,
+          "commentary": "Produtos, permissões e normas de segurança evoluem; a documentação e a configuração real são indispensáveis."
+        }
+      ],
+      "checklist": [
+        "Compreendi o conceito e seu funcionamento.",
+        "Sei resolver o exemplo prático.",
+        "Reconheço a principal pegadinha.",
+        "Respondi e entendi as questões comentadas."
+      ],
+      "sourceIds": [
+        1,
+        3
+      ],
+      "reviewNote": "Conferir versões atuais, nomenclaturas de menus e políticas da conta na revisão final."
+    },
+    {
+      "topicId": "trt8-tec-21-info-011",
+      "moduleId": "info-m11",
+      "number": 11,
+      "title": "Arquivos, pastas e programas",
+      "goal": "Compreender e aplicar: Arquivos, pastas e programas",
+      "complete": {
+        "firstRead": [
+          "Arquivos armazenam dados, pastas organizam itens e programas executam tarefas. Extensões sugerem formato, mas não garantem que um arquivo seja seguro ou corresponda ao que aparenta."
+        ],
+        "howItWorks": [
+          "Copiar mantém uma versão na origem e cria outra no destino; mover transfere a localização lógica conforme sistema; renomear muda identificação; excluir pode remeter à lixeira, mas a exclusão definitiva depende do local e do método."
+        ],
+        "workedExample": [
+          "Para organizar documentos do concurso, separe pasta por disciplina e módulo; use nomes consistentes, faça backup e confira extensões antes de abrir arquivos de origem desconhecida."
+        ],
+        "advanced": [
+          "Atalho aponta para um destino sem equivaler ao arquivo original. Backup é cópia recuperável armazenada com estratégia própria; sincronização de pastas não substitui automaticamente histórico de versões e cópia independente."
+        ]
+      },
+      "summary": [
+        "Arquivo ≠ pasta ≠ programa; copiar ≠ mover."
+      ],
+      "examTraps": [
+        "Sincronização de nuvem não é backup independente garantido."
+      ],
+      "questions": [
+        {
+          "stem": "Um atalho para documento:",
+          "options": [
+            "É sempre uma cópia completa",
+            "Geralmente aponta para outro item",
+            "Elimina o original",
+            "Impede a leitura do destino"
+          ],
+          "correct": 1,
+          "commentary": "O atalho referencia um destino e não contém necessariamente seus dados."
+        },
+        {
+          "stem": "Qual método de estudo e segurança é mais confiável para este assunto?",
+          "options": [
+            "Conferir documentação oficial e atualizações de versão",
+            "Tomar qualquer menu antigo como definitivo",
+            "Assumir que toda opção é igual em todas as contas",
+            "Desconsiderar permissões e condições de acesso"
+          ],
+          "correct": 0,
+          "commentary": "Produtos, permissões e normas de segurança evoluem; a documentação e a configuração real são indispensáveis."
+        }
+      ],
+      "checklist": [
+        "Compreendi o conceito e seu funcionamento.",
+        "Sei resolver o exemplo prático.",
+        "Reconheço a principal pegadinha.",
+        "Respondi e entendi as questões comentadas."
+      ],
+      "sourceIds": [
+        1,
+        3
+      ],
+      "reviewNote": "Conferir versões atuais, nomenclaturas de menus e políticas da conta na revisão final."
+    },
+    {
+      "topicId": "trt8-tec-21-info-012",
+      "moduleId": "info-m12",
+      "number": 12,
+      "title": "Segurança da informação: princípios e procedimentos",
+      "goal": "Compreender e aplicar: Segurança da informação: princípios e procedimentos",
+      "complete": {
+        "firstRead": [
+          "Segurança busca proteger confidencialidade (somente autorizados acessam), integridade (dados não alterados indevidamente) e disponibilidade (serviço acessível quando necessário). Autenticidade e rastreabilidade complementam o controle."
+        ],
+        "howItWorks": [
+          "Medidas incluem atualização, controle de acesso, cópias de segurança, treinamento, bloqueio de tela, mínimo privilégio e resposta a incidentes. A proteção combina tecnologia, pessoas e processos."
+        ],
+        "workedExample": [
+          "Uma secretaria sofre perda de arquivo: a recuperação depende de backup, controle de versões e planos de continuidade. Se dados forem acessados por pessoa não autorizada, a preocupação predominante é confidencialidade."
+        ],
+        "advanced": [
+          "Confidencialidade não significa indisponibilidade; disponibilidade não autoriza acesso irrestrito. Um incidente pode afetar simultaneamente as três propriedades. Procedimentos devem seguir normas da instituição."
+        ]
+      },
+      "summary": [
+        "Tríade CID: confidencialidade, integridade, disponibilidade."
+      ],
+      "examTraps": [
+        "Controles preventivos e corretivos se complementam."
+      ],
+      "questions": [
+        {
+          "stem": "Impedir alteração indevida de registro protege sobretudo:",
+          "options": [
+            "Integridade",
+            "Disponibilidade",
+            "Publicidade",
+            "Ergonomia"
+          ],
+          "correct": 0,
+          "commentary": "Integridade se refere à correção e à proteção contra alterações não autorizadas."
+        },
+        {
+          "stem": "Qual método de estudo e segurança é mais confiável para este assunto?",
+          "options": [
+            "Conferir documentação oficial e atualizações de versão",
+            "Tomar qualquer menu antigo como definitivo",
+            "Assumir que toda opção é igual em todas as contas",
+            "Desconsiderar permissões e condições de acesso"
+          ],
+          "correct": 0,
+          "commentary": "Produtos, permissões e normas de segurança evoluem; a documentação e a configuração real são indispensáveis."
+        }
+      ],
+      "checklist": [
+        "Compreendi o conceito e seu funcionamento.",
+        "Sei resolver o exemplo prático.",
+        "Reconheço a principal pegadinha.",
+        "Respondi e entendi as questões comentadas."
+      ],
+      "sourceIds": [
+        3
+      ],
+      "reviewNote": "Conferir versões atuais, nomenclaturas de menus e políticas da conta na revisão final."
+    },
+    {
+      "topicId": "trt8-tec-21-info-013",
+      "moduleId": "info-m13",
+      "number": 13,
+      "title": "Vírus, worms e outras ameaças",
+      "goal": "Compreender e aplicar: Vírus, worms e outras ameaças",
+      "complete": {
+        "firstRead": [
+          "Malware é termo amplo para software malicioso. Vírus costuma depender de hospedeiro e alguma ação de execução; worm é capaz de se propagar automaticamente em certas condições de rede; ransomware cifra ou bloqueia dados para extorsão."
+        ],
+        "howItWorks": [
+          "Um arquivo suspeito pode chegar por anexo, link ou dispositivo removível. Não é necessário abrir todos para confirmar: verifique origem por canal independente e siga procedimentos institucionais. Vírus, trojan, spyware e worm diferem pelo modo de ação."
+        ],
+        "workedExample": [
+          "Um e-mail simula aviso do setor de TI e pede executar instalador. Antes de clicar, a equipe verifica o endereço, consulta o suporte por canal oficial e não executa software não autorizado."
+        ],
+        "advanced": [
+          "Phishing é golpe de engenharia social, não um tipo único de vírus. Um ransomware pode chegar por fraude de e-mail ou exploração de vulnerabilidade. Atualizações e backups ajudam, mas não tornam risco igual a zero."
+        ]
+      },
+      "summary": [
+        "Worm pode propagar-se pela rede; trojan se disfarça; ransomware extorque."
+      ],
+      "examTraps": [
+        "Phishing envolve manipulação, não necessariamente arquivo malicioso."
+      ],
+      "questions": [
+        {
+          "stem": "A ameaça que tipicamente pode propagar-se pela rede sem anexar-se a arquivo hospedeiro é:",
+          "options": [
+            "Worm",
+            "Adware benigno",
+            "Planilha",
+            "Atalho"
+          ],
+          "correct": 0,
+          "commentary": "Worm possui mecanismos próprios de propagação."
+        },
+        {
+          "stem": "Qual método de estudo e segurança é mais confiável para este assunto?",
+          "options": [
+            "Conferir documentação oficial e atualizações de versão",
+            "Tomar qualquer menu antigo como definitivo",
+            "Assumir que toda opção é igual em todas as contas",
+            "Desconsiderar permissões e condições de acesso"
+          ],
+          "correct": 0,
+          "commentary": "Produtos, permissões e normas de segurança evoluem; a documentação e a configuração real são indispensáveis."
+        }
+      ],
+      "checklist": [
+        "Compreendi o conceito e seu funcionamento.",
+        "Sei resolver o exemplo prático.",
+        "Reconheço a principal pegadinha.",
+        "Respondi e entendi as questões comentadas."
+      ],
+      "sourceIds": [
+        3
+      ],
+      "reviewNote": "Conferir versões atuais, nomenclaturas de menus e políticas da conta na revisão final."
+    },
+    {
+      "topicId": "trt8-tec-21-info-014",
+      "moduleId": "info-m14",
+      "number": 14,
+      "title": "Antivírus, firewall e antisspyware",
+      "goal": "Compreender e aplicar: Antivírus, firewall e antisspyware",
+      "complete": {
+        "firstRead": [
+          "Antivírus identifica e tenta bloquear códigos maliciosos por assinaturas, comportamento e outras técnicas. Firewall aplica regras ao tráfego de rede; antisspyware busca detectar espionagem indesejada. Nenhuma ferramenta isolada garante proteção total."
+        ],
+        "howItWorks": [
+          "Atualize soluções de proteção, mantenha configuração institucional, revise alertas e evite desativar recursos para executar programas desconhecidos. Firewall não substitui backup nem antivírus; antivírus não verifica a legitimidade de todo pedido recebido por e-mail."
+        ],
+        "workedExample": [
+          "Uma estação recebe tentativa de conexão suspeita. Firewall pode limitar tráfego; antivírus pode detectar software malicioso; equipe de segurança analisa os alertas e verifica se houve incidente."
+        ],
+        "advanced": [
+          "Defesa em profundidade combina controles diferentes. Ferramentas precisam operar com gerenciamento de permissões e atualizações. Alertas devem ser investigados sem permitir 'exceções' permanentes por conveniência."
+        ]
+      },
+      "summary": [
+        "Antivírus trata ameaças de software; firewall filtra tráfego."
+      ],
+      "examTraps": [
+        "Segurança efetiva usa camadas e políticas de acesso."
+      ],
+      "questions": [
+        {
+          "stem": "A função primária de firewall é:",
+          "options": [
+            "Filtrar conexões conforme regras",
+            "Editar apresentações",
+            "Substituir cópias de segurança",
+            "Exibir e-mails"
+          ],
+          "correct": 0,
+          "commentary": "Firewall controla tráfego de rede conforme política."
+        },
+        {
+          "stem": "Qual método de estudo e segurança é mais confiável para este assunto?",
+          "options": [
+            "Conferir documentação oficial e atualizações de versão",
+            "Tomar qualquer menu antigo como definitivo",
+            "Assumir que toda opção é igual em todas as contas",
+            "Desconsiderar permissões e condições de acesso"
+          ],
+          "correct": 0,
+          "commentary": "Produtos, permissões e normas de segurança evoluem; a documentação e a configuração real são indispensáveis."
+        }
+      ],
+      "checklist": [
+        "Compreendi o conceito e seu funcionamento.",
+        "Sei resolver o exemplo prático.",
+        "Reconheço a principal pegadinha.",
+        "Respondi e entendi as questões comentadas."
+      ],
+      "sourceIds": [
+        3
+      ],
+      "reviewNote": "Conferir versões atuais, nomenclaturas de menus e políticas da conta na revisão final."
+    },
+    {
+      "topicId": "trt8-tec-21-info-015",
+      "moduleId": "info-m15",
+      "number": 15,
+      "title": "Senhas e autenticação em dois fatores",
+      "goal": "Compreender e aplicar: Senhas e autenticação em dois fatores",
+      "complete": {
+        "firstRead": [
+          "Senha é um fator de conhecimento. Autenticação multifator combina fatores independentes, como algo que você sabe e algo que possui; o segundo fator diminui dependência de senha isolada. Passkeys podem empregar mecanismos criptográficos diferentes."
+        ],
+        "howItWorks": [
+          "Use senhas únicas e longas, preferencialmente com gerenciador confiável. Ative MFA nas contas críticas, proteja métodos de recuperação e nunca compartilhe códigos temporários. Verifique tentativas de phishing e confirmações de login inesperadas."
+        ],
+        "workedExample": [
+          "Um servidor recebe pedido de código de verificação por suposto suporte. Ele não fornece o código e confirma a solicitação por canal oficial. Mesmo quando alguém conhece a senha, MFA pode dificultar entrada indevida."
+        ],
+        "advanced": [
+          "MFA não elimina todos os golpes: sessões roubadas, engenharia social e aprovação indevida de notificações continuam possíveis. As regras concretas sobre dispositivos e autenticação são as da instituição."
+        ]
+      },
+      "summary": [
+        "Senha única, MFA e recuperação segura são controles complementares."
+      ],
+      "examTraps": [
+        "Código temporário de login não deve ser compartilhado."
+      ],
+      "questions": [
+        {
+          "stem": "A autenticação de dois fatores melhora segurança porque:",
+          "options": [
+            "Exige elementos independentes de comprovação",
+            "Torna senhas públicas",
+            "Elimina todo phishing",
+            "Dispensa atualização de sistema"
+          ],
+          "correct": 0,
+          "commentary": "A combinação de fatores reduz o risco decorrente de senha comprometida."
+        },
+        {
+          "stem": "Qual método de estudo e segurança é mais confiável para este assunto?",
+          "options": [
+            "Conferir documentação oficial e atualizações de versão",
+            "Tomar qualquer menu antigo como definitivo",
+            "Assumir que toda opção é igual em todas as contas",
+            "Desconsiderar permissões e condições de acesso"
+          ],
+          "correct": 0,
+          "commentary": "Produtos, permissões e normas de segurança evoluem; a documentação e a configuração real são indispensáveis."
+        }
+      ],
+      "checklist": [
+        "Compreendi o conceito e seu funcionamento.",
+        "Sei resolver o exemplo prático.",
+        "Reconheço a principal pegadinha.",
+        "Respondi e entendi as questões comentadas."
+      ],
+      "sourceIds": [
+        3
+      ],
+      "reviewNote": "Conferir versões atuais, nomenclaturas de menus e políticas da conta na revisão final."
+    }
+  ]
+}
