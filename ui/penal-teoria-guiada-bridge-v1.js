@@ -1,4 +1,4 @@
-/* Base Completa — Direito Penal M01–M05: conectar Teoria Guiada ao card nativo de revisão.
+/* Base Completa — Direito Penal M01–M11: conectar Teoria Guiada ao card nativo de revisão.
    Leitores completos, questões nativas, métricas e armazenamento oficial permanecem intactos. */
 (function(global){
 'use strict';
@@ -10,10 +10,16 @@ const nativeReaders={
   2:()=>global.BaseNativeReaderM02,
   3:()=>global.BaseNativeReaderM03,
   4:()=>global.BaseNativeReaderM04,
-  5:()=>global.BaseNativeReaderM05
+  5:()=>global.BaseNativeReaderM05,
+  6:()=>global.BaseNativeReaderM06,
+  7:()=>global.BaseNativeReaderM07,
+  8:()=>global.BaseNativeReaderM08,
+  9:()=>global.BaseNativeReaderM09,
+  10:()=>global.BaseNativeReaderM10,
+  11:()=>global.BaseNativeReaderM11
 };
 function moduleNumber(el){
- const m=el?.closest(ROOT+' .cf-module[data-cf]')?.getAttribute('data-cf')?.match(/^p([1-5])$/);
+ const m=el?.closest(ROOT+' .cf-module[data-cf]')?.getAttribute('data-cf')?.match(/^p([1-9]|1[01])$/);
  return m?Number(m[1]):null;
 }
 function paint(){
