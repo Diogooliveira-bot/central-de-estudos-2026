@@ -1,9 +1,9 @@
-/* Base Completa — CIVIL M01–M11: leitor guiado isolado, sem cabeçalho institucional. */
+/* Base Completa — CIVIL M01–M15: leitor guiado isolado, sem cabeçalho institucional. */
 (function(global){
 'use strict';
 if(global.__BC_CIV_GUIDED_READER_V1__)return;
 global.__BC_CIV_GUIDED_READER_V1__=true;
-const MIN=1,MAX=11,DATA=global.BC_CIV_GUIDED_MODULES||{};
+const MIN=1,MAX=15,DATA=global.BC_CIV_GUIDED_MODULES||{};
 let overlay=null,origin=null,originalOverflow='';
 function esc(v){return String(v==null?'':v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','\'':'&#39;'}[c]));}
 function p(v){return String(v||'').split(/\n\n+/).map(s=>'<p>'+esc(s)+'</p>').join('');}
@@ -130,5 +130,5 @@ function open(n){
   }
 
 css();
-global.BcCivilGuidedReader=Object.freeze({open,close,modules:[1,2,3,4,5,6,7,8,9,10,11]});
+global.BcCivilGuidedReader=Object.freeze({open,close,modules:[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]});
 })(window);
