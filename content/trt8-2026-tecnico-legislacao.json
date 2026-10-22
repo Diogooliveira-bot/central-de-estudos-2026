@@ -1,0 +1,493 @@
+{
+  "schemaVersion": 1,
+  "examId": "trt8-2026-tecnico-administrativa-21",
+  "disciplineId": "trt8-tec-21-leg",
+  "title": "Noções de Legislação do TRT-8",
+  "productionStage": "Etapa 5.12",
+  "status": "draft_partial_source_review",
+  "warnings": [
+    "Regimento Interno TRT-8 consolidado em 22/06/2026: íntegra oficial não verificada; aula 03 apenas orientadora.",
+    "Resoluções locais TRT8 065/2025 e 23/2026: referência da retificação confirmada, artigos e composição não verificados integralmente.",
+    "CNJ 400/2021 alterada em 2024 e 2025: conferir compilação antes de literalidade."
+  ],
+  "lessons": [
+    {
+      "topicId": "trt8-tec-21-leg-001",
+      "moduleId": "leg-m01",
+      "number": 1,
+      "title": "Sustentabilidade no Poder Judiciário — Resolução CNJ 400/2021",
+      "goal": "Compreender a finalidade, as distinções e a aplicação prática da norma exigida no edital, com ressalvas de atualização quando necessário.",
+      "status": "requires_consolidated_review",
+      "sourceUrls": [
+        "https://atos.cnj.jus.br/atos/detalhar/3986"
+      ],
+      "complete": {
+        "firstRead": [
+          "A sustentabilidade judicial ultrapassa a economia de papel: envolve dimensões ambiental, econômica, social e cultural da atuação institucional. Um tribunal presta serviço público e também contrata, consome energia, produz resíduos e deve acompanhar os efeitos dessas atividades.",
+          "A Resolução CNJ 400/2021 organiza a política de sustentabilidade no Judiciário e trabalha com ações de sustentabilidade e instrumentos de planejamento e monitoramento. O Plano de Logística Sustentável (PLS) é ferramenta gerencial para estruturar ações, metas e indicadores, não licença para reduzir serviços essenciais."
+        ],
+        "howItWorks": "O texto foi alterado pelas Resoluções CNJ 550/2024, 594/2024 e 641/2025, conforme a página oficial. Para questões de artigos, anexos, indicadores e metas específicas, é indispensável revisar o texto consolidado em sua data de cobrança.",
+        "workedExample": "Um setor quer diminuir despesas de impressão. O gestor não deve apenas proibir impressões: primeiro identifica demandas legítimas, acessibilidade, consumo, descarte e indicadores; depois avalia alternativas digitais e monitora o resultado sem prejudicar o atendimento.",
+        "advanced": "Atenção à literalidade de artigos e às alterações posteriores: quando a versão consolidada ou a redação local não estiverem verificadas, a aula é conceitual, não substitui a lei seca."
+      },
+      "summary": [
+        "Sustentabilidade tem dimensão socioambiental, econômica e cultural.",
+        "PLS: plano com metas, ações e indicadores.",
+        "Indicador mede resultado; ação isolada não substitui monitoramento.",
+        "A Resolução 400/2021 possui alterações posteriores."
+      ],
+      "examTraps": [
+        "Confundir sustentabilidade com somente reciclagem.",
+        "Usar versão original de 2021 como se não houvesse mudanças em 2024/2025."
+      ],
+      "questions": [
+        {
+          "stem": "A política de sustentabilidade no Judiciário se limita à coleta seletiva?",
+          "options": [
+            "Sim, porque consumo não interfere na gestão.",
+            "Não, abrange dimensões ambientais, sociais, econômicas e culturais.",
+            "Sim, desde que haja economia de papel.",
+            "Sim, por ser tema exclusivamente patrimonial."
+          ],
+          "correct": 1,
+          "commentary": "A própria política alcança diversas dimensões da atuação do Judiciário. Coleta seletiva é apenas uma prática possível."
+        },
+        {
+          "stem": "O Plano de Logística Sustentável é melhor compreendido como:",
+          "options": [
+            "Um plano de ações, metas e acompanhamento.",
+            "Uma lei que extingue atendimento presencial.",
+            "Um documento sem indicadores.",
+            "Um substituto de toda norma de contratação."
+          ],
+          "correct": 0,
+          "commentary": "O PLS organiza e permite monitorar as iniciativas de sustentabilidade."
+        }
+      ],
+      "checklist": [
+        "Identifico a norma e sua finalidade.",
+        "Entendo a aplicação prática sem misturar normas distintas.",
+        "Sei os pontos de atenção e atualização necessários.",
+        "Resolvi e compreendi as questões comentadas."
+      ]
+    },
+    {
+      "topicId": "trt8-tec-21-leg-002",
+      "moduleId": "leg-m02",
+      "number": 2,
+      "title": "Código de Ética do TRT-8 — Resolução 88/2012",
+      "goal": "Compreender a finalidade, as distinções e a aplicação prática da norma exigida no edital, com ressalvas de atualização quando necessário.",
+      "status": "requires_consolidated_review",
+      "sourceUrls": [
+        "https://www.trt8.jus.br/sites/portal/files/roles/governanca/cartilha_-_codigo_de_etica.pdf"
+      ],
+      "complete": {
+        "firstRead": [
+          "O Código de Ética do TRT-8, instituído pela Resolução 88/2012, orienta o comportamento dos servidores. Sua finalidade não é apenas punir desvios: ele traduz valores da instituição em padrões práticos de conduta e reforça a confiança no serviço jurisdicional.",
+          "O material oficial do TRT-8 atribui ao Código três finalidades: estabelecer princípios e normas de conduta, transformar visão e valores em práticas institucionais e preservar a imagem e a reputação do servidor que atua de acordo com os padrões éticos."
+        ],
+        "howItWorks": "Situações típicas de ética envolvem uso de informações, conflitos de interesses, favorecimento, respeito no atendimento e tratamento de colegas. Um dever ético não deve ser confundido automaticamente com uma tipificação disciplinar específica; a sanção requer a norma e o procedimento aplicáveis. O texto consolidado de 88/2012 e alterações precisa ser cotejado antes de questões de literalidade.",
+        "workedExample": "Uma servidora recebe pedido de antecipação informal de atendimento em benefício de amigo. A conduta exige avaliação pela impessoalidade, deveres funcionais e regras éticas, independentemente da boa intenção alegada.",
+        "advanced": "Atenção à literalidade de artigos e às alterações posteriores: quando a versão consolidada ou a redação local não estiverem verificadas, a aula é conceitual, não substitui a lei seca."
+      },
+      "summary": [
+        "Código de Ética = orientações de princípios, valores, deveres e vedações.",
+        "Ética apoia integridade e reputação institucional.",
+        "Condutas devem preservar a imparcialidade e confiança pública.",
+        "Detalhes de sanção dependem do texto consolidado e das normas legais."
+      ],
+      "examTraps": [
+        "Ética não se resume a penalidade disciplinar.",
+        "Não inventar prazos, competências de comissão ou sanções sem norma vigente."
+      ],
+      "questions": [
+        {
+          "stem": "Qual objetivo do Código de Ética é reconhecido pelo TRT-8?",
+          "options": [
+            "Dispensar as demais leis administrativas.",
+            "Transformar valores institucionais em práticas de conduta.",
+            "Excluir a moralidade administrativa.",
+            "Garantir vantagem particular ao servidor."
+          ],
+          "correct": 1,
+          "commentary": "O código busca transformar valores e princípios institucionais em condutas observáveis."
+        },
+        {
+          "stem": "Um favor para beneficiar conhecido no atendimento público exige análise principalmente de:",
+          "options": [
+            "Imparcialidade e padrões éticos.",
+            "Quantidade de materiais de escritório.",
+            "Escolha de fonte tipográfica.",
+            "Estrutura de rede de computadores."
+          ],
+          "correct": 0,
+          "commentary": "Favorecimento em função pública envolve impessoalidade e ética profissional."
+        }
+      ],
+      "checklist": [
+        "Identifico a norma e sua finalidade.",
+        "Entendo a aplicação prática sem misturar normas distintas.",
+        "Sei os pontos de atenção e atualização necessários.",
+        "Resolvi e compreendi as questões comentadas."
+      ]
+    },
+    {
+      "topicId": "trt8-tec-21-leg-003",
+      "moduleId": "leg-m03",
+      "number": 3,
+      "title": "Regimento Interno do TRT-8 — estrutura e competências",
+      "goal": "Compreender a finalidade, as distinções e a aplicação prática da norma exigida no edital, com ressalvas de atualização quando necessário.",
+      "status": "source_missing_block_exact_articles",
+      "sourceUrls": [],
+      "complete": {
+        "firstRead": [
+          "O Regimento Interno é norma de organização e funcionamento do tribunal. Trata da distribuição de competências dos órgãos internos e de regras procedimentais aplicáveis às atividades do próprio TRT. Ele não substitui a Constituição, a legislação processual ou a CLT.",
+          "Para estudar sem decorar conceitos soltos, diferencie três perguntas: qual órgão exerce a competência; como o assunto chega a ele; e qual procedimento interno rege sua análise. A estrutura colegiada e as competências administrativas e jurisdicionais devem ser aprendidas na versão consolidada expressamente indicada no edital."
+        ],
+        "howItWorks": "O edital exige o Regimento Interno do TRT da 8ª Região atualizado em 22/06/2026. Não foi obtida nesta etapa uma íntegra oficial verificável exatamente dessa data. Portanto, nomes e competências de órgãos, quóruns, composição, atribuições de autoridades, prazos e artigos não estão aqui afirmados nem cobrados literalmente. ATUALIZAÇÃO JURÍDICA NECESSÁRIA.",
+        "workedExample": "Uma questão pergunta qual órgão do TRT julga determinada matéria. A resposta não pode ser inferida por analogia com outro tribunal: deve ser localizada no capítulo de competências da edição oficial do Regimento Interno do TRT-8.",
+        "advanced": "Atenção à literalidade de artigos e às alterações posteriores: quando a versão consolidada ou a redação local não estiverem verificadas, a aula é conceitual, não substitui a lei seca."
+      },
+      "summary": [
+        "Regimento Interno regula organização, competências e procedimentos internos.",
+        "Constituição/lei superior prevalecem sobre regimento.",
+        "Mapear órgãos, competências e rito diretamente na versão oficial.",
+        "Fonte de 22/06/2026 ainda precisa ser validada para literalidade."
+      ],
+      "examTraps": [
+        "Não confundir regra de TRT diverso com Regimento do TRT-8.",
+        "Não atribuir quórum, órgão ou prazo por suposição."
+      ],
+      "questions": [
+        {
+          "stem": "Para responder a questão literal sobre a competência de um órgão do TRT-8, a fonte adequada é:",
+          "options": [
+            "Regimento Interno oficial do TRT-8 em versão exigida pelo edital.",
+            "Regimento de outro Tribunal Regional do Trabalho.",
+            "Código Civil.",
+            "Manual genérico de gestão de projetos."
+          ],
+          "correct": 0,
+          "commentary": "A competência regimental específica deve ser consultada no ato oficial correspondente."
+        },
+        {
+          "stem": "O Regimento Interno pode, por si, contrariar regra constitucional expressa?",
+          "options": [
+            "Sim, em qualquer tribunal.",
+            "Sim, se aprovado internamente.",
+            "Não, deve respeitar a hierarquia normativa.",
+            "Apenas se não houver recurso."
+          ],
+          "correct": 2,
+          "commentary": "O regimento é norma subordinada ao ordenamento e não afasta Constituição e legislação superior."
+        }
+      ],
+      "checklist": [
+        "Identifico a norma e sua finalidade.",
+        "Entendo a aplicação prática sem misturar normas distintas.",
+        "Sei os pontos de atenção e atualização necessários.",
+        "Resolvi e compreendi as questões comentadas."
+      ]
+    },
+    {
+      "topicId": "trt8-tec-21-leg-004",
+      "moduleId": "leg-m04",
+      "number": 4,
+      "title": "Prevenção ao assédio e à discriminação no TRT-8",
+      "goal": "Compreender a finalidade, as distinções e a aplicação prática da norma exigida no edital, com ressalvas de atualização quando necessário.",
+      "status": "local_consolidation_pending",
+      "sourceUrls": [
+        "https://juslaboris.tst.jus.br/handle/20.500.12178/220465"
+      ],
+      "complete": {
+        "firstRead": [
+          "A política de enfrentamento da violência, do assédio e de discriminações procura criar ambiente de trabalho seguro, digno e respeitoso, com prevenção, acolhimento e encaminhamento responsável. A abordagem é institucional: educação, canais acessíveis, proteção das pessoas envolvidas e apuração conforme regras aplicáveis.",
+          "A retificação oficial do edital substituiu a referência local anterior pela Resolução TRT8 065/2025, alterada pela TRT8 23/2026. As diretrizes nacionais mencionadas no programa são a Resolução CNJ 351/2020 e a Resolução CSJT 360/2023. A resolução do CSJT foi republicada em setembro de 2026, razão adicional para usar a versão atual."
+        ],
+        "howItWorks": "É crucial distinguir prevenção, acolhimento e apuração: acolher relato não significa prejulgar denúncia, mas tampouco desconsiderar o risco à pessoa atingida. Nenhuma das etapas dispensa garantias legais das partes. O conteúdo específico dos artigos locais das Resoluções TRT8 065/2025 e 23/2026 não foi verificado integralmente nesta etapa: ATUALIZAÇÃO JURÍDICA NECESSÁRIA.",
+        "workedExample": "Uma pessoa relata humilhações reiteradas. O servidor deve orientar a utilização dos canais institucionais, preservar privacidade e evitar exposição ou retaliação; não cabe produzir decisão disciplinar informal ou divulgar a narrativa.",
+        "advanced": "Atenção à literalidade de artigos e às alterações posteriores: quando a versão consolidada ou a redação local não estiverem verificadas, a aula é conceitual, não substitui a lei seca."
+      },
+      "summary": [
+        "TRT8 065/2025, alterada por 23/2026: referência local retificada.",
+        "CNJ 351/2020 e CSJT 360/2023: diretrizes nacionais.",
+        "Prevenção, acolhimento e apuração são funções distintas.",
+        "Não inventar prazos ou composição de órgãos de recebimento sem fonte local."
+      ],
+      "examTraps": [
+        "Não usar a revogada referência do edital inicial 067/2021 como norma do programa retificado.",
+        "Relato acolhido não equivale automaticamente à comprovação do fato."
+      ],
+      "questions": [
+        {
+          "stem": "Qual é a referência local indicada pela retificação do edital TRT-8 2026?",
+          "options": [
+            "Resolução 067/2021 isoladamente.",
+            "Resolução TRT8 065/2025 alterada pela 23/2026.",
+            "Resolução CNJ 400/2021.",
+            "Decreto 4.388/2002."
+          ],
+          "correct": 1,
+          "commentary": "O edital foi retificado para indicar 065/2025, alterada por 23/2026."
+        },
+        {
+          "stem": "Uma medida adequada diante de relato de assédio é:",
+          "options": [
+            "Divulgar imediatamente o nome de todos os envolvidos.",
+            "Substituir a apuração por julgamento informal.",
+            "Orientar acolhimento protegido e encaminhamento institucional.",
+            "Desconsiderar o relato por não haver sentença."
+          ],
+          "correct": 2,
+          "commentary": "Proteção, acolhimento e procedimento regular são compatíveis e necessários."
+        }
+      ],
+      "checklist": [
+        "Identifico a norma e sua finalidade.",
+        "Entendo a aplicação prática sem misturar normas distintas.",
+        "Sei os pontos de atenção e atualização necessários.",
+        "Resolvi e compreendi as questões comentadas."
+      ]
+    },
+    {
+      "topicId": "trt8-tec-21-leg-005",
+      "moduleId": "leg-m05",
+      "number": 5,
+      "title": "Perspectiva de gênero — Resolução CNJ 492/2023",
+      "goal": "Compreender a finalidade, as distinções e a aplicação prática da norma exigida no edital, com ressalvas de atualização quando necessário.",
+      "status": "requires_consolidated_review",
+      "sourceUrls": [
+        "https://atos.cnj.jus.br/atos/detalhar/4986"
+      ],
+      "complete": {
+        "firstRead": [
+          "Julgar com perspectiva de gênero significa identificar quando desigualdades estruturais, estereótipos e relações assimétricas podem afetar a compreensão de fatos, provas e direitos. O método busca decisões fundamentadas e sem discriminação, e não um resultado automático em favor de uma parte.",
+          "A Resolução CNJ 492/2023 estabelece diretrizes para adoção do Protocolo para Julgamento com Perspectiva de Gênero, prevê capacitação relacionada a direitos humanos, gênero, raça e etnia e trata de estruturas de acompanhamento e incentivo à participação institucional feminina."
+        ],
+        "howItWorks": "A aplicação não elimina contraditório, ampla defesa, motivação ou análise da prova. O estudante deve identificar barreiras institucionais e estereótipos, separar fatos de preconceitos e consultar o texto oficial quanto à composição e atribuições concretas dos comitês.",
+        "workedExample": "Ao avaliar alegações em relação de trabalho, o julgador evita deduzir credibilidade ou comportamento adequado com base em estereótipos de gênero; examina provas e contexto conforme direito aplicável.",
+        "advanced": "Atenção à literalidade de artigos e às alterações posteriores: quando a versão consolidada ou a redação local não estiverem verificadas, a aula é conceitual, não substitui a lei seca."
+      },
+      "summary": [
+        "Resolução CNJ 492/2023: perspectiva de gênero nos julgamentos.",
+        "Protocolo e capacitação são eixos importantes.",
+        "Abordagem interseccional considera mais de uma fonte de desigualdade.",
+        "Não altera dever de motivar decisões e respeitar provas."
+      ],
+      "examTraps": [
+        "Perspectiva de gênero não é presunção automática de veracidade.",
+        "Não confundir com simples regra de distribuição paritária de cargos."
+      ],
+      "questions": [
+        {
+          "stem": "A perspectiva de gênero na análise judicial procura principalmente:",
+          "options": [
+            "Substituir provas por opinião do julgador.",
+            "Reconhecer desigualdades e evitar estereótipos na interpretação dos casos.",
+            "Eliminar o contraditório.",
+            "Criar competência criminal nova."
+          ],
+          "correct": 1,
+          "commentary": "É método de análise fundamentada que evita vieses de gênero."
+        },
+        {
+          "stem": "A Resolução CNJ 492/2023 também trata de:",
+          "options": [
+            "Capacitação e comitês institucionais.",
+            "Crimes contra a humanidade no TPI.",
+            "Licitações da Lei 14.133/2021 exclusivamente.",
+            "Política de logística reversa apenas."
+          ],
+          "correct": 0,
+          "commentary": "A norma prevê diretrizes, capacitação e estruturas institucionais de acompanhamento."
+        }
+      ],
+      "checklist": [
+        "Identifico a norma e sua finalidade.",
+        "Entendo a aplicação prática sem misturar normas distintas.",
+        "Sei os pontos de atenção e atualização necessários.",
+        "Resolvi e compreendi as questões comentadas."
+      ]
+    },
+    {
+      "topicId": "trt8-tec-21-leg-006",
+      "moduleId": "leg-m06",
+      "number": 6,
+      "title": "Equidade e diversidade — Resolução CSJT 368/2023",
+      "goal": "Compreender a finalidade, as distinções e a aplicação prática da norma exigida no edital, com ressalvas de atualização quando necessário.",
+      "status": "requires_consolidated_review",
+      "sourceUrls": [
+        "https://juslaboris.tst.jus.br/handle/20.500.12178/223823"
+      ],
+      "complete": {
+        "firstRead": [
+          "Equidade envolve enfrentar barreiras que impedem condições concretas de participação. Igualdade formal significa aplicar o mesmo comando sem discriminação arbitrária; políticas de equidade reconhecem que situações sociais desiguais podem demandar instrumentos adequados de inclusão.",
+          "A Resolução CSJT 368/2023 institui Programa de Equidade de Raça, Gênero e Diversidade na Justiça do Trabalho. O programa vincula-se à promoção de condições de respeito, inclusão e prevenção de discriminação nas relações institucionais e de trabalho."
+        ],
+        "howItWorks": "Na gestão do tribunal, medidas podem incluir capacitação, identificação de barreiras, avaliação de processos e canais de prevenção, observando o ato aplicável. Não atribuir metas numéricas ou composição de comitês sem cotejo do texto normativo completo.",
+        "workedExample": "Um procedimento de capacitação está disponível somente em formato incompatível com ferramentas de acessibilidade. A unidade identifica a barreira e adapta o acesso, preservando os critérios formativos para todos.",
+        "advanced": "Atenção à literalidade de artigos e às alterações posteriores: quando a versão consolidada ou a redação local não estiverem verificadas, a aula é conceitual, não substitui a lei seca."
+      },
+      "summary": [
+        "CSJT 368/2023 institui Programa de Equidade de Raça, Gênero e Diversidade.",
+        "Equidade busca remover obstáculos materiais.",
+        "Práticas institucionais devem prevenir discriminação.",
+        "Estruturas e prazos concretos exigem leitura do texto normativo."
+      ],
+      "examTraps": [
+        "Não equiparar equidade a privilégio arbitrário.",
+        "Não confundir programa de equidade com norma específica de apuração de assédio."
+      ],
+      "questions": [
+        {
+          "stem": "Qual norma instituiu o Programa de Equidade de Raça, Gênero e Diversidade na Justiça do Trabalho?",
+          "options": [
+            "CSJT 368/2023.",
+            "CNJ 400/2021.",
+            "Decreto 19.841/1945.",
+            "TRT8 88/2012."
+          ],
+          "correct": 0,
+          "commentary": "A Resolução CSJT 368/2023 instituiu o programa."
+        },
+        {
+          "stem": "Uma medida coerente com equidade institucional é:",
+          "options": [
+            "Ignorar barreiras documentadas.",
+            "Adaptar processos para reduzir barreiras discriminatórias.",
+            "Proibir a avaliação de medidas.",
+            "Discriminar sem fundamento."
+          ],
+          "correct": 1,
+          "commentary": "Políticas de equidade buscam remover obstáculos que gerem desigualdades injustificadas."
+        }
+      ],
+      "checklist": [
+        "Identifico a norma e sua finalidade.",
+        "Entendo a aplicação prática sem misturar normas distintas.",
+        "Sei os pontos de atenção e atualização necessários.",
+        "Resolvi e compreendi as questões comentadas."
+      ]
+    },
+    {
+      "topicId": "trt8-tec-21-leg-007",
+      "moduleId": "leg-m07",
+      "number": 7,
+      "title": "Tribunal Penal Internacional — Estatuto de Roma",
+      "goal": "Compreender a finalidade, as distinções e a aplicação prática da norma exigida no edital, com ressalvas de atualização quando necessário.",
+      "status": "grounded_conceptual",
+      "sourceUrls": [
+        "https://www.planalto.gov.br/ccivil_03/decreto/2002/d4388.htm"
+      ],
+      "complete": {
+        "firstRead": [
+          "O Tribunal Penal Internacional (TPI) é corte penal internacional permanente instituída pelo Estatuto de Roma. O Decreto brasileiro 4.388/2002 promulgou esse tratado. O TPI não é uma instância recursal geral do Judiciário brasileiro e não julga qualquer infração comum.",
+          "O Estatuto trata de crimes internacionais definidos em seu regime, como genocídio, crimes contra a humanidade, crimes de guerra e crime de agressão, observadas as condições e limites jurisdicionais. O princípio da complementaridade significa que a jurisdição penal nacional tem primazia e a intervenção do TPI depende dos pressupostos estatutários."
+        ],
+        "howItWorks": "Não confunda TPI com Corte Internacional de Justiça: o TPI estabelece responsabilidade criminal de pessoas físicas, enquanto a CIJ resolve controvérsias jurídicas entre Estados e emite pareceres consultivos nas hipóteses de sua competência.",
+        "workedExample": "Uma prova pergunta se um litígio de fronteira entre países é julgado pelo TPI. A resposta é não: litígios entre Estados podem integrar a competência da Corte Internacional de Justiça, enquanto o TPI julga indivíduos por crimes de sua competência.",
+        "advanced": "Atenção à literalidade de artigos e às alterações posteriores: quando a versão consolidada ou a redação local não estiverem verificadas, a aula é conceitual, não substitui a lei seca."
+      },
+      "summary": [
+        "TPI: Estatuto de Roma; Decreto 4.388/2002.",
+        "Jurisdição penal de indivíduos; não é tribunal de recurso comum.",
+        "Complementaridade com jurisdições nacionais.",
+        "TPI ≠ CIJ."
+      ],
+      "examTraps": [
+        "O TPI não é órgão principal da ONU igual à CIJ.",
+        "Complementaridade não significa substituir sempre os tribunais internos."
+      ],
+      "questions": [
+        {
+          "stem": "O TPI se distingue da CIJ por:",
+          "options": [
+            "Ser tribunal penal internacional que pode julgar pessoas físicas.",
+            "Julgar exclusivamente disputas territoriais entre Estados.",
+            "Substituir automaticamente o STF.",
+            "Ser órgão de fiscalização administrativa do CNJ."
+          ],
+          "correct": 0,
+          "commentary": "O TPI tem competência penal internacional voltada a indivíduos, segundo o Estatuto."
+        },
+        {
+          "stem": "O decreto brasileiro de promulgação do Estatuto de Roma é:",
+          "options": [
+            "19.841/1945.",
+            "4.388/2002.",
+            "592/1992.",
+            "9.203/2017."
+          ],
+          "correct": 1,
+          "commentary": "O Decreto 4.388/2002 promulgou o Estatuto de Roma no Brasil."
+        }
+      ],
+      "checklist": [
+        "Identifico a norma e sua finalidade.",
+        "Entendo a aplicação prática sem misturar normas distintas.",
+        "Sei os pontos de atenção e atualização necessários.",
+        "Resolvi e compreendi as questões comentadas."
+      ]
+    },
+    {
+      "topicId": "trt8-tec-21-leg-008",
+      "moduleId": "leg-m08",
+      "number": 8,
+      "title": "ONU, Carta de São Francisco e Corte Internacional de Justiça",
+      "goal": "Compreender a finalidade, as distinções e a aplicação prática da norma exigida no edital, com ressalvas de atualização quando necessário.",
+      "status": "grounded_conceptual",
+      "sourceUrls": [
+        "https://www.planalto.gov.br/ccivil_03/decreto/1930-1949/d19841.htm"
+      ],
+      "complete": {
+        "firstRead": [
+          "A Carta das Nações Unidas foi promulgada no Brasil pelo Decreto 19.841/1945. Suas finalidades incluem paz e segurança internacionais, cooperação, relações amistosas entre as nações e promoção de direitos humanos. O texto foi adotado no contexto da organização internacional criada após a Segunda Guerra Mundial.",
+          "Entre os órgãos principais previstos no art. 7º da Carta estão Assembleia Geral, Conselho de Segurança, Conselho Econômico e Social, Conselho de Tutela, Corte Internacional de Justiça e Secretariado. A Corte Internacional de Justiça é o principal órgão judiciário da ONU, com Estatuto anexo integrante da Carta."
+        ],
+        "howItWorks": "Para evitar confusão de prova: Assembleia Geral e Conselho de Segurança têm composições e atribuições próprias; CIJ lida com controvérsias jurídicas entre Estados e competência consultiva prevista no seu Estatuto; TPI é outra corte, instituída por tratado posterior, com foco na responsabilidade penal individual.",
+        "workedExample": "Dois Estados discordam sobre interpretação de tratado e cogitam levar o assunto à CIJ. A discussão é de direito internacional entre Estados, diferente da responsabilização penal de uma pessoa por crimes do Estatuto de Roma.",
+        "advanced": "Atenção à literalidade de artigos e às alterações posteriores: quando a versão consolidada ou a redação local não estiverem verificadas, a aula é conceitual, não substitui a lei seca."
+      },
+      "summary": [
+        "Carta da ONU: Decreto 19.841/1945.",
+        "Art. 7º enumera seis órgãos principais.",
+        "Art. 92: CIJ como principal órgão judiciário da ONU.",
+        "CIJ julga controvérsias jurídicas entre Estados; TPI julga pessoas físicas em crimes internacionais."
+      ],
+      "examTraps": [
+        "Não confundir CIJ com TPI.",
+        "Conselho de Tutela integra o rol da Carta, embora sua atividade esteja suspensa."
+      ],
+      "questions": [
+        {
+          "stem": "A Corte Internacional de Justiça é:",
+          "options": [
+            "Principal órgão judiciário da ONU.",
+            "Órgão julgador de infrações disciplinares do TRT-8.",
+            "A seção administrativa do TPI.",
+            "Câmara recursal do Tribunal Penal Internacional."
+          ],
+          "correct": 0,
+          "commentary": "A CIJ é órgão principal da ONU, previsto no art. 7º e descrito no art. 92 da Carta."
+        },
+        {
+          "stem": "Qual diploma promulgou a Carta da ONU no Brasil?",
+          "options": [
+            "Decreto 4.388/2002.",
+            "Lei 13.146/2015.",
+            "Decreto 19.841/1945.",
+            "Resolução CSJT 368/2023."
+          ],
+          "correct": 2,
+          "commentary": "O Decreto 19.841/1945 promulgou a Carta das Nações Unidas."
+        }
+      ],
+      "checklist": [
+        "Identifico a norma e sua finalidade.",
+        "Entendo a aplicação prática sem misturar normas distintas.",
+        "Sei os pontos de atenção e atualização necessários.",
+        "Resolvi e compreendi as questões comentadas."
+      ]
+    }
+  ]
+}
