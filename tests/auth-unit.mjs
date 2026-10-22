@@ -21,3 +21,16 @@ test('roles and password hash',()=>{
   assert.equal(normalizeRole('editor'),'editor');assert.equal(normalizeRole('superuser'),'');
   const hash=hashPassword('audit-password');assert.equal(verifyPassword('audit-password',hash),true);assert.equal(verifyPassword('wrong-password',hash),false);
 });
+
+// Evita regressão no acesso da Preview com credencial longa (sem usar segredo real).
+import { readFileSync } from 'node:fs';
+test('Preview: token longo válido não é rejeitado por limite antigo de 128 caracteres', () => {
+  const middleware = readFileSync(new URL('../middleware.js', import.meta.url), 'utf8');
+  const authApi = readFileSync(new URL('../api/auth.js', import.meta.url), 'utf8');
+  assert.match(middleware, /token\.length\s*>\s*2048/);
+  assert.match(authApi, /supplied\.length\s*>\s*2048/);
+  assert.match(middleware, /process\.env\.VERCEL_ENV\s*===\s*'preview'/);
+  assert.match(authApi, /process\.env\.VERCEL_ENV\s*!==\s*'preview'/);
+  assert.match(middleware, /path\.startsWith\('\/api\/'\)/);
+  assert.match(middleware, /previewForbidden\(\)/);
+});
