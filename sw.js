@@ -1,17 +1,23 @@
 /* Base Completa — PWA autenticado e offline por sessão verificada. */
-var CACHE='central-20261021-multiexam-trt8-v2';
+var CACHE='central-20261022-online-first-recovery-v1';
 var AUTH_CACHE='central-auth-session-v1';
 var AUTH_KEY='/__bc_offline_auth__';
 var AUTH_TTL_MS=72*60*60*1000;
 var BOOT='/central-v119.html';
-var OFFLINE_MANIFEST='/central-offline-files-v66172.json?v=20261021-multiexam-trt8-v2';
-var OFFLINE_READY='/central-offline-ready.json?v=20261021-multiexam-trt8-v2';
+var OFFLINE_MANIFEST='/central-offline-files-v66172.json?v=20261022-online-first-recovery-v1';
+var OFFLINE_READY='/central-offline-ready.json?v=20261022-online-first-recovery-v1';
 
 function publicPath(path){
   return path==='/login.html'||path==='/favicon.ico'||path==='/robots.txt'||path==='/assets/base-completa-symbol.webp';
 }
-function cacheResponse(cache,request,response){
-  if(response&&response.ok&&!response.redirected)cache.put(request,response.clone()).catch(function(){});
+function cacheResponse(event,request,response){
+  // Cache Storage must never prevent a healthy online response from loading.
+  if(response&&response.ok&&!response.redirected){
+    try {
+      var copy=response.clone();
+      event.waitUntil(caches.open(CACHE).then(function(cache){return cache.put(request,copy)}).catch(function(){}));
+    } catch(_) {}
+  }
   return response;
 }
 async function clearOfflineAuth(){
@@ -86,20 +92,22 @@ async function prepareOffline(){
 }
 
 self.addEventListener('install',function(event){
-  event.waitUntil(caches.open(CACHE).then(async function(cache){
-    try{var boot=await fetch(BOOT,{cache:'no-store'});if(boot.ok&&!boot.redirected)await cache.put(BOOT,boot)}catch(_){}
-    return self.skipWaiting();
-  }))
+  // Offline content is cached only after a verified login (PREPARE_OFFLINE).
+  // Do not let an unavailable/corrupt Cache Storage block installation.
+  event.waitUntil(self.skipWaiting());
 });
 
 self.addEventListener('activate',function(event){
-  event.waitUntil(
-    caches.keys().then(function(keys){
-      return Promise.all(keys.filter(function(key){
+  event.waitUntil((async function(){
+    try{
+      var keys=await caches.keys();
+      await Promise.all(keys.filter(function(key){
         return key!==CACHE&&key!==AUTH_CACHE&&key.indexOf('central-')===0;
-      }).map(function(key){return caches.delete(key)}));
-    }).then(function(){return self.clients.claim()})
-  );
+      }).map(function(key){return caches.delete(key).catch(function(){})}));
+    }catch(_){}
+    // Cache cleanup failures must not stop the new worker claiming clients.
+    await self.clients.claim();
+  })());
 });
 
 self.addEventListener('fetch',function(event){
@@ -126,45 +134,48 @@ self.addEventListener('fetch',function(event){
 
   if(request.method!=='GET'||url.pathname.startsWith('/api/'))return;
 
-  if(request.mode==='navigate'&&(url.pathname==='/'||url.pathname==='/index.html'||url.pathname==='/central-v119.html'||url.pathname==='/central-de-questoes')){
-    event.respondWith(
-      caches.open(CACHE).then(function(cache){
-        var entry=new URL(request.url);entry.pathname=BOOT;entry.searchParams.delete('direct');
-        return fetch(entry.href,{cache:'no-store'})
-          .then(function(response){return cacheResponse(cache,BOOT,response)})
-          .catch(async function(){return (await offlineAllowed())?(await cache.match(BOOT)||offlineDenied()):offlineDenied()})
-      })
-    );
+  if(request.mode==='navigate'){
+    event.respondWith((async function(){
+      // Always request the ORIGINAL URL so auth redirects and routing work.
+      // Do not open Cache Storage before fetching: a failed cache must not
+      // turn a working online site into Chrome's ERR_FAILED.
+      try{
+        return await fetch(request,{cache:'no-store'});
+      }catch(_){
+        try{
+          if(await offlineAllowed()){
+            var offlineCache=await caches.open(CACHE);
+            var boot=await offlineCache.match(BOOT);
+            if(boot)return boot;
+          }
+        }catch(_){}
+        // A real HTML response makes the error recoverable in the browser.
+        return offlineDenied();
+      }
+    })());
     return;
   }
 
-  if(/\.html$/.test(url.pathname)){
-    event.respondWith(
-      caches.open(CACHE).then(function(cache){
-        return fetch(request,{cache:'no-store'})
-          .then(function(response){return cacheResponse(cache,request,response)})
-          .catch(async function(){
-            if(publicPath(url.pathname))return (await cache.match(request))||Response.error();
-            if(!(await offlineAllowed()))return offlineDenied();
-            return (await cache.match(request))||(url.pathname==='/tools/decorando.html'?await cache.match(url.pathname):undefined)||Response.error();
-          })
-      })
-    );
-    return;
-  }
-
-  var dynamic=/\.(?:js|css|json|woff2?|png|webp|avif|ico|svg)$/.test(url.pathname)||/\.txt$/.test(url.pathname)||url.search;
-  if(dynamic){
-    event.respondWith(
-      caches.open(CACHE).then(function(cache){
-        return fetch(request,{cache:'no-store'})
-          .then(function(response){return cacheResponse(cache,request,response)})
-          .catch(async function(){
-            if(!publicPath(url.pathname)&&!(await offlineAllowed()))return Response.error();
-            return (await cache.match(request))||Response.error();
-          })
-      })
-    );
+  var html=/\\.html$/.test(url.pathname);
+  var dynamic=/\\.(?:js|css|json|woff2?|png|webp|avif|ico|svg)$/.test(url.pathname)||/\\.txt$/.test(url.pathname)||url.search;
+  if(html||dynamic){
+    event.respondWith((async function(){
+      try{
+        var response=await fetch(request,{cache:'no-store'});
+        return cacheResponse(event,request,response);
+      }catch(_){
+        if(!publicPath(url.pathname)&&!(await offlineAllowed())){
+          return html?offlineDenied():Response.error();
+        }
+        try{
+          var cache=await caches.open(CACHE);
+          var hit=await cache.match(request);
+          if(!hit&&url.pathname==='/tools/decorando.html')hit=await cache.match(url.pathname);
+          if(hit)return hit;
+        }catch(_){}
+        return html?offlineDenied():Response.error();
+      }
+    })());
   }
 });
 
