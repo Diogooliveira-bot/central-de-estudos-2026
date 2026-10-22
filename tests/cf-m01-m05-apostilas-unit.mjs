@@ -57,6 +57,7 @@ test('CF M01–M05 mantêm 10 + 5 questões válidas e equilibradas', () => {
 });
 
 test('integração oferece tabelas responsivas, checklist persistente, guia e Lei em Dia', () => {
+  assert.match(read('ui/cf-native-study-v2.js'), /\.cf-native-shell,.cf-native-reader article,.cf-native-quiz article\{color:var\(--text\)\}/);
   const dom = new JSDOM('<!doctype html><html><head></head><body></body></html>', { url:'https://preview.example/' });
   const w = dom.window;
   w.CF_WEEKS = Array.from({ length:5 }, (_, index) => ({
