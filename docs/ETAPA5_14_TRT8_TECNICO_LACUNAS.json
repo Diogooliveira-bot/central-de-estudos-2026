@@ -1,0 +1,171 @@
+{
+  "schemaVersion": 1,
+  "examId": "trt8-2026-tecnico-administrativa-21",
+  "phase": "5.14",
+  "note": "Auditoria sem alterar links do edital. Ausência de vínculo não prova ausência de material; requer conferência do conteúdo real do módulo.",
+  "totalTopics": 176,
+  "withPreviouslyMappedModules": 101,
+  "newLessonsProduced": 53,
+  "stillWithoutAnyKnownModuleOrNewLesson": 22,
+  "needLegalReview": [
+    "Regimento Interno TRT8 22/06/2026",
+    "Resoluções TRT8 065/2025 e 23/2026",
+    "PTRA materiais sinalizados como parciais"
+  ],
+  "pending": [
+    {
+      "id": "trt8-tec-21-pt-005",
+      "discipline": "Língua Portuguesa",
+      "originalText": "Discurso direto, discurso indireto e discurso indireto livre. Intertextualidade. Figuras de linguagem. Morfossintaxe.",
+      "priority": "module-or-new-lesson",
+      "status": "pending_verified_coverage"
+    },
+    {
+      "id": "trt8-tec-21-pt-011",
+      "discipline": "Língua Portuguesa",
+      "originalText": "Redação: confronto e reconhecimento de frases corretas e incorretas.",
+      "priority": "module-or-new-lesson",
+      "status": "pending_verified_coverage"
+    },
+    {
+      "id": "trt8-tec-21-pt-013",
+      "discipline": "Língua Portuguesa",
+      "originalText": "Equivalência e transformação de estruturas.",
+      "priority": "module-or-new-lesson",
+      "status": "pending_verified_coverage"
+    },
+    {
+      "id": "trt8-tec-21-rlm-001",
+      "discipline": "Matemática e Raciocínio lógico",
+      "originalText": "Estrutura lógica de relações arbitrárias entre pessoas, lugares, objetos ou eventos fictícios",
+      "priority": "module-or-new-lesson",
+      "status": "pending_verified_coverage"
+    },
+    {
+      "id": "trt8-tec-21-rlm-002",
+      "discipline": "Matemática e Raciocínio lógico",
+      "originalText": "deduzir novas informações das relações fornecidas e avaliar as condições usadas para estabelecer a estrutura daquelas relações.",
+      "priority": "module-or-new-lesson",
+      "status": "pending_verified_coverage"
+    },
+    {
+      "id": "trt8-tec-21-cf-016",
+      "discipline": "Noções de Direito Constitucional",
+      "originalText": "Do Conselho Superior da Justiça do Trabalho: organização e competência.",
+      "priority": "module-or-new-lesson",
+      "status": "pending_verified_coverage"
+    },
+    {
+      "id": "trt8-tec-21-adm-001",
+      "discipline": "Noções de Direito Administrativo",
+      "originalText": "Administração Pública.",
+      "priority": "legal-source-check",
+      "status": "pending_verified_coverage"
+    },
+    {
+      "id": "trt8-tec-21-adm-008",
+      "discipline": "Noções de Direito Administrativo",
+      "originalText": "Crimes de abuso de autoridade (Lei nº 13.869/2019 e suas alterações).",
+      "priority": "legal-source-check",
+      "status": "pending_verified_coverage"
+    },
+    {
+      "id": "trt8-tec-21-adm-024",
+      "discipline": "Noções de Direito Administrativo",
+      "originalText": "crimes em licitações e contratos administrativos.",
+      "priority": "legal-source-check",
+      "status": "pending_verified_coverage"
+    },
+    {
+      "id": "trt8-tec-21-adm-031",
+      "discipline": "Noções de Direito Administrativo",
+      "originalText": "Lei nº 11.416/2006 (dispõe sobre as carreiras dos servidores públicos do Poder Judiciário Federal).",
+      "priority": "legal-source-check",
+      "status": "pending_verified_coverage"
+    },
+    {
+      "id": "trt8-tec-21-adm-033",
+      "discipline": "Noções de Direito Administrativo",
+      "originalText": "Regime de emprego público e disposições da Consolidação das Leis do Trabalho (CLT) aplicáveis.",
+      "priority": "legal-source-check",
+      "status": "pending_verified_coverage"
+    },
+    {
+      "id": "trt8-tec-21-trab-002",
+      "discipline": "Noções de Direito do Trabalho",
+      "originalText": "Dos direitos constitucionais dos trabalhadores (artigo 7º da Constituição Federal de 1988).",
+      "priority": "legal-source-check",
+      "status": "pending_verified_coverage"
+    },
+    {
+      "id": "trt8-tec-21-trab-022",
+      "discipline": "Noções de Direito do Trabalho",
+      "originalText": "Da proteção ao trabalho do menor.",
+      "priority": "legal-source-check",
+      "status": "pending_verified_coverage"
+    },
+    {
+      "id": "trt8-tec-21-trab-023",
+      "discipline": "Noções de Direito do Trabalho",
+      "originalText": "Da proteção ao trabalho da mul her da estabilidade da gestante da licença-maternidade.",
+      "priority": "legal-source-check",
+      "status": "pending_verified_coverage"
+    },
+    {
+      "id": "trt8-tec-21-trab-025",
+      "discipline": "Noções de Direito do Trabalho",
+      "originalText": "Das comissões de Conciliação Prévia. Da renúncia e transação.",
+      "priority": "legal-source-check",
+      "status": "pending_verified_coverage"
+    },
+    {
+      "id": "trt8-tec-21-trab-027",
+      "discipline": "Noções de Direito do Trabalho",
+      "originalText": "Dano moral e material nas relações de trabalho.",
+      "priority": "legal-source-check",
+      "status": "pending_verified_coverage"
+    },
+    {
+      "id": "trt8-tec-21-trab-028",
+      "discipline": "Noções de Direito do Trabalho",
+      "originalText": "Precedentes vinculantes (IRDR e IAC).",
+      "priority": "legal-source-check",
+      "status": "pending_verified_coverage"
+    },
+    {
+      "id": "trt8-tec-21-trab-029",
+      "discipline": "Noções de Direito do Trabalho",
+      "originalText": "Súmulas e Orientações da Jurisprudência uniformizada do Tribunal Superior do Trabalho sobre Direito do Trabalho.",
+      "priority": "legal-source-check",
+      "status": "pending_verified_coverage"
+    },
+    {
+      "id": "trt8-tec-21-trab-030",
+      "discipline": "Noções de Direito do Trabalho",
+      "originalText": "Súmulas Vinculantes do Supremo Tribunal Federal relativas ao Direito do Trabalho.",
+      "priority": "legal-source-check",
+      "status": "pending_verified_coverage"
+    },
+    {
+      "id": "trt8-tec-21-trab-031",
+      "discipline": "Noções de Direito do Trabalho",
+      "originalText": "Instruções e atos Normativos do TST em matéria de Direito do Trabalho.",
+      "priority": "legal-source-check",
+      "status": "pending_verified_coverage"
+    },
+    {
+      "id": "trt8-tec-21-trab-032",
+      "discipline": "Noções de Direito do Trabalho",
+      "originalText": "Reforma Trabalhista – Lei nº 13.467/2017.",
+      "priority": "legal-source-check",
+      "status": "pending_verified_coverage"
+    },
+    {
+      "id": "trt8-tec-21-ptra-003",
+      "discipline": "Noções de Direito Processual de Trabalho",
+      "originalText": "Dos serviços auxiliares da Justiça do Trabalho: das secretarias das Varas do Trabalho e dos distribuidores.",
+      "priority": "module-or-new-lesson",
+      "status": "pending_verified_coverage"
+    }
+  ]
+}
