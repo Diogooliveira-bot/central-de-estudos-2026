@@ -1,0 +1,201 @@
+{
+  "complete": [
+    {
+      "n": 1,
+      "difficulty": "Fácil",
+      "q": "Ao realizar concurso para preencher os cargos de seus serviços administrativos, a Câmara dos Deputados exerce qual função?",
+      "options": [
+        "Função legislativa típica, pois qualquer ato da Câmara cria leis.",
+        "Função administrativa atípica, relacionada à organização de seus serviços.",
+        "Função jurisdicional típica, porque o concurso seleciona servidores públicos.",
+        "Função executiva que exige transferência do concurso ao Presidente da República."
+      ],
+      "answer": 1,
+      "explanation": "A atividade descrita é de administração interna, uma função atípica do Legislativo. Produzir leis e fiscalizar são suas funções típicas. Selecionar servidores não é julgar um conflito, e a autonomia administrativa da Casa não exige que o Presidente da República conduza o concurso. O órgão deve ser identificado junto com a atividade concreta que realiza."
+    },
+    {
+      "n": 2,
+      "difficulty": "Fácil",
+      "q": "Qual alternativa relaciona corretamente representação política, sistema eleitoral e mandato no Congresso Nacional?",
+      "options": [
+        "A Câmara representa os Estados, com eleição majoritária e mandato de oito anos.",
+        "O Senado representa o povo, com eleição proporcional e mandato de quatro anos.",
+        "As duas Casas representam exclusivamente a população e têm renovação integral a cada quatro anos.",
+        "A Câmara representa o povo, com eleição proporcional e mandato de quatro anos; o Senado representa Estados e DF, com eleição majoritária e mandato de oito anos."
+      ],
+      "answer": 3,
+      "explanation": "Os arts. 45 e 46 distinguem a representação popular da Câmara da representação federativa do Senado. A Câmara segue o sistema proporcional e o mandato de quatro anos; o Senado segue o majoritário e o mandato de oito. As alternativas que invertem essas características estão erradas. A renovação do Senado é parcial, por um e dois terços alternadamente a cada quatro anos."
+    },
+    {
+      "n": 3,
+      "difficulty": "Fácil",
+      "q": "Uma CPI será criada no Senado Federal. Quais requisitos devem estar presentes cumulativamente segundo a Constituição?",
+      "options": [
+        "Requerimento de um terço dos senadores, fato determinado e prazo certo.",
+        "Autorização do Presidente da República, fato genérico e prazo indefinido.",
+        "Aprovação de dois terços dos deputados, fato determinado e prazo certo.",
+        "Decisão judicial prévia, maioria simples dos senadores e investigação sem prazo."
+      ],
+      "answer": 0,
+      "explanation": "O art. 58, § 3º exige um terço dos membros, fato determinado e prazo certo. Como a CPI é do Senado, a fração recai sobre os senadores. Não há exigência de autorização presidencial, decisão judicial ou votos da Câmara. A determinação do fato e do prazo impede que a investigação parlamentar seja aberta sem delimitação."
+    },
+    {
+      "n": 4,
+      "difficulty": "Fácil",
+      "q": "No regime do art. 53, § 2º, a que corresponde o prazo de vinte e quatro horas após a prisão em flagrante de crime inafiançável de um congressista?",
+      "options": [
+        "Ao prazo de votação obrigatória da Casa, contado do recebimento dos autos.",
+        "Ao prazo para o STF proferir condenação definitiva.",
+        "Ao prazo de remessa dos autos à Casa respectiva, que resolverá sobre a prisão pela maioria de seus membros.",
+        "Ao prazo para o parlamentar renunciar ao mandato e evitar o processo."
+      ],
+      "answer": 2,
+      "explanation": "As vinte e quatro horas dizem respeito à remessa dos autos. O dispositivo não estabelece esse prazo para a votação da Casa, nem para julgamento definitivo ou renúncia. A deliberação parlamentar sobre a prisão exige o voto da maioria de seus membros. É necessário associar o número ao ato correto, e não apenas à palavra prisão."
+    },
+    {
+      "n": 5,
+      "difficulty": "Média",
+      "q": "Uma comissão hipotética de 20 membros delibera sob a regra geral do art. 47. Há 12 presentes, todos votam validamente e não há abstenções. Sete votam a favor e cinco contra. Qual conclusão é correta?",
+      "options": [
+        "A matéria foi rejeitada, pois toda deliberação exige onze votos favoráveis.",
+        "A presença mínima foi atingida e houve maioria dos votos favorável, suficiente na regra geral descrita.",
+        "A comissão não poderia deliberar, pois seria necessária a presença de todos os membros.",
+        "A matéria foi aprovada por maioria absoluta dos membros da comissão."
+      ],
+      "answer": 1,
+      "explanation": "Em 20 membros, a maioria absoluta de presença é onze, e compareceram doze. Como todos votaram e não há regra especial, sete votos favoráveis contra cinco contrários formam a maioria simples necessária. Sete não é maioria absoluta da composição total. A Constituição não exige presença integral nem aprovação por maioria absoluta em toda matéria."
+    },
+    {
+      "n": 6,
+      "difficulty": "Média",
+      "q": "O Presidente da República deixou de apresentar as contas ao Congresso no prazo de sessenta dias após a abertura da sessão legislativa. Qual órgão deve proceder à tomada de contas nessa hipótese?",
+      "options": [
+        "A Câmara dos Deputados, sem confundir essa providência com o julgamento anual das contas pelo Congresso.",
+        "O Senado Federal, porque todas as matérias sobre o Presidente são de sua competência exclusiva.",
+        "O TCU, que substitui o Congresso no julgamento político anual das contas presidenciais.",
+        "O STF, independentemente de qualquer procedimento previsto na Constituição."
+      ],
+      "answer": 0,
+      "explanation": "A omissão por sessenta dias aciona a tomada de contas pela Câmara, nos termos do art. 51, II. O julgamento anual pertence ao Congresso, e o TCU presta auxílio técnico com parecer prévio. A competência do Senado para certos crimes de responsabilidade não engloba toda providência relativa ao Presidente. Não há no caso a competência automática atribuída ao STF pela alternativa."
+    },
+    {
+      "n": 7,
+      "difficulty": "Média",
+      "q": "Uma CPI pretende acessar extratos bancários relacionados ao fato investigado e, em outra medida, captar futuras conversas telefônicas do investigado. Como avaliar essas providências?",
+      "options": [
+        "Ambas podem ser determinadas livremente pelo presidente da comissão.",
+        "Nenhuma pode ser objeto de investigação parlamentar, nem mesmo por deliberação colegiada.",
+        "A CPI pode determinar a interceptação telefônica, mas jamais acessar dados bancários.",
+        "O acesso bancário pode ser determinado por deliberação colegiada fundamentada e pertinente; a interceptação depende de ordem judicial."
+      ],
+      "answer": 3,
+      "explanation": "A CPI pode afastar determinados sigilos, como o bancário, mediante fundamentação, colegialidade e pertinência. Captar conversas telefônicas envolve reserva de jurisdição. As duas medidas não se confundem. A decisão individual do presidente não substitui a deliberação colegiada, e negar todo acesso a dados bancários também ignora os poderes investigativos reconhecidos à CPI."
+    },
+    {
+      "n": 8,
+      "difficulty": "Média",
+      "q": "Segundo a distribuição expressa dos §§ 2º e 3º do art. 55, como se reconhece a perda do mandato por faltas a um terço das sessões ordinárias, sem licença ou missão autorizada?",
+      "options": [
+        "Por decreto do Presidente da República, após votação por dois terços do Senado.",
+        "Por decisão do Plenário da Casa por maioria absoluta em todos os casos.",
+        "Por declaração da Mesa da Casa respectiva, assegurada ampla defesa.",
+        "Por ato automático do partido, sem possibilidade de defesa."
+      ],
+      "answer": 2,
+      "explanation": "A hipótese está no art. 55, III e integra o grupo de perda declarada pela Mesa. A ampla defesa é expressamente assegurada. O grupo de decisão da Casa por maioria absoluta é o dos incisos I, II e VI, conforme o texto do § 2º. Nem o Presidente da República nem um partido isoladamente substituem o procedimento constitucional."
+    },
+    {
+      "n": 9,
+      "difficulty": "Difícil",
+      "q": "Um deputado é acusado de dois delitos: um anterior e outro posterior à diplomação. Considerando apenas o mecanismo do art. 53, §§ 3º a 5º, qual afirmação é correta?",
+      "options": [
+        "A diplomação suspende automaticamente as ações pelos dois delitos.",
+        "O mecanismo pode alcançar o delito posterior à diplomação, mediante os requisitos constitucionais, e o pedido deve ser apreciado em quarenta e cinco dias do recebimento pela Mesa.",
+        "A suspensão é decidida por maioria simples dos presentes e extingue a prescrição de modo definitivo.",
+        "O crime anterior entra no mecanismo se a denúncia for recebida depois da diplomação, independentemente da data do fato."
+      ],
+      "answer": 1,
+      "explanation": "O marco é a ocorrência do crime após a diplomação. Exigem-se iniciativa de partido representado na Casa e deliberação pela maioria de seus membros, além da comunicação prevista após o recebimento da denúncia. O prazo do pedido é quarenta e cinco dias do recebimento pela Mesa. Não há suspensão automática, maioria simples ou extinção definitiva da prescrição; esta fica suspensa enquanto durar o mandato quando a ação é sustada."
+    },
+    {
+      "n": 10,
+      "difficulty": "Difícil",
+      "q": "O mandato de um parlamentar terminou. Depois disso, começa a investigação de crime supostamente cometido durante o cargo e diretamente relacionado às funções. Segundo a orientação sobre foro firmada em 2025 e aplicada pelo STF em 2026, qual conclusão é adequada?",
+      "options": [
+        "O fim do mandato não afasta, por si, a prerrogativa de foro para esse fato funcional, mesmo com investigação iniciada depois.",
+        "Todo fato deve necessariamente ser enviado à primeira instância porque o mandato terminou.",
+        "O encerramento do mandato torna o crime protegido pela imunidade material, qualquer que seja sua natureza.",
+        "A manutenção do foro dispensa a apuração e equivale a absolvição."
+      ],
+      "answer": 0,
+      "explanation": "A orientação preserva o foro para delitos praticados no cargo e em razão das funções, inclusive quando a apuração se inicia após o afastamento. O fim do mandato isoladamente não determina a mudança de competência. Foro define quem julga; não concede imunidade material a qualquer conduta, não encerra a investigação nem antecipa absolvição."
+    }
+  ],
+  "summary": [
+    {
+      "n": 1,
+      "difficulty": "Fácil",
+      "q": "Qual afirmação descreve corretamente o Senado Federal?",
+      "options": [
+        "É renovado integralmente a cada quatro anos e usa o sistema proporcional.",
+        "Possui número de senadores por Estado proporcional à população.",
+        "Cada Estado e o DF elegem três senadores por oito anos, com renovação alternada de um e dois terços a cada quatro anos.",
+        "Cada Território elege três senadores por quatro anos."
+      ],
+      "answer": 2,
+      "explanation": "A representação dos Estados e do DF é igualitária, com três senadores por unidade e mandato de oito anos. A renovação é parcial e alternada. Sistema proporcional, distribuição populacional de cadeiras e representação de Territórios não correspondem à composição constitucional do Senado."
+    },
+    {
+      "n": 2,
+      "difficulty": "Fácil",
+      "q": "Qual alternativa distingue corretamente competências dos arts. 48 e 49 da Constituição?",
+      "options": [
+        "O art. 48 trata de matérias com participação presidencial; o art. 49 reúne competências exclusivas do Congresso sem sanção.",
+        "Os dois artigos exigem sanção presidencial para todos os atos.",
+        "O art. 49 atribui poderes exclusivos à Câmara, sem participação do Senado.",
+        "O art. 48 permite ao Presidente exercer sozinho todas as competências da União."
+      ],
+      "answer": 0,
+      "explanation": "O art. 48 organiza a atuação do Congresso com sanção nos casos pertinentes; o art. 49 reúne competências exclusivas sem sanção. Congresso não é sinônimo de Câmara isolada. A participação do Presidente no processo legislativo também não o torna titular exclusivo da competência legislativa da União."
+    },
+    {
+      "n": 3,
+      "difficulty": "Média",
+      "q": "Em CPI, um investigado se recusa a responder pergunta cuja resposta pode incriminá-lo e pede assistência de advogado. Qual conduta é compatível com as garantias constitucionais?",
+      "options": [
+        "Prendê-lo preventivamente até que responda à comissão.",
+        "Respeitar a não autoincriminação e a assistência jurídica, sem tratar o silêncio protegido como fundamento suficiente para prisão.",
+        "Obrigá-lo a prestar compromisso de testemunha e responder mesmo contra si.",
+        "Considerá-lo automaticamente culpado no relatório, com condenação penal imediata."
+      ],
+      "answer": 1,
+      "explanation": "A CPI deve respeitar o silêncio contra autoincriminação e a assistência de advogado. Não pode decretar prisão preventiva nem produzir condenação. O investigado não é obrigado a assumir o compromisso próprio de testemunha para produzir prova contra si. O exercício legítimo do silêncio não equivale a culpa."
+    },
+    {
+      "n": 4,
+      "difficulty": "Média",
+      "q": "Um senador assume o cargo de Ministro de Estado. À luz do art. 56, qual consequência é correta?",
+      "options": [
+        "Ele perde necessariamente o mandato antes de assumir o Ministério.",
+        "O mandato é preservado, mas a Constituição proíbe a convocação do suplente.",
+        "O mandato é preservado e as duas remunerações devem ser acumuladas obrigatoriamente.",
+        "O mandato pode ser preservado, o suplente é convocado e o parlamentar pode optar pela remuneração do mandato."
+      ],
+      "answer": 3,
+      "explanation": "Ministro de Estado está na enumeração do art. 56, I. A investidura permite preservação do mandato e convocação do suplente. A Constituição admite opção pela remuneração do mandato, não acumulação obrigatória dos dois pagamentos. Afastamento nessas condições não se confunde com perda definitiva do mandato."
+    },
+    {
+      "n": 5,
+      "difficulty": "Difícil",
+      "q": "Durante estado de sítio, propõe-se suspender imunidades de senador por ato praticado fora do recinto do Congresso e incompatível com a execução da medida. Qual requisito o art. 53, § 8º ainda exige?",
+      "options": [
+        "Nenhum, pois o estado de sítio já suspende automaticamente todas as imunidades.",
+        "Apenas decisão do Presidente da República, sem votação parlamentar.",
+        "Voto de dois terços dos membros da Casa respectiva, observadas as condições constitucionais descritas.",
+        "Voto da maioria simples dos presentes na Câmara dos Deputados."
+      ],
+      "answer": 2,
+      "explanation": "As imunidades subsistem durante o estado de sítio. A suspensão excepcional exige dois terços dos membros da Casa respectiva, além de ato fora do recinto e incompatibilidade com a execução da medida. Como se trata de senador, a Casa é o Senado. Não há suspensão automática nem substituição dessa deliberação por ato presidencial."
+    }
+  ]
+}
