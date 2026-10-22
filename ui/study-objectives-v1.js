@@ -219,7 +219,10 @@
     loading = true;
     const local = localObjective();
     if (global.__BASE_COMPLETA_PREVIEW_GUEST__ === true) {
-      activeId = local;
+      // Em Preview, começar no estudo livre evita modal bloqueando a inspeção.
+      // Preferência apenas local; persistRemote impede escrita na API.
+      activeId = local || 'free-study';
+      if (!local) localStorage.setItem(KEY, activeId);
     } else {
       try {
         const response = await fetch('/api/objective', { cache:'no-store' });
