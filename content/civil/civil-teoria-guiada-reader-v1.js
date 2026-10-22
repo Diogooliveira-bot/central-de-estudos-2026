@@ -93,7 +93,6 @@ function open(n){
     const style=document.createElement('style');
     style.id='bc-civil-guided-reader-style-v1';
     style.textContent=[
-      '.cf-module[data-cf="w1"] .cf-study-actions .bc-m01-pilot-launch{border:1px solid #94b3d3!important;background:#f0f6fc!important;color:#1b527f!important;box-shadow:none!important;font-size:12px!important;min-height:40px!important;}',
       '.bc-m01-overlay{position:fixed;inset:0;z-index:2147483000;background:#f0f3f8;color:#172b47;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;}',
       '.bc-m01-reader{width:100%;height:100%;display:flex;flex-direction:column;}',
       '.bc-m01-toolbar{flex:0 0 auto;min-height:54px;padding:8px max(14px,env(safe-area-inset-right));border-bottom:1px solid #dce3eb;background:#fff;display:flex;align-items:center;justify-content:space-between;gap:12px;}',
