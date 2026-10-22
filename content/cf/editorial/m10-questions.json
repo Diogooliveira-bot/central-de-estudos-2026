@@ -1,0 +1,216 @@
+{
+  "summary": [
+    {
+      "n": 1,
+      "difficulty": "Fácil",
+      "q": "O Conselho Nacional de Justiça, segundo a Constituição Federal,",
+      "options": [
+        "compõe-se de 15 membros, com mandato de 2 anos, admitida uma recondução.",
+        "exerce função jurisdicional recursal sobre decisões dos tribunais.",
+        "é órgão auxiliar do Poder Executivo.",
+        "é presidido pelo Ministro mais antigo do STJ.",
+        "possui competência apenas financeira."
+      ],
+      "answer": 0,
+      "explanation": "Art. 103-B: 15 membros, 2 anos e uma recondução. O CNJ integra o Judiciário, mas não é instância recursal."
+    },
+    {
+      "n": 2,
+      "difficulty": "Fácil",
+      "q": "É órgão da Justiça do Trabalho:",
+      "options": [
+        "CNJ.",
+        "TRT.",
+        "TRF.",
+        "STJ.",
+        "Conselho da Justiça Federal."
+      ],
+      "answer": 1,
+      "explanation": "Art. 111: TST, TRTs e juízes do trabalho."
+    },
+    {
+      "n": 3,
+      "difficulty": "Média",
+      "q": "Os Tribunais Regionais Federais compõem-se, constitucionalmente, de",
+      "options": [
+        "no mínimo cinco juízes.",
+        "exatamente onze ministros.",
+        "no mínimo sete juízes, observada a composição constitucional entre quinto e magistratura federal.",
+        "vinte e sete ministros.",
+        "somente juízes promovidos por antiguidade."
+      ],
+      "answer": 2,
+      "explanation": "Art. 107: TRFs possuem no mínimo sete juízes; um quinto vem da advocacia e MPF e os demais da magistratura federal."
+    },
+    {
+      "n": 4,
+      "difficulty": "Média",
+      "q": "Sobre o CNJ, é correto afirmar que",
+      "options": [
+        "somente pode atuar após encerrado processo disciplinar local.",
+        "não pode controlar atos administrativos dos tribunais.",
+        "não pode avocar processo disciplinar em curso.",
+        "pode rever processos disciplinares de juízes e membros de tribunais julgados há menos de um ano.",
+        "pode cassar acórdãos judiciais por ilegalidade."
+      ],
+      "answer": 3,
+      "explanation": "Art. 103-B, §4º, V. O CNJ tem atuação disciplinar própria e não revisa mérito jurisdicional."
+    },
+    {
+      "n": 5,
+      "difficulty": "Difícil",
+      "q": "Na hipótese constitucional de grave violação de direitos humanos, o incidente de deslocamento de competência para a Justiça Federal pode ser suscitado",
+      "options": [
+        "pelo Governador perante o STF.",
+        "pelo Presidente da República perante o TST.",
+        "por qualquer cidadão perante o CNJ.",
+        "pelo Defensor Público-Geral perante o TRF.",
+        "pelo Procurador-Geral da República perante o STJ."
+      ],
+      "answer": 4,
+      "explanation": "Art. 109, § 5º: o PGR pode suscitar o incidente perante o STJ para assegurar obrigações internacionais de direitos humanos."
+    }
+  ],
+  "complete": [
+    {
+      "n": 1,
+      "difficulty": "Fácil",
+      "q": "São órgãos da Justiça Federal, nos termos do art. 106,",
+      "options": [
+        "Tribunais Regionais Federais e Juízes Federais.",
+        "STJ e TRFs.",
+        "CNJ e Juízes Federais.",
+        "TST e TRFs.",
+        "Tribunais de Justiça e Juízes Federais."
+      ],
+      "answer": 0,
+      "explanation": "Art. 106: a Justiça Federal é composta por TRFs e Juízes Federais."
+    },
+    {
+      "n": 2,
+      "difficulty": "Fácil",
+      "q": "O Superior Tribunal de Justiça compõe-se de",
+      "options": [
+        "exatamente 27 Ministros.",
+        "no mínimo 33 Ministros.",
+        "exatamente 33 Ministros.",
+        "no mínimo 27 Ministros.",
+        "15 membros."
+      ],
+      "answer": 1,
+      "explanation": "Art. 104: o STJ compõe-se de, no mínimo, 33 Ministros."
+    },
+    {
+      "n": 3,
+      "difficulty": "Fácil",
+      "q": "Os Estados organizam sua Justiça",
+      "options": [
+        "sem qualquer vinculação constitucional.",
+        "por lei federal de iniciativa do STJ.",
+        "observados os princípios estabelecidos na Constituição Federal.",
+        "exclusivamente por decreto do Governador.",
+        "mediante resolução do CNJ que substitui a Constituição estadual."
+      ],
+      "answer": 2,
+      "explanation": "Art. 125: os Estados organizam sua Justiça observados os princípios da Constituição."
+    },
+    {
+      "n": 4,
+      "difficulty": "Fácil",
+      "q": "O Conselho Superior da Justiça do Trabalho atua principalmente na",
+      "options": [
+        "revisão de sentenças trabalhistas.",
+        "fiscalização do STF.",
+        "edição de leis trabalhistas.",
+        "supervisão administrativa, orçamentária, financeira e patrimonial da JT de 1º e 2º graus.",
+        "homologação de sentenças estrangeiras."
+      ],
+      "answer": 3,
+      "explanation": "Art. 111-A, §2º, II. O CSJT é órgão central de supervisão, não órgão jurisdicional."
+    },
+    {
+      "n": 5,
+      "difficulty": "Média",
+      "q": "Cabe recurso especial ao STJ quando o acórdão recorrido",
+      "options": [
+        "contrariar diretamente a Constituição.",
+        "julgar válida lei local contestada em face de lei federal.",
+        "contrariar exclusivamente lei municipal.",
+        "for proferido por juiz de primeiro grau, sem passagem por tribunal.",
+        "der à lei federal interpretação divergente da atribuída por outro tribunal."
+      ],
+      "answer": 4,
+      "explanation": "Art. 105, III, c. Lei local x lei federal está no RE ao STF; o REsp fala em ato de governo local."
+    },
+    {
+      "n": 6,
+      "difficulty": "Média",
+      "q": "Compete originariamente ao TRF processar e julgar",
+      "options": [
+        "conflito de competência entre juízes federais vinculados ao Tribunal.",
+        "recurso especial contra acórdão de TJ.",
+        "ADI contra lei federal.",
+        "crime comum do Presidente da República.",
+        "recurso extraordinário."
+      ],
+      "answer": 0,
+      "explanation": "Art. 108 inclui conflitos de competência entre juízes federais vinculados ao TRF entre suas competências originárias."
+    },
+    {
+      "n": 7,
+      "difficulty": "Média",
+      "q": "Servidor municipal estatutário ajuíza ação contra o Município discutindo vantagem funcional. A competência é",
+      "options": [
+        "necessariamente da Justiça do Trabalho.",
+        "da Justiça comum, conforme entendimento constitucional sobre vínculo jurídico-administrativo.",
+        "necessariamente do TST.",
+        "do CNJ.",
+        "do STJ originariamente."
+      ],
+      "answer": 1,
+      "explanation": "A competência trabalhista não alcança litígios jurídico-estatutários entre Poder Público e servidor."
+    },
+    {
+      "n": 8,
+      "difficulty": "Média",
+      "q": "Em regra, causa em que empresa pública federal figura como parte é da competência",
+      "options": [
+        "do STJ originariamente.",
+        "sempre da Justiça estadual.",
+        "da Justiça Federal, ressalvadas as exceções constitucionais.",
+        "do CNJ.",
+        "da Justiça do Trabalho independentemente da matéria."
+      ],
+      "answer": 2,
+      "explanation": "Art. 109, I, inclui empresa pública federal na regra de competência dos juízes federais, observadas as exceções constitucionais."
+    },
+    {
+      "n": 9,
+      "difficulty": "Difícil",
+      "q": "Um TJ julga válido ato de governo local contestado em face de lei federal. Presentes os demais requisitos, a via constitucional adequada é",
+      "options": [
+        "recurso extraordinário, porque qualquer conflito local-federal vai ao STF.",
+        "recurso ordinário ao STJ.",
+        "reclamação ao CNJ.",
+        "recurso especial, nos termos do art. 105, III, b.",
+        "mandado de injunção no STJ."
+      ],
+      "answer": 3,
+      "explanation": "A alínea b do art. 105, III, refere-se a ato de governo local. A questão é desenhada para distinguir de lei local x lei federal."
+    },
+    {
+      "n": 10,
+      "difficulty": "Difícil",
+      "q": "Lei autoriza determinada causa previdenciária a tramitar na Justiça estadual quando preenchidos os requisitos constitucionais do art. 109, § 3º. O recurso cabível será dirigido",
+      "options": [
+        "ao Tribunal de Justiça.",
+        "ao CNJ.",
+        "ao STJ diretamente.",
+        "ao STF diretamente.",
+        "ao Tribunal Regional Federal da área de jurisdição do juiz de primeiro grau."
+      ],
+      "answer": 4,
+      "explanation": "Art. 109, § 4º: na hipótese de competência federal exercida pela Justiça estadual nos termos do § 3º, o recurso vai ao TRF."
+    }
+  ]
+}

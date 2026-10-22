@@ -1,0 +1,467 @@
+LEITURA ORIENTADA
+
+Esta apostila reescreve o texto original do módulo CF M12 para que o iniciante entenda tudo e o avançado se aprofunde. O conteúdo segue a ordem do próprio módulo, em treze capítulos (fundamentos e classificações, controle difuso e controle concentrado), e termina em um fechamento de revisão. Cada capítulo traz prosa, uma tabela e, no máximo, duas caixas didáticas; os quadros do texto original (Cai muito, Não confundir, Atenção, Pegadinha, Regra de bolso, Quóruns, Legitimados especiais) aparecem no capítulo a que pertencem.
+
+TRÊS SITUAÇÕES-PROBLEMA
+
+Tente responder antes de ler. Errar faz parte: a resposta está no capítulo indicado.
+
+Núcleo   Situação-problema   Resposta
+Controle difuso   Uma câmara de tribunal deixa de aplicar uma lei estadual “por incompatibilidade com a Constituição”, sem levar a questão ao plenário e sem usar a palavra “inconstitucional”. Há problema?   Capítulo 6
+Ações diretas   Um prefeito quer questionar no STF uma lei municipal de 1985 contrária à CF/88. Cabe ADI? Cabe ADPF? Ele é legitimado?   Capítulos 7, 8 e 11
+Efeitos   Depois de declarar uma lei inconstitucional em ADI, o STF quer que a decisão só valha dali para frente. Pode? Com qual quórum?   Capítulo 8
+
+CAMINHO DO INICIANTE E CAMINHO DO AVANÇADO
+
+Etapa   Caminho do iniciante   Caminho do avançado
+Antes   Leia o capítulo 1 e tente as três situações-problema, mesmo que erre.   Responda sem consultar; depois confira nos capítulos 6, 7, 8 e 11.
+Em cada capítulo   Prosa, tabela e caixa de Caso ou Exemplo; só depois o Erro comum.   Comece pela tabela; leia Jurisprudência, Caso explicado e Erro comum; volte à prosa onde errar.
+Ordem   Siga a numeração: Parte I (capítulos 2 a 5), Parte II (6) e Parte III (7 a 13).   Comece pelas ações diretas e pelos quóruns (capítulos 6 a 11) e complete com os demais.
+Fechamento   Faça o Resumo e o Checklist; releia as regras de bolso.   Estude as Pegadinhas e treine o roteiro de Como resolver questões.
+
+Como ler as caixas. Caso explicado e Exemplo (os exemplos aplicados do texto original, Exemplos 1 a 5) mostram o raciocínio em uma situação; Jurisprudência (os entendimentos-chave do STF) é para quem quer ir além; Erro comum aponta a troca que a banca explora; Como estudar é dica de revisão; Cai muito, Não confundir, Atenção, Pegadinha, Regra de bolso, Quóruns e Legitimados especiais são quadros do texto original. Nesta apostila não foi acrescentado conteúdo jurídico novo.
+
+ROTEIRO DE ESTUDO
+
+PERCURSO DO MÓDULO
+
+A numeração das aulas é a mesma dos capítulos: a aula 9 corresponde ao capítulo 9. Use o tema como índice para localizar o capítulo correspondente.
+
+Aula   Tema do capítulo   Base constitucional
+Visão geral   Visão geral   Visão geral
+1   Visão geral e método de estudo   Não se aplica.
+Parte I · Fundamentos e classificações (aulas 2 a 5)   Parte I · Fundamentos e classificações (aulas 2 a 5)   Parte I · Fundamentos e classificações (aulas 2 a 5)
+2   Fundamentos, pressupostos e modelos   Não se aplica.
+3   Espécies de inconstitucionalidade   Não se aplica.
+4   Momento, órgão e via do controle   art. 52, X
+5   Técnicas de decisão   Não se aplica.
+Parte II · Controle difuso (aula 6)   Parte II · Controle difuso (aula 6)   Parte II · Controle difuso (aula 6)
+6   Controle difuso e incidental   arts. 52, X, e 97
+Parte III · Controle concentrado (aulas 7 a 13)   Parte III · Controle concentrado (aulas 7 a 13)   Parte III · Controle concentrado (aulas 7 a 13)
+7   Controle concentrado: noções gerais e legitimados   art. 103
+8   ADI: Ação Direta de Inconstitucionalidade   arts. 102, I, a, e 103; Lei 9.868/1999
+9   ADC: Ação Declaratória de Constitucionalidade   art. 102, I, a; Lei 9.868/1999
+10   ADO: Ação Direta de Inconstitucionalidade por Omissão   art. 103, § 2º; Lei 9.868/1999
+11   ADPF: Arguição de Descumprimento de Preceito Fundamental   art. 102, § 1º; Lei 9.882/1999
+12   ADI interventiva e controle abstrato estadual e municipal   arts. 34, VII, e 36, III
+13   Súmula vinculante e repercussão geral: recorte necessário   art. 103-A
+Fechamento (sem numeração de aula)   Fechamento (sem numeração de aula)   Fechamento (sem numeração de aula)
+Não se aplica.   Resumo; O que decorar; Pegadinhas de prova; Como resolver questões; Checklist; Referências e links oficiais   Não se aplica.
+
+VISÃO GERAL DO MÓDULO
+
+CAPÍTULO 1 — VISÃO GERAL E MÉTODO DE ESTUDO
+
+O controle de constitucionalidade é o conjunto de mecanismos destinados a preservar a supremacia da Constituição, retirando eficácia ou impedindo a aplicação de atos incompatíveis com ela. Em prova, o tema exige raciocínio por eixos: quem controla, quando controla, por qual via, qual é o objeto, qual é o parâmetro, quais são os efeitos e quais quóruns ou legitimidades especiais incidem.
+
+Eixo   Onde se resolve
+Quem controla   Caps. 4, 6 e 7
+Quando controla   Cap. 4
+Por qual via   Caps. 4, 6 e 7
+Qual é o objeto   Caps. 8 a 12
+Qual é o parâmetro   Caps. 8 e 12
+Quais são os efeitos   Caps. 2, 5, 6 e 8
+Quais quóruns ou legitimidades especiais incidem   Caps. 6 a 11
+
+Cai muito. A banca costuma misturar controle difuso e concentrado, ADI/ADC/ADO/ADPF, efeitos inter partes e erga omnes, reserva de plenário, pertinência temática e quórum de modulação.
+
+Como estudar. Use os eixos como checklist Ao ler uma alternativa, passe pelos sete eixos na ordem. A maioria dos erros do módulo está em um só deles: objeto (federal, estadual, municipal, pré-constitucional), legitimidade (pertinência temática) ou quórum (maioria absoluta, 8 + 6, 2/3).
+
+PARTE I · FUNDAMENTOS E CLASSIFICAÇÕES
+
+CAPÍTULO 2 — FUNDAMENTOS, PRESSUPOSTOS E MODELOS
+
+FUNDAMENTOS E PRESSUPOSTOS
+
+A supremacia constitucional significa que as normas infraconstitucionais devem ser formal e materialmente compatíveis com a Constituição. Em constituições rígidas, o procedimento de alteração constitucional é mais exigente que o processo legislativo ordinário, o que fundamenta a superioridade formal da Constituição.
+
+Elemento   Conteúdo
+Pressuposto estrutural   Constituição rígida, em regra escrita, dotada de supremacia formal.
+Pressuposto institucional   Existência de mecanismo de fiscalização e de órgão competente para realizá-lo.
+Consequência   Lei ou ato normativo incompatível pode ser afastado, invalidado ou ter sua eficácia modulada conforme a técnica e a via de controle.
+
+No Brasil predomina a teoria da nulidade: reconhecida a inconstitucionalidade, considera-se que o vício existe desde a origem, de modo que a regra geral é o efeito retroativo. Essa lógica, contudo, é flexibilizada pela modulação dos efeitos por razões de segurança jurídica ou excepcional interesse social.
+
+BREVE HISTÓRICO E MODELOS
+
+Modelo   Características centrais   Referência
+Norte-americano   Difuso, incidental, ligado a caso concreto; qualquer juiz ou tribunal pode controlar no exercício da jurisdição.   Marbury v. Madison (1803).
+Austríaco/Kelseniano   Concentrado, abstrato; fiscalização principal por tribunal constitucional especializado.   Constituição austríaca de 1920.
+Brasileiro   Sistema misto: convive controle difuso-incidental com controle concentrado-abstrato.   Evolução desde 1891; forte ampliação em 1988.
+
+A Constituição de 1988 ampliou os legitimados do controle abstrato, criou a ADO e acolheu a ADPF; a EC 3/1993 criou a ADC; a EC 45/2004 reforçou o sistema com súmula vinculante e equiparou o rol de legitimados de ADI e ADC.
+
+Como estudar. Linha do tempo em quatro marcos 1803 Marbury v. Madison (difuso) → 1920 Constituição austríaca (concentrado) → 1988 ADO, ADPF e mais legitimados → 1993 EC 3 cria a ADC → 2004 EC 45: súmula vinculante e mesmo rol para ADI e ADC.
+
+PARTE I · FUNDAMENTOS E CLASSIFICAÇÕES
+
+CAPÍTULO 3 — ESPÉCIES DE INCONSTITUCIONALIDADE
+
+A) POR AÇÃO E POR OMISSÃO
+
+A inconstitucionalidade por ação decorre de conduta positiva incompatível com a Constituição. A omissão ocorre quando o Poder Público deixa de cumprir dever constitucional de normatizar ou de adotar providência necessária à efetividade de norma constitucional. A omissão pode ser total ou parcial.
+
+B) MATERIAL E FORMAL
+
+A inconstitucionalidade material recai sobre o conteúdo do ato. A formal decorre de defeito na produção normativa. Pode ser orgânica (incompetência do ente ou órgão), formal subjetiva (vício de iniciativa) ou formal objetiva (violação do procedimento, quórum ou fase exigida).
+
+C) TOTAL E PARCIAL
+
+A invalidade pode atingir todo o ato ou apenas parte dele. A inconstitucionalidade parcial pode ocorrer com redução de texto ou sem redução de texto, quando se preserva a redação e se exclui determinada interpretação ou incidência incompatível com a Constituição.
+
+Critério   Espécies   Exemplo de vício
+Conduta   Por ação; por omissão (total ou parcial).   Lei incompatível; falta de norma ou providência devida.
+Conteúdo x produção   Material; formal orgânica; formal subjetiva; formal objetiva.   Conteúdo incompatível com direito fundamental; incompetência legislativa; vício de iniciativa; violação do procedimento, quórum ou fase exigida.
+Extensão   Total; parcial (com ou sem redução de texto).   Todo o ato; parte dele; exclusão de interpretação ou incidência mantendo a redação.
+
+Não confundir. Vício de iniciativa é inconstitucionalidade formal subjetiva. Incompetência legislativa é formal orgânica. Conteúdo incompatível com direito fundamental é material.
+
+PARTE I · FUNDAMENTOS E CLASSIFICAÇÕES
+
+CAPÍTULO 4 — MOMENTO, ÓRGÃO E VIA DO CONTROLE
+
+Base constitucional: art. 52, X
+
+QUANTO AO MOMENTO: PREVENTIVO E REPRESSIVO
+
+Controle preventivo ocorre antes do aperfeiçoamento da norma. Busca evitar o ingresso de ato inconstitucional no ordenamento. Controle repressivo ocorre depois da formação do ato, retirando ou neutralizando sua eficácia.
+
+Momento   Exemplos   Ponto de prova
+Preventivo político   Comissões de Constituição e Justiça; veto jurídico do Chefe do Executivo.   O veto por inconstitucionalidade é controle preventivo.
+Preventivo judicial   Excepcionalmente, mandado de segurança de parlamentar para proteger direito ao devido processo legislativo constitucional, especialmente diante de proposta que viole limitações constitucionais ao poder de reforma.   Não se trata de controle abstrato judicial de projeto de lei em geral.
+Repressivo judicial   Controle difuso em casos concretos e concentrado por ações próprias.   É a forma predominante no Brasil.
+Repressivo político excepcional   Senado no art. 52, X; Congresso em hipóteses constitucionais como excesso de delegação legislativa.   Exceções ao predomínio jurisdicional.
+
+QUANTO AO ÓRGÃO: POLÍTICO, JURISDICIONAL E MISTO
+
+No sistema político, a fiscalização é atribuída a órgão não jurisdicional. No sistema jurisdicional, cabe ao Judiciário. O Brasil adota modelo predominantemente jurisdicional, mas com mecanismos políticos preventivos e repressivos, daí a classificação doutrinária de sistema misto em sentido amplo.
+
+VIAS: INCIDENTAL/CONCRETA E PRINCIPAL/ABSTRATA
+
+No controle incidental, a questão constitucional surge como fundamento necessário para resolver uma controvérsia concreta: o pedido principal não é, em si, a declaração abstrata de invalidade. No controle principal, a constitucionalidade é o próprio objeto do processo, típico das ações do controle concentrado.
+
+NÃO CONFUNDIR
+
+Instituto 1   Instituto 2   Diferença decisiva
+Difuso   Concentrado   Difuso nasce em caso concreto; concentrado tem constitucionalidade como objeto principal.
+
+Erro comum. Achar que todo controle preventivo é político Há hipótese excepcional de controle judicial preventivo: o mandado de segurança de parlamentar para proteger o devido processo legislativo constitucional. E há controle repressivo político: Senado (art. 52, X) e Congresso (excesso de delegação legislativa).
+
+PARTE I · FUNDAMENTOS E CLASSIFICAÇÕES
+
+CAPÍTULO 5 — TÉCNICAS DE DECISÃO
+
+Técnica   O que faz
+Interpretação conforme a Constituição   Entre sentidos possíveis do texto, preserva-se aquele compatível com a Constituição, sem criar sentido contra legem.
+Declaração parcial de inconstitucionalidade sem redução de texto   A redação permanece, mas determinada hipótese de aplicação é excluída por ser inconstitucional.
+Inconstitucionalidade consequencial/por arrastamento   Dispositivos dependentes podem ser atingidos quando sua subsistência isolada se torna inviável.
+Modulação de efeitos   Flexibiliza o efeito retroativo em razão de segurança jurídica ou excepcional interesse social, exigindo quórum qualificado quando aplicada nas ações regidas pela Lei 9.868/1999 e na ADPF.
+
+Atenção. Interpretação conforme não autoriza reescrever a lei. O STF preserva interpretações constitucionalmente possíveis; não pode substituir o legislador sem limite.
+
+NÃO CONFUNDIR
+
+Instituto 1   Instituto 2   Diferença decisiva
+Interpretação conforme   Inconstitucionalidade sem redução   A primeira preserva sentidos compatíveis; a segunda exclui incidência/sentido inconstitucional sem alterar o texto.
+
+Caso explicado. Qual técnica o enunciado descreve? “Fica mantida a interpretação X” → interpretação conforme. “O texto fica, mas não se aplica à hipótese Y” → sem redução de texto. “Caiu o artigo principal e, com ele, o regulamento que dependia dele” → arrastamento. “A decisão só vale daqui para frente” → modulação.
+
+PARTE II · CONTROLE DIFUSO
+
+CAPÍTULO 6 — CONTROLE DIFUSO E INCIDENTAL
+
+Base constitucional: arts. 52, X, e 97
+
+Qualquer juiz ou tribunal, no exercício da função jurisdicional, pode reconhecer incidentalmente a incompatibilidade de lei ou ato normativo com a Constituição. Em regra, a decisão resolve o caso concreto e produz efeitos entre as partes.
+
+CLÁUSULA DE RESERVA DE PLENÁRIO (ART. 97)
+
+Nos tribunais, a declaração de inconstitucionalidade de lei ou ato normativo do Poder Público exige voto da maioria absoluta dos membros do tribunal ou dos membros do respectivo órgão especial. A regra não se aplica a juiz singular. Também não se exige nova submissão ao plenário quando já houver pronunciamento do plenário do próprio tribunal ou do STF sobre a matéria, nos termos da disciplina processual e da jurisprudência consolidada.
+
+A Súmula Vinculante 10 impede a burla: órgão fracionário viola a reserva de plenário se afasta, total ou parcialmente, a incidência de norma por fundamento constitucional, ainda que não use expressamente a palavra “inconstitucionalidade”.
+
+Pegadinha. Norma pré-constitucional incompatível com a CF/88 é tratada, em regra, como não recepcionada, e não como “declarada inconstitucional”; por isso a reserva de plenário não incide do mesmo modo sobre o juízo de recepção.
+
+EFEITOS E PAPEL DO SENADO
+
+No modelo clássico, a decisão difusa tem efeitos inter partes e, em regra, retroativos no caso concreto. O art. 52, X, atribui ao Senado competência para suspender a execução, no todo ou em parte, de lei declarada inconstitucional por decisão definitiva do STF. Para concurso, é essencial conhecer a literalidade do dispositivo e distinguir essa competência dos efeitos vinculantes próprios do controle abstrato.
+
+A evolução do sistema de precedentes e da repercussão geral ampliou a força prática das decisões do STF em controle difuso. Isso não autoriza, em prova objetiva, apagar a distinção constitucional entre a competência do Senado no art. 52, X, e o efeito vinculante típico das decisões abstratas.
+
+Ponto   Regra
+Quem pode   Qualquer juiz ou tribunal, incidentalmente.
+Efeitos   Entre as partes e, em regra, retroativos no caso concreto.
+Tribunal   Maioria absoluta do tribunal ou do órgão especial (art. 97).
+Não se aplica   A juiz singular; nem exige nova submissão se já houver pronunciamento do plenário do próprio tribunal ou do STF; em regra, não incide sobre juízo de não recepção.
+Senado (art. 52, X)   Pode suspender a execução, no todo ou em parte, de lei declarada inconstitucional por decisão definitiva do STF.
+
+Jurisprudência. Jurisprudência e entendimentos-chave Súmula Vinculante 10: órgão fracionário não pode afastar incidência de lei ou ato normativo do Poder Público por fundamento constitucional sem observar a reserva de plenário. A reserva de plenário não se aplica a juiz singular e, em regra, não incide sobre juízo de não recepção de norma anterior à CF/88. Não se exige nova submissão ao plenário quando a matéria já foi decidida pelo plenário do STF ou do próprio tribunal, conforme a disciplina processual.
+
+Exemplo explicado. Exemplo 1: câmara de tribunal afasta lei estadual Uma câmara de tribunal afasta lei estadual por considerá-la incompatível com a Constituição, sem precedente do plenário: deve observar a reserva de plenário; simples “não aplicação” por fundamento constitucional pode violar a SV 10.
+
+PARTE III · CONTROLE CONCENTRADO
+
+CAPÍTULO 7 — CONTROLE CONCENTRADO: NOÇÕES GERAIS E LEGITIMADOS
+
+Base constitucional: art. 103
+
+No plano federal, o STF concentra o julgamento das principais ações abstratas. O processo é objetivo: não se destina à tutela de situação individual, mas à proteção da ordem constitucional. Em regra, não há desistência da ação, e a decisão final produz eficácia contra todos e efeito vinculante nos limites constitucionais e legais.
+
+LEGITIMADOS DO ART. 103
+
+Legitimados   Classificação para pertinência temática
+Presidente da República   Universal
+Mesa do Senado Federal   Universal
+Mesa da Câmara dos Deputados   Universal
+Procurador-Geral da República   Universal
+Conselho Federal da OAB   Universal
+Partido político com representação no Congresso Nacional   Universal
+Mesa de Assembleia Legislativa ou da Câmara Legislativa do DF   Especial
+Governador de Estado ou do DF   Especial
+Confederação sindical ou entidade de classe de âmbito nacional   Especial
+
+Os legitimados especiais devem demonstrar pertinência temática entre suas finalidades ou esfera de atuação e o objeto impugnado. O rol é taxativo. Município, prefeito e Defensoria Pública não integram o art. 103.
+
+Jurisprudência. Entendimentos-chave Prefeito e Município não são legitimados para ADPF; os legitimados são os do art. 103. O processo objetivo é indisponível: proposta a ação de controle abstrato, não cabe desistência.
+
+Exemplo explicado. Exemplo 3: entidade de classe sem pertinência Entidade de classe nacional ajuíza ADI sobre matéria sem relação com suas finalidades: pode faltar pertinência temática.
+
+Erro comum. Exigir pertinência temática de todos Só os especiais (Mesa de Assembleia/CLDF, Governador e confederação sindical ou entidade de classe nacional) precisam demonstrar pertinência temática. Os seis universais não.
+
+PARTE III · CONTROLE CONCENTRADO
+
+CAPÍTULO 8 — ADI: AÇÃO DIRETA DE INCONSTITUCIONALIDADE
+
+Base constitucional: arts. 102, I, a, e 103; Lei 9.868/1999
+
+A ADI busca retirar do ordenamento lei ou ato normativo federal ou estadual incompatível com a Constituição Federal. Em regra, o objeto deve ser normativo, pós-constitucional e dotado de generalidade e abstração suficientes para o controle abstrato.
+
+Ponto   Regra
+Competência   STF, quando o parâmetro é a Constituição Federal e o objeto é lei ou ato normativo federal ou estadual.
+Objeto típico   Lei e ato normativo federal ou estadual posterior à CF/88.
+Não é via adequada   Em regra, para atacar lei municipal diretamente em face da CF nem norma anterior à CF/88; para essas hipóteses, a ADPF pode ser cabível se presentes seus requisitos.
+Parâmetro   Normas constitucionais vigentes relevantes ao confronto, inclusive princípios e regras do bloco de constitucionalidade no sentido admitido pelo sistema brasileiro.
+Processo objetivo   Não há desistência; admite-se amicus curiae por decisão do relator, observados relevância e representatividade.
+
+CAUTELAR, QUÓRUM E DECISÃO
+
+Na Lei 9.868/1999, a decisão de mérito sobre constitucionalidade ou inconstitucionalidade exige presença mínima de oito Ministros e manifestação de pelo menos seis em um dos sentidos. A cautelar em ADI é deferida, em regra, por maioria absoluta. A decisão final é irrecorrível, salvo embargos de declaração, e não cabe ação rescisória. A declaração final de constitucionalidade ou inconstitucionalidade, inclusive interpretação conforme e declaração parcial sem redução de texto, tem eficácia contra todos e efeito vinculante perante os demais órgãos do Poder Judiciário e a Administração Pública federal, estadual e municipal.
+
+MODULAÇÃO
+
+Ao declarar a inconstitucionalidade, o STF pode restringir efeitos ou fixar eficácia a partir do trânsito em julgado ou de outro momento, por razões de segurança jurídica ou excepcional interesse social, mediante maioria de dois terços de seus membros.
+
+NÃO CONFUNDIR
+
+Instituto 1   Instituto 2   Diferença decisiva
+Reserva de plenário   Quórum da ADI   Art. 97 = maioria absoluta para tribunal declarar; Lei 9.868 = 8 presentes e 6 votos no julgamento abstrato.
+
+Exemplo explicado. Exemplo 4: modulação após a ADI Após declaração de inconstitucionalidade em ADI, o STF percebe grave impacto em relações consolidadas: pode modular os efeitos com quórum de 2/3 e fundamentos legais.
+
+Erro comum. Confundir presença mínima com quórum decisório 8 é a presença mínima; 6 é o número de votos num mesmo sentido; maioria absoluta é para a cautelar; 2/3 é para modular. Quatro números diferentes para quatro perguntas diferentes.
+
+PARTE III · CONTROLE CONCENTRADO
+
+CAPÍTULO 9 — ADC: AÇÃO DECLARATÓRIA DE CONSTITUCIONALIDADE
+
+Base constitucional: art. 102, I, a; Lei 9.868/1999
+
+A ADC busca afirmar, em caráter abstrato, a constitucionalidade de lei ou ato normativo federal diante de controvérsia judicial relevante. O objeto é mais restrito que o da ADI: não alcança ato estadual.
+
+Ponto   Regra
+Legitimados   Os mesmos do art. 103.
+Objeto   Lei ou ato normativo federal.
+Requisito legal relevante   Existência de controvérsia judicial relevante sobre a aplicação da norma.
+Cautelar   Pode determinar a suspensão do julgamento de processos que envolvam a aplicação da norma até o julgamento definitivo, nos termos legais.
+Efeitos da decisão   Erga omnes e vinculantes, em simetria funcional com a ADI.
+
+Não confundir. ADI: federal ou estadual. ADC: somente federal. ADPF: pode alcançar atos municipais e normas anteriores à Constituição, observada a subsidiariedade.
+
+NÃO CONFUNDIR
+
+Instituto 1   Instituto 2   Diferença decisiva
+ADI   ADC   ADI: federal/estadual e busca retirar norma incompatível. ADC: federal e busca afirmar constitucionalidade diante de controvérsia relevante.
+
+PARTE III · CONTROLE CONCENTRADO
+
+CAPÍTULO 10 — ADO: AÇÃO DIRETA DE INCONSTITUCIONALIDADE POR OMISSÃO
+
+Base constitucional: art. 103, § 2º; Lei 9.868/1999
+
+A ADO combate omissão inconstitucional total ou parcial no cumprimento de dever constitucional de legislar ou de adotar providência administrativa. Os legitimados são os do art. 103. Declarada a omissão, dá-se ciência ao Poder competente para adoção das providências necessárias. Se a omissão for imputável a órgão administrativo, a Lei 9.868/1999 prevê adoção em 30 dias, admitindo excepcionalmente prazo razoável fixado pelo Tribunal conforme as circunstâncias e o interesse público.
+
+Omissão imputável a   Consequência da decisão
+Poder competente   Ciência para adoção das providências necessárias.
+Órgão administrativo   Adoção em 30 dias, admitido excepcionalmente prazo razoável fixado pelo Tribunal conforme as circunstâncias e o interesse público.
+
+Não confundir. ADO e mandado de injunção enfrentam omissões, mas a ADO é controle objetivo e abstrato; o mandado de injunção tutela concretamente a inviabilidade do exercício de direito, liberdade ou prerrogativa constitucional por falta de norma regulamentadora.
+
+NÃO CONFUNDIR
+
+Instituto 1   Instituto 2   Diferença decisiva
+ADO   Mandado de injunção   ADO é objetiva; MI tutela situação concreta de inviabilidade de direito por omissão.
+
+Exemplo explicado. Exemplo 5: órgão administrativo inerte Órgão administrativo permanece inerte apesar de dever constitucional expresso: a ADO pode reconhecer a omissão e fixar a consequência constitucional/legal aplicável.
+
+PARTE III · CONTROLE CONCENTRADO
+
+CAPÍTULO 11 — ADPF: ARGUIÇÃO DE DESCUMPRIMENTO DE PRECEITO FUNDAMENTAL
+
+Base constitucional: art. 102, § 1º; Lei 9.882/1999
+
+A ADPF, prevista no art. 102, §1º, e regulamentada pela Lei 9.882/1999, destina-se a evitar ou reparar lesão a preceito fundamental resultante de ato do Poder Público. Pode também enfrentar controvérsia constitucional relevante sobre lei ou ato normativo federal, estadual ou municipal, inclusive anteriores à Constituição.
+
+Ponto   Regra
+Competência   STF.
+Legitimados   Os mesmos do art. 103.
+Objeto amplo   Ato do Poder Público; a lei expressamente inclui normas municipais e pré-constitucionais na hipótese de controvérsia relevante.
+Subsidiariedade   Não será admitida quando houver outro meio eficaz de sanar a lesividade, interpretado à luz da efetividade do sistema de controle.
+Liminar   Pode ser concedida por maioria absoluta, com disciplina legal própria para urgência.
+Decisão   Exige presença de pelo menos dois terços dos Ministros; a disciplina legal prevê eficácia contra todos e efeito vinculante relativamente aos demais órgãos do Poder Público.
+Modulação   Possível por maioria de dois terços, por segurança jurídica ou excepcional interesse social.
+
+NÃO CONFUNDIR
+
+Instituto 1   Instituto 2   Diferença decisiva
+ADI   ADPF   ADPF tem objeto mais amplo e subsidiário; alcança ato municipal e norma pré-constitucional.
+
+Exemplo explicado. Exemplo 2: lei municipal anterior à CF/88 Lei municipal anterior à CF/88 gera controvérsia constitucional relevante e não há outro meio eficaz: a ADPF pode ser via adequada, desde que preenchidos os requisitos legais.
+
+PARTE III · CONTROLE CONCENTRADO
+
+CAPÍTULO 12 — ADI INTERVENTIVA E CONTROLE ABSTRATO ESTADUAL E MUNICIPAL
+
+Base constitucional: arts. 34, VII, e 36, III
+
+ADI INTERVENTIVA
+
+A representação interventiva federal possui natureza própria. Nos casos constitucionais pertinentes, o Procurador-Geral da República provoca o STF para viabilizar intervenção destinada a assegurar observância dos princípios constitucionais sensíveis do art. 34, VII, ou a execução de lei federal, nos termos do art. 36, III. A legitimidade é exclusiva do PGR, o que diferencia essa via das ações abstratas com rol plural do art. 103.
+
+CONTROLE ABSTRATO ESTADUAL E MUNICIPAL
+
+Os Estados podem instituir representação de inconstitucionalidade de leis ou atos normativos estaduais ou municipais em face da Constituição estadual, vedada a atribuição da legitimação a um único órgão. O tribunal de justiça exerce esse controle abstrato estadual.
+
+Lei municipal em face da Constituição Federal não é objeto de ADI diretamente no STF. Pode haver controle difuso e, quando satisfeitos os requisitos, ADPF perante o STF. Também pode haver controle abstrato no Tribunal de Justiça quando o parâmetro seja norma da Constituição estadual, inclusive norma estadual de reprodução obrigatória da Constituição Federal, situação em que pode surgir recurso extraordinário ao STF conforme a jurisprudência.
+
+Objeto   Parâmetro   Via possível
+Lei estadual ou municipal   Constituição estadual   Representação de inconstitucionalidade no TJ (legitimação não pode ser de um único órgão).
+Lei municipal   Constituição Federal   Não cabe ADI no STF; controle difuso e, presentes os requisitos, ADPF no STF.
+Lei municipal   Norma estadual de reprodução obrigatória da CF   Controle abstrato no TJ, com possível recurso extraordinário ao STF.
+
+Caso explicado. Lei municipal contrária à CF: qual caminho? 1. ADI no STF? Não. 2. Há caso concreto? Controle difuso. 3. Há controvérsia relevante e nenhum outro meio eficaz? ADPF no STF. 4. A norma violada também está na Constituição estadual (reprodução obrigatória)? Representação no TJ, com possível RE ao STF.
+
+PARTE III · CONTROLE CONCENTRADO
+
+CAPÍTULO 13 — SÚMULA VINCULANTE E REPERCUSSÃO GERAL: RECORTE NECESSÁRIO
+
+Base constitucional: art. 103-A
+
+A súmula vinculante é aprovada pelo STF após reiteradas decisões sobre matéria constitucional, mediante voto de dois terços de seus membros, e vincula os demais órgãos do Judiciário e a Administração Pública direta e indireta nas esferas federal, estadual e municipal. Seu descumprimento pode ensejar reclamação ao STF nas hipóteses constitucionais.
+
+A repercussão geral funciona como filtro e mecanismo de uniformização no recurso extraordinário. Sua força precedencial amplia a projeção das decisões do STF proferidas em casos concretos, mas não deve ser confundida com o desenho processual das ações abstratas.
+
+Instituto   Função   Ponto de atenção
+Súmula vinculante   Vincula os demais órgãos do Judiciário e a Administração Pública direta e indireta; aprovada por 2/3 após reiteradas decisões.   Descumprimento → reclamação ao STF; não vincula o Poder Legislativo na função legislativa típica.
+Repercussão geral   Filtro e mecanismo de uniformização no recurso extraordinário.   Não se confunde com o desenho processual das ações abstratas.
+
+Erro comum. Dar ao controle difuso o efeito da ADI “Toda decisão do STF em controle difuso tem automaticamente efeito erga omnes idêntico à ADI” é formulação perigosa. Distinga precedentes/repercussão geral, o art. 52, X (capítulo 6), e os efeitos típicos do controle abstrato.
+
+FECHAMENTO
+
+FECHAMENTO DO MÓDULO
+
+1. RESUMO DO MÓDULO: AS AÇÕES LADO A LADO
+
+Ação   Objeto   Legitimados   Marca registrada
+ADI   Lei ou ato normativo federal ou estadual, pós-constitucional.   Art. 103.   8 presentes + 6 votos; cautelar por maioria absoluta; sem desistência nem rescisória.
+ADC   Lei ou ato normativo federal.   Art. 103.   Controvérsia judicial relevante.
+ADO   Omissão total ou parcial.   Art. 103.   Ciência ao Poder; órgão administrativo: 30 dias.
+ADPF   Ato do Poder Público, inclusive municipal e pré-constitucional.   Art. 103.   Subsidiariedade; presença de 2/3; liminar por maioria absoluta.
+ADI interventiva   Princípios sensíveis (art. 34, VII) ou execução de lei federal (art. 36, III).   PGR, exclusivamente.   Viabiliza a intervenção federal.
+Difuso   Qualquer lei ou ato, no caso concreto.   Qualquer juiz ou tribunal.   Inter partes; art. 97 nos tribunais; Senado no art. 52, X.
+
+2. O QUE DECORAR
+
+Lei seca essencial: mapa artigo a artigo.
+
+Dispositivo   Núcleo de memorização   Pegadinha
+CF, art. 97   Maioria absoluta do tribunal ou órgão especial para declarar inconstitucionalidade.   Órgão fracionário não pode afastar norma por fundamento constitucional burlando o plenário.
+CF, art. 52, X   Senado pode suspender execução de lei declarada inconstitucional por decisão definitiva do STF.   Não confundir com efeito vinculante automático de ADI/ADC.
+CF, art. 102, I, a   STF julga ADI de lei/ato federal ou estadual e ADC de lei/ato federal.   ADC não alcança ato estadual.
+CF, art. 102, §1º   ADPF apreciada pelo STF na forma da lei.   Lei 9.882/1999 disciplina objeto e subsidiariedade.
+CF, art. 103   Nove categorias de legitimados para ADI/ADC; base também para ADO e ADPF.   Município e prefeito não estão no rol.
+CF, art. 103, §2º   ADO: ciência ao Poder; órgão administrativo: 30 dias no texto constitucional.   Lei admite prazo razoável excepcional conforme circunstâncias.
+CF, art. 103-A   Súmula vinculante: 2/3 do STF, após reiteradas decisões sobre matéria constitucional.   Vincula Judiciário e Administração, não o Poder Legislativo na função legislativa típica.
+Lei 9.868, arts. 22-23   Presença mínima: 8; decisão: pelo menos 6 votos.   Presença mínima não é o mesmo que quórum decisório.
+Lei 9.868, art. 27   Modulação: 2/3 + segurança jurídica ou excepcional interesse social.   Não é simples maioria.
+Lei 9.882, art. 4º, §1º   ADPF subsidiária.   Outro meio deve ser eficaz para afastar a ADPF.
+
+Quadros de memorização.
+
+Regra de bolso. ADI = federal/estadual; ADC = federal; ADPF = ampla + subsidiária; ADO = omissão; ADI interventiva = PGR exclusivo.
+
+Quóruns. Art. 97: maioria absoluta. ADI/ADC mérito: 8 presentes + 6 votos. Modulação: 2/3. Súmula vinculante: 2/3.
+
+Legitimados especiais. Governador, Mesa de Assembleia/CLDF e confederação sindical ou entidade de classe nacional: lembrar pertinência temática.
+
+3. PEGADINHAS DE PROVA
+
+Todas as afirmações estão erradas ou são perigosas; o importante é saber por quê.
+
+Afirmação da banca   Veredicto e motivo   Cap.
+“Todo controle preventivo é político.”   Errado: há hipótese excepcional de controle judicial preventivo ligada ao devido processo legislativo constitucional.   4
+“Toda decisão do STF em controle difuso tem automaticamente efeito erga omnes idêntico à ADI.”   Formulação perigosa: distinguir precedentes/repercussão geral, art. 52, X, e efeitos típicos do controle abstrato.   6 e 13
+“A ADC pode ter por objeto lei estadual.”   Errado: somente lei ou ato normativo federal.   9
+“A ADI no STF é cabível contra lei municipal.”   Errado.   8 e 12
+“A ADPF não alcança norma anterior à CF.”   Errado: a Lei 9.882/1999 admite essa hipótese.   11
+“A modulação na Lei 9.868 exige maioria absoluta.”   Errado: dois terços.   8
+“A reserva de plenário vincula juiz singular.”   Errado.   6
+“Todos os legitimados do art. 103 precisam provar pertinência temática.”   Errado: a exigência recai sobre legitimados especiais.   7
+“Cabe ação rescisória contra decisão final em ADI.”   Errado.   8
+“Pode haver desistência de ADI depois do ajuizamento.”   Errado.   7 e 8
+
+4. COMO RESOLVER QUESTÕES
+
+Passo   O que fazer
+1   Identifique o tipo de controle: preventivo/repressivo; difuso/concentrado; concreto/abstrato.
+2   Pergunte qual é o objeto: federal, estadual, municipal, pré-constitucional ou omissão.
+3   Identifique o parâmetro: CF ou Constituição estadual.
+4   Cheque competência e legitimidade, incluindo pertinência temática.
+5   Procure palavras de quórum: maioria absoluta, 8 presentes, 6 votos, 2/3.
+6   Classifique efeitos: inter partes/erga omnes, ex tunc/ex nunc, vinculante/não vinculante.
+7   Nas alternativas absolutas (“sempre”, “nunca”, “somente”), teste as exceções clássicas do módulo.
+
+5. CHECKLIST DE REVISÃO FINAL: O QUE NÃO PODE ERRAR
+
+Marque cada item quando conseguir explicá-lo sem consultar a apostila.
+
+• ☐ Art. 97 + SV 10. (capítulo 6)
+
+• ☐ Art. 103 e pertinência temática. (capítulo 7)
+
+• ☐ ADI x ADC x ADO x ADPF. (capítulos 8 a 11)
+
+• ☐ Objeto municipal e norma pré-constitucional: não cabem em ADI federal; podem aparecer em ADPF. (capítulos 8, 11 e 12)
+
+• ☐ Lei 9.868: 8 presentes, 6 votos, modulação por 2/3. (capítulo 8)
+
+• ☐ ADC: somente ato federal + controvérsia judicial relevante. (capítulo 9)
+
+• ☐ ADO: omissão total/parcial; órgão administrativo e prazo constitucional/legal. (capítulo 10)
+
+• ☐ ADPF: subsidiariedade. (capítulo 11)
+
+• ☐ Efeitos do controle difuso versus controle abstrato. (capítulos 6 e 13)
+
+• ☐ ADI interventiva: PGR exclusivo no recorte constitucional. (capítulo 12)
+
+6. REFERÊNCIAS E LINKS OFICIAIS
+
+Fontes oficiais para conferir o texto e a jurisprudência.
+
+Fonte oficial   Para que usar   Link
+Constituição Federal de 1988 (Planalto)   Arts. 52, X, 97, 102, 103 e 103-A.   https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm
+Lei nº 9.868, de 1999 (Planalto)   ADI, ADC e ADO (capítulos 8 a 10).   https://www.planalto.gov.br/ccivil_03/leis/l9868.htm
+Lei nº 9.882, de 1999 (Planalto)   ADPF (capítulo 11).   https://www.planalto.gov.br/ccivil_03/leis/l9882.htm
+STF: Súmula Vinculante 10   Reserva de plenário (capítulo 6).   https://portal.stf.jus.br/jurisprudencia/sumariosumulas.asp?base=26&sumula=1216
+STF: A Constituição e o Supremo, art. 103   Legitimados e pertinência temática (capítulo 7).   https://portal.stf.jus.br/constituicao-supremo/artigo.asp?abrirBase=CF&abrirArtigo=103

@@ -1,0 +1,216 @@
+{
+  "summary": [
+    {
+      "n": 1,
+      "difficulty": "Fácil",
+      "q": "O direito ao meio ambiente ecologicamente equilibrado é atribuído pela Constituição",
+      "options": [
+        "a todos.",
+        "somente aos proprietários rurais.",
+        "apenas às futuras gerações.",
+        "exclusivamente a brasileiros natos.",
+        "somente às pessoas jurídicas."
+      ],
+      "answer": 0,
+      "explanation": "Art. 225: todos têm direito ao meio ambiente ecologicamente equilibrado."
+    },
+    {
+      "n": 2,
+      "difficulty": "Fácil",
+      "q": "A Constituição afirma que a família",
+      "options": [
+        "é matéria exclusivamente privada.",
+        "é base da sociedade e tem especial proteção do Estado.",
+        "não recebe proteção constitucional específica.",
+        "se limita ao casamento civil.",
+        "somente gera deveres para o Poder Público."
+      ],
+      "answer": 1,
+      "explanation": "Art. 226: a família é base da sociedade e recebe especial proteção do Estado."
+    },
+    {
+      "n": 3,
+      "difficulty": "Média",
+      "q": "O art. 227 impõe proteção à criança, ao adolescente e ao jovem com",
+      "options": [
+        "prioridade relativa.",
+        "prioridade apenas orçamentária.",
+        "absoluta prioridade.",
+        "preferência exclusivamente judicial.",
+        "proteção condicionada à contribuição social."
+      ],
+      "answer": 2,
+      "explanation": "A expressão constitucional é “absoluta prioridade”."
+    },
+    {
+      "n": 4,
+      "difficulty": "Média",
+      "q": "Quanto aos filhos, a Constituição",
+      "options": [
+        "permite distinção de direitos sucessórios entre biológicos e adotivos.",
+        "atribui ao legislador liberdade para criar categorias de filiação.",
+        "protege igualmente apenas filhos havidos no casamento.",
+        "assegura os mesmos direitos e qualificações, vedadas designações discriminatórias relativas à filiação.",
+        "exclui adotados da regra de igualdade."
+      ],
+      "answer": 3,
+      "explanation": "Art. 227, § 6º, consagra igualdade entre filhos e proíbe discriminações relativas à filiação."
+    },
+    {
+      "n": 5,
+      "difficulty": "Difícil",
+      "q": "Uma empresa causa dano ambiental e é condenada a reparar integralmente a área. À luz do art. 225, a reparação",
+      "options": [
+        "impede qualquer sanção administrativa.",
+        "afasta automaticamente responsabilidade penal.",
+        "somente pode ser exigida de pessoa física.",
+        "substitui todas as demais formas de responsabilização.",
+        "pode coexistir com sanções penais e administrativas cabíveis."
+      ],
+      "answer": 4,
+      "explanation": "A obrigação de reparar é independente das sanções penais e administrativas previstas para condutas lesivas."
+    }
+  ],
+  "complete": [
+    {
+      "n": 1,
+      "difficulty": "Fácil",
+      "q": "O dever de defender e preservar o meio ambiente incumbe",
+      "options": [
+        "ao Poder Público e à coletividade.",
+        "somente à União.",
+        "apenas ao Ministério Público.",
+        "exclusivamente aos Municípios.",
+        "somente aos proprietários de imóveis."
+      ],
+      "answer": 0,
+      "explanation": "Art. 225 atribui o dever ao Poder Público e à coletividade."
+    },
+    {
+      "n": 2,
+      "difficulty": "Fácil",
+      "q": "O estudo prévio de impacto ambiental é exigido constitucionalmente para",
+      "options": [
+        "qualquer atividade comercial.",
+        "obra ou atividade potencialmente causadora de significativa degradação ambiental.",
+        "toda obra residencial.",
+        "apenas atividade estatal.",
+        "somente exploração agrícola."
+      ],
+      "answer": 1,
+      "explanation": "A Constituição exige EIA quando houver potencial de significativa degradação ambiental."
+    },
+    {
+      "n": 3,
+      "difficulty": "Fácil",
+      "q": "São penalmente inimputáveis, segundo a Constituição,",
+      "options": [
+        "menores de 16 anos.",
+        "menores de 21 anos.",
+        "menores de 18 anos.",
+        "maiores de 65 anos.",
+        "adolescentes não reincidentes."
+      ],
+      "answer": 2,
+      "explanation": "Art. 228: menores de 18 anos são penalmente inimputáveis e sujeitos à legislação especial."
+    },
+    {
+      "n": 4,
+      "difficulty": "Fácil",
+      "q": "A gratuidade constitucional de transporte do art. 230 alcança, diretamente,",
+      "options": [
+        "todo aposentado.",
+        "maiores de 60 anos em qualquer transporte.",
+        "qualquer pessoa com deficiência em transporte interestadual.",
+        "maiores de 65 anos nos transportes coletivos urbanos.",
+        "somente idosos de baixa renda."
+      ],
+      "answer": 3,
+      "explanation": "Art. 230, § 2º: gratuidade nos transportes coletivos urbanos aos maiores de 65 anos."
+    },
+    {
+      "n": 5,
+      "difficulty": "Média",
+      "q": "O planejamento familiar, de acordo com o art. 226,",
+      "options": [
+        "é definido pelo Estado conforme política demográfica.",
+        "pode ser imposto por entidade privada de saúde.",
+        "depende de autorização judicial.",
+        "é matéria sem proteção constitucional.",
+        "é livre decisão do casal, vedada forma coercitiva por instituições oficiais ou privadas."
+      ],
+      "answer": 4,
+      "explanation": "O planejamento familiar é livre decisão do casal e não admite coerção institucional."
+    },
+    {
+      "n": 6,
+      "difficulty": "Média",
+      "q": "Sobre a proteção da fauna e flora, a Constituição",
+      "options": [
+        "impõe ao Poder Público proteção contra práticas que coloquem em risco função ecológica, provoquem extinção ou submetam animais a crueldade, observadas as normas constitucionais.",
+        "veda toda e qualquer intervenção humana em fauna.",
+        "atribui a competência exclusivamente aos Estados.",
+        "protege apenas espécies ameaçadas.",
+        "não relaciona crueldade animal ao meio ambiente."
+      ],
+      "answer": 0,
+      "explanation": "Art. 225 impõe proteção da fauna e flora e veda práticas ambientalmente lesivas descritas no texto constitucional."
+    },
+    {
+      "n": 7,
+      "difficulty": "Média",
+      "q": "Nos termos do art. 229, é correto afirmar que",
+      "options": [
+        "somente pais possuem deveres em relação aos filhos.",
+        "pais devem assistir, criar e educar filhos menores, e filhos maiores devem ajudar e amparar pais na velhice, carência ou enfermidade.",
+        "filhos maiores jamais possuem dever constitucional de amparo.",
+        "o dever familiar depende de lei complementar.",
+        "a Constituição trata apenas de dever alimentar judicial."
+      ],
+      "answer": 1,
+      "explanation": "O art. 229 estabelece deveres recíprocos entre gerações."
+    },
+    {
+      "n": 8,
+      "difficulty": "Média",
+      "q": "Os programas de amparo às pessoas idosas serão executados",
+      "options": [
+        "obrigatoriamente em instituições públicas.",
+        "exclusivamente por entidades privadas.",
+        "preferencialmente em seus lares.",
+        "somente quando houver contribuição previdenciária.",
+        "apenas por Municípios."
+      ],
+      "answer": 2,
+      "explanation": "Art. 230, § 1º, estabelece preferência pela execução dos programas de amparo nos lares."
+    },
+    {
+      "n": 9,
+      "difficulty": "Difícil",
+      "q": "Uma lei autoriza atividade com potencial de significativa degradação sem qualquer estudo ambiental prévio. À luz do art. 225, a regra",
+      "options": [
+        "é compatível porque estudo ambiental é apenas recomendação.",
+        "é válida se houver posterior reparação.",
+        "é válida se a atividade for privada.",
+        "contraria a exigência constitucional de estudo prévio de impacto ambiental para a hipótese.",
+        "só seria inválida em área urbana."
+      ],
+      "answer": 3,
+      "explanation": "A Constituição exige estudo prévio de impacto ambiental para atividades potencialmente causadoras de significativa degradação."
+    },
+    {
+      "n": 10,
+      "difficulty": "Difícil",
+      "q": "Sobre o art. 227, assinale a alternativa correta.",
+      "options": [
+        "O dever de proteção pertence apenas ao Estado.",
+        "A proteção constitucional não alcança o jovem.",
+        "A prioridade não alcança convivência familiar.",
+        "A Constituição admite designações discriminatórias entre filhos se previstas em lei.",
+        "Família, sociedade e Estado compartilham o dever de assegurar direitos com absoluta prioridade."
+      ],
+      "answer": 4,
+      "explanation": "Art. 227 atribui dever conjunto à família, sociedade e Estado e protege criança, adolescente e jovem com absoluta prioridade."
+    }
+  ]
+}

@@ -1,0 +1,481 @@
+LEITURA ORIENTADA
+
+Esta apostila reescreve o texto original do módulo CF M09 para que o iniciante entenda tudo e o avançado se aprofunde. O conteúdo segue o eixo lógico do próprio módulo, em doze capítulos (um por seção do original), e termina em um fechamento de revisão. Cada capítulo traz prosa, uma tabela e, no máximo, duas caixas didáticas; os quadros do texto original (Atualização, Não confundir, Cai muito, Regra de bolso, Pegadinha e outros) aparecem no capítulo a que pertencem.
+
+TRÊS SITUAÇÕES-PROBLEMA
+
+Tente responder antes de ler. Errar faz parte: a resposta está no capítulo indicado.
+
+Núcleo   Situação-problema   Resposta
+Magistratura   Na promoção por antiguidade, o tribunal recusa o juiz mais antigo por maioria absoluta, em votação fundamentada. A recusa é válida? E uma decisão disciplinar contra juiz, qual quórum exige?   Capítulos 4 e 6
+Precatórios   Um precatório alimentar de credor com 68 anos foi apresentado em março. Ele tem alguma preferência? A data de apresentação permite inclusão no orçamento seguinte pela regra atual do § 5º?   Capítulo 8
+STF   Tribunal local julga válida lei municipal contestada em face de lei federal. O recurso cabível é especial, ao STJ, ou extraordinário, ao STF? Por quê?   Capítulo 11
+
+CAMINHO DO INICIANTE E CAMINHO DO AVANÇADO
+
+Etapa   Caminho do iniciante   Caminho do avançado
+Antes   Leia o capítulo 1 e tente as três situações-problema, mesmo que erre.   Responda sem consultar; depois confira nos capítulos 4, 6, 8 e 11.
+Em cada capítulo   Prosa, tabela e caixa de Caso ou Exemplo; só depois o Erro comum.   Comece pela tabela; leia Jurisprudência, Caso explicado e Erro comum; volte à prosa onde errar.
+Ordem   Siga a numeração: Parte I (capítulos 2 e 3), Parte II (4 a 7), Parte III (8) e Parte IV (9 a 12).   Comece pelos capítulos de quóruns, prazos e recursos (4 a 8, 11 e 12) e complete com os demais.
+Fechamento   Faça o Resumo e o Checklist; releia as regras de bolso.   Estude as Pegadinhas e treine o roteiro de Como resolver questões.
+
+Como ler as caixas. Caso explicado e Exemplo (os exemplos aplicados do texto original, Exemplos 1 a 5) mostram o raciocínio em uma situação; Jurisprudência (os entendimentos-chave do STF) é para quem quer ir além; Erro comum aponta a troca que a banca explora; Como estudar é dica de revisão; Atualização, Uso de jurisprudência, Não confundir, Cai muito, Regra de bolso, Pegadinha, Artigos para lembrar e Exceção importante são quadros do texto original. Nesta apostila não foi acrescentado conteúdo jurídico novo.
+
+ROTEIRO DE ESTUDO
+
+PERCURSO DO MÓDULO
+
+A numeração das aulas é a mesma dos capítulos: a aula 8 corresponde ao capítulo 8. Use o tema como índice para localizar o capítulo correspondente.
+
+Aula   Tema do capítulo   Base constitucional
+Visão geral   Visão geral   Visão geral
+1   Visão geral e método de estudo   Não se aplica.
+Parte I · Estrutura e autonomia (aulas 2 e 3)   Parte I · Estrutura e autonomia (aulas 2 e 3)   Parte I · Estrutura e autonomia (aulas 2 e 3)
+2   Órgãos do Poder Judiciário e lógica da estrutura   art. 92
+3   Autonomia administrativa, organizacional e financeira   arts. 96 e 99
+Parte II · Magistratura e tribunais (aulas 4 a 7)   Parte II · Magistratura e tribunais (aulas 4 a 7)   Parte II · Magistratura e tribunais (aulas 4 a 7)
+4   Estatuto da Magistratura, ingresso e movimentação na carreira   art. 93
+5   Garantias e vedações dos magistrados   art. 95
+6   Publicidade, fundamentação, decisões administrativas e atividade ininterrupta   art. 93, IX
+7   Órgão especial, quinto constitucional e reserva de plenário   arts. 93, 94 e 97
+Parte III · Precatórios (aula 8)   Parte III · Precatórios (aula 8)   Parte III · Precatórios (aula 8)
+8   Precatórios: recorte essencial e atualizado   art. 100
+Parte IV · Supremo Tribunal Federal (aulas 9 a 12)   Parte IV · Supremo Tribunal Federal (aulas 9 a 12)   Parte IV · Supremo Tribunal Federal (aulas 9 a 12)
+9   Supremo Tribunal Federal: composição e investidura   art. 101; art. 12, § 3º, IV
+10   STF: competências originárias   art. 102, I
+11   Competências recursais: recurso ordinário e extraordinário   art. 102, II e III, e § 3º
+12   Súmula vinculante   arts. 103 e 103-A
+Fechamento (sem numeração de aula)   Fechamento (sem numeração de aula)   Fechamento (sem numeração de aula)
+Não se aplica.   Resumo; O que decorar; Pegadinhas de prova; Como resolver questões; Checklist; Referências e links oficiais   Não se aplica.
+
+VISÃO GERAL DO MÓDULO
+
+CAPÍTULO 1 — VISÃO GERAL E MÉTODO DE ESTUDO
+
+Este módulo estuda a arquitetura constitucional do Poder Judiciário nas disposições gerais e, depois, o Supremo Tribunal Federal. O eixo lógico é simples: primeiro, quem compõe o Judiciário e quais garantias asseguram sua independência; depois, como se estrutura a carreira da magistratura, quais são as competências administrativas dos tribunais e como funcionam institutos recorrentes de prova; por fim, como o STF é composto, quais matérias chegam diretamente à Corte, quais chegam por recurso e como funcionam repercussão geral e súmula vinculante.
+
+Etapa do eixo lógico   Capítulos
+Quem compõe o Judiciário e quais garantias asseguram sua independência   2 e 3
+Carreira da magistratura, competências administrativas dos tribunais e institutos recorrentes de prova   4 a 8
+Composição do STF, competências originárias, recursais, repercussão geral e súmula vinculante   9 a 12
+
+Atualização. Atenção à atualização A fonte doutrinária principal foi atualizada em 08/01/2026, mas o regime constitucional de precatórios já estava impactado pela EC 136/2025. Esta apostila adota o texto constitucional vigente, inclusive o prazo de 1º de fevereiro no art. 100, § 5º, e os novos §§ 23 a 30.
+
+ONDE ESTÃO OS MAIORES RISCOS
+
+Em prova, os maiores riscos são trocas de quórum, de órgão competente, de prazo e de hipótese recursal. Também são frequentes afirmações que transformam uma exceção em regra ou atribuem ao STF competência que pertence ao STJ, ao Senado Federal, aos tribunais locais ou a outros órgãos.
+
+Uso de jurisprudência. Neste módulo, a prioridade é a Constituição. Precedentes são usados apenas quando ajudam a resolver uma pegadinha recorrente, sem substituir a literalidade constitucional.
+
+Como estudar. Quatro filtros para cada item Ao ler uma afirmação, passe quatro filtros: qual quórum? (2/3 ou maioria absoluta), qual órgão? (STF, STJ, Senado, tribunal local, Executivo), qual prazo? (2 anos, 3 anos, 10 anos, 20 dias, 1º de fevereiro) e qual hipótese recursal? (originária, recurso ordinário, recurso extraordinário).
+
+PARTE I · ESTRUTURA E AUTONOMIA
+
+CAPÍTULO 2 — ÓRGÃOS DO PODER JUDICIÁRIO E LÓGICA DA ESTRUTURA
+
+Base constitucional: art. 92
+
+O art. 92 enumera os órgãos do Poder Judiciário: STF; CNJ; STJ; TST; TRFs e juízes federais; tribunais e juízes do trabalho; tribunais e juízes eleitorais; tribunais e juízes militares; tribunais e juízes dos Estados e do Distrito Federal e Territórios. O STF, o CNJ e os Tribunais Superiores têm sede na Capital Federal. STF e Tribunais Superiores têm jurisdição em todo o território nacional.
+
+Não confundir. STF não é “Tribunal Superior” na terminologia constitucional. Os Tribunais Superiores são STJ, TST, TSE e STM. O STF ocupa a cúpula do Poder Judiciário e exerce, precipuamente, a guarda da Constituição.
+
+A Constituição distribui a atividade jurisdicional entre Justiça Comum e Justiças Especializadas. A Justiça Comum abrange, em linhas gerais, Justiça Federal e Justiça Estadual; as Justiças Especializadas são Trabalho, Eleitoral e Militar. Essa repartição não elimina o caráter nacional e unitário do Poder Judiciário.
+
+Grupo   Quem integra   Sede e jurisdição
+Cúpula   STF.   Sede na Capital Federal; jurisdição em todo o território nacional.
+CNJ   CNJ.   Sede na Capital Federal.
+Tribunais Superiores   STJ, TST, TSE e STM.   Sede na Capital Federal; jurisdição em todo o território nacional.
+Justiça Comum   Justiça Federal (TRFs e juízes federais) e Justiça Estadual (tribunais e juízes dos Estados e do Distrito Federal e Territórios).   Não se aplica.
+Justiças Especializadas   Trabalho, Eleitoral e Militar.   Não se aplica.
+
+Erro comum. Esquecer o CNJ ou trocar os Tribunais Superiores O CNJ está no rol do art. 92 como órgão do Poder Judiciário. E a lista de Tribunais Superiores tem quatro nomes, STJ, TST, TSE e STM: o STF não entra nela.
+
+PARTE I · ESTRUTURA E AUTONOMIA
+
+CAPÍTULO 3 — AUTONOMIA ADMINISTRATIVA, ORGANIZACIONAL E FINANCEIRA
+
+Base constitucional: arts. 96 e 99
+
+AUTONOMIA ADMINISTRATIVA (ART. 96)
+
+A independência do Judiciário exige garantias institucionais. No plano administrativo, o art. 96 atribui competências privativas aos tribunais, como eleger órgãos diretivos, elaborar regimentos internos, organizar secretarias e serviços auxiliares, prover cargos de juiz de carreira, propor novas varas, prover cargos necessários à administração da Justiça e conceder licenças, férias e afastamentos a seus membros e servidores imediatamente vinculados. Além disso, STF, Tribunais Superiores e Tribunais de Justiça possuem iniciativa para propor ao Legislativo, observados os limites constitucionais, alterações na estrutura judiciária, criação e extinção de cargos, remuneração dos serviços auxiliares e fixação de subsídios, criação ou extinção de tribunais inferiores e alteração da organização e divisão judiciárias.
+
+Os tribunais fazem por si (competências privativas)   STF, Tribunais Superiores e TJs propõem ao Legislativo
+• eleger órgãos diretivos; • elaborar regimentos internos; • organizar secretarias e serviços auxiliares; • prover cargos de juiz de carreira; • propor novas varas; • prover cargos necessários à administração da Justiça; • conceder licenças, férias e afastamentos a seus membros e servidores imediatamente vinculados.   • alterações na estrutura judiciária; • criação e extinção de cargos; • remuneração dos serviços auxiliares e fixação de subsídios; • criação ou extinção de tribunais inferiores; • alteração da organização e divisão judiciárias.
+
+Atualização. Atualização: EC 134/2024 Desde a EC 134/2024, nos Tribunais de Justiça com mais de 170 desembargadores em efetivo exercício, a eleição para cargos diretivos segue regra constitucional específica: tribunal pleno, maioria absoluta, voto direto e secreto, mandato de 2 anos e vedação de mais de uma recondução sucessiva.
+
+AUTONOMIA FINANCEIRA (ART. 99)
+
+A autonomia financeira está no art. 99. Os tribunais elaboram suas propostas orçamentárias dentro dos limites da LDO. Se o órgão competente não encaminhar a proposta no prazo, o Executivo considera, para a consolidação do orçamento, os valores aprovados na LOA vigente, ajustados aos limites da LDO. Se a proposta exceder os limites da LDO, o Executivo procede aos ajustes necessários para consolidá-la.
+
+Caso explicado. O tribunal perdeu o prazo ou passou do limite Não encaminhou a proposta no prazo: o Executivo usa os valores aprovados na LOA vigente, ajustados aos limites da LDO. Encaminhou acima dos limites da LDO: o Executivo faz os ajustes necessários para consolidar a proposta. Nos dois casos, o parâmetro é a LDO.
+
+PARTE II · MAGISTRATURA E TRIBUNAIS
+
+CAPÍTULO 4 — ESTATUTO DA MAGISTRATURA, INGRESSO E MOVIMENTAÇÃO NA CARREIRA
+
+Base constitucional: art. 93
+
+O art. 93 determina que lei complementar de iniciativa do STF disporá sobre o Estatuto da Magistratura. Para concurso, o ponto central é a leitura dos princípios constitucionais que essa lei deve observar.
+
+Tema   Regra constitucional
+Ingresso   Cargo inicial: juiz substituto; concurso público de provas e títulos; participação da OAB em todas as fases; bacharel em Direito com no mínimo 3 anos de atividade jurídica; nomeações pela ordem de classificação.
+Promoção   Entrância para entrância, alternadamente por antiguidade e merecimento.
+Merecimento   Promoção obrigatória se o juiz figurar 3 vezes consecutivas ou 5 alternadas em lista de merecimento; em regra exige 2 anos na entrância e primeira quinta parte da lista de antiguidade.
+Antiguidade   O mais antigo somente pode ser recusado por voto fundamentado de 2/3 dos membros do tribunal, com ampla defesa e repetição da votação até fixação da indicação.
+Acesso ao 2º grau   Antiguidade e merecimento, alternadamente, apurados na última ou única entrância.
+Residência   Juiz titular reside na comarca, salvo autorização do tribunal.
+Remoção por interesse público   Maioria absoluta do respectivo tribunal ou do CNJ, assegurada ampla defesa.
+Remoção a pedido / permuta   Regras constitucionais dos incisos VIII-A e VIII-B, incluídas/alteradas pela EC 130/2023, com remissões aos critérios de merecimento e ao art. 94.
+
+Cai muito. Promoção por antiguidade: 2/3 para recusar o mais antigo. Remoção ou disponibilidade por interesse público: maioria absoluta. São quóruns diferentes.
+
+Como estudar. Três números da carreira 3 anos de atividade jurídica para entrar; 2 anos na entrância para concorrer por merecimento; 3 consecutivas ou 5 alternadas em lista de merecimento tornam a promoção obrigatória.
+
+PARTE II · MAGISTRATURA E TRIBUNAIS
+
+CAPÍTULO 5 — GARANTIAS E VEDAÇÕES DOS MAGISTRADOS
+
+Base constitucional: art. 95
+
+GARANTIAS
+
+As garantias funcionais do art. 95 protegem a independência do juiz: vitaliciedade, inamovibilidade e irredutibilidade de subsídio.
+
+A vitaliciedade no primeiro grau é adquirida após 2 anos de exercício. Nesse período, a perda do cargo depende de deliberação do tribunal. Depois de adquirida a vitaliciedade — e nos casos de magistrados que ingressam diretamente em tribunal — a regra é a perda do cargo por sentença judicial transitada em julgado, sem prejuízo das hipóteses constitucionais de responsabilização político-jurídica que alcancem determinadas autoridades.
+
+A inamovibilidade impede remoções arbitrárias. Não é absoluta: pode haver remoção por interesse público, com decisão por maioria absoluta do respectivo tribunal ou do CNJ e garantia de ampla defesa. A irredutibilidade de subsídio também se submete às ressalvas constitucionais expressas.
+
+VEDAÇÕES
+
+• exercer outro cargo ou função, salvo uma de magistério;
+
+• receber custas ou participação em processo;
+
+• dedicar-se à atividade político-partidária;
+
+• receber auxílios ou contribuições de pessoas físicas ou entidades, ressalvadas as exceções legais;
+
+• exercer advocacia no juízo ou tribunal do qual se afastou antes de três anos da aposentadoria ou exoneração.
+
+NÃO CONFUNDIR
+
+Instituto A   Instituto B   Diferença decisiva
+Vitaliciedade   Inamovibilidade   Vitaliciedade protege o cargo; inamovibilidade protege contra remoção arbitrária.
+
+Exemplo explicado. Exemplo 1: juiz ainda não vitalício Um juiz de primeiro grau, com 18 meses de exercício, pratica falta gravíssima. Ele ainda não adquiriu vitaliciedade. A perda do cargo, nesse período, pode decorrer de deliberação do tribunal ao qual está vinculado, observadas as garantias procedimentais.
+
+Erro comum. Trocar os 2 anos pelos 3 anos 2 anos = vitaliciedade no primeiro grau. 3 anos = atividade jurídica para o ingresso (capítulo 4) e quarentena para advogar no juízo ou tribunal do qual se afastou. A banca mistura os dois números.
+
+PARTE II · MAGISTRATURA E TRIBUNAIS
+
+CAPÍTULO 6 — PUBLICIDADE, FUNDAMENTAÇÃO, DECISÕES ADMINISTRATIVAS E ATIVIDADE ININTERRUPTA
+
+Base constitucional: art. 93, IX
+
+O art. 93, IX, exige publicidade dos julgamentos e fundamentação das decisões, sob pena de nulidade. A lei pode restringir a presença em determinados atos para proteger a intimidade, desde que o interesse público à informação não seja prejudicado.
+
+As decisões administrativas dos tribunais devem ser motivadas e tomadas em sessão pública; decisões disciplinares exigem voto da maioria absoluta dos membros.
+
+A atividade jurisdicional é ininterrupta: são vedadas férias coletivas nos juízos e tribunais de segundo grau e deve haver plantão permanente nos dias sem expediente forense normal.
+
+Ponto   Regra
+Julgamentos   Públicos; decisões fundamentadas, sob pena de nulidade.
+Restrição de presença   A lei pode restringir para proteger a intimidade, desde que o interesse público à informação não seja prejudicado.
+Decisões administrativas   Motivadas e tomadas em sessão pública.
+Decisões disciplinares   Voto da maioria absoluta dos membros.
+Atividade ininterrupta   Vedadas férias coletivas nos juízos e tribunais de segundo grau; plantão permanente nos dias sem expediente forense normal.
+
+Erro comum. Decisão disciplinar por 2/3 Decisão disciplinar administrativa exige maioria absoluta, não 2/3. O 2/3 do capítulo 4 é para recusar o juiz mais antigo na promoção por antiguidade.
+
+PARTE II · MAGISTRATURA E TRIBUNAIS
+
+CAPÍTULO 7 — ÓRGÃO ESPECIAL, QUINTO CONSTITUCIONAL E RESERVA DE PLENÁRIO
+
+Base constitucional: arts. 93, 94 e 97
+
+ÓRGÃO ESPECIAL
+
+Nos tribunais com mais de 25 julgadores pode ser constituído órgão especial, com 11 a 25 membros, para exercer atribuições administrativas e jurisdicionais delegadas do tribunal pleno. Metade das vagas é provida por antiguidade e metade por eleição do pleno.
+
+QUINTO CONSTITUCIONAL
+
+O quinto constitucional do art. 94 reserva um quinto dos lugares dos TRFs e dos Tribunais dos Estados, DF e Territórios a membros do Ministério Público com mais de 10 anos de carreira e a advogados de notório saber jurídico e reputação ilibada com mais de 10 anos de efetiva atividade profissional. As classes formam lista sêxtupla; o tribunal reduz para lista tríplice; o Poder Executivo escolhe um nome nos 20 dias subsequentes.
+
+Etapa   Quem   O que faz
+6   A classe (MP ou advogados)   Forma a lista sêxtupla.
+3   O tribunal   Reduz para lista tríplice.
+1   O Poder Executivo   Escolhe um nome nos 20 dias subsequentes.
+
+Regra de bolso. Quinto 6 → 3 → 1. Classe indica seis; tribunal escolhe três; Executivo nomeia um em 20 dias.
+
+NÃO CONFUNDIR
+
+Instituto A   Instituto B   Diferença decisiva
+Lista sêxtupla   Lista tríplice   Sêxtupla vem da classe; tríplice é formada pelo tribunal.
+
+RESERVA DE PLENÁRIO
+
+A reserva de plenário (art. 97) exige voto da maioria absoluta dos membros do tribunal ou do respectivo órgão especial para declarar a inconstitucionalidade de lei ou ato normativo do Poder Público. A lógica também alcança a decisão de órgão fracionário que, sem declarar expressamente a inconstitucionalidade, afasta a incidência da norma por fundamento constitucional: isso é o núcleo da Súmula Vinculante 10.
+
+Jurisprudência. Jurisprudência e entendimentos-chave 1) Reserva de plenário: órgão fracionário não pode simplesmente afastar a incidência de lei ou ato normativo por fundamento de inconstitucionalidade para contornar o art. 97. Esse núcleo está consolidado na Súmula Vinculante 10. 2) Quinto constitucional: a jurisprudência admite controle, pelo tribunal, do preenchimento dos requisitos constitucionais dos nomes encaminhados em lista sêxtupla, sem autorizar que o próprio tribunal substitua os indicados por nomes escolhidos por ele.
+
+Exemplo explicado. Exemplos 2 e 3: reserva de plenário e quinto Exemplo 2. Uma turma de tribunal afasta a incidência de lei porque a considera incompatível com a Constituição, sem submeter a questão ao plenário ou órgão especial. Há problema com a reserva de plenário, ainda que o acórdão evite usar a palavra “inconstitucionalidade”. Exemplo 3. Um Tribunal de Justiça recebe lista sêxtupla da OAB para vaga do quinto. O tribunal forma lista tríplice e a remete ao Governador, que deve escolher um dos três nomes no prazo constitucional de 20 dias.
+
+PARTE III · PRECATÓRIOS
+
+CAPÍTULO 8 — PRECATÓRIOS: RECORTE ESSENCIAL E ATUALIZADO
+
+Base constitucional: art. 100
+
+REGRA MATRIZ E PREFERÊNCIAS
+
+Precatório é a requisição de pagamento decorrente de condenação judicial definitiva imposta à Fazenda Pública, submetida ao regime do art. 100. A regra matriz é o pagamento na ordem cronológica de apresentação, à conta dos créditos próprios, vedada a designação de casos ou pessoas nas dotações orçamentárias.
+
+Os débitos de natureza alimentícia têm preferência. Após a EC 136/2025, o § 1º passou a explicitar que incluem obrigações decorrentes de relação laboral ou previdenciária, independentemente da natureza tributária, inclusive repetição de indébito incidente sobre remuneração ou proventos de aposentadoria, além das indenizações por morte ou invalidez fundadas em responsabilidade civil.
+
+A superpreferência do § 2º alcança titulares, originários ou por sucessão hereditária, com 60 anos ou mais, doença grave ou deficiência, até o valor equivalente ao triplo do montante definido em lei como obrigação de pequeno valor. O restante segue a ordem cronológica do precatório.
+
+As obrigações de pequeno valor (RPVs) não se submetem à expedição de precatório. Os entes podem fixar valores próprios segundo sua capacidade econômica, respeitado o piso constitucional.
+
+Camada   Quem entra   Como é pago
+Superpreferência (§ 2º)   Titulares, originários ou por sucessão hereditária, com 60 anos ou mais, doença grave ou deficiência.   Até o triplo do montante definido em lei como obrigação de pequeno valor; o restante segue a ordem cronológica.
+Alimentares (§ 1º)   Relação laboral ou previdenciária, independentemente da natureza tributária, inclusive repetição de indébito sobre remuneração ou proventos; indenizações por morte ou invalidez fundadas em responsabilidade civil.   Com preferência.
+Demais precatórios   Demais condenações judiciais definitivas contra a Fazenda Pública.   Ordem cronológica de apresentação.
+RPV   Obrigações de pequeno valor.   Não se submetem à expedição de precatório.
+
+O PRAZO DO § 5º E A NOVA SISTEMÁTICA
+
+Atualização. Atualização decisiva O art. 100, § 5º, hoje exige inclusão orçamentária dos precatórios apresentados até 1º de fevereiro, com pagamento até o final do exercício seguinte. A data de 2 de abril, presente em materiais anteriores, foi substituída pela EC 136/2025.
+
+A EC 136/2025 também acrescentou os §§ 23 a 30 ao art. 100. Em síntese, criou limites anuais de pagamento de precatórios por Estados, Distrito Federal e Municípios em percentuais da receita corrente líquida, escalonados conforme o estoque de precatórios em mora; permitiu pagamentos acima desses limites mediante dotação específica; previu consequências para a não liberação tempestiva dos recursos; e disciplinou acordos diretos para créditos não pagos em razão dos limites. Para este módulo, o essencial é reconhecer a existência da nova sistemática e não utilizar como atual o quadro anterior à EC 136/2025.
+
+NÃO CONFUNDIR
+
+Instituto A   Instituto B   Diferença decisiva
+Precatório   RPV   RPV é obrigação de pequeno valor e não segue a expedição de precatório.
+
+Exemplo explicado. Exemplo 5: precatório alimentar de credor idoso Credor tem precatório alimentar e 68 anos. A Constituição assegura preferência qualificada até o limite do triplo da RPV aplicável; eventual excedente continua na ordem cronológica correspondente.
+
+Erro comum. Usar o prazo de 2 de abril Material anterior à EC 136/2025 fala em 2 de abril. O prazo atual do § 5º é 1º de fevereiro. Se a questão usar a data antiga, desconfie da redação desatualizada.
+
+PARTE IV · SUPREMO TRIBUNAL FEDERAL
+
+CAPÍTULO 9 — SUPREMO TRIBUNAL FEDERAL: COMPOSIÇÃO E INVESTIDURA
+
+Base constitucional: art. 101; art. 12, § 3º, IV
+
+O STF é composto por 11 Ministros. O cargo é privativo de brasileiro nato (art. 12, § 3º, IV). Os requisitos do art. 101 são: ser cidadão com mais de 35 e menos de 70 anos, possuir notável saber jurídico e reputação ilibada. A escolha é feita pelo Presidente da República e depende de aprovação da maioria absoluta do Senado Federal. Após a aprovação, ocorre a nomeação presidencial.
+
+Ponto   Regra
+Composição   11 Ministros.
+Nacionalidade   Brasileiro nato (art. 12, § 3º, IV).
+Idade   Mais de 35 e menos de 70 anos.
+Qualificação   Cidadão com notável saber jurídico e reputação ilibada.
+Escolha   Presidente da República.
+Aprovação   Maioria absoluta do Senado Federal.
+Investidura   Nomeação presidencial, após a aprovação.
+
+Pegadinha. A Constituição fala em “cidadãos” e não exige carreira específica. Também não exige concurso, lista tríplice nem indicação por órgão de classe.
+
+Erro comum. Trocar o quórum do Senado A aprovação é por maioria absoluta do Senado Federal, não por 2/3. E quem escolhe é o Presidente da República; o Senado aprova; a nomeação vem depois.
+
+PARTE IV · SUPREMO TRIBUNAL FEDERAL
+
+CAPÍTULO 10 — STF: COMPETÊNCIAS ORIGINÁRIAS
+
+Base constitucional: art. 102, I
+
+Competência originária significa que a causa nasce no STF. O art. 102, I, contém rol extenso; para prova, é mais eficiente organizar as hipóteses por blocos.
+
+Bloco   Exemplos centrais do art. 102, I
+Controle concentrado   ADI de lei/ato normativo federal ou estadual; ADC de lei/ato normativo federal; cautelar em ADI. ADPF decorre do § 1º do art. 102 e de lei.
+Foro criminal   Infrações penais comuns do Presidente, Vice, membros do Congresso, Ministros do STF e PGR; outras autoridades listadas na alínea c, nas hipóteses constitucionais.
+Remédios constitucionais   HC, MS, HD e MI nas hipóteses em que a autoridade/paciente/coator se enquadra no rol constitucional.
+Conflitos federativos e internacionais   Litígios entre Estado estrangeiro/organismo internacional e União, Estado, DF ou Território; causas e conflitos entre União e Estados, União e DF, ou entre uns e outros, inclusive certas entidades da administração indireta.
+Extradição   Extradição solicitada por Estado estrangeiro.
+Autotutela jurisdicional   Revisão criminal e ação rescisória de seus julgados; execução de sentença nas causas originárias; reclamação para preservar competência e autoridade de decisões.
+Conflitos de competência   Entre STJ e quaisquer tribunais, entre Tribunais Superiores, ou entre estes e qualquer outro tribunal.
+CNJ/CNMP   Ações contra CNJ e CNMP, observada a leitura jurisprudencial restritiva em casos de deliberação meramente negativa.
+
+Não confundir. Conflito envolvendo Município, por si só, não entra automaticamente na competência originária do STF. A alínea f do art. 102, I, cuida da União, Estados e Distrito Federal (e entidades indicadas), não de todo conflito federativo imaginável.
+
+Jurisprudência. Ações contra o CNJ A jurisprudência do STF distingue atos positivos do Conselho, que efetivamente intervêm na esfera jurídica, de deliberações negativas que apenas mantêm decisão de outro órgão. A competência do art. 102, I, r, não transforma o STF em instância revisora geral de qualquer decisão do CNJ.
+
+NÃO CONFUNDIR
+
+Instituto A   Instituto B   Diferença decisiva
+Competência originária   Competência recursal   Originária: ação começa no STF. Recursal: o STF revisa decisão de outro órgão nas hipóteses constitucionais.
+
+Como estudar. Estude por blocos, não por alíneas Antes de decorar alíneas, pergunte a que bloco a hipótese pertence (controle concentrado, foro criminal, remédios, conflitos, extradição, autotutela, conflitos de competência, CNJ/CNMP). Depois confira se o sujeito da causa está no rol: Município, por exemplo, não está na alínea f.
+
+PARTE IV · SUPREMO TRIBUNAL FEDERAL
+
+CAPÍTULO 11 — COMPETÊNCIAS RECURSAIS: RECURSO ORDINÁRIO E EXTRAORDINÁRIO
+
+Base constitucional: art. 102, II e III, e § 3º
+
+RECURSO ORDINÁRIO
+
+O recurso ordinário para o STF cabe, entre outras hipóteses, contra decisão denegatória em habeas corpus, mandado de segurança, habeas data e mandado de injunção decididos em única instância pelos Tribunais Superiores; e no crime político.
+
+RECURSO EXTRAORDINÁRIO
+
+O recurso extraordinário é o instrumento constitucional típico para levar ao STF questão constitucional surgida em causa decidida em única ou última instância. O art. 102, III, prevê quatro hipóteses: decisão que
+
+Alínea   A decisão recorrida...
+a   contrarie dispositivo da Constituição;
+b   declare a inconstitucionalidade de tratado ou lei federal;
+c   julgue válida lei ou ato de governo local contestado em face da Constituição; ou
+d   julgue válida lei local contestada em face de lei federal.
+
+A alínea d parece envolver apenas conflito entre lei local e lei federal, mas a controvérsia é constitucional porque depende da repartição constitucional de competências legislativas. Por isso o recurso é extraordinário, não especial.
+
+REPERCUSSÃO GERAL
+
+Além dos pressupostos processuais, o § 3º do art. 102 exige demonstração de repercussão geral das questões constitucionais. O STF somente pode recusar a repercussão geral por manifestação de dois terços de seus membros.
+
+Cai muito. Repercussão geral: o quórum de 2/3 aparece para RECUSAR a repercussão geral. A formulação invertida é pegadinha clássica.
+
+NÃO CONFUNDIR
+
+Instituto A   Instituto B   Diferença decisiva
+Recurso ordinário ao STF   Recurso extraordinário   RO: hipóteses específicas do art. 102, II; RE: controvérsia constitucional do art. 102, III.
+
+Exemplo explicado. Exemplo 4: lei municipal x lei federal Tribunal local decide que uma lei municipal é válida apesar de alegada incompatibilidade com lei federal. Se a controvérsia envolver a repartição constitucional de competência, a hipótese do art. 102, III, d, aponta para recurso extraordinário ao STF.
+
+PARTE IV · SUPREMO TRIBUNAL FEDERAL
+
+CAPÍTULO 12 — SÚMULA VINCULANTE
+
+Base constitucional: arts. 103 e 103-A
+
+Nos termos do art. 103-A, o STF pode, de ofício ou por provocação, após reiteradas decisões sobre matéria constitucional, aprovar, revisar ou cancelar súmula vinculante mediante decisão de dois terços de seus membros. Após publicação oficial, ela vincula os demais órgãos do Poder Judiciário e a administração pública direta e indireta, nas esferas federal, estadual e municipal.
+
+A súmula vinculante deve tratar da validade, interpretação e eficácia de normas determinadas sobre as quais exista controvérsia atual entre órgãos judiciários, ou entre estes e a Administração Pública, capaz de gerar grave insegurança jurídica e relevante multiplicação de processos sobre questão idêntica.
+
+Constitucionalmente, podem provocar aprovação, revisão ou cancelamento os legitimados para ADI/ADC do art. 103, sem prejuízo de ampliação legal. A Lei 11.417/2006 disciplina o procedimento e amplia o rol em hipóteses específicas. Para questões estritamente constitucionais, memorize primeiro os legitimados do art. 103.
+
+Se ato administrativo ou decisão judicial contrariar súmula vinculante aplicável ou a aplicar indevidamente, cabe reclamação ao STF. Se procedente, o STF anula o ato administrativo ou cassa a decisão judicial e determina que outra seja proferida com ou sem aplicação da súmula, conforme o caso.
+
+Ponto   Regra
+Iniciativa   De ofício ou por provocação.
+Pressuposto   Reiteradas decisões sobre matéria constitucional.
+Quórum   Dois terços dos membros do STF, para aprovar, revisar ou cancelar.
+Objeto   Validade, interpretação e eficácia de normas determinadas com controvérsia atual capaz de gerar grave insegurança jurídica e relevante multiplicação de processos sobre questão idêntica.
+Efeitos   Após publicação oficial, vincula os demais órgãos do Poder Judiciário e a administração pública direta e indireta, nas esferas federal, estadual e municipal.
+Legitimados   Os do art. 103 (ADI/ADC), sem prejuízo de ampliação legal (Lei 11.417/2006).
+Descumprimento   Reclamação ao STF: anula o ato administrativo ou cassa a decisão judicial.
+
+Caso explicado. Uma decisão judicial ignorou a súmula vinculante 1. A súmula é aplicável e foi contrariada (ou foi aplicada indevidamente)? Então cabe reclamação ao STF. 2. Procedente a reclamação, o STF cassa a decisão judicial (ou anula o ato administrativo). 3. O STF determina que outra decisão seja proferida, com ou sem aplicação da súmula, conforme o caso.
+
+Erro comum. Dizer que a súmula vincula o STF como vincula os demais O art. 103-A fala nos demais órgãos do Judiciário e na administração pública direta e indireta. Atenção à literalidade quando a questão incluir o próprio STF entre os vinculados.
+
+FECHAMENTO
+
+FECHAMENTO DO MÓDULO
+
+1. RESUMO DO MÓDULO
+
+Núcleo   A ideia central
+Estrutura e autonomia (capítulos 2 e 3)   O art. 92 lista os órgãos do Judiciário, que é nacional e unitário; o STF fica na cúpula e não é Tribunal Superior. Os tribunais têm competências privativas (art. 96) e elaboram suas propostas orçamentárias dentro dos limites da LDO (art. 99).
+Magistratura e tribunais (capítulos 4 a 7)   O ingresso exige concurso com OAB e 3 anos de atividade jurídica; a carreira alterna antiguidade e merecimento. Vitaliciedade, inamovibilidade e irredutibilidade protegem o juiz. Julgamentos são públicos e fundamentados; o quinto segue 6 → 3 → 1; a inconstitucionalidade em tribunal exige maioria absoluta do plenário ou do órgão especial.
+Precatórios (capítulo 8)   Ordem cronológica, preferência dos alimentares, superpreferência até o triplo da RPV, RPV fora do precatório; após a EC 136/2025, prazo de 1º de fevereiro e §§ 23 a 30.
+STF (capítulos 9 a 12)   11 Ministros escolhidos pelo Presidente e aprovados pela maioria absoluta do Senado. Competências originárias organizadas por blocos; recurso ordinário e extraordinário; repercussão geral recusada só por 2/3; súmula vinculante aprovada por 2/3, com reclamação em caso de descumprimento.
+
+2. O QUE DECORAR
+
+Lei seca essencial: mapa artigo a artigo.
+
+Dispositivo   Núcleo para memorizar
+Art. 92   Órgãos do Poder Judiciário; sede na Capital Federal; jurisdição nacional do STF e Tribunais Superiores.
+Art. 93   Estatuto da Magistratura; concurso + OAB + 3 anos; promoção; quóruns; publicidade; órgão especial; ininterruptabilidade.
+Art. 94   Quinto constitucional: >10 anos; lista 6 → 3 → 1; Executivo escolhe em 20 dias.
+Art. 95   Vitaliciedade, inamovibilidade, irredutibilidade; vedações; quarentena de 3 anos para advocacia no juízo/tribunal.
+Art. 96   Competências privativas dos tribunais e iniciativa legislativa judicial.
+Art. 97   Reserva de plenário: maioria absoluta do tribunal ou órgão especial.
+Art. 99   Autonomia administrativa e financeira; propostas orçamentárias e limites da LDO.
+Art. 100   Precatórios; ordem cronológica; alimentares; superpreferência; RPV; 1º de fevereiro; novos §§ 23–30 da EC 136/2025.
+Art. 101   11 Ministros; >35 e <70; notável saber jurídico; reputação ilibada; PR + maioria absoluta do Senado.
+Art. 102   Competências originárias; RO; RE; repercussão geral.
+Art. 103 e 103-A   Legitimados do controle concentrado; súmula vinculante, quórum de 2/3, efeitos e reclamação.
+
+NÃO CONFUNDIR: os dois quóruns do módulo
+
+Instituto A   Instituto B   Diferença decisiva
+2/3   Maioria absoluta   2/3: recusa do mais antigo na promoção; recusa da repercussão geral; súmula vinculante. Maioria absoluta: reserva de plenário e remoção/disponibilidade por interesse público (nos termos constitucionais).
+
+Quadros de memorização.
+
+Regra de bolso. Quinto constitucional: 6 → 3 → 1, e o Executivo tem 20 dias para escolher um nome.
+
+Cai muito. STF: 11 Ministros; idade >35 e <70; Presidente indica; Senado aprova por maioria absoluta.
+
+Artigos para lembrar. 93 = magistratura; 94 = quinto; 95 = garantias/vedações; 97 = plenário; 99 = autonomia financeira; 100 = precatórios; 101–103-A = STF.
+
+Exceção importante. Inamovibilidade não impede remoção por interesse público, desde que observado o procedimento e o quórum constitucional.
+
+3. PEGADINHAS DE PROVA
+
+Todas as afirmações estão erradas; o importante é saber por quê.
+
+Afirmação da banca   Veredicto e motivo   Cap.
+“O STF é um Tribunal Superior.”   Errado: ele é o Supremo Tribunal Federal; os Tribunais Superiores são STJ, TST, TSE e STM.   2
+“Vitaliciedade no primeiro grau é adquirida após 3 anos.”   Errado: são 2 anos.   5
+“O tribunal recusa o juiz mais antigo por maioria absoluta.”   Errado: 2/3.   4
+“Decisão disciplinar administrativa exige 2/3.”   Errado: maioria absoluta.   6
+“Quinto constitucional: lista tríplice da classe e lista sêxtupla do tribunal.”   Inversão; é 6 pela classe e 3 pelo tribunal.   7
+“Precatório apresentado até 2 de abril entra no orçamento do exercício seguinte.”   Desatualizado após EC 136/2025: 1º de fevereiro.   8
+“Repercussão geral é reconhecida por 2/3.”   A Constituição diz que ela somente pode ser recusada por 2/3.   11
+“Súmula vinculante vincula o próprio STF do mesmo modo que os demais órgãos.”   O art. 103-A fala nos demais órgãos do Judiciário e Administração; a questão exige cuidado com a literalidade.   12
+“Toda controvérsia entre lei local e lei federal vai ao STJ.”   Se a decisão julga válida lei local contestada em face de lei federal, cabe RE ao STF (art. 102, III, d).   11
+
+4. COMO RESOLVER QUESTÕES
+
+Roteiro prático:
+
+Passo   O que fazer
+1.   Identifique o artigo-base: estrutura (92), magistratura (93–95), administração (96–99), precatórios (100), STF (101–103-A).
+2.   Circule mentalmente números: 2 anos; 3 anos; 10 anos; 20 dias; 11 Ministros; 25 julgadores; 2/3; maioria absoluta; 1º de fevereiro.
+3.   Pergunte se a banca trocou órgão: STF × STJ × Senado × Tribunal local × Executivo.
+4.   Em competência do STF, classifique: originária, recurso ordinário ou recurso extraordinário.
+5.   Em precatórios, confira se a questão usa redação anterior à EC 136/2025.
+6.   Em assertivas longas, separe as orações: uma única parte falsa torna a alternativa incorreta.
+
+5. CHECKLIST DE REVISÃO FINAL
+
+Marque cada item quando conseguir explicá-lo sem consultar a apostila.
+
+• ☐ Art. 92: órgãos do Judiciário e sede/jurisdição nacional. (capítulo 2)
+
+• ☐ Art. 93: concurso com OAB + 3 anos de atividade jurídica; promoção; quóruns; publicidade; órgão especial; atividade ininterrupta. (capítulos 4, 6 e 7)
+
+• ☐ Art. 94: quinto constitucional 6 → 3 → 1; 20 dias. (capítulo 7)
+
+• ☐ Art. 95: vitaliciedade em 2 anos no primeiro grau; inamovibilidade; irredutibilidade; vedações e quarentena de 3 anos. (capítulo 5)
+
+• ☐ Art. 97: maioria absoluta para declaração de inconstitucionalidade por tribunal/órgão especial. (capítulo 7)
+
+• ☐ Art. 99: autonomia orçamentária dentro da LDO. (capítulo 3)
+
+• ☐ Art. 100: ordem cronológica; alimentares; superpreferência; RPV; prazo de 1º de fevereiro; EC 136/2025. (capítulo 8)
+
+• ☐ STF: 11 Ministros; >35 e <70; maioria absoluta do Senado. (capítulo 9)
+
+• ☐ RE: quatro hipóteses do art. 102, III; repercussão geral só pode ser recusada por 2/3. (capítulo 11)
+
+• ☐ Súmula vinculante: reiteradas decisões; 2/3; efeitos vinculantes; reclamação. (capítulo 12)
+
+6. REFERÊNCIAS E LINKS OFICIAIS
+
+Fontes oficiais para conferir o texto e a jurisprudência.
+
+Fonte oficial   Para que usar   Link
+Constituição Federal de 1988 (Planalto)   Arts. 12 e 92 a 103-A.   https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm
+Emenda Constitucional nº 136, de 2025 (Planalto)   Precatórios: § 5º e §§ 23 a 30 do art. 100 (capítulo 8).   https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc136.htm
+Emenda Constitucional nº 134, de 2024 (Planalto)   Eleição de órgãos diretivos em TJs com mais de 170 desembargadores (capítulo 3).   https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc134.htm
+Emenda Constitucional nº 130, de 2023 (Planalto)   Remoção a pedido e permuta, incisos VIII-A e VIII-B do art. 93 (capítulo 4).   https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc130.htm
+Lei nº 11.417, de 2006 (Planalto)   Procedimento da súmula vinculante (capítulo 12).   https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2006/lei/l11417.htm
+STF: Súmula Vinculante 10   Reserva de plenário (capítulo 7).   https://portal.stf.jus.br/jurisprudencia/sumariosumulas.asp?base=26&sumula=1216
+STF: A Constituição e o Supremo, art. 102   Competências do STF com jurisprudência (capítulos 10 e 11).   https://portal.stf.jus.br/constituicao-supremo/artigo.asp?abrirBase=CF&abrirArtigo=102

@@ -1,0 +1,216 @@
+{
+  "summary": [
+    {
+      "n": 1,
+      "difficulty": "Fácil",
+      "q": "O Vice-Presidente da República sucede o Presidente:",
+      "options": [
+        "na vacância.",
+        "no impedimento.",
+        "apenas com autorização do Senado.",
+        "após 180 dias de afastamento.",
+        "nunca, pois apenas substitui."
+      ],
+      "answer": 0,
+      "explanation": "Art. 79: substituição ocorre no impedimento; sucessão, na vaga."
+    },
+    {
+      "n": 2,
+      "difficulty": "Fácil",
+      "q": "A ordem correta do art. 80 da Constituição é:",
+      "options": [
+        "STF → Senado → Câmara.",
+        "Câmara → Senado → STF.",
+        "Câmara → STF → Senado.",
+        "Senado → Câmara → STF.",
+        "Senado → STF → Câmara."
+      ],
+      "answer": 1,
+      "explanation": "Art. 80: Presidente da Câmara, depois Senado, depois STF."
+    },
+    {
+      "n": 3,
+      "difficulty": "Média",
+      "q": "É hipótese admitida de decreto presidencial autônomo:",
+      "options": [
+        "criar órgão público.",
+        "extinguir ministério.",
+        "extinguir cargo público vago.",
+        "aumentar despesa para reorganizar órgão.",
+        "criar cargo efetivo."
+      ],
+      "answer": 2,
+      "explanation": "Art. 84, VI, b. A Constituição permite extinguir funções ou cargos vagos."
+    },
+    {
+      "n": 4,
+      "difficulty": "Média",
+      "q": "Admitida por dois terços da Câmara acusação por crime de responsabilidade contra o Presidente, compete julgar o caso ao:",
+      "options": [
+        "STF.",
+        "STJ.",
+        "Congresso em sessão conjunta.",
+        "Senado Federal.",
+        "TCU."
+      ],
+      "answer": 3,
+      "explanation": "Arts. 86 e 52: o Senado processa e julga o Presidente por crime de responsabilidade."
+    },
+    {
+      "n": 5,
+      "difficulty": "Difícil",
+      "q": "Sobre a imunidade prevista no art. 86, §4º, assinale a correta:",
+      "options": [
+        "impede qualquer investigação criminal.",
+        "afasta definitivamente a responsabilidade por fatos anteriores ao mandato.",
+        "alcança automaticamente governadores.",
+        "impede ações civis e fiscais durante o mandato.",
+        "impede temporariamente a responsabilização penal por atos estranhos às funções presidenciais."
+      ],
+      "answer": 4,
+      "explanation": "A jurisprudência do STF a trata como imunidade penal temporária, de interpretação estrita."
+    }
+  ],
+  "complete": [
+    {
+      "n": 1,
+      "difficulty": "Fácil",
+      "q": "Nos termos da Constituição Federal, em caso de impedimento simultâneo do Presidente e do Vice-Presidente da República, será chamado primeiramente ao exercício da Presidência:",
+      "options": [
+        "o Presidente da Câmara dos Deputados.",
+        "o Presidente do Senado Federal.",
+        "o Presidente do STF.",
+        "o Ministro da Justiça.",
+        "o Procurador-Geral da República."
+      ],
+      "answer": 0,
+      "explanation": "Art. 80: a ordem constitucional de substituição é Presidente da Câmara dos Deputados, Presidente do Senado Federal e Presidente do STF."
+    },
+    {
+      "n": 2,
+      "difficulty": "Fácil",
+      "q": "O Vice-Presidente da República, segundo a Constituição,",
+      "options": [
+        "sucede o Presidente no impedimento e o substitui na vaga.",
+        "substitui o Presidente no impedimento e o sucede na vaga.",
+        "apenas exerce funções protocolares.",
+        "só pode assumir após autorização do Congresso.",
+        "não pode receber atribuições por lei complementar."
+      ],
+      "answer": 1,
+      "explanation": "Art. 79. Impedimento é temporário e gera substituição; vaga é definitiva e gera sucessão."
+    },
+    {
+      "n": 3,
+      "difficulty": "Fácil",
+      "q": "É atribuição que pode ser delegada pelo Presidente da República, nos termos do art. 84, parágrafo único:",
+      "options": [
+        "vetar projetos de lei.",
+        "decretar intervenção federal.",
+        "conceder indulto e comutar penas.",
+        "celebrar tratados internacionais.",
+        "exercer o comando supremo das Forças Armadas."
+      ],
+      "answer": 2,
+      "explanation": "O inciso XII é expressamente delegável. Os demais itens não pertencem ao rol VI, XII e XXV, primeira parte."
+    },
+    {
+      "n": 4,
+      "difficulty": "Fácil",
+      "q": "A acusação contra o Presidente da República, para fins do art. 86 da Constituição, depende de admissão pela Câmara dos Deputados por:",
+      "options": [
+        "maioria simples.",
+        "maioria absoluta.",
+        "três quintos.",
+        "dois terços.",
+        "unanimidade."
+      ],
+      "answer": 3,
+      "explanation": "Art. 86, caput: exige dois terços da Câmara."
+    },
+    {
+      "n": 5,
+      "difficulty": "Média",
+      "q": "Ocorrendo dupla vacância da Presidência e Vice-Presidência no último ano do período presidencial, a Constituição determina que:",
+      "options": [
+        "o Presidente da Câmara conclua definitivamente o mandato.",
+        "haja eleição direta em noventa dias.",
+        "o Senado escolha o novo Presidente e o Vice separadamente.",
+        "o Presidente do STF convoque eleição direta em trinta dias.",
+        "haja eleição pelo Congresso Nacional em trinta dias da última vaga."
+      ],
+      "answer": 4,
+      "explanation": "Art. 81, §1º. Nos últimos dois anos, a eleição é feita pelo Congresso Nacional 30 dias depois da última vaga; os eleitos completam o período."
+    },
+    {
+      "n": 6,
+      "difficulty": "Média",
+      "q": "Sobre decreto presidencial com fundamento no art. 84, VI, é correto afirmar que pode:",
+      "options": [
+        "extinguir cargo público vago.",
+        "extinguir ministério sem lei.",
+        "aumentar despesa para reorganizar a administração.",
+        "criar autarquia federal sem lei.",
+        "extinguir cargo ocupado mediante indenização."
+      ],
+      "answer": 0,
+      "explanation": "Art. 84, VI, b permite extinguir funções ou cargos públicos quando vagos. O inciso VI, a veda aumento de despesa e criação/extinção de órgãos."
+    },
+    {
+      "n": 7,
+      "difficulty": "Média",
+      "q": "Admitida acusação de infração penal comum contra o Presidente da República, o julgamento compete ao:",
+      "options": [
+        "Senado Federal, e o afastamento ocorre com a autorização da Câmara.",
+        "STF, e o afastamento ocorre se o STF receber a denúncia ou queixa-crime.",
+        "STJ, e o afastamento é automático por 180 dias.",
+        "Congresso Nacional, e o afastamento ocorre por maioria absoluta.",
+        "STF, sem necessidade de admissão prévia pela Câmara."
+      ],
+      "answer": 1,
+      "explanation": "Arts. 86, caput e §1º, I. A Câmara admite por 2/3; o STF julga e o afastamento decorre do recebimento da denúncia ou queixa."
+    },
+    {
+      "n": 8,
+      "difficulty": "Média",
+      "q": "Quanto ao art. 86, §4º, é correto afirmar que a Constituição estabelece:",
+      "options": [
+        "imunidade civil absoluta durante o mandato.",
+        "impossibilidade de qualquer investigação criminal.",
+        "impedimento temporário à responsabilização penal por atos estranhos ao exercício das funções.",
+        "irresponsabilidade penal definitiva por fatos anteriores ao mandato.",
+        "extensão automática da mesma garantia aos Governadores."
+      ],
+      "answer": 2,
+      "explanation": "O STF interpreta a regra como imunidade penal temporária à persecução por atos estranhos; não é imunidade civil, nem impede necessariamente investigação, nem se estende automaticamente a governadores."
+    },
+    {
+      "n": 9,
+      "difficulty": "Difícil",
+      "q": "O Presidente da República expede decreto que (i) reorganiza órgãos internos de um ministério sem aumento de despesa e sem criar ou extinguir órgãos públicos e (ii) extingue cinco cargos públicos vagos. Depois, delega a um Ministro de Estado a prática desses atos dentro de limites expressos. À luz da Constituição:",
+      "options": [
+        "ambas são possíveis, mas a delegação é vedada por se tratar de competência privativa.",
+        "apenas a reorganização é possível; extinção de cargos depende sempre de lei.",
+        "apenas a extinção de cargos é possível; reorganização depende sempre de lei.",
+        "ambas as medidas são materialmente possíveis por decreto e a delegação é constitucional.",
+        "nenhuma é possível por decreto autônomo."
+      ],
+      "answer": 3,
+      "explanation": "Art. 84, VI, a e b autoriza as duas medidas; o parágrafo único inclui o inciso VI entre as atribuições delegáveis a Ministros, PGR e AGU."
+    },
+    {
+      "n": 10,
+      "difficulty": "Difícil",
+      "q": "Após a Câmara admitir, por dois terços, acusação por crime de responsabilidade contra o Presidente, o Senado instaura o processo. Passados 180 dias, o julgamento ainda não terminou. Nesse caso:",
+      "options": [
+        "o processo é extinto e o Presidente reassume.",
+        "o Presidente permanece obrigatoriamente afastado até o julgamento final.",
+        "a Câmara deve renovar a autorização por dois terços.",
+        "o STF passa a ser competente para o julgamento.",
+        "cessa o afastamento, mas o processo prossegue regularmente."
+      ],
+      "answer": 4,
+      "explanation": "Art. 86, §2º. Decorridos 180 dias sem conclusão, cessa o afastamento, sem prejuízo do regular prosseguimento do processo."
+    }
+  ]
+}

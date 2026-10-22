@@ -1,0 +1,216 @@
+{
+  "summary": [
+    {
+      "n": 1,
+      "difficulty": "Fácil",
+      "q": "A ADC perante o STF pode ter por objeto",
+      "options": [
+        "lei ou ato normativo federal.",
+        "lei municipal.",
+        "lei estadual.",
+        "norma pré-constitucional municipal.",
+        "qualquer ato concreto do Poder Público."
+      ],
+      "answer": 0,
+      "explanation": "ADC: lei ou ato normativo federal."
+    },
+    {
+      "n": 2,
+      "difficulty": "Fácil",
+      "q": "A cláusula de reserva de plenário exige",
+      "options": [
+        "unanimidade.",
+        "maioria absoluta do tribunal ou órgão especial.",
+        "dois terços do órgão fracionário.",
+        "maioria simples.",
+        "autorização do Senado."
+      ],
+      "answer": 1,
+      "explanation": "Art. 97: maioria absoluta."
+    },
+    {
+      "n": 3,
+      "difficulty": "Média",
+      "q": "É legitimado especial sujeito à pertinência temática",
+      "options": [
+        "PGR.",
+        "Conselho Federal da OAB.",
+        "Governador de Estado.",
+        "Presidente da República.",
+        "Mesa do Senado."
+      ],
+      "answer": 2,
+      "explanation": "Governador é legitimado especial; exige pertinência temática."
+    },
+    {
+      "n": 4,
+      "difficulty": "Média",
+      "q": "A ADPF distingue-se da ADI porque",
+      "options": [
+        "não é julgada pelo STF.",
+        "não possui legitimados do art. 103.",
+        "só pode ser proposta pelo PGR.",
+        "pode alcançar, nos termos legais, lei municipal e norma pré-constitucional e possui caráter subsidiário.",
+        "não admite medida liminar."
+      ],
+      "answer": 3,
+      "explanation": "ADPF tem objeto amplo e subsidiariedade."
+    },
+    {
+      "n": 5,
+      "difficulty": "Difícil",
+      "q": "Órgão fracionário afasta lei por incompatibilidade com a Constituição sem submissão ao plenário e sem precedente plenário apto. A conclusão correta é",
+      "options": [
+        "conduta válida se unânime.",
+        "impossibilidade de controle difuso em tribunal.",
+        "necessidade apenas de informar o Senado.",
+        "validade por se tratar de controle difuso.",
+        "violação da SV 10 e do art. 97."
+      ],
+      "answer": 4,
+      "explanation": "SV 10 impede afastamento implícito de norma por órgão fracionário em burla ao plenário."
+    }
+  ],
+  "complete": [
+    {
+      "n": 1,
+      "difficulty": "Fácil",
+      "q": "Nos termos da Constituição Federal, a cláusula de reserva de plenário determina que a declaração de inconstitucionalidade por tribunal exige",
+      "options": [
+        "o voto de dois terços de todos os membros do tribunal.",
+        "o voto da maioria absoluta dos membros do tribunal ou do respectivo órgão especial.",
+        "unanimidade do órgão fracionário.",
+        "maioria simples dos presentes, qualquer que seja o quórum.",
+        "prévia autorização do Senado Federal."
+      ],
+      "answer": 0,
+      "explanation": "Art. 97: a declaração de inconstitucionalidade por tribunal exige maioria absoluta de seus membros ou dos membros do respectivo órgão especial."
+    },
+    {
+      "n": 2,
+      "difficulty": "Fácil",
+      "q": "É objeto típico de ação declaratória de constitucionalidade perante o STF",
+      "options": [
+        "lei municipal.",
+        "lei ou ato normativo federal.",
+        "lei estadual.",
+        "ato administrativo individual municipal.",
+        "norma constitucional originária."
+      ],
+      "answer": 1,
+      "explanation": "A ADC tem por objeto lei ou ato normativo federal. Lei estadual pode ser objeto de ADI, não de ADC."
+    },
+    {
+      "n": 3,
+      "difficulty": "Fácil",
+      "q": "Integra o rol do art. 103 da Constituição como legitimado para ADI e ADC",
+      "options": [
+        "Prefeito municipal.",
+        "Defensor Público-Geral Federal.",
+        "Conselho Federal da OAB.",
+        "Mesa de Câmara Municipal.",
+        "Tribunal de Contas da União."
+      ],
+      "answer": 2,
+      "explanation": "O Conselho Federal da OAB está expressamente no art. 103. Prefeito, Câmara Municipal, TCU e DPU não integram o rol."
+    },
+    {
+      "n": 4,
+      "difficulty": "Fácil",
+      "q": "A ADPF, conforme sua lei de regência, pode alcançar controvérsia constitucional relevante sobre",
+      "options": [
+        "apenas lei federal posterior à Constituição.",
+        "apenas atos do Poder Judiciário.",
+        "somente emenda constitucional.",
+        "lei municipal, inclusive quando anterior à Constituição.",
+        "somente lei estadual posterior à Constituição."
+      ],
+      "answer": 3,
+      "explanation": "A Lei 9.882/1999 admite controvérsia sobre ato normativo municipal e inclui normas anteriores à Constituição."
+    },
+    {
+      "n": 5,
+      "difficulty": "Média",
+      "q": "Órgão fracionário de tribunal afasta a aplicação de lei por considerá-la incompatível com a Constituição, sem pronunciamento prévio do plenário ou do STF. À luz da SV 10, essa conduta",
+      "options": [
+        "é válida porque não houve declaração expressa de inconstitucionalidade.",
+        "é válida se tomada por unanimidade.",
+        "é válida se a lei for estadual.",
+        "depende apenas de posterior comunicação ao Senado.",
+        "viola a reserva de plenário."
+      ],
+      "answer": 4,
+      "explanation": "A SV 10 alcança afastamento implícito de incidência por fundamento constitucional. Unanimidade do órgão fracionário não substitui o plenário."
+    },
+    {
+      "n": 6,
+      "difficulty": "Média",
+      "q": "Sobre a modulação dos efeitos na Lei 9.868/1999, é correto afirmar que",
+      "options": [
+        "pode ocorrer por 2/3 dos membros, por segurança jurídica ou excepcional interesse social.",
+        "exige unanimidade.",
+        "exige maioria simples e conveniência administrativa.",
+        "é vedada em controle abstrato.",
+        "somente pode fixar efeitos ex nunc a partir do trânsito em julgado."
+      ],
+      "answer": 0,
+      "explanation": "Lei 9.868, art. 27: 2/3 e razões de segurança jurídica ou excepcional interesse social."
+    },
+    {
+      "n": 7,
+      "difficulty": "Média",
+      "q": "Uma entidade de classe de âmbito nacional propõe ADI contra norma sem relação com seus objetivos institucionais. O principal óbice é",
+      "options": [
+        "falta de capacidade civil.",
+        "ausência de pertinência temática.",
+        "impossibilidade absoluta de entidade privada propor ADI.",
+        "necessidade de autorização do Senado.",
+        "falta de controvérsia judicial relevante, requisito de toda ADI."
+      ],
+      "answer": 1,
+      "explanation": "Entidade de classe nacional é legitimada especial e deve demonstrar pertinência temática."
+    },
+    {
+      "n": 8,
+      "difficulty": "Média",
+      "q": "A respeito da ADO, assinale a correta.",
+      "options": [
+        "Somente o PGR pode propô-la.",
+        "Serve apenas para omissão legislativa total.",
+        "Declarada a omissão, dá-se ciência ao Poder competente; se órgão administrativo, aplica-se a disciplina constitucional/legal de prazo.",
+        "Não admite omissão administrativa.",
+        "Seu objeto é declarar a constitucionalidade de lei federal."
+      ],
+      "answer": 2,
+      "explanation": "A ADO alcança omissão total ou parcial, legislativa ou administrativa; declarada a omissão, há ciência ao Poder competente."
+    },
+    {
+      "n": 9,
+      "difficulty": "Difícil",
+      "q": "Lei municipal posterior à CF/88 é questionada diretamente em face da Constituição Federal, em controvérsia objetiva de alta relevância. Em tese, a via mais compatível, se ausente outro meio eficaz, é",
+      "options": [
+        "ADI no STF.",
+        "ADC no STF.",
+        "ADO no STF.",
+        "ADPF no STF.",
+        "representação interventiva do PGR, necessariamente."
+      ],
+      "answer": 3,
+      "explanation": "ADI no STF não alcança lei municipal; ADPF pode ser adequada, observada a subsidiariedade."
+    },
+    {
+      "n": 10,
+      "difficulty": "Difícil",
+      "q": "Sobre o controle difuso, assinale a alternativa mais adequada.",
+      "options": [
+        "A decisão sempre produz, por si só, eficácia erga omnes idêntica à ADI.",
+        "O controle difuso somente pode ser exercido pelo STF.",
+        "A reserva de plenário impede juiz singular de afastar lei inconstitucional.",
+        "Norma pré-constitucional incompatível com a CF/88 somente pode ser afastada pelo plenário do tribunal por art. 97.",
+        "O art. 52, X, atribui ao Senado competência constitucional relacionada à suspensão da execução de lei declarada inconstitucional por decisão definitiva do STF, sem confundir essa função com os efeitos típicos do controle abstrato."
+      ],
+      "answer": 4,
+      "explanation": "É a leitura constitucional segura para prova: art. 52, X, permanece dispositivo expresso e deve ser distinguido dos efeitos erga omnes/vinculantes das ações abstratas."
+    }
+  ]
+}

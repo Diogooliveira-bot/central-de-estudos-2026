@@ -1,0 +1,365 @@
+LEITURA ORIENTADA
+
+Esta apostila reescreve o texto original do módulo CF M13 para que o iniciante entenda tudo e o avançado se aprofunde. O conteúdo segue a ordem do próprio módulo, em oito capítulos (princípios, Estado na economia, recursos e setores estratégicos), e termina em um fechamento de revisão. Cada capítulo traz prosa, uma tabela e, no máximo, duas caixas didáticas; os quadros do texto original (Cai muito, Não confundir, Pegadinha) aparecem no capítulo a que pertencem.
+
+TRÊS SITUAÇÕES-PROBLEMA
+
+Tente responder antes de ler. Errar faz parte: a resposta está no capítulo indicado.
+
+Núcleo   Situação-problema   Resposta
+Livre iniciativa   Um decreto municipal, sem lei que o ampare, passa a exigir autorização prévia para abrir qualquer tipo de comércio. A exigência é compatível com o art. 170?   Capítulo 3
+Estado na economia   Uma sociedade de economia mista que concorre no mercado recebe isenção tributária que as empresas privadas do setor não têm. E o planejamento estatal obriga essas empresas privadas?   Capítulos 4 e 5
+Recursos minerais   Uma jazida é descoberta em uma fazenda particular. O dono do solo é dono do minério? Recebe alguma coisa?   Capítulo 7
+
+CAMINHO DO INICIANTE E CAMINHO DO AVANÇADO
+
+Etapa   Caminho do iniciante   Caminho do avançado
+Antes   Leia o capítulo 1 e tente as três situações-problema, mesmo que erre.   Responda sem consultar; depois confira nos capítulos 3, 4, 5 e 7.
+Em cada capítulo   Prosa, tabela e caixa de Caso explicado; só depois o Erro comum.   Comece pela tabela; leia Caso explicado, Erro comum e Atenção à atualização; volte à prosa onde errar.
+Ordem   Siga a numeração: Parte I (capítulos 2 e 3), Parte II (4 a 6) e Parte III (7 e 8).   Comece pelo mapa de distinções do Fechamento e volte aos capítulos onde errar.
+Fechamento   Faça o Resumo e o Checklist; releia as regras de bolso.   Estude as Pegadinhas e treine o roteiro de Como resolver questões.
+
+Como ler as caixas. Caso explicado mostra o raciocínio em uma situação (o texto original não traz exemplos aplicados); Erro comum aponta a troca que a banca explora; Como estudar é dica de revisão; Cai muito, Não confundir e Pegadinha são quadros do texto original; Atenção à atualização marca o que não consta do texto original e foi acrescentado (confira sempre).
+
+ROTEIRO DE ESTUDO
+
+PERCURSO DO MÓDULO
+
+A numeração das aulas é a mesma dos capítulos: a aula 4 corresponde ao capítulo 4. Use o tema como índice para localizar o capítulo correspondente.
+
+Aula   Tema do capítulo   Base constitucional
+Visão geral   Visão geral   Visão geral
+1   Posição constitucional da ordem econômica   Não se aplica.
+Parte I · Princípios da ordem econômica (aulas 2 e 3)   Parte I · Princípios da ordem econômica (aulas 2 e 3)   Parte I · Princípios da ordem econômica (aulas 2 e 3)
+2   Art. 170: estrutura e princípios da ordem econômica   art. 170
+3   Livre exercício de atividade econômica e capital estrangeiro   art. 170, parágrafo único; art. 172
+Parte II · O Estado na economia (aulas 4 a 6)   Parte II · O Estado na economia (aulas 4 a 6)   Parte II · O Estado na economia (aulas 4 a 6)
+4   Art. 173: exploração direta de atividade econômica pelo Estado   art. 173
+5   Art. 174: Estado como agente normativo e regulador   art. 174
+6   Art. 175: serviços públicos   art. 175
+Parte III · Recursos e setores estratégicos (aulas 7 e 8)   Parte III · Recursos e setores estratégicos (aulas 7 e 8)   Parte III · Recursos e setores estratégicos (aulas 7 e 8)
+7   Jazidas, minerais, potenciais hidráulicos e monopólios da União   arts. 176 e 177
+8   Transportes, micro e pequenas empresas, turismo e ouro   arts. 178 a 181
+Fechamento (sem numeração de aula)   Fechamento (sem numeração de aula)   Fechamento (sem numeração de aula)
+Não se aplica.   Resumo; O que decorar; Pegadinhas de prova; Como resolver questões; Checklist; Referências e links oficiais   Não se aplica.
+
+VISÃO GERAL DO MÓDULO
+
+CAPÍTULO 1 — POSIÇÃO CONSTITUCIONAL DA ORDEM ECONÔMICA
+
+A Constituição não adota um modelo econômico de liberdade absoluta nem de estatização generalizada. O desenho constitucional combina economia de mercado, livre iniciativa, proteção do trabalho, regulação estatal e compromisso com justiça social. Por isso, a interpretação do Título VII deve partir do equilíbrio entre autonomia privada e finalidades públicas.
+
+O desenho constitucional combina   Onde aparece no módulo
+Economia de mercado e livre iniciativa   Caps. 2 e 3 (art. 170)
+Proteção do trabalho e compromisso com justiça social   Cap. 2 (art. 170)
+Regulação estatal   Caps. 4 a 6 (arts. 173 a 175)
+Interesse nacional e setores estratégicos   Caps. 3, 7 e 8 (arts. 172 e 176 a 181)
+
+Como estudar. A pergunta de equilíbrio Diante de qualquer afirmação, pergunte: ela trata a liberdade econômica como absoluta ou a intervenção estatal como regra geral? Nos dois casos, desconfie: a Constituição busca o equilíbrio entre autonomia privada e finalidades públicas.
+
+PARTE I · PRINCÍPIOS DA ORDEM ECONÔMICA
+
+CAPÍTULO 2 — ART. 170: ESTRUTURA E PRINCÍPIOS DA ORDEM ECONÔMICA
+
+Base constitucional: art. 170
+
+O caput do art. 170 contém três elementos que devem ser separados em prova.
+
+Elemento   Conteúdo
+Fundamentos   Valorização do trabalho humano e livre iniciativa.
+Finalidade   Assegurar a todos existência digna.
+Parâmetro valorativo   Os ditames da justiça social.
+
+Os princípios do art. 170 não são meras recomendações políticas; funcionam como vetores de interpretação, limites à legislação econômica e fundamentos para atuação regulatória.
+
+2.1 SOBERANIA NACIONAL
+
+A soberania nacional, no contexto econômico, permite políticas voltadas à preservação de interesses estratégicos nacionais, sem significar fechamento econômico automático ou proibição de capital estrangeiro.
+
+2.2 PROPRIEDADE PRIVADA E FUNÇÃO SOCIAL
+
+A Constituição protege a propriedade privada e, simultaneamente, exige função social. Não há contradição: a propriedade é assegurada dentro de um sistema constitucional que impõe deveres e condicionamentos orientados ao interesse coletivo.
+
+2.3 LIVRE CONCORRÊNCIA
+
+A livre concorrência protege o funcionamento competitivo dos mercados. O Estado pode atuar contra abuso do poder econômico, dominação de mercados e eliminação indevida da concorrência.
+
+2.4 DEFESA DO CONSUMIDOR
+
+A defesa do consumidor é, ao mesmo tempo, direito fundamental e princípio da ordem econômica. A atividade econômica deve respeitar padrões de informação, segurança, boa-fé e equilíbrio das relações de consumo definidos pela ordem jurídica.
+
+2.5 DEFESA DO MEIO AMBIENTE
+
+A proteção ambiental integra a própria racionalidade da ordem econômica. A Constituição admite tratamento diferenciado conforme o impacto ambiental dos produtos, serviços e processos de elaboração e prestação.
+
+2.6 REDUÇÃO DAS DESIGUALDADES E BUSCA DO PLENO EMPREGO
+
+O texto constitucional vincula a ordem econômica à redução das desigualdades regionais e sociais e à busca do pleno emprego. São diretrizes que legitimam políticas econômicas compatíveis com o conjunto constitucional.
+
+2.7 TRATAMENTO FAVORECIDO ÀS EMPRESAS DE PEQUENO PORTE
+
+O art. 170 assegura tratamento favorecido às empresas de pequeno porte constituídas sob as leis brasileiras e com sede e administração no País. O art. 179 desenvolve essa diretriz (capítulo 8).
+
+Os princípios do art. 170 em uma tabela
+
+Inciso   Princípio   Ideia-chave do módulo
+I   Soberania nacional   Preserva interesses estratégicos, sem fechamento econômico automático.
+II   Propriedade privada   Protegida dentro de um sistema que impõe deveres.
+III   Função social da propriedade   Condicionamentos orientados ao interesse coletivo.
+IV   Livre concorrência   Atuação estatal contra abuso, dominação e eliminação indevida da concorrência.
+V   Defesa do consumidor   Direito fundamental e princípio da ordem econômica.
+VI   Defesa do meio ambiente   Tratamento diferenciado conforme o impacto ambiental.
+VII   Redução das desigualdades regionais e sociais   Legitima políticas econômicas compatíveis.
+VIII   Busca do pleno emprego   Legitima políticas econômicas compatíveis.
+IX   Tratamento favorecido às empresas de pequeno porte   Constituídas sob as leis brasileiras, com sede e administração no País.
+
+Atenção à atualização. Numeração dos incisos O texto original apresenta os princípios agrupados, sem numerar os incisos. A numeração I a IX da tabela segue o art. 170 da Constituição: propriedade privada (II) e função social da propriedade (III) são incisos distintos, assim como redução das desigualdades regionais e sociais (VII) e busca do pleno emprego (VIII).
+
+Erro comum. Misturar fundamento, finalidade e princípio Fundamentos são dois: valorização do trabalho humano e livre iniciativa. A finalidade é existência digna. Justiça social é o parâmetro. Os itens da tabela são princípios. A banca troca uma categoria pela outra.
+
+PARTE I · PRINCÍPIOS DA ORDEM ECONÔMICA
+
+CAPÍTULO 3 — LIVRE EXERCÍCIO DE ATIVIDADE ECONÔMICA E CAPITAL ESTRANGEIRO
+
+Base constitucional: art. 170, parágrafo único; art. 172
+
+LIVRE EXERCÍCIO DE ATIVIDADE ECONÔMICA
+
+O parágrafo único do art. 170 estabelece como regra o livre exercício de qualquer atividade econômica, independentemente de autorização de órgãos públicos, salvo nos casos previstos em lei. A exceção deve ter base legal.
+
+Cai muito. A Constituição não declara que toda atividade econômica depende de autorização. A regra é a liberdade; a exigência de autorização é exceção legal.
+
+CAPITAL ESTRANGEIRO (ART. 172)
+
+A lei disciplina, com base no interesse nacional, os investimentos de capital estrangeiro, incentiva reinvestimentos e regula remessa de lucros. O dispositivo evidencia que abertura econômica e proteção do interesse nacional podem coexistir.
+
+Tema   Regra   Exceção ou limite
+Atividade econômica   Livre exercício, independentemente de autorização de órgãos públicos.   Casos previstos em lei.
+Capital estrangeiro   Investimentos admitidos; reinvestimentos incentivados.   Lei disciplina com base no interesse nacional e regula remessa de lucros.
+
+Caso explicado. Precisa de autorização? 1. Existe lei exigindo autorização para essa atividade? Se não existe, vale a regra: livre exercício. 2. Se existe, a autorização é exceção legítima, porque tem base legal. Um ato administrativo sozinho, sem lei, não cria essa exigência.
+
+PARTE II · O ESTADO NA ECONOMIA
+
+CAPÍTULO 4 — ART. 173: EXPLORAÇÃO DIRETA DE ATIVIDADE ECONÔMICA PELO ESTADO
+
+Base constitucional: art. 173
+
+A atuação empresarial direta do Estado é excepcional. Ressalvadas hipóteses constitucionais, depende de necessidade ligada à segurança nacional ou a relevante interesse coletivo, conforme definidos em lei.
+
+REGIME JURÍDICO DAS EMPRESAS ESTATAIS EXPLORADORAS DE ATIVIDADE ECONÔMICA
+
+A Constituição exige estatuto jurídico próprio para empresa pública, sociedade de economia mista e subsidiárias que explorem atividade econômica. Entre os pontos centrais estão função social, fiscalização, licitação e contratação em regime próprio, composição e funcionamento dos conselhos e mandatos dos administradores.
+
+No plano material, essas empresas sujeitam-se ao regime jurídico próprio das empresas privadas quanto a direitos e obrigações civis, comerciais, trabalhistas e tributários.
+
+PRIVILÉGIOS FISCAIS
+
+Empresas públicas e sociedades de economia mista não podem gozar de privilégios fiscais não extensivos às empresas do setor privado quando atuam no campo econômico submetido à concorrência.
+
+ABUSO DO PODER ECONÔMICO
+
+A lei reprime o abuso do poder econômico que vise dominação dos mercados, eliminação da concorrência e aumento arbitrário de lucros.
+
+Ponto   Regra
+Quando o Estado explora   Excepcionalmente: segurança nacional ou relevante interesse coletivo, conforme definidos em lei (ressalvadas hipóteses constitucionais).
+Estatuto jurídico   Próprio, para empresa pública, sociedade de economia mista e subsidiárias: função social, fiscalização, licitação e contratação em regime próprio, conselhos e mandatos dos administradores.
+Regime material   O das empresas privadas quanto a direitos e obrigações civis, comerciais, trabalhistas e tributários.
+Privilégios fiscais   Vedados os não extensivos ao setor privado, no campo econômico submetido à concorrência.
+Abuso do poder econômico   Reprimido quando visa dominação dos mercados, eliminação da concorrência e aumento arbitrário de lucros.
+
+Não confundir. Art. 173 trata de Estado empresário; art. 174 trata de Estado regulador.
+
+Erro comum. Dar à estatal privilégio fiscal próprio Estatal exploradora de atividade econômica em regime de concorrência não pode ter benefício fiscal que não se estenda ao setor privado. Se o benefício for extensível a todos, o problema desaparece.
+
+PARTE II · O ESTADO NA ECONOMIA
+
+CAPÍTULO 5 — ART. 174: ESTADO COMO AGENTE NORMATIVO E REGULADOR
+
+Base constitucional: art. 174
+
+Como agente normativo e regulador, o Estado exerce fiscalização, incentivo e planejamento.
+
+Planejamento   Natureza
+Para o setor público   Determinante.
+Para o setor privado   Indicativo.
+
+A Constituição ainda determina que a lei estabeleça diretrizes e bases do planejamento do desenvolvimento nacional equilibrado, compatibilizando planos nacionais e regionais.
+
+COOPERATIVISMO E ASSOCIATIVISMO
+
+O Estado deve apoiar e estimular cooperativismo e outras formas de associativismo. A lei deve apoiar cooperativas e estabelecer tratamento adequado ao ato cooperativo.
+
+GARIMPAGEM EM COOPERATIVAS
+
+A Constituição favorece organização da atividade garimpeira em cooperativas, levando em conta proteção ambiental e promoção econômico-social dos garimpeiros, observadas as regras constitucionais.
+
+Erro comum. Planejamento obrigatório para empresas privadas O planejamento é determinante só para o setor público. Para o setor privado, é indicativo: orienta, mas não obriga.
+
+PARTE II · O ESTADO NA ECONOMIA
+
+CAPÍTULO 6 — ART. 175: SERVIÇOS PÚBLICOS
+
+Base constitucional: art. 175
+
+Incumbe ao Poder Público, na forma da lei, prestar serviços públicos diretamente ou mediante concessão ou permissão. Concessão e permissão dependem de licitação.
+
+A lei deve disciplinar:
+
+• regime das empresas concessionárias e permissionárias;
+
+• caráter especial do contrato e condições de prorrogação;
+
+• fiscalização e rescisão;
+
+• direitos dos usuários;
+
+• política tarifária;
+
+• obrigação de manter serviço adequado.
+
+Forma de prestação   Exigência
+Direta   Pelo Poder Público, na forma da lei.
+Concessão ou permissão   Licitação.
+
+Pegadinha. Autorização é figura possível em setores específicos, mas o art. 175, ao tratar da delegação de serviço público em seu núcleo, menciona concessão e permissão com licitação.
+
+PARTE III · RECURSOS E SETORES ESTRATÉGICOS
+
+CAPÍTULO 7 — JAZIDAS, MINERAIS, POTENCIAIS HIDRÁULICOS E MONOPÓLIOS DA UNIÃO
+
+Base constitucional: arts. 176 e 177
+
+ART. 176: JAZIDAS, MINERAIS E POTENCIAIS HIDRÁULICOS
+
+Jazidas, em lavra ou não, recursos minerais e potenciais de energia hidráulica constituem propriedade distinta da do solo e pertencem à União para efeito de exploração ou aproveitamento.
+
+Pesquisa e lavra de recursos minerais e aproveitamento de potenciais hidráulicos dependem de autorização ou concessão da União, no interesse nacional e segundo as condições constitucionais.
+
+O proprietário do solo possui participação nos resultados da lavra, na forma e valor previstos em lei.
+
+O aproveitamento de potencial de energia renovável de capacidade reduzida pode receber tratamento constitucional simplificado nos termos da lei.
+
+Atenção à atualização. Energia renovável de capacidade reduzida O art. 176, § 4º, da Constituição é mais preciso que o texto original: não dependerá de autorização ou concessão o aproveitamento do potencial de energia renovável de capacidade reduzida.
+
+ART. 177: MONOPÓLIOS DA UNIÃO
+
+O art. 177 reúne atividades sob monopólio da União em setores estratégicos, especialmente petróleo, gás natural e minerais nucleares. A Constituição, contudo, autoriza a União a contratar empresas estatais ou privadas para determinadas atividades do setor de petróleo e gás, observadas as condições estabelecidas em lei.
+
+Não confundir. Monopólio constitucional da União não significa necessariamente execução direta exclusiva por órgão estatal em todas as etapas. O texto permite contratação em hipóteses expressas.
+
+Atenção à atualização. Quais atividades são monopólio e quais podem ser contratadas O art. 177, I a V, da Constituição lista o monopólio da União: I: pesquisa e lavra das jazidas de petróleo e gás natural e outros hidrocarbonetos fluidos; II: refinação do petróleo nacional ou estrangeiro; III: importação e exportação dos produtos e derivados básicos resultantes dessas atividades; IV: transporte marítimo do petróleo bruto de origem nacional ou de derivados básicos produzidos no País, e transporte por conduto de petróleo bruto, derivados e gás natural de qualquer origem; V: pesquisa, lavra, enriquecimento, reprocessamento, industrialização e comércio de minérios e minerais nucleares e seus derivados, com exceção dos radioisótopos, que podem ser autorizados sob regime de permissão. Pelo § 1º, a União pode contratar empresas estatais ou privadas para as atividades dos incisos I a IV (petróleo e gás). Os minerais nucleares (inciso V) ficam fora dessa contratação.
+
+Recurso   A quem pertence / quem explora   Ponto de prova
+Jazidas, recursos minerais e potenciais hidráulicos (art. 176)   União, para exploração ou aproveitamento; pesquisa e lavra por autorização ou concessão da União.   Propriedade distinta da do solo; o proprietário do solo participa dos resultados da lavra.
+Petróleo, gás natural e minerais nucleares (art. 177)   Monopólio da União.   Contratação de estatais ou privadas é permitida em hipóteses expressas.
+
+PARTE III · RECURSOS E SETORES ESTRATÉGICOS
+
+CAPÍTULO 8 — TRANSPORTES, MICRO E PEQUENAS EMPRESAS, TURISMO E OURO
+
+Base constitucional: arts. 178 a 181
+
+ART. 178: TRANSPORTES
+
+A lei dispõe sobre ordenação dos transportes aéreo, aquático e terrestre, observados acordos firmados pela União e a reciprocidade quando cabível.
+
+ART. 179: MICROEMPRESAS E EMPRESAS DE PEQUENO PORTE
+
+Todos os entes federativos devem dispensar tratamento jurídico diferenciado às microempresas e empresas de pequeno porte, visando incentivá-las por simplificação, eliminação ou redução de obrigações administrativas, tributárias, previdenciárias e creditícias, nos termos da lei.
+
+Este artigo conecta-se ao princípio do art. 170 e à competência legislativa e tributária dos entes.
+
+ART. 180: TURISMO
+
+União, Estados, Distrito Federal e Municípios devem promover e incentivar o turismo como fator de desenvolvimento social e econômico.
+
+ART. 181: OURO
+
+O ouro, quando definido em lei como ativo financeiro ou instrumento cambial, sujeita-se ao regime tributário constitucional específico. Para prova, a chave é identificar que a própria Constituição distingue o ouro mercadoria do ouro qualificado como ativo financeiro ou instrumento cambial.
+
+Atenção à atualização. Correção de remissão: o ouro está no art. 153, § 5º O texto original atribui a regra do ouro ao art. 181. Na Constituição, o regime do ouro definido em lei como ativo financeiro ou instrumento cambial está no art. 153, § 5º, que o sujeita exclusivamente ao imposto sobre operações financeiras (IOF). O art. 181 trata de outro tema: o atendimento de requisição de documento ou informação de natureza comercial, feita por autoridade administrativa ou judiciária estrangeira, a pessoa residente ou domiciliada no País depende de autorização do Poder competente. O texto original e a distinção ouro-mercadoria x ouro-ativo financeiro foram mantidos; confira a remissão antes de usar o número do artigo em prova.
+
+Artigo   Tema   Quem atua
+178   Ordenação dos transportes aéreo, aquático e terrestre.   A lei, observados acordos firmados pela União e a reciprocidade quando cabível.
+179   Tratamento jurídico diferenciado a microempresas e empresas de pequeno porte.   Todos os entes federativos, nos termos da lei.
+180   Turismo como fator de desenvolvimento social e econômico.   União, Estados, Distrito Federal e Municípios.
+181 (texto original)   Ouro como ativo financeiro ou instrumento cambial.   Regime tributário constitucional específico (ver a correção acima).
+
+Erro comum. Limitar o art. 179 à União O tratamento diferenciado às micro e pequenas empresas é dever de todos os entes federativos, não só da União. E ele abrange obrigações administrativas, tributárias, previdenciárias e creditícias.
+
+FECHAMENTO
+
+FECHAMENTO DO MÓDULO
+
+1. RESUMO DO MÓDULO
+
+Bloco   A ideia central
+Princípios (capítulos 1 a 3)   Nem liberdade absoluta nem estatização: o art. 170 tem dois fundamentos (trabalho humano e livre iniciativa), uma finalidade (existência digna) e um parâmetro (justiça social), além de princípios que vinculam o legislador. A regra é o livre exercício da atividade econômica; a autorização é exceção legal.
+Estado na economia (capítulos 4 a 6)   Como empresário (art. 173), o Estado atua por exceção e suas estatais seguem o regime das empresas privadas, sem privilégios fiscais exclusivos. Como regulador (art. 174), fiscaliza, incentiva e planeja. Serviços públicos (art. 175) são prestados diretamente ou por concessão ou permissão, sempre com licitação.
+Recursos e setores (capítulos 7 e 8)   Recursos minerais e potenciais hidráulicos pertencem à União, com participação do dono do solo nos resultados; petróleo, gás e minerais nucleares são monopólio da União, com contratação permitida em hipóteses expressas. Micro e pequenas empresas recebem tratamento diferenciado de todos os entes.
+
+2. O QUE DECORAR: MAPA DE DISTINÇÕES
+
+Artigo   Conteúdo
+Art. 170   Fundamentos, finalidade e princípios.
+Art. 173   Estado empresário.
+Art. 174   Estado regulador.
+Art. 175   Serviços públicos.
+Art. 176   Recursos minerais e potenciais hidráulicos.
+Art. 177   Monopólios da União.
+Art. 179   Tratamento favorecido a micro e pequenas empresas.
+Arts. 180–181   Turismo e ouro (sobre o ouro, veja a correção de remissão no capítulo 8).
+
+3. PEGADINHAS RECORRENTES
+
+Todas as afirmações estão erradas; o importante é saber por quê.
+
+Afirmação da banca   Veredicto e motivo   Cap.
+“Planejamento é obrigatório para empresas privadas.”   Errado: para o setor privado, é indicativo.   5
+“Toda atividade econômica exige autorização.”   Errado: a regra constitucional é liberdade, salvo exigência legal.   3
+“Estatal exploradora de atividade econômica recebe privilégio fiscal próprio.”   Errado, se o benefício não for extensível ao setor privado.   4
+“Concessão de serviço público dispensa licitação.”   Errado.   6
+“Recursos minerais pertencem ao proprietário do solo.”   Errado para fins constitucionais de exploração; pertencem à União, sem prejuízo da participação do proprietário nos resultados nos termos constitucionais.   7
+“Livre iniciativa exclui regulação estatal.”   Errado.   1 e 5
+
+4. COMO RESOLVER QUESTÕES
+
+O texto original não traz roteiro próprio; este é montado só com as distinções do módulo.
+
+Passo   O que fazer
+1   Localize o artigo pelo mapa de distinções: princípios (170), Estado empresário (173), regulador (174), serviço público (175), minerais (176), monopólio (177).
+2   Separe regra de exceção: liberdade x autorização legal; atuação estatal direta como exceção; planejamento determinante só para o setor público.
+3   Em estatais, pergunte se atuam em regime de concorrência e se o benefício se estende ao setor privado.
+4   Em serviço público, procure concessão ou permissão e confira se houve licitação.
+5   Desconfie de afirmações absolutas (“toda”, “sempre”, “exclui”): o módulo é sobre equilíbrio.
+
+5. CHECKLIST DE REVISÃO ATIVA
+
+Marque cada item quando conseguir fazê-lo sem consultar a apostila.
+
+• ☐ Explique em uma frase a diferença entre Estado empresário e Estado regulador. (capítulos 4 e 5)
+
+• ☐ Recite os princípios do art. 170. (capítulo 2)
+
+• ☐ Indique a regra e a exceção quanto à autorização para atividade econômica. (capítulo 3)
+
+• ☐ Explique o regime constitucional das estatais exploradoras de atividade econômica. (capítulo 4)
+
+• ☐ Diga por que art. 175 e licitação aparecem juntos. (capítulo 6)
+
+• ☐ Explique a relação entre propriedade do solo e recursos minerais. (capítulo 7)
+
+• ☐ Diferencie monopólio da União de execução necessariamente exclusiva. (capítulo 7)
+
+• ☐ Identifique o artigo constitucional do tratamento favorecido às micro e pequenas empresas. (capítulo 8)
+
+6. REFERÊNCIAS E LINKS OFICIAIS
+
+Fontes oficiais para conferir o texto.
+
+Fonte oficial   Para que usar   Link
+Constituição Federal de 1988 (Planalto)   Arts. 170 a 181 e art. 153, § 5º.   https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm
+STF: A Constituição e o Supremo, art. 170   Princípios da ordem econômica com jurisprudência (capítulo 2).   https://portal.stf.jus.br/constituicao-supremo/artigo.asp?abrirBase=CF&abrirArtigo=170
+STF: A Constituição e o Supremo, art. 173   Estatais e privilégios fiscais com jurisprudência (capítulo 4).   https://portal.stf.jus.br/constituicao-supremo/artigo.asp?abrirBase=CF&abrirArtigo=173
+STF: A Constituição e o Supremo, art. 177   Monopólios da União com jurisprudência (capítulo 7).   https://portal.stf.jus.br/constituicao-supremo/artigo.asp?abrirBase=CF&abrirArtigo=177

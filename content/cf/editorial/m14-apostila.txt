@@ -1,0 +1,333 @@
+LEITURA ORIENTADA
+
+Esta apostila reescreve o texto original do módulo CF M14 para que o iniciante entenda tudo e o avançado se aprofunde. O conteúdo segue a ordem do próprio módulo, em sete capítulos (seguridade, saúde, previdência e assistência), e termina em um fechamento de revisão. Cada capítulo traz prosa, uma tabela e, no máximo, duas caixas didáticas; os quadros do texto original (Cai muito, Não confundir, Pegadinha e o quadro dos agentes comunitários) aparecem no capítulo a que pertencem.
+
+TRÊS SITUAÇÕES-PROBLEMA
+
+Tente responder antes de ler. Errar faz parte: a resposta está no capítulo indicado.
+
+Núcleo   Situação-problema   Resposta
+Seguridade   Uma lei cria novo benefício assistencial, mas não indica de onde virá todo o dinheiro. É constitucional?   Capítulo 3
+Saúde   Um hospital privado com fins lucrativos quer atender pelo SUS e receber subvenção pública. O que a Constituição permite?   Capítulo 5
+Previdência e assistência   Uma pessoa idosa, sem renda, nunca contribuiu. Tem direito a aposentadoria pelo RGPS? Tem alguma proteção?   Capítulos 6 e 7
+
+CAMINHO DO INICIANTE E CAMINHO DO AVANÇADO
+
+Etapa   Caminho do iniciante   Caminho do avançado
+Antes   Leia o capítulo 1 e tente as três situações-problema, mesmo que erre.   Responda sem consultar; depois confira nos capítulos 3, 5, 6 e 7.
+Em cada capítulo   Prosa, tabela e caixa de Caso explicado; só depois o Erro comum.   Comece pela tabela; leia Caso explicado, Erro comum e Atenção à atualização; volte à prosa onde errar.
+Ordem   Siga a numeração: Parte I (capítulos 2 e 3), Parte II (4 e 5), Parte III (6) e Parte IV (7).   Comece pelo quadro comparativo do Fechamento e volte aos capítulos onde errar.
+Fechamento   Faça o Resumo e o Checklist; releia as regras de bolso.   Estude as Pegadinhas e treine o roteiro de Como resolver questões.
+
+Como ler as caixas. Caso explicado mostra o raciocínio em uma situação (o texto original não traz exemplos aplicados); Erro comum aponta a troca que a banca explora; Como estudar é dica de revisão; Cai muito, Não confundir, Pegadinha e Agentes comunitários e de combate às endemias são quadros do texto original; Atenção à atualização marca o que não consta do texto original e foi acrescentado (confira sempre).
+
+ROTEIRO DE ESTUDO
+
+PERCURSO DO MÓDULO
+
+A numeração das aulas é a mesma dos capítulos: a aula 5 corresponde ao capítulo 5. Use o tema como índice para localizar o capítulo correspondente.
+
+Aula   Tema do capítulo   Base constitucional
+Visão geral   Visão geral   Visão geral
+1   Ordem social e conceito de seguridade social   arts. 193 e 194
+Parte I · Seguridade social (aulas 2 e 3)   Parte I · Seguridade social (aulas 2 e 3)   Parte I · Seguridade social (aulas 2 e 3)
+2   Objetivos da seguridade social   art. 194
+3   Financiamento da seguridade e fonte de custeio   art. 195
+Parte II · Saúde (aulas 4 e 5)   Parte II · Saúde (aulas 4 e 5)   Parte II · Saúde (aulas 4 e 5)
+4   Saúde: direito de todos e relevância pública   arts. 196 e 197
+5   SUS, iniciativa privada e competências do sistema   arts. 198 a 200
+Parte III · Previdência (aula 6)   Parte III · Previdência (aula 6)   Parte III · Previdência (aula 6)
+6   Previdência social: RGPS, equilíbrio atuarial e previdência complementar   arts. 201 e 202
+Parte IV · Assistência social (aula 7)   Parte IV · Assistência social (aula 7)   Parte IV · Assistência social (aula 7)
+7   Assistência social: objetivos e organização   arts. 203 e 204
+Fechamento (sem numeração de aula)   Fechamento (sem numeração de aula)   Fechamento (sem numeração de aula)
+Não se aplica.   Resumo; O que decorar; Pegadinhas de prova; Como resolver questões; Checklist; Referências e links oficiais   Não se aplica.
+
+VISÃO GERAL DO MÓDULO
+
+CAPÍTULO 1 — ORDEM SOCIAL E CONCEITO DE SEGURIDADE SOCIAL
+
+Base constitucional: arts. 193 e 194
+
+ORDEM SOCIAL (ART. 193)
+
+A Constituição inaugura a ordem social com dois comandos estruturais. Sua base é o primado do trabalho; seus objetivos são o bem-estar e a justiça sociais. O dispositivo conecta direitos sociais, políticas públicas e organização da seguridade.
+
+SEGURIDADE SOCIAL: CONCEITO CONSTITUCIONAL (ART. 194)
+
+O art. 194 define seguridade social como conjunto integrado de ações de iniciativa dos Poderes Públicos e da sociedade, destinado a assegurar direitos relativos à saúde, à previdência e à assistência social.
+
+A palavra “integrado” é importante: os três subsistemas possuem regimes próprios, mas fazem parte de uma estrutura constitucional comum de proteção social.
+
+Ordem social   Conteúdo
+Base   Primado do trabalho.
+Objetivos   Bem-estar e justiça sociais.
+Seguridade social   Conjunto integrado de ações dos Poderes Públicos e da sociedade: saúde, previdência e assistência social.
+
+Erro comum. Tratar seguridade como sinônimo de previdência Seguridade é o gênero, com três subsistemas: saúde, previdência e assistência social. Previdência é só um deles, e o único contributivo.
+
+PARTE I · SEGURIDADE SOCIAL
+
+CAPÍTULO 2 — OBJETIVOS DA SEGURIDADE SOCIAL
+
+Base constitucional: art. 194
+
+Objetivo   O que significa
+Universalidade da cobertura e do atendimento   Cobertura relaciona-se aos riscos e contingências protegidos; atendimento, às pessoas alcançadas pelo sistema.
+Uniformidade e equivalência entre populações urbanas e rurais   A Constituição repele estrutura discriminatória de proteção social entre trabalhadores urbanos e rurais.
+Seletividade e distributividade   Seletividade permite definir prestações prioritárias diante dos riscos sociais; distributividade orienta a proteção para redução de vulnerabilidades e desigualdades.
+Irredutibilidade do valor dos benefícios   A proteção constitucional impede redução nominal arbitrária do valor dos benefícios, sem afastar regras próprias de reajuste e preservação do valor real quando previstas constitucionalmente e em lei.
+Equidade no custeio   O financiamento deve distribuir encargos de maneira compatível com a estrutura constitucional tributária e contributiva.
+Diversidade da base de financiamento   A seguridade não depende de uma única fonte. A Constituição prevê financiamento por recursos públicos e contribuições sociais de diferentes bases.
+Gestão democrática e descentralizada   A organização administrativa deve observar participação e descentralização nos termos constitucionais.
+
+Caso explicado. Universalidade x seletividade: como convivem? A universalidade diz o quê (riscos cobertos) e quem (pessoas atendidas) o sistema alcança. A seletividade escolhe quais prestações são prioritárias diante dos riscos sociais, e a distributividade dirige a proteção a quem tem mais vulnerabilidade. Não há contradição: o sistema é amplo, mas organiza prioridades.
+
+Como estudar. Memorize em pares Cobertura = riscos; atendimento = pessoas. Urbano = rural. Seletividade = prioridade; distributividade = desigualdade. Irredutibilidade = valor nominal. Equidade = custeio; diversidade = fontes. Gestão = democrática e descentralizada.
+
+PARTE I · SEGURIDADE SOCIAL
+
+CAPÍTULO 3 — FINANCIAMENTO DA SEGURIDADE E FONTE DE CUSTEIO
+
+Base constitucional: art. 195
+
+A seguridade é financiada por toda a sociedade, direta e indiretamente, nos termos da lei. O financiamento envolve recursos dos orçamentos da União, Estados, Distrito Federal e Municípios e contribuições sociais constitucionalmente previstas.
+
+A lógica da diversidade reduz dependência de uma única base econômica.
+
+FONTE DE CUSTEIO
+
+A regra clássica de prova é objetiva: nenhum benefício ou serviço da seguridade social pode ser criado, majorado ou estendido sem a correspondente fonte de custeio total.
+
+Cai muito. A Constituição não permite expansão irresponsável de prestações sem correspondente financiamento.
+
+Fonte   Exemplos do módulo
+Recursos públicos   Orçamentos da União, Estados, Distrito Federal e Municípios.
+Contribuições sociais   Contribuições constitucionalmente previstas, de diferentes bases.
+Regra de responsabilidade   Criar, majorar ou estender benefício ou serviço exige fonte de custeio total correspondente.
+
+Erro comum. Ampliar benefício sem fonte total Os três verbos contam: criar, majorar ou estender. Qualquer um deles, sem a correspondente fonte de custeio total, é vedado.
+
+PARTE II · SAÚDE
+
+CAPÍTULO 4 — SAÚDE: DIREITO DE TODOS E RELEVÂNCIA PÚBLICA
+
+Base constitucional: arts. 196 e 197
+
+Saúde é direito de todos e dever do Estado. O dever estatal concretiza-se por políticas sociais e econômicas que:
+
+• reduzam o risco de doença e de outros agravos;
+
+• assegurem acesso universal e igualitário às ações e serviços para promoção, proteção e recuperação.
+
+Universalidade significa que a saúde pública não depende de contribuição prévia do usuário.
+
+RELEVÂNCIA PÚBLICA (ART. 197)
+
+Ações e serviços de saúde são de relevância pública. Cabe ao Poder Público dispor sobre regulamentação, fiscalização e controle, podendo a execução ocorrer diretamente ou por terceiros e também por pessoa física ou jurídica de direito privado.
+
+Quem   Papel na saúde
+Poder Público   Regulamentação, fiscalização e controle; execução direta.
+Terceiros   Execução, inclusive por pessoa física ou jurídica de direito privado.
+Usuário   Acesso universal e igualitário, sem contribuição prévia.
+
+Erro comum. Exigir contribuição para usar o SUS Saúde é direito de todos. Diferente da previdência, a saúde pública não depende de contribuição prévia do usuário.
+
+PARTE II · SAÚDE
+
+CAPÍTULO 5 — SUS, INICIATIVA PRIVADA E COMPETÊNCIAS DO SISTEMA
+
+Base constitucional: arts. 198 a 200
+
+SUS (ART. 198)
+
+As ações e serviços públicos de saúde integram uma rede regionalizada e hierarquizada e constituem um sistema único.
+
+Diretriz do SUS   Conteúdo
+Descentralização   Com direção única em cada esfera de governo.
+Atendimento integral   Com prioridade para atividades preventivas, sem prejuízo dos serviços assistenciais.
+Participação da comunidade   Não se aplica.
+
+A Constituição também disciplina financiamento mínimo e organização interfederativa do sistema.
+
+Aprofundamento. A EC 140/2026 definiu sua atuação como obrigatória, permanente, essencial ao SUS e exclusiva de Estado. O art. 198 veda contratação temporária ou terceirizada, salvo emergência em saúde pública, submete esses agentes ao regime jurídico dos servidores efetivos e lhes assegura aposentadoria diferenciada e adicional de insalubridade.
+
+Atenção à atualização. Data da EC 140/2026 A Emenda Constitucional nº 140 foi promulgada em 16 de outubro de 2026. Por ser muito recente, confira o texto no Planalto antes da prova.
+
+Não confundir. Descentralização não elimina coordenação; direção única existe em cada esfera de governo.
+
+INICIATIVA PRIVADA NA SAÚDE (ART. 199)
+
+A assistência à saúde é livre à iniciativa privada.
+
+Instituições privadas podem participar de forma complementar do SUS, segundo suas diretrizes, mediante contrato de direito público ou convênio. Há preferência constitucional para entidades filantrópicas e sem fins lucrativos.
+
+A Constituição impõe restrições à destinação de recursos públicos para auxílios ou subvenções a instituições privadas com fins lucrativos e disciplina participação de capital estrangeiro na assistência à saúde nos termos legais.
+
+Pegadinha. Participação privada no SUS é complementar; não transforma o SUS em sistema contributivo nem retira o dever estatal.
+
+COMPETÊNCIAS DO SUS (ART. 200)
+
+Entre as competências constitucionais do SUS estão:
+
+• controle e fiscalização de procedimentos, produtos e substâncias de interesse para a saúde;
+
+• execução de ações de vigilância sanitária e epidemiológica e saúde do trabalhador;
+
+• ordenação da formação de recursos humanos;
+
+• participação em saneamento;
+
+• incremento do desenvolvimento científico e tecnológico;
+
+• e fiscalização de alimentos, bebidas e substâncias de interesse à saúde.
+
+Caso explicado. Hospital privado no SUS Um hospital filantrópico firma convênio para atender pacientes do SUS. Pode? Sim: a participação privada é complementar, segue as diretrizes do SUS, se dá por contrato de direito público ou convênio, e entidades filantrópicas e sem fins lucrativos têm preferência. O atendimento continua sem contribuição prévia do usuário.
+
+PARTE III · PREVIDÊNCIA
+
+CAPÍTULO 6 — PREVIDÊNCIA SOCIAL: RGPS, EQUILÍBRIO ATUARIAL E PREVIDÊNCIA COMPLEMENTAR
+
+Base constitucional: arts. 201 e 202
+
+REGIME GERAL DE PREVIDÊNCIA SOCIAL (ART. 201)
+
+O Regime Geral de Previdência Social é organizado sob forma de regime geral, de caráter contributivo e filiação obrigatória, observados critérios de preservação do equilíbrio financeiro e atuarial.
+
+A previdência diferencia-se da saúde e da assistência porque depende de lógica contributiva.
+
+O art. 201 reúne prestações ligadas a incapacidade, idade, maternidade, desemprego involuntário nos termos do sistema, salário-família e auxílio-reclusão para dependentes segundo os critérios constitucionais, pensão por morte e demais proteções definidas no regime. O § 8º-A, incluído pela EC 140/2026, fixa para agentes comunitários de saúde e agentes de combate às endemias idade de 57 anos para mulheres e 60 para homens, desde que comprovados 25 anos de contribuição e de efetivo exercício na atividade. As regras de transição e as hipóteses de cômputo especial estão na própria emenda.
+
+RGPS E EQUILÍBRIO FINANCEIRO E ATUARIAL
+
+Equilíbrio financeiro e atuarial é exigência constitucional. Não se trata apenas de equilíbrio contábil anual, mas de compatibilidade sustentável entre financiamento e prestações no tempo.
+
+As regras previdenciárias devem ser lidas em conjunto com as reformas constitucionais e legislação infraconstitucional aplicáveis, sem transportar automaticamente regras de regimes próprios para o RGPS.
+
+PREVIDÊNCIA COMPLEMENTAR (ART. 202)
+
+O regime de previdência privada possui três características centrais: caráter complementar; organização autônoma em relação ao RGPS; caráter facultativo.
+
+O sistema é baseado na constituição de reservas que garantam o benefício contratado e regulado por lei complementar.
+
+Critério   RGPS   Previdência complementar
+Filiação   Obrigatória.   Facultativa.
+Natureza   Contributiva; regime geral.   Complementar; organização autônoma em relação ao RGPS.
+Sustentação   Equilíbrio financeiro e atuarial.   Constituição de reservas que garantam o benefício contratado.
+Disciplina   Constituição, reformas e legislação aplicável.   Lei complementar.
+
+Não confundir. Participação em previdência complementar não substitui, por si só, a filiação obrigatória ao RGPS quando esta for constitucionalmente incidente.
+
+Erro comum. Trocar obrigatória por facultativa RGPS: filiação obrigatória. Previdência complementar: facultativa. Ter um plano de previdência privada não dispensa a filiação ao RGPS.
+
+PARTE IV · ASSISTÊNCIA SOCIAL
+
+CAPÍTULO 7 — ASSISTÊNCIA SOCIAL: OBJETIVOS E ORGANIZAÇÃO
+
+Base constitucional: arts. 203 e 204
+
+A assistência social é prestada a quem dela necessitar, independentemente de contribuição à seguridade.
+
+Objetivos constitucionais:
+
+• proteção à família, maternidade, infância, adolescência e velhice;
+
+• amparo a crianças e adolescentes carentes;
+
+• promoção da integração ao mercado de trabalho;
+
+• habilitação e reabilitação das pessoas com deficiência e promoção de sua integração à vida comunitária;
+
+• garantia de benefício mensal à pessoa com deficiência e ao idoso que comprovem insuficiência econômica, conforme critérios legais;
+
+• redução da vulnerabilidade socioeconômica de famílias em situação de pobreza ou extrema pobreza nos termos constitucionais e legais.
+
+ORGANIZAÇÃO DA ASSISTÊNCIA (ART. 204)
+
+As ações governamentais são realizadas com recursos do orçamento da seguridade e outras fontes, organizadas com base em:
+
+Diretriz   Conteúdo
+Descentralização político-administrativa   Cabendo à esfera federal coordenação e normas gerais e às demais esferas a coordenação e execução dos programas.
+Participação da população   Por organizações representativas, na formulação das políticas e no controle das ações.
+
+Caso explicado. Idoso sem renda e sem contribuição Um idoso que nunca contribuiu e comprova insuficiência econômica tem proteção? Na previdência, não, porque ela é contributiva. Na assistência, sim: ela é prestada a quem dela necessitar, independentemente de contribuição, e garante benefício mensal ao idoso que comprove insuficiência econômica, conforme critérios legais.
+
+FECHAMENTO
+
+FECHAMENTO DO MÓDULO
+
+1. RESUMO DO MÓDULO: QUADRO COMPARATIVO
+
+Subsistema   Características
+Saúde   Direito de todos; universal; não contributiva; SUS.
+Previdência   Contributiva; filiação obrigatória no RGPS; equilíbrio financeiro e atuarial.
+Assistência   A quem necessitar; não contributiva; proteção de vulnerabilidades.
+Previdência complementar   Facultativa; autônoma em relação ao RGPS; reservas garantidoras.
+
+2. O QUE DECORAR: MAPA DOS ARTIGOS
+
+Artigo   Conteúdo
+Art. 193   Ordem social: base no primado do trabalho; objetivos de bem-estar e justiça sociais.
+Art. 194   Conceito de seguridade e seus sete objetivos.
+Art. 195   Financiamento por toda a sociedade; fonte de custeio total.
+Arts. 196–197   Saúde: direito de todos e dever do Estado; relevância pública.
+Art. 198   SUS: rede regionalizada e hierarquizada; três diretrizes; agentes comunitários (EC 140/2026).
+Arts. 199–200   Iniciativa privada complementar; competências do SUS.
+Art. 201   RGPS: contributivo, filiação obrigatória, equilíbrio financeiro e atuarial; § 8º-A (EC 140/2026).
+Art. 202   Previdência complementar: complementar, autônoma, facultativa.
+Arts. 203–204   Assistência: a quem necessitar; objetivos; descentralização e participação popular.
+
+3. PEGADINHAS RECORRENTES
+
+Todas as afirmações estão erradas; o importante é saber por quê.
+
+Afirmação da banca   Veredicto e motivo   Cap.
+“Seguridade é sinônimo de previdência.”   Errado. Seguridade reúne saúde, previdência e assistência.   1
+“SUS exige contribuição prévia.”   Errado. A saúde pública não depende de contribuição prévia do usuário.   4
+“Assistência é contributiva.”   Errado. É prestada a quem dela necessitar, independentemente de contribuição.   7
+“RGPS tem filiação facultativa.”   Errado. A filiação é obrigatória.   6
+“Previdência complementar é obrigatória.”   Errado. É facultativa.   6
+“Instituições privadas não podem participar do SUS.”   Errado; participação complementar é admitida.   5
+“Benefício pode ser ampliado sem fonte total de custeio.”   Errado.   3
+
+4. COMO RESOLVER QUESTÕES
+
+O texto original não traz roteiro próprio; este é montado só com as distinções do módulo.
+
+Passo   O que fazer
+1   Identifique o subsistema: saúde, previdência, assistência ou previdência complementar.
+2   Pergunte se há contribuição: só a previdência é contributiva.
+3   Pergunte se a filiação é obrigatória (RGPS) ou facultativa (complementar).
+4   Em benefício novo ou ampliado, procure a fonte de custeio total.
+5   No SUS, confira as três diretrizes e o caráter complementar da iniciativa privada.
+
+5. CHECKLIST DE REVISÃO ATIVA
+
+Marque cada item quando conseguir fazê-lo sem consultar a apostila.
+
+• ☐ Defina seguridade social em uma frase. (capítulo 1)
+
+• ☐ Diferencie universalidade, seletividade e distributividade. (capítulo 2)
+
+• ☐ Explique a regra da fonte de custeio. (capítulo 3)
+
+• ☐ Recite as três diretrizes do SUS. (capítulo 5)
+
+• ☐ Diferencie RGPS e previdência complementar. (capítulo 6)
+
+• ☐ Explique por que assistência social não depende de contribuição. (capítulo 7)
+
+• ☐ Liste três objetivos da assistência social. (capítulo 7)
+
+• ☐ Explique descentralização e participação popular no art. 204. (capítulo 7)
+
+6. REFERÊNCIAS E LINKS OFICIAIS
+
+Fontes oficiais para conferir o texto.
+
+Fonte oficial   Para que usar   Link
+Constituição Federal de 1988 (Planalto)   Arts. 193 a 204.   https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm
+Emenda Constitucional nº 140, de 2026 (Planalto)   Agentes comunitários e de combate às endemias (capítulos 5 e 6).   https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc140.htm
+Ministério da Saúde   SUS (capítulos 4 e 5).   https://www.gov.br/saude/pt-br
+Ministério da Previdência Social   RGPS e previdência complementar (capítulo 6).   https://www.gov.br/previdencia/pt-br
+STF: A Constituição e o Supremo, art. 196   Jurisprudência sobre o direito à saúde (capítulo 4).   https://portal.stf.jus.br/constituicao-supremo/artigo.asp?abrirBase=CF&abrirArtigo=196

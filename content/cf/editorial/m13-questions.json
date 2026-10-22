@@ -1,0 +1,216 @@
+{
+  "summary": [
+    {
+      "n": 1,
+      "difficulty": "Fácil",
+      "q": "A ordem econômica constitucional é fundada, expressamente, na",
+      "options": [
+        "valorização do trabalho humano e livre iniciativa.",
+        "soberania popular e propriedade coletiva.",
+        "livre concorrência e pleno emprego.",
+        "função social da propriedade e intervenção direta do Estado.",
+        "defesa do consumidor e planejamento obrigatório."
+      ],
+      "answer": 0,
+      "explanation": "Art. 170: valorização do trabalho humano e livre iniciativa são os fundamentos da ordem econômica."
+    },
+    {
+      "n": 2,
+      "difficulty": "Fácil",
+      "q": "Segundo o art. 174 da Constituição, o planejamento estatal é",
+      "options": [
+        "determinante para os setores público e privado.",
+        "determinante para o setor público e indicativo para o setor privado.",
+        "meramente indicativo para todos os setores.",
+        "proibido em relação à iniciativa privada.",
+        "determinante apenas para empresas estatais dependentes."
+      ],
+      "answer": 1,
+      "explanation": "O art. 174 distingue planejamento determinante para o setor público e indicativo para o setor privado."
+    },
+    {
+      "n": 3,
+      "difficulty": "Média",
+      "q": "A exploração direta de atividade econômica pelo Estado, ressalvados os casos previstos na Constituição,",
+      "options": [
+        "é a regra geral do sistema econômico.",
+        "depende apenas de autorização administrativa.",
+        "somente é admitida quando necessária à segurança nacional ou a relevante interesse coletivo, conforme definidos em lei.",
+        "é vedada em qualquer hipótese.",
+        "é livre sempre que houver sociedade de economia mista."
+      ],
+      "answer": 2,
+      "explanation": "Art. 173: a atuação empresarial direta do Estado é excepcional e vinculada às hipóteses constitucionais."
+    },
+    {
+      "n": 4,
+      "difficulty": "Média",
+      "q": "Quanto aos serviços públicos, a Constituição estabelece que",
+      "options": [
+        "concessão e permissão independem de licitação.",
+        "somente podem ser prestados diretamente.",
+        "a política tarifária é matéria exclusivamente contratual.",
+        "podem ser prestados diretamente ou sob concessão ou permissão, mediante licitação.",
+        "permissionários não se sujeitam ao dever de serviço adequado."
+      ],
+      "answer": 3,
+      "explanation": "Art. 175: prestação direta ou por concessão/permissão, com licitação e disciplina legal do serviço adequado."
+    },
+    {
+      "n": 5,
+      "difficulty": "Difícil",
+      "q": "Uma sociedade de economia mista explora atividade econômica em mercado concorrencial. À luz do art. 173, é correto afirmar que ela",
+      "options": [
+        "pode receber privilégio fiscal exclusivo por ser estatal.",
+        "está integralmente submetida ao regime de direito público.",
+        "é imune à disciplina de livre concorrência.",
+        "não pode contratar empregados sob regime trabalhista.",
+        "não pode receber privilégios fiscais não extensivos ao setor privado."
+      ],
+      "answer": 4,
+      "explanation": "Empresas estatais exploradoras de atividade econômica não podem usufruir privilégios fiscais exclusivos em relação ao setor privado."
+    }
+  ],
+  "complete": [
+    {
+      "n": 1,
+      "difficulty": "Fácil",
+      "q": "É princípio expresso da ordem econômica no art. 170:",
+      "options": [
+        "defesa do consumidor.",
+        "supremacia do interesse arrecadatório.",
+        "centralização produtiva.",
+        "planejamento vinculante do setor privado.",
+        "monopólio estatal como regra."
+      ],
+      "answer": 0,
+      "explanation": "A defesa do consumidor integra expressamente o rol de princípios do art. 170."
+    },
+    {
+      "n": 2,
+      "difficulty": "Fácil",
+      "q": "O livre exercício de atividade econômica, nos termos do art. 170, parágrafo único,",
+      "options": [
+        "depende sempre de licença prévia.",
+        "é assegurado independentemente de autorização, salvo nos casos previstos em lei.",
+        "é exclusivo de empresas nacionais.",
+        "não alcança pessoas naturais.",
+        "pode ser restringido apenas por decreto autônomo."
+      ],
+      "answer": 1,
+      "explanation": "A regra é o livre exercício; a exigência de autorização depende de previsão legal."
+    },
+    {
+      "n": 3,
+      "difficulty": "Fácil",
+      "q": "No art. 174, entre as funções do Estado como agente normativo e regulador estão",
+      "options": [
+        "sanção penal, concessão e arbitragem.",
+        "jurisdição, tributação e desapropriação.",
+        "fiscalização, incentivo e planejamento.",
+        "estatização, intervenção federal e crédito.",
+        "legislação privativa, polícia judiciária e moeda."
+      ],
+      "answer": 2,
+      "explanation": "O art. 174 menciona fiscalização, incentivo e planejamento."
+    },
+    {
+      "n": 4,
+      "difficulty": "Fácil",
+      "q": "A Constituição determina tratamento jurídico diferenciado às microempresas e empresas de pequeno porte no art.",
+      "options": [
+        "170 apenas.",
+        "173.",
+        "175.",
+        "179.",
+        "181."
+      ],
+      "answer": 3,
+      "explanation": "O art. 179 determina tratamento jurídico diferenciado e favorecido aos pequenos negócios."
+    },
+    {
+      "n": 5,
+      "difficulty": "Média",
+      "q": "A respeito dos recursos minerais, a Constituição estabelece que",
+      "options": [
+        "pertencem sempre ao proprietário do solo.",
+        "a União não pode disciplinar pesquisa e lavra.",
+        "não podem ser objeto de autorização ou concessão.",
+        "são bens dos Municípios onde encontrados.",
+        "constituem propriedade distinta da do solo e pertencem à União para efeito de exploração ou aproveitamento."
+      ],
+      "answer": 4,
+      "explanation": "Art. 176: jazidas, recursos minerais e potenciais hidráulicos têm regime constitucional próprio e pertencem à União para fins de exploração."
+    },
+    {
+      "n": 6,
+      "difficulty": "Média",
+      "q": "Assinale a alternativa que melhor diferencia os arts. 173 e 174 da Constituição.",
+      "options": [
+        "O art. 173 trata do Estado empresário; o art. 174, do Estado normativo e regulador.",
+        "O art. 173 trata de serviços públicos; o art. 174, de bens públicos.",
+        "Ambos tratam exclusivamente de monopólios.",
+        "O art. 173 regula orçamento; o art. 174 regula tributos.",
+        "O art. 173 disciplina Municípios; o art. 174, Estados."
+      ],
+      "answer": 0,
+      "explanation": "A distinção clássica é Estado empresário no art. 173 e Estado regulador no art. 174."
+    },
+    {
+      "n": 7,
+      "difficulty": "Média",
+      "q": "Uma lei exige autorização administrativa para o exercício de determinada atividade econômica. Em tese, essa exigência",
+      "options": [
+        "é sempre inconstitucional.",
+        "pode ser compatível com a Constituição, pois o livre exercício admite exceções previstas em lei.",
+        "só seria válida se criada por emenda constitucional.",
+        "é válida apenas para empresas estatais.",
+        "dispensa fundamento legal se houver interesse público."
+      ],
+      "answer": 1,
+      "explanation": "O art. 170, parágrafo único, admite exigência de autorização nos casos previstos em lei."
+    },
+    {
+      "n": 8,
+      "difficulty": "Média",
+      "q": "Sobre a delegação de serviço público, é correto afirmar que",
+      "options": [
+        "concessão ou permissão independem de procedimento competitivo.",
+        "a prestação indireta é constitucionalmente proibida.",
+        "a Constituição exige licitação para concessão ou permissão.",
+        "somente a União pode conceder serviço público.",
+        "a lei não pode disciplinar direitos dos usuários."
+      ],
+      "answer": 2,
+      "explanation": "O art. 175 exige licitação para concessão ou permissão de serviço público."
+    },
+    {
+      "n": 9,
+      "difficulty": "Difícil",
+      "q": "Empresa pública federal explora atividade econômica em concorrência com empresas privadas. Lei concede a ela vantagem tributária exclusiva sem extensão ao setor privado. A medida, em regra,",
+      "options": [
+        "é compatível porque toda empresa pública possui imunidade recíproca.",
+        "é válida desde que aprovada por maioria simples.",
+        "é obrigatória por força da soberania nacional.",
+        "é incompatível com a vedação constitucional a privilégios fiscais não extensivos ao setor privado.",
+        "depende apenas de decreto presidencial."
+      ],
+      "answer": 3,
+      "explanation": "O art. 173 impede privilégios fiscais exclusivos às estatais exploradoras de atividade econômica em relação às empresas privadas."
+    },
+    {
+      "n": 10,
+      "difficulty": "Difícil",
+      "q": "Assinale a afirmação correta sobre recursos minerais e propriedade do solo.",
+      "options": [
+        "A propriedade do solo absorve necessariamente a jazida.",
+        "Recursos minerais são bens municipais por localização.",
+        "O proprietário do solo não pode ter qualquer participação nos resultados da lavra.",
+        "Somente os Estados podem autorizar lavra mineral.",
+        "A Constituição separa a propriedade do solo da titularidade constitucional dos recursos minerais para fins de exploração."
+      ],
+      "answer": 4,
+      "explanation": "Art. 176: jazidas e recursos minerais constituem propriedade distinta da do solo; a Constituição ainda assegura participação do proprietário nos resultados nos termos legais."
+    }
+  ]
+}

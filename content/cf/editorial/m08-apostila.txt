@@ -1,0 +1,460 @@
+LEITURA ORIENTADA
+
+Esta apostila reescreve o texto original do módulo CF M08 para que o iniciante entenda tudo e o avançado se aprofunde. O conteúdo segue a sequência lógica do próprio módulo, em dez capítulos, e termina em um fechamento de revisão. Cada capítulo traz prosa, uma tabela e, no máximo, duas caixas didáticas; os quadros do texto original (Regra de bolso, Cai muito, Não confundir, Pegadinha e outros) aparecem no capítulo a que pertencem.
+
+TRÊS SITUAÇÕES-PROBLEMA
+
+Tente responder antes de ler. Errar faz parte: a resposta está no capítulo indicado.
+
+Núcleo   Situação-problema   Resposta
+Investidura   Presidente e Vice renunciam no terceiro ano do mandato. Quem assume a Presidência enquanto isso? Haverá eleição direta? Os eleitos cumprem um mandato novo de quatro anos?   Capítulo 4
+Competências   O Presidente quer delegar ao Ministro da Justiça a concessão de indulto e, por decreto, extinguir um ministério. O que ele pode fazer e o que não pode?   Capítulos 5 e 6
+Responsabilidade   Durante o mandato, surge investigação sobre crime cometido antes da posse, sem relação com as funções. Pode haver investigação? E responsabilização penal ainda no mandato?   Capítulo 8
+
+CAMINHO DO INICIANTE E CAMINHO DO AVANÇADO
+
+Etapa   Caminho do iniciante   Caminho do avançado
+Antes   Leia o capítulo 1 e tente as três situações-problema, mesmo que erre.   Responda sem consultar; depois confira nos capítulos 4, 5, 6 e 8.
+Em cada capítulo   Prosa, tabela e caixa de Caso ou Exemplo; só depois o Erro comum.   Comece pela tabela; leia Jurisprudência, Caso explicado e Erro comum; volte à prosa onde errar.
+Ordem   Siga a numeração: Parte I (capítulos 2 a 4), Parte II (5 e 6), Parte III (7 e 8) e Parte IV (9 e 10).   Comece pelos capítulos dos erros mais frequentes (4 a 8) e complete com os demais.
+Fechamento   Faça o Resumo e o Checklist; releia as regras de bolso.   Estude as Pegadinhas e treine o roteiro de Como resolver questões.
+
+Como ler as caixas. Caso explicado e Exemplo (os exemplos aplicados do texto original, Casos 1 a 4) mostram o raciocínio em uma situação; Jurisprudência (os entendimentos-chave do STF) é para quem quer ir além; Erro comum aponta a troca que a banca explora; Como estudar é dica de revisão; Regra de bolso, Cai muito, Não confundir, Decreto autônomo, Memorização, Pegadinha, Atualização importante e Atenção à desatualização são quadros do texto original; Atenção à atualização marca o que não consta do texto original e foi acrescentado (confira sempre).
+
+ROTEIRO DE ESTUDO
+
+PERCURSO DO MÓDULO
+
+A numeração das aulas é a mesma dos capítulos: a aula 7 corresponde ao capítulo 7. Use o tema como índice para localizar o capítulo correspondente.
+
+Aula   Tema do capítulo   Base constitucional
+Visão geral   Visão geral   Visão geral
+1   Visão geral e método de estudo   Não se aplica.
+Parte I · Estrutura e investidura (aulas 2 a 4)   Parte I · Estrutura e investidura (aulas 2 a 4)   Parte I · Estrutura e investidura (aulas 2 a 4)
+2   Sistema presidencialista e posição constitucional do Presidente   arts. 76 e 84
+3   Eleição, requisitos, posse e mandato   arts. 77, 78 e 82; art. 14, §§ 3º e 5º
+4   Impedimento, vacância, substituição, sucessão e ausência do País   arts. 79 a 81 e 83
+Parte II · Competências (aulas 5 e 6)   Parte II · Competências (aulas 5 e 6)   Parte II · Competências (aulas 5 e 6)
+5   Atribuições do Presidente da República (art. 84)   art. 84
+6   Delegação de atribuições presidenciais   art. 84, parágrafo único
+Parte III · Responsabilidade (aulas 7 e 8)   Parte III · Responsabilidade (aulas 7 e 8)   Parte III · Responsabilidade (aulas 7 e 8)
+7   Responsabilidade do Presidente: infração penal comum e crime de responsabilidade   arts. 85 e 86; art. 52, parágrafo único
+8   Imunidades e garantias processuais do Presidente   art. 86, §§ 3º e 4º
+Parte IV · Órgãos de auxílio e consulta (aulas 9 e 10)   Parte IV · Órgãos de auxílio e consulta (aulas 9 e 10)   Parte IV · Órgãos de auxílio e consulta (aulas 9 e 10)
+9   Ministros de Estado   art. 87
+10   Conselho da República e Conselho de Defesa Nacional   arts. 89 a 91
+Fechamento (sem numeração de aula)   Fechamento (sem numeração de aula)   Fechamento (sem numeração de aula)
+Não se aplica.   Resumo; O que decorar; Pegadinhas de prova; Como resolver questões; Checklist; Referências e links oficiais   Não se aplica.
+
+VISÃO GERAL DO MÓDULO
+
+CAPÍTULO 1 — VISÃO GERAL E MÉTODO DE ESTUDO
+
+O módulo estuda a estrutura constitucional do Poder Executivo federal, concentrando-se no Presidente da República e em sua dupla condição de chefe de Estado e chefe de Governo. A sequência lógica é: composição do Executivo → eleição e posse → substituição/sucessão → competências → responsabilização → órgãos de auxílio e consulta.
+
+Etapa da sequência   Capítulos
+Composição do Executivo   2
+Eleição e posse   3
+Substituição/sucessão   4
+Competências   5 e 6
+Responsabilização   7 e 8
+Órgãos de auxílio e consulta   9 e 10
+
+ONDE ESTÃO OS ERROS MAIS FREQUENTES
+
+Em prova, os erros mais frequentes surgem da troca entre substituição e sucessão, dos prazos do art. 81, da confusão entre competência presidencial delegável e indelegável, do regime do decreto autônomo, da autorização da Câmara por 2/3 e dos efeitos do art. 86.
+
+Ponto de erro   Onde se resolve
+Troca entre substituição e sucessão   Cap. 4
+Prazos do art. 81   Cap. 4
+Competência presidencial delegável x indelegável   Cap. 6
+Regime do decreto autônomo   Cap. 5
+Autorização da Câmara por 2/3   Cap. 7
+Efeitos do art. 86   Caps. 7 e 8
+
+Atualização importante. A redação atual do art. 82 determina mandato de 4 anos com início em 5 de janeiro do ano seguinte ao da eleição. A mudança, feita pela EC 111/2021, aplica-se a partir das eleições de 2026.
+
+Como estudar. Quatro perguntas para cada situação Diante de qualquer tema do módulo, pergunte: quem exerce (Presidente, Vice, linha do art. 80, Ministros)?, por quanto tempo (temporário ou definitivo)?, qual número (2/3, 15 dias, 30 ou 90 dias, 180 dias, 8 anos)? e quem decide (Câmara, Senado, STF, Congresso)?.
+
+PARTE I · ESTRUTURA E INVESTIDURA
+
+CAPÍTULO 2 — SISTEMA PRESIDENCIALISTA E POSIÇÃO CONSTITUCIONAL DO PRESIDENTE
+
+Base constitucional: arts. 76 e 84
+
+No presidencialismo brasileiro, o Presidente da República reúne duas dimensões funcionais. Como chefe de Estado, representa a República Federativa do Brasil nas relações internacionais e pratica atos ligados à soberania, defesa e representação externa. Como chefe de Governo, dirige politicamente e administrativamente a União, conduzindo a administração federal e participando intensamente do processo legislativo.
+
+Dimensão   O que o Presidente faz
+Chefe de Estado   Representa a República Federativa do Brasil nas relações internacionais e pratica atos ligados à soberania, defesa e representação externa.
+Chefe de Governo   Dirige politicamente e administrativamente a União, conduzindo a administração federal e participando intensamente do processo legislativo.
+
+Regra de bolso. Presidencialismo = uma mesma autoridade exerce a chefia de Estado e a chefia de Governo. Isso explica por que o art. 84 reúne competências administrativas, políticas, legislativas, internacionais e de defesa.
+
+O art. 76 estabelece que o Poder Executivo é exercido pelo Presidente da República, auxiliado pelos Ministros de Estado. O auxílio ministerial não retira a posição constitucional do Presidente como titular do Executivo federal.
+
+Erro comum. Tratar os Ministros como cotitulares do Executivo Os Ministros auxiliam; o titular do Executivo federal é o Presidente da República (art. 76). Questões que falam em “Executivo exercido pelo Presidente e pelos Ministros” trocam auxílio por titularidade.
+
+PARTE I · ESTRUTURA E INVESTIDURA
+
+CAPÍTULO 3 — ELEIÇÃO, REQUISITOS, POSSE E MANDATO
+
+Base constitucional: arts. 77, 78 e 82; art. 14, §§ 3º e 5º
+
+ELEIÇÃO
+
+A eleição do Presidente e do Vice-Presidente é simultânea. A eleição do Presidente importa a do Vice com ele registrado. É eleito em primeiro turno o candidato que obtiver maioria absoluta dos votos válidos, excluídos os votos brancos e nulos. Se nenhum candidato atingir esse patamar, realiza-se segundo turno entre os dois mais votados.
+
+REQUISITOS
+
+Para a Presidência e Vice-Presidência, aplicam-se as condições gerais de elegibilidade do art. 14, §3º, com destaque para nacionalidade brasileira nata, pleno exercício dos direitos políticos, alistamento, domicílio eleitoral, filiação partidária e idade mínima de 35 anos. A Presidência e a Vice-Presidência são cargos privativos de brasileiro nato.
+
+POSSE E MANDATO
+
+O Presidente e o Vice tomam posse em sessão do Congresso Nacional, prestando compromisso constitucional. Se, transcorridos dez dias da data fixada para a posse, salvo motivo de força maior, o Presidente ou o Vice não tiver assumido o cargo, este será declarado vago.
+
+O mandato é de quatro anos. Para os eleitos a partir de 2026, inicia-se em 5 de janeiro do ano seguinte ao da eleição. A reeleição para um único período subsequente decorre do art. 14, §5º.
+
+Da eleição ao mandato em uma tabela
+
+Ponto   Regra
+Eleição   Simultânea; a eleição do Presidente importa a do Vice com ele registrado.
+Primeiro turno   Eleito quem obtiver maioria absoluta dos votos válidos, excluídos os votos brancos e nulos.
+Segundo turno   Entre os dois mais votados, se ninguém atingir a maioria absoluta.
+Requisitos   Condições do art. 14, §3º; brasileiro nato; idade mínima de 35 anos.
+Posse   Em sessão do Congresso Nacional, com compromisso constitucional.
+Cargo declarado vago   Se, transcorridos dez dias da data fixada para a posse, salvo motivo de força maior, o eleito não tiver assumido.
+Mandato   Quatro anos; para os eleitos a partir de 2026, início em 5 de janeiro do ano seguinte ao da eleição.
+Reeleição   Para um único período subsequente (art. 14, §5º).
+
+Cai muito. Não use material antigo que indique posse presidencial em 1º de janeiro como regra permanente. A EC 111/2021 alterou o art. 82, com aplicação a partir da eleição de 2026.
+
+Erro comum. Contar brancos e nulos na maioria absoluta A maioria absoluta exigida no primeiro turno é dos votos válidos, excluídos os votos brancos e nulos. Alternativa que mande somá-los ao total para calcular a maioria está errada.
+
+Atenção à atualização. Segundo turno: o que o texto original não detalha A Constituição (art. 77, §§ 3º a 5º) acrescenta: o segundo turno ocorre em até vinte dias após a proclamação do resultado, e é eleito quem obtiver a maioria dos votos válidos; se, antes do segundo turno, ocorrer morte, desistência ou impedimento legal de candidato, convoca-se, dentre os remanescentes, o de maior votação; se remanescer, em segundo lugar, mais de um candidato com a mesma votação, qualifica-se o mais idoso.
+
+PARTE I · ESTRUTURA E INVESTIDURA
+
+CAPÍTULO 4 — IMPEDIMENTO, VACÂNCIA, SUBSTITUIÇÃO, SUCESSÃO E AUSÊNCIA DO PAÍS
+
+Base constitucional: arts. 79 a 81 e 83
+
+IMPEDIMENTO E VACÂNCIA
+
+Impedimento é situação temporária: o titular não perde o cargo, mas fica impossibilitado de exercê-lo. Vacância é ausência definitiva do titular. O Vice-Presidente substitui o Presidente no impedimento e sucede no caso de vaga.
+
+Se Presidente e Vice estiverem simultaneamente impedidos, ou se ambos os cargos estiverem vagos, são chamados ao exercício da Presidência, sucessivamente: Presidente da Câmara dos Deputados → Presidente do Senado Federal → Presidente do STF. Esses três integrantes da linha do art. 80 exercem a Presidência de forma transitória; não se tornam sucessores definitivos do mandato.
+
+Situação   Consequência
+Impedimento do Presidente   Vice substitui temporariamente.
+Vacância apenas da Presidência   Vice sucede definitivamente e completa o período.
+Impedimento de Presidente e Vice   Linha do art. 80 exerce temporariamente.
+Dupla vacância   Linha do art. 80 assume temporariamente e deve ser realizada nova eleição segundo o art. 81.
+
+DUPLA VACÂNCIA E ELEIÇÃO DO ART. 81
+
+Vagando os cargos de Presidente e Vice-Presidente, a Constituição exige nova eleição para ambos os cargos. A forma depende do momento em que se abre a última vaga:
+
+• Primeiros dois anos do período presidencial: eleição direta, 90 dias depois de aberta a última vaga.
+
+• Últimos dois anos: eleição indireta pelo Congresso Nacional, 30 dias depois da última vaga, na forma da lei.
+
+• Em qualquer caso, os eleitos apenas completam o período dos antecessores; não se inicia novo mandato de quatro anos.
+
+Não confundir. Art. 80 = quem exerce provisoriamente a Presidência quando faltam Presidente e Vice. Art. 81 = como preencher definitivamente a dupla vacância por nova eleição.
+
+NÃO CONFUNDIR
+
+Instituto A   Instituto B   Diferença decisiva
+Substituição   Sucessão   Substituição é temporária; sucessão é definitiva.
+Art. 80   Art. 81   Art. 80 define substitutos temporários; art. 81 define a nova eleição na dupla vacância.
+
+Exemplo explicado. Caso 1: dupla vacância no primeiro ano Enunciado. Presidente e Vice renunciam no primeiro ano. Solução. O Presidente da Câmara assume interinamente. Deve ser realizada eleição direta em 90 dias da última vaga; os eleitos completam o período.
+
+AUSÊNCIA DO PAÍS
+
+Presidente e Vice não podem, sem licença do Congresso Nacional, ausentar-se do País por período superior a quinze dias, sob pena de perda do cargo. A literalidade costuma ser invertida em prova: não é qualquer viagem internacional que exige licença, mas a ausência por período superior a 15 dias.
+
+Erro comum. Inverter a regra dos 15 dias A licença do Congresso só é exigida quando a ausência passa de quinze dias. Viagem de até 15 dias não depende de licença; ausência superior sem licença leva à perda do cargo.
+
+PARTE II · COMPETÊNCIAS
+
+CAPÍTULO 5 — ATRIBUIÇÕES DO PRESIDENTE DA REPÚBLICA (ART. 84)
+
+Base constitucional: art. 84
+
+O art. 84 concentra competências privativas do Presidente. “Privativas” não significa “absolutamente indelegáveis”: o próprio parágrafo único autoriza delegação de três grupos específicos (capítulo 6). Para estudar, é melhor organizar as competências por função.
+
+As competências do art. 84 organizadas por função
+
+Função   Competências
+a) Administração e direção superior   • Nomear e exonerar Ministros de Estado. • Exercer, com auxílio dos Ministros, a direção superior da administração federal. • Dispor, por decreto, sobre organização e funcionamento da administração federal quando não houver aumento de despesa nem criação ou extinção de órgãos; e extinguir funções ou cargos públicos quando vagos. • Prover cargos públicos federais, na forma da lei, e extingui-los nos limites constitucionais.
+b) Processo legislativo   • Iniciar o processo legislativo nos casos constitucionais. • Sancionar, promulgar e fazer publicar leis. • Vetar projetos de lei, total ou parcialmente. • Editar medidas provisórias com força de lei, nos termos do art. 62.
+c) Relações internacionais e defesa   • Manter relações com Estados estrangeiros e acreditar representantes diplomáticos. • Celebrar tratados, convenções e atos internacionais, sujeitos a referendo do Congresso Nacional. • Declarar guerra e celebrar a paz nas hipóteses constitucionais e com a participação do Congresso. • Permitir, nos casos previstos em lei complementar, que forças estrangeiras transitem pelo território nacional ou nele permaneçam temporariamente.
+d) Defesa do Estado e ordem constitucional   • Decretar estado de defesa e estado de sítio, observando os condicionamentos constitucionais. • Decretar e executar intervenção federal. • Propor ao Congresso Nacional a decretação do estado de calamidade pública de âmbito nacional previsto nos arts. 167-B a 167-G (inciso XXVIII, incluído pela EC 109/2021).
+e) Nomeações e relações institucionais   • Nomear, após aprovação pelo Senado quando exigida, autoridades indicadas pela Constituição. • Nomear magistrados, membros do TCU e outras autoridades nos casos constitucionais. • Nomear membros do Conselho da República nos termos do art. 89, VII.
+f) Justiça penal e outras competências   • Conceder indulto e comutar penas, com audiência, se necessário, dos órgãos instituídos em lei. • Exercer o comando supremo das Forças Armadas e praticar as nomeações militares previstas na Constituição. • Prestar contas anualmente ao Congresso Nacional dentro de sessenta dias após a abertura da sessão legislativa, relativas ao exercício anterior.
+
+DECRETO AUTÔNOMO
+
+Decreto autônomo. O art. 84, VI admite decreto com fundamento direto na Constituição em duas hipóteses. Ele não pode criar ou extinguir órgãos públicos nem aumentar despesa. Pode extinguir funções ou cargos vagos.
+
+NÃO CONFUNDIR
+
+Instituto A   Instituto B   Diferença decisiva
+Decreto regulamentar   Decreto autônomo   Regulamentar executa lei; autônomo atua diretamente nas hipóteses do art. 84, VI.
+
+Exemplo explicado. Caso 2: extinção de ministério por decreto Enunciado. Presidente edita decreto para extinguir um ministério. Solução. A medida é inconstitucional por decreto autônomo, pois o art. 84, VI não autoriza criação ou extinção de órgão público.
+
+Caso explicado. As duas hipóteses do decreto autônomo, passo a passo 1. O decreto trata de organização e funcionamento da administração federal? Só vale se não houver aumento de despesa nem criação ou extinção de órgãos. 2. O decreto extingue função ou cargo público? Só vale se o cargo ou a função estiver vago. Fora dessas duas hipóteses, o decreto não tem fundamento direto na Constituição.
+
+PARTE II · COMPETÊNCIAS
+
+CAPÍTULO 6 — DELEGAÇÃO DE ATRIBUIÇÕES PRESIDENCIAIS
+
+Base constitucional: art. 84, parágrafo único
+
+O parágrafo único do art. 84 permite ao Presidente delegar apenas as atribuições dos incisos VI, XII e XXV, primeira parte, aos Ministros de Estado, ao Procurador-Geral da República e ao Advogado-Geral da União, nos limites da delegação.
+
+Inciso   Conteúdo delegável   Observação
+VI   Decreto sobre organização/funcionamento sem aumento de despesa ou criação/extinção de órgãos; extinção de cargos/funções vagos.   Delegável integralmente dentro dos limites constitucionais.
+XII   Conceder indulto e comutar penas.   Delegável.
+XXV, 1ª parte   Prover cargos públicos federais, na forma da lei.   A delegação não alcança a parte final relativa à extinção fora da hipótese específica do VI, b.
+
+Memorização. Delegáveis: VI - XII - XXV (1ª parte). Delegatários: Ministros - PGR - AGU.
+
+Caso explicado. Pode delegar? Três perguntas 1. A atribuição está no inciso VI, XII ou XXV (primeira parte) do art. 84? Se não estiver, não pode ser delegada. 2. O delegatário é Ministro de Estado, Procurador-Geral da República ou Advogado-Geral da União? Outra autoridade não pode receber a delegação. 3. O ato respeita os limites da delegação? No inciso XXV, a delegação vale para prover cargos, não para a parte final. Assim, conceder indulto (XII) pode ser delegado a um Ministro; editar medida provisória (inciso de processo legislativo, capítulo 5) não está no trio delegável.
+
+PARTE III · RESPONSABILIDADE
+
+CAPÍTULO 7 — RESPONSABILIDADE DO PRESIDENTE: INFRAÇÃO PENAL COMUM E CRIME DE RESPONSABILIDADE
+
+Base constitucional: arts. 85 e 86; art. 52, parágrafo único
+
+DOIS REGIMES, UM FILTRO POLÍTICO
+
+O Presidente pode responder tanto por infrações penais comuns quanto por crimes de responsabilidade. São regimes diferentes, com órgãos julgadores e efeitos próprios. Em ambos, a Constituição prevê filtro político inicial da Câmara dos Deputados.
+
+A Câmara deve admitir a acusação por 2/3 de seus membros. Admitida a acusação, o julgamento será: STF nas infrações penais comuns; Senado Federal nos crimes de responsabilidade.
+
+Aspecto   Infração penal comum   Crime de responsabilidade
+Natureza   Penal.   Político-administrativa.
+Admissibilidade   2/3 da Câmara.   2/3 da Câmara.
+Julgamento   STF.   Senado Federal.
+Suspensão do exercício   Se o STF receber denúncia ou queixa-crime.   Após instauração do processo pelo Senado.
+Prazo de afastamento   Máximo constitucional de 180 dias; depois o Presidente reassume, sem encerrar o processo.   Mesmo regime do art. 86, §2º.
+
+CRIMES DE RESPONSABILIDADE: ART. 85 E LEI 1.079/1950
+
+São crimes de responsabilidade os atos do Presidente que atentem contra a Constituição e, especialmente, contra os bens jurídicos enumerados no art. 85:
+
+• existência da União;
+
+• livre exercício dos Poderes, Ministério Público e poderes das unidades federadas;
+
+• direitos políticos, individuais e sociais;
+
+• segurança interna;
+
+• probidade;
+
+• lei orçamentária;
+
+• cumprimento das leis e decisões judiciais.
+
+A Lei 1.079/1950 define as condutas e regula o processo. Para prova, a Constituição é o núcleo: a Câmara autoriza por 2/3 e o Senado processa e julga. Durante o julgamento no Senado, a presidência cabe ao Presidente do STF. A condenação no Senado exige 2/3 dos senadores e, constitucionalmente, limita-se à perda do cargo com inabilitação, por oito anos, para o exercício de função pública, sem prejuízo das demais sanções judiciais cabíveis.
+
+Atenção à desatualização. A Lei 1.079/1950 ainda contém redações históricas incompatíveis com a Constituição de 1988. Em caso de conflito, prevalece a Constituição vigente. Para a inabilitação presidencial, use o art. 52, parágrafo único, da CF: oito anos.
+
+NÃO CONFUNDIR
+
+Instituto A   Instituto B   Diferença decisiva
+Infração penal comum   Crime de responsabilidade   STF x Senado; natureza penal x político-administrativa.
+
+Exemplo explicado. Caso 3: crime comum ligado à função Enunciado. Presidente é acusado de crime comum ligado ao exercício da função. Solução. A Câmara deve admitir a acusação por 2/3; depois, cabe ao STF exercer a jurisdição penal, e o afastamento ocorre se a denúncia ou queixa for recebida.
+
+Erro comum. Achar que os 180 dias encerram o processo Passados 180 dias sem conclusão do julgamento, cessa apenas o afastamento: o Presidente reassume e o processo continua. E a autorização da Câmara é por 2/3, não por maioria absoluta.
+
+PARTE III · RESPONSABILIDADE
+
+CAPÍTULO 8 — IMUNIDADES E GARANTIAS PROCESSUAIS DO PRESIDENTE
+
+Base constitucional: art. 86, §§ 3º e 4º
+
+• Imunidade à prisão cautelar: enquanto não houver sentença condenatória nas infrações comuns, o Presidente não está sujeito a prisão (art. 86, §3º).
+
+• Irresponsabilidade penal temporária por atos estranhos às funções: na vigência do mandato, o Presidente não pode ser responsabilizado penalmente por atos estranhos ao exercício de suas funções (art. 86, §4º).
+
+• A jurisprudência do STF trata essa regra como impedimento temporário à persecução penal, e não como irresponsabilidade absoluta. Ela não elimina a possibilidade de investigação nem se estende, por si só, à responsabilidade civil, fiscal ou político-administrativa.
+
+• As prerrogativas excepcionais dos §§3º e 4º são próprias do Presidente da República e não podem ser automaticamente estendidas a governadores por constituições estaduais.
+
+Garantia   O que impede   O que não impede
+Art. 86, §3º   Prisão do Presidente enquanto não houver sentença condenatória nas infrações comuns.   Não se aplica.
+Art. 86, §4º   Responsabilização penal, durante o mandato, por atos estranhos ao exercício das funções.   Investigação; responsabilidade civil, fiscal ou político-administrativa.
+Autorização da Câmara (art. 86)   Processo contra o Presidente sem admissão por 2/3.   Não se estende a corréus sem a mesma investidura.
+
+Pegadinha. Art. 86, §4º não quer dizer que o Presidente “não responde nunca” por ato estranho às funções. O efeito é temporário: durante o mandato, não pode haver responsabilização penal por esses atos.
+
+Jurisprudência. Jurisprudência e entendimentos-chave O STF interpreta o art. 86, §4º como imunidade temporária à persecução penal por atos estranhos ao exercício das funções, e não como irresponsabilidade penal absoluta. A imunidade do art. 86, §4º não impede, por si só, investigação destinada à preservação e colheita de elementos informativos; o obstáculo constitucional recai sobre a responsabilização penal durante o mandato por fato estranho à função. As garantias dos arts. 86, §§3º e 4º são excepcionais e próprias do Presidente da República; o STF rejeita sua extensão automática aos Governadores. A autorização da Câmara prevista no art. 86 é prerrogativa funcional do Presidente e não se estende a corréus sem a mesma investidura.
+
+Exemplo explicado. Caso 4: fato anterior ao mandato Enunciado. Presidente é investigado por fato criminal anterior ao mandato, estranho às funções. Solução. O art. 86, §4º impede a responsabilização penal durante o mandato, mas a jurisprudência não transforma a cláusula em imunidade absoluta contra investigação.
+
+PARTE IV · ÓRGÃOS DE AUXÍLIO E CONSULTA
+
+CAPÍTULO 9 — MINISTROS DE ESTADO
+
+Base constitucional: art. 87
+
+Os Ministros de Estado são escolhidos dentre brasileiros maiores de 21 anos e no exercício dos direitos políticos. Não há, no art. 87, exigência de brasileiro nato como regra geral para ministro; a exceção constitucional relevante é o cargo de Ministro de Estado da Defesa, privativo de brasileiro nato.
+
+Atribuições dos Ministros
+
+Nº   Atribuição
+1   Orientar, coordenar e supervisionar órgãos e entidades da administração federal na área de competência e referendar atos e decretos presidenciais.
+2   Expedir instruções para execução das leis, decretos e regulamentos.
+3   Apresentar ao Presidente relatório anual de gestão.
+4   Praticar atos pertinentes às atribuições que lhes forem outorgadas ou delegadas pelo Presidente.
+
+A Constituição também disciplina convocações e pedidos de informação do Congresso; a ausência sem justificação em convocação constitucional e a prestação de informações falsas podem produzir responsabilidade política.
+
+Erro comum. Exigir brasileiro nato para todo Ministro A regra do art. 87 é: brasileiro, maior de 21 anos, no exercício dos direitos políticos. Nato só para o Ministro de Estado da Defesa. Compare: Presidente e Vice exigem nato e 35 anos (capítulo 3).
+
+PARTE IV · ÓRGÃOS DE AUXÍLIO E CONSULTA
+
+CAPÍTULO 10 — CONSELHO DA REPÚBLICA E CONSELHO DE DEFESA NACIONAL
+
+Base constitucional: arts. 89 a 91
+
+CONSELHO DA REPÚBLICA
+
+É órgão superior de consulta do Presidente da República. Pronuncia-se sobre intervenção federal, estado de defesa, estado de sítio e questões relevantes para a estabilidade das instituições democráticas.
+
+Integram-no: Vice-Presidente; Presidente da Câmara; Presidente do Senado; líderes da maioria e da minoria na Câmara; líderes da maioria e da minoria no Senado; Ministro da Justiça; e seis cidadãos brasileiros natos, maiores de 35 anos, com mandato de três anos, vedada a recondução, escolhidos na forma constitucional.
+
+CONSELHO DE DEFESA NACIONAL
+
+É órgão de consulta do Presidente nos assuntos relacionados à soberania nacional e defesa do Estado democrático. Integram-no o Vice-Presidente, os Presidentes da Câmara e do Senado, Ministro da Justiça, Ministro da Defesa, Ministro das Relações Exteriores, Ministro do Planejamento e os Comandantes da Marinha, Exército e Aeronáutica. Compete-lhe:
+
+• Opinar nas hipóteses de declaração de guerra e celebração da paz.
+
+• Opinar sobre decretação do estado de defesa, estado de sítio e intervenção federal.
+
+• Propor critérios e condições de utilização de áreas indispensáveis à segurança do território nacional e opinar sobre seu uso efetivo.
+
+• Estudar, propor e acompanhar iniciativas necessárias à independência nacional e à defesa do Estado democrático.
+
+NÃO CONFUNDIR: Conselho da República x Conselho de Defesa Nacional
+
+Critério   Conselho da República   Conselho de Defesa Nacional
+Natureza   Órgão superior de consulta do Presidente.   Órgão de consulta do Presidente.
+Foco   Estabilidade democrática.   Soberania e defesa do Estado.
+Manifesta-se sobre   Intervenção federal, estado de defesa, estado de sítio e questões relevantes para a estabilidade das instituições democráticas.   Guerra e paz; estado de defesa, estado de sítio e intervenção federal; áreas indispensáveis à segurança do território nacional; independência nacional e defesa do Estado democrático.
+Membros próprios   Líderes da maioria e da minoria na Câmara e no Senado; seis cidadãos brasileiros natos, maiores de 35 anos, mandato de três anos, vedada a recondução.   Ministros da Defesa, das Relações Exteriores e do Planejamento; Comandantes da Marinha, Exército e Aeronáutica.
+
+Como estudar. O núcleo comum dos dois conselhos Os dois têm o Vice-Presidente, os Presidentes da Câmara e do Senado e o Ministro da Justiça. Decore esse núcleo e depois só os membros próprios de cada um. Estado de defesa, estado de sítio e intervenção federal aparecem nos dois.
+
+Atenção à atualização. Como são escolhidos os seis cidadãos O texto original diz “escolhidos na forma constitucional”. O art. 89, VII, da Constituição detalha: dois nomeados pelo Presidente da República, dois eleitos pelo Senado Federal e dois eleitos pela Câmara dos Deputados, todos com mandato de três anos, vedada a recondução.
+
+FECHAMENTO
+
+FECHAMENTO DO MÓDULO
+
+1. RESUMO DO MÓDULO
+
+Núcleo   A ideia central
+Estrutura e investidura (capítulos 2 a 4)   O Presidente é chefe de Estado e de Governo, auxiliado pelos Ministros. Eleito por maioria absoluta dos votos válidos, toma posse perante o Congresso; o mandato é de quatro anos, com início em 5 de janeiro para os eleitos a partir de 2026. O Vice substitui ou sucede; a linha do art. 80 só exerce de forma transitória; a dupla vacância leva à eleição do art. 81.
+Competências (capítulos 5 e 6)   O art. 84 reúne competências privativas, organizadas por função; o decreto autônomo tem só duas hipóteses; apenas os incisos VI, XII e XXV (1ª parte) podem ser delegados, e só a Ministros, PGR e AGU.
+Responsabilidade (capítulos 7 e 8)   A Câmara admite por 2/3; o STF julga a infração penal comum e o Senado, o crime de responsabilidade. Os §§ 3º e 4º do art. 86 protegem o Presidente contra prisão antes da condenação e contra responsabilização penal, no mandato, por atos estranhos às funções.
+Órgãos de auxílio e consulta (capítulos 9 e 10)   Ministros: brasileiros maiores de 21 anos (nato só o da Defesa). Conselho da República: estabilidade democrática. Conselho de Defesa Nacional: soberania e defesa do Estado.
+
+2. O QUE DECORAR
+
+Lei seca essencial: mapa artigo a artigo.
+
+Dispositivo   Núcleo para prova
+Art. 76   Executivo exercido pelo Presidente, auxiliado pelos Ministros.
+Art. 79   Vice substitui no impedimento e sucede na vaga.
+Art. 80   Câmara → Senado → STF na falta simultânea de Presidente e Vice.
+Art. 81   Dupla vacância: 90 dias se nos primeiros 2 anos; 30 dias e eleição pelo Congresso se nos últimos 2 anos.
+Art. 82   Mandato de 4 anos; início em 5 de janeiro a partir da eleição de 2026.
+Art. 83   Ausência do País > 15 dias depende de licença do Congresso.
+Art. 84   Competências presidenciais e delegação VI, XII e XXV, 1ª parte.
+Art. 85   Categorias dos crimes de responsabilidade.
+Art. 86   2/3 da Câmara; STF ou Senado; suspensão, 180 dias, prisão e imunidade temporária.
+Art. 87   Requisitos e atribuições dos Ministros.
+Arts. 89-91   Conselho da República e Conselho de Defesa Nacional.
+
+Quadros de memorização.
+
+Regra de bolso. Linha sucessória Vice: substitui ou sucede. Na falta de Presidente e Vice: Câmara → Senado → STF. Na dupla vacância, haverá eleição do art. 81.
+
+Regra de bolso. Responsabilidade Câmara autoriza por 2/3. Crime comum → STF. Crime de responsabilidade → Senado.
+
+Regra de bolso. Delegação Art. 84: VI, XII e XXV (primeira parte) → Ministros, PGR ou AGU.
+
+3. PEGADINHAS DE PROVA
+
+Leia cada afirmação como se a banca a tivesse escrito. Todas estão erradas; o importante é saber por quê.
+
+Afirmação da banca   Veredicto e motivo   Cap.
+Dizer que a linha do art. 80 “sucede definitivamente” o Presidente.   Falso. A linha do art. 80 exerce a Presidência de forma transitória.   4
+Trocar a ordem Câmara → Senado → STF.   Falso. A ordem é Presidente da Câmara, Presidente do Senado, Presidente do STF.   4
+Dizer que dupla vacância nos últimos dois anos gera eleição direta.   Falso; é eleição pelo Congresso em 30 dias.   4
+Afirmar que o decreto autônomo pode criar ou extinguir órgãos.   Falso. O art. 84, VI não autoriza criação ou extinção de órgão público.   5
+Afirmar que todas as competências do art. 84 são delegáveis.   Falso. Só VI, XII e XXV (1ª parte).   6
+Dizer que autorização da Câmara é por maioria absoluta.   Falso; são 2/3.   7
+Dizer que o afastamento de 180 dias extingue o processo.   Falso; apenas cessa o afastamento.   7
+Dizer que o Presidente pode ser preso preventivamente antes de condenação.   Incompatível com o art. 86, §3º.   8
+Generalizar o art. 86, §4º para ações civis ou fiscais.   Falso.   8
+Exigir nacionalidade nata para todo Ministro de Estado.   Falso. Nato só para o Ministro de Estado da Defesa.   9
+
+4. COMO RESOLVER QUESTÕES
+
+Um roteiro em seis passos para qualquer questão do módulo:
+
+Passo   O que fazer
+1)   Identifique se a questão trata de eleição/posse, vacância, competência ou responsabilidade.
+2)   Se houver vacância, pergunte: é de um cargo ou dos dois? Em que metade do período ocorreu?
+3)   Se houver competência presidencial, verifique se é do art. 84 e se integra o trio delegável VI-XII-XXV.
+4)   Se houver responsabilização, separe crime comum de crime de responsabilidade e aplique Câmara 2/3 → STF/Senado.
+5)   Em itens sobre imunidade, diferencie prisão, responsabilização penal por ato estranho e investigação.
+6)   Desconfie de palavras absolutas como “sempre”, “qualquer”, “todos” e “automaticamente”.
+
+5. CHECKLIST DE REVISÃO FINAL
+
+Marque cada item quando conseguir explicá-lo sem consultar a apostila.
+
+• ☐ Posse/mandato: 5 de janeiro para eleitos a partir de 2026. (capítulo 3)
+
+• ☐ Vice: substitui no impedimento e sucede na vaga. (capítulo 4)
+
+• ☐ Linha: Câmara → Senado → STF. (capítulo 4)
+
+• ☐ Dupla vacância: 90 dias direta / 30 dias Congresso nos últimos 2 anos. (capítulo 4)
+
+• ☐ Ausência do País >15 dias: licença do Congresso. (capítulo 4)
+
+• ☐ Decreto autônomo: sem aumento de despesa, sem criar/extinguir órgãos; extingue cargos/funções vagos. (capítulo 5)
+
+• ☐ Delegáveis: VI, XII, XXV (1ª parte). (capítulo 6)
+
+• ☐ Responsabilidade: Câmara 2/3; STF crime comum; Senado crime de responsabilidade. (capítulo 7)
+
+• ☐ Afastamento máximo de 180 dias sem conclusão; processo continua. (capítulo 7)
+
+• ☐ Art. 86, §4º = imunidade penal temporária por atos estranhos, não irresponsabilidade absoluta. (capítulo 8)
+
+6. REFERÊNCIAS E LINKS OFICIAIS
+
+Consulte sempre o texto oficial e a jurisprudência do tribunal competente. Os links abaixo levam a fontes oficiais.
+
+Fonte oficial   Para que usar   Link
+Constituição Federal de 1988 (Planalto)   Texto compilado: arts. 76 a 91, art. 14 e art. 52.   https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm
+Emenda Constitucional nº 111, de 2021 (Planalto)   Nova redação do art. 82: posse em 5 de janeiro (capítulo 3).   https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc111.htm
+Emenda Constitucional nº 109, de 2021 (Planalto)   Inciso XXVIII do art. 84 e arts. 167-B a 167-G (capítulo 5).   https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc109.htm
+Lei nº 1.079, de 1950 (Planalto)   Crimes de responsabilidade e respectivo processo (capítulo 7).   https://www.planalto.gov.br/ccivil_03/leis/l1079.htm
+STF: A Constituição e o Supremo, art. 86   Art. 86 com jurisprudência (capítulos 7 e 8).   https://portal.stf.jus.br/constituicao-supremo/artigo.asp?abrirBase=CF&abrirArtigo=86
+STF: A Constituição e o Supremo, art. 84   Art. 84 com jurisprudência (capítulos 5 e 6).   https://portal.stf.jus.br/constituicao-supremo/artigo.asp?abrirBase=CF&abrirArtigo=84
+Tribunal Superior Eleitoral   Eleições presidenciais (capítulos 3 e 4).   https://www.tse.jus.br/
+Câmara dos Deputados   Autorização para processo contra o Presidente (capítulo 7).   https://www.camara.leg.br/
+Senado Federal   Processo e julgamento por crime de responsabilidade (capítulo 7).   https://www12.senado.leg.br/hpsenado
