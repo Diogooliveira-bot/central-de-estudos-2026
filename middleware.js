@@ -16,13 +16,13 @@ const PREVIEW_GUEST_ENABLED = process.env.VERCEL_ENV === 'preview' && PREVIEW_GU
 async function previewTokenMatches(token) {
   if (!PREVIEW_GUEST_ENABLED || typeof token !== 'string' || token.length < 40 || token.length > 2048) return false;
   try {
-    const [given, expected] = await Promise.all(
-      [token, PREVIEW_GUEST_SECRET].map(value =>
-        crypto.subtle.digest('SHA-256', new TextEncoder().encode(value))
-          .then(buffer => new Uint8Array(buffer))
-      )
+    // Middleware executa em runtimes diferentes entre Preview e produção.
+    // Comparação em tempo constante sem depender de crypto.subtle global.
+    const encoder = new TextEncoder();
+    return safeEqualBytes(
+      encoder.encode(token),
+      encoder.encode(PREVIEW_GUEST_SECRET)
     );
-    return safeEqualBytes(given, expected);
   } catch (_) {
     return false;
   }
