@@ -51,7 +51,7 @@ async function offlineAuthResponse(){
 }
 async function offlineAllowed(){return !!(await offlineAuthData())}
 function offlineDenied(){
-  return new Response('<!doctype html><html lang="pt-BR"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Base Completa</title><body style="font:16px system-ui;padding:28px;background:#f3efe7;color:#312d29"><h1>Base Completa</h1><p>Não há uma sessão offline válida neste aparelho. Conecte-se à internet e entre novamente.</p></body></html>',{status:401,headers:{'Content-Type':'text/html; charset=utf-8','Cache-Control':'no-store'}});
+  return new Response('<!doctype html><html lang="pt-BR"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Base Completa</title><body style="font:16px system-ui;padding:28px;background:#f3efe7;color:#312d29"><h1>Base Completa</h1><p>Não há uma sessão offline válida neste aparelho. Conecte-se à internet e entre novamente.</p><button onclick=\"location.reload()\" style=\"margin-top:16px;border:0;border-radius:8px;padding:12px 18px;background:#283b69;color:#fff;font:600 15px system-ui\">Tentar novamente</button></body></html>',{status:401,headers:{'Content-Type':'text/html; charset=utf-8','Cache-Control':'no-store'}});
 }
 
 var pauseOfflineUntil=0;
