@@ -99,7 +99,7 @@ function switchMode(mode){
  });
  const sc=overlay.querySelector('.bc-m01-scroll');if(sc)sc.scrollTop=0;
 }
-function quizCount(n){const l=global.BC_PEN_OFFLINE_QUIZZES&&global.BC_PEN_OFFLINE_QUIZZES[n];return Array.isArray(l)?l.length:0;}
+function quizCount(n){const l=global.BC_PEN_GUIDED_QUIZZES_V3&&global.BC_PEN_GUIDED_QUIZZES_V3[n];return Array.isArray(l)?l.length:0;}
 function open(n,topicIndex){
  n=Number(n);
  const d=get(n);if(!d||n<MIN||n>MAX||!Array.isArray(d.topics))return false;
