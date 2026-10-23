@@ -31,7 +31,7 @@ test('V3 DOM M08: card abre Teoria Guiada, modos, lei por extenso, checklist e 2
  assert.equal(card.querySelector('strong').textContent,'Teoria guiada');
  card.click();
  assert.ok(d.querySelector('.bc-m01-overlay'),'leitor não abriu');
- assert.match(d.querySelector('.bc-m01-overlay').textContent,/Punibilidade e Prescrição/);
+ assert.match(d.querySelector('.bc-m01-overlay').textContent,/Punibilidade e causas que a extinguem/);
  assert.ok(d.querySelector('.bc-m01-lawitem'),'texto legal não apareceu');
  assert.equal(d.querySelectorAll('[data-bc-guided-check]').length,14);
  const toggle=d.querySelector('[data-bc-guided-mode="review"]');toggle.click();
