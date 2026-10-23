@@ -1,0 +1,344 @@
+{
+ "data": "2026-10-23",
+ "fonte": "CF/88, texto compilado do Planalto (arquivo fornecido pelo responsável); redação vigente selecionada dispositivo a dispositivo",
+ "escopo": "tools/decorando-data-cf.js — subtópico ADI e ADC",
+ "total": 42,
+ "itens": [
+  {
+   "id": "cf-62914cdb257e",
+   "dispositivo": "Art. 96, I, a, CF c/c ADI 4235-RJ - Direito Constitucional e Processual Civil",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-2ddc8b16431a",
+   "dispositivo": "Art. 102, § 2º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-3a1373c4b6cc",
+   "dispositivo": "Art. 102, § 2º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b2e07965b0b7",
+   "dispositivo": "Art. 102, I, “a\" e “d\", CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-df04146962f0",
+   "dispositivo": "Art. 102, I, \"a\", CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-d2dfdea83f7a",
+   "dispositivo": "Art. 102, I, a c/c Art. 103, IV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-84b46f33a8cb",
+   "dispositivo": "Art. 102, I, a, § 2º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-6492001690cc",
+   "dispositivo": "Art. 102, I, a, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-3ec1b16b6392",
+   "dispositivo": "Art. 102, I, a, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-85d67b08e3f6",
+   "dispositivo": "Art. 102, I, a, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-42fd45d0183e",
+   "dispositivo": "Art. 102, I, a, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-41ad67119786",
+   "dispositivo": "Art. 102, I, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-a67872776da8",
+   "dispositivo": "Art. 103, §§ 1º e 2º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-d6fa92721b1f",
+   "dispositivo": "Art. 103, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-97e64367ca70",
+   "dispositivo": "Art. 103, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-53f13d6da99f",
+   "dispositivo": "Art. 103, I e V, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-e15f1fc8c46c",
+   "dispositivo": "Art. 103, II, III e IV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-50232d4f01ca",
+   "dispositivo": "Art. 103, III, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-3ad7f278553d",
+   "dispositivo": "Art. 103, III, VI e § 2º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-5c1ba096790d",
+   "dispositivo": "Art. 103, IX, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-8a80f86da4c8",
+   "dispositivo": "Art. 103, IX, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-c956d2a58efa",
+   "dispositivo": "Art. 103, V e VI, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-259adf3b09d9",
+   "dispositivo": "Art. 103, V, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-5c64aacc7628",
+   "dispositivo": "Art. 103, V, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-4ceeb1105c9b",
+   "dispositivo": "Art. 103, VII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-8ee4878adace",
+   "dispositivo": "Art. 103, VII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-fd07a55da632",
+   "dispositivo": "Art. 103, VIII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-4fc6a461f7c6",
+   "dispositivo": "Art. 103, VIII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-fa32a5f7228c",
+   "dispositivo": "Art. 103, VIII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-f37842898c29",
+   "dispositivo": "Art. 103, VIII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-autoral-v212-m12-15",
+   "dispositivo": "Autoral • ADC — controvérsia judicial relevante",
+   "gabarito": "C",
+   "status": "certificado-parcial",
+   "base": "texto constitucional; norma infraconstitucional citada não conferida",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-v212-m12-16",
+   "dispositivo": "Autoral • ADC — medida cautelar",
+   "gabarito": "E",
+   "status": "certificado-parcial",
+   "base": "texto constitucional; norma infraconstitucional citada não conferida",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-v212-m12-14",
+   "dispositivo": "Autoral • ADC — objeto federal",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-v212-m12-10",
+   "dispositivo": "Autoral • ADI — amicus curiae",
+   "gabarito": "E",
+   "status": "certificado-parcial",
+   "base": "texto constitucional; norma infraconstitucional citada não conferida",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-v212-m12-11",
+   "dispositivo": "Autoral • ADI — cautelar e efeitos",
+   "gabarito": "C",
+   "status": "certificado-parcial",
+   "base": "texto constitucional; norma infraconstitucional citada não conferida",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-v212-m12-09",
+   "dispositivo": "Autoral • ADI — indisponibilidade/desistência",
+   "gabarito": "C",
+   "status": "certificado-parcial",
+   "base": "texto constitucional; norma infraconstitucional citada não conferida",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-v212-m12-13",
+   "dispositivo": "Autoral • ADI — modulação",
+   "gabarito": "C",
+   "status": "certificado-parcial",
+   "base": "texto constitucional; norma infraconstitucional citada não conferida",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-v212-m12-06",
+   "dispositivo": "Autoral • ADI — objeto",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-v212-m12-17",
+   "dispositivo": "Autoral • ADI e ADC — natureza ambivalente",
+   "gabarito": "C",
+   "status": "certificado-parcial",
+   "base": "texto constitucional; norma infraconstitucional citada não conferida",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-v212-m12-07",
+   "dispositivo": "Autoral • ADI/ADC — legitimados",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-v212-m12-12",
+   "dispositivo": "Autoral • ADI/ADC — quóruns 8 e 6",
+   "gabarito": "E",
+   "status": "certificado-parcial",
+   "base": "texto constitucional; norma infraconstitucional citada não conferida",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-v212-m12-08",
+   "dispositivo": "Autoral • Pertinência temática",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "autoral"
+  }
+ ]
+}
