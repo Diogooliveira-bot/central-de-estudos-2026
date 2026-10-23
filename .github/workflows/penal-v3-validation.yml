@@ -1,0 +1,36 @@
+name: Penal V3 isolated regression
+on:
+  push:
+    branches:
+      - feature/penal-v3-safe-20261023
+    paths:
+      - 'content/penal/**'
+      - 'ui/penal-teoria-guiada-*.js'
+      - 'tests/penal-teoria-guiada-v3-*.mjs'
+      - 'package.json'
+      - '.github/workflows/penal-v3-validation.yml'
+  pull_request:
+    paths:
+      - 'content/penal/**'
+      - 'ui/penal-teoria-guiada-*.js'
+      - 'tests/penal-teoria-guiada-v3-*.mjs'
+      - 'central-v119.html'
+      - 'package.json'
+      - '.github/workflows/penal-v3-validation.yml'
+permissions:
+  contents: read
+jobs:
+  penal-v3:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Tests of V3 contents, quizzes and DOM
+        run: node --test tests/penal-teoria-guiada-v3-unit.mjs tests/penal-teoria-guiada-v3-dom.mjs
+      - name: Full regressions
+        run: npm test
