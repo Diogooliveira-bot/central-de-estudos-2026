@@ -1,0 +1,312 @@
+{
+ "data": "2026-10-23",
+ "fonte": "CF/88, texto compilado do Planalto (arquivo fornecido pelo responsável); redação vigente selecionada dispositivo a dispositivo",
+ "escopo": "tools/decorando-data-cf.js — subtópico Estados Federados",
+ "total": 38,
+ "itens": [
+  {
+   "id": "cf-754ab524edec",
+   "dispositivo": "Art. 25, § 1º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-50920f61a6e7",
+   "dispositivo": "Art. 25, § 1º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-8a9016c28850",
+   "dispositivo": "Art. 25, § 1º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-eca71b60072c",
+   "dispositivo": "Art. 25, § 1º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-5ab6ad284edb",
+   "dispositivo": "Art. 25, § 2º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-c8dafd24b7ff",
+   "dispositivo": "Art. 25, § 2º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-9905ab05b769",
+   "dispositivo": "Art. 25, § 2º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-294e7b912599",
+   "dispositivo": "Art. 25, § 2º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-2b9053a42104",
+   "dispositivo": "Art. 25, § 2º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-d59d46bf5956",
+   "dispositivo": "Art. 25, § 2º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-d631e9c28ddd",
+   "dispositivo": "Art. 25, § 3º, c/c art. 30, IV, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-4622898328e7",
+   "dispositivo": "Art. 25, § 3º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-958e1b0bd91c",
+   "dispositivo": "Art. 25, § 3º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-2671a3c21135",
+   "dispositivo": "Art. 25, § 3º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-25065a27ff9b",
+   "dispositivo": "Art. 25, § 3º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-eded29f88f44",
+   "dispositivo": "Art. 25, § 3º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-e4cde63866b9",
+   "dispositivo": "Art. 25, § 3º, CF, c/c Constituição do Estado de São Paulo",
+   "gabarito": "C",
+   "status": "certificado-parcial",
+   "base": "texto constitucional; norma infraconstitucional citada não conferida",
+   "origem": "real"
+  },
+  {
+   "id": "cf-ff6dbd5d1783",
+   "dispositivo": "Art. 25, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-17a873ee488c",
+   "dispositivo": "Art. 25, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-4514aa216a8d",
+   "dispositivo": "Art. 25, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-58c48bd1760d",
+   "dispositivo": "Art. 26, II e III, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-32ad27abe3f4",
+   "dispositivo": "Art. 26, II, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-31d25300fc25",
+   "dispositivo": "Art. 26, II, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-f27a1a7d2843",
+   "dispositivo": "Art. 26, II, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-8019b99b3c08",
+   "dispositivo": "Art. 26, IV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-2b0111e3f5f7",
+   "dispositivo": "Art. 27, § 1º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-2ba3522ee262",
+   "dispositivo": "Art. 27, § 2º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-a9fa6ba81c7e",
+   "dispositivo": "Art. 27, § 3º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-d6419dc64809",
+   "dispositivo": "Art. 27, § 4º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-668c27264272",
+   "dispositivo": "Art. 27, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-05933a266358",
+   "dispositivo": "Art. 27, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-4bdd5ee19f2b",
+   "dispositivo": "Art. 27, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-8680990b3741",
+   "dispositivo": "Art. 27, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-76b866482ce3",
+   "dispositivo": "Art. 28, § 2º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-729aed909e5b",
+   "dispositivo": "Art. 28, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-autoral-inedita-w4-13",
+   "dispositivo": "Autoral • Art. 25 — competência remanescente",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-inedita-w4-14",
+   "dispositivo": "Autoral • Art. 25, §3º — regiões metropolitanas",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-inedita-w4-15",
+   "dispositivo": "Autoral • Art. 28 — posse do Governador",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  }
+ ]
+}
