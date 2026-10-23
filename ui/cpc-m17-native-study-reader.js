@@ -67,6 +67,7 @@ function build(raw){
  const words=norm(raw).split(/\s+/).filter(Boolean).length;
  return {body,words,mins:Math.max(1,Math.round(words/205))};
 }
+function buildFromHtml(html,raw){let h=0;const body=String(html).replace(/<h([23])>([\s\S]*?)<\/h\1>/g,(m,l,t)=>{const txt=t.replace(/<[^>]+>/g,'').replace(/&amp;/g,'&');return '<h'+l+' id="cpcsec-'+(++h)+'-'+normKey(txt).replace(/\s+/g,'-').slice(0,60)+'">'+t+'</h'+l+'>'});const words=norm(raw).split(/\s+/).filter(Boolean).length;return {body,words,mins:Math.max(1,Math.round(words/205))}}
 function chapters(mode){return source()?.chapters?.[mode]||[]}
 function findHeading(ch){
  if(!current||!ch)return null;
@@ -113,7 +114,7 @@ function close(){
 function open(mode){
  const data=source(); if(!data){alert('Conteúdo do CPC M17 ainda está carregando.');return}
  close();
- const raw=mode==='summary'?data.summary:data.complete,parsed=build(raw),label=mode==='summary'?'Conteúdo resumido':'Conteúdo completo';
+ const raw=mode==='summary'?data.summary:data.complete,parsed=(mode==='summary'&&data.summaryHtml)?buildFromHtml(data.summaryHtml,raw):build(raw),label=mode==='summary'?'Conteúdo resumido':'Conteúdo completo';
  const ov=document.createElement('div');ov.id=OVERLAY_ID;ov.className='bc-native-reader-overlay';
  ov.innerHTML='<section class="bc-native-reader" role="dialog" aria-modal="true">'+
  '<header class="bc-native-reader-head"><div class="bc-native-reader-title"><b>CPC M17 — '+esc(data.title)+'</b><small>'+label+' • leitura incorporada à Base Completa</small></div><span class="bc-native-reader-meta">'+parsed.words.toLocaleString('pt-BR')+' palavras • ~'+parsed.mins+' min</span><button class="bc-native-reader-close" data-cpc-close>×</button><div class="bc-native-reader-progress-track"><div class="bc-native-reader-progress"></div></div></header>'+

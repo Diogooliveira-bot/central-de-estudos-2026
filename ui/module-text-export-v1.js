@@ -58,7 +58,7 @@ async function ensure(id){const loader=w.CentralDisciplineLoader;if(loader&&load
 async function packed(id){
  const civil=id==='civil',varName=civil?'CIVIL_NATIVE_PACKED_B64':'CPP_NATIVE_PACKED_B64',store=civil?'CIVIL_NATIVE_CONTENT':'CPP_NATIVE_CONTENT';
  if(w[store]&&Object.keys(w[store]).length)return w[store];
- if(!w[varName])await addScript(civil?'/content/civil/civil-native-content-packed.js?v=20261018civiljur1':'/content/cpp/cpp-native-content-packed.js?v=cpp20261023rev1');
+ if(!w[varName])await addScript(civil?'/content/civil/civil-native-content-packed.js?v=20261018civiljur1':'/content/cpp/cpp-native-content-packed.js?v=cpp20261005prod1');
  if(!w.DecompressionStream)throw Error('O navegador não suporta a descompactação deste curso');
  const bytes=Uint8Array.from(atob(w[varName]),c=>c.charCodeAt(0));
  const text=await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'))).text();
@@ -92,7 +92,7 @@ async function readDiscipline(id){
   return Object.values(idx.modules||{}).map(m=>({n:m.number,title:m.title,summary:content[m.uid]?.summaryHtml,summaryHtml:true,complete:null,note:'Teoria completa permanece no acervo legado'}));
  }
  const data=w.BASE_NATIVE_CONTENT?.[id];if(!data)throw Error('Fonte não carregada');
- return Object.entries(data).filter(([key,v])=>v&&typeof v==='object'&&(v.number||/^m\d+$/.test(key))).map(([key,v])=>({n:Number(v.number||key.slice(1)),title:v.title||'Módulo',summary:v.summary,complete:v.complete}));
+ return Object.entries(data).filter(([key,v])=>v&&typeof v==='object'&&(v.number||/^m\d+$/.test(key))).map(([key,v])=>({n:Number(v.number||key.slice(1)),title:v.title||'Módulo',summary:v.summaryHtml||v.summary,summaryHtml:!!v.summaryHtml,complete:v.complete}));
 }
 function makeText(d,row,mode){
  const raw=row[mode];if(typeof raw!=='string'||!raw.trim())return '';
