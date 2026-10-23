@@ -1,0 +1,1203 @@
+{
+  "schemaVersion": 1,
+  "examId": "trt8-2026-tecnico-administrativa-21",
+  "courseId": "trt8-tecnico-complementos-etapa5-16",
+  "title": "Complementos — Direito Administrativo e Direito do Trabalho",
+  "edition": "2026-10-22",
+  "releaseStatus": "draft_editorial_review",
+  "scope": "15 assuntos remanescentes. Aulas introdutórias; revisão jurídica obrigatória antes do uso por alunos.",
+  "sources": [
+    {
+      "id": "cf",
+      "label": "Constituição Federal",
+      "url": "https://www.planalto.gov.br/ccivil_03/constituicao/constituicaocompilado.htm"
+    },
+    {
+      "id": "clt",
+      "label": "CLT",
+      "url": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm"
+    },
+    {
+      "id": "lei13869",
+      "label": "Lei 13.869/2019",
+      "url": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2019/lei/l13869compilado.htm"
+    },
+    {
+      "id": "lei14133",
+      "label": "Lei 14.133/2021",
+      "url": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14133.htm"
+    },
+    {
+      "id": "lei11416",
+      "label": "Lei 11.416/2006",
+      "url": "https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2006/lei/l11416.htm"
+    },
+    {
+      "id": "cp",
+      "label": "Código Penal",
+      "url": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del2848compilado.htm"
+    },
+    {
+      "id": "cpc",
+      "label": "Código de Processo Civil",
+      "url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13105.htm"
+    },
+    {
+      "id": "lei13467",
+      "label": "Lei 13.467/2017",
+      "url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm"
+    },
+    {
+      "id": "lei11417",
+      "label": "Lei 11.417/2006",
+      "url": "https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2006/lei/l11417.htm"
+    },
+    {
+      "id": "tst",
+      "label": "Portal TST: confirmar jurisprudência vigente",
+      "url": "https://www.tst.jus.br/"
+    }
+  ],
+  "lessons": [
+    {
+      "topicId": "trt8-tec-21-adm-001",
+      "moduleId": "comp-5-16-m01",
+      "subjectId": "trt8-tec-21-adm",
+      "number": 1,
+      "title": "Administração Pública: conceitos e funções",
+      "goal": "Interpretar o tema, reconhecer sua fonte e resolver situações de prova sem extrapolar a legislação.",
+      "complete": {
+        "firstRead": [
+          "Sentido subjetivo: órgãos, agentes e entidades. Sentido objetivo: funções administrativas destinadas ao interesse público.",
+          "A atuação administrativa exige fundamento jurídico e observa os princípios do art. 37 da Constituição."
+        ],
+        "howItWorks": [
+          "Comece identificando os fatos relevantes e a fonte normativa do tema. Separe a regra geral, seu fundamento e as exceções efetivamente documentadas.",
+          "Ao resolver questão, rejeite alternativas que transformam tendências em regras absolutas; confirme a literalidade antes de escolher detalhes como prazo, composição ou penalidade."
+        ],
+        "workedExample": [
+          "Situação aplicada: um servidor do TRT-8 recebe uma questão sobre administração pública: conceitos e funções. Primeiro identifica qual regime jurídico incide; depois compara a conduta narrada com os requisitos da norma.",
+          "O raciocínio correto é demonstrar o fundamento da conclusão, sem supor que todo problema administrativo ou trabalhista se resolve pela mesma norma."
+        ],
+        "advanced": [
+          "Pegadinha: Confundir o órgão que presta serviço com a própria atividade administrativa. Para o exame, confronte o texto consolidado e as decisões vigentes do órgão competente.",
+          "Não confunda uma apostila de revisão com a fonte oficial. Questões de súmulas, tipicidade criminal, requisitos numéricos e alterações recentes exigem cotejo literal."
+        ]
+      },
+      "summary": [
+        "Sentido subjetivo: órgãos, agentes e entidades. Sentido objetivo: funções administrativas destinadas ao interesse público.",
+        "A atuação administrativa exige fundamento jurídico e observa os princípios do art. 37 da Constituição."
+      ],
+      "examTraps": [
+        "Confundir o órgão que presta serviço com a própria atividade administrativa.",
+        "Cuidado com palavras absolutas: sempre, nunca, automaticamente, exclusivamente."
+      ],
+      "questions": [
+        {
+          "stem": "Qual afirmação resume corretamente administração pública: conceitos e funções?",
+          "options": [
+            "Sentido subjetivo: órgãos, agentes e entidades. Sentido objetivo: funções administrativas destinadas ao interesse público.",
+            "O tema dispensa exame da legislação em vigor.",
+            "O assunto é disciplinado exclusivamente por normas internacionais.",
+            "A solução depende apenas da opinião do gestor."
+          ],
+          "correct": 0,
+          "commentary": "A primeira alternativa sintetiza o conceito estudado; as demais afastam indevidamente a fonte normativa pertinente."
+        },
+        {
+          "stem": "Qual conduta metodológica é adequada para resolver uma questão jurídica sobre este conteúdo?",
+          "options": [
+            "Usar somente apostilas antigas",
+            "Presumir a mesma regra em todas as categorias",
+            "Confrontar os fatos com a norma vigente e suas condições",
+            "Considerar toda irregularidade crime"
+          ],
+          "correct": 2,
+          "commentary": "A resposta deve apoiar-se no dispositivo atualizado e nos fatos relevantes, sem equiparações automáticas."
+        }
+      ],
+      "checklist": [
+        "Sei explicar o conceito em palavras próprias.",
+        "Distingo a norma aplicável de outra semelhante.",
+        "Identifico a pegadinha mais provável.",
+        "Resolvi as duas questões e entendi o comentário."
+      ],
+      "sourceIds": [
+        "cf",
+        "clt",
+        "lei13869",
+        "lei14133",
+        "lei11416",
+        "cp"
+      ],
+      "legalUpdateNote": "ATUALIZAÇÃO JURÍDICA NECESSÁRIA antes da publicação: conferir texto legislativo compilado e jurisprudência aplicável ao tópico.",
+      "notCovered": [
+        "Complemento introdutório. Não certifica cobertura integral do edital nem substitui as teorias completas existentes."
+      ]
+    },
+    {
+      "topicId": "trt8-tec-21-adm-008",
+      "moduleId": "comp-5-16-m02",
+      "subjectId": "trt8-tec-21-adm",
+      "number": 2,
+      "title": "Crimes de abuso de autoridade",
+      "goal": "Interpretar o tema, reconhecer sua fonte e resolver situações de prova sem extrapolar a legislação.",
+      "complete": {
+        "firstRead": [
+          "Lei 13.869/2019 define tipos penais cometidos por agentes públicos no exercício ou a pretexto da função.",
+          "Seu art. 1º exige finalidade específica de prejudicar alguém, beneficiar a si ou terceiro, ou atuar por capricho/satisfação pessoal. Divergência interpretativa isolada não configura abuso."
+        ],
+        "howItWorks": [
+          "Comece identificando os fatos relevantes e a fonte normativa do tema. Separe a regra geral, seu fundamento e as exceções efetivamente documentadas.",
+          "Ao resolver questão, rejeite alternativas que transformam tendências em regras absolutas; confirme a literalidade antes de escolher detalhes como prazo, composição ou penalidade."
+        ],
+        "workedExample": [
+          "Situação aplicada: um servidor do TRT-8 recebe uma questão sobre crimes de abuso de autoridade. Primeiro identifica qual regime jurídico incide; depois compara a conduta narrada com os requisitos da norma.",
+          "O raciocínio correto é demonstrar o fundamento da conclusão, sem supor que todo problema administrativo ou trabalhista se resolve pela mesma norma."
+        ],
+        "advanced": [
+          "Pegadinha: Tratar toda decisão equivocada como crime. Para o exame, confronte o texto consolidado e as decisões vigentes do órgão competente.",
+          "Não confunda uma apostila de revisão com a fonte oficial. Questões de súmulas, tipicidade criminal, requisitos numéricos e alterações recentes exigem cotejo literal."
+        ]
+      },
+      "summary": [
+        "Lei 13.869/2019 define tipos penais cometidos por agentes públicos no exercício ou a pretexto da função.",
+        "Seu art. 1º exige finalidade específica de prejudicar alguém, beneficiar a si ou terceiro, ou atuar por capricho/satisfação pessoal. Divergência interpretativa isolada não configura abuso."
+      ],
+      "examTraps": [
+        "Tratar toda decisão equivocada como crime.",
+        "Cuidado com palavras absolutas: sempre, nunca, automaticamente, exclusivamente."
+      ],
+      "questions": [
+        {
+          "stem": "Qual afirmação resume corretamente crimes de abuso de autoridade?",
+          "options": [
+            "Lei 13.869/2019 define tipos penais cometidos por agentes públicos no exercício ou a pretexto da função.",
+            "O tema dispensa exame da legislação em vigor.",
+            "O assunto é disciplinado exclusivamente por normas internacionais.",
+            "A solução depende apenas da opinião do gestor."
+          ],
+          "correct": 0,
+          "commentary": "A primeira alternativa sintetiza o conceito estudado; as demais afastam indevidamente a fonte normativa pertinente."
+        },
+        {
+          "stem": "Qual conduta metodológica é adequada para resolver uma questão jurídica sobre este conteúdo?",
+          "options": [
+            "Usar somente apostilas antigas",
+            "Presumir a mesma regra em todas as categorias",
+            "Confrontar os fatos com a norma vigente e suas condições",
+            "Considerar toda irregularidade crime"
+          ],
+          "correct": 2,
+          "commentary": "A resposta deve apoiar-se no dispositivo atualizado e nos fatos relevantes, sem equiparações automáticas."
+        }
+      ],
+      "checklist": [
+        "Sei explicar o conceito em palavras próprias.",
+        "Distingo a norma aplicável de outra semelhante.",
+        "Identifico a pegadinha mais provável.",
+        "Resolvi as duas questões e entendi o comentário."
+      ],
+      "sourceIds": [
+        "cf",
+        "clt",
+        "lei13869",
+        "lei14133",
+        "lei11416",
+        "cp"
+      ],
+      "legalUpdateNote": "ATUALIZAÇÃO JURÍDICA NECESSÁRIA antes da publicação: conferir texto legislativo compilado e jurisprudência aplicável ao tópico.",
+      "notCovered": [
+        "Complemento introdutório. Não certifica cobertura integral do edital nem substitui as teorias completas existentes."
+      ]
+    },
+    {
+      "topicId": "trt8-tec-21-adm-024",
+      "moduleId": "comp-5-16-m03",
+      "subjectId": "trt8-tec-21-adm",
+      "number": 3,
+      "title": "Crimes em licitações e contratos",
+      "goal": "Interpretar o tema, reconhecer sua fonte e resolver situações de prova sem extrapolar a legislação.",
+      "complete": {
+        "firstRead": [
+          "A Lei 14.133/2021 inseriu no Código Penal capítulo sobre crimes em licitações e contratos administrativos, a partir do art. 337-E.",
+          "A contratação direta pode ser legal nas hipóteses previstas; para falar em crime é indispensável identificar tipo penal e seus elementos."
+        ],
+        "howItWorks": [
+          "Comece identificando os fatos relevantes e a fonte normativa do tema. Separe a regra geral, seu fundamento e as exceções efetivamente documentadas.",
+          "Ao resolver questão, rejeite alternativas que transformam tendências em regras absolutas; confirme a literalidade antes de escolher detalhes como prazo, composição ou penalidade."
+        ],
+        "workedExample": [
+          "Situação aplicada: um servidor do TRT-8 recebe uma questão sobre crimes em licitações e contratos. Primeiro identifica qual regime jurídico incide; depois compara a conduta narrada com os requisitos da norma.",
+          "O raciocínio correto é demonstrar o fundamento da conclusão, sem supor que todo problema administrativo ou trabalhista se resolve pela mesma norma."
+        ],
+        "advanced": [
+          "Pegadinha: Confundir irregularidade contratual com tipicidade penal automática. Para o exame, confronte o texto consolidado e as decisões vigentes do órgão competente.",
+          "Não confunda uma apostila de revisão com a fonte oficial. Questões de súmulas, tipicidade criminal, requisitos numéricos e alterações recentes exigem cotejo literal."
+        ]
+      },
+      "summary": [
+        "A Lei 14.133/2021 inseriu no Código Penal capítulo sobre crimes em licitações e contratos administrativos, a partir do art. 337-E.",
+        "A contratação direta pode ser legal nas hipóteses previstas; para falar em crime é indispensável identificar tipo penal e seus elementos."
+      ],
+      "examTraps": [
+        "Confundir irregularidade contratual com tipicidade penal automática.",
+        "Cuidado com palavras absolutas: sempre, nunca, automaticamente, exclusivamente."
+      ],
+      "questions": [
+        {
+          "stem": "Qual afirmação resume corretamente crimes em licitações e contratos?",
+          "options": [
+            "A Lei 14.133/2021 inseriu no Código Penal capítulo sobre crimes em licitações e contratos administrativos, a partir do art. 337-E.",
+            "O tema dispensa exame da legislação em vigor.",
+            "O assunto é disciplinado exclusivamente por normas internacionais.",
+            "A solução depende apenas da opinião do gestor."
+          ],
+          "correct": 0,
+          "commentary": "A primeira alternativa sintetiza o conceito estudado; as demais afastam indevidamente a fonte normativa pertinente."
+        },
+        {
+          "stem": "Qual conduta metodológica é adequada para resolver uma questão jurídica sobre este conteúdo?",
+          "options": [
+            "Usar somente apostilas antigas",
+            "Presumir a mesma regra em todas as categorias",
+            "Confrontar os fatos com a norma vigente e suas condições",
+            "Considerar toda irregularidade crime"
+          ],
+          "correct": 2,
+          "commentary": "A resposta deve apoiar-se no dispositivo atualizado e nos fatos relevantes, sem equiparações automáticas."
+        }
+      ],
+      "checklist": [
+        "Sei explicar o conceito em palavras próprias.",
+        "Distingo a norma aplicável de outra semelhante.",
+        "Identifico a pegadinha mais provável.",
+        "Resolvi as duas questões e entendi o comentário."
+      ],
+      "sourceIds": [
+        "cf",
+        "clt",
+        "lei13869",
+        "lei14133",
+        "lei11416",
+        "cp"
+      ],
+      "legalUpdateNote": "ATUALIZAÇÃO JURÍDICA NECESSÁRIA antes da publicação: conferir texto legislativo compilado e jurisprudência aplicável ao tópico.",
+      "notCovered": [
+        "Complemento introdutório. Não certifica cobertura integral do edital nem substitui as teorias completas existentes."
+      ]
+    },
+    {
+      "topicId": "trt8-tec-21-adm-031",
+      "moduleId": "comp-5-16-m04",
+      "subjectId": "trt8-tec-21-adm",
+      "number": 4,
+      "title": "Lei 11.416/2006: carreiras do Judiciário",
+      "goal": "Interpretar o tema, reconhecer sua fonte e resolver situações de prova sem extrapolar a legislação.",
+      "complete": {
+        "firstRead": [
+          "A Lei 11.416/2006 rege carreiras dos quadros de pessoal do Poder Judiciário da União e enumera Analista, Técnico e Auxiliar Judiciário.",
+          "As atribuições e requisitos devem ser conferidos em texto consolidado, observando alterações legais e regulamentação pertinente."
+        ],
+        "howItWorks": [
+          "Comece identificando os fatos relevantes e a fonte normativa do tema. Separe a regra geral, seu fundamento e as exceções efetivamente documentadas.",
+          "Ao resolver questão, rejeite alternativas que transformam tendências em regras absolutas; confirme a literalidade antes de escolher detalhes como prazo, composição ou penalidade."
+        ],
+        "workedExample": [
+          "Situação aplicada: um servidor do TRT-8 recebe uma questão sobre lei 11.416/2006: carreiras do judiciário. Primeiro identifica qual regime jurídico incide; depois compara a conduta narrada com os requisitos da norma.",
+          "O raciocínio correto é demonstrar o fundamento da conclusão, sem supor que todo problema administrativo ou trabalhista se resolve pela mesma norma."
+        ],
+        "advanced": [
+          "Pegadinha: Memorizar a tabela de cargos de 2006 sem conferir atualizações. Para o exame, confronte o texto consolidado e as decisões vigentes do órgão competente.",
+          "Não confunda uma apostila de revisão com a fonte oficial. Questões de súmulas, tipicidade criminal, requisitos numéricos e alterações recentes exigem cotejo literal."
+        ]
+      },
+      "summary": [
+        "A Lei 11.416/2006 rege carreiras dos quadros de pessoal do Poder Judiciário da União e enumera Analista, Técnico e Auxiliar Judiciário.",
+        "As atribuições e requisitos devem ser conferidos em texto consolidado, observando alterações legais e regulamentação pertinente."
+      ],
+      "examTraps": [
+        "Memorizar a tabela de cargos de 2006 sem conferir atualizações.",
+        "Cuidado com palavras absolutas: sempre, nunca, automaticamente, exclusivamente."
+      ],
+      "questions": [
+        {
+          "stem": "Qual afirmação resume corretamente lei 11.416/2006: carreiras do judiciário?",
+          "options": [
+            "A Lei 11.416/2006 rege carreiras dos quadros de pessoal do Poder Judiciário da União e enumera Analista, Técnico e Auxiliar Judiciário.",
+            "O tema dispensa exame da legislação em vigor.",
+            "O assunto é disciplinado exclusivamente por normas internacionais.",
+            "A solução depende apenas da opinião do gestor."
+          ],
+          "correct": 0,
+          "commentary": "A primeira alternativa sintetiza o conceito estudado; as demais afastam indevidamente a fonte normativa pertinente."
+        },
+        {
+          "stem": "Qual conduta metodológica é adequada para resolver uma questão jurídica sobre este conteúdo?",
+          "options": [
+            "Usar somente apostilas antigas",
+            "Presumir a mesma regra em todas as categorias",
+            "Confrontar os fatos com a norma vigente e suas condições",
+            "Considerar toda irregularidade crime"
+          ],
+          "correct": 2,
+          "commentary": "A resposta deve apoiar-se no dispositivo atualizado e nos fatos relevantes, sem equiparações automáticas."
+        }
+      ],
+      "checklist": [
+        "Sei explicar o conceito em palavras próprias.",
+        "Distingo a norma aplicável de outra semelhante.",
+        "Identifico a pegadinha mais provável.",
+        "Resolvi as duas questões e entendi o comentário."
+      ],
+      "sourceIds": [
+        "cf",
+        "clt",
+        "lei13869",
+        "lei14133",
+        "lei11416",
+        "cp"
+      ],
+      "legalUpdateNote": "ATUALIZAÇÃO JURÍDICA NECESSÁRIA antes da publicação: conferir texto legislativo compilado e jurisprudência aplicável ao tópico.",
+      "notCovered": [
+        "Complemento introdutório. Não certifica cobertura integral do edital nem substitui as teorias completas existentes."
+      ]
+    },
+    {
+      "topicId": "trt8-tec-21-adm-033",
+      "moduleId": "comp-5-16-m05",
+      "subjectId": "trt8-tec-21-adm",
+      "number": 5,
+      "title": "Regime de emprego público e CLT",
+      "goal": "Interpretar o tema, reconhecer sua fonte e resolver situações de prova sem extrapolar a legislação.",
+      "complete": {
+        "firstRead": [
+          "Cargo público e emprego público têm natureza jurídica distinta; o emprego público é vínculo contratual regido em regra pela CLT, sujeito também a normas públicas.",
+          "A seleção por concurso não converte todo vínculo em cargo estatutário. Examine a lei que instituiu cargo ou emprego e o regime aplicável."
+        ],
+        "howItWorks": [
+          "Comece identificando os fatos relevantes e a fonte normativa do tema. Separe a regra geral, seu fundamento e as exceções efetivamente documentadas.",
+          "Ao resolver questão, rejeite alternativas que transformam tendências em regras absolutas; confirme a literalidade antes de escolher detalhes como prazo, composição ou penalidade."
+        ],
+        "workedExample": [
+          "Situação aplicada: um servidor do TRT-8 recebe uma questão sobre regime de emprego público e clt. Primeiro identifica qual regime jurídico incide; depois compara a conduta narrada com os requisitos da norma.",
+          "O raciocínio correto é demonstrar o fundamento da conclusão, sem supor que todo problema administrativo ou trabalhista se resolve pela mesma norma."
+        ],
+        "advanced": [
+          "Pegadinha: Supor que todo ingresso por concurso implica estatuto. Para o exame, confronte o texto consolidado e as decisões vigentes do órgão competente.",
+          "Não confunda uma apostila de revisão com a fonte oficial. Questões de súmulas, tipicidade criminal, requisitos numéricos e alterações recentes exigem cotejo literal."
+        ]
+      },
+      "summary": [
+        "Cargo público e emprego público têm natureza jurídica distinta; o emprego público é vínculo contratual regido em regra pela CLT, sujeito também a normas públicas.",
+        "A seleção por concurso não converte todo vínculo em cargo estatutário. Examine a lei que instituiu cargo ou emprego e o regime aplicável."
+      ],
+      "examTraps": [
+        "Supor que todo ingresso por concurso implica estatuto.",
+        "Cuidado com palavras absolutas: sempre, nunca, automaticamente, exclusivamente."
+      ],
+      "questions": [
+        {
+          "stem": "Qual afirmação resume corretamente regime de emprego público e clt?",
+          "options": [
+            "Cargo público e emprego público têm natureza jurídica distinta; o emprego público é vínculo contratual regido em regra pela CLT, sujeito também a normas públicas.",
+            "O tema dispensa exame da legislação em vigor.",
+            "O assunto é disciplinado exclusivamente por normas internacionais.",
+            "A solução depende apenas da opinião do gestor."
+          ],
+          "correct": 0,
+          "commentary": "A primeira alternativa sintetiza o conceito estudado; as demais afastam indevidamente a fonte normativa pertinente."
+        },
+        {
+          "stem": "Qual conduta metodológica é adequada para resolver uma questão jurídica sobre este conteúdo?",
+          "options": [
+            "Usar somente apostilas antigas",
+            "Presumir a mesma regra em todas as categorias",
+            "Confrontar os fatos com a norma vigente e suas condições",
+            "Considerar toda irregularidade crime"
+          ],
+          "correct": 2,
+          "commentary": "A resposta deve apoiar-se no dispositivo atualizado e nos fatos relevantes, sem equiparações automáticas."
+        }
+      ],
+      "checklist": [
+        "Sei explicar o conceito em palavras próprias.",
+        "Distingo a norma aplicável de outra semelhante.",
+        "Identifico a pegadinha mais provável.",
+        "Resolvi as duas questões e entendi o comentário."
+      ],
+      "sourceIds": [
+        "cf",
+        "clt",
+        "lei13869",
+        "lei14133",
+        "lei11416",
+        "cp"
+      ],
+      "legalUpdateNote": "ATUALIZAÇÃO JURÍDICA NECESSÁRIA antes da publicação: conferir texto legislativo compilado e jurisprudência aplicável ao tópico.",
+      "notCovered": [
+        "Complemento introdutório. Não certifica cobertura integral do edital nem substitui as teorias completas existentes."
+      ]
+    },
+    {
+      "topicId": "trt8-tec-21-trab-002",
+      "moduleId": "comp-5-16-m06",
+      "subjectId": "trt8-tec-21-trab",
+      "number": 6,
+      "title": "Direitos constitucionais do trabalhador",
+      "goal": "Interpretar o tema, reconhecer sua fonte e resolver situações de prova sem extrapolar a legislação.",
+      "complete": {
+        "firstRead": [
+          "O art. 7º da Constituição reúne direitos fundamentais de trabalhadores urbanos e rurais, com proteção salarial, jornada, repouso, férias e igualdade.",
+          "Algumas regras constitucionais remetem a lei ou negociação coletiva: a análise correta exige localizar o inciso e confrontar normas complementares."
+        ],
+        "howItWorks": [
+          "Comece identificando os fatos relevantes e a fonte normativa do tema. Separe a regra geral, seu fundamento e as exceções efetivamente documentadas.",
+          "Ao resolver questão, rejeite alternativas que transformam tendências em regras absolutas; confirme a literalidade antes de escolher detalhes como prazo, composição ou penalidade."
+        ],
+        "workedExample": [
+          "Situação aplicada: um servidor do TRT-8 recebe uma questão sobre direitos constitucionais do trabalhador. Primeiro identifica qual regime jurídico incide; depois compara a conduta narrada com os requisitos da norma.",
+          "O raciocínio correto é demonstrar o fundamento da conclusão, sem supor que todo problema administrativo ou trabalhista se resolve pela mesma norma."
+        ],
+        "advanced": [
+          "Pegadinha: Concluir que os incisos têm a mesma redação e exceções. Para o exame, confronte o texto consolidado e as decisões vigentes do órgão competente.",
+          "Não confunda uma apostila de revisão com a fonte oficial. Questões de súmulas, tipicidade criminal, requisitos numéricos e alterações recentes exigem cotejo literal."
+        ]
+      },
+      "summary": [
+        "O art. 7º da Constituição reúne direitos fundamentais de trabalhadores urbanos e rurais, com proteção salarial, jornada, repouso, férias e igualdade.",
+        "Algumas regras constitucionais remetem a lei ou negociação coletiva: a análise correta exige localizar o inciso e confrontar normas complementares."
+      ],
+      "examTraps": [
+        "Concluir que os incisos têm a mesma redação e exceções.",
+        "Cuidado com palavras absolutas: sempre, nunca, automaticamente, exclusivamente."
+      ],
+      "questions": [
+        {
+          "stem": "Qual afirmação resume corretamente direitos constitucionais do trabalhador?",
+          "options": [
+            "O art. 7º da Constituição reúne direitos fundamentais de trabalhadores urbanos e rurais, com proteção salarial, jornada, repouso, férias e igualdade.",
+            "O tema dispensa exame da legislação em vigor.",
+            "O assunto é disciplinado exclusivamente por normas internacionais.",
+            "A solução depende apenas da opinião do gestor."
+          ],
+          "correct": 0,
+          "commentary": "A primeira alternativa sintetiza o conceito estudado; as demais afastam indevidamente a fonte normativa pertinente."
+        },
+        {
+          "stem": "Qual conduta metodológica é adequada para resolver uma questão jurídica sobre este conteúdo?",
+          "options": [
+            "Usar somente apostilas antigas",
+            "Presumir a mesma regra em todas as categorias",
+            "Confrontar os fatos com a norma vigente e suas condições",
+            "Considerar toda irregularidade crime"
+          ],
+          "correct": 2,
+          "commentary": "A resposta deve apoiar-se no dispositivo atualizado e nos fatos relevantes, sem equiparações automáticas."
+        }
+      ],
+      "checklist": [
+        "Sei explicar o conceito em palavras próprias.",
+        "Distingo a norma aplicável de outra semelhante.",
+        "Identifico a pegadinha mais provável.",
+        "Resolvi as duas questões e entendi o comentário."
+      ],
+      "sourceIds": [
+        "cf",
+        "clt",
+        "cpc",
+        "lei13467",
+        "lei11417",
+        "tst"
+      ],
+      "legalUpdateNote": "ATUALIZAÇÃO JURÍDICA NECESSÁRIA antes da publicação: conferir texto legislativo compilado e jurisprudência aplicável ao tópico.",
+      "notCovered": [
+        "Complemento introdutório. Não certifica cobertura integral do edital nem substitui as teorias completas existentes."
+      ]
+    },
+    {
+      "topicId": "trt8-tec-21-trab-022",
+      "moduleId": "comp-5-16-m07",
+      "subjectId": "trt8-tec-21-trab",
+      "number": 7,
+      "title": "Proteção ao trabalho do menor",
+      "goal": "Interpretar o tema, reconhecer sua fonte e resolver situações de prova sem extrapolar a legislação.",
+      "complete": {
+        "firstRead": [
+          "A Constituição proíbe trabalho noturno, perigoso ou insalubre para menores de 18 anos e qualquer trabalho a menores de 16, salvo aprendizagem desde 14.",
+          "A aprendizagem tem regras próprias e não afasta as proibições constitucionais de exposição a perigo ou trabalho noturno."
+        ],
+        "howItWorks": [
+          "Comece identificando os fatos relevantes e a fonte normativa do tema. Separe a regra geral, seu fundamento e as exceções efetivamente documentadas.",
+          "Ao resolver questão, rejeite alternativas que transformam tendências em regras absolutas; confirme a literalidade antes de escolher detalhes como prazo, composição ou penalidade."
+        ],
+        "workedExample": [
+          "Situação aplicada: um servidor do TRT-8 recebe uma questão sobre proteção ao trabalho do menor. Primeiro identifica qual regime jurídico incide; depois compara a conduta narrada com os requisitos da norma.",
+          "O raciocínio correto é demonstrar o fundamento da conclusão, sem supor que todo problema administrativo ou trabalhista se resolve pela mesma norma."
+        ],
+        "advanced": [
+          "Pegadinha: Permitir trabalho insalubre a aprendiz menor de 18 anos. Para o exame, confronte o texto consolidado e as decisões vigentes do órgão competente.",
+          "Não confunda uma apostila de revisão com a fonte oficial. Questões de súmulas, tipicidade criminal, requisitos numéricos e alterações recentes exigem cotejo literal."
+        ]
+      },
+      "summary": [
+        "A Constituição proíbe trabalho noturno, perigoso ou insalubre para menores de 18 anos e qualquer trabalho a menores de 16, salvo aprendizagem desde 14.",
+        "A aprendizagem tem regras próprias e não afasta as proibições constitucionais de exposição a perigo ou trabalho noturno."
+      ],
+      "examTraps": [
+        "Permitir trabalho insalubre a aprendiz menor de 18 anos.",
+        "Cuidado com palavras absolutas: sempre, nunca, automaticamente, exclusivamente."
+      ],
+      "questions": [
+        {
+          "stem": "Qual afirmação resume corretamente proteção ao trabalho do menor?",
+          "options": [
+            "A Constituição proíbe trabalho noturno, perigoso ou insalubre para menores de 18 anos e qualquer trabalho a menores de 16, salvo aprendizagem desde 14.",
+            "O tema dispensa exame da legislação em vigor.",
+            "O assunto é disciplinado exclusivamente por normas internacionais.",
+            "A solução depende apenas da opinião do gestor."
+          ],
+          "correct": 0,
+          "commentary": "A primeira alternativa sintetiza o conceito estudado; as demais afastam indevidamente a fonte normativa pertinente."
+        },
+        {
+          "stem": "Qual conduta metodológica é adequada para resolver uma questão jurídica sobre este conteúdo?",
+          "options": [
+            "Usar somente apostilas antigas",
+            "Presumir a mesma regra em todas as categorias",
+            "Confrontar os fatos com a norma vigente e suas condições",
+            "Considerar toda irregularidade crime"
+          ],
+          "correct": 2,
+          "commentary": "A resposta deve apoiar-se no dispositivo atualizado e nos fatos relevantes, sem equiparações automáticas."
+        }
+      ],
+      "checklist": [
+        "Sei explicar o conceito em palavras próprias.",
+        "Distingo a norma aplicável de outra semelhante.",
+        "Identifico a pegadinha mais provável.",
+        "Resolvi as duas questões e entendi o comentário."
+      ],
+      "sourceIds": [
+        "cf",
+        "clt",
+        "cpc",
+        "lei13467",
+        "lei11417",
+        "tst"
+      ],
+      "legalUpdateNote": "ATUALIZAÇÃO JURÍDICA NECESSÁRIA antes da publicação: conferir texto legislativo compilado e jurisprudência aplicável ao tópico.",
+      "notCovered": [
+        "Complemento introdutório. Não certifica cobertura integral do edital nem substitui as teorias completas existentes."
+      ]
+    },
+    {
+      "topicId": "trt8-tec-21-trab-023",
+      "moduleId": "comp-5-16-m08",
+      "subjectId": "trt8-tec-21-trab",
+      "number": 8,
+      "title": "Proteção à gestante e licença-maternidade",
+      "goal": "Interpretar o tema, reconhecer sua fonte e resolver situações de prova sem extrapolar a legislação.",
+      "complete": {
+        "firstRead": [
+          "O art. 7º, XVIII, da Constituição prevê licença à gestante de 120 dias sem prejuízo do emprego e salário.",
+          "A estabilidade provisória da gestante está disciplinada no art. 10, II, b, do ADCT; licença e garantia de emprego são institutos diferentes."
+        ],
+        "howItWorks": [
+          "Comece identificando os fatos relevantes e a fonte normativa do tema. Separe a regra geral, seu fundamento e as exceções efetivamente documentadas.",
+          "Ao resolver questão, rejeite alternativas que transformam tendências em regras absolutas; confirme a literalidade antes de escolher detalhes como prazo, composição ou penalidade."
+        ],
+        "workedExample": [
+          "Situação aplicada: um servidor do TRT-8 recebe uma questão sobre proteção à gestante e licença-maternidade. Primeiro identifica qual regime jurídico incide; depois compara a conduta narrada com os requisitos da norma.",
+          "O raciocínio correto é demonstrar o fundamento da conclusão, sem supor que todo problema administrativo ou trabalhista se resolve pela mesma norma."
+        ],
+        "advanced": [
+          "Pegadinha: Tratar estabilidade e licença como um único prazo. Para o exame, confronte o texto consolidado e as decisões vigentes do órgão competente.",
+          "Não confunda uma apostila de revisão com a fonte oficial. Questões de súmulas, tipicidade criminal, requisitos numéricos e alterações recentes exigem cotejo literal."
+        ]
+      },
+      "summary": [
+        "O art. 7º, XVIII, da Constituição prevê licença à gestante de 120 dias sem prejuízo do emprego e salário.",
+        "A estabilidade provisória da gestante está disciplinada no art. 10, II, b, do ADCT; licença e garantia de emprego são institutos diferentes."
+      ],
+      "examTraps": [
+        "Tratar estabilidade e licença como um único prazo.",
+        "Cuidado com palavras absolutas: sempre, nunca, automaticamente, exclusivamente."
+      ],
+      "questions": [
+        {
+          "stem": "Qual afirmação resume corretamente proteção à gestante e licença-maternidade?",
+          "options": [
+            "O art. 7º, XVIII, da Constituição prevê licença à gestante de 120 dias sem prejuízo do emprego e salário.",
+            "O tema dispensa exame da legislação em vigor.",
+            "O assunto é disciplinado exclusivamente por normas internacionais.",
+            "A solução depende apenas da opinião do gestor."
+          ],
+          "correct": 0,
+          "commentary": "A primeira alternativa sintetiza o conceito estudado; as demais afastam indevidamente a fonte normativa pertinente."
+        },
+        {
+          "stem": "Qual conduta metodológica é adequada para resolver uma questão jurídica sobre este conteúdo?",
+          "options": [
+            "Usar somente apostilas antigas",
+            "Presumir a mesma regra em todas as categorias",
+            "Confrontar os fatos com a norma vigente e suas condições",
+            "Considerar toda irregularidade crime"
+          ],
+          "correct": 2,
+          "commentary": "A resposta deve apoiar-se no dispositivo atualizado e nos fatos relevantes, sem equiparações automáticas."
+        }
+      ],
+      "checklist": [
+        "Sei explicar o conceito em palavras próprias.",
+        "Distingo a norma aplicável de outra semelhante.",
+        "Identifico a pegadinha mais provável.",
+        "Resolvi as duas questões e entendi o comentário."
+      ],
+      "sourceIds": [
+        "cf",
+        "clt",
+        "cpc",
+        "lei13467",
+        "lei11417",
+        "tst"
+      ],
+      "legalUpdateNote": "ATUALIZAÇÃO JURÍDICA NECESSÁRIA antes da publicação: conferir texto legislativo compilado e jurisprudência aplicável ao tópico.",
+      "notCovered": [
+        "Complemento introdutório. Não certifica cobertura integral do edital nem substitui as teorias completas existentes."
+      ]
+    },
+    {
+      "topicId": "trt8-tec-21-trab-025",
+      "moduleId": "comp-5-16-m09",
+      "subjectId": "trt8-tec-21-trab",
+      "number": 9,
+      "title": "Comissões de Conciliação Prévia e transação",
+      "goal": "Interpretar o tema, reconhecer sua fonte e resolver situações de prova sem extrapolar a legislação.",
+      "complete": {
+        "firstRead": [
+          "As Comissões de Conciliação Prévia da CLT buscam solução consensual de conflitos individuais do trabalho.",
+          "A tentativa prévia não é condição compulsória geral para acessar o Judiciário. Renúncia é abdicação de direito; transação pressupõe concessões recíprocas e limites jurídicos."
+        ],
+        "howItWorks": [
+          "Comece identificando os fatos relevantes e a fonte normativa do tema. Separe a regra geral, seu fundamento e as exceções efetivamente documentadas.",
+          "Ao resolver questão, rejeite alternativas que transformam tendências em regras absolutas; confirme a literalidade antes de escolher detalhes como prazo, composição ou penalidade."
+        ],
+        "workedExample": [
+          "Situação aplicada: um servidor do TRT-8 recebe uma questão sobre comissões de conciliação prévia e transação. Primeiro identifica qual regime jurídico incide; depois compara a conduta narrada com os requisitos da norma.",
+          "O raciocínio correto é demonstrar o fundamento da conclusão, sem supor que todo problema administrativo ou trabalhista se resolve pela mesma norma."
+        ],
+        "advanced": [
+          "Pegadinha: Confundir conciliação voluntária com impedimento para ajuizar ação. Para o exame, confronte o texto consolidado e as decisões vigentes do órgão competente.",
+          "Não confunda uma apostila de revisão com a fonte oficial. Questões de súmulas, tipicidade criminal, requisitos numéricos e alterações recentes exigem cotejo literal."
+        ]
+      },
+      "summary": [
+        "As Comissões de Conciliação Prévia da CLT buscam solução consensual de conflitos individuais do trabalho.",
+        "A tentativa prévia não é condição compulsória geral para acessar o Judiciário. Renúncia é abdicação de direito; transação pressupõe concessões recíprocas e limites jurídicos."
+      ],
+      "examTraps": [
+        "Confundir conciliação voluntária com impedimento para ajuizar ação.",
+        "Cuidado com palavras absolutas: sempre, nunca, automaticamente, exclusivamente."
+      ],
+      "questions": [
+        {
+          "stem": "Qual afirmação resume corretamente comissões de conciliação prévia e transação?",
+          "options": [
+            "As Comissões de Conciliação Prévia da CLT buscam solução consensual de conflitos individuais do trabalho.",
+            "O tema dispensa exame da legislação em vigor.",
+            "O assunto é disciplinado exclusivamente por normas internacionais.",
+            "A solução depende apenas da opinião do gestor."
+          ],
+          "correct": 0,
+          "commentary": "A primeira alternativa sintetiza o conceito estudado; as demais afastam indevidamente a fonte normativa pertinente."
+        },
+        {
+          "stem": "Qual conduta metodológica é adequada para resolver uma questão jurídica sobre este conteúdo?",
+          "options": [
+            "Usar somente apostilas antigas",
+            "Presumir a mesma regra em todas as categorias",
+            "Confrontar os fatos com a norma vigente e suas condições",
+            "Considerar toda irregularidade crime"
+          ],
+          "correct": 2,
+          "commentary": "A resposta deve apoiar-se no dispositivo atualizado e nos fatos relevantes, sem equiparações automáticas."
+        }
+      ],
+      "checklist": [
+        "Sei explicar o conceito em palavras próprias.",
+        "Distingo a norma aplicável de outra semelhante.",
+        "Identifico a pegadinha mais provável.",
+        "Resolvi as duas questões e entendi o comentário."
+      ],
+      "sourceIds": [
+        "cf",
+        "clt",
+        "cpc",
+        "lei13467",
+        "lei11417",
+        "tst"
+      ],
+      "legalUpdateNote": "ATUALIZAÇÃO JURÍDICA NECESSÁRIA antes da publicação: conferir texto legislativo compilado e jurisprudência aplicável ao tópico.",
+      "notCovered": [
+        "Complemento introdutório. Não certifica cobertura integral do edital nem substitui as teorias completas existentes."
+      ]
+    },
+    {
+      "topicId": "trt8-tec-21-trab-027",
+      "moduleId": "comp-5-16-m10",
+      "subjectId": "trt8-tec-21-trab",
+      "number": 10,
+      "title": "Danos material e moral trabalhistas",
+      "goal": "Interpretar o tema, reconhecer sua fonte e resolver situações de prova sem extrapolar a legislação.",
+      "complete": {
+        "firstRead": [
+          "Dano material repercute no patrimônio; dano extrapatrimonial protege interesses da personalidade juridicamente tutelados.",
+          "A responsabilidade exige análise da conduta, dano, nexo e regime jurídico aplicável; o valor reparatório depende da legislação e jurisprudência."
+        ],
+        "howItWorks": [
+          "Comece identificando os fatos relevantes e a fonte normativa do tema. Separe a regra geral, seu fundamento e as exceções efetivamente documentadas.",
+          "Ao resolver questão, rejeite alternativas que transformam tendências em regras absolutas; confirme a literalidade antes de escolher detalhes como prazo, composição ou penalidade."
+        ],
+        "workedExample": [
+          "Situação aplicada: um servidor do TRT-8 recebe uma questão sobre danos material e moral trabalhistas. Primeiro identifica qual regime jurídico incide; depois compara a conduta narrada com os requisitos da norma.",
+          "O raciocínio correto é demonstrar o fundamento da conclusão, sem supor que todo problema administrativo ou trabalhista se resolve pela mesma norma."
+        ],
+        "advanced": [
+          "Pegadinha: Presumir reparação automática para todo dissabor cotidiano. Para o exame, confronte o texto consolidado e as decisões vigentes do órgão competente.",
+          "Não confunda uma apostila de revisão com a fonte oficial. Questões de súmulas, tipicidade criminal, requisitos numéricos e alterações recentes exigem cotejo literal."
+        ]
+      },
+      "summary": [
+        "Dano material repercute no patrimônio; dano extrapatrimonial protege interesses da personalidade juridicamente tutelados.",
+        "A responsabilidade exige análise da conduta, dano, nexo e regime jurídico aplicável; o valor reparatório depende da legislação e jurisprudência."
+      ],
+      "examTraps": [
+        "Presumir reparação automática para todo dissabor cotidiano.",
+        "Cuidado com palavras absolutas: sempre, nunca, automaticamente, exclusivamente."
+      ],
+      "questions": [
+        {
+          "stem": "Qual afirmação resume corretamente danos material e moral trabalhistas?",
+          "options": [
+            "Dano material repercute no patrimônio; dano extrapatrimonial protege interesses da personalidade juridicamente tutelados.",
+            "O tema dispensa exame da legislação em vigor.",
+            "O assunto é disciplinado exclusivamente por normas internacionais.",
+            "A solução depende apenas da opinião do gestor."
+          ],
+          "correct": 0,
+          "commentary": "A primeira alternativa sintetiza o conceito estudado; as demais afastam indevidamente a fonte normativa pertinente."
+        },
+        {
+          "stem": "Qual conduta metodológica é adequada para resolver uma questão jurídica sobre este conteúdo?",
+          "options": [
+            "Usar somente apostilas antigas",
+            "Presumir a mesma regra em todas as categorias",
+            "Confrontar os fatos com a norma vigente e suas condições",
+            "Considerar toda irregularidade crime"
+          ],
+          "correct": 2,
+          "commentary": "A resposta deve apoiar-se no dispositivo atualizado e nos fatos relevantes, sem equiparações automáticas."
+        }
+      ],
+      "checklist": [
+        "Sei explicar o conceito em palavras próprias.",
+        "Distingo a norma aplicável de outra semelhante.",
+        "Identifico a pegadinha mais provável.",
+        "Resolvi as duas questões e entendi o comentário."
+      ],
+      "sourceIds": [
+        "cf",
+        "clt",
+        "cpc",
+        "lei13467",
+        "lei11417",
+        "tst"
+      ],
+      "legalUpdateNote": "ATUALIZAÇÃO JURÍDICA NECESSÁRIA antes da publicação: conferir texto legislativo compilado e jurisprudência aplicável ao tópico.",
+      "notCovered": [
+        "Complemento introdutório. Não certifica cobertura integral do edital nem substitui as teorias completas existentes."
+      ]
+    },
+    {
+      "topicId": "trt8-tec-21-trab-028",
+      "moduleId": "comp-5-16-m11",
+      "subjectId": "trt8-tec-21-trab",
+      "number": 11,
+      "title": "IRDR e IAC: precedentes",
+      "goal": "Interpretar o tema, reconhecer sua fonte e resolver situações de prova sem extrapolar a legislação.",
+      "complete": {
+        "firstRead": [
+          "IRDR trata de questões de direito repetitivas nos requisitos do CPC; IAC envolve questão relevante com grande repercussão sem repetição múltipla como pressuposto central.",
+          "Ambos exigem procedimento e órgão competente. Nem toda decisão isolada constitui precedente vinculante."
+        ],
+        "howItWorks": [
+          "Comece identificando os fatos relevantes e a fonte normativa do tema. Separe a regra geral, seu fundamento e as exceções efetivamente documentadas.",
+          "Ao resolver questão, rejeite alternativas que transformam tendências em regras absolutas; confirme a literalidade antes de escolher detalhes como prazo, composição ou penalidade."
+        ],
+        "workedExample": [
+          "Situação aplicada: um servidor do TRT-8 recebe uma questão sobre irdr e iac: precedentes. Primeiro identifica qual regime jurídico incide; depois compara a conduta narrada com os requisitos da norma.",
+          "O raciocínio correto é demonstrar o fundamento da conclusão, sem supor que todo problema administrativo ou trabalhista se resolve pela mesma norma."
+        ],
+        "advanced": [
+          "Pegadinha: Tratar IAC e IRDR como institutos idênticos. Para o exame, confronte o texto consolidado e as decisões vigentes do órgão competente.",
+          "Não confunda uma apostila de revisão com a fonte oficial. Questões de súmulas, tipicidade criminal, requisitos numéricos e alterações recentes exigem cotejo literal."
+        ]
+      },
+      "summary": [
+        "IRDR trata de questões de direito repetitivas nos requisitos do CPC; IAC envolve questão relevante com grande repercussão sem repetição múltipla como pressuposto central.",
+        "Ambos exigem procedimento e órgão competente. Nem toda decisão isolada constitui precedente vinculante."
+      ],
+      "examTraps": [
+        "Tratar IAC e IRDR como institutos idênticos.",
+        "Cuidado com palavras absolutas: sempre, nunca, automaticamente, exclusivamente."
+      ],
+      "questions": [
+        {
+          "stem": "Qual afirmação resume corretamente irdr e iac: precedentes?",
+          "options": [
+            "IRDR trata de questões de direito repetitivas nos requisitos do CPC; IAC envolve questão relevante com grande repercussão sem repetição múltipla como pressuposto central.",
+            "O tema dispensa exame da legislação em vigor.",
+            "O assunto é disciplinado exclusivamente por normas internacionais.",
+            "A solução depende apenas da opinião do gestor."
+          ],
+          "correct": 0,
+          "commentary": "A primeira alternativa sintetiza o conceito estudado; as demais afastam indevidamente a fonte normativa pertinente."
+        },
+        {
+          "stem": "Qual conduta metodológica é adequada para resolver uma questão jurídica sobre este conteúdo?",
+          "options": [
+            "Usar somente apostilas antigas",
+            "Presumir a mesma regra em todas as categorias",
+            "Confrontar os fatos com a norma vigente e suas condições",
+            "Considerar toda irregularidade crime"
+          ],
+          "correct": 2,
+          "commentary": "A resposta deve apoiar-se no dispositivo atualizado e nos fatos relevantes, sem equiparações automáticas."
+        }
+      ],
+      "checklist": [
+        "Sei explicar o conceito em palavras próprias.",
+        "Distingo a norma aplicável de outra semelhante.",
+        "Identifico a pegadinha mais provável.",
+        "Resolvi as duas questões e entendi o comentário."
+      ],
+      "sourceIds": [
+        "cf",
+        "clt",
+        "cpc",
+        "lei13467",
+        "lei11417",
+        "tst"
+      ],
+      "legalUpdateNote": "ATUALIZAÇÃO JURÍDICA NECESSÁRIA antes da publicação: conferir texto legislativo compilado e jurisprudência aplicável ao tópico.",
+      "notCovered": [
+        "Complemento introdutório. Não certifica cobertura integral do edital nem substitui as teorias completas existentes."
+      ]
+    },
+    {
+      "topicId": "trt8-tec-21-trab-029",
+      "moduleId": "comp-5-16-m12",
+      "subjectId": "trt8-tec-21-trab",
+      "number": 12,
+      "title": "Súmulas e OJs do TST",
+      "goal": "Interpretar o tema, reconhecer sua fonte e resolver situações de prova sem extrapolar a legislação.",
+      "complete": {
+        "firstRead": [
+          "Súmulas e Orientações Jurisprudenciais sintetizam entendimentos no âmbito do Tribunal Superior do Trabalho.",
+          "É indispensável verificar redação, órgão emissor, vigência e eventual cancelamento do verbete no repertório oficial antes de apontá-lo como atual."
+        ],
+        "howItWorks": [
+          "Comece identificando os fatos relevantes e a fonte normativa do tema. Separe a regra geral, seu fundamento e as exceções efetivamente documentadas.",
+          "Ao resolver questão, rejeite alternativas que transformam tendências em regras absolutas; confirme a literalidade antes de escolher detalhes como prazo, composição ou penalidade."
+        ],
+        "workedExample": [
+          "Situação aplicada: um servidor do TRT-8 recebe uma questão sobre súmulas e ojs do tst. Primeiro identifica qual regime jurídico incide; depois compara a conduta narrada com os requisitos da norma.",
+          "O raciocínio correto é demonstrar o fundamento da conclusão, sem supor que todo problema administrativo ou trabalhista se resolve pela mesma norma."
+        ],
+        "advanced": [
+          "Pegadinha: Usar verbete antigo sem verificar revisão ou cancelamento. Para o exame, confronte o texto consolidado e as decisões vigentes do órgão competente.",
+          "Não confunda uma apostila de revisão com a fonte oficial. Questões de súmulas, tipicidade criminal, requisitos numéricos e alterações recentes exigem cotejo literal."
+        ]
+      },
+      "summary": [
+        "Súmulas e Orientações Jurisprudenciais sintetizam entendimentos no âmbito do Tribunal Superior do Trabalho.",
+        "É indispensável verificar redação, órgão emissor, vigência e eventual cancelamento do verbete no repertório oficial antes de apontá-lo como atual."
+      ],
+      "examTraps": [
+        "Usar verbete antigo sem verificar revisão ou cancelamento.",
+        "Cuidado com palavras absolutas: sempre, nunca, automaticamente, exclusivamente."
+      ],
+      "questions": [
+        {
+          "stem": "Qual afirmação resume corretamente súmulas e ojs do tst?",
+          "options": [
+            "Súmulas e Orientações Jurisprudenciais sintetizam entendimentos no âmbito do Tribunal Superior do Trabalho.",
+            "O tema dispensa exame da legislação em vigor.",
+            "O assunto é disciplinado exclusivamente por normas internacionais.",
+            "A solução depende apenas da opinião do gestor."
+          ],
+          "correct": 0,
+          "commentary": "A primeira alternativa sintetiza o conceito estudado; as demais afastam indevidamente a fonte normativa pertinente."
+        },
+        {
+          "stem": "Qual conduta metodológica é adequada para resolver uma questão jurídica sobre este conteúdo?",
+          "options": [
+            "Usar somente apostilas antigas",
+            "Presumir a mesma regra em todas as categorias",
+            "Confrontar os fatos com a norma vigente e suas condições",
+            "Considerar toda irregularidade crime"
+          ],
+          "correct": 2,
+          "commentary": "A resposta deve apoiar-se no dispositivo atualizado e nos fatos relevantes, sem equiparações automáticas."
+        }
+      ],
+      "checklist": [
+        "Sei explicar o conceito em palavras próprias.",
+        "Distingo a norma aplicável de outra semelhante.",
+        "Identifico a pegadinha mais provável.",
+        "Resolvi as duas questões e entendi o comentário."
+      ],
+      "sourceIds": [
+        "cf",
+        "clt",
+        "cpc",
+        "lei13467",
+        "lei11417",
+        "tst"
+      ],
+      "legalUpdateNote": "ATUALIZAÇÃO JURÍDICA NECESSÁRIA antes da publicação: conferir texto legislativo compilado e jurisprudência aplicável ao tópico.",
+      "notCovered": [
+        "Complemento introdutório. Não certifica cobertura integral do edital nem substitui as teorias completas existentes."
+      ]
+    },
+    {
+      "topicId": "trt8-tec-21-trab-030",
+      "moduleId": "comp-5-16-m13",
+      "subjectId": "trt8-tec-21-trab",
+      "number": 13,
+      "title": "Súmulas Vinculantes do STF",
+      "goal": "Interpretar o tema, reconhecer sua fonte e resolver situações de prova sem extrapolar a legislação.",
+      "complete": {
+        "firstRead": [
+          "O art. 103-A da Constituição disciplina a súmula vinculante do Supremo Tribunal Federal, com requisitos específicos.",
+          "A vinculação deve ser examinada no alcance do enunciado. Súmula do TST não se transforma em súmula vinculante do STF."
+        ],
+        "howItWorks": [
+          "Comece identificando os fatos relevantes e a fonte normativa do tema. Separe a regra geral, seu fundamento e as exceções efetivamente documentadas.",
+          "Ao resolver questão, rejeite alternativas que transformam tendências em regras absolutas; confirme a literalidade antes de escolher detalhes como prazo, composição ou penalidade."
+        ],
+        "workedExample": [
+          "Situação aplicada: um servidor do TRT-8 recebe uma questão sobre súmulas vinculantes do stf. Primeiro identifica qual regime jurídico incide; depois compara a conduta narrada com os requisitos da norma.",
+          "O raciocínio correto é demonstrar o fundamento da conclusão, sem supor que todo problema administrativo ou trabalhista se resolve pela mesma norma."
+        ],
+        "advanced": [
+          "Pegadinha: Confundir enunciado comum com súmula vinculante. Para o exame, confronte o texto consolidado e as decisões vigentes do órgão competente.",
+          "Não confunda uma apostila de revisão com a fonte oficial. Questões de súmulas, tipicidade criminal, requisitos numéricos e alterações recentes exigem cotejo literal."
+        ]
+      },
+      "summary": [
+        "O art. 103-A da Constituição disciplina a súmula vinculante do Supremo Tribunal Federal, com requisitos específicos.",
+        "A vinculação deve ser examinada no alcance do enunciado. Súmula do TST não se transforma em súmula vinculante do STF."
+      ],
+      "examTraps": [
+        "Confundir enunciado comum com súmula vinculante.",
+        "Cuidado com palavras absolutas: sempre, nunca, automaticamente, exclusivamente."
+      ],
+      "questions": [
+        {
+          "stem": "Qual afirmação resume corretamente súmulas vinculantes do stf?",
+          "options": [
+            "O art. 103-A da Constituição disciplina a súmula vinculante do Supremo Tribunal Federal, com requisitos específicos.",
+            "O tema dispensa exame da legislação em vigor.",
+            "O assunto é disciplinado exclusivamente por normas internacionais.",
+            "A solução depende apenas da opinião do gestor."
+          ],
+          "correct": 0,
+          "commentary": "A primeira alternativa sintetiza o conceito estudado; as demais afastam indevidamente a fonte normativa pertinente."
+        },
+        {
+          "stem": "Qual conduta metodológica é adequada para resolver uma questão jurídica sobre este conteúdo?",
+          "options": [
+            "Usar somente apostilas antigas",
+            "Presumir a mesma regra em todas as categorias",
+            "Confrontar os fatos com a norma vigente e suas condições",
+            "Considerar toda irregularidade crime"
+          ],
+          "correct": 2,
+          "commentary": "A resposta deve apoiar-se no dispositivo atualizado e nos fatos relevantes, sem equiparações automáticas."
+        }
+      ],
+      "checklist": [
+        "Sei explicar o conceito em palavras próprias.",
+        "Distingo a norma aplicável de outra semelhante.",
+        "Identifico a pegadinha mais provável.",
+        "Resolvi as duas questões e entendi o comentário."
+      ],
+      "sourceIds": [
+        "cf",
+        "clt",
+        "cpc",
+        "lei13467",
+        "lei11417",
+        "tst"
+      ],
+      "legalUpdateNote": "ATUALIZAÇÃO JURÍDICA NECESSÁRIA antes da publicação: conferir texto legislativo compilado e jurisprudência aplicável ao tópico.",
+      "notCovered": [
+        "Complemento introdutório. Não certifica cobertura integral do edital nem substitui as teorias completas existentes."
+      ]
+    },
+    {
+      "topicId": "trt8-tec-21-trab-031",
+      "moduleId": "comp-5-16-m14",
+      "subjectId": "trt8-tec-21-trab",
+      "number": 14,
+      "title": "Instruções e atos normativos do TST",
+      "goal": "Interpretar o tema, reconhecer sua fonte e resolver situações de prova sem extrapolar a legislação.",
+      "complete": {
+        "firstRead": [
+          "O TST edita atos normativos nos limites de suas competências, sem poder afastar Constituição ou lei.",
+          "A análise exige confirmar espécie, finalidade, destinatários, vigência e relação hierárquica; materiais antigos podem conter instruções revogadas."
+        ],
+        "howItWorks": [
+          "Comece identificando os fatos relevantes e a fonte normativa do tema. Separe a regra geral, seu fundamento e as exceções efetivamente documentadas.",
+          "Ao resolver questão, rejeite alternativas que transformam tendências em regras absolutas; confirme a literalidade antes de escolher detalhes como prazo, composição ou penalidade."
+        ],
+        "workedExample": [
+          "Situação aplicada: um servidor do TRT-8 recebe uma questão sobre instruções e atos normativos do tst. Primeiro identifica qual regime jurídico incide; depois compara a conduta narrada com os requisitos da norma.",
+          "O raciocínio correto é demonstrar o fundamento da conclusão, sem supor que todo problema administrativo ou trabalhista se resolve pela mesma norma."
+        ],
+        "advanced": [
+          "Pegadinha: Supor que todo ato interno tem hierarquia de lei federal. Para o exame, confronte o texto consolidado e as decisões vigentes do órgão competente.",
+          "Não confunda uma apostila de revisão com a fonte oficial. Questões de súmulas, tipicidade criminal, requisitos numéricos e alterações recentes exigem cotejo literal."
+        ]
+      },
+      "summary": [
+        "O TST edita atos normativos nos limites de suas competências, sem poder afastar Constituição ou lei.",
+        "A análise exige confirmar espécie, finalidade, destinatários, vigência e relação hierárquica; materiais antigos podem conter instruções revogadas."
+      ],
+      "examTraps": [
+        "Supor que todo ato interno tem hierarquia de lei federal.",
+        "Cuidado com palavras absolutas: sempre, nunca, automaticamente, exclusivamente."
+      ],
+      "questions": [
+        {
+          "stem": "Qual afirmação resume corretamente instruções e atos normativos do tst?",
+          "options": [
+            "O TST edita atos normativos nos limites de suas competências, sem poder afastar Constituição ou lei.",
+            "O tema dispensa exame da legislação em vigor.",
+            "O assunto é disciplinado exclusivamente por normas internacionais.",
+            "A solução depende apenas da opinião do gestor."
+          ],
+          "correct": 0,
+          "commentary": "A primeira alternativa sintetiza o conceito estudado; as demais afastam indevidamente a fonte normativa pertinente."
+        },
+        {
+          "stem": "Qual conduta metodológica é adequada para resolver uma questão jurídica sobre este conteúdo?",
+          "options": [
+            "Usar somente apostilas antigas",
+            "Presumir a mesma regra em todas as categorias",
+            "Confrontar os fatos com a norma vigente e suas condições",
+            "Considerar toda irregularidade crime"
+          ],
+          "correct": 2,
+          "commentary": "A resposta deve apoiar-se no dispositivo atualizado e nos fatos relevantes, sem equiparações automáticas."
+        }
+      ],
+      "checklist": [
+        "Sei explicar o conceito em palavras próprias.",
+        "Distingo a norma aplicável de outra semelhante.",
+        "Identifico a pegadinha mais provável.",
+        "Resolvi as duas questões e entendi o comentário."
+      ],
+      "sourceIds": [
+        "cf",
+        "clt",
+        "cpc",
+        "lei13467",
+        "lei11417",
+        "tst"
+      ],
+      "legalUpdateNote": "ATUALIZAÇÃO JURÍDICA NECESSÁRIA antes da publicação: conferir texto legislativo compilado e jurisprudência aplicável ao tópico.",
+      "notCovered": [
+        "Complemento introdutório. Não certifica cobertura integral do edital nem substitui as teorias completas existentes."
+      ]
+    },
+    {
+      "topicId": "trt8-tec-21-trab-032",
+      "moduleId": "comp-5-16-m15",
+      "subjectId": "trt8-tec-21-trab",
+      "number": 15,
+      "title": "Reforma Trabalhista: Lei 13.467/2017",
+      "goal": "Interpretar o tema, reconhecer sua fonte e resolver situações de prova sem extrapolar a legislação.",
+      "complete": {
+        "firstRead": [
+          "A Lei 13.467/2017 alterou dispositivos da CLT sobre diversos temas, como contrato, jornada e negociação coletiva.",
+          "O estudo atual deve usar a CLT consolidada e alterações posteriores; textos de 2017 isoladamente não mostram necessariamente a regra vigente."
+        ],
+        "howItWorks": [
+          "Comece identificando os fatos relevantes e a fonte normativa do tema. Separe a regra geral, seu fundamento e as exceções efetivamente documentadas.",
+          "Ao resolver questão, rejeite alternativas que transformam tendências em regras absolutas; confirme a literalidade antes de escolher detalhes como prazo, composição ou penalidade."
+        ],
+        "workedExample": [
+          "Situação aplicada: um servidor do TRT-8 recebe uma questão sobre reforma trabalhista: lei 13.467/2017. Primeiro identifica qual regime jurídico incide; depois compara a conduta narrada com os requisitos da norma.",
+          "O raciocínio correto é demonstrar o fundamento da conclusão, sem supor que todo problema administrativo ou trabalhista se resolve pela mesma norma."
+        ],
+        "advanced": [
+          "Pegadinha: Supor que toda redação de 2017 permanece imutável. Para o exame, confronte o texto consolidado e as decisões vigentes do órgão competente.",
+          "Não confunda uma apostila de revisão com a fonte oficial. Questões de súmulas, tipicidade criminal, requisitos numéricos e alterações recentes exigem cotejo literal."
+        ]
+      },
+      "summary": [
+        "A Lei 13.467/2017 alterou dispositivos da CLT sobre diversos temas, como contrato, jornada e negociação coletiva.",
+        "O estudo atual deve usar a CLT consolidada e alterações posteriores; textos de 2017 isoladamente não mostram necessariamente a regra vigente."
+      ],
+      "examTraps": [
+        "Supor que toda redação de 2017 permanece imutável.",
+        "Cuidado com palavras absolutas: sempre, nunca, automaticamente, exclusivamente."
+      ],
+      "questions": [
+        {
+          "stem": "Qual afirmação resume corretamente reforma trabalhista: lei 13.467/2017?",
+          "options": [
+            "A Lei 13.467/2017 alterou dispositivos da CLT sobre diversos temas, como contrato, jornada e negociação coletiva.",
+            "O tema dispensa exame da legislação em vigor.",
+            "O assunto é disciplinado exclusivamente por normas internacionais.",
+            "A solução depende apenas da opinião do gestor."
+          ],
+          "correct": 0,
+          "commentary": "A primeira alternativa sintetiza o conceito estudado; as demais afastam indevidamente a fonte normativa pertinente."
+        },
+        {
+          "stem": "Qual conduta metodológica é adequada para resolver uma questão jurídica sobre este conteúdo?",
+          "options": [
+            "Usar somente apostilas antigas",
+            "Presumir a mesma regra em todas as categorias",
+            "Confrontar os fatos com a norma vigente e suas condições",
+            "Considerar toda irregularidade crime"
+          ],
+          "correct": 2,
+          "commentary": "A resposta deve apoiar-se no dispositivo atualizado e nos fatos relevantes, sem equiparações automáticas."
+        }
+      ],
+      "checklist": [
+        "Sei explicar o conceito em palavras próprias.",
+        "Distingo a norma aplicável de outra semelhante.",
+        "Identifico a pegadinha mais provável.",
+        "Resolvi as duas questões e entendi o comentário."
+      ],
+      "sourceIds": [
+        "cf",
+        "clt",
+        "cpc",
+        "lei13467",
+        "lei11417",
+        "tst"
+      ],
+      "legalUpdateNote": "ATUALIZAÇÃO JURÍDICA NECESSÁRIA antes da publicação: conferir texto legislativo compilado e jurisprudência aplicável ao tópico.",
+      "notCovered": [
+        "Complemento introdutório. Não certifica cobertura integral do edital nem substitui as teorias completas existentes."
+      ]
+    }
+  ]
+}
