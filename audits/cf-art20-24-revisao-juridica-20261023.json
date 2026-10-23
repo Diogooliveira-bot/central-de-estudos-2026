@@ -1,0 +1,2242 @@
+{
+ "data": "2026-10-23",
+ "fonte": "CF/88, texto compilado do Planalto (arquivo fornecido pelo responsável); redação vigente selecionada dispositivo a dispositivo",
+ "escopo": "tools/decorando-data-cf.js — subtópico União (CF, arts. 20 a 24)",
+ "total": 269,
+ "itens": [
+  {
+   "id": "cf-60dfee5a5cba",
+   "dispositivo": "Art. 20, I, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-c6397678e106",
+   "dispositivo": "Art. 20, II, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-4a57cd7ef813",
+   "dispositivo": "Art. 20, III, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-bc4abf67ef0e",
+   "dispositivo": "Art. 20, IV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-68510f9ecf73",
+   "dispositivo": "Art. 20, IX e X, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-36eedadf283d",
+   "dispositivo": "Art. 20, IX e XI c/c Art. 231, § 2º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-06c42d54d091",
+   "dispositivo": "Art. 20, IX, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-69368a031217",
+   "dispositivo": "Art. 20, IX, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-7fdecdbfc3ea",
+   "dispositivo": "Art. 20, IX, XI, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-91cd8935aa02",
+   "dispositivo": "Art. 20, V, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-07bb7c354f41",
+   "dispositivo": "Art. 20, VII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-71d8072ba4d3",
+   "dispositivo": "Art. 20, VII, c/c Art. 26, I, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-0333aa639f6e",
+   "dispositivo": "Art. 20, VIII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-11dba1580418",
+   "dispositivo": "Art. 20, X, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-2e519ce7b581",
+   "dispositivo": "Art. 20, X, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-7340894bd018",
+   "dispositivo": "Art. 20, X, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-06ffa4c71c28",
+   "dispositivo": "Art. 20, XI, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-d235019db459",
+   "dispositivo": "Art. 20, XI, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b59821525fa3",
+   "dispositivo": "Art. 20, XI, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-35669bf65c78",
+   "dispositivo": "Art. 20, XI, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-670d188350d3",
+   "dispositivo": "Art. 20, § 2º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-c41319bec3de",
+   "dispositivo": "Art. 20, § 2º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-72e191a597cf",
+   "dispositivo": "Arts. 20 e 26, III, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-12d24b3003eb",
+   "dispositivo": "Art. 21, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-0383c6113ae8",
+   "dispositivo": "Art. 21, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-be56aa13531e",
+   "dispositivo": "Art. 21, II, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-49ba3186a731",
+   "dispositivo": "Art. 21, IX, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-4b0f0282e5e2",
+   "dispositivo": "Art. 21, V, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-33464241f7db",
+   "dispositivo": "Art. 21, VI, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b86a5c85052c",
+   "dispositivo": "Art. 21, VI, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-e89d7da2fd66",
+   "dispositivo": "Art. 21, XI, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-08bf54fab6c1",
+   "dispositivo": "Art. 21, XII, \"b\", CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-4a5a02727222",
+   "dispositivo": "Art. 21, XII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-0e0803b341ea",
+   "dispositivo": "Art. 21, XII, b, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-aa46badf2644",
+   "dispositivo": "Art. 21, XII, e, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-985195b13277",
+   "dispositivo": "Art. 21, XII, f, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-6c783f44389d",
+   "dispositivo": "Art. 21, XII, “a”, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-0deff3b0abc9",
+   "dispositivo": "Art. 21, XIII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-38f52c267f0a",
+   "dispositivo": "Art. 21, XIV, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-fb74068ff372",
+   "dispositivo": "Art. 21, XIV, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-87e540aaca59",
+   "dispositivo": "Art. 21, XIV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-993ddbe77a27",
+   "dispositivo": "Art. 21, XIV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-ceeaff1848e9",
+   "dispositivo": "Art. 21, XVI, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-f9328af238be",
+   "dispositivo": "Art. 21, XVIII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-a3e8f042c57d",
+   "dispositivo": "Art. 21, XVIII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-056ee971555e",
+   "dispositivo": "Art. 21, XVIII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b34a9be08998",
+   "dispositivo": "Art. 21, XVIII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-a70dd07cc63a",
+   "dispositivo": "Art. 21, XX, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-f5dd9261da88",
+   "dispositivo": "Art. 21, XX, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-51bc5dfa38e8",
+   "dispositivo": "Art. 21, XX, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-259954967478",
+   "dispositivo": "Art. 21, XXIII, d, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-1c1b4abadb50",
+   "dispositivo": "Art. 21, XXIII, d, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-9b5f3268692e",
+   "dispositivo": "Art. 21, XXIII, d, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-9c18d71ec56e",
+   "dispositivo": "Art. 21, XXIV, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-06f8f4d6d3f3",
+   "dispositivo": "Art. 21, XXIV, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-dec992b7eb37",
+   "dispositivo": "Art. 21, XXIV, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-75153bfdaf28",
+   "dispositivo": "Art. 21, XXV, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-6900c392780b",
+   "dispositivo": "Arts. 21 e 164, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-32965f5fef81",
+   "dispositivo": "Arts. 21, II, e 22, I, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-149f8d521cc2",
+   "dispositivo": "Arts. 21, XII, “b” e 22, II, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-41ca201a8d0e",
+   "dispositivo": "Arts. 21, XIV c/c 144, § 6°, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-ddaeefd210de",
+   "dispositivo": "Arts. 21, XIV e 23, VII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-a7b13bce55c4",
+   "dispositivo": "Art. 22, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-7feeb8f1af0c",
+   "dispositivo": "Art. 22, I e XXV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-ac2c97033af0",
+   "dispositivo": "Art. 22, I e § único, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-282567b386b4",
+   "dispositivo": "Art. 22, I, 24, I, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b5f29128730a",
+   "dispositivo": "Art. 22, I, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b54725c06895",
+   "dispositivo": "Art. 22, I, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-f696d96726fd",
+   "dispositivo": "Art. 22, I, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-97ebd5c436bc",
+   "dispositivo": "Art. 22, I, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-10eab1de7644",
+   "dispositivo": "Art. 22, I, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-429a23e26e4a",
+   "dispositivo": "Art. 22, I, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-f488db2075c3",
+   "dispositivo": "Art. 22, I, § único, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-c36b23dd3e26",
+   "dispositivo": "Art. 22, I, § único, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-be10e6636cb6",
+   "dispositivo": "Art. 22, II, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-adb17a025ef9",
+   "dispositivo": "Art. 22, II, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-e4b201489deb",
+   "dispositivo": "Art. 22, II, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-2ea03486c7ae",
+   "dispositivo": "Art. 22, II, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-0513264a0b10",
+   "dispositivo": "Art. 22, II, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-1d140fe8b86a",
+   "dispositivo": "Art. 22, II, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-4568b19795f2",
+   "dispositivo": "Art. 22, III, § único, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-e11e0f50c24c",
+   "dispositivo": "Art. 22, IV e XII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-9b68312af3cc",
+   "dispositivo": "Art. 22, IV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-e5a49c7fcefd",
+   "dispositivo": "Art. 22, IV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-4419257926f0",
+   "dispositivo": "Art. 22, IV, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-77d9b0cd7f56",
+   "dispositivo": "Art. 22, IV, XII, § único, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-668b0b5d7af5",
+   "dispositivo": "Art. 22, VII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-71ab730870a5",
+   "dispositivo": "Art. 22, VII, § único, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-4b762a033e6a",
+   "dispositivo": "Art. 22, VIII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-4ab58780d18e",
+   "dispositivo": "Art. 22, VIII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-55d817813086",
+   "dispositivo": "Art. 22, X, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-bebdd4290b60",
+   "dispositivo": "Art. 22, XI, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-28add47d9d91",
+   "dispositivo": "Art. 22, XI, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-98d5e5bbc575",
+   "dispositivo": "Art. 22, XI, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-745ab3e9fc9f",
+   "dispositivo": "Art. 22, XI, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-699d912c767c",
+   "dispositivo": "Art. 22, XI, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-2fcc2afc453a",
+   "dispositivo": "Art. 22, XI, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-0c8fc838d824",
+   "dispositivo": "Art. 22, XII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-26ff8f0b9f1c",
+   "dispositivo": "Art. 22, XII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-a4b283d88517",
+   "dispositivo": "Art. 22, XII, § único, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-723cf68e1d3c",
+   "dispositivo": "Art. 22, XII, § único, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-f828b5454af8",
+   "dispositivo": "Art. 22, XIII, XXX, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-cb0e34f00c5c",
+   "dispositivo": "Art. 22, XIV, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-16b435f60a78",
+   "dispositivo": "Art. 22, XIV, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-abbb8f4864c9",
+   "dispositivo": "Art. 22, XIV, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-23f46104f7b1",
+   "dispositivo": "Art. 22, XIV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-14cf3ad5fa9b",
+   "dispositivo": "Art. 22, XIV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-a70978b42667",
+   "dispositivo": "Art. 22, XIX, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-d2afd9e9e702",
+   "dispositivo": "Art. 22, XV, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-a66fccffb37c",
+   "dispositivo": "Art. 22, XVII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-49216a944496",
+   "dispositivo": "Art. 22, XVIII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-af329242af14",
+   "dispositivo": "Art. 22, XX, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-805c7836c8a7",
+   "dispositivo": "Art. 22, XX, CF, c/c SV nº 2",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-61fecc8c30d8",
+   "dispositivo": "Art. 22, XXI, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-e30e80a55ccf",
+   "dispositivo": "Art. 22, XXI, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-a35daf315c8f",
+   "dispositivo": "Art. 22, XXI, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-bb945a359773",
+   "dispositivo": "Art. 22, XXI, XXII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-56ec7a60d142",
+   "dispositivo": "Art. 22, XXII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-6650b9855bfc",
+   "dispositivo": "Art. 22, XXIII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-572d543dcac9",
+   "dispositivo": "Art. 22, XXIII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-ae8ac8f7be8c",
+   "dispositivo": "Art. 22, XXIII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-12524e27ba22",
+   "dispositivo": "Art. 22, XXIV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-9a0761216523",
+   "dispositivo": "Art. 22, XXIX, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-a3453ed209a1",
+   "dispositivo": "Art. 22, XXIX, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-1d71b52a281a",
+   "dispositivo": "Art. 22, XXIX, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-db8ce39b7150",
+   "dispositivo": "Art. 22, XXIX, § único, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-1fa40e540535",
+   "dispositivo": "Art. 22, XXV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-57bff3efe4ef",
+   "dispositivo": "Art. 22, XXV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-fd004d9389db",
+   "dispositivo": "Art. 22, XXV, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-1745fd7c2f6c",
+   "dispositivo": "Art. 22, XXVI, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-3fa4c12d0096",
+   "dispositivo": "Art. 22, XXVI, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-8011a06d3ea5",
+   "dispositivo": "Art. 22, XXVII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-a63e1e1080a7",
+   "dispositivo": "Art. 22, § único, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-efa3ac1887aa",
+   "dispositivo": "Art. 22, § único, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-475214ccf43d",
+   "dispositivo": "Art. 22, § único, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-6fc2eb02ff27",
+   "dispositivo": "Art. 22, § único, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-9ed155b2c1ec",
+   "dispositivo": "Art. 22, § único, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-146a58a24064",
+   "dispositivo": "Art. 22, § único, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-37b01bcfd408",
+   "dispositivo": "Art. 22. § único, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-ca8390f1cbe7",
+   "dispositivo": "Arts. 22, I e 24, I, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-0bba75454860",
+   "dispositivo": "Arts. 22, I e 24, I, IV, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-1e51d5c794e3",
+   "dispositivo": "Arts. 22, I e 24, V e VIII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-0eb9f6729b2b",
+   "dispositivo": "Arts. 22, IV e 23, VI, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-c0c9d4f02536",
+   "dispositivo": "Arts. 22, IV e XXV, e 24, IX e XVI, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b98bb184bc96",
+   "dispositivo": "Arts. 22, X, e 24, VI, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-89a5b83ad2da",
+   "dispositivo": "Arts. 22, XI e 23, XII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-2543e991c6c4",
+   "dispositivo": "Arts. 22, XII e 23, VI, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b7161a2d2516",
+   "dispositivo": "Arts. 22, XII e 24, XV, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-2f2af42ef547",
+   "dispositivo": "Arts. 22, XXI e 24, XV, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-8506c524c0a8",
+   "dispositivo": "Arts. 22, XXI, e 24, XII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-07b6f2688c2b",
+   "dispositivo": "Arts. 22, XXIII e 24, XII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b9ea512a8130",
+   "dispositivo": "Art. 23, I, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-1453dc9fff23",
+   "dispositivo": "Art. 23, I, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-9d0a957d989d",
+   "dispositivo": "Art. 23, II, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-29dee201baa6",
+   "dispositivo": "Art. 23, II, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-9dd3c57f78be",
+   "dispositivo": "Art. 23, II, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-c9a3cf46ad7f",
+   "dispositivo": "Art. 23, II, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-46d7ee78cc8b",
+   "dispositivo": "Art. 23, III e IV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-fbc26ecbf5d8",
+   "dispositivo": "Art. 23, III, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-c94a02096d48",
+   "dispositivo": "Art. 23, III, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-297b5ecbd30a",
+   "dispositivo": "Art. 23, III, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b5b00c290e65",
+   "dispositivo": "Art. 23, III, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-4bf6d22050b1",
+   "dispositivo": "Art. 23, III, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-de01d5eb7028",
+   "dispositivo": "Art. 23, IV, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-6a5b3c08a31a",
+   "dispositivo": "Art. 23, IV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-34cb3186c8dd",
+   "dispositivo": "Art. 23, IX, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-370db9f6e020",
+   "dispositivo": "Art. 23, IX, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-9dd90703c979",
+   "dispositivo": "Art. 23, IX, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-a2bd5b0e0615",
+   "dispositivo": "Art. 23, V, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-8626c4c61d2c",
+   "dispositivo": "Art. 23, V, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-445f9b783cc7",
+   "dispositivo": "Art. 23, V, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-3776c86bc221",
+   "dispositivo": "Art. 23, VI c/c 241, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-1aea600e26b4",
+   "dispositivo": "Art. 23, VI e VII, c/c 69, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-e17182cb5b9f",
+   "dispositivo": "Art. 23, VI e § único, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-06149a62c0a2",
+   "dispositivo": "Art. 23, VI, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-8748a761a92f",
+   "dispositivo": "Art. 23, VII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-6a8c1e982686",
+   "dispositivo": "Art. 23, VIII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-2f8d859b24a9",
+   "dispositivo": "Art. 23, X, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-181c022e9d25",
+   "dispositivo": "Art. 23, X, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-82b4900c228b",
+   "dispositivo": "Art. 23, XI, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-9275d6661b7b",
+   "dispositivo": "Art. 23, XII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-0c7b57593c48",
+   "dispositivo": "Art. 23, XII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-487d0bd73102",
+   "dispositivo": "Art. 23, XII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-7c5783034696",
+   "dispositivo": "Art. 23, XII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-81d049a9a05c",
+   "dispositivo": "Art. 23, § único, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-f93c93a01c00",
+   "dispositivo": "Art. 23, § único, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-81a0918f35ec",
+   "dispositivo": "Art. 24, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-3502d0657947",
+   "dispositivo": "Art. 24, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-0baf7d9bf22b",
+   "dispositivo": "Art. 24, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-ddc342c96a78",
+   "dispositivo": "Art. 24, I, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-6c5a37e8b770",
+   "dispositivo": "Art. 24, I, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-e6d6e351d9a9",
+   "dispositivo": "Art. 24, I, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-20e16ca3fb16",
+   "dispositivo": "Art. 24, I, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-fcc6a2876904",
+   "dispositivo": "Art. 24, I, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-13601132bfd1",
+   "dispositivo": "Art. 24, I, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-df4ce4e71199",
+   "dispositivo": "Art. 24, I, II, III, IV, V, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-41ac5eef9cd2",
+   "dispositivo": "Art. 24, II e XIII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-bf5e7d486385",
+   "dispositivo": "Art. 24, III, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-9e20fc49ac7a",
+   "dispositivo": "Art. 24, III, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-8e856c98c0e9",
+   "dispositivo": "Art. 24, IV, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-f395fd706116",
+   "dispositivo": "Art. 24, IV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-9c13fa120d9b",
+   "dispositivo": "Art. 24, IX, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-f2cbd0d87c04",
+   "dispositivo": "Art. 24, IX, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-8b40e5a1ff49",
+   "dispositivo": "Art. 24, IX, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-11d78725d4cf",
+   "dispositivo": "Art. 24, IX, § 2º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-e8386b8a4b63",
+   "dispositivo": "Art. 24, V e VIII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-191bb1a7bccf",
+   "dispositivo": "Art. 24, V, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-e3ece05548bd",
+   "dispositivo": "Art. 24, V, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-039959f6e1be",
+   "dispositivo": "Art. 24, V, VI e VIII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-845f8fcc8b45",
+   "dispositivo": "Art. 24, VI e §§ 1º e 2º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-e81e38b9452f",
+   "dispositivo": "Art. 24, VI, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-0fc1b4635831",
+   "dispositivo": "Art. 24, VI, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-0d821e73275e",
+   "dispositivo": "Art. 24, VI, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-90bedd1c8870",
+   "dispositivo": "Art. 24, VI, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-4a49699038af",
+   "dispositivo": "Art. 24, VI, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-c390e788959f",
+   "dispositivo": "Art. 24, V, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-a77f4b7dd9f2",
+   "dispositivo": "Art. 24, VI, § 1º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-82a7dfc1ceac",
+   "dispositivo": "Art. 24, VII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-43deaad0820a",
+   "dispositivo": "Art. 24, VII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-9f80918ca415",
+   "dispositivo": "Art. 24, VII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-5ab184fa234b",
+   "dispositivo": "Art. 24, VII, §§ 3º e 4º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-beeb68448b6d",
+   "dispositivo": "Art. 24, VIII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-0a6532664b5c",
+   "dispositivo": "Art. 24, VIII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-078fabf6034e",
+   "dispositivo": "Art. 24, VIII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b9d7e36b8a0f",
+   "dispositivo": "Art. 24, VIII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-2016ce5b7e5e",
+   "dispositivo": "Art. 24, X, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-50cb51ee5dfa",
+   "dispositivo": "Art. 24, XI, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-423375a84057",
+   "dispositivo": "Art. 24, XI, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-c2abe0c5d6b5",
+   "dispositivo": "Art. 24, XI, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-a2d47e96cd68",
+   "dispositivo": "Art. 24, XI, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-37799bede4bf",
+   "dispositivo": "Art. 24, XI, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-c5906020f15d",
+   "dispositivo": "Art. 24, XII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-6945596ca9ea",
+   "dispositivo": "Art. 24, XIV e XV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-6e286998722c",
+   "dispositivo": "Art. 24, XV, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-92061db72ab4",
+   "dispositivo": "Art. 24, XV, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-37cec286e725",
+   "dispositivo": "Art. 24, XVI, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-05ac952ca79b",
+   "dispositivo": "Art. 24, XVI, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b430236267f7",
+   "dispositivo": "Art. 24, § 1º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-9b0bdcc95e85",
+   "dispositivo": "Art. 24, § 1º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-ba172e64fa0f",
+   "dispositivo": "Art. 24, § 1º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-0fb3abe93ea5",
+   "dispositivo": "Art. 24, § 1º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-5549480dead6",
+   "dispositivo": "Art. 24, § 2º e § 4º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-863185ecf9f9",
+   "dispositivo": "Art. 24, § 2º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-27db2edb821c",
+   "dispositivo": "Art. 24, § 2º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-df4d3c4dbb9d",
+   "dispositivo": "Art. 24, § 2º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-a81613dc4011",
+   "dispositivo": "Art. 24, § 2º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-2a1d3bbdbeb8",
+   "dispositivo": "Art. 24, § 3º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-ea8b44db308a",
+   "dispositivo": "Art. 24, § 3º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-1c9e07602f60",
+   "dispositivo": "Art. 24, § 3º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-fca9f6c9a79a",
+   "dispositivo": "Art. 24, § 3º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-20804e215636",
+   "dispositivo": "Art. 24, § 3º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b5f3e4e1b039",
+   "dispositivo": "Art. 24, § 3º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-3dfe9a043819",
+   "dispositivo": "Art. 24, § 4º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-467c999d2373",
+   "dispositivo": "Art. 24, § 4º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-5c7291fbf08f",
+   "dispositivo": "Art. 24, § 4º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-53ff28ac27ec",
+   "dispositivo": "Art. 24, § 4º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-fc7e6fecc8eb",
+   "dispositivo": "Art. 24, § 4º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-a512cda016ea",
+   "dispositivo": "Art. 24, § 4º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-09871a3fa644",
+   "dispositivo": "Art. 24, §2º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-8230f4a66165",
+   "dispositivo": "Art. 24, §§ 1º e 2º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-658ed1be47cb",
+   "dispositivo": "Art. 24, §§ 3º e 4º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-autoral-inedita-w4-05",
+   "dispositivo": "Autoral • Art. 20 — bens da União",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "authorial"
+  },
+  {
+   "id": "cf-autoral-inedita-w4-06",
+   "dispositivo": "Autoral • Arts. 21 e 22 — material x legislativa",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "authorial"
+  },
+  {
+   "id": "cf-autoral-inedita-w4-07",
+   "dispositivo": "Autoral • Art. 22, parágrafo único",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "authorial"
+  },
+  {
+   "id": "cf-autoral-inedita-w4-08",
+   "dispositivo": "Autoral • Art. 23 — competência comum",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "authorial"
+  },
+  {
+   "id": "cf-autoral-inedita-w4-09",
+   "dispositivo": "Autoral • Art. 24, §3º — competência plena estadual",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "authorial"
+  },
+  {
+   "id": "cf-autoral-inedita-w4-10",
+   "dispositivo": "Autoral • Art. 24, §4º — lei federal superveniente",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "authorial"
+  },
+  {
+   "id": "cf-autoral-inedita-w4-11",
+   "dispositivo": "Autoral • Dados pessoais — arts. 21, XXVI e 22, XXX",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "authorial"
+  },
+  {
+   "id": "cf-autoral-inedita-w4-12",
+   "dispositivo": "Autoral • Art. 21, XXIII — atividade nuclear",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "authorial"
+  }
+ ],
+ "correcoesEnunciado": [
+  {
+   "id": "cf-36eedadf283d",
+   "removido": "Judiciário - Área Judiciária (STM)"
+  },
+  {
+   "id": "cf-b86a5c85052c",
+   "removido": "– Sem Especialidade (TRF - 6ª Região)"
+  },
+  {
+   "id": "cf-0e0803b341ea",
+   "removido": "Serviços Públicos de Energia (ANEEL)"
+  },
+  {
+   "id": "cf-aa46badf2644",
+   "removido": "Administrativo (TRF - 2ª Região)"
+  },
+  {
+   "id": "cf-a4b283d88517",
+   "removido": "Minerais (ANM)"
+  },
+  {
+   "id": "cf-572d543dcac9",
+   "removido": "adaptado"
+  },
+  {
+   "id": "cf-c0c9d4f02536",
+   "removido": "- Adaptada"
+  },
+  {
+   "id": "cf-c94a02096d48",
+   "removido": "Social (TRT - 1ª Região)"
+  },
+  {
+   "id": "cf-34cb3186c8dd",
+   "removido": "Social (TRT - 1ª Região)"
+  },
+  {
+   "id": "cf-beeb68448b6d",
+   "removido": "Social (TRT - 1ª Região)"
+  },
+  {
+   "id": "cf-423375a84057",
+   "removido": "Intrusivo (TCE-RS)"
+  },
+  {
+   "id": "cf-467c999d2373",
+   "removido": "e Defesa (AMAZUL)"
+  },
+  {
+   "id": "cf-autoral-inedita-w4-05",
+   "antes": "Sobre Art. 20 — bens da União, considere a afirmação: toda água subterrânea localizada no território de Estado-membro, ainda que não esteja abrangida por qualquer hipótese constitucional específica.",
+   "depois": "Sobre Art. 20 — bens da União, considere a afirmação: Toda água subterrânea localizada no território de Estado-membro é bem da União, ainda que não esteja abrangida por qualquer hipótese constitucional específica."
+  },
+  {
+   "id": "cf-autoral-inedita-w4-06",
+   "antes": "Sobre Arts. 21 e 22 — material x legislativa, considere a afirmação: explorar serviços de telecomunicações, no plano material, e legislar sobre telecomunicações, no plano legislativo privativo.",
+   "depois": "Sobre Arts. 21 e 22 — material x legislativa, considere a afirmação: Compete à União explorar os serviços de telecomunicações, no plano material, e legislar sobre telecomunicações, no plano legislativo privativo."
+  },
+  {
+   "id": "cf-autoral-inedita-w4-07",
+   "antes": "Sobre Art. 22, parágrafo único, considere a afirmação: autorizar Municípios a exercer definitivamente toda matéria legislativa privativa da União, sem limitação temática ou necessidade de disciplina específica.",
+   "depois": "Sobre Art. 22, parágrafo único, considere a afirmação: Lei complementar federal pode autorizar Municípios a exercer definitivamente toda matéria legislativa privativa da União, sem limitação temática ou necessidade de disciplina específica."
+  },
+  {
+   "id": "cf-autoral-inedita-w4-08",
+   "antes": "Sobre Art. 23 — competência comum, considere a afirmação: proteger o meio ambiente e combater a poluição em qualquer de suas formas, como competência material comum de todos os entes.",
+   "depois": "Sobre Art. 23 — competência comum, considere a afirmação: Proteger o meio ambiente e combater a poluição em qualquer de suas formas é competência material comum de todos os entes."
+  },
+  {
+   "id": "cf-autoral-inedita-w4-11",
+   "antes": "Sobre Dados pessoais — arts. 21, XXVI e 22, XXX, considere a afirmação: competência material comum de todos os entes e competência legislativa concorrente entre União, Estados e Distrito Federal.",
+   "depois": "Sobre Dados pessoais — arts. 21, XXVI e 22, XXX, considere a afirmação: A proteção de dados pessoais é competência material comum de todos os entes e competência legislativa concorrente entre União, Estados e Distrito Federal."
+  }
+ ],
+ "correcoesReferencia": [
+  {
+   "id": "cf-c390e788959f",
+   "antes": "Art. 24, VI, CF",
+   "depois": "Art. 24, V, CF"
+  }
+ ]
+}
