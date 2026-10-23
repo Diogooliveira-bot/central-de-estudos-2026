@@ -81,7 +81,11 @@ async function open(uid,kind,jump){
  try{
   const d=await loadData(uid);if(active!==session)return;
   if(!d)throw new Error('Conteúdo ADM não localizado');
-  let content=kind==='summary'?d.summaryHtml:(uid==='adm-01-01-regime-juridico-e-principios'&&g.ADM_M01_COMPLETE_HTML?g.ADM_M01_COMPLETE_HTML:(d.completeHtml||LEGACY[uid]));
+  let content=kind==='summary'?d.summaryHtml:(
+   uid==='adm-01-01-regime-juridico-e-principios'&&g.ADM_M01_COMPLETE_HTML?g.ADM_M01_COMPLETE_HTML:
+   uid==='adm-02-02-organizacao-administrativa'&&g.ADM_M02_COMPLETE_HTML?g.ADM_M02_COMPLETE_HTML:
+   (d.completeHtml||LEGACY[uid])
+  );
   if(!content)throw new Error('Teoria ADM não localizada');
   if(kind==='complete'&&d.completeAppendHtml)content+=d.completeAppendHtml;
   const body=reader.show(o,content,buildToc,Number(localStorage.getItem(k(uid,kind,'scroll'))||0),onScroll);
@@ -136,5 +140,5 @@ function saveNativeNote(uid){const input=document.querySelector(`[data-adm-note-
 function alignModuleContent(){document.querySelectorAll('[data-adm-native]').forEach(z=>{const panel=z.querySelector(':scope > [data-bcq-module-panel]'),review=z.querySelector(':scope > .adm-cf-scheduled-review'),toolsEl=z.querySelector(':scope > .adm-native-module-tools');if(panel&&review&&panel.previousElementSibling!==review)review.after(panel);if(toolsEl&&toolsEl!==z.lastElementChild)z.append(toolsEl)})}
 function install(){if(!patchRenderDetail())return false;patchSubjStats();updateSubject();const host=document.getElementById('subjects');if(host){const opts={childList:true,subtree:true};const mo=new MutationObserver(()=>{mo.disconnect();try{alignModuleContent();updateSubject();Object.keys(INDEX).forEach(updateCards)}finally{mo.observe(host,opts)}});mo.observe(host,opts)}return true}
 function boot(){if(install())return;let n=0,t=setInterval(()=>{if(install()||++n>160)clearInterval(t)},50)}
-g.AdmNative={open,close,font:fontSize,openImage,closeImage,zoomImage,markModuleRead,progress,moduleProgress,stats,updateSubject,tool,saveNote:saveNativeNote,externalStats,version:'2026.10.23-adm-m01-didatico'};if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot,{once:true});else boot();
+g.AdmNative={open,close,font:fontSize,openImage,closeImage,zoomImage,markModuleRead,progress,moduleProgress,stats,updateSubject,tool,saveNote:saveNativeNote,externalStats,version:'2026.10.23-adm-m01-m02-didaticos'};if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot,{once:true});else boot();
 })(window);

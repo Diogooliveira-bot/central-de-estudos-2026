@@ -4,8 +4,8 @@ var AUTH_CACHE='central-auth-session-v1';
 var AUTH_KEY='/__bc_offline_auth__';
 var AUTH_TTL_MS=72*60*60*1000;
 var BOOT='/central-v119.html';
-var OFFLINE_MANIFEST='/central-offline-files-v66172.json?v=20261023-adm-m01-apostila-v1';
-var OFFLINE_READY='/central-offline-ready.json?v=20261023-adm-m01-apostila-v1';
+var OFFLINE_MANIFEST='/central-offline-files-v66172.json?v=20261023-adm-m01-m02-apostilas-v1';
+var OFFLINE_READY='/central-offline-ready.json?v=20261023-adm-m01-m02-apostilas-v1';
 
 function publicPath(path){
   return path==='/login.html'||path==='/favicon.ico'||path==='/robots.txt'||path==='/assets/base-completa-symbol.webp';
