@@ -11,7 +11,13 @@ function get(n){return DATA[n];}
 function key(n){return 'bc:cf:m'+String(n).padStart(2,'0')+':teoria-guiada:checklist:v1';}
 function state(n){try{const x=JSON.parse(localStorage.getItem(key(n))||'{}');return x&&typeof x==='object'?x:{};}catch(_){return {};}}
 function save(n,i,on){const x=state(n);x[i]=on;try{localStorage.setItem(key(n),JSON.stringify(x));}catch(_){}}
-function card(topic,index){
+function lawBox(n,index){
+ const L=global.BC_CF_GUIDED_LAW&&global.BC_CF_GUIDED_LAW[n],items=L&&L[index];
+ if(!Array.isArray(items)||!items.length)return '';
+ const names=items.map(x=>x[0]),head=names.length===1?names[0]:names[0]+' e mais '+(names.length-1);
+ return '<details class="bc-m01-lei-seca"><summary>Ver lei seca — '+esc(head)+'</summary>'+items.map(x=>'<div class="bc-m01-lei-art">'+(x[1]||[]).map(t=>'<p>'+esc(t)+'</p>').join('')+'</div>').join('')+'</details>';
+}
+function card(topic,index,n){
   const sections=[
     ['bc-m01-foundation','Entenda',topic[1]],
     ['bc-m01-example','Na prática',topic[2]],
@@ -21,7 +27,7 @@ function card(topic,index){
     ['bc-m01-recall','Revisão em 30 segundos',topic[6]]
   ];
   return '<section class="bc-m01-topic" aria-labelledby="bc-guided-title-'+index+'"><h2 id="bc-guided-title-'+index+'"><span>'+String(index+1).padStart(2,'0')+'</span> '+esc(topic[0])+'</h2>'+
-    sections.map(s=>'<div class="bc-m01-card '+s[0]+'"><h3>'+esc(s[1])+'</h3>'+p(s[2])+'</div>').join('')+'</section>';
+    sections.map(s=>'<div class="bc-m01-card '+s[0]+'"><h3>'+esc(s[1])+'</h3>'+p(s[2])+(s[0]==='bc-m01-law'?lawBox(n,index):'')+'</div>').join('')+'</section>';
 }
 function checklist(n,topics){
  const s=state(n);
@@ -69,7 +75,7 @@ function open(n){
     '<button type="button" data-bc-guided-mode="review" aria-pressed="false">Revisão rápida</button>'+
    '</div></nav>'+
   '<main class="bc-m01-scroll" tabindex="0"><div class="bc-m01-paper">'+
-  d.topics.map(card).join('')+checklist(n,d.topics)+'</div></main></div>';
+  d.topics.map((topic,i)=>card(topic,i,n)).join('')+checklist(n,d.topics)+'</div></main></div>';
  overlay=o;document.body.appendChild(o);document.body.style.overflow='hidden';
  o.querySelector('[data-bc-guided-close]').addEventListener('click',close);
  o.querySelectorAll('[data-bc-guided-mode]').forEach(btn=>btn.addEventListener('click',()=>switchMode(btn.getAttribute('data-bc-guided-mode'))));
@@ -109,7 +115,7 @@ function open(n){
       '.bc-m01-topic h2 span{font-size:12px;letter-spacing:.04em;color:#67809d;vertical-align:middle;margin-right:5px;}',
       '.bc-m01-card{padding:17px 20px;margin:0 0 10px;border:1px solid #dce3eb;border-radius:12px;background:#fff;box-shadow:0 1px 2px rgba(20,38,63,.02);}',
       '.bc-m01-card h3{margin:0 0 9px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.075em;color:#385b80;}',
-      '.bc-m01-card p{margin:0;font-size:16px;line-height:1.75;color:#27384e;}',
+      '.bc-m01-card p{margin:0;font-size:16px;line-height:1.75;color:#27384e;}.bc-m01-lei-seca{margin:12px 0 0;border:1px dashed #d8c8a8;border-radius:10px;padding:8px 12px;background:rgba(255,255,255,.6);}.bc-m01-lei-seca summary{cursor:pointer;font-size:13px;font-weight:700;color:#7a5a24;}.bc-m01-lei-seca p{margin:8px 0 0;font-size:14px;line-height:1.6;}.bc-m01-lei-seca .bc-m01-lei-art+.bc-m01-lei-art{margin-top:12px;}',
       '.bc-m01-card p+p{margin-top:10px;}',
       '.bc-m01-example{background:#edf8f2;border-left:4px solid #438b68;}',
       '.bc-m01-law{background:#fffaf0;border-left:4px solid #be9152;}',
