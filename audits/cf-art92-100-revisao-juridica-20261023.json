@@ -1,0 +1,1056 @@
+{
+ "data": "2026-10-23",
+ "fonte": "CF/88, texto compilado do Planalto (arquivo fornecido pelo responsável); redação vigente selecionada dispositivo a dispositivo",
+ "escopo": "tools/decorando-data-cf.js — subtópico Poder Judiciário — disposições gerais (CF, arts. 92 a 100)",
+ "total": 131,
+ "itens": [
+  {
+   "id": "cf-d11eece81703",
+   "dispositivo": "Art. 92, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-4e7168c41752",
+   "dispositivo": "Art. 92, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-62f36d084e32",
+   "dispositivo": "Art. 92, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-29b5c7197947",
+   "dispositivo": "Art. 92, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-c4c8a2aa6feb",
+   "dispositivo": "Art. 92, I e II c/c § 1º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-8e58ae4bc766",
+   "dispositivo": "Art. 92, I-A, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-8c0701f9729e",
+   "dispositivo": "Art. 93 e 94, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-8a89cb214055",
+   "dispositivo": "Art. 93, caput e § 2º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-c86f5f5bee9b",
+   "dispositivo": "Art. 93, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b7ae211f1147",
+   "dispositivo": "Art. 93, I, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b36f2609893a",
+   "dispositivo": "Art. 93, I, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-98b3597a1b65",
+   "dispositivo": "Art. 93, II, \"a\", CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-345b0097ea9d",
+   "dispositivo": "Art. 93, II, \"a\", CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-a1dbfd5e6636",
+   "dispositivo": "Art. 93, II, \"b\", CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-f8d4540804ab",
+   "dispositivo": "Art. 93, II, “b”, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-3c65826c2682",
+   "dispositivo": "Art. 93, II, \"c\", CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-f799a4af2c04",
+   "dispositivo": "Art. 93, II, \"d\", CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-6942f1e899b7",
+   "dispositivo": "Art. 93, II, “d”, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-9745131b4cda",
+   "dispositivo": "Art. 93, II, \"e\", CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b0cd06ad5cff",
+   "dispositivo": "Art. 93, II, a, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-61851882c690",
+   "dispositivo": "Art. 93, II, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-566f78ff7a4e",
+   "dispositivo": "Art. 93, II, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-adb31990b38e",
+   "dispositivo": "Art. 93, II, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-a18efd1f38f7",
+   "dispositivo": "Art. 93, II, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-5278b9d0ea4a",
+   "dispositivo": "Art. 93, II, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b34bc1074ec2",
+   "dispositivo": "Art. 93, II, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-698d2eb73bf9",
+   "dispositivo": "Art. 93, II, d, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-119cba195b98",
+   "dispositivo": "Art. 93, IV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b4a681beffdf",
+   "dispositivo": "Art. 93, IX, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-624b4785b899",
+   "dispositivo": "Art. 93, IX, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-849bff43e7a9",
+   "dispositivo": "Art. 93, IX, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-61bf98a69569",
+   "dispositivo": "Art. 93, IX, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-e898b6bc9ddc",
+   "dispositivo": "Art. 93, IX, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-58bfe591013c",
+   "dispositivo": "Art. 93, V, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-c9beb967d651",
+   "dispositivo": "Art. 93, V, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-d5bba90cd16c",
+   "dispositivo": "Art. 93, VII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-1da079f7d230",
+   "dispositivo": "Art. 93, VII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-55f88bff7859",
+   "dispositivo": "Art. 93, VII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-fa2d36911242",
+   "dispositivo": "Art. 93, VIII-B, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-2109389546ca",
+   "dispositivo": "Art. 93, VIII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-6e1bda5636f9",
+   "dispositivo": "Art. 93, VIII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-25e0bca9af10",
+   "dispositivo": "Art. 93, VIII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-4a5dbe4f2e89",
+   "dispositivo": "Art. 93, VIII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-2e477e3af659",
+   "dispositivo": "Art. 93, VIII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-4c636b9aa075",
+   "dispositivo": "Art. 93, VIII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-bc327a969489",
+   "dispositivo": "Art. 93, X, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-c91b6bd976d7",
+   "dispositivo": "Art. 93, X, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-4403e2d208e8",
+   "dispositivo": "Art. 93, X, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-4865623e1eb4",
+   "dispositivo": "Art. 93, X, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-d12ad8d0b68a",
+   "dispositivo": "Art. 93, X, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-ddffe3b78c6a",
+   "dispositivo": "Art. 93, XI, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-4ba75bfa6c91",
+   "dispositivo": "Art. 93, XI, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-6020190c8752",
+   "dispositivo": "Art. 93, XII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-9d79faa12aa5",
+   "dispositivo": "Art. 93, XII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-013e9ddcf06a",
+   "dispositivo": "Art. 93, XIV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b775260b0c1e",
+   "dispositivo": "Art. 93, XV, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-6237d601ad6c",
+   "dispositivo": "Art. 94, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-009c82f22fa9",
+   "dispositivo": "Art. 94, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-0040f6172d3f",
+   "dispositivo": "Art. 95, § único, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-334aafba6851",
+   "dispositivo": "Art. 95, § único, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-9710885e18f0",
+   "dispositivo": "Art. 95, § único, I, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-79f1dfb318ff",
+   "dispositivo": "Art. 95, § único, I, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-6eee10a69cae",
+   "dispositivo": "Art. 95, § único, II c/c Art. 128, § 5º, II, a, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-cd1a302703cb",
+   "dispositivo": "Art. 95, § único, III, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-fb2b4c00456f",
+   "dispositivo": "Art. 95, § único, III, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b410c6d14b1a",
+   "dispositivo": "Art. 95, § único, V, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-9ff82cb7a4f2",
+   "dispositivo": "Art. 95, I, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-2e9a06fd893b",
+   "dispositivo": "Art. 95, I, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-33e6f26dd4b9",
+   "dispositivo": "Art. 95, I, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-d19ccb9727cb",
+   "dispositivo": "Art. 95, I, II, III, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-f39224f414c4",
+   "dispositivo": "Art. 95, parágrafo único, III, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-fd71ad45b57c",
+   "dispositivo": "Art. 95, parágrafo único, V, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-73c9a3d99b8e",
+   "dispositivo": "Art. 95, parágrafo único, V, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-f901dc5cf061",
+   "dispositivo": "Art. 96, I, a, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-339da25748d4",
+   "dispositivo": "Art. 96, I, d, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-4fa2f054b90e",
+   "dispositivo": "Art. 96, III, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-e9b609a0964f",
+   "dispositivo": "Art. 96, III, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-04797fb059a8",
+   "dispositivo": "Art. 96, III, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-e9217b43e9ba",
+   "dispositivo": "Art. 98, § 2º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-2c97f09ed83f",
+   "dispositivo": "Art. 98, II, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-5d899dc8bc5d",
+   "dispositivo": "Art. 99, § 1º c/c § 4º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-268042f08e82",
+   "dispositivo": "Art. 99, § 1º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-e7b87804a8a9",
+   "dispositivo": "Art. 99, § 1º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-32b83e8caac9",
+   "dispositivo": "Art. 99, § 3º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-494718765cf3",
+   "dispositivo": "Art. 99, § 3º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-a8e45e7ba182",
+   "dispositivo": "Art. 99, § 3º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-79e558326eae",
+   "dispositivo": "Art. 99, § 4º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-0052c3dac0ce",
+   "dispositivo": "Art. 99, § 5º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b0bc59193891",
+   "dispositivo": "Art. 99, §§ 1º e 4º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-583342791962",
+   "dispositivo": "Art. 99, §§ 1º, 2º e 4º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-5bc525b4d690",
+   "dispositivo": "Art. 99, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-188da73b9262",
+   "dispositivo": "Art. 99, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-87f719c74dca",
+   "dispositivo": "Art. 100, § 1º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-6c313db5d5be",
+   "dispositivo": "Art. 100, § 2º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-6ef25a2b58f1",
+   "dispositivo": "Art. 100, § 2º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-2aa4b8c00eb4",
+   "dispositivo": "Art. 100, § 3º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b5583bdd791f",
+   "dispositivo": "Art. 100, § 3º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-04b979da698b",
+   "dispositivo": "Art. 100, § 5º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-064e23a2f071",
+   "dispositivo": "Art. 100, § 5º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-e5f085b3c96e",
+   "dispositivo": "Art. 100, § 6º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-36f339947862",
+   "dispositivo": "Art. 100, § 7º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-2395a195d495",
+   "dispositivo": "Art. 100, § 11, II, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-e03e0dfef4d2",
+   "dispositivo": "Art. 100, § 13, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-01587fc51906",
+   "dispositivo": "Art. 100, § 13, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-0f4eb0b4ce2f",
+   "dispositivo": "Art. 100, § 13, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-5bed8c0cc9a0",
+   "dispositivo": "Art. 100, § 16, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-f7c360ccdc90",
+   "dispositivo": "Art. 100, § 16, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-4ee3621b4119",
+   "dispositivo": "Art. 100, § 16, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-fe919129cd34",
+   "dispositivo": "Art. 100, § 19-A, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-66be9f3aea6a",
+   "dispositivo": "Art. 100, § 30, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-41dc5ccf953a",
+   "dispositivo": "Art. 100, caput e § 3º, CF, c/c art. 100 do Código Civil",
+   "gabarito": "C",
+   "status": "certificado-parcial",
+   "base": "texto constitucional; norma infraconstitucional citada não conferida",
+   "origem": "real"
+  },
+  {
+   "id": "cf-cd0eff3d4c1d",
+   "dispositivo": "Art. 100, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-8c740a46f263",
+   "dispositivo": "Art. 100, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-662fed7cdc4a",
+   "dispositivo": "Arts. 93, I e 95, I, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-autoral-v29-m9-01",
+   "dispositivo": "Autoral • Art. 92 — órgãos, sede e jurisdição",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-v29-m9-02",
+   "dispositivo": "Autoral • Art. 93, I — ingresso na magistratura",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-v29-m9-03",
+   "dispositivo": "Autoral • Art. 93, II, a — promoção",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-v29-m9-04",
+   "dispositivo": "Autoral • Art. 93, II, d — antiguidade",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-v29-m9-06",
+   "dispositivo": "Autoral • Art. 93, IX — publicidade e fundamentação",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-v29-m9-07",
+   "dispositivo": "Autoral • Art. 93, XI — órgão especial",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-v29-m9-08",
+   "dispositivo": "Autoral • Art. 94 — quinto constitucional",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-v29-m9-09",
+   "dispositivo": "Autoral • Art. 95 — vitaliciedade",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-v29-m9-10",
+   "dispositivo": "Autoral • Art. 95, parágrafo único — vedações",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-v29-m9-11",
+   "dispositivo": "Autoral • Art. 96 — competências dos tribunais",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-v29-m9-13",
+   "dispositivo": "Autoral • Art. 97 e SV 10 — reserva de plenário",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-v29-m9-14",
+   "dispositivo": "Autoral • Art. 98 — justiça de paz",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-v29-m9-15",
+   "dispositivo": "Autoral • Art. 99 — proposta orçamentária",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-v29-m9-17",
+   "dispositivo": "Autoral • Art. 100 — superpreferência",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-v29-m9-05",
+   "dispositivo": "Autoral • EC 130/2023 — remoção e permuta",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-v29-m9-12",
+   "dispositivo": "Autoral • EC 134/2024 — direção de grandes TJs",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-v29-m9-16",
+   "dispositivo": "Autoral • EC 136/2025 — art. 100, §5º",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  }
+ ]
+}
