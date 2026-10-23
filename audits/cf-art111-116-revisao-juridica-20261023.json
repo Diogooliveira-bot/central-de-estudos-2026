@@ -1,0 +1,584 @@
+{
+ "data": "2026-10-23",
+ "fonte": "CF/88, texto compilado do Planalto (arquivo fornecido pelo responsável); redação vigente selecionada dispositivo a dispositivo",
+ "escopo": "tools/decorando-data-cf.js — subtópico Tribunais e Juízes do Trabalho",
+ "total": 72,
+ "itens": [
+  {
+   "id": "cf-fd6758427bf6",
+   "dispositivo": "Art. 102, I, o c/c Art. 114, V, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-632c1785725c",
+   "dispositivo": "Art. 111-A, § 2º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-df1c19cf11c5",
+   "dispositivo": "Art. 111-A, § 2º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-00bc5ba25b42",
+   "dispositivo": "Art. 111-A, § 2º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b97eb188743b",
+   "dispositivo": "Art. 111-A, § 2º, I, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-27b8c0aac294",
+   "dispositivo": "Art. 111-A, § 2º, I, II, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-6477b727588e",
+   "dispositivo": "Art. 111-A, § 2º, II, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-f9636d9c235b",
+   "dispositivo": "Art. 111-A, § 3º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-465937b1a4f7",
+   "dispositivo": "Art. 111-A, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-57d19acefa26",
+   "dispositivo": "Art. 111-A, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-2783b0aa1e53",
+   "dispositivo": "Art. 111-A, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-ad958a876042",
+   "dispositivo": "Art. 111-A, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-adbb26474ad9",
+   "dispositivo": "Art. 111-A, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-96b47873f47c",
+   "dispositivo": "Art. 111-A, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-8efcb39eeafc",
+   "dispositivo": "Art. 111-A, I, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-ce8864ec8edd",
+   "dispositivo": "Art. 111-A, II, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-58eb8c86d25c",
+   "dispositivo": "Art. 111, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-3366d487420e",
+   "dispositivo": "Art. 111, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-fc15cd7646f3",
+   "dispositivo": "Art. 111, I c/c Art. 111-A, § 2º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-90452055b7d5",
+   "dispositivo": "Art. 111, I, II, III, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-de9e19ee7559",
+   "dispositivo": "Art. 111, I, II, III, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-1c23f9701c1c",
+   "dispositivo": "Art. 112, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-6308d4e8b0f4",
+   "dispositivo": "Art. 112, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-f2670d22cf21",
+   "dispositivo": "Art. 114, § 2º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-ba160d35993e",
+   "dispositivo": "Art. 114, § 2º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-6b032a427f6e",
+   "dispositivo": "Art. 114, § 2º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-4fea33b0ce6b",
+   "dispositivo": "Art. 114, § 3º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-6848a41c7b0f",
+   "dispositivo": "Art. 114, I, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-f9bcefde148d",
+   "dispositivo": "Art. 114, I, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-a990b6b57cbc",
+   "dispositivo": "Art. 114, I, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-9f1d06dd5a8c",
+   "dispositivo": "Art. 114, I, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-d622d8082ee8",
+   "dispositivo": "Art. 114, II, § 3º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-16fbf77b69d7",
+   "dispositivo": "Art. 114, III, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-f503b456b507",
+   "dispositivo": "Art. 114, III, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-422cec509482",
+   "dispositivo": "Art. 114, III, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-e1adad18b51b",
+   "dispositivo": "Art. 114, III, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-015447c94446",
+   "dispositivo": "Art. 114, III, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-114335979acb",
+   "dispositivo": "Art. 114, III, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-da03706a4ee6",
+   "dispositivo": "Art. 114, IV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-2c977a203767",
+   "dispositivo": "Art. 114, IV, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-2e084f57af6f",
+   "dispositivo": "Art. 114, IV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b26ec15e3136",
+   "dispositivo": "Art. 114, V, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-5f65d35c9625",
+   "dispositivo": "Art. 114, V, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b56b59ed5a45",
+   "dispositivo": "Art. 114, VI e VII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-2d4e800e447f",
+   "dispositivo": "Art. 114, VI, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-28f0ee881591",
+   "dispositivo": "Art. 114, VI, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-bf857fb0cb8c",
+   "dispositivo": "Art. 114, VI, IX, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-93577af5ab48",
+   "dispositivo": "Art. 114, VII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-f1565af3c9e6",
+   "dispositivo": "Art. 114, VII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-391e9cf4cb7c",
+   "dispositivo": "Art. 114, VII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-15f6cb15429c",
+   "dispositivo": "Art. 114, VII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-dda8eeab5165",
+   "dispositivo": "Art. 114, VII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-dac8ba457e53",
+   "dispositivo": "Art. 114, VII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-43b9ec441f96",
+   "dispositivo": "Art. 114, VIII, c/c S.V. 53, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-f76e6aaad0b8",
+   "dispositivo": "Art. 114, VIII, CF c/c SV 53",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-4bd1d95e5aea",
+   "dispositivo": "Art. 115, § 1º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-05cad140184a",
+   "dispositivo": "Art. 115, § 2º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-34338fc16238",
+   "dispositivo": "Art. 115, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-1e584cdda277",
+   "dispositivo": "Art. 115, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-f40e973cef38",
+   "dispositivo": "Art. 115, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-9c1a48796345",
+   "dispositivo": "Art. 115, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-04cb30dbaa68",
+   "dispositivo": "Art. 115, I, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-f4dbee8269e1",
+   "dispositivo": "Art. 115, I, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-570e4d5ec922",
+   "dispositivo": "Art. 115, I, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b9115578cf9d",
+   "dispositivo": "Arts. 115 e 116, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-autoral-v210-m10-23",
+   "dispositivo": "Autoral • Art. 114 — contribuições sociais",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-v210-m10-24",
+   "dispositivo": "Autoral • Art. 114 — dissídio coletivo econômico",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-v210-m10-22",
+   "dispositivo": "Autoral • Art. 114 — remédios constitucionais",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-v210-m10-21",
+   "dispositivo": "Autoral • Art. 114 — vínculo estatutário",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-v210-m10-18",
+   "dispositivo": "Autoral • Justiça do Trabalho — órgãos",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-v210-m10-20",
+   "dispositivo": "Autoral • Justiça do Trabalho — Varas e juiz de direito",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-v210-m10-25",
+   "dispositivo": "Autoral • TRT — composição",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  }
+ ]
+}
