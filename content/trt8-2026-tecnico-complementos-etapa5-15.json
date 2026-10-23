@@ -1,0 +1,572 @@
+{
+  "schemaVersion": 1,
+  "examId": "trt8-2026-tecnico-administrativa-21",
+  "courseId": "trt8-tec-21-complementos-etapa5-15",
+  "title": "Complementos didáticos para 7 assuntos pendentes — TRT-8 Técnico, cargo 21",
+  "edition": "2026-10-22",
+  "releaseStatus": "draft_editorial_review",
+  "scope": "Sete assuntos sem vínculo canônico prévio, abordados como complementos de primeira leitura. Não altera a numeração oficial da FCC nem indica cobertura integral dos outros assuntos.",
+  "sources": [
+    {
+      "id": "syllabus",
+      "label": "FCC — Edital TRT8 2026, Anexo II, cargo 21",
+      "url": "https://www.concursosfcc.com.br/concursos/trt8r126/trt8r126_edital_de_abertura.pdf",
+      "scope": "Textos programáticos do concurso"
+    },
+    {
+      "id": "pt-course",
+      "label": "Base Completa — curso Português Autodidata M01–M24 (catálogo canônico)",
+      "path": "portugues-site.js",
+      "scope": "Identificação de módulos existentes; complementos não substituem as aulas originais"
+    },
+    {
+      "id": "rlm-course",
+      "label": "Base Completa — módulos RLM na Central",
+      "path": "central-structural-v66119/runtime.js",
+      "scope": "Temas de raciocínio e uso de esquemas explicativos"
+    },
+    {
+      "id": "cf",
+      "label": "Constituição de 1988, art. 111-A, § 2º, II",
+      "url": "https://www.planalto.gov.br/ccivil_03/constituicao/constituicaocompilado.htm",
+      "scope": "Instituição e missão constitucional do CSJT"
+    },
+    {
+      "id": "l14824",
+      "label": "Lei federal nº 14.824/2024 — composição, funcionamento e competências do CSJT",
+      "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2024/lei/l14824.htm",
+      "scope": "Órgãos, composição, supervisão e poderes do CSJT"
+    },
+    {
+      "id": "clt",
+      "label": "CLT compilada, arts. 710–715 — secretarias e distribuidores",
+      "url": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+      "scope": "Serviços auxiliares históricos e distribuição"
+    },
+    {
+      "id": "ec24",
+      "label": "Emenda Constitucional nº 24/1999",
+      "url": "https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc24.htm",
+      "scope": "Superação das Juntas de Conciliação e Julgamento e instituição de Varas do Trabalho"
+    }
+  ],
+  "lessons": [
+    {
+      "topicId": "trt8-tec-21-pt-005",
+      "moduleId": "comp-5-15-m01",
+      "subjectId": "trt8-tec-21-pt",
+      "number": 1,
+      "title": "Discurso direto e indireto, intertextualidade, figuras e morfossintaxe",
+      "goal": "Interpretar como a linguagem relata falas, retoma outros textos e produz efeitos de sentido sem confundir forma e função.",
+      "complete": {
+        "firstRead": [
+          "Quando um narrador reproduz uma fala exatamente como foi apresentada, pode usar discurso direto: A servidora afirmou: “O atendimento será retomado amanhã”. No discurso indireto, a fala é incorporada à voz do narrador: A servidora afirmou que o atendimento seria retomado no dia seguinte. O discurso indireto livre mistura vozes sem anúncio explícito: O sistema falhara outra vez. Como resolveriam aquilo agora? A pergunta pode representar o pensamento da personagem dentro da narração.",
+          "Intertextualidade ocorre quando um texto dialoga com outro, por citação, paráfrase, referência ou paródia. Figuras de linguagem produzem efeitos expressivos: metáfora aproxima ideias por semelhança; metonímia troca nomes por relações de proximidade; antítese aproxima sentidos opostos; ironia faz o contexto indicar sentido diferente do literal. Morfossintaxe examina a classe e a função das palavras nas frases: o mesmo termo pode pertencer a uma classe gramatical, mas exercer diferentes funções sintáticas."
+        ],
+        "howItWorks": [
+          "Para transformar discurso direto em indireto, identifique quem fala, a referência de tempo e lugar e a relação entre os verbos. ‘Hoje entregarei o relatório’ pode passar a ‘ela disse que entregaria o relatório naquele dia’, conforme o momento de narração. Não basta retirar as aspas: pronomes, tempos verbais e advérbios podem mudar para preservar o sentido.",
+          "Ao analisar uma figura, pergunte primeiro o que a expressão significaria literalmente e que efeito o contexto sugere. Em ‘a secretaria é o coração do atendimento’, não há órgão corporal: ‘coração’ constrói metáfora da função central. Na morfossintaxe, faça duas perguntas: ‘que classe é esta palavra?’ e ‘que função ela exerce neste enunciado?’."
+        ],
+        "workedExample": [
+          "Original: O chefe declarou: “Nós revisaremos os autos amanhã”. Reescrita plausível: O chefe declarou que eles revisariam os autos no dia seguinte. Mudaram a pessoa do pronome, o tempo verbal e a referência temporal; o compromisso de revisar os autos permaneceu.",
+          "Em uma notícia, a frase ‘O tribunal abriu as portas para a inclusão’ pode ser figurada: ‘abrir as portas’ sugere ampliação do acesso e não necessariamente uma mudança física. A interpretação correta depende do contexto, e a figura não transforma automaticamente todo o texto em ficção."
+        ],
+        "advanced": [
+          "Paráfrase reapresenta a ideia de outro texto com formulação diferente; paródia reelabora criticamente ou humoristicamente um texto reconhecível. Citação exige reconhecimento da origem, observadas as regras de redação e uso. A banca pode exigir identificação de referência implícita, inclusive em textos publicitários e institucionais.",
+          "Na morfossintaxe, o adjetivo pode funcionar como adjunto adnominal ou como predicativo, conforme a construção; a classificação morfológica não fixa, sozinha, a função sintática. Esse complemento é introdutório e deve ser articulado ao material dos módulos de sintaxe e classes gramaticais da Central."
+        ]
+      },
+      "summary": [
+        "Direto: fala representada com marcação própria; indireto: relato dentro da voz do narrador; indireto livre: mistura das vozes.",
+        "Mudanças de tempo, pessoa e advérbio podem ser necessárias na transposição de discurso.",
+        "Intertextualidade = diálogo entre textos; metáfora = relação de semelhança.",
+        "Classe gramatical não é igual à função sintática."
+      ],
+      "examTraps": [
+        "Discurso indireto não é apenas discurso direto sem aspas.",
+        "Ironia depende de contexto; não equivale a mentira literal.",
+        "Uma palavra de certa classe pode exercer funções sintáticas distintas."
+      ],
+      "questions": [
+        {
+          "stem": "Qual opção mantém adequadamente o conteúdo de ‘Ana disse: “Enviarei o documento amanhã”’, em relato posterior?",
+          "options": [
+            "Ana disse que enviaria o documento no dia seguinte.",
+            "Ana disse que enviou o documento ontem, obrigatoriamente.",
+            "Ana disse que enviará o documento ontem.",
+            "Ana disse: enviará eu amanhã."
+          ],
+          "correct": 0,
+          "commentary": "No relato posterior, são adequadas as adaptações de tempo verbal e de referência temporal, sem mudar a ideia de envio futuro em relação à fala original."
+        },
+        {
+          "stem": "Em ‘a informação é a ponte entre o tribunal e o cidadão’, a palavra ‘ponte’ constrói sobretudo:",
+          "options": [
+            "Concordância verbal",
+            "Metáfora",
+            "Discurso indireto obrigatório",
+            "Interjeição"
+          ],
+          "correct": 1,
+          "commentary": "‘Ponte’ compara simbolicamente a função de conexão da informação; trata-se de metáfora contextual."
+        }
+      ],
+      "checklist": [
+        "Expliquei o tema com minhas próprias palavras.",
+        "Apliquei o conteúdo a um exemplo semelhante ao da FCC.",
+        "Diferenciei os conceitos que mais causam erros.",
+        "Respondi às questões e compreendi os comentários."
+      ],
+      "sourceIds": [
+        "syllabus",
+        "pt-course"
+      ],
+      "legalUpdateNote": null,
+      "notCovered": [
+        "A aula é um complemento temático, não uma auditoria de todos os exercícios dos módulos de Português."
+      ]
+    },
+    {
+      "topicId": "trt8-tec-21-pt-011",
+      "moduleId": "comp-5-15-m02",
+      "subjectId": "trt8-tec-21-pt",
+      "number": 2,
+      "title": "Reconhecimento de frases corretas e incorretas",
+      "goal": "Avaliar concordância, regência, crase, pontuação e paralelismo antes de escolher a frase adequada.",
+      "complete": {
+        "firstRead": [
+          "Uma questão de correção de frases exige diagnóstico, não apenas impressão de que algo ‘soa bem’. Leia a frase, encontre seu núcleo sintático e verifique como os termos se relacionam. Em ‘Faz três meses que o setor mudou’, o verbo ‘fazer’ indica tempo transcorrido e permanece na terceira pessoa do singular. Em ‘Existem três pedidos’, o verbo ‘existir’ concorda com o sujeito ‘três pedidos’.",
+          "O candidato também precisa distinguir linguagem informal de erro gramatical no registro escrito exigido. A banca normalmente define um padrão de adequação à norma-padrão e pergunta qual redação atende a esse padrão e preserva o sentido. ‘Redação’ aqui é análise e escolha de enunciados; o item não equivale, por si, a um programa completo de redação oficial."
+        ],
+        "howItWorks": [
+          "Verifique por camadas: (1) sujeito e verbo para concordância; (2) verbo e complementos para regência; (3) artigo e preposição para crase; (4) vírgulas e estrutura dos termos; (5) paralelismo e clareza. Na frase ‘O servidor assistiu ao treinamento’, ‘assistir’, no sentido de presenciar, é tradicionalmente construído com preposição ‘a’ na norma-padrão. Em ‘A equipe se dirigiu à unidade’, ocorre a fusão da preposição exigida com o artigo feminino.",
+          "Use reescrita como teste de estrutura: remova um adjunto, localize os núcleos, faça a substituição por masculino quando possível. ‘Dirigiu-se ao setor’ sugere ‘dirigiu-se à unidade’; mas o teste é auxiliar e depende da regência e da presença de artigo."
+        ],
+        "workedExample": [
+          "Considere: ‘Houveram divergências na instrução’. O verbo ‘haver’, no sentido de existir, é impessoal; na norma-padrão, escreva ‘Houve divergências na instrução’. Compare com ‘Existiram divergências’, em que ‘existir’ concorda normalmente.",
+          "Outra situação: ‘É necessário atenção ao prazo’. Quando o adjetivo acompanha substantivo com artigo, a concordância é exigida: ‘É necessária a atenção ao prazo’. Sem determinante, a estrutura pode admitir adjetivo invariável em certos usos: ‘É necessário atenção’. É importante analisar a construção completa, não decorar uma solução única fora de contexto."
+        ],
+        "advanced": [
+          "Pontuação envolve relações sintáticas e significado. Em geral, não se separa sujeito e predicado por vírgula; já um adjunto adverbial deslocado e extenso frequentemente vem isolado. A vírgula que isola uma explicação pode modificar o referente identificado; por isso, comparar duas frases requer verificar também se o sentido foi preservado.",
+          "Paralelismo evita misturar estruturas incongruentes: ‘O plano visa reduzir filas e melhorar o atendimento’ apresenta dois verbos coordenados com funções compatíveis. Trocas como ‘visar à redução das filas e melhorar o atendimento’ combinam padrões diferentes; nem toda diferença é ilegal, mas a simetria costuma favorecer clareza."
+        ]
+      },
+      "summary": [
+        "Diagnóstico em camadas: concordância → regência → crase → pontuação → sentido.",
+        "‘Faz três anos’: fazer temporal impessoal.",
+        "‘Houve reclamações’: haver existencial impessoal; ‘existiram reclamações’: existir concorda.",
+        "A correta deve cumprir a norma-padrão e o comando da questão."
+      ],
+      "examTraps": [
+        "Aceitar frase por soar familiar sem examinar o núcleo verbal.",
+        "Achar que toda palavra feminina recebe crase.",
+        "Corrigir pontuação alterando o sentido exigido pelo enunciado."
+      ],
+      "questions": [
+        {
+          "stem": "Qual frase está adequada à norma-padrão?",
+          "options": [
+            "Houveram três solicitações.",
+            "Fazem dois anos desde a mudança.",
+            "Houve três solicitações.",
+            "Existia três solicitações."
+          ],
+          "correct": 2,
+          "commentary": "‘Haver’ existencial é impessoal: ‘houve três solicitações’. ‘Fazer’ temporal também é impessoal: ‘faz dois anos’. O verbo ‘existir’ concordaria com sujeito plural."
+        },
+        {
+          "stem": "Assinale a construção correta no sentido de ‘dirigir-se a uma unidade determinada’:",
+          "options": [
+            "A equipe dirigiu-se à unidade.",
+            "A equipe dirigiu-se á unidade.",
+            "A equipe dirigiu-se à um setor.",
+            "A equipe dirigiu-se a à unidade."
+          ],
+          "correct": 0,
+          "commentary": "A regência exige ‘a’ e a expressão ‘a unidade’ admite artigo feminino: ocorre crase em ‘à unidade’."
+        }
+      ],
+      "checklist": [
+        "Expliquei o tema com minhas próprias palavras.",
+        "Apliquei o conteúdo a um exemplo semelhante ao da FCC.",
+        "Diferenciei os conceitos que mais causam erros.",
+        "Respondi às questões e compreendi os comentários."
+      ],
+      "sourceIds": [
+        "syllabus",
+        "pt-course"
+      ],
+      "legalUpdateNote": null,
+      "notCovered": [
+        "Questão de correção de frases, distinta de eventual cobrança autônoma de redação oficial."
+      ]
+    },
+    {
+      "topicId": "trt8-tec-21-pt-013",
+      "moduleId": "comp-5-15-m03",
+      "subjectId": "trt8-tec-21-pt",
+      "number": 3,
+      "title": "Equivalência e transformação de estruturas",
+      "goal": "Reescrever enunciados preservando informação, relações lógicas e correção gramatical.",
+      "complete": {
+        "firstRead": [
+          "Frases diferentes podem transmitir a mesma ideia central, mas nem toda substituição de palavras preserva as relações lógicas. Compare: ‘Embora estivesse chovendo, o atendimento continuou’ e ‘Apesar da chuva, o atendimento continuou’. Ambas expressam concessão. Já ‘Porque estava chovendo, o atendimento continuou’ introduz causa, mudando a relação.",
+          "A FCC pode propor passagem da voz ativa para a passiva, transformação de uma oração desenvolvida em reduzida, substituição de conectivo, reorganização de períodos ou troca de pronome relativo. Para conferir equivalência, observe ao mesmo tempo: agentes e pacientes da ação, tempo, negação, condição, causa, concessão e referência dos pronomes."
+        ],
+        "howItWorks": [
+          "Exemplo de voz: ‘A equipe revisou os documentos’ → ‘Os documentos foram revisados pela equipe’. O objeto direto da ativa vira sujeito paciente da passiva analítica; o tempo verbal e o responsável pela ação devem ser preservados. ‘Revisaram-se os documentos’ pode ser passiva sintética, com concordância adequada.",
+          "Ao trocar conectivos, classifique o valor lógico antes de reescrever. ‘Se o sistema falhar, o atendimento será reorganizado’ expressa condição. ‘Caso o sistema falhe...’ conserva o valor condicional com ajuste de modo verbal. Não substitua ‘se’ por ‘porque’: causa e condição são relações diferentes."
+        ],
+        "workedExample": [
+          "Frase inicial: ‘Como o acesso estava indisponível, a equipe adiou a consulta’. Uma reescrita adequada é ‘A equipe adiou a consulta porque o acesso estava indisponível’. Ambos exprimem causa. Uma reescrita com ‘embora’ alteraria a relação: apesar da indisponibilidade, a consulta seria adiada por outra razão não explicitada.",
+          "Original: ‘Os relatórios que foram encaminhados ontem serão revisados’. A redução ‘Os relatórios encaminhados ontem serão revisados’ pode preservar, no contexto apropriado, a referência aos relatórios encaminhados, sem afirmar que todos os relatórios se enquadram nessa categoria."
+        ],
+        "advanced": [
+          "Equivalência sintática não implica identidade em todos os contextos: voz passiva pode mudar a ênfase informacional, embora preserve os participantes centrais. Expressões com quantificadores (‘todos’, ‘alguns’, ‘nenhum’) requerem precisão: ‘nem todos’ não equivale a ‘nenhum’. A negação de ‘todos chegaram’ é ‘pelo menos um não chegou’, e não ‘ninguém chegou’.",
+          "Cuidado com o escopo de orações restritivas e explicativas. ‘Os servidores que participaram do curso receberam certificado’ seleciona um grupo; ‘Os servidores, que participaram do curso, receberam certificado’ tende a pressupor a participação do conjunto referido. Mudanças de vírgula podem modificar o sentido."
+        ]
+      },
+      "summary": [
+        "Equivalência exige conservar atores, tempo, negação e relações lógicas.",
+        "Ativa/passiva: identifique agente, paciente e concordância.",
+        "Causa ≠ condição ≠ concessão ≠ consequência.",
+        "‘Nem todos’ ≠ ‘nenhum’."
+      ],
+      "examTraps": [
+        "Trocar conectivo por outro formalmente parecido com valor semântico diferente.",
+        "Mudar oração restritiva em explicativa sem perceber.",
+        "Converter ‘nem todos’ em ‘nenhum’."
+      ],
+      "questions": [
+        {
+          "stem": "‘Embora haja dificuldades, o serviço funciona’ pode ser reescrito sem alterar a concessão como:",
+          "options": [
+            "Porque há dificuldades, o serviço funciona.",
+            "Apesar das dificuldades, o serviço funciona.",
+            "Se há dificuldades, o serviço funciona.",
+            "O serviço funciona e por isso há dificuldades."
+          ],
+          "correct": 1,
+          "commentary": "‘Apesar de’ mantém sentido concessivo; as demais alternativas introduzem causa, condição ou consequência."
+        },
+        {
+          "stem": "Qual frase preserva o sentido de ‘Nem todos os pedidos foram deferidos’?",
+          "options": [
+            "Nenhum pedido foi deferido.",
+            "Todos os pedidos foram indeferidos.",
+            "Pelo menos um pedido não foi deferido.",
+            "Todos os pedidos foram deferidos."
+          ],
+          "correct": 2,
+          "commentary": "A negação de uma afirmação universal é a existência de ao menos uma exceção. Não se pode concluir que todos foram indeferidos."
+        }
+      ],
+      "checklist": [
+        "Expliquei o tema com minhas próprias palavras.",
+        "Apliquei o conteúdo a um exemplo semelhante ao da FCC.",
+        "Diferenciei os conceitos que mais causam erros.",
+        "Respondi às questões e compreendi os comentários."
+      ],
+      "sourceIds": [
+        "syllabus",
+        "pt-course"
+      ],
+      "legalUpdateNote": null,
+      "notCovered": []
+    },
+    {
+      "topicId": "trt8-tec-21-rlm-001",
+      "moduleId": "comp-5-15-m04",
+      "subjectId": "trt8-tec-21-rlm",
+      "number": 4,
+      "title": "Relações lógicas entre pessoas, lugares e objetos",
+      "goal": "Converter um enunciado longo em quadro de possibilidades e restrições verificáveis.",
+      "complete": {
+        "firstRead": [
+          "Problemas de estrutura lógica descrevem um pequeno universo de pessoas, objetos ou posições, e impõem restrições como ‘Ana mora antes de Bruno’, ‘Carla não usa a sala azul’ ou ‘o processo A não está na segunda mesa’. O objetivo não é adivinhar, mas representar as informações de maneira organizada.",
+          "Comece identificando conjuntos: pessoas (Ana, Bruno, Carla), locais (salas 1, 2, 3), objetos (pastas vermelha, azul, verde). Pergunte se a relação é um-para-um ou se algum elemento pode se repetir. Só depois crie tabela, lista de posições ou diagrama de conexões."
+        ],
+        "howItWorks": [
+          "Método em quatro passos: 1) registre categorias e posições; 2) coloque condições absolutas (‘Bruno está na posição 3’); 3) marque impossibilidades (‘Ana não está na sala 2’); 4) combine relações (‘Carla está à esquerda de Bruno’) e elimine contradições. Anote sempre de qual premissa veio cada conclusão.",
+          "Use uma grade para problemas de associação: marque ✓ para par certo, × para impossível e ? para o que ainda não foi decidido. Condições ‘antes de’ e ‘imediatamente antes de’ não significam a mesma coisa; a primeira permite posições intermediárias, a segunda exige adjacência."
+        ],
+        "workedExample": [
+          "Três pastas, A, B e C, ocupam as posições 1, 2 e 3. A está antes de B; C está na posição 2. As posições 1 e 3 ficam para A e B; como A está antes de B, A fica na 1 e B na 3. Não foi necessário tentar seis arranjos: duas premissas definiram tudo.",
+          "Se o enunciado dissesse apenas ‘A não está na posição 3’ e ‘C está na posição 2’, A ocuparia a 1 e B a 3. Em outros casos, duas configurações podem continuar possíveis — e a conclusão correta deve reconhecer a indeterminação."
+        ],
+        "advanced": [
+          "Em problemas de ordem, traduza ‘X está antes de Y’ por posição(X) menor que posição(Y). Isso facilita encadear relações transitivas: se A está antes de B e B está antes de C, então A está antes de C. Entretanto, ‘trabalha com’ ou ‘conhece’ não é, por si, relação transitiva.",
+          "Não trate a ausência de proibição como confirmação de uma relação. Uma linha com uma alternativa restante só pode ser fechada quando a correspondência for exaustiva e a unicidade tiver sido estabelecida no enunciado."
+        ]
+      },
+      "summary": [
+        "Categorizar → tabelar → preencher certezas → eliminar impossibilidades.",
+        "‘Antes’ não é necessariamente ‘imediatamente antes’.",
+        "Relação de ordem pode ser transitiva; nem toda relação social é.",
+        "Não concluir mais do que as premissas autorizam."
+      ],
+      "examTraps": [
+        "Assumir correspondência um-para-um sem ela ter sido afirmada.",
+        "Confundir possibilidade com certeza.",
+        "Transformar precedência simples em posição adjacente."
+      ],
+      "questions": [
+        {
+          "stem": "A, B e C ocupam três posições distintas; C está na 2, e A vem antes de B. Quem está na posição 3?",
+          "options": [
+            "A",
+            "B",
+            "C",
+            "Não é possível saber"
+          ],
+          "correct": 1,
+          "commentary": "Restam as posições 1 e 3 para A e B. Como A vem antes de B, A fica na 1 e B na 3."
+        },
+        {
+          "stem": "Se X vem antes de Y e Y vem antes de Z, é necessariamente correto que:",
+          "options": [
+            "Z vem antes de X",
+            "X vem antes de Z",
+            "X está imediatamente antes de Z",
+            "Y está depois de Z"
+          ],
+          "correct": 1,
+          "commentary": "A precedência é transitiva. Não há informação suficiente para exigir que X e Z sejam posições adjacentes."
+        }
+      ],
+      "checklist": [
+        "Expliquei o tema com minhas próprias palavras.",
+        "Apliquei o conteúdo a um exemplo semelhante ao da FCC.",
+        "Diferenciei os conceitos que mais causam erros.",
+        "Respondi às questões e compreendi os comentários."
+      ],
+      "sourceIds": [
+        "syllabus",
+        "rlm-course"
+      ],
+      "legalUpdateNote": null,
+      "notCovered": []
+    },
+    {
+      "topicId": "trt8-tec-21-rlm-002",
+      "moduleId": "comp-5-15-m05",
+      "subjectId": "trt8-tec-21-rlm",
+      "number": 5,
+      "title": "Dedução de novas informações e teste das condições lógicas",
+      "goal": "Distinguir consequência necessária, hipótese apenas possível e contradição.",
+      "complete": {
+        "firstRead": [
+          "Depois de representar relações, o candidato precisa descobrir o que é obrigatoriamente verdadeiro. Se toda pessoa da equipe A usa crachá azul e Lia pertence à equipe A, conclui-se necessariamente que Lia usa crachá azul. Mas não vale a recíproca: ver alguém de crachá azul não prova que pertence à equipe A, pois outras equipes podem usar a mesma cor.",
+          "O enunciado pode perguntar 'o que se conclui?', 'qual possibilidade é impossível?' ou 'qual condição precisa ser acrescentada para definir a solução?'. As três perguntas exigem tratamentos diferentes. Conclusão necessária vale em todas as configurações compatíveis com o enunciado; possibilidade vale em pelo menos uma; impossibilidade não vale em nenhuma."
+        ],
+        "howItWorks": [
+          "Procedimento: (1) escreva cada premissa sem reinterpretar; (2) derive consequências diretas; (3) teste a alternativa candidata em todas as configurações ainda possíveis ou tente construir um contraexemplo; (4) rejeite qualquer conclusão não obrigatória quando o comando pede necessidade.",
+          "Um condicional ‘Se A, então B’ não afirma automaticamente A. A única inferência direta assegurada pela forma é que, quando A ocorre, B deve ocorrer; também se pode usar contraposição: ‘Se não B, então não A’. A afirmação do consequente (‘B, logo A’) e a negação do antecedente (‘não A, logo não B’) são falácias."
+        ],
+        "workedExample": [
+          "Premissas: (a) se há reunião, a sala fica reservada; (b) a sala não está reservada. Segue-se que não há reunião, supondo as premissas verdadeiras. A conclusão decorre da contraposição: A implica B e não B implica não A.",
+          "Agora mude a segunda premissa para ‘a sala está reservada’. Não se pode afirmar que há reunião: a reserva pode existir por outro motivo. Essa distinção evita a falácia de afirmar o consequente."
+        ],
+        "advanced": [
+          "Nos problemas com 'todo', 'algum' e 'nenhum', tenha cuidado com quantificadores: ‘Todos os analistas são servidores’ não implica ‘Todos os servidores são analistas’. ‘Alguns servidores estudam’ não implica ‘Todos’. Um diagrama de conjuntos permite checar a validade dessas inferências.",
+          "Se faltar uma informação, busque duas configurações diferentes que respeitem todas as premissas. A existência de dois modelos com respostas diferentes demonstra que a resposta não é determinada. Esse método de contraexemplo é especialmente útil em questões com alternativas que parecem intuitivas."
+        ]
+      },
+      "summary": [
+        "Necessário = verdadeiro em todas as soluções; possível = em pelo menos uma.",
+        "Se A então B; não B ⇒ não A.",
+        "B não implica A sem premissa adicional.",
+        "‘Todo A é B’ não obriga ‘todo B é A’."
+      ],
+      "examTraps": [
+        "Afirmar o consequente e negar o antecedente.",
+        "Confundir ‘pode ser’ com ‘deve ser’.",
+        "Inverter inclusão entre conjuntos."
+      ],
+      "questions": [
+        {
+          "stem": "Premissas: se um servidor foi convocado, recebeu e-mail; Marcos não recebeu e-mail. Conclui-se que:",
+          "options": [
+            "Marcos foi convocado.",
+            "Marcos não foi convocado.",
+            "Marcos não é servidor.",
+            "Todos receberam e-mail."
+          ],
+          "correct": 1,
+          "commentary": "Pela contraposição, a ausência do consequente impede a ocorrência do antecedente nas condições do enunciado."
+        },
+        {
+          "stem": "Se todo documento urgente é assinado e este documento foi assinado, podemos concluir que ele é urgente?",
+          "options": [
+            "Sim, sempre.",
+            "Não, pois documentos não urgentes podem ser assinados.",
+            "Sim, por contraposição.",
+            "Sim, pela negação do consequente."
+          ],
+          "correct": 1,
+          "commentary": "Isso seria afirmar o consequente. A premissa não exclui a assinatura de documentos não urgentes."
+        }
+      ],
+      "checklist": [
+        "Expliquei o tema com minhas próprias palavras.",
+        "Apliquei o conteúdo a um exemplo semelhante ao da FCC.",
+        "Diferenciei os conceitos que mais causam erros.",
+        "Respondi às questões e compreendi os comentários."
+      ],
+      "sourceIds": [
+        "syllabus",
+        "rlm-course"
+      ],
+      "legalUpdateNote": null,
+      "notCovered": []
+    },
+    {
+      "topicId": "trt8-tec-21-cf-016",
+      "moduleId": "comp-5-15-m06",
+      "subjectId": "trt8-tec-21-cf",
+      "number": 6,
+      "title": "CSJT: organização, competências e relação com TST e TRTs",
+      "goal": "Aprender o desenho institucional do Conselho Superior da Justiça do Trabalho com base constitucional e na Lei 14.824/2024.",
+      "complete": {
+        "firstRead": [
+          "A Constituição, no art. 111-A, § 2º, II, estabelece que o Conselho Superior da Justiça do Trabalho (CSJT) funciona junto ao Tribunal Superior do Trabalho (TST). Sua finalidade constitucional central é supervisionar, na forma da lei, a administração, o orçamento, as finanças e o patrimônio da Justiça do Trabalho de primeiro e segundo graus. Age como órgão central do sistema, e suas decisões têm efeito vinculante na esfera de competência.",
+          "A Lei 14.824/2024 disciplina a composição, o funcionamento e as competências do CSJT. É importante separar funções: o TST integra a estrutura jurisdicional trabalhista e exerce competências previstas constitucional e legalmente; o CSJT dirige e padroniza aspectos administrativos sistêmicos. Ele não deve ser confundido com o CNJ, que tem competências constitucionais próprias de controle do Judiciário."
+        ],
+        "howItWorks": [
+          "Conforme a Lei 14.824/2024, o CSJT conta com Plenário, Presidência, Vice-Presidência, Corregedoria-Geral da Justiça do Trabalho, comissões, conselheiros, Centro de Pesquisas Judiciárias e Secretaria-Geral. O art. 3º prevê 12 membros: Presidente e Vice-Presidente do TST; Corregedor-Geral; três ministros do TST eleitos; cinco presidentes de TRTs (com representação regional) e um juiz do trabalho vitalício e titular de Vara.",
+          "A atuação sistêmica inclui temas como tecnologia da informação, gestão de pessoas, planejamento, orçamento, material e patrimônio, controle interno e gestão documental. A Lei 14.824/2024 prevê coordenação e fiscalização desses serviços. O Plenário dispõe de atribuições normativas e de supervisão, além de controle de legalidade administrativa nos casos previstos."
+        ],
+        "workedExample": [
+          "Dois TRTs querem adotar padrões incompatíveis para um sistema administrativo compartilhado. A coordenação central e a normatização de atividades auxiliares comuns podem ser assuntos do CSJT, observado o alcance de sua competência legal. O caso é diferente do julgamento de um recurso trabalhista concreto entre empregado e empregador.",
+          "Se uma alternativa afirmar que o CSJT exerce unicamente função de julgamento de dissídios individuais, há erro de natureza: a missão definida nos textos consultados é supervisão administrativa e sistêmica da Justiça do Trabalho de primeiro e segundo graus, com atribuições descritas em lei."
+        ],
+        "advanced": [
+          "Segundo o art. 1º da Lei 14.824/2024, a supervisão do CSJT alcança a Justiça do Trabalho de primeiro e segundo graus e inclui poderes disciplinares nos termos legais. O efeito vinculante de suas decisões não equivale a poder ilimitado: a competência material, os procedimentos e a hierarquia normativa precisam ser respeitados.",
+          "Na composição, o número do art. 3º deve ser conferido literalmente em estudo de lei seca: 12 conselheiros. A Constituição fixa a função básica; a lei posterior detalha estrutura e competências. Evite decorar redação antiga do Regimento Interno sem cotejo com a Lei 14.824/2024 e eventuais alterações aplicáveis."
+        ]
+      },
+      "summary": [
+        "CF art. 111-A, § 2º, II: CSJT funciona junto ao TST.",
+        "Lei 14.824/2024 regulamenta composição, funcionamento e competência.",
+        "Composição legal: 12 membros, em categorias determinadas.",
+        "Supervisão sistêmica administrativa, orçamentária, financeira e patrimonial de 1º e 2º graus."
+      ],
+      "examTraps": [
+        "CSJT não se confunde com CNJ ou com órgão recursal para dissídio individual.",
+        "Vinculação administrativa não equivale a jurisdição recursal irrestrita.",
+        "As funções constitucionais gerais são detalhadas pela lei: conferir ambos os textos."
+      ],
+      "questions": [
+        {
+          "stem": "A competência constitucional central do CSJT é:",
+          "options": [
+            "Julgar originariamente todos os dissídios individuais do Brasil.",
+            "Supervisionar administrativamente, orçamentariamente, financeiramente e patrimonialmente a Justiça do Trabalho de 1º e 2º graus.",
+            "Substituir todas as Varas do Trabalho.",
+            "Legislar por conta própria sobre contratos de emprego."
+          ],
+          "correct": 1,
+          "commentary": "O art. 111-A, § 2º, II, da Constituição define a supervisão sistêmica, que a Lei 14.824/2024 disciplina."
+        },
+        {
+          "stem": "Segundo o art. 3º da Lei 14.824/2024, o CSJT compõe-se de:",
+          "options": [
+            "7 membros",
+            "9 membros",
+            "12 membros",
+            "15 membros"
+          ],
+          "correct": 2,
+          "commentary": "A Lei 14.824/2024 prevê 12 membros distribuídos pelas categorias do art. 3º; não confundir a composição com a de outros conselhos."
+        }
+      ],
+      "checklist": [
+        "Expliquei o tema com minhas próprias palavras.",
+        "Apliquei o conteúdo a um exemplo semelhante ao da FCC.",
+        "Diferenciei os conceitos que mais causam erros.",
+        "Respondi às questões e compreendi os comentários."
+      ],
+      "sourceIds": [
+        "syllabus",
+        "cf",
+        "l14824"
+      ],
+      "legalUpdateNote": "ATUALIZAÇÃO JURÍDICA NECESSÁRIA antes de publicar: conferir eventuais alterações posteriores na Lei 14.824/2024 e atos do CSJT que complementem o funcionamento; aula elaborada a partir das fontes oficiais consultadas.",
+      "notCovered": []
+    },
+    {
+      "topicId": "trt8-tec-21-ptra-003",
+      "moduleId": "comp-5-15-m07",
+      "subjectId": "trt8-tec-21-ptra",
+      "number": 7,
+      "title": "Serviços auxiliares: secretarias das Varas do Trabalho e distribuidores",
+      "goal": "Entender as funções de secretaria, direção dos serviços e distribuição sem confundir terminologia histórica da CLT com órgãos atuais.",
+      "complete": {
+        "firstRead": [
+          "Além dos magistrados, o funcionamento da Justiça do Trabalho depende de serviços auxiliares. As secretarias recebem e movimentam processos, registram atos, prestam informações procedimentais e contribuem para a realização dos atos judiciais conforme as regras aplicáveis. A distribuição organiza a entrada de feitos e sua atribuição segundo critérios normativos; não decide o mérito da reclamação.",
+          "A CLT mantém, nos arts. 710 a 715, redação histórica que fala em ‘Juntas de Conciliação e Julgamento’. A organização constitucional atual usa Varas do Trabalho em primeiro grau, após a EC 24/1999. Em prova, é preciso reconhecer a literalidade da CLT quando o comando pedir o texto do dispositivo e, ao mesmo tempo, não afirmar que a antiga composição classista permaneceu como modelo vigente."
+        ],
+        "howItWorks": [
+          "Os arts. 710 a 712 tratam da secretaria e das atribuições de seus secretários: recebimento, autuação, andamento e guarda dos processos, protocolo, registro de decisões, fornecimento de informações e certidões, apoio à tramitação e às audiências. Muitas expressões refletem o período anterior à tramitação eletrônica; a prática atual deve ser lida em conjunto com os sistemas e normas processuais vigentes.",
+          "Nos arts. 713 a 715, a CLT descreve serviços de distribuição quando há mais de uma unidade da mesma localidade, distribuição de feitos e registro de entrada. A formulação legal histórica relaciona ordem de entrada e sucessão entre unidades. Não se deve extrapolar que cada localidade hoje use exatamente fichários de papel ou os mesmos procedimentos descritos nos artigos de 1943."
+        ],
+        "workedExample": [
+          "Uma reclamação trabalhista ingressa no sistema eletrônico. O setor responsável registra e encaminha o feito à unidade competente segundo as regras de distribuição, enquanto a secretaria da Vara cuida dos atos de apoio e movimentação processual. A conclusão sobre qual magistrado julgará a causa depende da competência e das regras de distribuição, não de escolha informal do servidor.",
+          "A secretaria certifica um acontecimento do processo e organiza a tramitação sob orientação das autoridades competentes. Isso é distinto da decisão judicial que examina pedidos e provas, que pertence ao órgão jurisdicional competente. A banca pode tentar atribuir à secretaria competência para julgar a reclamação: seria erro."
+        ],
+        "advanced": [
+          "O art. 711 da CLT lista tarefas como autuação, protocolo, registro de decisões, informações às partes, vista, custas e certidões. O art. 712 descreve competências de direção e apoio do secretário. Já o art. 714 está ligado à atividade do distribuidor. Não confunda o bloco de artigos da secretaria com o da distribuição.",
+          "A coexistência de texto histórico com tecnologia atual é ponto de revisão jurídica. As expressões antigas não devem ser ensinadas como se a EC 24/1999 não existisse, mas também não devem ser apagadas quando a questão cobra a redação da CLT. O funcionamento específico no TRT-8 e a correspondência entre órgãos devem ser cotejados com normas internas vigentes e a legislação do processo judicial eletrônico."
+        ]
+      },
+      "summary": [
+        "Secretaria: apoio, tramitação, registros, informações e atos de expediente.",
+        "Distribuidor: organiza atribuição inicial dos feitos conforme regras de distribuição.",
+        "CLT arts. 710–712 = secretaria; arts. 713–715 = distribuidores.",
+        "‘Juntas’ é terminologia histórica na CLT; a Constituição atual prevê Varas do Trabalho."
+      ],
+      "examTraps": [
+        "Atribuir à secretaria competência jurisdicional de decidir o mérito.",
+        "Achar que a terminologia antiga da CLT prova existência atual das antigas Juntas com composição classista.",
+        "Presumir que fichários em papel do texto histórico sejam procedimento obrigatório do sistema eletrônico atual."
+      ],
+      "questions": [
+        {
+          "stem": "Entre os serviços previstos no art. 711 da CLT, está:",
+          "options": [
+            "Proferir sentença no mérito do dissídio.",
+            "Registrar decisões e prestar informações sobre andamento processual.",
+            "Editar lei federal sobre competência.",
+            "Substituir o Tribunal Superior do Trabalho."
+          ],
+          "correct": 1,
+          "commentary": "O art. 711 elenca atribuições de secretaria, entre elas registro de decisões e prestação de informações procedimentais, não o julgamento do mérito."
+        },
+        {
+          "stem": "Sobre os arts. 713 a 715 da CLT, a alternativa correta é:",
+          "options": [
+            "Versam sobre o serviço de distribuidores.",
+            "Dispõem sobre o mérito das reclamações.",
+            "Instituem o CNJ.",
+            "Excluem qualquer atividade de protocolo."
+          ],
+          "correct": 0,
+          "commentary": "A seção trata dos distribuidores; o enunciado deve ser lido com atenção ao vocabulário histórico da CLT e às normas atuais."
+        }
+      ],
+      "checklist": [
+        "Expliquei o tema com minhas próprias palavras.",
+        "Apliquei o conteúdo a um exemplo semelhante ao da FCC.",
+        "Diferenciei os conceitos que mais causam erros.",
+        "Respondi às questões e compreendi os comentários."
+      ],
+      "sourceIds": [
+        "syllabus",
+        "clt",
+        "ec24"
+      ],
+      "legalUpdateNote": "ATUALIZAÇÃO JURÍDICA NECESSÁRIA: cotejar os dispositivos históricos da CLT com regimento interno do TRT-8, atos de distribuição eletrônica e regras processuais atuais antes de publicação; não afirmar literalidade de procedimento físico como norma operacional atual.",
+      "notCovered": []
+    }
+  ]
+}
