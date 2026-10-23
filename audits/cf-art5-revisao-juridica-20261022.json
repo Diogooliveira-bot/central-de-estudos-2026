@@ -1,0 +1,3661 @@
+{
+ "data": "2026-10-22",
+ "fonte": "CF/88, texto compilado do Planalto (arquivo fornecido pelo responsável)",
+ "escopo": "tools/decorando-data-cf.js — subtópico Direitos e deveres individuais e coletivos (CF, art. 5º)",
+ "total": 432,
+ "itens": [
+  {
+   "id": "cf-b6d057713659",
+   "dispositivo": "Art. 5°, LI, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-2aefc063dd97",
+   "dispositivo": "Art. 5°, LI, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-044fd0945e39",
+   "dispositivo": "Art. 5°, LI, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-db92392875ca",
+   "dispositivo": "Art. 5°, LVIII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-1f39249454d0",
+   "dispositivo": "Art. 5°, LXIV, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-f13b6886f32a",
+   "dispositivo": "Art. 5°, LXIX, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-18feca1dd17b",
+   "dispositivo": "Art. 5°, LXVII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-db0db048ac05",
+   "dispositivo": "Art. 5°, LXXIII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-98b7a4314d2d",
+   "dispositivo": "Art. 5°, LXXVIII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-32682f9d5134",
+   "dispositivo": "Art. 5°, LXXVIII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-fc3c099ac95c",
+   "dispositivo": "Art. 5°, VII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-dfb2b3b6bf5c",
+   "dispositivo": "Art. 5°, XI, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-6fcdb0667c2f",
+   "dispositivo": "Art. 5°, XI, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-1435ab7a9d0b",
+   "dispositivo": "Art. 5°, XI, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-82d86c8d7cbc",
+   "dispositivo": "Art. 5°, XLV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-9accde33d639",
+   "dispositivo": "Art. 5°, XVI, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-6d3fa837e60e",
+   "dispositivo": "Art. 5°, XVI, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-11df617d83d4",
+   "dispositivo": "Art. 5°, XVII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-1fdb50f50b8d",
+   "dispositivo": "Art. 5°, XXV, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-3b4972ee736d",
+   "dispositivo": "Art. 5°, XXV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-0d9fc24b72d0",
+   "dispositivo": "Art. 5°, XXXIII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-16efa2cd69a1",
+   "dispositivo": "Art. 5°, XXXVII e LIII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-457eceffc56a",
+   "dispositivo": "Art. 5°, § 2°, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-cbf6ed9c10b1",
+   "dispositivo": "Art. 5°, § 3°, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-1a9ac4b76241",
+   "dispositivo": "Art. 5º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-d80186539fd5",
+   "dispositivo": "Art. 5º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-e446f830913e",
+   "dispositivo": "Art. 5º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-927aee5e1fbf",
+   "dispositivo": "Art. 5º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-97de3586dc12",
+   "dispositivo": "Art. 5º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-47c632dcdc79",
+   "dispositivo": "Art. 5º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-308d262f4ece",
+   "dispositivo": "Art. 5º, I, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-f1dc8b3c2955",
+   "dispositivo": "Art. 5º, II, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-e8e4ab02d6ed",
+   "dispositivo": "Art. 5º, II, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-468e73ea47a9",
+   "dispositivo": "Art. 5º, II, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-97221534122d",
+   "dispositivo": "Art. 5º, III, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-2dd8f778e19c",
+   "dispositivo": "Art. 5º, III, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-fcca9fc6b1d5",
+   "dispositivo": "Art. 5º, III, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-7cae9b34237e",
+   "dispositivo": "Art. 5º, III, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-fa59c0a6b74e",
+   "dispositivo": "Art. 5º, IV e IX, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-834d28f3eaeb",
+   "dispositivo": "Art. 5º, IV e V, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b1d17d29de59",
+   "dispositivo": "Art. 5º, IV, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-05a63aaa53fe",
+   "dispositivo": "Art. 5º, IV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-63d0f2ac373f",
+   "dispositivo": "Art. 5º, IV, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-0f3bfaae9dc0",
+   "dispositivo": "Art. 5º, IV, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-7ea8497a5488",
+   "dispositivo": "Art. 5º, IV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-37fb55c4ddfc",
+   "dispositivo": "Art. 5º, IV, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-9202bbc815ad",
+   "dispositivo": "Art. 5º, IX, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b6882fecb337",
+   "dispositivo": "Art. 5º, IX, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b7ed368d0eab",
+   "dispositivo": "Art. 5º, IX, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-c494013a5752",
+   "dispositivo": "Art. 5º, IX, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-c47b29a689ee",
+   "dispositivo": "Art. 5º, IX, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b40cba8979ce",
+   "dispositivo": "Art. 5º, IX, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-01a11ad8c598",
+   "dispositivo": "Art. 5º, L, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-d8bf64ac1d84",
+   "dispositivo": "Art. 5º, L, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-1ce4dffe2874",
+   "dispositivo": "Art. 5º, L, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-1408eb4d63e3",
+   "dispositivo": "Art. 5º, L, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-197f2b4c282d",
+   "dispositivo": "Art. 5º, L, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-077ce7a251f3",
+   "dispositivo": "Art. 5º, LI c/c Art. 12, I, a, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-0ba7373d8c42",
+   "dispositivo": "Art. 5º, LI e LII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-bbd65a41c7d8",
+   "dispositivo": "Art. 5º, LI, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b6646631e212",
+   "dispositivo": "Art. 5º, LI, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-8076a82d2f02",
+   "dispositivo": "Art. 5º, LI, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-5f7fa9d99bf1",
+   "dispositivo": "Art. 5º, LI, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-dddd957309df",
+   "dispositivo": "Art. 5º, LI, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-1f3b3c907f00",
+   "dispositivo": "Art. 5º, LI, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-299b57d60081",
+   "dispositivo": "Art. 5º, LII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-62447a823b8c",
+   "dispositivo": "Art. 5º, LII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-cb33b931298a",
+   "dispositivo": "Art. 5º, LII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-e3cbec6db07e",
+   "dispositivo": "Art. 5º, LII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-012f1f2e0d78",
+   "dispositivo": "Art. 5º, LII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-9dde3d3296e0",
+   "dispositivo": "Art. 5º, LIII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-d17bf9aeac2b",
+   "dispositivo": "Art. 5º, LIII e LX, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-d4b391e76040",
+   "dispositivo": "Art. 5º, LIV e LV, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b3c6c40c72c6",
+   "dispositivo": "Art. 5º, LIV, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-a916715c6424",
+   "dispositivo": "Art. 5º, LV e LVII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-15b73deebca0",
+   "dispositivo": "Art. 5º, LV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-81448f753c82",
+   "dispositivo": "Art. 5º, LVI, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-6c5ea76ce115",
+   "dispositivo": "Art. 5º, LVI, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-dcfb3f927e1b",
+   "dispositivo": "Art. 5º, LVI, CF c/c Art. 395, III, CPP",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-aec41519918e",
+   "dispositivo": "Art. 5º, LVII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-8610d781879a",
+   "dispositivo": "Art. 5º, LVIII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-ad2272eeaecd",
+   "dispositivo": "Art. 5º, LVII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-12cacdac04fc",
+   "dispositivo": "Art. 5º, LVIII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b0d5e10bf63c",
+   "dispositivo": "Art. 5º, LXI, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-8354f61c1921",
+   "dispositivo": "Art. 5º, LXI, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-a900dcd92d8b",
+   "dispositivo": "Art. 5º, LXII e LXIV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-1f963938aa7c",
+   "dispositivo": "Art. 5º, LXII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-9b1d8ae025e6",
+   "dispositivo": "Art. 5º, LXII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-3bd888ca424d",
+   "dispositivo": "Art. 5º, LXII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-af04fa97c02f",
+   "dispositivo": "Art. 5º, LXII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-7b206c48ff41",
+   "dispositivo": "Art. 5º, LXII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-e925d5285868",
+   "dispositivo": "Art. 5º, LXIII CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-fde3a1735b2f",
+   "dispositivo": "Art. 5º, LXIII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-557c417ab740",
+   "dispositivo": "Art. 5º, LXIII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-8c3fdb0db472",
+   "dispositivo": "Art. 5º, LXIII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-95717fa7a12f",
+   "dispositivo": "Art. 5º, LXIII, LXIV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-0b7494314bb2",
+   "dispositivo": "Art. 5º, LXIV, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-f5c75143d582",
+   "dispositivo": "Art. 5º, LXIV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-a2fbf4fc97c8",
+   "dispositivo": "Art. 5º, LXIV, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-d8f8c805b07f",
+   "dispositivo": "Art. 5º, LXIV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-89edcc463093",
+   "dispositivo": "Art. 5º, LXIX, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-a3ceae3bc4f6",
+   "dispositivo": "Art. 5º, LXIX, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-58d5e797fc2e",
+   "dispositivo": "Art. 5º, LXIX, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-ee8013230a20",
+   "dispositivo": "Art. 5º, LXIX, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-50a82687c038",
+   "dispositivo": "Art. 5º, LXIX, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-eb14012bf524",
+   "dispositivo": "Art. 5º, LXIX, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-0cd6fda042bb",
+   "dispositivo": "Art. 5º, LXIX, LXX, a, b, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-e5c333209e2b",
+   "dispositivo": "Art. 5º, LXIX, LXX, a, b, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-55c30aea7cbf",
+   "dispositivo": "Art. 5º, LXV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b0ac354c27b0",
+   "dispositivo": "Art. 5º, LXV, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-108b948ccad0",
+   "dispositivo": "Art. 5º, LXVI, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-c7666eadf2d5",
+   "dispositivo": "Art. 5º, LXVI, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-25ec4b925e73",
+   "dispositivo": "Art. 5º, LXVI, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-369dd3e11c68",
+   "dispositivo": "Art. 5º, LXVI, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-e1e3700dbff7",
+   "dispositivo": "Art. 5º, LXVII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-4654b070364f",
+   "dispositivo": "Art. 5º, LXVII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-c625d3d28622",
+   "dispositivo": "Art. 5º, LXVII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-0b45588bf863",
+   "dispositivo": "Art. 5º, LXVIII e LXIX, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-8b8ce29d4e55",
+   "dispositivo": "Art. 5º, LXVIII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-57f6018d2ae7",
+   "dispositivo": "Art. 5º, LXVIII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-4310b8bb4e9f",
+   "dispositivo": "Art. 5º, LXVIII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-2d73747a3b69",
+   "dispositivo": "Art. 5º, LXVIII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-924211fb67a3",
+   "dispositivo": "Art. 5º, LXVIII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-c4b9ebb22657",
+   "dispositivo": "Art. 5º, LXVIII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-3504d5c6db41",
+   "dispositivo": "Art. 5º, LXVIII, LXIX, LXXVII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-891ac792090e",
+   "dispositivo": "Art. 5º, LXX, a, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-723f5fbaa227",
+   "dispositivo": "Art. 5º, LXX, a, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-5f86628d3934",
+   "dispositivo": "Art. 5º, LXX, a, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b2526eed32d4",
+   "dispositivo": "Art. 5º, LXX, a, b, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-12a29be150fd",
+   "dispositivo": "Art. 5º, LXX, a, b, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-9fc874ec0511",
+   "dispositivo": "Art. 5º, LXX, b, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-0704bee6e061",
+   "dispositivo": "Art. 5º, LXX, b, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-370fe5e3174b",
+   "dispositivo": "Art. 5º, LXX, b, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-20839c59d2fe",
+   "dispositivo": "Art. 5º, LXX, b, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-95e15dd60434",
+   "dispositivo": "Art. 5º, LXX, b, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-92aebb37491c",
+   "dispositivo": "Art. 5º, LXXI, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-35099763066a",
+   "dispositivo": "Art. 5º, LXXI, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-31f4928ec2e4",
+   "dispositivo": "Art. 5º, LXXI, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-461fad0a6300",
+   "dispositivo": "Art. 5º, LXXI, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-46f8fbb03215",
+   "dispositivo": "Art. 5º, LXXI, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-cd429ca8005f",
+   "dispositivo": "Art. 5º, LXXI, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-e2d5dcf7696d",
+   "dispositivo": "Art. 5º, LXXI, CF c/c S.V. 37",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-1764d464e002",
+   "dispositivo": "Art. 5º, LXXII, \"b\", CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-4ad8e85512bc",
+   "dispositivo": "Art. 5º, LXXII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-0a59650be361",
+   "dispositivo": "Art. 5º, LXXII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b693d1b761b8",
+   "dispositivo": "Art. 5º, LXXII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-a24fdc372591",
+   "dispositivo": "Art. 5º, LXXII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-69177738de27",
+   "dispositivo": "Art. 5º, LXXII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-d4d3d7506d1d",
+   "dispositivo": "Art. 5º, LXXII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-a7ad9c98035b",
+   "dispositivo": "Art. 5º, LXXII, LXXVII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-d809e7912467",
+   "dispositivo": "Art. 5º, LXXII, LXXVII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-0b224b1dd91a",
+   "dispositivo": "Art. 5º, LXXII, LXXVII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-8cc3ca46b578",
+   "dispositivo": "Art. 5º, LXXII, LXXVII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-166b09d9ed8c",
+   "dispositivo": "Art. 5º, LXXII, a, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-ce121c86a414",
+   "dispositivo": "Art. 5º, LXXII, a, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-8b622a6148b6",
+   "dispositivo": "Art. 5º, LXXII, b, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-03103e1f132f",
+   "dispositivo": "Art. 5º, LXXII, b, LXXVII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-96e55d40dac5",
+   "dispositivo": "Art. 5º, LXXII, “a”, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-dcf666e90b80",
+   "dispositivo": "Art. 5º, LXXII, “a”, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-d981343d7588",
+   "dispositivo": "Art. 5º, LXXIII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-aaf9f765d1e2",
+   "dispositivo": "Art. 5º, LXXIII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-d3c0b555553c",
+   "dispositivo": "Art. 5º, LXXIII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-0024e4c260c9",
+   "dispositivo": "Art. 5º, LXXIII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-f0c76693acbf",
+   "dispositivo": "Art. 5º, LXXIII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-2cff8a655d3c",
+   "dispositivo": "Art. 5º, LXXIII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-72aacaecb39e",
+   "dispositivo": "Art. 5º, LXXIII, CF c/c Art. 1º, Lei 4.717/65",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-c2ac3df54b96",
+   "dispositivo": "Art. 5º, LXXIII, LXXVII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-964e84b305e9",
+   "dispositivo": "Art. 5º, LXXIV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-bb0d61803753",
+   "dispositivo": "Art. 5º, LXXIV, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-c3dd190524cf",
+   "dispositivo": "Art. 5º, LXXIX, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-0c1a4397b11f",
+   "dispositivo": "Art. 5º, LXXIX, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-d985aa37be14",
+   "dispositivo": "Art. 5º, LXXIX, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-36594b16ec87",
+   "dispositivo": "Art. 5º, LXXIX, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-a39eee1d7218",
+   "dispositivo": "Art. 5º, LXXIX, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-6baa8bb90143",
+   "dispositivo": "Art. 5º, LXXV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-c103a3cbccf4",
+   "dispositivo": "Art. 5º, LXXV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-6ff3da60946e",
+   "dispositivo": "Art. 5º, LXXV, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-a94e1a7b8a26",
+   "dispositivo": "Art. 5º, LXXV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-a243722124ad",
+   "dispositivo": "Art. 5º, LXXV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-e3edde5114da",
+   "dispositivo": "Art. 5º, LXXV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-75d48d52d871",
+   "dispositivo": "Art. 5º, LXXVI, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-be413a8463f2",
+   "dispositivo": "Art. 5º, LXXVI, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-0a6834094a67",
+   "dispositivo": "Art. 5º, LXXVII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-0aa05fb0a3e5",
+   "dispositivo": "Art. 5º, LXXVII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-d45142c89e8e",
+   "dispositivo": "Art. 5º, LXXVII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-244dbb43b549",
+   "dispositivo": "Art. 5º, LXXVII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-ecb7b44dde04",
+   "dispositivo": "Art. 5º, LXXVII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-df691add4572",
+   "dispositivo": "Art. 5º, LXXVII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-72c760aaf645",
+   "dispositivo": "Art. 5º, LXXVIII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-f72133111305",
+   "dispositivo": "Art. 5º, V, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-55cc94ae10f6",
+   "dispositivo": "Art. 5º, VI, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b6f79b25ddcf",
+   "dispositivo": "Art. 5º, VI, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-27797a2ef1ee",
+   "dispositivo": "Art. 5º, VI, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-2a27b4eab66d",
+   "dispositivo": "Art. 5º, VII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-f425119141ab",
+   "dispositivo": "Art. 5º, VII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-59fde1ebe52f",
+   "dispositivo": "Art. 5º, VII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-9015ca57e14a",
+   "dispositivo": "Art. 5º, VII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-4a1f35e0d18a",
+   "dispositivo": "Art. 5º, VII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-266e8520df81",
+   "dispositivo": "Art. 5º, VII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-6299e48c986b",
+   "dispositivo": "Art. 5º, VIII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-95b48562071a",
+   "dispositivo": "Art. 5º, VIII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-1934a3d7aca2",
+   "dispositivo": "Art. 5º, VIII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-70d23d34be7b",
+   "dispositivo": "Art. 5º, VIII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-74dd844d1458",
+   "dispositivo": "Art. 5º, VIII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b52fa71b5d7a",
+   "dispositivo": "Art. 5º, X, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-5caf867031b5",
+   "dispositivo": "Art. 5º, X, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-e21db3d5f127",
+   "dispositivo": "Art. 5º, X, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-536fb6bca004",
+   "dispositivo": "Art. 5º, X, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-3c1f3d6e1c40",
+   "dispositivo": "Art. 5º, XI, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-09e97fdda5d9",
+   "dispositivo": "Art. 5º, XI, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-dcc0e8272978",
+   "dispositivo": "Art. 5º, XI, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-1ce96f293322",
+   "dispositivo": "Art. 5º, XI, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-f8b6358ee808",
+   "dispositivo": "Art. 5º, XI, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-865b036a5fb5",
+   "dispositivo": "Art. 5º, XI, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-ad774baf7afe",
+   "dispositivo": "Art. 5º, XI, CF c/c Art. 245, CPP",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-512770d018ea",
+   "dispositivo": "Art. 5º, XII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-c3cb17190b4b",
+   "dispositivo": "Art. 5º, XII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-7924d3495987",
+   "dispositivo": "Art. 5º, XII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-4c7f5d8f25f1",
+   "dispositivo": "Art. 5º, XII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-ae9cf9c14c56",
+   "dispositivo": "Art. 5º, XII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b03695fe8b8a",
+   "dispositivo": "Art. 5º, XIII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-2aa8002be859",
+   "dispositivo": "Art. 5º, XIII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-6a756e1f9e2f",
+   "dispositivo": "Art. 5º, XIII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-36eddb570741",
+   "dispositivo": "Art. 5º, XIII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-de304be3f915",
+   "dispositivo": "Art. 5º, XIII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-3b729b4a9216",
+   "dispositivo": "Art. 5º, XIII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-23c9ed69713a",
+   "dispositivo": "Art. 5º, XIV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-7b880a8c0a72",
+   "dispositivo": "Art. 5º, XIV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-3faa1626b339",
+   "dispositivo": "Art. 5º, XIV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-cd33ce7e73f8",
+   "dispositivo": "Art. 5º, XIV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-7ada51c7778e",
+   "dispositivo": "Art. 5º, XIV, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-a132fad20858",
+   "dispositivo": "Art. 5º, XIV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-292c9557c6eb",
+   "dispositivo": "Art. 5º, XIX, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-4466df91734f",
+   "dispositivo": "Art. 5º, XIX, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b80c761a36ad",
+   "dispositivo": "Art. 5º, XIX, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-34b008839693",
+   "dispositivo": "Art. 5º, XIX, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-29de6dfb5e67",
+   "dispositivo": "Art. 5º, XIX, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-f749ee7f6b67",
+   "dispositivo": "Art. 5º, XIX, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-4fdeea80d6a2",
+   "dispositivo": "Art. 5º, XL, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-096acdc7ee8d",
+   "dispositivo": "Art. 5º, XL, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-a3e582a4405f",
+   "dispositivo": "Art. 5º, XL, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-d8a988c4b3fb",
+   "dispositivo": "Art. 5º, XL, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-644c32d181a4",
+   "dispositivo": "Art. 5º, XL, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-db766517541d",
+   "dispositivo": "Art. 5º, XL, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-10550f72749e",
+   "dispositivo": "Art. 5º, XLI, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-6bf901c1952e",
+   "dispositivo": "Art. 5º, XLI, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-850462a8ed61",
+   "dispositivo": "Art. 5º, XLI, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-c26a732986c3",
+   "dispositivo": "Art. 5º, XLII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-4acc760bd405",
+   "dispositivo": "Art. 5º, XLII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-e783f29c455d",
+   "dispositivo": "Art. 5º, XLII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b2700ecc7dc0",
+   "dispositivo": "Art. 5º, XLII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-bfae701a74b1",
+   "dispositivo": "Art. 5º, XLII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-73bafba6dc73",
+   "dispositivo": "Art. 5º, XLII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-00081d6f3db1",
+   "dispositivo": "Art. 5º, XLII, XLIII e XLIV, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-5762224b2e34",
+   "dispositivo": "Art. 5º, XLIII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-e3670b376e30",
+   "dispositivo": "Art. 5º, XLIII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-f60508dc588b",
+   "dispositivo": "Art. 5º, XLIII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-695d86031a78",
+   "dispositivo": "Art. 5º, XLIII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-de399e9d41d5",
+   "dispositivo": "Art. 5º, XLIII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-843c5ed026b4",
+   "dispositivo": "Art. 5º, XLIII, CF c/c Art. 323, II, CPP",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-c4173cf83f05",
+   "dispositivo": "Art. 5º, XLIII, CF e 2º, Lei 8.072/90",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-f73dc33e8569",
+   "dispositivo": "Art. 5º, XLIV, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-3b8c392c4709",
+   "dispositivo": "Art. 5º, XLIV, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-0865e695b90b",
+   "dispositivo": "Art. 5º, XLIV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-5d57778c5fba",
+   "dispositivo": "Art. 5º, XLIV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-89e3a3c7b452",
+   "dispositivo": "Art. 5º, XLV, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-904e73bbf76d",
+   "dispositivo": "Art. 5º, XLV, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-85e1b33c3fde",
+   "dispositivo": "Art. 5º, XLV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-74883f9f57fa",
+   "dispositivo": "Art. 5º, XLV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-c4bb46a16cf7",
+   "dispositivo": "Art. 5º, XLV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-0ae2d59434f6",
+   "dispositivo": "Art. 5º, XLV, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-c0b08103f050",
+   "dispositivo": "Art. 5º, XLVI e XLVII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-5e7bb1a6eafb",
+   "dispositivo": "Art. 5º, XLVI, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-c6f6d3c503ff",
+   "dispositivo": "Art. 5º, XLVI, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-2a0d5a2cc9d5",
+   "dispositivo": "Art. 5º, XLVI, d, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-83179a70d719",
+   "dispositivo": "Art. 5º, XLVI, “d\", CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-2c9dd56ca369",
+   "dispositivo": "Art. 5º, XLVI, “e”, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-1412f36147b0",
+   "dispositivo": "Art. 5º, XLVII c/c 60, § 4º, IV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-cf8c7bf4dfe9",
+   "dispositivo": "Art. 5º, XLVII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-ed5125f274e7",
+   "dispositivo": "Art. 5º, XLVII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-a61ab7b222ff",
+   "dispositivo": "Art. 5º, XLVII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-a52accb69b04",
+   "dispositivo": "Art. 5º, XLVII, a c/c Art. 60, § 4º, IV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-ec4072d9c74e",
+   "dispositivo": "Art. 5º, XLVII, a, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-41e912758e8f",
+   "dispositivo": "Art. 5º, XLVII, a, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-9f9fa319e1aa",
+   "dispositivo": "Art. 5º, XLVII, a, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-1495b7fe65ba",
+   "dispositivo": "Art. 5º, XLVII, b, CF c/c S.V. 5",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-13e8f894d14d",
+   "dispositivo": "Art. 5º, XLVII, d, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-df0ef2533963",
+   "dispositivo": "Art. 5º, XLVII, “a” e “c”, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-434df5172d56",
+   "dispositivo": "Art. 5º, XLVII, “a”, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-98bf93737532",
+   "dispositivo": "Art. 5º, XV, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-e4c56b029c33",
+   "dispositivo": "Art. 5º, LXI e LXII, CF c/c Art. 136, § 3º, I, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-f6cd91557bc1",
+   "dispositivo": "Art. 5º, XV, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-0e70c3577e61",
+   "dispositivo": "Art. 5º, XVI, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-2723b6dfbabe",
+   "dispositivo": "Art. 5º, XVI, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-60ee7675ad22",
+   "dispositivo": "Art. 5º, XVI, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-0ed1133e5761",
+   "dispositivo": "Art. 5º, XVI, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-00ad96e13b5a",
+   "dispositivo": "Art. 5º, XVI, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-afbdaee45a76",
+   "dispositivo": "Art. 5º, XVI, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-58c642c2d14b",
+   "dispositivo": "Art. 5º, XVII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-22d8d5f10891",
+   "dispositivo": "Art. 5º, XVII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-699600380fd8",
+   "dispositivo": "Art. 5º, XVII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-3026e6cf0e3d",
+   "dispositivo": "Art. 5º, XVII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-8afba18c6f5e",
+   "dispositivo": "Art. 5º, XVII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-227b539981cd",
+   "dispositivo": "Art. 5º, XVII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-2998c4fec9c2",
+   "dispositivo": "Art. 5º, XVIII c/c XXI, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-849b94bc5944",
+   "dispositivo": "Art. 5º, XVIII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-999d6e77a91f",
+   "dispositivo": "Art. 5º, XVIII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-bd02ebd60bed",
+   "dispositivo": "Art. 5º, XVIII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-6c780e3559bb",
+   "dispositivo": "Art. 5º, XVIII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-c4d8869d62d7",
+   "dispositivo": "Art. 5º, XVIII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-390f52a5ec30",
+   "dispositivo": "Art. 5º, XVIII, XIX, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-ba084fe6835f",
+   "dispositivo": "Art. 5º, XVIII, XIX, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-9421ee8e8994",
+   "dispositivo": "Art. 5º, XX, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-5fbd4656a395",
+   "dispositivo": "Art. 5º, XX, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b02e73071958",
+   "dispositivo": "Art. 5º, XX, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-60530fa56cc8",
+   "dispositivo": "Art. 5º, XXI, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-d2e08dc9f7e4",
+   "dispositivo": "Art. 5º, XXII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-64b9d28310ad",
+   "dispositivo": "Art. 5º, XXII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-2596d123ca76",
+   "dispositivo": "Art. 5º, XXII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-c43966bb96fb",
+   "dispositivo": "Art. 5º, XXIII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-ca3ed187d701",
+   "dispositivo": "Art. 5º, XXIII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-1c33ff7451d8",
+   "dispositivo": "Art. 5º, XXIV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-16039a56cb20",
+   "dispositivo": "Art. 5º, XXIV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-c0e493d9abfb",
+   "dispositivo": "Art. 5º, XXIV, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-d2c159a2daee",
+   "dispositivo": "Art. 5º, XXIV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-1f8727023a2d",
+   "dispositivo": "Art. 5º, XXIX, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-9998bea506e6",
+   "dispositivo": "Art. 5º, XXV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-d1d7abff394f",
+   "dispositivo": "Art. 5º, XXV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-6fe577493274",
+   "dispositivo": "Art. 5º, XXV, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-a67eba3463ad",
+   "dispositivo": "Art. 5º, XXV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b84c16063cd4",
+   "dispositivo": "Art. 5º, XXV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-556440938c17",
+   "dispositivo": "Art. 5º, XXV, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-1a1a83e077da",
+   "dispositivo": "Art. 5º, XXVI, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-e7fa824d726a",
+   "dispositivo": "Art. 5º, XXVI, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-8b39f1f9353a",
+   "dispositivo": "Art. 5º, XXVII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-9f6b8dc5458c",
+   "dispositivo": "Art. 5º, XXVII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-2f0add3a0e5d",
+   "dispositivo": "Art. 5º, XXXI, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-dd6f114ac4dd",
+   "dispositivo": "Art. 5º, XXXI, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b7bcb2c3e756",
+   "dispositivo": "Art. 5º, XXXI, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-20ecc67bafc6",
+   "dispositivo": "Art. 5º, XXXI, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-c9251ad0455d",
+   "dispositivo": "Art. 5º, XXXI, c/c 12, I, “a”, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-9b1f12103716",
+   "dispositivo": "Art. 5º, XXXIII e XXXIV, \"b\", CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-6a3070ea1a65",
+   "dispositivo": "Art. 5º, XXXIII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b64ed74ae7d2",
+   "dispositivo": "Art. 5º, XXXIII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-ac21196242b9",
+   "dispositivo": "Art. 5º, XXXIII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-0ff1390d71a5",
+   "dispositivo": "Art. 5º, XXXIV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-730398bf59a8",
+   "dispositivo": "Art. 5º, XXXIV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-a20cb3e1d85e",
+   "dispositivo": "Art. 5º, XXXIV, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-67094d037823",
+   "dispositivo": "Art. 5º, XXXIV, a, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-7feb1aa2fbfd",
+   "dispositivo": "Art. 5º, XXXIV, b, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-d6cd110793d3",
+   "dispositivo": "Art. 5º, XXXIV, b, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-3aba59b1241a",
+   "dispositivo": "Art. 5º, XXXIV, “a”, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-8f025a220772",
+   "dispositivo": "Art. 5º, XXXIX, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-ad898bb3c7ed",
+   "dispositivo": "Art. 5º, XXXIX, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-f88c8b37c0e4",
+   "dispositivo": "Art. 5º, XXXIX, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-af7974bf6c22",
+   "dispositivo": "Art. 5º, XXXIX, CF e Art. 1º, CP",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-7eda2895416f",
+   "dispositivo": "Art. 5º, XXXV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-04fd5214cc53",
+   "dispositivo": "Art. 5º, XXXV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-48a3a4bd561c",
+   "dispositivo": "Art. 5º, XXXV, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-5dc9a73d1594",
+   "dispositivo": "Art. 5º, XXXV, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-564f8b23dc27",
+   "dispositivo": "Art. 5º, XXXV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-2e62666b421c",
+   "dispositivo": "Art. 5º, XXXV, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-447eb24b6cba",
+   "dispositivo": "Art. 5º, XXXVI, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-e4f63e1be071",
+   "dispositivo": "Art. 5º, XXXVI, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-6c18e6eeda7f",
+   "dispositivo": "Art. 5º, XXXVI, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-4708e65ec44d",
+   "dispositivo": "Art. 5º, XXXVII e LIII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-9c2492999201",
+   "dispositivo": "Art. 5º, XXXVII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-16523c37b084",
+   "dispositivo": "Art. 5º, XXXVII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-f8e340436cd0",
+   "dispositivo": "Art. 5º, XXXVII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-8608914d432c",
+   "dispositivo": "Art. 5º, XXXVIII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-3cf83ebd6758",
+   "dispositivo": "Art. 5º, XXXVIII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-0fa3d5a141ed",
+   "dispositivo": "Art. 5º, XXXVIII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-4911aed57be2",
+   "dispositivo": "Art. 5º, § 1º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-cf8917b557b6",
+   "dispositivo": "Art. 5º, § 1º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-1527c8e6f486",
+   "dispositivo": "Art. 5º, § 1º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-ce356a58bad6",
+   "dispositivo": "Art. 5º, § 1º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-da9e61944831",
+   "dispositivo": "Art. 5º, § 1º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-95f1d8f6a3e4",
+   "dispositivo": "Art. 5º, § 1º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-00f7a50a8e9e",
+   "dispositivo": "Art. 5º, § 2º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-3ce05b574a3c",
+   "dispositivo": "Art. 5º, § 2º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-27af86e2f4a5",
+   "dispositivo": "Art. 5º, § 2º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-7b7362906527",
+   "dispositivo": "Art. 5º, § 2º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-3297732d824d",
+   "dispositivo": "Art. 5º, § 2º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-996fad59f920",
+   "dispositivo": "Art. 5º, § 2º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-ccc3bafed7f9",
+   "dispositivo": "Art. 5º, § 3º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-64a3fe20e4e0",
+   "dispositivo": "Art. 5º, § 3º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b8f11ca382a9",
+   "dispositivo": "Art. 5º, § 3º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-ef8a8239acae",
+   "dispositivo": "Art. 5º, § 3º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-332895837bb3",
+   "dispositivo": "Art. 5º, § 3º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-01ad0c9b7d99",
+   "dispositivo": "Art. 5º, § 3º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-236896521ac8",
+   "dispositivo": "Art. 5º, § 4º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-553a84d681d9",
+   "dispositivo": "Art. 5º, § 4º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-2360d56f8d57",
+   "dispositivo": "Art. 5º, §§ 2º e 3º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-fb6dbc4bd188",
+   "dispositivo": "Arts. 5°, § 3° c/c 84, VIII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-8624f516f7ac",
+   "dispositivo": "Arts. 5º, caput, e 14, §§ 2º e 3º, I, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-70e4faf7433d",
+   "dispositivo": "Arts. 5º, II e 13, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-f7a7e4777133",
+   "dispositivo": "Arts. 5º, IV, CF c/c 19, CC",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-9eba988043e2",
+   "dispositivo": "Arts. 5º, LVI, CF e 157, CPP",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-6d72f23f8404",
+   "dispositivo": "Arts. 5º, LXXIII e 129, III, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-22ee1fc6ca12",
+   "dispositivo": "Arts. 5º, VII e 19, I, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-da5dec912b60",
+   "dispositivo": "Arts. 5º, XIII, e 207, § 1º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-f0b57bcdea2b",
+   "dispositivo": "Arts. 5º, XL CF e 2º, § único, CP",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-autoral-inedita-dir-001",
+   "dispositivo": "Autoral • Eficácia horizontal dos direitos fundamentais",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "authorial"
+  },
+  {
+   "id": "cf-autoral-inedita-dir-002",
+   "dispositivo": "Autoral • Igualdade formal e material",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "authorial"
+  },
+  {
+   "id": "cf-autoral-inedita-dir-003",
+   "dispositivo": "Autoral • Manifestação do pensamento e direito de resposta",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "authorial"
+  },
+  {
+   "id": "cf-autoral-inedita-dir-004",
+   "dispositivo": "Autoral • Escusa de consciência",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "authorial"
+  },
+  {
+   "id": "cf-autoral-inedita-dir-005",
+   "dispositivo": "Autoral • Inviolabilidade do domicílio",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "authorial"
+  },
+  {
+   "id": "cf-autoral-inedita-dir-006",
+   "dispositivo": "Autoral • Sigilo das comunicações",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "authorial"
+  },
+  {
+   "id": "cf-autoral-inedita-dir-007",
+   "dispositivo": "Autoral • Direito de reunião",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "authorial"
+  },
+  {
+   "id": "cf-autoral-inedita-dir-008",
+   "dispositivo": "Autoral • Liberdade de associação",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "authorial"
+  },
+  {
+   "id": "cf-autoral-inedita-dir-009",
+   "dispositivo": "Autoral • Representação associativa",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "authorial"
+  },
+  {
+   "id": "cf-autoral-inedita-dir-010",
+   "dispositivo": "Autoral • Requisição de propriedade",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "authorial"
+  },
+  {
+   "id": "cf-autoral-inedita-dir-011",
+   "dispositivo": "Autoral • Sucessão de bens de estrangeiro",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "authorial"
+  },
+  {
+   "id": "cf-autoral-inedita-dir-012",
+   "dispositivo": "Autoral • Inafastabilidade da jurisdição",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "authorial"
+  },
+  {
+   "id": "cf-autoral-inedita-dir-013",
+   "dispositivo": "Autoral • Tribunal do Júri",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "authorial"
+  },
+  {
+   "id": "cf-autoral-inedita-dir-014",
+   "dispositivo": "Autoral • Retroatividade penal benéfica",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "authorial"
+  },
+  {
+   "id": "cf-autoral-inedita-dir-015",
+   "dispositivo": "Autoral • Racismo",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "authorial"
+  },
+  {
+   "id": "cf-autoral-inedita-dir-016",
+   "dispositivo": "Autoral • Penas vedadas",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "authorial"
+  },
+  {
+   "id": "cf-autoral-inedita-dir-017",
+   "dispositivo": "Autoral • Extradição",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "authorial"
+  },
+  {
+   "id": "cf-autoral-inedita-dir-018",
+   "dispositivo": "Autoral • Contraditório e ampla defesa",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "authorial"
+  },
+  {
+   "id": "cf-autoral-inedita-dir-019",
+   "dispositivo": "Autoral • Relaxamento da prisão ilegal",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "authorial"
+  },
+  {
+   "id": "cf-autoral-inedita-dir-020",
+   "dispositivo": "Autoral • Prisão civil do depositário infiel",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "authorial"
+  },
+  {
+   "id": "cf-autoral-inedita-dir-021",
+   "dispositivo": "Autoral • Habeas corpus",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "authorial"
+  },
+  {
+   "id": "cf-autoral-inedita-dir-022",
+   "dispositivo": "Autoral • Mandado de segurança coletivo",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "authorial"
+  },
+  {
+   "id": "cf-autoral-inedita-dir-023",
+   "dispositivo": "Autoral • Mandado de injunção",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "authorial"
+  },
+  {
+   "id": "cf-autoral-inedita-dir-024",
+   "dispositivo": "Autoral • Habeas data",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "authorial"
+  },
+  {
+   "id": "cf-autoral-inedita-dir-025",
+   "dispositivo": "Autoral • Ação popular",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "authorial"
+  },
+  {
+   "id": "cf-autoral-inedita-dir-026",
+   "dispositivo": "Autoral • Tratados de direitos humanos — art. 5º, §3º",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "authorial"
+  },
+  {
+   "id": "cf-autoral-inedita-dir-027",
+   "dispositivo": "Autoral • Status supralegal dos tratados de direitos humanos",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "authorial"
+  },
+  {
+   "id": "cf-autoral-inedita-dir-028",
+   "dispositivo": "Autoral • Tribunal Penal Internacional",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "authorial"
+  },
+  {
+   "id": "cf-autoral-inedita-dir-029",
+   "dispositivo": "Autoral • Proteção de dados pessoais",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "authorial"
+  },
+  {
+   "id": "cf-autoral-inedita-dir-030",
+   "dispositivo": "Autoral • Liberdade de expressão e direito ao esquecimento",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "authorial"
+  }
+ ],
+ "correcoesEnunciado": [
+  {
+   "id": "cf-05a63aaa53fe",
+   "removido": "Administrativa – Sem Especialidade (TRF - 6ª REGIÃO)"
+  },
+  {
+   "id": "cf-d4b391e76040",
+   "removido": "Anulada"
+  },
+  {
+   "id": "cf-dcfb3f927e1b",
+   "removido": "Avaliador (TJ-PA)"
+  },
+  {
+   "id": "cf-3bd888ca424d",
+   "removido": "Polícia Civil do Distrito Federal (PC-DF)"
+  },
+  {
+   "id": "cf-af04fa97c02f",
+   "removido": "Anulada"
+  },
+  {
+   "id": "cf-557c417ab740",
+   "removido": "Anulada"
+  },
+  {
+   "id": "cf-89edcc463093",
+   "removido": "e Defesa (AMAZUL)"
+  },
+  {
+   "id": "cf-924211fb67a3",
+   "removido": "Anulada"
+  },
+  {
+   "id": "cf-3504d5c6db41",
+   "removido": "Administrativa (MPE-PI)"
+  },
+  {
+   "id": "cf-a94e1a7b8a26",
+   "removido": "Manaus (ENFAM)"
+  },
+  {
+   "id": "cf-74dd844d1458",
+   "removido": "(MPE-BA) - Prova Anulada"
+  },
+  {
+   "id": "cf-3c1f3d6e1c40",
+   "removido": "Avaliador (TRT - 2ª Região)"
+  },
+  {
+   "id": "cf-ae9cf9c14c56",
+   "removido": "Anulada"
+  },
+  {
+   "id": "cf-f749ee7f6b67",
+   "removido": "(MPE-BA) - Prova Anulada"
+  },
+  {
+   "id": "cf-a52accb69b04",
+   "removido": "Federal - Área 1 (Polícia Federal)"
+  },
+  {
+   "id": "cf-1495b7fe65ba",
+   "removido": "Legislativo (Senado Federal)"
+  },
+  {
+   "id": "cf-df0ef2533963",
+   "removido": "Penal (PP-RS)"
+  },
+  {
+   "id": "cf-ce356a58bad6",
+   "removido": "Administrativa (TRT - 10ª Região)"
+  },
+  {
+   "id": "cf-b8f11ca382a9",
+   "removido": "Federal (TRT - 6ª Região)"
+  },
+  {
+   "id": "cf-ef8a8239acae",
+   "removido": "Administrativa (TRT - 10ª Região)"
+  },
+  {
+   "id": "cf-332895837bb3",
+   "removido": "Administrativa (TRT - 10ª Região)"
+  },
+  {
+   "id": "cf-f7a7e4777133",
+   "removido": "Substituto (MPE-SC)"
+  },
+  {
+   "id": "cf-autoral-inedita-dir-010",
+   "antes": "Sobre Requisição de propriedade, considere a afirmação: confisco definitivo da propriedade utilizada, sem dever de indenizar mesmo quando a utilização estatal causar prejuízo material ao proprietário.",
+   "depois": "Sobre Requisição de propriedade, considere a afirmação: No caso de iminente perigo público, a requisição permite o confisco definitivo da propriedade utilizada, sem dever de indenizar mesmo quando a utilização estatal causar prejuízo material ao proprietário."
+  },
+  {
+   "id": "cf-autoral-inedita-dir-011",
+   "antes": "Sobre Sucessão de bens de estrangeiro, considere a afirmação: pela lei brasileira em benefício do cônjuge ou dos filhos brasileiros, salvo se lhes for mais favorável a lei pessoal do falecido.",
+   "depois": "Sobre Sucessão de bens de estrangeiro, considere a afirmação: A sucessão de bens de estrangeiros situados no País será regulada pela lei brasileira em benefício do cônjuge ou dos filhos brasileiros, salvo se lhes for mais favorável a lei pessoal do falecido."
+  },
+  {
+   "id": "cf-autoral-inedita-dir-013",
+   "antes": "Sobre Tribunal do Júri, considere a afirmação: plenitude de defesa, sigilo das votações, soberania dos veredictos e competência para julgamento dos crimes dolosos contra a vida.",
+   "depois": "Sobre Tribunal do Júri, considere a afirmação: A Constituição assegura ao júri a plenitude de defesa, o sigilo das votações, a soberania dos veredictos e a competência para o julgamento dos crimes dolosos contra a vida."
+  },
+  {
+   "id": "cf-autoral-inedita-dir-015",
+   "antes": "Sobre Racismo, considere a afirmação: inafiançável e imprescritível, sujeito à pena de reclusão nos termos da lei, conforme determinação expressa do texto constitucional.",
+   "depois": "Sobre Racismo, considere a afirmação: A prática do racismo constitui crime inafiançável e imprescritível, sujeito à pena de reclusão nos termos da lei, conforme determinação expressa do texto constitucional."
+  },
+  {
+   "id": "cf-autoral-inedita-dir-016",
+   "antes": "Sobre Penas vedadas, considere a afirmação: pode ser instituída para crimes hediondos com resultado morte, desde que prevista em lei complementar aprovada por maioria absoluta.",
+   "depois": "Sobre Penas vedadas, considere a afirmação: A pena de morte pode ser instituída para crimes hediondos com resultado morte, desde que prevista em lei complementar aprovada por maioria absoluta."
+  },
+  {
+   "id": "cf-autoral-inedita-dir-017",
+   "antes": "Sobre Extradição, considere a afirmação: poderá ser extraditado por crime comum praticado antes da naturalização, desde que presentes os demais requisitos constitucionais e legais.",
+   "depois": "Sobre Extradição, considere a afirmação: O brasileiro naturalizado poderá ser extraditado por crime comum praticado antes da naturalização, desde que presentes os demais requisitos constitucionais e legais."
+  },
+  {
+   "id": "cf-autoral-inedita-dir-018",
+   "antes": "Sobre Contraditório e ampla defesa, considere a afirmação: apenas aos acusados em processo penal, porque a garantia constitucional não alcança procedimentos administrativos ou controvérsias não criminais.",
+   "depois": "Sobre Contraditório e ampla defesa, considere a afirmação: O contraditório e a ampla defesa são assegurados apenas aos acusados em processo penal, porque a garantia constitucional não alcança procedimentos administrativos ou controvérsias não criminais."
+  },
+  {
+   "id": "cf-autoral-inedita-dir-019",
+   "antes": "Sobre Relaxamento da prisão ilegal, considere a afirmação: será imediatamente relaxada pela autoridade judiciária, porque a Constituição não admite manutenção de prisão reconhecidamente ilegal.",
+   "depois": "Sobre Relaxamento da prisão ilegal, considere a afirmação: A prisão ilegal será imediatamente relaxada pela autoridade judiciária, porque a Constituição não admite a manutenção de prisão reconhecidamente ilegal."
+  },
+  {
+   "id": "cf-autoral-inedita-dir-021",
+   "antes": "Sobre Habeas corpus, considere a afirmação: alguém sofre ou se acha ameaçado de sofrer violência ou coação em sua liberdade de locomoção, por ilegalidade ou abuso de poder.",
+   "depois": "Sobre Habeas corpus, considere a afirmação: Conceder-se-á habeas corpus sempre que alguém sofrer ou se achar ameaçado de sofrer violência ou coação em sua liberdade de locomoção, por ilegalidade ou abuso de poder."
+  },
+  {
+   "id": "cf-autoral-inedita-dir-022",
+   "antes": "Sobre Mandado de segurança coletivo, considere a afirmação: qualquer cidadão, desde que demonstre interesse coletivo relevante e apresente autorização de pelo menos um grupo de eleitores.",
+   "depois": "Sobre Mandado de segurança coletivo, considere a afirmação: O mandado de segurança coletivo pode ser impetrado por qualquer cidadão, desde que demonstre interesse coletivo relevante e apresente autorização de pelo menos um grupo de eleitores."
+  },
+  {
+   "id": "cf-autoral-inedita-dir-023",
+   "antes": "Sobre Mandado de injunção, considere a afirmação: suprir omissão normativa que inviabilize direito ou liberdade constitucional ou prerrogativa inerente à nacionalidade, soberania ou cidadania.",
+   "depois": "Sobre Mandado de injunção, considere a afirmação: O mandado de injunção serve para suprir omissão normativa que inviabilize direito ou liberdade constitucional ou prerrogativa inerente à nacionalidade, à soberania ou à cidadania."
+  },
+  {
+   "id": "cf-autoral-inedita-dir-024",
+   "antes": "Sobre Habeas data, considere a afirmação: habeas corpus, porque a existência de informação pessoal em banco público caracteriza ameaça potencial à liberdade de locomoção do titular.",
+   "depois": "Sobre Habeas data, considere a afirmação: Para conhecer informações pessoais constantes de banco de dados público, o remédio cabível é o habeas corpus, porque a existência de informação pessoal em banco público caracteriza ameaça potencial à liberdade de locomoção do titular."
+  },
+  {
+   "id": "cf-autoral-inedita-dir-026",
+   "antes": "Sobre Tratados de direitos humanos — art. 5º, §3º, considere a afirmação: possui força de lei complementar, porque o quórum qualificado de aprovação é superior ao utilizado para a legislação ordinária.",
+   "depois": "Sobre Tratados de direitos humanos — art. 5º, §3º, considere a afirmação: O tratado de direitos humanos aprovado na forma do art. 5º, § 3º, possui força de lei complementar, porque o quórum qualificado de aprovação é superior ao utilizado para a legislação ordinária."
+  },
+  {
+   "id": "cf-autoral-inedita-dir-027",
+   "antes": "Sobre Status supralegal dos tratados de direitos humanos, considere a afirmação: status supralegal, situando-se acima da legislação ordinária e abaixo da Constituição quando incorporado sem o rito qualificado do art. 5º, §3º.",
+   "depois": "Sobre Status supralegal dos tratados de direitos humanos, considere a afirmação: O tratado internacional de direitos humanos incorporado sem o rito qualificado do art. 5º, § 3º, tem status supralegal, situando-se acima da legislação ordinária e abaixo da Constituição."
+  },
+  {
+   "id": "cf-autoral-inedita-dir-028",
+   "antes": "Sobre Tribunal Penal Internacional, considere a afirmação: não reconhece jurisdição penal internacional, pois a soberania impede submissão do Estado brasileiro a tribunal criado fora de sua estrutura judicial.",
+   "depois": "Sobre Tribunal Penal Internacional, considere a afirmação: O Brasil não reconhece jurisdição penal internacional, pois a soberania impede a submissão do Estado brasileiro a tribunal criado fora de sua estrutura judicial."
+  },
+  {
+   "id": "cf-autoral-inedita-dir-029",
+   "antes": "Sobre Proteção de dados pessoais, considere a afirmação: é direito fundamental expressamente assegurado, inclusive nos meios digitais, nos termos da lei, conforme previsão inserida no art. 5º.",
+   "depois": "Sobre Proteção de dados pessoais, considere a afirmação: A proteção dos dados pessoais é direito fundamental expressamente assegurado, inclusive nos meios digitais, nos termos da lei, conforme previsão inserida no art. 5º."
+  }
+ ],
+ "correcoesReferencia": [
+  {
+   "id": "cf-d17bf9aeac2b",
+   "antes": "Art. 5º, LIII, LX e LXXIX, CF",
+   "depois": "Art. 5º, LIII e LX, CF"
+  },
+  {
+   "id": "cf-8610d781879a",
+   "antes": "Art. 5º, LVII, CF",
+   "depois": "Art. 5º, LVIII, CF"
+  },
+  {
+   "id": "cf-a52accb69b04",
+   "antes": "Art. 5º, XLVII, a c/c Art, 60, § 4º, IV, CF",
+   "depois": "Art. 5º, XLVII, a c/c Art. 60, § 4º, IV, CF"
+  },
+  {
+   "id": "cf-e4c56b029c33",
+   "antes": "Art. 5º, XV, CF",
+   "depois": "Art. 5º, LXI e LXII, CF c/c Art. 136, § 3º, I, CF"
+  },
+  {
+   "id": "cf-8624f516f7ac",
+   "antes": "Arts. 5º e 14, § 3º, CF",
+   "depois": "Arts. 5º, caput, e 14, §§ 2º e 3º, I, CF"
+  }
+ ]
+}
