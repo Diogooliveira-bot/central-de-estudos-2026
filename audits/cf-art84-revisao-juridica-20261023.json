@@ -1,0 +1,496 @@
+{
+ "data": "2026-10-23",
+ "fonte": "CF/88, texto compilado do Planalto (arquivo fornecido pelo responsável); redação vigente selecionada dispositivo a dispositivo",
+ "escopo": "tools/decorando-data-cf.js — subtópico Atribuições do Presidente da República",
+ "total": 61,
+ "itens": [
+  {
+   "id": "cf-b81815be629a",
+   "dispositivo": "Art. 84, § único, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-fae7c109b4d5",
+   "dispositivo": "Art. 84, § único, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-51e4685ee4ce",
+   "dispositivo": "Art. 84, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-56c2f2491c06",
+   "dispositivo": "Art. 84, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b9304a9bd0fe",
+   "dispositivo": "Art. 84, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-3cf620f84cdf",
+   "dispositivo": "Art. 84, IV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-ad781bb59300",
+   "dispositivo": "Art. 84, IX, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-0368aab780cb",
+   "dispositivo": "Art. 84, IX, XVIII e § único, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-da4c54710493",
+   "dispositivo": "Art. 84, V e IX, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-6d28cea8b2ad",
+   "dispositivo": "Art. 84, V, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-7db27f7ea310",
+   "dispositivo": "Art. 84, VI e XII, § único, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-fd8c045d7746",
+   "dispositivo": "Art. 84, VI, a, b, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-9722f5b34696",
+   "dispositivo": "Art. 84, VI, a, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-61f5c2d1434d",
+   "dispositivo": "Art. 84, VI, a, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-3d0eca43601d",
+   "dispositivo": "Art. 84, VI, a, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-4ad3feb42194",
+   "dispositivo": "Art. 84, VI, b c/c parágrafo único, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-c9d0e248611b",
+   "dispositivo": "Art. 84, VI, b c/c parágrafo único, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-1538336e0bd2",
+   "dispositivo": "Art. 84, VI, b, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-068883b0d0f2",
+   "dispositivo": "Art. 84, VI, b, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-0ad76f05f2c3",
+   "dispositivo": "Art. 84, VI, b, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-a96ea625a827",
+   "dispositivo": "Art. 84, VI, b, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-9954669b6200",
+   "dispositivo": "Art. 84, VI, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-21aa0a252055",
+   "dispositivo": "Art. 84, VI, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-0c209b20fb79",
+   "dispositivo": "Art. 84, VI, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-9ebbeec46d8f",
+   "dispositivo": "Art. 84, VI, XX, XXIV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-77090ace9c13",
+   "dispositivo": "Art. 84, VII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-389fb2d1e725",
+   "dispositivo": "Art. 84, VII, VIII, XIII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b1088c548865",
+   "dispositivo": "Art. 84, VIII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-a536e7249752",
+   "dispositivo": "Art. 84, VIII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-092685f9b3b8",
+   "dispositivo": "Art. 84, VIII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-3a8e2f424241",
+   "dispositivo": "Art. 84, VIII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-58bf9a3d55ec",
+   "dispositivo": "Art. 84, VIII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b2b9a06c2a29",
+   "dispositivo": "Art. 84, VIII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-cf0d829964ce",
+   "dispositivo": "Art. 84, XI, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-9c01f65dee51",
+   "dispositivo": "Art. 84, XII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-133dd6ee1683",
+   "dispositivo": "Art. 84, XII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b0d201730029",
+   "dispositivo": "Art. 84, XII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-9e43cde8cc9d",
+   "dispositivo": "Art. 84, XII, XXV, § único, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-66c292c8aeca",
+   "dispositivo": "Art. 84, XIII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-d59979fb4a6f",
+   "dispositivo": "Art. 84, XIV, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-366c627d0e40",
+   "dispositivo": "Art. 84, XV e XVI, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-555339970c77",
+   "dispositivo": "Art. 84, XVI, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-61972c40b0ad",
+   "dispositivo": "Art. 84, XXI, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-0da9c90ce60d",
+   "dispositivo": "Art. 84, XXII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-d02f8be46c0c",
+   "dispositivo": "Art. 84, XXIII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-d0cc33389a83",
+   "dispositivo": "Art. 84, XXV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-autoral-inedita-w8-25",
+   "dispositivo": "Autoral • ADPF 378 — papel do Senado",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-inedita-w8-02",
+   "dispositivo": "Autoral • Art. 84 — competências delegáveis",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-inedita-w8-01",
+   "dispositivo": "Autoral • Art. 84 — delegação",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-inedita-w8-05",
+   "dispositivo": "Autoral • Art. 84, IV — poder regulamentar",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-inedita-w8-03",
+   "dispositivo": "Autoral • Art. 84, VI — decreto autônomo",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-inedita-w8-04",
+   "dispositivo": "Autoral • Art. 84, VI, a",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-inedita-w8-06",
+   "dispositivo": "Autoral • Art. 84, VIII — tratados",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-inedita-w8-07",
+   "dispositivo": "Autoral • Art. 84, XII — indulto e comutação",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-inedita-w8-08",
+   "dispositivo": "Autoral • Art. 84, XIV — nomeações",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-inedita-w8-10",
+   "dispositivo": "Autoral • Art. 84, XIX — guerra",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-inedita-w8-09",
+   "dispositivo": "Autoral • Art. 84, XV — TCU",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-inedita-w8-11",
+   "dispositivo": "Autoral • Art. 84, XXII — forças estrangeiras",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-inedita-w8-12",
+   "dispositivo": "Autoral • Art. 84, XXIV — contas",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-inedita-w8-13",
+   "dispositivo": "Autoral • Art. 84, XXV — delegação",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-inedita-w8-14",
+   "dispositivo": "Autoral • Art. 84, XXVIII — calamidade",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  }
+ ]
+}
