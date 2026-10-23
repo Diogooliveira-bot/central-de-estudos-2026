@@ -81,14 +81,25 @@ async function open(uid,kind,jump){
  try{
   const d=await loadData(uid);if(active!==session)return;
   if(!d)throw new Error('Conteúdo ADM não localizado');
-  let content=kind==='summary'?d.summaryHtml:LEGACY[uid];
+  let content=kind==='summary'?d.summaryHtml:(uid==='adm-01-01-regime-juridico-e-principios'&&g.ADM_M01_COMPLETE_HTML?g.ADM_M01_COMPLETE_HTML:(d.completeHtml||LEGACY[uid]));
   if(!content)throw new Error('Teoria ADM não localizada');
   if(kind==='complete'&&d.completeAppendHtml)content+=d.completeAppendHtml;
   const body=reader.show(o,content,buildToc,Number(localStorage.getItem(k(uid,kind,'scroll'))||0),onScroll);
+  enhanceChecklist(body,uid,kind);
   if(jump)requestAnimationFrame(()=>requestAnimationFrame(()=>{if(active!==session)return;const hs=[...body.querySelectorAll('h1,h2,h3')],q=hs.find(h=>/^(?:\d+\s*)?quest(?:ões|ao)\b/i.test(h.textContent.trim()))||hs.find(h=>/questões internas|questões de fixação/i.test(h.textContent))||body.querySelector('details.question');q?.scrollIntoView({block:'start'})}));
   localStorage.setItem('central-v6:last',JSON.stringify({topicUid:uid,title:`Direito Administrativo · Módulo ${d.number} · ${d.title}`,at:Date.now()}));
   g.renderContinue?.();
  }catch(error){if(active===session){console.warn('[ADM reader]',error);reader.fail(o,()=>open(uid,kind,jump))}}
+}
+function enhanceChecklist(body,uid,kind){
+ if(kind!=='complete'||!body)return;
+ const inputs=[...body.querySelectorAll('[data-adm-check]')];if(!inputs.length)return;
+ const storage=k(uid,kind,'checklist');let saved={};
+ try{saved=JSON.parse(localStorage.getItem(storage)||'{}')||{}}catch(_){saved={}}
+ const counter=body.querySelector('[data-adm-check-count]');
+ const update=()=>{const done=inputs.filter(input=>input.checked).length;if(counter)counter.textContent=`${done}/${inputs.length} concluídos`;};
+ inputs.forEach(input=>{input.checked=!!saved[input.dataset.admCheck];input.addEventListener('change',()=>{saved[input.dataset.admCheck]=input.checked;localStorage.setItem(storage,JSON.stringify(saved));update()})});
+ update();
 }
 function onScroll(){
  const o=document.getElementById('adm-native-reader'),body=o?.querySelector('.bc-native-scroll');
@@ -125,5 +136,5 @@ function saveNativeNote(uid){const input=document.querySelector(`[data-adm-note-
 function alignModuleContent(){document.querySelectorAll('[data-adm-native]').forEach(z=>{const panel=z.querySelector(':scope > [data-bcq-module-panel]'),review=z.querySelector(':scope > .adm-cf-scheduled-review'),toolsEl=z.querySelector(':scope > .adm-native-module-tools');if(panel&&review&&panel.previousElementSibling!==review)review.after(panel);if(toolsEl&&toolsEl!==z.lastElementChild)z.append(toolsEl)})}
 function install(){if(!patchRenderDetail())return false;patchSubjStats();updateSubject();const host=document.getElementById('subjects');if(host){const opts={childList:true,subtree:true};const mo=new MutationObserver(()=>{mo.disconnect();try{alignModuleContent();updateSubject();Object.keys(INDEX).forEach(updateCards)}finally{mo.observe(host,opts)}});mo.observe(host,opts)}return true}
 function boot(){if(install())return;let n=0,t=setInterval(()=>{if(install()||++n>160)clearInterval(t)},50)}
-g.AdmNative={open,close,font:fontSize,openImage,closeImage,zoomImage,markModuleRead,progress,moduleProgress,stats,updateSubject,tool,saveNote:saveNativeNote,externalStats,version:'2026.10.19-adm-cf-pt'};if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot,{once:true});else boot();
+g.AdmNative={open,close,font:fontSize,openImage,closeImage,zoomImage,markModuleRead,progress,moduleProgress,stats,updateSubject,tool,saveNote:saveNativeNote,externalStats,version:'2026.10.23-adm-m01-didatico'};if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot,{once:true});else boot();
 })(window);
