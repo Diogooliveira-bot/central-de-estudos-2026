@@ -14,6 +14,25 @@ const pad=n=>String(n).padStart(2,'0');
 const kind=m=>m==='summary'?'RESUMIDA':'COMPLETA';
 function slug(v){return String(v||'texto').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/gi,'-').replace(/^-|-$/g,'').slice(0,90)}
 function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+// Rótulo + descrição lado a lado (cartões, selos, "Artigos para ler") são elementos
+// inline irmãos; sem uma quebra eles saíam colados no TXT ("Finalidadeo ato…").
+// Separa: rótulo em negrito + <span> de descrição; elementos-rótulo vizinhos fora de
+// parágrafos/células; selo + texto em título; rótulo que abre um bloco <div>. Não separa negrito seguido de texto
+// (<b>P</b>ublicidade) nem setas/símbolos de fluxos (quem?→como?).
+const LABEL_TAGS=/^(A|B|STRONG|SPAN|SMALL|LABEL|EM|I)$/,PROSE_HOSTS=/^(P|TD|TH|LI|A|B|STRONG|EM|I|SPAN|CODE)$/;
+const onlySymbol=el=>/^[^\p{L}\p{N}]{1,3}$/u.test((el.textContent||'').trim());
+function breaksInline(parent,prev,cur){
+ if(prev.nodeType!==1||!LABEL_TAGS.test(prev.tagName))return false;
+ if(cur.nodeType===1){
+  if(!LABEL_TAGS.test(cur.tagName)||onlySymbol(prev)||onlySymbol(cur))return false;
+  if(/^(B|STRONG)$/.test(prev.tagName)&&/^(SPAN|SMALL)$/.test(cur.tagName))return true;
+  return !PROSE_HOSTS.test(parent.tagName);
+ }
+ if(cur.nodeType!==3)return false;
+ if(/^H[1-6]$/.test(parent.tagName))return /^(SPAN|SMALL)$/.test(prev.tagName);
+ // rótulo no início de um bloco: <div><b>Cuidado</b>Não generalize…</div>
+ return parent.tagName==='DIV'&&prev===parent.firstElementChild&&!onlySymbol(prev);
+}
 function htmlText(html,full){
  const doc=new DOMParser().parseFromString(html,'text/html'),root=full?doc.querySelector('main')||doc.body:doc.body;
  if(!root)return '';
@@ -27,7 +46,8 @@ function htmlText(html,full){
   if(t==='HR')return '\n\n---\n\n';
   if(t==='TABLE')return '\n\n'+Array.from(n.querySelectorAll('tr')).map(tr=>Array.from(tr.children).filter(c=>/^(TD|TH)$/.test(c.tagName)).map(c=>c.textContent.replace(/\s+/g,' ').trim()).join(' | ')).filter(Boolean).join('\n')+'\n\n';
   if(t==='PRE')return '\n\n'+n.textContent+'\n\n';
-  const s=Array.from(n.childNodes).map(walk).join('');
+  const kids=Array.from(n.childNodes);let s='';
+  kids.forEach((c,i)=>{const part=walk(c);if(i&&s&&part&&breaksInline(n,kids[i-1],c)&&/\S$/.test(s)&&/^\S/.test(part))s+='\n';s+=part});
   if(t==='LI')return '\n• '+s.trim();
   return /^(H1|H2|H3|H4|H5|H6|P|DIV|SECTION|MAIN|ARTICLE|UL|OL|BLOCKQUOTE|HEADER|FOOTER)$/.test(t)?'\n\n'+s+'\n\n':s;
  }
@@ -72,7 +92,7 @@ async function readDiscipline(id){
   return Object.values(idx.modules||{}).map(m=>({n:m.number,title:m.title,summary:content[m.uid]?.summaryHtml,summaryHtml:true,complete:null,note:'Teoria completa permanece no acervo legado'}));
  }
  const data=w.BASE_NATIVE_CONTENT?.[id];if(!data)throw Error('Fonte não carregada');
- return Object.entries(data).filter(([key,v])=>v&&typeof v==='object'&&(v.number||/^m\d+$/.test(key))).map(([key,v])=>({n:Number(v.number||key.slice(1)),title:v.title||'Módulo',summary:v.summary,complete:v.complete}));
+ return Object.entries(data).filter(([key,v])=>v&&typeof v==='object'&&(v.number||/^m\d+$/.test(key))).map(([key,v])=>({n:Number(v.number||key.slice(1)),title:v.title||'Módulo',summary:v.summaryHtml||v.summary,summaryHtml:!!v.summaryHtml,complete:v.complete}));
 }
 function makeText(d,row,mode){
  const raw=row[mode];if(typeof raw!=='string'||!raw.trim())return '';

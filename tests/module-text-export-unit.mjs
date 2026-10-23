@@ -40,3 +40,19 @@ test('ZIP armazena TXT UTF-8, nomes e indice central validos',async()=>{
  assert.equal(buf.readUInt32LE(buf.length-22),0x06054b50);
  assert.equal(buf.readUInt16LE(buf.length-14),1);
 });
+test('TXT separa rotulo e descricao sem colar palavras nem quebrar prosa',async()=>{
+ const {JSDOM}=await import('jsdom');
+ const dom=new JSDOM('');
+ const w={BASE_COMPLETA_USER:{role:'admin'}};
+ const document={readyState:'loading',createElement(){return {textContent:''}},head:{appendChild(){}},addEventListener(){}};
+ runInNewContext(script,{window:w,document,DOMParser:dom.window.DOMParser,Blob,TextEncoder,Uint8Array,DataView,URL,console,setTimeout});
+ const t=w.BaseCompletaTextExport.htmlText;
+ assert.equal(t('<div><b>Finalidade</b><span>o ato deve perseguir o fim público.</span></div>'),'Finalidade\no ato deve perseguir o fim público.');
+ assert.equal(t('<div class="laws"><a><b>CF · arts. 37 a 41</b><span>Acesso e concurso.</span></a><a><b>Lei 8.112</b><span>Cargo.</span></a></div>'),'CF · arts. 37 a 41\nAcesso e concurso.\nLei 8.112\nCargo.');
+ assert.equal(t('<h1><span>LEI SECA</span>Artigos para ler</h1>'),'LEI SECA\nArtigos para ler');
+ assert.equal(t('<div><b>1. Regente</b>Pede “a”?</div>'),'1. Regente\nPede “a”?');
+ assert.equal(t('<p>LIMPE: <b>L</b>egalidade · <b>P</b>ublicidade</p>'),'LIMPE: Legalidade · Publicidade');
+ assert.equal(t('<div class="flow"><span>quem?</span><i>→</i><span>como?</span></div>'),'quem?→como?');
+ assert.equal(t('<p>O <strong>contrato</strong>, em regra, <em>não</em> se presume.</p>'),'O contrato, em regra, não se presume.');
+ assert.equal(t('<div><b>Regra de ouro:</b> legalidade vem antes.</div>'),'Regra de ouro: legalidade vem antes.');
+});
