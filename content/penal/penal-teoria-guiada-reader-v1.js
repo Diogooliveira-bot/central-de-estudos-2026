@@ -1,0 +1,213 @@
+
+/* Base Completa — PENAL M01–M17: leitor guiado isolado, sem cabeçalho institucional.
+   V3: 9º campo (objeto) com 'caso' = layout completo do M08; só com 'lei' = layout anterior + texto da lei por extenso em Regra e fundamento. */
+(function(global){
+'use strict';
+if(global.__BC_PEN_GUIDED_READER_V1__)return;
+global.__BC_PEN_GUIDED_READER_V1__=true;
+const MIN=1,MAX=17,DATA=global.BC_PEN_GUIDED_MODULES||{};
+let overlay=null,origin=null,originalOverflow='';
+function esc(v){return String(v==null?'':v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','\'':'&#39;'}[c]));}
+function p(v){return String(v||'').split(/\n\n+/).map(s=>'<p>'+esc(s)+'</p>').join('');}
+function get(n){return DATA[n];}
+function key(n){return 'bc:penal:m'+String(n).padStart(2,'0')+':teoria-guiada:checklist:v1';}
+function state(n){try{const x=JSON.parse(localStorage.getItem(key(n))||'{}');return x&&typeof x==='object'?x:{};}catch(_){return {};}}
+function save(n,i,on){const x=state(n);x[i]=on;try{localStorage.setItem(key(n),JSON.stringify(x));}catch(_){}}
+function box(cls,title,inner){return '<div class="bc-m01-card '+cls+'"><h3>'+esc(title)+'</h3>'+inner+'</div>';}
+function cell(c){
+  c=String(c);
+  if(c.indexOf('\n')<0)return esc(c);
+  return '<ul class="bc-m01-cell">'+c.split('\n').map(l=>'<li>'+esc(l.replace(/^•\s*/,''))+'</li>').join('')+'</ul>';
+}
+function notes(n){
+  if(Array.isArray(n)&&n.length)return '<ul class="bc-m01-tablenotes">'+n.map(t=>'<li>'+esc(t)+'</li>').join('')+'</ul>';
+  return n&&!Array.isArray(n)?'<p class="bc-m01-tablenote">'+esc(n)+'</p>':'';
+}
+function quote(t){return esc(t).replace(/\{\{/g,'<mark>').replace(/\}\}/g,'</mark>');}
+function lawHtml(lei){
+  const arr=Array.isArray(lei)?lei:[];let mark=false;
+  const html=arr.map(it=>{
+    if(typeof it==='string'){if(it.indexOf('{{')>-1)mark=true;return '<blockquote class="bc-m01-quote">'+quote(it)+'</blockquote>';}
+    if(String(it.texto).indexOf('{{')>-1)mark=true;
+    return '<div class="bc-m01-lawitem"><p class="bc-m01-lawref">'+esc(it.ref)+'</p><blockquote class="bc-m01-quote">'+quote(it.texto)+'</blockquote></div>';
+  }).join('');
+  return html+(mark?'<p class="bc-m01-lawlegend">Em destaque: o trecho citado neste assunto.</p>':'');
+}
+function tableHtml(q){
+  if(!q||!Array.isArray(q.linhas))return '';
+  const cab=Array.isArray(q.cab)?q.cab:[];
+  const head=cab.length?'<thead><tr>'+cab.map(c=>'<th scope="col">'+esc(c)+'</th>').join('')+'</tr></thead>':'';
+  const body='<tbody>'+q.linhas.map(r=>'<tr>'+r.map((c,k)=>'<td data-label="'+esc(cab[k]||'')+'"'+(String(c).indexOf('\n')>-1?' class="bc-m01-multi"':'')+'>'+cell(c)+'</td>').join('')+'</tr>').join('')+'</tbody>';
+  return '<div class="bc-m01-tablewrap"><table class="bc-m01-table'+(cab.length>2?' bc-m01-wide':'')+'">'+head+body+'</table></div>'+notes(q.nota);
+}
+function extended(topic,x){
+  const out=[];
+  out.push(box('bc-m01-foundation','Entenda',p(topic[1])));
+  out.push(box('bc-m01-example','Na prática','<p class="bc-m01-case">'+esc(x.caso)+'</p><div class="bc-m01-solution"><h4>Resolução</h4><p>'+esc(x.resolucao)+'</p></div>'));
+  out.push(box('bc-m01-law','Regra e fundamento','<p class="bc-m01-cite">'+esc(topic[3])+'</p>'+lawHtml(x.lei)));
+  if(x.novidade)out.push(box('bc-m01-news','Atualização legislativa',p(x.novidade)));
+  if(x.quadro)out.push(box('bc-m01-numbers',x.quadro.rotulo||'Quadro para decorar',tableHtml(x.quadro)));
+  out.push(box('bc-m01-deeper','Aprofundamento',p(topic[4])));
+  out.push(box('bc-m01-trap','Assim cai na prova','<p class="bc-m01-wrong"><span class="bc-m01-badge">Assertiva errada</span><span>“'+esc(x.errada)+'”</span></p><p class="bc-m01-why"><b>Por quê:</b> '+esc(x.porque)+'</p>'));
+  out.push(box('bc-m01-recall','Revisão em 30 segundos',p(topic[6])));
+  return out.join('');
+}
+function card(topic,index){
+  const head='<section class="bc-m01-topic" aria-labelledby="bc-guided-title-'+index+'"><h2 id="bc-guided-title-'+index+'"><span>'+String(index+1).padStart(2,'0')+'</span> '+esc(topic[0])+'</h2>';
+  const x=topic[8];
+  if(x&&typeof x==='object'&&x.caso)return head+extended(topic,x)+'</section>';
+  const hasLaw=!!(x&&typeof x==='object'&&Array.isArray(x.lei)&&x.lei.length);
+  const sections=[
+    ['bc-m01-foundation','Entenda',topic[1]],
+    ['bc-m01-example','Na prática',topic[2]],
+    ['bc-m01-law','Regra e fundamento',topic[3]],
+    ['bc-m01-deeper','Aprofundamento',topic[4]],
+    ['bc-m01-trap','Pegadinha de prova',topic[5]],
+    ['bc-m01-recall','Revisão em 30 segundos',topic[6]]
+  ];
+  return head+sections.map(s=>(hasLaw&&s[0]==='bc-m01-law')
+    ?box(s[0],s[1],'<p class="bc-m01-cite">'+esc(s[2])+'</p>'+lawHtml(x.lei))
+    :box(s[0],s[1],p(s[2]))).join('')+'</section>';
+}
+function checklist(n,topics){
+ const s=state(n);
+ return '<section class="bc-m01-checklist" aria-label="Checklist de compreensão"><h2>Checklist de compreensão</h2><p>Marque apenas os assuntos que você já consegue explicar com suas palavras.</p>'+
+  topics.map((topic,i)=>'<label><input type="checkbox" data-bc-guided-check="'+i+'" '+(s[i]?'checked':'')+'><span>'+esc(topic[7])+'</span></label>').join('')+
+  '<p class="bc-m01-local-note">Checklist salvo neste navegador, sem alterar o progresso oficial do módulo.</p></section>';
+}
+function keydown(e){
+ if(e.key==='Escape'){close();return;}
+ if(e.key!=='Tab'||!overlay)return;
+ const tabs=Array.from(overlay.querySelectorAll('button:not(:disabled),input:not(:disabled)'));
+ if(!tabs.length)return;
+ const a=tabs[0],z=tabs[tabs.length-1];
+ if(e.shiftKey&&document.activeElement===a){e.preventDefault();z.focus();}
+ else if(!e.shiftKey&&document.activeElement===z){e.preventDefault();a.focus();}
+}
+function close(){
+ if(!overlay)return;
+ document.removeEventListener('keydown',keydown);
+ overlay.remove();overlay=null;document.body.style.overflow=originalOverflow;
+ if(origin&&origin.isConnected)origin.focus();
+}
+function switchMode(mode){
+ if(!overlay)return;
+ overlay.querySelector('.bc-m01-reader').dataset.view=mode;
+ overlay.querySelectorAll('[data-bc-guided-mode]').forEach(btn=>{
+  const on=btn.getAttribute('data-bc-guided-mode')===mode;
+  btn.classList.toggle('active',on);btn.setAttribute('aria-pressed',on?'true':'false');
+ });
+ const sc=overlay.querySelector('.bc-m01-scroll');if(sc)sc.scrollTop=0;
+}
+function quizCount(n){const l=global.BC_PEN_GUIDED_QUIZZES_V3&&global.BC_PEN_GUIDED_QUIZZES_V3[n];return Array.isArray(l)?l.length:0;}
+function open(n,topicIndex){
+ n=Number(n);
+ const d=get(n);if(!d||n<MIN||n>MAX||!Array.isArray(d.topics))return false;
+ close();origin=document.activeElement;originalOverflow=document.body.style.overflow;
+ const qn=quizCount(n);
+ const o=document.createElement('div');
+ o.className='bc-m01-overlay bc-guided-overlay';
+ o.setAttribute('role','dialog');o.setAttribute('aria-modal','true');
+ o.setAttribute('aria-label','Teoria guiada de Direito Penal, módulo '+n);
+ const pilot='';
+ o.innerHTML='<div class="bc-m01-reader" data-view="study">'+
+  '<nav class="bc-m01-toolbar" aria-label="Controles de leitura">'+
+   '<button type="button" data-bc-guided-close>← Voltar</button>'+
+   '<div class="bc-m01-modes" role="group" aria-label="Modo de leitura">'+
+    '<button type="button" data-bc-guided-mode="study" class="active" aria-pressed="true">Primeira leitura</button>'+
+    '<button type="button" data-bc-guided-mode="review" aria-pressed="false">Revisão rápida</button>'+
+   '</div><button type="button" class="bc-penal-questions" data-bc-penal-quiz aria-label="Resolver '+qn+' questões internas do módulo">'+qn+' questões</button></nav>'+
+  '<main class="bc-m01-scroll" tabindex="0"><div class="bc-m01-paper">'+pilot+
+  d.topics.map(card).join('')+checklist(n,d.topics)+'</div></main></div>';
+ overlay=o;document.body.appendChild(o);document.body.style.overflow='hidden';
+ o.querySelector('[data-bc-guided-close]').addEventListener('click',close);
+ o.querySelector('[data-bc-penal-quiz]').addEventListener('click',()=>{close();global.BcPenalGuidedBridge?.openQuestions(n);});
+ o.querySelectorAll('[data-bc-guided-mode]').forEach(btn=>btn.addEventListener('click',()=>switchMode(btn.getAttribute('data-bc-guided-mode'))));
+ o.querySelectorAll('[data-bc-guided-check]').forEach(input=>input.addEventListener('change',()=>save(n,input.getAttribute('data-bc-guided-check'),input.checked)));
+ document.addEventListener('keydown',keydown);
+ o.querySelector('[data-bc-guided-close]').focus({preventScroll:true});
+ if(Number.isInteger(topicIndex)){
+  const h=o.querySelector('#bc-guided-title-'+topicIndex),sc=o.querySelector('.bc-m01-scroll');
+  if(h&&sc)sc.scrollTop=Math.max(0,h.getBoundingClientRect().top-sc.getBoundingClientRect().top+sc.scrollTop-14);
+ }
+ return true;
+}
+  function css() {
+    if(document.getElementById('bc-penal-guided-reader-style-v1'))return;
+    const style=document.createElement('style');
+    style.id='bc-penal-guided-reader-style-v1';
+    style.textContent=[
+      '.bc-m01-overlay{position:fixed;inset:0;z-index:2147483000;background:#f0f3f8;color:#172b47;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;}',
+      '.bc-m01-reader{width:100%;height:100%;display:flex;flex-direction:column;}',
+      '.bc-m01-toolbar{flex:0 0 auto;min-height:54px;padding:8px max(14px,env(safe-area-inset-right));border-bottom:1px solid #dce3eb;background:#fff;display:flex;align-items:center;justify-content:space-between;gap:12px;}',
+      '.bc-m01-toolbar button{font-family:inherit;font-weight:600;font-size:13px;line-height:1.3;padding:10px 13px;border-radius:8px;cursor:pointer;border:1px solid #cbd6e2;background:#fff;color:#183653;}',
+      '.bc-m01-modes{display:flex;gap:4px;padding:4px;background:#edf2f7;border-radius:10px;}',
+      '.bc-m01-modes button{border:0;background:transparent;padding:9px 12px;}',
+      '.bc-m01-modes button.active{background:#203b61;color:#fff;}',
+      '.bc-m01-toolbar button:focus-visible,.bc-m01-checklist input:focus-visible{outline:3px solid #3988d9;outline-offset:2px;}',
+      '.bc-m01-scroll{flex:1;min-height:0;overflow:auto;overscroll-behavior:contain;}',
+      '.bc-m01-paper{width:min(780px,calc(100% - 28px));margin:0 auto;padding:28px 0 90px;}',
+      '.bc-m01-topic{margin-bottom:38px;}',
+      '.bc-m01-topic h2{margin:0 0 14px;font-size:clamp(20px,3vw,26px);font-weight:750;line-height:1.27;letter-spacing:-.018em;color:#1d3657;}',
+      '.bc-m01-topic h2 span{font-size:12px;letter-spacing:.04em;color:#67809d;vertical-align:middle;margin-right:5px;}',
+      '.bc-m01-card{padding:17px 20px;margin:0 0 10px;border:1px solid #dce3eb;border-radius:12px;background:#fff;box-shadow:0 1px 2px rgba(20,38,63,.02);}',
+      '.bc-m01-card h3{margin:0 0 9px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.075em;color:#385b80;}',
+      '.bc-m01-card p{margin:0;font-size:16px;line-height:1.75;color:#27384e;}',
+      '.bc-m01-card p+p{margin-top:10px;}',
+      '.bc-m01-example{background:#edf8f2;border-left:4px solid #438b68;}',
+      '.bc-m01-law{background:#fffaf0;border-left:4px solid #be9152;}',
+      '.bc-m01-deeper{background:#f1f6fc;border-left:4px solid #6c87b2;}',
+      '.bc-m01-trap{background:#fff8e3;border-left:4px solid #d5a62e;}',
+      '.bc-m01-recall{background:#203b61;border-color:#203b61;}',
+      '.bc-m01-recall h3,.bc-m01-recall p{color:#fff;}',
+      /* V2 (piloto) */
+      '.bc-m01-solution{margin-top:12px;padding:12px 14px;background:#fff;border:1px solid #bfe0cf;border-radius:9px;}',
+      '.bc-m01-solution h4{margin:0 0 6px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.075em;color:#2f7a55;}',
+      '.bc-m01-card p.bc-m01-cite{font-size:13px;font-weight:700;color:#7a5b2a;margin:0 0 8px;line-height:1.5;}',
+      '.bc-m01-card p.bc-m01-lawref{margin:14px 0 0;font-size:12px;font-weight:800;letter-spacing:.03em;color:#7a5b2a;line-height:1.4;}',
+      '.bc-m01-quote mark{background:#ffe7a0;color:inherit;padding:1px 3px;border-radius:3px;}',
+      '.bc-m01-card p.bc-m01-lawlegend{margin-top:10px;font-size:12px;color:#8a6d3b;line-height:1.5;}',
+      '.bc-m01-quote{margin:6px 0 0;padding:11px 14px;background:#fffdf6;border:1px solid #ecdcb9;border-left:3px solid #be9152;border-radius:7px;font-family:Georgia,"Times New Roman",serif;font-size:15px;line-height:1.7;color:#3b3427;white-space:pre-line;overflow-wrap:anywhere;}',
+      '.bc-m01-news{background:#eef7fb;border-left:4px solid #2a8bb0;}',
+      '.bc-m01-news h3{color:#1d6f8f;}',
+      '.bc-m01-numbers{background:#fff;border-left:4px solid #203b61;}',
+      '.bc-m01-tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:2px 0 0;border:1px solid #d5dfeb;border-radius:10px;background:#fff;}',
+      '.bc-m01-table{width:100%;border-collapse:collapse;font-size:14px;line-height:1.55;}',
+      '.bc-m01-table th{background:#eaf1f9;color:#27496f;text-align:left;padding:9px 12px;font-size:11.5px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;border-bottom:1px solid #cfdcec;}',
+      '.bc-m01-table td{padding:10px 12px;border-top:1px solid #e6ecf3;vertical-align:top;color:#27384e;overflow-wrap:break-word;white-space:pre-line;}',
+      '.bc-m01-table tbody tr:first-child td{border-top:0;}',
+      '.bc-m01-table td:first-child{font-weight:700;color:#1d3657;}',
+      '.bc-m01-cell{margin:0;padding:0 0 0 17px}.bc-m01-cell li{margin:2px 0}',
+      '.bc-m01-tablenotes{margin:12px 0 0;padding:0 0 0 20px;font-size:13.5px;line-height:1.6;color:#4a5d74;}',
+      '.bc-m01-tablenotes li{margin:4px 0;padding-left:2px;}',
+      '.bc-m01-card p.bc-m01-tablenote{margin-top:10px;font-size:13.5px;line-height:1.65;color:#4a5d74;}',
+      '.bc-m01-card p.bc-m01-wrong{display:flex;gap:10px;align-items:flex-start;font-weight:600;color:#5b3a05;}',
+      '.bc-m01-badge{flex:0 0 auto;margin-top:4px;background:#b3261e;color:#fff;font-size:10.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:6px;line-height:1.3;}',
+      '.bc-m01-card p.bc-m01-why{margin-top:10px;}',
+      '.bc-m01-pilotnote{margin:0 0 18px;padding:11px 14px;background:#fff8e3;border:1px solid #efdca0;border-left:4px solid #d5a62e;border-radius:10px;font-size:13.5px;line-height:1.6;color:#4d3a10;}',
+      '.bc-m01-reader[data-view="review"] .bc-m01-foundation,.bc-m01-reader[data-view="review"] .bc-m01-example,.bc-m01-reader[data-view="review"] .bc-m01-deeper{display:none;}',
+      '.bc-m01-checklist{border-top:1px solid #d7e1eb;padding:22px 0;}',
+      '.bc-m01-checklist h2{margin:0 0 8px;font-size:22px;color:#1d3657;}',
+      '.bc-m01-checklist>p{font-size:14px;color:#5b6d82;line-height:1.5;}',
+      '.bc-m01-checklist label{display:flex;align-items:flex-start;gap:12px;margin:7px 0;padding:12px 14px;background:#fff;border:1px solid #dce3eb;border-radius:10px;font-size:14px;line-height:1.4;cursor:pointer;}',
+      '.bc-m01-checklist input{margin-top:2px;width:18px;height:18px;accent-color:#203b61;}',
+      '.bc-m01-checklist .bc-m01-local-note{font-size:12px;color:#65788d;}',
+      '.bc-m01-toolbar .bc-penal-questions{border:1px solid #a9bfda;background:#f3f8ff;color:#20456e;white-space:nowrap}',
+      '@media(max-width:600px){.bc-m01-toolbar{gap:5px;padding:8px}.bc-m01-toolbar button{font-size:11.5px;padding:9px 7px;white-space:nowrap}.bc-m01-modes{gap:2px;padding:3px}.bc-m01-modes button{padding:8px 6px}.bc-m01-paper{padding-top:18px;width:calc(100% - 22px)}.bc-m01-card{padding:14px 15px}.bc-m01-card p{font-size:15px;line-height:1.7}.bc-m01-topic{margin-bottom:30px}',
+      '.bc-m01-quote{font-size:14.5px;padding:10px 12px}.bc-m01-table{font-size:14px}.bc-m01-table th,.bc-m01-table td{padding:9px 10px}.bc-m01-table th{font-size:10.5px;letter-spacing:.03em}',
+      '.bc-m01-table.bc-m01-wide thead{display:none}.bc-m01-table.bc-m01-wide,.bc-m01-table.bc-m01-wide tbody,.bc-m01-table.bc-m01-wide tr,.bc-m01-table.bc-m01-wide td{display:block;width:100%}',
+      '.bc-m01-table.bc-m01-wide tr{padding:11px 13px;border-top:1px solid #e6ecf3}.bc-m01-table.bc-m01-wide tr:first-child{border-top:0}',
+      '.bc-m01-table.bc-m01-wide td,.bc-m01-table.bc-m01-wide tbody tr:first-child td{border:0;padding:2px 0}',
+      '.bc-m01-table.bc-m01-wide td:first-child{font-size:15px;padding-bottom:5px}',
+      '.bc-m01-table.bc-m01-wide td+td::before{content:attr(data-label) ": ";font-weight:700;color:#5c7391}',
+      '.bc-m01-table.bc-m01-wide td.bc-m01-multi{padding-top:6px}.bc-m01-table.bc-m01-wide td.bc-m01-multi::before{display:block;margin-bottom:2px}',
+      '.bc-m01-card p.bc-m01-wrong{flex-direction:column;gap:6px}}',
+      '@media(max-width:380px){.bc-m01-toolbar{gap:3px;padding:8px 5px}.bc-m01-toolbar button{font-size:10.5px;padding:9px 5px}.bc-m01-modes{gap:1px;padding:2px}.bc-m01-modes button{padding:8px 4px}}',
+      '@media(prefers-reduced-motion:reduce){.bc-m01-scroll{scroll-behavior:auto}}'
+    ].join('\n');
+    document.head.appendChild(style);
+  }
+
+css();
+global.BcPenalGuidedReader=Object.freeze({open,close,modules:[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17]});
+})(window);
