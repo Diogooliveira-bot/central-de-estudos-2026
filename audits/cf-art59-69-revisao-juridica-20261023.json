@@ -1,0 +1,1552 @@
+{
+ "data": "2026-10-23",
+ "fonte": "CF/88, texto compilado do Planalto (arquivo fornecido pelo responsável); redação vigente selecionada dispositivo a dispositivo",
+ "escopo": "tools/decorando-data-cf.js — subtópico Processo legislativo (CF, arts. 59 a 69)",
+ "total": 193,
+ "itens": [
+  {
+   "id": "cf-753261dbab93",
+   "dispositivo": "Art. 59, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-1e5305413e1f",
+   "dispositivo": "Art. 59, I e V, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-ad20307fdd0e",
+   "dispositivo": "Art. 60 e 62, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-212ea3205d22",
+   "dispositivo": "Art. 60, § 1º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-c742de288c46",
+   "dispositivo": "Art. 60, § 1º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-6dd647d42579",
+   "dispositivo": "Art. 60, § 1º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-cfe2836c97d1",
+   "dispositivo": "Art. 60, § 1º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-10b4d55a43b7",
+   "dispositivo": "Art. 60, § 1º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-37c4d0a6440d",
+   "dispositivo": "Art. 60, § 1º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-c4aefe08a99d",
+   "dispositivo": "Art. 60, § 2º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-5bd8871910f3",
+   "dispositivo": "Art. 60, § 2º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-8592b5a9bb47",
+   "dispositivo": "Art. 60, § 2º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-bec3555e1de6",
+   "dispositivo": "Art. 60, § 2º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-0e31e84c4d5c",
+   "dispositivo": "Art. 60, § 2º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-1d28da5dcb9c",
+   "dispositivo": "Art. 60, § 2º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-4886f3ac0c7b",
+   "dispositivo": "Art. 60, § 3º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-5dbd21295ed9",
+   "dispositivo": "Art. 60, § 3º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-664c7cb888d7",
+   "dispositivo": "Art. 60, § 3º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-d770383f80f6",
+   "dispositivo": "Art. 60, § 3º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-cd549b1fe88a",
+   "dispositivo": "Art. 60, § 3º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-f41efc1422aa",
+   "dispositivo": "Art. 60, § 3º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-7c70f41cc44d",
+   "dispositivo": "Art. 60, § 4 º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-d9d9cebee84a",
+   "dispositivo": "Art. 60, § 4°, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-693163c488d7",
+   "dispositivo": "Art. 60, § 4º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-a2411984e801",
+   "dispositivo": "Art. 60, § 4º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-d4e6df6b8980",
+   "dispositivo": "Art. 60, § 4º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-18f99cfa3487",
+   "dispositivo": "Art. 60, § 4º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-16f2b0ffb221",
+   "dispositivo": "Art. 60, § 4º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-1f7f2a084eb5",
+   "dispositivo": "Art. 60, § 4º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-d31cea32c0e2",
+   "dispositivo": "Art. 60, § 4º, I a III, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b1a3dafedb33",
+   "dispositivo": "Art. 60, § 4º, I, c/c § 5º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-91fdcc0d2695",
+   "dispositivo": "Art. 60, § 4º, I, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-6679abacf523",
+   "dispositivo": "Art. 60, § 4º, I, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b8c61909e668",
+   "dispositivo": "Art. 60, § 4º, I, II, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-0c491abc1926",
+   "dispositivo": "Art. 60, § 4º, II, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-8c59a1077d79",
+   "dispositivo": "Art. 60, § 4º, II, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-5bc9812c2d5b",
+   "dispositivo": "Art. 60, § 4º, III, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-c433cdcceb6a",
+   "dispositivo": "Art. 60, § 4º, IV, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-2da6f327f607",
+   "dispositivo": "Art. 60, § 5º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-37f6c9c4790d",
+   "dispositivo": "Art. 60, § 5º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-fce9355f043d",
+   "dispositivo": "Art. 60, § 5º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-2f7a881d49fd",
+   "dispositivo": "Art. 60, § 5º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b3bf135736a8",
+   "dispositivo": "Art. 60, § 5º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-7347cafff206",
+   "dispositivo": "Art. 60, § 5º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-5a7095d149db",
+   "dispositivo": "Art. 60, §1º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-86e45a9c10a6",
+   "dispositivo": "Art. 60, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-18d5236f1a45",
+   "dispositivo": "Art. 60, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-3504c4bb9b31",
+   "dispositivo": "Art. 60, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-4a94d530f5e6",
+   "dispositivo": "Art. 60, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-f14b350a3f8a",
+   "dispositivo": "Art. 60, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b2b75a6ad99f",
+   "dispositivo": "Art. 60, I a III, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-cf7944ff6c60",
+   "dispositivo": "Art. 60, I e III, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-49d7b70cb3d3",
+   "dispositivo": "Art. 60, I, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-ad73dc068115",
+   "dispositivo": "Art. 60, I, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-7bd4bf3e326f",
+   "dispositivo": "Art. 60, I, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-19923fe4c039",
+   "dispositivo": "Art. 60, I, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-c546950b9f38",
+   "dispositivo": "Art. 60, I, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-c4f1021de831",
+   "dispositivo": "Art. 60, I, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-89a00dd5833e",
+   "dispositivo": "Art. 60, II, § 2º, § 5º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-1228b09af4b3",
+   "dispositivo": "Art. 60, II, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b98929b211bd",
+   "dispositivo": "Art. 60, III, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-03a0a9a9bcb6",
+   "dispositivo": "Art. 60, III, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-0d20eb853358",
+   "dispositivo": "Art. 60, III, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b13044049f3f",
+   "dispositivo": "Art. 60, III, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-8a130f694fe4",
+   "dispositivo": "Art. 60, III, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-c6b0aafcc634",
+   "dispositivo": "Art. 60, III, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-401718a4e3b8",
+   "dispositivo": "Art. 61, § 1º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b967dddae099",
+   "dispositivo": "Art. 61, § 1º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-d31c6ac1d827",
+   "dispositivo": "Art. 61, § 1º, d, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-66fbf1a53b91",
+   "dispositivo": "Art. 61, § 1º, II f, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-f67f2f45ba42",
+   "dispositivo": "Art. 61, § 1º, II, “a”, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-7a602d28effe",
+   "dispositivo": "Art. 61, § 1º, II, “a”, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-72a148f6ec21",
+   "dispositivo": "Art. 61, § 1º, II, “d\", CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-e946f099d8f2",
+   "dispositivo": "Art. 61, § 1º, II, a c/c Art. 64, § 1º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-ddbaa1fc270c",
+   "dispositivo": "Art. 61, § 1º, II, a, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-c99af9619649",
+   "dispositivo": "Art. 61, § 1º, II, c, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-597294c86efe",
+   "dispositivo": "Art. 61, § 1º, II, d, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-0f4609eb2f9f",
+   "dispositivo": "Art. 61, § 2º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-9c3d9b733dfc",
+   "dispositivo": "Art. 61, § 2º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-9e4a85b84dd0",
+   "dispositivo": "Art. 61, § 2º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-136b7a566f1f",
+   "dispositivo": "Art. 61, § 2º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-908c4503bc8a",
+   "dispositivo": "Art. 61, §2º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-fa0a69fa502d",
+   "dispositivo": "Art. 61, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-c90dad6cda91",
+   "dispositivo": "Art. 61, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-e86405528951",
+   "dispositivo": "Art. 61, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-73bc29f6558b",
+   "dispositivo": "Art. 61, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-f7cc0305c7a0",
+   "dispositivo": "Art. 61, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-992777006b28",
+   "dispositivo": "Art. 62, § 1°, I, a, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-37a4442c0541",
+   "dispositivo": "Art. 62, § 1º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-93e4743bd41e",
+   "dispositivo": "Art. 62, § 1º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-11b0cb36de97",
+   "dispositivo": "Art. 62, § 1º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-46d3c2cb3180",
+   "dispositivo": "Art. 62, § 1º, I, “a”, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-51f087a9f95b",
+   "dispositivo": "Art. 62, § 1º, I, \"b\", CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-5e54097bea90",
+   "dispositivo": "Art. 62, § 1º, I, “d”, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-2dbebc4f9d68",
+   "dispositivo": "Art. 62, § 1º, I, a, b, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-636c9b02bb81",
+   "dispositivo": "Art. 62, § 1º, I, a, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-81086dbb4d70",
+   "dispositivo": "Art. 62, § 1º, I, b, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-7be3ca4865d8",
+   "dispositivo": "Art. 62, § 1º, I, b, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-29099f00b80a",
+   "dispositivo": "Art. 62, § 1º, I, b, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-bcaff145b70a",
+   "dispositivo": "Art. 62, § 1º, I, b, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-97f704579252",
+   "dispositivo": "Art. 62, § 1º, I, b, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-1810dc065f0a",
+   "dispositivo": "Art. 62, § 1º, I, b, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-d1b0602c88ca",
+   "dispositivo": "Art. 62, § 1º, I, c, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-16f99ce0b62d",
+   "dispositivo": "Art. 62, § 1º, II, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-5d61010cd6aa",
+   "dispositivo": "Art. 62, § 1º, III c/c 131, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-e62a2addeab1",
+   "dispositivo": "Art. 62, § 1º, III c/c Art. 84, XXII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-70c695360f53",
+   "dispositivo": "Art. 62, § 1º, III, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-30fbc4967247",
+   "dispositivo": "Art. 62, § 1º, III, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-44cc47440772",
+   "dispositivo": "Art. 62, § 1º, III, e § 3º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-183d3c0423c3",
+   "dispositivo": "Art. 62, § 1º, IV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-126759492fa3",
+   "dispositivo": "Art. 62, § 1º, IV, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-643416b121d0",
+   "dispositivo": "Art. 62, § 1º, IV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-ac3a813aae4b",
+   "dispositivo": "Art. 62, § 2º c/c Art. 153, I, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-2cc18eedf48c",
+   "dispositivo": "Art. 62, § 2º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-87e14d7e97a2",
+   "dispositivo": "Art. 62, § 3º, § 4º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-6a15fba2f297",
+   "dispositivo": "Art. 62, § 3º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-1b0bfc29282f",
+   "dispositivo": "Art. 62, § 3º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-3055d565512a",
+   "dispositivo": "Art. 62, § 6º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-9658d8c405f8",
+   "dispositivo": "Art. 62, § 6º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-bfc4acca9e46",
+   "dispositivo": "Art. 62, § 6º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-d11918b16516",
+   "dispositivo": "Art. 62, § 6º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-4ddd87f0d9e6",
+   "dispositivo": "Art. 62, § 9º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-c30d0d772a41",
+   "dispositivo": "Art. 62, § 10, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-3d9dfb0b6f69",
+   "dispositivo": "Art. 62, § 10, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-3e7dae45ac8f",
+   "dispositivo": "Art. 62, § 12, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-ed55e67478a9",
+   "dispositivo": "Art. 62, §1º, III, IV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-bd6838c49d16",
+   "dispositivo": "Art. 62, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-35bfad2f387d",
+   "dispositivo": "Art. 62, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-76e26a457d4b",
+   "dispositivo": "Art. 62, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-6649949cd8bb",
+   "dispositivo": "Art. 63, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-28e165afdde1",
+   "dispositivo": "Art. 63, I, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-7a498a9d3f25",
+   "dispositivo": "Art. 64, § 1º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-88a10198ee99",
+   "dispositivo": "Art. 64, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-3e07d0569573",
+   "dispositivo": "Art. 64, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-73ef500a571d",
+   "dispositivo": "Art. 64, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-6f437b0bd763",
+   "dispositivo": "Art. 65, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-46e916fc12f9",
+   "dispositivo": "Art. 65, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-3ee0fd73f7a1",
+   "dispositivo": "Art. 66, § 1°, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-6d6915a9c02f",
+   "dispositivo": "Art. 66, § 1º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-527ae113fccc",
+   "dispositivo": "Art. 66, § 1º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-90c2693a5190",
+   "dispositivo": "Art. 66, § 1º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-307c0c6b3f7b",
+   "dispositivo": "Art. 66, § 1º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b0076fcfbef8",
+   "dispositivo": "Art. 66, § 1º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-dc9e08ca8d7d",
+   "dispositivo": "Art. 66, § 2º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-1c959a5f006c",
+   "dispositivo": "Art. 66, § 2º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-66589c714fde",
+   "dispositivo": "Art. 66, § 2º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-a8b2d52aee70",
+   "dispositivo": "Art. 66, § 2º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-4d20be38a89d",
+   "dispositivo": "Art. 66, § 2º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-1d21819aed63",
+   "dispositivo": "Art. 66, § 3º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-0c4b64974196",
+   "dispositivo": "Art. 66, § 3º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-4f35bbd135bc",
+   "dispositivo": "Art. 66, § 4º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-4df3e1b4179a",
+   "dispositivo": "Art. 66, § 4º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-abfb311d360e",
+   "dispositivo": "Art. 66, § 4º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-d3b0d3284620",
+   "dispositivo": "Art. 66, § 4º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-5be80f89ed06",
+   "dispositivo": "Art. 66, § 4º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-3ac23621dc9d",
+   "dispositivo": "Art. 66, § 5º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-87a457e5d431",
+   "dispositivo": "Art. 66, § 6º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b8877d86e00b",
+   "dispositivo": "Art. 66, § 7º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-fe0e37db2f1b",
+   "dispositivo": "Art. 66, § 7º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-c1e285a039b3",
+   "dispositivo": "Art. 66, §§ 1º e 3º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-7a34ae9fe4ed",
+   "dispositivo": "Art. 67, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-ced0d666176a",
+   "dispositivo": "Art. 67, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-91f4539f2dd9",
+   "dispositivo": "Art. 68, § 1º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-c9bd893a8f56",
+   "dispositivo": "Art. 68, § 1º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-3171877d5353",
+   "dispositivo": "Art. 68, § 1º, II, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-9f0cec81fa27",
+   "dispositivo": "Art. 68, § 1º, II, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-18904871d2cf",
+   "dispositivo": "Art. 68, § 1º, III, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-68544fa6dbaf",
+   "dispositivo": "Art. 68, § 2º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-bf16bb96e3cf",
+   "dispositivo": "Art. 68, § 3º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-6bb5af319f82",
+   "dispositivo": "Art. 69, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-afc2a8a2a6af",
+   "dispositivo": "Art. 69, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b39864b3eaf7",
+   "dispositivo": "Arts. 60 e 67, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-df2555bbcc33",
+   "dispositivo": "Arts. 61, § 1º, II, \"a\", e 66, § 1º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-71f8ca3c6533",
+   "dispositivo": "Arts. 61, 64, 65, § único e 66, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-cb5949dffda2",
+   "dispositivo": "Arts. 62, § 1º, c/c 167, § 3º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-e2cc05fe3105",
+   "dispositivo": "Arts. 62, § 2º e 153, IV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-autoral-inedita-w7-01",
+   "dispositivo": "Autoral • Art. 59 — espécies normativas",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-inedita-w7-05",
+   "dispositivo": "Autoral • Art. 60 — cláusulas pétreas",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-inedita-w7-02",
+   "dispositivo": "Autoral • Art. 60 — iniciativa da PEC",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-inedita-w7-04",
+   "dispositivo": "Autoral • Art. 60 — limitações circunstanciais",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-inedita-w7-03",
+   "dispositivo": "Autoral • Art. 60 — quórum",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-inedita-w7-06",
+   "dispositivo": "Autoral • Art. 61 — iniciativa popular",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-inedita-w7-11",
+   "dispositivo": "Autoral • Art. 62 — Casa iniciadora",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-inedita-w7-10",
+   "dispositivo": "Autoral • Art. 62 — matérias vedadas",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-inedita-w7-09",
+   "dispositivo": "Autoral • Art. 62 — prazo da MP",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-inedita-w7-12",
+   "dispositivo": "Autoral • Art. 62 — reedição",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-inedita-w7-07",
+   "dispositivo": "Autoral • Art. 64 — Casa iniciadora",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-inedita-w7-08",
+   "dispositivo": "Autoral • Art. 64 — urgência",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-inedita-w7-15",
+   "dispositivo": "Autoral • Art. 66 — apreciação do veto",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-inedita-w7-13",
+   "dispositivo": "Autoral • Art. 66 — prazo do veto",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-inedita-w7-14",
+   "dispositivo": "Autoral • Art. 66 — veto parcial",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-inedita-w7-16",
+   "dispositivo": "Autoral • Art. 68 — lei delegada",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-inedita-w7-17",
+   "dispositivo": "Autoral • Art. 69 — quórum da LC",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  }
+ ]
+}
