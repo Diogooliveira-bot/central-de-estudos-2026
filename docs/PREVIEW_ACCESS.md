@@ -13,28 +13,28 @@ Para criar uma nova prévia, siga estes passos:
 
 1. Crie uma branch a partir de `main` (ou de uma branch que já inclua esta
    configuração), implemente as alterações e aguarde o deploy Vercel `READY`.
-2. Consulte na Vercel a variável de projeto `BC_PREVIEW_GUEST_TOKEN`
-   (ambiente **Preview**, tipo encrypted), **somente quando necessário para montar
-   o link privado**. Nunca coloque esse valor em Git, PR, arquivos de testes,
-   comentários, logs ou mensagens em texto puro.
-3. Entregue ao usuário um link no formato
-   `https://<deployment-da-preview>.vercel.app/central-v119.html?bc_preview=<token>`.
+2. O agente **nunca** lê nem decripta variáveis do projeto Vercel (inclusive
+   `BC_PREVIEW_GUEST_TOKEN`). Nunca coloque o token em Git, PR, arquivos de
+   testes, comentários, logs, relatórios ou mensagens em texto puro.
+3. Informe ao proprietário a URL da prévia **sem token**, no formato
+   `https://<deployment-da-preview>.vercel.app/central-v119.html`, e peça que
+   ele acrescente `?bc_preview=<token>` por conta própria, ou que gere o link
+   completo e o guarde em canal privado. O token fica apenas com o proprietário.
    No primeiro acesso, o link converte o token em cookie e leva à Central sem
    tela de login. Novas prévias com host diferente precisam do link especial
    uma vez; continuar no mesmo host não exige nova autenticação por 7 dias.
 4. Identifique o endereço como **prévia somente para testes**, não produção;
    mantenha a aprovação explícita para publicar alterações de conteúdo e layout.
 
-### Como obter o token quando outra conversa do ChatGPT assumir o trabalho
+### Como proceder quando outro agente ou conversa assumir o trabalho
 
-Use o conector Vercel autorizado para o projeto
-`prj_oXErTD4bsnVtGFZCwIn73dThf8Qx`:
-`filter_project_envs({idOrName: <project>, decrypt: "true"})`.
-Procure exclusivamente a variável `BC_PREVIEW_GUEST_TOKEN` com target
-`preview`. Não repita o valor em relatórios; use-o somente no link de
-acesso entregue ao proprietário. Se a variável estiver indisponível,
-**não invente um token**: comunique que a integração de acesso de testes
-precisa ser restabelecida.
+O agente não decripta variáveis do projeto `prj_oXErTD4bsnVtGFZCwIn73dThf8Qx`
+(não use `filter_project_envs` com `decrypt`, pois isso traria também
+`DATABASE_URL` e `AUTH_SECRET` para o contexto). Entregue apenas a URL da
+prévia sem token e peça ao proprietário que acrescente `?bc_preview=<token>`
+ou gere o link por canal privado. Nunca repita o token em relatórios, PRs ou
+commits. Se o proprietário não tiver o token, **não invente um**: comunique
+que a integração de acesso de testes precisa ser restabelecida.
 
 ### Limites de segurança e revisão
 
