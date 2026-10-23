@@ -65,15 +65,35 @@ test('catálogo real cobre todas as disciplinas com filtros publicados', () => {
   assert.ok(rows.some((row) => row.platform === 'qc' && row.id === '15352286' && row.count === 2));
   assert.ok(rows.some((row) => row.platform === 'qc' && row.id === '15352419' && row.count === 2));
   assert.ok(rows.some((row) => row.platform === 'qc' && row.id === '15352451' && row.count === 2));
-  assert.equal(rows.length, 830);
+  // Os 7 cadernos TEC de RLM com numeração antiga (rlm-01…07) não entram mais nos módulos atuais.
+  assert.equal(rows.length, 823);
   assert.equal(rows.filter((row) => row.platform === 'qc').length, 467);
-  assert.equal(rows.filter((row) => row.platform === 'tec').length, 363);
+  assert.equal(rows.filter((row) => row.platform === 'tec').length, 356);
+  assert.ok(!rows.some((row) => row.platform === 'tec' && row.disciplineKey === 'rlm'));
   assert.deepEqual(Array.from(disciplines).sort((a, b) => a.localeCompare(b, 'pt-BR')), [
     'Direito Administrativo', 'Direito Civil', 'Direito Constitucional', 'Direito do Trabalho',
     'Direito Empresarial', 'Direito Penal', 'Direito Processual Civil',
     'Direito Processual do Trabalho', 'Direito Processual Penal', 'Matemática', 'Português', 'Raciocínio Lógico'
   ].sort((a, b) => a.localeCompare(b, 'pt-BR')));
   assert.ok(rows.every((row) => row.id && row.count > 0 && row.url.startsWith('https://')));
+});
+
+test('RLM recebe os cadernos TEC indicados para cada módulo atual', () => {
+  const dom = new JSDOM('<!doctype html><html><body></body></html>', {
+    url: 'https://preview.example.test/central-v119.html', runScripts: 'outside-only', pretendToBeVisual: true
+  });
+  dom.window.eval(read('content/qc-sharing-links.js'));
+  dom.window.eval(read('content/rlm-tjce-2026/estrutura.js'));
+  const tecSource = Array.from(read('index.html').matchAll(/<script[^>]*>([\s\S]*?)<\/script>/gi))
+    .map((match) => match[1]).find((script) => script.includes('window.TEC_CADERNOS_DATA='));
+  dom.window.eval(tecSource);
+  dom.window.eval(source);
+  const rows = dom.window.ExternalQuestionFilters.buildRegistry().filter((row) => row.disciplineKey === 'rlm');
+  const tec = rows.filter((row) => row.platform === 'tec');
+  assert.ok(tec.some((row) => row.module === 'M02' && row.url.endsWith('/101791585')), 'M02 usa RLM 01 (proposições)');
+  assert.ok(tec.some((row) => row.module === 'M11' && row.url.endsWith('/101890577')), 'M11 usa MAT 04 (proporcionalidade)');
+  assert.ok(!tec.some((row) => row.module === 'M01'), 'M01 (treino) não recebe caderno antigo');
+  assert.ok(rows.some((row) => row.platform === 'qc' && row.module === 'M02' && row.id === '15312990'));
 });
 
 test('validação rejeita acertos superiores às respondidas', async () => {

@@ -6,13 +6,13 @@ const root=new URL('../',import.meta.url);
 const read=p=>fs.readFileSync(new URL(p,root),'utf8');
 function course(expanded=true){
  const c={window:{},URL};vm.createContext(c);
- for(const f of ['estrutura','aulas-logica','aulas-raciocinio','aulas-matematica','aulas-estatistica','banco-fcc-legado'])vm.runInContext(read(`content/rlm-tjce-2026/${f}.js`),c);
+ for(const f of ['estrutura','aulas-logica','aulas-raciocinio','aulas-matematica','aulas-estatistica'])vm.runInContext(read(`content/rlm-tjce-2026/${f}.js`),c);
  if(expanded)vm.runInContext(read('content/rlm-tjce-2026/complementos-teoria.js'),c);
  vm.runInContext(read('ui/rlm-theory-resources.js'),c);
  return c;
 }
 const plain=x=>JSON.parse(JSON.stringify(x));
-test('a ampliação cobre os 70 capítulos sem alterar questões, banco legado ou treino',()=>{
+test('a ampliação cobre os 70 capítulos sem alterar questões ou treino',()=>{
  const original=course(false).window,c=course(),current=c.window;
  assert.equal(current.RLM_AMPLIACAO_COBERTURA.length,14);
  assert.equal(new Set(current.RLM_AMPLIACAO_COBERTURA).size,14);
@@ -28,7 +28,6 @@ test('a ampliação cobre os 70 capítulos sem alterar questões, banco legado o
    ch.tables.forEach(t=>t.rows.forEach(r=>assert.equal(r.length,t.headers.length)));
   });
  }
- assert.deepEqual(plain(current.RLM_FCC_LEGADO),plain(original.RLM_FCC_LEGADO));
  assert.deepEqual(plain(current.RLM_TJCE_STRUCTURE.modulos[0]),plain(original.RLM_TJCE_STRUCTURE.modulos[0]));
  const snapshot=JSON.stringify(current.RLM_CURSO_AULAS);
  vm.runInContext(read('content/rlm-tjce-2026/complementos-teoria.js'),c);

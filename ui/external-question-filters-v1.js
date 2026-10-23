@@ -269,6 +269,21 @@
       });
     });
 
+    // RLM: cadernos TEC indicados pelo próprio curso para cada módulo novo (M02–M15).
+    const tecById = new Map((global.TEC_CADERNOS_DATA?.cadernos || []).map((item) => [item.id, item]));
+    (global.RLM_TJCE_STRUCTURE?.modulos || []).forEach((module) => {
+      (module.tecCandidatos || []).forEach((tecId) => {
+        const item = tecById.get(tecId);
+        if (!item?.url || !(Number(item.questoes) > 0)) return;
+        pushFilter(list, seen, {
+          platform: 'tec', disciplineKey: 'rlm', module: module.id, code: module.id,
+          title: item.nome, moduleTitle: module.titulo,
+          id: notebookIdFromUrl(item.url) || tecId, count: item.questoes, url: item.url,
+          legacyCid: tecId, source: 'tec-rlm-curated'
+        });
+      });
+    });
+
     const ptra = global.PTRA_NATIVE_INDEX;
     (ptra?.modules || []).forEach((module) => {
       (module.tec || []).forEach((tecId) => {
@@ -308,6 +323,8 @@
       const codeMatch = String(item?.id || '').match(/-(\d{1,2})$/);
       const module = codeMatch ? `M${pad(codeMatch[1])}` : '';
       if (!module || curated.has(`${disciplineKey}|${module}`)) return;
+      // A numeração antiga dos cadernos RLM (rlm-01…) não corresponde aos módulos atuais.
+      if (disciplineKey === 'rlm') return;
       pushFilter(list, seen, {
         platform: 'tec', disciplineKey, discipline: item.grupoNome, module, code: module,
         title: item.nome, id: notebookIdFromUrl(item.url) || item.id, count: item.questoes,
