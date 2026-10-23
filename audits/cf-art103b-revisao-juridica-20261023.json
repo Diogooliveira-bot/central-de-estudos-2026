@@ -1,0 +1,448 @@
+{
+ "data": "2026-10-23",
+ "fonte": "CF/88, texto compilado do Planalto (arquivo fornecido pelo responsável); redação vigente selecionada dispositivo a dispositivo",
+ "escopo": "tools/decorando-data-cf.js — subtópico Conselho Nacional de Justiça",
+ "total": 55,
+ "itens": [
+  {
+   "id": "cf-efdeb53ff515",
+   "dispositivo": "Art. 92, I-A, c/c art. 103-B, § 4º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-6cc3c7fc9e9a",
+   "dispositivo": "Art. 103-B § 4º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-8bbeb372e45f",
+   "dispositivo": "Art. 103-B §1º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-592a52fabe59",
+   "dispositivo": "Art. 103-B, § 1º, § 2º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-a8cef0d19882",
+   "dispositivo": "Art. 103-B, § 1º, § 4º, I, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-83b4dc2c7f13",
+   "dispositivo": "Art. 103-B, § 1º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-c9c896b2e995",
+   "dispositivo": "Art. 103-B, § 1º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-810fd02ac0fb",
+   "dispositivo": "Art. 103-B, § 1º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-a50ceb47f5f2",
+   "dispositivo": "Art. 103-B, § 1º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-42fb0536a202",
+   "dispositivo": "Art. 103-B, § 1º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-2c73d55bbd6d",
+   "dispositivo": "Art. 103-B, § 2º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-f10a669dd70e",
+   "dispositivo": "Art. 103-B, § 4º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-cab923b0e50e",
+   "dispositivo": "Art. 103-B, § 4º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b6017b21170d",
+   "dispositivo": "Art. 103-B, § 4º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-bb62962c2c22",
+   "dispositivo": "Art. 103-B, § 4º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-80dd833d956e",
+   "dispositivo": "Art. 103-B, § 4º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-ce4563e5addb",
+   "dispositivo": "Art. 103-B, § 4º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-65f064a152a1",
+   "dispositivo": "Art. 103-B, § 4º, II, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-d5eee0a95f17",
+   "dispositivo": "Art. 103-B, § 4º, II, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-9bd6213c513c",
+   "dispositivo": "Art. 103-B, § 4º, III, c/c art. 130-A, § 2º, III, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-3cb37f54e929",
+   "dispositivo": "Art. 103-B, § 4º, III, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-78eb8dd5b773",
+   "dispositivo": "Art. 103-B, § 4º, III, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-bfc19ebfdb01",
+   "dispositivo": "Art. 103-B, § 4º, III, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-0ad0bd00ca4c",
+   "dispositivo": "Art. 103-B, § 4º, IV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-e571cb77a65d",
+   "dispositivo": "Art. 103-B, § 4º, IV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-c70bb1c9578b",
+   "dispositivo": "Art. 103-B, § 4º, V, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-6f8e47b1bc55",
+   "dispositivo": "Art. 103-B, § 4º, V, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-ed2b385faaf0",
+   "dispositivo": "Art. 103-B, § 4º, V, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-1102e73dc755",
+   "dispositivo": "Art. 103-B, § 4º, VI, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-c3ccd215d3a6",
+   "dispositivo": "Art. 103-B, § 5º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b89e7dad7dbc",
+   "dispositivo": "Art. 103-B, § 6º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-3024e558c2ac",
+   "dispositivo": "Art. 103-B, § 7º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-3589549e23d3",
+   "dispositivo": "Art. 103-B, §§ 1º e 2º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-6b6ca281d5f8",
+   "dispositivo": "Art. 103-B, §§ 1º, 2º e 5º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-139aa2fa14eb",
+   "dispositivo": "Art. 103-B, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-d65aef0d32e2",
+   "dispositivo": "Art. 103-B, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-ee64c38f46c3",
+   "dispositivo": "Art. 103-B, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-17284f832759",
+   "dispositivo": "Art. 103-B, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-cf24e2e00119",
+   "dispositivo": "Art. 103-B, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-fb000af07bc3",
+   "dispositivo": "Art. 103-B, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-863600b5147c",
+   "dispositivo": "Art. 103-B, II, IV, V, XI e XIII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-dfc127dc9c7e",
+   "dispositivo": "Art. 103-B, V, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-05e4602a6d11",
+   "dispositivo": "Art. 103-B, V, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-07212a670627",
+   "dispositivo": "Art. 103-B, X e XI, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-05b281b512ba",
+   "dispositivo": "Art. 103-B, XIII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-e50982b03785",
+   "dispositivo": "Arts. 103-B e 130-A, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-37a8cf13a883",
+   "dispositivo": "Arts. 103-B, § 4º e 130-A, § 2º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-72b828490d6d",
+   "dispositivo": "Arts. 103-B, XIII e 130-A, VI, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-autoral-v210-m10-01",
+   "dispositivo": "Autoral • CNJ — composição e investidura",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-v210-m10-03",
+   "dispositivo": "Autoral • CNJ — controle de legalidade",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-v210-m10-02",
+   "dispositivo": "Autoral • CNJ — indicações",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-v210-m10-05",
+   "dispositivo": "Autoral • CNJ — Ministro-Corregedor",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-v210-m10-06",
+   "dispositivo": "Autoral • CNJ — natureza e competência",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-v210-m10-07",
+   "dispositivo": "Autoral • CNJ — relatórios constitucionais",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-v210-m10-04",
+   "dispositivo": "Autoral • CNJ — revisão disciplinar",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  }
+ ]
+}
