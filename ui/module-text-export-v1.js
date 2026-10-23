@@ -58,7 +58,7 @@ async function ensure(id){const loader=w.CentralDisciplineLoader;if(loader&&load
 async function packed(id){
  const civil=id==='civil',varName=civil?'CIVIL_NATIVE_PACKED_B64':'CPP_NATIVE_PACKED_B64',store=civil?'CIVIL_NATIVE_CONTENT':'CPP_NATIVE_CONTENT';
  if(w[store]&&Object.keys(w[store]).length)return w[store];
- if(!w[varName])await addScript(civil?'/content/civil/civil-native-content-packed.js?v=20261018civiljur1':'/content/cpp/cpp-native-content-packed.js?v=cpp20261005prod1');
+ if(!w[varName])await addScript(civil?'/content/civil/civil-native-content-packed.js?v=20261018civiljur1':'/content/cpp/cpp-native-content-packed.js?v=cpp20261023rev1');
  if(!w.DecompressionStream)throw Error('O navegador não suporta a descompactação deste curso');
  const bytes=Uint8Array.from(atob(w[varName]),c=>c.charCodeAt(0));
  const text=await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'))).text();
