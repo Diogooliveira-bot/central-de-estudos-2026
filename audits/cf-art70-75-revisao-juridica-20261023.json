@@ -1,0 +1,1032 @@
+{
+ "data": "2026-10-23",
+ "fonte": "CF/88, texto compilado do Planalto (arquivo fornecido pelo responsável); redação vigente selecionada dispositivo a dispositivo",
+ "escopo": "tools/decorando-data-cf.js — subtópico Fiscalização contábil, financeira e orçamentária (CF, arts. 70 a 75)",
+ "total": 128,
+ "itens": [
+  {
+   "id": "cf-19eb9f0629c5",
+   "dispositivo": "Art. 70 e 74, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-574a6c7226e3",
+   "dispositivo": "Art. 70, § único, CF",
+   "gabarito": "E",
+   "status": "pendente",
+   "base": "gabarito oficial possivelmente divergente do texto ou da jurisprudência",
+   "origem": "real"
+  },
+  {
+   "id": "cf-53acc1a2eded",
+   "dispositivo": "Art. 70, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-a61e8c941dd4",
+   "dispositivo": "Art. 70, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-1af566fffb02",
+   "dispositivo": "Art. 70, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-37081194530d",
+   "dispositivo": "Art. 70, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-15f07a139b14",
+   "dispositivo": "Art. 70, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-bc8fe2601f7f",
+   "dispositivo": "Art. 70, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-ab72cc11bd87",
+   "dispositivo": "Art. 71, § 1º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-ff3e9cf28960",
+   "dispositivo": "Art. 71, § 1º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-a12f3a90f694",
+   "dispositivo": "Art. 71, § 3º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-f9526fa7023c",
+   "dispositivo": "Art. 71, § 3º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-2986712188f9",
+   "dispositivo": "Art. 71, § 3º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-3a6a346aed18",
+   "dispositivo": "Art. 71, §§ 1° e 2°, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-43e4b58570b4",
+   "dispositivo": "Art. 71, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-2fec2221e4e7",
+   "dispositivo": "Art. 71, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-c14caf347994",
+   "dispositivo": "Art. 71, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-5ad5bb0d4bff",
+   "dispositivo": "Art. 71, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-64193f393f5e",
+   "dispositivo": "Art. 71, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-36ab87436407",
+   "dispositivo": "Art. 71, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-e2a2572dfa91",
+   "dispositivo": "Art. 71, I, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-e77b1ac8d08d",
+   "dispositivo": "Art. 71, I, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-2be6299d7e2f",
+   "dispositivo": "Art. 71, I, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-df65dd3155a4",
+   "dispositivo": "Art. 71, I, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-56e813561b3c",
+   "dispositivo": "Art. 71, I, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-29c290547930",
+   "dispositivo": "Art. 71, I, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-3c0013e16c81",
+   "dispositivo": "Art. 71, II, § 3º, CF",
+   "gabarito": "C",
+   "status": "certificado-parcial",
+   "base": "texto constitucional; norma infraconstitucional citada não conferida",
+   "origem": "real"
+  },
+  {
+   "id": "cf-30141843dd88",
+   "dispositivo": "Art. 71, II, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-3fb73163b8a4",
+   "dispositivo": "Art. 71, II, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-f2b1730f9480",
+   "dispositivo": "Art. 71, II, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-d7ac440125ef",
+   "dispositivo": "Art. 71, II, CF",
+   "gabarito": "C",
+   "status": "certificado-parcial",
+   "base": "texto constitucional; norma infraconstitucional citada não conferida",
+   "origem": "real"
+  },
+  {
+   "id": "cf-098102f4ad60",
+   "dispositivo": "Art. 71, II, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b1866b43cdf9",
+   "dispositivo": "Art. 71, III, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-683ccfe52e54",
+   "dispositivo": "Art. 71, III, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-f16a6fb112c9",
+   "dispositivo": "Art. 71, III, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-825f8b0af729",
+   "dispositivo": "Art. 71, III, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-c2fba4df497f",
+   "dispositivo": "Art. 71, III, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-bcd5db581530",
+   "dispositivo": "Art. 71, III, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-f2efca6af1aa",
+   "dispositivo": "Art. 71, IV, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-87002f0b9cb1",
+   "dispositivo": "Art. 71, IV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-aef0f196d656",
+   "dispositivo": "Art. 71, IV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b2b3a2e7f901",
+   "dispositivo": "Art. 71, IV, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-309f1e091200",
+   "dispositivo": "Art. 71, IV, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-e26aca86acf4",
+   "dispositivo": "Art. 71, IV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-81e5e60c94cc",
+   "dispositivo": "Art. 71, IX, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-d94abbc107b8",
+   "dispositivo": "Art. 71, IX, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b62c9c686e54",
+   "dispositivo": "Art. 71, IX, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-36253667a0df",
+   "dispositivo": "Art. 71, IX, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b124160c5828",
+   "dispositivo": "Art. 71, IX, X, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-1ce3683db9c0",
+   "dispositivo": "Art. 71, V, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-64e9a6aee90f",
+   "dispositivo": "Art. 71, V, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-919aa62fe3d4",
+   "dispositivo": "Art. 71, V, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-f2b5f2b06fae",
+   "dispositivo": "Art. 71, V, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-8b186b8dda4e",
+   "dispositivo": "Art. 71, VI, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-465838d9a1ae",
+   "dispositivo": "Art. 71, VI, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-e32b0aa538c0",
+   "dispositivo": "Art. 71, VI, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-75fc8116382b",
+   "dispositivo": "Art. 71, VI, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-7e64b560357d",
+   "dispositivo": "Art. 71, VI, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-4685e99425c1",
+   "dispositivo": "Art. 71, VI, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-ce9efdb86689",
+   "dispositivo": "Art. 71, VIII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-408f1b0ff0bc",
+   "dispositivo": "Art. 71, VIII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-93fc624e7ad7",
+   "dispositivo": "Art. 71, VIII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-2e5a3675ae23",
+   "dispositivo": "Art. 71, VIII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-13e327dd1c1d",
+   "dispositivo": "Art. 71, X, § 1º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-0ee016bf60e8",
+   "dispositivo": "Art. 71, X, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-280112de5ae0",
+   "dispositivo": "Art. 71, XI, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-6f290689928f",
+   "dispositivo": "Art. 72, § 1º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-409224acf405",
+   "dispositivo": "Art. 72, § 1º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-04fa424c44a3",
+   "dispositivo": "Art. 72, § 2º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-3cee6e11e207",
+   "dispositivo": "Art. 73, § 1°, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-3d5ae9958f8b",
+   "dispositivo": "Art. 73, § 1º, II, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-154e458487d4",
+   "dispositivo": "Art. 73, § 2º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-d9dec2abd65e",
+   "dispositivo": "Art. 73, § 2º, II, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-0302b1b9932b",
+   "dispositivo": "Art. 73, § 3º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-8d5e1d86313d",
+   "dispositivo": "Art. 73, § 3º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-107764c1eecc",
+   "dispositivo": "Art. 73, § 4°, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b3ae8d121da3",
+   "dispositivo": "Art. 73, §§ 2º e 4º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-84c9066d22d3",
+   "dispositivo": "Art. 73, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-95646a961a66",
+   "dispositivo": "Art. 73, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-3e9856cb3c48",
+   "dispositivo": "Art. 73, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-07b0bc5c8d77",
+   "dispositivo": "Art. 74, § 1°, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-cfa97dfac535",
+   "dispositivo": "Art. 74, § 1º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-fc3353cc70d0",
+   "dispositivo": "Art. 74, § 1º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-dd243310f9bf",
+   "dispositivo": "Art. 74, § 1º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-9fed905719f0",
+   "dispositivo": "Art. 74, § 1º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-bdb0060e4a49",
+   "dispositivo": "Art. 74, § 1º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-4d8846170b8c",
+   "dispositivo": "Art. 74, § 1º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-9fe99c8f478a",
+   "dispositivo": "Art. 74, § 2°, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-9ae695508038",
+   "dispositivo": "Art. 74, § 2º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-7a4323417396",
+   "dispositivo": "Art. 74, § 2º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-fa90977ab503",
+   "dispositivo": "Art. 74, § 2º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-fadea562d44d",
+   "dispositivo": "Art. 74, § 2º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-0478964c2d86",
+   "dispositivo": "Art. 74, § 2º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-c305b7f021a4",
+   "dispositivo": "Art. 74, I, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-ef3e667701ef",
+   "dispositivo": "Art. 74, I, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-1423b77a4bc0",
+   "dispositivo": "Art. 74, I, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-c2ae2f214315",
+   "dispositivo": "Art. 74, II, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-71402194595f",
+   "dispositivo": "Art. 74, II, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-3bc953f968b3",
+   "dispositivo": "Art. 74, II, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b787758a176d",
+   "dispositivo": "Art. 74, III, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-a3ff35e4aab8",
+   "dispositivo": "Art. 74, III, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-29937e100ab5",
+   "dispositivo": "Art. 74, III, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-5c276fda63f2",
+   "dispositivo": "Art. 74, III, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-83aa08014b58",
+   "dispositivo": "Art. 74, IV, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-8334bb585f3a",
+   "dispositivo": "Art. 74, IV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-f471d291de17",
+   "dispositivo": "Art. 74, IV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-57d435722c0d",
+   "dispositivo": "Art. 74, IV, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-965914d07249",
+   "dispositivo": "Art. 75, § único, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b428f7c754f1",
+   "dispositivo": "Art. 75, § único, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-efcbf6462b04",
+   "dispositivo": "Art. 75, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-18d546fc2398",
+   "dispositivo": "Arts. 70 e 71, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-f6bc5a30248b",
+   "dispositivo": "Arts. 70 e 71, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-a52be47102a7",
+   "dispositivo": "Arts. 70 e 71, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-d18c454515fd",
+   "dispositivo": "Arts. 70 E 74, I, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-15082ffc2495",
+   "dispositivo": "Arts. 73, 75 e 96, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-autoral-inedita-w7-19",
+   "dispositivo": "Autoral • Art. 71 — contas de administradores",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-inedita-w7-18",
+   "dispositivo": "Autoral • Art. 71 — contas do Presidente",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-inedita-w7-20",
+   "dispositivo": "Autoral • Art. 71 — registro de admissões",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-inedita-w7-21",
+   "dispositivo": "Autoral • Art. 71 — sustação de ato",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-inedita-w7-22",
+   "dispositivo": "Autoral • Art. 71 — sustação de contrato",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-inedita-w7-23",
+   "dispositivo": "Autoral • Art. 71 — título executivo",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-inedita-w7-29",
+   "dispositivo": "Autoral • Art. 72 — despesas não autorizadas",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-inedita-w7-24",
+   "dispositivo": "Autoral • Art. 73 — composição do TCU",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-inedita-w7-30",
+   "dispositivo": "Autoral • Art. 73 — requisitos",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-inedita-w7-26",
+   "dispositivo": "Autoral • Art. 74 — denúncia ao TCU",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-inedita-w7-25",
+   "dispositivo": "Autoral • Art. 74 — dever de comunicar",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-inedita-w7-27",
+   "dispositivo": "Autoral • Art. 75 — EC 139/2026",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-inedita-w7-28",
+   "dispositivo": "Autoral • Art. 75 — vedação constitucional",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  }
+ ]
+}
