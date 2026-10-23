@@ -1,0 +1,3223 @@
+{
+ "data": "2026-10-23",
+ "fonte": "CF/88, texto compilado do Planalto (arquivo fornecido pelo responsável); redação vigente selecionada dispositivo a dispositivo",
+ "escopo": "tools/decorando-data-cf.js — subtópico Administração Pública — disposições gerais e servidores (CF, arts. 37 a 41)",
+ "total": 377,
+ "itens": [
+  {
+   "id": "cf-c8323f7e9a57",
+   "dispositivo": "Art. 37, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-5659f4ead3a4",
+   "dispositivo": "Art. 37, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-20bc6f69db2a",
+   "dispositivo": "Art. 37, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-a99d6102bd34",
+   "dispositivo": "Art. 37, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-77c47a9e02ff",
+   "dispositivo": "Art. 37, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-d8aa74851306",
+   "dispositivo": "Art. 37, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-e5232872601e",
+   "dispositivo": "Art. 37, CF e Art. 92, CE-GO",
+   "gabarito": "C",
+   "status": "certificado-parcial",
+   "base": "texto constitucional; norma infraconstitucional citada não conferida",
+   "origem": "real"
+  },
+  {
+   "id": "cf-a3a2c8dcc9c8",
+   "dispositivo": "Art. 37, I, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-0b6f45566b29",
+   "dispositivo": "Art. 37, I, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-9d3243a15f1e",
+   "dispositivo": "Art. 37, I, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-0d06ceb6613c",
+   "dispositivo": "Art. 37, I, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b9775cee48c4",
+   "dispositivo": "Art. 37, I, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-3a56a4818827",
+   "dispositivo": "Art. 37, I, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-11a41b369c1f",
+   "dispositivo": "Art. 37, II e § 2°, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-39b8ac862323",
+   "dispositivo": "Art. 37, II, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-0088d9719c69",
+   "dispositivo": "Art. 37, II, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-05d4fc0dcdc7",
+   "dispositivo": "Art. 37, II, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-db5c01823dd3",
+   "dispositivo": "Art. 37, II, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-327c4d4cdbd0",
+   "dispositivo": "Art. 37, II, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-dfdd8f59fa38",
+   "dispositivo": "Art. 37, II, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-f261b09e8373",
+   "dispositivo": "Art. 37, II, CF e Súm. Vinc. 43",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-51f4e4c60578",
+   "dispositivo": "Art. 37, III e IV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-91e8910dcc71",
+   "dispositivo": "Art. 37, III, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-8c8a6ec19ea0",
+   "dispositivo": "Art. 37, III, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b8e287da8e7f",
+   "dispositivo": "Art. 37, III, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-494bcfd3f847",
+   "dispositivo": "Art. 37, III, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-e65c955cd198",
+   "dispositivo": "Art. 37, III, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-cb698b714fb4",
+   "dispositivo": "Art. 37, III, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-2f9ccca467a4",
+   "dispositivo": "Art. 37, IV, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-e6550c59efec",
+   "dispositivo": "Art. 37, IV, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-0aced119914e",
+   "dispositivo": "Art. 37, IX, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-21470f2c039f",
+   "dispositivo": "Art. 37, IX, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-468d3b6fb451",
+   "dispositivo": "Art. 37, IX, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-1e0b6f76018c",
+   "dispositivo": "Art. 37, IX, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-9b67320a44d7",
+   "dispositivo": "Art. 37, IX, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-79fa404243fb",
+   "dispositivo": "Art. 37, IX, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-2699060aa3ec",
+   "dispositivo": "Art. 37, V, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-0927905a8ca6",
+   "dispositivo": "Art. 37, V, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b50f6e52f12c",
+   "dispositivo": "Art. 37, V, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-6c4a44c3cb70",
+   "dispositivo": "Art. 37, V, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-0cb8e905de17",
+   "dispositivo": "Art. 37, V, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-c7d8d617bc84",
+   "dispositivo": "Art. 37, V, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-fd600e558354",
+   "dispositivo": "Art. 37, VI e VII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-1dadb072c255",
+   "dispositivo": "Art. 37, VI, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-271e32322c14",
+   "dispositivo": "Art. 37, VI, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b0f1fac6eb6d",
+   "dispositivo": "Art. 37, VI, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-d0be6328de4c",
+   "dispositivo": "Art. 37, VI, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-4f37e382b2bc",
+   "dispositivo": "Art. 37, VI, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-4c457ea024f2",
+   "dispositivo": "Art. 37, VI, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-491cf30d9ffc",
+   "dispositivo": "Art. 37, VI, VII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-1bb56cd59c25",
+   "dispositivo": "Art. 37, VII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-8b83c88216fe",
+   "dispositivo": "Art. 37, VII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-e68e025c6290",
+   "dispositivo": "Art. 37, VII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-af1c3534ccd0",
+   "dispositivo": "Art. 37, VII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-370c6af64e64",
+   "dispositivo": "Art. 37, VII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-fa0fec678a96",
+   "dispositivo": "Art. 37, VIII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-ccb49e5c32bc",
+   "dispositivo": "Art. 37, VIII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-d020956fe557",
+   "dispositivo": "Art. 37, VIII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-504713e842fb",
+   "dispositivo": "Art. 37, VIII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-5cb2223d4f3d",
+   "dispositivo": "Art. 37, X c/c art. 61, § 1º, II, a, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-2b2d266d54f7",
+   "dispositivo": "Art. 37, X, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-8fca7c5cc40d",
+   "dispositivo": "Art. 37, X, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-ac012a33cd75",
+   "dispositivo": "Art. 37, X, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-8e9b6922e9f9",
+   "dispositivo": "Art. 37, X, XIII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-ae45dc411d82",
+   "dispositivo": "Art. 37, XI, CF",
+   "gabarito": "E",
+   "status": "pendente",
+   "base": "gabarito oficial possivelmente divergente do texto ou da jurisprudência",
+   "origem": "real"
+  },
+  {
+   "id": "cf-984da7511c59",
+   "dispositivo": "Art. 37, XI, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-fc69f9e1ec1b",
+   "dispositivo": "Art. 37, XI, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-e1316c2c2e2b",
+   "dispositivo": "Art. 37, XI, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-04a8f20a7f34",
+   "dispositivo": "Art. 37, XI, § 12, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-0fdaa850e9e0",
+   "dispositivo": "Art. 37, XI, § 9º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-f6a4e95a54cc",
+   "dispositivo": "Art. 37, XII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-8e5eb4a3dd53",
+   "dispositivo": "Art. 37, XII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-9fb460737195",
+   "dispositivo": "Art. 37, XII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b2dcb3e35496",
+   "dispositivo": "Art. 37, XII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-4cf71da58d34",
+   "dispositivo": "Art. 37, XII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-a902481f852e",
+   "dispositivo": "Art. 37, XII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-3a2a25708da7",
+   "dispositivo": "Art. 37, XIII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-0b676a5452a5",
+   "dispositivo": "Art. 37, XIII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-cc2c02560edb",
+   "dispositivo": "Art. 37, XIII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-92f4f8da12af",
+   "dispositivo": "Art. 37, XIII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-62cbf31ec7a5",
+   "dispositivo": "Art. 37, XIII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-34bfe67b7c2b",
+   "dispositivo": "Art. 37, XIII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-0c654d3cc0af",
+   "dispositivo": "Art. 37, XIV, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-2f2117de5987",
+   "dispositivo": "Art. 37, XIV, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-f68915b19099",
+   "dispositivo": "Art. 37, XIV, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-0f7a198e4378",
+   "dispositivo": "Art. 37, XIV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-cfed1d95c4bd",
+   "dispositivo": "Art. 37, XIV, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b3df4b6713ac",
+   "dispositivo": "Art. 37, XIX",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-bf401a7f67b7",
+   "dispositivo": "Art. 37, XIX, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-52cf95c5756e",
+   "dispositivo": "Art. 37, XIX, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-be69ae748037",
+   "dispositivo": "Art. 37, XIX, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-e0df324d621a",
+   "dispositivo": "Art. 37, XIX, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-16c164dc3dfe",
+   "dispositivo": "Art. 37, XIX, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-c7aa17dc7be2",
+   "dispositivo": "Art. 37, XIX, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-e7ec49bdce37",
+   "dispositivo": "Art. 37, XVI e XVII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-52a3f83cc23d",
+   "dispositivo": "Art. 37, XVI, \"c\", CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-aeaad87c8bfe",
+   "dispositivo": "Art. 37, XVI, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-3507ff67161e",
+   "dispositivo": "Art. 37, XVI, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-ada3655383ac",
+   "dispositivo": "Art. 37, XVI, a, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-2271eeedf33c",
+   "dispositivo": "Art. 37, XVI, a, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-7b5aa0d79c11",
+   "dispositivo": "Art. 37, XVI, a, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-5cf24dcdfe81",
+   "dispositivo": "Art. 37, XVI, a, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-0a25c22dbe51",
+   "dispositivo": "Art. 37, XVI, b, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-a32eac6e2728",
+   "dispositivo": "Art. 37, XVI, b, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-3de19de4a13a",
+   "dispositivo": "Art. 37, XVI, b, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-02d439da712d",
+   "dispositivo": "Art. 37, XVI, b, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-0e1ac808c0ba",
+   "dispositivo": "Art. 37, XVI, b, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-291423f7cfc4",
+   "dispositivo": "Art. 37, XVI, c, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b1a9109d54e2",
+   "dispositivo": "Art. 37, XVII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-d8b062c058da",
+   "dispositivo": "Art. 37, XVII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-6b3825194bb7",
+   "dispositivo": "Art. 37, XVII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-f5cb7af4d2a4",
+   "dispositivo": "Art. 37, XVII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-468db6371c48",
+   "dispositivo": "Art. 37, XVII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-06de7b87782c",
+   "dispositivo": "Art. 37, XVIII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-7a21d9cc854b",
+   "dispositivo": "Art. 37, XVIII, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-46e94ab2d088",
+   "dispositivo": "Art. 37, XVIII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-7c00feb6f4d6",
+   "dispositivo": "Art. 37, XX, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-75cc7fa87748",
+   "dispositivo": "Art. 37, XX, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-16840db1bd84",
+   "dispositivo": "Art. 37, XX, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-8aaedc8de06e",
+   "dispositivo": "Art. 37, XXI, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-3b61d065c33b",
+   "dispositivo": "Art. 37, XXI, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-c31a0a8089ab",
+   "dispositivo": "Art. 37, XXI, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-10d160fd82df",
+   "dispositivo": "Art. 37, XXII e XVIII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-267f39a876a7",
+   "dispositivo": "Art. 37, XXII, § 1º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-1840053bea1c",
+   "dispositivo": "Art. 37, caput, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-781d84d8c01b",
+   "dispositivo": "Art. 37, § 10, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-0806941c2c44",
+   "dispositivo": "Art. 37, § 11, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-f4d9f221178b",
+   "dispositivo": "Art. 37, § 11, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b200a5fde56e",
+   "dispositivo": "Art. 37, § 11, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-6b32851e0da8",
+   "dispositivo": "Art. 37, § 12, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-38b4cf21613c",
+   "dispositivo": "Art. 37, § 13, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-85d248570d1d",
+   "dispositivo": "Art. 37, § 13, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-3045b68ce1ea",
+   "dispositivo": "Art. 37, § 13, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-46e8239b16dd",
+   "dispositivo": "Art. 37, § 13, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-16fc164aa753",
+   "dispositivo": "Art. 37, § 13, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-d3fb7d20bfd9",
+   "dispositivo": "Art. 37, § 13, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-5c85fe37a3e8",
+   "dispositivo": "Art. 37, § 14, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-87c5cc2908ea",
+   "dispositivo": "Art. 37, § 14, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-c90448644f06",
+   "dispositivo": "Art. 37, § 14, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-6a5e5f364183",
+   "dispositivo": "Art. 37, § 14, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-627d03b653c5",
+   "dispositivo": "Art. 37, § 14, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-eddcc8c90ee1",
+   "dispositivo": "Art. 37, § 14, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-d992b6a8b741",
+   "dispositivo": "Art. 37, § 16, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-842c61b5b998",
+   "dispositivo": "Art. 37, § 16, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-89d1e641bcb4",
+   "dispositivo": "Art. 37, § 16, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-4481a772c180",
+   "dispositivo": "Art. 37, § 16, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-6bd2e01855f3",
+   "dispositivo": "Art. 37, § 16, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-d25aa4592aff",
+   "dispositivo": "Art. 37, § 16, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-149e573cec17",
+   "dispositivo": "Art. 37, § 1°, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-15f417e7e0c0",
+   "dispositivo": "Art. 37, § 1º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b939d66d3fb3",
+   "dispositivo": "Art. 37, § 1º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-716a8d75d96a",
+   "dispositivo": "Art. 37, § 1º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-bdffcadf5235",
+   "dispositivo": "Art. 37, § 1º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-712a3e4869ba",
+   "dispositivo": "Art. 37, § 1º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b265faebf012",
+   "dispositivo": "Art. 37, § 1º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-59eb700df542",
+   "dispositivo": "Art. 37, § 3°, II, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-16d1bca912a6",
+   "dispositivo": "Art. 37, § 3º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-bc11905f4ad3",
+   "dispositivo": "Art. 37, § 4º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-4c5db9013342",
+   "dispositivo": "Art. 37, § 4º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-9fa88df62438",
+   "dispositivo": "Art. 37, § 4º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-14d7123c7e0b",
+   "dispositivo": "Art. 37, § 4º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-6953636ff0ce",
+   "dispositivo": "Art. 37, § 4º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b670923bb902",
+   "dispositivo": "Art. 37, § 4º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-3aaa4153a855",
+   "dispositivo": "Art. 37, § 5º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-41599f652960",
+   "dispositivo": "Art. 37, § 5º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-4d31266785c0",
+   "dispositivo": "Art. 37, § 6°, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-55cdae214613",
+   "dispositivo": "Art. 37, § 6°, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-0ad5254ec797",
+   "dispositivo": "Art. 37, § 6º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-4d8fed9bb927",
+   "dispositivo": "Art. 37, § 6º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-69bc72ae747c",
+   "dispositivo": "Art. 37, § 6º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-13d9de2748cb",
+   "dispositivo": "Art. 37, § 6º, CF",
+   "gabarito": "E",
+   "status": "pendente",
+   "base": "gabarito oficial possivelmente divergente do texto ou da jurisprudência",
+   "origem": "real"
+  },
+  {
+   "id": "cf-aea58b02e7bb",
+   "dispositivo": "Art. 37, § 6º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-0ff4e69b553d",
+   "dispositivo": "Art. 37, § 6º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-eec095653927",
+   "dispositivo": "Art. 37, § 8º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-11109d074827",
+   "dispositivo": "Art. 37, § 8º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-5c3fcc0c756c",
+   "dispositivo": "Art. 37, § 8º, II, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-d2efb0b187e6",
+   "dispositivo": "Art. 37, § 9º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-145b0d5fa14a",
+   "dispositivo": "Arts. 37, CF e 2º, Lei 9.784/99",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-29a58a935777",
+   "dispositivo": "Arts. 37, V e 40 § 22, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-0d1ece154c0a",
+   "dispositivo": "Arts. 37, XVI e 95, § único, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-2b579b34548d",
+   "dispositivo": "Arts. 37, XVI, e 42, § 3º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-60ebdb83880e",
+   "dispositivo": "Art. 38, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-965299f2e930",
+   "dispositivo": "Art. 38, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b63754ec1bd3",
+   "dispositivo": "Art. 38, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-ab1e2a6b037a",
+   "dispositivo": "Art. 38, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-1b89058418df",
+   "dispositivo": "Art. 38, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-83245d80acb2",
+   "dispositivo": "Art. 38, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-6c722e5bab83",
+   "dispositivo": "Art. 38, I e IV, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-d4bf63551f60",
+   "dispositivo": "Art. 38, I e IV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-9ec5d93d0689",
+   "dispositivo": "Art. 38, I, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-144e9bc33279",
+   "dispositivo": "Art. 38, I, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-5b798f78fe24",
+   "dispositivo": "Art. 38, I, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-f92bf8d89951",
+   "dispositivo": "Art. 38, I, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-9d1cc9c31d70",
+   "dispositivo": "Art. 38, I, V, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-1bba8d4a2b0f",
+   "dispositivo": "Art. 38, II e III, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-1dc242ee102b",
+   "dispositivo": "Art. 38, II e III, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b4c875191a4a",
+   "dispositivo": "Art. 38, II, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-aaaf0045bdcc",
+   "dispositivo": "Art. 38, II, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-510c3b3dc157",
+   "dispositivo": "Art. 38, II, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-c1be8196110d",
+   "dispositivo": "Art. 38, II, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-4bce24fead01",
+   "dispositivo": "Art. 38, II, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-3d6ecdcd4488",
+   "dispositivo": "Art. 38, II, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-d4b0e90003b7",
+   "dispositivo": "Art. 38, II, III, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-180702ecdf1a",
+   "dispositivo": "Art. 38, III, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-20150d0d3fd8",
+   "dispositivo": "Art. 38, III, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-f288ba7d23d7",
+   "dispositivo": "Art. 38, III, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-6061f054aec6",
+   "dispositivo": "Art. 38, III, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-c3bfa21bc341",
+   "dispositivo": "Art. 38, III, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-f300632edb5e",
+   "dispositivo": "Art. 38, III, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-6189ec30c858",
+   "dispositivo": "Art. 38, IV, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-3ebb771d9d7d",
+   "dispositivo": "Art. 38, IV, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-561d8d74bdc5",
+   "dispositivo": "Art. 38, IV, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-1ea9e7e91d39",
+   "dispositivo": "Art. 38, IV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-626bbec96f98",
+   "dispositivo": "Art. 38, IV, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b7e2d83c1916",
+   "dispositivo": "Art. 38, IV, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-e3b8fe5f8cbf",
+   "dispositivo": "Art. 38, V, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-25d9c052b2c6",
+   "dispositivo": "Art. 39, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-d0c601881815",
+   "dispositivo": "Art. 39, § 1º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-49f1e344621e",
+   "dispositivo": "Art. 39, § 1º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-993ae0d8f5dd",
+   "dispositivo": "Art. 39, § 1º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-fcaea4c6666b",
+   "dispositivo": "Art. 39, § 1º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-ffc882a408ed",
+   "dispositivo": "Art. 39, § 1º, I, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-5a891f1252de",
+   "dispositivo": "Art. 39, § 1º, II, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-4be93cc9b588",
+   "dispositivo": "Art. 39, § 2º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-04c5e0d9d6bc",
+   "dispositivo": "Art. 39, § 2º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-04735049ff2e",
+   "dispositivo": "Art. 39, § 2º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-50d17864f7da",
+   "dispositivo": "Art. 39, § 3º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-6828e0fb6884",
+   "dispositivo": "Art. 39, § 4°, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-bec85cca9dd7",
+   "dispositivo": "Art. 39, § 4º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-1f81023f0e12",
+   "dispositivo": "Art. 39, § 4º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-1ad175ef8814",
+   "dispositivo": "Art. 39, § 4º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-77557d6a63fa",
+   "dispositivo": "Art. 39, § 4º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-24274101bd53",
+   "dispositivo": "Art. 39, § 4º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-4793b8fe7011",
+   "dispositivo": "Art. 39, § 4º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-5ca5b2e80143",
+   "dispositivo": "Art. 39, § 5º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-d4cd19b13e7e",
+   "dispositivo": "Art. 39, § 6º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-7639a3369b2d",
+   "dispositivo": "Art. 39, § 6º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-9895c230d8ee",
+   "dispositivo": "Art. 39, § 8º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-1e6225c4a698",
+   "dispositivo": "Art. 39, § 9º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-4eb8bd56115a",
+   "dispositivo": "Art. 39, § 9º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-6d77b67de984",
+   "dispositivo": "Art. 39, § 9º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-a25cc21cfb3c",
+   "dispositivo": "Art. 39, § 9º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-1d1357246089",
+   "dispositivo": "Art. 39, § 9º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-964d214a65d0",
+   "dispositivo": "Art. 39, § 9º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-30228885c49a",
+   "dispositivo": "Art. 39, §§ 4º e 8º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-08f210a71dad",
+   "dispositivo": "Arts. 39 e 41, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-2ddb8188ca04",
+   "dispositivo": "Art. 40 e 201, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-af1317932caf",
+   "dispositivo": "Art. 40, CF",
+   "gabarito": "C",
+   "status": "certificado-parcial",
+   "base": "texto constitucional; norma infraconstitucional citada não conferida",
+   "origem": "real"
+  },
+  {
+   "id": "cf-d9ba2654f171",
+   "dispositivo": "Art. 40, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-74a20d5377fe",
+   "dispositivo": "Art. 40, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-db9ab0c4cc73",
+   "dispositivo": "Art. 40, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-f9d574059cf2",
+   "dispositivo": "Art. 40, § 10, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-6452e265fa80",
+   "dispositivo": "Art. 40, § 10, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-d81f788b2f60",
+   "dispositivo": "Art. 40, § 10, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-f7321c2e490c",
+   "dispositivo": "Art. 40, § 12, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-6b617b96028c",
+   "dispositivo": "Art. 40, § 13, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-54fd1ac46328",
+   "dispositivo": "Art. 40, § 13, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b451402d6284",
+   "dispositivo": "Art. 40, § 13, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-24984393bca4",
+   "dispositivo": "Art. 40, § 13, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-07b2424dd927",
+   "dispositivo": "Art. 40, § 13, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-25f56b8c50f0",
+   "dispositivo": "Art. 40, § 13, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-d95ed359fe0f",
+   "dispositivo": "Art. 40, § 13º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-ba174318d9d3",
+   "dispositivo": "Art. 40, § 14, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-854824b8538e",
+   "dispositivo": "Art. 40, § 14, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-106b56852224",
+   "dispositivo": "Art. 40, § 14, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-768f8da9b3d7",
+   "dispositivo": "Art. 40, § 15, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-a9869a32ebae",
+   "dispositivo": "Art. 40, § 16, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-739b81ce239f",
+   "dispositivo": "Art. 40, § 16, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-a4ace1bcde4f",
+   "dispositivo": "Art. 40, § 19, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-28e4a5103ba0",
+   "dispositivo": "Art. 40, § 19, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-ba79904b2150",
+   "dispositivo": "Art. 40, § 1º II, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b520a534710a",
+   "dispositivo": "Art. 40, § 1º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-24d89ce13e50",
+   "dispositivo": "Art. 40, § 1º, I, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-35e81f749dce",
+   "dispositivo": "Art. 40, § 1º, I, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-1c162e29da0d",
+   "dispositivo": "Art. 40, § 1º, I, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-7a2bddce5e80",
+   "dispositivo": "Art. 40, § 1º, II, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-23d09a33d8f1",
+   "dispositivo": "Art. 40, § 1º, II, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-18040bc538fa",
+   "dispositivo": "Art. 40, § 1º, II, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-2715fc9d4aec",
+   "dispositivo": "Art. 40, § 1º, II, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-034f2a619a12",
+   "dispositivo": "Art. 40, § 1º, II, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-51f92a3e0845",
+   "dispositivo": "Art. 40, § 1º, III, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-c0e3a8c3ac27",
+   "dispositivo": "Art. 40, § 1º, III, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-e41341594732",
+   "dispositivo": "Art. 40, § 1º, III, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-eb0a9757de1d",
+   "dispositivo": "Art. 40, § 1º, III, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-30564e17c7c7",
+   "dispositivo": "Art. 40, § 1º, III, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-398b875243f2",
+   "dispositivo": "Art. 40, § 20, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-58cfb9309056",
+   "dispositivo": "Art. 40, § 22, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-4dd6968fb260",
+   "dispositivo": "Art. 40, § 22, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-9d2809001c8b",
+   "dispositivo": "Art. 40, § 22, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-5664da46f804",
+   "dispositivo": "Art. 40, § 22, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-28a61043a389",
+   "dispositivo": "Art. 40, § 22, I, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-a04590e3fc3e",
+   "dispositivo": "Art. 40, § 22, I, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-9f76ca590a4b",
+   "dispositivo": "Art. 40, § 22, VIII, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-0426b4c9bdb5",
+   "dispositivo": "Art. 40, § 3º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-e6dc4c2985f1",
+   "dispositivo": "Art. 40, § 3º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-ac61b1f2e123",
+   "dispositivo": "Art. 40, § 3º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-396079df02e5",
+   "dispositivo": "Art. 40, § 3º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-17fff0b539c6",
+   "dispositivo": "Art. 40, § 3º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-abdd7e13a0f5",
+   "dispositivo": "Art. 40, § 4º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-5a3dd9bb5a05",
+   "dispositivo": "Art. 40, § 4º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-8f1b8a615d16",
+   "dispositivo": "Art. 40, § 4º-A, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-e673c6999678",
+   "dispositivo": "Art. 40, § 4º-A, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-cba9dfc39e84",
+   "dispositivo": "Art. 40, § 4º-B, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-f1e1a6f02f47",
+   "dispositivo": "Art. 40, § 4º-B, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-395dcdd8a157",
+   "dispositivo": "Art. 40, § 5º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-8e0a835c3063",
+   "dispositivo": "Art. 40, § 9º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-470ea3de4f2a",
+   "dispositivo": "Art. 40, § 9º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-54ede46b1855",
+   "dispositivo": "Art. 40, §19, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-e7841a25cd80",
+   "dispositivo": "Art. 40, §§ 20 e 22, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-35f13c728c46",
+   "dispositivo": "Arts. 40 e 195, II CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-56b4159d0acd",
+   "dispositivo": "Arts. 40 e 93, VI, CF c/c Art. 11, I, a, Lei 8.213/91",
+   "gabarito": "C",
+   "status": "certificado-parcial",
+   "base": "texto constitucional; norma infraconstitucional citada não conferida",
+   "origem": "real"
+  },
+  {
+   "id": "cf-f9966313cb3e",
+   "dispositivo": "Art. 41, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-871580d4927f",
+   "dispositivo": "Art. 41, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-a9daeedb26d5",
+   "dispositivo": "Art. 41, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-70e79dd0623f",
+   "dispositivo": "Art. 41, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-9fa081ae4a74",
+   "dispositivo": "Art. 41, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-23feedd46836",
+   "dispositivo": "Art. 41, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-dc27a83521df",
+   "dispositivo": "Art. 41, § 1°, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-6cc8c9e9e369",
+   "dispositivo": "Art. 41, § 1°, I, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-e389a65f4e51",
+   "dispositivo": "Art. 41, § 1°, II, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-7a42ca60f4cb",
+   "dispositivo": "Art. 41, § 1°, III, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-abfeb104d2a0",
+   "dispositivo": "Art. 41, § 1º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-100145ac06bd",
+   "dispositivo": "Art. 41, § 1º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-0ccbf86f7285",
+   "dispositivo": "Art. 41, § 1º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-583680054081",
+   "dispositivo": "Art. 41, § 1º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-4f7963b84733",
+   "dispositivo": "Art. 41, § 1º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-1678a9c1c20b",
+   "dispositivo": "Art. 41, § 1º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-38bd251c39e6",
+   "dispositivo": "Art. 41, § 1º, I, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-e38895a0446d",
+   "dispositivo": "Art. 41, § 1º, I, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-f243c43dc4c3",
+   "dispositivo": "Art. 41, § 1º, I, II, III, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-09d82e7bdac1",
+   "dispositivo": "Art. 41, § 1º, II, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-0ae28a921807",
+   "dispositivo": "Art. 41, § 1º, II, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-bf0ccd6f6752",
+   "dispositivo": "Art. 41, § 1º, II, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-c2f65d16712b",
+   "dispositivo": "Art. 41, § 1º, III, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-10308da4bebd",
+   "dispositivo": "Art. 41, § 2º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b3ae41775139",
+   "dispositivo": "Art. 41, § 2º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-d04004704889",
+   "dispositivo": "Art. 41, § 2º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-3d9ea1b90d80",
+   "dispositivo": "Art. 41, § 2º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-e7db3ac219f1",
+   "dispositivo": "Art. 41, § 2º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-840417ec5d44",
+   "dispositivo": "Art. 41, § 2º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-106038269974",
+   "dispositivo": "Art. 41, § 3º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-2dea8bb01fa1",
+   "dispositivo": "Art. 41, § 3º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-8e911766c060",
+   "dispositivo": "Art. 41, § 3º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-b5094d36f8fd",
+   "dispositivo": "Art. 41, § 3º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-e2b536808c39",
+   "dispositivo": "Art. 41, § 3º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-9c19da815f6c",
+   "dispositivo": "Art. 41, § 3º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-d6c117f50cc4",
+   "dispositivo": "Art. 41, § 4°, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-6646be3f5c2a",
+   "dispositivo": "Art. 41, § 4º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-c5cab402cdf5",
+   "dispositivo": "Art. 41, § 4º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-c2b601acc471",
+   "dispositivo": "Art. 41, § 4º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-e6f9a534d0eb",
+   "dispositivo": "Art. 41, §§ 2º e 3º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-0e39b65ff38d",
+   "dispositivo": "Art. 41, §§ 2º e 3º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-autoral-inedita-w5-01",
+   "dispositivo": "Autoral • Art. 37, caput — alcance",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "authorial"
+  },
+  {
+   "id": "cf-autoral-inedita-w5-02",
+   "dispositivo": "Autoral • Art. 37, I — acesso",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "authorial"
+  },
+  {
+   "id": "cf-autoral-inedita-w5-03",
+   "dispositivo": "Autoral • Art. 37, III — validade do concurso",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "authorial"
+  },
+  {
+   "id": "cf-autoral-inedita-w5-04",
+   "dispositivo": "Autoral • Concurso — jurisprudência STF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "authorial"
+  },
+  {
+   "id": "cf-autoral-inedita-w5-05",
+   "dispositivo": "Autoral • Art. 37, V",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "authorial"
+  },
+  {
+   "id": "cf-autoral-inedita-w5-06",
+   "dispositivo": "Autoral • Nepotismo — SV 13",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "authorial"
+  },
+  {
+   "id": "cf-autoral-inedita-w5-07",
+   "dispositivo": "Autoral • Art. 37, IX",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "authorial"
+  },
+  {
+   "id": "cf-autoral-inedita-w5-08",
+   "dispositivo": "Autoral • Art. 37, X",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "authorial"
+  },
+  {
+   "id": "cf-autoral-inedita-w5-09",
+   "dispositivo": "Autoral • Art. 37, §11 — EC 135/2024",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "authorial"
+  },
+  {
+   "id": "cf-autoral-inedita-w5-10",
+   "dispositivo": "Autoral • Art. 37, XVI — EC 138/2025",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "authorial"
+  },
+  {
+   "id": "cf-autoral-inedita-w5-11",
+   "dispositivo": "Autoral • Art. 37, XIX",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "authorial"
+  },
+  {
+   "id": "cf-autoral-inedita-w5-12",
+   "dispositivo": "Autoral • Art. 37, XX",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "authorial"
+  },
+  {
+   "id": "cf-autoral-inedita-w5-13",
+   "dispositivo": "Autoral • Art. 37, §1º",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "authorial"
+  },
+  {
+   "id": "cf-autoral-inedita-w5-14",
+   "dispositivo": "Autoral • Responsabilidade civil — Tema 940",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "authorial"
+  },
+  {
+   "id": "cf-autoral-inedita-w5-15",
+   "dispositivo": "Autoral • Responsabilidade civil — terceiro não usuário",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "authorial"
+  },
+  {
+   "id": "cf-autoral-inedita-w5-16",
+   "dispositivo": "Autoral • Art. 38 — Vereador",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "authorial"
+  },
+  {
+   "id": "cf-autoral-inedita-w5-17",
+   "dispositivo": "Autoral • Art. 39 — ADI 2.135",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "authorial"
+  },
+  {
+   "id": "cf-autoral-inedita-w5-18",
+   "dispositivo": "Autoral • Art. 39, §9º",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "authorial"
+  },
+  {
+   "id": "cf-autoral-inedita-w5-19",
+   "dispositivo": "Autoral • Art. 40 — RPPS",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "authorial"
+  },
+  {
+   "id": "cf-autoral-inedita-w5-20",
+   "dispositivo": "Autoral • Art. 40, §1º, I",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "authorial"
+  },
+  {
+   "id": "cf-autoral-inedita-w5-21",
+   "dispositivo": "Autoral • Art. 40 — aposentadoria voluntária",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "authorial"
+  },
+  {
+   "id": "cf-autoral-inedita-w5-22",
+   "dispositivo": "Autoral • Art. 40, §§14–16",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "authorial"
+  },
+  {
+   "id": "cf-autoral-inedita-w5-23",
+   "dispositivo": "Autoral • Art. 40, §19",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "authorial"
+  },
+  {
+   "id": "cf-autoral-inedita-w5-24",
+   "dispositivo": "Autoral • Art. 41 — estabilidade",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "authorial"
+  },
+  {
+   "id": "cf-autoral-inedita-w5-25",
+   "dispositivo": "Autoral • Art. 41, §2º",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "authorial"
+  }
+ ],
+ "correcoesEnunciado": [
+  {
+   "id": "cf-05d4fc0dcdc7",
+   "removido": "Anulada"
+  },
+  {
+   "id": "cf-ae45dc411d82",
+   "removido": "Telecomunicações (TELEBRAS)"
+  },
+  {
+   "id": "cf-bf401a7f67b7",
+   "removido": "Legislativo e Gestão (Câmara dos Deputados)"
+  },
+  {
+   "id": "cf-5cf24dcdfe81",
+   "removido": "Manaus (ENFAM)"
+  },
+  {
+   "id": "cf-b1a9109d54e2",
+   "removido": "caractere final ·"
+  },
+  {
+   "id": "cf-06de7b87782c",
+   "removido": "Interno (CGM Manaus)"
+  },
+  {
+   "id": "cf-0806941c2c44",
+   "removido": "Administrativa (TRT - 10ª Região)"
+  },
+  {
+   "id": "cf-3045b68ce1ea",
+   "removido": "Policia Judicial (TRF - 4ª Região)"
+  },
+  {
+   "id": "cf-89d1e641bcb4",
+   "removido": "Administrativa – Sem Especialidade (TRF - 6ª Região)"
+  },
+  {
+   "id": "cf-6c722e5bab83",
+   "removido": "Legislativo e Administrativo (Câmara dos Deputados)"
+  },
+  {
+   "id": "cf-77557d6a63fa",
+   "removido": "Anulada"
+  },
+  {
+   "id": "cf-4eb8bd56115a",
+   "removido": "Administrativa (TRF - 6ª Região)"
+  },
+  {
+   "id": "cf-54fd1ac46328",
+   "removido": "Complementar (FUNPRESP-EXE)"
+  },
+  {
+   "id": "cf-ba174318d9d3",
+   "removido": "Complementar (FUNPRESP-EXE)"
+  },
+  {
+   "id": "cf-768f8da9b3d7",
+   "removido": "Complementar (FUNPRESP-EXE)"
+  },
+  {
+   "id": "cf-e7841a25cd80",
+   "removido": "Contas (TC-DF)"
+  },
+  {
+   "id": "cf-35f13c728c46",
+   "removido": "Judiciária (TRT - 10ª Região)"
+  },
+  {
+   "id": "cf-0ccbf86f7285",
+   "removido": "Manaus (ENFAM)"
+  },
+  {
+   "id": "cf-1678a9c1c20b",
+   "removido": "Alegre (RS)"
+  },
+  {
+   "id": "cf-e6f9a534d0eb",
+   "removido": "Administrativa (TRT - 10ª Região)"
+  },
+  {
+   "id": "cf-autoral-inedita-w5-01",
+   "antes": "Sobre Art. 37, caput — alcance, considere a afirmação: a Administração direta de todos os Poderes e entes federativos, mas não alcança pessoas jurídicas integrantes da Administração indireta.",
+   "depois": "Sobre Art. 37, caput — alcance, considere a afirmação: Os princípios do caput do art. 37 vinculam a Administração direta de todos os Poderes e entes federativos, mas não alcançam pessoas jurídicas integrantes da Administração indireta."
+  },
+  {
+   "id": "cf-autoral-inedita-w5-02",
+   "antes": "Sobre Art. 37, I — acesso, considere a afirmação: a brasileiros que preencham os requisitos estabelecidos em lei e a estrangeiros, na forma em que a legislação disciplinar o acesso.",
+   "depois": "Sobre Art. 37, I — acesso, considere a afirmação: Os cargos, empregos e funções públicas são acessíveis a brasileiros que preencham os requisitos estabelecidos em lei e a estrangeiros, na forma em que a legislação disciplinar o acesso."
+  },
+  {
+   "id": "cf-autoral-inedita-w5-03",
+   "antes": "Sobre Art. 37, III — validade do concurso, considere a afirmação: é inválido, porque a Constituição exige que todo concurso público tenha prazo inicial exatamente igual a dois anos.",
+   "depois": "Sobre Art. 37, III — validade do concurso, considere a afirmação: Um edital que fixa prazo de validade de um ano, prorrogável uma vez por igual período, é inválido, porque a Constituição exige que todo concurso público tenha prazo inicial exatamente igual a dois anos."
+  },
+  {
+   "id": "cf-autoral-inedita-w5-07",
+   "antes": "Sobre Art. 37, IX, considere a afirmação: preencher permanentemente cargos vagos sem concurso quando a Administração demonstrar dificuldade de provimento ou elevada rotatividade de pessoal.",
+   "depois": "Sobre Art. 37, IX, considere a afirmação: A contratação por tempo determinado pode ser usada para preencher permanentemente cargos vagos sem concurso quando a Administração demonstrar dificuldade de provimento ou elevada rotatividade de pessoal."
+  },
+  {
+   "id": "cf-autoral-inedita-w5-08",
+   "antes": "Sobre Art. 37, X, considere a afirmação: a fixação ou alteração depende de lei específica, observada a iniciativa competente, e a revisão geral anual deve ocorrer na mesma data e sem distinção de índices.",
+   "depois": "Sobre Art. 37, X, considere a afirmação: A fixação ou alteração da remuneração dos servidores públicos e do subsídio depende de lei específica, observada a iniciativa competente, e a revisão geral anual deve ocorrer na mesma data e sem distinção de índices."
+  },
+  {
+   "id": "cf-autoral-inedita-w5-09",
+   "antes": "Sobre Art. 37, §11 — EC 135/2024, considere a afirmação: estabelecidas em qualquer ato administrativo do órgão responsável pelo pagamento, desde que a verba tenha natureza reparatória declarada pela autoridade competente.",
+   "depois": "Sobre Art. 37, §11 — EC 135/2024, considere a afirmação: Não são computadas no teto remuneratório as parcelas de caráter indenizatório estabelecidas em qualquer ato administrativo do órgão responsável pelo pagamento, desde que a verba tenha natureza reparatória declarada pela autoridade competente."
+  },
+  {
+   "id": "cf-autoral-inedita-w5-10",
+   "antes": "Sobre Art. 37, XVI — EC 138/2025, considere a afirmação: um cargo de professor com outro cargo de qualquer natureza, desde que exista compatibilidade de horários e sejam observados os demais limites constitucionais.",
+   "depois": "Sobre Art. 37, XVI — EC 138/2025, considere a afirmação: É permitida a acumulação remunerada de um cargo de professor com outro cargo de qualquer natureza, desde que exista compatibilidade de horários e sejam observados os demais limites constitucionais."
+  },
+  {
+   "id": "cf-autoral-inedita-w5-12",
+   "antes": "Sobre Art. 37, XX, considere a afirmação: dependem de autorização legislativa, conforme exigência constitucional para criação de subsidiárias e participação de estatais em empresa privada.",
+   "depois": "Sobre Art. 37, XX, considere a afirmação: A criação de subsidiárias de estatais e a participação delas em empresa privada dependem de autorização legislativa, conforme exigência constitucional."
+  },
+  {
+   "id": "cf-autoral-inedita-w5-13",
+   "antes": "Sobre Art. 37, §1º, considere a afirmação: é compatível com a Constituição se as informações veiculadas forem verdadeiras e houver interesse público na divulgação das realizações administrativas.",
+   "depois": "Sobre Art. 37, §1º, considere a afirmação: A publicidade institucional que destaca o nome e a imagem do governante é compatível com a Constituição se as informações veiculadas forem verdadeiras e houver interesse público na divulgação das realizações administrativas."
+  },
+  {
+   "id": "cf-autoral-inedita-w5-14",
+   "antes": "Sobre Responsabilidade civil — Tema 940, considere a afirmação: contra o Estado ou pessoa jurídica prestadora do serviço, sendo o agente parte ilegítima nessa ação, sem prejuízo de regresso em caso de dolo ou culpa.",
+   "depois": "Sobre Responsabilidade civil — Tema 940, considere a afirmação: A ação de indenização por dano causado por agente público deve ser proposta contra o Estado ou a pessoa jurídica prestadora do serviço, sendo o agente parte ilegítima nessa ação, sem prejuízo de regresso em caso de dolo ou culpa."
+  },
+  {
+   "id": "cf-autoral-inedita-w5-15",
+   "antes": "Sobre Responsabilidade civil — terceiro não usuário, considere a afirmação: não é objetiva porque a vítima não utilizava diretamente o serviço público prestado, sendo indispensável relação jurídica de usuário com a entidade responsável.",
+   "depois": "Sobre Responsabilidade civil — terceiro não usuário, considere a afirmação: A responsabilidade da prestadora de serviço público pelo dano causado a terceiro não é objetiva quando a vítima não utilizava diretamente o serviço, sendo indispensável relação jurídica de usuário com a entidade responsável."
+  },
+  {
+   "id": "cf-autoral-inedita-w5-16",
+   "antes": "Sobre Art. 38 — Vereador, considere a afirmação: perceberá as vantagens do cargo, emprego ou função, sem prejuízo da remuneração do mandato eletivo, quando houver compatibilidade de horários.",
+   "depois": "Sobre Art. 38 — Vereador, considere a afirmação: O servidor investido no mandato de Vereador perceberá as vantagens do cargo, emprego ou função, sem prejuízo da remuneração do mandato eletivo, quando houver compatibilidade de horários."
+  },
+  {
+   "id": "cf-autoral-inedita-w5-17",
+   "antes": "Sobre Art. 39 — ADI 2.135, considere a afirmação: voltou a exigir definitivamente regime jurídico único para todos os servidores da Administração direta, autárquica e fundacional de cada ente federativo.",
+   "depois": "Sobre Art. 39 — ADI 2.135, considere a afirmação: Com o julgamento da ADI 2.135, a Constituição voltou a exigir definitivamente regime jurídico único para todos os servidores da Administração direta, autárquica e fundacional de cada ente federativo."
+  },
+  {
+   "id": "cf-autoral-inedita-w5-18",
+   "antes": "Sobre Art. 39, §9º, considere a afirmação: veda a incorporação de vantagens temporárias ou vinculadas ao exercício de função de confiança ou cargo em comissão à remuneração do cargo efetivo.",
+   "depois": "Sobre Art. 39, §9º, considere a afirmação: A Constituição veda a incorporação de vantagens temporárias ou vinculadas ao exercício de função de confiança ou cargo em comissão à remuneração do cargo efetivo."
+  },
+  {
+   "id": "cf-autoral-inedita-w5-19",
+   "antes": "Sobre Art. 40 — RPPS, considere a afirmação: o ocupante exclusivamente de cargo em comissão, ainda que não possua vínculo efetivo com qualquer ente federativo antes da nomeação para a função.",
+   "depois": "Sobre Art. 40 — RPPS, considere a afirmação: O regime próprio de previdência social abrange o ocupante exclusivamente de cargo em comissão, ainda que não possua vínculo efetivo com qualquer ente federativo antes da nomeação."
+  },
+  {
+   "id": "cf-autoral-inedita-w5-20",
+   "antes": "Sobre Art. 40, §1º, I, considere a afirmação: quando o servidor for insuscetível de readaptação, com avaliações periódicas obrigatórias para verificar a permanência das condições, na forma da lei do ente.",
+   "depois": "Sobre Art. 40, §1º, I, considere a afirmação: A aposentadoria por incapacidade permanente ocorre quando o servidor for insuscetível de readaptação, com avaliações periódicas obrigatórias para verificar a permanência das condições, na forma da lei do ente."
+  },
+  {
+   "id": "cf-autoral-inedita-w5-21",
+   "antes": "Sobre Art. 40 — aposentadoria voluntária, considere a afirmação: sessenta anos para a mulher e sessenta e cinco anos para o homem, idades mínimas fixas mantidas pela Constituição no regime permanente da União.",
+   "depois": "Sobre Art. 40 — aposentadoria voluntária, considere a afirmação: No regime permanente da União, as idades mínimas para a aposentadoria voluntária são sessenta anos para a mulher e sessenta e cinco anos para o homem."
+  },
+  {
+   "id": "cf-autoral-inedita-w5-22",
+   "antes": "Sobre Art. 40, §§14–16, considere a afirmação: é instituído por lei de iniciativa do respectivo Poder Executivo e oferece plano de benefícios somente na modalidade de contribuição definida.",
+   "depois": "Sobre Art. 40, §§14–16, considere a afirmação: O regime de previdência complementar dos servidores é instituído por lei de iniciativa do respectivo Poder Executivo e oferece plano de benefícios somente na modalidade de contribuição definida."
+  },
+  {
+   "id": "cf-autoral-inedita-w5-23",
+   "antes": "Sobre Art. 40, §19, considere a afirmação: é vedado pela Constituição, porque a permanência em atividade depois de preenchidos os requisitos de aposentadoria não pode gerar vantagem financeira adicional.",
+   "depois": "Sobre Art. 40, §19, considere a afirmação: O abono de permanência é vedado pela Constituição, porque a permanência em atividade depois de preenchidos os requisitos de aposentadoria não pode gerar vantagem financeira adicional."
+  },
+  {
+   "id": "cf-autoral-inedita-w5-24",
+   "antes": "Sobre Art. 41 — estabilidade, considere a afirmação: três anos de efetivo exercício em cargo de provimento efetivo obtido por concurso e avaliação especial de desempenho por comissão instituída para essa finalidade.",
+   "depois": "Sobre Art. 41 — estabilidade, considere a afirmação: A aquisição da estabilidade exige três anos de efetivo exercício em cargo de provimento efetivo obtido por concurso e avaliação especial de desempenho por comissão instituída para essa finalidade."
+  },
+  {
+   "id": "cf-autoral-inedita-w5-25",
+   "antes": "Sobre Art. 41, §2º, considere a afirmação: o servidor será apenas indenizado, sem direito de retornar ao cargo, porque a vaga pode ter sido validamente ocupada por outro servidor durante a demissão.",
+   "depois": "Sobre Art. 41, §2º, considere a afirmação: Invalidada por sentença judicial a demissão do servidor estável, ele será apenas indenizado, sem direito de retornar ao cargo, porque a vaga pode ter sido validamente ocupada por outro servidor durante a demissão."
+  }
+ ],
+ "correcoesReferencia": [
+  {
+   "id": "cf-5664da46f804",
+   "antes": "Art. 40, § 22, I, CF",
+   "depois": "Art. 40, § 22, CF"
+  },
+  {
+   "id": "cf-a04590e3fc3e",
+   "antes": "Art. 40, § 22, VIII, CF",
+   "depois": "Art. 40, § 22, I, CF"
+  }
+ ]
+}
