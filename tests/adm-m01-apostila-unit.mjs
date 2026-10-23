@@ -104,7 +104,7 @@ test('ADM M01 responsive styles and release wiring are versioned', () => {
   assert.match(css, /\.adm-m01-compare\{display:grid/);
   assert.match(css, /@media\(max-width:620px\)/);
   assert.match(css, /\.adm-m01-check-items input/);
-  assert.match(lazy, /content\/adm\/m01-native-complete\.js\?v=20261023admm02/);
-  assert.match(manifest, /m01-native-complete\.js\?v=20261023admm02/);
-  assert.match(shell, /adm-native-layer\.css\?v=20261023admm02/);
+  assert.match(lazy, /content\/adm\/m01-native-complete\.js\?v=20261023admm03/);
+  assert.match(manifest, /m01-native-complete\.js\?v=20261023admm03/);
+  assert.match(shell, /adm-native-layer\.css\?v=20261023admm03/);
 });

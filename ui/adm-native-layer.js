@@ -84,6 +84,7 @@ async function open(uid,kind,jump){
   let content=kind==='summary'?d.summaryHtml:(
    uid==='adm-01-01-regime-juridico-e-principios'&&g.ADM_M01_COMPLETE_HTML?g.ADM_M01_COMPLETE_HTML:
    uid==='adm-02-02-organizacao-administrativa'&&g.ADM_M02_COMPLETE_HTML?g.ADM_M02_COMPLETE_HTML:
+   uid==='adm-03-03-atos-administrativos'&&g.ADM_M03_COMPLETE_HTML?g.ADM_M03_COMPLETE_HTML:
    (d.completeHtml||LEGACY[uid])
   );
   if(!content)throw new Error('Teoria ADM não localizada');

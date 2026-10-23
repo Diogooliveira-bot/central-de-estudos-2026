@@ -106,9 +106,9 @@ test('ADM M02 release wiring is versioned for online and offline loading', () =>
   const manifest = read('central-offline-files-v66172.json');
   const shell = read('central-v119.html');
   const sw = read('sw.js');
-  assert.match(lazy, /content\/adm\/m02-native-complete\.js\?v=20261023admm02/);
-  assert.match(lazy, /ui\/adm-native-layer\.js\?v=20261023admm02/);
-  assert.match(manifest, /m02-native-complete\.js\?v=20261023admm02/);
-  assert.match(shell, /adm-native-layer\.css\?v=20261023admm02/);
-  assert.match(sw, /20261023-adm-m01-m02-apostilas-v1/);
+  assert.match(lazy, /content\/adm\/m02-native-complete\.js\?v=20261023admm03/);
+  assert.match(lazy, /ui\/adm-native-layer\.js\?v=20261023admm03/);
+  assert.match(manifest, /m02-native-complete\.js\?v=20261023admm03/);
+  assert.match(shell, /adm-native-layer\.css\?v=20261023admm03/);
+  assert.match(sw, /20261023-adm-m01-m03-apostilas-v1/);
 });
