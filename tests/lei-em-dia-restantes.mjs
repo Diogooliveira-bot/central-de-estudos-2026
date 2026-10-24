@@ -77,7 +77,7 @@ test('parte cível dos Juizados não é apresentada como criminal e pendências 
  assert.ok(report.missingSources.penal.some(s=>s.includes('parte criminal')));
  assert.ok(report.missingSources.trabalho.some(s=>s.startsWith('CLT')));
  const offline=JSON.parse(readFileSync(new URL('central-offline-files-v66172.json',root)));
- assert.ok(offline.files.includes('/tools/decorando-data-restantes.js?v=20261024pen1'));
+ assert.ok(offline.files.includes('/tools/decorando-data-restantes.js?v=20261024pen2'));
  for(const x of report.deviceReview.removed)assert.ok(x.keptIds.length>0);
 });
 
