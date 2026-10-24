@@ -14,8 +14,6 @@
     'processual-civil': 'Direito Processual Civil',
     penal: 'Direito Penal',
     'processual-penal': 'Direito Processual Penal',
-    trabalho: 'Direito do Trabalho',
-    'processual-trabalho': 'Direito Processual do Trabalho',
     rlm: 'Raciocínio Lógico-Matemático',
     matematica: 'Matemática',
     portugues: 'Língua Portuguesa'
@@ -23,7 +21,7 @@
   const SUBJECT_DISCIPLINE = {
     pt: 'portugues', port: 'portugues', portugues: 'portugues',
     adm: 'administrativo', cf: 'constitucional', civil: 'civil', cpc: 'processual-civil',
-    penal: 'penal', cpp: 'processual-penal', trab: 'trabalho', ptra: 'processual-trabalho',
+    penal: 'penal', cpp: 'processual-penal',
     rlm: 'rlm', mat: 'matematica'
   };
   const DISCIPLINE_ALIASES = {
@@ -42,8 +40,6 @@
     'Direito Processual Civil': 'Processo Civil',
     'Direito Penal': 'Penal',
     'Direito Processual Penal': 'Processo Penal',
-    'Direito do Trabalho': 'Trabalho',
-    'Direito Processual do Trabalho': 'Processo do Trabalho',
     'Raciocínio Lógico-Matemático': 'Raciocínio Lógico',
     'Raciocínio Lógico': 'Raciocínio Lógico',
     'Língua Portuguesa': 'Português',
@@ -203,7 +199,7 @@
 
   function pushFilter(list, seen, input) {
     const filter = makeFilter(input);
-    if (!filter) return;
+    if (!filter || ['trabalho','processual-trabalho'].includes(filter.disciplineKey)) return;
     const placement = `${filter.disciplineKey}|${filter.module}|${filter.stableKey}`;
     if (seen.has(placement)) return;
     seen.add(placement);
@@ -284,24 +280,11 @@
       });
     });
 
-    const ptra = global.PTRA_NATIVE_INDEX;
-    (ptra?.modules || []).forEach((module) => {
-      (module.tec || []).forEach((tecId) => {
-        const item = ptra.tecs?.[tecId];
-        if (!item) return;
-        pushFilter(list, seen, {
-          platform: 'tec', disciplineKey: 'processual-trabalho', module: `M${pad(module.number)}`,
-          code: String(tecId).toUpperCase().replace('PROC-TRAB-', 'M'), title: item.name,
-          moduleTitle: module.title,
-          id: notebookIdFromUrl(item.url) || tecId, count: item.count, url: item.url,
-          legacyCid: tecId, source: 'tec-ptra-native'
-        });
-      });
-    });
+
   }
 
   function curatedModuleSet(list) {
-    return new Set(list.filter((item) => /^tec-.*-curated$/.test(item.source) || item.source === 'tec-ptra-native').map((item) => `${item.disciplineKey}|${item.module}`));
+    return new Set(list.filter((item) => /^tec-.*-curated$/.test(item.source)).map((item) => `${item.disciplineKey}|${item.module}`));
   }
 
   function collectGeneralTec(list, seen) {
@@ -489,7 +472,7 @@
   function inferModuleNumber(element) {
     const raw = [
       element.getAttribute('data-adm-native'), element.getAttribute('data-cpp-native-module'),
-      element.getAttribute('data-ptra-module'), element.getAttribute('data-rlm-module'),
+      element.getAttribute('data-rlm-module'),
       element.getAttribute('data-civil-native-module'), element.getAttribute('data-civil-analista'), element.getAttribute('data-civil'),
       element.getAttribute('data-cf'), element.getAttribute('data-uid'),
       element.getAttribute('data-module-card')
@@ -498,7 +481,7 @@
     if (/^cpc\d+$/i.test(raw)) return Number(raw.slice(3));
     const match = raw.match(/(?:^|[-_:])m?0*(\d{1,2})(?:[-_:]|$)/i) || raw.match(/^(\d{1,2})$/);
     if (match) return Number(match[1]);
-    const heading = element.querySelector('.cf-module-no,.ptra-native-no,.topic-origin,.civil-module-no')?.textContent || '';
+    const heading = element.querySelector('.cf-module-no,.topic-origin,.civil-module-no')?.textContent || '';
     return Number(heading.match(/(?:módulo\s*)?0*(\d{1,2})/i)?.[1] || 0);
   }
   function identityFor(element) {
@@ -507,7 +490,6 @@
     if (element.matches('.pt-module-card[data-module-card]')) disciplineKey = 'portugues';
     if (element.hasAttribute('data-adm-native')) disciplineKey = 'administrativo';
     else if (element.hasAttribute('data-cpp-native-module')) disciplineKey = 'processual-penal';
-    else if (element.hasAttribute('data-ptra-module')) disciplineKey = 'processual-trabalho';
     else if (element.hasAttribute('data-rlm-module')) disciplineKey = 'rlm';
     else if (element.hasAttribute('data-civil-native-module') || element.hasAttribute('data-civil-analista') || element.hasAttribute('data-civil')) disciplineKey = 'civil';
     const number = inferModuleNumber(element);
@@ -515,11 +497,11 @@
   }
   function moduleBody(element) {
     if (element.matches('[data-civil-native-module]')) return element.querySelector(':scope > .cv-module-body > .cv-zone');
-    return element.matches('[data-adm-native]') ? element : element.querySelector(':scope > .cf-module-body,:scope > .detail-panel,:scope > .topic-detail > .detail-panel,:scope > .ptra-native-mod-body,:scope > .civil-module-body,:scope > .pt-module-body') || element;
+    return element.matches('[data-adm-native]') ? element : element.querySelector(':scope > .cf-module-body,:scope > .detail-panel,:scope > .topic-detail > .detail-panel,:scope > .civil-module-body,:scope > .pt-module-body') || element;
   }
   function moduleTargetPriority(element) {
     if (element.matches('[data-adm-native],[data-civil-native-module]')) return 60;
-    if (element.matches('[data-cpp-native-module],[data-ptra-module],[data-rlm-module]')) return 50;
+    if (element.matches('[data-cpp-native-module],[data-rlm-module]')) return 50;
     if (element.matches('.pt-module-card[data-module-card]')) return 45;
     if (element.matches('.civil-module[data-civil-analista],.civil-module[data-civil]')) return 40;
     if (element.matches('.cf-module[data-cf]')) return 30;
@@ -527,7 +509,7 @@
   }
   function moduleTargets() {
     const selectors = [
-      '[data-adm-native]', '[data-civil-native-module]', '[data-cpp-native-module]', '[data-ptra-module]', '[data-rlm-module]',
+      '[data-adm-native]', '[data-civil-native-module]', '[data-cpp-native-module]', '[data-rlm-module]',
       '.civil-module[data-civil-analista]', '.civil-module[data-civil]',
       '#subjects .subject[data-id="penal"] .cf-module[data-cf]',
       '#subjects .subject[data-id="cpc"] .cf-module[data-cf]',
@@ -545,7 +527,7 @@
     });
     return Array.from(selected.values());
   }
-  const ORIGINAL_PANEL_SELECTOR = '.qc-platform-sharing,.cpc-sharing-panel,.tec-validated-panel,.tec-context-panel,.adm-native-sharing,.adm-native-tec-filter,.cpp-native-tec-panel,.civil-native-sharing,.cv-sharing,.cv-tec-panel,.ptra-native-panel.ptra-native-tec,.adm-native-external-entry,.csp-tec-panel';
+  const ORIGINAL_PANEL_SELECTOR = '.qc-platform-sharing,.cpc-sharing-panel,.tec-validated-panel,.tec-context-panel,.adm-native-sharing,.adm-native-tec-filter,.cpp-native-tec-panel,.civil-native-sharing,.cv-sharing,.cv-tec-panel,.adm-native-external-entry,.csp-tec-panel';
   function hideOriginalPanels(body) {
     body.querySelectorAll(ORIGINAL_PANEL_SELECTOR).forEach((node) => node.setAttribute('data-bcq-original', '1'));
     body.setAttribute('data-bcq-module-host', '1');
@@ -609,7 +591,7 @@
         if (!replacement?.matches('[data-bcq-module-panel]')) throw new Error('Painel compacto inválido');
         if (panel) panel.replaceWith(replacement);
         else {
-          const notes = body.querySelector('.cms-note-final,.adm-native-notes,.ptra-native-notes,.cv-native-notes');
+          const notes = body.querySelector('.cms-note-final,.adm-native-notestes,.cv-native-notes');
           if (notes) notes.after(replacement); else body.append(replacement);
         }
         if (!replacement.isConnected) throw new Error('Painel compacto não foi inserido');
@@ -999,7 +981,7 @@
 
   function filterByKey(key) { return registry.find((filter) => filter.stableKey === key) || null; }
   function openModal(filter, session) {
-    if (!filter) return;
+    if (!filter || ['trabalho','processual-trabalho'].includes(filter.disciplineKey)) return;
     modalReturnFocus = document.activeElement instanceof HTMLElement ? document.activeElement : null;
     injectModal(); modalFilter = filter; modalSession = session || null;
     const modal = document.getElementById('bcqSessionModal');
@@ -1202,3 +1184,4 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init, { once: true });
   else init();
 })(window);
+

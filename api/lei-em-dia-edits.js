@@ -41,7 +41,7 @@ export function validateEditPayload(body){
  const supplied=classification.filter(k=>Object.hasOwn(data,k));
  if(supplied.length&&supplied.length!==4)return 'Classificação incompleta';
  if(supplied.length){
-  if(!/^(cf|adm|civil|cpc|penal|cpp|trabalho|ptrabalho|consumidor)$/.test(data.discipline))return 'Disciplina inválida';
+  if(!/^(cf|adm|civil|cpc|penal|cpp|consumidor)$/.test(data.discipline))return 'Disciplina inválida';
   if(typeof data.topicId!=='string'||!/^[-a-zA-Z0-9_.:]{1,180}$/.test(data.topicId))return 'Assunto inválido';
   if(typeof data.subtopic!=='string'||!data.subtopic.trim()||data.subtopic.length>600)return 'Subassunto inválido';
   if(typeof data.moduleId!=='string'||(data.moduleId!==''&&!/^[-a-zA-Z0-9_.:]{1,150}$/.test(data.moduleId)))return 'Módulo inválido';
@@ -108,3 +108,4 @@ export default async function handler(req,res){
   return send(res,500,{error:'Não foi possível acessar o banco de edições'});
  }
 }
+

@@ -5,8 +5,8 @@
   const SUBJECT_LABELS = {
     pt: 'Português', cf: 'Direito Constitucional', adm: 'Direito Administrativo',
     civil: 'Direito Civil', cpc: 'Direito Processual Civil', penal: 'Direito Penal',
-    cpp: 'Direito Processual Penal', trab: 'Direito do Trabalho',
-    ptra: 'Direito Processual do Trabalho', rlm: 'Raciocínio Lógico-Matemático',
+    cpp: 'Direito Processual Penal',
+    rlm: 'Raciocínio Lógico-Matemático',
   };
   const enhancers = new Map();
   const failures = new Map();
@@ -130,3 +130,4 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start, { once:true });
   else start();
 })(window);
+

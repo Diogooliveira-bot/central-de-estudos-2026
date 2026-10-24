@@ -11,8 +11,6 @@
     cpc: { id:'cpc', name:'Direito Processual Civil', available:true, questionKey:'processual-civil' },
     penal: { id:'penal', name:'Direito Penal', available:true, questionKey:'penal', notice:'Carregamento da teoria completa dos módulos 11 a 17 pendente.' },
     cpp: { id:'cpp', name:'Direito Processual Penal', available:true, questionKey:'processual-penal' },
-    trab: { id:'trab', name:'Direito do Trabalho', available:true, questionKey:'trabalho' },
-    ptra: { id:'ptra', name:'Direito Processual do Trabalho', available:true, questionKey:'processual-trabalho' },
     rlm: { id:'rlm', name:'Raciocínio Lógico-Matemático', available:true, questionKey:'rlm' },
   };
 
@@ -21,7 +19,7 @@
       id:'career-tribunais-analista', type:'career', group:'Por carreira', shortLabel:'Tribunais · Analista',
       title:'Tribunais — Analista Judiciário',
       description:'Trilha inicial configurável. A distribuição das disciplinas deve ser ajustada ao tribunal e ao edital escolhidos.',
-      subjectIds:['pt','cf','adm','civil','cpc','penal','cpp','trab','ptra','rlm'],
+      subjectIds:['pt','cf','adm','civil','cpc','penal','cpp','rlm'],
     },
     'career-tribunais-tecnico': {
       id:'career-tribunais-tecnico', type:'career', group:'Por carreira', shortLabel:'Tribunais · Técnico',
@@ -51,7 +49,7 @@
       id:'exam-trt8-2026-analista-judiciaria', type:'exam', group:'Por edital', shortLabel:'TRT-8 2026 · Analista',
       title:'TRT-8 2026 — Analista Judiciário, Área Judiciária',
       description:'Edital 01/2026 da FCC, com retificação de 08/10/2026. Conteúdos em auditoria; links e cobertura parcial.',
-      subjectIds:['pt','rlm','cf','adm','trab','ptra','civil','cpc'],
+      subjectIds:['pt','rlm','cf','adm','civil','cpc'],
       examSubjects:[
         {id:'trt8-pt',title:'Língua Portuguesa',subjectId:'pt',status:'partial',note:'Teoria disponível; correspondências por módulo em auditoria.'},
         {id:'trt8-rlm',title:'Matemática e Raciocínio lógico',subjectId:'rlm',status:'partial'},
@@ -61,8 +59,6 @@
         {id:'trt8-info',title:'Noções de Informática',status:'preparation'},
         {id:'trt8-cf',title:'Direito Constitucional',subjectId:'cf',status:'partial'},
         {id:'trt8-adm',title:'Direito Administrativo',subjectId:'adm',status:'partial'},
-        {id:'trt8-trab',title:'Direito do Trabalho',subjectId:'trab',status:'partial'},
-        {id:'trt8-ptra',title:'Direito Processual do Trabalho',subjectId:'ptra',status:'partial'},
         {id:'trt8-civil',title:'Direito Civil',subjectId:'civil',status:'partial'},
         {id:'trt8-cpc',title:'Direito Processual Civil',subjectId:'cpc',status:'partial'},
       ],
@@ -76,3 +72,4 @@
 
   global.CentralStudyObjectiveCatalog = Object.freeze({ version:1, subjects, goals });
 })(window);
+

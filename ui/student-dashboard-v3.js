@@ -6,7 +6,7 @@
   const { byId, setText, localDate, readJSON, writeJSON, subjects, subjectId, subjectProgress, escapeHTML } = UX;
   const PROFILE_KEY = 'central-v6:student-profile-v1';
 
-  function readLast() { return readJSON('central-v6:last', null); }
+  function readLast() { const last = readJSON('central-v6:last', null); return global.CentralDisciplineAvailability?.isRemovedRecord(last) ? null : last; }
   function friendlyLastTitle(last) {
     const title = String(last?.title || '').trim();
     if (title === 'decorando' || String(last?.url || '').includes('decorando')) return 'Lei em Dia';
@@ -290,3 +290,4 @@
   global.CentralStudentOnboarding = { open:openOnboarding, close:closeOnboarding, read:() => readJSON(PROFILE_KEY, null) };
   UX.register('dashboard', enhance);
 })(window);
+

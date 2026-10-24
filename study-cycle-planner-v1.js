@@ -4,7 +4,7 @@
 const PREFIX='central-v6:agenda:';
 const CURSOR_KEY='central-v6:study-cycle:cursor';
 const SOURCE='study-cycle-v1';
-const DEFAULT_SUBJECTS=['cf','adm','cpc','civil','penal','cpp','pt','rlm','trab','ptra'];
+const DEFAULT_SUBJECTS=['cf','adm','cpc','civil','penal','cpp','pt','rlm'];
 const LABELS={
   pt:'Português',
   cf:'Direito Constitucional',
@@ -14,17 +14,14 @@ const LABELS={
   penal:'Direito Penal',
   cpp:'Direito Processual Penal',
   rlm:'Raciocínio Lógico-Matemático',
-  trab:'Direito do Trabalho',
-  ptra:'Direito Processual do Trabalho'
 };
-const LEGAL=new Set(['cf','adm','civil','cpc','penal','cpp','trab','ptra']);
+const LEGAL=new Set(['cf','adm','civil','cpc','penal','cpp']);
 
 // Ciclo ponderado: matérias jurídicas centrais reaparecem com maior frequência,
 // mas o cursor continua de uma semana para a seguinte.
 const WEIGHTED=[
   'cf','cpc','adm','penal','civil','cpp','pt','rlm',
   'cf','adm','cpc','civil','penal','cpp',
-  'trab','ptra'
 ];
 
 function el(id){return document.getElementById(id)}

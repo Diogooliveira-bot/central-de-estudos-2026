@@ -9,7 +9,7 @@ const modules = Array.from({length:8}, (_, index) => index + 8);
 const expectedChecks = new Map([[8,10],[9,10],[10,10],[11,10],[12,10],[13,8],[14,8],[15,10]]);
 const expectedTables = new Map([[8,22],[9,23],[10,16],[11,20],[12,28],[13,16],[14,15],[15,12]]);
 const version = '20261022cfm08m15apostila1';
-const build = '20261022-cf-m08-m15-apostilas-v1';
+const build = '20261023-remove-labor-disciplines-v1';
 
 function fixture() {
   const dom = new JSDOM('<!doctype html><html><head></head><body></body></html>', {url:'https://cf-m08-m15.example/'});
@@ -126,3 +126,4 @@ test('Lei em Dia e cache offline apontam para a mesma versão em M08 a M15', () 
   assert.match(read('sw.js'), new RegExp(`central-${build}`));
   dom.window.close();
 });
+

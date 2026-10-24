@@ -51,7 +51,7 @@ test('catálogo real cobre todas as disciplinas com filtros publicados', () => {
   const files = [
     'content/qc-sharing-links.js', 'content/cpc/cpc-sharing-links.js',
     'content/adm/adm-sharing-links.js', 'content/civil/civil-sharing-links.js',
-    'content/penal-cpp-tec-links.js', 'content/ptra/ptra-native-index.js'
+    'content/penal-cpp-tec-links.js'
   ];
   files.forEach((file) => dom.window.eval(read(file)));
   const tecSource = Array.from(read('index.html').matchAll(/<script[^>]*>([\s\S]*?)<\/script>/gi))
@@ -66,14 +66,14 @@ test('catálogo real cobre todas as disciplinas com filtros publicados', () => {
   assert.ok(rows.some((row) => row.platform === 'qc' && row.id === '15352419' && row.count === 2));
   assert.ok(rows.some((row) => row.platform === 'qc' && row.id === '15352451' && row.count === 2));
   // Os 7 cadernos TEC de RLM com numeração antiga (rlm-01…07) não entram mais nos módulos atuais.
-  assert.equal(rows.length, 823);
-  assert.equal(rows.filter((row) => row.platform === 'qc').length, 467);
-  assert.equal(rows.filter((row) => row.platform === 'tec').length, 356);
+  assert.equal(rows.length, 747);
+  assert.equal(rows.filter((row) => row.platform === 'qc').length, 431);
+  assert.equal(rows.filter((row) => row.platform === 'tec').length, 316);
   assert.ok(!rows.some((row) => row.platform === 'tec' && row.disciplineKey === 'rlm'));
   assert.deepEqual(Array.from(disciplines).sort((a, b) => a.localeCompare(b, 'pt-BR')), [
-    'Direito Administrativo', 'Direito Civil', 'Direito Constitucional', 'Direito do Trabalho',
+    'Direito Administrativo', 'Direito Civil', 'Direito Constitucional',
     'Direito Empresarial', 'Direito Penal', 'Direito Processual Civil',
-    'Direito Processual do Trabalho', 'Direito Processual Penal', 'Matemática', 'Português', 'Raciocínio Lógico'
+    'Direito Processual Penal', 'Matemática', 'Português', 'Raciocínio Lógico'
   ].sort((a, b) => a.localeCompare(b, 'pt-BR')));
   assert.ok(rows.every((row) => row.id && row.count > 0 && row.url.startsWith('https://')));
 });
@@ -141,3 +141,4 @@ test('componente compartilhado substitui a apresentação antiga no módulo', as
   assert.equal(body.querySelector('[data-native-metric-detail="external"]').textContent, 'Histórico legado preservado');
   await settle(dom.window);
 });
+

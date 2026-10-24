@@ -2,7 +2,7 @@
 (function () {
   'use strict';
   if (window.CentralStudyNavigation) return;
-  const moduleSelector = '.topic-item,.cf-module,.civil-module,.cpp-mod,.cv-module,.bc-trabalho-module';
+  const moduleSelector = '.topic-item,.cf-module,.civil-module,.cpp-mod,.cv-module';
   const attributes = ['data-uid','data-rlm-module','data-pt-current','data-ptn-module','data-civil-native-module','data-civil-analista','data-civil','data-cf','data-penal','data-cpc','data-cpp-num','data-cpp-native-module'];
   const views = {home:'homeView',agenda:'agendaView',disciplines:'disciplinesView',tec:'tecCadernosView',performance:'performanceView'};
   let sourceModule = null;
@@ -35,6 +35,7 @@
   }, true);
   function openContext(context) {
     if (!context || typeof context !== 'object') return;
+    if(window.CentralDisciplineAvailability?.isRemovedRecord(context)){window.openHome?.();return;}
     const subject = typeof context.subject === 'string' && (typeof SUBJECTS !== 'undefined' ? SUBJECTS : []).find(s => s.id === context.subject);
     if (subject) {
       if(window.CentralDisciplineLoader&&!CentralDisciplineLoader.isReady(subject.id))return CentralDisciplineLoader.open(subject.id,()=>openContext(context));
@@ -55,7 +56,7 @@
           if (!module && ++attempts < 20) { setTimeout(openModule, 100); return; }
           if (!module) return;
           if (!module.classList.contains('open')) {
-            const head = module.querySelector('.open-topic,.cf-module-head,.civil-module-head,.cpp-mod-head,.cv-module-head,.bc-trabalho-module-head');
+            const head = module.querySelector('.open-topic,.cf-module-head,.civil-module-head,.cpp-mod-head,.cv-module-head-head');
             head?.click();
           }
           setTimeout(() => module.scrollIntoView({block:'start',behavior:'auto'}), 100);
@@ -98,3 +99,4 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded',start,{once:true});
   else start();
 })();
+
