@@ -16,6 +16,13 @@ import {
   verifyPassword,
 } from '../lib/auth.js';
 import handleInviteAction from '../lib/invite-handler.js';
+import {
+  clientIp,
+  createLoginThrottle,
+  createNeonThrottleStore,
+  throttleKeys,
+  throttleMessage,
+} from '../lib/login-throttle.js';
 
 function send(res, status, body, extraHeaders = {}) {
   res.statusCode = status;
@@ -23,6 +30,11 @@ function send(res, status, body, extraHeaders = {}) {
   res.setHeader('Cache-Control', 'no-store');
   for (const [key, value] of Object.entries(extraHeaders)) res.setHeader(key, value);
   res.end(JSON.stringify(body));
+}
+
+function sendThrottled(res, retryAfterSec) {
+  const seconds = Math.max(1, Math.ceil(Number(retryAfterSec) || 60));
+  return send(res, 429, { error: throttleMessage(seconds), retryAfterSec: seconds }, { 'Retry-After': String(seconds) });
 }
 
 function cleanName(value) {
@@ -87,8 +99,16 @@ async function login(req, res) {
 
   const sql = database();
   await ensureUsersTable(sql);
+
+  // Limite por IP, por conta+IP e por conta (ver lib/login-throttle.js). Não há
+  // mais bloqueio da conta inteira: errar a senha de outra pessoa não a tranca.
+  const throttle = createLoginThrottle({ store: createNeonThrottleStore(sql) });
+  const keys = throttleKeys({ ip: clientIp(req), email });
+  const gate = await throttle.check(keys);
+  if (gate.blocked) return sendThrottled(res, gate.retryAfterSec);
+
   const rows = await sql`
-    SELECT user_id,name,email,role,password_hash,active,failed_attempts,locked_until,session_version,created_at,updated_at,last_login
+    SELECT user_id,name,email,role,password_hash,active,session_version,created_at,updated_at,last_login
     FROM central_users
     WHERE LOWER(email)=${email}
     LIMIT 1
@@ -96,28 +116,22 @@ async function login(req, res) {
   const row = rows[0];
 
   if (!row) {
+    // E-mail inexistente também conta como falha: a resposta não pode revelar se a conta existe.
+    const state = await throttle.recordFailure(keys, { trusted: gate.trusted });
     await new Promise((resolve) => setTimeout(resolve, 350));
+    if (state.blocked) return sendThrottled(res, state.retryAfterSec);
     return send(res, 401, { error: 'E-mail ou senha inválidos' });
   }
   if (row.active === false) return send(res, 403, { error: 'Este usuário está desativado' });
-  if (row.locked_until && new Date(row.locked_until).getTime() > Date.now()) {
-    return send(res, 429, { error: 'Muitas tentativas. Aguarde alguns minutos e tente novamente' });
-  }
 
   const passwordOk = verifyPassword(password, row.password_hash);
   if (!passwordOk) {
-    const attempts = Number(row.failed_attempts || 0) + 1;
-    const shouldLock = attempts >= 5;
-    await sql`
-      UPDATE central_users
-      SET failed_attempts=${shouldLock ? 0 : attempts},
-          locked_until=${shouldLock ? new Date(Date.now() + 10 * 60 * 1000).toISOString() : null},
-          updated_at=NOW()
-      WHERE user_id=${row.user_id}
-    `;
-    return send(res, 401, { error: shouldLock ? 'Muitas tentativas. A conta foi bloqueada por 10 minutos' : 'E-mail ou senha inválidos' });
+    const state = await throttle.recordFailure(keys, { trusted: gate.trusted });
+    if (state.blocked) return sendThrottled(res, state.retryAfterSec);
+    return send(res, 401, { error: 'E-mail ou senha inválidos' });
   }
 
+  await throttle.recordSuccess(keys);
   await sql`
     UPDATE central_users
     SET failed_attempts=0, locked_until=NULL, last_login=NOW(), updated_at=NOW()
