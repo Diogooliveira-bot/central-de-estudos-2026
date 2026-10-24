@@ -1,4 +1,5 @@
 import { next } from '@vercel/functions';
+import { sessionGuard } from './lib/session-guard.js';
 
 const COOKIE_NAME = 'bc_session';
 
@@ -120,6 +121,35 @@ function redirectToLogin(request) {
   return Response.redirect(url, 302);
 }
 
+// Sessão revogada (conta desativada, rebaixada ou senha trocada): volta ao login
+// e apaga o cookie antigo para não repetir a verificação a cada arquivo.
+function redirectToLoginRevoked(request) {
+  const url = new URL('/login.html', request.url);
+  const current = new URL(request.url);
+  if (current.pathname !== '/') url.searchParams.set('next', current.pathname + current.search);
+  return new Response(null, {
+    status: 302,
+    headers: {
+      Location: url.toString(),
+      'Set-Cookie': COOKIE_NAME + '=; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=0',
+      'Cache-Control': 'no-store',
+    },
+  });
+}
+
+// Banco indisponível e sem resultado recente: recusa em vez de liberar.
+// É 503 (não redirecionamento) para o service worker não guardar nada no cache.
+function sessionUnavailable() {
+  return new Response('Serviço temporariamente indisponível. Tente novamente em instantes.', {
+    status: 503,
+    headers: {
+      'Content-Type': 'text/plain; charset=utf-8',
+      'Retry-After': '15',
+      'Cache-Control': 'no-store',
+    },
+  });
+}
+
 export const config = {
   matcher: '/:path*',
 };
@@ -187,7 +217,16 @@ export default async function middleware(request) {
   const session = await verifyToken(token);
   if (!session) return redirectToLogin(request);
 
-  if ((path === '/usuarios.html' || path === '/update-central.html') && session.role !== 'admin') {
+  // O cookie assinado sozinho não prova que a conta continua válida: ela pode
+  // ter sido desativada, rebaixada ou ter trocado de senha. Confere no banco
+  // (com cache curto em memória, ver lib/session-guard.js).
+  const access = await sessionGuard.check(session);
+  if (!access.ok) {
+    if (access.reason === 'unavailable') return sessionUnavailable();
+    return redirectToLoginRevoked(request);
+  }
+
+  if ((path === '/usuarios.html' || path === '/update-central.html') && access.role !== 'admin') {
     return Response.redirect(new URL('/', request.url), 302);
   }
 
