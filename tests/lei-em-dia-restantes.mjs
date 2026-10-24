@@ -25,7 +25,13 @@ test('214 itens preservam fontes, gabaritos e dispositivos únicos por disciplin
  const seen=new Set();
  for(const q of data){
   assert.equal(typeof q.question.answer,'boolean');assert.ok(q.question.statement.length>20);assert.ok(q.parts[0].length>20);
-  assert.equal(q.question.explanation,q.parts[0]);
+  if(q.question.legalAudit){
+   const audit=q.question.legalAudit;
+   assert.ok(['certificado','certificado-parcial','pendente'].includes(audit.status),q.id);
+   assert.ok(audit.basis&&audit.source&&/^2026-10-\d\d$/.test(audit.date),q.id);
+   if(audit.status==='pendente')assert.match(q.question.explanation,/^Em revisão\. /,q.id);
+   else{assert.match(q.question.explanation,/^(Correta|Errada)\. /,q.id);assert.equal(q.question.explanation.startsWith('Correta'),q.question.answer,q.id);}
+  }else assert.equal(q.question.explanation,q.parts[0]);
   assert.ok(topicMap[q.discipline].find(t=>t.id===q.topicId)?.subtopics.includes(q.subtopic));
   assert.ok(!/Gabarito:|Decorando a Lei Seca|vade-mecum-de-questoes|\(\s*\)\s*(Verdadeiro|Falso)/.test(q.question.statement+' '+q.parts[0]),q.id);
   assert.ok(!/^(Social|Complementar|Federal|Substituto|Administrativos)\s*\(/.test(q.question.statement),q.id);
