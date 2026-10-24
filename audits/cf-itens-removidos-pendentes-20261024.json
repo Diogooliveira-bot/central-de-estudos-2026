@@ -1,0 +1,155 @@
+{
+ "data": "2026-10-24",
+ "motivo": "Itens de Constitucional com gabarito em revisão (status pendente); remoção autorizada pelo responsável.",
+ "comoRestaurar": "Reinserir cada objeto de \"itens[].item\" em tools/decorando-data-cf.js na posição \"posicaoOriginal\" (posições da versão anterior a esta remoção) e recolocar o id em questionIds do módulo indicado em \"modulo\" (tools/decorando-data-modulos.js), ajustando os contadores laws[].questions; reverter o commit da remoção faz o mesmo de uma vez.",
+ "total": 4,
+ "itens": [
+  {
+   "id": "cf-ae45dc411d82",
+   "posicaoOriginal": 1366,
+   "modulo": "cf-m05",
+   "item": {
+    "id": "cf-ae45dc411d82",
+    "number": "Art. 37, XI, CF",
+    "title": "Fundamento legal da questão",
+    "parts": [
+     "Art. 37. A administração pública direta e indireta de qualquer dos Poderes da União, dos Estados, do Distrito Federal e dos Municípios obedecerá aos princípios de legalidade, impessoalidade, moralidade, publicidade e eficiência e, também, ao seguinte:",
+     "XI - a remuneração e o subsídio dos ocupantes de cargos, funções e empregos públicos da administração direta, autárquica e fundacional, dos membros de qualquer dos Poderes da União, dos Estados, do Distrito Federal e dos Municípios, dos detentores de mandato eletivo e dos demais agentes políticos e os proventos, pensões ou outra espécie remuneratória, percebidos cumulativamente ou não, incluídas as vantagens pessoais ou de qualquer outra natureza, não poderão exceder o subsídio mensal, em espécie, dos Ministros do Supremo Tribunal Federal, aplicando-se como limite, nos Municípios, o subsídio do Prefeito, e nos Estados e no Distrito Federal, o subsídio mensal do Governador no âmbito do Poder Executivo, o subsídio dos Deputados Estaduais e Distritais no âmbito do Poder Legislativo e o subsídio dos Desembargadores do Tribunal de Justiça, limitado a noventa inteiros e vinte e cinco centésimos por cento do subsídio mensal, em espécie, dos Ministros do Supremo Tribunal Federal, no âmbito do Poder Judiciário, aplicável este limite aos membros do Ministério Público, aos Procuradores e aos Defensores Públicos;"
+    ],
+    "topicId": "cf-m05",
+    "subtopic": "Administração Pública — disposições gerais e servidores (CF, arts. 37 a 41)",
+    "question": {
+     "statement": "Com base na CF e no entendimento do STF, julgue o item subsequente, a respeito do processo legislativo, da administração pública, dos direitos políticos e das funções essenciais à justiça. As defensorias públicas dos estados submetem-se ao teto remuneratório correspondente ao subsídio dos desembargadores do respectivo tribunal de justiça.",
+     "answer": false,
+     "source": "Art. 37, XI, CF",
+     "explanation": "Em revisão. O inciso XI do art. 37 aplica expressamente o limite dos Desembargadores \"aos Defensores Públicos\", o que parece contrariar o gabarito oficial (Errado). A diferença pode estar entre membros e servidores da Defensoria, e precisa de conferência.",
+     "meta": "CESPE/CEBRASPE 2026 - Especialista em Gestão de",
+     "bank": "CEBRASPE",
+     "year": 2026,
+     "origin": "real",
+     "legalAudit": {
+      "status": "pendente",
+      "basis": "gabarito oficial possivelmente divergente do texto ou da jurisprudência",
+      "date": "2026-10-23",
+      "source": "CF/88, texto compilado do Planalto"
+     }
+    },
+    "discipline": "cf",
+    "origin": "real",
+    "edital": "Cargo 16 — Analista Judiciário — Área Judiciária",
+    "auditStatus": "escopo-revisado-2026-08-17"
+   }
+  },
+  {
+   "id": "cf-13d9de2748cb",
+   "posicaoOriginal": 1472,
+   "modulo": "cf-m05",
+   "item": {
+    "id": "cf-13d9de2748cb",
+    "number": "Art. 37, § 6º, CF",
+    "title": "Fundamento legal da questão",
+    "parts": [
+     "Art. 37. A administração pública direta e indireta de qualquer dos Poderes da União, dos Estados, do Distrito Federal e dos Municípios obedecerá aos princípios de legalidade, impessoalidade, moralidade, publicidade e eficiência e, também, ao seguinte:",
+     "§ 6º As pessoas jurídicas de direito público e as de direito privado prestadoras de serviços públicos responderão pelos danos que seus agentes, nessa qualidade, causarem a terceiros, assegurado o direito de regresso contra o responsável nos casos de dolo ou culpa."
+    ],
+    "topicId": "cf-m05",
+    "subtopic": "Administração Pública — disposições gerais e servidores (CF, arts. 37 a 41)",
+    "question": {
+     "statement": "Julgue o item a seguir, relativos a noções de direito administrativo. A pessoa que sofrer algum dano por ato praticado por um servidor público no exercício da função poderá ajuizar ação de indenização somente contra o Estado.",
+     "answer": false,
+     "source": "Art. 37, § 6º, CF",
+     "explanation": "Em revisão. Pelo Tema 940 do STF, a ação de indenização por dano causado por agente público deve ser proposta contra o Estado ou a prestadora de serviço público, e o agente é parte ilegítima. O gabarito oficial (Errado) parece divergir dessa tese e precisa de conferência.",
+     "meta": "CESPE/CEBRASPE 2025 - Escrivão de Polícia (Polícia Federal)",
+     "bank": "CEBRASPE",
+     "year": 2025,
+     "origin": "real",
+     "legalAudit": {
+      "status": "pendente",
+      "basis": "gabarito oficial possivelmente divergente do texto ou da jurisprudência",
+      "date": "2026-10-23",
+      "source": "CF/88, texto compilado do Planalto"
+     }
+    },
+    "discipline": "cf",
+    "origin": "real",
+    "edital": "Cargo 16 — Analista Judiciário — Área Judiciária",
+    "auditStatus": "escopo-revisado-2026-08-17"
+   }
+  },
+  {
+   "id": "cf-574a6c7226e3",
+   "posicaoOriginal": 1982,
+   "modulo": "cf-m07",
+   "item": {
+    "id": "cf-574a6c7226e3",
+    "number": "Art. 70, § único, CF",
+    "title": "Fundamento legal da questão",
+    "parts": [
+     "Art. 70. A fiscalização contábil, financeira, orçamentária, operacional e patrimonial da União e das entidades da administração direta e indireta, quanto à legalidade, legitimidade, economicidade, aplicação das subvenções e renúncia de receitas, será exercida pelo Congresso Nacional, mediante controle externo, e pelo sistema de controle interno de cada Poder.",
+     "Parágrafo único. Prestará contas qualquer pessoa física ou jurídica, pública ou privada, que utilize, arrecade, guarde, gerencie ou administre dinheiros, bens e valores públicos ou pelos quais a União responda, ou que, em nome desta, assuma obrigações de natureza pecuniária."
+    ],
+    "topicId": "cf-m07",
+    "subtopic": "Fiscalização contábil, financeira e orçamentária (CF, arts. 70 a 75)",
+    "question": {
+     "statement": "De acordo com a Constituição Federal, a fiscalização contábil, financeira, orçamentária, operacional e patrimonial da União e das entidades da administração direta e indireta, quanto à legalidade, legitimidade, economicidade, aplicação das subvenções e renúncia de receitas, será exercida pelo Congresso Nacional, mediante controle externo, e pelo sistema de controle interno de cada Poder. Nesse sentido, deverá prestar contas as pessoas que se enquadram na seguinte opção: brasileiras e estrangeiras.",
+     "answer": false,
+     "source": "Art. 70, § único, CF",
+     "explanation": "Em revisão. O parágrafo único do art. 70 obriga a prestar contas qualquer pessoa física ou jurídica, pública ou privada, que gerencie recursos públicos, sem critério de nacionalidade; a afirmação isolada não contradiz o texto, e o gabarito \"Errado\" parece depender das demais alternativas da prova.",
+     "meta": "FGV 2026 - Analista Legislativo (ALEGO)",
+     "bank": "FGV",
+     "year": 2026,
+     "origin": "real",
+     "legalAudit": {
+      "status": "pendente",
+      "basis": "gabarito oficial possivelmente divergente do texto ou da jurisprudência",
+      "date": "2026-10-23",
+      "source": "CF/88, texto compilado do Planalto"
+     }
+    },
+    "discipline": "cf",
+    "origin": "real",
+    "edital": "Cargo 16 — Analista Judiciário — Área Judiciária",
+    "auditStatus": "escopo-revisado-2026-08-17"
+   }
+  },
+  {
+   "id": "cf-autoral-inedita-app-012",
+   "posicaoOriginal": 2709,
+   "modulo": "cf-m01",
+   "item": {
+    "id": "cf-autoral-inedita-app-012",
+    "discipline": "cf",
+    "origin": "authorial",
+    "contentType": "teoria-constitucional",
+    "legalDiploma": "Constituição Federal",
+    "number": "Autoral • Força normativa da Constituição",
+    "title": "Questão autoral de cobertura do edital",
+    "parts": [
+     "Art. 5º Todos são iguais perante a lei, sem distinção de qualquer natureza, garantindo-se aos brasileiros e aos estrangeiros residentes no País a inviolabilidade do direito à vida, à liberdade, à igualdade, à segurança e à propriedade, nos termos seguintes:",
+     "§ 1º As normas definidoras dos direitos e garantias fundamentais têm aplicação imediata."
+    ],
+    "topicId": "cf-m01",
+    "subtopic": "Aplicabilidade, interpretação, vigência e eficácia",
+    "edital": "Cargo 16 — Analista Judiciário — Área Judiciária",
+    "auditStatus": "revisada-2026-08-17",
+    "question": {
+     "statement": "Sobre Força normativa da Constituição, considere a afirmação: as normas constitucionais possuem força jurídica e devem orientar a atuação dos Poderes Públicos, inclusive como parâmetro de validade de seus atos.",
+     "answer": false,
+     "source": "Força normativa da Constituição",
+     "explanation": "Em revisão. A afirmação descreve corretamente o princípio da força normativa, mas o gabarito registrado é \"errado\"; a própria explicação original reconhece que a descrição é correta. O enunciado parece ter perdido, na conversão, a negação da questão de origem.",
+     "meta": "AUTORAL • cobertura do edital • não é questão real de banca",
+     "bank": "AUTORAL",
+     "year": 2026,
+     "origin": "authorial",
+     "legalAudit": {
+      "status": "pendente",
+      "basis": "gabarito oficial possivelmente divergente do texto ou da jurisprudência",
+      "date": "2026-10-23",
+      "source": "CF/88, texto compilado do Planalto"
+     }
+    },
+    "sourceQuestionId": "inedita-app-012"
+   }
+  }
+ ]
+}
