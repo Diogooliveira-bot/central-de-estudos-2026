@@ -4,12 +4,12 @@
   "auditBranch": "audit/lei-em-dia-integral-20261012",
   "baseline": "SHA dos arquivos originais em main; não alterar progresso/IDs",
   "caveat": "Estimativa de objetos nos scripts, não total de IDs ativos sem duplicação; algumas quantidades base provêm dos testes existentes, não de leitura integral",
-  "sumOfScriptObjectCounts": 12408,
+  "sumOfScriptObjectCounts": 12383,
   "files": [
     {
       "path": "tools/decorando-data-cf.js",
       "originalBlobSha": "9279a3a20c1d6de4f1e2e9d5454b2c11f168ca85",
-      "questionObjectCount": 3034,
+      "questionObjectCount": 3009,
       "measurement": "quantidade afirmada por teste existente; conteúdo grande não retornado pela API",
       "readableCharacters": null
     },

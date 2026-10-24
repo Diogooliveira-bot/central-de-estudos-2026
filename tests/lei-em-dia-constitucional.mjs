@@ -10,8 +10,8 @@ const report=JSON.parse(readFileSync(new URL('audits/lei-em-dia-constitucional-2
 const signature=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]/g,'');
 
 test('98 questões novas em oito leis; IDs anteriores preservados',()=>{
-  assert.equal(base.length,3034);assert.equal(added.length,98);assert.equal(topics.length,8);
-  assert.equal(new Set([...base,...added].map(q=>q.id)).size,3132);
+  assert.equal(base.length,3009);assert.equal(added.length,98);assert.equal(topics.length,8);
+  assert.equal(new Set([...base,...added].map(q=>q.id)).size,3107);
   const seen=new Set(base.map(q=>signature(q.question.statement)));
   for(const q of added){assert.ok(!seen.has(signature(q.question.statement)),q.id);seen.add(signature(q.question.statement));}
   for(const source of report.sources)assert.equal(added.filter(q=>q.question.source.startsWith(source.pdf+' ·')).length,source.imported);

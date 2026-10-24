@@ -1,11 +1,11 @@
 {
   "version": "20261009sync1",
-  "totalQuestions": 12044,
+  "totalQuestions": 12019,
   "centralModules": 138,
   "disciplines": [
     {
       "id": "cf",
-      "totalQuestions": 3132,
+      "totalQuestions": 3107,
       "modules": 15,
       "withoutQuestions": [
         "cf-m13",
@@ -103,7 +103,7 @@
       "laws": [
         {
           "label": "CF/88 e fundamentos associados",
-          "questions": 432
+          "questions": 425
         },
         {
           "label": "Lei 12.016/2009",
@@ -122,7 +122,7 @@
           "questions": 12
         }
       ],
-      "questions": 490
+      "questions": 483
     },
     {
       "id": "cf-m03",
@@ -133,10 +133,10 @@
       "laws": [
         {
           "label": "CF/88 e fundamentos associados",
-          "questions": 406
+          "questions": 400
         }
       ],
-      "questions": 406
+      "questions": 400
     },
     {
       "id": "cf-m04",
@@ -147,10 +147,10 @@
       "laws": [
         {
           "label": "CF/88 e fundamentos associados",
-          "questions": 451
+          "questions": 447
         }
       ],
-      "questions": 451
+      "questions": 447
     },
     {
       "id": "cf-m05",
@@ -161,10 +161,10 @@
       "laws": [
         {
           "label": "CF/88 e fundamentos associados",
-          "questions": 377
+          "questions": 375
         }
       ],
-      "questions": 377
+      "questions": 375
     },
     {
       "id": "cf-m06",
@@ -175,10 +175,10 @@
       "laws": [
         {
           "label": "CF/88 e fundamentos associados",
-          "questions": 167
+          "questions": 165
         }
       ],
-      "questions": 167
+      "questions": 165
     },
     {
       "id": "cf-m07",
@@ -221,14 +221,14 @@
       "laws": [
         {
           "label": "CF/88 e fundamentos associados",
-          "questions": 249
+          "questions": 248
         },
         {
           "label": "Lei 11.417/2006",
           "questions": 10
         }
       ],
-      "questions": 259
+      "questions": 258
     },
     {
       "id": "cf-m10",
@@ -253,10 +253,10 @@
       "laws": [
         {
           "label": "CF/88 e fundamentos associados",
-          "questions": 165
+          "questions": 162
         }
       ],
-      "questions": 165
+      "questions": 162
     },
     {
       "id": "cf-m12",
