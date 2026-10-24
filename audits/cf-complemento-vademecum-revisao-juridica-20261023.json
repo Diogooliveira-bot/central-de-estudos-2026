@@ -1,0 +1,289 @@
+{
+ "data": "2026-10-23",
+ "fonte": "Textos compilados do Planalto no Vade Mecum da Central (assets/vademecum-pdf/, origem em relatorio.csv) e CF/88 já conferida",
+ "escopo": "tools/decorando-data-cf.js — itens que eram certificado-parcial por lei não conferida",
+ "total": 28,
+ "gabaritosAlterados": 0,
+ "itens": [
+  {
+   "id": "cf-a4f28af05b66",
+   "dispositivo": "art. 1º, caput",
+   "lei": "Lei 9.882/1999",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e texto legal conferido (Vade Mecum da Central, Planalto)",
+   "origem": "real",
+   "subtopico": "ADPF (CF e Lei 9.882/1999)"
+  },
+  {
+   "id": "cf-fc30a2bcce15",
+   "dispositivo": "art. 2º, I",
+   "lei": "Lei 9.882/1999",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e texto legal conferido (Vade Mecum da Central, Planalto)",
+   "origem": "real",
+   "subtopico": "ADPF (CF e Lei 9.882/1999)"
+  },
+  {
+   "id": "cf-autoral-v212-m12-21",
+   "dispositivo": "art. 1º, parágrafo único, I",
+   "lei": "Lei 9.882/1999",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional, texto legal conferido (Vade Mecum da Central, Planalto) e jurisprudência/doutrina",
+   "origem": "autoral",
+   "subtopico": "ADPF (CF e Lei 9.882/1999)"
+  },
+  {
+   "id": "cf-autoral-v212-m12-22",
+   "dispositivo": "arts. 4º, § 1º, e 5º, § 3º",
+   "lei": "Lei 9.882/1999",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional e texto legal conferido (Vade Mecum da Central, Planalto)",
+   "origem": "autoral",
+   "subtopico": "ADPF (CF e Lei 9.882/1999)"
+  },
+  {
+   "id": "cf-autoral-v212-m12-23",
+   "dispositivo": "art. 2º, I e § 1º",
+   "lei": "Lei 9.882/1999",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e texto legal conferido (Vade Mecum da Central, Planalto)",
+   "origem": "autoral",
+   "subtopico": "ADPF (CF e Lei 9.882/1999)"
+  },
+  {
+   "id": "cf-autoral-v212-m12-24",
+   "dispositivo": "art. 5º, caput e § 1º",
+   "lei": "Lei 9.882/1999",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional e texto legal conferido (Vade Mecum da Central, Planalto)",
+   "origem": "autoral",
+   "subtopico": "ADPF (CF e Lei 9.882/1999)"
+  },
+  {
+   "id": "cf-autoral-v212-m12-25",
+   "dispositivo": "art. 8º",
+   "lei": "Lei 9.882/1999",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e texto legal conferido (Vade Mecum da Central, Planalto)",
+   "origem": "autoral",
+   "subtopico": "ADPF (CF e Lei 9.882/1999)"
+  },
+  {
+   "id": "cf-autoral-v212-m12-26",
+   "dispositivo": "art. 10, § 3º",
+   "lei": "Lei 9.882/1999",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional e texto legal conferido (Vade Mecum da Central, Planalto)",
+   "origem": "autoral",
+   "subtopico": "ADPF (CF e Lei 9.882/1999)"
+  },
+  {
+   "id": "cf-autoral-v212-m12-27",
+   "dispositivo": "art. 11",
+   "lei": "Lei 9.882/1999",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e texto legal conferido (Vade Mecum da Central, Planalto)",
+   "origem": "autoral",
+   "subtopico": "ADPF (CF e Lei 9.882/1999)"
+  },
+  {
+   "id": "cf-autoral-v212-m12-09",
+   "dispositivo": "art. 5º, caput",
+   "lei": "Lei 9.868/1999",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e texto legal conferido (Vade Mecum da Central, Planalto)",
+   "origem": "autoral",
+   "subtopico": "ADI e ADC (CF e Lei 9.868/1999)"
+  },
+  {
+   "id": "cf-autoral-v212-m12-10",
+   "dispositivo": "art. 7º, caput e § 2º",
+   "lei": "Lei 9.868/1999",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional e texto legal conferido (Vade Mecum da Central, Planalto)",
+   "origem": "autoral",
+   "subtopico": "ADI e ADC (CF e Lei 9.868/1999)"
+  },
+  {
+   "id": "cf-autoral-v212-m12-11",
+   "dispositivo": "art. 11, § 1º",
+   "lei": "Lei 9.868/1999",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e texto legal conferido (Vade Mecum da Central, Planalto)",
+   "origem": "autoral",
+   "subtopico": "ADI e ADC (CF e Lei 9.868/1999)"
+  },
+  {
+   "id": "cf-autoral-v212-m12-12",
+   "dispositivo": "arts. 22 e 23",
+   "lei": "Lei 9.868/1999",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional e texto legal conferido (Vade Mecum da Central, Planalto)",
+   "origem": "autoral",
+   "subtopico": "ADI e ADC (CF e Lei 9.868/1999)"
+  },
+  {
+   "id": "cf-autoral-v212-m12-13",
+   "dispositivo": "art. 27",
+   "lei": "Lei 9.868/1999",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e texto legal conferido (Vade Mecum da Central, Planalto)",
+   "origem": "autoral",
+   "subtopico": "ADI e ADC (CF e Lei 9.868/1999)"
+  },
+  {
+   "id": "cf-autoral-v212-m12-15",
+   "dispositivo": "art. 14, III",
+   "lei": "Lei 9.868/1999",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e texto legal conferido (Vade Mecum da Central, Planalto)",
+   "origem": "autoral",
+   "subtopico": "ADI e ADC (CF e Lei 9.868/1999)"
+  },
+  {
+   "id": "cf-autoral-v212-m12-16",
+   "dispositivo": "arts. 21, 22 e 23",
+   "lei": "Lei 9.868/1999",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional e texto legal conferido (Vade Mecum da Central, Planalto)",
+   "origem": "autoral",
+   "subtopico": "ADI e ADC (CF e Lei 9.868/1999)"
+  },
+  {
+   "id": "cf-autoral-v212-m12-17",
+   "dispositivo": "art. 24",
+   "lei": "Lei 9.868/1999",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e texto legal conferido (Vade Mecum da Central, Planalto)",
+   "origem": "autoral",
+   "subtopico": "ADI e ADC (CF e Lei 9.868/1999)"
+  },
+  {
+   "id": "cf-autoral-v210-m10-27",
+   "dispositivo": "arts. 3º, 5º e 6º",
+   "lei": "Lei 14.824/2024",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional e texto legal conferido (Vade Mecum da Central, Planalto)",
+   "origem": "autoral",
+   "subtopico": "Conselho Superior da Justiça do Trabalho (Lei 14.824/2024)"
+  },
+  {
+   "id": "cf-autoral-v210-m10-28",
+   "dispositivo": "arts. 4º e 9º, I",
+   "lei": "Lei 14.824/2024",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e texto legal conferido (Vade Mecum da Central, Planalto)",
+   "origem": "autoral",
+   "subtopico": "Conselho Superior da Justiça do Trabalho (Lei 14.824/2024)"
+  },
+  {
+   "id": "cf-autoral-v210-m10-29",
+   "dispositivo": "arts. 1º e 7º, III",
+   "lei": "Lei 14.824/2024",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional e texto legal conferido (Vade Mecum da Central, Planalto)",
+   "origem": "autoral",
+   "subtopico": "Conselho Superior da Justiça do Trabalho (Lei 14.824/2024)"
+  },
+  {
+   "id": "cf-autoral-v210-m10-30",
+   "dispositivo": "art. 7º, XII",
+   "lei": "Lei 14.824/2024",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e texto legal conferido (Vade Mecum da Central, Planalto)",
+   "origem": "autoral",
+   "subtopico": "Conselho Superior da Justiça do Trabalho (Lei 14.824/2024)"
+  },
+  {
+   "id": "cf-72aacaecb39e",
+   "dispositivo": "art. 1º, § 3º",
+   "lei": "Lei 4.717/1965",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e texto legal conferido (Vade Mecum da Central, Planalto)",
+   "origem": "real",
+   "subtopico": "Direitos e deveres individuais e coletivos (CF, art. 5º)"
+  },
+  {
+   "id": "cf-c4173cf83f05",
+   "dispositivo": "art. 2º, I",
+   "lei": "Lei 8.072/1990",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e texto legal conferido (Vade Mecum da Central, Planalto)",
+   "origem": "real",
+   "subtopico": "Direitos e deveres individuais e coletivos (CF, art. 5º)"
+  },
+  {
+   "id": "cf-232c2ade5ff3",
+   "dispositivo": "arts. 81, parágrafo único, III, e 103, III e § 3º",
+   "lei": "Lei 8.078/1990 (CDC)",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e texto legal conferido (Vade Mecum da Central, Planalto)",
+   "origem": "real",
+   "subtopico": "Supremo Tribunal Federal (CF, arts. 101 a 103-A)"
+  },
+  {
+   "id": "cf-b3721df1aa8a",
+   "dispositivo": "art. 3º, § 1º",
+   "lei": "Lei 11.417/2006",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e texto legal conferido (Vade Mecum da Central, Planalto)",
+   "origem": "real",
+   "subtopico": "Sistemas difuso e concentrado"
+  },
+  {
+   "id": "cf-d7ac440125ef",
+   "dispositivo": "art. 1º, I",
+   "lei": "Lei 8.443/1992",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e texto legal conferido (Vade Mecum da Central, Planalto)",
+   "origem": "real",
+   "subtopico": "Fiscalização contábil, financeira e orçamentária (CF, arts. 70 a 75)"
+  },
+  {
+   "id": "cf-3c0013e16c81",
+   "dispositivo": "arts. 8º, 19 e 24",
+   "lei": "Lei 8.443/1992",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e texto legal conferido (Vade Mecum da Central, Planalto)",
+   "origem": "real",
+   "subtopico": "Fiscalização contábil, financeira e orçamentária (CF, arts. 70 a 75)"
+  },
+  {
+   "id": "cf-56b4159d0acd",
+   "dispositivo": "arts. 11, I, a, e 12, § 1º",
+   "lei": "Lei 8.213/1991",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e texto legal conferido (Vade Mecum da Central, Planalto)",
+   "origem": "real",
+   "subtopico": "Administração Pública — disposições gerais e servidores (CF, arts. 37 a 41)"
+  }
+ ]
+}
