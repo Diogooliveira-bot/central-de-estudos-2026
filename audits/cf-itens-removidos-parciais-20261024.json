@@ -1,0 +1,965 @@
+{
+ "data": "2026-10-24",
+ "motivo": "Itens de Constitucional que continuavam certificado-parcial por depender de texto legal que a Central não possui; remoção autorizada pelo responsável.",
+ "comoRestaurar": "Reinserir cada objeto de \"itens[].item\" em tools/decorando-data-cf.js na posição \"posicaoOriginal\" (posições da versão anterior à remoção) e recolocar o id em questionIds do módulo indicado em \"modulo\" (tools/decorando-data-modulos.js), ajustando os contadores laws[].questions; reverter o commit da remoção faz o mesmo de uma vez.",
+ "total": 25,
+ "itens": [
+  {
+   "id": "cf-dcfb3f927e1b",
+   "posicaoOriginal": 173,
+   "dependiaDe": "Código de Processo Penal",
+   "modulo": "cf-m02",
+   "item": {
+    "id": "cf-dcfb3f927e1b",
+    "number": "Art. 5º, LVI, CF c/c Art. 395, III, CPP",
+    "title": "Fundamento legal da questão",
+    "parts": [
+     "Art. 5º Todos são iguais perante a lei, sem distinção de qualquer natureza, garantindo-se aos brasileiros e aos estrangeiros residentes no País a inviolabilidade do direito à vida, à liberdade, à igualdade, à segurança e à propriedade, nos termos seguintes:",
+     "LVI - são inadmissíveis, no processo, as provas obtidas por meios ilícitos;",
+     "Art. 395 - A denúncia ou queixa será rejeitada quando: [...] III - faltar justa causa para o exercício da ação penal."
+    ],
+    "topicId": "cf-m02",
+    "subtopic": "Direitos e deveres individuais e coletivos (CF, art. 5º)",
+    "question": {
+     "statement": "Durante investigação sobre fraudes em licitação, a polícia civil apreendeu documentos na casa de Marcelo, sem mandado judicial, alegando “consentimento verbal” da sua esposa, com quem Marcelo residia. O Ministério Público ofereceu denúncia contra Marcelo com base nos documentos encontrados quando da realização de busca e apreensão. O juiz recebeu a denúncia e, antes da citação, decretou a prisão preventiva de Marcelo. A sua defesa alegou nulidade das provas e inépcia da denúncia.\n\nConsiderando a situação hipotética narrada, julgue o item a seguir.\n\nCaso os documentos apreendidos sejam declarados ilícitos e inexistam outros elementos mínimos de prova, a denúncia poderá ser rejeitada por ausência de justa causa.",
+     "answer": true,
+     "source": "Art. 5º, LVI, CF c/c Art. 395, III, CPP",
+     "explanation": "Correta. As provas ilícitas são inadmissíveis (art. 5º, LVI), e, sem outros elementos, falta justa causa para a denúncia (art. 395, III, do CPP). O texto do CPP não foi conferido.",
+     "meta": "CESPE/CEBRASPE 2025 - Oficial de Justiça",
+     "bank": "CEBRASPE",
+     "year": 2025,
+     "origin": "real",
+     "legalAudit": {
+      "status": "certificado-parcial",
+      "basis": "texto constitucional; norma infraconstitucional citada não conferida",
+      "date": "2026-10-23",
+      "source": "CF/88, texto compilado do Planalto"
+     }
+    },
+    "discipline": "cf",
+    "origin": "real",
+    "edital": "Cargo 16 — Analista Judiciário — Área Judiciária",
+    "auditStatus": "escopo-revisado-2026-08-17"
+   }
+  },
+  {
+   "id": "cf-ad774baf7afe",
+   "posicaoOriginal": 309,
+   "dependiaDe": "Código de Processo Penal",
+   "modulo": "cf-m02",
+   "item": {
+    "id": "cf-ad774baf7afe",
+    "number": "Art. 5º, XI, CF c/c Art. 245, CPP",
+    "title": "Fundamento legal da questão",
+    "parts": [
+     "Art. 5º Todos são iguais perante a lei, sem distinção de qualquer natureza, garantindo-se aos brasileiros e aos estrangeiros residentes no País a inviolabilidade do direito à vida, à liberdade, à igualdade, à segurança e à propriedade, nos termos seguintes:",
+     "XI - a casa é asilo inviolável do indivíduo, ninguém nela podendo penetrar sem consentimento do morador, salvo em caso de flagrante delito ou desastre, ou para prestar socorro, ou, durante o dia, por determinação judicial;",
+     "Art. 245. As buscas domiciliares serão executadas de dia, salvo se o morador consentir que se realizem à noite, e, antes de penetrarem na casa, os executores mostrarão e lerão o mandado ao morador, ou a quem o represente, intimando-o, em seguida, a abrir a porta."
+    ],
+    "topicId": "cf-m02",
+    "subtopic": "Direitos e deveres individuais e coletivos (CF, art. 5º)",
+    "question": {
+     "statement": "Acerca dos princípios gerais da prova no processo penal, do procedimento probatório, da valoração da prova e da ilicitude probatória, julgue o item a seguir, considerando o entendimento dos tribunais superiores.\n\nA licitude da busca domiciliar no período noturno sem mandado judicial prescinde da demonstração de situação de flagrante delito ou de desastre caso haja consentimento válido, livre e esclarecido do morador, sendo a validade desse consentimento condicionada à possibilidade de posterior controle judicial do ato, conforme a jurisprudência dos tribunais superiores.",
+     "answer": true,
+     "source": "Art. 5º, XI, CF c/c Art. 245, CPP",
+     "explanation": "Correta. O consentimento do morador afasta a inviolabilidade (art. 5º, XI), e a jurisprudência exige que seja válido e passível de controle judicial. O texto do CPP não foi conferido.",
+     "meta": "CESPE/CEBRASPE 2026 - Delegado de Polícia (PC-DF)",
+     "bank": "CEBRASPE",
+     "year": 2026,
+     "origin": "real",
+     "legalAudit": {
+      "status": "certificado-parcial",
+      "basis": "texto constitucional; norma infraconstitucional citada não conferida",
+      "date": "2026-10-23",
+      "source": "CF/88, texto compilado do Planalto"
+     }
+    },
+    "discipline": "cf",
+    "origin": "real",
+    "edital": "Cargo 16 — Analista Judiciário — Área Judiciária",
+    "auditStatus": "escopo-revisado-2026-08-17"
+   }
+  },
+  {
+   "id": "cf-843c5ed026b4",
+   "posicaoOriginal": 354,
+   "dependiaDe": "Código de Processo Penal",
+   "modulo": "cf-m02",
+   "item": {
+    "id": "cf-843c5ed026b4",
+    "number": "Art. 5º, XLIII, CF c/c Art. 323, II, CPP",
+    "title": "Fundamento legal da questão",
+    "parts": [
+     "Art. 5º Todos são iguais perante a lei, sem distinção de qualquer natureza, garantindo-se aos brasileiros e aos estrangeiros residentes no País a inviolabilidade do direito à vida, à liberdade, à igualdade, à segurança e à propriedade, nos termos seguintes:",
+     "XLIII - a lei considerará crimes inafiançáveis e insuscetíveis de graça ou anistia a prática da tortura, o tráfico ilícito de entorpecentes e drogas afins, o terrorismo e os definidos como crimes hediondos, por eles respondendo os mandantes, os executores e os que, podendo evitá-los, se omitirem;",
+     "Art. 323. Não será concedida fiança: […] II - nos crimes de tortura, tráfico ilícito de entorpecentes e drogas afins , terrorismo e nos definidos como crimes hediondos;"
+    ],
+    "topicId": "cf-m02",
+    "subtopic": "Direitos e deveres individuais e coletivos (CF, art. 5º)",
+    "question": {
+     "statement": "José, reincidente em crime doloso, foi preso em flagrante pela prática do crime de tráfico ilícito de entorpecentes, por ter sido encontrado com 300 g de cocaína. Por conseguinte, o indivíduo foi encaminhado à Delegacia de Polícia para fins de adoção das medidas previstas na Constituição Federal e na legislação processual. Nesse cenário, considerando as disposições do Código de Processo Penal, é correto afirmar que não é cabível o arbitramento de fiança pela autoridade policial, tampouco pelo juízo competente para o processo e julgamento do feito.",
+     "answer": true,
+     "source": "Art. 5º, XLIII, CF c/c Art. 323, II, CPP",
+     "explanation": "Correta. O tráfico é inafiançável (art. 5º, XLIII), e o CPP veda a concessão de fiança nesse crime. O texto do CPP não foi conferido.",
+     "meta": "FGV 2025 - Tabelião / Oficial de Registros - Provimento (TJ-ES)",
+     "bank": "FGV",
+     "year": 2025,
+     "origin": "real",
+     "legalAudit": {
+      "status": "certificado-parcial",
+      "basis": "texto constitucional; norma infraconstitucional citada não conferida",
+      "date": "2026-10-23",
+      "source": "CF/88, texto compilado do Planalto"
+     }
+    },
+    "discipline": "cf",
+    "origin": "real",
+    "edital": "Cargo 16 — Analista Judiciário — Área Judiciária",
+    "auditStatus": "escopo-revisado-2026-08-17"
+   }
+  },
+  {
+   "id": "cf-af7974bf6c22",
+   "posicaoOriginal": 450,
+   "dependiaDe": "Código Penal",
+   "modulo": "cf-m02",
+   "item": {
+    "id": "cf-af7974bf6c22",
+    "number": "Art. 5º, XXXIX, CF e Art. 1º, CP",
+    "title": "Fundamento legal da questão",
+    "parts": [
+     "Art. 5º Todos são iguais perante a lei, sem distinção de qualquer natureza, garantindo-se aos brasileiros e aos estrangeiros residentes no País a inviolabilidade do direito à vida, à liberdade, à igualdade, à segurança e à propriedade, nos termos seguintes:",
+     "XXXIX - não há crime sem lei anterior que o defina, nem pena sem prévia cominação legal;",
+     "Art. 1º, CP. Não há crime sem lei anterior que o defina. Não há pena sem prévia cominação legal."
+    ],
+    "topicId": "cf-m02",
+    "subtopic": "Direitos e deveres individuais e coletivos (CF, art. 5º)",
+    "question": {
+     "statement": "No Brasil, o Princípio da Anterioridade da Lei penal, também conhecido como Princípio da Prévia Legalidade, encontra-se previsto no Código Penal e na Constituição Federal.",
+     "answer": true,
+     "source": "Art. 5º, XXXIX, CF e Art. 1º, CP",
+     "explanation": "Correta. A anterioridade está no art. 5º, XXXIX, da CF e no art. 1º do Código Penal. O texto do CP não foi conferido.",
+     "meta": "CEV UECE 2025 - Oficial Investigador de Polícia (PC-CE)",
+     "bank": "CEV UECE",
+     "year": 2025,
+     "origin": "real",
+     "legalAudit": {
+      "status": "certificado-parcial",
+      "basis": "texto constitucional; norma infraconstitucional citada não conferida",
+      "date": "2026-10-23",
+      "source": "CF/88, texto compilado do Planalto"
+     }
+    },
+    "discipline": "cf",
+    "origin": "real",
+    "edital": "Cargo 16 — Analista Judiciário — Área Judiciária",
+    "auditStatus": "escopo-revisado-2026-08-17"
+   }
+  },
+  {
+   "id": "cf-f7a7e4777133",
+   "posicaoOriginal": 491,
+   "dependiaDe": "Código Civil",
+   "modulo": "cf-m02",
+   "item": {
+    "id": "cf-f7a7e4777133",
+    "number": "Arts. 5º, IV, CF c/c 19, CC",
+    "title": "Fundamento legal da questão",
+    "parts": [
+     "Art. 5º Todos são iguais perante a lei, sem distinção de qualquer natureza, garantindo-se aos brasileiros e aos estrangeiros residentes no País a inviolabilidade do direito à vida, à liberdade, à igualdade, à segurança e à propriedade, nos termos seguintes:",
+     "IV - é livre a manifestação do pensamento, sendo vedado o anonimato;",
+     "Art. 19, CC - O pseudônimo adotado para atividades lícitas goza da proteção que se dá ao nome."
+    ],
+    "topicId": "cf-m02",
+    "subtopic": "Direitos e deveres individuais e coletivos (CF, art. 5º)",
+    "question": {
+     "statement": "No tocante aos princípios fundamentais da CF, às restrições aos direitos fundamentais, aos direitos individuais e aos direitos políticos, é correto afirmar que a liberdade de manifestação do pensamento deve exercer-se, em regra, com a identificação do autor, mas essa exigência não veda a utilização de pseudônimos em obras artísticas, por exemplo.",
+     "answer": true,
+     "source": "Arts. 5º, IV, CF c/c 19, CC",
+     "explanation": "Correta. A vedação do anonimato (art. 5º, IV) não impede o uso de pseudônimo, protegido pelo Código Civil. O texto do Código Civil não foi conferido.",
+     "meta": "CESPE/CEBRASPE 2023 - Promotor de Justiça",
+     "bank": "CEBRASPE",
+     "year": 2023,
+     "origin": "real",
+     "legalAudit": {
+      "status": "certificado-parcial",
+      "basis": "texto constitucional; norma infraconstitucional citada não conferida",
+      "date": "2026-10-23",
+      "source": "CF/88, texto compilado do Planalto"
+     }
+    },
+    "discipline": "cf",
+    "origin": "real",
+    "edital": "Cargo 16 — Analista Judiciário — Área Judiciária",
+    "auditStatus": "escopo-revisado-2026-08-17"
+   }
+  },
+  {
+   "id": "cf-9eba988043e2",
+   "posicaoOriginal": 492,
+   "dependiaDe": "Código de Processo Penal",
+   "modulo": "cf-m02",
+   "item": {
+    "id": "cf-9eba988043e2",
+    "number": "Arts. 5º, LVI, CF e 157, CPP",
+    "title": "Fundamento legal da questão",
+    "parts": [
+     "Art. 5º Todos são iguais perante a lei, sem distinção de qualquer natureza, garantindo-se aos brasileiros e aos estrangeiros residentes no País a inviolabilidade do direito à vida, à liberdade, à igualdade, à segurança e à propriedade, nos termos seguintes:",
+     "LVI - são inadmissíveis, no processo, as provas obtidas por meios ilícitos;",
+     "Art. 157. São inadmissíveis , devendo ser desentranhadas do processo, as provas ilícitas , assim entendidas as obtidas em violação a normas constitucionais ou legais."
+    ],
+    "topicId": "cf-m02",
+    "subtopic": "Direitos e deveres individuais e coletivos (CF, art. 5º)",
+    "question": {
+     "statement": "A respeito da relação jurídica processual e da prova, julgue o item subsequente. Conquanto esteja incorporada ao direito processual penal mediante disposições doutrinárias e brasileiro jurisprudenciais, a aplicação da teoria dos frutos da árvore envenenada (fruits of the poisonous tree) carece de previsão legal no ordenamento jurídico pátrio.",
+     "answer": false,
+     "source": "Arts. 5º, LVI, CF e 157, CPP",
+     "explanation": "Errada. A inadmissibilidade das provas derivadas das ilícitas tem previsão legal no Código de Processo Penal, além do art. 5º, LVI, da CF. O texto do CPP não foi conferido.",
+     "meta": "CESPE/CEBRASPE 2023 - Promotor de Justiça (MPE- BA)",
+     "bank": "CEBRASPE",
+     "year": 2023,
+     "origin": "real",
+     "legalAudit": {
+      "status": "certificado-parcial",
+      "basis": "texto constitucional; norma infraconstitucional citada não conferida",
+      "date": "2026-10-23",
+      "source": "CF/88, texto compilado do Planalto"
+     }
+    },
+    "discipline": "cf",
+    "origin": "real",
+    "edital": "Cargo 16 — Analista Judiciário — Área Judiciária",
+    "auditStatus": "escopo-revisado-2026-08-17"
+   }
+  },
+  {
+   "id": "cf-f0b57bcdea2b",
+   "posicaoOriginal": 496,
+   "dependiaDe": "Código Penal",
+   "modulo": "cf-m02",
+   "item": {
+    "id": "cf-f0b57bcdea2b",
+    "number": "Arts. 5º, XL CF e 2º, § único, CP",
+    "title": "Fundamento legal da questão",
+    "parts": [
+     "Art. 5º Todos são iguais perante a lei, sem distinção de qualquer natureza, garantindo-se aos brasileiros e aos estrangeiros residentes no País a inviolabilidade do direito à vida, à liberdade, à igualdade, à segurança e à propriedade, nos termos seguintes:",
+     "XL - a lei penal não retroagirá, salvo para beneficiar o réu;",
+     "Código Penal - Art. 2º, CP […] Parágrafo único. A lei posterior, que de qualquer modo favorecer o agente, aplica- se aos fatos anteriores, ainda que decididos por sentença condenatória transitada em julgado."
+    ],
+    "topicId": "cf-m02",
+    "subtopic": "Direitos e deveres individuais e coletivos (CF, art. 5º)",
+    "question": {
+     "statement": "Considerando as disposições do Código Penal a respeito de irretroatividade da lei penal e de prescrição, julgue o item que se segue. Segundo o Código Penal, uma nova lei penal mais gravosa não pode ser aplicada a fatos ocorridos antes de sua vigência; em contrapartida, uma lei penal mais benéfica pode retroagir para beneficiar o réu, salvo se este já tiver sido condenado por sentença definitiva.",
+     "answer": false,
+     "source": "Arts. 5º, XL CF e 2º, § único, CP",
+     "explanation": "Errada. Pelo Código Penal, a lei posterior mais benéfica aplica-se ainda que o fato tenha sido decidido por sentença condenatória transitada em julgado (art. 5º, XL, da CF). O texto do CP não foi conferido.",
+     "meta": "CESPE/CEBRASPE 2024 - Analista Judiciário (CNJ)",
+     "bank": "CEBRASPE",
+     "year": 2024,
+     "origin": "real",
+     "legalAudit": {
+      "status": "certificado-parcial",
+      "basis": "texto constitucional; norma infraconstitucional citada não conferida",
+      "date": "2026-10-23",
+      "source": "CF/88, texto compilado do Planalto"
+     }
+    },
+    "discipline": "cf",
+    "origin": "real",
+    "edital": "Cargo 16 — Analista Judiciário — Área Judiciária",
+    "auditStatus": "escopo-revisado-2026-08-17"
+   }
+  },
+  {
+   "id": "cf-3b24907ec744",
+   "posicaoOriginal": 505,
+   "dependiaDe": "Lei 14.601/2023",
+   "modulo": "cf-m03",
+   "item": {
+    "id": "cf-3b24907ec744",
+    "number": "Art. 6º, § único, CF",
+    "title": "Fundamento legal da questão",
+    "parts": [
+     "Art. 6º São direitos sociais a educação, a saúde, a alimentação, o trabalho, a moradia, o transporte, o lazer, a segurança, a previdência social, a proteção à maternidade e à infância, a assistência aos desamparados, na forma desta Constituição.",
+     "Parágrafo único. Todo brasileiro em situação de vulnerabilidade social terá direito a uma renda básica familiar, garantida pelo poder público em programa permanente de transferência de renda, cujas normas e requisitos de acesso serão determinados em lei, observada a legislação fiscal e orçamentária."
+    ],
+    "topicId": "cf-m03",
+    "subtopic": "Direitos sociais (CF, arts. 6º a 11)",
+    "question": {
+     "statement": "O Estado Democrático de Direito fundado pela Constituição Federal rege-se por princípios fundamentais que orientam a atuação dos Poderes da República. Entre outros objetivos, visa a construir uma sociedade livre, justa e solidária. Coerente com tais finalidades, a Constituição Federal reserva um capítulo destinado a tratar dos “Direitos Sociais”.\n\nA respeito deles, é correto afirmar que o poder público garante a todo brasileiro em situação de vulnerabilidade social, nos termos da lei, o direito a uma renda básica familiar, em programa permanente de transferência de renda, efetivado majoritariamente pelo Programa Bolsa Família.",
+     "answer": true,
+     "source": "Art. 6º, § único, CF",
+     "explanation": "Correta. A renda básica familiar está no parágrafo único do art. 6º, com normas e requisitos definidos em lei; o Programa Bolsa Família é o programa que hoje a concretiza (Lei nº 14.601/2023).",
+     "meta": "FGV 2025 - Servidor Público Federal - Bloco Temático 1 - Seguridade Social (CNU)",
+     "bank": "FGV",
+     "year": 2025,
+     "origin": "real",
+     "legalAudit": {
+      "status": "certificado-parcial",
+      "basis": "texto constitucional; norma infraconstitucional citada não conferida",
+      "date": "2026-10-23",
+      "source": "CF/88, texto compilado do Planalto"
+     }
+    },
+    "discipline": "cf",
+    "origin": "real",
+    "edital": "Cargo 16 — Analista Judiciário — Área Judiciária",
+    "auditStatus": "escopo-revisado-2026-08-17"
+   }
+  },
+  {
+   "id": "cf-e400f2a7f7b4",
+   "posicaoOriginal": 532,
+   "dependiaDe": "Lei 10.101/2000",
+   "modulo": "cf-m03",
+   "item": {
+    "id": "cf-e400f2a7f7b4",
+    "number": "Art. 7º, XI, CF, c/c art. 3º da Lei 10.101/2000",
+    "title": "Fundamento legal da questão",
+    "parts": [
+     "Art. 7º São direitos dos trabalhadores urbanos e rurais, além de outros que visem à melhoria de sua condição social:",
+     "XI - participação nos lucros, ou resultados, desvinculada da remuneração, e, excepcionalmente, participação na gestão da empresa, conforme definido em lei;"
+    ],
+    "topicId": "cf-m03",
+    "subtopic": "Direitos sociais (CF, arts. 6º a 11)",
+    "question": {
+     "statement": "Uma indústria brasileira, empregadora de centenas de empregados, organiza, por meio de acordo coletivo com o sindicato local, negociação coletiva em prol de pagamento de lucros e resultados a seus trabalhadores. Após o término do exercício, a empregadora, uma vez identificada a lucratividade desejada e prevista no acordo coletivo, efetuou os pagamentos aos empregados, em estrita observância às normativas fixadas em norma coletiva.\n\nOs referidos valores pagos aos empregados são desprovidos de natureza salarial, desde que pagos em estrita conformidade com as previsões da legislação vigente.",
+     "answer": true,
+     "source": "Art. 7º, XI, CF, c/c art. 3º da Lei 10.101/2000",
+     "explanation": "Correta. A participação nos lucros ou resultados é desvinculada da remuneração (art. 7º, XI), e a Lei nº 10.101/2000 afasta sua natureza salarial quando paga conforme suas regras.",
+     "meta": "FGV 2025 - Juiz Federal (TRF - 1ª Região)",
+     "bank": "FGV",
+     "year": 2025,
+     "origin": "real",
+     "legalAudit": {
+      "status": "certificado-parcial",
+      "basis": "texto constitucional; norma infraconstitucional citada não conferida",
+      "date": "2026-10-23",
+      "source": "CF/88, texto compilado do Planalto"
+     }
+    },
+    "discipline": "cf",
+    "origin": "real",
+    "edital": "Cargo 16 — Analista Judiciário — Área Judiciária",
+    "auditStatus": "escopo-revisado-2026-08-17"
+   }
+  },
+  {
+   "id": "cf-69ec1592fbf9",
+   "posicaoOriginal": 634,
+   "dependiaDe": "Precedente Normativo 86 do TST e art. 543 da CLT",
+   "modulo": "cf-m03",
+   "item": {
+    "id": "cf-69ec1592fbf9",
+    "number": "Art. 11, CF",
+    "title": "Fundamento legal da questão",
+    "parts": [
+     "Art. 11. Nas empresas de mais de duzentos empregados, é assegurada a eleição de um representante destes com a finalidade exclusiva de promover-lhes o entendimento direto com os empregadores.",
+     "PN. 86 - REPRESENTANTES DOS TRABALHADORES. ESTABILIDADE NO EMPREGO (positivo)",
+     "Nas empresas com mais de 200 empregados é assegurada a eleição direta de um representante, com as garantias do art. 543, e seus parágrafos, da CLT."
+    ],
+    "topicId": "cf-m03",
+    "subtopic": "Direitos sociais (CF, arts. 6º a 11)",
+    "question": {
+     "statement": "Tem garantia de emprego o empregado eleito em empresa com mais de 200 (duzentos) empregados para exercer a representação dos trabalhadores com finalidade exclusiva de promover o entendimento direto com o empregador.",
+     "answer": true,
+     "source": "Art. 11, CF",
+     "explanation": "Correta. O art. 11 assegura a eleição do representante nas empresas de mais de duzentos empregados; a garantia de emprego vem do Precedente Normativo 86 do TST, que lhe estende as garantias do art. 543 da CLT. A CF, sozinha, não prevê essa estabilidade.",
+     "meta": "TRT - 2ª REGIÃO 2014 - Juiz do Trabalho - Adaptada",
+     "bank": "TRT - 2ª REGIÃO",
+     "year": 2014,
+     "origin": "real",
+     "legalAudit": {
+      "status": "certificado-parcial",
+      "basis": "texto constitucional; norma infraconstitucional citada não conferida",
+      "date": "2026-10-23",
+      "source": "CF/88, texto compilado do Planalto"
+     }
+    },
+    "discipline": "cf",
+    "origin": "real",
+    "edital": "Cargo 16 — Analista Judiciário — Área Judiciária",
+    "auditStatus": "escopo-revisado-2026-08-17"
+   }
+  },
+  {
+   "id": "cf-c8840f78e505",
+   "posicaoOriginal": 800,
+   "dependiaDe": "Código Eleitoral",
+   "modulo": "cf-m03",
+   "item": {
+    "id": "cf-c8840f78e505",
+    "number": "Art. 14, § 3º, CF c/c Art. 86, CE",
+    "title": "Fundamento legal da questão",
+    "parts": [
+     "Art. 14. A soberania popular será exercida pelo sufrágio universal e pelo voto direto e secreto, com valor igual para todos, e, nos termos da lei, mediante:",
+     "§ 3º São condições de elegibilidade, na forma da lei:",
+     "I - a nacionalidade brasileira;",
+     "II - o pleno exercício dos direitos políticos;",
+     "III - o alistamento eleitoral;",
+     "IV - o domicílio eleitoral na circunscrição;",
+     "V - a filiação partidária;",
+     "VI - a idade mínima de:",
+     "a) trinta e cinco anos para Presidente e Vice-Presidente da República e Senador;",
+     "b) trinta anos para Governador e Vice-Governador de Estado e do Distrito Federal;",
+     "c) vinte e um anos para Deputado Federal, Deputado Estadual ou Distrital, Prefeito, Vice-Prefeito e juiz de paz;",
+     "d) dezoito anos para Vereador."
+    ],
+    "topicId": "cf-m03",
+    "subtopic": "Direitos políticos (CF, arts. 14 a 16)",
+    "question": {
+     "statement": "Sobre condições de elegibilidade, julgue o item a seguir.\n\nÉ condição de elegibilidade que o interessado tenha domicílio eleitoral na circunscrição perante a qual pretende ser eleito. Nas eleições presidenciais, a circunscrição será o país; nas eleições federais, o estado.",
+     "answer": true,
+     "source": "Art. 14, § 3º, CF c/c Art. 86, CE",
+     "explanation": "Correta. O domicílio eleitoral na circunscrição é condição de elegibilidade (art. 14, § 3º, IV); o Código Eleitoral (art. 86) define como circunscrição o país nas eleições presidenciais e o Estado nas federais e estaduais.",
+     "meta": "INSTITUTO AOCP 2022 - Promotor de Justiça",
+     "bank": "AOCP",
+     "year": 2022,
+     "origin": "real",
+     "legalAudit": {
+      "status": "certificado-parcial",
+      "basis": "texto constitucional; norma infraconstitucional citada não conferida",
+      "date": "2026-10-23",
+      "source": "CF/88, texto compilado do Planalto"
+     }
+    },
+    "discipline": "cf",
+    "origin": "real",
+    "edital": "Cargo 16 — Analista Judiciário — Área Judiciária",
+    "auditStatus": "escopo-revisado-2026-08-17"
+   }
+  },
+  {
+   "id": "cf-d4700f20d96f",
+   "posicaoOriginal": 803,
+   "dependiaDe": "Lei 9.504/1997",
+   "modulo": "cf-m03",
+   "item": {
+    "id": "cf-d4700f20d96f",
+    "number": "Art. 14, § 3º, V, CF c/c Art. 11, § 14, Lei 9.504/97",
+    "title": "Fundamento legal da questão",
+    "parts": [
+     "Art. 14. A soberania popular será exercida pelo sufrágio universal e pelo voto direto e secreto, com valor igual para todos, e, nos termos da lei, mediante:",
+     "§ 3º São condições de elegibilidade, na forma da lei:",
+     "I - a nacionalidade brasileira;",
+     "II - o pleno exercício dos direitos políticos;",
+     "III - o alistamento eleitoral;",
+     "IV - o domicílio eleitoral na circunscrição;",
+     "V - a filiação partidária;",
+     "VI - a idade mínima de:",
+     "a) trinta e cinco anos para Presidente e Vice-Presidente da República e Senador;",
+     "b) trinta anos para Governador e Vice-Governador de Estado e do Distrito Federal;",
+     "c) vinte e um anos para Deputado Federal, Deputado Estadual ou Distrital, Prefeito, Vice-Prefeito e juiz de paz;",
+     "d) dezoito anos para Vereador."
+    ],
+    "topicId": "cf-m03",
+    "subtopic": "Direitos políticos (CF, arts. 14 a 16)",
+    "question": {
+     "statement": "A respeito de candidatura avulsa ou independente no sistema eleitoral brasileiro, julgue o item a seguir.\n\nNo sistema eleitoral brasileiro, a legislação atual impede o registro de candidaturas avulsas, obrigando o candidato à vinculação partidária.",
+     "answer": true,
+     "source": "Art. 14, § 3º, V, CF c/c Art. 11, § 14, Lei 9.504/97",
+     "explanation": "Correta. A filiação partidária é condição de elegibilidade (art. 14, § 3º, V), e a Lei nº 9.504/1997 (art. 11, § 14) veda expressamente o registro de candidatura avulsa.",
+     "meta": "INSTITUTO AOCP 2025 - Promotor de Justiça (MPE-MA)",
+     "bank": "AOCP",
+     "year": 2025,
+     "origin": "real",
+     "legalAudit": {
+      "status": "certificado-parcial",
+      "basis": "texto constitucional; norma infraconstitucional citada não conferida",
+      "date": "2026-10-23",
+      "source": "CF/88, texto compilado do Planalto"
+     }
+    },
+    "discipline": "cf",
+    "origin": "real",
+    "edital": "Cargo 16 — Analista Judiciário — Área Judiciária",
+    "auditStatus": "escopo-revisado-2026-08-17"
+   }
+  },
+  {
+   "id": "cf-43829bdca749",
+   "posicaoOriginal": 819,
+   "dependiaDe": "Lei Complementar 64/1990",
+   "modulo": "cf-m03",
+   "item": {
+    "id": "cf-43829bdca749",
+    "number": "Art. 14, § 4º, CF",
+    "title": "Fundamento legal da questão",
+    "parts": [
+     "Art. 14. A soberania popular será exercida pelo sufrágio universal e pelo voto direto e secreto, com valor igual para todos, e, nos termos da lei, mediante:",
+     "§ 4º São inelegíveis os inalistáveis e os analfabetos.",
+     "§ 7º São inelegíveis, no território de jurisdição do titular, o cônjuge e os parentes consangüíneos ou afins, até o segundo grau ou por adoção, do Presidente da República, de Governador de Estado ou Território, do Distrito Federal, de Prefeito ou de quem os haja substituído dentro dos seis meses anteriores ao pleito, salvo se já titular de mandato eletivo e candidato à reeleição.",
+     "§ 9º Lei complementar estabelecerá outros casos de inelegibilidade e os prazos de sua cessação, a fim de proteger a probidade administrativa, a moralidade para exercício de mandato considerada vida pregressa do candidato, e a normalidade e legitimidade das eleições contra a influência do poder econômico ou o abuso do exercício de função, cargo ou emprego na administração direta ou indireta."
+    ],
+    "topicId": "cf-m03",
+    "subtopic": "Direitos políticos (CF, arts. 14 a 16)",
+    "question": {
+     "statement": "João almejava concorrer a um cargo eletivo, mas foi informado por seu advogado de que isto não poderia ocorrer em razão de uma causa de inelegibilidade que ainda projetava efeitos sobre a sua esfera jurídica. A causa de inelegibilidade a que se referiu o advogado de João somente é prevista, na legislação infraconstitucional, em relação a cargos eletivos do Poder Executivo, não do Poder Legislativo.",
+     "answer": false,
+     "source": "Art. 14, § 4º, CF",
+     "explanation": "Errada. As inelegibilidades da Constituição (art. 14, §§ 4º a 7º) e da Lei Complementar nº 64/1990 (§ 9º) alcançam cargos do Executivo e do Legislativo.",
+     "meta": "FGV 2022 - Analista Judiciário (TRT - 13ª Região - PB)",
+     "bank": "FGV",
+     "year": 2022,
+     "origin": "real",
+     "legalAudit": {
+      "status": "certificado-parcial",
+      "basis": "texto constitucional; norma infraconstitucional citada não conferida",
+      "date": "2026-10-23",
+      "source": "CF/88, texto compilado do Planalto"
+     }
+    },
+    "discipline": "cf",
+    "origin": "real",
+    "edital": "Cargo 16 — Analista Judiciário — Área Judiciária",
+    "auditStatus": "escopo-revisado-2026-08-17"
+   }
+  },
+  {
+   "id": "cf-fd1d16eeae2d",
+   "posicaoOriginal": 908,
+   "dependiaDe": "Constituição do Estado de Alagoas",
+   "modulo": "cf-m04",
+   "item": {
+    "id": "cf-fd1d16eeae2d",
+    "number": "Art. 18, § 4º, CF, c/c Constituição do Estado de Alagoas",
+    "title": "Fundamento legal da questão",
+    "parts": [
+     "Art. 18. A organização político-administrativa da República Federativa do Brasil compreende a União, os Estados, o Distrito Federal e os Municípios, todos autônomos, nos termos desta Constituição.",
+     "§ 4º A criação, a incorporação, a fusão e o desmembramento de Municípios, far-se-ão por lei estadual, dentro do período determinado por Lei Complementar Federal, e dependerão de consulta prévia, mediante plebiscito, às populações dos Municípios envolvidos, após divulgação dos Estudos de Viabilidade Municipal, apresentados e publicados na forma da lei."
+    ],
+    "topicId": "cf-m04",
+    "subtopic": "Organização político-administrativa (CF, arts. 18 e 19)",
+    "question": {
+     "statement": "De acordo com o que estabelece a Constituição do Estado de Alagoas sobre a organização político-administrativa a criação, a incorporação e a fusão de Municípios far-se-ão por lei federal, obedecidos os requisitos estabelecidos em lei complementar municipal e dependerão de consulta prévia, mediante referendo, às populações interessadas.",
+     "answer": false,
+     "source": "Art. 18, § 4º, CF, c/c Constituição do Estado de Alagoas",
+     "explanation": "Errada. Pela CF, a criação, incorporação e fusão de Municípios faz-se por lei estadual, dentro do período fixado em lei complementar federal, com consulta prévia por plebiscito (art. 18, § 4º); o texto da Constituição de Alagoas não foi conferido.",
+     "meta": "FCC 2024 - Técnico Judiciário (TJ-AL)",
+     "bank": "FCC",
+     "year": 2024,
+     "origin": "real",
+     "legalAudit": {
+      "status": "certificado-parcial",
+      "basis": "texto constitucional; norma infraconstitucional citada não conferida",
+      "date": "2026-10-23",
+      "source": "CF/88, texto compilado do Planalto"
+     }
+    },
+    "discipline": "cf",
+    "origin": "real",
+    "edital": "Cargo 16 — Analista Judiciário — Área Judiciária",
+    "auditStatus": "escopo-revisado-2026-08-17"
+   }
+  },
+  {
+   "id": "cf-e4cde63866b9",
+   "posicaoOriginal": 1201,
+   "dependiaDe": "Constituição do Estado de São Paulo",
+   "modulo": "cf-m04",
+   "item": {
+    "id": "cf-e4cde63866b9",
+    "number": "Art. 25, § 3º, CF, c/c Constituição do Estado de São Paulo",
+    "title": "Fundamento legal da questão",
+    "parts": [
+     "Art. 25. Os Estados organizam-se e regem-se pelas Constituições e leis que adotarem, observados os princípios desta Constituição.",
+     "§ 3º Os Estados poderão, mediante lei complementar, instituir regiões metropolitanas, aglomerações urbanas e microrregiões, constituídas por agrupamentos de municípios limítrofes, para integrar a organização, o planejamento e a execução de funções públicas de interesse comum."
+    ],
+    "topicId": "cf-m04",
+    "subtopic": "Estados Federados (CF, arts. 25 a 28)",
+    "question": {
+     "statement": "Suponha que lei estadual institua região metropolitana, constituída por agrupamento de municípios limítrofes, para integrar a organização, o planejamento e a execução de funções públicas de interesse comum, prevendo: (1) a criação de conselho de caráter deliberativo e normativo, assegurada neste a participação paritária do conjunto dos Municípios, com relação ao Estado; e (2) que o planejamento do transporte coletivo de caráter regional será realizado pelo Estado, em conjunto com os Municípios integrantes da região.\n\nConsiderados esses elementos à luz da Constituição Federal e da Constituição do Estado de São Paulo, referida lei será constitucional, desde que se trate de lei complementar.",
+     "answer": true,
+     "source": "Art. 25, § 3º, CF, c/c Constituição do Estado de São Paulo",
+     "explanation": "Correta. A CF exige lei complementar estadual para instituir região metropolitana (art. 25, § 3º); o texto da Constituição de São Paulo não foi conferido.",
+     "meta": "FCC 2026 - Auditor Fiscal de Receita Estadual (SEFAZ-SP)",
+     "bank": "FCC",
+     "year": 2026,
+     "origin": "real",
+     "legalAudit": {
+      "status": "certificado-parcial",
+      "basis": "texto constitucional; norma infraconstitucional citada não conferida",
+      "date": "2026-10-23",
+      "source": "CF/88, texto compilado do Planalto"
+     }
+    },
+    "discipline": "cf",
+    "origin": "real",
+    "edital": "Cargo 16 — Analista Judiciário — Área Judiciária",
+    "auditStatus": "escopo-revisado-2026-08-17"
+   }
+  },
+  {
+   "id": "cf-79e0a8180fe5",
+   "posicaoOriginal": 1252,
+   "dependiaDe": "Constituição do Estado de Goiás",
+   "modulo": "cf-m04",
+   "item": {
+    "id": "cf-79e0a8180fe5",
+    "number": "Art. 74, § 1º, CF, c/c Constituição do Estado de Goiás",
+    "title": "Fundamento legal da questão",
+    "parts": [
+     "Art. 74. Os Poderes Legislativo, Executivo e Judiciário manterão, de forma integrada, sistema de controle interno com a finalidade de:",
+     "§ 1º Os responsáveis pelo controle interno, ao tomarem conhecimento de qualquer irregularidade ou ilegalidade, dela darão ciência ao Tribunal de Contas da União, sob pena de responsabilidade solidária."
+    ],
+    "topicId": "cf-m04",
+    "subtopic": "Municípios (CF, arts. 29 a 31)",
+    "question": {
+     "statement": "Ao dispor sobre a fiscalização contábil, financeira e orçamentária do Estado de Goiás, a Constituição estadual estabelece que os responsáveis pelo controle interno, ao tomarem conhecimento de qualquer irregularidade ou ilegalidade, dela darão ciência ao Tribunal de Contas do Estado, sob pena de responsabilidade solidária, nos mesmos moldes estabelecidos pela Constituição Federal no âmbito federal.",
+     "answer": true,
+     "source": "Art. 74, § 1º, CF, c/c Constituição do Estado de Goiás",
+     "explanation": "Correta. A Constituição de Goiás reproduz, para o TCE, a regra do art. 74, § 1º, da CF, aplicável aos Estados por simetria (art. 75); o texto estadual não foi conferido.",
+     "meta": "FCC 2026 - Auditor Fiscal da Receita",
+     "bank": "FCC",
+     "year": 2026,
+     "origin": "real",
+     "legalAudit": {
+      "status": "certificado-parcial",
+      "basis": "texto constitucional; norma infraconstitucional citada não conferida",
+      "date": "2026-10-23",
+      "source": "CF/88, texto compilado do Planalto"
+     }
+    },
+    "discipline": "cf",
+    "origin": "real",
+    "edital": "Cargo 16 — Analista Judiciário — Área Judiciária",
+    "auditStatus": "escopo-revisado-2026-08-17"
+   }
+  },
+  {
+   "id": "cf-e5232872601e",
+   "posicaoOriginal": 1325,
+   "dependiaDe": "Constituição do Estado de Goiás",
+   "modulo": "cf-m05",
+   "item": {
+    "id": "cf-e5232872601e",
+    "number": "Art. 37, CF e Art. 92, CE-GO",
+    "title": "Fundamento legal da questão",
+    "parts": [
+     "Art. 37. A administração pública direta e indireta de qualquer dos Poderes da União, dos Estados, do Distrito Federal e dos Municípios obedecerá aos princípios de legalidade, impessoalidade, moralidade, publicidade e eficiência e, também, ao seguinte:",
+     "Art. 92, CE-GO. A administração pública direta e indireta de qualquer dos Poderes do Estado e dos Municípios obedecerá aos princípios de legalidade, impessoalidade, moralidade, publicidade, eficiência, razoabilidade, proporcionalidade e motivação."
+    ],
+    "topicId": "cf-m05",
+    "subtopic": "Administração Pública — disposições gerais e servidores (CF, arts. 37 a 41)",
+    "question": {
+     "statement": "A Constituição do Estado de Goiás, além dos princípios da administração pública já constantes do caput do art. 37 da Constituição Federal, contempla, no caput do art. 92, os seguintes princípios adicionais: Razoabilidade, proporcionalidade e motivação.",
+     "answer": true,
+     "source": "Art. 37, CF e Art. 92, CE-GO",
+     "explanation": "Correta. O caput do art. 37 da CF traz legalidade, impessoalidade, moralidade, publicidade e eficiência; o acréscimo de razoabilidade, proporcionalidade e motivação vem do art. 92 da Constituição de Goiás, que não foi conferido nesta revisão.",
+     "meta": "FCC 2024 - Procurador do Estado (PGE-GO)",
+     "bank": "FCC",
+     "year": 2024,
+     "origin": "real",
+     "legalAudit": {
+      "status": "certificado-parcial",
+      "basis": "texto constitucional; norma infraconstitucional citada não conferida",
+      "date": "2026-10-23",
+      "source": "CF/88, texto compilado do Planalto"
+     }
+    },
+    "discipline": "cf",
+    "origin": "real",
+    "edital": "Cargo 16 — Analista Judiciário — Área Judiciária",
+    "auditStatus": "escopo-revisado-2026-08-17"
+   }
+  },
+  {
+   "id": "cf-af1317932caf",
+   "posicaoOriginal": 1566,
+   "dependiaDe": "Lei 9.717/1998",
+   "modulo": "cf-m05",
+   "item": {
+    "id": "cf-af1317932caf",
+    "number": "Art. 40, CF",
+    "title": "Fundamento legal da questão",
+    "parts": [
+     "Art. 40. O regime próprio de previdência social dos servidores titulares de cargos efetivos terá caráter contributivo e solidário, mediante contribuição do respectivo ente federativo, de servidores ativos, de aposentados e de pensionistas, observados critérios que preservem o equilíbrio financeiro e atuarial."
+    ],
+    "topicId": "cf-m05",
+    "subtopic": "Administração Pública — disposições gerais e servidores (CF, arts. 37 a 41)",
+    "question": {
+     "statement": "Julgue o item seguinte, com base na Lei n.º 9.717/1998, que dispõe sobre as regras dos RPPS. A inscrição no RPPS é obrigatória a todos aqueles que ingressam no serviço público como titulares de cargos efetivos.",
+     "answer": true,
+     "source": "Art. 40, CF",
+     "explanation": "Correta. O regime próprio do art. 40 destina-se aos servidores titulares de cargos efetivos; a obrigatoriedade da inscrição decorre da Lei 9.717/1998, que não foi conferida nesta revisão.",
+     "meta": "CESPE/CEBRASPE 2025 - Procurador do Estado (PGE-ES)",
+     "bank": "CEBRASPE",
+     "year": 2025,
+     "origin": "real",
+     "legalAudit": {
+      "status": "certificado-parcial",
+      "basis": "texto constitucional; norma infraconstitucional citada não conferida",
+      "date": "2026-10-23",
+      "source": "CF/88, texto compilado do Planalto"
+     }
+    },
+    "discipline": "cf",
+    "origin": "real",
+    "edital": "Cargo 16 — Analista Judiciário — Área Judiciária",
+    "auditStatus": "escopo-revisado-2026-08-17"
+   }
+  },
+  {
+   "id": "cf-d3d95f74a647",
+   "posicaoOriginal": 1698,
+   "dependiaDe": "Constituição do Estado de Santa Catarina",
+   "modulo": "cf-m06",
+   "item": {
+    "id": "cf-d3d95f74a647",
+    "number": "Art. 47, CF, c/c Constituição do Estado de Santa Catarina",
+    "title": "Fundamento legal da questão",
+    "parts": [
+     "Art. 47. Salvo disposição constitucional em contrário, as deliberações de cada Casa e de suas Comissões serão tomadas por maioria dos votos, presente a maioria absoluta de seus membros."
+    ],
+    "topicId": "cf-m06",
+    "subtopic": "Organização dos Poderes; Congresso Nacional (CF, arts. 44 a 47)",
+    "question": {
+     "statement": "No que diz respeito à organização dos Poderes no âmbito da Constituição do Estado de Santa Catarina, julgue o item. Salvo disposição constitucional em contrário, todas as deliberações da Assembleia Legislativa e de suas comissões, presente a maioria absoluta dos seus membros, serão tomadas por meio de voto aberto, exigida a maioria simples.",
+     "answer": true,
+     "source": "Art. 47, CF, c/c Constituição do Estado de Santa Catarina",
+     "explanation": "Correta. A regra geral de deliberação por maioria dos votos, presente a maioria absoluta, está no art. 47 da CF; a previsão de voto aberto na Constituição de Santa Catarina não foi conferida.",
+     "meta": "VUNESP 2026 - Promotor de Justiça (MPE-SC)",
+     "bank": "VUNESP",
+     "year": 2026,
+     "origin": "real",
+     "legalAudit": {
+      "status": "certificado-parcial",
+      "basis": "texto constitucional; norma infraconstitucional citada não conferida",
+      "date": "2026-10-23",
+      "source": "CF/88, texto compilado do Planalto"
+     }
+    },
+    "discipline": "cf",
+    "origin": "real",
+    "edital": "Cargo 16 — Analista Judiciário — Área Judiciária",
+    "auditStatus": "escopo-revisado-2026-08-17"
+   }
+  },
+  {
+   "id": "cf-a478078e783e",
+   "posicaoOriginal": 1710,
+   "dependiaDe": "Código Penal",
+   "modulo": "cf-m06",
+   "item": {
+    "id": "cf-a478078e783e",
+    "number": "Art. 48, VIII, CF",
+    "title": "Fundamento legal da questão",
+    "parts": [
+     "Art. 48. Cabe ao Congresso Nacional, com a sanção do Presidente da República, não exigida esta para o especificado nos arts. 49, 51 e 52, dispor sobre todas as matérias de competência da União, especialmente sobre:",
+     "VIII - concessão de anistia;"
+    ],
+    "topicId": "cf-m06",
+    "subtopic": "Atribuições do Congresso, Câmara e Senado (CF, arts. 48 a 52)",
+    "question": {
+     "statement": "Em casos arrolados pelo Código Penal, há previsão acerca da extinção da punibilidade do agente, acarretando, portanto, o afastamento da incidência da lei penal. Em um deles, tais efeitos são produzidos por lei ordinária editada pelo Congresso Nacional. Neste caso, trata-se de anistia.",
+     "answer": true,
+     "source": "Art. 48, VIII, CF",
+     "explanation": "Correta. A anistia é concedida por lei do Congresso Nacional, com sanção presidencial (art. 48, VIII), e extingue a punibilidade (art. 107, II, do Código Penal).",
+     "meta": "IV - UFG 2024 - Analista Judiciário - Oficial de Justiça (TJ-GO)",
+     "bank": "IV - UFG",
+     "year": 2024,
+     "origin": "real",
+     "legalAudit": {
+      "status": "certificado-parcial",
+      "basis": "texto constitucional; norma infraconstitucional citada não conferida",
+      "date": "2026-10-23",
+      "source": "CF/88, texto compilado do Planalto"
+     }
+    },
+    "discipline": "cf",
+    "origin": "real",
+    "edital": "Cargo 16 — Analista Judiciário — Área Judiciária",
+    "auditStatus": "escopo-revisado-2026-08-17"
+   }
+  },
+  {
+   "id": "cf-41dc5ccf953a",
+   "posicaoOriginal": 2291,
+   "dependiaDe": "Código Civil",
+   "modulo": "cf-m09",
+   "item": {
+    "id": "cf-41dc5ccf953a",
+    "number": "Art. 100, caput e § 3º, CF, c/c art. 100 do Código Civil",
+    "title": "Fundamento legal da questão",
+    "parts": [
+     "Art. 100. Os pagamentos devidos pelas Fazendas Públicas Federal, Estaduais, Distrital e Municipais, em virtude de sentença judiciária, far-se-ão exclusivamente na ordem cronológica de apresentação dos precatórios e à conta dos créditos respectivos, proibida a designação de casos ou de pessoas nas dotações orçamentárias e nos créditos adicionais abertos para este fim.",
+     "§ 3º O disposto no caput deste artigo relativamente à expedição de precatórios não se aplica aos pagamentos de obrigações definidas em leis como de pequeno valor que as Fazendas referidas devam fazer em virtude de sentença judicial transitada em julgado."
+    ],
+    "topicId": "cf-m09",
+    "subtopic": "Poder Judiciário — disposições gerais (CF, arts. 92 a 100)",
+    "question": {
+     "statement": "A impenhorabilidade dos bens públicos decorre do princípio da supremacia do interesse público, visando assegurar a continuidade dos serviços públicos essenciais, e levando a execução judicial de dívidas do Estado a ser realizada por meio de precatórios ou requisições de pequeno valor.",
+     "answer": true,
+     "source": "Art. 100, caput e § 3º, CF, c/c art. 100 do Código Civil",
+     "explanation": "Correta. Os bens públicos são impenhoráveis (art. 100 do Código Civil), e a execução contra a Fazenda se faz por precatório ou RPV (art. 100, caput e § 3º, da CF).",
+     "meta": "VUNESP 2025 - Analista Jurídico (MPE-SP)",
+     "bank": "VUNESP",
+     "year": 2025,
+     "origin": "real",
+     "legalAudit": {
+      "status": "certificado-parcial",
+      "basis": "texto constitucional; norma infraconstitucional citada não conferida",
+      "date": "2026-10-23",
+      "source": "CF/88, texto compilado do Planalto"
+     }
+    },
+    "discipline": "cf",
+    "origin": "real",
+    "edital": "Cargo 16 — Analista Judiciário — Área Judiciária",
+    "auditStatus": "escopo-revisado-2026-08-17"
+   }
+  },
+  {
+   "id": "cf-b216ff641364",
+   "posicaoOriginal": 2654,
+   "dependiaDe": "Código de Processo Penal",
+   "modulo": "cf-m11",
+   "item": {
+    "id": "cf-b216ff641364",
+    "number": "Art. 129, I, CF e Art. 24, CPP",
+    "title": "Fundamento legal da questão",
+    "parts": [
+     "Art. 129. São funções institucionais do Ministério Público:",
+     "I - promover, privativamente, a ação penal pública, na forma da lei;"
+    ],
+    "topicId": "cf-m11",
+    "subtopic": "Ministério Público (CF, arts. 127 a 130-A)",
+    "question": {
+     "statement": "A ação penal pública, no direito penal brasileiro, é aquela que depende de iniciativa do Ministério Público, ou seja, do Estado. Em uma ação penal pública, o sujeito ativo é o titular da ação penal.",
+     "answer": true,
+     "source": "Art. 129, I, CF e Art. 24, CPP",
+     "explanation": "Correta. A ação penal pública é promovida privativamente pelo MP (art. 129, I, e art. 24 do CPP), que é seu titular.",
+     "meta": "CEV UECE 2025 - Oficial Investigador de Polícia (PC-CE)",
+     "bank": "CEV UECE",
+     "year": 2025,
+     "origin": "real",
+     "legalAudit": {
+      "status": "certificado-parcial",
+      "basis": "texto constitucional; norma infraconstitucional citada não conferida",
+      "date": "2026-10-23",
+      "source": "CF/88, texto compilado do Planalto"
+     }
+    },
+    "discipline": "cf",
+    "origin": "real",
+    "edital": "Cargo 16 — Analista Judiciário — Área Judiciária",
+    "auditStatus": "escopo-revisado-2026-08-17"
+   }
+  },
+  {
+   "id": "cf-6c39e824c741",
+   "posicaoOriginal": 2675,
+   "dependiaDe": "Lei 8.625/1993",
+   "modulo": "cf-m11",
+   "item": {
+    "id": "cf-6c39e824c741",
+    "number": "Art. 129, § 2º, CF",
+    "title": "Fundamento legal da questão",
+    "parts": [
+     "Art. 129. São funções institucionais do Ministério Público:",
+     "§ 2º As funções do Ministério Público só podem ser exercidas por integrantes da carreira, que deverão residir na comarca da respectiva lotação, salvo autorização do chefe da instituição."
+    ],
+    "topicId": "cf-m11",
+    "subtopic": "Ministério Público (CF, arts. 127 a 130-A)",
+    "question": {
+     "statement": "A estruturação organizacional do Ministério Público é composta por um amplo conjunto de normas. Nesse contexto, exsurgiu o Conselho Nacional do Ministério Público, com sua composição e atribuições, exercendo função elementar no sentido dos controles que aperfeiçoam a Instituição e a tornam ainda mais respeitada e democrática. Assim sendo, é correto afirmar que no exercício de suas funções, que só podem ser exercidas por integrantes da carreira, deverão estes residir na comarca da respectiva lotação. Constituem prerrogativas dos(as) membros(as) do Ministério Público receber o mesmo tratamento jurídico e protocolar dispensado aos membros do Poder Judiciário junto aos quais oficiem, bem como tomar assento à esquerda dos juízes singulares ou do Presidente do Tribunal e dos órgãos fracionários do Tribunal.",
+     "answer": false,
+     "source": "Art. 129, § 2º, CF",
+     "explanation": "Errada. A CF ressalva a autorização do chefe da instituição para residir fora da comarca (art. 129, § 2º), e a Lei nº 8.625/1993 assegura ao membro do MP assento à direita, e não à esquerda, dos juízes.",
+     "meta": "MPE-RS 2025 - Promotor de Justiça (MPE-RS)",
+     "bank": "MPE-RS",
+     "year": 2025,
+     "origin": "real",
+     "legalAudit": {
+      "status": "certificado-parcial",
+      "basis": "texto constitucional; norma infraconstitucional citada não conferida",
+      "date": "2026-10-23",
+      "source": "CF/88, texto compilado do Planalto"
+     }
+    },
+    "discipline": "cf",
+    "origin": "real",
+    "edital": "Cargo 16 — Analista Judiciário — Área Judiciária",
+    "auditStatus": "escopo-revisado-2026-08-17"
+   }
+  },
+  {
+   "id": "cf-5ebc99634c2a",
+   "posicaoOriginal": 2688,
+   "dependiaDe": "Lei 11.372/2006",
+   "modulo": "cf-m11",
+   "item": {
+    "id": "cf-5ebc99634c2a",
+    "number": "Art. 130-A, § 1º, CF",
+    "title": "Fundamento legal da questão",
+    "parts": [
+     "Art. 130-A. O Conselho Nacional do Ministério Público compõe-se de quatorze membros nomeados pelo Presidente da República, depois de aprovada a escolha pela maioria absoluta do Senado Federal, para um mandato de dois anos, admitida uma recondução, sendo:",
+     "§ 1º Os membros do Conselho oriundos do Ministério Público serão indicados pelos respectivos Ministérios Públicos, na forma da lei.",
+     "A Lei que cuida do tema é a: 11.372/2006: Art. 2º Os membros do Conselho Nacional do Ministério Público oriundos dos Ministérios Públicos dos Estados serão indicados pelos respectivos Procuradores- Gerais de Justiça, a partir de lista tríplice elaborada pelos integrantes da Carreira de cada instituição, composta por membros com mais de 35 (trinta e cinco) anos de idade, que já tenham completado mais de 10 (dez) anos na respectiva Carreira. Parágrafo único. Os Procuradores-Gerais de Justiça dos Estados, em reunião conjunta especialmente convocada e realizada para esse fim, formarão lista com os 3 (três) nomes indicados para as vagas destinadas a membros do Ministério Público dos Estados, a ser submetida à aprovação do Senado Federal. Nesse contexto, não há discricionariedade por parte do PGJ."
+    ],
+    "topicId": "cf-m11",
+    "subtopic": "Ministério Público (CF, arts. 127 a 130-A)",
+    "question": {
+     "statement": "Em relação ao Conselho Nacional do Ministério Público (CNMP), julgue o item que se segue. Os membros do CNMP oriundos do MP estadual são indicados ao Senado Federal por decisão discricionária do respectivo procurador-geral de justiça.",
+     "answer": false,
+     "source": "Art. 130-A, § 1º, CF",
+     "explanation": "Errada. Os membros oriundos do MP são indicados pelos respectivos Ministérios Públicos, na forma da lei (art. 130-A, § 1º); a Lei nº 11.372/2006 disciplina a indicação, que não é escolha discricionária do Procurador-Geral.",
+     "meta": "CESPE/CEBRASPE 2023 - Promotor de Justiça (MPE-BA)",
+     "bank": "CEBRASPE",
+     "year": 2023,
+     "origin": "real",
+     "legalAudit": {
+      "status": "certificado-parcial",
+      "basis": "texto constitucional; norma infraconstitucional citada não conferida",
+      "date": "2026-10-23",
+      "source": "CF/88, texto compilado do Planalto"
+     }
+    },
+    "discipline": "cf",
+    "origin": "real",
+    "edital": "Cargo 16 — Analista Judiciário — Área Judiciária",
+    "auditStatus": "escopo-revisado-2026-08-17"
+   }
+  },
+  {
+   "id": "cf-autoral-inedita-w4-03",
+   "posicaoOriginal": 2799,
+   "dependiaDe": "Lei Complementar 230/2026",
+   "modulo": "cf-m04",
+   "item": {
+    "id": "cf-autoral-inedita-w4-03",
+    "discipline": "cf",
+    "origin": "authorial",
+    "contentType": "cobertura-edital",
+    "legalDiploma": "Constituição Federal",
+    "number": "Autoral • LC 230/2026 e art. 18, §4º",
+    "title": "Questão autoral de cobertura do edital",
+    "parts": [
+     "Art. 18. A organização político-administrativa da República Federativa do Brasil compreende a União, os Estados, o Distrito Federal e os Municípios, todos autônomos, nos termos desta Constituição.",
+     "§ 4º A criação, a incorporação, a fusão e o desmembramento de Municípios, far-se-ão por lei estadual, dentro do período determinado por Lei Complementar Federal, e dependerão de consulta prévia, mediante plebiscito, às populações dos Municípios envolvidos, após divulgação dos Estudos de Viabilidade Municipal, apresentados e publicados na forma da lei."
+    ],
+    "topicId": "cf-m04",
+    "subtopic": "Municípios (CF, arts. 29 a 31)",
+    "edital": "Cargo 16 — Analista Judiciário — Área Judiciária",
+    "auditStatus": "revisada-2026-08-17",
+    "question": {
+     "statement": "Sobre LC 230/2026 e art. 18, § 4º, considere a afirmação: A Lei Complementar nº 230/2026 regulamentou de modo geral a criação, a incorporação, a fusão e o desmembramento de novos Municípios em todo o território nacional.",
+     "answer": false,
+     "source": "LC 230/2026 e art. 18, §4º",
+     "explanation": "Errada. Segundo a matriz autoral, a LC 230/2026 tem objeto específico: disciplina o desmembramento de parte de Município para incorporação a outro limítrofe e não permite criar Município novo (art. 18, § 4º). O texto da lei complementar não foi conferido.",
+     "meta": "AUTORAL • cobertura do edital • não é questão real de banca",
+     "bank": "AUTORAL",
+     "year": 2026,
+     "origin": "authorial",
+     "legalAudit": {
+      "status": "certificado-parcial",
+      "basis": "texto constitucional; norma infraconstitucional citada não conferida",
+      "date": "2026-10-23",
+      "source": "CF/88, texto compilado do Planalto"
+     }
+    },
+    "sourceQuestionId": "inedita-w4-03"
+   }
+  }
+ ]
+}
