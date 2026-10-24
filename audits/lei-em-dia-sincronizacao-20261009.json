@@ -1,11 +1,11 @@
 {
   "version": "20261009sync1",
-  "totalQuestions": 12019,
+  "totalQuestions": 12015,
   "centralModules": 138,
   "disciplines": [
     {
       "id": "cf",
-      "totalQuestions": 3107,
+      "totalQuestions": 3103,
       "modules": 15,
       "withoutQuestions": [
         "cf-m13",
@@ -89,10 +89,10 @@
       "laws": [
         {
           "label": "CF/88 e fundamentos associados",
-          "questions": 125
+          "questions": 124
         }
       ],
-      "questions": 125
+      "questions": 124
     },
     {
       "id": "cf-m02",
@@ -161,10 +161,10 @@
       "laws": [
         {
           "label": "CF/88 e fundamentos associados",
-          "questions": 375
+          "questions": 373
         }
       ],
-      "questions": 375
+      "questions": 373
     },
     {
       "id": "cf-m06",
@@ -189,10 +189,10 @@
       "laws": [
         {
           "label": "CF/88 e fundamentos associados",
-          "questions": 321
+          "questions": 320
         }
       ],
-      "questions": 321
+      "questions": 320
     },
     {
       "id": "cf-m08",

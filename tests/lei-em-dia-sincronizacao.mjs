@@ -10,7 +10,7 @@ const allModules=[...index.modules,...index.complement],expected={cf:15,adm:20,c
 const asJSON=x=>JSON.parse(JSON.stringify(x));
 test('138 módulos centrais e lote jurídico aprovado correspondem à matriz corrente',()=>{
  const approved=vm.runInContext('DATA_LED_APPROVED',context);
- assert.equal(data.length,12019+approved.length);assert.equal(index.modules.length,138);assert.equal(new Set(data.map(q=>q.id)).size,data.length);
+ assert.equal(data.length,12015+approved.length);assert.equal(index.modules.length,138);assert.equal(new Set(data.map(q=>q.id)).size,data.length);
  assert.ok(approved.every(q=>q.id.startsWith('LED-')&&q.origin==='authorial'&&q.question?.source?.startsWith('https://')));
  assert.equal(!!vm.runInContext('DISCIPLINES.consumidor',context),approved.some(q=>q.discipline==='consumidor'));
  for(const [d,n] of Object.entries(expected))assert.equal(index.modules.filter(m=>m.discipline===d).length,n);
@@ -101,6 +101,6 @@ test('índice de progresso Civil e pacote offline acompanham a mesma matriz',()=
  const c=vm.createContext({window:{}});vm.runInContext(read('civil-decorando-index-v1.js'),c);const ids=c.window.CIVIL_DECORANDO_IDS_V1;
  const native=JSON.parse(read('content/civil/civil-native-index.js').split('=').slice(1).join('=').trim().replace(/;$/,''));
  for(const m of native.modules)assert.deepEqual(asJSON(ids[m.id]),asJSON(index.modules.find(x=>x.id===m.uid).questionIds));
- const manifest=JSON.parse(read('central-offline-files-v66172.json'));assert.ok(manifest.files.includes('/tools/decorando-data-modulos.js?v=20261024rm'));
+ const manifest=JSON.parse(read('central-offline-files-v66172.json'));assert.ok(manifest.files.includes('/tools/decorando-data-modulos.js?v=20261024rm2'));
  for(const p of manifest.files){const path=p.split('?')[0].replace(/^\//,'');assert.ok(fs.existsSync(new URL(path,root)),path);}
 });
