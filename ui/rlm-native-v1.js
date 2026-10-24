@@ -61,10 +61,9 @@ function card(m){
  const percent=done?100:p;
  const cards=m.id==='M01'?
   materialCard(m.id,'speed','Treino de velocidade','Os seis treinos e o cronômetro original, sem sair da Central.','⏱'):
-  materialCard(m.id,'summary','Conteúdo resumido','Primeira leitura, bizus e 10 questões com correção imediata.','⚡')+
-  materialCard(m.id,'theory','Conteúdo completo','Teoria, unidades e exemplos resolvidos com resposta oculta.','📚')+
-  materialCard(m.id,'map','Mapa mental','Síntese visual com os ramos e conceitos do módulo.','🧠')+
-  materialCard(m.id,'sources','Questões e fontes','Banco FCC preservado, TEC e situação dos filtros QC.','✓');
+  materialCard(m.id,'theory','Aula','Teoria, exemplos resolvidos e revisão rápida com bizus.','📚')+
+  materialCard(m.id,'quiz','Questões','10 questões: clique na alternativa e veja a correção na hora.','✓')+
+  materialCard(m.id,'map','Mapa mental','Síntese visual com os ramos e conceitos do módulo.','🧠');
  const sub=m.id==='M01'?'Treino original preservado · cálculo rápido':m.eixo;
  return '<section class="cf-module ds-module bc-rlm-module'+(openState?' open':'')+'" data-rlm-module="'+m.id+'">'+
  '<button class="cf-module-head ds-module-head" type="button" aria-expanded="'+openState+'" onclick="return RlmNative.toggleModule(\''+m.id+'\')">'+
@@ -104,11 +103,11 @@ function renderMaster(){
  const done=list.filter(m=>isDone(m.id)).length;
  return '<div class="bc-rlm-course" data-central-native-rlm="1"><section class="bc-rlm-intro ds-course-intro">'+
  '<span class="bc-rlm-kicker">Analista Judiciário · TJCE 2026 · FCC</span>'+
- '<h3>Raciocínio Lógico-Matemático</h3><p>Teoria completa, resumo com bizus, questões comentadas e mapas mentais — agora nos mesmos cartões expansíveis das demais disciplinas.</p>'+
+ '<h3>Raciocínio Lógico-Matemático</h3><p>Aula, questões comentadas e mapa mental em cada módulo, com os filtros de questões do TEC e do QC.</p>'+
  '<div class="bc-rlm-stats"><span class="bc-rlm-stat"><strong>15</strong> módulos</span>'+
  '<span class="bc-rlm-stat"><strong>14</strong> apostilas</span><span class="bc-rlm-stat"><strong>140</strong> questões autorais</span>'+
- '<span class="bc-rlm-stat"><strong>200</strong> FCC legadas</span><span class="bc-rlm-stat"><strong>'+done+'/15</strong> módulos concluídos</span></div>'+
- '<div class="bc-rlm-warn">Questões FCC antigas: gabaritos e comentários pendentes de auditoria. Filtros novos do QConcursos ainda não verificados.</div></section>'+
+ '<span class="bc-rlm-stat"><strong>'+done+'/15</strong> módulos concluídos</span></div>'+
+ '</section>'+
  groups.map(([name,arr])=>'<section class="bc-rlm-group"><h4>'+esc(name)+'</h4><div class="cf-modules bc-rlm-modules">'+arr.map(card).join('')+'</div></section>').join('')+
  '<section class="bc-rlm-group"><h4>Revisão geral</h4><div class="cf-modules bc-rlm-modules">'+reviewCard()+'</div></section></div>';
 }
@@ -124,7 +123,7 @@ function open(id='M02',stage='theory'){
  if(!m)return false;
  close(false);
  lastFocus=document.activeElement;
- active={id,stage:id==='M01'?'speed':id==='RF'?'review':stage};
+ active={id,stage:id==='M01'?'speed':id==='RF'?'review':normStage(stage)};
  if(g.CentralStudyNavigation?.rememberReturn)try{g.CentralStudyNavigation.rememberReturn()}catch(_){}
  const wrapper=document.createElement('div');wrapper.id=OVER;wrapper.className='bc-rlm-overlay bc-native-reader-overlay';
  wrapper.setAttribute('role','presentation');
@@ -142,16 +141,16 @@ function close(restoreFocus=true){
  active=null;
  if(restoreFocus&&lastFocus&&lastFocus.isConnected)lastFocus.focus();
 }
+function normStage(stage){return stage==='summary'||stage==='sources'?'quiz':stage;}
 function move(id){return open(id,id==='RF'?'review':id==='M01'?'speed':'theory');}
 /* Leitor RLM com o mesmo shell, índice lateral e ferramentas do leitor nativo de Penal. */
 function stageLabel(stage){
- return ({speed:'Treino de velocidade',theory:'Conteúdo completo',summary:'Conteúdo resumido',map:'Mapa mental',sources:'Questões e fontes',review:'Revisão final'})[stage]||'Material';
+ return ({speed:'Treino de velocidade',theory:'Aula',quiz:'Questões',map:'Mapa mental',review:'Revisão final'})[stage]||'Material';
 }
 function stageSections(stage){
- return stage==='theory'?'.bc-rlm-lesson':
- stage==='summary'?'.bc-rlm-tip,.bc-rlm-quiz':
+ return stage==='theory'?'.bc-rlm-lesson,.bc-rlm-tips-block':
+ stage==='quiz'?'.bc-rlm-quiz':
  stage==='map'?'.bc-rlm-map-node':
- stage==='sources'?'.bc-rlm-line,.bc-rlm-quiz':
  stage==='review'?'.bc-rlm-quiz':'';
 }
 function setupToc(stage){
@@ -162,7 +161,7 @@ function setupToc(stage){
  (nodes.length?nodes.map((node,i)=>{
   node.dataset.rlmJump=String(i);
   const heading=node.querySelector('h3,b,.bc-rlm-quiz-meta')?.textContent?.trim()||
-   ((stage==='summary'?'Dica ': 'Parte ')+(i+1));
+   ((stage==='quiz'?'Questão ': 'Parte ')+(i+1));
   return '<button type="button" data-rlm-jump="'+i+'" onclick="RlmNative.jump('+i+')">'+esc(heading.slice(0,105))+'</button>';
  }).join(''):'<div class="bc-rlm-index-hint">Abra o material e utilize as ferramentas de leitura.</div>');
 }
@@ -219,7 +218,7 @@ function renderOverlay(){
  const stage=active.stage;
  const previous=el('bcRlmScroll'),oldY=previous?.scrollTop||0;
  const links=active.id==='M01'?[]:active.id==='RF'?[]:[
- ['summary','Resumo'],['theory','Completo'],['map','Mapa mental'],['sources','Questões FCC / TEC / QC']
+ ['theory','Aula'],['quiz','Questões'],['map','Mapa mental']
  ];
  const actions=links.map(([kind,label])=>'<button type="button" class="bc-rlm-tool-tab'+(kind===stage?' active':'')+
  '" aria-pressed="'+(kind===stage)+'" onclick="RlmNative.tab(\''+kind+'\')">'+label+'</button>').join('');
@@ -262,14 +261,15 @@ function updateReadBar(){
 
 function tab(stage){
  if(!active)return;
- if(!['theory','summary','map','sources','review','speed'].includes(stage))return;
+ stage=normStage(stage);
+ if(!['theory','quiz','map','review','speed'].includes(stage))return;
  active.stage=stage;renderOverlay();el('bcRlmScroll').scrollTop=0;
 }
 function next(){
  if(!active)return;
  if(active.id==='M01')return open('M02','theory');
  if(active.id==='RF')return close();
- const order=['theory','summary','map','sources'],i=order.indexOf(active.stage);
+ const order=['theory','quiz','map'],i=order.indexOf(active.stage);
  if(i<order.length-1)return tab(order[i+1]);
  const pos=manifest().findIndex(x=>x.id===active.id);
  return pos>=manifest().length-1?open('RF'):open(manifest()[pos+1].id);
@@ -280,23 +280,21 @@ function bodyFor(m,stage){
  const d=lesson(m.id);
  if(!d)return '<div class="bc-rlm-warn">Os dados deste módulo ainda não foram carregados. Volte à Central e atualize a página.</div>';
  if(stage==='theory')return theory(m,d);
- if(stage==='summary')return summary(m,d);
+ if(stage==='quiz')return quiz(m,d);
  if(stage==='map')return mindmap(m,d);
- if(stage==='sources')return sources(m);
  return theory(m,d);
 }
 function title(txt,desc){return '<span class="bc-rlm-kicker">Base Completa · edição de estudos</span><h2>'+esc(txt)+'</h2><p class="bc-rlm-article-lead">'+esc(desc)+'</p>'}
 function theory(m,d){
- return title('Teoria completa','Conceitos, métodos de resolução, exemplos guiados e recursos visuais. Abra as resoluções depois de tentar cada exemplo e use o índice para retomar um capítulo.')+
+ return title('Aula','Conceitos, métodos de resolução, exemplos guiados e recursos visuais. Abra as resoluções depois de tentar cada exemplo e use o índice para retomar um capítulo.')+
  d.theory.map((ch,i)=>'<section class="bc-rlm-lesson"><h3>'+String(i+1).padStart(2,'0')+' · '+esc(ch.title)+'</h3>'+
  (g.RlmTheoryResources?g.RlmTheoryResources.chapter(ch):ch.paragraphs.map(p=>'<p>'+esc(p)+'</p>').join('')+'<details class="bc-rlm-example"><summary>Ver exemplo resolvido</summary><p>'+esc(ch.example)+'</p></details>')+'</section>').join('')+
+ '<section class="bc-rlm-tips-block"><h3>Revisão rápida · bizus</h3><div class="bc-rlm-tips">'+d.summary.map((q,i)=>'<section class="bc-rlm-tip"><b>'+String(i+1).padStart(2,'0')+' · '+esc(q.title)+'</b><p>'+esc(q.text)+'</p><em><strong>BIZU: </strong>'+esc(q.bizu)+'</em></section>').join('')+'</div></section>'+
  (g.RlmTheoryResources?.references(d)||'')+
- '<div class="bc-rlm-module-next"><button class="bc-rlm-btn primary" onclick="RlmNative.tab(\'summary\')">Resumo com dicas e prática →</button></div>';
+ '<div class="bc-rlm-module-next"><button class="bc-rlm-btn primary" onclick="RlmNative.tab(\'quiz\')">Resolver as questões →</button></div>';
 }
-function summary(m,d){
- return title('Resumo com dicas e bizus','Revisão aplicada ao edital. Após o resumo, responda às 10 questões autorais em ordem de dificuldade; cada escolha revela o gabarito e a explicação.')+
- '<div class="bc-rlm-tips">'+d.summary.map((q,i)=>'<section class="bc-rlm-tip"><b>'+String(i+1).padStart(2,'0')+' · '+esc(q.title)+'</b><p>'+esc(q.text)+'</p><em><strong>BIZU: </strong>'+esc(q.bizu)+'</em></section>').join('')+'</div>'+
- '<h2>Prática progressiva</h2><p class="bc-rlm-article-lead">3 fáceis • 4 médias • 3 difíceis. Questões autorais, não retiradas de provas FCC.</p>'+
+function quiz(m,d){
+ return title('Questões','3 fáceis • 4 médias • 3 difíceis. Clique na alternativa: o gabarito e a explicação aparecem na hora.')+
  '<div class="bc-rlm-scores" id="bcRlmScore">'+scoreHtml(m.id)+'</div>'+
  d.questions.map((q,i)=>cardQuestion(m.id,q,i)).join('')+
  '<div class="bc-rlm-module-next"><button class="bc-rlm-btn primary" onclick="RlmNative.tab(\'map\')">Abrir mapa mental →</button></div>';
@@ -330,55 +328,7 @@ function mindmap(m,d){
  '<div class="bc-rlm-map"><div class="bc-rlm-map-center">'+esc(m.titulo)+'</div>'+
  '<div class="bc-rlm-map-grid">'+d.mindmap.map(node=>'<section class="bc-rlm-map-node"><b>'+esc(node.name)+'</b><ul>'+
  node.branches.map(b=>'<li>'+esc(b)+'</li>').join('')+'</ul></section>').join('')+'</div></div>'+
- '<div class="bc-rlm-module-next"><button class="bc-rlm-btn primary" onclick="RlmNative.tab(\'sources\')">Questões reais e filtros →</button></div>';
-}
-const TEC={
- 'rlm-01':['Proposições e conectivos','https://www.tecconcursos.com.br/questoes/cadernos/101791585'],
- 'rlm-02':['Equivalências, negações e álgebra','https://www.tecconcursos.com.br/questoes/cadernos/101888528'],
- 'rlm-03':['Argumentação e primeira ordem','https://www.tecconcursos.com.br/questoes/cadernos/101888612'],
- 'rlm-04':['Associação e verdade ou mentira','https://www.tecconcursos.com.br/questoes/cadernos/101889213'],
- 'rlm-05':['Sequências e orientação','https://www.tecconcursos.com.br/questoes/cadernos/101889314'],
- 'rlm-06':['Problemas especiais de lógica','https://www.tecconcursos.com.br/questoes/cadernos/101889431'],
- 'mat-01':['Conjuntos','https://www.tecconcursos.com.br/questoes/cadernos/101890229'],
- 'mat-02':['Números e operações','https://www.tecconcursos.com.br/questoes/cadernos/101890343'],
- 'mat-04':['Proporcionalidade e porcentagem','https://www.tecconcursos.com.br/questoes/cadernos/101890577'],
- 'mat-05':['Gráficos, medidas e moeda','https://www.tecconcursos.com.br/questoes/cadernos/101890621']
-};
-function legacy(id){return (g.RLM_FCC_LEGADO||[]).filter(q=>q.module===id);}
-function realCard(q){
- const key=q.id,area='fcc-'+q.module,record=answers(area),choice=record[key],has=choice!==undefined;
- const opts=Object.entries(q.options||{}).filter(([k])=>LETTERS.includes(k)).map(([letter,value])=>'<button class="bc-rlm-option'+(has?(letter===q.answer?' right':letter===choice?' wrong':''):'')+'" '+(has||q.visualRequired?'disabled':'')+' onclick="RlmNative.answerReal(\''+q.module+'\',\''+esc(key)+'\',\''+letter+'\')"><b>'+letter+'</b><span>'+esc(value)+'</span></button>').join('');
- const source=q.url&&/^https:\/\/www\.tecconcursos\.com\.br\/questoes\/\d+$/.test(q.url)?'<a href="'+esc(q.url)+'" target="_blank" rel="noopener noreferrer" class="bc-rlm-btn">Ver no TEC ↗</a>':'';
- return '<section class="bc-rlm-quiz"><div class="bc-rlm-quiz-meta">FCC · questão legado · '+esc(q.source)+'</div><h3>'+esc(q.prompt)+'</h3>'+
- (q.visualRequired?'<div class="bc-rlm-warn">Questão depende de imagem do PDF original. Alternativas bloqueadas até conferência da figura.</div>':'<div class="bc-rlm-options">'+opts+'</div>')+
- (has?'<div class="bc-rlm-feedback'+(choice===q.answer?'':' wrong')+'"><b>'+(choice===q.answer?'Conforme gabarito legado: acertou':'Conforme gabarito legado: '+esc(q.answer))+'</b>Gabarito do acervo antigo; ainda sem comentário individual auditado. Para praticar com explicação imediata, use a aba Resumo e prática.</div>':'')+
- '<p style="font-size:11px;color:#71859a;margin-top:10px">Página de origem: '+esc(q.page)+' · '+esc(q.topic)+'</p>'+source+'</section>';
-}
-function realPage(id){
- const list=legacy(id),total=list.length,size=5,max=Math.max(1,Math.ceil(total/size)),page=Math.max(0,Math.min(pageByModule[id]||0,max-1));
- pageByModule[id]=page;
- return list.slice(page*size,(page+1)*size).map(realCard).join('')+
- '<div class="bc-rlm-module-next"><button class="bc-rlm-btn" '+(page===0?'disabled':'')+' onclick="RlmNative.fccStep(-1)">← Anteriores</button><span style="font-size:12px;color:#70869a">Página '+(page+1)+'/'+max+'</span><button class="bc-rlm-btn" '+(page+1>=max?'disabled':'')+' onclick="RlmNative.fccStep(1)">Próximas →</button></div>';
-}
-function fccStep(step){
- if(!active)return;const id=active.id;
- pageByModule[id]=Math.max(0,(pageByModule[id]||0)+step);
- const target=el('bcRlmRealBank');if(target){target.innerHTML=realPage(id);target.scrollIntoView({behavior:'smooth',block:'nearest'})}
-}
-function answerReal(id,questionId,letter){
- const q=legacy(id).find(x=>x.id===questionId);if(!q||q.visualRequired||!LETTERS.includes(letter))return;
- const area='fcc-'+id,rec=answers(area);if(rec[questionId]!==undefined)return;
- rec[questionId]=letter;saveAnswers(area,rec);
- const parent=el('bcRlmRealBank');if(parent)parent.innerHTML=realPage(id);
-}
-function sources(m){
- const candidates=m.tecCandidatos||[],items=legacy(m.id);
- return title('Questões e filtros','Questões FCC antigas separadas das autorais. Os cadernos TEC são referências existentes na Central, mas a adequação de seus filtros ao novo módulo precisa ser revisada.')+
- '<div class="bc-rlm-line"><div><b>QConcursos</b><small>Filtro de RLM ainda não cadastrado nem validado</small></div><span class="bc-rlm-pill">Pendente</span></div>'+
- '<div class="bc-rlm-line"><div><b>TEC Concursos</b><small>'+esc(candidates.length?candidates.join(' · '):'Sem correspondência específica confirmada')+'</small></div><span class="bc-rlm-pill">Confirmar assunto</span></div>'+
- '<div class="bc-rlm-module-next">'+candidates.filter(id=>TEC[id]).map(id=>'<a class="bc-rlm-btn" href="'+esc(TEC[id][1])+'" target="_blank" rel="noopener noreferrer">TEC '+esc(id)+' ↗</a>').join('')+'</div>'+
- '<div class="bc-rlm-line"><div><b>Banco FCC da Central antiga</b><small>'+items.length+' questões originais recuperadas; comentários individuais ainda pendentes</small></div><span class="bc-rlm-pill">Não auditado</span></div>'+
- (items.length?'<div class="bc-rlm-warn">Gabaritos importados sem certificação independente. Três questões dependem de imagem do PDF-fonte e estão bloqueadas até que as figuras sejam verificadas.</div><div id="bcRlmRealBank">'+realPage(m.id)+'</div>':'<div class="bc-rlm-warn">Ainda não há questão FCC original no banco local para este assunto. Use a prática autoral comentada no resumo.</div>');
+ '<div class="bc-rlm-module-next"><button class="bc-rlm-btn primary" onclick="RlmNative.next()">Próximo módulo →</button></div>';
 }
 const reviewSpec=[['M02',4],['M03',4],['M04',4],['M05',4],['M06',4],['M07',4],['M08',4],['M09',4],['M10',4],['M11',4],['M12',4],['M13',4],['M14',4],['M15',4],['M03',7],['M04',7],['M05',7],['M11',7],['M12',7],['M14',7]];
 function reviewScore(){
@@ -421,7 +371,7 @@ function onKey(ev){
  }
 }
 document.addEventListener('keydown',onKey,true);
-g.RlmNative={renderMaster,open,close,tab,next,move,mark,stats,answer,answerReal,fccStep,speedReady,oldTarget,toggleModule,jump,search,setFont,top};
+g.RlmNative={renderMaster,open,close,tab,next,move,mark,stats,answer,speedReady,oldTarget,toggleModule,jump,search,setFont,top};
 try{
  const prev=g.openEmbeddedTool;
  if(typeof prev==='function'){

@@ -49,6 +49,46 @@ function focusedPractice(article,records,mode,id){
  return {count:cards.length,limit:config.limit};
 }
 
+
+/* Organização do índice e das respostas (sem alterar o texto das aulas). */
+const PT_MAIN=/^(?:\d+\.\s*)?(?:CAMADA \d|PARTE \d|M[ée]todo-mestre|Antes de come[cç]ar|Voc[eê] precisa saber antes|O que voc[eê] (?:vai aprender|precisa saber antes)|Ao terminar este m[oó]dulo|SE VOC[EÊ] N[AÃ]O ENTENDEU|Voc[eê] precisa lembrar|Confus[õo]es que voc[eê]|Revis[aã]o ativa|Mini teste|Teste (?:de sa[ií]da|final)|Fechamento do M|FIM DO CICLO|GABARITO SINT|MAPA DE RETORNO|Como usar)/i;
+const PT_SUB=/^(?:\d+(?:\.\d+)?\.\s|AULA\s\d|M\d\d — )/i;
+function outline(root){
+ return [...root.querySelectorAll('h2')].map(h=>{
+  if(h.closest('[aria-hidden="true"],[data-pta-source-hidden="true"]')||h.classList.contains('pt-next-module'))return null;
+  const text=h.textContent.replace(/\s+/g,' ').trim();
+  if(!text||/^(?:quest[aã]o\s*)?\d+$/i.test(text))return null;
+  const level=PT_MAIN.test(text)?1:(h.classList.contains('pt-doc-h1')||PT_SUB.test(text))?2:0;
+  return level?{h,level,text}:null;
+ }).filter(Boolean);
+}
+function revealBox(label,nodes){
+ const box=document.createElement('details');box.className='pt-reveal';
+ const sum=document.createElement('summary');sum.textContent=label;box.appendChild(sum);
+ nodes[0].before(box);nodes.forEach(n=>box.appendChild(n));return box;
+}
+function hideLooseAnswers(article){
+ const free=n=>!n.closest('.pta-question,details,[aria-hidden="true"],[data-pta-source-hidden="true"]');
+ [...article.querySelectorAll('h2,h3,h4')].filter(h=>free(h)&&/^respostas?\s+(?:esperadas|essenciais)\b/i.test(h.textContent.trim())).forEach(h=>{
+  const rank=Number(h.tagName[1]),nodes=[];
+  for(let n=h.nextElementSibling;n;n=n.nextElementSibling){if(/^H[1-6]$/.test(n.tagName)&&Number(n.tagName[1])<=rank)break;if(n.matches('.pt-module-finish'))break;nodes.push(n)}
+  if(nodes.length)revealBox('Ver respostas',nodes);
+ });
+ [...article.querySelectorAll('p')].filter(p=>free(p)&&/^respostas?(?:\s+esperadas)?\s*:/i.test(p.textContent.trim())).forEach(p=>{
+  const rest=p.textContent.trim().replace(/^respostas?(?:\s+esperadas)?\s*:/i,'').trim();
+  const nodes=[p],next=p.nextElementSibling;
+  if(!rest&&next&&!/^H[1-6]$/.test(next.tagName)&&!next.matches('.pt-module-finish,hr'))nodes.push(next);
+  revealBox('Ver resposta',nodes);
+ });
+}
+const PT_ORG_CSS='.pt-native-reader .bc-native-article h2.pt-doc-h1{font-size:1.45em;margin-top:1.6em;padding-bottom:.25em;border-bottom:1px solid var(--bc-color-border)}'+
+ '.pt-native-reader .bc-native-article h2:not(.pt-doc-h1):not(.pt-next-module){font-size:1.12em;margin-top:1.2em}'+
+ '.pt-native-reader h2.pt-next-module{font-size:1em;margin:18px 0;padding:12px 14px;border:1px solid var(--bc-color-border);border-radius:12px;background:var(--bc-color-surface)}'+
+ '.pt-native-reader h2.pt-next-module::before{content:"Próximo módulo";display:block;font-size:.72em;letter-spacing:.06em;text-transform:uppercase;color:var(--bc-color-muted,#7a716a);margin-bottom:2px}'+
+ '.pt-native-reader .bc-native-toc button.pt-toc-l1{font-weight:800}.pt-native-reader .bc-native-toc button.pt-toc-l2{padding-left:24px;font-size:.92em}'+
+ '.pt-native-reader details.pt-reveal{margin:10px 0 14px;padding:6px 12px;border:1px dashed var(--bc-color-border);border-radius:10px}'+
+ '.pt-native-reader details.pt-reveal>summary{cursor:pointer;font-weight:700;font-size:.9em}.pt-native-reader details.pt-reveal[open]>summary{margin-bottom:6px}';
+function orgStyle(){if(document.getElementById('pt-org-style'))return;const st=document.createElement('style');st.id='pt-org-style';st.textContent=PT_ORG_CSS;document.head.appendChild(st)}
 function prepare(markup){
  const template=document.createElement('template');template.innerHTML=markup;
  template.content.querySelectorAll('script').forEach(el=>el.remove());
@@ -73,14 +113,18 @@ async function open(id,mode='complete'){
  if(practiceMode)overlay.dataset.ptPractice=mode;
  if(mode==='mindmap'){
   const root={label:module.title,children:[],expanded:true},stack=[{level:1,node:root}];
-  headings.forEach(h=>{const level=Number(h.tagName.slice(1));while(stack.length>1&&stack.at(-1).level>=level)stack.pop();const node={label:h.textContent.trim(),children:[]};stack.at(-1).node.children.push(node);stack.push({level,node})});
+  outline(template.content).forEach(({level,text})=>{while(stack.length>1&&stack.at(-1).level>=level)stack.pop();const node={label:text,children:[]};stack.at(-1).node.children.push(node);stack.push({level,node})});
   close();global.BaseMindMap.register('pt',id,root);global.BaseMindMap.open('pt',id);return;
  }
  const shell=overlay.querySelector('.bc-native-reader');overlay.querySelector('.pt-native-loading').remove();
- shell.insertAdjacentHTML('beforeend','<div class="bc-native-reader-tools"><input type="search" placeholder="Buscar neste material…" aria-label="Buscar no conteúdo"><button type="button" data-pt-font="-1" aria-label="Diminuir fonte">A−</button><button type="button" data-pt-font="1" aria-label="Aumentar fonte">A+</button><button type="button" class="primary" data-pt-top>Ir ao topo</button></div><div class="bc-native-reader-body"><nav class="bc-native-toc" aria-label="Índice do material"><div class="bc-native-toc-label">Índice do módulo</div>'+(practiceMode?'':headings.map(h=>'<button type="button" data-pt-jump="'+h.id+'">'+esc(h.textContent)+'</button>').join(''))+'</nav><main class="bc-native-scroll"><div class="bc-native-article"></div></main></div>');
+ shell.insertAdjacentHTML('beforeend','<div class="bc-native-reader-tools"><input type="search" placeholder="Buscar neste material…" aria-label="Buscar no conteúdo"><button type="button" data-pt-font="-1" aria-label="Diminuir fonte">A−</button><button type="button" data-pt-font="1" aria-label="Aumentar fonte">A+</button><button type="button" class="primary" data-pt-top>Ir ao topo</button></div><div class="bc-native-reader-body"><nav class="bc-native-toc" aria-label="Índice do material"><div class="bc-native-toc-label">Índice do módulo</div></nav><main class="bc-native-scroll"><div class="bc-native-article"></div></main></div>');
  const article=overlay.querySelector('.bc-native-article');article.appendChild(template.content);
  const exerciseRecords=global.BasePortugueseActivities?.enhance(article,{moduleId:id})||[];
  if(practiceMode)focusedPractice(article,exerciseRecords,mode,id);
+ else{
+  hideLooseAnswers(article);orgStyle();
+  overlay.querySelector('.bc-native-toc').insertAdjacentHTML('beforeend',outline(article).map(x=>'<button type="button" class="pt-toc-l'+x.level+'" data-pt-jump="'+x.h.id+'">'+esc(x.text)+'</button>').join(''));
+ }
  const scroll=overlay.querySelector('.bc-native-scroll');active={id,scroll};
  let size=Math.max(85,Math.min(180,Number(localStorage.getItem('central-v6:reading-font-size'))||100));
  const applyFont=()=>article.style.fontSize=size/100+'em';applyFont();
