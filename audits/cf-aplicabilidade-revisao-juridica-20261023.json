@@ -1,0 +1,248 @@
+{
+ "data": "2026-10-23",
+ "fonte": "CF/88, texto compilado do Planalto (arquivo fornecido pelo responsável); redação vigente selecionada dispositivo a dispositivo",
+ "escopo": "tools/decorando-data-cf.js — subtópico Aplicabilidade, interpretação, vigência e eficácia",
+ "total": 30,
+ "itens": [
+  {
+   "id": "cf-autoral-inedita-app-015",
+   "dispositivo": "Autoral • Aplicação imediata dos direitos fundamentais",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-inedita-app-027",
+   "dispositivo": "Autoral • Classificação da CF/88",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-inedita-app-011",
+   "dispositivo": "Autoral • Concordância prática",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-inedita-app-028",
+   "dispositivo": "Autoral • Efeito integrador",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-inedita-app-004",
+   "dispositivo": "Autoral • Efetividade",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-inedita-app-016",
+   "dispositivo": "Autoral • Eficácia contida — exemplo estrutural",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-inedita-app-002",
+   "dispositivo": "Autoral • Eficácia limitada",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-inedita-app-001",
+   "dispositivo": "Autoral • Eficácia plena, contida e limitada",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-inedita-app-012",
+   "dispositivo": "Autoral • Força normativa da Constituição",
+   "gabarito": "E",
+   "status": "pendente",
+   "base": "gabarito oficial possivelmente divergente do texto ou da jurisprudência",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-inedita-app-020",
+   "dispositivo": "Autoral • Fundamentos da República",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-inedita-app-025",
+   "dispositivo": "Autoral • Integração latino-americana",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-inedita-app-008",
+   "dispositivo": "Autoral • Interpretação conforme",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-inedita-app-014",
+   "dispositivo": "Autoral • Limites da mutação constitucional",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-inedita-app-010",
+   "dispositivo": "Autoral • Máxima efetividade",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-inedita-app-013",
+   "dispositivo": "Autoral • Mutação constitucional",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-inedita-app-006",
+   "dispositivo": "Autoral • Não recepção",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-inedita-app-017",
+   "dispositivo": "Autoral • Normas programáticas",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-inedita-app-023",
+   "dispositivo": "Autoral • Objetivos fundamentais",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-inedita-app-021",
+   "dispositivo": "Autoral • Poder popular",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-inedita-app-019",
+   "dispositivo": "Autoral • Preâmbulo",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-inedita-app-029",
+   "dispositivo": "Autoral • Presunção de constitucionalidade",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-inedita-app-005",
+   "dispositivo": "Autoral • Recepção",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-inedita-app-024",
+   "dispositivo": "Autoral • Relações internacionais",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-inedita-app-018",
+   "dispositivo": "Autoral • Repristinação",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-inedita-app-007",
+   "dispositivo": "Autoral • Reserva de plenário e direito pré-constitucional",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-inedita-app-022",
+   "dispositivo": "Autoral • Separação dos Poderes",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-inedita-app-030",
+   "dispositivo": "Autoral • Síntese — níveis de eficácia",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-inedita-app-026",
+   "dispositivo": "Autoral • Supremacia e rigidez",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-inedita-app-009",
+   "dispositivo": "Autoral • Unidade da Constituição",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-inedita-app-003",
+   "dispositivo": "Autoral • Validade, vigência e eficácia",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "autoral"
+  }
+ ]
+}
