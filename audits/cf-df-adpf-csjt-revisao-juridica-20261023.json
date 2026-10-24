@@ -1,0 +1,264 @@
+{
+ "data": "2026-10-23",
+ "fonte": "CF/88, texto compilado do Planalto (arquivo fornecido pelo responsável); redação vigente selecionada dispositivo a dispositivo",
+ "escopo": "tools/decorando-data-cf.js — subtópico Distrito Federal e Territórios, ADPF e CSJT",
+ "total": 32,
+ "itens": [
+  {
+   "id": "cf-56f8428790de",
+   "dispositivo": "Art. 32, § 1º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-c878d4290610",
+   "dispositivo": "Art. 32, § 1º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-a96bf08b5eb3",
+   "dispositivo": "Art. 32, § 1º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional e jurisprudência/doutrina",
+   "origem": "real"
+  },
+  {
+   "id": "cf-6d595695c5b9",
+   "dispositivo": "Art. 32, § 1º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-378e54791819",
+   "dispositivo": "Art. 32, § 1º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-0b6a3c6f0873",
+   "dispositivo": "Art. 32, § 4º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-d8d459365882",
+   "dispositivo": "Art. 32, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-2e9e1902fe39",
+   "dispositivo": "Art. 32, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-058baf263554",
+   "dispositivo": "Art. 33, § 1º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-48785272cac2",
+   "dispositivo": "Art. 33, § 2º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-7233ba6f3c92",
+   "dispositivo": "Art. 33, § 2º, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-956a91860372",
+   "dispositivo": "Art. 33, § 3º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-98efa7733dc3",
+   "dispositivo": "Art. 33, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-0db6e391be6c",
+   "dispositivo": "Art. 33, CF",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-a4f28af05b66",
+   "dispositivo": "Art. 102, § 1º, CF",
+   "gabarito": "C",
+   "status": "certificado-parcial",
+   "base": "texto constitucional; norma infraconstitucional citada não conferida",
+   "origem": "real"
+  },
+  {
+   "id": "cf-eb1125022c5c",
+   "dispositivo": "Art. 102, § 1º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-a2abd9157710",
+   "dispositivo": "Art. 102, I, a, e § 1º, CF",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "real"
+  },
+  {
+   "id": "cf-fc30a2bcce15",
+   "dispositivo": "Art. 103, CF",
+   "gabarito": "C",
+   "status": "certificado-parcial",
+   "base": "texto constitucional; norma infraconstitucional citada não conferida",
+   "origem": "real"
+  },
+  {
+   "id": "cf-autoral-v212-m12-26",
+   "dispositivo": "Autoral • ADPF — efeitos e irrecorribilidade",
+   "gabarito": "E",
+   "status": "certificado-parcial",
+   "base": "texto constitucional; norma infraconstitucional citada não conferida",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-v212-m12-23",
+   "dispositivo": "Autoral • ADPF — legitimados",
+   "gabarito": "C",
+   "status": "certificado-parcial",
+   "base": "texto constitucional; norma infraconstitucional citada não conferida",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-v212-m12-24",
+   "dispositivo": "Autoral • ADPF — liminar",
+   "gabarito": "E",
+   "status": "certificado-parcial",
+   "base": "texto constitucional; norma infraconstitucional citada não conferida",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-v212-m12-27",
+   "dispositivo": "Autoral • ADPF — modulação",
+   "gabarito": "C",
+   "status": "certificado-parcial",
+   "base": "texto constitucional; norma infraconstitucional citada não conferida",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-v212-m12-21",
+   "dispositivo": "Autoral • ADPF — objeto e amplitude",
+   "gabarito": "C",
+   "status": "certificado-parcial",
+   "base": "texto constitucional; norma infraconstitucional citada não conferida",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-v212-m12-25",
+   "dispositivo": "Autoral • ADPF — quórum de presença",
+   "gabarito": "C",
+   "status": "certificado-parcial",
+   "base": "texto constitucional; norma infraconstitucional citada não conferida",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-v212-m12-22",
+   "dispositivo": "Autoral • ADPF — subsidiariedade",
+   "gabarito": "E",
+   "status": "certificado-parcial",
+   "base": "texto constitucional; norma infraconstitucional citada não conferida",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-inedita-w4-19",
+   "dispositivo": "Autoral • Art. 32 — Distrito Federal",
+   "gabarito": "E",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-inedita-w4-20",
+   "dispositivo": "Autoral • Art. 33 — Territórios Federais",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-v210-m10-27",
+   "dispositivo": "Autoral • CSJT — composição legal",
+   "gabarito": "E",
+   "status": "certificado-parcial",
+   "base": "texto constitucional; norma infraconstitucional citada não conferida",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-v210-m10-29",
+   "dispositivo": "Autoral • CSJT — controle de legalidade",
+   "gabarito": "E",
+   "status": "certificado-parcial",
+   "base": "texto constitucional; norma infraconstitucional citada não conferida",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-v210-m10-26",
+   "dispositivo": "Autoral • CSJT — fundamento constitucional",
+   "gabarito": "C",
+   "status": "certificado",
+   "base": "texto constitucional",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-v210-m10-30",
+   "dispositivo": "Autoral • CSJT — poder disciplinar",
+   "gabarito": "C",
+   "status": "certificado-parcial",
+   "base": "texto constitucional; norma infraconstitucional citada não conferida",
+   "origem": "autoral"
+  },
+  {
+   "id": "cf-autoral-v210-m10-28",
+   "dispositivo": "Autoral • CSJT — Presidência",
+   "gabarito": "C",
+   "status": "certificado-parcial",
+   "base": "texto constitucional; norma infraconstitucional citada não conferida",
+   "origem": "autoral"
+  }
+ ]
+}
