@@ -16,7 +16,7 @@ test('tabela preserva os totais e os registros QC catalogados', () => {
   assert.equal(table.counts.penal.linked, 64);
   assert.equal(table.counts.processualPenal.linked, 74);
   assert.equal(table.counts.administrativo.linked, 98);
-  assert.equal(table.counts.totalValidatedPublicLinks, 393);
+  assert.equal(table.counts.totalValidatedPublicLinks, 357);
   assert.equal(table.counts.totalPending, 0);
   assert.deepEqual(JSON.parse(JSON.stringify(context.window.QC_CENTRAL_SHARING_LINKS)), table);
 });
@@ -42,7 +42,7 @@ test('cada link catalogado tem ID, quantidade e formato de URL QC; pendências n
       assert.equal(item.public, false);
     }
   }
-  assert.equal(keys.size, 393);
+  assert.equal(keys.size, 357);
 });
 
 test('títulos dos módulos usam texto íntegro do registro geral correspondente', () => {
@@ -70,8 +70,8 @@ test('integração mantém os painéis TEC e QConcursos separados e responsivos'
   assert.match(ui, /data-cpp-native-module/);
   assert.match(admUi, /ADM_SHARING_LINKS/);
   assert.match(admUi, /sharingPanel\(uid\)/);
-  assert.match(central, /content\/qc-sharing-links\.js\?v=20261020qcpend0p1/);
-  assert.match(central, /content\/qc-notebook-catalog\.js\?v=20261020qcpend0p1/);
+  assert.match(central, /content\/qc-sharing-links\.js\?v=20261023-remove-labor-disciplines-v1/);
+  assert.match(central, /content\/qc-notebook-catalog\.js\?v=20261023-remove-labor-disciplines-v1/);
   assert.match(central, /ui\/qc-sharing-links\.js\?v=20261020qcpend0p1/);
 });
 
@@ -112,8 +112,8 @@ test('cadernos validados dos módulos auditados ficam visíveis na Central de Qu
   assert.ok(table.items.some((x) => x.disciplineKey === 'penal' && x.code === 'M14' && x.id === '15350670' && x.quantity === 1 && x.status === 'VALIDADO'));
   assert.ok(table.items.some((x) => x.disciplineKey === 'penal' && x.code === 'M17.3' && x.id === '15351070' && x.quantity === 3 && x.status === 'VALIDADO'));
   for (const [disciplineKey, expected] of Object.entries({
-    civil: 61, portugues: 27, constitucional: 19, trabalho: 18,
-    'processual-trabalho': 18, rlm: 14
+    civil: 61, portugues: 27, constitucional: 19, trabalho: 0,
+    'processual-trabalho': 0, rlm: 14
   })) {
     assert.equal(table.items.filter(x => x.disciplineKey === disciplineKey && x.status === 'VALIDADO').length, expected);
   }
@@ -126,3 +126,4 @@ test('Penal M13.4 finanças públicas is validated and public', () => {
   assert.equal(item.status, 'VALIDADO');
   assert.equal(item.public, true);
 });
+

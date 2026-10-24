@@ -6,11 +6,11 @@ import {leiRuntime} from '../scripts/lei-em-dia-runtime.mjs';
 const root=new URL('../',import.meta.url),read=p=>fs.readFileSync(new URL(p,root),'utf8');
 const context=leiRuntime(root),data=vm.runInContext('DATA',context),index=vm.runInContext('CENTRAL_LAW_MODULES',context);
 const report=JSON.parse(read('audits/lei-em-dia-sincronizacao-20261009.json'));
-const allModules=[...index.modules,...index.complement],expected={cf:15,adm:20,civil:15,cpc:20,penal:17,cpp:22,trabalho:18,ptrabalho:11};
+const allModules=[...index.modules,...index.complement],expected={cf:15,adm:20,civil:15,cpc:20,penal:17,cpp:22};
 const asJSON=x=>JSON.parse(JSON.stringify(x));
-test('138 módulos centrais e lote jurídico aprovado correspondem à matriz corrente',()=>{
+test('109 módulos centrais e lote jurídico aprovado correspondem à matriz corrente',()=>{
  const approved=vm.runInContext('DATA_LED_APPROVED',context);
- assert.equal(data.length,12015+approved.length);assert.equal(index.modules.length,138);assert.equal(new Set(data.map(q=>q.id)).size,data.length);
+ assert.equal(data.length,11806+approved.length);assert.equal(index.modules.length,109);assert.equal(new Set(data.map(q=>q.id)).size,data.length);
  assert.ok(approved.every(q=>q.id.startsWith('LED-')&&q.origin==='authorial'&&q.question?.source?.startsWith('https://')));
  assert.equal(!!vm.runInContext('DISCIPLINES.consumidor',context),approved.some(q=>q.discipline==='consumidor'));
  for(const [d,n] of Object.entries(expected))assert.equal(index.modules.filter(m=>m.discipline===d).length,n);
@@ -22,7 +22,7 @@ test('138 módulos centrais e lote jurídico aprovado correspondem à matriz cor
   }
  }
  const penal=index.modules.filter(m=>m.discipline==='penal');assert.equal(penal.find(m=>m.number===3).title,'Teoria do Crime');assert.equal(penal.find(m=>m.number===14).title,'Abuso de Autoridade');
- assert.equal(new Set(index.modules.map(m=>m.id)).size,138);
+ assert.equal(new Set(index.modules.map(m=>m.id)).size,109);
  for(const q of approved.filter(q=>q.topicId==='led-cf-cf88')){
   const article=Number(q.number.match(/\bArt\.\s*(\d+)/)?.[1]);
   const n=article<=192?13:article<=224?14:15;
@@ -36,7 +36,7 @@ test('nenhuma questão desaparece ou cruza de disciplina nos vínculos',()=>{
   for(const id of m.questionIds){assert.equal(byId.get(id)?.discipline,m.discipline,id);covered.add(id);}
  }
  assert.equal(covered.size,data.length);
- for(const m of report.modules){
+ for(const m of report.modules.filter(m=>expected[m.discipline])){
   const ids=index.modules.find(x=>x.id===m.id).questionIds;
   assert.equal(m.questions,ids.filter(id=>!id.startsWith('LED-')).length,m.id);
  }
@@ -61,17 +61,15 @@ test('recortes jurídicos centrais não confundem módulos antigos com a numera�
   ['cpp-m03',q=>q.topicId==='cpp-lei-12830'],
   ['cpp-m12',q=>Number(q.number.match(/\d+/)?.[0])===155],
   ['cpc-m19',q=>q.topicId==='cpc-lei-12016'],
-  ['civil-m14',q=>q.topicId==='civ-lei-11804'],
-  ['trab-m18',q=>q.topicId==='trab-lei-7783'],
-  ['ptra-a07',q=>q.topicId==='ptrab-lei-6830']
+  ['civil-m14',q=>q.topicId==='civ-lei-11804']
  ]){vm.runInContext(`centralOpenModule(${JSON.stringify(id)},null,true)`,c);assert.ok(vm.runInContext('visible()',c).some(check),id);}
  vm.runInContext("centralOpenTopic('pen-m03',true)",c);assert.equal(vm.runInContext("[...ui.selectedModules][0]",c),'pen-m03');
  assert.ok(!vm.runInContext("qcOptions('topic').some(o=>/^Módulo /.test(o.label))",c));
 });
-test('rotas da Central preservam módulo e aliases de Trabalho',()=>{
+test('rotas da Central preservam os módulos mantidos',()=>{
  const source=read('index.html').match(/<script id="central-offline-folder-router-v6659">([\s\S]*?)<\/script>/)[1];
  const c=vm.createContext({URLSearchParams,window:{}});vm.runInContext(source,c);
- const cases=[['civil','civ-familia','civil'],['adm','adm-06-06-processo-administrativo-lei-9-784','adm'],['cpp','cpp-m03','cpp'],['trab','trab-m18','trabalho'],['ptra','ptra-a07','ptrabalho']];
+ const cases=[['civil','civ-familia','civil'],['adm','adm-06-06-processo-administrativo-lei-9-784','adm'],['cpp','cpp-m03','cpp']];
  for(const [d,m,normalized] of cases){
   const path=vm.runInContext(`centralToolPath('decorando',{discipline:${JSON.stringify(d)},module:${JSON.stringify(m)}})`,c),url=new URL(path,'https://example.test/');
   assert.equal(url.searchParams.get('module'),m);assert.equal(url.searchParams.get('discipline'),normalized);
@@ -80,7 +78,6 @@ test('rotas da Central preservam módulo e aliases de Trabalho',()=>{
  assert.ok(read('ui/adm-native-layer.js').includes("{discipline:'adm',module:uid}"));
  assert.ok(read('ui/cpp-native-study-v1.js').includes("module:'cpp-m'+String(n).padStart(2,'0')"));
  assert.ok(read('ui/current-courses.js').includes('Abrir questões deste módulo'));
- for(let n=1;n<=18;n++)assert.ok(read(`modules/trabalho/base-completa/m${String(n).padStart(2,'0')}.html`).includes(`module=trab-m${String(n).padStart(2,'0')}`));
 });
 test('filtro de módulo combina com leis, status e troca de disciplina sem vazar itens',()=>{
  const c=leiRuntime(root);
@@ -104,3 +101,5 @@ test('índice de progresso Civil e pacote offline acompanham a mesma matriz',()=
  const manifest=JSON.parse(read('central-offline-files-v66172.json'));assert.ok(manifest.files.includes('/tools/decorando-data-modulos.js?v=20261024rm2'));
  for(const p of manifest.files){const path=p.split('?')[0].replace(/^\//,'');assert.ok(fs.existsSync(new URL(path,root)),path);}
 });
+
+

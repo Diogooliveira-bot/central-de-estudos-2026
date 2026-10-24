@@ -1,5 +1,5 @@
 /* Base Completa — PWA autenticado e offline por sessão verificada. */
-var CACHE='central-20261022-cf-m08-m15-apostilas-v1';
+var CACHE='central-20261023-remove-labor-disciplines-v1';
 var AUTH_CACHE='central-auth-session-v1';
 var AUTH_KEY='/__bc_offline_auth__';
 var AUTH_TTL_MS=72*60*60*1000;
@@ -186,3 +186,4 @@ self.addEventListener('message',function(event){
   if(event.data&&event.data.type==='RESUME_OFFLINE'){pauseOfflineUntil=0;return}
   if(event.data&&event.data.type==='PREPARE_OFFLINE')event.waitUntil(offlineJob||(offlineJob=caches.open(CACHE).then(function(cache){return cache.match(OFFLINE_READY)}).then(function(hit){if(!hit)return prepareOffline()}).finally(function(){offlineJob=null})))
 });
+

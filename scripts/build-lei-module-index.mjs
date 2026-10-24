@@ -9,8 +9,8 @@ const native=kind=>JSON.parse(read(`content/${kind}/${kind}-native-index.js`).sp
 const c=leiRuntime(root);const data=vm.runInContext('DATA',c),topics=vm.runInContext('TOPICS_BY_DISCIPLINE',c);
 const modules=[],aliases={};
 function add(d,number,id,title,source,other=[]){const m={id,discipline:d,number,title:title.replace(/^\d+\s+/,''),source,questionIds:[]};modules.push(m);for(const key of [id,...other])aliases[d+'|'+key]=id;return m;}
-for(const d of ['cf','cpc','trabalho','ptrabalho']){
- const central={trabalho:'trab',ptrabalho:'ptra'}[d]||d;
+for(const d of ['cf','cpc']){
+ const central=d;
  for(const [i,t] of subjects.find(s=>s.id===central).topics.entries()){
   const n=i+1,id=d==='cf'||d==='cpc'?d+'-m'+String(n).padStart(2,'0'):t.uid;
   add(d,n,id,t.title,'central-structural-v66119/runtime.js#SUBJECTS',[t.uid,d==='cf'?'w'+n:d==='cpc'?'cpc'+n:t.uid]);
@@ -74,19 +74,6 @@ function classify(q){
   if(k==='14133')return a===undefined?[]:ranges(a,[[1,11,14],[12,27,15],[28,71,16],[72,75,17],[76,90,16],[91,163,18],[164,173,16],[174,195,14]]);
   return {9784:[6],8112:[5],8429:[13],12527:[19],13709:[20],dl200:[2],8987:[9],12846:[8],13019:[11],11107:[12],11079:[10],13303:[2],13848:[2],8443:[8],d11462:[16],lindb20:[7],9637:[12],9790:[12],13460:[9],14129:[6],8745:[5],12813:[5],4717:[8],7347:[8]}[k]||[];
  }
- if(d==='trabalho'){
-  if(k==='5889')return [13];
-  if(k==='6019')return a>=4&&a<=5||a===18?[8]:a===12?[12]:a===13?[16]:[6];
-  if(k==='8036')return a===18||a===20?[15,16]:[13];
-  if(k==='7783')return [18];
-  if(k==='11788')return [4];
-  if(k==='9029')return a===4?[16]:[4,16];
-  if(k==='4090'||k==='14611')return [13];
-  if(k==='14457')return [3,5].includes(a)?[12]:[10].includes(a)?[5]:[15,17].includes(a)?[7]:[23,27].includes(a)?[14]:[];
-  if(k==='lc150')return a===1?[4]:a===4?[6]:[2,3,5,10].includes(a)?[9]:[11,14,17,18].includes(a)?[11]:a===13?[12]:[];
-  return [];
- }
- if(d==='ptrabalho')return k==='6830'?[8]:k==='12016'||k==='7347'?[9]:k==='5584'?a===2?[6,7]:[3,4,5,8,9].includes(a)?[6]:[10,13].includes(a)?[7]:[3]:[];
  return [];
 }
 const unmatched=[];
@@ -95,10 +82,11 @@ const complement=[];for(const d of Object.keys(topics)){const ids=data.filter(q=
 const questionById=new Map(data.map(q=>[q.id,q]));
 const baseNames={cf:'CF/88 e fundamentos associados',civil:'Código Civil e fundamentos associados',cpc:'CPC e fundamentos associados',cpp:'CPP e fundamentos associados',penal:'Código Penal e fundamentos associados'};
 for(const m of modules){const laws=new Map();for(const id of m.questionIds){const q=questionById.get(id);const name=q.topicId.includes('-lei-')?q.title.split(' — ')[0]:baseNames[q.discipline]||q.title;laws.set(name,(laws.get(name)||0)+1);}m.laws=[...laws].map(([label,questions])=>({label,questions}));}
-const result={version:'20261009sync1',disciplineAliases:{trab:'trabalho',ptra:'ptrabalho',ptrab:'ptrabalho'},modules,complement,aliases};
+const result={version:'20261009sync1',disciplineAliases:{},modules,complement,aliases};
 fs.writeFileSync(new URL('tools/decorando-data-modulos.js',root),'/* Gerado por scripts/build-lei-module-index.mjs. IDs e gabaritos preservados. */\nconst CENTRAL_LAW_MODULES = '+JSON.stringify(result)+';\n');
-const report={version:result.version,totalQuestions:data.length,centralModules:modules.length,disciplines:Object.keys(topics).map(d=>({id:d,totalQuestions:data.filter(q=>q.discipline===d).length,modules:modules.filter(m=>m.discipline===d).length,withoutQuestions:modules.filter(m=>m.discipline===d&&!m.questionIds.length).map(m=>m.id),complementaryQuestions:complement.find(m=>m.discipline===d)?.questionIds.length||0})),modules:modules.map(m=>({...m,questionIds:undefined,questions:m.questionIds.length})),complement:complement.map(m=>({...m,questions:m.questionIds.length})),rule:'Vínculo editorial pela matriz vigente da Central, dispositivo e tema; questões sem encaixe seguro permanecem complementares. Mais de um módulo pode estudar a mesma questão sem duplicar o registro ou o progresso.',scope:'Conferência estrutural completa do banco e do catálogo de módulos, não revisão jurídica integral da teoria ou dos gabaritos.',findings:['Civil enviava module ignorado pela rota.','Administrativo e CPP abriam banco geral sem módulo.','Penal ainda listava agrupamentos antigos de 24 módulos; matriz atual tem 17.','CPP usava 17 agrupamentos legados; matriz nativa atual tem 22.','CF tinha 12 agrupamentos legados, com ordem econômica/social/família sem módulos 13–15 próprios.','Trabalho e Processo do Trabalho usam IDs centrais trab/ptra, diferentes de trabalho/ptrabalho no banco.']};
+const report={version:result.version,totalQuestions:data.length,centralModules:modules.length,disciplines:Object.keys(topics).map(d=>({id:d,totalQuestions:data.filter(q=>q.discipline===d).length,modules:modules.filter(m=>m.discipline===d).length,withoutQuestions:modules.filter(m=>m.discipline===d&&!m.questionIds.length).map(m=>m.id),complementaryQuestions:complement.find(m=>m.discipline===d)?.questionIds.length||0})),modules:modules.map(m=>({...m,questionIds:undefined,questions:m.questionIds.length})),complement:complement.map(m=>({...m,questions:m.questionIds.length})),rule:'Vínculo editorial pela matriz vigente da Central, dispositivo e tema; questões sem encaixe seguro permanecem complementares. Mais de um módulo pode estudar a mesma questão sem duplicar o registro ou o progresso.',scope:'Conferência estrutural completa do banco e do catálogo de módulos, não revisão jurídica integral da teoria ou dos gabaritos.',findings:['Civil enviava module ignorado pela rota.','Administrativo e CPP abriam banco geral sem módulo.','Penal ainda listava agrupamentos antigos de 24 módulos; matriz atual tem 17.','CPP usava 17 agrupamentos legados; matriz nativa atual tem 22.','CF tinha 12 agrupamentos legados, com ordem econômica/social/família sem módulos 13–15 próprios.']};
 fs.writeFileSync(new URL('audits/lei-em-dia-sincronizacao-20261009.json',root),JSON.stringify(report,null,2)+'\n');
 const civIndex={};for(const m of modules.filter(m=>m.discipline==='civil')){const key=native('civil').modules.find(x=>x.uid===m.id).id;civIndex[key]=m.questionIds;}
 fs.writeFileSync(new URL('civil-decorando-index-v1.js',root),'/* Gerado pelo catálogo vigente; inclui leis complementares vinculadas ao módulo. */\nwindow.CIVIL_DECORANDO_IDS_V1='+JSON.stringify(civIndex)+';\n');
 console.log(JSON.stringify({questions:data.length,modules:modules.length,disciplines:report.disciplines},null,2));
+

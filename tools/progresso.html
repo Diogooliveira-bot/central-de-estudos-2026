@@ -22,7 +22,7 @@
 <script>
 (function(){'use strict';
 const KEY='CENTRAL_PROGRESS_V1';
-const LAW=new Set(['cf','adm','civil','cpc','penal','cpp','trab','ptra']);
+const LAW=new Set(['cf','adm','civil','cpc','penal','cpp']);
 let PLAN=null,TOPICS=[],STATE=load(),activeFilter='all';
 const $=s=>document.querySelector(s),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const pad=n=>String(n).padStart(2,'0');

@@ -25,7 +25,6 @@
         const s = Array.isArray(window.SUBJECTS) ? window.SUBJECTS.find(x=>x&&x.id===sid) : null;
         if(s && typeof window.subjStats==='function') total = String(window.subjStats(s).total);
         else if(s && Array.isArray(s.topics)) total = String(s.topics.length);
-        if(sid==='trab' || sid==='ptra') label = 'Curso Integrado';
       }catch(_){}
       if(!total){
         const count = section.querySelector('.subject-count')?.textContent || '';
@@ -242,4 +241,5 @@
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init,{once:true});
   else init();
 })();
+
 

@@ -7,6 +7,7 @@
   if (!OBJECTIVES) return;
   function createExam(DATA,GOAL_ID,dialogId,entryId) {
   if (!DATA) return null;
+  const visibleSubjects = () => DATA.subjects.filter(subject => !['trab','ptra'].includes(subject.disciplineId));
   const EXAM_ID = DATA.examId || 'tjp-2026-aj-area-judiciaria';
   const examQuery = '/api/objective?resource=exam-progress&examId=' + encodeURIComponent(EXAM_ID);
 
@@ -89,7 +90,7 @@
     return possible ? Math.round(done * 1000 / possible) / 10 : 0;
   }
   function overall() {
-    const topics = DATA.subjects.flatMap(subjectTopics);
+    const topics = visibleSubjects().flatMap(subjectTopics);
     const possible = topics.length * MARKERS.length;
     const done = topics.reduce((sum,item) => sum + MARKERS.reduce((n,[marker]) => n + (state[item.id]?.[marker]?.value === true ? 1 : 0),0),0);
     return possible ? Math.round(done * 1000 / possible) / 10 : 0;
@@ -106,12 +107,12 @@
     const host = document.getElementById(dialogId);
     if (!host || host.hidden) return;
     const opened = new Set(Array.from(host.querySelectorAll('.exam-subject[open]'), node => node.dataset.examSubject));
-    const subjectMarkup = DATA.subjects.map(subject => {
+    const subjectMarkup = visibleSubjects().map(subject => {
       const percent = progressFor(subject);
       return '<details class="exam-subject" data-exam-subject="'+esc(subject.id)+'"'+(opened.has(subject.id)?' open':'')+'><summary><span><b>'+esc(subject.title)+'</b><small>'+subjectTopics(subject).length+' assuntos · '+(subject.coverage==='complete'?'Cobertura completa':subject.coverage==='partial'?'Cobertura parcial':'Em preparação')+'</small></span><span class="exam-subject-progress"><b>'+percent+'%</b><i><em style="width:'+percent+'%"></em></i></span></summary><div class="exam-topic-list">'+subject.items.map(item=>topicMarkup(subject,item)).join('')+'</div></details>';
     }).join('');
     const headerLabel = DATA.cargoCode === '01' && DATA.examId?.startsWith('trt8') ? 'EDITAL 01/2026 + RETIFICAÇÃO · TRT-8' : 'EDITAL 01/2026 · TJPB';
-    host.innerHTML = '<section class="exam-verticalized-panel" role="dialog" aria-modal="true" aria-labelledby="examVerticalizedTitle"><header class="exam-screen-header"><button type="button" data-exam-close aria-label="Fechar edital">← Voltar</button><span>'+esc(headerLabel)+'</span><h1 id="examVerticalizedTitle">Edital Verticalizado</h1><p>Analista Judiciário · Área Judiciária</p></header><section class="exam-overview"><div><span>Progresso do edital</span><b>'+overall()+'%</b></div><i><em style="width:'+overall()+'%"></em></i><small>Avanço pessoal nas marcações de estudo, revisão e questões.</small></section><p class="exam-source">'+esc(DATA.source)+'</p><p class="exam-sync-status" data-exam-sync-status></p><div class="exam-subject-list">'+subjectMarkup+'</div></section>';
+    host.innerHTML = '<section class="exam-verticalized-panel" role="dialog" aria-modal="true" aria-labelledby="examVerticalizedTitle"><header class="exam-screen-header"><button type="button" data-exam-close aria-label="Fechar edital">← Voltar</button><span>'+esc(headerLabel)+'</span><h1 id="examVerticalizedTitle">Edital Verticalizado</h1><p>Analista Judiciário · Área Judiciária</p></header><section class="exam-overview"><div><span>Progresso do edital</span><b>'+overall()+'%</b></div><i><em style="width:'+overall()+'%"></em></i><small>Avanço pessoal nas marcações de estudo, revisão e questões.</small></section><p class="exam-source">'+esc(DATA.source)+'</p>'+ (visibleSubjects().length !== DATA.subjects.length ? '<p class="exam-source">Visualização parcial: somente disciplinas mantidas na Central. Consulte o edital oficial para o programa integral.</p>' : '') +'<p class="exam-sync-status" data-exam-sync-status></p><div class="exam-subject-list">'+subjectMarkup+'</div></section>';
     host.hidden = false;
     host.querySelector('[data-exam-close]').addEventListener('click', close);
     host.querySelectorAll('[data-exam-topic]').forEach(input => input.addEventListener('change', () => {
@@ -161,3 +162,4 @@
   global.CentralExamVerticalized=createExam(global.TJPB2026Verticalized,'exam-tjpb-2026-analista-judiciaria','examVerticalizedDialog','examVerticalizedEntry');
   global.CentralTRT8Verticalized=createExam(global.TRT82026Verticalized,'exam-trt8-2026-analista-judiciaria','trt8VerticalizedDialog','trt8VerticalizedEntry');
 })(window);
+

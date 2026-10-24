@@ -6,7 +6,7 @@ const root=new URL('../',import.meta.url),html=readFileSync(new URL('tools/decor
 const c=vm.createContext({});vm.runInContext(readFileSync(new URL('tools/decorando-data-restantes.js',root),'utf8'),c);
 const data=vm.runInContext('DATA_RESTANTES',c),topicMap=vm.runInContext('TOPICS_RESTANTES',c);
 const report=JSON.parse(readFileSync(new URL('audits/lei-em-dia-restantes-20261009.json',root)));
-const expected={penal:147,cpp:50,trabalho:165,ptrabalho:69,cpc:17};
+const expected={penal:147,cpp:50,cpc:17};
 const storage=new Map();
 function makeContext(){
  const document={documentElement:{dataset:{}},addEventListener(){},getElementById(){return null}};
@@ -20,8 +20,8 @@ function makeContext(){
  }
  return context;
 }
-test('448 itens preservam fontes, gabaritos e dispositivos únicos por disciplina',()=>{
- assert.equal(data.length,448);assert.equal(report.answerConflicts.length,0);
+test('214 itens preservam fontes, gabaritos e dispositivos únicos por disciplina',()=>{
+ assert.equal(data.length,214);assert.equal(report.answerConflicts.length,0);
  const seen=new Set();
  for(const q of data){
   assert.equal(typeof q.question.answer,'boolean');assert.ok(q.question.statement.length>20);assert.ok(q.parts[0].length>20);
@@ -34,7 +34,7 @@ test('448 itens preservam fontes, gabaritos e dispositivos únicos por disciplin
   for(const device of report.deviceReview.retained[q.id]){const key=q.discipline+'|'+device;assert.ok(!seen.has(key),key);seen.add(key);}
  }
  for(const [d,n] of Object.entries(expected))assert.equal(data.filter(q=>q.discipline===d).length,n);
- for(const src of report.sources){assert.ok(src.url.startsWith('https://drive.google.com/file/d/'));assert.equal(data.filter(q=>q.discipline===src.discipline&&q.question.source.startsWith(src.pdf+' ·')).length,src.imported);}
+ for(const src of report.sources.filter(x=>!['trabalho','ptrabalho'].includes(x.discipline))){assert.ok(src.url.startsWith('https://drive.google.com/file/d/'));assert.equal(data.filter(q=>q.discipline===src.discipline&&q.question.source.startsWith(src.pdf+' ·')).length,src.imported);}
 });
 test('novas disciplinas, filtros e estatísticas funcionam com o banco existente',()=>{
  const context=makeContext();const all=vm.runInContext('DATA',context);
@@ -58,19 +58,20 @@ test('novas disciplinas, filtros e estatísticas funcionam com o banco existente
 test('respostas e notas antigas sobrevivem à inclusão e à recarga',()=>{
  let context=makeContext();const old=vm.runInContext('DATA_CIVIL[0].id',context);
  vm.runInContext(`saved.notes[${JSON.stringify(old)}]='Anotação anterior';save();`,context);
- for(const discipline of ['trabalho','ptrabalho']){
+ for(const discipline of ['penal','cpp']){
   const q=data.find(q=>q.discipline===discipline);
   vm.runInContext(`centralOpenTopic(${JSON.stringify(q.topicId)},true);answerFocus(${q.question.answer});`,context);
   assert.equal(vm.runInContext(`saved.attempts[${JSON.stringify(q.id)}][0].correct`,context),true);
  }
  context=makeContext();assert.equal(vm.runInContext(`saved.notes[${JSON.stringify(old)}]`,context),'Anotação anterior');
- for(const d of ['trabalho','ptrabalho']){const q=data.find(q=>q.discipline===d);assert.equal(vm.runInContext(`saved.attempts[${JSON.stringify(q.id)}].length`,context),1);}
+ for(const d of ['penal','cpp']){const q=data.find(q=>q.discipline===d);assert.equal(vm.runInContext(`saved.attempts[${JSON.stringify(q.id)}].length`,context),1);}
 });
 test('parte cível dos Juizados não é apresentada como criminal e pendências são explícitas',()=>{
  assert.ok(data.filter(q=>q.question.source.startsWith('61.pdf')).every(q=>q.discipline==='cpc'));
  assert.ok(report.missingSources.penal.some(s=>s.includes('parte criminal')));
  assert.ok(report.missingSources.trabalho.some(s=>s.startsWith('CLT')));
  const offline=JSON.parse(readFileSync(new URL('central-offline-files-v66172.json',root)));
- assert.ok(offline.files.includes('/tools/decorando-data-restantes.js?v=20261009rest1'));
+ assert.ok(offline.files.includes('/tools/decorando-data-restantes.js?v=20261023-remove-labor-disciplines-v1'));
  for(const x of report.deviceReview.removed)assert.ok(x.keptIds.length>0);
 });
+

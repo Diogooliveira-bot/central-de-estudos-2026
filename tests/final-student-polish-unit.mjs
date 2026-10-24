@@ -122,5 +122,6 @@ test('contratos de acabamento permanecem ligados à experiência do aluno', asyn
   assert.match(decorando, /535 exercícios autorais/);
   assert.match(boot, /var APP_VERSION='6\.7\.0'/);
   assert.match(dashboard, /function canonicalProgress\(\)/);
-  assert.match(offline, /student-dashboard-v3\.js\?v=20261022-cf-m08-m15-apostilas-v1/);
+  assert.match(offline, /student-dashboard-v3\.js\?v=20261023-remove-labor-disciplines-v1/);
 });
+

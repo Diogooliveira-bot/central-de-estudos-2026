@@ -825,7 +825,7 @@ const TOPICS_CPC = [{"id":"cpc-m01","label":"Módulo 1 — Normas fundamentais, 
 <script src="./decorando-data-adm-13709-expansao.js?v=20261008adm5"></script>
 <script src="./decorando-data-adm-pack5.js?v=20261008adm6"></script>
 <script src="./decorando-data-cf-leis.js?v=20261008cf1"></script>
-<script src="./decorando-data-restantes.js?v=20261012audit2"></script>
+<script src="./decorando-data-restantes.js?v=20261023-remove-labor-disciplines-v1"></script>
 <script src="./decorando-data-led-aprovadas.js?v=20261010ledgate2"></script>
 <script src="./decorando-data-modulos.js?v=20261024rm2"></script>
 <script>
@@ -837,7 +837,7 @@ const TOPICS_CF_EXTENDED = [...TOPICS_CF,...TOPICS_CF_LEIS];
 const TOPICS_CIVIL_EXTENDED = [...TOPICS_CIVIL,...TOPICS_CIVIL_LEIS];
 const TOPICS_CPC_EXTENDED = [...TOPICS_CPC,...TOPICS_CPC_LEIS];
 const ledTopicsFor=d=>TOPICS_LED_APPROVED.filter(t=>t.discipline===d);
-TOPICS_BY_DISCIPLINE={cf:[...TOPICS_CF_EXTENDED,...ledTopicsFor("cf")],civil:[...TOPICS_CIVIL_EXTENDED,...ledTopicsFor("civil")],penal:[...TOPICS_PENAL,...TOPICS_RESTANTES.penal,...ledTopicsFor("penal")],cpc:[...TOPICS_CPC_EXTENDED,...TOPICS_RESTANTES.cpc,...ledTopicsFor("cpc")],cpp:[...TOPICS_CPP,...TOPICS_RESTANTES.cpp,...ledTopicsFor("cpp")],adm:TOPICS_ADM_EXTENDED,trabalho:[...TOPICS_RESTANTES.trabalho,...ledTopicsFor("trabalho")],ptrabalho:[...TOPICS_RESTANTES.ptrabalho,...ledTopicsFor("ptrabalho")]};
+TOPICS_BY_DISCIPLINE={cf:[...TOPICS_CF_EXTENDED,...ledTopicsFor("cf")],civil:[...TOPICS_CIVIL_EXTENDED,...ledTopicsFor("civil")],penal:[...TOPICS_PENAL,...TOPICS_RESTANTES.penal,...ledTopicsFor("penal")],cpc:[...TOPICS_CPC_EXTENDED,...TOPICS_RESTANTES.cpc,...ledTopicsFor("cpc")],cpp:[...TOPICS_CPP,...TOPICS_RESTANTES.cpp,...ledTopicsFor("cpp")],adm:TOPICS_ADM_EXTENDED};
 TOPICS_BY_DISCIPLINE.adm=[...TOPICS_BY_DISCIPLINE.adm,...ledTopicsFor("adm")];
 if(DATA_LED_APPROVED.some(q=>q.discipline==="consumidor"))TOPICS_BY_DISCIPLINE.consumidor=ledTopicsFor("consumidor");
 const DISCIPLINES={
@@ -847,8 +847,6 @@ const DISCIPLINES={
  penal:{id:"penal",badge:"CP",name:"Direito Penal",law:"Direito Penal",subtitle:"Código Penal + 11 leis de Penal",color:"#6b3f4b",supplementNotice:"Auditoria de 27/08/2026: duplicatas literais removidas; variações que cobram o mesmo artigo por ângulos diferentes foram mantidas. O item 686 do PDF não foi importado porque o arquivo não apresenta gabarito."},
  cpc:{id:"cpc",badge:"CPC",name:"Direito Processual Civil",law:"Direito Processual Civil",subtitle:"CPC + 10 leis de Processo Civil",color:"#405b75",supplementNotice:"Complementação com os PDFs de dez leis: arbitragem, processo eletrônico, ações coletivas e constitucionais e Juizados Especiais Cíveis. Questões históricas devem ser estudadas com atenção à legislação vigente."},
  cpp:{id:"cpp",badge:"CPP",name:"Direito Processual Penal",law:"Direito Processual Penal",subtitle:"CPP + 5 leis complementares",color:"#4a5d23",supplementNotice:"Os PDFs complementares apresentam dispositivos gerais dessas leis e investigação pelo delegado. A parte criminal de Juizados Especiais e o ECA ainda dependem de fonte. Não representam cobertura integral dos procedimentos especiais."},
- trabalho:{id:"trabalho",badge:"TRAB",name:"Direito do Trabalho",law:"Direito do Trabalho",subtitle:"11 leis complementares · CLT pendente",color:"#795a37",supplementNotice:"Questões dos PDFs fornecidos. A CLT e a Lei das Centrais Sindicais ainda não possuem fonte para este banco."},
- ptrabalho:{id:"ptrabalho",badge:"PTRAB",name:"Processo do Trabalho",law:"Processo do Trabalho",subtitle:"4 leis complementares · CLT processual pendente",color:"#605a88",supplementNotice:"Execução fiscal, procedimentos trabalhistas, mandado de segurança e ação civil pública. As questões de MS e ACP são gerais dessas leis. CLT processual, CPC aplicado ao Trabalho, MPU e processamento nos tribunais trabalhistas ainda dependem de fontes específicas."}
 };
 if(DATA_LED_APPROVED.some(q=>q.discipline==="consumidor"))DISCIPLINES.consumidor={id:"consumidor",badge:"CDC",name:"Direito do Consumidor",law:"Direito do Consumidor",subtitle:"CDC e tutela coletiva · LEI EM DIA",color:"#396477",supplementNotice:"Itens autorais com conferência jurídica individual registrada. Verifique a data da fonte para atualizações posteriores."};
 const STORAGE_KEY = "lei-seca-enxuta-state";
@@ -1445,7 +1443,7 @@ function sidebar(){
 
 var adminEditor=window.leiAdminEditor||{canEdit:false};
 function originBadge(article){
-  if(!["civil","cf","penal","cpc","cpp","adm","trabalho","ptrabalho","consumidor"].includes(article.discipline))return "";
+  if(!["civil","cf","penal","cpc","cpp","adm","consumidor"].includes(article.discipline))return "";
   const a=article.origin==="authorial"||article.question?.origin==="authorial";
   return `<span class="origin-badge ${a?"authorial":"real"}" title="${a?"Questão autoral identificada; não é questão real de banca":"Questão real de banca preservada no banco"}">${a?"AUTORAL":"QUESTÃO REAL"}</span>`;
 }
@@ -1557,3 +1555,5 @@ render();
 <script id="central-folder-activate-v6659">(function(){function run(){const q=new URLSearchParams(location.search),topic=q.get('topic'),discipline=q.get('discipline'),module=q.get('module');if(module&&typeof centralOpenModule==='function'){if(!centralOpenModule(module,discipline,true)&&discipline)chooseDiscipline(discipline)}else if(topic&&typeof centralOpenTopic==='function')centralOpenTopic(topic,true);else if(discipline&&typeof chooseDiscipline==='function')chooseDiscipline(discipline)}if(document.readyState==='complete')setTimeout(run,0);else window.addEventListener('load',run)})();</script>
 <script defer src="../ui/tool-navigation.js?v=20261002navigation2"></script></body>
 </html>
+
+

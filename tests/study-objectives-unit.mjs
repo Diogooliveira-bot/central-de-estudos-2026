@@ -102,8 +102,8 @@ test('primeiro acesso escolhe carreira, edital ou estudo livre e mantém o objet
   window.document.querySelector('#studyObjectiveTopbar button').click();
   chooseGoal(window, 'free-study');
   await settle(window);
-  assert.equal(window.CentralStudentUX.subjects().length, 10);
-  assert.equal(window.document.querySelectorAll('#disciplineGrid [data-study-open-subject]').length, 10);
+  assert.equal(window.CentralStudentUX.subjects().length, 8);
+  assert.equal(window.document.querySelectorAll('#disciplineGrid [data-study-open-subject]').length, 8);
   for (const [key, value] of Object.entries(progress)) assert.equal(storage.getItem(key), value);
   assert.equal(window.__fetchCalls, 0);
   await settle(window); await settle(window);
@@ -143,3 +143,4 @@ test('objetivo escolhido sem conexão entra na fila e sincroniza quando a conex�
   assert.equal(storage.getItem('central-v6:study-objective:pending:v1'), null);
   dom.window.close();
 });
+

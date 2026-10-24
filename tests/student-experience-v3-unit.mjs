@@ -9,7 +9,7 @@ test('a experiência v3 modular é carregada em ordem e participa do modo offlin
     read('central-v119.html'), read('central-offline-files-v66172.json'), read('sw.js'), read('package.json'),
   ]);
   assert.match(boot, /var APP_VERSION='6\.7\.0'/);
-  assert.match(boot, /var BUILD='20261022-cf-m08-m15-apostilas-v1'/);
+  assert.match(boot, /var BUILD='20261023-remove-labor-disciplines-v1'/);
   const ordered = [
     'ui/study-objectives-catalog-v1.js', 'ui/external-question-filters-v1.js',
     'ui/student-ux-core-v3.js', 'ui/student-shell-v3.js',
@@ -20,17 +20,17 @@ test('a experiência v3 modular é carregada em ordem e participa do modo offlin
     const index = boot.indexOf(file);
     assert.ok(index > previous, `${file} deve carregar depois do módulo anterior`);
     previous = index;
-    const fileVersion = file.includes('study-objectives-catalog') ? '20261021multiexam1' : file.includes('study-objectives') ? '20261020studyobj1'
+    const fileVersion = file.includes('study-objectives-catalog') ? '20261023-remove-labor-disciplines-v1' : file.includes('study-objectives') ? '20261020studyobj1'
       : file.includes('student-plan') ? '20261019-qc-catalog1'
         : file.includes('student-shell') ? '20261021nav3' : file.includes('auth-shell') ? '20261020studyobj1'
-          : file.includes('external-question-filters') || file.includes('student-ux-core') || file.includes('student-dashboard') ? '20261022-cf-m08-m15-apostilas-v1' : '';
+          : file.includes('external-question-filters') || file.includes('student-ux-core') || file.includes('student-dashboard') ? '20261023-remove-labor-disciplines-v1' : '';
     assert.ok(offline.includes(`/${file}?v=${fileVersion}`), `${file} deve estar no manifesto offline`);
   }
   assert.match(boot, /student-experience-v3\.css\?v='\+BUILD/);
-  assert.match(offline, /student-experience-v3\.css\?v=20261022-cf-m08-m15-apostilas-v1/);
+  assert.match(offline, /student-experience-v3\.css\?v=20261023-remove-labor-disciplines-v1/);
   assert.doesNotMatch(boot, /student-polish-v1|student-experience-v2\.js/);
   assert.doesNotMatch(offline, /student-polish-v1|student-experience-v2/);
-  assert.match(serviceWorker, /central-20261022-cf-m08-m15-apostilas-v1/);
+  assert.match(serviceWorker, /central-20261023-remove-labor-disciplines-v1/);
   assert.equal(JSON.parse(pkg).version, '6.7.0');
 });
 
@@ -50,7 +50,7 @@ test('a home mantém todas as disciplinas e a camada não altera RLM', async () 
     read('ui/student-dashboard-v3.js'), read('ui/student-plan-v3.js'), read('ui/student-experience-v3.css'),
   ]);
   assert.match(runtime, /\{id:'pt',name:'Português'\},\.\.\.SUBJECTS/);
-  assert.match(index, /var ORDEM=\['pt','cf','adm','civil','cpc','penal','cpp','trab','ptra','rlm'\]/);
+  assert.match(index, /var ORDEM=\['pt','cf','adm','civil','cpc','penal','cpp','rlm'\]/);
   assert.match(dashboard, /if \(subject\.id === 'rlm'\) continue/);
   assert.match(plan, /subject\.open:not\(\[data-id="rlm"\]\)/);
   assert.match(styles, /subject:not\(\[data-id="rlm"\]\)/);
@@ -92,3 +92,4 @@ test('acessibilidade e sincronização possuem retorno visível', async () => {
   assert.match(styles, /:focus-visible/);
   assert.match(styles, /prefers-reduced-motion:reduce/);
 });
+

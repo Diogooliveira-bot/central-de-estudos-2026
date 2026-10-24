@@ -24,9 +24,9 @@ function firstBy(d){return d.subjects.flatMap(s=>s.items).find(x=>!x.organizatio
 test('duas opções de edital independentes no catálogo',()=>{
  const {w,dom}=setup();
  assert.equal(Object.values(w.CentralStudyObjectiveCatalog.goals).filter(x=>x.type==='exam').length,2);
- assert.equal(w.CentralStudyObjectiveCatalog.goals[goalR].examSubjects.length,12);
+ assert.equal(w.CentralStudyObjectiveCatalog.goals[goalR].examSubjects.length,10);
  assert.equal(w.CentralStudyObjectiveCatalog.goals[goalT].examSubjects.length,10);
- assert.deepEqual(Object.keys(w.CentralStudyObjectiveCatalog.subjects).sort(),['pt','cf','adm','civil','cpc','penal','cpp','trab','ptra','rlm'].sort());
+ assert.deepEqual(Object.keys(w.CentralStudyObjectiveCatalog.subjects).sort(),['pt','cf','adm','civil','cpc','penal','cpp','rlm'].sort());
  dom.window.close();
 });
 test('TJPB e TRT8 têm instâncias e armazenamento separados sem apagar o legado undefined',()=>{
@@ -49,18 +49,18 @@ test('TJPB e TRT8 têm instâncias e armazenamento separados sem apagar o legado
  assert.ok(t.getState()[firstT]?.studied.value);
  dom.window.close();
 });
-test('TRT8 renderiza 12 disciplinas, três marcadores e links exclusivamente auditados',()=>{
+test('TRT8 renderiza 10 disciplinas atuais, três marcadores e links exclusivamente auditados',()=>{
  const {w,dom}=setup();
  w.CentralStudyObjectives.setActive(goalR);const r=w.CentralTRT8Verticalized;
  assert.equal(r.open(),true);
- assert.equal(w.document.querySelectorAll('#trt8VerticalizedDialog .exam-subject').length,12);
+ assert.equal(w.document.querySelectorAll('#trt8VerticalizedDialog .exam-subject').length,10);
  const item=w.document.querySelector('#trt8VerticalizedDialog [data-exam-topic="trt8-rlm-010"]');
  assert.ok(item);
  assert.equal(w.document.querySelectorAll('#trt8VerticalizedDialog [data-exam-topic="trt8-rlm-010"]').length,3);
  const linked=trt.subjects.flatMap(s=>s.items).filter(x=>x.moduleIds.length);
  assert.equal(linked.length,34);
- assert.equal(w.document.querySelectorAll('#trt8VerticalizedDialog [data-exam-module]').length,39);
- assert.equal(w.document.querySelectorAll('#trt8VerticalizedDialog .exam-subject').length,12);
+ assert.equal(w.document.querySelectorAll('#trt8VerticalizedDialog [data-exam-module]').length,trt.subjects.filter(s=>!['trab','ptra'].includes(s.disciplineId)).flatMap(s=>s.items).reduce((n,i)=>n+i.moduleIds.length,0));
+ assert.equal(w.document.querySelectorAll('#trt8VerticalizedDialog .exam-subject').length,10);
  assert.equal(r.overall(),0);
  dom.window.close();
 });
@@ -81,9 +81,9 @@ test('carregador e PWA incluem TRT8, não esquecem TJPB e mantêm versão do cac
  assert.match(boot,/content\/tjpb-2026-verticalized\.js/);
  assert.ok(boot.indexOf('content/trt8-2026-verticalized.js')<boot.indexOf("tag('ui/exam-verticalized-v1.js"));
  assert.ok(manifest.files.some(s=>s.includes('/content/trt8-2026-verticalized.js?v=')));
- assert.ok(manifest.files.some(s=>s.includes('/ui/study-navigation.js?v=20261021multiexam2')));
- assert.equal(manifest.build,'20261022-cf-m08-m15-apostilas-v1');
- assert.match(sw,/var CACHE='central-20261022-cf-m08-m15-apostilas-v1'/);
+ assert.ok(manifest.files.some(s=>s.includes('/ui/study-navigation.js?v=20261023-remove-labor-disciplines-v1')));
+ assert.equal(manifest.build,'20261023-remove-labor-disciplines-v1');
+ assert.match(sw,/var CACHE='central-20261023-remove-labor-disciplines-v1'/);
 });
 test('vínculos do TRT8 são reais e sem alegações de cobertura total',()=>{
  const bySubject=Object.fromEntries(trt.subjects.map(s=>[s.id,s]));
@@ -94,10 +94,10 @@ test('vínculos do TRT8 são reais e sem alegações de cobertura total',()=>{
  assert.ok(Object.values(bySubject).filter(s=>!s.disciplineId).every(s=>s.items.every(i=>!i.moduleIds.length)));
  assert.match(bySubject['trt8-leg'].originalProgram,/Resolução TRT8 nº 065\/2025 alterada pela Resolução TRT8 nº 23\/2026/);
 });
-test('navegação admite módulo nativo de Direito do Trabalho',()=>{
+test('navegação não oferece leitores das disciplinas removidas',()=>{
  const nav=read('ui/study-navigation.js');
- assert.match(nav,/moduleSelector = '[^']*\.bc-trabalho-module'/);
- assert.match(nav,/\.bc-trabalho-module-head'/);
+ assert.doesNotMatch(nav,/\.bc-trabalho-module/);
+ assert.match(nav,/isRemovedRecord/);
 });
 
 test('RLM usa IDs nativos Mnn e o JS publicado reflete a última auditoria',()=>{
@@ -111,3 +111,4 @@ test('RLM usa IDs nativos Mnn e o JS publicado reflete a última auditoria',()=>
  assert.match(runtime,/data-rlm-module=/);
  assert.match(nav,/'data-rlm-module'/);
 });
+
