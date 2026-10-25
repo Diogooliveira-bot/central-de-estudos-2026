@@ -103,3 +103,8 @@ Verificar antes da publicação: confirmação do produto na Hotmart; legislaç�
 proteção de dados pessoais (LGPD), base legal e retenção de dados de comprador;
 política de cancelamento e reembolso; teste de SMTP e dados bancários do produtor.
 Não enviar Hottok, DATABASE_URL ou senha de aplicativo Gmail para o chat.
+
+## Auditoria das bibliotecas
+A verificação de segurança detectou versões vulneráveis de Nodemailer e Zod.
+As atualizações são restritas à branch de testes e devem passar por npm audit e
+pela bateria completa antes de compor um release.
