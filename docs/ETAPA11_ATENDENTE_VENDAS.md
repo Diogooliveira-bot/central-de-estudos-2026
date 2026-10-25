@@ -35,9 +35,9 @@ O contexto expira em 30 dias; a remoção física acontece quando chegam novas m
 
 ## Variáveis necessárias em Preview
 
-`META_APP_SECRET`, `META_WEBHOOK_VERIFY_TOKEN`, `WHATSAPP_ACCESS_TOKEN`, `WHATSAPP_PHONE_NUMBER_ID`, `WHATSAPP_GRAPH_VERSION`, `SALES_ANTHROPIC_API_KEY`, `SALES_ANTHROPIC_MODEL`, `DATABASE_URL`, `SALES_HASH_KEY`, `SALES_CONTEXT_ENCRYPTION_KEY`, `SALES_BASE_URL`, `SALES_SUPPORT_EMAIL`, `SALES_MAX_MESSAGES_PER_CONTACT_PER_DAY`, `SALES_MAX_CLAUDE_CALLS_PER_DAY` e `SALES_CONTEXT_TTL_DAYS`.
+`META_APP_SECRET`, `META_WEBHOOK_VERIFY_TOKEN`, `WHATSAPP_ACCESS_TOKEN`, `WHATSAPP_PHONE_NUMBER_ID`, `WHATSAPP_GRAPH_VERSION`, `SALES_ANTHROPIC_API_KEY`, `DATABASE_URL`, `SALES_PRIVACY_SECRET` e `SALES_BASE_URL`.
 
-Os segredos de vendas são separados da Lia. `SALES_BASE_URL` precisa apontar para a mesma implantação que usa o banco de teste. No Preview, não usar o domínio nem a conexão de Production.
+`SALES_PRIVACY_SECRET` deve ser uma chave aleatória de 32 bytes, em Base64. O sistema deriva chaves diferentes para o hash do contato e a criptografia do contexto. As variáveis antigas `SALES_HASH_KEY` e `SALES_CONTEXT_ENCRYPTION_KEY` continuam aceitas. O modelo Claude padrão é `claude-haiku-4-5-20251001`; e-mail de suporte e limites têm padrões no código. `SALES_BASE_URL` precisa apontar para a implantação que usa o banco de teste. No Preview, não usar o domínio nem a conexão de Production.
 
 ## Estado
 

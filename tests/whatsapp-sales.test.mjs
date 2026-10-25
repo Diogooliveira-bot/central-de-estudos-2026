@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { createHmac } from "node:crypto";
-import { deterministicAnswer, isSignupIntent, redactPersonalData, requiresClaude, systemPrompt } from "../lib/whatsapp-sales-assistant.js";
+import { deterministicAnswer, generateReply, isSignupIntent, redactPersonalData, requiresClaude, systemPrompt } from "../lib/whatsapp-sales-assistant.js";
 import { extractMessages, verifyMetaSignature } from "../lib/whatsapp-sales-meta.js";
 import { createStore, decrypt, encrypt, hashContact } from "../lib/whatsapp-sales-store.js";
 
@@ -61,4 +61,18 @@ test("convite automático expõe token só no link e persiste hash",async()=>{
  assert.equal(values.includes(token),false);
  assert.match(query,/total<100/);
  assert.equal(invite.tokenHash.length,64);
+});
+
+test("um segredo de privacidade deriva chaves separadas para hash e contexto",()=>{
+ const {SALES_HASH_KEY,SALES_CONTEXT_ENCRYPTION_KEY,...base}=env;
+ const masterEnv={...base,SALES_PRIVACY_SECRET:Buffer.alloc(32, 7).toString("base64")};
+ const phone="5511999999999";const hash=hashContact(phone,masterEnv);const box=encrypt([{role:"user",content:"oi"}],masterEnv);
+ assert.equal(hashContact(phone,masterEnv),hash);assert.equal(hash.length,64);
+ assert.deepEqual(decrypt(box,masterEnv),[{role:"user",content:"oi"}]);
+});
+
+test("Claude usa o modelo Haiku padrão sem exigir configuração adicional",async()=>{
+ let body;
+ const answer=await generateReply({text:"Me explica como organizar meus estudos",env:{SALES_ANTHROPIC_API_KEY:"test"},fetchImpl:async(_url,options)=>{body=JSON.parse(options.body);return{ok:true,json:async()=>({content:[{type:"text",text:"Claro!"}]})}}});
+ assert.equal(answer,"Claro!");assert.equal(body.model,"claude-haiku-4-5-20251001");
 });
