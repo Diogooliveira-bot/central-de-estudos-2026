@@ -15,23 +15,41 @@ if (files.length !== 20 || [...Array(20)].some((_, i) => !byNumber.has(i + 1))) 
 const escapeHtml = value => value.replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char]);
 function render(text) {
   const blocks = text.replace(/^\uFEFF/, '').replace(/\r\n?/g, '\n').trim().split(/\n\s*\n/);
+  let checkNumber = 0;
+  let nextCheckBlock = false;
+  const checkLine = (value, force = false) => {
+    const item = value.trim().replace(/^•\s*/, '');
+    const marked = /[□☐]/.test(item);
+    const label = item.replace(/[□☐]/g, '').replace(/^Check manual\s*[:—-]?\s*/i, '').trim();
+    return (marked || force)
+      ? `<label class="adm-reading-check"><input type="checkbox" data-adm-check="${++checkNumber}"><span>${escapeHtml(label)}</span></label>`
+      : escapeHtml(item);
+  };
   const body = blocks.map((block, index) => {
     const lines = block.trim().split('\n');
+    const pendingCheck = nextCheckBlock;
+    nextCheckBlock = false;
     if (block.trim() === '---') return '<hr>';
     const line = lines[0].trim();
     if (index === 0) return `<h1>${escapeHtml(line)}</h1>`;
-    if (/^SESSÃO\s+\d+/i.test(line) || /^\d+\s+Questões Internas/i.test(line) || /^REVISÃO FINAL/i.test(line)) {
+    if (/^(?:SESSÃO\s+\d+|S\d+\s*[—-])/i.test(line) || /^\d+\s+Questões Internas/i.test(line) || /^REVISÃO FINAL/i.test(line)) {
       return `<h2>${lines.map(escapeHtml).join(' · ')}</h2>`;
     }
+    if (/^Check manual$/i.test(line)) {nextCheckBlock = true;return '<h3>Check da leitura</h3>'}
+    if (lines.length === 1 && /^(?:Check manual|Check final do módulo)/i.test(line)) return `<p>${checkLine(line,true)}</p>`;
     if (lines.length === 1 && (/^\d+\.\s+/.test(line) || /^Q\d+\s*[—-]/.test(line) || /^(Como estudar|Como cai|O que decorar|Artigos para ler|Check manual)/i.test(line))) {
       return `<h3>${escapeHtml(line)}</h3>`;
     }
-    if (lines.every(value => /^\s*[•□]/.test(value))) return `<ul>${lines.map(value => `<li>${escapeHtml(value.replace(/^\s*•\s*/, ''))}</li>`).join('')}</ul>`;
+    if (lines.every(value => /^\s*(?:•\s*)?[□☐]\s*/.test(value))) return `<ul class="adm-reading-check-list">${lines.map(value => `<li>${checkLine(value)}</li>`).join('')}</ul>`;
+    if (pendingCheck && lines.every(value => /^\s*•/.test(value))) return `<ul class="adm-reading-check-list">${lines.map(value => `<li>${checkLine(value,true)}</li>`).join('')}</ul>`;
+    if (lines.every(value => /^\s*•/.test(value))) return `<ul>${lines.map(value => `<li>${checkLine(value)}</li>`).join('')}</ul>`;
+    if (lines.length === 1 && /^[□☐]\s*/.test(line)) return `<p>${checkLine(line)}</p>`;
     return `<p>${lines.map(escapeHtml).join('<br>')}</p>`;
   });
   return body.join('\n');
 }
 
+const sectionIndex = {};
 for (let number = 1; number <= 20; number++) {
   const file = byNumber.get(number);
   const source = readFileSync(resolve(sourceDir, file), 'utf8');
@@ -41,6 +59,12 @@ for (let number = 1; number <= 20; number++) {
     : source;
   if (incompleteQuestionBlocks.has(number) && theory.length === source.length) throw new Error(`Limite de questões do M${number} não encontrado`);
   const path = resolve(root, `content/adm/m${String(number).padStart(2, '0')}-approved-complete.js`);
-  const data = `window.ADM_APPROVED_COMPLETE=window.ADM_APPROVED_COMPLETE||{};window.ADM_APPROVED_COMPLETE[${number}]=${JSON.stringify(render(theory))};\n`;
+  const html = render(theory);
+  const sessions = [...html.matchAll(/<h2>(.*?)<\/h2>/g)].map(match => match[1]);
+  sectionIndex[number] = sessions.filter(title => /^(?:SESSÃO\s+\d+|S\d+\s*[—-])/i.test(title));
+  if (sectionIndex[number].length < 5) throw new Error(`Sessões ausentes no M${number}`);
+  const data = `window.ADM_APPROVED_COMPLETE=window.ADM_APPROVED_COMPLETE||{};window.ADM_APPROVED_COMPLETE[${number}]=${JSON.stringify(html)};\n`;
   writeFileSync(path, data);
 }
+writeFileSync(resolve(root, 'content/adm/adm-session-index.js'),
+  `window.ADM_SESSION_INDEX=${JSON.stringify(sectionIndex)};\n`);

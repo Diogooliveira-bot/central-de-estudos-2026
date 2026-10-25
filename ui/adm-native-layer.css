@@ -42,6 +42,29 @@
 .adm-native-sharing-link.is-review{border-color:#c58b2b;background:rgba(197,139,43,.08)}.adm-native-sharing-link.is-review .adm-native-sharing-action{color:#e6b657}
 @media(max-width:560px){.adm-native-sharing-link{align-items:flex-start;flex-direction:column}.adm-native-sharing-action{align-self:flex-end}}
 
+/* Sessões e checks da apostila completa de Administrativo. */
+.adm-session-plan{margin:0 0 14px;padding:12px;border:1px solid var(--line,#26364f);border-radius:12px;background:var(--card,#0c1828)}
+.adm-session-plan>summary{display:flex;align-items:center;justify-content:space-between;gap:12px;cursor:pointer;font-weight:800}
+.adm-session-plan>summary small{font-weight:700;color:var(--adm-native-accent)}
+.adm-session-plan>p{margin:9px 0;color:var(--muted,#92a4b9);font-size:12px}
+.adm-session-list{display:grid;gap:7px;max-height:380px;overflow:auto}
+.adm-session-row{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 10px;border:1px solid var(--line,#26364f);border-radius:9px}
+.adm-session-row.is-done{background:rgba(22,128,90,.10);border-color:#16805a}
+.adm-session-row label{display:flex;align-items:center;gap:10px;min-width:0;font-size:12px;line-height:1.4;cursor:pointer}
+.adm-session-row input,.adm-session-reader-check input,.adm-reading-check input{width:18px;height:18px;flex:none;accent-color:#16805a;cursor:pointer}
+.adm-session-row button{flex:none;border:1px solid var(--adm-native-accent);border-radius:8px;background:transparent;color:inherit;padding:8px 10px;font:700 12px system-ui;cursor:pointer}
+.adm-session-row button:focus-visible,.adm-session-plan summary:focus-visible,.adm-reading-check input:focus-visible{outline:3px solid #16805a;outline-offset:2px}
+html.bc-ui-v1 #subjects .subject[data-id="adm"] .adm-session-plan{background:#fffefa;border-color:#d8dfd6;color:#17283c}
+html.bc-ui-v1 #subjects .subject[data-id="adm"] .adm-session-plan>summary small{color:#16805a}
+html.bc-ui-v1 #subjects .subject[data-id="adm"] .adm-session-row{border-color:#d8dfd6}
+html.bc-ui-v1 #subjects .subject[data-id="adm"] .adm-session-row button{color:#175f9d;border-color:#9cc7e6;background:#f3f9ff}
+#adm-native-reader .adm-reading-check{display:inline-flex;align-items:flex-start;gap:8px;line-height:1.5;cursor:pointer}
+#adm-native-reader .adm-reading-check-list{list-style:none;padding-left:0}
+#adm-native-reader .adm-reading-check-list li{margin:6px 0}
+#adm-native-reader .adm-session-reader-check{margin:22px 0;padding:12px;border:1px solid var(--bc-reading-line,#c9d4dc);border-radius:10px;background:var(--bc-reading-inset,#f5f8fa)}
+#adm-native-reader .adm-session-reader-check label{display:flex;align-items:center;gap:9px;cursor:pointer;font-weight:700}
+@media(max-width:540px){.adm-session-row{align-items:flex-start;flex-wrap:wrap}.adm-session-row button{margin-left:28px}.adm-session-plan>summary{align-items:flex-start}}
+
 /* Direito Administrativo segue o padrão aprovado de Constitucional e Português.
    Escopo restrito ao renderer nativo de ADM para não alterar outras disciplinas. */
 html.bc-ui-v1 #subjects .subject[data-id="adm"] [data-adm-native] {

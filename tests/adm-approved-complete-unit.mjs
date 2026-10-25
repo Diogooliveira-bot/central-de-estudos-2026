@@ -28,3 +28,35 @@ test('20 apostilas aprimoradas carregam com teoria e questões no leitor ADM', (
   assert.match(layer, /\[1,2,5,11\]\.includes\(num\(uid\)\)/);
   assert.match(layer, /central-v6:adm-native:/);
 });
+
+test('sessões e checks podem ser marcados e desmarcados sem alterar o leitor compartilhado', () => {
+  const data = { window: {} };
+  vm.createContext(data);
+  vm.runInContext(read('content/adm/adm-session-index.js'), data);
+  assert.equal(Object.keys(data.window.ADM_SESSION_INDEX).length, 20);
+  for (let n = 1; n <= 20; n++) {
+    assert.ok(data.window.ADM_SESSION_INDEX[n].length >= 5, `M${n}: sessões identificadas`);
+    const html = JSON.parse(read(`content/adm/m${String(n).padStart(2, '0')}-approved-complete.js`).match(/=(".*");\s*$/s)[1]);
+    assert.doesNotMatch(html, /[□☐]/, `M${n}: nenhum quadradinho de texto`);
+  }
+  for (const n of [1, 3, 11, 14, 16, 18, 19]) {
+    const html = JSON.parse(read(`content/adm/m${String(n).padStart(2, '0')}-approved-complete.js`).match(/=(".*");\s*$/s)[1]);
+    if (n !== 3) assert.match(html, /type="checkbox" data-adm-check="1"/, `M${n}: check funcional`);
+  }
+  const saved = new Map();
+  const context = {
+    window: data.window,
+    document: { readyState: 'loading', addEventListener() {}, querySelectorAll() { return []; } },
+    localStorage: {getItem: key => saved.get(key) ?? null, setItem: (key,value) => saved.set(key,value), removeItem: key => saved.delete(key)},
+  };
+  vm.createContext(context);
+  vm.runInContext(read('content/adm/adm-native-index.js'), context);
+  vm.runInContext(read('ui/adm-native-layer.js'), context);
+  const uid = Object.keys(context.window.ADM_NATIVE_INDEX.modules).find(id => context.window.ADM_NATIVE_INDEX.modules[id].number === 1);
+  const key = `central-v6:adm-native:${uid}:complete:session-1`;
+  context.window.AdmNative.toggleSession(uid, 1, true);
+  assert.equal(saved.get(key), '1');
+  context.window.AdmNative.toggleSession(uid, 1, false);
+  assert.equal(saved.has(key), false);
+  assert.doesNotMatch(read('ui/native-reading-session.js'), /adm-session|adm-reading-check/);
+});
