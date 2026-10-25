@@ -826,7 +826,7 @@ const TOPICS_CPC = [{"id":"cpc-m01","label":"Módulo 1 — Normas fundamentais, 
 <script src="./decorando-data-adm-pack5.js?v=20261008adm6"></script>
 <script src="./decorando-data-cf-leis.js?v=20261008cf1"></script>
 <script src="./decorando-data-restantes.js?v=20261023-remove-labor-disciplines-v1"></script>
-<script src="./decorando-data-led-aprovadas.js?v=20261010ledgate2"></script>
+<script src="/api/lei-em-dia-questions?mode=catalog&v=20261024progressive1"></script>
 <script src="./decorando-data-modulos.js?v=20261024rm2"></script>
 <script>
 const DATA_ADM_EXTRAS = [...DATA_ADM_14133_EXTRA,...DATA_ADM_8112_EXTRA,...DATA_ADM_8429_EXTRA,...DATA_ADM_9784_EXPANSAO,...DATA_ADM_12527_EXPANSAO,...DATA_ADM_13709_EXPANSAO,...DATA_ADM_PACK5];
@@ -1039,6 +1039,37 @@ function record(article,value){
   saved.answered[article.id]=true;
   saved.attempts[article.id]=[...(saved.attempts[article.id]||[]),at];
   save()
+}
+const ledQuestionLoads=new Map();
+const ledQuestionErrors=new Map();
+async function loadLedQuestionById(id){
+  const article=DATA.find(x=>String(x.id)===String(id));
+  if(!article||article.question?.statement)return article;
+  if(ledQuestionLoads.has(id))return ledQuestionLoads.get(id);
+  ledQuestionErrors.delete(id);
+  const task=(async()=>{
+    try{
+      const response=await fetch('/api/lei-em-dia-questions?action=question',{method:'POST',credentials:'same-origin',cache:'no-store',headers:{'Content-Type':'application/json'},body:JSON.stringify({id:String(id)})});
+      const body=await response.json().catch(()=>({}));
+      if(!response.ok)throw Object.assign(new Error(body.error||'Questão indisponível'),{status:response.status,used:body.used,dailyLimit:body.dailyLimit});
+      if(!body.question||String(body.question.id)!==String(id))throw new Error('Resposta de questão inválida');
+      article.question=body.question.question;
+      article.parts=body.question.parts||[];
+      article.source=body.question.source||'';
+      article.loadedProgressively=true;
+      return article;
+    }catch(error){ledQuestionErrors.set(id,error);return null}
+    finally{ledQuestionLoads.delete(id);if(ui.screen==='study')render()}
+  })();
+  ledQuestionLoads.set(id,task);
+  return task;
+}
+window.loadLedQuestionById=loadLedQuestionById;
+function ledQuestionPlaceholder(article){
+  const err=ledQuestionErrors.get(article.id);
+  if(err?.status===429)return `<div class="empty-status"><h3>Limite diário atingido</h3><p>Você já utilizou ${Number(err.used||20)} de ${Number(err.dailyLimit||20)} questões gratuitas de hoje. O limite renova à meia-noite, horário de Brasília.</p></div>`;
+  if(err)return `<div class="empty-status"><p>${esc(err.message||'Não foi possível abrir a questão.')}</p><button onclick="loadLedQuestionById('${esc(article.id)}')">Tentar novamente</button></div>`;
+  return `<div class="empty-status"><div>…</div><h3>Carregando questão com autorização segura</h3><p>O enunciado e o gabarito são solicitados individualmente ao servidor.</p><button onclick="loadLedQuestionById('${esc(article.id)}')">Carregar questão</button></div>`;
 }
 function answerFocus(value){
   const a=visible()[ui.articleIndex];if(!a||ui.choice!==null)return;
@@ -1450,6 +1481,7 @@ function originBadge(article){
 function renderFocus(){
   const v=visible(),article=v[ui.articleIndex];
   if(!article)return emptyStudy();
+  if(!article.question?.statement)return ledQuestionPlaceholder(article);
   const attempts=saved.attempts[article.id]||[];
   return `<div class="study-grid question-first">
     <article class="exercise-card">
@@ -1472,6 +1504,7 @@ function renderScroll(){
     ${items.map((article,i)=>{
       const selected=Object.prototype.hasOwnProperty.call(ui.scrollChoices,article.id)?ui.scrollChoices[article.id]:undefined;
       const open=!!ui.scrollHistories[article.id];
+      if(!article.question?.statement)return `<article class="scroll-question-card"><div class="exercise-heading"><div><span class="question-number">QUESTÃO ${i+1}</span>${originBadge(article)}<h2>${esc(article.title||article.number||'Lei em Dia')}</h2></div></div>${ledQuestionPlaceholder(article)}</article>`;
       return `<article class="scroll-question-card">
         <div class="exercise-heading"><div><span class="question-number">QUESTÃO ${i+1}</span>${originBadge(article)}<h2>Julgue o item a seguir</h2>${article.question.meta?`<small class="question-meta">${esc(article.question.meta)}</small>`:""}</div><div class="question-actions"><span class="question-type">Certo ou errado</span><button onclick="ui.scrollComments['${article.id}']=!ui.scrollComments['${article.id}'];render()">▢ Comentário</button>${adminEditor.canEdit?`<button type="button" class="admin-edit-button" onclick="editQuestion('${article.id}')">✎ Editar</button>`:""}<button class="delete-action" onclick="deleteQuestion('${article.id}')">Excluir</button></div></div>
         ${ui.scrollComments[article.id]?`<div class="comment-box"><div><strong>Comentário da questão</strong><small>Salvo automaticamente</small></div><textarea oninput="updateNote('${article.id}',this.value)">${esc(saved.notes[article.id]||"")}</textarea></div>`:""}
@@ -1530,6 +1563,10 @@ function render(){
   if(ui.screen==="audit")app.innerHTML=renderAudit();
   else if(ui.screen==="study")app.innerHTML=renderStudy();
   else app.innerHTML=renderFilters();
+  if(ui.screen==='study'&&saved.preferences.studyMode!=='scroll'){
+    const current=visible()[ui.articleIndex];
+    if(current&&!current.question?.statement&&!ledQuestionLoads.has(current.id))loadLedQuestionById(current.id);
+  }
 }
 function centralOpenTopic(topicId,direct){
   topicId=String(topicId||"");

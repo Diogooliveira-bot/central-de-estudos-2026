@@ -1,4 +1,5 @@
-import { requireSession, readJsonBody, sameOriginRequest } from '../lib/auth.js';
+import { readJsonBody, sameOriginRequest } from '../lib/auth.js';
+import { requirePlanFeature } from '../lib/plan-access.js';
 
 function send(res, status, body) {
   res.statusCode = status;
@@ -39,7 +40,7 @@ async function ensureTable(sql) {
 
 export default async function handler(req, res) {
   if (req.method !== 'GET' && !sameOriginRequest(req)) return send(res, 403, { error: 'Origem da requisição não permitida' });
-  const session = await requireSession(req, ['admin','editor','aluno']);
+  const session = await requirePlanFeature(req, 'progress.advanced_sync', ['admin','editor','aluno']);
   if (!session.ok) return send(res, session.status, { error: session.error });
 
   try {

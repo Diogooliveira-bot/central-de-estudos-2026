@@ -60,11 +60,34 @@ export default async function handler(req, res) {
         const existing = await sql`SELECT user_id FROM central_users WHERE LOWER(email)=${email} LIMIT 1`;
         if (existing.length) return send(res, 409, { error: 'Já existe um usuário com este e-mail' });
 
-        const rows = await sql`
-          INSERT INTO central_users(user_id,name,email,role,password_hash,active)
-          VALUES(${crypto.randomUUID()},${name},${email},${role},${hashPassword(password)},TRUE)
-          RETURNING user_id,name,email,role,active,created_at,updated_at,last_login
-        `;
+        const userId = crypto.randomUUID();
+        const passwordHash = hashPassword(password);
+        const rows = role === 'aluno'
+          ? await sql`
+            WITH created AS (
+              INSERT INTO central_users(user_id,name,email,role,password_hash,active)
+              VALUES(${userId},${name},${email},${role},${passwordHash},TRUE)
+              RETURNING user_id,name,email,role,active,session_version,created_at,updated_at,last_login
+            ), assigned AS (
+              INSERT INTO central_user_subscriptions
+                (subscription_id,user_id,plan_code,status,starts_at,ends_at,grant_source,granted_by)
+              SELECT ${crypto.randomUUID()},user_id,'free','active',NOW(),NULL,'manual',${session.user.id}
+                FROM created
+              RETURNING subscription_id,user_id,plan_code,status
+            ), audited AS (
+              INSERT INTO central_user_plan_audit
+                (user_id,subscription_id,changed_by,action,new_plan_code,new_status)
+              SELECT user_id,subscription_id,${session.user.id},'assigned','free','active'
+                FROM assigned
+              RETURNING audit_id
+            )
+            SELECT * FROM created
+          `
+          : await sql`
+            INSERT INTO central_users(user_id,name,email,role,password_hash,active)
+            VALUES(${userId},${name},${email},${role},${passwordHash},TRUE)
+            RETURNING user_id,name,email,role,active,created_at,updated_at,last_login
+          `;
         return send(res, 201, { ok: true, user: publicUser(rows[0]) });
       }
 

@@ -9,6 +9,7 @@
     '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
   })[c]);
   const entries = root.items;
+  const locked = root.locked === true;
   const style = document.createElement('style');
   style.textContent = `
     .qc-platform-sharing{margin:16px 0 20px;padding:16px;border:1px solid #b8dfe5;border-left:4px solid #087e8b;border-radius:12px;background:#f1fbfc;color:#193d45}
@@ -32,6 +33,15 @@
     return entries.filter((x) => x.disciplineKey === disciplineKey && x.code.split('.')[0] === moduleCode);
   }
   function panel(disciplineKey, moduleCode) {
+    if (locked) {
+      const section = document.createElement('section');
+      section.className = 'qc-platform-sharing';
+      section.dataset.qcSharingPanel = `${disciplineKey}:${moduleCode}`;
+      section.setAttribute('aria-label', `Recurso Premium QConcursos de ${moduleCode}`);
+      section.innerHTML = '<div class="qc-platform-sharing-head"><b>QConcursos · 🔒 Premium</b><small>Cadernos e filtros exclusivos</small></div><p>Este recurso é exclusivo do Base Completa Premium.</p><button type="button" class="qc-premium-cta">Conhecer o Premium</button>';
+      section.querySelector('.qc-premium-cta').addEventListener('click', () => g.alert('Este recurso é exclusivo do Base Completa Premium.'));
+      return section;
+    }
     const rows = rowsFor(disciplineKey, moduleCode);
     if (!rows.length) return null;
     const linked = rows.filter((x) => x.status === 'VALIDADO' && x.public && x.id && x.quantity > 0 && x.link);

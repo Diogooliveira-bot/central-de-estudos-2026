@@ -1,4 +1,4 @@
-import {database, requireSession, sameOriginRequest, readJsonBody, readCookie} from '../lib/auth.js';
+import {database, requireSession, sameOriginRequest, readJsonBody} from '../lib/auth.js';
 
 const IS_PREVIEW=process.env.VERCEL_ENV!=='production';
 function send(res,status,body){
@@ -52,17 +52,16 @@ export function validateEditPayload(body){
 export default async function handler(req,res){
  try{
   if(!['GET','PUT'].includes(req.method)){res.setHeader('Allow','GET, PUT');return send(res,405,{error:'Método não permitido'});}
-  // A leitura das correções é pública; apenas salvar exige sessão administrativa.
+  // O catálogo completo de correções não é um endpoint de entrega de questões.
+  // Mantê-lo administrativo evita que a rota exponha o banco inteiro a alunos.
   if(req.method==='GET'){
+   const auth=await requireSession(req,['admin']);
+   if(!auth.ok)return send(res,auth.status||403,{error:auth.error||'Acesso exclusivo do administrador'});
    const sql=database();await (IS_PREVIEW?ensurePreview:ensure)(sql);
    const edits=IS_PREVIEW
     ? await sql`SELECT question_id,data,revision FROM lei_em_dia_edits_preview`
     : await sql`SELECT question_id,data,revision FROM lei_em_dia_edits`;
-   let canEdit=false;
-   if(readCookie(req)){
-    try{const auth=await requireSession(req,['admin']);canEdit=auth.ok===true}catch(_){}
-   }
-   return send(res,200,{edits,canEdit});
+   return send(res,200,{edits,canEdit:true});
   }
   if(!sameOriginRequest(req))return send(res,403,{error:'Origem não autorizada'});
   const session=await requireSession(req,['admin']);

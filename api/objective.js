@@ -1,4 +1,5 @@
 import { requireSession, readJsonBody, sameOriginRequest } from '../lib/auth.js';
+import { requirePlanFeature } from '../lib/plan-access.js';
 import { EXAM_TOPIC_IDS } from '../lib/exam-progress-topic-ids.js';
 
 function validObjectiveId(value) {
@@ -45,7 +46,7 @@ async function handleExamProgress(req, res) {
     res.setHeader('Allow', 'GET, PUT');
     return send(res, 405, { error:'Método não permitido' });
   }
-  const session = await requireSession(req, ['admin','editor','aluno']);
+  const session = await requirePlanFeature(req, 'edital.sync', ['admin','editor','aluno']);
   if (!session.ok) return send(res, session.status, { error:session.error });
   try {
     const sql = session.sql;
