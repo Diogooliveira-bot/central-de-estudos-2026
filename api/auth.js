@@ -21,6 +21,7 @@ import handleLeiEmDiaQuestions from '../lib/lei-em-dia-questions-handler.js';
 import handlePlans from '../lib/plans-handler.js';
 import handlePrivateContent from '../lib/private-content-handler.js';
 import handleHotmartWebhook from '../lib/hotmart-webhook.js';
+import handleHotmartClaim from '../lib/hotmart-claim-handler.js';
 
 function send(res, status, body, extraHeaders = {}) {
   res.statusCode = status;
@@ -173,6 +174,7 @@ export default async function handler(req, res) {
   try {
     const premiumApi = String(req.query?.bc_api || '').toLowerCase();
     if (premiumApi === 'hotmart-webhook') return handleHotmartWebhook(req, res);
+    if (premiumApi === 'hotmart-claim') return handleHotmartClaim(req, res);
     if (premiumApi === 'plans') return handlePlans(req, res);
     if (premiumApi === 'private-content') return handlePrivateContent(req, res);
     if (premiumApi === 'lei-em-dia-questions') return handleLeiEmDiaQuestions(req, res);

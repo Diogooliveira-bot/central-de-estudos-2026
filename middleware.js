@@ -48,6 +48,7 @@ const PUBLIC_PATHS = new Set([
   '/login.html',
   '/convite.html',
   '/recuperar-senha.html',
+  '/ativar-acesso.html',
   '/favicon.ico',
   '/robots.txt',
   '/assets/base-completa-symbol.webp',

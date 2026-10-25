@@ -8,7 +8,7 @@ var OFFLINE_MANIFEST='/central-offline-files-v66172.json?v=20261025premiummain1'
 var OFFLINE_READY='/central-offline-ready.json?v=20261022-online-first-recovery-v1';
 
 function publicPath(path){
-  return path==='/login.html'||path==='/recuperar-senha.html'||path==='/favicon.ico'||path==='/robots.txt'||path==='/assets/base-completa-symbol.webp';
+  return path==='/login.html'||path==='/recuperar-senha.html'||path==='/ativar-acesso.html'||path==='/favicon.ico'||path==='/robots.txt'||path==='/assets/base-completa-symbol.webp';
 }
 function protectedContentPath(path){
   path=String(path||'').split('?')[0];
@@ -190,6 +190,7 @@ self.addEventListener('fetch',function(event){
   if(request.method!=='GET'||url.pathname.startsWith('/api/'))return;
   // Password-reset links must never be stored in the offline cache.
   if(url.pathname==='/recuperar-senha.html')return;
+  if(url.pathname==='/ativar-acesso.html')return;
   if(protectedContentPath(url.pathname)){
     event.respondWith(fetch(request,{cache:'no-store'}).catch(function(){return Response.error()}));
     return;
