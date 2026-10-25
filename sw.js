@@ -41,6 +41,7 @@ function protectedContentPath(path){
     ||path==='/portugues-tec-data-v1.js'
     ||/^\/content\/(?:adm|cf|civil|cpc|cpp|penal|portugues|rlm)\/m\d{2}-native-data(?:-part\d+)?\.js$/i.test(path)
     ||/^\/content\/adm\/m\d{2}-native-data-lite\.js$/i.test(path)
+    ||/^\/content\/adm\/m(?:0[1-9]|1\d|20)-approved-complete\.js$/i.test(path)
     ||/^\/content\/(?:cf|civil)\/m\d{2}-teoria-guiada-data\.js$/i.test(path)
     ||/^\/content\/penal\/m\d{2}-teoria-guiada-data\.js$/i.test(path)
     ||/^\/tools\/decorando-data-(?!led-aprovadas)[a-z0-9-]+\.js$/i.test(path)
