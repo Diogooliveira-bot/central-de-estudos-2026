@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><meta name="referrer" content="no-referrer">
+<title>Planos dos alunos — Base Completa</title>
+<link rel="icon" href="/favicon.ico">
+<style>
+:root{--navy:#122c47;--blue:#19598a;--ink:#182d40;--muted:#617487;--line:#d9e5ed;--bg:#f4f8fb;--ok:#17694e;--warn:#a34b20}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+header{background:var(--navy);color:white;padding:24px max(20px,calc((100% - 1080px)/2))}
+h1{margin:0 0 5px;font-size:24px}header p{margin:0;opacity:.84;font-size:13px}
+main{max-width:1080px;margin:auto;padding:22px}a{color:var(--blue)}
+nav{margin-bottom:20px;display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+nav a{font-weight:700;text-decoration:none}
+.note,.panel{background:white;border:1px solid var(--line);border-radius:14px;padding:18px;margin-bottom:16px}
+.note{background:#eef6fb;font-size:13px;color:#39596f}.panel h2{margin:0 0 12px;font-size:18px}
+.toolbar{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+input,select{border:1px solid #bbcedc;border-radius:9px;padding:10px;background:white;color:var(--ink);font:inherit;min-width:160px}
+input[type=search]{flex:1;min-width:220px}
+button{cursor:pointer;background:var(--navy);border:1px solid var(--navy);color:white;border-radius:9px;padding:9px 12px;font-weight:700;font:inherit}
+button.secondary{background:white;color:var(--blue);border-color:#b8cede}button.danger{background:white;color:var(--warn);border-color:#e3c9ba}
+button:disabled{opacity:.45;cursor:wait}
+#feedback{font-size:13px;min-height:24px;margin-bottom:12px;color:var(--muted)}#feedback.error{color:var(--warn)}
+.list{display:grid;gap:12px}.student{border:1px solid var(--line);border-radius:12px;padding:15px;background:white;display:grid;gap:9px}
+.head{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}.name{font-weight:800;font-size:15px}
+.mail{display:block;font-size:12px;color:var(--muted);overflow-wrap:anywhere}.badge{display:inline-block;background:#e8eef5;color:#315478;border-radius:20px;padding:4px 10px;font-size:12px;font-weight:800}
+.badge.premium{color:var(--ok);background:#dff2e9}.badge.inactive{color:var(--warn);background:#fcebdd}
+.meta{color:var(--muted);font-size:12px}.actions{display:flex;gap:8px;flex-wrap:wrap}.actions button{font-size:12px;padding:8px 10px}
+[hidden]{display:none!important}@media(max-width:560px){main{padding:14px}header{padding:22px 16px}.toolbar{display:grid;grid-template-columns:1fr}.toolbar input{width:100%}}
+</style></head><body>
+<header><h1>Planos dos alunos</h1><p>Base Completa — painel exclusivo do administrador</p></header>
+<main>
+<nav><a href="/usuarios.html">← Voltar aos alunos</a><a href="/">Central de Estudos</a></nav>
+<div class="note"><strong>Controle manual:</strong> aqui você pode colocar um aluno no Gratuito, liberar Premium por 6 ou 12 meses e encerrar um acesso Premium. Isto <strong>não realiza cobranças</strong>: libere o acesso pago somente depois de confirmar o pagamento por um canal seguro.</div>
+<section class="panel" aria-labelledby="studentsTitle">
+<h2 id="studentsTitle">Gerenciar assinaturas</h2>
+<div class="toolbar"><input id="search" type="search" aria-label="Buscar aluno" placeholder="Buscar nome ou e-mail">
+<select id="filter" aria-label="Filtrar por plano"><option value="all">Todos os alunos</option><option value="premium">Premium</option><option value="free">Gratuito</option><option value="unassigned">Sem plano</option></select>
+<button type="button" id="reload" class="secondary">Atualizar</button></div>
+<div id="feedback" role="status" aria-live="polite">Carregando alunos...</div>
+<div id="students" class="list"></div>
+</section>
+</main>
+<script>
+(function(){
+'use strict';
+var source=[],host=document.getElementById('students'),feedback=document.getElementById('feedback');
+function msg(text,isError){feedback.textContent=text||'';feedback.className=isError?'error':''}
+async function getJson(url,options){var r=await fetch(url,Object.assign({cache:'no-store',credentials:'same-origin'},options||{}));var data={};try{data=await r.json()}catch(_){}
+if(!r.ok)throw new Error(data.error||'Não foi possível concluir a operação.');return data}
+function el(tag,className,text){var e=document.createElement(tag);if(className)e.className=className;if(text!=null)e.textContent=text;return e}
+function date(value){if(!value)return 'Sem vencimento';var v=new Date(value);return Number.isFinite(v.getTime())?v.toLocaleDateString('pt-BR'):'Data indisponível'}
+function addMonths(amount){var dt=new Date(),day=dt.getUTCDate();dt.setUTCDate(1);dt.setUTCMonth(dt.getUTCMonth()+amount);var max=new Date(Date.UTC(dt.getUTCFullYear(),dt.getUTCMonth()+1,0)).getUTCDate();dt.setUTCDate(Math.min(day,max));return dt.toISOString()}
+async function perform(data,summary){if(!confirm(summary))return;msg('Salvando alteração...');
+try{await getJson('/api/plans?action=admin',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});await load();msg('Plano atualizado com sucesso.')}catch(e){msg(e.message,true)}}
+function action(row,label,fn,kind){var b=el('button',kind||'',label);b.type='button';b.disabled=row.active===false;b.onclick=fn;return b}
+function render(){var query=document.getElementById('search').value.trim().toLowerCase(),filter=document.getElementById('filter').value;host.replaceChildren();
+var users=source.filter(u=>u.role==='aluno').filter(u=>(u.name+' '+u.email).toLowerCase().includes(query));
+if(filter!=='all')users=users.filter(u=>(u.plan_code||'unassigned')===filter||filter==='free'&&u.plan_code==='premium'&&['expired','cancelled'].includes(u.subscription_status)&&u.ends_at&&new Date(u.ends_at)<new Date());
+if(!users.length){host.append(el('p','meta','Nenhum aluno corresponde ao filtro.'));return}
+users.forEach(function(u){
+var card=el('article','student'),head=el('div','head'),who=el('div'),name=el('div','name',u.name||'Aluno'),mail=el('span','mail',u.email||'');
+who.append(name,mail);var plan=u.plan_code||'unassigned',isExpired=u.ends_at&&new Date(u.ends_at)<=new Date();
+var current=plan==='premium'&&!isExpired&&['active','cancelled'].includes(u.subscription_status)?'Premium':plan==='free'||plan==='premium'&&isExpired?'Gratuito':'Sem plano';
+var badge=el('span','badge '+(current==='Premium'?'premium':u.active===false?'inactive':''),current+(u.active===false?' · Desativado':''));head.append(who,badge);
+var info=el('div','meta',current==='Premium'?'Premium até '+date(u.ends_at):current==='Gratuito'?'Teoria resumida, Vade Mecum e até 20 questões diárias':'É necessário atribuir um plano.');
+var buttons=el('div','actions');
+buttons.append(action(u,'Gratuito',()=>perform({action:'assign',userId:u.user_id,planCode:'free'},'Atribuir plano Gratuito a '+u.name+'?')));
+buttons.append(action(u,'Premium · 6 meses',()=>perform({action:'assign',userId:u.user_id,planCode:'premium',endsAt:addMonths(6)},'Liberar Premium por 6 meses para '+u.name+'? Confirme antes que o pagamento foi recebido.')));
+buttons.append(action(u,'Premium · 12 meses',()=>perform({action:'assign',userId:u.user_id,planCode:'premium',endsAt:addMonths(12)},'Liberar Premium por 12 meses para '+u.name+'? Confirme antes que o pagamento foi recebido.')));
+if(u.subscription_id&&plan==='premium'&&!isExpired&&u.subscription_status==='active')buttons.append(action(u,'Cancelar renovação',()=>perform({action:'cancel',subscriptionId:u.subscription_id},'Cancelar o Premium de '+u.name+' ao final do período?'),'secondary'));
+if(u.subscription_id&&plan==='premium'&&!isExpired&&['active','cancelled'].includes(u.subscription_status))buttons.append(action(u,'Encerrar agora',()=>perform({action:'expire',subscriptionId:u.subscription_id},'ATENÇÃO: encerrar imediatamente o acesso Premium de '+u.name+'?'),'danger'));
+card.append(head,info,buttons);host.append(card);
+})}
+async function load(){msg('Carregando planos...');try{var result=await getJson('/api/plans?action=admin');source=Array.isArray(result.users)?result.users:[];render();msg(source.filter(u=>u.role==='aluno').length+' aluno(s) encontrado(s).')}catch(e){msg(e.message,true)}}
+document.getElementById('reload').onclick=load;document.getElementById('search').addEventListener('input',render);document.getElementById('filter').addEventListener('change',render);
+(async function(){try{var identity=await getJson('/api/auth?action=me');if(!identity.authenticated){location.replace('/login.html?next=/planos.html');return}if(identity.user?.role!=='admin'){location.replace('/');return}await load()}catch(e){msg('Entre novamente para acessar este painel.',true)}})();
+})();
+</script></body></html>
