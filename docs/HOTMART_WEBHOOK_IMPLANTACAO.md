@@ -112,3 +112,13 @@ pela bateria completa antes de compor um release.
 O workflow isolado atualizou Nodemailer para ^10.1.4 e aplicou override
 Zod ^4.6.6; a auditoria de produção passou nesse workflow.
 Reexecutar o pipeline principal da branch antes da publicação.
+
+## Atualização: configuração do ambiente isolado em 25/10/2026
+Apenas no ambiente Vercel Preview da branch `feature/hotmart-ativacao-automatica-20261025`:
+- HOTMART_PRODUCT_ID=8805543, códigos 6M/12M conforme as duas ofertas;
+- HOTMART_HOTTOK definido como segredo Sensitive pelo proprietário (valor não lido);
+- DATABASE_URL apontando para Neon isolado `br-hidden-scene-awp0le5e`;
+- AUTH_SECRET específico da branch de testes, não herdado da produção;
+- HOTMART_TEST_RECEIVER_ENABLED=true.
+O código segue sem HOTMART_LIVE_ENABLED em produção.
+**Nunca mesclar este PR sem verificar migração de produção e teste real de notificação.**
