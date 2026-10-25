@@ -4,7 +4,7 @@ import { createHmac } from "node:crypto";
 import { createHandler } from "../lib/whatsapp-sales-handler.js";
 import { hashContact } from "../lib/whatsapp-sales-store.js";
 
-const env={META_APP_SECRET:"meta-secret",META_WEBHOOK_VERIFY_TOKEN:"verify-token",DATABASE_URL:"test-only",SALES_BASE_URL:"https://central-de-estudos-ecru.vercel.app",SALES_HASH_KEY:"hash",SALES_CONTEXT_ENCRYPTION_KEY:Buffer.alloc(32,1).toString("base64")};
+const env={META_APP_SECRET:"meta-secret",META_WEBHOOK_VERIFY_TOKEN:"verify-token",DATABASE_URL:"test-only",SALES_BASE_URL:"https://preview.example.vercel.app",SALES_HASH_KEY:"hash",SALES_CONTEXT_ENCRYPTION_KEY:Buffer.alloc(32,1).toString("base64")};
 const res=()=>({setHeader(){},end(body=""){this.body=body;}});
 const payload=(id,text)=>({object:"whatsapp_business_account",entry:[{changes:[{value:{messages:[{id,from:"5511999999999",type:"text",text:{body:text}}]}}]}]});
 const request=(data)=>{const rawBody=Buffer.from(JSON.stringify(data));return{method:"POST",rawBody,headers:{"x-hub-signature-256":`sha256=${createHmac("sha256",env.META_APP_SECRET).update(rawBody).digest("hex")}`}};};
@@ -45,4 +45,12 @@ test("webhook rejeita assinatura falsa sem criar convite",async()=>{
  const store=memoryStore();const h=createHandler({env,storeFactory:async()=>store});
  const req=request(payload("wamid.bad","Quero me cadastrar"));req.headers["x-hub-signature-256"]="sha256=bad";const r=res();
  await h(req,r);assert.equal(r.statusCode,401);assert.equal(store.invites.length,0);
+});
+
+test("Preview usa o endereço de branch da Vercel para convites sem variável adicional",async()=>{
+ const store=memoryStore();const sent=[];
+ const h=createHandler({env:{...env,SALES_BASE_URL:"",VERCEL_ENV:"preview",VERCEL_BRANCH_URL:"central-de-estudos-git-homologacao-estudotd.vercel.app"},storeFactory:async()=>store,send:async x=>sent.push(x),reply:async()=>"Resposta"});
+ const r=res();await h(request(payload("wamid.preview-signup","Quero me cadastrar")),r);
+ assert.equal(store.invites[0],"https://central-de-estudos-git-homologacao-estudotd.vercel.app");
+ assert.equal(sent.length,1);
 });
