@@ -1,5 +1,5 @@
 /* Base Completa — PWA autenticado e offline por sessão verificada. */
-var CACHE='central-20261025-adm-headers-v1';
+var CACHE='central-20261025-auth-recovery-v1';
 var AUTH_CACHE='central-auth-session-v1';
 var AUTH_KEY='/__bc_offline_auth__';
 var AUTH_TTL_MS=72*60*60*1000;
@@ -8,7 +8,7 @@ var OFFLINE_MANIFEST='/central-offline-files-v66172.json?v=20261022-online-first
 var OFFLINE_READY='/central-offline-ready.json?v=20261022-online-first-recovery-v1';
 
 function publicPath(path){
-  return path==='/login.html'||path==='/favicon.ico'||path==='/robots.txt'||path==='/assets/base-completa-symbol.webp';
+  return path==='/login.html'||path==='/recuperar-senha.html'||path==='/favicon.ico'||path==='/robots.txt'||path==='/assets/base-completa-symbol.webp';
 }
 function cacheResponse(event,request,response){
   // Cache Storage must never prevent a healthy online response from loading.
@@ -133,6 +133,8 @@ self.addEventListener('fetch',function(event){
   }
 
   if(request.method!=='GET'||url.pathname.startsWith('/api/'))return;
+  // Never cache single-use password reset pages or links.
+  if(url.pathname==='/recuperar-senha.html')return;
 
   if(request.mode==='navigate'){
     event.respondWith((async function(){
