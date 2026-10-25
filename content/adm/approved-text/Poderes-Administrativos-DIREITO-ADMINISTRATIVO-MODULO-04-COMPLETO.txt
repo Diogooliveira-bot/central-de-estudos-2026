@@ -1,0 +1,527 @@
+﻿Poderes Administrativos
+DIREITO ADMINISTRATIVO · MÓDULO 04 · COMPLETO
+
+DIREITO ADMINISTRATIVOMÓDULO 04
+
+Apostila de estudo · nível Analista
+
+Poderes Administrativos
+
+Do poder-dever e da discricionariedade ao poder de polícia, abuso de poder e Lei 13.869/19 — com foco em distinções que a FCC usa para induzir ao erro.
+
+Base vigente conferida: Constituição Federal · Lei 9.784/99 · CTN, art. 78 · Lei 13.869/19 · STF Tema 532 · STJ, REsp 1.950.332/RJ. O caderno TEC da Biblioteca foi usado apenas para mapear cobertura e padrão de cobrança.
+
+Como estudar este módulo
+
+Em toda questão, pergunte primeiro qual relação jurídica está sendo exercida. Estrutura interna? Hierárquico. Vínculo especial e sanção? Disciplinar. Norma administrativa? Regulamentar/normativo. Limitação dirigida ao administrado em geral? Polícia. Depois procure o limite: competência, finalidade, lei, processo e proporcionalidade.
+
+identifique a relação→ache o poder→verifique o limite→procure a pegadinha
+
+Regra de ouro: a FCC costuma deixar o conceito certo e trocar uma palavra-limitadora: “sempre”, “exclusivamente”, “sem hierarquia”, “permanente”, “imune”, “todo”.
+
+SESSÃO 01 · VISÃO GERAL
+
+Poderes administrativos: instrumentos que também são deveres
+
+Entenda primeiro
+
+A Administração não recebe poderes para favorecer o agente público. Recebe prerrogativas funcionais para cumprir competências e proteger finalidades públicas. Por isso, a expressão mais correta é poder-dever: quando a lei exige atuação, a autoridade competente não pode simplesmente escolher ficar inerte.
+
+Regra jurídica
+
+Todo exercício de poder administrativo permanece submetido à Constituição e à lei, especialmente aos princípios do art. 37 da CF e, no processo administrativo federal, aos critérios de legalidade, finalidade, motivação, razoabilidade, proporcionalidade, moralidade, ampla defesa, contraditório, segurança jurídica, interesse público e eficiência da Lei 9.784/99.
+
+Ideia-mãe para a prova: prerrogativa não significa liberdade ilimitada. Competência, finalidade e direitos fundamentais funcionam como fronteiras permanentes.
+
+Por que isso existe?
+
+Sem prerrogativas, a Administração teria dificuldade para ordenar seu quadro, disciplinar vínculos especiais, regulamentar a execução das leis e limitar atividades privadas incompatíveis com o interesse coletivo. Sem limites, essas mesmas prerrogativas poderiam virar arbítrio. O Direito Administrativo equilibra as duas necessidades.
+
+Como cai na prova
+
+A banca costuma inverter poder e dever. Se a competência foi conferida para proteger finalidade pública, seu exercício regular é funcional e, quando presentes os pressupostos legais, pode ser obrigatório.
+
+O que levar: poder administrativo = instrumento jurídico da função administrativa; abuso começa quando competência, finalidade ou limites legais são ultrapassados.
+
+□ Check manual: consigo explicar por que “poder-dever” é mais preciso do que “faculdade do administrador”.
+
+SESSÃO 02 · VINCULAÇÃO E DISCRICIONARIEDADE
+
+Liberdade jurídica não é arbitrariedade
+
+Entenda primeiro
+
+No poder vinculado, a lei predetermina os pressupostos e a consequência aplicável, deixando ao agente pouca ou nenhuma margem de escolha juridicamente relevante. No poder discricionário, a norma deixa uma margem legítima para escolher, dentro dos limites legais, a solução mais conveniente e oportuna para o interesse público.
+
+Regra jurídica
+
+Discricionariedade é liberdade dentro da lei. O administrador não escolhe se obedecerá à finalidade, à competência, à forma exigida, à razoabilidade ou à proporcionalidade. Mesmo quando existe mérito administrativo, permanecem controláveis os limites jurídicos da escolha.
+
+Critério | Vinculado | Discricionário
+Margem de escolha | A solução decorre da lei quando preenchidos os requisitos. | Há espaço legítimo de escolha entre alternativas juridicamente possíveis.
+Conveniência/oportunidade | Não formam núcleo de escolha. | Integram o mérito, quando a lei efetivamente abre essa margem.
+Controle judicial | Legalidade integralmente controlável. | Também há controle de legalidade, finalidade, motivo juridicamente aferível, proporcionalidade e razoabilidade; o Judiciário não substitui escolha administrativa válida por sua preferência.
+Exemplo | Licença quando a lei define requisitos e eles estão preenchidos. | Autorização precária, nos termos do regime legal aplicável.
+
+O mérito administrativo
+
+Mérito é o núcleo de conveniência e oportunidade existente em determinados atos discricionários. Não é um “território sem Direito”. Uma decisão desproporcional, baseada em motivo falso, tomada por autoridade incompetente ou desviada da finalidade legal pode ser invalidada, ainda que o ato tenha componente discricionário.
+
+Inexistência de ato totalmente discricionário: competência e finalidade são sempre juridicamente condicionadas; outros elementos podem ser vinculados conforme a lei.
+
+Exemplo
+
+Uma lei permite à Administração escolher o horário de funcionamento de determinada atividade por razões de segurança. A escolha do horário pode conter mérito. Mas fechar apenas o estabelecimento de um desafeto, sem razão pública idônea, é desvio e não discricionariedade.
+
+Como cai na prova
+
+Desconfie de alternativas com “discricionariedade ilimitada”, “ato imune ao Judiciário” ou “dispensa de motivação porque o ato é discricionário”. A Lei 9.784/99 exige motivação em diversas hipóteses, inclusive quando atos negam ou limitam direitos ou impõem sanções.
+
+Compare: discricionariedade = escolha juridicamente autorizada; arbitrariedade = escolha fora dos limites do Direito.
+
+□ Check manual: sei separar mérito administrativo de ilegalidade controlável.
+
+SESSÃO 03 · PODER HIERÁRQUICO
+
+Organizar a estrutura interna não é tutelar outra pessoa jurídica
+
+Entenda primeiro
+
+O poder hierárquico organiza relações internas de subordinação: distribui e escalona funções, dá ordens, coordena, fiscaliza, controla e permite revisão administrativa nos limites do ordenamento.
+
+Regra jurídica
+
+A hierarquia existe dentro da mesma pessoa jurídica. Entre ministério e autarquia há vinculação e controle finalístico, não subordinação hierárquica. Também não existe hierarquia entre União, Estados, Distrito Federal e Municípios.
+
+Ordens e revisão
+
+O subordinado deve cumprir ordens legítimas. A hierarquia não converte ordem manifestamente ilegal em comando válido. O superior pode controlar a atuação subordinada e, nas hipóteses admitidas, delegar ou avocar competências.
+
+Hierarquia | Tutela / controle finalístico
+Ocorre no interior da mesma pessoa jurídica. | Relaciona pessoas jurídicas distintas, nos limites legais.
+Há subordinação funcional. | Há vinculação, não subordinação geral.
+Permite ordens e mecanismos hierárquicos. | Controle depende da competência prevista no ordenamento.
+
+Pegadinha
+
+“Autarquia é subordinada ao ministério supervisor” = errado. A entidade possui personalidade própria; o controle é finalístico e juridicamente delimitado.
+
+□ Check manual: consigo explicar por que Direta × Indireta não forma cadeia hierárquica.
+
+SESSÃO 04 · DELEGAÇÃO E AVOCAÇÃO
+
+Competência é irrenunciável, mas seu exercício pode circular nos casos legais
+
+Regra jurídica — Lei 9.784/99
+
+A competência é irrenunciável. A lei, porém, admite delegação e avocação. A delegação pode ocorrer para órgão ou titular que não seja hierarquicamente subordinado, se não houver impedimento legal e se a medida for conveniente pelas circunstâncias técnicas, sociais, econômicas, jurídicas ou territoriais.
+
+Matérias indelegáveis: edição de atos de caráter normativo, decisão de recursos administrativos e matérias de competência exclusiva.
+
+O ato de delegação e sua revogação devem ser publicados. A delegação delimita matérias, poderes, limites, duração, objetivos e recurso; é revogável a qualquer tempo. A decisão por delegação deve mencionar essa qualidade e é considerada editada pelo delegado.
+
+Já a avocação é admitida excepcionalmente, por motivos relevantes devidamente justificados, de forma temporária, sobre competência de órgão hierarquicamente inferior.
+
+Ponto | Delegação | Avocação
+Sentido | Transfere o exercício de parte da competência para outro órgão/titular. | Superior chama temporariamente para si competência do inferior.
+Hierarquia | Não é indispensável. | É indispensável: órgão hierarquicamente inferior.
+Regra | Admitida se não houver impedimento e houver conveniência legalmente descrita. | Excepcional.
+Tempo | O ato fixa duração e pode ser revogado a qualquer tempo. | Temporária.
+Competência exclusiva | Não pode ser delegada. | Não confundir com competência simplesmente privativa/delegável conforme norma específica.
+
+Como cai na prova
+
+A armadilha clássica é dizer que delegação exige subordinação. A segunda é retirar da avocação seu caráter excepcional ou temporário. A terceira é afirmar que o delegante “renunciou” à competência.
+
+□ Check manual: consigo recitar as três matérias indelegáveis e as quatro marcas da avocação.
+
+SESSÃO 05 · PODER DISCIPLINAR
+
+Sanção decorrente de vínculo especial com a Administração
+
+Entenda primeiro
+
+O poder disciplinar permite apurar infrações e aplicar sanções a servidores e a outras pessoas sujeitas a uma relação especial de sujeição com a Administração, conforme o regime jurídico pertinente. Isso pode alcançar, por exemplo, contratados administrativos quando a lei e o contrato preveem sanções.
+
+Regra jurídica
+
+Sanção disciplinar exige base normativa, competência, processo adequado, contraditório e ampla defesa quando houver acusação e possibilidade de sanção. O resultado não pode nascer de preferência pessoal do superior.
+
+Hierárquico | Disciplinar
+Organiza, coordena, distribui e controla a estrutura interna. | Apura infrações e pune sujeitos submetidos a vínculo especial.
+Pode existir sem infração. | Pressupõe ilícito disciplinar/administrativo no vínculo específico.
+É relação estrutural. | É relação sancionatória funcional ou especial.
+
+Disciplinar | Polícia administrativa
+Incide sobre vínculo especial: servidor, contratado ou sujeito submetido ao regime específico. | Incide sobre administrados em geral, limitando direitos/atividades em benefício do interesse público.
+Fundamento próximo no vínculo jurídico especial. | Fundamento na competência legal de polícia.
+Ex.: suspensão de servidor após processo. | Ex.: multa sanitária a estabelecimento.
+
+Pegadinha
+
+Nem toda sanção administrativa é “disciplinar”. Uma multa de trânsito a cidadão comum decorre de poder de polícia, não de poder disciplinar.
+
+□ Check manual: consigo olhar para o vínculo e identificar se a sanção é disciplinar ou de polícia.
+
+SESSÃO 06 · PODER REGULAMENTAR E NORMATIVO
+
+Executar a lei não é substituir o legislador
+
+Entenda primeiro
+
+Poder normativo é expressão mais ampla: compreende atos gerais expedidos pela Administração com fundamento no ordenamento, como decretos, regulamentos, resoluções e instruções normativas, cada qual dentro da competência de seu órgão. Poder regulamentar, em sentido estrito, é associado à competência do Chefe do Executivo para expedir decretos e regulamentos.
+
+Regulamentar (estrito) | Normativo (amplo)
+Tradicionalmente ligado ao Chefe do Executivo. | Abrange produção normativa administrativa por diversas autoridades e entidades competentes.
+Veículo típico: decreto/regulamento. | Pode aparecer em resoluções, instruções, portarias normativas etc., conforme lei e competência.
+Art. 84, IV e VI, da CF no plano federal. | Decorre de competências normativas específicas e da organização administrativa.
+
+Regulamento executivo — art. 84, IV
+
+Compete privativamente ao Presidente da República expedir decretos e regulamentos para a fiel execução das leis. O regulamento executivo é subordinado à lei: especifica sua execução, mas não pode contrariá-la, substituí-la ou criar disciplina primária sem suporte jurídico.
+
+Decreto autônomo — art. 84, VI
+
+A Constituição admite decreto sobre: (a) organização e funcionamento da Administração federal, quando não implicar aumento de despesa nem criação ou extinção de órgãos; e (b) extinção de funções ou cargos públicos, quando vagos. É exceção constitucional expressa, não licença geral para legislar por decreto.
+
+Critério | Regulamento executivo | Decreto autônomo
+Base | Art. 84, IV. | Art. 84, VI.
+Função | Fiel execução da lei. | Disciplina diretamente as matérias constitucionais específicas.
+Limite-chave | Não pode inovar contra/fora da lei executada. | Somente nas hipóteses “a” e “b” do inciso VI.
+Exemplo | Detalhamento procedimental necessário à execução legal. | Extinção de cargo público vago.
+
+Controle pelo Congresso
+
+O art. 49, V, atribui ao Congresso competência exclusiva para sustar atos normativos do Executivo que exorbitem do poder regulamentar ou dos limites de delegação legislativa.
+
+Pegadinha FCC: decreto regulamentar não “altera a lei para torná-la mais eficiente”. Se exorbita, pode ser controlado judicialmente e, na hipótese constitucional, sustado pelo Congresso.
+
+Resoluções, instruções e portarias
+
+São atos normativos administrativos cuja validade depende da competência do órgão e do respeito às normas superiores. O nome do ato não cria competência. Uma portaria ministerial não pode ocupar matéria reservada à lei só porque é “normativa”.
+
+□ Check manual: sei recitar as duas hipóteses do art. 84, VI, e diferenciar poder normativo de função legislativa.
+
+SESSÃO 07 · PODER DE POLÍCIA
+
+Limitar direitos e atividades para compatibilizá-los com o interesse coletivo
+
+Entenda primeiro
+
+Poder de polícia é a atividade administrativa que condiciona ou restringe o exercício de direitos, interesses, liberdades, bens e atividades para compatibilizá-los com exigências coletivas definidas pelo ordenamento.
+
+Regra jurídica — CTN, art. 78
+
+O CTN descreve o poder de polícia como atividade da Administração que, limitando ou disciplinando direito, interesse ou liberdade, regula ato ou abstenção por razões de interesse público ligadas, entre outras, à segurança, higiene, ordem, costumes, disciplina da produção e do mercado, tranquilidade pública, propriedade e direitos individuais ou coletivos. O exercício regular exige órgão competente, limites legais, processo legal e ausência de abuso ou desvio.
+
+Sentido amplo × estrito
+
+Em sentido amplo, a expressão pode abranger também a atividade legislativa que estabelece condicionamentos. Em sentido estrito, foco clássico de Direito Administrativo, refere-se à atividade administrativa concreta e normativa de polícia executada pela Administração.
+
+Polícia administrativa | Polícia judiciária
+Previne e reprime infrações administrativas; incide sobre bens, direitos e atividades. | Atua na investigação de infrações penais e em funções de polícia judiciária definidas constitucional e legalmente.
+É exercida por vários órgãos administrativos, não apenas corporações policiais. | É atribuída aos órgãos policiais competentes no sistema de segurança/justiça criminal.
+Ex.: fiscalização sanitária, urbanística, trânsito administrativo. | Ex.: investigação de crime e atos de polícia judiciária.
+
+Preventivo × repressivo
+
+O poder de polícia pode atuar antes da lesão (licenças, autorizações, vistorias, normas técnicas) e depois da infração administrativa (multa, apreensão, interdição), sempre conforme previsão e processo aplicáveis.
+
+Limites
+
+Legalidade, competência, finalidade, devido processo, contraditório quando cabível, proporcionalidade, razoabilidade e direitos fundamentais. Uma medida de polícia excessiva pode ser inválida mesmo quando existe competência para fiscalizar.
+
+Licença | Autorização
+Tradicionalmente ato vinculado quando preenchidos requisitos legais. | Tradicionalmente ato discricionário e precário, conforme regime legal.
+Reconhece direito ao exercício condicionado após requisitos. | Permite exercício em situação na qual a lei confere margem administrativa.
+Não decorar “todo consentimento é discricionário”. | O nome usado por lei especial pode exigir leitura do regime concreto.
+
+□ Check manual: consigo dar um exemplo preventivo e um repressivo sem confundir polícia administrativa com judiciária.
+
+SESSÃO 08 · ATRIBUTOS E CICLO DE POLÍCIA
+
+DAC ajuda a lembrar — mas não pode virar regra absoluta
+
+Atributos
+
+A doutrina destaca discricionariedade, autoexecutoriedade e coercibilidade. Alguns autores separam, dentro da autoexecutoriedade, a exigibilidade (uso de meios indiretos de coerção) e a executoriedade (execução material direta nos casos juridicamente admitidos).
+
+Atributo | O que significa | Ressalva de prova
+Discricionariedade | Margem legítima de escolha quando a lei a concede. | Nem todo ato de polícia é discricionário. Licenças e outras atuações podem ser vinculadas.
+Autoexecutoriedade | Possibilidade de executar diretamente certas medidas sem ordem judicial prévia. | Não é universal. Depende de autorização legal ou situação urgente, conforme o instituto; cobrança de multa não vira execução patrimonial direta.
+Coercibilidade | Imposição obrigatória da medida legítima ao administrado. | Coação só é legítima dentro da competência, finalidade e proporcionalidade.
+Exigibilidade | Meios indiretos para induzir cumprimento. | É classificação doutrinária útil; não confundir com autorização para qualquer constrição.
+
+Anti-pegadinha: “todo ato de polícia tem DAC” está errado como fórmula absoluta. Atributos variam conforme o ato e a lei.
+
+Ciclo de polícia
+
+Para concursos, memorize a sequência ORDEM → CONSENTIMENTO → FISCALIZAÇÃO → SANÇÃO. Ela organiza momentos distintos da atuação estatal.
+
+Fase | Função | Exemplo | Atenção
+1. Ordem | Estabelece condicionamentos e comandos gerais. | Norma que fixa requisitos sanitários. | É a moldura normativa do exercício.
+2. Consentimento | Administração consente com atividade sujeita a controle prévio. | Licença/autorização. | Pode ser vinculado ou discricionário conforme o regime.
+3. Fiscalização | Verifica cumprimento das regras. | Vistoria de estabelecimento. | Pode ocorrer mesmo sem fase de consentimento em certas atividades.
+4. Sanção | Reage à infração administrativa. | Multa ou interdição prevista em lei. | Exige competência e devido processo compatível.
+
+□ Check manual: consigo recitar ordem, consentimento, fiscalização e sanção — e explicar cada fase.
+
+SESSÃO 09 · DELEGAÇÃO DO PODER DE POLÍCIA
+
+A jurisprudência atual exige fugir das fórmulas antigas absolutas
+
+Entenda primeiro
+
+É preciso separar titularidade/competência legal da execução de atividades materiais. Pessoas jurídicas de direito público podem exercer poder de polícia quando a lei lhes atribui competência. Para pessoas privadas, o tema exige distinções.
+
+STF — Tema 532
+
+O STF fixou que é constitucional a delegação do poder de polícia, por meio de lei, a pessoa jurídica de direito privado integrante da Administração Indireta que tenha capital social majoritariamente público, preste exclusivamente serviço público de atuação própria do Estado e atue em regime não concorrencial. O precedente envolveu fiscalização e multa de trânsito.
+
+STJ — particular fora da Administração
+
+Em 2023, o STJ afastou a delegação da função sancionadora à CCEE, associação privada que não integra a Administração Pública, ressaltando que a exceção do Tema 532 não se aplicava. Logo, não use a fórmula antiga “sanção nunca pode ser delegada a pessoa jurídica de direito privado” sem qualificar o caso.
+
+Sujeito | Situação de prova | Regra segura
+Pessoa jurídica de direito público | Autarquia com competência legal | Pode exercer poder de polícia nos limites legais.
+Estatal de direito privado | Administração Indireta | Pode receber delegação se preenchidos cumulativamente os requisitos do STF Tema 532 e houver lei.
+Particular/associação privada fora da Administração | Função sancionadora coercitiva | Não aplicar Tema 532; STJ rejeitou a sanção delegada à CCEE.
+Particular contratado | Atividades materiais/instrumentais | Não confundir apoio material com transferência de poder decisório/coercitivo; analisar a atividade e a base legal.
+
+Checklist Tema 532: LEI + INDIRETA + direito privado + capital majoritariamente público + serviço público próprio do Estado + exclusividade + regime não concorrencial.
+
+Pegadinha
+
+“Poder de polícia é exclusivo das corporações policiais.” Errado. Polícia administrativa é exercida por diversos órgãos e entidades; o STF distingue poder de polícia administrativa de segurança pública.
+
+□ Check manual: consigo explicar por que BHTrans e CCEE recebem respostas jurídicas diferentes.
+
+SESSÃO 10 · PODERES, DEVERES E ABUSO
+
+O poder legítimo termina onde começam excesso e desvio
+
+Poderes e deveres do administrador
+
+Além do dever de agir quando a competência é obrigatória, a atuação administrativa deve buscar eficiência, probidade, prestação de contas, respeito à competência e à finalidade e observância da motivação exigida. Poder sem finalidade pública vira abuso; omissão indevida também pode configurar ilegalidade e responsabilização, conforme o regime aplicável.
+
+Uso regular × abuso
+
+Uso regular ocorre quando o agente atua dentro da competência e para a finalidade legal, observando limites. Abuso de poder é gênero que costuma aparecer em duas espécies clássicas: excesso de poder e desvio de poder/finalidade.
+
+Excesso de poder | Desvio de poder/finalidade
+Vício ligado à competência: o agente ultrapassa os limites de suas atribuições. | Vício ligado à finalidade: usa competência existente para fim diferente daquele previsto em lei/interesse público.
+“Podia agir, mas foi além do que podia.” | “Podia praticar o ato, mas o praticou para finalidade indevida.”
+Ex.: autoridade aplica medida que a lei reserva a superior. | Ex.: remoção usada como punição pessoal quando o instituto serve ao interesse do serviço.
+
+Ação e omissão
+
+O abuso pode aparecer em conduta comissiva ou, conforme o dever jurídico concreto, em omissão. A consequência depende do vício e do regime: invalidação do ato, correção administrativa/judicial e eventual responsabilização civil, administrativa e penal.
+
+Controle judicial
+
+O Judiciário pode controlar juridicidade, competência, finalidade, fatos determinantes, motivação, proporcionalidade e razoabilidade quando relevantes, sem assumir o papel de administrador para refazer uma escolha discricionária válida apenas porque preferiria outra solução.
+
+□ Check manual: ao ler um caso, identifico “competência = excesso” e “finalidade = desvio”.
+
+SESSÃO 11 · LEI 13.869/2019
+
+Abuso administrativo não é automaticamente crime de abuso de autoridade
+
+Entenda primeiro
+
+A Lei 13.869/19 tipifica crimes de abuso de autoridade. Ela não transforma toda ilegalidade administrativa em crime. É indispensável verificar o tipo penal concreto, o sujeito ativo e o elemento subjetivo especial exigido pelo art. 1º, §1º.
+
+Sujeito ativo
+
+Pode ser qualquer agente público, servidor ou não, da Administração direta, indireta ou fundacional de qualquer Poder e ente federativo, abrangendo as categorias exemplificadas no art. 2º. O conceito alcança quem exerce, mesmo transitoriamente ou sem remuneração, mandato, cargo, emprego ou função nos órgãos e entidades abrangidos.
+
+Elemento subjetivo especial
+
+As condutas só constituem crime da lei quando praticadas com finalidade específica de prejudicar outrem, beneficiar a si ou a terceiro, ou por mero capricho ou satisfação pessoal. Além disso, o §2º dispõe que divergência na interpretação da lei ou na avaliação de fatos e provas não configura abuso de autoridade.
+
+Abuso de poder administrativo | Crime de abuso de autoridade — Lei 13.869/19
+Categoria de Direito Administrativo: atuação fora da competência/finalidade ou outros limites jurídicos. | Categoria penal: exige enquadramento em tipo da lei e requisitos penais.
+Pode gerar invalidação e responsabilidades administrativas/civis. | Exige dolo e finalidade específica do art. 1º, §1º.
+Não pressupõe automaticamente crime. | Mera divergência interpretativa/valorativa de fatos e provas não basta.
+
+Ação penal, efeitos e penas restritivas
+
+Os crimes são de ação penal pública incondicionada, admitida ação privada subsidiária se o Ministério Público não agir no prazo legal. Entre os efeitos da condenação estão a obrigação de indenizar e, sob condições legais, inabilitação para cargo/mandato/função e perda do cargo/mandato/função. Estes dois últimos dependem de reincidência, não são automáticos e precisam ser declarados motivadamente. As penas restritivas incluem prestação de serviços e suspensão do exercício do cargo, função ou mandato de 1 a 6 meses, com perda de vencimentos e vantagens, podendo ser aplicadas autônoma ou cumulativamente nos termos da lei.
+
+Principais tipos relevantes para concurso
+
+LiberdadeMedidas de privação da liberdade fora das hipóteses legais; omissões tipificadas diante de prisão manifestamente ilegal; constrangimentos de preso ou detento nas situações descritas pela lei.
+
+Investigação e provaPersecução sem justa causa, obtenção/uso de prova manifestamente ilícita nas hipóteses tipificadas e condutas de exposição indevida previstas na lei.
+
+Domicílio e comunicaçãoIngresso ou permanência em imóvel alheio fora das hipóteses legais e outras violações expressamente tipificadas; sempre conferir verbo, circunstância e finalidade.
+
+Processo e prerrogativasImpedimentos e constrangimentos expressamente tipificados, inclusive situações relacionadas ao contato do preso com advogado; não resolver por analogia penal.
+
+Método de resolução: 1) há agente público para a lei? 2) há tipo específico? 3) a conduta encaixa no verbo e circunstâncias? 4) existe finalidade específica do §1º? 5) é apenas divergência interpretativa/avaliação de prova? Sem essa sequência, a alternativa costuma criminalizar automaticamente uma irregularidade.
+
+Independência de esferas
+
+As penas criminais da lei são aplicadas independentemente das sanções civis ou administrativas cabíveis, observadas as regras legais de comunicação entre esferas. Para prova, não trate “absolvição penal” ou “condenação penal” como fórmula única sem verificar fundamento e efeito previstos em lei.
+
+□ Check manual: consigo dizer por que ato administrativo ilegal não é, por si só, crime da Lei 13.869.
+
+SESSÃO 12 · MATRIZ FINAL
+
+Qual poder está sendo exercido?
+
+Poder | Pergunta-chave | Marca | Exemplo
+Vinculado | A lei deixou escolha? | Solução predeterminada. | Licença com requisitos integralmente preenchidos.
+Discricionário | Há margem legítima? | Conveniência/oportunidade dentro do Direito. | Escolha permitida entre medidas proporcionais.
+Hierárquico | É relação interna? | Ordenar/coordenar/controlar. | Distribuição de tarefas.
+Disciplinar | Há vínculo especial? | Apurar/punir infração do vínculo. | PAD e sanção.
+Regulamentar/normativo | Está disciplinando normativamente? | Atos gerais subordinados à competência. | Decreto de fiel execução.
+Polícia | Está limitando direito/atividade do administrado? | Ordem, consentimento, fiscalização, sanção. | Fiscalização sanitária.
+
+REVISÃO FINAL · 5–10 MINUTOS
+
+15 erros que não posso cometer
+
+• Confundir discricionariedade com arbitrariedade.
+• Dizer que ato discricionário é imune ao controle judicial.
+• Imaginar hierarquia entre Administração Direta e entidade da Indireta.
+• Confundir tutela/controle finalístico com subordinação.
+• Dizer que delegação sempre exige hierarquia.
+• Esquecer as três matérias indelegáveis: ato normativo, recurso administrativo e competência exclusiva.
+• Esquecer que avocação é excepcional, temporária, motivada e de órgão hierarquicamente inferior.
+• Confundir poder disciplinar com poder de polícia.
+• Tratar poder regulamentar como autorização para alterar a lei.
+• Usar decreto autônomo fora das duas hipóteses do art. 84, VI.
+• Dizer que poder de polícia é exclusivo de corporações policiais.
+• Aplicar “DAC” como se todos os atributos estivessem presentes em todo ato de polícia.
+• Errar a ordem do ciclo: ordem → consentimento → fiscalização → sanção.
+• Trocar excesso (competência) por desvio (finalidade).
+• Criminalizar toda ilegalidade: Lei 13.869 exige tipo + finalidade específica; divergência interpretativa/probatória, por si, não configura o crime.
+
+Revisão de 30 segundos: V/D = margem; H = estrutura interna; D = vínculo especial; R/N = norma administrativa; P = limitação geral; delegação pode sem hierarquia, avocação não; polícia = ordem-consentimento-fiscalização-sanção; abuso = excesso/competência ou desvio/finalidade; crime de abuso = finalidade específica.
+
+O que decorar
+
+VINCULADO: a lei fecha a solução. DISCRICIONÁRIO: a lei abre margem juridicamente limitada.
+
+HIERÁRQUICO: ordenar, coordenar, controlar, fiscalizar, revisar — dentro da mesma PJ.
+
+DELEGAÇÃO: pode sem subordinação. Indelegáveis = normativo + recurso + exclusiva.
+
+AVOCAÇÃO: excepcional + temporária + motivo relevante justificado + inferior hierárquico.
+
+DISCIPLINAR: vínculo especial. POLÍCIA: administrados em geral.
+
+ART. 84 IV: decreto/regulamento para fiel execução da lei.
+
+ART. 84 VI: organização/funcionamento sem aumento de despesa nem criação/extinção de órgãos; extinção de funções/cargos vagos.
+
+ART. 49 V: Congresso susta ato normativo do Executivo que exorbita do poder regulamentar ou delegação legislativa.
+
+POLÍCIA — CICLO: Ordem → Consentimento → Fiscalização → Sanção.
+
+ATRIBUTOS: DAC é útil, mas não absoluto. Nem todo ato é discricionário nem autoexecutório.
+
+TEMA 532 STF: lei + estatal da Indireta + capital majoritariamente público + serviço público próprio do Estado + exclusivo + não concorrencial.
+
+EXCESSO: competência. DESVIO: finalidade.
+
+LEI 13.869: tipo penal + finalidade específica; mera divergência de interpretação/avaliação de fatos e provas não configura abuso.
+
+Artigos para ler
+
+Leitura de lei seca enxuta, apenas o núcleo que rende questão:
+
+Constituição FederalArt. 37, caput; art. 49, V; art. 84, IV e VI.Lei 9.784/99Art. 2º; arts. 11–15; art. 50. Competência, delegação, avocação e motivação.CTNArts. 77–78, especialmente art. 78 e parágrafo único.Lei 13.869/19Arts. 1º–6º e tipos penais mais cobrados: leia os verbos e circunstâncias.STF — Tema 532Delegação de poder de polícia a estatal de direito privado sob requisitos cumulativos.
+
+Camada de prova: julgue em 2 minutos
+
+1. “A discricionariedade permite afastar requisito legal quando a solução parecer conveniente.” ERRADO — opera dentro do Direito.
+
+2. “Há hierarquia entre ministério e autarquia a ele vinculada.” ERRADO — vinculação/controle finalístico.
+
+3. “Delegação de competência pressupõe vínculo hierárquico.” ERRADO — Lei 9.784 admite sem subordinação.
+
+4. “Decisão de recurso administrativo pode ser delegada se houver publicação.” ERRADO — indelegável.
+
+5. “Avocação pode ser permanente por conveniência.” ERRADO — excepcional e temporária.
+
+6. “Poder disciplinar alcança apenas servidores estatutários.” ERRADO — pode alcançar outros vínculos especiais.
+
+7. “Decreto regulamentar pode modificar lei para viabilizar sua aplicação.” ERRADO.
+
+8. “Cargo público vago pode ser extinto por decreto no regime do art. 84, VI.” CERTO.
+
+9. “Todo ato de polícia é discricionário e autoexecutório.” ERRADO.
+
+10. “O ciclo clássico é ordem, consentimento, fiscalização e sanção.” CERTO.
+
+11. “Multa por estatal de direito privado é sempre inconstitucional.” ERRADO — confira Tema 532.
+
+12. “Excesso atinge finalidade; desvio atinge competência.” ERRADO — inverso.
+
+13. “Toda ilegalidade dolosa configura crime da Lei 13.869.” ERRADO — tipo + finalidade específica.
+
+14. “Divergência interpretativa, isoladamente, configura abuso se causar prejuízo.” ERRADO — art. 1º, §2º.
+
+CONTEÚDO COMPLETO — 10 QUESTÕES
+
+1 — FÁCIL
+
+Na Lei 9.784/99, a competência administrativa: A) é livremente renunciável. B) só pode ser delegada a subordinado. C) é irrenunciável, ressalvadas delegação e avocação legalmente admitidas. D) pode ser transferida integralmente por conveniência.
+
+Gabarito: C. A lei afirma a irrenunciabilidade da competência e admite delegação/avocação nos casos legais.
+
+2 — FÁCIL
+
+É matéria indelegável: A) atividade instrutória. B) decisão de recurso administrativo. C) fiscalização material. D) elaboração de parecer.
+
+Gabarito: B. NRE: normativo, recurso, exclusiva.
+
+3 — FÁCIL
+
+Poder disciplinar é: A) limitação de qualquer administrado. B) apuração e sanção em vínculo especial. C) produção de regulamentos. D) investigação criminal.
+
+Gabarito: B.
+
+4 — FÁCIL
+
+O ciclo de polícia é: A) fiscalização → ordem → sanção → consentimento. B) ordem → consentimento → fiscalização → sanção. C) consentimento → fiscalização → ordem → sanção. D) ordem → sanção → consentimento → fiscalização.
+
+Gabarito: B.
+
+5 — MÉDIA
+
+Um ministério pretende avocar definitivamente competência de autarquia vinculada. A solução correta é: A) possível, porque vinculação gera hierarquia. B) possível se publicada. C) inadequada: autarquia não é subordinada ao ministério e avocação é temporária e recai sobre inferior hierárquico. D) possível por eficiência.
+
+Gabarito: C.
+
+6 — MÉDIA
+
+Sobre ato discricionário: A) é imune ao Judiciário. B) permite afastar requisito legal. C) contém margem legítima, mas continua sujeito à juridicidade. D) sempre dispensa motivação.
+
+Gabarito: C.
+
+7 — MÉDIA
+
+Sobre decreto autônomo: A) pode criar órgãos sem despesa. B) pode extinguir cargo ocupado. C) pode organizar a Administração federal sem aumento de despesa nem criação/extinção de órgãos e extinguir cargos/funções vagos. D) substitui lei por eficiência.
+
+Gabarito: C.
+
+8 — MÉDIA
+
+Multa sanitária aplicada a restaurante, após processo, decorre predominantemente de: A) disciplinar. B) hierárquico. C) polícia. D) regulamentar.
+
+Gabarito: C.
+
+9 — DIFÍCIL
+
+Segundo o Tema 532 do STF, a delegação de poder de polícia a PJ de direito privado exige, entre outros: A) contrato + atividade concorrencial. B) lei + integração à Indireta + capital majoritariamente público + serviço público próprio do Estado + exclusividade + regime não concorrencial. C) decreto + capital privado. D) autorização judicial.
+
+Gabarito: B.
+
+10 — DIFÍCIL
+
+Após a evolução do REsp 1.950.332/RJ, a leitura correta sobre a CCEE é: A) toda penalidade privada é poder de polícia delegado. B) toda penalidade privada é inválida. C) é preciso distinguir polícia estatal de penalidade contratual/regulatória de autorregulação; o STJ reconheceu essa distinção. D) Tema 532 se aplica automaticamente à CCEE.
+
+Gabarito: C.

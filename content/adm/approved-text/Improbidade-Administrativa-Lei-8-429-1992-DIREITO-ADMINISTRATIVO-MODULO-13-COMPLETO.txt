@@ -1,0 +1,1297 @@
+﻿Improbidade Administrativa — Lei 8.429/1992
+DIREITO ADMINISTRATIVO · MÓDULO 13 · COMPLETO
+
+DIREITO ADMINISTRATIVOMÓDULO 13 · OFFLINE
+
+Apostila de estudo · nível Analista · FCC
+
+Improbidade Administrativa — Lei 8.429/1992
+
+Dolo, tipicidade, arts. 9º–11, sanções, indisponibilidade, ação, ANPC, prescrição, retroatividade, ressarcimento, agentes políticos e sucessão.
+
+Base conferida em 18/09/2026: PDF local “LEI 8429_92 – IMPROBIDADE ADMINISTRATIVA-COLUNAS.pdf” (atualizado até 05/02/2026) como fonte normativa de partida; redação consolidada da Lei 8.429/92 no Planalto; Constituição; Tema 1199 e Tema 897 do STF; ADIs 7042/7043 e 7156/7236; Tema 1257/STJ. Materiais TEC da Biblioteca foram usados apenas para cobertura e padrão FCC.
+
+Como estudar este módulo
+
+Resolva qualquer caso em cinco passos: TIPO → DOLO → RESULTADO → CONSEQUÊNCIA → TEMPO. Em 2026, acrescente uma sexta pergunta: o STF já alterou a literalidade da reforma?
+
+tipo→dolo→resultado→consequência→prescrição→ADI
+
+Regra de ouro: não use memória de apostila antiga. A Lei 14.230/2021 mudou a estrutura da LIA e as ADIs 7156/7236, concluídas em 2026, alteraram novamente pontos centrais.
+
+SESSÃO 01
+
+Conceito, base constitucional, natureza e reforma de 2021
+
+Entenda primeiro
+
+Improbidade administrativa é uma forma qualificada de ilicitude no exercício da função pública ou em relações juridicamente alcançadas pela Lei 8.429/1992. Não é sinônimo de qualquer ilegalidade, falha de gestão, erro burocrático ou decisão administrativa posteriormente anulada. A LIA atual exige enquadramento em tipo legal e, como regra geral, conduta dolosa.
+
+O ponto de partida constitucional é o art. 37, § 4º, da Constituição: os atos de improbidade podem acarretar suspensão de direitos políticos, perda da função pública, indisponibilidade de bens e ressarcimento ao erário, na forma e gradação previstas em lei, sem prejuízo da ação penal cabível. O § 5º do mesmo artigo é indispensável para compreender o regime do ressarcimento.
+
+A Lei 14.230/2021 não fez ajuste pontual: redesenhou a LIA. Mudou o elemento subjetivo, a estrutura do art. 11, as sanções, a indisponibilidade, o procedimento, o acordo de não persecução civil e a prescrição. Depois da reforma, o STF ainda realizou controle concentrado de vários dispositivos, especialmente em 2022 e em 2026.
+
+Regra jurídica
+
+O art. 1º da LIA afirma que o sistema tutela a probidade na organização do Estado e no exercício de suas funções, como forma de assegurar a integridade do patrimônio público e social. O § 1º considera atos de improbidade as condutas dolosas tipificadas nos arts. 9º, 10 e 11, ressalvados tipos previstos em leis especiais.
+
+A responsabilidade por improbidade integra o direito administrativo sancionador. Isso explica por que legalidade estrita, tipicidade, responsabilidade subjetiva, individualização e segurança jurídica assumem peso reforçado. A ação tem natureza civil/repressiva e sancionatória; não se converte em processo penal, embora algumas garantias do direito sancionador incidam por aproximação constitucional.
+
+Divergência interpretativa — art. 1º, § 8º, após o STF em 2026: a regra não funciona como salvo-conduto genérico para qualquer interpretação jurídica. Nas ADIs 7156/7236, o STF deu interpretação conforme: ressalvadas situações em que evidenciado dolo ou erro grosseiro, não configura improbidade a ação ou omissão decorrente de divergência interpretativa apoiada em jurisprudência assentada dos Tribunais Superiores ou do STF e, na falta dela, em decisão de mérito transitada em julgado de órgão colegiado de 2º grau, ainda que essa orientação depois deixe de prevalecer. A referência a erro grosseiro delimita a proteção do § 8º; ela não transforma a culpa grave, isoladamente, em ato de improbidade nem afasta a exigência de dolo e tipicidade dos §§ 1º a 3º. Em prova, desconfie de alternativas que convertam o § 8º em imunidade ampla por mera existência de controvérsia jurídica.
+
+Exemplo
+
+Um servidor interpreta norma ambígua e pratica ato depois considerado ilegal. Só essa conclusão não autoriza condenação por improbidade. Será necessário demonstrar o tipo aplicável, o dolo juridicamente exigido e os demais elementos específicos do art. 9º, 10 ou 11.
+
+Compare — improbidade × ilegalidade
+
+Ponto | Improbidade | Mera ilegalidade/irregularidade
+Tipicidade | exige enquadramento legal | pode decorrer de violação normativa sem tipo da LIA
+Elemento subjetivo | dolo, nos termos da LIA atual | pode existir por erro, culpa ou interpretação inadequada
+Consequência | sanções pessoais e patrimoniais da LIA | anulação, correção, responsabilização administrativa/civil, conforme o caso
+Gravidade jurídica | ilícito sancionador qualificado | gênero mais amplo de desconformidade
+Regra de prova | elementos do tipo e dolo não podem ser presumidos | depende do regime jurídico aplicável
+
+Como cai na prova
+
+A FCC tende a trocar expressões decisivas: “mera ilegalidade”, “voluntariedade”, “culpa”, “dano presumido” e “violação genérica a princípio”. A resposta correta normalmente exige lembrar que a LIA atual estreitou a responsabilização: nem toda ilegalidade é improbidade.
+
+Pegadinha
+
+“Todo ato administrativo ilegal praticado conscientemente é ímprobo.” Errado. Consciência de praticar o ato não se confunde com vontade livre e consciente de alcançar o resultado ilícito tipificado.
+
+Jurisprudência essencial
+
+No Tema 1199, o STF assentou que a tipificação dos arts. 9º, 10 e 11 exige responsabilidade subjetiva e dolo. Em 2026, nas ADIs 7156/7236, o STF também ajustou vários dispositivos da reforma, mostrando que a simples leitura da redação de 2021, sem os julgamentos posteriores, pode gerar resposta desatualizada.
+
+O que decorar
+
+• CF, art. 37, § 4º: suspensão dos direitos políticos + perda da função + indisponibilidade + ressarcimento, na forma legal.
+• LIA atual: dolo + tipicidade.
+• Improbidade ≠ ilegalidade.
+• Natureza: civil, repressiva e sancionatória, com regime de direito administrativo sancionador.
+
+O que levar para a prova
+
+Antes de discutir sanção, pergunte: há tipo legal? há dolo? há resultado ou finalidade exigidos pelo tipo? Se uma dessas bases faltar, a conclusão por improbidade tende a ser inválida.
+
+Check manual
+
+• ☐ Sei explicar por que improbidade não é sinônimo de ilegalidade.
+• ☐ Sei apontar a base constitucional e a importância da Lei 14.230/2021.
+• ☐ Sei identificar a natureza sancionatória da LIA.
+
+---
+
+SESSÃO 02
+
+Dolo, tipicidade, sujeitos ativo e passivo, particulares e sucessão
+
+Entenda primeiro
+
+A reforma concentrou a improbidade na conduta dolosa. O art. 1º, § 2º, define dolo como a vontade livre e consciente de alcançar o resultado ilícito tipificado nos arts. 9º, 10 e 11; a mera voluntariedade não basta. O § 3º reforça que o mero exercício da função ou desempenho de competências, sem comprovação de ato doloso com fim ilícito, afasta a improbidade.
+
+Não confunda isso com a discussão terminológica sobre “dolo específico”. Em setembro de 2026, o Tema 1397 do STJ ainda se encontra em julgamento para uniformizar exatamente essa formulação. Para concurso, a técnica mais segura é reproduzir a definição legal: vontade livre e consciente de alcançar o resultado ilícito tipificado, e não simples vontade de praticar o ato.
+
+Há ainda uma exigência textual importante no art. 11, §§ 1º e 2º: a lei determina a comprovação, na conduta funcional, do fim de obter proveito ou benefício indevido para si ou para outra pessoa ou entidade e estende essa regra aos atos de improbidade tipificados na própria LIA, em leis especiais e em outros tipos especiais instituídos por lei. Isso deve ser lido junto da definição geral de dolo do art. 1º, § 2º. A cautela terminológica continua válida: enquanto o Tema 1397/STJ estiver pendente, é mais seguro falar nos elementos subjetivos e finalísticos expressamente exigidos pela lei do que transformar a expressão “dolo específico” em fórmula autônoma e já uniformizada pelo STJ.
+
+Regra jurídica
+
+Sujeito ativo em sentido amplo: agente público e, nas hipóteses legais, particular. O art. 2º inclui expressamente agente político, servidor e todo aquele que exerce, ainda que transitoriamente ou sem remuneração, mandato, cargo, emprego ou função nas entidades abrangidas.
+
+O particular pode responder quando induz ou concorre dolosamente para o ato. Também se sujeita à LIA, quanto a recursos de origem pública, a pessoa física ou jurídica que celebre convênio, contrato de repasse, contrato de gestão, termo de parceria, termo de cooperação ou ajuste equivalente com a Administração.
+
+Sócios, cotistas, diretores e colaboradores: a redação legislativa de 2021 exigia participação e benefícios diretos. Em maio de 2026, o STF, nas ADIs 7156/7236, declarou inconstitucional, com efeitos ex tunc e ressalva da coisa julgada, a expressão referente a “benefícios diretos” do art. 3º, § 1º. Assim, para prova atualizada, não trate o recebimento de benefício direto como requisito cumulativo indispensável quando houver participação comprovada, sem prejuízo da individualização da responsabilidade.
+
+Sujeito passivo: Administração direta e indireta de todos os Poderes e entes federativos e, nas hipóteses dos §§ 6º e 7º do art. 1º, determinadas entidades privadas beneficiadas por recursos, subvenções, benefícios ou participação financeira pública. No caso do § 7º, o ressarcimento fica limitado à repercussão do ilícito sobre a contribuição dos cofres públicos.
+
+Exemplo
+
+Diretor de empresa privada ajuda dolosamente agente público a fraudar operação que desvia verba pública. Ele pode responder mesmo sem ocupar função pública. Já outro diretor sem participação demonstrada não responde automaticamente apenas por integrar a direção societária.
+
+Compare — dolo × culpa
+
+Ponto | Dolo na LIA atual | Culpa
+Conceito útil | vontade livre e consciente de alcançar resultado ilícito tipificado | imprudência, negligência ou imperícia sem vontade do resultado ilícito
+Arts. 9º, 10 e 11 hoje | exigido | não basta
+Art. 10 antigo | admitia modalidade culposa | foi eliminada pela Lei 14.230/2021
+Processo antigo sem trânsito | deve-se verificar eventual dolo, conforme Tema 1199 | não sustenta condenação apenas pela culpa
+Coisa julgada | preservada | reforma não desfaz condenação transitada apenas por ser mais benéfica
+
+Compare — sujeito ativo × sujeito passivo
+
+Sujeito ativo | Sujeito passivo/protegido
+agente político, servidor, empregado e qualquer agente público em sentido amplo | União, Estados, DF e Municípios, Poderes e Administração direta/indireta
+particular que induz ou concorre dolosamente | patrimônio público e social das entidades protegidas
+particular vinculado a ajuste envolvendo recursos públicos, quando cabível | certas entidades privadas alcançadas pelo art. 1º, §§ 6º e 7º
+sucessor/herdeiro não herda sanções pessoais; pode suportar dever reparatório no limite legal | pessoa jurídica prejudicada recebe ressarcimento/reversão quando cabível
+
+Sucessão e efeitos patrimoniais
+
+O art. 8º estabelece que sucessor ou herdeiro daquele que causou dano ao erário ou se enriqueceu ilicitamente responde apenas pela obrigação de reparar, até o limite do valor da herança ou do patrimônio transferido. O art. 8º-A leva a lógica à sucessão societária. Em fusão ou incorporação, a sucessora responde pela reparação integral até o limite do patrimônio transferido, sem as demais sanções por fatos anteriores, salvo simulação ou evidente intuito de fraude comprovados.
+
+Como cai na prova
+
+A FCC costuma trabalhar com três trocas:
+
+• transformar o dolo em mera voluntariedade;
+• impor responsabilidade automática ao sócio/diretor;
+• transmitir sanções pessoais ao herdeiro. As três são armadilhas.
+
+Pegadinha
+
+“O herdeiro responde pelas sanções de suspensão de direitos políticos e multa até o limite da herança.” Errado. A regra sucessória é patrimonial/reparatória nos limites legais, não transmissão de sanções pessoais.
+
+Jurisprudência essencial
+
+O STF reafirmou no Tema 1199 a necessidade do dolo. As ADIs 7156/7236, em 2026, alteraram a leitura do art. 3º, § 1º, quanto à exigência de “benefícios diretos” para sócios/cotistas/diretores/colaboradores, preservada a necessidade de participação e individualização.
+
+O que decorar
+
+• Dolo legal = vontade livre e consciente de alcançar o resultado ilícito tipificado.
+• Voluntariedade simples ≠ dolo da LIA.
+• Particular: indução ou concurso doloso.
+• Herdeiro/sucessor: obrigação reparatória dentro dos limites legais; sanções pessoais não se transmitem.
+
+O que levar para a prova
+
+Quando a questão falar em terceiro, sócio ou sucessor, procure o verbo que conecta a pessoa ao fato: participou? induziu? concorreu? recebeu patrimônio? A LIA atual repele responsabilização automática por posição formal.
+
+Check manual
+
+• ☐ Diferencio dolo de mera voluntariedade.
+• ☐ Sei quem pode ser sujeito ativo e passivo.
+• ☐ Sei explicar responsabilidade de particular, sócio e sucessor.
+
+---
+
+SESSÃO 03
+
+Art. 9º: enriquecimento ilícito
+
+Entenda primeiro
+
+O art. 9º protege a função pública contra a conversão do cargo, mandato, emprego ou atividade em fonte de vantagem patrimonial indevida. O núcleo é “auferir”, mediante ato doloso, vantagem patrimonial indevida em razão da função ou atividade abrangida pela LIA.
+
+Os incisos são precedidos de “notadamente”. Isso diferencia o art. 9º do modelo atual do art. 11: no art. 9º, o caput contém tipo central de enriquecimento ilícito e os incisos concretizam hipóteses relevantes; no art. 11, a reforma adotou estrutura de condutas especificadas.
+
+Regra jurídica
+
+Elementos que devem aparecer juntos:
+
+• vínculo funcional ou situação juridicamente abrangida;
+• ato doloso;
+• vantagem patrimonial indevida;
+• nexo entre a vantagem e o exercício da função/atividade;
+• quando se usa um inciso, presença de seus requisitos próprios.
+
+Exemplos legais importantes: receber comissão/presente de interessado; perceber vantagem para facilitar contratação superfaturada ou alienação subavaliada; usar bens ou trabalho público em obra particular; receber vantagem para omitir ato de ofício; incorporar ou usar, em proveito próprio, bens/rendas/valores públicos; evolução patrimonial desproporcional decorrente de atos descritos no caput, assegurada a demonstração de origem lícita.
+
+Exemplo
+
+Fiscal exige pagamento para omitir autuação que deveria lavrar. Se recebe vantagem econômica em razão dessa omissão dolosa, o caso se aproxima do art. 9º, X: o foco é o enriquecimento/benefício patrimonial indevido ligado ao exercício funcional.
+
+Compare
+
+Se o agente desvia R$ 100 mil para o próprio patrimônio, podem coexistir consequência patrimonial para o erário e enriquecimento. A classificação deve observar o fato e o tipo imputado; não se escolhe automaticamente o art. 10 apenas porque houve dano. O art. 9º olha para a vantagem patrimonial indevida do agente/beneficiário.
+
+Como cai na prova
+
+Expressões-chave de art. 9º: “vantagem econômica”, “receber”, “perceber”, “incorporar”, “usar em proveito próprio”. A FCC pode descrever enriquecimento e tentar deslocar o candidato para art. 10 ou 11.
+
+Pegadinha
+
+“Art. 9º exige necessariamente dano ao erário.” Errado. O núcleo é enriquecimento ilícito. O dano pode existir no caso concreto, mas não é requisito geral do tipo do art. 9º.
+
+Jurisprudência essencial
+
+O Tema 1199 impõe dolo também ao art. 9º. Além disso, a sentença deve demonstrar concretamente os elementos do tipo; a LIA veda presunção dos elementos dos arts. 9º, 10 e 11.
+
+O que decorar
+
+• Art. 9º = vantagem patrimonial indevida.
+• Dolo indispensável.
+• “Notadamente”: atenção à estrutura do caput + incisos.
+• Suspensão dos direitos políticos: até 14 anos; proibição de contratar/receber benefícios: até 14 anos.
+
+O que levar para a prova
+
+Se o caso enfatiza “o agente ganhou”, pense primeiro em art. 9º. Depois verifique se a vantagem é patrimonial, indevida, vinculada à função e dolosamente obtida.
+
+Check manual
+
+• ☐ Sei identificar o núcleo do art. 9º.
+• ☐ Não exijo dano ao erário como requisito universal.
+• ☐ Sei diferenciar vantagem patrimonial de mera violação de dever funcional.
+
+---
+
+SESSÃO 04
+
+Art. 10: prejuízo ao erário
+
+Entenda primeiro
+
+O art. 10 é o grande ponto em que material antigo mais engana. Antes da Lei 14.230/2021, o caput admitia ação ou omissão dolosa ou culposa. Hoje exige conduta dolosa e perda patrimonial efetiva e comprovada.
+
+Regra jurídica
+
+A configuração atual exige:
+
+• ação ou omissão dolosa;
+• efetiva e comprovada perda patrimonial, desvio, apropriação, malbaratamento ou dilapidação;
+• nexo causal;
+• adequação ao caput e à hipótese legal pertinente.
+
+O § 1º afasta ressarcimento quando a inobservância de formalidades não implicar perda patrimonial efetiva, vedando enriquecimento sem causa da Administração. O § 2º diz que mera perda patrimonial decorrente de atividade econômica não gera improbidade, salvo se comprovado ato doloso praticado com essa finalidade.
+
+Entre as hipóteses cobradas: incorporação indevida de bens públicos a patrimônio particular; uso privado irregular de bens/rendas; doação sem formalidades; alienação abaixo do mercado; aquisição acima do mercado; operação financeira irregular; benefício fiscal irregular; frustração de licitação/processo seletivo acarretando perda patrimonial efetiva; despesa não autorizada; arrecadação ilícita; liberação irregular de verba; enriquecimento ilícito de terceiro; irregularidades em parcerias.
+
+Exemplo
+
+Gestor dispensa indevidamente licitação, mas a contratação foi pelo preço de mercado e não houve perda patrimonial efetiva. A dispensa pode ser ilegal e gerar outras responsabilidades, mas, para art. 10, a reforma exige dano efetivo e comprovado. Não se presume prejuízo só da ilegalidade procedimental.
+
+Compare — art. 10 antigo × atual
+
+Elemento | Antes da Lei 14.230/2021 | Regra atual
+Elemento subjetivo | dolo ou culpa | dolo
+Prejuízo | jurisprudência admitia construções mais amplas em alguns contextos | perda patrimonial efetiva e comprovada
+Licitação | frustração/dispensa indevida em redação antiga | inciso VIII explicita perda patrimonial efetiva
+Formalidade | podia alimentar imputação com maior facilidade | sem perda efetiva não há ressarcimento só pela formalidade
+
+Como cai na prova
+
+A banca troca “efetiva e comprovadamente” por “presumidamente”, ou diz que negligência grave basta. Em prova atual, culpa e dano presumido não bastam para art. 10.
+
+Pegadinha
+
+“Como a contratação violou a lei, o dano ao erário é presumido.” Errado, para o enquadramento atual do art. 10.
+
+Jurisprudência essencial
+
+Tema 1199/STF: o dolo é indispensável também no art. 10. O STF tem aplicado a reforma a processos antigos sem trânsito em julgado quando se discute a permanência de condenação fundada apenas em culpa, exigindo exame de eventual dolo.
+
+O que decorar
+
+• Art. 10 = dolo + dano efetivo e comprovado.
+• Culpa não basta.
+• Falha formal sem dano efetivo não sustenta ressarcimento pelo art. 10.
+• Mera perda econômica não é improbidade sem ato doloso voltado a esse resultado.
+
+O que levar para a prova
+
+Quando aparecer art. 10, procure duas provas: prova do dolo e prova do dano. A ausência de qualquer uma é decisiva.
+
+Check manual
+
+• ☐ Não uso a redação antiga “dolosa ou culposa”.
+• ☐ Sei que dano deve ser efetivo e comprovado.
+• ☐ Sei tratar irregularidade licitatória sem prejuízo efetivo.
+
+---
+
+SESSÃO 05
+
+Art. 11: atos contra princípios e rol atual
+
+Entenda primeiro
+
+O art. 11 foi profundamente fechado pela reforma. A redação antiga permitia tratar o caput como cláusula ampla de violação a princípios, seguida de incisos exemplificativos (“notadamente”). A redação atual exige ação ou omissão dolosa que viole honestidade, imparcialidade ou legalidade caracterizada por uma das condutas legalmente descritas.
+
+Por isso, a frase “qualquer violação dolosa ao princípio da legalidade configura art. 11” é incompatível com o modelo atual.
+
+Regra jurídica
+
+Condutas atuais relevantes incluem:
+
+• revelar informação sigilosa, com os resultados previstos no inciso III;
+• negar publicidade a atos oficiais fora das hipóteses legais de sigilo;
+• frustrar, em ofensa à imparcialidade, caráter concorrencial de concurso, chamamento ou licitação, com vistas a benefício próprio ou de terceiro;
+• deixar de prestar contas, podendo fazê-lo, com vistas a ocultar irregularidades;
+• divulgar antecipadamente medida política/econômica capaz de afetar preços;
+• descumprir normas de celebração, fiscalização e aprovação de contas de parcerias;
+• nepotismo, nas condições do inciso XI;
+• publicidade oficial com promoção pessoal, nas condições do inciso XII.
+
+Os incisos I e II da redação anterior foram revogados. Isso é material clássico para pegadinha: desvio de finalidade e retardamento de ato de ofício não podem ser simplesmente encaixados nos incisos antigos como se continuassem vigentes.
+
+Os §§ do art. 11 também importam. O § 1º exige comprovação, na conduta funcional, do fim de obter proveito ou benefício indevido para si ou para outra pessoa ou entidade; e o § 2º estende essa exigência aos demais atos de improbidade tipificados na LIA e em leis especiais. O § 3º exige demonstração objetiva da ilegalidade no exercício da função, com indicação das normas constitucionais, legais ou infralegais violadas. O § 4º exige lesividade relevante ao bem jurídico tutelado para o sancionamento do art. 11, independentemente de dano ao erário ou enriquecimento ilícito. O § 5º deixa claro que mera nomeação ou indicação política, por si só, não configura improbidade: é necessário dolo com finalidade ilícita.
+
+Exemplo
+
+Prefeito nomeia pessoa com vínculo familiar. A prova não termina na identificação do parentesco. É necessário verificar se a situação se enquadra no tipo legal atual de nepotismo e se estão presentes os requisitos subjetivos e objetivos previstos na LIA.
+
+Compare
+
+Art. 11 não é “tipo residual” automático. Se não houve enriquecimento nem dano, isso não significa que toda ilegalidade passe a ser art. 11. É preciso conduta tipificada no art. 11 atual.
+
+Como cai na prova
+
+A FCC explora muito material antigo. Se o enunciado usar “notadamente” para o art. 11 ou disser que o rol é meramente exemplificativo, desconfie. O STJ, em 2026, reafirmou a taxatividade do rol atual e rejeitou continuidade típico-normativa quando a conduta do revogado inciso II não encontrou tipo atual correspondente.
+
+Pegadinha
+
+“Retardar indevidamente ato de ofício continua, por si só, tipificado no art. 11, II.” Errado. O inciso II foi revogado. É indispensável procurar enquadramento atual válido, sem recriar tipo por analogia sancionadora.
+
+Jurisprudência essencial
+
+Em junho de 2026, a Segunda Turma do STJ, em caso divulgado no Informativo Extraordinário 31, destacou que a revogação do antigo art. 11, II, sem correspondente no rol atual, impede continuidade típico-normativa daquela figura específica. O raciocínio reforça a taxatividade do art. 11 reformado.
+
+O que decorar
+
+• Art. 11 atual = dolo + violação dos deveres indicados + conduta legalmente tipificada.
+• I e II antigos: revogados.
+• Violação abstrata de princípio não basta.
+• Nomeação política, isoladamente, não basta; exige dolo com finalidade ilícita.
+
+O que levar para a prova
+
+Quando a questão disser “violou princípio”, não marque improbidade antes de perguntar: qual inciso atual do art. 11? quais requisitos específicos?
+
+Check manual
+
+• ☐ Sei que o art. 11 atual não é cláusula genérica ilimitada.
+• ☐ Sei que incisos I e II antigos foram revogados.
+• ☐ Sei procurar requisitos adicionais de cada conduta.
+
+---
+
+SESSÃO 06
+
+Quadro comparativo dos arts. 9º, 10 e 11
+
+Entenda primeiro
+
+O método mais eficiente para FCC é identificar o centro de gravidade do fato: ganho indevido, dano efetivo ou violação típica a dever/princípio. Depois, conferir dolo e requisitos especiais.
+
+Regra jurídica
+
+Todos os três grupos exigem dolo no regime atual, mas não exigem o mesmo resultado. O art. 9º gira em torno da vantagem patrimonial indevida; o art. 10 exige prejuízo efetivo e comprovado ao erário; o art. 11 exige conduta dolosa tipificada contra deveres/princípios protegidos.
+
+Exemplo
+
+• agente recebe propina → eixo do art. 9º;
+• agente direciona operação que produz perda patrimonial efetiva → eixo do art. 10;
+• agente nega publicidade fora das hipóteses legais, com requisitos do tipo → art. 11.
+
+Compare — art. 9º × art. 10 × art. 11
+
+Elemento | Art. 9º | Art. 10 | Art. 11
+Núcleo | enriquecimento ilícito | prejuízo ao erário | ofensa típica a princípios/deveres
+Dolo | sim | sim | sim
+Resultado central | vantagem patrimonial indevida | perda patrimonial efetiva e comprovada | conduta típica; dano patrimonial não é requisito geral
+Dano ao erário | pode existir, não é requisito universal | indispensável | não é requisito geral, salvo consequência do caso
+Estrutura | caput + hipóteses “notadamente” | caput + hipóteses | rol tipificado atual, não cláusula genérica ilimitada
+Sanções máximas típicas | mais severas | intermediárias | mais restritas
+
+Como cai na prova
+
+A banca narra um mesmo fato com elementos mistos para testar o núcleo. Não resolva apenas pelo nome da irregularidade (“licitação”, “contrato”, “nepotismo”); resolva pelos elementos legais.
+
+Pegadinha
+
+“Se não houve dano, resta automaticamente o art. 11.” Errado. Art. 11 exige tipo próprio.
+
+Jurisprudência essencial
+
+Tema 1199 unifica o elemento subjetivo: dolo nos três artigos. O STJ, por sua vez, vem aplicando a taxatividade do art. 11 para afastar condenações fundadas em tipos revogados sem continuidade normativa.
+
+O que decorar
+
+9 = ganhou; 10 = erário perdeu; 11 = princípio/dever violado por conduta tipificada. É um mnemônico inicial, não substitui a leitura dos requisitos.
+
+O que levar para a prova
+
+Classificação correta exige: tipo + dolo + resultado/finalidade específica. Use o mnemônico só para abrir a análise.
+
+Check manual
+
+• ☐ Consigo diferenciar os três grupos em um caso concreto.
+• ☐ Não trato o art. 11 como “sobra”.
+• ☐ Sei que todos exigem dolo hoje.
+
+---
+
+SESSÃO 07
+
+Sanções, proporcionalidade, perda da função, direitos políticos, multa e ressarcimento
+
+Entenda primeiro
+
+As sanções do art. 12 não formam um pacote obrigatório. Podem ser aplicadas isolada ou cumulativamente, conforme gravidade, com individualização. Ressarcimento integral do dano patrimonial efetivo, quando cabível, não se confunde com multa civil.
+
+Regra jurídica — sanções por espécie
+
+Consequência | Art. 9º | Art. 10 | Art. 11
+Perda dos bens/valores ilícitos | sim | se houver acréscimo ilícito | não prevista no inciso III como sanção típica
+Perda da função pública | sim | sim | não prevista no inciso III atual
+Suspensão de direitos políticos | até 14 anos | até 12 anos | não prevista no inciso III atual
+Multa civil | equivalente ao acréscimo patrimonial | equivalente ao dano | até 24 vezes a remuneração
+Proibição contratar/receber benefícios | até 14 anos | até 12 anos | até 4 anos
+Ressarcimento | se houver dano efetivo | inerente ao dano efetivo | somente se houver dano juridicamente reparável no caso; não é sanção automática do inciso III
+
+A multa pode ser aumentada até o dobro se, diante da situação econômica do réu, o cálculo legal for ineficaz para reprovação e prevenção. Para atos de menor ofensa aos bens jurídicos, a lei prevê limitação à multa, sem prejuízo de ressarcimento e perda de valores quando cabíveis.
+
+Proporcionalidade e individualização
+
+O art. 17-C manda considerar proporcionalidade e razoabilidade, natureza, gravidade e impacto, extensão do dano, proveito patrimonial, agravantes/atenuantes, atuação para reduzir prejuízos e antecedentes. Sanções relativas ao mesmo fato aplicadas em outras esferas devem ser consideradas/compensadas nos limites legais, evitando bis in idem.
+
+Compare — perda da função pública × suspensão dos direitos políticos
+
+Ponto | Perda da função | Suspensão de direitos políticos
+Natureza | sanção funcional/pessoal | sanção sobre capacidade política
+Art. 9º | cabível | até 14 anos
+Art. 10 | cabível | até 12 anos
+Art. 11 atual | não consta do inciso III | não consta do inciso III
+Eficácia | após trânsito em julgado | após trânsito em julgado
+
+Atualização STF 2026 — art. 12, § 1º: a redação da lei limitava a perda da função ao vínculo de mesma qualidade/natureza e só admitia extensão excepcional em art. 9º. Nas ADIs 7156/7236, o STF retirou essas limitações e conferiu à extensão a outros vínculos natureza de poder-dever, admitindo não estender apenas excepcionalmente, conforme circunstâncias e gravidade. Portanto, não memorize a literalidade original de 2021 sem a correção do STF.
+
+Atualização STF 2026 — art. 12, § 4º: o dispositivo que tratava como excepcional a extrapolação da proibição de contratar além do ente lesado foi declarado inconstitucional. Não use a antiga limitação territorial como regra automática.
+
+Atualização STF 2026 — art. 12, § 10: foi declarado inconstitucional o cômputo retroativo, para a suspensão dos direitos políticos, do intervalo entre decisão colegiada e trânsito em julgado.
+
+Multa × ressarcimento
+
+Multa civil | Ressarcimento
+sanção | recomposição patrimonial
+cálculo varia por tipo | corresponde ao dano efetivo
+pode ter função repressiva/preventiva | busca recolocar patrimônio lesado na situação devida
+sujeita-se à prescrição da pretensão sancionadora | pode ser imprescritível quando fundada em ato doloso tipificado, Tema 897/STF
+
+Exemplo
+
+Condenado por art. 10 pode receber multa equivalente ao dano e também ser obrigado a ressarcir o dano. Não há duplicidade conceitual: uma parcela é sanção, outra é recomposição, embora o sistema deva impedir enriquecimento sem causa e duplicidade de reparação.
+
+Como cai na prova
+
+A FCC gosta de misturar a tabela do art. 12. O art. 11 atual não traz perda da função nem suspensão de direitos políticos. Essa é uma mudança forte em relação ao regime antigo.
+
+Pegadinha
+
+“Todas as sanções do art. 12 são cumulativas e obrigatórias.” Errado. A lei permite aplicação isolada ou cumulativa conforme gravidade e individualização.
+
+Jurisprudência essencial
+
+Em 2026, o STF julgou constitucionais os atuais incisos I, II e III do art. 12, mas alterou pontos dos §§ 1º, 4º e 10. Para prova atualizada, a literalidade desses parágrafos deve ser lida com o resultado das ADIs 7156/7236.
+
+O que decorar
+
+• 9: até 14 / multa = acréscimo.
+• 10: até 12 / multa = dano.
+• 11: multa até 24 remunerações / proibição até 4; sem perda da função e sem suspensão política no inciso III.
+• Sanções: isoladas ou cumulativas.
+• Perda da função e suspensão política só se efetivam com trânsito em julgado.
+
+O que levar para a prova
+
+Separe sempre sanção de reparação e verifique o artigo do ato antes de escolher o prazo ou consequência.
+
+Check manual
+
+• ☐ Sei a tabela atual dos incisos I, II e III do art. 12.
+• ☐ Sei diferenciar multa e ressarcimento.
+• ☐ Conheço as alterações do STF de 2026 nos §§ 1º, 4º e 10.
+
+---
+
+SESSÃO 08
+
+Indisponibilidade de bens: cautelar, requisitos e ADIs de 2026
+
+Entenda primeiro
+
+Indisponibilidade não é pena. É medida patrimonial provisória destinada a preservar utilidade do processo e futura recomposição. A Lei 14.230/2021 alterou profundamente o art. 16; depois, o STF, em 2026, retirou limitações importantes dessa reforma.
+
+Regra jurídica
+
+O pedido pode ser antecedente ou incidental. A lei contempla investigação/bloqueio de bens no exterior, admite substituição por caução, fiança bancária ou seguro-garantia, prevê readequação durante a instrução e estabelece recurso por agravo de instrumento.
+
+A redação de 2021 do § 3º condicionava a medida a perigo concreto de dano ou risco ao resultado útil, após oitiva do réu em 5 dias; o § 4º dizia que urgência não poderia ser presumida; o § 10 restringia o montante ao ressarcimento, excluindo multa civil e acréscimo de origem lícita.
+
+STF, ADIs 7156/7236, julgamento de 2026: com efeitos ex nunc, o Tribunal retirou essas rigidezes. Passou a admitir, excepcionalmente e por decisão fundamentada, indisponibilidade com base em tutela de evidência; também admite, excepcionalmente e com fundamentação, presunção de urgência. Quanto ao alcance patrimonial, a medida, como regra geral, deve garantir o integral ressarcimento, podendo abranger multa civil e enriquecimento ilícito, até o limite pertinente, e alcançar bens independentemente da origem, respeitadas impenhorabilidades.
+
+Continuam muito importantes as regras de proteção e operacionalização: somatório entre réus não deve ultrapassar o montante indicado; terceiro exige demonstração de concorrência ou, sendo pessoa jurídica, incidente de desconsideração quando cabível; há ordem legal de preferência de bens; até 40 salários mínimos em depósitos/aplicações/conta são protegidos; bem de família é protegido, salvo se fruto de vantagem patrimonial indevida do art. 9º.
+
+Exemplo
+
+Há documentação robusta de desvio e movimentação patrimonial anormal. A indisponibilidade pode ser pedida antes da sentença para preservar o resultado econômico do processo. Isso não significa que o réu já tenha sido sancionado.
+
+Compare — indisponibilidade × sanção
+
+Indisponibilidade | Sanção do art. 12
+provisória/cautelar ou tutela patrimonial | definitiva após condenação e trânsito conforme regime legal
+protege resultado útil/recomposição | reprova o ato de improbidade
+não pressupõe condenação final | pressupõe juízo definitivo de responsabilidade
+pode ser revista/readequada | executada nos termos da coisa julgada
+
+Como cai na prova
+
+Material de 2022–2025 pode afirmar, com base literal no § 10, que indisponibilidade nunca pode alcançar valor de multa civil. Isso ficou desatualizado após o STF em 2026.
+
+Pegadinha
+
+“Após a reforma, a urgência jamais pode ser presumida e a indisponibilidade jamais alcança multa.” Errado em 2026. O STF conferiu leitura constitucional diversa, em caráter excepcional e mediante fundamentação.
+
+Jurisprudência essencial
+
+• Tema 1257/STJ (2025): regras da Lei 14.230/2021 sobre tutela de indisponibilidade são aplicáveis aos processos em curso, permitindo reavaliação de medidas anteriores.
+• ADIs 7156/7236 (2026): alterações dos §§ 3º, 4º e 10 do art. 16, com efeitos ex nunc, ampliando a possibilidade de proteção patrimonial nos termos definidos pelo STF.
+
+O que decorar
+
+• Indisponibilidade ≠ sanção.
+• Pode ser antecedente ou incidental.
+• Art. 16 deve ser lido com as ADIs de 2026.
+• 40 salários mínimos protegidos; bem de família protegido salvo origem ilícita do art. 9º.
+
+O que levar para a prova
+
+Se o item falar “a indisponibilidade tem natureza punitiva”, marque errado. Se reproduzir rigidamente §§ 3º, 4º ou 10 sem a atualização do STF de 2026, verifique a armadilha.
+
+Check manual
+
+• ☐ Sei a natureza da indisponibilidade.
+• ☐ Sei que a literalidade de 2021 foi parcialmente afastada em 2026.
+• ☐ Sei os limites e proteções patrimoniais relevantes.
+
+---
+
+SESSÃO 09
+
+Ação de improbidade: legitimidade, procedimento, sentença e efeitos processuais
+
+Entenda primeiro
+
+A reforma de 2021 tentou concentrar no Ministério Público a legitimidade ativa. O STF derrubou essa exclusividade em 2022. Logo, o texto literal do caput do art. 17 não pode ser lido isoladamente.
+
+Regra jurídica — legitimidade
+
+Nas ADIs 7042 e 7043, o STF restabeleceu legitimidade ativa concorrente e disjuntiva entre o Ministério Público e as pessoas jurídicas interessadas tanto para ajuizar ação de improbidade quanto para celebrar ANPC.
+
+A ação segue o procedimento comum do CPC, com regras especiais da LIA. O foro é o local do dano ou da pessoa jurídica prejudicada. A inicial deve individualizar a conduta de cada réu e apontar elementos probatórios mínimos da ocorrência do tipo e autoria; também deve conter indícios suficientes dos fatos e do dolo ou justificar a impossibilidade de apresentação.
+
+A contestação tem prazo comum de 30 dias. As decisões interlocutórias são, em hipóteses previstas, recorríveis por agravo de instrumento. O juiz pode julgar improcedente a demanda a qualquer tempo quando verificada a inexistência do ato de improbidade.
+
+Tipificação e decisão judicial — atualização STF 2026
+
+A reforma criou §§ 10-C, 10-D e 10-F, I, impondo rigidez forte à capitulação: vedação de modificar a capitulação, exigência de um único tipo por ato e nulidade da condenação por tipo diverso da inicial. Em junho de 2026, nas ADIs 7156/7236, o STF declarou esses dispositivos inconstitucionais. Assim, não se deve memorizar como absoluta a vinculação do juiz à capitulação jurídica formulada pelo autor.
+
+Isso não significa liberdade para condenação surpresa. Permanecem contraditório, ampla defesa, correlação com os fatos e necessidade de prova dos elementos do tipo e do dolo. A invalidação retirou a prisão formal à capitulação jurídica, não aboliu garantias processuais.
+
+Sentença e prova
+
+O art. 17-C exige fundamentação precisa dos elementos dos arts. 9º, 10 e 11, que não podem ser presumidos. Devem ser consideradas consequências práticas, dificuldades reais do gestor, proporcionalidade, gravidade, impacto, dano, proveito, atenuantes/agravantes e individualização do terceiro.
+
+No litisconsórcio, a sanção é pessoal e individualizada. Em 2026, o STF declarou inconstitucional parte do § 2º do art. 17-C para manter a vedação de solidariedade para sanções, mas admitir solidariedade na responsabilidade patrimonial quando juridicamente cabível.
+
+Natureza da ação
+
+O art. 17-D, após interpretação conforme do STF em 2026, deve ser entendido no sentido de que a ação é repressiva, destinada a sanções pessoais da LIA, e não substitui a ação civil pública. A afirmação original de que “não constitui ação civil” não deve ser usada literalmente como negação da natureza civil da improbidade.
+
+Exemplo
+
+A inicial descreve detalhadamente fraude dolosa e fatos provados, mas usa capitulação jurídica equivocada. Após as ADIs de 2026, não se aplica automaticamente a regra de nulidade apenas porque o juiz reconhece tipo jurídico diferente, desde que respeitados fatos, defesa, contraditório e requisitos do tipo.
+
+Compare — ação de improbidade × ação de ressarcimento
+
+Ação de improbidade | Pretensão/ação de ressarcimento
+finalidade central sancionatória/repressiva | finalidade reparatória
+sujeita às regras de prescrição sancionadora do art. 23 | pode ser imprescritível quando fundada em ato doloso tipificado, Tema 897
+exige tipicidade e dolo | exige demonstração do dano e fundamento reparatório correspondente
+pode cumular ressarcimento | pode subsistir mesmo quando pretensão sancionadora prescreveu, nas hipóteses constitucionais
+
+Como cai na prova
+
+A FCC pode copiar a literalidade do art. 17 (“será proposta pelo MP”) e ignorar ADI 7043. Hoje, a exclusividade é falsa.
+
+Pegadinha
+
+“A pessoa jurídica lesada perdeu definitivamente legitimidade para propor ação de improbidade após 2021.” Errado. STF restaurou legitimidade concorrente.
+
+Jurisprudência essencial
+
+• ADIs 7042/7043: legitimidade concorrente MP + pessoa jurídica interessada.
+• ADIs 7156/7236: invalidaram §§ 10-C, 10-D e 10-F, I; ajustaram art. 17-C, § 2º; deram interpretação conforme ao art. 17-D.
+
+O que decorar
+
+• Legitimidade: MP + pessoa jurídica interessada.
+• Inicial: individualização + prova mínima + dolo.
+• Sentença: elementos do tipo não podem ser presumidos.
+• Vinculação rígida à capitulação de 2021 foi afastada pelo STF em 2026.
+
+O que levar para a prova
+
+Se houver conflito entre literalidade compilada e ADI, prevalece a decisão vinculante do STF.
+
+Check manual
+
+• ☐ Sei a legitimidade ativa atual.
+• ☐ Sei os requisitos centrais da inicial.
+• ☐ Sei quais regras de capitulação foram invalidadas em 2026.
+
+---
+
+SESSÃO 10
+
+Acordo de não persecução civil (ANPC)
+
+Entenda primeiro
+
+O ANPC permite solução consensual em matéria de improbidade. A antiga vedação absoluta à transação ficou superada. Hoje o acordo pode ocorrer na investigação, durante a ação ou até na execução da sentença, observados requisitos e controle judicial.
+
+Regra jurídica
+
+Resultados mínimos do art. 17-B:
+
+• integral ressarcimento do dano;
+• reversão à pessoa jurídica lesada da vantagem indevida obtida, inclusive oriunda de agentes privados.
+
+A celebração considera personalidade, natureza, circunstâncias, gravidade e repercussão social do ato, além das vantagens da solução rápida para o interesse público. Há homologação judicial tanto antes como depois do ajuizamento.
+
+Legitimidade: embora a redação do art. 17-B mencione Ministério Público, as ADIs 7042/7043 asseguram legitimidade concorrente também à pessoa jurídica interessada para celebrar ANPC.
+
+Art. 17-B, § 3º: previa oitiva do Tribunal de Contas para apuração do dano, com prazo de 90 dias. Esse dispositivo foi declarado inconstitucional pelo STF em 2026. Portanto, não trate essa oitiva como condição legal obrigatória vigente.
+
+O acordo pode prever mecanismos de integridade, auditoria, canais de denúncia, códigos de ética e outras medidas de interesse público. O descumprimento impede novo acordo por 5 anos, contado nos termos legais.
+
+Exemplo
+
+Empresa e agente investigados reconhecem dever de recomposição e pactuam integral ressarcimento, reversão de vantagem e programa de integridade, com homologação judicial. Isso é compatível com ANPC, sem necessidade de esperar sentença condenatória.
+
+Compare — ANPC × sentença
+
+ANPC | Sentença
+solução consensual | decisão jurisdicional
+pode ocorrer antes, durante ou na execução | encerra fase cognitiva com decisão de mérito, sujeita a recursos
+exige resultados mínimos legais | aplica sanções conforme tipo e prova
+envolve negociação e homologação | decorre de julgamento
+pode incorporar medidas de integridade | sanções são as previstas em lei
+
+Compare — ANPC × acordo penal
+
+O ANPC pertence ao campo civil/sancionador da improbidade; não é acordo de não persecução penal do CPP. O objeto, requisitos, legitimidade e efeitos são diferentes.
+
+Como cai na prova
+
+A banca pode afirmar que acordo só cabe antes da ação, ou que apenas MP pode celebrá-lo, ou que o TCE/TCU deve obrigatoriamente fixar o dano em 90 dias. Todas essas formulações estão desatualizadas ou erradas.
+
+Pegadinha
+
+“Depois de ajuizada a ação, não cabe ANPC.” Errado. Pode ser celebrado inclusive durante ação e execução.
+
+Jurisprudência essencial
+
+• ADIs 7042/7043: legitimidade concorrente para ANPC.
+• ADIs 7156/7236: inconstitucionalidade do art. 17-B, § 3º.
+
+O que decorar
+
+• Resultado mínimo: ressarcimento integral + reversão da vantagem indevida.
+• Homologação judicial.
+• Pode ocorrer em investigação, ação ou execução.
+• § 3º (oitiva obrigatória do Tribunal de Contas) foi invalidado em 2026.
+
+O que levar para a prova
+
+Leia ANPC como instrumento de responsabilização consensual, não como perdão sem recomposição.
+
+Check manual
+
+• ☐ Sei os resultados mínimos do acordo.
+• ☐ Sei a legitimidade concorrente após ADIs 7042/7043.
+• ☐ Sei que o § 3º foi declarado inconstitucional.
+
+---
+
+SESSÃO 11
+
+Prescrição e prescrição intercorrente após o STF em 2026
+
+Entenda primeiro
+
+A Lei 14.230/2021 criou um regime uniforme: prazo geral de 8 anos contado da ocorrência do fato ou, em infração permanente, da cessação da permanência. Também estabeleceu suspensão, interrupções e prescrição intercorrente. Em 2026, o STF alterou precisamente a regra que reduzia pela metade o prazo após cada interrupção.
+
+Regra jurídica
+
+Prazo-base: 8 anos.
+
+Suspensão: instauração de inquérito civil ou processo administrativo suspende o prazo por no máximo 180 dias corridos, recomeçando após a conclusão ou após o limite de suspensão.
+
+Inquérito civil: prazo legal de 365 dias, prorrogável uma vez por igual período mediante fundamentação e revisão. Encerrado o prazo, a ação deve ser ajuizada em 30 dias se não houver arquivamento.
+
+Marcos interruptivos do art. 23, § 4º:
+
+• ajuizamento da ação;
+• publicação da sentença condenatória;
+• decisão/acórdão de TJ/TRF que confirma condenação ou reforma improcedência;
+• decisão/acórdão do STJ que confirma condenação ou reforma improcedência;
+• decisão/acórdão do STF que confirma condenação ou reforma improcedência.
+
+A lei dizia que, após interrupção, o prazo recomeçaria pela metade, isto é, em 4 anos. Em 1º/07/2026, nas ADIs 7156/7236, o STF declarou inconstitucional a expressão que reduzia o prazo pela metade e estabeleceu prazo máximo de 20 anos de prescrição. Assim, material que ainda ensine mecanicamente “interrompeu = 4 anos” está desatualizado.
+
+A prescrição intercorrente permanece prevista e deve ser reconhecida de ofício ou a requerimento, ouvido o MP, mas o período entre marcos interruptivos não se calcula mais pela redução inconstitucional de metade; a aplicação deve observar a decisão do STF e o teto máximo de 20 anos definido no julgamento.
+
+Compare — prescrição × prescrição intercorrente
+
+Prescrição da pretensão sancionadora | Prescrição intercorrente
+começa, em regra, no fato ou cessação da permanência | ocorre durante o processo, entre marcos relevantes
+prazo-base atual: 8 anos | usa o regime do art. 23 com correção do STF de 2026
+impede aplicação de sanções prescritas | extingue pretensão sancionadora pelo decurso no curso processual
+não elimina automaticamente pretensão imprescritível de ressarcimento do Tema 897 | também não converte ressarcimento imprescritível em prescritível
+
+Exemplo
+
+Fato ocorrido após a reforma é investigado e a ação é ajuizada dentro do prazo. O ajuizamento interrompe a prescrição. Não se pode mais afirmar, após julho de 2026, que a partir daí corre necessariamente prazo reduzido de 4 anos por força do § 5º original.
+
+Como cai na prova
+
+A maior pegadinha de 2026 é a “metade do prazo”. Durante anos, questões e resumos ensinaram 4 anos após a interrupção. O STF invalidou essa redução.
+
+Pegadinha
+
+“Interrompida a prescrição da LIA, o novo prazo é sempre de quatro anos.” Errado atualmente. A expressão legal que impunha metade do prazo foi declarada inconstitucional pelo STF.
+
+Jurisprudência essencial
+
+• Tema 1199/STF: novo regime prescricional é irretroativo; novos marcos contam a partir da publicação da Lei 14.230/2021.
+• ADIs 7156/7236, 01/07/2026: inconstitucionalidade da redução pela metade do art. 23, § 5º; teto máximo de 20 anos.
+
+O que decorar
+
+• Prazo-base: 8 anos.
+• Suspensão da investigação: máximo 180 dias.
+• Inquérito civil: 365 + 365, conforme condições legais.
+• Ajuizamento e decisões condenatórias/confirmatórias listadas interrompem.
+• “4 anos após interrupção” = regra superada pelo STF em 2026.
+
+O que levar para a prova
+
+Prescrição é um dos pontos em que a data da prova importa. Em 2026, prefira o entendimento do STF mais recente à literalidade não atualizada do § 5º.
+
+Check manual
+
+• ☐ Sei o prazo-base e termo inicial.
+• ☐ Sei suspensão e marcos interruptivos.
+• ☐ Sei explicar a mudança de 01/07/2026.
+
+---
+
+SESSÃO 12
+
+Retroatividade da Lei 14.230/2021 e Tema 1199/STF
+
+Entenda primeiro
+
+A reforma trouxe normas mais benéficas, mas a LIA não se tornou automaticamente equivalente ao direito penal quanto à retroatividade total da lex mitior. O STF definiu uma solução própria que protege a coisa julgada e, ao mesmo tempo, impede condenação por modalidade culposa já eliminada em processos ainda abertos.
+
+Regra jurídica — Tema 1199
+
+O STF fixou quatro eixos:
+
+• é necessária responsabilidade subjetiva e dolo nos arts. 9º, 10 e 11;
+• a revogação da modalidade culposa é irretroativa quanto à coisa julgada e execução das sanções já estabilizadas;
+• a lei nova alcança atos culposos antigos sem condenação transitada em julgado, devendo o juiz verificar se houve dolo;
+• o novo regime prescricional é irretroativo, aplicando-se os novos marcos temporais a partir da publicação da Lei 14.230/2021.
+
+Isso significa que “retroage tudo” e “não retroage nada” são respostas ruins. A aplicação é segmentada por conteúdo e estágio processual.
+
+Exemplo
+
+Agente foi condenado em primeiro grau por art. 10 culposo sob a lei antiga, mas ainda não há trânsito em julgado. A revogação da modalidade culposa é relevante: não se mantém condenação apenas pela culpa; deve-se examinar eventual dolo.
+
+Se a condenação culposa já transitou em julgado antes da reforma e está em execução, a reforma não desfaz automaticamente a coisa julgada.
+
+Compare — antes × depois da Lei 14.230/2021
+
+Tema | Regime antigo | Regime pós-reforma / atual
+Art. 10 | admitia culpa | exige dolo
+Dolo | construção jurisprudencial variava por tipo | definição legal expressa no art. 1º, § 2º
+Art. 11 | caput amplo + incisos exemplificativos | tipicidade fechada das condutas atuais
+Sanção art. 11 | incluía perda da função e suspensão política | inciso III atual não inclui essas duas
+Prescrição | regras ligadas a vínculo/cargo e leis específicas | prazo-base unificado de 8 anos + marcos, com correção STF 2026
+Indisponibilidade | jurisprudência antiga admitia perigo presumido em moldes amplos | reforma restringiu; STF 2026 reabriu excepcionalmente tutela de evidência/urgência presumida fundamentada
+Legitimidade | MP + pessoa jurídica | reforma tentou exclusividade do MP; STF restaurou concorrência
+ANPC | evolução legislativa recente | disciplinado no art. 17-B, com correções STF
+
+Como cai na prova
+
+A FCC costuma montar casos antigos com processo ainda em andamento. O candidato precisa perguntar: há trânsito em julgado? o tema é elemento subjetivo ou prescrição? a regra é material sancionadora ou processual?
+
+Pegadinha
+
+“A Lei 14.230/2021 retroage integralmente por ser mais benéfica.” Errado. Tema 1199 impõe limites, especialmente coisa julgada e prescrição.
+
+Jurisprudência essencial
+
+Tema 1199/STF é obrigatório. O STJ continua aplicando essa tese e, em 2025/2026, reiterou que a revogação da culpa beneficia processos não transitados, sem funcionar como anistia de condenações definitivas.
+
+O que decorar
+
+Culpa antiga sem trânsito: revisa para procurar dolo. Coisa julgada: preserva. Prescrição nova: não retroage; marcos novos desde a publicação da reforma.
+
+O que levar para a prova
+
+Em questão temporal, desenhe uma linha: data do fato → 25/10/2021 → trânsito em julgado → fase atual. A resposta aparece com mais segurança.
+
+Check manual
+
+• ☐ Sei as quatro teses essenciais do Tema 1199.
+• ☐ Não digo “retroage tudo”.
+• ☐ Diferencio elemento subjetivo de regime prescricional.
+
+---
+
+SESSÃO 13
+
+Ressarcimento ao erário, agentes políticos, independência das instâncias e efeitos patrimoniais
+
+Entenda primeiro
+
+Ressarcimento é recomposição. Pode aparecer dentro da ação de improbidade, em cumprimento ou em pretensão autônoma. Seu regime prescricional não é idêntico ao das sanções da LIA.
+
+Regra jurídica — ressarcimento
+
+No Tema 897, o STF fixou que são imprescritíveis as ações de ressarcimento ao erário fundadas na prática de ato doloso tipificado na LIA. A chave é dupla: ato doloso e tipificado como improbidade.
+
+Por isso, prescrição das sanções não significa, necessariamente, perda de toda pretensão patrimonial. É preciso separar a pretensão sancionadora da pretensão reparatória e verificar os pressupostos constitucionais do Tema 897.
+
+Também se evita duplicidade de reparação: ressarcimentos já efetuados em outras instâncias pelos mesmos fatos devem ser considerados/deduzidos conforme a lei.
+
+Agentes políticos
+
+A LIA atual inclui expressamente o agente político no art. 2º. A existência de regime de crime de responsabilidade não cria imunidade geral à improbidade.
+
+O STF, na Pet 3240, reafirmou a natureza civil da ação e afastou extensão automática do foro penal por prerrogativa às ações de improbidade. No Tema 576, a Corte assentou, em relação a prefeito municipal, que processo por crime de responsabilidade não impede responsabilização por improbidade, dada a autonomia das instâncias.
+
+Independência das instâncias — cuidado com absolvição penal
+
+Como regra, responsabilidades civil, administrativa, penal e por improbidade podem coexistir, com os pontos de comunicação definidos em lei. O art. 21, § 3º, atribui efeitos quando decisão reconhece inexistência da conduta ou negativa de autoria.
+
+A reforma havia dado alcance muito amplo à absolvição criminal no § 4º. Em 2026, nas ADIs 7156/7236, o STF restringiu a comunicação: decisão criminal transitada em julgado sobre os mesmos fatos impede a ação de improbidade apenas nas hipóteses definidas pelo Tribunal, relacionadas ao art. 65 e aos incisos I e IV do art. 386 do CPP. Portanto, não é correto dizer que qualquer absolvição penal encerra automaticamente a improbidade.
+
+Compare — ação de improbidade × ressarcimento
+
+Aspecto | Improbidade sancionadora | Ressarcimento ao erário
+Objeto | responsabilização + sanções | recomposição do dano
+Prescrição | art. 23, com jurisprudência atual | imprescritível se ato doloso tipificado, Tema 897
+Dolo | necessário para improbidade atual | Tema 897 exige ato doloso tipificado para imprescritibilidade
+Efeito patrimonial | pode incluir ressarcimento e perda de valores | reparação até o montante devido
+
+Exemplo
+
+A pretensão de aplicar multa e suspensão pode estar prescrita, mas, se comprovado ato doloso tipificado que gerou dano, a pretensão de ressarcimento pode permanecer imprescritível segundo Tema 897.
+
+Como cai na prova
+
+A banca troca “ato de improbidade” por “qualquer ilícito civil”. O STF não declarou imprescritível toda dívida perante o erário: o Tema 897 é específico para ressarcimento fundado em ato doloso tipificado na LIA.
+
+Pegadinha
+
+“Agente político responde apenas por crime de responsabilidade e nunca pela LIA.” Errado como afirmação geral. A própria lei o inclui e a jurisprudência rejeita imunidade ampla.
+
+Jurisprudência essencial
+
+• Tema 897/STF: imprescritibilidade do ressarcimento fundado em ato doloso tipificado na LIA.
+• Pet 3240/STF: foro penal por prerrogativa não se estende à ação de improbidade; natureza civil.
+• Tema 576/STF: autonomia entre crime de responsabilidade de prefeito e improbidade.
+• ADIs 7156/7236: limitação dos efeitos da absolvição criminal sobre a ação de improbidade.
+
+O que decorar
+
+• Ressarcimento ≠ multa.
+• Tema 897 = dolo + tipificação na LIA = imprescritibilidade do ressarcimento.
+• Agente político está no art. 2º.
+• Qualquer absolvição criminal ≠ extinção automática da improbidade.
+
+O que levar para a prova
+
+Quando aparecer “prescrição”, pergunte: a questão fala de sanção ou ressarcimento? Quando aparecer agente político, desconfie de imunidades absolutas.
+
+Check manual
+
+• ☐ Sei explicar o Tema 897.
+• ☐ Sei tratar agentes políticos sem usar entendimento antigo superado.
+• ☐ Sei a comunicação limitada entre instâncias.
+
+---
+
+SESSÃO 14
+
+Revisão integrada, quadro-mestre, FCC e leitura final
+
+Entenda primeiro
+
+A prova de improbidade é vencida por quatro perguntas sucessivas:
+
+• Quem praticou e quem foi atingido?
+• Qual tipo legal descreve a conduta?
+• Há dolo e resultado/finalidade exigidos?
+• Qual consequência processual, patrimonial ou sancionatória cabe hoje, após reforma e ADIs?
+
+Regra jurídica — quadro-mestre
+
+Par de conceitos | Diferença que resolve a questão
+improbidade × ilegalidade | improbidade exige tipo + dolo + requisitos; ilegalidade pode existir sem improbidade
+dolo × culpa | LIA atual exige dolo; culpa do art. 10 foi eliminada
+art. 9º × 10 × 11 | ganho indevido × dano efetivo × conduta típica contra princípios/deveres
+sujeito ativo × passivo | quem pratica/participa × patrimônio/entidade juridicamente protegidos
+sanção × ressarcimento | repressão/pena civil × recomposição do dano
+multa × ressarcimento | punição pecuniária × reparação
+indisponibilidade × sanção | tutela provisória × consequência definitiva
+ANPC × sentença | solução consensual homologada × julgamento estatal
+prescrição × intercorrente | decurso desde termo inicial × decurso entre marcos no processo
+ação de improbidade × ressarcimento | sancionatória × reparatória
+lei escrita × decisão do STF | texto compilado pode conter dispositivo com eficácia/alcance modificado por ADI
+antes × depois da reforma | culpa/art.11 amplo/regras antigas × dolo/tipicidade/prescrição e processo reformados
+
+Exemplo integrado
+
+Secretário direciona licitação para empresa de conhecido. Só isso não fecha o caso. A prova precisa dizer se houve benefício/ganho, perda patrimonial, finalidade ilícita, participação dos particulares e dolo. Se houve dano efetivo e comprovado dolosamente causado, art. 10 pode ser cogitado. Se houve vantagem patrimonial indevida ao agente, art. 9º ganha relevância. Se a imputação for apenas contra princípios, será indispensável tipo atual do art. 11. Depois vêm sanções, prescrição, cautelares e competência.
+
+Compare — regra antiga × regra atual
+
+Tema | Memória antiga perigosa | Resposta atual
+culpa | art. 10 culposo | só dolo
+art. 11 | rol exemplificativo | tipicidade atual fechada
+dano art. 10 | presunções amplas | efetivo e comprovado
+legitimidade | reforma dizia só MP | STF: MP + pessoa jurídica interessada
+perda da função | só vínculo igual e extensão excepcional do art. 9º | STF 2026 modificou § 1º: extensão a outros vínculos como poder-dever, exceção fundamentada para não estender
+indisponibilidade | reforma: urgência concreta e sem multa | STF 2026 admite exceções e alcance maior nos termos do julgamento
+capitulação | juiz rigidamente preso ao tipo da inicial | dispositivos rígidos invalidados em 2026, preservados fatos/contraditório
+ANPC § 3º | TCE/TCU obrigatório em 90 dias | dispositivo inconstitucional em 2026
+prescrição após interrupção | 4 anos | redução pela metade invalidada em 2026; teto de 20 anos
+absolvição penal | comunicação ampla | STF 2026 restringiu às hipóteses definidas no julgamento
+
+Como cai na prova — camada FCC
+
+A FCC trabalha muito bem com redação legal “quase certa”. Os termos que mais mudam a resposta são:
+
+• “dolo” × “culpa”;
+• “efetivo e comprovado” × “presumido”;
+• “tipificado” × “mera violação”;
+• “concorrente” × “exclusivo”;
+• “sanção” × “ressarcimento”;
+• “cautelar” × “pena”;
+• “8 anos” × “4 anos”; e
+• “literalidade de 2021” × “controle de constitucionalidade de 2026”.
+
+Pegadinha final
+
+Se a alternativa reproduzir palavra por palavra dispositivo da Lei 14.230/2021, ainda assim ela pode estar errada se o STF já declarou o trecho inconstitucional ou lhe deu interpretação conforme. Isso ocorre em vários pontos centrais do M13.
+
+Jurisprudência essencial — mapa de precedentes
+
+• Tema 1199/STF: dolo + retroatividade limitada + prescrição nova irretroativa.
+• Tema 897/STF: ressarcimento imprescritível quando fundado em ato doloso tipificado na LIA.
+• ADIs 7042/7043: legitimidade concorrente MP/pessoa jurídica e ANPC.
+• ADIs 7156/7236 (2026): art. 1º § 8º; art. 3º § 1º; art. 12 §§ 1º, 4º e 10; art. 16 §§ 3º, 4º e 10; art. 17 §§ 10-C, 10-D e 10-F,I; art. 17-B § 3º; art. 17-C § 2º; art. 17-D; art. 21 § 4º; art. 23 § 5º; entre outros.
+• Tema 1257/STJ: aplicação das novas regras processuais da indisponibilidade aos processos em curso.
+• Tema 1397/STJ: em julgamento em 2026 sobre formulação de “dolo específico”; não trate como tese repetitiva já decidida.
+
+O que decorar — núcleo duro
+
+• Improbidade atual exige dolo.
+• Mera voluntariedade não basta.
+• Mera ilegalidade não basta.
+• Art. 9º = vantagem patrimonial indevida.
+• Art. 10 = dano efetivo e comprovado.
+• Art. 11 = conduta dolosa tipificada; rol atual não é cláusula geral.
+• 9: até 14 anos; 10: até 12; 11: proibição até 4 + multa até 24 remunerações.
+• Art. 11 atual não traz perda da função nem suspensão política.
+• Indisponibilidade não é pena.
+• MP não tem exclusividade: pessoa jurídica interessada também tem legitimidade.
+• ANPC pode ocorrer em investigação, ação e execução.
+• Prescrição-base = 8 anos.
+• Regra de 4 anos após interrupção foi derrubada pelo STF em 2026.
+• Tema 1199: culpa antiga sem trânsito → examinar dolo; coisa julgada preservada; prescrição nova não retroage.
+• Tema 897: ressarcimento por ato doloso tipificado = imprescritível.
+
+O que levar para a prova
+
+A técnica final é “TIPO → DOLO → RESULTADO → CONSEQUÊNCIA → TEMPO”. Não pule etapas.
+
+Check manual
+
+• ☐ Resolvo questões sem depender de memória da lei antiga.
+• ☐ Sei reconhecer dispositivos afetados pelo STF em 2026.
+• ☐ Sei separar sanção, tutela e ressarcimento.
+
+---
+
+Revisão De 5–10 Minutos
+
+• Base constitucional: CF, art. 37, §§ 4º e 5º.
+• Regra atual: conduta dolosa tipificada; voluntariedade simples não basta.
+• Art. 9º: vantagem patrimonial indevida em razão da função.
+• Art. 10: prejuízo efetivo e comprovado + dolo.
+• Art. 11: condutas atuais tipificadas; não use antigos incisos revogados como tipos vivos.
+• Particular: induz ou concorre dolosamente; posição societária não gera responsabilidade automática.
+• Sucessor/herdeiro: reparação nos limites patrimoniais legais, não transmissão de sanções pessoais.
+• Sanções: 9 = até 14; 10 = até 12; 11 = multa até 24 remunerações + proibição até 4.
+• Art. 11: sem perda da função e sem suspensão de direitos políticos no inciso III atual.
+• Indisponibilidade: medida provisória; STF 2026 modificou requisitos/alcance dos §§ 3º, 4º e 10.
+• Legitimidade: MP + pessoa jurídica interessada, por força das ADIs 7042/7043.
+• ANPC: investigação/ação/execução; ressarcimento + reversão; § 3º invalidado em 2026.
+• Prescrição: 8 anos; redução para 4 após interrupção foi declarada inconstitucional em 2026; STF fixou teto máximo de 20 anos.
+• Tema 1199: dolo, culpa antiga sem trânsito, coisa julgada e irretroatividade do regime prescricional.
+• Tema 897: ressarcimento imprescritível se fundado em ato doloso tipificado na LIA.
+• Agente político: incluído na LIA; não há imunidade geral; foro penal não se estende automaticamente.
+• Absolvição penal: não paralisa sempre a improbidade; STF restringiu a comunicação em 2026.
+• Jurisprudência 2026 importa: não confie apenas na redação de 2021.
+
+---
+
+Artigos Para Ler No Dia Da Prova
+
+Constituição Federal
+
+• Art. 37, caput — princípios da Administração.
+• Art. 37, § 4º — consequências constitucionais da improbidade.
+• Art. 37, § 5º — prescrição e ressarcimento.
+
+Lei 8.429/1992
+
+• Art. 1º, §§ 1º a 8º — dolo, tipicidade, âmbito de proteção e divergência interpretativa.
+• Arts. 2º e 3º — agentes públicos e particulares.
+• Arts. 8º e 8º-A — sucessão.
+• Art. 9º, caput e incisos — enriquecimento ilícito.
+• Art. 10, caput, incisos, §§ 1º e 2º — dano efetivo e dolo.
+• Art. 11 e §§ — tipicidade dos atos contra princípios.
+• Art. 12, I a III e §§ — sanções, com leitura obrigatória das ADIs 7156/7236.
+• Art. 16 — indisponibilidade, com leitura obrigatória das ADIs 7156/7236.
+• Art. 17, §§ 6º a 21 — procedimento, com atenção aos dispositivos invalidados em 2026.
+• Art. 17-B — ANPC, com ADIs 7042/7043 e 7156/7236.
+• Art. 17-C — sentença e dosimetria.
+• Art. 17-D — natureza repressiva/sancionatória, conforme interpretação do STF.
+• Arts. 20 e 21 — eficácia das sanções e independência das instâncias.
+• Art. 23 — prescrição, com a decisão de 01/07/2026 sobre o § 5º.
+
+---
+
+O Que Decorar — Cartão Final
+
+DOLO → vontade livre e consciente de alcançar resultado ilícito tipificado.
+9 → enriquecimento → até 14.
+10 → dano efetivo + dolo → até 12.
+11 → tipo fechado → multa 24x + proibição 4.
+INDISPONIBILIDADE → tutela, não pena; STF 2026 alterou §§ 3º/4º/10.
+LEGITIMIDADE → MP + PJ interessada.
+ANPC → ressarcimento + reversão; cabe até na execução.
+PRESCRIÇÃO → 8 anos; “metade/4 anos” caiu no STF em 2026; teto de 20 anos.
+RETROATIVIDADE → Tema 1199.
+RESSARCIMENTO → Tema 897: ato doloso tipificado = imprescritível.
+AGENTE POLÍTICO → alcançado pela LIA; sem foro civil automático por prerrogativa.
+
+---
+
+25 Erros Que Não Posso Cometer
+
+• Dizer que toda ilegalidade é improbidade.
+• Dizer que mera voluntariedade satisfaz o dolo da LIA.
+• Dizer que culpa ainda basta para art. 10.
+• Presumir dano no art. 10.
+• Tratar o art. 11 como cláusula genérica ilimitada.
+• Usar os antigos incisos I e II do art. 11 como se estivessem vigentes.
+• Exigir dano ao erário em todo art. 9º.
+• Responsabilizar sócio/diretor automaticamente pelo cargo societário.
+• Transmitir sanções pessoais ao herdeiro.
+• Confundir multa civil com ressarcimento.
+• Afirmar que todas as sanções devem ser cumuladas.
+• Aplicar perda da função e suspensão política ao art. 11 atual com base na lei antiga.
+• Tratar indisponibilidade como pena definitiva.
+• Repetir que urgência nunca pode ser presumida, ignorando STF 2026.
+• Repetir que indisponibilidade jamais alcança multa civil, ignorando STF 2026.
+• Dizer que só o MP pode ajuizar ação de improbidade.
+• Dizer que só o MP pode celebrar ANPC.
+• Tornar obrigatória a oitiva do Tribunal de Contas do art. 17-B, § 3º, após sua invalidação.
+• Dizer que juiz continua absolutamente preso à capitulação jurídica da inicial após ADIs de 2026.
+• Dizer que prescrição sempre reinicia em 4 anos após interrupção.
+• Aplicar retroativamente o novo regime prescricional a fatos antigos sem observar Tema 1199.
+• Desfazer coisa julgada culposa apenas porque a reforma eliminou culpa.
+• Confundir prescrição das sanções com prescrição do ressarcimento do Tema 897.
+• Afirmar que agente político é imune à LIA.
+• Dizer que qualquer absolvição penal impede ação de improbidade.
+
+10 QUESTÕES INTERNAS DE FIXAÇÃO — CONTEÚDO COMPLETO
+
+Questão 1 — FÁCIL
+
+Após a Lei 14.230/2021, assinale a alternativa correta sobre a configuração de ato de improbidade administrativa.
+
+A) Toda ilegalidade administrativa consciente configura improbidade.
+
+B) A mera voluntariedade do agente é suficiente para o elemento subjetivo.
+
+C) A configuração exige, como regra, conduta dolosa tipificada nos arts. 9º, 10 ou 11 da LIA.
+
+D) A culpa grave continua suficiente para o art. 10.
+
+E) A nulidade do ato administrativo presume o dolo de improbidade.
+
+Gabarito: C
+
+Explicação: A LIA atual exige tipicidade e dolo. Ilegalidade, voluntariedade ou nulidade do ato, isoladamente, não substituem os elementos do tipo.
+
+Questão 2 — FÁCIL
+
+No regime atual da Lei 8.429/1992, o art. 10, que trata de prejuízo ao erário, exige:
+
+A) culpa simples e dano presumido.
+
+B) dolo e perda patrimonial efetiva e comprovada.
+
+C) enriquecimento ilícito do agente em todos os casos.
+
+D) apenas violação a princípio administrativo.
+
+E) dolo apenas quando o réu for particular.
+
+Gabarito: B
+
+Explicação: O art. 10 atual exige dolo e dano efetivo. A modalidade culposa foi eliminada pela reforma.
+
+Questão 3 — FÁCIL
+
+Quanto às sanções do art. 12 para atos do art. 11 na redação atual, é correto afirmar que o inciso III prevê:
+
+A) suspensão de direitos políticos por até 14 anos.
+
+B) perda da função pública e multa equivalente ao dano.
+
+C) multa de até 24 vezes a remuneração e proibição de contratar/receber benefícios por até 4 anos.
+
+D) multa equivalente ao acréscimo patrimonial e proibição por 14 anos.
+
+E) suspensão política por 12 anos e proibição por 12 anos.
+
+Gabarito: C
+
+Explicação: O art. 11 atual tem, no inciso III do art. 12, multa de até 24 remunerações e proibição por até 4 anos; não há ali perda da função nem suspensão de direitos políticos.
+
+Questão 4 — FÁCIL
+
+O prazo-base atual da pretensão sancionadora na Lei de Improbidade, conforme art. 23, é de:
+
+A) 4 anos.
+
+B) 5 anos.
+
+C) 6 anos.
+
+D) 8 anos.
+
+E) 10 anos.
+
+Gabarito: D
+
+Explicação: O caput do art. 23 estabelece prazo de 8 anos, contado do fato ou da cessação da permanência nas infrações permanentes.
+
+Questão 5 — MÉDIA
+
+Um diretor de pessoa jurídica privada é incluído na ação apenas porque ocupava o cargo quando a empresa participou do ato. Não há demonstração de atuação pessoal dele. À luz do regime atual, a melhor conclusão é:
+
+A) responde automaticamente pela posição de diretor.
+
+B) responde objetivamente se a pessoa jurídica obteve vantagem.
+
+C) não há responsabilização automática; sua participação deve ser individualmente demonstrada.
+
+D) só pode responder se receber benefício direto, sendo irrelevante sua participação.
+
+E) pessoas privadas nunca respondem por improbidade.
+
+Gabarito: C
+
+Explicação: A posição societária não gera responsabilidade automática. A participação individual deve ser demonstrada; o STF afastou em 2026 a exigência cumulativa de “benefícios diretos” do art. 3º, § 1º.
+
+Questão 6 — MÉDIA
+
+Após o julgamento das ADIs 7156/7236 em 2026, assinale a alternativa correta sobre indisponibilidade de bens.
+
+A) A urgência jamais pode ser presumida.
+
+B) A medida jamais pode alcançar valor relacionado à multa civil.
+
+C) A indisponibilidade é sanção definitiva aplicada com a sentença.
+
+D) Em caráter excepcional e mediante fundamentação, o STF admitiu tutela de evidência e presunção de urgência, além de ampliar o alcance patrimonial nos termos fixados.
+
+E) A reforma de 2021 deixou de se aplicar a processos em curso.
+
+Gabarito: D
+
+Explicação: O STF afastou trechos rígidos dos §§ 3º, 4º e 10 do art. 16, com efeitos ex nunc. O Tema 1257/STJ continua relevante para a aplicação processual da reforma aos processos em curso.
+
+Questão 7 — MÉDIA
+
+Sobre ação de improbidade e acordo de não persecução civil, considere a jurisprudência do STF. É correto afirmar que:
+
+A) somente o Ministério Público possui legitimidade ativa e negocial.
+
+B) a pessoa jurídica interessada possui legitimidade concorrente com o Ministério Público, e a exigência do art. 17-B, § 3º, foi afastada pelo STF em 2026.
+
+C) somente a pessoa jurídica lesada pode propor a ação.
+
+D) o ANPC só pode ser celebrado antes do ajuizamento.
+
+E) o ANPC dispensa ressarcimento do dano.
+
+Gabarito: B
+
+Explicação: As ADIs 7042/7043 restabeleceram legitimidade concorrente. Em 2026, o art. 17-B, § 3º, foi declarado inconstitucional. O ANPC pode ocorrer na investigação, ação ou execução e deve produzir ao menos os resultados legais mínimos.
+
+Questão 8 — MÉDIA
+
+Agente foi condenado em primeiro grau, antes da reforma, exclusivamente por ato culposo do art. 10. Em 25/10/2021 ainda não havia trânsito em julgado. Segundo o Tema 1199/STF:
+
+A) a condenação culposa deve ser mantida porque o fato é anterior.
+
+B) a reforma desfaz qualquer coisa julgada, inclusive já executada.
+
+C) o processo deve ser reavaliado para verificar eventual dolo, pois a modalidade culposa deixou de bastar e ainda não havia coisa julgada.
+
+D) o novo regime prescricional retroage integralmente ao fato antigo.
+
+E) a responsabilidade passa a ser objetiva.
+
+Gabarito: C
+
+Explicação: O Tema 1199 distingue coisa julgada, elemento subjetivo e prescrição. A revogação da modalidade culposa alcança processos sem trânsito, exigindo exame de dolo; não desfaz automaticamente coisa julgada e o novo regime prescricional não retroage integralmente.
+
+Questão 9 — DIFÍCIL
+
+Em ação de improbidade baseada nos mesmos fatos de ação penal, houve decisão criminal transitada em julgado absolvendo o réu por insuficiência probatória. Qual afirmação é mais adequada após o julgamento do STF de 2026 sobre o art. 21, § 4º?
+
+A) Toda absolvição penal impede obrigatoriamente a ação de improbidade.
+
+B) Nenhuma decisão criminal produz efeito na improbidade.
+
+C) A comunicação foi restringida às hipóteses delimitadas pelo STF; uma absolvição por insuficiência probatória não está, por si só, entre as hipóteses que automaticamente impedem a ação.
+
+D) A absolvição penal sempre extingue apenas o ressarcimento, mas não as sanções.
+
+E) A ação de improbidade se converte em ação penal residual.
+
+Gabarito: C
+
+Explicação: O STF conferiu leitura restritiva ao art. 21, § 4º. A comunicação automática foi vinculada às hipóteses especificadas no julgamento, ligadas ao art. 65 e aos incisos I e IV do art. 386 do CPP, e não a qualquer fundamento absolutório.
+
+Questão 10 — DIFÍCIL
+
+Fato posterior à reforma está sujeito ao prazo-base de 8 anos. A ação é ajuizada, interrompendo a prescrição. Considerando o julgamento do STF de 01/07/2026 sobre o art. 23, § 5º, assinale a correta.
+
+A) Após toda interrupção, o prazo necessariamente reinicia em 4 anos.
+
+B) A interrupção deixou de ter qualquer efeito.
+
+C) A expressão que reduzia o prazo pela metade foi declarada inconstitucional; a leitura atual não admite a regra automática de 4 anos e deve observar o teto de 20 anos fixado pelo STF.
+
+D) O prazo-base passou a ser 20 anos.
+
+E) O art. 23 inteiro foi declarado inconstitucional.
+
+Gabarito: C
+
+Explicação: O STF manteve os marcos interruptivos e afastou a expressão “pela metade do prazo previsto no caput”, fixando prazo máximo de 20 anos no ponto julgado. Isso não transforma o prazo-base do caput em 20 anos.

@@ -1,0 +1,1171 @@
+﻿Lei de Acesso à Informação — Lei 12.527/2011
+DIREITO ADMINISTRATIVO · MÓDULO 19 · COMPLETO
+
+DIREITO ADMINISTRATIVOMÓDULO 19 · OFFLINE
+
+Apostila de estudo · nível Analista
+
+Lei de Acesso à Informação
+
+Lei 12.527/2011 — publicidade, transparência ativa e passiva, pedido, prazos, recursos, restrições, classificação, informações pessoais, responsabilidades e interface com a LGPD.
+
+Base conferida em 18/09/2026: Lei 12.527/2011 consolidada como fonte principal; CF/1988; Decreto 7.724/2012 somente como regulamentação do Poder Executivo federal; LGPD apenas na interface com dados pessoais. Materiais TEC da Biblioteca e baralho de LAI foram usados exclusivamente para calibrar cobertura e padrão de prova.
+
+Como usar
+
+Resolva cada questão separando quatro planos: publicidade × restrição, transparência ativa × passiva, informação classificada × pessoal × outro sigilo legal e regra nacional × regime federal.
+
+natureza→acesso→prazo→restrição→recurso
+
+Regra de ouro: publicidade é o preceito geral; sigilo, a exceção. O requerente pode ser identificado, mas não pode ser obrigado a justificar os motivos determinantes do pedido de interesse público.
+
+Como estudar este módulo
+
+Em cada questão, faça cinco perguntas: (1) quem possui ou custodia a informação? (2) a informação é pública, classificada, pessoal ou submetida a outro sigilo legal? (3) o dever é de divulgação ativa ou depende de pedido? (4) qual é o procedimento e o prazo? (5) a regra cobrada é nacional, da Lei 12.527/2011, ou é apenas uma regra federal do Decreto 7.724/2012?
+
+A FCC costuma trocar palavras pequenas com grande efeito jurídico: “pode” por “deve”, “independentemente de requerimento” por “mediante pedido”, “informação pessoal” por “informação classificada”, “25” por “15”, e regra federal por regra aplicável a todos os entes.
+
+---
+
+S1 — Base constitucional, finalidade e diretrizes da LAI
+
+Entenda primeiro
+
+A LAI não criou do nada o direito de acesso. Ela concretiza comandos constitucionais. O art. 5º, XXXIII, assegura a todos o direito de receber dos órgãos públicos informações de interesse particular, coletivo ou geral, ressalvadas as hipóteses em que o sigilo seja imprescindível à segurança da sociedade e do Estado. O art. 37, caput, fornece a moldura da publicidade administrativa; o § 3º, II, determina disciplina legal do acesso dos usuários a registros administrativos e informações sobre atos de governo. O art. 216, § 2º, atribui à Administração a gestão da documentação governamental e as providências para franquear sua consulta.
+
+A LAI, portanto, combina três ideias: direito fundamental, dever estatal de transparência e instrumento de controle social. O cidadão não é mero destinatário passivo da ação administrativa: pode fiscalizar despesas, contratos, programas, auditorias, resultados e a própria tramitação de documentos.
+
+Regra jurídica
+
+O art. 3º estabelece cinco diretrizes centrais:
+
+• observância da publicidade como preceito geral e do sigilo como exceção;
+• divulgação de informações de interesse público independentemente de solicitações;
+• utilização de meios de comunicação viabilizados pela tecnologia da informação;
+• fomento ao desenvolvimento da cultura de transparência na Administração Pública;
+• desenvolvimento do controle social da Administração Pública.
+
+O art. 5º completa a lógica: o Estado deve garantir o acesso por procedimentos objetivos e ágeis, de forma transparente, clara e em linguagem de fácil compreensão.
+
+Exemplo
+
+Um tribunal divulga espontaneamente despesas, contratos e dados de execução de projetos em seu portal. Isso é transparência ativa. Um cidadão, ainda assim, pede a memória de cálculo que fundamentou determinada despesa. Esse segundo movimento é transparência passiva. Ambos integram a mesma política de acesso.
+
+Compare — publicidade × sigilo
+
+Publicidade | Sigilo/restrição
+É a regra geral da LAI. | É exceção e depende de fundamento jurídico.
+Favorece transparência, accountability e controle social. | Protege bens jurídicos específicos, como segurança da sociedade/Estado, outros sigilos legais e esfera pessoal.
+Pode ocorrer de ofício ou mediante pedido. | Não pode ser inventado por conveniência administrativa.
+Acesso deve ser facilitado. | Restrição deve ser interpretada nos limites legais; quando parcial, preserva-se a parte acessível.
+
+Como cai na FCC
+
+A banca costuma afirmar que “o sigilo é a regra, ressalvadas as informações que a Administração decida tornar públicas”. Está invertido. Também pode associar o direito de acesso apenas a interesse coletivo; a Constituição inclui informação de interesse particular, coletivo ou geral.
+
+Pegadinha
+
+Publicidade não significa que todo dado estatal seja imediatamente aberto. A própria Constituição ressalva sigilo imprescindível à segurança da sociedade e do Estado, e a LAI preserva sigilos previstos em outras leis, segredo de justiça, segredo industrial e informações pessoais protegidas.
+
+Jurisprudência essencial
+
+Para este núcleo, a literalidade constitucional e legal resolve a cobrança típica. Não é necessário memorizar precedente específico para acertar a maioria das questões FCC sobre princípios da LAI.
+
+O que decorar
+
+P-S-T-C: Publicidade como regra; Sigilo como exceção; Tecnologia; Cultura de transparência e Controle social.
+
+O que levar para a prova
+
+A LAI é uma lei de acesso, não uma lei de “sigilo administrativo”. A exceção deve ter fundamento e extensão juridicamente justificáveis.
+
+Check manual: ☐ Consigo explicar a base constitucional e as cinco diretrizes do art. 3º sem consultar o texto.
+
+---
+
+S2 — Âmbito de aplicação e conceitos legais
+
+Entenda primeiro
+
+A LAI tem alcance federativo amplo. Seu art. 1º determina a observância de procedimentos pela União, Estados, Distrito Federal e Municípios. Submetem-se à lei os órgãos da Administração direta dos Poderes Executivo, Legislativo — incluídas as Cortes de Contas — e Judiciário, além do Ministério Público. Também entram autarquias, fundações públicas, empresas públicas, sociedades de economia mista e demais entidades controladas direta ou indiretamente pelos entes federados.
+
+Além disso, o art. 2º alcança, no que couber, entidades privadas sem fins lucrativos que recebam recursos públicos para ações de interesse público. Essa sujeição é limitada: a publicidade refere-se à parcela dos recursos públicos recebidos e à sua destinação, sem prejuízo das prestações de contas legalmente devidas.
+
+Regra jurídica — conceitos do art. 4º
+
+• Informação: dados, processados ou não, utilizáveis para produção e transmissão de conhecimento, contidos em qualquer meio, suporte ou formato.
+• Documento: unidade de registro de informações, qualquer que seja o suporte ou formato.
+• Informação sigilosa: informação submetida temporariamente à restrição de acesso público em razão de sua imprescindibilidade para a segurança da sociedade e do Estado.
+• Informação pessoal: informação relacionada à pessoa natural identificada ou identificável.
+• Tratamento da informação: conjunto de ações relativas à produção, recepção, classificação, utilização, acesso, reprodução, transporte, transmissão, distribuição, arquivamento, armazenamento, eliminação, avaliação, destinação ou controle da informação.
+• Disponibilidade: qualidade da informação que pode ser conhecida e utilizada por indivíduos, equipamentos ou sistemas autorizados.
+• Autenticidade: qualidade da informação produzida, expedida, recebida ou modificada por determinado indivíduo, equipamento ou sistema.
+• Integridade: qualidade da informação não modificada, inclusive quanto à origem, trânsito e destino.
+• Primariedade: qualidade da informação coletada na fonte, com o máximo de detalhamento possível, sem modificações.
+
+Exemplo
+
+Um arquivo digital com o contrato original assinado eletronicamente pode ser autêntico e íntegro. Uma planilha obtida diretamente da base que registra os pagamentos, no maior detalhamento disponível, ilustra a noção de primariedade. Já a existência do nome de uma pessoa em um documento não transforma automaticamente o documento inteiro em “ultrassecreto”.
+
+Compare — informação pública × classificada × pessoal
+
+Categoria | Fundamento | Regime básico
+Informação pública | Regra de publicidade | Acesso, salvo restrição legal específica.
+Informação classificada | Imprescindibilidade à segurança da sociedade ou do Estado | Pode ser ultrassecreta, secreta ou reservada; prazo temporário.
+Informação pessoal protegida | Intimidade, vida privada, honra, imagem e liberdades/garantias | Restrição independe de classificação de sigilo; art. 31.
+Informação submetida a outro sigilo legal | Lei específica, segredo de justiça, segredo industrial etc. | Não depende necessariamente da classificação LAI.
+
+Compare — informação sigilosa × informação pessoal
+
+Informação classificada/sigilosa da LAI | Informação pessoal do art. 31
+Protege segurança da sociedade ou do Estado. | Protege esfera da pessoa natural.
+Exige classificação conforme graus e critérios legais, quando se tratar do sigilo do art. 23/24. | Acesso pode ser restrito independentemente de classificação.
+Prazos regulares: 25/15/5 anos. | Até 100 anos para as informações pessoais referidas no art. 31, § 1º, I.
+Não se confunde com qualquer segredo legal. | Não é sinônimo de “secreta” ou “reservada”.
+
+Como cai na FCC
+
+A troca conceitual mais perigosa é: “informação sigilosa é aquela relacionada a pessoa natural identificada ou identificável”. Errado. Essa é a definição de informação pessoal. Informação sigilosa, no conceito da LAI, é a submetida temporariamente a restrição por imprescindibilidade à segurança da sociedade e do Estado.
+
+Pegadinha
+
+A existência de pessoa jurídica no documento não gera “informação pessoal” no conceito do art. 4º, IV, que se refere à pessoa natural identificada ou identificável.
+
+Jurisprudência essencial
+
+Não necessária para o núcleo conceitual: priorize a literalidade do art. 4º.
+
+O que decorar
+
+D-A-I-P: Disponibilidade = pode ser conhecida/usada; Autenticidade = quem/sistema produziu/expediu/recebeu/modificou; Integridade = não modificada; Primariedade = fonte, máximo detalhamento, sem modificação.
+
+O que levar para a prova
+
+Antes de decidir sobre acesso, classifique corretamente a natureza jurídica da restrição. “Pessoal”, “classificada” e “sigilo legal” são categorias distintas.
+
+Check manual: ☐ Sei diferenciar informação sigilosa, pessoal e submetida a outro sigilo legal.
+
+---
+
+S3 — Transparência ativa
+
+Entenda primeiro
+
+Transparência ativa é a divulgação de ofício, sem que alguém precise pedir. O art. 8º manda órgãos e entidades públicas promoverem, independentemente de requerimentos, a divulgação, em local de fácil acesso e dentro de suas competências, de informações de interesse coletivo ou geral produzidas ou custodiadas.
+
+Regra jurídica — conteúdo mínimo do art. 8º
+
+Devem constar, no mínimo:
+
+• competências e estrutura organizacional, endereços, telefones e horários de atendimento;
+• registros de repasses ou transferências de recursos financeiros;
+• registros das despesas;
+• informações sobre licitações, incluindo editais e resultados, e sobre todos os contratos celebrados;
+• dados gerais para acompanhamento de programas, ações, projetos e obras;
+• respostas às perguntas mais frequentes da sociedade.
+
+Os sítios oficiais devem permitir pesquisa objetiva, disponibilização em formatos eletrônicos — inclusive abertos e não proprietários —, acesso automatizado em formatos abertos/estruturados/legíveis por máquina, descrição dos formatos, garantia de autenticidade e integridade, atualização das informações, canal de contato e acessibilidade para pessoas com deficiência.
+
+Municípios com população de até 10 mil habitantes são dispensados da divulgação obrigatória na internet prevista no art. 8º, § 2º, mas permanece a obrigação de divulgação em tempo real de informações sobre execução orçamentária e financeira nos termos da LRF. A dispensa não apaga o restante da LAI.
+
+Atualização legislativa relevante — Lei 15.141/2025
+
+A redação vigente passou a conter os arts. 8º-A e 8º-B. O art. 8º-A impõe deveres específicos de divulgação a serviços sociais autônomos, pessoas jurídicas de direito privado, que sejam destinatários de contribuições ou recursos públicos federais decorrentes de contrato de gestão, abrangendo dados sobre quadro de empregados, cargos, faixas salariais, parcelas remuneratórias/indenizatórias e funções gratificadas. O art. 8º-B determina aos conselhos de fiscalização profissional divulgação nominal e individualizada das parcelas remuneratórias e indenizatórias de empregados nas condições legais.
+
+Exemplo
+
+Se um órgão publica o edital e o resultado da licitação, mas omite os contratos celebrados, não cumpre integralmente o conteúdo mínimo do art. 8º. A obrigação é mais ampla que “publicar o edital”.
+
+Compare — transparência ativa × passiva
+
+Transparência ativa | Transparência passiva
+Divulgação de ofício. | Resposta a pedido formulado por interessado.
+Art. 8º e outros deveres de publicação. | Arts. 9º a 20, principalmente.
+Reduz a necessidade de pedidos repetidos. | Permite acesso a informação não já divulgada.
+Independe de requerimento. | Começa com requerimento válido.
+
+Como cai na FCC
+
+A banca gosta da expressão “independentemente de requerimentos”. Também testa a falsa ideia de que municípios pequenos estão fora da LAI. Não estão.
+
+Pegadinha
+
+“Perguntas frequentes” também estão no rol mínimo. E “todos os contratos celebrados” é mais amplo que apenas contratos de grande valor.
+
+Jurisprudência essencial
+
+Não indispensável nesta sessão. A atualização de 2025 é mais importante para prova de lei seca do que inserir jurisprudência lateral.
+
+O que decorar
+
+E-R-D-L-P-F: Estrutura; Repasses; Despesas; Licitações/contratos; Programas/projetos/obras; FAQ.
+
+O que levar para a prova
+
+Transparência ativa = Administração se antecipa ao pedido. Atenção à atualização dos arts. 8º-A e 8º-B e à dispensa limitada dos municípios de até 10 mil habitantes.
+
+Check manual: ☐ Sei listar os seis conteúdos mínimos do art. 8º, § 1º.
+
+---
+
+S4 — Transparência passiva, SIC e requisitos do pedido
+
+Entenda primeiro
+
+Transparência passiva é o acesso provocado pelo interessado. A LAI cria portas de entrada para o cidadão e impõe à Administração deveres de orientação, protocolo e resposta. O SIC — Serviço de Informações ao Cidadão — é peça central desse fluxo.
+
+Regra jurídica
+
+O art. 9º assegura o acesso mediante criação de SIC nos órgãos e entidades do poder público, em local apropriado para:
+
+• atender e orientar o público sobre acesso a informações;
+• informar sobre a tramitação de documentos nas respectivas unidades;
+• protocolizar documentos e requerimentos de acesso.
+
+Também menciona audiências/consultas públicas, incentivo à participação popular e outras formas de divulgação.
+
+Pelo art. 10, qualquer interessado pode apresentar pedido por qualquer meio legítimo. O pedido deve conter:
+
+• identificação do requerente; e
+• especificação da informação requerida.
+
+A identificação pode ser exigida, mas não pode conter requisitos que inviabilizem a solicitação. Deve existir alternativa de encaminhamento pela internet. E é vedado exigir os motivos determinantes do pedido de informação de interesse público.
+
+Complemento federal — Decreto 7.724/2012
+
+No Poder Executivo federal, o decreto detalha formulário, SIC, sistema eletrônico, dados de identificação e hipóteses de não atendimento a pedidos genéricos, desproporcionais/desarrazoados ou que demandem trabalho adicional de análise/interpretação/consolidação ou produção/tratamento fora da competência do órgão. Essas regras regulamentares não devem ser transpostas automaticamente para Estados, Municípios, outros Poderes ou Ministério Público como se fossem texto nacional da LAI.
+
+Exemplo
+
+Pedido: “Quero cópia do contrato nº 123/2026 e de seus aditivos”. É suficientemente especificado. A Administração não pode exigir: “explique por que você quer o contrato” ou “prove interesse jurídico pessoal”.
+
+Compare — regra nacional × regulamento federal
+
+Lei 12.527/2011 | Decreto 7.724/2012
+Aplica-se à União, Estados, DF e Municípios, nos termos do art. 1º. | Regulamenta procedimentos no âmbito do Poder Executivo federal.
+Traz o núcleo nacional do pedido, acesso, restrições e responsabilidades. | Detalha fluxos administrativos federais, SIC, recursos e classificação no Executivo federal.
+É a fonte principal para prova geral de LAI. | Deve ser usado quando a questão indicar regime federal/decreto ou quando o edital o cobrar.
+
+Como cai na FCC
+
+Enunciado clássico: “O pedido prescinde de identificação do requerente.” Errado. A identificação é exigida, mas não pode inviabilizar o pedido. Outro clássico: “A Administração poderá exigir justificativa do motivo.” Errado para pedido de informação de interesse público.
+
+Pegadinha
+
+Vedação de exigir motivo não significa que o pedido possa ser totalmente indeterminado. A lei exige especificação da informação requerida.
+
+Jurisprudência essencial
+
+Não necessária: o art. 10 é o centro da cobrança.
+
+O que decorar
+
+I + E, sem M: Identificação + Especificação; sem exigência dos Motivos determinantes.
+
+O que levar para a prova
+
+“Pode identificar, não pode inviabilizar; deve especificar, não precisa justificar.”
+
+Check manual: ☐ Consigo resolver uma questão que troca “identificação” por “justificação do interesse”.
+
+---
+
+S5 — Pedido, resposta e formas de acesso
+
+Entenda primeiro
+
+O procedimento da LAI tenta resolver o pedido o mais cedo possível. Se a informação já estiver disponível, o acesso deve ser imediato. Só quando isso não for possível entra o prazo ordinário de resposta.
+
+Regra jurídica
+
+Pelo art. 11, não sendo possível o acesso imediato, o órgão ou entidade deve, em prazo não superior a 20 dias:
+
+• comunicar data, local e modo para consulta, reprodução ou obtenção de certidão;
+• indicar as razões de fato ou de direito da recusa, total ou parcial; ou
+• comunicar que não possui a informação, indicar, se souber, quem a detém, ou remeter o requerimento ao órgão/entidade competente, cientificando o interessado.
+
+O prazo de 20 dias pode ser prorrogado por mais 10 dias, mediante justificativa expressa comunicada ao requerente.
+
+Se a negativa decorrer de informação total ou parcialmente sigilosa, o requerente deve ser informado sobre possibilidade, prazo e condições de recurso e sobre a autoridade competente. Informação armazenada em formato digital será fornecida nesse formato se houver anuência do requerente. Se a informação já estiver disponível ao público por meio universal, a Administração pode indicar onde e como acessá-la; essa indicação a desobriga do fornecimento direto, salvo se o requerente declarar não dispor de meios para fazê-lo.
+
+Acesso parcial
+
+O art. 7º, § 2º, traz regra decisiva: se apenas parte da informação estiver protegida, não se nega tudo. Deve-se assegurar acesso à parte não sigilosa por certidão, extrato ou cópia com ocultação da parte sob sigilo.
+
+Documento usado como fundamento de decisão
+
+O direito de acesso aos documentos e informações utilizados como fundamento da tomada de decisão e do ato administrativo é assegurado com a edição do ato decisório respectivo. Essa regra impede que a Administração invoque genericamente o caráter “preparatório” para manter o fundamento inacessível depois da decisão.
+
+Documento cuja manipulação ameaça a integridade
+
+Se a manipulação do original puder prejudicar sua integridade, deve ser oferecida consulta de cópia com certificação de correspondência ao original. Se nem a cópia puder ser obtida, o interessado pode solicitar reprodução por outro meio, às suas expensas e sob supervisão de servidor, desde que não se coloque o original em risco.
+
+Extravio
+
+Se o interessado for informado de que a informação foi extraviada, pode requerer imediata abertura de sindicância para apurar o desaparecimento. O responsável pela guarda deve, no prazo de 10 dias, justificar o fato e indicar testemunhas que comprovem sua alegação.
+
+Exemplo
+
+Um relatório tem 30 páginas; duas contêm dado pessoal protegido. A resposta correta não é negar as 30 páginas. A Administração deve disponibilizar as 28 páginas e ocultar, nas demais, apenas o trecho protegido quando isso for tecnicamente possível.
+
+Compare — acesso integral × parcial
+
+Acesso integral | Acesso parcial
+Nenhuma restrição alcança o conteúdo solicitado. | Apenas parcela do documento está protegida.
+Documento/informação é entregue integralmente. | Entrega-se parte não protegida por certidão, extrato ou cópia com ocultação.
+Regra quando não há fundamento de restrição. | Impede que sigilo localizado contamine todo o documento.
+
+Compare — pedido × resposta × recurso
+
+Etapa | Fato gerador | Regra principal
+Pedido | Interessado especifica a informação | Identificação sem exigência inviabilizadora; sem justificativa dos motivos.
+Resposta | Informação disponível ou não | Imediata se possível; caso contrário, até 20 dias, prorrogáveis por 10.
+Recurso | Indeferimento do acesso ou das razões da negativa | 10 dias da ciência; superior decide em 5 dias.
+
+Como cai na FCC
+
+A banca troca “acesso imediato” por “resposta sempre em 20 dias”. O prazo de 20 dias é subsidiário: só entra quando não for possível conceder o acesso imediatamente.
+
+Pegadinha
+
+“Parcialmente sigilosa” não equivale a “integralmente inacessível”. O art. 7º, § 2º, manda separar as partes.
+
+Jurisprudência essencial
+
+Não necessária. A literalidade dos arts. 7º e 11 é suficiente para a prova ordinária.
+
+O que decorar
+
+I → 20 + 10: imediato se possível; senão, 20 dias; prorrogação por 10 com justificativa expressa e ciência do requerente.
+
+O que levar para a prova
+
+A resposta à LAI não se reduz a “entregar ou negar”: pode indicar modo/local de consulta, remeter ao detentor, fornecer digitalmente, ocultar parte protegida ou apontar acesso universal já existente.
+
+Check manual: ☐ Sei montar o fluxo pedido → acesso imediato → 20 dias → possível +10 → recurso.
+
+---
+
+S6 — Prazos, gratuidade e custos
+
+Entenda primeiro
+
+A LAI tem poucos números realmente indispensáveis e, por isso, eles são muito cobrados. O ideal é separar prazos nacionais da lei de prazos específicos do regime federal regulamentar.
+
+Quadro de prazos — Lei 12.527/2011
+
+Situação | Prazo | Natureza
+Acesso quando a informação está disponível | Imediato | Regra nacional da LAI
+Resposta quando não há acesso imediato | Até 20 dias | Regra nacional
+Prorrogação da resposta | +10 dias | Exige justificativa expressa e ciência
+Justificativa do responsável por informação extraviada | 10 dias | Art. 7º, § 6º
+Recurso contra indeferimento/razões da negativa | 10 dias da ciência | Art. 15
+Decisão da autoridade hierarquicamente superior | 5 dias | Art. 15, parágrafo único
+Decisão da CGU nas hipóteses do art. 16 | 5 dias | Poder Executivo federal
+Decisão da autoridade superior antes do recurso à CGU | 5 dias | Poder Executivo federal
+Defesa em processo de sanções do art. 33 | 10 dias | Pessoa física/entidade privada vinculada
+Restrição regular: ultrassecreta | Até 25 anos da produção | Classificação LAI
+Restrição regular: secreta | Até 15 anos da produção | Classificação LAI
+Restrição regular: reservada | Até 5 anos da produção | Classificação LAI
+Restrição de informação pessoal do art. 31 | Até 100 anos da produção | Independe de classificação
+
+Atenção: a LAI usa “dias” nesses dispositivos. Não transforme automaticamente em “dias úteis” sem norma específica que assim determine para o regime aplicável.
+
+Regra jurídica — gratuidade
+
+O art. 12, na redação dada pela Lei 14.129/2021, estabelece que o serviço de busca e fornecimento da informação é gratuito. Só pode ser cobrado o valor necessário ao ressarcimento dos custos dos serviços e materiais utilizados quando houver reprodução de documentos pelo órgão ou entidade.
+
+A pessoa cuja situação econômica não permita ressarcir os custos sem prejuízo do sustento próprio ou da família é isenta, mediante declaração nos termos da Lei 7.115/1983.
+
+Compare — gratuidade × custo de reprodução
+
+Gratuito | Pode haver ressarcimento
+Busca da informação. | Serviço/material efetivamente usado na reprodução.
+Fornecimento da informação. | Apenas custo necessário, não “taxa pelo direito de acesso”.
+Acesso em si. | Não autoriza cobrança genérica por análise, protocolo ou consulta.
+Hipossuficiente é protegido quanto ao ressarcimento legal. | Deve haver base no art. 12 e reprodução concreta.
+
+Complemento federal
+
+O Decreto 7.724/2012 detalha, para o Executivo federal, o pagamento e a reprodução, inclusive prazo após comprovação do pagamento ou declaração de pobreza. Esses detalhes são federais, não números nacionais adicionais da LAI.
+
+Exemplo
+
+Se a informação puder ser enviada por arquivo digital já existente, o órgão não pode cobrar “taxa de pesquisa”. Se o requerente pedir 800 páginas impressas, pode haver ressarcimento do custo de reprodução, observado o art. 12 e a isenção legal.
+
+Como cai na FCC
+
+Pegadinha comum: “o serviço de fornecimento é remunerado, salvo informação digital”. Errado. A regra é a gratuidade da busca e do fornecimento; a exceção está no custo de reprodução.
+
+Pegadinha
+
+“Gratuidade” não significa que toda despesa material seja necessariamente suportada pelo Estado. A lei distingue direito de acesso de custo de reprodução.
+
+Jurisprudência essencial
+
+Não necessária para memorizar os prazos e o art. 12.
+
+O que decorar
+
+20 + 10 / 10 → 5 / 25-15-5 / 100.
+
+O que levar para a prova
+
+Prazos são alvos preferenciais de troca numérica. Faça a conta mental antes de ler as alternativas.
+
+Check manual: ☐ Consigo reproduzir o quadro de prazos sem consultar a apostila.
+
+---
+
+S7 — Negativa e recursos
+
+Entenda primeiro
+
+Negar acesso é ato que precisa ser fundamentado e controlável. O requerente tem direito ao inteiro teor da decisão de negativa por certidão ou cópia. A LAI organiza um recurso básico nacional e, depois, prevê trilhas específicas para o Executivo federal e regulamentação própria de outros Poderes e do Ministério Público.
+
+Regra jurídica — recurso nacional do art. 15
+
+No indeferimento do acesso ou das razões da negativa, o interessado pode recorrer no prazo de 10 dias, contado da ciência da decisão. O recurso é dirigido à autoridade hierarquicamente superior à que proferiu a decisão, que deve manifestar-se em 5 dias.
+
+Regime federal da própria LAI
+
+O art. 16 trata da negativa no Poder Executivo Federal e permite recurso à Controladoria-Geral da União nas hipóteses legais, depois de apreciação por pelo menos uma autoridade hierarquicamente superior, que também delibera em 5 dias. Negado o acesso pela CGU, pode haver recurso à Comissão Mista de Reavaliação de Informações — CMRI.
+
+O art. 17 cuida, na administração pública federal, do indeferimento de pedido de desclassificação e prevê recursos próprios. O art. 18 determina que Legislativo, Judiciário e Ministério Público regulamentem, em seus âmbitos, a revisão das decisões denegatórias e de classificação, assegurando ao solicitante informação sobre o andamento do pedido.
+
+Decreto 7.724/2012 — somente Executivo federal
+
+O decreto detalha instâncias federais adicionais, inclusive segundo recurso à autoridade máxima do órgão/entidade e reclamação por omissão, além de CGU e CMRI. Memorize isso apenas quando a questão indicar o Decreto ou o âmbito federal; não transforme o desenho federal em regra automática de Estado ou Município.
+
+Exemplo
+
+Um município nega um pedido. É correto aplicar o núcleo do art. 15: recurso em 10 dias ao superior, decisão em 5. É incorreto afirmar automaticamente que a próxima instância será a CGU; o art. 16 fala do Poder Executivo Federal.
+
+Compare — nacional × federal em recursos
+
+Núcleo nacional da LAI | Especificidades federais
+Art. 15: recurso em 10 dias; superior decide em 5. | Arts. 16 e 17: CGU/CMRI e desclassificação na esfera federal.
+Art. 18: Legislativo, Judiciário e MP têm regulamentação própria de revisão. | Decreto 7.724 detalha instâncias e reclamações do Executivo federal.
+Deve ser aplicado aos destinatários da LAI conforme sua organização. | Não é modelo obrigatório para todos os entes.
+
+Como cai na FCC
+
+A banca pode inserir “CGU” numa questão genericamente sobre município ou tribunal estadual. O nome do órgão revela a pegadinha federativa.
+
+Pegadinha
+
+Recurso cabe não apenas contra a negativa do conteúdo, mas também quando são negadas as razões da negativa.
+
+Jurisprudência essencial
+
+Não necessária para a estrutura do recurso legal.
+
+O que decorar
+
+Recurso básico: 10 → superior → 5. CGU/CMRI: identifique a etiqueta federal.
+
+O que levar para a prova
+
+Sempre separe três camadas: lei nacional; regras federais da própria LAI; regulamentação federal do Decreto 7.724.
+
+Check manual: ☐ Sei explicar por que “todo recurso da LAI vai para a CGU” é falso.
+
+---
+
+S8 — Restrições de acesso: direitos fundamentais e outros sigilos
+
+Entenda primeiro
+
+A LAI não cria um direito absoluto de publicidade nem uma carta branca para o sigilo. Ela estabelece restrições específicas e, ao mesmo tempo, impõe barreiras contra o uso abusivo do segredo.
+
+Regra jurídica
+
+O art. 21 determina que não pode ser negado o acesso à informação necessária à tutela judicial ou administrativa de direitos fundamentais.
+
+Seu parágrafo único é ainda mais incisivo: informações ou documentos sobre condutas que impliquem violação de direitos humanos praticada por agentes públicos ou a mando de autoridades públicas não podem ser objeto de restrição de acesso.
+
+O art. 22 esclarece que a LAI não exclui:
+
+• demais hipóteses legais de sigilo;
+• segredo de justiça;
+• segredo industrial decorrente da exploração direta de atividade econômica pelo Estado ou por pessoa física/entidade privada com vínculo com o poder público.
+
+Portanto, nem toda restrição decorre da classificação em ultrassecreta, secreta ou reservada.
+
+Exemplo
+
+Um processo contém dados bancários protegidos por legislação específica. A existência desse sigilo legal não exige que a Administração “classifique” todo o processo como secreto. O tratamento é determinado pela norma específica e pela possibilidade de separar partes acessíveis das protegidas.
+
+Compare — sigilo legal × classificação de sigilo
+
+Sigilo legal / segredo de justiça / industrial | Classificação LAI
+Fundamento vem de outra norma ou regime jurídico específico. | Fundamento: imprescindibilidade à segurança da sociedade ou do Estado, arts. 23 e 24.
+Não precisa receber grau ultrassecreto/secreto/reservado para existir. | Usa os três graus e prazos máximos da LAI.
+Pode ter disciplina própria de duração e acesso. | Prazo conta da produção, salvo termo-evento dentro dos limites legais.
+
+Como cai na FCC
+
+A banca pode dizer: “A LAI revogou todas as hipóteses anteriores de sigilo”. Errado. O art. 22 preserva outros sigilos legais, segredo de justiça e segredo industrial nas hipóteses legais.
+
+Pegadinha
+
+Uma autoridade não pode usar “vida privada” ou “sigilo” como escudo para impedir apuração de irregularidade nas hipóteses do art. 31, § 4º, nem classificar documentos sobre violações de direitos humanos abrangidas pelo art. 21, parágrafo único.
+
+Jurisprudência essencial
+
+A literalidade dos arts. 21 e 22 é o núcleo. Jurisprudência adicional só deve ser estudada se o edital ou questão concreta a exigir.
+
+O que decorar
+
+21 protege direitos fundamentais e direitos humanos; 22 preserva outros sigilos.
+
+O que levar para a prova
+
+“Restrito” não é automaticamente “classificado”. Descubra primeiro qual é o fundamento jurídico da restrição.
+
+Check manual: ☐ Consigo diferenciar restrição por classificação LAI de sigilo previsto em lei específica.
+
+---
+
+S9 — Classificação, hipóteses e graus de sigilo
+
+Entenda primeiro
+
+A classificação de informação é excepcional e vinculada a risco concreto para a segurança da sociedade ou do Estado. Não basta alegar constrangimento, inconveniência política ou risco à imagem da Administração.
+
+Regra jurídica — hipóteses do art. 23
+
+São passíveis de classificação informações cuja divulgação ou acesso irrestrito possam:
+
+• pôr em risco defesa e soberania nacionais ou integridade do território;
+• prejudicar negociações ou relações internacionais do País, ou envolver informação recebida em caráter sigiloso de outros Estados/organismos internacionais;
+• pôr em risco vida, segurança ou saúde da população;
+• oferecer elevado risco à estabilidade financeira, econômica ou monetária do País;
+• prejudicar ou causar risco a planos ou operações estratégicos das Forças Armadas;
+• prejudicar ou causar risco a projetos de pesquisa e desenvolvimento científico/tecnológico, sistemas, bens, instalações ou áreas de interesse estratégico nacional;
+• pôr em risco segurança de instituições ou de altas autoridades nacionais ou estrangeiras e seus familiares;
+• comprometer atividades de inteligência e atividades de investigação ou fiscalização em andamento, relacionadas com prevenção ou repressão de infrações.
+
+Quadro obrigatório — graus e prazos de sigilo
+
+Grau | Prazo máximo regular de restrição | Termo inicial | Observação de prova
+Ultrassecreta | 25 anos | Data da produção | Maior prazo regular. No regime federal, CMRI pode, nas hipóteses estritas do art. 35, § 1º, III, prorrogar uma única vez por prazo determinado, observado o limite do art. 24.
+Secreta | 15 anos | Data da produção | Não existe “20 anos” como grau intermediário.
+Reservada | 5 anos | Data da produção | Menor dos três prazos regulares.
+
+A lei permite, alternativamente ao prazo, fixar como termo final um evento, desde que ele ocorra antes do prazo máximo. Transcorrido o prazo ou ocorrido o evento, a informação torna-se automaticamente de acesso público.
+
+Na classificação deve prevalecer o critério menos restritivo possível, considerados a gravidade do risco/dano e o prazo máximo ou evento final.
+
+Segurança do Presidente e Vice-Presidente
+
+Informações que possam colocar em risco a segurança do Presidente e do Vice-Presidente da República e respectivos cônjuges e filhos são classificadas como reservadas e ficam sob sigilo até o término do mandato em exercício ou do último mandato, em caso de reeleição.
+
+Competência para classificar — cuidado federativo
+
+O art. 27 começa com expressão decisiva: “no âmbito da administração pública federal”. Ele distribui competências para classificação ultrassecreta, secreta e reservada entre autoridades federais. Portanto, a lista de Presidente, Vice-Presidente, Ministros, comandantes, chefes de missões diplomáticas, dirigentes de entidades e certas funções de direção não é uma tabela nacional automática de competência de Estados e Municípios.
+
+A classificação deve ser formalizada em decisão que contenha, no mínimo, assunto, fundamento da classificação, prazo de sigilo ou evento final e identificação da autoridade classificadora. A decisão classificatória recebe o mesmo grau de sigilo da informação classificada.
+
+Reavaliação, redução e desclassificação
+
+A autoridade classificadora ou hierarquicamente superior pode reavaliar a classificação de ofício ou por provocação, para desclassificar ou reduzir prazo. Se houver redução, o novo prazo continua tendo como termo inicial a data da produção, não a data da reavaliação.
+
+Anualmente, a autoridade máxima deve divulgar rol de informações desclassificadas nos últimos 12 meses, rol de documentos classificados por grau e relatório estatístico de pedidos recebidos, atendidos e indeferidos.
+
+Exemplo
+
+Uma informação produzida em 2024 foi classificada por 15 anos. Em 2029, o prazo é reduzido para 5 anos. O novo prazo não começa em 2029; seu termo inicial permanece 2024. Se os 5 anos já tiverem transcorrido, a restrição se esgota.
+
+Compare — ultrassecreta × secreta × reservada
+
+Ultrassecreta | Secreta | Reservada
+25 anos | 15 anos | 5 anos
+Maior grau de restrição | Grau intermediário | Menor grau
+Hipóteses e autoridades devem respeitar competência | Idem | Idem
+Prazo regular conta da produção | Prazo regular conta da produção | Prazo regular conta da produção
+
+Como cai na FCC
+
+É frequente a troca 25–15–5. Outra armadilha é dizer que os prazos contam “da decisão de classificação”. A lei diz da data de produção.
+
+Pegadinha
+
+“Informação pessoal = informação reservada por 100 anos” é duplamente errado. A restrição pessoal do art. 31 independe de classificação, e “reservada” é um grau próprio de 5 anos.
+
+Jurisprudência essencial
+
+Para graus e prazos, lei seca. Não use precedente para substituir o art. 24.
+
+O que decorar
+
+U-S-R = 25-15-5, da produção. Menos restrição possível; evento pode encerrar antes; fim do prazo/evento torna a informação pública automaticamente.
+
+O que levar para a prova
+
+Classificação é mecanismo de exceção ligado à segurança da sociedade/Estado, com fundamento, autoridade, grau e prazo controláveis.
+
+Check manual: ☐ Sei os oito grupos de risco do art. 23 e o trio 25-15-5.
+
+---
+
+S10 — Informações pessoais
+
+Entenda primeiro
+
+A LAI protege a transparência, mas também protege a pessoa. Informação pessoal não é uma quarta modalidade de “grau de sigilo”. É regime autônomo, fundado na intimidade, vida privada, honra, imagem e liberdades e garantias individuais.
+
+Regra jurídica
+
+O art. 31 determina tratamento transparente das informações pessoais, com respeito à intimidade, vida privada, honra, imagem e liberdades/garantias individuais. As informações pessoais relativas a esses bens jurídicos:
+
+• têm acesso restrito, independentemente de classificação de sigilo, pelo prazo máximo de 100 anos a contar da data de produção, aos agentes públicos legalmente autorizados e à própria pessoa;
+• podem ser divulgadas ou acessadas por terceiros diante de previsão legal ou consentimento expresso da pessoa a que se referem.
+
+Quem obtiver acesso responde pelo uso indevido.
+
+Quando o consentimento não é exigido
+
+A própria LAI dispensa consentimento quando a informação for necessária:
+
+• à prevenção e diagnóstico médico, quando a pessoa estiver física ou legalmente incapaz, para uso exclusivamente em tratamento médico;
+• à realização de estatísticas e pesquisas científicas de evidente interesse público ou geral previstas em lei, vedada a identificação da pessoa;
+• ao cumprimento de ordem judicial;
+• à defesa de direitos humanos; ou
+• à proteção do interesse público e geral preponderante.
+
+Além disso, a restrição à vida privada, honra e imagem não pode ser invocada para prejudicar processo de apuração de irregularidades em que o titular esteja envolvido nem ações de recuperação de fatos históricos de maior relevância.
+
+Exemplo
+
+Uma folha funcional pode conter partes de interesse público e dados estritamente pessoais. O raciocínio correto não é “contém nome, então tudo é inacessível”. É necessário identificar que dados possuem legítimo interesse de transparência e quais incidem na proteção do art. 31 ou de outras normas, aplicando, quando possível, ocultação proporcional.
+
+Compare — informação classificada × pessoal
+
+Informação classificada | Informação pessoal protegida
+Segurança da sociedade ou do Estado | Intimidade, vida privada, honra, imagem etc.
+Ultrassecreta, secreta ou reservada | Sem grau de classificação
+25, 15 ou 5 anos, como prazos máximos regulares | Até 100 anos, nos termos do art. 31
+Classificação formal | Restrição decorre do regime legal da informação pessoal
+Pode ser reavaliada/desclassificada | Acesso a terceiros depende das hipóteses legais pertinentes
+
+Como cai na FCC
+
+A banca explora a falsa equivalência: “informação pessoal é sigilosa no grau reservado”. Errado. Também pode dizer que consentimento é sempre indispensável; o § 3º traz exceções expressas.
+
+Pegadinha
+
+O prazo de 100 anos não transforma todo dado que identifique alguém em conteúdo automaticamente inacessível por um século. O art. 31 deve ser aplicado ao tipo de informação pessoal por ele protegido, em compatibilização com transparência e demais bases legais.
+
+Jurisprudência essencial
+
+Não há precedente indispensável para memorizar o art. 31. Em caso concreto, a ponderação pode gerar litigância, mas a prova objetiva tende a cobrar o texto legal.
+
+O que decorar
+
+Pessoal: sem classificação; até 100 anos; consentimento tem exceções; irregularidade não pode ser escondida pela vida privada.
+
+O que levar para a prova
+
+Proteção de dados pessoais não é uma autorização genérica para apagar a transparência administrativa.
+
+Check manual: ☐ Sei explicar por que “pessoal”, “reservada” e “secreta” não são sinônimos.
+
+---
+
+S11 — Responsabilidades e sanções
+
+Entenda primeiro
+
+A LAI não impõe apenas deveres de divulgação; ela responsabiliza quem manipula o acesso de forma ilícita e protege informação sigilosa e pessoal contra divulgação indevida. Transparência e segurança caminham juntas.
+
+Regra jurídica — condutas do art. 32
+
+Constituem condutas ilícitas do agente público ou militar, entre outras previstas no dispositivo:
+
+• recusar informação requerida nos termos da lei, retardar deliberadamente ou fornecer intencionalmente informação incorreta, incompleta ou imprecisa;
+• usar indevidamente, subtrair, destruir, inutilizar, desfigurar, alterar ou ocultar informação sob guarda ou conhecida em razão da função;
+• agir com dolo ou má-fé na análise dos pedidos;
+• divulgar, permitir divulgação, acessar ou permitir acesso indevido a informação sigilosa ou pessoal;
+• impor sigilo para proveito pessoal ou de terceiro ou para ocultar ato ilegal;
+• ocultar informação sigilosa da revisão de autoridade superior para benefício próprio/alheio ou prejuízo de terceiro;
+• destruir ou subtrair documentos concernentes a possíveis violações de direitos humanos por agentes do Estado.
+
+Para os servidores submetidos à Lei 8.112/1990, as condutas são infrações administrativas puníveis, no mínimo, com suspensão, segundo os critérios do regime disciplinar. A lei também prevê possibilidade de outras responsabilizações nos termos do ordenamento.
+
+Pessoa física ou entidade privada vinculada ao poder público
+
+O art. 33 alcança pessoa física ou entidade privada que detenha informações em razão de vínculo de qualquer natureza com o poder público e descumpra a LAI. As sanções são:
+
+• advertência;
+• multa;
+• rescisão do vínculo com o poder público;
+• suspensão temporária de participar de licitação e impedimento de contratar com a Administração por até 2 anos;
+• declaração de inidoneidade para licitar ou contratar até reabilitação.
+
+As sanções de advertência, rescisão e suspensão podem ser aplicadas juntamente com multa. A lei assegura defesa e traz prazo de 10 dias nos processos mencionados no art. 33.
+
+Responsabilidade por danos
+
+Os órgãos e entidades públicas respondem diretamente pelos danos causados por divulgação não autorizada ou uso indevido de informações sigilosas ou pessoais, com apuração funcional nos casos de dolo ou culpa e direito de regresso. Regra semelhante alcança pessoa física ou entidade privada que, por vínculo com o poder público, tenha acesso à informação sigilosa/pessoal e a trate indevidamente.
+
+Exemplo
+
+Servidor atrasa deliberadamente uma resposta para impedir fiscalização de despesa e depois fornece planilha sabendo que ela está incompleta. Não se trata de simples “falha burocrática neutra”: o art. 32 tipifica atraso deliberado e fornecimento intencionalmente incorreto/incompleto/impreciso.
+
+Compare — dever de transparência × responsabilidade por violação
+
+Dever | Violação possível
+Fornecer informação nos termos da LAI | Recusa indevida ou atraso deliberado
+Agir de boa-fé na análise | Dolo ou má-fé
+Preservar integridade do acervo | Destruir, alterar, ocultar ou inutilizar
+Proteger informação legitimamente restrita | Divulgar ou permitir acesso indevido
+Classificar apenas com fundamento | Impor sigilo para benefício ou ocultação de ilegalidade
+
+Como cai na FCC
+
+A banca pode trocar o elemento subjetivo: a lei fala em retardar deliberadamente e fornecer intencionalmente informação incorreta, incompleta ou imprecisa. Leia o advérbio.
+
+Pegadinha
+
+A LAI pune tanto a ocultação indevida quanto a divulgação indevida de conteúdo legitimamente protegido. Transparência não autoriza vazamento.
+
+Jurisprudência essencial
+
+Não necessária para o rol básico de responsabilidades.
+
+O que decorar
+
+Recusar/retardar; destruir/alterar/ocultar; má-fé; vazar; criar sigilo abusivo; esconder da revisão; destruir prova de violações de direitos humanos.
+
+O que levar para a prova
+
+A lógica do sistema é dupla: maximizar acesso legítimo e proteger restrições legítimas.
+
+Check manual: ☐ Consigo diferenciar ilícitos do agente público das sanções aplicáveis a particular/entidade privada vinculada.
+
+---
+
+S12 — Entidades privadas sem fins lucrativos e fronteiras da sujeição
+
+Entenda primeiro
+
+Nem toda entidade que recebe dinheiro público se converte em órgão estatal. A LAI adota solução mais precisa: determinadas entidades privadas sem fins lucrativos ficam submetidas às disposições da lei no que couber, mas a publicidade legalmente imposta pelo art. 2º se concentra na parcela dos recursos públicos recebidos e em sua destinação.
+
+Regra jurídica
+
+O art. 2º alcança entidades privadas sem fins lucrativos que recebam, para ações de interesse público, recursos públicos diretamente do orçamento ou por subvenções sociais, contrato de gestão, termo de parceria, convênio, acordo, ajuste ou instrumento congênere.
+
+O parágrafo único limita o dever de publicidade: ele se refere à parcela dos recursos públicos recebidos e à sua destinação, sem prejuízo de prestações de contas já exigidas por lei.
+
+Atualização que não deve ser misturada
+
+Os arts. 8º-A e 8º-B, incluídos em 2025, criaram deveres específicos adicionais para certos serviços sociais autônomos destinatários de contribuições ou recursos públicos federais decorrentes de contrato de gestão e para conselhos de fiscalização profissional. Esses dispositivos devem ser estudados pelo texto específico, sem transformar a regra geral do art. 2º em sujeição irrestrita de toda a vida privada da entidade.
+
+Exemplo
+
+Uma associação sem fins lucrativos recebe R$ 1 milhão por convênio para executar projeto social. A LAI alcança a parcela pública e sua destinação. Não se presume, por esse fato isolado, que todos os documentos privados da associação, inclusive negócios totalmente desvinculados do recurso público, sejam automaticamente públicos.
+
+Compare — órgão/entidade pública × privada beneficiária
+
+Órgão/entidade do art. 1º | Entidade privada sem fins lucrativos do art. 2º
+Integra o âmbito institucional da LAI segundo art. 1º. | Sujeição “no que couber”.
+Deveres de transparência abrangem informações sob sua competência, respeitadas restrições legais. | Publicidade do art. 2º refere-se à parcela de recursos públicos recebidos e sua destinação.
+Administração direta e entidades controladas incluídas. | Não é automaticamente equiparada integralmente à Administração.
+
+Como cai na FCC
+
+Enunciado falso típico: “Qualquer entidade privada que receba qualquer recurso público fica integralmente submetida à LAI como se fosse órgão público.” A lei exige entidade sem fins lucrativos, recurso destinado a ação de interesse público e delimita a publicidade da parcela recebida/destinação.
+
+Pegadinha
+
+“Receber recurso público” não autoriza ignorar o texto “no que couber” e o parágrafo único do art. 2º.
+
+Jurisprudência essencial
+
+Não necessária para a delimitação básica do art. 2º.
+
+O que decorar
+
+Privada sem fins lucrativos + ação de interesse público + recurso público → transparência da parcela recebida e destinação.
+
+O que levar para a prova
+
+A FCC pode exagerar o alcance subjetivo. Volte à literalidade dos arts. 1º e 2º.
+
+Check manual: ☐ Sei explicar por que entidade privada beneficiária não é automaticamente “Administração Pública”.
+
+---
+
+S13 — LAI × LGPD: transparência e proteção de dados
+
+Entenda primeiro
+
+LAI e LGPD não são leis inimigas. Elas protegem valores constitucionais que devem coexistir. A LAI organiza publicidade, transparência e acesso a informações públicas; a LGPD disciplina tratamento de dados pessoais, inclusive pelo poder público. O operador jurídico deve evitar dois erros extremos: divulgar tudo porque “é público” ou negar tudo porque “tem dado pessoal”.
+
+Regra jurídica
+
+A própria LAI já protege informações pessoais no art. 31. A LGPD, por sua vez, dedica capítulo ao tratamento de dados pelo poder público. Seu art. 23 vincula o tratamento à finalidade pública, interesse público e execução de competências ou atribuições legais, com deveres de transparência sobre as operações. O art. 26 disciplina uso compartilhado de dados pelo poder público para finalidades específicas de políticas públicas e atribuições legais, respeitados os princípios de proteção de dados.
+
+Logo, a análise correta considera conjuntamente:
+
+• finalidade e base jurídica da divulgação ou do tratamento;
+• natureza do dado e grau de impacto sobre o titular;
+• existência de interesse público e dever de transparência;
+• possibilidade de acesso parcial, anonimização/ocultação ou redução do conjunto exposto quando juridicamente adequada;
+• proibições ou permissões específicas de lei.
+
+Exemplo
+
+Pedido requer lista de gastos públicos acompanhada de documentos que trazem números de documentos pessoais, telefones particulares e informações funcionais pertinentes à despesa. A resposta não deve ser “LGPD proíbe”. Deve-se examinar quais elementos são necessários à transparência e quais dados pessoais podem ser ocultados sem destruir a compreensão da despesa.
+
+Compare — LAI × LGPD
+
+LAI | LGPD
+Foco: acesso, publicidade, transparência e controle social. | Foco: tratamento e proteção de dados pessoais.
+Publicidade é preceito geral, com exceções legais. | Tratamento exige fundamento e observância de princípios/finalidades.
+Art. 31 protege informações pessoais. | Arts. 23 e seguintes disciplinam tratamento pelo poder público.
+Permite acesso parcial com ocultação de parte protegida. | Reforça necessidade, finalidade, transparência e segurança no tratamento.
+Não é revogada pela LGPD. | Não transforma todo dado pessoal mantido pelo Estado em segredo absoluto.
+
+Método de solução de conflito aparente
+
+• Identifique qual informação foi pedida e para qual dever público ela existe.
+• Verifique se há regra expressa de publicidade ou de restrição.
+• Separe conteúdo público de dado pessoal protegido.
+• Pergunte se a finalidade de transparência pode ser cumprida com acesso parcial ou ocultação proporcional.
+• Fundamente a decisão; não use “LGPD” como palavra mágica nem “LAI” como autorização irrestrita.
+
+Como cai na FCC
+
+A banca pode afirmar: “Após a LGPD, informações contendo dados pessoais jamais podem ser fornecidas pela LAI.” Errado. A análise é de compatibilização; a própria LAI diferencia informação pessoal, traz exceções ao consentimento e preserva interesse público preponderante.
+
+Pegadinha
+
+Dado pessoal é conceito amplo na LGPD; informação pessoal protegida pelo art. 31 da LAI possui disciplina própria ligada a intimidade, vida privada, honra, imagem e garantias. Não faça equivalências automáticas sem ler o dispositivo cobrado.
+
+Jurisprudência essencial
+
+Não é necessário ampliar o módulo com jurisprudência extensa. Para prova de LAI, domine os arts. 31 da LAI e 23/26 da LGPD e a técnica de compatibilização.
+
+O que decorar
+
+LAI = acesso/transparência. LGPD = tratamento/proteção. Harmonizar; não anular uma pela outra.
+
+O que levar para a prova
+
+A resposta juridicamente madura é proporcional: máxima transparência possível com proteção efetiva dos dados cuja exposição não tenha fundamento.
+
+Check manual: ☐ Consigo resolver um caso em que parte do documento é pública e parte contém dados pessoais protegidos.
+
+---
+
+S14 — Revisão integrada e quadro-mestre
+
+Entenda primeiro
+
+Agora una o sistema. A LAI começa com o direito fundamental e a publicidade como regra; define quem se submete; organiza divulgação ativa e pedidos; impõe prazos; garante recurso; delimita restrições; disciplina classificação e informação pessoal; e encerra com responsabilidades e mecanismos de implementação.
+
+Regra jurídica — mapa do sistema
+
+Constituição → arts. 1º–5º → arts. 6º–9º → arts. 10–20 → arts. 21–31 → arts. 32–34 → disposições finais.
+
+Leia assim:
+
+• Constituição: por que existe o direito;
+• arts. 1º–5º: quem, conceitos e diretrizes;
+• arts. 6º–9º: o que deve ser protegido/divulgado e transparência ativa/SIC;
+• arts. 10–20: como pedir, responder e recorrer;
+• arts. 21–31: quando restringir e como classificar/proteger pessoais;
+• arts. 32–34: o que acontece quando o regime é violado.
+
+Quadro-mestre
+
+Tema | Regra-chave | Número/artigo de prova
+Publicidade | Regra geral; sigilo é exceção | art. 3º, I
+Abrangência | Todos os entes; Poderes, MP e entidades do art. 1º | arts. 1º–2º
+Conceitos | Pessoal ≠ classificada | art. 4º
+Acesso parcial | Parte não protegida deve ser fornecida | art. 7º, § 2º
+Transparência ativa | Divulgação independente de pedido | art. 8º
+SIC | Orientar, informar tramitação, protocolar | art. 9º
+Pedido | Identificação + especificação; sem motivo | art. 10
+Resposta | Imediata; se impossível, 20 + 10 | art. 11
+Gratuidade | Busca e fornecimento gratuitos; reprodução pode gerar ressarcimento | art. 12
+Recurso | 10 dias; superior decide em 5 | art. 15
+Direitos fundamentais | Acesso necessário à tutela não pode ser negado | art. 21
+Outros sigilos | LAI não exclui sigilos legais/segredo de justiça/industrial | art. 22
+Classificação | Hipóteses ligadas à segurança sociedade/Estado | art. 23
+Graus | Ultra 25; secreta 15; reservada 5 | art. 24
+Competência | Lista do art. 27 é federal | art. 27
+Reavaliação | Pode desclassificar/reduzir; termo inicial permanece produção | art. 29
+Pessoais | Até 100 anos, sem classificação, nas hipóteses legais | art. 31
+Responsabilidade | Ocultar indevidamente e divulgar indevidamente podem ser ilícitos | arts. 32–34
+
+Compare — quadro final de categorias
+
+Pergunta | Se “sim” | Consequência inicial
+É informação de interesse público sem restrição? | Pública | Acesso/divulgação.
+Há risco do art. 23 à segurança da sociedade/Estado? | Pode ser classificada | Ver grau, autoridade, fundamento e prazo.
+É informação pessoal protegida pelo art. 31? | Pessoal | Aplicar regime próprio, sem chamá-la de “reservada”.
+Há sigilo por outra lei/segredo de justiça/industrial? | Outro sigilo | Aplicar regime específico.
+Apenas uma parte está protegida? | Restrição parcial | Fornecer parte acessível com ocultação adequada.
+
+Exemplo integrado
+
+Cidadão pede contrato, notas fiscais e relatório de fiscalização. O contrato já está no portal; o órgão indica o link. As notas têm dados bancários pessoais não necessários à fiscalização social; o órgão fornece cópia com ocultação desses campos. O relatório contém trecho legitimamente classificado relativo a atividade de investigação em andamento; entrega-se a parte acessível e fundamenta-se a ocultação. Se o interessado discordar, pode recorrer. Cada resposta usa um mecanismo diferente da mesma lei.
+
+Como cai na FCC
+
+Questões mais difíceis misturam categorias. O caminho é decompor: publicidade? pedido? prazo? restrição? grau? recurso? ente federativo? Não resolva pelo “sentimento de transparência”; resolva pelo dispositivo.
+
+Pegadinha
+
+O Decreto 7.724 é importante, mas não “reescreve” a LAI para todos. Quando a alternativa usa CGU, sistema eletrônico federal, GRU, autoridade de monitoramento federal ou cadeia recursal detalhada do decreto, confira se o enunciado situou o Poder Executivo federal.
+
+Jurisprudência essencial
+
+Para este módulo, a lei vigente é o centro de gravidade. A camada jurisprudencial deve ser adicionada apenas quando um edital ou questão exigir controvérsia específica, para não substituir a memorização da estrutura normativa.
+
+O que decorar
+
+Regra → pedido → prazo → recurso → restrição → classificação/pessoal → responsabilidade.
+
+O que levar para a prova
+
+Se você acertar as quatro separações — ativa/passiva; pública/classificada/pessoal; nacional/federal; acesso integral/parcial — elimina grande parte das pegadinhas de LAI.
+
+Check manual: ☐ Consigo explicar o fluxo completo da LAI em dois minutos.
+
+---
+
+Camada FCC — 20 afirmações para julgar mentalmente
+
+• “O sigilo constitui a regra da LAI.” Errado.
+• “O requerente deve demonstrar interesse jurídico na informação.” Errado.
+• “O pedido deve identificar o requerente e especificar a informação.” Certo.
+• “A Administração pode exigir justificativa dos motivos do pedido de interesse público.” Errado.
+• “Se a informação estiver disponível, o acesso deve ser imediato.” Certo.
+• “O prazo comum de resposta é sempre de 30 dias.” Errado: até 20, prorrogável por 10.
+• “A prorrogação exige justificativa expressa e ciência do requerente.” Certo.
+• “Se uma página contiver trecho sigiloso, todo o documento deve ser negado.” Errado.
+• “Busca e fornecimento da informação são gratuitos.” Certo.
+• “Pode ser cobrado ressarcimento do custo de reprodução, nos termos legais.” Certo.
+• “Informação pessoal é sinônimo de informação reservada.” Errado.
+• “Os prazos máximos regulares são 25, 15 e 5 anos.” Certo.
+• “Os prazos de classificação contam da decisão classificatória.” Errado: contam da produção.
+• “A lista de autoridades do art. 27 é expressamente da administração pública federal.” Certo.
+• “A LAI revogou todo segredo de justiça e sigilo previsto em lei especial.” Errado.
+• “Documento sobre violação de direitos humanos praticada por agentes públicos pode ser classificado para evitar dano institucional.” Errado, nas hipóteses do art. 21, parágrafo único.
+• “O recurso básico é interposto em 10 dias e decidido pelo superior em 5.” Certo.
+• “Toda negativa em qualquer ente federativo é recorrível à CGU.” Errado.
+• “Entidade privada sem fins lucrativos beneficiária de recursos públicos fica submetida, no que couber, à transparência da parcela recebida e sua destinação.” Certo.
+• “A LGPD tornou toda informação que contenha dado pessoal inacessível pela LAI.” Errado.
+
+---
+
+Revisão final — 5 a 10 minutos
+
+1. Fundamento: CF art. 5º, XXXIII; art. 37, caput e § 3º, II; art. 216, § 2º.
+2. Diretriz: publicidade regra, sigilo exceção; divulgação de ofício; tecnologia; cultura de transparência; controle social.
+3. Abrangência: União, Estados, DF, Municípios; Poderes, Cortes de Contas, MP; autarquias, fundações, EP, SEM e controladas.
+4. Privadas sem fins lucrativos: “no que couber”; parcela dos recursos públicos e destinação.
+5. Conceitos: sigilosa = temporariamente restrita por segurança sociedade/Estado; pessoal = pessoa natural identificada/identificável.
+6. Ativa: art. 8º, de ofício. Lembre E-R-D-L-P-F.
+7. Passiva: SIC + pedido. Identificação e especificação; sem motivo.
+8. Resposta: imediata; se impossível, 20 dias + 10.
+9. Parcial: certidão, extrato ou cópia com ocultação.
+10. Gratuidade: busca e fornecimento gratuitos; reprodução pode gerar ressarcimento.
+11. Recurso: 10 dias; superior decide em 5.
+12. Restrições: direitos fundamentais/humanos; outros sigilos legais preservados.
+13. Classificação: art. 23; ultra/secreta/reservada = 25/15/5 da produção.
+14. Art. 27: competências listadas são federais.
+15. Pessoal: art. 31; até 100 anos; sem classificação; há exceções ao consentimento.
+16. Responsabilidade: ocultação abusiva e vazamento indevido podem gerar sanções.
+17. LAI × LGPD: harmonizar acesso e privacidade.
+18. Decreto 7.724: Executivo federal, não regra nacional automática.
+
+---
+
+Artigos para ler na véspera
+
+Constituição Federal
+
+• art. 5º, XXXIII;
+• art. 37, caput e § 3º, II;
+• art. 216, § 2º.
+
+Lei 12.527/2011 — leitura prioritária
+
+• arts. 1º a 5º — âmbito, entidades privadas, diretrizes e conceitos;
+• arts. 6º a 9º — deveres, conteúdo do acesso, transparência ativa e SIC;
+• arts. 10 a 15 — pedido, resposta, gratuidade, preservação e recurso;
+• arts. 16 a 20 — sistema recursal, com atenção aos recortes federais;
+• arts. 21 a 24 — limites às restrições, hipóteses de classificação e graus;
+• arts. 27 a 31 — competência federal para classificar, decisão, reavaliação, listas e informações pessoais;
+• arts. 32 a 34 — responsabilidades;
+• art. 35, especialmente para identificar a CMRI como órgão do âmbito federal e a hipótese excepcional de prorrogação de ultrassecreta;
+• arts. 8º-A e 8º-B — atualização incluída pela Lei 15.141/2025.
+
+Decreto 7.724/2012 — apenas se o edital/questão indicar regime federal
+
+• art. 1º — delimitação ao Poder Executivo federal;
+• arts. 9º a 24 — SIC, pedido, resposta e recursos federais;
+• demais dispositivos conforme a cobrança específica.
+
+LGPD — ponte mínima
+
+• art. 23 — tratamento pelo poder público;
+• art. 26 — uso compartilhado de dados pelo poder público.
+
+---
+
+O que decorar — folha seca
+
+Item | Decore assim
+Regra | Publicidade geral; sigilo exceção
+Pedido | Identificação + especificação; motivo proibido
+Resposta | Imediata → 20 + 10
+Recurso básico | 10 → superior → 5
+Classificação | 25 / 15 / 5
+Termo inicial | Data da produção
+Pessoal | Até 100 anos; sem classificação
+Parcial | Certidão/extrato/cópia com ocultação
+Gratuidade | Busca e fornecimento grátis; reprodução ressarcível
+Art. 27 | Competência de classificação = administração pública federal
+Decreto 7.724 | Executivo federal
+LAI × LGPD | Harmonização, não exclusão
+
+Macete dos números
+
+20 + 10 → 10 / 5 → 25 / 15 / 5 → 100.
+Resposta e prorrogação → recurso/decisão → graus de sigilo → informação pessoal.
+
+---
+
+Fechamento
+
+A LAI é mais bem dominada como um sistema de decisão sobre acesso. Não comece pela pergunta “é sigiloso?”. Comece por “a publicidade é a regra; existe fundamento legal para restringir?”. Depois identifique a categoria da informação, a extensão da restrição e o procedimento de resposta. Essa ordem evita praticamente todas as confusões clássicas entre sigilo, informação pessoal, decreto federal e LGPD.
+
+3. 10 QUESTÕES INTERNAS — CONTEÚDO COMPLETO
+
+Questões de fixação interna. Não substituem TEC, Anki, Lei em Dia nem cadernos externos.
+
+Q1 — FÁCIL
+
+A diretriz central da Lei 12.527/2011 estabelece que:
+
+A) o sigilo é a regra, salvo autorização da autoridade máxima.
+B) a publicidade é o preceito geral e o sigilo é a exceção.
+C) somente informações de interesse coletivo podem ser acessadas.
+D) o acesso depende da demonstração de interesse jurídico.
+E) a Administração escolhe livremente o que divulgar.
+
+Gabarito: B. A LAI expressamente adota publicidade como preceito geral e sigilo como exceção.
+
+Q2 — FÁCIL
+
+No pedido de acesso à informação de interesse público, a LAI exige:
+
+A) identificação do requerente, especificação da informação e justificativa do motivo.
+B) apenas a justificativa do interesse público.
+C) identificação do requerente e especificação da informação, vedada a exigência dos motivos determinantes do pedido.
+D) procuração de advogado.
+E) prova de interesse pessoal direto.
+
+Gabarito: C. O art. 10 exige identificação e especificação; o § 3º proíbe exigir os motivos determinantes.
+
+Q3 — FÁCIL
+
+É exemplo de transparência ativa:
+
+A) responder recurso contra negativa de acesso.
+B) fornecer documento após pedido individual.
+C) publicar de ofício informações sobre despesas, licitações, contratos, programas e perguntas frequentes.
+D) classificar informação como reservada.
+E) exigir que o interessado compareça ao SIC.
+
+Gabarito: C. Transparência ativa é divulgação independentemente de requerimento.
+
+Q4 — FÁCIL
+
+Os prazos máximos regulares de sigilo para informação ultrassecreta, secreta e reservada são, respectivamente:
+
+A) 30, 20 e 10 anos.
+B) 25, 10 e 5 anos.
+C) 20, 15 e 5 anos.
+D) 25, 15 e 5 anos.
+E) 100, 25 e 15 anos.
+
+Gabarito: D. O trio de prova é 25 / 15 / 5, contado da data da produção.
+
+Q5 — MÉDIA
+
+Município com 8.000 habitantes, segundo a LAI:
+
+A) está fora do regime da LAI.
+B) é dispensado de qualquer transparência ativa.
+C) é dispensado apenas da divulgação obrigatória na internet prevista no art. 8º, § 2º, mantidas as demais obrigações legais, inclusive a transparência orçamentária e financeira prevista na LRF.
+D) pode exigir justificativa de todos os pedidos.
+E) só precisa responder pedidos formulados por residentes.
+
+Gabarito: C. A dispensa é limitada; não retira o município do alcance da LAI.
+
+Q6 — MÉDIA
+
+Um órgão recebe pedido de informação. O dado não pode ser fornecido imediatamente, mas está disponível nos arquivos. Pela LAI, o órgão:
+
+A) possui 30 dias, sem necessidade de justificativa.
+B) deve responder em até 20 dias, prorrogáveis por mais 10 mediante justificativa expressa e ciência do requerente.
+C) possui 15 dias improrrogáveis.
+D) pode aguardar o requerente reiterar o pedido.
+E) deve remeter o pedido automaticamente à CGU.
+
+Gabarito: B. O acesso imediato é a primeira regra; não sendo possível, aplica-se o prazo de até 20 dias, prorrogável por 10 nas condições legais.
+
+Q7 — MÉDIA
+
+Documento público contém uma parte protegida e outra parte acessível. A solução juridicamente adequada é:
+
+A) negar o documento inteiro, sem fundamentação.
+B) divulgar tudo, porque a LAI elimina sigilo.
+C) conceder acesso à parte não protegida por certidão, extrato ou cópia com ocultação da parte restrita.
+D) classificar todo o documento como ultrassecreto.
+E) exigir consentimento do requerente.
+
+Gabarito: C. A LAI consagra o acesso parcial quando apenas parte da informação está legitimamente protegida.
+
+Q8 — MÉDIA
+
+Assinale a afirmativa correta sobre recursos:
+
+A) toda negativa, em qualquer ente federativo, é recorrível diretamente à CGU.
+B) o recurso básico do art. 15 é interposto em 10 dias e dirigido à autoridade hierarquicamente superior, que decide em 5 dias; CGU/CMRI integram recortes federais específicos.
+C) o recurso básico deve ser decidido em 20 dias.
+D) a LAI não prevê recurso contra razões da negativa.
+E) o Decreto 7.724/2012 é a fonte nacional de recursos de todos os Poderes.
+
+Gabarito: B. A regra geral do art. 15 deve ser separada das instâncias federais dos arts. 16 e seguintes e do Decreto 7.724/2012.
+
+Q9 — DIFÍCIL
+
+Um cidadão pede cópia de contrato administrativo e anexos. Um anexo contém dados pessoais protegidos de terceiros, mas o contrato e os demais anexos são públicos. A resposta mais adequada é:
+
+A) negar tudo, porque a presença de dado pessoal torna o conjunto secreto por 100 anos.
+B) fornecer tudo integralmente, porque contrato administrativo nunca contém informação protegida.
+C) identificar a extensão da proteção, preservar os dados pessoais quando juridicamente cabível e fornecer a parte acessível, com fundamentação de eventual restrição parcial.
+D) classificar o conjunto como reservado por 5 anos.
+E) exigir do cidadão a finalidade específica para decidir se libera o contrato.
+
+Gabarito: C. Informação pessoal não é sinônimo de grau de sigilo e não autoriza bloqueio global. A LAI exige solução proporcional e acesso à parte não protegida.
+
+Q10 — DIFÍCIL
+
+Uma entidade privada sem fins lucrativos recebe recursos públicos para ação de interesse público. Ao mesmo tempo, um serviço social autônomo recebe recursos públicos federais decorrentes de contrato de gestão. À luz da redação vigente da LAI:
+
+A) toda a vida interna de qualquer entidade privada passa automaticamente a ser pública.
+B) nenhuma entidade privada é alcançada pela LAI.
+C) a entidade do art. 2º sujeita-se, no que couber, à transparência da parcela dos recursos públicos recebidos e sua destinação; além disso, os arts. 8º-A e 8º-B criam deveres específicos para as hipóteses neles previstas.
+D) somente empresas públicas estão sujeitas à LAI.
+E) os arts. 8º-A e 8º-B revogaram o art. 2º.
+
+Gabarito: C. O art. 2º tem sujeição limitada à parcela pública e destinação; as normas posteriores criam deveres específicos sem transformar toda entidade privada em Administração Pública.

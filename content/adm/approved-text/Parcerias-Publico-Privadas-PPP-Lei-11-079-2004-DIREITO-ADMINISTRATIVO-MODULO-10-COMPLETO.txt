@@ -1,0 +1,953 @@
+﻿Parcerias Público-Privadas (PPP) — Lei 11.079/2004
+DIREITO ADMINISTRATIVO · MÓDULO 10 · COMPLETO
+
+DIREITO ADMINISTRATIVOMÓDULO 10
+
+Apostila de estudo · nível Analista · pacote offline
+
+Parcerias Público-Privadas (PPP)
+
+Lei 11.079/2004: modalidades, limites, riscos, licitação, contrato, contraprestação, garantias, SPE, responsabilidade fiscal, intervenção e extinção.
+
+Base conferida em 17/09/2026: Lei 11.079/2004 em texto compilado oficial do Planalto como fonte normativa principal; Lei 8.987/1995 nos pontos de conexão; Lei 14.133/2021 apenas para a atualização da modalidade de licitação e do procedimento vigente. Materiais TEC/FCC da Biblioteca foram usados exclusivamente para calibrar cobertura e pegadinhas. Central consultada somente em leitura para reproduzir o padrão técnico dos módulos anteriores. Nenhuma publicação foi realizada.
+
+Como estudar este módulo
+
+Em PPP, quase toda questão fica mais simples com uma sequência fixa.
+
+modalidade→10–5–35→remuneração→risco→licitação/SPE→controle/extinção
+
+Regra de ouro FCC: desconfie de alternativas que usam redações antigas (“R$ 20 milhões”, “somente concorrência”) ou transformam faculdade em obrigação.
+
+SESSÃO 01
+
+Conceito, função econômica e arquitetura jurídica das PPPs
+
+Entenda primeiro
+
+A parceria público-privada da Lei 11.079/2004 não é uma expressão genérica para qualquer cooperação entre Estado e empresa. Em sentido legal, é um contrato administrativo de concessão em uma de duas modalidades: concessão patrocinada ou concessão administrativa. O modelo foi desenhado para prestações complexas e duradouras, nas quais o particular normalmente financia, implanta, moderniza ou opera infraestrutura e recebe remuneração ao longo do tempo, vinculada à disponibilidade e, quando previsto, ao desempenho. A lógica econômica é combinar capacidade de investimento e gestão privada com planejamento, fiscalização, garantias, responsabilidade fiscal e preservação do interesse público.
+
+Regra jurídica
+
+A Lei 11.079/2004 alcança União, Estados, Distrito Federal e Municípios e, no seu campo de aplicação, órgãos da Administração direta dos Poderes Executivo e Legislativo, fundos especiais, autarquias, fundações públicas, empresas públicas, sociedades de economia mista e demais entidades controladas. O núcleo conceitual está no art. 2º: PPP é concessão patrocinada ou administrativa. A lei não transfere a titularidade do serviço público ao particular; transfere a execução nos limites contratuais. Funções de regulação, jurisdicionais, poder de polícia e outras atividades exclusivas do Estado são indelegáveis no regime da PPP.
+
+Exemplo
+
+Imagine a construção, manutenção e operação por vinte anos de uma infraestrutura pública com metas de disponibilidade. O particular assume obrigações de investimento e operação; o Poder Público fiscaliza e paga contraprestação conforme o serviço fique disponível e atenda aos indicadores. Essa estrutura pode ser PPP. Já a simples compra de equipamentos, ainda que cara, não se torna PPP apenas porque o comprador é a Administração.
+
+Compare
+
+A palavra “parceria” é ampla no uso cotidiano, mas a prova cobra o conceito legal fechado. Não confunda PPP com convênio, MROSC, contrato de gestão, concessão comum, permissão ou contrato administrativo comum. O elemento classificatório inicial é perguntar: há uma concessão especial da Lei 11.079/2004? Depois, identifique quem é usuário e como o parceiro privado é remunerado.
+
+Quadro 1 — mapa dos institutos
+
+Instituto | Natureza central | Remuneração/fluxo típico | É PPP?
+Concessão comum | Delegação regida pela Lei 8.987/95 | Tarifa e/ou receitas da exploração, sem contraprestação pecuniária pública que a transforme em patrocinada | Não
+Concessão patrocinada | Concessão de serviço ou obra pública da Lei 8.987/95 com componente público | Tarifa do usuário + contraprestação pecuniária do parceiro público | Sim
+Concessão administrativa | Contrato de prestação de serviços em que a Administração é usuária direta ou indireta | Contraprestação pública é estrutural; obra/bens podem integrar o projeto, mas não ser objeto único | Sim
+Contrato administrativo comum | Aquisição, serviço ou obra sob regime geral aplicável | Preço contratual segundo o regime da contratação | Não, por si só
+
+Como cai na prova
+
+A FCC costuma transformar conceitos próximos em alternativas plausíveis. Ela troca “contrato administrativo de concessão” por “sociedade de economia mista”, “convênio” ou “qualquer contrato de longa duração”. Também testa a ideia de que toda concessão seria PPP. A resposta depende da modalidade e da existência da contraprestação pública nos termos legais.
+
+Pegadinha: “PPP é qualquer associação contratual entre o Estado e particular” está errada. “PPP transfere ao parceiro privado funções de polícia ou regulação” também está errada. O contrato pode atribuir tarefas materiais e operacionais, mas não as funções exclusivas do Estado protegidas pelo art. 4º, III.
+
+Jurisprudência essencial: dispensável para o núcleo desta sessão. O conceito é predominantemente legal e deve ser dominado pela redação vigente da Lei 11.079/2004.
+
+O que decorar: Decore a fórmula: PPP = concessão patrocinada OU concessão administrativa. Não é gênero de toda contratação pública e não é sinônimo de privatização.
+
+O que levar para a prova: Para resolver qualquer caso, faça quatro perguntas: qual é o objeto; quem é usuário; de onde vem a remuneração; e se os requisitos estruturais da Lei 11.079/2004 estão presentes.
+
+☐ Check manual — domino a Sessão 01 sem depender do texto.
+
+SESSÃO 02
+
+Concessão patrocinada: tarifa, contraprestação e vínculo com a Lei 8.987/95
+
+Entenda primeiro
+
+A concessão patrocinada parte de uma concessão de serviço público ou de obra pública e acrescenta uma fonte de remuneração que não existe na concessão comum: a contraprestação pecuniária do parceiro público. Em regra didática, pense em uma concessão tarifada cuja receita do usuário, sozinha, não é suficiente ou adequada para viabilizar os investimentos e padrões de serviço pretendidos. A Administração complementa a remuneração dentro da modelagem contratual.
+
+Regra jurídica
+
+O art. 2º, §1º, define a modalidade por dois componentes: tarifa cobrada dos usuários e contraprestação pecuniária do parceiro público. O art. 3º, §1º, determina que a concessão patrocinada se rege pela Lei 11.079/2004, aplicando-se subsidiariamente a Lei 8.987/1995 e leis correlatas. Portanto, continuam relevantes serviço adequado, fiscalização, equilíbrio econômico-financeiro, bens reversíveis, intervenção e extinção, mas o regime especial da PPP prevalece nos pontos próprios.
+
+Exemplo
+
+Uma rodovia com pedágio pode ser estruturada como concessão comum se o projeto for remunerado pela tarifa e receitas associadas sem contraprestação pecuniária pública. Se, além do pedágio, houver contraprestação pecuniária da Administração ao concessionário nos termos da Lei 11.079/2004, o modelo é concessão patrocinada.
+
+Compare
+
+Concessão comum e patrocinada podem ter usuários pagantes e infraestrutura semelhante. A diferença decisiva não é a existência de obra, nem o tamanho do projeto, mas a presença da contraprestação pecuniária pública que caracteriza a patrocinada, somada aos demais requisitos da PPP.
+
+Quadro 2 — tarifa x contraprestação pública
+
+Elemento | Quem paga | Função | Efeito classificatório
+Tarifa | Usuário do serviço | Remunerar a fruição do serviço e integrar a equação econômica | Pode existir em concessão comum e patrocinada
+Contraprestação pecuniária pública | Parceiro público | Remunerar o parceiro privado segundo contrato de PPP | Somada à tarifa, caracteriza a patrocinada
+Receita alternativa/acessória | Terceiros/atividade associada | Auxiliar viabilidade e modicidade quando admitida | Não transforma, sozinha, concessão comum em PPP
+Aporte do art. 6º, §2º | Parceiro público | Financiar obras/aquisição de bens reversíveis nos requisitos legais | Não se confunde automaticamente com contraprestação
+
+Como cai na prova
+
+A banca explora enunciados com rodovia, mobilidade, saneamento ou infraestrutura. Se aparecer “tarifa do usuário + pagamento do Poder Público”, pense imediatamente em patrocinada. Se houver só tarifa/exploração econômica sem contraprestação pecuniária do parceiro público, a Lei 11.079 diz expressamente que não é PPP.
+
+Pegadinha: Não confunda contraprestação com qualquer pagamento público existente ao longo de uma concessão. Indenizações, recomposição de equilíbrio, ressarcimentos ou aportes com regime específico não devem ser automaticamente tratados como a contraprestação pecuniária definidora da concessão patrocinada. A classificação deriva da estrutura legal e contratual da remuneração.
+
+Jurisprudência essencial: dispensável. Para FCC, a literalidade do art. 2º, §1º, e a conexão subsidiária com a Lei 8.987/1995 são mais importantes.
+
+O que decorar: Patrocinada = tarifa + contraprestação pública. Mais de 70% da remuneração paga pela Administração exige autorização legislativa específica, conforme art. 10, §3º.
+
+O que levar para a prova: Ao ver “pedágio + pagamento estatal”, não pare na etiqueta: confirme valor mínimo, prazo mínimo, objeto não vedado e demais requisitos da PPP.
+
+☐ Check manual — domino a Sessão 02 sem depender do texto.
+
+SESSÃO 03
+
+Concessão administrativa: Administração usuária direta ou indireta
+
+Entenda primeiro
+
+Na concessão administrativa, a Administração Pública é a usuária direta ou indireta do serviço. Essa modalidade permite organizar projetos em que a remuneração pública é o eixo do contrato e em que a infraestrutura é meio para uma prestação continuada. É comum em hospitais, escolas, iluminação pública, centros administrativos, unidades prisionais em atividades não exclusivas e outras estruturas em que o parceiro privado presta serviços de suporte, disponibilidade, manutenção e operação dentro de limites legais.
+
+Regra jurídica
+
+O art. 2º, §2º, define a concessão administrativa como contrato de prestação de serviços de que a Administração seja usuária direta ou indireta, ainda que envolva execução de obra ou fornecimento e instalação de bens. Essa última parte é decisiva: obra e bens podem compor o contrato, mas o art. 2º, §4º, III, veda que a PPP tenha como objeto único fornecimento de mão de obra, fornecimento/instalação de equipamentos ou execução de obra pública.
+
+Exemplo
+
+Em uma PPP para hospital, o particular pode construir a unidade e, por anos, manter instalações, limpeza, alimentação, sistemas, equipamentos e disponibilidade do prédio, enquanto os atos médicos finalísticos permanecem com a rede pública. A obra é parte de um serviço integrado de longo prazo, e a Administração pode ser usuária indireta na prestação à população.
+
+Compare
+
+Na patrocinada, a referência legal é uma concessão da Lei 8.987 com tarifa + contraprestação. Na administrativa, o ponto de partida é a Administração como usuária direta ou indireta. Não transforme a diferença em “uma tem obra e outra não”: ambas podem envolver obra. O que muda é a configuração jurídica e remuneratória.
+
+Quadro 3 — concessão comum x patrocinada x administrativa
+
+Ponto | Comum | Patrocinada | Administrativa
+Base central | Lei 8.987/95 | Lei 11.079/04 + Lei 8.987 subsidiária | Lei 11.079/04 + dispositivos da Lei 8.987 indicados no art. 3º
+Usuário | Usuário do serviço público | Usuário do serviço público + relação com parceiro público | Administração usuária direta ou indireta
+Tarifa | Típica, mas a exploração pode incluir outras receitas | Elemento do conceito legal, somada à contraprestação pecuniária pública | Não é o elemento definidor; remuneração pública é estrutural
+Contraprestação pecuniária pública | Ausente como elemento classificatório | Presente | Presente segundo a estrutura contratual
+É PPP? | Não | Sim | Sim
+
+Como cai na prova
+
+A FCC apresenta casos concretos de hospital, escola ou iluminação e pergunta qual instrumento é adequado. Procure a continuidade do serviço, a integração com infraestrutura e a posição da Administração como usuária. Se o enunciado disser que a obra é o único objeto, não é PPP.
+
+Pegadinha: É perigoso decorar “concessão administrativa = nunca há usuário final privado” ou “= mero contrato de serviços”. A lei fala em Administração usuária direta ou indireta, e o regime é de concessão especial com exigências próprias de prazo, valor, riscos, licitação, SPE e responsabilidade fiscal.
+
+Jurisprudência essencial: dispensável para a classificação. A fonte decisiva é o art. 2º, §2º, lido com os §§3º e 4º.
+
+O que decorar: Administrativa = Administração usuária direta ou indireta; obra e bens podem existir, mas não como objeto único.
+
+O que levar para a prova: Se o caso envolver infraestrutura + prestação continuada + pagamento público + Administração usuária, teste concessão administrativa; depois aplique os filtros de valor, prazo e objeto.
+
+☐ Check manual — domino a Sessão 03 sem depender do texto.
+
+SESSÃO 04
+
+PPP x concessão comum x contrato administrativo comum: fronteiras que decidem a prova
+
+Entenda primeiro
+
+A maior fonte de erro é tratar PPP como sinônimo de “contrato grande”. A Lei 11.079 cria concessões especiais, com arquitetura própria de longo prazo, riscos, contraprestação, garantias, SPE, licitação e responsabilidade fiscal. A concessão comum continua sob a Lei 8.987. Já contratos administrativos comuns seguem o regime geral aplicável à aquisição, obra ou serviço e não se convertem em PPP pelo simples valor ou duração.
+
+Regra jurídica
+
+O art. 3º separa os regimes. A concessão comum continua na Lei 8.987 e não recebe a Lei 11.079. As administrativas recebem a Lei 11.079 e, adicionalmente, os arts. 21, 23, 25 e 27 a 39 da Lei 8.987, além do art. 31 da Lei 9.074/1995. As patrocinadas recebem a Lei 11.079 e subsidiariamente a Lei 8.987. O §3º do art. 3º ainda conserva referência textual histórica à Lei 8.666/1993 para contratos que não sejam concessões; em questões atuais, isso deve ser lido com o sistema vigente de contratações, especialmente a Lei 14.133/2021, sem transformar a referência remanescente em regra geral de vigência da antiga lei.
+
+Exemplo
+
+Comprar 500 computadores por R$ 15 milhões não é PPP: é fornecimento. Construir um prédio público por R$ 100 milhões sem obrigação continuada de operação também não é PPP só pelo valor. Já um contrato de 20 anos em que o particular projeta, constrói, mantém e disponibiliza uma infraestrutura com indicadores e remuneração pública pode preencher a lógica da concessão administrativa, se satisfeitos os demais requisitos.
+
+Compare
+
+Concessão comum e PPP pertencem à família das concessões, mas são regimes distintos. Contrato comum pode ter matriz de riscos, garantias e longa duração em hipóteses legais, mas não herda automaticamente o regime da Lei 11.079. A classificação antecede a aplicação das regras.
+
+Quadro 4 — PPP x contrato administrativo comum
+
+Critério | PPP — Lei 11.079/04 | Contrato administrativo comum
+Estrutura | Concessão especial patrocinada ou administrativa | Aquisição, obra, serviço ou outra contratação do regime geral
+Valor mínimo legal da Lei 11.079 | R$ 10 milhões | Não se aplica como requisito geral
+Prazo da Lei 11.079 | 5 a 35 anos, incluída eventual prorrogação | Segue limites e hipóteses do regime específico do contrato
+SPE | Constituição obrigatória antes do contrato | Não é requisito geral
+Riscos | Repartição objetiva obrigatória no contrato | Matriz/alocação conforme regime e modelagem aplicável
+Pagamento | Contraprestação e mecanismos próprios; desempenho pode modular remuneração | Preço e pagamentos conforme contrato e lei aplicável
+
+Como cai na prova
+
+Questões FCC frequentemente apresentam um objeto e misturam requisitos de regimes diferentes. Use um filtro: (1) concessão ou mera compra/obra/serviço? (2) se concessão, comum ou especial? (3) se PPP, patrocinada ou administrativa? (4) os filtros do art. 2º, §4º, foram respeitados?
+
+Pegadinha: Valor superior a R$ 10 milhões não basta. Prazo superior a cinco anos não basta. Existência de obra não basta. É preciso que o contrato tenha natureza de PPP e que não recaia nas vedações.
+
+Jurisprudência essencial: dispensável. O tema é de enquadramento legal.
+
+O que decorar: Regra mental: “grande + longo” é só um indício econômico. “Concessão especial + requisitos legais” é o enquadramento jurídico.
+
+O que levar para a prova: Antes de memorizar exceções, saiba dizer por que uma compra, uma obra isolada, uma concessão comum e uma PPP são juridicamente diferentes.
+
+☐ Check manual — domino a Sessão 04 sem depender do texto.
+
+SESSÃO 05
+
+Requisitos estruturais: valor, prazo e objetos vedados
+
+Entenda primeiro
+
+A Lei de PPP estabelece filtros objetivos para impedir que o regime seja usado em contratações pequenas, curtas ou que sejam apenas fornecimento/obra isolada. Esses números e vedações são matéria clássica de prova porque pequenas alterações tornam a alternativa errada.
+
+Regra jurídica
+
+É vedada PPP com valor contratual inferior a R$ 10.000.000,00; com período de prestação do serviço inferior a 5 anos; ou cujo objeto único seja fornecimento de mão de obra, fornecimento e instalação de equipamentos ou execução de obra pública. Além disso, a cláusula de prazo do art. 5º deve ser compatível com a amortização dos investimentos e não pode ser inferior a 5 nem superior a 35 anos, incluída eventual prorrogação. O piso de R$ 10 milhões é a redação vigente desde a Lei 13.529/2017; a antiga cifra de R$ 20 milhões é armadilha histórica.
+
+Exemplo
+
+Contrato de R$ 15 milhões por 3 anos: vedado como PPP pelo prazo. Contrato de R$ 8 milhões por 20 anos: vedado pelo valor. Contrato de R$ 80 milhões por 15 anos cujo único objeto é construir um edifício: vedado pelo objeto único. Contrato de R$ 80 milhões por 15 anos que engloba construção e prestação continuada complexa pode, em tese, ser PPP, dependendo da modalidade e dos demais requisitos.
+
+Compare
+
+“Período de prestação do serviço” do art. 2º, §4º, II, e “prazo de vigência” do art. 5º, I, convergem para o piso de cinco anos. O teto de 35 anos inclui prorrogações. O valor mínimo é do contrato, não um piso de investimento isolado.
+
+Quadro 5 — valor mínimo, prazo e objeto
+
+Filtro | Regra vigente | Pegadinha
+Valor do contrato | Não pode ser inferior a R$ 10.000.000 | R$ 20 milhões é redação antiga
+Período de prestação | Não pode ser inferior a 5 anos | 5 anos exatos são admitidos em tese
+Prazo máximo | 35 anos, incluída eventual prorrogação | Não some 35 + prorrogação
+Objeto único | Não pode ser somente mão de obra; equipamentos; ou obra pública | Esses elementos podem integrar um projeto mais amplo de serviços
+
+Como cai na prova
+
+A FCC já explorou exatamente os valores e a duração. Espera-se que o candidato rejeite alternativas com R$ 20 milhões como mínimo atual, 10 anos como prazo mínimo, ou obra isolada como objeto admissível.
+
+Pegadinha: “Valor igual a R$ 10 milhões é proibido” está errado: a lei veda o valor inferior a R$ 10 milhões. “Prazo de exatamente 5 anos é proibido” também está errado: veda-se período inferior a cinco anos.
+
+Jurisprudência essencial: dispensável. É tema de literalidade legislativa.
+
+O que decorar: Números: R$ 10 milhões / 5 anos / 35 anos. Vedações de objeto único: mão de obra; fornecimento + instalação de equipamentos; obra pública.
+
+O que levar para a prova: Use o trio “10–5–35” e a palavra “único”. A lei não proíbe que obra/equipamentos integrem o projeto; proíbe que sejam o único objeto da PPP.
+
+☐ Check manual — domino a Sessão 05 sem depender do texto.
+
+SESSÃO 06
+
+Diretrizes e repartição objetiva de riscos
+
+Entenda primeiro
+
+PPP não é apenas uma engenharia de pagamento; é uma forma de organizar incentivos e responsabilidades. A lei exige eficiência, respeito aos interesses dos destinatários e dos entes privados executores, indelegabilidade de funções exclusivas de Estado, responsabilidade fiscal, transparência, repartição objetiva de riscos e sustentabilidade financeira com vantagens socioeconômicas.
+
+Regra jurídica
+
+O art. 4º traz as diretrizes. O art. 5º, III, transforma a repartição de riscos em cláusula contratual obrigatória e cita expressamente riscos referentes a caso fortuito, força maior, fato do príncipe e álea econômica extraordinária. Isso afasta respostas simplistas de que todo risco extraordinário necessariamente fica com o Poder Público. Na PPP, a matriz contratual deve dizer objetivamente quem suporta quais eventos, respeitados os limites jurídicos e a equação econômico-financeira.
+
+Exemplo
+
+Em uma rodovia, risco de demanda pode ser alocado integralmente ao privado, compartilhado por bandas de demanda ou, em determinada modelagem, parcialmente ao Poder Público. Já um risco geológico pode ser dividido conforme quem tinha melhor capacidade de investigar e controlar o evento. A boa alocação tende a atribuir cada risco a quem pode preveni-lo, mitigá-lo ou absorvê-lo com menor custo.
+
+Compare
+
+“Risco ordinário x extraordinário” é útil como base doutrinária, mas a PPP exige leitura da matriz contratual. Risco alocado ao privado não gera automaticamente direito a reequilíbrio quando se materializa dentro da faixa assumida. Se o evento pertence à esfera pública ou rompe a matriz nos termos contratuais e legais, pode surgir mecanismo de recomposição.
+
+Quadro 6 — riscos do parceiro público x parceiro privado
+
+Tipo/Exemplo | Alocação possível | Pergunta de prova
+Demanda | Privado, público ou compartilhada, conforme modelagem | Quem assumiu variação de receita/uso?
+Construção/custo/prazo | Frequentemente privado, salvo riscos específicos atribuídos ao público | O evento estava sob controle do executor?
+Licenciamento/desapropriação | Pode ser repartido por etapa e responsabilidade | Quem tinha competência/dever de providenciar?
+Fortuito/força maior/fato do príncipe/álea extraordinária | Devem ser tratados objetivamente no contrato | Não aplique resposta automática sem ler a matriz
+Mudança de escopo por ato público | Tende a demandar tratamento de reequilíbrio conforme lei/contrato | Houve alteração imputável ao parceiro público?
+
+Quadro 7 — risco ordinário x extraordinário
+
+Categoria didática | Ideia | Cuidado em PPP
+Ordinário | Variações previsíveis do negócio dentro da faixa assumida | Não gera reequilíbrio apenas porque reduziu margem
+Extraordinário | Evento excepcional ou de impacto fora do esperado | A Lei 11.079 permite alocação contratual objetiva inclusive dessas áleas
+Risco público específico | Evento atribuído ao parceiro público pela matriz | Pode acionar recomposição/mecanismo previsto
+Risco privado específico | Evento atribuído ao parceiro privado | Materialização tende a permanecer na esfera do privado
+
+Como cai na prova
+
+A FCC gosta de inserir caso fortuito, força maior e fato do príncipe para testar se o candidato percebe que a Lei 11.079 manda repartir esses riscos. Outra pegadinha é afirmar que toda álea extraordinária é obrigatoriamente suportada pelo Estado, ignorando o art. 5º, III.
+
+Pegadinha: Repartição objetiva não significa transferência de todos os riscos ao parceiro privado. Também não significa garantia pública irrestrita de rentabilidade. A matriz deve ser coerente, mensurável e compatível com a eficiência e sustentabilidade do projeto.
+
+Jurisprudência essencial: não há precedente indispensável para a regra central desta sessão. Eventual jurisprudência setorial deve ser usada apenas quando o edital cobrar regime específico.
+
+O que decorar: Diretrizes do art. 4º + cláusula do art. 5º, III. Memorize os quatro riscos nominalmente citados pela lei.
+
+O que levar para a prova: Em qualquer questão sobre reequilíbrio, primeiro identifique a quem o contrato alocou o risco; só depois discuta consequência econômica.
+
+☐ Check manual — domino a Sessão 06 sem depender do texto.
+
+SESSÃO 07
+
+Licitação da PPP: fase preparatória, consulta e julgamento
+
+Entenda primeiro
+
+A PPP exige uma preparação mais robusta do que a simples escolha de modalidade licitatória. Antes de abrir o certame, a Administração precisa justificar por que a PPP é conveniente, demonstrar compatibilidade fiscal e orçamentária, projetar fluxo de recursos, inserir o objeto no PPA, promover consulta pública e, quando exigido, cuidar do licenciamento ambiental. Só depois vem a competição.
+
+Regra jurídica
+
+O art. 10, na redação atual dada pela Lei 14.133/2021, determina licitação na modalidade concorrência ou diálogo competitivo. A abertura depende de autorização da autoridade competente baseada em estudo técnico; estimativa de impacto orçamentário-financeiro; declaração do ordenador sobre LDO/LOA; fluxo de recursos públicos para toda a vigência; previsão no PPA; consulta pública da minuta de edital e contrato, com publicação na imprensa oficial, em jornais de grande circulação e por meio eletrônico; e licença ambiental prévia ou diretrizes quando necessárias. A consulta deve receber sugestões por pelo menos 30 dias e terminar ao menos 7 dias antes da data prevista para publicação do edital. Se o contrato for assinado em exercício diferente do edital, os estudos dos incisos I a IV devem ser atualizados.
+
+Exemplo
+
+Um projeto pode estar tecnicamente pronto, mas não pode pular a demonstração fiscal nem a consulta pública. A consulta não escolhe o vencedor; serve para transparência e aperfeiçoamento da modelagem. A licitação, por sua vez, estabelece competição e julgamento conforme critérios legais.
+
+Compare
+
+Consulta pública ≠ licitação. Diálogo competitivo ≠ procedimento auxiliar. No regime atual da PPP, ele aparece expressamente como modalidade alternativa à concorrência. O certame segue a legislação vigente de licitações e também as regras especiais dos arts. 11 a 13 da Lei 11.079.
+
+Quadro 8 — consulta pública x licitação
+
+Aspecto | Consulta pública | Licitação
+Finalidade | Transparência e recebimento de sugestões sobre minutas/modelagem | Seleção competitiva do parceiro privado
+Momento | Antes da publicação do edital | Após a fase preparatória
+Prazo especial da PPP | Mínimo 30 dias para sugestões; término ≥7 dias antes do edital | Segue procedimento legal e regras especiais da PPP
+Resultado | Não adjudica contrato | Pode culminar em adjudicação ao vencedor
+
+Quadro 9 — requisitos antes da abertura
+
+Requisito | Núcleo
+Estudo + autorização | Conveniência/oportunidade e justificativa da PPP
+Responsabilidade fiscal | Metas fiscais preservadas/compensação e limites quando aplicáveis
+Impacto | Estimativa orçamentário-financeira durante a vigência
+LDO/LOA | Declaração de compatibilidade e previsão
+Fluxo de recursos | Suficiência projetada por exercício
+PPA | Objeto previsto no plano plurianual
+Consulta pública | Minutas + informações legais + prazo
+Ambiental | Licença prévia ou diretrizes quando o objeto exigir
+
+Quadro 10 — critérios e procedimento
+
+Tema | Regra de alto rendimento
+Modalidade | Concorrência ou diálogo competitivo
+Qualificação técnica prévia ao julgamento | Pode haver etapa de qualificação de propostas técnicas
+Critério próprio | Menor valor da contraprestação pública
+Critério combinado | Menor contraprestação + melhor técnica
+Critérios da Lei 8.987 incorporados | Menor tarifa; menor tarifa + melhor técnica (art. 15, I e V)
+Propostas | Escritas; ou escritas seguidas de lances em viva voz
+Inversão de fases | Edital pode prever julgamento antes da habilitação, nos termos do art. 13
+
+Como cai na prova
+
+FCC cobrou em 2023 e 2026 que a modalidade é “concorrência ou diálogo competitivo”. Também pode cobrar menor contraprestação pública, combinação com melhor técnica, etapa de qualificação técnica e inversão das fases. O texto da lei ainda prevê propostas escritas, com possibilidade de lances em viva voz: os lances seguem ordem inversa à classificação das propostas escritas, o edital não pode limitar a quantidade de lances e pode restringir a etapa oral aos licitantes cuja proposta escrita seja, no máximo, 20% superior à melhor proposta.
+
+Pegadinha: A regra dos 70% é específica: concessão patrocinada em que mais de 70% da remuneração do parceiro privado seja paga pela Administração depende de autorização legislativa específica. Não aplique esse requisito automaticamente a toda PPP.
+
+Jurisprudência essencial: dispensável. A principal atualização cobrada vem da alteração legislativa que incluiu o diálogo competitivo.
+
+O que decorar: Licitação: concorrência OU diálogo competitivo. Consulta: 30 dias para sugestões; término pelo menos 7 dias antes do edital. Regra >70%: autorização legislativa específica na patrocinada.
+
+O que levar para a prova: Não memorize apenas a modalidade. A FCC pode criar alternativa correta na modalidade, mas errada ao dizer que consulta, impacto fiscal ou PPA são facultativos.
+
+☐ Check manual — domino a Sessão 07 sem depender do texto.
+
+SESSÃO 08
+
+Contrato de PPP: cláusulas essenciais, desempenho e financiabilidade
+
+Entenda primeiro
+
+O contrato é o “mapa de funcionamento” da PPP durante décadas. Por isso, a Lei 11.079 acrescenta às cláusulas típicas da concessão um conjunto de comandos sobre prazo, penalidades, riscos, remuneração, atualização, inadimplência pública, desempenho, garantias e bens reversíveis. Uma boa leitura de prova deve separar cláusulas obrigatórias de faculdades contratuais.
+
+Regra jurídica
+
+O art. 5º manda observar, no que couber, o art. 23 da Lei 8.987 e exige: prazo de 5 a 35 anos; penalidades proporcionais; repartição de riscos; formas de remuneração e atualização; preservação da atualidade do serviço; definição de inadimplência pecuniária pública e acionamento de garantias; critérios objetivos de desempenho; garantias de execução do parceiro privado; compartilhamento de ganhos econômicos efetivos por redução do risco de crédito; vistoria de bens reversíveis com possibilidade de retenção de pagamentos; e, quando houver aporte, cronograma e marcos. Atualizações automáticas por índices/fórmulas dispensam homologação, salvo rejeição fundamentada da Administração dentro do prazo legal de 15 dias após a fatura.
+
+Exemplo
+
+Uma PPP de iluminação pode prever índice de disponibilidade, tempo para reparar luminárias, consumo energético, nível de iluminação e penalidades. A remuneração pode cair se metas forem descumpridas. O contrato também define o que acontece se a Administração atrasar contraprestações e como garantias são acionadas.
+
+Compare
+
+A Lei 8.987 fornece a moldura de objeto, qualidade, fiscalização, direitos, penalidades, extinção, bens reversíveis, prestação de contas e solução de divergências. A Lei 11.079 adiciona o “DNA” da PPP: risco objetivo, contraprestação, performance, garantias e financiabilidade.
+
+Quadro 11 — cláusulas do contrato
+
+Bloco | O que deve aparecer
+Tempo | 5–35 anos e compatibilidade com amortização
+Riscos | Alocação objetiva dos eventos, inclusive extraordinários citados na lei
+Dinheiro | Remuneração, atualização, inadimplência e garantias
+Performance | Indicadores objetivos do parceiro privado
+Execução | Penalidades proporcionais e garantia de execução
+Ativos | Bens reversíveis, vistoria e retenção de valores para corrigir irregularidades
+Financiamento | Ganhos por redução de risco de crédito e mecanismos com financiadores quando previstos
+
+Como cai na prova
+
+A FCC pode perguntar qual cláusula é obrigatória. “Critérios objetivos de desempenho” e “repartição de riscos inclusive fortuito/força maior/fato do príncipe/álea extraordinária” são fortes candidatos. Também pode trocar a proporcionalidade das penalidades por sanção automática uniforme.
+
+Pegadinha: Não confunda garantia prestada pelo parceiro privado para execução do contrato com garantia oferecida pelo parceiro público para suas obrigações pecuniárias. São caixas distintas, tratadas em artigos diferentes.
+
+Jurisprudência essencial: dispensável para o rol legal. Mecanismos privados de solução de disputas, inclusive arbitragem no Brasil e em português, são autorizados pelo art. 11, III.
+
+O que decorar: Prazo, riscos, remuneração, inadimplência pública, desempenho, garantia privada e bens reversíveis formam o núcleo do art. 5º.
+
+O que levar para a prova: Pense no contrato de PPP como uma matriz de quatro colunas: obrigação → indicador → risco → consequência financeira.
+
+☐ Check manual — domino a Sessão 08 sem depender do texto.
+
+SESSÃO 09
+
+Contraprestação pública, remuneração variável e aporte de recursos
+
+Entenda primeiro
+
+Contraprestação é a remuneração devida pela Administração no regime de PPP. Ela não precisa ser apenas uma transferência bancária e pode ser desenhada para premiar disponibilidade e desempenho. A lei também prevê aporte de recursos para obras e bens reversíveis, instituto que não deve ser confundido com a contraprestação ordinária.
+
+Regra jurídica
+
+O art. 6º admite contraprestação por ordem bancária, cessão de créditos não tributários, outorga de direitos em face da Administração, outorga de direitos sobre bens públicos dominicais e outros meios admitidos em lei. O contrato pode prever remuneração variável vinculada ao desempenho, segundo metas e padrões de qualidade e disponibilidade. Regra do art. 7º: a contraprestação da Administração deve ser precedida da disponibilização do serviço. É permitido pagar a parcela fruível já disponibilizada. O aporte do art. 6º, §2º, pode financiar obras e aquisição de bens reversíveis e, se realizado na fase de investimentos, deve guardar proporcionalidade com as etapas efetivamente executadas.
+
+Exemplo
+
+Uma escola construída em PPP pode ter contraprestação mensal que só começa quando a unidade fica disponível segundo os critérios contratuais. Se apenas um bloco autônomo e fruível estiver entregue e o contrato o permitir, a Administração pode pagar a contraprestação correspondente àquela parcela. Um aporte autorizado para obra reversível pode ocorrer durante o investimento, mas segue marcos e proporcionalidade.
+
+Compare
+
+Contraprestação remunera a prestação/disponibilidade; aporte é mecanismo de recursos voltado, no art. 6º, §2º, a obras e aquisição de bens reversíveis. Em uma prova, misturar os dois leva a erro sobre o momento do pagamento. A regra de “serviço disponibilizado antes da contraprestação” não elimina o regime específico do aporte na fase de investimentos.
+
+Quadro 12 — remuneração fixa x variável por desempenho
+
+Modelo | Como funciona | Risco de prova
+Parcela básica/fixa contratual | Remunera disponibilidade conforme condições e medições | Não significa pagamento automático sem serviço disponível
+Parcela variável | Oscila conforme metas, qualidade e disponibilidade | A lei expressamente permite performance
+Desconto/abatimento | Pode decorrer do não atendimento de indicadores | Não é necessariamente penalidade autônoma; depende do desenho contratual
+
+Quadro 13 — contraprestação x aporte
+
+Ponto | Contraprestação | Aporte do art. 6º, §2º
+Função | Remunerar parceiro privado pela PPP | Recursos para obras/aquisição de bens reversíveis
+Momento | Precedida da disponibilização do serviço; parcela fruível pode ser paga | Pode ocorrer na fase de investimentos, proporcional às etapas executadas
+Autorização | Prevista no contrato e regime da PPP | Para contratos novos, deve estar autorizado no edital; regra histórica específica para contratos antigos
+Extinção | Segue acertos contratuais | Não gera indenização por investimento reversível não amortizado que foi custeado com o próprio aporte
+
+Como cai na prova
+
+FCC explora pagamento por parcela fruível, remuneração por desempenho e formas de contraprestação. Alternativas que afirmem “só é possível ordem bancária” ou “é proibido variar pagamento por performance” contrariam a lei.
+
+Pegadinha: Outro detalhe: na extinção, o parceiro privado não recebe indenização por parcelas ainda não amortizadas/depreciadas de investimentos em bens reversíveis quando esses investimentos foram realizados com valores do aporte do art. 6º, §2º. A prova pode tentar gerar indenização duplicada.
+
+Jurisprudência essencial: dispensável. O tema é legal e contratual.
+
+O que decorar: Contraprestação: art. 6º. Performance: art. 6º, §1º. Disponibilidade antes do pagamento: art. 7º. Parcela fruível: art. 7º, §1º. Aporte proporcional às etapas: art. 7º, §2º.
+
+O que levar para a prova: Quando a questão disser “pagamento antes de o serviço existir”, pergunte se está falando de contraprestação ou de aporte legalmente autorizado.
+
+☐ Check manual — domino a Sessão 09 sem depender do texto.
+
+SESSÃO 10
+
+Garantias públicas, garantia de execução privada e FGP
+
+Entenda primeiro
+
+PPP envolve compromissos financeiros de longo prazo. O parceiro privado e seus financiadores precisam avaliar o risco de inadimplemento público; a Administração, por sua vez, precisa proteger a execução contratual. A lei, por isso, trabalha com garantias em sentidos diferentes.
+
+Regra jurídica
+
+O art. 8º diz que obrigações pecuniárias da Administração poderão ser garantidas por: vinculação de receitas respeitando o art. 167, IV, da Constituição; fundos especiais previstos em lei; seguro-garantia com seguradoras não controladas pelo Poder Público; garantia por organismos internacionais ou instituições financeiras; fundo garantidor ou empresa estatal criada para essa finalidade; e outros mecanismos admitidos em lei. Já o art. 5º, VIII, exige que o parceiro privado preste garantias de execução suficientes e compatíveis com ônus e riscos. O edital deve especificar, quando houver, as garantias da contraprestação pública.
+
+Exemplo
+
+Se um projeto usa fundo garantidor para assegurar contraprestações do Estado, isso protege o fluxo do parceiro privado. Separadamente, a SPE pode prestar garantia de execução do contrato para proteger a Administração contra inadimplemento do privado. Uma garantia não substitui automaticamente a outra.
+
+Compare
+
+O Fundo Garantidor de PPP — FGP dos arts. 16 a 21 é um mecanismo federal específico, com patrimônio próprio e regras de acionamento. Não trate o FGP como se toda PPP, em qualquer ente, devesse obrigatoriamente usá-lo. O art. 8º apresenta um cardápio geral de mecanismos de garantia.
+
+Quadro 14 — garantia pública x garantia privada
+
+Critério | Garantia pública | Garantia do parceiro privado
+Protege quem | Parceiro privado/financiabilidade contra inadimplemento pecuniário público | Parceiro público contra inadimplemento de execução
+Base | Art. 8º e, se for o caso, mecanismos específicos como FGP | Art. 5º, VIII
+Natureza | Facultativa conforme modelagem (“poderão”) | Cláusula de garantia de execução prevista pela lei
+Exemplos | Receitas nos limites constitucionais, fundos, seguro-garantia, organismos/instituições financeiras, fundo garantidor | Garantia de execução compatível com riscos e ônus
+
+Quadro 15 — garantias do art. 8º
+
+Modalidade | Nota de prova
+Vinculação de receitas | Somente respeitando a limitação constitucional do art. 167, IV
+Fundo especial | Deve ser previsto em lei
+Seguro-garantia | Seguradora não controlada pelo Poder Público
+Organismo internacional/instituição financeira | Redação atual não repete a antiga restrição às instituições controladas
+Fundo garantidor/empresa estatal específica | Mecanismo legal de garantia
+Outros meios | Somente os admitidos em lei
+
+Como cai na prova
+
+Pegadinhas frequentes: dizer que as garantias públicas são obrigatórias em todos os contratos; proibir instituições financeiras públicas no inciso IV com base em redação antiga; ou dizer que o parceiro privado não presta garantia porque a PPP já possui SPE.
+
+Pegadinha: O inciso IV do art. 8º foi alterado em 2021: hoje fala em organismos internacionais ou instituições financeiras, sem repetir a antiga exigência de que a instituição financeira não fosse controlada pelo Poder Público. Já o seguro-garantia do inciso III continua referindo seguradoras não controladas pelo Poder Público.
+
+Jurisprudência essencial: dispensável para o rol. Questões constitucionais de vinculação de receitas exigem atenção ao art. 167, IV, mas a Lei 11.079 já remete expressamente a esse limite.
+
+O que decorar: Público: art. 8º, “poderão ser garantidas”. Privado: art. 5º, VIII, garantia de execução suficiente e compatível. FGP: mecanismo federal específico, não sinônimo de toda garantia de PPP.
+
+O que levar para a prova: Sempre pergunte: garantia de qual obrigação e em favor de quem? Isso elimina a maioria das alternativas enganosas.
+
+☐ Check manual — domino a Sessão 10 sem depender do texto.
+
+SESSÃO 11
+
+Sociedade de Propósito Específico (SPE): implantação, gestão e governança
+
+Entenda primeiro
+
+A SPE separa o projeto da estrutura societária geral dos investidores. Ela concentra ativos, obrigações, financiamento, contabilidade e governança da PPP, facilitando controle do desempenho e dos fluxos do empreendimento.
+
+Regra jurídica
+
+Antes da celebração do contrato, deverá ser constituída SPE incumbida de implantar e gerir o objeto da parceria. A transferência de controle depende de autorização expressa da Administração nos termos do edital e contrato, observada a Lei 8.987. A SPE pode assumir forma de companhia aberta, deve seguir padrões de governança corporativa e adotar contabilidade e demonstrações financeiras padronizadas. A Administração Pública não pode ser titular da maioria do capital votante. Exceção: instituição financeira controlada pelo Poder Público pode adquirir essa maioria em caso de inadimplemento de contratos de financiamento.
+
+Exemplo
+
+Um consórcio vence a licitação. Antes de assinar a PPP, os vencedores constituem uma sociedade destinada especificamente ao projeto. Essa SPE contrata financiamento, executa a implantação e opera o objeto. Se houver crise financeira, o contrato pode prever transferência de controle ou administração temporária aos financiadores/garantidores, com autorização e objetivo de reestruturação e continuidade.
+
+Compare
+
+SPE não é a mesma coisa que consórcio licitante. O consórcio pode disputar a licitação; a SPE é a pessoa jurídica constituída antes da celebração do contrato para implantar e gerir a parceria. Tampouco é empresa pública: a Administração não pode, como regra, deter maioria do capital votante.
+
+Quadro 16 — SPE x contratado comum
+
+Ponto | SPE da PPP | Contratado comum
+Constituição | Obrigatória antes da celebração do contrato de PPP | Não é requisito geral
+Finalidade | Implantar e gerir o objeto específico | Executar objeto conforme contrato, sem sociedade obrigatória específica
+Governança/contabilidade | Padrões legais específicos | Segue regime societário/contratual aplicável
+Controle societário | Transferência depende de autorização; maioria pública vedada, salvo exceção legal | Não existe a mesma regra geral da Lei 11.079
+
+Como cai na prova
+
+FCC já cobrou que a SPE pode ser companhia aberta e que deve observar padrões de governança e contabilidade padronizada. Alternativas que dizem “SPE só implanta, mas não gere” ou “transferência de controle é livre” estão erradas.
+
+Pegadinha: A exceção do art. 9º, §5º, é estreita: aquisição da maioria por instituição financeira controlada pelo Poder Público em caso de inadimplemento de financiamento. Não use essa exceção para afirmar que o Poder Público pode controlar ordinariamente a SPE desde o início.
+
+Jurisprudência essencial: dispensável. A cobrança é fortemente textual.
+
+O que decorar: SPE: antes do contrato; implanta e gere; governança; controle depende de autorização; Administração não tem maioria votante, salvo exceção financeira legal.
+
+O que levar para a prova: Associe SPE a duas palavras: segregação do projeto e financiabilidade.
+
+☐ Check manual — domino a Sessão 11 sem depender do texto.
+
+SESSÃO 12
+
+Responsabilidade fiscal, transparência e controle
+
+Entenda primeiro
+
+PPP produz obrigações por muitos exercícios. Por isso, a responsabilidade fiscal não aparece apenas na fase de pagamento: ela é requisito de estruturação, contratação e acompanhamento. O objetivo é impedir que um projeto de longo prazo esconda compromissos futuros fora do planejamento e das metas fiscais.
+
+Regra jurídica
+
+O art. 4º inclui responsabilidade fiscal e transparência como diretrizes. O art. 10 exige demonstração de que as despesas não afetarão metas fiscais ou serão compensadas, estimativa do impacto orçamentário-financeiro, declaração de compatibilidade com LDO/LOA, fluxo de recursos para toda vigência e previsão no PPA. A Secretaria do Tesouro Nacional edita normas de consolidação das contas. Para a União, o art. 22 estabelece limite próprio de 1% da RCL para as despesas continuadas do conjunto de PPPs, olhando o ano anterior e projeção dos dez anos seguintes. Já o art. 28 não é um limite geral que proíba automaticamente Estados e Municípios de contratar: ele condiciona garantia e transferências voluntárias da União quando o ente subnacional ultrapassa 5% da RCL nos critérios legais.
+
+Exemplo
+
+Um Estado pode ter projeto tecnicamente vantajoso, mas precisa demonstrar impacto e compatibilidade fiscal. Se suas despesas de PPP ultrapassam o patamar do art. 28, a consequência federal prevista é a impossibilidade de a União conceder garantia ou realizar transferência voluntária nas condições do dispositivo; não reescreva a norma como nulidade automática de qualquer PPP estadual.
+
+Compare
+
+O art. 22 é regra da União contratante: 1%. O art. 28 é regra sobre garantias e transferências voluntárias da União para entes subnacionais: 5%. Misturar 1% e 5% é pegadinha de alto nível.
+
+Quadro 17 — responsabilidade fiscal x execução contratual
+
+Fase | Controle fiscal/planejamento | Controle de execução
+Estruturação | Estudo, impacto, metas fiscais, LDO/LOA, PPA, fluxo de recursos | Definição de indicadores, matriz de riscos e fiscalização
+Licitação | Modelagem sustentável e transparente | Critérios objetivos de seleção
+Execução | Registro e consolidação das obrigações; monitoramento de limites | Medição de disponibilidade/desempenho, penalidades, garantias
+Longo prazo | Projeções e atualização quando necessário | Manutenção de qualidade, reversibilidade e continuidade
+
+Quadro 18 — limites fiscais que a prova pode trocar
+
+Dispositivo | Quem/objeto | Percentual
+Art. 22 | União: contratação de PPP e despesas continuadas do conjunto | 1% da RCL nos parâmetros legais
+Art. 28 | Garantia/transferência voluntária da União a Estado/DF/Município com despesas de PPP acima do limite | 5% da RCL nos parâmetros legais
+Art. 10 | Cada contratação: estudos e compatibilidade fiscal/orçamentária | Não é reduzido a um único percentual
+
+Como cai na prova
+
+A transparência também aparece no controle federal: o órgão gestor remete relatórios anuais de desempenho ao Congresso e TCU e os disponibiliza ao público, salvo informações sigilosas. Ministérios e agências fiscalizam contratos em suas competências e encaminham relatórios semestrais ao órgão gestor. Essas regras dos arts. 14 e 15 são federais; não as generalize mecanicamente para todos os entes.
+
+Pegadinha: Responsabilidade fiscal não transforma o parceiro privado em ordenador de despesa. A obrigação de planejamento e demonstração fiscal pertence ao Poder Público; o privado responde por execução, financiamento e riscos assumidos conforme o contrato.
+
+Jurisprudência essencial: dispensável para os limites legais aqui estudados.
+
+O que decorar: Art. 10 = filtros fiscais de cada contratação. Art. 22 = União, 1% RCL. Art. 28 = condicionamento de garantia/transferência voluntária federal a Estados/DF/Municípios, 5% RCL.
+
+O que levar para a prova: Quando aparecer percentual de RCL, identifique primeiro quem está sendo limitado e qual consequência a lei prevê.
+
+☐ Check manual — domino a Sessão 12 sem depender do texto.
+
+SESSÃO 13
+
+Intervenção, extinção, reversão e continuidade do serviço
+
+Entenda primeiro
+
+A Lei 11.079 não disciplina isoladamente todas as formas de encerramento de uma PPP. Ela conecta o regime às regras da Lei 8.987, especialmente para a concessão administrativa nos dispositivos indicados pelo art. 3º e para a patrocinada por aplicação subsidiária. Por isso, intervenção e extinção devem ser estudadas como ponte com o M9, sem reproduzir toda a Lei de Concessões.
+
+Regra jurídica
+
+A intervenção pode ser decretada pelo poder concedente para assegurar adequação do serviço e cumprimento das normas. O decreto designa interventor, prazo, objetivos e limites; em até 30 dias deve ser instaurado processo para apurar causas e responsabilidades, com ampla defesa; o procedimento deve terminar em até 180 dias, sob pena de invalidade. A Lei 8.987 lista extinção por advento do termo, encampação, caducidade, rescisão, anulação, falência/extinção da concessionária e hipótese da empresa individual. Extinta a concessão, há reversão dos bens, direitos e privilégios previstos, assunção imediata do serviço e apuração de indenizações quando cabíveis.
+
+Exemplo
+
+Se a concessionária passa a prestar serviço de modo gravemente inadequado, o poder concedente pode intervir para restabelecer a regularidade enquanto apura responsabilidades. Se o problema configura inadimplemento persistente, pode haver caducidade após processo com defesa. Se o Poder Público quer retomar o serviço por interesse público sem culpa da concessionária, a figura é encampação, que exige lei autorizativa específica e prévia indenização.
+
+Compare
+
+Caducidade decorre de inadimplemento da concessionária e não exige indenização prévia; a indenização cabível é calculada no processo com descontos. Encampação decorre de interesse público e exige lei específica + indenização prévia. Rescisão por iniciativa da concessionária em razão de descumprimento do poder concedente é judicial, e o serviço continua até decisão transitada em julgado segundo o art. 39.
+
+Quadro 19 — formas de extinção
+
+Forma | Causa central | Ponto decisivo
+Advento do termo | Fim do prazo | Reversão e indenização de investimentos reversíveis não amortizados nos termos legais
+Encampação | Interesse público | Lei autorizativa específica + prévio pagamento da indenização
+Caducidade | Inexecução/inadimplemento da concessionária | Processo administrativo + ampla defesa; decreto; sem indenização prévia
+Rescisão | Descumprimento pelo poder concedente, por iniciativa da concessionária | Ação judicial específica; continuidade até trânsito em julgado
+Anulação | Ilegalidade | Desfazimento por vício, com consequências patrimoniais conforme caso
+Falência/extinção | Desaparecimento/insolvência da concessionária | Assunção e continuidade do serviço
+
+Quadro 20 — intervenção x extinção
+
+Intervenção | Extinção
+Medida para assegurar adequação e cumprimento do contrato | Encerra o vínculo concessório
+Não extingue automaticamente a concessão | Produz reversão/assunção do serviço
+Decreto define interventor, prazo, objetivos e limites | Causa específica determina regime de indenização
+Processo em 30 dias; conclusão até 180 dias | Aplicam-se os ritos próprios de cada hipótese
+
+Como cai na prova
+
+A FCC adora trocar encampação e caducidade ou afirmar que a intervenção extingue automaticamente o contrato. Intervenção é medida temporária de gestão/fiscalização; pode cessar com devolução da administração se a concessão não for extinta.
+
+Pegadinha: No aporte do art. 6º, §2º, existe regra especial: na extinção, não há indenização das parcelas de investimentos reversíveis ainda não amortizadas quando realizadas com recursos do aporte. Isso evita dupla recuperação do mesmo investimento.
+
+Jurisprudência essencial: dispensável nesta camada. A literalidade dos arts. 32 a 39 da Lei 8.987 é suficiente para o padrão FCC do módulo.
+
+O que decorar: Intervenção: decreto + processo em 30 dias + conclusão em até 180. Extinção: termo, encampação, caducidade, rescisão, anulação, falência/extinção. Encampação = interesse público + lei + indenização prévia; caducidade = inadimplemento + processo.
+
+O que levar para a prova: Em questões de encerramento, identifique a causa antes de olhar a consequência.
+
+☐ Check manual — domino a Sessão 13 sem depender do texto.
+
+SESSÃO 14
+
+Integração final: quadro-mestre, método FCC e pontos de alta densidade
+
+Entenda primeiro
+
+Agora o objetivo é converter o módulo em decisões rápidas. Uma questão de PPP quase sempre pode ser resolvida localizando quatro eixos: modalidade, filtros legais, fluxo financeiro e risco/controle. A modalidade diz se a Administração é usuária e se há tarifa. Os filtros eliminam contratos abaixo de R$ 10 milhões, abaixo de 5 anos ou de objeto único vedado. O fluxo distingue tarifa, contraprestação, aporte e garantias. Risco/controle identifica quem suporta eventos, como o desempenho é medido e o que acontece em inadimplemento ou extinção.
+
+Regra jurídica
+
+Nenhum artigo deve ser estudado isoladamente: art. 2º classifica; arts. 4º e 5º dão princípios e cláusulas; arts. 6º a 8º tratam de dinheiro e garantias; art. 9º organiza a SPE; arts. 10 a 13 estruturam a licitação; arts. 22 e 28 trazem limites fiscais específicos; a Lei 8.987 completa serviço adequado, contrato, intervenção e extinção.
+
+Exemplo
+
+Diante de caso hipotético: uma rodovia de R$ 800 milhões, 25 anos, pedágio + contraprestação estatal, SPE, metas de disponibilidade e matriz de riscos. Classificação: patrocinada. Depois verifique licitação, consulta, responsabilidade fiscal, garantia e regra >70% se o enunciado fornecer a proporção. Diante de hospital de R$ 300 milhões, 20 anos, Administração pagando pela disponibilidade de infraestrutura e serviços de apoio, classificação provável: administrativa, desde que atividades exclusivas/finalísticas indelegáveis sejam preservadas conforme o caso.
+
+Compare
+
+Não compare institutos por um único elemento. Tarifa distingue patrocinada de administrativa apenas em conjunto com o conceito legal; obra pode existir nas duas; SPE existe em ambas; valor/prazo valem para ambas. Concessão comum pode ter longo prazo e grandes investimentos, mas não recebe contraprestação pecuniária pública caracterizadora da patrocinada.
+
+Quadro 21 — quadro-mestre
+
+Tema | Regra decisiva | Erro clássico
+Comum x patrocinada | Patrocinada acrescenta contraprestação pecuniária pública à tarifa | Dizer que toda concessão é PPP
+Administrativa | Administração usuária direta ou indireta | Tratar como mera obra/terceirização
+Valor/prazo | R$ 10 mi; 5–35 anos | Usar R$ 20 mi ou prazo mínimo de 10
+Objeto | Obra/equipamento podem integrar, mas não ser objeto único | Achar que PPP nunca pode ter obra
+Riscos | Repartição objetiva inclusive extraordinários citados | Atribuir automaticamente todos ao Estado
+Pagamento | Disponibilidade precede contraprestação; performance pode variar | Pagar integralmente antes de serviço disponível
+Garantias | Pública ≠ garantia de execução privada | Confundir beneficiário/obrigação
+SPE | Obrigatória antes do contrato | Confundir com consórcio
+Licitação | Concorrência ou diálogo competitivo | Responder “somente concorrência”
+Consulta | 30 dias; termina ≥7 dias antes do edital | Confundir com modalidade de licitação
+Fiscal | Art. 22: União 1%; art. 28: garantia/transferência federal e 5% subnacionais | Trocar percentuais e consequências
+Extinção | Causa define rito e indenização | Trocar encampação por caducidade
+
+Quadro 22 — parceiro público x parceiro privado
+
+Parceiro público | Parceiro privado
+Estrutura, autoriza, licita, fiscaliza e cumpre obrigações públicas | Investe/financia e executa obrigações contratadas por meio da SPE
+Pode prestar garantias de obrigações pecuniárias nos meios legais | Presta garantia de execução compatível com riscos
+Mantém funções exclusivas e poder de fiscalização | Não recebe titularidade do serviço nem funções exclusivas de Estado
+Paga contraprestação conforme disponibilidade/desempenho e contrato | Suporta riscos que lhe foram objetivamente alocados
+
+Como cai na prova
+
+Método FCC: procure palavras “somente”, “sempre”, “exclusivamente”, “qualquer”, “independentemente”. Muitas pegadinhas exageram uma regra verdadeira. A lei usa “poderá” para garantias públicas e remuneração variável, mas usa “deverá” para SPE antes do contrato e “será obrigatoriamente precedida” para a contraprestação em relação à disponibilização do serviço.
+
+Pegadinha: Evite decorar versões antigas: R$ 20 milhões; somente concorrência; proibição de instituição financeira pública no art. 8º, IV. O texto vigente é R$ 10 milhões; concorrência ou diálogo competitivo; inciso IV atualizado em 2021.
+
+Jurisprudência essencial: não é necessária para fechar o núcleo do M10. O ganho de prova vem de lei seca vigente e comparação conceitual.
+
+O que decorar: Trinca de ouro: 10–5–35; modalidades: patrocinada = tarifa + público, administrativa = Administração usuária; licitação: concorrência ou diálogo competitivo.
+
+O que levar para a prova: Na revisão final, não tente reler tudo. Use o quadro-mestre, os números, as pegadinhas e os artigos indicados.
+
+☐ Check manual — domino a Sessão 14 sem depender do texto.
+
+O que decorar
+
+1. PPP = concessão patrocinada ou administrativa; concessão comum sem contraprestação pecuniária pública não é PPP.
+
+2. Concessão patrocinada = tarifa do usuário + contraprestação pecuniária do parceiro público.
+
+3. Concessão administrativa = Administração usuária direta ou indireta, mesmo que haja obra ou fornecimento/instalação de bens.
+
+4. Piso: R$ 10 milhões. Prazo: mínimo 5 e máximo 35 anos, incluída eventual prorrogação.
+
+5. Objeto único vedado: mão de obra; fornecimento e instalação de equipamentos; execução de obra pública.
+
+6. Diretrizes: eficiência; direitos dos destinatários e privados; funções exclusivas indelegáveis; responsabilidade fiscal; transparência; riscos objetivos; sustentabilidade/vantagem socioeconômica.
+
+7. Riscos do contrato incluem caso fortuito, força maior, fato do príncipe e álea econômica extraordinária.
+
+8. Contraprestação pode assumir as formas do art. 6º; pode haver remuneração variável por desempenho.
+
+9. Contraprestação pública é precedida da disponibilização do serviço; parcela fruível pode ser paga; aporte na fase de investimento segue etapas executadas.
+
+10. Garantias públicas do art. 8º são possíveis; garantia de execução do parceiro privado é outra categoria.
+
+11. SPE é constituída antes do contrato, implanta e gere o objeto, segue governança e não pode ter maioria pública votante, salvo exceção financeira legal.
+
+12. Licitação: concorrência ou diálogo competitivo.
+
+13. Consulta pública: mínimo 30 dias para sugestões e término ao menos 7 dias antes do edital.
+
+14. Patrocinada com mais de 70% da remuneração do privado paga pela Administração exige autorização legislativa específica.
+
+15. União: art. 22 = 1% RCL nos critérios legais; art. 28 = 5% para efeito de garantia/transferência voluntária federal a entes subnacionais.
+
+16. Intervenção: decreto; processo em 30 dias; conclusão em até 180 dias.
+
+17. Encampação = interesse público + lei específica + indenização prévia. Caducidade = inadimplemento + processo e defesa.
+
+Artigos para ler no dia da prova
+
+Priorize os dispositivos abaixo. Os links são opcionais: o conteúdo do módulo funciona offline.
+
+Lei 11.079/2004 — arts. 2º a 5ºConceito, modalidades, vedações, diretrizes, prazo e cláusulas.Lei 11.079/2004 — arts. 6º a 9ºContraprestação, disponibilidade, garantias e SPE.Lei 11.079/2004 — arts. 10 a 13Fase preparatória, consulta, modalidade, julgamento e inversão.Lei 11.079/2004 — arts. 22, 25 e 28Responsabilidade fiscal e consolidação de contas.Lei 8.987/1995 — arts. 2º, 6º, 9º–11 e 23Concessão comum, serviço adequado, tarifa/equilíbrio e cláusulas.Lei 8.987/1995 — arts. 27 a 39Controle, intervenção e extinção aplicáveis nas conexões legais.CF/88 — art. 167, IVLimite constitucional relevante à vinculação de receitas como garantia.
+
+REVISÃO DE 5–10 MINUTOS
+
+PPP em 16 linhas
+
+1. Comece classificando: comum, patrocinada ou administrativa.
+
+2. Se há tarifa + contraprestação pública, a seta aponta para patrocinada.
+
+3. Se a Administração é usuária direta/indireta e a remuneração é pública, teste administrativa.
+
+4. Aplique o filtro 10–5–35 antes de avançar.
+
+5. Obra pode integrar a PPP; obra como objeto único não pode.
+
+6. Funções regulatórias, jurisdicionais, poder de polícia e outras exclusivas do Estado são indelegáveis.
+
+7. A matriz de riscos manda mais do que fórmulas genéricas sobre áleas.
+
+8. Desempenho pode alterar remuneração; disponibilidade precede contraprestação.
+
+9. Aporte não é sinônimo de contraprestação.
+
+10. Garantia pública e garantia privada protegem lados e obrigações diferentes.
+
+11. SPE vem antes da assinatura do contrato.
+
+12. Concorrência OU diálogo competitivo — não apenas concorrência.
+
+13. Consulta pública e licitação são etapas distintas.
+
+14. >70% é autorização legislativa específica apenas na hipótese legal da patrocinada.
+
+15. 1% e 5% pertencem a dispositivos e consequências diferentes.
+
+16. Encampação e caducidade têm causas e indenizações distintas.
+
+Fechamento: classifique a modalidade → aplique 10–5–35 → identifique contraprestação/aporte → leia matriz de riscos → confira licitação/SPE/fiscal → só então trate de extinção.
+
+30 erros que não posso cometer
+
+• Dizer que toda concessão é PPP.
+• Dizer que concessão comum sem contraprestação pecuniária pública é PPP.
+• Confundir concessão patrocinada com administrativa.
+• Trocar “Administração usuária direta ou indireta” por “usuário necessariamente paga tarifa”.
+• Usar R$ 20 milhões como piso atual.
+• Dizer que R$ 10 milhões exatos são proibidos.
+• Dizer que o prazo mínimo é 10 anos.
+• Somar prorrogação além do teto de 35 anos.
+• Dizer que PPP jamais pode envolver obra ou equipamentos.
+• Ignorar a expressão “objeto único” nas vedações.
+• Delegar regulação, função jurisdicional ou poder de polícia ao parceiro privado.
+• Afirmar que caso fortuito e força maior ficam sempre e necessariamente com o Estado.
+• Confundir contraprestação com aporte.
+• Permitir contraprestação integral antes da disponibilização do serviço.
+• Negar remuneração variável por desempenho.
+• Dizer que art. 8º torna garantias públicas obrigatórias em toda PPP.
+• Confundir garantia da Administração com garantia de execução do privado.
+• Dizer que o FGP é obrigatório em toda PPP de qualquer ente.
+• Dizer que a SPE é criada depois de assinado o contrato.
+• Dizer que a SPE apenas implanta, mas não gere o objeto.
+• Permitir transferência livre do controle da SPE sem autorização.
+• Dizer que a Administração pode ordinariamente deter maioria do capital votante da SPE.
+• Responder “somente concorrência” para a licitação atual.
+• Confundir consulta pública com diálogo competitivo.
+• Aplicar a regra de >70% a toda PPP.
+• Trocar art. 22 (1%) e art. 28 (5%).
+• Dizer que art. 28 anula automaticamente PPP estadual acima de 5%.
+• Confundir intervenção com extinção automática.
+• Trocar encampação e caducidade.
+• Esquecer a continuidade do serviço na rescisão judicial do art. 39 da Lei 8.987.
+
+10 QUESTÕES INTERNAS DE FIXAÇÃO — CONTEÚDO COMPLETO
+
+Questões autorais de fixação. Não substituem TEC, Anki, Lei em Dia nem questões de banca.
+
+Questão 1 — FÁCIL
+
+Enunciado. De acordo com a Lei 11.079/2004, parceria público-privada é:
+
+A) qualquer contrato de longa duração celebrado entre Administração e empresa privada.
+B) contrato administrativo de concessão, nas modalidades patrocinada ou administrativa.
+C) gênero que abrange concessão comum, permissão e autorização.
+D) contrato de gestão celebrado com entidade do terceiro setor.
+E) sociedade de propósito específico formada por capital público e privado.
+
+Gabarito: B.
+Explicação: o art. 2º fecha o conceito legal de PPP nas modalidades patrocinada e administrativa. Concessão comum sem a contraprestação pecuniária caracterizadora não é PPP.
+Dificuldade: FÁCIL.
+
+Questão 2 — FÁCIL
+
+Enunciado. Na concessão patrocinada, a estrutura remuneratória característica é:
+
+A) apenas tarifa dos usuários.
+B) apenas receitas alternativas.
+C) tarifa cobrada dos usuários somada à contraprestação pecuniária do parceiro público.
+D) exclusivamente aporte público para obras reversíveis.
+E) exclusivamente pagamento por disponibilidade sem tarifa.
+
+Gabarito: C.
+Explicação: a concessão patrocinada é concessão de serviço ou obra pública da Lei 8.987/1995 em que, além da tarifa dos usuários, existe contraprestação pecuniária do parceiro público.
+Dificuldade: FÁCIL.
+
+Questão 3 — FÁCIL
+
+Enunciado. Assinale a combinação compatível com os requisitos estruturais da PPP federal:
+
+A) R$ 8 milhões e 8 anos.
+B) R$ 10 milhões e 4 anos.
+C) R$ 10 milhões e 5 anos.
+D) R$ 9 milhões e 35 anos.
+E) R$ 25 milhões e 3 anos.
+
+Gabarito: C.
+Explicação: a lei veda contrato de PPP inferior a R$ 10 milhões e período de prestação inferior a 5 anos. O contrato pode ter de 5 a 35 anos, incluída eventual prorrogação.
+Dificuldade: FÁCIL.
+
+Questão 4 — FÁCIL
+
+Enunciado. A sociedade de propósito específico, na PPP:
+
+A) é facultativa e pode ser criada depois do contrato.
+B) deve ser constituída antes da celebração do contrato para implantar e gerir o objeto.
+C) deve ter obrigatoriamente maioria do capital votante da Administração.
+D) não pode assumir forma de companhia aberta.
+E) só existe na concessão patrocinada.
+
+Gabarito: B.
+Explicação: o art. 9º exige SPE antes do contrato, incumbida de implantar e gerir o objeto. A Administração, em regra, não pode ser titular da maioria do capital votante.
+Dificuldade: FÁCIL.
+
+Questão 5 — MÉDIA
+
+Enunciado. Um Estado pretende contratar, por 20 anos, empresa que construirá e manterá um complexo hospitalar, prestará serviços de apoio e disponibilizará a infraestrutura à rede pública. Não haverá cobrança de tarifa dos pacientes; a Administração remunerará a disponibilidade e o desempenho. Considerando apenas a classificação jurídica descrita, o modelo aponta para:
+
+A) concessão comum.
+B) permissão de serviço público.
+C) concessão patrocinada.
+D) concessão administrativa.
+E) contrato de obra pública, necessariamente.
+
+Gabarito: D.
+Explicação: na concessão administrativa, a Administração é usuária direta ou indireta. Obra e fornecimento de bens podem integrar o projeto; o que é vedado é serem o objeto único.
+Dificuldade: MÉDIA.
+
+Questão 6 — MÉDIA
+
+Enunciado. Sobre a consulta pública e a licitação da PPP, assinale a alternativa correta:
+
+A) a consulta substitui a licitação quando houver diálogo competitivo.
+B) a PPP somente pode ser licitada por concorrência.
+C) a consulta deve receber sugestões por pelo menos 30 dias e terminar pelo menos 7 dias antes da data prevista para o edital; a licitação pode ser por concorrência ou diálogo competitivo.
+D) a consulta só é exigida depois do edital.
+E) o prazo mínimo da consulta é de 15 dias.
+
+Gabarito: C.
+Explicação: o art. 10 exige consulta pública da minuta de edital e contrato com esses prazos e prevê concorrência ou diálogo competitivo. Consulta e licitação são fases distintas.
+Dificuldade: MÉDIA.
+
+Questão 7 — MÉDIA
+
+Enunciado. Em uma PPP, o contrato prevê remuneração variável conforme disponibilidade e qualidade. Também prevê aporte público para aquisição de bens reversíveis durante a fase de investimento. Essa modelagem:
+
+A) é incompatível, porque remuneração de PPP deve ser sempre fixa.
+B) é incompatível, porque aporte e contraprestação são juridicamente a mesma figura.
+C) pode ser compatível: remuneração variável por desempenho é admitida, e o aporte possui regime próprio, inclusive proporcionalidade às etapas executadas quando realizado durante a fase de investimentos.
+D) só seria possível em concessão comum.
+E) elimina a exigência de disponibilização do serviço para a contraprestação.
+
+Gabarito: C.
+Explicação: art. 6º admite remuneração variável por desempenho; o aporte é instituto diferente da contraprestação e, quando feito durante a fase de investimento, deve guardar proporcionalidade com as etapas efetivamente executadas.
+Dificuldade: MÉDIA.
+
+Questão 8 — MÉDIA
+
+Enunciado. Assinale a alternativa que diferencia corretamente as garantias na PPP:
+
+A) a garantia do art. 8º é prestada pelo parceiro privado para assegurar a execução.
+B) a garantia de execução privada serve para assegurar as obrigações pecuniárias do parceiro público.
+C) as obrigações pecuniárias do parceiro público podem ser garantidas pelos mecanismos do art. 8º, enquanto o parceiro privado deve prestar garantia de execução suficiente e compatível com os riscos, nos termos contratuais e legais.
+D) fundo garantidor é obrigatório em toda PPP.
+E) nenhuma garantia pode envolver instituição financeira.
+
+Gabarito: C.
+Explicação: são categorias diferentes: garantias do parceiro público protegem o fluxo de obrigações pecuniárias públicas; a garantia de execução protege o cumprimento das obrigações do parceiro privado.
+Dificuldade: MÉDIA.
+
+Questão 9 — DIFÍCIL
+
+Enunciado. Um projeto rodoviário de 30 anos, no valor de R$ 500 milhões, prevê pedágio e contraprestação pública. O edital estima que 75% da remuneração total do parceiro privado virá da Administração. A modelagem atende valor e prazo e não possui objeto único vedado. À luz da Lei 11.079/2004, é correto afirmar que:
+
+A) o contrato é concessão administrativa e dispensa autorização legislativa.
+B) o contrato é concessão patrocinada e, por superar 70% de remuneração paga pela Administração, exige autorização legislativa específica.
+C) o contrato é concessão comum, porque há pedágio.
+D) o percentual de 70% corresponde ao limite do art. 22 sobre RCL.
+E) PPP não admite remuneração pública superior à tarifária.
+
+Gabarito: B.
+Explicação: tarifa + contraprestação caracteriza concessão patrocinada. Quando mais de 70% da remuneração do parceiro privado for paga pela Administração, a contratação depende de autorização legislativa específica. Essa regra não se confunde com os limites fiscais de RCL.
+Dificuldade: DIFÍCIL.
+
+Questão 10 — DIFÍCIL
+
+Enunciado. Em contrato de PPP, determinado risco de aumento excepcional de custo foi expressamente alocado ao parceiro privado na matriz de riscos. Após o evento, o privado pede recomposição automática alegando tratar-se de álea extraordinária. Paralelamente, o ente público pretende pagar contraprestação integral antes de qualquer parcela do serviço estar disponível. A solução mais adequada é:
+
+A) reconhecer automaticamente o reequilíbrio e permitir pagamento antecipado, porque ambos decorrem da natureza de PPP.
+B) negar qualquer reequilíbrio possível e permitir pagamento antecipado se houver garantia pública.
+C) analisar a alocação contratual objetiva do risco antes de concluir sobre recomposição e impedir contraprestação integral antes da disponibilização do serviço, ressalvadas as regras próprias de aporte e parcela fruível.
+D) aplicar a regra de concessão comum e ignorar a matriz de riscos.
+E) extinguir o contrato por caducidade imediatamente.
+
+Gabarito: C.
+Explicação: a PPP exige repartição objetiva de riscos inclusive para eventos extraordinários; a consequência depende da matriz legal/contratual. Já a contraprestação é precedida da disponibilização do serviço, admitindo-se pagamento de parcela fruível e aporte em regime próprio.
+Dificuldade: DIFÍCIL.

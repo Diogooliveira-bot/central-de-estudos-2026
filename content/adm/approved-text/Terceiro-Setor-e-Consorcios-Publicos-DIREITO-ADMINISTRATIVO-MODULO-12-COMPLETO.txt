@@ -1,0 +1,1044 @@
+﻿Terceiro Setor e Consórcios Públicos
+DIREITO ADMINISTRATIVO · MÓDULO 12 · COMPLETO
+
+DIREITO ADMINISTRATIVO · M12 · FCC
+
+Terceiro Setor
+e Consórcios Públicos
+
+Visão comparativa completa — OS, OSCIP, Sistema S, fundações de apoio e Lei 11.107/2005.
+
+AnalistaLei vigente 18/09/2026OFFLINE
+
+Fontes: Lei 9.637/98; Lei 9.790/99; Lei 8.958/94; Lei 13.019/14 apenas como ponte; CF art. 241; Lei 11.107/05; Decreto 6.017/07; STF ADI 1.923; STF Tema 569; TCU. O PDF de consórcios do pacote foi fonte teórica principal, com correções de redações supervenientes de 2020 e 2023.
+
+ADM M12 — Terceiro Setor e Consórcios Públicos
+
+Central de Estudos — TJ-CE / Analista · FCC
+Modo: OFFLINE · pronto para integração futura · não publicado
+UID futuro da Central: adm-12-12-consorcios-e-terceiro-setor
+Fontes normativas conferidas: 18/09/2026.
+
+Como estudar este módulo: primeiro identifique quem é a entidade; depois pergunte se ela integra a Administração; em seguida associe a qualificação e o instrumento jurídico correto. Em consórcios, memorize a sequência protocolo → publicação → ratificação → contrato → estatutos e nunca confunda rateio com programa.
+
+---
+
+SESSÃO 01
+
+Terceiro Setor: mapa mental, natureza e entes paraestatais
+
+Entenda primeiro
+
+A expressão Terceiro Setor é doutrinária. Ela reúne, em sentido amplo, pessoas jurídicas privadas, sem finalidade lucrativa, que desenvolvem atividades de interesse público ou social, muitas vezes em colaboração com o Estado. A classificação didática clássica é:
+
+Setor | Núcleo | Lógica predominante | Exemplo
+Primeiro setor | Estado | finalidade pública, aparato estatal | União, Estado, Município, autarquia
+Segundo setor | mercado | atividade econômica e finalidade lucrativa | sociedade empresária privada
+Terceiro setor | sociedade civil organizada | atividade de interesse coletivo sem distribuição de lucro | associação qualificada como OS/OSCIP, fundação de apoio
+
+O ponto decisivo para prova é negativo: Terceiro Setor não é sinônimo de Administração Pública indireta. Uma entidade privada não passa a integrar a máquina estatal apenas porque recebe recursos públicos, celebra parceria, sofre controle ou executa atividade socialmente relevante.
+
+Regra jurídica
+
+OS, OSCIP, serviços sociais autônomos e fundações de apoio têm personalidade de direito privado. Há regimes legais e intensidades de controle diferentes, mas a colaboração não cria hierarquia administrativa com o órgão parceiro. O Poder Público fiscaliza a aplicação dos recursos e o cumprimento do ajuste nos limites legais; isso não converte a entidade privada em órgão público.
+
+A expressão ente paraestatal também é doutrinária e não possui definição legal única. Em sentido frequentemente usado em concursos, designa entidades privadas que atuam ao lado do Estado, colaborando com finalidades públicas. Parte da doutrina inclui nessa ideia serviços sociais autônomos, OS, OSCIP e fundações de apoio; outras classificações usam o termo em sentido mais restrito. Portanto, em questão conceitual, procure a descrição concreta do regime em vez de tratar “paraestatal” como categoria rígida.
+
+Exemplo
+
+Uma associação privada que administra equipamento cultural mediante vínculo de parceria continua privada. Receber verba pública e ser fiscalizada pelo Tribunal de Contas quanto a esses recursos não a transforma em autarquia.
+
+Compare
+
+Terceiro Setor | Administração Indireta
+entidades privadas colaboradoras | entidades administrativas do Estado
+não há, por regra, criação como pessoa administrativa estatal | integra formalmente a estrutura administrativa
+vínculo por qualificação, contrato, termo ou ajuste | vínculo institucional com o ente instituidor
+controle ligado ao regime da entidade e ao recurso/ajuste | controles próprios da Administração Pública
+
+Como a FCC costuma cobrar
+
+A FCC explora frases como “entidade paraestatal integra a Administração indireta” ou “o recebimento de contribuição pública transforma o Sistema S em entidade estatal”. A chave é separar natureza privada de incidência de controles públicos.
+
+Pegadinha: controle público não equivale a pertencimento à Administração.
+
+O que decorar
+
+Terceiro Setor = privado + sem fins lucrativos + interesse público/social + colaboração.
+Paraestatal = rótulo doutrinário variável; não confundir com Administração indireta.
+
+O que levar para a prova
+
+Antes de responder, pergunte: a lei criou uma pessoa administrativa ou apenas qualificou/disciplinou uma entidade privada? OS e OSCIP são qualificações concedidas a pessoas privadas já existentes.
+
+☐ Sessão revisada
+
+---
+
+SESSÃO 02
+
+Organização Social (OS): qualificação, áreas e governança
+
+Entenda primeiro
+
+Organização Social não é um novo tipo de pessoa jurídica. É uma qualificação que o Poder Executivo pode atribuir a pessoa jurídica de direito privado, sem fins lucrativos, que atue nas áreas previstas na Lei 9.637/1998 e cumpra seus requisitos.
+
+Regra jurídica
+
+A Lei 9.637/1998, art. 1º, admite qualificação para atividades de:
+
+• ensino;
+• pesquisa científica;
+• desenvolvimento tecnológico;
+• proteção e preservação do meio ambiente;
+• cultura;
+• saúde.
+
+A entidade deve ser sem fins lucrativos, reinvestindo seus excedentes na própria atividade, e o estatuto deve prever estrutura de direção e controle. Um traço marcante é o Conselho de Administração, com participação de representantes do Poder Público e da sociedade civil, dentro das faixas legais. A lei exige, entre outros pontos, publicação anual dos relatórios financeiros e de execução do contrato de gestão e regras de destinação patrimonial em caso de extinção ou desqualificação.
+
+A literalidade do art. 2º, II, prevê aprovação quanto à conveniência e oportunidade da qualificação pela autoridade supervisora. Em prova comparativa, isso distingue a OS da OSCIP, cuja qualificação legal é expressamente ato vinculado. Contudo, após o julgamento da ADI 1.923, o STF assentou que os procedimentos ligados à qualificação e às parcerias com OS devem observar publicidade, objetividade, impessoalidade e os princípios do art. 37 da Constituição. Logo, “há juízo de conveniência” não significa liberdade arbitrária.
+
+Governança essencial
+
+O Conselho de Administração exerce papel central. Entre as atribuições legais estão aprovar a proposta de contrato de gestão, o orçamento e programa de investimentos, fiscalizar metas, aprovar contas e relatórios e fixar remuneração dos membros da diretoria nos termos legais.
+
+Exemplo
+
+Uma associação sem fins lucrativos voltada à cultura pode preencher os requisitos legais e ser qualificada como OS. A qualificação não a cria: ela já existia como pessoa privada e passa a ostentar um título jurídico que permite o regime da Lei 9.637/1998.
+
+Compare — OS × entidade da Administração Indireta
+
+OS | Autarquia/fundação pública
+pessoa privada qualificada | pessoa administrativa estatal
+não nasce da qualificação como “ente público” | criada/autorizada no regime constitucional próprio
+contrato de gestão da Lei 9.637 | atuação por competência legal institucional
+empregados privados | regime de pessoal conforme natureza da entidade pública
+
+Como a FCC costuma cobrar
+
+A banca gosta de trocar OS = contrato de gestão por OSCIP = termo de parceria. Também cobra que a OS é privada e sem fins lucrativos, embora possa receber fomento público.
+
+Pegadinha: OS não é órgão, autarquia nem “empresa pública social”.
+
+O que decorar
+
+OS → Lei 9.637/98 → pessoa privada sem fins lucrativos → áreas do art. 1º → Conselho de Administração → contrato de gestão.
+
+O que levar para a prova
+
+Qualificação de OS e execução do contrato não podem ser tratadas como zona livre de princípios públicos; a ADI 1.923 impõe procedimento público, objetivo e impessoal.
+
+☐ Sessão revisada
+
+---
+
+SESSÃO 03
+
+OS: contrato de gestão, fomento, fiscalização e desqualificação
+
+Entenda primeiro
+
+Na Lei 9.637/1998, o contrato de gestão é o instrumento que liga o Poder Público à entidade qualificada como OS para formar parceria de fomento e execução nas áreas legais. Apesar do nome “contrato”, sua lógica é de colaboração e controle por resultados, não a simples compra de uma prestação em mercado.
+
+Regra jurídica
+
+O art. 5º define o contrato de gestão; o art. 6º determina que ele seja elaborado de comum acordo entre o órgão/entidade supervisora e a OS, discriminando atribuições, responsabilidades e obrigações. O art. 7º exige observância dos princípios de legalidade, impessoalidade, moralidade, publicidade e economicidade e prevê, entre outras cláusulas, programa de trabalho, metas, prazos e critérios objetivos de avaliação mediante indicadores de qualidade e produtividade.
+
+O fomento pode envolver recursos orçamentários e bens públicos necessários ao contrato. A Lei 9.637 também permite, nas condições legais, cessão especial de servidor público, preservado o ônus para a origem nos termos do art. 14. A OS deve editar e publicar regulamento próprio para compras e contratações feitas com recursos públicos no prazo previsto no art. 17.
+
+A execução é fiscalizada pelo órgão ou entidade supervisora. A OS apresenta relatório de execução com resultados e prestação de contas; comissão de avaliação analisa o cumprimento das metas. Havendo irregularidade, aplicam-se os mecanismos legais de controle, sem afastar Tribunal de Contas e Ministério Público dentro de suas competências.
+
+ADI 1.923 — ponto de prova
+
+O STF reconheceu a constitucionalidade do modelo das OS com interpretação conforme: procedimentos de qualificação, celebração e execução do ajuste e utilização dos recursos devem respeitar critérios públicos, objetivos e impessoais. A atuação privada não elimina o dever de transparência e controle quando há fomento estatal.
+
+Desqualificação
+
+A desqualificação pode ocorrer quando houver descumprimento das disposições do contrato de gestão. Deve ser precedida de processo administrativo com ampla defesa. A lei prevê consequências patrimoniais e responsabilização por danos, sem prejuízo de outras sanções cabíveis.
+
+Compare — contrato de gestão × termo de parceria
+
+Contrato de gestão | Termo de parceria
+Lei 9.637/98 | Lei 9.790/99
+instrumento típico da OS | instrumento típico da OSCIP
+fomento e execução nas áreas da Lei 9.637 | fomento e execução das finalidades do art. 3º da Lei 9.790
+metas e indicadores | metas, resultados, indicadores e prestação de contas
+
+Compare — contrato de gestão × MROSC
+
+No MROSC, os instrumentos centrais são termo de colaboração, termo de fomento e acordo de cooperação. A Lei 13.019/2014, art. 3º, exclui de suas exigências os contratos de gestão com OS que cumpram a Lei 9.637. Portanto, não substitua contrato de gestão por termo de colaboração/fomento.
+
+Pegadinha: o nome “contrato de gestão” também aparece em outro contexto jurídico (por exemplo, agência executiva). No regime das OS, a referência é a Lei 9.637/1998.
+
+O que decorar
+
+OS + Poder Público = contrato de gestão.
+Metas + indicadores + fiscalização de resultados.
+ADI 1.923 = publicidade + objetividade + impessoalidade.
+
+O que levar para a prova
+
+Se a alternativa diz “OS celebra termo de parceria”, desconfie imediatamente: esse é o instrumento típico da OSCIP.
+
+☐ Sessão revisada
+
+---
+
+SESSÃO 04
+
+OSCIP: qualificação, requisitos, finalidades e impedimentos
+
+Entenda primeiro
+
+A Organização da Sociedade Civil de Interesse Público (OSCIP) também é uma qualificação de pessoa jurídica de direito privado sem fins lucrativos. Seu regime federal está na Lei 9.790/1999.
+
+Regra jurídica
+
+A entidade deve estar constituída e em funcionamento regular há pelo menos 3 anos e cumprir os objetivos sociais e requisitos estatutários da lei. O art. 1º, §2º, é explícito: a outorga da qualificação é ato vinculado ao cumprimento dos requisitos legais.
+
+O pedido é dirigido ao Ministério da Justiça, com a documentação legal. A lei fixa prazo para decisão e emissão do certificado nos termos dos arts. 5º e 6º.
+
+Finalidades legais
+
+O art. 3º contempla um rol amplo de finalidades de interesse público, entre elas assistência social; cultura e patrimônio; educação e saúde gratuitas; segurança alimentar; proteção ambiental e desenvolvimento sustentável; voluntariado; desenvolvimento econômico/social e combate à pobreza; modelos socio-produtivos; promoção de direitos e assessoria jurídica gratuita; ética, cidadania, direitos humanos e democracia; estudos e pesquisas; tecnologias de mobilidade; e, após alteração de 2026, atividades de microcrédito, microcrédito produtivo orientado e microfinanças nos termos legais.
+
+Quem não pode ser OSCIP
+
+A lista do art. 2º é clássica de prova. Não se qualificam, entre outras, sociedades comerciais, sindicatos e entidades de classe, instituições religiosas voltadas exclusivamente à disseminação de crença, organizações partidárias, entidades de benefício mútuo restrito, empresas de planos de saúde, hospitais privados não gratuitos, escolas privadas não gratuitas, organizações sociais, cooperativas, fundações públicas, determinadas entidades privadas criadas por órgão/fundação pública e organizações creditícias vinculadas ao sistema financeiro. A lei recebeu atualização em 2026 para esclarecer que determinadas operações de microcrédito/microfinanças não impedem a qualificação.
+
+Estatuto e governança
+
+O estatuto deve prever princípios de legalidade, impessoalidade, moralidade, publicidade, economicidade e eficiência; mecanismos contra benefícios pessoais indevidos; conselho fiscal ou equivalente; destinação patrimonial; prestação de contas; e outras exigências do art. 4º. A lei admite remuneração de dirigentes que atuem efetivamente na gestão ou prestem serviços específicos, dentro dos parâmetros legais.
+
+Exemplo
+
+Uma associação privada sem fins lucrativos, existente há quatro anos, que promove educação gratuita e atende integralmente aos arts. 1º, 3º e 4º, poderá requerer qualificação. Satisfeitos os requisitos e ausentes impedimentos, a qualificação não é decidida por “preferência política”: a lei a estrutura como ato vinculado.
+
+Como a FCC costuma cobrar
+
+A banca costuma contrastar OS = qualificação com juízo de conveniência/oportunidade (sob princípios objetivos) e OSCIP = qualificação vinculada.
+
+Pegadinha: OS não pode ser qualificada simultaneamente como OSCIP, porque o art. 2º, IX, da Lei 9.790 a exclui expressamente.
+
+O que decorar
+
+OSCIP → Lei 9.790/99 → 3 anos → Ministério da Justiça → ato vinculado → termo de parceria.
+
+O que levar para a prova
+
+Em 2026, cuidado com materiais antigos: a Lei 9.790 foi alterada quanto a microcrédito/microfinanças. Use o texto vigente.
+
+☐ Sessão revisada
+
+---
+
+SESSÃO 05
+
+OSCIP: termo de parceria, controle e perda da qualificação
+
+Entenda primeiro
+
+O Termo de Parceria é o instrumento instituído pelo art. 9º da Lei 9.790/1999 para formar vínculo de cooperação entre Poder Público e OSCIP, com finalidade de fomento e execução das atividades de interesse público do art. 3º.
+
+Regra jurídica
+
+O instrumento é firmado de comum acordo e deve discriminar direitos, responsabilidades e obrigações. Antes de sua celebração, a lei prevê consulta aos Conselhos de Políticas Públicas existentes na área. As cláusulas essenciais incluem:
+
+• objeto e programa de trabalho;
+• metas e resultados com prazos;
+• critérios objetivos de avaliação e indicadores de resultado;
+• previsão de receitas e despesas;
+• obrigações de relatório e prestação de contas;
+• publicidade do extrato e da execução física e financeira.
+
+A execução é acompanhada pelo órgão público da área e pelos conselhos competentes. Os resultados são analisados por comissão de avaliação. Irregularidades na utilização de bens ou recursos públicos devem ser comunicadas aos órgãos de controle nos termos legais.
+
+A organização parceira deve publicar regulamento próprio de contratação para aplicação dos recursos públicos, observando os princípios da Lei 9.790.
+
+Perda da qualificação
+
+A qualificação pode ser perdida a pedido ou por decisão em processo administrativo ou judicial, com devido processo, contraditório e ampla defesa. A lei confere legitimidade ao cidadão, sem anonimato e com fundadas evidências de erro ou fraude, para requerer a perda nos termos do art. 8º.
+
+Compare — termo de parceria × colaboração/fomento
+
+| Termo de parceria | Termo de colaboração | Termo de fomento | |---|---|---|---| | Lei 9.790/99 | Lei 13.019/14 | Lei 13.019/14 | | OSCIP | OSC do MROSC | OSC do MROSC | | cooperação para finalidades do art. 3º | proposta da Administração + recursos | proposta da OSC + recursos | | regime especial | MROSC | MROSC |
+
+A Lei 13.019/2014, art. 3º, VI, exclui de suas exigências o termo de parceria com OSCIP celebrado conforme a Lei 9.790. Os regimes coexistem; não se fundem.
+
+Pegadinha: “OSCIP celebra contrato de gestão” está errado como regra de identificação do regime. O instrumento típico da OSCIP é o termo de parceria.
+
+O que decorar
+
+OSCIP + Poder Público = termo de parceria.
+Metas + indicadores + relatório + controle.
+Perda da qualificação exige devido processo.
+
+O que levar para a prova
+
+Se a questão trocar o nome dos instrumentos, resolva pelo “casamento”: OS—gestão; OSCIP—parceria; MROSC—colaboração/fomento/cooperação.
+
+☐ Sessão revisada
+
+---
+
+SESSÃO 06
+
+Sistema S e fundações de apoio
+
+Entenda primeiro — Sistema S
+
+Os serviços sociais autônomos, tradicionalmente associados ao Sistema S, são pessoas jurídicas de direito privado voltadas a atividades de interesse coletivo, formação profissional, assistência e promoção social, conforme as respectivas leis. Não integram a Administração direta nem indireta.
+
+São entidades de forte conexão pública: manejam contribuições parafiscais e recursos sujeitos a controle. Por isso, sua natureza privada não significa ausência de deveres de transparência e fiscalização.
+
+Controle e contratações no Sistema S
+
+A jurisprudência do TCU é consolidada no sentido de que os serviços sociais autônomos não se submetem à Lei 14.133/2021 como se fossem órgãos ou entidades da Administração, mas devem observar regulamentos próprios de contratação, devidamente publicados e alinhados aos princípios gerais da Administração e do processo competitivo. O TCU exerce controle externo porque há gestão de recursos públicos/parafiscais.
+
+O STF, no Tema 569 (RE 789.874), fixou que os integrantes do Sistema S não estão submetidos à exigência de concurso público do art. 37, II, para contratação de pessoal.
+
+Atualização 2026: a IN-TCU 104/2026 passou a estabelecer diretrizes específicas para o controle externo dos serviços sociais autônomos típicos integrantes do Sistema S, preservando sua natureza privada e autonomia administrativa, com fiscalização orientada aos resultados e à aplicação regular dos recursos.
+
+Pegadinha: “não faz concurso” não significa “não sofre controle”; “sofre TCU” não significa “integra a Administração indireta”.
+
+Entenda primeiro — fundações de apoio
+
+As fundações de apoio disciplinadas pela Lei 8.958/1994 são fundações de direito privado, sem fins lucrativos, criadas para apoiar projetos de ensino, pesquisa, extensão, desenvolvimento institucional, científico e tecnológico e estímulo à inovação, especialmente em relação a IFES e ICTs.
+
+Devem observar os princípios legais, fiscalização do Ministério Público, legislação trabalhista e credenciamento ministerial na forma da lei e do regulamento. Em ajustes que envolvam recursos públicos, adotam regulamento específico de aquisições e contratações; prestam contas aos financiadores e se submetem a controle de gestão e controle finalístico previstos na Lei 8.958.
+
+A relação de apoio não transforma a fundação em fundação pública. A fundação de apoio é privada; fundação pública é categoria da Administração indireta.
+
+Compare — fundação de apoio × fundação pública
+
+Fundação de apoio | Fundação pública
+direito privado, sem fins lucrativos, Lei 8.958 | entidade da Administração indireta
+apoia IFES/ICTs em projetos | exerce competências públicas institucionais
+fiscalização e credenciamento especiais | regime público próprio conforme sua natureza
+não vira estatal porque apoia universidade | integra a estrutura administrativa
+
+Como a FCC costuma cobrar
+
+Sistema S, OS e OSCIP costumam aparecer juntos como entidades privadas colaboradoras, mas com regimes jurídicos distintos. A resposta correta normalmente preserva duas ideias ao mesmo tempo: autonomia privada e incidência de controles pelo uso de recursos públicos.
+
+O que decorar
+
+Sistema S = serviço social autônomo, privado, fora da Administração, regulamento próprio + princípios + TCU, sem concurso do art. 37 II.
+Fundação de apoio = privada, Lei 8.958, apoio a IFES/ICT, não confundir com fundação pública.
+
+☐ Sessão revisada
+
+---
+
+SESSÃO 07
+
+Quadro mestre: OSC × OS × OSCIP × Sistema S × fundação de apoio
+
+Regra jurídica comparada
+
+“OSC” na Lei 13.019/2014 é categoria própria do MROSC e pode abranger entidades privadas sem fins lucrativos, determinadas cooperativas e organizações religiosas que executem projetos sociais nos termos do art. 2º. Neste M12, o MROSC aparece apenas como ponte: contratos de gestão com OS, termos de parceria com OSCIP e parcerias com serviços sociais autônomos estão entre as hipóteses em que a Lei 13.019 estabelece ressalvas/exclusões específicas no art. 3º.
+
+Critério | OSC / MROSC | OS | OSCIP | Sistema S | Fundação de apoio
+Natureza | privada, nas formas do art. 2º da Lei 13.019 | privada sem fins lucrativos | privada sem fins lucrativos | privada | fundação privada sem fins lucrativos
+Base | Lei 13.019/14 | Lei 9.637/98 | Lei 9.790/99 | leis próprias + CF + jurisprudência | Lei 8.958/94
+Integra Administração? | não, só por ser OSC | não | não | não | não
+Qualificação/título | não é o mesmo regime de OS/OSCIP | qualificação de OS | qualificação de OSCIP | regime legal próprio | credenciamento/regime de apoio
+Instrumento-chave | colaboração, fomento, cooperação | contrato de gestão | termo de parceria | ajustes conforme regime próprio | convênios/contratos de apoio
+Iniciativa do plano | colaboração: Administração; fomento: OSC | pactuação no contrato | programa pactuado | depende do ajuste | projeto apoiado
+Controle | MROSC + controle do recurso | metas, órgão supervisor, controles | órgão parceiro, conselhos, comissão, controles | TCU sobre recursos + regulamento próprio | MP, apoiada, financiador e controles legais
+Pessoal | privado conforme entidade | empregado privado; pode haver servidor cedido | privado | sem concurso art. 37 II (STF Tema 569) | legislação trabalhista
+Perda | não é “qualificação OS/OSCIP” | desqualificação | perda da qualificação | conforme lei própria | perda/não renovação de credenciamento conforme regime
+
+Doze comparações que precisam estar automáticas
+
+• Terceiro Setor × Administração Indireta: privado colaborador × estrutura estatal.
+• OS × OSCIP: Lei 9.637/gestão × Lei 9.790/parceria.
+• OS × OSC/MROSC: contrato de gestão × colaboração/fomento/cooperação.
+• OSCIP × OSC/MROSC: termo de parceria × instrumentos da Lei 13.019.
+• Contrato de gestão × termo de parceria: OS × OSCIP.
+• Contrato de gestão × colaboração/fomento: Lei 9.637 × Lei 13.019.
+• Sistema S × OS/OSCIP: serviço social autônomo de regime próprio × qualificações estatais de entidades privadas.
+• Fundação de apoio × fundação pública: privada de apoio × entidade da Administração indireta.
+
+Camada FCC
+
+Uma questão pode chamar todas essas entidades de “paraestatais” em sentido doutrinário amplo. Isso não autoriza concluir que tenham o mesmo instrumento, o mesmo modo de qualificação ou idêntico regime de compras e pessoal.
+
+Pegadinha: sem fins lucrativos não significa “sem receita” ou “sem remuneração de trabalho”. Significa que não há distribuição de resultados como lucro aos integrantes e que a destinação patrimonial/financeira segue a lei e o estatuto.
+
+O que decorar
+
+OS = GESTÃO. OSCIP = PARCERIA. MROSC = COLABORAÇÃO/FOMENTO/COOPERAÇÃO.
+
+☐ Sessão revisada
+
+---
+
+SESSÃO 08
+
+Consórcios Públicos: base constitucional, conceito, participantes e objetivos
+
+Entenda primeiro
+
+O art. 241 da Constituição manda União, Estados, Distrito Federal e Municípios disciplinarem por lei consórcios públicos e convênios de cooperação, autorizando a gestão associada de serviços públicos e a transferência total ou parcial de encargos, serviços, pessoal e bens essenciais à continuidade dos serviços transferidos.
+
+A Lei 11.107/2005 contém normas gerais; o Decreto 6.017/2007 regulamenta o regime federalmente.
+
+Conceito
+
+Pelo Decreto 6.017, consórcio público é a pessoa jurídica formada exclusivamente por entes da Federação para estabelecer relações de cooperação federativa e realizar objetivos de interesse comum. Pode assumir:
+
+• associação pública, pessoa jurídica de direito público, de natureza autárquica; ou
+• pessoa jurídica de direito privado sem fins econômicos.
+
+Consórcio público não é consórcio empresarial. Não é união ocasional de empresas para explorar um negócio; é instrumento de cooperação federativa entre entes políticos.
+
+Quem pode participar
+
+Podem participar União, Estados, DF e Municípios, inclusive em combinações entre espécies diferentes, observadas as limitações legais. Não existe requisito de “mesmo nível de governo”.
+
+Regra expressa muito cobrada: a União só participa de consórcio que inclua também todos os Estados em cujos territórios estejam os Municípios consorciados.
+
+O Decreto disciplina a área de atuação conforme a composição territorial e admite expressamente hipóteses com Municípios e Distrito Federal. Em consórcios que envolvam Estado e Municípios, a área está relacionada aos Municípios situados naquele Estado conforme as definições regulamentares.
+
+Objetivos
+
+Os entes definem os objetivos dentro de seus limites constitucionais. O Decreto exemplifica gestão associada, prestação de serviços e obras aos consorciados, compartilhamento de equipamentos e pessoal técnico, estudos, escolas de governo, meio ambiente, recursos hídricos, patrimônio, previdência, assistência técnica e desenvolvimento regional.
+
+O consórcio pode ter um ou vários objetivos, e um ente pode aderir a todos ou apenas a parte deles, conforme o ajuste.
+
+Exemplo
+
+Municípios vizinhos podem constituir consórcio para compartilhar estrutura de saúde ou resíduos; Estado e Municípios podem cooperar em objetivo comum dentro do desenho legal. A natureza federativa do consórcio não exige que todos os participantes estejam no mesmo “nível”.
+
+Compare — consórcio público × convênio de cooperação
+
+Consórcio público | Convênio de cooperação entre entes federados
+cria pessoa jurídica própria | é pacto entre entes, sem criar a mesma pessoa consorcial
+objetivos de cooperação federativa | autoriza gestão associada de serviços
+Lei 11.107 + Decreto 6.017 | CF 241 e regime legal aplicável
+pode celebrar vários instrumentos | base para gestão associada e contrato de programa quando cabível
+
+Camada FCC
+
+A banca pode afirmar que consórcio é formado “por entes da mesma espécie e do mesmo nível”. Errado. Também pode tentar incluir particulares como consorciados. Errado: o conceito legal exige entes da Federação.
+
+O que decorar
+
+CF 241 → cooperação federativa e gestão associada.
+Consórcio = pessoa jurídica formada exclusivamente por entes federativos.
+União + Municípios → todos os Estados respectivos também devem participar.
+
+☐ Sessão revisada
+
+---
+
+SESSÃO 09
+
+Personalidade jurídica do consórcio e consequências
+
+Entenda primeiro
+
+A Lei 11.107 oferece duas formas de personalidade. Essa escolha muda consequências relevantes, mas a lei aproximou ambos os modelos em vários pontos de direito público.
+
+Associação pública — direito público
+
+A associação pública adquire personalidade com a vigência das leis de ratificação do protocolo. A lei afirma expressamente que o consórcio de direito público integra a Administração indireta de todos os entes consorciados. O Código Civil inclui as associações públicas entre as pessoas jurídicas de direito público interno; o Decreto lhes atribui natureza autárquica.
+
+Consórcio de direito privado
+
+A forma privada é pessoa jurídica sem fins econômicos. A Lei 11.107 prevê aquisição da personalidade mediante requisitos da legislação civil; o Decreto 6.017 explicita a ratificação legal e o atendimento adicional aos requisitos civis.
+
+A literalidade da Lei 11.107 reserva a afirmação “integra a Administração indireta de todos os consorciados” ao consórcio de direito público. Para prova de lei seca, não estenda automaticamente essa frase ao consórcio privado.
+
+Regime comum relevante
+
+Desde a redação dada pela Lei 13.822/2019 ao art. 6º, §2º, o consórcio público, de direito público ou privado, observa normas de direito público quanto a:
+
+• licitação;
+• celebração de contratos;
+• prestação de contas;
+• admissão de pessoal.
+
+E o pessoal próprio do consórcio é regido pela CLT.
+
+A execução de receitas e despesas segue normas de direito financeiro aplicáveis às entidades públicas. Há controle contábil, operacional e patrimonial pelo Tribunal de Contas competente, sem prejuízo do controle decorrente dos contratos de rateio.
+
+Compare — associação pública × consórcio privado
+
+Associação pública | PJ de direito privado
+direito público, natureza autárquica | direito privado sem fins econômicos
+personalidade com vigência das leis de ratificação | ratificação + requisitos civis no desenho regulamentar
+integra expressamente a Administração indireta de todos | lei não reproduz essa afirmação expressa
+normas públicas de licitação, contratos, contas e pessoal | mesmas normas públicas nesses quatro pontos
+pessoal CLT | pessoal CLT
+
+Como a FCC costuma cobrar
+
+Um distrator frequente é dizer que somente o consórcio privado usa CLT. A redação atual do art. 6º, §2º, fala em consórcio de direito público ou privado.
+
+Pegadinha 2026: materiais antigos podem reproduzir a redação anterior do §2º, restrita à pessoa de direito privado. A redação vigente desde 2019 abrange as duas formas.
+
+O que decorar
+
+Público = associação pública = autárquica = indireta de todos.
+Público ou privado = licitação + contratos + contas + pessoal sob normas públicas; pessoal CLT.
+
+☐ Sessão revisada
+
+---
+
+SESSÃO 10
+
+Formação: protocolo → publicação → ratificação → contrato → estatutos
+
+Entenda primeiro
+
+A sequência é uma das partes mais cobradas da Lei 11.107. Grave como uma linha do tempo.
+
+1. Protocolo de intenções
+
+É o contrato preliminar subscrito pelos representantes legais dos entes interessados. Deve conter as cláusulas legais essenciais: denominação, finalidades, prazo, sede, entes possíveis, área de atuação, forma de personalidade, representação, assembleia, votos, eleição do representante legal, quadro/remuneração de empregados, contratações temporárias, condições de determinados ajustes, regras para gestão associada e direito de exigir cumprimento.
+
+O representante legal do consórcio deve ser Chefe do Poder Executivo de ente consorciado. A assembleia geral é a instância máxima; cada ente tem assegurado pelo menos um voto, embora o protocolo possa definir distribuição de votos.
+
+2. Publicação
+
+O protocolo deve ser publicado na imprensa oficial. O Decreto admite publicação resumida, desde que indique onde acessar o texto integral.
+
+3. Ratificação por lei
+
+O protocolo é ratificado mediante lei de cada ente que pretende consorciar-se. A ratificação pode conter reserva, desde que aceita na forma legal, resultando em consorciamento parcial ou condicional.
+
+Se o protocolo permitir, o contrato pode ser celebrado por apenas parte dos signatários, ficando aberta adesão posterior.
+
+Ratificação realizada após 2 anos da primeira subscrição depende de homologação dos demais subscritores ou, se o consórcio já existir, da assembleia geral.
+
+Há exceção importante: dispensa-se a ratificação para o ente que, antes de subscrever o protocolo, já tiver disciplinado por lei sua participação de modo a assumir as obrigações previstas.
+
+4. Contrato de consórcio público
+
+Com a ratificação, o protocolo converte-se no contrato constitutivo do consórcio. Não confunda o protocolo (fase preliminar) com o contrato já aperfeiçoado.
+
+5. Estatutos
+
+Os estatutos regulam organização e funcionamento dos órgãos do consórcio e são aprovados pela assembleia geral. Devem respeitar o contrato constitutivo; nos consórcios de direito público, produzem efeitos com a publicação prevista no Decreto.
+
+Compare — protocolo × contrato de consórcio
+
+Protocolo de intenções | Contrato de consórcio
+preliminar | constitutivo
+subscrito pelos interessados | resulta da ratificação legal
+deve ser publicado | consolida os participantes e obrigações
+ainda está no caminho de formação | consórcio é estruturado a partir dele
+
+Camada FCC
+
+A banca troca a ordem e diz que primeiro se cria a pessoa jurídica e depois se ratifica o protocolo. Errado. A lógica é exatamente a inversa.
+
+Pegadinha: “ratificação” não é ato da assembleia como regra; é aprovação por lei do protocolo. A assembleia aparece em situações específicas, como homologação tardia e governança.
+
+O que decorar
+
+P-P-R-C-E: Protocolo → Publicação → Ratificação → Contrato → Estatutos.
+
+☐ Sessão revisada
+
+---
+
+SESSÃO 11
+
+Gestão do consórcio, contrato de rateio, contratações e pessoal
+
+Entenda primeiro
+
+Depois de constituído, o consórcio precisa de regras para financiamento, prestação de serviços e pessoal. Aqui aparecem três instrumentos que a prova mistura: contrato com ente consorciado, contrato de rateio e contrato de programa.
+
+Contratação do consórcio pelo ente consorciado
+
+Para cumprir suas finalidades, o consórcio pode ser contratado pela Administração direta ou indireta dos entes consorciados com dispensa de licitação, nos termos do art. 2º, §1º, III, da Lei 11.107 e do Decreto. Esse ajuste não deve ser automaticamente chamado de “contrato de programa”: o programa tem função específica ligada à gestão associada de serviços públicos.
+
+Contrato de rateio
+
+É o instrumento pelo qual os entes consorciados se comprometem a fornecer recursos financeiros para as despesas do consórcio.
+
+Regras centrais:
+
+• os entes só entregam recursos financeiros ao consórcio por contrato de rateio;
+• ele é formalizado em cada exercício financeiro;
+• a vigência não supera a das dotações que o suportam, salvo a exceção atual para projetos consistentes em programas e ações contemplados no PPA;
+• recursos do rateio não podem financiar despesas genéricas;
+• consorciados, isolados ou em conjunto, e o próprio consórcio têm legitimidade para exigir cumprimento;
+• falta de dotação suficiente pode levar à exclusão do ente, após prévia suspensão e observância do regime legal.
+
+O consórcio deve fornecer informações para consolidação das despesas nas contas dos entes, em conexão com a responsabilidade fiscal.
+
+Pessoal
+
+O protocolo deve prever número, forma de provimento e remuneração dos empregos, além das hipóteses de contratação temporária. A admissão de pessoal observa normas de direito público e o vínculo é regido pela CLT.
+
+Entes consorciados ou conveniados podem ceder servidores na forma de suas legislações. O servidor cedido preserva o regime originário, conforme disciplina do Decreto; adicionais pagos na cessão não criam novo vínculo.
+
+Licitações e contratos
+
+Tanto o consórcio público de direito público quanto o de direito privado observa normas de direito público em licitações e contratos. O consórcio pode, se instituído para isso, realizar procedimentos compartilhados em benefício dos consorciados conforme a legislação vigente. Ao usar regras do Decreto que remetem à antiga Lei 8.666, faça a leitura atual em conjunto com o regime licitatório vigente, sem transportar automaticamente dispositivos revogados.
+
+Compare — rateio × contratação do consórcio
+
+Rateio | Contrato do consorciado com consórcio
+financia despesas do consórcio | remunera fornecimento/prestação específica ao ente
+cada exercício | conforme objeto e regime contratual
+transferência financeira institucional | contratação vinculada a uma prestação
+não serve para despesa genérica | preço/objeto deve ser individualizável
+
+O que decorar
+
+RATEIO = DINHEIRO PARA MANTER/EXECUTAR DESPESAS DO CONSÓRCIO.
+Pessoal próprio = CLT, com admissão submetida a normas públicas.
+
+☐ Sessão revisada
+
+---
+
+SESSÃO 12
+
+Gestão associada, convênio de cooperação e contrato de programa
+
+Entenda primeiro
+
+Gestão associada de serviços públicos é conceito mais amplo que “prestação conjunta”. Pelo Decreto, pode envolver planejamento, regulação ou fiscalização, acompanhados ou não da própria prestação e da transferência de encargos, serviços, pessoal e bens essenciais.
+
+Ela pode ser autorizada por:
+
+• consórcio público; ou
+• convênio de cooperação entre entes federados.
+
+Convênio de cooperação
+
+É pacto firmado exclusivamente por entes da Federação para autorizar gestão associada, desde que ratificado ou previamente disciplinado por lei de cada participante. Diferentemente do consórcio, ele não cria a pessoa jurídica consorcial.
+
+Contrato de programa
+
+É o instrumento que constitui e regula, como condição de validade, obrigações assumidas por ente federativo, inclusive por entidade de sua Administração indireta, perante outro ente ou consórcio no âmbito da gestão associada, quando haja prestação de serviços públicos ou transferência total/parcial de encargos, serviços, pessoal ou bens necessários à continuidade.
+
+O contrato deve observar legislação de concessões/permissões e regulação no que couber, garantir transparência econômico-financeira e, quando houver transferência, trazer cláusulas sobre encargos, responsabilidades, continuidade, pessoal, bens e reversão. É nula cláusula que atribua ao próprio prestador os poderes de planejamento, regulação e fiscalização do serviço que ele executa.
+
+Regra tradicional importante: o contrato de programa pode continuar vigente mesmo com a extinção do consórcio ou convênio que autorizou a gestão associada, sem prejuízo das alterações legislativas específicas.
+
+Saneamento — atualização indispensável
+
+Desde a Lei 14.026/2020, novos contratos de programa para prestação de serviços públicos de saneamento básico são vedados; aplica-se a disciplina do art. 175 da Constituição e do marco do saneamento. Contratos regulares preexistentes preservam o regime legal aplicável até seu termo, nos limites da legislação específica.
+
+Compare — contrato de rateio × contrato de programa
+
+Contrato de rateio | Contrato de programa
+recursos financeiros para despesas do consórcio | obrigações da gestão associada de serviço público
+ente consorciado ↔ consórcio | ente/entidade indireta ↔ ente ou consórcio
+lógica orçamentária-financeira | lógica de prestação/transferência de encargos e serviços
+anual, com regra de vigência própria | duração conforme serviço e ajuste
+
+Pegadinha avançada — “contrato de gestão” no Decreto 6.017
+
+O Decreto 6.017, ao definir contrato de gestão em seu art. 2º, XVIII, refere-se ao instrumento ligado a autarquia ou fundação qualificada como Agência Executiva, nos termos da Lei 9.649/1998. Não confunda essa definição regulamentar do capítulo dos consórcios com o contrato de gestão da OS disciplinado pela Lei 9.637/1998.
+
+O que decorar
+
+Programa = serviço público em gestão associada.
+Rateio = dinheiro.
+Convênio de cooperação = pacto entre entes; consórcio = pessoa jurídica.
+Saneamento: novos contratos de programa, não.
+
+☐ Sessão revisada
+
+---
+
+SESSÃO 13
+
+Responsabilidade, retirada, exclusão, alteração e extinção
+
+Responsabilidade — três planos diferentes
+
+1. Obrigações do consórcio durante sua existência: o Decreto 6.017 estabelece responsabilidade subsidiária dos entes consorciados pelas obrigações do consórcio.
+
+2. Gestores/dirigentes: a Lei 11.107 afirma que agentes incumbidos da gestão não respondem pessoalmente pelas obrigações contraídas pelo consórcio apenas por ocuparem a função. Respondem pelos atos praticados em desconformidade com a lei ou os estatutos; o Decreto também menciona decisão da assembleia geral.
+
+3. Obrigações remanescentes na extinção: até que se defina quem responde por cada obrigação, os entes consorciados respondem solidariamente pelas obrigações remanescentes, com direito de regresso contra beneficiados ou causadores.
+
+Essa distinção evita a armadilha “subsidiária ou solidária?”: depende do contexto.
+
+Retirada
+
+Nenhum ente pode ser obrigado a se consorciar ou permanecer consorciado. A retirada depende de ato formal do representante na assembleia geral, conforme previamente disciplinado por lei.
+
+Bens aportados só retornam automaticamente se houver previsão expressa no contrato ou instrumento de transferência/alienação. A retirada não prejudica obrigações já constituídas.
+
+Regra muito cobrada do Decreto: se o consórcio tiver apenas dois entes, a retirada de um implica a extinção do consórcio.
+
+Exclusão
+
+Exclusão exige justa causa e processo administrativo com contraditório e ampla defesa. A falta de dotação suficiente para obrigações de rateio é hipótese relevante, precedida de suspensão. O Decreto admite também outra hipótese se prevista no contrato, relacionada à adesão não autorizada a consórcio de finalidades conflitantes ou incompatíveis.
+
+Extinção — regra vigente
+
+A Lei 11.107, após a Lei 14.662/2023, separou extinção e alteração:
+
+• extinção (art. 12): instrumento aprovado pela assembleia geral e ratificado por lei por todos os entes consorciados;
+• alteração (art. 12-A): instrumento aprovado pela assembleia geral e ratificado por lei pela maioria dos entes consorciados.
+
+Correção de material antigo
+
+O texto do Decreto 6.017, art. 29, e materiais que o reproduzem ainda podem dizer que “alteração ou extinção” exigem ratificação por todos. Essa formulação ficou superada, quanto à alteração, pela Lei 14.662/2023. Para prova atual, prevalece a lei superveniente: extinção = todos; alteração = maioria.
+
+Também há materiais antigos reproduzindo regra revogada sobre atribuição de bens, direitos e encargos da gestão associada. O §1º do art. 12 da Lei 11.107 foi revogado pela Lei 14.026/2020. A regra vigente central é a responsabilidade solidária transitória pelas obrigações remanescentes do §2º.
+
+Obrigações existentes
+
+A retirada ou extinção do consórcio/convênio de cooperação não prejudica obrigações já constituídas. A extinção dos contratos depende do pagamento das indenizações eventualmente devidas.
+
+O que decorar
+
+Gestor não responde automaticamente.
+Durante o consórcio: entes subsidiários (Decreto).
+Após extinção, até definir responsáveis: solidariedade remanescente (Lei).
+Alterar = maioria; extinguir = todos.
+2 entes − 1 = extinção.
+
+☐ Sessão revisada
+
+---
+
+SESSÃO 14
+
+Camada FCC: comparações finais e pegadinhas de alto rendimento
+
+Quadro das 12 comparações obrigatórias
+
+Comparação | Distinção que resolve a questão
+Terceiro Setor × Administração Indireta | colaboração privada ≠ estrutura estatal
+OS × OSCIP | OS/Lei 9.637/gestão × OSCIP/Lei 9.790/parceria
+OS × OSC/MROSC | contrato de gestão × colaboração/fomento/cooperação
+OSCIP × OSC/MROSC | termo de parceria × instrumentos da Lei 13.019
+Contrato de gestão × termo de parceria | OS × OSCIP
+Contrato de gestão × colaboração/fomento | Lei 9.637 × Lei 13.019
+Sistema S × OS/OSCIP | serviço social autônomo de regime próprio × qualificações
+Fundação de apoio × fundação pública | privada de apoio × integrante da Administração indireta
+Associação pública × consórcio privado | direito público/autárquico/indireta × PJ privada sem fins econômicos
+Consórcio público × convênio de cooperação | pessoa jurídica × pacto federativo sem essa nova pessoa
+Protocolo × contrato de consórcio | preliminar publicado/ratificado × instrumento constitutivo
+Rateio × programa | financiamento das despesas × obrigações de gestão associada de serviço
+
+Vinte afirmações que a FCC poderia inverter
+
+• Terceiro Setor não integra automaticamente a Administração indireta.
+• OS e OSCIP são qualificações, não novos tipos societários.
+• OS usa contrato de gestão.
+• OSCIP usa termo de parceria.
+• OSCIP exige, em regra, 3 anos de constituição e funcionamento regular.
+• Qualificação de OSCIP é ato vinculado ao cumprimento dos requisitos.
+• A OS tem Conselho de Administração com desenho legal específico.
+• Sistema S é privado e não integra Administração indireta.
+• Sistema S não está sujeito a concurso do art. 37, II, segundo STF Tema 569.
+• Controle do TCU sobre Sistema S não muda sua natureza privada.
+• Fundação de apoio da Lei 8.958 é privada.
+• Consórcio público pode reunir entes de espécies diferentes.
+• União + Municípios exige participação dos Estados respectivos.
+• Associação pública integra a Administração indireta de todos os consorciados.
+• Consórcio público de direito público ou privado: pessoal CLT e normas públicas nos pontos do art. 6º, §2º.
+• Protocolo de intenções vem antes do contrato.
+• Rateio transfere recursos para despesas; programa disciplina gestão associada.
+• Retirada não extingue sempre o consórcio; se houver só dois entes, a retirada de um extingue.
+• Gestor não responde pessoalmente só porque o consórcio contraiu obrigação.
+• Desde 2023, alteração = maioria dos entes; extinção = todos.
+
+Mini-casos FCC
+
+Caso 1. Município afirma que uma associação virou “ente público” depois de qualificada como OS. Erro: a qualificação não altera a natureza privada.
+
+Caso 2. OSCIP qualificada cumpre requisitos e a Administração nega o título apenas por falta de conveniência. Problema: o art. 1º, §2º, define a qualificação como ato vinculado.
+
+Caso 3. Consórcio cobra de um Município valor genérico “para despesas futuras”, sem contrato de rateio anual. Erro: recursos financeiros dos consorciados seguem o contrato de rateio e não podem atender despesa genérica.
+
+Caso 4. Dois Municípios formam consórcio; um formaliza retirada válida. Resultado: pela regra do Decreto, a saída de um dos dois implica extinção.
+
+Caso 5. Assembleia aprova alteração contratual e apenas maioria dos entes ratifica por lei. Em 2026: a regra é compatível com o art. 12-A introduzido em 2023; materiais que exigem unanimidade para alteração estão desatualizados.
+
+O que levar para a prova
+
+Resolva por chaves:
+
+• entidade privada + qualificação + gestão → OS;
+• entidade privada + qualificação vinculada + parceria → OSCIP;
+• serviço social autônomo + contribuição parafiscal → Sistema S;
+• apoio a IFES/ICT → fundação de apoio;
+• cooperação entre entes + nova PJ → consórcio;
+• dinheiro do consorciado → rateio;
+• serviço em gestão associada → programa;
+• formação → P-P-R-C-E.
+
+☐ Sessão revisada
+
+---
+
+O QUE DECORAR — M12
+
+Terceiro Setor
+
+• Não integra, por si, Administração direta ou indireta.
+• “Paraestatal” é expressão doutrinária variável.
+• OS: Lei 9.637/98; privada; sem fins lucrativos; ensino, pesquisa, desenvolvimento tecnológico, meio ambiente, cultura e saúde; contrato de gestão; Conselho de Administração; metas/indicadores; desqualificação com processo.
+• ADI 1.923: procedimentos com OS devem respeitar publicidade, objetividade, impessoalidade e princípios constitucionais.
+• OSCIP: Lei 9.790/99; privada; sem fins lucrativos; mínimo de 3 anos; qualificação no Ministério da Justiça; ato vinculado; termo de parceria.
+• Sistema S: privado; fora da Administração; regulamentos próprios de contratação + princípios; controle do TCU; STF Tema 569 = sem concurso do art. 37, II.
+• Fundação de apoio: privada, sem fins lucrativos, Lei 8.958; apoio a IFES/ICT; credenciamento e controles próprios; não é fundação pública.
+• MROSC: colaboração = proposta da Administração + recursos; fomento = proposta da OSC + recursos; cooperação = sem transferência financeira. Não usar esses instrumentos no lugar de gestão/parceria dos regimes especiais.
+
+Consórcios Públicos
+
+• CF art. 241.
+• Pessoa jurídica formada exclusivamente por entes federativos.
+• União, Estado, DF, Município; não precisam estar no mesmo nível.
+• União só entra com Municípios se todos os Estados onde eles se situam também entrarem.
+• Duas formas: associação pública ou PJ privada sem fins econômicos.
+• Associação pública = direito público, natureza autárquica, Administração indireta de todos.
+• Direito público ou privado: normas públicas em licitação, contratos, contas e pessoal; pessoal CLT.
+• P-P-R-C-E: protocolo → publicação → ratificação → contrato → estatutos.
+• Ratificação após 2 anos → homologação na forma legal/regulamentar.
+• Ratificação dispensável se lei anterior já disciplinar a participação antes da subscrição.
+• Rateio: recursos financeiros, anual, sem despesa genérica.
+• Programa: obrigações de gestão associada de serviço público.
+• Saneamento: vedados novos contratos de programa.
+• Entes respondem subsidiariamente pelas obrigações do consórcio (Decreto); gestores só pessoalmente por atuação desconforme.
+• Retirada não apaga obrigações; com apenas 2 entes, a saída de um extingue.
+• Alteração do contrato: assembleia + lei pela maioria dos entes (art. 12-A, desde 2023).
+• Extinção: assembleia + lei por todos os entes (art. 12).
+• Após extinção, até definir cada responsável, entes respondem solidariamente por obrigações remanescentes, com regresso.
+
+---
+
+ARTIGOS PARA LER NO DIA DA PROVA
+
+Constituição
+
+• CF, art. 241 — consórcios públicos, convênios de cooperação e gestão associada.
+
+Lei 9.637/1998 — OS
+
+• arts. 1º e 2º — qualificação e requisitos;
+• arts. 3º e 4º — Conselho de Administração;
+• arts. 5º a 10 — contrato de gestão, fiscalização e controle;
+• arts. 11 a 17 — fomento, bens/servidores, desqualificação e regulamento de compras.
+
+Lei 9.790/1999 — OSCIP
+
+• arts. 1º a 4º — qualificação, impedimentos, finalidades e estatuto;
+• arts. 5º a 8º — procedimento e perda da qualificação;
+• arts. 9º a 15-B — termo de parceria, fiscalização e contas.
+
+Lei 13.019/2014 — apenas ponte com M11
+
+• art. 2º, I, VII, VIII e VIII-A — OSC e instrumentos;
+• art. 3º, III, VI e X — regimes especiais excluídos;
+• arts. 16 e 17 — colaboração e fomento.
+
+Lei 8.958/1994 — fundações de apoio
+
+• arts. 1º a 4º-D, com atenção aos arts. 2º, 3º e 3º-A.
+
+Lei 11.107/2005 — consórcios
+
+• arts. 1º a 6º — conceito, objetivos, protocolo, ratificação e personalidade;
+• arts. 7º a 10 — estatuto, rateio, contas e responsabilidade;
+• arts. 11, 12 e 12-A — retirada, extinção e alteração;
+• art. 13 — contrato de programa;
+• art. 14 — convênios da União com consórcios.
+
+Decreto 6.017/2007
+
+• art. 2º — definições;
+• arts. 3º a 9º — objetivos, protocolo, contrato, personalidade, estatuto e responsabilidade;
+• arts. 10 a 18 — gestão, rateio e contratação;
+• arts. 22 a 29 — pessoal, retirada/exclusão e regras regulamentares;
+• arts. 30 e seguintes — contrato de programa.
+
+Alerta de atualização: no conflito entre redação antiga do Decreto/material didático e a Lei 11.107 atualizada, prevalece a lei. Para 2026, memorize art. 12 (extinção = todos) e art. 12-A (alteração = maioria).
+
+---
+
+REVISÃO FINAL — 8 MINUTOS
+
+• Terceiro Setor é privado; colaboração não cria Administração indireta.
+• Paraestatal é expressão doutrinária flexível.
+• OS = Lei 9.637 + contrato de gestão.
+• OSCIP = Lei 9.790 + termo de parceria + qualificação vinculada + 3 anos.
+• MROSC = colaboração/fomento/cooperação, sem substituir OS/OSCIP.
+• Sistema S = privado + controle TCU + regulamento próprio + sem concurso do art. 37 II.
+• Fundação de apoio = privada + Lei 8.958 + apoio IFES/ICT.
+• CF 241 = consórcios/convênios/gestão associada.
+• Consórcio = só entes federativos.
+• Associação pública = autárquica + indireta de todos.
+• Ambas as personalidades: regras públicas de licitação/contratos/contas/pessoal; CLT.
+• P-P-R-C-E.
+• Rateio = dinheiro; programa = serviço.
+• Gestor não responde automaticamente.
+• Retirada preserva obrigações; dois entes e um sai = extinção.
+• Extinção = todos; alteração = maioria.
+• Saneamento = sem novos contratos de programa.
+• Material antigo de consórcios exige conferência de 2020/2023.
+
+---
+
+30 ERROS QUE NÃO POSSO COMETER
+
+• Dizer que Terceiro Setor é Administração indireta.
+• Dizer que OS é autarquia.
+• Dizer que OSCIP é órgão público.
+• Trocar contrato de gestão por termo de parceria.
+• Trocar termo de parceria por fomento/colaboração.
+• Esquecer os 3 anos da OSCIP.
+• Tratar qualificação da OSCIP como discricionária.
+• Ignorar a ADI 1.923 na seleção/controle de OS.
+• Afirmar que Sistema S integra Administração indireta.
+• Exigir concurso art. 37 II do Sistema S contra o Tema 569.
+• Dizer que Sistema S não sofre TCU.
+• Confundir fundação de apoio com fundação pública.
+• Tratar “paraestatal” como categoria legal fechada.
+• Colocar particular como consorciado.
+• Exigir entes do mesmo nível.
+• Esquecer a regra especial de participação da União.
+• Dizer que consórcio privado é com fins lucrativos.
+• Esquecer que associação pública integra a indireta de todos.
+• Aplicar a antiga redação do art. 6º §2º só ao consórcio privado.
+• Colocar estatuto antes do protocolo/ratificação.
+• Confundir protocolo de intenções com contrato já constituído.
+• Esquecer publicação do protocolo.
+• Achar que rateio pode cobrir despesa genérica.
+• Confundir rateio com programa.
+• Dizer que programa sempre morre com o consórcio.
+• Admitir novo contrato de programa para saneamento.
+• Impor responsabilidade pessoal automática ao gestor.
+• Dizer que qualquer retirada extingue o consórcio.
+• Usar regra antiga: alteração exige unanimidade.
+• Ignorar que extinção e alteração hoje têm quóruns legislativos diferentes.
+
+---
+
+FONTES NORMATIVAS E JURISPRUDENCIAIS ESSENCIAIS
+
+• Constituição Federal, art. 241.
+• Lei 9.637/1998 — Organizações Sociais.
+• STF, ADI 1.923 — parâmetros constitucionais do modelo de OS.
+• Lei 9.790/1999 — OSCIP, com alterações vigentes até 2026.
+• Lei 13.019/2014 — apenas comparações institucionais com MROSC.
+• Lei 8.958/1994 — fundações de apoio.
+• STF, Tema 569 (RE 789.874) — Sistema S e concurso público.
+• TCU — jurisprudência sobre Sistema S e IN-TCU 104/2026.
+• Lei 11.107/2005 — Consórcios Públicos, texto vigente.
+• Decreto 6.017/2007 — regulamentação, lida criticamente à luz das leis supervenientes.
+• Lei 14.026/2020 — alterações em saneamento/consórcios.
+• Lei 14.662/2023 — separação entre alteração e extinção do contrato de consórcio.
+
+10 QUESTÕES INTERNAS — CONTEÚDO COMPLETO
+
+Questões autorais de fixação interna. Elas não substituem TEC, Anki, Lei em Dia ou cadernos externos.
+
+Questão 1 — FÁCIL
+
+Uma associação privada sem fins lucrativos foi qualificada pelo Poder Público como Organização Social para atuar na área de cultura. Qual é o instrumento típico da Lei 9.637/1998 para formalizar a parceria de fomento e execução das atividades?
+
+A) Termo de colaboração B) Termo de parceria C) Contrato de gestão D) Contrato de programa E) Contrato de rateio
+
+Gabarito: C
+
+Explicação: Na Lei 9.637/1998, a OS se vincula ao Poder Público por contrato de gestão. Termo de parceria é típico da OSCIP; colaboração/fomento pertencem ao MROSC; rateio/programa pertencem aos consórcios.
+
+Questão 2 — FÁCIL
+
+Sobre a qualificação como OSCIP, assinale a alternativa correta.
+
+A) É ato discricionário e dispensa tempo mínimo de funcionamento. B) É ato vinculado e exige, em regra, ao menos 3 anos de funcionamento regular. C) É ato vinculado, mas só pode ser concedida a entidades já qualificadas como OS. D) É ato discricionário praticado pelo Tribunal de Contas. E) Cria nova pessoa jurídica integrante da Administração Indireta.
+
+Gabarito: B
+
+Explicação: A Lei 9.790/1999 exige no mínimo 3 anos de funcionamento regular e define a outorga da qualificação como ato vinculado ao cumprimento dos requisitos legais.
+
+Questão 3 — FÁCIL
+
+Quando o consórcio público é constituído como associação pública, ele:
+
+A) é pessoa jurídica privada e não integra a Administração Indireta. B) é pessoa jurídica de direito público, de natureza autárquica, e integra a Administração Indireta dos entes consorciados. C) não adquire personalidade jurídica própria. D) somente pode ser composto por Municípios. E) tem finalidade lucrativa.
+
+Gabarito: B
+
+Explicação: A associação pública é a forma de direito público do consórcio e integra a Administração Indireta de todos os entes consorciados.
+
+Questão 4 — FÁCIL
+
+Segundo o STF Tema 569, os serviços sociais autônomos integrantes do Sistema S:
+
+A) integram a Administração Indireta federal. B) devem contratar empregados por concurso público do art. 37, II. C) não se submetem à exigência de concurso público do art. 37, II, para contratação de empregados. D) não estão sujeitos a qualquer controle do TCU. E) devem aplicar integralmente a Lei 14.133/2021.
+
+Gabarito: C
+
+Explicação: O Tema 569 afastou a exigência de concurso do art. 37, II, para o Sistema S. Isso não elimina controles nem a observância de regulamentos próprios e princípios.
+
+Questão 5 — MÉDIA
+
+O Poder Público pretende escolher uma entidade para qualificá-la como OS e celebrar contrato de gestão. A autoridade afirma que, por haver juízo de conveniência e oportunidade na Lei 9.637/1998, pode decidir sem critérios previamente objetivos. À luz da ADI 1.923, essa afirmação é:
+
+A) correta, porque a qualificação é totalmente imune ao art. 37. B) correta apenas se não houver repasse de recursos públicos. C) incorreta, porque qualificação e celebração do contrato devem ser conduzidas de forma pública, objetiva e impessoal. D) incorreta porque OS somente pode ser criada por lei específica. E) correta porque o contrato de gestão é contrato administrativo comutativo comum.
+
+Gabarito: C
+
+Explicação: A ADI 1.923 preservou o modelo, mas submeteu qualificação e celebração do contrato de gestão a procedimento público, objetivo e impessoal, vedando arbitrariedade.
+
+Questão 6 — MÉDIA
+
+Uma fundação privada sem fins lucrativos, credenciada para apoiar uma universidade federal em projetos de pesquisa e inovação, foi descrita em questão como “fundação pública integrante da Administração Indireta”. O erro central está em:
+
+A) considerar que fundações privadas podem apoiar IFES. B) afirmar que a fundação de apoio é privada e sem fins lucrativos. C) confundir fundação de apoio da Lei 8.958/1994 com fundação pública. D) admitir fiscalização do Ministério Público. E) admitir credenciamento ministerial.
+
+Gabarito: C
+
+Explicação: A fundação de apoio é entidade privada sem fins lucrativos e não se transforma em fundação pública por apoiar IFES/ICT.
+
+Questão 7 — MÉDIA
+
+Quatro entes subscrevem protocolo de intenções. Um deles somente pretende ratificá-lo três anos depois. Em regra, a ratificação tardia:
+
+A) é proibida de modo absoluto. B) dispensa lei, pois o prazo de dois anos substitui a ratificação. C) depende de homologação na forma legal/regulamentar, além da ratificação por lei. D) transforma automaticamente o protocolo em contrato. E) exige unanimidade para qualquer alteração futura.
+
+Gabarito: C
+
+Explicação: A Lei 11.107/2005 prevê que ratificação realizada após dois anos da subscrição depende de homologação. A ratificação continua sendo legislativa, salvo a hipótese específica de lei anterior à subscrição que já discipline a participação.
+
+Questão 8 — MÉDIA
+
+Em um consórcio público, o Município A transfere recursos anuais para custear despesas específicas do consórcio; em outro ajuste, disciplina-se a prestação associada de determinado serviço público com transferência de encargos e bens. Os instrumentos correspondentes são, respectivamente:
+
+A) contrato de programa e contrato de rateio. B) termo de parceria e contrato de gestão. C) contrato de rateio e contrato de programa. D) convênio de cooperação e termo de fomento. E) contrato de gestão e contrato de programa.
+
+Gabarito: C
+
+Explicação: Rateio é o instrumento de transferência de recursos financeiros dos entes ao consórcio. Programa disciplina obrigações de gestão associada de serviços públicos.
+
+Questão 9 — DIFÍCIL
+
+A assembleia geral aprova alteração do contrato de consórcio e, meses depois, decide pela extinção. Quanto à ratificação legislativa e às obrigações remanescentes, assinale a correta.
+
+A) alteração e extinção exigem unanimidade; depois da extinção nunca há solidariedade. B) alteração exige maioria; extinção exige todos; após a extinção, até a definição dos responsáveis, os entes respondem solidariamente pelas obrigações remanescentes, com direito de regresso. C) alteração exige todos; extinção exige maioria; a responsabilidade residual é exclusivamente do representante legal. D) ambas dispensam ratificação por lei se aprovadas pela assembleia. E) alteração exige maioria e extinção maioria qualificada de dois terços, sem previsão de solidariedade.
+
+Gabarito: B
+
+Explicação: Após a Lei 14.662/2023, alteração = maioria dos entes; extinção = todos. O art. 12, §2º, prevê solidariedade temporária pelas obrigações remanescentes até definição dos responsáveis, com regresso.
+
+Questão 10 — DIFÍCIL
+
+Assinale a alternativa inteiramente correta sobre regimes próximos do M12.
+
+A) OS celebra termo de parceria; OSCIP celebra contrato de gestão; consórcio privado não observa normas públicas de admissão. B) OSCIP qualificada pode simultaneamente ser OS; Sistema S integra Administração Indireta; associação pública é privada. C) OS utiliza contrato de gestão; OSCIP utiliza termo de parceria; MROSC utiliza colaboração/fomento/cooperação; consórcios de direito público ou privado observam normas de direito público quanto à admissão de pessoal, cujo vínculo próprio é regido pela CLT. D) MROSC substitui obrigatoriamente os regimes de OS e OSCIP; consórcio de direito público emprega estatutários por imposição da Lei 11.107. E) Sistema S é autarquia corporativa; fundação de apoio é fundação pública; OSCIP dispensa três anos.
+
+Gabarito: C
+
+Explicação: A alternativa C combina corretamente os instrumentos e a redação atual do art. 6º, §2º, da Lei 11.107/2005.
+
+---

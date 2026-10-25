@@ -1,0 +1,1043 @@
+﻿Licitações — Gerais e Conceitos
+DIREITO ADMINISTRATIVO · MÓDULO 14 · COMPLETO
+
+DIREITO ADMINISTRATIVOMÓDULO 14
+
+Apostila de estudo · nível Analista
+
+Licitações — Gerais e Conceitos
+
+Base constitucional, objetivos, âmbito, princípios, governança, agentes e vocabulário essencial da Lei 14.133/2021 — sem invadir planejamento, procedimento, contratação direta ou contratos.
+
+Base conferida em 18/09/2026: Lei 14.133/2021 consolidada no Planalto; CF arts. 22, XXVII, e 37, XXI; LINDB; Lei 13.303/2016 para distinção das estatais. O PDF legal incluído no pacote foi usado como fonte normativa de trabalho e conferido contra a redação oficial vigente. Materiais da Biblioteca (15.pdf, caderno TJ-CE 2026 e baralho do M14) foram usados apenas para cobertura e padrão FCC.
+
+Como estudar este módulo
+
+Em cada questão, faça cinco perguntas: quem contrata? qual é o objeto? qual conceito legal? quem conduz? qual princípio ou objetivo está em jogo?
+
+sujeito→objeto→conceito→agente→regra
+
+Regra de ouro: na Lei 14.133/2021, primeiro identifique quem está sujeito à lei, depois qual é o objeto, quais princípios e objetivos governam a atuação, quem conduz a contratação e qual conceito legal está sendo usado. A FCC costuma manter quase toda a frase correta e trocar justamente um desses elementos.
+
+SESSÃO 01
+
+Conceito, base constitucional e objetivos
+
+Entenda primeiro
+
+Licitação é o processo administrativo de seleção pelo qual a Administração, respeitando a isonomia e a competição, busca uma proposta apta a produzir o resultado de contratação mais vantajoso. Não é sinônimo de contrato e não se resume a “escolher o menor preço”. A licitação organiza a disputa e a seleção; a contratação é a relação jurídica que pode surgir ao final do processo — ou, nas hipóteses legais, sem licitação, tema de módulo posterior.
+
+A Lei 14.133/2021 adota uma lógica de resultado. O foco não é apenas cumprir formalidades: o processo deve gerar valor público, considerar o ciclo de vida do objeto, preservar competição real, evitar preços inadequados e estimular inovação e desenvolvimento sustentável.
+
+Regra jurídica
+
+A Constituição, no art. 37, XXI, estabelece a regra da licitação para obras, serviços, compras e alienações, ressalvadas as hipóteses previstas em lei. O processo deve assegurar igualdade de condições aos concorrentes, preservar as condições efetivas da proposta quanto às obrigações de pagamento e admitir somente exigências de qualificação técnica e econômica indispensáveis ao cumprimento das obrigações.
+
+A competência para editar normas gerais de licitação e contratação é privativa da União (CF, art. 22, XXVII), sem impedir a edição de normas específicas pelos demais entes dentro de suas competências. A Lei 14.133/2021 exerce esse papel de norma geral para as Administrações Públicas que ela abrange.
+
+O art. 11 da Lei 14.133/2021 fixa quatro objetivos: (1) selecionar proposta apta a gerar o resultado de contratação mais vantajoso, inclusive quanto ao ciclo de vida; (2) assegurar isonomia e justa competição; (3) evitar sobrepreço, preços manifestamente inexequíveis e superfaturamento; (4) incentivar inovação e desenvolvimento nacional sustentável.
+
+Para prova, separe três ideias do inciso III: sobrepreço é preço orçado ou contratado expressivamente superior aos referenciais de mercado na forma da definição legal; preço manifestamente inexequível aponta para proposta sem viabilidade econômica de execução segundo as regras aplicáveis; superfaturamento envolve dano ao patrimônio da Administração na execução, em situações legalmente caracterizadas. Assim, preço alto, preço inviavelmente baixo e dano por execução superfaturada são problemas diferentes.
+
+Sobrepreço | Preço manifestamente inexequível | Superfaturamento
+Preço orçado/contratado expressivamente acima do referencial de mercado, conforme a definição legal. | Proposta cuja formação de preço não sustenta a execução segundo os parâmetros legais do caso. | Dano patrimonial na execução contratual, nas hipóteses caracterizadas pela lei.
+Pode existir antes de dano efetivo de execução. | Problema de viabilidade da proposta. | Pressupõe dano à Administração na execução.
+
+Exemplo
+
+Um equipamento custa R$ 100 mil e outro R$ 105 mil. O segundo consome muito menos energia, tem vida útil maior e manutenção mais barata. A Lei não autoriza concluir automaticamente que a proposta de R$ 100 mil é “a mais vantajosa” apenas pelo preço inicial: o resultado da contratação pode exigir consideração do ciclo de vida, conforme o modelo jurídico aplicável ao caso.
+
+Compare
+
+Licitação | Contratação
+Processo de seleção e disputa, quando exigido. | Relação jurídica voltada à obtenção de bem, serviço, obra ou outra utilidade.
+Busca proposta apta a gerar resultado mais vantajoso. | Materializa a necessidade administrativa e gera obrigações.
+Tem objetivos próprios no art. 11. | Pode decorrer de licitação ou de hipótese legal de contratação direta.
+Não é sinônimo de “contrato”. | É conceito mais amplo que a disputa licitatória.
+
+Objetivos do art. 11 | Princípios do art. 5º
+São resultados que o processo licitatório deve perseguir. | São vetores jurídicos que orientam aplicação e interpretação da lei.
+Ex.: resultado mais vantajoso; justa competição; evitar sobrepreço. | Ex.: planejamento, transparência, motivação, competitividade, economicidade.
+O rol está no art. 11. | O rol está no art. 5º.
+A FCC pode misturar os dois conjuntos. | Não transforme objetivo em “princípio expresso” sem conferir o art. 5º.
+
+Como cai na FCC
+
+A banca explora a troca entre menor preço e resultado mais vantajoso, entre objetivos e princípios, e entre licitação e contratação. Também gosta da literalidade constitucional: somente qualificações técnica e econômica indispensáveis podem ser exigidas.
+
+Pegadinha
+
+Pegadinha FCC: “A finalidade da licitação é sempre obter o menor preço.” Errado. A Lei fala em proposta apta a gerar o resultado de contratação mais vantajoso, inclusive quanto ao ciclo de vida do objeto.
+
+O que decorar
+
+• CF, art. 37, XXI: regra de licitar + igualdade + exigências de qualificação indispensáveis.
+• CF, art. 22, XXVII: União edita normas gerais.
+• Art. 11: vantagem + isonomia/justa competição + prevenção de preços inadequados/superfaturamento + inovação/desenvolvimento sustentável.
+
+O que levar para a prova
+
+Leve para a prova: “mais vantajoso” é mais amplo que “mais barato”; “justa competição” é objetivo expresso; “competitividade” é princípio expresso.
+
+Check manual: consigo explicar em 30 segundos a diferença entre licitação, contratação, objetivo e princípio.
+
+SESSÃO 02
+
+Âmbito de aplicação
+
+Entenda primeiro
+
+Antes de aplicar qualquer regra da Lei 14.133/2021, responda: quem está contratando? O art. 1º delimita os sujeitos alcançados. A lei é nacional como norma geral, mas isso não significa que toda pessoa ligada ao Estado se submeta integralmente ao seu regime.
+
+Regra jurídica
+
+A Lei 14.133/2021 aplica-se às Administrações Públicas diretas, autárquicas e fundacionais da União, dos Estados, do Distrito Federal e dos Municípios. Abrange também os órgãos dos Poderes Legislativo e Judiciário da União, Estados e DF, e os órgãos do Legislativo municipal, quando desempenham função administrativa. Inclui fundos especiais e demais entidades controladas direta ou indiretamente pela Administração Pública, observada a exclusão legal das empresas estatais submetidas à Lei 13.303/2016.
+
+No plano material, o art. 2º abrange, entre outros, alienação e concessão de direito real de uso, compra inclusive por encomenda, locação, concessão e permissão de uso de bens públicos, prestação de serviços — inclusive técnico-profissionais especializados —, obras e serviços de arquitetura e engenharia e contratações de tecnologia da informação e comunicação.
+
+Exemplo
+
+O Tribunal de Justiça compra computadores para suas unidades administrativas. Embora integre o Poder Judiciário, realiza atividade administrativa e, nessa contratação, está sujeito à Lei 14.133/2021. O mesmo raciocínio vale para assembleias legislativas e câmaras municipais quando contratam bens e serviços administrativos.
+
+Compare
+
+Situação | Regra do M14
+União, Estados, DF e Municípios — administração direta | Lei 14.133/2021.
+Autarquias e fundações públicas | Lei 14.133/2021.
+Legislativo/Judiciário em função administrativa | Lei 14.133/2021, conforme art. 1º.
+Fundos especiais | Abrangidos.
+Demais entidades controladas direta/indiretamente | Abrangidas, ressalvados regimes específicos e a regra das estatais.
+Empresa pública, sociedade de economia mista e subsidiária | Em regra, Lei 13.303/2016, não a Lei 14.133 integralmente.
+
+Administração Pública | Administração
+Conjunto definido no art. 6º, III: administração direta e indireta dos entes, inclusive entidades privadas sob controle público e fundações instituídas ou mantidas. | Órgão ou entidade por meio do qual a Administração Pública atua (art. 6º, IV).
+Conceito amplo de estrutura estatal abrangida pela definição legal. | É a unidade concreta que atua na situação.
+“A Administração Pública” pode designar o universo institucional. | “A Administração” aponta para o órgão ou entidade atuante.
+
+Órgão | Entidade
+Unidade de atuação integrante da estrutura da Administração Pública. | Unidade de atuação dotada de personalidade jurídica.
+Não tem personalidade jurídica própria por essa definição. | Tem personalidade jurídica.
+Ex.: secretaria, tribunal enquanto órgão, departamento. | Ex.: autarquia, fundação com personalidade própria.
+
+Como cai na FCC
+
+A banca frequentemente diz que a Lei 14.133 se aplica “somente ao Executivo” ou “somente à União”. Também inverte os conceitos de órgão e entidade e troca “Administração” por “Administração Pública”.
+
+Pegadinha
+
+Pegadinha FCC: órgãos do Judiciário não estão fora da Lei apenas por pertencerem a outro Poder. Quando exercem função administrativa, entram no âmbito do art. 1º.
+
+O que decorar
+
+• Direta + autárquica + fundacional de todos os entes.
+• Legislativo/Judiciário quando em função administrativa.
+• Órgão = sem personalidade própria; entidade = com personalidade jurídica.
+• Administração ≠ Administração Pública na definição do art. 6º.
+
+O que levar para a prova
+
+Leve para a prova: primeiro identifique o sujeito; só depois analise a regra de licitação. A natureza do Poder não afasta a lei quando há função administrativa.
+
+Check manual: consigo classificar cinco sujeitos diferentes sem confundir órgão, entidade e empresa estatal.
+
+SESSÃO 03
+
+Exclusões e regimes especiais
+
+Entenda primeiro
+
+“Não aplicar integralmente a Lei 14.133” pode decorrer de exclusão subjetiva, exclusão material ou regime especial de aplicação. Esses três fenômenos não são sinônimos.
+
+Regra jurídica
+
+O art. 1º, §1º, exclui do regime geral da Lei 14.133 as empresas públicas, sociedades de economia mista e suas subsidiárias, regidas pela Lei 13.303/2016, ressalvada a disposição expressa do art. 178 da Lei 14.133.
+
+O art. 3º dispõe que não se subordinam ao regime da Lei 14.133: (i) contratos de operação de crédito, interno ou externo, e de gestão da dívida pública, incluídas contratações de agente financeiro e concessão de garantia relacionadas; (ii) contratações sujeitas a normas previstas em legislação própria.
+
+Há ainda situações de adaptação: repartições públicas sediadas no exterior observam peculiaridades locais e princípios básicos da lei conforme regulamentação específica; contratações financiadas por organismos internacionais podem admitir condições específicas se presentes os requisitos legais; e a gestão das reservas internacionais do País segue ato normativo próprio do Banco Central, preservados os princípios do art. 37 da Constituição.
+
+A LC 123/2006 também aparece como regime complementar: a Lei 14.133 manda aplicar seus arts. 42 a 49 às licitações e contratos, com limites e condições do art. 4º da própria Lei 14.133. O M14 registra essa conexão sem aprofundar o tratamento favorecido.
+
+Exemplo
+
+Uma sociedade de economia mista estadual compra equipamentos. A afirmação “por ser controlada pelo Estado, aplica integralmente a Lei 14.133” é incorreta. A regra é a Lei 13.303/2016. Já uma autarquia estadual, em princípio, está diretamente no art. 1º da Lei 14.133.
+
+Compare
+
+Lei 14.133/2021 | Lei 13.303/2016
+Regra geral para administrações diretas, autárquicas e fundacionais e demais sujeitos do art. 1º. | Estatuto jurídico das empresas públicas e sociedades de economia mista, inclusive regras próprias de licitações e contratos.
+Empresas estatais são excluídas pelo art. 1º, §1º, salvo ressalva legal. | O art. 28 prevê licitação para contratos com terceiros segundo a própria Lei 13.303, ressalvadas suas hipóteses legais.
+Não deve ser aplicada integralmente à estatal por simples analogia. | É o ponto de partida para contratação da estatal.
+
+Categoria | Efeito
+Exclusão subjetiva | Determinado sujeito não segue o regime geral integral, como estatais.
+Exclusão material | Determinado tipo de contrato não se subordina à lei, como operação de crédito e gestão de dívida.
+Regime adaptado/especial | A lei ou seus princípios dialogam com regras específicas, como contratação no exterior ou financiamento internacional.
+
+Como cai na FCC
+
+Questões costumam misturar empresa pública com autarquia, ou dizer que a gestão de reservas internacionais segue normalmente todo o procedimento da Lei 14.133. Também aparece a ideia falsa de que recursos internacionais afastam automaticamente princípios constitucionais.
+
+Pegadinha
+
+Pegadinha FCC: “Toda entidade controlada pelo Poder Público aplica a Lei 14.133 da mesma forma.” Errado. O art. 1º deve ser lido com o §1º e com regimes próprios.
+
+O que decorar
+
+• Estatais: Lei 13.303/2016, em regra.
+• Art. 3º: operação de crédito/gestão da dívida + legislação própria.
+• Exterior/organismos internacionais/reservas: situações especiais, não uma “terra sem princípios”.
+
+O que levar para a prova
+
+Leve para a prova: diferencie “fora da lei” de “aplicação adaptada”. A FCC explora essa gradação.
+
+Check manual: consigo explicar por que autarquia e sociedade de economia mista recebem respostas diferentes.
+
+SESSÃO 04
+
+Princípios da Lei 14.133
+
+Entenda primeiro
+
+O art. 5º é um dos dispositivos mais literais e rentáveis em prova. Ele reúne princípios constitucionais clássicos e vetores próprios do sistema de contratações. Não basta decorar a lista; é preciso saber o papel de cada princípio e as trocas mais prováveis.
+
+Regra jurídica
+
+A Lei 14.133 determina a observância de 22 princípios expressos e, no mesmo dispositivo, manda observar as disposições da LINDB. Isso é relevante porque decisões administrativas e de controle em licitações continuam submetidas, entre outros, à lógica da consideração de consequências práticas (LINDB, art. 20), das dificuldades reais do gestor sem afastar direitos dos administrados (art. 22), da transição quando indispensável diante de orientação nova (art. 23) e da segurança jurídica na revisão de situações constituídas (art. 24). O M14 apenas faz essa ponte; a teoria completa da LINDB permanece no M7.
+
+Princípio | Ideia operacional para prova
+Legalidade | Atuação conforme o ordenamento e as competências conferidas.
+Impessoalidade | Vedação de favoritismos, perseguições e promoção pessoal.
+Moralidade | Conduta ética e juridicamente íntegra.
+Publicidade | Divulgação e cognoscibilidade dos atos, ressalvados sigilos legalmente protegidos.
+Eficiência | Melhor uso de recursos e organização da atuação.
+Interesse público | Finalidade pública da contratação.
+Probidade administrativa | Honestidade e integridade na atuação.
+Igualdade | Tratamento isonômico entre participantes em situações equivalentes.
+Planejamento | Contratação deve ser pensada e estruturada, não improvisada.
+Transparência | Informação clara, rastreável e acessível.
+Eficácia | Aptidão de alcançar a finalidade e os resultados pretendidos.
+Segregação de funções | Separação de funções sensíveis conforme riscos, para reduzir erro/fraude.
+Motivação | Explicitação dos fundamentos fáticos e jurídicos das decisões.
+Vinculação ao edital | Administração e licitantes se submetem às regras do instrumento convocatório.
+Julgamento objetivo | Avaliação por critérios previamente definidos, sem subjetivismo livre.
+Segurança jurídica | Estabilidade, previsibilidade e respeito a situações juridicamente protegidas.
+Razoabilidade | Adequação lógica e vedação de decisões absurdas ou desmedidas.
+Competitividade | Preservação de disputa efetiva e ampla dentro das exigências necessárias.
+Proporcionalidade | Medida adequada, necessária e equilibrada em relação ao fim.
+Celeridade | Tramitação sem demora indevida.
+Economicidade | Relação racional entre custos e benefícios; não é sinônimo de “menor preço a qualquer custo”.
+Desenvolvimento nacional sustentável | Contratação conectada a objetivos sustentáveis e de desenvolvimento nos limites legais.
+
+Exemplo
+
+Um edital exige certificação rara e sem relação demonstrada com o objeto. A exigência pode afetar legalidade, motivação, proporcionalidade, igualdade e competitividade. Os princípios funcionam em conjunto, não em compartimentos isolados.
+
+Compare
+
+Eficiência | Eficácia | Economicidade
+Relação entre meios, organização e produtividade. | Capacidade de alcançar o resultado/finalidade. | Relação custo-benefício e uso racional de recursos.
+Pergunta: “como fazer melhor?” | Pergunta: “o objetivo foi alcançado?” | Pergunta: “o resultado justifica o dispêndio?”
+
+Igualdade | Competitividade | Julgamento objetivo
+Tratamento isonômico. | Preservação de disputa real. | Aplicação de critérios definidos, sem arbítrio.
+Evita discriminação indevida. | Evita barreiras desnecessárias. | Evita escolha subjetiva fora das regras.
+
+Como cai na FCC
+
+A FCC tende a inserir na lista um valor plausível, porém não expresso no art. 5º, ou retirar princípios menos lembrados, como planejamento, eficácia, segregação de funções e desenvolvimento nacional sustentável.
+
+Pegadinha
+
+Pegadinha FCC: “planejamento é apenas etapa da fase preparatória, não princípio”. Errado: planejamento é princípio expresso do art. 5º. A fase de planejamento, estudada no M15, é outra coisa.
+
+O que decorar
+
+Decore a sequência por blocos: LIMPE (legalidade, impessoalidade, moralidade, publicidade, eficiência) + interesse público/probidade/igualdade + planejamento/transparência/eficácia/segregação + motivação/vinculação/julgamento + segurança/razoabilidade/competitividade/proporcionalidade/celeridade/economicidade/desenvolvimento sustentável.
+
+O que levar para a prova
+
+Leve para a prova: art. 5º é literal, mas a interpretação é sistêmica. A LINDB está expressamente conectada ao artigo.
+
+Check manual: consigo recitar os 22 princípios e diferenciar eficiência, eficácia e economicidade.
+
+SESSÃO 05
+
+Segregação de funções e governança
+
+Entenda primeiro
+
+Segregação de funções e governança são duas faces do controle da contratação. A primeira reduz riscos de concentração indevida de tarefas; a segunda organiza responsabilidade institucional para que as contratações entreguem resultados alinhados à estratégia pública.
+
+Regra jurídica
+
+O art. 7º, §1º, veda a designação do mesmo agente para atuação simultânea em funções mais suscetíveis a riscos, com o objetivo de reduzir a possibilidade de ocultação de erros e ocorrência de fraudes. Não existe na lei uma proibição abstrata de a mesma pessoa praticar qualquer par de atos; o desenho é orientado por risco.
+
+O art. 11, parágrafo único, atribui à alta administração a responsabilidade pela governança das contratações. Ela deve implementar processos e estruturas, inclusive gestão de riscos e controles internos, para avaliar, direcionar e monitorar processos licitatórios e contratos, buscar os objetivos do art. 11, promover ambiente íntegro e confiável, alinhar contratações ao planejamento estratégico e às leis orçamentárias e promover eficiência, efetividade e eficácia.
+
+Exemplo
+
+Se uma mesma pessoa requisita, define sozinha os requisitos, seleciona o fornecedor, atesta a entrega e autoriza pagamento, a concentração eleva riscos. A segregação exige desenho de responsabilidades compatível com os riscos, sem transformar o processo em burocracia sem propósito.
+
+Compare
+
+Segregação de funções | Governança das contratações
+Princípio expresso e regra operacional do art. 7º, §1º. | Responsabilidade institucional da alta administração no art. 11, parágrafo único.
+Foco: reduzir concentração de funções de risco, ocultação de erros e fraude. | Foco: avaliar, direcionar e monitorar para alcançar objetivos e integridade.
+Opera no desenho de papéis e controles. | Opera no sistema de decisão, estratégia, riscos e controles.
+Não significa multiplicar atos sem análise de risco. | Não significa transferir toda decisão cotidiana à autoridade máxima.
+
+Como cai na FCC
+
+A banca pode dizer que segregação é princípio “implícito”, quando é expresso, ou afirmar que a alta administração responde apenas pela homologação. O art. 11 lhe atribui governança muito mais ampla.
+
+Pegadinha
+
+Pegadinha FCC: segregação de funções não é sinônimo de “cada ato deve ser praticado por uma pessoa diferente”. A lei fala em atuação simultânea em funções mais suscetíveis a riscos.
+
+O que decorar
+
+• Art. 7º, §1º: risco → separação → reduzir ocultação de erros e fraude.
+• Art. 11, parágrafo único: alta administração → governança → riscos + controles + alinhamento + integridade + resultados.
+
+O que levar para a prova
+
+Leve para a prova: planejamento é princípio; governança é dever da alta administração; segregação é técnica de controle orientada a risco.
+
+Check manual: consigo explicar a diferença entre governança, gestão cotidiana e segregação de funções.
+
+SESSÃO 06
+
+Agentes públicos da contratação
+
+Entenda primeiro
+
+A Lei 14.133 trata a contratação como atividade profissional que exige competência, qualificação, independência e desenho de responsabilidades. Os arts. 7º a 10 formam o núcleo dos agentes públicos no M14.
+
+Regra jurídica
+
+A autoridade máxima do órgão ou entidade, ou quem as normas de organização indicarem, deve promover gestão por competências e designar agentes para funções essenciais. O art. 7º exige que sejam preferencialmente servidor efetivo ou empregado público dos quadros permanentes, tenham atribuições relacionadas a licitações e contratos ou formação/qualificação compatível, e não mantenham os vínculos pessoais/econômicos proibidos com licitantes ou contratados habituais.
+
+A palavra preferencialmente do art. 7º não deve ser confundida com a regra mais específica do art. 8º para o agente de contratação, que será escolhido entre servidores efetivos ou empregados públicos dos quadros permanentes. Os requisitos do caput do art. 7º e a segregação do §1º alcançam também os órgãos de assessoramento jurídico e controle interno, conforme §2º.
+
+No vocabulário do art. 6º, autoridade é o agente público dotado de poder de decisão; contratante é a pessoa jurídica integrante da Administração Pública responsável pela contratação; contratado é a pessoa física, jurídica ou consórcio de pessoas jurídicas signatário do contrato; e licitante é quem participa ou manifesta intenção de participar do processo, equiparando-se, para os fins legais, fornecedor ou prestador que apresenta proposta a pedido da Administração. A autoridade competente designa os agentes dentro da estrutura legal; a autoridade máxima também tem deveres de gestão por competências e governança, sem que isso transforme todos os atos da licitação em decisões pessoais dela.
+
+O art. 9º proíbe práticas que comprometam, restrinjam ou frustrem a competição; preferências por naturalidade, sede ou domicílio; exigências impertinentes; tratamento indevido entre empresas brasileiras e estrangeiras; e resistência injustificada ao andamento do processo. Também disciplina impedimentos e conflito de interesses do agente e de terceiros que auxiliem a contratação.
+
+O art. 10 prevê, sob condições legais, representação judicial ou extrajudicial pela advocacia pública às autoridades competentes e aos servidores públicos que tenham participado dos procedimentos e atuado em estrita observância de orientação constante de parecer jurídico elaborado na forma legal. A regra não se aplica quando provas de atos ilícitos dolosos constarem dos autos e pode alcançar a pessoa que já não ocupe o cargo, emprego ou função em que o ato foi praticado. Trata-se de regra de representação, não de imunidade material.
+
+Exemplo
+
+Um servidor tem formação compatível e experiência em licitações, mas é cônjuge de sócio de fornecedor habitual do órgão. A qualificação técnica não neutraliza a vedação de conflito prevista no art. 7º.
+
+Compare
+
+Regra geral do art. 7º | Regra específica do agente de contratação — art. 8º
+Agentes de funções essenciais: preferencialmente servidor efetivo ou empregado público permanente. | Agente de contratação: designado entre servidores efetivos ou empregados públicos dos quadros permanentes.
+Exige atribuição/formação/qualificação compatível. | Tem missão legal de condução até homologação.
+Exige prevenção de vínculos e conflitos. | Atua com equipe de apoio e responsabilidade própria.
+
+Como cai na FCC
+
+A FCC gosta da troca “preferencialmente” por “obrigatoriamente” no art. 7º — e do movimento inverso no art. 8º. Também cobra parentesco até o terceiro grau, além de vínculos técnicos, comerciais, econômicos, financeiros, trabalhistas e civis.
+
+Pegadinha
+
+Pegadinha FCC: a lei não cria imunidade para quem seguiu parecer jurídico. O art. 10 prevê representação jurídica em condições específicas; isso não equivale a excluir automaticamente responsabilidade.
+
+O que decorar
+
+• Gestão por competências.
+• Art. 7º: preferencialmente permanente + qualificação + ausência de vínculos proibidos.
+• Art. 9º: proteção da competição e vedações.
+• Art. 10: representação pela advocacia pública sob condições.
+
+O que levar para a prova
+
+Leve para a prova: artigos 7º a 10 formam um sistema: selecionar bem o agente + separar funções + impedir conflitos + definir condução + oferecer suporte institucional legítimo.
+
+Check manual: sei apontar as diferenças entre requisitos gerais dos agentes e requisito específico do agente de contratação.
+
+SESSÃO 07
+
+Agente de contratação, comissão e pregoeiro
+
+Entenda primeiro
+
+Essas três figuras não são intercambiáveis. O agente de contratação é a figura central de condução; a comissão de contratação é colegiada e atua nas hipóteses legais; o pregoeiro é a designação do agente responsável pela condução quando a modalidade é pregão.
+
+Regra jurídica
+
+O art. 6º, LX, define agente de contratação como a pessoa designada pela autoridade competente, entre servidores efetivos ou empregados públicos dos quadros permanentes, para tomar decisões, acompanhar o trâmite, impulsionar o procedimento e executar atividades necessárias ao bom andamento até a homologação. O art. 8º repete essa lógica e acrescenta a equipe de apoio.
+
+O agente responde individualmente pelos atos que pratica, salvo quando induzido a erro pela atuação da equipe de apoio. Em licitação envolvendo bens ou serviços especiais, observados os requisitos do art. 7º, pode ser substituído por comissão de contratação com no mínimo três membros. Nessa hipótese, os membros respondem solidariamente pelos atos da comissão, salvo o membro que registre divergência individual fundamentada em ata.
+
+A comissão de contratação, em sua definição legal, é conjunto de agentes públicos indicados em caráter permanente ou especial para receber, examinar e julgar documentos relativos às licitações e procedimentos auxiliares.
+
+No pregão, o agente responsável pela condução recebe a designação de pregoeiro. O detalhamento de modalidades pertence ao M16; aqui importa o vínculo conceitual.
+
+A lei ainda exige que regulamento discipline atuação do agente, equipe de apoio, comissão, fiscais e gestores, prevendo a possibilidade de apoio dos órgãos de assessoramento jurídico e controle interno. Para bens ou serviços especiais que não sejam rotineiramente contratados, o art. 8º, §4º, permite contratar por prazo determinado empresa ou profissional especializado para assessorar os agentes responsáveis pela condução. Esse assessoramento não transfere automaticamente a competência decisória.
+
+Exemplo
+
+Em aquisição de objeto especial, a Administração pode, quando a lei permitir, substituir o agente por comissão de três ou mais membros. Um membro que discorde de decisão deve registrar divergência fundamentada em ata para a ressalva de responsabilidade prevista na lei.
+
+Compare
+
+Figura | Composição | Núcleo da função | Responsabilidade destacada
+Agente de contratação | Individual | Conduzir, decidir, impulsionar e acompanhar até homologação. | Individual pelos próprios atos, salvo indução a erro pela equipe.
+Equipe de apoio | Auxiliar | Dar suporte ao agente. | Não substitui o papel decisório do agente.
+Comissão de contratação | Colegiada, mínimo de 3 na hipótese do art. 8º, §2º | Substitui o agente na hipótese legal e/ou exerce funções definidas na lei. | Solidariedade pelos atos da comissão, ressalvada divergência fundamentada registrada.
+Pregoeiro | Agente designado | Conduz o pregão. | É a denominação legal do agente responsável nessa modalidade.
+
+Como cai na FCC
+
+A banca troca “individual” por “solidária” no agente, elimina a exceção da indução a erro pela equipe ou afirma que comissão pode ter dois membros na hipótese do art. 8º, §2º. Outra armadilha: dizer que pregoeiro é órgão distinto do agente de contratação.
+
+Pegadinha
+
+Pegadinha FCC: equipe de apoio auxilia; não transforma a condução em decisão colegiada. Já a comissão é colegiada e tem regime próprio de responsabilidade.
+
+O que decorar
+
+• Agente: efetivo/empregado permanente; conduz até homologação.
+• Equipe: auxilia.
+• Comissão do art. 8º, §2º: mínimo 3; solidariedade; divergência fundamentada em ata.
+• Pregão: agente designado pregoeiro.
+
+O que levar para a prova
+
+Leve para a prova: pergunte sempre “quem decide?”, “quem apenas apoia?” e “a responsabilidade é individual ou colegiada?”.
+
+Check manual: consigo montar, de memória, a tabela agente × equipe × comissão × pregoeiro.
+
+SESSÃO 08
+
+Definições do art. 6º: objetos
+
+Entenda primeiro
+
+O art. 6º funciona como um dicionário legal. A FCC usa definições quase literais e altera uma palavra-chave. Neste bloco, organize os conceitos pelo tipo de objeto, em vez de decorar uma lista sem conexão.
+
+Regra jurídica
+
+Compra é aquisição remunerada de bens para fornecimento de uma só vez ou parceladamente. A compra é considerada imediata quando o prazo de entrega é de até 30 dias da ordem de fornecimento.
+
+Serviço é atividade ou conjunto de atividades destinado a obter determinada utilidade intelectual ou material de interesse da Administração.
+
+Obra é atividade privativa das profissões de arquiteto e engenheiro que implica intervenção no meio ambiente por conjunto harmônico de ações que forma um todo e inova o espaço físico da natureza ou acarreta alteração substancial das características originais de bem imóvel.
+
+Bens e serviços comuns têm padrões de desempenho e qualidade objetivamente definíveis pelo edital mediante especificações usuais de mercado. Especiais são os que, por alta heterogeneidade ou complexidade, não podem ser descritos dessa forma, exigindo justificativa prévia do contratante.
+
+A lei também define serviços e fornecimentos contínuos, serviços por escopo, serviços contínuos com dedicação exclusiva de mão de obra e serviços técnicos especializados de natureza predominantemente intelectual. Estes abrangem trabalhos relativos a: estudos técnicos, planejamentos e projetos; pareceres, perícias e avaliações; assessorias/consultorias técnicas e auditorias financeiras ou tributárias; fiscalização, supervisão e gerenciamento de obras e serviços; patrocínio ou defesa de causas judiciais e administrativas; treinamento e aperfeiçoamento de pessoal; restauração de obras de arte e bens de valor histórico; e controles de qualidade/tecnológico, análises, testes, ensaios, instrumentação, monitoramento e demais serviços de engenharia enquadráveis na definição legal. No M14, o objetivo é reconhecer a categoria; os reflexos procedimentais serão aprofundados depois.
+
+Ator legal | Definição nuclear do art. 6º
+Agente público | Pessoa que exerce mandato, cargo, emprego ou função em pessoa jurídica da Administração Pública por qualquer forma de investidura/vínculo prevista na definição.
+Autoridade | Agente público dotado de poder de decisão.
+Licitante | Quem participa ou manifesta intenção de participar; inclui a equiparação legal do fornecedor/prestador que oferece proposta a pedido da Administração.
+Contratante | Pessoa jurídica integrante da Administração Pública responsável pela contratação.
+Contratado | Pessoa física, jurídica ou consórcio de pessoas jurídicas signatário do contrato com a Administração.
+
+Exemplo
+
+Compra de resmas de papel com especificações usuais de mercado tende a ser bem comum. Já um objeto de alta complexidade, cuja qualidade não possa ser objetivamente descrita por especificações usuais, pode ser especial — mas essa classificação exige justificativa, não mero rótulo do órgão.
+
+Compare
+
+Compra | Serviço | Obra
+Aquisição remunerada de bens. | Atividade para obter utilidade intelectual ou material. | Atividade privativa de arquitetura/engenharia com intervenção que inova espaço físico ou altera substancialmente imóvel.
+Pode ser de uma só vez ou parcelada. | Pode assumir várias categorias legais. | Exige os elementos materiais do art. 6º, XII.
+Compra imediata: entrega até 30 dias da ordem. | Não se confunde com fornecimento de bem só porque existe resultado material. | Não se confunde com todo serviço de engenharia.
+
+Serviço contínuo | Serviço por escopo
+Atende necessidade permanente ou prolongada da Administração. | Prestação específica em período predeterminado.
+A continuidade decorre da necessidade administrativa. | Pode ser prorrogado justificadamente pelo prazo necessário à conclusão do objeto.
+
+Como cai na FCC
+
+Questões literais substituem “30 dias da ordem de fornecimento” por 60/90 dias ou pela assinatura do contrato. Também dizem que obra é qualquer atividade de engenharia, ignorando os requisitos de inovação/alteração substancial.
+
+Pegadinha
+
+Pegadinha FCC: “compra imediata” é definição legal própria. Não trate expressões coloquiais como “pronta entrega” como sinônimos automáticos sem verificar o dispositivo aplicável. Para o art. 6º, X, memorize até 30 dias da ordem de fornecimento.
+
+O que decorar
+
+• Compra = bem; serviço = utilidade; obra = engenharia/arquitetura + intervenção qualificada.
+• Imediata = 30 dias da ordem.
+• Comum = descrição objetiva por especificações usuais.
+• Especial = alta heterogeneidade/complexidade + justificativa prévia.
+
+O que levar para a prova
+
+Leve para a prova: em definição legal, uma palavra muda o gabarito. Leia como se fosse fórmula.
+
+Check manual: consigo identificar compra, serviço e obra e dizer o prazo exato de compra imediata.
+
+SESSÃO 09
+
+Bens e serviços comuns × especiais
+
+Entenda primeiro
+
+“Comum” não significa simples, barato ou rotineiro. “Especial” não significa necessariamente caro. O critério legal é a possibilidade de definir objetivamente padrões de desempenho e qualidade por especificações usuais de mercado.
+
+Regra jurídica
+
+Comum é o objeto cujos padrões podem ser definidos objetivamente pelo edital por especificações usuais de mercado. Especial é o objeto que, por alta heterogeneidade ou complexidade, não pode ser descrito dessa forma; a classificação especial exige justificativa prévia do contratante.
+
+A classificação influencia escolhas posteriores do procedimento e da modalidade, mas o detalhamento fica no M16. Para M14 basta compreender que a categoria decorre das características do objeto, e não da vontade livre do gestor.
+
+Exemplo
+
+Um equipamento de informática pode ser tecnicamente sofisticado e, mesmo assim, ser comum se o mercado oferece parâmetros objetivos e usuais para especificá-lo. Em contraste, uma solução altamente customizada e heterogênea pode ser especial, desde que a Administração justifique a impossibilidade de descrição comum.
+
+Compare
+
+Comum | Especial
+Padrões objetivamente definíveis. | Alta heterogeneidade ou complexidade impede descrição na forma de comum.
+Usa especificações usuais de mercado. | Exige justificativa prévia do contratante.
+Não equivale a “objeto barato/simples”. | Não equivale automaticamente a “objeto caro”.
+Pode incluir serviço comum de engenharia. | Pode incluir serviço especial de engenharia.
+
+Como cai na FCC
+
+A banca costuma inverter a definição: “especial é o que pode ser objetivamente definido pelo edital”. Isso descreve comum, não especial.
+
+Pegadinha
+
+Pegadinha FCC: complexidade técnica isolada não resolve a questão. Pergunte se desempenho e qualidade são objetivamente padronizáveis por especificações usuais de mercado.
+
+O que decorar
+
+COMUM = objetivamente definível + especificações usuais.
+ESPECIAL = alta heterogeneidade/complexidade + não cabe na definição de comum + justificativa.
+
+O que levar para a prova
+
+Leve para a prova: a classificação é funcional e jurídica, não um adjetivo intuitivo.
+
+Check manual: sei explicar por que um objeto sofisticado pode ser comum e um objeto não tão caro pode ser especial.
+
+SESSÃO 10
+
+Obra × serviço de engenharia
+
+Entenda primeiro
+
+Toda obra envolve arquitetura/engenharia, mas nem toda atividade de engenharia é obra. A diferença está no efeito da intervenção e na definição legal.
+
+Regra jurídica
+
+Obra, no art. 6º, XII, exige atividade privativa de arquiteto/engenheiro e intervenção que, em conjunto harmônico de ações, inove o espaço físico da natureza ou altere substancialmente as características originais de bem imóvel.
+
+Serviço de engenharia é a atividade de interesse da Administração que, embora privativa de arquitetura, engenharia ou técnicos especializados, não se enquadra como obra. Divide-se em:
+
+• serviço comum de engenharia: ações objetivamente padronizáveis de manutenção, adequação e adaptação de bens móveis e imóveis, com preservação das características originais;
+• serviço especial de engenharia: por alta heterogeneidade ou complexidade, não cabe na categoria comum.
+
+Exemplo
+
+Manutenção predial padronizável que preserva características originais tende a se enquadrar como serviço comum de engenharia. Uma intervenção que altera substancialmente as características originais do imóvel pode preencher o conceito de obra. A classificação concreta depende do objeto efetivamente descrito.
+
+Compare
+
+Obra | Serviço comum de engenharia | Serviço especial de engenharia
+Inova espaço físico ou altera substancialmente imóvel. | Manutenção/adequação/adaptação objetivamente padronizável, preservando características originais. | Serviço de engenharia de alta heterogeneidade ou complexidade.
+Atividade privativa de arquiteto/engenheiro. | Engenharia/arquitetura/técnicos especializados, sem enquadrar como obra. | Idem, mas não padronizável como comum.
+Foco no efeito transformador qualificado. | Foco na preservação das características originais. | Foco na heterogeneidade/complexidade.
+
+Como cai na FCC
+
+A banca retira a expressão “alteração substancial” ou afirma que todo serviço de engenharia é especial. A lei reconhece expressamente serviço comum de engenharia.
+
+Pegadinha
+
+Pegadinha FCC: “serviço de engenharia, por definição, não pode ser comum.” Errado. O art. 6º, XXI, “a”, define expressamente serviço comum de engenharia.
+
+O que decorar
+
+• Obra = inovação do espaço físico ou alteração substancial do imóvel.
+• Serviço comum de engenharia = padronizável + manutenção/adequação/adaptação + preservação das características originais.
+• Especial de engenharia = alta heterogeneidade/complexidade.
+
+O que levar para a prova
+
+Leve para a prova: a fronteira é material. Olhe para o resultado da intervenção e para a possibilidade de padronização.
+
+Check manual: consigo diferenciar obra, serviço comum de engenharia e serviço especial de engenharia.
+
+SESSÃO 11
+
+Regimes e formas de execução
+
+Entenda primeiro
+
+Os regimes de execução indicam como o objeto será contratado e remunerado e quem assume determinadas responsabilidades. No M14, memorize a arquitetura conceitual; os efeitos procedimentais e contratuais ficam para módulos posteriores.
+
+Regra jurídica
+
+O art. 6º define:
+
+• empreitada por preço unitário: obra ou serviço por preço certo de unidades determinadas;
+• empreitada por preço global: execução por preço certo e total;
+• empreitada integral: empreendimento em sua integralidade, sob responsabilidade do contratado até entrega em condição de entrada em operação;
+• contratação por tarefa: mão de obra para pequenos trabalhos por preço certo, com ou sem materiais;
+• contratação integrada: contratado elabora e desenvolve projeto básico e executivo e executa as demais operações necessárias à entrega final;
+• contratação semi-integrada: contratado elabora e desenvolve projeto executivo, executa a obra/serviço e demais operações; o projeto básico não é transferido a ele como na integrada;
+• fornecimento e prestação de serviço associado: além de fornecer o objeto, contratado responde por operação, manutenção ou ambas por tempo determinado.
+
+Exemplo
+
+Se a Administração possui projeto básico e transfere ao contratado o desenvolvimento do projeto executivo e a execução da obra, a estrutura conceitual é compatível com a semi-integrada. Se o contratado também assume projeto básico, a definição aponta para a integrada.
+
+Compare
+
+Preço unitário | Preço global | Empreitada integral | Tarefa
+Preço certo por unidades determinadas. | Preço certo e total. | Empreendimento completo até condições de operação. | Mão de obra para pequenos trabalhos por preço certo, com/sem materiais.
+
+Contratação integrada | Contratação semi-integrada
+Contratado elabora projeto básico + executivo. | Contratado elabora projeto executivo.
+Também executa obras/serviços e operações necessárias à entrega final. | Também executa obras/serviços e operações necessárias à entrega final.
+Maior transferência de desenvolvimento de projetos ao contratado. | Administração chega à contratação com projeto básico como referência.
+
+Como cai na FCC
+
+A troca clássica é dizer que na semi-integrada o contratado elabora projeto básico e executivo. Isso descreve a integrada.
+
+Pegadinha
+
+Pegadinha FCC: “empreitada integral” não é sinônimo de “contratação integrada”. Uma descreve entrega integral do empreendimento; a outra possui definição própria sobre elaboração dos projetos e execução.
+
+O que decorar
+
+Unitário = unidade; global = total; integral = empreendimento pronto para operar; tarefa = pequenos trabalhos; integrada = PB + PE pelo contratado; semi = PE pelo contratado; associado = fornecimento + operação/manutenção.
+
+O que levar para a prova
+
+Leve para a prova: para integrada × semi-integrada, a palavra decisiva é projeto básico.
+
+Check manual: consigo distinguir os sete conceitos sem recorrer a modalidades de licitação.
+
+SESSÃO 12
+
+Documentos e conceitos estruturantes
+
+Entenda primeiro
+
+A contratação pública usa documentos com graus diferentes de definição. Não é preciso antecipar o M15, mas é essencial saber qual documento vem para quê e não inverter projeto básico, projeto executivo, termo de referência e anteprojeto.
+
+Regra jurídica
+
+O estudo técnico preliminar (ETP) é a primeira etapa do planejamento e caracteriza o interesse público e a melhor solução, servindo de base ao anteprojeto, termo de referência ou projeto básico, conforme o caso. O aprofundamento do ETP é do M15.
+
+O termo de referência (TR) é documento necessário para contratação de bens e serviços e contém os parâmetros e elementos descritivos definidos no art. 6º, XXIII. Aqui basta reconhecer sua função estrutural.
+
+O anteprojeto reúne subsídios necessários à elaboração do projeto básico. O projeto básico contém elementos necessários e suficientes, com precisão adequada, para definir e dimensionar a obra ou serviço e permitir avaliação de custo, método e prazo. O projeto executivo detalha as soluções do projeto básico para execução completa.
+
+A matriz de riscos é cláusula contratual que define riscos e responsabilidades entre as partes e caracteriza o equilíbrio econômico-financeiro inicial quanto ao ônus financeiro de eventos supervenientes, com conteúdo mínimo legal.
+
+O edital não aparece como uma definição autônoma no art. 6º, mas é o instrumento convocatório que fixa regras da licitação; a Lei exige que seu conteúdo observe as regras pertinentes ao objeto e ao procedimento. No M14, a conexão essencial é com vinculação ao edital e julgamento objetivo.
+
+Exemplo
+
+Uma questão afirma: “o projeto executivo é o documento que define e dimensiona a obra e serve de base para o detalhamento posterior no projeto básico”. A ordem está invertida: o básico define/dimensiona; o executivo detalha.
+
+Compare
+
+Anteprojeto | Projeto básico | Projeto executivo
+Subsídios/concepção para elaboração do básico. | Define e dimensiona com precisão adequada; viabilidade, custo, métodos e prazo. | Detalha as soluções previstas no básico para execução completa.
+Nível anterior de definição. | Nível de definição suficiente à estruturação da obra/serviço. | Nível de detalhamento executivo.
+
+Termo de referência | Projeto básico
+Documento necessário para contratação de bens e serviços. | Estrutura definição/dimensionamento de obra ou serviço nos termos legais.
+Contém parâmetros do art. 6º, XXIII. | Tem elementos do art. 6º, XXV.
+A profundidade do preparo será vista no M15. | Não confundir com projeto executivo.
+
+Matriz de riscos | Mapa genérico de riscos
+Conceito legal: cláusula contratual de alocação de riscos/responsabilidades e equilíbrio inicial. | Expressão gerencial que pode existir no planejamento, mas não substitui automaticamente a matriz legal.
+Tem conteúdo mínimo no art. 6º, XXVII. | Pode ser ferramenta interna de gestão.
+
+Como cai na FCC
+
+As principais trocas são básico × executivo, dizer que matriz de riscos é mero relatório interno, ou tratar o TR como documento exclusivo de obras.
+
+Pegadinha
+
+Pegadinha FCC: projeto executivo é mais detalhado, não “anterior e menos detalhado” que o projeto básico.
+
+O que decorar
+
+ETP → base inicial; anteprojeto → subsídios ao básico; básico → define/dimensiona; executivo → detalha; TR → bens/serviços; matriz de riscos → cláusula contratual de alocação de riscos.
+
+O que levar para a prova
+
+Leve para a prova: memorize a direção do fluxo documental, mas não antecipe a fase preparatória completa — isso é M15.
+
+Check manual: consigo ordenar ETP, anteprojeto, projeto básico e projeto executivo e dizer a função de cada um.
+
+SESSÃO 13
+
+PNCP, SRP e procedimentos auxiliares: visão conceitual
+
+Entenda primeiro
+
+O sistema de contratações não é composto apenas pela “licitação tradicional”. A Lei cria infraestrutura digital e procedimentos auxiliares. No M14, a meta é reconhecer os conceitos; hipóteses, fases e detalhes operacionais ficam para módulos próprios.
+
+Regra jurídica
+
+O PNCP foi criado pelo art. 174 como sítio eletrônico oficial destinado à divulgação centralizada e obrigatória dos atos exigidos pela Lei e, facultativamente, à realização das contratações dos órgãos e entidades dos Poderes de todos os entes federativos. O PNCP não se confunde com qualquer página institucional.
+
+O art. 6º define sítio eletrônico oficial como site certificado digitalmente por autoridade certificadora, no qual o ente divulga centralizadamente informações e serviços de governo digital. Define também catálogo eletrônico de padronização como sistema informatizado, de gerenciamento centralizado e com indicação de preços, voltado à padronização de itens disponíveis para licitação.
+
+O Sistema de Registro de Preços (SRP) é conjunto de procedimentos para registro formal de preços para contratações futuras, mediante contratação direta ou licitação em pregão ou concorrência nas hipóteses legais. A Ata de Registro de Preços (ARP) é o documento vinculativo e obrigacional, com característica de compromisso para futura contratação, que registra objeto, preços, fornecedores, participantes e condições.
+
+São procedimentos auxiliares do art. 78: credenciamento, pré-qualificação, procedimento de manifestação de interesse (PMI), sistema de registro de preços e registro cadastral.
+
+• Credenciamento: chamamento público para que interessados que preencham requisitos se credenciem e executem o objeto quando convocados.
+• Pré-qualificação: procedimento seletivo anterior à licitação para analisar condições de habilitação dos interessados ou do objeto.
+• PMI: a Administração pode solicitar à iniciativa privada estudos, investigações, levantamentos e projetos de soluções inovadoras de relevância pública; a participação não gera automaticamente preferência nem obriga a licitar.
+• SRP: registro de preços para contratações futuras.
+• Registro cadastral: instrumento auxiliar de cadastramento conforme disciplina legal, sem aprofundamento neste módulo.
+
+Exemplo
+
+A Administração publica chamamento para que clínicas que preencham requisitos se habilitem a prestar serviços quando convocadas. Conceitualmente, isso remete ao credenciamento, não a uma modalidade de licitação.
+
+Compare
+
+Instituto | O que é, em uma linha | Não confundir com
+PNCP | Portal oficial nacional de divulgação centralizada obrigatória e funções de contratação. | Site institucional qualquer.
+SRP | Conjunto de procedimentos para registro formal de preços para futuras contratações. | Contrato já celebrado.
+ARP | Documento de registro e compromisso para futura contratação. | Garantia de contratação imediata de todo quantitativo.
+Credenciamento | Chamamento para credenciar quem preenche requisitos. | Modalidade de licitação.
+Pré-qualificação | Seleção prévia de interessados/objetos quanto a condições legais. | Habilitação de uma licitação específica, em todos os casos.
+PMI | Chamada para estudos/investigações/projetos da iniciativa privada. | Direito de preferência ao autor do estudo.
+Registro cadastral | Procedimento auxiliar de cadastramento. | SRP.
+
+Como cai na FCC
+
+A banca costuma chamar credenciamento de modalidade, confundir ARP com contrato e afirmar que quem produz estudo em PMI ganha preferência na futura licitação. A lei nega essas simplificações.
+
+Pegadinha
+
+Pegadinha FCC: procedimentos auxiliares não são modalidades de licitação. A lista do art. 78 é própria e diferente da lista de modalidades, que será estudada no M16.
+
+O que decorar
+
+5 auxiliares: credenciamento, pré-qualificação, PMI, SRP, registro cadastral.
+PNCP: divulgação centralizada obrigatória dos atos exigidos pela lei; realização de contratações é função facultativa.
+ARP: compromisso para futura contratação, não contrato automático de todo o quantitativo.
+
+O que levar para a prova
+
+Leve para a prova: “portal”, “sistema”, “ata”, “procedimento auxiliar” e “modalidade” são categorias diferentes.
+
+Check manual: consigo listar os cinco procedimentos auxiliares sem incluir pregão, concorrência ou diálogo competitivo.
+
+SESSÃO 14
+
+Revisão integrada e quadro-mestre
+
+Entenda primeiro
+
+A última sessão serve para amarrar o módulo. A FCC frequentemente cria alternativas compostas: metade da frase vem do art. 5º, outra metade do art. 6º e a conclusão do art. 8º. O melhor antídoto é comparar conceitos parecidos.
+
+Regra jurídica
+
+Use a seguinte sequência mental:
+
+• Constituição: há regra de licitar, igualdade e qualificações indispensáveis.
+• Arts. 1º a 4º: quem entra, quais objetos e quais exclusões/regimes especiais.
+• Art. 5º: princípios + LINDB.
+• Art. 6º: vocabulário legal.
+• Arts. 7º a 10: agentes, vedações e suporte.
+• Art. 11: objetivos + governança.
+
+Exemplo
+
+Item: “Sociedade de economia mista estadual, sujeita à Lei 14.133 por integrar a Administração indireta, deve designar agente de contratação nos termos do art. 8º.” A primeira premissa já está errada: a estatal segue, em regra, a Lei 13.303/2016. Não é preciso analisar a segunda parte como se a Lei 14.133 fosse seu regime integral.
+
+Compare — quadro-mestre
+
+Conceitos confundidos | Distinção decisiva
+Licitação × contratação | Seleção/disputa × relação jurídica para obter o objeto.
+Administração Pública × Administração | Universo institucional do art. 6º, III × órgão/entidade por meio do qual atua.
+Órgão × entidade | Sem personalidade própria na definição × com personalidade jurídica.
+Compra × serviço × obra | Bem × utilidade intelectual/material × intervenção qualificada de arquitetura/engenharia.
+Comum × especial | Objetivamente especificável no mercado × alta heterogeneidade/complexidade + justificativa.
+Obra × serviço de engenharia | Inovação/alteração substancial × atividade técnica que não se enquadra como obra.
+Agente × comissão | Condução individual × colegiado nas hipóteses legais.
+Agente × pregoeiro | Figura geral × nome do agente que conduz pregão.
+Projeto básico × executivo | Define/dimensiona × detalha para execução completa.
+Integrada × semi-integrada | Contratado faz PB + PE × contratado faz PE.
+Lei 14.133 × Lei 13.303 | Administração geral abrangida × estatais, em regra.
+Princípio do planejamento × fase de planejamento | Vetor do art. 5º × etapa procedimental aprofundada no M15.
+Objetivo do art. 11 × princípio do art. 5º | Resultado a perseguir × vetor de aplicação/interpretação.
+SRP × ARP | Sistema/procedimentos × documento resultante de registro.
+PNCP × sítio eletrônico oficial | Portal nacional criado no art. 174 × categoria geral definida no art. 6º, LII.
+Compra imediata × contratação “de pronta entrega” | Definição do art. 6º, X: até 30 dias da ordem × expressão que deve ser lida no contexto do dispositivo específico, sem equiparação automática.
+
+Como cai na FCC
+
+Leia a alternativa em blocos. Identifique qual artigo abastece cada oração e procure a palavra trocada: “preferencialmente”, “no mínimo 3”, “individualmente”, “solidariamente”, “30 dias”, “justificativa prévia”, “projeto básico”, “projeto executivo”.
+
+Pegadinha
+
+Pegadinha FCC: uma alternativa pode trazer três conceitos corretos e errar apenas a consequência jurídica. Não pare de ler quando reconhecer o primeiro trecho da lei.
+
+O que decorar
+
+• Art. 1º: sujeitos.
+• Art. 3º: exclusões materiais.
+• Art. 5º: 22 princípios + LINDB.
+• Art. 6º: conceitos-chave.
+• Arts. 7º–10: agentes/vedações/representação.
+• Art. 11: 4 objetivos + governança.
+
+O que levar para a prova
+
+Leve para a prova: M14 é o vocabulário e a arquitetura do sistema. Se esses conceitos estiverem sólidos, M15 e M16 ficam muito mais fáceis.
+
+Check manual: consigo responder o quadro-mestre sem consultar a lei e sei quais temas deixarei para os módulos seguintes.
+
+REVISÃO 5–10 MIN
+
+Revisão final — 5 a 10 minutos
+
+• A Constituição exige licitação como regra, ressalvadas hipóteses legais, com igualdade e qualificações indispensáveis.
+• A União legisla privativamente sobre normas gerais de licitação e contratação (CF, art. 22, XXVII).
+• A Lei 14.133 alcança administração direta, autárquica e fundacional de todos os entes.
+• Legislativo e Judiciário submetem-se à lei quando exercem função administrativa nos termos do art. 1º.
+• Empresas públicas, sociedades de economia mista e subsidiárias seguem, em regra, a Lei 13.303.
+• Operações de crédito/gestão da dívida e contratações sob legislação própria não se subordinam ao regime da Lei 14.133.
+• Art. 5º tem 22 princípios e manda observar a LINDB.
+• Planejamento, eficácia e segregação de funções são princípios expressos.
+• Art. 11 tem quatro objetivos; “competitividade” está no art. 5º e “justa competição” no art. 11.
+• Mais vantajoso não significa automaticamente menor preço.
+• Alta administração responde pela governança das contratações.
+• Segregação evita concentração de funções de risco e reduz fraude/ocultação de erros.
+• Requisito geral do art. 7º usa “preferencialmente” para servidor efetivo/empregado permanente.
+• Agente de contratação do art. 8º é escolhido entre servidores efetivos/empregados públicos permanentes.
+• Agente é auxiliado por equipe e responde individualmente, salvo indução a erro pela equipe.
+• Comissão do art. 8º, §2º, tem no mínimo 3 membros e responsabilidade solidária, com ressalva de divergência fundamentada registrada.
+• No pregão, o agente responsável é designado pregoeiro.
+• Compra imediata = entrega até 30 dias da ordem de fornecimento.
+• Comum = padrões objetivamente definidos por especificações usuais de mercado.
+• Especial = alta heterogeneidade/complexidade + impossibilidade de descrição como comum + justificativa prévia.
+• Obra inova espaço físico ou altera substancialmente imóvel; serviço de engenharia não se enquadra como obra.
+• Existe serviço comum de engenharia.
+• Projeto básico define/dimensiona; projeto executivo detalha.
+• Integrada: contratado faz PB + PE; semi-integrada: contratado faz PE.
+• Matriz de riscos é cláusula contratual de alocação de riscos e responsabilidades.
+• SRP é sistema; ARP é documento de compromisso para futura contratação.
+• Credenciamento, pré-qualificação, PMI, SRP e registro cadastral são procedimentos auxiliares.
+• PNCP é o portal nacional de divulgação centralizada obrigatória dos atos exigidos pela lei.
+• A LINDB continua aplicável às licitações; a Lei 14.133 diz isso expressamente.
+• M14 não aprofunda fase preparatória, modalidades, contratação direta ou execução contratual.
+
+LEITURA DE VÉSPERA
+
+Artigos para ler no dia da prova
+
+Constituição Federal
+
+• Art. 22, XXVII — competência para normas gerais.
+• Art. 37, caput e XXI — princípios constitucionais e regra de licitar.
+
+Lei 14.133/2021 — prioridade máxima do M14
+
+• Arts. 1º a 5º — âmbito, objetos, exclusões, LC 123 e princípios.
+• Art. 6º, I a XIV — conceitos institucionais e objetos básicos.
+• Art. 6º, XVIII a XXI — serviços técnicos, ETP e engenharia.
+• Art. 6º, XXIII a XXXIV — TR, anteprojeto, projetos, matriz e regimes.
+• Art. 6º, XLIII a LII e LX — credenciamento, pré-qualificação, SRP/ARP, comissão, catálogo, sítio oficial e agente.
+• Arts. 7º a 10 — agentes públicos, vedações e representação.
+• Art. 11 — objetivos e governança.
+• Art. 78 — lista dos procedimentos auxiliares, apenas para reconhecimento.
+• Art. 81 — PMI, leitura conceitual.
+• Art. 174 — PNCP.
+
+Leitura complementar curta
+
+• LINDB, arts. 20 a 24 e 28 — consequências, dificuldades reais, transição, segurança jurídica e responsabilidade, sem repetir o M7.
+• Lei 13.303/2016, art. 28 — apenas para confirmar que estatais possuem regime próprio de licitações e contratos.
+
+O QUE DECORAR
+
+O que decorar — folha de alta incidência FCC
+
+Tema | Fórmula de memorização
+Base constitucional | 37 XXI = licitar + igualdade + qualificação indispensável.
+Âmbito | Direta + autárquica + fundacional + poderes em função administrativa.
+Estatais | 13.303, não 14.133 integralmente.
+Art. 5º | 22 princípios + LINDB.
+Art. 11 | vantagem + isonomia/justa competição + preço/superfaturamento + inovação/sustentável.
+Compra imediata | 30 dias da ordem de fornecimento.
+Comum | objetivo + usual de mercado.
+Especial | heterogêneo/complexo + justificativa.
+Obra | inova espaço / altera substancialmente imóvel.
+Serviço comum engenharia | padronizável + preserva características originais.
+Art. 7º | preferencialmente permanente + qualificação + sem vínculos proibidos.
+Agente | permanente + conduz até homologação + equipe apoia.
+Comissão | mínimo 3 + solidariedade + divergência fundamentada em ata.
+Pregoeiro | agente no pregão.
+PB × PE | básico define; executivo detalha.
+Integrada × semi | PB+PE × PE.
+SRP × ARP | sistema × documento.
+Auxiliares | Cred — Pré — PMI — SRP — Cadastro.
+PNCP | divulgação centralizada obrigatória; contratação no portal é faculdade.
+
+CAMADA FCC
+
+Camada FCC — 24 pegadinhas de fechamento
+
+• Planejamento é princípio expresso, não apenas atividade da fase preparatória.
+• Eficácia também é princípio expresso; não troque por efetividade na lista do art. 5º.
+• LINDB não é afastada pela especialidade da Lei 14.133; o art. 5º manda observá-la.
+• Empresas estatais não aplicam integralmente a Lei 14.133 como regime licitatório geral.
+• Legislativo/Judiciário aplicam a lei em função administrativa.
+• Compra por encomenda entra no art. 2º.
+• Serviço técnico-profissional especializado também está dentro do âmbito material do art. 2º.
+• Compra imediata conta da ordem de fornecimento, não da assinatura.
+• Objeto comum pode ser tecnicamente sofisticado.
+• Objeto especial exige justificativa prévia.
+• Serviço de engenharia pode ser comum.
+• Obra não é qualquer atividade de manutenção feita por engenheiro.
+• Agente de contratação não é comissão unipessoal “facultativa”; são figuras jurídicas distintas.
+• Equipe de apoio não assume automaticamente responsabilidade solidária pelos atos do agente.
+• Comissão do art. 8º, §2º, tem no mínimo três membros.
+• Divergência do membro deve ser fundamentada e registrada em ata para a ressalva legal.
+• Pregoeiro é o agente responsável pela condução do pregão.
+• Projeto básico antecede e estrutura o detalhamento do executivo.
+• Na integrada, o contratado desenvolve PB e PE; na semi, PE.
+• Matriz de riscos é cláusula contratual, não simples planilha administrativa.
+• Credenciamento não é modalidade.
+• SRP não é modalidade; é procedimento auxiliar/sistema.
+• ARP não significa obrigação de contratar automaticamente todo o quantitativo registrado.
+• PNCP não se confunde com qualquer sítio oficial do ente.
+
+3. 10 QUESTÕES INTERNAS - CONTEÚDO COMPLETO
+
+Questão 1 - FÁCIL
+
+À luz do M14, qual afirmação descreve corretamente a relação entre licitação e contratação?
+
+• A) Licitação e contratação são expressões sinônimas.
+• B) A contratação sempre depende de licitação prévia.
+• C) A licitação é processo de seleção; a contratação é a relação jurídica voltada à obtenção do objeto e pode, nas hipóteses legais, ocorrer sem licitação.
+• D) Licitação é apenas a fase de julgamento das propostas.
+• E) Contratação é apenas a assinatura formal do instrumento contratual.
+
+Gabarito: C Explicação: O módulo distingue seleção/disputa de relação jurídica. A licitação não é sinônimo de contrato, e a contratação pode decorrer de licitação ou de hipótese legal de contratação direta.
+
+Questão 2 - FÁCIL
+
+Qual item é objetivo expresso do processo licitatório no art. 11, conforme ensinado no módulo?
+
+• A) Segregação de funções.
+• B) Vinculação ao edital.
+• C) Julgamento objetivo.
+• D) Assegurar tratamento isonômico e justa competição.
+• E) Motivação.
+
+Gabarito: D Explicação: Segregação, vinculação, julgamento objetivo e motivação aparecem no art. 5º como princípios. Isonomia e justa competição integram os objetivos do art. 11.
+
+Questão 3 - FÁCIL
+
+Para a definição legal trabalhada no M14, considera-se compra imediata aquela com prazo de entrega de até:
+
+• A) 5 dias da assinatura do contrato.
+• B) 10 dias da adjudicação.
+• C) 15 dias da homologação.
+• D) 30 dias da ordem de fornecimento.
+• E) 30 dias da publicação do edital.
+
+Gabarito: D Explicação: O art. 6º, X, considera imediata a compra com entrega em até 30 dias da ordem de fornecimento. A FCC pode trocar o marco inicial.
+
+Questão 4 - FÁCIL
+
+No pregão, o agente responsável pela condução do certame é designado:
+
+• A) fiscal.
+• B) pregoeiro.
+• C) gestor.
+• D) ordenador de despesas.
+• E) relator.
+
+Gabarito: B Explicação: No pregão, o agente responsável pela condução é designado pregoeiro. O aprofundamento da modalidade fica no M16.
+
+Questão 5 - MÉDIA
+
+Uma sociedade de economia mista estadual realizará contratação ordinária. Qual é a leitura correta no recorte do M14?
+
+• A) Aplica-se integralmente a Lei 14.133 porque toda entidade da Administração indireta está submetida ao mesmo regime.
+• B) Aplica-se, em regra, a Lei 13.303/2016, ressalvadas as hipóteses expressamente previstas em lei.
+• C) Não há dever de licitar para sociedades de economia mista.
+• D) Aplica-se exclusivamente a legislação estadual, sem normas gerais federais.
+• E) Aplica-se a Lei 14.133 apenas se houver recursos próprios.
+
+Gabarito: B Explicação: O art. 1º, §1º, exclui empresas públicas, sociedades de economia mista e subsidiárias do regime geral da Lei 14.133, que seguem a Lei 13.303/2016, ressalvadas previsões expressas.
+
+Questão 6 - MÉDIA
+
+Sobre agentes públicos na Lei 14.133, assinale a alternativa correta segundo a distinção ensinada no módulo.
+
+• A) O art. 7º exige, sem exceção textual, que todo agente designado seja servidor efetivo.
+• B) O agente de contratação do art. 8º pode ser qualquer terceirizado sem vínculo permanente.
+• C) O art. 7º trabalha com preferência por servidor efetivo ou empregado permanente, enquanto o art. 8º traz exigência específica para a escolha do agente de contratação entre servidores efetivos ou empregados públicos permanentes.
+• D) Equipe de apoio e agente de contratação possuem responsabilidade solidária automática.
+• E) Comissão e agente de contratação são expressões equivalentes.
+
+Gabarito: C Explicação: Uma pegadinha central é transformar o 'preferencialmente' geral do art. 7º em regra absoluta ou enfraquecer a exigência específica do art. 8º para o agente de contratação.
+
+Questão 7 - MÉDIA
+
+Em determinado regime, o contratado elabora o projeto executivo, mas não o projeto básico, além de executar as obras/serviços e demais operações necessárias à entrega final. Trata-se de:
+
+• A) empreitada por preço unitário.
+• B) empreitada integral.
+• C) contratação integrada.
+• D) contratação semi-integrada.
+• E) fornecimento e prestação de serviço associado.
+
+Gabarito: D Explicação: Na integrada, o contratado desenvolve projeto básico e executivo. Na semi-integrada, desenvolve o projeto executivo. A palavra decisiva é 'projeto básico'.
+
+Questão 8 - MÉDIA
+
+Assinale a associação correta entre institutos do M14.
+
+• A) SRP = modalidade de licitação; ARP = contrato definitivo.
+• B) PNCP = qualquer página institucional; credenciamento = modalidade.
+• C) SRP = conjunto de procedimentos para registro formal de preços; ARP = documento vinculativo e obrigacional com compromisso para futura contratação.
+• D) PMI = modalidade competitiva; pré-qualificação = sanção prévia.
+• E) Registro cadastral = sinônimo de SRP.
+
+Gabarito: C Explicação: SRP é sistema/conjunto de procedimentos; ARP é o documento resultante de registro. Credenciamento, pré-qualificação, PMI, SRP e registro cadastral são procedimentos auxiliares, não modalidades.
+
+Questão 9 - DIFÍCIL
+
+Considere duas situações. I - um integrante de comissão de contratação discorda de decisão colegiada; II - integrante da equipe de apoio participa de ato conduzido pelo agente de contratação. Qual formulação reproduz corretamente a arquitetura de responsabilidade estudada?
+
+• A) Em ambas há solidariedade automática e irrenunciável.
+• B) Na comissão, a responsabilidade é solidária pelos atos praticados, ressalvado o membro que expressar posição divergente fundamentada e registrada; o agente responde individualmente, salvo quando induzido a erro pela atuação da equipe, não havendo solidariedade automática da equipe.
+• C) O agente nunca responde, pois toda responsabilidade é da autoridade superior.
+• D) A divergência de membro da comissão basta ser verbal, sem registro.
+• E) Equipe de apoio e comissão possuem exatamente o mesmo regime.
+
+Gabarito: B Explicação: A questão integra duas regras próximas que a banca pode misturar: responsabilidade do agente/equipe e responsabilidade colegiada da comissão, com ressalva da divergência fundamentada registrada.
+
+Questão 10 - DIFÍCIL
+
+Um órgão do Poder Judiciário, em atividade administrativa, pretende contratar objeto que não pode ser descrito por especificações usuais de mercado em razão de alta heterogeneidade e complexidade. Qual sequência conceitual está correta?
+
+• A) O Judiciário está fora da Lei 14.133; o objeto é comum; não há necessidade de justificativa.
+• B) O Judiciário está abrangido quando exerce função administrativa; o objeto é especial e sua classificação exige justificativa prévia do contratante.
+• C) O Judiciário está abrangido, mas todo objeto complexo é automaticamente obra.
+• D) O objeto é comum se houver mais de um fornecedor no mercado.
+• E) A classificação depende exclusivamente do valor estimado.
+
+Gabarito: B Explicação: A questão integra âmbito subjetivo e definição do art. 6º. Bens/serviços especiais são os que, por alta heterogeneidade ou complexidade, não podem ser descritos como comuns, exigida justificativa prévia do contratante.
+
+---

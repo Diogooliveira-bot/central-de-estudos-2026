@@ -1,0 +1,956 @@
+﻿Licitações — Contratação Direta
+DIREITO ADMINISTRATIVO · MÓDULO 17 · COMPLETO
+
+DIREITO ADMINISTRATIVOMÓDULO 17
+
+Apostila de estudo · nível Analista · FCC
+
+Licitações — Contratação Direta
+
+Processo do art. 72, responsabilidade, inexigibilidade, dispensa, valores 2026, fracionamento, emergência, licitação deserta/fracassada, preço, habilitação e publicidade.
+
+Base conferida em 18/09/2026: Lei 14.133/2021 consolidada no Planalto e Decreto 12.807/2025. Materiais “17.pdf”, revisão FCC TJ-CE e baralho M17 foram usados apenas para calibrar cobertura e pegadinhas. STF ADI 6.890 usado no ponto de emergência. M14–M16 e M18 não foram invadidos em profundidade.
+
+Como estudar este módulo
+
+Em cada caso concreto, responda em ordem: por que não licitar? → por que esse contratado? → por que esse preço? → habilitação? → autorização? → publicidade?
+
+fundamento→escolha→preço→habilitação→autorização→publicidade
+
+Regra de ouro: contratação direta elimina a disputa licitatória, não elimina o processo administrativo nem o controle.
+
+SESSÃO 01
+
+Mapa da contratação direta: onde a licitação deixa de ser o caminho
+
+Entenda primeiro
+
+A Lei 14.133/2021 parte da licitação como regra para selecionar a proposta mais vantajosa e proteger a isonomia. Em situações juridicamente delimitadas, porém, a Administração pode chegar ao contrato sem realizar uma disputa licitatória. O nome do gênero é contratação direta. O art. 72 deixa isso expresso ao dizer que seu processo compreende inexigibilidade e dispensa de licitação.
+
+A diferença central é lógica, não apenas terminológica. Na inexigibilidade, a disputa é inviável: não existe competição útil ou juridicamente possível nas circunstâncias concretas. Na dispensa, a competição seria possível, mas a própria lei autoriza afastar a licitação em hipóteses taxativamente previstas. Em ambos os casos, a Administração precisa demonstrar o enquadramento legal e a vantajosidade da solução escolhida.
+
+Existe ainda a expressão doutrinária licitação dispensada, frequentemente associada às hipóteses de alienação em que a própria lei afasta a disputa. Ela não deve ser confundida com o art. 75. Para M17, o foco é o capítulo de contratação direta — arts. 72 a 75 — sem aprofundar o regime de alienações do art. 76.
+
+Compare
+
+Instituto | Existe possibilidade de competição? | Fundamento | Natureza das hipóteses | Exemplo mental
+Inexigibilidade | Não, a competição é inviável | Art. 74 | Exemplificativas: o caput usa “em especial” | fornecedor realmente exclusivo
+Dispensa | Sim, em tese | Art. 75 e outras previsões legais | Taxativas | pequeno valor dentro do limite legal
+Licitação dispensada | A lei afasta a disputa em situações específicas | Ex.: art. 76 | Categoria usada sobretudo para alienações | doação nas condições legais
+
+Exemplo
+
+Um órgão precisa de peça produzida por um único fornecedor comprovadamente exclusivo. Não faz sentido organizar disputa inexistente: raciocínio de inexigibilidade. Se o órgão pretende comprar material comum de pequeno valor abaixo do limite legal, fornecedores existem, mas o art. 75 pode permitir dispensa.
+
+Como cai na FCC
+
+A banca costuma trocar a causa jurídica: chama de dispensa uma situação de competição inviável, ou chama de inexigibilidade uma hipótese de baixo valor. Resolva pela pergunta: há competição viável? Se não, pense primeiro em inexigibilidade. Se sim, procure autorização legal de dispensa.
+
+Pegadinha
+
+“Contratação direta” não é sinônimo de inexigibilidade. É o gênero que abrange inexigibilidade e dispensa.
+
+O que decorar
+
+Direta = inexigibilidade + dispensa. Inexigibilidade = competição inviável. Dispensa = competição possível, mas lei autoriza não licitar.
+
+O que levar para a prova
+
+Antes de identificar o inciso, identifique a lógica. A troca de conceitos é uma das pegadinhas mais rentáveis da FCC.
+
+☐ Check manual: consigo explicar, sem olhar, a diferença entre inexigibilidade, dispensa e licitação dispensada.
+
+---
+
+SESSÃO 02
+
+O processo do art. 72: contratar diretamente exige instrução robusta
+
+Entenda primeiro
+
+O art. 72 funciona como a “espinha dorsal” formal de toda contratação direta. Ele impede a ideia de que a ausência de licitação autoriza informalidade. A Administração precisa montar um processo capaz de responder três grupos de perguntas: o que e por que contratar, por que contratar aquela pessoa e por aquele preço, e quem verificou e autorizou.
+
+Regra jurídica — os oito núcleos do art. 72
+
+• documento de formalização da demanda e, quando cabíveis, ETP, análise de riscos, termo de referência, projeto básico ou executivo;
+• estimativa da despesa calculada conforme o art. 23;
+• parecer jurídico e pareceres técnicos, quando cabíveis;
+• demonstração da compatibilidade da previsão orçamentária com o compromisso;
+• comprovação de habilitação e qualificação mínima necessária do contratado;
+• razão da escolha do contratado;
+• justificativa de preço;
+• autorização da autoridade competente.
+
+A expressão “se for o caso” e a disciplina do art. 53 são importantes. O controle jurídico alcança contratações diretas, mas a análise jurídica pode ser dispensada nas hipóteses previamente definidas pela autoridade jurídica máxima competente, considerando fatores como baixo valor, baixa complexidade, entrega imediata ou uso de minutas padronizadas. Logo, não transforme “parecer jurídico” em exigência absoluta e indistinta para todo processo.
+
+Compare — documento e função
+
+Peça | Pergunta que responde | Erro de prova
+DFD / documentos de planejamento cabíveis | O que a Administração necessita? | achar que contratação direta elimina planejamento
+Estimativa da despesa | Quanto o objeto vale no mercado? | confundir estimativa com justificativa final de preço
+Pareceres cabíveis | Há suporte jurídico/técnico? | tratar parecer jurídico como invariavelmente obrigatório
+Previsão orçamentária | Há recurso compatível? | ignorar dimensão orçamentária
+Habilitação mínima | O contratado tem condições jurídicas/técnicas/fiscais/econômicas exigíveis? | pensar que “sem licitação” = “sem habilitação”
+Razão da escolha | Por que esse contratado? | responder apenas “porque é mais barato”
+Justificativa de preço | Por que esse preço é aceitável? | dizer que inexigibilidade dispensa pesquisa/justificação
+Autorização | Quem assume a decisão final? | esquecer a autoridade competente
+
+Exemplo
+
+Se a Administração pretende contratar artista consagrado por empresário exclusivo, não basta juntar o contrato de exclusividade. O processo deve também explicar a necessidade do evento, a escolha do artista, a compatibilidade do preço, a qualificação mínima, a existência de recursos, os pareceres cabíveis e a autorização.
+
+Como cai na FCC
+
+A alternativa costuma retirar um dos elementos que parecem “burocráticos”, especialmente justificativa de preço, razão da escolha ou habilitação. Todos permanecem no art. 72.
+
+Pegadinha
+
+Estimativa da despesa e justificativa de preço não são a mesma coisa. A estimativa dimensiona o valor de referência; a justificativa demonstra que o preço da contratação concreta é aceitável.
+
+O que decorar
+
+A sequência mental mais útil é: necessidade → estimativa → pareceres → orçamento → habilitação → escolha → preço → autorização.
+
+O que levar para a prova
+
+Se a questão disser que “como não há licitação, não há processo competitivo nem necessidade de motivar o preço e o escolhido”, marque como falsa.
+
+☐ Check manual: consigo listar os oito núcleos do art. 72 e explicar a função de cada um.
+
+---
+
+SESSÃO 03
+
+Art. 73: contratação direta indevida e responsabilidade
+
+Entenda primeiro
+
+O art. 73 cria uma regra específica para o dano causado por contratação direta indevida. A responsabilidade solidária entre contratado e agente público não nasce automaticamente de qualquer erro formal. O texto exige contratação direta indevida ocorrida com dolo, fraude ou erro grosseiro, além do dano ao erário.
+
+Regra jurídica
+
+Presentes os pressupostos legais, o contratado e o agente público responsável respondem solidariamente pelo dano ao erário, sem prejuízo de outras sanções legalmente cabíveis. “Solidariamente” significa que, perante o dever de recomposição, a obrigação não é fracionada de antemão entre os responsáveis.
+
+Compare
+
+Situação | Consequência do art. 73
+Contratação direta regular, bem instruída | não há responsabilidade pelo simples fato de ser direta
+Irregularidade sem os pressupostos do art. 73 | pode haver outras consequências, mas não se presume a solidariedade específica
+Contratação direta indevida + dolo/fraude/erro grosseiro + dano | agente responsável e contratado respondem solidariamente pelo dano
+
+Exemplo
+
+Uma empresa combina com agente público a falsa emissão de documento de exclusividade para simular inexigibilidade e vender acima do mercado. Havendo dano, a situação se encaixa com clareza na lógica do art. 73, sem excluir outras esferas sancionatórias.
+
+Como cai na FCC
+
+A banca pode trocar “dolo, fraude ou erro grosseiro” por “qualquer culpa” ou afirmar responsabilidade objetiva automática do contratado. A literalidade não autoriza essa simplificação.
+
+Pegadinha
+
+A existência de contratação direta irregular não apaga a necessidade de demonstrar os requisitos da responsabilização correspondente. Não confunda nulidade/irregularidade do procedimento com os pressupostos específicos de responsabilidade solidária do art. 73.
+
+O que decorar
+
+Indevida + dolo/fraude/erro grosseiro + dano → solidariedade do contratado e do agente responsável.
+
+O que levar para a prova
+
+FCC gosta de absolutos: “sempre”, “automaticamente”, “independentemente de dolo ou erro grosseiro”. Desconfie.
+
+☐ Check manual: sei explicar por que o art. 73 não cria responsabilidade automática por toda falha formal.
+
+---
+
+SESSÃO 04
+
+Inexigibilidade: a inviabilidade de competição é o verdadeiro fundamento
+
+Entenda primeiro
+
+O art. 74 não deve ser memorizado como uma lista fechada de cinco incisos. A norma começa pela causa jurídica: é inexigível a licitação quando inviável a competição. Depois, apresenta casos “em especial”. Isso significa que os incisos são exemplos legalmente tipificados de situações de inviabilidade, mas não esgotam todas as possibilidades abstratas.
+
+A Administração não pode inverter o raciocínio: primeiro escolher quem quer contratar e depois procurar uma justificativa. Deve demonstrar por que, naquele mercado e para aquela necessidade, a competição não produz seleção real, útil ou comparável.
+
+Compare
+
+Art. 74 | Art. 75
+fundamento: inviabilidade de competição | fundamento: autorização legal de dispensa apesar de competição possível
+hipóteses do caput são exemplificativas | hipóteses de dispensa são taxativas
+valor, sozinho, não gera inexigibilidade | valor pode gerar dispensa nos incisos I e II
+exige demonstração concreta da inviabilidade | exige enquadramento preciso na hipótese legal
+
+Os cinco núcleos do art. 74
+
+• fornecedor exclusivo;
+• profissional do setor artístico consagrado, diretamente ou por empresário exclusivo;
+• serviços técnicos especializados predominantemente intelectuais, com profissional ou empresa de notória especialização;
+• objetos que devam ou possam ser contratados por credenciamento;
+• aquisição ou locação de imóvel cujas características e localização tornem necessária a escolha.
+
+Exemplo
+
+Duas consultorias são excelentes e conseguem competir objetivamente pelo mesmo serviço. O simples fato de uma delas ter reputação elevada não torna a licitação inexigível. Notória especialização deve ser lida junto com o requisito maior: inviabilidade de competição.
+
+Como cai na FCC
+
+Questões recentes exploram a frase “quando inviável a competição” e tentam transformar um caso típico de inexigibilidade em dispensa.
+
+Pegadinha
+
+Os incisos do art. 74 são exemplificativos, mas a inviabilidade de competição não é opcional. Ela é o fundamento de toda inexigibilidade.
+
+O que decorar
+
+Art. 74 = inviabilidade de competição. “Em especial” = lista não exaustiva.
+
+O que levar para a prova
+
+Não basta reconhecer o nome do inciso. Pergunte sempre: “qual é a razão concreta pela qual a disputa é inviável?”
+
+☐ Check manual: consigo explicar por que o rol do art. 74 é exemplificativo sem transformar inexigibilidade em escolha livre.
+
+---
+
+SESSÃO 05
+
+Fornecedor exclusivo: exclusividade precisa ser demonstrada, não presumida
+
+Entenda primeiro
+
+A inexigibilidade do art. 74, I, abrange materiais, equipamentos, gêneros e serviços que só possam ser fornecidos ou prestados por produtor, empresa ou representante comercial exclusivo. A chave é exclusividade efetiva para o objeto e o mercado relevantes.
+
+Regra jurídica
+
+A Administração deve demonstrar a inviabilidade de competição por documento idôneo, como atestado de exclusividade, contrato de exclusividade, declaração do fabricante ou outro meio adequado. A lei veda usar a regra para simplesmente justificar preferência por marca específica.
+
+Compare
+
+Exclusividade legítima | Preferência indevida por marca
+mercado demonstra um único fornecedor apto para o objeto necessário | Administração define uma marca sem necessidade técnica suficiente e conclui artificialmente que há um fornecedor
+prova documental idônea e verificável | documento genérico, territorialmente inadequado ou sem aderência ao objeto
+inviabilidade de competição é consequência do mercado/objeto | inviabilidade é criada pela própria especificação restritiva
+
+Exemplo
+
+Se um equipamento em garantia exige peça original fornecida por agente exclusivo, podem existir dois enquadramentos a examinar: a exclusividade do art. 74, I, ou a hipótese específica de dispensa do art. 75, IV, “a”, quando a compra ao fornecedor original for indispensável para a vigência da garantia. A Administração deve usar o fundamento que corresponda aos fatos e documentá-lo corretamente.
+
+Como cai na FCC
+
+A banca gosta de aceitar como suficiente qualquer “declaração de exclusividade”. A lei fala em documento idôneo; a Administração precisa verificar se a prova realmente alcança o objeto e o território da contratação.
+
+Pegadinha
+
+Exclusividade de representante não é autorização para direcionar marca. O raciocínio correto começa na necessidade pública e na demonstração de inexistência de competição viável.
+
+O que decorar
+
+Art. 74, I + §1º: exclusividade comprovada por documento idôneo; preferência por marca é vedada como atalho.
+
+O que levar para a prova
+
+Em um caso concreto, procure duas provas: exclusividade real e aderência da exclusividade ao objeto necessário.
+
+☐ Check manual: sei diferenciar exclusividade de fornecedor de preferência administrativa por marca.
+
+---
+
+SESSÃO 06
+
+Artista: consagração e empresário realmente exclusivo
+
+Entenda primeiro
+
+O art. 74, II, permite inexigibilidade para contratar profissional do setor artístico, diretamente ou por empresário exclusivo, desde que o artista seja consagrado pela crítica especializada ou pela opinião pública. A lógica é que a escolha artística pode tornar imprópria uma competição padronizada, desde que os requisitos sejam demonstrados.
+
+Empresário exclusivo
+
+A Lei exige exclusividade permanente e contínua de representação, no País ou em Estado específico, comprovada por contrato, declaração, carta ou outro documento. Fica afastada a contratação direta por meio de empresário cuja representação seja restrita apenas a um evento ou local específico.
+
+Compare
+
+Situação | Compatibilidade com art. 74, II
+contratação direta do próprio artista consagrado | possível, com instrução do art. 72
+empresário com representação permanente e contínua comprovada | possível, se os demais requisitos forem atendidos
+empresário “exclusivo” só para aquele evento/local | não satisfaz o conceito legal de empresário exclusivo
+artista sem demonstração de consagração | requisito legal incompleto
+
+Exemplo
+
+Uma produtora apresenta carta assinada na véspera dizendo que será “exclusiva para o show do Município X”. Isso não preenche o conceito legal de empresário exclusivo, porque a representação é episódica e limitada ao evento.
+
+Como cai na FCC
+
+Troca clássica: a alternativa diz que basta empresário “exclusivo para o evento”. É exatamente o que a lei afasta.
+
+Publicidade especial
+
+Quando o contrato artístico por inexigibilidade for divulgado no PNCP, a lei exige identificação de componentes específicos do custo, como cachê e despesas vinculadas ao evento. O detalhe aparece no art. 94, §2º e é bom ponto de prova.
+
+O que decorar
+
+Artista consagrado + contratação direta ou empresário exclusivo permanente/contínuo. Exclusividade só do evento não serve.
+
+O que levar para a prova
+
+Separe os dois requisitos: qualidade da escolha artística (consagração) e qualidade da representação (exclusividade adequada).
+
+☐ Check manual: sei identificar uma “exclusividade de ocasião” e rejeitá-la.
+
+---
+
+SESSÃO 07
+
+Serviços técnicos intelectuais e notória especialização: o que mudou e o que não mudou
+
+Entenda primeiro
+
+O art. 74, III, trata de determinados serviços técnicos especializados de natureza predominantemente intelectual contratados com profissionais ou empresas de notória especialização. A Lei 14.133/2021 não repete, nesse inciso, a antiga expressão “natureza singular” usada no regime da Lei 8.666/1993. Contudo, o caput do art. 74 continua exigindo inviabilidade de competição. Portanto, desaparecer a palavra “singular” não significa que qualquer serviço intelectual com profissional famoso possa ser contratado sem disputa.
+
+Serviços abrangidos
+
+A lista inclui, em síntese: estudos e projetos; pareceres, perícias e avaliações; assessorias/consultorias e auditorias financeiras ou tributárias; fiscalização, supervisão e gerenciamento; patrocínio ou defesa de causas; treinamento; restauração de obras de arte e bens históricos; controles de qualidade/tecnologia, análises, testes, ensaios, instrumentação, monitoramento e serviços de engenharia enquadrados no inciso.
+
+Publicidade e divulgação estão expressamente fora da inexigibilidade do inciso III.
+
+Notória especialização
+
+É o conceito reconhecido do profissional ou empresa no campo da especialidade, inferido de desempenho anterior, estudos, experiência, publicações, organização, aparelhamento, equipe técnica ou outros elementos relacionados à atividade, de modo a indicar trabalho essencial e reconhecidamente adequado à plena satisfação do objeto.
+
+Compare
+
+Serviço intelectual com inexigibilidade | Serviço intelectual sujeito a competição
+serviço está no universo legal + contratado tem notória especialização + fatos demonstram inviabilidade de competição | há vários prestadores comparáveis e critérios objetivos permitem disputa útil
+motivação conecta especialização às necessidades concretas | escolha baseia-se apenas em prestígio genérico
+profissional/equipe que justificou a inexigibilidade deve efetivamente atuar | troca posterior esvazia a causa que justificou a contratação
+
+Regra da execução
+
+Nas contratações do inciso III, a lei veda subcontratar empresas ou utilizar profissionais distintos daqueles que justificaram a inexigibilidade.
+
+Exemplo
+
+Contratar consultoria para tarefa padronizável, com múltiplos agentes aptos e critérios objetivos de seleção, não se torna inexigível só porque uma empresa tem muitos prêmios. A Administração precisa demonstrar a inviabilidade competitiva do caso concreto.
+
+Como cai na FCC
+
+Duas pegadinhas fortes: inserir serviços de publicidade/divulgação no rol e afirmar que a nova lei ainda exige literalmente “singularidade do serviço” no inciso III. O primeiro é falso porque há vedação expressa; o segundo é impreciso porque a palavra não está no requisito textual do inciso, embora a inviabilidade de competição permaneça indispensável.
+
+O que decorar
+
+Técnico + predominantemente intelectual + notória especialização + inviabilidade de competição. Publicidade/divulgação: não.
+
+O que levar para a prova
+
+Não troque “sumiu a palavra singularidade” por “sumiu a necessidade de justificar por que a competição é inviável”.
+
+☐ Check manual: consigo explicar a mudança da Lei 14.133 sem banalizar a inexigibilidade.
+
+---
+
+SESSÃO 08
+
+Credenciamento e imóvel: duas inexigibilidades com lógicas próprias
+
+Parte A — Credenciamento
+
+O credenciamento é um processo administrativo de chamamento público pelo qual interessados que preencham requisitos podem se credenciar para executar o objeto quando convocados. É um procedimento auxiliar, e o art. 74, IV, trata como inexigíveis os objetos que devam ou possam ser contratados por credenciamento.
+
+O art. 79 prevê quatro ambientes: contratação paralela e não excludente; seleção do prestador a critério de terceiros; mercados fluidos; e, desde a Lei 15.266/2025, comércio eletrônico para bens e serviços comuns padronizados ofertados no Sistema de Compras Expressas (Sicx). Em 2026, o Decreto 13.106/2026 passou a regulamentar essa quarta hipótese no âmbito da Administração Pública federal. O ponto essencial para M17 é perceber por que não há competição eliminatória tradicional: em vez de eleger um único vencedor por comparação, a Administração credencia quem satisfaz as condições e aplica a dinâmica prevista para a hipótese.
+
+Compare — formas de credenciamento
+
+Hipótese | Lógica
+Paralela e não excludente | pode ser vantajoso contratar simultaneamente diversos credenciados em condições padronizadas
+Seleção por terceiros | beneficiário direto escolhe entre credenciados
+Mercado fluido | oscilação constante de preço/condições dificulta seleção por licitação clássica
+Comércio eletrônico / Sicx | plataforma para bens e serviços comuns padronizados, conforme disciplina específica
+
+Pegadinha FCC
+
+Credenciamento não é hipótese de dispensa. O art. 74, IV, coloca o objeto credenciável no campo da inexigibilidade.
+
+Parte B — aquisição ou locação de imóvel
+
+O art. 74, V, admite inexigibilidade quando características das instalações e da localização tornam necessária a escolha do imóvel. Não basta a Administração “gostar” de um prédio.
+
+São exigidos: avaliação prévia do bem, estado de conservação, adaptações imprescindíveis e prazo de amortização; certificação de inexistência de imóvel público vago e disponível capaz de atender; e justificativas que demonstrem a singularidade do imóvel e a vantagem para a Administração.
+
+Compare
+
+Credenciamento | Imóvel específico
+inviabilidade decorre da dinâmica de contratar todos/terceiro/mercado fluido/Sicx | inviabilidade decorre da necessidade concreta de instalações e localização específicas
+edital de chamamento permanece aberto conforme regras do art. 79 | escolha exige avaliação prévia e demonstrações do §5º do art. 74
+não é “competição para um vencedor” | comparação de alternativas serve para demonstrar por que aquele bem é necessário/vantajoso
+
+O que decorar
+
+Credenciamento = art. 74, IV. Imóvel = art. 74, V + avaliação + inexistência de imóvel público adequado + singularidade/vantagem.
+
+O que levar para a prova
+
+A FCC pode deslocar credenciamento para dispensa ou retirar um dos três blocos de requisitos do imóvel.
+
+☐ Check manual: sei dizer por que credenciamento é inexigibilidade e listar os três requisitos do imóvel.
+
+---
+
+SESSÃO 09
+
+Dispensa de licitação e os valores atualizados para 2026
+
+Entenda primeiro
+
+Na dispensa, a competição pode existir, mas a lei decide que, em circunstâncias específicas, licitar não é obrigatório. O art. 75 usa fórmula taxativa: a Administração só pode dispensar quando houver hipótese legal aplicável e devidamente motivada.
+
+Os valores nominais impressos no texto original da Lei 14.133 sofrem atualização. Para prova em 2026, deve-se usar o Decreto 12.807/2025, vigente desde 1º de janeiro de 2026.
+
+Valores-chave de 2026
+
+Dispositivo | Hipótese | Valor atualizado
+Art. 75, I | obras e serviços de engenharia; serviços de manutenção de veículos automotores | inferior a R$ 130.984,20
+Art. 75, II | outros serviços e compras | inferior a R$ 65.492,11
+Art. 75, IV, c | P&D — obras e serviços de engenharia | R$ 392.952,63
+Art. 75, §7º | manutenção de veículos, incluídas peças, para exceção à soma do §1º | até R$ 10.478,74
+Art. 70, III | referência atualizada para a hipótese específica de dispensa de documentação | R$ 392.952,63 no trecho de P&D
+
+Atenção à linguagem: nos incisos I e II, a lei usa contratação com valores inferiores aos limites. Não transforme o limite em “até” por automatismo.
+
+Valores dobrados
+
+Os limites dos incisos I e II são duplicados para contratações feitas por consórcio público ou por autarquia/fundação qualificadas como agências executivas.
+
+Exemplo
+
+Compra comum de R$ 60 mil pode, em 2026, caber no art. 75, II, desde que o cálculo contra fracionamento e os demais requisitos estejam atendidos. Compra de R$ 70 mil não cabe nesse inciso apenas por “estar perto” do limite.
+
+Como cai na FCC
+
+A banca usa valores de anos anteriores ou troca os dois limites. Fixe pares: engenharia/manutenção de veículo ≈ 130,9 mil; demais compras/serviços ≈ 65,49 mil em 2026.
+
+Pegadinha
+
+Dispensa por valor não dispensa processo, pesquisa/justificativa de preço, habilitação mínima, razão da escolha e autorização.
+
+O que decorar
+
+2026: 130.984,20 | 65.492,11 | 392.952,63 | 10.478,74.
+
+O que levar para a prova
+
+Sempre veja o ano da questão. Valor da Lei 14.133 é dinâmico e a prova pode usar decreto de atualização.
+
+☐ Check manual: consigo reproduzir os dois limites principais de 2026 e a regra de duplicação.
+
+---
+
+SESSÃO 10
+
+Dispensa por valor sem fracionamento: como calcular corretamente
+
+Entenda primeiro
+
+O risco mais comum da dispensa por valor é a Administração dividir artificialmente uma necessidade previsível para manter cada contratação abaixo do limite. Por isso, o art. 75, §1º, manda olhar somatórios, não contratos isolados.
+
+Regra jurídica
+
+Para aferir os limites dos incisos I e II, observam-se conjuntamente:
+
+• o total gasto no exercício financeiro pela respectiva unidade gestora; e
+• o total gasto com objetos de mesma natureza, entendidos como contratações do mesmo ramo de atividade.
+
+O método evita “fatiar” aquisições homogêneas. A análise deve considerar planejamento e previsibilidade, sem proibir fracionamentos técnica ou economicamente justificáveis que não tenham finalidade de burlar o regime de competição.
+
+Compare
+
+Parcelamento legítimo | Fracionamento indevido
+divisão atende razão técnica/econômica e preserva o regime jurídico adequado | divisão é usada para manter cada contratação artificialmente abaixo do limite
+necessidade e cronograma são planejados | repetição previsível é tratada como se cada compra fosse isolada
+soma legal é considerada | soma do exercício/ramo é ignorada
+
+Aviso de 3 dias úteis
+
+Para incisos I e II, a lei diz que a contratação será preferencialmente precedida de aviso em sítio eletrônico oficial por no mínimo 3 dias úteis, com especificação do objeto e interesse em receber propostas adicionais, devendo ser escolhida a proposta mais vantajosa.
+
+Cartão de pagamento
+
+Também preferencialmente, essas contratações serão pagas por cartão de pagamento, cujo extrato deve ser divulgado e mantido no PNCP.
+
+Exceção da manutenção de veículos
+
+A regra de soma do §1º não se aplica às contratações de manutenção de veículos automotores do órgão/entidade, incluído fornecimento de peças, até R$ 10.478,74 em 2026.
+
+Exemplo
+
+Unidade gestora prevê comprar itens do mesmo ramo ao longo do ano. Não pode fazer várias dispensas isoladas de R$ 40 mil e ignorar a soma apenas porque cada nota individual está abaixo de R$ 65.492,11.
+
+Como cai na FCC
+
+Trocas frequentes: “por órgão inteiro” no lugar de unidade gestora; “mesmo objeto idêntico” no lugar de mesma natureza/ramo de atividade; “obrigatoriamente” no lugar de preferencialmente para o aviso do §3º.
+
+O que decorar
+
+§1º = unidade gestora no exercício + mesma natureza/ramo. §3º = aviso preferencial por 3 dias úteis.
+
+O que levar para a prova
+
+Aferição de limite é visão anual e agregada, não leitura de uma nota fiscal isolada.
+
+☐ Check manual: sei explicar os dois somatórios e a exceção de manutenção de veículos.
+
+---
+
+SESSÃO 11
+
+Emergência e calamidade: contratar o necessário, pelo tempo necessário
+
+Entenda primeiro
+
+A emergência não transforma o processo em “vale tudo”. O art. 75, VIII, foi desenhado para permitir resposta rápida a risco concreto, mantendo limites objetivos. A urgência deve estar ligada a prejuízo, continuidade de serviços públicos ou segurança de pessoas, obras, serviços, equipamentos e outros bens.
+
+Regra jurídica
+
+A contratação deve se restringir aos bens necessários à situação e às parcelas de obras/serviços que possam ser concluídas em até 1 ano contado da ocorrência da emergência ou calamidade. Na literalidade do art. 75, VIII, são vedadas a prorrogação dos respectivos contratos e a recontratação de empresa já contratada com base nesse dispositivo. Para questão de lei seca, memorize essa redação; para questão jurisprudencial, aplique a interpretação conforme do STF.
+
+Jurisprudência essencial — STF, ADI 6.890
+
+Na ADI 6.890, o STF conferiu interpretação conforme ao art. 75, VIII. Segundo a divulgação oficial do Tribunal, prorrogação ou recontratação podem ocorrer desde que o prazo total da contratação não ultrapasse um ano; a tese restringe a vedação à recontratação fundada na mesma situação emergencial ou calamitosa quando houver extrapolação desse limite. A decisão também não impede a empresa de participar da licitação substitutiva nem de ser contratada por outro fundamento legal, inclusive nova emergência/calamidade, sem prejuízo do controle de abusos. Assim, em prova, separe a literalidade legal da leitura constitucional fixada pelo STF.
+
+Emergência causada por falha de planejamento
+
+O §6º trata expressamente da continuidade do serviço público: devem ser observados preços de mercado e adotadas providências para concluir o processo licitatório, sem prejuízo da apuração de responsabilidade dos agentes que deram causa à emergência. Assim, a falha administrativa anterior não autoriza abandonar a continuidade do serviço; pode coexistir contratação emergencial necessária com responsabilização de quem causou a situação.
+
+Compare
+
+Emergência legítima | Uso abusivo da emergência
+risco atual e demonstrado | mera conveniência ou pressa administrativa não demonstrada
+objeto limitado ao necessário | contratação ampla de itens sem relação com o evento
+horizonte máximo ligado à ocorrência e solução transitória | emergência usada como rotina para evitar licitação
+preço de mercado e processo do art. 72 | ausência de pesquisa, escolha motivada e controle
+providências para solução definitiva | nenhuma medida para concluir contratação regular
+
+Exemplo
+
+Se contrato essencial termina por grave falha de gestão e a interrupção imediata ameaçaria serviço público, a Administração pode precisar contratar emergencialmente para evitar dano. Isso não “perdoa” os responsáveis pela falta de planejamento; a lei manda apurar responsabilidades.
+
+Como cai na FCC
+
+A banca costuma afirmar que emergência fabricada por culpa administrativa “nunca permite” dispensa. A formulação é excessiva. A lei protege a continuidade e, paralelamente, determina apuração de responsabilidade.
+
+O que decorar
+
+Emergência: necessidade estrita + até 1 ano da ocorrência + preço de mercado + solução definitiva em andamento + responsabilização de quem causou, se houver.
+
+O que levar para a prova
+
+Distingua duas perguntas: “é necessário contratar agora para evitar dano?” e “quem causou a emergência deve responder?”. As duas podem receber “sim”.
+
+☐ Check manual: sei explicar a ADI 6.890 e a emergência causada por falta de planejamento.
+
+---
+
+SESSÃO 12
+
+Licitação deserta e fracassada: art. 75, III, não é passe livre
+
+Entenda primeiro
+
+O art. 75, III, permite contratar diretamente mantendo todas as condições definidas no edital de licitação realizada há menos de um ano, quando a tentativa competitiva não produziu resultado nas situações previstas em lei.
+
+Deserta x fracassada
+
+• Deserta: não aparecem licitantes interessados.
+• Fracassada: houve participação, mas não se chegou a proposta válida/aceitável dentro das hipóteses do inciso, como ausência de propostas válidas ou propostas com preços manifestamente superiores aos de mercado/incompatíveis com referências oficiais.
+
+A linguagem doutrinária ajuda a interpretar, mas na prova literal você deve retornar às alíneas do inciso III.
+
+Compare
+
+Elemento | Deserta | Fracassada
+Interessados | não surgem licitantes | há interessados/propostas
+Problema | ausência de disputa | propostas não válidas/aceitáveis conforme o inciso
+Contratação direta automática? | não | não
+Requisitos comuns | licitação anterior há menos de 1 ano + manutenção de todas as condições do edital + processo do art. 72 | mesmos requisitos
+
+Exemplo
+
+Licitação encerrada há quatro meses sem interessados. A Administração mantém integralmente as condições do edital e instrui o processo direto. Há caminho pelo art. 75, III, “a”. Se, ao contrário, a Administração muda substancialmente o objeto ou relaxa requisitos centrais, deixa de cumprir a condição legal de manutenção das condições.
+
+Como cai na FCC
+
+A alternativa pode apagar o requisito temporal de menos de um ano ou autorizar alterar as condições do edital para “facilitar” a contratação direta. Ambos os movimentos quebram a hipótese legal.
+
+Pegadinha
+
+Não confunda “licitação fracassada” com revogação por conveniência. O art. 75, III, tem situações objetivas próprias.
+
+O que decorar
+
+Art. 75, III: edital mantido + licitação há menos de 1 ano + sem interessados/propostas válidas ou preços manifestamente excessivos/incompatíveis.
+
+O que levar para a prova
+
+Leia o caso concreto procurando três marcadores: tempo, manutenção do edital e motivo do insucesso.
+
+☐ Check manual: diferencio deserta e fracassada e sei os requisitos adicionais do inciso III.
+
+---
+
+SESSÃO 13
+
+Demais hipóteses relevantes do art. 75: organize por famílias, não por decoreba cega
+
+Entenda primeiro
+
+O art. 75 é extenso. Para nível Analista, vale conhecer o mapa inteiro e memorizar os núcleos com maior probabilidade de prova. A melhor técnica é agrupar as hipóteses pela razão jurídica.
+
+Mapa por famílias
+
+Família | Hipóteses relevantes
+Garantia / fornecedor original | peças, componentes ou bens necessários à manutenção durante garantia técnica, quando exclusividade do fornecedor original for indispensável
+Acordos / ciência / inovação | acordo internacional vantajoso; produtos de P&D; transferência/licenciamento por ICT pública/agência de fomento; hipóteses da Lei de Inovação
+Perecíveis | hortifrutigranjeiros, pães e outros gêneros perecíveis durante o tempo necessário ao procedimento, pelo preço do dia
+Defesa e segurança | alta tecnologia + defesa nacional; materiais padronizados das Forças Armadas; operações de paz; abastecimento militar temporário; segurança nacional; guerra, defesa, sítio, intervenção ou grave perturbação
+Finalidade social/ambiental | associações/cooperativas de catadores de baixa renda; associação de pessoas com deficiência nas condições legais; cisternas/tecnologias de água; Programa Cozinha Solidária
+Cultura / investigação / saúde | obras de arte e objetos históricos autênticos; rastreamento/provas sob sigilo; medicamentos para doenças raras; transferências de tecnologia do SUS; produtos estratégicos de saúde na redação vigente de 2026
+Estado para Estado / serviços públicos | bem/serviço de órgão ou entidade administrativa criado para esse fim, com preço de mercado; intervenção econômica da União; contrato de programa de serviço público associado
+Instituições especiais | profissional notoriamente especializado para comissão de técnica; instituição brasileira sem fins lucrativos de apoio a ensino/pesquisa/inovação ou recuperação social da pessoa presa, com reputação exigida
+
+Atualização importante de 2026 — inciso XVI
+
+A redação vigente passou a alcançar aquisição, por pessoa jurídica de direito público interno, de produtos estratégicos para a saúde fornecidos por produtores públicos por intermédio de fundação com as finalidades e condições legais, inclusive requisito temporal de criação da fundação e preço compatível com o mercado. A alteração decorre da Lei 15.471/2026. Em materiais anteriores, você pode encontrar redações superadas sobre “insumos estratégicos”.
+
+P&D
+
+Para obras e serviços de engenharia ligados a produtos de pesquisa e desenvolvimento, o valor atualizado do art. 75, IV, “c”, é R$ 392.952,63 em 2026.
+
+Como cai na FCC
+
+A banca troca uma palavra qualificadora que muda tudo: “alta complexidade tecnológica ou defesa nacional”, quando a lei exige cumulação; retira compatibilidade com preço de mercado; ou desloca uma hipótese de dispensa para inexigibilidade.
+
+Pegadinha
+
+Não transforme o rol longo em autorização genérica para “interesse público”. Cada dispensa precisa de inciso/alínea aplicável e requisitos demonstrados.
+
+O que decorar
+
+Prioridade: valores; garantia técnica; perecíveis; defesa/segurança; emergência; deserta/fracassada; saúde; instituições sem fins lucrativos; contratação intragovernamental com preço de mercado.
+
+O que levar para a prova
+
+Em itens longos, localize as palavras-condição: “cumulativamente”, “exclusivamente”, “desde que”, “compatível com mercado”, “sem fins lucrativos”, “comprovada idoneidade”.
+
+☐ Check manual: reconheço as famílias do art. 75 e a atualização do inciso XVI em 2026.
+
+---
+
+SESSÃO 14
+
+Fechamento operacional: preço, escolha, habilitação e publicidade
+
+Entenda primeiro
+
+Uma contratação direta só está completa quando o processo demonstra não apenas por que a licitação foi afastada, mas também por que aquele contratado e aquele preço são defensáveis, se o contratado está minimamente habilitado e como a decisão será tornada pública.
+
+Justificativa de preço
+
+O art. 72, VII, exige justificativa de preço. O art. 23 orienta a estimativa pela realidade de mercado. Se, em contratação direta, não for possível estimar o valor pelos métodos ordinários, o art. 23, §4º, permite exigir do futuro contratado demonstração prévia de que pratica preços compatíveis em objetos semelhantes, por exemplo por notas fiscais emitidas a outros contratantes no período de até um ano, ou por outro meio idôneo.
+
+Em inexigibilidade, a ausência de concorrente não significa ausência de parâmetro econômico. O controle migra da comparação simultânea entre propostas para a demonstração de consistência do preço.
+
+Razão da escolha do contratado
+
+É requisito diferente. A Administração deve explicar por que aquela pessoa satisfaz o fundamento jurídico e a necessidade: exclusividade comprovada, artista escolhido e consagração, notória especialização conectada ao objeto, posição no credenciamento, capacidade em dispensa emergencial etc.
+
+Habilitação
+
+O art. 72, V, exige comprovação dos requisitos de habilitação e qualificação mínima necessária. O art. 70, III, admite dispensa total ou parcial da documentação em três grupos: contratações para entrega imediata; contratações em valores inferiores a 1/4 do limite para dispensa de licitação para compras em geral; e contratações de produto para pesquisa e desenvolvimento até o valor legal atualizado, hoje R$ 392.952,63. Trata-se de exceção documental expressa, não de autorização genérica para ignorar a aptidão mínima do contratado.
+
+Compare — três justificações que a prova mistura
+
+Pergunta | Documento/raciocínio | Exemplo
+Por que não licitar? | enquadramento na inexigibilidade/dispensa | fornecedor único / emergência / baixo valor
+Por que esse contratado? | razão da escolha | documento de exclusividade + aderência ao objeto
+Por que esse preço? | justificativa de preço | mercado, contratações semelhantes, notas fiscais/meio idôneo
+
+Publicidade em três planos
+
+• Art. 72, parágrafo único: ato autorizador da contratação direta ou extrato do contrato deve ser divulgado e mantido em sítio eletrônico oficial.
+• Art. 75, §3º: nas dispensas por valor dos incisos I e II, aviso prévio em sítio eletrônico oficial por pelo menos 3 dias úteis é preferencial, buscando propostas adicionais.
+• Art. 94: divulgação do contrato no PNCP é condição indispensável de eficácia; para contratação direta, prazo de 10 dias úteis da assinatura. Em urgência, o contrato produz efeitos desde a assinatura, mas deve ser publicado no prazo legal, sob pena de nulidade.
+
+Compare — autorização, aviso e PNCP
+
+Ato | Momento/finalidade | Regra-chave
+aviso do art. 75, §3º | antes da dispensa por valor | preferencial, mínimo 3 dias úteis
+ato autorizador/extrato do art. 72 | decisão de contratação direta | divulgar e manter em sítio oficial
+contrato no PNCP, art. 94 | após assinatura | 10 dias úteis na contratação direta; condição de eficácia, ressalva da urgência
+
+Exemplo integrado
+
+Órgão compra material comum por dispensa de valor. Deve verificar soma do exercício/mesma natureza, estimar e justificar preço, demonstrar habilitação mínima, motivar por que escolheu o fornecedor, obter autorização, observar preferencialmente o aviso de 3 dias úteis e fazer as divulgações legais. “Abaixo do limite” é só uma peça do caso.
+
+Como cai na FCC
+
+A banca tende a fundir requisitos: afirmar que o aviso do §3º é sempre obrigatório; dizer que justificativa de preço some na inexigibilidade; ou declarar que habilitação só existe em licitação.
+
+O que decorar
+
+Não licitar ≠ não instruir. Escolha, preço, habilitação, autorização e publicidade continuam. PNCP: 10 dias úteis na contratação direta.
+
+O que levar para a prova
+
+Em qualquer caso de contratação direta, faça a auditoria mental: fundamento → processo → escolhido → preço → habilitação → autorização → publicidade.
+
+☐ Check manual: consigo auditar um caso concreto usando essa sequência completa.
+
+---
+
+Quadro-mestre — M17 em uma página
+
+Tema | Regra de bolso | Artigo
+Gênero | contratação direta = inexigibilidade + dispensa | 72
+Processo | oito núcleos documentais; decisão motivada | 72
+Responsabilidade | indevida + dolo/fraude/erro grosseiro + dano → solidariedade | 73
+Inexigibilidade | competição inviável; exemplos não exaustivos | 74
+Exclusivo | prova idônea; não usar marca como atalho | 74, I e §1º
+Artista | consagrado + empresário exclusivo permanente/contínuo, se houver | 74, II e §2º
+Técnicos | natureza predominantemente intelectual + notória + inviabilidade; publicidade fora | 74, III e §§3º-4º
+Credenciamento | inexigibilidade; procedimento auxiliar | 74, IV; 78-79
+Imóvel | instalações/localização necessárias + três requisitos específicos | 74, V e §5º
+Dispensa | hipóteses taxativas | 75
+Valor 2026 I | inferior a R$ 130.984,20 | 75, I + Dec. 12.807/2025
+Valor 2026 II | inferior a R$ 65.492,11 | 75, II + Dec. 12.807/2025
+Fracionamento | soma da unidade gestora no exercício + mesma natureza/ramo | 75, §1º
+Aviso baixo valor | preferencial, mínimo 3 dias úteis | 75, §3º
+Emergência | estritamente necessária; horizonte de 1 ano; mercado; solução definitiva | 75, VIII e §6º
+Deserta/fracassada | edital mantido + licitação há menos de 1 ano + hipóteses do III | 75, III
+Preço | sempre justificar; art. 23, §4º quando pesquisa ordinária inviável | 72, VII; 23
+Habilitação | mínima necessária; exceções só quando a lei autoriza | 72, V; 70
+Publicidade | sítio oficial + PNCP; contrato direto em 10 dias úteis | 72, p.ú.; 94
+
+---
+
+Camada FCC — 20 armadilhas para revisar antes da prova
+
+• “Contratação direta = inexigibilidade.” Errado: também inclui dispensa.
+• “Inexigibilidade é escolha discricionária.” Errado: pressupõe inviabilidade de competição demonstrada.
+• “Rol do art. 74 é taxativo.” Errado: o caput usa “em especial”.
+• “Rol do art. 75 é exemplificativo.” Errado: dispensa depende de previsão legal.
+• “Baixo valor gera inexigibilidade.” Errado: gera possível dispensa.
+• “Inexigibilidade dispensa justificativa de preço.” Errado: art. 72, VII.
+• “Sem licitação não há habilitação.” Errado: art. 72, V.
+• “Parecer jurídico é absolutamente obrigatório em qualquer contratação direta.” Errado: ler art. 53, §§4º-5º e art. 72, III.
+• “Declaração qualquer prova exclusividade.” Errado: prova deve ser idônea e aderente.
+• “Pode-se escolher marca para criar exclusividade.” Errado.
+• “Empresário exclusivo apenas para o evento é suficiente.” Errado.
+• “Publicidade/divulgação pode ser contratada por inexigibilidade técnica do art. 74, III.” Errado.
+• “A Lei 14.133 ainda exige literalmente singularidade do serviço técnico no inciso III.” Não: a palavra saiu; permanece inviabilidade de competição.
+• “Credenciamento é dispensa.” Errado: art. 74, IV.
+• “Imóvel por inexigibilidade dispensa avaliação e comparação.” Errado: §5º traz requisitos próprios.
+• “No baixo valor, basta olhar cada contrato isolado.” Errado: §1º manda somar.
+• “Aviso de 3 dias úteis do §3º é textual e invariavelmente obrigatório.” Errado: a lei diz preferencialmente.
+• “Emergência causada por falha administrativa impede atender serviço essencial.” Errado como absoluto: pode haver contratação necessária e apuração de responsabilidade.
+• “Licitação deserta permite mudar as condições e contratar direto.” Errado: art. 75, III exige manutenção das condições.
+• “Contrato direto só é publicado se tiver alto valor.” Errado: transparência e PNCP obedecem às regras legais, inclusive art. 94.
+
+---
+
+O que decorar
+
+Núcleo duro
+
+• Art. 72: oito blocos do processo.
+• Art. 73: dolo, fraude ou erro grosseiro + contratação direta indevida + dano.
+• Art. 74: inviabilidade de competição; rol exemplificativo.
+• Art. 75: dispensa taxativa.
+• Valores 2026: R$ 130.984,20; R$ 65.492,11; R$ 392.952,63; R$ 10.478,74.
+• Art. 75, §1º: soma por unidade gestora no exercício + objetos de mesma natureza/ramo.
+• Art. 75, §3º: aviso preferencial por 3 dias úteis.
+• Emergência: 1 ano a partir da ocorrência + contratação limitada ao necessário + mercado + solução definitiva + responsabilidade.
+• Art. 74, II: empresário exclusivo permanente e contínuo; não exclusividade só de evento/local.
+• Art. 74, III: publicidade/divulgação vedadas; profissional/empresa de notória especialização; sem “singularidade” textual do serviço, mas com inviabilidade de competição.
+• Art. 74, IV: credenciamento = inexigibilidade.
+• Art. 74, V: imóvel com requisitos do §5º.
+• Art. 94: PNCP em 10 dias úteis para contratação direta.
+
+---
+
+Artigos para ler na lei seca
+
+Leitura obrigatória: Lei 14.133/2021, arts. 72, 73, 74 e 75, com todos os parágrafos.
+Leitura de apoio: arts. 6º, XVIII e XLIII; 23, especialmente §4º; 53, §§4º-5º; 70, III; 78-79; 94; 182.
+Atualização de valores: Decreto 12.807/2025.
+Jurisprudência de alto rendimento: STF, ADI 6.890, sobre a restrição à recontratação emergencial.
+
+---
+
+Revisão final — recuperação ativa
+
+Tente responder antes de reler a teoria:
+
+• Qual é o gênero que reúne dispensa e inexigibilidade?
+• Qual pergunta lógica separa inexigibilidade de dispensa?
+• Quais são os oito núcleos do art. 72?
+• Qual diferença entre estimativa da despesa e justificativa de preço?
+• Quando o art. 73 cria responsabilidade solidária?
+• Por que o rol do art. 74 não é taxativo?
+• Quais documentos podem comprovar exclusividade e qual atalho é vedado?
+• O que torna um empresário “exclusivo” para fins do artista?
+• O que a Lei 14.133 mudou em relação à palavra “singularidade” nos serviços técnicos?
+• Qual serviço é expressamente excluído do art. 74, III?
+• Por que credenciamento é inexigibilidade?
+• Quais são os três blocos de requisitos para o imóvel?
+• Quais são os limites dos incisos I e II do art. 75 em 2026?
+• Como o §1º combate fracionamento?
+• Qual é o prazo do aviso preferencial de baixo valor?
+• Como funciona a exceção de manutenção de veículos do §7º?
+• Quais limites materiais e temporais cercam a emergência?
+• O que o STF decidiu na ADI 6.890?
+• Quais requisitos adicionais existem para a licitação deserta/fracassada do art. 75, III?
+• Em quantos dias úteis o contrato de contratação direta deve ser divulgado no PNCP?
+
+Gabarito de controle
+
+• contratação direta; 2. existência de competição viável; 3. demanda/planejamento cabível, estimativa, pareceres cabíveis, orçamento, habilitação, escolha, preço, autorização; 4. referência de valor x defesa do preço concreto; 5. indevida com dolo/fraude/erro grosseiro e dano; 6. “em especial”; 7. meios idôneos e vedação à preferência de marca; 8. representação permanente e contínua no País/Estado; 9. saiu do texto do inciso III, mas inviabilidade permanece; 10. publicidade/divulgação; 11. art. 74, IV e dinâmica sem vencedor competitivo tradicional; 12. avaliação, inexistência de imóvel público adequado, singularidade/vantagem; 13. R$ 130.984,20 e R$ 65.492,11; 14. soma por unidade gestora/exercício e mesma natureza/ramo; 15. 3 dias úteis; 16. até R$ 10.478,74 sem aplicação do §1º; 17. estrita necessidade e até 1 ano da ocorrência, além dos demais controles; 18. vedação ligada à mesma emergência que ultrapasse 1 ano, sem impedir outras bases legais/licitação; 19. menos de 1 ano e mesmas condições do edital; 20. 10 dias úteis.
+
+---
+
+Fechamento do módulo
+
+Se você dominar sete perguntas, domina o núcleo de prova:
+(1) por que não licitar? (2) por que esse contratado? (3) por que esse preço? (4) ele está habilitado? (5) quem autorizou? (6) foi dado conhecimento público? (7) o fundamento permanece verdadeiro durante toda a contratação?
+
+10 Questões Internas de Fixação — Conteúdo Completo
+
+Função: testar apenas o conteúdo ensinado no M17. Não substituem TEC, questões de banca, Lei em Dia ou outros cadernos externos.
+
+Questão 1 FÁCIL
+
+Enunciado: Na Lei 14.133/2021, a expressão “contratação direta” abrange:
+
+A) somente a inexigibilidade.
+B) inexigibilidade e dispensa de licitação.
+C) apenas as hipóteses de baixo valor.
+D) apenas licitação deserta e fracassada.
+E) inexigibilidade, pregão e diálogo competitivo.
+
+Gabarito: B.
+Explicação: O art. 72 afirma que o processo de contratação direta compreende os casos de inexigibilidade e de dispensa de licitação.
+
+Questão 2 FÁCIL
+
+Enunciado: Entre os documentos/núcleos do art. 72, encontra-se:
+
+A) homologação da licitação anterior em todos os casos.
+B) autorização legislativa.
+C) razão da escolha do contratado.
+D) ata de julgamento de propostas.
+E) termo de adjudicação.
+
+Gabarito: C.
+Explicação: O art. 72, VI, exige a razão da escolha do contratado. Os demais itens não constituem exigências gerais do processo de contratação direta.
+
+Questão 3 FÁCIL
+
+Enunciado: O rol do art. 74 da Lei 14.133/2021 é:
+
+A) taxativo, porque inexigibilidade é exceção.
+B) exemplificativo, pois o caput utiliza a expressão “em especial”.
+C) taxativo apenas para serviços técnicos.
+D) exemplificativo apenas para imóveis.
+E) inaplicável ao credenciamento.
+
+Gabarito: B.
+Explicação: A inviabilidade de competição é o fundamento da inexigibilidade, e o art. 74 enumera hipóteses “em especial”.
+
+Questão 4 FÁCIL
+
+Enunciado: Em 2026, o limite atualizado do art. 75, II, para outros serviços e compras é:
+
+A) inferior a R$ 10.478,74.
+B) inferior a R$ 65.492,11.
+C) inferior a R$ 130.984,20.
+D) até R$ 392.952,63.
+E) inferior a R$ 50.000,00.
+
+Gabarito: B.
+Explicação: O Decreto 12.807/2025 atualizou o art. 75, II, para R$ 65.492,11 em 2026.
+
+Questão 5 MÉDIA
+
+Enunciado: Um órgão comprova que determinado equipamento só pode ser fornecido por empresa exclusiva. A respeito da contratação, assinale a correta:
+
+A) a exclusividade torna dispensável justificar o preço.
+B) trata-se necessariamente de dispensa por valor.
+C) a Administração deve demonstrar exclusividade por meio idôneo e ainda cumprir o art. 72, inclusive justificar preço.
+D) basta indicar marca específica, sem motivação adicional.
+E) a inviabilidade de competição dispensa habilitação mínima.
+
+Gabarito: C.
+Explicação: A exclusividade pode fundamentar inexigibilidade, mas deve ser comprovada e não elimina os requisitos do processo de contratação direta, especialmente justificativa de preço e habilitação mínima.
+
+Questão 6 MÉDIA
+
+Enunciado: Município pretende contratar artista consagrado por intermédio de empresário que possui exclusividade somente para o evento específico. Segundo o conteúdo do módulo:
+
+A) é suficiente, porque basta qualquer declaração de exclusividade.
+B) é insuficiente; a lei exige empresário exclusivo com representação permanente e contínua, não apenas exclusividade para evento/local específico.
+C) transforma a hipótese em dispensa de licitação.
+D) dispensa demonstração da consagração do artista.
+E) exige pregão prévio frustrado.
+
+Gabarito: B.
+Explicação: A lei combate a exclusividade de ocasião. A representação deve atender aos requisitos legais de exclusividade permanente e contínua no âmbito aplicável.
+
+Questão 7 MÉDIA
+
+Enunciado: Uma unidade gestora realiza, durante o mesmo exercício, sucessivas compras do mesmo ramo, cada uma abaixo de R$ 65.492,11. Para aferir a dispensa por valor:
+
+A) cada compra é analisada isoladamente.
+B) somente o valor da maior compra importa.
+C) deve ser observado o somatório do exercício pela unidade gestora e com objetos de mesma natureza/ramo de atividade.
+D) o somatório só existe para obras de engenharia.
+E) o somatório é facultativo se houver três cotações.
+
+Gabarito: C.
+Explicação: O art. 75, §1º, combate o fracionamento indevido por meio de análise agregada.
+
+Questão 8 MÉDIA
+
+Enunciado: Licitação realizada há 13 meses não teve interessados. A Administração pretende contratar diretamente mantendo as condições do edital, com fundamento no art. 75, III. A solução é:
+
+A) possível, porque basta a ausência de interessados.
+B) possível, porque o prazo é de dois anos.
+C) inviável por esse inciso, pois a licitação deve ter sido realizada há menos de um ano.
+D) inexigível, e não dispensável.
+E) possível apenas se o objeto for de engenharia.
+
+Gabarito: C.
+Explicação: A hipótese do art. 75, III, exige licitação realizada há menos de um ano, além da manutenção das condições definidas no edital e do motivo legal de insucesso.
+
+Questão 9 DIFÍCIL
+
+Enunciado: Uma empresa foi contratada diretamente em situação emergencial. Persistindo a mesma emergência, a Administração avalia nova contratação da mesma empresa. À luz da ADI 6.890 e do módulo, assinale a correta:
+
+A) a empresa nunca pode ser recontratada, ainda que o total permaneça abaixo de um ano.
+B) a vedação constitucionalmente interpretada incide sobre recontratação fundada na mesma situação emergencial que extrapole o prazo máximo legal de um ano; a empresa não fica impedida de participar de licitação substitutiva ou de ser contratada por fundamento legal diverso.
+C) o STF eliminou o limite temporal de um ano.
+D) a decisão do STF converteu a hipótese em inexigibilidade.
+E) a recontratação dispensa pesquisa de preços e processo do art. 72.
+
+Gabarito: B.
+Explicação: A ADI 6.890 deu interpretação conforme à vedação do art. 75, VIII, preservando o horizonte de um ano e afastando leitura de impedimento absoluto da empresa.
+
+Questão 10 DIFÍCIL
+
+Enunciado: Órgão pretende contratar consultoria técnica com empresa de grande reputação. Existem diversos prestadores capazes, com critérios objetivos que permitem comparação útil. Qual é a solução juridicamente correta?
+
+A) inexigibilidade automática pela notória especialização.
+B) inexigibilidade porque a Lei 14.133 retirou a palavra “singularidade”.
+C) não basta a notória especialização; o caput do art. 74 ainda exige inviabilidade de competição demonstrada.
+D) dispensa por serviço técnico intelectual.
+E) credenciamento obrigatório.
+
+Gabarito: C.
+Explicação: A retirada da antiga exigência textual de “singularidade” não eliminou o fundamento geral da inexigibilidade: inviabilidade de competição.

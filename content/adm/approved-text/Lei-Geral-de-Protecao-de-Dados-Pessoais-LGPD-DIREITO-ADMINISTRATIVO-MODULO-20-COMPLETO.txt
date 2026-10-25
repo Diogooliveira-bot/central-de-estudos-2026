@@ -1,0 +1,1540 @@
+﻿Lei Geral de Proteção de Dados Pessoais — LGPD
+DIREITO ADMINISTRATIVO · MÓDULO 20 · COMPLETO
+
+DIREITO ADMINISTRATIVO — MÓDULO 20
+
+Apostila de estudo · nível Analista · FCC
+
+Lei Geral de Proteção de Dados Pessoais — LGPD
+
+Lei 13.709/2018 · fundamentos, bases legais, titulares, agentes, Poder Público, LAI, segurança, responsabilidade, sanções, ANPD e transferência internacional.
+
+Base conferida em 18/09/2026: LGPD compilada; Constituição após EC 115/2022; Lei 15.352/2026; LAI; regulamentação oficial da ANPD nos pontos indicados. Materiais TEC da Biblioteca foram utilizados exclusivamente para calibrar cobertura e padrão FCC.
+
+Como estudar este módulo
+
+Em cada caso, percorra a sequência dado → incidência → base legal → princípio → agente → direito → dever → consequência. Isso evita a maior parte das trocas conceituais da FCC.
+
+dado→base→princípio→agente→direito→efeito
+
+SESSÃO 01 — Constituição, objeto, fundamentos e lógica da LGPD
+
+Entenda primeiro
+
+A LGPD é uma lei geral de proteção de dados pessoais de pessoas naturais. Seu centro não é a tecnologia em si, nem apenas a internet: é o tratamento de informação relacionada a pessoa natural identificada ou identificável, em meio digital ou físico, realizado por pessoa natural ou jurídica, pública ou privada, quando presentes os critérios de incidência da lei.
+
+A lei trabalha com uma lógica de responsabilidade pelo ciclo de vida do dado. Coletar, consultar, compartilhar, armazenar, classificar, modificar ou eliminar dados são formas de tratamento. Por isso, a conformidade deve existir desde a concepção da atividade até o encerramento e, em certos deveres, mesmo depois do término.
+
+A EC 115/2022 elevou a proteção de dados pessoais, inclusive nos meios digitais, à condição de direito fundamental expresso no art. 5º, LXXIX, da Constituição. A mesma emenda também concentrou na União as competências constitucionais de organizar e fiscalizar a proteção e o tratamento de dados pessoais e de legislar privativamente sobre a matéria. Para concurso, o principal ganho é compreender que proteção de dados não é apenas uma construção infraconstitucional de privacidade: há um direito fundamental autônomo, que convive com intimidade, vida privada, liberdade de informação, publicidade administrativa e acesso à informação.
+
+Regra jurídica
+
+O art. 1º da LGPD define o objeto: disciplinar o tratamento de dados pessoais, inclusive digital, para proteger direitos fundamentais de liberdade e privacidade e o livre desenvolvimento da personalidade da pessoa natural. As normas gerais são de interesse nacional e vinculam União, Estados, Distrito Federal e Municípios.
+
+O art. 2º reúne sete fundamentos. Não os confunda com os princípios do art. 6º.
+
+Quadro 1 — Fundamentos da disciplina de proteção de dados
+
+Fundamento | Ideia prática para a prova
+Respeito à privacidade | limita intrusões e exposição indevida
+Autodeterminação informativa | titular deve possuir esfera real de controle e conhecimento sobre o uso de seus dados
+Liberdades de expressão, informação, comunicação e opinião | proteção de dados não autoriza censura nem elimina outros direitos fundamentais
+Inviolabilidade da intimidade, honra e imagem | conecta LGPD aos direitos da personalidade
+Desenvolvimento econômico e tecnológico e inovação | a lei busca proteção compatível com atividade econômica e inovação
+Livre iniciativa, livre concorrência e defesa do consumidor | a LGPD não “protege só o Estado”; integra também a ordem econômica
+Direitos humanos, livre desenvolvimento da personalidade, dignidade e cidadania | reforça a centralidade da pessoa natural
+
+Exemplo
+
+Um tribunal utiliza dados de servidores para gestão funcional, dados das partes em processos e dados de visitantes em controle de acesso. As finalidades são distintas e podem ter bases legais distintas, mas todas as operações precisam respeitar princípios como necessidade, segurança e transparência, na medida compatível com o contexto jurídico de cada tratamento.
+
+Compare
+
+Quadro 2 — Fundamentos × princípios × bases legais
+
+Categoria | Pergunta que responde | Exemplo
+Fundamento (art. 2º) | “Qual valor sustenta a disciplina?” | privacidade; autodeterminação informativa
+Princípio (art. 6º) | “Como toda operação deve ser conduzida?” | finalidade; necessidade; segurança
+Base legal (arts. 7º e 11) | “Qual hipótese autoriza juridicamente este tratamento?” | obrigação legal; política pública; consentimento
+
+Como cai na FCC
+
+A FCC costuma trocar os três planos: apresenta necessidade como se fosse fundamento; apresenta consentimento como princípio; ou afirma que a livre iniciativa e a livre concorrência seriam incompatíveis com a LGPD. Nos cadernos TEC consultados, há cobrança recente justamente de fundamentos, princípios e papéis dos agentes.
+
+Pegadinhas
+
+• A LGPD protege pessoa natural, não pessoa jurídica enquanto titular de dado pessoal.
+• A lei alcança tratamento físico e digital; “LGPD só vale para banco digital” é falso.
+• Privacidade é fundamento, mas proteção de dados não se reduz à privacidade.
+• Consentimento não é princípio nem requisito universal.
+• O direito fundamental foi explicitado pela EC 115/2022.
+
+O que decorar
+
+Objeto: tratamento de dados pessoais → liberdade + privacidade + livre desenvolvimento da personalidade.
+Fundamentos: 7.
+CF: art. 5º, LXXIX = direito fundamental à proteção dos dados pessoais, inclusive digitais.
+
+O que levar para a prova
+
+Antes de marcar uma alternativa, classifique a palavra usada: fundamento? princípio? base legal? direito? definição? A FCC explora muito a troca de gavetas.
+
+☐ Check manual: consigo explicar por que consentimento não é o centro único da LGPD e diferenciar art. 2º, art. 6º e art. 7º.
+
+---
+
+SESSÃO 02 — Âmbito territorial, incidência e exclusões
+
+Entenda primeiro
+
+A LGPD adota incidência ampla e não depende da nacionalidade do controlador, do local de sua sede ou do país onde o servidor esteja hospedado. O art. 3º usa critérios de conexão com o Brasil.
+
+Regra jurídica — art. 3º
+
+A LGPD aplica-se quando ocorrer ao menos uma destas hipóteses:
+
+• a operação de tratamento é realizada no território nacional;
+• a atividade tem por objetivo ofertar ou fornecer bens ou serviços a indivíduos localizados no Brasil ou tratar dados de indivíduos localizados no território nacional;
+• os dados pessoais foram coletados no território nacional.
+
+Consideram-se coletados no Brasil os dados cujo titular estava no território nacional no momento da coleta.
+
+Quadro 3 — Critérios territoriais
+
+Situação | LGPD? | Motivo
+Empresa estrangeira trata no Brasil | Sim | operação no território nacional
+Plataforma estrangeira direciona serviço a pessoa localizada no Brasil | Sim | critério do objetivo/indivíduo localizado no Brasil
+Coleta ocorreu no Brasil e processamento posterior no exterior | Sim | critério da coleta
+Sede do controlador está fora do Brasil | Isso não afasta, por si só, a lei | sede não é critério de exclusão
+
+Exclusões — art. 4º
+
+A LGPD não se aplica ao tratamento:
+
+• por pessoa natural, para fins exclusivamente particulares e não econômicos;
+• para fins exclusivamente jornalísticos e artísticos;
+• para fins exclusivamente acadêmicos, mas nessa hipótese devem ser observados os arts. 7º e 11;
+• para fins exclusivos de segurança pública, defesa nacional, segurança do Estado ou investigação e repressão de infrações penais, que ficam submetidos a regime legal específico com as salvaguardas do art. 4º;
+• a certos dados provenientes do exterior, quando cumpridas cumulativamente as condições do art. 4º, IV.
+
+Atenção aos dados de segurança pública e persecução penal
+
+Não conclua que é uma “terra sem proteção”. A LGPD determina que legislação específica deve prever medidas proporcionais e estritamente necessárias ao interesse público, observando devido processo legal, princípios gerais de proteção e direitos do titular. Há ainda limites para tratamento por pessoa jurídica de direito privado.
+
+Quadro 4 — Incidência × exclusão
+
+Frase de prova | Correção
+“Pessoa natural nunca se submete à LGPD.” | Errado. A exclusão exige finalidade exclusivamente particular e não econômica.
+“Finalidade acadêmica está integralmente fora da LGPD.” | Errado. O art. 4º remete aos arts. 7º e 11.
+“Finalidade jornalística é exclusão expressa.” | Certo, se exclusivamente jornalística.
+“Segurança pública segue integralmente o mesmo regime da LGPD.” | Errado. É hipótese de exclusão sujeita a legislação específica e salvaguardas.
+“Sede no exterior afasta a LGPD.” | Errado. Aplicam-se os critérios do art. 3º.
+
+Exemplo
+
+Uma universidade brasileira realiza estudo acadêmico com dados pessoais. A finalidade acadêmica é uma exclusão do art. 4º, II, “b”, porém a própria lei manda observar as bases legais dos arts. 7º e 11. A alternativa que disser “pesquisa acadêmica nunca observa LGPD” é excessiva.
+
+Como cai na FCC
+
+Nos materiais FCC recentes da Biblioteca, apareceram simultaneamente: exclusão jornalística/artística, peculiaridade da finalidade acadêmica, alcance extraterritorial, tratamento pela Administração Pública e transferência internacional. A banca costuma transformar exceção qualificada em exclusão absoluta.
+
+Pegadinhas
+
+• “Pessoa natural” ≠ “sempre excluída”.
+• “Acadêmico” ≠ “isenção total”.
+• “Dado no exterior” ≠ “automaticamente excluído”.
+• “Segurança pública” ≠ “sem proteção jurídica”.
+• Nacionalidade brasileira do titular não é, isoladamente, o critério do art. 3º.
+
+O que decorar
+
+Art. 3º: tratamento no Brasil OU objetivo relacionado a indivíduos no Brasil OU coleta no Brasil.
+Art. 4º: particular não econômico; jornalístico/artístico; acadêmico com arts. 7º/11; segurança/defesa/Estado/persecução; hipótese específica de dados provenientes do exterior.
+
+☐ Check manual: consigo resolver um caso de empresa estrangeira sem usar a nacionalidade como atalho.
+
+---
+
+SESSÃO 03 — Conceitos do art. 5º: o vocabulário que a FCC troca
+
+Entenda primeiro
+
+Definições são um dos pontos mais rentáveis da LGPD em prova objetiva. A FCC costuma manter a estrutura da definição e trocar o nome: controlador por operador; bloqueio por eliminação; anonimização por pseudonimização; titular por controlador.
+
+Conceitos essenciais
+
+• Dado pessoal: informação relacionada a pessoa natural identificada ou identificável.
+• Dado pessoal sensível: categoria legal específica relacionada, por exemplo, à origem racial ou étnica, convicção religiosa, opinião política, filiação sindical ou a organização religiosa/filosófica/política, saúde, vida sexual, dado genético ou biométrico vinculado à pessoa natural.
+• Dado anonimizado: dado relativo a titular que não possa ser identificado, considerando meios técnicos razoáveis e disponíveis na ocasião do tratamento.
+• Banco de dados: conjunto estruturado de dados pessoais em um ou vários locais, em suporte eletrônico ou físico.
+• Titular: pessoa natural a quem se referem os dados.
+• Controlador: pessoa natural ou jurídica, pública ou privada, a quem competem as decisões sobre o tratamento.
+• Operador: pessoa natural ou jurídica, pública ou privada, que realiza tratamento em nome do controlador.
+• Agentes de tratamento: controlador + operador.
+• Tratamento: conceito amplíssimo, abrangendo o ciclo de operações sobre dados.
+• Anonimização: uso de meios técnicos razoáveis e disponíveis para retirar a possibilidade de associação direta ou indireta a um indivíduo.
+• Consentimento: manifestação livre, informada e inequívoca para finalidade determinada.
+• Bloqueio: suspensão temporária de qualquer operação de tratamento, com guarda do dado/banco.
+• Eliminação: exclusão do dado ou conjunto de dados armazenados, independentemente do procedimento.
+• Transferência internacional: transferência de dados pessoais para país estrangeiro ou organismo internacional do qual o país seja membro.
+• Uso compartilhado: conceito legal amplo de comunicação, difusão, transferência internacional, interconexão ou tratamento compartilhado nas relações descritas pelo art. 5º, XVI.
+• RIPD: documentação do controlador sobre processos de tratamento que podem gerar riscos às liberdades civis e direitos fundamentais e sobre medidas de mitigação.
+• Órgão de pesquisa: definição legal específica; não é qualquer empresa que diga “fazer pesquisa”.
+• Autoridade nacional: entidade pública responsável por zelar, implementar e fiscalizar a LGPD em todo o território nacional.
+
+Atualização crítica de 2026 — encarregado
+
+A Lei 15.352/2026 alterou o art. 5º, VIII. A definição atual menciona pessoa indicada pelo controlador e operador para atuar como canal de comunicação entre controlador, titulares e a Agência Nacional de Proteção de Dados (ANPD).
+
+Ao mesmo tempo, o art. 41 continua declarando expressamente que o controlador deverá indicar encarregado, e autoriza regulamentação de hipóteses de dispensa. Em prova literal, leia qual dispositivo está sendo cobrado. Não use material antigo que diga que a definição do art. 5º ainda menciona apenas o controlador.
+
+Quadro 5 — Dado pessoal × sensível × anonimizado
+
+Categoria | O que é | Exemplo | LGPD
+Dado pessoal | permite identificar direta ou indiretamente pessoa natural | nome; identificador associado; combinação identificável | regra geral aplicável
+Dado sensível | dado pessoal em categoria legal especialmente protegida | biometria vinculada à pessoa; saúde; convicção religiosa | tratamento sob art. 11
+Dado anonimizado | titular não identificável com meios técnicos razoáveis disponíveis | conjunto efetivamente anonimizado | em regra não é dado pessoal, salvo reversibilidade nas condições do art. 12
+
+Quadro 6 — Controlador × operador × encarregado
+
+Figura | Função nuclear | Decide finalidade/meios? | É agente de tratamento?
+Controlador | toma decisões referentes ao tratamento | Sim, no núcleo decisório | Sim
+Operador | trata em nome do controlador e segue instruções lícitas | Não no papel típico | Sim
+Encarregado | canal de comunicação e funções do art. 41 | Não por esse simples papel | Não integra a definição de agentes de tratamento
+
+Quadro 7 — Bloqueio × eliminação × anonimização
+
+Instituto | Efeito
+Bloqueio | suspende temporariamente tratamento; dado permanece guardado
+Eliminação | exclui dado/conjunto armazenado
+Anonimização | rompe associação identificadora nas condições legais
+
+Exemplo
+
+Uma empresa terceirizada processa folha de pagamento segundo finalidade, parâmetros e instruções definidos pelo órgão público. Em regra, o órgão ocupa posição de controlador e a empresa atua como operadora. Se a terceirizada passa a determinar finalidade própria incompatível, a qualificação jurídica pode exigir reavaliação: papéis decorrem das funções efetivamente exercidas, não apenas do rótulo contratual.
+
+Como cai na FCC
+
+O material TEC da Biblioteca contém cobrança recente da FCC perguntando diretamente quem decide (controlador), quem realiza tratamento em nome de outro (operador), quem é canal de comunicação (encarregado), além de anonimização, eliminação e dados sensíveis. A estratégia é decorar o verbo nuclear de cada definição.
+
+Pegadinhas
+
+• Controlador não precisa ser pessoa jurídica; pode ser pessoa natural.
+• Operador não é necessariamente “funcionário de TI”.
+• Encarregado não é sinônimo de operador.
+• Dado sensível é uma lista legal, não todo dado “importante” ou “confidencial”.
+• CPF pode ser dado pessoal, mas não vira automaticamente dado sensível só por ser identificador.
+• Dado anonimizado pode voltar ao regime de dado pessoal quando a anonimização puder ser revertida nos termos do art. 12.
+
+O que decorar
+
+Decide = controlador. Executa em nome = operador. Canal = encarregado.
+Agentes = controlador + operador.
+Bloqueio = suspensão; eliminação = exclusão; anonimização = perda da associação.
+
+☐ Check manual: consigo explicar todas as linhas dos Quadros 5 a 7 sem consultar a lei.
+
+---
+
+SESSÃO 04 — Princípios do art. 6º
+
+Entenda primeiro
+
+As bases legais autorizam o tratamento; os princípios controlam como ele deve ocorrer. Ter uma base legal não libera coleta ilimitada, finalidade secreta ou segurança deficiente. O art. 6º exige boa-fé e dez princípios.
+
+Quadro 8 — Os dez princípios da LGPD
+
+Princípio | Núcleo | Como a FCC costuma distorcer
+Finalidade | propósito legítimo, específico, explícito e informado; vedado uso posterior incompatível | troca por “adequação” ou permite finalidade genérica
+Adequação | compatibilidade do tratamento com as finalidades informadas e o contexto | trata como sinônimo de minimização
+Necessidade | mínimo necessário; dados pertinentes, proporcionais e não excessivos | chama de “finalidade”
+Livre acesso | consulta facilitada e gratuita sobre forma/duração e integralidade dos dados | confunde com publicidade irrestrita
+Qualidade dos dados | exatidão, clareza, relevância e atualização, conforme necessidade/finalidade | afirma dever absoluto de atualizar qualquer dado, sem contexto
+Transparência | informações claras, precisas e facilmente acessíveis, respeitados segredos comercial e industrial | confunde com divulgação pública universal
+Segurança | medidas técnicas e administrativas contra acessos e eventos acidentais/ilícitos | confunde com prevenção
+Prevenção | medidas para evitar ocorrência de danos | troca com segurança
+Não discriminação | proibição de tratamento para fins discriminatórios ilícitos ou abusivos | elimina a palavra “ilícitos ou abusivos” e absolutiza qualquer diferenciação
+Responsabilização e prestação de contas | demonstrar medidas eficazes e sua efetividade | reduz a mera declaração formal
+
+Finalidade, adequação e necessidade — o trio mais cobrado
+
+Pense em três perguntas sucessivas:
+
+• Finalidade: por que trato?
+• Adequação: este tratamento é compatível com o propósito informado e com o contexto?
+• Necessidade: estou usando apenas o mínimo de dados necessário?
+
+Exemplo: para emitir um crachá funcional, a Administração pode precisar de nome, matrícula e foto. Coletar opinião política “por precaução” falha na necessidade e provavelmente na própria finalidade/adequação.
+
+Segurança × prevenção
+
+Segurança descreve os meios para proteger contra acessos não autorizados, destruição, perda, alteração, comunicação ou difusão indevida. Prevenção enfatiza a adoção de medidas para evitar danos decorrentes do tratamento. Na prática se complementam, mas a literalidade distingue.
+
+Transparência × livre acesso
+
+Livre acesso é direito de consulta facilitada e gratuita do titular sobre tratamento e integralidade de dados. Transparência impõe fornecimento de informações claras, precisas e acessíveis sobre o tratamento e seus agentes, com respeito aos segredos comercial e industrial.
+
+Exemplo
+
+Um órgão possui base legal para manter cadastro de beneficiários. Isso não autoriza coletar dados “para usos futuros indefinidos”. O órgão deve vincular coleta a finalidade pública determinada e reduzir o conjunto ao necessário.
+
+Como cai na FCC
+
+Questões FCC recentes localizadas nos cadernos TEC exploram a descrição literal de necessidade (“mínimo indispensável”, “pertinentes, proporcionais e não excessivos”), bem como adequação e finalidade. Em itens de certo/errado ou múltipla escolha, a banca costuma usar uma definição correta com nome errado.
+
+Pegadinhas
+
+• Princípios valem também quando não há consentimento.
+• Livre acesso não significa que terceiros ganham acesso livre aos dados.
+• Transparência admite preservação dos segredos comercial e industrial nos limites legais.
+• Responsabilização e prestação de contas envolve demonstrar conformidade e eficácia, não só possuir política escrita.
+
+O que decorar
+
+Sequência útil: F-A-N-L-Q-T-S-P-N-R
+Finalidade → Adequação → Necessidade → Livre acesso → Qualidade → Transparência → Segurança → Prevenção → Não discriminação → Responsabilização.
+
+☐ Check manual: consigo identificar finalidade, adequação e necessidade numa situação concreta sem misturá-las.
+
+---
+
+SESSÃO 05 — Bases legais do art. 7º
+
+Entenda primeiro
+
+O erro mais comum é imaginar: “sem consentimento, tratamento é ilegal”. A LGPD prevê dez hipóteses gerais no art. 7º. Consentimento é apenas a primeira.
+
+Quadro 9 — Bases legais do art. 7º
+
+Inciso | Base legal | Chave de prova
+I | consentimento | manifestação livre, informada, inequívoca e finalidade determinada
+II | cumprimento de obrigação legal ou regulatória pelo controlador | dever jurídico do controlador
+III | Administração Pública: tratamento e uso compartilhado necessários a políticas públicas previstas em leis/regulamentos ou respaldadas em contratos, convênios ou instrumentos congêneres | observar Capítulo IV
+IV | estudos por órgão de pesquisa | anonimização sempre que possível
+V | execução de contrato ou procedimentos preliminares, a pedido do titular | titular é parte do contrato
+VI | exercício regular de direitos em processo judicial, administrativo ou arbitral | arbitragem conforme lei própria
+VII | proteção da vida ou da incolumidade física do titular ou de terceiro | urgência/proteção física
+VIII | tutela da saúde, exclusivamente em procedimento por profissionais de saúde, serviços de saúde ou autoridade sanitária | não é “qualquer empresa de saúde”
+IX | legítimo interesse do controlador ou de terceiro | cede se prevalecerem direitos e liberdades fundamentais do titular que exijam proteção
+X | proteção do crédito | inclui legislação pertinente
+
+Dados tornados públicos pelo titular
+
+A LGPD dispensa exigência de consentimento em determinadas situações relativas a dados manifestamente tornados públicos pelo titular, mas isso não elimina os princípios nem as demais obrigações da lei. Publicidade prévia do dado não transforma seu uso em território sem regras.
+
+O tratamento posterior deve considerar finalidade, boa-fé e interesse público que justificaram a disponibilização, quando aplicável. A FCC gosta de inserir “a dispensa do consentimento desobriga o controlador das demais exigências”; isso é falso.
+
+Administração Pública
+
+A base do art. 7º, III, não é uma carta branca. O Capítulo IV estabelece finalidade pública, interesse público, competências legais, transparência, regras de compartilhamento e atuação da ANPD. Além disso, órgãos públicos podem tratar dados com outras bases quando juridicamente adequadas, como obrigação legal.
+
+Exemplo
+
+Uma Secretaria de Fazenda trata dados de contribuintes para lançamento, fiscalização e cobrança tributária. Não é necessário inventar “consentimento fiscal”. O tratamento pode decorrer de obrigação legal e do exercício de competências públicas, sem afastar os princípios, segurança e direitos compatíveis.
+
+Compare
+
+Quadro 10 — Base legal × exemplo típico
+
+Situação | Base que normalmente merece ser examinada primeiro
+envio de comunicação opcional autorizada pelo titular | consentimento
+retenção exigida por norma | obrigação legal/regulatória
+execução de política pública | art. 7º, III + Capítulo IV
+folha de contrato a pedido do titular | contrato/procedimentos preliminares
+juntada de dados para defesa em processo | exercício regular de direitos
+atendimento emergencial para proteger vida | vida/incolumidade
+tratamento clínico pelo serviço de saúde | tutela da saúde
+operação privada necessária e compatível com expectativas, após balanceamento | legítimo interesse
+análise para proteção do crédito | proteção do crédito
+
+Como cai na FCC
+
+Cadernos FCC 2026 da Biblioteca já exploram a ideia de que o Poder Público pode tratar dados sem consentimento quando houver obrigação legal ou execução de políticas públicas, preservando direitos do titular. Essa é uma pegadinha recorrente contra a “teoria do consentimento universal”.
+
+Pegadinhas
+
+• Art. 7º trata do regime geral; dados sensíveis têm art. 11.
+• “Dispensa de consentimento” não significa “dispensa da LGPD”.
+• Legítimo interesse não é cheque em branco.
+• Proteção de crédito é base legal autônoma.
+• Administração Pública não depende sempre de consentimento.
+
+O que decorar
+
+As dez bases e, principalmente, as de maior incidência em Direito Administrativo: obrigação legal/regulatória; política pública; exercício regular de direitos; proteção da vida; tutela da saúde; legítimo interesse; proteção do crédito.
+
+☐ Check manual: consigo apontar por que uma atividade pública pode ser legítima sem consentimento.
+
+---
+
+SESSÃO 06 — Consentimento e legítimo interesse
+
+Entenda primeiro
+
+Consentimento e legítimo interesse merecem estudo separado porque são fontes de pegadinhas. Consentimento exige liberdade e informação; legítimo interesse exige finalidade legítima concreta, necessidade, transparência e balanceamento com direitos fundamentais.
+
+Consentimento — arts. 5º, XII; 7º, I; 8º e 9º
+
+Consentimento é manifestação livre, informada e inequívoca para finalidade determinada.
+
+Pontos centrais:
+
+• pode ser fornecido por escrito ou por outro meio que demonstre manifestação de vontade;
+• se escrito, deve constar de cláusula destacada das demais cláusulas contratuais;
+• cabe ao controlador o ônus de provar que o consentimento foi obtido conforme a lei;
+• consentimento viciado não vale;
+• autorizações genéricas são nulas;
+• pode ser revogado a qualquer momento, por procedimento gratuito e facilitado;
+• a revogação não apaga retroativamente a licitude dos tratamentos anteriores realizados sob consentimento válido, até que haja requerimento de eliminação quando cabível;
+• mudança de informação relevante ou finalidade incompatível exige informação ao titular e pode abrir espaço à revogação;
+• se o tratamento for condição para produto, serviço ou exercício de direito, o titular deve ser informado com destaque.
+
+Quadro 11 — Consentimento válido × consentimento problemático
+
+Válido | Problemático/nulo
+específico para finalidade determinada | autorização “para qualquer uso presente ou futuro”
+informação clara e prévia | linguagem enganosa ou abusiva
+manifestação demonstrável | caixa pré-marcada sem manifestação real, conforme contexto
+possibilidade de revogação facilitada | revogação artificialmente difícil ou onerosa
+liberdade real | consentimento obtido por vício ou coerção incompatível
+
+Legítimo interesse — art. 10
+
+O legítimo interesse só pode fundamentar tratamento para finalidades legítimas consideradas a partir de situações concretas. A lei exemplifica:
+
+• apoio e promoção das atividades do controlador;
+• proteção do exercício regular de direitos do titular ou prestação de serviços que o beneficiem, respeitadas suas legítimas expectativas e direitos fundamentais.
+
+Quando essa base é usada:
+
+• tratam-se somente os dados estritamente necessários;
+• o controlador adota medidas de transparência;
+• a ANPD pode solicitar RIPD;
+• direitos e liberdades fundamentais do titular podem prevalecer e impedir a base.
+
+Método de prova para legítimo interesse
+
+Pergunte:
+
+• Finalidade legítima e concreta: há propósito juridicamente aceitável?
+• Necessidade: os dados são estritamente necessários?
+• Expectativa e balanceamento: o titular razoavelmente espera o tratamento? direitos fundamentais prevalecem?
+• Salvaguardas e transparência: existem medidas para reduzir riscos e informar adequadamente?
+
+Quadro 12 — Consentimento × legítimo interesse
+
+Tema | Consentimento | Legítimo interesse
+fonte | vontade do titular | hipótese legal autônoma
+finalidade | determinada | legítima e concreta
+revogação | expressamente prevista | não se fala em “revogar a base”; titular pode exercer direitos/oposição quando houver descumprimento
+ônus central | demonstrar consentimento válido | demonstrar balanceamento, necessidade, transparência e salvaguardas
+prevalência de direitos | consentimento não legitima abuso | direitos/liberdades fundamentais podem impedir a base
+sensíveis | regime específico do art. 11 | legítimo interesse não aparece como base autônoma do art. 11
+
+Exemplo
+
+Uma empresa quer usar cadastro de clientes antigos para perfilamento detalhado e publicidade de parceiros não relacionada à relação original. Dizer apenas “há interesse comercial” não resolve. É preciso analisar finalidade concreta, expectativas, necessidade, impacto, transparência e eventual prevalência dos direitos do titular.
+
+Como cai na FCC
+
+A banca frequentemente transforma o consentimento em requisito universal. Outro padrão é afirmar que legítimo interesse permite qualquer tratamento benéfico ao controlador. As duas proposições são falsas.
+
+Pegadinhas
+
+• Consentimento revogável não é consentimento “temporariamente válido apenas até a próxima operação”.
+• Revogação não torna automaticamente ilícito tudo o que foi feito antes sob base válida.
+• Interesse legítimo é diferente de “interesse econômico”.
+• Dados sensíveis não usam a base geral de legítimo interesse do art. 7º, IX.
+
+O que decorar
+
+Consentimento: livre + informado + inequívoco + finalidade determinada + revogável.
+Legítimo interesse: finalidade legítima concreta + estrita necessidade + expectativas/direitos + transparência/salvaguardas.
+
+☐ Check manual: consigo rejeitar a frase “se não há consentimento, há violação da LGPD”.
+
+---
+
+SESSÃO 07 — Dados pessoais sensíveis; crianças e adolescentes
+
+Dados sensíveis
+
+Dado sensível não é sinônimo de dado secreto. É categoria legal do art. 5º, II, submetida às hipóteses de tratamento do art. 11.
+
+Bases do art. 11
+
+O tratamento de dado sensível pode ocorrer:
+
+A) com consentimento específico e destacado, para finalidades específicas; ou
+
+B) sem consentimento, quando indispensável para uma das hipóteses legais, entre elas:
+
+• cumprimento de obrigação legal ou regulatória pelo controlador;
+• tratamento compartilhado necessário à execução, pela Administração Pública, de políticas públicas previstas em leis ou regulamentos;
+• estudos por órgão de pesquisa, com anonimização sempre que possível;
+• exercício regular de direitos, inclusive em contrato e em processo judicial, administrativo e arbitral;
+• proteção da vida ou incolumidade física do titular ou terceiro;
+• tutela da saúde, exclusivamente por profissionais de saúde, serviços de saúde ou autoridade sanitária;
+• prevenção à fraude e segurança do titular em processos de identificação e autenticação em sistemas eletrônicos, resguardados os direitos e salvo prevalência de direitos fundamentais que exijam proteção.
+
+Quadro 13 — Dados gerais × dados sensíveis
+
+Ponto | Dados pessoais em geral | Dados pessoais sensíveis
+norma principal de bases | art. 7º | art. 11
+consentimento | uma das dez bases | deve ser específico e destacado quando usado
+legítimo interesse | base autônoma possível | não aparece como base autônoma do art. 11
+política pública | art. 7º, III | hipótese própria do art. 11, II, “b”
+tutela da saúde | base geral com requisitos | também prevista em regime sensível
+
+Dados de saúde — cuidado especial
+
+A lei restringe compartilhamento de dados pessoais de saúde entre controladores com objetivo de obter vantagem econômica, ressalvadas hipóteses legais ligadas à prestação de serviços de saúde, assistência farmacêutica e assistência à saúde, inclusive serviços auxiliares de diagnose e terapia, nos termos legais. Também há vedação de uso de dados de saúde por operadoras de planos para prática de seleção de riscos na contratação ou exclusão de beneficiários.
+
+Crianças e adolescentes — art. 14
+
+Regra-matriz: todo tratamento deve observar o melhor interesse da criança e do adolescente.
+
+Pela literalidade do §1º, o tratamento de dados de crianças deve ser realizado com consentimento específico e em destaque por pelo menos um dos pais ou responsável legal. O dispositivo não formula a mesma regra textual para todo tratamento de adolescente.
+
+Há deveres adicionais:
+
+• tornar públicas informações sobre tipos de dados coletados, forma de utilização e procedimentos para direitos;
+• sem consentimento, coletar dados de criança apenas quando necessário para contatar pais/responsável, usados uma única vez e sem armazenamento, ou para proteção da criança, sem transferência a terceiro sem consentimento;
+• não condicionar participação em jogos, aplicações de internet ou outras atividades ao fornecimento de dados além do estritamente necessário;
+• realizar esforços razoáveis para verificar consentimento parental, considerando tecnologias disponíveis;
+• fornecer informações de modo simples, claro e acessível, considerando características físico-motoras, perceptivas, sensoriais, intelectuais e mentais do usuário.
+
+Interpretação oficial da ANPD — Enunciado 1/2023
+
+A ANPD consolidou entendimento de que o tratamento de dados de crianças e adolescentes pode utilizar as hipóteses legais dos arts. 7º ou 11, desde que o melhor interesse seja observado e prevaleça no caso concreto. Assim, não transforme o consentimento parental do art. 14, §1º, em afirmação de que “nenhuma outra base legal pode ser usada”.
+
+Quadro 14 — Criança × adolescente
+
+Tema | Criança | Adolescente
+melhor interesse | obrigatório | obrigatório
+regra literal do art. 14, §1º | consentimento específico e destacado de ao menos um dos pais/responsável | §1º não repete essa exigência textual para todo tratamento
+bases legais | ANPD admite arts. 7º/11 com prevalência do melhor interesse | idem
+transparência adaptada | reforçada | reforçada conforme contexto
+
+Exemplo
+
+Uma escola trata dados de saúde de criança para atender emergência e obrigação de proteção. É incorreto resolver automaticamente o caso dizendo “só consentimento permite”. Deve-se identificar dado sensível, base do art. 11, regras do art. 14 e melhor interesse.
+
+Como cai na FCC
+
+Há forte potencial de cobrança de lista de dados sensíveis, diferença entre CPF e biometria, bases sem consentimento e regra especial de crianças. A banca também pode misturar “melhor interesse” com “consentimento obrigatório em qualquer cenário”.
+
+Pegadinhas
+
+• Dado financeiro pode ser muito delicado, mas não integra automaticamente a lista de “dado pessoal sensível” do art. 5º, II.
+• Biometria só integra a definição sensível quando vinculada a uma pessoa natural.
+• Consentimento para sensível: específico e destacado, para finalidades específicas.
+• Melhor interesse é eixo permanente no tratamento de crianças e adolescentes.
+
+O que decorar
+
+Lista legal de sensíveis + bases sem consentimento do art. 11 + melhor interesse do art. 14.
+
+☐ Check manual: consigo explicar por que “dados de crianças somente podem ser tratados com consentimento parental” é uma formulação excessivamente absoluta à luz da interpretação oficial da ANPD.
+
+---
+
+SESSÃO 08 — Término do tratamento e direitos do titular
+
+Término do tratamento — arts. 15 e 16
+
+O tratamento não deve continuar indefinidamente sem razão. O art. 15 prevê término quando:
+
+• a finalidade foi alcançada ou os dados deixaram de ser necessários/pertinentes;
+• termina o período de tratamento;
+• o titular comunica sua vontade, inclusive revogando consentimento, resguardado o interesse público;
+• a ANPD determina o término em razão de violação à lei.
+
+Após o término, a regra é eliminação nos limites técnicos da atividade, mas o art. 16 autoriza conservação para:
+
+• obrigação legal ou regulatória;
+• estudo por órgão de pesquisa, com anonimização sempre que possível;
+• transferência a terceiro, respeitados requisitos da lei;
+• uso exclusivo do controlador, vedado acesso por terceiro, desde que os dados estejam anonimizados.
+
+Quadro 15 — Término × conservação
+
+Situação | Consequência
+finalidade atingida | tratamento deve terminar, salvo hipótese legítima de conservação
+revogação de consentimento | pode encerrar o tratamento baseado nessa base, sem apagar outras obrigações legítimas
+obrigação legal de guardar | conservação permitida
+uso exclusivo posterior do controlador | somente com acesso vedado a terceiro e dados anonimizados, na hipótese do art. 16, IV
+
+Direitos do titular — arts. 17 a 22
+
+O art. 17 assegura à pessoa natural titularidade dos seus dados e direitos fundamentais de liberdade, intimidade e privacidade.
+
+O art. 18 permite requerer do controlador, a qualquer momento:
+
+• confirmação da existência de tratamento;
+• acesso aos dados;
+• correção de dados incompletos, inexatos ou desatualizados;
+• anonimização, bloqueio ou eliminação de dados desnecessários, excessivos ou tratados em desconformidade;
+• portabilidade, conforme regulamentação e resguardados segredos comercial e industrial;
+• eliminação dos dados tratados com consentimento, salvo art. 16;
+• informação sobre entidades públicas e privadas com as quais houve uso compartilhado;
+• informação sobre possibilidade de não consentir e consequências da negativa;
+• revogação do consentimento.
+
+Além disso:
+
+• o titular pode peticionar contra o controlador perante a ANPD;
+• pode opor-se a tratamento fundado em hipótese de dispensa de consentimento quando houver descumprimento da lei;
+• direitos são exercidos por requerimento expresso do titular ou representante;
+• o atendimento é sem custos nos termos regulamentares;
+• certas correções, eliminações, anonimizações ou bloqueios devem ser comunicados aos agentes com quem houve compartilhamento, salvo impossibilidade comprovada ou esforço desproporcional;
+• direitos também podem ser exercidos perante organismos de defesa do consumidor.
+
+Confirmação e acesso — art. 19
+
+Há duas formas:
+
+• formato simplificado: imediatamente;
+• declaração clara e completa: em até 15 dias, indicando origem, inexistência de registro quando for o caso, critérios e finalidade, respeitados segredos comercial e industrial.
+
+Decisões automatizadas — art. 20
+
+O titular tem direito de solicitar revisão de decisões tomadas unicamente com base em tratamento automatizado que afetem seus interesses, inclusive decisões destinadas a definir perfil pessoal, profissional, de consumo, de crédito ou aspectos da personalidade.
+
+O controlador deve fornecer informações claras e adequadas sobre critérios e procedimentos utilizados, respeitados segredos comercial e industrial. Se esses segredos forem invocados para negar informação, a ANPD pode realizar auditoria para verificação de aspectos discriminatórios.
+
+Pegadinha de alto nível: a redação vigente não estabelece, no caput, que a revisão deva obrigatoriamente ser feita por uma pessoa natural. Não acrescente requisito que a lei não contém.
+
+Quadro 16 — Direitos do titular
+
+Direito | Conteúdo essencial
+Confirmação | saber se há tratamento
+Acesso | conhecer os dados tratados
+Correção | completar/retificar dados
+Anonimização/bloqueio/eliminação | para dados desnecessários, excessivos ou irregulares
+Portabilidade | para outro fornecedor, conforme regulamentação
+Eliminação por consentimento | salvo hipóteses de conservação do art. 16
+Informação sobre compartilhamento | saber com quem o controlador compartilhou
+Informação sobre não consentir | conhecer possibilidade e consequências
+Revogação | retirar consentimento
+Oposição | em tratamento sem consentimento quando houver descumprimento da LGPD
+Revisão automatizada | revisar decisão unicamente automatizada que afete interesses
+
+Exemplo
+
+Se um titular pede eliminação de dado que o órgão é obrigado por lei a conservar, o direito não autoriza destruir documento contra dever legal. A resposta deve identificar a base de conservação e preservar os demais direitos pertinentes.
+
+Como cai na FCC
+
+A FCC tende a usar absolutos: “todo dado deve ser apagado imediatamente após revogação”; “portabilidade inclui dados anonimizados”; “acesso completo sempre é imediato”. Compare com os limites dos arts. 16, 18 e 19.
+
+O que decorar
+
+Art. 18: 9 direitos no caput.
+Art. 19: simplificado imediatamente; completo em até 15 dias.
+Art. 20: revisão de decisão unicamente automatizada; não invente “revisor humano obrigatório”.
+
+☐ Check manual: consigo distinguir revogação, eliminação e oposição.
+
+---
+
+SESSÃO 09 — Controlador, operador, encarregado, registros e RIPD
+
+Controlador e operador
+
+Controlador ocupa o núcleo decisório do tratamento. Operador realiza tratamento em nome do controlador. O art. 39 determina que o operador siga as instruções fornecidas pelo controlador, que deverá verificar observância das próprias instruções e das normas da matéria.
+
+Ambos devem manter registro das operações de tratamento, especialmente quando o tratamento estiver baseado em legítimo interesse.
+
+A qualificação depende da realidade funcional. Um contrato pode chamar alguém de “operador”, mas, se ele passa a decidir finalidade própria, finalidade incompatível ou elementos essenciais por conta própria, a análise jurídica precisa considerar a atuação efetiva.
+
+RIPD — Relatório de Impacto à Proteção de Dados Pessoais
+
+É documentação do controlador que descreve processos de tratamento capazes de gerar riscos a liberdades civis e direitos fundamentais e apresenta medidas, salvaguardas e mecanismos de mitigação.
+
+A ANPD pode determinar ao controlador sua elaboração, inclusive quanto a dados sensíveis. O relatório deve conter, no mínimo, conforme art. 38:
+
+• descrição dos tipos de dados coletados;
+• metodologia usada para coleta e segurança das informações;
+• análise das medidas, salvaguardas e mecanismos de mitigação de risco.
+
+Pegadinha FCC
+
+Uma questão localizada nos materiais TEC explorou justamente a afirmação de que a ANPD poderia exigir RIPD “exceto de dados sensíveis”. Isso está errado: a lei diz inclusive de dados sensíveis.
+
+Encarregado — art. 41 + atualização de 2026
+
+O art. 41 determina que o controlador indique encarregado, sem prejuízo das hipóteses regulamentares de dispensa. A identidade e contato devem ser publicamente divulgados de forma clara e objetiva, preferencialmente no sítio eletrônico do controlador.
+
+Atividades legais do encarregado:
+
+• aceitar reclamações e comunicações dos titulares, prestar esclarecimentos e adotar providências;
+• receber comunicações da ANPD e adotar providências;
+• orientar funcionários e contratados sobre práticas de proteção de dados;
+• executar outras atribuições determinadas pelo controlador ou por normas complementares.
+
+Atualização indispensável: a Lei 15.352/2026 alterou a definição do art. 5º, VIII, para mencionar pessoa indicada pelo controlador e operador como canal entre controlador, titulares e Agência Nacional de Proteção de Dados. O art. 41, porém, continua impondo expressamente ao controlador a indicação. Para prova literal, identifique qual artigo está em jogo e prefira a redação vigente.
+
+Quadro 17 — Controlador × operador × encarregado × ANPD
+
+Sujeito | O que faz | Relação típica
+Controlador | decide sobre tratamento | responde pelo núcleo decisório e dá instruções ao operador
+Operador | realiza tratamento em nome do controlador | deve observar instruções lícitas
+Encarregado | canal institucional e funções do art. 41 | comunica titulares, organização e ANPD
+ANPD | regula, fiscaliza, interpreta administrativamente e sanciona | autoridade/agência estatal de proteção de dados
+
+Exemplo
+
+Um tribunal contrata empresa para hospedar sistema processual segundo requisitos e finalidades definidos pelo tribunal. A mera guarda técnica não transforma automaticamente a empresa em controladora. Se ela usa os dados para finalidade própria não autorizada, surge questão adicional de qualificação e eventual ilicitude.
+
+Como cai na FCC
+
+O caderno FCC recente consultado cobra diretamente “dois agentes de tratamento” e a posição do encarregado. Memorize: agentes = controlador e operador. Encarregado tem papel próprio e não entra nessa dupla legal.
+
+O que decorar
+
+Art. 37: registros.
+Art. 38: ANPD pode exigir RIPD inclusive sensível.
+Art. 39: operador segue instruções.
+Art. 41: encarregado e suas quatro tarefas legais.
+
+☐ Check manual: consigo responder quem decide, quem executa, quem comunica e quem fiscaliza.
+
+---
+
+SESSÃO 10 — Poder Público, uso compartilhado e LGPD × LAI
+
+Entenda primeiro
+
+Poder Público não está fora da LGPD. O Capítulo IV cria regras específicas. A Administração deve compatibilizar proteção de dados com finalidade pública, transparência, acesso à informação, continuidade do serviço e competências legais.
+
+Art. 23 — regra-matriz do Poder Público
+
+O tratamento pelas pessoas jurídicas de direito público abrangidas pela LAI deve ocorrer:
+
+• para atendimento da finalidade pública;
+• na persecução do interesse público;
+• para executar competências legais ou cumprir atribuições legais do serviço público.
+
+Além disso, devem ser informadas as hipóteses de tratamento, com informações claras e atualizadas sobre previsão legal, finalidade, procedimentos e práticas, em veículo de fácil acesso, preferencialmente sítio eletrônico; e deve haver encarregado nos termos legais.
+
+A LGPD expressamente afirma que esse regime não dispensa as autoridades e estruturas exigidas pela LAI. Prazos e procedimentos para exercício de direitos perante o Poder Público observam legislação específica, especialmente Habeas Data, Lei 9.784/1999 e LAI.
+
+Empresas estatais — art. 24
+
+Quadro 18 — Empresa pública e sociedade de economia mista
+
+Atuação | Regime LGPD predominante
+atividade em regime de concorrência, sob art. 173 da CF | mesmo tratamento de pessoas jurídicas de direito privado particulares
+operacionalização de política pública, no âmbito dessa execução | mesmo tratamento dispensado aos órgãos e entidades do Poder Público no Capítulo IV
+
+Esse é um excelente ponto para questão casuística.
+
+Uso compartilhado no Poder Público — arts. 25 e 26
+
+Dados devem ser mantidos em formato interoperável e estruturado para usos públicos legítimos descritos pela lei.
+
+O compartilhamento de dados pessoais pelo Poder Público deve atender a finalidades específicas de execução de políticas públicas e atribuição legal, respeitando os princípios do art. 6º.
+
+A transferência de bases públicas para entidades privadas é, em regra, vedada, mas há exceções legais, entre elas:
+
+• execução descentralizada de atividade pública que exija transferência para fim específico e determinado, observada a LAI;
+• dados acessíveis publicamente, observada a LGPD;
+• previsão legal ou respaldo em contrato, convênio ou instrumento congênere;
+• prevenção de fraudes/irregularidades ou proteção da segurança e integridade do titular, com finalidade exclusiva;
+• demais hipóteses da redação vigente.
+
+Os contratos e convênios utilizados nas hipóteses do art. 26 devem ser comunicados à autoridade nacional nos termos da lei. Já o art. 27 trata especificamente da comunicação ou uso compartilhado de dados de pessoa jurídica de direito público para pessoa de direito privado: a operação deve ser informada à autoridade nacional e, como regra textual, depende de consentimento do titular, salvo as hipóteses de dispensa de consentimento previstas na LGPD, os casos de uso compartilhado com a publicidade exigida pelo art. 23 e as exceções do art. 26, §1º. Assim, a FCC pode errar tanto ao dizer “sempre depende de consentimento” quanto ao dizer “nunca depende”.
+
+Quadro 19 — Compartilhamento público × compartilhamento privado
+
+Ponto | Poder Público | Setor privado
+finalidade | vinculada a competência/política pública e finalidade específica | vinculada à base legal e finalidade declarada
+transferência a privado | regra de vedação com exceções expressas | não existe a mesma vedação geral do art. 26, mas há bases, princípios e deveres
+publicidade | deve observar transparência pública e proteção de dados | transparência ao titular nos termos da LGPD
+LAI | integração expressa | LAI não rege, em regra, empresa privada comum fora das hipóteses legais de incidência
+
+LGPD × LAI
+
+A relação correta é de compatibilização, não de revogação recíproca.
+
+A LAI parte da publicidade como regra da Administração e disciplina acesso à informação. Seu art. 31 impõe tratamento transparente das informações pessoais com respeito à intimidade, vida privada, honra, imagem, liberdades e garantias. Informações pessoais relacionadas à intimidade, vida privada, honra e imagem podem ter acesso restrito, independentemente de classificação de sigilo, por até 100 anos, com exceções legais.
+
+A LGPD, por sua vez, regula tratamento de dados pessoais e exige base legal, finalidade, necessidade, segurança e direitos do titular. Nem todo dado pessoal é automaticamente “sigiloso” pela LGPD. A existência de dado pessoal exige análise jurídica do acesso e do tratamento; não permite resposta automática “nega-se porque é LGPD”.
+
+Quadro 20 — LGPD × LAI
+
+Tema | LGPD | LAI
+foco principal | proteção e governança do tratamento de dados pessoais | transparência e acesso a informações públicas
+regra-chave | tratamento precisa de base legal + princípios | publicidade é diretriz; sigilo/restrição são exceções legais
+informação pessoal | dado relacionado a pessoa natural identificada/identificável | art. 31 protege informações pessoais ligadas à intimidade, vida privada, honra e imagem, com regime próprio
+efeito | não transforma automaticamente todo dado pessoal em segredo | não autoriza exposição irrestrita de dados pessoais
+Poder Público | Capítulo IV integra o regime de tratamento | continua aplicável; art. 23, §2º, da LGPD preserva suas estruturas
+
+Quadro 21 — Dado pessoal LGPD × informação pessoal LAI
+
+Conceito | Abrangência
+Dado pessoal — LGPD | informação relacionada a pessoa natural identificada ou identificável
+Informação pessoal — LAI, art. 4º, IV | informação relacionada a pessoa natural identificada ou identificável
+Restrição do art. 31 da LAI | incide especificamente sobre informações pessoais relativas à intimidade, vida privada, honra e imagem, segundo seu regime
+
+Exemplo
+
+Um cidadão pede, via LAI, documento administrativo que contém dados pessoais. A solução não é “entregar tudo porque publicidade é regra” nem “negar tudo porque existe LGPD”. Deve-se verificar interesse público, conteúdo pessoal, possibilidade de acesso parcial/tarja, base legal, finalidade e o regime do art. 31 da LAI.
+
+Como cai na FCC
+
+A banca pode afirmar que a LGPD revogou a LAI em matéria de dados pessoais ou que dados pessoais são sempre sigilosos. Ambas as formulações ignoram a convivência normativa expressa no Capítulo IV.
+
+Pegadinhas
+
+• Autarquia está sujeita à LGPD.
+• Empresa estatal pode mudar de regime conforme a atividade concreta.
+• Publicidade administrativa não dispensa proteção de dados.
+• Proteção de dados não elimina transparência.
+• Uso compartilhado público exige finalidade específica e competência legal.
+
+O que decorar
+
+Art. 23: finalidade pública + interesse público + competência/atribuição legal + transparência.
+Art. 24: estatal concorrencial = privado; política pública = regime público.
+Art. 26: finalidade específica + regra de vedação de transferência a privado com exceções.
+LGPD e LAI coexistem.
+
+☐ Check manual: consigo justificar juridicamente por que “LGPD é lei de sigilo” é uma simplificação errada.
+
+---
+
+SESSÃO 11 — Segurança, boas práticas e incidentes
+
+Segurança desde a concepção
+
+O art. 46 exige dos agentes medidas técnicas e administrativas aptas a proteger dados contra acessos não autorizados e situações acidentais ou ilícitas de destruição, perda, alteração, comunicação ou tratamento inadequado/ilícito.
+
+A proteção deve existir desde a fase de concepção do produto ou serviço até sua execução. Isso se aproxima da ideia prática de proteção de dados desde o projeto, mas, em prova, prefira a literalidade legal.
+
+O dever de segurança continua para agentes e demais pessoas que intervenham no tratamento mesmo após o término.
+
+Sistemas devem ser estruturados para atender requisitos de segurança, boas práticas, governança, princípios e normas regulamentares.
+
+Boas práticas e governança — art. 50
+
+Controladores e operadores podem formular regras de boas práticas e governança sobre organização, procedimentos, reclamações, segurança, padrões técnicos, obrigações dos envolvidos, ações educativas, supervisão e mitigação de riscos.
+
+Programa de governança em privacidade pode incluir:
+
+• comprometimento institucional;
+• aplicação a todos os dados sob controle;
+• adequação à estrutura, escala, volume e sensibilidade;
+• políticas e salvaguardas baseadas em avaliação de riscos;
+• transparência e mecanismos de participação do titular;
+• integração à governança geral;
+• plano de resposta a incidentes e remediação;
+• atualização contínua.
+
+Incidente de segurança — art. 48
+
+O controlador deve comunicar à ANPD e ao titular ocorrência de incidente que possa acarretar risco ou dano relevante aos titulares.
+
+A LGPD prevê conteúdo mínimo da comunicação, incluindo:
+
+• natureza dos dados afetados;
+• informações sobre titulares envolvidos;
+• medidas técnicas e de segurança utilizadas, resguardados segredos comercial e industrial;
+• riscos do incidente;
+• motivo de demora, se não imediata;
+• medidas adotadas ou a adotar para reverter ou mitigar efeitos.
+
+A ANPD pode verificar gravidade e determinar ampla divulgação do fato e medidas de mitigação/reversão. Na avaliação da gravidade, considera-se, entre outros aspectos, eventual adoção de técnica que torne dados ininteligíveis a terceiros não autorizados.
+
+Regulamento atual de incidentes — Resolução CD/ANPD 15/2024
+
+Para nível Analista, vale conhecer a concretização do “prazo razoável” do art. 48:
+
+• comunicação à ANPD: 3 dias úteis, salvo prazo específico em outra legislação;
+• comunicação aos titulares: 3 dias úteis;
+• contagem vinculada ao conhecimento pelo controlador de que o incidente afetou dados pessoais;
+• comunicação pode ser complementada quando informações ainda não estiverem disponíveis; o regulamento prevê disciplina própria para complementação;
+• o controlador deve manter registro de incidentes pelo prazo regulamentar; a ANPD informa regra de pelo menos 5 anos.
+
+O regulamento considera risco/dano relevante quando houver potencial de afetar significativamente interesses e direitos fundamentais e, cumulativamente, envolver ao menos um critério como dado sensível, dado de criança/adolescente/idoso, dado financeiro, autenticação, sigilo legal/judicial/profissional ou tratamento em larga escala.
+
+Quadro 22 — Segurança × prevenção × incidente
+
+Tema | Regra
+Segurança | medidas técnicas e administrativas aptas a proteger dados
+Prevenção | princípio de evitar danos antes que ocorram
+Incidente relevante | controlador comunica ANPD + titular
+Prazo regulatório atual | 3 dias úteis, nos termos da Resolução 15/2024, salvo regra específica
+Autoridade | pode determinar divulgação e mitigação
+
+Exemplo
+
+Sistema de tribunal é invadido e dados pessoais com risco relevante são exfiltrados. O dever de comunicar é do controlador. A ANPD não substitui o controlador para fazer a primeira notificação ao titular.
+
+Como cai na FCC
+
+Questão FCC recente localizada na Biblioteca cobrou exatamente quem deve comunicar: a alternativa correta apontava o controlador comunicando ANPD e titular. A banca pode inverter para “agentes comunicam e a ANPD avisa o titular”.
+
+Pegadinhas
+
+• Nem todo evento técnico exige necessariamente comunicação do art. 48; o gatilho legal é risco ou dano relevante, concretizado pelo regulamento.
+• Segurança não começa depois do vazamento: deve existir desde a concepção.
+• Dever de segurança não termina automaticamente quando o tratamento acaba.
+• O operador coopera e tem deveres, mas o art. 48 atribui a comunicação ao controlador.
+
+O que decorar
+
+Art. 46: medidas técnicas/administrativas.
+Art. 47: dever continua após término.
+Art. 48: controlador → ANPD + titular.
+Res. 15/2024: 3 dias úteis nos casos comunicáveis.
+
+☐ Check manual: consigo diferenciar incidente ocorrido, incidente comunicável e responsabilidade por comunicação.
+
+---
+
+SESSÃO 12 — Responsabilidade civil e sanções administrativas
+
+Responsabilidade civil — arts. 42 a 45
+
+A LGPD prevê que controlador ou operador que, em razão da atividade de tratamento, cause a outrem dano patrimonial, moral, individual ou coletivo em violação à legislação de proteção de dados pessoais é obrigado a repará-lo.
+
+Para prova literal, evite simplificações doutrinárias que transformem o texto em uma etiqueta única de “responsabilidade objetiva” ou “subjetiva” sem examinar a questão. A lei disciplina dever de reparar, solidariedade em hipóteses determinadas, excludentes, possibilidade de inversão do ônus da prova e responsabilidade por falha de segurança. Em relações de consumo, permanecem aplicáveis as regras de responsabilidade da legislação consumerista. Quando o tratamento é realizado pelo Poder Público, o caso ainda pode dialogar com o regime constitucional e administrativo de responsabilidade estatal; por isso, em questão de Direito Administrativo, não converta automaticamente os arts. 42 a 45 em exclusão das regras próprias aplicáveis ao Estado.
+
+Solidariedade
+
+O operador responde solidariamente quando:
+
+• descumpre obrigações da legislação de proteção de dados; ou
+• não segue instruções lícitas do controlador;
+
+nesses casos, equipara-se ao controlador para fins de responsabilidade, ressalvadas as excludentes legais.
+
+Controladores diretamente envolvidos no tratamento que causou dano respondem solidariamente, salvo excludentes.
+
+Quem reparar o dano possui direito de regresso contra os demais responsáveis na medida de sua participação.
+
+Inversão do ônus da prova
+
+O juiz pode inverter o ônus a favor do titular quando, a seu juízo:
+
+• a alegação for verossímil;
+• houver hipossuficiência para produção da prova; ou
+• a produção da prova pelo titular for excessivamente onerosa.
+
+Não é inversão automática em todo processo LGPD.
+
+Excludentes — art. 43
+
+Os agentes não serão responsabilizados quando provarem:
+
+• que não realizaram o tratamento que lhes é atribuído;
+• que, embora tenham realizado o tratamento, não houve violação à legislação de proteção de dados;
+• que o dano decorre de culpa exclusiva do titular ou de terceiro.
+
+O tratamento é irregular quando deixa de observar a legislação ou quando não fornece a segurança que o titular pode legitimamente esperar, consideradas circunstâncias legais como modo do tratamento, resultado e riscos razoavelmente esperados e técnicas disponíveis à época.
+
+Quadro 23 — Responsabilidade civil × sanção administrativa
+
+Eixo | Responsabilidade civil | Sanção administrativa
+finalidade | reparar dano | reprimir/corrigir infração administrativa
+pressuposto central | dano decorrente de tratamento em violação à legislação, conforme regime legal | infração às normas da LGPD, apurada em processo administrativo
+autoridade | Poder Judiciário quando litigioso, sem prejuízo de solução extrajudicial | ANPD no âmbito de sua competência
+resultado | indenização/reparação e efeitos civis | advertência, multas quando cabíveis, bloqueio, eliminação, suspensão etc.
+cumulação | pode coexistir com outras responsabilidades | não substitui sanções civis, penais, consumeristas ou específicas cabíveis
+
+Sanções administrativas — art. 52
+
+Os agentes de tratamento podem sofrer, conforme o caso:
+
+• advertência, com prazo para medidas corretivas;
+• multa simples de até 2% do faturamento da pessoa jurídica de direito privado, grupo ou conglomerado no Brasil no último exercício, excluídos tributos, limitada a R$ 50 milhões por infração;
+• multa diária, observado o limite legal;
+• publicização da infração, depois de apurada e confirmada;
+• bloqueio dos dados pessoais referentes à infração até regularização;
+• eliminação dos dados referentes à infração;
+• incisos VII, VIII e IX: vetados;
+• suspensão parcial do funcionamento do banco de dados relacionado à infração por até 6 meses, prorrogável por igual período até regularização;
+• suspensão do exercício da atividade de tratamento dos dados relacionados à infração por até 6 meses, prorrogável por igual período;
+• proibição parcial ou total do exercício de atividades relacionadas a tratamento de dados.
+
+A aplicação exige processo administrativo com oportunidade de ampla defesa e considera critérios como gravidade, boa-fé, vantagem auferida/pretendida, condição econômica, reincidência, grau do dano, cooperação, mecanismos de minimização, boas práticas, medidas corretivas e proporcionalidade.
+
+Quadro 24 — Sanções administrativas da LGPD
+
+Sanção | Inciso | Observação de prova
+Advertência | I | prazo para medidas corretivas
+Multa simples | II | até 2%; teto de R$ 50 mi por infração
+Multa diária | III | sujeita ao limite legal
+Publicização | IV | após apuração e confirmação
+Bloqueio | V | até regularização
+Eliminação | VI | dados referentes à infração
+Suspensão parcial do banco | X | até 6 meses, prorrogável por igual período até regularização
+Suspensão da atividade de tratamento | XI | até 6 meses, prorrogável por igual período
+Proibição parcial/total de tratar | XII | medida mais intensa
+
+Sanções e Poder Público
+
+Ponto obrigatório de concurso: órgãos e entidades públicos não recebem as multas dos incisos II e III pelo art. 52, §3º. A lei permite aplicar ao setor público as sanções dos incisos:
+
+I, IV, V, VI, X, XI e XII — advertência, publicização, bloqueio, eliminação, suspensão parcial do banco, suspensão da atividade e proibição parcial/total.
+
+Isso ocorre sem prejuízo de outros regimes legais aplicáveis, como estatuto de servidores, improbidade e LAI.
+
+Quadro 25 — Sanções: privado × público
+
+Sanção | Privado, em tese | Órgão/entidade pública pelo §3º
+Advertência | Sim | Sim
+Multa simples | Sim | Não pela lista do §3º
+Multa diária | Sim | Não pela lista do §3º
+Publicização | Sim | Sim
+Bloqueio | Sim | Sim
+Eliminação | Sim | Sim
+Suspensões X/XI | Sim | Sim
+Proibição XII | Sim | Sim
+
+Regulamento de dosimetria
+
+A Resolução CD/ANPD 4/2023 disciplina dosimetria e aplicação de sanções. Para FCC jurídica, a literalidade do art. 52 é o núcleo; use o regulamento para compreender que sanção depende de processo, classificação e critérios objetivos, não de automatismo.
+
+Exemplo
+
+Uma autarquia pratica tratamento ilícito. É incorreto afirmar, com base no art. 52, §3º, que a ANPD aplicará a ela multa simples de 2% do faturamento. A própria estrutura da sanção de faturamento é desenhada para pessoa jurídica de direito privado, e o §3º lista as sanções aplicáveis a órgãos/entidades públicos sem incluir multas II e III.
+
+Como cai na FCC
+
+A banca gosta de números: 2%, R$ 50 milhões por infração, 6 meses prorrogáveis por igual período, e de misturar responsabilidade civil com punição administrativa.
+
+Pegadinhas
+
+• Dano moral coletivo é expressamente contemplado.
+• Operador não é sempre solidário; leia as hipóteses do art. 42, §1º.
+• Inversão do ônus não é automática.
+• Sanção administrativa não substitui reparação civil.
+• Multas não integram a lista legal aplicável a órgãos e entidades públicas no §3º.
+
+O que decorar
+
+Excludentes: não tratou; tratou sem violação; culpa exclusiva do titular/terceiro.
+Multa: 2% → R$ 50 milhões por infração.
+Público: I, IV, V, VI, X, XI, XII.
+
+☐ Check manual: consigo separar dano/reparação de infração/sanção e listar o que pode atingir o Poder Público.
+
+---
+
+SESSÃO 13 — ANPD atual e transferência internacional
+
+ANPD — atualização indispensável de 2026
+
+Em 2026, a Lei 15.352 alterou a LGPD e consolidou a Agência Nacional de Proteção de Dados (ANPD) como autarquia de natureza especial, vinculada ao Ministério da Justiça e Segurança Pública, dotada de autonomia funcional, técnica, decisória, administrativa e financeira, com patrimônio próprio, sede e foro no Distrito Federal. A lei também inseriu a ANPD no regime das agências reguladoras da Lei 13.848/2019.
+
+Isso é material altamente atualizável. Apostilas antigas podem afirmar natureza anterior. Para prova em 2026, use a redação vigente.
+
+Quadro 26 — Evolução que gera pegadinha
+
+Momento/material | Formulação encontrada | Para a prova atual
+materiais antigos | órgão da Presidência/autoridade em configuração anterior | desatualizado
+fase autárquica anterior | autarquia especial em regime anterior | conferir a lei atual
+Lei 15.352/2026 | Agência Nacional de Proteção de Dados, autarquia de natureza especial vinculada ao MJSP, com autonomias expressas | regra vigente
+
+Competências de alto rendimento — art. 55-J
+
+Entre as competências da ANPD estão:
+
+• zelar pela proteção dos dados pessoais;
+• editar normas e procedimentos;
+• deliberar administrativamente sobre interpretação da LGPD e casos omissos dentro de sua competência;
+• requisitar informações a controladores e operadores;
+• fiscalizar e aplicar sanções, mediante processo com contraditório, ampla defesa e recurso;
+• comunicar infrações penais às autoridades competentes;
+• difundir conhecimento e segurança;
+• estimular padrões e boas práticas;
+• elaborar estudos;
+• cooperar com autoridades internacionais;
+• realizar consultas públicas;
+• editar regulamentos e procedimentos sobre proteção de dados e privacidade.
+
+A ANPD não é mero órgão consultivo: possui função normativa/regulatória, fiscalizatória e sancionadora dentro do desenho legal. O art. 55-K atribui exclusivamente à ANPD a aplicação das sanções previstas na própria LGPD, sem eliminar sanções fundadas em outros regimes jurídicos por autoridades competentes. A articulação interinstitucional é, portanto, diferente de dizer que a ANPD monopoliza toda e qualquer sanção relacionada a fatos que também envolvam dados.
+
+Quadro 27 — ANPD × agentes de tratamento
+
+ANPD | Controlador/operador
+regula e fiscaliza | executam operações e devem cumprir LGPD
+pode requisitar informações | devem manter registros e prestar contas
+pode aplicar sanções | podem ser destinatários das sanções cabíveis
+pode exigir RIPD em hipóteses legais | controlador elabora o RIPD
+define/regulamenta temas específicos | incorporam regras na governança
+
+Transferência internacional — arts. 33 a 36
+
+Transferência internacional não é “qualquer acesso pela internet”. É conceito legal de transferência de dados pessoais para país estrangeiro ou organismo internacional do qual o país seja membro.
+
+O art. 33 permite transferência, entre outras hipóteses:
+
+• para país ou organismo com grau de proteção adequado;
+• quando o controlador oferece e comprova garantias por mecanismos como cláusulas contratuais específicas, cláusulas-padrão, normas corporativas globais, selos, certificados e códigos de conduta;
+• cooperação jurídica internacional entre órgãos públicos de inteligência/investigação/persecução nos instrumentos aplicáveis;
+• proteção da vida ou incolumidade física;
+• autorização da ANPD;
+• compromisso assumido em acordo de cooperação internacional;
+• execução de política pública ou atribuição legal do serviço público, com publicidade nos termos legais;
+• consentimento específico e destacado para a transferência, com informação prévia sobre o caráter internacional e distinção das demais finalidades;
+• quando necessária para as hipóteses dos incisos II, V e VI do art. 7º: obrigação legal/regulatória, contrato/procedimentos preliminares e exercício regular de direitos.
+
+Resolução CD/ANPD 19/2024
+
+O regulamento de transferência internacional detalha mecanismos, incluindo cláusulas-padrão contratuais brasileiras, cláusulas específicas, normas corporativas globais e procedimentos de reconhecimento de adequação. Para resolver questão, separe duas camadas:
+
+• deve existir uma base legal para o tratamento (arts. 7º ou 11, conforme o dado); e
+• deve existir hipótese/mecanismo válido para a transferência internacional.
+
+Não é correto achar que “ter cláusula-padrão” dispensa toda análise da base de tratamento.
+
+Quadro 28 — Tratamento nacional × transferência internacional
+
+Questão | Tratamento comum | Transferência internacional
+base legal | necessária | necessária
+requisito adicional | princípios/deveres gerais | art. 33 + regulamentação específica
+consentimento | pode ser uma das bases | pode servir em hipótese específica, mas com requisitos próprios do art. 33, VIII
+adequação de país | não é requisito do tratamento puramente nacional | é um dos mecanismos possíveis
+
+Exemplo
+
+Órgão público contrata solução em nuvem cuja arquitetura efetivamente transfere dados a outro país. O caso exige identificar a base legal do tratamento público e a hipótese válida de transferência internacional. Dizer “é política pública, logo pode enviar para qualquer país” é incorreto.
+
+Como cai na FCC
+
+Cadernos consultados já cobram transferência para país com grau adequado e as relações com responsabilidade e segurança. A banca tende a transformar uma hipótese do art. 33 em condição única. Lembre: o artigo contém várias portas.
+
+Pegadinhas
+
+• ANPD atual é Agência, autarquia de natureza especial — atualização de 2026.
+• Adequação é uma hipótese, não a única.
+• Consentimento internacional precisa ser específico/destacado e informado quanto ao caráter internacional na hipótese do art. 33, VIII.
+• Transferência internacional tem regime próprio além da base legal do tratamento.
+
+O que decorar
+
+ANPD 2026: Agência + autarquia especial + MJSP + autonomias funcional/técnica/decisória/administrativa/financeira.
+Transferência: base legal + mecanismo do art. 33.
+
+☐ Check manual: consigo explicar por que uma apostila de 2024 pode estar desatualizada quanto à natureza da ANPD.
+
+---
+
+SESSÃO 14 — Anonimização, pseudonimização e quadro-mestre FCC
+
+Anonimização
+
+A anonimização utiliza meios técnicos razoáveis e disponíveis no momento do tratamento para que o dado perca a possibilidade de associação direta ou indireta a indivíduo.
+
+O art. 12 estabelece que dados anonimizados não serão considerados dados pessoais para fins da LGPD, salvo quando o processo puder ser revertido:
+
+• usando exclusivamente meios próprios; ou
+• com esforços razoáveis, considerando fatores objetivos como custo, tempo, tecnologias disponíveis e uso exclusivo de meios próprios.
+
+A lei também determina que dados usados para formação de perfil comportamental de determinada pessoa natural, se identificada, podem ser considerados dados pessoais.
+
+Pseudonimização
+
+A definição legal aparece no art. 13, §4º, no contexto de estudos em saúde pública: tratamento pelo qual o dado perde a possibilidade de associação direta ou indireta a indivíduo senão pelo uso de informação adicional, que deve ser mantida separadamente pelo controlador em ambiente controlado e seguro.
+
+Pseudonimização não equivale a anonimização. Na pseudonimização existe “chave” ou informação adicional que permite reidentificação sob controle; por isso, o dado permanece dentro da lógica de proteção de dados pessoais.
+
+Quadro 29 — Anonimização × pseudonimização
+
+Critério | Anonimização | Pseudonimização
+possibilidade razoável de associação | deve ser eliminada nas condições do art. 12 | persiste por informação adicional separada
+dado continua pessoal? | em regra, não, salvo reversibilidade legal | sim, continua protegido
+informação adicional | não deve permitir reidentificação com meios razoáveis na situação legal | existe e é mantida separadamente em ambiente controlado/seguro
+uso típico | redução forte de risco e saída do regime quando efetiva | técnica de segurança/minimização com possibilidade controlada de reidentificação
+
+Quadro-mestre das distinções
+
+Quadro 30 — O que a FCC pode trocar
+
+A FCC escreve... | Verifique se não quis trocar por...
+“decide o tratamento” = operador | controlador
+“realiza em nome do controlador” = encarregado | operador
+“canal com titular/ANPD” = controlador | encarregado
+“mínimo necessário” = finalidade | necessidade
+“compatibilidade com finalidade” = necessidade | adequação
+“exclusão do banco” = bloqueio | eliminação
+“suspensão temporária com guarda” = eliminação | bloqueio
+“dado não mais associado” = pseudonimização | pode ser anonimização, conforme requisitos
+“consentimento é obrigatório” | uma entre várias bases legais
+“LGPD só setor privado” | abrange Poder Público
+“todo dado pessoal é sigiloso” | LGPD não cria sigilo absoluto
+“ANPD é mero órgão consultivo” | possui competências normativas, fiscalizatórias e sancionadoras
+“sanção administrativa = indenização civil” | regimes diferentes
+“empresa estatal sempre é público para LGPD” | art. 24 distingue atuação concorrencial e política pública
+
+20 alertas FCC de alta incidência
+
+• Titular é sempre pessoa natural.
+• Pessoa jurídica pode ser controlador ou operador, mas não “titular” da LGPD.
+• Dado pessoal pode identificar indiretamente.
+• Sensível é categoria taxativa/qualificada pelo art. 5º, II.
+• CPF não é sensível automaticamente.
+• Anonimizado não é sinônimo de sensível.
+• Pseudonimizado não é anonimizado.
+• Consentimento não é a única base legal.
+• Autorização genérica de consentimento é nula.
+• Consentimento pode ser revogado gratuitamente e de forma facilitada.
+• Legítimo interesse exige situação concreta, necessidade e transparência.
+• Controlador decide; operador trata em nome; encarregado atua como canal.
+• Agentes de tratamento = controlador + operador.
+• RIPD pode abranger dados sensíveis.
+• Poder Público está sujeito à LGPD.
+• Estatal concorrencial pode receber regime privado; em política pública, regime público.
+• LGPD e LAI convivem.
+• Incidente relevante: controlador comunica ANPD e titular.
+• Órgão público não recebe as multas dos incisos II e III pela lista do art. 52, §3º.
+• ANPD é Agência Nacional de Proteção de Dados, autarquia especial desde a atualização de 2026.
+
+Quadro 31 — Mapa da questão LGPD
+
+Passo | Pergunta
+1 | O objeto é dado de pessoa natural identificada/identificável?
+2 | É dado comum, sensível, de criança/adolescente ou anonimizado?
+3 | A LGPD incide territorialmente? Há exclusão do art. 4º?
+4 | Quem é controlador, operador e encarregado?
+5 | Qual base legal autoriza o tratamento?
+6 | Os princípios foram respeitados?
+7 | Há regra especial de Poder Público, compartilhamento ou transferência internacional?
+8 | Quais direitos do titular são exercíveis?
+9 | Há dever de segurança/incidente?
+10 | Qual consequência: correção, reparação, sanção, término ou conservação?
+
+O que levar para a prova
+
+A LGPD é uma lei de arquitetura. A alternativa correta costuma depender de encaixar cada conceito no seu lugar: incidência → definição → base legal → princípio → agente → direito → dever → consequência. Quando a FCC usa palavra absoluta (“sempre”, “somente”, “em qualquer hipótese”), procure exceções e regimes especiais.
+
+☐ Check manual: consigo resolver o Quadro 31 de cabeça antes de olhar as alternativas.
+
+---
+
+REVISÃO5 a 10 minutos
+
+1. Constituição
+
+• EC 115/2022: proteção de dados pessoais, inclusive digitais, é direito fundamental expresso.
+• LGPD protege pessoa natural e livre desenvolvimento da personalidade.
+
+2. Incidência
+
+• tratamento no Brasil; ou objetivo ligado a indivíduos no Brasil; ou dados coletados no Brasil.
+• sede no exterior não afasta automaticamente.
+
+3. Exclusões
+
+• particular e não econômico;
+• jornalístico/artístico;
+• acadêmico com observância dos arts. 7º e 11;
+• segurança pública/defesa/segurança do Estado/persecução penal em regime específico;
+• hipótese qualificada de dados provenientes do exterior.
+
+4. Definições
+
+• pessoal = pessoa natural identificada/identificável;
+• sensível = categorias do art. 5º, II;
+• controlador decide;
+• operador trata em nome;
+• encarregado = canal;
+• agentes = controlador + operador;
+• bloqueio = suspensão; eliminação = exclusão;
+• anonimização ≠ pseudonimização.
+
+5. Princípios
+
+Finalidade · adequação · necessidade · livre acesso · qualidade · transparência · segurança · prevenção · não discriminação · responsabilização/prestação de contas.
+
+6. Bases gerais
+
+Consentimento · obrigação legal/regulatória · política pública · pesquisa · contrato · exercício regular de direitos · vida/incolumidade · saúde · legítimo interesse · crédito.
+
+7. Consentimento
+
+Livre + informado + inequívoco + finalidade determinada. Genérico = nulo. Revogável, gratuito e facilitado.
+
+8. Sensíveis
+
+Art. 11. Consentimento específico/destacado ou hipóteses legais sem consentimento. Legítimo interesse não aparece como base autônoma do art. 11.
+
+9. Crianças/adolescentes
+
+Melhor interesse sempre. Consentimento parental específico/destacado é regra literal para criança no art. 14, §1º. ANPD admite bases dos arts. 7º/11 com melhor interesse prevalente.
+
+10. Direitos
+
+Confirmação · acesso · correção · anonimização/bloqueio/eliminação · portabilidade · eliminação do consentido · info de compartilhamento · info sobre não consentir · revogação.
+Acesso: simplificado imediato; completo até 15 dias.
+
+11. Poder Público
+
+Finalidade pública + interesse público + competência/atribuição legal + transparência.
+Estatal concorrencial = regime privado; política pública = regime público.
+LGPD × LAI = coexistência, não anulação.
+
+12. Segurança/incidente
+
+Segurança desde concepção; dever persiste após término.
+Incidente com risco/dano relevante: controlador → ANPD + titular.
+Res. 15/2024: prazo regulatório de 3 dias úteis.
+
+13. Responsabilidade/sanção
+
+Operador pode ser solidário nas hipóteses legais. Excludentes do art. 43.
+Multa simples: até 2%, teto R$ 50 milhões por infração.
+Público: I, IV, V, VI, X, XI, XII — sem multas II/III pela lista do §3º.
+
+14. ANPD
+
+Atualização 2026: Agência Nacional de Proteção de Dados, autarquia especial vinculada ao MJSP com autonomias funcionais e institucionais previstas na Lei 15.352/2026.
+
+15. Transferência internacional
+
+Base legal de tratamento + hipótese/mecanismo do art. 33. Adequação é uma porta, não a única.
+
+---
+
+LEI SECAArtigos para ler
+
+Prioridade máxima
+
+• CF, art. 5º, LXXIX — direito fundamental à proteção de dados.
+• LGPD, arts. 1º a 6º — objeto, fundamentos, incidência, exclusões, conceitos, princípios.
+• LGPD, arts. 7º a 11 — bases, consentimento, informação, legítimo interesse e dados sensíveis.
+• LGPD, arts. 14 a 20 — crianças/adolescentes, término, conservação, direitos e decisões automatizadas.
+• LGPD, arts. 23 a 32 — Poder Público e compartilhamento.
+• LGPD, arts. 33 a 36 — transferência internacional.
+• LGPD, arts. 37 a 45 — agentes, RIPD, encarregado e responsabilidade.
+• LGPD, arts. 46 a 52 — segurança, incidentes, governança e sanções.
+• LGPD, arts. 55-A e 55-J — natureza/competências da ANPD, considerando a atualização de 2026.
+• LAI, art. 31 — informações pessoais.
+
+Segunda leitura
+
+• Resolução CD/ANPD 15/2024 — comunicação de incidentes.
+• Resolução CD/ANPD 18/2024 — atuação do encarregado, lida em compatibilidade com a alteração legislativa de 2026.
+• Resolução CD/ANPD 19/2024 — transferência internacional.
+• Resolução CD/ANPD 4/2023 — dosimetria de sanções.
+• Enunciado CD/ANPD 1/2023 — bases legais para crianças e adolescentes com prevalência do melhor interesse.
+
+---
+
+MEMÓRIAO que decorar
+
+Bloco A — números e prazos
+
+• Acesso completo do art. 19: até 15 dias.
+• Multa simples: até 2% do faturamento da pessoa jurídica de direito privado/grupo/conglomerado no Brasil, excluídos tributos.
+• Teto: R$ 50 milhões por infração.
+• Suspensão dos incisos X/XI: até 6 meses, prorrogável por igual período conforme a hipótese legal.
+• Incidente comunicável, Res. 15/2024: 3 dias úteis para ANPD e titular, salvo legislação específica.
+
+Bloco B — listas curtas
+
+Agentes: controlador + operador.
+Art. 43: não tratou · tratou sem violação · culpa exclusiva titular/terceiro.
+Público — sanções do §3º: I · IV · V · VI · X · XI · XII.
+Art. 15 — término: finalidade acabou · prazo acabou · titular/revogação · ANPD.
+Art. 16 — conservação: obrigação · pesquisa · terceiro · uso exclusivo anonimizado.
+
+Bloco C — fórmulas
+
+• Finalidade = por quê.
+• Adequação = combina com o porquê.
+• Necessidade = só o mínimo.
+• Controlador = decide.
+• Operador = executa em nome.
+• Encarregado = comunica/orienta.
+• Anonimização = sem associação razoável.
+• Pseudonimização = reidentificação por informação adicional separada.
+• LGPD + LAI = conciliação, não exclusão.
+• Tratamento internacional = base legal + mecanismo de transferência.
+
+Bloco D — atualização de 2026
+
+Lei 15.352/2026:
+
+• ANPD = Agência Nacional de Proteção de Dados;
+• autarquia de natureza especial vinculada ao Ministério da Justiça e Segurança Pública;
+• autonomia funcional, técnica, decisória, administrativa e financeira;
+• art. 5º, VIII, passou a mencionar encarregado como pessoa indicada pelo controlador e operador;
+• materiais anteriores a 2026 devem ser conferidos antes de uso em prova.
+
+---
+
+FCCPadrões identificados nos materiais TEC
+
+A análise dos cadernos da Biblioteca foi usada apenas para calibrar cobertura e estilo, sem substituir a lei. Os padrões mais fortes encontrados foram:
+
+• troca literal de definições do art. 5º;
+• identificação do princípio da necessidade a partir da expressão “mínimo indispensável”;
+• controlador × operador × encarregado;
+• dado sensível por exemplo concreto;
+• anonimização × eliminação/bloqueio;
+• exclusões do art. 4º, especialmente jornalístico/artístico e acadêmico;
+• Administração Pública tratando dados sem depender universalmente de consentimento;
+• transferência internacional e país com grau adequado;
+• segurança e dever do controlador de comunicar incidente;
+• responsabilidade, RIPD inclusive de dados sensíveis e excludentes.
+
+Estratégia de resolução FCC
+
+Passo 1: procure a palavra absoluta.
+Passo 2: identifique o artigo temático.
+Passo 3: confira se a banca trocou o sujeito jurídico.
+Passo 4: veja se uma exceção foi transformada em regra.
+Passo 5: em dúvida entre duas alternativas, prefira a que respeita simultaneamente literalidade + estrutura da LGPD, sem criar requisito não escrito.
+
+---
+
+FECHAMENTOM20 — LGPD
+
+Ao terminar este módulo, o candidato deve conseguir explicar de forma integrada:
+
+dado → tratamento → incidência → base legal → princípio → agente → direito → segurança → responsabilização → fiscalização.
+
+Esse encadeamento é mais importante do que memorizar frases isoladas. Na FCC, as alternativas erradas muitas vezes são construídas com palavras verdadeiras colocadas no artigo, sujeito ou consequência errados.
+
+☐ Check final — consigo resolver uma questão de LGPD classificando primeiro o instituto, sem depender da “sensação” de privacidade ou sigilo.
+
+10 QUESTÕES INTERNAS DE FIXAÇÃO — CONTEÚDO COMPLETO
+
+Estas questões não substituem TEC, Anki, Lei em Dia nem cadernos de banca. Elas verificam apenas a fixação do que foi ensinado neste módulo.
+
+Q1 — FÁCIL
+
+A Emenda Constitucional 115/2022:
+
+A) criou uma base legal de consentimento para o Poder Público.
+B) incluiu a proteção de dados pessoais, inclusive nos meios digitais, entre os direitos fundamentais.
+C) transformou toda informação pessoal em informação sigilosa.
+D) retirou dos Estados e Municípios o dever de observar a LGPD.
+E) revogou a Lei de Acesso à Informação.
+
+Gabarito: B.
+Explicação: a EC 115/2022 inseriu o art. 5º, LXXIX, na Constituição e também tratou das competências da União sobre proteção e tratamento de dados. Não tornou todo dado sigiloso nem revogou a LAI.
+
+Q2 — FÁCIL
+
+Na LGPD, o princípio que determina a limitação do tratamento ao mínimo necessário para a realização de suas finalidades é:
+
+A) adequação.
+B) transparência.
+C) prevenção.
+D) necessidade.
+E) livre acesso.
+
+Gabarito: D.
+Explicação: necessidade = mínimo necessário, com dados pertinentes, proporcionais e não excessivos em relação à finalidade.
+
+Q3 — FÁCIL
+
+São agentes de tratamento, segundo a LGPD:
+
+A) titular e encarregado.
+B) ANPD e controlador.
+C) controlador e operador.
+D) operador e titular.
+E) encarregado e ANPD.
+
+Gabarito: C.
+Explicação: art. 5º, IX: agentes de tratamento = controlador + operador.
+
+Q4 — FÁCIL
+
+Assinale a alternativa correta sobre as bases legais do art. 7º:
+
+A) consentimento é a única base legal para tratamento de dados pessoais.
+B) legítimo interesse é princípio do art. 6º, não base legal.
+C) obrigação legal ou regulatória pode fundamentar tratamento sem consentimento.
+D) proteção do crédito somente pode ser usada pela Administração Pública.
+E) execução de contrato nunca autoriza tratamento.
+
+Gabarito: C.
+Explicação: o art. 7º contém múltiplas bases legais. Consentimento é apenas uma delas; obrigação legal/regulatória, contrato, legítimo interesse e proteção do crédito são exemplos de outras hipóteses.
+
+Q5 — MÉDIA
+
+Uma universidade realiza tratamento de dados exclusivamente para finalidade acadêmica. À luz do art. 4º da LGPD, é correto afirmar que:
+
+A) a finalidade acadêmica afasta integralmente a LGPD, inclusive os arts. 7º e 11.
+B) a finalidade acadêmica não está entre as hipóteses do art. 4º.
+C) há hipótese de não aplicação, mas a própria lei determina observância dos arts. 7º e 11.
+D) somente dados anonimizados podem ser utilizados.
+E) exige-se sempre consentimento do titular.
+
+Gabarito: C.
+Explicação: a finalidade acadêmica aparece entre as hipóteses do art. 4º, II, mas a lei expressamente preserva a aplicação dos arts. 7º e 11.
+
+Q6 — MÉDIA
+
+Uma sociedade de economia mista explora atividade econômica em regime de concorrência e também executa, em outra frente, política pública. A LGPD:
+
+A) aplica sempre o mesmo regime público a todas as operações da estatal.
+B) aplica sempre o regime privado, pois sociedade de economia mista não integra a Administração direta.
+C) diferencia a atuação: no contexto concorrencial, aproxima-se do regime das pessoas jurídicas privadas; na execução de políticas públicas, incidem as regras próprias do Poder Público.
+D) não se aplica a sociedades de economia mista.
+E) somente se aplica quando houver consentimento.
+
+Gabarito: C.
+Explicação: o art. 24 diferencia o regime conforme a atividade desenvolvida pela empresa estatal.
+
+Q7 — MÉDIA
+
+Um controlador confirma incidente de segurança com dados pessoais capaz de acarretar risco ou dano relevante aos titulares. Segundo a LGPD e o regulamento vigente de comunicação de incidentes:
+
+A) somente o operador comunica a ANPD.
+B) a comunicação é facultativa se o controlador adotar medidas internas.
+C) o controlador deve comunicar a ANPD e os titulares, observando o prazo regulamentar de 3 dias úteis, salvo prazo específico em outra legislação.
+D) todo incidente de segurança, mesmo sem dado pessoal, deve ser comunicado.
+E) a comunicação só ocorre após a aplicação de sanção.
+
+Gabarito: C.
+Explicação: a obrigação recai sobre o controlador quando o incidente puder acarretar risco ou dano relevante; a Resolução CD/ANPD 15/2024 fixou prazo de 3 dias úteis para ANPD e titulares, ressalvada legislação específica.
+
+Q8 — MÉDIA
+
+Sobre transferência internacional de dados, assinale a correta:
+
+A) uma decisão de adequação elimina a necessidade de base legal para o tratamento.
+B) a LGPD permite transferência apenas mediante consentimento específico.
+C) a União Europeia foi reconhecida pela ANPD, em 2026, como organismo internacional com grau adequado de proteção; ainda assim, deve existir base legal para o tratamento e cumprimento dos demais deveres da LGPD.
+D) cláusula-padrão contratual é uma base legal do art. 7º.
+E) transferência internacional é qualquer acesso a site estrangeiro.
+
+Gabarito: C.
+Explicação: adequação é um mecanismo de transferência do art. 33, não uma base legal de tratamento. A decisão de adequação da União Europeia foi formalizada pela Resolução CD/ANPD 32/2026.
+
+Q9 — DIFÍCIL
+
+Sobre tratamento de dados de crianças e adolescentes, qual alternativa melhor reproduz a estrutura ensinada no módulo?
+
+A) a única base legal possível é consentimento dos pais, sem exceções.
+B) o melhor interesse é irrelevante quando houver obrigação legal.
+C) a literalidade do art. 14 traz regra específica de consentimento para criança, enquanto o Enunciado ANPD 1/2023 admite utilização das bases dos arts. 7º e 11, desde que o melhor interesse seja observado e prevaleça no caso concreto.
+D) adolescente nunca é titular de dados pessoais.
+E) a LGPD permite condicionamento de participação em jogos à coleta de qualquer dado adicional.
+
+Gabarito: C.
+Explicação: o módulo preserva simultaneamente a literalidade do art. 14 e a interpretação oficial da ANPD sobre bases legais, sempre sob o critério do melhor interesse.
+
+Q10 — DIFÍCIL
+
+Após a Lei 15.352/2026, a definição de encarregado do art. 5º, VIII, passou a mencionar pessoa indicada pelo controlador e operador. Ao mesmo tempo, o art. 41 continua determinando que o controlador indique encarregado. Qual leitura é correta?
+
+A) o operador tornou-se, em qualquer hipótese, exclusivamente responsável pela indicação.
+B) o art. 41 foi tacitamente revogado.
+C) a definição atualizada deve ser lida em conjunto com o art. 41 e com a regulamentação; não se deve transformar a nova redação conceitual em conclusão de que o controlador deixou de ter o dever expresso do art. 41.
+D) encarregado passou a ser agente de tratamento no lugar do operador.
+E) a ANPD deve indicar o encarregado de cada controlador.
+
+Gabarito: C.
+Explicação: a prova pode explorar a tensão entre a definição atualizada e a disciplina do art. 41. O módulo não cria revogação ou obrigação não expressa; lê os dispositivos de forma coordenada.
+
+---

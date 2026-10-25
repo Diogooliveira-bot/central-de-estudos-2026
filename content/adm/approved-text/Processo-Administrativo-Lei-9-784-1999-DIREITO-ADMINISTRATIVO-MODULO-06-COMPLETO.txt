@@ -1,0 +1,793 @@
+﻿Processo Administrativo — Lei 9.784/1999
+DIREITO ADMINISTRATIVO · MÓDULO 06 · COMPLETO
+
+DIREITO ADMINISTRATIVOMÓDULO 06
+
+Apostila de estudo · nível Analista
+
+Processo Administrativo — Lei 9.784/99
+
+Do devido processo ao recurso: princípios, competência, instrução, motivação, autotutela, decadência, revisão, prazos e nulidades com leitura orientada para FCC/TJ-CE.
+
+Base conferida em 17/09/2026: Lei 9.784/99 do Porto Seguro como fonte normativa principal, cotejada com o texto oficial vigente do Planalto; Constituição Federal, art. 5º, LIV–LVI e art. 37, caput; LINDB, arts. 20–24 e 30; STF (Súmula 473, Tema 138 e Súmula Vinculante 5) e STJ apenas no ponto de nulidade sem prejuízo. Materiais TEC da Biblioteca, inclusive cadernos com questões FCC de 2022–2026, foram usados somente para calibrar cobertura e padrão de cobrança.
+
+Como estudar este módulo
+
+Pense no processo como uma linha de controle: quem decide → quem participa → como se instrui → por que se decide → como se corrige. Na prova, primeiro localize a fase. Depois associe o instituto e só então aplique prazo e efeito.
+
+início→competência→instrução→decisão→autotutela/recurso
+
+Regra de ouro: a FCC frequentemente usa uma frase legal correta no lugar errado. Um prazo verdadeiro pode estar ligado ao ato errado; uma regra de revisão pode ser transplantada para recurso; uma regra de delegação pode ser usada para avocação.
+
+SESSÃO 01 · FUNDAMENTOS
+
+Processo administrativo: o caminho juridicamente organizado para a Administração decidir
+
+Entenda primeiro
+
+Processo administrativo é a sequência juridicamente ordenada de atos, manifestações, provas e decisões destinada à formação de uma decisão administrativa. Ele não existe apenas quando há punição. Há processo para conceder licença, reconhecer direito, selecionar interessado, rever ato, aplicar sanção, decidir recurso ou solucionar requerimento.
+
+Regra jurídica
+
+A Constituição fornece a base: ninguém será privado de liberdade ou bens sem devido processo legal; aos litigantes em processo judicial ou administrativo e aos acusados em geral são assegurados contraditório e ampla defesa; a Administração submete-se aos princípios do art. 37, caput. A Lei 9.784/99 disciplina, em caráter geral, o processo administrativo federal.
+
+Processo administrativo | Procedimento administrativo
+Relação organizada que conduz a uma decisão e assegura posições jurídicas aos participantes. | Modo, rito ou sequência prática pela qual os atos são realizados.
+Pode envolver contraditório, instrução, decisão e recurso. | Descreve a forma de desenvolvimento do processo.
+É conceito mais amplo. | É a exteriorização ordenada das etapas.
+
+Campo de aplicação
+
+A Lei 9.784/99 estabelece normas básicas sobre o processo administrativo no âmbito da Administração Federal direta e indireta. Seus preceitos também se aplicam aos órgãos dos Poderes Legislativo e Judiciário da União quando desempenham função administrativa. A lei não é, por esse simples fato, uma lei nacional automaticamente aplicável a Estados e Municípios; estes podem possuir leis próprias, sem prejuízo do uso subsidiário de princípios e, conforme a situação jurídica, de regras federais reconhecidas como expressão de normas gerais do processo administrativo.
+
+Conceitos do art. 1º
+
+Órgão é unidade de atuação integrante da estrutura da Administração direta ou indireta; entidade é unidade de atuação dotada de personalidade jurídica; autoridade é o servidor ou agente público dotado de poder de decisão. A prova troca especialmente órgão e entidade.
+
+Exemplo
+
+Um tribunal federal, ao julgar uma ação, exerce jurisdição e não aplica a Lei 9.784 como rito judicial. O mesmo tribunal, ao decidir requerimento administrativo de servidor, exerce função administrativa e entra no campo da lei.
+
+Como cai na prova
+
+A FCC costuma testar o alcance: “a Lei 9.784 aplica-se exclusivamente ao Executivo federal” é falso; “aplica-se automaticamente a toda Administração Pública brasileira” também é excessivo.
+
+Pegadinha: federal ≠ nacional. E “processo administrativo” ≠ “processo disciplinar”: PAD é apenas uma espécie.
+
+O que decorar
+
+Administração federal direta + indireta; Legislativo e Judiciário da União quando em função administrativa.
+
+O que levar: antes de aplicar a Lei 9.784, identifique o ente, o Poder e a natureza da função exercida.
+
+□ Check manual: sei explicar em uma frase por que a Lei 9.784 é federal e por que alcança atos administrativos de tribunal federal.
+
+SESSÃO 02 · PRINCÍPIOS E CRITÉRIOS
+
+Art. 2º: princípios expressos e critérios que controlam a forma de decidir
+
+Entenda primeiro
+
+O art. 2º tem duas camadas. O caput enumera princípios; o parágrafo único traduz vários deles em critérios concretos de atuação. Questões difíceis misturam as duas listas ou trocam uma regra por seu oposto.
+
+Regra jurídica
+
+A Administração obedecerá, entre outros, aos princípios da legalidade, finalidade, motivação, razoabilidade, proporcionalidade, moralidade, ampla defesa, contraditório, segurança jurídica, interesse público e eficiência.
+
+Princípio/critério | Ideia operacional | Armadilha
+Legalidade | Atuação conforme Direito e competências juridicamente atribuídas. | Conveniência não autoriza agir contra a lei.
+Finalidade/interesse geral | A competência deve servir ao fim público que justificou sua atribuição. | É vedada renúncia total ou parcial de poderes/competências, salvo autorização legal.
+Motivação | Decisão deve revelar pressupostos de fato e de direito quando exigida. | Fórmulas genéricas não substituem fundamentação congruente.
+Razoabilidade/proporcionalidade | Adequação entre meios e fins; vedação de obrigações/sanções superiores ao necessário. | Não é autorização para ignorar requisito legal.
+Moralidade/boa-fé | Probidade, lealdade e boa-fé na relação administrativa. | Vale para Administração e administrado.
+Contraditório/ampla defesa | Ciência, reação, prova e consideração dos argumentos quando houver litigantes/acusados. | Não significa acolhimento obrigatório da tese do interessado.
+Segurança jurídica | Estabilidade, proteção da confiança e vedação à aplicação retroativa de nova interpretação. | Não legitima perpetuamente ato dolosamente obtido.
+Impulsão de ofício | A Administração deve fazer o processo avançar sem depender de provocação a cada etapa. | Não elimina participação do interessado.
+Formalismo moderado | Formas simples, suficientes para certeza, segurança e respeito aos direitos. | Formalidade essencial não pode ser desprezada.
+Gratuidade | Vedada cobrança de despesas processuais, salvo previsão legal. | Não é gratuidade universal de todo serviço público.
+
+Critérios que a banca adora
+
+Atuação conforme a lei e o Direito; atendimento a fins de interesse geral; objetividade no atendimento do interesse público, vedada promoção pessoal; boa-fé; divulgação oficial dos atos, ressalvadas hipóteses constitucionais de sigilo; adequação entre meios e fins; indicação dos pressupostos de fato e de direito; observância das formalidades essenciais; formas simples; garantia de comunicação, alegações finais, produção de provas e recursos; proibição de cobrança de despesas sem lei; impulsão de ofício; interpretação que melhor atenda ao fim público, vedada aplicação retroativa de nova interpretação.
+
+Exemplo
+
+Se a Administração muda entendimento sobre requisito de uma licença, pode aplicar o novo entendimento prospectivamente aos casos cabíveis, mas o art. 2º impede que trate a nova interpretação como se sempre tivesse sido a única possível para desfazer automaticamente situações pretéritas.
+
+LINDB em diálogo
+
+Os arts. 20 a 24 e 30 da LINDB reforçam decisão responsável: consideração das consequências práticas, explicitação das razões e alternativas, consideração das dificuldades reais do gestor, regime de transição quando necessário, respeito a orientações gerais vigentes na época e incremento da segurança jurídica por regulamentos, súmulas administrativas e respostas a consultas.
+
+FCC: cuidado com absolutos. “Sempre”, “somente”, “independentemente de lei” e “pode renunciar competência por conveniência” são sinais clássicos de alternativa errada.
+
+O que decorar
+
+L-F-M-R-P-M-A-C-S-I-E: legalidade, finalidade, motivação, razoabilidade, proporcionalidade, moralidade, ampla defesa, contraditório, segurança jurídica, interesse público e eficiência.
+
+□ Check manual: consigo citar os princípios expressos e quatro critérios do parágrafo único sem consultar a lei.
+
+SESSÃO 03 · ADMINISTRADOS E INTERESSADOS
+
+Direitos, deveres, início do processo, legitimados e capacidade
+
+Direitos dos administrados — art. 3º
+
+O administrado tem direito de ser tratado com respeito; ter ciência da tramitação, vista dos autos, obter cópias e conhecer decisões nos processos em que seja interessado; formular alegações e apresentar documentos antes da decisão, que deverão ser considerados; e fazer-se assistir facultativamente por advogado, salvo quando a representação for obrigatória por lei.
+
+Direitos | Deveres
+Tratamento respeitoso e facilitação do exercício de direitos e deveres. | Expor os fatos conforme a verdade.
+Ciência da tramitação, vista, cópias e conhecimento das decisões. | Proceder com lealdade, urbanidade e boa-fé.
+Alegar e juntar documentos antes da decisão; ter seus argumentos considerados. | Não agir de modo temerário.
+Assistência facultativa por advogado, salvo exigência legal. | Prestar informações solicitadas e colaborar para esclarecimento dos fatos.
+
+Advogado é obrigatório?
+
+Como regra na Lei 9.784, não. O próprio art. 3º prevê assistência facultativa, salvo hipótese legal. O STF, na Súmula Vinculante 5, assentou que a falta de defesa técnica por advogado em processo administrativo disciplinar não ofende, por si só, a Constituição. Isso não autoriza negar defesa efetiva: informação, manifestação e consideração dos argumentos continuam indispensáveis.
+
+Início — arts. 5º a 8º
+
+O processo pode iniciar-se de ofício ou a pedido de interessado. O requerimento, em regra escrito, deve identificar órgão/autoridade, interessado/representante, domicílio ou local para comunicações, pedido com fatos e fundamentos, data e assinatura. É vedada recusa imotivada de documentos; o servidor deve orientar o suprimento de falhas. Órgãos e entidades devem elaborar modelos para pretensões equivalentes. Pedidos de vários interessados com conteúdo e fundamentos idênticos podem ser formulados em um único requerimento, salvo vedação legal.
+
+Interessados — art. 9º
+
+São legitimados: titulares de direitos/interesses individuais e quem inicia como titular; quem, sem iniciar, tenha direitos ou interesses que possam ser afetados; organizações e associações representativas quanto a direitos e interesses coletivos; e pessoas ou associações legalmente constituídas quanto a direitos ou interesses difusos.
+
+Capacidade — art. 10
+
+Para fins de processo administrativo, são capazes os maiores de 18 anos, ressalvada previsão especial em ato normativo próprio.
+
+Pegadinha: processo administrativo não depende sempre de provocação; e “assistência por advogado é sempre obrigatória” contraria a regra do art. 3º.
+
+O que levar
+
+De ofício ou a pedido · 18 anos · alegações até antes da decisão · advogado facultativo salvo lei.
+
+□ Check manual: consigo listar as quatro categorias de interessados do art. 9º.
+
+SESSÃO 04 · COMPETÊNCIA
+
+Irrenunciabilidade, delegação e avocação: três ideias que não podem ser misturadas
+
+Regra jurídica
+
+A competência é irrenunciável e exerce-se pelos órgãos a que foi atribuída como própria, salvo delegação e avocação legalmente admitidas. Se não houver competência legal específica, o processo deverá ser iniciado perante a autoridade de menor grau hierárquico para decidir.
+
+Delegação | Avocação
+Transfere exercício de parte da competência a outro órgão ou titular. | Superior chama temporariamente competência atribuída a órgão hierarquicamente inferior.
+Pode ocorrer mesmo sem relação de subordinação hierárquica, se conveniente por razões técnicas, sociais, econômicas, jurídicas ou territoriais. | Exige vínculo hierárquico.
+Pode alcançar parte da competência. | É excepcional e temporária.
+Ato deve especificar matérias/poderes, limites, duração, objetivos e recurso cabível; deve ser publicado. | Exige motivos relevantes devidamente justificados.
+Pode ser revogada a qualquer tempo pela autoridade delegante. | Não se presume; depende de justificativa concreta.
+
+O que NÃO pode ser delegado — art. 13
+
+Edição de atos de caráter normativo; decisão de recursos administrativos; matérias de competência exclusiva do órgão ou autoridade.
+
+Autoria do ato delegado
+
+As decisões adotadas por delegação devem mencionar explicitamente essa qualidade e são consideradas editadas pelo delegado. Isso é pegadinha recorrente: a delegação não torna cada ato praticado juridicamente “ato do delegante”.
+
+Exemplo
+
+Um ministro pode delegar determinada atribuição administrativa a dirigente de autarquia mesmo que não exista subordinação hierárquica direta, se presentes os pressupostos do art. 12. Já não pode delegar o julgamento de recurso administrativo nem competência que a lei qualificou como exclusiva.
+
+FCC: “delegação pressupõe hierarquia” = falso. “avocação dispensa hierarquia” = falso. “competência é renunciável por acordo” = falso.
+
+O que decorar
+
+Não delega: N-R-E — Normativo, Recurso, Exclusiva. Avocação: excepcional + temporária + motivo relevante + inferior hierárquico.
+
+□ Check manual: sei responder quem é considerado autor de decisão praticada por delegação.
+
+SESSÃO 05 · IMPARCIALIDADE
+
+Impedimento e suspeição: quando a autoridade deve sair do processo
+
+Entenda primeiro
+
+Imparcialidade é pressuposto de uma decisão legítima. A Lei 9.784 separa situações objetivas de impedimento de situações ligadas a vínculo subjetivo de suspeição. A prova costuma trocar as hipóteses e os efeitos.
+
+Impedimento — art. 18 | Suspeição — art. 20
+Interesse direto ou indireto na matéria. | Amizade íntima ou inimizade notória.
+Participou ou participará como perito, testemunha ou representante; ou se isso ocorreu com cônjuge/companheiro/parente e afins até 3º grau. | Relação com algum interessado ou com cônjuge/companheiro/parente e afins até 3º grau do interessado.
+Litiga judicial ou administrativamente com interessado ou respectivo cônjuge/companheiro. | Arguição fundada em proximidade ou antagonismo qualificado.
+Servidor/autoridade deve comunicar o fato e abster-se de atuar. Omissão constitui falta grave. | Indeferimento da alegação pode ser objeto de recurso, sem efeito suspensivo.
+
+Exemplo
+
+Se a autoridade é credora do interessado em litígio judicial, há hipótese objetiva de impedimento. Se mantém amizade íntima com a parte, o tema é suspeição.
+
+Como cai
+
+A FCC explora a expressão “até o terceiro grau” e tenta inserir “quarto grau”; troca amizade íntima por impedimento; ou afirma que recurso contra indeferimento de suspeição suspende automaticamente o processo.
+
+Pegadinha: impedimento ≠ suspeição. A lei impõe ao impedido dever de comunicação e abstenção.
+
+O que decorar
+
+Impedimento = situações objetivas do art. 18. Suspeição = amizade íntima/inimizade notória do art. 20.
+
+□ Check manual: sei classificar quatro exemplos sem confundir as categorias.
+
+SESSÃO 06 · FORMA, TEMPO, LUGAR E COMUNICAÇÃO
+
+Formalismo moderado não significa processo sem forma
+
+Forma dos atos — art. 22
+
+Os atos do processo administrativo não dependem de forma determinada, salvo exigência legal. Devem ser produzidos por escrito, em vernáculo, com data e local e assinatura da autoridade responsável. O reconhecimento de firma só será exigido quando houver dúvida de autenticidade, salvo imposição legal. A autenticação de documentos exigidos em cópia pode ser feita pelo próprio órgão administrativo.
+
+Tempo e lugar
+
+Atos devem ocorrer em dias úteis, no horário normal da repartição, admitindo-se conclusão depois do horário dos atos já iniciados cujo adiamento prejudique o curso regular ou cause dano ao interessado/Administração. Na inexistência de regra específica, o prazo para prática de ato pelo órgão ou interessado é de 5 dias, salvo força maior, e pode ser dilatado até o dobro mediante comprovada justificação. Atos processuais realizam-se preferencialmente na sede do órgão; se em outro local, o interessado deve ser cientificado.
+
+Intimação — art. 26
+
+O órgão competente determina a intimação para ciência de decisão ou realização de diligências. A intimação deve conter identificação do intimado e órgão/entidade; finalidade; data, hora e local de comparecimento; se deve comparecer pessoalmente ou por representante; informação da continuidade do processo independentemente do comparecimento; e indicação dos fatos e fundamentos legais pertinentes. A antecedência mínima para comparecimento é de 3 dias úteis.
+
+Intimação pessoal/individualizada | Publicação
+Pode ocorrer por ciência no processo, via postal com AR, telegrama ou outro meio que assegure certeza da ciência. | Usada, entre outras hipóteses, para interessados indeterminados, desconhecidos ou com domicílio indefinido.
+Deve permitir identificação segura do destinatário e finalidade. | É comunicação por meio oficial adequada à impossibilidade de individualização.
+Vício na intimação pode ser suprido pelo comparecimento do administrado. | Publicidade não elimina sigilo constitucional/legal quando cabível.
+
+Efeito do não comparecimento
+
+O desatendimento da intimação não importa reconhecimento da verdade dos fatos nem renúncia a direito. No prosseguimento, permanece garantido o direito de ampla defesa.
+
+Atos que exigem intimação — art. 28
+
+Devem ser intimados os interessados de atos que resultem em imposição de deveres, ônus, sanções ou restrição ao exercício de direitos e atividades, bem como atos de outra natureza de seu interesse.
+
+FCC: comparecimento espontâneo cura falta/irregularidade de intimação. Revelia administrativa não equivale automaticamente a confissão.
+
+O que decorar
+
+3 dias úteis de antecedência para comparecimento; 5 dias como prazo subsidiário para ato, dilatável até o dobro com justificativa.
+
+□ Check manual: sei dizer o que acontece se a intimação tiver vício, mas o administrado comparecer.
+
+SESSÃO 07 · INSTRUÇÃO E PROVA
+
+Verdade material, impulsão de ofício e participação do interessado
+
+Entenda primeiro
+
+A instrução busca averiguar e comprovar os dados necessários à decisão. Ela se realiza de ofício, sem impedir que o interessado proponha atuações probatórias. O modelo não é de juiz passivo: a Administração tem dever de buscar elementos suficientes para decidir.
+
+Regra jurídica — arts. 29 a 47
+
+Os atos de instrução podem ser impulsionados de ofício sem prejuízo da iniciativa dos interessados. São inadmissíveis provas obtidas por meios ilícitos. Quando a matéria envolver interesse geral, pode haver consulta pública e, diante de relevância, audiência pública ou outros meios de participação. Resultados da consulta não vinculam automaticamente a decisão, mas devem ser apresentados com indicação do procedimento adotado.
+
+Prova/medida admissível | Prova/medida inadmissível ou recusável
+Documento, diligência, perícia, informação, manifestação técnica e outros meios lícitos. | Prova obtida por meio ilícito: inadmissível.
+Prova proposta pelo interessado e pertinente ao objeto. | Prova ilícita, impertinente, desnecessária ou protelatória pode/deve ser afastada conforme o caso, por decisão fundamentada.
+Busca de ofício de documentos existentes no próprio órgão ou em outro órgão administrativo quando o interessado indicar onde estão. | Exigir do interessado documento que a própria Administração possui, sem promover a obtenção de ofício nos termos da lei.
+
+Ônus e cooperação
+
+Cabe ao interessado provar os fatos que alegou, sem prejuízo do dever instrutório do órgão. Se declarar que fatos e dados estão registrados em documentos existentes na própria Administração, o órgão de instrução providenciará, de ofício, a obtenção dos documentos ou cópias.
+
+Prazos de instrução que caem
+
+Quando for necessária prestação de informações ou apresentação de provas pelos interessados/terceiros, podem ser expedidas intimações. Se interessado tiver de praticar ato ou diligência, a lei pode fixar prazo; o art. 41 prevê que interessados sejam intimados de prova ou diligência ordenada, com antecedência mínima de 3 dias úteis. Órgão consultivo dispõe, em regra, de 15 dias para emitir parecer, salvo norma ou necessidade comprovada. Encerrada a instrução, o interessado tem direito de manifestar-se no prazo máximo de 10 dias, salvo outro prazo legal.
+
+Parecer obrigatório
+
+Se parecer obrigatório e vinculante não for emitido no prazo, o processo não seguirá até sua apresentação, responsabilizando-se quem deu causa ao atraso. Se obrigatório e não vinculante, o processo pode prosseguir e ser decidido, sem prejuízo da responsabilidade por atraso.
+
+Medida acauteladora
+
+Em caso de risco iminente, a Administração pode, motivadamente, adotar providências acauteladoras sem prévia manifestação do interessado. Isso não elimina o contraditório; ele pode ser diferido para preservar a utilidade da medida.
+
+Acesso aos autos
+
+Interessados têm direito à vista e a certidões/cópias, ressalvados dados e documentos de terceiros protegidos por sigilo ou privacidade, honra e imagem.
+
+Pegadinha: “impulsão de ofício impede iniciativa probatória do interessado” é falso. “prova ilícita pode ser admitida se decisiva” também é falso.
+
+O que levar
+
+Verdade material + iniciativa oficial + participação do interessado + inadmissibilidade absoluta da prova ilícita.
+
+□ Check manual: sei diferenciar parecer obrigatório vinculante e obrigatório não vinculante quanto ao efeito do atraso.
+
+SESSÃO 08 · MOTIVAÇÃO
+
+Não basta citar “interesse público”: é preciso ligar fatos, norma e conclusão
+
+Quando a motivação é obrigatória — art. 50
+
+Devem ser motivados, com indicação dos fatos e fundamentos jurídicos, os atos que: neguem, limitem ou afetem direitos/interesses; imponham ou agravem deveres, encargos ou sanções; decidam concurso ou seleção pública; dispensem ou declarem inexigibilidade de licitação; decidam recursos; decorram de reexame de ofício; deixem de aplicar jurisprudência firmada ou divirjam de pareceres, laudos, propostas e relatórios oficiais; ou importem anulação, revogação, suspensão ou convalidação de ato.
+
+Motivação própria | Motivação aliunde / per relationem
+A decisão expõe diretamente suas razões de fato e de direito. | A decisão concorda com fundamentos de pareceres, informações, decisões ou propostas anteriores.
+Deve ser explícita, clara e congruente. | É válida quando os fundamentos incorporados ficam identificáveis e passam a integrar o ato.
+Evita fórmulas vazias. | Não é “falta de motivação”; é técnica de incorporação de fundamentos.
+
+Decisões repetitivas e colegiadas
+
+Na solução de vários assuntos da mesma natureza, pode ser usado meio mecânico que reproduza os fundamentos das decisões, desde que não prejudique direitos ou garantias. A motivação de decisões de órgãos colegiados/comissões e de decisões orais deve constar da respectiva ata ou termo escrito.
+
+Exemplo
+
+“Indefiro por interesse público” é, em regra, insuficiente quando a lei exige motivação: não revela fatos, regra aplicável nem encadeamento lógico. “Adoto integralmente o parecer jurídico nº X pelos fundamentos A, B e C”, com parecer acessível e pertinente, pode configurar motivação aliunde válida.
+
+LINDB e qualidade da decisão
+
+O art. 20 da LINDB impede decisão administrativa baseada apenas em valores jurídicos abstratos sem considerar consequências práticas. A motivação deve demonstrar necessidade e adequação da medida, inclusive à vista das alternativas possíveis. Isso não converte o processo em cálculo utilitarista: consequências integram a justificação sem afastar legalidade e direitos.
+
+FCC: atos discricionários não estão dispensados de motivação quando enquadrados nas hipóteses legais. Discricionariedade não significa decisão sem razões controláveis.
+
+O que decorar
+
+Explícita + clara + congruente. Motivação por remissão é permitida; motivação aparente não.
+
+□ Check manual: consigo identificar três hipóteses do art. 50 e explicar motivação aliunde.
+
+SESSÃO 09 · DECISÃO
+
+Dever de decidir, prazo e decisão coordenada
+
+Dever de decidir
+
+A Administração tem o dever de explicitamente emitir decisão nos processos administrativos e sobre solicitações ou reclamações em matéria de sua competência. Encerrada a instrução, dispõe de até 30 dias para decidir, salvo prorrogação por igual período expressamente motivada.
+
+Silêncio administrativo
+
+A Lei 9.784 não estabelece regra geral de que o silêncio equivale a deferimento ou indeferimento. O efeito dependerá da legislação específica. O ponto seguro é: existe dever jurídico de decidir; omissão não se transforma, por si só, em decisão tácita universal.
+
+Decisão coordenada — arts. 49-A a 49-G
+
+A Lei 14.210/2021 introduziu técnica para decisões administrativas que exijam participação de 3 ou mais setores, órgãos ou entidades, quando houver relevância da matéria e discordância que prejudique a celeridade do processo. Ela promove deliberação conjunta para simplificar a decisão sem apagar competências e responsabilidades individuais.
+
+Decisão coordenada — pode ocorrer | Não se aplica
+3 ou mais setores/órgãos/entidades envolvidos. | Processos de licitação.
+Matéria relevante. | Processos relacionados ao poder sancionador.
+Discordância que prejudique celeridade. | Processos em que estejam envolvidas autoridades de Poderes distintos.
+Participação dos responsáveis competentes em instância de natureza interinstitucional/intersetorial. | Não substitui competências legais nem elimina responsabilidade individual.
+
+Como funciona
+
+Podem participar especialistas e interessados como ouvintes, quando cabível. Cada participante deve produzir documento sobre o tema de sua competência com a solução proposta. A ata deve conter relato dos itens, síntese dos fundamentos, decisões, posições divergentes e obrigações dos responsáveis. A decisão coordenada é publicada por extrato no Diário Oficial da União.
+
+Pegadinha: decisão coordenada não é “colegialização universal”. Ela tem requisitos e três exclusões legais expressas.
+
+O que decorar
+
+30 + 30 motivado para decisão após instrução. Decisão coordenada: 3+ envolvidos + relevância + discordância prejudicial à celeridade.
+
+□ Check manual: consigo citar as três hipóteses em que a decisão coordenada não se aplica.
+
+SESSÃO 10 · DESISTÊNCIA E EXTINÇÃO
+
+O interessado pode sair; o interesse público pode manter o processo vivo
+
+Desistência e renúncia — art. 51
+
+O interessado pode, mediante manifestação escrita, desistir total ou parcialmente do pedido formulado ou renunciar a direitos disponíveis. Havendo vários interessados, a desistência ou renúncia atinge somente quem a formulou.
+
+Desistência | Renúncia
+Abandono total ou parcial do pedido/processo por quem o formulou. | Abdicação do próprio direito disponível.
+Incide sobre a pretensão processual deduzida. | Incide sobre posição jurídica material disponível.
+Não impede necessariamente continuação se a Administração reconhecer interesse público. | Só cabe quanto a direito disponível e não prejudica outros interessados.
+
+Continuação por interesse público
+
+A desistência ou renúncia não impede o prosseguimento do processo se a Administração considerar que o interesse público exige sua continuidade. Exemplo: requerente desiste de pedido, mas o processo revelou risco coletivo que demanda providência administrativa independente.
+
+Extinção — art. 52
+
+O órgão competente pode declarar extinto o processo quando exaurida sua finalidade ou quando o objeto da decisão se tornar impossível, inútil ou prejudicado por fato superveniente.
+
+Como cai
+
+A prova afirma que, iniciado o processo, nunca se pode desistir; ou que a desistência de um interessado extingue necessariamente todo o processo. Ambas estão erradas.
+
+FCC: diferencie ato do interessado de decisão administrativa de extinção. Desistir não equivale automaticamente a “arquivar sem exame de qualquer interesse público”.
+
+O que levar
+
+Manifestação escrita · efeitos pessoais · direitos disponíveis · interesse público pode justificar continuidade.
+
+□ Check manual: sei explicar por que a desistência de um entre vários interessados não prejudica os demais.
+
+SESSÃO 11 · AUTOTUTELA
+
+Anulação, revogação, decadência e convalidação
+
+Regra central — arts. 53 a 55
+
+A Administração deve anular seus próprios atos quando eivados de vício de legalidade e pode revogá-los por motivo de conveniência ou oportunidade, respeitados os direitos adquiridos. O STF consagra a autotutela nas Súmulas 346 e 473; quando o desfazimento de ato favorável já produziu efeitos concretos, devem ser observados devido processo, contraditório e ampla defesa.
+
+Anulação | Revogação | Convalidação
+Pressuposto: ilegalidade. | Pressuposto: ato válido que se tornou inconveniente ou inoportuno. | Pressuposto: defeito sanável.
+É poder-dever, observados segurança jurídica, decadência e devido processo quando afetar esfera jurídica. | É discricionária dentro dos limites legais. | É possível se não houver lesão ao interesse público nem prejuízo a terceiros.
+Em regra, efeitos retroativos (ex tunc), ressalvadas situações protegidas pelo ordenamento. | Efeitos prospectivos (ex nunc), pois o ato era válido. | Corrige o vício preservando o ato quando juridicamente admissível.
+Pode alcançar ato vinculado ou discricionário se ilegal. | Incide sobre mérito administrativo; não serve para “corrigir ilegalidade”. | Não sana vício insanável nem dribla competência exclusiva.
+
+Decadência — art. 54
+
+O direito da Administração de anular atos administrativos de que decorram efeitos favoráveis aos destinatários decai em 5 anos, contados da data em que foram praticados, salvo comprovada má-fé. Em efeitos patrimoniais contínuos, conta-se da percepção do primeiro pagamento. Considera-se exercício do direito de anular qualquer medida de autoridade administrativa que importe impugnação à validade do ato.
+
+Boa-fé e segurança jurídica
+
+O art. 54 estabiliza situações favoráveis após o prazo, mas não protege má-fé comprovada. A LINDB reforça a segurança jurídica ao impedir invalidação baseada apenas em mudança posterior de orientação geral para situações plenamente constituídas, nos termos do art. 24.
+
+Convalidação — art. 55
+
+Em decisão que evidencie não acarretarem lesão ao interesse público nem prejuízo a terceiros, atos com defeitos sanáveis podem ser convalidados pela própria Administração. Doutrinariamente, vícios de competência não exclusiva e de forma não essencial são exemplos clássicos de sanabilidade; cada caso deve respeitar a lei.
+
+Pegadinha: ilegalidade → anulação, não revogação. Conveniência/oportunidade → revogação, não anulação. Cinco anos do art. 54 não se aplicam para “premiar” má-fé.
+
+O que decorar
+
+A-R-C: Anula ilegal; Revoga mérito; Convalida vício sanável. 5 anos + boa-fé para decadência do art. 54.
+
+□ Check manual: consigo resolver um caso de ato favorável antigo perguntando primeiro se houve má-fé.
+
+SESSÃO 12 · RECURSOS E REVISÃO
+
+Legalidade e mérito no recurso; fatos novos na revisão; efeitos diferentes
+
+Recurso administrativo — arts. 56 a 64
+
+Das decisões administrativas cabe recurso por razões de legalidade e de mérito. O recurso é dirigido à autoridade que proferiu a decisão; se ela não reconsiderar em 5 dias, encaminhará à autoridade superior. Salvo exigência legal, sua interposição independe de caução. O processo pode tramitar, no máximo, por 3 instâncias administrativas, salvo disposição legal diversa.
+
+Recurso administrativo | Revisão
+Ataca decisão por legalidade e/ou mérito. | Reabre processo sancionador diante de fatos novos ou circunstâncias relevantes que demonstrem inadequação da sanção.
+Prazo geral de interposição: 10 dias, salvo lei específica. | Pode ocorrer a qualquer tempo, a pedido ou de ofício.
+Pode resultar em confirmação, modificação, anulação ou revogação; se puder agravar a situação do recorrente, deve-se ouvi-lo antes. | Da revisão não pode resultar agravamento da sanção.
+Legitimidade conforme art. 58. | Pressupõe processo sancionador e novidade/relevância apta a questionar a adequação da sanção.
+
+Quem pode recorrer — art. 58
+
+Titulares de direitos e interesses que sejam parte; aqueles cujos direitos ou interesses forem indiretamente afetados; organizações e associações representativas quanto a direitos/interesses coletivos; cidadãos ou associações quanto a direitos/interesses difusos.
+
+Prazos
+
+Salvo disposição legal específica, o recurso deve ser interposto em 10 dias da ciência/divulgação oficial. O órgão competente para decidir recurso tem, em regra, 30 dias a partir do recebimento dos autos, prorrogáveis por igual período mediante justificativa explícita. Interposto o recurso, os demais interessados são intimados para alegações em 5 dias úteis.
+
+Conhecimento e saneamento
+
+O recurso não será conhecido quando interposto fora do prazo; perante órgão incompetente; por quem não seja legitimado; ou após exaurida a esfera administrativa. Se apresentado a órgão incompetente, deve ser indicada a autoridade competente e devolvido o prazo ao recorrente. O não conhecimento não impede revisão de ofício do ato ilegal, desde que não haja preclusão administrativa.
+
+Efeito devolutivo | Efeito suspensivo
+O recurso leva a matéria para reexame pela autoridade competente. | Impede temporariamente a produção de efeitos da decisão recorrida.
+É inerente à lógica recursal. | Não é automático na Lei 9.784.
+Permite revisão de legalidade e mérito. | Pode ser concedido, de ofício ou a pedido, havendo justo receio de prejuízo de difícil ou incerta reparação decorrente da execução.
+
+Reformatio in pejus
+
+No recurso, a autoridade pode modificar a decisão e, se disso puder decorrer gravame ao recorrente, deve cientificá-lo para formular alegações antes da decisão. Portanto, a lei não estabelece proibição absoluta de agravamento no recurso. Na revisão do processo sancionador, ao contrário, o art. 65 proíbe expressamente o agravamento da sanção.
+
+FCC: três trocas recorrentes: recurso = legalidade e mérito; reconsideração = 5 dias; revisão não pode agravar sanção.
+
+O que decorar
+
+Recurso: 10 / 5 / 30(+30) / 3 instâncias. Demais interessados: 5 dias úteis. Revisão: a qualquer tempo, sem agravamento.
+
+□ Check manual: sei explicar por que a lei permite agravamento após contraditório no recurso, mas proíbe na revisão.
+
+SESSÃO 13 · PRAZOS, DECADÊNCIA E NULIDADES
+
+Contagem contínua, segurança jurídica e a pergunta decisiva: houve prejuízo?
+
+Contagem dos prazos — arts. 66 e 67
+
+Os prazos começam a correr a partir da data da cientificação oficial, excluindo-se da contagem o dia do começo e incluindo-se o do vencimento. Considera-se prorrogado o prazo até o primeiro dia útil seguinte se o vencimento cair em dia em que não houver expediente ou este for encerrado antes da hora normal. Os prazos expressos em dias contam-se de modo contínuo. Prazos fixados em meses ou anos contam-se de data a data; inexistindo no mês do vencimento dia equivalente ao do início, usa-se o último dia do mês. Salvo força maior comprovada, os prazos processuais não se suspendem.
+
+Atenção aos “dias úteis” específicos
+
+A regra geral da Lei 9.784 é contagem contínua. Quando a própria lei usa expressamente “dias úteis” — por exemplo, antecedência mínima de 3 dias úteis para comparecimento decorrente de intimação e prazo de 5 dias úteis para alegações de outros interessados após recurso — aplica-se a qualificação específica. Não importe automaticamente a sistemática do CPC.
+
+Decadência | Prescrição
+Extingue um poder/direito potestativo pelo decurso do tempo. | Em linhas gerais, atinge a pretensão pelo decurso do tempo.
+No art. 54 da Lei 9.784: 5 anos para a Administração anular atos favoráveis, salvo má-fé. | Não existe na Lei 9.784 um prazo prescricional geral equivalente ao art. 54 para toda e qualquer pretensão administrativa.
+Atos de efeitos patrimoniais contínuos: conta-se do primeiro pagamento. | Prazos prescricionais variam conforme a matéria e a lei específica.
+
+Nulidade no processo administrativo
+
+Nem toda irregularidade formal torna todo o processo inválido. É preciso distinguir formalidade essencial de falha sanável e verificar sua repercussão sobre defesa, participação, competência, imparcialidade e decisão. A Lei 9.784 prestigia formas simples e admite saneamento de determinados defeitos, como o comparecimento que supre falta ou irregularidade de intimação e a convalidação de atos com defeitos sanáveis nos requisitos do art. 55.
+
+Instrumentalidade e prejuízo
+
+Na jurisprudência do STJ, especialmente em processos disciplinares, aplica-se a ideia de que não se declara nulidade sem demonstração de prejuízo à defesa (pas de nullité sans grief). Isso não autoriza ignorar garantias essenciais. Se o defeito suprimiu contraditório efetivo, contaminou competência essencial ou comprometeu imparcialidade, o vício pode ser relevante independentemente de mero rótulo formal.
+
+Exemplos
+
+Falha curada: intimação com vício formal, mas o interessado comparece, conhece o ato e participa. Falha grave: sanção baseada em prova decisiva escondida do interessado sem oportunidade posterior de manifestação.
+
+Pegadinha: não use “qualquer irregularidade = nulidade absoluta”. Em processo administrativo, finalidade, sanabilidade e prejuízo importam.
+
+O que decorar
+
+Exclui começo, inclui vencimento · dias contínuos · mês/ano data a data · prorroga se não houver expediente · não suspende salvo força maior.
+
+□ Check manual: sei explicar por que “todos os prazos da Lei 9.784 são em dias úteis” é falso.
+
+SESSÃO 14 · QUADRO-MESTRE DE PRAZOS E FECHAMENTO
+
+Os números que a FCC troca entre si
+
+Situação | Prazo/regra | Chave de prova
+Prática de ato sem prazo específico — art. 24 | 5 dias, salvo força maior; dilatação até o dobro com justificação comprovada. | Não confundir com reconsideração: também 5, mas fundamento diferente.
+Antecedência de intimação para comparecer — art. 26 | 3 dias úteis. | Aqui a lei diz expressamente úteis.
+Intimação de prova/diligência — art. 41 | Antecedência mínima de 3 dias úteis. | Também úteis.
+Parecer de órgão consultivo — art. 42 | 15 dias, salvo norma ou necessidade comprovada. | Vinculante atrasado pode travar o processo.
+Manifestação após encerrada a instrução — art. 44 | Máximo de 10 dias, salvo prazo legal diverso. | Antes da decisão.
+Decisão após instrução — art. 49 | Até 30 dias, prorrogáveis por igual período com motivação expressa. | 30 + 30 motivado.
+Decadência para anular ato favorável — art. 54 | 5 anos, salvo má-fé. | Contínuos patrimoniais: primeiro pagamento.
+Reconsideração pela autoridade recorrida — art. 56, §1º | 5 dias. | Se não reconsiderar, encaminha ao superior.
+Interposição de recurso — art. 59 | 10 dias, salvo lei específica. | Da ciência ou divulgação oficial.
+Decisão do recurso — art. 59, §1º | 30 dias do recebimento dos autos, prorrogáveis por igual período com justificativa explícita. | Outro 30 + 30.
+Alegações dos demais interessados após recurso — art. 62 | 5 dias úteis. | Aqui a lei qualifica como úteis.
+Revisão de processo sancionador — art. 65 | A qualquer tempo, com fatos novos/circunstâncias relevantes. | Nunca agrava sanção.
+
+Quadro-mestre de institutos
+
+Processo x procedimento: relação decisória e garantias x rito/encadeamento.
+
+Delegação x avocação: delegação pode ser sem hierarquia; avocação exige inferior hierárquico e é excepcional/temporária.
+
+Impedimento x suspeição: hipóteses objetivas e dever de abstenção x amizade íntima/inimizade notória.
+
+Anulação x revogação x convalidação: ilegalidade x mérito x vício sanável.
+
+Recurso x revisão: legalidade/mérito dentro do regime recursal x fato novo/circunstância relevante em processo sancionador a qualquer tempo.
+
+Motivação própria x aliunde: razões no próprio ato x incorporação expressa de fundamentos anteriores.
+
+Desistência x renúncia: abandono da pretensão processual x abdicação de direito disponível.
+
+Dias corridos x úteis: regra geral contínua; “úteis” somente quando a lei assim qualifica.
+
+Camada de prova — 12 gatilhos
+
+1. Federal, não automaticamente nacional. 2. Legislativo/Judiciário da União entram quando administram. 3. Início de ofício ou a pedido. 4. Competência irrenunciável. 5. Delegação pode existir sem hierarquia. 6. Avocação exige hierarquia. 7. Prova ilícita é inadmissível. 8. Motivação pode ser aliunde. 9. Há dever de decidir. 10. Recurso não tem efeito suspensivo automático. 11. Art. 54 protege boa-fé após 5 anos. 12. Revisão não agrava sanção.
+
+Regra de ouro: quando a questão trouxer um prazo, pergunte primeiro “qual ato?”. A FCC costuma usar um número verdadeiro no instituto errado.
+
+O que levar
+
+3 úteis · 5 · 10 · 15 · 30(+30) · 5 anos, sempre ligados ao respectivo ato.
+
+□ Check manual: consigo reconstruir o quadro de prazos sem olhar.
+
+O que decorar — núcleo seco da Lei 9.784/99
+
+Âmbito: Administração Federal direta e indireta + Legislativo/Judiciário da União em função administrativa.
+
+Princípios: legalidade, finalidade, motivação, razoabilidade, proporcionalidade, moralidade, ampla defesa, contraditório, segurança jurídica, interesse público e eficiência.
+
+Início: de ofício ou a pedido.
+
+Capacidade: 18 anos, salvo regra especial.
+
+Competência: irrenunciável. Não delega N-R-E: normativo, recurso, exclusiva.
+
+Avocação: excepcional + temporária + motivo relevante + inferior hierárquico.
+
+Impedimento: comunica e se abstém; omissão = falta grave. Suspeição: amizade íntima/inimizade notória; recurso sem efeito suspensivo.
+
+Prova: ilícita é inadmissível. Prova impertinente, desnecessária ou protelatória pode ser recusada por decisão fundamentada.
+
+Motivação: explícita, clara e congruente; admite remissão a parecer/informação/decisão anterior.
+
+Decisão: dever de decidir; 30 dias após instrução + 30 motivado.
+
+Autotutela: anula ilegal; revoga mérito; convalida defeito sanável sem lesão ao interesse público ou prejuízo a terceiros.
+
+Decadência: 5 anos para anular ato favorável, salvo má-fé; efeitos patrimoniais contínuos contam do primeiro pagamento.
+
+Recurso: legalidade e mérito; 10 dias; reconsideração 5; até 3 instâncias; em regra sem efeito suspensivo.
+
+Revisão: processo sancionador, a qualquer tempo, fatos novos/circunstâncias relevantes; não pode agravar sanção.
+
+Contagem: exclui começo, inclui vencimento; dias contínuos salvo quando a lei disser úteis; não suspende salvo força maior.
+
+REVISÃO FINAL · 5–10 MINUTOS
+
+Processo Administrativo em uma passagem
+
+1. Onde se aplica?No plano geral, à Administração Federal direta e indireta; também a Legislativo e Judiciário da União quando exercem função administrativa.
+
+2. Qual a base constitucional?Devido processo legal, contraditório, ampla defesa e princípios do art. 37.
+
+3. Como começa?De ofício ou a pedido do interessado.
+
+4. O administrado precisa de advogado?Regra: assistência facultativa, salvo hipótese legal. SV 5 do STF afasta nulidade automática do PAD pela falta de defesa técnica.
+
+5. Competência pode ser renunciada?Não. Delegação e avocação são técnicas de exercício nos limites legais, não renúncia.
+
+6. Delegação exige hierarquia?Não. Avocação, sim: órgão hierarquicamente inferior.
+
+7. Como diferenciar impedimento e suspeição?Impedimento: hipóteses objetivas do art. 18; suspeição: amizade íntima/inimizade notória do art. 20.
+
+8. Prova ilícita pode ser usada para descobrir a verdade?Não. A lei a declara inadmissível.
+
+9. Motivação por remissão vale?Sim, se os fundamentos anteriores forem incorporados e identificáveis; a motivação deve ser explícita, clara e congruente.
+
+10. Existe dever de decidir?Sim. Após a instrução: até 30 dias, prorrogáveis por mais 30 mediante motivação expressa.
+
+11. Qual diferença entre anular e revogar?Anulação corrige ilegalidade; revogação retira ato válido por conveniência/oportunidade.
+
+12. Quando convalida?Defeito sanável, sem lesão ao interesse público e sem prejuízo a terceiros.
+
+13. Quanto dura o direito de anular ato favorável?5 anos, salvo má-fé comprovada.
+
+14. O recurso é só de legalidade?Não: cabe por legalidade e mérito.
+
+15. Recurso suspende automaticamente?Não. Pode receber efeito suspensivo diante de justo receio de prejuízo de difícil ou incerta reparação.
+
+16. Revisão pode piorar sanção?Não. O art. 65 proíbe agravamento.
+
+17. Todos os prazos são úteis?Não. Regra geral: dias contínuos. A lei especifica úteis em hipóteses próprias.
+
+18. Qual a lógica das nulidades?Formalidade essencial deve ser preservada; defeito sanável e sem prejuízo não deve ser confundido com nulidade automática.
+
+20 erros que não posso cometer
+
+• Dizer que a Lei 9.784/99 é automaticamente nacional e rege, por si só, todos os entes.
+• Limitar a lei ao Poder Executivo federal.
+• Afirmar que processo administrativo só começa a pedido.
+• Confundir órgão com entidade e atribuir personalidade jurídica ao órgão.
+• Dizer que advogado é sempre obrigatório no processo administrativo.
+• Tratar competência como renunciável.
+• Exigir hierarquia para toda delegação.
+• Permitir delegação de ato normativo, decisão de recurso ou competência exclusiva.
+• Admitir avocação de órgão sem vínculo hierárquico.
+• Confundir amizade íntima com impedimento.
+• Afirmar que não comparecimento à intimação equivale a confissão ou renúncia.
+• Admitir prova ilícita por ser “útil” à verdade material.
+• Supor que ato discricionário nunca precisa ser motivado.
+• Considerar inválida toda motivação por remissão.
+• Negar o dever administrativo de decidir.
+• Usar revogação para sanar ilegalidade.
+• Esquecer o prazo decadencial de 5 anos do art. 54 e a exceção da má-fé.
+• Dizer que recurso administrativo só examina legalidade ou que sempre tem efeito suspensivo.
+• Aplicar a proibição de reformatio in pejus da revisão como se fosse absoluta também no recurso.
+• Contar todos os prazos da Lei 9.784 em dias úteis como se fosse CPC.
+
+Se a alternativa misturar uma regra verdadeira com o instituto errado, pare. Processo Administrativo é matéria de encaixe: sujeito, fase, ato, prazo e efeito precisam corresponder.
+
+Artigos para ler depois da teoria
+
+Leitura recomendada, nesta ordem, para consolidar a literalidade sem substituir a compreensão:
+
+Lei 9.784/99 · arts. 1º a 10Âmbito, princípios, direitos, deveres, início, interessados e capacidade. Lei 9.784/99 · arts. 11 a 28Competência, impedimento, suspeição, forma, tempo, lugar e comunicação. Lei 9.784/99 · arts. 29 a 50Instrução, prova, decisão, decisão coordenada e motivação. Lei 9.784/99 · arts. 51 a 67Desistência, extinção, autotutela, decadência, recursos, revisão e prazos. CF · art. 5º, LIV, LV e LVIDevido processo, contraditório, ampla defesa e vedação à prova ilícita. CF · art. 37, caputLegalidade, impessoalidade, moralidade, publicidade e eficiência. LINDB · arts. 20 a 24 e 30Consequências, realidade administrativa, transição, segurança jurídica e orientações gerais.
+
+Disposições finais que também podem cair
+
+As sanções administrativas podem ter natureza pecuniária ou consistir em obrigação de fazer ou não fazer, preservado o direito de defesa (art. 68). Processos administrativos específicos continuam regidos por lei própria, aplicando-se a Lei 9.784 subsidiariamente (art. 69). O art. 69-A prevê prioridade de tramitação, mediante prova da condição, para pessoas com 60 anos ou mais, pessoas com deficiência física ou mental e pessoas com determinadas doenças graves listadas na lei, entre outras hipóteses legalmente estabelecidas.
+
+10 QUESTÕES INTERNAS — CONTEÚDO COMPLETO
+
+Questão 1 — FÁCIL
+
+A Lei 9.784/99 aplica-se, de modo geral, a qual âmbito?
+
+• Somente ao Poder Executivo federal.
+• À Administração Federal direta e indireta e, quando em função administrativa, a órgãos dos Poderes Legislativo e Judiciário da União.
+• Automaticamente a todos os Estados e Municípios.
+• Apenas a autarquias federais.
+
+Gabarito: B
+
+Explicação: É a delimitação do art. 1º e §1º.
+
+Questão 2 — FÁCIL
+
+Qual alternativa contém matérias que NÃO podem ser delegadas?
+
+• Ato normativo, decisão de recurso e competência exclusiva.
+• Somente atos normativos.
+• Somente decisão de recurso.
+• Toda competência discricionária.
+
+Gabarito: A
+
+Explicação: N-R-E: normativo, recurso, exclusiva.
+
+Questão 3 — FÁCIL
+
+O processo administrativo pode iniciar-se:
+
+• Somente por requerimento.
+• Somente de ofício.
+• De ofício ou a pedido do interessado.
+• Apenas por determinação judicial.
+
+Gabarito: C
+
+Explicação: Regra do art. 5º.
+
+Questão 4 — FÁCIL
+
+Concluída a instrução, o prazo geral para decidir é:
+
+• 10 dias improrrogáveis.
+• 15 dias.
+• 30 dias, prorrogáveis por igual período mediante motivação expressa.
+• 60 dias sem motivação.
+
+Gabarito: C
+
+Explicação: Art. 49: 30 + 30 motivado.
+
+Questão 5 — MÉDIA
+
+A autoridade pretende delegar parte de sua competência a órgão sem subordinação hierárquica. Isso é:
+
+• Sempre proibido.
+• Possível, se presentes os pressupostos legais, pois delegação não exige hierarquia.
+• Possível apenas para recurso.
+• Possível apenas para competência exclusiva.
+
+Gabarito: B
+
+Explicação: Delegação pode ocorrer sem hierarquia.
+
+Questão 6 — MÉDIA
+
+Intimação irregular, mas comparecimento espontâneo e participação do interessado. Consequência:
+
+• Nulidade automática.
+• Arquivamento.
+• O comparecimento supre a irregularidade.
+• Confissão.
+
+Gabarito: C
+
+Explicação: A ciência efetiva sana falta/irregularidade da intimação.
+
+Questão 7 — MÉDIA
+
+Sobre recurso administrativo, assinale a correta:
+
+• Discute apenas legalidade.
+• Tem sempre efeito suspensivo.
+• Pode discutir legalidade e mérito; o efeito suspensivo não é automático.
+• Recurso e revisão têm a mesma proibição absoluta de agravamento.
+
+Gabarito: C
+
+Explicação: Recurso alcança legalidade e mérito e, em regra, não suspende.
+
+Questão 8 — MÉDIA
+
+Quanto à autotutela, é correto afirmar:
+
+• Revogação corrige ilegalidade.
+• Anulação decorre de conveniência.
+• Convalidação pode atingir defeito sanável sem lesão ao interesse público nem prejuízo a terceiros.
+• Todo vício é insanável.
+
+Gabarito: C
+
+Explicação: Anulação = ilegalidade; revogação = mérito; convalidação = sanável.
+
+Questão 9 — DIFÍCIL
+
+Após mais de cinco anos, a Administração descobre vício em ato favorável e há prova de má-fé do beneficiário. Qual solução?
+
+• A decadência sempre impede anulação.
+• A má-fé afasta a proteção decadencial do art. 54, sem dispensar o procedimento adequado.
+• O ato só pode ser revogado.
+• Convalidação obrigatória.
+
+Gabarito: B
+
+Explicação: O art. 54 excepciona a má-fé comprovada.
+
+Questão 10 — DIFÍCIL
+
+Em processo sancionador, surgem fatos novos após decisão administrativa. Sobre revisão:
+
+• Só cabe em 10 dias.
+• Pode ocorrer a qualquer tempo e agravar.
+• Pode ocorrer a qualquer tempo, mas não pode agravar a sanção.
+• Só discute mérito.
+
+Gabarito: C
+
+Explicação: Art. 65: a qualquer tempo e sem agravamento.
