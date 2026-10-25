@@ -17,6 +17,8 @@ jobs:
           node-version: '22'
           cache: npm
       - run: npm ci --ignore-scripts
+      - name: Auditar dependências usadas em produção
+        run: npm audit --omit=dev --audit-level=high
       - name: Verificar sintaxe
         run: |
           node --check lib/hotmart-webhook.js
