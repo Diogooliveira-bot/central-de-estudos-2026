@@ -61,3 +61,20 @@ test('sessões e checks podem ser marcados e desmarcados sem alterar o leitor co
   assert.equal(saved.has(key), false);
   assert.doesNotMatch(read('ui/native-reading-session.js'), /adm-session|adm-reading-check/);
 });
+
+test('quadros comparativos das 20 apostilas são tabelas legíveis e mantêm as células', () => {
+  let tables = 0;
+  for (let n = 1; n <= 20; n++) {
+    const html = JSON.parse(read(`content/adm/m${String(n).padStart(2, '0')}-approved-complete.js`).match(/=(".*");\s*$/s)[1]);
+    const count = (html.match(/<table class="adm-reading-table"/g) || []).length;
+    assert.ok(count >= 10, `M${n}: tabelas comparativas presentes`);
+    assert.equal((html.match(/<\/table>/g) || []).length, count, `M${n}: todas as tabelas fechadas`);
+    tables += count;
+  }
+  assert.equal(tables, 366);
+  const m04 = JSON.parse(read('content/adm/m04-approved-complete.js').match(/=(".*");\s*$/s)[1]);
+  assert.match(m04, /<th scope="col">Ponto<\/th><th scope="col">Delegação<\/th><th scope="col">Avocação<\/th>/);
+  assert.match(m04, /<td>Transfere o exercício de parte da competência para outro órgão\/titular\.<\/td>/);
+  const m12 = JSON.parse(read('content/adm/m12-approved-complete.js').match(/=(".*");\s*$/s)[1]);
+  assert.match(m12, /<th scope="col">Termo de parceria<\/th><th scope="col">Termo de colaboração<\/th>/);
+});

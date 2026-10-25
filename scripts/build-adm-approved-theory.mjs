@@ -25,6 +25,12 @@ function render(text) {
       ? `<label class="adm-reading-check"><input type="checkbox" data-adm-check="${++checkNumber}"><span>${escapeHtml(label)}</span></label>`
       : escapeHtml(item);
   };
+  const tableHtml = lines => {
+    const rows = lines.map(line => line.split(' | ').map(cell => escapeHtml(cell.trim())));
+    const columns = rows[0].length;
+    const row = (cells, tag) => `<tr>${cells.map(cell => `<${tag}${tag==='th'?' scope="col"':''}>${cell}</${tag}>`).join('')}</tr>`;
+    return `<div class="adm-table-scroll" role="region" aria-label="Tabela comparativa" tabindex="0"><table class="adm-reading-table" style="--adm-table-columns:${columns}"><thead>${row(rows[0],'th')}</thead><tbody>${rows.slice(1).map(cells => row(cells,'td')).join('')}</tbody></table></div>`;
+  };
   const body = blocks.map((block, index) => {
     const lines = block.trim().split('\n');
     const pendingCheck = nextCheckBlock;
@@ -32,6 +38,10 @@ function render(text) {
     if (block.trim() === '---') return '<hr>';
     const line = lines[0].trim();
     if (index === 0) return `<h1>${escapeHtml(line)}</h1>`;
+    const columns = lines.map(value => value.split(' | ').length);
+    if (lines.length > 1 && columns[0] >= 2 && columns[0] <= 6 && columns.every(count => count === columns[0])) {
+      return tableHtml(lines);
+    }
     if (/^(?:SESSÃO\s+\d+|S\d+\s*[—-])/i.test(line) || /^\d+\s+Questões Internas/i.test(line) || /^REVISÃO FINAL/i.test(line)) {
       return `<h2>${lines.map(escapeHtml).join(' · ')}</h2>`;
     }

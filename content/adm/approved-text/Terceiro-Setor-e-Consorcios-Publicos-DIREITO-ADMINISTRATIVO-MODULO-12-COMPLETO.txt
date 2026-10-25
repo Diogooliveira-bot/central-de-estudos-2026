@@ -261,7 +261,11 @@ A qualificação pode ser perdida a pedido ou por decisão em processo administr
 
 Compare — termo de parceria × colaboração/fomento
 
-| Termo de parceria | Termo de colaboração | Termo de fomento | |---|---|---|---| | Lei 9.790/99 | Lei 13.019/14 | Lei 13.019/14 | | OSCIP | OSC do MROSC | OSC do MROSC | | cooperação para finalidades do art. 3º | proposta da Administração + recursos | proposta da OSC + recursos | | regime especial | MROSC | MROSC |
+Termo de parceria | Termo de colaboração | Termo de fomento
+Lei 9.790/99 | Lei 13.019/14 | Lei 13.019/14
+OSCIP | OSC do MROSC | OSC do MROSC
+cooperação para finalidades do art. 3º | proposta da Administração + recursos | proposta da OSC + recursos
+regime especial | MROSC | MROSC
 
 A Lei 13.019/2014, art. 3º, VI, exclui de suas exigências o termo de parceria com OSCIP celebrado conforme a Lei 9.790. Os regimes coexistem; não se fundem.
 

@@ -63,6 +63,13 @@ html.bc-ui-v1 #subjects .subject[data-id="adm"] .adm-session-row button{color:#1
 #adm-native-reader .adm-reading-check-list li{margin:6px 0}
 #adm-native-reader .adm-session-reader-check{margin:22px 0;padding:12px;border:1px solid var(--bc-reading-line,#c9d4dc);border-radius:10px;background:var(--bc-reading-inset,#f5f8fa)}
 #adm-native-reader .adm-session-reader-check label{display:flex;align-items:center;gap:9px;cursor:pointer;font-weight:700}
+#adm-native-reader .adm-table-scroll{max-width:100%;overflow-x:auto;overscroll-behavior-inline:contain;margin:1.2em 0;border:1px solid var(--bc-reading-line,#c9d4dc);border-radius:9px;scrollbar-gutter:stable}
+#adm-native-reader .adm-table-scroll:focus-visible{outline:3px solid var(--bc-reading-accent,#16805a);outline-offset:2px}
+html.bc-ui-v1 .bc-reading-appearance #adm-native-reader .adm-reading-table,
+#adm-native-reader .adm-reading-table{display:table;width:100%;min-width:calc(var(--adm-table-columns)*11rem);max-width:none;overflow:visible;border-collapse:collapse;margin:0;font:inherit;font-size:.82em;line-height:1.45;color:var(--bc-reading-text,inherit)}
+#adm-native-reader .adm-reading-table :is(th,td){min-width:10rem;padding:.6em .75em;border:1px solid var(--bc-reading-line,#c9d4dc);vertical-align:top;overflow-wrap:break-word}
+#adm-native-reader .adm-reading-table th{font-weight:750;background:var(--bc-reading-inset,#f4f6f7)}
+#adm-native-reader .adm-reading-table tbody tr:nth-child(even){background:var(--bc-reading-inset,#f4f6f7)}
 @media(max-width:540px){.adm-session-row{align-items:flex-start;flex-wrap:wrap}.adm-session-row button{margin-left:28px}.adm-session-plan>summary{align-items:flex-start}}
 
 /* Direito Administrativo segue o padrão aprovado de Constitucional e Português.
