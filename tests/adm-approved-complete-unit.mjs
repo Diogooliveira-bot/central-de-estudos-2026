@@ -34,6 +34,7 @@ test('sessões e checks podem ser marcados e desmarcados sem alterar o leitor co
   vm.createContext(data);
   vm.runInContext(read('content/adm/adm-session-index.js'), data);
   assert.equal(Object.keys(data.window.ADM_SESSION_INDEX).length, 20);
+  assert.match(data.window.ADM_SESSION_INDEX[1][0], /SESSÃO 01 · Regime jurídico/);
   for (let n = 1; n <= 20; n++) {
     assert.ok(data.window.ADM_SESSION_INDEX[n].length >= 5, `M${n}: sessões identificadas`);
     const html = JSON.parse(read(`content/adm/m${String(n).padStart(2, '0')}-approved-complete.js`).match(/=(".*");\s*$/s)[1]);

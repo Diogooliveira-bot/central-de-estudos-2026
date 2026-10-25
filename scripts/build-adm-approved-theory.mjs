@@ -60,8 +60,10 @@ for (let number = 1; number <= 20; number++) {
   if (incompleteQuestionBlocks.has(number) && theory.length === source.length) throw new Error(`Limite de questões do M${number} não encontrado`);
   const path = resolve(root, `content/adm/m${String(number).padStart(2, '0')}-approved-complete.js`);
   const html = render(theory);
-  const sessions = [...html.matchAll(/<h2>(.*?)<\/h2>/g)].map(match => match[1]);
-  sectionIndex[number] = sessions.filter(title => /^(?:SESSÃO\s+\d+|S\d+\s*[—-])/i.test(title));
+  const sessions = [...html.matchAll(/<h2>(.*?)<\/h2>(?:\n<p>([^<]*)<\/p>)?/g)];
+  sectionIndex[number] = sessions.filter(match => /^(?:SESSÃO\s+\d+|S\d+\s*[—-])/i.test(match[1]))
+    .map(([,title,subtitle]) => /^SESSÃO\s+\d+$/i.test(title) && subtitle?.length < 110
+      ? `${title} · ${subtitle}` : title);
   if (sectionIndex[number].length < 5) throw new Error(`Sessões ausentes no M${number}`);
   const data = `window.ADM_APPROVED_COMPLETE=window.ADM_APPROVED_COMPLETE||{};window.ADM_APPROVED_COMPLETE[${number}]=${JSON.stringify(html)};\n`;
   writeFileSync(path, data);
