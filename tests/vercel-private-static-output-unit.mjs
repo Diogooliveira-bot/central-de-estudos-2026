@@ -45,6 +45,11 @@ test('Vercel static output omits protected source files but retains the public a
     assert.equal(paths.has('/vercel.json'), false);
     assert.equal(files.some(file => file.startsWith('api/')), false);
 
+    for (let n = 1; n <= 20; n++) {
+      const name = `/content/adm/m${String(n).padStart(2,'0')}-approved-complete.js`;
+      assert.equal(paths.has(name), false, `${name} contains premium full theory`);
+    }
+
     const leaked = files.filter(file => protectedAsset(`/${file}`));
     assert.deepEqual(leaked, []);
 
