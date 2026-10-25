@@ -108,3 +108,8 @@ Não enviar Hottok, DATABASE_URL ou senha de aplicativo Gmail para o chat.
 A verificação de segurança detectou versões vulneráveis de Nodemailer e Zod.
 As atualizações são restritas à branch de testes e devem passar por npm audit e
 pela bateria completa antes de compor um release.
+
+### Correção de dependências (branch de testes)
+O workflow isolado atualizou Nodemailer para ^10.1.4 e aplicou override
+Zod ^4.6.6; a auditoria de produção passou nesse workflow.
+Reexecutar o pipeline principal da branch antes da publicação.
