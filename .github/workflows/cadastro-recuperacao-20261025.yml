@@ -1,0 +1,27 @@
+name: Validar cadastro e recuperação de senha
+on:
+  push:
+    branches:
+      - fix/cadastro-recuperacao-20261025
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  autenticacao:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Instalar dependências
+        run: npm ci --ignore-scripts
+      - name: Verificar sintaxe dos arquivos
+        run: |
+          node --check api/auth.js
+          node --check lib/password-reset.js
+          node --check middleware.js
+          node --check sw.js
+      - name: Testar autenticação, convites e recuperação de senha
+        run: npm run test:password-reset
