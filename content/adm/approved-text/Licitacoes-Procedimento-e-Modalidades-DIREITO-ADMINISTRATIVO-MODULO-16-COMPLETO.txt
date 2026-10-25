@@ -1,0 +1,1347 @@
+﻿Licitações — Procedimento e Modalidades
+DIREITO ADMINISTRATIVO · MÓDULO 16 · COMPLETO
+
+DIREITO ADMINISTRATIVOMÓDULO 16
+
+Apostila de estudo · nível Analista · padrão FCC
+
+Licitações — Procedimento e Modalidades
+
+Art. 17, modalidades, critérios, modos de disputa, edital e prazos, julgamento, habilitação, recursos e encerramento.
+
+Base conferida em 18/09/2026: Lei nº 14.133/2021 consolidada no Planalto; PDF normativo do pacote; materiais TEC da Biblioteca para cobertura e padrão FCC; Central v6.7.0 consultada somente em leitura. Este artefato é OFFLINE e não publica nem altera TEC, Anki, Lei em Dia ou progresso.
+
+Como usar este módulo
+
+Resolva cada questão separando quatro camadas: fase, modalidade, critério de julgamento e modo de disputa. Depois verifique julgamento, habilitação, recurso e encerramento.
+
+objeto→modalidade→critério→modo→fases→encerramento
+
+SESSÃO 01 — Fases do art. 17: a espinha dorsal do procedimento
+
+Entenda primeiro
+
+A Lei nº 14.133/2021 organiza o procedimento licitatório em uma sequência lógica. A fase preparatória — estudada em profundidade no M15 — define o problema, o objeto, a estratégia de contratação e as regras do futuro certame. O M16 começa no ponto em que esse planejamento passa a ser projetado para o mercado: publica-se o edital, recebem-se as ofertas, julgam-se as propostas, verifica-se a habilitação, concentra-se a discussão recursal e a autoridade superior encerra o procedimento.
+
+O ponto mais cobrado pela FCC é a mudança de lógica em relação ao modelo clássico da Lei nº 8.666/1993: na Lei nº 14.133/2021, a regra é julgar antes de habilitar. A banca frequentemente tenta recolocar a habilitação antes das propostas ou antes do julgamento como se fosse a ordem normal.
+
+Regra jurídica
+
+O art. 17 estabelece sete fases, em sequência:
+
+• preparatória;
+• divulgação do edital de licitação;
+• apresentação de propostas e lances, quando for o caso;
+• julgamento;
+• habilitação;
+• recursal;
+• homologação.
+
+A forma eletrônica é preferencial. A forma presencial é excepcionalmente admitida mediante motivação; a sessão deve ser registrada em ata e gravada em áudio e vídeo. Na fase de julgamento, se houver previsão no edital, a Administração pode exigir do licitante provisoriamente vencedor amostra, exame de conformidade, prova de conceito ou mecanismo equivalente para verificar aderência da proposta às especificações.
+
+Quadro 1 — Fases do art. 17
+
+Ordem | Fase | Pergunta de prova | Resultado típico
+1 | Preparatória | A Administração definiu necessidade, objeto e estratégia? | Edital e contratação estruturados
+2 | Divulgação do edital | O mercado foi convocado com publicidade adequada? | Abertura externa do certame
+3 | Propostas e lances | Os licitantes apresentaram suas ofertas? | Conjunto de propostas/lances
+4 | Julgamento | Qual proposta atende ao critério e ao edital? | Classificação e vencedor provisório
+5 | Habilitação | O licitante possui capacidade jurídica, técnica, fiscal/social/trabalhista e econômico-financeira? | Habilitado ou inabilitado
+6 | Recursal | Há impugnação administrativa dos atos recorríveis? | Decisão dos recursos
+7 | Homologação | A autoridade superior encerra o certame? | Homologação, após as providências do art. 71
+
+Exemplo
+
+Um órgão pretende adquirir notebooks comuns. Depois do planejamento, publica o edital de pregão, recebe propostas e lances, classifica a melhor oferta, examina a habilitação do vencedor, processa eventual recurso e encaminha o processo à autoridade superior. Essa é a lógica-base do art. 17.
+
+Compare
+
+Fase é um momento do procedimento. Modalidade é o modelo jurídico do certame (pregão, concorrência etc.). Critério de julgamento é a régua usada para escolher a melhor proposta. Modo de disputa é a dinâmica pela qual as ofertas são apresentadas. Uma questão pode combinar os quatro conceitos sem que eles se confundam.
+
+Como cai na FCC
+
+A FCC troca a posição de julgamento e habilitação; afirma que a forma presencial é a regra; ou diz que amostra/prova de conceito pertence necessariamente à habilitação. Na Lei nº 14.133/2021, a amostra pode integrar a análise de conformidade na fase de julgamento, desde que o edital preveja.
+
+Pegadinha
+
+A fase preparatória continua sendo a primeira fase do art. 17, ainda que, pedagogicamente, ela tenha sido estudada no M15. Não elimine a fase preparatória quando a questão pedir a ordem legal completa.
+
+Jurisprudência essencial
+
+Não é necessária para fixar a sequência do art. 17; a literalidade da Lei nº 14.133/2021 é suficiente e tem prioridade para este ponto.
+
+O que decorar
+
+P–E–P–J–H–R–H: Preparatória → Edital → Propostas → Julgamento → Habilitação → Recursal → Homologação.
+
+O que levar para a prova
+
+A regra atual é julgamento antes da habilitação. Forma eletrônica é preferencial; presencial exige motivação e registro reforçado.
+
+Check manual
+
+• Consigo recitar as sete fases na ordem?
+• Sei explicar por que julgamento vem antes de habilitação na regra geral?
+• Sei diferenciar fase, modalidade, critério e modo de disputa?
+
+---
+
+SESSÃO 02 — Inversão de fases: exceção motivada, não retorno automático ao regime antigo
+
+Entenda primeiro
+
+A Lei nº 14.133/2021 permite que a habilitação anteceda propostas e julgamento, mas isso é uma exceção procedimental. A Administração não pode inverter as fases por mera preferência, tradição interna ou reprodução automática de edital antigo. A inversão precisa ser justificada em termos concretos.
+
+Regra jurídica
+
+A habilitação pode anteceder as fases de apresentação de propostas/lances e de julgamento quando houver, cumulativamente:
+
+• ato motivado;
+• explicitação dos benefícios decorrentes da inversão;
+• previsão expressa no edital.
+
+Há uma sutileza muito importante: o art. 63, III, determina que os documentos relativos à regularidade fiscal sejam exigidos, em qualquer caso, somente depois do julgamento das propostas e apenas do licitante mais bem classificado. Portanto, a inversão não autoriza transformar toda a regularidade fiscal em filtro prévio geral.
+
+Além disso, se a habilitação foi antecipada e já encerrada, o licitante não poderá ser excluído posteriormente por motivo de habilitação, salvo por fatos supervenientes ou conhecidos somente depois do julgamento.
+
+Quadro 2 — Regra geral × inversão de fases
+
+Ponto | Regra geral | Inversão
+Ordem principal | Propostas → julgamento → habilitação | Habilitação antecede propostas e julgamento
+Natureza | Padrão do art. 17 | Exceção
+Motivação específica | Não para manter a ordem legal | Obrigatória
+Benefícios | Não precisam justificar a ordem padrão | Devem ser explicitados
+Edital | Reflete a ordem normal | Deve prever expressamente a inversão
+Regularidade fiscal | Após julgamento, do melhor classificado | Continua, em qualquer caso, após julgamento e do melhor classificado
+Reabertura da habilitação encerrada | — | Só por fato superveniente ou conhecido depois do julgamento
+
+Exemplo
+
+Em uma contratação extremamente especializada, o órgão conclui, com motivação específica, que examinar previamente determinada qualificação técnica evitará o processamento de propostas complexas de participantes incapazes de executar o objeto. O edital prevê expressamente a inversão e explica a vantagem. Não basta escrever “por conveniência administrativa”.
+
+Compare
+
+Não confunda inversão de fases com diálogo competitivo. Na inversão, muda-se a posição da habilitação dentro do rito. No diálogo competitivo, a própria modalidade tem uma etapa estruturada de diálogo para desenvolver solução adequada antes das propostas finais.
+
+Como cai na FCC
+
+A banca tende a retirar um dos três requisitos: “ato motivado”, “benefícios explicitados” ou “previsão no edital”. Se faltar qualquer deles, a afirmação sobre a inversão estará incompleta. Outra armadilha é dizer que a inversão torna obrigatória a apresentação prévia da regularidade fiscal por todos os licitantes.
+
+Pegadinha
+
+“Pode inverter” não significa “a autoridade pode escolher livremente”. É poder condicionado por motivação, benefício demonstrado e edital.
+
+Jurisprudência essencial
+
+Não é necessária para a regra-base. O foco é a interpretação conjugada dos arts. 17, § 1º, 63 e 64.
+
+O que decorar
+
+M + B + E: Motivação + Benefícios explicitados + Edital expresso.
+
+O que levar para a prova
+
+Mesmo com inversão, a Lei preserva a regra especial da regularidade fiscal: verificação após o julgamento e do mais bem classificado.
+
+Check manual
+
+• Sei os três requisitos cumulativos da inversão?
+• Lembro da regra especial da regularidade fiscal?
+• Sei a consequência de a habilitação invertida já estar encerrada?
+
+---
+
+SESSÃO 03 — Modalidades: cinco modelos, sem escolha automática pelo valor
+
+Entenda primeiro
+
+A modalidade responde qual é o desenho jurídico do certame. A Lei nº 14.133/2021 contém cinco modalidades: pregão, concorrência, concurso, leilão e diálogo competitivo. Convite e tomada de preços pertencem ao regime anterior e não são modalidades da nova lei. “Procedimento auxiliar” também não é modalidade.
+
+A escolha não é feita automaticamente pelo valor estimado. O elemento central é a natureza do objeto e a estrutura de seleção definida pela Lei.
+
+Regra jurídica
+
+O art. 28 enumera as cinco modalidades e proíbe a criação de outras modalidades ou a combinação entre elas. Isso não impede o uso dos procedimentos auxiliares do art. 78, que são categorias distintas.
+
+Quadro 3 — Mapa das modalidades
+
+Modalidade | Núcleo do objeto/finalidade | Critério típico/permitido | Marca de prova
+Pregão | Bens e serviços comuns | Menor preço ou maior desconto | Obrigatório quando o objeto for comum, respeitadas as exceções legais
+Concorrência | Bens/serviços especiais; obras; serviços comuns ou especiais de engenharia | Menor preço, maior desconto, melhor técnica/conteúdo artístico, técnica e preço, maior retorno econômico | Modalidade ampla; não é definida por faixa de valor
+Concurso | Trabalho técnico, científico ou artístico | Melhor técnica ou conteúdo artístico | Prêmio ou remuneração ao vencedor
+Leilão | Alienação de imóvel ou móvel inservível/legalmente apreendido | Maior lance | Sem habilitação e sem cadastro prévio
+Diálogo competitivo | Obras, serviços ou compras com complexidade/indeterminação legalmente qualificada | Critérios objetivos divulgados na fase competitiva | Diálogo para desenvolver solução + proposta final depois
+
+Exemplo
+
+Uma compra de 50 computadores padronizados não vira concorrência só porque o orçamento é alto; sendo bem comum, o pregão é a modalidade legalmente vocacionada e obrigatória. Já um equipamento singularmente complexo que não possa ser objetivamente descrito por especificações usuais pode demandar outra estrutura, conforme a natureza concreta do objeto.
+
+Compare
+
+Valor ainda pode influenciar outras regras da Lei, mas não funciona como chave geral de escolha entre pregão e concorrência. Essa é uma ruptura importante com a memorização das faixas da Lei nº 8.666/1993.
+
+Como cai na FCC
+
+A FCC mistura “tomada de preços”, “convite” ou “hasta pública” entre as modalidades atuais; ou apresenta critério de julgamento como se fosse modalidade. Também explora a proibição de criar ou combinar modalidades.
+
+Pegadinha
+
+“Maior lance” é critério de julgamento, não modalidade. A modalidade correspondente, quando se trata da alienação prevista na lei, é o leilão.
+
+Jurisprudência essencial
+
+Não necessária. O art. 28 e as definições do art. 6º resolvem o núcleo.
+
+O que decorar
+
+P–C–C–L–D: Pregão, Concorrência, Concurso, Leilão, Diálogo competitivo.
+
+O que levar para a prova
+
+Não escolha modalidade por faixa de valor. Primeiro identifique o objeto e a lógica legal da seleção.
+
+Check manual
+
+• Consigo listar as cinco modalidades sem inserir convite/tomada de preços?
+• Sei que procedimento auxiliar não é modalidade?
+• Sei que modalidade, critério e modo de disputa são categorias diferentes?
+
+---
+
+SESSÃO 04 — Pregão × concorrência: a comparação que mais rende pontos
+
+Entenda primeiro
+
+Pregão e concorrência seguem o rito procedimental comum do art. 17. A distinção decisiva está na natureza do objeto e nos critérios compatíveis.
+
+O pregão é obrigatório para aquisição de bens e serviços comuns, isto é, aqueles cujos padrões de desempenho e qualidade podem ser objetivamente definidos no edital por especificações usuais de mercado. A definição legal da concorrência abrange bens e serviços especiais e obras e serviços comuns ou especiais de engenharia; contudo, lido em conjunto com o art. 29, o serviço comum de engenharia é direcionado ao pregão, porque o pregão deve ser adotado sempre que o objeto possuir padrões de desempenho e qualidade objetivamente definíveis por especificações usuais de mercado, ressalvadas as exclusões legais.
+
+Regra jurídica
+
+O pregão não se aplica a serviços técnicos especializados de natureza predominantemente intelectual nem a obras e serviços de engenharia, exceto serviços comuns de engenharia. No pregão, os critérios de julgamento compatíveis são menor preço e maior desconto.
+
+A concorrência pode utilizar menor preço, maior desconto, melhor técnica ou conteúdo artístico, técnica e preço e maior retorno econômico, conforme o objeto e os requisitos legais. “Maior lance” é próprio do leilão.
+
+Na modalidade pregão, o agente responsável pela condução é designado pregoeiro.
+
+Quadro 4 — Pregão × concorrência
+
+Tema | Pregão | Concorrência
+Objeto central | Bens e serviços comuns | Bens e serviços especiais; obras; serviços comuns e especiais de engenharia
+Obrigatoriedade | Sim, quando presentes os pressupostos legais de objeto comum | Utilizada para os objetos legalmente associados à concorrência
+Serviço comum de engenharia | Pode ser pregão | Também aparece na definição legal da concorrência; a regra do art. 29 direciona ao pregão quando o objeto for comum
+Obra | Não | Sim
+Serviço especial de engenharia | Não | Sim
+Serviço técnico especializado predominantemente intelectual | Pregão não se aplica | Pode ser concorrência, observados o critério e demais regras
+Critérios | Menor preço ou maior desconto | Menor preço, maior desconto, melhor técnica/conteúdo artístico, técnica e preço, maior retorno econômico
+Rito | Rito comum do art. 17 | Rito comum do art. 17
+Condutor no pregão | Pregoeiro | Agente/comissão conforme a Lei e o caso
+
+Exemplo
+
+Manutenção predial padronizável, que preserva as características originais do imóvel e pode ser objetivamente descrita, pode caracterizar serviço comum de engenharia: a regra direciona ao pregão. Construção de um novo edifício é obra: pregão não se aplica.
+
+Compare
+
+Comum não significa simples ou barato. Um objeto pode ter alto valor e continuar comum se seus padrões forem objetivamente definíveis por especificações usuais de mercado. Especial não significa automaticamente “caro”: a especialidade é técnica/mercadológica, não uma faixa de valor.
+
+Como cai na FCC
+
+A FCC costuma usar a definição legal do pregão de forma quase literal; troca “menor preço ou maior desconto” por “técnica e preço”; ou afirma que qualquer serviço de engenharia exclui pregão. A exceção dos serviços comuns de engenharia é ponto clássico.
+
+Pegadinha
+
+A definição da concorrência menciona serviços comuns de engenharia, mas o art. 29 determina o uso do pregão quando o objeto possuir padrões comuns. Leia os dispositivos em conjunto, não isoladamente.
+
+Jurisprudência essencial
+
+Não é necessária para a distinção básica. A solução deve partir dos arts. 6º, 28 e 29.
+
+O que decorar
+
+Pregão = comum + menor preço/maior desconto.
+Concorrência = especial/obras/engenharia + critérios mais amplos.
+
+O que levar para a prova
+
+Pergunte primeiro: “o objeto é comum no sentido técnico da Lei?” Só depois escolha entre pregão e concorrência.
+
+Check manual
+
+• Sei por que valor não define pregão/concorrência?
+• Sei a exceção do serviço comum de engenharia?
+• Sei os únicos dois critérios do pregão?
+
+---
+
+SESSÃO 05 — Concurso × leilão: seleção intelectual versus alienação patrimonial
+
+Entenda primeiro
+
+Concurso e leilão são modalidades com finalidades muito diferentes. O concurso seleciona trabalho técnico, científico ou artístico; o leilão serve à alienação de bens nas hipóteses legais. A prova gosta de aproximá-los porque ambos fogem do padrão “comprar um bem ou contratar um serviço comum”.
+
+Regra jurídica — concurso
+
+O edital do concurso deve indicar a qualificação exigida, as diretrizes e a forma de apresentação do trabalho, as condições de realização e o prêmio ou remuneração. Seu critério é melhor técnica ou conteúdo artístico. Se o concurso for destinado à elaboração de projeto, o vencedor deve ceder à Administração os direitos patrimoniais relativos ao projeto e autorizar sua execução nos termos da Lei.
+
+Concurso de licitação não se confunde com concurso público para provimento de cargo ou emprego. Aqui, o foco é a escolha de um trabalho e a concessão de prêmio/remuneração.
+
+Regra jurídica — leilão
+
+O leilão destina-se à alienação de bens imóveis ou de bens móveis inservíveis ou legalmente apreendidos, vencendo quem oferecer o maior lance. Pode ser conduzido por leiloeiro oficial ou por servidor designado. Se a Administração optar por leiloeiro oficial, a seleção dele ocorrerá por credenciamento ou por pregão, com critério de maior desconto para as comissões.
+
+O leilão possui rito simplificado específico: não exige registro cadastral prévio e não possui fase de habilitação. Seu edital deve trazer, entre outros pontos, a descrição do bem, avaliação e preço mínimo, condições de pagamento, localização dos bens quando cabível, sítio/período do leilão e eventuais ônus ou gravames. A regra é a realização eletrônica; a forma presencial depende de comprovada inviabilidade técnica ou desvantagem para a Administração. Além da divulgação em sítio eletrônico oficial, o edital é afixado em local de ampla circulação na sede da Administração e pode receber divulgação complementar. Após os lances, superada a fase recursal e efetivado o pagamento pelo vencedor na forma do edital, ocorre a homologação.
+
+Quadro 5 — Concurso × leilão
+
+Tema | Concurso | Leilão
+Finalidade | Escolher trabalho técnico, científico ou artístico | Alienar bens imóveis ou móveis inservíveis/legalmente apreendidos
+Critério | Melhor técnica ou conteúdo artístico | Maior lance
+Resultado econômico | Prêmio ou remuneração ao vencedor | Administração recebe o valor da alienação
+Habilitação | Regras e qualificação previstas no edital | Não há fase de habilitação
+Cadastro prévio | Pode haver requisitos de qualificação conforme edital | Não é exigido
+Particularidade | Projeto vencedor: cessão de direitos patrimoniais à Administração | Pode ser conduzido por leiloeiro oficial ou servidor designado
+
+Exemplo
+
+Para escolher o projeto artístico de um memorial, a Administração pode realizar concurso e premiar o vencedor. Para alienar veículos oficiais inservíveis, a modalidade é leilão, com julgamento pelo maior lance.
+
+Compare
+
+No concurso, a Administração procura qualidade intelectual/artística. No leilão, busca a melhor oferta econômica de aquisição do bem alienado. O maior lance não se transfere para pregão ou concorrência.
+
+Como cai na FCC
+
+A FCC já explorou exatamente as particularidades do leilão: inexistência de cadastro prévio, ausência de habilitação e homologação após lances, recurso e pagamento. Também costuma confundir concurso licitatório com concurso público de pessoal.
+
+Pegadinha
+
+Selecionar o leiloeiro oficial pode envolver pregão/credenciamento; isso não transforma a alienação do bem em pregão. A alienação continua sendo realizada por leilão.
+
+Jurisprudência essencial
+
+Não necessária. A literalidade dos arts. 30 e 31 é suficiente.
+
+O que decorar
+
+Concurso = trabalho + melhor técnica/conteúdo artístico + prêmio/remuneração.
+Leilão = alienação + maior lance + sem habilitação/cadastro prévio.
+
+O que levar para a prova
+
+Se o enunciado fala em “escolha de projeto/trabalho”, pense em concurso. Se fala em “alienação de bem”, pense em leilão.
+
+Check manual
+
+• Diferencio concurso licitatório de concurso público?
+• Lembro que leilão não tem fase de habilitação?
+• Sei que o critério do leilão é maior lance?
+
+---
+
+SESSÃO 06 — Diálogo competitivo: solução construída antes da proposta final
+
+Entenda primeiro
+
+O diálogo competitivo existe para situações em que a Administração conhece a necessidade, mas não consegue, com precisão suficiente e pelos meios ordinários, definir de antemão a solução técnica, os requisitos ou a estrutura jurídica/financeira adequada. A lógica é diferente de uma simples negociação de preço: primeiro ocorre um diálogo estruturado com licitantes pré-selecionados para amadurecer alternativas; depois, encerrado o diálogo, abre-se a fase competitiva para propostas finais.
+
+Regra jurídica
+
+A modalidade é restrita às hipóteses do art. 32. Em síntese, deve haver objeto marcado por inovação técnica/tecnológica, necessidade de adaptação de soluções existentes, impossibilidade de definir especificações com precisão suficiente ou necessidade de identificar meios/alternativas adequados — inclusive solução técnica, requisitos técnicos ou estrutura jurídica/financeira.
+
+Na abertura, a Administração divulga suas necessidades e exigências já definidas e concede no mínimo 25 dias úteis para manifestação de interesse. Os critérios de pré-seleção devem ser objetivos e todos que os cumprirem serão admitidos.
+
+Durante o diálogo:
+
+• é vedada divulgação discriminatória de informação que crie vantagem;
+• soluções e informações sigilosas de um licitante não podem ser reveladas a outros sem consentimento;
+• reuniões são registradas em ata e gravadas em áudio e vídeo;
+• podem existir fases sucessivas para reduzir soluções/propostas discutidas;
+• o diálogo dura até decisão fundamentada identificar solução ou soluções aptas.
+
+Encerrado o diálogo, a Administração junta os registros aos autos, divulga edital da fase competitiva com a solução definida e critérios objetivos e abre prazo não inferior a 60 dias úteis para propostas finais dos licitantes pré-selecionados. Pode solicitar esclarecimentos ou ajustes que não discriminem nem distorçam a concorrência.
+
+A condução cabe a comissão de contratação com pelo menos três servidores efetivos ou empregados públicos dos quadros permanentes, admitido assessoramento técnico externo sujeito a confidencialidade e prevenção de conflito de interesses.
+
+Quadro 6 — Diálogo competitivo × negociação do art. 61
+
+Tema | Diálogo competitivo | Negociação após julgamento
+Natureza | Modalidade de licitação | Etapa possível após o resultado do julgamento
+Momento | Antes das propostas finais, com fase própria de diálogo | Depois de definido o resultado do julgamento
+Objetivo | Desenvolver/identificar solução apta à necessidade complexa | Obter condição mais vantajosa da proposta já julgada
+Participantes | Licitantes pré-selecionados por critérios objetivos | Primeiro colocado; em hipótese legal, demais na ordem
+Confidencialidade de soluções | Protegida | Não é a lógica central do instituto
+Prazo especial | 25 dias úteis para interesse; ≥60 dias úteis para propostas finais | Sem prazo geral equivalente no art. 61
+
+Exemplo
+
+Um ente público precisa implantar solução tecnológica inédita para integrar sistemas heterogêneos, mas não consegue definir previamente a arquitetura técnica e a modelagem de remuneração. O diálogo competitivo pode permitir que alternativas sejam discutidas de forma estruturada antes da apresentação das propostas finais.
+
+Compare
+
+Na negociação do art. 61, a Administração já julgou as propostas e busca melhorar as condições com o primeiro colocado. No diálogo competitivo, o diálogo serve para construir ou identificar a própria solução antes da competição final.
+
+Como cai na FCC
+
+A banca já explorou o diálogo competitivo como inovação da Lei nº 14.133/2021 e tenta classificá-lo como procedimento auxiliar, fase da concorrência ou princípio. Todos estão errados: ele é modalidade autônoma.
+
+Pegadinha
+
+O diálogo não autoriza a Administração a revelar a solução de um participante ao concorrente sem consentimento. Competição não elimina confidencialidade.
+
+Jurisprudência essencial
+
+Não necessária. O art. 32 é detalhado e suficiente para o conteúdo de prova.
+
+O que decorar
+
+25 → diálogo → 60: pelo menos 25 dias úteis para interesse; diálogo; depois, pelo menos 60 dias úteis para propostas finais.
+
+O que levar para a prova
+
+Diálogo competitivo não é “barganha informal”: é modalidade legal, com pré-seleção objetiva, registro das reuniões, confidencialidade e fase competitiva posterior.
+
+Check manual
+
+• Sei quando o diálogo competitivo é cabível?
+• Lembro dos prazos de 25 e 60 dias úteis?
+• Diferencio diálogo competitivo da negociação do art. 61?
+
+---
+
+SESSÃO 07 — Critérios de julgamento: a régua usada para escolher a proposta
+
+Entenda primeiro
+
+Modalidade responde como o certame é juridicamente estruturado; critério responde como as propostas serão comparadas. A Lei prevê seis critérios, e cada um tem lógica própria.
+
+Regra jurídica
+
+Os critérios do art. 33 são:
+
+• menor preço;
+• maior desconto;
+• melhor técnica ou conteúdo artístico;
+• técnica e preço;
+• maior lance, no caso de leilão;
+• maior retorno econômico.
+
+Menor preço e maior desconto perseguem o menor dispêndio para a Administração, respeitados parâmetros mínimos de qualidade. Custos indiretos do ciclo de vida podem ser considerados quando objetivamente mensuráveis. No maior desconto, a referência é o preço global definido no edital, e o desconto também alcança eventuais termos aditivos.
+
+Melhor técnica ou conteúdo artístico considera exclusivamente as propostas técnicas/artísticas e pressupõe prêmio ou remuneração definidos no edital. Técnica e preço combina as duas dimensões segundo fatores objetivos; a proposta técnica pode receber, na ponderação, no máximo 70% da valoração.
+
+No critério técnica e preço, o estudo técnico preliminar deve demonstrar que a qualidade técnica que superar os requisitos mínimos é relevante para o resultado pretendido. A Lei indica, entre as hipóteses, serviços técnicos especializados de natureza predominantemente intelectual; serviços majoritariamente dependentes de tecnologia sofisticada e de domínio restrito; bens e serviços especiais de TIC; obras e serviços especiais de engenharia; e objetos que admitam soluções específicas ou alternativas com diferenças de qualidade, produtividade, rendimento ou durabilidade objetivamente mensuráveis. Nos serviços técnicos especializados das alíneas a, d e h do art. 6º, XVIII, acima do limite atualizado do art. 37, § 2º, ressalvada a inexigibilidade, o julgamento deve ser por melhor técnica ou por técnica e preço com 70% de valoração técnica. Para 2026, o Decreto nº 12.807/2025 atualizou esse limite para R$ 392.952,63.
+
+Quadro 7 — Critérios de julgamento
+
+Critério | O que vence | Uso/ideia central | Pegadinha
+Menor preço | Menor dispêndio compatível com qualidade mínima | Compras/serviços e outras hipóteses legais | Não significa aceitar objeto inferior ao padrão mínimo
+Maior desconto | Maior abatimento sobre referência do edital | Quando a Administração fixa referência global | Desconto estende-se aos aditivos
+Melhor técnica ou conteúdo artístico | Melhor proposta técnica/artística | Projetos/trabalhos técnicos, científicos ou artísticos; hipóteses legais | Não há competição de preço como elemento do julgamento
+Técnica e preço | Melhor combinação ponderada | Quando qualidade técnica adicional é relevante | Técnica: no máximo 70% na regra geral do art. 36
+Maior lance | Maior oferta | Leilão | Não confundir com “maior preço” em compra pública
+Maior retorno econômico | Maior economia líquida estimada para a Administração | Exclusivamente contrato de eficiência | Não é sinônimo de menor preço
+
+Maior retorno econômico — aprofundamento
+
+Esse critério é exclusivo da celebração de contrato de eficiência. O licitante apresenta uma proposta de trabalho, com medidas capazes de gerar economia, e uma proposta de preço correspondente a percentual da economia estimada. Para julgar, calcula-se o retorno econômico como a economia estimada menos a proposta de preço. A remuneração acompanha proporcionalmente a economia efetivamente obtida. Se a economia contratada não for atingida, a diferença impacta a remuneração e pode gerar outras consequências previstas no contrato, sem aprofundar aqui a execução contratual do M18.
+
+Quadro 8 — Menor preço × maior desconto × maior retorno econômico
+
+Critério | Base matemática | Pergunta central
+Menor preço | Valor final da proposta, considerados os parâmetros legais | Quem entrega o objeto com menor dispêndio adequado?
+Maior desconto | Percentual abatido sobre referência global do edital | Quem concede o maior desconto válido?
+Maior retorno econômico | Economia estimada gerada − preço/remuneração proposta | Qual solução gera maior economia líquida?
+
+Exemplo
+
+Uma empresa promete reduzir o gasto energético anual em R$ 1 milhão e pede remuneração equivalente a R$ 250 mil da economia estimada. Para fins didáticos, o retorno econômico estimado é de R$ 750 mil. Outra proposta pode ter remuneração menor, mas gerar economia também menor; por isso o critério não se reduz ao “menor preço do contratado”.
+
+Compare
+
+Melhor técnica julga só a dimensão técnica/artística. Técnica e preço pondera qualidade e preço. Quando a Lei exige 70% de valoração técnica em hipótese específica do art. 37, § 2º, essa é regra especial; na regra geral do art. 36, a ponderação técnica não pode superar 70%.
+
+Como cai na FCC
+
+A FCC troca critério por modalidade; afirma que pregão admite técnica e preço; ou associa maior retorno econômico a “maior lance”. A defesa é memorizar a finalidade econômica de cada critério.
+
+Pegadinha
+
+“Maior desconto” não significa desconto livre sobre qualquer base: a Lei o relaciona ao preço global de referência fixado no edital.
+
+Jurisprudência essencial
+
+Não necessária para o núcleo. Priorize os arts. 33 a 39.
+
+O que decorar
+
+Preço, desconto, técnica, técnica+preço, lance, retorno. Se a questão falar em economia gerada e remuneração proporcional, pense em maior retorno econômico/contrato de eficiência.
+
+O que levar para a prova
+
+Critério não escolhe a modalidade sozinho. Primeiro identifique a modalidade cabível; depois verifique quais critérios a Lei admite para ela e para o objeto.
+
+Check manual
+
+• Sei os seis critérios?
+• Sei por que maior retorno econômico não é menor preço?
+• Lembro do teto geral de 70% para a proposta técnica em técnica e preço?
+
+---
+
+SESSÃO 08 — Modos de disputa: aberto, fechado e combinações
+
+Entenda primeiro
+
+Modo de disputa é a dinâmica de apresentação das ofertas, não a modalidade e não o critério. A Lei admite modo aberto e fechado, isolados ou combinados, mas impõe vedações importantes.
+
+Regra jurídica
+
+No modo aberto, os licitantes oferecem lances públicos e sucessivos, crescentes ou decrescentes. No modo fechado, as propostas permanecem em sigilo até o momento designado para divulgação.
+
+Duas vedações devem ser memorizadas:
+
+• fechado isolado é vedado quando o critério for menor preço ou maior desconto;
+• aberto é vedado quando o critério for técnica e preço.
+
+O edital pode estabelecer intervalo mínimo entre lances. Depois de definida a melhor proposta, se a diferença para o segundo colocado for de pelo menos 5%, a Administração poderá admitir reinício da disputa aberta, conforme o edital, para definir as demais colocações.
+
+A Lei também admite garantia de proposta como requisito de pré-habilitação, limitada a 1% do valor estimado, com devolução em até 10 dias úteis da assinatura do contrato ou da declaração de licitação fracassada. É ponto acessório, mas cobrável dentro do bloco de propostas e lances.
+
+Quadro 9 — Aberto × fechado
+
+Tema | Aberto | Fechado
+Visibilidade | Lances públicos e sucessivos | Propostas sigilosas até o momento de abertura
+Dinâmica | Competitiva durante a sessão | Competição concentrada nas propostas fechadas
+Menor preço/maior desconto | Pode ser usado; fechado isolado é vedado | Não pode ser usado isoladamente nesses critérios
+Técnica e preço | Vedado | Compatível conforme desenho legal
+Combinação | Pode compor sequência com fechado | Pode compor sequência com aberto, respeitadas vedações
+
+Quadro 10 — Modalidade × critério × modo de disputa
+
+Pergunta | Categoria | Exemplos
+“Qual modelo de licitação?” | Modalidade | Pregão, concorrência, concurso, leilão, diálogo competitivo
+“Como escolher a proposta?” | Critério | Menor preço, maior desconto, técnica e preço etc.
+“Como as ofertas aparecem?” | Modo de disputa | Aberto, fechado, combinado
+“Em que momento do processo?” | Fase | Edital, propostas, julgamento, habilitação etc.
+
+Exemplo
+
+Um pregão por menor preço pode usar dinâmica aberta de lances. O que não pode é chamar “aberto” de modalidade ou afirmar que “menor preço” é modo de disputa.
+
+Compare
+
+A escolha do modo deve ser coerente com o critério. O legislador restringe combinações que poderiam comprometer a utilidade da competição: preço/desconto não admitem apenas propostas fechadas; técnica e preço não admite disputa aberta.
+
+Como cai na FCC
+
+A banca frequentemente formula uma frase estruturalmente correta, mas troca o rótulo: “o pregão é um modo de disputa”; “maior desconto é modalidade”; “fechado é critério”. Faça sempre a classificação conceitual antes de analisar o restante.
+
+Pegadinha
+
+A Lei permite modo aberto e fechado isolada ou conjuntamente, mas essa flexibilidade não elimina as vedações dos §§ 1º e 2º do art. 56.
+
+Jurisprudência essencial
+
+Não necessária.
+
+O que decorar
+
+Preço/desconto: fechado sozinho, não. Técnica+preço: aberto, não.
+
+O que levar para a prova
+
+Modalidade = desenho jurídico; critério = régua; modo = dinâmica das ofertas.
+
+Check manual
+
+• Sei definir aberto e fechado?
+• Sei as duas vedações do art. 56?
+• Lembro do 5% para possível reinício da disputa aberta e do 1% da garantia de proposta?
+
+---
+
+SESSÃO 09 — Edital, publicidade e prazos mínimos
+
+Entenda primeiro
+
+Depois da fase preparatória e do controle jurídico cabível, o edital projeta para o mercado as regras da disputa. A publicidade não é mero ritual: ela viabiliza competição, controle e igualdade de acesso. Para a FCC, o ponto mais importante é saber onde o edital é divulgado, quais publicações adicionais são obrigatórias e como contar os prazos mínimos para propostas e lances.
+
+Regra jurídica — publicidade
+
+O inteiro teor do edital e de seus anexos deve ser divulgado e mantido no Portal Nacional de Contratações Públicas (PNCP). Além disso, é obrigatória a publicação de extrato no diário oficial competente e em jornal diário de grande circulação. A divulgação adicional no sítio eletrônico oficial do ente é facultativa, e interessados cadastrados também podem receber divulgação direta.
+
+Depois da homologação, documentos da fase preparatória que não tenham integrado o edital e seus anexos serão disponibilizados no PNCP, observadas as regras legais de acesso e sigilo.
+
+Quadro 11 — Prazos mínimos para propostas e lances
+
+Hipótese | Prazo mínimo
+Aquisição de bens — menor preço ou maior desconto | 8 dias úteis
+Aquisição de bens — demais hipóteses | 15 dias úteis
+Serviços comuns e obras/serviços comuns de engenharia — menor preço ou maior desconto | 10 dias úteis
+Serviços especiais e obras/serviços especiais de engenharia — menor preço ou maior desconto | 25 dias úteis
+Contratação integrada | 60 dias úteis
+Contratação semi-integrada ou serviços/obras não enquadrados nas hipóteses anteriores | 35 dias úteis
+Maior lance | 15 dias úteis
+Técnica e preço | 35 dias úteis
+Melhor técnica ou conteúdo artístico | 35 dias úteis
+Diálogo competitivo — manifestação de interesse | 25 dias úteis
+Diálogo competitivo — propostas finais após encerramento do diálogo | não inferior a 60 dias úteis
+
+Os prazos do art. 55 contam da data de divulgação do edital. Nas licitações realizadas pelo Ministério da Saúde no âmbito do SUS, podem ser reduzidos até a metade mediante decisão fundamentada.
+
+Modificação do edital
+
+Alteração do edital implica nova divulgação na mesma forma da divulgação inicial e, como regra, repetição dos prazos originais. A exceção ocorre quando a mudança não compromete a formulação das propostas. A pergunta de prova é funcional: a alteração exige tempo adicional para os licitantes refazerem a proposta? Se sim, preserva-se o prazo mínimo correspondente.
+
+Exemplo
+
+O edital de aquisição de equipamentos, julgado por menor preço, é alterado para mudar requisito técnico que afeta a composição da proposta. Não basta publicar uma errata e manter a abertura no dia seguinte: deve haver nova divulgação e reabertura do prazo mínimo aplicável.
+
+Compare
+
+A publicidade do edital no PNCP é regra nacional da Lei. Regras operacionais de sistemas eletrônicos federais não devem ser automaticamente tratadas como normas gerais para todos os entes.
+
+Como cai na FCC
+
+A banca pode afirmar que o PNCP substitui toda publicação do extrato; isso ignora a exigência legal de diário oficial e jornal de grande circulação. Também troca dias úteis por dias corridos e mistura os 8/10/15/25/35/60 dias.
+
+Pegadinha
+
+O diálogo competitivo possui prazos especiais próprios: 25 dias úteis para interesse e 60 dias úteis ou mais para propostas finais. Não tente encaixá-lo mecanicamente na tabela geral do art. 55.
+
+Jurisprudência essencial
+
+Não necessária; a cobrança é predominantemente legal.
+
+O que decorar
+
+Bens: 8/15.
+Comum: 10. Especial: 25.
+Semi/outras: 35. Integrada: 60.
+Maior lance: 15. Técnica: 35.
+Diálogo: 25 + 60.
+
+O que levar para a prova
+
+Em prazos, identifique quatro elementos: objeto + critério + regime (quando engenharia) + modalidade especial, se houver.
+
+Check manual
+
+• Consigo reconstruir a tabela de prazos sem consultar?
+• Sei a regra de republicação após alteração do edital?
+• Lembro que os prazos são mínimos e, em regra, em dias úteis?
+
+---
+
+SESSÃO 10 — Propostas, lances, julgamento, inexequibilidade, desempate e negociação
+
+Entenda primeiro
+
+Nesta etapa a Administração passa das ofertas para a escolha do vencedor provisório. A prova costuma testar uma cadeia: receber ofertas → aplicar modo de disputa → julgar objetivamente → desclassificar apenas nas hipóteses legais → resolver empate → negociar condições mais vantajosas.
+
+Regra jurídica — propostas e lances
+
+A dinâmica concreta depende do modo de disputa e do edital. Em modo aberto há lances públicos e sucessivos; em fechado, as propostas permanecem sigilosas até o momento designado. O edital pode fixar intervalo mínimo entre lances, inclusive entre lances intermediários e a oferta que supera a melhor proposta.
+
+A Lei não consagra um direito irrestrito de abandonar a oferta depois de apresentada. Não manter a proposta, salvo fato superveniente devidamente justificado, constitui infração administrativa. Encerrado o prazo de validade da proposta sem convocação para contratar, os licitantes ficam liberados dos compromissos assumidos. Detalhes operacionais de retirada de lance antes do encerramento seguem edital e regulamentação aplicável; não devem ser generalizados como norma nacional sem base legal.
+
+Regra jurídica — julgamento e desclassificação
+
+Serão desclassificadas propostas que:
+
+• tenham vícios insanáveis;
+• contrariem especificações técnicas pormenorizadas do edital;
+• apresentem preço inexequível ou permaneçam acima do orçamento estimado;
+• não demonstrem exequibilidade quando a Administração a exigir;
+• apresentem outra desconformidade com o edital, desde que insanável.
+
+A conformidade pode ser verificada exclusivamente na proposta mais bem classificada. A Administração pode realizar diligência para aferir exequibilidade ou exigir que o licitante a demonstre.
+
+Em obras e serviços de engenharia, a Lei estabelece dois números de alto rendimento:
+
+• proposta inferior a 75% do orçamento da Administração: considerada inexequível;
+• proposta vencedora inferior a 85% do orçamento: exige garantia adicional equivalente à diferença entre o orçamento e a proposta, sem prejuízo das demais garantias legais.
+
+Quadro 12 — Julgamento × habilitação
+
+Ponto | Julgamento | Habilitação
+Objeto da análise | A proposta | A capacidade do licitante
+Pergunta | “A oferta é válida e a melhor segundo o critério?” | “O autor da melhor oferta consegue juridicamente e tecnicamente executar?”
+Base principal | Edital + critério de julgamento + arts. 59 a 61 | Edital + arts. 62 a 70
+Resultado negativo | Desclassificação da proposta | Inabilitação do licitante
+Ordem geral | Vem antes | Vem depois
+Diligência | Pode aferir exequibilidade/conformidade | Pode complementar informação preexistente e atualizar validade nos limites do art. 64
+
+Desempate
+
+A ordem legal do art. 60 é:
+
+• disputa final entre os empatados;
+• avaliação do desempenho contratual prévio;
+• ações de equidade entre homens e mulheres no ambiente de trabalho, conforme regulamentação;
+• programa de integridade, conforme orientações dos órgãos de controle.
+
+Persistindo igualdade, a Lei estabelece preferências sucessivas para bens e serviços produzidos ou prestados por empresas: primeiro, estabelecidas no território do Estado/DF pertinente (ou, no caso municipal, no Estado onde o Município se situa); depois, empresas brasileiras; depois, empresas que invistam em pesquisa e desenvolvimento tecnológico no País; e, por fim, empresas que comprovem práticas de mitigação climática nos termos legais. Essas regras não prejudicam o tratamento de desempate favorecido das ME/EPP previsto na LC nº 123/2006.
+
+Negociação
+
+Definido o resultado do julgamento, a Administração pode negociar condições mais vantajosas com o primeiro colocado. Se ele permanecer acima do preço máximo e for desclassificado, a negociação pode seguir com os demais licitantes, respeitada a ordem de classificação. O resultado da negociação deve ser divulgado e juntado aos autos.
+
+Exemplo
+
+A empresa A fica em primeiro lugar, mas seu preço permanece acima do teto definido. A Administração negocia; se A não atingir condição aceitável e for desclassificada, pode negociar com B, depois C, seguindo a classificação. Não se trata de diálogo competitivo: a solução e o julgamento já existem.
+
+Compare
+
+Desclassificação recai sobre a proposta; inabilitação, sobre o licitante. Essa diferença de vocabulário é uma pista valiosa em questões objetivas.
+
+Como cai na FCC
+
+A FCC troca 75% e 85%; trata diligência como autorização para refazer proposta; inverte a ordem dos critérios de desempate; ou transforma negociação em dever absoluto da Administração.
+
+Pegadinha
+
+O art. 59 fala em vício ou desconformidade insanável. Formalismo moderado não significa tolerar alteração substancial da oferta; significa evitar exclusão por falha corrigível sem quebra da isonomia e da vinculação ao edital.
+
+Jurisprudência essencial
+
+Para a prova centrada na Lei nº 14.133/2021, a literalidade dos arts. 59 a 61 é suficiente. A ideia de formalismo moderado deve ser aplicada dentro dos limites expressos da lei, sem criar direito a inovação material.
+
+O que decorar
+
+Engenharia: abaixo de 75% = inexequível; vencedor abaixo de 85% = garantia adicional.
+Desempate: disputa → desempenho → equidade → integridade.
+Negociação: primeiro colocado; depois demais, se o primeiro ficar acima do máximo e for desclassificado.
+
+O que levar para a prova
+
+Proposta ruim = desclassificação. Licitante sem capacidade = inabilitação. Diligência não é segunda chance para criar fato ou documento inexistente na data relevante.
+
+Check manual
+
+• Sei as cinco hipóteses de desclassificação?
+• Diferencio 75% de 85%?
+• Sei a ordem de desempate e a lógica da negociação?
+
+---
+
+SESSÃO 11 — Habilitação: quatro blocos de capacidade e a lógica documental
+
+Entenda primeiro
+
+Habilitação não escolhe a melhor proposta: ela verifica se o licitante possui condições jurídicas e materiais para executar o objeto. Na regra geral, a Administração primeiro descobre quem apresentou a melhor proposta e depois examina a habilitação desse licitante.
+
+Regra jurídica
+
+A habilitação divide-se em quatro categorias legais:
+
+• jurídica;
+• técnica;
+• fiscal, social e trabalhista;
+• econômico-financeira.
+
+Pode ser exigida declaração dos licitantes de atendimento aos requisitos, com responsabilidade pela veracidade. Os documentos de habilitação são apresentados, em regra, apenas pelo vencedor, salvo na inversão de fases. A regularidade fiscal, em qualquer caso, é exigida somente depois do julgamento e do mais bem classificado.
+
+Também se exige declaração de cumprimento da reserva legal de cargos para pessoa com deficiência e reabilitado da Previdência Social. O edital deve exigir declaração de que a proposta econômica contempla a integralidade dos custos necessários ao cumprimento dos direitos trabalhistas aplicáveis, sob pena de desclassificação.
+
+Quadro 13 — Habilitação jurídica × técnica × fiscal/social/trabalhista × econômico-financeira
+
+Bloco | Finalidade | Exemplos nucleares
+Jurídica | Demonstrar existência jurídica e capacidade de exercer direitos/assumir obrigações | Constituição/registro da pessoa; autorização para atividade, quando cabível
+Técnica | Demonstrar aptidão profissional e operacional relacionada ao objeto | Profissional responsável, atestados, equipe, instalações, registro profissional
+Fiscal, social e trabalhista | Demonstrar regularidade perante cadastros, fiscos, seguridade, FGTS e Justiça do Trabalho | CPF/CNPJ; cadastros; Fazendas; Seguridade/FGTS; Justiça do Trabalho; art. 7º, XXXIII, CF
+Econômico-financeira | Demonstrar aptidão econômica para cumprir o futuro contrato | Demonstrações contábeis, índices justificados, certidão de falência; capital/patrimônio nos limites legais
+
+Habilitação jurídica
+
+A documentação limita-se à comprovação da existência jurídica da pessoa e, quando cabível, à autorização para exercício da atividade a ser contratada. Exigência estranha ao objeto ou sem base legal não pode ser usada como barreira competitiva.
+
+Habilitação fiscal, social e trabalhista
+
+A Lei enumera inscrição no CPF/CNPJ, inscrição em cadastro estadual e/ou municipal pertinente quando existente, regularidade fazendária, Seguridade Social e FGTS, Justiça do Trabalho e observância da vedação constitucional de trabalho infantil nas condições do art. 7º, XXXIII, da Constituição.
+
+Diligências e saneamento
+
+Depois de entregues os documentos, não se admite substituição ou apresentação de novos documentos livremente. O art. 64 permite diligência para:
+
+• complementar informações sobre documentos já apresentados, quando necessário para apurar fatos existentes à época da abertura do certame;
+• atualizar documentos cuja validade tenha expirado depois da data de recebimento das propostas.
+
+A comissão pode sanar erro ou falha que não altere a substância do documento nem sua validade jurídica, mediante decisão fundamentada, registrada e acessível a todos.
+
+Exemplo
+
+Uma certidão apresentada tempestivamente contém informação que precisa ser confirmada junto ao órgão emissor. A Administração pode diligenciar para esclarecer um fato preexistente. Diferente seria permitir que o licitante constitua, depois da abertura, experiência técnica que não possuía quando deveria comprovar a habilitação.
+
+Compare
+
+Diligência completa prova de fato preexistente; não cria retroativamente requisito inexistente. Atualização de validade documental também não equivale a substituir um requisito que nunca foi atendido.
+
+Como cai na FCC
+
+A banca usa palavras absolutas: “jamais se pode complementar informação” ou “a Administração pode aceitar qualquer documento novo”. Ambos os extremos são incorretos. A Lei admite saneamento delimitado.
+
+Pegadinha
+
+O art. 63, II, diz documentos de habilitação apenas do vencedor, exceto se houver inversão. Mas o inciso III preserva a regularidade fiscal após o julgamento, “em qualquer caso”. Leia os incisos conjuntamente.
+
+Jurisprudência essencial
+
+Não é indispensável para o núcleo do módulo. O formalismo moderado deve ser lido a partir dos limites concretos do art. 64.
+
+O que decorar
+
+Quatro blocos: J–T–FST–EF.
+Diligência: complementar informação de fato preexistente ou atualizar validade expirada depois.
+
+O que levar para a prova
+
+A habilitação deve ser pertinente e proporcional ao objeto; não é licença para criar barreiras excessivas à competição.
+
+Check manual
+
+• Sei os quatro blocos da habilitação?
+• Sei quem apresenta documentos na regra geral?
+• Sei os dois grandes limites das diligências do art. 64?
+
+---
+
+SESSÃO 12 — Habilitação técnica e econômico-financeira: limites quantitativos que a FCC pode cobrar
+
+Entenda primeiro
+
+As exigências de qualificação devem proteger a futura execução sem eliminar competição. A Lei nº 14.133/2021 tenta transformar esse equilíbrio em limites objetivos. Para Analista, os percentuais e distinções entre capacidade técnico-profissional e técnico-operacional merecem atenção especial.
+
+Regra jurídica
+
+A qualificação técnica e a qualificação econômico-financeira têm finalidades distintas e limites próprios. A primeira busca demonstrar aptidão técnica para executar o objeto; a segunda, aptidão econômica para cumprir as obrigações do futuro contrato. As exigências devem permanecer dentro das hipóteses e limites dos arts. 67 e 69.
+
+Habilitação técnica — regra jurídica
+
+A qualificação técnica pode envolver profissional registrado no conselho competente, atestado de responsabilidade técnica por obra ou serviço semelhante, certidões/atestados que demonstrem capacidade operacional, indicação de pessoal/instalações/aparelhamento, requisitos de lei especial, registro em entidade profissional e declaração de conhecimento das condições locais.
+
+A exigência de atestados restringe-se às parcelas de maior relevância ou valor significativo, consideradas, pela Lei, as parcelas com valor individual igual ou superior a 4% do valor total estimado. Para essas parcelas, podem ser exigidas quantidades mínimas de até 50%, vedadas limitações de tempo e de locais específicos dos atestados.
+
+Em serviços contínuos, o edital pode exigir demonstração de execução de serviços similares por períodos sucessivos ou não, mas o prazo mínimo exigido não pode superar 3 anos.
+
+Profissional indicado para fins de qualificação deve participar da execução; admite-se substituição por profissional de experiência equivalente ou superior, desde que aprovada pela Administração. Em ponto mais avançado, o edital pode prever, para aspectos técnicos específicos, demonstração da qualificação por atestados de potencial subcontratado, limitada essa solução a 25% do objeto; mais de um licitante pode apresentar atestado relativo ao mesmo potencial subcontratado.
+
+Quadro 14 — Técnica profissional × técnica operacional
+
+Aspecto | Técnico-profissional | Técnico-operacional
+Centro da prova | Experiência/qualificação do profissional responsável | Experiência/capacidade da empresa/licitante como organização
+Documento típico | Atestado de responsabilidade técnica do profissional, quando cabível | Certidões/atestados que demonstrem execução de serviços similares
+Risco de confusão | Achar que experiência do profissional automaticamente prova toda capacidade da empresa | Exigir da empresa requisito pessoal desvinculado de sua experiência operacional
+Regra de execução | Profissional pontuado/indicado deve participar, com substituição apenas nos termos legais | Estrutura operacional deve ser suficiente para o objeto
+
+Qualificação econômico-financeira — regra jurídica
+
+A finalidade é demonstrar aptidão econômica para cumprir o futuro contrato. A comprovação deve ser objetiva, com índices previstos no edital e justificados no processo. A Lei restringe a documentação essencial a demonstrações contábeis dos dois últimos exercícios sociais e certidão negativa de feitos sobre falência, ressalvada a regra especial para pessoa jurídica constituída há menos de dois anos.
+
+A Administração pode exigir declaração de profissional habilitado da contabilidade sobre atendimento dos índices. É vedado exigir faturamento anterior mínimo e índices de rentabilidade ou lucratividade. Pode-se exigir relação de compromissos que reduzam a capacidade econômico-financeira.
+
+Em compras para entrega futura e execução de obras e serviços, o edital pode exigir capital mínimo ou patrimônio líquido mínimo de até 10% do valor estimado. Índices e valores não usualmente adotados para avaliar suficiência econômica são vedados.
+
+Quadro 15 — Limites numéricos de habilitação
+
+Tema | Limite/regra
+Parcela de maior relevância/valor significativo para atestado | valor individual ≥ 4% do valor total estimado
+Quantidade mínima em atestados das parcelas relevantes | até 50%
+Experiência temporal em serviços contínuos | prazo mínimo exigido não pode superar 3 anos
+Capital mínimo/patrimônio líquido mínimo, quando admitido | até 10% do valor estimado
+Demonstrações contábeis | 2 últimos exercícios sociais; regra especial para empresa com menos de 2 anos
+
+Exemplo
+
+Em contrato estimado em R$ 10 milhões, uma parcela de R$ 500 mil representa 5% e pode ser tratada como de valor significativo. Se a Administração exigir atestado quantitativo dessa parcela, o mínimo não pode ultrapassar 50% da quantidade correspondente, respeitados os demais requisitos da Lei.
+
+Compare
+
+A qualificação técnica protege a capacidade de executar o objeto; a econômico-financeira protege a capacidade econômica de suportar as obrigações. Misturar as duas gera exigências indevidas — por exemplo, usar faturamento pretérito mínimo como atalho para provar capacidade financeira, o que a Lei veda.
+
+Como cai na FCC
+
+Percentuais são terreno fértil para troca: 4%, 50%, 3 anos e 10%. Outra armadilha é afirmar que a Administração pode limitar atestados a experiência obtida apenas em determinado Estado ou nos últimos “x” anos: a Lei veda limitações de locais específicos e, para a regra geral dos atestados, limitações de tempo.
+
+Pegadinha
+
+O prazo de até 3 anos aparece na hipótese específica de serviços contínuos como período mínimo de experiência semelhante que o edital pode exigir. Isso não autoriza criar uma validade temporal geral para qualquer atestado.
+
+Jurisprudência essencial
+
+Não necessária para os limites expressos examinados. Em prova FCC de Lei nº 14.133/2021, priorize a literalidade do art. 67 e do art. 69.
+
+O que decorar
+
+4 – 50 – 3 – 10: 4% parcela relevante; 50% quantidade máxima exigível; 3 anos em contínuos; 10% capital/patrimônio.
+
+O que levar para a prova
+
+Exigência de habilitação precisa ter vínculo com o objeto, finalidade legítima e proporcionalidade. Restrição excessiva reduz competição e pode ser ilegal.
+
+Check manual
+
+• Diferencio capacidade profissional e operacional?
+• Sei reconstruir 4% / 50% / 3 anos / 10%?
+• Lembro que faturamento anterior mínimo e índice de lucratividade são vedados?
+
+---
+
+SESSÃO 13 — Recursos e encerramento: da irresignação administrativa à homologação
+
+Entenda primeiro
+
+Depois de julgamento e habilitação, o procedimento precisa resolver as impugnações internas antes do encerramento. A Lei nº 14.133/2021 concentra a discussão recursal de julgamento e habilitação e, em seguida, envia o processo à autoridade superior, que pode sanear, revogar, anular ou adjudicar e homologar.
+
+Regra jurídica — impugnação e esclarecimento do edital
+
+Qualquer pessoa pode impugnar o edital por irregularidade na aplicação da Lei ou pedir esclarecimento. O pedido deve ser protocolado até 3 dias úteis antes da abertura do certame. A resposta deve ser divulgada em sítio eletrônico oficial em até 3 dias úteis, limitada ao último dia útil anterior à abertura.
+
+Regra jurídica — recurso
+
+Para os atos de julgamento das propostas, habilitação/inabilitação e anulação/revogação da licitação, o prazo recursal é de 3 dias úteis, contado da intimação ou da lavratura da ata, conforme o caso.
+
+Nos recursos contra julgamento ou habilitação:
+
+• a intenção de recorrer deve ser manifestada imediatamente, sob pena de preclusão;
+• o prazo para as razões recursais começa da ata/intimação de habilitação ou inabilitação; se houver inversão de fases, começa da ata de julgamento;
+• a apreciação ocorre em fase única.
+
+As contrarrazões têm o mesmo prazo do recurso e começam da intimação pessoal ou divulgação da interposição. O recurso é dirigido à autoridade que praticou o ato; se ela não reconsiderar em 3 dias úteis, encaminha-o à autoridade superior, que decide em até 10 dias úteis do recebimento dos autos. Recurso e pedido de reconsideração possuem efeito suspensivo até decisão final.
+
+O pedido de reconsideração do art. 165, II, tem prazo de 3 dias úteis para ato do qual não caiba recurso hierárquico. Os recursos de sanções dos arts. 166 e 167 têm disciplina própria e pertencem ao aprofundamento de sanções/contratos, não sendo o núcleo deste M16.
+
+Quadro 16 — Prazos recursais essenciais do M16
+
+Ato | Prazo/efeito
+Impugnação/pedido de esclarecimento | até 3 dias úteis antes da abertura
+Resposta | até 3 dias úteis, no máximo até o último dia útil anterior à abertura
+Recurso do art. 165, I, nas hipóteses do procedimento | 3 dias úteis
+Contrarrazões | mesmo prazo do recurso
+Reconsideração pela autoridade recorrida | 3 dias úteis
+Decisão da autoridade superior | até 10 dias úteis do recebimento dos autos
+Efeito | suspensivo até decisão final
+
+Regra jurídica — encerramento
+
+Exauridos os recursos, o processo vai à autoridade superior. Ela pode:
+
+• devolver os autos para saneamento de irregularidades;
+• revogar por conveniência e oportunidade;
+• anular, de ofício ou por provocação, diante de ilegalidade insanável;
+• adjudicar o objeto e homologar a licitação.
+
+Na anulação, a autoridade deve indicar os atos com vícios insanáveis e os atos subsequentes dependentes que perdem efeito, além de promover a apuração de responsabilidade. Na revogação, o motivo determinante precisa resultar de fato superveniente devidamente comprovado. Em anulação e revogação deve ser assegurada manifestação prévia dos interessados.
+
+Quadro 17 — Anulação × revogação
+
+Tema | Anulação | Revogação
+Fundamento | Ilegalidade insanável | Conveniência e oportunidade
+Natureza do problema | Jurídico | Mérito administrativo superveniente
+Iniciativa | De ofício ou provocação de terceiro | Autoridade competente
+Fato superveniente | Não é o fundamento central; exige ilegalidade insanável | O motivo determinante deve decorrer de fato superveniente comprovado
+Participação dos interessados | Manifestação prévia | Manifestação prévia
+Efeito sobre atos subsequentes | Invalida os dependentes do ato viciado | Encerra o certame por razão de mérito devidamente motivada
+
+Quadro 18 — Adjudicação × homologação
+
+Tema | Adjudicação | Homologação
+Ideia | Atribuição do objeto ao vencedor | Aprovação/encerramento do procedimento pela autoridade competente
+Momento no art. 71 | Depois de julgamento, habilitação e recursos | No mesmo encerramento, após o controle final da autoridade superior
+Significa contrato assinado? | Não | Não
+Gera direito automático ao contrato? | Não equivale à celebração do contrato | Não equivale à celebração do contrato
+Confusão comum | Achar que “adjudicar” é julgar proposta | Achar que “homologar” é habilitar licitante
+
+Exemplo
+
+Depois de recurso contra a habilitação, a autoridade superior detecta uma irregularidade sanável de instrução e devolve o processo para correção. Em outro caso, identifica vício insanável e anula os atos atingidos. Em situação diversa, surge fato superveniente comprovado que torna inconveniente a contratação e fundamenta revogação. Não se deve usar “revogação” para encobrir ilegalidade.
+
+Compare
+
+Adjudicar atribui o objeto; homologar encerra e aprova o resultado/procedimento. Nenhum dos dois é sinônimo de assinatura do contrato. A disciplina da contratação subsequente pertence ao M18.
+
+Como cai na FCC
+
+A banca troca anulação por revogação, afirma que revogação dispensa fato superveniente, coloca adjudicação antes da fase recursal ou confunde homologação com julgamento. Outra armadilha é negar efeito suspensivo ao recurso do art. 165.
+
+Pegadinha
+
+A fase recursal é a sexta fase do art. 17 e a homologação é a sétima. O art. 71 detalha o que a autoridade superior pode fazer antes de encerrar: saneamento, revogação, anulação ou adjudicação + homologação.
+
+Jurisprudência essencial
+
+Não é indispensável para a estrutura. A redação dos arts. 164, 165, 168 e 71 deve ser a base.
+
+O que decorar
+
+Recurso: 3–3–10: razões/contrarrazões em 3; reconsideração em 3; superior decide em até 10.
+Encerramento: sanear → revogar → anular → adjudicar/homologar, conforme a situação jurídica concreta.
+
+O que levar para a prova
+
+Anulação = ilegalidade insanável. Revogação = mérito + fato superveniente comprovado. Adjudicação e homologação são distintas e não celebram o contrato.
+
+Check manual
+
+• Sei quando a intenção de recorrer deve ser imediata?
+• Sei o efeito dos recursos e os prazos 3/3/10?
+• Diferencio anulação, revogação, adjudicação e homologação?
+
+---
+
+SESSÃO 14 — Revisão integrada e quadro-mestre
+
+Entenda primeiro
+
+Agora una todas as camadas. Uma questão complexa da FCC costuma trazer um objeto, indicar uma modalidade, inserir um critério, escolher um modo de disputa, inverter ou não habilitação e terminar com recurso ou encerramento. A técnica é resolver em ordem.
+
+Regra jurídica
+
+A revisão integrada deve conservar a arquitetura da Lei nº 14.133/2021: as fases do art. 17 fornecem a sequência; os arts. 28 a 32 definem modalidades; os arts. 33 a 39 definem critérios; os arts. 54 a 71 disciplinam a etapa externa até o encerramento; e os arts. 164, 165 e 168 organizam impugnações e recursos pertinentes ao certame. Nenhuma dessas categorias substitui as demais.
+
+Método de resolução em 7 perguntas
+
+• Qual é o objeto? Comum, especial, obra, engenharia, trabalho técnico/artístico, alienação ou contratação complexa?
+• Qual modalidade a Lei associa ao objeto?
+• Qual critério é juridicamente compatível?
+• Qual modo de disputa pode ser utilizado e quais vedações existem?
+• Qual é a ordem das fases? Houve inversão válida?
+• A falha está na proposta ou no licitante? Desclassificação ou inabilitação?
+• O procedimento está em recurso ou encerramento? Qual autoridade/efeito é aplicável?
+
+Quadro 19 — Quadro-mestre do M16
+
+Instituto | Pergunta-chave | Regra de ouro | Erro FCC típico
+Fases | Em que momento do certame? | P–E–P–J–H–R–H | Colocar habilitação antes de julgamento como regra
+Inversão | Pode habilitar antes? | Motivação + benefício + edital | Tratar como livre escolha
+Pregão | Objeto é comum? | Obrigatório para bens/serviços comuns, respeitadas exceções | Excluir serviço comum de engenharia
+Concorrência | Objeto é especial/obra/engenharia? | Critérios amplos, sem definição por valor | Escolher por faixa de preço
+Concurso | Busca-se trabalho técnico/científico/artístico? | Melhor técnica/conteúdo + prêmio/remuneração | Confundir com concurso público
+Leilão | Administração aliena bem? | Maior lance; sem habilitação/cadastro prévio | Usar menor preço
+Diálogo competitivo | A solução ainda precisa ser construída/identificada? | Pré-seleção + diálogo + proposta final | Confundir com negociação pós-julgamento
+Critério | Como comparar propostas? | Seis critérios do art. 33 | Chamar critério de modalidade
+Modo | Como ofertas são apresentadas? | Aberto/fechado, com vedações | Chamar modo de critério
+Publicidade | Como mercado é convocado? | Inteiro teor no PNCP + extratos legais | Achar que PNCP elimina demais publicações
+Julgamento | A proposta é válida/melhor? | Desclassificação da proposta | Chamar de inabilitação
+Habilitação | O licitante tem capacidade? | Quatro blocos legais | Examinar todos antes do julgamento sem inversão
+Diligência | A falha pode ser sanada? | Informação/fato preexistente ou atualização de validade | Permitir criação posterior de requisito
+Recurso | Como contestar o ato? | Intenção imediata nos casos legais + 3 dias + efeito suspensivo | Diluir julgamento/habilitação em recursos separados fora da lógica legal
+Encerramento | Como termina? | Saneamento, revogação, anulação ou adjudicação+homologação | Confundir homologação com adjudicação
+
+Exemplo
+
+Considere um edital que chama de “concorrência por modo menor preço, em disputa pregão”. A frase mistura categorias: concorrência e pregão são modalidades; menor preço é critério; aberto/fechado são modos. Antes de discutir validade, corrija mentalmente a classificação dos institutos.
+
+Compare — do objeto ao encerramento
+
+Caso 1 — computadores padronizados: objeto comum → pregão → menor preço/maior desconto → modo compatível → julgamento → habilitação → recurso → homologação.
+
+Caso 2 — obra de engenharia: pregão não se aplica → concorrência → critério compatível com o caso → julgamento → habilitação, salvo inversão válida → recursos → encerramento.
+
+Caso 3 — projeto artístico: concurso → melhor técnica/conteúdo artístico → prêmio/remuneração → regras próprias do edital.
+
+Caso 4 — alienação de veículos inservíveis: leilão → maior lance → sem habilitação → lances → recurso → pagamento → homologação.
+
+Caso 5 — solução tecnológica complexa não definível com precisão: verificar pressupostos do diálogo competitivo → 25 dias úteis para interesse → diálogo com pré-selecionados → solução definida → pelo menos 60 dias úteis para propostas finais → julgamento pelos critérios objetivos divulgados.
+
+Como cai na FCC — 12 afirmações para testar
+
+• “A habilitação antecede o julgamento como regra.” Errado.
+• “A inversão depende apenas de previsão editalícia.” Errado. Também exige motivação e benefícios explicitados.
+• “O valor estimado define a modalidade.” Errado.
+• “Pregão admite técnica e preço.” Errado.
+• “Serviço comum de engenharia pode ser submetido ao pregão.” Certo.
+• “Leilão possui fase de habilitação.” Errado.
+• “Diálogo competitivo é procedimento auxiliar.” Errado. É modalidade.
+• “Maior retorno econômico é exclusivo de contrato de eficiência.” Certo.
+• “Modo fechado isolado pode ser usado com menor preço.” Errado.
+• “Diligência pode criar experiência técnica inexistente na data pertinente.” Errado.
+• “Revogação exige fato superveniente devidamente comprovado.” Certo.
+• “Homologação e adjudicação são sinônimos.” Errado.
+
+Pegadinha final
+
+Quando a alternativa mistura Lei nº 8.666/1993 e Lei nº 14.133/2021, não tente “harmonizar” institutos antigos. Identifique qual regime a questão pediu. Para a Lei nº 14.133/2021, convite e tomada de preços não são modalidades; a ordem geral é julgamento antes da habilitação; e a classificação das categorias deve seguir a nova lei.
+
+Jurisprudência essencial
+
+O módulo foi deliberadamente construído com baixa dependência jurisprudencial porque os pontos exigidos são fortemente normativos. Em eventual atualização futura, jurisprudência deve ser adicionada apenas se alterar ou qualificar significativamente a leitura dos dispositivos cobrados.
+
+O que decorar
+
+Decore relações, não frases soltas: objeto → modalidade → critério → modo → fases → julgamento/habilitação → recurso → encerramento.
+
+O que levar para a prova
+
+Se a questão parecer confusa, identifique o substantivo jurídico de cada trecho. “Pregão” = modalidade; “menor preço” = critério; “aberto” = modo; “julgamento” = fase; “desclassificação” = problema da proposta; “inabilitação” = problema do licitante.
+
+Check manual
+
+• Consigo resolver os cinco casos sem olhar os quadros?
+• Consigo identificar a categoria jurídica de cada termo?
+• Consigo recitar os números-chave do módulo?
+
+---
+
+REVISÃO FINAL — 5 A 10 MINUTOS
+
+• Art. 17: preparatória → edital → propostas/lances → julgamento → habilitação → recurso → homologação.
+• Inversão: habilitação antes de propostas/julgamento somente com ato motivado, benefícios explicitados e previsão expressa no edital.
+• Modalidades: pregão, concorrência, concurso, leilão e diálogo competitivo. Convite e tomada de preços não pertencem à Lei nº 14.133/2021.
+• Pregão: obrigatório para bens e serviços comuns; critérios: menor preço ou maior desconto; inclui serviço comum de engenharia; exclui obras, engenharia especial e serviços técnicos especializados predominantemente intelectuais.
+• Concorrência: bens/serviços especiais, obras e serviços de engenharia; critérios amplos, exceto maior lance.
+• Concurso: trabalho técnico/científico/artístico; melhor técnica/conteúdo; prêmio/remuneração.
+• Leilão: alienação; maior lance; sem cadastro prévio e sem habilitação.
+• Diálogo competitivo: hipóteses complexas; 25 dias úteis para interesse; comissão com pelo menos 3 membros dos quadros permanentes; diálogo; ≥60 dias úteis para propostas finais; confidencialidade.
+• Critérios: menor preço; maior desconto; melhor técnica/conteúdo; técnica e preço; maior lance; maior retorno econômico.
+• Maior retorno econômico: exclusivamente contrato de eficiência; retorno = economia estimada − proposta de preço/remuneração.
+• Modos: aberto e fechado; fechado isolado não com menor preço/maior desconto; aberto não com técnica e preço.
+• Prazos do art. 55: bens 8/15; comum 10; especial 25; semi/outras 35; integrada 60; maior lance 15; técnica 35.
+• Julgamento: vício insanável, desconformidade, inexequibilidade/acima do orçamento podem desclassificar; diligência pode aferir exequibilidade.
+• Engenharia: <75% = inexequível; vencedor <85% = garantia adicional.
+• Desempate: disputa final → desempenho anterior → equidade → integridade; depois preferências do § 1º; LC 123 preservada.
+• Negociação: primeiro colocado; se acima do máximo e desclassificado, demais na ordem.
+• Habilitação: jurídica, técnica, fiscal/social/trabalhista e econômico-financeira.
+• Técnica: 4% / 50% / até 3 anos em contínuos.
+• Econômico-financeira: 2 exercícios; sem faturamento mínimo/lucratividade; capital/patrimônio até 10% quando cabível.
+• Diligência: completar informação de fato preexistente ou atualizar validade expirada depois; não inovar materialmente.
+• Recursos: intenção imediata para julgamento/habilitação; prazo 3 dias úteis; contrarrazões mesmo prazo; reconsideração 3; superior 10; efeito suspensivo.
+• Encerramento: saneamento, revogação, anulação ou adjudicação + homologação.
+• Revogação: conveniência/oportunidade com fato superveniente comprovado.
+• Anulação: ilegalidade insanável.
+• Adjudicação ≠ homologação ≠ contratação.
+
+---
+
+ARTIGOS PARA LER NA VÉSPERA
+
+Prioridade alta na Lei nº 14.133/2021:
+
+• art. 6º, XXXVIII a XLII — definições de concorrência, concurso, leilão, pregão e diálogo competitivo;
+• art. 17 — fases, inversão, forma eletrônica/presencial e análise de conformidade;
+• arts. 28 a 32 — modalidades e disciplina específica;
+• arts. 33 a 39 — critérios de julgamento e maior retorno econômico;
+• arts. 54 a 58 — publicidade, prazos, modos de disputa, lances e garantia de proposta;
+• arts. 59 a 61 — julgamento, desempate e negociação;
+• arts. 62 a 70 — habilitação, diligências e documentação;
+• art. 71 — encerramento;
+• arts. 164, 165 e 168 — impugnação, recurso e efeito suspensivo;
+• LC nº 123/2006, art. 44 e seguintes, apenas para recordar o desempate favorecido de ME/EPP quando a questão combinar os regimes.
+
+---
+
+O QUE DECORAR — FOLHA DE PROVA
+
+1. Sequência
+
+P–E–P–J–H–R–H = preparatória, edital, propostas, julgamento, habilitação, recurso, homologação.
+
+2. Inversão
+
+M–B–E = motivação + benefícios explicitados + edital expresso.
+
+3. Modalidades
+
+P–C–C–L–D = pregão, concorrência, concurso, leilão, diálogo competitivo.
+
+4. Pregão
+
+Comum + menor preço/maior desconto.
+Não: obra, engenharia especial, técnico especializado predominantemente intelectual.
+Sim: serviço comum de engenharia.
+
+5. Modalidades especiais
+
+Concurso: trabalho + melhor técnica/conteúdo + prêmio.
+Leilão: alienação + maior lance + sem habilitação.
+Diálogo: 25 → diálogo → 60.
+
+6. Critérios
+
+Menor preço; maior desconto; melhor técnica/conteúdo; técnica e preço; maior lance; maior retorno econômico.
+
+7. Modos
+
+Preço/desconto → fechado isolado NÃO.
+Técnica e preço → aberto NÃO.
+
+8. Prazos
+
+8 / 15 / 10 / 25 / 35 / 60.
+Diálogo: 25 + 60.
+
+9. Engenharia
+
+75 / 85: abaixo de 75% inexequível; vencedor abaixo de 85% exige garantia adicional.
+
+10. Habilitação técnica/econômica
+
+4 / 50 / 3 / 10: parcela 4%; quantidade 50%; contínuos até 3 anos; capital/patrimônio até 10%.
+
+11. Recursos
+
+3 / 3 / 10: recurso; reconsideração pela autoridade recorrida; decisão superior. Efeito suspensivo.
+
+12. Encerramento
+
+Ilegalidade = anulação. Mérito superveniente = revogação. Objeto = adjudicação. Controle final = homologação.
+
+---
+
+CAMADA FCC — ERROS QUE VOCÊ NÃO PODE COMETER
+
+• Não trate convite ou tomada de preços como modalidades vigentes da Lei nº 14.133/2021.
+• Não escolha modalidade por valor.
+• Não confunda modalidade, critério, modo de disputa e fase.
+• Não coloque habilitação antes do julgamento como regra.
+• Não aceite inversão sem motivação, benefícios e edital.
+• Não diga que todo serviço de engenharia exclui pregão: o serviço comum de engenharia é a exceção legal.
+• Não dê ao pregão técnica e preço ou melhor técnica.
+• Não chame diálogo competitivo de negociação, procedimento auxiliar ou etapa da concorrência.
+• Não atribua maior lance fora do leilão como critério geral das modalidades.
+• Não confunda desclassificação da proposta com inabilitação do licitante.
+• Não transforme diligência em oportunidade para fabricar requisito posterior.
+• Não troque os percentuais 75/85 e 4/50/10.
+• Não confunda revogação com anulação.
+• Não trate adjudicação, homologação e assinatura do contrato como sinônimos.
+
+---
+
+FECHAMENTO DO MÓDULO
+
+O M16 termina no encerramento da licitação. A partir daqui, o estudo se divide: M17 aprofundará contratação direta (dispensa/inexigibilidade e processo próprio) e M18 tratará contratos administrativos, execução, alterações, garantias, extinção e demais efeitos contratuais. Essa separação evita misturar seleção do fornecedor com gestão do contrato.
+
+10 QUESTÕES INTERNAS DE FIXAÇÃO — CONTEÚDO COMPLETO
+
+Estas questões verificam apenas o conteúdo ensinado neste módulo. Elas não substituem TEC, Anki, Lei em Dia ou questões reais de banca.
+
+QC1 — FÁCIL
+
+Enunciado. Segundo a Lei nº 14.133/2021, qual alternativa apresenta a ordem geral correta das fases do processo licitatório?
+
+A) Preparatória → habilitação → edital → propostas → julgamento → recurso → homologação.
+B) Preparatória → edital → propostas/lances → julgamento → habilitação → recurso → homologação.
+C) Edital → preparatória → julgamento → propostas → habilitação → homologação → recurso.
+D) Preparatória → edital → habilitação → julgamento → propostas → recurso → homologação.
+E) Preparatória → propostas → edital → julgamento → habilitação → homologação → recurso.
+
+Gabarito: B.
+Explicação: o art. 17 estabelece a sequência preparatória → divulgação do edital → propostas/lances → julgamento → habilitação → recursal → homologação. A habilitação antes de propostas/julgamento é exceção, não regra.
+
+QC2 — FÁCIL
+
+Enunciado. São modalidades de licitação previstas na Lei nº 14.133/2021:
+
+A) concorrência, tomada de preços, convite, concurso e leilão.
+B) pregão, concorrência, concurso, leilão e diálogo competitivo.
+C) pregão, concorrência, credenciamento, leilão e registro de preços.
+D) concorrência, concurso, leilão, pré-qualificação e diálogo competitivo.
+E) pregão, tomada de preços, concurso, leilão e diálogo competitivo.
+
+Gabarito: B.
+Explicação: o art. 28 enumera cinco modalidades. Credenciamento, pré-qualificação e sistema de registro de preços são procedimentos auxiliares; tomada de preços e convite pertencem ao regime anterior.
+
+QC3 — FÁCIL
+
+Enunciado. No pregão, são compatíveis os critérios de julgamento:
+
+A) menor preço e maior desconto.
+B) técnica e preço e maior retorno econômico.
+C) melhor técnica e maior lance.
+D) maior lance e menor preço.
+E) melhor técnica e maior desconto.
+
+Gabarito: A.
+Explicação: o pregão é vocacionado a bens e serviços comuns e admite menor preço ou maior desconto. Técnica e preço, melhor técnica/conteúdo artístico, maior lance e maior retorno econômico não integram a lógica do pregão.
+
+QC4 — FÁCIL
+
+Enunciado. A habilitação divide-se, pela Lei nº 14.133/2021, em:
+
+A) jurídica, cadastral, técnica e fiscal.
+B) jurídica, técnica, fiscal/social/trabalhista e econômico-financeira.
+C) administrativa, financeira, técnica e patrimonial.
+D) jurídica, operacional, trabalhista e contratual.
+E) técnica, fiscal, previdenciária e patrimonial.
+
+Gabarito: B.
+Explicação: é a divisão do art. 62: jurídica; técnica; fiscal, social e trabalhista; e econômico-financeira.
+
+QC5 — MÉDIA
+
+Enunciado. Um edital antecipa a habilitação para antes da apresentação das propostas e do julgamento. Para que a inversão seja juridicamente compatível com a Lei nº 14.133/2021, é necessário:
+
+A) somente ato da autoridade superior, pois a inversão é discricionária.
+B) previsão em regulamento federal e concordância dos licitantes.
+C) ato motivado, explicitação dos benefícios decorrentes e previsão expressa no edital.
+D) justificativa de urgência e autorização do controle externo.
+E) apenas previsão no edital, porque o edital vincula os licitantes.
+
+Gabarito: C.
+Explicação: a inversão do art. 17, § 1º, exige cumulativamente motivação, benefícios explicitados e previsão editalícia. Além disso, a regularidade fiscal continua sendo exigida, em qualquer caso, apenas após o julgamento e do mais bem classificado.
+
+QC6 — MÉDIA
+
+Enunciado. Sobre os modos de disputa, assinale a alternativa correta.
+
+A) O modo fechado isolado é obrigatório no menor preço.
+B) O modo aberto é obrigatório em técnica e preço.
+C) O modo fechado jamais pode ser combinado com o aberto.
+D) O modo fechado isolado é vedado em menor preço/maior desconto, e o modo aberto é vedado em técnica e preço.
+E) Modo de disputa é sinônimo de modalidade de licitação.
+
+Gabarito: D.
+Explicação: o art. 56 admite aberto e fechado, isolada ou conjuntamente, mas veda o fechado isolado em menor preço/maior desconto e veda o aberto quando o critério for técnica e preço.
+
+QC7 — MÉDIA
+
+Enunciado. Em licitação de serviço especial, julgada por menor preço, o prazo mínimo para apresentação de propostas é, em regra:
+
+A) 8 dias úteis.
+B) 10 dias úteis.
+C) 15 dias úteis.
+D) 25 dias úteis.
+E) 35 dias úteis.
+
+Gabarito: D.
+Explicação: o art. 55 fixa 25 dias úteis para serviços especiais e obras/serviços especiais de engenharia quando o critério for menor preço ou maior desconto. O prazo de 10 dias úteis vale para serviços comuns e obras/serviços comuns de engenharia nessa mesma lógica.
+
+QC8 — MÉDIA
+
+Enunciado. Encerradas as fases de julgamento e habilitação e exauridos os recursos, a autoridade superior verifica que surgiu fato superveniente, devidamente comprovado, que tornou inconveniente prosseguir com a licitação, sem ilegalidade insanável. A providência adequada é:
+
+A) anular a licitação.
+B) inabilitar o vencedor.
+C) revogar a licitação, assegurada a prévia manifestação dos interessados.
+D) declarar inexequível a proposta.
+E) adjudicar e homologar obrigatoriamente.
+
+Gabarito: C.
+Explicação: revogação se liga a conveniência e oportunidade fundada em fato superveniente devidamente comprovado. Anulação pressupõe ilegalidade insanável. Nos casos de anulação ou revogação, a lei assegura prévia manifestação dos interessados.
+
+QC9 — DIFÍCIL
+
+Enunciado. Em uma licitação de obra, o valor orçado pela Administração é de R$ 10 milhões. A proposta vencedora é de R$ 8 milhões. À luz das regras específicas de exequibilidade e garantia adicional, assinale a correta.
+
+A) A proposta é automaticamente inexequível, porque é inferior a 85% do orçamento.
+B) A proposta não é automaticamente inexequível pelo patamar de 75%, mas, por ser inferior a 85% do orçamento, haverá garantia adicional equivalente à diferença entre o valor orçado e o valor da proposta.
+C) A proposta é automaticamente inexequível por ser inferior a 90% do orçamento.
+D) Não se aplica qualquer regra percentual a obras.
+E) A Administração deverá reduzir o orçamento estimado para coincidir com a proposta.
+
+Gabarito: B.
+Explicação: R$ 8 milhões correspondem a 80% do orçamento. A inexequibilidade objetiva do art. 59, § 4º, ocorre abaixo de 75%. Já a proposta vencedora inferior a 85% exige garantia adicional, na forma do § 5º. São dois patamares com consequências distintas.
+
+QC10 — DIFÍCIL
+
+Enunciado. Em licitação com inversão de fases, a habilitação foi realizada antes do julgamento. Depois do julgamento, um licitante manifesta imediatamente intenção de recorrer. Assinale a alternativa que reúne corretamente a lógica recursal estudada no módulo.
+
+A) A intenção pode ser apresentada a qualquer tempo; as razões têm 5 dias úteis; a apreciação ocorre em duas fases.
+B) A intenção deve ser imediata, sob pena de preclusão; na inversão, o prazo das razões referente a julgamento/habilitação inicia-se na ata de julgamento; o recurso tem prazo de 3 dias úteis e a apreciação é em fase única.
+C) Não cabe recurso quando houver inversão de fases.
+D) O recurso tem 10 dias úteis, sem necessidade de intenção imediata.
+E) A inversão desloca toda a fase recursal para antes das propostas.
+
+Gabarito: B.
+Explicação: para julgamento/habilitação, a intenção de recorrer é imediata, sob pena de preclusão; na inversão, o marco indicado pela lei é a ata de julgamento; o prazo recursal é de 3 dias úteis e a apreciação se dá em fase única. Se a autoridade recorrida não reconsiderar em 3 dias úteis, encaminha à superior, que decide em até 10 dias úteis.

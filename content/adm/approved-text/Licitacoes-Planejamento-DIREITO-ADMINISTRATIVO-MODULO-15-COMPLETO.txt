@@ -1,0 +1,1241 @@
+﻿Licitações — Planejamento
+DIREITO ADMINISTRATIVO · MÓDULO 15 · COMPLETO
+
+DIREITO ADMINISTRATIVOMÓDULO 15 · OFFLINE
+
+Apostila de estudo · nível Analista · foco FCC
+
+Licitações — Planejamento
+
+Fase preparatória, ETP, termo de referência e projetos, estimativa e pesquisa de preços, orçamento sigiloso, riscos, parcelamento, padronização, marca, sustentabilidade, PCA e estratégia.
+
+Base conferida em 18/09/2026: Lei 14.133/2021 do pacote como fonte normativa local e redação consolidada do Planalto para conferência de vigência. A Biblioteca do ChatGPT foi consultada para validar o baralho “01 DIREITO ADM::15 LICITAÇÕES - PLANEJAMENTO” e o padrão de cobrança; esses materiais foram usados apenas como referência de cobertura, nunca como substitutos da lei. Regulamentos federais não foram tratados como normas nacionais.
+
+Fronteira pedagógica: M14 = conceitos gerais · M15 = planejamento · M16 = procedimento/modalidades e fase externa.
+
+0. Mapa mental do módulo
+
+A lógica do M15 pode ser reduzida a uma cadeia de perguntas. Antes de pensar em edital, sessão pública ou vencedor, a Administração precisa responder:
+
+NECESSIDADE → SOLUÇÃO → OBJETO → QUANTIDADE/PREÇO → RISCOS → ESTRATÉGIA → DOCUMENTOS DA LICITAÇÃO
+
+• Qual problema público precisa ser resolvido? — necessidade.
+• Qual solução atende melhor a esse problema? — estudo técnico preliminar (ETP).
+• Como a solução será transformada em objeto contratável? — termo de referência, anteprojeto, projeto básico ou projeto executivo, conforme o caso.
+• Quanto contratar e quanto isso deve custar? — quantidades, pesquisa de preços, estimativa e orçamento.
+• Quais riscos podem comprometer a licitação ou o contrato e quem deve suportá-los? — análise de riscos e, quando cabível, matriz de alocação de riscos.
+• Como estruturar a contratação para obter resultado vantajoso? — parcelamento ou não, padronização, requisitos, sustentabilidade, regime de fornecimento/execução e combinação adequada entre modalidade, critério de julgamento e modo de disputa.
+• Como documentar e justificar as escolhas? — art. 18 e documentos preparatórios.
+
+Regra de ouro para a FCC: planejamento não é burocracia posterior à decisão de contratar. É o processo que transforma um problema público em uma solução juridicamente justificável, tecnicamente viável, economicamente adequada e apta a ser disputada no mercado.
+
+---
+
+SESSÃO 01
+
+Fase preparatória: a inteligência da contratação
+
+Entenda primeiro
+
+A Lei 14.133/2021 chama a fase preparatória de fase de planejamento. Ela vem antes da fase externa e deve organizar, de forma coerente, as decisões que darão sustentação ao edital e ao futuro contrato. Não basta afirmar que o órgão “precisa comprar”. É necessário demonstrar a necessidade, estudar soluções, definir o objeto, estimar quantidades e preços, escolher a arquitetura da contratação e mapear riscos.
+
+O art. 18 determina que a fase preparatória seja compatível com o plano de contratações anual (PCA), sempre que elaborado, e com as leis orçamentárias. Também exige que sejam consideradas questões técnicas, mercadológicas e de gestão capazes de interferir na contratação.
+
+O que isso significa na prática?
+
+Imagine que um tribunal precisa substituir computadores antigos. Um planejamento pobre começa com “comprar 500 computadores”. Um planejamento adequado começa com o problema: equipamentos obsoletos estão comprometendo a atividade. A partir daí, o órgão pode comparar alternativas: substituição integral, substituição gradual, locação, contratação de solução como serviço, reaproveitamento parcial, padronização de especificações, logística reversa etc. Só depois de justificar a solução é que se consolida o objeto.
+
+Plano de Contratações Anual — PCA
+
+O art. 12, VII, usa a expressão “poderão”: os órgãos responsáveis pelo planejamento de cada ente federativo poderão, na forma de regulamento, elaborar PCA a partir dos documentos de formalização de demandas. Portanto, a Lei 14.133, como norma geral, não transforma o PCA em obrigação universal e automática para todo órgão em toda hipótese. Regulamentos de cada ente podem densificar ou impor sua utilização dentro do respectivo âmbito.
+
+Quando elaborado, o PCA tem três funções centrais:
+
+• racionalizar as contratações;
+• alinhar as contratações ao planejamento estratégico;
+• subsidiar a elaboração das leis orçamentárias.
+
+Além disso, o §1º do art. 12 determina sua divulgação em sítio eletrônico oficial e sua observância pelo ente na realização de licitações e execução dos contratos.
+
+Quadro comparativo 1 — Fase preparatória × fase externa
+
+Aspecto | Fase preparatória | Fase externa
+Núcleo | planejamento e instrução | competição e seleção
+Pergunta principal | “o que, por que, quanto e como contratar?” | “qual proposta/licitação produzirá o resultado previsto?”
+Documentos típicos | ETP, TR/projetos, estimativas, análise/matriz de riscos, justificativas | edital publicado, propostas, lances, julgamento, habilitação, recursos
+Módulo da Central | M15 | M16
+Erro FCC | dizer que o planejamento começa com a publicação do edital | transportar documento preparatório para momento posterior
+
+Quadro comparativo 2 — PCA × fase preparatória de uma contratação
+
+PCA | Fase preparatória específica
+visão agregada das demandas do período | estudo individual da contratação concreta
+instrumento de racionalização e alinhamento | instrução técnica, econômica e jurídica do processo
+nasce de demandas formalizadas | parte da necessidade concreta e aprofunda a solução
+pode ser disciplinado por regulamento do ente | art. 18 fornece núcleo normativo nacional
+quando elaborado, deve ser considerado | verifica alinhamento com o PCA existente
+
+Como cai na FCC
+
+A banca tende a trocar uma palavra decisiva. Se disser que o PCA é “sempre obrigatório por força direta do art. 12, VII”, desconfie: o dispositivo diz poderão. Se disser que a fase preparatória começa apenas depois da publicação do edital, está invertendo a lógica. Se disser que planejamento é apenas orçamento, também erra: o art. 18 exige considerações técnicas, mercadológicas e de gestão.
+
+Pegadinha
+
+Planejamento ≠ previsão orçamentária. A adequação orçamentária integra o planejamento, mas não o esgota.
+
+O que decorar
+
+• art. 12, VII: PCA — poderão, na forma de regulamento;
+• art. 18: fase preparatória = planejamento;
+• compatibilidade com PCA sempre que elaborado + leis orçamentárias;
+• visão técnica + mercadológica + de gestão.
+
+Leve para a prova
+
+Se o enunciado perguntar “em que momento a Administração justifica necessidade, solução, preço, riscos e estratégia?”, a resposta está na fase preparatória.
+
+☐ Check manual: consigo explicar por que o PCA não se confunde com o planejamento de uma contratação específica.
+
+---
+
+SESSÃO 02
+
+Art. 18: o roteiro jurídico da fase preparatória
+
+Entenda primeiro
+
+O caput do art. 18 e seus onze incisos funcionam como um checklist estrutural. Eles não devem ser memorizados como itens soltos: formam uma sequência lógica que vai da necessidade à estratégia e à transparência do orçamento.
+
+Os 11 eixos do art. 18
+
+• Necessidade — descrição fundamentada em ETP que caracterize o interesse público.
+• Objeto — definição por TR, anteprojeto, projeto básico ou projeto executivo, conforme o caso.
+• Condições contratuais essenciais — execução, pagamento, garantias e recebimento.
+• Orçamento estimado — com composições dos preços utilizados.
+• Edital — elaboração do instrumento convocatório.
+• Minuta contratual — quando necessária, anexa ao edital.
+• Regime de fornecimento/prestação/execução — observando potencial de economia de escala.
+• Estratégia da licitação — modalidade, critério de julgamento, modo de disputa e eficiência da combinação, considerando o ciclo de vida.
+• Motivação das condições do edital — exigências relevantes devem ser justificadas.
+• Análise de riscos — riscos ao sucesso da licitação e à boa execução.
+• Momento de divulgação do orçamento — decisão motivada, observando o art. 24.
+
+Uma forma de visualizar
+
+Problema (I) → Objeto (II) → Regras contratuais (III) → Preço (IV) → Documentos convocatórios (V-VI) → Regime (VII) → Estratégia (VIII-IX) → Riscos (X) → Transparência do orçamento (XI).
+
+Quadro comparativo 3 — Modalidade × critério de julgamento × modo de disputa
+
+Instituto | O que responde | Exemplo de raciocínio no planejamento | Não confundir com
+modalidade | qual procedimento licitatório juridicamente adequado | o objeto e a lei conduzem à modalidade cabível | critério de julgamento
+critério de julgamento | como comparar as propostas | menor preço, maior desconto, técnica etc., conforme hipótese legal | modo de disputa
+modo de disputa | como as propostas/lances serão apresentadas e disputadas | escolha deve ser compatível com modalidade e critério | modalidade
+
+Limite do M15: aqui interessa apenas a decisão de planejamento e sua motivação. Regras detalhadas de modalidades, lances, julgamento e habilitação pertencem ao M16.
+
+Exemplo
+
+Uma contratação de solução tecnológica complexa não deve ter modalidade, critério e exigências de qualificação escolhidos por hábito. A equipe deve justificar por que aquela combinação é adequada para gerar o resultado mais vantajoso, considerando desempenho, risco, ciclo de vida e estrutura do mercado.
+
+Como cai na FCC
+
+A FCC gosta de afirmar que a escolha da modalidade é automática e isolada das demais decisões. O art. 18, VIII, exige analisar a adequação e eficiência da combinação modalidade + critério + modo de disputa.
+
+Pegadinha
+
+A fase preparatória inclui a elaboração do edital, mas isso não significa que a fase externa já tenha começado. A fase externa se inicia com a divulgação do edital e os atos subsequentes previstos na lei.
+
+O que decorar
+
+Use o encadeamento: necessidade – objeto – condições – orçamento – edital – contrato – regime – estratégia – motivação – riscos – divulgação do orçamento.
+
+Leve para a prova
+
+Se a questão embaralhar a ordem, recoloque cada decisão em sua função: necessidade antes da especificação; preço e riscos antes da competição; estratégia antes da abertura ao mercado.
+
+☐ Check manual: consigo reconstruir os 11 blocos do art. 18 sem olhar a lei.
+
+---
+
+SESSÃO 03
+
+Estudo Técnico Preliminar: problema, alternativas e melhor solução
+
+Entenda primeiro
+
+O ETP não é o documento que simplesmente descreve o que será comprado. Pela definição do art. 6º, XX, ele é o documento da primeira etapa do planejamento que caracteriza o interesse público, identifica a melhor solução e fornece base ao anteprojeto, ao TR ou ao projeto básico, caso a contratação seja considerada viável.
+
+O art. 18, §1º, acrescenta que o ETP deve evidenciar o problema a ser resolvido e a melhor solução, permitindo avaliar a viabilidade técnica e econômica.
+
+Os 13 elementos do ETP
+
+O §1º do art. 18 enumera:
+
+• descrição da necessidade, sob a perspectiva do interesse público;
+• demonstração da previsão no PCA, sempre que elaborado;
+• requisitos da contratação;
+• estimativas de quantidades, com memórias e documentos, considerando interdependências e economia de escala;
+• levantamento de mercado, com alternativas e justificativa técnica/econômica da solução;
+• estimativa do valor, com preços unitários referenciais, memórias e suporte documental;
+• descrição da solução como um todo, inclusive manutenção e assistência técnica, quando cabível;
+• justificativa para parcelar ou não;
+• resultados pretendidos em economicidade e melhor uso de recursos;
+• providências prévias da Administração, inclusive capacitação para fiscalização e gestão;
+• contratações correlatas e/ou interdependentes;
+• impactos ambientais e medidas mitigadoras, inclusive consumo de energia/recursos e logística reversa, quando aplicável;
+• conclusão sobre a adequação da contratação à necessidade.
+
+O raciocínio correto
+
+O ETP deve começar antes de a solução estar fechada. Se o órgão já entra no estudo com a marca, o modelo e a configuração decididos sem levantamento de mercado, corre o risco de transformar o ETP em mera justificativa retrospectiva.
+
+Quadro comparativo 4 — ETP × Termo de Referência
+
+ETP | Termo de Referência
+começa pelo problema | consolida o objeto a contratar
+compara alternativas | especifica solução escolhida
+avalia viabilidade técnica e econômica | organiza requisitos, execução, gestão, medição/pagamento e seleção
+fundamenta a escolha da solução | fundamenta a contratação com referência ao ETP
+primeira etapa do planejamento | documento de definição da contratação de bens e serviços
+
+Quadro comparativo 5 — ETP × Projeto Básico
+
+ETP | Projeto básico
+estudo de problema e alternativas | documento técnico de definição/dimensionamento de obra ou serviço de engenharia
+pergunta “qual solução é melhor?” | pergunta “como a solução será tecnicamente caracterizada?”
+pode levar à conclusão de não contratar | pressupõe avanço da solução escolhida
+base para documentos subsequentes | deve se apoiar nos estudos técnicos preliminares, conforme o caso
+
+Exemplo
+
+Necessidade: reduzir filas de atendimento. O ETP pode comparar aumento de equipe, agendamento digital, novo sistema, reengenharia do fluxo ou combinação dessas soluções. O TR só deve especificar o sistema se a análise demonstrar que essa é a alternativa adequada.
+
+Como cai na FCC
+
+A banca explora a inversão “ETP = especificação final do objeto”. Errado. Ele deve estudar o problema, as alternativas e a viabilidade da solução.
+
+Pegadinha
+
+“ETP sempre exige que todos os 13 itens apareçam materialmente, ainda que irrelevantes.” Essa afirmação ignora o §2º, estudado na próxima sessão.
+
+O que decorar
+
+ETP = problema + alternativas + solução + viabilidade.
+
+Leve para a prova
+
+Quando houver confronto ETP × TR, pense: ETP escolhe e justifica; TR especifica e operacionaliza.
+
+☐ Check manual: consigo explicar os 13 elementos como uma sequência de raciocínio, e não apenas recitá-los.
+
+---
+
+SESSÃO 04
+
+Conteúdo mínimo do ETP, justificativas e engenharia comum
+
+Regra jurídica essencial
+
+O art. 18, §2º, diz que o ETP deve conter ao menos os incisos I, IV, VI, VIII e XIII do §1º. Se os demais elementos não forem contemplados, devem existir as devidas justificativas.
+
+Núcleo mínimo nacional
+
+• I — necessidade;
+• IV — quantidades;
+• VI — valor estimado;
+• VIII — parcelamento ou não;
+• XIII — conclusão sobre adequação.
+
+Uma forma segura de lembrar é: N-Q-V-P-C — necessidade, quantidades, valor, parcelamento, conclusão.
+
+O mnemônico serve apenas para recordar os cinco incisos mínimos. Ele não autoriza desprezar os outros oito elementos: a ausência deles precisa ser justificada.
+
+ETP “simplificado” não significa ETP vazio
+
+A lei não cria licença para copiar justificativas genéricas. A equipe precisa demonstrar por que determinado item não é pertinente ou necessário naquele caso. O grau de detalhamento deve ser proporcional à complexidade e ao risco da contratação.
+
+Obras e serviços comuns de engenharia — art. 18, §3º
+
+Em ETP para obras e serviços comuns de engenharia, se demonstrada a inexistência de prejuízo para aferir os padrões de desempenho e qualidade desejados, a especificação do objeto poderá ser realizada apenas em termo de referência ou em projeto básico, com dispensa da elaboração de projetos na extensão admitida pelo dispositivo.
+
+A redação deve ser lida em conjunto com o art. 46, §1º, que, como regra, veda obras e serviços de engenharia sem projeto executivo, ressalvando justamente a hipótese do art. 18, §3º.
+
+Quadro comparativo 6 — Elementos mínimos × demais elementos do ETP
+
+Grupo | Incisos | Regra
+núcleo mínimo | I, IV, VI, VIII, XIII | devem constar do ETP
+demais | II, III, V, VII, IX, X, XI, XII | podem não ser contemplados, desde que haja justificativa
+consequência | — | ausência injustificada ≠ simplificação válida
+
+Como cai na FCC
+
+Dois extremos são típicos:
+
+• “todos os 13 elementos são sempre materialmente obrigatórios” — incorreto;
+• “somente os cinco mínimos têm relevância; os demais são facultativos sem justificativa” — incorreto.
+
+Pegadinha
+
+Não confunda “pode não contemplar, justificando” com “não precisa examinar”. O planejamento deve demonstrar por que a informação não foi incluída.
+
+O que decorar
+
+I, IV, VI, VIII, XIII.
+
+Leve para a prova
+
+Se a FCC trouxer a sequência necessidade + quantidades + valor + parcelamento + conclusão, reconheça o núcleo mínimo do §2º.
+
+☐ Check manual: consigo apontar os cinco incisos mínimos e explicar o que acontece com os outros oito.
+
+---
+
+SESSÃO 05
+
+Termo de Referência: transformar a solução em objeto contratável
+
+Entenda primeiro
+
+O termo de referência (TR) é documento necessário à contratação de bens e serviços. Se o ETP responde por que e qual solução adotar, o TR traduz essa solução em regras suficientemente claras para contratar, executar, medir, pagar, fiscalizar e selecionar o fornecedor.
+
+Elementos do art. 6º, XXIII
+
+O TR deve conter, em síntese:
+
+• definição do objeto, natureza, quantitativos, prazo e eventual possibilidade de prorrogação;
+• fundamentação da contratação, com referência aos ETPs ou extrato não sigiloso quando o estudo não puder ser divulgado integralmente;
+• descrição da solução como um todo, considerando o ciclo de vida;
+• requisitos da contratação;
+• modelo de execução do objeto;
+• modelo de gestão do contrato;
+• critérios de medição e pagamento;
+• forma e critérios de seleção do fornecedor;
+• estimativas de valor com preços unitários, memórias, documentos e parâmetros, em documento separado/classificado nos termos legais;
+• adequação orçamentária.
+
+Para compras, o art. 40, §1º, acrescenta informações sobre especificação do produto, locais e regras de entrega/recebimento e garantia/manutenção/assistência técnica, quando cabíveis.
+
+TR é “descrição técnica” apenas?
+
+Não. Essa é uma redução perigosa. O TR também estrutura execução, gestão, medição, pagamento, critérios de seleção e estimativa. É uma ponte entre a solução planejada e o futuro contrato.
+
+Quadro comparativo 7 — TR × Projeto Básico
+
+Termo de Referência | Projeto Básico
+necessário para bens e serviços | voltado à definição/dimensionamento de obras e serviços de engenharia nas hipóteses legais
+reúne objeto, requisitos, modelos de execução/gestão, medição/pagamento, seleção e estimativa | reúne elementos técnicos suficientes e precisos para caracterizar e dimensionar a obra/serviço
+pode ser usado na hipótese do art. 18, §3º | pode também ser usado no art. 18, §3º
+não é “projeto de engenharia genérico” | não é mero estudo preliminar
+
+Exemplo
+
+ETP conclui que o tribunal deve contratar serviço de digitalização. O TR passa a definir volume aproximado, requisitos de qualidade, segurança, prazos, níveis de serviço, modo de execução, fiscalização, medição, pagamento e critérios de seleção.
+
+Como cai na FCC
+
+A FCC pode afirmar que o TR é “exclusivo de obras”. Errado. A própria definição do art. 6º, XXIII, o situa como documento necessário para bens e serviços.
+
+Pegadinha
+
+Não transforme o TR em substituto automático do ETP. Em regra, o TR se fundamenta no planejamento anterior; não apaga a etapa de investigação da necessidade e da solução.
+
+O que decorar
+
+TR = objeto + fundamento + solução/ciclo de vida + requisitos + execução + gestão + medição/pagamento + seleção + valor + orçamento.
+
+Leve para a prova
+
+Se o enunciado fala em “como o contrato produzirá os resultados” ou “como será fiscalizado”, pense nos modelos de execução e gestão do TR.
+
+☐ Check manual: consigo separar o que pertence ao ETP e o que se consolida no TR.
+
+---
+
+SESSÃO 06
+
+Anteprojeto, projeto básico e projeto executivo
+
+Visão geral
+
+Nos objetos de engenharia, a profundidade do documento técnico cresce progressivamente. A FCC explora principalmente a troca de funções entre anteprojeto, projeto básico e projeto executivo.
+
+Anteprojeto
+
+O art. 6º, XXIV, trata o anteprojeto como peça técnica que fornece subsídios para a elaboração do projeto básico. Ele trabalha em nível de concepção: programa de necessidades, demanda, motivação técnico-econômico-social, visão global do investimento, nível de serviço, segurança, durabilidade, prazos, estética/arquitetura, parâmetros de interesse público, economia, facilidade de execução, impactos ambientais, acessibilidade e estudos necessários.
+
+Projeto básico
+
+O projeto básico reúne elementos necessários e suficientes, com nível de precisão adequado, para definir e dimensionar a obra ou serviço. Deve permitir avaliação de custo, métodos e prazo e trazer soluções técnicas suficientemente desenvolvidas, apoiadas nos estudos anteriores.
+
+Projeto executivo
+
+O projeto executivo contém o detalhamento necessário à completa execução, aprofundando as soluções do projeto básico e especificando serviços, materiais e equipamentos.
+
+Quadro comparativo 8 — Anteprojeto × projeto básico × projeto executivo
+
+Documento | Pergunta central | Grau de definição | Papel típico
+anteprojeto | “qual concepção e parâmetros devem orientar o empreendimento?” | inicial/conceitual | subsidia o projeto básico; essencial na contratação integrada
+projeto básico | “o que será executado e como dimensioná-lo de modo tecnicamente suficiente?” | intermediário e preciso | define/dimensiona obra ou serviço e permite estimar custo/métodos/prazo
+projeto executivo | “quais detalhes permitem executar integralmente?” | máximo detalhamento | detalha soluções para execução completa
+
+Contratação integrada e semi-integrada — somente o necessário para planejamento
+
+• Integrada: o contratado elabora projeto básico e projeto executivo e executa o objeto. A Administração é dispensada de elaborar projeto básico e deve preparar anteprojeto. O projeto básico produzido pelo contratado passa por aprovação administrativa.
+• Semi-integrada: a Administração fornece projeto básico; o contratado elabora o projeto executivo e executa. O projeto básico pode ser alterado, com autorização prévia, se demonstrada superioridade da inovação nos termos legais, assumindo o contratado os riscos da alteração.
+
+Quadro comparativo 9 — Contratação integrada × semi-integrada
+
+Integrada | Semi-integrada
+Administração parte de anteprojeto | Administração parte de projeto básico
+contratado elabora PB + PE | contratado elabora PE
+PB do contratado é submetido à aprovação | PB administrativo pode admitir alteração autorizada nas condições legais
+matriz de riscos obrigatória | matriz de riscos obrigatória
+
+Como cai na FCC
+
+Pegadinha recorrente: “na integrada, a Administração deve elaborar projeto básico completo antes da licitação”. Errado. A lei dispensa o PB administrativo e exige anteprojeto.
+
+Pegadinha
+
+A aprovação administrativa do projeto básico elaborado pelo contratado na integrada não transfere para a Administração a responsabilidade integral pelos riscos de projeto que a lei atribui ao contratado.
+
+O que decorar
+
+Ante = concepção; Básico = definição/dimensionamento; Executivo = detalhamento para execução.
+
+Leve para a prova
+
+Integrada: ANTE → contratado faz PB + PE.
+Semi-integrada: PB da Administração → contratado faz PE.
+
+☐ Check manual: consigo apontar quem elabora PB e PE nos dois regimes sem entrar no procedimento do M16.
+
+---
+
+SESSÃO 07
+
+Estimativa do valor e pesquisa de preços
+
+Entenda primeiro
+
+Planejar preço não é pedir três cotações por hábito. A Lei 14.133 exige que o valor previamente estimado seja compatível com o mercado, considerando bancos de dados públicos, quantidades, economia de escala e peculiaridades do local de execução.
+
+A pesquisa serve para construir uma referência defensável: precisa representar o objeto efetivamente pretendido, o mercado pertinente, a data adequada e as condições da contratação.
+
+Bens e serviços em geral — art. 23, §1º
+
+O valor estimado pode utilizar, combinadamente ou não, os seguintes parâmetros legais:
+
+• dados do painel para consulta de preços ou banco de preços em saúde do PNCP, dentro dos parâmetros legais;
+• contratações similares da Administração Pública em execução ou concluídas no período legal, com atualização pertinente;
+• pesquisa publicada em mídia especializada, tabela de referência formalmente aprovada e sítios especializados ou de domínio amplo, com data e hora de acesso;
+• pesquisa direta com no mínimo três fornecedores, mediante solicitação formal, justificando a escolha e observando a atualidade temporal exigida pela lei;
+• base nacional de notas fiscais eletrônicas, na forma regulamentar.
+
+Atenção: a lei não diz que “três cotações de fornecedores” são a única forma válida de pesquisa. Esse é apenas um dos parâmetros possíveis.
+
+Obras e serviços de engenharia — art. 23, §2º
+
+Para engenharia, a lei estabelece parâmetros em ordem, incluindo, em primeiro plano, sistemas referenciais oficiais como Sicro e Sinapi, conforme o tipo de obra/serviço, acrescidos de BDI de referência e encargos sociais cabíveis. Havendo situação específica, seguem-se os demais parâmetros legais.
+
+Estados, Distrito Federal e Municípios, em contratações que não envolvam recursos da União, podem utilizar outros sistemas de custos adotados pelo respectivo ente, conforme art. 23, §3º.
+
+O que torna uma pesquisa defensável?
+
+• objeto comparável;
+• unidade de medida coerente;
+• quantidades e escala consideradas;
+• condições comerciais e local de execução considerados;
+• fontes identificáveis e documentadas;
+• tratamento justificado de preços destoantes;
+• contemporaneidade suficiente;
+• memória de cálculo capaz de permitir controle e reprodução do raciocínio.
+
+Quadro comparativo 10 — Estimativa do valor × orçamento estimado
+
+Estimativa do valor | Orçamento estimado
+foco no valor de referência compatível com o mercado | foco na consolidação documentada dos custos/preços que formarão o orçamento da contratação
+art. 23 disciplina parâmetros de obtenção | art. 18, IV, exige orçamento com composições dos preços utilizados
+pode aparecer já no ETP para avaliar viabilidade | integra a instrução madura da fase preparatória
+ajuda a decidir se a solução é economicamente viável | serve de referência para estruturar a licitação e controlar propostas/contrato
+
+A lei usa expressões próximas e interligadas. Para prova, a distinção acima é funcional, não uma tentativa de criar dois procedimentos autônomos que a lei não criou.
+
+Quadro comparativo 11 — Pesquisa de preços × orçamento
+
+Pesquisa de preços | Orçamento estimado
+atividade de coleta, comparação e tratamento de referências | resultado estruturado que utiliza as referências tratadas
+responde “quais preços de mercado são defensáveis?” | responde “qual referência econômica consolidada orientará a contratação?”
+exige fontes e critérios | exige composições/memórias adequadas ao objeto
+é meio | é produto da instrução econômico-financeira
+
+Exemplo
+
+Se o órgão precisa de 2.000 cadeiras, não basta encontrar preço unitário de uma compra varejista de duas unidades. A estimativa precisa considerar quantidade, escala, especificação, entrega, local, garantia e condições comparáveis.
+
+Como cai na FCC
+
+A banca pode afirmar: “a pesquisa direta com fornecedores é obrigatória em qualquer contratação e deve ser sempre a única fonte”. Errado. O art. 23 apresenta múltiplos parâmetros e admite combinação deles para bens e serviços em geral.
+
+Pegadinha
+
+Não confunda menor preço encontrado com melhor referência de mercado. Preço isolado, inexequível, promocional ou não comparável pode distorcer a estimativa.
+
+O que decorar
+
+Art. 23: mercado + bancos públicos + quantidade + escala + peculiaridades locais.
+
+Leve para a prova
+
+Se a questão disser “três orçamentos” como ritual absoluto, procure a alternativa que reconheça a pluralidade de parâmetros da Lei 14.133.
+
+☐ Check manual: consigo listar as cinco famílias de parâmetros para bens/serviços e explicar por que engenharia possui disciplina própria.
+
+---
+
+SESSÃO 08
+
+Orçamento estimado, publicidade e orçamento sigiloso
+
+Regra geral
+
+O orçamento estimado integra a fase preparatória. A publicidade é princípio e os atos do processo são públicos, mas a própria Lei 14.133 admite publicidade diferida do orçamento, nos termos do art. 24.
+
+O art. 24 permite, desde que justificado, que o orçamento estimado tenha caráter sigiloso. Esse sigilo possui limites claros:
+
+• não autoriza esconder o detalhamento dos quantitativos nem outras informações necessárias para elaborar propostas;
+• não prevalece perante órgãos de controle interno e externo;
+• no critério de julgamento por maior desconto, o preço estimado ou máximo aceitável deve constar do edital.
+
+A decisão sobre o momento de divulgação do orçamento é, ela própria, item que deve ser motivado na fase preparatória (art. 18, XI).
+
+Sigilo não significa inexistência de orçamento
+
+O orçamento é produzido e documentado. O que pode ser diferido é o acesso público ao seu conteúdo, dentro da justificativa e limites legais. Inclusive o art. 18, §1º, VI, admite que documentos de suporte da estimativa de valor constem de anexo classificado quando a Administração optar por preservar o sigilo até a conclusão da licitação.
+
+Quadro comparativo 12 — Orçamento sigiloso × publicidade
+
+Publicidade | Orçamento com divulgação diferida
+regra do processo licitatório | exceção autorizada e motivada
+permite controle social e transparência | busca proteger a estratégia competitiva em hipóteses justificadas
+orçamento normalmente integra documentação pública | conteúdo econômico pode ter acesso público postergado
+não afasta hipóteses legais de sigilo | nunca impede acesso dos controles interno e externo
+
+Quadro comparativo 13 — Sigilo do orçamento × sigilo de informações necessárias à proposta
+
+Pode ser preservado | Não pode ser ocultado por esse fundamento
+orçamento estimado, se justificado | quantitativos necessários à formulação da proposta
+documentos econômicos classificados nos limites legais | características essenciais do objeto
+estratégia de divulgação do valor | dados sem os quais o licitante não consegue precificar adequadamente
+
+Exemplo
+
+Um órgão pode motivar que revelar previamente seu orçamento de referência prejudicaria a dinâmica competitiva. Ainda assim, precisa fornecer especificações, quantitativos e condições suficientes para que os licitantes formulem preços e deve franquear o orçamento aos órgãos de controle.
+
+Como cai na FCC
+
+A palavra “sigiloso” costuma ser transformada em “secreto”. Isso é incorreto. Trata-se de sigilo relativo e temporalmente administrado, sujeito à motivação e ao controle.
+
+Pegadinha
+
+“Orçamento sigiloso dispensa a Administração de calcular previamente o valor.” Errado. A Administração calcula; apenas pode diferir sua divulgação pública.
+
+O que decorar
+
+Justificação + quantitativos públicos + controle tem acesso + maior desconto revela preço estimado/máximo.
+
+Leve para a prova
+
+Orçamento sigiloso não rompe a transparência; a lei organiza quando e para quem a informação pode ser temporariamente reservada.
+
+☐ Check manual: consigo explicar os três limites mais importantes do art. 24.
+
+---
+
+SESSÃO 09
+
+Análise de riscos e matriz de alocação de riscos
+
+Entenda primeiro
+
+Esses dois institutos são relacionados, mas não idênticos.
+
+A análise de riscos aparece no art. 18, X, como atividade da fase preparatória: identificar eventos que possam comprometer o sucesso da licitação e a boa execução contratual, avaliar sua relevância e planejar tratamento.
+
+A matriz de alocação de riscos, definida no art. 6º, XXVII, é cláusula contratual que distribui riscos e responsabilidades entre as partes e caracteriza o equilíbrio econômico-financeiro inicial em relação aos eventos alocados.
+
+Análise de riscos
+
+Perguntas típicas:
+
+• qual evento pode ocorrer?
+• qual a probabilidade?
+• qual o impacto?
+• como prevenir ou mitigar?
+• quem deve monitorar?
+• o risco altera a especificação, o preço ou a estratégia?
+
+Exemplos: atraso de licença, dependência de integração tecnológica, flutuação extraordinária de insumo específico, indisponibilidade de local, erro de quantitativo, dependência de terceiro.
+
+Matriz de riscos
+
+Quando utilizada, deve promover alocação eficiente e indicar responsabilidade de cada parte, mecanismos preventivos e mitigadores. O contrato deve refletir essa alocação, inclusive quanto às hipóteses de recomposição do equilíbrio e aos efeitos de sinistros.
+
+A matriz é obrigatória quando a contratação envolver obras e serviços de grande vulto ou os regimes de contratação integrada ou semi-integrada (art. 22, §3º).
+
+Quadro comparativo 14 — Análise de riscos × matriz de riscos
+
+Análise de riscos | Matriz de alocação de riscos
+atividade de planejamento | cláusula/instrumento de alocação contratual
+identifica e avalia eventos | distribui responsabilidades por eventos
+art. 18, X | arts. 6º, XXVII, e 22
+pode gerar medidas de prevenção, contingência e ajustes no objeto | influencia preço, equilíbrio econômico-financeiro e responsabilidade
+não pressupõe necessariamente transferência do risco | explicita quem suporta os riscos alocados
+
+Matriz e reequilíbrio
+
+A matriz não “elimina” o direito ao equilíbrio econômico-financeiro. Ela define a equação inicial e a responsabilidade por riscos identificados, influenciando quando determinado evento é suportado por cada parte e quando pode haver recomposição segundo a lei. A afirmação absoluta “existindo matriz, jamais haverá reequilíbrio” é errada.
+
+Risco e valor estimado
+
+O art. 22 permite que, quando houver matriz, o cálculo do valor estimado considere taxa de risco compatível com o objeto e com os riscos atribuídos ao contratado, segundo metodologia previamente definida pelo ente.
+
+Como cai na FCC
+
+A banca troca “análise” por “matriz” ou transforma a matriz em documento obrigatório em toda licitação. A obrigatoriedade geral não existe; há hipóteses específicas do art. 22, §3º.
+
+Pegadinha
+
+Risco identificado não deve ser automaticamente transferido ao contratado. A alocação deve buscar eficiência, capacidade de gerenciamento e coerência econômica.
+
+O que decorar
+
+Análise = identificar/tratar. Matriz = alocar.
+Matriz obrigatória: obras e serviços de grande vulto + contratação integrada + contratação semi-integrada.
+
+Leve para a prova
+
+Se a questão falar em “cláusula que define equilíbrio inicial e responsabilidade por eventos”, pense em matriz; se falar em “evento que pode comprometer licitação/execução”, pense em análise de riscos.
+
+☐ Check manual: consigo explicar por que matriz não é sinônimo de mapa de riscos.
+
+---
+
+SESSÃO 10
+
+Parcelamento e fracionamento indevido
+
+Entenda primeiro
+
+O parcelamento é técnica de estruturação do objeto. Seu objetivo é dividir a contratação em itens ou lotes quando isso for tecnicamente viável e economicamente vantajoso, favorecendo competição sem sacrificar eficiência, integração ou economia de escala.
+
+O fracionamento indevido, em sentido de prova, ocorre quando uma necessidade previsível e unitária é artificialmente segmentada para escapar de exigências legais, limites, controles, publicidade ou do regime jurídico adequado. Não é sinônimo de parcelamento.
+
+Compras — art. 40
+
+A lei consagra o parcelamento quando técnica e economicamente adequado. Na decisão, devem ser considerados:
+
+• viabilidade de dividir o objeto em lotes;
+• peculiaridades do mercado local e economicidade, quando possível, sem reduzir os parâmetros de qualidade;
+• ampliação da competição e prevenção da concentração de mercado.
+
+O parcelamento não será adotado quando, entre outras hipóteses legais:
+
+• economia de escala, menor custo de gestão ou maior vantagem recomendarem fornecedor único;
+• o objeto formar sistema único e integrado e a divisão gerar risco ao conjunto;
+• padronização ou escolha de marca levar a fornecedor exclusivo.
+
+Para serviços, o art. 47 também adota o parcelamento quando tecnicamente viável e economicamente vantajoso e manda considerar responsabilidade técnica, custos de múltiplos contratos e ampliação da competição.
+
+Quadro comparativo 15 — Parcelamento × fracionamento indevido
+
+Parcelamento | Fracionamento indevido
+decisão técnica/econômica sobre a estrutura do objeto | segmentação artificial para contornar a lei
+pode ampliar competição | pode reduzir transparência e controles
+deve considerar escala, gestão, integração e mercado | ignora a unidade econômica/temporal da necessidade
+é justificado no planejamento | revela falha ou manipulação do planejamento
+pode ser obrigatório como princípio quando viável e vantajoso | é juridicamente censurável quando usado para evasão do regime legal
+
+Exemplo
+
+Comprar mobiliário por itens distintos porque há mercados especializados e isso amplia competição pode ser parcelamento legítimo. Dividir artificialmente uma necessidade previsível em vários processos apenas para tratar cada parcela como contratação de menor relevância econômica é outra situação.
+
+Como cai na FCC
+
+A banca pode dizer que “parcelar sempre reduz economia de escala, logo é proibido” ou que “parcelamento e fracionamento são sinônimos”. Ambos estão errados.
+
+Pegadinha
+
+Parcelar não significa necessariamente celebrar inúmeros contratos. A estratégia pode usar lotes, itens e outras formas de organização conforme o mercado e a lei.
+
+O que decorar
+
+Parcelamento: viabilidade técnica + vantagem econômica + competição, sempre ponderados com escala, gestão e integração.
+
+Leve para a prova
+
+A pergunta correta não é “dividir ou não dividir por preferência?”. É: qual desenho do objeto produz maior eficiência e competição sem destruir escala e integração?
+
+☐ Check manual: consigo diferenciar uma divisão técnica do objeto de uma divisão artificial da despesa.
+
+---
+
+SESSÃO 11
+
+Padronização, indicação de marca, amostra e prova de conceito
+
+11.1 Padronização
+
+Padronizar significa definir padrões técnicos, estéticos ou de desempenho que tragam coerência, interoperabilidade, eficiência e racionalização. O art. 19 estimula catálogos eletrônicos, modelos de documentos e centralização; o art. 40 inclui a padronização entre os princípios do planejamento de compras; o art. 43 disciplina o processo de padronização.
+
+O processo de padronização deve ter base técnica e decisão motivada, e não ser atalho para favorecer fornecedor.
+
+Quadro comparativo 16 — Padronização × direcionamento
+
+Padronização legítima | Direcionamento indevido
+fundamentada em necessidade técnica/eficiência | nasce de preferência subjetiva por fornecedor/produto
+critérios objetivos e motivados | especificações sem justificativa que restringem competição
+considera desempenho, manutenção, garantia e histórico | cria barreiras desnecessárias
+pode repercutir em compatibilidade e escala | usa a técnica como pretexto para excluir concorrentes
+
+11.2 Indicação de marca ou modelo
+
+O art. 41 permite excepcionalmente indicar uma ou mais marcas/modelos, desde que formalmente justificado, em quatro grupos:
+
+• necessidade de padronização;
+• necessidade de compatibilidade com plataformas/padrões já adotados;
+• marca/modelo comercializados por mais de um fornecedor que sejam os únicos capazes de atender à necessidade;
+• uso de marca/modelo apenas como referência para tornar a descrição do objeto mais compreensível.
+
+Quadro comparativo 17 — Indicação de marca × equivalência
+
+Indicação justificada | Produto similar/equivalente
+excepcional, exige motivação | pode demonstrar que atende ao padrão de qualidade exigido
+pode decorrer de padronização/compatibilidade/capacidade ou referência | qualidade pode ser provada pelos meios do art. 42
+não significa automaticamente fornecedor único | evita que a referência de marca se converta, sem base legal, em exclusividade
+
+O art. 42 admite, para produto apresentado como similar, prova de qualidade por normas técnicas oficiais/ABNT ou entidade credenciada, declaração satisfatória de órgão equivalente ou superior e certificação/laudo/documento idôneo emitido por instituição competente ou credenciada, entre outros detalhamentos do dispositivo.
+
+11.3 Amostra e prova de conceito
+
+A exigência pode ser prevista em momentos legalmente admitidos, inclusive pré-qualificação, julgamento/lances ou vigência contratual/ata, desde que prevista no edital e justificada. Quando ocorrer na fase de julgamento das propostas ou lances, a exigência se restringe ao licitante provisoriamente vencedor.
+
+Aqui o M15 estuda apenas a decisão de planejamento: por que exigir, o que testar, quais critérios objetivos adotar, custos e proporcionalidade. O rito de julgamento pertence ao M16.
+
+Exemplo
+
+Em compra de equipamento que deve interoperar com infraestrutura existente, a Administração pode justificar compatibilidade, definir requisitos objetivos e, se necessário e proporcional, prever prova de conceito para demonstrar funcionamento real.
+
+Como cai na FCC
+
+Erros típicos:
+
+• “é absolutamente proibida indicação de marca” — falso;
+• “a simples preferência histórica pela marca basta” — falso;
+• “amostra pode ser exigida de todos os participantes na fase de julgamento sem restrição” — falso diante da regra do licitante provisoriamente vencedor;
+• “padronização dispensa motivação” — falso.
+
+Pegadinha
+
+Marca de referência ≠ marca obrigatória. Leia a justificativa e a forma como o edital admite equivalência.
+
+O que decorar
+
+Marca: padronização, compatibilidade, única solução comercializada por mais de um fornecedor, referência descritiva.
+
+Leve para a prova
+
+Toda restrição técnica relevante deve ser conectada à necessidade e ser motivável. Planejamento robusto reduz especificações arbitrárias.
+
+☐ Check manual: consigo explicar quando marca pode aparecer e por que prova de conceito precisa de previsão e justificativa.
+
+---
+
+SESSÃO 12
+
+Sustentabilidade, ciclo de vida e impactos ambientais
+
+Sustentabilidade não é apêndice
+
+A Lei 14.133 incorpora desenvolvimento nacional sustentável, planejamento, economicidade e avaliação do ciclo de vida. Isso desloca o raciocínio da compra mais barata no instante inicial para a contratação que produz melhor resultado ao longo de sua utilização.
+
+Pontos normativos de planejamento
+
+• o art. 18, VIII, manda considerar todo o ciclo de vida na estratégia voltada à contratação mais vantajosa;
+• o art. 6º, XXIII, inclui no TR a descrição da solução como um todo, considerando o ciclo de vida;
+• o art. 18, §1º, XII, inclui no ETP impactos ambientais e medidas mitigadoras, requisitos de baixo consumo de energia e recursos e logística reversa para desfazimento/reciclagem, quando aplicável;
+• o art. 45, para obras e serviços de engenharia, traz exigências especiais sobre resíduos, mitigação/compensação ambiental, redução de consumo de energia/recursos, impacto de vizinhança, patrimônio e acessibilidade.
+
+Custo inicial × custo do ciclo de vida
+
+Uma solução com preço de aquisição maior pode ser economicamente superior se consumir menos energia, exigir menos manutenção, durar mais, reduzir descarte ou gerar menor custo operacional. O planejamento deve examinar aquilo que for mensurável e pertinente ao objeto, sem criar requisito ambiental desconectado da necessidade.
+
+Quadro comparativo 18 — Menor custo inicial × vantagem no ciclo de vida
+
+Menor custo inicial | Avaliação do ciclo de vida
+olha principalmente aquisição | considera aquisição + uso + manutenção + consumo + descarte, conforme o caso
+pode ignorar custos posteriores | busca resultado global mais vantajoso
+não é sinônimo automático de economicidade | conecta economicidade ao desempenho ao longo do tempo
+
+Exemplo
+
+Ao comparar aparelhos de ar-condicionado, o órgão pode considerar consumo energético, manutenção, durabilidade, disponibilidade de assistência e descarte ambientalmente adequado, desde que os critérios sejam objetivos e relacionados ao objeto.
+
+Como cai na FCC
+
+A banca costuma aproximar “mais vantajoso” de “menor preço nominal”. A lei não autoriza essa redução. O ciclo de vida pode ser juridicamente relevante para a solução e para a estratégia de seleção.
+
+Pegadinha
+
+Sustentabilidade não autoriza exigências desproporcionais sem vínculo com o objeto. Critérios ambientais também precisam ser motivados e compatíveis com competição e eficiência.
+
+O que decorar
+
+ciclo de vida + impactos + mitigação + energia/recursos + logística reversa, quando aplicável.
+
+Leve para a prova
+
+Se a alternativa limitar vantajosidade ao desembolso inicial, confira se ela ignorou custos e resultados do ciclo de vida.
+
+☐ Check manual: consigo dar três exemplos de custos/impactos que aparecem depois da aquisição e devem ser considerados no planejamento.
+
+---
+
+SESSÃO 13
+
+Definição da estratégia da licitação
+
+O planejamento precisa “fechar o sistema”
+
+Depois de entender necessidade, solução, objeto, preço e riscos, a Administração deve transformar essas informações em estratégia coerente. É aqui que decisões isoladas passam a formar um desenho de contratação.
+
+O art. 18 exige definir:
+
+• regime de fornecimento/prestação/execução, considerando economia de escala;
+• modalidade;
+• critério de julgamento;
+• modo de disputa;
+• adequação e eficiência da combinação desses parâmetros;
+• condições do edital que precisem de motivação específica;
+• riscos;
+• momento de divulgação do orçamento.
+
+Estratégia não é “copiar edital anterior”
+
+Uma contratação anterior pode fornecer referência, mas o planejamento atual deve demonstrar que a escolha continua adequada à necessidade, ao mercado, ao valor, aos riscos e ao resultado pretendido.
+
+Quadro comparativo 19 — Modalidade × critério × modo de disputa × regime de execução
+
+Elemento | Função no planejamento | Pergunta útil
+modalidade | estrutura jurídica do procedimento | qual modalidade é legalmente adequada ao objeto?
+critério de julgamento | regra de comparação das propostas | por qual métrica a proposta será avaliada?
+modo de disputa | dinâmica competitiva | como as ofertas/lances serão apresentados?
+regime de fornecimento/execução | distribuição prática da obrigação | como o objeto será fornecido, prestado ou executado?
+
+Não aprofundar aqui: nomes, hipóteses minuciosas, fases, lances, julgamento, habilitação e recursos serão estudados no M16. No M15, importa saber que a escolha deve nascer do planejamento e ser coerentemente motivada.
+
+Condições restritivas e motivação
+
+O art. 18, IX, exige motivação circunstanciada para condições relevantes do edital, como exigências de qualificação técnica/econômico-financeira, critérios de pontuação técnica e regras de consórcio. Isso demonstra uma premissa central: restrição competitiva sem causa técnica/jurídica é sinal de planejamento deficiente.
+
+Matriz de decisão simplificada
+
+• Necessidade: qual resultado público?
+• Mercado: quais soluções e fornecedores existem?
+• Objeto: é comum, especial, engenharia, solução integrada etc.?
+• Risco: onde estão incertezas relevantes?
+• Escala: parcelar ou concentrar?
+• Preço: quais referências e orçamento?
+• Desempenho: preço basta ou qualidade/técnica precisa ser capturada?
+• Disputa: qual dinâmica é compatível com o critério?
+• Execução: qual regime distribui melhor obrigações e riscos?
+• Motivação: consigo explicar documentalmente cada escolha?
+
+Como cai na FCC
+
+A banca pode afirmar que “a fase preparatória se limita a descrever objeto e preço”. O art. 18 mostra o contrário: também inclui estratégia, condições do edital, riscos e transparência orçamentária.
+
+Pegadinha
+
+A modalidade não deve ser escolhida por valor quando a própria Lei 14.133 adota critérios jurídicos vinculados à natureza do objeto e às hipóteses legais. Não transplante mecanicamente a lógica da Lei 8.666/1993.
+
+O que decorar
+
+Estratégia = regime + modalidade + critério + disputa + motivação + riscos + orçamento.
+
+Leve para a prova
+
+A melhor alternativa costuma ser a que trata as escolhas como sistema integrado, e não como decisões independentes.
+
+☐ Check manual: consigo justificar por que duas contratações de valores parecidos podem exigir estratégias distintas.
+
+---
+
+SESSÃO 14
+
+Revisão integrada e quadro-mestre
+
+Entenda primeiro
+
+Esta sessão não acrescenta uma nova fase ao procedimento. Ela serve para testar se as decisões estudadas formam um sistema coerente. Em prova, a dificuldade costuma estar menos em uma definição isolada e mais na troca de função, momento, documento ou sujeito.
+
+14.1 Fluxo de fechamento
+
+Demanda formalizada
+↓
+PCA, se elaborado — alinhamento estratégico e orçamentário
+↓
+ETP — problema, alternativas, solução, viabilidade
+↓
+Definição do objeto — TR / anteprojeto / PB / PE
+↓
+Quantidades + preços + orçamento
+↓
+Riscos + parcelamento + sustentabilidade + padronização
+↓
+Estratégia — regime + modalidade + critério + modo + condições justificadas
+↓
+Edital/minuta preparados
+↓
+FASE EXTERNA — M16
+
+14.2 Quadro-mestre das distinções que a FCC pode inverter
+
+Quadro comparativo 20 — Revisão geral
+
+Par que a banca mistura | Distinção de fechamento
+PCA × ETP | PCA organiza demandas; ETP estuda uma contratação e sua melhor solução
+ETP × TR | ETP investiga problema/alternativas; TR especifica e operacionaliza a solução
+ETP × PB | ETP escolhe solução; PB define/dimensiona obra ou serviço de engenharia
+anteprojeto × PB × PE | concepção → definição/dimensionamento → detalhamento para execução
+estimativa de valor × orçamento | referência de mercado → consolidação econômica documentada
+pesquisa × orçamento | coleta/tratamento de referências → resultado orçamentário estruturado
+análise de riscos × matriz | identificar/tratar → alocar responsabilidades
+parcelamento × fracionamento | divisão técnica vantajosa → segmentação artificial para contornar a lei
+orçamento sigiloso × segredo absoluto | divulgação pode ser diferida; controle continua acessando
+padronização × direcionamento | padrão motivado por necessidade → restrição arbitrária de competição
+marca indicada × marca obrigatória | indicação excepcional/justificada pode ser mera referência
+preço inicial × ciclo de vida | desembolso imediato → custo/resultado global ao longo da utilização
+integrada × semi-integrada | anteprojeto + contratado faz PB/PE → Administração fornece PB + contratado faz PE
+modalidade × julgamento × disputa | procedimento → regra de comparação → dinâmica das ofertas
+
+14.3 18 erros que não podem ir para a prova
+
+• dizer que a fase preparatória começa após a publicação do edital;
+• dizer que PCA é universalmente obrigatório só porque aparece no art. 12;
+• tratar ETP como especificação final do objeto;
+• afirmar que todos os 13 elementos do ETP são sempre materialmente obrigatórios;
+• esquecer que a ausência dos elementos não mínimos precisa de justificativa;
+• afirmar que TR é exclusivo de obras;
+• inverter anteprojeto, PB e PE;
+• dizer que contratação integrada exige PB prévio da Administração;
+• reduzir pesquisa de preços a três cotações;
+• usar preço isolado sem avaliar comparabilidade;
+• tratar orçamento sigiloso como ausência de orçamento;
+• dizer que sigilo alcança órgãos de controle;
+• dizer que análise de riscos e matriz são sinônimos;
+• afirmar que matriz é obrigatória em toda licitação;
+• dizer que parcelamento e fracionamento indevido são iguais;
+• dizer que indicação de marca é sempre proibida;
+• exigir amostra sem previsão/motivação ou ignorar a regra do provisoriamente vencedor na fase de julgamento;
+• escolher modalidade, critério e disputa como blocos desconectados.
+
+14.4 Revisão de 5–10 minutos
+
+Leia apenas as respostas abaixo e tente explicar cada uma em voz alta:
+
+• Fase preparatória? Planejamento compatível com PCA, quando elaborado, e leis orçamentárias; considera técnica, mercado e gestão.
+• ETP? Primeira etapa: problema, alternativas, melhor solução e viabilidade.
+• Cinco mínimos do ETP? I necessidade; IV quantidades; VI valor; VIII parcelamento; XIII conclusão.
+• TR? Documento de bens/serviços que transforma solução em objeto, execução, gestão, medição, seleção e valor.
+• Ante/PB/PE? concepção → definição/dimensionamento → detalhamento de execução.
+• Pesquisa de preços? múltiplas fontes legais; três fornecedores não são ritual único.
+• Orçamento sigiloso? exige justificativa; quantitativos continuam disponíveis; controles têm acesso.
+• Riscos? análise identifica/trata; matriz aloca.
+• Matriz obrigatória? grande vulto e integrada/semi-integrada.
+• Parcelamento? quando tecnicamente viável e economicamente vantajoso, ponderando escala, gestão, integração e competição.
+• Marca? excepcional e formalmente justificada nas hipóteses legais.
+• Amostra/prova de conceito? previsão no edital + justificativa; na fase de julgamento/lances, apenas provisoriamente vencedor.
+• Sustentabilidade? ciclo de vida e impactos entram no planejamento quando pertinentes.
+• Estratégia? escolhas devem ser combinadas e motivadas antes da fase externa.
+
+Como cai na FCC
+
+Na revisão integrada, espere enunciados que misturem duas regras verdadeiras para produzir uma conclusão falsa: por exemplo, reconhecer que o orçamento pode ser sigiloso e concluir que o controle externo não pode acessá-lo; ou reconhecer que a marca pode ser indicada e concluir que basta preferência administrativa.
+
+Pegadinha
+
+Uma frase pode usar vocabulário correto e ainda estar errada por trocar momento, sujeito, condição ou efeito jurídico.
+
+O que decorar
+
+Feche o módulo pelos pares comparativos do quadro-mestre e pelos cinco mínimos do ETP. Se esses contrastes estiverem firmes, a maioria das alternativas artificiais perde força.
+
+Leve para a prova
+
+Antes de marcar a alternativa, pergunte: qual documento? em qual momento? com qual condição? quem decide? qual efeito?
+
+☐ Check manual: consigo explicar todos os 14 pares do quadro-mestre sem consultar a teoria.
+
+---
+
+Camada FCC — padrões de cobrança
+
+1. Absolutização
+
+Palavras como sempre, nunca, exclusivamente, necessariamente, em toda licitação merecem verificação redobrada. Muitos institutos do planejamento dependem de justificativa, pertinência, regulamento ou hipótese específica.
+
+2. Troca de documento
+
+A banca pode atribuir ao TR função do ETP; ao ETP, função de PB; ao PB, função do PE; ou à análise de riscos, função da matriz.
+
+3. Exceção convertida em regra
+
+Indicação de marca, orçamento sigiloso, amostra e matriz de riscos possuem hipóteses e condições. A FCC pode retirar a condição e apresentar a exceção como regra geral.
+
+4. Momento errado
+
+Planejamento é anterior à disputa. Uma alternativa pode descrever corretamente o instituto, mas colocá-lo depois da contratação ou como ato exclusivo da fase externa.
+
+5. Sujeito errado
+
+Quem faz o PB na integrada? Quem acessa orçamento sigiloso? A quem se restringe amostra na fase de julgamento? A FCC explora a troca do sujeito jurídico.
+
+6. Regulamento federal tratado como norma nacional
+
+Decretos e instruções normativas federais podem disciplinar detalhadamente PCA, ETP, TR e pesquisa de preços no âmbito federal. Eles não devem ser automaticamente projetados sobre Estados e Municípios como se fossem, por si, norma geral nacional. Em prova, identifique o âmbito normativo indicado no enunciado.
+
+---
+
+Artigos para ler — roteiro de lei seca
+
+Prioridade A — leitura obrigatória para o M15
+
+• art. 6º, XX, XXIII, XXIV, XXV, XXVI, XXVII, XXXII e XXXIII — ETP, TR, anteprojeto, PB, PE, matriz, integrada e semi-integrada;
+• art. 12, VII e §1º — PCA;
+• art. 13 — publicidade e publicidade diferida;
+• art. 18, caput e §§1º a 3º — coração da fase preparatória;
+• art. 22 — matriz de riscos;
+• art. 23 — valor estimado e parâmetros de preços;
+• art. 24 — orçamento sigiloso;
+• art. 40 — planejamento de compras, padronização e parcelamento;
+• arts. 41 a 43 — marca, amostra, similaridade e padronização;
+• arts. 45 e 46, §§1º a 5º — sustentabilidade em engenharia e pontos de planejamento dos regimes integrada/semi-integrada.
+
+Prioridade B — conexão
+
+• art. 5º — princípios, inclusive planejamento, motivação, transparência, economicidade e desenvolvimento nacional sustentável;
+• art. 11 e parágrafo único — objetivos e governança das contratações;
+• art. 19 — centralização, catálogos, modelos e BIM;
+• arts. 20 e 21 — itens de consumo e audiência/consulta pública quando pertinentes;
+• art. 25, §§1º a 3º — documentos padronizados, condições locais justificadas pelo ETP e divulgação de anexos.
+
+Leitura orientada
+
+Na primeira leitura, marque os verbos: poderá, deverá, será, conterá, poderá exigir, não será adotado. Na segunda, marque condições e exceções. Na terceira, compare os sujeitos e documentos.
+
+---
+
+O que decorar — folha de fechamento
+
+1. Art. 18 em 11 blocos
+
+Necessidade → objeto → condições → orçamento → edital → contrato → regime → estratégia → motivação → riscos → divulgação do orçamento.
+
+2. ETP
+
+Definição: problema + melhor solução + viabilidade.
+
+Treze elementos: necessidade; PCA; requisitos; quantidades; mercado; valor; solução completa; parcelamento; resultados; providências; contratações correlatas; impactos ambientais; conclusão.
+
+Mínimos: I, IV, VI, VIII, XIII = N-Q-V-P-C.
+
+3. Documentos
+
+• ETP = estuda e escolhe solução;
+• TR = estrutura contratação de bens/serviços;
+• anteprojeto = concepção e parâmetros;
+• PB = define/dimensiona;
+• PE = detalha para executar.
+
+4. Integrada × semi
+
+• integrada: anteprojeto da Administração → PB + PE pelo contratado;
+• semi-integrada: PB da Administração → PE pelo contratado.
+
+5. Preço
+
+Art. 23 = compatibilidade com mercado + bancos públicos + quantidade + escala + local.
+Três fornecedores = uma das possibilidades, não dogma universal.
+
+6. Orçamento sigiloso
+
+justificado + quantitativos não escondidos + controles acessam + maior desconto exige preço estimado/máximo no edital.
+
+7. Riscos
+
+análise identifica/trata; matriz aloca.
+Matriz obrigatória: obras e serviços de grande vulto, integrada, semi-integrada.
+
+8. Parcelamento
+
+viável tecnicamente + vantajoso economicamente + favorece competição, ponderando escala, gestão e integração.
+
+9. Marca e amostra
+
+Marca pode ser indicada de forma excepcional e formalmente justificada.
+Amostra/prova de conceito: previsão no edital + justificativa; se na fase de julgamento/lances, provisoriamente vencedor.
+
+10. Estratégia
+
+Não decore escolhas isoladas. Pergunte sempre se objeto, mercado, preço, riscos, parcelamento, modalidade, julgamento, disputa e execução formam um desenho coerente.
+
+---
+
+Checklist final do aluno
+
+• [ ] Sei explicar o que torna a fase preparatória diferente da fase externa.
+• [ ] Sei dizer por que o PCA não é obrigação universal diretamente extraída do art. 12, VII.
+• [ ] Reconstruo os 11 incisos do art. 18 por lógica.
+• [ ] Sei os 13 elementos do ETP e os 5 mínimos.
+• [ ] Diferencio ETP, TR, anteprojeto, PB e PE.
+• [ ] Sei quem elabora projetos na integrada e semi-integrada.
+• [ ] Não reduzo pesquisa de preços a três cotações.
+• [ ] Sei os limites do orçamento sigiloso.
+• [ ] Diferencio análise e matriz de riscos.
+• [ ] Identifico quando matriz é obrigatória.
+• [ ] Diferencio parcelamento e fracionamento indevido.
+• [ ] Sei as hipóteses centrais de indicação de marca.
+• [ ] Sei a regra de amostra/prova de conceito na fase de julgamento.
+• [ ] Relaciono sustentabilidade ao ciclo de vida.
+• [ ] Consigo explicar por que a estratégia precisa ser integrada.
+
+---
+
+Encerramento do M15
+
+O planejamento é o ponto em que a Administração transforma uma necessidade pública em uma contratação defensável. Quanto melhor a fase preparatória, menor a chance de especificação inadequada, orçamento irreal, restrição competitiva, risco mal distribuído e contrato incapaz de gerar o resultado pretendido.
+
+Próximo módulo pedagógico: M16 — Licitações: procedimento e modalidades. Ali serão aprofundados divulgação do edital, apresentação de propostas/lances, julgamento, habilitação, recursos e encerramento, sem necessidade de repetir o conteúdo de planejamento consolidado aqui.
+
+3. 10 QUESTÕES INTERNAS — CONTEÚDO COMPLETO
+
+Questão 1 — FÁCIL
+
+A fase preparatória da licitação, segundo a Lei 14.133/2021,
+
+A) inicia-se somente após a publicação do edital.
+B) caracteriza-se pelo planejamento e deve considerar o PCA, sempre que elaborado, e as leis orçamentárias.
+C) limita-se à elaboração do orçamento estimado.
+D) corresponde à fase de apresentação de propostas e lances.
+E) dispensa análise de aspectos mercadológicos.
+
+Gabarito: B. A fase preparatória é a fase de planejamento e deve compatibilizar-se com o PCA, sempre que elaborado, e com as leis orçamentárias, abordando fatores técnicos, mercadológicos e de gestão.
+
+Questão 2 — FÁCIL
+
+O núcleo mínimo do ETP previsto no art. 18, §2º, corresponde aos incisos
+
+A) I, II, III, IV e V.
+B) I, IV, VI, VIII e XIII.
+C) II, V, VII, IX e XII.
+D) I, VI, VII, X e XI.
+E) IV, V, VIII, IX e XIII.
+
+Gabarito: B. São os cinco mínimos: necessidade, quantidades, estimativa do valor, justificativa do parcelamento ou não e conclusão sobre a adequação da contratação. Os demais elementos, se não contemplados, exigem justificativa.
+
+Questão 3 — FÁCIL
+
+Sobre o orçamento sigiloso, assinale a correta.
+
+A) O sigilo elimina a necessidade de orçamento prévio.
+B) O sigilo também prevalece perante os órgãos de controle.
+C) Pode ser adotado sem motivação.
+D) Pode ter caráter sigiloso desde que justificado, sem ocultar quantitativos e informações necessárias à elaboração das propostas.
+E) No critério de maior desconto, o preço estimado jamais constará do edital.
+
+Gabarito: D. O art. 24 exige justificativa, preserva informações necessárias à proposta e impede a oposição do sigilo aos controles. No maior desconto, o preço estimado ou máximo aceitável constará do edital.
+
+Questão 4 — FÁCIL
+
+Na pesquisa direta com fornecedores, quando essa técnica do art. 23, §1º, IV, for utilizada,
+
+A) basta consultar um fornecedor habitual.
+B) devem ser consultados exatamente dois fornecedores.
+C) exige-se no mínimo três fornecedores, com solicitação formal, justificativa da escolha e atualidade das cotações nos termos legais.
+D) ela substitui todas as demais fontes de pesquisa.
+E) só pode ser utilizada em obras de engenharia.
+
+Gabarito: C. A pesquisa direta é uma das técnicas legais, não a única; exige no mínimo três fornecedores, justificativa da escolha e cotações dentro da janela legal.
+
+Questão 5 — MÉDIA
+
+Um órgão já identificou o problema público e comparou alternativas. Agora precisa detalhar o objeto de um serviço, requisitos, modelo de execução e gestão, critérios de medição/pagamento, forma de seleção e estimativa de valor. O documento mais compatível com essa finalidade é
+
+A) o ETP, porque ETP e TR são sinônimos.
+B) o termo de referência.
+C) a matriz de riscos.
+D) o PCA.
+E) a ata de registro de preços.
+
+Gabarito: B. O ETP estuda o problema e a solução; o TR transforma a solução de bens/serviços em objeto contratável e estrutura sua execução, gestão e seleção.
+
+Questão 6 — MÉDIA
+
+A matriz de alocação de riscos será obrigatória, nos termos da Lei 14.133/2021,
+
+A) em toda e qualquer licitação.
+B) apenas quando a Administração desejar manter o orçamento sigiloso.
+C) em obras e serviços de grande vulto ou quando adotados os regimes de contratação integrada e semi-integrada.
+D) somente em compras de bens comuns.
+E) apenas se houver audiência pública.
+
+Gabarito: C. Essa é a hipótese do art. 22, §3º. Fora dela, a matriz pode ser cabível, mas não se transforma automaticamente em obrigação universal.
+
+Questão 7 — MÉDIA
+
+Na fase de julgamento das propostas ou lances, a exigência de amostra ou prova de conceito,
+
+A) pode recair indistintamente sobre todos os licitantes, ainda que sem previsão editalícia.
+B) é sempre proibida.
+C) depende de previsão no edital e justificativa; nessa fase, restringe-se ao licitante provisoriamente vencedor.
+D) só pode ocorrer depois da assinatura do contrato.
+E) substitui a prova de qualidade do produto similar.
+
+Gabarito: C. A Lei admite amostra/prova de conceito em momentos determinados; na fase de julgamento/lances, a exigência restringe-se ao provisoriamente vencedor.
+
+Questão 8 — MÉDIA
+
+Assinale a alternativa correta sobre contratação integrada e semi-integrada, no recorte de planejamento.
+
+A) Na integrada, a Administração entrega projeto básico completo e o contratado faz apenas o executivo.
+B) Na semi-integrada, inexiste projeto básico da Administração.
+C) Na integrada, a Administração trabalha a partir do anteprojeto e o contratado desenvolve projeto básico e executivo; na semi-integrada, a Administração fornece projeto básico e o contratado elabora o executivo.
+D) Os dois regimes são idênticos.
+E) Em ambos é vedada matriz de riscos.
+
+Gabarito: C. Essa é a distinção estrutural relevante ao M15. O rito e demais consequências procedimentais permanecem para o módulo próprio.
+
+Questão 9 — DIFÍCIL
+
+Um órgão pretende adquirir solução divisível. O estudo mostra que a divisão amplia a competição, mas a separação excessiva causaria perda significativa de economia de escala e elevaria os custos de gestão contratual. A decisão juridicamente mais adequada é
+
+A) parcelar obrigatoriamente, pois a divisibilidade sempre prevalece.
+B) jamais parcelar, pois toda divisão constitui fracionamento indevido.
+C) decidir motivadamente sobre o parcelamento, ponderando viabilidade técnica, vantagem econômica, escala, gestão e integração do objeto.
+D) dividir a contratação até que cada parcela fique abaixo de limites legais.
+E) transferir a decisão aos fornecedores.
+
+Gabarito: C. Parcelamento é técnica de planejamento, não automatismo. A análise deve demonstrar por que a divisão ou a contratação conjunta produz melhor resultado, sem segmentação artificial para escapar do regime jurídico.
+
+Questão 10 — DIFÍCIL
+
+A Administração planeja licitação pelo critério de maior desconto. Pretende manter o orçamento estimado sigiloso e negar seu acesso ao controle interno até o encerramento do certame. À luz da Lei 14.133/2021,
+
+A) ambas as decisões são corretas.
+B) o sigilo é possível sem justificativa, mas o controle interno tem acesso.
+C) o orçamento não pode ser elaborado previamente.
+D) a estratégia é incompatível com a lei: o sigilo não prevalece perante os órgãos de controle e, no maior desconto, o preço estimado ou máximo aceitável deve constar do edital.
+E) o maior desconto torna facultativa a estimativa de preços.
+
+Gabarito: D. A questão combina os dois limites clássicos do art. 24: acesso dos órgãos de controle e divulgação do preço estimado/máximo aceitável no critério de maior desconto.

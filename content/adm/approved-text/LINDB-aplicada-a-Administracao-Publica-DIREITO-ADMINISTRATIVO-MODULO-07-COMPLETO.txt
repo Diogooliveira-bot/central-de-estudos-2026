@@ -1,0 +1,592 @@
+﻿LINDB aplicada à Administração Pública
+DIREITO ADMINISTRATIVO · MÓDULO 07 · COMPLETO
+
+DIREITO ADMINISTRATIVOMÓDULO 07
+
+Apostila de estudo · nível Analista
+
+LINDB aplicada à Administração Pública
+
+Consequências, invalidação, dificuldades reais, transição, confiança, consensualidade, responsabilidade e segurança jurídica — arts. 20 a 30 da LINDB com o Decreto 9.830/2019.
+
+Base conferida em 17/09/2026: redação vigente da LINDB no Planalto, especialmente arts. 20–30, e Decreto 9.830/2019. Jurisprudência oficial usada somente onde agrega à prova: STF, ADIs 6.421 e 6.428, e linha de aplicação do TCU sobre erro grosseiro. Materiais TEC encontrados na Biblioteca foram utilizados apenas para calibrar cobertura e padrão de cobrança, sem presumir caderno pelo número do arquivo.
+
+Como estudar este módulo
+
+Pense na LINDB pública como uma camada de qualidade da decisão estatal: primeiro identifique quem decide; depois, se há invalidação, mudança de orientação, sanção, compromisso, compensação ou responsabilização; por fim aplique o artigo correspondente.
+
+contexto→consequências→motivação→proporcionalidade→segurança jurídica
+
+Regra de ouro: a LINDB não substitui a legalidade por conveniência. Ela exige que a aplicação do Direito Público seja concreta, motivada, proporcional e previsível.
+
+SESSÃO 01
+
+LINDB no Direito Público: lógica, finalidade e limites
+
+Entenda primeiro
+
+A Lei 13.655/2018 acrescentou os arts. 20 a 30 à LINDB para disciplinar como autoridades administrativas, controladoras e judiciais devem decidir questões de direito público. O eixo comum é reduzir decisões abstratas, retrospectivas e descontextualizadas, sem enfraquecer a legalidade.
+
+Regra jurídica
+
+Os novos dispositivos exigem motivação concreta, consideração das consequências previsíveis, respeito ao contexto da gestão, proteção da confiança, transição quando necessária, consensualidade com requisitos, individualização da responsabilização e instrumentos de uniformização.
+
+Consequencialismo responsável: consequências práticas entram na fundamentação; não autorizam afastar a lei por conveniência. A decisão continua juridicamente vinculada.
+
+Exemplo administrativo
+
+Se um órgão de controle identifica ilegalidade em contrato essencial, não basta dizer “ato ilegal = nulo”. Deve explicar consequências e, quando cabível, como regularizar ou modular efeitos sem impor perdas anormais.
+
+LINDB pública exige | LINDB pública não autoriza
+Motivação concreta e contextualizada | Decisão contra texto legal válido por mera conveniência
+Proporcionalidade, previsibilidade e segurança jurídica | Imunidade do gestor ou tolerância automática a ilegalidade
+
+☐ Check manual — sei explicar por que os arts. 20–30 não substituem a legalidade.
+
+SESSÃO 02
+
+Art. 20 — valores abstratos, consequências práticas e motivação
+
+Entenda primeiro
+
+O art. 20 combate decisões que invocam conceitos muito abertos — como interesse público, moralidade ou eficiência — sem demonstrar como a conclusão funciona no caso concreto.
+
+Regra jurídica
+
+Nas esferas administrativa, controladora e judicial, não se decidirá com base em valores jurídicos abstratos sem considerar as consequências práticas. A motivação deve demonstrar necessidade e adequação da medida ou da invalidação, inclusive diante das alternativas possíveis.
+
+Decreto 9.830/2019
+
+O Decreto define valores jurídicos abstratos como normas com alto grau de indeterminação e abstração. O decisor deve apontar apenas as consequências que, com atuação diligente, consiga razoavelmente vislumbrar; não se exige adivinhação do futuro.
+
+Art. 20 | Art. 21
+Controla a fundamentação baseada em valores abstratos. | Disciplina especificamente a decisão que invalida ato, contrato, ajuste, processo ou norma.
+Exige consequências práticas + necessidade + adequação + alternativas. | Exige consequências jurídicas e administrativas + regularização proporcional quando cabível.
+
+Como cai na FCC
+
+A banca pode trocar “considerar consequências” por “decidir conforme as consequências”. A primeira fórmula é correta; a segunda sugere que a consequência substitui o direito, o que é falso.
+
+Pegadinha: o art. 20 não proíbe princípios ou valores abstratos. Ele proíbe que sejam usados de modo autossuficiente, sem análise concreta das consequências.
+
+☐ Check manual — diferencio consideração de consequências de abandono da legalidade.
+
+SESSÃO 03
+
+Art. 21 — invalidação, efeitos e regularização
+
+Regra jurídica
+
+A decisão administrativa, controladora ou judicial que decretar a invalidação de ato, contrato, ajuste, processo ou norma administrativa deve indicar expressamente suas consequências jurídicas e administrativas.
+
+Quando for o caso, deve indicar condições para regularização proporcional e equânime, sem prejuízo aos interesses gerais e sem impor aos atingidos ônus ou perdas anormais ou excessivos pelas peculiaridades do caso.
+
+Decreto 9.830/2019
+
+O art. 4º permite, consideradas as consequências para Administração e administrado, restringir efeitos da declaração de invalidade ou estabelecer início posterior de sua eficácia. A modulação busca mitigar ônus ou perdas anormais ou excessivos.
+
+Invalidação | Preservação de efeitos
+Reconhece vício jurídico e enfrenta sua correção. | Pode ocorrer por modulação/regularização quando juridicamente cabível.
+Não desaparece por causa das consequências. | Não transforma ato ilegal em legal; organiza efeitos da decisão.
+
+Conexão com M3
+
+A LINDB complementa a autotutela: a Administração continua podendo anular atos ilegais, mas a decisão deve ser motivada também quanto aos efeitos e à segurança jurídica.
+
+Prova: “decretou a invalidade” + “deve indicar” = dever de explicitar consequências. “Poderá ignorar consequências porque há ilegalidade” = errado.
+
+☐ Check manual — sei explicar por que art. 21 trata dos efeitos da invalidação, não da dispensa de anulação.
+
+SESSÃO 04
+
+Art. 22 — dificuldades reais do gestor e dosimetria de sanções
+
+Regra jurídica
+
+Na interpretação de normas sobre gestão pública, consideram-se obstáculos e dificuldades reais do gestor e exigências das políticas públicas a seu cargo, sem prejuízo dos direitos dos administrados. Na análise de regularidade da conduta ou validade de atos, devem ser consideradas as circunstâncias práticas que impuseram, limitaram ou condicionaram a ação.
+
+Sanções
+
+Devem ser considerados natureza e gravidade da infração, danos à Administração, agravantes, atenuantes e antecedentes. Sanções já aplicadas ao agente devem ser consideradas na dosimetria das demais sanções de mesma natureza relativas ao mesmo fato.
+
+Ilegalidade | Dificuldade real do gestor
+Continua podendo existir e ser reconhecida. | Integra o contexto de interpretação e responsabilização.
+Não some por falta de recursos ou pressão operacional. | Pode influenciar juízo de regularidade, culpabilidade e proporcionalidade.
+
+Pegadinha: dificuldade real ≠ salvo-conduto. O próprio art. 22 preserva os direitos dos administrados.
+
+☐ Check manual — lembro os cinco vetores do art. 22, §2º.
+
+SESSÃO 05
+
+Art. 23 — nova interpretação e regime de transição
+
+Regra jurídica
+
+Se decisão administrativa, controladora ou judicial estabelecer interpretação ou orientação nova sobre norma de conteúdo indeterminado, impondo novo dever ou novo condicionamento de direito, deverá prever regime de transição quando ele for indispensável ao cumprimento proporcional, equânime e eficiente, sem prejuízo aos interesses gerais.
+
+Decreto 9.830/2019
+
+Considera nova interpretação a que altera entendimento anterior consolidado. Quando cabível, o regime deve indicar destinatários, medidas de adaptação, prazo e modo de cumprimento.
+
+Art. 23 — transição | Art. 24 — revisão
+Olha para a implementação futura de orientação nova. | Olha para validade de situação formada sob orientação anterior.
+Pressupõe novo dever ou condicionamento e necessidade de adaptação. | Veda invalidação de situação plenamente constituída só por mudança posterior de orientação geral.
+
+FCC: regime de transição não é automático em toda mudança interpretativa; é exigido quando indispensável nas condições do art. 23.
+
+☐ Check manual — diferencio transição (art. 23) de proteção da situação constituída (art. 24).
+
+SESSÃO 06
+
+Art. 24 — revisão de validade e orientação geral da época
+
+Regra jurídica
+
+Na revisão da validade de ato, contrato, ajuste, processo ou norma administrativa cuja produção já se completou, devem ser consideradas as orientações gerais da época. É vedado declarar inválida situação plenamente constituída apenas com base em mudança posterior de orientação geral.
+
+O que é orientação geral?
+
+Interpretações e especificações contidas em atos públicos gerais; jurisprudência judicial ou administrativa majoritária; e prática administrativa reiterada e de amplo conhecimento público.
+
+Decreto
+
+A proteção não impede, por si só, a suspensão de efeitos futuros de relação ainda em curso. O ponto central é evitar retroatividade interpretativa destrutiva sobre situação plenamente constituída conforme padrão geral então vigente.
+
+Orientação vigente à época | Orientação posterior
+Serve como parâmetro para revisar validade do ato já concluído. | Não pode, sozinha, invalidar situação plenamente constituída.
+Protege confiança legitimamente formada. | Pode orientar efeitos futuros quando juridicamente cabível.
+
+☐ Check manual — sei definir orientação geral e explicar o limite da mudança posterior.
+
+SESSÃO 07
+
+Art. 26 — compromisso administrativo
+
+Entenda primeiro
+
+O art. 26 institucionaliza solução consensual para eliminar irregularidade, incerteza jurídica ou situação contenciosa na aplicação do direito público, inclusive em matéria de licença.
+
+Requisitos
+
+A autoridade poderá celebrar compromisso após oitiva do órgão jurídico e, quando for o caso, consulta pública, desde que presentes razões de relevante interesse geral e observada a legislação aplicável. O compromisso só produz efeitos após publicação oficial.
+
+Deve buscar solução proporcional, equânime, eficiente e compatível com os interesses gerais; não pode conferir desoneração permanente de dever ou condicionamento de direito reconhecido por orientação geral; deve prever claramente obrigações, prazo e sanções em caso de descumprimento.
+
+Decreto 9.830/2019
+
+No âmbito federal, detalha também fiscalização, fundamentos de fato e de direito e eficácia de título executivo extrajudicial, além de instrução técnica e jurídica do processo.
+
+Compromisso — art. 26 | Compensação — art. 27
+Solução consensual para irregularidade, incerteza ou contencioso. | Medida destinada a equilibrar benefício indevido ou prejuízo anormal/injusto.
+Tem requisitos materiais e procedimentais próprios. | Exige motivação e prévia oitiva sobre cabimento, forma e valor.
+
+Pegadinha: compromisso não é acordo livre. A lei impõe finalidade, interesse geral, oitiva jurídica, publicidade e conteúdo mínimo.
+
+☐ Check manual — consigo listar finalidade, requisitos e limites do compromisso.
+
+SESSÃO 08
+
+Art. 27 — compensação
+
+Regra jurídica
+
+A decisão do processo nas esferas administrativa, controladora ou judicial poderá impor compensação por benefícios indevidos ou prejuízos anormais ou injustos resultantes do processo ou da conduta dos envolvidos.
+
+A decisão será motivada e as partes serão previamente ouvidas sobre cabimento, forma e, se for o caso, valor. Para prevenir ou regular a compensação, pode ser celebrado compromisso processual.
+
+Por que existe?
+
+Para evitar soluções desequilibradas: alguém não deve reter benefício indevido, nem suportar prejuízo anormal ou injusto sem que a decisão enfrente a necessidade de recomposição.
+
+Prova: a compensação é possibilidade jurídica, não efeito automático de todo processo. Exige motivação e contraditório específico.
+
+☐ Check manual — lembro que oitiva prévia alcança cabimento, forma e eventualmente valor.
+
+SESSÃO 09
+
+Art. 28 — dolo, erro grosseiro e responsabilidade pessoal
+
+Regra jurídica
+
+O agente público responde pessoalmente por suas decisões ou opiniões técnicas em caso de dolo ou erro grosseiro. A norma não converte todo erro administrativo em responsabilidade pessoal.
+
+Erro grosseiro no Decreto 9.830/2019
+
+É erro manifesto, evidente e inescusável, praticado com culpa grave, caracterizado por ação ou omissão com elevado grau de negligência, imprudência ou imperícia. Deve ser comprovado no processo de responsabilização.
+
+O mero nexo causal com resultado danoso não basta. A complexidade da matéria e das atribuições deve ser considerada. O valor elevado do dano, isoladamente, não caracteriza dolo ou erro grosseiro. A adoção de opinião técnica pelo decisor não transfere responsabilidade automaticamente.
+
+Dolo | Erro grosseiro | Mero erro
+Conduta consciente e intencional, inclusive nas formas juridicamente reconhecidas. | Culpa grave: falha manifesta, evidente e inescusável. | Equívoco simples, divergência razoável ou falha sem gravidade qualificada.
+Autoriza responsabilidade pessoal nos termos legais. | Autoriza responsabilidade pessoal se comprovado. | Não satisfaz, por si, o art. 28.
+
+STF — ponto essencial
+
+Nas ADIs 6.421 e 6.428, o STF julgou constitucional o art. 28 da LINDB e os arts. 12 e 14 do Decreto 9.830/2019. A tese reconhece que imprudência, negligência e imperícia integram a ideia de erro grosseiro quando efetivamente graves.
+
+TCU — linha de aplicação
+
+O Tribunal de Contas da União aplica o erro grosseiro como grave inobservância do dever de cuidado, aproximando-o da culpa grave e avaliando a conduta no caso concreto à luz do padrão de diligência esperado e das dificuldades reais existentes.
+
+Não confunda: art. 28 trata da responsabilidade pessoal do agente por decisões/opiniões técnicas. Não elimina a responsabilidade objetiva do Estado perante o terceiro lesado prevista no art. 37, §6º, da Constituição.
+
+☐ Check manual — sei diferenciar dolo, erro grosseiro, mero erro e responsabilidade estatal.
+
+SESSÃO 10
+
+Art. 29 — consulta pública antes de atos normativos
+
+Regra jurídica
+
+Em qualquer órgão ou Poder, a edição de atos normativos por autoridade administrativa, salvo os de mera organização interna, poderá ser precedida de consulta pública para manifestação de interessados, preferencialmente por meio eletrônico, e as contribuições deverão ser consideradas na decisão.
+
+A convocação deve conter a minuta do ato normativo e fixar prazo e demais condições da consulta, respeitadas regras legais e regulamentares específicas.
+
+Consulta pública | Decisão final
+Abre participação e recolhe contribuições. | Continua pertencendo à autoridade competente.
+Contribuições devem ser consideradas. | Considerar não significa acolher todas as sugestões.
+
+Pegadinha clássica: a LINDB diz “poderá ser precedida”, não “deverá sempre ser precedida”. E exclui atos de mera organização interna do dispositivo.
+
+☐ Check manual — não transformo consulta pública em requisito universal obrigatório.
+
+SESSÃO 11
+
+Art. 30 — segurança jurídica e uniformização
+
+Regra jurídica
+
+As autoridades públicas devem atuar para aumentar a segurança jurídica na aplicação das normas, inclusive por regulamentos, súmulas administrativas e respostas a consultas.
+
+Esses instrumentos terão caráter vinculante em relação ao órgão ou entidade a que se destinam até ulterior revisão.
+
+Instrumento do art. 30 | Função
+Regulamentos | Conferem concretude e previsibilidade à aplicação normativa.
+Súmulas administrativas | Uniformizam entendimentos recorrentes.
+Respostas a consultas | Estabilizam orientação institucional para casos abrangidos.
+
+Segurança jurídica | Imobilismo administrativo
+Exige coerência, previsibilidade e mudança responsável. | Seria impedir qualquer evolução interpretativa.
+Admite revisão de orientação com disciplina de efeitos. | Não é objetivo da LINDB.
+
+☐ Check manual — lembro os três exemplos expressos do art. 30 e o caráter vinculante interno.
+
+SESSÃO 12
+
+Decreto 9.830/2019 — o que realmente complementa a LINDB
+
+Motivação
+
+O Decreto exige contextualização dos fatos quando cabível, indicação de fundamentos de mérito e jurídicos e congruência argumentativa entre normas e fatos. Admite motivação por concordância com notas técnicas, pareceres, informações, decisões ou propostas anteriores.
+
+Consequências e invalidação
+
+Limita o dever de previsão às consequências que o decisor diligente consegue vislumbrar; reforça necessidade, adequação, proporcionalidade, razoabilidade e alternativas; admite modulação dos efeitos da invalidação.
+
+Transição e orientação da época
+
+Define nova orientação como alteração de entendimento anterior consolidado e detalha destinatários, medidas de adaptação, prazo e modo do regime de transição. Reafirma que mudança posterior não invalida situação plenamente constituída.
+
+Compromisso e TAG
+
+Detalha o compromisso do art. 26 e prevê termo de ajustamento de gestão no controle interno federal para corrigir falhas e aprimorar procedimentos, vedando-o quando houver dano ao erário praticado com dolo ou erro grosseiro.
+
+Responsabilização
+
+Define erro grosseiro, exige prova, afasta inferência pelo mero nexo causal ou pelo valor do dano e determina que a complexidade da matéria seja considerada. Também estabelece que o controle não pode substituir a atribuição do administrador no exercício regular de suas competências.
+
+Camada de prova: o Decreto regulamenta os arts. 20–30 no âmbito federal. Em questão literal, diferencie o texto da LINDB do detalhamento regulamentar.
+
+☐ Check manual — sei apontar o que vem da LINDB e o que é detalhamento do Decreto.
+
+SESSÃO 13
+
+Quadro-mestre: LINDB, controle e atos administrativos
+
+LINDB e controle da Administração
+
+Órgãos de controle e Judiciário continuam exercendo controle de legalidade e responsabilização, mas devem decidir com contexto, consequências, proporcionalidade, segurança jurídica e respeito à atribuição administrativa. Controle retrospectivo não deve fingir que o agente conhecia fatos, recursos ou interpretações que só apareceram depois.
+
+LINDB e atos administrativos
+
+O M3 fornece a base de anulação, convalidação e efeitos. A LINDB adiciona disciplina de motivação consequencial, proteção da confiança, orientação da época e modulação/regularização quando juridicamente cabíveis.
+
+Comparação | Núcleo | Erro de prova
+Art. 20 × 21 | 20 = valores abstratos e consequências; 21 = invalidação e seus efeitos. | Tratar ambos como simples análise econômica.
+Art. 23 × 24 | 23 = transição para orientação nova; 24 = revisão conforme orientação da época. | Dizer que são sinônimos.
+Art. 26 × 27 | 26 = compromisso; 27 = compensação. | Imaginar que toda compensação exige compromisso.
+Dolo × erro grosseiro | Dolo = elemento volitivo; erro grosseiro = culpa grave qualificada. | Equiparar qualquer culpa a erro grosseiro.
+Mudança × confiança | Orientação pode mudar, mas efeitos devem respeitar transição e situações constituídas. | Transformar segurança jurídica em congelamento interpretativo.
+Decisão adm. × controladora × judicial | Arts. 20, 21, 23, 24 e 27 alcançam as três esferas nos termos legais. | Limitar a LINDB somente ao Executivo.
+
+Decisão administrativa × controladora × judicial
+
+Administrativa | Controladora | Judicial
+Aplica a LINDB ao decidir, invalidar, sancionar, pactuar e uniformizar no exercício da função administrativa. | Ao controlar, deve considerar contexto, consequências, proporcionalidade e limites da competência administrativa. | Ao decidir questões de Direito Público alcançadas pelos dispositivos, também observa as exigências expressamente dirigidas à esfera judicial.
+
+Segurança jurídica × proteção da confiança
+
+Segurança jurídica | Proteção da confiança
+Valor sistêmico de estabilidade, coerência e previsibilidade na aplicação do Direito. | Dimensão voltada à tutela de expectativas legitimamente formadas diante de orientações e práticas estatais.
+Aparece fortemente nos arts. 23, 24 e 30. | É especialmente perceptível na proibição de retroatividade interpretativa destrutiva do art. 24.
+
+Fórmula de prova: contexto não elimina dever; consequência não elimina legalidade; segurança não elimina mudança; consenso não elimina requisitos; erro grosseiro não se presume.
+
+☐ Check manual — consigo reconstruir o mapa dos arts. 20–30 sem consultar a lei.
+
+O que decorar
+
+Art. 20: valor abstrato → consequências práticas; motivação → necessidade, adequação e alternativas.
+
+Art. 21: invalidação → consequências jurídicas e administrativas; regularização proporcional quando cabível.
+
+Art. 22: dificuldades reais + exigências da política pública + direitos dos administrados; dosimetria contextual.
+
+Art. 23: nova orientação sobre norma indeterminada + novo dever/condicionamento → transição quando indispensável.
+
+Art. 24: revisão considera orientação geral da época; mudança posterior não invalida situação plenamente constituída.
+
+Art. 25: vetado.
+
+Art. 26: compromisso para irregularidade, incerteza ou contencioso; oitiva jurídica; interesse geral; publicação.
+
+Art. 27: compensação por benefício indevido ou prejuízo anormal/injusto; motivação + oitiva prévia.
+
+Art. 28: responsabilidade pessoal = dolo ou erro grosseiro.
+
+Art. 29: ato normativo administrativo poderá ter consulta pública; exceto mera organização interna.
+
+Art. 30: segurança jurídica por regulamentos, súmulas administrativas e respostas a consultas; vinculação até revisão.
+
+Artigos para ler no dia da prova
+
+LINDB — arts. 20 a 30Leitura integral, com atenção aos verbos: deverá, poderá, serão considerados, é vedado. Decreto 9.830/2019Priorize arts. 2º–12, 13, 14 e 16.
+
+REVISÃO 5–10 MIN
+
+Mapa dos arts. 20–30
+
+20 — consequência.Valor abstrato exige análise prática; motivação compara alternativas.
+
+21 — invalidação.Explique efeitos e organize regularização proporcional.
+
+22 — realidade.Contexto do gestor e dosimetria individualizada.
+
+23 — transição.Nova orientação + novo dever/condicionamento + indispensabilidade.
+
+24 — confiança.Julgue o passado com as orientações gerais do seu tempo.
+
+25 — vetado.
+
+26 — compromisso.Consenso com requisitos, interesse geral e publicação.
+
+27 — compensação.Benefício indevido ou prejuízo anormal/injusto; ouvir partes.
+
+28 — responsabilidade.Dolo ou erro grosseiro; culpa grave comprovada.
+
+29 — participação.Consulta pública possível para atos normativos, salvo organização interna.
+
+30 — estabilidade.Uniformização vinculante interna até revisão.
+
+15 erros que não posso cometer
+
+• Dizer que consequências práticas autorizam decisão contra a lei.
+• Dizer que o art. 20 proíbe princípios abstratos.
+• Esquecer que o art. 21 exige consequências da invalidação.
+• Transformar dificuldades reais do gestor em imunidade.
+• Aplicar regime de transição automaticamente a toda mudança interpretativa.
+• Confundir art. 23 com art. 24.
+• Usar orientação posterior para invalidar situação plenamente constituída conforme orientação geral da época.
+• Tratar compromisso do art. 26 como acordo sem requisitos.
+• Tratar compensação como automática.
+• Equiparar erro simples a erro grosseiro.
+• Presumir erro grosseiro apenas pelo tamanho do dano.
+• Confundir responsabilidade pessoal do agente com responsabilidade objetiva do Estado.
+• Dizer que consulta pública é obrigatória para todo ato normativo.
+• Esquecer a exceção dos atos de mera organização interna no art. 29.
+• Dizer que instrumentos do art. 30 jamais podem ser revistos.
+
+Fechamento: a LINDB pública não protege a ilegalidade; ela qualifica a decisão estatal. A prova tende a explorar exatamente os limites entre legalidade, contexto, consequências, confiança e responsabilização.
+
+10 QUESTÕES INTERNAS — CONTEÚDO COMPLETO
+
+Questão 1 — FÁCIL
+
+Nos termos do art. 20 da LINDB, é correto afirmar que a decisão fundada em valores jurídicos abstratos:
+
+A) é proibida em qualquer hipótese.
+
+B) dispensa análise de consequências quando houver interesse público.
+
+C) exige consideração das consequências práticas da decisão.
+
+D) só pode ser proferida pelo Judiciário.
+
+E) depende sempre de consulta pública.
+
+Gabarito: C.
+
+Explicação: O art. 20 não proíbe valores abstratos; exige que suas consequências práticas sejam consideradas e que a motivação demonstre necessidade e adequação.
+
+Questão 2 — FÁCIL
+
+O art. 25 da LINDB, no bloco referente à aplicação do Direito Público:
+
+A) disciplina a consulta pública.
+
+B) foi vetado.
+
+C) trata do compromisso.
+
+D) trata da compensação.
+
+E) define erro grosseiro.
+
+Gabarito: B.
+
+Explicação: O art. 25 está vetado. Consulta pública é art. 29; compromisso, art. 26; compensação, art. 27; erro grosseiro é detalhado pelo Decreto no contexto do art. 28.
+
+Questão 3 — FÁCIL
+
+Segundo o art. 28 da LINDB, a responsabilidade pessoal do agente por decisões ou opiniões técnicas exige:
+
+A) qualquer culpa.
+
+B) apenas prejuízo ao erário.
+
+C) dolo ou erro grosseiro.
+
+D) decisão anulada.
+
+E) ação regressiva prévia.
+
+Gabarito: C.
+
+Explicação: A literalidade do art. 28 exige dolo ou erro grosseiro.
+
+Questão 4 — FÁCIL
+
+Entre os instrumentos expressamente citados no art. 30 para aumentar a segurança jurídica estão:
+
+A) decretos legislativos, resoluções judiciais e TACs.
+
+B) regulamentos, súmulas administrativas e respostas a consultas.
+
+C) apenas súmulas vinculantes do STF.
+
+D) portarias, sentenças e contratos.
+
+E) apenas regulamentos.
+
+Gabarito: B.
+
+Explicação: É a tríade expressamente indicada no art. 30.
+
+Questão 5 — MÉDIA
+
+Uma nova orientação sobre norma indeterminada impõe requisito adicional para atividade já exercida pelos administrados. A adaptação imediata é materialmente impossível. A solução compatível com a LINDB é:
+
+A) aplicar retroativamente o novo requisito.
+
+B) ignorar a nova orientação para sempre.
+
+C) prever regime de transição se indispensável ao cumprimento proporcional, equânime e eficiente.
+
+D) invalidar todos os atos passados.
+
+E) exigir compensação automática.
+
+Gabarito: C.
+
+Explicação: É a hipótese típica do art. 23: nova orientação, norma indeterminada, novo dever/condicionamento e indispensabilidade da transição.
+
+Questão 6 — MÉDIA
+
+Ao revisar benefício concedido anos atrás conforme orientação administrativa geral então vigente, a Administração não pode:
+
+A) considerar a orientação vigente à época.
+
+B) analisar efeitos futuros de relação em curso.
+
+C) invalidar situação plenamente constituída apenas porque a orientação mudou posteriormente.
+
+D) alterar orientação para casos futuros.
+
+E) motivar a revisão.
+
+Gabarito: C.
+
+Explicação: Essa é a vedação central do art. 24.
+
+Questão 7 — MÉDIA
+
+Sobre o compromisso do art. 26 da LINDB, assinale a correta:
+
+A) produz efeitos desde a assinatura, mesmo sem publicação.
+
+B) pode conceder desoneração permanente de dever reconhecido por orientação geral.
+
+C) dispensa órgão jurídico quando houver urgência.
+
+D) deve prever obrigações, prazo e sanções por descumprimento.
+
+E) só pode ser celebrado pelo Judiciário.
+
+Gabarito: D.
+
+Explicação: O compromisso deve trazer obrigações, prazo e sanções; depende de oitiva jurídica, relevante interesse geral e só produz efeitos após publicação.
+
+Questão 8 — MÉDIA
+
+No art. 29 da LINDB, a consulta pública:
+
+A) é obrigatória para todo ato normativo.
+
+B) é vedada para atos de organização interna, mas obrigatória para os demais.
+
+C) pode preceder ato normativo, salvo os de mera organização interna, e suas manifestações devem ser consideradas.
+
+D) vincula a autoridade a acolher a maioria das contribuições.
+
+E) deve ser sempre presencial.
+
+Gabarito: C.
+
+Explicação: A lei usa 'poderá', admite preferência pelo meio eletrônico e exclui atos de mera organização interna.
+
+Questão 9 — DIFÍCIL
+
+Órgão de controle conclui que contrato administrativo contém vício relevante. A solução mais alinhada aos arts. 20 e 21 é:
+
+A) manter o contrato porque consequências sempre prevalecem sobre a legalidade.
+
+B) invalidá-lo sem examinar alternativas, pois a ilegalidade torna irrelevantes os efeitos.
+
+C) fundamentar a decisão, considerar consequências e alternativas, indicar efeitos jurídicos/administrativos e, quando cabível, condições proporcionais de regularização.
+
+D) substituir a Administração na escolha de política pública e refazer o contrato.
+
+E) exigir apenas demonstração de prejuízo financeiro.
+
+Gabarito: C.
+
+Explicação: Integra as exigências dos arts. 20 e 21 sem transformar consequências em licença para ilegalidade.
+
+Questão 10 — DIFÍCIL
+
+Agente adota parecer técnico posteriormente considerado incorreto. O dano é alto, mas a matéria era complexa e não há prova de dolo, culpa grave ou conluio. À luz do art. 28 e do Decreto 9.830/2019:
+
+A) o dano alto basta para erro grosseiro.
+
+B) a adoção do parecer transfere automaticamente ao decisor a responsabilidade do parecerista.
+
+C) o mero nexo causal basta.
+
+D) a responsabilização pessoal não se presume; é necessária prova de dolo ou erro grosseiro, consideradas as circunstâncias.
+
+E) toda imperícia caracteriza erro grosseiro.
+
+Gabarito: D.
+
+Explicação: O Decreto afasta automatismos: dano alto, nexo causal e adoção de parecer não bastam. O STF reconheceu que imprudência, negligência e imperícia só entram no erro grosseiro quando efetivamente graves.

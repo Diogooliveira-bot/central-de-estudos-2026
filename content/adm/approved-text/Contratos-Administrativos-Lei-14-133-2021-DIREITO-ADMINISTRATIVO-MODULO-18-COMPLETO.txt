@@ -1,0 +1,1560 @@
+﻿Contratos Administrativos — Lei 14.133/2021
+DIREITO ADMINISTRATIVO · MÓDULO 18 · COMPLETO
+
+DIREITO ADMINISTRATIVO — M18
+
+Contratos Administrativos — Lei 14.133/2021
+
+Central de Estudos — TJ-CE / Analista — padrão FCC
+Modo: OFFLINE · não publicar
+Base normativa conferida: Lei 14.133/2021 consolidada, redação consultada em fonte oficial em 18/09/2026.
+Escopo central: arts. 89 a 154, com conexão contratual indispensável aos arts. 155 a 163.
+Atualização relevante para 2026: valores da Lei 14.133 atualizados pelo Decreto 12.807/2025; no art. 95, § 2º, o limite atualizado do contrato verbal de pequenas compras ou de serviços de pronto pagamento é R$ 13.098,41.
+Regulamentação federal usada apenas como apoio operacional: Decreto 11.246/2022, com alterações do Decreto 13.031/2026, para distinguir gestão e fiscalização. Não transformar esse decreto federal em norma geral obrigatória de todos os entes.
+
+Fronteira do módulo. M14 a M17 já estudaram licitações, planejamento, procedimento/modalidades e contratação direta. Aqui o foco começa no vínculo contratual: como ele se formaliza, é garantido, executado, fiscalizado, alterado, reequilibrado, recebido, pago, sancionado e extinto.
+
+Como estudar o M18
+
+Use um único fluxo mental:
+
+FORMAR → GARANTIR → ALOCAR RISCOS → DEFINIR DURAÇÃO → EXECUTAR/FISCALIZAR → ALTERAR/REEQUILIBRAR → RECEBER/PAGAR → SANCIONAR/EXTINGUIR → TRATAR NULIDADE/CONTROVÉRSIA.
+
+A FCC costuma errar a alternativa por troca de instituto vizinho. Em contratos, as trocas mais comuns são: cláusula necessária × prerrogativa; reajuste × repactuação × revisão; fiscal × gestor; prorrogação comum × prorrogação automática de contrato por escopo; alteração qualitativa × quantitativa; impedimento × inidoneidade; extinção × nulidade.
+
+---
+
+SESSÃO 01 — Conceito, regime e formalização
+
+Entenda primeiro
+
+Nem todo contrato firmado pela Administração é, em sentido doutrinário, um contrato administrativo. A expressão “contratos da Administração” é gênero. Dentro dele, há ajustes submetidos predominantemente a regime privado e há contratos em que a Administração atua sob regime de direito público, com prerrogativas próprias voltadas à realização do interesse público.
+
+Na Lei 14.133/2021, o art. 89 fixa o núcleo: os contratos regem-se por suas cláusulas e pelos preceitos de direito público, aplicando-se supletivamente os princípios da teoria geral dos contratos e as disposições de direito privado. Portanto, direito privado não desaparece, mas entra de modo subsidiário, sem neutralizar o regime público.
+
+O contrato administrativo é bilateral quanto à formação do vínculo, mas não é um contrato privado entre iguais em todos os aspectos. A lei entrega à Administração certas prerrogativas — as chamadas cláusulas exorbitantes — e, ao mesmo tempo, protege direitos do contratado, sobretudo a equação econômico-financeira, contraditório, ampla defesa e indenizações legalmente devidas.
+
+Regra jurídica
+
+O art. 89 exige que o contrato indique partes e representantes, finalidade, ato autorizativo, número do processo da licitação ou da contratação direta e sujeição à Lei 14.133 e às cláusulas contratuais. As condições de execução devem ser claras e precisas, compatíveis com o edital e a proposta vencedora ou, na contratação direta, com o ato autorizativo e a respectiva proposta.
+
+Convocação, assinatura e remanescente — art. 90
+
+A adjudicação não dispensa a etapa de formação do vínculo. A Administração convoca regularmente o licitante vencedor para assinar o termo de contrato ou aceitar/retirar o instrumento equivalente dentro do prazo e das condições do edital, sob pena de decadência do direito à contratação, sem prejuízo das sanções cabíveis.
+
+O prazo de convocação pode ser prorrogado uma vez, por igual período, quando a solicitação ocorrer durante o prazo originalmente fixado e decorrer de motivo justificado aceito pela Administração.
+
+Se o vencedor não assinar ou não aceitar/retirar o instrumento no prazo:
+
+• a Administração pode convocar os licitantes remanescentes, na ordem de classificação, para contratar nas condições propostas pelo adjudicatário;
+• se nenhum aceitar essas condições, a Administração pode, observados o valor estimado e sua atualização, negociar com os remanescentes, na ordem de classificação, para obter preço melhor, ainda que acima do preço do adjudicatário;
+• frustrada a negociação, pode adjudicar e celebrar nas condições ofertadas pelos remanescentes, preservada a ordem classificatória, nos termos legais.
+
+A recusa injustificada do adjudicatário caracteriza descumprimento total da obrigação assumida, sujeitando-o às penalidades cabíveis e à imediata perda da garantia de proposta, quando exigida.
+
+A Lei também disciplina a convocação de remanescentes para assumir o remanescente de obra, serviço ou fornecimento após a extinção do contrato, observada a ordem de classificação e a sistemática legal de condições e negociação. Para a FCC, o ponto central é não transformar a convocação de remanescentes em nova licitação automática.
+
+Nota de completude — art. 93
+
+Nos contratos que tenham por objeto projeto ou serviço técnico especializado, inclusive desenvolvimento de programa ou aplicação de internet, a lei disciplina a cessão à Administração de direitos patrimoniais relacionados ao produto contratado, ressalvadas as hipóteses legais, como atividades de pesquisa e desenvolvimento de caráter científico, tecnológico ou de inovação. É tema de menor incidência, mas pertence ao bloco de formalização e deve ser reconhecido em prova literal.
+
+A formalização segue quatro ideias:
+
+• Forma escrita e processo: contratos e aditamentos têm forma escrita, integram o processo da contratação e são divulgados em sítio eletrônico oficial. O sigilo é excepcional e depende das hipóteses legais de proteção da sociedade e do Estado.
+• Forma eletrônica admitida: contratos e aditamentos podem ser celebrados eletronicamente, observada a regulamentação aplicável.
+• Imóveis: contratos relativos a direitos reais sobre imóveis são formalizados por escritura pública, com divulgação eletrônica do teor.
+• Controle prévio à formalização ou prorrogação: a Administração verifica regularidade fiscal e consulta cadastros de sanções e certidões pertinentes antes de formalizar ou prorrogar a vigência.
+
+A divulgação no PNCP é condição de eficácia do contrato e dos aditamentos. Em regra, deve ocorrer em até 20 dias úteis da assinatura quando houver licitação e em até 10 dias úteis quando houver contratação direta. Nos contratos urgentes, a eficácia nasce com a assinatura, mas a publicação deve ocorrer nesses prazos, sob pena de nulidade. Em contratação de obras, a Administração também deve divulgar, em sítio eletrônico oficial, os quantitativos e preços unitários/totais contratados em até 25 dias úteis da assinatura e, em até 45 dias úteis da conclusão, os quantitativos executados e os preços praticados.
+
+O instrumento de contrato é obrigatório, salvo quando a lei permite instrumento equivalente, especialmente: dispensa por valor e compras com entrega imediata e integral sem obrigações futuras, inclusive de assistência técnica, independentemente do valor. Nesses casos podem aparecer carta-contrato, nota de empenho, autorização de compra, ordem de execução de serviço ou outro instrumento hábil, e as regras do art. 92 aplicam-se no que couber.
+
+Contrato verbal com a Administração é, como regra, nulo e sem efeito. A exceção é estreita: pequenas compras ou serviços de pronto pagamento dentro do valor legal atualizado. Para 2026, o Decreto 12.807/2025 atualizou o teto do art. 95, § 2º, para R$ 13.098,41. Esse valor é indexado e deve ser reconferido em exercícios futuros.
+
+Exemplo
+
+Um tribunal contrata manutenção de elevadores após pregão. O termo escrito é assinado, mas o órgão esquece de divulgá-lo no PNCP. O vínculo não deve ser tratado como “normalmente eficaz só porque foi assinado”: a divulgação é condição legal de eficácia, ressalvada a disciplina específica do contrato urgente.
+
+Outro exemplo: compra imediata de 50 cadeiras, com entrega integral e sem assistência futura. Mesmo que o contrato formal completo não seja utilizado, o instrumento equivalente deve documentar adequadamente o vínculo e incorporar, no que couber, as cláusulas necessárias.
+
+Compare — quadro 1: contrato da Administração × contrato administrativo
+
+Critério | Contrato da Administração em sentido amplo | Contrato administrativo
+Ideia | Gênero de ajustes contratuais celebrados pela Administração | Espécie submetida a regime predominantemente público
+Regime | Pode haver regime predominantemente privado, conforme o ajuste | Direito público, com aplicação supletiva do direito privado
+Posição da Administração | Pode atuar sem prerrogativas típicas de autoridade | Possui prerrogativas legais específicas
+Interesse | Sempre deve haver finalidade pública, ainda que o instrumento tenha traços privados | Finalidade pública vinculada ao regime administrativo
+Exemplo didático | Ajustes patrimoniais de feição privada, conforme lei | Obra, serviço, fornecimento regidos pela Lei 14.133
+FCC | Errado dizer que todo contrato da Administração é “contrato administrativo” em sentido doutrinário | Correto associar contrato administrativo a regime público e prerrogativas legais
+
+Como cai na FCC
+
+A FCC gosta de três formulações:
+
+• “O direito privado não se aplica aos contratos administrativos.” Errado. Aplica-se supletivamente.
+• “A divulgação no PNCP é mera publicidade sem efeito sobre a eficácia.” Errado. O art. 94 a trata como condição indispensável de eficácia.
+• “O instrumento de contrato pode sempre ser substituído por nota de empenho.” Errado. A substituição depende das hipóteses legais.
+
+Pegadinha
+
+Validade, existência e eficácia não são sinônimos. A lei pode exigir publicação como condição de eficácia sem transformar toda ausência de publicação no mesmo tipo de vício em qualquer contexto. Para prova literal, memorize a fórmula do art. 94: PNCP = condição indispensável de eficácia.
+
+O que decorar
+
+• Art. 89: direito público + direito privado supletivo.
+• Art. 91: forma escrita; forma eletrônica admitida; verificações antes de formalizar/prorrogar.
+• Art. 94: PNCP — 20 dias úteis licitação; 10 dias úteis contratação direta.
+• Art. 95: instrumento obrigatório, com duas grandes exceções.
+• Contrato verbal: regra de nulidade; exceção de pronto pagamento dentro do teto atualizado.
+
+O que levar para a prova
+
+Contrato administrativo não é contrato privado “com outro nome”. O núcleo da prova é: regime público, prerrogativas legais e preservação dos direitos do contratado.
+
+Check manual — sei explicar por que direito privado pode aparecer e, ao mesmo tempo, o contrato continuar submetido a regime público? ☐
+
+---
+
+SESSÃO 02 — Cláusulas necessárias e cláusulas exorbitantes
+
+Entenda primeiro
+
+Duas listas diferentes costumam ser confundidas. Cláusulas necessárias dizem o que o contrato deve disciplinar. Prerrogativas/cláusulas exorbitantes representam poderes especiais legalmente atribuídos à Administração. Uma cláusula sobre preço é necessária; a possibilidade legal de alteração unilateral em hipóteses delimitadas é prerrogativa.
+
+Regra jurídica — cláusulas necessárias
+
+O art. 92 contém dezenove incisos. Em vez de decorar uma lista sem lógica, agrupe-os:
+
+1. Identidade do objeto e fonte do vínculo
+
+• objeto e elementos característicos;
+• vinculação ao edital/proposta vencedora ou ao ato de contratação direta/proposta;
+• legislação aplicável, inclusive aos casos omissos;
+• regime de execução ou forma de fornecimento.
+
+2. Preço, medição e tempo
+
+• preço e condições de pagamento;
+• critérios, data-base e periodicidade do reajuste;
+• atualização monetária entre adimplemento e pagamento;
+• critérios e periodicidade de medição, quando cabíveis;
+• prazo de liquidação e pagamento;
+• prazos de início, etapas, conclusão, entrega, observação e recebimento definitivo.
+
+3. Orçamento, riscos e recomposição
+
+• crédito orçamentário;
+• matriz de riscos, quando cabível;
+• prazo para resposta a pedido de repactuação;
+• prazo para resposta a pedido de restabelecimento do equilíbrio econômico-financeiro.
+
+4. Garantia, qualidade e responsabilização
+
+• garantia contratual, quando exigida, inclusive garantia ligada a pagamento antecipado;
+• prazo de garantia mínima do objeto e manutenção/assistência técnica, quando cabível;
+• direitos e responsabilidades;
+• penalidades, multas e suas bases de cálculo.
+
+5. Condições pessoais e gestão
+
+• importação/câmbio, quando for o caso;
+• manutenção das condições de habilitação/qualificação durante a execução;
+• cumprimento de reserva legal de cargos;
+• modelo de gestão do contrato;
+• casos de extinção.
+
+Há ainda regra de foro da sede da Administração, ressalvadas hipóteses legais específicas, e obrigação de cláusula de reajuste independentemente da duração do contrato, com data-base vinculada ao orçamento estimado.
+
+Regra jurídica — prerrogativas
+
+O art. 104 assegura à Administração, em relação aos contratos regidos pela Lei 14.133, prerrogativas para:
+
+• modificar unilateralmente o contrato para melhor adequação às finalidades públicas, respeitados os direitos do contratado;
+• extinguir unilateralmente o contrato nas hipóteses legais;
+• fiscalizar a execução;
+• aplicar sanções motivadas pela inexecução total ou parcial;
+• ocupar provisoriamente bens móveis e imóveis e utilizar pessoal e serviços vinculados ao objeto quando houver risco à prestação de serviços essenciais ou necessidade de resguardar a apuração administrativa de faltas contratuais, inclusive após a extinção.
+
+As cláusulas econômico-financeiras e monetárias não podem ser alteradas sem prévia concordância do contratado. Se a Administração altera unilateralmente o contrato e isso muda encargos, deve recompor o equilíbrio.
+
+Exemplo
+
+A Administração percebe que, para obter a utilidade pública originalmente pretendida, precisa modificar uma especificação técnica. Pode existir alteração unilateral qualitativa, desde que juridicamente enquadrada e motivada. Mas não pode usar esse poder para deslocar ao contratado todo custo adicional: o equilíbrio econômico-financeiro deve ser recomposto quando houver aumento ou diminuição dos encargos.
+
+Compare — quadro 2: cláusulas necessárias × cláusulas exorbitantes
+
+Ponto | Cláusulas necessárias | Prerrogativas / exorbitantes
+Função | Estruturar direitos, deveres, prazos, preço, gestão e extinção | Conferir poderes especiais à Administração
+Fonte | Art. 92 e outras normas específicas | Principalmente art. 104 e capítulos correlatos
+Exemplo | preço, pagamento, garantia, matriz de risco, prazo | alteração unilateral, fiscalização, sanção, extinção unilateral
+Natureza | Conteúdo que o instrumento deve prever | Poderes decorrentes do regime legal, não de mera vontade privada
+Limite | Legalidade e aderência ao edital/proposta | Legalidade, motivação, processo, direitos do contratado e equilíbrio
+
+Como cai na FCC
+
+A banca troca “pode alterar unilateralmente nas hipóteses legais” por “pode alterar qualquer cláusula unilateralmente”. A segunda é falsa. O poder é juridicamente delimitado e não alcança livremente as cláusulas econômico-financeiras.
+
+Outra troca clássica: “fiscalizar” é prerrogativa da Administração; “modelo de gestão do contrato” é cláusula necessária. Ambos se relacionam, mas não são a mesma categoria.
+
+Pegadinha
+
+“Cláusula exorbitante” não significa “cláusula abusiva”. É uma prerrogativa admitida pelo regime público. Quando exercida fora dos limites legais, passa a haver ilegalidade — não uma “superprerrogativa”.
+
+O que decorar
+
+Mnemônico funcional: A-E-F-S-O — Alterar; Extinguir; Fiscalizar; Sancionar; Ocupar provisoriamente.
+
+O que levar para a prova
+
+Sempre pergunte: “a alternativa descreve conteúdo obrigatório do contrato ou poder especial da Administração?”. Essa pergunta elimina boa parte das pegadinhas.
+
+Check manual — consigo separar art. 92 de art. 104 sem misturar preço, garantia e sanção? ☐
+
+---
+
+SESSÃO 03 — Garantias contratuais e seguro-garantia com retomada
+
+Entenda primeiro
+
+Garantia contratual não é sinônimo de garantia de proposta, nem é automaticamente obrigatória em toda contratação. No regime dos arts. 96 a 102, a regra é: a autoridade competente poderá exigir garantia em obras, serviços e fornecimentos, desde que exista previsão no edital. Quando exigida, a escolha da modalidade, em regra, cabe ao contratado.
+
+Regra jurídica
+
+As modalidades legais são quatro:
+
+• caução em dinheiro ou em títulos da dívida pública que atendam aos requisitos legais;
+• seguro-garantia;
+• fiança bancária emitida por instituição autorizada;
+• título de capitalização custeado por pagamento único, com resgate pelo valor total.
+
+Quando a opção for seguro-garantia, o edital deve fixar prazo mínimo de 1 mês, contado da homologação e anterior à assinatura, para sua prestação.
+
+O seguro-garantia acompanha o prazo do contrato e suas alterações por endosso. Continua em vigor mesmo se o contratado deixar de pagar o prêmio. Em contratos contínuos, pode haver substituição da apólice na renovação/aniversário, desde que se mantenham condições e coberturas e não exista período descoberto.
+
+Percentuais
+
+• Regra: até 5% do valor inicial do contrato.
+• Pode chegar a 10%, com justificativa baseada em complexidade técnica e riscos.
+• Serviços e fornecimentos contínuos com vigência superior a 1 ano: usa-se o valor anual do contrato para calcular os percentuais.
+• Obras e serviços de engenharia de grande vulto: pode ser exigido seguro-garantia com cláusula de retomada de até 30% do valor inicial do contrato.
+
+O conceito de grande vulto tem valor legal periodicamente atualizado. Para 2026, o Decreto 12.807/2025 atualizou o art. 6º, XXII, para R$ 261.968.421,04.
+
+A garantia é liberada/restituída após fiel execução ou extinção por culpa exclusiva da Administração; se prestada em dinheiro, há atualização monetária.
+
+Nos termos do art. 101, os bens entregues pela Administração ao contratado para a execução do objeto e que fiquem sob sua guarda podem ser acrescidos à cobertura da garantia, reforçando a proteção patrimonial durante a execução.
+
+Seguro-garantia com cláusula de retomada
+
+A cláusula de retomada — “step-in” — aparece em contratos de grande vulto de obras e serviços de engenharia. A seguradora pode assumir a execução e concluir o objeto. Se efetivamente executa e conclui, fica isenta de pagar a importância segurada; se não assumir a execução, paga integralmente a importância segurada, nos termos legais.
+
+Não confunda: garantia de execução protege a Administração contra inadimplemento; a retomada é uma técnica especial que pode envolver a própria continuidade do objeto pela seguradora.
+
+Exemplo
+
+Contrato de obra de R$ 80 milhões, sem enquadramento como grande vulto. A Administração não pode simplesmente exigir garantia de 30% invocando “maior segurança”. O percentual especial de até 30% está vinculado à hipótese legal de grande vulto e ao seguro-garantia com cláusula de retomada.
+
+Compare — quadro 3: garantia comum × seguro-garantia com retomada
+
+Critério | Garantia contratual comum | Seguro-garantia com retomada
+Base | Arts. 96 a 101 | Arts. 99 e 102
+Objeto típico | Obras, serviços e fornecimentos | Obras e serviços de engenharia de grande vulto
+Percentual | até 5%; até 10% com justificativa | até 30% do valor inicial
+Modalidades | 4 modalidades legais | Seguro-garantia
+Retomada | Não é elemento necessário | Seguradora pode assumir/concluir o objeto
+FCC | “garantia é sempre obrigatória” = erro | “30% vale para qualquer obra” = erro
+
+Como cai na FCC
+
+Três trocas frequentes:
+
+• “A Administração escolhe sempre a modalidade.” Errado: quando exigida, a lei atribui ao contratado a opção dentre as modalidades legais.
+• “Garantia nunca supera 5%.” Errado: há 10% justificado e 30% no regime especial.
+• “Seguro deixa de existir se o prêmio não for pago.” Errado: a lei preserva sua vigência nessa situação.
+
+Pegadinha
+
+O percentual de 50% que você verá depois é de acréscimo em reforma de edifício ou equipamento, não de garantia. O percentual de 30% é o que se conecta à garantia especial de grande vulto.
+
+O que decorar
+
+5 → 10 → 30: padrão de garantia → complexidade/risco → grande vulto com retomada.
+
+O que levar para a prova
+
+Antes de responder questão de garantia, identifique quatro elementos: quem exige, quem escolhe a modalidade, base de cálculo e percentual.
+
+Check manual — consigo explicar quando aparecem 5%, 10% e 30%? ☐
+
+---
+
+SESSÃO 04 — Matriz de riscos e equilíbrio econômico-financeiro
+
+Entenda primeiro
+
+O equilíbrio econômico-financeiro é a relação original entre encargos assumidos pelo contratado e contraprestação devida pela Administração. A contratação não garante lucro imutável, mas protege a equação jurídica e econômica formada na origem contra determinados eventos juridicamente relevantes.
+
+A matriz de riscos muda a análise porque antecipa quem suportará certos eventos. Não é correto dizer: “se ocorreu fato extraordinário, sempre haverá recomposição”. Primeiro verifique se o risco foi validamente alocado ao contratado, à Administração ou compartilhado.
+
+Regra jurídica
+
+O art. 103 permite ao contrato identificar riscos previstos e presumíveis e distribuí-los. A alocação considera natureza do risco, beneficiário da prestação e capacidade de cada setor para gerenciá-lo. Riscos com cobertura de seguradoras são preferencialmente transferidos ao contratado.
+
+A matriz define o equilíbrio econômico-financeiro inicial em relação aos eventos supervenientes e orienta os pleitos posteriores. Quando contrato e matriz foram respeitados, as partes renunciam a pedidos de recomposição relativos aos riscos que assumiram, salvo, na disciplina do art. 103, § 5º, especialmente:
+
+• alterações unilaterais determinadas pela Administração nas hipóteses legais;
+• aumento ou redução superveniente de tributos diretamente pagos pelo contratado em decorrência do contrato.
+
+O art. 124, II, “d”, autoriza restabelecimento do equilíbrio por acordo quando houver força maior, caso fortuito, fato do príncipe ou fatos imprevisíveis — ou previsíveis de consequências incalculáveis — que inviabilizem a execução tal como pactuada, sempre respeitada a repartição objetiva de riscos.
+
+Áleas e fatos relevantes
+
+Álea ordinária
+
+Oscilações usuais e previsíveis do mercado, próprias da atividade empresarial. Em regra, são tratadas por reajuste/repactuação e pela própria precificação do contratado, conforme o caso.
+
+Álea extraordinária
+
+Eventos fora do risco ordinário, de efeitos relevantes e juridicamente enquadráveis. Pode abrir espaço para revisão/reequilíbrio, observada a matriz.
+
+Fato do príncipe
+
+Ato estatal geral, externo à relação contratual específica, que repercute significativamente na execução e pode integrar a hipótese de recomposição legal quando presentes os requisitos.
+
+Fato da Administração
+
+Conduta ou omissão da própria Administração contratante que incide diretamente sobre a execução — por exemplo, não liberar área de obra ou atrasar obrigações a seu cargo. Pode gerar efeitos como reequilíbrio, suspensão pelo contratado ou extinção, conforme a hipótese legal concreta.
+
+Força maior e caso fortuito
+
+Eventos impeditivos ou fortemente desorganizadores que não se confundem com simples dificuldade empresarial. O efeito depende da prova, da causalidade, do contrato e da alocação de riscos.
+
+Exemplo
+
+O contrato atribui expressamente ao contratado o risco de variação ordinária do preço de um insumo dentro de determinada faixa. O preço sobe nessa faixa. Não basta alegar “desequilíbrio” e transferir o custo ao Poder Público; a matriz foi justamente usada para precificar e alocar o risco.
+
+Agora suponha uma alteração unilateral determinada pela Administração que aumenta a quantidade de etapas técnicas e eleva os encargos. A própria lei manda preservar a equação inicial: o poder de alterar não é poder de empobrecer o contratado.
+
+Compare — quadro 4: risco ordinário × risco extraordinário × risco alocado
+
+Situação | Tratamento básico | Pergunta de prova
+Variação ordinária/previsível | Normalmente integra preço, reajuste ou repactuação | Era risco normal do negócio?
+Evento extraordinário enquadrável no art. 124, II, “d” | Pode justificar restabelecimento | Inviabilizou a execução tal como pactuada?
+Risco expressamente assumido na matriz | Em regra, suportado por quem o assumiu | A matriz atribuiu esse risco a quem?
+Alteração unilateral administrativa | Deve preservar equilíbrio | Os encargos aumentaram/diminuíram?
+Tributo superveniente com repercussão comprovada | Preço pode alterar para mais ou menos | Há impacto comprovado no preço?
+
+Como cai na FCC
+
+A FCC tende a apresentar uma causa verdadeira e um efeito absoluto falso. Exemplo: “força maior autoriza automaticamente qualquer revisão”. O correto exige análise de causalidade, relevância e matriz de riscos.
+
+Pegadinha
+
+Reequilibrar não é reajustar. Reequilíbrio/revisão reage a evento extraordinário juridicamente relevante. Reajuste lida com a variação ordinária prevista no contrato. A confusão será aprofundada na próxima sessão.
+
+O que decorar
+
+• Matriz = distribuição objetiva de riscos + parâmetro do equilíbrio inicial.
+• Risco assumido não vira, por simples ocorrência, conta da outra parte.
+• Alteração unilateral com mudança de encargos exige recomposição.
+• Fato do príncipe ≠ fato da Administração.
+
+O que levar para a prova
+
+Toda questão de equilíbrio deve ser resolvida em quatro passos: fato → causalidade → alocação do risco → instrumento de recomposição.
+
+Check manual — diante de um evento superveniente, eu verifico a matriz antes de concluir que existe direito à revisão? ☐
+
+---
+
+SESSÃO 05 — Reajuste, repactuação e revisão
+
+Entenda primeiro
+
+Este é um dos duelos mais importantes da FCC. Os três institutos preservam a equação econômica, mas não são sinônimos.
+
+• Reajuste em sentido estrito: atualização ordinária por índice previamente definido.
+• Repactuação: recomposição analítica de custos em serviços contínuos com dedicação exclusiva ou predominância de mão de obra.
+• Revisão/restabelecimento: resposta extraordinária a evento superveniente enquadrável na lei, sem depender da lógica anual de índice.
+
+Regra jurídica — reajuste
+
+O contrato deve conter cláusula de reajuste independentemente de sua duração, com data-base vinculada ao orçamento estimado. Podem existir índices específicos ou setoriais. Nos serviços contínuos sem dedicação exclusiva ou predominância de mão de obra, o reajuste em sentido estrito é a técnica ordinária, observado o interregno legal.
+
+O reajuste já previsto no contrato, quando apenas aplica a fórmula pactuada, pode ser registrado por apostila, sem necessidade de termo aditivo, porque não caracteriza alteração contratual substancial.
+
+Regra jurídica — repactuação
+
+Nos serviços contínuos com dedicação exclusiva ou predominância de mão de obra, o art. 135 determina repactuação mediante demonstração analítica da variação dos custos.
+
+A data se vincula:
+
+• à apresentação da proposta, para custos decorrentes do mercado;
+• ao acordo, convenção coletiva ou dissídio coletivo pertinente, para custos de mão de obra.
+
+A repactuação observa interregno mínimo de 1 ano, contado da apresentação da proposta ou da última repactuação. Pode ser parcelada quando componentes tenham anualidades distintas.
+
+Regra jurídica — revisão/restabelecimento
+
+O art. 124, II, “d”, trata da recomposição extraordinária em eventos como força maior, caso fortuito, fato do príncipe e fatos imprevisíveis ou previsíveis de consequências incalculáveis que inviabilizem a execução tal como pactuada, sempre respeitada a matriz de riscos.
+
+Aqui não há a mesma lógica de “esperar completar um ano” para só então proteger a equação, porque o fundamento é um evento extraordinário e superveniente. O que se exige é enquadramento jurídico, prova, nexo causal e impacto efetivo.
+
+Tributos e encargos legais
+
+O art. 134 determina alteração dos preços, para mais ou para menos, se, após a proposta, houver criação, alteração ou extinção de tributos ou encargos legais, ou disposição legal superveniente, com repercussão comprovada sobre os preços contratados.
+
+Compare — quadro 5: reajuste × repactuação × revisão
+
+Critério | Reajuste em sentido estrito | Repactuação | Revisão / restabelecimento
+Natureza | Ordinária | Ordinária, analítica | Extraordinária
+Fato gerador | Inflação/variação normal de custos medida por índice | Variação demonstrada dos componentes de custos | Evento excepcional com impacto imprevisível/incalculável ou hipóteses legais
+Técnica | Índice específico/setorial | Planilha/demonstração analítica | Prova do evento, causalidade e impacto
+Mão de obra | Não é técnica própria para custo laboral predominante | Típica de dedicação exclusiva/predominância de mão de obra | Pode haver fato extraordinário independente de estrutura de mão de obra
+Periodicidade | Regime anual do reajustamento | Interregno mínimo de 1 ano | Não depende de anualidade como condição material
+Instrumento | Pode ser apostilado quando previsto | Pode ser apostilada quando prevista | Em regra exige formalização adequada de recomposição
+Matriz de riscos | Pode coexistir | Pode coexistir | É decisiva para saber quem suporta o evento
+
+Exemplo
+
+Contrato de limpeza com dedicação exclusiva de mão de obra: nova convenção coletiva eleva salários. O caminho típico é repactuação, com demonstração analítica e observância das datas de anualidade.
+
+Contrato de manutenção sem predominância de mão de obra: o preço é atualizado anualmente por IPCA setorial previsto. É reajuste em sentido estrito.
+
+Enchente excepcional destrói acesso ao canteiro e impõe custos imprevisíveis, sem atribuição daquele risco ao contratado. Pode haver revisão, desde que provados os requisitos.
+
+Como cai na FCC
+
+Materiais FCC da Biblioteca repetem exatamente este duelo. A banca costuma descrever corretamente o instituto e trocar o nome na alternativa. Resolva pela característica, não pela palavra usada pelo enunciado.
+
+Pegadinha
+
+“Repactuação é qualquer revisão do preço” é falso. A palavra “repactuar” no português comum não deve apagar o sentido técnico legal.
+
+O que decorar
+
+Índice = reajuste. Planilha de custos + mão de obra = repactuação. Evento extraordinário = revisão.
+
+O que levar para a prova
+
+Não marque resposta sobre preço antes de identificar qual custo variou e por qual causa.
+
+Check manual — consigo resolver um caso prático dos três institutos sem depender de decorar a alternativa? ☐
+
+---
+
+SESSÃO 06 — Duração, vigência e prorrogação
+
+Entenda primeiro
+
+Na Lei 14.133, “contrato administrativo só pode durar até o fim do exercício financeiro” é uma regra ultrapassada. A lei trabalha com vários regimes de duração, conforme o objeto e a estrutura econômica do vínculo. A FCC explora exatamente essa variedade.
+
+A regra do art. 105 é: a duração será a prevista em edital; na contratação e em cada exercício deve existir disponibilidade de créditos orçamentários, e a previsão no plano plurianual deve ser observada quando a duração ultrapassar um exercício financeiro. A lei admite, portanto, contratos plurianuais.
+
+Regra jurídica — mapa dos arts. 105 a 114
+
+Serviços e fornecimentos contínuos — art. 106
+
+A Administração pode celebrar contrato inicial de até 5 anos, desde que a autoridade ateste a vantagem econômica da contratação plurianual. No início e em cada exercício deve ser atestada a existência de créditos e a vantagem da manutenção.
+
+A Administração pode extinguir o contrato, sem ônus, se não houver créditos para continuidade ou se ele deixar de ser vantajoso. Essa extinção ocorre apenas na próxima data de aniversário e não pode ocorrer em prazo inferior a 2 meses, contado da referida data.
+
+A regra também se aplica a aluguel de equipamentos e utilização de programas de informática.
+
+Prorrogações sucessivas — art. 107
+
+Serviços e fornecimentos contínuos podem ser sucessivamente prorrogados até a vigência máxima de 10 anos, se houver previsão no edital e a autoridade competente atestar que condições e preços permanecem vantajosos. É permitida negociação ou extinção sem ônus para qualquer parte.
+
+Hipóteses especiais de contratação direta — art. 108
+
+Determinadas hipóteses taxativamente referidas pelo art. 108 podem ter contratos de até 10 anos. Este M18 registra apenas a duração; as hipóteses materiais já pertencem ao M17.
+
+Serviço público em monopólio — art. 109
+
+Quando a Administração for usuária de serviço público oferecido em regime de monopólio, a vigência pode ser por prazo indeterminado, desde que a cada exercício se comprovem os créditos orçamentários.
+
+Contrato que gera receita ou contrato de eficiência — art. 110
+
+• sem investimento: até 10 anos;
+• com investimento: até 35 anos, quando houver benfeitorias permanentes custeadas exclusivamente pelo contratado e revertidas ao patrimônio público ao final.
+
+Contrato por escopo — art. 111
+
+Se o contrato prevê a conclusão de escopo predefinido e o objeto não termina dentro da vigência originalmente fixada, a vigência é automaticamente prorrogada até a conclusão.
+
+Se a não conclusão decorre de culpa do contratado, ele é constituído em mora e pode sofrer sanções; a Administração pode, ainda, optar pela extinção e adotar medidas para continuidade.
+
+Lei especial — art. 112
+
+Os prazos da Lei 14.133 não revogam prazos previstos em legislação especial. Concessões e PPPs, por exemplo, possuem disciplina própria; aqui basta saber que a Lei 14.133 não “apaga” a lei especial.
+
+Fornecimento + serviço associado — art. 113
+
+A vigência máxima resulta da soma do prazo de fornecimento inicial/entrega da obra com o prazo de operação e manutenção, sendo este último limitado a 5 anos da data de recebimento do objeto inicial, permitida prorrogação nos termos do art. 107.
+
+Sistemas estruturantes de TI — art. 114
+
+Contrato de operação continuada de sistemas estruturantes de tecnologia da informação pode ter vigência máxima de 15 anos.
+
+Compare — quadro 6: duração por tipo de contrato
+
+Hipótese | Prazo / regime | Condição-chave
+Regra geral | o previsto no edital | créditos a cada exercício; PPA se ultrapassar 1 exercício
+Serviço/fornecimento contínuo — contratação inicial | até 5 anos | vantagem econômica + créditos + vantagem anual
+Serviço/fornecimento contínuo — prorrogações | até 10 anos no total | previsão no edital + vantajosidade
+Hipóteses especiais do art. 108 | até 10 anos | apenas situações taxativamente remetidas pelo artigo
+Serviço público monopolizado | prazo indeterminado | créditos orçamentários a cada exercício
+Geração de receita / eficiência sem investimento | até 10 anos | regime do art. 110
+Geração de receita / eficiência com investimento | até 35 anos | investimento permanente custeado pelo contratado e reversível
+Escopo predefinido | prorrogação automática se objeto não concluído | sem prejuízo da mora/sanção se culpa do contratado
+Fornecimento + serviço associado | entrega + operação/manutenção de até 5 anos | operação/manutenção pode ser prorrogada na forma do art. 107
+Operação continuada de sistemas estruturantes de TI | até 15 anos | hipótese específica do art. 114
+
+Exemplo
+
+Um órgão contrata serviço contínuo por 5 anos e, ao final, conclui que o preço continua vantajoso. Havendo previsão editalícia e demais requisitos, pode prorrogar sucessivamente até o limite decenal. Não se trata de “renovação automática”.
+
+Em uma obra por escopo, o prazo termina antes da conclusão. O art. 111 prevê prorrogação automática da vigência, mas isso não perdoa atraso imputável à contratada: se houver culpa, surgem mora e sanções e a Administração pode optar pela extinção.
+
+Como cai na FCC
+
+Cadernos FCC da Biblioteca cobram três pontos repetidamente:
+
+• serviço público em monopólio pode ter prazo indeterminado;
+• contrato por escopo pode ter prorrogação automática;
+• sistemas estruturantes de TI chegam a 15 anos, não 10.
+
+Pegadinha
+
+Não transporte a ideia de “prazo indeterminado é sempre proibido”. A Lei 14.133 tem exceção expressa no art. 109.
+
+Outra: “contratos contínuos prorrogam automaticamente”. Errado. A automaticidade do art. 111 refere-se ao contrato por escopo quando o objeto não terminou.
+
+O que decorar
+
+5 → 10 → 15 → 35 ajuda a organizar: contínuo inicial 5; contínuo máximo 10; sistema estruturante TI 15; receita/eficiência com investimento 35. E existe ainda prazo indeterminado no monopólio.
+
+O que levar para a prova
+
+Primeiro classifique o objeto; só depois procure o prazo. Em duração, a classificação do contrato vale mais do que uma regra única.
+
+Check manual — sei apontar a hipótese legal de cada número 5, 10, 15 e 35? ☐
+
+---
+
+SESSÃO 07 — Execução, gestor e fiscalização
+
+Entenda primeiro
+
+Assinar o contrato não encerra a contratação; começa a fase em que os riscos jurídicos se materializam. A execução deve ser fiel, documentada e acompanhada. A fiscalização não é uma formalidade decorativa: o fiscal registra ocorrências, determina correções dentro de sua competência e escala decisões aos superiores.
+
+Regra jurídica — execução fiel
+
+O art. 115 determina execução fiel pelas partes, conforme contrato e lei, com responsabilidade pelas consequências da inexecução total ou parcial. É proibido à Administração retardar imotivadamente obra, serviço ou parcela, inclusive por mudança de governo ou de dirigente.
+
+Em caso de impedimento, paralisação ou suspensão do contrato, o cronograma de execução é prorrogado automaticamente pelo tempo correspondente, com anotação por simples apostila.
+
+Ao longo da execução, o contratado deve cumprir as reservas legais de cargos e, quando solicitado, demonstrá-las.
+
+Fiscalização — art. 117
+
+A execução é acompanhada e fiscalizada por um ou mais fiscais, representantes da Administração especialmente designados, ou seus substitutos. É possível contratar terceiros para assistir e subsidiar os fiscais com informações, mas isso não terceiriza a competência pública nem transfere a responsabilidade final do agente.
+
+O fiscal:
+
+• registra em meio próprio as ocorrências da execução;
+• determina as providências necessárias para regularizar faltas ou defeitos, dentro de sua competência;
+• comunica aos superiores, em tempo hábil, situações que exigem decisão além de sua alçada;
+• recebe apoio dos órgãos de assessoramento jurídico e controle interno para prevenção de riscos.
+
+Gestor × fiscal
+
+A Lei 14.133 usa a gestão contratual como parte do modelo obrigatório do contrato. No âmbito federal, o Decreto 11.246/2022 — alterado em 2026 pelo Decreto 13.031 — detalha a divisão funcional. Esse decreto é regulamentação federal, não uma regra geral automaticamente imposta a qualquer Estado ou Município, mas é excelente referência conceitual.
+
+Em termos didáticos:
+
+• gestor: coordena o contrato de forma global, articula fiscalizações, acompanha providências administrativas, prazos, alterações, prorrogações, reequilíbrio, pagamentos e encerramento;
+• fiscal: acompanha a execução material e/ou administrativa no cotidiano, mede, registra, verifica conformidade, aponta falhas e subsidia decisões.
+
+No regime federal podem existir fiscalização técnica, administrativa e setorial, mantendo-se distinção das atividades e atuação preventiva, rotineira e sistemática.
+
+A segregação de funções orienta a distribuição das tarefas de gestão, fiscalização, decisão e controle para reduzir concentração indevida de poderes e conflitos de interesse. Ela não significa criar burocracia artificial: significa evitar que a mesma pessoa concentre, sem necessidade e sem controles, etapas incompatíveis do ciclo contratual. A configuração concreta depende da estrutura e da regulamentação do ente.
+
+Outros agentes da execução
+
+Preposto — art. 118
+
+O contratado deve manter preposto aceito pela Administração no local da obra ou serviço para representá-lo na execução, quando exigível.
+
+Correção de defeitos — art. 119
+
+O contratado deve reparar, corrigir, remover, reconstruir ou substituir, às suas expensas, aquilo em que se verifiquem vícios, defeitos ou incorreções resultantes da execução ou dos materiais empregados.
+
+Danos — art. 120
+
+O contratado responde por danos causados diretamente à Administração ou a terceiros em razão da execução. A fiscalização ou acompanhamento pela Administração não exclui nem reduz essa responsabilidade.
+
+Encargos — art. 121
+
+O contratado é responsável pelos encargos trabalhistas, previdenciários, fiscais e comerciais resultantes da execução. Nos serviços contínuos com dedicação exclusiva de mão de obra, a lei prevê regime especial: a Administração pode responder solidariamente por encargos previdenciários e subsidiariamente por trabalhistas se comprovada falha de fiscalização, além de poder adotar mecanismos preventivos como conta vinculada, pagamento pelo fato gerador e garantias para verbas trabalhistas.
+
+Decisão sobre pleitos — art. 123
+
+A Administração deve decidir explicitamente solicitações e reclamações relacionadas à execução, salvo requerimentos manifestamente impertinentes, protelatórios ou sem interesse para boa execução. Depois de concluída a instrução, o prazo geral é de 1 mês, prorrogável motivadamente por igual período, salvo prazo legal ou contratual específico.
+
+Compare — quadro 7: gestor × fiscal
+
+Critério | Gestor do contrato | Fiscal do contrato
+Visão | Global/gerencial | Acompanhamento da execução
+Foco | Coordenação, providências administrativas, integração das fiscalizações | Conformidade técnica/administrativa, ocorrências, medições, falhas
+Atua em | prazos, prorrogações, alterações, encaminhamentos, pagamento, encerramento | execução cotidiana, verificação e registros
+Pode haver mais de um? | Conforme modelo de gestão/regulamento | Sim; a lei fala em um ou mais fiscais
+Apoio externo | Pode receber apoio institucional | Terceiro pode assistir e subsidiar, sem substituí-lo
+FCC | gestor ≠ “fiscal mais graduado” | fiscal ≠ mero observador sem dever de registrar
+
+Exemplo
+
+O fiscal constata repetida entrega de material abaixo da especificação. Ele registra a ocorrência, determina correção dentro de sua competência e comunica ao gestor/superior o quadro que pode demandar sanção ou alteração de providências. Não deve “aplicar qualquer sanção por conta própria” se a competência sancionadora pertencer a outra autoridade.
+
+Como cai na FCC
+
+A banca transforma dever em faculdade: “a fiscalização pode deixar de registrar defeitos se a contratada prometer corrigir informalmente”. Errado. O registro formal é elemento essencial do acompanhamento.
+
+Outra armadilha: “a contratação de terceiro para apoiar o fiscal transfere a responsabilidade da fiscalização”. Errado.
+
+Pegadinha
+
+Fiscalização intensa não transforma a Administração em garantidora universal do contratado nem afasta a responsabilidade do executor por defeitos e danos.
+
+O que decorar
+
+• Art. 115: execução fiel + responsabilidade de cada parte.
+• Art. 117: um ou mais fiscais; registrar, corrigir, comunicar.
+• Art. 120: fiscalização não exclui responsabilidade por danos.
+• Art. 123: decisão após instrução = 1 mês, prorrogável uma vez por igual período.
+
+O que levar para a prova
+
+Pense no fiscal como “olhos documentados da Administração” e no gestor como “coordenação do ciclo de execução”.
+
+Check manual — consigo descrever uma irregularidade e dizer quem registra, quem coordena e quem decide? ☐
+
+---
+
+SESSÃO 08 — Subcontratação, encargos e alterações subjetivas
+
+Entenda primeiro
+
+Subcontratar parte do objeto não é o mesmo que transferir integralmente o contrato. A contratada principal continua vinculada e responsável. Também não se deve concluir que fusão, cisão, incorporação ou alteração social provocam automaticamente a extinção. Na Lei 14.133, o ponto decisivo é se a mudança restringe a capacidade de concluir o contrato ou viola requisitos do vínculo.
+
+Subcontratação — art. 122
+
+O contratado pode subcontratar partes da obra, do serviço ou do fornecimento até o limite autorizado pela Administração. Deve apresentar documentação que comprove a capacidade técnica do subcontratado, sujeita à avaliação e juntada ao processo.
+
+Regulamento ou edital podem:
+
+• vedar a subcontratação;
+• restringi-la;
+• fixar condições.
+
+É vedada a subcontratação quando a pessoa física ou os dirigentes da pessoa jurídica subcontratada tiverem vínculos incompatíveis com dirigentes do órgão ou agentes que atuaram na licitação, gestão ou fiscalização, inclusive cônjuge, companheiro ou parentesco até o terceiro grau nas hipóteses descritas pela lei. A proibição deve constar do edital.
+
+A contratada principal preserva as responsabilidades contratuais e legais. Portanto, “subcontratei = deixei de responder” é fórmula errada.
+
+Encargos e responsabilidade
+
+A regra do art. 121 é que o contratado responde por encargos trabalhistas, previdenciários, fiscais e comerciais. A Lei 14.133 constrói mecanismos específicos para serviços com dedicação exclusiva de mão de obra e condiciona eventual responsabilidade subsidiária trabalhista da Administração à comprovação de falha na fiscalização.
+
+Esse desenho reforça a importância de um acompanhamento real, e não meramente formal.
+
+Alteração subjetiva e reorganização societária
+
+O art. 137, III, trata como motivo de extinção a alteração social ou modificação da finalidade ou da estrutura da empresa que restrinja sua capacidade de concluir o contrato. A palavra decisiva é “restrinja”. A lei não diz que qualquer mudança societária extingue automaticamente o vínculo.
+
+O art. 136, III, ainda mostra que simples alteração da razão ou denominação social pode ser registrada por apostila, pois não caracteriza alteração contratual substancial.
+
+Fusão, cisão e incorporação devem ser analisadas por seus efeitos concretos: sucessão jurídica, manutenção dos requisitos de habilitação e qualificação relevantes, capacidade de executar, compatibilidade com edital/contrato, ausência de fraude e proteção do interesse público. Não existe autorização para presumir que “mudou o CNPJ ou a estrutura = contrato acabou”. Tampouco se pode aceitar reorganização que resulte em empresa sem capacidade ou que burle sanções, restrições ou o procedimento competitivo.
+
+O antigo material da Lei 8.666/1993 é útil apenas para perceber a evolução histórica. Não importe automaticamente para a Lei 14.133 fórmulas literais do regime antigo.
+
+Compare — quadro 8: subcontratação × cessão integral × reorganização
+
+Situação | Efeito básico | Ponto de controle
+Subcontratação parcial | pode ser admitida nos limites autorizados | edital/regulamento, capacidade técnica e impedimentos
+Transferência integral informal do objeto | não se presume permitida | vínculo original, responsabilidade e regras do edital/contrato
+Mudança de razão/denominação social | pode ser registrada por apostila | identidade/sucessão da pessoa jurídica
+Fusão/cisão/incorporação | não gera extinção automática por simples rótulo | sucessão + capacidade + habilitação relevante + ausência de fraude/prejuízo
+Alteração societária que restringe capacidade de concluir | motivo legal de extinção | art. 137, III, com motivação e defesa
+
+Exemplo
+
+Uma empresa contratada muda apenas sua denominação social. Não há razão para tratar isso como novo contrato; a lei admite registro por apostila.
+
+Em outro caso, ocorre cisão e a sociedade que permanece responsável perde toda equipe técnica indispensável ao objeto. Aqui há fundamento para avaliar se a alteração restringiu a capacidade de concluir o contrato, com processo e motivação.
+
+Como cai na FCC
+
+A alternativa errada costuma usar palavras absolutas: “qualquer alteração societária extingue o contrato” ou “subcontratação transfere à subcontratada a responsabilidade contratual”. As duas generalizações são inadequadas.
+
+Pegadinha
+
+Não use regra histórica da Lei 8.666 como se fosse redação atual. A Lei 14.133 escolheu linguagem própria no art. 137, III.
+
+O que decorar
+
+• Subcontratação = partes, dentro do limite autorizado.
+• Capacidade técnica do subcontratado deve ser comprovada.
+• Contratada principal mantém responsabilidade.
+• Alteração social só é motivo de extinção quando restringe capacidade de concluir.
+
+O que levar para a prova
+
+Em reorganização, troque a pergunta “houve fusão/cisão/incorporação?” por “o sucessor mantém condições jurídicas e materiais de cumprir o contrato sem burlar o sistema?”.
+
+Check manual — consigo explicar por que reorganização societária não produz extinção automática? ☐
+
+---
+
+SESSÃO 09 — Alterações contratuais: unilaterais e consensuais
+
+Entenda primeiro
+
+Alterar contrato administrativo não significa reescrever livremente a contratação. O art. 124 separa duas vias:
+
+• unilateral, determinada pela Administração, nas hipóteses legais;
+• por acordo entre as partes, quando a mudança depende de consenso.
+
+A primeira expressa prerrogativa pública; a segunda respeita a bilateralidade de matérias que a Administração não pode impor unilateralmente.
+
+Regra jurídica — alterações unilaterais
+
+A Administração pode alterar unilateralmente:
+
+• qualitativamente: modificação do projeto ou das especificações para melhor adequação técnica aos objetivos;
+• quantitativamente: modificação do valor contratual por acréscimo ou diminuição quantitativa do objeto, nos limites legais.
+
+A mudança deve ser justificada, respeitar a identidade do objeto e preservar o equilíbrio econômico-financeiro.
+
+Regra jurídica — alterações consensuais
+
+Por acordo entre as partes, o art. 124, II, admite:
+
+• substituição da garantia de execução quando conveniente;
+• modificação do regime de execução da obra/serviço ou do modo de fornecimento diante da inaplicabilidade técnica dos termos originários;
+• modificação da forma de pagamento por circunstância superveniente, mantido o valor inicial atualizado e sem antecipação indevida sem contraprestação;
+• restabelecimento do equilíbrio econômico-financeiro nas hipóteses extraordinárias do art. 124, II, “d”.
+
+Equilíbrio e formalização
+
+Se a alteração unilateral aumenta ou reduz encargos, o art. 130 exige restabelecimento do equilíbrio no mesmo termo aditivo.
+
+O art. 132 estabelece que o termo aditivo é condição para executar as prestações modificadas. Em necessidade justificada de antecipação dos efeitos, a formalização deve ocorrer em até 1 mês.
+
+Nem todo registro demanda aditivo. O art. 136 permite apostila, entre outros casos, para:
+
+• reajuste ou repactuação já previstos;
+• atualizações/compensações/penalizações financeiras ligadas às condições de pagamento;
+• alteração da razão ou denominação social;
+• empenho de dotações orçamentárias.
+
+Compare — quadro 9: unilateral × consensual
+
+Critério | Alteração unilateral | Alteração consensual
+Fundamento | Prerrogativa administrativa legal | Acordo de vontades em hipótese legal
+Hipóteses centrais | projeto/especificações; quantitativo do objeto | garantia; regime/modo; pagamento; reequilíbrio extraordinário
+Contratado precisa concordar? | não, se validamente enquadrada e dentro dos limites | sim
+Equilíbrio | Administração deve recompor se encargos mudarem | pode ser o próprio objeto do acordo
+Limite | lei, motivação, percentuais, identidade do objeto | hipótese legal, interesse público e formalização
+
+Compare — quadro 10: qualitativa × quantitativa
+
+Critério | Qualitativa | Quantitativa
+O que muda | projeto ou especificações | quantidade do objeto e, por consequência, valor
+Finalidade | melhor adequação técnica aos objetivos | ajustar volume necessário do objeto
+Pode transfigurar o objeto? | não | não
+Limites percentuais | a lei vincula as alterações unilaterais ao sistema do art. 125, sem autorizar transfiguração | 25% como regra; acréscimo em reforma até 50%
+Efeito econômico | pode exigir reequilíbrio | pode exigir reequilíbrio
+
+Exemplo
+
+A obra exige alteração do material especificado para atender melhor ao desempenho técnico, sem mudar a essência do objeto. Há potencial alteração qualitativa.
+
+O órgão decide ampliar de 100 para 120 unidades a quantidade de um item contratado. Trata-se de mudança quantitativa e deve ser examinada dentro do limite legal e da base de cálculo correta.
+
+Como cai na FCC
+
+A FCC troca a natureza consensual: “a Administração pode impor unilateralmente mudança do regime de execução porque é tecnicamente mais conveniente”. Errado. A modificação do regime de execução do art. 124, II, “b”, é por acordo.
+
+Pegadinha
+
+Forma de pagamento não pode ser livremente antecipada sem contraprestação só porque as partes concordaram. A lei protege o fluxo financeiro público e veda antecipação indevida.
+
+O que decorar
+
+Unilateral = qualidade/quantidade. Consensual = garantia/regime/pagamento/reequilíbrio.
+
+O que levar para a prova
+
+Antes de calcular percentual, descubra se a questão sequer está diante de uma alteração unilateral válida.
+
+Check manual — consigo classificar os quatro casos consensuais sem misturá-los às duas alterações unilaterais? ☐
+
+---
+
+SESSÃO 10 — Acréscimos, supressões e limites percentuais
+
+Entenda primeiro
+
+O art. 125 é uma das partes mais objetivas da Lei 14.133 e, por isso, é muito cobrável. Nas alterações unilaterais, o contratado é obrigado a aceitar, nas mesmas condições, acréscimos ou supressões dentro dos limites legais.
+
+Regra jurídica
+
+A base é o valor inicial atualizado do contrato.
+
+• obras, serviços e compras: acréscimos ou supressões de até 25%;
+• reforma de edifício ou equipamento: limite de 50% apenas para acréscimos.
+
+A exceção de 50% não transforma supressão de reforma em 50%. Para supressão, permanece a regra geral de 25% no exercício unilateral da prerrogativa.
+
+O art. 126 proíbe que alteração unilateral transfigure o objeto. Percentual disponível não autoriza transformar uma contratação em outra.
+
+Regras de nível Analista — arts. 127, 128 e 133
+
+Quando a alteração exigir item de serviço não previsto no contrato e não houver preço unitário contratual, o art. 127 estabelece técnica legal de formação do novo preço com base na relação entre a proposta e o orçamento de referência, preservando a lógica econômica da contratação.
+
+Nas obras e serviços de engenharia, o art. 128 impede que o aditamento reduza, em favor do contratado, a diferença percentual entre o valor global contratado e o preço global de referência, ressalvadas as hipóteses legais. Em prova, pense: o aditivo não pode apagar o desconto global obtido na competição.
+
+Nos regimes de contratação integrada e semi-integrada, o art. 133 restringe alterações dos valores contratuais às hipóteses legalmente previstas. Logo, não se aplica mecanicamente a esses regimes toda a liberdade de modificação que a alternativa possa sugerir para um contrato comum.
+
+Se uma supressão atingir materiais que o contratado já adquiriu e colocou no local dos trabalhos, a Administração deve pagar o custo de aquisição comprovado e monetariamente reajustado, podendo haver indenização por outros danos regularmente comprovados.
+
+Cuidado histórico: supressão consensual além de 25%
+
+A Lei 8.666/1993 continha regra expressa sobre supressão consensual acima do limite. A Lei 14.133/2021 não reproduz essa autorização com a mesma redação. Por isso, em prova literal da nova lei, não importe automaticamente a frase “supressão por acordo pode exceder 25%” como se fosse norma expressa vigente.
+
+Isso não impede que questões complexas de consensualidade sejam analisadas dentro do sistema jurídico, mas para FCC sobre literalidade da Lei 14.133 o caminho seguro é: art. 125 disciplina alterações unilaterais e fixa 25%, com 50% apenas para acréscimos em reforma.
+
+Base de cálculo — exemplos
+
+Contrato inicial atualizado: R$ 1.000.000.
+
+• acréscimo comum máximo unilateral: R$ 250.000;
+• supressão comum máxima unilateral: R$ 250.000;
+• se for reforma de edifício/equipamento, acréscimo máximo: R$ 500.000;
+• a supressão unilateral da reforma não recebe o teto de 50%.
+
+Não se deve aplicar 25% sobre o valor já alterado a cada novo aditivo para “renovar” o limite. A referência legal é o valor inicial atualizado.
+
+Compare — quadro 11: acréscimo × supressão
+
+Critério | Acréscimo | Supressão
+Regra geral unilateral | até 25% | até 25%
+Reforma de edifício/equipamento | até 50% | continua até 25% no regime unilateral
+Base | valor inicial atualizado | valor inicial atualizado
+Pode transfigurar objeto? | não | não
+Materiais já adquiridos | pode alterar custos e exigir reequilíbrio | materiais colocados no local podem gerar pagamento/indenização conforme art. 129
+
+Compare — quadro 12: aditivo × apostila
+
+Instrumento | Quando pensar nele | Exemplo
+Termo aditivo | modificação contratual que altera conteúdo do ajuste | acréscimo quantitativo, mudança qualitativa, reequilíbrio formal
+Apostila | registro que não caracteriza alteração contratual substancial | reajuste/repactuação prevista; razão social; dotação; ajustes financeiros previstos
+Exceção temporal | efeitos de mudança podem ser antecipados em urgência justificada | formalizar o aditivo em até 1 mês
+
+Como cai na FCC
+
+A FCC oferece “25% para tudo” e “50% para qualquer reforma”. O primeiro erra a exceção; o segundo erra porque 50% vale apenas para acréscimos.
+
+Outra armadilha: usar percentuais para legitimar mudança que transforma a natureza do objeto. O art. 126 barra a transfiguração.
+
+Pegadinha
+
+Não confunda percentual da alteração com percentual da garantia ou percentual da multa. São três sistemas diferentes.
+
+O que decorar
+
+25 geral; 50 só acréscimo em reforma; base = valor inicial atualizado; nunca transfigurar.
+
+O que levar para a prova
+
+Questão de percentual exige três perguntas: “é unilateral?”, “é acréscimo ou supressão?”, “é reforma de edifício/equipamento?”.
+
+Check manual — consigo fazer o cálculo usando o valor inicial atualizado e explicar por que 50% não vale para supressão? ☐
+
+---
+
+SESSÃO 11 — Recebimento do objeto e pagamentos
+
+Entenda primeiro
+
+Executar não é a mesma coisa que receber; receber não é a mesma coisa que liberar toda responsabilidade; liquidar a despesa não é a mesma coisa que pagar. A FCC usa essas transições para criar alternativas aparentemente plausíveis.
+
+Recebimento — art. 140
+
+Obras e serviços
+
+• provisoriamente: pelo responsável pelo acompanhamento e fiscalização, mediante termo detalhado, quando cumpridas as exigências técnicas;
+• definitivamente: por servidor ou comissão designada, também mediante termo detalhado, após verificação das exigências contratuais.
+
+Compras
+
+• provisoriamente: de forma sumária pelo responsável pelo acompanhamento/fiscalização, com posterior conferência de conformidade;
+• definitivamente: por servidor ou comissão designada, mediante termo detalhado que demonstre o atendimento contratual.
+
+O objeto pode ser rejeitado no todo ou em parte se estiver em desacordo com o contrato.
+
+Recebimento provisório ou definitivo não exclui responsabilidade civil por solidez e segurança de obra/serviço nem responsabilidade ético-profissional pela perfeita execução. Em obra, a lei estabelece responsabilidade objetiva mínima de 5 anos pela solidez, segurança dos materiais e serviços e funcionalidade da construção/reforma/recuperação/ampliação, admitindo garantia superior no edital e contrato.
+
+Pagamentos — arts. 141 a 146
+
+A Administração observa ordem cronológica de pagamento para cada fonte diferenciada de recursos, separada por categorias:
+
+• fornecimento de bens;
+• locações;
+• prestação de serviços;
+• realização de obras.
+
+A ordem pode ser alterada apenas nas hipóteses legais, com prévia justificativa da autoridade competente e posterior comunicação ao controle interno e ao tribunal de contas competente. Entre as hipóteses estão emergência/calamidade, risco de descontinuidade envolvendo certos beneficiários ou serviços estruturantes, falência/recuperação/dissolução e objetos essenciais à continuidade institucional.
+
+O órgão deve divulgar mensalmente a ordem cronológica e as justificativas para eventual mudança.
+
+Conta vinculada e fato gerador
+
+O edital ou contrato pode prever pagamento em conta vinculada ou condicionado à efetiva comprovação do fato gerador.
+
+Parcela incontroversa
+
+Se houver controvérsia sobre dimensão, qualidade ou quantidade do objeto, a parcela incontroversa deve ser paga no prazo normal. A Administração não deve reter indiscriminadamente tudo só porque parte da medição está em disputa.
+
+Remuneração variável
+
+Pode haver remuneração variável ligada ao desempenho do contratado, com metas, padrões de qualidade, sustentabilidade e prazos definidos no edital e contrato, desde que motivada e dentro do limite orçamentário.
+
+Pagamento antecipado
+
+A regra é a vedação da antecipação. Excepcionalmente, pode ocorrer quando propiciar sensível economia de recursos ou for condição indispensável para obter o bem ou assegurar o serviço, desde que haja justificativa prévia e previsão expressa no edital ou instrumento formal da contratação direta. A Administração pode exigir garantia adicional. Se o objeto não for executado no prazo, o valor antecipado deve ser devolvido.
+
+Cessão de crédito e comunicação tributária
+
+O capítulo de pagamentos não transforma a cessão de crédito em regra automática nem a confunde com cessão integral da posição contratual. Eventual cessão deve respeitar o contrato, a regulamentação aplicável, as normas de direito financeiro e civil e os controles próprios da Administração. Para prova, se a alternativa disser que o contratado pode “transferir livremente o contrato” só porque pode ceder um crédito, a conclusão está errada.
+
+O art. 146 ainda prevê comunicação à administração tributária competente quando, no pagamento, forem identificadas situações tributárias abrangidas pela norma. É ponto de baixa incidência, mas integra o fechamento legal do bloco de pagamentos.
+
+Inadimplemento da Administração
+
+Atraso superior a 2 meses, contado da emissão da nota fiscal, de pagamentos de obras, serviços ou fornecimentos, é uma das hipóteses em que o contratado pode ter direito à extinção, observado o regime e as exceções do art. 137.
+
+Compare — quadro 13: recebimento provisório × definitivo
+
+Critério | Provisório | Definitivo
+Obras/serviços | fiscal/acompanhamento + termo detalhado | servidor/comissão designada + termo detalhado
+Compras | forma sumária + conferência posterior | servidor/comissão + termo detalhado
+Significa aceitação eterna? | não | não
+Pode haver rejeição? | sim, se desconforme | sim, se desconforme
+Exclui responsabilidade civil/profissional? | não | não
+
+Compare — quadro 14: liquidação, recebimento e pagamento
+
+Etapa | Pergunta principal | Erro comum
+Recebimento | o objeto foi entregue/executado conforme requisitos? | achar que “recebeu” elimina vícios futuros
+Liquidação | o credor cumpriu o que gera o direito ao pagamento? | confundir com simples emissão de nota fiscal
+Pagamento | a obrigação financeira será satisfeita observando regras e ordem? | ignorar ordem cronológica e hipóteses de alteração
+
+Exemplo
+
+A contratada entrega 1.000 equipamentos; 900 estão conformes e 100 são contestados. Havendo parcela incontroversa devidamente liquidada, a controvérsia sobre 100 itens não autoriza reter automaticamente o pagamento dos 900 corretos.
+
+Como cai na FCC
+
+A banca frequentemente afirma que “o recebimento definitivo exonera a contratada”. Errado. O próprio art. 140 preserva responsabilidades.
+
+Também pode afirmar que a ordem cronológica jamais pode ser alterada. Errado: pode, nas hipóteses legais e com procedimento formal.
+
+Pegadinha
+
+Os 5 anos desta sessão são prazo mínimo de responsabilidade objetiva na obra após o recebimento definitivo. Não confunda com os 5 anos do contrato inicial de serviço contínuo.
+
+O que decorar
+
+• Obras/serviços: provisório pelo acompanhamento/fiscalização; definitivo por servidor/comissão.
+• Compras: provisório sumário; definitivo formal.
+• Recebimento não apaga responsabilidade.
+• Parcela incontroversa deve ser liberada.
+• Antecipação é exceção justificada, não rotina.
+
+O que levar para a prova
+
+Receber é verificar o objeto; pagar é cumprir a obrigação financeira. Entre ambos existem controles jurídicos próprios.
+
+Check manual — sei explicar por que recebimento definitivo e responsabilidade futura coexistem? ☐
+
+---
+
+SESSÃO 12 — Inadimplemento e sanções administrativas do contrato
+
+Entenda primeiro
+
+A Lei 14.133 separa o inadimplemento contratual de sua consequência sancionatória. Nem toda falha gera automaticamente a sanção mais grave. A Administração deve enquadrar a infração, avaliar gravidade, danos, circunstâncias e integridade, respeitar defesa e aplicar a sanção competente.
+
+Este M18 cobre o núcleo indispensável das sanções ligadas à execução. O estudo sistemático de irregularidades, recursos e controle pertence ao módulo específico posterior.
+
+Infrações contratuais essenciais — art. 155
+
+Para M18, concentre-se especialmente em:
+
+• dar causa à inexecução parcial;
+• inexecução parcial que cause grave dano à Administração, funcionamento dos serviços ou interesse coletivo;
+• inexecução total;
+• retardar execução/entrega sem motivo justificado;
+• prestar declaração falsa durante execução;
+• praticar ato fraudulento na execução;
+• comportar-se de modo inidôneo ou cometer fraude;
+• praticar ato lesivo da Lei Anticorrupção.
+
+Sanções — art. 156
+
+São quatro:
+
+• advertência;
+• multa;
+• impedimento de licitar e contratar;
+• declaração de inidoneidade para licitar ou contratar.
+
+A dosimetria considera natureza e gravidade, peculiaridades, agravantes/atenuantes, danos e programa de integridade.
+
+Advertência
+
+Aplicável exclusivamente à inexecução parcial simples do art. 155, I, quando não se justificar penalidade mais grave.
+
+Multa
+
+Pode incidir sobre qualquer infração do art. 155. Deve ser calculada conforme edital/contrato, entre 0,5% e 30% do valor do contrato licitado ou celebrado por contratação direta.
+
+Impedimento
+
+Em regra, alcança infrações dos incisos II a VII do art. 155 quando não se justificar sanção mais grave. Dura até 3 anos e impede licitar/contratar no âmbito da Administração Pública direta e indireta do ente federativo que aplicou a sanção.
+
+Inidoneidade
+
+Incide nas infrações mais graves dos incisos VIII a XII e também nas infrações II a VII que justifiquem resposta mais severa. Dura de 3 a 6 anos e impede licitar/contratar com a Administração Pública direta e indireta de todos os entes federativos.
+
+Advertência, impedimento e inidoneidade podem ser aplicados cumulativamente com multa, conforme a lei.
+
+Processo e defesa
+
+• multa: defesa em 15 dias úteis da intimação;
+• impedimento e inidoneidade: processo de responsabilização, em regra conduzido por comissão de 2 ou mais servidores estáveis; em entidade sem quadro estatutário, a lei prevê empregados públicos dos quadros permanentes conforme disciplina legal;
+• defesa escrita: 15 dias úteis;
+• se houver novas provas, assegura-se manifestação/finais no regime legal;
+• inidoneidade exige análise jurídica prévia e autoridade competente nos termos do art. 156.
+
+A aplicação de sanção não afasta a obrigação de reparar integralmente o dano.
+
+Mora
+
+O atraso injustificado sujeita o contratado à multa de mora, conforme edital/contrato. A Administração pode convertê-la em compensatória e promover extinção unilateral com outras sanções, observados os requisitos legais.
+
+Reabilitação
+
+A lei admite reabilitação perante a autoridade que aplicou a sanção, exigindo cumulativamente reparação integral do dano, pagamento da multa, transcurso de período mínimo — 1 ano para impedimento e 3 anos para inidoneidade —, cumprimento das condições do ato punitivo e análise jurídica. Certas infrações exigem programa de integridade como condição adicional.
+
+Compare — quadro 15: advertência × multa × impedimento × inidoneidade
+
+Sanção | Núcleo | Prazo/percentual | Alcance
+Advertência | inexecução parcial simples, se não couber mais grave | sem prazo de afastamento | censura administrativa
+Multa | qualquer infração do art. 155 | 0,5% a 30% | efeito pecuniário
+Impedimento | infrações II–VII, em regra | máximo 3 anos | ente federativo sancionador
+Inidoneidade | VIII–XII e outras graves | 3 a 6 anos | todos os entes federativos
+
+Exemplo
+
+A empresa atrasa parte pequena e não essencial da entrega, causando impacto reduzido e corrigindo prontamente. Não é juridicamente correto saltar automaticamente para inidoneidade. A sanção depende do enquadramento e da dosimetria.
+
+Em outro caso, a empresa frauda documentos durante a execução para ocultar entrega inferior. A gravidade pode levar ao regime de inidoneidade, com processo próprio.
+
+Como cai na FCC
+
+A banca adora trocar os alcances:
+
+• “impedimento alcança automaticamente todos os entes” — errado;
+• “inidoneidade vale apenas para o ente que aplicou” — errado;
+• “advertência cabe para qualquer infração leve” — cuidado: a lei a vincula à infração específica do art. 155, I, quando não couber sanção mais grave.
+
+Pegadinha
+
+0,5% a 30% é faixa da multa sancionatória do art. 156. Não confunda com garantia contratual de 5/10/30 nem com alteração de 25/50.
+
+O que decorar
+
+A-M-I-I: advertência, multa, impedimento, inidoneidade.
+Impedimento = até 3 anos, mesmo ente. Inidoneidade = 3 a 6 anos, todos os entes.
+
+O que levar para a prova
+
+Sanção administrativa exige: infração tipificada + processo adequado + dosimetria + competência + defesa.
+
+Check manual — consigo distinguir alcance territorial/institucional de impedimento e inidoneidade? ☐
+
+---
+
+SESSÃO 13 — Extinção, nulidade e meios alternativos de controvérsia
+
+Entenda primeiro
+
+Extinção encerra um contrato que existia e produzia efeitos, por término natural ou causa superveniente. Nulidade enfrenta um vício jurídico grave do procedimento ou da execução e tem regime próprio de efeitos. A Lei 14.133 não ordena “paralisar sempre” quando encontra irregularidade insanável: exige análise das consequências e do interesse público.
+
+Extinção — motivos do art. 137
+
+A extinção deve ser formalmente motivada nos autos, com contraditório e ampla defesa. Entre os motivos estão:
+
+• descumprimento ou cumprimento irregular de edital, cláusulas, especificações, projetos ou prazos;
+• desatendimento a determinações regulares da fiscalização ou autoridade superior;
+• alteração social/finalidade/estrutura que restrinja capacidade de concluir o contrato;
+• falência, insolvência, dissolução ou falecimento do contratado;
+• caso fortuito ou força maior impeditivos, comprovados;
+• problemas relevantes de licenciamento ambiental;
+• atraso/impossibilidade de liberar áreas sujeitas a desapropriação, desocupação ou servidão;
+• razões de interesse público justificadas pela autoridade máxima;
+• descumprimento das reservas legais de cargos.
+
+Direitos do contratado à extinção
+
+A lei também protege o particular contra inadimplemento estatal. O contratado pode ter direito à extinção, entre outras situações, quando houver:
+
+• supressão além do limite do art. 125;
+• suspensão por ordem escrita da Administração por mais de 3 meses;
+• suspensões repetidas que totalizem 90 dias úteis;
+• atraso de pagamento superior a 2 meses, contado da emissão da nota fiscal;
+• não liberação de área/local/objeto ou descumprimentos administrativos correlatos.
+
+Há exceções legais para calamidade, grave perturbação da ordem ou guerra e para situações causadas/contribuídas pelo próprio contratado. Nas hipóteses legais, ele pode optar por suspender obrigações até a normalização, com possível recomposição do equilíbrio.
+
+Formas de extinção — art. 138
+
+A extinção pode ser:
+
+• unilateral e escrita, pela Administração, exceto quando o descumprimento decorre da própria conduta administrativa;
+• consensual, por acordo, conciliação, mediação ou comitê de resolução de disputas, se houver interesse da Administração;
+• por decisão arbitral ou judicial.
+
+A extinção unilateral e a consensual devem ser precedidas de autorização escrita e fundamentada da autoridade competente e reduzidas a termo.
+
+Se a extinção decorre de culpa exclusiva da Administração, o contratado tem direito a ressarcimento dos prejuízos comprovados, devolução da garantia, pagamentos devidos e custo da desmobilização.
+
+Consequências da extinção unilateral — art. 139
+
+Podem ocorrer, sem prejuízo de sanções:
+
+• assunção imediata do objeto no estado/local em que estiver;
+• ocupação/utilização de local, instalações, equipamentos, material e pessoal necessários à continuidade;
+• execução da garantia para ressarcimento, verbas cabíveis, multas e eventual retomada pela seguradora;
+• retenção de créditos até o limite dos prejuízos e multas.
+
+Compare — quadro 16: extinção unilateral × consensual
+
+Critério | Unilateral | Consensual
+Origem | ato escrito da Administração | acordo entre as partes / meio consensual
+Exige interesse/causa legal | sim | sim, interesse da Administração
+Pode ser usada se o descumprimento decorre da própria Administração? | não nessa forma | pode haver solução consensual adequada
+Formalização | autorização escrita, fundamentada e termo | autorização escrita, fundamentada e termo
+Efeitos especiais do art. 139 | podem incidir | não se presumem automaticamente
+
+Nulidade — arts. 147 a 150
+
+Encontrada irregularidade insanável, a Administração deve avaliar se suspensão ou declaração de nulidade é, concretamente, medida de interesse público. A lei manda considerar impactos econômicos e financeiros, riscos sociais e ambientais, estágio da execução, custo da deterioração, desmobilização, nova contratação, postos de trabalho e outros fatores.
+
+Se paralisação/anulação não se revelar medida de interesse público, o Poder Público pode optar pela continuidade do contrato e solucionar a irregularidade por perdas e danos, sem afastar responsabilização e penalidades.
+
+A nulidade, em regra, opera retroativamente e desconstitui efeitos. Se não for possível retornar ao estado fático anterior, resolve-se por indenização por perdas e danos, com apuração de responsabilidades.
+
+Para assegurar continuidade administrativa, a autoridade pode diferir a eficácia da declaração de nulidade por até 6 meses, prorrogável uma única vez, tempo suficiente para nova contratação.
+
+A nulidade não exonera a Administração de indenizar o contratado pelo que foi utilmente executado até a data em que ela foi declarada ou se tornou eficaz, e por outros prejuízos comprovados, desde que o vício não seja imputável ao contratado.
+
+O art. 150 fecha o capítulo com uma nulidade de base: nenhuma contratação pode ser feita sem caracterização adequada do objeto e sem indicação dos créditos orçamentários para pagar as parcelas vincendas no exercício da contratação, sob pena de nulidade do ato e responsabilização de quem lhe deu causa.
+
+Esse regime é coerente com a lógica consequencialista da LINDB: decisões públicas devem enfrentar efeitos concretos, não apenas pronunciar fórmulas abstratas.
+
+Compare — quadro 17: nulidade × extinção
+
+Critério | Nulidade | Extinção
+Problema central | vício jurídico do procedimento/contrato/execução | término ou causa superveniente que encerra vínculo
+Efeito temporal | pode operar retroativamente | em regra encerra efeitos para o futuro, conforme causa
+Interesse público | determina se e como anular/suspender | orienta hipótese e consequências
+Continuidade temporária | nulidade pode ter eficácia diferida por até 6 meses + uma prorrogação | pode haver medidas para continuidade do objeto
+Indenização | execução útil de boa-fé e prejuízos não imputáveis | depende da causa; culpa estatal gera direitos específicos
+
+Meios alternativos — arts. 151 a 154
+
+A Lei 14.133 admite mecanismos alternativos para direitos patrimoniais disponíveis, como equilíbrio econômico-financeiro, inadimplemento contratual e cálculo de indenizações.
+
+São destacados:
+
+• conciliação;
+• mediação;
+• comitê de resolução de disputas — dispute board;
+• arbitragem.
+
+A arbitragem será sempre de direito e observará o princípio da publicidade. O contrato pode ser aditado para incluir mecanismos alternativos. A escolha de árbitros, colegiados arbitrais e membros de comitês deve observar critérios isonômicos, técnicos e transparentes.
+
+Compare — quadro 18: conciliação × mediação × dispute board × arbitragem
+
+Meio | Função predominante | Terceiro decide? | Uso típico
+Conciliação | aproximar e sugerir solução | não impõe, salvo acordo firmado | controvérsia negociável pontual
+Mediação | facilitar comunicação e construção de consenso | não impõe | relações continuadas/complexas
+Dispute board | acompanhar/discutir disputas técnicas ao longo do contrato | pode emitir recomendações/decisões conforme desenho adotado | grandes projetos e controvérsias durante execução
+Arbitragem | adjudicar controvérsia patrimonial disponível | sim, árbitro decide | equilíbrio, inadimplemento, indenização
+
+Exemplo
+
+Uma obra complexa tem divergência sobre evento alocado na matriz de riscos e impacto financeiro. As partes podem usar dispute board ou arbitragem, conforme o contrato e a lei, em vez de presumir que apenas o Judiciário pode resolver.
+
+Como cai na FCC
+
+A banca costuma afirmar que “arbitragem é proibida porque a Administração não pode dispor do interesse público”. Errado. A lei admite arbitragem para direitos patrimoniais disponíveis e exige arbitragem de direito e publicidade.
+
+Outra armadilha: “nulidade sempre exige suspensão imediata”. Errado. A lei determina análise de interesse público e admite continuidade/efeito diferido em hipóteses legalmente estruturadas.
+
+Pegadinha
+
+Extinção por interesse público não é “anulação”. A primeira atua sobre a vida contratual por causa legal; a segunda decorre de invalidade.
+
+O que decorar
+
+• art. 137 = motivos + defesa;
+• art. 138 = unilateral / consensual / arbitral-judicial;
+• art. 139 = consequências da unilateral;
+• nulidade: consequência prática + interesse público;
+• eficácia diferida da nulidade: até 6 meses, uma prorrogação;
+• arbitragem: direitos patrimoniais disponíveis, de direito e pública.
+
+O que levar para a prova
+
+Se o enunciado diz “contrato inválido”, pense em nulidade e consequências. Se diz “contrato válido, mas surgiu causa para encerrá-lo”, pense em extinção.
+
+Check manual — consigo distinguir causa de extinção de vício de nulidade e escolher o regime correto? ☐
+
+---
+
+SESSÃO 14 — Revisão integrada, quadro-mestre e memorização FCC
+
+Revisão de 5–10 minutos
+
+• Contrato administrativo: regime público; direito privado entra supletivamente.
+• Contrato é escrito; forma eletrônica é admitida.
+• PNCP: condição de eficácia; 20 dias úteis após licitação, 10 após contratação direta.
+• Instrumento de contrato é regra; exceções do art. 95 permitem instrumento equivalente.
+• Contrato verbal é regra de nulidade; exceção de pronto pagamento dentro do teto atualizado.
+• Cláusulas necessárias ≠ cláusulas exorbitantes.
+• Administração pode alterar unilateralmente apenas nas hipóteses legais e deve preservar o equilíbrio.
+• Garantia não é universalmente obrigatória: depende de exigência editalícia/autoridade, salvo regimes específicos.
+• Garantia: 5%; 10% justificado; grande vulto com retomada: 30%.
+• Matriz de riscos orienta quem suporta eventos supervenientes.
+• Reajuste = índice; repactuação = custos analíticos de mão de obra; revisão = evento extraordinário.
+• Contínuo: 5 anos inicialmente; prorrogações até 10 anos.
+• Monopólio de serviço público: prazo indeterminado possível.
+• Receita/eficiência: 10 sem investimento; 35 com investimento.
+• Sistemas estruturantes de TI: 15 anos.
+• Escopo predefinido não concluído: vigência automaticamente prorrogada, sem perdoar culpa.
+• Fiscal registra e acompanha; gestor coordena globalmente.
+• Terceiro pode auxiliar o fiscal, não substituí-lo.
+• Subcontratação é parcial e autorizada; contratado principal permanece responsável.
+• Alteração unilateral: qualitativa ou quantitativa.
+• Alteração consensual: garantia, regime/modo, forma de pagamento, recomposição extraordinária.
+• Acréscimo/supressão unilateral: 25%; reforma: 50% só para acréscimo.
+• Não pode transfigurar o objeto.
+• Recebimento definitivo não encerra toda responsabilidade.
+• Obra: responsabilidade objetiva mínima de 5 anos após recebimento definitivo nos termos legais.
+• Pagamento observa ordem cronológica por fonte e categoria.
+• Parcela incontroversa deve ser paga.
+• Antecipação de pagamento é excepcional e justificada.
+• Advertência, multa, impedimento, inidoneidade não são intercambiáveis.
+• Multa: 0,5% a 30%.
+• Impedimento: até 3 anos no ente sancionador.
+• Inidoneidade: 3 a 6 anos, todos os entes.
+• Extinção exige enquadramento, motivação e defesa quando pertinente.
+• Nulidade não significa sempre parar imediatamente: há análise de consequências e interesse público.
+• Arbitragem é admitida para direitos patrimoniais disponíveis, sempre de direito e com publicidade.
+
+Quadro 19 — quadro-mestre de duelos
+
+Duelo | Lado A | Lado B | Palavra de corte
+Contrato da Administração × administrativo | gênero | espécie de regime público | prerrogativas
+Necessária × exorbitante | conteúdo obrigatório | poder especial | art. 92 × art. 104
+Reajuste × repactuação | índice | planilha/custos de mão de obra | método
+Repactuação × revisão | ordinária anualizada | extraordinária | fato gerador
+Unilateral × consensual | imposição legal | acordo | concordância
+Qualitativa × quantitativa | projeto/especificação | quantidade/valor | o que mudou
+Acréscimo × supressão | aumenta objeto | reduz objeto | 25/50
+Gestor × fiscal | coordena | acompanha/registra | visão global × execução
+Provisório × definitivo | primeira verificação | aceitação formal após verificação | etapa
+Impedimento × inidoneidade | até 3 anos / mesmo ente | 3–6 / todos os entes | alcance
+Extinção × nulidade | encerra vínculo | corrige invalidade | causa
+Conciliação/mediação × arbitragem | consenso | decisão | adjudicação
+Aditivo × apostila | alteração contratual | registro sem alteração substancial | natureza
+Subcontratação × cessão integral | parcela autorizada | transferência do vínculo | responsabilidade
+
+Quadro 20 — prazos e duração para decorar
+
+Regra | Número
+PNCP após licitação | 20 dias úteis
+PNCP após contratação direta | 10 dias úteis
+Prazo mínimo para seguro-garantia antes da assinatura | 1 mês
+Contínuo — prazo inicial possível | até 5 anos
+Contínuo — vigência máxima com prorrogações | 10 anos
+Art. 108 — hipóteses especiais | até 10 anos
+Monopólio de serviço público | indeterminado, com créditos anuais
+Receita/eficiência sem investimento | até 10 anos
+Receita/eficiência com investimento | até 35 anos
+Operação/manutenção associada ao fornecimento | 5 anos, prorrogáveis na forma do art. 107
+Sistema estruturante de TI | até 15 anos
+Decisão administrativa após instrução de pleito | 1 mês + 1 mês motivado
+Formalização de aditivo após antecipação justificada de efeitos | máximo 1 mês
+Suspensão que pode gerar direito à extinção | > 3 meses
+Suspensões repetidas | 90 dias úteis
+Atraso de pagamento que pode gerar direito à extinção | > 2 meses da nota fiscal
+Responsabilidade objetiva mínima em obra após recebimento | 5 anos
+Eficácia futura da nulidade | até 6 meses + 1 prorrogação
+Defesa na multa sancionatória | 15 dias úteis
+Defesa em processo de impedimento/inidoneidade | 15 dias úteis
+Impedimento | até 3 anos
+Inidoneidade | 3 a 6 anos
+Reabilitação — lapso mínimo | 1 ano impedimento; 3 anos inidoneidade
+
+Quadro 21 — percentuais que a FCC pode misturar
+
+Percentual | Instituto
+5% | garantia contratual ordinária máxima
+10% | garantia majorada por complexidade/riscos, com justificativa
+30% | seguro-garantia com retomada em grande vulto
+25% | acréscimos/supressões unilaterais em regra
+50% | somente acréscimos em reforma de edifício/equipamento
+0,5% a 30% | faixa legal da multa sancionatória
+
+Quadro 22 — fluxo de uma questão prática
+
+Passo | Pergunta
+1 | Qual é o tipo de contrato/objeto?
+2 | Qual dispositivo legal governa a situação?
+3 | A Administração age por prerrogativa ou depende de consenso?
+4 | Existe limite de prazo/percentual?
+5 | O fato muda a equação econômico-financeira?
+6 | A matriz de riscos atribuiu o evento a quem?
+7 | É caso de aditivo, apostila, sanção, recebimento, pagamento ou extinção?
+8 | Houve motivação, competência e contraditório quando exigidos?
+
+---
+
+ARTIGOS PARA LER NA VÉSPERA
+
+Prioridade A — leitura integral
+
+• Arts. 89 a 95: regime, formalização, cláusulas, PNCP, instrumento e contrato verbal.
+• Arts. 96 a 104: garantias, seguro-garantia, matriz de riscos e prerrogativas.
+• Arts. 105 a 114: duração dos contratos.
+• Arts. 115 a 123: execução, fiscalização, encargos, subcontratação e decisão sobre pleitos.
+• Arts. 124 a 136: alterações, percentuais, equilíbrio, repactuação e apostila.
+• Arts. 137 a 154: extinção, recebimento, pagamentos, nulidade e meios alternativos.
+
+Prioridade B — conexão sancionatória
+
+• Arts. 155 a 163: infrações, sanções, defesa, alcance, mora e reabilitação — focar no núcleo ligado à execução, sem substituir o módulo próprio de sanções.
+
+Prioridade C — conexão conceitual
+
+• Constituição, art. 37, XXI: manutenção das condições efetivas da proposta como fundamento constitucional do equilíbrio.
+• LINDB, arts. 20 e 21: consideração das consequências práticas em decisões públicas, especialmente útil para compreender nulidade e invalidação.
+
+---
+
+O QUE DECORAR — LISTA SEPARADA
+
+• Direito público + direito privado supletivo.
+• PNCP = eficácia: 20 dias úteis licitação; 10 dias úteis contratação direta.
+• Contrato verbal: regra de nulidade; exceção estreita de pronto pagamento.
+• Cláusulas necessárias do art. 92: lembre blocos, não só lista.
+• Prerrogativas do art. 104: alterar, extinguir, fiscalizar, sancionar, ocupar.
+• Econômico-financeiro não pode ser unilateralmente modificado sem concordância; mudança unilateral dos encargos exige recomposição.
+• Garantia: 5 / 10 / 30.
+• Modalidades de garantia: caução/títulos, seguro, fiança, título de capitalização.
+• Matriz de risco define distribuição e condiciona pleitos.
+• Reajuste = índice.
+• Repactuação = variação analítica em serviço com dedicação exclusiva/predominância de mão de obra.
+• Revisão = evento extraordinário + prova + nexo + matriz.
+• Contínuo: 5 inicial, 10 máximo com prorrogações.
+• Monopólio: prazo indeterminado possível.
+• Receita/eficiência: 10 sem investimento; 35 com investimento.
+• Sistema estruturante TI: 15.
+• Escopo não concluído: prorrogação automática.
+• Art. 117: um ou mais fiscais; registrar e comunicar.
+• Terceiro auxilia, não substitui fiscal.
+• Contratado repara vícios às próprias expensas.
+• Fiscalização não exclui responsabilidade do contratado.
+• Subcontratação: partes + autorização + capacidade técnica + responsabilidade principal preservada.
+• Reorganização societária não = extinção automática.
+• Unilateral: qualitativa/quantitativa.
+• Consensual: garantia/regime/pagamento/reequilíbrio.
+• 25% geral; 50% só acréscimo em reforma.
+• Base do limite = valor inicial atualizado.
+• Vedada transfiguração do objeto.
+• Aditivo = alteração; apostila = registros do art. 136.
+• Recebimento definitivo não elimina responsabilidade.
+• Obra: responsabilidade objetiva mínima de 5 anos.
+• Ordem de pagamento: por fonte + categorias.
+• Parcela incontroversa é paga.
+• Pagamento antecipado é excepcional.
+• Advertência = inexecução parcial simples, se não couber mais grave.
+• Multa = 0,5% a 30%.
+• Impedimento = até 3 anos no ente sancionador.
+• Inidoneidade = 3 a 6 anos em todos os entes.
+• Extinção unilateral não cabe para descumprimento decorrente da própria Administração.
+• Nulidade exige análise de interesse público/consequências.
+• Eficácia futura da nulidade: até 6 meses + uma prorrogação.
+• Arbitragem: direito patrimonial disponível; sempre de direito; publicidade.
+• Contrato pode ser aditado para adotar ADR.
+• Membros de arbitragem/dispute board: critérios isonômicos, técnicos e transparentes.
+
+---
+
+CAMADA FCC — 20 ARMADILHAS DE CERTO/ERRADO
+
+• “Direito privado jamais se aplica a contrato administrativo.” ERRADO. Aplicação supletiva.
+• “Publicação no PNCP é condição de eficácia.” CERTO.
+• “Garantia de execução é sempre obrigatória.” ERRADO.
+• “Administração sempre escolhe a modalidade da garantia.” ERRADO.
+• “Garantia ordinária nunca pode passar de 5%.” ERRADO. Pode chegar a 10%, e há regime de 30% em grande vulto.
+• “Matriz de riscos é irrelevante para reequilíbrio.” ERRADO.
+• “Reajuste, repactuação e revisão são sinônimos.” ERRADO.
+• “Serviço contínuo nunca pode superar 5 anos.” ERRADO. Pode chegar a 10 anos com prorrogações.
+• “Prazo indeterminado é absolutamente vedado.” ERRADO. Art. 109.
+• “Contrato por escopo não concluído é automaticamente prorrogado.” CERTO, sem excluir consequências da culpa do contratado.
+• “Terceiro contratado para apoiar a fiscalização substitui o fiscal.” ERRADO.
+• “Subcontratação afasta responsabilidade da contratada principal.” ERRADO.
+• “A Administração pode unilateralmente modificar o regime de execução.” ERRADO. Hipótese consensual do art. 124, II.
+• “Reforma admite acréscimo e supressão de 50%.” ERRADO. 50% só acréscimo.
+• “Recebimento definitivo extingue responsabilidade por solidez da obra.” ERRADO.
+• “Impediu de licitar em um Estado = automaticamente impedido em todos os entes.” ERRADO para impedimento; essa amplitude é própria da inidoneidade.
+• “Inidoneidade pode durar apenas 1 ano.” ERRADO. 3 a 6 anos.
+• “Toda irregularidade insanável exige suspensão imediata do contrato.” ERRADO. Art. 147 exige análise de interesse público/consequências.
+• “Arbitragem com Administração é proibida.” ERRADO. Permitida para direitos patrimoniais disponíveis.
+• “Fusão ou cisão extingue automaticamente contrato.” ERRADO. Analise capacidade/sucessão e art. 137, III.
+
+---
+
+FECHAMENTO DO M18
+
+Se você dominar cinco eixos, estará muito acima do nível de memorização seca:
+
+• regime e formalização;
+• equação econômica e riscos;
+• duração e execução fiscalizada;
+• alterações e limites;
+• recebimento, sanção, extinção e solução de conflitos.
+
+A Lei 14.133 não substituiu apenas números da Lei 8.666. Ela reorganizou o sistema contratual: fortaleceu gestão de riscos, planejamento da execução, matriz de riscos, meios alternativos, análise consequencial da nulidade e novas estruturas de garantia. Para a FCC, a maior vantagem está em não misturar regra atual com fórmulas antigas.
+
+Check final do módulo — consigo explicar os 14 duelos do quadro-mestre sem consultar o texto? ☐
+
+10 QUESTÕES INTERNAS — CONTEÚDO COMPLETO
+
+Finalidade: verificar a fixação imediata do que foi ensinado. Não substituem TEC, Anki, Lei em Dia ou cadernos externos.
+
+Questão 1 — FÁCIL
+
+Nos contratos administrativos regidos pela Lei 14.133/2021, qual afirmação descreve corretamente a relação entre direito público e direito privado?
+
+A) O contrato é regido exclusivamente pelo direito privado, salvo previsão expressa em contrário. B) O contrato é regido por suas cláusulas e pelos preceitos de direito público, com aplicação supletiva dos princípios da teoria geral dos contratos e do direito privado. C) O direito privado só pode ser aplicado mediante autorização judicial. D) Os preceitos de direito público só incidem depois do inadimplemento do contratado. E) A Administração e o contratado ocupam posições idênticas em todas as matérias contratuais.
+
+Gabarito: B
+
+Explicação: O art. 89 fixa o regime público como núcleo e admite aplicação supletiva da teoria geral dos contratos e do direito privado. A aplicação supletiva não elimina as prerrogativas legais da Administração.
+
+Questão 2 — FÁCIL
+
+Sobre a divulgação do contrato no PNCP, assinale a alternativa correta.
+
+A) É mera publicidade facultativa e não interfere na eficácia. B) É condição de existência do contrato e deve ocorrer sempre antes da assinatura. C) É condição indispensável de eficácia, observados os prazos legais, inclusive 20 dias úteis após licitação e 10 dias úteis na contratação direta. D) É dispensada nos contratos urgentes. E) Só é exigida para obras de grande vulto.
+
+Gabarito: C
+
+Explicação: A Lei 14.133 trata a divulgação no PNCP como condição de eficácia. Os prazos destacados no módulo são 20 dias úteis após licitação e 10 dias úteis após contratação direta; contratos urgentes têm disciplina própria, mas não ficam dispensados da publicação.
+
+Questão 3 — FÁCIL
+
+Qual sequência corresponde aos percentuais de garantia contratual trabalhados no M18?
+
+A) 5% / 10% / 30% B) 5% / 25% / 50% C) 10% / 25% / 30% D) 0,5% / 5% / 30% E) 25% / 30% / 50%
+
+Gabarito: A
+
+Explicação: A garantia contratual ordinária pode chegar a 5%; pode chegar a 10% com justificativa de complexidade técnica e riscos; e, em obras e serviços de engenharia de grande vulto, o seguro-garantia com cláusula de retomada pode chegar a 30%.
+
+Questão 4 — FÁCIL
+
+Qual hipótese integra o núcleo das alterações unilaterais do art. 124?
+
+A) Substituição da garantia de execução. B) Mudança consensual da forma de pagamento. C) Restabelecimento do equilíbrio por evento extraordinário. D) Modificação do projeto ou das especificações para melhor adequação técnica. E) Mudança consensual do regime de execução.
+
+Gabarito: D
+
+Explicação: As alterações unilaterais centrais são a qualitativa (projeto/especificações) e a quantitativa. Substituição de garantia, regime/modo de execução, forma de pagamento e reequilíbrio extraordinário pertencem ao bloco consensual.
+
+Questão 5 — MÉDIA
+
+Um contrato de serviço contínuo foi celebrado inicialmente por 5 anos. Ao final, há previsão editalícia, créditos e vantajosidade comprovada. Qual é a solução compatível com o M18?
+
+A) O contrato deve terminar, pois 5 anos é limite absoluto. B) Pode haver prorrogações sucessivas até a vigência máxima de 10 anos, observados os requisitos legais. C) A prorrogação é automática por mais 5 anos. D) O contrato pode ser prorrogado indefinidamente desde que o preço permaneça vantajoso. E) A prorrogação só é possível por decisão judicial.
+
+Gabarito: B
+
+Explicação: A Lei admite contratação inicial de serviços/fornecimentos contínuos por até 5 anos e prorrogações sucessivas, quando preenchidos os requisitos, até o limite de 10 anos. Não há renovação automática.
+
+Questão 6 — MÉDIA
+
+Em contrato de limpeza com dedicação exclusiva de mão de obra, uma nova convenção coletiva eleva salários. Qual instituto é, em regra, o mais adequado?
+
+A) Reajuste em sentido estrito por índice genérico. B) Repactuação, com demonstração analítica da variação dos custos. C) Revisão extraordinária, necessariamente sem anualidade. D) Alteração unilateral quantitativa. E) Apostila de mudança de razão social.
+
+Gabarito: B
+
+Explicação: Serviços contínuos com dedicação exclusiva ou predominância de mão de obra usam a repactuação como técnica ordinária, mediante demonstração analítica da variação de custos e observância das datas de anualidade.
+
+Questão 7 — MÉDIA
+
+O fiscal do contrato identifica reiterada entrega de material abaixo da especificação. Qual conduta é compatível com o módulo?
+
+A) Ignorar a ocorrência se a empresa prometer corrigir verbalmente. B) Registrar a ocorrência, adotar providências dentro de sua competência e comunicar o que ultrapassar sua esfera de atuação. C) Aplicar diretamente qualquer sanção, independentemente de competência. D) Transferir integralmente sua responsabilidade a terceiro contratado para auxiliá-lo. E) Determinar alteração do objeto sem processo ou formalização.
+
+Gabarito: B
+
+Explicação: O fiscal acompanha, registra, orienta/corrige dentro de sua competência e comunica situações que exigem decisão superior. Terceiro pode auxiliá-lo, mas não o substitui, e sanções dependem de competência e processo.
+
+Questão 8 — MÉDIA
+
+Há controvérsia apenas sobre 20% de determinada medição. Os outros 80% são incontroversos e regularmente liquidados. Segundo o conteúdo do M18, a Administração deve:
+
+A) reter todo o pagamento até resolver a controvérsia. B) pagar apenas após decisão judicial. C) pagar a parcela incontroversa no prazo normal e tratar separadamente a parcela controvertida. D) converter toda a dívida em indenização. E) aplicar sanção ao contratado antes de qualquer pagamento.
+
+Gabarito: C
+
+Explicação: O módulo destaca a regra da parcela incontroversa: a existência de controvérsia sobre parte da dimensão, qualidade ou quantidade não autoriza reter indiscriminadamente tudo.
+
+Questão 9 — DIFÍCIL
+
+Contrato de reforma de edifício, valor inicial atualizado de R$ 2.000.000. A Administração pretende impor unilateralmente supressão de 40% e sustenta que reformas admitem 50%. Qual análise está correta?
+
+A) A supressão é válida porque toda alteração em reforma admite 50%. B) A supressão é válida se o contratado concordar depois, pois o limite unilateral não importa. C) A regra especial de 50% vale apenas para acréscimos em reforma; a supressão unilateral permanece submetida ao limite geral de 25%. D) Qualquer supressão acima de 10% exige arbitragem. E) A base correta é o valor do contrato após o último aditivo, não o valor inicial atualizado.
+
+Gabarito: C
+
+Explicação: O art. 125 trabalha com 25% como regra para acréscimos/supressões unilaterais e 50% somente para acréscimos em reforma de edifício/equipamento. A base é o valor inicial atualizado.
+
+Questão 10 — DIFÍCIL
+
+A Administração identifica irregularidade insanável em contrato essencial já em execução. Qual resposta melhor reproduz a lógica do M18?
+
+A) A nulidade exige sempre paralisação imediata, sem considerar efeitos concretos. B) A Administração deve avaliar o interesse público e as consequências da suspensão/nulidade; pode haver continuidade juridicamente estruturada e até diferimento da eficácia da nulidade, sem afastar responsabilizações. C) A nulidade transforma automaticamente o contrato em mera irregularidade sanável. D) O contrato só pode ser encerrado por sentença judicial. E) Reconhecida a nulidade, o contratado jamais pode receber pelo que executou, ainda que de boa-fé e útil à Administração.
+
+Gabarito: B
+
+Explicação: Os arts. 147 a 150 adotam análise consequencial e admitem, nos termos legais, continuidade ou eficácia diferida para proteger o interesse público, sem apagar o vício nem a responsabilização. Também há disciplina de indenização pelo que foi utilmente executado quando o vício não é imputável ao contratado.
