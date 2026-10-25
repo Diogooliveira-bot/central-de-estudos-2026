@@ -171,3 +171,20 @@ test('roteamento público e contrato SQL preservam o plano atual',async()=>{
  assert.match(sql,/credit_applied=FALSE/);
  assert.match(sql,/grant_source IN \('manual','mercadopago','hotmart'\)/);
 });
+
+test('painel de compras exige administrador e permite reenvio protegido',async()=>{
+ const [page,middleware,plans,menu]=await Promise.all([
+  readFile(new URL('../vendas-hotmart.html',import.meta.url),'utf8'),
+  readFile(new URL('../middleware.js',import.meta.url),'utf8'),
+  readFile(new URL('../lib/plans-handler.js',import.meta.url),'utf8'),
+  readFile(new URL('../planos.html',import.meta.url),'utf8'),
+ ]);
+ assert.match(page,/Compras pela Hotmart/);
+ assert.match(page,/\/api\/plans\?action=hotmart/);
+ assert.match(page,/Reenviar link de ativação/);
+ assert.match(middleware,/path === '\/vendas-hotmart\.html'/);
+ assert.match(plans,/requireSession\(req, \['admin'\]\)/);
+ assert.match(plans,/hotmartAdmin/);
+ assert.match(plans,/claim_sent_at<NOW\(\)-INTERVAL '60 seconds'/);
+ assert.match(menu,/href="\/vendas-hotmart\.html"/);
+});
