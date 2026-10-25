@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Cache-Control" content="no-store">
+<meta name="theme-color" content="#10364c">
+<title>Recuperar senha — Base Completa</title>
+<link rel="icon" href="/favicon.ico">
+<style>
+:root{--navy:#10364c;--ink:#17354a;--muted:#607487;--line:#d8e4ec;--teal:#11818a;--bad:#a33d3d;--good:#11634f}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;display:grid;place-items:center;padding:22px;background:#f5f8fb;color:var(--ink);font:400 15px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}
+.card{width:min(450px,100%);background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:0 22px 60px rgba(9,37,54,.08);padding:34px}
+.logo{display:block;margin:0 auto 16px;width:155px;height:78px;object-fit:contain}
+.eyebrow{color:var(--teal);font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;text-align:center}
+h1{font-size:27px;line-height:1.15;letter-spacing:-.035em;margin:11px 0;text-align:center}
+.intro{color:var(--muted);font-size:13px;line-height:1.7;text-align:center;margin:0 0 23px}
+label{display:block;font-size:12px;font-weight:750;margin:17px 0 6px}
+input{width:100%;padding:12px 13px;font:inherit;border:1px solid #cddae5;border-radius:9px;background:#fff;color:var(--ink);outline:none}
+input:focus{border-color:#138f9c;box-shadow:0 0 0 3px rgba(17,129,138,.12)}
+button{width:100%;margin-top:21px;padding:13px;border:0;border-radius:9px;background:var(--navy);color:#fff;font-size:14px;font-weight:750;cursor:pointer}
+button:hover{background:#164e67}
+button:disabled{opacity:.6;cursor:wait}
+.note{margin:10px 0 0;color:var(--muted);font-size:12px;line-height:1.65}
+.message{font-size:13px;line-height:1.6;border:1px solid var(--line);border-radius:9px;padding:12px;margin:17px 0 0;color:var(--muted);background:#f7fafc}
+.message[hidden],[hidden]{display:none!important}
+.message.bad{border-color:#edcaca;color:var(--bad);background:#fff8f8}
+.message.good{border-color:#bfe1d6;color:var(--good);background:#f4fbf8}
+.back{display:block;text-align:center;margin-top:21px;color:var(--teal);font-size:13px;font-weight:700;text-decoration:none}
+.foot{text-align:center;color:#8aa0af;font-size:11px;margin:22px 0 0}
+@media(max-width:520px){.card{padding:26px 21px}h1{font-size:25px}}
+</style>
+</head>
+<body>
+<main class="card">
+<img class="logo" src="/assets/base-completa-symbol.webp" alt="Base Completa">
+<div class="eyebrow">Acesso seguro</div>
+<h1 id="title">Recuperar senha</h1>
+<p class="intro" id="intro">Informe seu e-mail cadastrado. Se houver uma conta de aluno ativa, enviaremos um link para criar outra senha.</p>
+<form id="requestForm">
+<label for="email">E-mail cadastrado</label>
+<input type="email" id="email" autocomplete="email" maxlength="240" placeholder="seuemail@exemplo.com" required>
+<button type="submit" id="requestButton">Enviar link de recuperação</button>
+<p class="note">O link será válido por 30 minutos e funcionará apenas uma vez.</p>
+</form>
+<form id="confirmForm" hidden>
+<label for="password">Nova senha</label>
+<input type="password" id="password" autocomplete="new-password" minlength="8" maxlength="200" required placeholder="Mínimo de 8 caracteres">
+<label for="confirmPassword">Confirme a nova senha</label>
+<input type="password" id="confirmPassword" autocomplete="new-password" minlength="8" maxlength="200" required>
+<button type="submit" id="confirmButton">Salvar nova senha</button>
+<p class="note">Após confirmar, suas sessões anteriores serão encerradas. Seu progresso continuará salvo.</p>
+</form>
+<div class="message" id="status" hidden role="status" aria-live="polite"></div>
+<a class="back" href="/login.html" id="backLink">← Voltar ao login</a>
+<p class="foot">Base Completa · Central de Estudos</p>
+</main>
+<script>
+(function(){
+'use strict';
+var requestForm=document.getElementById('requestForm'),confirmForm=document.getElementById('confirmForm'),box=document.getElementById('status');
+var token='';
+try{
+ var hashParams=new URLSearchParams((location.hash||'').replace(/^#/,''));
+ token=hashParams.get('token')||'';
+ if(token){sessionStorage.setItem('bc_password_reset_token',token);history.replaceState(null,'',location.pathname)}
+ else token=sessionStorage.getItem('bc_password_reset_token')||'';
+}catch(e){}
+function show(text,type){box.hidden=!text;box.textContent=text||'';box.className='message'+(type?' '+type:'')}
+async function post(action,body){
+ var response=await fetch('/api/auth?action=password-reset-'+action,{
+  method:'POST',cache:'no-store',headers:{'Content-Type':'application/json'},
+  body:JSON.stringify(body),
+ });
+ var data={};try{data=await response.json()}catch(e){}
+ if(!response.ok)throw new Error(data.error||'Não foi possível concluir sua solicitação.');
+ return data;
+}
+async function initial(){
+ if(!token)return;
+ document.getElementById('title').textContent='Criar nova senha';
+ document.getElementById('intro').textContent='Informe uma senha nova para voltar a acessar a Central de Estudos.';
+ requestForm.hidden=true;
+ show('Verificando link de recuperação...');
+ try{
+  var data=await post('check',{token:token});
+  if(!data.valid)throw new Error('Este link expirou ou já foi utilizado. Solicite uma nova recuperação.');
+  confirmForm.hidden=false;show('');
+ }catch(error){
+  show(error.message,'bad');requestForm.hidden=false;token='';
+  try{sessionStorage.removeItem('bc_password_reset_token')}catch(e){}
+  document.getElementById('title').textContent='Solicitar novo link';
+  document.getElementById('intro').textContent='Informe seu e-mail cadastrado para receber outro link de recuperação.';
+ }
+}
+requestForm.addEventListener('submit',async function(event){
+ event.preventDefault();
+ var button=document.getElementById('requestButton');button.disabled=true;show('Verificando solicitação...');
+ try{
+  var data=await post('request',{email:document.getElementById('email').value});
+  show(data.message||'Se houver uma conta ativa, um link será enviado ao seu e-mail.','good');
+  requestForm.hidden=true;
+  document.getElementById('title').textContent='Verifique seu e-mail';
+  document.getElementById('intro').textContent='Caso não encontre a mensagem, consulte a pasta de spam.';
+ }catch(error){show(error.message,'bad');button.disabled=false}
+});
+confirmForm.addEventListener('submit',async function(event){
+ event.preventDefault();
+ var password=document.getElementById('password').value;
+ if(password!==document.getElementById('confirmPassword').value){show('As senhas não coincidem.','bad');return}
+ var button=document.getElementById('confirmButton');button.disabled=true;show('Salvando sua nova senha...');
+ try{
+  var data=await post('confirm',{token:token,password:password});
+  show(data.message||'Senha alterada. Entre novamente.','good');
+  confirmForm.hidden=true;
+  document.getElementById('title').textContent='Senha atualizada';
+  document.getElementById('intro').textContent='Sua conta está pronta para entrar com a nova senha.';
+  document.getElementById('backLink').textContent='Ir para o login →';
+  document.getElementById('password').value='';
+  document.getElementById('confirmPassword').value='';
+  try{sessionStorage.removeItem('bc_password_reset_token')}catch(e){}
+ }catch(error){show(error.message,'bad');button.disabled=false}
+});
+initial();
+})();
+</script>
+</body>
+</html>
