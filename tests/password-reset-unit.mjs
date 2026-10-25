@@ -93,7 +93,8 @@ test('o fluxo usa resgate SQL atômico, invalida sessões e exige role aluno',as
  assert.match(reset,/delivery_status='sent'/);
  assert.match(reset,/r\.expires_at>NOW\(\)/);
  assert.match(reset,/session_version=session_version\+1/);
- assert.match(reset,/role='aluno'/);
+ assert.doesNotMatch(reset,/role='aluno'/);
+ assert.equal((reset.match(/role IN \('aluno','editor','admin'\)/g)||[]).length,3);
  assert.match(reset,/central_password_reset_limits/);
  assert.match(reset,/sameOriginRequest\(req\)/);
  assert.match(middleware,/'\/recuperar-senha\.html'/);
@@ -102,6 +103,8 @@ test('o fluxo usa resgate SQL atômico, invalida sessões e exige role aluno',as
  assert.match(page,/location\.hash/);
  assert.match(page,/name="viewport"/);
  assert.match(login,/href="\/recuperar-senha\.html"/);
+ assert.match(page,/Se houver uma conta ativa/);
+ assert.match(reset,/password reset email accepted by SMTP/);
  const scripts=[...page.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g)];
  assert.equal(scripts.length,1);
  assert.doesNotThrow(()=>new vm.Script(scripts[0][1]));
