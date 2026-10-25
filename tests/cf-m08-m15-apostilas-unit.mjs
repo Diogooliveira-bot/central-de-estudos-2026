@@ -9,7 +9,6 @@ const modules = Array.from({length:8}, (_, index) => index + 8);
 const expectedChecks = new Map([[8,10],[9,10],[10,10],[11,10],[12,10],[13,8],[14,8],[15,10]]);
 const expectedTables = new Map([[8,22],[9,23],[10,16],[11,20],[12,28],[13,16],[14,15],[15,12]]);
 const version = '20261022cfm08m15apostila1';
-const build = '20261023-remove-labor-disciplines-v1';
 
 function fixture() {
   const dom = new JSDOM('<!doctype html><html><head></head><body></body></html>', {url:'https://cf-m08-m15.example/'});
@@ -105,7 +104,8 @@ test('questões M08 a M15 preservam distribuição, alternativas limpas e funcio
 
 test('Lei em Dia e cache offline apontam para a mesma versão em M08 a M15', () => {
   const dom = fixture(), w = dom.window;
-  const manifest = JSON.parse(read('central-offline-files-v66172.json')).files;
+  const offline = JSON.parse(read('central-offline-files-v66172.json'));
+  const manifest = offline.files;
   const index = read('index.html');
   const lawCtx = {};
   vm.runInNewContext(read('tools/decorando-data-modulos.js') + ';globalThis.modules=CENTRAL_LAW_MODULES.modules;', lawCtx);
@@ -123,7 +123,7 @@ test('Lei em Dia e cache offline apontam para a mesma versão em M08 a M15', () 
   const uiAsset = `/ui/cf-native-study-v2.js?v=${version}`;
   assert.ok(index.includes(`src="${uiAsset}"`));
   assert.ok(manifest.includes(uiAsset));
-  assert.match(read('sw.js'), new RegExp(`central-${build}`));
+  assert.ok(read('sw.js').includes(`var CACHE='central-${offline.build}'`));
   dom.window.close();
 });
 

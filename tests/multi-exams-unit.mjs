@@ -82,8 +82,8 @@ test('carregador e PWA incluem TRT8, não esquecem TJPB e mantêm versão do cac
  assert.ok(boot.indexOf('content/trt8-2026-verticalized.js')<boot.indexOf("tag('ui/exam-verticalized-v1.js"));
  assert.ok(manifest.files.some(s=>s.includes('/content/trt8-2026-verticalized.js?v=')));
  assert.ok(manifest.files.some(s=>s.includes('/ui/study-navigation.js?v=20261023-remove-labor-disciplines-v1')));
- assert.equal(manifest.build,'20261023-remove-labor-disciplines-v1');
- assert.match(sw,/var CACHE='central-20261023-remove-labor-disciplines-v1'/);
+ assert.ok(boot.includes(`var BUILD='${manifest.build}'`));
+ assert.ok(sw.includes(`var CACHE='central-${manifest.build}'`));
 });
 test('vínculos do TRT8 são reais e sem alegações de cobertura total',()=>{
  const bySubject=Object.fromEntries(trt.subjects.map(s=>[s.id,s]));
