@@ -4,6 +4,7 @@ import path from 'node:path';
 import test from 'node:test';
 import vm from 'node:vm';
 import { JSDOM } from 'jsdom';
+import { protectedAsset } from '../lib/protected-content.js';
 
 const root = path.resolve(import.meta.dirname, '..');
 const read = relative => fs.readFileSync(path.join(root, relative), 'utf8');
@@ -62,7 +63,7 @@ test('botão Lei em Dia usa o filtro explícito do módulo e mantém as chaves d
     '/ui/cf-native-study-v2.js?v=20261022cfm08m15apostila1',
   ]) {
     assert.ok(index.includes(`src="${asset}"`), asset);
-    assert.ok(offline.files.includes(asset), asset);
+    assert.equal(offline.files.includes(asset), !protectedAsset(new URL(asset, 'https://unit.test').pathname), asset);
   }
 });
 

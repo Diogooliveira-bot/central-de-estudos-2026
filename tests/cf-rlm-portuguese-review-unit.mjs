@@ -4,6 +4,7 @@ import path from 'node:path';
 import test from 'node:test';
 import vm from 'node:vm';
 import zlib from 'node:zlib';
+import { protectedAsset } from '../lib/protected-content.js';
 
 const root = path.resolve(import.meta.dirname, '..');
 const read = relative => fs.readFileSync(path.join(root, relative), 'utf8');
@@ -99,7 +100,7 @@ test('carregadores ativos apontam para a revisão e o manifesto offline acompanh
   for (const [id, version] of Object.entries(reviewed)) {
     const asset = `/content/cf/${id}-native-data.js?v=${version}`;
     assert.ok(index.includes(`src="${asset}"`), id);
-    assert.ok(manifest.files.includes(asset), id);
+    assert.equal(manifest.files.includes(asset), !protectedAsset(new URL(asset, 'https://unit.test').pathname), id);
   }
   assert.ok(index.includes('/content/rlm-tjce-2026/aulas-raciocinio.js?v=20261018ort1'));
 });

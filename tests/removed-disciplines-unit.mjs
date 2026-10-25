@@ -29,8 +29,7 @@ test('catálogo principal e objetivos mantêm as oito disciplinas atuais',()=>{
     assert.ok(goal.subjectIds.every(id=>!retired.has(id)));
     assert.ok((goal.examSubjects||[]).every(s=>!retired.has(s.subjectId)));
   }
-  const index = read('index.html');
-  const tec = index.match(/<script id="tec-cadernos-data-v6655">([\s\S]*?)<\/script>/)[1];
+  const tec = read('content/tec-cadernos-data.js');
   const data = vm.runInNewContext(tec+';window.TEC_CADERNOS_DATA',{window:{}});
   assert.ok(data.cadernos.length > 100);
   assert.ok(data.cadernos.every(item=>!retired.has(item.grupo)));

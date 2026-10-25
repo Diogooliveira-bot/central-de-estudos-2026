@@ -3,6 +3,7 @@ import fs from 'node:fs';
 import vm from 'node:vm';
 import test from 'node:test';
 import { JSDOM } from 'jsdom';
+import { protectedAsset } from '../lib/protected-content.js';
 
 const read = path => fs.readFileSync(new URL(`../${path}`, import.meta.url), 'utf8');
 
@@ -90,7 +91,7 @@ test('15 questões do M06 mantêm distribuição e pontuação mesmo com alterna
 test('M06 tem fonte editorial reproduzível e a mesma versão no pacote offline', () => {
   const asset='/content/cf/m06-native-data.js?v=20261022cfm06apostila1';
   assert.ok(read('index.html').includes(`src="${asset}"`));
-  assert.ok(JSON.parse(read('central-offline-files-v66172.json')).files.includes(asset));
+  assert.equal(JSON.parse(read('central-offline-files-v66172.json')).files.includes(asset), !protectedAsset(new URL(asset, 'https://unit.test').pathname));
   const ctx={window:{}};
   vm.runInNewContext(read('tools/decorando-data-modulos.js')+';globalThis.modules=CENTRAL_LAW_MODULES.modules;',ctx);
   const law=ctx.modules.find(m=>m.id==='cf-m06');
