@@ -28,7 +28,7 @@ test('a experiência v3 modular é carregada em ordem e participa do modo offlin
     assert.ok(offline.includes(`/${file}?v=${fileVersion}`), `${file} deve estar no manifesto offline`);
   }
   assert.match(boot, /student-experience-v3\.css\?v='\+BUILD/);
-  assert.match(offline, /student-experience-v3\.css\?v=20261023-remove-labor-disciplines-v1/);
+  assert.ok(JSON.parse(offline).files.some(file => /^\/ui\/student-experience-v3\.css\?v=/.test(file)));
   assert.doesNotMatch(boot, /student-polish-v1|student-experience-v2\.js/);
   assert.doesNotMatch(offline, /student-polish-v1|student-experience-v2/);
   assert.ok(serviceWorker.includes(`var CACHE='central-${build}'`));
