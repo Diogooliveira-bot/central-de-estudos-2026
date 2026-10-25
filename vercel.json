@@ -3,7 +3,7 @@
   "outputDirectory": "dist",
   "functions": {
     "api/private-content.js": {
-      "includeFiles": "{**/*.pdf,content/**/*,ui/**/*,central-structural-v*/**/*questions*.js,central-structural-v*/civil-course-*.js,tools/decorando-data-*.js,tools/cronograma.html,tools/rlm.html,*-full-theory-*.js,*-theory-module*.js,adm-m*-content-*.js,adm-m*-theory-*.js,cpp-course-data-*.js,cpp-course-core-v1.js,portugues-m*-runtime-v*.js,portugues-m2-tec-link-v1.js,portugues-m3-preview-v1.html,portugues-native-data/*.js,portugues-autodidata-data.txt,audits/qc-integral-20261019/**/*.json}"
+      "includeFiles": "{**/*.pdf,content/**/*,ui/**/*,central-structural-v*/**/*.js,tools/*.{js,html},*-theory-*.js,*-full-theory-*.js,adm-m*-*.js,cpp-course-*.js,portugues-*.{js,html},portugues-autodidata-data.txt,portugues-native-data/*.js,audits/**/*.json}"
     },
     "api/lei-em-dia-questions.js": {
       "includeFiles": "lei-em-dia-aprovadas-20261012.js"

@@ -51,7 +51,9 @@ test('Vercel static output omits protected source files but retains the public a
     const vercelConfig = JSON.parse(await readFile(path.join(root, 'vercel.json'), 'utf8'));
     assert.equal(vercelConfig.outputDirectory, 'dist');
     assert.equal(vercelConfig.buildCommand, 'npm run build:vercel-output');
-    assert.match(vercelConfig.functions['api/private-content.js'].includeFiles, /ui\/\*\*\/\*/);
+    const privateIncludes = vercelConfig.functions['api/private-content.js'].includeFiles;
+    assert.match(privateIncludes, /ui\/\*\*\/\*/);
+    assert.ok(privateIncludes.length <= 256, 'includeFiles must satisfy the Vercel schema limit');
 
     const manifest = await stat(path.join(output, 'central-offline-files-v66172.json'));
     assert.ok(manifest.size > 0);
