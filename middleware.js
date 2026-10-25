@@ -177,7 +177,7 @@ export default async function middleware(request) {
       return previewForbidden();
     }
     if (protectedAsset(path)) return previewForbidden();
-    if (path === '/usuarios.html' || path === '/update-central.html') return previewForbidden();
+    if (path === '/usuarios.html' || path === '/update-central.html' || path === '/planos.html') return previewForbidden();
     if (path === '/login.html') return Response.redirect(new URL('/central-v119.html', request.url), 302);
     return next();
   }
@@ -212,7 +212,7 @@ export default async function middleware(request) {
   const session = await verifyToken(token);
   if (!session) return redirectToLogin(request);
 
-  if ((path === '/usuarios.html' || path === '/update-central.html') && session.role !== 'admin') {
+  if ((path === '/usuarios.html' || path === '/update-central.html' || path === '/planos.html') && session.role !== 'admin') {
     return Response.redirect(new URL('/', request.url), 302);
   }
 
