@@ -2,14 +2,23 @@
   "buildCommand": "npm run build:vercel-output",
   "outputDirectory": "dist",
   "functions": {
-    "api/private-content.js": {
-      "includeFiles": "{**/*.pdf,content/**/*,ui/**/*,central-structural-v*/**/*.js,tools/*.{js,html},*-theory-*.js,*-full-theory-*.js,adm-m*-*.js,cpp-course-*.js,portugues-*.{js,html},portugues-autodidata-data.txt,portugues-native-data/*.js,audits/**/*.json}"
-    },
-    "api/lei-em-dia-questions.js": {
-      "includeFiles": "lei-em-dia-aprovadas-20261012.js"
+    "api/auth.js": {
+      "includeFiles": "{**/*.pdf,content/**/*,ui/**/*,central-structural-v*/**/*.js,tools/*.{js,html},*-theory-*.js,*-full-theory-*.js,adm-m*-*.js,cpp-course-*.js,portugues-*,portugues-native-data/*.js,audits/**/*.json,lei-em-dia-*.js}"
     }
   },
   "rewrites": [
+    {
+      "source": "/api/plans",
+      "destination": "/api/auth?bc_api=plans"
+    },
+    {
+      "source": "/api/private-content",
+      "destination": "/api/auth?bc_api=private-content"
+    },
+    {
+      "source": "/api/lei-em-dia-questions",
+      "destination": "/api/auth?bc_api=lei-em-dia-questions"
+    },
     {
       "source": "/central-de-questoes",
       "destination": "/central-v119.html"

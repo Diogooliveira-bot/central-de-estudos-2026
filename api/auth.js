@@ -16,6 +16,9 @@ import {
   verifyPassword,
 } from '../lib/auth.js';
 import handleInviteAction from '../lib/invite-handler.js';
+import handleLeiEmDiaQuestions from '../lib/lei-em-dia-questions-handler.js';
+import handlePlans from '../lib/plans-handler.js';
+import handlePrivateContent from '../lib/private-content-handler.js';
 import { createHandler as createWhatsappSalesHandler } from '../lib/whatsapp-sales-handler.js';
 
 export const config = { api: { bodyParser: false }, maxDuration: 30 };
@@ -188,6 +191,11 @@ async function bootstrap(req, res) {
 
 export default async function handler(req, res) {
   try {
+    const premiumApi = String(req.query?.bc_api || '').toLowerCase();
+    if (premiumApi === 'plans') return handlePlans(req, res);
+    if (premiumApi === 'private-content') return handlePrivateContent(req, res);
+    if (premiumApi === 'lei-em-dia-questions') return handleLeiEmDiaQuestions(req, res);
+
     const action = String(req.query?.action || '').toLowerCase();
     if (action === 'whatsapp-sales') return whatsappSalesHandler(req, res);
 

@@ -3,8 +3,9 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import vm from 'node:vm';
 import middleware from '../middleware.js';
-import leiApi from '../api/lei-em-dia-questions.js';
-import privateApi from '../api/private-content.js';
+import authApi from '../api/auth.js';
+import leiApi from '../lib/lei-em-dia-questions-handler.js';
+import privateApi from '../lib/private-content-handler.js';
 import { portugueseSummaryScript, projectPortugueseAutodidataSummary, projectPortugueseSummary, protectedAsset } from '../lib/protected-content.js';
 import zlib from 'node:zlib';
 
@@ -30,8 +31,12 @@ test('premium files, question source files, TEC and QC catalogues are routed thr
   assert.match(middleware, /matcher:\s*'\/:path\*'/);
   assert.match(middleware, /privateAsset\.kind === 'lei-em-dia' \? '\/api\/lei-em-dia-questions\?mode=catalog'/);
   assert.match(middleware, /\/api\/private-content/);
-  assert.match(vercel.functions['api/private-content.js'].includeFiles, /\*\*\/\*\.pdf/);
-  assert.match(vercel.functions['api/private-content.js'].includeFiles, /portugues-autodidata-data\.txt/);
+  assert.match(vercel.functions['api/auth.js'].includeFiles, /\*\*\/\*\.pdf/);
+  assert.match(vercel.functions['api/auth.js'].includeFiles, /portugues-\*/);
+  assert.deepEqual(
+    vercel.rewrites.slice(0, 3).map(rule => rule.source),
+    ['/api/plans', '/api/private-content', '/api/lei-em-dia-questions'],
+  );
 });
 
 test('free Portuguese projection is authored review-only and excludes full lesson HTML and quizzes', async () => {
@@ -83,7 +88,7 @@ test('public offline manifest excludes premium assets and PWA bypasses cache for
 });
 
 test('free TEC/QC responses are lock-only projections, never real link catalogs', async () => {
-  const api = await read('api/private-content.js');
+  const api = await read('lib/private-content-handler.js');
   const qcUi = await read('ui/qc-sharing-links.js');
   const cpcUi = await read('ui/cpc-sharing-links.js');
   assert.match(api, /QC_CENTRAL_SHARING_LINKS=\{schemaVersion:1,locked:true,items:\[\]\}/);
@@ -115,4 +120,17 @@ test('HTTP handlers deny unauthenticated direct asset and question requests with
   });
   assert.equal(question.statusCode, 401);
   assert.doesNotMatch(question.body, /statement|answer|explanation/i);
+
+  const routedAsset = await call(authApi, {
+    method: 'GET', query: { bc_api: 'private-content', asset: '/assets/revisao-premium.pdf' }, headers: {},
+  });
+  assert.equal(routedAsset.statusCode, 401);
+  assert.doesNotMatch(routedAsset.body, /PDF|base64|gabarito/i);
+
+  const routedQuestion = await call(authApi, {
+    method: 'GET', query: { bc_api: 'lei-em-dia-questions', mode: 'catalog' },
+    headers: { 'sec-fetch-site': 'same-origin' },
+  });
+  assert.equal(routedQuestion.statusCode, 401);
+  assert.doesNotMatch(routedQuestion.body, /statement|answer|explanation/i);
 });

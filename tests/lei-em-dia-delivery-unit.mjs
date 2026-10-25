@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { claimQuestion, projectCatalogQuestion, questionById } from '../api/lei-em-dia-questions.js';
+import { claimQuestion, projectCatalogQuestion, questionById } from '../lib/lei-em-dia-questions-handler.js';
 
 function fakeSession(limit = 20) {
   const used = new Set();
@@ -53,7 +53,7 @@ test('requesting an already used question again does not consume another daily s
 });
 
 test('legacy batch mode is disabled and premium delivery remains one question per request', async () => {
-  const api = await readFile(new URL('../api/lei-em-dia-questions.js', import.meta.url), 'utf8');
+  const api = await readFile(new URL('../lib/lei-em-dia-questions-handler.js', import.meta.url), 'utf8');
   const ui = await readFile(new URL('../tools/decorando.html', import.meta.url), 'utf8');
   const middleware = await readFile(new URL('../middleware.js', import.meta.url), 'utf8');
   assert.match(api, /isLegacy\) return send\(res, 410/);
