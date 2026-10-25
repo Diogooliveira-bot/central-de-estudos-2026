@@ -4,6 +4,7 @@ on:
     branches:
       - feature/hotmart-webhook-isolado-20261025
       - feature/hotmart-ativacao-automatica-20261025
+      - release/hotmart-producao-20261025
   workflow_dispatch:
 permissions:
   contents: read
