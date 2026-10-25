@@ -12,6 +12,15 @@ Na conta Hotmart existem **dois produtos com o mesmo nome**: rascunho
 `8805543` e produto com vendas ativas `8805554` (conforme captura).
 É obrigatório confirmar **qual ID contém as duas ofertas de R$ 97 e R$ 194**.
 Não atribuir `HOTMART_PRODUCT_ID` por suposição.
+
+Os **códigos de oferta** foram lidos diretamente da captura de tela do proprietário
+(e já estão configurados exclusivamente no ambiente de Preview desta branch):
+- Semestral — R$ 97,00: `HOTMART_OFFER_6M_CODE=o4y1mlg9`;
+- Anual — R$ 194,00: `HOTMART_OFFER_12M_CODE=gh4ajvj1`.
+
+Ainda é obrigatório confirmar se essas ofertas pertencem ao produto rascunho
+ou ao produto ativo; não conectar um ID de produto errado.
+
 Os códigos das ofertas vêm do quadro de preços em Hotmart: copiar exatamente os
 valores exibidos e conferir os dois nomes antes de ativar. Não mapear por preço
 pago, pois cupons e parcelamento mudam valores.
@@ -80,3 +89,17 @@ constraint de origem das assinaturas para incluir 'hotmart'.
 - Vigência contratual/garantia/política de cancelamento da Hotmart.
 
 **Sem todos esses itens validados, não anunciar sistema automático como ativo.**
+
+## Acompanhamento do proprietário
+- `/planos.html`: atribuição manual e consulta de planos;
+- `/vendas-hotmart.html`: vendas da Hotmart e reenvio de links de ativação;
+- `/ativar-acesso.html#token=...`: primeiro acesso do comprador;
+- `/api/hotmart-webhook`: retorno autenticado, ativado apenas quando as
+  variáveis de ambiente específicas forem configuradas;
+- `/api/hotmart-claim?action=check|redeem`: link verificado e cadastro seguro.
+
+## Revisão e segurança adicionais
+Verificar antes da publicação: confirmação do produto na Hotmart; legislação de
+proteção de dados pessoais (LGPD), base legal e retenção de dados de comprador;
+política de cancelamento e reembolso; teste de SMTP e dados bancários do produtor.
+Não enviar Hottok, DATABASE_URL ou senha de aplicativo Gmail para o chat.
