@@ -80,6 +80,34 @@ test('quadros comparativos das 20 apostilas são tabelas legíveis e mantêm as 
   assert.match(m12, /<th scope="col">Termo de parceria<\/th><th scope="col">Termo de colaboração<\/th>/);
 });
 
+
+test('títulos e subtítulos ADM recebem hierarquia sem modificar o leitor compartilhado', async () => {
+  const dom=new JSDOM('<!doctype html><html><body></body></html>',{url:'https://example.test/central-v119.html',runScripts:'outside-only',pretendToBeVisual:true});
+  const {window}=dom;
+  for(const file of ['content/adm/adm-native-index.js','content/adm/adm-session-index.js','content/adm/m04-native-data-lite.js','content/adm/m04-approved-complete.js'])window.eval(read(file));
+  window.CentralNativeReadingSession={
+    create(){const overlay=window.document.createElement('div');overlay.id='adm-native-reader';overlay.innerHTML='<main class="bc-native-scroll"></main>';window.document.body.append(overlay);return overlay},
+    show(overlay,html){overlay.querySelector('.bc-native-scroll').innerHTML=`<article class="bc-native-article">${html}</article>`;return overlay.querySelector('.bc-native-scroll')},
+    percent(){},canTrack(){return true},fail(){},
+  };
+  window.renderDetail=()=>'';window.renderAll=()=>{};
+  window.eval(read('ui/adm-native-layer.js'));
+  const uid=Object.keys(window.ADM_NATIVE_INDEX.modules).find(id=>window.ADM_NATIVE_INDEX.modules[id].number===4);
+  await window.AdmNative.open(uid,'complete',false);
+  const article=window.document.querySelector('.bc-native-article');
+  assert.ok(article.classList.contains('adm-approved-reading'));
+  assert.match(article.querySelector('h2').textContent,/SESSÃO 01/);
+  assert.ok([...article.querySelectorAll('h3.adm-approved-subtitle')].some(h=>h.textContent==='Entenda primeiro'));
+  assert.ok([...article.querySelectorAll('h3.adm-approved-subtitle')].some(h=>h.textContent==='Regra jurídica'));
+  assert.ok(article.querySelector('[data-adm-check="1"]'),'checks preservados');
+  assert.ok(article.querySelector('[data-adm-session-check="1"]'),'checks de sessão preservados');
+  const css=read('ui/adm-native-layer.css');
+  assert.match(css,/#adm-native-reader \.adm-approved-reading > h2/);
+  assert.match(css,/#adm-native-reader \.adm-approved-reading > h3/);
+  assert.doesNotMatch(read('ui/native-reading-session.js'),/emphasizeAdmTitles/);
+  dom.window.close();
+});
+
 test('checks continuam marcáveis após o editor substituir o conteúdo do módulo', async () => {
   const dom=new JSDOM('<!doctype html><html><body></body></html>',{url:'https://example.test/central-v119.html',runScripts:'outside-only',pretendToBeVisual:true});
   const {window}=dom;
