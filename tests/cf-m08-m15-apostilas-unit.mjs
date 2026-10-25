@@ -3,13 +3,14 @@ import fs from 'node:fs';
 import vm from 'node:vm';
 import test from 'node:test';
 import { JSDOM } from 'jsdom';
+import { protectedAsset } from '../lib/protected-content.js';
 
 const read = path => fs.readFileSync(new URL(`../${path}`, import.meta.url), 'utf8');
 const modules = Array.from({length:8}, (_, index) => index + 8);
 const expectedChecks = new Map([[8,10],[9,10],[10,10],[11,10],[12,10],[13,8],[14,8],[15,10]]);
 const expectedTables = new Map([[8,22],[9,23],[10,16],[11,20],[12,28],[13,16],[14,15],[15,12]]);
 const version = '20261022cfm08m15apostila1';
-const build = '20261023-remove-labor-disciplines-v1';
+const build = '20261024-premium-progressive-v2';
 
 function fixture() {
   const dom = new JSDOM('<!doctype html><html><head></head><body></body></html>', {url:'https://cf-m08-m15.example/'});
@@ -113,7 +114,7 @@ test('Lei em Dia e cache offline apontam para a mesma versão em M08 a M15', () 
     const key = `m${String(n).padStart(2,'0')}`;
     const asset = `/content/cf/${key}-native-data.js?v=${version}`;
     assert.ok(index.includes(`src="${asset}"`));
-    assert.ok(manifest.includes(asset));
+    assert.equal(manifest.includes(asset), !protectedAsset(new URL(asset, 'https://unit.test').pathname));
     assert.ok(lawCtx.modules.some(module => module.id === `cf-${key}`));
     let law;
     w.openLeiSecaEnxuta = (...args) => law = args;

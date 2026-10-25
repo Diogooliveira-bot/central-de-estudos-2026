@@ -237,8 +237,9 @@ window.ptNativeMount=mount;
 
 function renderModuleContent(id,data,tab){
  const tabs=[['teoria','Teoria'],['revisao','Revisão'],['questoes','Questões'],['tec','TEC']];
- return '<div class="ptn-tabs">'+tabs.map(x=>'<button type="button" class="ptn-tab '+(tab===x[0]?'active':'')+'" onclick="return ptNativeTab(\''+id+'\',\''+x[0]+'\')">'+x[1]+'</button>').join('')+'</div>'+
-  '<div class="ptn-content">'+(tab==='teoria'?renderTheory(id,data):tab==='revisao'?renderReview(id,data):tab==='questoes'?renderQuestions(id,data):renderTec(id,data))+'</div>';
+ const locked=data.summaryOnly&&tab!=='teoria';
+ return '<div class="ptn-tabs">'+tabs.map(x=>'<button type="button" class="ptn-tab '+(tab===x[0]?'active':'')+'" onclick="return ptNativeTab(\''+id+'\',\''+x[0]+'\')">'+x[1]+(data.summaryOnly&&x[0]!=='teoria'?' 🔒':'')+'</button>').join('')+'</div>'+
+  '<div class="ptn-content">'+(locked?'<div class="ptn-review-card"><b>Recurso exclusivo do Premium</b><p>Este módulo gratuito mostra os pontos de revisão já preparados no material da Central. O conteúdo completo, revisões, questões e cadernos TEC permanecem no plano Premium.</p><div class="ptn-actions"><button type="button" class="ptn-btn primary" onclick="window.alert(\'Este recurso é exclusivo do Base Completa Premium.\')">Conhecer o Premium</button></div></div>':tab==='teoria'?renderTheory(id,data):tab==='revisao'?renderReview(id,data):tab==='questoes'?renderQuestions(id,data):renderTec(id,data))+'</div>';
 }
 function setTab(id,tab){
  saveScroll(id);

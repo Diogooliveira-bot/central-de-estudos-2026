@@ -9,7 +9,7 @@ test('a experiência v3 modular é carregada em ordem e participa do modo offlin
     read('central-v119.html'), read('central-offline-files-v66172.json'), read('sw.js'), read('package.json'),
   ]);
   assert.match(boot, /var APP_VERSION='6\.7\.0'/);
-  assert.match(boot, /var BUILD='20261023-remove-labor-disciplines-v1'/);
+  assert.match(boot, /var BUILD='20261024-premium-progressive-v2'/);
   const ordered = [
     'ui/study-objectives-catalog-v1.js', 'ui/external-question-filters-v1.js',
     'ui/student-ux-core-v3.js', 'ui/student-shell-v3.js',
@@ -30,7 +30,7 @@ test('a experiência v3 modular é carregada em ordem e participa do modo offlin
   assert.match(offline, /student-experience-v3\.css\?v=20261023-remove-labor-disciplines-v1/);
   assert.doesNotMatch(boot, /student-polish-v1|student-experience-v2\.js/);
   assert.doesNotMatch(offline, /student-polish-v1|student-experience-v2/);
-  assert.match(serviceWorker, /central-20261023-remove-labor-disciplines-v1/);
+  assert.match(serviceWorker, /central-20261024-premium-progressive-v2/);
   assert.equal(JSON.parse(pkg).version, '6.7.0');
 });
 

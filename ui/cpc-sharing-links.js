@@ -40,6 +40,13 @@
   }
 
   function renderModule(moduleCode) {
+    if (map?.locked === true) {
+      return '<section class="cpc-sharing-panel" data-cpc-sharing-code="' + escapeHtml(moduleCode)
+        + '" aria-label="Recurso Premium QConcursos de ' + escapeHtml(moduleCode) + '">'
+        + '<div class="cpc-sharing-heading"><h3>QConcursos · 🔒 Premium</h3><span>Cadernos e filtros exclusivos</span></div>'
+        + '<p>Este recurso é exclusivo do Base Completa Premium.</p>'
+        + '<button type="button" class="cf-btn" data-cpc-premium-cta>Conhecer o Premium</button></section>';
+    }
     const module = map?.modules?.[moduleCode];
     if (!module?.general) return '';
     const general = renderItem(module.general, 'general');
@@ -86,7 +93,9 @@
       if (!markup) return;
       const panel = document.createElement('template');
       panel.innerHTML = markup;
-      body.appendChild(panel.content.firstElementChild);
+      const element = panel.content.firstElementChild;
+      element?.querySelector('[data-cpc-premium-cta]')?.addEventListener('click', () => global.alert('Este recurso é exclusivo do Base Completa Premium.'));
+      body.appendChild(element);
     });
     return template.innerHTML;
   }

@@ -1,5 +1,6 @@
 import { neon } from '@neondatabase/serverless';
 import { requireSession, sameOriginRequest } from '../lib/auth.js';
+import { requirePlanFeature } from '../lib/plan-access.js';
 
 function send(res,status,body){
   res.statusCode=status;
@@ -42,7 +43,9 @@ export default async function handler(req,res){
     const sql=database();await ensureTable(sql);
     const id=String(req.query?.id||'').trim().slice(0,240);
     if(req.method==='GET'){
-      const reader=await requireSession(req,['admin','editor','aluno']);
+      // Override HTML may contain complete theory. Fail closed for students
+      // until content IDs have an explicit, audited free/premium classification.
+      const reader=await requirePlanFeature(req,'theory.complete',['admin','editor','aluno']);
       if(!reader.ok)return send(res,reader.status,{error:reader.error});
       if(!id)return send(res,400,{error:'ID do conteúdo não informado'});
       const rows=await sql`SELECT content_id,label,html,revision,updated_at FROM central_content_overrides WHERE content_id=${id} LIMIT 1`;

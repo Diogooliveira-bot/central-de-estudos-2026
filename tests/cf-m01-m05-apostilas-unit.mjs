@@ -4,6 +4,7 @@ import path from 'node:path';
 import test from 'node:test';
 import vm from 'node:vm';
 import { JSDOM } from 'jsdom';
+import { protectedAsset } from '../lib/protected-content.js';
 
 const root = path.resolve(import.meta.dirname, '..');
 const read = relative => fs.readFileSync(path.join(root, relative), 'utf8');
@@ -110,6 +111,6 @@ test('index e pacote offline usam os mesmos recursos versionados', () => {
   ];
   for (const asset of assets) {
     assert.ok(html.includes(`src="${asset}"`), `index: ${asset}`);
-    assert.ok(offline.includes(asset), `offline: ${asset}`);
+    assert.equal(offline.includes(asset), !protectedAsset(new URL(asset, 'https://unit.test').pathname), `offline policy: ${asset}`);
   }
 });

@@ -1,4 +1,5 @@
 import { requireSession, readJsonBody, sameOriginRequest } from '../lib/auth.js';
+import { requirePlanFeature } from '../lib/plan-access.js';
 
 const IS_PREVIEW = process.env.VERCEL_ENV !== 'production';
 const TABLE = IS_PREVIEW ? 'external_question_filter_overrides_preview' : 'external_question_filter_overrides';
@@ -67,7 +68,9 @@ export default async function handler(req, res) {
     return send(res, 405, { error: 'Método não permitido' });
   }
   if (req.method !== 'GET' && !sameOriginRequest(req)) return send(res, 403, { error: 'Origem não autorizada' });
-  const session = await requireSession(req, req.method === 'GET' ? ['admin', 'editor', 'aluno'] : ['admin']);
+  const session = req.method === 'GET'
+    ? await requirePlanFeature(req, 'tec.question_books_filters', ['admin', 'editor', 'aluno'])
+    : await requireSession(req, ['admin']);
   if (!session.ok) return send(res, session.status || 403, { error: session.error || 'Acesso não autorizado' });
 
   try {

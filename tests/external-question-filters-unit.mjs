@@ -54,9 +54,8 @@ test('catálogo real cobre todas as disciplinas com filtros publicados', () => {
     'content/penal-cpp-tec-links.js'
   ];
   files.forEach((file) => dom.window.eval(read(file)));
-  const tecSource = Array.from(read('index.html').matchAll(/<script[^>]*>([\s\S]*?)<\/script>/gi))
-    .map((match) => match[1]).find((script) => script.includes('window.TEC_CADERNOS_DATA='));
-  assert.ok(tecSource, 'a fonte legada TEC precisa permanecer publicada');
+  const tecSource = read('content/tec-cadernos-data.js');
+  assert.ok(tecSource.includes('window.TEC_CADERNOS_DATA='), 'o catálogo TEC deve permanecer no arquivo de entrega privada');
   dom.window.eval(tecSource);
   dom.window.eval(source);
   const rows = dom.window.ExternalQuestionFilters.buildRegistry();
@@ -84,8 +83,7 @@ test('RLM recebe os cadernos TEC indicados para cada módulo atual', () => {
   });
   dom.window.eval(read('content/qc-sharing-links.js'));
   dom.window.eval(read('content/rlm-tjce-2026/estrutura.js'));
-  const tecSource = Array.from(read('index.html').matchAll(/<script[^>]*>([\s\S]*?)<\/script>/gi))
-    .map((match) => match[1]).find((script) => script.includes('window.TEC_CADERNOS_DATA='));
+  const tecSource = read('content/tec-cadernos-data.js');
   dom.window.eval(tecSource);
   dom.window.eval(source);
   const rows = dom.window.ExternalQuestionFilters.buildRegistry().filter((row) => row.disciplineKey === 'rlm');
