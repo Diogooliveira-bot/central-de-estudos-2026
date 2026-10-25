@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import vm from 'node:vm';
+import { JSDOM } from 'jsdom';
 
 const read = path => readFileSync(new URL(`../${path}`, import.meta.url), 'utf8');
 
@@ -77,4 +78,28 @@ test('quadros comparativos das 20 apostilas são tabelas legíveis e mantêm as 
   assert.match(m04, /<td>Transfere o exercício de parte da competência para outro órgão\/titular\.<\/td>/);
   const m12 = JSON.parse(read('content/adm/m12-approved-complete.js').match(/=(".*");\s*$/s)[1]);
   assert.match(m12, /<th scope="col">Termo de parceria<\/th><th scope="col">Termo de colaboração<\/th>/);
+});
+
+test('checks continuam marcáveis após o editor substituir o conteúdo do módulo', async () => {
+  const dom=new JSDOM('<!doctype html><html><body></body></html>',{url:'https://example.test/central-v119.html',runScripts:'outside-only',pretendToBeVisual:true});
+  const {window}=dom;
+  for(const file of ['content/adm/adm-native-index.js','content/adm/adm-session-index.js','content/adm/m04-native-data-lite.js','content/adm/m04-approved-complete.js'])window.eval(read(file));
+  window.CentralNativeReadingSession={
+    create(){const overlay=window.document.createElement('div');overlay.id='adm-native-reader';overlay.innerHTML='<main class="bc-native-scroll"></main>';window.document.body.append(overlay);return overlay},
+    show(overlay,html){overlay.querySelector('.bc-native-scroll').innerHTML=`<article class="bc-native-article">${html}</article>`;return overlay.querySelector('.bc-native-scroll')},
+    percent(){},canTrack(){return true},fail(){},
+  };
+  window.renderDetail=()=>'';window.renderAll=()=>{};
+  window.eval(read('ui/adm-native-layer.js'));
+  const uid=Object.keys(window.ADM_NATIVE_INDEX.modules).find(id=>window.ADM_NATIVE_INDEX.modules[id].number===4);
+  await window.AdmNative.open(uid,'complete',false);
+  const article=window.document.querySelector('.bc-native-article');
+  const first=article.querySelector('[data-adm-check="1"]');
+  assert.ok(first);
+  first.checked=true;first.dispatchEvent(new window.Event('change',{bubbles:true}));
+  article.innerHTML=window.ADM_APPROVED_COMPLETE[4];
+  await new Promise(resolve=>setTimeout(resolve,10));
+  assert.equal(article.querySelector('[data-adm-check="1"]').checked,true);
+  assert.equal(article.querySelectorAll('[data-adm-session-check]').length,window.ADM_SESSION_INDEX[4].length);
+  dom.window.close();
 });
