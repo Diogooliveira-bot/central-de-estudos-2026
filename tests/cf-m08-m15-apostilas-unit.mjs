@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import vm from 'node:vm';
 import test from 'node:test';
+import { protectedAsset } from '../lib/protected-content.js';
 import { JSDOM } from 'jsdom';
 
 const read = path => fs.readFileSync(new URL(`../${path}`, import.meta.url), 'utf8');
@@ -113,7 +114,7 @@ test('Lei em Dia e cache offline apontam para a mesma versão em M08 a M15', () 
     const key = `m${String(n).padStart(2,'0')}`;
     const asset = `/content/cf/${key}-native-data.js?v=${version}`;
     assert.ok(index.includes(`src="${asset}"`));
-    assert.ok(manifest.includes(asset));
+    assert.equal(manifest.includes(asset), !protectedAsset(new URL(asset, 'https://unit.test').pathname));
     assert.ok(lawCtx.modules.some(module => module.id === `cf-${key}`));
     let law;
     w.openLeiSecaEnxuta = (...args) => law = args;
