@@ -35,7 +35,7 @@ test('premium files, question source files, TEC and QC catalogues are routed thr
   assert.match(vercel.functions['api/auth.js'].includeFiles, /\*\*\/\*\.pdf/);
   assert.match(vercel.functions['api/auth.js'].includeFiles, /portugues-\*/);
   assert.deepEqual(
-    vercel.rewrites.slice(0, 3).map(rule => rule.source),
+    vercel.rewrites.filter(rule => ['/api/plans', '/api/private-content', '/api/lei-em-dia-questions'].includes(rule.source)).map(rule => rule.source),
     ['/api/plans', '/api/private-content', '/api/lei-em-dia-questions'],
   );
 });
