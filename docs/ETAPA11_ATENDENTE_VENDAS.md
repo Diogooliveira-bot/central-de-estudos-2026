@@ -24,7 +24,7 @@ O preço de R$ 97 por semestre foi tratado como uma ideia anterior, não como pr
 - `lib/whatsapp-sales-meta.js`: parser de mensagens e envio pela Graph API da Meta.
 - `lib/whatsapp-sales-assistant.js`: respostas determinísticas e chamadas Claude apenas para perguntas abertas.
 - `lib/whatsapp-sales-store.js`: Neon, convite e contexto cifrado.
-- `migrations/001_whatsapp_sales.sql`: SQL preparado e **não executado** para as novas tabelas de contexto, dedupe e limites.
+- `migrations/001_whatsapp_sales.sql`: SQL aplicado somente no banco Neon isolado usado pela Preview. Cria a tabela de convites da Central e as tabelas de contexto, deduplicação, limites e opt-out.
 - `tests/whatsapp-sales*.mjs`: testes unitários sem rede, credenciais ou banco real.
 
 ## Limites e privacidade
@@ -41,6 +41,6 @@ O contexto expira em 30 dias; a remoção física acontece quando chegam novas m
 
 ## Estado
 
-O código fica na branch `homologacao` para revisão e prévia. O webhook compartilha o arquivo de rota com a autenticação, mas sua ação é independente e não chama funções administrativas da Lia. Criar a prévia não configura segredos, não executa o SQL e não conecta o telefone de teste. Até esses itens serem configurados, o webhook responde `403` à verificação e não envia mensagens.
+O código fica na branch `homologacao`. O webhook compartilha o arquivo de rota com a autenticação, mas sua ação é independente e não chama funções administrativas da Lia. A migração foi testada numa branch temporária do Neon e aplicada apenas ao banco isolado usado pela Preview. A chave `SALES_PRIVACY_SECRET` foi criada como variável secreta com escopo exclusivo de Preview + branch `homologacao`.
 
-Para validar com WhatsApp, usar o número de teste da Meta, os destinatários de teste permitidos e o `SALES_BASE_URL` da prévia. O telefone definitivo e Production continuam fora desta etapa.
+As credenciais da Meta e a chave da Anthropic ainda não estão configuradas; nenhum número foi conectado e nenhuma mensagem real foi enviada. A nova prévia após este commit carregará a chave de privacidade. Production e o telefone definitivo continuam fora desta etapa.
