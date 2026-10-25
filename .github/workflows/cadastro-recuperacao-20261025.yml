@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - fix/cadastro-recuperacao-20261025
+      - fix/recuperacao-admin-20261025
+      - main
   workflow_dispatch:
 permissions:
   contents: read
