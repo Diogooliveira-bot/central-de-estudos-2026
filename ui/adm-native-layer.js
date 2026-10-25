@@ -86,9 +86,27 @@ function updateSubject(){const el=document.querySelector('.subject[data-id="adm"
 let active=null;
 let checksObserver=null;
 function buildToc(body){const hs=[...body.querySelectorAll('h1,h2,h3')].filter(h=>!h.closest('details'));return hs.slice(0,40).map((h,i)=>{if(!h.id)h.id='adm-native-h-'+i;return `<button onclick="document.getElementById('${h.id}').scrollIntoView({behavior:'smooth',block:'start'})">${esc(h.textContent)}</button>`}).join('')}
+/* Destaque de subtítulos das apostilas completas; não altera o leitor compartilhado. */
+const ADM_MINOR_TITLES=/^(?:Como estudar (?:este|o) módulo|Entenda primeiro|Regra jurídica|Por que isso existe\?|Como cai na prova|O que levar(?: para a prova)?|O que decorar|O mérito administrativo|Exemplos?(?: práticos?| de prova)?|Atenção(?: à prova)?|Pegadinha(?: da banca)?|Resumo(?: final)?|Conceito(?:-chave)?|Critério-chave|Síntese(?: para revisão)?|Caso prático)$/i;
+function emphasizeAdmTitles(article){
+ if(!article)return;
+ article.classList.add('adm-approved-reading');
+ [...article.querySelectorAll(':scope > p')].forEach(p=>{
+  if(p.children.length||p.querySelector('br,input,a,table,code'))return;
+  const title=p.textContent.trim().replace(/\s+/g,' ');
+  const previous=p.previousElementSibling;
+  const afterSession=previous?.tagName==='H2'&&/^(?:SESSÃO\s+\d+|S\d+\s*[—-])/i.test(previous.textContent.trim());
+  if(!ADM_MINOR_TITLES.test(title)&&!(afterSession&&title.length>=8&&title.length<=95&&!/[.!?]$/.test(title)))return;
+  const heading=document.createElement('h3');
+  heading.className='adm-approved-subtitle';
+  heading.textContent=title;
+  p.replaceWith(heading);
+ });
+}
 function setupCompleteChecks(uid,body){
  const article=body.querySelector('.bc-native-article');
  const hydrate=()=>{
+  emphasizeAdmTitles(article);
   const headings=[...article.querySelectorAll('h2')];
   const sectionHeadings=headings.filter(h=>/^(?:SESSÃO\s+\d+|S\d+\s*[—-])/i.test(h.textContent.trim()));
   sectionHeadings.forEach((heading,i)=>{
