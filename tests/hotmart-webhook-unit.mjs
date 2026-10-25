@@ -164,6 +164,9 @@ test('roteamento público e contrato SQL preservam o plano atual',async()=>{
  const config=JSON.parse(vercel);
  assert.ok(config.rewrites.some(x=>x.source==='/api/hotmart-claim'));
  assert.match(sql,/central_hotmart_redeem_claim/);
+ assert.match(sql,/WHERE o\.claim_token_hash=p_claim_hash AND o\.claim_expires_at>NOW\(\)/);
+ assert.match(sql,/AND o\.state='approved' AND o\.user_id IS NULL AND o\.credit_applied=FALSE/);
+
  assert.match(sql,/central_hotmart_apply_event/);
  assert.match(sql,/pg_advisory_xact_lock/);
  assert.match(sql,/state='revoked'/);
