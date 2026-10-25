@@ -19,7 +19,7 @@ O preço de R$ 97 por semestre foi tratado como uma ideia anterior, não como pr
 
 ## Arquitetura
 
-- `api/whatsapp-sales.js`: endpoint Vercel; verifica o desafio GET e assinatura HMAC SHA-256 dos POSTs Meta.
+- Rota de webhook: `/api/auth?action=whatsapp-sales`, reaproveitando a função Vercel de autenticação para caber no limite do plano atual. A ação comercial valida o desafio GET e a assinatura HMAC SHA-256 dos POSTs Meta antes de processar mensagens.
 - `lib/whatsapp-sales-handler.js`: deduplicação, limites, opt-out, geração do convite e respostas.
 - `lib/whatsapp-sales-meta.js`: parser de mensagens e envio pela Graph API da Meta.
 - `lib/whatsapp-sales-assistant.js`: respostas determinísticas e chamadas Claude apenas para perguntas abertas.
@@ -41,6 +41,6 @@ Os segredos de vendas são separados da Lia. `SALES_BASE_URL` precisa apontar pa
 
 ## Estado
 
-O código fica na branch `homologacao` para revisão e prévia. Criar a prévia não configura segredos, não executa o SQL e não conecta o telefone de teste. Até esses itens serem configurados, o webhook responde `403` à verificação e não envia mensagens.
+O código fica na branch `homologacao` para revisão e prévia. O webhook compartilha o arquivo de rota com a autenticação, mas sua ação é independente e não chama funções administrativas da Lia. Criar a prévia não configura segredos, não executa o SQL e não conecta o telefone de teste. Até esses itens serem configurados, o webhook responde `403` à verificação e não envia mensagens.
 
 Para validar com WhatsApp, usar o número de teste da Meta, os destinatários de teste permitidos e o `SALES_BASE_URL` da prévia. O telefone definitivo e Production continuam fora desta etapa.

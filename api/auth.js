@@ -16,6 +16,28 @@ import {
   verifyPassword,
 } from '../lib/auth.js';
 import handleInviteAction from '../lib/invite-handler.js';
+import { createHandler as createWhatsappSalesHandler } from '../lib/whatsapp-sales-handler.js';
+
+export const config = { api: { bodyParser: false }, maxDuration: 30 };
+const whatsappSalesHandler = createWhatsappSalesHandler();
+
+async function parseAuthJsonBody(req) {
+  if (req.body && typeof req.body === 'object') return null;
+  if (typeof req.body === 'string') {
+    try { req.body = JSON.parse(req.body || '{}'); return null; }
+    catch { return { status: 400, error: 'JSON inválido' }; }
+  }
+  const chunks = [];
+  let size = 0;
+  for await (const chunk of req) {
+    const part = Buffer.isBuffer(chunk) ? chunk : Buffer.from(chunk);
+    size += part.length;
+    if (size > 1024 * 1024) return { status: 413, error: 'Corpo da requisição muito grande' };
+    chunks.push(part);
+  }
+  try { req.body = JSON.parse(Buffer.concat(chunks).toString('utf8') || '{}'); return null; }
+  catch { return { status: 400, error: 'JSON inválido' }; }
+}
 
 function send(res, status, body, extraHeaders = {}) {
   res.statusCode = status;
@@ -167,7 +189,13 @@ async function bootstrap(req, res) {
 export default async function handler(req, res) {
   try {
     const action = String(req.query?.action || '').toLowerCase();
-    if (req.method === 'POST' && !sameOriginRequest(req)) return send(res, 403, { error: 'Origem da requisição não permitida' });
+    if (action === 'whatsapp-sales') return whatsappSalesHandler(req, res);
+
+    if (req.method === 'POST') {
+      const bodyError = await parseAuthJsonBody(req);
+      if (bodyError) return send(res, bodyError.status, { error: bodyError.error });
+      if (!sameOriginRequest(req)) return send(res, 403, { error: 'Origem da requisição não permitida' });
+    }
 
     if (action.startsWith('invite-')) return handleInviteAction(req, res, action.slice('invite-'.length));
 
