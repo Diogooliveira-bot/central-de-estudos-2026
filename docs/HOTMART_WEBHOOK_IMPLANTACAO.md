@@ -10,16 +10,15 @@ não estiver integrado e conferido de ponta a ponta.
 ## Dados de Hotmart
 Na conta Hotmart existem **dois produtos com o mesmo nome**: rascunho
 `8805543` e produto com vendas ativas `8805554` (conforme captura).
-É obrigatório confirmar **qual ID contém as duas ofertas de R$ 97 e R$ 194**.
-Não atribuir `HOTMART_PRODUCT_ID` por suposição.
+**CONFIRMADO pelo proprietário em 25/10/2026:** o produto que contém as duas ofertas é `8805543`, atualmente em rascunho. O produto `8805554` não deve ser integrado.
+`HOTMART_PRODUCT_ID=8805543` foi configurado somente como variável Preview da branch de testes. Não publicar nem ativar vendas antes de finalizar o cadastro do produto e validar o Webhook autenticado.
 
 Os **códigos de oferta** foram lidos diretamente da captura de tela do proprietário
 (e já estão configurados exclusivamente no ambiente de Preview desta branch):
 - Semestral — R$ 97,00: `HOTMART_OFFER_6M_CODE=o4y1mlg9`;
 - Anual — R$ 194,00: `HOTMART_OFFER_12M_CODE=gh4ajvj1`.
 
-Ainda é obrigatório confirmar se essas ofertas pertencem ao produto rascunho
-ou ao produto ativo; não conectar um ID de produto errado.
+A vinculação das ofertas ao produto em rascunho foi confirmada pelo proprietário.
 
 Os códigos das ofertas vêm do quadro de preços em Hotmart: copiar exatamente os
 valores exibidos e conferir os dois nomes antes de ativar. Não mapear por preço
