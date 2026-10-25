@@ -1,0 +1,30 @@
+name: Validar receptor Hotmart isolado
+on:
+  push:
+    branches:
+      - feature/hotmart-webhook-isolado-20261025
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  hotmart-testes:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - name: Verificar sintaxe
+        run: |
+          node --check lib/hotmart-webhook.js
+          node --check api/auth.js
+      - name: Testar recepção e segurança Hotmart
+        run: npm run test:hotmart-webhook
+      - name: Testar autenticação e Premium
+        run: npm run test:premium-and-auth
+      - name: Testar regressões existentes
+        run: npm test
+      - name: Construir prévia Vercel
+        run: npm run build:vercel-output
