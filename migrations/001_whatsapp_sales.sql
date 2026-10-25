@@ -1,4 +1,20 @@
--- RASCUNHO NÃO EXECUTADO. Executar apenas em uma branch Neon de teste, após revisão.
+-- Estrutura do atendimento comercial WhatsApp e da tabela de convites da Central.
+CREATE TABLE IF NOT EXISTS central_student_invites (
+  invitation_id TEXT PRIMARY KEY,
+  token_hash TEXT NOT NULL UNIQUE,
+  invited_email TEXT,
+  recipient_name TEXT,
+  created_by TEXT NOT NULL,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+  expires_at TIMESTAMPTZ NOT NULL,
+  used_at TIMESTAMPTZ,
+  used_by TEXT,
+  revoked_at TIMESTAMPTZ
+);
+
+CREATE INDEX IF NOT EXISTS central_student_invites_created_idx
+  ON central_student_invites (created_at DESC);
+
 CREATE TABLE IF NOT EXISTS whatsapp_sales_events (
   message_id TEXT PRIMARY KEY,
   state TEXT NOT NULL CHECK (state IN ('processing', 'completed', 'failed')),
