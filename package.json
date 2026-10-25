@@ -9,7 +9,7 @@
   "dependencies": {
     "@neondatabase/serverless": "^1.1.0",
     "@vercel/functions": "^3.9.11",
-    "nodemailer": "^9.0.5"
+    "nodemailer": "^10.1.4"
   },
   "scripts": {
     "test:cf-didatico": "node --test tests/cf-m01-didatico-unit.mjs tests/cf-m02-apostila-unit.mjs tests/cf-m02-guided-unit.mjs tests/cf-m01-m05-apostilas-unit.mjs tests/cf-guided-release-unit.mjs tests/cf-m06-apostila-unit.mjs tests/cf-m07-apostila-unit.mjs tests/cf-m08-m15-apostilas-unit.mjs",
@@ -25,10 +25,14 @@
     "test:password-reset": "node --test tests/password-reset-unit.mjs tests/invites-unit.mjs tests/auth-unit.mjs",
     "build:vercel-output": "node scripts/build-vercel-output.mjs",
     "test:premium-protection": "node --test tests/lei-em-dia-delivery-unit.mjs tests/progressive-premium-delivery-unit.mjs tests/protected-content-unit.mjs tests/plan-access-unit.mjs tests/vercel-private-static-output-unit.mjs tests/admin-plan-ui-unit.mjs",
-    "test:premium-and-auth": "npm run test:premium-protection && npm run test:password-reset"
+    "test:premium-and-auth": "npm run test:premium-protection && npm run test:password-reset",
+    "test:hotmart-webhook": "node --test tests/hotmart-webhook-unit.mjs"
   },
   "devDependencies": {
     "jsdom": "^27.4.0",
     "playwright": "^1.63.0"
+  },
+  "overrides": {
+    "zod": "^4.6.6"
   }
 }

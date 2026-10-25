@@ -1,0 +1,102 @@
+<!doctype html><html lang="pt-BR"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><meta name="referrer" content="no-referrer">
+<title>Vendas Hotmart — Base Completa</title>
+<style>
+:root{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:#19334a}
+*{box-sizing:border-box}body{margin:0;background:#f4f8fb}
+header{background:#143b58;color:#fff;padding:26px max(16px,calc((100vw - 980px)/2))}
+h1{font-size:23px;margin:0 0 4px}header small{opacity:.8}
+main{max-width:980px;margin:auto;padding:20px 16px}
+nav{display:flex;gap:22px;margin:0 0 18px;flex-wrap:wrap}a{color:#19608f;font-weight:700}
+.info,.row{background:#fff;border:1px solid #d7e4ed;padding:17px;border-radius:12px;margin-bottom:13px}
+.info{background:#edf6fb;line-height:1.5}
+h2{font-size:17px;margin:0 0 8px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}
+input{flex:1;min-width:190px;border:1px solid #bdcddb;border-radius:9px;padding:10px;font:inherit}
+button{border:1px solid #1d5279;background:#173d5d;color:#fff;border-radius:9px;padding:10px 13px;cursor:pointer;font:inherit}
+button:disabled{opacity:.5}
+.meta{font-size:12px;color:#627a8c;overflow-wrap:anywhere}
+.row h3{font-size:15px;margin:0}
+.top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
+.badge{display:inline-block;border-radius:20px;font-size:12px;font-weight:700;padding:4px 11px;background:#e5edf5;color:#355977;white-space:nowrap}
+.badge.active{background:#dff3e9;color:#17634b}
+.badge.warn{background:#f9eee4;color:#98551c}
+.badge.revoked{background:#f9e8e6;color:#9c392d}
+.actions{margin-top:12px}
+#status{font-size:13px;min-height:22px;color:#55708b}
+@media(max-width:640px){.top{flex-direction:column;gap:6px}}
+</style></head><body>
+<header><h1>Compras pela Hotmart</h1><small>Base Completa — acompanhamento exclusivo do administrador</small></header>
+<main>
+<nav><a href="/planos.html">← Gerenciar planos</a><a href="/usuarios.html">Usuários</a><a href="/">Central de Estudos</a></nav>
+<div class="info"><strong>Como funciona:</strong> quando o pagamento for aprovado, o sistema libera o Premium de quem já tem conta ou envia por e-mail um link para o novo aluno criar sua senha. Reembolsos e contestações são conciliados com a compra original. Pedidos em revisão não são liberados automaticamente.</div>
+<div class="toolbar"><input id="search" type="search" placeholder="Buscar compra ou e-mail do comprador" aria-label="Buscar vendas"><button type="button" id="refresh">Atualizar</button></div>
+<div id="status" role="status" aria-live="polite">Carregando compras...</div><div id="list"></div>
+</main><script>
+(function(){
+'use strict';
+const list=document.getElementById('list'),status=document.getElementById('status');
+let sales=[];
+function ele(tag,css,text){const e=document.createElement(tag);if(css)e.className=css;if(text!=null)e.textContent=text;return e}
+function msg(text){status.textContent=text}
+function date(text){if(!text)return '-';const d=new Date(text);return Number.isNaN(d.getTime())?'-':d.toLocaleString('pt-BR')}
+async function api(url,options){
+ const r=await fetch(url,Object.assign({credentials:'same-origin',cache:'no-store'},options||{}));
+ let data={};try{data=await r.json()}catch(_){}
+ if(!r.ok)throw Error(data.error||'Não foi possível concluir');
+ return data;
+}
+function label(o){
+ if(o.state==='revoked')return ['Estornada ou cancelada','revoked'];
+ if(o.credit_applied)return ['Premium liberado','active'];
+ if(o.state==='approved'&&!o.user_id)return ['Aguardando cadastro','warn'];
+ if(o.state==='approved')return ['Revisão necessária','warn'];
+ return ['Aguardando confirmação','warn'];
+}
+function render(){
+ list.replaceChildren();
+ const q=document.getElementById('search').value.trim().toLowerCase();
+ const filtered=sales.filter(x=>(x.buyer_email+' '+x.transaction_id+' '+x.buyer_name).toLowerCase().includes(q));
+ if(!filtered.length){list.append(ele('p','meta','Nenhuma compra encontrada.'));return}
+ for(const order of filtered){
+  const row=ele('article','row'),top=ele('div','top'),title=ele('div');
+  title.append(ele('h3','',order.buyer_name||'Comprador'),ele('div','meta',order.buyer_email||'E-mail não informado'));
+  const [txt,color]=label(order);
+  top.append(title,ele('span','badge '+color,txt));row.append(top);
+  row.append(ele('p','meta','Plano: '+order.access_months+' meses · Transação: '+order.transaction_id));
+  row.append(ele('p','meta','Recebida em: '+date(order.created_at)+' · Convite enviado: '+date(order.claim_sent_at)));
+  if(order.state==='approved'&&!order.user_id){
+   const actions=ele('div','actions'),button=ele('button','','Reenviar link de ativação');
+   button.type='button';
+   button.onclick=async()=>{
+    if(!confirm('Enviar um novo link de acesso para '+order.buyer_email+'?'))return;
+    button.disabled=true;msg('Enviando e-mail...');
+    try{
+     await api('/api/plans?action=hotmart',{
+      method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({action:'resend',transaction:order.transaction_id})
+     });await load();msg('E-mail enviado.');}
+    catch(e){button.disabled=false;msg(e.message)}
+   };
+   actions.append(button);row.append(actions);
+  }
+  if(order.state==='approved'&&order.user_id&&!order.credit_applied){
+   row.append(ele('p','meta','Verifique o histórico do aluno no painel de planos antes de intervir.'));
+  }
+  list.append(row);
+ }
+}
+async function load(){msg('Atualizando vendas...');
+ try{const r=await api('/api/plans?action=hotmart');sales=Array.isArray(r.orders)?r.orders:[];render();msg(sales.length+' compra(s) registrada(s).')}
+ catch(e){msg(e.message)}}
+document.getElementById('search').addEventListener('input',render);
+document.getElementById('refresh').addEventListener('click',load);
+(async()=>{try{
+ const identity=await api('/api/auth?action=me');
+ if(!identity.authenticated){location.replace('/login.html?next=/vendas-hotmart.html');return}
+ if(identity.user?.role!=='admin'){location.replace('/');return}
+ await load();
+}catch(e){msg('Faça login como administrador para ver as vendas.')}})();
+})();
+</script></body></html>

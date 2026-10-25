@@ -1,3 +1,4 @@
+import { protectedAsset } from '../lib/protected-content.js';
 import test from "node:test";
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
@@ -45,7 +46,8 @@ test("gabarito, fundamento e filtro são coerentes com os dados",()=>{
 test("Lei em Dia e PWA carregam os três datasets sem alterar o progresso",()=>{
   for(const name of ["decorando-data-adm-9784.js","decorando-data-adm-pack1.js","decorando-data-adm-pack2.js","decorando-data-adm-pack3.js","decorando-data-adm-pack4.js","decorando-data-adm-14133-extra.js","decorando-data-adm-8112-extra.js","decorando-data-adm-8429-extra.js","decorando-data-adm-9784-expansao.js","decorando-data-adm-12527-expansao.js","decorando-data-adm-13709-expansao.js","decorando-data-adm-pack5.js"]){
     assert.ok(html.includes(name));
-    assert.ok(offline.files.some(x=>x.includes(name)));
+    assert.ok(protectedAsset('/tools/'+name), name+' requires premium protection');
+    assert.ok(!offline.files.some(x=>x.includes(name)), name+' must not be cached for free users');
   }
   assert.ok(html.includes("...DATA_ADM_PACK1,...DATA_ADM_PACK2,...DATA_ADM_PACK3,...DATA_ADM_PACK4,...DATA_ADM_EXTRAS"));
   assert.ok(html.includes("const TOPICS_ADM_EXTENDED") && html.includes("adm:TOPICS_ADM_EXTENDED"));

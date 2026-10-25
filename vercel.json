@@ -8,6 +8,14 @@
   },
   "rewrites": [
     {
+      "source": "/api/hotmart-webhook",
+      "destination": "/api/auth?bc_api=hotmart-webhook"
+    },
+    {
+      "source": "/api/hotmart-claim",
+      "destination": "/api/auth?bc_api=hotmart-claim"
+    },
+    {
       "source": "/api/plans",
       "destination": "/api/auth?bc_api=plans"
     },
