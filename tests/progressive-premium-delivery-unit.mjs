@@ -14,6 +14,7 @@ const read = file => readFile(new URL(file, root), 'utf8');
 
 test('premium files, question source files, TEC and QC catalogues are routed through private delivery', async () => {
   for (const path of [
+    '/adm-m9-m20-bundle-v66160.js',
     '/lei-em-dia-aprovadas-20261012.js',
     '/tools/decorando-data-led-aprovadas.js',
     '/content/qc-sharing-links.json',
@@ -77,7 +78,7 @@ test('public offline manifest excludes premium assets and PWA bypasses cache for
   const manifest = JSON.parse(await read('central-offline-files-v66172.json'));
   const sw = await read('sw.js');
   const boot = await read('central-v119.html');
-  assert.equal(manifest.build, '20261024-premium-progressive-v2');
+  assert.equal(manifest.build, '20261025-premium-main-v1');
   assert.match(sw, new RegExp(`var CACHE='central-${manifest.build}'`));
   assert.match(boot, new RegExp(`var BUILD='${manifest.build}'`));
   assert.ok(!manifest.files.some(file => protectedAsset(String(file).split(/[?#]/)[0])));

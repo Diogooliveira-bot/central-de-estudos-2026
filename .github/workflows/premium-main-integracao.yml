@@ -1,0 +1,34 @@
+name: Validar integração Premium com produção
+on:
+  push:
+    branches:
+      - integration/premium-main-20261025
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  premium-integracao:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - name: Verificar sintaxe e configurações
+        run: |
+          node --check api/auth.js
+          node --check middleware.js
+          node --check sw.js
+          node --check lib/plan-access.js
+          node --check lib/plans-handler.js
+          node --check lib/private-content-handler.js
+          node --check lib/protected-content.js
+          node --check scripts/build-vercel-output.mjs
+      - name: Testar Premium, autenticação e proteção de conteúdo
+        run: npm run test:premium-and-auth
+      - name: Testar regressão geral
+        run: npm test
+      - name: Construir arquivos públicos seguros
+        run: npm run build:vercel-output

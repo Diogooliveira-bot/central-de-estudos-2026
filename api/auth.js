@@ -17,6 +17,9 @@ import {
 } from '../lib/auth.js';
 import handleInviteAction from '../lib/invite-handler.js';
 import handlePasswordReset from '../lib/password-reset.js';
+import handleLeiEmDiaQuestions from '../lib/lei-em-dia-questions-handler.js';
+import handlePlans from '../lib/plans-handler.js';
+import handlePrivateContent from '../lib/private-content-handler.js';
 
 function send(res, status, body, extraHeaders = {}) {
   res.statusCode = status;
@@ -167,6 +170,11 @@ async function bootstrap(req, res) {
 
 export default async function handler(req, res) {
   try {
+    const premiumApi = String(req.query?.bc_api || '').toLowerCase();
+    if (premiumApi === 'plans') return handlePlans(req, res);
+    if (premiumApi === 'private-content') return handlePrivateContent(req, res);
+    if (premiumApi === 'lei-em-dia-questions') return handleLeiEmDiaQuestions(req, res);
+
     const action = String(req.query?.action || '').toLowerCase();
     if (req.method === 'POST' && !sameOriginRequest(req)) return send(res, 403, { error: 'Origem da requisição não permitida' });
 

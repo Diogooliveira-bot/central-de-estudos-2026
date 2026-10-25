@@ -1,4 +1,5 @@
 import { next } from '@vercel/functions';
+import { protectedAsset } from './lib/protected-content.js';
 
 const COOKIE_NAME = 'bc_session';
 
@@ -175,12 +176,35 @@ export default async function middleware(request) {
           url.searchParams.get('action') === 'me') return next();
       return previewForbidden();
     }
+    if (protectedAsset(path)) return previewForbidden();
     if (path === '/usuarios.html' || path === '/update-central.html') return previewForbidden();
     if (path === '/login.html') return Response.redirect(new URL('/central-v119.html', request.url), 302);
     return next();
   }
 
   if (request.method === 'OPTIONS') return next();
+  const privateAsset = protectedAsset(path);
+  if (privateAsset) {
+    if (request.method !== 'GET' && request.method !== 'HEAD') {
+      return new Response(JSON.stringify({ error: 'Método não permitido' }), {
+        status: 405,
+        headers: { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store', 'Allow': 'GET, HEAD' },
+      });
+    }
+    const destination = new URL(
+      privateAsset.kind === 'lei-em-dia' ? '/api/lei-em-dia-questions?mode=catalog' : '/api/private-content',
+      request.url
+    );
+    if (privateAsset.kind !== 'lei-em-dia') destination.searchParams.set('asset', path);
+    return new Response(null, {
+      status: 307,
+      headers: {
+        Location: destination.toString(),
+        'Cache-Control': 'private, no-store, max-age=0',
+        'Referrer-Policy': 'no-referrer',
+      },
+    });
+  }
   if (path.startsWith('/api/')) return next();
   if (PUBLIC_PATHS.has(path)) return next();
 

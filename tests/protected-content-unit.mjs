@@ -6,6 +6,7 @@ import { adminSummaryScript, cppSummaryScript, projectFreeSummary, projectPacked
 
 test('protects premium static assets and preserves free Vade Mecum', async () => {
   for (const path of [
+    '/adm-m9-m20-bundle-v66160.js',
     '/content/civil/m01-native-data.js',
     '/content/cpc/m08-native-data-part1.js',
     '/content/penal/m01-teoria-guiada-data.js',

@@ -1,18 +1,70 @@
 /* Base Completa — PWA autenticado e offline por sessão verificada. */
-var CACHE='central-20261025-auth-recovery-v1';
+var CACHE='central-20261025-premium-main-v1';
 var AUTH_CACHE='central-auth-session-v1';
 var AUTH_KEY='/__bc_offline_auth__';
 var AUTH_TTL_MS=72*60*60*1000;
 var BOOT='/central-v119.html';
-var OFFLINE_MANIFEST='/central-offline-files-v66172.json?v=20261022-online-first-recovery-v1';
+var OFFLINE_MANIFEST='/central-offline-files-v66172.json?v=20261025premiummain1';
 var OFFLINE_READY='/central-offline-ready.json?v=20261022-online-first-recovery-v1';
 
 function publicPath(path){
   return path==='/login.html'||path==='/recuperar-senha.html'||path==='/favicon.ico'||path==='/robots.txt'||path==='/assets/base-completa-symbol.webp';
 }
+function protectedContentPath(path){
+  path=String(path||'').split('?')[0];
+  try{path=decodeURIComponent(path)}catch(_){return false}
+  return path==='/lei-em-dia-aprovadas-20261012.js'
+    ||path==='/Central_de_Estudos_v6.6.75_PLANO_6_MESES.zip'
+    ||path.startsWith('/Central_de_Estudos_OFFLINE_FUNCIONAL/')
+    ||path==='/content/tec-cadernos-data.js'
+    ||path==='/content/civil/civil-native-content-packed.js'||path==='/content/cpp/cpp-native-content-packed.js'
+    ||/^\/content\/cf\/editorial\/m\d{2}-(?:apostila\.txt|didatico\.md|questions\.json)$/i.test(path)
+    ||/^\/content\/rlm-tjce-2026\/(?:aulas-[a-z-]+\.js|complementos-teoria\.js)$/i.test(path)
+    ||path==='/content/civil/civil-native-images.js'||path==='/content/civil/civil-teoria-guiada-lei-seca.js'
+    ||path==='/content/adm/adm-sharing-links.js'
+    ||path==='/content/civil/civil-sharing-links.js'
+    ||path==='/content/cpp/cpp-sharing-links.js'
+    ||path==='/content/cpp/cpp-native-index.js'
+    ||path==='/cpp-course-core-v1.js'
+    ||path==='/portugues-m2-tec-link-v1.js'
+    ||/^\/portugues-m\d+-runtime-v\d+\.js$/i.test(path)
+    ||path==='/tools/cronograma.html'||path==='/tools/rlm.html'||path==='/portugues-m3-preview-v1.html'
+    ||/^\/content\/(?:[^/]+\/)?[^/]*sharing-links\.js$/i.test(path)
+    ||/^\/central-structural-v\d+\/civil-course-\d+\.js$/i.test(path)
+    ||/^\/audits\/qc-integral-20261019\/(?:PROGRESSO_CRIACAO_57\.json|fontes\/qc_todos_cadernos_416\.json)$/i.test(path)
+    ||path==='/tools/decorando-data-led-aprovadas.js'
+    ||path==='/content/qc-sharing-links.json'
+    ||path==='/content/qc-sharing-links.js'
+    ||path==='/content/qc-notebook-catalog.js'
+    ||path==='/content/penal-cpp-tec-links.js'
+    ||path==='/ui/tec-penal-cpp-links.js'
+    ||path==='/portugues-tec-data-v1.js'
+    ||/^\/content\/(?:adm|cf|civil|cpc|cpp|penal|portugues|rlm)\/m\d{2}-native-data(?:-part\d+)?\.js$/i.test(path)
+    ||/^\/content\/adm\/m\d{2}-native-data-lite\.js$/i.test(path)
+    ||/^\/content\/(?:cf|civil)\/m\d{2}-teoria-guiada-data\.js$/i.test(path)
+    ||/^\/content\/penal\/m\d{2}-teoria-guiada-data\.js$/i.test(path)
+    ||/^\/tools\/decorando-data-(?!led-aprovadas)[a-z0-9-]+\.js$/i.test(path)
+    ||(/^\/content\/.+\.(?:js|json)$/i.test(path)&&/(?:question|questoes|questões|notebook|catalog)/i.test(path))
+    ||(/^\/central-structural-v\d+\/.+\.js$/i.test(path)&&/(?:question|questoes|questões|notebook|catalog)/i.test(path))
+    ||/^\/(?:penal-full-theory-data-\d+\.js|penal-full-theory-ui-v\d+\.js)$/i.test(path)
+    ||/^\/(?:civil-theory-module\d+(?:-part\d+|-runtime)?-v\d+\.js|cpc-theory-module\d+-v\d+\.js|adm-m\d+-theory-v\d+\.js)$/i.test(path)
+    ||/^\/adm-m\d+-content-p\d+-v\d+\.js$/i.test(path)
+    ||/^\/adm-m9-m20-bundle-v\d+\.js$/i.test(path)
+    ||/^\/cpp-course-data-\d+\.js$/i.test(path)
+    ||/^\/portugues-native-data\/m\d+\.js$/i.test(path)
+    ||path==='/portugues-autodidata-data.txt'
+    ||/^\/central-structural-v\d+\/(?:cf|penal|cpc)-questions-\d+-init\.js$/i.test(path)
+    ||(/\.pdf$/i.test(path)&&!path.startsWith('/assets/vademecum-pdf/'));
+}
+async function purgeProtectedOfflineContent(){
+  try{
+    var cache=await caches.open(CACHE),requests=await cache.keys();
+    await Promise.all(requests.filter(function(request){return protectedContentPath(new URL(request.url).pathname)}).map(function(request){return cache.delete(request).catch(function(){return false})}));
+  }catch(_){}
+}
 function cacheResponse(event,request,response){
   // Cache Storage must never prevent a healthy online response from loading.
-  if(response&&response.ok&&!response.redirected){
+  if(response&&response.ok&&!response.redirected&&!protectedContentPath(new URL(request.url).pathname)){
     try {
       var copy=response.clone();
       event.waitUntil(caches.open(CACHE).then(function(cache){return cache.put(request,copy)}).catch(function(){}));
@@ -22,6 +74,7 @@ function cacheResponse(event,request,response){
 }
 async function clearOfflineAuth(){
   try{var cache=await caches.open(AUTH_CACHE);await cache.delete(AUTH_KEY)}catch(_){}
+  await purgeProtectedOfflineContent();
 }
 async function cacheOfflineAuth(response){
   if(!response||!response.ok)return response;
@@ -71,7 +124,7 @@ async function prepareOffline(){
     var response=await fetch(OFFLINE_MANIFEST,{cache:'no-store'});
     if(response&&response.ok&&!response.redirected){
       var manifestResponse=response.clone();
-      var manifest=await response.json(),files=Array.isArray(manifest.files)?manifest.files:[];
+      var manifest=await response.json(),files=Array.isArray(manifest.files)?manifest.files.filter(function(file){return !protectedContentPath(new URL(file,self.location.origin).pathname)}):[];
       var index=0,saved=0,failed=[];
       async function worker(){
         while(index<files.length){
@@ -105,6 +158,7 @@ self.addEventListener('activate',function(event){
         return key!==CACHE&&key!==AUTH_CACHE&&key.indexOf('central-')===0;
       }).map(function(key){return caches.delete(key).catch(function(){})}));
     }catch(_){}
+    await purgeProtectedOfflineContent();
     // Cache cleanup failures must not stop the new worker claiming clients.
     await self.clients.claim();
   })());
@@ -133,8 +187,12 @@ self.addEventListener('fetch',function(event){
   }
 
   if(request.method!=='GET'||url.pathname.startsWith('/api/'))return;
-  // Never cache single-use password reset pages or links.
+  // Password-reset links must never be stored in the offline cache.
   if(url.pathname==='/recuperar-senha.html')return;
+  if(protectedContentPath(url.pathname)){
+    event.respondWith(fetch(request,{cache:'no-store'}).catch(function(){return Response.error()}));
+    return;
+  }
 
   if(request.mode==='navigate'){
     event.respondWith((async function(){
