@@ -120,7 +120,7 @@ BEGIN
   END IF;
   SELECT * INTO v_sub FROM public.central_user_subscriptions
    WHERE subscription_id=v_order.subscription_id FOR UPDATE;
-  IF FOUND AND v_sub.grant_source='hotmart' AND v_sub.status='active' THEN
+  IF FOUND AND v_sub.grant_source='hotmart' AND v_sub.status IN ('active','cancelled') THEN
     v_end := v_sub.ends_at - make_interval(months=>v_order.access_months);
     IF v_end <= NOW() THEN
       UPDATE public.central_user_subscriptions
@@ -133,7 +133,7 @@ BEGIN
     INSERT INTO public.central_user_plan_audit
       (user_id,subscription_id,action,old_plan_code,new_plan_code,old_status,new_status,metadata)
     VALUES(v_order.user_id,v_sub.subscription_id,'hotmart_revoked',
-      'premium','premium','active',
+      'premium','premium',v_sub.status,
       CASE WHEN v_end<=NOW() THEN 'expired' ELSE 'active' END,
       jsonb_build_object('transaction_id',p_transaction,
                          'access_months',v_order.access_months));
@@ -167,6 +167,14 @@ BEGIN
   VALUES (p_event_id,p_event_name,p_transaction,p_product,p_offer,p_months,
           p_email,p_created_at,'processed')
   ON CONFLICT(event_id) DO NOTHING RETURNING event_id INTO v_inserted;
+
+  IF v_inserted IS NULL AND EXISTS (
+    SELECT 1 FROM public.central_hotmart_webhook_inbox
+    WHERE event_id=p_event_id AND transaction_id<>p_transaction
+  ) THEN
+    RAISE EXCEPTION 'ID de evento já associado a outra transação'
+      USING ERRCODE='22023';
+  END IF;
 
   SELECT * INTO v_row FROM public.central_hotmart_orders
    WHERE transaction_id=p_transaction FOR UPDATE;
