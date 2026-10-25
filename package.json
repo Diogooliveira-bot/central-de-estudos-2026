@@ -25,7 +25,8 @@
     "test:password-reset": "node --test tests/password-reset-unit.mjs tests/invites-unit.mjs tests/auth-unit.mjs",
     "build:vercel-output": "node scripts/build-vercel-output.mjs",
     "test:premium-protection": "node --test tests/lei-em-dia-delivery-unit.mjs tests/progressive-premium-delivery-unit.mjs tests/protected-content-unit.mjs tests/plan-access-unit.mjs tests/vercel-private-static-output-unit.mjs tests/admin-plan-ui-unit.mjs",
-    "test:premium-and-auth": "npm run test:premium-protection && npm run test:password-reset"
+    "test:premium-and-auth": "npm run test:premium-protection && npm run test:password-reset",
+    "test:hotmart-webhook": "node --test tests/hotmart-webhook-unit.mjs"
   },
   "devDependencies": {
     "jsdom": "^27.4.0",
