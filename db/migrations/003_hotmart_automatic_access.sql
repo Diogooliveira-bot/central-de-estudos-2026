@@ -260,9 +260,9 @@ DECLARE
   v_other RECORD;
   v_result TEXT;
 BEGIN
-  SELECT * INTO v_order FROM public.central_hotmart_orders
-   WHERE claim_token_hash=p_claim_hash AND claim_expires_at>NOW()
-     AND state='approved' AND user_id IS NULL AND credit_applied=FALSE
+  SELECT * INTO v_order FROM public.central_hotmart_orders o
+   WHERE o.claim_token_hash=p_claim_hash AND o.claim_expires_at>NOW()
+     AND o.state='approved' AND o.user_id IS NULL AND o.credit_applied=FALSE
    FOR UPDATE;
   IF NOT FOUND THEN RETURN; END IF;
   IF EXISTS(SELECT 1 FROM public.central_users WHERE lower(central_users.email)=v_order.buyer_email) THEN
