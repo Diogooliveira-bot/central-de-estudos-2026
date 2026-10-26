@@ -97,4 +97,5 @@ jobs:
 
       - name: Registrar URL para verificação externa de segurança
         shell: bash
-        run: |\n          echo "Preview solicitada: ${{ steps.deploy.outputs.url }}"
+        run: |
+          echo "Preview solicitada: ${{ steps.deploy.outputs.url }}"
