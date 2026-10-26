@@ -68,6 +68,11 @@ try{
  await page.evaluate(()=>window.openHome());
  await page.locator('.subject[data-id="cf"] .subject-head').click({force:true});
  await page.waitForFunction(()=>window.CentralFreeReader?.isFree(),{timeout:10000});
+ console.log('FREE_NAV_DOM='+JSON.stringify(await page.evaluate(()=>{
+ const e=document.querySelector('.subject[data-id="cf"]'),b=e?.querySelector('.subject-body'),p=e?.querySelector('.central-free-study'),h=document.querySelector('#homeView');
+ const state=el=>el?{class:el.className,display:getComputedStyle(el).display,visibility:getComputedStyle(el).visibility,hidden:el.hidden,rect:el.getBoundingClientRect().toJSON()}:null;
+ return {section:state(e),body:state(b),paper:state(p),home:state(h),isFree:window.CentralFreeReader?.isFree(),isOpen:window.CentralFreeReader?.isOpen?.('cf'),route:location.href};
+ })));
  await page.locator('.subject[data-id="cf"] .central-free-study').waitFor({state:'visible',timeout:6000});
  const subject=page.locator('.subject[data-id="cf"]');
  if(!await subject.evaluate(el=>el.classList.contains('open')))throw Error('A disciplina ainda está fechada para o aluno');
