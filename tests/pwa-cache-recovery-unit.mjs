@@ -151,6 +151,9 @@ test('installation works without Cache Storage',async()=>{
 
 function createCentralBootHarness(){
   const source=readFileSync(new URL('../central-boot-ready.js',import.meta.url),'utf8');
+  const entry=readFileSync(new URL('../central-v119.html',import.meta.url),'utf8');
+  assert.ok(entry.includes('central-boot-ready.js?v=20261026free-boot-fix1'));
+
   const winEvents=new Map(),docEvents=new Map(),classes=new Set(['central-boot-pending','bc-ui-v1','bc-topnav','bc-home-v3-active']);
   const status={textContent:'Organizando seu ambiente de estudo...'},spinner={hidden:false},retry={hidden:true};
   let removed=false,rendered=0;
