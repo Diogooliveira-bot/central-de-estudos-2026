@@ -37,7 +37,15 @@
     })});
   }
   window.addEventListener('error',function(event){
-    if((event.target?.tagName==='SCRIPT'||event.target?.rel==='stylesheet')&&root.classList.contains('central-boot-pending')){
+    if(!root.classList.contains('central-boot-pending'))return;
+    if(event.target?.tagName==='SCRIPT'){
+      // A free account may be denied optional Premium-only scripts (HTTP 403).
+      // Rendering must decide whether a missing dependency is actually fatal;
+      // one rejected Premium file must not lock the entire study dashboard.
+      console.warn('[Central startup] Recurso JS indisponível:',event.target?.src||'(sem URL)');
+      return;
+    }
+    if(event.target?.rel==='stylesheet'){
       clearTimeout(timer);fail();
     }
   },true);

@@ -147,3 +147,49 @@ test('installation works without Cache Storage',async()=>{
   await w.trigger('install');
   assert.equal(w.requests.length,0);
 });
+
+
+function createCentralBootHarness(){
+  const source=readFileSync(new URL('../central-boot-ready.js',import.meta.url),'utf8');
+  const entry=readFileSync(new URL('../central-v119.html',import.meta.url),'utf8');
+  assert.ok(entry.includes('central-boot-ready.js?v=20261026free-boot-fix1'));
+
+  const winEvents=new Map(),docEvents=new Map(),classes=new Set(['central-boot-pending','bc-ui-v1','bc-topnav','bc-home-v3-active']);
+  const status={textContent:'Organizando seu ambiente de estudo...'},spinner={hidden:false},retry={hidden:true};
+  let removed=false,rendered=0;
+  const root={dataset:{centralBuild:'test'},classList:{contains:x=>classes.has(x),remove:x=>classes.delete(x)}};
+  const document={
+    documentElement:root,readyState:'loading',
+    getElementById:id=>id==='status'?status:id==='retry'?retry:id==='central-boot-screen'?{remove(){removed=true}}:null,
+    querySelector:selector=>selector==='#central-boot-screen .spinner'?spinner:null,
+    querySelectorAll:selector=>selector==='link[rel="stylesheet"]'?[{sheet:{}}]:[],
+    addEventListener:(name,callback)=>docEvents.set(name,callback),
+    dispatchEvent(){}
+  };
+  const messages=[];
+  const window={addEventListener:(name,callback)=>winEvents.set(name,callback),renderAll:()=>{rendered++}};
+  runInNewContext(source,{window,document,navigator:{},Date,CustomEvent:class{},setTimeout,clearTimeout,
+    requestAnimationFrame:fn=>fn(),console:{warn:(...args)=>messages.push(args),error:()=>{}},location:{reload(){}}},
+    {filename:'central-boot-ready.js'});
+  return {resourceError:target=>winEvents.get('error')({target}),start:()=>docEvents.get('DOMContentLoaded')(),
+    status,spinner,retry,root,messages,rendered:()=>rendered,removed:()=>removed};
+}
+
+test('aluno gratuito nao fica bloqueado no splash se um script Premium opcional retorna erro',()=>{
+  const ui=createCentralBootHarness();
+  ui.resourceError({tagName:'SCRIPT',src:'https://base.test/penal-full-theory-data-01.js'});
+  assert.equal(ui.retry.hidden,true,'script opcional nao pode derrubar a Central');
+  ui.start();
+  assert.equal(ui.rendered(),1);
+  assert.equal(ui.removed(),true,'a Central precisa liberar a interface apos renderizar');
+  assert.equal(ui.root.dataset.centralReady,'true');
+  assert.ok(ui.messages.length,'falha do arquivo deve ser registrada para diagnostico');
+});
+
+test('erro real em folha de estilo ainda pode bloquear inicializacao quebrada',()=>{
+  const ui=createCentralBootHarness();
+  ui.resourceError({tagName:'LINK',rel:'stylesheet',href:'https://base.test/ui/layout.css'});
+  assert.equal(ui.retry.hidden,false);
+  assert.equal(ui.spinner.hidden,true);
+  assert.match(ui.status.textContent,/Nao foi possivel|Não foi possível/);
+});
