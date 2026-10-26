@@ -1,0 +1,97 @@
+name: Deploy privado — prévia visual jurídica
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: bc-private-visual-preview
+  cancel-in-progress: false
+
+env:
+  EXPECTED_SOURCE_SHA: d5fb95ea2fabb5695cca94303c0618cc0354fa18
+  EXPECTED_BRANCH: preview/legal-complete-premium-v1-20261025
+  VERCEL_ORG_ID: team_RF9KuNlEP0Gtt9hf8b3jlVZr
+  VERCEL_PROJECT_ID: prj_9lWICZgoJh4UNHZQ6CleUAmQIHqG
+  VERCEL_CLI_VERSION: 65.2.0
+
+jobs:
+  deploy-preview:
+    if: >-
+      github.repository == 'Diogooliveira-bot/central-de-estudos-2026' &&
+      github.ref == 'refs/heads/preview/legal-complete-premium-v1-20261025' &&
+      github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-24.04
+    environment:
+      name: bc-preview-private
+    steps:
+      - name: Recuperar somente o commit aprovado da prévia
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          ref: d5fb95ea2fabb5695cca94303c0618cc0354fa18
+          fetch-depth: 1
+          persist-credentials: false
+
+      - name: Confirmar origem imutável da prévia
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$EXPECTED_SOURCE_SHA"
+          test "$GITHUB_REF" = "refs/heads/$EXPECTED_BRANCH"
+
+      - name: Instalar dependências de teste
+        shell: bash
+        run: npm ci --ignore-scripts
+
+      - name: Executar testes automatizados
+        shell: bash
+        run: npm test
+
+      - name: Validar build local protegido
+        shell: bash
+        run: npm run build:vercel-output
+
+      - name: Instalar Vercel CLI fixo
+        shell: bash
+        run: npm install --global "vercel@${VERCEL_CLI_VERSION}"
+
+      - name: Vincular explicitamente ao projeto temporário
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p .vercel
+          printf '{"orgId":"%s","projectId":"%s"}\n' "$VERCEL_ORG_ID" "$VERCEL_PROJECT_ID" > .vercel/project.json
+          test "$(node -p "require('./.vercel/project.json').orgId")" = "$VERCEL_ORG_ID"
+          test "$(node -p "require('./.vercel/project.json').projectId")" = "$VERCEL_PROJECT_ID"
+
+      - name: Obter exclusivamente as variáveis de Preview
+        shell: bash
+        run: vercel pull --yes --environment=preview --scope "$VERCEL_ORG_ID"
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+
+      - name: Build de Preview
+        shell: bash
+        run: vercel build --scope "$VERCEL_ORG_ID"
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+
+      - name: Publicar somente Preview
+        id: deploy
+        shell: bash
+        run: |
+          set -euo pipefail
+          deployment_url="$(vercel deploy --prebuilt --yes --scope "$VERCEL_ORG_ID")"
+          case "$deployment_url" in
+            https://*.vercel.app) ;;
+            *) echo 'URL de deployment inválida.' >&2; exit 1 ;;
+          esac
+          printf 'url=%s\n' "$deployment_url" >> "$GITHUB_OUTPUT"
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+
+      - name: Registrar URL para verificação externa de segurança
+        shell: bash
+        run: echo "Preview solicitada: ${{ steps.deploy.outputs.url }}"
