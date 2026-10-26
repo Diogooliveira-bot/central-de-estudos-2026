@@ -61,13 +61,23 @@
  entryUrl.searchParams.delete('direct');
  entryUrl.searchParams.delete('central_source');
  var scripts=['ui/study-objectives-catalog-v1.js?v=20261023-remove-labor-disciplines-v1','content/tjpb-2026-verticalized.js?v=20261020exam1','content/trt8-2026-verticalized.js?v=20261021multiexam2','ui/appearance-themes-v1.js?v=20261006themes2','civil-decorando-index-v1.js?v=20261009sync1','ui/external-question-filters-v1.js?v='+BUILD];
- function tag(src){return '<scr'+'ipt defer src="/'+src+'"></scr'+'ipt>';}
+ var hasPremiumAccess=false;
+ function freeBlockedScript(src){
+  var path=String(src||'').split('?')[0].replace(/^\//,'');
+  return /^central-structural-v66119\/(?:cf|penal|cpc)-questions-000-init\.js$/i.test(path)
+   || /^central-structural-v66119\/civil-course-(?:000-init|00[1-5]|006-final)\.js$/i.test(path)
+   || /^penal-full-theory-data-\d+\.js$/i.test(path)
+   || /^content\/rlm-tjce-2026\/(?:aulas-[a-z-]+|complementos-teoria)\.js$/i.test(path)
+   || /^(?:portugues-tec-data-v1|content\/penal-cpp-tec-links|ui\/tec-penal-cpp-links)\.js$/i.test(path);
+ }
+ function tag(src){if(!hasPremiumAccess&&freeBlockedScript(src))return '';return '<scr'+'ipt defer src="/'+src+'"></scr'+'ipt>';}
  function prepareDisciplineLoading(html){
   html=html.replace(/(<meta name="central-source-version" content=")[^"]+("\s*\/?>)/i,'$1'+APP_VERSION+'$2');
   var groups={cf:[],penal:[],cpc:[],cpp:[],civil:[],adm:[]};
   var coursesSeen=false;
   html=html.replace(/<script\b[^>]*\bsrc=["']([^"']+)["'][^>]*>\s*<\/script>/gi,function(tag,src){
    var path=src.split('?')[0].replace(/^\//,''),group='';
+   if(!hasPremiumAccess&&freeBlockedScript(path))return '';
    if(/central-structural-v66119\/(cf|penal|cpc)-questions-(?!000)/.test(path))group=path.match(/\/(cf|penal|cpc)-questions-/)[1];
    else if(path.indexOf('content/cf/')===0||path==='ui/cf-native-study-v2.js')group='cf';
    else if(path.indexOf('content/cpc/')===0||/^cpc-/.test(path)||/^ui\/cpc-/.test(path))group='cpc';
@@ -94,8 +104,19 @@
   window.__BASE_COMPLETA_PREVIEW_GUEST__=authState.previewGuest===true;
   window.__BASE_COMPLETA_USER_ID__=String(authState.user.id||'');
   window.__BASE_COMPLETA_USER_ROLE__=String(authState.user.role||'aluno');
+  try{
+   var planResponse=await fetch('/api/auth?bc_api=plans&action=me',{cache:'no-store'});
+   var planState=planResponse.ok?await planResponse.json():null;
+   hasPremiumAccess=planState?.isStaff===true||planState?.plan==='premium';
+  }catch(_){hasPremiumAccess=false}
   await (await import('/sync-local-state.js?v=20261007')).prepareLocalUserState(authState.user.id);
   var response=await fetch('/index.html?central_source='+BUILD,{cache:'no-store'});if(!response.ok)throw new Error('Falha HTTP '+response.status);var html=await response.text();
+  if(!hasPremiumAccess){
+   var emptyCivil={modules:[],diagnostic:[],cases:[],final:[]};
+   for(var civilPart=2;civilPart<=16;civilPart++){emptyCivil['diagnostic'+civilPart]=[];emptyCivil['cases'+civilPart]=[];emptyCivil['final'+civilPart]=[]}
+   var freeLegacyBoot='<scr'+'ipt>const CF_QUESTIONS=[];const PENAL_QUESTIONS=[];const CPC_QUESTIONS=[];const CIVIL_COURSE='+JSON.stringify(emptyCivil)+';</scr'+'ipt>';
+   html=html.replace(/<head\b[^>]*>/i,function(head){return head+freeLegacyBoot});
+  }
   var authBoot='<scr'+'ipt>window.CENTRAL_VERSION='+JSON.stringify(APP_VERSION)+';window.BASE_COMPLETA_USER='+JSON.stringify(authState.user)+';window.__BASE_COMPLETA_PREVIEW_GUEST__='+JSON.stringify(authState.previewGuest===true)+';window.__BASE_COMPLETA_USER_ID__='+JSON.stringify(String(authState.user.id||''))+';window.__BASE_COMPLETA_USER_ROLE__='+JSON.stringify(String(authState.user.role||'aluno'))+';</scr'+'ipt>';
   html=html.replace(/<head\b[^>]*>/i,function(head){return head+authBoot});
   html=html.replace(/cpc-study-system-v1\.js\?v=[^"'<>]+/g,'cpc-study-system-v1.js?v=20261004cpcall2');html=html.replace('v6.6.75 • Plano de 6 meses','v'+APP_VERSION+' • Plano de 6 meses');html=html.replace(/\/central-structural-v66119\/runtime\.js\?v=[^\"'<>]+/g,'/central-structural-v66119/runtime.js?v='+BUILD);html=html.replace('<span class="central-version-v41">v6.6.74</span>','<span class="central-version-v41">v'+APP_VERSION+'</span>');html=html.replace(/<link\b[^>]*\bhref=["'][^"']*base-completa-visual-v1\.css[^"']*["'][^>]*>/gi,'');
