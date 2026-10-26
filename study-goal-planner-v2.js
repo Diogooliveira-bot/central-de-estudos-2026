@@ -63,7 +63,7 @@ function sessions(goal){
  return out;
 }
 function readControls(goal){
- el('studyGoalStart').value=goal.start;
+ el('studyGoalStart').value=goal.start<iso(new Date())?iso(new Date()):goal.start;
  el('studyGoalMonths').value=goal.months;
  WEEK.forEach(([day])=>{
   const n=Number(goal.hours[day]||0),checked=n>0;
@@ -166,8 +166,9 @@ function inject(){
  existing.insertBefore(head,existing.firstChild);
  const details=document.createElement('details');details.className='study-manual';details.innerHTML='<summary>Adicionar tarefa avulsa</summary>';
  const grid=existing.querySelector('.form-grid'),row=existing.querySelector('.action-row'),message=el('agendaStandaloneStatus');
- if(grid)details.appendChild(grid);if(row)details.appendChild(row);if(message)details.appendChild(message);
+ if(grid)details.appendChild(grid);if(row)details.appendChild(row);
  existing.insertBefore(details,el('agendaEditor'));
+ if(message)existing.insertBefore(message,el('agendaEditor'));
  const saved=loadGoal();readControls(saved||defaultGoal());renderSummary();
  editGoal(!saved);el('studyGoalEdit').textContent=saved?'Editar meta':'Configurar meta';
  el('studyGoalEdit').onclick=()=>editGoal(el('studyGoalForm').hidden);
