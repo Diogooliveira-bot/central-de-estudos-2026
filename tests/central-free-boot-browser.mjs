@@ -65,8 +65,8 @@ try{
  console.log('FREE_BROWSER_DIAGNOSTIC='+JSON.stringify({info,counts,errors:errors.slice(0,25),httpErrors:httpErrors.slice(0,60),messages:messages.slice(0,60)}));
  if(info.ready!=='true'){process.exitCode=1;console.error('ALUNO_FREE_BOOT_FAILED')} else console.log('ALUNO_FREE_BOOT_READY');
 
- await page.evaluate(()=>window.openHome());
- await page.locator('.subject[data-id="cf"] .subject-head').click({force:true});
+ await page.evaluate(()=>window.openDisciplines());
+ await page.locator('#disciplineGrid .disc-card[data-id="cf"]').click({force:true});
  await page.waitForFunction(()=>window.CentralFreeReader?.isFree(),{timeout:10000});
  console.log('FREE_NAV_DOM='+JSON.stringify(await page.evaluate(()=>{
  const e=document.querySelector('.subject[data-id="cf"]'),b=e?.querySelector('.subject-body'),p=e?.querySelector('.central-free-study'),h=document.querySelector('#homeView');
