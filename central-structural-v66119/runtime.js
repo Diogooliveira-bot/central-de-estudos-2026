@@ -4277,11 +4277,12 @@ function penalStep(n,title,desc,done,body){
  return `<section class="cf-step ${done?'done':''}"><div class="cf-step-head"><div class="cf-step-no">${done?'✓':n}</div><div class="cf-step-copy"><b>${title}</b><small>${desc}</small></div></div><div class="cf-step-body">${body}</div></section>`;
 }
 function renderPenalMaster(){
- if(!penalQuestionBank().length)return '<div class="cf-subtitle">Questões de fixação: 5 na versão resumida e 10 na completa de cada módulo.</div><div class="cf-modules">'+PENAL_WEEKS.map(renderPenalModule).join('')+'</div>';
- const st=penalStats(),real=penalQuestionBank().filter(q=>q.real!==false).length,ined=penalQuestionBank().length-real;
+ const questions=typeof PENAL_QUESTIONS!=='undefined'&&Array.isArray(PENAL_QUESTIONS)?PENAL_QUESTIONS:[];
+ if(!questions.length)return '<div class="cf-subtitle">Questões de fixação: 5 na versão resumida e 10 na completa de cada módulo.</div><div class="cf-modules">'+PENAL_WEEKS.map(renderPenalModule).join('')+'</div>';
+ const st=penalStats(),real=questions.filter(q=>q.real!==false).length,ined=questions.length-real;
  return `<div class="cf-master-tools"><button onclick="renderPenalErrorPanel()">⚠ Erros ${st.wrongIds.length?`(${st.wrongIds.length})`:''}</button></div>
  <div class="cf-metrics">
-   <div class="cf-metric"><small>Banco do curso</small><b>${penalQuestionBank().length}</b></div>
+   <div class="cf-metric"><small>Banco do curso</small><b>${questions.length}</b></div>
    <div class="cf-metric"><small>Respondidas</small><b>${st.answered}</b></div>
    <div class="cf-metric"><small>Aproveitamento</small><b>${st.answered?st.accuracy+'%':'—'}</b></div>
    <div class="cf-metric"><small>Erros pendentes</small><b>${st.wrongIds.length}</b></div>
