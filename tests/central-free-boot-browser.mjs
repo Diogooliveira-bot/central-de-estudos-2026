@@ -57,6 +57,6 @@ try{
   user:window.BASE_COMPLETA_USER?.role
  }));
  console.log('FREE_BROWSER_DIAGNOSTIC='+JSON.stringify({info,counts,errors:errors.slice(0,25),httpErrors:httpErrors.slice(0,60),messages:messages.slice(0,60)}));
- if(info.ready!=='true'){process.exitCode=1;console.error('ALUNO_FREE_BOOT_FAILED')}
+ if(info.ready!=='true'){process.exitCode=1;console.error('ALUNO_FREE_BOOT_FAILED')} else console.log('ALUNO_FREE_BOOT_READY');
  await context.close();
 }finally{await browser.close();server.close()}
