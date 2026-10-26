@@ -69,30 +69,15 @@ jobs:
           test "$(node -p "require('./.vercel/project.json').orgId")" = "$VERCEL_ORG_ID"
           test "$(node -p "require('./.vercel/project.json').projectId")" = "$VERCEL_PROJECT_ID"
 
-      - name: Confirmar projeto temporário vinculado
-        shell: bash
-        run: vercel project inspect --non-interactive
-        env:
-          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-
-      - name: Obter exclusivamente as variáveis de Preview
-        shell: bash
-        run: vercel pull --yes --environment=preview
-        env:
-          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-
-      - name: Build de Preview
-        shell: bash
-        run: vercel build
-        env:
-          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-
+      # Vercel CLI 65: tokens de projeto nao conseguem ler user/team settings
+      # em 'project inspect' ou 'pull'. O build remoto usa somente os
+      # segredos Preview armazenados no projeto temporario da Vercel.
       - name: Publicar somente Preview
         id: deploy
         shell: bash
         run: |
           set -euo pipefail
-          deployment_url="$(vercel deploy --prebuilt --yes)"
+          deployment_url="$(vercel deploy --yes)"
           case "$deployment_url" in
             https://*.vercel.app) ;;
             *) echo 'URL de deployment inválida.' >&2; exit 1 ;;
