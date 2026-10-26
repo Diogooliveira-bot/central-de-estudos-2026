@@ -67,7 +67,15 @@ try{
  if(info.ready!=='true'){process.exitCode=1;console.error('ALUNO_FREE_BOOT_FAILED')} else console.log('ALUNO_FREE_BOOT_READY');
 
  await page.evaluate(()=>window.openDisciplines());
- await page.locator('#disciplineGrid .disc-card[data-id="cf"]').click({force:true});
+ await page.waitForTimeout(700);
+ console.log('FREE_DISC_VIEW='+JSON.stringify(await page.evaluate(()=>({
+  active:window.CentralStudyObjectives?.getActive?.(),
+  url:location.href,disciplineView:document.getElementById('disciplinesView')?.className,
+  grid:document.getElementById('disciplineGrid')?.outerHTML.slice(0,1400),
+  cards:[...document.querySelectorAll('[data-id="cf"]')].map(x=>({tag:x.tagName,class:x.className,outer:x.outerHTML.slice(0,250)})),
+  nav:document.querySelector('#centralSidebar .nav')?.textContent?.slice(0,500)
+ }))));
+ await page.locator('#disciplineGrid .disc-card[data-id="cf"]').click({force:true,timeout:6000});
  await page.waitForFunction(()=>window.CentralFreeReader?.isFree(),{timeout:10000});
  console.log('FREE_NAV_DOM='+JSON.stringify(await page.evaluate(()=>{
  const e=document.querySelector('.subject[data-id="cf"]'),b=e?.querySelector('.subject-body'),p=e?.querySelector('.central-free-study'),h=document.querySelector('#homeView');
