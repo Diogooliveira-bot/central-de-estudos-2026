@@ -4,6 +4,7 @@ on:
     paths:
       - 'tests/central-free-boot-browser.mjs'
       - 'central-free-disciplines.js'
+      - 'tests/free-summary-projections.mjs'
       - 'tools/lei-em-dia-gratis.html'
       - 'tools/decorando.html'
       - 'central-v119.html'
@@ -24,4 +25,5 @@ jobs:
       - run: node --check central-structural-v66119/runtime.js
       - run: node --check central-free-disciplines.js
       - run: npm run test:premium-protection
+      - run: node tests/free-summary-projections.mjs
       - run: node tests/central-free-boot-browser.mjs
