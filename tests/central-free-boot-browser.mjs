@@ -75,7 +75,7 @@ try{
   cards:[...document.querySelectorAll('[data-id="cf"]')].map(x=>({tag:x.tagName,class:x.className,outer:x.outerHTML.slice(0,250)})),
   nav:document.querySelector('#centralSidebar .nav')?.textContent?.slice(0,500)
  }))));
- await page.locator('#disciplineGrid .disc-card[data-id="cf"]').click({force:true,timeout:6000});
+ await page.locator('#disciplineGrid [data-study-open-subject="cf"]').click({timeout:8000});
  await page.waitForFunction(()=>window.CentralFreeReader?.isFree(),{timeout:10000});
  console.log('FREE_NAV_DOM='+JSON.stringify(await page.evaluate(()=>{
  const e=document.querySelector('.subject[data-id="cf"]'),b=e?.querySelector('.subject-body'),p=e?.querySelector('.central-free-study'),h=document.querySelector('#homeView');
