@@ -12,6 +12,7 @@ const server=createServer(async(req,res)=>{
  const json=(body,status=200)=>{res.writeHead(status,{'content-type':'application/json','cache-control':'no-store'});res.end(JSON.stringify(body))};
  if(path==='/api/auth'){return json({authenticated:true,user:{id:'fictional-free-student',name:'Aluno Fictício',role:'aluno',plan:'free'}})}
  if(path==='/api/sync'){return json(req.method==='POST'?{revision:1}:{exists:false})}
+ if(path==='/api/objective')return json({objectiveId:'career-tribunais-analista'});
  if(path==='/api/plans')return json({role:'aluno',plan:'free',status:'active',isStaff:false,entitlements:{'theory.summary':{enabled:true},'progress.advanced_sync':{enabled:false}}});
  if(path==='/api/lei-em-dia-questions'){
   if(req.method==='GET'){res.writeHead(200,{'content-type':'application/javascript'});res.end('const DATA_LED_APPROVED=[{id:"LED-FREE-1",discipline:"cf",topicId:"led-cf",number:"Art. 5º",title:"Constituição Federal"}];');return}
@@ -65,13 +66,30 @@ try{
  console.log('FREE_BROWSER_DIAGNOSTIC='+JSON.stringify({info,counts,errors:errors.slice(0,25),httpErrors:httpErrors.slice(0,60),messages:messages.slice(0,60)}));
  if(info.ready!=='true'){process.exitCode=1;console.error('ALUNO_FREE_BOOT_FAILED')} else console.log('ALUNO_FREE_BOOT_READY');
 
- await page.evaluate(()=>window.CentralDisciplineLoader.open('cf'));
- await page.waitForFunction(()=>!!document.querySelector('.central-free-study')&&window.CentralFreeReader?.isFree(),{timeout:10000});
- await page.evaluate(()=>window.CentralFreeReader.module('cf',1));
- await page.waitForFunction(()=>document.getElementById('centralFreeResult')?.textContent?.includes('Resumo gratuito validado no navegador.'),{timeout:10000});
- const freeHTML=await page.locator('#centralFreeResult').innerText();
- if(!freeHTML.includes('Resumo gratuito validado no navegador.'))throw Error('Resumo gratuito não abriu');
- console.log('FREE_DISCIPLINE_OK='+freeHTML.slice(0,130));
+ await page.evaluate(()=>window.openDisciplines());
+ await page.waitForTimeout(700);
+ console.log('FREE_DISC_VIEW='+JSON.stringify(await page.evaluate(()=>({
+  active:window.CentralStudyObjectives?.getActive?.(),
+  url:location.href,disciplineView:document.getElementById('disciplinesView')?.className,
+  grid:document.getElementById('disciplineGrid')?.outerHTML.slice(0,1400),
+  cards:[...document.querySelectorAll('[data-id="cf"]')].map(x=>({tag:x.tagName,class:x.className,outer:x.outerHTML.slice(0,250)})),
+  nav:document.querySelector('#centralSidebar .nav')?.textContent?.slice(0,500)
+ }))));
+ await page.locator('#disciplineGrid [data-study-open-subject="cf"]').click({timeout:8000});
+ await page.waitForFunction(()=>window.CentralFreeReader?.isFree(),{timeout:10000});
+ console.log('FREE_NAV_DOM='+JSON.stringify(await page.evaluate(()=>{
+ const e=document.querySelector('.subject[data-id="cf"]'),b=e?.querySelector('.subject-body'),p=e?.querySelector('.central-free-study'),h=document.querySelector('#homeView');
+ const state=el=>el?{class:el.className,display:getComputedStyle(el).display,visibility:getComputedStyle(el).visibility,hidden:el.hidden,rect:el.getBoundingClientRect().toJSON()}:null;
+ return {section:state(e),body:state(b),paper:state(p),home:state(h),isFree:window.CentralFreeReader?.isFree(),isOpen:window.CentralFreeReader?.isOpen?.('cf'),route:location.href};
+ })));
+ await page.locator('.subject[data-id="cf"] .central-free-study').waitFor({state:'visible',timeout:6000});
+ const subject=page.locator('.subject[data-id="cf"]');
+ if(!await subject.evaluate(el=>el.classList.contains('open')))throw Error('A disciplina ainda está fechada para o aluno');
+ await page.locator('.subject[data-id="cf"] .central-free-cards button').first().click();
+ await page.locator('.subject[data-id="cf"] #centralFreeResult').getByText('Resumo gratuito validado no navegador.',{exact:false}).waitFor({state:'visible',timeout:10000});
+ const freeHTML=await page.locator('.subject[data-id="cf"] #centralFreeResult').innerText();
+ if(!freeHTML.includes('Resumo gratuito validado no navegador.'))throw Error('Resumo gratuito não visível');
+ console.log('FREE_DISCIPLINE_VISIBLE_OK='+freeHTML.slice(0,130));
  await page.goto(base+'/tools/decorando.html',{waitUntil:'domcontentloaded'});
  await page.waitForURL('**/tools/lei-em-dia-gratis.html',{timeout:12000});
  await page.waitForSelector('#filters:not(.hidden)',{timeout:10000});

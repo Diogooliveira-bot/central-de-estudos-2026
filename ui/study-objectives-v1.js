@@ -245,7 +245,7 @@
 
   document.addEventListener('click', (event) => {
     const button = event.target.closest('[data-study-open-subject]');
-    if (button) global.centralHardSubject?.(button.dataset.studyOpenSubject);
+    if (button) (global.centralHardSubject || global.jumpSubject)?.(button.dataset.studyOpenSubject);
   });
   global.addEventListener('online', () => { if (localStorage.getItem(PENDING_KEY) === '1' && activeId) persistRemote(activeId); });
   document.addEventListener('base-completa-auth-ready', () => { if (!loaded) load(); });

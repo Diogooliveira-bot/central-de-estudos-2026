@@ -40,6 +40,17 @@ loader.open=function(id,after){
  getPlan.then(p=>{if(p?.plan==='free'&&!p.isStaff)freeOpen(id);else originalOpen(id,after)});
  return false;
 };
+// Navigation adapters can replace the legacy inline click handlers. Route the
+// visible subject and discipline-card actions to the free reader explicitly.
+// This runs ONLY for a confirmed free plan; paid routing is untouched.
+document.addEventListener('click',event=>{
+ const card=event.target.closest('#disciplineGrid .disc-card[data-id]');
+ const goal=event.target.closest('#disciplineGrid [data-study-open-subject]');
+ const head=event.target.closest('#subjects .subject-head');
+ const id=card?.dataset.id||goal?.dataset.studyOpenSubject||head?.closest('.subject')?.dataset.id;
+ if(!id||!counts[id]||!isFree())return;
+ event.preventDefault();event.stopImmediatePropagation();freeOpen(id);
+},true);
 function execute(source){
  const script=document.createElement('script');script.textContent=source;document.head.appendChild(script);script.remove();
 }
@@ -79,5 +90,5 @@ async function module(id,n){
  refresh();document.getElementById('centralFreeResult')?.scrollIntoView({block:'nearest'});
  return false;
 }
-g.CentralFreeReader={module,isFree};
+g.CentralFreeReader={module,isFree,isOpen:id=>isFree()&&opened.has(id)};
 })(window);
