@@ -1,0 +1,21 @@
+name: Verificar WhatsApp comercial (isolado)
+on:
+  push:
+    branches:
+      - feature/whatsapp-vendas-20261026
+  workflow_dispatch:
+jobs:
+  whatsapp-offline:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: npm run test:whatsapp-sales
+      - run: npm run test:hotmart-webhook
+      - run: npm run test:password-reset

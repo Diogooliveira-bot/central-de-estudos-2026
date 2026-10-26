@@ -22,6 +22,28 @@ import handlePlans from '../lib/plans-handler.js';
 import handlePrivateContent from '../lib/private-content-handler.js';
 import handleHotmartWebhook from '../lib/hotmart-webhook.js';
 import handleHotmartClaim from '../lib/hotmart-claim-handler.js';
+import { createHandler as createWhatsappSalesHandler } from '../lib/whatsapp-sales-handler.js';
+
+export const config = { api: { bodyParser: false }, maxDuration: 30 };
+const whatsappSalesHandler = createWhatsappSalesHandler();
+
+async function parseAuthJsonBody(req) {
+  if (req.body && typeof req.body === 'object') return null;
+  if (typeof req.body === 'string') {
+    try { req.body = JSON.parse(req.body || '{}'); return null; }
+    catch { return { status: 400, error: 'JSON inválido' }; }
+  }
+  const chunks = [];
+  let size = 0;
+  for await (const chunk of req) {
+    const part = Buffer.isBuffer(chunk) ? chunk : Buffer.from(chunk);
+    size += part.length;
+    if (size > 1024 * 1024) return { status: 413, error: 'Corpo da requisição muito grande' };
+    chunks.push(part);
+  }
+  try { req.body = JSON.parse(Buffer.concat(chunks).toString('utf8') || '{}'); return null; }
+  catch { return { status: 400, error: 'JSON inválido' }; }
+}
 
 function send(res, status, body, extraHeaders = {}) {
   res.statusCode = status;
@@ -180,7 +202,13 @@ export default async function handler(req, res) {
     if (premiumApi === 'lei-em-dia-questions') return handleLeiEmDiaQuestions(req, res);
 
     const action = String(req.query?.action || '').toLowerCase();
+    // O webhook Meta externo valida sua própria assinatura antes de qualquer ação.
+    if (action === 'whatsapp-sales') return whatsappSalesHandler(req, res);
     if (req.method === 'POST' && !sameOriginRequest(req)) return send(res, 403, { error: 'Origem da requisição não permitida' });
+    if (req.method === 'POST') {
+      const bodyError = await parseAuthJsonBody(req);
+      if (bodyError) return send(res, bodyError.status, { error: bodyError.error });
+    }
 
     if (action.startsWith('invite-')) return handleInviteAction(req, res, action.slice('invite-'.length));
     if (action.startsWith('password-reset-')) return handlePasswordReset(req, res, action.slice('password-reset-'.length));
