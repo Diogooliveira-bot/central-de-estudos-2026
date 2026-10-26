@@ -1,6 +1,9 @@
 name: Deploy privado — prévia visual jurídica
 
 on:
+  push:
+    branches:
+      - preview/legal-complete-premium-v1-20261025
   workflow_dispatch:
 
 permissions:
@@ -22,7 +25,7 @@ jobs:
     if: >-
       github.repository == 'Diogooliveira-bot/central-de-estudos-2026' &&
       github.ref == 'refs/heads/preview/legal-complete-premium-v1-20261025' &&
-      github.event_name == 'workflow_dispatch'
+      (github.event_name == 'workflow_dispatch' || github.event_name == 'push')
     runs-on: ubuntu-24.04
     environment:
       name: bc-preview-private
