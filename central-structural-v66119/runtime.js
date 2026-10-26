@@ -3961,10 +3961,13 @@ function cfWeekPct(w){
  const st=cfWeekState(w.id),keys=['diagnostic','reading','theory','intermediate','deep','fixation'];
  return Math.round(keys.filter(k=>st[k]).length/keys.length*100);
 }
-function cfPool(w){return CF_QUESTIONS.filter(q=>w.topics.includes(q.t))}
+function cpcQuestionBank(){return typeof CPC_QUESTIONS!=='undefined'&&Array.isArray(CPC_QUESTIONS)?CPC_QUESTIONS:[]}
+function penalQuestionBank(){return typeof PENAL_QUESTIONS!=='undefined'&&Array.isArray(PENAL_QUESTIONS)?PENAL_QUESTIONS:[]}
+function cfQuestionBank(){return typeof CF_QUESTIONS!=='undefined'&&Array.isArray(CF_QUESTIONS)?CF_QUESTIONS:[]}
+function cfPool(w){return cfQuestionBank().filter(q=>w.topics.includes(q.t))}
 function cfStats(){
  const st=cfState();let answered=0,correct=0,wrongIds=[];
- const ids=CF_QUESTIONS.map(q=>q.id);
+ const ids=cfQuestionBank().map(q=>q.id);
  ids.forEach(id=>{
    const a=st.answers?.[id];
    if(a?.attempts){answered++;if(a.lastCorrect)correct++;if(a.everWrong&&!a.lastCorrect)wrongIds.push(id)}
@@ -4033,11 +4036,11 @@ function cfStep(n,title,desc,done,body){
  return `<section class="cf-step ${done?'done':''}"><div class="cf-step-head"><div class="cf-step-no">${done?'✓':n}</div><div class="cf-step-copy"><b>${title}</b><small>${desc}</small></div></div><div class="cf-step-body">${body}</div></section>`;
 }
 function renderConstitutionalMaster(){
- if(!CF_QUESTIONS.length)return '<div class="cf-subtitle">Questões de fixação: 5 na versão resumida e 10 na completa de cada módulo.</div>';
- const st=cfStats(),real=CF_QUESTIONS.filter(q=>q.real!==false).length,ined=CF_QUESTIONS.length-real;
+ if(!cfQuestionBank().length)return '<div class="cf-subtitle">Questões de fixação: 5 na versão resumida e 10 na completa de cada módulo.</div>';
+ const st=cfStats(),real=cfQuestionBank().filter(q=>q.real!==false).length,ined=cfQuestionBank().length-real;
  return `<div class="cf-master-tools"><button onclick="renderCfErrorPanel()">⚠ Erros ${st.wrongIds.length?`(${st.wrongIds.length})`:''}</button></div>
  <div class="cf-metrics">
-   <div class="cf-metric"><small>Banco do curso</small><b>${CF_QUESTIONS.length}</b></div>
+   <div class="cf-metric"><small>Banco do curso</small><b>${cfQuestionBank().length}</b></div>
    <div class="cf-metric"><small>Respondidas</small><b>${st.answered}</b></div>
    <div class="cf-metric"><small>Aproveitamento</small><b>${st.answered?st.accuracy+'%':'—'}</b></div>
    <div class="cf-metric"><small>Erros pendentes</small><b>${st.wrongIds.length}</b></div>
@@ -4163,7 +4166,7 @@ function finishCfQuiz(){
 function closeCfSession(){cfSession=null;const h=document.getElementById('cf-session-host');if(h)h.innerHTML=''}
 function renderCfErrorPanel(){
  const host=document.getElementById('cf-errors-host');if(!host)return;
- const ids=new Set(cfStats().wrongIds),list=CF_QUESTIONS.filter(q=>ids.has(q.id));
+ const ids=new Set(cfStats().wrongIds),list=cfQuestionBank().filter(q=>ids.has(q.id));
  if(!list.length){host.innerHTML='<div class="cf-error-panel"><b>Nenhum erro pendente.</b></div>';return}
  const weak={};list.forEach(q=>{const k=q.subject||'Assunto';weak[k]=(weak[k]||0)+1});
  const top=Object.entries(weak).sort((a,b)=>b[1]-a[1]).slice(0,6);
@@ -4171,7 +4174,7 @@ function renderCfErrorPanel(){
  host.scrollIntoView({behavior:'smooth',block:'start'});
 }
 function startCfGlobalErrors(){
- const st=cfState(),list=CF_QUESTIONS.filter(q=>st.answers?.[q.id]?.everWrong&&!st.answers?.[q.id]?.lastCorrect);if(!list.length)return;
+ const st=cfState(),list=cfQuestionBank().filter(q=>st.answers?.[q.id]?.everWrong&&!st.answers?.[q.id]?.lastCorrect);if(!list.length)return;
  cfSession={week:CF_WEEKS[0],mode:'errors',list:cfDeterministic(list,list.length,'global-errors'),index:0,score:0,errors:[],answered:false,order:null};renderCfQuestion();
 }
 function exportCfProgress(){
@@ -4211,10 +4214,10 @@ function penalWeekPct(w){
  const st=penalWeekState(w.id),keys=['diagnostic','reading','theory','intermediate','deep','fixation'];
  return Math.round(keys.filter(k=>st[k]).length/keys.length*100);
 }
-function penalPool(w){return PENAL_QUESTIONS.filter(q=>w.topics.includes(q.t))}
+function penalPool(w){return penalQuestionBank().filter(q=>w.topics.includes(q.t))}
 function penalStats(){
  const st=penalState();let answered=0,correct=0,wrongIds=[];
- PENAL_QUESTIONS.forEach(q=>{
+ penalQuestionBank().forEach(q=>{
    const a=st.answers?.[q.id];
    if(a?.attempts){answered++;if(a.lastCorrect)correct++;if(a.everWrong&&!a.lastCorrect)wrongIds.push(q.id)}
  });
@@ -4274,11 +4277,12 @@ function penalStep(n,title,desc,done,body){
  return `<section class="cf-step ${done?'done':''}"><div class="cf-step-head"><div class="cf-step-no">${done?'✓':n}</div><div class="cf-step-copy"><b>${title}</b><small>${desc}</small></div></div><div class="cf-step-body">${body}</div></section>`;
 }
 function renderPenalMaster(){
- if(!PENAL_QUESTIONS.length)return '<div class="cf-subtitle">Questões de fixação: 5 na versão resumida e 10 na completa de cada módulo.</div><div class="cf-modules">'+PENAL_WEEKS.map(renderPenalModule).join('')+'</div>';
- const st=penalStats(),real=PENAL_QUESTIONS.filter(q=>q.real!==false).length,ined=PENAL_QUESTIONS.length-real;
+ const questions=typeof PENAL_QUESTIONS!=='undefined'&&Array.isArray(PENAL_QUESTIONS)?PENAL_QUESTIONS:[];
+ if(!questions.length)return '<div class="cf-subtitle">Questões de fixação: 5 na versão resumida e 10 na completa de cada módulo.</div><div class="cf-modules">'+PENAL_WEEKS.map(renderPenalModule).join('')+'</div>';
+ const st=penalStats(),real=questions.filter(q=>q.real!==false).length,ined=questions.length-real;
  return `<div class="cf-master-tools"><button onclick="renderPenalErrorPanel()">⚠ Erros ${st.wrongIds.length?`(${st.wrongIds.length})`:''}</button></div>
  <div class="cf-metrics">
-   <div class="cf-metric"><small>Banco do curso</small><b>${PENAL_QUESTIONS.length}</b></div>
+   <div class="cf-metric"><small>Banco do curso</small><b>${questions.length}</b></div>
    <div class="cf-metric"><small>Respondidas</small><b>${st.answered}</b></div>
    <div class="cf-metric"><small>Aproveitamento</small><b>${st.answered?st.accuracy+'%':'—'}</b></div>
    <div class="cf-metric"><small>Erros pendentes</small><b>${st.wrongIds.length}</b></div>
@@ -4476,7 +4480,7 @@ function finishPenalQuiz(){
 function closePenalSession(){penalSession=null;const h=document.getElementById('penal-session-host');if(h)h.innerHTML=''}
 function renderPenalErrorPanel(){
  const host=document.getElementById('penal-errors-host');if(!host)return;
- const ids=new Set(penalStats().wrongIds),list=PENAL_QUESTIONS.filter(q=>ids.has(q.id));
+ const ids=new Set(penalStats().wrongIds),list=penalQuestionBank().filter(q=>ids.has(q.id));
  if(!list.length){host.innerHTML='<div class="cf-error-panel"><b>Nenhum erro pendente.</b></div>';return}
  const weak={};list.forEach(q=>{const k=q.subject||'Assunto';weak[k]=(weak[k]||0)+1});
  const top=Object.entries(weak).sort((a,b)=>b[1]-a[1]).slice(0,6);
@@ -4484,7 +4488,7 @@ function renderPenalErrorPanel(){
  host.scrollIntoView({behavior:'smooth',block:'start'});
 }
 function startPenalGlobalErrors(){
- const st=penalState(),list=PENAL_QUESTIONS.filter(q=>st.answers?.[q.id]?.everWrong&&!st.answers?.[q.id]?.lastCorrect);if(!list.length)return;
+ const st=penalState(),list=penalQuestionBank().filter(q=>st.answers?.[q.id]?.everWrong&&!st.answers?.[q.id]?.lastCorrect);if(!list.length)return;
  penalSession={week:PENAL_WEEKS[0],mode:'errors',list:penalDeterministic(list,list.length,'global-errors'),index:0,score:0,errors:[],answered:false,order:null};renderPenalQuestion();
 }
 function exportPenalProgress(){
@@ -4526,14 +4530,14 @@ function cpcWeekPct(w){
  const st=cpcWeekState(w.id),keys=['diagnostic','reading','theory','intermediate','deep','fixation'];
  return Math.round(keys.filter(k=>st[k]).length/keys.length*100);
 }
-function cpcPool(w){return CPC_QUESTIONS.filter(q=>w.topics.includes(q.t))}
+function cpcPool(w){return cpcQuestionBank().filter(q=>w.topics.includes(q.t))}
 window.__CPC_WEEKS=CPC_WEEKS;
 window.__cpcPool=function(w){return cpcPool(w)};
 window.__cpcModuleOpenKey=function(id){return cpcModuleOpenKey(id)};
 window.__cpcNoteKey=function(id){return cpcNoteKey(id)};
 function cpcStats(){
  const st=cpcState();let answered=0,correct=0,wrongIds=[];
- CPC_QUESTIONS.forEach(q=>{
+ cpcQuestionBank().forEach(q=>{
    const a=st.answers?.[q.id];
    if(a?.attempts){answered++;if(a.lastCorrect)correct++;if(a.everWrong&&!a.lastCorrect)wrongIds.push(q.id)}
  });
@@ -4585,12 +4589,12 @@ function cpcStep(n,title,desc,done,body){
  return `<section class="cf-step ${done?'done':''}"><div class="cf-step-head"><div class="cf-step-no">${done?'✓':n}</div><div class="cf-step-copy"><b>${title}</b><small>${desc}</small></div></div><div class="cf-step-body">${body}</div></section>`;
 }
 function renderCpcMaster(){
- if(!CPC_QUESTIONS.length)return '<div class="cf-subtitle">Questões de fixação: 5 na versão resumida e 10 na completa de cada módulo.</div>';
+ if(!cpcQuestionBank().length)return '<div class="cf-subtitle">Questões de fixação: 5 na versão resumida e 10 na completa de cada módulo.</div>';
  if(window.CpcStudyV1&&typeof window.CpcStudyV1.renderMaster==='function')return window.CpcStudyV1.renderMaster();
- const st=cpcStats(),real=CPC_QUESTIONS.filter(q=>q.real!==false).length,ined=CPC_QUESTIONS.length-real;
+ const st=cpcStats(),real=cpcQuestionBank().filter(q=>q.real!==false).length,ined=cpcQuestionBank().length-real;
  return `<div class="cf-master-tools"><button onclick="renderCpcErrorPanel()">⚠ Erros ${st.wrongIds.length?`(${st.wrongIds.length})`:''}</button></div>
  <div class="cf-metrics">
-   <div class="cf-metric"><small>Banco do curso</small><b>${CPC_QUESTIONS.length}</b></div>
+   <div class="cf-metric"><small>Banco do curso</small><b>${cpcQuestionBank().length}</b></div>
    <div class="cf-metric"><small>Respondidas</small><b>${st.answered}</b></div>
    <div class="cf-metric"><small>Aproveitamento</small><b>${st.answered?st.accuracy+'%':'—'}</b></div>
    <div class="cf-metric"><small>Erros pendentes</small><b>${st.wrongIds.length}</b></div>
@@ -4730,7 +4734,7 @@ function finishCpcQuiz(){
 function closeCpcSession(){cpcSession=null;const h=document.getElementById('cpc-session-host');if(h)h.innerHTML=''}
 function renderCpcErrorPanel(){
  const host=document.getElementById('cpc-errors-host');if(!host)return;
- const ids=new Set(cpcStats().wrongIds),list=CPC_QUESTIONS.filter(q=>ids.has(q.id));
+ const ids=new Set(cpcStats().wrongIds),list=cpcQuestionBank().filter(q=>ids.has(q.id));
  if(!list.length){host.innerHTML='<div class="cf-error-panel"><b>Nenhum erro pendente.</b></div>';return}
  const weak={};list.forEach(q=>{const k=q.subject||'Assunto';weak[k]=(weak[k]||0)+1});
  const top=Object.entries(weak).sort((a,b)=>b[1]-a[1]).slice(0,6);
@@ -4738,7 +4742,7 @@ function renderCpcErrorPanel(){
  host.scrollIntoView({behavior:'smooth',block:'start'});
 }
 function startCpcGlobalErrors(){
- const st=cpcState(),list=CPC_QUESTIONS.filter(q=>st.answers?.[q.id]?.everWrong&&!st.answers?.[q.id]?.lastCorrect);if(!list.length)return;
+ const st=cpcState(),list=cpcQuestionBank().filter(q=>st.answers?.[q.id]?.everWrong&&!st.answers?.[q.id]?.lastCorrect);if(!list.length)return;
  cpcSession={week:CPC_WEEKS[0],mode:'errors',list:cpcDeterministic(list,list.length,'global-errors'),index:0,score:0,errors:[],answered:false,order:null};renderCpcQuestion();
 }
 function exportCpcProgress(){
