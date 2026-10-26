@@ -65,13 +65,17 @@ try{
  console.log('FREE_BROWSER_DIAGNOSTIC='+JSON.stringify({info,counts,errors:errors.slice(0,25),httpErrors:httpErrors.slice(0,60),messages:messages.slice(0,60)}));
  if(info.ready!=='true'){process.exitCode=1;console.error('ALUNO_FREE_BOOT_FAILED')} else console.log('ALUNO_FREE_BOOT_READY');
 
- await page.evaluate(()=>window.CentralDisciplineLoader.open('cf'));
- await page.waitForFunction(()=>!!document.querySelector('.central-free-study')&&window.CentralFreeReader?.isFree(),{timeout:10000});
- await page.evaluate(()=>window.CentralFreeReader.module('cf',1));
- await page.waitForFunction(()=>document.getElementById('centralFreeResult')?.textContent?.includes('Resumo gratuito validado no navegador.'),{timeout:10000});
- const freeHTML=await page.locator('#centralFreeResult').innerText();
- if(!freeHTML.includes('Resumo gratuito validado no navegador.'))throw Error('Resumo gratuito não abriu');
- console.log('FREE_DISCIPLINE_OK='+freeHTML.slice(0,130));
+ await page.evaluate(()=>window.openHome());
+ await page.locator('.subject[data-id="cf"] .subject-head').click({force:true});
+ await page.waitForFunction(()=>window.CentralFreeReader?.isFree(),{timeout:10000});
+ await page.locator('.subject[data-id="cf"] .central-free-study').waitFor({state:'visible',timeout:6000});
+ const subject=page.locator('.subject[data-id="cf"]');
+ if(!await subject.evaluate(el=>el.classList.contains('open')))throw Error('A disciplina ainda está fechada para o aluno');
+ await page.locator('.subject[data-id="cf"] .central-free-cards button').first().click();
+ await page.locator('.subject[data-id="cf"] #centralFreeResult').getByText('Resumo gratuito validado no navegador.',{exact:false}).waitFor({state:'visible',timeout:10000});
+ const freeHTML=await page.locator('.subject[data-id="cf"] #centralFreeResult').innerText();
+ if(!freeHTML.includes('Resumo gratuito validado no navegador.'))throw Error('Resumo gratuito não visível');
+ console.log('FREE_DISCIPLINE_VISIBLE_OK='+freeHTML.slice(0,130));
  await page.goto(base+'/tools/decorando.html',{waitUntil:'domcontentloaded'});
  await page.waitForURL('**/tools/lei-em-dia-gratis.html',{timeout:12000});
  await page.waitForSelector('#filters:not(.hidden)',{timeout:10000});
