@@ -65,3 +65,11 @@ test('legacy batch mode is disabled and premium delivery remains one question pe
   assert.match(middleware, /mode=catalog/);
   assert.doesNotMatch(ui, /decorando-data-led-aprovadas\.js/);
 });
+
+test('the progressive catalog rebuilds its topic index without reintroducing question content', async () => {
+  const ui = await readFile(new URL('../tools/decorando.html', import.meta.url), 'utf8');
+  assert.match(ui, /function buildLedTopics\(catalog\)/);
+  assert.match(ui, /const TOPICS_LED_APPROVED=buildLedTopics\(DATA_LED_APPROVED\)/);
+  assert.match(ui, /let LAW_MODULE_LIST=\[\]/);
+  assert.doesNotMatch(ui, /src="\.\/decorando-data-led-aprovadas\.js/);
+});
