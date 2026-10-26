@@ -45,8 +45,9 @@ loader.open=function(id,after){
 // This runs ONLY for a confirmed free plan; paid routing is untouched.
 document.addEventListener('click',event=>{
  const card=event.target.closest('#disciplineGrid .disc-card[data-id]');
+ const goal=event.target.closest('#disciplineGrid [data-study-open-subject]');
  const head=event.target.closest('#subjects .subject-head');
- const id=card?.dataset.id||head?.closest('.subject')?.dataset.id;
+ const id=card?.dataset.id||goal?.dataset.studyOpenSubject||head?.closest('.subject')?.dataset.id;
  if(!id||!counts[id]||!isFree())return;
  event.preventDefault();event.stopImmediatePropagation();freeOpen(id);
 },true);
