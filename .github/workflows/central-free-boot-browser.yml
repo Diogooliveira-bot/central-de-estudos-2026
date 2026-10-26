@@ -1,0 +1,20 @@
+name: Diagnostico navegador aluno gratuito
+on:
+  pull_request:
+    paths:
+      - 'tests/central-free-boot-browser.mjs'
+      - '.github/workflows/central-free-boot-browser.yml'
+  workflow_dispatch:
+jobs:
+  browser-free:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - run: node tests/central-free-boot-browser.mjs
