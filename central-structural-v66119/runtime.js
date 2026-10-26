@@ -3961,10 +3961,10 @@ function cfWeekPct(w){
  const st=cfWeekState(w.id),keys=['diagnostic','reading','theory','intermediate','deep','fixation'];
  return Math.round(keys.filter(k=>st[k]).length/keys.length*100);
 }
-function cfPool(w){return CF_QUESTIONS.filter(q=>w.topics.includes(q.t))}
+function cfPool(w){return (typeof CF_QUESTIONS!=='undefined'&&Array.isArray(CF_QUESTIONS)?CF_QUESTIONS:[]).filter(q=>w.topics.includes(q.t))}
 function cfStats(){
  const st=cfState();let answered=0,correct=0,wrongIds=[];
- const ids=CF_QUESTIONS.map(q=>q.id);
+ const ids=(typeof CF_QUESTIONS!=='undefined'&&Array.isArray(CF_QUESTIONS)?CF_QUESTIONS:[]).map(q=>q.id);
  ids.forEach(id=>{
    const a=st.answers?.[id];
    if(a?.attempts){answered++;if(a.lastCorrect)correct++;if(a.everWrong&&!a.lastCorrect)wrongIds.push(id)}
