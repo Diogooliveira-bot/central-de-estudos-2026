@@ -8,6 +8,10 @@
   },
   "rewrites": [
     {
+      "source": "/api/whatsapp-sales",
+      "destination": "/api/auth?action=whatsapp-sales"
+    },
+    {
       "source": "/api/hotmart-webhook",
       "destination": "/api/auth?bc_api=hotmart-webhook"
     },

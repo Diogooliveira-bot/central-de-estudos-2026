@@ -26,7 +26,8 @@
     "build:vercel-output": "node scripts/build-vercel-output.mjs",
     "test:premium-protection": "node --test tests/lei-em-dia-delivery-unit.mjs tests/progressive-premium-delivery-unit.mjs tests/protected-content-unit.mjs tests/plan-access-unit.mjs tests/vercel-private-static-output-unit.mjs tests/admin-plan-ui-unit.mjs",
     "test:premium-and-auth": "npm run test:premium-protection && npm run test:password-reset",
-    "test:hotmart-webhook": "node --test tests/hotmart-webhook-unit.mjs"
+    "test:hotmart-webhook": "node --test tests/hotmart-webhook-unit.mjs",
+    "test:whatsapp-sales": "node --test tests/whatsapp-sales.test.mjs tests/whatsapp-sales-webhook.test.mjs tests/whatsapp-integration-unit.mjs"
   },
   "devDependencies": {
     "jsdom": "^27.4.0",
