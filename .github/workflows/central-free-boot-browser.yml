@@ -3,6 +3,11 @@ on:
   pull_request:
     paths:
       - 'tests/central-free-boot-browser.mjs'
+      - 'central-free-disciplines.js'
+      - 'tests/free-summary-projections.mjs'
+      - 'tools/lei-em-dia-gratis.html'
+      - 'tools/decorando.html'
+      - 'central-v119.html'
       - '.github/workflows/central-free-boot-browser.yml'
   workflow_dispatch:
 jobs:
@@ -16,7 +21,9 @@ jobs:
           node-version: '22'
           cache: npm
       - run: npm ci --ignore-scripts --no-audit --no-fund
-      - run: npx playwright install --with-deps chromium
+      - run: npx playwright install chromium
       - run: node --check central-structural-v66119/runtime.js
+      - run: node --check central-free-disciplines.js
       - run: npm run test:premium-protection
+      - run: node tests/free-summary-projections.mjs
       - run: node tests/central-free-boot-browser.mjs

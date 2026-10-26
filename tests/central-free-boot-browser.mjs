@@ -12,12 +12,18 @@ const server=createServer(async(req,res)=>{
  const json=(body,status=200)=>{res.writeHead(status,{'content-type':'application/json','cache-control':'no-store'});res.end(JSON.stringify(body))};
  if(path==='/api/auth'){return json({authenticated:true,user:{id:'fictional-free-student',name:'Aluno Fictício',role:'aluno',plan:'free'}})}
  if(path==='/api/sync'){return json(req.method==='POST'?{revision:1}:{exists:false})}
+ if(path==='/api/plans')return json({role:'aluno',plan:'free',status:'active',isStaff:false,entitlements:{'theory.summary':{enabled:true},'progress.advanced_sync':{enabled:false}}});
+ if(path==='/api/lei-em-dia-questions'){
+  if(req.method==='GET'){res.writeHead(200,{'content-type':'application/javascript'});res.end('const DATA_LED_APPROVED=[{id:"LED-FREE-1",discipline:"cf",topicId:"led-cf",number:"Art. 5º",title:"Constituição Federal"}];');return}
+  return json({question:{id:'LED-FREE-1',title:'Constituição Federal',discipline:'cf',question:{statement:'A lei protege os direitos fundamentais.',answer:true,explanation:'Revisão de questão de teste.'}},plan:'free'});
+ }
+
  if(path.startsWith('/api/')){return json({},200)}
  const policy=protectedAsset(path);
  if(policy){
    counts.protected++;
    const body=policy.kind==='native'
-     ? 'window.BASE_NATIVE_CONTENT=window.BASE_NATIVE_CONTENT||{};window.BASE_NATIVE_CONTENT['+JSON.stringify(policy.discipline)+']=window.BASE_NATIVE_CONTENT['+JSON.stringify(policy.discipline)+']||{};'
+     ? 'window.BASE_NATIVE_CONTENT=window.BASE_NATIVE_CONTENT||{};window.BASE_NATIVE_CONTENT['+JSON.stringify(policy.discipline)+']=window.BASE_NATIVE_CONTENT['+JSON.stringify(policy.discipline)+']||{};window.BASE_NATIVE_CONTENT['+JSON.stringify(policy.discipline)+']['+JSON.stringify(policy.moduleKey)+']={number:1,title:"Resumo de teste",summary:"Resumo gratuito validado no navegador."};'
      : policy.kind==='admin-lite'?'window.ADM_NATIVE_CONTENT={};'
      : policy.kind==='cpp-course'?'window.CPP_COURSE_MODULES=[];'
      : policy.kind==='portuguese-native'?'window.PT_NATIVE_DATA=window.PT_NATIVE_DATA||{};'
@@ -58,5 +64,22 @@ try{
  }));
  console.log('FREE_BROWSER_DIAGNOSTIC='+JSON.stringify({info,counts,errors:errors.slice(0,25),httpErrors:httpErrors.slice(0,60),messages:messages.slice(0,60)}));
  if(info.ready!=='true'){process.exitCode=1;console.error('ALUNO_FREE_BOOT_FAILED')} else console.log('ALUNO_FREE_BOOT_READY');
+
+ await page.evaluate(()=>window.CentralDisciplineLoader.open('cf'));
+ await page.waitForFunction(()=>!!document.querySelector('.central-free-study')&&window.CentralFreeReader?.isFree(),{timeout:10000});
+ await page.evaluate(()=>window.CentralFreeReader.module('cf',1));
+ await page.waitForFunction(()=>document.getElementById('centralFreeResult')?.textContent?.includes('Resumo gratuito validado no navegador.'),{timeout:10000});
+ const freeHTML=await page.locator('#centralFreeResult').innerText();
+ if(!freeHTML.includes('Resumo gratuito validado no navegador.'))throw Error('Resumo gratuito não abriu');
+ console.log('FREE_DISCIPLINE_OK='+freeHTML.slice(0,130));
+ await page.goto(base+'/tools/decorando.html',{waitUntil:'domcontentloaded'});
+ await page.waitForURL('**/tools/lei-em-dia-gratis.html',{timeout:12000});
+ await page.waitForSelector('#filters:not(.hidden)',{timeout:10000});
+ await page.locator('#load').click();
+ await page.waitForFunction(()=>document.querySelector('.statement')?.textContent?.includes('direitos fundamentais'),{timeout:10000});
+ await page.locator('#exercise button').first().click();
+ const result=await page.locator('#exercise').innerText();
+ if(!result.includes('Resposta correta.'))throw Error('Questão gratuita não foi respondida');
+ console.log('FREE_LEI_EM_DIA_OK='+result.slice(0,160));
  await context.close();
 }finally{await browser.close();server.close()}
