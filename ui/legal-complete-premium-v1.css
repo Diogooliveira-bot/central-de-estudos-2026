@@ -37,3 +37,91 @@
 @media(max-width:900px){.bc-apostila-v1 .bc-native-article,.bc-apostila-v1 .cf-native-reader article,.bc-apostila-v1 .cf-native-quiz article{padding:32px 22px 78px}}
 @media(max-width:620px){.bc-apostila-v1 .bc-native-article,.bc-apostila-v1 .cf-native-reader article,.bc-apostila-v1 .cf-native-quiz article{padding:29px 18px 68px;font-size:17px;line-height:1.7}.bc-apostila-v1 :is(.bc-native-article,.cf-native-reader article,.cf-native-quiz article) h1{font-size:34px}.bc-apostila-v1 :is(.bc-native-article,.cf-native-reader article,.cf-native-quiz article) h2{margin-top:36px;padding:11px 12px;font-size:24px}.bc-apostila-v1 :is(.bc-native-article,.cf-native-reader article,.cf-native-quiz article) h3{font-size:18px}.bc-apostila-v1 :is(.bc-native-article,.cf-native-reader article,.cf-native-quiz article) table{min-width:580px;font-size:14px}.bc-apostila-v1 :is(.bc-native-article,.cf-native-reader article,.cf-native-quiz article) :is(th,td){padding:12px}}
 @media(prefers-reduced-motion:reduce){.bc-apostila-v1 *{scroll-behavior:auto!important;transition:none!important}}
+
+
+/* AJUSTE-M03-TABLET-20261026 — escopo exclusivo da teoria completa jurídica.
+   Correção editorial e responsiva; não altera material, editor ou progresso. */
+html.bc-ui-v1 .bc-native-reader-overlay.bc-apostila-v1 .bc-native-article .adm-m3-book{
+  --a3ink:#243b53;--a3muted:#52677f;--a3rule:#d9e2ec;
+  --a3panel:#f7fbff;--a3panel2:#eaf3fb;--a3accent:#173f67;--a3warm:#2a6fbb;
+  max-width:100%;margin-top:0;color:#243b53;line-height:1.7;
+}
+html.bc-ui-v1 .bc-native-reader-overlay.bc-apostila-v1 .bc-native-article .adm-m3-kicker{
+  display:flex;justify-content:flex-start;align-items:center;gap:8px 12px;flex-wrap:wrap;
+  color:#173f67;font:750 11px/1.4 ui-sans-serif,system-ui,sans-serif;letter-spacing:.055em;
+}
+html.bc-ui-v1 .bc-native-reader-overlay.bc-apostila-v1 .bc-native-article .adm-m3-kicker span{
+  display:inline-flex;align-items:center;max-width:100%;padding:6px 9px;border:1px solid #d9e6f3;
+  border-radius:6px;background:#f1f7fc;white-space:normal;
+}
+html.bc-ui-v1 .bc-native-reader-overlay.bc-apostila-v1 .bc-native-article .adm-m3-cover h2{
+  margin:15px 0!important;padding:0!important;border:0!important;border-radius:0!important;
+  background:transparent!important;color:#102a43!important;
+  font:700 clamp(29px,3.4vw,42px)/1.17 Georgia,"Times New Roman",serif!important;
+  letter-spacing:-.025em;
+}
+html.bc-ui-v1 .bc-native-reader-overlay.bc-apostila-v1 .bc-native-article .adm-m3-cover :is(.adm-m3-type,.adm-m3-sub,.adm-m3-source-note){
+  color:#52677f!important;overflow-wrap:break-word;
+}
+html.bc-ui-v1 .bc-native-reader-overlay.bc-apostila-v1 .bc-native-article .adm-m3-orientacao h3{
+  color:#173f67!important;font:700 clamp(19px,2.3vw,23px)/1.3 ui-sans-serif,system-ui,sans-serif!important;
+}
+html.bc-ui-v1 .bc-native-reader-overlay.bc-apostila-v1 .bc-native-article .adm-m3-session-head{
+  margin-bottom:18px;padding:15px 16px 13px;border-left:4px solid #2a6fbb;
+  border-radius:0 9px 9px 0;background:#eef6fd;
+}
+html.bc-ui-v1 .bc-native-reader-overlay.bc-apostila-v1 .bc-native-article .adm-m3-session-head small{
+  display:block;margin:0 0 6px;color:#28659c!important;
+  font:800 11px/1.35 ui-sans-serif,system-ui,sans-serif!important;letter-spacing:.09em;
+}
+html.bc-ui-v1 .bc-native-reader-overlay.bc-apostila-v1 .bc-native-article .adm-m3-session-head h3{
+  margin:0!important;color:#102a43!important;
+  font:700 clamp(19px,2.5vw,25px)/1.3 ui-sans-serif,system-ui,sans-serif!important;
+}
+html.bc-ui-v1 .bc-native-reader-overlay.bc-apostila-v1 .bc-native-article .adm-m3-session h4{
+  margin:27px 0 12px!important;color:#173f67!important;
+  font:750 clamp(14px,1.7vw,17px)/1.35 ui-sans-serif,system-ui,sans-serif!important;
+  letter-spacing:.015em!important;text-transform:none!important;
+}
+html.bc-ui-v1 .bc-native-reader-overlay.bc-apostila-v1 .bc-native-article .adm-m3-table-wrap{
+  max-width:100%;margin:23px 0;border:1px solid #d9e2ec;border-radius:10px;
+  overflow-x:auto;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;
+  scrollbar-gutter:stable;background:#fff;
+}
+html.bc-ui-v1 .bc-native-reader-overlay.bc-apostila-v1 .bc-native-article .adm-m3-table-wrap table{
+  display:table;width:100%;min-width:760px;max-width:none;margin:0;
+  border-collapse:collapse;table-layout:auto;
+}
+html.bc-ui-v1 .bc-native-reader-overlay.bc-apostila-v1 .bc-native-article .adm-m3-table-wrap :is(th,td){
+  min-width:160px;padding:12px 14px;vertical-align:top;
+  font:400 14px/1.55 ui-sans-serif,system-ui,sans-serif!important;
+  letter-spacing:normal!important;overflow-wrap:normal!important;word-break:normal;hyphens:none;
+}
+html.bc-ui-v1 .bc-native-reader-overlay.bc-apostila-v1 .bc-native-article .adm-m3-table-wrap th{
+  color:#fff!important;background:#102a43!important;font-weight:750!important;
+}
+html.bc-ui-v1 .bc-native-reader-overlay.bc-apostila-v1 .bc-native-article .adm-m3-table-wrap td{
+  color:#334e68!important;background:#fff!important;
+}
+html.bc-ui-v1 .bc-native-reader-overlay.bc-apostila-v1 .bc-native-article .adm-m3-table-wrap tbody tr:nth-child(even) td{
+  background:#f6faff!important;
+}
+@media(max-width:900px){
+  html.bc-ui-v1 .bc-native-reader-overlay.bc-apostila-v1 .bc-native-article .adm-m3-table-wrap::before{
+    content:"↔ Deslize para visualizar as outras colunas";
+    display:block;position:sticky;left:0;width:max-content;max-width:100%;
+    box-sizing:border-box;padding:7px 12px;color:#486581;background:#f1f7fc;
+    font:650 12px/1.4 ui-sans-serif,system-ui,sans-serif;
+  }
+}
+@media(max-width:620px){
+  html.bc-ui-v1 .bc-native-reader-overlay.bc-apostila-v1 .bc-native-article .adm-m3-kicker{
+    font-size:10px;gap:6px;
+  }
+  html.bc-ui-v1 .bc-native-reader-overlay.bc-apostila-v1 .bc-native-article .adm-m3-session-head{
+    padding:13px 12px;
+  }
+  html.bc-ui-v1 .bc-native-reader-overlay.bc-apostila-v1 .bc-native-article .adm-m3-table-wrap table{
+    min-width:690px;
+  }
+}
