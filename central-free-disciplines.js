@@ -79,5 +79,5 @@ async function module(id,n){
  refresh();document.getElementById('centralFreeResult')?.scrollIntoView({block:'nearest'});
  return false;
 }
-g.CentralFreeReader={module,isFree};
+g.CentralFreeReader={module,isFree,isOpen:id=>isFree()&&opened.has(id)};
 })(window);
