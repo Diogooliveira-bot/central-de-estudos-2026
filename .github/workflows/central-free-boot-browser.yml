@@ -20,7 +20,7 @@ jobs:
           node-version: '22'
           cache: npm
       - run: npm ci --ignore-scripts --no-audit --no-fund
-      - run: npx playwright install --with-deps chromium
+      - run: npx playwright install chromium
       - run: node --check central-structural-v66119/runtime.js
       - run: node --check central-free-disciplines.js
       - run: npm run test:premium-protection
