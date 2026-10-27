@@ -46,6 +46,7 @@ button{width:100%;margin-top:18px;border:0;border-radius:10px;padding:12px 14px;
 <button id="loginBtn" type="submit">Entrar</button>
 <p class="access-help"><a href="/recuperar-senha.html" style="color:#17658a;font-weight:750;text-decoration:none">Esqueci minha senha</a></p>
 <p class="access-help">Primeiro acesso? Use o link de convite enviado pelo responsável.</p>
+<p id="publicSignupLink" class="access-help" hidden><a href="/cadastro-gratuito.html" style="color:#17658a;font-weight:750;text-decoration:none">Criar minha conta gratuita</a></p>
 </form>
 
 <form id="setupForm" class="setup">
@@ -71,6 +72,10 @@ function setMsg(text,type){msg.textContent=text||'';msg.className='msg'+(type?' 
 function nextUrl(){var p=new URLSearchParams(location.search).get('next')||'/';return p.startsWith('/')&&!p.startsWith('//')?p:'/'}
 async function jsonFetch(url,opt){var r=await fetch(url,opt||{}),j={};try{j=await r.json()}catch(_){}if(!r.ok)throw new Error(j.error||('HTTP '+r.status));return j}
 async function init(){
+ try{
+  var signup=await jsonFetch('/api/auth?action=free-signup-status');
+  if(signup.enabled)document.getElementById('publicSignupLink').hidden=false;
+ }catch(_){}
  try{
   var me=await jsonFetch('/api/auth?action=me');
   if(me.authenticated){location.replace(nextUrl());return}
