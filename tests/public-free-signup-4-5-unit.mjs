@@ -3,6 +3,8 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {createFreeSignupHandler,freeSignupEnabled} from '../lib/free-signup-handler.js';
 import {signupCaptchaConfigured,verifySignupBot,safeSignupBody,verifiedClientIp} from '../lib/free-signup-security.js';
+import crypto from 'node:crypto';
+import {normalizeWhatsapp,protectWhatsapp,signupPiiKeyConfigured} from '../lib/free-signup-contact.js';
 const env={
   VERCEL_ENV:'preview',VERCEL_URL:'preview-bc-test.vercel.app',
   BC_PUBLIC_FREE_SIGNUP_ENABLED:'true',BC_FREE_SIGNUP_PREVIEW_ISOLATED:'YES',
@@ -32,7 +34,7 @@ test('somente em Preview isolada e com sinal explicito; Production bloqueada',()
   assert.equal(freeSignupEnabled({...env,BC_FREE_SIGNUP_PREVIEW_ISOLATED:'NO'}),false);
   assert.equal(freeSignupEnabled({...env,VERCEL_ENV:'production'}),false);
   assert.equal(freeSignupEnabled({...env,VERCEL_ENV:'production',BC_PUBLIC_FREE_SIGNUP_PRODUCTION_APPROVED:'YES'}),false);
-  const captchaEnv={...env,VERCEL_ENV:'production',BC_PUBLIC_FREE_SIGNUP_PRODUCTION_APPROVED:'YES',BC_SIGNUP_PRIVACY_APPROVED:'YES',BC_SIGNUP_TURNSTILE_SITE_KEY:'3x00000000000000000000FF',BC_SIGNUP_TURNSTILE_SECRET_KEY:'1x0000000000000000000000000000000AA'};
+  const captchaEnv={...env,VERCEL_ENV:'production',BC_PUBLIC_FREE_SIGNUP_PRODUCTION_APPROVED:'YES',BC_SIGNUP_PRIVACY_APPROVED:'YES',BC_SIGNUP_TURNSTILE_SITE_KEY:'3x00000000000000000000FF',BC_SIGNUP_TURNSTILE_SECRET_KEY:'1x0000000000000000000000000000000AA',BC_SIGNUP_PII_KEY:'11'.repeat(32)};
   assert.equal(freeSignupEnabled(captchaEnv),true);
   assert.equal(freeSignupEnabled({...captchaEnv,BC_SIGNUP_PRIVACY_APPROVED:'NO'}),false);
 });
@@ -171,4 +173,69 @@ test('payload enorme bloqueado e IP precisa ser valido',async()=>{
  assert.equal(r.statusCode,413);
  assert.equal(verifiedClientIp({headers:{'x-vercel-forwarded-for':'192.0.2.19'}}),'192.0.2.19');
  assert.equal(verifiedClientIp({headers:{'x-vercel-forwarded-for':'not-an-ip'}}),'');
+});
+
+test('WhatsApp opcional validado e criptografado sem texto puro',()=>{
+ const envTest={BC_SIGNUP_PII_KEY:'22'.repeat(32)};
+ assert.equal(normalizeWhatsapp(''),null);
+ assert.equal(normalizeWhatsapp('(85) 99999-9999'),'+5585999999999');
+ assert.equal(normalizeWhatsapp('+55 85 99999-9999'),'+5585999999999');
+ assert.throws(()=>normalizeWhatsapp('123'),/inválido/);
+ assert.equal(signupPiiKeyConfigured(envTest),true);
+ const encrypted=protectWhatsapp('+5585999999999',envTest);
+ assert.match(encrypted,/^v1\./);
+ assert.equal(encrypted.includes('5585999999999'),false);
+ assert.notEqual(protectWhatsapp('+5585999999999',envTest),encrypted);
+ const parts=encrypted.split('.');
+ const dec=crypto.createDecipheriv('aes-256-gcm',Buffer.from(envTest.BC_SIGNUP_PII_KEY,'hex'),Buffer.from(parts[1],'base64url'));
+ dec.setAuthTag(Buffer.from(parts[2],'base64url'));
+ const restored=Buffer.concat([dec.update(Buffer.from(parts[3],'base64url')),dec.final()]).toString();
+ assert.equal(restored,'+5585999999999');
+});
+test('opt-in separado: sem WhatsApp nao aceita marketing e com contato exige chave',async()=>{
+ const {handler}=setup();
+ let r=res();
+ await handler(req({action:'request',name:'Ficticio',email:'ficticio@example.invalid',password:'SenhaSeguraLonga123!',marketingOptIn:true}),r);
+ assert.equal(r.statusCode,400);
+ r=res();
+ await handler(req({action:'request',name:'Ficticio',email:'ficticio@example.invalid',password:'SenhaSeguraLonga123!',whatsapp:'(85) 99999-9999',marketingOptIn:false}),r);
+ assert.equal(r.statusCode,503);
+});
+test('consentimento desmarcado é persistido como false, com WhatsApp somente cifrado',async()=>{
+ const cfg={...env,BC_SIGNUP_PII_KEY:'33'.repeat(32)};
+ let pending;
+ const sql=async(strings,...values)=>{
+  const q=strings.join('?');
+  if(q.includes('central_free_signup_limits'))return [{identity_hash:'test'}];
+  if(q.includes('SELECT 1 FROM public.central_users'))return [];
+  if(q.includes('INSERT INTO public.central_free_signup_pending')){
+    pending={query:q,values};return [];
+  }
+  throw Error('unexpected database operation');
+ };
+ const h=createFreeSignupHandler({env:cfg,sqlProvider:()=>sql,sendEmail:async()=>true});
+ const r=res();await h(req({action:'request',name:'Ficticia',email:'no-marketing@example.invalid',password:'SenhaSeguraLonga123!',whatsapp:'(85) 99999-9999',marketingOptIn:false}),r);
+ assert.equal(r.statusCode,200);
+ assert.ok(pending);
+ assert.equal(pending.values[5],false);
+ assert.equal(pending.values[6],null);
+ assert.match(pending.values[4],/^v1\./);
+ assert.equal(pending.values[4].includes('99999'),false);
+});
+test('consentimento comercial expresso possui versao e nao ativa Premium',async()=>{
+ const cfg={...env,BC_SIGNUP_PII_KEY:'44'.repeat(32)};
+ let captured;
+ const sql=async(strings,...values)=>{
+  const q=strings.join('?');
+  if(q.includes('central_free_signup_limits'))return [{identity_hash:'test'}];
+  if(q.includes('SELECT 1 FROM public.central_users'))return [];
+  if(q.includes('INSERT INTO public.central_free_signup_pending')){captured={q,values};return [];}
+  throw Error('unexpected query');
+ };
+ const h=createFreeSignupHandler({env:cfg,sqlProvider:()=>sql,sendEmail:async()=>true});
+ const r=res();await h(req({action:'request',name:'Pessoa Ficticia',email:'marketing@example.invalid',password:'SenhaSeguraLonga123!',whatsapp:'(85) 99999-9999',marketingOptIn:true}),r);
+ assert.equal(r.statusCode,200);
+ assert.equal(captured.values[5],true);
+ assert.equal(captured.values[6],'signup-whatsapp-v1-2026-10-27');
+ assert.doesNotMatch(captured.q,/'premium'/);
 });
