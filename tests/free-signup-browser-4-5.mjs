@@ -55,6 +55,8 @@ try{
  await recovery.getByRole('button',{name:'Enviar link de recuperação'}).click();
  await recovery.getByText('Se houver conta, enviaremos um link simulado.').waitFor();
  await recovery.goto(root+'/recuperar-senha.html#token='+'Z'.repeat(43));
+ // Navegação somente por hash não recarrega a página: force uma nova inicialização.
+ await recovery.reload();
  await recovery.getByLabel('Nova senha',{exact:true}).fill('NovaSenhaFicticia123');
  await recovery.getByLabel('Confirme a nova senha').fill('NovaSenhaFicticia123');
  await recovery.getByRole('button',{name:'Salvar nova senha'}).click();
