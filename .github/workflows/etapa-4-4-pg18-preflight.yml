@@ -1,0 +1,63 @@
+name: Etapa 4.4 - PostgreSQL 18 preflight SEM backup real
+on:
+  push:
+    branches:
+      - prelaunch/etapa-4-4-20261027
+    paths:
+      - '.github/workflows/etapa-4-4-pg18-preflight.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  preflight-sem-credenciais:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Verificar DNS do endpoint ativo, sem autenticar
+        shell: bash
+        run: |
+          set -euo pipefail
+          HOST=ep-wild-math-awuoq9pk.c-12.us-east-1.aws.neon.tech
+          getent ahostsv4 "$HOST" >/dev/null
+          timeout 10 bash -c 'exec 3<>/dev/tcp/ep-wild-math-awuoq9pk.c-12.us-east-1.aws.neon.tech/5432'
+          echo 'NEON_DNS_AND_TCP_5432_OK - nenhum dado lido'
+      - name: Validar clientes 18 e ferramentas de criptografia e checksum
+        shell: bash
+        run: |
+          set -euo pipefail
+          docker run --rm postgres:18 pg_dump --version | grep -E 'pg_dump \(PostgreSQL\) 18'
+          docker run --rm postgres:18 pg_restore --version | grep -E 'pg_restore \(PostgreSQL\) 18'
+          gpg --version | head -n 1
+          sha256sum --version | head -n 1
+          echo 'PG18_CLIENT_AND_TOOLS_OK'
+      - name: Simular dump e restauracao SOMENTE com dados ficticios locais
+        shell: bash
+        run: |
+          set -euo pipefail
+          name="bc-pg18-smoke-${GITHUB_RUN_ID}"
+          tmp="$(mktemp -d)"
+          cleanup() {
+            docker rm -f "$name" >/dev/null 2>&1 || true
+            rm -rf "$tmp"
+          }
+          trap cleanup EXIT
+          docker run -d --name "$name" -e POSTGRES_PASSWORD=local-synthetic-only postgres:18 >/dev/null
+          ready=0
+          for n in $(seq 1 40); do
+            if docker exec "$name" pg_isready -U postgres >/dev/null 2>&1; then ready=1; break; fi
+            sleep 1
+          done
+          test "$ready" = 1
+          docker exec "$name" psql -U postgres -d postgres -v ON_ERROR_STOP=1 -c             'CREATE TABLE backup_smoke (id integer PRIMARY KEY, value text); INSERT INTO backup_smoke VALUES (1, '\''ficticio'\'');' >/dev/null
+          docker exec "$name" pg_dump -U postgres --format=custom --blobs --dbname=postgres > "$tmp/synthetic.dump"
+          test -s "$tmp/synthetic.dump"
+          docker exec "$name" createdb -U postgres restore_smoke
+          docker exec -i "$name" pg_restore -U postgres --no-owner --no-privileges --exit-on-error --dbname=restore_smoke < "$tmp/synthetic.dump"
+          restored="$(docker exec "$name" psql -U postgres -d restore_smoke -Atqc 'SELECT value FROM backup_smoke WHERE id=1')"
+          test "$restored" = ficticio
+          sha256sum "$tmp/synthetic.dump" > "$tmp/synthetic.sha256"
+          (cd "$tmp" && sha256sum --check synthetic.sha256)
+          echo 'PG18_SYNTHETIC_DUMP_RESTORE_SHA256_OK'
+          echo 'Nenhum segredo, artefato ou dado da Production foi utilizado.'
