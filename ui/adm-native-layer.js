@@ -150,6 +150,8 @@ async function open(uid,kind,jump,sectionNumber){
     content+=d.completeAppendHtml;
   }
   const body=reader.show(o,content,buildToc,Number(localStorage.getItem(k(uid,kind,'scroll'))||0),onScroll);
+  // Apenas atributo de apresentação no overlay transitório, não persiste no conteúdo.
+  if(kind==='complete' && num(uid)===3) o.dataset.bcPremiumAdmM03='1';
   if(kind==='complete')setupCompleteChecks(uid,body);
   if(kind==='complete'&&sectionNumber)requestAnimationFrame(()=>requestAnimationFrame(()=>{if(active!==session)return;const h=[...body.querySelectorAll('h2')].filter(x=>/^(?:SESSÃO\s+\d+|S\d+\s*[—-])/i.test(x.textContent.trim()))[sectionNumber-1];h?.scrollIntoView({block:'start'})}));
   if(jump)requestAnimationFrame(()=>requestAnimationFrame(()=>{if(active!==session)return;const hs=[...body.querySelectorAll('h1,h2,h3')],q=hs.find(h=>/^(?:\d+\s*)?quest(?:ões|ao)\b/i.test(h.textContent.trim()))||hs.find(h=>/questões internas|questões de fixação/i.test(h.textContent))||body.querySelector('details.question');q?.scrollIntoView({block:'start'})}));
