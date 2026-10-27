@@ -90,7 +90,7 @@ function cpcM01LawTable(lines,start){
    else return null;
  }
  // Se a apostila mudar, conservamos o texto corrido em vez de perder células.
- return rows.length===15?{rows,end}:null;
+ return rows.length===14?{rows,end}:null;
 }
 function parse(raw,mode){
  const clean=cleanLines(raw,mode);
