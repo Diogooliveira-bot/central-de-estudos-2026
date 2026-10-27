@@ -8,6 +8,13 @@ const root=resolve(".");
 const mime={".html":"text/html",".js":"text/javascript",".css":"text/css",".json":"application/json",".png":"image/png",".webp":"image/webp",".svg":"image/svg+xml"};
 const server=createServer(async(request,response)=>{
  const uri=new URL(request.url,"http://localhost"),pathname=decodeURIComponent(uri.pathname);
+ // Catálogo progressivo é servido como JavaScript contendo SOMENTE metadados.
+ // Não devolver bancos reais ou gabaritos neste mock de navegador.
+ if(pathname==="/api/lei-em-dia-questions" && uri.searchParams.get("mode")==="catalog"){
+  response.writeHead(200,{"Content-Type":"application/javascript; charset=utf-8","Cache-Control":"private, no-store"});
+  response.end("const DATA_LED_APPROVED = [];");
+  return;
+ }
  if(pathname.startsWith("/api/")){response.writeHead(200,{"Content-Type":"application/json"});response.end(pathname==="/api/auth"?JSON.stringify({authenticated:true,user:{id:"smoke-adm",role:"aluno"}}):"{}");return;}
  const file=resolve(root,"."+pathname);
  if(!file.startsWith(root+"/")){response.writeHead(403);response.end();return;}
