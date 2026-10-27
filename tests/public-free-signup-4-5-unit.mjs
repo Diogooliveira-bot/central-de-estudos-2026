@@ -101,3 +101,36 @@ test('link cadastro aparece só quando a API confirmar que está habilitado',()=
  assert.match(auth,/free-signup-status/);
  assert.match(auth,/freeSignupEnabled\(\)/);
 });
+
+test('falha simulada de entrega SMTP não confirma cadastro',async()=>{
+ let emails=0;
+ const fakeSql=async(strings,...values)=>{
+   const q=strings.join('?');
+   if(q.includes('central_free_signup_limits'))return [{identity_hash:'dummy'}];
+   if(q.includes('SELECT 1 FROM public.central_users'))return [];
+   if(q.includes('INSERT INTO public.central_free_signup_pending'))return [];
+   throw Error('SQL inesperado');
+ };
+ const handler=createFreeSignupHandler({
+   env,sqlProvider:()=>fakeSql,
+   sendEmail:async()=>{emails++;throw Error('SMTP de homologação indisponível')}
+ });
+ const r=res();
+ await handler(req({action:'request',name:'Teste Sem Envio',email:'falha@example.invalid',password:'SenhaLongaDeTeste1234!'}),r);
+ assert.equal(r.statusCode,503);
+ assert.equal(emails,1);
+ assert.equal(r.headers['Set-Cookie'],undefined);
+});
+test('cadastro público não aceita GET nem tentativa de criar admin',async()=>{
+ const {handler,calls}=setup();
+ let r=res();
+ await handler(req({action:'request'},'GET'),r);
+ assert.equal(r.statusCode,403);
+ assert.equal(calls.length,0);
+ r=res();
+ await handler(req({action:'request',name:'Teste Operador',email:'outro@example.invalid',password:'SenhaLongaDeTeste1234!',role:'admin',plan:'premium'}),r);
+ assert.equal(r.statusCode,200);
+ const c=calls.filter(x=>x.source.includes('INSERT INTO public.central_free_signup_pending'));
+ assert.equal(c.length,1);
+ assert.equal(c[0].source.includes('admin'),false);
+});
