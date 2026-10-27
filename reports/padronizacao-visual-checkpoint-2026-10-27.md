@@ -209,4 +209,58 @@ Contagens de elementos efetivamente renderizados no navegador (mesmas nas três 
 - Novo teste: `tests/etapa6-cpc-m02-m20-browser.mjs`.
 - Workflow: `.github/workflows/verify-etapa6-cpc-m02-m20.yml`.
 - Nenhuma autorização de deploy, produção ou bypass de `bc-preview-private`. A Preview continua protegida e não foi liberada para validação autenticada da versão atual.
-- **Situação ao iniciar:** CI criado, resultados pendentes de conferência.
+- **Resultado:** workflow `40602235970` concluído com `success` em `1dc97aa81577ff59df96bfab72a161735b2a371d`; 57/57 casos Chromium aprovados. Evidências e limitações no fechamento abaixo.
+
+## Etapa 6.0 — Fechamento CPC M02–M20 e fila editorial (27/10/2026)
+
+- **Execução:** [GitHub Actions 40602235970](https://github.com/Diogooliveira-bot/central-de-estudos-2026/actions/runs/40602235970) — `success`, teste em Chromium real sobre os leitores existentes de **19 módulos × 390/768/1366 px = 57 casos**; nenhum erro JavaScript ou vazamento lateral da página.
+- **Capturas e matriz JSON:** [artefato 12778679016](https://github.com/Diogooliveira-bot/central-de-estudos-2026/actions/runs/40602235970/artifacts/12778679016) (reter até 10/11/2026). O teste registra capturas do leitor em fixture isolada; não são evidências de uma sessão Premium autenticada na Vercel.
+- **Passaram:** conteúdo completo realmente renderizado, CSS Premium nos títulos do completo, controles de leitura, capítulo concluído persistindo ao reabrir e versão resumida fora do tema. Os materiais originais não foram alterados.
+
+### Matriz de inspeção CPC M02–M20
+
+| CPC | Caracteres da fonte completa | H2 | H3 | Tabelas HTML no leitor | Caixas pedagógicas | Capítulos marcáveis |
+|---|---:|---:|---:|---:|---:|---:|
+| M02 | 39.059 | 20 | 0 | 0 | 11 | 15 |
+| M03 | 28.387 | 19 | 32 | 0 | 7 | 15 |
+| M04 | 41.250 | 48 | 0 | 0 | 12 | 15 |
+| M05 | 34.849 | 69 | 0 | 0 | 10 | 15 |
+| M06 | 38.991 | 30 | 2 | 0 | 5 | 15 |
+| M07 | 34.922 | 34 | 0 | 0 | 15 | 15 |
+| M08 | 27.055 | 15 | 35 | 0 | 8 | 15 |
+| M09 | 4.572 | 15 | 0 | 0 | 0 | 15 |
+| M10 | 4.428 | 15 | 0 | 0 | 0 | 15 |
+| M11 | 6.103 | 17 | 0 | 0 | 0 | 17 |
+| M12 | 7.016 | 20 | 0 | 0 | 0 | 20 |
+| M13 | 5.227 | 20 | 0 | 0 | 0 | 20 |
+| M14 | 8.152 | 24 | 0 | 0 | 0 | 24 |
+| M15 | 3.424 | 26 | 0 | 0 | 0 | 26 |
+| M16 | 6.599 | 25 | 0 | 0 | 0 | 25 |
+| M17 | 3.131 | 40 | 0 | 0 | 0 | 40 |
+| M18 | 7.782 | 37 | 0 | 0 | 0 | 37 |
+| M19 | 13.103 | 44 | 0 | 0 | 0 | 44 |
+| M20 | 15.359 | 60 | 0 | 0 | 0 | 60 |
+
+### Problemas editoriais encontrados — NÃO corrigidos automaticamente
+
+1. **Prioridade alta — tabelas:** nos 19 leitores M02–M20, `article.querySelectorAll('table')` retornou **zero**. O M01 já demonstrou que tabelas reais são possíveis no leitor. Investigar comparativos existentes no conteúdo textual e converter **individualmente** em HTML semântico somente onde a estrutura for inequívoca, sem perder textos, notas, links ou edições. Medir cada tabela e sua rolagem no mobile.
+2. **Botões de retorno:** os leitores CPC M02, M03, M04 e M05 renderizam `← Voltar ao M01`, embora pertençam a outros módulos. Corrigir esses rótulos depois de confirmar rota/ação correta; o teste comprovou abertura e fechamento, mas não a navegação integrada autenticada.
+3. **Títulos/numeração:** em CPC M03/M08, a métrica de títulos potencialmente suspeitos incluiu números de subseções normais como `10.1` e `11.1`. **Não corrigir com regex global**; verificar visualmente a hierarquia e os prefixos reais. CPC M06 tem sequência visível `4. 2.6. Responsabilidade... `, a conferir com o original.
+4. **Caixas:** CPC M09–M20 retornaram zero elementos `.bc-native-callout`. Confirmar se os destaques foram mantidos em parágrafos simples ou têm outro tipo de marcação antes de substituir texto.
+5. **Extensão da teoria:** M09–M20 têm fontes menores que alguns módulos anteriores (ex.: M17 3.131 caracteres). Isso **não prova ausência de conteúdo**, mas merece conferência contra o material completo previamente aprovado.
+6. **Proteção e publicação:** não houve validação da Preview integrada autenticada atualizada. O workflow privado ainda é protegido pelo ambiente `bc-preview-private` e usa SHA pinado do deploy antigo. Não ignorar a aprovação nem colocar Preview comercial integrada em acesso público.
+
+### Quadro acumulado de validação técnica
+
+| Disciplina | Módulos testados no Chromium |
+|---|---:|
+| Direito Constitucional | 15/15 |
+| Direito Administrativo | 20/20 |
+| Direito Penal | 17/17 |
+| Direito Processual Civil | 20/20 |
+| Direito Civil | 0/15 |
+| Direito Processual Penal | 0/22 |
+
+**Total: 72/109 módulos jurídicos tecnicamente testados.** Não implica aprovação editorial, legal, validação do acesso premium autenticado ou publicação.
+
+**Próxima etapa segura:** testar Direito Civil e Direito Processual Penal em lotes separados, evitando recompactação de dados; em paralelo, iniciar correção editorial de CPC/Penal baseada em evidências e conferir a Preview protegida somente após autorização.
