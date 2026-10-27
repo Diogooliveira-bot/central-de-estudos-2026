@@ -149,7 +149,7 @@ async function environmentProof(req, res) {
     const host = parsed.hostname;
     const endpoint = host.split('.')[0].replace(/-pooler$/, '');
     const sql = database();
-    const rows = await sql\`SELECT current_database() AS database_name, NOW() AS checked_at\`;
+    const rows = await sql`SELECT current_database() AS database_name, NOW() AS checked_at`;
     return send(res, 200, {
       vercelEnvironment: process.env.VERCEL_ENV || null,
       gitBranch: process.env.VERCEL_GIT_COMMIT_REF || null,
