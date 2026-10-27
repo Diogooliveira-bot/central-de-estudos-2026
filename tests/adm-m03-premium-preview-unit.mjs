@@ -46,5 +46,6 @@ test('ativador Premium continua estritamente seletivo (ADM completo, não resumi
  a.querySelector('small').textContent='DIREITO ADMINISTRATIVO · MÓDULO 03 · RESUMIDO';
  await new Promise(r=>setTimeout(r,0));
  assert.equal(a.classList.contains('bc-apostila-v1'),false);
- dom.window.close();
+ // O ativador mantém um MutationObserver: encerrar o documento dentro do teste
+ // produz callback assíncrono espúrio no jsdom já destruído.
 });
