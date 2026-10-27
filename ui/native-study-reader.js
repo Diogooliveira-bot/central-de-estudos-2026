@@ -443,7 +443,8 @@ function open(mode){
         quizHtml(data,mode)+
       '</article></main>'+
     '</div></section>';
-  document.body.appendChild(ov);document.body.style.overflow='hidden';
+  if(mode==='complete')ov.dataset.bcPremiumPilot='penal-m01';
+ document.body.appendChild(ov);document.body.style.overflow='hidden';
 
   current={
     mode,overlay:ov,scroll:ov.querySelector('.bc-native-scroll'),article:ov.querySelector('.bc-native-article'),
