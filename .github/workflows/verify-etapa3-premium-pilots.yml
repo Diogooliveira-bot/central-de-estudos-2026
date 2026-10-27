@@ -1,0 +1,45 @@
+name: Verificar Etapa 3.0 — Penal e CPC M01
+
+on:
+  push:
+    branches: [preview/legal-complete-premium-v1-20261025]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: bc-etapa3-pilot-tests
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    if: github.repository == 'Diogooliveira-bot/central-de-estudos-2026'
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout somente branch privada
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - name: Dependências sem postinstall
+        run: npm ci --ignore-scripts
+      - name: Testes gerais
+        run: npm test
+      - name: Proteção Premium
+        run: npm run test:premium-protection
+      - name: Testes dedicados Penal CPC e regressão ADM
+        run: node --test tests/etapa3-premium-pilots-unit.mjs tests/adm-m03-premium-preview-unit.mjs tests/legal-complete-premium-theme-unit.mjs tests/visual-editor-table-unit.mjs tests/pwa-cache-recovery-unit.mjs tests/cpc-approved-layout-unit.mjs
+      - name: Build Vercel sem segredos
+        run: npm run build:vercel-output
+      - name: Instalar Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Exercitar leitores reais em Chromium
+        run: node tests/etapa3-premium-pilots-browser.mjs
+      - name: Anexar capturas reais de navegador
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: etapa3-penal-cpc-m01-chromium-390-768-1366
+          path: artifacts/etapa3-premium-pilots/*.png
+          retention-days: 7
+          if-no-files-found: ignore
