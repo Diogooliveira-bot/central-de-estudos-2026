@@ -3,6 +3,7 @@ import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import vm from "node:vm";
 import {createHash} from "node:crypto";
+import { protectedAsset } from "../lib/protected-content.js";
 const root=new URL("../",import.meta.url),ctx=vm.createContext({});
 for(const p of ["tools/decorando-data-adm-9784.js","tools/decorando-data-adm-pack1.js","tools/decorando-data-adm-pack2.js","tools/decorando-data-adm-pack3.js","tools/decorando-data-adm-pack4.js","tools/decorando-data-adm-14133-extra.js","tools/decorando-data-adm-8112-extra.js","tools/decorando-data-adm-8429-extra.js","tools/decorando-data-adm-9784-expansao.js","tools/decorando-data-adm-12527-expansao.js","tools/decorando-data-adm-13709-expansao.js","tools/decorando-data-adm-pack5.js"]){
   const src=readFileSync(new URL(p,root),"utf8");
@@ -42,10 +43,13 @@ test("gabarito, fundamento e filtro são coerentes com os dados",()=>{
     assert.ok(!/https?:\/\/\S+\/vade-mecum-de-questoes|Gabarito:\s*(?:Verdadeiro|Falso)/i.test(q.parts[0]+" "+q.question.statement),q.id);
   }
 });
-test("Lei em Dia e PWA carregam os três datasets sem alterar o progresso",()=>{
+test("Lei em Dia mantém dados ADM na interface Premium e fora do cache público",()=>{
   for(const name of ["decorando-data-adm-9784.js","decorando-data-adm-pack1.js","decorando-data-adm-pack2.js","decorando-data-adm-pack3.js","decorando-data-adm-pack4.js","decorando-data-adm-14133-extra.js","decorando-data-adm-8112-extra.js","decorando-data-adm-8429-extra.js","decorando-data-adm-9784-expansao.js","decorando-data-adm-12527-expansao.js","decorando-data-adm-13709-expansao.js","decorando-data-adm-pack5.js"]){
     assert.ok(html.includes(name));
-    assert.ok(offline.files.some(x=>x.includes(name)));
+    const asset = "/tools/" + name;
+    assert.equal(protectedAsset(asset)?.kind, "file", asset + " deve ser protegido");
+    assert.equal(protectedAsset(asset)?.feature, "premium.reviews", asset + " exige Premium");
+    assert.ok(!offline.files.some(x => x.split("?")[0] === asset), asset + " não pode estar no cache público");
   }
   assert.ok(html.includes("...DATA_ADM_PACK1,...DATA_ADM_PACK2,...DATA_ADM_PACK3,...DATA_ADM_PACK4,...DATA_ADM_EXTRAS"));
   assert.ok(html.includes("const TOPICS_ADM_EXTENDED") && html.includes("adm:TOPICS_ADM_EXTENDED"));
