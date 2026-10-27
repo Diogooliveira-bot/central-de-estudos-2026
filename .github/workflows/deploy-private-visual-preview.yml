@@ -11,7 +11,7 @@ permissions:
 
 concurrency:
   group: bc-private-visual-preview
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 env:
   EXPECTED_SOURCE_SHA: e58907ede538f00f1890700e87f3d1701447397c
