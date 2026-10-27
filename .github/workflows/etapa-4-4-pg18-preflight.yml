@@ -15,6 +15,19 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
+      - name: Checkout sem persistir credenciais
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Comprovar que rotina real falha fechada sem aprovacoes
+        shell: bash
+        run: |
+          set -euo pipefail
+          bash -n scripts/backup-neon-pg18-once.sh
+          if env -u BC_BACKUP_APPROVED -u BC_PRIVATE_DESTINATION_APPROVED -u BC_PRIVATE_OUTPUT_DIR bash scripts/backup-neon-pg18-once.sh; then
+            echo 'ERRO: rotina executou sem autorizacao'; exit 1
+          fi
+          echo 'REAL_BACKUP_FAIL_CLOSED_OK - nenhum segredo ou dado usado'
       - name: Verificar DNS do endpoint ativo, sem autenticar
         shell: bash
         run: |
