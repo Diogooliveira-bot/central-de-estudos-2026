@@ -92,20 +92,27 @@ try{
     const name='artifacts/etapa5-penal-m02-m17/pen-m'+two(n)+'-'+width;
     await page.locator('#'+id+' .bc-native-reader').screenshot({path:name+'-leitor.png'});
     if(m.tables)await page.locator('#'+id+' .bc-native-article table').first().screenshot({path:name+'-tabela.png'});
-    const check=page.locator('#'+id+' [data-chapter-check]').first();
+    // Os capítulos iniciais podem ser marcados automaticamente ao serem visualizados.
+    // Conferir persistência positiva no ÚLTIMO capítulo, que não deve aparecer
+    // como lido apenas por abrir o topo da apostila.
+    const check=page.locator('#'+id+' [data-chapter-check]').last();
     const before=await check.evaluate(b=>b.classList.contains('done'));
-    // Os controles de capítulos são recolhidos por padrão no modo de leitura.
-    // Abrir o painel como o aluno faria, antes de clicar no checkbox real.
     const chaptersToggle=page.locator('#'+id+' .bc-reading-chapters-toggle');
     assert.equal(await chaptersToggle.count(),1,label+': botão Capítulos ausente');
     await chaptersToggle.click();
+    if(before){
+      // Testar alternância e restaurar o estado marcado antes de fechar;
+      // o leitor pode voltar a marcar capítulos vistos automaticamente.
+      await check.click();
+      assert.equal(await check.evaluate(b=>b.classList.contains('done')),false,label+': desmarcar não reagiu');
+    }
     await check.click();
     const after=await check.evaluate(b=>b.classList.contains('done'));
-    assert.notEqual(after,before,label+': marcação não reagiu');
+    assert.equal(after,true,label+': marcação positiva não reagiu');
     await page.evaluate(name=>window[name].close(),api);
     await page.evaluate(name=>window[name].open('complete'),api);
     await page.waitForFunction(overlayId=>!!document.getElementById(overlayId)?.querySelector('[data-chapter-check]'),id);
-    const reopen=await page.locator('#'+id+' [data-chapter-check]').first().evaluate(b=>b.classList.contains('done'));
+    const reopen=await page.locator('#'+id+' [data-chapter-check]').last().evaluate(b=>b.classList.contains('done'));
     assert.equal(reopen,after,label+': marcação não persistiu');
     await page.evaluate(name=>window[name].open('summary'),api);
     await page.waitForTimeout(70);
