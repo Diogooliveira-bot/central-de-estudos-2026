@@ -273,4 +273,37 @@ Contagens de elementos efetivamente renderizados no navegador (mesmas nas três 
 - Teste Chromium isolado para 390/768/1366 px: carregamento/decodificação original, presença de 15 apostilas completas e resumos, leitor próprio, estilo Premium apenas no completo, títulos, TOC, tabelas, ausência de overflow, conclusão de leitura no armazenamento do próprio navegador de teste e preservação após fechar/reabrir.
 - Arquivos novos: `tests/etapa7-civil-m01-m15-browser.mjs` e `.github/workflows/verify-etapa7-civil-m01-m15.yml`.
 - Nenhum leitor, texto jurídico, editor, banco Neon, Production, `main` ou Preview protegido foi alterado. Teste **não substitui** validação autenticada ou conferência editorial.
-- **Status inicial:** aguardando conclusão do workflow e métricas para marcar a disciplina tecnicamente testada.
+- **Resultado final:** 45/45 testes Chromium aprovados; ver matriz e advertências abaixo.
+
+## Etapa 7 — Civil M01–M15 finalizada (27/10/2026)
+
+- **Workflow Chromium:** [40604021477](https://github.com/Diogooliveira-bot/central-de-estudos-2026/actions/runs/40604021477), `completed/success`. Todos os 45 testes (15 módulos × 390/768/1366 px) aprovados.
+- **Artefatos:** [12780446265](https://github.com/Diogooliveira-bot/central-de-estudos-2026/actions/runs/40604021477/artifacts/12780446265); incluem capturas e `metricas.json`, com expiração prevista em 10/11/2026.
+- Conteúdo carregado do **pacote original gzip/base64**: 15 conjuntos de apostila completa e 15 resumos. Leitor original `CivilNative.openReader`, sem simular textos. M03 usa formatador existente `CivilBensApostila.enhance`, confirmado ativado.
+- Foram preservados os materiais, a política Premium, a distinção entre resumo e completo e o progresso. Os testes de persistência ocorreram exclusivamente no `localStorage` descartável do Chromium de testes; não testam o Neon nem usuários reais.
+
+### Matriz Civil para inspeção editorial
+
+| Módulo | Caracteres renderizados | Títulos H2/H3 | Tabelas HTML | Quadros fonte (`pre.civil-source-table`) remanescentes |
+|---|---:|---:|---:|---:|
+| M01 | 26.396 | 2/3 | 0 | 1 |
+| M02 | 25.113 | 2/2 | 0 | 1 |
+| M03 | 25.095 | 10/12 | 0 | 0 (formatador aplicado) |
+| M04 | 43.026 | 11/38 | 0 | 13 |
+| M05 | 20.478 | 2/3 | 0 | 1 |
+| M06 | 35.173 | 2/2 | 0 | 1 |
+| M07 | 20.451 | 2/3 | 0 | 1 |
+| M08 | 33.921 | 27/0 | 0 | 2 |
+| M09 | 19.156 | 19/11 | 0 | 4 |
+| M10 | 28.677 | 2/3 | 0 | 1 |
+| M11 | 28.200 | 10/19 | 0 | 7 |
+| M12 | 27.019 | 2/4 | 0 | 1 |
+| M13 | 29.200 | 3/12 | 0 | 1 |
+| M14 | 22.946 | 2/3 | 0 | 1 |
+| M15 | 33.638 | 10/19 | 0 | 5 |
+
+- **Pendência alta:** nenhum dos 15 leitores Civil gerou `<table>` HTML no seletor testado. Há blocos `pre` ainda presentes em 14 módulos e M03 convertido para uma representação visual própria. Inspecionar comparativos individualmente antes de converter; não presumir que uma captura visualmente correta equivale a tabela semanticamente estruturada.
+- **Títulos:** vários módulos têm apenas 2 H2; conferir hierarquia dos blocos de conteúdo extraído e destaques que não se enquadraram no seletor `.bc-native-callout`. M03 preserva o layout especial; não reformatar em massa.
+- **Validação não concluída:** qualidade editorial, precisão jurídica e autenticação Premium na Preview atualizada. Aprovação técnica **não** autoriza deploy ou merge.
+- **Progressão acumulada:** ADM 20/20 + CF 15/15 + Penal 17/17 + CPC 20/20 + Civil 15/15 = **87/109 módulos jurídicos com testes Chromium**.
+- **Próxima disciplina jurídica:** Processual Penal, 22 módulos ainda por testar.
