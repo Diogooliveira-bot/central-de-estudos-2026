@@ -264,3 +264,13 @@ Contagens de elementos efetivamente renderizados no navegador (mesmas nas três 
 **Total: 72/109 módulos jurídicos tecnicamente testados.** Não implica aprovação editorial, legal, validação do acesso premium autenticado ou publicação.
 
 **Próxima etapa segura:** testar Direito Civil e Direito Processual Penal em lotes separados, evitando recompactação de dados; em paralelo, iniciar correção editorial de CPC/Penal baseada em evidências e conferir a Preview protegida somente após autorização.
+
+## Etapa 7.0 — Civil M01–M15 (27/10/2026)
+
+- Base segura: branch `preview/legal-complete-premium-v1-20261025` no commit `3252fb1404710ab4c12055c13cc72e52d53c8822`.
+- Inventário civil verificado: 15 módulos no `civil-native-index.js`, conteúdo integrado em `civil-native-content-packed.js` (gzip/base64) e leitor `ui/civil-native-study-v1.js` que usa `ui/native-reading-session.js`.
+- **Particularidade Civil M03:** `CivilBensApostila.enhance` usa formatação editorial própria dos `pre.civil-source-table`; teste carrega o JS já existente, sem edição/reempacotamento de apostilas.
+- Teste Chromium isolado para 390/768/1366 px: carregamento/decodificação original, presença de 15 apostilas completas e resumos, leitor próprio, estilo Premium apenas no completo, títulos, TOC, tabelas, ausência de overflow, conclusão de leitura no armazenamento do próprio navegador de teste e preservação após fechar/reabrir.
+- Arquivos novos: `tests/etapa7-civil-m01-m15-browser.mjs` e `.github/workflows/verify-etapa7-civil-m01-m15.yml`.
+- Nenhum leitor, texto jurídico, editor, banco Neon, Production, `main` ou Preview protegido foi alterado. Teste **não substitui** validação autenticada ou conferência editorial.
+- **Status inicial:** aguardando conclusão do workflow e métricas para marcar a disciplina tecnicamente testada.
