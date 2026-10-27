@@ -33,6 +33,8 @@ jobs:
         run: npm run build:vercel-output
       - name: Instalar Chromium
         run: npx playwright install --with-deps chromium
+      - name: Validar sintaxe JavaScript dos leitores
+        run: node --check ui/native-study-reader.js && node --check ui/cpc-native-study-reader.js
       - name: Exercitar leitores reais em Chromium
         run: node tests/etapa3-premium-pilots-browser.mjs
       - name: Anexar capturas reais de navegador
