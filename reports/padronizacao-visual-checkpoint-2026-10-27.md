@@ -145,4 +145,57 @@
 - Coletar métricas de possíveis artefatos de PDF/títulos suspeitos para uma **revisão editorial**, sem transformar tais registros em edição automática do conteúdo.
 - Arquivos de teste: `tests/etapa5-penal-m02-m17-browser.mjs`, `.github/workflows/verify-etapa5-penal-m02-m17.yml`.
 - Sem mudanças de conteúdo, UI produtiva, banco, credenciais nem `main`. Preview Vercel ainda depende da aprovação do ambiente `bc-preview-private`, não contornar.
-- **Status inicial:** CI criado, resultado pendente de confirmação.
+- **Status:** CI final aprovado no commit `c74da4633374095aa159a2b85788f6e5e67da8e9`; ver detalhes e matriz abaixo.
+
+## Etapa 5.0 — Resultado validado do lote Penal (27/10/2026)
+
+- **Workflow final:** [40601516970](https://github.com/Diogooliveira-bot/central-de-estudos-2026/actions/runs/40601516970), `completed/success` no commit `c74da4633374095aa159a2b85788f6e5e67da8e9`.
+- **Cobertura real:** 16 módulos PEN M02–M17 × 390, 768 e 1366 px = **48 testes técnicos aprovados**, sem exceções nem erros de JavaScript.
+- **Evidências originais:** [artefato 12778437865](https://github.com/Diogooliveira-bot/central-de-estudos-2026/actions/runs/40601516970/artifacts/12778437865), screenshots e `metricas.json`, validade limitada a 14 dias (até aproximadamente 10/11/2026).
+- **Leitores utilizados:** `BaseNativeReaderM02`…`M17` verdadeiros, com os respectivos dados de `content/penal` e os quatro arquivos `penal-full-theory-data-01..04.js`; não foram utilizadas simulações de teorias inexistentes.
+- Todos os 16: CSS Premium ativado no modo completo, controles de leitura presentes, ao menos um H2 estilizado corretamente, corpo da apostila renderizado, tabelas HTML estruturadas quando existentes, ausência de vazamento horizontal na página, checkbox visível após clicar em "Capítulos", marcação positiva preservada ao reabrir o leitor e **modo resumido fora do tema**.
+- **Nota sobre as marcações:** alguns leitores marcam capítulos automaticamente quando visualizados. Uma marcação desfeita manualmente pode voltar a aparecer como concluída ao reabrir se o capítulo for considerado visto. O teste final comprova a persistência de uma marcação *concluída*, não a persistência de uma desmarcação. Conferir a experiência de desmarcar na inspeção funcional antes da liberação.
+
+### Matriz editorial de Penal
+
+Contagens de elementos efetivamente renderizados no navegador (mesmas nas três larguras); valores zero indicam que **o seletor do teste** não detectou esse tipo de elemento, não que o conteúdo tenha necessariamente perdido comparações ou destaques.
+
+| Penal | H2 | H3 | Tabelas HTML | Caixas com classe `bc-native-callout` | Capítulos marcáveis |
+|---|---:|---:|---:|---:|---:|
+| M02 | 1 | 34 | 16 | 42 | 24 |
+| M03 | 1 | 49 | 30 | 40 | 39 |
+| M04 | 19 | 46 | 14 | 31 | 18 |
+| M05 | 34 | 125 | 23 | 0 | 33 |
+| M06 | 1 | 25 | 20 | 32 | 15 |
+| M07 | 67 | 46 | 21 | 5 | 14 |
+| M08 | 33 | 110 | 13 | 0 | 31 |
+| M09 | 42 | 190 | 0 | 1 | 40 |
+| M10 | 28 | 10 | 11 | 1 | 25 |
+| M11 | 37 | 22 | 12 | 0 | 36 |
+| M12 | 20 | 73 | 13 | 0 | 17 |
+| M13 | 49 | 39 | 1 | 0 | 48 |
+| M14 | 43 | 13 | 5 | 0 | 42 |
+| M15 | 28 | 62 | 12 | 0 | 27 |
+| M16 | 69 | 26 | 4 | 1 | 25 |
+| M17 | 14 | 30 | 1 | 0 | 13 |
+
+### Pendências editoriais e de homologação (não resolvidas por estes testes)
+
+1. **Penal M01**: artefatos de paginação/numeração e quadros de comparação achatados em texto, conforme relatório de origem da Etapa 3.2. Corrigir de maneira individual, preservando todos os termos jurídicos.
+2. **PEN M02, M03 e M06**: apenas um H2 e muitos H3 — conferir a hierarquia visual em captura e corrigir caso os títulos estejam deslocados. Não fazer conversão automática de H3→H2.
+3. **PEN M09 e M13**: detectadas respectivamente 0 e 1 tabela HTML no material; verificar visualmente se comparações importantes estão em linhas de texto, sem converter trechos sem estrutura definida.
+4. **PEN M05, M08, M11–M15 e M17**: nenhuma caixa com a classe `bc-native-callout` nos seletores do teste. Conferir se as notas e alertas possuem outro marcador/estrutura e se estão visualmente destacados antes de alterar CSS.
+5. O detector experimental de títulos "suspeitos" apontou vários títulos com numeração normal de 10 a 17; **não tomar isso como erro confirmado**. A inspeção editorial humana é mandatória.
+6. Não houve login real ou validação em Preview Vercel atualizada. O workflow protegido `deploy-private-visual-preview.yml` ainda exige autorização de `bc-preview-private`, e faz checkout fixo do commit `10c4d9a...`. Isso significa que mesmo uma execução aprovada **não incluirá automaticamente os commits atuais** sem mudança controlada e revalidação do pin; não mudar o pin nesta etapa.
+
+### Estado consolidado
+
+- **Constitucional:** 15/15 módulos tecnicamente validados em Chromium.
+- **Administrativo:** 20/20 módulos tecnicamente validados em Chromium.
+- **Penal:** 17/17 módulos tecnicamente validados em Chromium (M01 piloto, M02–M17 na Etapa 5).
+- **Processual Civil (CPC):** M01 piloto; M02–M20 ainda sem validação de lote.
+- **Civil e Processual Penal:** pendentes.
+- **Total: 53 de 109 módulos jurídicos com testes técnicos executados**. Isso não equivale a 53 módulos aprovados editorialmente ou publicados.
+- **Português e RLM:** continuam fora deste ciclo jurídico, precisam de tratamento e proteção de progresso em lote separado.
+
+**Próximo ponto seguro de retomada:** testar CPC M02–M20 no Chromium com os leitores e os conteúdos originais, sem alterar `main`/Production; depois revisar as pendências editoriais e liberar a Preview privada somente pelo fluxo autorizado.
