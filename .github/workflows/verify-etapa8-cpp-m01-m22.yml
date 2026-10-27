@@ -1,0 +1,51 @@
+name: Padronização Premium — CPP M01–M22
+
+on:
+  push:
+    branches: [preview/legal-complete-premium-v1-20261025]
+    paths:
+      - '.github/workflows/verify-etapa8-cpp-m01-m22.yml'
+      - 'tests/etapa8-cpp-m01-m22-browser.mjs'
+      - 'ui/cpp-native-study-v1.*'
+      - 'ui/native-reading-session.js'
+      - 'ui/legal-complete-premium-v1.*'
+      - 'content/cpp/cpp-native-*'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: bc-etapa8-cpp-m01-m22
+  cancel-in-progress: true
+
+jobs:
+  chromium:
+    if: github.repository == 'Diogooliveira-bot/central-de-estudos-2026'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - name: Checkout isolado e sem credenciais persistentes
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - name: Dependências sem scripts
+        run: npm ci --ignore-scripts
+      - name: Verificar sintaxe
+        run: |
+          node --check tests/etapa8-cpp-m01-m22-browser.mjs
+          node --check ui/cpp-native-study-v1.js
+      - name: Regressões Premium existentes
+        run: node --test tests/legal-complete-premium-theme-unit.mjs tests/etapa3-premium-pilots-unit.mjs
+      - name: Instalar Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Validar CPP 22 módulos em 3 dispositivos
+        run: node tests/etapa8-cpp-m01-m22-browser.mjs
+      - name: Publicar evidências de teste
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: etapa8-cpp-m01-m22-chromium
+          path: artifacts/etapa8-cpp-m01-m22/*
+          if-no-files-found: ignore
+          retention-days: 14

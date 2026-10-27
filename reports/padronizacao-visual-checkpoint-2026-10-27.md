@@ -307,3 +307,13 @@ Contagens de elementos efetivamente renderizados no navegador (mesmas nas três 
 - **Validação não concluída:** qualidade editorial, precisão jurídica e autenticação Premium na Preview atualizada. Aprovação técnica **não** autoriza deploy ou merge.
 - **Progressão acumulada:** ADM 20/20 + CF 15/15 + Penal 17/17 + CPC 20/20 + Civil 15/15 = **87/109 módulos jurídicos com testes Chromium**.
 - **Próxima disciplina jurídica:** Processual Penal, 22 módulos ainda por testar.
+
+## Etapa 8.0 — Direito Processual Penal M01–M22 (27/10/2026)
+
+- A partir do checkpoint `2f738923ab74ed895532e920403a521469ae9cd4`, foi confirmado o índice com **22 módulos CPP**, contidos no pacote original `content/cpp/cpp-native-content-packed.js` (gzip/base64).
+- Leitor de produção mantido: `ui/cpp-native-study-v1.js`, usando `ui/native-reading-session.js`, `ui/cpp-native-study-v1.css` e tema Premium escopado.
+- Workflow novo de testes: `.github/workflows/verify-etapa8-cpp-m01-m22.yml`; script: `tests/etapa8-cpp-m01-m22-browser.mjs`.
+- Exercitar conteúdo original realmente descompactado e os resumos em Chromium real, 390/768/1366 px, inclusive navegação, marcação de conclusão e persistência local, aparência Premium restrita ao completo, sem overflow de página ou erro JS.
+- Inventariar H1/H2/H3, tabelas HTML, elementos `pre` e callouts. O resultado **não implica** certificação editorial do material ou da estrutura semântica de possíveis comparativos.
+- Sem alterar conteúdo, leitor, `main`, produção, credenciais, acesso pago, Neon ou fluxo da Preview privada.
+- **Situação inicial:** execução pendente de confirmação. Não elevar o indicador 87/109 antes de examinar o workflow.
