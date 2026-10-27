@@ -22,6 +22,14 @@ jobs:
           cache: npm
       - name: Dependencias sem scripts de instalacao
         run: npm ci --ignore-scripts
+      - name: Confirmar DNS e porta PostgreSQL a partir do GitHub (sem senha)
+        continue-on-error: true
+        shell: bash
+        run: |
+          getent ahostsv4 ep-wild-math-awuoq9pk.c-12.us-east-1.aws.neon.tech >/dev/null
+          echo 'NEON_DNS_OK'
+          timeout 8 bash -c 'exec 3<>/dev/tcp/ep-wild-math-awuoq9pk.c-12.us-east-1.aws.neon.tech/5432'
+          echo 'NEON_TCP_OK'
       - name: Mapear causas e divergencias sem alterar dados
         run: node scripts/diagnose-lei-sync-4-4.mjs
       - name: Diagnosticar sincronizacao do Lei em Dia
@@ -39,3 +47,12 @@ jobs:
       - name: Testar inicializacao do plano Gratuito
         if: always()
         run: node --test tests/free-central-boot-unit.mjs
+      - name: Testar regressao geral sem banco de producao
+        if: always()
+        run: npm test
+      - name: Testar autenticacao e recuperacao de senha
+        if: always()
+        run: npm run test:password-reset
+      - name: Validar build estatico com arquivos Premium privados
+        if: always()
+        run: npm run build:vercel-output
