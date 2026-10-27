@@ -139,6 +139,37 @@ async function logout(res) {
   return send(res, 200, { ok: true }, { 'Set-Cookie': clearSessionCookie() });
 }
 
+async function environmentProof(req, res) {
+  if (String(process.env.VERCEL_ENV || '') !== 'preview' ||
+      String(process.env.VERCEL_GIT_COMMIT_REF || '') !== 'test/preview-isolation-20261027') {
+    return send(res, 404, { error: 'not_found' });
+  }
+  try {
+    const parsed = new URL(String(process.env.DATABASE_URL || ''));
+    const host = parsed.hostname;
+    const endpoint = host.split('.')[0].replace(/-pooler$/, '');
+    const sql = database();
+    const rows = await sql\`SELECT current_database() AS database_name, NOW() AS checked_at\`;
+    return send(res, 200, {
+      vercelEnvironment: process.env.VERCEL_ENV || null,
+      gitBranch: process.env.VERCEL_GIT_COMMIT_REF || null,
+      database: rows[0]?.database_name || parsed.pathname.replace(/^\\//, ''),
+      endpoint,
+      pooled: host.includes('-pooler'),
+      expectedHomologationEndpoint: endpoint === 'ep-late-haze-b8j5xjdh',
+      productionEndpointBlocked: endpoint !== 'ep-wild-math-awuoq9pk',
+      authSecretConfigured: Boolean(process.env.AUTH_SECRET),
+      backupSecretConfigured: Boolean(process.env.BACKUP_SECRET),
+      hotmartLiveEnabled: String(process.env.HOTMART_LIVE_ENABLED || '').toLowerCase() === 'true',
+      hotmartTestReceiverEnabled: String(process.env.HOTMART_TEST_RECEIVER_ENABLED || '').toLowerCase() === 'true',
+      gmailConfigured: Boolean(process.env.GMAIL_APP_PASSWORD || process.env.GMAIL_USER),
+      checkedAt: rows[0]?.checked_at || null
+    });
+  } catch {
+    return send(res, 500, { error: 'environment_proof_failed' });
+  }
+}
+
 async function bootstrap(req, res) {
   const expected = String(process.env.BACKUP_SECRET || '');
   if (!expected) return send(res, 503, { error: 'BACKUP_SECRET não configurado no Vercel' });
@@ -180,6 +211,7 @@ export default async function handler(req, res) {
     if (premiumApi === 'lei-em-dia-questions') return handleLeiEmDiaQuestions(req, res);
 
     const action = String(req.query?.action || '').toLowerCase();
+    if (req.method === 'GET' && action === 'environment-proof') return environmentProof(req, res);
     if (req.method === 'POST' && !sameOriginRequest(req)) return send(res, 403, { error: 'Origem da requisição não permitida' });
 
     if (action.startsWith('invite-')) return handleInviteAction(req, res, action.slice('invite-'.length));
