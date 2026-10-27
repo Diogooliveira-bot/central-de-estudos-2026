@@ -24,8 +24,10 @@ assert set(p.sections())=={'bcdrive'},'Somente bcdrive permitido'
 v=p['bcdrive']
 assert v.get('type')=='drive' and v.get('scope')=='drive.file','Drive requer OAuth mínimo'
 assert not v.get('root_folder_id') and not v.get('service_account_file'),'Não usar identidades/destinos globais'
-assert v.get('client_id') and v.get('client_secret') and v.get('token'),'OAuth incompleto'
-json.loads(v['token'])
+assert bool(v.get('client_id')) == bool(v.get('client_secret')),'OAuth próprio incompleto'
+assert v.get('token'),'Token OAuth ausente'
+token=json.loads(v['token'])
+assert token.get('refresh_token'),'Refresh token obrigatório para backup persistente'
 PY
 mkdir -m 700 "$tmp/gnupg"
 export GNUPGHOME="$tmp/gnupg"
