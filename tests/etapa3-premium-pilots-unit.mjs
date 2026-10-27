@@ -39,6 +39,6 @@ test('ADM M03 visual aprovado preservado byte-a-byte',()=>{
 test('bust de cache explicitamente carregado e sem edição de conteúdos jurídicos',()=>{
  assert.match(read('central-v119.html'),/ui\/native-study-reader\.js\?v=20261027pilotPenalCpc1/);
  assert.match(read('central-v119.html'),/ui\/legal-complete-premium-v1\.css\?v=20261027cpcM01reflow1/);
- assert.match(read('index.html'),/ui\/cpc-native-study-reader\.js\?v=20261027pilotPenalCpc1/);
+ assert.match(read('index.html'),/ui\/cpc-native-study-reader\.js\?v=20261027cpcM01reflow1/);
  for(const p of ['content/penal/m01-native-data.js','content/cpc/m01-native-data.js'])assert.ok(read(p).length>30000);
 });
