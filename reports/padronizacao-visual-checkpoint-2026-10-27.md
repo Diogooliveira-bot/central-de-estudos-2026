@@ -58,4 +58,29 @@
 - Workflow: `.github/workflows/verify-etapa4-cf-m02-m15-premium.yml`.
 - Verificações: ativação do tema apenas na apostila completa; títulos H2, largura da página, semântica e rolagem de tabelas, caixas, checkbox persistente onde houver e exclusão do tema no resumido.
 - **Não editar** fontes, editor de conteúdo, leitor, produção, bancos ou permissões Premium nesta etapa. O teste comprova a aparência técnica do código-fonte, não a qualidade editorial ou o acesso autenticado.
-- **Status ao preparar:** testes criados, resultado a confirmar em GitHub Actions. Só marcar os 14 como aprovados após ler as métricas e a conclusão do job.
+- **Resultado verificado em GitHub Actions:** `40596415752`, Chromium concluído com **success**. Foram 42 casos: M02–M15 × 390/768/1366 px, todos aprovados, com 0 erros JavaScript.
+- **Provas:** tema no completo; resumo sem tema; tabelas HTML semânticas com contêiner de rolagem; 14 conjuntos de controles de leitura; persistência dos checkboxes; sem overflow da página.
+- **Artefatos:** https://github.com/Diogooliveira-bot/central-de-estudos-2026/actions/runs/40596415752/artifacts/12777290753 (42 capturas + métricas, retenção de 14 dias; podem expirar).
+- **Métricas permanentes resumidas (medidas iguais nas 3 larguras):**
+
+| Módulo | Títulos de seção | Tabelas | Caixas | Checkboxes |
+|---|---:|---:|---:|---:|
+| CF M02 | 89 | 10 | 62 | 10 |
+| CF M03 | 52 | 12 | 19 | 11 |
+| CF M04 | 54 | 11 | 20 | 10 |
+| CF M05 | 54 | 14 | 20 | 11 |
+| CF M06 | 58 | 10 | 63 | 18 |
+| CF M07 | 65 | 9 | 71 | 18 |
+| CF M08 | 50 | 22 | 27 | 10 |
+| CF M09 | 61 | 23 | 31 | 10 |
+| CF M10 | 43 | 16 | 24 | 10 |
+| CF M11 | 53 | 20 | 24 | 10 |
+| CF M12 | 64 | 28 | 24 | 10 |
+| CF M13 | 56 | 16 | 14 | 8 |
+| CF M14 | 42 | 15 | 14 | 8 |
+| CF M15 | 38 | 12 | 12 | 10 |
+
+- **Decisão:** os 15 módulos de Direito Constitucional estão tecnicamente validados no Chromium de teste. Não declarar publicação, auditoria jurídica, inspeção editorial individual ou homologação online aprovada.
+- **Bloqueio ainda existente:** Preview atualizada aguarda a aprovação obrigatória do ambiente GitHub `bc-preview-private`. Não contornar ou publicar em ambiente aberto.
+- **Ponto de retomada:** fazer validação autenticada na Preview privada depois da aprovação do ambiente; seguir com um lote piloto de outra disciplina jurídica, preservando conteúdos e progresso.
+
