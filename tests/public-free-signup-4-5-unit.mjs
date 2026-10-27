@@ -91,3 +91,13 @@ test('token inválido não consulta banco',async()=>{
  assert.equal(r.statusCode,410);
  assert.equal(calls.length,0);
 });
+
+test('link cadastro aparece só quando a API confirmar que está habilitado',()=>{
+ const page=readFileSync(new URL('../login.html',import.meta.url),'utf8');
+ const auth=readFileSync(new URL('../api/auth.js',import.meta.url),'utf8');
+ assert.match(page,/id="publicSignupLink"[^>]*hidden/);
+ assert.match(page,/free-signup-status/);
+ assert.match(page,/if\(signup\.enabled\)/);
+ assert.match(auth,/free-signup-status/);
+ assert.match(auth,/freeSignupEnabled\(\)/);
+});
