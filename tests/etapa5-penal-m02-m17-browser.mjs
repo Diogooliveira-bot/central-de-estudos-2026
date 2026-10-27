@@ -60,7 +60,7 @@ try{
       const o=document.getElementById(overlayId),art=o.querySelector('.bc-native-article');
       const h1=art.querySelector('h1'),h2=art.querySelector('h2');
       const tables=[...art.querySelectorAll('table')];
-      const headings=[...art.querySelectorAll('h2,h3')].map(h=>h.textContent.replace(/\\s+/g,' ').trim());
+       const headings=[...art.querySelectorAll('h2,h3')].map(h=>h.textContent.trim().replaceAll('  ',' '));
       return {
        premium:o.classList.contains('bc-apostila-v1'),
        appearance:o.classList.contains('bc-reading-appearance'),
@@ -77,8 +77,8 @@ try{
        headingsLinks:art.querySelectorAll('h2[id],h3[id]').length,
        pageOverflow:document.documentElement.scrollWidth>innerWidth+2,
        headingExamples:headings.slice(0,5),
-       suspiciousNumberedHeadings:headings.filter(t=>/^\\d{2,4}\\.\\s*[A-Za-zÀ-ÿ]/.test(t)).slice(0,8),
-       brokenPageMarker: /BASE COMPLETA[^\\n]{0,50}\\d+\\s*\\/\\s*\\d+/i.test(art.textContent)
+       suspiciousNumberedHeadings:headings.filter(t=>/^[0-9]{2,4}[.] *[A-Za-zÀ-ÿ]/.test(t)).slice(0,8),
+       brokenPageMarker:/BASE COMPLETA.{0,50}[0-9]+ *[/] *[0-9]+/i.test(art.textContent)
       };
     },id);
     assert.equal(m.premium,true,label+': tema Premium não aplicado');
