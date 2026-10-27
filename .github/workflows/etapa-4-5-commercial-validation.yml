@@ -12,6 +12,7 @@ on:
       - 'middleware.js'
       - 'db/migrations/004_public_free_signup.sql'
       - 'tests/public-free-signup-4-5-unit.mjs'
+      - 'tests/free-signup-browser-4-5.mjs'
       - 'tests/commercial-journey-4-5-unit.mjs'
       - '.github/workflows/etapa-4-5-commercial-validation.yml'
   workflow_dispatch:
@@ -34,3 +35,7 @@ jobs:
         run: npm ci --ignore-scripts --no-audit --no-fund
       - name: Teste comercial dedicado, sem banco ou pagamentos
         run: node --test tests/commercial-journey-4-5-unit.mjs tests/public-free-signup-4-5-unit.mjs tests/hotmart-webhook-unit.mjs tests/plan-access-unit.mjs tests/password-reset-unit.mjs
+      - name: Instalar Chromium Playwright
+        run: npx playwright install --with-deps chromium
+      - name: Navegador real desktop e celular com API simulada
+        run: node tests/free-signup-browser-4-5.mjs
