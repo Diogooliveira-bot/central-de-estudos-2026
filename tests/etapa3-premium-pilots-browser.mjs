@@ -60,6 +60,40 @@ try{
    await page.locator('#'+spec.id+' .bc-native-article h2').first().screenshot({path:pre+'-secao.png'});
    if(m.callouts)await page.locator('#'+spec.id+' .bc-native-callout').first().screenshot({path:pre+'-quadro.png'});
    await page.locator('#'+spec.id+' .bc-native-reader').screenshot({path:pre+'-leitor.png'});
+   if(spec.name==='cpc-m01'){
+     const fix=await page.evaluate(()=>{
+       const o=document.getElementById('cpcNativeReaderOverlay'),a=o.querySelector('.bc-native-article');
+       const headings=[...a.querySelectorAll('h2')].map(h=>h.textContent.trim());
+       const law=a.querySelector('.bc-cpc-m01-table-scroll');
+       const table=law?.querySelector('table');
+       const note=[...a.querySelectorAll('.bc-native-callout.trap')].find(x=>x.textContent.includes('boa-fé processual não depende'));
+       return {
+         h9:headings.find(x=>x.startsWith('9. SISTEMA MULTIPORTAS')),
+         h10:headings.find(x=>x.startsWith('10. DURAÇÃO RAZOÁVEL')),
+         h27:headings.find(x=>x.startsWith('27. PONTE')),
+         noteText:note?.textContent.replace(/\s+/g,' ').trim(),
+         tableRows:table?.tBodies[0]?.rows.length||0,
+         tableColumns:table?.tHead.rows[0]?.cells.length||0,
+         tableDisplay:table?getComputedStyle(table).display:null,
+         tableOverflow:law?getComputedStyle(law).overflowX:null,
+         tableScroll:law?law.scrollWidth-law.clientWidth:0,
+         pdfArtifact:a.textContent.includes('BASE COMPLETA · CPC · M01 3 / 23')
+       }
+     });
+     assert.ok(fix.h9?.includes('ART. 3º, §§ 1º A 3º'),'CPC art. 3º ainda dividido');
+     assert.ok(fix.h10?.includes('DO MÉRITO — ART. 4º'),'CPC duração razoável ainda dividida');
+     assert.ok(fix.h27?.includes('NACIONAL (ARTS. 21 A 25)'),'CPC título oculto pelo marcador de página');
+     assert.match(fix.noteText||'',/intenção psicológica de prejudicar\./i);
+     assert.equal(fix.tableRows,14,'linhas do quadro CPC foram perdidas');
+     assert.equal(fix.tableColumns,3,'quadro CPC precisa manter três colunas');
+     assert.equal(fix.tableDisplay,'table','quadro perdeu semântica de tabela');
+     assert.equal(fix.tableOverflow,'auto','rolagem interna da tabela ausente');
+     assert.equal(fix.pdfArtifact,false,'marcador de PDF ficou misturado ao texto');
+     if(width<=768)assert.ok(fix.tableScroll>1,'rolagem horizontal da tabela não funcional');
+     await page.locator('#cpcNativeReaderOverlay .bc-cpc-m01-table-scroll').screenshot({path:pre+'-tabela-cpc.png'});
+     await page.locator('#cpcNativeReaderOverlay .bc-native-callout.trap').filter({hasText:'boa-fé processual não depende'}).first().screenshot({path:pre+'-pegadinha-cpc.png'});
+     results.push({width,module:'cpc-m01-correcoes',...fix});
+   }
    const check=await page.evaluate(({id,sel})=>{
      const btn=document.getElementById(id).querySelector(sel);
      if(!btn)return null;const old=btn.classList.contains('done');btn.click();
