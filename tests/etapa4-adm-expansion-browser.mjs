@@ -82,7 +82,7 @@ try{
      assert.ok(m.tocLinks>0,tag+' navegação dos capítulos ausente');
      assert.equal(m.semanticTables,true,tag+' tabela inválida');
      assert.equal(m.overflow,false,tag+' overflow horizontal da página');
-     const screenshot='artifacts/etapa4-adm-pilotos/adm-m'+String(spec.number).padStart(2,'0')+'-'+width;
+     const screenshot='artifacts/etapa4-adm-expansao/adm-m'+String(spec.number).padStart(2,'0')+'-'+width;
      await page.locator('#adm-native-reader .bc-native-reader').screenshot({path:screenshot+'-leitor.png'});
      if(m.tables&&m.wrappedTables) await page.locator('#adm-native-reader table').first().screenshot({path:screenshot+'-tabela.png'});
      const selector=m.contentChecks?'input[data-adm-check]':'input[data-adm-session-check]';
@@ -104,6 +104,6 @@ try{
   }finally{await page.close();}
  }
  assert.equal(results.length,48);
- await writeFile('artifacts/etapa4-adm-pilotos/metricas.json',JSON.stringify(results,null,2)+'\n');
+ await writeFile('artifacts/etapa4-adm-expansao/metricas.json',JSON.stringify(results,null,2)+'\n');
  console.log('ETAPA4_ADM_EXPANSAO_RESULTS='+JSON.stringify(results));
 }finally{if(browser)await browser.close();server.close();}
