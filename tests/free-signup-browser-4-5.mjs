@@ -75,7 +75,7 @@ try{
    if(action==='login'){payload={ok:true,user:{role:'aluno'}};authenticated=true}
    await route.fulfill({status:200,contentType:'application/json',body:JSON.stringify(payload)});
  });
- await login.goto(root+'/login.html');
+ await login.goto(root+'/login.html?next=%2Fcentral-v119.html');
  await login.getByLabel('E-mail',{exact:true}).fill('ficticio@example.invalid');
  await login.getByLabel('Senha',{exact:true}).fill('NovaSenhaFicticia123');
  await login.getByRole('button',{name:'Entrar',exact:true}).click();
