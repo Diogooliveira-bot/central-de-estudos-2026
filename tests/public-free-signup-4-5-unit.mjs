@@ -8,6 +8,7 @@ const env={
   AUTH_SECRET:'only-for-fictional-4-5-test-this-is-not-real',
   GMAIL_USER:'test-only@gmail.com',GMAIL_APP_PASSWORD:'TESTONLYDUMMY123',
 };
+process.env.AUTH_SECRET=env.AUTH_SECRET;
 function res(){return{headers:{},setHeader(k,v){this.headers[k]=v},end(body){this.body=JSON.parse(body)}}}
 function req(body,method='POST',origin='https://localhost'){return{method,headers:{host:'localhost',origin,'x-real-ip':'127.0.0.42','sec-fetch-site':origin==='https://localhost'?'same-origin':'cross-site'},body}}
 function setup(){
