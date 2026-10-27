@@ -25,3 +25,12 @@
 ## Garantia de escopo
 - Não tocou no projeto Neon Production solitary-dust-76502943, em dados reais de alunos, nem na branch do backup.
 - Não alterou main, não publicou Production, não fez pagamentos, não enviou webhooks reais.
+
+## Continuação — 18h45 UTC de 27/10/2026
+- Vercel confirmou deployment **READY** `dpl_5P7nr2bW1XxmKg8aL6tE8LzoUh7U`, commit `90502f006f41`, branch comercial. Preview não é Production.
+- URL da Preview é protegida por acesso da Vercel; não foi possível percorrer a interface como visitante público. Nenhuma afirmação de teste em navegador real.
+- Validada por metadata Vercel: DATABASE_URL tipo sensitive, alvo preview, escopo exato da branch `commercial/etapa-4-5-20261027`. Isolamento da branch Neon de teste confirmado pela própria criação e uso da conexão da branch `br-late-band-b7lzjsyi`.
+- **Teste real de expiração:** token fictício já expirado não foi consumido; `activated_count=0`, nenhuma conta criada para o e-mail de teste.
+- **Teste real de reutilização:** token fictício anteriormente consumido não pôde ser reutilizado (`reuse_successes=0`).
+- **Premium indevido:** nenhuma assinatura Premium concedida pelos testes.
+- Cadastro continua desativado; faltam serviço de e-mail de homologação e browser autenticado. Não reutilizar Gmail Production para teste.
