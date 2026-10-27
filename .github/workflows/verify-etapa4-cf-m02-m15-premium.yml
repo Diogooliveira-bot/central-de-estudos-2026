@@ -1,0 +1,49 @@
+name: Padronização Premium — Constitucional M02–M15
+
+on:
+  push:
+    branches: [preview/legal-complete-premium-v1-20261025]
+    paths:
+      - 'tests/etapa4-cf-m02-m15-premium-browser.mjs'
+      - '.github/workflows/verify-etapa4-cf-m02-m15-premium.yml'
+      - 'ui/legal-complete-premium-v1.css'
+      - 'ui/legal-complete-premium-v1.js'
+      - 'ui/cf-native-study-v2.js'
+      - 'content/cf/m*-native-data.js'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: bc-etapa4-cf-m02-m15
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    if: github.repository == 'Diogooliveira-bot/central-de-estudos-2026'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - name: Checkout sem credenciais persistentes
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - name: Dependências locais sem postinstall
+        run: npm ci --ignore-scripts
+      - name: Sintaxe do leitor e do teste
+        run: node --check ui/cf-native-study-v2.js && node --check tests/etapa4-cf-m02-m15-premium-browser.mjs
+      - name: Regressões do tema e da proteção
+        run: node --test tests/legal-complete-premium-theme-unit.mjs tests/etapa3-premium-pilots-unit.mjs
+      - name: Instalar Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Conferir CF M02–M15 em três telas
+        run: node tests/etapa4-cf-m02-m15-premium-browser.mjs
+      - name: Guardar screenshots e métricas
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: etapa4-cf-m02-m15-chromium-390-768-1366
+          path: artifacts/etapa4-constitucional-m02-m15/*
+          if-no-files-found: ignore
+          retention-days: 14
