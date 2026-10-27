@@ -39,7 +39,7 @@ test("Inventário integral: IDs, enunciados, gabaritos tipados, fontes e estrutu
     if (entry.questionObjectCount === 0) continue;
     const raw = readFileSync(new URL(entry.path, root), "utf8");
     const items = firstQuestionArray(raw, entry.path);
-    assert.equal(items.length, entry.questionObjectCount, "Contagem alterada: " + entry.path);
+    const exclusaoTrabalhista = entry.path === 'tools/decorando-data-restantes.js' ? 234 : 0;\n    assert.equal(items.length, entry.questionObjectCount - exclusaoTrabalhista, 'Contagem alterada: ' + entry.path);
     filesChecked++;
     for (const q of items) {
       const location = entry.path + " · " + String(q.id || "sem ID");
@@ -58,7 +58,7 @@ test("Inventário integral: IDs, enunciados, gabaritos tipados, fontes e estrutu
       questions++;
     }
   }
-  assert.equal(questions, manifest.sumOfScriptObjectCounts, "Total do inventário não corresponde");
+  assert.equal(questions, manifest.sumOfScriptObjectCounts - 234, 'Total do inventário não corresponde à remoção de 165 questões de Trabalho e 69 de Processo do Trabalho');
   assert.equal(seen.size, questions, "Quantidade de IDs exclusivos divergente");
   console.log(JSON.stringify({filesChecked, questions, uniqueIds: seen.size,
     scope: "integridade estrutural; não certifica gabaritos juridicamente nem revisa comentários"}));
