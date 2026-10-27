@@ -18,3 +18,25 @@ CREATE TABLE IF NOT EXISTS public.central_free_signup_limits (
 -- Nao alterar tabelas existentes; protecoes Gratuito/Premium permanecem intactas.
 
 CREATE INDEX IF NOT EXISTS central_free_signup_limits_old_idx ON public.central_free_signup_limits(window_start);
+
+-- Campos opcionais: nunca gravar número de telefone em texto puro.
+ALTER TABLE public.central_free_signup_pending
+ ADD COLUMN IF NOT EXISTS whatsapp_ciphertext TEXT,
+ ADD COLUMN IF NOT EXISTS marketing_opt_in BOOLEAN NOT NULL DEFAULT FALSE,
+ ADD COLUMN IF NOT EXISTS consent_notice_version TEXT;
+
+-- Preferências comerciais separadas da identidade e da assinatura.
+-- Somente com consentimento afirmativo e WhatsApp informado.
+CREATE TABLE IF NOT EXISTS public.central_free_signup_contacts (
+ user_id TEXT PRIMARY KEY REFERENCES public.central_users(user_id) ON DELETE CASCADE,
+ whatsapp_ciphertext TEXT,
+ marketing_opt_in BOOLEAN NOT NULL DEFAULT FALSE,
+ marketing_consent_at TIMESTAMPTZ,
+ consent_notice_version TEXT,
+ consent_source TEXT NOT NULL DEFAULT 'free_signup',
+ created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+ updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+ CHECK (NOT marketing_opt_in OR whatsapp_ciphertext IS NOT NULL),
+ CHECK ((marketing_opt_in AND marketing_consent_at IS NOT NULL AND consent_notice_version IS NOT NULL)
+         OR (NOT marketing_opt_in AND marketing_consent_at IS NULL))
+);
