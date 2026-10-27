@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {createFreeSignupHandler,freeSignupEnabled} from '../lib/free-signup-handler.js';
+import {signupCaptchaConfigured,verifySignupBot,safeSignupBody,verifiedClientIp} from '../lib/free-signup-security.js';
 const env={
   VERCEL_ENV:'preview',VERCEL_URL:'preview-bc-test.vercel.app',
   BC_PUBLIC_FREE_SIGNUP_ENABLED:'true',BC_FREE_SIGNUP_PREVIEW_ISOLATED:'YES',
@@ -30,7 +31,10 @@ test('somente em Preview isolada e com sinal explicito; Production bloqueada',()
   assert.equal(freeSignupEnabled({}),false);
   assert.equal(freeSignupEnabled({...env,BC_FREE_SIGNUP_PREVIEW_ISOLATED:'NO'}),false);
   assert.equal(freeSignupEnabled({...env,VERCEL_ENV:'production'}),false);
-  assert.equal(freeSignupEnabled({...env,VERCEL_ENV:'production',BC_PUBLIC_FREE_SIGNUP_PRODUCTION_APPROVED:'YES'}),true);
+  assert.equal(freeSignupEnabled({...env,VERCEL_ENV:'production',BC_PUBLIC_FREE_SIGNUP_PRODUCTION_APPROVED:'YES'}),false);
+  const captchaEnv={...env,VERCEL_ENV:'production',BC_PUBLIC_FREE_SIGNUP_PRODUCTION_APPROVED:'YES',BC_SIGNUP_PRIVACY_APPROVED:'YES',BC_SIGNUP_TURNSTILE_SITE_KEY:'3x00000000000000000000FF',BC_SIGNUP_TURNSTILE_SECRET_KEY:'1x0000000000000000000000000000000AA'};
+  assert.equal(freeSignupEnabled(captchaEnv),true);
+  assert.equal(freeSignupEnabled({...captchaEnv,BC_SIGNUP_PRIVACY_APPROVED:'NO'}),false);
 });
 test('recusa solicitações cross-site e contas sem senha forte sem banco',async()=>{
  const {handler,calls}=setup();
@@ -133,4 +137,38 @@ test('cadastro público não aceita GET nem tentativa de criar admin',async()=>{
  const c=calls.filter(x=>x.source.includes('INSERT INTO public.central_free_signup_pending'));
  assert.equal(c.length,1);
  assert.equal(c[0].source.includes('admin'),false);
+});
+
+test('Turnstile faz verificacao obrigatoria no SERVIDOR e rejeita erro, troca de host, replay',async()=>{
+ const envBot={BC_SIGNUP_TURNSTILE_SITE_KEY:'3x00000000000000000000FF',BC_SIGNUP_TURNSTILE_SECRET_KEY:'1x0000000000000000000000000000000AA'};
+ assert.equal(signupCaptchaConfigured(envBot),true);
+ const valid=await verifySignupBot({token:'token-ficticio',requestHost:'preview-bc-test.vercel.app',env:envBot,
+   fetcher:async()=>({ok:true,json:async()=>({success:true,action:'free-signup',hostname:'preview-bc-test.vercel.app'})})});
+ assert.equal(valid,true);
+ for(const bogus of [
+  {success:false,action:'free-signup',hostname:'preview-bc-test.vercel.app'},
+  {success:true,action:'login',hostname:'preview-bc-test.vercel.app'},
+  {success:true,action:'free-signup',hostname:'outro.vercel.app'},
+ ]){
+  assert.equal(await verifySignupBot({token:'falso',requestHost:'preview-bc-test.vercel.app',env:envBot,
+   fetcher:async()=>({ok:true,json:async()=>bogus})}),false);
+ }
+ assert.equal(await verifySignupBot({token:'token',requestHost:'preview-bc-test.vercel.app',env:envBot,
+   fetcher:async()=>{throw Error('timeout simulado')}}),false);
+});
+test('backend impede signup com CAPTCHA ausente antes de consultar SQL',async()=>{
+ const cfg={...env,BC_SIGNUP_TURNSTILE_SITE_KEY:'3x00000000000000000000FF',BC_SIGNUP_TURNSTILE_SECRET_KEY:'1x0000000000000000000000000000000AA'};
+ let sqlCalled=0;
+ const h=createFreeSignupHandler({env:cfg,sqlProvider:()=>{sqlCalled++;return()=>[]},botVerifier:async()=>false});
+ const r=res();await h(req({action:'request',name:'Pessoa Teste',email:'captcha@example.invalid',password:'SenhaFicticia123456!'}),r);
+ assert.equal(r.statusCode,403);
+ assert.equal(sqlCalled,1); // Construcao de cliente SQL nao executa SQL ou consulta tabela
+});
+test('payload enorme bloqueado e IP precisa ser valido',async()=>{
+ const r=res();const {handler}=setup();
+ const reqLarge=req({action:'request',name:'A'.repeat(15000)});
+ await handler(reqLarge,r);
+ assert.equal(r.statusCode,413);
+ assert.equal(verifiedClientIp({headers:{'x-vercel-forwarded-for':'192.0.2.19'}}),'192.0.2.19');
+ assert.equal(verifiedClientIp({headers:{'x-vercel-forwarded-for':'not-an-ip'}}),'');
 });
