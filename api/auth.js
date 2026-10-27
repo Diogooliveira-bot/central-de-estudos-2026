@@ -17,6 +17,7 @@ import {
 } from '../lib/auth.js';
 import handleInviteAction from '../lib/invite-handler.js';
 import handleFreeSignup, {freeSignupEnabled} from '../lib/free-signup-handler.js';
+import handleFreeSignupContactPreferences from '../lib/free-signup-contact-preferences.js';
 import {signupCaptchaConfigured} from '../lib/free-signup-security.js';
 import handlePasswordReset from '../lib/password-reset.js';
 import handleLeiEmDiaQuestions from '../lib/lei-em-dia-questions-handler.js';
@@ -185,6 +186,7 @@ export default async function handler(req, res) {
     if (req.method === 'POST' && !sameOriginRequest(req)) return send(res, 403, { error: 'Origem da requisição não permitida' });
 
     if (action === 'free-signup' && req.method === 'POST') return handleFreeSignup(req, res);
+    if (action === 'free-signup-contact' && ['GET','POST'].includes(req.method)) return handleFreeSignupContactPreferences(req, res);
     if (action === 'free-signup-status' && req.method === 'GET') return send(res, 200, {
       enabled: freeSignupEnabled(),
       siteKey: freeSignupEnabled() && signupCaptchaConfigured()
