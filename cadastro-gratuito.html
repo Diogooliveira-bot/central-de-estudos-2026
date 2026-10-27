@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><meta name="referrer" content="no-referrer">
+<title>Criar conta gratuita — Base Completa</title><link rel="icon" href="/favicon.ico">
+<style>
+:root{--navy:#112c48;--blue:#235173;--bg:#f1f6fa;--muted:#516677;--line:#d9e4ec}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--navy);font:16px/1.5 system-ui,Arial,sans-serif;min-height:100vh;display:grid;place-items:center;padding:20px}
+main{width:min(490px,100%);background:white;border:1px solid var(--line);border-radius:18px;padding:clamp(20px,5vw,36px);box-shadow:0 18px 45px #112c4815}h1{margin:0 0 10px;font-size:1.8rem;line-height:1.2}p{color:var(--muted)}label{display:block;font-weight:700;font-size:.9rem;margin:14px 0 5px}
+input{width:100%;font:inherit;padding:13px;border:1px solid #bfcfda;border-radius:9px}input:focus-visible,button:focus-visible,a:focus-visible{outline:3px solid #e5b547;outline-offset:2px}
+button{margin-top:22px;width:100%;border:0;border-radius:9px;background:var(--navy);color:white;padding:14px;font:700 1rem system-ui;cursor:pointer}button:disabled{opacity:.6;cursor:wait}
+.note{font-size:.85rem}.state{padding:13px 15px;border-radius:9px;background:#edf4fa;color:var(--navy);margin:18px 0}.state.bad{background:#fff0ed;color:#963e31}.state.good{background:#e8f7f0;color:#176047}
+.links{font-size:.88rem;margin-top:22px}a{color:var(--blue)}[hidden]{display:none!important}
+</style></head>
+<body><main>
+<div class="note">BASE COMPLETA · CENTRAL DE ESTUDOS</div><h1>Comece gratuitamente</h1>
+<p>Crie sua conta e confirme seu e-mail para estudar com os recursos gratuitos, incluindo até 20 questões por dia no Lei em Dia.</p>
+<p class="note">TEC, QConcursos e materiais exclusivos permanecem restritos ao Premium. Cadastro em homologação, ainda não liberado no site oficial.</p>
+<div class="state" id="state" role="status" aria-live="polite">Preencha seus dados para solicitar a confirmação.</div>
+<form id="register">
+<label for="name">Seu nome</label><input id="name" name="name" autocomplete="name" minlength="2" maxlength="120" required>
+<label for="email">Seu e-mail</label><input id="email" name="email" type="email" autocomplete="email" maxlength="240" required>
+<label for="password">Crie uma senha (mínimo 12 caracteres)</label><input id="password" type="password" autocomplete="new-password" minlength="12" maxlength="200" required>
+<label for="confirm">Confirme sua senha</label><input id="confirm" type="password" autocomplete="new-password" minlength="12" maxlength="200" required>
+<button type="submit" id="submit">Enviar confirmação por e-mail</button>
+</form>
+<p class="links">Já tem uma conta? <a href="/login.html">Entrar</a> · <a href="/recuperar-senha.html">Esqueci minha senha</a></p>
+</main><script>
+(function(){
+'use strict';
+var form=document.getElementById('register'),state=document.getElementById('state'),btn=document.getElementById('submit');
+function message(s,b){state.textContent=s;state.className='state'+(b?' '+b:'')}
+async function post(body){var r=await fetch('/api/auth?action=free-signup',{method:'POST',cache:'no-store',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)}),j={};try{j=await r.json()}catch(_){}if(!r.ok)throw Error(j.error||'Não foi possível concluir o cadastro');return j}
+var token='';try{token=new URLSearchParams(location.hash.slice(1)).get('token')||'';if(token){sessionStorage.setItem('bc_free_signup_token',token);history.replaceState(null,'',location.pathname)}}catch(_){}
+if(!token){try{token=sessionStorage.getItem('bc_free_signup_token')||''}catch(_){}}
+if(token){
+  form.hidden=true;message('Confirmando seu e-mail...');
+  post({action:'confirm',token:token}).then(function(){
+    try{sessionStorage.removeItem('bc_free_signup_token')}catch(_){}
+    message('Conta gratuita confirmada. Abrindo sua Central de Estudos...','good');
+    location.replace('/central-v119.html');
+  }).catch(function(e){message(e.message,'bad')});
+}
+form.addEventListener('submit',async function(e){
+e.preventDefault();
+var p=document.getElementById('password').value,c=document.getElementById('confirm').value;
+if(p!==c){message('As senhas não coincidem.','bad');return}
+btn.disabled=true;message('Preparando confirmação...');
+try{
+var x=await post({action:'request',name:document.getElementById('name').value,email:document.getElementById('email').value,password:p});
+form.hidden=true;message(x.message||'Confira seu e-mail.','good');
+}catch(err){message(err.message,'bad');btn.disabled=false}
+});
+})();
+</script></body></html>
