@@ -39,7 +39,8 @@ test("Inventário integral: IDs, enunciados, gabaritos tipados, fontes e estrutu
     if (entry.questionObjectCount === 0) continue;
     const raw = readFileSync(new URL(entry.path, root), "utf8");
     const items = firstQuestionArray(raw, entry.path);
-    const exclusaoTrabalhista = entry.path === 'tools/decorando-data-restantes.js' ? 234 : 0;\n    assert.equal(items.length, entry.questionObjectCount - exclusaoTrabalhista, 'Contagem alterada: ' + entry.path);
+    const exclusaoTrabalhista = entry.path === 'tools/decorando-data-restantes.js' ? 234 : 0;
+    assert.equal(items.length, entry.questionObjectCount - exclusaoTrabalhista, 'Contagem alterada: ' + entry.path);
     filesChecked++;
     for (const q of items) {
       const location = entry.path + " · " + String(q.id || "sem ID");
