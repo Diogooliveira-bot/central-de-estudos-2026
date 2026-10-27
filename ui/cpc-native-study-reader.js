@@ -127,7 +127,7 @@ function parse(raw,mode){
      blocks.push({type:'callout',kind:co[0],label:co[1],text:body.join(' ')});
      continue;
    }
-   if(isBullet(line)){flush();const items=[line.replace(/^[•●▪◦*-]\s+/,'')];while(i+1<lines.length&&isBullet(lines[i+1]))items.push(lines[++i].replace(/^[•●▪◦*-]\s+/,'')];blocks.push({type:'ul',items});continue}
+   if(isBullet(line)){flush();const items=[line.replace(/^[•●▪◦*-]\s+/,'')];while(i+1<lines.length&&isBullet(lines[i+1]))items.push(lines[++i].replace(/^[•●▪◦*-]\s+/,''));blocks.push({type:'ul',items});continue}
    para.push(line);
  }
  flush();return blocks;
