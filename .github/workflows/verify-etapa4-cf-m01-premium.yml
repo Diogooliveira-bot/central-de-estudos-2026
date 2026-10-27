@@ -1,0 +1,48 @@
+name: Padronização Premium — piloto Constitucional M01
+
+on:
+  push:
+    branches: [preview/legal-complete-premium-v1-20261025]
+    paths:
+      - 'tests/etapa4-cf-m01-premium-browser.mjs'
+      - 'ui/legal-complete-premium-v1.css'
+      - 'ui/legal-complete-premium-v1.js'
+      - 'ui/cf-native-study-v2.js'
+      - 'content/cf/m01-native-data.js'
+      - '.github/workflows/verify-etapa4-cf-m01-premium.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: bc-etapa4-cf-m01-browser
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    if: github.repository == 'Diogooliveira-bot/central-de-estudos-2026'
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout da branch isolada
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - name: Dependências sem postinstall
+        run: npm ci --ignore-scripts
+      - name: Conferir sintaxe do novo teste e do leitor
+        run: node --check tests/etapa4-cf-m01-premium-browser.mjs && node --check ui/cf-native-study-v2.js
+      - name: Executar testes de tema e proteção Premium
+        run: node --test tests/legal-complete-premium-theme-unit.mjs tests/adm-m03-premium-preview-unit.mjs tests/etapa3-premium-pilots-unit.mjs
+      - name: Instalar Chromium oficial
+        run: npx playwright install --with-deps chromium
+      - name: Validar Constitucional M01 em celular tablet computador
+        run: node tests/etapa4-cf-m01-premium-browser.mjs
+      - name: Salvar evidências reais do Chromium
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: etapa4-cf-m01-premium-chromium-390-768-1366
+          path: artifacts/etapa4-cf-m01-premium/*
+          if-no-files-found: ignore
+          retention-days: 14
