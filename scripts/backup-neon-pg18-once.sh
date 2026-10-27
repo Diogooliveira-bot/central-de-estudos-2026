@@ -90,7 +90,7 @@ encrypted="$tmp/$name"
 gpg --batch --yes --quiet --trust-model always --recipient "$BC_GPG_RECIPIENT_FPR" \
   --output "$encrypted" --encrypt "$tmp/backup.tar" || die 'Criptografia falhou.'
 [[ -s "$encrypted" ]] || die 'Arquivo criptografado vazio.'
-sha256sum "$encrypted" > "$encrypted.sha256"
+(cd "$tmp" && sha256sum "$name" > "$name.sha256")
 
 # O escopo drive.file cria o próprio diretório no Drive. NÃO lê arquivos pessoais.
 remote="bcdrive:Base Completa - Backup Neon PG18/$name"
