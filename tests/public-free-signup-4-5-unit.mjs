@@ -76,3 +76,18 @@ test('página de cadastro remove token da URL e não libera Premium',()=>{
  assert.match(page,/20 questões por dia/);
  assert.match(page,/TEC, QConcursos/);
 });
+
+test('middleware libera somente tela de cadastro, sem recursos pagos',()=>{
+ const middleware=readFileSync(new URL('../middleware.js',import.meta.url),'utf8');
+ const auth=readFileSync(new URL('../api/auth.js',import.meta.url),'utf8');
+ assert.match(middleware,/['"]\/cadastro-gratuito\.html['"]/);
+ assert.match(auth,/action === 'free-signup'/);
+ assert.match(middleware,/protectedAsset\(path\)/);
+});
+test('token inválido não consulta banco',async()=>{
+ const {handler,calls}=setup();
+ const r=res();
+ await handler(req({action:'confirm',token:'curto'}),r);
+ assert.equal(r.statusCode,410);
+ assert.equal(calls.length,0);
+});
