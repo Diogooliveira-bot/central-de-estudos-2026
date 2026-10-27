@@ -28,9 +28,15 @@ try{
   await page.getByLabel('Seu e-mail').fill('aluno@example.invalid');
   await page.getByLabel('Crie uma senha (mínimo 12 caracteres)').fill('SenhaSegura1234!');
   await page.getByLabel('Confirme sua senha').fill('SenhaSegura1234!');
+  if(device.label==='celular'){
+    await page.getByLabel('WhatsApp (opcional)').fill('(85) 99999-9999');
+    await page.getByLabel(/Quero receber novidades e ofertas/).check();
+  }
   await page.getByRole('button',{name:'Enviar confirmação por e-mail'}).click();
   await page.getByText('Mensagem enviada para caixa de teste simulada').waitFor();
   assert.equal(requests.at(-1).action,'request');
+  assert.equal(requests.at(-1).marketingOptIn,device.label==='celular');
+  assert.equal(requests.at(-1).whatsapp,device.label==='celular'?'(85) 99999-9999':'');
   const overflows=await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth);
   assert.equal(overflows,false,'Horizontal overflow at '+device.label);
   await page.close();
