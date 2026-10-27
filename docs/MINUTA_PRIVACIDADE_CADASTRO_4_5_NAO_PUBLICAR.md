@@ -41,3 +41,26 @@ O aluno deve receber informações claras sobre as finalidades, duração, agent
 - [ ] Aprovação específica `BC_SIGNUP_PRIVACY_APPROVED=YES` somente após concluir revisão, separada da publicação Premium.
 
 **FONTES PARA REVISÃO:** Lei nº 13.709/2018 (LGPD) e materiais da Autoridade Nacional de Proteção de Dados (ANPD).
+
+## Atualização para lançamento: WhatsApp opcional (27/10/2026)
+
+**Texto curto sugerido para o formulário, pendente de revisão e publicação da política completa:**
+
+> O WhatsApp é opcional. Se informado, será guardado com proteção criptográfica para eventual contato relacionado à conta ou atendimento. A autorização para receber novidades e ofertas é separada e vem desmarcada. Você pode criar uma conta gratuita sem informar o WhatsApp nem autorizar mensagens comerciais.
+
+**Rótulo independente, não obrigatório:**
+
+> [ ] Quero receber novidades e ofertas da Base Completa pelo WhatsApp. Esta autorização é opcional, não altera meu plano e poderá ser retirada.
+
+**Registros técnicos previstos na branch comercial:**
+- WhatsApp opcional normalizado no servidor como telefone brasileiro E.164, com DDD.
+- Valor cifrado AES-256-GCM com nonce aleatório por registro e chave exclusiva do ambiente; o número original não deve aparecer no banco, e-mails ou logs.
+- Pedido de cadastro não confirmado armazena telefone cifrado e opção de comunicação por no máximo 30 minutos de validade de confirmação, até que a rotina de limpeza o elimine. **A limpeza programada ainda precisa ser homologada.**
+- Após confirmar, o contato e consentimento são guardados em tabela distinta das assinaturas: `central_free_signup_contacts`.
+- Se não houve autorização: `marketing_opt_in=FALSE`, sem data de consentimento. Se houve: registro da data e da versão do aviso da autorização.
+- Uma alteração de escolha não concede Premium nem ativa agentes de WhatsApp.
+- **Ainda precisa de canal simples para revogar o consentimento**, e de retenção / exclusão devidamente definidos na política. Não afirmar que já existe botão de revogação até implementá-lo.
+- O campo "WhatsApp" e qualquer automação comercial futura deverão ser submetidos a tratamento de dados transparente, com finalidade específica e opt-in verificável.
+- A proteção depende de uma variável secreta `BC_SIGNUP_PII_KEY` guardada no servidor. Não copiar a mesma chave entre Preview e Production sem controle formal; definir rotação, recuperação e backup criptografado das chaves.
+
+**Pendências humanas obrigatórias:** completar a identificação do controlador, canal de privacidade, finalidades concretas do WhatsApp, período de retenção, critérios de exclusão e revisão jurídica. **Esta minuta não substitui a política publicada.**
