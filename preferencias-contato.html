@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><meta name="referrer" content="no-referrer">
+<title>Preferências de contato — Base Completa</title>
+<style>
+*{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;background:#f3f7fb;color:#132f49;font:16px/1.55 system-ui,Arial,sans-serif;padding:18px}
+main{max-width:530px;width:100%;background:#fff;border:1px solid #d9e3ec;border-radius:16px;padding:30px;box-shadow:0 8px 30px #132f4912}
+h1{font-size:1.65rem;margin:0 0 9px}p{color:#465e70}button{display:block;width:100%;font:700 1rem system-ui;margin-top:16px;padding:13px;border:1px solid #224563;border-radius:9px;background:white;color:#15354c;cursor:pointer}button:disabled{opacity:.6}button.danger{background:#15354c;color:white}
+a{color:#245980}.status{background:#edf5fa;padding:13px;border-radius:8px}button:focus-visible,a:focus-visible{outline:3px solid #dbac37;outline-offset:3px}
+</style></head><body><main>
+<p style="font-size:.85rem;letter-spacing:.08em;font-weight:700">BASE COMPLETA · MINHA CONTA</p>
+<h1>Preferências de contato</h1>
+<p>Você pode retirar a autorização para mensagens comerciais a qualquer momento, sem alterar seu plano de estudos.</p>
+<p id="status" class="status" role="status" aria-live="polite">Consultando suas preferências...</p>
+<section id="options" hidden>
+<button id="revoke" class="danger" type="button">Não quero mais receber ofertas pelo WhatsApp</button>
+<button id="erase" type="button">Excluir meu WhatsApp cadastrado</button>
+</section>
+<p><a href="/central-v119.html">Voltar aos estudos</a></p>
+</main>
+<script>
+(async function(){
+const state=document.getElementById('status'),box=document.getElementById('options');
+async function api(method,action){
+const response=await fetch('/api/auth?action=free-signup-contact',{
+ method:method,credentials:'same-origin',cache:'no-store',
+ headers:method==='POST'?{'Content-Type':'application/json'}:{},
+ body:method==='POST'?JSON.stringify({action}):undefined
+});
+let body={};try{body=await response.json()}catch(_){}
+if(!response.ok)throw Error(body.error||'Não foi possível concluir.');
+return body;
+}
+async function refresh(){
+const p=await api('GET');
+state.textContent=p.marketingOptIn?'Autorização comercial: ativa.':'Autorização comercial: não concedida.';
+document.getElementById('revoke').disabled=!p.marketingOptIn;
+document.getElementById('erase').disabled=!p.hasWhatsapp;
+box.hidden=false;
+}
+for(const [id,action] of [['revoke','revokeMarketing'],['erase','eraseWhatsapp']]){
+document.getElementById(id).addEventListener('click',async()=>{
+box.hidden=true;state.textContent='Salvando preferências...';
+try{await api('POST',action);await refresh()}catch(e){state.textContent=e.message;box.hidden=false}
+});
+}
+try{await refresh()}catch(e){state.textContent=e.message+' Faça login para acessar suas preferências.'}
+})();
+</script></body></html>
