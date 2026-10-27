@@ -26,6 +26,7 @@ jobs:
           bash -n scripts/backup-neon-pg18-once.sh
           bash -n scripts/verify-backup-pg18-offline.sh
           bash -n scripts/test-backup-gpg-pg18-synthetic.sh
+          bash -n scripts/test-drive-private-upload-synthetic.sh
           if env -u BC_BACKUP_APPROVED -u BC_PRIVATE_DESTINATION_APPROVED -u BC_PRIVATE_OUTPUT_DIR bash scripts/backup-neon-pg18-once.sh; then
             echo 'ERRO: rotina executou sem autorizacao'; exit 1
           fi
