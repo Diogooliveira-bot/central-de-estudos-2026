@@ -58,6 +58,33 @@ pg18(){
 pg18 pg_dump --version | grep -Eq '^pg_dump \(PostgreSQL\) 18\.' || die 'pg_dump não é PostgreSQL 18.'
 version="$(pg18 psql --no-psqlrc -Atqc "SELECT current_setting('server_version_num')" 2>"$tmp/pg-connect.err" || true)"
 [[ "$version" =~ ^18[0-9]{4}$ ]] || die 'Servidor/SSL/usuário não validado como PostgreSQL 18.'
+
+# A conta deve permitir leitura, sem privilégios administrativos ou DML nas tabelas.
+# Nenhum INSERT/UPDATE/DELETE ou ALTER é feito pela verificação.
+privilege_status="$(pg18 psql --no-psqlrc -Atqc "
+SELECT CASE WHEN
+  (SELECT NOT (rolsuper OR rolcreaterole OR rolcreatedb OR rolreplication OR rolbypassrls)
+     FROM pg_roles WHERE rolname=current_user)
+  AND NOT has_database_privilege(current_user,current_database(),'CREATE')
+  AND NOT EXISTS (
+    SELECT 1 FROM pg_class c JOIN pg_namespace n ON n.oid=c.relnamespace
+     WHERE c.relkind IN ('r','p','v','f','m')
+       AND n.nspname NOT IN ('pg_catalog','information_schema')
+       AND n.nspname NOT LIKE 'pg_toast%'
+       AND (has_table_privilege(current_user,c.oid,'INSERT')
+         OR has_table_privilege(current_user,c.oid,'UPDATE')
+         OR has_table_privilege(current_user,c.oid,'DELETE')
+         OR has_table_privilege(current_user,c.oid,'TRUNCATE'))
+  )
+  AND NOT EXISTS (
+    SELECT 1 FROM pg_class c JOIN pg_namespace n ON n.oid=c.relnamespace
+     WHERE c.relkind='S' AND n.nspname NOT IN ('pg_catalog','information_schema')
+       AND (has_sequence_privilege(current_user,c.oid,'UPDATE')
+         OR has_sequence_privilege(current_user,c.oid,'USAGE'))
+  )
+THEN 'READ_ONLY_OK' ELSE 'EXCESS_PRIVILEGES' END" 2>"$tmp/role.err" || true)"
+[[ "$privilege_status" == READ_ONLY_OK ]] || die 'Usuário Neon possui privilégios de escrita, é administrador ou não foi possível avaliar: interrompido.'
+
 if ! pg18 pg_dump --format=custom --blobs --compress=6 \
   --lock-wait-timeout=10000 --dbname=neondb > "$tmp/database.dump" 2>"$tmp/dump.err"; then
   die 'pg_dump falhou: não foi enviado nenhum backup. Verificar permissões em canal privado.'
