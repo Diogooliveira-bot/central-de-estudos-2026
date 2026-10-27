@@ -48,6 +48,7 @@ const PUBLIC_PATHS = new Set([
   '/login.html',
   '/convite.html',
   '/cadastro-gratuito.html',
+  '/conheca.html',
   '/recuperar-senha.html',
   '/ativar-acesso.html',
   '/favicon.ico',
@@ -212,7 +213,17 @@ export default async function middleware(request) {
 
   const token = parseCookie(request.headers.get('cookie'), COOKIE_NAME);
   const session = await verifyToken(token);
-  if (!session) return redirectToLogin(request);
+  if (!session) {
+    const newVisitorCanSeeLanding=path==='/' &&
+      process.env.BC_PUBLIC_FREE_SIGNUP_ENABLED==='true' &&
+      ((process.env.VERCEL_ENV==='production' &&
+        process.env.BC_PUBLIC_FREE_SIGNUP_PRODUCTION_APPROVED==='YES' &&
+        process.env.BC_SIGNUP_PRIVACY_APPROVED==='YES') ||
+       (process.env.VERCEL_ENV==='preview' &&
+        process.env.BC_FREE_SIGNUP_PREVIEW_ISOLATED==='YES'));
+    if(newVisitorCanSeeLanding)return Response.redirect(new URL('/conheca.html',request.url),302);
+    return redirectToLogin(request);
+  }
 
   if ((path === '/usuarios.html' || path === '/update-central.html' || (path === '/planos.html' || path === '/vendas-hotmart.html')) && session.role !== 'admin') {
     return Response.redirect(new URL('/', request.url), 302);
