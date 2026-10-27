@@ -127,3 +127,11 @@
 - **Cobertura acumulada ADM:** 20/20 módulos com validação técnica Chromium. M03 foi a referência de fixture com conteúdo aprovado; os outros 19 foram exercitados pelo leitor ADM real em teste local.
 - **Limitação:** sem conclusão da Preview autenticada; revisão editorial/visibilidade real de caixas, legibilidade jurídica de cada tabela e persistência no Neon ainda não avaliadas. Em especial, o seletor de caixas pedagógicas dos testes retornou 0 em vários materiais ADM, devendo haver inventário editorial antes de declarar o acabamento Premium definitivo.
 - **Próximo passo:** realizar inspeção editorial em amostras e a Preview privada (após a aprovação do ambiente `bc-preview-private`); seguir então para lote de Direito Penal/Processo Civil sem modificar texto automaticamente.
+
+## Fechamento da Etapa 4.3 — Evidências salvas (27/10/2026)
+
+- Execução revalidada após correção do caminho dos artefatos: [GitHub Actions 40599729567](https://github.com/Diogooliveira-bot/central-de-estudos-2026/actions/runs/40599729567) — **success**, 48 casos em Chromium real, zero falhas.
+- Evidências: [97 arquivos — 48 capturas principais, 48 capturas de tabelas, metricas.json](https://github.com/Diogooliveira-bot/central-de-estudos-2026/actions/runs/40599729567/artifacts/12778705139), retenção até 10/11/2026.
+- Conteúdo e leitores originais preservados. As capturas são do leitor em teste local, não da Central com sessão autenticada.
+- Direito Administrativo: 20/20 módulos tecnicamente testados no conjunto desta branch (M03 em fixture fiel; M01/M02/M04–M20 em leitores reais). Direito Constitucional: 15/15 módulos tecnicamente testados.
+- Próxima fase editorial: revisar cartões de exemplo/pegadinha, tabelas longas e hierarquia individual; verificar a Preview Vercel **somente após aprovação** do ambiente protegido. Em seguida, testar os demais módulos das outras quatro disciplinas jurídicas. Nenhuma publicação em produção autorizada ou executada.
