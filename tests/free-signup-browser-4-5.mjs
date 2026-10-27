@@ -23,6 +23,7 @@ try{
  await landing.goto(root+'/conheca.html');
  const free=landing.getByRole('link',{name:'Criar minha conta gratuita'});
  await free.waitFor({state:'visible'});
+ await landing.getByText('Crie sua conta gratuita e confirme seu e-mail.',{exact:false}).waitFor();
  await free.click();
  await landing.waitForURL('**/cadastro-gratuito.html');
  await landing.close();
