@@ -1,0 +1,39 @@
+name: Etapa 4.4 - diagnostico seguro Lei em Dia e Premium
+on:
+  push:
+    branches:
+      - prelaunch/etapa-4-4-20261027
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  regressao:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout do commit da branch isolada
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: Instalar Node.js 22
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Dependencias sem scripts de instalacao
+        run: npm ci --ignore-scripts
+      - name: Diagnosticar sincronizacao do Lei em Dia
+        if: always()
+        run: npm run test:lei-sync
+      - name: Testar integridade catalogo de questoes
+        if: always()
+        run: node --test tests/lei-em-dia-catalogo-integridade.mjs
+      - name: Testar Premium e protecao de gabaritos
+        if: always()
+        run: npm run test:premium-protection
+      - name: Testar Hotmart simulado sem pagamentos reais
+        if: always()
+        run: npm run test:hotmart-webhook
+      - name: Testar inicializacao do plano Gratuito
+        if: always()
+        run: node --test tests/free-central-boot-unit.mjs
