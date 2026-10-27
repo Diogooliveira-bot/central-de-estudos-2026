@@ -12,22 +12,58 @@ function key(part){return STORAGE+':'+part}
 function chapterDone(mode,id){return localStorage.getItem(key('chapter:'+mode+':'+id))==='1'}
 function setChapterDone(mode,id,v){localStorage.setItem(key('chapter:'+mode+':'+id),v?'1':'0')}
 
-function cleanLines(raw){
- return String(raw||'').replace(/\r/g,'').split('\n').map(norm).filter((line,i)=>{
+function cleanLines(raw,mode){
+ const complete=mode==='complete';
+ return String(raw||'').replace(/\r/g,'').split('\n').map(line=>{
+   // O texto da apostila foi exportado com rodapés de PDF colados ao começo
+   // de linhas válidas. Retirar apenas o carimbo, preservando o restante.
+   if(complete)line=line.replace(/^BASE COMPLETA\s*·\s*CPC\s*·\s*M01\s*\d+\s*\/\s*23/,'');
+   return norm(line);
+ }).filter(line=>{
    if(!line)return true;
    if(/^BASE COMPLETA(?:\s*[|•·-]|$)/i.test(line))return false;
    if(/^Resumo para primeira leitura/i.test(line))return false;
    if(/^Versão final auditada/i.test(line))return false;
    if(/^Foco:/i.test(line))return false;
    if(/^Núcleo legal:/i.test(line))return false;
-   if(/^BASE COMPLETA · CPC · M01 \d+ \/ \d+/i.test(line))return false;
    if(/^M01$/i.test(line))return false;
    return true;
  });
 }
+function reflowCpcComplete(lines){
+ // Somente títulos comprovadamente divididos no CPC M01 aprovado.
+ // O conteúdo de origem, índices persistidos e resumo não são alterados.
+ const continuations=[
+   [/^1\. Normas fundamentais — arts\. 1º a 12:/,2],
+   [/^2\. Fontes, interpretação e integração:/,2],
+   [/^3\. Aplicação das normas — arts\. 13 a 15:/,1],
+   [/^4\. Ponte para M02 — arts\. 16 a 41:/,1],
+   [/^9\. SISTEMA MULTIPORTAS E SOLUÇÃO CONSENSUAL/,1],
+   [/^10\. DURAÇÃO RAZOÁVEL, SOLUÇÃO INTEGRAL E PRIMAZIA/,1],
+   [/^18\. PUBLICIDADE, SEGREDO DE JUSTIÇA E FUNDAMENTAÇÃO/,1],
+   [/^25\. PONTE PARA O M02 — JURISDIÇÃO E AÇÃO/,1],
+   [/^27\. PONTE PARA O M02 — LIMITES DA JURISDIÇÃO/,1],
+   [/^28\. PONTE PARA O M02 — COOPERAÇÃO JURÍDICA/,1],
+   [/^29\. JURISPRUDÊNCIA ATUALIZADA PARA PROVA/,1],
+   [/^37\. FONTES NORMATIVAS E JURISPRUDENCIAIS UTILIZADAS/,1]
+ ];
+ const out=[];
+ for(let i=0;i<lines.length;i++){
+   const line=lines[i];
+   const match=continuations.find(([start])=>start.test(line));
+   if(!match){out.push(line);continue}
+   const extra=lines.slice(i+1,i+1+match[1]);
+   // Não anexar outro título caso a fonte seja alterada no futuro.
+   if(extra.length!==match[1]||extra.some(l=>!l||/^\d+\.\s+[A-ZÁÉÍÓÚÃÕÇ]/.test(l))){
+     out.push(line);continue;
+   }
+   out.push([line,...extra].join(' '));i+=match[1];
+ }
+ return out;
+}
 function headingInfo(line){
  const l=norm(line); if(!l)return null;
- let m=l.match(/^(\d+)\.\s+(.{3,180})$/); if(m)return {level:2,text:l};
+ let m=l.match(/^(\d+)\.\s+(.{3,450})$/); if(m)return {level:2,text:l};
  m=l.match(/^(\d+)\.(\d+)\s+(.{3,180})$/); if(m)return {level:3,text:l};
  if(/^(VISÃO GERAL|TEORIA ESSENCIAL|ARTIGOS PARA DECORAR|PEGADINHAS DE PROVA|REVISÃO ATIVA)$/i.test(l))return {level:2,text:l};
  return null;
@@ -40,28 +76,70 @@ function calloutType(line){
  if(/^REGRA DE BOLSO/.test(l))return ['memory','Regra de bolso'];
  return null;
 }
-function parse(raw){
- const lines=cleanLines(raw),blocks=[];let para=[];
+function cpcM01LawTable(lines,start){
+ if(lines[start]!=='Bloco Dispositivos Ponto de atenção')return null;
+ let end=start+1;
+ while(end<lines.length&&!/^5\. CONSTITUCIONALIZAÇÃO DO PROCESSO CIVIL/.test(lines[end]))end++;
+ if(end>=lines.length)return null;
+ const rows=[];
+ for(const line of lines.slice(start+1,end)){
+   if(!line||line==='Bloco Dispositivos Ponto de atenção')continue;
+   const cell=line.match(/^(.*?)\s+(CPC,\s+arts?\.\s*\d+º?(?:\s+e\s+\d+º?)?)\s+(.+)$/);
+   if(cell)rows.push({topic:cell[1],law:cell[2],note:cell[3]});
+   else if(rows.length)rows[rows.length-1].note+=' '+line;
+   else return null;
+ }
+ // Se a apostila mudar, conservamos o texto corrido em vez de perder células.
+ return rows.length===15?{rows,end}:null;
+}
+function parse(raw,mode){
+ const clean=cleanLines(raw,mode);
+ const lines=mode==='complete'?reflowCpcComplete(clean):clean;
+ const blocks=[];let para=[];
  const flush=()=>{if(para.length){blocks.push({type:'p',text:para.join(' ')});para=[]}};
  for(let i=0;i<lines.length;i++){
    const line=lines[i];
    if(!line){flush();continue}
+   if(mode==='complete'){
+     const table=cpcM01LawTable(lines,i);
+     if(table){flush();blocks.push({type:'lawTable',rows:table.rows});i=table.end-1;continue}
+   }
    const hi=headingInfo(line);
    if(hi){flush();blocks.push({type:'h',level:hi.level,text:hi.text});continue}
    const co=calloutType(line);
-   if(co){flush();const body=[];for(let j=i+1;j<lines.length;j++){const n=lines[j];if(!n){if(body.length)break;else continue}if(headingInfo(n)||calloutType(n))break;body.push(n);i=j}blocks.push({type:'callout',kind:co[0],label:co[1],text:body.join(' ')});continue}
-   if(isBullet(line)){flush();const items=[line.replace(/^[•●▪◦*-]\s+/,'')];while(i+1<lines.length&&isBullet(lines[i+1]))items.push(lines[++i].replace(/^[•●▪◦*-]\s+/,''));blocks.push({type:'ul',items});continue}
+   if(co){
+     flush();
+     const body=[];
+     // A frase após "Pegadinha:" ou "Atenção:" integra a explicação.
+     // Antes, o leitor a transformava em uma legenda gigante e separava
+     // a palavra final do restante da frase.
+     const colon=line.indexOf(':');
+     if(colon>=0&&colon<45){
+       co[1]=line.slice(0,colon+1);
+       const lead=line.slice(colon+1).trim();
+       if(lead)body.push(lead);
+     }
+     for(let j=i+1;j<lines.length;j++){
+       const n=lines[j];if(!n){if(body.length)break;else continue}
+       if(headingInfo(n)||calloutType(n))break;
+       body.push(n);i=j;
+     }
+     blocks.push({type:'callout',kind:co[0],label:co[1],text:body.join(' ')});
+     continue;
+   }
+   if(isBullet(line)){flush();const items=[line.replace(/^[•●▪◦*-]\s+/,'')];while(i+1<lines.length&&isBullet(lines[i+1]))items.push(lines[++i].replace(/^[•●▪◦*-]\s+/,'')];blocks.push({type:'ul',items});continue}
    para.push(line);
  }
- flush(); return blocks;
+ flush();return blocks;
 }
-function build(raw){
- let h=0; const blocks=parse(raw);
+function build(raw,mode){
+ let h=0; const blocks=parse(raw,mode);
  const body=blocks.map(b=>{
    if(b.type==='h'){const id='cpcsec-'+(++h)+'-'+normKey(b.text).replace(/\s+/g,'-').slice(0,60);return '<h'+b.level+' id="'+id+'">'+esc(b.text)+'</h'+b.level+'>'}
    if(b.type==='p')return '<p>'+esc(b.text)+'</p>';
    if(b.type==='ul')return '<ul>'+b.items.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul>';
    if(b.type==='callout')return '<aside class="bc-native-callout '+b.kind+'"><b>'+esc(b.label)+'</b><div>'+esc(b.text)+'</div></aside>';
+   if(b.type==='lawTable')return '<div class="bc-cpc-m01-table-scroll" tabindex="0" role="region" aria-label="Lei seca esquematizada: deslize para visualizar as colunas"><table class="bc-cpc-m01-reading-table"><thead><tr><th scope="col">Bloco</th><th scope="col">Dispositivos</th><th scope="col">Ponto de atenção</th></tr></thead><tbody>'+b.rows.map(r=>'<tr><th scope="row">'+esc(r.topic)+'</th><td>'+esc(r.law)+'</td><td>'+esc(r.note)+'</td></tr>').join('')+'</tbody></table></div>';
    return '';
  }).join('');
  const words=norm(raw).split(/\s+/).filter(Boolean).length;
@@ -114,7 +192,7 @@ function close(){
 function open(mode){
  const data=source(); if(!data){alert('Conteúdo do CPC M01 ainda está carregando.');return}
  close();
- const raw=mode==='summary'?data.summary:data.complete,parsed=(mode==='summary'&&data.summaryHtml)?buildFromHtml(data.summaryHtml,raw):build(raw),label=mode==='summary'?'Conteúdo resumido':'Conteúdo completo';
+ const raw=mode==='summary'?data.summary:data.complete,parsed=(mode==='summary'&&data.summaryHtml)?buildFromHtml(data.summaryHtml,raw):build(raw,mode),label=mode==='summary'?'Conteúdo resumido':'Conteúdo completo';
  const ov=document.createElement('div');ov.id=OVERLAY_ID;ov.className='bc-native-reader-overlay';
  ov.innerHTML='<section class="bc-native-reader" role="dialog" aria-modal="true">'+
  '<header class="bc-native-reader-head"><div class="bc-native-reader-title"><b>CPC M01 — '+esc(data.title)+'</b><small>'+label+' • leitura incorporada à Base Completa</small></div><span class="bc-native-reader-meta">'+parsed.words.toLocaleString('pt-BR')+' palavras • ~'+parsed.mins+' min</span><button class="bc-native-reader-close" data-cpc-close>×</button><div class="bc-native-reader-progress-track"><div class="bc-native-reader-progress"></div></div></header>'+
