@@ -73,8 +73,9 @@ function nextUrl(){var p=new URLSearchParams(location.search).get('next')||'/';r
 async function jsonFetch(url,opt){var r=await fetch(url,opt||{}),j={};try{j=await r.json()}catch(_){}if(!r.ok)throw new Error(j.error||('HTTP '+r.status));return j}
 async function init(){
  try{
-  var signup=await jsonFetch('/api/auth?action=free-signup-status');
-  if(signup.enabled)document.getElementById('publicSignupLink').hidden=false;
+  jsonFetch('/api/auth?action=free-signup-status').then(function(signup){
+   if(signup.enabled)document.getElementById('publicSignupLink').hidden=false;
+  }).catch(function(){});
  }catch(_){}
  try{
   var me=await jsonFetch('/api/auth?action=me');
