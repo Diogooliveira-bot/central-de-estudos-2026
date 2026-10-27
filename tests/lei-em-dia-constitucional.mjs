@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import vm from 'node:vm';
+import { protectedAsset } from '../lib/protected-content.js';
 
 const root=new URL('../',import.meta.url),ctx=vm.createContext({});
 for(const path of ['tools/decorando-data-cf.js','tools/decorando-data-cf-leis.js']) vm.runInContext(readFileSync(new URL(path,root),'utf8'),ctx);
@@ -59,7 +60,9 @@ test('interface e pacote offline carregam as leis mantendo a chave do progresso'
   assert.equal((html.match(/<script src="\.\/decorando-data-cf-leis\.js/g)||[]).length,1);
   assert.ok(html.includes('const STORAGE_KEY = "lei-seca-enxuta-state"'));
   const offline=JSON.parse(readFileSync(new URL('central-offline-files-v66172.json',root)));
-  assert.ok(offline.files.includes('/tools/decorando-data-cf-leis.js?v=20261008cf1'));
+  const asset='/tools/decorando-data-cf-leis.js';
+  assert.equal(protectedAsset(asset)?.feature,'premium.reviews');
+  assert.ok(!offline.files.some(file=>file.split('?')[0]===asset),'Questões Premium não devem estar no cache público');
 });
 
 test('filtros das oito leis, resposta e recarga preservam o progresso anterior',()=>{
@@ -70,7 +73,7 @@ test('filtros das oito leis, resposta e recarga preservam o progresso anterior',
     const document={documentElement:{dataset:{}},addEventListener(){},getElementById(){return null}};
     const window={scrollTo(){},addEventListener(){}};
     const localStorage={getItem:k=>storage.get(k)||null,setItem:(k,v)=>storage.set(k,v)};
-    const context=vm.createContext({document,window,localStorage,URLSearchParams,location:{search:''},setTimeout,clearTimeout});
+    const context=vm.createContext({document,window,localStorage,URLSearchParams,location:{search:''},setTimeout,clearTimeout,DATA_LED_APPROVED:[],TOPICS_LED_APPROVED:[]});
     for(const m of html.matchAll(/<script([^>]*)>([\s\S]*?)<\/script>/g)){
       const external=m[1].match(/src="\.\/((?:decorando-data-[^"?]+|lei-em-dia-admin-editor\.js))(?:\?[^" ]*)?"/);
       if(external)vm.runInContext(readFileSync(new URL('tools/'+external[1],root),'utf8'),context);
