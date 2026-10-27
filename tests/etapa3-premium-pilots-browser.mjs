@@ -62,8 +62,8 @@ try{
    await page.locator('#'+spec.id+' .bc-native-reader').screenshot({path:pre+'-leitor.png'});
    const check=await page.evaluate(({id,sel})=>{
      const btn=document.getElementById(id).querySelector(sel);
-     if(!btn)return null;const old=btn.getAttribute('aria-pressed');btn.click();
-     return {old,updated:btn.getAttribute('aria-pressed')};
+     if(!btn)return null;const old=btn.classList.contains('done');btn.click();
+     return {old,updated:btn.classList.contains('done')};
    },spec);
    assert.ok(check,spec.name+': checkbox ausente');
    assert.notEqual(check.old,check.updated,spec.name+': checkbox não reagiu');
@@ -71,7 +71,7 @@ try{
    assert.equal(await page.locator('#'+spec.id).count(),0);
    await page.evaluate(({api})=>window[api].open('complete'),spec);
    await page.waitForFunction(id=>!!document.getElementById(id),spec.id);
-   const after=await page.evaluate(({id,sel})=>document.getElementById(id).querySelector(sel)?.getAttribute('aria-pressed'),spec);
+   const after=await page.evaluate(({id,sel})=>document.getElementById(id).querySelector(sel)?.classList.contains('done'),spec);
    assert.equal(after,check.updated,spec.name+': checkbox não persistiu');
    await page.evaluate(({api})=>window[api].open('summary'),spec);
    await page.waitForFunction(id=>!!document.getElementById(id),spec.id);
