@@ -21,6 +21,7 @@ button{margin-top:22px;width:100%;border:0;border-radius:9px;background:var(--na
 <label for="email">Seu e-mail</label><input id="email" name="email" type="email" autocomplete="email" maxlength="240" required>
 <label for="password">Crie uma senha (mínimo 12 caracteres)</label><input id="password" type="password" autocomplete="new-password" minlength="12" maxlength="200" required>
 <label for="confirm">Confirme sua senha</label><input id="confirm" type="password" autocomplete="new-password" minlength="12" maxlength="200" required>
+<div id="signupCaptcha" aria-label="Verificação de segurança"></div>
 <button type="submit" id="submit">Enviar confirmação por e-mail</button>
 </form>
 <p class="links">Já tem uma conta? <a href="/login.html">Entrar</a> · <a href="/recuperar-senha.html">Esqueci minha senha</a></p>
@@ -28,6 +29,24 @@ button{margin-top:22px;width:100%;border:0;border-radius:9px;background:var(--na
 (function(){
 'use strict';
 var form=document.getElementById('register'),state=document.getElementById('state'),btn=document.getElementById('submit');
+var captchaToken='';
+fetch('/api/auth?action=free-signup-status',{cache:'no-store'}).then(function(r){return r.ok?r.json():null;}).then(function(config){
+ if(!config||!config.enabled||!config.siteKey)return;
+ var script=document.createElement('script');
+ script.src='https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
+ script.async=true;
+ script.onload=function(){
+  if(!window.turnstile)return;
+  window.turnstile.render('#signupCaptcha',{
+   sitekey:config.siteKey,action:'free-signup',
+   callback:function(t){captchaToken=t},
+   'expired-callback':function(){captchaToken=''},
+   'error-callback':function(){captchaToken=''}
+  });
+ };
+ document.head.appendChild(script);
+}).catch(function(){});
+
 function message(s,b){state.textContent=s;state.className='state'+(b?' '+b:'')}
 async function post(body){var r=await fetch('/api/auth?action=free-signup',{method:'POST',cache:'no-store',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)}),j={};try{j=await r.json()}catch(_){}if(!r.ok)throw Error(j.error||'Não foi possível concluir o cadastro');return j}
 var token='';try{token=new URLSearchParams(location.hash.slice(1)).get('token')||'';if(token){sessionStorage.setItem('bc_free_signup_token',token);history.replaceState(null,'',location.pathname)}}catch(_){}
@@ -46,7 +65,7 @@ var p=document.getElementById('password').value,c=document.getElementById('confi
 if(p!==c){message('As senhas não coincidem.','bad');return}
 btn.disabled=true;message('Preparando confirmação...');
 try{
-var x=await post({action:'request',name:document.getElementById('name').value,email:document.getElementById('email').value,password:p});
+var x=await post({action:'request',name:document.getElementById('name').value,email:document.getElementById('email').value,password:p,turnstileToken:captchaToken});
 form.hidden=true;message(x.message||'Confira seu e-mail.','good');
 }catch(err){message(err.message,'bad');btn.disabled=false}
 });
