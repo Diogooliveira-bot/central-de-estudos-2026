@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import crypto from 'node:crypto';
 import nodemailer from 'nodemailer';
 import { createFreeSignupHandler } from '../lib/free-signup-handler.js';
+import { sendResetEmail,emailConfig } from '../lib/password-reset.js';
 
 const env={
  VERCEL_ENV:'preview',VERCEL_URL:'preview-free-45.vercel.app',
@@ -69,5 +70,19 @@ try{
  await handler(request({action:'confirm',token}),reused);
  assert.equal(reused.statusCode,410);
  assert.equal(assigned.size,1);
+
+ const resetLink='https://preview-free-45.vercel.app/recuperar-senha.html#token='+'R'.repeat(43);
+ await sendResetEmail({
+  to:'mailpit-reset@example.invalid',link:resetLink,id:crypto.randomUUID(),
+  config:emailConfig(env),transport:async(message)=>{
+    const result=await transport.sendMail(message);
+    assert.equal(result.accepted.length,1);
+    return result.messageId;
+  },
+ });
+ const recoveryMessage=await (await fetch('http://127.0.0.1:8025/view/latest.txt')).text();
+ assert.ok(recoveryMessage.includes(resetLink),'Email de recuperacao nao chegou ao Mailpit');
+ console.log('PASS: SMTP Mailpit recebeu email de recuperacao de senha em endereco ficticio');
+
  console.log('PASS: SMTP REAL local no Mailpit, mensagem recebida, token confirmado, plano free, token reusado bloqueado');
 } finally{transport.close()}
