@@ -153,7 +153,7 @@ async function environmentProof(req, res) {
     return send(res, 200, {
       vercelEnvironment: process.env.VERCEL_ENV || null,
       gitBranch: process.env.VERCEL_GIT_COMMIT_REF || null,
-      database: rows[0]?.database_name || parsed.pathname.replace(/^\\//, ''),
+      database: rows[0]?.database_name || parsed.pathname.replace(/^\//, ''),
       endpoint,
       pooled: host.includes('-pooler'),
       expectedHomologationEndpoint: endpoint === 'ep-late-haze-b8j5xjdh',
