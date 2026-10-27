@@ -94,6 +94,11 @@ try{
     if(m.tables)await page.locator('#'+id+' .bc-native-article table').first().screenshot({path:name+'-tabela.png'});
     const check=page.locator('#'+id+' [data-chapter-check]').first();
     const before=await check.evaluate(b=>b.classList.contains('done'));
+    // Os controles de capítulos são recolhidos por padrão no modo de leitura.
+    // Abrir o painel como o aluno faria, antes de clicar no checkbox real.
+    const chaptersToggle=page.locator('#'+id+' .bc-reading-chapters-toggle');
+    assert.equal(await chaptersToggle.count(),1,label+': botão Capítulos ausente');
+    await chaptersToggle.click();
     await check.click();
     const after=await check.evaluate(b=>b.classList.contains('done'));
     assert.notEqual(after,before,label+': marcação não reagiu');
