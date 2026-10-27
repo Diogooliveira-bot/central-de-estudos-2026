@@ -8,7 +8,7 @@ import {runInNewContext} from "node:vm";
 const root=resolve(".");
 // Mesmo contrato do endpoint real: expor apenas metadados para seleção progressiva.
 const approvedSource=await readFile(resolve(root,"tools/decorando-data-led-aprovadas.js"),"utf8");
-const approved=runInNewContext(approvedSource+"\\n;DATA_LED_APPROVED",{}, {timeout:2000});
+const approved=runInNewContext(approvedSource+"\n;DATA_LED_APPROVED",{}, {timeout:2000});
 const metadata=approved.map(q=>({
  id:String(q.id),discipline:String(q.discipline||""),topicId:String(q.topicId||""),
  subtopic:String(q.subtopic||""),number:String(q.number||""),title:String(q.title||""),
@@ -19,7 +19,7 @@ const metadata=approved.map(q=>({
  }
 }));
 const progressiveCatalogScript="const DATA_LED_APPROVED = "+JSON.stringify(metadata)+";";
-assert.ok(!/"(?:answer|statement|explanation|source|parts)"\\s*:/.test(progressiveCatalogScript),
+assert.ok(!/"(?:answer|statement|explanation|source|parts)"\s*:/.test(progressiveCatalogScript),
  "Mock do catálogo jamais deve enviar gabarito, enunciado ou fonte privada.");
 const mime={".html":"text/html",".js":"text/javascript",".css":"text/css",".json":"application/json",".png":"image/png",".webp":"image/webp",".svg":"image/svg+xml"};
 const server=createServer(async(request,response)=>{
