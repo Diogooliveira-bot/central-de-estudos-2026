@@ -40,9 +40,15 @@ if v.get('type')!='drive' or v.get('scope')!='drive.file':
   raise SystemExit('Integração deve usar Drive com escopo limitado drive.file.')
 if v.get('root_folder_id') or v.get('service_account_file') or v.get('service_account_credentials'):
   raise SystemExit('Destino ou identidade não permitida.')
-if not v.get('client_id') or not v.get('client_secret') or not v.get('token'):
-  raise SystemExit('OAuth do Google Drive incompleto.')
-json.loads(v['token'])
+# client_id/client_secret podem ficar em branco: rclone usa cliente OAuth compartilhado.
+# Se usar app próprio, ambos precisam estar presentes.
+if bool(v.get('client_id')) != bool(v.get('client_secret')):
+  raise SystemExit('Credenciais OAuth próprias incompletas.')
+if not v.get('token'):
+  raise SystemExit('Token OAuth não configurado.')
+token=json.loads(v['token'])
+if not token.get('refresh_token'):
+  raise SystemExit('Token sem refresh_token: não serve para cópias persistentes.')
 PY
 gpg --batch --quiet --import "$tmp/public.asc" >/dev/null 2>&1 || die 'Importação da chave pública falhou.'
 actual="$(gpg --batch --with-colons --fingerprint "$BC_GPG_RECIPIENT_FPR" 2>/dev/null | awk -F: '$1=="fpr"{print $10;exit}')"
