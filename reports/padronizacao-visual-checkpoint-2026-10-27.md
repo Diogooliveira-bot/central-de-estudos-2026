@@ -316,4 +316,67 @@ Contagens de elementos efetivamente renderizados no navegador (mesmas nas três 
 - Exercitar conteúdo original realmente descompactado e os resumos em Chromium real, 390/768/1366 px, inclusive navegação, marcação de conclusão e persistência local, aparência Premium restrita ao completo, sem overflow de página ou erro JS.
 - Inventariar H1/H2/H3, tabelas HTML, elementos `pre` e callouts. O resultado **não implica** certificação editorial do material ou da estrutura semântica de possíveis comparativos.
 - Sem alterar conteúdo, leitor, `main`, produção, credenciais, acesso pago, Neon ou fluxo da Preview privada.
-- **Situação inicial:** execução pendente de confirmação. Não elevar o indicador 87/109 antes de examinar o workflow.
+- **Resultado:** 66/66 testes Chromium aprovados no workflow `40605367162`; detalhes, inventário e pendências no fechamento abaixo.
+
+## Etapa 8 — CPP M01–M22: encerramento técnico (27/10/2026)
+
+- **Workflow Chromium:** [40605367162](https://github.com/Diogooliveira-bot/central-de-estudos-2026/actions/runs/40605367162) — `completed/success`, 66/66 testes (22 módulos × 390/768/1366 px), sem erro de JavaScript ou overflow horizontal global.
+- **Evidências:** [artefato 12780652508](https://github.com/Diogooliveira-bot/central-de-estudos-2026/actions/runs/40605367162/artifacts/12780652508), cerca de 9,4 MB com screenshots e `metricas.json`, expira aproximadamente em 10/11/2026.
+- Teste sobre a **fonte original descompactada** de `content/cpp/cpp-native-content-packed.js` (22 completos e 22 resumos), com `ui/cpp-native-study-v1.js` e sessão real do leitor. O Premium foi aplicado apenas às versões completas. O botão **Concluir leitura** persistiu no `localStorage` isolado após fechamento e reabertura dos 22 módulos; os resumos permaneceram fora do tema. Não houve login real, Neon nem teste de autorização de aluno.
+- Os 22 módulos possuem tabelas **HTML semânticas detectadas** (com linhas) no leitor e CSS Premium nos títulos. A existência de uma tabela HTML não prova que todas as comparações do documento original foram convertidas nem que cada coluna foi validada editorialmente.
+
+### Inventário visual — Direito Processual Penal
+
+| CPP | Caracteres lidos | H2 | H3 | Tabelas HTML | Índice do leitor |
+|---|---:|---:|---:|---:|---:|
+| M01 | 34.189 | 10 | 16 | 8 | 28 |
+| M02 | 36.144 | 15 | 16 | 11 | 33 |
+| M03 | 52.718 | 10 | 3 | 11 | 15 |
+| M04 | 45.194 | 3 | 26 | 10 | 31 |
+| M05 | 30.328 | 20 | 93 | 8 | 50 |
+| M06 | 57.050 | 36 | 56 | 21 | 50 |
+| M07 | 62.388 | 37 | 67 | 14 | 50 |
+| M08 | 37.828 | 23 | 11 | 8 | 50 |
+| M09 | 31.202 | 36 | 71 | 14 | 50 |
+| M10 | 51.234 | 2 | 31 | 10 | 33 |
+| M11 | 42.792 | 14 | 89 | 12 | 50 |
+| M12 | 75.487 | 10 | 20 | 22 | 32 |
+| M13 | 61.677 | 62 | 37 | 19 | 50 |
+| M14 | 64.969 | 44 | 35 | 16 | 50 |
+| M15 | 48.154 | 53 | 67 | 8 | 50 |
+| M16 | 53.374 | 25 | 64 | 13 | 50 |
+| M17 | 33.298 | 54 | 102 | 8 | 50 |
+| M18 | 37.561 | 43 | 68 | 9 | 50 |
+| M19 | 52.869 | 2 | 40 | 22 | 42 |
+| M20 | 49.039 | 32 | 42 | 15 | 50 |
+| M21 | 52.413 | 2 | 30 | 13 | 32 |
+| M22 | 52.568 | 40 | 29 | 13 | 50 |
+
+### Pendências editoriais/UX identificadas — não alteradas neste ciclo
+
+1. **Índice truncado:** `ui/cpp-native-study-v1.js` usa `.slice(0,50)` ao construir o índice. Nos módulos com mais de 50 títulos, a navegação *não mostra todos os tópicos*, ainda que o corpo esteja carregado. Corrigir essa limitação com solução responsiva e teste de desempenho/acessibilidade, sem tocar no progresso.
+2. **Hierarquia:** CPP M04, M10, M19 e M21 têm apenas 2–3 H2, mas dezenas de H3; conferir se as seções principais foram niveladas corretamente. CPP M03 mistura títulos de orientação e títulos de capítulo. Não usar conversão indiscriminada.
+3. **Tabelas longas:** são 8–22 tabelas HTML por módulo. Conferir no visual editorial mobile cabeçalhos, contraste, rolagem horizontal local e fidelidade às fontes; o teste atual verificou estrutura básica e ausência de overflow **da página**.
+4. **CPP M16:** há um bloco `pre` remanescente entre tabelas e seções; verificar a legibilidade do conteúdo antes de converter.
+5. **Validação da Preview privada:** continua pendente de aprovação do ambiente `bc-preview-private`. O workflow de deploy ainda está fixado no SHA antigo `10c4d9a...`; aprovar a execução sem atualizar o checkout pinado **não exibe** automaticamente esta versão.
+6. **Fidelidade jurídica, provas e aluno autenticado:** não validados nesta rodada. O resultado Chromium confirma somente os comportamentos explicitamente testados com fixtures estáticas locais, não autorização Premium, sincronização Neon nem precisão editorial/legal.
+
+### Marco de cobertura dos 109 módulos jurídicos
+
+| Disciplina | Testes técnicos do visual Premium |
+|---|---:|
+| Administrativo | 20/20 |
+| Constitucional | 15/15 |
+| Penal | 17/17 |
+| Processual Civil | 20/20 |
+| Civil | 15/15 |
+| Processual Penal | 22/22 |
+| **Total** | **109/109** |
+
+**Status correto: 109/109 módulos exercitados em testes técnicos em Chromium local. NÃO são 109/109 apostilas editorialmente aprovadas, liberadas em Preview autenticada ou publicadas na produção.** Mantidos `main`, Production, segredos, acesso pago e banco Neon.
+
+### Próximas etapas recomendadas depois da primeira rodada técnica
+
+- **Etapa 9 — Correção visual editorial segura:** fila de pendências com prioridade para tabelas em CPC M02–M20 (nenhuma HTML detectada), blocos `pre` de Civil, quadros achatados de Penal M01, hierarquia de títulos e índice truncado CPP; trabalhar por amostras e módulos, preservando texto, tabelas e rastreabilidade de comparação.
+- **Etapa 10 — Preview privada integrada:** revisão de segurança, aprovação manual do `bc-preview-private`, atualização controlada do SHA de checkout pinado para um commit aprovado; validação real autenticada e controles de acesso sem tornar Preview pública e sem modificar Production.
+- **Etapa 11 — Aprovação e eventual publicação:** somente mediante autorização expressa e após os gates editoriais, responsivos e de segurança. Não mesclar em `main` por inferência.
