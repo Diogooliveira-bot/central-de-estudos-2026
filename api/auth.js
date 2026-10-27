@@ -16,6 +16,7 @@ import {
   verifyPassword,
 } from '../lib/auth.js';
 import handleInviteAction from '../lib/invite-handler.js';
+import handleFreeSignup from '../lib/free-signup-handler.js';
 import handlePasswordReset from '../lib/password-reset.js';
 import handleLeiEmDiaQuestions from '../lib/lei-em-dia-questions-handler.js';
 import handlePlans from '../lib/plans-handler.js';
@@ -182,6 +183,7 @@ export default async function handler(req, res) {
     const action = String(req.query?.action || '').toLowerCase();
     if (req.method === 'POST' && !sameOriginRequest(req)) return send(res, 403, { error: 'Origem da requisição não permitida' });
 
+    if (action === 'free-signup') return handleFreeSignup(req, res);
     if (action.startsWith('invite-')) return handleInviteAction(req, res, action.slice('invite-'.length));
     if (action.startsWith('password-reset-')) return handlePasswordReset(req, res, action.slice('password-reset-'.length));
 
