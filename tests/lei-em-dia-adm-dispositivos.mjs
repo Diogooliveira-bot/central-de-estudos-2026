@@ -2,6 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import vm from "node:vm";
+import { protectedAsset } from "../lib/protected-content.js";
 const root=new URL("../",import.meta.url);
 const paths=[
  ["9784","DATA_ADM"],["pack1","DATA_ADM_PACK1"],["pack2","DATA_ADM_PACK2"],
@@ -38,11 +39,14 @@ test("dispositivo canônico limita a duas questões inclusive entre arquivos com
  }
  for(const [device,ids] of counts)assert.ok(ids.length<=2,"Ultrapassou duas questões: "+device+": "+ids.join(", "));
 });
-test("pacote 5 está integrado ao filtro de subassuntos da Lei em Dia",()=>{
+test("pacote 5 integra o filtro sem vazar questões Premium ao cache offline",()=>{
  const html=readFileSync(new URL("tools/decorando.html",root),"utf8");
  const manifest=JSON.parse(readFileSync(new URL("central-offline-files-v66172.json",root),"utf8"));
  assert.ok(html.includes("DATA_ADM_PACK5"));
  assert.ok(html.includes("decorando-data-adm-pack5.js"));
  assert.ok(html.includes("856 questões"));
- assert.ok(manifest.files.some(x=>x.includes("decorando-data-adm-pack5.js")));
+ const premiumAsset="/tools/decorando-data-adm-pack5.js";
+ assert.equal(protectedAsset(premiumAsset)?.kind,"file");
+ assert.equal(protectedAsset(premiumAsset)?.feature,"premium.reviews");
+ assert.ok(!manifest.files.some(x=>x.split("?")[0]===premiumAsset),"Banco de questões Premium não pode ser cacheado publicamente");
 });
