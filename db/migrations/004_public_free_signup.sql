@@ -16,3 +16,5 @@ CREATE TABLE IF NOT EXISTS public.central_free_signup_limits (
  attempt_count INTEGER NOT NULL DEFAULT 1
 );
 -- Nao alterar tabelas existentes; protecoes Gratuito/Premium permanecem intactas.
+
+CREATE INDEX IF NOT EXISTS central_free_signup_limits_old_idx ON public.central_free_signup_limits(window_start);
