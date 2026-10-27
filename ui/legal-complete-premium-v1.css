@@ -91,3 +91,44 @@ html.bc-ui-v1 :is(#bcNativeReaderOverlay.bc-apostila-v1[data-bc-premium-pilot="p
 html.bc-ui-v1 :is(#bcNativeReaderOverlay.bc-apostila-v1[data-bc-premium-pilot="penal-m01"],#cpcNativeReaderOverlay.bc-apostila-v1[data-bc-premium-pilot="cpc-m01"]) .bc-native-article table th{background:var(--bc-premium-mist)!important;color:var(--bc-premium-navy)!important;}
 @media(max-width:900px){html.bc-ui-v1 :is(#bcNativeReaderOverlay.bc-apostila-v1[data-bc-premium-pilot="penal-m01"],#cpcNativeReaderOverlay.bc-apostila-v1[data-bc-premium-pilot="cpc-m01"]) .bc-native-article :is(.bc-editor-table-wrap,.table-wrap,.adm-table-scroll)::before{content:"↔ Deslize para visualizar as outras colunas";display:block;position:sticky;left:0;z-index:1;box-sizing:border-box;width:max-content;max-width:100%;padding:8px 12px;background:var(--bc-premium-mist);color:var(--bc-premium-muted);font:650 12px/1.4 ui-sans-serif,system-ui,sans-serif;pointer-events:none;}}
 @media(max-width:620px){html.bc-ui-v1 :is(#bcNativeReaderOverlay.bc-apostila-v1[data-bc-premium-pilot="penal-m01"],#cpcNativeReaderOverlay.bc-apostila-v1[data-bc-premium-pilot="cpc-m01"]) .bc-native-article{padding:28px 18px 72px!important;}html.bc-ui-v1 :is(#bcNativeReaderOverlay.bc-apostila-v1[data-bc-premium-pilot="penal-m01"],#cpcNativeReaderOverlay.bc-apostila-v1[data-bc-premium-pilot="cpc-m01"]) .bc-native-article>h2{font-size:21px!important;padding:13px 12px!important;margin-top:33px!important;}html.bc-ui-v1 :is(#bcNativeReaderOverlay.bc-apostila-v1[data-bc-premium-pilot="penal-m01"],#cpcNativeReaderOverlay.bc-apostila-v1[data-bc-premium-pilot="cpc-m01"]) .bc-native-article>h3{font-size:17px!important;}html.bc-ui-v1 :is(#bcNativeReaderOverlay.bc-apostila-v1[data-bc-premium-pilot="penal-m01"],#cpcNativeReaderOverlay.bc-apostila-v1[data-bc-premium-pilot="cpc-m01"]) .bc-native-article .bc-native-callout{padding:14px!important;}}
+
+/* CPC-M01-FRASES-E-QUADRO-20261027 — somente quadro reconstruído do texto original.
+   Mesmas cores e hierarquia aprovadas. O ADM M03 e o Penal M01 permanecem intactos. */
+html.bc-ui-v1 #cpcNativeReaderOverlay.bc-apostila-v1[data-bc-premium-pilot="cpc-m01"] .bc-native-article .bc-cpc-m01-table-scroll{
+ display:block;position:relative;box-sizing:border-box;width:100%;max-width:100%;min-width:0;
+ margin:23px 0 28px!important;overflow-x:auto;overscroll-behavior-x:contain;
+ -webkit-overflow-scrolling:touch;scrollbar-gutter:stable;
+ border:1px solid var(--bc-premium-line);border-radius:10px;
+ background:var(--bc-reading-paper,#fff);
+}
+html.bc-ui-v1 #cpcNativeReaderOverlay.bc-apostila-v1[data-bc-premium-pilot="cpc-m01"] .bc-native-article .bc-cpc-m01-table-scroll>.bc-cpc-m01-reading-table{
+ display:table!important;width:100%!important;min-width:750px!important;max-width:none!important;
+ margin:0!important;border-collapse:collapse!important;table-layout:auto!important;overflow:visible!important;
+}
+html.bc-ui-v1 #cpcNativeReaderOverlay.bc-apostila-v1[data-bc-premium-pilot="cpc-m01"] .bc-native-article .bc-cpc-m01-reading-table :is(th,td){
+ box-sizing:border-box;min-width:140px;padding:11px 13px!important;
+ font:500 14px/1.5 ui-sans-serif,system-ui,sans-serif!important;
+ word-break:normal!important;overflow-wrap:normal!important;hyphens:none!important;
+ white-space:normal;vertical-align:top;color:var(--bc-premium-ink)!important;
+ border:1px solid var(--bc-premium-line);
+}
+html.bc-ui-v1 #cpcNativeReaderOverlay.bc-apostila-v1[data-bc-premium-pilot="cpc-m01"] .bc-native-article .bc-cpc-m01-reading-table thead th{
+ background:var(--bc-premium-navy)!important;color:#fff!important;font-weight:750!important;
+}
+html.bc-ui-v1 #cpcNativeReaderOverlay.bc-apostila-v1[data-bc-premium-pilot="cpc-m01"] .bc-native-article .bc-cpc-m01-reading-table tbody th{
+ font-weight:700!important;background:var(--bc-premium-mist)!important;color:var(--bc-premium-navy)!important;
+}
+html.bc-ui-v1 #cpcNativeReaderOverlay.bc-apostila-v1[data-bc-premium-pilot="cpc-m01"] .bc-native-article .bc-cpc-m01-reading-table tbody tr:nth-child(even) td{
+ background:var(--bc-premium-mist)!important;
+}
+@media(max-width:900px){
+ html.bc-ui-v1 #cpcNativeReaderOverlay.bc-apostila-v1[data-bc-premium-pilot="cpc-m01"] .bc-native-article .bc-cpc-m01-table-scroll::before{
+  content:"↔ Deslize para visualizar as outras colunas";display:block;position:sticky;left:0;z-index:1;
+  box-sizing:border-box;max-width:100%;width:max-content;padding:8px 12px;pointer-events:none;
+  font:650 12px/1.4 ui-sans-serif,system-ui,sans-serif;color:var(--bc-premium-muted);
+  background:var(--bc-premium-mist);
+ }
+}
+@media(max-width:620px){
+ html.bc-ui-v1 #cpcNativeReaderOverlay.bc-apostila-v1[data-bc-premium-pilot="cpc-m01"] .bc-native-article .bc-cpc-m01-table-scroll>.bc-cpc-m01-reading-table{min-width:710px!important;}
+}
