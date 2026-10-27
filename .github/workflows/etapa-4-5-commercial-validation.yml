@@ -13,6 +13,7 @@ on:
       - 'db/migrations/004_public_free_signup.sql'
       - 'tests/public-free-signup-4-5-unit.mjs'
       - 'tests/free-signup-browser-4-5.mjs'
+      - 'tests/free-signup-mailpit-4-5.mjs'
       - 'tests/commercial-journey-4-5-unit.mjs'
       - '.github/workflows/etapa-4-5-commercial-validation.yml'
   workflow_dispatch:
@@ -35,7 +36,17 @@ jobs:
         run: npm ci --ignore-scripts --no-audit --no-fund
       - name: Teste comercial dedicado, sem banco ou pagamentos
         run: node --test tests/commercial-journey-4-5-unit.mjs tests/public-free-signup-4-5-unit.mjs tests/hotmart-webhook-unit.mjs tests/plan-access-unit.mjs tests/password-reset-unit.mjs
-      - name: Instalar Chromium Playwright
-        run: npx playwright install --with-deps chromium
+      - name: Captura SMTP local isolada Mailpit
+        run: |
+          docker run -d --name bc-mailpit --rm -p 127.0.0.1:1025:1025 -p 127.0.0.1:8025:8025 axllent/mailpit:latest
+          for i in $(seq 1 30); do
+            if curl -fsS http://127.0.0.1:8025/api/v1/messages >/dev/null; then exit 0; fi
+            sleep 2
+          done
+          exit 1
+      - name: Testar SMTP real local, confirmacao e uso unico
+        run: node tests/free-signup-mailpit-4-5.mjs
+      - name: Instalar Chromium Headless Playwright
+        run: npx playwright install chromium --only-shell
       - name: Navegador real desktop e celular com API simulada
         run: node tests/free-signup-browser-4-5.mjs
