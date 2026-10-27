@@ -1,0 +1,50 @@
+name: Padronização Premium — CPC M02–M20
+
+on:
+  push:
+    branches: [preview/legal-complete-premium-v1-20261025]
+    paths:
+      - '.github/workflows/verify-etapa6-cpc-m02-m20.yml'
+      - 'tests/etapa6-cpc-m02-m20-browser.mjs'
+      - 'ui/cpc-m*-native-study-reader.js'
+      - 'content/cpc/m*-native-data.js'
+      - 'ui/legal-complete-premium-v1.*'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: bc-etapa6-cpc-m02-m20
+  cancel-in-progress: true
+
+jobs:
+  chromium:
+    if: github.repository == 'Diogooliveira-bot/central-de-estudos-2026'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - name: Checkout isolado sem persistir credenciais
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - name: Dependências sem scripts
+        run: npm ci --ignore-scripts
+      - name: Conferir sintaxe dos 19 leitores e do teste
+        run: |
+          node --check tests/etapa6-cpc-m02-m20-browser.mjs
+          for n in $(seq -w 2 20); do node --check "ui/cpc-m${n}-native-study-reader.js"; done
+      - name: Regressões da proteção Premium e tema
+        run: node --test tests/legal-complete-premium-theme-unit.mjs tests/etapa3-premium-pilots-unit.mjs tests/cpc-approved-layout-unit.mjs
+      - name: Instalar navegador Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Testar 19 módulos em 3 resoluções
+        run: node tests/etapa6-cpc-m02-m20-browser.mjs
+      - name: Salvar 57 capturas e matriz
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: etapa6-cpc-m02-m20-chromium
+          path: artifacts/etapa6-cpc-m02-m20/*
+          if-no-files-found: ignore
+          retention-days: 14

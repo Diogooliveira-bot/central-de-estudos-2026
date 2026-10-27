@@ -199,3 +199,14 @@ Contagens de elementos efetivamente renderizados no navegador (mesmas nas três 
 - **Português e RLM:** continuam fora deste ciclo jurídico, precisam de tratamento e proteção de progresso em lote separado.
 
 **Próximo ponto seguro de retomada:** testar CPC M02–M20 no Chromium com os leitores e os conteúdos originais, sem alterar `main`/Production; depois revisar as pendências editoriais e liberar a Preview privada somente pelo fluxo autorizado.
+
+## Etapa 6.0 — CPC M02–M20 em Chromium (27/10/2026)
+
+- Expandir a validação técnica do piloto CPC M01 para os outros **19 módulos** no fluxo **exclusivamente de testes**, sem editar o leitor, o código produtivo, os dados aprovados ou o banco Neon.
+- Fontes: `content/cpc/m02..m20-native-data.js` carregadas individualmente, leitores `ui/cpc-m02..m20-native-study-reader.js` e CSS Premium da branch. `m08-native-data-part1.js` é um patch legado separado e **não substitui** o arquivo final M08 neste teste.
+- Testes em Chromium real nas larguras 390/768/1366: conteúdo completo, título e estrutura, CSS Premium, capítulos marcáveis, persistência local de marcação **concluída**, resumo sem tema e ausência de JavaScript erro/overflow lateral.
+- Diagnóstico editorial: contagens reais de H2/H3, tabelas, caixas, cabeçalhos suspeitos e rótulos de navegação (não é revisão de qualidade jurídica).
+- Novo teste: `tests/etapa6-cpc-m02-m20-browser.mjs`.
+- Workflow: `.github/workflows/verify-etapa6-cpc-m02-m20.yml`.
+- Nenhuma autorização de deploy, produção ou bypass de `bc-preview-private`. A Preview continua protegida e não foi liberada para validação autenticada da versão atual.
+- **Situação ao iniciar:** CI criado, resultados pendentes de conferência.
