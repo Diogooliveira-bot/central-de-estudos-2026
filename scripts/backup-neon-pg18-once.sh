@@ -1,91 +1,108 @@
 #!/usr/bin/env bash
-# PREPARADO, NAO EXECUTADO COM DADOS REAIS. Exige autorizacao e destino privado montado.
-# Esta rotina NUNCA deve ser chamada automaticamente por workflow push/PR.
+# PG18 -> arquivo cifrado para a chave PUBLICA do proprietário -> Google Drive privado.
+# SOMENTE com autorizações explícitas e segredos de ambiente protegido.
 set -Eeuo pipefail
 set +x
 umask 077
-
-die() { printf 'BACKUP_BLOQUEADO: %s\n' "$1" >&2; exit 1; }
-[[ "${BC_BACKUP_APPROVED:-}" == "YES" ]] || die "Falta aprovacao especifica da execucao com credenciais."
-[[ "${BC_PRIVATE_DESTINATION_APPROVED:-}" == "YES" ]] || die "Destino privado nao aprovado."
-[[ -n "${BC_PRIVATE_OUTPUT_DIR:-}" ]] || die "Destino privado ainda nao montado."
-[[ -d "$BC_PRIVATE_OUTPUT_DIR" ]] || die "Destino privado indisponivel."
-[[ "$BC_PRIVATE_OUTPUT_DIR" = /* ]] || die "Destino deve ser absoluto."
-case "$BC_PRIVATE_OUTPUT_DIR" in
-  /tmp|/tmp/*|/home/runner/work|/home/runner/work/*|/home/runner/_work|/home/runner/_work/*) die "Caminho publico ou efemero nao permitido.";;
-esac
-if [[ -n "${GITHUB_WORKSPACE:-}" && "$BC_PRIVATE_OUTPUT_DIR" == "$GITHUB_WORKSPACE"* ]]; then
-  die "Destino nao pode estar no checkout publico."
-fi
-[[ "${PGHOST:-}" == 'ep-wild-math-awuoq9pk.c-12.us-east-1.aws.neon.tech' ]] || die "Endpoint nao corresponde ao Neon Production ativo."
-[[ "${PGDATABASE:-}" == 'neondb' ]] || die "Banco alvo nao corresponde ao informado."
-[[ "${PGPORT:-5432}" == '5432' ]] || die "Porta inesperada."
-[[ -n "${PGUSER:-}" && -n "${PGPASSWORD:-}" ]] || die "Credenciais nao configuradas."
-[[ "${BC_GPG_RECIPIENT_FPR:-}" =~ ^[A-Fa-f0-9]{40}$ ]] || die "Chave PUBLICA GPG (fingerprint de 40 hex) nao informada."
-command -v docker >/dev/null || die "Docker nao instalado."
-command -v gpg >/dev/null || die "GPG nao instalado."
-command -v sha256sum >/dev/null || die "sha256sum nao instalado."
-
-# Nunca importar uma chave secreta no runner. Apenas chave PUBLICA validada pelo dono.
-gpg --batch --with-colons --fingerprint "$BC_GPG_RECIPIENT_FPR" |
-  grep -qiE "^fpr:::::::::${BC_GPG_RECIPIENT_FPR}:$" || die "Chave publica esperada indisponivel."
+die(){ printf 'BACKUP_BLOQUEADO: %s\n' "$1" >&2; exit 1; }
+for key in BC_BACKUP_APPROVED BC_PRIVATE_DESTINATION_APPROVED BC_DRIVE_PREFLIGHT_VERIFIED; do
+  [[ "$(printenv "$key" 2>/dev/null || true)" == YES ]] || die "Falta aprovação: $key"
+done
+for key in PGHOST PGPORT PGDATABASE PGUSER PGPASSWORD BC_GPG_PUBLIC_KEY_B64 BC_GPG_RECIPIENT_FPR BC_RCLONE_CONFIG_B64; do
+  [[ -n "$(printenv "$key" 2>/dev/null || true)" ]] || die "Configuração privada ausente: $key"
+done
+[[ "$PGHOST" == ep-wild-math-awuoq9pk.c-12.us-east-1.aws.neon.tech ]] || die 'Endpoint não aprovado.'
+[[ "$PGDATABASE" == neondb && "$PGPORT" == 5432 ]] || die 'Banco/porta inesperados.'
+[[ "$BC_GPG_RECIPIENT_FPR" =~ ^[[:xdigit:]]{40}$ ]] || die 'Fingerprint GPG inválido.'
+for tool in docker gpg sha256sum rclone python3 base64 tar mktemp; do
+  command -v "$tool" >/dev/null || die "Ferramenta ausente: $tool"
+done
 tmp="$(mktemp -d)"
-name="bc-pg18-restore-${GITHUB_RUN_ID:-manual}-$$"
-finish() {
-  docker rm -f "$name" >/dev/null 2>&1 || true
+container="bc-pg18-restore-$RANDOM-$$"
+cleanup(){
+  docker rm -f "$container" >/dev/null 2>&1 || true
   rm -rf -- "$tmp"
 }
-trap finish EXIT
-export PGSSLMODE=verify-full
-export PGSSLROOTCERT=/etc/ssl/certs/ca-certificates.crt
-export PGPORT=5432
-export PGCONNECT_TIMEOUT=15
-image='postgres:18'
-pg18() {
+trap cleanup EXIT
+mkdir -m 700 "$tmp/gnupg"
+export GNUPGHOME="$tmp/gnupg"
+export RCLONE_CONFIG="$tmp/rclone.conf"
+(umask 077; printf '%s' "$BC_GPG_PUBLIC_KEY_B64" | base64 -d > "$tmp/public.asc") || die 'Chave pública inválida.'
+(umask 077; printf '%s' "$BC_RCLONE_CONFIG_B64" | base64 -d > "$RCLONE_CONFIG") || die 'Configuração Drive inválida.'
+chmod 600 "$RCLONE_CONFIG"
+python3 - "$RCLONE_CONFIG" <<'PY'
+import configparser, sys, json
+p=configparser.ConfigParser(interpolation=None)
+with open(sys.argv[1],encoding='utf8') as f: p.read_file(f)
+if set(p.sections())!={'bcdrive'}: raise SystemExit('Somente remote bcdrive autorizado.')
+v=p['bcdrive']
+if v.get('type')!='drive' or v.get('scope')!='drive.file':
+  raise SystemExit('Integração deve usar Drive com escopo limitado drive.file.')
+if v.get('root_folder_id') or v.get('service_account_file') or v.get('service_account_credentials'):
+  raise SystemExit('Destino ou identidade não permitida.')
+if not v.get('client_id') or not v.get('client_secret') or not v.get('token'):
+  raise SystemExit('OAuth do Google Drive incompleto.')
+json.loads(v['token'])
+PY
+gpg --batch --quiet --import "$tmp/public.asc" >/dev/null 2>&1 || die 'Importação da chave pública falhou.'
+actual="$(gpg --batch --with-colons --fingerprint "$BC_GPG_RECIPIENT_FPR" 2>/dev/null | awk -F: '$1=="fpr"{print $10;exit}')"
+expected="$(printf '%s' "$BC_GPG_RECIPIENT_FPR" | tr '[:lower:]' '[:upper:]')"
+[[ "$actual" == "$expected" ]] || die 'Fingerprint não corresponde à chave importada.'
+export PGSSLMODE=verify-full PGSSLROOTCERT=/etc/ssl/certs/ca-certificates.crt PGCONNECT_TIMEOUT=15
+pg18(){
   docker run --rm --network host \
     --env PGHOST --env PGPORT --env PGDATABASE --env PGUSER \
     --env PGPASSWORD --env PGSSLMODE --env PGSSLROOTCERT --env PGCONNECT_TIMEOUT \
-    "$image" "$@"
+    postgres:18 "$@"
 }
-pg18 pg_dump --version | grep -Eq '^pg_dump \(PostgreSQL\) 18\.' || die "pg_dump 18 nao esta ativo."
-pg18 pg_restore --version | grep -Eq '^pg_restore \(PostgreSQL\) 18\.' || die "pg_restore 18 nao esta ativo."
-# Apenas leituras. Confere banco e servidor, sem exibir senha.
-server_version="$(pg18 psql --no-psqlrc --tuples-only --no-align -c "SELECT current_setting('server_version_num')")"
-[[ "$server_version" =~ ^18[0-9]{4}$ ]] || die "Versao do servidor nao e PostgreSQL 18."
-pg18 psql --no-psqlrc --tuples-only --no-align -c 'SELECT 1' >/dev/null
+pg18 pg_dump --version | grep -Eq '^pg_dump \(PostgreSQL\) 18\.' || die 'pg_dump não é PostgreSQL 18.'
+version="$(pg18 psql --no-psqlrc -Atqc "SELECT current_setting('server_version_num')" 2>"$tmp/pg-connect.err" || true)"
+[[ "$version" =~ ^18[0-9]{4}$ ]] || die 'Servidor/SSL/usuário não validado como PostgreSQL 18.'
+if ! pg18 pg_dump --format=custom --blobs --compress=6 \
+  --lock-wait-timeout=10000 --dbname=neondb > "$tmp/database.dump" 2>"$tmp/dump.err"; then
+  die 'pg_dump falhou: não foi enviado nenhum backup. Verificar permissões em canal privado.'
+fi
+[[ -s "$tmp/database.dump" ]] || die 'Dump vazio.'
+docker run --rm -i postgres:18 pg_restore --list < "$tmp/database.dump" > "$tmp/archive.list" 2>/dev/null \
+  || die 'Índice de dump ilegível.'
+[[ -s "$tmp/archive.list" ]] || die 'Dump sem índice.'
+(cd "$tmp" && sha256sum database.dump > database.dump.sha256 && sha256sum -c database.dump.sha256 >/dev/null)
 
-# pg_dump -Fc usa snapshot consistente da base. Nao altera dados reais.
-pg18 pg_dump --format=custom --blobs --compress=6 --lock-wait-timeout=10000 --dbname=neondb > "$tmp/database.dump"
-[[ -s "$tmp/database.dump" ]] || die "Dump vazio."
-docker run --rm -i "$image" pg_restore --list < "$tmp/database.dump" > "$tmp/archive.list"
-[[ -s "$tmp/archive.list" ]] || die "Indice do dump vazio."
-(cd "$tmp" && sha256sum database.dump > database.dump.sha256 && sha256sum --check database.dump.sha256 >/dev/null)
-
-# Encripta para chave publica do proprietario, antes de mover para o destino privado.
-# A chave PRIVADA nunca e enviada ao GitHub.
-tar -C "$tmp" -cf "$tmp/backup.tar" database.dump database.dump.sha256 archive.list
-stamp="$(date -u +%Y%m%dT%H%M%SZ)"
-target="$BC_PRIVATE_OUTPUT_DIR/base-completa-neondb-pg18-${stamp}.tar.gpg"
-[[ ! -e "$target" ]] || die "Arquivo de destino ja existe."
-gpg --batch --yes --trust-model always --recipient "$BC_GPG_RECIPIENT_FPR" \
-  --output "$target" --encrypt "$tmp/backup.tar" || die "Criptografia falhou."
-[[ -s "$target" ]] || die "Copia criptografada vazia."
-sha256sum "$target" > "${target}.sha256"
-(cd "$BC_PRIVATE_OUTPUT_DIR" && sha256sum --check "$(basename "${target}.sha256")") || die "Checksum nao confere."
-
-# Teste em PG18 LOCAL ISOLADO, sem tocar Production. Extensoes Neon podem bloquear a restauracao.
-docker run -d --name "$name" -e POSTGRES_PASSWORD=synthetic-restore-only "$image" >/dev/null
+# Verificação preliminar em Postgres18 local, isolado SEM REDE.
+docker run -d --name "$container" --network none \
+  -e POSTGRES_PASSWORD=local-test-only postgres:18 >/dev/null
 ready=0
 for n in $(seq 1 45); do
-  if docker exec "$name" pg_isready -U postgres >/dev/null 2>&1; then ready=1; break; fi
+  if docker exec "$container" pg_isready -U postgres >/dev/null 2>&1; then ready=1; break; fi
   sleep 1
 done
-[[ "$ready" == 1 ]] || die "Banco isolado nao iniciou."
-docker exec "$name" createdb -U postgres restore_check
-if ! docker exec -i "$name" pg_restore --username=postgres --dbname=restore_check \
-     --no-owner --no-privileges --exit-on-error < "$tmp/database.dump"; then
-  die "Copia criptografada armazenada, mas teste de restauracao falhou. NAO LIBERAR PRODUCTION."
+[[ "$ready" == 1 ]] || die 'Postgres de restauração não inicializou.'
+docker exec "$container" createdb -U postgres restore_check >/dev/null || die 'Banco de teste não inicializado.'
+if ! docker exec -i "$container" pg_restore -U postgres -d restore_check \
+  --no-owner --no-privileges --exit-on-error < "$tmp/database.dump" >"$tmp/restore.out" 2>"$tmp/restore.err"; then
+  die 'Restauração isolada não passou. Não liberar produção.'
 fi
 
-printf 'BACKUP_ENCRIPTADO_CHECKSUM_OK, RESTAURACAO_PG18_ISOLADA_OK. Validar tambem decifragem usando chave privada fora do runner.\n'
-printf 'Arquivo salvo somente no destino privado aprovado; nunca anexar ao job nem fazer commit.\n'
+tar -C "$tmp" -cf "$tmp/backup.tar" database.dump database.dump.sha256 archive.list
+stamp="$(date -u +%Y%m%dT%H%M%SZ)"
+name="base-completa-neon-pg18-$stamp-$RANDOM.tar.gpg"
+encrypted="$tmp/$name"
+gpg --batch --yes --quiet --trust-model always --recipient "$BC_GPG_RECIPIENT_FPR" \
+  --output "$encrypted" --encrypt "$tmp/backup.tar" || die 'Criptografia falhou.'
+[[ -s "$encrypted" ]] || die 'Arquivo criptografado vazio.'
+sha256sum "$encrypted" > "$encrypted.sha256"
+
+# O escopo drive.file cria o próprio diretório no Drive. NÃO lê arquivos pessoais.
+remote="bcdrive:Base Completa - Backup Neon PG18/$name"
+rclone --config "$RCLONE_CONFIG" copyto "$encrypted" "$remote" \
+  --retries 3 --low-level-retries 3 --stats 0 --log-level ERROR >"$tmp/upload.err" 2>&1 \
+  || die 'Envio criptografado ao Drive falhou.'
+rclone --config "$RCLONE_CONFIG" copyto "$encrypted.sha256" "$remote.sha256" \
+  --retries 3 --stats 0 --log-level ERROR >"$tmp/upload-sha.err" 2>&1 \
+  || die 'Envio de checksum ao Drive falhou.'
+original="$(sha256sum "$encrypted" | awk '{print $1}')"
+received="$(rclone --config "$RCLONE_CONFIG" cat "$remote" 2>"$tmp/download.err" | sha256sum | awk '{print $1}')"
+[[ "$original" == "$received" ]] || die 'Hash da cópia no Drive diverge.'
+printf 'BACKUP_REAL_CRIPTOGRAFADO_ENVIADO_AO_DRIVE_E_HASH_VERIFICADO.\n'
+printf 'RESTAURACAO_PRELIMINAR_PG18_OK; RESTAURACAO_APOS_DESCRIPTOGRAFIA PELO PROPRIETARIO AINDA PENDENTE.\n'
+printf 'Sem dados de Production em logs ou artefatos do GitHub.\n'
