@@ -35,4 +35,17 @@
 4. Fazer etapa separada para Português (24) e RLM (15) com cuidado adicional de backup do progresso.
 5. Integrar somente versões aprovadas, com rollback e proteção Premium comprovados.
 
-**Situação ao criar este checkpoint:** CI de CF M01 iniciado/configurado; resultado ainda não verificado.
+## Resultado verificado em 27/10/2026 — CF M01
+
+- Workflow: https://github.com/Diogooliveira-bot/central-de-estudos-2026/actions/runs/40586776775
+- Execução: **success**, sem falhas.
+- Commit testado: `97fd2cd5bf4c1a5f3467abcaf5635ac803da2e0c`.
+- Chromium em 390×844, 768×1024 e 1366×768: tema Premium aplicado somente à versão completa.
+- Resultados iguais nas três larguras: **48 títulos H2, 9 tabelas HTML semânticas, 44 caixas pedagógicas e 10 checkboxes**.
+- Checkbox selecionado permanece marcado após fechar/reabrir o leitor.
+- Nenhum vazamento horizontal de página e nenhum erro JS nos três tamanhos.
+- Modo resumido permaneceu sem a classe visual Premium.
+- Artefato de capturas e métricas: https://github.com/Diogooliveira-bot/central-de-estudos-2026/actions/runs/40586776775/artifacts/12772815668 (retenção GitHub Actions de 14 dias).
+- **Limite:** execução local Chromium sobre leitor real/fonte original; ainda não é uma aprovação da sessão autenticada de ponta a ponta nem uma revisão editorial de cada título/tabela.
+
+**Situação atual:** CF M01 aprovado no teste técnico de Chromium. Em etapa seguinte, validar visualmente a experiência autenticada na Preview protegida antes de liberar lote Constitucional M02–M15.
