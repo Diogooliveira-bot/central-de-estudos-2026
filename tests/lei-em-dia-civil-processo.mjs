@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import vm from 'node:vm';
+import { protectedAsset } from '../lib/protected-content.js';
 const root=new URL('../',import.meta.url);
 for(const discipline of ['civil','cpc']){
  const ctx=vm.createContext({});
@@ -25,7 +26,9 @@ for(const discipline of ['civil','cpc']){
   for(const source of report.sources)assert.equal(added.filter(q=>q.question.source.startsWith(source.pdf+' ·')).length,source.imported);
   for(const x of report.deviceReview.removed)assert.ok(x.keptIds.every(id=>[...base,...added].some(q=>q.id===id)));
   const offline=JSON.parse(readFileSync(new URL('central-offline-files-v66172.json',root)));
-  assert.ok(offline.files.includes(`/tools/decorando-data-${discipline}-leis.js?v=20261008civil1`));
+  const asset=`/tools/decorando-data-${discipline}-leis.js`;
+  assert.equal(protectedAsset(asset)?.feature,'premium.reviews');
+  assert.ok(!offline.files.some(file=>file.split('?')[0]===asset),'Questões Premium não devem estar no cache público');
  });
 test(discipline+' — filtros, respostas e progresso, resposta e recarga preservam o progresso anterior',()=>{
   const html=readFileSync(new URL('tools/decorando.html',root),'utf8');
@@ -35,7 +38,7 @@ test(discipline+' — filtros, respostas e progresso, resposta e recarga preserv
     const document={documentElement:{dataset:{}},addEventListener(){},getElementById(){return null}};
     const window={scrollTo(){},addEventListener(){}};
     const localStorage={getItem:k=>storage.get(k)||null,setItem:(k,v)=>storage.set(k,v)};
-    const context=vm.createContext({document,window,localStorage,URLSearchParams,location:{search:''},setTimeout,clearTimeout});
+    const context=vm.createContext({document,window,localStorage,URLSearchParams,location:{search:''},setTimeout,clearTimeout,DATA_LED_APPROVED:[],TOPICS_LED_APPROVED:[]});
     for(const m of html.matchAll(/<script([^>]*)>([\s\S]*?)<\/script>/g)){
       const external=m[1].match(/src="\.\/(decorando-data-[^"?]+)(?:\?[^" ]*)?"/);
       if(external)vm.runInContext(readFileSync(new URL('tools/'+external[1],root),'utf8'),context);
