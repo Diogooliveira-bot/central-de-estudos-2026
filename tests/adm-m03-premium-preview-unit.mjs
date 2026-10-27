@@ -33,7 +33,7 @@ test('seletores corretos apenas no overlay M03 completo e indicação horizontal
  assert.match(css,/Deslize para ver todas as colunas/);
  assert.doesNotMatch(css,/\.adm-m3-book|\.adm-m3-table-wrap/);
  assert.match(integration,/if\(kind==='complete' && num\(uid\)===3\) o\.dataset\.bcPremiumAdmM03='1'/);
- assert.match(read('central-v119.html'),/ui\/legal-complete-premium-v1\.css\?v=20261027pilotPenalCpc1/);
+ assert.match(read('central-v119.html'),/ui\/legal-complete-premium-v1\.css\?v=20261027cpcM01reflow1/);
  assert.match(read('central-lazy-theory-v66119.js'),/ui\/adm-native-layer\.js\?v=20261027admM03realDOM1/);
 });
 test('ativador Premium continua estritamente seletivo (ADM completo, não resumido)',async()=>{
