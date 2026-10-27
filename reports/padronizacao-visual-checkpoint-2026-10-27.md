@@ -101,4 +101,29 @@
 - Novos arquivos: `tests/etapa4-adm-expansion-browser.mjs`, `.github/workflows/verify-etapa4-adm-expansion.yml`.
 - Teste com o leitor ADM real, conteúdo aprovado, 390/768/1366 px, sem acesso a APIs nem credenciais. O progresso é verificado apenas com o armazenamento isolado do navegador de teste.
 - Não houve edição do conteúdo e não há aprovação editorial ou deploy protegido atualizados.
-- **Situação inicial do lote:** resultados do workflow ainda por conferir.
+- **Resultado confirmado:** GitHub Actions `40599475563` concluiu com `success` no commit `5ca17e3dae8092c1d3fe5a2115172f956ccadcd5`.
+- **Cobertura:** 48 testes dos 16 módulos ADM M02/M04–M07/M09–M19 em 390, 768 e 1366 px; 0 falhas; 0 erros JavaScript; títulos e tema Premium operantes; sem overflow horizontal da página; todas as tabelas reais com contêiner rolável; checkboxes de conteúdo preservados após reabertura; resumo sem tema Premium.
+- **Matriz de referência** (contagens por módulo iguais nas 3 resoluções):
+
+| ADM | Tabelas | Checkboxes no conteúdo | Checks por sessão |
+|---|---:|---:|---:|
+| M02 | 18 | 30 | 10 |
+| M04 | 15 | 11 | 12 |
+| M05 | 14 | 20 | 20 |
+| M06 | 15 | 14 | 14 |
+| M07 | 14 | 13 | 13 |
+| M09 | 21 | 19 | 19 |
+| M10 | 22 | 14 | 14 |
+| M11 | 17 | 14 | 14 |
+| M12 | 13 | 14 | 14 |
+| M13 | 16 | 42 | 14 |
+| M14 | 27 | 14 | 14 |
+| M15 | 20 | 14 | 14 |
+| M16 | 19 | 42 | 14 |
+| M17 | 17 | 14 | 14 |
+| M18 | 22 | 14 | 14 |
+| M19 | 20 | 14 | 14 |
+
+- **Cobertura acumulada ADM:** 20/20 módulos com validação técnica Chromium. M03 foi a referência de fixture com conteúdo aprovado; os outros 19 foram exercitados pelo leitor ADM real em teste local.
+- **Limitação:** sem conclusão da Preview autenticada; revisão editorial/visibilidade real de caixas, legibilidade jurídica de cada tabela e persistência no Neon ainda não avaliadas. Em especial, o seletor de caixas pedagógicas dos testes retornou 0 em vários materiais ADM, devendo haver inventário editorial antes de declarar o acabamento Premium definitivo.
+- **Próximo passo:** realizar inspeção editorial em amostras e a Preview privada (após a aprovação do ambiente `bc-preview-private`); seguir então para lote de Direito Penal/Processo Civil sem modificar texto automaticamente.
