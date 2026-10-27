@@ -14,7 +14,7 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  EXPECTED_SOURCE_SHA: 0c96909d419c62ed3ba9e262fed238bdac563d9b
+  EXPECTED_SOURCE_SHA: e58907ede538f00f1890700e87f3d1701447397c
   EXPECTED_BRANCH: preview/legal-complete-premium-v1-20261025
   VERCEL_ORG_ID: team_RF9KuNlEP0Gtt9hf8b3jlVZr
   VERCEL_PROJECT_ID: prj_9lWICZgoJh4UNHZQ6CleUAmQIHqG
@@ -33,7 +33,7 @@ jobs:
       - name: Recuperar somente o commit aprovado da prévia
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
-          ref: 0c96909d419c62ed3ba9e262fed238bdac563d9b
+          ref: e58907ede538f00f1890700e87f3d1701447397c
           fetch-depth: 1
           persist-credentials: false
 
@@ -51,6 +51,14 @@ jobs:
       - name: Executar testes automatizados
         shell: bash
         run: npm test
+
+      - name: Validar proteção Premium
+        shell: bash
+        run: npm run test:premium-protection
+
+      - name: Testar tema real ADM M03, editor, tabelas e PWA
+        shell: bash
+        run: node --test tests/adm-approved-complete-unit.mjs tests/legal-complete-premium-theme-unit.mjs tests/visual-editor-table-unit.mjs tests/pwa-cache-recovery-unit.mjs tests/adm-m03-premium-preview-unit.mjs
 
       - name: Validar build local protegido
         shell: bash
