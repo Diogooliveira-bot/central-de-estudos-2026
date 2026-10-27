@@ -135,3 +135,14 @@
 - Conteúdo e leitores originais preservados. As capturas são do leitor em teste local, não da Central com sessão autenticada.
 - Direito Administrativo: 20/20 módulos tecnicamente testados no conjunto desta branch (M03 em fixture fiel; M01/M02/M04–M20 em leitores reais). Direito Constitucional: 15/15 módulos tecnicamente testados.
 - Próxima fase editorial: revisar cartões de exemplo/pegadinha, tabelas longas e hierarquia individual; verificar a Preview Vercel **somente após aprovação** do ambiente protegido. Em seguida, testar os demais módulos das outras quatro disciplinas jurídicas. Nenhuma publicação em produção autorizada ou executada.
+
+## Etapa 5.0 — Direito Penal M02–M17 (27/10/2026)
+
+- Continuação da branch isolada depois do commit `3f9cf3fb782c4ea4d0c47d8d3bf36b849cc441a8`.
+- M01 mantém piloto próprio com testes aprovados e pendências editoriais de marcadores de PDF, títulos e quadros achatados.
+- M02–M17: testar os 16 leitores `ui/native-study-reader-mNN.js` com `content/penal/mNN-native-data.js` e os quatro arquivos `penal-full-theory-data-01..04.js`. Certos módulos M11–M17 usam conteúdo completo exclusivamente em `window.PENAL_FULL_THEORY`; não inferir que `data.complete` vazio significa apostila ausente.
+- Testes isolados no Chromium, 390×844/768×1024/1366×768, sobre o leitor original, validação de conteúdo realmente renderizado, CSS Premium, tabela HTML, checkboxes, persistência local, isolamento dos resumos e ausência de erros.
+- Coletar métricas de possíveis artefatos de PDF/títulos suspeitos para uma **revisão editorial**, sem transformar tais registros em edição automática do conteúdo.
+- Arquivos de teste: `tests/etapa5-penal-m02-m17-browser.mjs`, `.github/workflows/verify-etapa5-penal-m02-m17.yml`.
+- Sem mudanças de conteúdo, UI produtiva, banco, credenciais nem `main`. Preview Vercel ainda depende da aprovação do ambiente `bc-preview-private`, não contornar.
+- **Status inicial:** CI criado, resultado pendente de confirmação.
