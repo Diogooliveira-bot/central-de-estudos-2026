@@ -1,0 +1,29 @@
+name: Etapa 4.5 - Jornada comercial isolada
+on:
+  push:
+    branches:
+      - commercial/etapa-4-5-20261027
+    paths:
+      - 'conheca.html'
+      - 'tests/commercial-journey-4-5-unit.mjs'
+      - '.github/workflows/etapa-4-5-commercial-validation.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  comercial:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - name: Checkout sem guardar credenciais
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Configurar Node 22
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+      - name: Instalar dependências travadas
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Teste comercial dedicado, sem banco ou pagamentos
+        run: node --test tests/commercial-journey-4-5-unit.mjs tests/hotmart-webhook-unit.mjs tests/plan-access-unit.mjs tests/password-reset-unit.mjs
