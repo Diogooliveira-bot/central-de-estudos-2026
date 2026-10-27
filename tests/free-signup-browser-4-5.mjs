@@ -2,7 +2,7 @@ import { chromium } from 'playwright';
 import { createServer } from 'node:http';
 import { readFileSync } from 'node:fs';
 import assert from 'node:assert/strict';
-const files={'/cadastro-gratuito.html':'cadastro-gratuito.html','/login.html':'login.html','/recuperar-senha.html':'recuperar-senha.html'};
+const files={'/cadastro-gratuito.html':'cadastro-gratuito.html','/login.html':'login.html','/recuperar-senha.html':'recuperar-senha.html','/conheca.html':'conheca.html'};
 const requests=[];
 const server=createServer((req,res)=>{
  const path=new URL(req.url,'http://localhost').pathname;
@@ -15,6 +15,26 @@ const root='http://127.0.0.1:'+port;
 let browser;
 try{
  browser=await chromium.launch({headless:true});
+
+ const landing=await browser.newPage();
+ await landing.route('**/api/auth?action=free-signup-status',r=>r.fulfill({
+  status:200,contentType:'application/json',body:JSON.stringify({enabled:true,siteKey:null})
+ }));
+ await landing.goto(root+'/conheca.html');
+ const free=landing.getByRole('link',{name:'Criar minha conta gratuita'});
+ await free.waitFor({state:'visible'});
+ await free.click();
+ await landing.waitForURL('**/cadastro-gratuito.html');
+ await landing.close();
+ const closed=await browser.newPage();
+ await closed.route('**/api/auth?action=free-signup-status',r=>r.fulfill({
+  status:200,contentType:'application/json',body:JSON.stringify({enabled:false,siteKey:null})
+ }));
+ await closed.goto(root+'/conheca.html');
+ await closed.waitForTimeout(100);
+ assert.equal(await closed.locator('#ctaFree').isVisible(),false);
+ await closed.close();
+ console.log('PASS: Visitante encontra CTA Gratuito apenas com cadastro habilitado');
  for(const device of [{label:'desktop',width:1366,height:768},{label:'celular',width:390,height:844}]){
   const page=await browser.newPage({viewport:{width:device.width,height:device.height}});
   await page.route('**/api/auth?action=free-signup',async route=>{
