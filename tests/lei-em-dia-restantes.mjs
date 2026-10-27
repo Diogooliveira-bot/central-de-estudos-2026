@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import vm from 'node:vm';
+import { protectedAsset } from '../lib/protected-content.js';
 const root=new URL('../',import.meta.url),html=readFileSync(new URL('tools/decorando.html',root),'utf8');
 const c=vm.createContext({});vm.runInContext(readFileSync(new URL('tools/decorando-data-restantes.js',root),'utf8'),c);
 const data=vm.runInContext('DATA_RESTANTES',c),topicMap=vm.runInContext('TOPICS_RESTANTES',c);
@@ -12,7 +13,7 @@ function makeContext(){
  const document={documentElement:{dataset:{}},addEventListener(){},getElementById(){return null}};
  const window={scrollTo(){},addEventListener(){}};
  const localStorage={getItem:k=>storage.get(k)||null,setItem:(k,v)=>storage.set(k,v)};
- const context=vm.createContext({document,window,localStorage,URLSearchParams,location:{search:''},setTimeout,clearTimeout});
+ const context=vm.createContext({document,window,localStorage,URLSearchParams,location:{search:''},setTimeout,clearTimeout,DATA_LED_APPROVED:[],TOPICS_LED_APPROVED:[]});
  for(const m of html.matchAll(/<script([^>]*)>([\s\S]*?)<\/script>/g)){
   const external=m[1].match(/src="\.\/(decorando-data-[^"?]+)(?:\?[^" ]*)?"/);
   if(external)vm.runInContext(readFileSync(new URL('tools/'+external[1],root),'utf8'),context);
@@ -71,7 +72,9 @@ test('parte cível dos Juizados não é apresentada como criminal e pendências 
  assert.ok(report.missingSources.penal.some(s=>s.includes('parte criminal')));
  assert.ok(report.missingSources.trabalho.some(s=>s.startsWith('CLT')));
  const offline=JSON.parse(readFileSync(new URL('central-offline-files-v66172.json',root)));
- assert.ok(offline.files.includes('/tools/decorando-data-restantes.js?v=20261023-remove-labor-disciplines-v1'));
+ const asset='/tools/decorando-data-restantes.js';
+ assert.equal(protectedAsset(asset)?.feature,'premium.reviews');
+ assert.ok(!offline.files.some(file=>file.split('?')[0]===asset),'Questões Premium não devem ser armazenadas no cache público');
  for(const x of report.deviceReview.removed)assert.ok(x.keptIds.length>0);
 });
 
