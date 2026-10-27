@@ -91,5 +91,14 @@
 - Novos arquivos: `tests/etapa4-adm-pilots-browser.mjs`; `.github/workflows/verify-etapa4-adm-pilots.yml`.
 - Testes isolados sem autenticação, acessos remotos ao banco, Hotmart ou conteúdo produtivo: 390/768/1366, títulos, tabela, CSS, ausência de vazamento lateral, navegação, persistência de marcação e modo resumido sem tema.
 - Sem alterações dos dados aprovados, leitores, editor, login ou `main`.
-- **Status ao criar o checkpoint:** aguardar a execução do GitHub Actions; não declarar aprovação antes de examinar resultado e métricas.
+- **Resultado:** GitHub Actions `40599132103` concluído com sucesso em Chromium; 9 verificações (ADM M01, M08 e M20 em três larguras). M01: 10 tabelas, 19 checkboxes de conteúdo e 6 de sessão. M08: 20 tabelas, 14 + 14 checkboxes. M20: 31 tabelas, 15 + 14 checkboxes. Todos com CSS Premium, tabelas semânticas, sem overflow lateral/erros JS, marcações preservadas após reabertura e resumo sem tema Premium. Capturas: https://github.com/Diogooliveira-bot/central-de-estudos-2026/actions/runs/40599132103/artifacts/12776359525. Revisão editorial de caixas e títulos ainda necessária; o seletor usado para caixas pedagógicas retornou zero nos três pilotos, não significa que o conteúdo não contenha destaques.
 - O deployment controlado permanece bloqueado por aprovação manual do ambiente; não criar Preview desprotegida nem enviar URL de deployment antigo como se fosse atual.
+
+## Etapa 4.3 — Teste dos 16 módulos administrativos restantes (27/10/2026)
+
+- Base: `4d72b2cfa64b8e639eb2c1723f2f926328867db3`, pilotos ADM M01/M08/M20 aprovados em Chromium.
+- Lote a testar: ADM M02, M04–M07 e M09–M19. ADM M03 já é a referência visual anterior. Assim, o conjunto cobre os 20 módulos administrativos.
+- Novos arquivos: `tests/etapa4-adm-expansion-browser.mjs`, `.github/workflows/verify-etapa4-adm-expansion.yml`.
+- Teste com o leitor ADM real, conteúdo aprovado, 390/768/1366 px, sem acesso a APIs nem credenciais. O progresso é verificado apenas com o armazenamento isolado do navegador de teste.
+- Não houve edição do conteúdo e não há aprovação editorial ou deploy protegido atualizados.
+- **Situação inicial do lote:** resultados do workflow ainda por conferir.
