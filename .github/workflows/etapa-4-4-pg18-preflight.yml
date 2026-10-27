@@ -24,6 +24,8 @@ jobs:
         run: |
           set -euo pipefail
           bash -n scripts/backup-neon-pg18-once.sh
+          bash -n scripts/verify-backup-pg18-offline.sh
+          bash -n scripts/test-backup-gpg-pg18-synthetic.sh
           if env -u BC_BACKUP_APPROVED -u BC_PRIVATE_DESTINATION_APPROVED -u BC_PRIVATE_OUTPUT_DIR bash scripts/backup-neon-pg18-once.sh; then
             echo 'ERRO: rotina executou sem autorizacao'; exit 1
           fi
@@ -45,6 +47,9 @@ jobs:
           gpg --version | head -n 1
           sha256sum --version | head -n 1
           echo 'PG18_CLIENT_AND_TOOLS_OK'
+      - name: Provar GPG, download simulado, descriptografia, SHA256 e restauracao PG18
+        shell: bash
+        run: bash scripts/test-backup-gpg-pg18-synthetic.sh
       - name: Simular dump e restauracao SOMENTE com dados ficticios locais
         shell: bash
         run: |
