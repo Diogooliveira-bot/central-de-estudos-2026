@@ -47,6 +47,7 @@ function previewForbidden() {
 const PUBLIC_PATHS = new Set([
   '/login.html',
   '/convite.html',
+  '/cadastro-gratuito.html',
   '/recuperar-senha.html',
   '/ativar-acesso.html',
   '/favicon.ico',
