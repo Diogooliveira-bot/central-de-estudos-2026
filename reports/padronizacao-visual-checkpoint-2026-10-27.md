@@ -582,3 +582,12 @@ Contagens de elementos efetivamente renderizados no navegador (mesmas nas três 
 - **GitHub Actions** [40674760691](https://github.com/Diogooliveira-bot/central-de-estudos-2026/actions/runs/40674760691): aprovado **3/3 testes novos de bootstrap**, **40/40 segurança e autenticação**, **11/11 tema e pilotos**, **60/60 Chromium**; [artefato 12809229793](https://github.com/Diogooliveira-bot/central-de-estudos-2026/actions/runs/40674760691/artifacts/12809229793).
 - **Deployment privado corrigido ainda NÃO APROVADO:** novo workflow em [40674969770](https://github.com/Diogooliveira-bot/central-de-estudos-2026/actions/runs/40674969770), exige `bc-preview-private`, SHA fixado em `123820c59525da2883951e822a6d622d64b85fcc`. Somente depois de READY repetir os cenários autenticados e validar progresso real.
 - **Classificação:** Etapa 10.4 ainda parcial; Etapa 10.5 iniciada como correção necessária, não publicada; Production intacta.
+
+## Etapa 10.4.3 — E2E autenticado parcial: plano aprovado, leitor pendente (28/10/2026)
+
+- **Relatório com evidências:** [etapa10-4-3-validacao-sessoes-cpc-2026-10-28.md](./etapa10-4-3-validacao-sessoes-cpc-2026-10-28.md).
+- **Confirmado em navegador com perfis salvos:** `/api/auth?action=me` autenticou as duas contas sintéticas; `/api/plans?action=me` confirmou plano Gratuito e Premium ativos e direitos corretos. Gratuito: resumo sim, apostila completa e links TEC/QC não, Lei em Dia com limite 20/dia. Premium: resumo e apostila completa sim, links TEC/QC sim e sincronização de progresso avançado.
+- **Teste UI ainda não aprovado:** navegador Gratuito observou erro de carregamento da Central; navegador Premium chegou ao dashboard com CPC listado (20 módulos), mas não acessou o leitor nem comprovou persistência.
+- **Navegação esclarecida:** `/central-v119.html` monta `index.html` e normaliza a URL para `/` intencionalmente; isso não é falha comprovada. Para abrir o CPC, usar clique **Disciplinas → Direito Processual Civil**, não rotas `/central` ou `/#/cpc`.
+- **Contrato de acesso:** arquivos CPC `mXX-native-data.js` podem retornar JS **projetado somente com resumos** no Gratuito; não exigir 403 indiscriminadamente. Verificar que conteúdo completo não seja entregue.
+- **Conclusão:** a segurança de autenticação/entitlements está homologada; **Etapa 10.4 permanece parcial até testar a UI, as apostilas e o progresso reais**. Evitar qualquer merge/publicação até essa verificação ou correção. Nenhuma mudança em Production/`main`/banco real.
