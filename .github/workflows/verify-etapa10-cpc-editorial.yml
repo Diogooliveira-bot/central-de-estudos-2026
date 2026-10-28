@@ -8,6 +8,7 @@ on:
       - 'tests/etapa10-4-cpc-portal-load-unit.mjs'
       - 'central-discipline-loader.js'
       - 'tests/etapa10-4-cpc-central-navigation-browser.mjs'
+      - 'tests/etapa10-4-cpc-home-flow-browser.mjs'
       - 'tests/etapa10-4-free-bootstrap-unit.mjs'
       - 'central-v119.html'
       - 'ui/cpc*-native-study-reader.js'
@@ -49,6 +50,10 @@ jobs:
         run: |
           node --check tests/etapa10-4-cpc-central-navigation-browser.mjs
           node tests/etapa10-4-cpc-central-navigation-browser.mjs
+      - name: Etapa 10.4 — Gratuito e Premium na Central com 403 esperado no Chromium
+        run: |
+          node --check tests/etapa10-4-cpc-home-flow-browser.mjs
+          node tests/etapa10-4-cpc-home-flow-browser.mjs
       - name: Anexar métricas e capturas
         if: always()
         uses: actions/upload-artifact@v4
@@ -57,5 +62,6 @@ jobs:
           path: |
             artifacts/etapa10-cpc-editorial/*
             artifacts/etapa10-4-cpc-integrated/*
+            artifacts/etapa10-4-cpc-home-flow/*
           if-no-files-found: ignore
           retention-days: 14
