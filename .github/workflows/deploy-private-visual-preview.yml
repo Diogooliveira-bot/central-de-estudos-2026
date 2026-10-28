@@ -4,6 +4,10 @@ on:
   push:
     branches:
       - preview/legal-complete-premium-v1-20261025
+    # Evita novos deployments em commits de relatórios: exige atualização
+    # deliberada do SHA aprovado neste workflow, com aprovação privada.
+    paths:
+      - '.github/workflows/deploy-private-visual-preview.yml'
   workflow_dispatch:
 
 permissions:
