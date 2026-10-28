@@ -99,7 +99,13 @@ async function download(files){
     // resposta HTTP 403 esperada não pode impedir o acesso à teoria resumida.
     // Não ignorar 403 de apostilas nem outras falhas de rede/servidor.
     if(response.status===403&&url.pathname==='/content/cpc/cpc-fixation-questions-v1.js'){
-     sources[i]='';continue;
+     const planResponse=await fetch('/api/plans?action=me',{cache:'no-store',signal:controller.signal});
+     if(planResponse.ok){
+      const rights=await planResponse.json();
+      if(rights.plan==='free'&&rights.entitlements?.['premium.reviews']?.enabled===false){
+       sources[i]='';continue;
+      }
+     }
     }
     if(!response.ok)throw new Error('HTTP '+response.status+': '+url.pathname);
     sources[i]=await response.text();
