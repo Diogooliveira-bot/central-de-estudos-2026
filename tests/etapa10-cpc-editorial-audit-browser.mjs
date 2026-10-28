@@ -125,6 +125,35 @@ try{
       assert.equal(result.quizM06Font,18,label+': estilo de questão diferente do padrão esperado');
     }
     if([2,4,6].includes(n))assert.equal(result.normalizedHeadingCount,{2:2,4:2,6:2}[n],label+': correção editorial dos títulos não aplicada');
+
+    if(n===5){
+     const editorial=await page.evaluate(id=>{
+      const o=document.getElementById(id),a=o.querySelector('.bc-native-article');
+      const raw=window.BASE_NATIVE_CONTENT.cpc.m05.complete;
+      const markers=[...a.querySelectorAll('p.bc-cpc-m05-part-divider')];
+      const p=markers[0],previous=p?.previousElementSibling;
+      const next=p?.nextElementSibling;
+      return {
+       sourceUnchanged:raw.includes('IRDR são exceções expressasPARTE IV - PEGADINHAS FCC'),
+       dividerCount:markers.length,
+       exactDivider:p?.textContent.trim()==='PARTE IV - PEGADINHAS FCC',
+       previousContainsCompleteClause:previous?.tagName==='P'&&previous.textContent.trim().endsWith('IRDR são exceções expressas'),
+       nextHeadingIntact:next?.tagName==='H2'&&next.textContent.trim().startsWith('41. AS 18 CONFUSÕES MAIS IMPORTANTES'),
+       gluedVisible:[...a.querySelectorAll('p')].some(el=>el.textContent.includes('expressasPARTE IV')),
+       dividerFont:p?parseFloat(getComputedStyle(p).fontSize):0,
+       onlyVisualClass:!!p&&!p.id,
+      };
+     },id);
+     assert.equal(editorial.sourceUnchanged,true,label+': fonte M05 foi modificada indevidamente');
+     assert.equal(editorial.dividerCount,1,label+': seção PARTE IV não foi isolada');
+     assert.equal(editorial.exactDivider,true,label+': título mudou durante a conversão');
+     assert.equal(editorial.previousContainsCompleteClause,true,label+': frase anterior perdeu texto');
+     assert.equal(editorial.nextHeadingIntact,true,label+': seção 41 deixou de ser capítulo');
+     assert.equal(editorial.gluedVisible,false,label+': colagem de PDF segue no leitor');
+     assert.equal(editorial.dividerFont,16,label+': estilo editorial da parte está incorreto');
+     assert.equal(editorial.onlyVisualClass,true,label+': o divisor ganhou ID de capítulo');
+     if(width===390)await page.locator('#'+id+' .bc-cpc-m05-part-divider').screenshot({path:dir+'/m05-390-parte-iv.png'});
+    }
     assert.deepEqual(errors,[],label+': erro JavaScript');
     findings.push({...result,errors});
     if(width===390||n===1||n===20){
