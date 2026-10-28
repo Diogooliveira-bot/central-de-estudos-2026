@@ -122,3 +122,32 @@ A leitura de `central-v119.html` e `vercel.json` no commit implantado mostrou qu
 O navegador externo que fez os testes não dispõe mais de saldo para novas ações no mesmo serviço; não iniciar cargas repetidas sem autorização para eventual custo. Uma alternativa é usar **ChatGPT Work**, que o proprietário deve iniciar na interface, para navegar no Preview protegido com os dois perfis de homologação já configurados, sem mudar Production ou `main`.
 
 **Etapa 10.4: autenticação e regras de plano confirmadas; validação funcional do leitor e do progresso NÃO concluída.**
+
+## Resultado final dos navegadores de homologação — 28/10/2026, conferência às 22h UTC
+
+As duas execuções de navegação encerraram no estado **`completed`**, porém **não conseguiram validar os leitores CPC**.
+
+### Aluno Gratuito — execução `adcac97b-feac-4065-8acb-d7bfe1d659cd`
+
+- `/api/auth?action=me`: **authenticated=true**, aluno fictício ativo.
+- `/api/plans?action=me`: **free / active**; `theory.summary=true`, `theory.complete=false`, `tec.links=false`, `qc.links=false`, e `lei_em_dia` habilitado com limite diário 20.
+- Navegação `/central-v119.html`: **erro no carregamento do painel de materiais**; não foi possível verificar comportamento do leitor ou dos módulos.
+- A resposta das permissões comprova **negativa de entitlement**, mas **não comprova HTTP 403 real ao solicitar `/content/cpc/mXX-native-data.js`**.
+
+### Aluno Premium — execução `926eefdb-5fab-499b-a5f7-7af025d33f43`
+
+- `/api/auth?action=me`: **authenticated=true**, aluno fictício ativo.
+- `/api/plans?action=me`: **premium / active**, com teoria completa, QC/TEC e sincronização avançada habilitados.
+- Abriu dashboard e identificou as disciplinas, inclusive **Direito Processual Civil — 20 módulos**.
+- Não conseguiu chegar ao leitor de M05; tentou caminhos `/central` e endereços `/#/central`, `/#/cpc`, mas eles **não correspondem a rotas oficiais documentadas** na aplicação e não são evidência suficiente de defeito.
+- `/central-v119.html` não chegou ao conteúdo esperado no navegador de automação; não foram verificados Parte IV/VIII, tabela, 15 questões nem persistência do progresso.
+
+### Diagnóstico adicional por leitura do código (não E2E)
+
+A versão exata publicada contém, em `index.html`, botão real **Disciplinas** que chama `centralHardOpen('disciplines',this)`, cartão **Direito Processual Civil** que chama `centralHardSubject('cpc')`, e scripts dos leitores CPC. `central-v119.html` é o carregador autenticado que busca `/index.html?central_source=...` e injeta o conteúdo da Central. `vercel.json` não define `/central` como rota; tentar `/central` ou `/#/cpc` não substitui clicar na navegação real.
+
+O painel visto pelo navegador pode refletir falha intermitente de carregamento, redirecionamento ou exploração incompleta da navegação; **não há evidência suficiente para corrigir código arbitrariamente**. A consulta de logs Vercel não forneceu erro de aplicação específico desse deployment: a análise agregada mostrou apenas aviso depreciação `url.parse` abrangendo outros deployments; consulta dos logs específicos falhou na API.
+
+**Conclusão atualizada:** sessões reais dos dois planos **homologadas**; matriz de direitos via API **homologada**; conteúdo CPC completo, bloqueio HTTP e persistência **pendentes**. A Etapa 10.4 como um todo ainda **não está concluída**.
+
+**Retomada segura:** no navegador Premium, acessar o dashboard pela URL oficial e clicar **Disciplinas → Direito Processual Civil → M05 → Apostila completa**, evitando caminhos inventados; repetir no Gratuito para confirmar o bloqueio. Só classificar defeito se reproduzido na navegação oficial. Não mexer em Production, `main`, banco real ou planos.
