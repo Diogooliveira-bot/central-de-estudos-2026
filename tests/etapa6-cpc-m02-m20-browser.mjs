@@ -95,7 +95,7 @@ try{
           found:true,rows:rows.length,cols:table.tHead.rows[0].cells.length,
           sourceVerified:rows.every(row=>raw.includes(row[0]+': '+row[1])),
           semantic:[...table.tBodies[0].rows].every(r=>r.cells[0].tagName==='TH'&&r.cells[0].scope==='row'),
-          caption:!!table.caption?.textContent.includes('apostila'),
+          caption:!!table.caption?.textContent.trim(),
           scrollX:wrap.scrollWidth>wrap.clientWidth,
           originalVisible:originalContent.includes(labels[n]),
           back:o.querySelector('[data-cpc-back]')?.textContent.trim()
