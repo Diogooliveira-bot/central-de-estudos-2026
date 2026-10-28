@@ -132,3 +132,19 @@ html.bc-ui-v1 #cpcNativeReaderOverlay.bc-apostila-v1[data-bc-premium-pilot="cpc-
 @media(max-width:620px){
  html.bc-ui-v1 #cpcNativeReaderOverlay.bc-apostila-v1[data-bc-premium-pilot="cpc-m01"] .bc-native-article .bc-cpc-m01-table-scroll>.bc-cpc-m01-reading-table{min-width:710px!important;}
 }
+
+/* CPC M06: questões de revisão são blocos de leitura, não títulos capitulares.
+   Permanecem H2 por compatibilidade com o índice e progresso existente. */
+html.bc-ui-v1 #cpcM06NativeReaderOverlay.bc-apostila-v1 .bc-native-article h2.bc-cpc-m06-quiz-question{
+ margin:24px 0 10px;
+ padding:12px 16px;
+ border:1px solid var(--bc-premium-line);
+ border-left:4px solid var(--bc-premium-blue);
+ border-radius:8px;
+ background:#f8fbfe;
+ color:var(--bc-premium-ink);
+ font-family:Inter,ui-sans-serif,system-ui,sans-serif;
+ font-size:16px;
+ font-weight:700;
+ line-height:1.5;
+}
