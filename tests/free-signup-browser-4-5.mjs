@@ -2,7 +2,7 @@ import { chromium } from 'playwright';
 import { createServer } from 'node:http';
 import { readFileSync } from 'node:fs';
 import assert from 'node:assert/strict';
-const files={'/cadastro-gratuito.html':'cadastro-gratuito.html','/login.html':'login.html','/recuperar-senha.html':'recuperar-senha.html','/conheca.html':'conheca.html'};
+const files={'/cadastro-gratuito.html':'cadastro-gratuito.html','/login.html':'login.html','/recuperar-senha.html':'recuperar-senha.html','/conheca.html':'conheca.html','/termos-de-uso.html':'termos-de-uso.html','/politica-de-privacidade.html':'politica-de-privacidade.html','/politica-de-cookies.html':'politica-de-cookies.html'};
 const requests=[];
 const server=createServer((req,res)=>{
  const path=new URL(req.url,'http://localhost').pathname;
@@ -56,8 +56,18 @@ try{
     await page.getByLabel('WhatsApp (opcional)').fill('(85) 99999-9999');
     await page.getByLabel(/Quero receber novidades e ofertas/).check();
   }
+  const before=requests.length;
+  await page.getByRole('button',{name:'Enviar confirmação por e-mail'}).click();
+  assert.equal(requests.length,before,'Sem aceites obrigatórios o browser não envia pedido');
+  assert.equal(await page.locator('a[href="/termos-de-uso.html"]').count(),1);
+  assert.equal(await page.locator('a[href="/politica-de-privacidade.html"]').count(),1);
+  await page.getByLabel(/Declaro que tenho/).check();
+  await page.getByLabel(/Li e aceito os/).check();
   await page.getByRole('button',{name:'Enviar confirmação por e-mail'}).click();
   await page.getByText('Mensagem enviada para caixa de teste simulada').waitFor();
+  assert.equal(requests.at(-1).ageConfirmed,true);
+  assert.equal(requests.at(-1).termsAccepted,true);
+  assert.equal(requests.at(-1).termsVersion,'v24-draft-2026-10-28');
   assert.equal(requests.at(-1).action,'request');
   assert.equal(requests.at(-1).marketingOptIn,device.label==='celular');
   assert.equal(requests.at(-1).whatsapp,device.label==='celular'?'(85) 99999-9999':'');
