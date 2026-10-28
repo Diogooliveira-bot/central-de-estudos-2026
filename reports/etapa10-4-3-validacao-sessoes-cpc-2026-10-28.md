@@ -87,3 +87,17 @@ As duas execuções terminaram em `completed`, sem erro da ferramenta, mas **o r
 - **Ressalva diagnóstica:** o agente Premium tratou a mudança da URL `/central-v119.html` para `/` como redirecionamento defeituoso. A inspeção do próprio `central-v119.html` revelou a instrução **intencional** `history.replaceState(..., '/')` no carregador, portanto **essa mudança de endereço não prova defeito**. Tentativas de rotas hash improvisadas não são evidência de erro na navegação normal via cartão/disciplinas.
 - **Conclusão técnica:** autenticação e entitlements foram confirmados **também por HTTP autenticado**, não só por consultas ao banco; ainda falta comprovação visual e HTTP da **entrega de apostila completa no Premium**, **negação de acesso ao arquivo completo no Gratuito**, e **persistência real**. Não declarar Etapa 10.4 totalmente aprovada; investigar carregamento inicial e executar a navegação pelos controles reais da interface, sem deduzir rotas.
 - Os dados de autenticação, senhas e cookies não foram registrados neste documento. Nenhuma alteração foi feita em produção.
+
+## Encerramento dos dois testes de navegador — 28/10/2026
+
+As duas execuções previamente registradas como `pending` **terminaram com status `completed`**.
+
+**Gratuito**, run `adcac97b-feac-4065-8acb-d7bfe1d659cd` (22 passos): `/api/auth?action=me` confirmou `authenticated:true`, aluno fictício. `/api/plans?action=me` confirmou `free/active`, `theory.summary=true`, `theory.complete=false`, `tec.links=false`, `qc.links=false`, `lei_em_dia` habilitado com limite diário de 20. O agente relatou falha genérica ao carregar `central-v119.html`; não distinguiu falha persistente da aplicação de limitação da automação. Não abriu módulo CPC nem comprovou HTTP 403 do conteúdo completo.
+
+**Premium**, run `926eefdb-5fab-499b-a5f7-7af025d33f43` (60 passos): `/api/auth?action=me` confirmou `authenticated:true`; `/api/plans?action=me` confirmou `premium/active` e `theory.complete=true`. O agente viu o dashboard e **Direito Processual Civil (20 módulos)**, mas não navegou ao M05 pelas opções reais da interface e não encontrou apostilas. Tentou URLs inventadas (`/#/central`, `/#/cpc`, `/central`), que retornaram 404. **Esses caminhos não são rotas oficiais verificadas.**
+
+**Correção de diagnóstico:** no código `central-v119.html`, a instrução `history.replaceState(null,'',appPath+entryUrl.search+entryUrl.hash)` deliberadamente substitui a URL por `/` (exceto `/central-de-questoes`) antes de gravar a interface principal via `document.open();document.write(html);document.close()`. A troca de URL para `/` **não comprova erro de navegação**, portanto não deve fundamentar alteração do roteador sem teste adicional.
+
+**Resultado verificado:** ✅ autenticação real das duas contas fictícias e seus planos; ✅ matriz de direitos em resposta real da API; ⚠️ bloqueio HTTP 403 de arquivos CPC no Gratuito ainda não comprovado; ⚠️ leitor Premium M01–M20 e M05 não aberto; ⚠️ persistência do progresso não testada; ⚠️ falha de carregamento no Gratuito não diagnosticada. **Etapa 10.4 permanece parcialmente aprovada, não encerrada.**
+
+**Próximo ensaio:** usar a navegação real **Disciplinas → Direito Processual Civil → M05**, comparar resposta HTTP do ativo pago, abrir/fechar leitor Premium e testar marcação/persistência. Evitar recriar contas. Sessões têm TTL de 2 horas; se expiradas, autenticar novamente com as mesmas senhas.
