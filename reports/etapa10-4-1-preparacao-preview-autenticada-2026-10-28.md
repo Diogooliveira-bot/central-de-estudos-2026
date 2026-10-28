@@ -36,3 +36,30 @@ Assim que o revisor autorizado aprovar a execução **40660741519** no environme
 Se houver falha de deploy, permissão, login ou persistência, registrar como **Etapa 10.5**, sem promoção/merge. O aceite editorial/jurídico continua separado.
 
 **Não houve alteração em `main`, Production, plano de alunos reais, conteúdo jurídico original nem em bancos de dados reais; apenas configuração e leitura no banco Neon de teste, workflow de Preview e registro técnico.**
+
+## Atualização pós-aprovação — 28/10/2026
+
+**Aprovação confirmada e publicação efetivada.** O GitHub Actions [40660957860](https://github.com/Diogooliveira-bot/central-de-estudos-2026/actions/runs/40660957860) concluiu com `success`. Todos os passos de testes, build e deployment no projeto temporário passaram.
+
+| Evidência | Resultado verificado |
+|---|---|
+| Vercel deployment | `dpl_H3XSoKBuzMh1wZrTe5PoAhstRJjn` |
+| URL direta | https://base-completa-teste-visual-30p9rguhx-estudotd.vercel.app |
+| Estado Vercel | `READY` |
+| Target | `Preview` (não Production) |
+| `meta.githubCommitSha` | `f5dc763b6fcd0f995e2a44ff98e0f03ef3d630e9` — exatamente o SHA auditado e fixado no workflow |
+| Proteção | Vercel Authentication continua habilitada para **todos** os deployments do projeto |
+| Banco | Variável `DATABASE_URL` sensível da Preview foi vinculada ao Neon **de teste**, e a permissão por plano foi verificada em consultas somente leitura |
+| Hotmart | `HOTMART_LIVE_ENABLED=false`; sem processamento comercial na Preview |
+
+**Teste HTTP sem sessão:** a página inicial retorna a tela `Entrar — Base Completa`; `GET /api/auth?action=me` devolveu `200` e `{"authenticated":false}`, conforme esperado sem login. Tentativas de ler dados completos CPC diretamente via acesso automatizado não passaram da proteção do deployment; isso **não é uma prova autônoma do código HTTP de autorização da aplicação**. Os testes unitários de restrição ao Gratuito e do Premium permanecem aprovados, mas não substituem autenticação real.
+
+Foi usado acesso temporário para inspecionar as respostas da Preview protegida, e a revogação do link temporário foi solicitada sem regeneração. Nenhuma proteção de projeto foi desativada.
+
+**Pendência crítica da Etapa 10.4:** não foi possível abrir sessões de alunos Gratuito e Premium, porque o fluxo de automação não tem acesso aos valores das senhas sensíveis da Vercel e não deve recuperá-las ou divulgá-las. **Não atestar autenticação por plano, persistência integrada ou bloqueios HTTP de materiais pagos enquanto esses testes não forem efetivamente executados.**
+
+### Próximo ensaio seguro
+
+Com o deployment exato acima, acessar a Preview por login Vercel autorizado, iniciar sessão com contas **fictícias de homologação** e testar: `Gratuito` recebe teoria resumida e 403 para conteúdo completo; `Premium` abre CPC M01–M20, tabelas, progressos; abrir/fechar e reentrar; conferir em 390, 768 e 1366 px. Nenhum dado real, mudança de senha, cadastro, plano ou cobrança deve ser utilizado. A seleção das contas e das credenciais deve ocorrer em canal seguro, fora do texto do chat.
+
+**Status pós-aprovação:** 10.4.1 **concluída (ambiente preparado e publicado)**; 10.4 **parcialmente concluída** — falta o teste autenticado das duas modalidades.
