@@ -30,6 +30,8 @@ jobs:
         run: |
           node --check tests/etapa10-cpc-editorial-audit-browser.mjs
           node --test tests/legal-complete-premium-theme-unit.mjs tests/etapa3-premium-pilots-unit.mjs
+      - name: Etapa 10.4 — segurança de login, planos e arquivos Premium (sem Neon)
+        run: npm run test:premium-and-auth
       - name: Instalar Chromium real
         run: npx playwright install --with-deps chromium
       - name: Auditar títulos, tabelas, fonte e responsividade dos 20 módulos
