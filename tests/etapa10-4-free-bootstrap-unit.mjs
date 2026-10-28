@@ -67,6 +67,7 @@ test('free: os bloqueios server-side de arquivos pagos não são relaxados', asy
 
 test('free: o painel legado usa somente CF_QUESTIONS vazio sem baixar questões pagas',async()=>{
  const {source}=await makeFilter();
- assert.match(source,/if\(freeStudent\)authBoot\+='<scr'\+'ipt>window\.CF_QUESTIONS=Array\.isArray\(window\.CF_QUESTIONS\)\?window\.CF_QUESTIONS:\[\];/);
+ assert.match(source,/if\(freeStudent\)authBoot\+='<scr'\+'ipt>\["CF_QUESTIONS","PENAL_QUESTIONS","CPC_QUESTIONS"\]/);
+ assert.match(source,/if\(!Array\.isArray\(window\[name\]\)\)window\[name\]=\[\]/);
  assert.match(source,/freeStudent&&isPremiumOnlyScript\(src\)/);
 });
