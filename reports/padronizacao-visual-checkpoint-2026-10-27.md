@@ -652,3 +652,11 @@ Contagens de elementos efetivamente renderizados no navegador (mesmas nas três 
 - **Relatório completo:** [etapa10-5-correcao-carregamento-civil-2026-10-28.md](./etapa10-5-correcao-carregamento-civil-2026-10-28.md).
 - **Próximo passo:** [aprovação do workflow privado 40755836130](https://github.com/Diogooliveira-bot/central-de-estudos-2026/actions/runs/40755836130), verificar Vercel Preview READY com commit `7efe886...` e testar sessões reais de homologação. **Não afirmar produção corrigida** antes de publicação controlada.
 - Nenhuma modificação em `main`, Production, banco real, conteúdos jurídicos ou dados de progresso.
+
+## Etapa 10.5.1 — Proteção da Preview preservada após falha de teste (28/10/2026)
+
+- [Relatório de diagnóstico e correção](./etapa10-5-1-correcao-seletor-onboarding-2026-10-28.md).
+- [Deploy privado anterior 40755836130](https://github.com/Diogooliveira-bot/central-de-estudos-2026/actions/runs/40755836130) foi aprovado pelo proprietário, mas **falhou antes de publicar**: Playwright strict mode em dois botões `data-onboarding-close` do onboarding. Não houve alteração no ambiente publicado.
+- Correção apenas no seletor do teste `tests/etapa10-4-cpc-home-flow-browser.mjs`: usa `button.student-onboarding-close`. Código testado SHA `84111d7916ec1ad05d476d722c313fe0fa362960`.
+- [Auditoria 40757167111](https://github.com/Diogooliveira-bot/central-de-estudos-2026/actions/runs/40757167111) **success**, 60/60 CPC, 3/3 navegação Premium mock, 2/2 abertura CPC Gratuito/Premium, com bloqueio simulado 403 no Gratuito. Erro JSON não fatal remanescente da fixture não prova defeito em produção.
+- **Próximo bloqueio:** [nova aprovação privada 40757485979](https://github.com/Diogooliveira-bot/central-de-estudos-2026/actions/runs/40757485979), environment `bc-preview-private`. Fonte pinada para a nova Preview `84111d...`. Não liberar Production nem afirmar homologação autenticada E2E antes do deployment READY no SHA e de testes reais.
