@@ -431,3 +431,19 @@ Contagens de elementos efetivamente renderizados no navegador (mesmas nas três 
 - **M08** (10 linhas × 2 colunas): os prazos e números constantes do quadro da apostila, transcritos literalmente. **Ainda requerem revisão jurídica independente e verificação de atualização normativa**, não incluída no teste de fidelidade editorial.
 - As tabelas utilizam legenda, cabeçalhos e rolagem local `.table-wrap`; resumo, marcações, progresso e leitores dos demais módulos inalterados. Os botões "Voltar ao M06/M07/M08" **já estavam corretos**, portanto não foram modificados.
 - Testes estendidos nos 19 módulos CPC × 390/768/1366 px com verificação da fonte, tabela, rolagem mobile, resumo e progresso. **Status inicial: aguardando CI**, sem liberação de Production, banco Neon, `main` ou Preview protegida.
+
+## Etapa 9.3 — CPC M06–M08: fechamento técnico (28/10/2026)
+
+- **Execução comprovada:** [GitHub Actions 40608578760](https://github.com/Diogooliveira-bot/central-de-estudos-2026/actions/runs/40608578760), `completed/success` para o commit `9be03cde3a4e0027f181288cb13740360968f68c`.
+- **57/57 verificações CPC**: 19 leitores M02–M20 nas larguras 390/768/1366 px. Sem erros JavaScript, sem transbordamento horizontal global, progresso persistente após reabertura; nenhum vazamento dos quadros Premium para resumos.
+- **Resultados dos quadros:**
+  - **M06:** impedimento × suspeição, duas comparações e três colunas, sem retirar nuances jurídicas já existentes no material.
+  - **M07:** cinco tipos de pronunciamentos judiciais (sentença, decisão interlocutória, despacho, ato ordinatório e acórdão), cinco linhas e duas colunas.
+  - **M08:** dez registros de prazos/números do quadro original, dez linhas e duas colunas, transcrição literal.
+- **Responsividade:** cada quadro foi validado em 390, 768 e 1366 px, com scroll horizontal **interno** em 390 px; elementos `table` com `caption`, cabeçalhos semânticos de coluna e linha.
+- **Integridade:** arquivos originais `content/cpc/m0{6,7,8}-native-data.js` intocados; a verificação de correspondência com fonte original executou no navegador antes da inserção. Os botões de retorno desses três leitores já tinham o rótulo correto e não foram alterados.
+- **Evidências:** [artefato 12781673169](https://github.com/Diogooliveira-bot/central-de-estudos-2026/actions/runs/40608578760/artifacts/12781673169), aproximadamente 6,7 MB com capturas e `metricas.json`, válido aproximadamente até **11/11/2026**.
+- **Limites:** verificar literalmente as linhas no material fornecido **não equivale** a validação atualizada dos enunciados de lei, jurisprudência ou prazos — sobretudo os números do M08. A revisão editorial humana das outras passagens, tabelas e conteúdo legislativo continua pendente, assim como Preview autenticada.
+- **Panorama CPC atualizado:** M02–M08 contêm 1 quadro HTML consultivo piloto cada (**7 módulos**). M09–M20 seguem com **0 tabelas HTML** detectadas. Os módulos M02–M08 também contêm quadros remanescentes a reconstruir individualmente quando inequívocos.
+- **Próximo lote conservador:** examinar CPC M09–M11, identificar quadros cujas células possam ser comprovadas pela fonte, e evitar reconstrução inferida de extrações de PDF com palavras deslocadas.
+- Sem merge, deploy em Production, mudança de Neon, alteração de permissões Premium ou publicação da Preview privada.
