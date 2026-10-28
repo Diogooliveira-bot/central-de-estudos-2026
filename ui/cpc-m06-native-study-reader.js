@@ -100,10 +100,26 @@ function addVerifiedM06Table(article,raw){
  * permanecem inalterados. Aplicação exclusiva na leitura completa.
  */
 function fixCpcM06Labels(overlay){
- const replacements=new Map([["4. 2.6. Responsabilidade do juiz — art. 143","2.6. Responsabilidade do juiz — art. 143"]]);
+ const replacements=new Map([["4. 2.6. Responsabilidade do juiz — art. 143","2.6. Responsabilidade do juiz — art. 143"],["20. 10. O MP, atuando como fiscal da ordem jurídica, pode recorrer.","10. O MP, atuando como fiscal da ordem jurídica, pode recorrer."]]);
  for(const heading of overlay.querySelectorAll('.bc-native-article h2,.bc-native-article h3')){
   const old=heading.textContent.trim(),clean=replacements.get(old);
   if(clean){heading.dataset.bcOriginalHeading=old;heading.textContent=clean;}
+ }
+}
+
+/* Destacar visualmente o bloco do teste rápido sem mudar tags h2,
+ * IDs, posições no índice nem checkpoints de leitura. */
+function markM06QuickTest(overlay){
+ const article=overlay.querySelector('.bc-native-article');
+ let inside=false;
+ for(const heading of article.querySelectorAll('h2,h3')){
+  const text=heading.textContent.trim();
+  if(/^12\. TESTE RÁPIDO — CERTO OU ERRADO$/.test(text)){inside=true;continue}
+  if(inside&&/^13\. RESUMO DE VÉSPERA$/.test(text))break;
+  if(inside&&/^\d{1,2}\.\s+/.test(text)){
+   heading.classList.add('bc-cpc-m06-quiz-question');
+   heading.dataset.bcEditorialQuiz='true';
+  }
  }
 }
 function chapters(mode){return source()?.chapters?.[mode]||[]}
@@ -162,6 +178,7 @@ function open(mode){
  '<section class="bc-native-study-progress"><div><b>Progresso de leitura</b><span data-cpc-reader-value></span></div><div class="bc-native-study-progress-track"><span data-cpc-reader-studybar></span></div><small>Os capítulos recebem check conforme você avança. Você também pode marcar manualmente no índice.</small></section>'+parsed.body+'</article></main></div></section>';
  if(mode==='complete')addVerifiedM06Table(ov.querySelector('.bc-native-article'),raw);
  if(mode==='complete')fixCpcM06Labels(ov);
+ if(mode==='complete')markM06QuickTest(ov);
  document.body.appendChild(ov);document.body.style.overflow='hidden';
  current={mode,overlay:ov,scroll:ov.querySelector('.bc-native-scroll'),article:ov.querySelector('.bc-native-article'),font:Number(localStorage.getItem(key('font'))||16),map:[]};
  current.article.style.fontSize=current.font+'px';
