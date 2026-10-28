@@ -44,5 +44,5 @@ test("pacote 5 está integrado ao filtro de subassuntos da Lei em Dia",()=>{
  assert.ok(html.includes("DATA_ADM_PACK5"));
  assert.ok(html.includes("decorando-data-adm-pack5.js"));
  assert.ok(html.includes("856 questões"));
- assert.ok(manifest.files.some(x=>x.includes("decorando-data-adm-pack5.js")));
+ assert.ok(!manifest.files.some(x=>x.includes("decorando-data-adm-pack5.js")), "dataset Premium não pode entrar no manifesto público");
 });
