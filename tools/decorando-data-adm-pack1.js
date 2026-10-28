@@ -1560,19 +1560,27 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 1º",
     "title": "Lei 13.709/2018 — LGPD",
     "parts": [
-      "Art. 1º Esta Lei dispõe sobre o tratamento de dados pessoais, inclusive nos meios digitais, por pessoa natural ou por pessoa jurídica de direito público ou privado, com o objetivo de proteger os direitos fundamentais de liberdade e de privacidade e o livre desenvolvimento da personalidade da pessoa natural."
+      "Art. 3º Esta Lei aplica-se a qualquer operação de tratamento realizada por pessoa natural ou por pessoa jurídica de direito público ou privado, independentemente do meio, do país de sua sede ou do país onde estejam localizados os dados, desde que:",
+      "Art. 6º As atividades de tratamento de dados pessoais deverão observar a boa-fé e os seguintes princípios:",
+      "III - necessidade: limitação do tratamento ao mínimo necessário para a realização de suas finalidades, com abrangência dos dados pertinentes, proporcionais e não excessivos em relação às finalidades do tratamento de dados;"
     ],
     "origin": "real",
     "question": {
-      "statement": "Telecomunicações (Telebras) Julgue o item a seguir, com base nas disposições da Lei Geral de Proteção de Dados Pessoais – LGPD (Lei n.º 13.709/2018), do Marco Civil da Internet (Lei. n.º 12.965/2014), da Lei de Criação da TELEBRAS (Lei n.º 5.792/1972) e da Lei das Estatais (Lei n.º 13.303/2016). A TELEBRAS, na realização de atividades de tratamento de dados pessoais, está dispensada de observar o princípio da necessidade previsto na LGPD, pois este se aplica somente a órgãos da administração pública direta.",
+      "statement": "Julgue o item a seguir, com base nas disposições da Lei Geral de Proteção de Dados Pessoais – LGPD (Lei n.º 13.709/2018), do Marco Civil da Internet (Lei. n.º 12.965/2014), da Lei de Criação da TELEBRAS (Lei n.º 5.792/1972) e da Lei das Estatais (Lei n.º 13.303/2016). A TELEBRAS, na realização de atividades de tratamento de dados pessoais, está dispensada de observar o princípio da necessidade previsto na LGPD, pois este se aplica somente a órgãos da administração pública direta.",
       "answer": false,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Errada. O art. 6º, III, inclui a necessidade entre os princípios que as atividades de tratamento de dados pessoais devem observar, e o art. 3º, caput, aplica a lei a qualquer operação de tratamento realizada por pessoa natural ou por pessoa jurídica de direito público ou privado. Não há dispensa para a Telebras nem restrição do princípio à administração pública direta. O rótulo do item cita o art. 1º; o rótulo foi mantido.",
       "source": "31.pdf · questão 5 · Art. 1º, LGPD",
-      "meta": "CESPE/CEBRASPE 2026 - Especialista em Gestão de",
+      "meta": "CESPE/CEBRASPE 2026 - Especialista em Gestão de Telecomunicações (Telebras)",
       "bank": "CESPE/CEBRASPE",
       "year": 2026,
-      "role": "Especialista em Gestão de",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "role": "Especialista em Gestão de Telecomunicações (Telebras)",
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.709/2018, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -1589,13 +1597,19 @@ const DATA_ADM_PACK1 = [
     "question": {
       "statement": "Em atenção aos mandamentos da Lei nº 13.709/2018, o item a seguir indica corretamente o objetivo da Lei Geral de Proteção de Dados Pessoais, conforme previsto em seu art. 1º. Dispor sobre o tratamento de dados pessoais, inclusive nos meios digitais, por pessoa natural ou por pessoa jurídica de direito público ou privado, com o objetivo de proteger os direitos fundamentais de liberdade e de privacidade e o livre desenvolvimento da personalidade da pessoa natural.",
       "answer": true,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Correta. O enunciado reproduz o art. 1º da Lei 13.709/2018, que define o objeto e o objetivo da lei.",
       "source": "31.pdf · questão 10 · Art. 1º, LGPD",
       "meta": "IDECAN 2026 - Escrivão de Polícia (PC-SC)",
       "bank": "IDECAN",
       "year": 2026,
       "role": "Escrivão de Polícia (PC-SC)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.709/2018, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -1606,19 +1620,26 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 2º, inc. I",
     "title": "Lei 13.709/2018 — LGPD",
     "parts": [
-      "Art. 2º A disciplina da proteção de dados pessoais tem como fundamentos: I - o respeito à privacidade;"
+      "Art. 2º A disciplina da proteção de dados pessoais tem como fundamentos:",
+      "I - o respeito à privacidade;"
     ],
     "origin": "real",
     "question": {
       "statement": "Para responder à questão, considere a Lei Geral de Proteção de Dados Pessoais (LGPD). É fundamento da disciplina de proteção de dados: O respeito à privacidade.",
       "answer": true,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Correta. O art. 2º, I, indica o respeito à privacidade como fundamento da disciplina da proteção de dados pessoais.",
       "source": "31.pdf · questão 12 · Art. 2º, I, LGPD",
       "meta": "FUNDATEC 2025 - Guarda Municipal (Prefeitura Porto Nacional - TO)",
       "bank": "FUNDATEC",
       "year": 2025,
       "role": "Guarda Municipal (Prefeitura Porto Nacional - TO)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.709/2018, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -1629,19 +1650,26 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 2º, inc. I",
     "title": "Lei 13.709/2018 — LGPD",
     "parts": [
-      "Art. 2º A disciplina da proteção de dados pessoais tem como fundamentos: I - o respeito à privacidade;"
+      "Art. 2º A disciplina da proteção de dados pessoais tem como fundamentos:",
+      "I - o respeito à privacidade;"
     ],
     "origin": "real",
     "question": {
       "statement": "Um dos fundamentos da proteção de dados, conforme a Lei Geral de Proteção de Dados Pessoais (LGPD), é o respeito à privacidade.",
       "answer": true,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Correta. O art. 2º, I, indica o respeito à privacidade como fundamento da disciplina da proteção de dados pessoais.",
       "source": "31.pdf · questão 13 · Art. 2º, I, LGPD",
       "meta": "FUNDATEC 2025 - Motorista (Câmara Municipal de Candiota - RS)",
       "bank": "FUNDATEC",
       "year": 2025,
       "role": "Motorista (Câmara Municipal de Candiota - RS)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.709/2018, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -1652,19 +1680,28 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 2º, incisos I e IV",
     "title": "Lei 13.709/2018 — LGPD",
     "parts": [
-      "Art. 2º A disciplina da proteção de dados pessoais tem como fundamentos: I - o respeito à privacidade; [...] IV - a inviolabilidade da intimidade, da honra e da imagem;"
+      "Art. 1º Esta Lei dispõe sobre o tratamento de dados pessoais, inclusive nos meios digitais, por pessoa natural ou por pessoa jurídica de direito público ou privado, com o objetivo de proteger os direitos fundamentais de liberdade e de privacidade e o livre desenvolvimento da personalidade da pessoa natural.",
+      "Art. 2º A disciplina da proteção de dados pessoais tem como fundamentos:",
+      "I - o respeito à privacidade;",
+      "IV - a inviolabilidade da intimidade, da honra e da imagem;"
     ],
     "origin": "real",
     "question": {
       "statement": "A Lei Geral de Proteção de Dados Pessoais (LGPD) dispõe sobre o tratamento de dados pessoais, inclusive nos meios digitais, por pessoa natural ou por pessoa jurídica de direito público ou privado, com o objetivo de proteger o respeito à privacidade e à inviolabilidade da intimidade, da honra e da imagem.",
       "answer": false,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Errada. O art. 1º define o objetivo da lei como proteger os direitos fundamentais de liberdade e de privacidade e o livre desenvolvimento da personalidade da pessoa natural. O respeito à privacidade e a inviolabilidade da intimidade, da honra e da imagem constam do art. 2º, I e IV, como fundamentos da disciplina, e não como o objetivo da lei.",
       "source": "31.pdf · questão 14 · Art. 2º, I e IV, LGPD",
       "meta": "CESPE/CEBRASPE 2025 - Procurador do Estado (PGE-RS)",
       "bank": "CESPE/CEBRASPE",
       "year": 2025,
       "role": "Procurador do Estado (PGE-RS)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.709/2018, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -1675,19 +1712,26 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 2º, inc. II",
     "title": "Lei 13.709/2018 — LGPD",
     "parts": [
-      "Art. 2º A disciplina da proteção de dados pessoais tem como fundamentos: [...] II - a autodeterminação informativa;"
+      "Art. 2º A disciplina da proteção de dados pessoais tem como fundamentos:",
+      "II - a autodeterminação informativa;"
     ],
     "origin": "real",
     "question": {
-      "statement": "(TCE-MS) Com base na Lei Geral de Proteção de Dados Pessoais (Lei n.º 13.709/2018), a disciplina da proteção de dados pessoais tem como fundamentos a proteção da autodeterminação informativa.",
+      "statement": "Com base na Lei Geral de Proteção de Dados Pessoais (Lei n.º 13.709/2018), a disciplina da proteção de dados pessoais tem como fundamentos a proteção da autodeterminação informativa.",
       "answer": true,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Correta. O art. 2º, II, indica a autodeterminação informativa como fundamento da disciplina da proteção de dados pessoais.",
       "source": "31.pdf · questão 17 · Art. 2º, II, LGPD",
-      "meta": "CESPE/CEBRASPE 2025 - Auditor Estadual de Controle Externo",
+      "meta": "CESPE/CEBRASPE 2025 - Auditor Estadual de Controle Externo (TCE-MS)",
       "bank": "CESPE/CEBRASPE",
       "year": 2025,
-      "role": "Auditor Estadual de Controle Externo",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "role": "Auditor Estadual de Controle Externo (TCE-MS)",
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.709/2018, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -1698,19 +1742,26 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 2º, inc. II",
     "title": "Lei 13.709/2018 — LGPD",
     "parts": [
-      "Art. 2º A disciplina da proteção de dados pessoais tem como fundamentos: [...] II - a autodeterminação informativa;"
+      "Art. 2º A disciplina da proteção de dados pessoais tem como fundamentos:",
+      "II - a autodeterminação informativa;"
     ],
     "origin": "real",
     "question": {
       "statement": "À luz do disposto na Lei de Acesso à Informação e na Lei Geral de Proteção de Dados Pessoais, julgue o item a seguir. Um dos fundamentos da proteção de dados pessoais é a autodeterminação informativa.",
       "answer": true,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Correta. O art. 2º, II, indica a autodeterminação informativa como fundamento da disciplina da proteção de dados pessoais.",
       "source": "31.pdf · questão 18 · Art. 2º, II, LGPD",
       "meta": "CESPE/CEBRASPE 2025 - Analista (EMBRAPA)",
       "bank": "CESPE/CEBRASPE",
       "year": 2025,
       "role": "Analista (EMBRAPA)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.709/2018, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -1721,19 +1772,27 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 2º, incisos II e III",
     "title": "Lei 13.709/2018 — LGPD",
     "parts": [
-      "Art. 2º A disciplina da proteção de dados pessoais tem como fundamentos: [...] II - a autodeterminação informativa; III - a liberdade de expressão, de informação, de comunicação e de opinião;"
+      "Art. 2º A disciplina da proteção de dados pessoais tem como fundamentos:",
+      "II - a autodeterminação informativa;",
+      "III - a liberdade de expressão, de informação, de comunicação e de opinião;"
     ],
     "origin": "real",
     "question": {
       "statement": "Acerca de gestão de riscos e continuidade de negócio, julgue o item a seguir, com base na NBR ISO 27005:2019 e na Lei Geral de Proteção de Dados (LGPD). A LGPD disciplina a proteção de dados pessoais com fundamento na autodeterminação informativa e na liberdade de expressão, informação, comunicação e opinião.",
       "answer": true,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Correta. Os incisos II e III do art. 2º indicam, entre os fundamentos da disciplina da proteção de dados pessoais, a autodeterminação informativa e a liberdade de expressão, de informação, de comunicação e de opinião.",
       "source": "31.pdf · questão 19 · Art. 2º, II e III, LGPD",
       "meta": "CESPE/CEBRASPE 2025 - Técnico Judiciário (TRF - 6ª Região)",
       "bank": "CESPE/CEBRASPE",
       "year": 2025,
       "role": "Técnico Judiciário (TRF - 6ª Região)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.709/2018, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -1744,19 +1803,26 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 2º, inc. III",
     "title": "Lei 13.709/2018 — LGPD",
     "parts": [
-      "Art. 2º A disciplina da proteção de dados pessoais tem como fundamentos: [...] III - a liberdade de expressão, de informação, de comunicação e de opinião;"
+      "Art. 2º A disciplina da proteção de dados pessoais tem como fundamentos:",
+      "III - a liberdade de expressão, de informação, de comunicação e de opinião;"
     ],
     "origin": "real",
     "question": {
-      "statement": "(TCE-MS) Com base na Lei Geral de Proteção de Dados Pessoais (Lei n.º 13.709/2018), a disciplina da proteção de dados pessoais tem como fundamentos a liberdade de expressão, de informação, de comunicação e de opinião.",
+      "statement": "Com base na Lei Geral de Proteção de Dados Pessoais (Lei n.º 13.709/2018), a disciplina da proteção de dados pessoais tem como fundamentos a liberdade de expressão, de informação, de comunicação e de opinião.",
       "answer": true,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Correta. O art. 2º, III, indica a liberdade de expressão, de informação, de comunicação e de opinião como fundamento da disciplina da proteção de dados pessoais.",
       "source": "31.pdf · questão 21 · Art. 2º, III, LGPD",
-      "meta": "CESPE/CEBRASPE 2025 - Auditor Estadual de Controle Externo",
+      "meta": "CESPE/CEBRASPE 2025 - Auditor Estadual de Controle Externo (TCE-MS)",
       "bank": "CESPE/CEBRASPE",
       "year": 2025,
-      "role": "Auditor Estadual de Controle Externo",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "role": "Auditor Estadual de Controle Externo (TCE-MS)",
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.709/2018, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -1767,19 +1833,26 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 2º, inc. III",
     "title": "Lei 13.709/2018 — LGPD",
     "parts": [
-      "Art. 2º A disciplina da proteção de dados pessoais tem como fundamentos: [...] III - a liberdade de expressão, de informação, de comunicação e de opinião;"
+      "Art. 2º A disciplina da proteção de dados pessoais tem como fundamentos:",
+      "III - a liberdade de expressão, de informação, de comunicação e de opinião;"
     ],
     "origin": "real",
     "question": {
-      "statement": "(CAESB) A Lei Geral de Proteção de Dados Pessoais (LGPD) tem como fundamento a liberdade de expressão, de informação, de comunicação e de opinião.",
+      "statement": "A Lei Geral de Proteção de Dados Pessoais (LGPD) tem como fundamento a liberdade de expressão, de informação, de comunicação e de opinião.",
       "answer": true,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Correta. O art. 2º, III, indica a liberdade de expressão, de informação, de comunicação e de opinião como fundamento da disciplina da proteção de dados pessoais.",
       "source": "31.pdf · questão 22 · Art. 2º, III, LGPD",
-      "meta": "CESPE/CEBRASPE 2025 - Analista de Suporte ao Negócio",
+      "meta": "CESPE/CEBRASPE 2025 - Analista de Suporte ao Negócio (CAESB)",
       "bank": "CESPE/CEBRASPE",
       "year": 2025,
-      "role": "Analista de Suporte ao Negócio",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "role": "Analista de Suporte ao Negócio (CAESB)",
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.709/2018, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -1790,19 +1863,27 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 2º, inc. IV",
     "title": "Lei 13.709/2018 — LGPD",
     "parts": [
-      "Art. 2º A disciplina da proteção de dados pessoais tem como fundamentos: [...] IV - a inviolabilidade da intimidade, da honra e da imagem;"
+      "Art. 2º A disciplina da proteção de dados pessoais tem como fundamentos:",
+      "IV - a inviolabilidade da intimidade, da honra e da imagem;",
+      "Art. 6º As atividades de tratamento de dados pessoais deverão observar a boa-fé e os seguintes princípios:"
     ],
     "origin": "real",
     "question": {
       "statement": "Considerando o teor da Lei Geral de Proteção de Dados, julgue o item. A inviolabilidade da intimidade, da honra e da imagem é um dos princípios da disciplina da proteção de dados pessoais.",
       "answer": false,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Errada. O art. 2º, IV, trata a inviolabilidade da intimidade, da honra e da imagem como fundamento da disciplina da proteção de dados pessoais. Os princípios das atividades de tratamento são os do art. 6º (boa-fé e os incisos desse artigo), entre os quais ela não consta.",
       "source": "31.pdf · questão 25 · Art. 2º, IV, LGPD",
       "meta": "FUNDATEC 2025 - Técnico (UFCSPA)",
       "bank": "FUNDATEC",
       "year": 2025,
       "role": "Técnico (UFCSPA)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.709/2018, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -1813,19 +1894,26 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 2º, inc. IV",
     "title": "Lei 13.709/2018 — LGPD",
     "parts": [
-      "Art. 2º A disciplina da proteção de dados pessoais tem como fundamentos: [...] IV - a inviolabilidade da intimidade, da honra e da imagem;"
+      "Art. 2º A disciplina da proteção de dados pessoais tem como fundamentos:",
+      "IV - a inviolabilidade da intimidade, da honra e da imagem;"
     ],
     "origin": "real",
     "question": {
-      "statement": "(TCE-MS) Com base na Lei Geral de Proteção de Dados Pessoais (Lei n.º 13.709/2018), a disciplina da proteção de dados pessoais tem como fundamentos a inviolabilidade da intimidade, da honra e da imagem.",
+      "statement": "Com base na Lei Geral de Proteção de Dados Pessoais (Lei n.º 13.709/2018), a disciplina da proteção de dados pessoais tem como fundamentos a inviolabilidade da intimidade, da honra e da imagem.",
       "answer": true,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Correta. O art. 2º, IV, indica a inviolabilidade da intimidade, da honra e da imagem como fundamento da disciplina da proteção de dados pessoais.",
       "source": "31.pdf · questão 26 · Art. 2º, IV, LGPD",
-      "meta": "CESPE/CEBRASPE 2025 - Auditor Estadual de Controle Externo",
+      "meta": "CESPE/CEBRASPE 2025 - Auditor Estadual de Controle Externo (TCE-MS)",
       "bank": "CESPE/CEBRASPE",
       "year": 2025,
-      "role": "Auditor Estadual de Controle Externo",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "role": "Auditor Estadual de Controle Externo (TCE-MS)",
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.709/2018, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -1836,19 +1924,26 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 2º, inc. V",
     "title": "Lei 13.709/2018 — LGPD",
     "parts": [
-      "Art. 2º A disciplina da proteção de dados pessoais tem como fundamentos: [...] V - o desenvolvimento econômico e tecnológico e a inovação;"
+      "Art. 2º A disciplina da proteção de dados pessoais tem como fundamentos:",
+      "V - o desenvolvimento econômico e tecnológico e a inovação;"
     ],
     "origin": "real",
     "question": {
-      "statement": "(CAESB) A Lei Geral de Proteção de Dados Pessoais (LGPD) tem como fundamento o desenvolvimento econômico e tecnológico e a inovação.",
+      "statement": "A Lei Geral de Proteção de Dados Pessoais (LGPD) tem como fundamento o desenvolvimento econômico e tecnológico e a inovação.",
       "answer": true,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Correta. O art. 2º, V, indica o desenvolvimento econômico e tecnológico e a inovação como fundamento da disciplina da proteção de dados pessoais.",
       "source": "31.pdf · questão 29 · Art. 2º, V, LGPD",
-      "meta": "CESPE/CEBRASPE 2025 - Analista de Suporte ao Negócio",
+      "meta": "CESPE/CEBRASPE 2025 - Analista de Suporte ao Negócio (CAESB)",
       "bank": "CESPE/CEBRASPE",
       "year": 2025,
-      "role": "Analista de Suporte ao Negócio",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "role": "Analista de Suporte ao Negócio (CAESB)",
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.709/2018, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -1859,19 +1954,27 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 2º, inc. V",
     "title": "Lei 13.709/2018 — LGPD",
     "parts": [
-      "Art. 2º A disciplina da proteção de dados pessoais tem como fundamentos: [...] V - o desenvolvimento econômico e tecnológico e a inovação;"
+      "Art. 2º A disciplina da proteção de dados pessoais tem como fundamentos:",
+      "V - o desenvolvimento econômico e tecnológico e a inovação;",
+      "Art. 6º As atividades de tratamento de dados pessoais deverão observar a boa-fé e os seguintes princípios:"
     ],
     "origin": "real",
     "question": {
       "statement": "Considerando a Lei nº 13.709/2018, Lei Geral de Proteção de dados (LGPD), marco importante no tratamento de dados pessoais, inclusive nos meios digitais, julgue o item. O desenvolvimento econômico e tecnológico e a inovação são princípios essenciais à disciplina da proteção de dados jurídicos.",
       "answer": false,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Errada. O art. 2º, V, arrola o desenvolvimento econômico e tecnológico e a inovação como fundamentos da disciplina da proteção de dados pessoais, e não como princípios. Os princípios das atividades de tratamento estão no art. 6º.",
       "source": "31.pdf · questão 33 · Art. 2º, V, LGPD",
       "meta": "FUNDATEC 2025 - Arquivista (Prefeitura Municipal de São Vicente do Sul - RS)",
       "bank": "FUNDATEC",
       "year": 2025,
       "role": "Arquivista (Prefeitura Municipal de São Vicente do Sul - RS)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.709/2018, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -1882,19 +1985,26 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 2º, inc. VI",
     "title": "Lei 13.709/2018 — LGPD",
     "parts": [
-      "Art. 2º A disciplina da proteção de dados pessoais tem como fundamentos: I - o respeito à privacidade; II - a autodeterminação informativa; III - a liberdade de expressão, de informação, de comunicação e de opinião; IV - a inviolabilidade da intimidade, da honra e da imagem; V - o desenvolvimento econômico e tecnológico e a inovação; VI - a livre iniciativa, a livre concorrência e a defesa do consumidor; e VII - os direitos humanos, o livre desenvolvimento da personalidade, a dignidade e o exercício da cidadania pelas pessoas naturais."
+      "Art. 2º A disciplina da proteção de dados pessoais tem como fundamentos:",
+      "VI - a livre iniciativa, a livre concorrência e a defesa do consumidor; e"
     ],
     "origin": "real",
     "question": {
       "statement": "Lucas, servidor público no âmbito da Assembleia Legislativa do Estado de Goiás, foi instado, pelo seu superior hierárquico, a confeccionar parecer sobre os ditames da Lei Geral de Proteção de Dados, em especial sobre os fundamentos da referida legislação. Nesse cenário, considerando as disposições da Lei no 13.709/2018, é correto afirmar que a disciplina da proteção de dados pessoais tem os seguintes fundamentos: A livre iniciativa, a livre concorrência e a defesa do Poder Público.",
       "answer": false,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Errada. O art. 2º, VI, indica como fundamentos a livre iniciativa, a livre concorrência e a defesa do consumidor, e não a defesa do Poder Público.",
       "source": "31.pdf · questão 38 · Art. 2º, VI, LGPD",
       "meta": "FGV 2026 – Policial Legislativo (AL-GO)",
       "bank": "FGV",
       "year": 2026,
       "role": "Policial Legislativo (AL-GO)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.709/2018, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -1905,19 +2015,26 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 2º, inc. VI",
     "title": "Lei 13.709/2018 — LGPD",
     "parts": [
-      "Art. 2º A disciplina da proteção de dados pessoais tem como fundamentos: [...] VI - a livre iniciativa, a livre concorrência e a defesa do consumidor; e"
+      "Art. 2º A disciplina da proteção de dados pessoais tem como fundamentos:",
+      "VI - a livre iniciativa, a livre concorrência e a defesa do consumidor; e"
     ],
     "origin": "real",
     "question": {
       "statement": "No que diz respeito ao regramento de acesso à informação no âmbito do Poder Judiciário e à proteção de dados pessoais, julgue o item subsequente. São fundamentos da disciplina da proteção de dados pessoais a livre iniciativa, a livre concorrência e a defesa do consumidor.",
       "answer": true,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Correta. O art. 2º, VI, indica a livre iniciativa, a livre concorrência e a defesa do consumidor como fundamentos da disciplina da proteção de dados pessoais.",
       "source": "31.pdf · questão 40 · Art. 2º, VI, LGPD",
       "meta": "CESPE/CEBRASPE 2025 - Analista Judiciário (TRT - 10ª Região)",
       "bank": "CESPE/CEBRASPE",
       "year": 2025,
       "role": "Analista Judiciário (TRT - 10ª Região)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.709/2018, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -1928,19 +2045,27 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 2º, inc. VII",
     "title": "Lei 13.709/2018 — LGPD",
     "parts": [
-      "Art. 2º A disciplina da proteção de dados pessoais tem como fundamentos: [...] VII - os direitos humanos, o livre desenvolvimento da personalidade, a dignidade e o exercício da cidadania pelas pessoas naturais."
+      "Art. 1º Esta Lei dispõe sobre o tratamento de dados pessoais, inclusive nos meios digitais, por pessoa natural ou por pessoa jurídica de direito público ou privado, com o objetivo de proteger os direitos fundamentais de liberdade e de privacidade e o livre desenvolvimento da personalidade da pessoa natural.",
+      "Art. 2º A disciplina da proteção de dados pessoais tem como fundamentos:",
+      "VII - os direitos humanos, o livre desenvolvimento da personalidade, a dignidade e o exercício da cidadania pelas pessoas naturais."
     ],
     "origin": "real",
     "question": {
       "statement": "A Lei Geral de Proteção de Dados Pessoais (LGPD) dispõe sobre o tratamento de dados pessoais, inclusive nos meios digitais, por pessoa natural ou por pessoa jurídica de direito público ou privado, com o objetivo de proteger os direitos humanos, o livre desenvolvimento da personalidade, a dignidade e o exercício da cidadania pelas pessoas naturais.",
       "answer": false,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Errada. Os direitos humanos, o livre desenvolvimento da personalidade, a dignidade e o exercício da cidadania pelas pessoas naturais são fundamentos da disciplina (art. 2º, VII). O objetivo da lei, nos termos do art. 1º, é proteger os direitos fundamentais de liberdade e de privacidade e o livre desenvolvimento da personalidade da pessoa natural.",
       "source": "31.pdf · questão 41 · Art. 2º, VII, LGPD",
       "meta": "CESPE/CEBRASPE 2025 - Procurador do Estado (PGE-ES)",
       "bank": "CESPE/CEBRASPE",
       "year": 2025,
       "role": "Procurador do Estado (PGE-ES)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.709/2018, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -1951,19 +2076,26 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 2º, inc. VII",
     "title": "Lei 13.709/2018 — LGPD",
     "parts": [
-      "Art. 2º A disciplina da proteção de dados pessoais tem como fundamentos: [...] VII - os direitos humanos, o livre desenvolvimento da personalidade, a dignidade e o exercício da cidadania pelas pessoas naturais."
+      "Art. 2º A disciplina da proteção de dados pessoais tem como fundamentos:",
+      "VII - os direitos humanos, o livre desenvolvimento da personalidade, a dignidade e o exercício da cidadania pelas pessoas naturais."
     ],
     "origin": "real",
     "question": {
-      "statement": "Telecomunicações (Telebras) De acordo com as previsões da Lei n.º 13.303/2016, da Lei de Acesso à Informação (Lei n.º 12.527/2011) e da Lei Geral de Proteção de Dados (Lei n.º 13.709/2018), julgue o próximo item. Os direitos humanos, a dignidade e o exercício da cidadania pelas pessoas naturais são fundamentos da Lei Geral de Proteção de Dados (LGPD).",
+      "statement": "De acordo com as previsões da Lei n.º 13.303/2016, da Lei de Acesso à Informação (Lei n.º 12.527/2011) e da Lei Geral de Proteção de Dados (Lei n.º 13.709/2018), julgue o próximo item. Os direitos humanos, a dignidade e o exercício da cidadania pelas pessoas naturais são fundamentos da Lei Geral de Proteção de Dados (LGPD).",
       "answer": true,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Correta. O art. 2º, VII, indica os direitos humanos, o livre desenvolvimento da personalidade, a dignidade e o exercício da cidadania pelas pessoas naturais como fundamentos da disciplina da proteção de dados pessoais.",
       "source": "31.pdf · questão 42 · Art. 2º, VII, LGPD",
-      "meta": "CESPE/CEBRASPE 2026 - Especialista em Gestão de",
+      "meta": "CESPE/CEBRASPE 2026 - Especialista em Gestão de Telecomunicações (Telebras)",
       "bank": "CESPE/CEBRASPE",
       "year": 2026,
-      "role": "Especialista em Gestão de",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "role": "Especialista em Gestão de Telecomunicações (Telebras)",
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.709/2018, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -1974,19 +2106,26 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 3º, inc. I",
     "title": "Lei 13.709/2018 — LGPD",
     "parts": [
-      "Art. 3º Esta Lei aplica-se a qualquer operação de tratamento realizada por pessoa natural ou por pessoa jurídica de direito público ou privado, independentemente do meio, do país de sua sede ou do país onde estejam localizados os dados, desde que: I - a operação de tratamento seja realizada no território nacional;"
+      "Art. 3º Esta Lei aplica-se a qualquer operação de tratamento realizada por pessoa natural ou por pessoa jurídica de direito público ou privado, independentemente do meio, do país de sua sede ou do país onde estejam localizados os dados, desde que:",
+      "I - a operação de tratamento seja realizada no território nacional;"
     ],
     "origin": "real",
     "question": {
       "statement": "(Câmara dos Deputados) - Prova Anulada Acerca da aplicação da Lei Geral de Proteção de Dados (LGPD - Lei n° 13.709/18), é correto afirmar que a LGPD será aplicada quando a operação de tratamento for realizada no território nacional.",
       "answer": true,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Correta. O art. 3º, I, aplica a lei a qualquer operação de tratamento realizada por pessoa natural ou jurídica, de direito público ou privado, desde que a operação seja realizada no território nacional.",
       "source": "31.pdf · questão 44 · Art. 3º, I, LGPD",
       "meta": "FGV 2023 - Analista Legislativo - Consultor Legislativo - Área XIV",
       "bank": "FGV",
       "year": 2023,
       "role": "Analista Legislativo - Consultor Legislativo - Área XIV",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.709/2018, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -1997,19 +2136,26 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 3º, inc. II",
     "title": "Lei 13.709/2018 — LGPD",
     "parts": [
-      "Art. 3º Esta Lei aplica-se a qualquer operação de tratamento realizada por pessoa natural ou por pessoa jurídica de direito público ou privado, independentemente do meio, do país de sua sede ou do país onde estejam localizados os dados, desde que: [...] II - a atividade de tratamento tenha por objetivo a oferta ou o fornecimento de bens ou serviços ou o tratamento de dados de indivíduos localizados no território nacional; ou"
+      "Art. 3º Esta Lei aplica-se a qualquer operação de tratamento realizada por pessoa natural ou por pessoa jurídica de direito público ou privado, independentemente do meio, do país de sua sede ou do país onde estejam localizados os dados, desde que:",
+      "II - a atividade de tratamento tenha por objetivo a oferta ou o fornecimento de bens ou serviços ou o tratamento de dados de indivíduos localizados no território nacional; ou"
     ],
     "origin": "real",
     "question": {
       "statement": "A Lei Geral de Proteção de Dados (LGPD) – Lei nº 13.709/2018 – estabelece regras para o uso, a coleta e o tratamento de dados pessoais, com o objetivo de proteger a privacidade e garantir maior segurança às informações dos cidadãos. A LGPD se aplica ao seguinte caso: Tratamento de dados pessoais realizado por pessoa física ou jurídica que tenha por objetivo a oferta ou o fornecimento de bens ou serviços no território nacional.",
       "answer": true,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Correta. O art. 3º, II, aplica a lei quando a atividade de tratamento tenha por objetivo a oferta ou o fornecimento de bens ou serviços (ou o tratamento de dados de indivíduos localizados no território nacional), independentemente do país da sede do agente.",
       "source": "31.pdf · questão 45 · Art. 3º, II, LGPD",
       "meta": "CONSULPLAN 2026 - Analista Técnico Administrativo (SEPREV)",
       "bank": "CONSULPLAN",
       "year": 2026,
       "role": "Analista Técnico Administrativo (SEPREV)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.709/2018, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -2020,19 +2166,30 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 3º, inc. II",
     "title": "Lei 13.709/2018 — LGPD",
     "parts": [
-      "Art. 4º Esta Lei não se aplica ao tratamento de dados pessoais: [...] II - realizado para fins exclusivamente: a) jornalístico e artísticos; ou b) acadêmicos, aplicando-se a esta hipótese os arts. 7º e 11 desta Lei;"
+      "Art. 3º Esta Lei aplica-se a qualquer operação de tratamento realizada por pessoa natural ou por pessoa jurídica de direito público ou privado, independentemente do meio, do país de sua sede ou do país onde estejam localizados os dados, desde que:",
+      "II - a atividade de tratamento tenha por objetivo a oferta ou o fornecimento de bens ou serviços ou o tratamento de dados de indivíduos localizados no território nacional; ou",
+      "Art. 4º Esta Lei não se aplica ao tratamento de dados pessoais:",
+      "II - realizado para fins exclusivamente:",
+      "a) jornalístico e artísticos; ou",
+      "b) acadêmicos, aplicando-se a esta hipótese os arts. 7º e 11 desta Lei;"
     ],
     "origin": "real",
     "question": {
       "statement": "A Lei Geral de Proteção de Dados aplica-se à empresa TechGlobal, sediada no exterior, que disponibilizou aplicativo de monitoramento de hábitos de consumo em língua portuguesa, direcionado ao público brasileiro, coletou dados pessoais de usuários cadastrados em território nacional e tratou esses dados em servidores situados fora do Brasil, mas não incide sobre o tratamento realizado exclusivamente pelo jornalista brasileiro para fins jornalísticos e pelo pesquisador de universidade pública brasileira para fins acadêmicos, observadas as exceções e bases legais aplicáveis.",
       "answer": true,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Correta. A empresa sediada no exterior se submete à lei pelo art. 3º, II, porque oferece serviço ao público brasileiro e trata dados de usuários localizados no território nacional, independentemente do país da sede ou de onde estejam os dados. Já o art. 4º, II, a e b, afasta a lei do tratamento realizado para fins exclusivamente jornalísticos e artísticos ou acadêmicos (neste último caso aplicando-se os arts. 7º e 11).",
       "source": "31.pdf · questão 47 · Art. 3º, II, LGPD",
       "meta": "FGV 2026 - Analista Judiciário (TJ-SC)",
       "bank": "FGV",
       "year": 2026,
       "role": "Analista Judiciário (TJ-SC)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.709/2018, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -2043,19 +2200,26 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 3º, inc. III",
     "title": "Lei 13.709/2018 — LGPD",
     "parts": [
-      "Art. 3º Esta Lei aplica-se a qualquer operação de tratamento realizada por pessoa natural ou por pessoa jurídica de direito público ou privado, independentemente do meio, do país de sua sede ou do país onde estejam localizados os dados, desde que: […] III - os dados pessoais objeto do tratamento tenham sido coletados no território nacional."
+      "Art. 3º Esta Lei aplica-se a qualquer operação de tratamento realizada por pessoa natural ou por pessoa jurídica de direito público ou privado, independentemente do meio, do país de sua sede ou do país onde estejam localizados os dados, desde que:",
+      "III - os dados pessoais objeto do tratamento tenham sido coletados no território nacional."
     ],
     "origin": "real",
     "question": {
-      "statement": "(PGE-RN) À luz do disposto na Lei n.º 13.709/2018 — Lei Geral de Proteção de Dados Pessoais (LGPD) —, julgue o seguinte item. A LGPD é aplicável a pessoas jurídicas públicas e privadas e a pessoas jurídicas de outros países, neste caso, por exemplo, se houverem coletado dados no Brasil.",
+      "statement": "À luz do disposto na Lei n.º 13.709/2018 — Lei Geral de Proteção de Dados Pessoais (LGPD) —, julgue o seguinte item. A LGPD é aplicável a pessoas jurídicas públicas e privadas e a pessoas jurídicas de outros países, neste caso, por exemplo, se houverem coletado dados no Brasil.",
       "answer": true,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Correta. O art. 3º, caput, aplica a lei a pessoas jurídicas de direito público ou privado, independentemente do país de sua sede, e o inciso III alcança o tratamento de dados coletados no território nacional.",
       "source": "31.pdf · questão 48 · Art. 3º, III, Lei 13.709/2018",
-      "meta": "CESPE/CEBRASPE 2024 - Procurador do Estado",
+      "meta": "CESPE/CEBRASPE 2024 - Procurador do Estado (PGE-RN)",
       "bank": "CESPE/CEBRASPE",
       "year": 2024,
-      "role": "Procurador do Estado",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "role": "Procurador do Estado (PGE-RN)",
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.709/2018, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -2066,19 +2230,29 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 3º, inc. III",
     "title": "Lei 13.709/2018 — LGPD",
     "parts": [
-      "Art. 3º Esta Lei aplica-se a qualquer operação de tratamento realizada por pessoa natural ou por pessoa jurídica de direito público ou privado, independentemente do meio, do país de sua sede ou do país onde estejam localizados os dados, desde que: [...] III - os dados pessoais objeto do tratamento tenham sido coletados no território nacional."
+      "Art. 3º Esta Lei aplica-se a qualquer operação de tratamento realizada por pessoa natural ou por pessoa jurídica de direito público ou privado, independentemente do meio, do país de sua sede ou do país onde estejam localizados os dados, desde que:",
+      "III - os dados pessoais objeto do tratamento tenham sido coletados no território nacional.",
+      "§ 1º Consideram-se coletados no território nacional os dados pessoais cujo titular nele se encontre no momento da coleta.",
+      "Art. 4º Esta Lei não se aplica ao tratamento de dados pessoais:",
+      "IV - provenientes de fora do território nacional e que não sejam objeto de comunicação, uso compartilhado de dados com agentes de tratamento brasileiros ou objeto de transferência internacional de dados com outro país que não o de proveniência, desde que o país de proveniência proporcione grau de proteção de dados pessoais adequado ao previsto nesta Lei."
     ],
     "origin": "real",
     "question": {
-      "statement": "(CAESB) A Lei Geral de Proteção de Dados Pessoais (LGPD) aplica-se ao tratamento de dados pessoais coletados fora do território nacional.",
+      "statement": "A Lei Geral de Proteção de Dados Pessoais (LGPD) aplica-se ao tratamento de dados pessoais coletados fora do território nacional.",
       "answer": false,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Errada. O art. 3º, III, vincula a aplicação da lei, nessa hipótese, à coleta dos dados no território nacional (considerados assim os de titular que nele se encontre no momento da coleta, § 1º), e o art. 4º, IV, afasta a lei do tratamento de dados provenientes de fora do território nacional que não sejam comunicados ou compartilhados com agentes brasileiros nem objeto de transferência internacional. A coleta fora do território não é, por si só, hipótese de aplicação da lei.",
       "source": "31.pdf · questão 50 · Art. 3º, III, LGPD",
-      "meta": "CESPE/CEBRASPE 2025 - Analista de Suporte ao Negócio",
+      "meta": "CESPE/CEBRASPE 2025 - Analista de Suporte ao Negócio (CAESB)",
       "bank": "CESPE/CEBRASPE",
       "year": 2025,
-      "role": "Analista de Suporte ao Negócio",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "role": "Analista de Suporte ao Negócio (CAESB)",
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.709/2018, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -3070,19 +3244,27 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 2º, inc. I",
     "title": "Lei 13.019/2014 — MROSC",
     "parts": [
-      "Art. 2º - Para os fins desta Lei, considera-se: I - organização da sociedade civil: a) entidade privada sem fins lucrativos que não distribua entre os seus sócios ou associados, conselheiros, diretores, empregados, doadores ou terceiros eventuais resultados, sobras, excedentes operacionais, brutos ou líquidos, dividendos, isenções de qualquer natureza, participações ou parcelas do seu patrimônio, auferidos mediante o exercício de suas atividades, e que os aplique integralmente na consecução do respectivo objeto social, de forma imediata ou por meio da constituição de fundo patrimonial ou fundo de reserva; [...]"
+      "Art. 2º Para os fins desta Lei, considera-se:",
+      "I - organização da sociedade civil:",
+      "a) entidade privada sem fins lucrativos que não distribua entre os seus sócios ou associados, conselheiros, diretores, empregados, doadores ou terceiros eventuais resultados, sobras, excedentes operacionais, brutos ou líquidos, dividendos, isenções de qualquer natureza, participações ou parcelas do seu patrimônio, auferidos mediante o exercício de suas atividades, e que os aplique integralmente na consecução do respectivo objeto social, de forma imediata ou por meio da constituição de fundo patrimonial ou fundo de reserva;"
     ],
     "origin": "real",
     "question": {
       "statement": "Julgue o item a seguir. Para os fins da Lei nº 13.019/2014, considera-se organização da sociedade civil a entidade privada sem fins lucrativos que não distribua entre os seus sócios ou associados, conselheiros, diretores, empregados, doadores ou terceiros eventuais resultados, sobras, excedentes operacionais, brutos ou líquidos, dividendos, isenções de qualquer natureza, participações ou parcelas do seu patrimônio, auferidos mediante o exercício de suas atividades, e que os aplique integralmente na consecução do respectivo objeto social, de forma imediata ou por meio da constituição de fundo patrimonial ou fundo de reserva.",
       "answer": true,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Correta. O enunciado reproduz o art. 2º, I, a, da Lei 13.019/2014, que inclui entre as organizações da sociedade civil a entidade privada sem fins lucrativos que não distribua resultados, sobras, excedentes, dividendos, isenções, participações ou parcelas do seu patrimônio e os aplique integralmente na consecução do objeto social, de forma imediata ou por meio de fundo patrimonial ou fundo de reserva.",
       "source": "24.pdf · questão 2 · Art. 2º, I, a, Lei 13.019/2014",
       "meta": "FGV 2025 - Juiz Federal Substituto (TRF - 3º REGIÃO)",
       "bank": "FGV",
       "year": 2025,
       "role": "Juiz Federal Substituto (TRF - 3º REGIÃO)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.019/2014, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -3093,19 +3275,29 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 2º, inc. I",
     "title": "Lei 13.019/2014 — MROSC",
     "parts": [
-      "Art. 2º Para os fins desta Lei, considera-se: I - organização da sociedade civil: [...] c) as organizações religiosas que se dediquem a atividades ou a projetos de interesse público e de cunho social distintas das destinadas a fins exclusivamente religiosos;"
+      "Art. 2º Para os fins desta Lei, considera-se:",
+      "I - organização da sociedade civil:",
+      "c) as organizações religiosas que se dediquem a atividades ou a projetos de interesse público e de cunho social distintas das destinadas a fins exclusivamente religiosos;",
+      "Art. 2º Não são passíveis de qualificação como Organizações da Sociedade Civil de Interesse Público, ainda que se dediquem de qualquer forma às atividades descritas no art. 3º desta Lei:",
+      "III - as instituições religiosas ou voltadas para a disseminação de credos, cultos, práticas e visões devocionais e confessionais;"
     ],
     "origin": "real",
     "question": {
-      "statement": "(MPE-BA) Segundo expressa previsão legal, uma organização religiosa que se dedique a projetos de interesse público e de cunho social e se distinga das destinadas a fins exclusivamente religiosos é considerada organização de sociedade civil de interesse público.",
+      "statement": "Segundo expressa previsão legal, uma organização religiosa que se dedique a projetos de interesse público e de cunho social e se distinga das destinadas a fins exclusivamente religiosos é considerada organização de sociedade civil de interesse público.",
       "answer": false,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Errada. O art. 2º, I, c, da Lei 13.019/2014 considera \"organização da sociedade civil\" (e não \"organização da sociedade civil de interesse público\") a organização religiosa que se dedique a atividades ou projetos de interesse público e de cunho social distintos dos destinados a fins exclusivamente religiosos. Além disso, o art. 2º, III, da Lei 9.790/1999 afasta a qualificação como OSCIP das instituições religiosas ou voltadas à disseminação de credos, cultos, práticas e visões devocionais e confessionais.",
       "source": "24.pdf · questão 6 · Art. 2º, I, “c”, Lei 13.019/2014",
-      "meta": "CEBRASPE/CESPE 2023 – Promotor de Justiça",
+      "meta": "CEBRASPE/CESPE 2023 – Promotor de Justiça (MPE-BA)",
       "bank": "CEBRASPE/CESPE",
       "year": 2023,
-      "role": "Promotor de Justiça",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "role": "Promotor de Justiça (MPE-BA)",
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.019/2014 e Lei 9.790/1999, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -3116,19 +3308,26 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 2º, inc. III",
     "title": "Lei 13.019/2014 — MROSC",
     "parts": [
-      "Art. 2º […] III - parceria: conjunto de direitos, responsabilidades e obrigações decorrentes de relação jurídica estabelecida formalmente entre a administração pública e organizações da sociedade civil, em regime de mútua cooperação, para a consecução de finalidades de interesse público e recíproco, mediante a execução de atividade ou de projeto expressos em termos de colaboração, em termos de fomento ou em acordos de cooperação;"
+      "Art. 2º Para os fins desta Lei, considera-se:",
+      "III - parceria: conjunto de direitos, responsabilidades e obrigações decorrentes de relação jurídica estabelecida formalmente entre a administração pública e organizações da sociedade civil, em regime de mútua cooperação, para a consecução de finalidades de interesse público e recíproco, mediante a execução de atividade ou de projeto expressos em termos de colaboração, em termos de fomento ou em acordos de cooperação;"
     ],
     "origin": "real",
     "question": {
       "statement": "De acordo com o disposto na Lei nº 13.019/2014, que estabelece as normas gerais para as parcerias entre a administração pública e organizações da sociedade civil, julgue o item a seguir. O termo “parceria” é definido como o conjunto de direitos, responsabilidades e obrigações decorrentes de relação jurídica estabelecida, formal ou informalmente, entre a administração pública e as organizações da sociedade civil, em regime de mútua cooperação, para a consecução de finalidades de interesse recíproco, mediante a execução de atividade ou de projeto expressos em termos de colaboração.",
       "answer": false,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Errada. O art. 2º, III, define parceria como relação jurídica estabelecida formalmente (e não \"formal ou informalmente\") entre a administração pública e organizações da sociedade civil, para finalidades de interesse público e recíproco (e não apenas \"interesse recíproco\"), mediante termos de colaboração, de fomento ou acordos de cooperação.",
       "source": "24.pdf · questão 10 · Art. 2º, III, Lei 13.019/2014",
       "meta": "FUNDEP 2023 - Promotor de Justiça (MPE-MG)",
       "bank": "FUNDEP",
       "year": 2023,
       "role": "Promotor de Justiça (MPE-MG)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.019/2014, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -3139,19 +3338,27 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 2º",
     "title": "Lei 13.019/2014 — MROSC",
     "parts": [
-      "Art. 2º Para os fins desta Lei, considera-se: [...] III-A - atividade: conjunto de operações que se realizam de modo contínuo ou permanente, das quais resulta um produto ou serviço necessário à satisfação de interesses compartilhados pela administração pública e pela organização da sociedade civil;"
+      "Art. 2º Para os fins desta Lei, considera-se:",
+      "III-A - atividade: conjunto de operações que se realizam de modo contínuo ou permanente, das quais resulta um produto ou serviço necessário à satisfação de interesses compartilhados pela administração pública e pela organização da sociedade civil;",
+      "VIII - termo de fomento: instrumento por meio do qual são formalizadas as parcerias estabelecidas pela administração pública com organizações da sociedade civil para a consecução de finalidades de interesse público e recíproco propostas pelas organizações da sociedade civil, que envolvam a transferência de recursos financeiros;"
     ],
     "origin": "real",
     "question": {
       "statement": "O Marco Regulatório das Organizações da Sociedade Civil (Lei nº 13.019/2014) dispõe que termo de fomento é o conjunto de operações que se realizam de modo contínuo ou permanente, das quais resulta um produto ou serviço necessário à satisfação de interesses compartilhados pela administração pública e pela organização da sociedade civil.",
       "answer": false,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Errada. A definição transcrita (conjunto de operações realizadas de modo contínuo ou permanente, das quais resulta produto ou serviço necessário à satisfação de interesses compartilhados) é a de \"atividade\", no art. 2º, III-A. O termo de fomento, no art. 2º, VIII, é o instrumento que formaliza as parcerias para finalidades de interesse público e recíproco propostas pelas organizações da sociedade civil, com transferência de recursos financeiros.",
       "source": "24.pdf · questão 12 · Art. 2º, III-A, Lei 13.019/2014",
       "meta": "FCC 2026 - Procurador (ALERR)",
       "bank": "FCC",
       "year": 2026,
       "role": "Procurador (ALERR)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.019/2014, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -3162,20 +3369,28 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 2º, inc. IV",
     "title": "Lei 13.019/2014 — MROSC",
     "parts": [
-      "Art. 2º Para os fins desta Lei, considera-se: [...] IV - dirigente: pessoa que detenha poderes de administração, gestão ou controle da organização da sociedade civil, habilitada a assinar termo de colaboração, termo de fomento ou acordo de cooperação com a administração pública para a consecução de finalidades de interesse público e recíproco, ainda que delegue essa competência a terceiros; [...]"
+      "Art. 2º Para os fins desta Lei, considera-se:",
+      "IV - dirigente: pessoa que detenha poderes de administração, gestão ou controle da organização da sociedade civil, habilitada a assinar termo de colaboração, termo de fomento ou acordo de cooperação com a administração pública para a consecução de finalidades de interesse público e recíproco, ainda que delegue essa competência a terceiros;",
+      "VI - gestor: agente público responsável pela gestão de parceria celebrada por meio de termo de colaboração ou termo de fomento, designado por ato publicado em meio oficial de comunicação, com poderes de controle e fiscalização;"
     ],
     "origin": "real",
     "question": {
       "statement": "Sobre o regime jurídico das parcerias entre a Administração Pública e as organizações da sociedade civil, disciplinado pela Lei nº 13.019/2014, julgue o item a seguir. Dirigente é o agente público responsável pela gestão de parceria celebrada por meio de termo de colaboração ou termo de fomento, designado por ato publicado em meio oficial de comunicação, com poderes de controle e fiscalização.",
       "answer": false,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Errada. A descrição do enunciado (agente público responsável pela gestão da parceria, designado por ato publicado em meio oficial, com poderes de controle e fiscalização) corresponde ao \"gestor\", no art. 2º, VI. O dirigente, no art. 2º, IV, é a pessoa que detenha poderes de administração, gestão ou controle da organização da sociedade civil, habilitada a assinar o instrumento da parceria.",
       "source": "24.pdf · questão 13 · Art. 2º, IV, Lei 13.019/2014",
       "meta": "VUNESP 2017 - Procurador (Câmara de Porto Ferreira - SP)",
       "bank": "VUNESP",
       "year": 2017,
       "role": "Procurador (Câmara de Porto Ferreira - SP)",
       "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
-      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.019/2014, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -3186,19 +3401,28 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 2º, inc. VII",
     "title": "Lei 13.019/2014 — MROSC",
     "parts": [
-      "Art. 2º Para os fins desta Lei, considera-se: […] VII - termo de colaboração: instrumento por meio do qual são formalizadas as parcerias estabelecidas pela administração pública com organizações da sociedade civil para a consecução de finalidades de interesse público e recíproco propostas pela administração pública que envolvam a transferência de recursos financeiros."
+      "Art. 2º Para os fins desta Lei, considera-se:",
+      "VII - termo de colaboração: instrumento por meio do qual são formalizadas as parcerias estabelecidas pela administração pública com organizações da sociedade civil para a consecução de finalidades de interesse público e recíproco propostas pela administração pública que envolvam a transferência de recursos financeiros;",
+      "Art. 16. O termo de colaboração deve ser adotado pela administração pública para consecução de planos de trabalho de sua iniciativa, para celebração de parcerias com organizações da sociedade civil que envolvam a transferência de recursos financeiros.",
+      "Art. 84. Não se aplica às parcerias regidas por esta Lei o disposto na Lei nº 8.666, de 21 de junho de 1993."
     ],
     "origin": "real",
     "question": {
       "statement": "O Ministério Público recebeu representação informando que a Secretaria de Educação do Município Alfa formalizara uma parceria com certa associação, que não tinha a qualificação de organização social nem de organização da sociedade civil de interesse público, visando à consecução de atividade de interesse público e recíproco, conforme proposta delineada pela própria Administração Pública. De acordo com esse ajuste, que não foi antecedido de licitação, seria realizada a transferência de recursos financeiros para a referida associação, o que o representante reputou ilícito. Ao analisar a representação, o Promotor de Justiça com atribuição, concluiu, corretamente, que a conduta da Administração Pública é lícita, caso tenha sido celebrado um termo de colaboração.",
       "answer": true,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Correta. O termo de colaboração formaliza parcerias com organizações da sociedade civil para finalidades de interesse público e recíproco propostas pela administração pública que envolvam transferência de recursos financeiros (art. 2º, VII, e art. 16), e o art. 84, caput, afasta a aplicação da Lei 8.666/1993 às parcerias da Lei 13.019, de modo que a ausência de licitação não torna a parceria ilícita. O enunciado não informa se a seleção observou o chamamento público ou se houve dispensa ou inexigibilidade (arts. 24, 30 e 31), o que também condiciona a licitude; o gabarito foi mantido.",
       "source": "24.pdf · questão 15 · Art. 2º, VII, Lei 13.019/2014",
       "meta": "FGV 2025 - Promotor de Justiça (MPE-ES)",
       "bank": "FGV",
       "year": 2025,
       "role": "Promotor de Justiça (MPE-ES)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado-parcial",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto); dispositivo ou precedente complementar ainda não conferido em fonte oficial",
+        "date": "2026-10-28",
+        "source": "Lei 13.019/2014, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -3209,19 +3433,26 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 2º, inc. VII",
     "title": "Lei 13.019/2014 — MROSC",
     "parts": [
-      "Art. 2º. […] VII - termo de colaboração: instrumento por meio do qual são formalizadas as parcerias estabelecidas pela administração pública com organizações da sociedade civil para a consecução de finalidades de interesse público e recíproco propostas pela administração pública que envolvam a transferência de recursos financeiros; […]"
+      "Art. 2º Para os fins desta Lei, considera-se:",
+      "VII - termo de colaboração: instrumento por meio do qual são formalizadas as parcerias estabelecidas pela administração pública com organizações da sociedade civil para a consecução de finalidades de interesse público e recíproco propostas pela administração pública que envolvam a transferência de recursos financeiros;"
     ],
     "origin": "real",
     "question": {
       "statement": "Com base na Lei no 13.019/2014, que trata do regime jurídico das parcerias entre a Administração Pública e as organizações da sociedade civil, é correto afirmar que os termos de colaboração são instrumentos por meio dos quais são formalizadas parcerias entre a Administração Pública e as organizações da sociedade civil, por propostas destas, para a consecução de finalidades de interesse público.",
       "answer": false,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Errada. O art. 2º, VII, define o termo de colaboração como o instrumento das parcerias para finalidades de interesse público e recíproco propostas pela administração pública, e não por propostas das organizações da sociedade civil, que se formalizam por termo de fomento (art. 2º, VIII). O enunciado também omite o requisito do interesse recíproco e a transferência de recursos financeiros.",
       "source": "24.pdf · questão 16 · Art. 2º, VII, Lei 13.019/14",
       "meta": "VUNESP 2024 - Promotor de Justiça Substituto (MPE\u0002RO)",
       "bank": "VUNESP",
       "year": 2024,
       "role": "Promotor de Justiça Substituto (MPE\u0002RO)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.019/2014, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -3232,19 +3463,29 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 2º, inc. VIII",
     "title": "Lei 13.019/2014 — MROSC",
     "parts": [
-      "Art. 2º Para os fins desta Lei, considera-se: [...] VIII - termo de fomento: instrumento por meio do qual são formalizadas as parcerias estabelecidas pela administração pública com organizações da sociedade civil para a consecução de finalidades de interesse público e recíproco propostas pelas organizações da sociedade civil, que envolvam a transferência de recursos financeiros;"
+      "Art. 2º Para os fins desta Lei, considera-se:",
+      "VII - termo de colaboração: instrumento por meio do qual são formalizadas as parcerias estabelecidas pela administração pública com organizações da sociedade civil para a consecução de finalidades de interesse público e recíproco propostas pela administração pública que envolvam a transferência de recursos financeiros;",
+      "VIII - termo de fomento: instrumento por meio do qual são formalizadas as parcerias estabelecidas pela administração pública com organizações da sociedade civil para a consecução de finalidades de interesse público e recíproco propostas pelas organizações da sociedade civil, que envolvam a transferência de recursos financeiros;",
+      "Art. 16. O termo de colaboração deve ser adotado pela administração pública para consecução de planos de trabalho de sua iniciativa, para celebração de parcerias com organizações da sociedade civil que envolvam a transferência de recursos financeiros.",
+      "Art. 17. O termo de fomento deve ser adotado pela administração pública para consecução de planos de trabalho propostos por organizações da sociedade civil que envolvam a transferência de recursos financeiros."
     ],
     "origin": "real",
     "question": {
       "statement": "Uma organização da sociedade civil dedicada à proteção da infância e adolescência elabora plano de trabalho relativo ao \"Programa Bullying Zero\", visando à promoção da cultura de diálogo e comunicação não-violenta em ambientes frequentados por esse público. Para obter recursos para desenvolvimento do programa, encaminha o plano de trabalho para a Prefeitura local, com a proposta de celebração de ajuste baseado na Lei nº 13.019/2014. Caso celebrado, o ajuste será formalizado como termo de colaboração.",
       "answer": false,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Errada. O plano de trabalho foi elaborado e proposto pela própria organização da sociedade civil, com o objetivo de obter recursos, e o instrumento adequado nesse caso é o termo de fomento (art. 2º, VIII, e art. 17). O termo de colaboração é adotado para planos de trabalho de iniciativa da administração pública (art. 2º, VII, e art. 16).",
       "source": "24.pdf · questão 17 · Art. 2º, VIII, Lei 13.019/2014",
       "meta": "FCC 2026 - Técnico Judiciário - Área Judiciária (TJ\u0002CE)",
       "bank": "FCC",
       "year": 2026,
       "role": "Técnico Judiciário - Área Judiciária (TJ\u0002CE)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.019/2014, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -3255,19 +3496,27 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 2º, inc. VIII",
     "title": "Lei 13.019/2014 — MROSC",
     "parts": [
-      "Art. 2º Para os fins desta Lei, considera-se: [...] VIII - termo de fomento: instrumento por meio do qual são formalizadas as parcerias estabelecidas pela administração pública com organizações da sociedade civil para a consecução de finalidades de interesse público e recíproco propostas pelas organizações da sociedade civil, que envolvam a transferência de recursos financeiros;"
+      "Art. 2º Para os fins desta Lei, considera-se:",
+      "VII - termo de colaboração: instrumento por meio do qual são formalizadas as parcerias estabelecidas pela administração pública com organizações da sociedade civil para a consecução de finalidades de interesse público e recíproco propostas pela administração pública que envolvam a transferência de recursos financeiros;",
+      "VIII - termo de fomento: instrumento por meio do qual são formalizadas as parcerias estabelecidas pela administração pública com organizações da sociedade civil para a consecução de finalidades de interesse público e recíproco propostas pelas organizações da sociedade civil, que envolvam a transferência de recursos financeiros;"
     ],
     "origin": "real",
     "question": {
-      "statement": "(PGE-ES) A Lei federal n.º 13.019/2014 institui normas gerais para as parcerias entre a administração pública e organizações da sociedade civil, inaugurando o denominado regime de mútua cooperação, para a consecução de finalidades de interesse público e recíproco, mediante a execução de atividades ou de projetos estabelecidos em plano de trabalho. A respeito dos instrumentos jurídicos de parceria, termo de fomento é instrumento proposto por organizações da sociedade civil, ao passo que termo de colaboração é proposto pela administração pública, e ambos envolvem transferência de recursos financeiros.",
+      "statement": "A Lei federal n.º 13.019/2014 institui normas gerais para as parcerias entre a administração pública e organizações da sociedade civil, inaugurando o denominado regime de mútua cooperação, para a consecução de finalidades de interesse público e recíproco, mediante a execução de atividades ou de projetos estabelecidos em plano de trabalho. A respeito dos instrumentos jurídicos de parceria, termo de fomento é instrumento proposto por organizações da sociedade civil, ao passo que termo de colaboração é proposto pela administração pública, e ambos envolvem transferência de recursos financeiros.",
       "answer": true,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Correta. Pelo art. 2º, VII e VIII, o termo de colaboração formaliza parcerias propostas pela administração pública e o termo de fomento, as propostas pelas organizações da sociedade civil, e ambos envolvem transferência de recursos financeiros.",
       "source": "24.pdf · questão 25 · Art. 2º, VIII, Lei 13.019/2014",
-      "meta": "CESPE/CEBRASPE 2025 - Procurador do Estado",
+      "meta": "CESPE/CEBRASPE 2025 - Procurador do Estado (PGE-ES)",
       "bank": "CESPE/CEBRASPE",
       "year": 2025,
-      "role": "Procurador do Estado",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "role": "Procurador do Estado (PGE-ES)",
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.019/2014, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -3278,19 +3527,27 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 2º",
     "title": "Lei 13.019/2014 — MROSC",
     "parts": [
-      "Art. 2º Para os fins desta Lei, considera-se: […] VIII-A - acordo de cooperação: instrumento por meio do qual são formalizadas as parcerias estabelecidas pela administração pública com organizações da sociedade civil para a consecução de finalidades de interesse público e recíproco que não envolvam a transferência de recursos financeiros; […]"
+      "Art. 2º Para os fins desta Lei, considera-se:",
+      "VIII - termo de fomento: instrumento por meio do qual são formalizadas as parcerias estabelecidas pela administração pública com organizações da sociedade civil para a consecução de finalidades de interesse público e recíproco propostas pelas organizações da sociedade civil, que envolvam a transferência de recursos financeiros;",
+      "VIII-A - acordo de cooperação: instrumento por meio do qual são formalizadas as parcerias estabelecidas pela administração pública com organizações da sociedade civil para a consecução de finalidades de interesse público e recíproco que não envolvam a transferência de recursos financeiros;"
     ],
     "origin": "real",
     "question": {
       "statement": "Julgue o item a seguir. No contexto da Lei nº 13.019/2014, acordo de cooperação é o instrumento por meio do qual são formalizadas as parcerias estabelecidas pela administração pública com organizações da sociedade civil para a consecução de finalidades de interesse público e recíproco propostas pelas organizações da sociedade civil, que envolvam a transferência de recursos financeiros.",
       "answer": false,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Errada. A definição transcrita (parceria para finalidades de interesse público e recíproco propostas pelas organizações da sociedade civil, com transferência de recursos financeiros) é a do termo de fomento (art. 2º, VIII). O acordo de cooperação, no art. 2º, VIII-A, formaliza parcerias que não envolvam a transferência de recursos financeiros.",
       "source": "24.pdf · questão 28 · Art. 2º, VIII-A, Lei 13.019/2014",
       "meta": "FGV 2025 - Juiz Federal Substituto (TRF - 3º REGIÃO)",
       "bank": "FGV",
       "year": 2025,
       "role": "Juiz Federal Substituto (TRF - 3º REGIÃO)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.019/2014, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -3301,20 +3558,28 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 2º, inc. IX",
     "title": "Lei 13.019/2014 — MROSC",
     "parts": [
-      "Art. 2º Para os fins desta Lei, considera-se: [...] IX - conselho de política pública: órgão criado pelo poder público para atuar como instância consultiva, na respectiva área de atuação, na formulação, implementação, acompanhamento, monitoramento e avaliação de políticas públicas; [...]"
+      "Art. 2º Para os fins desta Lei, considera-se:",
+      "IX - conselho de política pública: órgão criado pelo poder público para atuar como instância consultiva, na respectiva área de atuação, na formulação, implementação, acompanhamento, monitoramento e avaliação de políticas públicas;",
+      "XI - comissão de monitoramento e avaliação: órgão colegiado destinado a monitorar e avaliar as parcerias celebradas com organizações da sociedade civil mediante termo de colaboração ou termo de fomento, constituído por ato publicado em meio oficial de comunicação, assegurada a participação de pelo menos um servidor ocupante de cargo efetivo ou emprego permanente do quadro de pessoal da administração pública;"
     ],
     "origin": "real",
     "question": {
       "statement": "Sobre o regime jurídico das parcerias entre a Administração Pública e as organizações da sociedade civil, disciplinado pela Lei nº 13.019/2014, julgue o item a seguir. Conselho de política pública é o órgão colegiado destinado a monitorar e avaliar as parcerias celebradas com organizações da sociedade civil mediante termo de colaboração ou termo de fomento.",
       "answer": false,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Errada. O conselho de política pública, no art. 2º, IX, é o órgão criado pelo poder público para atuar como instância consultiva na formulação, implementação, acompanhamento, monitoramento e avaliação de políticas públicas. O órgão colegiado destinado a monitorar e avaliar as parcerias é a comissão de monitoramento e avaliação (art. 2º, XI).",
       "source": "24.pdf · questão 41 · Art. 2º, IX, Lei 13.019/2014",
       "meta": "VUNESP 2017 - Procurador (Câmara de Porto Ferreira - SP)",
       "bank": "VUNESP",
       "year": 2017,
       "role": "Procurador (Câmara de Porto Ferreira - SP)",
       "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
-      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.019/2014, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -3325,20 +3590,27 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 2º, inc. X",
     "title": "Lei 13.019/2014 — MROSC",
     "parts": [
-      "Art. 2º Para os fins desta Lei, considera-se: [...] X - comissão de seleção: órgão colegiado destinado a processar e julgar chamamentos públicos, constituído por ato publicado em meio oficial de comunicação, assegurada a participação de pelo menos um servidor ocupante de cargo efetivo ou emprego permanente do quadro de pessoal da administração pública; [...]"
+      "Art. 2º Para os fins desta Lei, considera-se:",
+      "X - comissão de seleção: órgão colegiado destinado a processar e julgar chamamentos públicos, constituído por ato publicado em meio oficial de comunicação, assegurada a participação de pelo menos um servidor ocupante de cargo efetivo ou emprego permanente do quadro de pessoal da administração pública;"
     ],
     "origin": "real",
     "question": {
       "statement": "Nos termos da Lei nº 13.019/14, o órgão colegiado destinado a processar e julgar chamamentos públicos, constituído por ato publicado em meio oficial de comunicação, assegurada a participação de pelo menos um servidor ocupante de cargo efetivo ou emprego permanente do quadro de pessoal da administração pública é denominado como comissão de seleção.",
       "answer": true,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Correta. O enunciado reproduz o art. 2º, X, que define a comissão de seleção como o órgão colegiado destinado a processar e julgar chamamentos públicos, constituído por ato publicado em meio oficial, com ao menos um servidor ocupante de cargo efetivo ou emprego permanente.",
       "source": "24.pdf · questão 42 · Art. 2º, X, Lei 13.019/2014",
       "meta": "AMEOSC 2020 - Controlador Interno (Prefeitura de Palma Sola - SC)",
       "bank": "AMEOSC",
       "year": 2020,
       "role": "Controlador Interno (Prefeitura de Palma Sola - SC)",
       "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
-      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.019/2014, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -3349,19 +3621,27 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 2º, inc. XII",
     "title": "Lei 13.019/2014 — MROSC",
     "parts": [
-      "Art. 2º Para os fins desta Lei, considera-se: [...] XII - chamamento público: procedimento destinado a selecionar organização da sociedade civil para firmar parceria por meio de termo de colaboração ou de fomento, no qual se garanta a observância dos princípios da isonomia, da legalidade, da impessoalidade, da moralidade, da igualdade, da publicidade, da probidade administrativa, da vinculação ao instrumento convocatório, do julgamento objetivo e dos que lhes são correlatos;"
+      "Art. 2º Para os fins desta Lei, considera-se:",
+      "XII - chamamento público: procedimento destinado a selecionar organização da sociedade civil para firmar parceria por meio de termo de colaboração ou de fomento, no qual se garanta a observância dos princípios da isonomia, da legalidade, da impessoalidade, da moralidade, da igualdade, da publicidade, da probidade administrativa, da vinculação ao instrumento convocatório, do julgamento objetivo e dos que lhes são correlatos;",
+      "Art. 24. Exceto nas hipóteses previstas nesta Lei, a celebração de termo de colaboração ou de fomento será precedida de chamamento público voltado a selecionar organizações da sociedade civil que tornem mais eficaz a execução do objeto."
     ],
     "origin": "real",
     "question": {
       "statement": "(Prefeitura de Guararapes - SP) O Município X está interessado em firmar parceria com organização da sociedade civil para administração de um serviço de saúde a ser aberto ao público na cidade. O Prefeito, contudo, está preocupado com as seguintes questões: (i) como selecionar a entidade parceira, considerando a existência de múltiplas organizações interessadas em atuar em parceria com a Prefeitura; (ii) como assegurar que eventuais equipamentos adquiridos e investimentos realizados pela organização com recursos repassados pela Municipalidade possam ser revertidos a outra organização semelhante ou à Prefeitura, em caso de extinção da parceria, garantindo a continuidade dos serviços prestados. Em face dessa situação hipotética, é correto afirmar, com base na legislação nacional, que o processo de seleção da entidade parceira deverá atender aos princípios constitucionais da administração pública, em especial aos princípios da impessoalidade, legalidade e moralidade, sendo realizado por meio de chamamento público transparente e objetivo.",
       "answer": true,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Correta. O art. 2º, XII, define o chamamento público como o procedimento de seleção de organização da sociedade civil que garanta a observância dos princípios da isonomia, da legalidade, da impessoalidade, da moralidade, da publicidade, do julgamento objetivo e outros correlatos, e o art. 24 exige, em regra, que a celebração do termo de colaboração ou de fomento seja precedida desse chamamento.",
       "source": "24.pdf · questão 45 · Art. 2º, XII, Lei 13.019/2014",
       "meta": "VUNESP 2023 - Auditor de Controle Interno",
       "bank": "VUNESP",
       "year": 2023,
       "role": "Auditor de Controle Interno",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.019/2014, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -3372,19 +3652,30 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 2º, inc. XII",
     "title": "Lei 13.019/2014 — MROSC",
     "parts": [
-      "Art. 2º Para os fins desta Lei, considera-se: […] XII - chamamento público: procedimento destinado a selecionar organização da sociedade civil para firmar parceria por meio de termo de colaboração ou de fomento, no qual se garanta a observância dos princípios da isonomia, da legalidade, da impessoalidade, da moralidade, da igualdade, da publicidade, da probidade administrativa, da vinculação ao instrumento convocatório, do julgamento objetivo e dos que lhes são correlatos; […]"
+      "Art. 2º Para os fins desta Lei, considera-se:",
+      "VII - termo de colaboração: instrumento por meio do qual são formalizadas as parcerias estabelecidas pela administração pública com organizações da sociedade civil para a consecução de finalidades de interesse público e recíproco propostas pela administração pública que envolvam a transferência de recursos financeiros;",
+      "XII - chamamento público: procedimento destinado a selecionar organização da sociedade civil para firmar parceria por meio de termo de colaboração ou de fomento, no qual se garanta a observância dos princípios da isonomia, da legalidade, da impessoalidade, da moralidade, da igualdade, da publicidade, da probidade administrativa, da vinculação ao instrumento convocatório, do julgamento objetivo e dos que lhes são correlatos;",
+      "Art. 24. Exceto nas hipóteses previstas nesta Lei, a celebração de termo de colaboração ou de fomento será precedida de chamamento público voltado a selecionar organizações da sociedade civil que tornem mais eficaz a execução do objeto.",
+      "Art. 30. A administração pública poderá dispensar a realização do chamamento público:",
+      "Art. 31. Será considerado inexigível o chamamento público na hipótese de inviabilidade de competição entre as organizações da sociedade civil, em razão da natureza singular do objeto da parceria ou se as metas somente puderem ser atingidas por uma entidade específica, especialmente quando:"
     ],
     "origin": "real",
     "question": {
       "statement": "O Estado Alfa celebrou com uma organização da sociedade civil (OSC) uma espécie de parceria, mediante transferência voluntária de recursos para consecução de plano de trabalho proposto pelo poder público estadual, em regime de mútua cooperação, para a consecução de finalidades de interesse público e recíproco propostas pela Administração Pública, consistentes na promoção e divulgação do “Programa à Vítima e Testemunha Ameaçadas no Estado Alfa”, garantindo, na forma da lei, às vítimas e às testemunhas, alimentação, saúde, moradia, educação e lazer, de maneira a promover a reinserção social dos sujeitos em proteção em um novo território fora do local de risco. De acordo com a Lei nº 13.019/2014, no caso em tela, o instrumento adequado utilizado foi o termo de colaboração, e a OSC foi selecionada por meio de chamamento público.",
       "answer": true,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Correta. A parceria com transferência de recursos para plano de trabalho proposto pelo poder público é formalizada por termo de colaboração (art. 2º, VII, e art. 16), e a regra do art. 24 é que a seleção da organização se faça por chamamento público. O enunciado não informa se ocorreu dispensa ou inexigibilidade (arts. 30 e 31), de modo que a seleção por chamamento é a inferência pela regra geral; o gabarito foi mantido.",
       "source": "24.pdf · questão 46 · Art. 2º, XII, Lei 13.019/2014",
       "meta": "FGV 2022 - Juiz de Direito Substituto (TJ-AP)",
       "bank": "FGV",
       "year": 2022,
       "role": "Juiz de Direito Substituto (TJ-AP)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado-parcial",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto); dispositivo ou precedente complementar ainda não conferido em fonte oficial",
+        "date": "2026-10-28",
+        "source": "Lei 13.019/2014, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -3395,20 +3686,31 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 3º, inc. IX",
     "title": "Lei 13.019/2014 — MROSC",
     "parts": [
-      "Art. 3º Não se aplicam as exigências desta Lei: [...] IX - aos pagamentos realizados a título de anuidades, contribuições ou taxas associativas em favor de organismos internacionais ou entidades que sejam obrigatoriamente constituídas por: a) membros de Poder ou do Ministério Público; b) dirigentes de órgão ou de entidade da administração pública; c) pessoas jurídicas de direito público interno; d) pessoas jurídicas integrantes da administração pública;"
+      "Art. 3º Não se aplicam as exigências desta Lei:",
+      "IX - aos pagamentos realizados a título de anuidades, contribuições ou taxas associativas em favor de organismos internacionais ou entidades que sejam obrigatoriamente constituídas por:",
+      "a) membros de Poder ou do Ministério Público;",
+      "b) dirigentes de órgão ou de entidade da administração pública;",
+      "c) pessoas jurídicas de direito público interno;",
+      "d) pessoas jurídicas integrantes da administração pública;"
     ],
     "origin": "real",
     "question": {
       "statement": "Não se aplicam as exigências da Lei n. 13.019/2014 (dispõe sobre Organização da Sociedade Civil e Marco Regulatório do Terceiro Setor) os pagamentos realizados a título de anuidades, contribuições ou taxas associativas em favor de organismos internacionais ou entidades que sejam obrigatoriamente constituídas por: dirigentes de órgão ou de entidade da administração pública e/ou pessoas jurídicas de direito público e de direito privado interno.",
       "answer": false,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Errada. O art. 3º, IX, afasta as exigências da lei quanto às anuidades, contribuições ou taxas associativas pagas a organismos internacionais ou a entidades obrigatoriamente constituídas por membros de Poder ou do Ministério Público, dirigentes de órgão ou entidade da administração pública, pessoas jurídicas de direito público interno e pessoas jurídicas integrantes da administração pública. O dispositivo não menciona pessoas jurídicas de direito privado interno em geral.",
       "source": "24.pdf · questão 48 · Art. 3º, IX, Lei 13.019/2014",
       "meta": "MPE-PR 2016 - Promotor Substituto (MPE-PR)",
       "bank": "MPE-PR",
       "year": 2016,
       "role": "Promotor Substituto (MPE-PR)",
       "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
-      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.019/2014, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -3419,19 +3721,25 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 5º",
     "title": "Lei 13.019/2014 — MROSC",
     "parts": [
-      "Art. 5º O regime jurídico de que trata esta Lei tem como fundamentos a gestão pública democrática, a participação social, o fortalecimento da sociedade civil, a transparência na aplicação dos recursos públicos, os princípios da legalidade, da legitimidade, da impessoalidade, da moralidade, da publicidade, da economicidade, da eficiência e da eficácia, destinando-se a assegurar: I - o reconhecimento da participação social como direito do cidadão; […]"
+      "Art. 5º O regime jurídico de que trata esta Lei tem como fundamentos a gestão pública democrática, a participação social, o fortalecimento da sociedade civil, a transparência na aplicação dos recursos públicos, os princípios da legalidade, da legitimidade, da impessoalidade, da moralidade, da publicidade, da economicidade, da eficiência e da eficácia, destinando-se a assegurar:"
     ],
     "origin": "real",
     "question": {
-      "statement": "Substituto (MPE-SC) Considerando as disposições da Lei do Marco Regulatório das Organizações da Sociedade Civil, a referida lei solidifica a tendência da moderna administração pública de aumentar o tamanho do Estado, na medida em que permite a participação social na produção de políticas públicas.",
+      "statement": "Considerando as disposições da Lei do Marco Regulatório das Organizações da Sociedade Civil, a referida lei solidifica a tendência da moderna administração pública de aumentar o tamanho do Estado, na medida em que permite a participação social na produção de políticas públicas.",
       "answer": false,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Errada. O art. 5º indica como fundamentos do regime jurídico a gestão pública democrática, a participação social, o fortalecimento da sociedade civil e a transparência na aplicação dos recursos públicos, entre outros, sem tratar de ampliação do tamanho do Estado. A afirmação de que a lei aumenta o tamanho do Estado é uma caracterização doutrinária, não verificável no texto legal; o gabarito foi mantido.",
       "source": "24.pdf · questão 49 · Art. 5º, Lei 13.019/2014",
-      "meta": "CESPE/CEBRASPE 2021 - Promotor de Justiça",
+      "meta": "CESPE/CEBRASPE 2021 - Promotor de Justiça Substituto (MPE-SC)",
       "bank": "CESPE/CEBRASPE",
       "year": 2021,
-      "role": "Promotor de Justiça",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "role": "Promotor de Justiça Substituto (MPE-SC)",
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado-parcial",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto); dispositivo ou precedente complementar ainda não conferido em fonte oficial",
+        "date": "2026-10-28",
+        "source": "Lei 13.019/2014, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -3442,19 +3750,36 @@ const DATA_ADM_PACK1 = [
     "number": "Art. 5º, inc. IX",
     "title": "Lei 13.019/2014 — MROSC",
     "parts": [
-      "Art. 5º - O regime jurídico de que trata esta Lei tem como fundamentos a gestão pública democrática, a participação social, o fortalecimento da sociedade civil, a transparência na aplicação dos recursos públicos, os princípios da legalidade, da legitimidade, da impessoalidade, da moralidade, da publicidade, da economicidade, da eficiência e da eficácia, destinando-se a assegurar: […] IX - a valorização dos direitos dos povos indígenas e das comunidades tradicionais; […]"
+      "Art. 5º O regime jurídico de que trata esta Lei tem como fundamentos a gestão pública democrática, a participação social, o fortalecimento da sociedade civil, a transparência na aplicação dos recursos públicos, os princípios da legalidade, da legitimidade, da impessoalidade, da moralidade, da publicidade, da economicidade, da eficiência e da eficácia, destinando-se a assegurar:",
+      "IX - a valorização dos direitos dos povos indígenas e das comunidades tradicionais;",
+      "Art. 6º São diretrizes fundamentais do regime jurídico de parceria:",
+      "I - a promoção, o fortalecimento institucional, a capacitação e o incentivo à organização da sociedade civil para a cooperação com o poder público;",
+      "II - a priorização do controle de resultados;",
+      "III - o incentivo ao uso de recursos atualizados de tecnologias de informação e comunicação;",
+      "IV - o fortalecimento das ações de cooperação institucional entre os entes federados nas relações com as organizações da sociedade civil;",
+      "V - o estabelecimento de mecanismos que ampliem a gestão de informação, transparência e publicidade;",
+      "VI - a ação integrada, complementar e descentralizada, de recursos e ações, entre os entes da Federação, evitando sobreposição de iniciativas e fragmentação de recursos;",
+      "VII - a sensibilização, a capacitação, o aprofundamento e o aperfeiçoamento do trabalho de gestores públicos, na implementação de atividades e projetos de interesse público e relevância social com organizações da sociedade civil;",
+      "VIII - a adoção de práticas de gestão administrativa necessárias e suficientes para coibir a obtenção, individual ou coletiva, de benefícios ou vantagens indevidos;",
+      "IX - a promoção de soluções derivadas da aplicação de conhecimentos, da ciência e tecnologia e da inovação para atender necessidades e demandas de maior qualidade de vida da população em situação de desigualdade social."
     ],
     "origin": "real",
     "question": {
-      "statement": "Processual (MPE-RJ) Com o objetivo de ser qualificada como organização da sociedade civil e, posteriormente, firmar parcerias com o Estado do Rio de Janeiro, os dirigentes da associação privada Alfa consultaram a legislação de regência, buscando mais informações sobre a temática. Apurou-se, assim, que o diploma legal instituiu normas gerais para as parcerias entre a administração pública e organizações da sociedade civil, em regime de mútua cooperação, para a consecução de finalidades de interesse público e recíproco, mediante a execução de atividades ou de projetos previamente estabelecidos em planos de trabalho inseridos em termos de colaboração, em termos de fomento ou em acordos de cooperação. De acordo com a narrativa e considerando as disposições da Lei nº 13.019/2014, avalie se as diretrizes fundamentais do regime jurídico de parceria incluem a valorização dos direitos dos povos indígenas e das comunidades tradicionais.",
+      "statement": "Com o objetivo de ser qualificada como organização da sociedade civil e, posteriormente, firmar parcerias com o Estado do Rio de Janeiro, os dirigentes da associação privada Alfa consultaram a legislação de regência, buscando mais informações sobre a temática. Apurou-se, assim, que o diploma legal instituiu normas gerais para as parcerias entre a administração pública e organizações da sociedade civil, em regime de mútua cooperação, para a consecução de finalidades de interesse público e recíproco, mediante a execução de atividades ou de projetos previamente estabelecidos em planos de trabalho inseridos em termos de colaboração, em termos de fomento ou em acordos de cooperação. De acordo com a narrativa e considerando as disposições da Lei nº 13.019/2014, avalie se as diretrizes fundamentais do regime jurídico de parceria incluem a valorização dos direitos dos povos indígenas e das comunidades tradicionais.",
       "answer": false,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Errada. O art. 6º enumera as diretrizes fundamentais do regime jurídico de parceria (incisos I a IX) e, entre elas, não consta a valorização dos direitos dos povos indígenas e das comunidades tradicionais. Essa valorização consta do art. 5º, IX, entre os objetivos que o regime jurídico se destina a assegurar. O rótulo do item cita o art. 5º, IX; o rótulo foi mantido.",
       "source": "24.pdf · questão 50 · Art. 5º, IX, Lei 13.019/2014",
-      "meta": "FGV 2025 - Analista do Ministério Público - Área",
+      "meta": "FGV 2025 - Analista do Ministério Público - Área Processual (MPE-RJ)",
       "bank": "FGV",
       "year": 2025,
-      "role": "Analista do Ministério Público - Área",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "role": "Analista do Ministério Público - Área Processual (MPE-RJ)",
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.019/2014, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   }
 ];

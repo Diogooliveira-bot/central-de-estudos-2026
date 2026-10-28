@@ -882,19 +882,25 @@ const DATA_ADM_PACK5 = [
     "number": "Art. 3º",
     "title": "Lei 11.107/2005 — Consórcios Públicos",
     "parts": [
-      "Fundamento legal: Art. 3º. O art. 3º exige protocolo prévio."
+      "Art. 3º O consórcio público será constituído por contrato cuja celebração dependerá da prévia subscrição de protocolo de intenções."
     ],
     "origin": "authorial",
     "question": {
       "statement": "A constituição de consórcio público por contrato depende da prévia subscrição de protocolo de intenções.",
       "answer": true,
-      "explanation": "O art. 3º exige protocolo prévio.",
+      "explanation": "Correta. O art. 3º dispõe que o consórcio público será constituído por contrato cuja celebração dependerá da prévia subscrição de protocolo de intenções.",
       "source": "Legislação oficial consultada em 08/10/2026: https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2005/lei/l11107.htm — Art. 3º",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Estudo ativo",
-      "origin": "authorial"
+      "origin": "authorial",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 11.107/2005, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -905,19 +911,26 @@ const DATA_ADM_PACK5 = [
     "number": "Art. 4º, I",
     "title": "Lei 11.107/2005 — Consórcios Públicos",
     "parts": [
-      "Fundamento legal: Art. 4º, I. O art. 4º, I, especifica esses dados."
+      "Art. 4º São cláusulas necessárias do protocolo de intenções as que estabeleçam:",
+      "I – a denominação, a finalidade, o prazo de duração e a sede do consórcio;"
     ],
     "origin": "authorial",
     "question": {
       "statement": "Denominação, finalidade, prazo de duração e sede são cláusulas necessárias do protocolo de intenções de consórcio público.",
       "answer": true,
-      "explanation": "O art. 4º, I, especifica esses dados.",
+      "explanation": "Correta. O art. 4º, I, inclui a denominação, a finalidade, o prazo de duração e a sede do consórcio entre as cláusulas necessárias do protocolo de intenções.",
       "source": "Legislação oficial consultada em 08/10/2026: https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2005/lei/l11107.htm — Art. 4º, I",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Estudo ativo",
-      "origin": "authorial"
+      "origin": "authorial",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 11.107/2005, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -928,19 +941,26 @@ const DATA_ADM_PACK5 = [
     "number": "Art. 4º, VII",
     "title": "Lei 11.107/2005 — Consórcios Públicos",
     "parts": [
-      "Fundamento legal: Art. 4º, VII. O inciso VII contém tal requisito."
+      "Art. 4º São cláusulas necessárias do protocolo de intenções as que estabeleçam:",
+      "VII – a previsão de que a assembléia geral é a instância máxima do consórcio público e o número de votos para as suas deliberações;"
     ],
     "origin": "authorial",
     "question": {
       "statement": "O protocolo de intenções deve reconhecer a assembleia geral como instância máxima do consórcio público.",
       "answer": true,
-      "explanation": "O inciso VII contém tal requisito.",
+      "explanation": "Correta. O art. 4º, VII, exige a previsão, no protocolo de intenções, de que a assembleia geral é a instância máxima do consórcio público e do número de votos para as suas deliberações.",
       "source": "Legislação oficial consultada em 08/10/2026: https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2005/lei/l11107.htm — Art. 4º, VII",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Estudo ativo",
-      "origin": "authorial"
+      "origin": "authorial",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 11.107/2005, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -951,19 +971,26 @@ const DATA_ADM_PACK5 = [
     "number": "Art. 4º, § 2º",
     "title": "Lei 11.107/2005 — Consórcios Públicos",
     "parts": [
-      "Fundamento legal: Art. 4º, § 2º. O § 2º estabelece ao menos um voto para cada ente."
+      "Art. 4º São cláusulas necessárias do protocolo de intenções as que estabeleçam:",
+      "§ 2º O protocolo de intenções deve definir o número de votos que cada ente da Federação consorciado possui na assembléia geral, sendo assegurado 1 (um) voto a cada ente consorciado."
     ],
     "origin": "authorial",
     "question": {
       "statement": "O protocolo de intenções deve assegurar pelo menos um voto a cada ente consorciado na assembleia geral.",
       "answer": true,
-      "explanation": "O § 2º estabelece ao menos um voto para cada ente.",
+      "explanation": "Correta. O art. 4º, § 2º, determina que o protocolo de intenções defina o número de votos de cada ente na assembleia geral, assegurado 1 (um) voto a cada ente consorciado.",
       "source": "Legislação oficial consultada em 08/10/2026: https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2005/lei/l11107.htm — Art. 4º, § 2º",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Estudo ativo",
-      "origin": "authorial"
+      "origin": "authorial",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 11.107/2005, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -974,19 +1001,26 @@ const DATA_ADM_PACK5 = [
     "number": "Art. 4º, § 4º",
     "title": "Lei 11.107/2005 — Consórcios Públicos",
     "parts": [
-      "Fundamento legal: Art. 4º, § 4º. O § 4º permite a cessão de servidores."
+      "Art. 4º São cláusulas necessárias do protocolo de intenções as que estabeleçam:",
+      "§ 4º Os entes da Federação consorciados, ou os com eles conveniados, poderão ceder-lhe servidores, na forma e condições da legislação de cada um."
     ],
     "origin": "authorial",
     "question": {
       "statement": "Os entes consorciados podem ceder servidores ao consórcio nas condições previstas na respectiva legislação.",
       "answer": true,
-      "explanation": "O § 4º permite a cessão de servidores.",
+      "explanation": "Correta. O art. 4º, § 4º, permite que os entes consorciados, ou os com eles conveniados, cedam servidores ao consórcio, na forma e condições da legislação de cada um.",
       "source": "Legislação oficial consultada em 08/10/2026: https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2005/lei/l11107.htm — Art. 4º, § 4º",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Estudo ativo",
-      "origin": "authorial"
+      "origin": "authorial",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 11.107/2005, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -997,19 +1031,26 @@ const DATA_ADM_PACK5 = [
     "number": "Art. 4º, § 5º",
     "title": "Lei 11.107/2005 — Consórcios Públicos",
     "parts": [
-      "Fundamento legal: Art. 4º, § 5º. O § 5º exige publicação do protocolo de intenções na imprensa oficial."
+      "Art. 4º São cláusulas necessárias do protocolo de intenções as que estabeleçam:",
+      "§ 5º O protocolo de intenções deverá ser publicado na imprensa oficial."
     ],
     "origin": "authorial",
     "question": {
       "statement": "O protocolo de intenções de consórcio público deve permanecer reservado até que o contrato seja definitivamente executado.",
       "answer": false,
-      "explanation": "O § 5º exige publicação do protocolo de intenções na imprensa oficial.",
+      "explanation": "Errada. O art. 4º, § 5º, determina que o protocolo de intenções seja publicado na imprensa oficial, e não que permaneça reservado.",
       "source": "Legislação oficial consultada em 08/10/2026: https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2005/lei/l11107.htm — Art. 4º, § 5º",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Estudo ativo",
-      "origin": "authorial"
+      "origin": "authorial",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 11.107/2005, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -1020,19 +1061,25 @@ const DATA_ADM_PACK5 = [
     "number": "Art. 5º",
     "title": "Lei 11.107/2005 — Consórcios Públicos",
     "parts": [
-      "Fundamento legal: Art. 5º. É a regra geral do art. 5º."
+      "Art. 5º O contrato de consórcio público será celebrado com a ratificação, mediante lei, do protocolo de intenções."
     ],
     "origin": "authorial",
     "question": {
       "statement": "O contrato de consórcio público é celebrado mediante ratificação, por lei, do protocolo de intenções.",
       "answer": true,
-      "explanation": "É a regra geral do art. 5º.",
+      "explanation": "Correta. O art. 5º, caput, dispõe que o contrato de consórcio público será celebrado com a ratificação, mediante lei, do protocolo de intenções.",
       "source": "Legislação oficial consultada em 08/10/2026: https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2005/lei/l11107.htm — Art. 5º",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Estudo ativo",
-      "origin": "authorial"
+      "origin": "authorial",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 11.107/2005, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -1043,19 +1090,26 @@ const DATA_ADM_PACK5 = [
     "number": "Art. 5º, § 2º",
     "title": "Lei 11.107/2005 — Consórcios Públicos",
     "parts": [
-      "Fundamento legal: Art. 5º, § 2º. O § 2º prevê ratificação com reservas."
+      "Art. 5º O contrato de consórcio público será celebrado com a ratificação, mediante lei, do protocolo de intenções.",
+      "§ 2º A ratificação pode ser realizada com reserva que, aceita pelos demais entes subscritores, implicará consorciamento parcial ou condicional."
     ],
     "origin": "authorial",
     "question": {
       "statement": "A ratificação de protocolo de intenções pode conter reserva aceita pelos demais subscritores, gerando consorciamento parcial ou condicional.",
       "answer": true,
-      "explanation": "O § 2º prevê ratificação com reservas.",
+      "explanation": "Correta. O art. 5º, § 2º, admite que a ratificação seja realizada com reserva que, aceita pelos demais entes subscritores, implicará consorciamento parcial ou condicional.",
       "source": "Legislação oficial consultada em 08/10/2026: https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2005/lei/l11107.htm — Art. 5º, § 2º",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Estudo ativo",
-      "origin": "authorial"
+      "origin": "authorial",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 11.107/2005, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -1066,19 +1120,26 @@ const DATA_ADM_PACK5 = [
     "number": "Art. 5º, § 3º",
     "title": "Lei 11.107/2005 — Consórcios Públicos",
     "parts": [
-      "Fundamento legal: Art. 5º, § 3º. O art. 5º, § 3º, exige essa homologação."
+      "Art. 5º O contrato de consórcio público será celebrado com a ratificação, mediante lei, do protocolo de intenções.",
+      "§ 3º A ratificação realizada após 2 (dois) anos da subscrição do protocolo de intenções dependerá de homologação da assembléia geral do consórcio público."
     ],
     "origin": "authorial",
     "question": {
       "statement": "A ratificação efetuada após dois anos da subscrição do protocolo depende de homologação da assembleia geral do consórcio.",
       "answer": true,
-      "explanation": "O art. 5º, § 3º, exige essa homologação.",
+      "explanation": "Correta. O art. 5º, § 3º, determina que a ratificação realizada após 2 (dois) anos da subscrição do protocolo de intenções dependa de homologação da assembleia geral do consórcio público.",
       "source": "Legislação oficial consultada em 08/10/2026: https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2005/lei/l11107.htm — Art. 5º, § 3º",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Estudo ativo",
-      "origin": "authorial"
+      "origin": "authorial",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 11.107/2005, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -1089,19 +1150,26 @@ const DATA_ADM_PACK5 = [
     "number": "Art. 5º, § 4º",
     "title": "Lei 11.107/2005 — Consórcios Públicos",
     "parts": [
-      "Fundamento legal: Art. 5º, § 4º. O § 4º prevê a dispensa."
+      "Art. 5º O contrato de consórcio público será celebrado com a ratificação, mediante lei, do protocolo de intenções.",
+      "§ 4º É dispensado da ratificação prevista no caput deste artigo o ente da Federação que, antes de subscrever o protocolo de intenções, disciplinar por lei a sua participação no consórcio público."
     ],
     "origin": "authorial",
     "question": {
       "statement": "Em hipótese legal, o ente que disciplinou por lei sua participação antes da subscrição do protocolo fica dispensado da ratificação posterior.",
       "answer": true,
-      "explanation": "O § 4º prevê a dispensa.",
+      "explanation": "Correta. O art. 5º, § 4º, dispensa da ratificação o ente da Federação que, antes de subscrever o protocolo de intenções, disciplinar por lei a sua participação no consórcio público.",
       "source": "Legislação oficial consultada em 08/10/2026: https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2005/lei/l11107.htm — Art. 5º, § 4º",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Estudo ativo",
-      "origin": "authorial"
+      "origin": "authorial",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 11.107/2005, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -1112,19 +1180,26 @@ const DATA_ADM_PACK5 = [
     "number": "Art. 6º, I",
     "title": "Lei 11.107/2005 — Consórcios Públicos",
     "parts": [
-      "Fundamento legal: Art. 6º, I. O inciso I prevê essa modalidade de personalidade."
+      "Art. 6º O consórcio público adquirirá personalidade jurídica:",
+      "I – de direito público, no caso de constituir associação pública, mediante a vigência das leis de ratificação do protocolo de intenções;"
     ],
     "origin": "authorial",
     "question": {
       "statement": "A associação pública consorcial adquire personalidade jurídica de direito público mediante vigência das leis que ratificam o protocolo.",
       "answer": true,
-      "explanation": "O inciso I prevê essa modalidade de personalidade.",
+      "explanation": "Correta. O art. 6º, I, dispõe que o consórcio público adquirirá personalidade jurídica de direito público, no caso de constituir associação pública, mediante a vigência das leis de ratificação do protocolo de intenções.",
       "source": "Legislação oficial consultada em 08/10/2026: https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2005/lei/l11107.htm — Art. 6º, I",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Estudo ativo",
-      "origin": "authorial"
+      "origin": "authorial",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 11.107/2005, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -1135,19 +1210,26 @@ const DATA_ADM_PACK5 = [
     "number": "Art. 6º, II",
     "title": "Lei 11.107/2005 — Consórcios Públicos",
     "parts": [
-      "Fundamento legal: Art. 6º, II. É a hipótese do art. 6º, II."
+      "Art. 6º O consórcio público adquirirá personalidade jurídica:",
+      "II – de direito privado, mediante o atendimento dos requisitos da legislação civil."
     ],
     "origin": "authorial",
     "question": {
       "statement": "O consórcio de direito privado adquire personalidade jurídica conforme requisitos da legislação civil.",
       "answer": true,
-      "explanation": "É a hipótese do art. 6º, II.",
+      "explanation": "Correta. O art. 6º, II, dispõe que o consórcio público adquirirá personalidade jurídica de direito privado mediante o atendimento dos requisitos da legislação civil.",
       "source": "Legislação oficial consultada em 08/10/2026: https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2005/lei/l11107.htm — Art. 6º, II",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Estudo ativo",
-      "origin": "authorial"
+      "origin": "authorial",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 11.107/2005, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -1158,19 +1240,26 @@ const DATA_ADM_PACK5 = [
     "number": "Art. 6º, § 1º",
     "title": "Lei 11.107/2005 — Consórcios Públicos",
     "parts": [
-      "Fundamento legal: Art. 6º, § 1º. O § 1º determina essa vinculação."
+      "Art. 6º O consórcio público adquirirá personalidade jurídica:",
+      "§ 1º O consórcio público com personalidade jurídica de direito público integra a administração indireta de todos os entes da Federação consorciados."
     ],
     "origin": "authorial",
     "question": {
       "statement": "O consórcio com personalidade de direito público integra a Administração indireta de todos os entes consorciados.",
       "answer": true,
-      "explanation": "O § 1º determina essa vinculação.",
+      "explanation": "Correta. O art. 6º, § 1º, dispõe que o consórcio público com personalidade jurídica de direito público integra a administração indireta de todos os entes da Federação consorciados.",
       "source": "Legislação oficial consultada em 08/10/2026: https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2005/lei/l11107.htm — Art. 6º, § 1º",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Estudo ativo",
-      "origin": "authorial"
+      "origin": "authorial",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 11.107/2005, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -1181,19 +1270,26 @@ const DATA_ADM_PACK5 = [
     "number": "Art. 6º, § 2º",
     "title": "Lei 11.107/2005 — Consórcios Públicos",
     "parts": [
-      "Fundamento legal: Art. 6º, § 2º. O § 2º impõe sujeição a essas normas."
+      "Art. 6º O consórcio público adquirirá personalidade jurídica:",
+      "§ 2º O consórcio público, com personalidade jurídica de direito público ou privado, observará as normas de direito público no que concerne à realização de licitação, à celebração de contratos, à prestação de contas e à admissão de pessoal, que será regido pela Consolidação das Leis do Trabalho (CLT), aprovada pelo Decreto-Lei nº 5.452, de 1º de maio de 1943."
     ],
     "origin": "authorial",
     "question": {
       "statement": "Consórcios públicos, com personalidade de direito público ou privado, observam normas públicas para licitações, contratos, prestação de contas e admissão de pessoal.",
       "answer": true,
-      "explanation": "O § 2º impõe sujeição a essas normas.",
+      "explanation": "Correta. O art. 6º, § 2º, na redação da Lei 13.822/2019, determina que o consórcio público, com personalidade jurídica de direito público ou privado, observe as normas de direito público quanto à licitação, à celebração de contratos, à prestação de contas e à admissão de pessoal, regido pela CLT.",
       "source": "Legislação oficial consultada em 08/10/2026: https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2005/lei/l11107.htm — Art. 6º, § 2º",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Estudo ativo",
-      "origin": "authorial"
+      "origin": "authorial",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 11.107/2005, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -1204,19 +1300,25 @@ const DATA_ADM_PACK5 = [
     "number": "Art. 7º",
     "title": "Lei 11.107/2005 — Consórcios Públicos",
     "parts": [
-      "Fundamento legal: Art. 7º. O art. 7º determina essa matéria estatutária."
+      "Art. 7º Os estatutos disporão sobre a organização e o funcionamento de cada um dos órgãos constitutivos do consórcio público."
     ],
     "origin": "authorial",
     "question": {
       "statement": "Os estatutos do consórcio público regulam a organização e o funcionamento de seus órgãos constitutivos.",
       "answer": true,
-      "explanation": "O art. 7º determina essa matéria estatutária.",
+      "explanation": "Correta. O art. 7º dispõe que os estatutos disporão sobre a organização e o funcionamento de cada um dos órgãos constitutivos do consórcio público.",
       "source": "Legislação oficial consultada em 08/10/2026: https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2005/lei/l11107.htm — Art. 7º",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Estudo ativo",
-      "origin": "authorial"
+      "origin": "authorial",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 11.107/2005, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -1227,19 +1329,25 @@ const DATA_ADM_PACK5 = [
     "number": "Art. 8º",
     "title": "Lei 11.107/2005 — Consórcios Públicos",
     "parts": [
-      "Fundamento legal: Art. 8º. O art. 8º exige contrato de rateio para entrega de recursos."
+      "Art. 8º Os entes consorciados somente entregarão recursos ao consórcio público mediante contrato de rateio."
     ],
     "origin": "authorial",
     "question": {
       "statement": "Os entes consorciados podem entregar recursos ao consórcio livremente, sem instrumento de rateio.",
       "answer": false,
-      "explanation": "O art. 8º exige contrato de rateio para entrega de recursos.",
+      "explanation": "Errada. O art. 8º, caput, dispõe que os entes consorciados somente entregarão recursos ao consórcio público mediante contrato de rateio.",
       "source": "Legislação oficial consultada em 08/10/2026: https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2005/lei/l11107.htm — Art. 8º",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Estudo ativo",
-      "origin": "authorial"
+      "origin": "authorial",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 11.107/2005, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -1687,19 +1795,25 @@ const DATA_ADM_PACK5 = [
     "number": "Art. 16",
     "title": "Lei 13.019/2014 — Parcerias com Organizações da Sociedade Civil",
     "parts": [
-      "Fundamento legal: Art. 16. O art. 16 estabelece a iniciativa pública no termo de colaboração."
+      "Art. 16. O termo de colaboração deve ser adotado pela administração pública para consecução de planos de trabalho de sua iniciativa, para celebração de parcerias com organizações da sociedade civil que envolvam a transferência de recursos financeiros."
     ],
     "origin": "authorial",
     "question": {
       "statement": "O termo de colaboração é adotado para parcerias com transferência de recursos financeiros cujos planos de trabalho são de iniciativa da Administração.",
       "answer": true,
-      "explanation": "O art. 16 estabelece a iniciativa pública no termo de colaboração.",
+      "explanation": "Correta. O art. 16 determina que o termo de colaboração seja adotado para a consecução de planos de trabalho de iniciativa da administração pública, em parcerias com organizações da sociedade civil que envolvam transferência de recursos financeiros.",
       "source": "Legislação oficial consultada em 08/10/2026: https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2014/lei/l13019compilado.htm — Art. 16",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Estudo ativo",
-      "origin": "authorial"
+      "origin": "authorial",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.019/2014, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -1710,19 +1824,25 @@ const DATA_ADM_PACK5 = [
     "number": "Art. 17",
     "title": "Lei 13.019/2014 — Parcerias com Organizações da Sociedade Civil",
     "parts": [
-      "Fundamento legal: Art. 17. O art. 17 disciplina iniciativa da organização social."
+      "Art. 17. O termo de fomento deve ser adotado pela administração pública para consecução de planos de trabalho propostos por organizações da sociedade civil que envolvam a transferência de recursos financeiros."
     ],
     "origin": "authorial",
     "question": {
       "statement": "O termo de fomento é utilizado para apoiar planos de trabalho propostos pelas organizações da sociedade civil com transferência de recursos financeiros.",
       "answer": true,
-      "explanation": "O art. 17 disciplina iniciativa da organização social.",
+      "explanation": "Correta. O art. 17 determina que o termo de fomento seja adotado para a consecução de planos de trabalho propostos por organizações da sociedade civil que envolvam transferência de recursos financeiros.",
       "source": "Legislação oficial consultada em 08/10/2026: https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2014/lei/l13019compilado.htm — Art. 17",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Estudo ativo",
-      "origin": "authorial"
+      "origin": "authorial",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.019/2014, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -1733,19 +1853,25 @@ const DATA_ADM_PACK5 = [
     "number": "Art. 18",
     "title": "Lei 13.019/2014 — Parcerias com Organizações da Sociedade Civil",
     "parts": [
-      "Fundamento legal: Art. 18. O art. 18 institui o procedimento de manifestação de interesse social."
+      "Art. 18. É instituído o Procedimento de Manifestação de Interesse Social como instrumento por meio do qual as organizações da sociedade civil, movimentos sociais e cidadãos poderão apresentar propostas ao poder público para que este avalie a possibilidade de realização de um chamamento público objetivando a celebração de parceria."
     ],
     "origin": "authorial",
     "question": {
       "statement": "O procedimento de manifestação de interesse social admite que cidadãos e movimentos sociais apresentem propostas para avaliação de eventual chamamento público.",
       "answer": true,
-      "explanation": "O art. 18 institui o procedimento de manifestação de interesse social.",
+      "explanation": "Correta. O art. 18 institui o Procedimento de Manifestação de Interesse Social, pelo qual as organizações da sociedade civil, movimentos sociais e cidadãos podem apresentar propostas ao poder público para que avalie a possibilidade de realizar chamamento público para celebrar parceria.",
       "source": "Legislação oficial consultada em 08/10/2026: https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2014/lei/l13019compilado.htm — Art. 18",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Estudo ativo",
-      "origin": "authorial"
+      "origin": "authorial",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.019/2014, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -1756,19 +1882,25 @@ const DATA_ADM_PACK5 = [
     "number": "Art. 23",
     "title": "Lei 13.019/2014 — Parcerias com Organizações da Sociedade Civil",
     "parts": [
-      "Fundamento legal: Art. 23. O art. 23 impõe simplificação dos procedimentos."
+      "Art. 23. A administração pública deverá adotar procedimentos claros, objetivos e simplificados que orientem os interessados e facilitem o acesso direto aos seus órgãos e instâncias decisórias, independentemente da modalidade de parceria prevista nesta Lei."
     ],
     "origin": "authorial",
     "question": {
       "statement": "A Administração deve adotar procedimentos claros, objetivos e simplificados para orientar interessados em parcerias regidas pela Lei 13.019/2014.",
       "answer": true,
-      "explanation": "O art. 23 impõe simplificação dos procedimentos.",
+      "explanation": "Correta. O art. 23, caput, determina que a administração pública adote procedimentos claros, objetivos e simplificados que orientem os interessados e facilitem o acesso direto aos seus órgãos e instâncias decisórias, independentemente da modalidade de parceria.",
       "source": "Legislação oficial consultada em 08/10/2026: https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2014/lei/l13019compilado.htm — Art. 23",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Estudo ativo",
-      "origin": "authorial"
+      "origin": "authorial",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.019/2014, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -1779,19 +1911,25 @@ const DATA_ADM_PACK5 = [
     "number": "Art. 24",
     "title": "Lei 13.019/2014 — Parcerias com Organizações da Sociedade Civil",
     "parts": [
-      "Fundamento legal: Art. 24. O art. 24 estabelece a regra e ressalva exceções legais."
+      "Art. 24. Exceto nas hipóteses previstas nesta Lei, a celebração de termo de colaboração ou de fomento será precedida de chamamento público voltado a selecionar organizações da sociedade civil que tornem mais eficaz a execução do objeto."
     ],
     "origin": "authorial",
     "question": {
       "statement": "Como regra, a celebração de termo de colaboração ou de fomento deve ser precedida de chamamento público.",
       "answer": true,
-      "explanation": "O art. 24 estabelece a regra e ressalva exceções legais.",
+      "explanation": "Correta. O art. 24, caput, estabelece que, exceto nas hipóteses previstas na lei, a celebração de termo de colaboração ou de fomento será precedida de chamamento público.",
       "source": "Legislação oficial consultada em 08/10/2026: https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2014/lei/l13019compilado.htm — Art. 24",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Estudo ativo",
-      "origin": "authorial"
+      "origin": "authorial",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.019/2014, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -1802,19 +1940,27 @@ const DATA_ADM_PACK5 = [
     "number": "Art. 24, § 1º, III",
     "title": "Lei 13.019/2014 — Parcerias com Organizações da Sociedade Civil",
     "parts": [
-      "Fundamento legal: Art. 24, § 1º, III. O inciso III do § 1º prevê descrição do objeto."
+      "Art. 24. Exceto nas hipóteses previstas nesta Lei, a celebração de termo de colaboração ou de fomento será precedida de chamamento público voltado a selecionar organizações da sociedade civil que tornem mais eficaz a execução do objeto.",
+      "§ 1º O edital do chamamento público especificará, no mínimo:",
+      "III - o objeto da parceria;"
     ],
     "origin": "authorial",
     "question": {
       "statement": "O edital do chamamento público deve especificar o objeto da parceria.",
       "answer": true,
-      "explanation": "O inciso III do § 1º prevê descrição do objeto.",
+      "explanation": "Correta. O art. 24, § 1º, III, determina que o edital do chamamento público especifique, no mínimo, o objeto da parceria.",
       "source": "Legislação oficial consultada em 08/10/2026: https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2014/lei/l13019compilado.htm — Art. 24, § 1º, III",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Estudo ativo",
-      "origin": "authorial"
+      "origin": "authorial",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.019/2014, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -1825,19 +1971,25 @@ const DATA_ADM_PACK5 = [
     "number": "Art. 29",
     "title": "Lei 13.019/2014 — Parcerias com Organizações da Sociedade Civil",
     "parts": [
-      "Fundamento legal: Art. 29. O art. 29 traz as hipóteses específicas e exceção de compartilhamento patrimonial."
+      "Art. 29. Os termos de colaboração ou de fomento que envolvam recursos decorrentes de emendas parlamentares às leis orçamentárias anuais e os acordos de cooperação serão celebrados sem chamamento público, exceto, em relação aos acordos de cooperação, quando o objeto envolver a celebração de comodato, doação de bens ou outra forma de compartilhamento de recurso patrimonial, hipótese em que o respectivo chamamento público observará o disposto nesta Lei."
     ],
     "origin": "authorial",
     "question": {
       "statement": "Parcerias custeadas por emendas parlamentares e certos acordos de cooperação podem ser celebrados sem chamamento, ressalvadas as exceções legais.",
       "answer": true,
-      "explanation": "O art. 29 traz as hipóteses específicas e exceção de compartilhamento patrimonial.",
+      "explanation": "Correta. O art. 29 determina que os termos de colaboração ou de fomento com recursos de emendas parlamentares às leis orçamentárias anuais e os acordos de cooperação sejam celebrados sem chamamento público, exceto, quanto aos acordos de cooperação, quando o objeto envolver comodato, doação de bens ou outra forma de compartilhamento de recurso patrimonial, hipótese em que o chamamento observará a lei.",
       "source": "Legislação oficial consultada em 08/10/2026: https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2014/lei/l13019compilado.htm — Art. 29",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Estudo ativo",
-      "origin": "authorial"
+      "origin": "authorial",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.019/2014, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -1848,19 +2000,26 @@ const DATA_ADM_PACK5 = [
     "number": "Art. 30, I",
     "title": "Lei 13.019/2014 — Parcerias com Organizações da Sociedade Civil",
     "parts": [
-      "Fundamento legal: Art. 30, I. O inciso I prevê a possibilidade de dispensa, com prazo de até 180 dias."
+      "Art. 30. A administração pública poderá dispensar a realização do chamamento público:",
+      "I - no caso de urgência decorrente de paralisação ou iminência de paralisação de atividades de relevante interesse público, pelo prazo de até cento e oitenta dias;"
     ],
     "origin": "authorial",
     "question": {
       "statement": "A urgência causada por paralisação ou iminência de paralisação de atividade de relevante interesse público pode justificar dispensa de chamamento nas condições legais.",
       "answer": true,
-      "explanation": "O inciso I prevê a possibilidade de dispensa, com prazo de até 180 dias.",
+      "explanation": "Correta. O art. 30, I, permite dispensar o chamamento público em caso de urgência decorrente de paralisação ou iminência de paralisação de atividades de relevante interesse público, pelo prazo de até cento e oitenta dias.",
       "source": "Legislação oficial consultada em 08/10/2026: https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2014/lei/l13019compilado.htm — Art. 30, I",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Estudo ativo",
-      "origin": "authorial"
+      "origin": "authorial",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.019/2014, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -1871,19 +2030,26 @@ const DATA_ADM_PACK5 = [
     "number": "Art. 30, II",
     "title": "Lei 13.019/2014 — Parcerias com Organizações da Sociedade Civil",
     "parts": [
-      "Fundamento legal: Art. 30, II. O art. 30, II, inclui essas situações."
+      "Art. 30. A administração pública poderá dispensar a realização do chamamento público:",
+      "II - nos casos de guerra, calamidade pública, grave perturbação da ordem pública ou ameaça à paz social;"
     ],
     "origin": "authorial",
     "question": {
       "statement": "Guerra, calamidade pública ou grave perturbação da ordem pública são hipóteses legais em que o chamamento pode ser dispensado.",
       "answer": true,
-      "explanation": "O art. 30, II, inclui essas situações.",
+      "explanation": "Correta. O art. 30, II, permite dispensar o chamamento público nos casos de guerra, calamidade pública, grave perturbação da ordem pública ou ameaça à paz social.",
       "source": "Legislação oficial consultada em 08/10/2026: https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2014/lei/l13019compilado.htm — Art. 30, II",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Estudo ativo",
-      "origin": "authorial"
+      "origin": "authorial",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.019/2014, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -1894,19 +2060,25 @@ const DATA_ADM_PACK5 = [
     "number": "Art. 31",
     "title": "Lei 13.019/2014 — Parcerias com Organizações da Sociedade Civil",
     "parts": [
-      "Fundamento legal: Art. 31. O art. 31 disciplina inexigibilidade."
+      "Art. 31. Será considerado inexigível o chamamento público na hipótese de inviabilidade de competição entre as organizações da sociedade civil, em razão da natureza singular do objeto da parceria ou se as metas somente puderem ser atingidas por uma entidade específica, especialmente quando:"
     ],
     "origin": "authorial",
     "question": {
       "statement": "A inviabilidade de competição entre OSCs pode justificar inexigibilidade do chamamento público, conforme a natureza do objeto ou metas da parceria.",
       "answer": true,
-      "explanation": "O art. 31 disciplina inexigibilidade.",
+      "explanation": "Correta. O art. 31, caput, considera inexigível o chamamento público quando houver inviabilidade de competição entre as organizações da sociedade civil, em razão da natureza singular do objeto da parceria ou se as metas somente puderem ser atingidas por uma entidade específica.",
       "source": "Legislação oficial consultada em 08/10/2026: https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2014/lei/l13019compilado.htm — Art. 31",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Estudo ativo",
-      "origin": "authorial"
+      "origin": "authorial",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.019/2014, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -1917,19 +2089,27 @@ const DATA_ADM_PACK5 = [
     "number": "Art. 33",
     "title": "Lei 13.019/2014 — Parcerias com Organizações da Sociedade Civil",
     "parts": [
-      "Fundamento legal: Art. 33. O art. 33 prevê requisitos para celebração."
+      "Art. 33. Para celebrar as parcerias previstas nesta Lei, as organizações da sociedade civil deverão ser regidas por normas de organização interna que prevejam, expressamente:",
+      "I - objetivos voltados à promoção de atividades e finalidades de relevância pública e social;",
+      "V - possuir:"
     ],
     "origin": "authorial",
     "question": {
       "statement": "Para celebrar parcerias, as organizações da sociedade civil devem cumprir requisitos relativos à organização interna e demais exigências legais.",
       "answer": true,
-      "explanation": "O art. 33 prevê requisitos para celebração.",
+      "explanation": "Correta. O art. 33 exige que as organizações da sociedade civil sejam regidas por normas de organização interna que prevejam expressamente os itens ali listados, e o inciso V acrescenta requisitos de tempo de existência, experiência prévia e capacidade técnica e operacional.",
       "source": "Legislação oficial consultada em 08/10/2026: https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2014/lei/l13019compilado.htm — Art. 33",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Estudo ativo",
-      "origin": "authorial"
+      "origin": "authorial",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.019/2014, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -1940,19 +2120,26 @@ const DATA_ADM_PACK5 = [
     "number": "Art. 35, I",
     "title": "Lei 13.019/2014 — Parcerias com Organizações da Sociedade Civil",
     "parts": [
-      "Fundamento legal: Art. 35, I. O art. 35, I, disciplina a providência."
+      "Art. 35. A celebração e a formalização do termo de colaboração e do termo de fomento dependerão da adoção das seguintes providências pela administração pública:",
+      "I - realização de chamamento público, ressalvadas as hipóteses previstas nesta Lei;"
     ],
     "origin": "authorial",
     "question": {
       "statement": "A celebração de termo de colaboração ou fomento depende de chamamento público, ressalvadas as hipóteses legais.",
       "answer": true,
-      "explanation": "O art. 35, I, disciplina a providência.",
+      "explanation": "Correta. O art. 35, I, condiciona a celebração e a formalização do termo de colaboração e do termo de fomento à realização de chamamento público, ressalvadas as hipóteses previstas na lei.",
       "source": "Legislação oficial consultada em 08/10/2026: https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2014/lei/l13019compilado.htm — Art. 35, I",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Estudo ativo",
-      "origin": "authorial"
+      "origin": "authorial",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.019/2014, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -1963,19 +2150,26 @@ const DATA_ADM_PACK5 = [
     "number": "Art. 35, II",
     "title": "Lei 13.019/2014 — Parcerias com Organizações da Sociedade Civil",
     "parts": [
-      "Fundamento legal: Art. 35, II. O inciso II requer dotação prévia."
+      "Art. 35. A celebração e a formalização do termo de colaboração e do termo de fomento dependerão da adoção das seguintes providências pela administração pública:",
+      "II - indicação expressa da existência de prévia dotação orçamentária para execução da parceria;"
     ],
     "origin": "authorial",
     "question": {
       "statement": "A formalização de termo de colaboração ou fomento exige indicação da dotação orçamentária prévia para a execução da parceria.",
       "answer": true,
-      "explanation": "O inciso II requer dotação prévia.",
+      "explanation": "Correta. O art. 35, II, condiciona a celebração e a formalização do termo de colaboração e do termo de fomento à indicação expressa da existência de prévia dotação orçamentária para a execução da parceria.",
       "source": "Legislação oficial consultada em 08/10/2026: https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2014/lei/l13019compilado.htm — Art. 35, II",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Estudo ativo",
-      "origin": "authorial"
+      "origin": "authorial",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.019/2014, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -1986,19 +2180,26 @@ const DATA_ADM_PACK5 = [
     "number": "Art. 35, IV",
     "title": "Lei 13.019/2014 — Parcerias com Organizações da Sociedade Civil",
     "parts": [
-      "Fundamento legal: Art. 35, IV. O inciso IV prevê aprovação do plano de trabalho."
+      "Art. 35. A celebração e a formalização do termo de colaboração e do termo de fomento dependerão da adoção das seguintes providências pela administração pública:",
+      "IV - aprovação do plano de trabalho, a ser apresentado nos termos desta Lei;"
     ],
     "origin": "authorial",
     "question": {
       "statement": "O plano de trabalho da parceria precisa ser aprovado pela Administração antes da formalização, nos termos legais.",
       "answer": true,
-      "explanation": "O inciso IV prevê aprovação do plano de trabalho.",
+      "explanation": "Correta. O art. 35, IV, condiciona a celebração e a formalização do termo de colaboração e do termo de fomento à aprovação do plano de trabalho, a ser apresentado nos termos da lei.",
       "source": "Legislação oficial consultada em 08/10/2026: https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2014/lei/l13019compilado.htm — Art. 35, IV",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Estudo ativo",
-      "origin": "authorial"
+      "origin": "authorial",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.019/2014, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   }
 ];

@@ -1016,20 +1016,26 @@ const DATA_ADM_PACK3 = [
     "number": "Art. 1º",
     "title": "Lei 9.637/1998 — Organizações Sociais",
     "parts": [
-      "Fundamento legal: Art. 1º de Lei 9.637/1998. É o perfil da entidade apta à qualificação no art. 1º."
+      "Art. 1º O Poder Executivo poderá qualificar como organizações sociais pessoas jurídicas de direito privado, sem fins lucrativos, cujas atividades sejam dirigidas ao ensino, à pesquisa científica, ao desenvolvimento tecnológico, à proteção e preservação do meio ambiente, à cultura e à saúde, atendidos aos requisitos previstos nesta Lei."
     ],
     "origin": "authorial",
     "question": {
       "statement": "A qualificação como organização social pode ser atribuída pelo Poder Executivo a pessoa jurídica de direito privado sem fins lucrativos, conforme requisitos legais.",
       "answer": true,
-      "explanation": "É o perfil da entidade apta à qualificação no art. 1º.",
+      "explanation": "Correta. O art. 1º da Lei 9.637/1998 permite ao Poder Executivo qualificar como organizações sociais pessoas jurídicas de direito privado, sem fins lucrativos, cujas atividades sejam dirigidas ao ensino, à pesquisa científica, ao desenvolvimento tecnológico, à proteção e preservação do meio ambiente, à cultura e à saúde, atendidos os requisitos da lei.",
       "source": "Fonte oficial consultada em 08/10/2026: https://www2.camara.leg.br/legin/fed/lei/1998/lei-9637-15-maio-1998-372244-normaatualizada-pl.html (Art. 1º).",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia — estudo ativo",
       "origin": "authorial",
-      "updateWarning": "Confira alterações legislativas posteriores à data de referência."
+      "updateWarning": "Confira alterações legislativas posteriores à data de referência.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 9.637/1998, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -1040,20 +1046,26 @@ const DATA_ADM_PACK3 = [
     "number": "Art. 1º",
     "title": "Lei 9.637/1998 — Organizações Sociais",
     "parts": [
-      "Fundamento legal: Art. 1º de Lei 9.637/1998. O art. 1º admite entidades privadas sem fins lucrativos, não autarquias."
+      "Art. 1º O Poder Executivo poderá qualificar como organizações sociais pessoas jurídicas de direito privado, sem fins lucrativos, cujas atividades sejam dirigidas ao ensino, à pesquisa científica, ao desenvolvimento tecnológico, à proteção e preservação do meio ambiente, à cultura e à saúde, atendidos aos requisitos previstos nesta Lei."
     ],
     "origin": "authorial",
     "question": {
       "statement": "Organização social é necessariamente uma autarquia da Administração Pública indireta.",
       "answer": false,
-      "explanation": "O art. 1º admite entidades privadas sem fins lucrativos, não autarquias.",
+      "explanation": "Errada. O art. 1º prevê a qualificação de pessoas jurídicas de direito privado, sem fins lucrativos, como organizações sociais, e não de autarquias.",
       "source": "Fonte oficial consultada em 08/10/2026: https://www2.camara.leg.br/legin/fed/lei/1998/lei-9637-15-maio-1998-372244-normaatualizada-pl.html (Art. 1º).",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia — estudo ativo",
       "origin": "authorial",
-      "updateWarning": "Confira alterações legislativas posteriores à data de referência."
+      "updateWarning": "Confira alterações legislativas posteriores à data de referência.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 9.637/1998, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -1064,20 +1076,26 @@ const DATA_ADM_PACK3 = [
     "number": "Art. 2º",
     "title": "Lei 9.637/1998 — Organizações Sociais",
     "parts": [
-      "Fundamento legal: Art. 2º de Lei 9.637/1998. O art. 2º fixa requisitos de habilitação."
+      "Art. 2º São requisitos específicos para que as entidades privadas referidas no artigo anterior habilitem-se à qualificação como organização social:"
     ],
     "origin": "authorial",
     "question": {
       "statement": "A qualificação de uma entidade privada como organização social depende do cumprimento de requisitos específicos previstos em lei.",
       "answer": true,
-      "explanation": "O art. 2º fixa requisitos de habilitação.",
+      "explanation": "Correta. O art. 2º define os requisitos específicos para que as entidades privadas referidas no art. 1º se habilitem à qualificação como organização social.",
       "source": "Fonte oficial consultada em 08/10/2026: https://www2.camara.leg.br/legin/fed/lei/1998/lei-9637-15-maio-1998-372244-normaatualizada-pl.html (Art. 2º).",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia — estudo ativo",
       "origin": "authorial",
-      "updateWarning": "Confira alterações legislativas posteriores à data de referência."
+      "updateWarning": "Confira alterações legislativas posteriores à data de referência.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 9.637/1998, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -1088,20 +1106,26 @@ const DATA_ADM_PACK3 = [
     "number": "Art. 5º",
     "title": "Lei 9.637/1998 — Organizações Sociais",
     "parts": [
-      "Fundamento legal: Art. 5º de Lei 9.637/1998. O art. 5º define a finalidade do contrato de gestão."
+      "Art. 5º Para os efeitos desta Lei, entende-se por contrato de gestão o instrumento firmado entre o Poder Público e a entidade qualificada como organização social, com vistas à formação de parceria entre as partes para fomento e execução de atividades relativas às áreas relacionadas no art. 1º."
     ],
     "origin": "authorial",
     "question": {
       "statement": "O contrato de gestão é o instrumento de parceria entre Poder Público e organização social para fomento e execução de atividades previstas na lei.",
       "answer": true,
-      "explanation": "O art. 5º define a finalidade do contrato de gestão.",
+      "explanation": "Correta. O art. 5º define o contrato de gestão como o instrumento firmado entre o Poder Público e a entidade qualificada como organização social, com vistas à formação de parceria para fomento e execução de atividades relativas às áreas do art. 1º.",
       "source": "Fonte oficial consultada em 08/10/2026: https://www2.camara.leg.br/legin/fed/lei/1998/lei-9637-15-maio-1998-372244-normaatualizada-pl.html (Art. 5º).",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia — estudo ativo",
       "origin": "authorial",
-      "updateWarning": "Confira alterações legislativas posteriores à data de referência."
+      "updateWarning": "Confira alterações legislativas posteriores à data de referência.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 9.637/1998, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -1112,20 +1136,26 @@ const DATA_ADM_PACK3 = [
     "number": "Art. 5º",
     "title": "Lei 9.637/1998 — Organizações Sociais",
     "parts": [
-      "Fundamento legal: Art. 5º de Lei 9.637/1998. O instrumento é de parceria e fomento, não de provimento de cargo público."
+      "Art. 5º Para os efeitos desta Lei, entende-se por contrato de gestão o instrumento firmado entre o Poder Público e a entidade qualificada como organização social, com vistas à formação de parceria entre as partes para fomento e execução de atividades relativas às áreas relacionadas no art. 1º."
     ],
     "origin": "authorial",
     "question": {
       "statement": "O contrato de gestão com organização social é definido legalmente como modalidade de vínculo de emprego estatutário.",
       "answer": false,
-      "explanation": "O instrumento é de parceria e fomento, não de provimento de cargo público.",
+      "explanation": "Errada. O art. 5º define o contrato de gestão como instrumento de parceria entre o Poder Público e a organização social, para fomento e execução de atividades, e não como vínculo de emprego estatutário.",
       "source": "Fonte oficial consultada em 08/10/2026: https://www2.camara.leg.br/legin/fed/lei/1998/lei-9637-15-maio-1998-372244-normaatualizada-pl.html (Art. 5º).",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia — estudo ativo",
       "origin": "authorial",
-      "updateWarning": "Confira alterações legislativas posteriores à data de referência."
+      "updateWarning": "Confira alterações legislativas posteriores à data de referência.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 9.637/1998, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -1136,20 +1166,26 @@ const DATA_ADM_PACK3 = [
     "number": "Art. 6º",
     "title": "Lei 9.637/1998 — Organizações Sociais",
     "parts": [
-      "Fundamento legal: Art. 6º de Lei 9.637/1998. O art. 6º prevê elaboração de comum acordo com tais elementos."
+      "Art. 6º O contrato de gestão, elaborado de comum acordo entre o órgão ou entidade supervisora e a organização social, discriminará as atribuições, responsabilidades e obrigações do Poder Público e da organização social."
     ],
     "origin": "authorial",
     "question": {
       "statement": "O contrato de gestão discrimina atribuições, responsabilidades e obrigações do Poder Público e da organização social.",
       "answer": true,
-      "explanation": "O art. 6º prevê elaboração de comum acordo com tais elementos.",
+      "explanation": "Correta. O art. 6º, caput, dispõe que o contrato de gestão, elaborado de comum acordo entre o órgão ou entidade supervisora e a organização social, discriminará as atribuições, responsabilidades e obrigações do Poder Público e da organização social.",
       "source": "Fonte oficial consultada em 08/10/2026: https://www2.camara.leg.br/legin/fed/lei/1998/lei-9637-15-maio-1998-372244-normaatualizada-pl.html (Art. 6º).",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia — estudo ativo",
       "origin": "authorial",
-      "updateWarning": "Confira alterações legislativas posteriores à data de referência."
+      "updateWarning": "Confira alterações legislativas posteriores à data de referência.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 9.637/1998, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -1160,20 +1196,27 @@ const DATA_ADM_PACK3 = [
     "number": "Art. 7º",
     "title": "Lei 9.637/1998 — Organizações Sociais",
     "parts": [
-      "Fundamento legal: Art. 7º de Lei 9.637/1998. O art. 7º exige indicadores e critérios objetivos."
+      "Art. 7º Na elaboração do contrato de gestão, devem ser observados os princípios da legalidade, impessoalidade, moralidade, publicidade, economicidade e, também, os seguintes preceitos:",
+      "I - especificação do programa de trabalho proposto pela organização social, a estipulação das metas a serem atingidas e os respectivos prazos de execução, bem como previsão expressa dos critérios objetivos de avaliação de desempenho a serem utilizados, mediante indicadores de qualidade e produtividade;"
     ],
     "origin": "authorial",
     "question": {
       "statement": "As metas e os indicadores de avaliação de desempenho integram os elementos do contrato de gestão das organizações sociais.",
       "answer": true,
-      "explanation": "O art. 7º exige indicadores e critérios objetivos.",
+      "explanation": "Correta. O art. 7º, I, exige, na elaboração do contrato de gestão, a especificação do programa de trabalho, a estipulação das metas e prazos e a previsão expressa dos critérios objetivos de avaliação de desempenho, mediante indicadores de qualidade e produtividade.",
       "source": "Fonte oficial consultada em 08/10/2026: https://www2.camara.leg.br/legin/fed/lei/1998/lei-9637-15-maio-1998-372244-normaatualizada-pl.html (Art. 7º).",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia — estudo ativo",
       "origin": "authorial",
-      "updateWarning": "Confira alterações legislativas posteriores à data de referência."
+      "updateWarning": "Confira alterações legislativas posteriores à data de referência.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 9.637/1998, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -1184,20 +1227,26 @@ const DATA_ADM_PACK3 = [
     "number": "Art. 7º",
     "title": "Lei 9.637/1998 — Organizações Sociais",
     "parts": [
-      "Fundamento legal: Art. 7º de Lei 9.637/1998. A economicidade figura entre os princípios previstos no art. 7º."
+      "Art. 7º Na elaboração do contrato de gestão, devem ser observados os princípios da legalidade, impessoalidade, moralidade, publicidade, economicidade e, também, os seguintes preceitos:"
     ],
     "origin": "authorial",
     "question": {
       "statement": "A economicidade é incompatível com o contrato de gestão e foi excluída dos princípios para sua elaboração.",
       "answer": false,
-      "explanation": "A economicidade figura entre os princípios previstos no art. 7º.",
+      "explanation": "Errada. O art. 7º, caput, manda observar, na elaboração do contrato de gestão, os princípios da legalidade, impessoalidade, moralidade, publicidade e economicidade, entre outros preceitos. A economicidade consta expressamente do rol.",
       "source": "Fonte oficial consultada em 08/10/2026: https://www2.camara.leg.br/legin/fed/lei/1998/lei-9637-15-maio-1998-372244-normaatualizada-pl.html (Art. 7º).",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia — estudo ativo",
       "origin": "authorial",
-      "updateWarning": "Confira alterações legislativas posteriores à data de referência."
+      "updateWarning": "Confira alterações legislativas posteriores à data de referência.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 9.637/1998, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -1208,20 +1257,26 @@ const DATA_ADM_PACK3 = [
     "number": "Art. 1º",
     "title": "Lei 9.790/1999 — OSCIP",
     "parts": [
-      "Fundamento legal: Art. 1º de Lei 9.790/1999. O art. 1º prevê o prazo mínimo de três anos."
+      "Art. 1º Podem qualificar-se como Organizações da Sociedade Civil de Interesse Público as pessoas jurídicas de direito privado sem fins lucrativos que tenham sido constituídas e se encontrem em funcionamento regular há, no mínimo, 3 (três) anos, desde que os respectivos objetivos sociais e normas estatutárias atendam aos requisitos instituídos por esta Lei."
     ],
     "origin": "authorial",
     "question": {
       "statement": "A qualificação como OSCIP pressupõe entidade privada sem fins lucrativos com pelo menos três anos de funcionamento regular, além dos requisitos legais.",
       "answer": true,
-      "explanation": "O art. 1º prevê o prazo mínimo de três anos.",
+      "explanation": "Correta. O art. 1º da Lei 9.790/1999 permite a qualificação como OSCIP de pessoas jurídicas de direito privado sem fins lucrativos constituídas e em funcionamento regular há, no mínimo, três anos, desde que os objetivos sociais e as normas estatutárias atendam aos requisitos da lei.",
       "source": "Fonte oficial consultada em 08/10/2026: https://www2.camara.leg.br/legin/fed/lei/1999/lei-9790-23-marco-1999-349541-normaatualizada-pl.html (Art. 1º).",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia — estudo ativo",
       "origin": "authorial",
-      "updateWarning": "Confira alterações legislativas posteriores à data de referência."
+      "updateWarning": "Confira alterações legislativas posteriores à data de referência.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 9.790/1999, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -1232,20 +1287,26 @@ const DATA_ADM_PACK3 = [
     "number": "Art. 1º",
     "title": "Lei 9.790/1999 — OSCIP",
     "parts": [
-      "Fundamento legal: Art. 1º de Lei 9.790/1999. O art. 1º exige funcionamento regular mínimo de três anos."
+      "Art. 1º Podem qualificar-se como Organizações da Sociedade Civil de Interesse Público as pessoas jurídicas de direito privado sem fins lucrativos que tenham sido constituídas e se encontrem em funcionamento regular há, no mínimo, 3 (três) anos, desde que os respectivos objetivos sociais e normas estatutárias atendam aos requisitos instituídos por esta Lei."
     ],
     "origin": "authorial",
     "question": {
       "statement": "Qualquer entidade privada pode receber a qualificação de OSCIP imediatamente após a constituição, independentemente de prazo de funcionamento.",
       "answer": false,
-      "explanation": "O art. 1º exige funcionamento regular mínimo de três anos.",
+      "explanation": "Errada. O art. 1º exige que a pessoa jurídica de direito privado sem fins lucrativos esteja constituída e em funcionamento regular há, no mínimo, três anos, além dos demais requisitos da lei, e não admite a qualificação imediata após a constituição.",
       "source": "Fonte oficial consultada em 08/10/2026: https://www2.camara.leg.br/legin/fed/lei/1999/lei-9790-23-marco-1999-349541-normaatualizada-pl.html (Art. 1º).",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia — estudo ativo",
       "origin": "authorial",
-      "updateWarning": "Confira alterações legislativas posteriores à data de referência."
+      "updateWarning": "Confira alterações legislativas posteriores à data de referência.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 9.790/1999, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -1256,20 +1317,27 @@ const DATA_ADM_PACK3 = [
     "number": "Art. 2º IX",
     "title": "Lei 9.790/1999 — OSCIP",
     "parts": [
-      "Fundamento legal: Art. 2º IX de Lei 9.790/1999. O art. 2º, IX, prevê a vedação."
+      "Art. 2º Não são passíveis de qualificação como Organizações da Sociedade Civil de Interesse Público, ainda que se dediquem de qualquer forma às atividades descritas no art. 3º desta Lei:",
+      "IX - as organizações sociais;"
     ],
     "origin": "authorial",
     "question": {
       "statement": "Entidades qualificadas como organizações sociais não são passíveis de qualificação como OSCIP pela Lei 9.790/1999.",
       "answer": true,
-      "explanation": "O art. 2º, IX, prevê a vedação.",
+      "explanation": "Correta. O art. 2º, IX, afasta a qualificação como OSCIP das organizações sociais, ainda que se dediquem às atividades do art. 3º.",
       "source": "Fonte oficial consultada em 08/10/2026: https://www2.camara.leg.br/legin/fed/lei/1999/lei-9790-23-marco-1999-349541-normaatualizada-pl.html (Art. 2º IX).",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia — estudo ativo",
       "origin": "authorial",
-      "updateWarning": "Confira alterações legislativas posteriores à data de referência."
+      "updateWarning": "Confira alterações legislativas posteriores à data de referência.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 9.790/1999, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -1280,20 +1348,27 @@ const DATA_ADM_PACK3 = [
     "number": "Art. 2º IV",
     "title": "Lei 9.790/1999 — OSCIP",
     "parts": [
-      "Fundamento legal: Art. 2º IV de Lei 9.790/1999. O art. 2º, IV, afasta essa qualificação."
+      "Art. 2º Não são passíveis de qualificação como Organizações da Sociedade Civil de Interesse Público, ainda que se dediquem de qualquer forma às atividades descritas no art. 3º desta Lei:",
+      "IV - as organizações partidárias e assemelhadas, inclusive suas fundações;"
     ],
     "origin": "authorial",
     "question": {
       "statement": "Organizações partidárias e suas fundações podem qualificar-se como OSCIP desde que não tenham finalidade lucrativa.",
       "answer": false,
-      "explanation": "O art. 2º, IV, afasta essa qualificação.",
+      "explanation": "Errada. O art. 2º, IV, afasta a qualificação como OSCIP das organizações partidárias e assemelhadas, inclusive suas fundações, independentemente de terem finalidade lucrativa.",
       "source": "Fonte oficial consultada em 08/10/2026: https://www2.camara.leg.br/legin/fed/lei/1999/lei-9790-23-marco-1999-349541-normaatualizada-pl.html (Art. 2º IV).",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia — estudo ativo",
       "origin": "authorial",
-      "updateWarning": "Confira alterações legislativas posteriores à data de referência."
+      "updateWarning": "Confira alterações legislativas posteriores à data de referência.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 9.790/1999, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -1304,20 +1379,28 @@ const DATA_ADM_PACK3 = [
     "number": "Art. 3º",
     "title": "Lei 9.790/1999 — OSCIP",
     "parts": [
-      "Fundamento legal: Art. 3º de Lei 9.790/1999. O art. 3º contempla essas finalidades."
+      "Art. 3º A qualificação instituída por esta Lei, observado em qualquer caso, o princípio da universalização dos serviços, no respectivo âmbito de atuação das Organizações, somente será conferida às pessoas jurídicas de direito privado, sem fins lucrativos, cujos objetivos sociais tenham pelo menos uma das seguintes finalidades:",
+      "III - promoção gratuita da educação, observando-se a forma complementar de participação das organizações de que trata esta Lei;",
+      "VI - defesa, preservação e conservação do meio ambiente e promoção do desenvolvimento sustentável;"
     ],
     "origin": "authorial",
     "question": {
       "statement": "A promoção gratuita da educação e a defesa do meio ambiente figuram entre as finalidades legalmente admitidas às OSCIPs.",
       "answer": true,
-      "explanation": "O art. 3º contempla essas finalidades.",
+      "explanation": "Correta. O art. 3º, III e VI, inclui entre as finalidades que permitem a qualificação a promoção gratuita da educação e a defesa, preservação e conservação do meio ambiente e promoção do desenvolvimento sustentável.",
       "source": "Fonte oficial consultada em 08/10/2026: https://www2.camara.leg.br/legin/fed/lei/1999/lei-9790-23-marco-1999-349541-normaatualizada-pl.html (Art. 3º).",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia — estudo ativo",
       "origin": "authorial",
-      "updateWarning": "Confira alterações legislativas posteriores à data de referência."
+      "updateWarning": "Confira alterações legislativas posteriores à data de referência.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 9.790/1999, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -1328,20 +1411,26 @@ const DATA_ADM_PACK3 = [
     "number": "Art. 4º parágrafo único",
     "title": "Lei 9.790/1999 — OSCIP",
     "parts": [
-      "Fundamento legal: Art. 4º parágrafo único de Lei 9.790/1999. O parágrafo único do art. 4º prevê a participação."
+      "Parágrafo único. É permitida a participação de servidores públicos na composição de conselho ou diretoria de Organização da Sociedade Civil de Interesse Público."
     ],
     "origin": "authorial",
     "question": {
       "statement": "A participação de servidores públicos no conselho ou diretoria de uma OSCIP é permitida pela Lei 9.790/1999.",
       "answer": true,
-      "explanation": "O parágrafo único do art. 4º prevê a participação.",
+      "explanation": "Correta. O art. 4º, parágrafo único, permite a participação de servidores públicos na composição de conselho ou diretoria de Organização da Sociedade Civil de Interesse Público.",
       "source": "Fonte oficial consultada em 08/10/2026: https://www2.camara.leg.br/legin/fed/lei/1999/lei-9790-23-marco-1999-349541-normaatualizada-pl.html (Art. 4º parágrafo único).",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia — estudo ativo",
       "origin": "authorial",
-      "updateWarning": "Confira alterações legislativas posteriores à data de referência."
+      "updateWarning": "Confira alterações legislativas posteriores à data de referência.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 9.790/1999, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -1352,20 +1441,26 @@ const DATA_ADM_PACK3 = [
     "number": "Art. 9º",
     "title": "Lei 9.790/1999 — OSCIP",
     "parts": [
-      "Fundamento legal: Art. 9º de Lei 9.790/1999. O art. 9º institui o termo de parceria."
+      "Art. 9º Fica instituído o Termo de Parceria, assim considerado o instrumento passível de ser firmado entre o Poder Público e as entidades qualificadas como Organizações da Sociedade Civil de Interesse Público destinado à formação de vínculo de cooperação entre as partes, para o fomento e a execução das atividades de interesse público previstas no art. 3º desta Lei."
     ],
     "origin": "authorial",
     "question": {
       "statement": "O termo de parceria pode ser firmado entre o Poder Público e uma OSCIP para cooperação em atividades de interesse público.",
       "answer": true,
-      "explanation": "O art. 9º institui o termo de parceria.",
+      "explanation": "Correta. O art. 9º institui o termo de parceria como o instrumento passível de ser firmado entre o Poder Público e as entidades qualificadas como OSCIP, destinado à formação de vínculo de cooperação entre as partes, para o fomento e a execução das atividades de interesse público previstas no art. 3º.",
       "source": "Fonte oficial consultada em 08/10/2026: https://www2.camara.leg.br/legin/fed/lei/1999/lei-9790-23-marco-1999-349541-normaatualizada-pl.html (Art. 9º).",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia — estudo ativo",
       "origin": "authorial",
-      "updateWarning": "Confira alterações legislativas posteriores à data de referência."
+      "updateWarning": "Confira alterações legislativas posteriores à data de referência.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 9.790/1999, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   },
   {
@@ -1376,20 +1471,27 @@ const DATA_ADM_PACK3 = [
     "number": "Art. 9º",
     "title": "Lei 9.790/1999 — OSCIP",
     "parts": [
-      "Fundamento legal: Art. 9º de Lei 9.790/1999. O instrumento específico é o termo de parceria."
+      "Art. 9º Fica instituído o Termo de Parceria, assim considerado o instrumento passível de ser firmado entre o Poder Público e as entidades qualificadas como Organizações da Sociedade Civil de Interesse Público destinado à formação de vínculo de cooperação entre as partes, para o fomento e a execução das atividades de interesse público previstas no art. 3º desta Lei.",
+      "Art. 5º Para os efeitos desta Lei, entende-se por contrato de gestão o instrumento firmado entre o Poder Público e a entidade qualificada como organização social, com vistas à formação de parceria entre as partes para fomento e execução de atividades relativas às áreas relacionadas no art. 1º."
     ],
     "origin": "authorial",
     "question": {
       "statement": "A Lei 9.790/1999 denomina contrato de gestão, e não termo de parceria, o instrumento típico firmado com OSCIP.",
       "answer": false,
-      "explanation": "O instrumento específico é o termo de parceria.",
+      "explanation": "Errada. O art. 9º institui o termo de parceria, e não o contrato de gestão, como o instrumento firmado entre o Poder Público e as OSCIPs. O contrato de gestão é o instrumento das organizações sociais (Lei 9.637/1998, art. 5º).",
       "source": "Fonte oficial consultada em 08/10/2026: https://www2.camara.leg.br/legin/fed/lei/1999/lei-9790-23-marco-1999-349541-normaatualizada-pl.html (Art. 9º).",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia — estudo ativo",
       "origin": "authorial",
-      "updateWarning": "Confira alterações legislativas posteriores à data de referência."
+      "updateWarning": "Confira alterações legislativas posteriores à data de referência.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Vade Mecum da Central, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 9.790/1999 e Lei 9.637/1998, texto compilado do Planalto (Vade Mecum da Central)"
+      }
     }
   }
 ];
