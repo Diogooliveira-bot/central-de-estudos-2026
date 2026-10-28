@@ -162,3 +162,32 @@ html.bc-ui-v1 #cpcM05NativeReaderOverlay.bc-apostila-v1 .bc-native-article p.bc-
  line-height:1.4!important;
  letter-spacing:.025em;
 }
+
+/* CPC M05: questões autorais e separador da Parte VIII, sem alterar IDs
+   nem a hierarquia persistida. */
+html.bc-ui-v1 #cpcM05NativeReaderOverlay.bc-apostila-v1 .bc-native-article h2.bc-cpc-m05-quiz-heading{
+ margin:23px 0 9px!important;
+ padding:11px 15px!important;
+ border:1px solid var(--bc-premium-line);
+ border-left:4px solid var(--bc-premium-blue);
+ border-radius:8px;
+ background:#f8fbfe;
+ color:var(--bc-premium-ink)!important;
+ font-family:Inter,ui-sans-serif,system-ui,sans-serif!important;
+ font-size:18px!important;
+ font-weight:700!important;
+ line-height:1.5!important;
+}
+html.bc-ui-v1 #cpcM05NativeReaderOverlay.bc-apostila-v1 .bc-native-article p.bc-cpc-m05-quiz-prompt{
+ margin:22px 0 10px!important;
+ padding:11px 15px!important;
+ border:1px solid var(--bc-premium-line);
+ border-left:4px solid var(--bc-premium-blue);
+ border-radius:8px;
+ background:#f8fbfe;
+ color:var(--bc-premium-ink)!important;
+ font-family:Inter,ui-sans-serif,system-ui,sans-serif!important;
+ font-size:18px!important;
+ font-weight:700!important;
+ line-height:1.5!important;
+}
