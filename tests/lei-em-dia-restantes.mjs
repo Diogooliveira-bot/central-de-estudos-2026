@@ -12,7 +12,7 @@ function makeContext(){
  const document={documentElement:{dataset:{}},addEventListener(){},getElementById(){return null}};
  const window={scrollTo(){},addEventListener(){}};
  const localStorage={getItem:k=>storage.get(k)||null,setItem:(k,v)=>storage.set(k,v)};
- const context=vm.createContext({document,window,localStorage,URLSearchParams,location:{search:''},setTimeout,clearTimeout});
+ const context=vm.createContext({document,window,localStorage,URLSearchParams,location:{search:''},setTimeout,clearTimeout,DATA_LED_APPROVED:[],TOPICS_LED_APPROVED:[]});
  for(const m of html.matchAll(/<script([^>]*)>([\s\S]*?)<\/script>/g)){
   const external=m[1].match(/src="\.\/(decorando-data-[^"?]+)(?:\?[^" ]*)?"/);
   if(external)vm.runInContext(readFileSync(new URL('tools/'+external[1],root),'utf8'),context);
