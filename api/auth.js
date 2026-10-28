@@ -16,7 +16,7 @@ import {
   verifyPassword,
 } from '../lib/auth.js';
 import handleInviteAction from '../lib/invite-handler.js';
-import handleFreeSignup, {freeSignupEnabled} from '../lib/free-signup-handler.js';
+import handleFreeSignup, {publicFreeSignupReady} from '../lib/free-signup-handler.js';
 import handleFreeSignupContactPreferences from '../lib/free-signup-contact-preferences.js';
 import {signupCaptchaConfigured} from '../lib/free-signup-security.js';
 import handlePasswordReset from '../lib/password-reset.js';
@@ -188,8 +188,8 @@ export default async function handler(req, res) {
     if (action === 'free-signup' && req.method === 'POST') return handleFreeSignup(req, res);
     if (action === 'free-signup-contact' && ['GET','POST'].includes(req.method)) return handleFreeSignupContactPreferences(req, res);
     if (action === 'free-signup-status' && req.method === 'GET') return send(res, 200, {
-      enabled: freeSignupEnabled(),
-      siteKey: freeSignupEnabled() && signupCaptchaConfigured()
+      enabled: publicFreeSignupReady(),
+      siteKey: publicFreeSignupReady() && signupCaptchaConfigured()
         ? String(process.env.BC_SIGNUP_TURNSTILE_SITE_KEY) : null,
     });
     if (action.startsWith('invite-')) return handleInviteAction(req, res, action.slice('invite-'.length));
