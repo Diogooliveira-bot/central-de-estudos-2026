@@ -1,0 +1,37 @@
+name: Lei em Dia - reconciliacao catalogo isolada
+on:
+  push:
+    branches:
+      - fix/lei-em-dia-catalogo-20261028
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  auditoria:
+    runs-on: ubuntu-latest
+    timeout-minutes: 16
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Node 22
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+      - name: Dependencias
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Integridade e sincronizacao
+        run: node --test tests/lei-em-dia-sincronizacao.mjs tests/lei-em-dia-constitucional.mjs tests/lei-em-dia-civil-processo.mjs tests/lei-em-dia-restantes.mjs
+      - name: Administrativo sem mascarar falhas
+        run: node --test tests/lei-em-dia-adm-15leis.mjs tests/lei-em-dia-adm-dispositivos.mjs
+      - name: Regressao de seguranca e offline
+        run: node --test tests/content-publication-integrity-unit.mjs tests/progressive-premium-delivery-unit.mjs tests/pwa-cache-recovery-unit.mjs
+      - name: Auditoria legada de fontes e dados
+        run: node --test tests/lei-em-dia-auditoria-20261012.mjs tests/lei-em-dia-catalogo-integridade.mjs
+      - name: Regressao geral da Central
+        run: npm test
+      - name: Chromium headless
+        run: npx playwright install chromium --only-shell
+      - name: Fluxo de aluno no navegador desktop e celular
+        run: node tests/lei-em-dia-adm-browser.mjs

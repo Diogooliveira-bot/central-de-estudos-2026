@@ -12,7 +12,7 @@ function makeContext(){
  const document={documentElement:{dataset:{}},addEventListener(){},getElementById(){return null}};
  const window={scrollTo(){},addEventListener(){}};
  const localStorage={getItem:k=>storage.get(k)||null,setItem:(k,v)=>storage.set(k,v)};
- const context=vm.createContext({document,window,localStorage,URLSearchParams,location:{search:''},setTimeout,clearTimeout});
+ const context=vm.createContext({document,window,localStorage,URLSearchParams,location:{search:''},setTimeout,clearTimeout,DATA_LED_APPROVED:[],TOPICS_LED_APPROVED:[]});
  for(const m of html.matchAll(/<script([^>]*)>([\s\S]*?)<\/script>/g)){
   const external=m[1].match(/src="\.\/(decorando-data-[^"?]+)(?:\?[^" ]*)?"/);
   if(external)vm.runInContext(readFileSync(new URL('tools/'+external[1],root),'utf8'),context);
@@ -71,7 +71,8 @@ test('parte cível dos Juizados não é apresentada como criminal e pendências 
  assert.ok(report.missingSources.penal.some(s=>s.includes('parte criminal')));
  assert.ok(report.missingSources.trabalho.some(s=>s.startsWith('CLT')));
  const offline=JSON.parse(readFileSync(new URL('central-offline-files-v66172.json',root)));
- assert.ok(offline.files.includes('/tools/decorando-data-restantes.js?v=20261023-remove-labor-disciplines-v1'));
+ assert.ok(!offline.files.some(p=>p.startsWith('/tools/decorando-data-restantes.js')), 'dataset de questões deve ficar fora do manifesto público');
+ assert.ok(html.includes('decorando-data-restantes.js?v=20261023-remove-labor-disciplines-v1'));
  for(const x of report.deviceReview.removed)assert.ok(x.keptIds.length>0);
 });
 
