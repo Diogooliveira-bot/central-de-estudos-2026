@@ -49,19 +49,12 @@
       clearTimeout(timer);fail();
     }
   },true);
-  // A worker update is a single transition per build, covered by the same loading screen.
+  // Update the worker in the background without reloading the current page.
+  // A forced reload here caused the loading screen to appear twice on PWA/mobile opens.
   if('serviceWorker' in navigator){
-    var controlled=!!navigator.serviceWorker.controller;
-    var key='central:pwa-reload:'+build;
-    navigator.serviceWorker.addEventListener('controllerchange',function(){
-      if(!controlled)return;
-      try{
-        if(sessionStorage.getItem(key))return;
-        sessionStorage.setItem(key,'1');
-      }catch(_){return;}
-      location.reload();
-    });
-    navigator.serviceWorker.getRegistration().then(function(reg){if(reg)reg.update().catch(function(){})}).catch(function(){});
+    navigator.serviceWorker.getRegistration().then(function(reg){
+      if(reg)reg.update().catch(function(){});
+    }).catch(function(){});
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',check,{once:true});
   else check();
