@@ -83,6 +83,7 @@ try{
       missingLineExamples:lost.slice(0,8),missingLinePercent:Math.round(1000*lost.length/Math.max(1,sourceLines.length))/10,
       headingsTotal:headings.length,h1:headings.filter(h=>h.level==='H1').length,h2:headings.filter(h=>h.level==='H2').length,h3:headings.filter(h=>h.level==='H3').length,
       suspiciousHeadings:suspicious,repeatedHeadings:[...new Set(repeated)].slice(0,9),
+      normalizedHeadingCount:a.querySelectorAll('[data-bc-original-heading]').length,
       tocItems:toc.length,chapterCheckButtons:o.querySelectorAll('[data-cpc-chapter-check]').length,
       tables,pageOverflow:document.documentElement.scrollWidth>innerWidth+2,
       premium:o.classList.contains('bc-apostila-v1'),readerName:o.querySelector('.bc-native-reader-title b')?.textContent.trim(),
@@ -98,6 +99,10 @@ try{
     assert.ok(result.tables.every(t=>t.rows>0&&t.cols>1&&t.wrapper),label+': tabela fora do padrão semântico');
     assert.ok(result.tables.every(t=>t.overflowX==='auto'),label+': tabela sem rolagem horizontal própria');
     if(width===390)assert.ok(result.tables.every(t=>t.scrollWidth>t.clientWidth+1),label+': tabela sem rolagem celular');
+    if(n===1)assert.ok(result.tables.every(t=>t.caption),label+': tabela principal sem legenda acessível');
+    if(n===2||n===4)assert.equal(result.suspiciousHeadings.length,0,label+': cabeçalhos continuam com numeração duplicada');
+    if(n===6)assert.equal(result.suspiciousHeadings.filter(h=>h.title.startsWith('4. 2.6.')).length,0,label+': título do art. 143 continua duplicado');
+    if([2,4,6].includes(n))assert.equal(result.normalizedHeadingCount,{2:2,4:2,6:1}[n],label+': correção editorial dos títulos não aplicada');
     assert.deepEqual(errors,[],label+': erro JavaScript');
     findings.push({...result,errors});
     if(width===390||n===1||n===20){
