@@ -2,7 +2,7 @@ import { chromium } from 'playwright';
 import { createServer } from 'node:http';
 import { readFileSync } from 'node:fs';
 import assert from 'node:assert/strict';
-const files={'/cadastro-gratuito.html':'cadastro-gratuito.html','/login.html':'login.html','/recuperar-senha.html':'recuperar-senha.html','/conheca.html':'conheca.html','/termos-de-uso.html':'termos-de-uso.html','/politica-de-privacidade.html':'politica-de-privacidade.html','/politica-de-cookies.html':'politica-de-cookies.html'};
+const files={'/cadastro-gratuito.html':'cadastro-gratuito.html','/login.html':'login.html','/recuperar-senha.html':'recuperar-senha.html','/conheca.html':'conheca.html','/termos-de-uso.html':'termos-de-uso.html','/politica-de-privacidade.html':'politica-de-privacidade.html','/politica-de-cookies.html':'politica-de-cookies.html','/preferencias-contato.html':'preferencias-contato.html'};
 const requests=[];
 const server=createServer((req,res)=>{
  const path=new URL(req.url,'http://localhost').pathname;
@@ -54,8 +54,9 @@ try{
   await page.getByLabel('Confirme sua senha').fill('SenhaSegura1234!');
   if(device.label==='celular'){
     await page.getByLabel('WhatsApp (opcional)').fill('(85) 99999-9999');
-    await page.getByLabel(/Quero receber novidades e ofertas/).check();
+    await page.getByLabel(/Quero receber novidades e ofertas pelo WhatsApp/).check();
   }
+  if(device.label==='desktop')await page.getByLabel(/Quero receber novidades e ofertas por e-mail/).check();
   const before=requests.length;
   await page.getByRole('button',{name:'Enviar confirmação por e-mail'}).click();
   assert.equal(requests.length,before,'Sem aceites obrigatórios o browser não envia pedido');
@@ -70,11 +71,50 @@ try{
   assert.equal(requests.at(-1).termsVersion,'v24-draft-2026-10-28');
   assert.equal(requests.at(-1).action,'request');
   assert.equal(requests.at(-1).marketingOptIn,device.label==='celular');
+  assert.equal(requests.at(-1).emailMarketingOptIn,device.label==='desktop');
   assert.equal(requests.at(-1).whatsapp,device.label==='celular'?'(85) 99999-9999':'');
   const overflows=await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth);
   assert.equal(overflows,false,'Horizontal overflow at '+device.label);
   await page.close();
  }
+ // Painel de preferências: ativar/revogar email nao altera a escolha de WhatsApp.
+ const pref=await browser.newPage({viewport:{width:390,height:844}});
+ const preferences={marketingOptIn:true,hasWhatsapp:true,emailMarketingOptIn:false,emailNoticeVersion:'signup-email-v1-2026-10-28'};
+ const prefCalls=[];
+ await pref.route('**/api/auth?action=free-signup-contact',async route=>{
+  const method=route.request().method();
+  if(method==='POST'){
+   const body=route.request().postDataJSON();prefCalls.push(body);
+   if(body.action==='enableEmailMarketing' && body.emailMarketingOptIn===true
+      && body.emailNoticeVersion===preferences.emailNoticeVersion)
+     preferences.emailMarketingOptIn=true;
+   else if(body.action==='revokeEmailMarketing')preferences.emailMarketingOptIn=false;
+   else if(body.action==='revokeMarketing')preferences.marketingOptIn=false;
+   else if(body.action==='eraseWhatsapp'){preferences.marketingOptIn=false;preferences.hasWhatsapp=false}
+   else return route.fulfill({status:400,contentType:'application/json',body:JSON.stringify({error:'acao invalida'})});
+  }
+  await route.fulfill({status:200,contentType:'application/json',body:JSON.stringify(preferences)});
+ });
+ await pref.goto(root+'/preferencias-contato.html');
+ await pref.getByText('E-mail comercial: não autorizado.',{exact:false}).waitFor();
+ await pref.getByLabel(/Autorizo receber novidades, lançamentos e ofertas por e-mail/).check();
+ await pref.getByRole('button',{name:'Ativar ofertas por e-mail'}).click();
+ await pref.getByText('E-mail comercial: autorizado.',{exact:false}).waitFor();
+ assert.equal(preferences.marketingOptIn,true);
+ assert.equal(preferences.emailMarketingOptIn,true);
+ await pref.getByRole('button',{name:'Não quero mais receber ofertas por e-mail'}).click();
+ await pref.getByText('E-mail comercial: não autorizado.',{exact:false}).waitFor();
+ assert.equal(preferences.marketingOptIn,true);
+ assert.equal(preferences.emailMarketingOptIn,false);
+ await pref.getByRole('button',{name:'Não quero mais receber ofertas pelo WhatsApp'}).click();
+ await pref.getByText('WhatsApp comercial: não autorizado.',{exact:false}).waitFor();
+ assert.equal(preferences.emailMarketingOptIn,false);
+ assert.equal(preferences.marketingOptIn,false);
+ assert.equal(prefCalls.length,3);
+ assert.equal(await pref.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
+ await pref.close();
+ console.log('PASS: Chromium celular preferencias email/WhatsApp independentes');
+
  // O visitante não deve digitar nome, e-mail nem senha com a API desativada.
  const disabledPage=await browser.newPage();
  await disabledPage.route('**/api/auth?action=free-signup-status',r=>r.fulfill({
