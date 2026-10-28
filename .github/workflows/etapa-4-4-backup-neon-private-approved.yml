@@ -33,6 +33,74 @@ jobs:
         shell: bash
         run: bash scripts/test-drive-private-upload-synthetic.sh
 
+      - name: Validar acesso Neon sem leitura de dados
+        shell: bash
+        env:
+          PGHOST: ep-wild-math-awuoq9pk.c-12.us-east-1.aws.neon.tech
+          PGPORT: '5432'
+          PGDATABASE: neondb
+          PGUSER: ${{ secrets.BC_NEON_BACKUP_USER }}
+          PGPASSWORD: ${{ secrets.BC_NEON_BACKUP_PASSWORD }}
+          PGSSLMODE: verify-full
+          PGSSLROOTCERT: /etc/ssl/certs/ca-certificates.crt
+          PGCONNECT_TIMEOUT: '15'
+          PGOPTIONS: '-c default_transaction_read_only=on'
+        run: |
+          set -Eeuo pipefail
+          set +x
+          [[ "${PGUSER:-}" == bc_neon_backup_ro && -n "${PGPASSWORD:-}" ]] || { echo 'NEON_AUTH_CHECK_BLOCKED: usuario ou senha ausente'; exit 1; }
+          policy="$(
+            docker run --rm --network host \
+              --env PGHOST --env PGPORT --env PGDATABASE --env PGUSER \
+              --env PGPASSWORD --env PGSSLMODE --env PGSSLROOTCERT \
+              --env PGCONNECT_TIMEOUT --env PGOPTIONS \
+              postgres:18 psql -X -At -v ON_ERROR_STOP=1 -c "
+                SELECT CASE WHEN
+                  current_user = 'bc_neon_backup_ro'
+                  AND current_setting('server_version_num')::int BETWEEN 180000 AND 189999
+                  AND EXISTS (
+                    SELECT 1 FROM pg_roles
+                    WHERE rolname = current_user
+                      AND rolcanlogin
+                      AND NOT (rolsuper OR rolcreatedb OR rolcreaterole OR rolreplication OR rolbypassrls)
+                  )
+                  AND NOT has_database_privilege(current_user,current_database(),'CREATE')
+                  AND NOT EXISTS (
+                    SELECT 1 FROM pg_namespace n
+                    WHERE n.nspname NOT IN ('pg_catalog','information_schema')
+                      AND n.nspname NOT LIKE 'pg_toast%'
+                      AND has_schema_privilege(current_user,n.oid,'CREATE')
+                  )
+                  AND NOT EXISTS (
+                    SELECT 1 FROM pg_class c
+                    JOIN pg_namespace n ON n.oid=c.relnamespace
+                    WHERE n.nspname NOT IN ('pg_catalog','information_schema')
+                      AND n.nspname NOT LIKE 'pg_toast%'
+                      AND c.relkind IN ('r','p','v','f','m')
+                      AND (
+                        has_table_privilege(current_user,c.oid,'INSERT')
+                        OR has_table_privilege(current_user,c.oid,'UPDATE')
+                        OR has_table_privilege(current_user,c.oid,'DELETE')
+                        OR has_table_privilege(current_user,c.oid,'TRUNCATE')
+                      )
+                  )
+                  AND NOT EXISTS (
+                    SELECT 1 FROM pg_class c
+                    JOIN pg_namespace n ON n.oid=c.relnamespace
+                    WHERE n.nspname NOT IN ('pg_catalog','information_schema')
+                      AND n.nspname NOT LIKE 'pg_toast%'
+                      AND c.relkind='S'
+                      AND (
+                        has_sequence_privilege(current_user,c.oid,'USAGE')
+                        OR has_sequence_privilege(current_user,c.oid,'UPDATE')
+                      )
+                  )
+                THEN 'NEON_AUTH_READONLY_OK' ELSE 'NEON_AUTH_POLICY_REJECTED' END
+              " 2>/dev/null
+          )" || { echo 'NEON_AUTH_CONNECTION_FAILED: conferir credenciais no ambiente privado'; exit 1; }
+          [[ "$policy" == NEON_AUTH_READONLY_OK ]] || { echo 'NEON_AUTH_POLICY_REJECTED: sem alterar dados'; exit 1; }
+          echo 'NEON_CREDENTIALS_PG18_TLS_READONLY_OK; NENHUMA TABELA DE ALUNOS CONSULTADA.'
+
   backup-real:
     if: startsWith(github.ref, 'refs/heads/backup/pg18-real-approved-4-4-') && github.repository == 'Diogooliveira-bot/central-de-estudos-2026'
     runs-on: ubuntu-latest
