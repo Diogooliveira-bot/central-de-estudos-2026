@@ -5,9 +5,28 @@ import assert from "node:assert/strict";
 import {chromium} from "playwright";
 
 const root=resolve(".");
+const approvedSource=await readFile(resolve(root,"lei-em-dia-aprovadas-20261012.js"),"utf8");
+const approvedStart=approvedSource.indexOf("[",approvedSource.indexOf("const DATA_LED_APPROVED"));
+const approvedEnd=approvedSource.indexOf("];",approvedStart)+1;
+const approvedItems=JSON.parse(approvedSource.slice(approvedStart,approvedEnd));
+const approvedCatalog=approvedItems.map(item=>({
+ id:item.id,discipline:item.discipline,topicId:item.topicId,
+ subtopic:item.subtopic,number:item.number,title:item.title,origin:item.origin,
+ question:{bank:item.question?.bank||"",year:item.question?.year??null,
+ role:item.question?.role||"",origin:item.question?.origin||""}
+}));
+assert.equal(approvedCatalog.filter(q=>q.discipline==="adm").length,91);
+assert.ok(approvedCatalog.every(q=>!q.parts&&!q.question.statement&&!q.question.answer&&!q.question.explanation),
+ "O catálogo de metadados não pode expor enunciado nem gabarito");
+
 const mime={".html":"text/html",".js":"text/javascript",".css":"text/css",".json":"application/json",".png":"image/png",".webp":"image/webp",".svg":"image/svg+xml"};
 const server=createServer(async(request,response)=>{
  const uri=new URL(request.url,"http://localhost"),pathname=decodeURIComponent(uri.pathname);
+ if(pathname==="/api/lei-em-dia-questions" && uri.searchParams.get("mode")==="catalog"){
+  response.writeHead(200,{"Content-Type":"application/javascript; charset=utf-8","Cache-Control":"no-store"});
+  response.end("const DATA_LED_APPROVED = "+JSON.stringify(approvedCatalog)+";");
+  return;
+ }
  if(pathname.startsWith("/api/")){response.writeHead(200,{"Content-Type":"application/json"});response.end(pathname==="/api/auth"?JSON.stringify({authenticated:true,user:{id:"smoke-adm",role:"aluno"}}):"{}");return;}
  const file=resolve(root,"."+pathname);
  if(!file.startsWith(root+"/")){response.writeHead(403);response.end();return;}
