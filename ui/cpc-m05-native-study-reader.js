@@ -35,6 +35,8 @@ function headingInfo(line){
 function isBullet(line){return /^[•●▪◦*-]\s+/.test(line)}
 function calloutType(line){
  const l=norm(line).toUpperCase();
+ // Separador comprovado na fonte: não é uma caixa de pegadinha.
+ if(l==='PARTE IV - PEGADINHAS FCC')return null;
  if(/^(ATENÇÃO|ATUALIZAÇÃO|DISTINÇÃO|REGRA-CHAVE|DECORAÇÃO INTELIGENTE|FÓRMULAS DE REVISÃO|MAPA MENTAL|NÚCLEO DE PROVA)/.test(l))return ['case',norm(line)];
  if(/PEGADINHA/.test(l))return ['trap',norm(line)];
  if(/^REGRA DE BOLSO/.test(l))return ['memory','Regra de bolso'];
