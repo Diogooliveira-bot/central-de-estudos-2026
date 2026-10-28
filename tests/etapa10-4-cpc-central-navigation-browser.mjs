@@ -48,7 +48,7 @@ try{
   const height=width===390?844:width===768?1024:768;
   const ctx=await browser.newContext({viewport:{width,height},serviceWorkers:'block'});
   const page=await ctx.newPage();
-  const errors=[];
+  const errors=[];let navDiagnostic=null,navClickError=null;
   page.on('pageerror',e=>errors.push(String(e.message).slice(0,230)));
   try{
    const response=await page.goto(base+'/central-v119.html',{waitUntil:'domcontentloaded',timeout:45000});
@@ -57,14 +57,19 @@ try{
    // O bootstrap substitui intencionalmente a rota pelo caminho /.
    assert.equal(new URL(page.url()).pathname,'/','Boot reescreveu o endereço inesperadamente');
    const nav=page.locator('[data-central-native="disciplines"]');
-   const navDiagnostic=await page.evaluate(()=>{
+   navDiagnostic=await page.evaluate(()=>{
     const b=document.querySelector('[data-central-native="disciplines"]');
     function details(el){if(!el)return null;const cs=getComputedStyle(el),r=el.getBoundingClientRect();return {tag:el.tagName,id:el.id||'',className:typeof el.className==='string'?el.className.slice(0,110):'',display:cs.display,visibility:cs.visibility,opacity:cs.opacity,width:Math.round(r.width),height:Math.round(r.height)}}
     return {rootClasses:document.documentElement.className,nav:details(b),parent:details(b?.parentElement),aside:details(document.getElementById('centralSidebar')),topbar:details(document.querySelector('.topbar')),readerActive:document.documentElement.classList.contains('student-reader-active'),pageButtons:[...document.querySelectorAll('[data-student-primary-nav]')].map(details)};
    });
    const navVisible=await nav.isVisible();
-   if(navVisible)await nav.click({timeout:4500});
-   else await page.evaluate(()=>window.centralHardOpen('disciplines'));
+   if(navVisible){
+    try{await nav.click({timeout:1300});}
+    catch(e){navClickError=String(e.message).slice(0,260);await page.evaluate(()=>window.centralHardOpen('disciplines'));}
+   }else{
+    navClickError='O botão não está visível';
+    await page.evaluate(()=>window.centralHardOpen('disciplines'));
+   }
    await page.waitForSelector('#disciplinesView:not(.hidden)',{timeout:15000});
    const card=page.locator('#disciplineGrid .disc-card[data-id="cpc"]');
    assert.equal(await card.count(),1,'Cartão CPC ausente');
@@ -99,10 +104,11 @@ try{
    // Fixture: restaura estado para permitir reexecução idempotente.
    if(toggled!==initial) await page.locator('#cpcM05NativeReaderOverlay [data-cpc-chapter-check]').first().click();
    await page.locator('#cpcM05NativeReaderOverlay').screenshot({path:'artifacts/etapa10-4-cpc-integrated/'+width+'-m05.png'});
-   metrics.push({width,navVisible,navDiagnostic,boot:'ready',route:'/',disciplinesView:'opened',cpcLoaded:cpc.loaded,m05Reader:cpc.m05Reader,modules:cpc.moduleCount,dividers:dividers.length,quizHeadings:14,chapterPersisted:reopened===toggled,errors:errors.slice(0,8),passed:true});
+   metrics.push({width,navVisible,navDiagnostic,navClickError,boot:'ready',route:'/',disciplinesView:'opened',cpcLoaded:cpc.loaded,m05Reader:cpc.m05Reader,modules:cpc.moduleCount,dividers:dividers.length,quizHeadings:14,chapterPersisted:reopened===toggled,errors:errors.slice(0,8),passed:true});
   }catch(e){
    const debug=await page.evaluate(()=>({url:location.pathname,ready:document.documentElement.dataset.centralReady||'',bootMessage:document.getElementById('status')?.textContent?.slice(0,120),hasSubjects:!!document.getElementById('subjects'),cpcReady:window.CentralDisciplineLoader?.isReady('cpc')||false})).catch(()=>({}));
-   metrics.push({width,passed:false,error:String(e.message).slice(0,420),debug,navDiagnostic:typeof navDiagnostic==='undefined'?null:navDiagnostic,errors:errors.slice(0,10)});
+   await page.screenshot({path:'artifacts/etapa10-4-cpc-integrated/'+width+'-failure.png',fullPage:false}).catch(()=>{});
+   metrics.push({width,passed:false,error:String(e.message).slice(0,420),debug,navDiagnostic,navClickError,errors:errors.slice(0,10)});
   }
   await ctx.close();
  }
