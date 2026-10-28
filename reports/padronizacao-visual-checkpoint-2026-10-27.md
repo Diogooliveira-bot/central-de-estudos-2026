@@ -501,3 +501,12 @@ Contagens de elementos efetivamente renderizados no navegador (mesmas nas três 
 - **Resultado consolidado:** CPC **M02–M20 = 19/19 módulos** com pelo menos um quadro de consulta semântico HTML no modo completo. M01 segue na validação própria de seus pilotos. Cada tabela adicional foi confrontada com a fonte literal; arquivos de conteúdo e resumos não foram modificados. Confirmados scroll horizontal local a 390 px, uso de cabeçalhos e persistência de leitura.
 - **Pendências:** reconstrução de outros quadros originais, suficiência e hierarquia editorial de cada apostila, atualização jurídica normativa e jurisprudencial, validação em Preview privada com aluno autenticado. Testes isolados não validam permissão Premium integrada.
 - **Próxima fase recomendada:** auditoria de acabamento transversal CPC M01–M20, fidelidade de tabelas e títulos, capturas visuais e posteriormente homologação integrada autorizada. Nenhuma alteração em Production, `main`, banco Neon ou direitos de acesso.
+
+## Etapa 10 — Auditoria transversal CPC M01–M20 (28/10/2026)
+
+- **Relatório detalhado e pendências:** [etapa10-auditoria-editorial-cpc-2026-10-28.md](./etapa10-auditoria-editorial-cpc-2026-10-28.md).
+- **GitHub Actions:** [40612533828](https://github.com/Diogooliveira-bot/central-de-estudos-2026/actions/runs/40612533828) — `success`, **60/60** combinações M01–M20 × 390/768/1366 px. Evidências: [artefato 12783393871](https://github.com/Diogooliveira-bot/central-de-estudos-2026/actions/runs/40612533828/artifacts/12783393871), aproximadamente 2,7 MB.
+- Corrigida **legenda acessível da tabela CPC M01 (14 linhas × 3 colunas)**; saneados **5 rótulos de títulos** com números duplicados: M02 (2), M04 (2) e M06 (1). A fonte jurídica, IDs dos títulos, conteúdo resumido e progresso não foram alterados.
+- Os **20 módulos** possuem pelo menos uma tabela HTML consultiva com rolagem local e cabeçalhos; todos passaram nos testes técnicos. **Não equivale** a completar a conversão de todos os quadros originais nem revisão jurídica.
+- **Pendentes:** cotejamento dirigido de linhas do M01–M08 não idênticas em comparação textual automatizada (não significa perda), item de questionário M06 erroneamente reconhecido como H2, hierarquia de títulos, suficiência editorial/jurídica das teorias e Preview com aluno autenticado.
+- **Próxima etapa segura:** cotejamento editorial M01–M08, começando por M06 e pelos trechos sinalizados, preservando a integralidade das fontes. Nada em `main`, Production, Neon ou Preview protegida.
