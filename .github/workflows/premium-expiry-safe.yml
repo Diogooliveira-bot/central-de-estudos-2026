@@ -26,4 +26,4 @@ jobs:
           node --check lib/premium-expiry-reminders.js
           node --check api/auth.js
       - name: Testar avisos com envio desativado
-        run: node --test tests/premium-expiry-reminders-unit.mjs tests/plan-access-unit.mjs
+        run: node --test tests/premium-expiry-reminders-unit.mjs tests/premium-expiry-handler-unit.mjs tests/plan-access-unit.mjs
