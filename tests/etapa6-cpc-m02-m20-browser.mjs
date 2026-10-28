@@ -333,6 +333,7 @@ try{
     const summaryPremium=await page.locator('#'+id).evaluate(o=>o.classList.contains('bc-apostila-v1'));
     assert.equal(summaryPremium,false,label+': tema exclusivo aplicado no resumo');
     if(n===5)assert.equal(await page.locator('#'+id+' .bc-cpc-m05-part-divider').count(),0,label+': divisor editorial do completo apareceu no resumo');
+    if(n===5)assert.equal(await page.locator('#'+id+' .bc-cpc-m05-quiz-prompt, #'+id+' .bc-cpc-m05-quiz-heading, #'+id+' [data-bc-editorial-boundary]').count(),0,label+': correções exclusivas da apostila completa vazaram ao resumo');
     if([18,19,20].includes(n))assert.equal(await page.locator('#'+id+' [data-cpc-editorial-pilot]').count(),0,label+': quadro vazou para resumo');
     if([15,16,17].includes(n))assert.equal(await page.locator('#'+id+' [data-cpc-editorial-pilot]').count(),0,label+': quadro adicional apareceu no resumo');
     if([12,13,14].includes(n))assert.equal(await page.locator('#'+id+' [data-cpc-editorial-pilot]').count(),0,label+': quadro do completo vazou para o resumo');
