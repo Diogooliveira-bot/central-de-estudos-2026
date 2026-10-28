@@ -660,3 +660,13 @@ Contagens de elementos efetivamente renderizados no navegador (mesmas nas três 
 - Correção apenas no seletor do teste `tests/etapa10-4-cpc-home-flow-browser.mjs`: usa `button.student-onboarding-close`. Código testado SHA `84111d7916ec1ad05d476d722c313fe0fa362960`.
 - [Auditoria 40757167111](https://github.com/Diogooliveira-bot/central-de-estudos-2026/actions/runs/40757167111) **success**, 60/60 CPC, 3/3 navegação Premium mock, 2/2 abertura CPC Gratuito/Premium, com bloqueio simulado 403 no Gratuito. Erro JSON não fatal remanescente da fixture não prova defeito em produção.
 - **Próximo bloqueio:** [nova aprovação privada 40757485979](https://github.com/Diogooliveira-bot/central-de-estudos-2026/actions/runs/40757485979), environment `bc-preview-private`. Fonte pinada para a nova Preview `84111d...`. Não liberar Production nem afirmar homologação autenticada E2E antes do deployment READY no SHA e de testes reais.
+
+## Etapas 10.4/10.5 — Encerramento técnico CPC (28/10/2026)
+
+- **Relatório final da frente técnica CPC:** [etapa10-4-encerramento-tecnico-cpc-2026-10-28.md](./etapa10-4-encerramento-tecnico-cpc-2026-10-28.md).
+- **Auditoria GitHub Actions 40762473694** `completed/success`: 60/60 cenários editoriais M01–M20, 3/3 navegações integradas via Disciplinas até CPC M05 com persistência de capítulo após reabrir, fluxo Gratuito/Premium simulado com negativa 403 esperada e testes de segurança de login e carregamento aprovados. [Capturas e métricas 12849455412](https://github.com/Diogooliveira-bot/central-de-estudos-2026/actions/runs/40762473694/artifacts/12849455412).
+- **Prévia protegida READY:** Vercel `dpl_4VvG9FvYJHKmEVepP6teJspdfyLD`, commit funcional `84111d7916ec1ad05d476d722c313fe0fa362960`. Sem Production.
+- **Teste redundante retirado:** tentativa extra de click em botão CPC falhou por timeout no próprio fixture; removida para manter os testes integrados já aprovados. Não se comprovou defeito novo na plataforma.
+- **Sessões de teste:** duas contas fictícias Gratuito e Premium autenticaram-se, entitlements corretos. O Neon de homologação registrou sincronização Premium de Direito Civil M05, porém **não há evidência equivalente de persistência de CPC na Preview**.
+- **Decisão:** *acabamento e homologação técnica local do CPC concluídos*; **homologação E2E em produção-like com login e sincronização CPC não certificada**. Não promover, nem afirmar aprovação jurídica final antes de verificar o leitor e o 403 por sessão real no deployment.
+- **Segurança:** `main`, Production, dados de alunos reais e pagamentos intactos.
