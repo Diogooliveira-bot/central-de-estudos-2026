@@ -547,3 +547,11 @@ Contagens de elementos efetivamente renderizados no navegador (mesmas nas três 
 - **Bloqueio seguro:** workflow privado está fixado no SHA antigo e depende de aprovação `bc-preview-private`. Banco Neon `base-completa-homologacao` existe, mas não foi comprovada a conexão isolada do Preview desta branch com ele; há `DATABASE_URL` genérica em Preview. Não disparar login de contas de teste ou modificar o pin/proteção antes de confirmar o ambiente.
 - **Próximo passo:** confirmar ligação Preview → Neon de homologação, atualizar e aprovar deployment privado de SHA verificado sem expor segredo, testar Premium/Gratuito em sessão autenticada e registrar evidências. Se houver defeitos, abrir a Etapa 10.5.
 - Sem alterações em `main`, Production, Neon, plano dos alunos, pagamentos ou proteção da Vercel.
+
+## Etapa 10.4.1 — Preview privada preparada; publicação sob aprovação (28/10/2026)
+
+- **Relatório detalhado:** [etapa10-4-1-preparacao-preview-autenticada-2026-10-28.md](./etapa10-4-1-preparacao-preview-autenticada-2026-10-28.md).
+- **Vercel isolado:** projeto temporário `base-completa-teste-visual`, não o projeto de produção. `DATABASE_URL` do target Preview configurada como `sensitive` para projeto Neon de teste `shiny-hall-19564809`, que já possui alunos fictícios Gratuito e Premium e a matriz `central_plan_entitlements` completa. Segredos já existentes e protegidos. `EXAM_PROGRESS_PREVIEW_DB_ISOLATED=true`, Hotmart live e receiver de teste desativados, Vercel Authentication preservada.
+- **Workflow fixado em código aprovado:** `f5dc763b6fcd0f995e2a44ff98e0f03ef3d630e9`, com testes de autenticação, Premium e Chromium antes do deploy. Continua sob environment protegido `bc-preview-private`; [execução 40660741519](https://github.com/Diogooliveira-bot/central-de-estudos-2026/actions/runs/40660741519) em `waiting` para aprovação do revisor.
+- **Limite rigoroso:** não houve deployment do commit novo nem sessão autenticada Premium/Gratuito. A versão READY existente no projeto temporário ainda é `10c4d9a...` e **não** comprova as melhorias recentes.
+- **Próximo checkpoint:** revisão/autorização do environment do GitHub, verificação do novo SHA READY e testes de acesso por plano com credenciais de homologação, sem alterar Production, `main` ou Neon real. Somente então concluir a 10.4.
