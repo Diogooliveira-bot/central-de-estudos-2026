@@ -520,3 +520,12 @@ Contagens de elementos efetivamente renderizados no navegador (mesmas nas três 
 - **Incidente corrigido:** a primeira execução falhou por conflito de CSS; após ajustar a regra específica do M06, a segunda passou. Regressão CPC M02–M20 também aprovada em [40613898570](https://github.com/Diogooliveira-bot/central-de-estudos-2026/actions/runs/40613898570).
 - **Próxima etapa recomendada:** separar visualmente a junção textual comprovada no **CPC M05** ("...expressasPARTE IV...") e examinar demais quebras originadas na extração, mantendo todos os textos intactos. Depois, revisar profundidade/hierarquia de M09–M20 e homologar na Preview autenticada com autorização.
 - Sem mudança de `main`, Production, banco Neon, permissões, assinaturas ou publicação de Preview privada.
+
+## Etapa 10.2 — Divisor da PARTE IV no CPC M05 (28/10/2026)
+
+- **Relatório detalhado:** [etapa10-2-cpc-m05-divisor-2026-10-28.md](./etapa10-2-cpc-m05-divisor-2026-10-28.md).
+- **Reparo específico:** separar visualmente a frase final sobre amicus curiae do título "PARTE IV - PEGADINHAS FCC", colados na extração de PDF. Exceção no parser apenas para essa linha literal, preservando a frase, o H2 do item 41 e todos os IDs/checkpoints de capítulos. Fonte `content/cpc/m05-native-data.js` e resumo **intocados**.
+- **Validação:** [auditoria 40615263401](https://github.com/Diogooliveira-bot/central-de-estudos-2026/actions/runs/40615263401) — **60/60**; [regressão 40615263698](https://github.com/Diogooliveira-bot/central-de-estudos-2026/actions/runs/40615263698) — **57/57**. Três resoluções 390/768/1366 px, persistência de progresso e aparência Premium.
+- **Evidências:** [12784812995](https://github.com/Diogooliveira-bot/central-de-estudos-2026/actions/runs/40615263401/artifacts/12784812995) e [12784902747](https://github.com/Diogooliveira-bot/central-de-estudos-2026/actions/runs/40615263698/artifacts/12784902747); retenção aproximada até 11/11/2026.
+- **Etapas estimadas para esta frente CPC:** 10.3 (revisão residual), 10.4 (Preview Premium autenticada), 10.5 (correções/aceite, se necessário). Não representam a conclusão das demais disciplinas, da atualização jurídica ou da comercialização da Base Completa.
+- Nenhuma atualização autorizada ou realizada em `main`, Production, Neon, planos ou Preview protegida.
