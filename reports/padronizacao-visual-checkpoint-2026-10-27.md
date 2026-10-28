@@ -399,3 +399,14 @@ Contagens de elementos efetivamente renderizados no navegador (mesmas nas três 
 - **Artefatos:** [capturas e métricas, ID 12781290791](https://github.com/Diogooliveira-bot/central-de-estudos-2026/actions/runs/40606692686/artifacts/12781290791), com validade aproximada até **11/11/2026**.
 - **Não aprovado ainda:** acabamento editorial completo de CPC M02 (ou M03–M20), confrontação visual humana das tabelas e Preview autenticada atualizada. O workflow da Preview permanece protegido e com checkout antigo.
 - **Próximo lote sugerido:** escolher comparativos de CPC M03–M05 apenas quando a divisão de colunas puder ser cotejada com o original, sem preencher lacunas por interpretação; estabelecer testes de equivalência e capturas de tabela para cada conversão.
+
+## Etapa 9.2 — Pilotos editoriais CPC M03–M05 (27/10/2026)
+
+- **Escopo técnico conservador:** acrescentar quadros consultivos em `ui/cpc-m03-native-study-reader.js`, `m04` e `m05`, sem editar `content/cpc/*.js`, sem conversão geral de OCR/PDF e sem mudanças em permissões, aluno, banco, produção ou `main`.
+- **M03:** critérios de competência — cinco linhas verificadas literalmente; colunas Critério, Regra predominante, Consequência típica; ancorado no item "2. CRITÉRIOS DE COMPETÊNCIA". O texto original e exceções legais permanecem abaixo.
+- **M04:** cinco faixas de honorários contra a Fazenda Pública, com percentuais e bases **copiados literalmente** da apostila do M04. O texto sobre progressividade e exceções continua intacto; nenhum cálculo jurídico novo foi adicionado.
+- **M05:** quadro "Classificação visual" de litisconsórcio com quatro critérios, espécies e perguntas-chave. Inserção próxima a "2. CONCEITO E FINALIDADE"; transcrição de fonte original mantida.
+- Cada linha é **validada literalmente** contra o campo `complete` antes de mostrar a nova tabela. Se faltar qualquer linha ou âncora, a tabela adicional não é exibida. Isso protege contra desencontro com o conteúdo original.
+- Todas as tabelas usam `<table>`, `<caption>`, `<thead>`, `<tbody>`, `th[scope=row]` e a classe responsiva `.table-wrap`. A nova vista é aditiva apenas ao conteúdo completo. Os botões "Voltar ao M01" desses três leitores foram corrigidos para M03/M04/M05 sem alterar a ação nem o destino.
+- Regressão estendida dos **19 módulos CPC × 390/768/1366 px** verifica 5/5/4 linhas, fidelidade à fonte, scroll local de tabela no celular, isolamento dos resumos e progresso após reabrir, somada aos critérios anteriores para M02.
+- **Status ao criar:** CI pendente; não considerar os três quadros aprovados antes da confirmação do workflow e das evidências. Mesmo após CI, a revisão editorial humana completa dos textos, quadros restantes e experiência integrada seguirá pendente.

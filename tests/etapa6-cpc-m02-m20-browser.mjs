@@ -80,6 +80,37 @@ try{
     assert.equal(m.h2Border,'5px',label+': H2 não recebeu padrão Premium');
     assert.equal(m.tablesSemantic,true,label+': tabelas perderam estrutura');
 
+    if([3,4,5].includes(n)){
+      const pilot=await page.evaluate(n=>{
+        const id='cpcM'+String(n).padStart(2,'0')+'NativeReaderOverlay';
+        const o=document.getElementById(id);
+        const wrap=o.querySelector('[data-cpc-editorial-pilot="m0'+n+'"]');
+        const table=wrap?.querySelector('table');
+        if(!table)return {found:false};
+        const data=window.BASE_NATIVE_CONTENT.cpc['m0'+n].complete.replace(/\s+/g,' ').trim();
+        const rows=[...table.tBodies[0].rows].map(r=>[...r.cells].map(c=>c.textContent.trim()));
+        return {
+          found:true,rows:rows.length,columns:table.tHead.rows[0].cells.length,
+          semanticallyValid:[...table.tBodies[0].rows].every(r=>r.cells[0].tagName==='TH'&&r.cells[0].scope==='row'),
+          sourceProved:rows.every(row=>data.includes(row.join(' '))),
+          responsive:wrap.scrollWidth>wrap.clientWidth,
+          caption:!!table.caption?.textContent.includes('original'),
+          label:o.querySelector('[data-cpc-back]')?.textContent.trim()
+        };
+      },n);
+      const expectedRows={3:5,4:5,5:4}[n];
+      const expectedCols=n===4?2:3;
+      assert.equal(pilot.found,true,label+': quadro não localizado');
+      assert.equal(pilot.rows,expectedRows,label+': linhas inesperadas');
+      assert.equal(pilot.columns,expectedCols,label+': colunas inesperadas');
+      assert.equal(pilot.semanticallyValid,true,label+': células semânticas ausentes');
+      assert.equal(pilot.sourceProved,true,label+': informação não corresponde à fonte');
+      assert.equal(pilot.caption,true,label+': explicação de consulta ausente');
+      assert.equal(pilot.label,'← Voltar ao M0'+n,label+': botão incorreto');
+      if(width===390)assert.equal(pilot.responsive,true,label+': scroll local ausente');
+    }
+
+
     if(n===2){
       const pilot=await page.evaluate(()=>{
         const overlay=document.getElementById('cpcM02NativeReaderOverlay');
@@ -133,6 +164,7 @@ try{
     await page.waitForTimeout(70);
     const summaryPremium=await page.locator('#'+id).evaluate(o=>o.classList.contains('bc-apostila-v1'));
     assert.equal(summaryPremium,false,label+': tema exclusivo aplicado no resumo');
+    if([3,4,5].includes(n))assert.equal(await page.locator('#'+id+' [data-cpc-editorial-pilot]').count(),0,label+': quadro do completo apareceu no resumo');
     if(n===2)assert.equal(await page.locator('#'+id+' [data-cpc-editorial-pilot]').count(),0,label+': quadro Premium vazou para o resumo');
     assert.deepEqual(errors,[],label+': erros JavaScript');
     result.push({module:label,width,source,...m,chapterPersisted:true,summaryUnstyled:true,errors:[]});

@@ -68,6 +68,35 @@ function build(raw){
  return {body,words,mins:Math.max(1,Math.round(words/205))};
 }
 function buildFromHtml(html,raw){let h=0;const body=String(html).replace(/<h([23])>([\s\S]*?)<\/h\1>/g,(m,l,t)=>{const txt=t.replace(/<[^>]+>/g,'').replace(/&amp;/g,'&');return '<h'+l+' id="cpcsec-'+(++h)+'-'+normKey(txt).replace(/\s+/g,'-').slice(0,60)+'">'+t+'</h'+l+'>'});const words=norm(raw).split(/\s+/).filter(Boolean).length;return {body,words,mins:Math.max(1,Math.round(words/205))}}
+
+/* Quadro consultivo editorial CPC M03: sem supressão ou reescrita da fonte. */
+function addVerifiedM03Comparison(article,original){
+ const anchor=[...article.querySelectorAll('h2')].find(h=>h.textContent.trim()==="2. CRITÉRIOS DE COMPETÊNCIA");
+ if(!anchor)return false;
+ const headers=["Critério","Regra predominante","Consequência típica"];
+ const rows=[["Matéria","absoluta","não se prorroga por vontade das partes"],["Pessoa","absoluta","não se prorroga por vontade das partes"],["Função","absoluta","ligada à função exercida pelo órgão no processo"],["Território","relativa, em regra","pode prorrogar-se e pode ser modificada nos casos legais"],["Valor","relativa, em regra","pode ser modificada, ressalvadas regras especiais"]];
+ const normalized=String(original||'').replace(/\s+/g,' ').trim();
+ if(!rows.every(row=>normalized.includes(row.join(' '))))return false;
+ const wrap=document.createElement('div');wrap.className='table-wrap';
+ wrap.dataset.cpcEditorialPilot='m03';
+ const table=document.createElement('table'),caption=document.createElement('caption');
+ caption.textContent="Critérios de competência — transcrição original preservada abaixo.";
+ table.appendChild(caption);
+ const header=document.createElement('thead'),hr=document.createElement('tr');
+ headers.forEach(title=>{const th=document.createElement('th');th.scope='col';th.textContent=title;hr.appendChild(th)});
+ header.appendChild(hr);table.appendChild(header);
+ const body=document.createElement('tbody');
+ rows.forEach(values=>{
+  const tr=document.createElement('tr');
+  values.forEach((value,i)=>{
+   const el=document.createElement(i===0?'th':'td');
+   if(!i)el.scope='row';el.textContent=value;tr.appendChild(el);
+  });
+  body.appendChild(tr);
+ });
+ table.appendChild(body);wrap.appendChild(table);anchor.after(wrap);
+ return true;
+}
 function chapters(mode){return source()?.chapters?.[mode]||[]}
 function findHeading(ch){
  if(!current||!ch)return null;
@@ -118,10 +147,11 @@ function open(mode){
  const ov=document.createElement('div');ov.id=OVERLAY_ID;ov.className='bc-native-reader-overlay';
  ov.innerHTML='<section class="bc-native-reader" role="dialog" aria-modal="true">'+
  '<header class="bc-native-reader-head"><div class="bc-native-reader-title"><b>CPC M03 — '+esc(data.title)+'</b><small>'+label+' • leitura incorporada à Base Completa</small></div><span class="bc-native-reader-meta">'+parsed.words.toLocaleString('pt-BR')+' palavras • ~'+parsed.mins+' min</span><button class="bc-native-reader-close" data-cpc-close>×</button><div class="bc-native-reader-progress-track"><div class="bc-native-reader-progress"></div></div></header>'+
- '<div class="bc-native-reader-tools"><button class="primary" data-cpc-back>← Voltar ao M01</button><input type="search" placeholder="Buscar neste material…"><button data-cpc-font="-1">A−</button><button data-cpc-font="1">A+</button><button data-cpc-top>Topo</button></div>'+
+ '<div class="bc-native-reader-tools"><button class="primary" data-cpc-back>← Voltar ao M03</button><input type="search" placeholder="Buscar neste material…"><button data-cpc-font="-1">A−</button><button data-cpc-font="1">A+</button><button data-cpc-top>Topo</button></div>'+
  '<div class="bc-native-reader-body"><nav class="bc-native-toc"><div class="bc-native-toc-label">Capítulos</div>'+toc(mode)+'</nav>'+
  '<main class="bc-native-scroll"><article class="bc-native-article"><div class="bc-native-kicker">'+(mode==='summary'?'PRIMEIRA LEITURA + REVISÃO':'TEORIA INTEGRAL')+'</div><h1>'+esc(data.title)+'</h1><p class="lead">'+(mode==='summary'?'Versão condensada para compreender e revisar o módulo.':'Apostila completa convertida para leitura nativa dentro da Central.')+'</p>'+
  '<section class="bc-native-study-progress"><div><b>Progresso de leitura</b><span data-cpc-reader-value></span></div><div class="bc-native-study-progress-track"><span data-cpc-reader-studybar></span></div><small>Os capítulos recebem check conforme você avança. Você também pode marcar manualmente no índice.</small></section>'+parsed.body+'</article></main></div></section>';
+ if(mode==='complete')addVerifiedM03Comparison(ov.querySelector('.bc-native-article'),raw);
  document.body.appendChild(ov);document.body.style.overflow='hidden';
  current={mode,overlay:ov,scroll:ov.querySelector('.bc-native-scroll'),article:ov.querySelector('.bc-native-article'),font:Number(localStorage.getItem(key('font'))||16),map:[]};
  current.article.style.fontSize=current.font+'px';
