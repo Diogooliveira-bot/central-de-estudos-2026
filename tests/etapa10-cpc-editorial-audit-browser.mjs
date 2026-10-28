@@ -56,6 +56,23 @@ try{
      const text=a.innerText.replace(/\s+/g,' ').trim();
      const sourceLines=src.replace(/\r/g,'').split('\n').map(s=>s.replace(/\s+/g,' ').trim()).filter(s=>s.length>28&&!/^BASE COMPLETA/.test(s));
      const lost=sourceLines.filter(s=>!text.includes(s));
+     const squish=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^\p{L}\p{N}]/gu,'').toLowerCase();
+     const rendered=squish(a.textContent);
+     const knownHeadings=new Set([...a.querySelectorAll('[data-bc-original-heading]')].map(h=>h.dataset.bcOriginalHeading));
+     const diagnostic=lost.map(line=>{
+      const compact=squish(line);
+      const first=squish(line.split(/\s+/).slice(0,8).join(' '));
+      const last=squish(line.split(/\s+/).slice(-8).join(' '));
+      const heading=knownHeadings.has(line);
+      let reason=heading?'rótulo_de_título':
+         rendered.includes(compact)?'conteúdo_presente_reformatado':
+         /^(versão final auditada|foco:|núcleo legal:|perfil:|atualização jurídica:)/i.test(line)?'metadado_editorial':
+         rendered.includes(first)&&rendered.includes(last)?'fragmentos_presentes_conferir':
+         rendered.includes(first)?'início_presente_conferir':'confronto_manual';
+      return {reason,line};
+     });
+     const diagnosis=Object.fromEntries([...new Set(diagnostic.map(x=>x.reason))].map(reason=>[reason,diagnostic.filter(x=>x.reason===reason).length]));
+
      const headings=[...a.querySelectorAll('h1,h2,h3')].map(h=>({level:h.tagName,title:h.textContent.trim(),id:h.id}));
      const suspicious=headings.filter(h=>/^\d+\.\s+\d+\./.test(h.title)||/^\d+\.\s*$/i.test(h.title));
      const repeated=headings.map(h=>h.title).filter((h,i,arr)=>arr.indexOf(h)!==i);
@@ -80,10 +97,11 @@ try{
       module:'CPC M'+String(n).padStart(2,'0'),width,title:window.BASE_NATIVE_CONTENT.cpc['m'+String(n).padStart(2,'0')].title,
       sourceChars:src.length,readableChars:text.length,
       sourceLines:sourceLines.length,notExactLines:lost.length,
-      missingLineExamples:lost.slice(0,8),missingLinePercent:Math.round(1000*lost.length/Math.max(1,sourceLines.length))/10,
+      missingLineExamples:lost.slice(0,30),diagnosis,lineDiagnostics:n<=8?diagnostic:[],missingLinePercent:Math.round(1000*lost.length/Math.max(1,sourceLines.length))/10,
       headingsTotal:headings.length,h1:headings.filter(h=>h.level==='H1').length,h2:headings.filter(h=>h.level==='H2').length,h3:headings.filter(h=>h.level==='H3').length,
       suspiciousHeadings:suspicious,repeatedHeadings:[...new Set(repeated)].slice(0,9),
       normalizedHeadingCount:a.querySelectorAll('[data-bc-original-heading]').length,
+      quizM06Count:a.querySelectorAll('h2.bc-cpc-m06-quiz-question').length,quizM06Font:n===6?parseFloat(getComputedStyle(a.querySelector('.bc-cpc-m06-quiz-question')||a).fontSize):null,
       tocItems:toc.length,chapterCheckButtons:o.querySelectorAll('[data-cpc-chapter-check]').length,
       tables,pageOverflow:document.documentElement.scrollWidth>innerWidth+2,
       premium:o.classList.contains('bc-apostila-v1'),readerName:o.querySelector('.bc-native-reader-title b')?.textContent.trim(),
@@ -101,8 +119,12 @@ try{
     if(width===390)assert.ok(result.tables.every(t=>t.scrollWidth>t.clientWidth+1),label+': tabela sem rolagem celular');
     if(n===1)assert.ok(result.tables.every(t=>t.caption),label+': tabela principal sem legenda acessível');
     if(n===2||n===4)assert.equal(result.suspiciousHeadings.length,0,label+': cabeçalhos continuam com numeração duplicada');
-    if(n===6)assert.equal(result.suspiciousHeadings.filter(h=>h.title.startsWith('4. 2.6.')).length,0,label+': título do art. 143 continua duplicado');
-    if([2,4,6].includes(n))assert.equal(result.normalizedHeadingCount,{2:2,4:2,6:1}[n],label+': correção editorial dos títulos não aplicada');
+    if(n===6){
+      assert.equal(result.suspiciousHeadings.length,0,label+': número duplicado no teste rápido ou nos títulos');
+      assert.equal(result.quizM06Count,15,label+': teste rápido deve ter 15 itens sem perder IDs');
+      assert.equal(result.quizM06Font,16,label+': estilo de questão diferente do padrão esperado');
+    }
+    if([2,4,6].includes(n))assert.equal(result.normalizedHeadingCount,{2:2,4:2,6:2}[n],label+': correção editorial dos títulos não aplicada');
     assert.deepEqual(errors,[],label+': erro JavaScript');
     findings.push({...result,errors});
     if(width===390||n===1||n===20){
