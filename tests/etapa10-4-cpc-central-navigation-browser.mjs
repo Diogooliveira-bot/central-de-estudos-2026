@@ -54,6 +54,13 @@ try{
    const response=await page.goto(base+'/central-v119.html',{waitUntil:'domcontentloaded',timeout:45000});
    assert.equal(response?.status(),200,'Bootstrap HTTP '+width);
    await page.waitForFunction(()=>document.documentElement.dataset.centralReady==='true' && typeof window.centralHardOpen==='function',{},{timeout:50000});
+   // No primeiro acesso a seleção de objetivo é obrigatória: não é falha de navegação.
+   const freeStudy=page.locator('#studyObjectiveDialog [data-study-select="free-study"]');
+   await freeStudy.waitFor({state:'visible',timeout:20000});
+   await freeStudy.click();
+   await page.waitForFunction(()=>!document.documentElement.classList.contains('study-objective-open'),null,{timeout:20000});
+   const onboarding=page.locator('[data-student-onboarding] [data-onboarding-close]');
+   if(await onboarding.isVisible()) await onboarding.click();
    // O bootstrap substitui intencionalmente a rota pelo caminho /.
    assert.equal(new URL(page.url()).pathname,'/','Boot reescreveu o endereço inesperadamente');
    const nav=page.locator('[data-central-native="disciplines"]');
@@ -71,7 +78,7 @@ try{
     await page.evaluate(()=>window.centralHardOpen('disciplines'));
    }
    await page.waitForSelector('#disciplinesView:not(.hidden)',{timeout:15000});
-   const card=page.locator('#disciplineGrid .disc-card[data-id="cpc"]');
+   const card=page.locator('#disciplineGrid [data-study-open-subject="cpc"], #disciplineGrid .disc-card[data-id="cpc"]').first();
    assert.equal(await card.count(),1,'Cartão CPC ausente');
    await card.click();
    await page.waitForFunction(()=>window.CentralDisciplineLoader?.isReady('cpc')===true,null,{timeout:100000});
