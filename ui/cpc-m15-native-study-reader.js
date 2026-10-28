@@ -68,6 +68,19 @@ function build(raw){
  return {body,words,mins:Math.max(1,Math.round(words/205))};
 }
 function buildFromHtml(html,raw){let h=0;const body=String(html).replace(/<h([23])>([\s\S]*?)<\/h\1>/g,(m,l,t)=>{const txt=t.replace(/<[^>]+>/g,'').replace(/&amp;/g,'&');return '<h'+l+' id="cpcsec-'+(++h)+'-'+normKey(txt).replace(/\s+/g,'-').slice(0,60)+'">'+t+'</h'+l+'>'});const words=norm(raw).split(/\s+/).filter(Boolean).length;return {body,words,mins:Math.max(1,Math.round(words/205))}}
+
+function addVerifiedM15Table(article,raw){
+ const h=[...article.querySelectorAll('h2')].find(x=>x.textContent.trim()==='21. QUADRO DOS RECURSOS');
+ const rows=[["Sentença","apelação"],["interlocutória","agravo"],["monocrática","agravo interno"],["vícios","ED"],["federal","REsp"],["constitucional","RE"]];
+ if(!h||!rows.every(r=>String(raw).includes(r.join('→'))))return;
+ const wrap=document.createElement('div');wrap.className='table-wrap';wrap.dataset.cpcEditorialPilot='m15';
+ const t=document.createElement('table');const cap=document.createElement('caption');
+ cap.textContent='Consulta dos recursos — transcrição literal do quadro original; conferir hipóteses na teoria completa.';
+ t.appendChild(cap);const head=t.createTHead().insertRow();
+ for(const txt of ['Decisão ou situação','Recurso do quadro']){const th=document.createElement('th');th.scope='col';th.textContent=txt;head.appendChild(th)}
+ const body=t.createTBody();for(const row of rows){const tr=body.insertRow(),th=document.createElement('th');th.scope='row';th.textContent=row[0];tr.appendChild(th);tr.insertCell().textContent=row[1];}
+ wrap.appendChild(t);h.after(wrap);
+}
 function chapters(mode){return source()?.chapters?.[mode]||[]}
 function findHeading(ch){
  if(!current||!ch)return null;
@@ -122,6 +135,7 @@ function open(mode){
  '<div class="bc-native-reader-body"><nav class="bc-native-toc"><div class="bc-native-toc-label">Capítulos</div>'+toc(mode)+'</nav>'+
  '<main class="bc-native-scroll"><article class="bc-native-article"><div class="bc-native-kicker">'+(mode==='summary'?'PRIMEIRA LEITURA + REVISÃO':'TEORIA INTEGRAL')+'</div><h1>'+esc(data.title)+'</h1><p class="lead">'+(mode==='summary'?'Versão condensada para compreender e revisar o módulo.':'Apostila completa convertida para leitura nativa dentro da Central.')+'</p>'+
  '<section class="bc-native-study-progress"><div><b>Progresso de leitura</b><span data-cpc-reader-value></span></div><div class="bc-native-study-progress-track"><span data-cpc-reader-studybar></span></div><small>Os capítulos recebem check conforme você avança. Você também pode marcar manualmente no índice.</small></section>'+parsed.body+'</article></main></div></section>';
+ if(mode==='complete')addVerifiedM15Table(ov.querySelector('.bc-native-article'),raw);
  document.body.appendChild(ov);document.body.style.overflow='hidden';
  current={mode,overlay:ov,scroll:ov.querySelector('.bc-native-scroll'),article:ov.querySelector('.bc-native-article'),font:Number(localStorage.getItem(key('font'))||16),map:[]};
  current.article.style.fontSize=current.font+'px';
