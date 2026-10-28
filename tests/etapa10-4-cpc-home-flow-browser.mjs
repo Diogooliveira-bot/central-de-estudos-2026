@@ -62,7 +62,9 @@ try{
    await freeStudy.waitFor({state:'visible',timeout:18000});
    await freeStudy.click();
    await page.waitForFunction(()=>!document.documentElement.classList.contains('study-objective-open'),null,{timeout:17000});
-   const onboarding=page.locator('[data-student-onboarding] [data-onboarding-close]');
+   const onboarding=page.locator('[data-student-onboarding] button.student-onboarding-close').first();
+   // O onboarding possui dois botões com data-onboarding-close. Selecionar
+   // explicitamente o botão X evita a violação de strict mode do Playwright.
    if(await onboarding.isVisible())await onboarding.click();
    const nav=page.locator('[data-central-native="disciplines"]');
    assert.equal(await nav.count(),1,'botão Disciplinas não está presente');
