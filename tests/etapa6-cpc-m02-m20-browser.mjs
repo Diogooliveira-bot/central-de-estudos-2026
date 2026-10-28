@@ -80,6 +80,44 @@ try{
     assert.equal(m.h2Border,'5px',label+': H2 não recebeu padrão Premium');
     assert.equal(m.tablesSemantic,true,label+': tabelas perderam estrutura');
 
+    // Etapa 9.5 — CPC M12–M14: verificações de tabela, fonte e resumos.
+    if([12,13,14].includes(n)){
+      const pilot=await page.evaluate(n=>{
+        const overlay=document.getElementById('cpcM'+n+'NativeReaderOverlay');
+        const wrap=overlay.querySelector('[data-cpc-editorial-pilot="m'+n+'"]');
+        const table=wrap?.querySelector('table');
+        if(!table)return {exists:false};
+        const raw=window.BASE_NATIVE_CONTENT.cpc['m'+n].complete.replace(/\s+/g,' ').trim();
+        const rows=[...table.tBodies[0].rows].map(tr=>[...tr.cells].map(cell=>cell.textContent.trim()));
+        const evidence={
+          12:['autor prova fato constitutivo; réu, fato impeditivo, modificativo ou extintivo.'],
+          13:['Arbitramento: quando determinado pela sentença, convencionado ou exigido pela natureza do objeto.','Procedimento comum: quando necessário alegar/provar fato novo para quantificar.'],
+          14:rows.map(row=>row.join(': '))
+        }[n];
+        return {
+          exists:true,
+          rows:rows.length,
+          cols:table.tHead.rows[0].cells.length,
+          sourceVerified:evidence.every(line=>raw.includes(line)),
+          semantics:[...table.tBodies[0].rows].every(tr=>tr.cells[0].tagName==='TH'&&tr.cells[0].scope==='row'),
+          caption:!!table.caption?.textContent?.trim(),
+          localScroll:wrap.scrollWidth>wrap.clientWidth,
+          originalHeadingVisible:overlay.querySelector('.bc-native-article').textContent.includes({12:'3. ÔNUS DA PROVA',13:'18. MODALIDADES DE LIQUIDAÇÃO',14:'19. QUADRO COMPARATIVO DOS RITOS'}[n]),
+          back:overlay.querySelector('[data-cpc-back]')?.textContent.trim()
+        };
+      },n);
+      assert.equal(pilot.exists,true,label+': quadro consultivo ausente');
+      assert.equal(pilot.rows,{12:2,13:2,14:5}[n],label+': número de linhas não confere');
+      assert.equal(pilot.cols,2,label+': número de colunas não confere');
+      assert.equal(pilot.sourceVerified,true,label+': material original não comprova a tabela');
+      assert.equal(pilot.semantics,true,label+': cabeçalhos de linhas não semânticos');
+      assert.equal(pilot.caption,true,label+': legenda não exibida');
+      assert.equal(pilot.originalHeadingVisible,true,label+': conteúdo original não visível');
+      assert.equal(pilot.back,'← Voltar ao M'+n,label+': botão de retorno mudou');
+      if(width===390)assert.equal(pilot.localScroll,true,label+': tabela sem rolagem local no celular');
+    }
+
+
     // Etapa 9.4 — M09–M11: correspondência literal com a teoria original.
     if([9,10,11].includes(n)){
       const pilot=await page.evaluate(n=>{
@@ -230,6 +268,7 @@ try{
     await page.waitForTimeout(70);
     const summaryPremium=await page.locator('#'+id).evaluate(o=>o.classList.contains('bc-apostila-v1'));
     assert.equal(summaryPremium,false,label+': tema exclusivo aplicado no resumo');
+    if([12,13,14].includes(n))assert.equal(await page.locator('#'+id+' [data-cpc-editorial-pilot]').count(),0,label+': quadro do completo vazou para o resumo');
     if([9,10,11].includes(n))assert.equal(await page.locator('#'+id+' [data-cpc-editorial-pilot]').count(),0,label+': novo quadro Premium vazou para o resumo');
     if([6,7,8].includes(n))assert.equal(await page.locator('#'+id+' [data-cpc-editorial-pilot]').count(),0,label+': novo quadro vazou ao resumo');
     if([3,4,5].includes(n))assert.equal(await page.locator('#'+id+' [data-cpc-editorial-pilot]').count(),0,label+': quadro do completo apareceu no resumo');

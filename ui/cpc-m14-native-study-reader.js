@@ -68,6 +68,28 @@ function build(raw){
  return {body,words,mins:Math.max(1,Math.round(words/205))};
 }
 function buildFromHtml(html,raw){let h=0;const body=String(html).replace(/<h([23])>([\s\S]*?)<\/h\1>/g,(m,l,t)=>{const txt=t.replace(/<[^>]+>/g,'').replace(/&amp;/g,'&');return '<h'+l+' id="cpcsec-'+(++h)+'-'+normKey(txt).replace(/\s+/g,'-').slice(0,60)+'">'+t+'</h'+l+'>'});const words=norm(raw).split(/\s+/).filter(Boolean).length;return {body,words,mins:Math.max(1,Math.round(words/205))}}
+
+/* Quadro consultivo adicional M14; conteúdo jurídico original não é modificado. */
+function addVerifiedM14Table(article,raw){
+ const anchor=[...article.querySelectorAll('h2')].find(h=>h.textContent.trim()==="19. QUADRO COMPARATIVO DOS RITOS");
+ if(!anchor)return false;
+ const rows=[["Quantia comum","15 dias úteis, impugnação em 15, multa 10% + honorários 10%."],["Alimentos/prisão","3 dias."],["Fazenda","30 dias para impugnar, precatório/RPV."],["Fazer/não fazer","medidas executivas + astreintes."],["Entrega","busca/apreensão ou imissão."]];
+ const proofs=["Quantia comum: 15 dias úteis, impugnação em 15, multa 10% + honorários 10%.","Alimentos/prisão: 3 dias.","Fazenda: 30 dias para impugnar, precatório/RPV.","Fazer/não fazer: medidas executivas + astreintes.","Entrega: busca/apreensão ou imissão."];
+ const normalized=String(raw||'').replace(/\s+/g,' ').trim();
+ if(!proofs.every(line=>normalized.includes(line)))return false;
+ const wrap=document.createElement('div');wrap.className='table-wrap';
+ wrap.dataset.cpcEditorialPilot='m14';
+ const table=document.createElement('table');
+ const caption=document.createElement('caption');caption.textContent="Ritos do cumprimento de sentença — comparação transcrita da fonte original, com observações e exceções mantidas na teoria.";
+ table.appendChild(caption);
+ const head=document.createElement('thead'),headRow=document.createElement('tr');
+ ["Rito","Síntese original"].forEach(value=>{const th=document.createElement('th');th.scope='col';th.textContent=value;headRow.appendChild(th)});
+ head.appendChild(headRow);table.appendChild(head);
+ const body=document.createElement('tbody');
+ rows.forEach(cells=>{const row=document.createElement('tr');cells.forEach((value,i)=>{const cell=document.createElement(i===0?'th':'td');if(i===0)cell.scope='row';cell.textContent=value;row.appendChild(cell)});body.appendChild(row)});
+ table.appendChild(body);wrap.appendChild(table);anchor.after(wrap);
+ return true;
+}
 function chapters(mode){return source()?.chapters?.[mode]||[]}
 function findHeading(ch){
  if(!current||!ch)return null;
@@ -122,6 +144,7 @@ function open(mode){
  '<div class="bc-native-reader-body"><nav class="bc-native-toc"><div class="bc-native-toc-label">Capítulos</div>'+toc(mode)+'</nav>'+
  '<main class="bc-native-scroll"><article class="bc-native-article"><div class="bc-native-kicker">'+(mode==='summary'?'PRIMEIRA LEITURA + REVISÃO':'TEORIA INTEGRAL')+'</div><h1>'+esc(data.title)+'</h1><p class="lead">'+(mode==='summary'?'Versão condensada para compreender e revisar o módulo.':'Apostila completa convertida para leitura nativa dentro da Central.')+'</p>'+
  '<section class="bc-native-study-progress"><div><b>Progresso de leitura</b><span data-cpc-reader-value></span></div><div class="bc-native-study-progress-track"><span data-cpc-reader-studybar></span></div><small>Os capítulos recebem check conforme você avança. Você também pode marcar manualmente no índice.</small></section>'+parsed.body+'</article></main></div></section>';
+ if(mode==='complete')addVerifiedM14Table(ov.querySelector('.bc-native-article'),raw);
  document.body.appendChild(ov);document.body.style.overflow='hidden';
  current={mode,overlay:ov,scroll:ov.querySelector('.bc-native-scroll'),article:ov.querySelector('.bc-native-article'),font:Number(localStorage.getItem(key('font'))||16),map:[]};
  current.article.style.fontSize=current.font+'px';

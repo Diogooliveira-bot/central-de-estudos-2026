@@ -470,3 +470,13 @@ Contagens de elementos efetivamente renderizados no navegador (mesmas nas três 
 - **Ponto de atenção editorial:** as teorias completas originais de M09/M10/M11 têm respectivamente 4.572, 4.428 e 6.103 caracteres, bem menos que certos módulos de CPC anteriores. O teste confirmou que se renderizam corretamente, mas **não prova** suficiência editorial, atualização jurídica ou equivalência a fontes externas de origem.
 - **Próxima etapa recomendada:** inspecionar M12–M14 para reconstruções com alinhamento inequívoco e, depois, revisar visualmente todas as tabelas reconstruídas no ambiente integrado autenticado, respeitando a autorização `bc-preview-private` e o SHA pinado.
 - Não houve mudanças em Production, `main`, Neon, conteúdo jurídico, políticas de acesso ou pagamentos. Sem publicação da Preview privada atualizada.
+
+## Etapa 9.5 — Pilotos CPC M12–M14 (28/10/2026)
+
+- Escopo: quadros adicionais no **modo completo** dos leitores CPC M12, M13 e M14, sem editar o texto jurídico original ou os resumos. Os botões de retorno já estão corretos; não sofreram alteração.
+- **M12, ônus estático da prova:** quadro com autor/fato constitutivo e réu/fato impeditivo, modificativo ou extintivo (2 linhas). A fonte é uma frase contínua; ambas as atribuições são guardadas por verificação literal da frase.
+- **M13, modalidades de liquidação:** arbitramento versus procedimento comum, 2 linhas × 2 colunas, com descrições integrais extraídas do material sem interpretá-las. Cálculo aritmético não foi transformado em terceira modalidade.
+- **M14, ritos do cumprimento:** 5 linhas × 2 colunas, literalmente transcritas do quadro que já existe em texto no item 19. O material original contém alertas de atualização, especialmente art. 529-A (vigência futura segundo o material) e prazos. **A etapa não certifica a vigência das normas citadas**; a verificação jurídica permanece pendente.
+- Tabelas usam `table`, `caption`, `th scope` e contêiner `.table-wrap` com rolagem horizontal própria. Cada quadro só é adicionado quando toda sua evidência literal é encontrada no original. Nenhuma parte do texto já renderizado é excluída.
+- Teste de regressão dos 19 módulos CPC em Chromium nas larguras 390, 768 e 1366 px, verificando quadro, semântica, fonte, rolagem, resumo e persistência. **Aguardando CI antes de declarar a validação concluída.**
+- Branch e Preview privadas mantidas, sem aprovação de deployment, `main`, Production ou Neon.
