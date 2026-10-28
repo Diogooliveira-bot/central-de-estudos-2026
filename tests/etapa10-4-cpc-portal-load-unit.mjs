@@ -14,7 +14,7 @@ function mockLoader({questionsStatus=403,questionEntitled=false,plan='free',theo
  const requests=[],scripts=[];
  const win={
   __centralDisciplineFiles:{cpc:[questions+'?v=fixture',theory+'?v=fixture']},
-  CpcStudyV1:{installed:true},__M08Installed:true
+  CpcStudyV1:{installed:true},CpcStudyM08:true
  };
  for(let n=2;n<=20;n++)if(n!==8)win['CpcStudyM'+String(n).padStart(2,'0')]=true;
  const document={
@@ -51,6 +51,8 @@ test('rota / é normal após o boot: CPC é aberto pelo menu Disciplinas, não p
  assert.match(index,/data-id="cpc"/);
  assert.equal(protectedAsset(questions)?.feature,'premium.reviews');
  assert.equal(protectedAsset(theory)?.feature,'theory.complete');
+ assert.match(source,/global\['CpcStudyM'\+String\(n\)\.padStart\(2,'0'\)\]/);
+ assert.doesNotMatch(source,/__M08Installed/);
 });
 
 test('aluno Gratuito carrega o CPC resumido quando questões pagas respondem 403',async()=>{
