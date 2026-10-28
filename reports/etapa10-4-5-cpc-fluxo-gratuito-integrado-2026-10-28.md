@@ -42,3 +42,17 @@ Em Chromium com fonte integral e sessões simuladas, quando os arquivos de bater
 - Após o revisor aprovar, exigir READY com commit `7584a48e...` antes de autenticar os perfis reais de homologação, validar 403 em URL paga, abrir M05 Premium, reabrir leitura e confirmar progresso no próprio deployment.
 
 **Não atestar Etapa 10.4 completamente encerrada** até os ensaios autenticados na nova Preview. O saldo insuficiente do navegador automatizado externo impede executar esse E2E no chat até reconectar um navegador disponível; GitHub e Vercel não disponibilizam as senhas sensíveis de forma recuperável. Sem produção, `main` ou Neon real modificados.
+
+## Atualização após aprovação e verificação da Preview — 28/10/2026
+
+O registro anterior de deployment `waiting` foi **superado por uma publicação efetiva**:
+
+- [GitHub Actions 40740988534](https://github.com/Diogooliveira-bot/central-de-estudos-2026/actions/runs/40740988534): execução `completed/success`; environment protegido `bc-preview-private` respeitado.
+- Vercel **`dpl_7ucKUZSZpA6Uzkv1weop8WrS3NKu`**, projeto **`base-completa-teste-visual`**, target Preview (sem `production`), estado **`READY`**, SHA implantado **`7584a48e72c94a3650ca5fb021c3cbfc4412517d`**, idêntico ao código auditado.
+- URL canônica privada: `https://base-completa-teste-visual-jhlc5cief-estudotd.vercel.app`. Vercel Authentication continua habilitada para **todos** os deployments do projeto. As variáveis Preview mantêm isolamento habilitado e `HOTMART_LIVE_ENABLED=false`.
+- Smoke HTTP via acesso temporário de 1 hora, exclusivo deste deployment: `GET /` e `GET /central-v119.html` sem sessão responderam HTTP 200 exibindo **Entrar — Base Completa**; `GET /api/auth?action=me` respondeu HTTP 200 com `authenticated:false`. **Os tokens temporários de compartilhamento não constam deste relatório**.
+- [CI 40740525439](https://github.com/Diogooliveira-bot/central-de-estudos-2026/actions/runs/40740525439) segue aprovada: 60/60 verificações editoriais, 3/3 navegações M05/progresso simulado e 2/2 inicializações Gratuito/Premium em localhost.
+- **Limite de evidência:** as sessões reais anteriores Gratuito/Premium foram autenticadas no deployment **antigo** `f5dc763b...`; a nova Preview `7584a48e...` ainda não teve validação autenticada dos módulos e HTTP 403 real. Uma tentativa de reiniciar navegador externo com o fluxo correto falhou antes da execução porque o saldo do provedor de navegador estava insuficiente. Não tratar esse bloqueio financeiro como falha do site, não inserir credenciais em chat e não simular respostas reais.
+- **Alternativa de aceite sem navegador pago:** acesso manual pelo link temporário somente para o proprietário; entrar nas duas contas fictícias, escolher **Estudo livre** se surgir o modal inicial, abrir **Disciplinas → Direito Processual Civil → M05**. Premium: apostila completa, divisores e progresso após reabertura. Gratuito: teoria resumida, sem conteúdo completo ou links TEC/QC. Uma verificação manual da ausência do botão não substitui a evidência HTTP 403, que ainda precisa ser feita separadamente.
+
+**Situação da Etapa 10.4:** infraestrutura, publicação privada, segurança unitária e navegação local aprovadas; acesso por plano e persistência **na nova Preview** aguardam confirmação real. Nenhuma alteração em Production, `main`, contas dos alunos reais, Hotmart ou Neon de produção.
