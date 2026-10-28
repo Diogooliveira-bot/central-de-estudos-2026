@@ -5,6 +5,8 @@ on:
     paths:
       - '.github/workflows/verify-etapa10-cpc-editorial.yml'
       - 'tests/etapa10-cpc-editorial-audit-browser.mjs'
+      - 'tests/etapa10-4-cpc-portal-load-unit.mjs'
+      - 'central-discipline-loader.js'
       - 'tests/etapa10-4-cpc-central-navigation-browser.mjs'
       - 'tests/etapa10-4-free-bootstrap-unit.mjs'
       - 'central-v119.html'
@@ -37,6 +39,8 @@ jobs:
         run: node --test tests/etapa10-4-free-bootstrap-unit.mjs
       - name: Etapa 10.4 — segurança de login, planos e arquivos Premium (sem Neon)
         run: npm run test:premium-and-auth
+      - name: Etapa 10.4 — validar entrada da Central e isolamento das questões Premium
+        run: node --test tests/etapa10-4-cpc-portal-load-unit.mjs
       - name: Instalar Chromium real
         run: npx playwright install --with-deps chromium
       - name: Auditar títulos, tabelas, fonte e responsividade dos 20 módulos
