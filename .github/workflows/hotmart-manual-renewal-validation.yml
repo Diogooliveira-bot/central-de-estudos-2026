@@ -1,0 +1,30 @@
+name: Homologacao Hotmart sem renovacao automatica
+on:
+  push:
+    branches:
+      - commercial/hotmart-manual-renewal-20261028
+    paths:
+      - 'lib/hotmart-webhook.js'
+      - 'tests/hotmart-webhook-unit.mjs'
+      - 'tests/plan-access-unit.mjs'
+      - '.github/workflows/hotmart-manual-renewal-validation.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  homologacao:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Baixar codigo sem credenciais persistentes
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c
+        with:
+          persist-credentials: false
+      - name: Node.js 22
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+      - name: Instalar dependencias em modo isolado
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Testar notificacoes de pagamento e protecao contra recorrencia
+        run: node --test tests/hotmart-webhook-unit.mjs tests/plan-access-unit.mjs
