@@ -104,7 +104,8 @@ test('índice de progresso Civil e pacote offline acompanham a mesma matriz',()=
  const c=vm.createContext({window:{}});vm.runInContext(read('civil-decorando-index-v1.js'),c);const ids=c.window.CIVIL_DECORANDO_IDS_V1;
  const native=JSON.parse(read('content/civil/civil-native-index.js').split('=').slice(1).join('=').trim().replace(/;$/,''));
  for(const m of native.modules)assert.deepEqual(asJSON(ids[m.id]),asJSON(index.modules.find(x=>x.id===m.uid).questionIds));
- const manifest=JSON.parse(read('central-offline-files-v66172.json'));assert.ok(manifest.files.includes('/tools/decorando-data-modulos.js?v=20261024rm2'));
+ const manifest=JSON.parse(read('central-offline-files-v66172.json'));assert.ok(!manifest.files.some(p=>p.startsWith('/tools/decorando-data-modulos.js')), 'catálogo Premium não pode ser pré-carregado pelo manifesto público');
+ assert.ok(read('tools/decorando.html').includes('decorando-data-modulos.js?v=20261024rm2'));
  for(const p of manifest.files){const path=p.split('?')[0].replace(/^\//,'');assert.ok(fs.existsSync(new URL(path,root)),path);}
 });
 
