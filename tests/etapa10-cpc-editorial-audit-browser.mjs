@@ -152,7 +152,7 @@ try{
      assert.equal(editorial.gluedVisible,false,label+': colagem de PDF segue no leitor');
      assert.equal(editorial.dividerFont,16,label+': estilo editorial da parte está incorreto');
      assert.equal(editorial.onlyVisualClass,true,label+': o divisor ganhou ID de capítulo');
-     if(width===390)await page.locator('#'+id+' .bc-cpc-m05-part-divider').screenshot({path:dir+'/m05-390-parte-iv.png'});
+     if(width===390)await page.locator('#'+id+' .bc-cpc-m05-part-divider:not([data-bc-editorial-boundary])').screenshot({path:dir+'/m05-390-parte-iv.png'});
     }
 
     if(n===5){
