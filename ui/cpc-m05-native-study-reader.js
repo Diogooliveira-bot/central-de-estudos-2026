@@ -115,6 +115,52 @@ function markM05PartDivider(article){
  matching[0].classList.add('bc-cpc-m05-part-divider');
  return true;
 }
+
+/* Etapa 10.3: separa dois trechos colados na extração de PDF, somente no DOM.
+ * Não cria h2 nem muda seus IDs, capítulos, índice ou chaves de progresso.
+ * Nenhuma mudança nos originais em content/cpc.
+ */
+function repairM05FinalQuiz(article,original){
+ const raw=String(original||'');
+ const joinedQ='mérito.2. O requerimento de limitação do litisconsórcio facultativo multitudinário interrompe o prazo para';
+ const joinedPart='Art. 129.PARTE VIII - ROTEIRO DE REVISÃO';
+ if(!raw.includes(joinedQ)||!raw.includes(joinedPart))return false;
+ const ps=[...article.querySelectorAll('p')];
+ const pQ=ps.filter(p=>p.textContent.includes('mérito.2. O requerimento de limitação do litisconsórcio facultativo'));
+ const pPart=ps.filter(p=>p.textContent.includes(joinedPart));
+ if(pQ.length!==1||pPart.length!==1)return false;
+ const beforeQuestion=pQ[0].textContent.split('mérito.2. ');
+ if(beforeQuestion.length!==2)return false;
+ const answer='Gabarito: CERTO. Art. 113, § 2º.';
+ const q2=beforeQuestion[1].split(answer);
+ const part=pPart[0].textContent.split(joinedPart);
+ if(q2.length!==2||q2[1].trim()!==''||part.length!==2||part[1].trim()!=='')return false;
+ // A operação é atômica: somente depois de reconhecer os dois limites
+ // textuais completos a apresentação é alterada.
+ pQ[0].textContent=beforeQuestion[0]+'mérito.';
+ const question=document.createElement('p');
+ question.className='bc-cpc-m05-quiz-prompt';
+ question.textContent='2. '+q2[0].trim();
+ const response=document.createElement('p');
+ response.textContent=answer;
+ pQ[0].after(question,response);
+ pPart[0].textContent=part[0]+'Art. 129.';
+ const divider=document.createElement('p');
+ divider.className='bc-cpc-m05-part-divider';
+ divider.dataset.bcEditorialBoundary='parte-viii';
+ divider.textContent='PARTE VIII - ROTEIRO DE REVISÃO';
+ pPart[0].after(divider);
+ // Questões extraídas como H2 mantêm a mesma semântica/ID do leitor
+ // existente para não invalidar a navegação já salva.
+ let inQuiz=false;
+ for(const h of article.querySelectorAll('h2')){
+  const text=h.textContent.trim();
+  if(text==='44. JULGUE CERTO OU ERRADO'){inQuiz=true;continue;}
+  if(text==='45. REVISÃO EM 10 MINUTOS'){inQuiz=false;break;}
+  if(inQuiz&&/^\d{1,2}\.\s+/.test(text))h.classList.add('bc-cpc-m05-quiz-heading');
+ }
+ return true;
+}
 function chapters(mode){return source()?.chapters?.[mode]||[]}
 function findHeading(ch){
  if(!current||!ch)return null;
@@ -171,6 +217,7 @@ function open(mode){
  '<section class="bc-native-study-progress"><div><b>Progresso de leitura</b><span data-cpc-reader-value></span></div><div class="bc-native-study-progress-track"><span data-cpc-reader-studybar></span></div><small>Os capítulos recebem check conforme você avança. Você também pode marcar manualmente no índice.</small></section>'+parsed.body+'</article></main></div></section>';
  if(mode==='complete')addVerifiedM05Comparison(ov.querySelector('.bc-native-article'),raw);
  if(mode==='complete')markM05PartDivider(ov.querySelector('.bc-native-article'));
+ if(mode==='complete')repairM05FinalQuiz(ov.querySelector('.bc-native-article'),raw);
  document.body.appendChild(ov);document.body.style.overflow='hidden';
  current={mode,overlay:ov,scroll:ov.querySelector('.bc-native-scroll'),article:ov.querySelector('.bc-native-article'),font:Number(localStorage.getItem(key('font'))||16),map:[]};
  current.article.style.fontSize=current.font+'px';
