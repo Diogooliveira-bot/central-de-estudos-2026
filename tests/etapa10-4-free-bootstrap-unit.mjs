@@ -53,7 +53,7 @@ test('free: bootstrap autentica plano no servidor antes de filtrar scripts e ren
   assert.ok(fetchPlan >= 0 && freeFilter > fetchPlan && documentWrite > freeFilter);
   assert.match(source, /planState\.plan==='free'/);
   assert.match(source, /groups\[key\]=groups\[key\]\.filter/);
-  assert.match(source, /if\(freeStudent&&isPremiumOnlyScript\(src\)\)/);
+  assert.match(source, /freeStudent&&isPremiumOnlyScript\(src\)\?/);
   assert.doesNotMatch(source, /localStorage\.[\s\S]{0,50}plan\s*===/);
 });
 
