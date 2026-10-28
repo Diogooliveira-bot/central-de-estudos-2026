@@ -24,7 +24,7 @@ function mockLoader({questionsStatus=403,questionEntitled=false,plan='free',theo
  };
  const context={
   window:win,document,navigator:{},localStorage:{getItem(){return null}},
-  location:{origin:'https://staging.example'},URL,CustomEvent:class{constructor(type,p){this.type=type;this.detail=p?.detail}},
+  location:{origin:'https://staging.example'},URL,AbortController,CustomEvent:class{constructor(type,p){this.type=type;this.detail=p?.detail}},
   setTimeout,clearTimeout,requestAnimationFrame(callback){setImmediate(callback)},
   fetch:async(input)=>{
    const path=new URL(input,'https://staging.example').pathname;
