@@ -49,6 +49,8 @@ jobs:
           set -Eeuo pipefail
           set +x
           [[ "${PGUSER:-}" == bc_neon_backup_ro && -n "${PGPASSWORD:-}" ]] || { echo 'NEON_AUTH_CHECK_BLOCKED: usuario ou senha ausente'; exit 1; }
+          diagfile="$(mktemp)"
+          trap 'rm -f "$diagfile"' EXIT
           policy="$(
             docker run --rm --network host \
               --env PGHOST --env PGPORT --env PGDATABASE --env PGUSER \
@@ -96,8 +98,25 @@ jobs:
                       )
                   )
                 THEN 'NEON_AUTH_READONLY_OK' ELSE 'NEON_AUTH_POLICY_REJECTED' END
-              " 2>/dev/null
-          )" || { echo 'NEON_AUTH_CONNECTION_FAILED: conferir credenciais no ambiente privado'; exit 1; }
+              " 2>"$diagfile"
+          )" || {
+            if grep -qi 'password authentication failed' "$diagfile"; then
+              echo 'NEON_AUTH_REJECTED: credenciais recusadas, conferir senha e usuario no GitHub'
+            elif grep -Eqi 'certificate verify failed|root certificate|SSL error|SSL SYSCALL|TLS' "$diagfile"; then
+              echo 'NEON_TLS_CONNECTION_ERROR: verificar validacao TLS'
+            elif grep -Eqi 'could not translate host name|Name or service not known' "$diagfile"; then
+              echo 'NEON_DNS_ERROR: verificar DNS'
+            elif grep -Eqi 'timeout expired|timed out|Connection refused|Network is unreachable' "$diagfile"; then
+              echo 'NEON_NETWORK_ERROR: conexão não completada'
+            elif grep -Eqi 'permission denied|no pg_hba.conf entry' "$diagfile"; then
+              echo 'NEON_ACCESS_REJECTED: permissão de conexão'
+            elif grep -Eqi 'ERROR:|syntax error|does not exist|not a' "$diagfile"; then
+              echo 'NEON_SQL_ERROR: diagnóstico de consulta; nenhuma tabela alterada'
+            else
+              echo 'NEON_CONNECTION_UNKNOWN_ERROR: não revelar detalhes potencialmente sensíveis'
+            fi
+            exit 1
+          }
           [[ "$policy" == NEON_AUTH_READONLY_OK ]] || { echo 'NEON_AUTH_POLICY_REJECTED: sem alterar dados'; exit 1; }
           echo 'NEON_CREDENTIALS_PG18_TLS_READONLY_OK; NENHUMA TABELA DE ALUNOS CONSULTADA.'
 
