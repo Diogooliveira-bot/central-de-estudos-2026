@@ -68,6 +68,16 @@ function build(raw){
  return {body,words,mins:Math.max(1,Math.round(words/205))};
 }
 function buildFromHtml(html,raw){let h=0;const body=String(html).replace(/<h([23])>([\s\S]*?)<\/h\1>/g,(m,l,t)=>{const txt=t.replace(/<[^>]+>/g,'').replace(/&amp;/g,'&');return '<h'+l+' id="cpcsec-'+(++h)+'-'+normKey(txt).replace(/\s+/g,'-').slice(0,60)+'">'+t+'</h'+l+'>'});const words=norm(raw).split(/\s+/).filter(Boolean).length;return {body,words,mins:Math.max(1,Math.round(words/205))}}
+function addM20Table(a,src){
+ const items=[['IAC','sem repetição múltipla; relevante questão de direito; grande repercussão social.'],['IRDR','repetição efetiva; mesma questão unicamente de direito; risco à isonomia e segurança.']];
+ const h=[...a.querySelectorAll('h2')].find(x=>x.textContent.trim()==='9. IAC X IRDR');
+ if(!h||!items.every(x=>src.includes(x.join(': '))))return;
+ const w=document.createElement('div');w.className='table-wrap';w.dataset.cpcEditorialPilot='m20';
+ const t=document.createElement('table'),c=document.createElement('caption');c.textContent='IAC × IRDR — critérios extraídos da apostila original.';t.appendChild(c);
+ const th=t.createTHead().insertRow();for(const v of ['Instituto','Caracterização']){const x=document.createElement('th');x.scope='col';x.textContent=v;th.appendChild(x)}
+ const body=t.createTBody();for(const pair of items){const tr=body.insertRow(),h=document.createElement('th');h.scope='row';h.textContent=pair[0];tr.appendChild(h);tr.insertCell().textContent=pair[1]}
+ w.appendChild(t);h.after(w);
+}
 function chapters(mode){return source()?.chapters?.[mode]||[]}
 function findHeading(ch){
  if(!current||!ch)return null;
@@ -122,6 +132,7 @@ function open(mode){
  '<div class="bc-native-reader-body"><nav class="bc-native-toc"><div class="bc-native-toc-label">Capítulos</div>'+toc(mode)+'</nav>'+
  '<main class="bc-native-scroll"><article class="bc-native-article"><div class="bc-native-kicker">'+(mode==='summary'?'PRIMEIRA LEITURA + REVISÃO':'TEORIA INTEGRAL')+'</div><h1>'+esc(data.title)+'</h1><p class="lead">'+(mode==='summary'?'Versão condensada para compreender e revisar o módulo.':'Apostila completa convertida para leitura nativa dentro da Central.')+'</p>'+
  '<section class="bc-native-study-progress"><div><b>Progresso de leitura</b><span data-cpc-reader-value></span></div><div class="bc-native-study-progress-track"><span data-cpc-reader-studybar></span></div><small>Os capítulos recebem check conforme você avança. Você também pode marcar manualmente no índice.</small></section>'+parsed.body+'</article></main></div></section>';
+ if(mode==='complete')addM20Table(ov.querySelector('.bc-native-article'),raw);
  document.body.appendChild(ov);document.body.style.overflow='hidden';
  current={mode,overlay:ov,scroll:ov.querySelector('.bc-native-scroll'),article:ov.querySelector('.bc-native-article'),font:Number(localStorage.getItem(key('font'))||16),map:[]};
  current.article.style.fontSize=current.font+'px';
