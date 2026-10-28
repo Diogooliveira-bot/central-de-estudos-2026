@@ -68,6 +68,32 @@ function build(raw){
  return {body,words,mins:Math.max(1,Math.round(words/205))};
 }
 function buildFromHtml(html,raw){let h=0;const body=String(html).replace(/<h([23])>([\s\S]*?)<\/h\1>/g,(m,l,t)=>{const txt=t.replace(/<[^>]+>/g,'').replace(/&amp;/g,'&');return '<h'+l+' id="cpcsec-'+(++h)+'-'+normKey(txt).replace(/\s+/g,'-').slice(0,60)+'">'+t+'</h'+l+'>'});const words=norm(raw).split(/\s+/).filter(Boolean).length;return {body,words,mins:Math.max(1,Math.round(words/205))}}
+
+/* Quadro adicional, inserido apenas quando todas as linhas estão no original. */
+function addVerifiedM07Table(article,raw){
+ const anchor=[...article.querySelectorAll('h2')].find(h=>h.textContent.trim()==="11. PRONUNCIAMENTOS JUDICIAIS — ARTS. 203–205");
+ if(!anchor)return false;
+ const headers=["Ato","Elemento central"];
+ const rows=[["Sentença","conteúdo dos arts. 485/487 + encerramento indicado no art. 203, § 1º"],["Decisão interlocutória","conteúdo decisório sem enquadramento como sentença"],["Despacho","pronunciamento sem conteúdo decisório relevante"],["Ato ordinatório","ato de expediente praticado pelo servidor, sem necessidade de despacho"],["Acórdão","julgamento colegiado de tribunal"]];
+ const proofs=["Sentença conteúdo dos arts. 485/487 + encerramento indicado no art. 203, § 1º","Decisão interlocutória conteúdo decisório sem enquadramento como sentença","Despacho pronunciamento sem conteúdo decisório relevante","Ato ordinatório ato de expediente praticado pelo servidor, sem necessidade de despacho","Acórdão julgamento colegiado de tribunal"];
+ const normalized=String(raw||'').replace(/\s+/g,' ').trim();
+ if(!proofs.every(value=>normalized.includes(value)))return false;
+ const wrap=document.createElement('div');wrap.className='table-wrap';
+ wrap.dataset.cpcEditorialPilot='m07';
+ const table=document.createElement('table'),caption=document.createElement('caption');
+ caption.textContent="Pronunciamentos judiciais — resumo fiel do quadro original; ressalvas mantidas na transcrição.";table.appendChild(caption);
+ const thead=document.createElement('thead'),tr=document.createElement('tr');
+ headers.forEach(value=>{let th=document.createElement('th');th.scope='col';th.textContent=value;tr.appendChild(th)});
+ thead.appendChild(tr);table.appendChild(thead);
+ const tbody=document.createElement('tbody');
+ rows.forEach(cells=>{
+  const tr=document.createElement('tr');
+  cells.forEach((value,i)=>{let cell=document.createElement(i===0?'th':'td');if(i===0)cell.scope='row';cell.textContent=value;tr.appendChild(cell)});
+  tbody.appendChild(tr);
+ });
+ table.appendChild(tbody);wrap.appendChild(table);anchor.after(wrap);
+ return true;
+}
 function chapters(mode){return source()?.chapters?.[mode]||[]}
 function findHeading(ch){
  if(!current||!ch)return null;
@@ -122,6 +148,7 @@ function open(mode){
  '<div class="bc-native-reader-body"><nav class="bc-native-toc"><div class="bc-native-toc-label">Capítulos</div>'+toc(mode)+'</nav>'+
  '<main class="bc-native-scroll"><article class="bc-native-article"><div class="bc-native-kicker">'+(mode==='summary'?'PRIMEIRA LEITURA + REVISÃO':'TEORIA INTEGRAL')+'</div><h1>'+esc(data.title)+'</h1><p class="lead">'+(mode==='summary'?'Versão condensada para compreender e revisar o módulo.':'Apostila completa convertida para leitura nativa dentro da Central.')+'</p>'+
  '<section class="bc-native-study-progress"><div><b>Progresso de leitura</b><span data-cpc-reader-value></span></div><div class="bc-native-study-progress-track"><span data-cpc-reader-studybar></span></div><small>Os capítulos recebem check conforme você avança. Você também pode marcar manualmente no índice.</small></section>'+parsed.body+'</article></main></div></section>';
+ if(mode==='complete')addVerifiedM07Table(ov.querySelector('.bc-native-article'),raw);
  document.body.appendChild(ov);document.body.style.overflow='hidden';
  current={mode,overlay:ov,scroll:ov.querySelector('.bc-native-scroll'),article:ov.querySelector('.bc-native-article'),font:Number(localStorage.getItem(key('font'))||16),map:[]};
  current.article.style.fontSize=current.font+'px';

@@ -68,6 +68,32 @@ function build(raw){
  return {body,words,mins:Math.max(1,Math.round(words/205))};
 }
 function buildFromHtml(html,raw){let h=0;const body=String(html).replace(/<h([23])>([\s\S]*?)<\/h\1>/g,(m,l,t)=>{const txt=t.replace(/<[^>]+>/g,'').replace(/&amp;/g,'&');return '<h'+l+' id="cpcsec-'+(++h)+'-'+normKey(txt).replace(/\s+/g,'-').slice(0,60)+'">'+t+'</h'+l+'>'});const words=norm(raw).split(/\s+/).filter(Boolean).length;return {body,words,mins:Math.max(1,Math.round(words/205))}}
+
+/* Quadro adicional, inserido apenas quando todas as linhas estão no original. */
+function addVerifiedM08Table(article,raw){
+ const anchor=[...article.querySelectorAll('h2')].find(h=>h.textContent.trim()==="10. QUADRO DE PRAZOS E NÚMEROS PARA DECORAR");
+ if(!anchor)return false;
+ const headers=["Regra","Número"];
+ const rows=[["Efetivação da citação a partir da propositura da ação","45 dias"],["Expedição da citação eletrônica após a decisão","2 dias úteis"],["Confirmação da citação eletrônica no regime geral do art. 246","3 dias úteis"],["Multa por falta de confirmação sem justa causa","até 5% do valor da causa"],["PJ de direito público sem consulta ao Domicílio Judicial Eletrônico","10 dias corridos para ciência automática"],["Hora certa — tentativas anteriores","2 tentativas"],["Hora certa — retorno","dia útil imediato"],["Ciência complementar após hora certa","10 dias da juntada do mandado"],["Edital — dilação","20 a 60 dias"],["Devolução da carta cumprida ao juízo de origem","10 dias"]];
+ const proofs=["Efetivação da citação a partir da propositura da ação 45 dias","Expedição da citação eletrônica após a decisão 2 dias úteis","Confirmação da citação eletrônica no regime geral do art. 246 3 dias úteis","Multa por falta de confirmação sem justa causa até 5% do valor da causa","PJ de direito público sem consulta ao Domicílio Judicial Eletrônico 10 dias corridos para ciência automática","Hora certa — tentativas anteriores 2 tentativas","Hora certa — retorno dia útil imediato","Ciência complementar após hora certa 10 dias da juntada do mandado","Edital — dilação 20 a 60 dias","Devolução da carta cumprida ao juízo de origem 10 dias"];
+ const normalized=String(raw||'').replace(/\s+/g,' ').trim();
+ if(!proofs.every(value=>normalized.includes(value)))return false;
+ const wrap=document.createElement('div');wrap.className='table-wrap';
+ wrap.dataset.cpcEditorialPilot='m08';
+ const table=document.createElement('table'),caption=document.createElement('caption');
+ caption.textContent="Prazos e números — quadro original organizado para consulta; verificar ressalvas na teoria completa.";table.appendChild(caption);
+ const thead=document.createElement('thead'),tr=document.createElement('tr');
+ headers.forEach(value=>{let th=document.createElement('th');th.scope='col';th.textContent=value;tr.appendChild(th)});
+ thead.appendChild(tr);table.appendChild(thead);
+ const tbody=document.createElement('tbody');
+ rows.forEach(cells=>{
+  const tr=document.createElement('tr');
+  cells.forEach((value,i)=>{let cell=document.createElement(i===0?'th':'td');if(i===0)cell.scope='row';cell.textContent=value;tr.appendChild(cell)});
+  tbody.appendChild(tr);
+ });
+ table.appendChild(tbody);wrap.appendChild(table);anchor.after(wrap);
+ return true;
+}
 function chapters(mode){return source()?.chapters?.[mode]||[]}
 function findHeading(ch){
  if(!current||!ch)return null;
@@ -122,6 +148,7 @@ function open(mode){
  '<div class="bc-native-reader-body"><nav class="bc-native-toc"><div class="bc-native-toc-label">Capítulos</div>'+toc(mode)+'</nav>'+
  '<main class="bc-native-scroll"><article class="bc-native-article"><div class="bc-native-kicker">'+(mode==='summary'?'PRIMEIRA LEITURA + REVISÃO':'TEORIA INTEGRAL')+'</div><h1>'+esc(data.title)+'</h1><p class="lead">'+(mode==='summary'?'Versão condensada para compreender e revisar o módulo.':'Apostila completa convertida para leitura nativa dentro da Central.')+'</p>'+
  '<section class="bc-native-study-progress"><div><b>Progresso de leitura</b><span data-cpc-reader-value></span></div><div class="bc-native-study-progress-track"><span data-cpc-reader-studybar></span></div><small>Os capítulos recebem check conforme você avança. Você também pode marcar manualmente no índice.</small></section>'+parsed.body+'</article></main></div></section>';
+ if(mode==='complete')addVerifiedM08Table(ov.querySelector('.bc-native-article'),raw);
  document.body.appendChild(ov);document.body.style.overflow='hidden';
  current={mode,overlay:ov,scroll:ov.querySelector('.bc-native-scroll'),article:ov.querySelector('.bc-native-article'),font:Number(localStorage.getItem(key('font'))||16),map:[]};
  current.article.style.fontSize=current.font+'px';

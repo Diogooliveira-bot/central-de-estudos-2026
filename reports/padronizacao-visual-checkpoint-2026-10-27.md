@@ -422,3 +422,12 @@ Contagens de elementos efetivamente renderizados no navegador (mesmas nas três 
 - **Panorama CPC atual:** M02, M03, M04 e M05 têm 1 tabela HTML consultiva cada no leitor completo; M06–M20 continuam com 0 tabelas HTML identificadas. Este resultado **não** significa que todos os quadros dos M02–M05 foram reconstruídos.
 - **Pendências:** cotejamento editorial humano de todos os quadros remanescentes, revisão jurídica das fontes, validação em sessão Premium real na Preview protegida e autorização do ambiente de deploy privado. Não usar esta execução como aprovação para `main`/Production.
 - **Próxima etapa recomendada:** inventariar e tratar CPC M06–M08 de modo conservador, começando por comparativos com limites claros de coluna; se o OCR não permitir atribuição inequívoca, registrar para confronto manual em vez de inventar conteúdo.
+
+## Etapa 9.3 — Acabamento editorial CPC M06–M08 (28/10/2026)
+
+- **Correção restrita à apresentação, sem alterar arquivos de conteúdo:** M06/M07/M08 ganham quadros consultivos verificados literalmente com a fonte original antes de serem exibidos. A transcrição de cada apostila fica íntegra e os novos quadros aparecem exclusivamente em **completo**.
+- **M06** (2 linhas × 3 colunas): confronto impedimento × suspeição para natureza e intensidade do risco. Os nomes dos aspectos são rótulos editoriais de navegação, enquanto as afirmações jurídicas são literais do original. Outras ressalvas permanecem na transcrição.
+- **M07** (5 linhas × 2 colunas): sentença, decisão interlocutória, despacho, ato ordinatório e acórdão — cinco caracterizações com correspondência literal do texto original.
+- **M08** (10 linhas × 2 colunas): os prazos e números constantes do quadro da apostila, transcritos literalmente. **Ainda requerem revisão jurídica independente e verificação de atualização normativa**, não incluída no teste de fidelidade editorial.
+- As tabelas utilizam legenda, cabeçalhos e rolagem local `.table-wrap`; resumo, marcações, progresso e leitores dos demais módulos inalterados. Os botões "Voltar ao M06/M07/M08" **já estavam corretos**, portanto não foram modificados.
+- Testes estendidos nos 19 módulos CPC × 390/768/1366 px com verificação da fonte, tabela, rolagem mobile, resumo e progresso. **Status inicial: aguardando CI**, sem liberação de Production, banco Neon, `main` ou Preview protegida.
