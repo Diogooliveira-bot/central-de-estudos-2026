@@ -81,7 +81,7 @@ test('revogar email mantem whatsapp e registra revogacao',async()=>{
  assert.equal(res.body.emailMarketingOptIn,false);
  assert.match(seen.at(-1).q,/email_marketing_opt_in=FALSE/);
  assert.match(seen.at(-1).q,/email_marketing_revoked_at=CASE/);
- assert.doesNotMatch(seen.at(-1).q,/marketing_opt_in=FALSE/);
+ assert.doesNotMatch(seen.at(-1).q,/(?:SET|,)\s*marketing_opt_in=FALSE/);
  assert.equal(seen.at(-1).values[0],'fictional-owned-user');
 });
 test('nao permite acionar WhatsApp nem email sem consentimento valido, ou fora da origem',async()=>{
