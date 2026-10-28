@@ -4,7 +4,7 @@ import {readFileSync} from 'node:fs';
 import {createFreeSignupHandler,freeSignupEnabled,publicFreeSignupReady,FREE_SIGNUP_TERMS_VERSION} from '../lib/free-signup-handler.js';
 import {signupCaptchaConfigured,verifySignupBot,safeSignupBody,verifiedClientIp} from '../lib/free-signup-security.js';
 import crypto from 'node:crypto';
-import {normalizeWhatsapp,protectWhatsapp,signupPiiKeyConfigured} from '../lib/free-signup-contact.js';
+import {normalizeWhatsapp,protectWhatsapp,signupPiiKeyConfigured,EMAIL_MARKETING_NOTICE_VERSION} from '../lib/free-signup-contact.js';
 const env={
   VERCEL_ENV:'preview',VERCEL_URL:'preview-bc-test.vercel.app',
   BC_PUBLIC_FREE_SIGNUP_ENABLED:'true',BC_FREE_SIGNUP_PREVIEW_ISOLATED:'YES',
@@ -77,7 +77,9 @@ test('aceite versionado vai para pendencia e historico atomico do aluno',async()
  const pending=calls.find(x=>x.source.includes('INSERT INTO public.central_free_signup_pending'));
  assert.ok(pending);
  assert.match(pending.source,/age_declared_at,terms_accepted_at,terms_version/);
- assert.equal(pending.values.at(-1),FREE_SIGNUP_TERMS_VERSION);
+ assert.equal(pending.values.at(-3),FREE_SIGNUP_TERMS_VERSION);
+ assert.equal(pending.values.at(-2),false);
+ assert.equal(pending.values.at(-1),null);
  r=res();await handler(req({action:'confirm',token:'T'.repeat(43)}),r);
  assert.equal(r.statusCode,201);
  const atomic=calls.find(x=>x.source.includes('WITH claimed AS'));
@@ -283,4 +285,55 @@ test('consentimento comercial expresso possui versao e nao ativa Premium',async(
  assert.equal(captured.values[5],true);
  assert.equal(captured.values[6],'signup-whatsapp-v1-2026-10-27');
  assert.doesNotMatch(captured.q,/'premium'/);
+});
+
+test('consentimento de e-mail e independente de WhatsApp, facultativo e versionado',async()=>{
+ const cfg={...env,BC_SIGNUP_PII_KEY:'55'.repeat(32)};
+ const requests=[];
+ const sql=async(strings,...values)=>{
+  const q=strings.join('?');
+  if(q.includes('central_free_signup_limits'))return [{identity_hash:'test'}];
+  if(q.includes('SELECT 1 FROM public.central_users'))return [];
+  if(q.includes('INSERT INTO public.central_free_signup_pending')){requests.push({q,values});return [];}
+  throw Error('SQL inesperado');
+ };
+ const h=createFreeSignupHandler({env:cfg,sqlProvider:()=>sql,sendEmail:async()=>true});
+ const a=res();
+ await h(req({action:'request',name:'Aluno Sem WhatsApp',email:'emailmarketing@example.invalid',
+  password:'SenhaSeguraLonga123!',emailMarketingOptIn:true}),a);
+ assert.equal(a.statusCode,200);
+ let saved=requests.at(-1);
+ assert.equal(saved.values[5],false);
+ assert.equal(saved.values[6],null);
+ assert.equal(saved.values.at(-2),true);
+ assert.equal(saved.values.at(-1),EMAIL_MARKETING_NOTICE_VERSION);
+ assert.match(saved.q,/email_marketing_opt_in/);
+ const b=res();
+ await h(req({action:'request',name:'Aluno Sem WhatsApp',email:'emailmarketing@example.invalid',
+  password:'SenhaSeguraLonga123!',emailMarketingOptIn:'true'}),b);
+ assert.equal(b.statusCode,200);
+ saved=requests.at(-1);
+ assert.equal(saved.values.at(-2),false);
+ assert.equal(saved.values.at(-1),null);
+ const c=res();
+ await h(req({action:'request',name:'Aluno Com WhatsApp',email:'whatsapp@example.invalid',
+  password:'SenhaSeguraLonga123!',marketingOptIn:true,whatsapp:'(85) 99999-9999',
+  emailMarketingOptIn:false}),c);
+ assert.equal(c.statusCode,200);
+ saved=requests.at(-1);
+ assert.equal(saved.values[5],true);
+ assert.equal(saved.values.at(-2),false);
+ assert.equal(saved.values.at(-1),null);
+});
+test('consentimentos de e-mail e WhatsApp sao salvos separadamente na mesma transacao FREE',async()=>{
+ const {handler,calls}=setup();
+ const out=res();
+ await handler(req({action:'confirm',token:'T'.repeat(43)}),out);
+ assert.equal(out.statusCode,201);
+ const q=calls.find(x=>x.source.includes('WITH claimed AS')).source;
+ assert.match(q,/email_marketing_opt_in,email_marketing_notice_version/);
+ assert.match(q,/claimed\.email_marketing_opt_in/);
+ assert.match(q,/claimed\.email_marketing_notice_version/);
+ assert.match(q,/'free','active'/);
+ assert.doesNotMatch(q,/'premium'/);
 });
