@@ -51,8 +51,10 @@ jobs:
           [[ "${PGUSER:-}" == bc_neon_backup_ro && -n "${PGPASSWORD:-}" ]] || { echo 'NEON_AUTH_CHECK_BLOCKED: usuario ou senha ausente'; exit 1; }
           diagfile="$(mktemp)"
           trap 'rm -f "$diagfile"' EXIT
+          test -s /etc/ssl/certs/ca-certificates.crt || { echo 'NEON_HOST_CA_MISSING'; exit 1; }
           policy="$(
             docker run --rm --network host \
+              --mount type=bind,src=/etc/ssl/certs/ca-certificates.crt,dst=/etc/ssl/certs/ca-certificates.crt,readonly \
               --env PGHOST --env PGPORT --env PGDATABASE --env PGUSER \
               --env PGPASSWORD --env PGSSLMODE --env PGSSLROOTCERT \
               --env PGCONNECT_TIMEOUT --env PGOPTIONS \
