@@ -10,7 +10,13 @@ const allModules=[...index.modules,...index.complement],expected={cf:15,adm:20,c
 const asJSON=x=>JSON.parse(JSON.stringify(x));
 test('109 módulos centrais e lote jurídico aprovado correspondem à matriz corrente',()=>{
  const approved=vm.runInContext('DATA_LED_APPROVED',context);
- assert.equal(data.length,11806+approved.length);assert.equal(index.modules.length,109);assert.equal(new Set(data.map(q=>q.id)).size,data.length);
+ // Fonte independente: o teste Constitucional valida 3.005 questões-base e 98 complementares.
+ // A revisão removeu 25 itens obsoletos do índice, sem reintroduzir conteúdos não aprovados.
+ assert.equal(data.length,11781+approved.length);
+ assert.equal(report.totalQuestions,11781);
+ assert.equal(report.disciplines.reduce((n,d)=>n+d.totalQuestions,0),11781);
+ assert.ok(!report.disciplines.some(d=>d.id==='trabalho'||d.id==='ptrabalho'));
+ assert.equal(index.modules.length,109);assert.equal(new Set(data.map(q=>q.id)).size,data.length);
  assert.ok(approved.every(q=>q.id.startsWith('LED-')&&q.origin==='authorial'&&q.question?.source?.startsWith('https://')));
  assert.equal(!!vm.runInContext('DISCIPLINES.consumidor',context),approved.some(q=>q.discipline==='consumidor'));
  for(const [d,n] of Object.entries(expected))assert.equal(index.modules.filter(m=>m.discipline===d).length,n);
