@@ -68,6 +68,29 @@ function build(raw){
  return {body,words,mins:Math.max(1,Math.round(words/205))};
 }
 function buildFromHtml(html,raw){let h=0;const body=String(html).replace(/<h([23])>([\s\S]*?)<\/h\1>/g,(m,l,t)=>{const txt=t.replace(/<[^>]+>/g,'').replace(/&amp;/g,'&');return '<h'+l+' id="cpcsec-'+(++h)+'-'+normKey(txt).replace(/\s+/g,'-').slice(0,60)+'">'+t+'</h'+l+'>'});const words=norm(raw).split(/\s+/).filter(Boolean).length;return {body,words,mins:Math.max(1,Math.round(words/205))}}
+
+/* Quadro editorial CPC M11: transcrição literal aditiva e rastreável. */
+function addVerifiedM11Table(article,original){
+ const anchor=[...article.querySelectorAll('h2')].find(h=>h.textContent.trim()==="13. JULGAMENTO CONFORME O ESTADO — ARTS. 354 A 356");
+ if(!anchor)return false;
+ const headers=["Artigo","Síntese da apostila"];
+ const rows=[["Art. 354","extinção nas hipóteses legais."],["Art. 355","julgamento antecipado total quando não há necessidade de outras provas ou quando a revelia produz o efeito do art. 344 e não há requerimento de prova do art. 349."],["Art. 356","julgamento parcial quando pedido/parcela é incontroversa ou está em condições de imediato julgamento. Decisão interlocutória de mérito; agravo de instrumento; liquidação/cumprimento desde logo."]];
+ const source=String(original||'').replace(/\s+/g,' ').trim();
+ if(!rows.every(row=>source.includes(row[0]+': '+row[1])))return false;
+ const wrap=document.createElement('div');
+ wrap.className='table-wrap';wrap.dataset.cpcEditorialPilot='m11';
+ const table=document.createElement('table'),caption=document.createElement('caption');
+ caption.textContent="Julgamento conforme o estado — três artigos descritos na fonte, preservadas as hipóteses e os exemplos originais.";table.appendChild(caption);
+ const thead=document.createElement('thead'),tr=document.createElement('tr');
+ headers.forEach(value=>{const th=document.createElement('th');th.scope='col';th.textContent=value;tr.appendChild(th)});
+ thead.appendChild(tr);table.appendChild(thead);
+ const tbody=document.createElement('tbody');
+ rows.forEach(cells=>{const tr=document.createElement('tr');cells.forEach((value,i)=>{
+  const el=document.createElement(i===0?'th':'td');if(i===0)el.scope='row';el.textContent=value;tr.appendChild(el)
+ });tbody.appendChild(tr)});
+ table.appendChild(tbody);wrap.appendChild(table);anchor.after(wrap);
+ return true;
+}
 function chapters(mode){return source()?.chapters?.[mode]||[]}
 function findHeading(ch){
  if(!current||!ch)return null;
@@ -122,6 +145,7 @@ function open(mode){
  '<div class="bc-native-reader-body"><nav class="bc-native-toc"><div class="bc-native-toc-label">Capítulos</div>'+toc(mode)+'</nav>'+
  '<main class="bc-native-scroll"><article class="bc-native-article"><div class="bc-native-kicker">'+(mode==='summary'?'PRIMEIRA LEITURA + REVISÃO':'TEORIA INTEGRAL')+'</div><h1>'+esc(data.title)+'</h1><p class="lead">'+(mode==='summary'?'Versão condensada para compreender e revisar o módulo.':'Apostila completa convertida para leitura nativa dentro da Central.')+'</p>'+
  '<section class="bc-native-study-progress"><div><b>Progresso de leitura</b><span data-cpc-reader-value></span></div><div class="bc-native-study-progress-track"><span data-cpc-reader-studybar></span></div><small>Os capítulos recebem check conforme você avança. Você também pode marcar manualmente no índice.</small></section>'+parsed.body+'</article></main></div></section>';
+ if(mode==='complete')addVerifiedM11Table(ov.querySelector('.bc-native-article'),raw);
  document.body.appendChild(ov);document.body.style.overflow='hidden';
  current={mode,overlay:ov,scroll:ov.querySelector('.bc-native-scroll'),article:ov.querySelector('.bc-native-article'),font:Number(localStorage.getItem(key('font'))||16),map:[]};
  current.article.style.fontSize=current.font+'px';

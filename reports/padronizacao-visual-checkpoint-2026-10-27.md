@@ -447,3 +447,14 @@ Contagens de elementos efetivamente renderizados no navegador (mesmas nas três 
 - **Panorama CPC atualizado:** M02–M08 contêm 1 quadro HTML consultivo piloto cada (**7 módulos**). M09–M20 seguem com **0 tabelas HTML** detectadas. Os módulos M02–M08 também contêm quadros remanescentes a reconstruir individualmente quando inequívocos.
 - **Próximo lote conservador:** examinar CPC M09–M11, identificar quadros cujas células possam ser comprovadas pela fonte, e evitar reconstrução inferida de extrações de PDF com palavras deslocadas.
 - Sem merge, deploy em Production, mudança de Neon, alteração de permissões Premium ou publicação da Preview privada.
+
+## Etapa 9.4 — Acabamento editorial CPC M09–M11 (28/10/2026)
+
+- Os três módulos usam fonte `complete` compacta em string multiline em `content/cpc/m09/m10/m11-native-data.js`. A conferência verificou que são apostilas completas menores que muitos módulos anteriores; extensão não equivale, por si só, a perda, mas permanece **pendente de revisão editorial contra as fontes de origem**.
+- Alterados **somente** os leitores `ui/cpc-m09/m10/m11-native-study-reader.js` e seus testes; os dados originais completos/resumidos não foram reescritos.
+- **M09:** quadro das hipóteses do art. 311 (incisos I–IV), 4 linhas × 2 colunas, transcrição literal das expressões `I:`, `II:`, `III:`, `IV:`.
+- **M10:** indeferimento × improcedência liminar, 2 linhas × 2 colunas, com as caracterizações originais; sem acrescentar ou reinterpretar causas de cabimento.
+- **M11:** julgamento conforme o estado, arts. 354–356, 3 linhas × 2 colunas, com sínteses inteiras da fonte original e sem cortes nem simplificações.
+- Os quadros só surgem se cada descrição constar literalmente da teoria original. São consultas adicionais antes da transcrição existente, com `table`, `caption`, `th`, `.table-wrap` e scroll horizontal local; nada é apagado do texto original nem exibido no resumo. Os botões de retorno dos três módulos já estavam corretos e foram mantidos.
+- O arquivo `tests/etapa6-cpc-m02-m20-browser.mjs` passa a verificar essas três novas tabelas em três larguras e regressões de todos os 19 módulos CPC. **Status inicial: aguardar conclusão real do CI antes de declarar etapa aprovada.**
+- Sem deploy em Production, merge `main`, alteração de permissões Premium ou Neon. A Preview privada integrada exige validação e autorização separadas.

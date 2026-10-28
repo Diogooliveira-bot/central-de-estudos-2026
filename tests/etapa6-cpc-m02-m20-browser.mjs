@@ -80,6 +80,39 @@ try{
     assert.equal(m.h2Border,'5px',label+': H2 não recebeu padrão Premium');
     assert.equal(m.tablesSemantic,true,label+': tabelas perderam estrutura');
 
+    // Etapa 9.4 — M09–M11: correspondência literal com a teoria original.
+    if([9,10,11].includes(n)){
+      const pilot=await page.evaluate(n=>{
+        const o=document.getElementById('cpcM'+String(n).padStart(2,'0')+'NativeReaderOverlay');
+        const wrap=o.querySelector('[data-cpc-editorial-pilot="m'+n+'"]');
+        const table=wrap?.querySelector('table');
+        if(!table)return {found:false};
+        const raw=window.BASE_NATIVE_CONTENT.cpc['m'+String(n).padStart(2,'0')].complete.replace(/\s+/g,' ');
+        const rows=[...table.tBodies[0].rows].map(r=>[...r.cells].map(c=>c.textContent.trim()));
+        const originalContent=o.querySelector('.bc-native-article').textContent;
+        const labels={9:'12. TUTELA DA EVIDÊNCIA — ART. 311',10:'9. INDEFERIMENTO X IMPROCEDÊNCIA LIMINAR',11:'13. JULGAMENTO CONFORME O ESTADO — ARTS. 354 A 356'};
+        return {
+          found:true,rows:rows.length,cols:table.tHead.rows[0].cells.length,
+          sourceVerified:rows.every(row=>raw.includes(row[0]+': '+row[1])),
+          semantic:[...table.tBodies[0].rows].every(r=>r.cells[0].tagName==='TH'&&r.cells[0].scope==='row'),
+          caption:!!table.caption?.textContent.includes('apostila'),
+          scrollX:wrap.scrollWidth>wrap.clientWidth,
+          originalVisible:originalContent.includes(labels[n]),
+          back:o.querySelector('[data-cpc-back]')?.textContent.trim()
+        };
+      },n);
+      assert.equal(pilot.found,true,label+': quadro não renderizou');
+      assert.equal(pilot.rows,{9:4,10:2,11:3}[n],label+': número de linhas');
+      assert.equal(pilot.cols,2,label+': número de colunas');
+      assert.equal(pilot.sourceVerified,true,label+': quadro difere da apostila original');
+      assert.equal(pilot.semantic,true,label+': cabeçalho semântico ausente');
+      assert.equal(pilot.caption,true,label+': legenda editorial ausente');
+      assert.equal(pilot.originalVisible,true,label+': transcrição original foi suprimida');
+      assert.equal(pilot.back,'← Voltar ao M'+String(n).padStart(2,'0'),label+': botão de retorno');
+      if(width===390)assert.equal(pilot.scrollX,true,label+': quadro sem rolagem horizontal interna');
+    }
+
+
     if([6,7,8].includes(n)){
       const pilot=await page.evaluate(n=>{
         const o=document.getElementById('cpcM0'+n+'NativeReaderOverlay');
@@ -197,6 +230,7 @@ try{
     await page.waitForTimeout(70);
     const summaryPremium=await page.locator('#'+id).evaluate(o=>o.classList.contains('bc-apostila-v1'));
     assert.equal(summaryPremium,false,label+': tema exclusivo aplicado no resumo');
+    if([9,10,11].includes(n))assert.equal(await page.locator('#'+id+' [data-cpc-editorial-pilot]').count(),0,label+': novo quadro Premium vazou para o resumo');
     if([6,7,8].includes(n))assert.equal(await page.locator('#'+id+' [data-cpc-editorial-pilot]').count(),0,label+': novo quadro vazou ao resumo');
     if([3,4,5].includes(n))assert.equal(await page.locator('#'+id+' [data-cpc-editorial-pilot]').count(),0,label+': quadro do completo apareceu no resumo');
     if(n===2)assert.equal(await page.locator('#'+id+' [data-cpc-editorial-pilot]').count(),0,label+': quadro Premium vazou para o resumo');
