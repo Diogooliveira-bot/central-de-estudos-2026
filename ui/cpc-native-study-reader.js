@@ -139,7 +139,7 @@ function build(raw,mode){
    if(b.type==='p')return '<p>'+esc(b.text)+'</p>';
    if(b.type==='ul')return '<ul>'+b.items.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul>';
    if(b.type==='callout')return '<aside class="bc-native-callout '+b.kind+'"><b>'+esc(b.label)+'</b><div>'+esc(b.text)+'</div></aside>';
-   if(b.type==='lawTable')return '<div class="bc-cpc-m01-table-scroll" tabindex="0" role="region" aria-label="Lei seca esquematizada: deslize para visualizar as colunas"><table class="bc-cpc-m01-reading-table"><thead><tr><th scope="col">Bloco</th><th scope="col">Dispositivos</th><th scope="col">Ponto de atenção</th></tr></thead><tbody>'+b.rows.map(r=>'<tr><th scope="row">'+esc(r.topic)+'</th><td>'+esc(r.law)+'</td><td>'+esc(r.note)+'</td></tr>').join('')+'</tbody></table></div>';
+   if(b.type==='lawTable')return '<div class="bc-cpc-m01-table-scroll" tabindex="0" role="region" aria-label="Lei seca esquematizada: deslize para visualizar as colunas"><table class="bc-cpc-m01-reading-table"><caption>Lei seca esquematizada — blocos, dispositivos e pontos de atenção.</caption><thead><tr><th scope="col">Bloco</th><th scope="col">Dispositivos</th><th scope="col">Ponto de atenção</th></tr></thead><tbody>'+b.rows.map(r=>'<tr><th scope="row">'+esc(r.topic)+'</th><td>'+esc(r.law)+'</td><td>'+esc(r.note)+'</td></tr>').join('')+'</tbody></table></div>';
    return '';
  }).join('');
  const words=norm(raw).split(/\s+/).filter(Boolean).length;
