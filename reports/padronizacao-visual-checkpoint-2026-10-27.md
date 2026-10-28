@@ -409,4 +409,16 @@ Contagens de elementos efetivamente renderizados no navegador (mesmas nas três 
 - Cada linha é **validada literalmente** contra o campo `complete` antes de mostrar a nova tabela. Se faltar qualquer linha ou âncora, a tabela adicional não é exibida. Isso protege contra desencontro com o conteúdo original.
 - Todas as tabelas usam `<table>`, `<caption>`, `<thead>`, `<tbody>`, `th[scope=row]` e a classe responsiva `.table-wrap`. A nova vista é aditiva apenas ao conteúdo completo. Os botões "Voltar ao M01" desses três leitores foram corrigidos para M03/M04/M05 sem alterar a ação nem o destino.
 - Regressão estendida dos **19 módulos CPC × 390/768/1366 px** verifica 5/5/4 linhas, fidelidade à fonte, scroll local de tabela no celular, isolamento dos resumos e progresso após reabrir, somada aos critérios anteriores para M02.
-- **Status ao criar:** CI pendente; não considerar os três quadros aprovados antes da confirmação do workflow e das evidências. Mesmo após CI, a revisão editorial humana completa dos textos, quadros restantes e experiência integrada seguirá pendente.
+- **Status:** CI aprovado em 57/57 casos, detalhes no encerramento técnico abaixo; revisão editorial e experiência integrada seguem pendentes.
+
+## Etapa 9.2 — Encerramento técnico dos pilotos CPC M03–M05 (28/10/2026)
+
+- **Workflow:** [GitHub Actions 40607564248](https://github.com/Diogooliveira-bot/central-de-estudos-2026/actions/runs/40607564248), `completed/success` no commit `b33ae9d91f204297094aeaac290c447943a030f5`.
+- **Matriz:** 19 módulos CPC × 390, 768 e 1366 px = **57/57 verificações aprovadas**, sem JavaScript errors, sem overflow global e com checkboxes persistentes. Outros módulos não foram alterados.
+- **Quadros consultivos preservando a fonte:** CPC M03 — 5 linhas e 3 colunas ("Critérios de competência"); CPC M04 — 5 linhas e 2 colunas (faixas de honorários); CPC M05 — 4 linhas e 3 colunas (classificação do litisconsórcio). Todos com `<caption>`, cabeçalhos e `scope=row`, rolagem horizontal local confirmada no viewport de 390 px.
+- **Fidelidade:** cada linha foi confrontada literalmente com o original no CI e também é confrontada antes da renderização. Nenhuma substituição do texto original do material; o adicional é exibido **somente no modo completo**. No modo resumido, quadros Premium não aparecem.
+- **Navegação:** botões de retorno indicam M03, M04 ou M05, com o mesmo comportamento de fechar e retornar ao módulo.
+- **Artefato de evidências:** [12781491929](https://github.com/Diogooliveira-bot/central-de-estudos-2026/actions/runs/40607564248/artifacts/12781491929), aproximadamente 6,25 MB de capturas e `metricas.json`, expiração prevista em **11/11/2026**.
+- **Panorama CPC atual:** M02, M03, M04 e M05 têm 1 tabela HTML consultiva cada no leitor completo; M06–M20 continuam com 0 tabelas HTML identificadas. Este resultado **não** significa que todos os quadros dos M02–M05 foram reconstruídos.
+- **Pendências:** cotejamento editorial humano de todos os quadros remanescentes, revisão jurídica das fontes, validação em sessão Premium real na Preview protegida e autorização do ambiente de deploy privado. Não usar esta execução como aprovação para `main`/Production.
+- **Próxima etapa recomendada:** inventariar e tratar CPC M06–M08 de modo conservador, começando por comparativos com limites claros de coluna; se o OCR não permitir atribuição inequívoca, registrar para confronto manual em vez de inventar conteúdo.
