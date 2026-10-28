@@ -97,6 +97,22 @@ function addVerifiedM05Comparison(article,original){
  table.appendChild(body);wrap.appendChild(table);anchor.after(wrap);
  return true;
 }
+
+/* Reparação pontual de separador colado na extração de PDF do CPC M05.
+ * Usa o trecho literal comprovado na fonte; não altera content/, IDs,
+ * cabeçalhos, índice, resumos nem marcação de progresso. */
+function repairM05PartBoundary(raw){
+ const literal='IRDR são exceções expressasPARTE IV - PEGADINHAS FCC';
+ const text=String(raw||'');
+ if(text.split(literal).length!==2)return text;
+ return text.replace(literal,'IRDR são exceções expressas\n\nPARTE IV - PEGADINHAS FCC');
+}
+function markM05PartDivider(article){
+ const matching=[...article.querySelectorAll('p')].filter(p=>p.textContent.trim()==='PARTE IV - PEGADINHAS FCC');
+ if(matching.length!==1)return false;
+ matching[0].classList.add('bc-cpc-m05-part-divider');
+ return true;
+}
 function chapters(mode){return source()?.chapters?.[mode]||[]}
 function findHeading(ch){
  if(!current||!ch)return null;
@@ -143,7 +159,7 @@ function close(){
 function open(mode){
  const data=source(); if(!data){alert('Conteúdo do CPC M05 ainda está carregando.');return}
  close();
- const raw=mode==='summary'?data.summary:data.complete,parsed=(mode==='summary'&&data.summaryHtml)?buildFromHtml(data.summaryHtml,raw):build(raw),label=mode==='summary'?'Conteúdo resumido':'Conteúdo completo';
+ const raw=mode==='summary'?data.summary:data.complete,renderRaw=mode==='complete'?repairM05PartBoundary(raw):raw,parsed=(mode==='summary'&&data.summaryHtml)?buildFromHtml(data.summaryHtml,raw):build(renderRaw),label=mode==='summary'?'Conteúdo resumido':'Conteúdo completo';
  const ov=document.createElement('div');ov.id=OVERLAY_ID;ov.className='bc-native-reader-overlay';
  ov.innerHTML='<section class="bc-native-reader" role="dialog" aria-modal="true">'+
  '<header class="bc-native-reader-head"><div class="bc-native-reader-title"><b>CPC M05 — '+esc(data.title)+'</b><small>'+label+' • leitura incorporada à Base Completa</small></div><span class="bc-native-reader-meta">'+parsed.words.toLocaleString('pt-BR')+' palavras • ~'+parsed.mins+' min</span><button class="bc-native-reader-close" data-cpc-close>×</button><div class="bc-native-reader-progress-track"><div class="bc-native-reader-progress"></div></div></header>'+
@@ -152,6 +168,7 @@ function open(mode){
  '<main class="bc-native-scroll"><article class="bc-native-article"><div class="bc-native-kicker">'+(mode==='summary'?'PRIMEIRA LEITURA + REVISÃO':'TEORIA INTEGRAL')+'</div><h1>'+esc(data.title)+'</h1><p class="lead">'+(mode==='summary'?'Versão condensada para compreender e revisar o módulo.':'Apostila completa convertida para leitura nativa dentro da Central.')+'</p>'+
  '<section class="bc-native-study-progress"><div><b>Progresso de leitura</b><span data-cpc-reader-value></span></div><div class="bc-native-study-progress-track"><span data-cpc-reader-studybar></span></div><small>Os capítulos recebem check conforme você avança. Você também pode marcar manualmente no índice.</small></section>'+parsed.body+'</article></main></div></section>';
  if(mode==='complete')addVerifiedM05Comparison(ov.querySelector('.bc-native-article'),raw);
+ if(mode==='complete')markM05PartDivider(ov.querySelector('.bc-native-article'));
  document.body.appendChild(ov);document.body.style.overflow='hidden';
  current={mode,overlay:ov,scroll:ov.querySelector('.bc-native-scroll'),article:ov.querySelector('.bc-native-article'),font:Number(localStorage.getItem(key('font'))||16),map:[]};
  current.article.style.fontSize=current.font+'px';
