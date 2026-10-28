@@ -49,8 +49,10 @@ actual="$(gpg --batch --with-colons --fingerprint "$BC_GPG_RECIPIENT_FPR" 2>/dev
 expected="$(printf '%s' "$BC_GPG_RECIPIENT_FPR" | tr '[:lower:]' '[:upper:]')"
 [[ "$actual" == "$expected" ]] || die 'Fingerprint não corresponde à chave importada.'
 export PGSSLMODE=verify-full PGSSLROOTCERT=/etc/ssl/certs/ca-certificates.crt PGCONNECT_TIMEOUT=15
+[[ -s "$PGSSLROOTCERT" ]] || die 'Autoridades certificadoras TLS ausentes no runner.'
 pg18(){
   docker run --rm --network host \
+    --mount type=bind,src=/etc/ssl/certs/ca-certificates.crt,dst=/etc/ssl/certs/ca-certificates.crt,readonly \
     --env PGHOST --env PGPORT --env PGDATABASE --env PGUSER \
     --env PGPASSWORD --env PGSSLMODE --env PGSSLROOTCERT --env PGCONNECT_TIMEOUT \
     postgres:18 "$@"
