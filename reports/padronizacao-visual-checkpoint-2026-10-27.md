@@ -571,3 +571,14 @@ Contagens de elementos efetivamente renderizados no navegador (mesmas nas três 
 - A matriz no banco confirmou que `theory.summary` é habilitada para ambos; `theory.complete`, `tec.links` e `qc.links` são desabilitadas para Gratuito e habilitadas para Premium.
 - Testes de navegador foram iniciados com perfis separados, mas o último retorno era **`pending`, passo zero**, sem evidência de leitura CPC ou progresso real. **Não declarar Etapa 10.4 homologada** sem resultados autenticados end-to-end.
 - Nenhuma alteração em `main`, Production, alunos reais ou pagamentos. Banco consultado somente para estas verificações.
+
+## Etapa 10.4.3 — Testes autenticados, reprodução de falha no Gratuito e correção pendente (28/10/2026)
+
+- **Relatório:** [etapa10-4-3-cpc-sessoes-autenticadas-e-correcao-free-2026-10-28.md](./etapa10-4-3-cpc-sessoes-autenticadas-e-correcao-free-2026-10-28.md).
+- **Autenticação real confirmada** nas duas contas fictícias por `GET /api/auth?action=me`. Plano real de cada conta confirmado no Neon de teste (Premium e Gratuito ativos).
+- **Premium:** painel e 20 módulos CPC visíveis; abertura efetiva M05, tabelas, progresso **não concluídos** devido ao modal inicial e limite da automação.
+- **Gratuito:** falha real e repetida de carregamento `Preparando sua Central / Não foi possível concluir o carregamento`; ainda não foi possível verificar resumo CPC ou bloqueio real dos conteúdos pagos.
+- **Correção de bootstrap isolada em `central-v119.html`:** não injetar scripts premium-only para aluno Gratuito, mantendo 403 do servidor e resumos nativos projetados. Sem alterações em permissões, conteúdos originais, bancos reais ou Production.
+- **GitHub Actions** [40674760691](https://github.com/Diogooliveira-bot/central-de-estudos-2026/actions/runs/40674760691): aprovado **3/3 testes novos de bootstrap**, **40/40 segurança e autenticação**, **11/11 tema e pilotos**, **60/60 Chromium**; [artefato 12809229793](https://github.com/Diogooliveira-bot/central-de-estudos-2026/actions/runs/40674760691/artifacts/12809229793).
+- **Deployment privado corrigido ainda NÃO APROVADO:** novo workflow em [40674969770](https://github.com/Diogooliveira-bot/central-de-estudos-2026/actions/runs/40674969770), exige `bc-preview-private`, SHA fixado em `123820c59525da2883951e822a6d622d64b85fcc`. Somente depois de READY repetir os cenários autenticados e validar progresso real.
+- **Classificação:** Etapa 10.4 ainda parcial; Etapa 10.5 iniciada como correção necessária, não publicada; Production intacta.
