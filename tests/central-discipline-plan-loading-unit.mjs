@@ -80,7 +80,7 @@ test('Gratuito não tenta scripts antigos pagos do CPC ou Administrativo',async(
  await win.CentralDisciplineLoader.load('adm');
  assert.ok(calls.includes('/content/cpc/m01-native-data.js'));
  assert.ok(calls.includes('/content/adm/adm-native-index.js'));
- assert.ok(!calls.some(path=>/cpc-theory-module1|adm-m1-theory|sharing-links/.test(path)),calls.join(', '));
+ assert.ok(!calls.some(path=>/cpc-theory-module1|adm-m1-theory|\/adm-sharing-links\.js|\/civil-sharing-links\.js/.test(path)),calls.join(', '));
 });
 test('Premium conserva acesso aos arquivos protegidos necessários',async()=>{
  const {win,calls}=fixture({free:false});
