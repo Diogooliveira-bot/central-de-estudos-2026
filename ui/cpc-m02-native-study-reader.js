@@ -109,6 +109,18 @@ function addVerifiedM02Comparison(article,original){
  table.appendChild(tbody);wrap.appendChild(table);anchor.after(wrap);
  return true;
 }
+
+/* Corrige somente os rótulos de títulos comprovadamente duplicados na fonte
+ * extraída de PDF. IDs, ordem dos capítulos, texto da apostila e progresso
+ * permanecem inalterados. Aplicação exclusiva na leitura completa.
+ */
+function fixCpcM02Labels(overlay){
+ const replacements=new Map([["3. 9. CLASSIFICAÇÃO DAS AÇÕES E DAS TUTELAS","9. CLASSIFICAÇÃO DAS AÇÕES E DAS TUTELAS"],["23. 19. DECORE — REVISÃO DE 5 MINUTOS","19. DECORE — REVISÃO DE 5 MINUTOS"]]);
+ for(const heading of overlay.querySelectorAll('.bc-native-article h2,.bc-native-article h3')){
+  const old=heading.textContent.trim(),clean=replacements.get(old);
+  if(clean){heading.dataset.bcOriginalHeading=old;heading.textContent=clean;}
+ }
+}
 function chapters(mode){return source()?.chapters?.[mode]||[]}
 function findHeading(ch){
  if(!current||!ch)return null;
@@ -164,6 +176,7 @@ function open(mode){
  '<main class="bc-native-scroll"><article class="bc-native-article"><div class="bc-native-kicker">'+(mode==='summary'?'PRIMEIRA LEITURA + REVISÃO':'TEORIA INTEGRAL')+'</div><h1>'+esc(data.title)+'</h1><p class="lead">'+(mode==='summary'?'Versão condensada para compreender e revisar o módulo.':'Apostila completa convertida para leitura nativa dentro da Central.')+'</p>'+
  '<section class="bc-native-study-progress"><div><b>Progresso de leitura</b><span data-cpc-reader-value></span></div><div class="bc-native-study-progress-track"><span data-cpc-reader-studybar></span></div><small>Os capítulos recebem check conforme você avança. Você também pode marcar manualmente no índice.</small></section>'+parsed.body+'</article></main></div></section>';
  if(mode==='complete')addVerifiedM02Comparison(ov.querySelector('.bc-native-article'),raw);
+ if(mode==='complete')fixCpcM02Labels(ov);
  document.body.appendChild(ov);document.body.style.overflow='hidden';
  current={mode,overlay:ov,scroll:ov.querySelector('.bc-native-scroll'),article:ov.querySelector('.bc-native-article'),font:Number(localStorage.getItem(key('font'))||16),map:[]};
  current.article.style.fontSize=current.font+'px';
