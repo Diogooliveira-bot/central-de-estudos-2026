@@ -670,3 +670,10 @@ Contagens de elementos efetivamente renderizados no navegador (mesmas nas três 
 - **Sessões de teste:** duas contas fictícias Gratuito e Premium autenticaram-se, entitlements corretos. O Neon de homologação registrou sincronização Premium de Direito Civil M05, porém **não há evidência equivalente de persistência de CPC na Preview**.
 - **Decisão:** *acabamento e homologação técnica local do CPC concluídos*; **homologação E2E em produção-like com login e sincronização CPC não certificada**. Não promover, nem afirmar aprovação jurídica final antes de verificar o leitor e o 403 por sessão real no deployment.
 - **Segurança:** `main`, Production, dados de alunos reais e pagamentos intactos.
+
+## Etapa 10.4 — E2E com dois alunos de homologação (28/10/2026)
+
+- **Relatório atualizado:** [etapa10-4-3-validacao-sessoes-cpc-2026-10-28.md](./etapa10-4-3-validacao-sessoes-cpc-2026-10-28.md).
+- **Navegadores concluídos:** [Gratuito](https://agent.tinyfish.ai/runs/adcac97b-feac-4065-8acb-d7bfe1d659cd) e [Premium](https://agent.tinyfish.ai/runs/926eefdb-5fab-499b-a5f7-7af025d33f43) confirmaram `/api/auth?action=me` com aluno autenticado e `/api/plans?action=me` com direitos esperados (Gratuito sem teoria completa/TEC/QC e 20 questões Lei em Dia/dia; Premium com teoria completa/TEC/QC).
+- **Ainda bloqueado:** leitura visual M01–M20 e persistência do progresso. No Gratuito, a Central não terminou de carregar no navegador; no Premium, a interface principal mostrou CPC com 20 módulos, mas o agente não entrou na apostila. O redirecionamento para `/` é comportamento previsto em `central-v119.html`, e rotas imaginadas `/#/cpc` não devem ser usadas. Abrir CPC clicando na disciplina.
+- **Classificação:** validação de autenticação e plano **aprovada**, homologação editorial autenticada **pendente**; não houve alterações em Production ou `main`. Para completar, usar navegação visual no Work ou navegador próprio do proprietário com as duas contas sintéticas, sem compartilhar senhas.
