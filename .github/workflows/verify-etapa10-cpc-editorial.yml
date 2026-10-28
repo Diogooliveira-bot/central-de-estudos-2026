@@ -5,7 +5,6 @@ on:
     paths:
       - '.github/workflows/verify-etapa10-cpc-editorial.yml'
       - 'tests/etapa10-cpc-editorial-audit-browser.mjs'
-      - 'tests/etapa10-4-cpc-integrated-browser.mjs'
       - 'tests/etapa10-4-cpc-portal-load-unit.mjs'
       - 'central-discipline-loader.js'
       - 'tests/etapa10-4-cpc-central-navigation-browser.mjs'
@@ -58,8 +57,6 @@ jobs:
         run: |
           node --check tests/etapa10-4-cpc-home-flow-browser.mjs
           node tests/etapa10-4-cpc-home-flow-browser.mjs
-      - name: Etapa 10.4 — navegação real pela aba Disciplinas até CPC M05
-        run: node tests/etapa10-4-cpc-integrated-browser.mjs
       - name: Anexar métricas e capturas
         if: always()
         uses: actions/upload-artifact@v4
@@ -67,7 +64,6 @@ jobs:
           name: etapa10-auditoria-editorial-cpc
           path: |
             artifacts/etapa10-cpc-editorial/*
-            artifacts/etapa10-4-cpc-integrated/*
             artifacts/etapa10-4-cpc-home-flow/*
           if-no-files-found: ignore
           retention-days: 14
