@@ -66,9 +66,13 @@ try{
    if(await nav.isVisible()){
     try{await nav.click({timeout:2000})}catch{await page.evaluate(()=>window.centralHardOpen('disciplines'))}
    }else await page.evaluate(()=>window.centralHardOpen('disciplines'));
-   await page.locator('#disciplinesView:not(.hidden) .disc-card[data-id="cpc"]').waitFor({timeout:20000});
+   await page.locator('#disciplinesView:not(.hidden)').waitFor({timeout:20000});
+   // O painel moderno transforma o cartão em [data-study-open-subject],
+   // preservando o onclick anterior apenas como fallback.
+   const card=page.locator('#disciplineGrid [data-study-open-subject="cpc"], #disciplineGrid .disc-card[data-id="cpc"]').first();
+   await card.waitFor({state:'visible',timeout:20000});
    navVisible=true;
-   await page.locator('#disciplinesView .disc-card[data-id="cpc"]').click({timeout:15000});
+   await card.click({timeout:15000});
    await page.waitForFunction(()=>window.CentralDisciplineLoader?.isReady('cpc')===true,{timeout:65000});
    cpcReady=true;
    const stats=await page.evaluate(()=>({
