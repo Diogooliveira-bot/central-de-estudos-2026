@@ -114,6 +114,10 @@ test('link cadastro aparece só quando a API confirmar que está habilitado',()=
  assert.match(page,/id="publicSignupLink"[^>]*hidden/);
  assert.match(page,/free-signup-status/);
  assert.match(page,/if\(signup\.enabled\)/);
+ assert.match(page,/id="firstAccessInviteHint"/);
+ assert.match(page,/firstAccessInviteHint'\)\.hidden=true/);
+ assert.match(page,/id="commercialSiteLink"/);
+ assert.match(page,/base-completa-vitrine-estatica-2026\.vercel\.app/);
  assert.match(auth,/free-signup-status/);
  assert.match(auth,/publicFreeSignupReady\(\)/);
 });
