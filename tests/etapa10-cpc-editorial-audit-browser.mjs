@@ -154,6 +154,51 @@ try{
      assert.equal(editorial.onlyVisualClass,true,label+': o divisor ganhou ID de capítulo');
      if(width===390)await page.locator('#'+id+' .bc-cpc-m05-part-divider').screenshot({path:dir+'/m05-390-parte-iv.png'});
     }
+
+    if(n===5){
+      const finalQuiz=await page.evaluate(id=>{
+        const article=document.getElementById(id).querySelector('.bc-native-article');
+        const headings=[...article.querySelectorAll('h2.bc-cpc-m05-quiz-heading')];
+        const prompt=article.querySelector('p.bc-cpc-m05-quiz-prompt');
+        const divider=article.querySelector('[data-bc-editorial-boundary="parte-viii"]');
+        const source=window.BASE_NATIVE_CONTENT.cpc.m05.complete;
+        const question1=headings.find(h=>h.textContent.trim().startsWith('1. Todo litisconsórcio necessário'));
+        const last=headings.find(h=>h.textContent.trim().startsWith('15. Na denunciação'));
+        const rawText=article.innerText;
+        return {
+          originalUnchanged:source.includes('mérito.2. O requerimento')&&source.includes('Art. 129.PARTE VIII'),
+          headings:headings.length,
+          unchangedH2:[...article.querySelectorAll('h2')].length===69,
+          prompt:prompt?.textContent.trim().startsWith('2. O requerimento de limitação'),
+          promptFont:prompt?parseFloat(getComputedStyle(prompt).fontSize):0,
+          h2Font:question1?parseFloat(getComputedStyle(question1).fontSize):0,
+          firstQuestion:!!question1,lastQuestion:!!last,
+          questionResponse:prompt?.nextElementSibling?.textContent.trim()==='Gabarito: CERTO. Art. 113, § 2º.',
+          priorAnswer:prompt?.previousElementSibling?.textContent.trim().endsWith('uniformidade do mérito.'),
+          afterAnswer:divider?.previousElementSibling?.textContent.trim().endsWith('Gabarito: CERTO. Art. 129.'),
+          part8:divider?.textContent.trim()==='PARTE VIII - ROTEIRO DE REVISÃO',
+          part8NoId:!!divider&&!divider.id,
+          nextSection:divider?.nextElementSibling?.tagName==='H2'&&divider.nextElementSibling.textContent.trim().startsWith('45. REVISÃO EM 10 MINUTOS'),
+          noGlues:!rawText.includes('mérito.2.')&&!rawText.includes('Art. 129.PARTE VIII'),
+        };
+      },id);
+      assert.equal(finalQuiz.originalUnchanged,true,label+': fonte do módulo alterada');
+      assert.equal(finalQuiz.headings,14,label+': esperadas 14 questões originais em H2');
+      assert.equal(finalQuiz.unchangedH2,true,label+': quantidade de H2 foi alterada');
+      assert.equal(finalQuiz.firstQuestion,true,label+': questão 1 não identificada');
+      assert.equal(finalQuiz.lastQuestion,true,label+': questão 15 não identificada');
+      assert.equal(finalQuiz.prompt,true,label+': questão 2 não separada');
+      assert.equal(finalQuiz.promptFont,18,label+': tipografia da questão 2');
+      assert.equal(finalQuiz.h2Font,18,label+': tipografia das questões H2');
+      assert.equal(finalQuiz.questionResponse,true,label+': gabarito da questão 2 não está isolado');
+      assert.equal(finalQuiz.priorAnswer,true,label+': gabarito da questão 1 truncado');
+      assert.equal(finalQuiz.afterAnswer,true,label+': resposta da questão 15 truncada');
+      assert.equal(finalQuiz.part8,true,label+': título da Parte VIII ausente');
+      assert.equal(finalQuiz.part8NoId,true,label+': divisor gerou novo capítulo');
+      assert.equal(finalQuiz.nextSection,true,label+': capítulo 45 não preservado');
+      assert.equal(finalQuiz.noGlues,true,label+': trechos do PDF ainda estão colados');
+      if(width===390)await page.locator('#'+id+' .bc-cpc-m05-quiz-prompt').screenshot({path:dir+'/m05-390-questao-2.png'});
+    }
     assert.deepEqual(errors,[],label+': erro JavaScript');
     findings.push({...result,errors});
     if(width===390||n===1||n===20){
