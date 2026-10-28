@@ -642,3 +642,13 @@ Contagens de elementos efetivamente renderizados no navegador (mesmas nas três 
 - Sessões autenticadas anteriores em navegador comprovadas **somente no deployment velho** `f5dc763b...`. Nova Preview necessita login das contas fictícias e testes manuais ou navegador autenticado para validação de acessos e persistência. Nova automação por navegador terceiro não foi iniciada devido à insuficiência de saldo; não houve falha comprovada da nova Preview.
 - Um link temporário com TTL 3600 segundos foi disponibilizado ao proprietário fora dos relatórios (não incluir tokens de acesso em commits). Plano de ensaio: **Estudo livre → Disciplinas → Direito Processual Civil → M05** no Premium e Gratuito; verificar acesso correto, título Parte VIII e persistência Premium, bloqueio Gratuito e, separadamente, HTTP 403.
 - **Conclusão:** Etapa 10.4 permanece **parcial** até prova de execução na Preview implantada. Sem mudanças em Production, `main`, Neon real ou pagamentos. [Relatório atualizado](./etapa10-4-5-cpc-fluxo-gratuito-integrado-2026-10-28.md).
+
+## Etapa 10.5 — Correção de carregamento Civil e CPC em Gratuito (28/10/2026)
+
+- **Falha recebida em captura:** `Não foi possível carregar` no painel Civil; origem mapeada ao `placeholder()` do `central-discipline-loader.js`.
+- **Causa verificada no código:** a lista suplementar `CentralTheoryFiles` incluía scripts de links/teoria Premium mesmo quando o aluno Gratuito já tinha sua lista principal filtrada; 403 correto do servidor bloqueava o carregamento completo da disciplina.
+- **Patch isolado:** `central-v119.html` exporta o filtro de scripts Premium e flag do plano à Central; `central-discipline-loader.js` filtra a lista suplementar também, sem remover conteúdo pago do Premium nem tornar arquivos públicos.
+- **CI [40755456846](https://github.com/Diogooliveira-bot/central-de-estudos-2026/actions/runs/40755456846), commit `7efe886...`: success**. Novos testes **5/5**; Chromium com Civil M01–M15 em **Gratuito e Premium**, mais 60/60 CPC, simulação explícita de 403, tudo aprovado. Ressalva: exceção não bloqueante `Unexpected end of JSON input` observada na fixture do Gratuito permanece fora do escopo.
+- **Relatório completo:** [etapa10-5-correcao-carregamento-civil-2026-10-28.md](./etapa10-5-correcao-carregamento-civil-2026-10-28.md).
+- **Próximo passo:** [aprovação do workflow privado 40755836130](https://github.com/Diogooliveira-bot/central-de-estudos-2026/actions/runs/40755836130), verificar Vercel Preview READY com commit `7efe886...` e testar sessões reais de homologação. **Não afirmar produção corrigida** antes de publicação controlada.
+- Nenhuma modificação em `main`, Production, banco real, conteúdos jurídicos ou dados de progresso.
