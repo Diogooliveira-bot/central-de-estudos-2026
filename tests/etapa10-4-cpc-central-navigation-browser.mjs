@@ -108,13 +108,16 @@ try{
    await chapters.waitFor({state:'visible',timeout:12000});
    await chapters.click();
    await page.waitForFunction(()=>document.getElementById('cpcM05NativeReaderOverlay')?.classList.contains('bc-reading-chapters-open'),null,{timeout:12000});
-   const check=overlay.locator('[data-cpc-chapter-check]').first();
-   const chapter=await check.getAttribute('data-cpc-chapter-check');
-   assert.ok(chapter,'Checkbox de capítulo ausente');
-   const initial=await page.evaluate(id=>window.CpcM05NativeReader.chapterDone('complete',id),chapter);
+   const chapter=await page.evaluate(()=>{
+    const checks=[...document.querySelectorAll('#cpcM05NativeReaderOverlay [data-cpc-chapter-check]')];
+    return checks.find(b=>!window.CpcM05NativeReader.chapterDone('complete',b.dataset.cpcChapterCheck))?.dataset.cpcChapterCheck || '';
+   });
+   assert.ok(chapter,'Nenhum capítulo pendente disponível para testar marcação');
+   const check=overlay.locator('[data-cpc-chapter-check="'+chapter+'"]');
+   assert.equal(await page.evaluate(id=>window.CpcM05NativeReader.chapterDone('complete',id),chapter),false,'Capítulo já estava concluído');
    await check.click();
    const toggled=await page.evaluate(id=>window.CpcM05NativeReader.chapterDone('complete',id),chapter);
-   assert.notEqual(toggled,initial,'Checkbox não alterou o estado');
+   assert.equal(toggled,true,'Checkbox não marcou o capítulo pendente');
    await page.evaluate(()=>window.CpcM05NativeReader.close());
    await page.evaluate(()=>window.CpcM05NativeReader.open('complete'));
    const reopened=await page.evaluate(id=>window.CpcM05NativeReader.chapterDone('complete',id),chapter);
