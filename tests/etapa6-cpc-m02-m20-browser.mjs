@@ -80,6 +80,35 @@ try{
     assert.equal(m.h2Border,'5px',label+': H2 não recebeu padrão Premium');
     assert.equal(m.tablesSemantic,true,label+': tabelas perderam estrutura');
 
+    if([18,19,20].includes(n)){
+      const proof=await page.evaluate(n=>{
+        const o=document.getElementById('cpcM'+n+'NativeReaderOverlay');
+        const wrap=o.querySelector('[data-cpc-editorial-pilot="m'+n+'"]');
+        const table=wrap?.querySelector('table');
+        if(!table)return {exists:false};
+        const rows=[...table.tBodies[0].rows].map(r=>[...r.cells].map(c=>c.textContent.trim()));
+        const full=window.BASE_NATIVE_CONTENT.cpc['m'+n].complete.replace(/\s+/g,' ');
+        const delim=n===18?' = ':': ';
+        return {
+          exists:true,count:rows.length,cols:table.tHead.rows[0].cells.length,
+          faithful:rows.every(row=>full.includes(row.join(delim))),
+          semantic:table.caption!==null&&[...table.tBodies[0].rows].every(r=>r.cells[0].tagName==='TH'&&r.cells[0].scope==='row'),
+          columns:[...table.tHead.rows[0].cells].every(c=>c.tagName==='TH'&&c.scope==='col'),
+          scroll:wrap.scrollWidth>wrap.clientWidth,
+          original:o.querySelector('.bc-native-article').textContent.includes({18:'29. QUADRO-MESTRE',19:'15. COISA JULGADA COLETIVA',20:'9. IAC X IRDR'}[n])
+        };
+      },n);
+      assert.equal(proof.exists,true,label+': tabela não encontrada');
+      assert.equal(proof.count,{18:4,19:3,20:2}[n],label+': linhas alteradas');
+      assert.equal(proof.cols,2,label+': colunas alteradas');
+      assert.equal(proof.faithful,true,label+': não corresponde ao original');
+      assert.equal(proof.semantic,true,label+': falta semântica da tabela');
+      assert.equal(proof.columns,true,label+': falta cabeçalho de coluna');
+      assert.equal(proof.original,true,label+': título original ausente');
+      if(width===390)assert.equal(proof.scroll,true,label+': scroll interno ausente');
+    }
+
+
     if([15,16,17].includes(n)){
       const pilot=await page.evaluate(n=>{
         const o=document.getElementById('cpcM'+n+'NativeReaderOverlay');
@@ -303,6 +332,7 @@ try{
     await page.waitForTimeout(70);
     const summaryPremium=await page.locator('#'+id).evaluate(o=>o.classList.contains('bc-apostila-v1'));
     assert.equal(summaryPremium,false,label+': tema exclusivo aplicado no resumo');
+    if([18,19,20].includes(n))assert.equal(await page.locator('#'+id+' [data-cpc-editorial-pilot]').count(),0,label+': quadro vazou para resumo');
     if([15,16,17].includes(n))assert.equal(await page.locator('#'+id+' [data-cpc-editorial-pilot]').count(),0,label+': quadro adicional apareceu no resumo');
     if([12,13,14].includes(n))assert.equal(await page.locator('#'+id+' [data-cpc-editorial-pilot]').count(),0,label+': quadro do completo vazou para o resumo');
     if([9,10,11].includes(n))assert.equal(await page.locator('#'+id+' [data-cpc-editorial-pilot]').count(),0,label+': novo quadro Premium vazou para o resumo');
