@@ -529,3 +529,12 @@ Contagens de elementos efetivamente renderizados no navegador (mesmas nas três 
 - **Evidências:** [12784812995](https://github.com/Diogooliveira-bot/central-de-estudos-2026/actions/runs/40615263401/artifacts/12784812995) e [12784902747](https://github.com/Diogooliveira-bot/central-de-estudos-2026/actions/runs/40615263698/artifacts/12784902747); retenção aproximada até 11/11/2026.
 - **Etapas estimadas para esta frente CPC:** 10.3 (revisão residual), 10.4 (Preview Premium autenticada), 10.5 (correções/aceite, se necessário). Não representam a conclusão das demais disciplinas, da atualização jurídica ou da comercialização da Base Completa.
 - Nenhuma atualização autorizada ou realizada em `main`, Production, Neon, planos ou Preview protegida.
+
+## Etapa 10.3 — Revisão editorial residual CPC (28/10/2026)
+
+- **Relatório detalhado:** [etapa10-3-revisao-residual-cpc-2026-10-28.md](./etapa10-3-revisao-residual-cpc-2026-10-28.md).
+- **Execução técnica concluída:** separadas as junções de gabarito 1 → questão 2 e gabarito 15 → "PARTE VIII" do teste final do **CPC M05**; 15 questões destacadas na leitura completa. Apenas DOM e CSS da Preview; arquivo de fonte, resumo, número de H2 e IDs/checkpoints originais preservados.
+- **CI confirmada:** [auditoria 40616347534](https://github.com/Diogooliveira-bot/central-de-estudos-2026/actions/runs/40616347534) **60/60**, [regressão 40616082342](https://github.com/Diogooliveira-bot/central-de-estudos-2026/actions/runs/40616082342) **57/57** em 390/768/1366 px.
+- **Evidências:** [auditoria 12784913993](https://github.com/Diogooliveira-bot/central-de-estudos-2026/actions/runs/40616347534/artifacts/12784913993) e [regressão 12785395982](https://github.com/Diogooliveira-bot/central-de-estudos-2026/actions/runs/40616082342/artifacts/12785395982), expiração prevista até 11/11/2026.
+- **Pendências identificadas:** junção ainda presente na fonte `direito material.26. QUEM PODE REQUER` do M05, cuja correção de H2 exige preservar/migrar índices de progresso; auditoria de outros quadros, suficiência editorial dos módulos curtos M09/M10/M15/M17, revisão jurídica e teste com aluno autenticado.
+- **Próxima etapa recomendada:** 10.4 — homologação integrada em Preview privada com conta Premium e Gratuito em homologação, após confirmar o deployment/commit autorizado e sem modificar Production. 10.5 somente se surgirem correções ou pendências de aceite.
