@@ -101,3 +101,24 @@ As duas execuções previamente registradas como `pending` **terminaram com stat
 **Resultado verificado:** ✅ autenticação real das duas contas fictícias e seus planos; ✅ matriz de direitos em resposta real da API; ⚠️ bloqueio HTTP 403 de arquivos CPC no Gratuito ainda não comprovado; ⚠️ leitor Premium M01–M20 e M05 não aberto; ⚠️ persistência do progresso não testada; ⚠️ falha de carregamento no Gratuito não diagnosticada. **Etapa 10.4 permanece parcialmente aprovada, não encerrada.**
 
 **Próximo ensaio:** usar a navegação real **Disciplinas → Direito Processual Civil → M05**, comparar resposta HTTP do ativo pago, abrir/fechar leitor Premium e testar marcação/persistência. Evitar recriar contas. Sessões têm TTL de 2 horas; se expiradas, autenticar novamente com as mesmas senhas.
+
+## Atualização — resultados finais dos testes autenticados no navegador (28/10/2026)
+
+As duas execuções que constavam pendentes **foram concluídas**, com evidência de API autenticada. Links para inspeção técnica privada:
+
+- [Teste Gratuito — execução adcac97b](https://agent.tinyfish.ai/runs/adcac97b-feac-4065-8acb-d7bfe1d659cd): resposta `authenticated:true`, `role:aluno`, plano `free`, status `active`. A resposta de `/api/plans?action=me` confirmou `theory.summary:enabled`, `theory.complete:false`, `qc.links:false`, `tec.links:false` e `lei_em_dia` limite de **20 por dia**. O navegador exibiu "Não foi possível concluir o carregamento" ao tentar abrir a interface da Central; o módulo CPC não foi visualizado. Não se verificou o HTTP status direto dos materiais Premium nessa sessão.
+- [Teste Premium — execução 926eefdb](https://agent.tinyfish.ai/runs/926eefdb-5fab-499b-a5f7-7af025d33f43): resposta `authenticated:true`, `role:aluno`, `plan:premium`, `status:active`, e permissões de teoria completa e links QC/TEC ativas. A interface principal listou **Direito Processual Civil — 20 módulos**, mas o agente não conseguiu abrir uma apostila. Tentativas de navegar para rotas imaginadas `/#/cpc` e `/central` terminaram em 404; sem evidência de progresso ou visual da M05.
+
+### Diagnóstico de navegação
+
+A leitura de `central-v119.html` e `vercel.json` no commit implantado mostrou que a SPA usa `/central-v119.html` como *bootstrap* e, após carregar a página `/index.html?central_source=...`, executa `history.replaceState(..., '/')` para manter a Central na raiz. Portanto, **o redirecionamento para `/` é previsto**, e rotas `/#/cpc` não são o percurso correto. Existe um botão de disciplina `Direito Processual Civil` com ação `centralHardSubject('cpc')`. A falta de navegação adequada no teste Premium **não demonstra que o conteúdo falha para o aluno**.
+
+### Resultado atualizado, sem extrapolação
+
+**Aprovado:** autenticação real de ambas as contas, identificação do plano, matriz de direitos retornada pela API, implantação Preview READY no commit aprovado e testes unitários/Chromium local previamente confirmados.
+
+**Pendente:** abrir o CPC por clique de disciplina, testar a entrega HTTP autenticada/negada de arquivos completos (não confundir entitlements com execução efetiva do bloqueio), conferir M01–M20 e M05, validar leitura e persistência. A falha de carregamento apontada no Gratuito necessita diagnóstico adicional.
+
+O navegador externo que fez os testes não dispõe mais de saldo para novas ações no mesmo serviço; não iniciar cargas repetidas sem autorização para eventual custo. Uma alternativa é usar **ChatGPT Work**, que o proprietário deve iniciar na interface, para navegar no Preview protegido com os dois perfis de homologação já configurados, sem mudar Production ou `main`.
+
+**Etapa 10.4: autenticação e regras de plano confirmadas; validação funcional do leitor e do progresso NÃO concluída.**
