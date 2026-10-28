@@ -25,6 +25,9 @@ const server=createServer(async(req,res)=>{
  if(urlPath==='/api/plans'&&url.searchParams.get('action')==='me'){json(res,200,{role:'aluno',plan,status:'active',isStaff:false,entitlements:entitlement()});return}
  if(urlPath==='/api/sync'){json(res,200,{exists:false,revision:1});return}
  if(urlPath.startsWith('/api/')){calls.push(url.pathname);json(res,200,{});return}
+ if(plan==='free' && urlPath==='/content/civil/civil-sharing-links.js'){
+  calls.push('403 '+urlPath);json(res,403,{error:'Links de Direito Civil exclusivos do Premium'});return;
+ }
  if(plan==='free' && urlPath==='/content/cpc/cpc-fixation-questions-v1.js'){
   calls.push('403 '+urlPath);res.writeHead(403,{'Content-Type':'application/json; charset=utf-8'});res.end('{"error":"Recurso exclusivo do Premium"}');return;
  }
@@ -91,6 +94,25 @@ try{
     assert.equal(stats.target,true,'disciplina CPC não apareceu');
     assert.equal(stats.module05,true,'módulo CPC M05 ausente');
     assert.equal(stats.readerM05,'function','leitor M05 não disponível');
+   }
+   // Reproduz o print do cliente: ao abrir Civil, o leitor não pode
+   // transformar um 403 Premium de arquivo legado em erro da disciplina.
+   await page.evaluate(()=>window.CentralDisciplineLoader.load('civil'));
+   await page.waitForFunction(()=>window.CentralDisciplineLoader?.isReady('civil')===true,{timeout:50000});
+   const civil=await page.evaluate(()=>({
+    loaded:window.CentralDisciplineLoader?.isReady('civil')===true,
+    error:window.CentralDisciplineLoader?.hasError('civil')===true,
+    modules:document.querySelectorAll('.subject[data-id="civil"] .cv-module').length,
+    deniedMessage:document.querySelector('.subject[data-id="civil"] .central-discipline-loading')?.textContent?.includes('Não foi possível carregar')||false,
+   }));
+   assert.equal(civil.loaded,true,variant+': Civil não carregou');
+   assert.equal(civil.error,false,variant+': falha ao carregar Civil');
+   assert.ok(civil.modules>=15,variant+': módulos Civil não renderizados ('+civil.modules+')');
+   assert.equal(civil.deniedMessage,false,variant+': placeholder de erro no Civil');
+   if(variant==='free'){
+    assert.equal(calls.includes('403 /content/civil/civil-sharing-links.js'),false,'Gratuito requisitou os links Civil Premium durante o carregamento');
+    const denied=await page.evaluate(()=>fetch('/content/civil/civil-sharing-links.js',{cache:'no-store'}).then(r=>r.status));
+    assert.equal(denied,403,'servidor deve negar os links Civil Premium ao Gratuito');
    }
    mode='ok';
   } catch(error){mode=String(error).slice(0,550)}
