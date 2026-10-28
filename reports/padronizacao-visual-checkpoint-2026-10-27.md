@@ -591,3 +591,11 @@ Contagens de elementos efetivamente renderizados no navegador (mesmas nas três 
 - **Navegação esclarecida:** `/central-v119.html` monta `index.html` e normaliza a URL para `/` intencionalmente; isso não é falha comprovada. Para abrir o CPC, usar clique **Disciplinas → Direito Processual Civil**, não rotas `/central` ou `/#/cpc`.
 - **Contrato de acesso:** arquivos CPC `mXX-native-data.js` podem retornar JS **projetado somente com resumos** no Gratuito; não exigir 403 indiscriminadamente. Verificar que conteúdo completo não seja entregue.
 - **Conclusão:** a segurança de autenticação/entitlements está homologada; **Etapa 10.4 permanece parcial até testar a UI, as apostilas e o progresso reais**. Evitar qualquer merge/publicação até essa verificação ou correção. Nenhuma mudança em Production/`main`/banco real.
+
+## Etapa 10.4.3 — Resultado dos testes autenticados (28/10/2026)
+
+- Os navegadores com contas de homologação **terminaram**, substituindo a anotação antiga de `pending`. [Relatório atualizado](./etapa10-4-3-validacao-sessoes-cpc-2026-10-28.md).
+- **Gratuito:** login real `authenticated:true`, plano `free` ativo via API, `theory.summary=true`, `theory.complete=false`, TEC/QC desativados; **Lei em Dia 20/dia**. Tentativa de abrir a Central apresentou erro de carregamento. Bloqueio HTTP do arquivo completo ainda não medido.
+- **Premium:** login real `authenticated:true`, plano `premium` ativo via API, teoria completa habilitada. O navegador apresentou dashboard inicial mas não conseguiu abrir os módulos CPC; progresso de leitura não testado. **Não é correto declarar aprovação completa nem defeito comprovado da apostila.**
+- **Diagnóstico da rota:** em `central-v119.html` o bootstrap chama `history.replaceState` para `/` intencionalmente. A navegação suportada é **Disciplinas → Direito Processual Civil**, via `centralHardSubject('cpc')`; tentativas de navegar para `/#/cpc` ou `/central` não comprovam falha.
+- **Próximo ensaio dirigido:** clicar na UI de disciplina CPC com cada conta e avaliar apostila M05, 403 real para Gratuito, persistência Premium, falha de carregamento Gratuito (se reproduzir). Sem modificar Production.
