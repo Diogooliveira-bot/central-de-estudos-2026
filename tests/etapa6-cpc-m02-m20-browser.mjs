@@ -80,6 +80,41 @@ try{
     assert.equal(m.h2Border,'5px',label+': H2 não recebeu padrão Premium');
     assert.equal(m.tablesSemantic,true,label+': tabelas perderam estrutura');
 
+    if([15,16,17].includes(n)){
+      const pilot=await page.evaluate(n=>{
+        const o=document.getElementById('cpcM'+n+'NativeReaderOverlay');
+        const wrap=o.querySelector('[data-cpc-editorial-pilot="m'+n+'"]');
+        const t=wrap?.querySelector('table');
+        if(!t)return {exists:false};
+        const raw=window.BASE_NATIVE_CONTENT.cpc['m'+n].complete.replace(/\s+/g,' ').trim();
+        const rows=[...t.tBodies[0].rows].map(row=>[...row.cells].map(c=>c.textContent.trim()));
+        const proofs=n===15?rows.map(r=>r.join('→')):n===16?rows.map(r=>r.join(': ')):['Embargos = via ampla; pré-executividade = via estreita.'];
+        return {
+          exists:true,
+          rows:rows.length,
+          cols:t.tHead.rows[0].cells.length,
+          verified:proofs.every(x=>raw.includes(x)),
+          semanticRows:[...t.tBodies[0].rows].every(r=>r.cells[0].tagName==='TH'&&r.cells[0].scope==='row'),
+          semanticHead:[...t.tHead.rows[0].cells].every(c=>c.tagName==='TH'&&c.scope==='col'),
+          caption:!!t.caption?.textContent.trim(),
+          localScroll:wrap.scrollWidth>wrap.clientWidth,
+          originalPresent:o.querySelector('.bc-native-article').textContent.includes({15:'21. QUADRO DOS RECURSOS',16:'19. QUADRO COMPARATIVO DAS ESPÉCIES',17:'29. EMBARGOS X PRÉ-EXECUTIVIDADE'}[n]),
+          back:o.querySelector('[data-cpc-back]')?.textContent.trim()
+        };
+      },n);
+      assert.equal(pilot.exists,true,label+': quadro não apareceu');
+      assert.equal(pilot.rows,{15:6,16:6,17:2}[n],label+': número de linhas');
+      assert.equal(pilot.cols,2,label+': número de colunas');
+      assert.equal(pilot.verified,true,label+': informações não localizadas literalmente na fonte');
+      assert.equal(pilot.semanticRows,true,label+': cabeçalho de linha inválido');
+      assert.equal(pilot.semanticHead,true,label+': cabeçalho de coluna inválido');
+      assert.equal(pilot.caption,true,label+': legenda ausente');
+      assert.equal(pilot.originalPresent,true,label+': corpo original ocultado');
+      assert.equal(pilot.back,'← Voltar ao M'+n,label+': retorno não corresponde ao módulo');
+      if(width===390)assert.equal(pilot.localScroll,true,label+': tabela não rola dentro do contêiner no celular');
+    }
+
+
     // Etapa 9.5 — CPC M12–M14: verificações de tabela, fonte e resumos.
     if([12,13,14].includes(n)){
       const pilot=await page.evaluate(n=>{
@@ -268,6 +303,7 @@ try{
     await page.waitForTimeout(70);
     const summaryPremium=await page.locator('#'+id).evaluate(o=>o.classList.contains('bc-apostila-v1'));
     assert.equal(summaryPremium,false,label+': tema exclusivo aplicado no resumo');
+    if([15,16,17].includes(n))assert.equal(await page.locator('#'+id+' [data-cpc-editorial-pilot]').count(),0,label+': quadro adicional apareceu no resumo');
     if([12,13,14].includes(n))assert.equal(await page.locator('#'+id+' [data-cpc-editorial-pilot]').count(),0,label+': quadro do completo vazou para o resumo');
     if([9,10,11].includes(n))assert.equal(await page.locator('#'+id+' [data-cpc-editorial-pilot]').count(),0,label+': novo quadro Premium vazou para o resumo');
     if([6,7,8].includes(n))assert.equal(await page.locator('#'+id+' [data-cpc-editorial-pilot]').count(),0,label+': novo quadro vazou ao resumo');
