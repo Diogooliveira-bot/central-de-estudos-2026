@@ -61,7 +61,17 @@
  entryUrl.searchParams.delete('direct');
  entryUrl.searchParams.delete('central_source');
  var scripts=['ui/study-objectives-catalog-v1.js?v=20261023-remove-labor-disciplines-v1','content/tjpb-2026-verticalized.js?v=20261020exam1','content/trt8-2026-verticalized.js?v=20261021multiexam2','ui/appearance-themes-v1.js?v=20261006themes2','civil-decorando-index-v1.js?v=20261009sync1','ui/external-question-filters-v1.js?v='+BUILD];
- function tag(src){return '<scr'+'ipt defer src="/'+src+'"></scr'+'ipt>';}
+ // Free readers receive server-side projected native summaries. Paid-only JS
+ // must not be injected as <script>, since 403 is an expected denial and
+ // causes central-boot-ready.js to consider the whole dashboard broken.
+ var freeStudent=false;
+ function isPremiumOnlyScript(src){
+  var p=String(src||'').split('?')[0].replace(/^\/+/,'');
+  return /^(?:central-structural-v\d+\/civil-course-\d+\.js|penal-full-theory-data-\d+\.js|penal-full-theory-ui-v\d+\.js|portugues-tec-data-v\d+\.js|content\/penal-cpp-tec-links\.js|portugues-m1[1-7]-runtime-v\d+\.js|portugues-m2-tec-link-v\d+\.js|adm-m9-m20-bundle-v\d+\.js|adm-m\d+-content-p\d+-v\d+\.js|adm-m\d+-theory-v\d+\.js|cpc-theory-module\d+-v\d+\.js|civil-theory-module\d+(?:-part\d+|-runtime)?-v\d+\.js|content\/adm\/m(?:0[1-9]|1\d|20)-approved-complete\.js|content\/(?:cf|civil|penal)\/m\d{2}-teoria-guiada-data\.js|content\/rlm-tjce-2026\/(?:aulas-[a-z-]+|complementos-teoria)\.js|content\/civil\/(?:civil-native-images|civil-teoria-guiada-lei-seca)\.js|content\/penal\/penal-teoria-guiada-(?:questions-v\d+|lei-seca)\.js|content\/(?:adm|civil|cpp)\/[^/]*sharing-links\.js|central-structural-v\d+\/(?:cf|penal|cpc)-questions-\d+-init\.js)$/.test(p)
+   || (/^(?:content\/|central-structural-v\d+\/).+\.js$/.test(p) && /(?:question|questoes|questões|notebook|catalog)/i.test(p)
+     && !/^(?:content\/qc-notebook-catalog\.js|content\/qc-sharing-links\.js|content\/cpc\/cpc-sharing-links\.js)$/.test(p));
+ }
+ function tag(src){return freeStudent&&isPremiumOnlyScript(src)?'':'<scr'+'ipt defer src="/'+src+'"></scr'+'ipt>';}
  function prepareDisciplineLoading(html){
   html=html.replace(/(<meta name="central-source-version" content=")[^"]+("\s*\/?>)/i,'$1'+APP_VERSION+'$2');
   var groups={cf:[],penal:[],cpc:[],cpp:[],civil:[],adm:[]};
@@ -83,6 +93,7 @@
   });
   groups.civil=groups.civil.filter(function(src){var path=src.split('?')[0].replace(/^\//,'');return path!=='content/civil/civil-native-index.js'&&path!=='content/civil/civil-sharing-links.js'&&path!=='ui/civil-native-study-v1.js'});
   groups.civil=['content/civil/civil-native-index.js?v=20261018civiljur1'].concat(groups.civil,['content/civil/civil-sharing-links.js?v=20261009civilsharing2','ui/civil-bens-apostila-v1.js?v=20261011m03a1','content/civil/m01-teoria-guiada-data.js?v=20261022civilpilot1','content/civil/m02-teoria-guiada-data.js?v=20261022civilpilot1','content/civil/m03-teoria-guiada-data.js?v=20261022civilpilot1','content/civil/m04-teoria-guiada-data.js?v=20261022civilpilot1','content/civil/m05-teoria-guiada-data.js?v=20261022civilpilot1','content/civil/m06-teoria-guiada-data.js?v=20261022civilpilot2','content/civil/m07-teoria-guiada-data.js?v=20261022civilpilot2','content/civil/m08-teoria-guiada-data.js?v=20261022civilpilot2','content/civil/m09-teoria-guiada-data.js?v=20261022civilpilot2','content/civil/m10-teoria-guiada-data.js?v=20261022civilpilot2','content/civil/m11-teoria-guiada-data.js?v=20261022civilpilot2','content/civil/m12-teoria-guiada-data.js?v=20261022civilpilot3','content/civil/m13-teoria-guiada-data.js?v=20261022civilpilot3','content/civil/m14-teoria-guiada-data.js?v=20261022civilpilot3','content/civil/m15-teoria-guiada-data.js?v=20261022civilpilot3','content/civil/civil-teoria-guiada-lei-seca.js?v=20261023leiseca1','content/civil/civil-teoria-guiada-reader-v1.js?v=20261023leiseca1','ui/civil-native-study-v1.js?v=20261022civilpilot3']);
+  if(freeStudent)Object.keys(groups).forEach(function(key){groups[key]=groups[key].filter(function(src){return !isPremiumOnlyScript(src)})});
   var config='<scr'+'ipt>window.__centralDisciplineFiles='+JSON.stringify(groups)+';</scr'+'ipt>';
   return html.replace(/<head\b[^>]*>/i,function(head){return head+config+tag('central-home-progress-data.js?v='+BUILD).replace(' defer','')+tag('central-discipline-loader.js?v='+BUILD).replace(' defer','')});
  }
@@ -90,12 +101,23 @@
   var authResponse=await fetch('/api/auth?action=me',{cache:'no-store'});
   var authState=authResponse.ok?await authResponse.json():null;
   if(!authState||!authState.authenticated||!authState.user){location.replace('/login.html?next='+encodeURIComponent(entryUrl.pathname+entryUrl.search));return}
+  // Use the server-authoritative plan. Fail closed on unexpected responses;
+  // do not infer privileges from an email, DOM element or localStorage.
+  if(authState.previewGuest===true)freeStudent=true;
+  else{
+   var planResponse=await fetch('/api/plans?action=me',{cache:'no-store'});
+   var planState=planResponse.ok?await planResponse.json():null;
+   if(!planState||(planState.plan!=='free'&&planState.plan!=='premium'&&planState.isStaff!==true))
+    throw new Error('Não foi possível validar o plano de estudos');
+   freeStudent=planState.plan==='free'&&!planState.isStaff;
+  }
   window.BASE_COMPLETA_USER=authState.user;
   window.__BASE_COMPLETA_PREVIEW_GUEST__=authState.previewGuest===true;
   window.__BASE_COMPLETA_USER_ID__=String(authState.user.id||'');
   window.__BASE_COMPLETA_USER_ROLE__=String(authState.user.role||'aluno');
   await (await import('/sync-local-state.js?v=20261007')).prepareLocalUserState(authState.user.id);
   var response=await fetch('/index.html?central_source='+BUILD,{cache:'no-store'});if(!response.ok)throw new Error('Falha HTTP '+response.status);var html=await response.text();
+  if(freeStudent)html=html.replace(/<script\b[^>]*\bsrc=["']([^"']+)["'][^>]*>\s*<\/script>/gi,function(node,src){return isPremiumOnlyScript(src)?'':node});
   var authBoot='<scr'+'ipt>window.CENTRAL_VERSION='+JSON.stringify(APP_VERSION)+';window.BASE_COMPLETA_USER='+JSON.stringify(authState.user)+';window.__BASE_COMPLETA_PREVIEW_GUEST__='+JSON.stringify(authState.previewGuest===true)+';window.__BASE_COMPLETA_USER_ID__='+JSON.stringify(String(authState.user.id||''))+';window.__BASE_COMPLETA_USER_ROLE__='+JSON.stringify(String(authState.user.role||'aluno'))+';</scr'+'ipt>';
   html=html.replace(/<head\b[^>]*>/i,function(head){return head+authBoot});
   html=html.replace(/cpc-study-system-v1\.js\?v=[^"'<>]+/g,'cpc-study-system-v1.js?v=20261004cpcall2');html=html.replace('v6.6.75 • Plano de 6 meses','v'+APP_VERSION+' • Plano de 6 meses');html=html.replace(/\/central-structural-v66119\/runtime\.js\?v=[^\"'<>]+/g,'/central-structural-v66119/runtime.js?v='+BUILD);html=html.replace('<span class="central-version-v41">v6.6.74</span>','<span class="central-version-v41">v'+APP_VERSION+'</span>');html=html.replace(/<link\b[^>]*\bhref=["'][^"']*base-completa-visual-v1\.css[^"']*["'][^>]*>/gi,'');
