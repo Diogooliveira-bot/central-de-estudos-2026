@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import {createFreeSignupHandler,freeSignupEnabled} from '../lib/free-signup-handler.js';
+import {createFreeSignupHandler,freeSignupEnabled,publicFreeSignupReady} from '../lib/free-signup-handler.js';
 import {signupCaptchaConfigured,verifySignupBot,safeSignupBody,verifiedClientIp} from '../lib/free-signup-security.js';
 import crypto from 'node:crypto';
 import {normalizeWhatsapp,protectWhatsapp,signupPiiKeyConfigured} from '../lib/free-signup-contact.js';
@@ -37,6 +37,16 @@ test('somente em Preview isolada e com sinal explicito; Production bloqueada',()
   const captchaEnv={...env,VERCEL_ENV:'production',BC_PUBLIC_FREE_SIGNUP_PRODUCTION_APPROVED:'YES',BC_SIGNUP_PRIVACY_APPROVED:'YES',BC_SIGNUP_TURNSTILE_SITE_KEY:'3x00000000000000000000FF',BC_SIGNUP_TURNSTILE_SECRET_KEY:'1x0000000000000000000000000000000AA',BC_SIGNUP_PII_KEY:'11'.repeat(32)};
   assert.equal(freeSignupEnabled(captchaEnv),true);
   assert.equal(freeSignupEnabled({...captchaEnv,BC_SIGNUP_PRIVACY_APPROVED:'NO'}),false);
+});
+test('botão público não aparece sem SMTP, sessão e Neon, mesmo com flag habilitada',()=>{
+ const ready={...env,DATABASE_URL:'postgresql://placeholder.invalid/nao-conectar'};
+ assert.equal(publicFreeSignupReady(ready),true);
+ assert.equal(publicFreeSignupReady({...ready,GMAIL_APP_PASSWORD:''}),false);
+ assert.equal(publicFreeSignupReady({...ready,GMAIL_USER:''}),false);
+ assert.equal(publicFreeSignupReady({...ready,AUTH_SECRET:'curto'}),false);
+ assert.equal(publicFreeSignupReady({...ready,DATABASE_URL:''}),false);
+ assert.equal(publicFreeSignupReady({...ready,BC_PUBLIC_FREE_SIGNUP_ENABLED:'false'}),false);
+ assert.equal(publicFreeSignupReady({...ready,VERCEL_ENV:'production'}),false);
 });
 test('recusa solicitações cross-site e contas sem senha forte sem banco',async()=>{
  const {handler,calls}=setup();
@@ -105,7 +115,7 @@ test('link cadastro aparece só quando a API confirmar que está habilitado',()=
  assert.match(page,/free-signup-status/);
  assert.match(page,/if\(signup\.enabled\)/);
  assert.match(auth,/free-signup-status/);
- assert.match(auth,/freeSignupEnabled\(\)/);
+ assert.match(auth,/publicFreeSignupReady\(\)/);
 });
 
 test('falha simulada de entrega SMTP não confirma cadastro',async()=>{
