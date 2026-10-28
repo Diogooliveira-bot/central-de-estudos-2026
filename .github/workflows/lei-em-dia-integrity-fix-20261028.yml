@@ -27,3 +27,11 @@ jobs:
         run: node --test tests/lei-em-dia-adm-15leis.mjs tests/lei-em-dia-adm-dispositivos.mjs
       - name: Regressao de seguranca e offline
         run: node --test tests/content-publication-integrity-unit.mjs tests/progressive-premium-delivery-unit.mjs tests/pwa-cache-recovery-unit.mjs
+      - name: Auditoria legada de fontes e dados
+        run: node --test tests/lei-em-dia-auditoria-20261012.mjs tests/lei-em-dia-catalogo-integridade.mjs
+      - name: Regressao geral da Central
+        run: npm test
+      - name: Chromium headless
+        run: npx playwright install chromium --only-shell
+      - name: Fluxo de aluno no navegador desktop e celular
+        run: node tests/lei-em-dia-adm-browser.mjs
