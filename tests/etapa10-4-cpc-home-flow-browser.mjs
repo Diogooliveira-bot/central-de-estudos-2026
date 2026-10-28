@@ -75,6 +75,11 @@ try{
    await card.click({timeout:15000});
    await page.waitForFunction(()=>window.CentralDisciplineLoader?.isReady('cpc')===true,{timeout:65000});
    cpcReady=true;
+   if(variant==='free'){
+    assert.equal(calls.some(p=>p==='403 /content/cpc/cpc-fixation-questions-v1.js'),false,'Free não deve requisitar o banco Premium no carregamento');
+    const status=await page.evaluate(()=>fetch('/content/cpc/cpc-fixation-questions-v1.js',{cache:'no-store'}).then(r=>r.status));
+    assert.equal(status,403,'O arquivo premium precisa retornar HTTP 403 para Free');
+   }
    const stats=await page.evaluate(()=>({
      target:!!document.querySelector('.subject[data-id="cpc"]'),
      itemCount:document.querySelectorAll('.subject[data-id="cpc"] .cpc-module,.subject[data-id="cpc"] button').length,
