@@ -1,0 +1,44 @@
+name: Auditoria editorial CPC M01–M20 — Chromium
+on:
+  push:
+    branches: [preview/legal-complete-premium-v1-20261025]
+    paths:
+      - '.github/workflows/verify-etapa10-cpc-editorial.yml'
+      - 'tests/etapa10-cpc-editorial-audit-browser.mjs'
+      - 'ui/cpc*-native-study-reader.js'
+      - 'content/cpc/m*-native-data.js'
+      - 'ui/legal-complete-premium-v1.css'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: bc-etapa10-auditoria-cpc
+  cancel-in-progress: true
+jobs:
+  auditoria:
+    if: github.repository == 'Diogooliveira-bot/central-de-estudos-2026'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - name: Checkout isolado sem credenciais persistentes
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Instalar dependências sem executar scripts
+        run: npm ci --ignore-scripts
+      - name: Sintaxe e regressões Premium
+        run: |
+          node --check tests/etapa10-cpc-editorial-audit-browser.mjs
+          node --test tests/legal-complete-premium-theme-unit.mjs tests/etapa3-premium-pilots-unit.mjs
+      - name: Instalar Chromium real
+        run: npx playwright install --with-deps chromium
+      - name: Auditar títulos, tabelas, fonte e responsividade dos 20 módulos
+        run: node tests/etapa10-cpc-editorial-audit-browser.mjs
+      - name: Anexar métricas e capturas
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: etapa10-auditoria-editorial-cpc
+          path: artifacts/etapa10-cpc-editorial/*
+          if-no-files-found: ignore
+          retention-days: 14
