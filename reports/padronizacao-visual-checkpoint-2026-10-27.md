@@ -388,3 +388,14 @@ Contagens de elementos efetivamente renderizados no navegador (mesmas nas três 
 - Corrigido apenas o rótulo do botão M02 (“Voltar ao M02”); ação e destino inalterados. Resumo e progressos intocados.
 - Testes novos no workflow já existente `verify-etapa6-cpc-m02-m20.yml`: seis linhas, fonte, semântica de tabela, scroll local a 390 px, texto original preservado, retorno corrigido e isolamento do resumo, além dos 57 testes de regressão de CPC.
 - **Estado:** aguardando resultado do CI; não confundir este piloto com conclusão editorial dos 19 módulos.
+
+## Etapa 9.1 — Resultado confirmado do piloto CPC M02 (28/10/2026)
+
+- **CI final:** [GitHub Actions 40606692686](https://github.com/Diogooliveira-bot/central-de-estudos-2026/actions/runs/40606692686) — `completed/success`, sobre o commit `2df5914f960f283a914584c359aaae48e550e898`.
+- **57/57 verificações técnicas CPC** passaram (19 módulos × 3 larguras). CPC M02 exibiu **1 tabela semântica** nas três larguras (390/768/1366 px); CPC M03–M20 continuam com **0 tabelas HTML** detectadas.
+- A tabela do M02 contém **6 linhas × 3 colunas** rastreadas literalmente ao original aprovado, cabeçalhos de linha e coluna, rolagem horizontal **local** no celular de 390 px e sem overflow da página.
+- O texto do original **não foi removido nem editado**: o quadro é de consulta adicional e os casos ambíguos permanecem na transcrição existente. O resumo não recebe a tabela e mantém seu visual original. A conclusão de capítulos persistiu após reabrir.
+- O rótulo “Voltar ao M02” foi corrigido no mesmo leitor, sem alterar a ação de fechar. Nenhuma alteração a código do banco, direitos Premium, conteúdo jurídico, `main` ou Production.
+- **Artefatos:** [capturas e métricas, ID 12781290791](https://github.com/Diogooliveira-bot/central-de-estudos-2026/actions/runs/40606692686/artifacts/12781290791), com validade aproximada até **11/11/2026**.
+- **Não aprovado ainda:** acabamento editorial completo de CPC M02 (ou M03–M20), confrontação visual humana das tabelas e Preview autenticada atualizada. O workflow da Preview permanece protegido e com checkout antigo.
+- **Próximo lote sugerido:** escolher comparativos de CPC M03–M05 apenas quando a divisão de colunas puder ser cotejada com o original, sem preencher lacunas por interpretação; estabelecer testes de equivalência e capturas de tabela para cada conversão.
