@@ -510,3 +510,13 @@ Contagens de elementos efetivamente renderizados no navegador (mesmas nas três 
 - Os **20 módulos** possuem pelo menos uma tabela HTML consultiva com rolagem local e cabeçalhos; todos passaram nos testes técnicos. **Não equivale** a completar a conversão de todos os quadros originais nem revisão jurídica.
 - **Pendentes:** cotejamento dirigido de linhas do M01–M08 não idênticas em comparação textual automatizada (não significa perda), item de questionário M06 erroneamente reconhecido como H2, hierarquia de títulos, suficiência editorial/jurídica das teorias e Preview com aluno autenticado.
 - **Próxima etapa segura:** cotejamento editorial M01–M08, começando por M06 e pelos trechos sinalizados, preservando a integralidade das fontes. Nada em `main`, Production, Neon ou Preview protegida.
+
+## Etapa 10.1 — Cotejamento dirigido CPC M01–M08 (28/10/2026)
+
+- **Relatório técnico e tabela por módulo:** [etapa10-1-cotejamento-cpc-m01-m08-2026-10-28.md](./etapa10-1-cotejamento-cpc-m01-m08-2026-10-28.md).
+- **Resultado validado:** [Chromium 40613918617](https://github.com/Diogooliveira-bot/central-de-estudos-2026/actions/runs/40613918617), **60/60 verificações aprovadas**; [capturas e métricas 12784721204](https://github.com/Diogooliveira-bot/central-de-estudos-2026/actions/runs/40613918617/artifacts/12784721204), expiram aproximadamente em 11/11/2026.
+- **72 diferenças da auditoria anterior classificadas:** 61 sequências textuais presentes apesar de reformatação, 6 títulos exibidos com rótulos normalizados e 5 metadados editoriais filtrados. **Não surgiram novas evidências de perda jurídica nesse rastreamento textual**, mas a presença de caracteres não equivale à conferência humana ou jurídica integral.
+- **Correção M06:** questão nº 10 não exibe mais o prefixo espúrio `20.`; as **15 questões** recebem cartão de revisão com fonte de **18 px** em vez de estilo de título de 27 px. Não houve troca de tag H2, ID, índice, comportamento de progresso ou alteração da fonte original.
+- **Incidente corrigido:** a primeira execução falhou por conflito de CSS; após ajustar a regra específica do M06, a segunda passou. Regressão CPC M02–M20 também aprovada em [40613898570](https://github.com/Diogooliveira-bot/central-de-estudos-2026/actions/runs/40613898570).
+- **Próxima etapa recomendada:** separar visualmente a junção textual comprovada no **CPC M05** ("...expressasPARTE IV...") e examinar demais quebras originadas na extração, mantendo todos os textos intactos. Depois, revisar profundidade/hierarquia de M09–M20 e homologar na Preview autenticada com autorização.
+- Sem mudança de `main`, Production, banco Neon, permissões, assinaturas ou publicação de Preview privada.
