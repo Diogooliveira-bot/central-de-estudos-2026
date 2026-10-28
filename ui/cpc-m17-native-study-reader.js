@@ -68,6 +68,21 @@ function build(raw){
  return {body,words,mins:Math.max(1,Math.round(words/205))};
 }
 function buildFromHtml(html,raw){let h=0;const body=String(html).replace(/<h([23])>([\s\S]*?)<\/h\1>/g,(m,l,t)=>{const txt=t.replace(/<[^>]+>/g,'').replace(/&amp;/g,'&');return '<h'+l+' id="cpcsec-'+(++h)+'-'+normKey(txt).replace(/\s+/g,'-').slice(0,60)+'">'+t+'</h'+l+'>'});const words=norm(raw).split(/\s+/).filter(Boolean).length;return {body,words,mins:Math.max(1,Math.round(words/205))}}
+
+function addVerifiedM17Table(article,raw){
+ const h=[...article.querySelectorAll('h2')].find(x=>x.textContent.trim()==="29. EMBARGOS X PRÉ-EXECUTIVIDADE");
+ const rows=[["Embargos","via ampla"],["pré-executividade","via estreita"]];
+ const full=String(raw||'').replace(/\s+/g,' ').trim();
+ const proved=full.includes("Embargos = via ampla; pré-executividade = via estreita.");
+ if(!h||!proved)return;
+ const wrap=document.createElement('div');wrap.className='table-wrap';wrap.dataset.cpcEditorialPilot='m17';
+ const table=document.createElement('table'),cap=document.createElement('caption');
+ cap.textContent="Embargos e pré-executividade — termos do original; leia requisitos e limites abaixo.";
+ table.appendChild(cap);const head=table.createTHead().insertRow();
+ for(const txt of ["Meio de defesa","Caracterização no módulo"]){const th=document.createElement('th');th.scope='col';th.textContent=txt;head.appendChild(th)}
+ const body=table.createTBody();for(const row of rows){const tr=body.insertRow(),th=document.createElement('th');th.scope='row';th.textContent=row[0];tr.appendChild(th);tr.insertCell().textContent=row[1];}
+ wrap.appendChild(table);h.after(wrap);
+}
 function chapters(mode){return source()?.chapters?.[mode]||[]}
 function findHeading(ch){
  if(!current||!ch)return null;
@@ -122,6 +137,7 @@ function open(mode){
  '<div class="bc-native-reader-body"><nav class="bc-native-toc"><div class="bc-native-toc-label">Capítulos</div>'+toc(mode)+'</nav>'+
  '<main class="bc-native-scroll"><article class="bc-native-article"><div class="bc-native-kicker">'+(mode==='summary'?'PRIMEIRA LEITURA + REVISÃO':'TEORIA INTEGRAL')+'</div><h1>'+esc(data.title)+'</h1><p class="lead">'+(mode==='summary'?'Versão condensada para compreender e revisar o módulo.':'Apostila completa convertida para leitura nativa dentro da Central.')+'</p>'+
  '<section class="bc-native-study-progress"><div><b>Progresso de leitura</b><span data-cpc-reader-value></span></div><div class="bc-native-study-progress-track"><span data-cpc-reader-studybar></span></div><small>Os capítulos recebem check conforme você avança. Você também pode marcar manualmente no índice.</small></section>'+parsed.body+'</article></main></div></section>';
+ if(mode==='complete')addVerifiedM17Table(ov.querySelector('.bc-native-article'),raw);
  document.body.appendChild(ov);document.body.style.overflow='hidden';
  current={mode,overlay:ov,scroll:ov.querySelector('.bc-native-scroll'),article:ov.querySelector('.bc-native-article'),font:Number(localStorage.getItem(key('font'))||16),map:[]};
  current.article.style.fontSize=current.font+'px';
