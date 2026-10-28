@@ -478,5 +478,18 @@ Contagens de elementos efetivamente renderizados no navegador (mesmas nas três 
 - **M13, modalidades de liquidação:** arbitramento versus procedimento comum, 2 linhas × 2 colunas, com descrições integrais extraídas do material sem interpretá-las. Cálculo aritmético não foi transformado em terceira modalidade.
 - **M14, ritos do cumprimento:** 5 linhas × 2 colunas, literalmente transcritas do quadro que já existe em texto no item 19. O material original contém alertas de atualização, especialmente art. 529-A (vigência futura segundo o material) e prazos. **A etapa não certifica a vigência das normas citadas**; a verificação jurídica permanece pendente.
 - Tabelas usam `table`, `caption`, `th scope` e contêiner `.table-wrap` com rolagem horizontal própria. Cada quadro só é adicionado quando toda sua evidência literal é encontrada no original. Nenhuma parte do texto já renderizado é excluída.
-- Teste de regressão dos 19 módulos CPC em Chromium nas larguras 390, 768 e 1366 px, verificando quadro, semântica, fonte, rolagem, resumo e persistência. **Aguardando CI antes de declarar a validação concluída.**
+- Teste de regressão dos 19 módulos CPC em Chromium nas larguras 390, 768 e 1366 px, verificando quadro, semântica, fonte, rolagem, resumo e persistência. **CI concluído com 57/57 verificações aprovadas — detalhes do fechamento abaixo.**
 - Branch e Preview privadas mantidas, sem aprovação de deployment, `main`, Production ou Neon.
+
+## Etapa 9.5 — CPC M12–M14: encerramento técnico (28/10/2026)
+
+- **CI aprovado:** [GitHub Actions 40610065608](https://github.com/Diogooliveira-bot/central-de-estudos-2026/actions/runs/40610065608), `completed/success` sobre o commit `e793857f913a244e98fc318e4fda888297bb4a6c`.
+- **57/57 cenários Chromium aprovados:** 19 leitores CPC M02–M20 × 390/768/1366 px, sem erros JS, overflow de página, perda de progresso local ou aplicação das tabelas Premium no modo resumo.
+- **M12:** quadro sobre ônus estático de autor e réu (2 linhas × 2 colunas). Frase original usada como prova de ambas as atribuições; nenhuma afirmação editorial nova sobre distribuição dinâmica.
+- **M13:** arbitramento × procedimento comum em liquidação (2 linhas × 2 colunas), descrições integrais e sem classificar cálculo aritmético como modalidade.
+- **M14:** ritos de cumprimento de sentença (5 linhas × 2 colunas), linhas retiradas sem abreviação do quadro original. Regimes, prazos e atualizações legislativas requerem revisão jurídica adicional independente da comparação literal.
+- HTML semântico `<caption>`, `<thead>`, `<tbody>`, cabeçalhos `th[scope]` e scroll local `.table-wrap` no celular. Tabelas só são exibidas se o texto de origem contiver todas as informações; os originais `content/cpc/m12/m13/m14-native-data.js` permaneceram intocados.
+- **Evidências:** [artefato 12782282518](https://github.com/Diogooliveira-bot/central-de-estudos-2026/actions/runs/40610065608/artifacts/12782282518), 7,3 MB de capturas e métricas, com expiração aproximada em **11/11/2026**.
+- **Cobertura dos pilotos CPC:** M02–M14, ou **13 módulos** com ao menos uma tabela de consulta HTML. M15–M20 seguem ainda sem tabelas HTML registradas nesses testes; muitos quadros de M02–M14 também aguardam tratamento pontual.
+- **Próximo lote recomendado:** CPC M15–M17 com preservação literal; depois M18–M20. Ao final, revisar editorialmente todas as tabelas piloto e validar os leitores na Preview integrada e protegida, com controle de autenticidade/segurança.
+- **Limites:** não são aprovações de exatidão jurídica atualizada, acesso Premium autenticado na Preview ou publicação em Production. Não houve alteração em `main`, Production, Neon ou políticas de acesso.
