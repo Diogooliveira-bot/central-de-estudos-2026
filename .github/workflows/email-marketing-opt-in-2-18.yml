@@ -1,0 +1,40 @@
+name: Email marketing opt-in isolado - Etapa 2.18
+on:
+  push:
+    branches:
+      - commercial/email-marketing-consent-20261028
+    paths:
+      - 'lib/free-signup-handler.js'
+      - 'lib/free-signup-contact.js'
+      - 'lib/free-signup-contact-preferences.js'
+      - 'cadastro-gratuito.html'
+      - 'preferencias-contato.html'
+      - 'db/migrations/006_email_marketing_preferences.sql'
+      - 'tests/free-signup-contact-preferences-4-5-unit.mjs'
+      - 'tests/public-free-signup-4-5-unit.mjs'
+      - 'tests/free-signup-browser-4-5.mjs'
+      - '.github/workflows/email-marketing-opt-in-2-18.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - name: Checkout sem credenciais persistentes
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Node 22
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+      - name: Dependencias travadas
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Testes unitarios dos dois consentimentos, cadastro e plano
+        run: node --test tests/free-signup-contact-preferences-4-5-unit.mjs tests/public-free-signup-4-5-unit.mjs tests/plan-access-unit.mjs
+      - name: Chromium headless
+        run: npx playwright install chromium --only-shell
+      - name: Testes desktop e celular com API simulada
+        run: node tests/free-signup-browser-4-5.mjs
