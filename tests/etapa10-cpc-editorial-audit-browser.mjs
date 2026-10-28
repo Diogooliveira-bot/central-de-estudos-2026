@@ -122,7 +122,7 @@ try{
     if(n===6){
       assert.equal(result.suspiciousHeadings.length,0,label+': número duplicado no teste rápido ou nos títulos');
       assert.equal(result.quizM06Count,15,label+': teste rápido deve ter 15 itens sem perder IDs');
-      assert.equal(result.quizM06Font,16,label+': estilo de questão diferente do padrão esperado');
+      assert.equal(result.quizM06Font,18,label+': estilo de questão diferente do padrão esperado');
     }
     if([2,4,6].includes(n))assert.equal(result.normalizedHeadingCount,{2:2,4:2,6:2}[n],label+': correção editorial dos títulos não aplicada');
     assert.deepEqual(errors,[],label+': erro JavaScript');
