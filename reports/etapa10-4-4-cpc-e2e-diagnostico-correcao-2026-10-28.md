@@ -46,3 +46,19 @@
 ## Comando de retomada sugerido
 
 “Continuar Base Completa — CPC Etapa 10.4 pelo relatório `reports/etapa10-4-4-cpc-e2e-diagnostico-correcao-2026-10-28.md`, na branch `preview/legal-complete-premium-v1-20261025`. Consultar a execução CI `40703450603` e o SHA atual, validar correções do carregador, preparar nova Preview privada e concluir E2E com Gratuito/Premium de homologação. Não alterar produção.”
+
+## Resultado de CI consolidado e próxima Preview privada
+
+A [auditoria GitHub 40703450603](https://github.com/Diogooliveira-bot/central-de-estudos-2026/actions/runs/40703450603) encerrou com **success** no commit **`176cb0e1fe99c37ef1e92534b2f0cdbca47a50a7`**, incluindo:
+- **7/7** testes da correção de carregamento Gratuito/Premium, com 403 de apostila e falhas 500 preservados como erros.
+- **60/60** verificações editoriais CPC M01–M20 no Chromium (20 × 390, 768, 1366 px).
+- **3/3** cenários de navegação da aplicação integral com sessão simulada: rota normal `/`, menu **Disciplinas**, CPC com 20 módulos, leitor completo M05 aberto, dois divisores, 14 perguntas em H2 + pergunta 2 em parágrafo, marcação de capítulo persistente após reabertura, ausência de erros JS. Esses testes são locais, **não sessões reais na Vercel**.
+- **Evidência arquivada:** [artefato 12821879218](https://github.com/Diogooliveira-bot/central-de-estudos-2026/actions/runs/40703450603/artifacts/12821879218), previsto para expirar em 11/11/2026.
+
+A nova publicação foi **preparada mas não executada**: o workflow privado `.github/workflows/deploy-private-visual-preview.yml` fixa agora exatamente o commit **`176cb0e1...`**, bloqueado pelo environment GitHub `bc-preview-private`, sem `--prod`, para o projeto temporário Vercel `base-completa-teste-visual`.
+
+**Execução aguardando aprovação do proprietário:** [GitHub Actions 40704051853](https://github.com/Diogooliveira-bot/central-de-estudos-2026/actions/runs/40704051853). O deployment atualmente READY segue em **`f5dc763b...`** e **não tem a correção nova**. Após aprovação e CI da publicação, confirmar novo deployment READY e o SHA correto antes de qualquer novo teste com conta fictícia.
+
+**Ponto para retomar:** abrir a execução **40704051853** → **Review deployments** → aprovar somente `bc-preview-private`; depois verificar a nova URL e executar os testes autenticados da teoria resumida Gratuita, bloqueio Premium, CPC M05 e progresso persistente. Nenhuma publicação em produção foi autorizada nem realizada.
+
+**Estado de aprovação da Etapa 10.4:** os testes de código e navegação local passaram; **E2E autenticado no novo deployment continua pendente**.
