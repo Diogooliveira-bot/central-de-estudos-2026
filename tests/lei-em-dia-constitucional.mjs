@@ -59,7 +59,7 @@ test('interface e pacote offline carregam as leis mantendo a chave do progresso'
   assert.equal((html.match(/<script src="\.\/decorando-data-cf-leis\.js/g)||[]).length,1);
   assert.ok(html.includes('const STORAGE_KEY = "lei-seca-enxuta-state"'));
   const offline=JSON.parse(readFileSync(new URL('central-offline-files-v66172.json',root)));
-  assert.ok(offline.files.includes('/tools/decorando-data-cf-leis.js?v=20261008cf1'));
+  assert.ok(!offline.files.some(p=>p.startsWith('/tools/decorando-data-cf-leis.js')), 'dataset de questões não deve constar no manifesto público');
 });
 
 test('filtros das oito leis, resposta e recarga preservam o progresso anterior',()=>{
