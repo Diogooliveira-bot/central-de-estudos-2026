@@ -10,6 +10,7 @@ on:
       - 'tests/etapa10-4-cpc-central-navigation-browser.mjs'
       - 'tests/etapa10-4-cpc-home-flow-browser.mjs'
       - 'tests/etapa10-4-free-bootstrap-unit.mjs'
+      - 'tests/central-discipline-plan-loading-unit.mjs'
       - 'central-v119.html'
       - 'ui/cpc*-native-study-reader.js'
       - 'content/cpc/m*-native-data.js'
@@ -38,6 +39,8 @@ jobs:
           node --test tests/legal-complete-premium-theme-unit.mjs tests/etapa3-premium-pilots-unit.mjs
       - name: Etapa 10.5 — Central Gratuita sem falhas por scripts Premium bloqueados
         run: node --test tests/etapa10-4-free-bootstrap-unit.mjs
+      - name: Regressão Central — carregar Civil, CPC e ADM sem URLs Premium no Gratuito
+        run: node --test tests/central-discipline-plan-loading-unit.mjs
       - name: Etapa 10.4 — segurança de login, planos e arquivos Premium (sem Neon)
         run: npm run test:premium-and-auth
       - name: Etapa 10.4 — validar entrada da Central e isolamento das questões Premium
