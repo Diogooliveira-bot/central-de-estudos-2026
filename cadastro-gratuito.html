@@ -25,6 +25,18 @@ button{margin-top:22px;width:100%;border:0;border-radius:9px;background:var(--na
 <p class="note" id="whatsappInfo">Usaremos seu número, se informado, apenas para as finalidades explicadas na política de privacidade. Você pode criar sua conta sem WhatsApp.</p>
 <label for="password">Crie uma senha (mínimo 12 caracteres)</label><input id="password" type="password" autocomplete="new-password" minlength="12" maxlength="200" required>
 <label for="confirm">Confirme sua senha</label><input id="confirm" type="password" autocomplete="new-password" minlength="12" maxlength="200" required>
+<fieldset style="border:1px solid #d9e4ec;border-radius:10px;padding:14px;margin:20px 0 10px">
+<legend style="font-size:.9rem;font-weight:800;padding:0 5px">Confirmações obrigatórias</legend>
+<label for="ageConfirmed" style="display:flex;gap:10px;align-items:flex-start;cursor:pointer;font-weight:500">
+<input id="ageConfirmed" name="ageConfirmed" type="checkbox" required style="width:18px;height:18px;flex:none;margin-top:4px">
+<span>Declaro que tenho <strong>18 anos ou mais</strong>.</span>
+</label>
+<label for="termsAccepted" style="display:flex;gap:10px;align-items:flex-start;cursor:pointer;font-weight:500">
+<input id="termsAccepted" name="termsAccepted" type="checkbox" required style="width:18px;height:18px;flex:none;margin-top:4px">
+<span>Li e aceito os <a href="/termos-de-uso.html" target="_blank" rel="noopener noreferrer">Termos de Uso</a> e tomei conhecimento da <a href="/politica-de-privacidade.html" target="_blank" rel="noopener noreferrer">Política de Privacidade</a>.</span>
+</label>
+<p class="note" style="margin:10px 0 0">Estes documentos estão em revisão de pré-lançamento. O cadastro ao público somente será habilitado após aprovação da versão definitiva.</p>
+</fieldset>
 <label for="marketingOptIn" style="display:flex;gap:10px;align-items:flex-start;cursor:pointer;font-weight:500">
 <input id="marketingOptIn" name="marketingOptIn" type="checkbox" style="width:18px;height:18px;flex:none;margin-top:4px">
 <span><strong>Quero receber novidades e ofertas pelo WhatsApp.</strong> Autorização opcional, independente do cadastro. Pode ser retirada posteriormente.</span>
@@ -79,7 +91,7 @@ var p=document.getElementById('password').value,c=document.getElementById('confi
 if(p!==c){message('As senhas não coincidem.','bad');return}
 btn.disabled=true;message('Preparando confirmação...');
 try{
-var x=await post({action:'request',name:document.getElementById('name').value,email:document.getElementById('email').value,password:p,whatsapp:document.getElementById('whatsapp').value,marketingOptIn:document.getElementById('marketingOptIn').checked,turnstileToken:captchaToken});
+var x=await post({action:'request',name:document.getElementById('name').value,email:document.getElementById('email').value,password:p,whatsapp:document.getElementById('whatsapp').value,ageConfirmed:document.getElementById('ageConfirmed').checked,termsAccepted:document.getElementById('termsAccepted').checked,termsVersion:'v24-draft-2026-10-28',marketingOptIn:document.getElementById('marketingOptIn').checked,turnstileToken:captchaToken});
 form.hidden=true;message(x.message||'Confira seu e-mail.','good');
 }catch(err){message(err.message,'bad');btn.disabled=false}
 });
