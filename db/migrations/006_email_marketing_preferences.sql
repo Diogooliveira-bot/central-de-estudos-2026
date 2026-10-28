@@ -13,11 +13,20 @@ ALTER TABLE public.central_free_signup_contacts
 -- Histórico de aceite é mantido em caso de revogação para auditoria.
 -- A condição de envio de marketing é SEMPRE email_marketing_opt_in=TRUE.
 -- WhatsApp continua governado exclusivamente por marketing_opt_in.
-ALTER TABLE public.central_free_signup_contacts
-  ADD CONSTRAINT central_email_marketing_opt_in_requires_notice
-  CHECK (
-    email_marketing_opt_in=FALSE
-    OR (email_marketing_consent_at IS NOT NULL
-        AND email_marketing_notice_version IS NOT NULL)
-  );
+DO $
+BEGIN
+ IF NOT EXISTS (
+   SELECT 1 FROM pg_constraint WHERE conname='central_email_marketing_opt_in_requires_notice'
+     AND conrelid='public.central_free_signup_contacts'::regclass
+ ) THEN
+   ALTER TABLE public.central_free_signup_contacts
+     ADD CONSTRAINT central_email_marketing_opt_in_requires_notice
+     CHECK (
+       email_marketing_opt_in=FALSE
+       OR (email_marketing_consent_at IS NOT NULL
+           AND email_marketing_notice_version IS NOT NULL)
+     );
+ END IF;
+END;
+$;
 COMMIT;
