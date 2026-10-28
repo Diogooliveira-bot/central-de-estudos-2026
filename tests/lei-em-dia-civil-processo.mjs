@@ -25,7 +25,7 @@ for(const discipline of ['civil','cpc']){
   for(const source of report.sources)assert.equal(added.filter(q=>q.question.source.startsWith(source.pdf+' ·')).length,source.imported);
   for(const x of report.deviceReview.removed)assert.ok(x.keptIds.every(id=>[...base,...added].some(q=>q.id===id)));
   const offline=JSON.parse(readFileSync(new URL('central-offline-files-v66172.json',root)));
-  assert.ok(offline.files.includes(`/tools/decorando-data-${discipline}-leis.js?v=20261008civil1`));
+  assert.ok(!offline.files.some(p=>p.startsWith(`/tools/decorando-data-${discipline}-leis.js`)), 'questões Premium não podem entrar no manifesto público');
  });
 test(discipline+' — filtros, respostas e progresso, resposta e recarga preservam o progresso anterior',()=>{
   const html=readFileSync(new URL('tools/decorando.html',root),'utf8');
