@@ -45,8 +45,9 @@ button{width:100%;margin-top:18px;border:0;border-radius:10px;padding:12px 14px;
 <label class="remember" for="remember"><input id="remember" type="checkbox"> Manter conectado neste dispositivo</label>
 <button id="loginBtn" type="submit">Entrar</button>
 <p class="access-help"><a href="/recuperar-senha.html" style="color:#17658a;font-weight:750;text-decoration:none">Esqueci minha senha</a></p>
-<p class="access-help">Primeiro acesso? Use o link de convite enviado pelo responsável.</p>
+<p id="firstAccessInviteHint" class="access-help">Primeiro acesso? Use o link de convite enviado pelo responsável.</p>
 <p id="publicSignupLink" class="access-help" hidden><a href="/cadastro-gratuito.html" style="color:#17658a;font-weight:750;text-decoration:none">Criar minha conta gratuita</a></p>
+<p class="access-help"><a id="commercialSiteLink" href="https://base-completa-vitrine-estatica-2026.vercel.app/" style="color:#17658a;text-decoration:none">Conhecer a plataforma</a></p>
 </form>
 
 <form id="setupForm" class="setup">
@@ -68,13 +69,16 @@ button{width:100%;margin-top:18px;border:0;border-radius:10px;padding:12px 14px;
 (function(){
 'use strict';
 var msg=document.getElementById('msg'),loginForm=document.getElementById('loginForm'),setupForm=document.getElementById('setupForm'),subtitle=document.getElementById('subtitle');
+if(location.hostname==='app.basecompleta.com.br'){
+ document.getElementById('commercialSiteLink').href='https://basecompleta.com.br/';
+}
 function setMsg(text,type){msg.textContent=text||'';msg.className='msg'+(type?' '+type:'')}
 function nextUrl(){var p=new URLSearchParams(location.search).get('next')||'/';return p.startsWith('/')&&!p.startsWith('//')?p:'/'}
 async function jsonFetch(url,opt){var r=await fetch(url,opt||{}),j={};try{j=await r.json()}catch(_){}if(!r.ok)throw new Error(j.error||('HTTP '+r.status));return j}
 async function init(){
  try{
   jsonFetch('/api/auth?action=free-signup-status').then(function(signup){
-   if(signup.enabled)document.getElementById('publicSignupLink').hidden=false;
+   if(signup.enabled){document.getElementById('publicSignupLink').hidden=false;document.getElementById('firstAccessInviteHint').hidden=true;}
   }).catch(function(){});
  }catch(_){}
  try{
