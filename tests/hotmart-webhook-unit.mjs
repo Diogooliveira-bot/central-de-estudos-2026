@@ -191,3 +191,36 @@ test('painel de compras exige administrador e permite reenvio protegido',async()
  assert.match(plans,/claim_sent_at<NOW\(\)-INTERVAL '60 seconds'/);
  assert.match(menu,/href="\/vendas-hotmart\.html"/);
 });
+
+
+test('modelo sem renovacao automatica recusa aprovacao de assinatura recorrente',()=>{
+ const cfg=webhookConfig(env);
+ const recurringPayloads=[
+  event('PURCHASE_APPROVED','semestralTEST',{data:{...event().data,subscription:{status:'ACTIVE'}}}),
+  event('PURCHASE_APPROVED','semestralTEST',{data:{...event().data,purchase:{...event().data.purchase,recurrence_number:1}}}),
+  event('PURCHASE_APPROVED','semestralTEST',{data:{...event().data,purchase:{...event().data.purchase,date_next_charge:1799999999000}}}),
+  event('PURCHASE_APPROVED','anualTEST',{data:{...event().data,purchase:{...event().data.purchase,subscription_anticipation_purchase:true}}}),
+ ];
+ for(const p of recurringPayloads){
+  const parsed=readHotmartEvent(p,cfg);
+  assert.match(parsed.error,/recorrente/);
+  assert.equal(parsed.value,undefined);
+ }
+ // Um pagamento unico, mesmo parcelado no cartao, nao equivale a renovacao.
+ const oneTime=readHotmartEvent(event('PURCHASE_APPROVED','semestralTEST'),cfg);
+ assert.equal(oneTime.value.months,6);
+ // Eventos de reembolso/chargeback continuam aptos a revogar uma concessao anterior.
+ const refund=event('PURCHASE_REFUNDED','semestralTEST',{data:{...event().data,subscription:{status:'CANCELLED'}}});
+ refund.data.purchase.status='REFUNDED';
+ assert.equal(readHotmartEvent(refund,cfg).value.eventName,'PURCHASE_REFUNDED');
+});
+
+test('evento recorrente nao consulta banco nem libera Premium',async()=>{
+ let dbCalls=0;
+ const handler=createHotmartWebhook({env,sqlProvider:()=>{dbCalls++;throw Error('Banco nao deve ser consultado');}});
+ const body=event('PURCHASE_APPROVED','semestralTEST',{data:{...event().data,subscription:{status:'ACTIVE'}}});
+ const response=res();await handler(req(body),response);
+ assert.equal(response.statusCode,422);
+ assert.match(response.body.error,/renovação manual/);
+ assert.equal(dbCalls,0);
+});
