@@ -93,7 +93,17 @@ async function download(files){
  const sources=new Array(files.length);let index=0;
  await Promise.all(Array.from({length:Math.min(6,files.length)},async()=>{
   while(index<files.length){const i=index++,url=new URL(files[i],location.origin);const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),25000);
-   try{const response=await fetch(url.href,{cache:'no-store',signal:controller.signal});if(!response.ok)throw new Error('HTTP '+response.status+': '+url.pathname);sources[i]=await response.text();}finally{clearTimeout(timer);}
+   try{
+    const response=await fetch(url.href,{cache:'no-store',signal:controller.signal});
+    // O banco de questões internas do CPC é Premium. No Gratuito, a
+    // resposta HTTP 403 esperada não pode impedir o acesso à teoria resumida.
+    // Não ignorar 403 de apostilas nem outras falhas de rede/servidor.
+    if(response.status===403&&url.pathname==='/content/cpc/cpc-fixation-questions-v1.js'){
+     sources[i]='';continue;
+    }
+    if(!response.ok)throw new Error('HTTP '+response.status+': '+url.pathname);
+    sources[i]=await response.text();
+   }finally{clearTimeout(timer);}
   }
  }));
  return sources;
