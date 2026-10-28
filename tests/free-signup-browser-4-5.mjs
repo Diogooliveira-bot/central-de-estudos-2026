@@ -38,6 +38,9 @@ try{
  console.log('PASS: Visitante encontra CTA Gratuito apenas com cadastro habilitado');
  for(const device of [{label:'desktop',width:1366,height:768},{label:'celular',width:390,height:844}]){
   const page=await browser.newPage({viewport:{width:device.width,height:device.height}});
+  await page.route('**/api/auth?action=free-signup-status',r=>r.fulfill({
+   status:200,contentType:'application/json',body:JSON.stringify({enabled:true,siteKey:null})
+  }));
   await page.route('**/api/auth?action=free-signup',async route=>{
    const body=route.request().postDataJSON();requests.push(body);
    if(body.action==='request')return route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({ok:true,message:'Mensagem enviada para caixa de teste simulada'})});
@@ -62,6 +65,15 @@ try{
   assert.equal(overflows,false,'Horizontal overflow at '+device.label);
   await page.close();
  }
+ // O visitante não deve digitar nome, e-mail nem senha com a API desativada.
+ const disabledPage=await browser.newPage();
+ await disabledPage.route('**/api/auth?action=free-signup-status',r=>r.fulfill({
+  status:200,contentType:'application/json',body:JSON.stringify({enabled:false,siteKey:null})
+ }));
+ await disabledPage.goto(root+'/cadastro-gratuito.html');
+ await disabledPage.getByText('O cadastro gratuito ainda não está disponível.',{exact:false}).waitFor();
+ assert.equal(await disabledPage.locator('#register').isHidden(),true);
+ await disabledPage.close();
  const page=await browser.newPage();
  await page.route('**/api/auth?action=free-signup',async route=>route.fulfill({status:410,contentType:'application/json',body:JSON.stringify({error:'Link inválido, expirado ou utilizado'})}));
  await page.goto(root+'/cadastro-gratuito.html#token='+'A'.repeat(43));
