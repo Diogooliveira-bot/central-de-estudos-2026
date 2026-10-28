@@ -79,6 +79,36 @@ try{
     assert.ok(m.h2Count>=1,label+': hierarquia H2 ausente');
     assert.equal(m.h2Border,'5px',label+': H2 não recebeu padrão Premium');
     assert.equal(m.tablesSemantic,true,label+': tabelas perderam estrutura');
+
+    if(n===2){
+      const pilot=await page.evaluate(()=>{
+        const overlay=document.getElementById('cpcM02NativeReaderOverlay');
+        const table=overlay.querySelector('[data-cpc-editorial-pilot="m02-merito"] table');
+        if(!table)return {exists:false};
+        const rows=[...table.tBodies[0].rows].map(row=>[...row.cells].map(cell=>cell.textContent.trim()));
+        const raw=window.BASE_NATIVE_CONTENT.cpc.m02.complete.replace(/\s+/g,' ').trim();
+        const wrap=table.parentElement;
+        return {
+          exists:true,
+          rows:rows.length,
+          columns:table.tHead.rows[0].cells.length,
+          sourceVerified:rows.every(row=>raw.includes(row.join(' '))),
+          semantic: [...table.tBodies[0].rows].every(row=>row.cells[0].tagName==='TH'&&row.cells[0].scope==='row'),
+          scrollX:wrap.scrollWidth>wrap.clientWidth,
+          originalPreserved:overlay.querySelector('.bc-native-article').textContent.includes('Impossibilidade jurídica do pedido'),
+          button:overlay.querySelector('[data-cpc-back]')?.textContent.trim()
+        };
+      });
+      assert.equal(pilot.exists,true,label+': tabela editorial não inserida');
+      assert.equal(pilot.rows,6,label+': contagem das situações');
+      assert.equal(pilot.columns,3,label+': contagem das colunas');
+      assert.equal(pilot.sourceVerified,true,label+': informações sem respaldo textual');
+      assert.equal(pilot.semantic,true,label+': falta cabeçalho de linha semântico');
+      assert.equal(pilot.originalPreserved,true,label+': transcrição original ausente');
+      assert.equal(pilot.button,'← Voltar ao M02',label+': rótulo de retorno');
+      if(width===390)assert.equal(pilot.scrollX,true,label+': não há rolagem local da tabela');
+    }
+
     assert.equal(m.noPageOverflow,true,label+': página com vazamento horizontal');
     assert.ok(m.chapterChecks>=1,label+': marcações de capítulo ausentes');
     assert.ok(m.rawTitle?.includes(label),label+': módulo errado aberto');
@@ -103,6 +133,7 @@ try{
     await page.waitForTimeout(70);
     const summaryPremium=await page.locator('#'+id).evaluate(o=>o.classList.contains('bc-apostila-v1'));
     assert.equal(summaryPremium,false,label+': tema exclusivo aplicado no resumo');
+    if(n===2)assert.equal(await page.locator('#'+id+' [data-cpc-editorial-pilot]').count(),0,label+': quadro Premium vazou para o resumo');
     assert.deepEqual(errors,[],label+': erros JavaScript');
     result.push({module:label,width,source,...m,chapterPersisted:true,summaryUnstyled:true,errors:[]});
    }finally{await page.close();}

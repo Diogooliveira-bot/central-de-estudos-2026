@@ -380,3 +380,11 @@ Contagens de elementos efetivamente renderizados no navegador (mesmas nas três 
 - **Etapa 9 — Correção visual editorial segura:** fila de pendências com prioridade para tabelas em CPC M02–M20 (nenhuma HTML detectada), blocos `pre` de Civil, quadros achatados de Penal M01, hierarquia de títulos e índice truncado CPP; trabalhar por amostras e módulos, preservando texto, tabelas e rastreabilidade de comparação.
 - **Etapa 10 — Preview privada integrada:** revisão de segurança, aprovação manual do `bc-preview-private`, atualização controlada do SHA de checkout pinado para um commit aprovado; validação real autenticada e controles de acesso sem tornar Preview pública e sem modificar Production.
 - **Etapa 11 — Aprovação e eventual publicação:** somente mediante autorização expressa e após os gates editoriais, responsivos e de segurança. Não mesclar em `main` por inferência.
+
+## Etapa 9.1 — Piloto editorial CPC M02 (28/10/2026)
+
+- **Alteração restrita ao leitor M02:** seis linhas inequívocas do quadro “O que extingue sem mérito e o que é mérito” ganham `<table>` semântica responsiva, com cabeçalhos de coluna e linha. Cada linha é validada literalmente contra a apostila original em tempo de execução, antes de ser exibida.
+- **Zero supressões:** a transcrição original continua integralmente no corpo do leitor. O quadro organizado é uma **consulta adicional**, não uma reescrita do documento, e não abrange a linha jurídica de classificação ambígua. Os demais quadros permanecem na fila editorial.
+- Corrigido apenas o rótulo do botão M02 (“Voltar ao M02”); ação e destino inalterados. Resumo e progressos intocados.
+- Testes novos no workflow já existente `verify-etapa6-cpc-m02-m20.yml`: seis linhas, fonte, semântica de tabela, scroll local a 390 px, texto original preservado, retorno corrigido e isolamento do resumo, além dos 57 testes de regressão de CPC.
+- **Estado:** aguardando resultado do CI; não confundir este piloto com conclusão editorial dos 19 módulos.

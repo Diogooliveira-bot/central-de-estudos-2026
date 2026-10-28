@@ -68,6 +68,47 @@ function build(raw){
  return {body,words,mins:Math.max(1,Math.round(words/205))};
 }
 function buildFromHtml(html,raw){let h=0;const body=String(html).replace(/<h([23])>([\s\S]*?)<\/h\1>/g,(m,l,t)=>{const txt=t.replace(/<[^>]+>/g,'').replace(/&amp;/g,'&');return '<h'+l+' id="cpcsec-'+(++h)+'-'+normKey(txt).replace(/\s+/g,'-').slice(0,60)+'">'+t+'</h'+l+'>'});const words=norm(raw).split(/\s+/).filter(Boolean).length;return {body,words,mins:Math.max(1,Math.round(words/205))}}
+
+// Piloto editorial: somente seis linhas inequívocas do quadro M02.
+// A transcrição jurídica completa continua visível, sem alterações.
+function addVerifiedM02Comparison(article,original){
+ const anchor=[...article.querySelectorAll('h2')].find(h=>/^17\.\s+QUADRO-SÍNTESE: O QUE EXTINGUE SEM MÉRITO/.test(h.textContent.trim()));
+ if(!anchor)return false;
+ const rows=[
+  ['Ausência de pressupostos de constituição/desenvolvimento válido','CPC 485, IV','Sem resolução do mérito'],
+  ['Perempção, litispendência ou coisa julgada','CPC 485, V','Sem resolução do mérito'],
+  ['Ausência de legitimidade ou interesse processual','CPC 485, VI','Sem resolução do mérito'],
+  ['Convenção de arbitragem reconhecida / juízo arbitral reconhece competência','CPC 485, VII','Sem resolução do mérito'],
+  ['Acolhimento ou rejeição do pedido','CPC 487, I','Mérito'],
+  ['Prescrição ou decadência','CPC 487, II','Mérito']
+ ];
+ const normalized=String(original||'').replace(/\s+/g,' ').trim();
+ if(!rows.every(cells=>normalized.includes(cells.join(' '))))return false;
+ const wrap=document.createElement('div');
+ wrap.className='table-wrap';
+ wrap.dataset.cpcEditorialPilot='m02-merito';
+ const table=document.createElement('table');
+ const caption=document.createElement('caption');
+ caption.textContent='Consulta rápida — seis situações verificadas no quadro original. Transcrição integral preservada abaixo.';
+ table.appendChild(caption);
+ const thead=document.createElement('thead'),headRow=document.createElement('tr');
+ for(const label of ['Situação','Regra principal','Natureza']){
+  const th=document.createElement('th');th.scope='col';th.textContent=label;headRow.appendChild(th);
+ }
+ thead.appendChild(headRow);table.appendChild(thead);
+ const tbody=document.createElement('tbody');
+ for(const cells of rows){
+  const tr=document.createElement('tr');
+  cells.forEach((value,i)=>{
+   const cell=document.createElement(i===0?'th':'td');
+   if(i===0)cell.scope='row';
+   cell.textContent=value;tr.appendChild(cell);
+  });
+  tbody.appendChild(tr);
+ }
+ table.appendChild(tbody);wrap.appendChild(table);anchor.after(wrap);
+ return true;
+}
 function chapters(mode){return source()?.chapters?.[mode]||[]}
 function findHeading(ch){
  if(!current||!ch)return null;
@@ -118,10 +159,11 @@ function open(mode){
  const ov=document.createElement('div');ov.id=OVERLAY_ID;ov.className='bc-native-reader-overlay';
  ov.innerHTML='<section class="bc-native-reader" role="dialog" aria-modal="true">'+
  '<header class="bc-native-reader-head"><div class="bc-native-reader-title"><b>CPC M02 — '+esc(data.title)+'</b><small>'+label+' • leitura incorporada à Base Completa</small></div><span class="bc-native-reader-meta">'+parsed.words.toLocaleString('pt-BR')+' palavras • ~'+parsed.mins+' min</span><button class="bc-native-reader-close" data-cpc-close>×</button><div class="bc-native-reader-progress-track"><div class="bc-native-reader-progress"></div></div></header>'+
- '<div class="bc-native-reader-tools"><button class="primary" data-cpc-back>← Voltar ao M01</button><input type="search" placeholder="Buscar neste material…"><button data-cpc-font="-1">A−</button><button data-cpc-font="1">A+</button><button data-cpc-top>Topo</button></div>'+
+ '<div class="bc-native-reader-tools"><button class="primary" data-cpc-back>← Voltar ao M02</button><input type="search" placeholder="Buscar neste material…"><button data-cpc-font="-1">A−</button><button data-cpc-font="1">A+</button><button data-cpc-top>Topo</button></div>'+
  '<div class="bc-native-reader-body"><nav class="bc-native-toc"><div class="bc-native-toc-label">Capítulos</div>'+toc(mode)+'</nav>'+
  '<main class="bc-native-scroll"><article class="bc-native-article"><div class="bc-native-kicker">'+(mode==='summary'?'PRIMEIRA LEITURA + REVISÃO':'TEORIA INTEGRAL')+'</div><h1>'+esc(data.title)+'</h1><p class="lead">'+(mode==='summary'?'Versão condensada para compreender e revisar o módulo.':'Apostila completa convertida para leitura nativa dentro da Central.')+'</p>'+
  '<section class="bc-native-study-progress"><div><b>Progresso de leitura</b><span data-cpc-reader-value></span></div><div class="bc-native-study-progress-track"><span data-cpc-reader-studybar></span></div><small>Os capítulos recebem check conforme você avança. Você também pode marcar manualmente no índice.</small></section>'+parsed.body+'</article></main></div></section>';
+ if(mode==='complete')addVerifiedM02Comparison(ov.querySelector('.bc-native-article'),raw);
  document.body.appendChild(ov);document.body.style.overflow='hidden';
  current={mode,overlay:ov,scroll:ov.querySelector('.bc-native-scroll'),article:ov.querySelector('.bc-native-article'),font:Number(localStorage.getItem(key('font'))||16),map:[]};
  current.article.style.fontSize=current.font+'px';
