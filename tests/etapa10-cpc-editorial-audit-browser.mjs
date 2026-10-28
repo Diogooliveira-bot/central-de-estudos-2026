@@ -130,7 +130,7 @@ try{
      const editorial=await page.evaluate(id=>{
       const o=document.getElementById(id),a=o.querySelector('.bc-native-article');
       const raw=window.BASE_NATIVE_CONTENT.cpc.m05.complete;
-      const markers=[...a.querySelectorAll('p.bc-cpc-m05-part-divider')];
+      const markers=[...a.querySelectorAll('p.bc-cpc-m05-part-divider:not([data-bc-editorial-boundary])')];
       const p=markers[0],previous=p?.previousElementSibling;
       const next=p?.nextElementSibling;
       return {
