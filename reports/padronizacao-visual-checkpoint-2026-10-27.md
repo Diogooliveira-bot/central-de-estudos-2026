@@ -617,3 +617,10 @@ Contagens de elementos efetivamente renderizados no navegador (mesmas nas três 
 - **Próxima ação protegida:** [Aprovar deployment privado 40704051853](https://github.com/Diogooliveira-bot/central-de-estudos-2026/actions/runs/40704051853) no environment `bc-preview-private`; o workflow está fixado no SHA auditado `176cb0e1...`, projeto `base-completa-teste-visual`, nunca Production. A Preview READY existente ainda é `f5dc763b...` e não inclui a correção.
 - **Após aprovação:** confirmar novo SHA READY; então validar **na Preview publicada**, com `gratuito@teste.invalid` e `premium@teste.invalid`, bloqueio HTTP de conteúdo pago, resumo CPC, módulo M05 e progresso após fechar e reabrir. Só concluir a Etapa 10.4 com essas evidências reais; em seguida verificar pendências editoriais/aceite 10.5.
 - Nenhuma alteração em `main`, Production, contas reais ou banco Neon de produção. Alterações apenas no código e testes da branch isolada + documentação.
+
+## Etapa 10.4 — Execuções autenticadas de navegador encerradas (28/10/2026)
+
+- **Verificação final:** runs Gratuito `adcac97b-feac-4065-8acb-d7bfe1d659cd` e Premium `926eefdb-5fab-499b-a5f7-7af025d33f43` encerrados. Os dois obtiveram `authenticated:true` e a API de planos confirmou os direitos corretos: Gratuito sem teoria completa/TEC/QC; Premium habilitado.
+- **Pendente:** o navegador Gratuito não carregou corretamente a Central; Premium chegou ao dashboard com 20 módulos de CPC, mas não abriu as apostilas usando o menu real. Sem prova de HTTP 403 do arquivo pago ou de persistência de marcações. Não homologar integralmente.
+- **Diagnóstico esclarecido:** `central-v119.html` troca intencionalmente o caminho visível para `/`; isso **não** demonstra defeito de roteamento. Evitar corrigir uma suposta falha sem reproduzi-la pelo fluxo de navegação correto.
+- **Relatório atualizado:** [Etapa 10.4.3](./etapa10-4-3-validacao-sessoes-cpc-2026-10-28.md). Próximo ensaio: `Disciplinas → Direito Processual Civil → M05` pela interface real; testar proteção HTTP e progresso.
