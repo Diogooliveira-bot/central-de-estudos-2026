@@ -14,9 +14,10 @@ button{margin-top:22px;width:100%;border:0;border-radius:9px;background:var(--na
 <body><main>
 <div class="note">BASE COMPLETA · CENTRAL DE ESTUDOS</div><h1>Comece gratuitamente</h1>
 <p>Crie sua conta e confirme seu e-mail para estudar com os recursos gratuitos, incluindo até 20 questões por dia no Lei em Dia.</p>
-<p class="note">TEC, QConcursos e materiais exclusivos permanecem restritos ao Premium. Cadastro em homologação, ainda não liberado no site oficial.</p>
-<div class="state" id="state" role="status" aria-live="polite">Preencha seus dados para solicitar a confirmação.</div>
-<form id="register">
+<p class="note">TEC, QConcursos e materiais exclusivos permanecem restritos ao Premium.</p>
+<p id="signupPreviewNote" class="note">O cadastro gratuito ainda está em homologação. Enquanto isso, você pode conhecer os recursos da plataforma.</p>
+<div class="state" id="state" role="status" aria-live="polite">Verificando se o cadastro está disponível...</div>
+<form id="register" hidden>
 <label for="name">Seu nome</label><input id="name" name="name" autocomplete="name" minlength="2" maxlength="120" required>
 <label for="email">Seu e-mail</label><input id="email" name="email" type="email" autocomplete="email" maxlength="240" required>
 <label for="whatsapp">WhatsApp (opcional)</label>
@@ -33,13 +34,18 @@ button{margin-top:22px;width:100%;border:0;border-radius:9px;background:var(--na
 <button type="submit" id="submit">Enviar confirmação por e-mail</button>
 </form>
 <p class="links">Já tem uma conta? <a href="/login.html">Entrar</a> · <a href="/recuperar-senha.html">Esqueci minha senha</a> · <a href="/preferencias-contato.html">Preferências de contato</a></p>
+<p class="links"><a id="marketingSiteLink" href="https://base-completa-vitrine-estatica-2026.vercel.app/">Voltar ao site de apresentação</a></p>
 </main><script>
 (function(){
 'use strict';
 var form=document.getElementById('register'),state=document.getElementById('state'),btn=document.getElementById('submit');
 var captchaToken='';
+if(location.hostname==='app.basecompleta.com.br')document.getElementById('marketingSiteLink').href='https://basecompleta.com.br/';
 fetch('/api/auth?action=free-signup-status',{cache:'no-store'}).then(function(r){return r.ok?r.json():null;}).then(function(config){
- if(!config||!config.enabled||!config.siteKey)return;
+ if(!config||!config.enabled){message('O cadastro gratuito ainda não está disponível. Se você já é aluno, utilize Entrar.','bad');return;}
+ document.getElementById('signupPreviewNote').hidden=true;
+ if(!token){form.hidden=false;message('Preencha seus dados para solicitar a confirmação.');}
+ if(!config.siteKey)return;
  var script=document.createElement('script');
  script.src='https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
  script.async=true;
@@ -53,7 +59,7 @@ fetch('/api/auth?action=free-signup-status',{cache:'no-store'}).then(function(r)
   });
  };
  document.head.appendChild(script);
-}).catch(function(){});
+}).catch(function(){message('Não foi possível verificar a disponibilidade do cadastro. Tente novamente mais tarde.','bad')});
 
 function message(s,b){state.textContent=s;state.className='state'+(b?' '+b:'')}
 async function post(body){var r=await fetch('/api/auth?action=free-signup',{method:'POST',cache:'no-store',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)}),j={};try{j=await r.json()}catch(_){}if(!r.ok)throw Error(j.error||'Não foi possível concluir o cadastro');return j}
