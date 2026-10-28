@@ -1,0 +1,73 @@
+name: Lancamento Base Completa - integracao controlada
+
+on:
+  push:
+    branches:
+      - integration/lancamento-base-completa-20261028
+    paths:
+      - 'api/**'
+      - 'lib/**'
+      - 'db/migrations/**'
+      - 'cadastro-gratuito.html'
+      - 'preferencias-contato.html'
+      - 'login.html'
+      - 'middleware.js'
+      - 'central-boot-ready.js'
+      - 'central-v119.html'
+      - 'tests/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/lancamento-integration-validation.yml'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'api/**'
+      - 'lib/**'
+      - 'db/migrations/**'
+      - 'cadastro-gratuito.html'
+      - 'preferencias-contato.html'
+      - 'login.html'
+      - 'middleware.js'
+      - 'central-boot-ready.js'
+      - 'central-v119.html'
+      - 'tests/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/lancamento-integration-validation.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  focused-regression:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - name: Checkout sem credenciais persistentes
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Node.js 22
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Instalar dependencias travadas
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Verificar sintaxe dos handlers alterados
+        run: node --check lib/free-signup-handler.js && node --check lib/free-signup-contact-preferences.js && node --check lib/hotmart-webhook.js && node --check api/auth.js
+      - name: Regressao comercial, acesso e seguranca
+        run: >-
+          node --test
+          tests/commercial-journey-4-5-unit.mjs
+          tests/public-free-signup-4-5-unit.mjs
+          tests/free-signup-contact-preferences-4-5-unit.mjs
+          tests/hotmart-webhook-unit.mjs
+          tests/plan-access-unit.mjs
+          tests/password-reset-unit.mjs
+          tests/protected-content-unit.mjs
+          tests/pwa-cache-recovery-unit.mjs
+          tests/content-publication-integrity-unit.mjs
+          tests/removed-disciplines-unit.mjs
