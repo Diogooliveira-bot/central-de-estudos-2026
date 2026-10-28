@@ -97,6 +97,17 @@ try{
    assert.ok(dividers.some(x=>x.includes('PARTE VIII - ROTEIRO DE REVISÃO')),'Divisor VIII ausente');
    assert.equal(await overlay.locator('h2.bc-cpc-m05-quiz-heading').count(),14,'Questões destacadas: H2');
    assert.equal(await overlay.locator('p.bc-cpc-m05-quiz-prompt').count(),1,'Questão 2 destacada');
+   // A interface de leitura esconde o índice até o usuário abrir
+   // Opções de leitura (Aa, em celulares) e depois Capítulos.
+   if(width<=800) {
+    const options=overlay.locator('.student-reader-options-toggle');
+    await options.waitFor({state:'visible',timeout:12000});
+    await options.click();
+   }
+   const chapters=overlay.locator('.bc-reading-chapters-toggle');
+   await chapters.waitFor({state:'visible',timeout:12000});
+   await chapters.click();
+   await page.waitForFunction(()=>document.getElementById('cpcM05NativeReaderOverlay')?.classList.contains('bc-reading-chapters-open'),null,{timeout:12000});
    const check=overlay.locator('[data-cpc-chapter-check]').first();
    const chapter=await check.getAttribute('data-cpc-chapter-check');
    assert.ok(chapter,'Checkbox de capítulo ausente');
@@ -108,8 +119,7 @@ try{
    await page.evaluate(()=>window.CpcM05NativeReader.open('complete'));
    const reopened=await page.evaluate(id=>window.CpcM05NativeReader.chapterDone('complete',id),chapter);
    assert.equal(reopened,toggled,'Marcação não persistiu ao reabrir o leitor');
-   // Fixture: restaura estado para permitir reexecução idempotente.
-   if(toggled!==initial) await page.locator('#cpcM05NativeReaderOverlay [data-cpc-chapter-check]').first().click();
+   // O contexto e os dados locais do fixture são descartados ao fim da tela.
    await page.locator('#cpcM05NativeReaderOverlay').screenshot({path:'artifacts/etapa10-4-cpc-integrated/'+width+'-m05.png'});
    metrics.push({width,navVisible,navDiagnostic,navClickError,boot:'ready',route:'/',disciplinesView:'opened',cpcLoaded:cpc.loaded,m05Reader:cpc.m05Reader,modules:cpc.moduleCount,dividers:dividers.length,quizHeadings:14,chapterPersisted:reopened===toggled,errors:errors.slice(0,8),passed:true});
   }catch(e){
