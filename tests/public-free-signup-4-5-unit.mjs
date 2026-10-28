@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import {createFreeSignupHandler,freeSignupEnabled,publicFreeSignupReady} from '../lib/free-signup-handler.js';
+import {createFreeSignupHandler,freeSignupEnabled,publicFreeSignupReady,FREE_SIGNUP_TERMS_VERSION} from '../lib/free-signup-handler.js';
 import {signupCaptchaConfigured,verifySignupBot,safeSignupBody,verifiedClientIp} from '../lib/free-signup-security.js';
 import crypto from 'node:crypto';
 import {normalizeWhatsapp,protectWhatsapp,signupPiiKeyConfigured} from '../lib/free-signup-contact.js';
@@ -13,7 +13,11 @@ const env={
 };
 process.env.AUTH_SECRET=env.AUTH_SECRET;
 function res(){return{headers:{},setHeader(k,v){this.headers[k]=v},end(body){this.body=JSON.parse(body)}}}
-function req(body,method='POST',origin='https://localhost'){return{method,headers:{host:'localhost',origin,'x-real-ip':'127.0.0.42','sec-fetch-site':origin==='https://localhost'?'same-origin':'cross-site'},body}}
+function req(body,method='POST',origin='https://localhost'){
+ const data=body?.action==='request'
+   ?{ageConfirmed:true,termsAccepted:true,termsVersion:FREE_SIGNUP_TERMS_VERSION,...body}:body;
+ return{method,headers:{host:'localhost',origin,'x-real-ip':'127.0.0.42','sec-fetch-site':origin==='https://localhost'?'same-origin':'cross-site'},body:data}
+}
 function setup(){
   const calls=[],sent=[];
   const sql=async(strings,...values)=>{
@@ -34,9 +38,10 @@ test('somente em Preview isolada e com sinal explicito; Production bloqueada',()
   assert.equal(freeSignupEnabled({...env,BC_FREE_SIGNUP_PREVIEW_ISOLATED:'NO'}),false);
   assert.equal(freeSignupEnabled({...env,VERCEL_ENV:'production'}),false);
   assert.equal(freeSignupEnabled({...env,VERCEL_ENV:'production',BC_PUBLIC_FREE_SIGNUP_PRODUCTION_APPROVED:'YES'}),false);
-  const captchaEnv={...env,VERCEL_ENV:'production',BC_PUBLIC_FREE_SIGNUP_PRODUCTION_APPROVED:'YES',BC_SIGNUP_PRIVACY_APPROVED:'YES',BC_SIGNUP_TURNSTILE_SITE_KEY:'3x00000000000000000000FF',BC_SIGNUP_TURNSTILE_SECRET_KEY:'1x0000000000000000000000000000000AA',BC_SIGNUP_PII_KEY:'11'.repeat(32)};
+  const captchaEnv={...env,VERCEL_ENV:'production',BC_PUBLIC_FREE_SIGNUP_PRODUCTION_APPROVED:'YES',BC_SIGNUP_PRIVACY_APPROVED:'YES',BC_SIGNUP_TERMS_FINAL_APPROVED:'YES',BC_SIGNUP_TURNSTILE_SITE_KEY:'3x00000000000000000000FF',BC_SIGNUP_TURNSTILE_SECRET_KEY:'1x0000000000000000000000000000000AA',BC_SIGNUP_PII_KEY:'11'.repeat(32)};
   assert.equal(freeSignupEnabled(captchaEnv),true);
   assert.equal(freeSignupEnabled({...captchaEnv,BC_SIGNUP_PRIVACY_APPROVED:'NO'}),false);
+  assert.equal(freeSignupEnabled({...captchaEnv,BC_SIGNUP_TERMS_FINAL_APPROVED:'NO'}),false);
 });
 test('botão público não aparece sem SMTP, sessão e Neon, mesmo com flag habilitada',()=>{
  const ready={...env,DATABASE_URL:'postgresql://placeholder.invalid/nao-conectar'};
@@ -54,6 +59,32 @@ test('recusa solicitações cross-site e contas sem senha forte sem banco',async
  assert.equal(r.statusCode,403);assert.equal(calls.length,0);
  r=res();await handler(req({action:'request',name:'Nome Simulado',email:'teste@example.invalid',password:'short'}),r);
  assert.equal(r.statusCode,400);assert.equal(calls.length,0);
+});
+test('maioridade e aceite de Termos sao obrigatorios no backend antes de SQL e e-mail',async()=>{
+ const {handler,calls,sent}=setup();
+ const base={action:'request',name:'Pessoa Fictícia',email:'ficticio@example.invalid',password:'Senhacom12ouMais@123'};
+ for(const overrides of [{ageConfirmed:false},{termsAccepted:false},{termsVersion:'versao-antiga'},{ageConfirmed:'true'},{termsAccepted:'true'}]){
+  const out=res();await handler(req({...base,...overrides}),out);
+  assert.ok([400,409].includes(out.statusCode));
+ }
+ assert.equal(calls.length,0);
+ assert.equal(sent.length,0);
+});
+test('aceite versionado vai para pendencia e historico atomico do aluno',async()=>{
+ const {handler,calls}=setup();
+ let r=res();await handler(req({action:'request',name:'Pessoa Fictícia',email:'ficticio@example.invalid',password:'Senhacom12ouMais@123'}),r);
+ assert.equal(r.statusCode,200);
+ const pending=calls.find(x=>x.source.includes('INSERT INTO public.central_free_signup_pending'));
+ assert.ok(pending);
+ assert.match(pending.source,/age_declared_at,terms_accepted_at,terms_version/);
+ assert.equal(pending.values.at(-1),FREE_SIGNUP_TERMS_VERSION);
+ r=res();await handler(req({action:'confirm',token:'T'.repeat(43)}),r);
+ assert.equal(r.statusCode,201);
+ const atomic=calls.find(x=>x.source.includes('WITH claimed AS'));
+ assert.match(atomic.source,/central_free_signup_legal_acceptances/);
+ assert.match(atomic.source,/terms_version=\?/);
+ assert.match(atomic.source,/EXISTS\(SELECT 1 FROM legal_saved\)/);
+ assert.doesNotMatch(atomic.source,/INSERT INTO public\.central_user_subscriptions[\s\S]*?'premium'/);
 });
 test('cadastro novo só envia link; não cria conta antes de confirmar email',async()=>{
  const {handler,calls,sent}=setup();let r=res();
