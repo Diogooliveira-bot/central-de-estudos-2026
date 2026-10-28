@@ -20,7 +20,13 @@ test('cada questão tem gabarito, fundamento, origem e filtro utilizáveis',()=>
   for(const q of added){
     assert.equal(q.discipline,'cf');assert.equal(typeof q.question.answer,'boolean');
     assert.ok(q.question.statement.length>20);assert.ok(q.parts[0].length>20);
-    assert.equal(q.question.explanation,q.parts[0]);
+    if(q.question.legalAudit){
+      const audit=q.question.legalAudit;
+      assert.ok(['certificado','certificado-parcial','pendente'].includes(audit.status),q.id);
+      assert.ok(audit.basis&&audit.source&&/^2026-10-\d\d$/.test(audit.date),q.id);
+      if(audit.status==='pendente')assert.match(q.question.explanation,/^Em revisão\. /,q.id);
+      else{assert.match(q.question.explanation,/^(Correta|Errada)\. /,q.id);assert.equal(q.question.explanation.startsWith('Correta'),q.question.answer,q.id);}
+    }else assert.equal(q.question.explanation,q.parts[0]);
     assert.ok(topics.find(t=>t.id===q.topicId)?.subtopics.includes(q.subtopic));
     assert.ok(!/https?:\/\/|Gabarito:|Decorando a Lei Seca|\(\s*\)\s*(Verdadeiro|Falso)|\d{2}\/\d{2}\/2026,/.test(q.question.statement+' '+q.parts[0]),q.id);
     assert.ok(!q.question.statement.startsWith('('),q.id+' contém cargo no enunciado');
