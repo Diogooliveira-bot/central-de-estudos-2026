@@ -61,7 +61,7 @@ try{
    await page.waitForFunction(()=>!document.documentElement.classList.contains('study-objective-open'),null,{timeout:17000});
    const onboarding=page.locator('[data-student-onboarding] [data-onboarding-close]');
    if(await onboarding.isVisible())await onboarding.click();
-   const nav=page.locator('#centralSidebar [data-central-native="disciplines"]');
+   const nav=page.locator('[data-central-native="disciplines"]');
    assert.equal(await nav.count(),1,'botão Disciplinas não está presente');
    if(await nav.isVisible()){
     try{await nav.click({timeout:2000})}catch{await page.evaluate(()=>window.centralHardOpen('disciplines'))}
@@ -92,7 +92,11 @@ try{
    bootText:document.getElementById('central-boot-screen')?.textContent.trim().slice(0,150)||null,
    cpcLoaded:window.CentralDisciplineLoader?.isReady('cpc')===true,
    cpcError:window.CentralDisciplineLoader?.hasError('cpc')===true,
-   nav:!!document.querySelector('#centralSidebar [data-central-native="disciplines"]'),
+   nav:!!document.querySelector('[data-central-native="disciplines"]'),
+   rootClasses:document.documentElement.className,
+   navDisplay:(()=>{const n=document.querySelector('[data-central-native="disciplines"]');return n?getComputedStyle(n).display:null})(),
+   objectiveOpen:document.documentElement.classList.contains('study-objective-open'),
+   viewClasses:document.getElementById('disciplinesView')?.className||null,
    main:!!document.getElementById('homeView'),
   }));
   await page.screenshot({path:path.join(dir,variant+'-home.png'),fullPage:false}).catch(()=>{});
