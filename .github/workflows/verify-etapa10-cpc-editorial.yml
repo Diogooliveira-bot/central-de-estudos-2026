@@ -5,6 +5,8 @@ on:
     paths:
       - '.github/workflows/verify-etapa10-cpc-editorial.yml'
       - 'tests/etapa10-cpc-editorial-audit-browser.mjs'
+      - 'tests/etapa10-4-free-bootstrap-unit.mjs'
+      - 'central-v119.html'
       - 'ui/cpc*-native-study-reader.js'
       - 'content/cpc/m*-native-data.js'
       - 'ui/legal-complete-premium-v1.css'
@@ -30,6 +32,8 @@ jobs:
         run: |
           node --check tests/etapa10-cpc-editorial-audit-browser.mjs
           node --test tests/legal-complete-premium-theme-unit.mjs tests/etapa3-premium-pilots-unit.mjs
+      - name: Etapa 10.5 — Central Gratuita sem falhas por scripts Premium bloqueados
+        run: node --test tests/etapa10-4-free-bootstrap-unit.mjs
       - name: Etapa 10.4 — segurança de login, planos e arquivos Premium (sem Neon)
         run: npm run test:premium-and-auth
       - name: Instalar Chromium real
