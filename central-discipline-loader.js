@@ -121,8 +121,8 @@ function nativeReady(id){
  if(id==='adm')return !!global.AdmNative;
  if(id==='civil')return !!global.CivilNative;
  if(id!=='cpc')return true;
- if(!global.CpcStudyV1?.installed||!global.__M08Installed)return false;
- for(let n=2;n<=20;n++){if(n===8)continue;const module=global['CpcStudyM'+String(n).padStart(2,'0')];if(module!==true&&!module?.installed)return false;}
+ if(!global.CpcStudyV1?.installed)return false;
+ for(let n=2;n<=20;n++){const module=global['CpcStudyM'+String(n).padStart(2,'0')];if(module!==true&&!module?.installed)return false;}
  return true;
 }
 function waitForNative(id){return new Promise((resolve,reject)=>{const start=Date.now();function check(){if(nativeReady(id))return resolve();if(Date.now()-start>15000)return reject(new Error('Registro da disciplina incompleto'));setTimeout(check,30)}check()})}
