@@ -563,3 +563,11 @@ Contagens de elementos efetivamente renderizados no navegador (mesmas nas três 
 - **Smoke test:** login HTML exibido; `/api/auth?action=me` sem sessão: HTTP 200, `authenticated:false`. Esse resultado comprova ausência de autenticação anônima nesse endpoint, não a íntegra da separação de planos. Requisições automatizadas de arquivos CPC pagos pararam na camada de proteção Vercel e **não** comprovam código HTTP da aplicação.
 - **Homologação integrada ainda pendente:** teste autenticado Premium e Gratuito com credenciais protegidas, direitos de acesso, salvamento do progresso e visual da Preview publicada. **Não atestar etapa 10.4 concluída** até verificar isso de modo real.
 - **Relatório pós-aprovação:** [Etapa 10.4.1](./etapa10-4-1-preparacao-preview-autenticada-2026-10-28.md). Nenhuma alteração em `main`, banco de produção, contas reais ou política de proteção do projeto.
+
+## Etapa 10.4.3 — Logins e entitlements homologação (28/10/2026)
+
+- **Evidência:** [relatório da validação de sessões](./etapa10-4-3-validacao-sessoes-cpc-2026-10-28.md).
+- Duas contas fictícias **ativas**, com senhas criadas pelo proprietário e **últimos logins efetivos registrados** no Neon de homologação às 10:28 UTC (Premium) e 10:30 UTC (Gratuito).
+- A matriz no banco confirmou que `theory.summary` é habilitada para ambos; `theory.complete`, `tec.links` e `qc.links` são desabilitadas para Gratuito e habilitadas para Premium.
+- Testes de navegador foram iniciados com perfis separados, mas o último retorno era **`pending`, passo zero**, sem evidência de leitura CPC ou progresso real. **Não declarar Etapa 10.4 homologada** sem resultados autenticados end-to-end.
+- Nenhuma alteração em `main`, Production, alunos reais ou pagamentos. Banco consultado somente para estas verificações.
