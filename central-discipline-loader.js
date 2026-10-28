@@ -129,8 +129,19 @@ function waitForNative(id){return new Promise((resolve,reject)=>{const start=Dat
 function resumeOffline(){if(!Object.values(states).some(state=>state.promise))navigator.serviceWorker?.controller?.postMessage({type:'RESUME_OFFLINE'})}
 function refresh(){try{global.renderAll?.();global.renderDisciplineGrid?.()}catch(error){console.error('[Central discipline render]',error)}}
 function filesFor(id){
- const files=(groups[id]||[]).concat(global.CentralTheoryFiles?.[id]||[]);
- const seen=new Set();return files.filter(src=>{const path=new URL(src,location.origin).pathname;if(seen.has(path)||executed.has(path))return false;seen.add(path);return true});
+ // The old lazy loader publishes supplementary lists with Premium-only URLs.
+ // The authenticated boot already filtered the main manifest; apply that
+ // same policy to all supplementary files. Never interpret 403 as public data.
+ const free=global.__centralIsFreeStudent===true;
+ const premiumOnly=global.__centralIsPremiumOnlyScript;
+ const primary=groups[id]||[];
+ const supplemental=free&&typeof premiumOnly!=='function'?[]:(global.CentralTheoryFiles?.[id]||[]);
+ const files=primary.concat(supplemental);
+ const seen=new Set();return files.filter(src=>{
+  if(free&&typeof premiumOnly==='function'&&premiumOnly(src))return false;
+  const path=new URL(src,location.origin).pathname;
+  if(seen.has(path)||executed.has(path))return false;seen.add(path);return true;
+ });
 }
 function load(id){
  if(isReady(id))return Promise.resolve();
