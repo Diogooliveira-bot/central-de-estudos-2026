@@ -1,0 +1,1676 @@
+{
+  "titulo": "Direito Penal — leis especiais (bloco 1): revisão jurídica",
+  "data": "2026-10-24",
+  "metodo": "Cada questão foi comparada com o texto compilado das leis no Vade Mecum da Central (Planalto). Gabaritos não foram alterados. Explicação reescrita, dispositivo (parts) refeito com trecho literal do texto oficial (verificação automática) e legalAudit adicionado.",
+  "total": 143,
+  "porStatus": {
+    "certificado": 140,
+    "pendente": 2,
+    "certificado-parcial": 1
+  },
+  "porLei": {
+    "Lei 8.072/1990": 16,
+    "Lei 8.137/1990": 24,
+    "Lei 7.716/1989": 19,
+    "Lei 9.605/1998": 17,
+    "Lei 11.343/2006": 24,
+    "Lei 11.340/2006": 14,
+    "Lei 9.455/1997": 14,
+    "Lei 13.344/2016": 10,
+    "Lei 1.079/1950": 4,
+    "Lei 12.850/2013": 1
+  },
+  "gabaritosAlterados": 0,
+  "fonteDiferente": "Lei 11.340/2006: o arquivo do Vade Mecum da Central vem do Senado Federal/Câmara dos Deputados (legis.senado.leg.br), e não do Planalto.",
+  "notas": [
+    {
+      "id": "pen-lei-9605-pdf65-q001",
+      "tipo": "pendente",
+      "texto": "O art. 2º da Lei 9.605/1998 impõe o dever de impedir o crime de outrem apenas às pessoas que enumera (diretor, administrador, membro de conselho e de órgão técnico, auditor, gerente, preposto ou mandatário de pessoa jurídica). O enunciado estende a omissão a \"quem, de qualquer forma\". O gabarito (Certo) foi mantido e a questão ficou pendente de revisão."
+    },
+    {
+      "id": "pen-lei-9455-pdf63-q047",
+      "tipo": "pendente",
+      "texto": "O art. 1º, § 7º, da Lei 9.455/1997 prevê regime inicial fechado e o enunciado segue o texto (gabarito Certo, mantido). A jurisprudência (STJ, com base no entendimento do STF sobre a Lei 8.072/1990, art. 2º, § 1º) afastou a obrigatoriedade. A questão ficou pendente de revisão."
+    },
+    {
+      "id": "pen-lei-9455-pdf63-q011",
+      "tipo": "parcial",
+      "texto": "A tipificação (art. 1º, II, da Lei 9.455/1997) foi conferida. A agravante do art. 61, II, \"e\", do Código Penal e o precedente citado no item (STJ, Informativo 799) não foram conferidos em fonte oficial. Passa a certificado quando o Código Penal compilado for conferido."
+    }
+  ],
+  "rotulosDivergentes": [
+    {
+      "id": "pen-lei-9605-pdf65-q028",
+      "rotulo": "Art. 5º, § 1º",
+      "correto": "Art. 32, § 1º-B"
+    },
+    {
+      "id": "pen-lei-11343-pdf14-q040",
+      "rotulo": "Art. 8º, § 1º",
+      "correto": "Art. 8º-D, § 1º"
+    },
+    {
+      "id": "pen-lei-11343-pdf14-q048",
+      "rotulo": "Art. 8º-D, IV",
+      "correto": "Art. 8º-D, I"
+    },
+    {
+      "id": "pen-lei-7716-pdf48-q021",
+      "rotulo": "Art. 5º",
+      "correto": "Art. 5º e art. 9º (estabelecimentos comerciais e casas de diversões)"
+    }
+  ],
+  "fontesSecundarias": [
+    {
+      "itens": [
+        "pen-lei-8072-pdf52-q050"
+      ],
+      "assunto": "Súmula 668 do STJ (porte/posse de arma de uso permitido não é hediondo)",
+      "fonte": "Damásio Jurisprudência (página da súmula)"
+    },
+    {
+      "itens": [
+        "pen-lei-8137-pdf54-q010"
+      ],
+      "assunto": "Súmula Vinculante 24 e inaplicabilidade ao art. 1º, V (crime formal)",
+      "fonte": "Damásio Jurisprudência (STJ, RHC 209.207/GO) e Dizer o Direito"
+    },
+    {
+      "itens": [
+        "pen-lei-9605-pdf65-q016"
+      ],
+      "assunto": "Dispensa da dupla imputação (STF, RE 548.181; STJ, RMS 39.173/BA)",
+      "fonte": "Dizer o Direito"
+    },
+    {
+      "itens": [
+        "pen-lei-9455-pdf63-q047"
+      ],
+      "assunto": "Regime inicial fechado na Lei de Tortura não é obrigatório (STJ, RHC 76.642/RN, transcrito no item)",
+      "fonte": "Ementa do próprio item e Legjur (STJ, 5ª Turma, 2017)"
+    },
+    {
+      "itens": [
+        "pen-lei-1079-pdf7-q001"
+      ],
+      "assunto": "Súmula Vinculante 46 do STF",
+      "fonte": "Dizer o Direito"
+    }
+  ],
+  "itens": [
+    {
+      "id": "pen-lei-8072-pdf52-q001",
+      "dispositivo": "art. 1º, caput",
+      "lei": "Lei 8.072/1990",
+      "gabarito": "E",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 8.072/1990 · Art. 1º",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-8072-pdf52-q010",
+      "dispositivo": "art. 1º, I",
+      "lei": "Lei 8.072/1990",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 8.072/1990 · Art. 1º, I",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-8072-pdf52-q013",
+      "dispositivo": "art. 1º, I-A, \"c\"",
+      "lei": "Lei 8.072/1990",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "autoral",
+      "subtopic": "Lei 8.072/1990 · Art. 1º, I-A, c",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-8072-pdf52-q014",
+      "dispositivo": "art. 1º, I-A, \"b\"",
+      "lei": "Lei 8.072/1990",
+      "gabarito": "E",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 8.072/1990 · Art. 1º, I-A, “b”",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-8072-pdf52-q015",
+      "dispositivo": "art. 1º, I-A, \"a\", e parágrafo único, III",
+      "lei": "Lei 8.072/1990",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 8.072/1990 · Art. 1º, I-A, § único, III",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-8072-pdf52-q020",
+      "dispositivo": "art. 1º, II, \"b\"",
+      "lei": "Lei 8.072/1990",
+      "gabarito": "E",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 8.072/1990 · Art 1º, II",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-8072-pdf52-q025",
+      "dispositivo": "art. 1º, II, \"a\"",
+      "lei": "Lei 8.072/1990",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 8.072/1990 · Art. 1º, II, \"a\"",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-8072-pdf52-q026",
+      "dispositivo": "art. 1º, II, \"b\"",
+      "lei": "Lei 8.072/1990",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 8.072/1990 · Art. 1º, II, “b”",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-8072-pdf52-q027",
+      "dispositivo": "art. 1º, II, \"c\"",
+      "lei": "Lei 8.072/1990",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 8.072/1990 · Art. 1º, II, c",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-8072-pdf52-q030",
+      "dispositivo": "art. 1º, IV",
+      "lei": "Lei 8.072/1990",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 8.072/1990 · Art. 1º, IV",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-8072-pdf52-q031",
+      "dispositivo": "art. 1º, V",
+      "lei": "Lei 8.072/1990",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 8.072/1990 · Art. 1º, V",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-8072-pdf52-q033",
+      "dispositivo": "art. 1º, VI",
+      "lei": "Lei 8.072/1990",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 8.072/1990 · Art. 1º, VI",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-8072-pdf52-q040",
+      "dispositivo": "art. 1º, VII",
+      "lei": "Lei 8.072/1990",
+      "gabarito": "E",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 8.072/1990 · Art. 1º, VII",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-8072-pdf52-q043",
+      "dispositivo": "art. 1º, VIII",
+      "lei": "Lei 8.072/1990",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 8.072/1990 · Art. 1º, VIII",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-8072-pdf52-q047",
+      "dispositivo": "art. 1º, IX",
+      "lei": "Lei 8.072/1990",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 8.072/1990 · Art. 1º, IX",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-8072-pdf52-q050",
+      "dispositivo": "art. 1º, parágrafo único, II (e Súmula 668/STJ)",
+      "lei": "Lei 8.072/1990",
+      "gabarito": "E",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto) e jurisprudência/doutrina",
+      "origem": "real",
+      "subtopic": "Lei 8.072/1990 · Art. 1º, § único",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-8137-pdf54-q001",
+      "dispositivo": "art. 1º, caput",
+      "lei": "Lei 8.137/1990",
+      "gabarito": "E",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 8.137/1990 · Art. 1º",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-8137-pdf54-q003",
+      "dispositivo": "art. 1º, I",
+      "lei": "Lei 8.137/1990",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 8.137/1990 · Art. 1º, I",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-8137-pdf54-q005",
+      "dispositivo": "art. 1º, III, e art. 9º",
+      "lei": "Lei 8.137/1990",
+      "gabarito": "E",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 8.137/1990 · Art. 1º, III",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-8137-pdf54-q007",
+      "dispositivo": "art. 1º, IV, e art. 7º, parágrafo único",
+      "lei": "Lei 8.137/1990",
+      "gabarito": "E",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 8.137/1990 · Art. 1º, IV",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-8137-pdf54-q010",
+      "dispositivo": "art. 1º, V (e Súmula Vinculante 24)",
+      "lei": "Lei 8.137/1990",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto) e jurisprudência/doutrina",
+      "origem": "real",
+      "subtopic": "Lei 8.137/1990 · Art. 1º, V",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-8137-pdf54-q012",
+      "dispositivo": "art. 2º, II",
+      "lei": "Lei 8.137/1990",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 8.137/1990 · Art. 2º",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-8137-pdf54-q013",
+      "dispositivo": "art. 2º, I",
+      "lei": "Lei 8.137/1990",
+      "gabarito": "E",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 8.137/1990 · Art. 2º, I",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-8137-pdf54-q016",
+      "dispositivo": "art. 2º, II",
+      "lei": "Lei 8.137/1990",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 8.137/1990 · Art. 2º, II",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-8137-pdf54-q018",
+      "dispositivo": "art. 2º, IV",
+      "lei": "Lei 8.137/1990",
+      "gabarito": "E",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 8.137/1990 · Art. 2º, IV",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-8137-pdf54-q020",
+      "dispositivo": "art. 2º, V",
+      "lei": "Lei 8.137/1990",
+      "gabarito": "E",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 8.137/1990 · Art. 2º, V",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-8137-pdf54-q022",
+      "dispositivo": "art. 3º, III",
+      "lei": "Lei 8.137/1990",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 8.137/1990 · Art. 3º da",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-8137-pdf54-q025",
+      "dispositivo": "art. 3º, I",
+      "lei": "Lei 8.137/1990",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 8.137/1990 · Art. 3º, I",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-8137-pdf54-q028",
+      "dispositivo": "art. 3º, II",
+      "lei": "Lei 8.137/1990",
+      "gabarito": "E",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto) e jurisprudência/doutrina",
+      "origem": "real",
+      "subtopic": "Lei 8.137/1990 · Art. 3º, II",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-8137-pdf54-q030",
+      "dispositivo": "art. 3º, III, e art. 11",
+      "lei": "Lei 8.137/1990",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 8.137/1990 · Art. 3º, III",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-8137-pdf54-q032",
+      "dispositivo": "art. 4º",
+      "lei": "Lei 8.137/1990",
+      "gabarito": "E",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 8.137/1990 · Art. 4º",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-8137-pdf54-q034",
+      "dispositivo": "art. 4º, I",
+      "lei": "Lei 8.137/1990",
+      "gabarito": "E",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 8.137/1990 · Art. 4º, I",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-8137-pdf54-q035",
+      "dispositivo": "art. 4º, II, \"a\"",
+      "lei": "Lei 8.137/1990",
+      "gabarito": "E",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 8.137/1990 · Art. 4º, II, a",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-8137-pdf54-q037",
+      "dispositivo": "art. 7º, I",
+      "lei": "Lei 8.137/1990",
+      "gabarito": "E",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 8.137/1990 · Art. 7º, I",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-8137-pdf54-q038",
+      "dispositivo": "art. 7º, IV, \"b\"",
+      "lei": "Lei 8.137/1990",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 8.137/1990 · Art. 7º, IV, b",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-8137-pdf54-q039",
+      "dispositivo": "art. 7º, VIII",
+      "lei": "Lei 8.137/1990",
+      "gabarito": "E",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 8.137/1990 · Art. 7º, VIII",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-8137-pdf54-q040",
+      "dispositivo": "art. 7º, IX, e parágrafo único",
+      "lei": "Lei 8.137/1990",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 8.137/1990 · Art. 7º, IX",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-8137-pdf54-q043",
+      "dispositivo": "art. 7º, parágrafo único",
+      "lei": "Lei 8.137/1990",
+      "gabarito": "E",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 8.137/1990 · Art. 7º, § único",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-8137-pdf54-q046",
+      "dispositivo": "art. 8º",
+      "lei": "Lei 8.137/1990",
+      "gabarito": "E",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 8.137/1990 · Art. 8º",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-8137-pdf54-q048",
+      "dispositivo": "art. 11",
+      "lei": "Lei 8.137/1990",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 8.137/1990 · Art. 11",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-7716-pdf48-q001",
+      "dispositivo": "ementa",
+      "lei": "Lei 7.716/1989",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 7.716/1989 · Ementa da Lei 7.716/1989",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-7716-pdf48-q002",
+      "dispositivo": "art. 1º",
+      "lei": "Lei 7.716/1989",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 7.716/1989 · Art. 1º",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-7716-pdf48-q006",
+      "dispositivo": "art. 2º-A",
+      "lei": "Lei 7.716/1989",
+      "gabarito": "E",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "autoral",
+      "subtopic": "Lei 7.716/1989 · Art. 2º-A",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-7716-pdf48-q009",
+      "dispositivo": "art. 2º-A e parágrafo único",
+      "lei": "Lei 7.716/1989",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 7.716/1989 · Art. 2º-A, § único",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-7716-pdf48-q011",
+      "dispositivo": "art. 3º",
+      "lei": "Lei 7.716/1989",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 7.716/1989 · Art. 3º",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-7716-pdf48-q014",
+      "dispositivo": "art. 3º, caput e parágrafo único",
+      "lei": "Lei 7.716/1989",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 7.716/1989 · Art. 3º, § único",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-7716-pdf48-q015",
+      "dispositivo": "art. 4º",
+      "lei": "Lei 7.716/1989",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 7.716/1989 · Art. 4º",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-7716-pdf48-q019",
+      "dispositivo": "art. 4º, § 2º",
+      "lei": "Lei 7.716/1989",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 7.716/1989 · Art. 4º, § 2º",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-7716-pdf48-q021",
+      "dispositivo": "art. 5º e art. 9º",
+      "lei": "Lei 7.716/1989",
+      "gabarito": "E",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 7.716/1989 · Art. 5º",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-7716-pdf48-q025",
+      "dispositivo": "art. 6º",
+      "lei": "Lei 7.716/1989",
+      "gabarito": "E",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 7.716/1989 · Art. 6º",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-7716-pdf48-q026",
+      "dispositivo": "art. 7º",
+      "lei": "Lei 7.716/1989",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 7.716/1989 · Art. 7º",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-7716-pdf48-q028",
+      "dispositivo": "art. 8º",
+      "lei": "Lei 7.716/1989",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 7.716/1989 · Art. 8º",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-7716-pdf48-q029",
+      "dispositivo": "art. 14",
+      "lei": "Lei 7.716/1989",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 7.716/1989 · Art. 14",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-7716-pdf48-q030",
+      "dispositivo": "arts. 16, 18 e 20-B",
+      "lei": "Lei 7.716/1989",
+      "gabarito": "E",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 7.716/1989 · Art. 16",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-7716-pdf48-q037",
+      "dispositivo": "art. 20",
+      "lei": "Lei 7.716/1989",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 7.716/1989 · Art. 20",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-7716-pdf48-q043",
+      "dispositivo": "art. 20-C",
+      "lei": "Lei 7.716/1989",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 7.716/1989 · Art. 20-C",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-7716-pdf48-q044",
+      "dispositivo": "art. 20, § 1º",
+      "lei": "Lei 7.716/1989",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 7.716/1989 · Art. 20, § 1º",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-7716-pdf48-q045",
+      "dispositivo": "art. 20-A",
+      "lei": "Lei 7.716/1989",
+      "gabarito": "E",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 7.716/1989 · Art. 20-A",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-7716-pdf48-q046",
+      "dispositivo": "art. 20, § 2º",
+      "lei": "Lei 7.716/1989",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 7.716/1989 · Art. 20, § 2º",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-9605-pdf65-q001",
+      "dispositivo": "art. 2º",
+      "lei": "Lei 9.605/1998",
+      "gabarito": "C",
+      "status": "pendente",
+      "base": "gabarito oficial possivelmente divergente do texto ou da jurisprudência",
+      "origem": "real",
+      "subtopic": "Lei 9.605/1998 · Art. 2º",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-9605-pdf65-q004",
+      "dispositivo": "art. 3º",
+      "lei": "Lei 9.605/1998",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 9.605/1998 · Art. 3º",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-9605-pdf65-q016",
+      "dispositivo": "art. 3º, parágrafo único",
+      "lei": "Lei 9.605/1998",
+      "gabarito": "E",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto) e jurisprudência/doutrina",
+      "origem": "real",
+      "subtopic": "Lei 9.605/1998 · Art. 3º, § único",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-9605-pdf65-q027",
+      "dispositivo": "art. 4º",
+      "lei": "Lei 9.605/1998",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 9.605/1998 · Art. 4º",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-9605-pdf65-q028",
+      "dispositivo": "art. 32, § 1º-B (rótulo do item indica \"Art. 5º, § 1º\")",
+      "lei": "Lei 9.605/1998",
+      "gabarito": "E",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "autoral",
+      "subtopic": "Lei 9.605/1998 · Art. 5º, § 1º",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-9605-pdf65-q029",
+      "dispositivo": "art. 6º, III",
+      "lei": "Lei 9.605/1998",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 9.605/1998 · Art. 6º",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-9605-pdf65-q031",
+      "dispositivo": "art. 6º, I",
+      "lei": "Lei 9.605/1998",
+      "gabarito": "E",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 9.605/1998 · Art. 6º, I",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-9605-pdf65-q032",
+      "dispositivo": "art. 6º, II",
+      "lei": "Lei 9.605/1998",
+      "gabarito": "E",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 9.605/1998 · Art. 6º, II",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-9605-pdf65-q034",
+      "dispositivo": "art. 6º, III",
+      "lei": "Lei 9.605/1998",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 9.605/1998 · Art. 6º, III",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-9605-pdf65-q036",
+      "dispositivo": "art. 7º, caput",
+      "lei": "Lei 9.605/1998",
+      "gabarito": "E",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 9.605/1998 · Art. 7º",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-9605-pdf65-q037",
+      "dispositivo": "art. 7º, I",
+      "lei": "Lei 9.605/1998",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 9.605/1998 · Art. 7º, I",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-9605-pdf65-q042",
+      "dispositivo": "art. 7º, parágrafo único",
+      "lei": "Lei 9.605/1998",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 9.605/1998 · Art. 7º, § único",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-9605-pdf65-q043",
+      "dispositivo": "art. 8º, I e IV",
+      "lei": "Lei 9.605/1998",
+      "gabarito": "E",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 9.605/1998 · Art. 8º, I",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-9605-pdf65-q046",
+      "dispositivo": "art. 8º, III",
+      "lei": "Lei 9.605/1998",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 9.605/1998 · Art. 8º, III",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-9605-pdf65-q047",
+      "dispositivo": "art. 8º, II",
+      "lei": "Lei 9.605/1998",
+      "gabarito": "E",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 9.605/1998 · Art. 8º, II",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-9605-pdf65-q048",
+      "dispositivo": "art. 8º, V",
+      "lei": "Lei 9.605/1998",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 9.605/1998 · Art. 8º, V",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-9605-pdf65-q050",
+      "dispositivo": "art. 9º",
+      "lei": "Lei 9.605/1998",
+      "gabarito": "E",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 9.605/1998 · Art. 9º",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-11343-pdf14-q001",
+      "dispositivo": "art. 1º",
+      "lei": "Lei 11.343/2006",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 11.343/2006 · Art. 1º",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-11343-pdf14-q004",
+      "dispositivo": "art. 1º, parágrafo único",
+      "lei": "Lei 11.343/2006",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 11.343/2006 · Art. 1º, § único",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-11343-pdf14-q007",
+      "dispositivo": "art. 2º",
+      "lei": "Lei 11.343/2006",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 11.343/2006 · Art. 2º",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-11343-pdf14-q012",
+      "dispositivo": "art. 2º e parágrafo único",
+      "lei": "Lei 11.343/2006",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 11.343/2006 · Art. 2º, § único",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-11343-pdf14-q014",
+      "dispositivo": "art. 3º",
+      "lei": "Lei 11.343/2006",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 11.343/2006 · Art. 3º",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-11343-pdf14-q016",
+      "dispositivo": "art. 3º, I",
+      "lei": "Lei 11.343/2006",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 11.343/2006 · Art. 3º, I",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-11343-pdf14-q019",
+      "dispositivo": "art. 3º, § 2º",
+      "lei": "Lei 11.343/2006",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 11.343/2006 · Art. 3º, § 2º",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-11343-pdf14-q022",
+      "dispositivo": "art. 4º, VII",
+      "lei": "Lei 11.343/2006",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 11.343/2006 · Art. 4º",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-11343-pdf14-q023",
+      "dispositivo": "art. 4º, I",
+      "lei": "Lei 11.343/2006",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 11.343/2006 · Art. 4º, I",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-11343-pdf14-q026",
+      "dispositivo": "art. 4º, III",
+      "lei": "Lei 11.343/2006",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 11.343/2006 · Art. 4º, III",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-11343-pdf14-q027",
+      "dispositivo": "art. 4º, II",
+      "lei": "Lei 11.343/2006",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 11.343/2006 · Art. 4º, II",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-11343-pdf14-q029",
+      "dispositivo": "art. 4º, V",
+      "lei": "Lei 11.343/2006",
+      "gabarito": "E",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 11.343/2006 · Art. 4º, V",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-11343-pdf14-q031",
+      "dispositivo": "art. 4º, VIII",
+      "lei": "Lei 11.343/2006",
+      "gabarito": "E",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 11.343/2006 · Art. 4º, VIII",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-11343-pdf14-q032",
+      "dispositivo": "art. 4º, IX",
+      "lei": "Lei 11.343/2006",
+      "gabarito": "E",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 11.343/2006 · Art. 4º, IX",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-11343-pdf14-q033",
+      "dispositivo": "art. 4º, X",
+      "lei": "Lei 11.343/2006",
+      "gabarito": "E",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 11.343/2006 · Art. 4º, X",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-11343-pdf14-q034",
+      "dispositivo": "art. 5º, I",
+      "lei": "Lei 11.343/2006",
+      "gabarito": "E",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 11.343/2006 · Art. 5º, I",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-11343-pdf14-q036",
+      "dispositivo": "art. 5º, II",
+      "lei": "Lei 11.343/2006",
+      "gabarito": "E",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 11.343/2006 · Art. 5º, II",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-11343-pdf14-q039",
+      "dispositivo": "art. 5º, III",
+      "lei": "Lei 11.343/2006",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 11.343/2006 · Art. 5º, III",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-11343-pdf14-q040",
+      "dispositivo": "art. 8º-D, § 1º",
+      "lei": "Lei 11.343/2006",
+      "gabarito": "E",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 11.343/2006 · Art. 8º, § 1º",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-11343-pdf14-q041",
+      "dispositivo": "art. 8º-A, I e II",
+      "lei": "Lei 11.343/2006",
+      "gabarito": "E",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 11.343/2006 · Art. 8º-A, I",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-11343-pdf14-q042",
+      "dispositivo": "art. 8º-A, II",
+      "lei": "Lei 11.343/2006",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 11.343/2006 · Art. 8º-A, II",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-11343-pdf14-q043",
+      "dispositivo": "art. 8º-A, III",
+      "lei": "Lei 11.343/2006",
+      "gabarito": "E",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 11.343/2006 · Art. 8º-A, III",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-11343-pdf14-q044",
+      "dispositivo": "art. 8º-A, IX",
+      "lei": "Lei 11.343/2006",
+      "gabarito": "E",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 11.343/2006 · Art. 8º-A, IX",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-11343-pdf14-q048",
+      "dispositivo": "art. 8º-D, I (rótulo do item indica \"IV\")",
+      "lei": "Lei 11.343/2006",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 11.343/2006 · Art. 8º-D, IV",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-11340-pdf13-q001",
+      "dispositivo": "ementa",
+      "lei": "Lei 11.340/2006",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 11.340/2006 · Ementa da Lei 11.340/2006",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-11340-pdf13-q004",
+      "dispositivo": "art. 1º",
+      "lei": "Lei 11.340/2006",
+      "gabarito": "E",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 11.340/2006 · Art. 1º",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-11340-pdf13-q006",
+      "dispositivo": "art. 2º",
+      "lei": "Lei 11.340/2006",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 11.340/2006 · Art. 2º",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-11340-pdf13-q008",
+      "dispositivo": "art. 3º, caput",
+      "lei": "Lei 11.340/2006",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 11.340/2006 · Art. 3º",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-11340-pdf13-q009",
+      "dispositivo": "art. 3º, § 1º",
+      "lei": "Lei 11.340/2006",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 11.340/2006 · Art. 3º, § 1º",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-11340-pdf13-q010",
+      "dispositivo": "art. 4º",
+      "lei": "Lei 11.340/2006",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 11.340/2006 · Art. 4º",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-11340-pdf13-q015",
+      "dispositivo": "art. 5º, caput e III",
+      "lei": "Lei 11.340/2006",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 11.340/2006 · Art. 5º",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-11340-pdf13-q019",
+      "dispositivo": "art. 5º, I",
+      "lei": "Lei 11.340/2006",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 11.340/2006 · Art. 5º, I",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-11340-pdf13-q021",
+      "dispositivo": "art. 5º, II",
+      "lei": "Lei 11.340/2006",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 11.340/2006 · Art. 5º, II",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-11340-pdf13-q027",
+      "dispositivo": "art. 5º, III",
+      "lei": "Lei 11.340/2006",
+      "gabarito": "E",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 11.340/2006 · Art. 5º, III",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-11340-pdf13-q033",
+      "dispositivo": "art. 5º, parágrafo único",
+      "lei": "Lei 11.340/2006",
+      "gabarito": "E",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 11.340/2006 · Art. 5º, § único",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-11340-pdf13-q039",
+      "dispositivo": "art. 6º",
+      "lei": "Lei 11.340/2006",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 11.340/2006 · Art. 6º",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-11340-pdf13-q040",
+      "dispositivo": "art. 7º, I",
+      "lei": "Lei 11.340/2006",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 11.340/2006 · Art. 7º, I",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-11340-pdf13-q044",
+      "dispositivo": "art. 7º, II",
+      "lei": "Lei 11.340/2006",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 11.340/2006 · Art. 7º, II",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-9455-pdf63-q001",
+      "dispositivo": "ementa",
+      "lei": "Lei 9.455/1997",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 9.455/1997 · Ementa da Lei 9.455/1997",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-9455-pdf63-q008",
+      "dispositivo": "art. 1º, I, \"c\"",
+      "lei": "Lei 9.455/1997",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 9.455/1997 · Art. 1º",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-9455-pdf63-q009",
+      "dispositivo": "art. 1º, I, \"a\"",
+      "lei": "Lei 9.455/1997",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 9.455/1997 · Art. 1º, I",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-9455-pdf63-q010",
+      "dispositivo": "art. 1º, I, \"a\", e § 2º",
+      "lei": "Lei 9.455/1997",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 9.455/1997 · Art. 1º, I, a, § 2º",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-9455-pdf63-q011",
+      "dispositivo": "art. 1º, II (e CP, art. 61, II, \"e\", não conferido)",
+      "lei": "Lei 9.455/1997",
+      "gabarito": "C",
+      "status": "certificado-parcial",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto); dispositivo ou precedente complementar ainda não conferido em fonte oficial",
+      "origem": "real",
+      "subtopic": "Lei 9.455/1997 · Art. 1º, II",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-9455-pdf63-q015",
+      "dispositivo": "art. 1º, III",
+      "lei": "Lei 9.455/1997",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "autoral",
+      "subtopic": "Lei 9.455/1997 · Art. 1º, III",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-9455-pdf63-q016",
+      "dispositivo": "art. 1º, § 2º",
+      "lei": "Lei 9.455/1997",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 9.455/1997 · Art. 1º, § 2º",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-9455-pdf63-q019",
+      "dispositivo": "art. 1º, § 3º",
+      "lei": "Lei 9.455/1997",
+      "gabarito": "E",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 9.455/1997 · Art. 1º, § 3º",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-9455-pdf63-q029",
+      "dispositivo": "art. 1º, § 4º",
+      "lei": "Lei 9.455/1997",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 9.455/1997 · Art. 1º, § 4º",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-9455-pdf63-q031",
+      "dispositivo": "art. 1º, § 4º, II",
+      "lei": "Lei 9.455/1997",
+      "gabarito": "E",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 9.455/1997 · Art. 1º, § 4º, II",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-9455-pdf63-q033",
+      "dispositivo": "art. 1º, § 5º",
+      "lei": "Lei 9.455/1997",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 9.455/1997 · Art. 1º, § 5º",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-9455-pdf63-q045",
+      "dispositivo": "art. 1º, § 6º",
+      "lei": "Lei 9.455/1997",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 9.455/1997 · Art. 1º, § 6º",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-9455-pdf63-q047",
+      "dispositivo": "art. 1º, § 7º",
+      "lei": "Lei 9.455/1997",
+      "gabarito": "C",
+      "status": "pendente",
+      "base": "gabarito oficial possivelmente divergente do texto ou da jurisprudência",
+      "origem": "real",
+      "subtopic": "Lei 9.455/1997 · Art. 1º, § 7º",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-9455-pdf63-q049",
+      "dispositivo": "art. 2º",
+      "lei": "Lei 9.455/1997",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 9.455/1997 · Art. 2º",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-13344-pdf29-q001",
+      "dispositivo": "art. 1º",
+      "lei": "Lei 13.344/2016",
+      "gabarito": "E",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "autoral",
+      "subtopic": "Lei 13.344/2016 · Art. 1º",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-13344-pdf29-q002",
+      "dispositivo": "art. 2º, IV",
+      "lei": "Lei 13.344/2016",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "autoral",
+      "subtopic": "Lei 13.344/2016 · Art. 2º, IV",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-13344-pdf29-q003",
+      "dispositivo": "art. 3º, VI e VII",
+      "lei": "Lei 13.344/2016",
+      "gabarito": "E",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "autoral",
+      "subtopic": "Lei 13.344/2016 · Art. 3º, VI e VII",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-13344-pdf29-q004",
+      "dispositivo": "art. 4º",
+      "lei": "Lei 13.344/2016",
+      "gabarito": "E",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "autoral",
+      "subtopic": "Lei 13.344/2016 · Art. 4º",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-13344-pdf29-q005",
+      "dispositivo": "art. 5º",
+      "lei": "Lei 13.344/2016",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "autoral",
+      "subtopic": "Lei 13.344/2016 · Art. 5º",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-13344-pdf29-q006",
+      "dispositivo": "art. 6º",
+      "lei": "Lei 13.344/2016",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "autoral",
+      "subtopic": "Lei 13.344/2016 · Art. 6º",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-13344-pdf29-q007",
+      "dispositivo": "art. 6º, § 1º",
+      "lei": "Lei 13.344/2016",
+      "gabarito": "E",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "autoral",
+      "subtopic": "Lei 13.344/2016 · Art. 6º, § 1º",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-13344-pdf29-q008",
+      "dispositivo": "art. 8º",
+      "lei": "Lei 13.344/2016",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "autoral",
+      "subtopic": "Lei 13.344/2016 · Art. 8º",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-13344-pdf29-q009",
+      "dispositivo": "art. 14",
+      "lei": "Lei 13.344/2016",
+      "gabarito": "E",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "autoral",
+      "subtopic": "Lei 13.344/2016 · Art. 14",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-13344-pdf29-q010",
+      "dispositivo": "art. 15",
+      "lei": "Lei 13.344/2016",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "autoral",
+      "subtopic": "Lei 13.344/2016 · Art. 15",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-1079-pdf7-q001",
+      "dispositivo": "art. 4º, V (e Súmula Vinculante 46)",
+      "lei": "Lei 1.079/1950",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto) e jurisprudência/doutrina",
+      "origem": "real",
+      "subtopic": "Lei 1.079/1950 · Art. 4º, V",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-1079-pdf7-q002",
+      "dispositivo": "art. 5º, item 7",
+      "lei": "Lei 1.079/1950",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 1.079/1950 · Art. 5º, 7",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-1079-pdf7-q003",
+      "dispositivo": "art. 7º, item 6",
+      "lei": "Lei 1.079/1950",
+      "gabarito": "E",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 1.079/1950 · Art. 7º, 6",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-1079-pdf7-q004",
+      "dispositivo": "art. 79-A, I",
+      "lei": "Lei 1.079/1950",
+      "gabarito": "E",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "autoral",
+      "subtopic": "Lei 1.079/1950 · Art. 79-A, I",
+      "arquivo": "tools/decorando-data-restantes.js"
+    },
+    {
+      "id": "pen-lei-12850-pdf23-q022",
+      "dispositivo": "art. 1º, § 1º",
+      "lei": "Lei 12.850/2013",
+      "gabarito": "C",
+      "status": "certificado",
+      "base": "texto legal conferido (Vade Mecum da Central, Planalto)",
+      "origem": "real",
+      "subtopic": "Lei 12.850/2013 · Art. 1º, § 1º",
+      "arquivo": "tools/decorando-data-restantes.js"
+    }
+  ]
+}
