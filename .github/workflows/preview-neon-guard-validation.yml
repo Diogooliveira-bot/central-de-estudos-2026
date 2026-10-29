@@ -1,0 +1,28 @@
+name: Neon TEST Preview - isolamento de banco
+on:
+  push:
+    branches:
+      - security/preview-neon-guard-20261029
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Node 22
+        uses: actions/setup-node@49933ea5288ca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Dependencies
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Syntax
+        run: node --check lib/auth.js
+      - name: Preview TEST-only guard and launch regressions
+        run: node --test tests/preview-neon-isolation-unit.mjs tests/auth-unit.mjs tests/plan-access-unit.mjs tests/public-free-signup-4-5-unit.mjs tests/public-app-url-unit.mjs
