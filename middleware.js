@@ -177,18 +177,35 @@ export default async function middleware(request) {
 
   if (await hasPreviewGuestCookie(request)) {
     if (path.startsWith('/api/')) {
-      // The synthetic identity is deliberately the ONLY API allowed.
-      // In particular, guest users cannot read/sync/write real database data.
+      // The synthetic identity and the read-only protected-content transport are
+      // the only APIs allowed. The latter reads bundled files and never touches
+      // student or entitlement data.
       if (request.method === 'GET' && path === '/api/auth' &&
           url.searchParams.get('action') === 'me') return next();
+      if ((request.method === 'GET' || request.method === 'HEAD') &&
+          path === '/api/private-content') return next();
       return previewForbidden();
     }
     // The private Preview link exists to validate the real readers and their
     // static course bundles. It never grants an account or database access.
-    // Keep writes and every data API blocked above, but allow read-only static
-    // assets in Preview so the hosted disciplines can actually be exercised.
-    if (protectedAsset(path)) {
-      if (request.method === 'GET' || request.method === 'HEAD') return next();
+    // Protected bundles are intentionally absent from the public static output.
+    // Route them through the same private transport used by real accounts; the
+    // handler validates the Preview cookie before reading the bundled file.
+    const previewAsset = protectedAsset(path);
+    if (previewAsset) {
+      if (request.method === 'GET' || request.method === 'HEAD') {
+        if (previewAsset.kind === 'blocked' || previewAsset.kind === 'lei-em-dia') return previewForbidden();
+        const destination = new URL('/api/private-content', request.url);
+        destination.searchParams.set('asset', path);
+        return new Response(null, {
+          status: 307,
+          headers: {
+            Location: destination.toString(),
+            'Cache-Control': 'private, no-store, max-age=0',
+            'Referrer-Policy': 'no-referrer',
+          },
+        });
+      }
       return previewForbidden();
     }
     if (path === '/usuarios.html' || path === '/update-central.html' || (path === '/planos.html' || path === '/vendas-hotmart.html')) return previewForbidden();
