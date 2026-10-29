@@ -5,7 +5,7 @@ import vm from "node:vm";
 import {createHash} from "node:crypto";
 const root=new URL("../",import.meta.url);
 const FILES=[["tools/decorando-data-adm-pack1.js","DATA_ADM_PACK1"],["tools/decorando-data-adm-pack2.js","DATA_ADM_PACK2"],["tools/decorando-data-adm-pack3.js","DATA_ADM_PACK3"],["tools/decorando-data-adm-pack4.js","DATA_ADM_PACK4"],["tools/decorando-data-adm-pack5.js","DATA_ADM_PACK5"],["tools/decorando-data-adm-8112-extra.js","DATA_ADM_8112_EXTRA"],["tools/decorando-data-adm-8429-extra.js","DATA_ADM_8429_EXTRA"],["tools/decorando-data-adm-12527-expansao.js","DATA_ADM_12527_EXPANSAO"],["tools/decorando-data-adm-14133-extra.js","DATA_ADM_14133_EXTRA"]];
-const LAWS={"adm-lei-8112":71,"adm-lei-8429":57,"adm-lei-12527":52,"adm-lei-dl200":29,"adm-lei-8987":29,"adm-lei-12846":25,"adm-lei-11079":24,"adm-lei-13303":41,"adm-lei-14133":67,"adm-lei-lindb20":15,"adm-lei-13460":15,"adm-lei-12813":14};
+const LAWS={"adm-lei-8112":71,"adm-lei-8429":57,"adm-lei-12527":52,"adm-lei-dl200":29,"adm-lei-8987":29,"adm-lei-12846":25,"adm-lei-11079":24,"adm-lei-13303":41,"adm-lei-14133":67,"adm-lei-lindb20":15,"adm-lei-13460":15,"adm-lei-12813":14,"adm-lei-d11462":1};
 const audit=JSON.parse(readFileSync(new URL("audits/adm-leis-principais-revisao-juridica-20261029.json",root),"utf8"));
 const html=readFileSync(new URL("tools/decorando.html",root),"utf8");
 const all=[];
@@ -15,10 +15,10 @@ for(const [f,n] of FILES){
   for(const q of vm.runInContext(n,ctx))all.push({...q,__file:f});
 }
 const rev=all.filter(q=>q.question.legalAudit&&q.topicId in LAWS&&audit.itens.some(i=>i.id===q.id));
-test("439 itens das 12 leis principais revisados, por lei",()=>{
-  assert.equal(audit.total,439);
-  assert.equal(rev.length,439);
-  assert.equal(new Set(rev.map(q=>q.id)).size,439);
+test("440 itens das 12 leis principais e do Decreto 11.462 revisados, por lei",()=>{
+  assert.equal(audit.total,440);
+  assert.equal(rev.length,440);
+  assert.equal(new Set(rev.map(q=>q.id)).size,440);
   for(const [t,n] of Object.entries(LAWS)){
     assert.equal(rev.filter(q=>q.topicId===t).length,n,t);
     assert.equal(audit.porTopico[t],n,t);

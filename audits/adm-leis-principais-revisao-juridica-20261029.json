@@ -1,16 +1,16 @@
 {
-  "titulo": "Direito Administrativo — 12 leis principais (Lei em Dia): revisão jurídica",
+  "titulo": "Direito Administrativo — 12 leis principais e Decreto 11.462 (Lei em Dia): revisão jurídica",
   "data": "2026-10-29",
   "metodo": "Cada questão foi comparada com o texto compilado da lei enviado pelo proprietário. Gabaritos não foram alterados. A explicação foi reescrita (\"Correta.\" ou \"Errada.\" conforme o gabarito, ou \"Em revisão.\" nos pendentes) e o parts foi refeito com trechos literais da lei.",
   "commitBase": "0d834286d33146e9d9a7628f7ab9e861e57e8663",
-  "total": 439,
+  "total": 440,
   "porStatus": {
-    "certificado": 425,
+    "certificado": 426,
     "certificado-parcial": 14
   },
   "porArquivo": {
     "tools/decorando-data-adm-pack1.js": 109,
-    "tools/decorando-data-adm-pack2.js": 49,
+    "tools/decorando-data-adm-pack2.js": 50,
     "tools/decorando-data-adm-pack3.js": 42,
     "tools/decorando-data-adm-pack4.js": 29,
     "tools/decorando-data-adm-pack5.js": 57,
@@ -31,7 +31,8 @@
     "adm-lei-14133": 67,
     "adm-lei-lindb20": 15,
     "adm-lei-13460": 15,
-    "adm-lei-12813": 14
+    "adm-lei-12813": 14,
+    "adm-lei-d11462": 1
   },
   "porTopicoStatus": {
     "adm-lei-8112": {
@@ -74,22 +75,25 @@
     },
     "adm-lei-12813": {
       "certificado": 14
+    },
+    "adm-lei-d11462": {
+      "certificado": 1
     }
   },
   "gabaritos": {
     "C": 315,
-    "E": 124
+    "E": 125
   },
   "gabaritosAlterados": 0,
   "itensForaDaRevisaoAlterados": 0,
   "camposAlterados": {
-    "parts": 414,
-    "question": 439,
-    "question.explanation": 439,
-    "question.legalAudit": 439,
-    "question.statement": 45,
-    "question.meta": 45,
-    "question.role": 45
+    "parts": 415,
+    "question": 440,
+    "question.explanation": 440,
+    "question.legalAudit": 440,
+    "question.statement": 46,
+    "question.meta": 46,
+    "question.role": 46
   },
   "cabecalhosCorrigidos": [
     {
@@ -271,6 +275,10 @@
     {
       "id": "adm-13303-pdf28-q043",
       "trecho": "Externo (TCE-RJ)"
+    },
+    {
+      "id": "adm-d11462-pdf34-q001",
+      "trecho": "Administrativa (STM)"
     }
   ],
   "parciais": [
@@ -431,7 +439,7 @@
   },
   "datasetBlobShas": {
     "tools/decorando-data-adm-pack1.js": "debc8c830882cbbff0eaf17e5c38430e9dc7eb48",
-    "tools/decorando-data-adm-pack2.js": "a5365c75430be19a02b0e04337c7094e95bfdd2f",
+    "tools/decorando-data-adm-pack2.js": "65ff8412e4b365ca5620e5a86de378e79db6948c",
     "tools/decorando-data-adm-pack3.js": "84f4f4aa52ead59739d41aa471dc0b6bfdeb17ae",
     "tools/decorando-data-adm-pack4.js": "36cca5aa1d607bf4ad130dddae157db2e8530f67",
     "tools/decorando-data-adm-pack5.js": "8a55af680d0580842370d31ee5c6d432ccfbc7b8",
@@ -441,14 +449,14 @@
     "tools/decorando-data-adm-14133-extra.js": "8d981abf94ed95bb6569a9ee89ced9619ea621f6"
   },
   "observacoes": [
-    "Fonte: textos compilados do Planalto enviados pelo proprietário em 29/10/2026 (PDF) para as 12 leis. Os PDFs trazem versões antiga e atual de alguns dispositivos; a conferência usou a última redação de cada artigo e não usou dispositivos revogados como base.",
-    "Nenhum gabarito foi alterado. Os enunciados não foram reescritos: apenas 45 itens tiveram o cargo ou órgão vazado para o início do enunciado devolvido ao campo de origem (meta), como na revisão anterior de Administrativo; o texto da pergunta ficou intacto.",
+    "Fonte: textos compilados do Planalto enviados pelo proprietário em 29/10/2026 (PDF) para as 12 leis e para o Decreto 11.462/2023. Os PDFs trazem versões antiga e atual de alguns dispositivos; a conferência usou a última redação de cada artigo e não usou dispositivos revogados como base.",
+    "Nenhum gabarito foi alterado. Os enunciados não foram reescritos: apenas 46 itens tiveram o cargo ou órgão vazado para o início do enunciado devolvido ao campo de origem (meta), como na revisão anterior de Administrativo; o texto da pergunta ficou intacto.",
     "Itens cuja correção depende de jurisprudência, doutrina, terminologia doutrinária, outro diploma ou do silêncio do texto foram certificados de forma parcial, com a ressalva na explicação, e o gabarito foi mantido.",
     "O texto compilado traz anotações \"Vide ADI\" em dispositivos da Lei 8.429 (art. 17-B) e da Lei 13.303 (art. 17, § 2º). O conteúdo dessas decisões não consta do arquivo e não foi incorporado; os cinco itens afetados ficaram certificados de forma parcial.",
     "Quatro itens (adm-8112-pdf53-q014, adm-8112-pdf53-q025, adm-8987-pdf59-q001, adm-8987-pdf59-q004) mantiveram o cabeçalho no enunciado, pois sem ele seriam duplicados de outro item do mesmo tópico.",
     "A data registrada em cada legalAudit é 2026-10-28, mantida por consistência com a campanha de revisão; a conferência destas 12 leis foi feita em 29/10/2026.",
     "Rótulos de dispositivo que não correspondem ao conteúdo cobrado foram mantidos e sinalizados dentro da explicação.",
-    "O item do Decreto 11.462 (adm-lei-d11462) e os itens da Lei 9.784 e demais leis administrativas não fazem parte desta revisão."
+    "Os itens da Lei 9.784 e das demais leis administrativas não fazem parte desta revisão."
   ],
   "itens": [
     {
@@ -1712,6 +1720,14 @@
       "arquivo": "tools/decorando-data-adm-pack2.js",
       "topico": "adm-lei-13303",
       "dispositivo": "Art. 24º, § 1º, inc. II",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "adm-d11462-pdf34-q001",
+      "arquivo": "tools/decorando-data-adm-pack2.js",
+      "topico": "adm-lei-d11462",
+      "dispositivo": "Art. 33º",
       "gabarito": "E",
       "status": "certificado"
     },

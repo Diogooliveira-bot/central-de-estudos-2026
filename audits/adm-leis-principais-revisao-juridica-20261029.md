@@ -1,8 +1,8 @@
-# Direito Administrativo — 12 leis principais: revisão jurídica
+# Direito Administrativo — 12 leis principais e Decreto 11.462: revisão jurídica
 
 Data: 2026-10-29
 
-Foram revisadas 439 questões do banco de Administrativo (12 leis), item a item, contra o texto compilado de cada lei. Nenhum gabarito foi alterado.
+Foram revisadas 440 questões do banco de Administrativo (13 leis), item a item, contra o texto compilado de cada lei. Nenhum gabarito foi alterado.
 
 ## Método
 
@@ -14,11 +14,11 @@ Foram revisadas 439 questões do banco de Administrativo (12 leis), item a item,
 
 | Status | Questões |
 |---|---|
-| certificado | 425 |
+| certificado | 426 |
 | certificado-parcial | 14 |
 | pendente | 0 |
 
-Gabaritos dos itens revisados: 315 Certo e 124 Errado.
+Gabaritos dos itens revisados: 315 Certo e 125 Errado.
 
 | Lei | Revisadas | Certificado | Parcial | Pendente |
 |---|---|---|---|---|
@@ -34,6 +34,7 @@ Gabaritos dos itens revisados: 315 Certo e 124 Errado.
 | LINDB (Decreto-Lei 4.657/1942, arts. 20 a 30) (adm-lei-lindb20) | 15 | 15 | 0 | 0 |
 | Lei 13.460/2017 (adm-lei-13460) | 15 | 15 | 0 | 0 |
 | Lei 12.813/2013 (adm-lei-12813) | 14 | 14 | 0 | 0 |
+| Decreto 11.462/2023 (adm-lei-d11462) | 1 | 1 | 0 | 0 |
 
 ## Pendentes (0) — "Em revisão."
 
@@ -72,7 +73,7 @@ Base de comparação: `0d83428`.
 | Arquivo | SHA antes | SHA depois |
 |---|---|---|
 | `tools/decorando-data-adm-pack1.js` | a786f8e83443 | debc8c830882 |
-| `tools/decorando-data-adm-pack2.js` | e58dbf6bc52f | a5365c75430b |
+| `tools/decorando-data-adm-pack2.js` | e58dbf6bc52f | 65ff8412e4b3 |
 | `tools/decorando-data-adm-pack3.js` | cb80a990e479 | 84f4f4aa52ea |
 | `tools/decorando-data-adm-pack4.js` | 780d4a8ff4ba | 36cca5aa1d60 |
 | `tools/decorando-data-adm-pack5.js` | b570ef3bd9c5 | 8a55af680d05 |
@@ -81,18 +82,18 @@ Base de comparação: `0d83428`.
 | `tools/decorando-data-adm-12527-expansao.js` | c6802ed8cf0a | 68c470bb948c |
 | `tools/decorando-data-adm-14133-extra.js` | c8636c440b09 | 8d981abf94ed |
 
-Campos alterados nos itens revisados (quantidade de itens): parts: 414; question: 439; question.explanation: 439; question.legalAudit: 439; question.statement: 45; question.meta: 45; question.role: 45.
+Campos alterados nos itens revisados (quantidade de itens): parts: 415; question: 440; question.explanation: 440; question.legalAudit: 440; question.statement: 46; question.meta: 46; question.role: 46.
 
 ## Observações
 
-- Fonte: textos compilados do Planalto enviados pelo proprietário em 29/10/2026 (PDF) para as 12 leis. Os PDFs trazem versões antiga e atual de alguns dispositivos; a conferência usou a última redação de cada artigo e não usou dispositivos revogados como base.
-- Nenhum gabarito foi alterado. Os enunciados não foram reescritos: apenas 45 itens tiveram o cargo ou órgão vazado para o início do enunciado devolvido ao campo de origem (meta), como na revisão anterior de Administrativo; o texto da pergunta ficou intacto.
+- Fonte: textos compilados do Planalto enviados pelo proprietário em 29/10/2026 (PDF) para as 12 leis e para o Decreto 11.462/2023. Os PDFs trazem versões antiga e atual de alguns dispositivos; a conferência usou a última redação de cada artigo e não usou dispositivos revogados como base.
+- Nenhum gabarito foi alterado. Os enunciados não foram reescritos: apenas 46 itens tiveram o cargo ou órgão vazado para o início do enunciado devolvido ao campo de origem (meta), como na revisão anterior de Administrativo; o texto da pergunta ficou intacto.
 - Itens cuja correção depende de jurisprudência, doutrina, terminologia doutrinária, outro diploma ou do silêncio do texto foram certificados de forma parcial, com a ressalva na explicação, e o gabarito foi mantido.
 - O texto compilado traz anotações "Vide ADI" em dispositivos da Lei 8.429 (art. 17-B) e da Lei 13.303 (art. 17, § 2º). O conteúdo dessas decisões não consta do arquivo e não foi incorporado; os cinco itens afetados ficaram certificados de forma parcial.
 - Quatro itens (adm-8112-pdf53-q014, adm-8112-pdf53-q025, adm-8987-pdf59-q001, adm-8987-pdf59-q004) mantiveram o cabeçalho no enunciado, pois sem ele seriam duplicados de outro item do mesmo tópico.
 - A data registrada em cada legalAudit é 2026-10-28, mantida por consistência com a campanha de revisão; a conferência destas 12 leis foi feita em 29/10/2026.
 - Rótulos de dispositivo que não correspondem ao conteúdo cobrado foram mantidos e sinalizados dentro da explicação.
-- O item do Decreto 11.462 (adm-lei-d11462) e os itens da Lei 9.784 e demais leis administrativas não fazem parte desta revisão.
+- Os itens da Lei 9.784 e das demais leis administrativas não fazem parte desta revisão.
 
 ## Itens
 
@@ -256,6 +257,7 @@ Campos alterados nos itens revisados (quantidade de itens): parts: 414; question
 | adm-13303-pdf28-q048 | Art. 24º | C | certificado |
 | adm-13303-pdf28-q049 | Art. 24º, § 1º, inc. I | E | certificado |
 | adm-13303-pdf28-q050 | Art. 24º, § 1º, inc. II | E | certificado |
+| adm-d11462-pdf34-q001 | Art. 33º | E | certificado |
 | adm-14133-autoral-001 | Art. 1º | C | certificado |
 | adm-14133-autoral-002 | Art. 1º | E | certificado |
 | adm-14133-autoral-003 | Art. 5º | C | certificado |

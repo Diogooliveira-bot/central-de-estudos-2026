@@ -4395,19 +4395,25 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 33º",
     "title": "Decreto 11.462/2023 — Registro de Preços",
     "parts": [
-      "Art. 33 - Fica vedada aos órgãos e às entidades da Administração Pública federal a adesão a ata de registro de preços gerenciada por órgão ou entidade estadual, distrital ou municipal."
+      "Art. 33. Fica vedada aos órgãos e às entidades da Administração Pública federal a adesão a ata de registro de preços gerenciada por órgão ou entidade estadual, distrital ou municipal."
     ],
     "origin": "real",
     "question": {
-      "statement": "Administrativa (STM) À luz do Decreto n.º 11.462/2023, julgue o item seguinte, acerca do sistema de registro de preços. É permitida aos órgãos e às entidades da administração pública federal a adesão a ata de registro de preços gerenciada por órgão ou entidade estadual, distrital ou municipal.",
+      "statement": "À luz do Decreto n.º 11.462/2023, julgue o item seguinte, acerca do sistema de registro de preços. É permitida aos órgãos e às entidades da administração pública federal a adesão a ata de registro de preços gerenciada por órgão ou entidade estadual, distrital ou municipal.",
       "answer": false,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Errada. É vedada aos órgãos e às entidades da Administração Pública federal a adesão a ata de registro de preços gerenciada por órgão ou entidade estadual, distrital ou municipal (art. 33), e não permitida.",
       "source": "34.pdf · questão 1 · Art. 33, Decreto 11.462/2023",
-      "meta": "CESPE/CEBRASPE 2025 - Técnico Judiciário - Área",
+      "meta": "CESPE/CEBRASPE 2025 - Técnico Judiciário - Área Administrativa (STM)",
       "bank": "CESPE/CEBRASPE",
       "year": 2025,
-      "role": "Técnico Judiciário - Área",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "role": "Técnico Judiciário - Área Administrativa (STM)",
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Decreto 11.462/2023, DOU de 31/03/2023)",
+        "date": "2026-10-28",
+        "source": "Decreto 11.462/2023, texto do DOU (Imprensa Nacional) enviado pelo proprietário em 29/10/2026"
+      }
     }
   }
 ];
