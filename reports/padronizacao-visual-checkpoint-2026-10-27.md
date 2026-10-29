@@ -684,3 +684,15 @@ Contagens de elementos efetivamente renderizados no navegador (mesmas nas três 
 - **Pendência:** as execuções terminaram, mas não alcançaram o leitor CPC M05; a Central apresentou erro de carregamento no Gratuito e navegação inconclusiva no Premium. Progresso e bloqueio HTTP de apostila não aferidos.
 - No código publicado existem os controles **Disciplinas → Direito Processual Civil**; caminhos `/central` e `/#/cpc` testados pela automação não constituem navegação oficial. Não corrigir código sem reprodução na rota oficial.
 - **Relatório ampliado:** [Etapa 10.4.3](./etapa10-4-3-validacao-sessoes-cpc-2026-10-28.md). Nenhuma promoção a Production.
+
+
+## Encerramento definitivo da Etapa 10.4 — Preview autenticada (29/10/2026)
+
+- **Relatório definitivo:** [Etapa 10.4 — validação de Direito Processual Civil na Preview privada](./etapa10-4-validacao-cpc-preview-2026-10-28.md).
+- **Deployment privado validado:** Vercel `dpl_4wScDvpKUMCtYi1W75ZRoqXjEdtM`, estado `READY`, target Preview (`target: null`), SHA funcional `463500d02a62364f54ff4a359bd7955b12074ae6`.
+- **CPC M01–M20:** 60/60 cenários Chromium aprovados em 390, 768 e 1366 px; grade completa e leitores das pontas verificados ao vivo.
+- **Gratuito:** teoria resumida disponível; apostila completa e links/filtros TEC/QC bloqueados; M05 preservou 33% após recarga.
+- **Premium:** apostila completa M05 aprovada; marcação `1/15 capítulos` persistiu após recarga, logout e novo login, com `progress.advanced_sync=true`.
+- **Defeitos comprovados corrigidos:** tratamento do recurso Premium negado no Gratuito e contrato real de prontidão do M08. Nenhuma correção adicional sem reprodução.
+- **Decisão:** Etapa 10.4 encerrada e aprovada na Preview privada. As anotações históricas anteriores que a classificam como parcial ou pendente ficam superadas por este encerramento.
+- **Segurança:** nenhuma alteração, promoção, alias ou publicação em Production; `main`, pagamentos e dados reais preservados.
