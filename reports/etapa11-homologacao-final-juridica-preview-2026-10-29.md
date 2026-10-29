@@ -142,3 +142,45 @@ Critérios atendidos:
 - Production, `main`, pagamentos e dados reais preservados.
 
 A Etapa 11 é a última etapa da homologação visual/técnica prevista. Qualquer integração, release candidate ou publicação futura em Production constitui uma etapa separada e exige autorização explícita.
+
+
+## 10. Pendências externas à Etapa 11 para integração e lançamento
+
+A homologação jurídica foi aprovada, mas isso não torna o produto pronto para venda. A verificação do estado atual do PR [#187](https://github.com/Diogooliveira-bot/central-de-estudos-2026/pull/187) e do [relatório consolidado de homologação comercial](https://github.com/Diogooliveira-bot/central-de-estudos-2026/blob/integration/lancamento-base-completa-20261028/docs/RELATORIO_MISSAO_FINAL_HOMOLOGACAO_20261029.md) mantém o lançamento em **NO-GO**.
+
+### Bloqueadores críticos
+
+1. **Integrar seletivamente a trilha jurídica no PR de lançamento.**  
+   A branch `preview/legal-complete-premium-v1-20261025` e a branch `integration/lancamento-base-completa-20261028` estão divergentes: a comparação atual registra 207 commits à frente e 129 atrás. Não é seguro fazer merge integral. Devem ser incorporados somente os arquivos funcionais aprovados, resolvendo individualmente os conflitos em `central-v119.html`, loader, leitores, cache/PWA e testes, seguidos de regressão combinada.
+
+2. **Corrigir e verificar o vínculo produtivo Neon antes de qualquer rollout.**  
+   O relatório comercial registra que um teste de restauração anterior moveu o endpoint produtivo para uma cópia de snapshot. Os dados foram reconciliados e preservados, mas o painel ainda mostrava a cópia como branch de Production no último estado verificado. A reconciliação definitiva exige autorização específica, nova conferência das gravações recentes e validação do vínculo Vercel/Neon.
+
+3. **Publicar uma Preview exata da branch integrada.**  
+   O PR #187 está aberto, em draft e mergeável, mas a versão completa atual ainda não foi homologada em uma Preview própria. A tentativa anterior da V24 foi bloqueada pelo limite diário gratuito da Vercel. É necessário publicar quando houver quota e verificar o SHA exato, target Preview e isolamento do Neon TEST.
+
+4. **Configurar e homologar Turnstile e SMTP no ambiente TEST.**  
+   Cadastro público continua desativado. Faltam Turnstile real e serviço de e-mail transacional de homologação para comprovar cadastro, confirmação, recuperação de senha e preferências sem reutilizar credenciais produtivas.
+
+5. **Validar as ofertas reais na Hotmart.**  
+   Confirmar no painel que R$ 97/6 meses e R$ 194/12 meses são pagamentos únicos, sem recorrência automática, e conferir o webhook vigente. Os testes automatizados de idempotência, renovação manual, reembolso, estorno e chargeback já passaram, mas não substituem essa conferência do produto/ofertas reais.
+
+6. **Finalizar documentos e identificação comercial.**  
+   Termos, Privacidade e Cookies estão acessíveis e testados, porém permanecem minutas. Falta completar a identificação comercial/endereço publicável e revisar os textos contra os serviços efetivamente ativados, sem inventar CPF/CNPJ ou endereço.
+
+7. **Executar o E2E hospedado final da jornada completa.**  
+   Após a integração e os itens anteriores: visitante → cadastro → e-mail → login Gratuito → limite da 21ª questão → bloqueios TEC/QC → compra sintética → Premium → progresso → vencimento/reversão → Gratuito. Repetir em desktop e celular, conferir backup/rollback atualizado e somente então avaliar o GO de Production.
+
+### Estado do PR de lançamento
+
+- PR #187: aberto, draft, mergeável e não mesclado;
+- head verificado: `29339666ed3526c97fc30ebf99105750e5882d3f`;
+- workflow de integração no head: [40855835798](https://github.com/Diogooliveira-bot/central-de-estudos-2026/actions/runs/40855835798), `success`;
+- 123 commits e 81 arquivos alterados no PR;
+- nenhuma dessas condições autoriza merge ou publicação em Production sem concluir os bloqueadores acima.
+
+### Conclusão operacional
+
+- **Homologação jurídica:** GO, encerrada na Etapa 11.
+- **Integração para lançamento:** pendente.
+- **Venda/publicação em Production:** NO-GO.
