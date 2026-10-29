@@ -18,6 +18,7 @@
     "test:lei-adm": "node --test tests/lei-em-dia-adm-9784.mjs tests/lei-em-dia-adm-15leis.mjs tests/lei-em-dia-adm-dispositivos.mjs tests/lei-em-dia-adm-encerramento.mjs",
     "test:lei-cf": "node --test tests/lei-em-dia-constitucional.mjs",
     "test:lei-civil": "node --test tests/lei-em-dia-civil-processo.mjs",
+    "test:lei-cpp": "node --test tests/lei-em-dia-cpp-codigo.mjs",
     "test:lei-restantes": "node --test tests/lei-em-dia-restantes.mjs",
     "test:lei-sync": "node --test tests/lei-em-dia-sincronizacao.mjs",
     "test:lei-editor": "node --test tests/lei-em-dia-admin-editor.mjs",
