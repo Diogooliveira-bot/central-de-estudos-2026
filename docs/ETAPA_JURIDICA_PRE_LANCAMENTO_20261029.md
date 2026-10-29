@@ -62,3 +62,21 @@ O proprietário informou que **alterou o preço da oferta base/anual de R$ 194,0
 **A forma PF/CPF e a existência da conta Hotmart PF estão confirmadas pelo proprietário.** Os campos de identificação pública, atendimento, versão final dos Termos, tributos, verificação da conta Hotmart e checkout continuam **PENDENTES**.
 
 **Decisão: NO-GO para Production**, com edições restritas à Preview da integração e CI obrigatória após qualquer mudança.
+
+
+## 7. Fechamento da preparação editorial e operacional — 29/10/2026 (sem GO)
+
+**Concluído como preparação de Pré-Launch, sem publicar termos finais:**
+
+- `termos-de-uso.html` na PR #187: detalhado procedimento de suporte e arrependimento por canal direto (sem exclusividade da Hotmart), confirmação imediata do recebimento e manifestação até cinco dias conforme Decreto 7.962/2013; explicitado que parcelamento não é recorrência, e exclusão pode ser solicitada por e-mail, sem depender de um botão futuro.
+- `politica-de-privacidade.html`: explicitadas regras de verificação de identidade proporcional ao risco, atendimento de solicitações com referência ao art. 19 da LGPD, e categorias para definição de prazos reais de retenção, ainda não inventados/validados.
+- `politica-de-cookies.html`: reforçado que o modelo de cookies é planejado e **não equivale a auditoria técnica de navegador concluída**.
+- Procedimento operacional detalhado de suporte, cancelamento, reembolso, privacidade e retenção criado em `docs/OPERACAO_ATENDIMENTO_PRIVACIDADE_PRE_LANCAMENTO_20261029.md`.
+- Gate de publicação e coordenada de versões/aceites criado em `docs/GATE_PUBLICACAO_LEGAL_E_ACEITES_20261029.md`. Backend e formulário **mantêm versão `v24-draft-2026-10-28`** e bloqueio Production; não declarar aceite definitivo.
+- Adicionado teste de regressão em `tests/public-free-signup-4-5-unit.mjs` para correspondência de versões, rótulo de pré-lançamento, `noindex`, preços R$97/R$179, conteúdo de atendimento, LGPD e cautela de cookies.
+
+**Informação temporal importante:** as afirmações anteriores deste checkpoint sobre vitrine não modificada descreviam uma rodada **anterior**. Em uma rodada posterior de 29/10/2026, o alias público de marketing `https://base-completa-vitrine-estatica-2026.vercel.app/` foi atualizado para a V25 de R$179, com os CTAs de compra desabilitados e `noindex`; o domínio próprio ainda não foi adquirido. **As alterações jurídicas desta seção, porém, existem apenas no GitHub da Central**, não necessariamente nas cópias do site comercial separado.
+
+**Ainda bloqueiam a aprovação jurídica/operacional final:** (a) confirmação segura da identificação e localização exigíveis ao fornecedor pessoa física; (b) teste de confirmação imediata e operação real do atendimento; (c) auditoria de cookies e retenção de dados/prestadores; (d) finalização/revisão jurídica dos textos e versão final dos aceites; (e) alinhamento dos documentos da vitrine e da Central; (f) demais gates técnicos e comerciais, inclusive Hotmart, que o proprietário adiou. O e-mail de suporte já aparece nas minutas, mas **possuir uma caixa Gmail não equivale a ter atendimento homologado**.
+
+**Status desta etapa: PREPARAÇÃO DOCUMENTAL E PROCEDIMENTAL CONCLUÍDA; APROVAÇÃO FINAL, ATIVAÇÃO E PUBLICAÇÃO AINDA PENDENTES.**
