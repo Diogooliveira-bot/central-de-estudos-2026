@@ -39,9 +39,19 @@ test('somente em Preview isolada e com sinal explicito; Production bloqueada',()
   assert.equal(freeSignupEnabled({...env,VERCEL_ENV:'production'}),false);
   assert.equal(freeSignupEnabled({...env,VERCEL_ENV:'production',BC_PUBLIC_FREE_SIGNUP_PRODUCTION_APPROVED:'YES'}),false);
   const captchaEnv={...env,VERCEL_ENV:'production',BC_PUBLIC_FREE_SIGNUP_PRODUCTION_APPROVED:'YES',BC_SIGNUP_PRIVACY_APPROVED:'YES',BC_SIGNUP_TERMS_FINAL_APPROVED:'YES',BC_SIGNUP_TURNSTILE_SITE_KEY:'3x00000000000000000000FF',BC_SIGNUP_TURNSTILE_SECRET_KEY:'1x0000000000000000000000000000000AA',BC_SIGNUP_PII_KEY:'11'.repeat(32)};
-  assert.equal(freeSignupEnabled(captchaEnv),true);
-  assert.equal(freeSignupEnabled({...captchaEnv,BC_SIGNUP_PRIVACY_APPROVED:'NO'}),false);
-  assert.equal(freeSignupEnabled({...captchaEnv,BC_SIGNUP_TERMS_FINAL_APPROVED:'NO'}),false);
+  // Cloudflare dummy keys are for test suites only; NEVER enable live registration.
+  assert.equal(freeSignupEnabled(captchaEnv),false);
+  assert.equal(signupCaptchaConfigured(captchaEnv),false);
+  assert.equal(signupCaptchaConfigured({...captchaEnv,VERCEL_ENV:'preview'}),true);
+  const siteWithDummySecret={...captchaEnv,BC_SIGNUP_TURNSTILE_SITE_KEY:'realFormatSiteKey_ABCDEFGHIJKLMNOPQR'};
+  assert.equal(freeSignupEnabled(siteWithDummySecret),false);
+  const secretWithDummySite={...captchaEnv,BC_SIGNUP_TURNSTILE_SECRET_KEY:'realFormatSecretKey_ABCDEFGHIJKLMNOPQRSTUVWXYZ'};
+  assert.equal(freeSignupEnabled(secretWithDummySite),false);
+  const syntheticRealPair={...siteWithDummySecret,BC_SIGNUP_TURNSTILE_SECRET_KEY:'realFormatSecretKey_ABCDEFGHIJKLMNOPQRSTUVWXYZ'};
+  // Syntactic configuration only: no assertion here proves the keys are real/operational.
+  assert.equal(freeSignupEnabled(syntheticRealPair),true);
+  assert.equal(freeSignupEnabled({...syntheticRealPair,BC_SIGNUP_PRIVACY_APPROVED:'NO'}),false);
+  assert.equal(freeSignupEnabled({...syntheticRealPair,BC_SIGNUP_TERMS_FINAL_APPROVED:'NO'}),false);
 });
 test('botão público não aparece sem SMTP, sessão e Neon, mesmo com flag habilitada',()=>{
  const ready={...env,DATABASE_URL:'postgresql://placeholder.invalid/nao-conectar'};
