@@ -122,6 +122,54 @@ test('confirmação atômica cria exclusivamente aluno gratuito',async()=>{
  assert.match(atomic.source,/'free','active'/);
  assert.doesNotMatch(atomic.source,/'premium'/);
 });
+test('token de confirmacao gratuita: segundo uso devolve 410 sem nova conta ou plano',async()=>{
+ let confirmations=0,creations=0;
+ const sql=async(strings,...values)=>{
+   const query=strings.join('?');
+   if(!query.includes('WITH claimed AS'))throw Error('Consulta inesperada');
+   confirmations++;
+   assert.match(query,/DELETE FROM public\.central_free_signup_pending/);
+   assert.match(query,/token_hash=\?/);
+   assert.match(query,/expires_at>NOW\(\)/);
+   assert.match(query,/terms_version=\?/);
+   assert.match(query,/'free','active'/);
+   assert.doesNotMatch(query,/'premium'/);
+   if(confirmations>1)return [];
+   creations++;
+   return [{user_id:'synthetic-user-one',name:'Pessoa Simulada',email:'simulado@example.invalid',
+      role:'aluno',active:true,session_version:1}];
+ };
+ const handler=createFreeSignupHandler({env,sqlProvider:()=>sql});
+ const request=req({action:'confirm',token:'T'.repeat(43)});
+ const first=res();await handler(request,first);
+ assert.equal(first.statusCode,201);
+ assert.equal(first.body.user.role,'aluno');
+ const repeated=res();await handler(request,repeated);
+ assert.equal(repeated.statusCode,410);
+ assert.match(repeated.body.error,/utilizado/);
+ assert.equal(confirmations,2);
+ assert.equal(creations,1);
+ assert.equal(repeated.headers['Set-Cookie'],undefined);
+});
+
+test('token de cadastro malformado ou expirado nao cria aluno gratuito',async()=>{
+ let hits=0;
+ const sql=async(strings,...values)=>{
+   const query=strings.join('?');
+   hits++;
+   if(!query.includes('WITH claimed AS'))throw Error('Consulta inesperada');
+   return [];
+ };
+ const handler=createFreeSignupHandler({env,sqlProvider:()=>sql});
+ const bad=res();await handler(req({action:'confirm',token:'invalido'}),bad);
+ assert.equal(bad.statusCode,410);
+ assert.equal(hits,0);
+ const expired=res();await handler(req({action:'confirm',token:'E'.repeat(43)}),expired);
+ assert.equal(expired.statusCode,410);
+ assert.equal(hits,1);
+ assert.equal(expired.headers['Set-Cookie'],undefined);
+});
+
 test('sem e-mail habilitado, falha fechada e não acessa banco',async()=>{
  const {handler,calls}=setup();
  const disabled=createFreeSignupHandler({env:{...env,BC_PUBLIC_FREE_SIGNUP_ENABLED:'false'},sqlProvider:()=>{throw Error('must not connect')}});
