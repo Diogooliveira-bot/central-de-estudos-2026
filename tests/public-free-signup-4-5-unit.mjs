@@ -397,3 +397,29 @@ test('consentimentos de e-mail e WhatsApp sao salvos separadamente na mesma tran
  assert.match(q,/'free','active'/);
  assert.doesNotMatch(q,/'premium'/);
 });
+
+
+test('publicacao legal permanece bloqueada ate versao final coordenada e servico validado',()=>{
+ const register=readFileSync(new URL('../cadastro-gratuito.html',import.meta.url),'utf8');
+ const terms=readFileSync(new URL('../termos-de-uso.html',import.meta.url),'utf8');
+ const privacy=readFileSync(new URL('../politica-de-privacidade.html',import.meta.url),'utf8');
+ const cookies=readFileSync(new URL('../politica-de-cookies.html',import.meta.url),'utf8');
+ const m=register.match(/termsVersion:'([^']+)'/);
+ assert.ok(m,'Formulario precisa declarar a versao dos Termos');
+ assert.equal(m[1],FREE_SIGNUP_TERMS_VERSION,'Frontend e backend devem aceitar a mesma versao');
+ assert.match(FREE_SIGNUP_TERMS_VERSION,/draft|minuta|pre[-_]?launch/i);
+ for(const html of [terms,privacy,cookies]){
+   assert.match(html,/noindex,nofollow,noarchive/);
+   assert.match(html,/Documento em revisão de pré-lançamento/);
+   assert.match(html,/basecompleta\.estudos@gmail\.com/);
+ }
+ assert.match(terms,/R\$ 97,00 por seis meses/);
+ assert.match(terms,/R\$ 179,00 por doze meses/);
+ assert.doesNotMatch(terms,/R\$ 194,00 por doze meses/);
+ assert.match(terms,/cinco dias/);
+ assert.match(terms,/confirmação imediata/);
+ assert.match(terms,/sete dias/);
+ assert.match(privacy,/quinze dias/);
+ assert.match(privacy,/prazos e critérios por categoria/);
+ assert.match(cookies,/não equivale a uma auditoria concluída/);
+});
