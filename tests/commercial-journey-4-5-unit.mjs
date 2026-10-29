@@ -51,3 +51,19 @@ assert.match(p,/HOTMART_TEST_RECEIVER_ENABLED/);
 assert.match(p,/x-hotmart-hottok/);
 assert.match(p,/safeSecretEqual/);
 });
+
+test('vitrine interna e Termos conservam preços consistentes e compra única',()=>{
+ const site=read('conheca.html');
+ const legal=read('termos-de-uso.html');
+ assert.match(site,/R\$ 179<sup>,00<\/sup>/);
+ assert.match(legal,/R\$ 179,00 por doze meses/);
+ assert.match(site,/R\$ 97<sup>,00<\/sup>/);
+ assert.match(legal,/R\$ 97,00 por seis meses/);
+ assert.match(site,/R\$ 15 a menos/);
+ assert.match(site,/sem renovação automática/i);
+ assert.match(legal,/sem cobrança recorrente automática/i);
+ assert.doesNotMatch(site,/R\$ 194|R\$ 291,00|50% maiores/);
+ assert.doesNotMatch(legal,/R\$ 194/);
+ assert.match(site,/data-preview-only="true"/);
+ assert.match(site,/Checkout aguardando validação comercial/);
+});
