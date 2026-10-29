@@ -29,7 +29,7 @@
 | Política de privacidade | Auditar o fluxo exato de dados, prestadores/suboperadores, retenção por categoria, transferências internacionais, direitos do titular e resposta a solicitações. | **PENDENTE** |
 | Política de cookies | Confirmar cookies/armazenamentos e requests no navegador móvel e desktop da vitrine, cadastro, login, Central e checkout de terceiro; verificar ausência de marketing não autorizado e necessidade de banner conforme categorias efetivamente usadas. | **PENDENTE** |
 | Versão legal | Finalizar Termos e Políticas revisados, registrar versão imutável e fazer update **coordenado** do aceite: `FREE_SIGNUP_TERMS_VERSION`, `cadastro-gratuito.html` `termsVersion`, rótulos/data e testes. Não reaproveitar aceites `draft` como aceites da versão final. | **PENDENTE** |
-| DNS e operação pública | Validar `basecompleta.com.br` e `app.basecompleta.com.br` (DNS externo, HTTPS), linkagem, CTA e checkout antes de remover `noindex` e abrir cadastro público. | **PENDENTE** |
+| Domínio e operação pública | **O proprietário confirmou em 29/10/2026 que AINDA NÃO COMPROU `basecompleta.com.br`.** A associação administrativa desse hostname à Vercel **não comprova titularidade nem operação DNS/SSL**. Adiar compra, DNS e HTTPS próprios; não tentar ativar domínio não adquirido. Homologar jornadas e links com URLs `*.vercel.app` existentes e decidir o endereço público definitivo antes da abertura das vendas. | **DOMÍNIO PRÓPRIO ADIADO POR DECISÃO DO PROPRIETÁRIO; LINKS DO LANÇAMENTO PENDENTES** |
 | Segurança do lançamento | Concluir testes negativos de token/replay e orçamento de rate limit, confirmação do backup/rollback e homologação controlada da integração (sem tocar `main` antes do GO). | **PENDENTE** |
 
 ## 4. Requisitos públicos de referência
