@@ -66,6 +66,33 @@ test('apenas oferta e produto exatos definem os meses; desconto não altera plan
  const noEmail=event('PURCHASE_REFUNDED');delete noEmail.data.buyer.email;
  assert.equal(readHotmartEvent(noEmail,cfg).value.email,'');
 });
+test('ofertas reais Hotmart mapeiam 6 e 12 meses; preço e parcelas não alteram vigência',()=>{
+ const actual={...env,
+   HOTMART_OFFER_6M_CODE:'o4y1mlg9',
+   HOTMART_OFFER_12M_CODE:'gh4ajvj1'};
+ const config=webhookConfig(actual);
+ assert.ok(config);
+ assert.equal(config.productId,'8805543');
+ assert.equal(config.offers.o4y1mlg9,6);
+ assert.equal(config.offers.gh4ajvj1,12);
+ const semi=event('PURCHASE_APPROVED','o4y1mlg9');
+ semi.data.purchase.price.value=97;
+ semi.data.purchase.payment={type:'CREDIT_CARD',installments_number:3};
+ const yearly=event('PURCHASE_APPROVED','gh4ajvj1');
+ yearly.data.purchase.price.value=179;
+ yearly.data.purchase.payment={type:'CREDIT_CARD',installments_number:6};
+ assert.equal(readHotmartEvent(semi,config).value.months,6);
+ assert.equal(readHotmartEvent(yearly,config).value.months,12);
+ const staleOffer=event('PURCHASE_APPROVED','SYNTHETIC12M');
+ assert.equal(readHotmartEvent(staleOffer,config).ignored,true);
+ const refund=event('PURCHASE_REFUNDED','gh4ajvj1');
+ refund.data.purchase.status='REFUNDED';
+ assert.equal(readHotmartEvent(refund,config).value.months,12);
+ const recurring=event('PURCHASE_APPROVED','gh4ajvj1');
+ recurring.data.purchase.date_next_charge=Date.now()+86400000;
+ assert.match(readHotmartEvent(recurring,config).error,/recorrente/);
+});
+
 test('rota rejeita não autenticados, GET, tipo e payload grande sem banco',async()=>{
  let dbCalls=0;
  const handler=createHotmartWebhook({env,sqlProvider:()=>{dbCalls++;return()=>[]}});
