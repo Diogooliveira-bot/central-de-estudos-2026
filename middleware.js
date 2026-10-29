@@ -183,7 +183,14 @@ export default async function middleware(request) {
           url.searchParams.get('action') === 'me') return next();
       return previewForbidden();
     }
-    if (protectedAsset(path)) return previewForbidden();
+    // The private Preview link exists to validate the real readers and their
+    // static course bundles. It never grants an account or database access.
+    // Keep writes and every data API blocked above, but allow read-only static
+    // assets in Preview so the hosted disciplines can actually be exercised.
+    if (protectedAsset(path)) {
+      if (request.method === 'GET' || request.method === 'HEAD') return next();
+      return previewForbidden();
+    }
     if (path === '/usuarios.html' || path === '/update-central.html' || (path === '/planos.html' || path === '/vendas-hotmart.html')) return previewForbidden();
     if (path === '/login.html') return Response.redirect(new URL('/central-v119.html', request.url), 302);
     return next();
