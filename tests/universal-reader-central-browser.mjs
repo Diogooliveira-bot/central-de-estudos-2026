@@ -80,7 +80,9 @@ try{
       });
       console.log('ADM_OPEN',JSON.stringify({total:attempts.length,passed:attempts.filter(x=>x.success).length,
         failed:attempts.filter(x=>!x.success).slice(0,8)}));
-    }catch(e){console.log('ADM_RUNTIME_BLOCKER',e.message.slice(0,300))}
+      assert.equal(attempts.length,40,'20 módulos administrativos devem abrir em dois modos');
+      assert.equal(attempts.filter(x=>x.success).length,40,'todas as teorias administrativas devem abrir');
+    }catch(e){console.log('ADM_RUNTIME_BLOCKER',e.message.slice(0,300));throw e}
    }
   }catch(e){const debug=await page.evaluate(()=>({url:location.href,ready:document.readyState,title:document.title,status:document.querySelector('#status')?.textContent,body:document.body?.textContent?.slice(0,280),hasIndex:!!document.querySelector('#subjects'),hasAsset:!!document.querySelector('script[src*=universal-reader]')})).catch(x=>({evalError:x.message}));rows.push({viewport:vp.name,pass:false,error:e.message.slice(0,300),debug,events:events.slice(-8),missingAssets:assetErrors})}
   await context.close();
