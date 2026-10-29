@@ -2,11 +2,11 @@
 
 Data: 2026-10-28
 
-Foram revisadas 1044 das 1056 questões do banco do Código Civil (15 módulos), item a item, contra o texto compilado completo (arts. 1º a 2.046). Nenhum gabarito foi alterado. Ficaram sem conferência 12 itens de Seguros (Lei 15.040/2024), cujo texto compilado não foi enviado.
+Foram revisadas todas as 1056 questões do banco do Código Civil (15 módulos), item a item, contra o texto compilado completo (arts. 1º a 2.046) e, nos 12 itens de Seguros, contra a Lei 15.040/2024. Nenhum gabarito foi alterado.
 
 ## Método
 
-- Cada questão foi comparada com o texto compilado do Código Civil enviado pelo proprietário, sem recorrer à memória.
+- Cada questão foi comparada com o texto compilado do Código Civil enviado pelo proprietário (e, nos itens de Seguros, com a Lei 15.040/2024), sem recorrer à memória.
 - A explicação foi reescrita ("Correta." ou "Errada." conforme o gabarito), citando o dispositivo, e o parts foi refeito com trechos literais da lei.
 - Itens com gabarito em dúvida ou sem apoio no texto foram marcados como pendentes ("Em revisão."); itens que dependem de jurisprudência, outra lei ou artigo fora do texto foram certificados de forma parcial.
 
@@ -14,12 +14,11 @@ Foram revisadas 1044 das 1056 questões do banco do Código Civil (15 módulos),
 
 | Status | Questões |
 |---|---|
-| certificado | 985 |
+| certificado | 997 |
 | certificado-parcial | 54 |
 | pendente | 5 |
-| não revisado (Seguros, Lei 15.040/2024) | 12 |
 
-Gabaritos dos itens revisados: 556 Certo e 488 Errado.
+Gabaritos dos itens revisados: 563 Certo e 493 Errado.
 
 | Módulo | Intervalo | No banco | Revisadas | Certificado | Parcial | Pendente |
 |---|---|---|---|---|---|---|
@@ -30,7 +29,7 @@ Gabaritos dos itens revisados: 556 Certo e 488 Errado.
 | civ-prescricao-prova — PRESCRIÇÃO, DECADÊNCIA E PROVA | Arts. 189 a 232 | 72 | 72 | 68 | 4 | 0 |
 | civ-obrigacoes — OBRIGAÇÕES | Arts. 233 a 420, 854 a 886 e 955 a 965 | 140 | 140 | 135 | 5 | 0 |
 | civ-contratos-geral — CONTRATOS EM GERAL | Arts. 421 a 480 | 47 | 47 | 47 | 0 | 0 |
-| civ-contratos-especie — CONTRATOS EM ESPÉCIE | Arts. 481 a 853 | 120 | 108 | 105 | 3 | 0 |
+| civ-contratos-especie — CONTRATOS EM ESPÉCIE | Arts. 481 a 853 | 120 | 120 | 117 | 3 | 0 |
 | civ-responsabilidade — RESPONSABILIDADE CIVIL | Arts. 185 a 188 e 927 a 954 | 43 | 43 | 39 | 3 | 1 |
 | civ-empresa — DIREITO DE EMPRESA E NOME EMPRESARIAL | Arts. 887 a 926 e 966 a 1.195 | 55 | 55 | 53 | 2 | 0 |
 | civ-posse — POSSE | Arts. 1.196 a 1.224 | 45 | 45 | 39 | 5 | 1 |
@@ -46,21 +45,6 @@ Gabaritos dos itens revisados: 556 Certo e 488 Errado.
 - `civil-pdf-0840` (Art. 1.219, CC, gabarito Certo): O enunciado atribui ao possuidor de boa-fé o direito à indenização de "todas" as benfeitorias, ao passo que o art. 1.219 assegura a indenização das benfeitorias necessárias e úteis e, quanto às voluptuárias, apenas o direito de levantá-las, quando o puder sem detrimento da coisa, se não lhe forem pagas; o direito de retenção pelo valor das necessárias e úteis coincide com o texto. O gabarito (Correta) deve ser reexaminado diante da redação do enunciado.
 - `civil-pdf-1048` (Art. 1.696, CC, gabarito Certo): O art. 1.694, § 1º, manda fixar os alimentos na proporção das necessidades do reclamante e dos recursos da pessoa obrigada, e o § 2º limita-os aos indispensáveis à subsistência somente quando a situação de necessidade resultar de culpa de quem os pleiteia; o enunciado funde as duas regras e omite essa condição. Quanto ao art. 1.696, o direito à prestação de alimentos é recíproco entre pais e filhos e extensivo a todos os ascendentes, recaindo a obrigação nos mais próximos em grau, uns em falta de outros, e não "na falta deles" (os ascendentes), como consta do enunciado. O gabarito (Correta) deve ser reexaminado.
 - `civil-pdf-1055` (Art. 1.707, CC, gabarito Certo): O art. 1.707 dispõe que pode o credor não exercer, porém lhe é vedado renunciar o direito a alimentos, sendo o respectivo crédito insuscetível de cessão, compensação ou penhora, sem a ressalva "salvo em relação a crédito de igual natureza" que consta do enunciado; essa exceção, se existente, não decorre do texto do Código Civil. O gabarito (Correta) deve ser reexaminado.
-
-## Não revisados (12) — Seguros, Lei 15.040/2024
-
-- `civil-autoral-analista-seguro-01` (Art. 1º, Lei 15.040/2024): Lei 15.040/2024 (contrato de seguro): o texto compilado da lei não foi enviado; o item não foi conferido e permanece sem revisão jurídica.
-- `civil-autoral-analista-seguro-02` (Art. 5º, Lei 15.040/2024): Lei 15.040/2024 (contrato de seguro): o texto compilado da lei não foi enviado; o item não foi conferido e permanece sem revisão jurídica.
-- `civil-autoral-analista-seguro-03` (Art. 9º, § 1º, Lei 15.040/2024): Lei 15.040/2024 (contrato de seguro): o texto compilado da lei não foi enviado; o item não foi conferido e permanece sem revisão jurídica.
-- `civil-autoral-analista-seguro-04` (Art. 10, Lei 15.040/2024): Lei 15.040/2024 (contrato de seguro): o texto compilado da lei não foi enviado; o item não foi conferido e permanece sem revisão jurídica.
-- `civil-autoral-analista-seguro-05` (Art. 13, Lei 15.040/2024): Lei 15.040/2024 (contrato de seguro): o texto compilado da lei não foi enviado; o item não foi conferido e permanece sem revisão jurídica.
-- `civil-autoral-analista-seguro-06` (Art. 42, Lei 15.040/2024): Lei 15.040/2024 (contrato de seguro): o texto compilado da lei não foi enviado; o item não foi conferido e permanece sem revisão jurídica.
-- `civil-autoral-analista-seguro-07` (Art. 54, Lei 15.040/2024): Lei 15.040/2024 (contrato de seguro): o texto compilado da lei não foi enviado; o item não foi conferido e permanece sem revisão jurídica.
-- `civil-autoral-analista-seguro-08` (Art. 56, Lei 15.040/2024): Lei 15.040/2024 (contrato de seguro): o texto compilado da lei não foi enviado; o item não foi conferido e permanece sem revisão jurídica.
-- `civil-autoral-analista-seguro-09` (Art. 66, I e II, Lei 15.040/2024): Lei 15.040/2024 (contrato de seguro): o texto compilado da lei não foi enviado; o item não foi conferido e permanece sem revisão jurídica.
-- `civil-autoral-analista-seguro-10` (Art. 115, Lei 15.040/2024): Lei 15.040/2024 (contrato de seguro): o texto compilado da lei não foi enviado; o item não foi conferido e permanece sem revisão jurídica.
-- `civil-autoral-analista-seguro-11` (Art. 120, Lei 15.040/2024): Lei 15.040/2024 (contrato de seguro): o texto compilado da lei não foi enviado; o item não foi conferido e permanece sem revisão jurídica.
-- `civil-autoral-analista-seguro-12` (Art. 126, II e III, Lei 15.040/2024): Lei 15.040/2024 (contrato de seguro): o texto compilado da lei não foi enviado; o item não foi conferido e permanece sem revisão jurídica.
 
 ## Certificados parcialmente (54)
 
@@ -128,15 +112,16 @@ Gabaritos dos itens revisados: 556 Certo e 488 Errado.
 
 | Arquivo | SHA antes | SHA depois |
 |---|---|---|
-| `tools/decorando-data-civil.js` | 3f7eb06f1c63 | e92e60fa3b51 |
+| `tools/decorando-data-civil.js` | 3f7eb06f1c63 | 418032f67cbf |
 
-Campos alterados nos itens revisados (quantidade de itens): parts: 499; question: 1044; question.explanation: 1044; question.legalAudit: 1044.
+Campos alterados nos itens revisados (quantidade de itens): parts: 500; question: 1056; question.explanation: 1056; question.legalAudit: 1056.
 
 ## Observações
 
 - Os enunciados e os campos de banca e cargo não foram alterados nesta revisão; só mudam parts, explicação e legalAudit.
 - Fonte: texto compilado do Código Civil (Lei 10.406/2002) enviado pelo proprietário (PDF de 232 páginas), completo, do art. 1º ao art. 2.046.
-- Os 12 itens de Seguros (civil-autoral-analista-seguro-01 a 12, baseados na Lei 15.040/2024) não foram conferidos: o texto compilado dessa lei não foi enviado e o Planalto bloqueia o acesso automático. Esses itens ficaram intocados, sem legalAudit, e continuam listados em audits/lei-em-dia-pendencias-20261009.md. Uma leitura preliminar por resumo sugere que os gabaritos são coerentes, mas isso não é conferência.
+- Os 12 itens de Seguros (civil-autoral-analista-seguro-01 a 12) foram conferidos contra o texto da Lei 15.040/2024 (arts. 1º, 5º, 9º, 10, 13, 42, 54, 56, 66, 115, 120 e 126) enviado pelo proprietário (impressão do Planalto de 28/10/2026, arts. 1º a 134); todos ficaram certificados, com os gabaritos mantidos.
+- A Lei 15.040/2024 revogou o art. 206, § 1º, II e os arts. 757 a 802 do Código Civil (art. 133) e entrou em vigor um ano após a publicação (art. 134, publicação em 10/12/2024). O texto compilado do Código Civil enviado já traz esses dispositivos como revogados, e nenhum item foi conferido contra dispositivo revogado.
 - O texto compilado traz as anotações "Vide ADIN 4815" (arts. 20 e 21), "Vide ADI nº 7055" e "Vide ADI nº 6792" (art. 927), "Vide Lei nº 14.195, de 2021" (art. 1.142), "Vide Decreto-lei nº 4.037, de 1942" (art. 1.221), "Vide Recurso Extraordinário nº 646.721" e "nº 878.694" (art. 1.829) e "Vide Lei nº 13.105, de 2015". O conteúdo dessas decisões e leis não consta do arquivo e não foi incorporado à conferência; os itens que dependem delas ficaram certificados de forma parcial.
 - Os arts. 1.620 a 1.629 constam como revogados (Lei 12.010/2009); o mesmo vale para os incisos revogados do art. 3º. Nenhum item foi conferido contra dispositivo revogado.
 - A anotação editorial "Produção de efeitos" (Lei 14.905/2024) do arquivo compilado foi removida do texto de trabalho para não entrar nos trechos (parts); o conteúdo normativo não foi alterado.
@@ -145,7 +130,7 @@ Campos alterados nos itens revisados (quantidade de itens): parts: 499; question
 - Rótulos de dispositivo que não correspondem ao conteúdo cobrado, enunciados com dupla negação confusa e anotações editoriais dentro do enunciado foram mantidos e sinalizados dentro da explicação.
 - O Código Civil enviado antes (2ª edição, 2008) não foi usado: a conferência foi feita apenas com o texto compilado atual.
 
-## Itens revisados
+## Itens
 
 | Id | Dispositivo | Gab. | Status |
 |---|---|---|---|
@@ -1193,3 +1178,15 @@ Campos alterados nos itens revisados (quantidade de itens): parts: 499; question
 | civil-autoral-analista-2023 | Art. 2.023, CC | E | certificado |
 | civil-autoral-analista-2026 | Art. 2.026, CC | C | certificado |
 | civil-autoral-analista-2027 | Art. 2.027, CC | E | certificado |
+| civil-autoral-analista-seguro-01 | Art. 1º, Lei 15.040/2024 | C | certificado |
+| civil-autoral-analista-seguro-02 | Art. 5º, Lei 15.040/2024 | E | certificado |
+| civil-autoral-analista-seguro-03 | Art. 9º, § 1º, Lei 15.040/2024 | C | certificado |
+| civil-autoral-analista-seguro-04 | Art. 10, Lei 15.040/2024 | C | certificado |
+| civil-autoral-analista-seguro-05 | Art. 13, Lei 15.040/2024 | E | certificado |
+| civil-autoral-analista-seguro-06 | Art. 42, Lei 15.040/2024 | C | certificado |
+| civil-autoral-analista-seguro-07 | Art. 54, Lei 15.040/2024 | E | certificado |
+| civil-autoral-analista-seguro-08 | Art. 56, Lei 15.040/2024 | C | certificado |
+| civil-autoral-analista-seguro-09 | Art. 66, I e II, Lei 15.040/2024 | C | certificado |
+| civil-autoral-analista-seguro-10 | Art. 115, Lei 15.040/2024 | E | certificado |
+| civil-autoral-analista-seguro-11 | Art. 120, Lei 15.040/2024 | C | certificado |
+| civil-autoral-analista-seguro-12 | Art. 126, II e III, Lei 15.040/2024 | E | certificado |

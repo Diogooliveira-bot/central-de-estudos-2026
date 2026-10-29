@@ -1,89 +1,14 @@
 {
   "titulo": "Direito Civil — Código Civil (Lei em Dia): revisão jurídica",
   "data": "2026-10-28",
-  "metodo": "Cada questão foi comparada com o texto compilado do Código Civil enviado pelo proprietário. Gabaritos não foram alterados. A explicação foi reescrita com o dispositivo (\"Correta.\" ou \"Errada.\" conforme o gabarito, ou \"Em revisão.\" nos pendentes) e o parts foi refeito com trechos literais da lei.",
+  "metodo": "Cada questão foi comparada com o texto compilado do Código Civil enviado pelo proprietário (nos itens de Seguros, com a Lei 15.040/2024). Gabaritos não foram alterados. A explicação foi reescrita com o dispositivo (\"Correta.\" ou \"Errada.\" conforme o gabarito, ou \"Em revisão.\" nos pendentes) e o parts foi refeito com trechos literais da lei.",
   "totalDoBanco": 1056,
-  "totalRevisado": 1044,
-  "totalNaoRevisado": 12,
-  "naoRevisadosPorTopico": {
-    "civ-contratos-especie": 12
-  },
-  "naoRevisados": [
-    {
-      "id": "civil-autoral-analista-seguro-01",
-      "topico": "civ-contratos-especie",
-      "dispositivo": "Art. 1º, Lei 15.040/2024",
-      "motivo": "Lei 15.040/2024 (contrato de seguro): o texto compilado da lei não foi enviado; o item não foi conferido e permanece sem revisão jurídica."
-    },
-    {
-      "id": "civil-autoral-analista-seguro-02",
-      "topico": "civ-contratos-especie",
-      "dispositivo": "Art. 5º, Lei 15.040/2024",
-      "motivo": "Lei 15.040/2024 (contrato de seguro): o texto compilado da lei não foi enviado; o item não foi conferido e permanece sem revisão jurídica."
-    },
-    {
-      "id": "civil-autoral-analista-seguro-03",
-      "topico": "civ-contratos-especie",
-      "dispositivo": "Art. 9º, § 1º, Lei 15.040/2024",
-      "motivo": "Lei 15.040/2024 (contrato de seguro): o texto compilado da lei não foi enviado; o item não foi conferido e permanece sem revisão jurídica."
-    },
-    {
-      "id": "civil-autoral-analista-seguro-04",
-      "topico": "civ-contratos-especie",
-      "dispositivo": "Art. 10, Lei 15.040/2024",
-      "motivo": "Lei 15.040/2024 (contrato de seguro): o texto compilado da lei não foi enviado; o item não foi conferido e permanece sem revisão jurídica."
-    },
-    {
-      "id": "civil-autoral-analista-seguro-05",
-      "topico": "civ-contratos-especie",
-      "dispositivo": "Art. 13, Lei 15.040/2024",
-      "motivo": "Lei 15.040/2024 (contrato de seguro): o texto compilado da lei não foi enviado; o item não foi conferido e permanece sem revisão jurídica."
-    },
-    {
-      "id": "civil-autoral-analista-seguro-06",
-      "topico": "civ-contratos-especie",
-      "dispositivo": "Art. 42, Lei 15.040/2024",
-      "motivo": "Lei 15.040/2024 (contrato de seguro): o texto compilado da lei não foi enviado; o item não foi conferido e permanece sem revisão jurídica."
-    },
-    {
-      "id": "civil-autoral-analista-seguro-07",
-      "topico": "civ-contratos-especie",
-      "dispositivo": "Art. 54, Lei 15.040/2024",
-      "motivo": "Lei 15.040/2024 (contrato de seguro): o texto compilado da lei não foi enviado; o item não foi conferido e permanece sem revisão jurídica."
-    },
-    {
-      "id": "civil-autoral-analista-seguro-08",
-      "topico": "civ-contratos-especie",
-      "dispositivo": "Art. 56, Lei 15.040/2024",
-      "motivo": "Lei 15.040/2024 (contrato de seguro): o texto compilado da lei não foi enviado; o item não foi conferido e permanece sem revisão jurídica."
-    },
-    {
-      "id": "civil-autoral-analista-seguro-09",
-      "topico": "civ-contratos-especie",
-      "dispositivo": "Art. 66, I e II, Lei 15.040/2024",
-      "motivo": "Lei 15.040/2024 (contrato de seguro): o texto compilado da lei não foi enviado; o item não foi conferido e permanece sem revisão jurídica."
-    },
-    {
-      "id": "civil-autoral-analista-seguro-10",
-      "topico": "civ-contratos-especie",
-      "dispositivo": "Art. 115, Lei 15.040/2024",
-      "motivo": "Lei 15.040/2024 (contrato de seguro): o texto compilado da lei não foi enviado; o item não foi conferido e permanece sem revisão jurídica."
-    },
-    {
-      "id": "civil-autoral-analista-seguro-11",
-      "topico": "civ-contratos-especie",
-      "dispositivo": "Art. 120, Lei 15.040/2024",
-      "motivo": "Lei 15.040/2024 (contrato de seguro): o texto compilado da lei não foi enviado; o item não foi conferido e permanece sem revisão jurídica."
-    },
-    {
-      "id": "civil-autoral-analista-seguro-12",
-      "topico": "civ-contratos-especie",
-      "dispositivo": "Art. 126, II e III, Lei 15.040/2024",
-      "motivo": "Lei 15.040/2024 (contrato de seguro): o texto compilado da lei não foi enviado; o item não foi conferido e permanece sem revisão jurídica."
-    }
-  ],
+  "totalRevisado": 1056,
+  "totalNaoRevisado": 0,
+  "naoRevisadosPorTopico": {},
+  "naoRevisados": [],
   "porStatus": {
-    "certificado": 985,
+    "certificado": 997,
     "certificado-parcial": 54,
     "pendente": 5
   },
@@ -95,7 +20,7 @@
     "civ-prescricao-prova": 72,
     "civ-obrigacoes": 140,
     "civ-contratos-geral": 47,
-    "civ-contratos-especie": 108,
+    "civ-contratos-especie": 120,
     "civ-responsabilidade": 43,
     "civ-empresa": 55,
     "civ-posse": 45,
@@ -133,7 +58,7 @@
       "certificado": 47
     },
     "civ-contratos-especie": {
-      "certificado": 105,
+      "certificado": 117,
       "certificado-parcial": 3
     },
     "civ-responsabilidade": {
@@ -169,16 +94,16 @@
     }
   },
   "gabaritos": {
-    "C": 556,
-    "E": 488
+    "C": 563,
+    "E": 493
   },
   "gabaritosAlterados": 0,
   "itensForaDaRevisaoAlterados": 0,
   "camposAlterados": {
-    "parts": 499,
-    "question": 1044,
-    "question.explanation": 1044,
-    "question.legalAudit": 1044
+    "parts": 500,
+    "question": 1056,
+    "question.explanation": 1056,
+    "question.legalAudit": 1056
   },
   "enunciadosAlterados": [],
   "parciais": [
@@ -616,12 +541,13 @@
     "tools/decorando-data-civil.js": "3f7eb06f1c63c9f10f40d507c323a3fedba3041c"
   },
   "datasetBlobShas": {
-    "tools/decorando-data-civil.js": "e92e60fa3b51649d5e46bf8b13be01c9ac6e0c1f"
+    "tools/decorando-data-civil.js": "418032f67cbf510c206bbcf688de19f3e6ed5fd6"
   },
   "observacoes": [
     "Os enunciados e os campos de banca e cargo não foram alterados nesta revisão; só mudam parts, explicação e legalAudit.",
     "Fonte: texto compilado do Código Civil (Lei 10.406/2002) enviado pelo proprietário (PDF de 232 páginas), completo, do art. 1º ao art. 2.046.",
-    "Os 12 itens de Seguros (civil-autoral-analista-seguro-01 a 12, baseados na Lei 15.040/2024) não foram conferidos: o texto compilado dessa lei não foi enviado e o Planalto bloqueia o acesso automático. Esses itens ficaram intocados, sem legalAudit, e continuam listados em audits/lei-em-dia-pendencias-20261009.md. Uma leitura preliminar por resumo sugere que os gabaritos são coerentes, mas isso não é conferência.",
+    "Os 12 itens de Seguros (civil-autoral-analista-seguro-01 a 12) foram conferidos contra o texto da Lei 15.040/2024 (arts. 1º, 5º, 9º, 10, 13, 42, 54, 56, 66, 115, 120 e 126) enviado pelo proprietário (impressão do Planalto de 28/10/2026, arts. 1º a 134); todos ficaram certificados, com os gabaritos mantidos.",
+    "A Lei 15.040/2024 revogou o art. 206, § 1º, II e os arts. 757 a 802 do Código Civil (art. 133) e entrou em vigor um ano após a publicação (art. 134, publicação em 10/12/2024). O texto compilado do Código Civil enviado já traz esses dispositivos como revogados, e nenhum item foi conferido contra dispositivo revogado.",
     "O texto compilado traz as anotações \"Vide ADIN 4815\" (arts. 20 e 21), \"Vide ADI nº 7055\" e \"Vide ADI nº 6792\" (art. 927), \"Vide Lei nº 14.195, de 2021\" (art. 1.142), \"Vide Decreto-lei nº 4.037, de 1942\" (art. 1.221), \"Vide Recurso Extraordinário nº 646.721\" e \"nº 878.694\" (art. 1.829) e \"Vide Lei nº 13.105, de 2015\". O conteúdo dessas decisões e leis não consta do arquivo e não foi incorporado à conferência; os itens que dependem delas ficaram certificados de forma parcial.",
     "Os arts. 1.620 a 1.629 constam como revogados (Lei 12.010/2009); o mesmo vale para os incisos revogados do art. 3º. Nenhum item foi conferido contra dispositivo revogado.",
     "A anotação editorial \"Produção de efeitos\" (Lei 14.905/2024) do arquivo compilado foi removida do texto de trabalho para não entrar nos trechos (parts); o conteúdo normativo não foi alterado.",
@@ -7936,6 +7862,90 @@
       "id": "civil-autoral-analista-2027",
       "topico": "civ-sucessoes",
       "dispositivo": "Art. 2.027, CC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "civil-autoral-analista-seguro-01",
+      "topico": "civ-contratos-especie",
+      "dispositivo": "Art. 1º, Lei 15.040/2024",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "civil-autoral-analista-seguro-02",
+      "topico": "civ-contratos-especie",
+      "dispositivo": "Art. 5º, Lei 15.040/2024",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "civil-autoral-analista-seguro-03",
+      "topico": "civ-contratos-especie",
+      "dispositivo": "Art. 9º, § 1º, Lei 15.040/2024",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "civil-autoral-analista-seguro-04",
+      "topico": "civ-contratos-especie",
+      "dispositivo": "Art. 10, Lei 15.040/2024",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "civil-autoral-analista-seguro-05",
+      "topico": "civ-contratos-especie",
+      "dispositivo": "Art. 13, Lei 15.040/2024",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "civil-autoral-analista-seguro-06",
+      "topico": "civ-contratos-especie",
+      "dispositivo": "Art. 42, Lei 15.040/2024",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "civil-autoral-analista-seguro-07",
+      "topico": "civ-contratos-especie",
+      "dispositivo": "Art. 54, Lei 15.040/2024",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "civil-autoral-analista-seguro-08",
+      "topico": "civ-contratos-especie",
+      "dispositivo": "Art. 56, Lei 15.040/2024",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "civil-autoral-analista-seguro-09",
+      "topico": "civ-contratos-especie",
+      "dispositivo": "Art. 66, I e II, Lei 15.040/2024",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "civil-autoral-analista-seguro-10",
+      "topico": "civ-contratos-especie",
+      "dispositivo": "Art. 115, Lei 15.040/2024",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "civil-autoral-analista-seguro-11",
+      "topico": "civ-contratos-especie",
+      "dispositivo": "Art. 120, Lei 15.040/2024",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "civil-autoral-analista-seguro-12",
+      "topico": "civ-contratos-especie",
+      "dispositivo": "Art. 126, II e III, Lei 15.040/2024",
       "gabarito": "E",
       "status": "certificado"
     }

@@ -17,6 +17,8 @@ test('Código Civil — banco íntegro e revisão de 28/10/2026 coerente com o r
   assert.equal(new Set(data.map(q=>q.id)).size,data.length);
   assert.equal(reviewed.length,report.totalRevisado);
   assert.equal(notReviewed.length,report.totalNaoRevisado);
+  assert.equal(report.totalNaoRevisado,0);
+  assert.equal(reviewed.length,data.length,'todas as questões do Código Civil devem ter revisão jurídica');
   assert.equal(report.gabaritosAlterados,0);
   assert.equal(report.itensForaDaRevisaoAlterados,0);
   const status={},gab={C:0,E:0};
@@ -36,13 +38,14 @@ test('Código Civil — banco íntegro e revisão de 28/10/2026 coerente com o r
   }
 });
 
-test('Código Civil — apenas os 12 itens de Seguros (Lei 15.040/2024) ficam sem revisão e sem selo',()=>{
-  assert.equal(notReviewed.length,12);
-  assert.deepEqual([...notReviewed.map(q=>q.id)],Array.from({length:12},(_,i)=>`civil-autoral-analista-seguro-${String(i+1).padStart(2,'0')}`));
-  assert.deepEqual(report.naoRevisados.map(i=>i.id),[...notReviewed.map(q=>q.id)]);
-  for(const q of notReviewed){
+test('Código Civil — os 12 itens de Seguros foram conferidos contra a Lei 15.040/2024',()=>{
+  const seguros=data.filter(q=>/^civil-autoral-analista-seguro-\d\d$/.test(q.id));
+  assert.deepEqual([...seguros.map(q=>q.id)],Array.from({length:12},(_,i)=>`civil-autoral-analista-seguro-${String(i+1).padStart(2,'0')}`));
+  for(const q of seguros){
     assert.equal(q.topicId,'civ-contratos-especie',q.id);
-    assert.ok(!q.question.legalAudit,q.id);
+    assert.ok(isReviewed(q),q.id);
+    assert.equal(q.question.legalAudit.status,'certificado',q.id);
+    assert.match(q.question.legalAudit.source,/Lei 15\.040\/2024/,q.id);
   }
 });
 
