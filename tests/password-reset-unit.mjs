@@ -12,6 +12,7 @@ import {
   resetTokenHash,
   sendResetEmail,
   validResetToken,
+  confirmReset,
 } from '../lib/password-reset.js';
 import { hashPassword, verifyPassword } from '../lib/auth.js';
 
@@ -110,6 +111,60 @@ test('o fluxo usa resgate SQL atômico, invalida sessões e exige role aluno',as
  const scripts=[...page.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g)];
  assert.equal(scripts.length,1);
  assert.doesNotThrow(()=>new vm.Script(scripts[0][1]));
+});
+
+test('recuperacao de senha: token consumido uma vez; repeticao nao altera senha nem sessao',async()=>{
+ const validToken='Z'.repeat(43),password='SenhaForteNova@2026';
+ const sqlCalls=[];
+ let alreadyUsed=false,updatedPasswords=0;
+ const sql=async(strings,...values)=>{
+   const query=strings.join('?');
+   sqlCalls.push({query,values});
+   if(query.includes('WITH claimed AS')){
+     assert.match(query,/UPDATE central_password_resets r SET used_at=NOW\(\)/);
+     assert.match(query,/r\.used_at IS NULL/);
+     assert.match(query,/r\.delivery_status='sent'/);
+     assert.match(query,/r\.expires_at>NOW\(\)/);
+     assert.match(query,/session_version=session_version\+1/);
+     if(alreadyUsed)return [];
+     alreadyUsed=true;updatedPasswords++;return [{user_id:'synthetic-user'}];
+   }
+   if(query.includes('UPDATE central_password_resets SET used_at=NOW()'))return [];
+   throw Error('SQL inesperado em teste isolado');
+ };
+ const deps={sqlProvider:()=>sql,ensureUsers:async()=>{},ensureTables:async()=>{}};
+ const response=()=>({headers:{},setHeader(key,val){this.headers[key]=val;},end(value){this.body=JSON.parse(value);}});
+ const req={body:{token:validToken,password}};
+ const first=response();await confirmReset(req,first,deps);
+ assert.equal(first.statusCode,200);
+ assert.equal(first.body.ok,true);
+ assert.match(first.headers['Set-Cookie'],/Max-Age=0|Expires=/);
+ const replay=response();await confirmReset(req,replay,deps);
+ assert.equal(replay.statusCode,410);
+ assert.equal(replay.body.ok,undefined);
+ assert.equal(updatedPasswords,1);
+ assert.equal(sqlCalls.filter(x=>x.query.includes('WITH claimed AS')).length,2);
+ assert.equal(sqlCalls.filter(x=>x.query.includes('UPDATE central_password_resets SET used_at=NOW()')).length,1);
+});
+
+test('recuperacao: token invalido/expirado/nao enviado nunca gera nova sessao nem altera senha',async()=>{
+ let attempted=0,changed=0;
+ const sql=async(strings,...values)=>{
+   const query=strings.join('?');
+   attempted++;
+   if(query.includes('WITH claimed AS')){changed+=0;return [];}
+   throw Error('SQL inesperado');
+ };
+ const deps={sqlProvider:()=>sql,ensureUsers:async()=>{},ensureTables:async()=>{}};
+ const response=()=>({headers:{},setHeader(key,val){this.headers[key]=val;},end(value){this.body=JSON.parse(value);}});
+ const malformed=response();await confirmReset({body:{token:'curto',password:'SenhaSegura@2026'}},malformed,deps);
+ assert.equal(malformed.statusCode,410);
+ assert.equal(attempted,0);
+ const expired=response();await confirmReset({body:{token:'X'.repeat(43),password:'SenhaSegura@2026'}},expired,deps);
+ assert.equal(expired.statusCode,410);
+ assert.equal(attempted,1);
+ assert.equal(changed,0);
+ assert.equal(expired.headers['Set-Cookie'],undefined);
 });
 
 test('a autenticação existente continua aceitando novas senhas',()=>{
