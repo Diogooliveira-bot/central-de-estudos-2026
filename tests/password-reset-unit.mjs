@@ -61,7 +61,9 @@ test('senha de app Gmail é lida com segurança e SMTP usa TLS na porta 465',()=
  assert.equal(smtp.auth.user,config.user);
  assert.equal(smtp.auth.pass,config.password);
  assert.equal(smtp.tls.servername,'smtp.gmail.com');
- assert.equal(resetPageBase({VERCEL_ENV:'production'}),'https://central-de-estudos-ecru.vercel.app');
+ assert.throws(()=>resetPageBase({VERCEL_ENV:'production'}),/BC_PUBLIC_APP_URL/);
+ assert.equal(resetPageBase({VERCEL_ENV:'production',BC_PUBLIC_APP_URL:'https://central-de-estudos.vercel.app/'}),'https://central-de-estudos.vercel.app');
+ assert.throws(()=>resetPageBase({VERCEL_ENV:'production',BC_PUBLIC_APP_URL:'https://central-de-estudos-ecru.vercel.app/'}),/homologação/);
  assert.equal(resetPageBase({VERCEL_ENV:'preview',VERCEL_URL:'my-preview.vercel.app'}),'https://my-preview.vercel.app');
  assert.throws(()=>resetPageBase({VERCEL_ENV:'preview',VERCEL_URL:'untrusted.example.org'}),/seguro/);
 });
