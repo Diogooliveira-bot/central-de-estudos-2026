@@ -696,3 +696,14 @@ Contagens de elementos efetivamente renderizados no navegador (mesmas nas três 
 - **Defeitos comprovados corrigidos:** tratamento do recurso Premium negado no Gratuito e contrato real de prontidão do M08. Nenhuma correção adicional sem reprodução.
 - **Decisão:** Etapa 10.4 encerrada e aprovada na Preview privada. As anotações históricas anteriores que a classificam como parcial ou pendente ficam superadas por este encerramento.
 - **Segurança:** nenhuma alteração, promoção, alias ou publicação em Production; `main`, pagamentos e dados reais preservados.
+## Etapa 11 — Encerramento da homologação final transversal (29/10/2026)
+
+- **Relatório completo:** [Etapa 11 — homologação final das seis disciplinas jurídicas na Preview privada](./etapa11-homologacao-final-juridica-preview-2026-10-29.md), commit `6672cd11d8ef19711993c98d60fe55781c17a246`.
+- **Escopo concluído:** Direito Constitucional M01–M15, Direito Administrativo M01–M20, Direito Penal M01–M17, Direito Civil M01–M15, Direito Processual Penal M01–M22 e Direito Processual Civil M01–M20 — **109/109 módulos** presentes nas grades.
+- **Premium autenticado:** as seis disciplinas foram abertas pela navegação oficial **Disciplinas**; um leitor nativo integral foi inspecionado em cada matéria, com recursos Premium ativos.
+- **Persistência observada:** Civil M05 reapareceu em 50% (teoria integral 100% lida); CPC M05 em 1/15 capítulos (5%) e CPC M20 em 1/60 capítulos (1%). A persistência Gratuita e Premium do CPC já havia sido comprovada no encerramento da Etapa 10.4.
+- **Gratuito:** a sessão autenticada da Etapa 10.4 comprovou bloqueio de teoria completa e TEC/QC. A auditoria atual de `central-v119.html` confirmou que `cf`, `adm`, `penal`, `civil`, `cpp` e `cpc` passam pelo mesmo gate server-authoritative e fail-closed antes da inicialização. Nesta rodada, o gerenciador seguro de credenciais retornou à conta Premium; não foi declarado novo login Gratuito sem prova.
+- **Incidente não funcional:** a sessão de Vercel Deployment Protection havia expirado e inicialmente redirecionou assets para login. O carregamento normal voltou após acesso temporário à mesma Preview; não se reproduziu defeito da Central.
+- **Correções:** nenhuma alteração de aplicação, conteúdo, autorização ou progresso, porque nenhum defeito novo foi comprovado. Somente relatório e checkpoint foram atualizados.
+- **Decisão:** **Etapa 11 aprovada e encerrada**. Esta é a última etapa da homologação visual/técnica prevista. Release candidate, integração ou publicação em Production ficam fora deste encerramento e exigem autorização explícita.
+- **Segurança:** deployment `dpl_4wScDvpKUMCtYi1W75ZRoqXjEdtM` permaneceu Preview (`target: null`); nenhuma promoção, alias de Production ou alteração em `main`, pagamentos e dados reais.
