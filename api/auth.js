@@ -179,32 +179,32 @@ async function bootstrap(req, res) {
 export default async function handler(req, res) {
   try {
     const premiumApi = String(req.query?.bc_api || '').toLowerCase();
-    if (premiumApi === 'hotmart-webhook') return handleHotmartWebhook(req, res);
-    if (premiumApi === 'premium-expiry-reminders') return handlePremiumExpiryReminders(req, res);
-    if (premiumApi === 'hotmart-claim') return handleHotmartClaim(req, res);
-    if (premiumApi === 'plans') return handlePlans(req, res);
-    if (premiumApi === 'private-content') return handlePrivateContent(req, res);
-    if (premiumApi === 'lei-em-dia-questions') return handleLeiEmDiaQuestions(req, res);
+    if (premiumApi === 'hotmart-webhook') return await handleHotmartWebhook(req, res);
+    if (premiumApi === 'premium-expiry-reminders') return await handlePremiumExpiryReminders(req, res);
+    if (premiumApi === 'hotmart-claim') return await handleHotmartClaim(req, res);
+    if (premiumApi === 'plans') return await handlePlans(req, res);
+    if (premiumApi === 'private-content') return await handlePrivateContent(req, res);
+    if (premiumApi === 'lei-em-dia-questions') return await handleLeiEmDiaQuestions(req, res);
 
     const action = String(req.query?.action || '').toLowerCase();
     if (req.method === 'POST' && !sameOriginRequest(req)) return send(res, 403, { error: 'Origem da requisição não permitida' });
 
-    if (action === 'free-signup' && req.method === 'POST') return handleFreeSignup(req, res);
-    if (action === 'free-signup-contact' && ['GET','POST'].includes(req.method)) return handleFreeSignupContactPreferences(req, res);
+    if (action === 'free-signup' && req.method === 'POST') return await handleFreeSignup(req, res);
+    if (action === 'free-signup-contact' && ['GET','POST'].includes(req.method)) return await handleFreeSignupContactPreferences(req, res);
     if (action === 'free-signup-status' && req.method === 'GET') return send(res, 200, {
       enabled: publicFreeSignupReady(),
       siteKey: publicFreeSignupReady() && signupCaptchaConfigured()
         ? String(process.env.BC_SIGNUP_TURNSTILE_SITE_KEY) : null,
     });
-    if (action.startsWith('invite-')) return handleInviteAction(req, res, action.slice('invite-'.length));
-    if (action.startsWith('password-reset-')) return handlePasswordReset(req, res, action.slice('password-reset-'.length));
+    if (action.startsWith('invite-')) return await handleInviteAction(req, res, action.slice('invite-'.length));
+    if (action.startsWith('password-reset-')) return await handlePasswordReset(req, res, action.slice('password-reset-'.length));
 
-    if (req.method === 'GET' && action === 'me') return currentUser(req, res);
-    if (req.method === 'GET' && action === 'bootstrap-status') return bootstrapStatus(res);
+    if (req.method === 'GET' && action === 'me') return await currentUser(req, res);
+    if (req.method === 'GET' && action === 'bootstrap-status') return await bootstrapStatus(res);
 
-    if (req.method === 'POST' && action === 'login') return login(req, res);
-    if (req.method === 'POST' && action === 'logout') return logout(res);
-    if (req.method === 'POST' && action === 'bootstrap') return bootstrap(req, res);
+    if (req.method === 'POST' && action === 'login') return await login(req, res);
+    if (req.method === 'POST' && action === 'logout') return await logout(res);
+    if (req.method === 'POST' && action === 'bootstrap') return await bootstrap(req, res);
 
     res.setHeader('Allow', 'GET, POST');
     return send(res, 404, { error: 'Ação de autenticação inválida' });
