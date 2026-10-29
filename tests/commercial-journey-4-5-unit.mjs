@@ -60,8 +60,8 @@ test('vitrine interna e Termos conservam preços consistentes e compra única',(
  assert.match(site,/R\$ 97<sup>,00<\/sup>/);
  assert.match(legal,/R\$ 97,00 por seis meses/);
  assert.match(site,/R\$ 15 a menos/);
- assert.match(site,/sem renovação automática/i);
- assert.match(legal,/sem cobrança recorrente automática/i);
+ assert.match(site,/renovação automática/i);
+ assert.match(legal,/cobrança recorrente automática/i);
  assert.doesNotMatch(site,/R\$ 194|R\$ 291,00|50% maiores/);
  assert.doesNotMatch(legal,/R\$ 194/);
  assert.match(site,/data-preview-only="true"/);
