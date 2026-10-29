@@ -707,3 +707,13 @@ Contagens de elementos efetivamente renderizados no navegador (mesmas nas três 
 - **Correções:** nenhuma alteração de aplicação, conteúdo, autorização ou progresso, porque nenhum defeito novo foi comprovado. Somente relatório e checkpoint foram atualizados.
 - **Decisão:** **Etapa 11 aprovada e encerrada**. Esta é a última etapa da homologação visual/técnica prevista. Release candidate, integração ou publicação em Production ficam fora deste encerramento e exigem autorização explícita.
 - **Segurança:** deployment `dpl_4wScDvpKUMCtYi1W75ZRoqXjEdtM` permaneceu Preview (`target: null`); nenhuma promoção, alias de Production ou alteração em `main`, pagamentos e dados reais.
+
+
+### Gate posterior à Etapa 11 — integração de lançamento (29/10/2026)
+
+- O [relatório da Etapa 11](./etapa11-homologacao-final-juridica-preview-2026-10-29.md) foi ampliado no commit `b7ca7a75bc2ccabceb743fc068cb0f424b2e0642` com as pendências externas à homologação jurídica.
+- **Situação separada:** homologação jurídica **GO**; integração comercial e publicação **NO-GO**.
+- A branch jurídica e a branch `integration/lancamento-base-completa-20261028` estão divergentes (207 commits à frente e 129 atrás na comparação atual). Integrar seletivamente; não fazer merge integral.
+- PR [#187](https://github.com/Diogooliveira-bot/central-de-estudos-2026/pull/187): aberto, draft, mergeável, head `29339666ed3526c97fc30ebf99105750e5882d3f`; workflow [40855835798](https://github.com/Diogooliveira-bot/central-de-estudos-2026/actions/runs/40855835798) aprovado.
+- Bloqueadores de lançamento: corrigir e verificar vínculo produtivo Neon; publicar Preview exata da integração; homologar Turnstile e SMTP TEST; validar ofertas únicas da Hotmart e webhook; finalizar identificação/documentos legais; executar E2E hospedado completo e confirmar backup/rollback.
+- Nenhum merge, promoção ou deployment Production foi executado nesta atualização.
