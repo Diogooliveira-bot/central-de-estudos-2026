@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {access,readFile} from 'node:fs/promises';
 import vm from 'node:vm';
+import zlib from 'node:zlib';
 
 const root=new URL('../',import.meta.url);
 const read=path=>readFile(new URL(path,root),'utf8');
@@ -36,6 +37,25 @@ test('bateria interna do CPC tem 15 questões válidas em cada módulo M07-M17',
  }
 });
 
+test('CPC M18-M20 preserva cinco questões resumidas, dez completas e mapa acessível',async()=>{
+ for(let n=18;n<=20;n++){
+  const source=await read(`cpc-study-m${n}-lite.js`);
+  const window={addEventListener(){}};
+  const context={window,document:{readyState:'loading',addEventListener(){}},localStorage:{getItem(){return null}},setTimeout(){},console};
+  vm.runInNewContext(source.replace('function J(k)','window.__auditQuestions=QUESTIONS;function J(k)'),context);
+  const questions=window.__auditQuestions;
+  assert.equal(questions?.summary.length,5,`CPC M${n} resumo`);
+  assert.equal(questions?.complete.length,10,`CPC M${n} completo`);
+  for(const q of [...questions.summary,...questions.complete]){
+   assert.equal(q.o.length,4,`CPC M${n}: ${q.q}`);
+   assert.ok(Number.isInteger(q.a)&&q.a>=0&&q.a<q.o.length,`CPC M${n}: ${q.q}`);
+   assert.ok(q.e?.trim(),`CPC M${n}: explicação ausente`);
+  }
+  assert.match(source,new RegExp(`tools/cpc-m${n}-mapa\\.html`));
+  await access(new URL(`tools/cpc-m${n}-mapa.html`,root));
+ }
+});
+
 test('gerador de progresso localiza a declaraÃ§Ã£o CPC_WEEKS e carrega sua fonte de questÃµes',async()=>{
  const builder=await read('scripts/build-home-progress.mjs');
  assert.match(builder,/lastIndexOf\('const CPC_WEEKS='\)/);
@@ -52,6 +72,21 @@ test('índice de Processo Penal e registro da Central usam os 22 módulos',async
  const runtime=await read('ui/cpp-native-study-v1.js');
  assert.match(runtime,/function syncSubjectRegistry\(\)/);
  assert.match(runtime,/syncSubjectRegistry\(\);patchSubjStats\(\)/);
+});
+
+test('pacote CPP contém 22 pares de teoria com 5 e 10 exercícios reais',async()=>{
+ const source=await read('content/cpp/cpp-native-content-packed.js');
+ const packed=source.match(/"([A-Za-z0-9+/=]{100,})"/);
+ assert.ok(packed,'pacote comprimido CPP ausente');
+ const modules=JSON.parse(zlib.gunzipSync(Buffer.from(packed[1],'base64')).toString('utf8'));
+ assert.equal(Object.keys(modules).length,22);
+ for(let n=1;n<=22;n++){
+  const id=`cpp-m${String(n).padStart(2,'0')}`,m=modules[id];
+  assert.ok(m?.summaryHtml?.length>1000&&m?.completeHtml?.length>1000,id);
+  assert.equal((m.summaryHtml.match(/Ver gabarito e explicação/g)||[]).length,5,`${id} resumo`);
+  assert.equal((m.completeHtml.match(/Gabarito:/g)||[]).length,10,`${id} completo`);
+ }
+ await access(new URL('assets/cpp/infograficos.webp',root));
 });
 
 test('metadados de Português refletem as unidades existentes em M01 e M13',async()=>{
