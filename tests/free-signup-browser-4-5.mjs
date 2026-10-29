@@ -1,6 +1,7 @@
 import { chromium } from 'playwright';
 import { createServer } from 'node:http';
-import { readFileSync } from 'node:fs';
+import { readFileSync,mkdirSync } from 'node:fs';
+import { join } from 'node:path';
 import assert from 'node:assert/strict';
 const files={'/cadastro-gratuito.html':'cadastro-gratuito.html','/login.html':'login.html','/recuperar-senha.html':'recuperar-senha.html','/conheca.html':'conheca.html','/termos-de-uso.html':'termos-de-uso.html','/politica-de-privacidade.html':'politica-de-privacidade.html','/politica-de-cookies.html':'politica-de-cookies.html','/preferencias-contato.html':'preferencias-contato.html'};
 const requests=[];
@@ -15,13 +16,28 @@ const root='http://127.0.0.1:'+port;
 let browser;
 try{
  browser=await chromium.launch({headless:true});
+ const evidence=process.env.BC_BROWSER_EVIDENCE_DIR;
+ if(evidence)mkdirSync(evidence,{recursive:true});
+ for(const device of [{label:'desktop',width:1366,height:768},{label:'tablet',width:768,height:1024},{label:'celular',width:390,height:844}]){
+  const marketing=await browser.newPage({viewport:{width:device.width,height:device.height}});
+  await marketing.route('**/api/auth?action=free-signup-status',r=>r.fulfill({status:200,contentType:'application/json',body:JSON.stringify({enabled:false,siteKey:null})}));
+  await marketing.goto(root+'/conheca.html');
+  assert.equal(await marketing.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,'V24 overflow '+device.label);
+  if(evidence){
+   await marketing.screenshot({path:join(evidence,'v24-'+device.label+'-inicio.png')});
+   await marketing.locator('#acesso').scrollIntoViewIfNeeded();
+   await marketing.screenshot({path:join(evidence,'v24-'+device.label+'-planos.png')});
+  }
+  await marketing.close();
+ }
+ console.log('PASS: V24 aprovada, desktop/tablet/celular sem overflow; capturas quando habilitadas');
 
  const landing=await browser.newPage();
  await landing.route('**/api/auth?action=free-signup-status',r=>r.fulfill({
   status:200,contentType:'application/json',body:JSON.stringify({enabled:true,siteKey:null})
  }));
  await landing.goto(root+'/conheca.html');
- const free=landing.getByRole('link',{name:'Criar minha conta gratuita'});
+ const free=landing.locator('#ctaFree');
  await free.waitFor({state:'visible'});
  await landing.getByText('Crie sua conta gratuita e confirme seu e-mail.',{exact:false}).waitFor();
  await free.click();
@@ -33,7 +49,9 @@ try{
  }));
  await closed.goto(root+'/conheca.html');
  await closed.waitForTimeout(100);
- assert.equal(await closed.locator('#ctaFree').isVisible(),false);
+ await closed.locator('#ctaFree').click();
+ await closed.locator('#bc-signup-preview-dialog').waitFor({state:'visible'});
+ assert.equal(new URL(closed.url()).pathname,'/conheca.html');
  await closed.close();
  console.log('PASS: Visitante encontra CTA Gratuito apenas com cadastro habilitado');
  for(const device of [{label:'desktop',width:1366,height:768},{label:'celular',width:390,height:844}]){

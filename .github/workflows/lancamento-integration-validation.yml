@@ -103,3 +103,13 @@ jobs:
         run: npx playwright install --with-deps chromium --only-shell
       - name: Jornada visual desktop e celular, APIs simuladas
         run: node tests/free-signup-browser-4-5.mjs
+        env:
+          BC_BROWSER_EVIDENCE_DIR: artifacts/launch-browser
+      - name: Evidencias visuais sem credenciais ou alunos reais
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: launch-commercial-browser
+          path: artifacts/launch-browser/*.png
+          if-no-files-found: warn
+          retention-days: 14
