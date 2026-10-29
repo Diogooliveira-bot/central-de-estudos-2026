@@ -14,6 +14,8 @@ on:
       - 'middleware.js'
       - 'central-boot-ready.js'
       - 'central-v119.html'
+      - 'ui/**'
+      - 'content/**'
       - 'tests/**'
       - 'package.json'
       - 'package-lock.json'
@@ -31,6 +33,8 @@ on:
       - 'middleware.js'
       - 'central-boot-ready.js'
       - 'central-v119.html'
+      - 'ui/**'
+      - 'content/**'
       - 'tests/**'
       - 'package.json'
       - 'package-lock.json'
@@ -105,6 +109,8 @@ jobs:
         run: node tests/free-signup-browser-4-5.mjs
         env:
           BC_BROWSER_EVIDENCE_DIR: artifacts/launch-browser
+      - name: Leitor universal na Central, tres viewports e 40 leituras ADM
+        run: node tests/universal-reader-central-browser.mjs
       - name: Evidencias visuais sem credenciais ou alunos reais
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
