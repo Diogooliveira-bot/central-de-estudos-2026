@@ -62,16 +62,8 @@ for(const [subject,count] of [['civil',15],['cpp',22]]){
   }
  }catch(e){for(let n=1;n<=count;n++)record(subject,n,'','',{issue:'packed error: '+e.message.slice(0,90)})}
 }
-for(let n=1;n<=18;n++){
- const p='modules/trabalho/base-completa/m'+String(n).padStart(2,'0')+'.html';
- const s=read(p);
- const text=s.match(/<main[\s>][\s\S]*?<\/main>/i)?.[0]||'';
- rows.push({subject:'trabalho',module:'M'+String(n).padStart(2,'0'),
-   htmlLength:s.length,bodyLength:text.length,headings:(text.match(/<h[1-6][\s>]/gi)||[]).length,
-   lists:(text.match(/<ul[\s>]|<ol[\s>]/gi)||[]).length,
-   universalAssets:s.includes('/ui/universal-reader-v1.js')&&s.includes('/ui/universal-reader-v1.css'),
-   issue: text?'':'main missing'});
-}
+// Trabalho e Processo do Trabalho saíram do catálogo aprovado. Não inventariar
+// arquivos antigos como se ainda fossem conteúdo ativo da Central.
 for(let n=1;n<=25;n++){
  try{
   const raw=read('portugues-autodidata-data.txt').trim();
@@ -86,22 +78,18 @@ for(let n=1;n<=25;n++){
 }
 const stats={total:rows.length,bySubject:Object.fromEntries([...new Set(rows.map(x=>x.subject))].map(name=>[name,rows.filter(x=>x.subject===name).length])),
   textModesFullyConfirmed:rows.filter(x=>x.bothModes).length,
-  notConfirmed:rows.filter(x=>!x.bothModes&&x.subject!=='trabalho'&&x.subject!=='portugues').length,
-  missingSource:rows.filter(x=>x.issue && (/error|register|missing/.test(x.issue))).length,
-  trabalhoFormatted:rows.filter(x=>x.subject==='trabalho'&&x.universalAssets).length};
+  notConfirmed:rows.filter(x=>!x.bothModes&&x.subject!=='portugues').length,
+  missingSource:rows.filter(x=>x.issue && (/error|register|missing/.test(x.issue))).length};
 console.log('AUDIT_STATS',JSON.stringify(stats));
 if(process.env.AUDIT_EXPORT==='1'){
  const dir=path.join(root,'audits/leitor-universal-20261011');
  fs.mkdirSync(dir,{recursive:true});
  fs.writeFileSync(path.join(dir,'inventario.json'),JSON.stringify({
-   generatedAt:'2026-10-11',scope:'Source presence and presentation only — not legal correctness',
+   generatedAt:new Date().toISOString(),scope:'Source presence and presentation only — not legal correctness',
    notes:['ADM complete modes require legacy runtime, verified separately with 40 successful openings.',
-    'Trabalho M03/M09 lack source main elements; Universal Reader wraps them at runtime.',
-    'Trabalho M17 is stored as preformatted source; Universal Reader projects semantic elements non-destructively.',
     'Português has full text and in-document review rather than independently stored summary.'],stats,rows
  },null,2)+'\n');
 }
-if(process.env.AUDIT_COMPACT==='1')console.log('AUDIT_UNCONFIRMED',JSON.stringify(rows.filter(x=>!x.bothModes&&x.subject!=='trabalho'&&x.subject!=='portugues').map(x=>({subject:x.subject,module:x.module,issue:x.issue}))));
+if(process.env.AUDIT_COMPACT==='1')console.log('AUDIT_UNCONFIRMED',JSON.stringify(rows.filter(x=>!x.bothModes&&x.subject!=='portugues').map(x=>({subject:x.subject,module:x.module,issue:x.issue}))));
 else for(const row of rows)console.log('AUDIT_ROW',JSON.stringify(row));
-assert.equal(rows.length,152,'expected modules including 24 Portuguese + final review');
-assert.equal(stats.trabalhoFormatted,18);
+assert.equal(rows.length,134,'expected active reader entries: six legal disciplines and 24 Portuguese modules plus final review');
