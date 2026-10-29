@@ -2,7 +2,7 @@
 
 Data: 2026-10-28
 
-Foram revisadas 2087 das 2620 questões do banco do CPC (15 dos 19 módulos). Nenhum gabarito foi alterado e nenhum item fora da revisão foi tocado.
+Foram revisadas todas as 2620 questões do banco do CPC (19 módulos), item a item, contra o texto compilado completo (arts. 1º a 1.072). Nenhum gabarito foi alterado.
 
 ## Método
 
@@ -14,44 +14,35 @@ Foram revisadas 2087 das 2620 questões do banco do CPC (15 dos 19 módulos). Ne
 
 | Status | Questões |
 |---|---|
-| certificado | 1939 |
-| certificado-parcial | 136 |
-| pendente | 12 |
+| certificado | 2455 |
+| certificado-parcial | 147 |
+| pendente | 18 |
 
-Gabaritos dos itens revisados: 1074 Certo e 1013 Errado.
+Gabaritos dos itens revisados: 1350 Certo e 1270 Errado.
 
 | Módulo | Intervalo | Revisadas | Certificado | Parcial | Pendente |
 |---|---|---|---|---|---|
-| cpc-m01 — Normas fundamentais, fontes, aplicação e direito intertemporal | CPC, arts. 1º a 15 | 92 | 83 | 8 | 1 |
-| cpc-m02 — Jurisdição, ação, processo, pressupostos e mérito | CPC, arts. 16 a 41 | 107 | 104 | 3 | 0 |
+| cpc-m01 — Normas fundamentais, fontes, aplicação e direito intertemporal | CPC, arts. 1º a 15 | 92 | 84 | 7 | 1 |
+| cpc-m02 — Jurisdição, ação, processo, pressupostos e mérito | CPC, arts. 16 a 41 | 107 | 105 | 2 | 0 |
 | cpc-m03 — Competência, conexão, continência e conflitos | CPC, arts. 42 a 69 | 190 | 177 | 10 | 3 |
-| cpc-m04 — Partes, procuradores, responsabilidades, despesas e gratuidade | CPC, arts. 70 a 112 | 209 | 198 | 10 | 1 |
-| cpc-m05 — Litisconsórcio e intervenção de terceiros | CPC, arts. 113 a 138 | 160 | 138 | 21 | 1 |
-| cpc-m06 — Juiz, auxiliares, MP, Advocacia e Defensoria | CPC, arts. 139 a 149, 156 a 158, 162 a 164 e 176 a 187 | 143 | 130 | 12 | 1 |
-| cpc-m07 — Atos processuais, negócios, tempo, lugar e prazos | CPC, arts. 188 a 235 | 120 | 107 | 12 | 1 |
+| cpc-m04 — Partes, procuradores, responsabilidades, despesas e gratuidade | CPC, arts. 70 a 112 | 209 | 199 | 9 | 1 |
+| cpc-m05 — Litisconsórcio e intervenção de terceiros | CPC, arts. 113 a 138 | 160 | 141 | 18 | 1 |
+| cpc-m06 — Juiz, auxiliares, MP, Advocacia e Defensoria | CPC, arts. 139 a 149, 156 a 158, 162 a 164 e 176 a 187 | 143 | 132 | 10 | 1 |
+| cpc-m07 — Atos processuais, negócios, tempo, lugar e prazos | CPC, arts. 188 a 235 | 120 | 113 | 6 | 1 |
 | cpc-m08 — Comunicação dos atos e nulidades | CPC, arts. 236 a 283 | 95 | 89 | 6 | 0 |
-| cpc-m09 — Tutela provisória | CPC, arts. 294 a 311 | 138 | 130 | 8 | 0 |
-| cpc-m10 — Formação, suspensão, extinção e petição inicial | CPC, arts. 312 a 334 | 109 | 104 | 4 | 1 |
-| cpc-m11 — Defesa, revelia, saneamento e julgamento conforme o estado | CPC, arts. 335 a 368 | 145 | 137 | 7 | 1 |
+| cpc-m09 — Tutela provisória | CPC, arts. 294 a 311 | 138 | 133 | 5 | 0 |
+| cpc-m10 — Formação, suspensão, extinção e petição inicial | CPC, arts. 312 a 334 | 109 | 106 | 2 | 1 |
+| cpc-m11 — Defesa, revelia, saneamento e julgamento conforme o estado | CPC, arts. 335 a 368 | 145 | 138 | 6 | 1 |
 | cpc-m12 — Provas | CPC, arts. 369 a 484 | 202 | 191 | 10 | 1 |
-| cpc-m13 — Sentença, remessa necessária, coisa julgada e liquidação | CPC, arts. 485 a 512 | 161 | 148 | 13 | 0 |
-| cpc-m14 — Cumprimento de sentença | CPC, arts. 513 a 538 | 132 | 124 | 7 | 1 |
-| cpc-m18 — Procedimentos especiais previstos | CPC, arts. 539 a 549, 674 a 681, 700 a 702 e 712 a 718 | 84 | 79 | 5 | 0 |
+| cpc-m13 — Sentença, remessa necessária, coisa julgada e liquidação | CPC, arts. 485 a 512 | 161 | 151 | 10 | 0 |
+| cpc-m14 — Cumprimento de sentença | CPC, arts. 513 a 538 | 132 | 125 | 6 | 1 |
+| cpc-m15 — Recursos, precedentes, repercussão e repetitivos | CPC, arts. 926 a 928 e 994 a 1.041 | 194 | 180 | 13 | 1 |
+| cpc-m16 — Execução: princípios, títulos, obrigações e Fazenda | CPC, arts. 771 a 823 e 910 a 913 | 52 | 47 | 5 | 0 |
+| cpc-m17 — Execução por quantia, penhora, expropriação e embargos | CPC, arts. 824 a 909 e 914 a 925 | 131 | 121 | 8 | 2 |
+| cpc-m18 — Procedimentos especiais previstos | CPC, arts. 539 a 549, 674 a 681, 700 a 702 e 712 a 718 | 84 | 80 | 4 | 0 |
+| cpc-m20 — Processos nos tribunais, rescisória, IAC, IRDR e reclamação | CPC, arts. 947 a 959 e 966 a 993 | 156 | 143 | 10 | 3 |
 
-## Ainda sem revisão
-
-533 questões, em 4 módulos, citam artigos a partir do art. 747, que não constam do texto compilado enviado (que termina no art. 746):
-
-| Módulo | Intervalo | Questões |
-|---|---|---|
-| cpc-m16 — Execução: princípios, títulos, obrigações e Fazenda | CPC, arts. 771 a 823 e 910 a 913 | 52 |
-| cpc-m17 — Execução por quantia, penhora, expropriação e embargos | CPC, arts. 824 a 909 e 914 a 925 | 131 |
-| cpc-m15 — Recursos, precedentes, repercussão e repetitivos | CPC, arts. 926 a 928 e 994 a 1.041 | 194 |
-| cpc-m20 — Processos nos tribunais, rescisória, IAC, IRDR e reclamação | CPC, arts. 947 a 959 e 966 a 993 | 156 |
-
-Para concluir, falta o texto compilado do CPC do art. 747 ao art. 1.072.
-
-## Pendentes (12) — "Em revisão."
+## Pendentes (18) — "Em revisão."
 
 - `decorando-cpc-pdf-0069` (Art. 10, CPC, gabarito Errado): O gabarito (Errado) pode divergir do texto legal: o art. 10 veda a decisão com base em fundamento não debatido, e o art. 282, § 1º, dispõe que o ato não será repetido nem sua falta será suprida quando não prejudicar a parte, o que dá apoio à exigência de prejuízo para a nulidade. O gabarito não foi alterado e o item aguarda conferência com a jurisprudência.
 - `decorando-cpc-pdf-0218` (Art. 43, CPC, gabarito Errado): O art. 43 do CPC prevê, como exceção expressa à perpetuação da competência, a supressão de órgão judiciário, o que em princípio confirma o enunciado; o gabarito (Errada) depende do entendimento do STJ e do contexto da questão original, que não constam do texto legal, e por isso o item está em revisão.
@@ -64,20 +55,24 @@ Para concluir, falta o texto compilado do CPC do art. 747 ao art. 1.072.
 - `decorando-cpc-pdf-1446` (Art. 332, § 1º, CPC, gabarito Certo): O art. 332, § 1º, permite julgar liminarmente improcedente o pedido se o juiz verificar, desde logo, a prescrição ou a decadência, e o art. 487, parágrafo único, ressalva essa hipótese da regra de oitiva prévia das partes; o enunciado afirma que o reconhecimento da prescrição ou da decadência ocorre "após prévia intimação do autor", o que não está previsto no texto compilado usado nesta revisão e destoa dessa ressalva. O gabarito indicado (Correta) precisa de conferência.
 - `decorando-cpc-pdf-1531` (Art. 344, 345, CPC, gabarito Errado): O art. 345, I, afasta o efeito da revelia do art. 344 quando, havendo pluralidade de réus, algum deles contestar a ação, sem distinguir o regime do litisconsórcio; o enunciado reproduz esse sentido, mas o gabarito indica Errada, o que só se sustenta por entendimento doutrinário sobre o litisconsórcio simples que não consta do texto compilado usado nesta revisão. O gabarito precisa de conferência.
 - `decorando-cpc-pdf-1763` (Art. 430, CPC, gabarito Errado): O art. 430 manda suscitar a falsidade na contestação, na réplica ou no prazo de 15 dias contado da intimação da juntada do documento, sem distinguir falsidade material de ideológica; o enunciado reproduz essa regra, apenas sem mencionar a réplica, e não afirma que ela seja exclusiva. O gabarito (Errada) só se sustenta se a omissão da réplica ou a referência à falsidade "material" tornar a afirmação incorreta, o que o texto compilado usado nesta revisão não confirma.
-- `decorando-cpc-pdf-2003` (Art. 513, § 5º, CPC, gabarito Errado): O art. 513, § 5º, dispõe que o cumprimento da sentença não poderá ser promovido em face do fiador, do coobrigado ou do corresponsável que não tiver participado da fase de conhecimento, e o § 1º dispõe que ele se faz a requerimento do exequente. O enunciado fala em cumprimento "pleiteado pelo credor e pelo fiador", redação ambígua que pode ser lida como execução contra o fiador (hipótese vedada) ou como execução promovida pelo fiador, caso em que a sucessão do exequente depende de dispositivos que não constam do texto compilado usado nesta revisão, que vai até o art. 746. Por isso o gabarito (Errada) não foi confirmado.
+- `decorando-cpc-pdf-2003` (Art. 513, § 5º, CPC, gabarito Errado): O art. 513, § 5º, dispõe que o cumprimento da sentença não poderá ser promovido em face do fiador, do coobrigado ou do corresponsável que não tiver participado da fase de conhecimento, e o § 1º dispõe que ele se faz a requerimento do exequente. O enunciado fala em cumprimento "pleiteado pelo credor e pelo fiador", redação ambígua que pode ser lida como cumprimento contra o fiador (hipótese vedada pelo § 5º, o que sustentaria o gabarito Errada) ou como cumprimento promovido pelo fiador, caso em que o art. 778, § 1º, IV, admite que o sub-rogado, nos casos de sub-rogação legal ou convencional, promova a execução forçada ou nela prossiga em sucessão ao exequente originário, sem exigir que tenha sido parte na fase de conhecimento. O texto do CPC usado nesta revisão não resolve qual leitura é a pretendida, e a sub-rogação do fiador depende de lei material que dele não consta. Por isso o gabarito (Errada) não foi confirmado.
+- `decorando-cpc-pdf-2415` (Art. 833, CPC c/c 884, § 1º, CLT, gabarito Certo): O art. 833, III, torna impenhoráveis os vestuários e os pertences de uso pessoal do executado, salvo se de elevado valor; a perícia apenas concluiu tratar-se de falsificação, sem precisar o valor. A conclusão do enunciado (extinguir os embargos sem exame de mérito e manter o relógio penhorado) depende da CLT (art. 884, § 1º, citado no rótulo) e do entendimento sobre a via adequada para alegar impenhorabilidade na execução trabalhista, o que não consta do texto do CPC usado nesta revisão e não pode ser confirmado a partir dele; o gabarito foi mantido, mas o item fica pendente.
+- `decorando-cpc-pdf-2521` (Art. 916, CPC, gabarito Certo): O enunciado reproduz o art. 916, caput: depósito de trinta por cento do valor em execução, acrescido de custas e de honorários de advogado, e o restante em até 6 parcelas mensais, com correção monetária e juros de um por cento ao mês. Porém o § 7º do mesmo artigo dispõe que o parcelamento não se aplica ao cumprimento da sentença, e o caso trata de execução trabalhista de cálculo homologado; a aplicação subsidiária do art. 916 ao processo do trabalho depende da CLT e de normas do TST, que não constam do texto do CPC usado nesta revisão e não podem ser confirmadas a partir dele. O gabarito foi mantido, mas o item fica pendente.
+- `decorando-cpc-pdf-2666` (Art. 975, CPC e S. 401, STJ, gabarito Certo): O art. 975, caput, dispõe que o direito à rescisão se extingue em 2 anos contados do trânsito em julgado da última decisão proferida no processo, o que confere com a primeira parte do enunciado. A parte final, que identifica como "última decisão" o ato que reconhece a intempestividade do recurso especial, depende da Súmula 401 do STJ (citada no rótulo) e do tratamento jurisprudencial do recurso intempestivo, quanto a prorrogar ou não o prazo da rescisória; esse tema não consta do texto do CPC usado nesta revisão e não pode ser confirmado a partir dele. O gabarito foi mantido, mas o item fica pendente.
+- `decorando-cpc-pdf-2700` (Art. 976, § 4º, CPC, gabarito Certo): Pelo art. 977, II, as partes podem requerer a instauração do IRDR por petição dirigida ao presidente do tribunal; pelo art. 976, § 4º, o incidente é incabível se um tribunal superior já afetou recurso sobre a questão repetitiva; e, pelo § 3º, a inadmissão anterior por ausência de pressuposto não impede nova suscitação, uma vez satisfeito o requisito. Porém o art. 981 atribui o juízo de admissibilidade ao órgão colegiado competente para julgar o incidente, após a distribuição, e não ao presidente do tribunal, a quem o enunciado atribui o exame de admissibilidade; essa divergência com o texto impede confirmar o gabarito apenas por ele. O gabarito foi mantido, mas o item fica pendente.
+- `decorando-cpc-pdf-2746` (Art. 988, § 5º, I, CPC, gabarito Errado): Pelo art. 988, § 5º, I, é liminarmente indeferida a reclamação proposta após o trânsito em julgado da decisão reclamada, o que coincide com a primeira parte do enunciado ("apenas nos casos em que não tenha ocorrido o trânsito em julgado"). A cláusula final ("ainda que a reclamação seja anterior a preclusão máxima") é ininteligível no texto atual e não permite confirmar, a partir do CPC, por que o enunciado seria errado. O gabarito foi mantido, mas o item fica pendente.
+- `decorando-cpc-pdf-2784` (Art. 1.000, CPC, gabarito Certo): O art. 1.000 impede de recorrer a parte que aceitar, expressa ou tacitamente, a decisão, e considera aceitação tácita a prática, sem nenhuma reserva, de ato incompatível com a vontade de recorrer (parágrafo único). No caso, a manifestação do réu na contestação, admitindo o dano e dispondo-se a ressarci-lo, foi anterior à sentença e não é aceitação da decisão recorrida, de modo que o texto do art. 1.000 não basta para concluir que a apelação dele não deva ser conhecida; as demais questões do caso (tempestividade da apelação do Ministério Público, intimação pessoal e prazo em dobro) dependem de outros dispositivos e da legislação sobre improbidade. Por isso o gabarito (Correta) não foi confirmado.
 
-## Certificados parcialmente (136)
+## Certificados parcialmente (147)
 
 - `decorando-cpc-pdf-0001` (Art. 1º, CPC, gabarito Certo): O art. 1º do CPC determina que o processo civil seja ordenado, disciplinado e interpretado conforme os valores e as normas fundamentais da Constituição, e o art. 516, parágrafo único, permite que o exequente, no cumprimento de sentença, opte pelo juízo do atual domicílio do executado, que no caso é a comarca de Atibaia. A mitigação da perpetuação da competência pelo melhor interesse da criança é construção jurisprudencial, fora do texto legal; o gabarito foi mantido.
 - `decorando-cpc-pdf-0027` (Art. 4º, CPC, gabarito Certo): O art. 4º assegura às partes a solução integral do mérito, incluída a atividade satisfativa, e o art. 139, IV, autoriza o juiz a determinar medidas indutivas, coercitivas, mandamentais ou sub-rogatórias para assegurar o cumprimento de ordem judicial; a previsão desses meios atípicos reforça a efetividade da tutela. O enunciado também invoca a jurisprudência do STJ e do STF, que fica fora do texto legal; o gabarito foi mantido.
 - `decorando-cpc-pdf-0031` (Art. 5º, CPC, gabarito Certo): O art. 5º impõe a quem participa do processo o dever de boa-fé, que se concretiza nos deveres do art. 77 e na repressão aos atos atentatórios à dignidade da justiça (art. 77, § 2º). A descrição da função da boa-fé é leitura doutrinária, e o gabarito foi mantido.
 - `decorando-cpc-pdf-0088` (Art. 14, CPC, gabarito Certo): O art. 14 dispõe que a norma processual é aplicável imediatamente aos processos em curso, respeitados os atos processuais praticados e as situações jurídicas consolidadas sob a norma revogada. A denominação "teoria do isolamento dos atos processuais" é doutrinária, e o gabarito foi mantido.
 - `decorando-cpc-pdf-0089` (Art. 14, CPC, gabarito Certo): O art. 14 dispõe que a norma processual é aplicável imediatamente aos processos em curso, respeitados os atos processuais praticados sob a norma revogada, o que se identifica com a teoria dos atos processuais isolados. A referência à jurisprudência do STJ fica fora do texto legal; o gabarito foi mantido.
-- `decorando-cpc-pdf-0090` (Art. 14 c/c 1.046, CPC, gabarito Certo): O art. 14 dispõe que a norma processual não retroage e se aplica imediatamente aos processos em curso, respeitadas as situações jurídicas consolidadas sob a norma revogada; o prazo em quádruplo já em curso sob o CPC/1973 se mantém. O art. 1.046, citado no rótulo, trata da aplicação do novo Código aos processos pendentes e não consta do texto compilado usado nesta revisão, que vai até o art. 746; o gabarito foi mantido.
-- `decorando-cpc-pdf-0093` (Arts. 14 e 1.046, CPC, gabarito Certo): O art. 14 dispõe que a norma processual é aplicável imediatamente aos processos em curso, respeitados os atos processuais praticados e as situações jurídicas consolidadas sob a vigência da norma revogada. O art. 1.046, citado no rótulo, não consta do texto compilado usado nesta revisão, que vai até o art. 746; o gabarito foi mantido.
+- `decorando-cpc-pdf-0090` (Art. 14 c/c 1.046, CPC, gabarito Certo): O art. 14 dispõe que a norma processual não retroagirá e será aplicável imediatamente aos processos em curso, respeitados os atos processuais praticados e as situações jurídicas consolidadas sob a vigência da norma revogada, e o art. 1.046, caput, determina que as disposições do novo Código se apliquem desde logo aos processos pendentes. A conclusão de que o prazo em quádruplo já em curso sob o CPC/1973 se mantém (e não passa a ser contado em dobro) é leitura de direito intertemporal que o texto do CPC não afirma em termos expressos, pois não há regra transitória específica sobre prazos em curso; o gabarito foi mantido.
 - `decorando-cpc-pdf-0155` (Art. 23, II, CPC, gabarito Certo): O art. 23, II, atribui à autoridade brasileira, com exclusão de qualquer outra, o inventário e a partilha de bens situados no Brasil; a impossibilidade de dispor sobre bens situados no exterior decorre da limitação territorial da jurisdição e não vem expressa no dispositivo. O gabarito foi mantido.
 - `decorando-cpc-pdf-0204` (Art. 39, CPC, gabarito Certo): O art. 39 manda recusar o pedido passivo de cooperação jurídica internacional que configure manifesta ofensa à ordem pública. A descrição dessa recusa como incidência indireta dos direitos fundamentais é leitura doutrinária, e o gabarito foi mantido.
-- `decorando-cpc-pdf-0205` (Art. 41, CPC, gabarito Errado): O art. 41 considera autêntico o documento que instruir pedido de cooperação jurídica internacional, inclusive a tradução para o português, quando encaminhado por autoridade central ou por via diplomática, dispensando-se ajuramentação, autenticação ou legalização; a tradução juramentada não é, portanto, sempre indispensável. Os requisitos da homologação de decisão estrangeira estão em artigos fora do texto compilado usado nesta revisão, que vai até o art. 746; o gabarito foi mantido.
 - `decorando-cpc-pdf-0239` (Arts. 46 e 47, § 1º, CPC, gabarito Certo): O art. 46 fixa, como regra, o foro de domicílio do réu, e o art. 47, § 1º, permite ao autor optar pelo foro de domicílio do réu quando o litígio não recair sobre direito de propriedade, vizinhança, servidão, divisão e demarcação de terras ou nunciação de obra nova. A competência do foro da situação do imóvel para a cobrança de cotas condominiais decorre do art. 53, III, "d", e da jurisprudência, que ficam fora dos dispositivos do rótulo; o gabarito foi mantido.
 - `decorando-cpc-pdf-0244` (Art. 47, CPC, gabarito Certo): Pelo art. 47, a ação fundada em direito real sobre imóvel, como a reivindicatória, é proposta no foro de situação da coisa, e o § 1º afasta a opção por outro foro quando o litígio recair sobre direito de propriedade; o art. 64, § 1º, manda declarar de ofício a incompetência absoluta. A natureza absoluta da competência nesse caso (o § 2º a declara expressamente só para as possessórias imobiliárias) é leitura doutrinária, fora do texto legal; o gabarito foi mantido.
 - `decorando-cpc-pdf-0247` (Art. 47, §§ 1º e 2º, CPC, gabarito Certo): O art. 47, caput, fixa o foro de situação da coisa para as ações fundadas em direito real sobre imóveis, o § 1º afasta a opção por outro foro quando o litígio recair sobre servidão, e o art. 64, § 1º, manda declarar de ofício a incompetência absoluta, decidindo-se a alegação após a manifestação da parte contrária (art. 64, § 2º). A natureza absoluta da competência nesse caso (o § 2º a declara expressamente só para as possessórias imobiliárias) é leitura doutrinária, fora do texto legal; o gabarito foi mantido.
@@ -92,20 +87,16 @@ Para concluir, falta o texto compilado do CPC do art. 747 ao art. 1.072.
 - `decorando-cpc-pdf-0435` (Art. 75, V, CPC, gabarito Certo): O art. 75, V, atribui a representação da massa falida ao administrador judicial; as atribuições adicionais descritas no enunciado (ajuizar medidas, defender a massa e dar prosseguimento aos negócios do falido, com autorização do juízo) decorrem da legislação falimentar, que não consta do texto compilado usado nesta revisão; o gabarito foi mantido.
 - `decorando-cpc-pdf-0447` (Art. 76, CPC, gabarito Certo): Pelo art. 337, IX, incumbe ao réu alegar, antes de discutir o mérito, o defeito de representação, e, pelo art. 76, verificada a irregularidade da representação, o juiz suspende o processo e designa prazo razoável para que o vício seja sanado. O enunciado invoca também a jurisprudência do STJ, que fica fora do texto legal; o gabarito foi mantido.
 - `decorando-cpc-pdf-0482` (Art. 85, CPC, gabarito Certo): Pelo art. 85, § 7º, não são devidos honorários no cumprimento de sentença contra a Fazenda Pública que enseje expedição de precatório, desde que não tenha sido impugnada. O enunciado invoca também o entendimento do STJ, que fica fora do texto legal; o gabarito foi mantido.
-- `decorando-cpc-pdf-0563` (Art. 99, § 4º c/c 1/015, V, CPC, gabarito Certo): Pelo art. 99, § 4º, a assistência do requerente por advogado particular não impede a concessão de gratuidade da justiça, de modo que o indeferimento fundado nesse argumento deve ser reformado em agravo de instrumento, cabível contra a decisão que rejeita o pedido de gratuidade (art. 1.015, V). O art. 1.015 não consta do texto compilado usado nesta revisão, que vai até o art. 746; o gabarito foi mantido.
 - `decorando-cpc-pdf-0581` (Art. 100, CPC, gabarito Certo): Pelo art. 100, deferido o pedido de gratuidade, a parte contrária pode impugná-lo na contestação, na réplica, nas contrarrazões de recurso ou por petição simples, e, pelo art. 101, quando a questão é resolvida na sentença, cabe apelação. A impugnação por meio da própria apelação decorre dessa combinação e não está expressa no art. 100; o gabarito foi mantido.
 - `decorando-cpc-pdf-0597` (Art. 109, CPC, gabarito Certo): É a redação do art. 109 do CPC: a alienação da coisa ou do direito litigioso por ato entre vivos, a título particular, não altera a legitimidade das partes. O enunciado invoca também a jurisprudência dos tribunais superiores, que fica fora do texto legal; o gabarito foi mantido.
 - `decorando-cpc-pdf-0598` (Art. 109, CPC, gabarito Certo): É a redação do art. 109 do CPC: a alienação da coisa ou do direito litigioso por ato entre vivos, a título particular, não altera a legitimidade das partes. O enunciado invoca também a jurisprudência dos tribunais superiores, que fica fora do texto legal; o gabarito foi mantido.
 - `decorando-cpc-pdf-0601` (Art. 109, § 1º, CPC, gabarito Certo): Pelo art. 109, caput e § 1º, a alienação da coisa litigiosa não altera a legitimidade das partes, e o adquirente não pode suceder o alienante sem o consentimento da parte contrária; permanecendo o alienante no processo, o réu atua em nome próprio na defesa de direito agora alheio. A qualificação como substituto processual é construção doutrinária, fora do texto legal; o gabarito foi mantido.
 - `decorando-cpc-pdf-0610` (Arts. 110 e 329, I, CPC, gabarito Errado): Pelo art. 110, falecida a parte, a sucessão se dá pelo espólio ou pelos sucessores, e, pelo art. 329, I, até a citação o autor pode aditar ou alterar o pedido ou a causa de pedir independentemente de consentimento do réu; o enunciado nega a possibilidade de emenda. A emenda da inicial para incluir o espólio ou os herdeiros do réu falecido antes da citação decorre da jurisprudência invocada no enunciado, fora do texto legal; o gabarito foi mantido.
-- `decorando-cpc-pdf-0620` (Arts. 113, § 2º e 1.015, VIII, CPC, gabarito Certo): O art. 113, § 2º, dispõe que o requerimento de limitação interrompe o prazo para manifestação ou resposta, que recomeça da intimação da decisão que o solucionar; já o cabimento de agravo de instrumento contra a decisão que rejeita o pedido de limitação decorre do art. 1.015, VIII, citado no rótulo, que está fora do texto compilado usado nesta revisão, que vai até o art. 746; o gabarito foi mantido.
 - `decorando-cpc-pdf-0629` (Art. 114 c/c 116, CPC, gabarito Certo): Os arts. 114 e 116 definem o litisconsórcio necessário (por lei ou pela natureza da relação, quando a eficácia da sentença depender da citação de todos) e o unitário (decisão de mérito uniforme para todos); o enquadramento da ação pauliana como hipótese de litisconsórcio passivo necessário e unitário entre devedor e adquirente decorre do Código Civil e da doutrina, que não constam do texto compilado usado nesta revisão; o gabarito foi mantido.
-- `decorando-cpc-pdf-0630` (Art. 114 c/c 1.015, VII, CPC, gabarito Certo): O art. 113, § 1º, só autoriza o juiz a limitar o litisconsórcio facultativo; na invalidação de contrato com as dez pessoas, a relação jurídica controvertida impõe a citação de todos, de modo que o litisconsórcio é necessário (art. 114) e não poderia ser limitado. O cabimento de agravo de instrumento contra a exclusão de litisconsorte decorre do art. 1.015, VII, citado no rótulo, que está fora do texto compilado usado nesta revisão, que vai até o art. 746; o gabarito foi mantido.
-- `decorando-cpc-pdf-0633` (Art. 115, CPC, gabarito Certo): Pelo art. 115, I, a sentença de mérito proferida sem a integração do contraditório é nula quando a decisão deveria ser uniforme para todos, como no litisconsórcio necessário unitário; o cabimento de ação rescisória após o trânsito em julgado depende do art. 966, que está fora do texto compilado usado nesta revisão, que vai até o art. 746; o gabarito foi mantido.
+- `decorando-cpc-pdf-0633` (Art. 115, CPC, gabarito Certo): Pelo art. 115, I, a sentença de mérito proferida sem a integração do contraditório é nula quando a decisão deveria ser uniforme em relação a todos que deveriam ter integrado o processo, como no litisconsórcio necessário unitário. O art. 966 admite a rescisão da decisão de mérito transitada em julgado nas hipóteses dos seus incisos (por exemplo, a violação manifesta de norma jurídica, inciso V), mas o texto do CPC usado nesta revisão não enquadra em termos expressos a falta de integração do litisconsorte necessário em nenhum deles; essa subsunção depende de interpretação que o texto não traz, e o gabarito foi mantido.
 - `decorando-cpc-pdf-0638` (Art. 115, II, CPC, gabarito Certo): O texto compilado confirma que, no litisconsórcio necessário simples, a sentença proferida sem citação de todos é ineficaz apenas para os que não foram citados (art. 115, II) e que a coisa julgada não prejudica terceiros (art. 506); a via de simples ação declaratória para reconhecer a ineficácia, mesmo após o trânsito em julgado, decorre de doutrina e jurisprudência, que não constam do texto compilado usado nesta revisão; o gabarito foi mantido.
 - `decorando-cpc-pdf-0657` (Art. 121, CPC, gabarito Certo): O art. 121 dispõe que o assistente simples atua como auxiliar da parte principal, exerce os mesmos poderes e sujeita-se aos mesmos ônus processuais que o assistido; o enunciado atribui a regra ao "Código Civil", mas ela consta do art. 121 do CPC; o gabarito foi mantido, entendendo-se a referência como ao Código de Processo Civil.
 - `decorando-cpc-pdf-0669` (Art. 124, CPC e Art. 5º, § 2º, Lei 7.347/85, gabarito Certo): O art. 124 considera litisconsorte da parte principal o assistente quando a sentença influir na relação jurídica entre ele e o adversário do assistido, o que pressupõe interesse jurídico, e não apenas econômico; o art. 5º, § 2º, da Lei nº 7.347/1985 e o posicionamento do STJ invocados no enunciado não constam do texto compilado usado nesta revisão; o gabarito foi mantido.
-- `decorando-cpc-pdf-0678` (Arts. 125, § 2º e 1.015, IX, CPC, gabarito Certo): Pelo art. 125, § 2º, admite-se uma única denunciação sucessiva, promovida pelo denunciado contra seu antecessor imediato, e o denunciado sucessivo não pode promover nova denunciação; como Bruno denunciou Cláudio e Cláudio denunciou Daniel, a denunciação de Eduardo por Daniel era vedada, e o seu deferimento deve ser reformado. O cabimento do agravo de instrumento decorre do art. 1.015, IX, citado no rótulo, que está fora do texto compilado usado nesta revisão, que vai até o art. 746; o gabarito foi mantido.
 - `decorando-cpc-pdf-0705` (Art. 133, CPC, gabarito Certo): O art. 133 do CPC prevê a instauração do incidente a pedido da parte ou do Ministério Público, quando lhe couber intervir no processo, o que confirma a necessidade de provocação; o enunciado, porém, remete às normas de Direito Civil, com as alterações da Lei nº 13.874/2019, que não constam do texto compilado usado nesta revisão; o gabarito foi mantido.
 - `decorando-cpc-pdf-0712` (Arts. 133 e 134, CPC, gabarito Errado): O art. 133, § 2º, apenas manda aplicar o regramento do incidente à desconsideração inversa, e o art. 134, § 2º, dispensa o incidente quando a desconsideração é requerida na petição inicial, caso em que o sócio ou a pessoa jurídica é citado; o que o enunciado descreve (pedido inicial contra a sociedade e os sócios) é essa hipótese do art. 134, § 2º, e não a desconsideração inversa, cujo conceito não é definido no texto compilado usado nesta revisão; o gabarito foi mantido.
 - `decorando-cpc-pdf-0724` (Art. 134, CPC, gabarito Certo): O art. 134 admite o incidente de desconsideração em todas as fases do processo de conhecimento, no cumprimento de sentença e na execução; que a decisão anterior, fundada na ausência de confusão patrimonial, não impeça novo pedido por outra causa de responsabilização depende dos limites da coisa julgada e da causa de pedir de cada pedido, matéria de doutrina e jurisprudência que não consta do texto compilado usado nesta revisão; o gabarito foi mantido.
@@ -120,23 +111,19 @@ Para concluir, falta o texto compilado do CPC do art. 747 ao art. 1.072.
 - `decorando-cpc-pdf-0768` (Art. 138, CPC, gabarito Errado): O art. 138, § 1º, dispõe que a intervenção do amicus curiae não autoriza a interposição de recursos, ressalvados os embargos de declaração e a hipótese do § 3º; o texto não trata expressamente da decisão que indefere o ingresso, e a extensão da irrecorribilidade a essa decisão decorre de doutrina e jurisprudência que não constam do texto compilado usado nesta revisão; o gabarito foi mantido.
 - `decorando-cpc-pdf-0771` (Art. 138, CPC, gabarito Certo): O art. 138 admite a participação de pessoa natural ou jurídica, órgão ou entidade especializada, com representatividade adequada, em razão da relevância da matéria, da especificidade do tema ou da repercussão social da controvérsia, sem alteração de competência nem direito a recursos (§ 1º); a caracterização do amicus curiae como terceiro que não se vincula ao resultado e apenas agrega subsídios à decisão é conceito doutrinário que o texto não enuncia expressamente; o gabarito foi mantido.
 - `decorando-cpc-pdf-0784` (Art. 139, IV, CPC, gabarito Certo): O art. 139, IV, incumbe ao juiz determinar todas as medidas indutivas, coercitivas, mandamentais ou sub-rogatórias necessárias ao cumprimento de ordem judicial, inclusive nas ações de prestação pecuniária, e o art. 8º manda observar a proporcionalidade e a eficiência; as condições fixadas pela jurisprudência dos Tribunais Superiores para as medidas executivas atípicas, invocadas no enunciado, não constam do texto compilado usado nesta revisão; o gabarito foi mantido.
-- `decorando-cpc-pdf-0812` (Arts. 144 e 966, CPC, gabarito Certo): O juiz casado com a irmã da ré é parente afim, em linha colateral, até o terceiro grau, de uma das partes, hipótese de impedimento (art. 144, IV). O art. 146 fixa o prazo de 15 dias, a contar do conhecimento do fato, para alegar impedimento ou suspeição; a ausência de preclusão para alegar o impedimento, mesmo após a sentença, decorre do art. 966, citado no rótulo, que está fora do texto compilado usado nesta revisão, que vai até o art. 746; o gabarito foi mantido.
 - `decorando-cpc-pdf-0819` (Arts. 144, III, e 148, CPC, gabarito Certo): O art. 144, III, c/c o art. 148, I, estende ao membro do Ministério Público o impedimento por parentesco, até o terceiro grau, com o advogado que postula no processo, e o art. 148, § 1º, manda arguir o impedimento em petição fundamentada na primeira oportunidade, processando o juiz o incidente em separado (§ 2º); a equiparação do parentesco por adoção ao consanguíneo decorre do Código Civil, que não consta do texto compilado usado nesta revisão; o gabarito foi mantido.
 - `decorando-cpc-pdf-0827` (Art. 144, IX, CPC, gabarito Certo): O art. 144, IX, prevê o impedimento do juiz quando promover ação contra a parte ou seu advogado, e o art. 148, I, aplica os motivos de impedimento e de suspeição ao membro do Ministério Público; a extensão do impedimento a reclamações disciplinares do juiz contra o membro do Ministério Público, segundo o entendimento do STJ invocado no enunciado, não consta do texto compilado usado nesta revisão; o gabarito foi mantido.
 - `decorando-cpc-pdf-0895` (Arts. 177 e 178, CPC, gabarito Errado): O art. 177 dispõe que o Ministério Público exerce o direito de ação em conformidade com suas atribuições constitucionais, o que não permite afirmar que lhe falte legitimidade para promover ações de alimentos; a legitimidade específica para propor alimentos em favor de crianças e adolescentes decorre do Estatuto da Criança e do Adolescente e da jurisprudência do STJ, que não constam do texto compilado usado nesta revisão; o gabarito foi mantido.
-- `decorando-cpc-pdf-0899` (Art. 178, II, c/c 180, 300, 996 e 1.023, CPC, gabarito Certo): O processo envolve interesse de incapaz, caso de intervenção do Ministério Público como fiscal da ordem jurídica (art. 178, II), que pode requerer as medidas pertinentes e recorrer (art. 179, II) e goza de prazo em dobro (art. 180); o art. 300 trata da tutela de urgência. O cabimento dos embargos de declaração por omissão e o seu prazo constam dos arts. 1.022 e 1.023, e a legitimidade recursal do Ministério Público consta do art. 996, que estão fora do texto compilado usado nesta revisão, que vai até o art. 746; o gabarito foi mantido.
+- `decorando-cpc-pdf-0899` (Art. 178, II, c/c 180, 300, 996 e 1.023, CPC, gabarito Certo): O processo envolve interesse de incapaz, caso de intervenção do Ministério Público como fiscal da ordem jurídica (art. 178, II), que pode requerer as medidas processuais pertinentes e recorrer (art. 179, II; art. 996) e goza de prazo em dobro para as suas manifestações (art. 180). Os embargos de declaração cabem para suprir omissão de ponto sobre o qual devia se pronunciar o juiz a requerimento (art. 1.022, II), no prazo de 5 dias (art. 1.023), que em dobro são 10 dias úteis (art. 219); os opostos em 7 dias úteis são tempestivos, e o pedido de tutela provisória feito na inicial e não examinado na sentença configura a omissão. O texto não define, porém, se, suprida a omissão, a tutela será deferida, o que depende da presença dos requisitos do art. 300 e da avaliação do juiz; o gabarito foi mantido.
 - `decorando-cpc-pdf-0900` (Art. 178, II, CPC, gabarito Certo): O Ministério Público intervém no processo de interesse de incapaz como fiscal da ordem jurídica (arts. 176 e 178, II), podendo produzir provas, requerer as medidas pertinentes e recorrer (art. 179, II); que possa opinar no mérito contra os interesses do incapaz é conclusão doutrinária sobre o papel de fiscal, que o texto não enuncia expressamente; o gabarito foi mantido.
-- `decorando-cpc-pdf-0919` (Arts. 179, 180, e 1.023, CPC, gabarito Certo): O Ministério Público, que intervém no processo de interesse de incapaz como fiscal da ordem jurídica, pode produzir provas, requerer as medidas processuais pertinentes e recorrer (art. 179, II) e goza de prazo em dobro para manifestar-se (art. 180). O cabimento dos embargos de declaração por omissão e o seu prazo constam dos arts. 1.022 e 1.023, que estão fora do texto compilado usado nesta revisão, que vai até o art. 746; o gabarito foi mantido.
-- `decorando-cpc-pdf-0935` (Art. 183, CPC c/c Art. 897-A, CLT, gabarito Errado): O art. 183 dá à União, aos Estados, ao Distrito Federal, aos Municípios e às suas autarquias e fundações de direito público prazo em dobro para todas as suas manifestações processuais; a extensão dessa prerrogativa a Assembleia Legislativa no processo do trabalho e o prazo dos embargos de declaração, previsto no art. 897-A da CLT citado no rótulo, constam de normas que não estão no texto compilado usado nesta revisão; o gabarito foi mantido.
+- `decorando-cpc-pdf-0935` (Art. 183, CPC c/c Art. 897-A, CLT, gabarito Errado): O art. 183 dá à União, aos Estados, ao Distrito Federal, aos Municípios e às suas autarquias e fundações de direito público prazo em dobro para todas as suas manifestações processuais, e o art. 1.023 fixa em 5 dias o prazo dos embargos de declaração no CPC. O enunciado trata, porém, de Assembleia Legislativa no processo do trabalho, em que o prazo dos embargos de declaração está no art. 897-A da CLT, citado no rótulo; a extensão da prerrogativa do art. 183 a essa entidade e a disciplina trabalhista dos embargos não constam do texto do CPC usado nesta revisão, e o gabarito foi mantido.
 - `decorando-cpc-pdf-0942` (Art. 184, CPC, gabarito Errado): O art. 184 prevê que o membro da Advocacia Pública é civil e regressivamente responsável quando agir com dolo ou fraude no exercício de suas funções, e não por solidariedade automática; a responsabilidade do prefeito que segue o parecer, em solidariedade com o parecerista, é matéria de outras normas, que não constam do texto compilado usado nesta revisão; o gabarito foi mantido.
 - `decorando-cpc-pdf-0945` (Art. 186, CPC, gabarito Errado): O art. 186 assegura à Defensoria Pública prazo em dobro para todas as suas manifestações processuais, sem condicioná-lo a declaração de inconstitucionalidade; a técnica de decisão adotada em controle de constitucionalidade sobre o prazo em dobro é matéria de jurisprudência que não consta do texto compilado usado nesta revisão; o gabarito foi mantido.
 - `decorando-cpc-pdf-0962` (Art. 189, CPC, gabarito Certo): O art. 189 dispõe que os atos processuais são públicos, mas tramitam em segredo de justiça os processos em que o exija o interesse público ou social (inciso I); a afirmação de que todos os julgamentos dos órgãos do Poder Judiciário são públicos decorre da Constituição Federal, que não consta do texto compilado usado nesta revisão; o gabarito foi mantido.
 - `decorando-cpc-pdf-0974` (Art. 190, CPC, gabarito Certo): O art. 190 permite às partes capazes convencionar sobre ônus, poderes, faculdades e deveres processuais, e seu parágrafo único só autoriza o juiz a recusar a aplicação do negócio nos casos de nulidade, inserção abusiva em contrato de adesão ou manifesta vulnerabilidade; o art. 370 atribui ao juiz, de ofício ou a requerimento, a determinação das provas necessárias, e a compatibilização entre esse poder e a vinculação ao negócio processual é matéria de doutrina que não consta do texto compilado usado nesta revisão; o gabarito foi mantido.
-- `decorando-cpc-pdf-0997` (Art. 203, § 1º, CPC, gabarito Certo): Pelo art. 203, § 1º, sentença é o pronunciamento que põe fim à fase cognitiva ou extingue a execução, e, pelo § 2º, decisão interlocutória é todo pronunciamento decisório que não se enquadre no § 1º; a decisão que declara inexigível apenas parte da execução, sem extingui-la, é interlocutória. O cabimento de agravo de instrumento nesse caso decorre do art. 1.015, que está fora do texto compilado usado nesta revisão, que vai até o art. 746; o gabarito foi mantido.
-- `decorando-cpc-pdf-0998` (Art. 203, § 1º c/c 1.009, CPC, gabarito Certo): Pelo art. 203, § 1º, sentença é o pronunciamento que extingue a execução; a decisão que extingue a execução por considerar satisfeito o crédito é, portanto, sentença. O cabimento de apelação contra ela decorre do art. 1.009, citado no rótulo, que está fora do texto compilado usado nesta revisão, que vai até o art. 746; o gabarito foi mantido.
+- `decorando-cpc-pdf-0997` (Art. 203, § 1º, CPC, gabarito Certo): Pelo art. 203, § 1º, sentença é o pronunciamento que põe fim à fase cognitiva ou extingue a execução, e, pelo § 2º, decisão interlocutória é todo pronunciamento decisório que não se enquadre no § 1º; a decisão que declara inexigível apenas parte da execução, sem extingui-la, é interlocutória. Pelo art. 1.015, parágrafo único, cabe agravo de instrumento contra decisões interlocutórias proferidas no processo de execução, ao passo que a apelação é cabível apenas da sentença (art. 1.009). A parte final do enunciado (inadmitida a fungibilidade recursal com outro recurso) trata de construção jurisprudencial, pois o texto do CPC usado nesta revisão não traz regra geral de fungibilidade recursal; o gabarito foi mantido.
 - `decorando-cpc-pdf-1043` (Art. 223, § 1º, CPC, gabarito Certo): O art. 223, § 1º, considera justa causa o evento alheio à vontade da parte que a impediu de praticar o ato, e o art. 197, parágrafo único, admite configurá-la em caso de problema técnico do sistema ou de erro ou omissão do auxiliar da justiça no registro dos andamentos; a orientação do STJ invocada no enunciado, sobre a informação errada do término do prazo recursal no sistema eletrônico, não consta do texto compilado usado nesta revisão; o gabarito foi mantido.
 - `decorando-cpc-pdf-1061` (Art. 229, CPC, gabarito Certo): Pelo art. 229, § 2º, a contagem em dobro dos prazos dos litisconsortes com procuradores de escritórios distintos não se aplica aos processos em autos eletrônicos, como o do caso, e o art. 15 aplica o Código supletiva e subsidiariamente ao processo do trabalho; o prazo de 8 dias do recurso ordinário e a jurisprudência do TST invocada no enunciado constam de normas e decisões que não estão no texto compilado usado nesta revisão; o gabarito foi mantido.
-- `decorando-cpc-pdf-1069` (Art. 229, § 2º c/c 997, § 2º, III, CPC, gabarito Certo): No processo eletrônico, não se aplica o prazo em dobro aos litisconsortes com procuradores de escritórios distintos (art. 229, § 2º), e o Estado tem prazo em dobro para todas as suas manifestações (art. 183); a intempestividade das apelações dos réus e a inadmissibilidade do recurso adesivo do Estado dependem do prazo de 15 dias úteis da apelação (art. 1.003, § 5º) e do art. 997, § 2º, III, citado no rótulo, que estão fora do texto compilado usado nesta revisão, que vai até o art. 746; o gabarito foi mantido.
 - `decorando-cpc-pdf-1112` (Art. 245, CPC, gabarito Certo): Pelo art. 245, caput e §§ 2º e 4º, não se faz a citação do citando mentalmente incapaz; o juiz nomeia médico para examiná-lo e, reconhecida a impossibilidade, nomeia curador ao citando, observando a preferência estabelecida em lei e restringindo a nomeação à causa. A identificação dessa lei com o direito civil não consta do texto compilado usado nesta revisão; o gabarito foi mantido.
 - `decorando-cpc-pdf-1124` (Art. 246, § 3º, CPC, gabarito Certo): Pelo art. 246, § 3º, na ação de usucapião de imóvel que tenha por objeto unidade autônoma de prédio em condomínio, a citação dos confinantes é dispensada. A conclusão de que o juiz pronuncia a ilegitimidade desses litisconsortes e determina a sua exclusão decorre dessa dispensa, mas não está dita no texto compilado usado nesta revisão; o gabarito foi mantido.
 - `decorando-cpc-pdf-1130` (Art. 248, § 2º, CPC, gabarito Certo): O art. 248, § 2º, prevê que, sendo o citando pessoa jurídica, será válida a entrega do mandado a pessoa com poderes de gerência geral ou de administração ou, ainda, a funcionário responsável pelo recebimento de correspondências; a extensão dessa regra expressamente ao meio eletrônico não consta do texto compilado usado nesta revisão, que a prevê para a entrega do mandado ou da carta; o gabarito foi mantido.
@@ -145,18 +132,12 @@ Para concluir, falta o texto compilado do CPC do art. 747 ao art. 1.072.
 - `decorando-cpc-pdf-1172` (Art. 282, § 2º, CPC, gabarito Certo): O art. 282, § 2º, dispõe que, quando puder decidir o mérito a favor da parte a quem aproveite a decretação da nulidade, o juiz não a pronunciará nem mandará repetir o ato; como a sentença foi de improcedência, favorável ao réu, aplica-se a regra. O dispositivo se refere ao "juiz"; a sua aplicação pelo tribunal ao julgar a apelação, e a consequência da morte do réu antes da sentença, não constam do texto compilado usado nesta revisão; o gabarito foi mantido.
 - `decorando-cpc-pdf-1215` (Art. 294, § único, CPC, gabarito Certo): O art. 294, parágrafo único, prevê o caráter antecedente ou incidental apenas para a tutela provisória de urgência, cautelar ou antecipada, e os procedimentos antecedentes dos arts. 303 e 305 também tratam só da urgência; o texto compilado usado nesta revisão não prevê tutela de evidência antecedente, e a conclusão de que ela só pode ser pedida de forma incidental é interpretação desse silêncio; o gabarito foi mantido.
 - `decorando-cpc-pdf-1231` (Art. 297, CPC, gabarito Certo): O art. 297 autoriza o juiz a determinar as medidas que considerar adequadas para a efetivação da tutela provisória; que essas medidas possam ultrapassar os limites do pedido formulado pela parte decorre de interpretação da amplitude do poder do juiz e não está dito no texto compilado usado nesta revisão; o gabarito foi mantido.
-- `decorando-cpc-pdf-1244` (Art. 300, CPC, gabarito Certo): O art. 301 admite que a tutela de urgência de natureza cautelar seja efetivada mediante arresto, sequestro, arrolamento de bens, registro de protesto contra alienação de bem e qualquer outra medida idônea para asseguração do direito, sendo comprovados os requisitos do art. 300. A averbação de certidão de admissão da execução (art. 828) e a jurisprudência do STJ citada no enunciado estão fora do texto compilado usado nesta revisão, que vai até o art. 746; o gabarito foi mantido.
-- `decorando-cpc-pdf-1266` (Art. 301 e 830, CPC, gabarito Certo): O art. 301 prevê o arresto como forma de efetivação da tutela de urgência de natureza cautelar, e o rótulo cita também o art. 830, que trata do arresto na execução e está fora do texto compilado usado nesta revisão, que vai até o art. 746; o gabarito foi mantido.
+- `decorando-cpc-pdf-1244` (Art. 300, CPC, gabarito Certo): O art. 301 admite que a tutela de urgência de natureza cautelar seja efetivada mediante arresto, sequestro, arrolamento de bens, registro de protesto contra alienação de bem e qualquer outra medida idônea para asseguração do direito, desde que comprovados os requisitos do art. 300. A certidão de que trata o art. 828 é a de admissão da execução, para averbação em registros de bens, e o texto não a prevê para a ação de conhecimento; a sua obtenção como medida cautelar nessa ação decorre da jurisprudência do STJ citada no enunciado, que não consta do texto do CPC usado nesta revisão; o gabarito foi mantido.
 - `decorando-cpc-pdf-1310` (Art. 309, I, CPC, gabarito Certo): Pelo art. 309, I, cessa a eficácia da tutela concedida em caráter antecedente se o autor não deduzir o pedido principal no prazo legal, que é de 30 dias (art. 308), contados em dias úteis por se tratar de prazo processual (art. 219). A extinção do procedimento sem exame do mérito não está prevista no art. 309, I, e decorre de interpretação sistemática; o gabarito foi mantido.
 - `decorando-cpc-pdf-1317` (Art. 310, CPC, gabarito Certo): Pelo art. 310, o indeferimento da tutela cautelar não obsta a que a parte formule o pedido principal, nem influi no julgamento desse, salvo se o motivo do indeferimento for o reconhecimento de decadência ou de prescrição. A ressalva pode ser lida como referente apenas à influência no julgamento do pedido principal; a leitura do enunciado, de que o indeferimento por esses motivos impede a formulação do pedido principal, depende dessa interpretação; o gabarito foi mantido.
-- `decorando-cpc-pdf-1328` (Art. 311, CPC, gabarito Certo): Pelo art. 311, II, a tutela da evidência é concedida quando as alegações de fato puderem ser comprovadas apenas documentalmente e houver tese firmada em julgamento de casos repetitivos, e, pelo parágrafo único, o juiz poderá decidir liminarmente, sem ouvir a ré. Que o incidente de resolução de demandas repetitivas seja julgamento de casos repetitivos decorre do art. 928, que está fora do texto compilado usado nesta revisão, que vai até o art. 746; o gabarito foi mantido.
-- `decorando-cpc-pdf-1333` (Art. 311, II, CPC, gabarito Certo): Pelo art. 311, II, a tutela da evidência é concedida quando as alegações de fato puderem ser comprovadas apenas documentalmente e houver tese firmada em julgamento de casos repetitivos, e, pelo parágrafo único, o juiz poderá decidir liminarmente, sem ouvir a ré. Que o incidente de resolução de demandas repetitivas seja julgamento de casos repetitivos decorre do art. 928, que está fora do texto compilado usado nesta revisão, que vai até o art. 746; o gabarito foi mantido.
 - `decorando-cpc-pdf-1360` (Art. 313, § 2º, I, CPC, gabarito Errado): O art. 313, § 2º, I, prevê que, falecido o réu, o autor é intimado para promover a citação do espólio, de quem for o sucessor ou dos herdeiros, e o art. 321 prevê a emenda da petição inicial; a aplicação desse regime à ação ajuizada contra pessoa já falecida antes da citação decorre da jurisprudência referida no enunciado, que não consta do texto compilado usado nesta revisão; o gabarito foi mantido.
 - `decorando-cpc-pdf-1379` (Art. 321, § único, CPC, gabarito Certo): O art. 321 autoriza o juiz a determinar a emenda da petição inicial quando ela apresentar defeitos e irregularidades capazes de dificultar o julgamento de mérito, e o art. 330, III, trata da falta de interesse processual; a exigência fundamentada de demonstração do interesse de agir e da autenticidade da postulação diante de indícios de litigância abusiva decorre da jurisprudência dos tribunais superiores referida no enunciado, que não consta do texto compilado usado nesta revisão; o gabarito foi mantido.
-- `decorando-cpc-pdf-1386` (Art. 322, § 2º, CPC, gabarito Certo): Pelo art. 5º, aquele que de qualquer forma participa do processo deve comportar-se de acordo com a boa-fé, e, pelo art. 322, § 2º, a interpretação do pedido considerará o conjunto da postulação e observará o princípio da boa-fé; a aplicação da boa-fé à interpretação da decisão judicial consta de dispositivo que está fora do texto compilado usado nesta revisão, que vai até o art. 746; o gabarito foi mantido.
 - `decorando-cpc-pdf-1452` (Art. 190 e 334, CPC, gabarito Certo): O art. 190 permite às partes capazes estipular mudanças no procedimento, antes ou durante o processo, e o art. 334, § 4º, I, dispensa a audiência quando ambas as partes manifestam desinteresse na composição consensual; a dispensa da audiência por convenção anterior ao processo, sem a manifestação do art. 334, § 5º, é leitura que decorre de doutrina e não do texto compilado usado nesta revisão; o gabarito foi mantido.
-- `decorando-cpc-pdf-1454` (Arts. 334 e 785, CPC, gabarito Certo): O art. 334 determina que, preenchidos os requisitos essenciais da petição inicial e não sendo caso de improcedência liminar, o juiz designe audiência de conciliação ou de mediação e cite o réu; a possibilidade de o credor com título executivo extrajudicial optar pelo processo de conhecimento consta do art. 785, citado no rótulo, que está fora do texto compilado usado nesta revisão, que vai até o art. 746; o gabarito foi mantido.
-- `decorando-cpc-pdf-1479` (Art. 337, XI, § 5º, CPC, gabarito Certo): O art. 337, XI e § 5º, permite ao juiz conhecer de ofício da falta de interesse processual, e o art. 229 prevê prazo em dobro para litisconsortes com procuradores de escritórios distintos, que não se aplica aos autos eletrônicos (§ 2º) nem cessa quando os dois réus oferecem defesa (§ 1º, a contrario); a conclusão de que os embargos de declaração eram tempestivos e admitem efeito modificativo depende dos arts. 1.022 e seguintes, que não constam do texto compilado usado nesta revisão, que vai até o art. 746; o gabarito foi mantido.
 - `decorando-cpc-pdf-1491` (Art. 341, CPC, gabarito Certo): O art. 341, caput, impõe a impugnação especificada ao réu quanto aos fatos da petição inicial, e o art. 350 manda ouvir o autor, em 15 dias, sobre o fato impeditivo, modificativo ou extintivo alegado pelo réu; que a falta de impugnação específica do autor gere presunção de veracidade desse fato decorre de aplicação analógica do art. 341 pela doutrina, que não consta do texto compilado usado nesta revisão; o gabarito foi mantido.
 - `decorando-cpc-pdf-1502` (Art. 343, CPC, gabarito Certo): O art. 343, caput, situa a reconvenção na contestação e exige pretensão conexa com a ação principal ou com o fundamento da defesa; o § 6º, porém, permite propô-la independentemente de oferecer contestação, de modo que a afirmação de que "deverá" ser apresentada na contestação só se sustenta pela leitura do caput; o gabarito foi mantido.
 - `decorando-cpc-pdf-1524` (Art. 343, § 5º, CPC, gabarito Certo): O art. 343, § 5º, trata da reconvenção quando o autor é substituto processual e a dirige ao próprio autor na qualidade de substituto; a admissão da reconvenção em tutela coletiva, a legitimidade das partes e a exigência de conexão referidas no enunciado decorrem de doutrina e jurisprudência que não constam do texto compilado usado nesta revisão; o gabarito foi mantido.
@@ -166,7 +147,7 @@ Para concluir, falta o texto compilado do CPC do art. 747 ao art. 1.072.
 - `decorando-cpc-pdf-1644` (Art. 373, § 1º, CPC, gabarito Certo): O art. 373, § 1º, exige que a atribuição diversa do ônus da prova seja feita por decisão fundamentada, dando-se à parte a oportunidade de se desincumbir do ônus, e o art. 10 veda a decisão-surpresa; a classificação da distribuição dinâmica como regra de instrução, e não de julgamento, decorre da jurisprudência do STJ, que não consta do texto compilado usado nesta revisão; o gabarito foi mantido.
 - `decorando-cpc-pdf-1650` (Art. 6º c/c 373, § 3º, CPC, gabarito Certo): O art. 6º impõe o dever de cooperação a todos os sujeitos do processo, e o art. 373, § 1º, permite ao juiz atribuir o ônus da prova de modo diverso diante da impossibilidade ou da excessiva dificuldade de cumprir o encargo. A ligação entre cooperação e inversão do ônus é leitura doutrinária; o rótulo cita o § 3º do art. 373, que trata da convenção das partes, e o rótulo foi mantido.
 - `decorando-cpc-pdf-1705` (Art. 384, CPC, gabarito Certo): O art. 384 admite que a existência e o modo de existir de fato, inclusive dados representados por som gravados em arquivos eletrônicos, sejam atestados em ata lavrada por tabelião, e o art. 405 faz o documento público provar os fatos que o tabelião declarar que ocorreram em sua presença; a conclusão de que a ata prova o conteúdo apresentado ao tabelião, e não a integridade ou a autoria do arquivo, decorre de interpretação doutrinária que não consta do texto compilado usado nesta revisão; o gabarito foi mantido.
-- `decorando-cpc-pdf-1708` (Art. 384, CPC, gabarito Certo): O art. 384 admite a ata notarial para atestar a existência e o modo de existir de fato; o cabimento do recurso especial por violação às normas de valoração da prova, distinto do reexame de provas, decorre da jurisprudência do STJ e dos dispositivos recursais, que não constam do texto compilado usado nesta revisão, que vai até o art. 746; o gabarito foi mantido.
+- `decorando-cpc-pdf-1708` (Art. 384, CPC, gabarito Certo): O art. 384 admite que a existência e o modo de existir de algum fato sejam atestados ou documentados, a requerimento do interessado, mediante ata lavrada por tabelião (ata notarial). O cabimento do recurso especial por violação às normas de direito probatório quanto à valoração da ata notarial, distinto do mero reexame de provas, depende dos casos previstos na Constituição, a que o art. 1.029, caput, remete, e da jurisprudência do STJ, que não constam do texto do CPC usado nesta revisão; o gabarito foi mantido.
 - `decorando-cpc-pdf-1731` (Art. 400, § único, CPC, gabarito Certo): O art. 396 permite ao juiz ordenar que a parte exiba documento ou coisa em seu poder e o art. 400, parágrafo único, autoriza medidas indutivas, coercitivas, mandamentais ou sub-rogatórias, como a multa; as condições referidas no enunciado (probabilidade da relação jurídica e do documento, apuradas em contraditório prévio, e tentativa prévia de busca e apreensão) decorrem da jurisprudência do STJ, que não consta do texto compilado usado nesta revisão; o gabarito foi mantido.
 - `decorando-cpc-pdf-1732` (Art. 400, § único, CPC, gabarito Certo): O art. 396 permite ao juiz ordenar que a parte exiba documento ou coisa em seu poder e o art. 400, parágrafo único, autoriza medidas indutivas, coercitivas, mandamentais ou sub-rogatórias, como a multa; as condições referidas no enunciado (probabilidade da relação jurídica e do documento, apuradas em contraditório prévio, e tentativa prévia de busca e apreensão) decorrem da jurisprudência do STJ, que não consta do texto compilado usado nesta revisão; o gabarito foi mantido.
 - `decorando-cpc-pdf-1747` (Arts. 417 e 418, CPC, gabarito Certo): O art. 417 prevê que os livros empresariais provam contra seu autor, sendo lícito ao empresário demonstrar, por todos os meios permitidos em direito, que os lançamentos não correspondem à verdade, e o art. 418 que, preenchidos os requisitos legais, provam a favor de seu autor no litígio entre empresários; a extensão da faculdade de demonstrar a inveracidade dos lançamentos a todos os casos, inclusive quando os livros provam a favor de seu autor, decorre do caráter relativo dessa prova, que não está dito no texto compilado usado nesta revisão; o gabarito foi mantido.
@@ -174,12 +155,9 @@ Para concluir, falta o texto compilado do CPC do art. 747 ao art. 1.072.
 - `decorando-cpc-pdf-1775` (Art. 447, § 1º, I, CPC c/c 228, § 2º, CC, gabarito Certo): O art. 447, § 1º, I, considera incapaz de testemunhar o interdito por enfermidade ou deficiência mental; a convivência dessa regra com o Estatuto da Pessoa com Deficiência, que assegura à pessoa com deficiência testemunhar em igualdade de condições, e a ausência de revogação expressa, referida no enunciado e no rótulo (art. 228, § 2º, do Código Civil), dependem de legislação que não consta do texto compilado do CPC usado nesta revisão; o gabarito foi mantido.
 - `decorando-cpc-pdf-1804` (Art. 466, § 1º, CPC, gabarito Certo): O art. 466, § 1º, define os assistentes técnicos como de confiança da parte, o art. 477, § 1º, permite que apresentem parecer sobre o laudo do perito do juízo e o art. 370 atribui ao juiz o poder de determinar as provas necessárias; a solicitação do parecer ao assistente técnico pelo juiz, como descrita no enunciado, não está expressamente prevista no texto compilado usado nesta revisão; o gabarito foi mantido.
 - `decorando-cpc-pdf-1810` (Art. 471, II, CPC, gabarito Certo): O art. 471 permite às partes escolher o perito de comum acordo desde que sejam plenamente capazes (I) e a causa possa ser resolvida por autocomposição (II), e o art. 190 admite o negócio jurídico processual nas causas que versem sobre direitos que admitam autocomposição; a aplicação específica à Fazenda Pública decorre de doutrina e de legislação sobre sua autocomposição, que não constam do texto compilado usado nesta revisão; o gabarito foi mantido.
-- `decorando-cpc-pdf-1825` (Art. 485, I c/c 486, CPC, gabarito Errado): O art. 485, I, prevê que o indeferimento da petição inicial não resolve o mérito, o art. 486 permite propor de novo a ação nesses casos e o art. 502 reserva a coisa julgada material à decisão de mérito, de modo que a sentença de improcedência com coisa julgada material não é a consequência indicada. A rejeição liminar dos embargos à execução por intempestividade tem regra própria, em dispositivo que não consta do texto compilado usado nesta revisão, que vai até o art. 746; o gabarito foi mantido.
 - `decorando-cpc-pdf-1835` (Art. 485, VI, CPC, gabarito Certo): Pelo art. 17, para postular em juízo é necessário ter interesse, e o art. 485, VI, prevê a extinção sem resolução do mérito por ausência de interesse processual; que a ação declaratória negativa proposta após a ação de cobrança, já contestada com a negativa do contrato, careça de interesse decorre de interpretação doutrinária e jurisprudencial que não consta do texto compilado usado nesta revisão; o gabarito foi mantido.
-- `decorando-cpc-pdf-1840` (Arts. 485, VI, § 7º c/c 784, X e 785, CPC, gabarito Certo): O art. 485, § 7º, prevê que, interposta a apelação contra sentença que não resolve o mérito, o juiz tem 5 dias para retratar-se; que a falta de interesse tenha sido indevidamente reconhecida, por a parte poder optar pela ação de conhecimento mesmo tendo título executivo, depende dos arts. 784, X, e 785, que estão fora do texto compilado usado nesta revisão, que vai até o art. 746; o gabarito foi mantido.
 - `decorando-cpc-pdf-1858` (Art. 486, CPC, gabarito Certo): Pelo art. 486, o pronunciamento judicial que não resolve o mérito não obsta a que a parte proponha de novo a ação, e o art. 502 reserva a coisa julgada material à decisão de mérito; que a denegação do mandado de segurança por falta de prova pré-constituída (liquidez e certeza) não resolva o mérito, bem como o regramento do julgamento colegiado não unânime, decorrem da lei do mandado de segurança, da jurisprudência e de dispositivos que não constam do texto compilado usado nesta revisão; o gabarito foi mantido.
 - `decorando-cpc-pdf-1864` (Art. 487, II, CPC e Art. 18, Lei 4.717/65, gabarito Certo): Pelo art. 487, II, a decisão que reconhece a prescrição resolve o mérito, o que sujeita o primeiro pedido à coisa julgada material (art. 502); que o segundo pedido, rejeitado por insuficiência de provas na ação popular, não fique coberto pela coisa julgada material, e o cabimento da ação rescisória, decorrem da lei da ação popular e das regras da rescisória, que não constam do texto compilado usado nesta revisão; o gabarito foi mantido.
-- `decorando-cpc-pdf-1927` (Arts. 496, § 4º, III, c/c 1.003, § 5º, CPC, gabarito Certo): Pelo art. 496, § 4º, III, não há remessa necessária quando a sentença está fundada em entendimento firmado em incidente de assunção de competência; a intempestividade das apelações, que leva a que nenhuma seja conhecida, depende do prazo recursal de 15 dias úteis e das regras do art. 1.003, § 5º, e dos demais dispositivos recursais, que não constam do texto compilado usado nesta revisão, que vai até o art. 746; o gabarito foi mantido.
 - `decorando-cpc-pdf-1930` (Art. 496, § 4º, IV, CPC, gabarito Certo): O art. 496, § 4º, IV, afasta a remessa necessária quando a sentença estiver fundada em entendimento coincidente com orientação vinculante firmada no âmbito administrativo do próprio ente público, consolidada em manifestação, parecer ou súmula administrativa; o enunciado fala em "existência" de súmula administrativa como suficiente, sem mencionar a coincidência do fundamento da sentença exigida pelo texto, e o gabarito só se sustenta nessa leitura; o gabarito foi mantido.
 - `decorando-cpc-pdf-1948` (Art. 503, § 1º, II e § 2º, CPC, gabarito Certo): No segundo processo houve revelia, e o art. 503, § 1º, II, afasta a coisa julgada sobre a questão prejudicial nesse caso; no mandado de segurança, as restrições probatórias do rito impedem o aprofundamento da análise da questão prejudicial, hipótese em que o art. 503, § 2º, também afasta a coisa julgada sobre ela. A premissa de que o mandado de segurança tem restrições probatórias decorre da Lei do Mandado de Segurança, que não consta do texto compilado usado nesta revisão; o gabarito foi mantido.
 - `decorando-cpc-pdf-1960` (Art. 505, I, CPC, gabarito Errado): O art. 505, I, permite que a parte, e não apenas a parte ré, peça a revisão do que foi estatuído na sentença quando, tratando-se de relação jurídica de trato continuado, sobreveio modificação no estado de fato ou de direito; a conclusão de que isso afasta a intangibilidade e a imutabilidade da decisão anterior decorre de doutrina e não do texto compilado usado nesta revisão, e o gabarito foi mantido.
@@ -188,7 +166,6 @@ Para concluir, falta o texto compilado do CPC do art. 747 ao art. 1.072.
 - `decorando-cpc-pdf-1964` (Art. 507, CPC, gabarito Errado): O art. 507 veda à parte discutir no curso do processo as questões já decididas a cujo respeito se operou a preclusão, e o art. 509, § 4º, veda, na liquidação, discutir de novo a lide ou modificar a sentença que a julgou, sem prever exceção para matéria de ordem pública. O enunciado fala em cumprimento de sentença em geral, sem indicar o dispositivo que a banca tomou por base, e a conferência se restringiu a esses artigos; o gabarito foi mantido. O rótulo cita o art. 507, mas a regra mais próxima da afirmação é a do art. 509, § 4º.
 - `decorando-cpc-pdf-1983` (Art. 509, § 4º, IV, CPC, gabarito Errado): O art. 509, § 4º, veda, na liquidação, discutir de novo a lide ou modificar a sentença que a julgou, sem prever exceção para matéria de ordem pública, e o art. 507 veda rediscutir as questões já decididas a cujo respeito se operou a preclusão. O enunciado fala em cumprimento de sentença em geral, e a conferência se restringiu a esses artigos; o gabarito foi mantido. O rótulo cita o art. 509, § 4º, IV, mas o § 4º não tem incisos.
 - `decorando-cpc-pdf-2021` (Art. 516, II e § único, CPC, gabarito Certo): Pelo art. 516, parágrafo único, nas hipóteses do inciso II o exequente poderá optar pelo juízo do atual domicílio do executado, casos em que a remessa dos autos será solicitada ao juízo de origem. O enunciado invoca também a jurisprudência do STJ sobre a possibilidade de exercer essa opção depois de iniciado o cumprimento de sentença, que não consta do texto compilado usado nesta revisão; o gabarito foi mantido.
-- `decorando-cpc-pdf-2039` (Art. 521, I, § único, CPC, gabarito Certo): Pelo art. 521, I, a caução prevista no art. 520, IV, poderá ser dispensada quando o crédito for de natureza alimentar, independentemente de sua origem, ressalvado o parágrafo único (a exigência de caução é mantida quando da dispensa possa resultar manifesto risco de grave dano de difícil ou incerta reparação, o que o enunciado não indica). O cabimento do cumprimento provisório pressupõe apelação sem efeito suspensivo, o que, nas sentenças que condenam ao pagamento de alimentos, decorre de dispositivo recursal que não consta do texto compilado usado nesta revisão, que vai até o art. 746; o gabarito foi mantido.
 - `decorando-cpc-pdf-2068` (Art. 525, § 15, CPC, gabarito Certo): Pelo art. 525, § 12, considera-se inexigível a obrigação reconhecida em título executivo judicial fundado em lei considerada inconstitucional pelo STF, em controle de constitucionalidade concentrado ou difuso, e, pelo § 15, se essa decisão for proferida após o trânsito em julgado da decisão exequenda, caberá ação rescisória, cujo prazo será contado do trânsito em julgado da decisão proferida pelo STF. Os §§ 14 e 15 trazem no texto compilado a anotação "Vide AR 2876", cujo conteúdo não consta do texto compilado usado nesta revisão; o gabarito foi mantido.
 - `decorando-cpc-pdf-2069` (Art. 526, CPC, gabarito Certo): O art. 526 faculta ao réu, antes de ser intimado para o cumprimento da sentença, comparecer em juízo e oferecer em pagamento o valor que entender devido, com memória discriminada do cálculo, hipótese em que o autor será ouvido em 5 dias e, se não se opuser, o juiz declarará satisfeita a obrigação e extinguirá o processo. Caracterizar essa iniciativa como cumprimento de sentença "pleiteado pelo devedor" decorre de leitura doutrinária, pois o art. 513, § 1º, prevê o cumprimento a requerimento do exequente; o gabarito foi mantido.
 - `decorando-cpc-pdf-2071` (Art. 523, § 1º, CPC, gabarito Certo): Pelo art. 523, § 1º, a multa e os honorários de dez por cento incidem quando não ocorre o pagamento voluntário no prazo; o executado declarou que o depósito se destinava a garantir o juízo para impugnar, finalidade que o art. 525, § 6º, prevê (garantia do juízo com penhora, caução ou depósito suficientes, para eventual efeito suspensivo) e que é distinta do pagamento. A distinção entre depósito de garantia e pagamento voluntário, para efeito da multa, decorre de interpretação que não consta literalmente do texto compilado usado nesta revisão; o gabarito foi mantido.
@@ -196,68 +173,109 @@ Para concluir, falta o texto compilado do CPC do art. 747 ao art. 1.072.
 - `decorando-cpc-pdf-2106` (Art. 535, § 4º, CPC, gabarito Certo): Pelo art. 535, § 4º, tratando-se de impugnação parcial, a parte não questionada pela executada será, desde logo, objeto de cumprimento, e, pelo § 3º, I, não impugnada a execução ou rejeitadas as arguições, expedir-se-á, por intermédio do presidente do tribunal competente, precatório em favor do exequente; a impugnação foi apresentada dentro do prazo de 30 dias do caput. O § 4º traz no texto compilado a anotação "Vide ADI 5534", cujo conteúdo não consta do texto compilado usado nesta revisão; o gabarito foi mantido.
 - `decorando-cpc-pdf-2128` (Art. 540, CPC, gabarito Errado): Pelo art. 540, requerer-se-á a consignação no lugar do pagamento, e não necessariamente no domicílio do credor. O enunciado termina em vírgula, aparentemente incompleto no original; a conferência recaiu sobre a parte visível, e o gabarito foi mantido.
 - `decorando-cpc-pdf-2244` (Art. 676, CPC, gabarito Errado): Pelo art. 676, caput, os embargos de terceiro são distribuídos por dependência ao juízo que ordenou a constrição. O enunciado afirma a competência do órgão de primeiro grau mesmo quando a constrição foi determinada em grau de recurso ou em ação de competência originária de tribunal, hipótese que o texto não trata expressamente e cuja resposta depende de jurisprudência que não consta do texto compilado usado nesta revisão; o gabarito foi mantido.
-- `decorando-cpc-pdf-2250` (Arts. 677, § 4º e 1.015, § único, CPC, gabarito Certo): Pelo art. 677, § 4º, o adversário do sujeito a quem o ato de constrição aproveita no processo principal só é legitimado passivo dos embargos quando for sua a indicação do bem para a constrição; como o bem foi indicado pelo exequente Antônio, a exclusão de Bernardo foi correta, e o agravo deve ser desprovido. O conhecimento do agravo de instrumento depende do cabimento previsto no art. 1.015, citado no rótulo, que não consta do texto compilado usado nesta revisão, que vai até o art. 746; o gabarito foi mantido.
-- `decorando-cpc-pdf-2283` (Art. 700, CPC c/c S. 299, STJ, gabarito Errado): O art. 700, caput, admite a ação monitória com base em prova escrita sem eficácia de título executivo, e o texto não exclui o cheque prescrito. O rótulo remete à Súmula 299 do STJ, que não consta do texto compilado usado nesta revisão, que vai até o art. 746; o gabarito foi mantido.
+- `decorando-cpc-pdf-2283` (Art. 700, CPC c/c S. 299, STJ, gabarito Errado): O art. 700, caput, admite a ação monitória a quem afirmar, com base em prova escrita sem eficácia de título executivo, ter direito de exigir do devedor capaz o pagamento de quantia em dinheiro, a entrega de coisa fungível ou infungível ou de bem móvel ou imóvel e o adimplemento de obrigação de fazer ou de não fazer, e o texto não exclui o cheque prescrito. O rótulo remete à Súmula 299 do STJ e o enunciado à jurisprudência dominante do STJ, que não constam do texto do CPC usado nesta revisão; o gabarito foi mantido.
 - `decorando-cpc-pdf-2296` (Art. 700, § 6º, CPC, gabarito Errado): Pelo art. 700, § 6º, é admissível ação monitória em face da Fazenda Pública, e o caput a admite com base em prova escrita sem eficácia de título executivo; o texto não afirma que a via monitória seja inadmissível quando a dívida poderia ser executada diretamente, e a resposta para essa hipótese depende de jurisprudência que não consta do texto compilado usado nesta revisão; o gabarito foi mantido.
-- `decorando-cpc-pdf-2519` (Art. 229 c/c 915, § 3º, CPC, gabarito Errado): O art. 229 prevê prazo em dobro para as manifestações dos litisconsortes com procuradores de escritórios distintos, mas a exclusão dessa regra para os embargos à execução consta do art. 915, § 3º, citado no rótulo, que está fora do texto compilado usado nesta revisão, que vai até o art. 746; o gabarito foi mantido.
-- `decorando-cpc-pdf-2546` (Arts. 203, § 1º, 924, V e 1.009, CPC, gabarito Certo): Pelo art. 203, § 1º, sentença é o pronunciamento que extingue a execução, o que é o caso do reconhecimento da prescrição intercorrente. O cabimento de apelação decorre do art. 1.009, e a prescrição intercorrente na execução, do art. 924, V, ambos citados no rótulo, que estão fora do texto compilado usado nesta revisão, que vai até o art. 746; o gabarito foi mantido.
-- `decorando-cpc-pdf-2659` (Arts. 183 c/c 970, CPC, gabarito Errado): O art. 183 assegura à Fazenda Pública prazo em dobro para todas as suas manifestações processuais, e o art. 345, II, afasta os efeitos da revelia quando o litígio versar sobre direitos indisponíveis; o prazo de 15 a 30 dias para a resposta na ação rescisória consta do art. 970, citado no rótulo, que está fora do texto compilado usado nesta revisão, que vai até o art. 746; o gabarito foi mantido.
-- `decorando-cpc-pdf-2791` (Art. 219 c/c 1.003, § 5º, CPC, gabarito Certo): Os prazos contam-se em dias úteis (art. 219), o prazo em dobro dos litisconsortes com procuradores de escritórios distintos não se aplica a autos eletrônicos (art. 229, § 2º) e a Defensoria Pública tem prazo em dobro (art. 186); o prazo de 15 dias úteis da apelação e o recurso adesivo constam dos arts. 1.003, § 5º, e 997, citados no rótulo ou necessários à solução, que estão fora do texto compilado usado nesta revisão, que vai até o art. 746; o gabarito foi mantido.
-- `decorando-cpc-pdf-2806` (Art. 203, § 1º c/c 1.009, CPC, gabarito Certo): Pelo art. 203, § 1º, sentença é o pronunciamento que extingue a execução; o cabimento de apelação contra ela decorre do art. 1.009, citado no rótulo, que está fora do texto compilado usado nesta revisão, que vai até o art. 746; o gabarito foi mantido.
+- `decorando-cpc-pdf-2375` (Art. 784, IV, CPC, gabarito Errado): O art. 784, IV, arrola entre os títulos executivos extrajudiciais o instrumento de transação referendado pelo Ministério Público, pela Defensoria Pública, pela Advocacia Pública, pelos advogados dos transatores ou por conciliador ou mediador credenciado; o rol do art. 784 trata de títulos extrajudiciais, e não judiciais. A eficácia específica do compromisso de ajustamento de conduta como título executivo extrajudicial vem da Lei 7.347/1985, que não consta do texto do CPC usado nesta revisão; o gabarito foi mantido.
+- `decorando-cpc-pdf-2386` (Art. 792, I a IV, CPC, gabarito Certo): Os incisos I a IV transcritos reproduzem o art. 792, que ainda admite, no inciso V, os demais casos expressos em lei. A distinção em relação à fraude contra credores tem apoio no texto: a alienação em fraude à execução é ineficaz em relação ao exequente (§ 1º) e seus bens permanecem sujeitos à execução (art. 790, V), enquanto a fraude contra credores exige reconhecimento em ação autônoma (art. 790, VI). A natureza incidental da cognição e a ausência de anulação do ato decorrem de doutrina e jurisprudência, que não constam do texto do CPC usado nesta revisão; o gabarito foi mantido.
+- `decorando-cpc-pdf-2391` (Art. 797 e 805, CPC, gabarito Certo): O art. 797 estabelece que a execução se realiza no interesse do exequente, que adquire pela penhora o direito de preferência, e o art. 805 manda que, havendo vários meios, a execução se faça pelo modo menos gravoso para o executado; o art. 4º assegura ao exequente a atividade satisfativa. A formulação desses dois comandos como princípios da execução forçada (plena satisfação do credor e menor onerosidade) é doutrinária; o gabarito foi mantido.
+- `decorando-cpc-pdf-2396` (Art. 804, CPC, gabarito Certo): O art. 804 dispõe que a alienação de bem gravado por penhor, hipoteca ou anticrese será ineficaz em relação ao credor pignoratício, hipotecário ou anticrético não intimado, o que sustenta a parte final da afirmativa. A validade da alienação do bem dado em garantia real antes do vencimento decorre do direito material (Código Civil), que não integra o texto usado nesta revisão; o gabarito foi mantido.
+- `decorando-cpc-pdf-2429` (Art. 833, X, CPC, gabarito Errado): O enunciado afirma ser incorreto dizer que são impenhoráveis as quantias depositadas em caderneta de poupança; mas, pelo art. 833, X, essa quantia é impenhorável até o limite de 40 (quarenta) salários-mínimos, ressalvado o § 2º (prestação alimentícia e importâncias excedentes a 50 salários-mínimos mensais). O enunciado é adaptado de questão em formato de alternativa a assinalar, cujo comando original não consta do texto do CPC usado nesta revisão; o gabarito foi mantido.
+- `decorando-cpc-pdf-2435` (Art. 835, § 1º, CPC, gabarito Certo): Pelo art. 866, caput, o juiz pode ordenar a penhora de percentual de faturamento de empresa se o executado não tiver outros bens penhoráveis ou se, tendo-os, forem de difícil alienação ou insuficientes; e o art. 835, § 1º, permite ao juiz alterar a ordem de penhora conforme o caso concreto. A formulação do enunciado ("bens classificados em posição superior na ordem") é leitura interpretativa que não consta literalmente do texto do CPC usado nesta revisão; o gabarito foi mantido.
+- `decorando-cpc-pdf-2438` (Art. 882, CLT c/c 835, § 2º, CPC, gabarito Certo): Pelo art. 835, § 2º, do CPC, para substituição da penhora equiparam-se a dinheiro a fiança bancária e o seguro garantia judicial, em valor não inferior ao do débito constante da inicial, acrescido de trinta por cento; R$ 50.000,00 acrescidos de 30% resultam em R$ 65.000,00. O rótulo cita o art. 882 da CLT (e não o art. 882 do CPC, que trata do leilão presencial); a CLT não consta do texto do CPC usado nesta revisão, e o gabarito foi mantido.
+- `decorando-cpc-pdf-2442` (Art. 841, § 2º, CPC, gabarito Certo): Pelo art. 841, § 2º, se o executado não tiver advogado constituído nos autos, será intimado da penhora pessoalmente, de preferência por via postal (o § 1º determina a intimação ao advogado quando houver). A conclusão do enunciado, de que a intimação pessoal do curador especial não supre a do executado citado por edital, decorre da jurisprudência do STJ mencionada no próprio enunciado, que não consta do texto do CPC usado nesta revisão; o gabarito foi mantido.
+- `decorando-cpc-pdf-2445` (Art. 843, CPC, gabarito Certo): Pelo art. 843, caput, na penhora de bem indivisível a quota-parte do coproprietário recai sobre o produto da alienação do bem; o § 1º reserva ao coproprietário a preferência na arrematação em igualdade de condições, e o § 2º veda a expropriação por preço inferior ao da avaliação quando o valor auferido não garantir a quota-parte calculada sobre o valor da avaliação. A afirmação de que não há vício no polo passivo por falta de citação dos irmãos decorre da sistemática do art. 843, que não prevê a citação do coproprietário, mas o texto usado nesta revisão não a declara expressamente; o gabarito foi mantido.
+- `decorando-cpc-pdf-2495` (Art. 910, CPC, gabarito Certo): O art. 910 dá à Fazenda Pública 30 dias, contados da citação, para opor embargos na execução fundada em título extrajudicial, e o art. 914 dispensa penhora, depósito ou caução para os embargos. A execução do caso é trabalhista, de título judicial, regida por norma que não consta do texto do CPC usado nesta revisão (CLT e legislação sobre a Fazenda Pública); o gabarito foi mantido.
+- `decorando-cpc-pdf-2502` (Art. 914, CPC, gabarito Errado): O art. 914, § 1º, determina que os embargos à execução sejam distribuídos por dependência, autuados em apartado e instruídos com cópias das peças processuais relevantes, o que os afasta da ideia de mero incidente dentro dos autos da execução. A classificação da natureza jurídica dos embargos (ação autônoma ou incidente) é questão doutrinária que não consta expressamente do texto do CPC usado nesta revisão; o gabarito foi mantido.
+- `decorando-cpc-pdf-2512` (Art. 914, § 2º, CPC, gabarito Certo): Pelo art. 914, § 2º, na execução por carta os embargos podem ser oferecidos no juízo deprecante ou no deprecado, e a competência para julgá-los é do deprecante, salvo se versarem unicamente sobre vícios ou defeitos da penhora, da avaliação ou da alienação dos bens efetuadas no deprecado, caso em que o julgamento cabe ao deprecado. O enunciado, de 2008 (anterior ao CPC atual), não reproduz a palavra "unicamente" e generaliza a regra da origem do ato impugnado; o gabarito foi mantido por corresponder à exceção do dispositivo vigente.
+- `decorando-cpc-pdf-2540` (Art. 921, III, § 1º, CPC c/c S. 150, STF, gabarito Certo): Pelo art. 921, III e § 1º, não localizado o devedor ou bens penhoráveis, o juiz suspende a execução por 1 (um) ano, uma única vez (§ 4º), e o artigo se aplica ao cumprimento de sentença (§ 7º). A identidade entre o prazo da prescrição intercorrente e o da pretensão de direito material decorre da Súmula 150 do STF, citada no rótulo, que não consta do texto do CPC usado nesta revisão; o gabarito foi mantido.
+- `decorando-cpc-pdf-2550` (Arts. 926, § 1º e 947, § 3º, CPC, gabarito Certo): O art. 926, § 1º, prevê que os tribunais editarão enunciados de súmula correspondentes à sua jurisprudência dominante, e o art. 947 admite a assunção de competência, cujo acórdão vincula todos os juízes e órgãos fracionários, exceto se houver revisão de tese (§ 3º); ambos são instrumentos de uniformização, como afirma o enunciado. O Regimento Interno do TRF da 6ª Região, mencionado no enunciado, não consta do texto do CPC usado nesta revisão; o gabarito foi mantido.
+- `decorando-cpc-pdf-2552` (Art. 927, CPC, gabarito Certo): O art. 927, III, manda juízes e tribunais observarem os acórdãos em incidente de resolução de demandas repetitivas e em julgamento de recursos extraordinário e especial repetitivos, e o art. 987, § 2º, prevê que a tese adotada pelo STF ou pelo STJ será aplicada em todo o território nacional; a prevalência da tese do STJ, em recurso repetitivo, sobre a de IRDR de tribunal local decorre dessa abrangência nacional e da hierarquia entre os órgãos, conclusão que o CPC não enuncia de forma expressa para essa hipótese; o gabarito foi mantido.
+- `decorando-cpc-pdf-2555` (Arts. 927, § 3º e 985, CPC, gabarito Certo): O art. 927, § 3º, admite a modulação dos efeitos da alteração de jurisprudência, e o art. 985, I, manda aplicar a tese do incidente a todos os processos que versem sobre idêntica questão de direito na área de jurisdição do tribunal, cabendo reclamação se ela não for observada (§ 1º); assim, o juízo de primeiro grau vinculado ao tribunal não pode afastar o efeito prospectivo por ele fixado. A afirmação de que a competência para modular é exclusiva do TRF e a remissão à jurisprudência consolidada do STJ não constam do texto do CPC; o gabarito foi mantido.
+- `decorando-cpc-pdf-2556` (Art. 927, §§ 3º e 4º, CPC, gabarito Certo): O art. 927, § 4º, exige, para modificar tese adotada em julgamento de casos repetitivos, fundamentação adequada e específica, considerando a segurança jurídica, a proteção da confiança e a isonomia; o § 3º admite a modulação dos efeitos da alteração; o § 2º prevê a participação de pessoas, órgãos ou entidades que possam contribuir para a rediscussão da tese; e o art. 986 prevê que a revisão da tese firmada no IRDR far-se-á pelo mesmo tribunal, de ofício ou a requerimento dos legitimados. A exigência de que a revisão ocorra somente por acórdão e a referência à jurisprudência dos tribunais superiores não constam do texto do CPC; o gabarito foi mantido.
+- `decorando-cpc-pdf-2589` (Art. 947, CPC, gabarito Errado): Pelo art. 947, caput, a assunção de competência exige relevante questão de direito, com grande repercussão social, sem repetição em múltiplos processos, mas o § 4º aplica o mesmo regime quando ocorrer relevante questão de direito a respeito da qual seja conveniente a prevenção ou a composição de divergência entre câmaras ou turmas do tribunal; por isso, não se pode afirmar que o incidente é inadmissível nessa hipótese apenas porque há mais de um processo. A leitura de que o § 4º dispensa a ausência de repetição em múltiplos processos decorre da jurisprudência mencionada no enunciado, que não consta do texto do CPC usado nesta revisão; o gabarito foi mantido.
+- `decorando-cpc-pdf-2641` (Arts. 968, I e 974, CPC, gabarito Errado): Pelo art. 968, I, o autor cumula ao pedido de rescisão, "se for o caso", o de novo julgamento, e, pelo art. 974, julgando procedente o pedido, o tribunal rescindirá a decisão e proferirá, "se for o caso", novo julgamento. A conclusão de que, na rescisória fundada em ofensa à coisa julgada (art. 966, IV), não há rejulgamento da causa originária (porque prevalece a coisa julgada anterior) decorre de doutrina e jurisprudência que não constam do texto do CPC usado nesta revisão; o gabarito foi mantido.
+- `decorando-cpc-pdf-2643` (Art. 968, II, CPC, gabarito Certo): O art. 968, II, exige do autor da rescisória o depósito prévio de cinco por cento sobre o valor da causa, que se converte em multa se a ação for, por unanimidade de votos, declarada inadmissível ou improcedente, o que opera como desestímulo a rescisórias sem fundamento. A caracterização desse depósito como instrumento de desincentivo a demandas frívolas e a Recomendação nº 159/2024 do CNJ, citada no enunciado, não constam do texto do CPC usado nesta revisão; o gabarito foi mantido.
+- `decorando-cpc-pdf-2657` (Art. 970, CPC, gabarito Errado): Pelo art. 970, o relator ordena a citação do réu designando-lhe prazo nunca inferior a 15 (quinze) dias nem superior a 30 (trinta) dias para apresentar resposta; a faixa fixada pelo relator não é de 30 a 60 dias. A eventual contagem em dobro do prazo da Fazenda Pública (art. 183) e sua incidência sobre prazo fixado pelo relator em rescisória é matéria de interpretação jurisprudencial que não consta do texto do CPC usado nesta revisão; o gabarito foi mantido.
+- `decorando-cpc-pdf-2659` (Arts. 183 c/c 970, CPC, gabarito Errado): Pelo art. 970, o relator ordenará a citação do réu na ação rescisória, designando-lhe prazo nunca inferior a 15 nem superior a 30 dias para apresentar resposta; esse prazo é, portanto, o da resposta, e não o da citação. Quanto à revelia, o art. 345, II, afasta os seus efeitos quando o litígio versar sobre direitos indisponíveis, e o art. 183 assegura prazo em dobro à Fazenda Pública para as suas manifestações. Que a Fazenda Pública não sofra os efeitos da revelia nessa ação por defender direitos indisponíveis é entendimento que não consta do texto do CPC usado nesta revisão; o gabarito foi mantido.
+- `decorando-cpc-pdf-2674` (Art. 976, CPC, gabarito Certo): O art. 976 estabelece os requisitos de cabimento do IRDR, que devem estar presentes simultaneamente: efetiva repetição de processos sobre a mesma questão unicamente de direito (I) e risco de ofensa à isonomia e à segurança jurídica (II); a conclusão do enunciado, de que esses são os pressupostos objetivos de admissibilidade, consta do texto. A referência à aplicação do CPC ao processo penal por analogia depende do Código de Processo Penal, que não consta do texto do CPC usado nesta revisão; o gabarito foi mantido.
+- `decorando-cpc-pdf-2694` (Art. 976, § 2º, CPC, gabarito Certo): Pelo art. 976, § 2º, se não for o requerente, o Ministério Público intervirá obrigatoriamente no incidente. O enunciado usa como condição não ser parte no processo originário, ao passo que a lei usa "se não for o requerente"; a equivalência entre as duas condições é leitura do enunciado que não consta do texto do CPC usado nesta revisão; o gabarito foi mantido.
+- `decorando-cpc-pdf-2695` (Art. 976, § 2º, CPC, gabarito Certo): O art. 976, § 2º, do CPC dispõe que, se não for o requerente, o Ministério Público intervirá obrigatoriamente no incidente e deverá assumir sua titularidade em caso de desistência ou de abandono. O enunciado pede a solução "de acordo com o Regimento Interno do STM" para o Ministério Público Militar, norma que não consta do texto do CPC usado nesta revisão; o gabarito foi mantido.
+- `decorando-cpc-pdf-2731` (Art. 985, I, CPC, gabarito Errado): Pelo art. 948, a arguição de inconstitucionalidade em controle difuso é submetida pelo relator à turma ou à câmara à qual competir o conhecimento do processo e, pelo art. 949, II, acolhida a arguição, "a questão" (e não o julgamento do caso) é submetida ao plenário ou ao órgão especial. O art. 985, I, citado no rótulo, trata do IRDR e não do incidente de arguição de inconstitucionalidade. Que o julgamento do caso concreto retorne ao órgão fracionário que o havia sobrestado é consequência da sistemática desses artigos, mas o texto do CPC usado nesta revisão não o diz em termos expressos; o gabarito foi mantido.
+- `decorando-cpc-pdf-2741` (Art. 988, IV, § 5º, II, CPC, gabarito Certo): Pelo art. 988, IV, cabe reclamação para garantir a observância de acórdão proferido em julgamento de incidente de resolução de demandas repetitivas, e, pelo § 4º, a hipótese compreende a aplicação indevida da tese jurídica e sua não aplicação aos casos que a ela correspondam. O cabimento de recurso especial contra o acórdão do Tribunal Regional Federal depende dos casos previstos na Constituição, a que o art. 1.029, caput, remete e que não consta do texto do CPC usado nesta revisão; o gabarito foi mantido. O rótulo cita o § 5º, II, que não trata do IRDR.
+- `decorando-cpc-pdf-2745` (Art. 988, § 5º, CPC, gabarito Certo): Pelo art. 988, § 5º, I, é liminarmente indeferida apenas a reclamação proposta após o trânsito em julgado da decisão reclamada, e, pelo art. 992, julgando procedente a reclamação, o tribunal cassará a decisão exorbitante de seu julgado ou determinará medida adequada à solução da controvérsia. A conclusão de que, ajuizada a reclamação antes do trânsito e sem suspensão do processo principal, a procedência desconstitui tudo o que se decidir depois, inclusive o trânsito em julgado, decorre de jurisprudência que não consta do texto do CPC usado nesta revisão; o gabarito foi mantido.
+- `decorando-cpc-pdf-2758` (Art. 995, § único, CPC, gabarito Certo): Pelo art. 995, parágrafo único, a eficácia da decisão recorrida poderá ser suspensa pelo relator se da imediata produção de seus efeitos houver risco de dano grave, de difícil ou impossível reparação, e ficar demonstrada a probabilidade de provimento do recurso; a afirmativa resume os dois requisitos cumulativos, mas omite que o dano deve ser grave e que basta ser de difícil ou impossível reparação. O gabarito foi mantido.
+- `decorando-cpc-pdf-2795` (Art. 1.005, CPC, gabarito Certo): Pelo art. 1.005, o recurso interposto por um dos litisconsortes a todos aproveita, salvo se distintos ou opostos os seus interesses, e, pelo parágrafo único, havendo solidariedade passiva o recurso de um devedor aproveita aos outros quando as defesas opostas ao credor lhes forem comuns. O enquadramento da prescrição como defesa comum às devedoras solidárias decorre do direito material (Código Civil), que não integra o texto usado nesta revisão; o gabarito foi mantido.
+- `decorando-cpc-pdf-2860` (Art. 1.015, VIII, CPC, gabarito Certo): Pelo art. 1.015, VIII, cabe agravo de instrumento contra a decisão que rejeita o pedido de limitação do litisconsórcio. O art. 113, § 1º, permite ao juiz limitar apenas o litisconsórcio facultativo, e o art. 114 define como necessário o litisconsórcio em que a eficácia da sentença depende da citação de todos; o desprovimento do agravo pressupõe reconhecer que os signatários do contrato cuja anulação se pede são litisconsortes necessários, enquadramento que decorre da natureza da relação jurídica e da doutrina, não de regra expressa; o gabarito foi mantido.
+- `decorando-cpc-pdf-2866` (Art. 1.015, § único, CPC, gabarito Certo): Pelo art. 1.015, parágrafo único, cabe agravo de instrumento contra as decisões interlocutórias proferidas na fase de cumprimento de sentença, o que alcança a decisão que pronunciou a impenhorabilidade do bem. A afirmação de que o agravo deve ser provido depende da exceção à impenhorabilidade do bem de família prevista na Lei 8.009/1990, fora do texto do CPC usado nesta revisão; o gabarito foi mantido.
+- `decorando-cpc-pdf-2871` (Art. 1.017, II, CPC, gabarito Certo): O art. 1.017, I, exige a juntada das procurações dos advogados do agravante e do agravado, e o inciso II admite a declaração de inexistência de qualquer desses documentos feita pelo advogado do agravante. No caso, o agravo foi interposto antes da citação do réu, sem advogado do agravado, e o agravante é a Fazenda Pública; a dispensa de procuração para a Advocacia Pública decorre de norma que não consta do texto do CPC usado nesta revisão; o gabarito foi mantido.
+- `decorando-cpc-pdf-2878` (Art. 1.021, CPC, gabarito Certo): Pelo art. 1.021, a decisão do relator é impugnável por agravo interno para o órgão colegiado, de modo que não se esgotam as vias ordinárias de impugnação; por essa razão, a decisão monocrática do relator não é objeto de recurso extraordinário. Essa conclusão decorre do requisito constitucional de decisão de única ou última instância e da Súmula 281 do STF, que não constam do texto do CPC usado nesta revisão; o gabarito foi mantido.
+- `decorando-cpc-pdf-2903` (Art. 1.025, CPC, gabarito Certo): O art. 1.025 considera incluídos no acórdão os elementos que o embargante suscitou, para fins de pré-questionamento, ainda que os embargos de declaração sejam rejeitados, caso o tribunal superior considere existentes erro, omissão, contradição ou obscuridade, o que sustenta a segunda parte da afirmativa. A primeira parte (o agravo do art. 1.042 não supre a falta de prequestionamento) e a referência às Súmulas 282 e 356 do STF decorrem de jurisprudência dos tribunais superiores, que não consta do texto do CPC usado nesta revisão; o gabarito foi mantido.
+- `decorando-cpc-pdf-2912` (Art. 1.025, CPC, gabarito Certo): O art. 1.025 considera incluídos no acórdão, para fins de pré-questionamento, os elementos que o embargante suscitou, ainda que os embargos de declaração sejam inadmitidos ou rejeitados, caso o tribunal superior considere existentes erro, omissão, contradição ou obscuridade. A condição acrescentada no enunciado (matéria oportunamente submetida ao tribunal de origem) não consta do artigo, que exige que o tribunal superior reconheça o vício; o gabarito foi mantido.
+- `decorando-cpc-pdf-2924` (Art. 1.030, § 2º, CPC, gabarito Certo): Pelo art. 1.030, I, b, o presidente ou o vice-presidente nega seguimento a recurso especial interposto contra acórdão em conformidade com entendimento do STJ exarado no regime de recursos repetitivos, e, pelo § 2º, dessa decisão caberá agravo interno, nos termos do art. 1.021, em que se pode demonstrar que o caso é distinto. O órgão colegiado competente (Plenário ou Órgão Especial) é definido pelo regimento interno do tribunal (art. 1.021, caput), que não consta do texto usado nesta revisão; o gabarito foi mantido.
 
-## Rótulos que não correspondem ao conteúdo (35 itens com nota na explicação)
+## Rótulos que não correspondem ao conteúdo (44 itens com nota na explicação)
 
-- `decorando-cpc-pdf-0090` (Art. 14 c/c 1.046, CPC) — ver a explicação do item.
-- `decorando-cpc-pdf-0093` (Arts. 14 e 1.046, CPC) — ver a explicação do item.
 - `decorando-cpc-pdf-0239` (Arts. 46 e 47, § 1º, CPC) — ver a explicação do item.
 - `decorando-cpc-pdf-0402` (Art. 3º, CC c/c art. 71, CPC) — ver a explicação do item.
 - `decorando-cpc-pdf-0528` (Art. 98, § 1º, I, III, VI, LC Estadual 988/2009) — ver a explicação do item.
-- `decorando-cpc-pdf-0620` (Arts. 113, § 2º e 1.015, VIII, CPC) — ver a explicação do item.
 - `decorando-cpc-pdf-0630` (Art. 114 c/c 1.015, VII, CPC) — ver a explicação do item.
-- `decorando-cpc-pdf-0678` (Arts. 125, § 2º e 1.015, IX, CPC) — ver a explicação do item.
 - `decorando-cpc-pdf-0679` (Art. 125, § 2º, CPC) — ver a explicação do item.
-- `decorando-cpc-pdf-0812` (Arts. 144 e 966, CPC) — ver a explicação do item.
 - `decorando-cpc-pdf-0818` (Art. 144, III, CPC) — ver a explicação do item.
 - `decorando-cpc-pdf-0935` (Art. 183, CPC c/c Art. 897-A, CLT) — ver a explicação do item.
-- `decorando-cpc-pdf-0998` (Art. 203, § 1º c/c 1.009, CPC) — ver a explicação do item.
 - `decorando-cpc-pdf-1066` (Art. 229, § 2º, CPC) — ver a explicação do item.
-- `decorando-cpc-pdf-1069` (Art. 229, § 2º c/c 997, § 2º, III, CPC) — ver a explicação do item.
 - `decorando-cpc-pdf-1144` (Art. 256, § 1º, CPC) — ver a explicação do item.
 - `decorando-cpc-pdf-1154` (Art. 272, CPC c/c S. 410, STJ) — ver a explicação do item.
-- `decorando-cpc-pdf-1266` (Art. 301 e 830, CPC) — ver a explicação do item.
 - `decorando-cpc-pdf-1427` (Art. 321, CPC e S. 263, TST) — ver a explicação do item.
 - `decorando-cpc-pdf-1449` (Art. 332, § 3º, CPC) — ver a explicação do item.
-- `decorando-cpc-pdf-1454` (Arts. 334 e 785, CPC) — ver a explicação do item.
 - `decorando-cpc-pdf-1650` (Art. 6º c/c 373, § 3º, CPC) — ver a explicação do item.
 - `decorando-cpc-pdf-1751` (Art. 1.191, CC c/c 420 e 421, CPC) — ver a explicação do item.
 - `decorando-cpc-pdf-1775` (Art. 447, § 1º, I, CPC c/c 228, § 2º, CC) — ver a explicação do item.
+- `decorando-cpc-pdf-1825` (Art. 485, I c/c 486, CPC) — ver a explicação do item.
 - `decorando-cpc-pdf-1942` (Art. 502, § 1º, I a III, CPC) — ver a explicação do item.
 - `decorando-cpc-pdf-1964` (Art. 507, CPC) — ver a explicação do item.
 - `decorando-cpc-pdf-1983` (Art. 509, § 4º, IV, CPC) — ver a explicação do item.
-- `decorando-cpc-pdf-2031` (Arts. 520 e 1.012, §1°, §2°, CPC) — ver a explicação do item.
 - `decorando-cpc-pdf-2250` (Arts. 677, § 4º e 1.015, § único, CPC) — ver a explicação do item.
 - `decorando-cpc-pdf-2283` (Art. 700, CPC c/c S. 299, STJ) — ver a explicação do item.
-- `decorando-cpc-pdf-2519` (Art. 229 c/c 915, § 3º, CPC) — ver a explicação do item.
-- `decorando-cpc-pdf-2546` (Arts. 203, § 1º, 924, V e 1.009, CPC) — ver a explicação do item.
-- `decorando-cpc-pdf-2659` (Arts. 183 c/c 970, CPC) — ver a explicação do item.
-- `decorando-cpc-pdf-2791` (Art. 219 c/c 1.003, § 5º, CPC) — ver a explicação do item.
-- `decorando-cpc-pdf-2806` (Art. 203, § 1º c/c 1.009, CPC) — ver a explicação do item.
+- `decorando-cpc-pdf-2359` (Art. 775, I, CPC) — ver a explicação do item.
+- `decorando-cpc-pdf-2415` (Art. 833, CPC c/c 884, § 1º, CLT) — ver a explicação do item.
+- `decorando-cpc-pdf-2438` (Art. 882, CLT c/c 835, § 2º, CPC) — ver a explicação do item.
+- `decorando-cpc-pdf-2453` (Art. 854, §§ 2 e 3º, CPC) — ver a explicação do item.
+- `decorando-cpc-pdf-2470` (Arts. 870 e 871, I, CPC) — ver a explicação do item.
+- `decorando-cpc-pdf-2472` (Art. 871, I, parágrafo único, CPC) — ver a explicação do item.
+- `decorando-cpc-pdf-2480` (Art. 880, CPC) — ver a explicação do item.
+- `decorando-cpc-pdf-2518` (Art. 915, § 3º CPC) — ver a explicação do item.
+- `decorando-cpc-pdf-2536` (Art. 921, II, §§ 1º a 3º, CPC) — ver a explicação do item.
+- `decorando-cpc-pdf-2537` (Art. 921, II, §§ 1º e 4º, CPC) — ver a explicação do item.
+- `decorando-cpc-pdf-2540` (Art. 921, III, § 1º, CPC c/c S. 150, STF) — ver a explicação do item.
+- `decorando-cpc-pdf-2548` (Art. 926, CPC) — ver a explicação do item.
+- `decorando-cpc-pdf-2549` (Art. 926 e 1.043, CPC) — ver a explicação do item.
+- `decorando-cpc-pdf-2655` (Art. 969 c/c 988, I, CPC) — ver a explicação do item.
+- `decorando-cpc-pdf-2666` (Art. 975, CPC e S. 401, STJ) — ver a explicação do item.
+- `decorando-cpc-pdf-2680` (Art. 976, I, II, § 2º, CPC) — ver a explicação do item.
+- `decorando-cpc-pdf-2731` (Art. 985, I, CPC) — ver a explicação do item.
+- `decorando-cpc-pdf-2741` (Art. 988, IV, § 5º, II, CPC) — ver a explicação do item.
+- `decorando-cpc-pdf-2802` (Art. 1.007, § 2º, CPC) — ver a explicação do item.
+- `decorando-cpc-pdf-2823` (Art. 1.009 c/c 1.012, § 1º, V, CPC) — ver a explicação do item.
+- `decorando-cpc-pdf-2830` (Art. 1.013, § 1º, III e § 3º, II, CPC) — ver a explicação do item.
+- `decorando-cpc-pdf-2934` (Art. 1.035, § 2º, CPC) — ver a explicação do item.
+- `decorando-cpc-pdf-2936` (Art. 1.035, § 6º, CPC) — ver a explicação do item.
 
 ## Integridade do arquivo
 
 | Arquivo | SHA antes | SHA depois |
 |---|---|---|
-| `tools/decorando-data-cpc.js` | 6101ad48e446 | 603a0800cddc |
+| `tools/decorando-data-cpc.js` | 6101ad48e446 | 215261269a30 |
 
-Campos alterados nos itens revisados (quantidade de itens): parts: 1761; question: 2087; question.explanation: 2087; question.legalAudit: 2087.
+Campos alterados nos itens revisados (quantidade de itens): parts: 2223; question: 2620; question.explanation: 2620; question.legalAudit: 2620.
 
 ## Observações
 
 - Os enunciados e os campos de banca e cargo não foram alterados nesta revisão; só mudam parts, explicação e legalAudit.
-- Fonte: texto compilado do CPC (Lei 13.105/2015) enviado pelo proprietário (impressão do Planalto de 28/10/2026), do art. 1º ao art. 746; o arquivo enviado termina nesse artigo.
-- O cabeçalho do texto compilado traz a anotação "Vide Lei nº 15.479, de 2026"; essa lei não foi incorporada à conferência.
+- Fonte: texto compilado do CPC (Lei 13.105/2015) enviado pelo proprietário (impressão do Planalto de 28/10/2026), completo, do art. 1º ao art. 1.072.
+- O cabeçalho do texto compilado traz as anotações "Vide Lei nº 15.479, de 2026" e "Vide Lei nº 15.484, de 2026"; o conteúdo dessas leis não consta do arquivo e não foi incorporado à conferência.
+- Anotações do tipo "Vide AR 2876" e "Vide ADI 5534" no texto compilado remetem a decisões do STF cujo conteúdo não consta do arquivo; os itens que dependem delas ficaram certificados de forma parcial.
 - Dispositivos com mais de uma redação no texto compilado (arts. 75, III; 246; 247; 397; 521, III; 537, § 3º, entre outros) foram conferidos pela redação vigente, a mais recente.
-- Itens cuja correção depende de jurisprudência, doutrina, súmula, outra lei (CLT, Código Civil, Constituição, Lei do Mandado de Segurança, Lei da Ação Popular, Estatuto da Pessoa com Deficiência, Lei Uniforme de Genebra) ou de artigo posterior ao art. 746 foram certificados de forma parcial, com a ressalva na explicação, e o gabarito foi mantido.
+- Itens cuja correção depende de jurisprudência, doutrina, súmula, outra lei (CLT, Código Civil, Constituição, Lei do Mandado de Segurança, Lei da Ação Popular, Estatuto da Pessoa com Deficiência, Lei Uniforme de Genebra) foram certificados de forma parcial, com a ressalva na explicação, e o gabarito foi mantido.
 - Itens em que o gabarito não pôde ser confirmado com o texto, ou em que o enunciado é ambíguo ou incompleto, ficaram pendentes ("Em revisão."), sem alteração do gabarito.
 - Rótulos de dispositivo que não correspondem ao conteúdo cobrado foram mantidos e sinalizados dentro da explicação.
 - O Código Civil enviado (2ª edição, 2008) não é texto compilado atual; os itens de Direito Civil não foram revisados com ele.
@@ -356,7 +374,7 @@ Campos alterados nos itens revisados (quantidade de itens): parts: 1761; questio
 | decorando-cpc-pdf-0090 | Art. 14 c/c 1.046, CPC | C | certificado-parcial |
 | decorando-cpc-pdf-0091 | Art. 14, CPC | C | certificado |
 | decorando-cpc-pdf-0092 | Art. 15, CPC | E | certificado |
-| decorando-cpc-pdf-0093 | Arts. 14 e 1.046, CPC | C | certificado-parcial |
+| decorando-cpc-pdf-0093 | Arts. 14 e 1.046, CPC | C | certificado |
 | decorando-cpc-pdf-0094 | Art. 16, CPC | C | certificado |
 | decorando-cpc-pdf-0095 | Art. 16, CPC | C | certificado |
 | decorando-cpc-pdf-0096 | Art. 17, CPC | C | certificado |
@@ -463,7 +481,7 @@ Campos alterados nos itens revisados (quantidade de itens): parts: 1761; questio
 | decorando-cpc-pdf-0202 | Art. 36, CPC | E | certificado |
 | decorando-cpc-pdf-0203 | Art. 39, CPC | E | certificado |
 | decorando-cpc-pdf-0204 | Art. 39, CPC | C | certificado-parcial |
-| decorando-cpc-pdf-0205 | Art. 41, CPC | E | certificado-parcial |
+| decorando-cpc-pdf-0205 | Art. 41, CPC | E | certificado |
 | decorando-cpc-pdf-0206 | Art. 42, CPC | C | certificado |
 | decorando-cpc-pdf-0207 | Art. 42, CPC | E | certificado |
 | decorando-cpc-pdf-0208 | Art. 42, CPC | C | certificado |
@@ -814,7 +832,7 @@ Campos alterados nos itens revisados (quantidade de itens): parts: 1761; questio
 | decorando-cpc-pdf-0560 | Art. 99, § 3º, CPC | E | certificado |
 | decorando-cpc-pdf-0561 | Art. 99, § 3º, CPC | E | certificado |
 | decorando-cpc-pdf-0562 | Art. 99, §§ 3º e 4º, CPC | C | certificado |
-| decorando-cpc-pdf-0563 | Art. 99, § 4º c/c 1/015, V, CPC | C | certificado-parcial |
+| decorando-cpc-pdf-0563 | Art. 99, § 4º c/c 1/015, V, CPC | C | certificado |
 | decorando-cpc-pdf-0564 | Art. 99, § 4º, CPC | E | certificado |
 | decorando-cpc-pdf-0565 | Art. 99, § 4º, CPC | E | certificado |
 | decorando-cpc-pdf-0566 | Art. 99, § 4°, CPC | E | certificado |
@@ -869,7 +887,7 @@ Campos alterados nos itens revisados (quantidade de itens): parts: 1761; questio
 | decorando-cpc-pdf-0617 | Art. 113, § 1º, CPC | E | certificado |
 | decorando-cpc-pdf-0618 | Art. 113, § 1º, CPC | C | certificado |
 | decorando-cpc-pdf-0619 | Art. 113, § 1º, CPC | E | certificado |
-| decorando-cpc-pdf-0620 | Arts. 113, § 2º e 1.015, VIII, CPC | C | certificado-parcial |
+| decorando-cpc-pdf-0620 | Arts. 113, § 2º e 1.015, VIII, CPC | C | certificado |
 | decorando-cpc-pdf-0621 | Art. 113, § 2º, CPC | E | certificado |
 | decorando-cpc-pdf-0622 | Art. 113, § 2º, CPC | E | certificado |
 | decorando-cpc-pdf-0623 | Art. 113, § 2º, CPC | E | certificado |
@@ -879,7 +897,7 @@ Campos alterados nos itens revisados (quantidade de itens): parts: 1761; questio
 | decorando-cpc-pdf-0627 | Art. 114, CPC | E | certificado |
 | decorando-cpc-pdf-0628 | Art. 114, CPC | E | certificado |
 | decorando-cpc-pdf-0629 | Art. 114 c/c 116, CPC | C | certificado-parcial |
-| decorando-cpc-pdf-0630 | Art. 114 c/c 1.015, VII, CPC | C | certificado-parcial |
+| decorando-cpc-pdf-0630 | Art. 114 c/c 1.015, VII, CPC | C | certificado |
 | decorando-cpc-pdf-0631 | Arts. 114 e 115, § único, CPC | C | certificado |
 | decorando-cpc-pdf-0632 | Arts. 114 e 116, CPC | C | certificado |
 | decorando-cpc-pdf-0633 | Art. 115, CPC | C | certificado-parcial |
@@ -924,7 +942,7 @@ Campos alterados nos itens revisados (quantidade de itens): parts: 1761; questio
 | decorando-cpc-pdf-0675 | Art. 125, II, CPC | C | certificado |
 | decorando-cpc-pdf-0676 | Art. 125, § 1º, CPC | C | certificado |
 | decorando-cpc-pdf-0677 | Art. 125, § 2º, CPC | C | certificado |
-| decorando-cpc-pdf-0678 | Arts. 125, § 2º e 1.015, IX, CPC | C | certificado-parcial |
+| decorando-cpc-pdf-0678 | Arts. 125, § 2º e 1.015, IX, CPC | C | certificado |
 | decorando-cpc-pdf-0679 | Art. 125, § 2º, CPC | E | certificado |
 | decorando-cpc-pdf-0680 | Art. 127, CPC | C | certificado |
 | decorando-cpc-pdf-0681 | Art. 127, CPC | C | certificado |
@@ -1053,7 +1071,7 @@ Campos alterados nos itens revisados (quantidade de itens): parts: 1761; questio
 | decorando-cpc-pdf-0809 | Art. 140, § único, CPC | E | certificado |
 | decorando-cpc-pdf-0810 | Art. 141, CPC | E | certificado |
 | decorando-cpc-pdf-0811 | Art. 143, I, CPC | E | certificado |
-| decorando-cpc-pdf-0812 | Arts. 144 e 966, CPC | C | certificado-parcial |
+| decorando-cpc-pdf-0812 | Arts. 144 e 966, CPC | C | certificado |
 | decorando-cpc-pdf-0813 | Art. 144, II, CPC | E | certificado |
 | decorando-cpc-pdf-0814 | Art. 144, II, CPC | E | certificado |
 | decorando-cpc-pdf-0815 | Art. 144, III, CPC | E | certificado |
@@ -1124,7 +1142,7 @@ Campos alterados nos itens revisados (quantidade de itens): parts: 1761; questio
 | decorando-cpc-pdf-0916 | Art. 179, II, CPC | E | certificado |
 | decorando-cpc-pdf-0917 | Art. 179, II, CPC | C | certificado |
 | decorando-cpc-pdf-0918 | Art. 179, II, CPC | E | certificado |
-| decorando-cpc-pdf-0919 | Arts. 179, 180, e 1.023, CPC | C | certificado-parcial |
+| decorando-cpc-pdf-0919 | Arts. 179, 180, e 1.023, CPC | C | certificado |
 | decorando-cpc-pdf-0920 | Art. 180, CPC | E | certificado |
 | decorando-cpc-pdf-0921 | Art. 180, § 1º, CPC | C | certificado |
 | decorando-cpc-pdf-0922 | Art. 180, § 2º, CPC | E | certificado |
@@ -1199,7 +1217,7 @@ Campos alterados nos itens revisados (quantidade de itens): parts: 1761; questio
 | decorando-cpc-pdf-0995 | Art. 203, CPC | C | certificado |
 | decorando-cpc-pdf-0996 | Arts. 203 e 205, § 1º, CPC | E | certificado |
 | decorando-cpc-pdf-0997 | Art. 203, § 1º, CPC | C | certificado-parcial |
-| decorando-cpc-pdf-0998 | Art. 203, § 1º c/c 1.009, CPC | C | certificado-parcial |
+| decorando-cpc-pdf-0998 | Art. 203, § 1º c/c 1.009, CPC | C | certificado |
 | decorando-cpc-pdf-0999 | Art. 204, CPC | C | certificado |
 | decorando-cpc-pdf-1000 | Art. 204, CPC | E | certificado |
 | decorando-cpc-pdf-1001 | Art. 207, CPC | E | certificado |
@@ -1266,7 +1284,7 @@ Campos alterados nos itens revisados (quantidade de itens): parts: 1761; questio
 | decorando-cpc-pdf-1066 | Art. 229, § 2º, CPC | C | certificado |
 | decorando-cpc-pdf-1067 | Art. 229, § 2º, CPC | E | certificado |
 | decorando-cpc-pdf-1068 | Art. 229, § 2º, CPC | E | certificado |
-| decorando-cpc-pdf-1069 | Art. 229, § 2º c/c 997, § 2º, III, CPC | C | certificado-parcial |
+| decorando-cpc-pdf-1069 | Art. 229, § 2º c/c 997, § 2º, III, CPC | C | certificado |
 | decorando-cpc-pdf-1070 | Art. 231, I, CPC | C | certificado |
 | decorando-cpc-pdf-1071 | Art. 231, II, CPC | E | certificado |
 | decorando-cpc-pdf-1072 | Art. 231, II c/c § 2º, CPC | C | certificado |
@@ -1425,7 +1443,7 @@ Campos alterados nos itens revisados (quantidade de itens): parts: 1761; questio
 | decorando-cpc-pdf-1263 | Art. 301, CPC | C | certificado |
 | decorando-cpc-pdf-1264 | Art. 301, CPC | C | certificado |
 | decorando-cpc-pdf-1265 | Art. 301, CPC | C | certificado |
-| decorando-cpc-pdf-1266 | Art. 301 e 830, CPC | C | certificado-parcial |
+| decorando-cpc-pdf-1266 | Art. 301 e 830, CPC | C | certificado |
 | decorando-cpc-pdf-1267 | Art. 302, CPC | E | certificado |
 | decorando-cpc-pdf-1268 | Art. 302, II, CPC | E | certificado |
 | decorando-cpc-pdf-1269 | Art. 302, § único, CPC | E | certificado |
@@ -1487,12 +1505,12 @@ Campos alterados nos itens revisados (quantidade de itens): parts: 1761; questio
 | decorando-cpc-pdf-1325 | Art. 311, CPC | E | certificado |
 | decorando-cpc-pdf-1326 | Art. 311, CPC | E | certificado |
 | decorando-cpc-pdf-1327 | Art. 311, CPC | E | certificado |
-| decorando-cpc-pdf-1328 | Art. 311, CPC | C | certificado-parcial |
+| decorando-cpc-pdf-1328 | Art. 311, CPC | C | certificado |
 | decorando-cpc-pdf-1329 | Art. 311, CPC | C | certificado |
 | decorando-cpc-pdf-1330 | Art. 311, CPC | C | certificado |
 | decorando-cpc-pdf-1331 | Art. 311, CPC | E | certificado |
 | decorando-cpc-pdf-1332 | Art. 311, CPC | E | certificado |
-| decorando-cpc-pdf-1333 | Art. 311, II, CPC | C | certificado-parcial |
+| decorando-cpc-pdf-1333 | Art. 311, II, CPC | C | certificado |
 | decorando-cpc-pdf-1334 | Art. 311, II, CPC | C | certificado |
 | decorando-cpc-pdf-1335 | Art. 311, II, CPC | C | certificado |
 | decorando-cpc-pdf-1337 | Art. 311, II, CPC | E | certificado |
@@ -1542,7 +1560,7 @@ Campos alterados nos itens revisados (quantidade de itens): parts: 1761; questio
 | decorando-cpc-pdf-1382 | Art. 322, § 1º, CPC | C | certificado |
 | decorando-cpc-pdf-1383 | Art. 322, § 1º, CPC | E | certificado |
 | decorando-cpc-pdf-1385 | Art. 322, § 1º, CPC | C | certificado |
-| decorando-cpc-pdf-1386 | Art. 322, § 2º, CPC | C | certificado-parcial |
+| decorando-cpc-pdf-1386 | Art. 322, § 2º, CPC | C | certificado |
 | decorando-cpc-pdf-1387 | Art. 322, § 2º, CPC | E | certificado |
 | decorando-cpc-pdf-1389 | Art. 322, § 2°, CPC | C | certificado |
 | decorando-cpc-pdf-1390 | Art. 323, CPC | E | certificado |
@@ -1606,7 +1624,7 @@ Campos alterados nos itens revisados (quantidade de itens): parts: 1761; questio
 | decorando-cpc-pdf-1451 | Art. 332, I a IV, CPC | C | certificado |
 | decorando-cpc-pdf-1452 | Art. 190 e 334, CPC | C | certificado-parcial |
 | decorando-cpc-pdf-1453 | Art. 334, CPC | C | certificado |
-| decorando-cpc-pdf-1454 | Arts. 334 e 785, CPC | C | certificado-parcial |
+| decorando-cpc-pdf-1454 | Arts. 334 e 785, CPC | C | certificado |
 | decorando-cpc-pdf-1455 | Art. 334, § 2º, CPC | C | certificado |
 | decorando-cpc-pdf-1456 | Art. 334, § 4º, I, CPC | C | certificado |
 | decorando-cpc-pdf-1457 | Art. 334, § 4°, II, CPC | E | certificado |
@@ -1631,7 +1649,7 @@ Campos alterados nos itens revisados (quantidade de itens): parts: 1761; questio
 | decorando-cpc-pdf-1476 | Art. 337, CPC | C | certificado |
 | decorando-cpc-pdf-1477 | Art. 337, CPC | C | certificado |
 | decorando-cpc-pdf-1478 | Art. 337, XI, § 5º, CPC | E | certificado |
-| decorando-cpc-pdf-1479 | Art. 337, XI, § 5º, CPC | C | certificado-parcial |
+| decorando-cpc-pdf-1479 | Art. 337, XI, § 5º, CPC | C | certificado |
 | decorando-cpc-pdf-1480 | Art. 337, § 5º, CPC | E | certificado |
 | decorando-cpc-pdf-1481 | Art. 337, § 5º, CPC | E | certificado |
 | decorando-cpc-pdf-1482 | Art. 337, § 5º, CPC | E | certificado |
@@ -1970,7 +1988,7 @@ Campos alterados nos itens revisados (quantidade de itens): parts: 1761; questio
 | decorando-cpc-pdf-1822 | Art. 481 c/c 482, CPC | C | certificado |
 | decorando-cpc-pdf-1823 | Arts. 481 e 483, CPC | C | certificado |
 | decorando-cpc-pdf-1824 | Arts. 481 e 484, CPC | C | certificado |
-| decorando-cpc-pdf-1825 | Art. 485, I c/c 486, CPC | E | certificado-parcial |
+| decorando-cpc-pdf-1825 | Art. 485, I c/c 486, CPC | E | certificado |
 | decorando-cpc-pdf-1826 | Art. 485, II, CPC | E | certificado |
 | decorando-cpc-pdf-1827 | Art. 485, II, CPC | E | certificado |
 | decorando-cpc-pdf-1828 | Art. 485, III, CPC | C | certificado |
@@ -1985,7 +2003,7 @@ Campos alterados nos itens revisados (quantidade de itens): parts: 1761; questio
 | decorando-cpc-pdf-1837 | Art. 485, VI, e § 3º, CPC | C | certificado |
 | decorando-cpc-pdf-1838 | Art. 485, VI e § 3º, CPC | C | certificado |
 | decorando-cpc-pdf-1839 | Art. 485, VI e § 3º, CPC | C | certificado |
-| decorando-cpc-pdf-1840 | Arts. 485, VI, § 7º c/c 784, X e 785, CPC | C | certificado-parcial |
+| decorando-cpc-pdf-1840 | Arts. 485, VI, § 7º c/c 784, X e 785, CPC | C | certificado |
 | decorando-cpc-pdf-1841 | Art. 485, VII, CPC | C | certificado |
 | decorando-cpc-pdf-1842 | Arts. 90 c/c 485, VIII, CPC | C | certificado |
 | decorando-cpc-pdf-1843 | Art. 485, IX, CPC | C | certificado |
@@ -2072,7 +2090,7 @@ Campos alterados nos itens revisados (quantidade de itens): parts: 1761; questio
 | decorando-cpc-pdf-1924 | Art. 496, § 4º, I, CPC | E | certificado |
 | decorando-cpc-pdf-1925 | Art. 496, § 4º, II, CPC | E | certificado |
 | decorando-cpc-pdf-1926 | Art. 496, § 4º, III, CPC | C | certificado |
-| decorando-cpc-pdf-1927 | Arts. 496, § 4º, III, c/c 1.003, § 5º, CPC | C | certificado-parcial |
+| decorando-cpc-pdf-1927 | Arts. 496, § 4º, III, c/c 1.003, § 5º, CPC | C | certificado |
 | decorando-cpc-pdf-1928 | Art. 496, § 4º, IV, CPC | C | certificado |
 | decorando-cpc-pdf-1929 | Art. 496, § 4º, IV, CPC | E | certificado |
 | decorando-cpc-pdf-1930 | Art. 496, § 4º, IV, CPC | C | certificado-parcial |
@@ -2181,7 +2199,7 @@ Campos alterados nos itens revisados (quantidade de itens): parts: 1761; questio
 | decorando-cpc-pdf-2036 | Art. 520, § 1º, CPC | E | certificado |
 | decorando-cpc-pdf-2037 | Art. 520, § 2º, CPC | E | certificado |
 | decorando-cpc-pdf-2038 | Art. 520, § 5º, CPC | E | certificado |
-| decorando-cpc-pdf-2039 | Art. 521, I, § único, CPC | C | certificado-parcial |
+| decorando-cpc-pdf-2039 | Art. 521, I, § único, CPC | C | certificado |
 | decorando-cpc-pdf-2040 | Arts. 496, § 4º, II e 521, IV, CPC | E | certificado |
 | decorando-cpc-pdf-2041 | Art. 525, § 1º, VII, CPC | C | certificado |
 | decorando-cpc-pdf-2042 | Art. 523 e 525, CPC | E | certificado |
@@ -2309,7 +2327,7 @@ Campos alterados nos itens revisados (quantidade de itens): parts: 1761; questio
 | decorando-cpc-pdf-2247 | Art. 677, § 1º, CPC | E | certificado |
 | decorando-cpc-pdf-2248 | Art. 677, § 4º, CPC | C | certificado |
 | decorando-cpc-pdf-2249 | Arts. 677, § 4º e 1.015, § único, CPC | E | certificado |
-| decorando-cpc-pdf-2250 | Arts. 677, § 4º e 1.015, § único, CPC | C | certificado-parcial |
+| decorando-cpc-pdf-2250 | Arts. 677, § 4º e 1.015, § único, CPC | C | certificado |
 | decorando-cpc-pdf-2252 | Art. 679, CPC | E | certificado |
 | decorando-cpc-pdf-2276 | Art. 700, CPC | E | certificado |
 | decorando-cpc-pdf-2277 | Art. 700, CPC | E | certificado |
@@ -2348,8 +2366,541 @@ Campos alterados nos itens revisados (quantidade de itens): parts: 1761; questio
 | decorando-cpc-pdf-2316 | Art. 714, CPC | E | certificado |
 | decorando-cpc-pdf-2317 | Art. 715, § 1º, CPC | E | certificado |
 | decorando-cpc-pdf-2318 | Art. 717, CPC | E | certificado |
-| decorando-cpc-pdf-2519 | Art. 229 c/c 915, § 3º, CPC | E | certificado-parcial |
-| decorando-cpc-pdf-2546 | Arts. 203, § 1º, 924, V e 1.009, CPC | C | certificado-parcial |
+| decorando-cpc-pdf-2357 | Art. 774, § único, CPC | E | certificado |
+| decorando-cpc-pdf-2358 | Art. 775, CPC | E | certificado |
+| decorando-cpc-pdf-2359 | Art. 775, I, CPC | C | certificado |
+| decorando-cpc-pdf-2360 | Art. 775, caput e § único, CPC | C | certificado |
+| decorando-cpc-pdf-2361 | Art. 776, CPC | C | certificado |
+| decorando-cpc-pdf-2362 | Art. 778, CPC | C | certificado |
+| decorando-cpc-pdf-2363 | Art. 778, § 1º, CPC | C | certificado |
+| decorando-cpc-pdf-2364 | Art. 778, §§ 1º e 2º, CPC | E | certificado |
+| decorando-cpc-pdf-2365 | Art. 778, § 1º, III, § 2º, CPC | E | certificado |
+| decorando-cpc-pdf-2366 | Art. 780, CPC | C | certificado |
+| decorando-cpc-pdf-2367 | Art. 782, § 3º, CPC | C | certificado |
+| decorando-cpc-pdf-2368 | Art. 782, § 3º, CPC | E | certificado |
+| decorando-cpc-pdf-2369 | Art. 782, § 3º, CPC | C | certificado |
+| decorando-cpc-pdf-2370 | Art. 782, § 3º, CPC | E | certificado |
+| decorando-cpc-pdf-2371 | Art. 784, CPC | C | certificado |
+| decorando-cpc-pdf-2372 | Art. 784, I, CPC | C | certificado |
+| decorando-cpc-pdf-2373 | Art. 784, I, CPC | C | certificado |
+| decorando-cpc-pdf-2374 | Art. 784, III, § 4º, CPC | C | certificado |
+| decorando-cpc-pdf-2375 | Art. 784, IV, CPC | E | certificado-parcial |
+| decorando-cpc-pdf-2376 | Art. 785, CPC | E | certificado |
+| decorando-cpc-pdf-2377 | Art. 785, CPC | E | certificado |
+| decorando-cpc-pdf-2378 | Art. 785, CPC | E | certificado |
+| decorando-cpc-pdf-2379 | Art. 785, CPC | C | certificado |
+| decorando-cpc-pdf-2380 | Art. 785, CPC | E | certificado |
+| decorando-cpc-pdf-2381 | Art. 785, CPC | C | certificado |
+| decorando-cpc-pdf-2382 | Art. 786, CPC | E | certificado |
+| decorando-cpc-pdf-2383 | Art. 790, II, CPC | E | certificado |
+| decorando-cpc-pdf-2384 | Art. 791, CPC | C | certificado |
+| decorando-cpc-pdf-2385 | Art. 792, I, CPC | C | certificado |
+| decorando-cpc-pdf-2386 | Art. 792, I a IV, CPC | C | certificado-parcial |
+| decorando-cpc-pdf-2387 | Art. 792, II, CPC | C | certificado |
+| decorando-cpc-pdf-2388 | Arts. 792, § 1°, e 856, § 3°, CPC | E | certificado |
+| decorando-cpc-pdf-2389 | Art. 792, § 3°, CPC | C | certificado |
+| decorando-cpc-pdf-2390 | Art. 794, CPC | C | certificado |
+| decorando-cpc-pdf-2391 | Art. 797 e 805, CPC | C | certificado-parcial |
+| decorando-cpc-pdf-2392 | Art. 797, CPC | E | certificado |
+| decorando-cpc-pdf-2393 | Arts. 797 e 844, CPC | E | certificado |
+| decorando-cpc-pdf-2394 | Art. 798, I, a, CPC | C | certificado |
+| decorando-cpc-pdf-2395 | Art. 803, I, CPC | C | certificado |
+| decorando-cpc-pdf-2396 | Art. 804, CPC | C | certificado-parcial |
+| decorando-cpc-pdf-2397 | Art. 805, CPC | C | certificado |
+| decorando-cpc-pdf-2398 | Art. 805, CPC | E | certificado |
+| decorando-cpc-pdf-2399 | Art. 805, CPC | E | certificado |
+| decorando-cpc-pdf-2400 | Art. 805, § único, CPC | E | certificado |
+| decorando-cpc-pdf-2401 | Art. 816, CPC | E | certificado |
+| decorando-cpc-pdf-2402 | Art. 825, CPC | C | certificado |
+| decorando-cpc-pdf-2403 | Arts. 825 e 865, CPC | C | certificado |
+| decorando-cpc-pdf-2404 | Art. 827, § 1º, CPC | E | certificado |
+| decorando-cpc-pdf-2405 | Art. 827, § 1º, CPC | E | certificado |
+| decorando-cpc-pdf-2406 | Art. 827, § 1º c/c 829, CPC | C | certificado |
+| decorando-cpc-pdf-2407 | Art. 828, CPC | C | certificado |
+| decorando-cpc-pdf-2408 | Art. 828, § 4º, CPC | C | certificado |
+| decorando-cpc-pdf-2409 | Art. 829, CPC | C | certificado |
+| decorando-cpc-pdf-2410 | Art. 829, § 2º, CPC | C | certificado |
+| decorando-cpc-pdf-2411 | Art. 830, CPC | E | certificado |
+| decorando-cpc-pdf-2412 | Art. 830, CPC | C | certificado |
+| decorando-cpc-pdf-2413 | Art. 830, caput e § 3º, CPC | E | certificado |
+| decorando-cpc-pdf-2414 | Art. 833, CPC | E | certificado |
+| decorando-cpc-pdf-2415 | Art. 833, CPC c/c 884, § 1º, CLT | C | pendente |
+| decorando-cpc-pdf-2416 | Art. 833, I, CPC | E | certificado |
+| decorando-cpc-pdf-2417 | Arts. 833, I e 834, CPC | C | certificado |
+| decorando-cpc-pdf-2418 | Art. 833, I, CPC | E | certificado |
+| decorando-cpc-pdf-2419 | Art. 833, III, CPC | E | certificado |
+| decorando-cpc-pdf-2420 | Art. 833, III, CPC | E | certificado |
+| decorando-cpc-pdf-2421 | Art. 833, V, CPC | C | certificado |
+| decorando-cpc-pdf-2422 | Art. 833, V, CPC | C | certificado |
+| decorando-cpc-pdf-2423 | Art. 833, VI, CPC | E | certificado |
+| decorando-cpc-pdf-2424 | Art. 833, VI, CPC | E | certificado |
+| decorando-cpc-pdf-2425 | Art. 833, VI, CPC | C | certificado |
+| decorando-cpc-pdf-2426 | Art. 833, VIII, CPC | E | certificado |
+| decorando-cpc-pdf-2427 | Art. 833, VIII, CPC | E | certificado |
+| decorando-cpc-pdf-2428 | Art. 833, X, CPC | E | certificado |
+| decorando-cpc-pdf-2429 | Art. 833, X, CPC | E | certificado-parcial |
+| decorando-cpc-pdf-2430 | Art. 833, § 1º, CPC | E | certificado |
+| decorando-cpc-pdf-2431 | Art. 833, § 2º, CPC | E | certificado |
+| decorando-cpc-pdf-2432 | Art. 834, CPC | C | certificado |
+| decorando-cpc-pdf-2433 | Art. 835, CPC | C | certificado |
+| decorando-cpc-pdf-2434 | Art. 835, CPC | E | certificado |
+| decorando-cpc-pdf-2435 | Art. 835, § 1º, CPC | C | certificado-parcial |
+| decorando-cpc-pdf-2436 | Art. 835, § 2º, CPC | C | certificado |
+| decorando-cpc-pdf-2437 | Art. 835, § 2º, CPC | C | certificado |
+| decorando-cpc-pdf-2438 | Art. 882, CLT c/c 835, § 2º, CPC | C | certificado-parcial |
+| decorando-cpc-pdf-2439 | Art. 836, § 1º, CPC | E | certificado |
+| decorando-cpc-pdf-2440 | Art. 836, § 1º, CPC | C | certificado |
+| decorando-cpc-pdf-2441 | Art. 840, II, §§ 1º e 2º, CPC | C | certificado |
+| decorando-cpc-pdf-2442 | Art. 841, § 2º, CPC | C | certificado-parcial |
+| decorando-cpc-pdf-2443 | Art. 842, CPC | E | certificado |
+| decorando-cpc-pdf-2444 | Art. 843, CPC | C | certificado |
+| decorando-cpc-pdf-2445 | Art. 843, CPC | C | certificado-parcial |
+| decorando-cpc-pdf-2446 | Art. 844, CPC | C | certificado |
+| decorando-cpc-pdf-2447 | Art. 845, CPC | E | certificado |
+| decorando-cpc-pdf-2448 | Art. 846, CPC | E | certificado |
+| decorando-cpc-pdf-2449 | Art. 848, V, CPC | E | certificado |
+| decorando-cpc-pdf-2450 | Art. 848, § único, CPC | E | certificado |
+| decorando-cpc-pdf-2451 | Art. 854, § 2º, CPC | C | certificado |
+| decorando-cpc-pdf-2452 | Art. 854, § 2º, CPC | C | certificado |
+| decorando-cpc-pdf-2453 | Art. 854, §§ 2 e 3º, CPC | C | certificado |
+| decorando-cpc-pdf-2454 | Art. 854, § 3º, I, CPC | E | certificado |
+| decorando-cpc-pdf-2456 | Art. 862, §§ 3º e 4º, CPC | E | certificado |
+| decorando-cpc-pdf-2457 | Art. 863, CPC | E | certificado |
+| decorando-cpc-pdf-2458 | Art. 866, CPC | E | certificado |
+| decorando-cpc-pdf-2459 | Art. 866, CPC | C | certificado |
+| decorando-cpc-pdf-2460 | Art. 866, CPC | E | certificado |
+| decorando-cpc-pdf-2461 | Art. 866, CPC | C | certificado |
+| decorando-cpc-pdf-2462 | Art. 866, § 1º, CPC | E | certificado |
+| decorando-cpc-pdf-2463 | Art. 866, § 3º, CPC | C | certificado |
+| decorando-cpc-pdf-2464 | Art. 868, CPC | E | certificado |
+| decorando-cpc-pdf-2465 | Art. 868, § 1º, CPC | E | certificado |
+| decorando-cpc-pdf-2466 | Art. 868, § 2º, CPC | C | certificado |
+| decorando-cpc-pdf-2467 | Art. 869, CPC | E | certificado |
+| decorando-cpc-pdf-2468 | Art. 870, CPC | C | certificado |
+| decorando-cpc-pdf-2469 | Art. 870, CPC | E | certificado |
+| decorando-cpc-pdf-2470 | Arts. 870 e 871, I, CPC | E | certificado |
+| decorando-cpc-pdf-2471 | Art. 871, CPC | C | certificado |
+| decorando-cpc-pdf-2472 | Art. 871, I, parágrafo único, CPC | C | certificado |
+| decorando-cpc-pdf-2473 | Art. 872, I e II, CPC | C | certificado |
+| decorando-cpc-pdf-2474 | Art. 876, CPC | C | certificado |
+| decorando-cpc-pdf-2475 | Art. 876, CPC | C | certificado |
+| decorando-cpc-pdf-2476 | Art. 876, § 6º, CPC | E | certificado |
+| decorando-cpc-pdf-2477 | Art. 877, § 1º, CPC | C | certificado |
+| decorando-cpc-pdf-2478 | Art. 877, § 3º, CPC | C | certificado |
+| decorando-cpc-pdf-2479 | Art. 878, CPC | C | certificado |
+| decorando-cpc-pdf-2480 | Art. 880, CPC | C | certificado |
+| decorando-cpc-pdf-2481 | Art. 881, CPC | E | certificado |
+| decorando-cpc-pdf-2482 | Art. 882, § 3º, CPC | E | certificado |
+| decorando-cpc-pdf-2483 | Art. 883, CPC | E | certificado |
+| decorando-cpc-pdf-2484 | Art. 889, I, CPC | E | certificado |
+| decorando-cpc-pdf-2485 | Art. 891, § único, CPC | C | certificado |
+| decorando-cpc-pdf-2486 | Art. 891, § único, CPC | C | certificado |
+| decorando-cpc-pdf-2487 | Art. 893, CPC | C | certificado |
+| decorando-cpc-pdf-2488 | Art. 893, CPC | E | certificado |
+| decorando-cpc-pdf-2489 | Art. 894, § 2º, CPC | C | certificado |
+| decorando-cpc-pdf-2490 | Art. 895, II, CPC | E | certificado |
+| decorando-cpc-pdf-2491 | Art. 903, §§ 2º e 4º, CPC | C | certificado |
+| decorando-cpc-pdf-2492 | Art. 903, § 4º, CPC | C | certificado |
+| decorando-cpc-pdf-2493 | Art. 910, CPC | E | certificado |
+| decorando-cpc-pdf-2494 | Art. 910, CPC | E | certificado |
+| decorando-cpc-pdf-2495 | Art. 910, CPC | C | certificado-parcial |
+| decorando-cpc-pdf-2496 | Art. 910, § 1º, CPC | C | certificado |
+| decorando-cpc-pdf-2497 | Art. 910, § 1º, CPC | C | certificado |
+| decorando-cpc-pdf-2498 | Art. 910, § 2º, CPC | C | certificado |
+| decorando-cpc-pdf-2499 | Art. 910, § 2º, CPC | E | certificado |
+| decorando-cpc-pdf-2500 | Art. 914, CPC | E | certificado |
+| decorando-cpc-pdf-2501 | Art. 914, CPC | E | certificado |
+| decorando-cpc-pdf-2502 | Art. 914, CPC | E | certificado-parcial |
+| decorando-cpc-pdf-2504 | Art. 914, CPC | E | certificado |
+| decorando-cpc-pdf-2505 | Arts. 914 e 915, CPC | C | certificado |
+| decorando-cpc-pdf-2506 | Art. 914, § 1º, CPC | E | certificado |
+| decorando-cpc-pdf-2507 | Art. 914, § 2º, CPC | C | certificado |
+| decorando-cpc-pdf-2508 | Art. 914, § 2º, CPC | E | certificado |
+| decorando-cpc-pdf-2509 | Art. 914, § 2º, CPC | C | certificado |
+| decorando-cpc-pdf-2511 | Art. 914, § 2º, CPC | C | certificado |
+| decorando-cpc-pdf-2512 | Art. 914, § 2º, CPC | C | certificado-parcial |
+| decorando-cpc-pdf-2513 | Art. 915, § 1º, CPC | E | certificado |
+| decorando-cpc-pdf-2514 | Art. 915, § 1º, CPC | C | certificado |
+| decorando-cpc-pdf-2515 | Art. 915, § 1º, CPC | E | certificado |
+| decorando-cpc-pdf-2516 | Art. 915, § 1º, CPC | C | certificado |
+| decorando-cpc-pdf-2517 | Art. 915, § 2º, I, CPC | C | certificado |
+| decorando-cpc-pdf-2518 | Art. 915, § 3º CPC | C | certificado |
+| decorando-cpc-pdf-2519 | Art. 229 c/c 915, § 3º, CPC | E | certificado |
+| decorando-cpc-pdf-2521 | Art. 916, CPC | C | pendente |
+| decorando-cpc-pdf-2522 | Art. 916, § 1º, CPC | C | certificado |
+| decorando-cpc-pdf-2523 | Art. 917, IV, CPC | E | certificado |
+| decorando-cpc-pdf-2524 | Art. 917, § 3º, CPC | C | certificado |
+| decorando-cpc-pdf-2526 | Art. 917, § 4º, CPC | C | certificado |
+| decorando-cpc-pdf-2527 | Art. 918, I, CPC | C | certificado |
+| decorando-cpc-pdf-2528 | Art. 919, § 1º, CPC | C | certificado |
+| decorando-cpc-pdf-2529 | Art. 919, § 1º, CPC | E | certificado |
+| decorando-cpc-pdf-2530 | Art. 919, § 1º, CPC | E | certificado |
+| decorando-cpc-pdf-2532 | Art. 919, § 1º, CPC | E | certificado |
+| decorando-cpc-pdf-2533 | Art. 919, § 1º, CPC | E | certificado |
+| decorando-cpc-pdf-2534 | Art. 920, II, CPC | E | certificado |
+| decorando-cpc-pdf-2535 | Art. 921, CPC | E | certificado |
+| decorando-cpc-pdf-2536 | Art. 921, II, §§ 1º a 3º, CPC | C | certificado |
+| decorando-cpc-pdf-2537 | Art. 921, II, §§ 1º e 4º, CPC | C | certificado |
+| decorando-cpc-pdf-2538 | Art. 921, III, CPC | C | certificado |
+| decorando-cpc-pdf-2539 | Art. 921, III e § 1º, CPC | C | certificado |
+| decorando-cpc-pdf-2540 | Art. 921, III, § 1º, CPC c/c S. 150, STF | C | certificado-parcial |
+| decorando-cpc-pdf-2541 | Art. 921, IV, CPC | E | certificado |
+| decorando-cpc-pdf-2542 | Art. 921, § 4º, CPC | E | certificado |
+| decorando-cpc-pdf-2543 | Art. 921, § 4º, CPC | C | certificado |
+| decorando-cpc-pdf-2544 | Art. 921, § 5º, CPC | E | certificado |
+| decorando-cpc-pdf-2545 | Art. 922, CPC | C | certificado |
+| decorando-cpc-pdf-2546 | Arts. 203, § 1º, 924, V e 1.009, CPC | C | certificado |
+| decorando-cpc-pdf-2547 | Art. 925, CPC | C | certificado |
+| decorando-cpc-pdf-2548 | Art. 926, CPC | C | certificado |
+| decorando-cpc-pdf-2549 | Art. 926 e 1.043, CPC | C | certificado |
+| decorando-cpc-pdf-2550 | Arts. 926, § 1º e 947, § 3º, CPC | C | certificado-parcial |
+| decorando-cpc-pdf-2551 | Art. 926, § 2º, CPC | E | certificado |
+| decorando-cpc-pdf-2552 | Art. 927, CPC | C | certificado-parcial |
+| decorando-cpc-pdf-2553 | Art. 927, CPC | C | certificado |
+| decorando-cpc-pdf-2554 | Art. 927, § 3º, CPC | E | certificado |
+| decorando-cpc-pdf-2555 | Arts. 927, § 3º e 985, CPC | C | certificado-parcial |
+| decorando-cpc-pdf-2556 | Art. 927, §§ 3º e 4º, CPC | C | certificado-parcial |
+| decorando-cpc-pdf-2557 | Arts. 928, I e II c/c 947, CPC | E | certificado |
+| decorando-cpc-pdf-2558 | Art. 928, I e II, CPC | C | certificado |
+| decorando-cpc-pdf-2588 | Art. 947, CPC | C | certificado |
+| decorando-cpc-pdf-2589 | Art. 947, CPC | E | certificado-parcial |
+| decorando-cpc-pdf-2590 | Art. 947, CPC | E | certificado |
+| decorando-cpc-pdf-2591 | Art. 947, CPC | E | certificado |
+| decorando-cpc-pdf-2592 | Art. 947, CPC | C | certificado |
+| decorando-cpc-pdf-2593 | Art. 947, CPC | E | certificado |
+| decorando-cpc-pdf-2594 | Art. 947, CPC | C | certificado |
+| decorando-cpc-pdf-2595 | Art. 947, CPC | E | certificado |
+| decorando-cpc-pdf-2596 | Art. 947, CPC | E | certificado |
+| decorando-cpc-pdf-2597 | Art. 947, CPC | E | certificado |
+| decorando-cpc-pdf-2598 | Art. 947, CPC | E | certificado |
+| decorando-cpc-pdf-2599 | Art. 947, CPC | E | certificado |
+| decorando-cpc-pdf-2600 | Art. 947, CPC | E | certificado |
+| decorando-cpc-pdf-2601 | Art. 947, § 1º, CPC | E | certificado |
+| decorando-cpc-pdf-2602 | Art. 947, § 1º, CPC | E | certificado |
+| decorando-cpc-pdf-2603 | Art. 947, § 1°, CPC | E | certificado |
+| decorando-cpc-pdf-2604 | Art. 947, § 1º, CPC | C | certificado |
+| decorando-cpc-pdf-2605 | Art. 947, § 3º, CPC | C | certificado |
+| decorando-cpc-pdf-2606 | Art. 947, § 3º, CPC | E | certificado |
+| decorando-cpc-pdf-2607 | Art. 947, § 4º, CPC | C | certificado |
+| decorando-cpc-pdf-2608 | Art. 947, § 4°, CPC | E | certificado |
+| decorando-cpc-pdf-2609 | Art. 947, § 4º, CPC | C | certificado |
+| decorando-cpc-pdf-2610 | Art. 951, CPC | E | certificado |
+| decorando-cpc-pdf-2611 | Arts. 955, § único , II e 966, § 5º, CPC | E | certificado |
+| decorando-cpc-pdf-2612 | Art. 957, CPC | E | certificado |
+| decorando-cpc-pdf-2620 | Art. 966, CPC | E | certificado |
+| decorando-cpc-pdf-2621 | Art. 966, CPC | E | certificado |
+| decorando-cpc-pdf-2622 | Art. 966, II, CPC | E | certificado |
+| decorando-cpc-pdf-2623 | Art. 966, II, CPC | E | certificado |
+| decorando-cpc-pdf-2624 | Art. 966, II, CPC | C | certificado |
+| decorando-cpc-pdf-2626 | Art. 966, VI, CPC | C | certificado |
+| decorando-cpc-pdf-2627 | Art. 966, § 1º, CPC | E | certificado |
+| decorando-cpc-pdf-2628 | Art. 966, § 1º, CPC | C | certificado |
+| decorando-cpc-pdf-2629 | Art. 966, § 2º, CPC | C | certificado |
+| decorando-cpc-pdf-2630 | Art. 966, § 2º, CPC | C | certificado |
+| decorando-cpc-pdf-2631 | Art. 966, § 2º, I, CPC | C | certificado |
+| decorando-cpc-pdf-2632 | Art. 966, § 2º, I, CPC | C | certificado |
+| decorando-cpc-pdf-2633 | Art. 966, § 2º, II, CPC | C | certificado |
+| decorando-cpc-pdf-2634 | Art. 966, § 3º, CPC | E | certificado |
+| decorando-cpc-pdf-2635 | Art. 966, § 3º, CPC | C | certificado |
+| decorando-cpc-pdf-2636 | Art. 966, § 5º, § 6º, CPC | C | certificado |
+| decorando-cpc-pdf-2637 | Art. 967, CPC | E | certificado |
+| decorando-cpc-pdf-2638 | Art. 967, CPC | E | certificado |
+| decorando-cpc-pdf-2639 | Art. 968, CPC | E | certificado |
+| decorando-cpc-pdf-2640 | Art. 968, I, CPC | C | certificado |
+| decorando-cpc-pdf-2641 | Arts. 968, I e 974, CPC | E | certificado-parcial |
+| decorando-cpc-pdf-2642 | Art. 968, II, CPC | E | certificado |
+| decorando-cpc-pdf-2643 | Art. 968, II, CPC | C | certificado-parcial |
+| decorando-cpc-pdf-2644 | Art. 968, II, § 1º, CPC | C | certificado |
+| decorando-cpc-pdf-2645 | Art. 968, § 1º, CPC | E | certificado |
+| decorando-cpc-pdf-2646 | Art. 968, § 5º, CPC | E | certificado |
+| decorando-cpc-pdf-2647 | Art. 968, § 5º, II, CPC | C | certificado |
+| decorando-cpc-pdf-2648 | Art. 969, CPC | C | certificado |
+| decorando-cpc-pdf-2649 | Art. 969, CPC | E | certificado |
+| decorando-cpc-pdf-2650 | Art. 969, CPC | E | certificado |
+| decorando-cpc-pdf-2651 | Art. 969, CPC | E | certificado |
+| decorando-cpc-pdf-2652 | Art. 969, CPC | E | certificado |
+| decorando-cpc-pdf-2653 | Art. 969, CPC | C | certificado |
+| decorando-cpc-pdf-2654 | Art. 969, CPC | C | certificado |
+| decorando-cpc-pdf-2655 | Art. 969 c/c 988, I, CPC | E | certificado |
+| decorando-cpc-pdf-2656 | Art. 970, CPC | E | certificado |
+| decorando-cpc-pdf-2657 | Art. 970, CPC | E | certificado-parcial |
+| decorando-cpc-pdf-2658 | Art. 970, CPC | C | certificado |
 | decorando-cpc-pdf-2659 | Arts. 183 c/c 970, CPC | E | certificado-parcial |
-| decorando-cpc-pdf-2791 | Art. 219 c/c 1.003, § 5º, CPC | C | certificado-parcial |
-| decorando-cpc-pdf-2806 | Art. 203, § 1º c/c 1.009, CPC | C | certificado-parcial |
+| decorando-cpc-pdf-2660 | Art. 972, CPC | E | certificado |
+| decorando-cpc-pdf-2661 | Art. 972, CPC | E | certificado |
+| decorando-cpc-pdf-2662 | Art. 974, CPC | E | certificado |
+| decorando-cpc-pdf-2663 | Art. 975, CPC | E | certificado |
+| decorando-cpc-pdf-2664 | Art. 975, CPC | E | certificado |
+| decorando-cpc-pdf-2665 | Art. 975, CPC | E | certificado |
+| decorando-cpc-pdf-2666 | Art. 975, CPC e S. 401, STJ | C | pendente |
+| decorando-cpc-pdf-2667 | Art. 975, CPC | C | certificado |
+| decorando-cpc-pdf-2668 | Art. 975, CPC | E | certificado |
+| decorando-cpc-pdf-2669 | Art. 975, § 2º, CPC | E | certificado |
+| decorando-cpc-pdf-2670 | Art. 975, § 2º, CPC | C | certificado |
+| decorando-cpc-pdf-2671 | Art. 975, § 2º, CPC | E | certificado |
+| decorando-cpc-pdf-2672 | Art. 975, § 3º, CPC | C | certificado |
+| decorando-cpc-pdf-2673 | Art. 976, CPC | E | certificado |
+| decorando-cpc-pdf-2674 | Art. 976, CPC | C | certificado-parcial |
+| decorando-cpc-pdf-2675 | Art. 976, CPC | E | certificado |
+| decorando-cpc-pdf-2676 | Art. 976, CPC | E | certificado |
+| decorando-cpc-pdf-2677 | Art. 976, CPC | C | certificado |
+| decorando-cpc-pdf-2678 | Art. 976, I, II, CPC | E | certificado |
+| decorando-cpc-pdf-2679 | Art. 976, I e II, CPC | C | certificado |
+| decorando-cpc-pdf-2680 | Art. 976, I, II, § 2º, CPC | C | certificado |
+| decorando-cpc-pdf-2681 | Arts. 976, § 1º, e 998, § único, CPC | C | certificado |
+| decorando-cpc-pdf-2682 | Art. 976, § 1º, CPC | E | certificado |
+| decorando-cpc-pdf-2683 | Art. 976, § 1°, CPC | E | certificado |
+| decorando-cpc-pdf-2684 | Art. 976, § 1º, CPC | E | certificado |
+| decorando-cpc-pdf-2685 | Art. 976, § 1º, CPC | E | certificado |
+| decorando-cpc-pdf-2686 | Art. 976, § 1º, CPC | C | certificado |
+| decorando-cpc-pdf-2687 | Art. 976, § 1º, § 2º, CPC | C | certificado |
+| decorando-cpc-pdf-2688 | Art. 976, § 2º, CPC | C | certificado |
+| decorando-cpc-pdf-2689 | Art. 976, § 2º, CPC | C | certificado |
+| decorando-cpc-pdf-2690 | Art. 976, § 2º, CPC | C | certificado |
+| decorando-cpc-pdf-2691 | Art. 976, § 2º, CPC | E | certificado |
+| decorando-cpc-pdf-2692 | Art. 976, § 2º, CPC | E | certificado |
+| decorando-cpc-pdf-2693 | Art. 976, § 2º, CPC | E | certificado |
+| decorando-cpc-pdf-2694 | Art. 976, § 2º, CPC | C | certificado-parcial |
+| decorando-cpc-pdf-2695 | Art. 976, § 2º, CPC | C | certificado-parcial |
+| decorando-cpc-pdf-2696 | Art. 976, § 3º, CPC | E | certificado |
+| decorando-cpc-pdf-2697 | Art. 976, § 4º, CPC | C | certificado |
+| decorando-cpc-pdf-2698 | Art. 976, § 4º, CPC | E | certificado |
+| decorando-cpc-pdf-2699 | Art. 976, § 4º, CPC | E | certificado |
+| decorando-cpc-pdf-2700 | Art. 976, § 4º, CPC | C | pendente |
+| decorando-cpc-pdf-2701 | Art 976, § 4º, CPC | E | certificado |
+| decorando-cpc-pdf-2702 | Art. 976, § 4º, CPC | E | certificado |
+| decorando-cpc-pdf-2703 | Art. 976, § 4º, CPC | C | certificado |
+| decorando-cpc-pdf-2704 | Art. 976, § 4º, CPC | E | certificado |
+| decorando-cpc-pdf-2705 | Art. 976, § 4º, CPC | C | certificado |
+| decorando-cpc-pdf-2706 | Art. 976,§ 4º, CPC | C | certificado |
+| decorando-cpc-pdf-2707 | Art. 976, § 4°, CPC | E | certificado |
+| decorando-cpc-pdf-2708 | Art. 977, CPC | E | certificado |
+| decorando-cpc-pdf-2709 | Art. 977, III, CPC | E | certificado |
+| decorando-cpc-pdf-2710 | Arts. 977, III e 982, § 3º, CPC | C | certificado |
+| decorando-cpc-pdf-2711 | Arts. 977, III, e 986, CPC | C | certificado |
+| decorando-cpc-pdf-2712 | Art. 978, parágrafo único, CPC | E | certificado |
+| decorando-cpc-pdf-2713 | Art. 980, CPC | E | certificado |
+| decorando-cpc-pdf-2714 | Art. 980, CPC | C | certificado |
+| decorando-cpc-pdf-2715 | Art. 980, § único, CPC | E | certificado |
+| decorando-cpc-pdf-2716 | Art. 981, CPC | E | certificado |
+| decorando-cpc-pdf-2717 | Art. 982, I, CPC | C | certificado |
+| decorando-cpc-pdf-2718 | Art. 982, I, CPC | C | certificado |
+| decorando-cpc-pdf-2719 | Art. 982, § 2º, CPC | E | certificado |
+| decorando-cpc-pdf-2720 | Art. 982, § 2°, CPC | E | certificado |
+| decorando-cpc-pdf-2721 | Art. 982, § 2º, CPC | E | certificado |
+| decorando-cpc-pdf-2722 | Art. 982, § 2º, CPC | E | certificado |
+| decorando-cpc-pdf-2723 | Art. 982, § 2º, CPC | E | certificado |
+| decorando-cpc-pdf-2724 | Art. 982, § 2º, CPC | E | certificado |
+| decorando-cpc-pdf-2725 | Art. 982, §§ 3º e 4º, CPC | C | certificado |
+| decorando-cpc-pdf-2726 | Art. 983, CPC | C | certificado |
+| decorando-cpc-pdf-2727 | Art. 985, CPC | C | certificado |
+| decorando-cpc-pdf-2728 | Art. 985, I, CPC | C | certificado |
+| decorando-cpc-pdf-2729 | Art. 985, I, CPC | C | certificado |
+| decorando-cpc-pdf-2730 | Art. 985, I, CPC | C | certificado |
+| decorando-cpc-pdf-2731 | Art. 985, I, CPC | E | certificado-parcial |
+| decorando-cpc-pdf-2732 | Art. 985, I, CPC | C | certificado |
+| decorando-cpc-pdf-2733 | Art. 986, CPC | C | certificado |
+| decorando-cpc-pdf-2734 | Art. 987, caput e § 1º, CPC | E | certificado |
+| decorando-cpc-pdf-2735 | Art. 987, § 1º, CPC | E | certificado |
+| decorando-cpc-pdf-2736 | Art. 987, § 1º, CPC | C | certificado |
+| decorando-cpc-pdf-2737 | Art. 987, § 1º, CPC | E | certificado |
+| decorando-cpc-pdf-2738 | Art. 987, § 2º, CPC | C | certificado |
+| decorando-cpc-pdf-2739 | Art. 982, I, CPC | C | certificado |
+| decorando-cpc-pdf-2740 | Art. 988, III, CPC | E | certificado |
+| decorando-cpc-pdf-2741 | Art. 988, IV, § 5º, II, CPC | C | certificado-parcial |
+| decorando-cpc-pdf-2742 | Art. 988, § 1º, CPC | C | certificado |
+| decorando-cpc-pdf-2743 | Art. 988, § 1º, CPC | C | certificado |
+| decorando-cpc-pdf-2744 | Art. 988, § 5º, CPC | E | certificado |
+| decorando-cpc-pdf-2745 | Art. 988, § 5º, CPC | C | certificado-parcial |
+| decorando-cpc-pdf-2746 | Art. 988, § 5º, I, CPC | E | pendente |
+| decorando-cpc-pdf-2747 | Art. 988, § 5º, II, CPC | C | certificado |
+| decorando-cpc-pdf-2748 | Art. 988, § 5º, II, CPC | C | certificado |
+| decorando-cpc-pdf-2749 | Art. 988, § 6º, CPC | E | certificado |
+| decorando-cpc-pdf-2750 | Arts. 988 e 989, CPC | C | certificado |
+| decorando-cpc-pdf-2751 | Art. 989, III, CPC | C | certificado |
+| decorando-cpc-pdf-2752 | Art. 991, CPC | C | certificado |
+| decorando-cpc-pdf-2753 | Art. 994, CPC | E | certificado |
+| decorando-cpc-pdf-2754 | Art. 995, CPC | E | certificado |
+| decorando-cpc-pdf-2755 | Art. 995, CPC | E | certificado |
+| decorando-cpc-pdf-2756 | Art. 995, CPC | C | certificado |
+| decorando-cpc-pdf-2757 | Arts. 995 e 1.012, CPC | C | certificado |
+| decorando-cpc-pdf-2758 | Art. 995, § único, CPC | C | certificado-parcial |
+| decorando-cpc-pdf-2759 | Art. 996, CPC | E | certificado |
+| decorando-cpc-pdf-2760 | Art. 996, CPC | E | certificado |
+| decorando-cpc-pdf-2761 | Art. 996, CPC | C | certificado |
+| decorando-cpc-pdf-2762 | Art. 997, § 1º, CPC | E | certificado |
+| decorando-cpc-pdf-2763 | Art. 997, § 2º, CPC | C | certificado |
+| decorando-cpc-pdf-2764 | Arts. 997, § 2º, e 998, CPC | E | certificado |
+| decorando-cpc-pdf-2765 | Art. 997, § 2º, II, CPC | C | certificado |
+| decorando-cpc-pdf-2766 | Art. 997, § 2º, II, CPC | E | certificado |
+| decorando-cpc-pdf-2767 | Art. 997, § 2º, III, CPC | C | certificado |
+| decorando-cpc-pdf-2768 | Art. 998, CPC | C | certificado |
+| decorando-cpc-pdf-2769 | Art. 998, CPC | C | certificado |
+| decorando-cpc-pdf-2770 | Art. 998, CPC | E | certificado |
+| decorando-cpc-pdf-2771 | Art. 998, CPC | E | certificado |
+| decorando-cpc-pdf-2773 | Art. 998, caput e § único, CPC | C | certificado |
+| decorando-cpc-pdf-2774 | Art. 998, § único, CPC | C | certificado |
+| decorando-cpc-pdf-2775 | Art. 998, § único, CPC | C | certificado |
+| decorando-cpc-pdf-2776 | Art. 998, § único, CPC | E | certificado |
+| decorando-cpc-pdf-2777 | Art. 998, § único, CPC | C | certificado |
+| decorando-cpc-pdf-2778 | Art. 999, CPC | E | certificado |
+| decorando-cpc-pdf-2779 | Art. 999, CPC | C | certificado |
+| decorando-cpc-pdf-2780 | Art. 999, CPC | E | certificado |
+| decorando-cpc-pdf-2781 | Art. 999, CPC | C | certificado |
+| decorando-cpc-pdf-2782 | Art. 999, CPC | E | certificado |
+| decorando-cpc-pdf-2783 | Art. 999, CPC | E | certificado |
+| decorando-cpc-pdf-2784 | Art. 1.000, CPC | C | pendente |
+| decorando-cpc-pdf-2785 | Art. 1.000, CPC | C | certificado |
+| decorando-cpc-pdf-2786 | Art. 1.000, CPC | E | certificado |
+| decorando-cpc-pdf-2787 | Art. 1.000, § único, CPC | C | certificado |
+| decorando-cpc-pdf-2788 | Art. 1.001, CPC | E | certificado |
+| decorando-cpc-pdf-2789 | Art. 1.001, CPC | E | certificado |
+| decorando-cpc-pdf-2790 | Art. 1.003, § 5º, CPC | E | certificado |
+| decorando-cpc-pdf-2791 | Art. 219 c/c 1.003, § 5º, CPC | C | certificado |
+| decorando-cpc-pdf-2792 | Art. 1.003, § 6º, CPC | E | certificado |
+| decorando-cpc-pdf-2793 | Art. 1.003, § 6º, CPC | C | certificado |
+| decorando-cpc-pdf-2794 | Art. 1.003, § 6º, CPC | C | certificado |
+| decorando-cpc-pdf-2795 | Art. 1.005, CPC | C | certificado-parcial |
+| decorando-cpc-pdf-2796 | Art. 1.005, CPC | E | certificado |
+| decorando-cpc-pdf-2797 | Art. 1.005, CPC | E | certificado |
+| decorando-cpc-pdf-2798 | Art. 1.005, § único, CPC | C | certificado |
+| decorando-cpc-pdf-2799 | Art. 1.006, CPC | E | certificado |
+| decorando-cpc-pdf-2800 | Art. 1.007, CPC | C | certificado |
+| decorando-cpc-pdf-2801 | Art. 1.007, § 1º, CPC | C | certificado |
+| decorando-cpc-pdf-2802 | Art. 1.007, § 2º, CPC | E | certificado |
+| decorando-cpc-pdf-2803 | Art. 1.007, § 2º, CPC | C | certificado |
+| decorando-cpc-pdf-2804 | Art. 1.007, § 4º, CPC | C | certificado |
+| decorando-cpc-pdf-2805 | Art. 1.009, CPC | E | certificado |
+| decorando-cpc-pdf-2806 | Art. 203, § 1º c/c 1.009, CPC | C | certificado |
+| decorando-cpc-pdf-2808 | Art. 1.009, § 1º, CPC | E | certificado |
+| decorando-cpc-pdf-2809 | Art. 1.009, § 1º, CPC | E | certificado |
+| decorando-cpc-pdf-2810 | Art. 1.009, § 1º, CPC | C | certificado |
+| decorando-cpc-pdf-2811 | Art. 1.009, § 1º, CPC | E | certificado |
+| decorando-cpc-pdf-2812 | Art. 1.009, § 1º, CPC | C | certificado |
+| decorando-cpc-pdf-2813 | Art. 1.009, § 1º, CPC | C | certificado |
+| decorando-cpc-pdf-2814 | Art. 1.010, § 3º, CPC | E | certificado |
+| decorando-cpc-pdf-2815 | Art. 1.010, § 3º, CPC | E | certificado |
+| decorando-cpc-pdf-2816 | Art. 1.012, CPC | E | certificado |
+| decorando-cpc-pdf-2817 | Art. 1.012, CPC | C | certificado |
+| decorando-cpc-pdf-2818 | Art. 1.012, § 1º, CPC | C | certificado |
+| decorando-cpc-pdf-2819 | Art. 1.012, § 1º, CPC | C | certificado |
+| decorando-cpc-pdf-2820 | Art. 1.012, § 1º, CPC | C | certificado |
+| decorando-cpc-pdf-2821 | Art. 1.012, § 1º, II, CPC | C | certificado |
+| decorando-cpc-pdf-2822 | Art. 1.012, § 1º, II e § 2º, CPC | E | certificado |
+| decorando-cpc-pdf-2823 | Art. 1.009 c/c 1.012, § 1º, V, CPC | C | certificado |
+| decorando-cpc-pdf-2824 | Art. 1.012, § 1º, V, CPC | C | certificado |
+| decorando-cpc-pdf-2825 | Art. 1.012, § 1º, V c/c § 3º, I e II, CPC | C | certificado |
+| decorando-cpc-pdf-2826 | Art. 1.012, § 1º, VI, CPC | C | certificado |
+| decorando-cpc-pdf-2827 | Art. 1.012, § 1º, VI, CPC | C | certificado |
+| decorando-cpc-pdf-2828 | Art. 1.012, § 4º, CPC | C | certificado |
+| decorando-cpc-pdf-2829 | Art. 1.013, CPC | C | certificado |
+| decorando-cpc-pdf-2830 | Art. 1.013, § 1º, III e § 3º, II, CPC | C | certificado |
+| decorando-cpc-pdf-2831 | Art. 1.013, § 2º, CPC | C | certificado |
+| decorando-cpc-pdf-2832 | Art. 1.013, § 2º, CPC | C | certificado |
+| decorando-cpc-pdf-2833 | Art. 1.013, § 3º, CPC | C | certificado |
+| decorando-cpc-pdf-2834 | Art. 1.013, § 3º, I, CPC | C | certificado |
+| decorando-cpc-pdf-2835 | Art. 1.013, § 3º, III, CPC | E | certificado |
+| decorando-cpc-pdf-2836 | Art. 1.013, § 4º, CPC | E | certificado |
+| decorando-cpc-pdf-2837 | Art. 1.013, § 4º, CPC | E | certificado |
+| decorando-cpc-pdf-2838 | Art. 1.013, § 5º, CPC | E | certificado |
+| decorando-cpc-pdf-2839 | Art. 1.013, § 5º, CPC | C | certificado |
+| decorando-cpc-pdf-2840 | Art. 1.013, § 5º, CPC | C | certificado |
+| decorando-cpc-pdf-2841 | Art. 1.014, CPC | E | certificado |
+| decorando-cpc-pdf-2842 | Art. 1.014, CPC | E | certificado |
+| decorando-cpc-pdf-2843 | Art. 1.015, CPC | E | certificado |
+| decorando-cpc-pdf-2844 | Art. 1.015, CPC | C | certificado |
+| decorando-cpc-pdf-2845 | Art. 1.015, I, CPC | E | certificado |
+| decorando-cpc-pdf-2846 | Art. 1.015, I, CPC | C | certificado |
+| decorando-cpc-pdf-2847 | Art. 1.015, I, CPC | E | certificado |
+| decorando-cpc-pdf-2848 | Art. 1.015, III, CPC | E | certificado |
+| decorando-cpc-pdf-2849 | Art. 1.015, III, CPC | E | certificado |
+| decorando-cpc-pdf-2850 | Art. 1.015, IV, CPC | C | certificado |
+| decorando-cpc-pdf-2851 | Art. 1.015, IV, CPC | C | certificado |
+| decorando-cpc-pdf-2852 | Art. 1.015, V, CPC | E | certificado |
+| decorando-cpc-pdf-2853 | Art. 1.015, V, CPC | E | certificado |
+| decorando-cpc-pdf-2854 | Art. 1.015, V, CPC | E | certificado |
+| decorando-cpc-pdf-2855 | Art. 1.015, VII, CPC | E | certificado |
+| decorando-cpc-pdf-2856 | Art. 1.015, VII, CPC | C | certificado |
+| decorando-cpc-pdf-2857 | Art. 1.015, VII, CPC | C | certificado |
+| decorando-cpc-pdf-2859 | Art. 1.015, VII, CPC | C | certificado |
+| decorando-cpc-pdf-2860 | Art. 1.015, VIII, CPC | C | certificado-parcial |
+| decorando-cpc-pdf-2861 | Art. 1.015, IX, CPC | C | certificado |
+| decorando-cpc-pdf-2862 | Art. 1.015, IX, CPC | E | certificado |
+| decorando-cpc-pdf-2863 | Art. 1.015, IX, CPC | C | certificado |
+| decorando-cpc-pdf-2864 | Art. 1.015, XI, CPC | E | certificado |
+| decorando-cpc-pdf-2865 | Art. 1.015, § único, CPC | E | certificado |
+| decorando-cpc-pdf-2866 | Art. 1.015, § único, CPC | C | certificado-parcial |
+| decorando-cpc-pdf-2867 | Art. 1.015, § único, CPC | E | certificado |
+| decorando-cpc-pdf-2868 | Art. 1.015, § único, CPC | E | certificado |
+| decorando-cpc-pdf-2869 | Art. 1.015, § único, CPC | E | certificado |
+| decorando-cpc-pdf-2870 | Art. 1.017, CPC | C | certificado |
+| decorando-cpc-pdf-2871 | Art. 1.017, II, CPC | C | certificado-parcial |
+| decorando-cpc-pdf-2872 | Art. 1.017, § 1º, CPC | C | certificado |
+| decorando-cpc-pdf-2873 | Art. 1.018, § 1º, CPC | E | certificado |
+| decorando-cpc-pdf-2874 | Art. 1.018, §§ 2º e 3º, CPC | C | certificado |
+| decorando-cpc-pdf-2876 | Art. 1.021, CPC | C | certificado |
+| decorando-cpc-pdf-2877 | Art. 1.021, CPC | C | certificado |
+| decorando-cpc-pdf-2878 | Art. 1.021, CPC | C | certificado-parcial |
+| decorando-cpc-pdf-2879 | Art. 1.021, CPC | C | certificado |
+| decorando-cpc-pdf-2880 | Art. 1.021, CPC | E | certificado |
+| decorando-cpc-pdf-2881 | Art. 1.021, CPC | E | certificado |
+| decorando-cpc-pdf-2882 | Art. 1.021, CPC | C | certificado |
+| decorando-cpc-pdf-2883 | Art. 1.021, § 2º, CPC | C | certificado |
+| decorando-cpc-pdf-2884 | Art. 1.021, § 4º, CPC | E | certificado |
+| decorando-cpc-pdf-2885 | Art. 1.021, § 4º, CPC | E | certificado |
+| decorando-cpc-pdf-2886 | Art. 1.022, CPC | E | certificado |
+| decorando-cpc-pdf-2887 | Art. 1.022, CPC | E | certificado |
+| decorando-cpc-pdf-2888 | Art. 1.022, CPC | C | certificado |
+| decorando-cpc-pdf-2889 | Art. 1.022, II, CPC | C | certificado |
+| decorando-cpc-pdf-2890 | Art. 1.022, II, CPC | E | certificado |
+| decorando-cpc-pdf-2891 | Art. 1.022, III, CPC | E | certificado |
+| decorando-cpc-pdf-2892 | Art. 1.022, III, CPC | C | certificado |
+| decorando-cpc-pdf-2893 | Art. 1.023, CPC | E | certificado |
+| decorando-cpc-pdf-2894 | Art. 1.023, CPC | E | certificado |
+| decorando-cpc-pdf-2895 | Art. 1.023 c/c 219, CPC | E | certificado |
+| decorando-cpc-pdf-2896 | Art. 1.024, § 2º, CPC | E | certificado |
+| decorando-cpc-pdf-2897 | Art. 1.024, § 2º, CPC | E | certificado |
+| decorando-cpc-pdf-2898 | Art. 1.024, § 3º, CPC | C | certificado |
+| decorando-cpc-pdf-2899 | Art. 1.024, § 4º, CPC | C | certificado |
+| decorando-cpc-pdf-2900 | Art. 1.024, § 5°, CPC | E | certificado |
+| decorando-cpc-pdf-2901 | Art. 1.025, CPC | E | certificado |
+| decorando-cpc-pdf-2902 | Art. 1.025, CPC | C | certificado |
+| decorando-cpc-pdf-2903 | Art. 1.025, CPC | C | certificado-parcial |
+| decorando-cpc-pdf-2904 | Art. 1.026, CPC | C | certificado |
+| decorando-cpc-pdf-2905 | Art. 1.026, CPC | E | certificado |
+| decorando-cpc-pdf-2906 | Art. 1.026, CPC | E | certificado |
+| decorando-cpc-pdf-2907 | Art. 1.026, CPC | E | certificado |
+| decorando-cpc-pdf-2908 | Art. 1.026, CPC | C | certificado |
+| decorando-cpc-pdf-2909 | Art. 1.026, CPC | C | certificado |
+| decorando-cpc-pdf-2910 | Art. 1.026, § 2º, CPC | E | certificado |
+| decorando-cpc-pdf-2911 | Art. 1.026, § 3°, CPC | C | certificado |
+| decorando-cpc-pdf-2912 | Art. 1.025, CPC | C | certificado-parcial |
+| decorando-cpc-pdf-2915 | Art. 1.029, CPC | E | certificado |
+| decorando-cpc-pdf-2916 | Art. 1.029, § 3º, CPC | C | certificado |
+| decorando-cpc-pdf-2917 | Art. 1.029, § 5º, CPC | C | certificado |
+| decorando-cpc-pdf-2918 | Art. 1.030, CPC | E | certificado |
+| decorando-cpc-pdf-2919 | Art. 1.030, I, “a”, CPC | C | certificado |
+| decorando-cpc-pdf-2920 | Art. 1.030, I, b, § 2°, CPC | E | certificado |
+| decorando-cpc-pdf-2921 | Art. 1.030, III, § 2°, CPC | E | certificado |
+| decorando-cpc-pdf-2922 | Art. 1.030, III, § 2º, CPC | C | certificado |
+| decorando-cpc-pdf-2923 | Art. 1.030, III c/c 2º, CPC | C | certificado |
+| decorando-cpc-pdf-2924 | Art. 1.030, § 2º, CPC | C | certificado-parcial |
+| decorando-cpc-pdf-2925 | Art. 1.031, § 2º, CPC | C | certificado |
+| decorando-cpc-pdf-2926 | Art. 1.031, §§ 2º e 3º, CPC | E | certificado |
+| decorando-cpc-pdf-2927 | Art. 1.031, § 3º, CPC | E | certificado |
+| decorando-cpc-pdf-2928 | Art. 1.033, CPC | E | certificado |
+| decorando-cpc-pdf-2929 | Art. 1.033, CPC | C | certificado |
+| decorando-cpc-pdf-2930 | Art. 1.033, CPC | C | certificado |
+| decorando-cpc-pdf-2931 | Art. 1.033, CPC | E | certificado |
+| decorando-cpc-pdf-2932 | Art. 1.035, CPC | C | certificado |
+| decorando-cpc-pdf-2933 | Art. 1.035, CPC | E | certificado |
+| decorando-cpc-pdf-2934 | Art. 1.035, § 2º, CPC | E | certificado |
+| decorando-cpc-pdf-2935 | Art. 1.035, § 3º, CPC | C | certificado |
+| decorando-cpc-pdf-2936 | Art. 1.035, § 6º, CPC | C | certificado |
+| decorando-cpc-pdf-2937 | Art. 1.035, § 7°, CPC | E | certificado |
+| decorando-cpc-pdf-2938 | Art. 1.035, § 11, CPC | E | certificado |
+| decorando-cpc-pdf-2939 | Art. 1.036, § 1º, CPC | E | certificado |
+| decorando-cpc-pdf-2940 | Art. 1.036, §§ 1º e 6º, CPC | C | certificado |
+| decorando-cpc-pdf-2941 | Art. 1.037, CPC | C | certificado |
+| decorando-cpc-pdf-2942 | Art. 1.037, CPC | C | certificado |
+| decorando-cpc-pdf-2943 | Art. 1.039, § único, CPC | C | certificado |

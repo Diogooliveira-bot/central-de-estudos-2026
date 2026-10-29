@@ -3,12 +3,12 @@
   "data": "2026-10-28",
   "metodo": "Cada questão foi comparada com o texto compilado do CPC enviado pelo proprietário. Gabaritos não foram alterados. A explicação foi reescrita com o dispositivo (\"Correta.\" ou \"Errada.\" conforme o gabarito, ou \"Em revisão.\" nos pendentes) e o parts foi refeito com trechos literais da lei.",
   "totalDoBanco": 2620,
-  "totalRevisado": 2087,
-  "totalNaoRevisado": 533,
+  "totalRevisado": 2620,
+  "totalNaoRevisado": 0,
   "porStatus": {
-    "certificado-parcial": 136,
-    "certificado": 1939,
-    "pendente": 12
+    "certificado-parcial": 147,
+    "certificado": 2455,
+    "pendente": 18
   },
   "porTopico": {
     "cpc-m01": 92,
@@ -25,17 +25,21 @@
     "cpc-m12": 202,
     "cpc-m13": 161,
     "cpc-m14": 132,
-    "cpc-m18": 84
+    "cpc-m15": 194,
+    "cpc-m16": 52,
+    "cpc-m17": 131,
+    "cpc-m18": 84,
+    "cpc-m20": 156
   },
   "porTopicoStatus": {
     "cpc-m01": {
-      "certificado-parcial": 8,
-      "certificado": 83,
+      "certificado-parcial": 7,
+      "certificado": 84,
       "pendente": 1
     },
     "cpc-m02": {
-      "certificado": 104,
-      "certificado-parcial": 3
+      "certificado": 105,
+      "certificado-parcial": 2
     },
     "cpc-m03": {
       "certificado": 177,
@@ -43,23 +47,23 @@
       "certificado-parcial": 10
     },
     "cpc-m04": {
-      "certificado": 198,
-      "certificado-parcial": 10,
+      "certificado": 199,
+      "certificado-parcial": 9,
       "pendente": 1
     },
     "cpc-m05": {
-      "certificado": 138,
-      "certificado-parcial": 21,
+      "certificado": 141,
+      "certificado-parcial": 18,
       "pendente": 1
     },
     "cpc-m06": {
-      "certificado": 130,
-      "certificado-parcial": 12,
+      "certificado": 132,
+      "certificado-parcial": 10,
       "pendente": 1
     },
     "cpc-m07": {
-      "certificado": 107,
-      "certificado-parcial": 12,
+      "certificado": 113,
+      "certificado-parcial": 6,
       "pendente": 1
     },
     "cpc-m08": {
@@ -67,17 +71,17 @@
       "certificado-parcial": 6
     },
     "cpc-m09": {
-      "certificado": 130,
-      "certificado-parcial": 8
+      "certificado": 133,
+      "certificado-parcial": 5
     },
     "cpc-m10": {
-      "certificado": 104,
-      "certificado-parcial": 4,
+      "certificado": 106,
+      "certificado-parcial": 2,
       "pendente": 1
     },
     "cpc-m11": {
-      "certificado": 137,
-      "certificado-parcial": 7,
+      "certificado": 138,
+      "certificado-parcial": 6,
       "pendente": 1
     },
     "cpc-m12": {
@@ -86,30 +90,49 @@
       "pendente": 1
     },
     "cpc-m13": {
-      "certificado-parcial": 13,
-      "certificado": 148
+      "certificado": 151,
+      "certificado-parcial": 10
     },
     "cpc-m14": {
-      "certificado": 124,
+      "certificado": 125,
       "pendente": 1,
-      "certificado-parcial": 7
+      "certificado-parcial": 6
     },
     "cpc-m18": {
-      "certificado": 79,
+      "certificado": 80,
+      "certificado-parcial": 4
+    },
+    "cpc-m16": {
+      "certificado": 47,
       "certificado-parcial": 5
+    },
+    "cpc-m17": {
+      "certificado": 121,
+      "pendente": 2,
+      "certificado-parcial": 8
+    },
+    "cpc-m15": {
+      "certificado": 180,
+      "certificado-parcial": 13,
+      "pendente": 1
+    },
+    "cpc-m20": {
+      "certificado": 143,
+      "certificado-parcial": 10,
+      "pendente": 3
     }
   },
   "gabaritos": {
-    "C": 1074,
-    "E": 1013
+    "C": 1350,
+    "E": 1270
   },
   "gabaritosAlterados": 0,
   "itensForaDaRevisaoAlterados": 0,
   "camposAlterados": {
-    "parts": 1761,
-    "question": 2087,
-    "question.explanation": 2087,
-    "question.legalAudit": 2087
+    "parts": 2223,
+    "question": 2620,
+    "question.explanation": 2620,
+    "question.legalAudit": 2620
   },
   "enunciadosAlterados": [],
   "parciais": [
@@ -153,14 +176,7 @@
       "topico": "cpc-m01",
       "dispositivo": "Art. 14 c/c 1.046, CPC",
       "gabarito": "C",
-      "motivo": "Correta. O art. 14 dispõe que a norma processual não retroage e se aplica imediatamente aos processos em curso, respeitadas as situações jurídicas consolidadas sob a norma revogada; o prazo em quádruplo já em curso sob o CPC/1973 se mantém. O art. 1.046, citado no rótulo, trata da aplicação do novo Código aos processos pendentes e não consta do texto compilado usado nesta revisão, que vai até o art. 746; o gabarito foi mantido."
-    },
-    {
-      "id": "decorando-cpc-pdf-0093",
-      "topico": "cpc-m01",
-      "dispositivo": "Arts. 14 e 1.046, CPC",
-      "gabarito": "C",
-      "motivo": "Correta. O art. 14 dispõe que a norma processual é aplicável imediatamente aos processos em curso, respeitados os atos processuais praticados e as situações jurídicas consolidadas sob a vigência da norma revogada. O art. 1.046, citado no rótulo, não consta do texto compilado usado nesta revisão, que vai até o art. 746; o gabarito foi mantido."
+      "motivo": "Correta. O art. 14 dispõe que a norma processual não retroagirá e será aplicável imediatamente aos processos em curso, respeitados os atos processuais praticados e as situações jurídicas consolidadas sob a vigência da norma revogada, e o art. 1.046, caput, determina que as disposições do novo Código se apliquem desde logo aos processos pendentes. A conclusão de que o prazo em quádruplo já em curso sob o CPC/1973 se mantém (e não passa a ser contado em dobro) é leitura de direito intertemporal que o texto do CPC não afirma em termos expressos, pois não há regra transitória específica sobre prazos em curso; o gabarito foi mantido."
     },
     {
       "id": "decorando-cpc-pdf-0155",
@@ -175,13 +191,6 @@
       "dispositivo": "Art. 39, CPC",
       "gabarito": "C",
       "motivo": "Correta. O art. 39 manda recusar o pedido passivo de cooperação jurídica internacional que configure manifesta ofensa à ordem pública. A descrição dessa recusa como incidência indireta dos direitos fundamentais é leitura doutrinária, e o gabarito foi mantido."
-    },
-    {
-      "id": "decorando-cpc-pdf-0205",
-      "topico": "cpc-m02",
-      "dispositivo": "Art. 41, CPC",
-      "gabarito": "E",
-      "motivo": "Errada. O art. 41 considera autêntico o documento que instruir pedido de cooperação jurídica internacional, inclusive a tradução para o português, quando encaminhado por autoridade central ou por via diplomática, dispensando-se ajuramentação, autenticação ou legalização; a tradução juramentada não é, portanto, sempre indispensável. Os requisitos da homologação de decisão estrangeira estão em artigos fora do texto compilado usado nesta revisão, que vai até o art. 746; o gabarito foi mantido."
     },
     {
       "id": "decorando-cpc-pdf-0239",
@@ -282,13 +291,6 @@
       "motivo": "Correta. Pelo art. 85, § 7º, não são devidos honorários no cumprimento de sentença contra a Fazenda Pública que enseje expedição de precatório, desde que não tenha sido impugnada. O enunciado invoca também o entendimento do STJ, que fica fora do texto legal; o gabarito foi mantido."
     },
     {
-      "id": "decorando-cpc-pdf-0563",
-      "topico": "cpc-m04",
-      "dispositivo": "Art. 99, § 4º c/c 1/015, V, CPC",
-      "gabarito": "C",
-      "motivo": "Correta. Pelo art. 99, § 4º, a assistência do requerente por advogado particular não impede a concessão de gratuidade da justiça, de modo que o indeferimento fundado nesse argumento deve ser reformado em agravo de instrumento, cabível contra a decisão que rejeita o pedido de gratuidade (art. 1.015, V). O art. 1.015 não consta do texto compilado usado nesta revisão, que vai até o art. 746; o gabarito foi mantido."
-    },
-    {
       "id": "decorando-cpc-pdf-0581",
       "topico": "cpc-m04",
       "dispositivo": "Art. 100, CPC",
@@ -324,13 +326,6 @@
       "motivo": "Errada. Pelo art. 110, falecida a parte, a sucessão se dá pelo espólio ou pelos sucessores, e, pelo art. 329, I, até a citação o autor pode aditar ou alterar o pedido ou a causa de pedir independentemente de consentimento do réu; o enunciado nega a possibilidade de emenda. A emenda da inicial para incluir o espólio ou os herdeiros do réu falecido antes da citação decorre da jurisprudência invocada no enunciado, fora do texto legal; o gabarito foi mantido."
     },
     {
-      "id": "decorando-cpc-pdf-0620",
-      "topico": "cpc-m05",
-      "dispositivo": "Arts. 113, § 2º e 1.015, VIII, CPC",
-      "gabarito": "C",
-      "motivo": "Correta. O art. 113, § 2º, dispõe que o requerimento de limitação interrompe o prazo para manifestação ou resposta, que recomeça da intimação da decisão que o solucionar; já o cabimento de agravo de instrumento contra a decisão que rejeita o pedido de limitação decorre do art. 1.015, VIII, citado no rótulo, que está fora do texto compilado usado nesta revisão, que vai até o art. 746; o gabarito foi mantido."
-    },
-    {
       "id": "decorando-cpc-pdf-0629",
       "topico": "cpc-m05",
       "dispositivo": "Art. 114 c/c 116, CPC",
@@ -338,18 +333,11 @@
       "motivo": "Correta. Os arts. 114 e 116 definem o litisconsórcio necessário (por lei ou pela natureza da relação, quando a eficácia da sentença depender da citação de todos) e o unitário (decisão de mérito uniforme para todos); o enquadramento da ação pauliana como hipótese de litisconsórcio passivo necessário e unitário entre devedor e adquirente decorre do Código Civil e da doutrina, que não constam do texto compilado usado nesta revisão; o gabarito foi mantido."
     },
     {
-      "id": "decorando-cpc-pdf-0630",
-      "topico": "cpc-m05",
-      "dispositivo": "Art. 114 c/c 1.015, VII, CPC",
-      "gabarito": "C",
-      "motivo": "Correta. O art. 113, § 1º, só autoriza o juiz a limitar o litisconsórcio facultativo; na invalidação de contrato com as dez pessoas, a relação jurídica controvertida impõe a citação de todos, de modo que o litisconsórcio é necessário (art. 114) e não poderia ser limitado. O cabimento de agravo de instrumento contra a exclusão de litisconsorte decorre do art. 1.015, VII, citado no rótulo, que está fora do texto compilado usado nesta revisão, que vai até o art. 746; o gabarito foi mantido."
-    },
-    {
       "id": "decorando-cpc-pdf-0633",
       "topico": "cpc-m05",
       "dispositivo": "Art. 115, CPC",
       "gabarito": "C",
-      "motivo": "Correta. Pelo art. 115, I, a sentença de mérito proferida sem a integração do contraditório é nula quando a decisão deveria ser uniforme para todos, como no litisconsórcio necessário unitário; o cabimento de ação rescisória após o trânsito em julgado depende do art. 966, que está fora do texto compilado usado nesta revisão, que vai até o art. 746; o gabarito foi mantido."
+      "motivo": "Correta. Pelo art. 115, I, a sentença de mérito proferida sem a integração do contraditório é nula quando a decisão deveria ser uniforme em relação a todos que deveriam ter integrado o processo, como no litisconsórcio necessário unitário. O art. 966 admite a rescisão da decisão de mérito transitada em julgado nas hipóteses dos seus incisos (por exemplo, a violação manifesta de norma jurídica, inciso V), mas o texto do CPC usado nesta revisão não enquadra em termos expressos a falta de integração do litisconsorte necessário em nenhum deles; essa subsunção depende de interpretação que o texto não traz, e o gabarito foi mantido."
     },
     {
       "id": "decorando-cpc-pdf-0638",
@@ -371,13 +359,6 @@
       "dispositivo": "Art. 124, CPC e Art. 5º, § 2º, Lei 7.347/85",
       "gabarito": "C",
       "motivo": "Correta. O art. 124 considera litisconsorte da parte principal o assistente quando a sentença influir na relação jurídica entre ele e o adversário do assistido, o que pressupõe interesse jurídico, e não apenas econômico; o art. 5º, § 2º, da Lei nº 7.347/1985 e o posicionamento do STJ invocados no enunciado não constam do texto compilado usado nesta revisão; o gabarito foi mantido."
-    },
-    {
-      "id": "decorando-cpc-pdf-0678",
-      "topico": "cpc-m05",
-      "dispositivo": "Arts. 125, § 2º e 1.015, IX, CPC",
-      "gabarito": "C",
-      "motivo": "Correta. Pelo art. 125, § 2º, admite-se uma única denunciação sucessiva, promovida pelo denunciado contra seu antecessor imediato, e o denunciado sucessivo não pode promover nova denunciação; como Bruno denunciou Cláudio e Cláudio denunciou Daniel, a denunciação de Eduardo por Daniel era vedada, e o seu deferimento deve ser reformado. O cabimento do agravo de instrumento decorre do art. 1.015, IX, citado no rótulo, que está fora do texto compilado usado nesta revisão, que vai até o art. 746; o gabarito foi mantido."
     },
     {
       "id": "decorando-cpc-pdf-0705",
@@ -478,13 +459,6 @@
       "motivo": "Correta. O art. 139, IV, incumbe ao juiz determinar todas as medidas indutivas, coercitivas, mandamentais ou sub-rogatórias necessárias ao cumprimento de ordem judicial, inclusive nas ações de prestação pecuniária, e o art. 8º manda observar a proporcionalidade e a eficiência; as condições fixadas pela jurisprudência dos Tribunais Superiores para as medidas executivas atípicas, invocadas no enunciado, não constam do texto compilado usado nesta revisão; o gabarito foi mantido."
     },
     {
-      "id": "decorando-cpc-pdf-0812",
-      "topico": "cpc-m06",
-      "dispositivo": "Arts. 144 e 966, CPC",
-      "gabarito": "C",
-      "motivo": "Correta. O juiz casado com a irmã da ré é parente afim, em linha colateral, até o terceiro grau, de uma das partes, hipótese de impedimento (art. 144, IV). O art. 146 fixa o prazo de 15 dias, a contar do conhecimento do fato, para alegar impedimento ou suspeição; a ausência de preclusão para alegar o impedimento, mesmo após a sentença, decorre do art. 966, citado no rótulo, que está fora do texto compilado usado nesta revisão, que vai até o art. 746; o gabarito foi mantido."
-    },
-    {
       "id": "decorando-cpc-pdf-0819",
       "topico": "cpc-m06",
       "dispositivo": "Arts. 144, III, e 148, CPC",
@@ -510,7 +484,7 @@
       "topico": "cpc-m06",
       "dispositivo": "Art. 178, II, c/c 180, 300, 996 e 1.023, CPC",
       "gabarito": "C",
-      "motivo": "Correta. O processo envolve interesse de incapaz, caso de intervenção do Ministério Público como fiscal da ordem jurídica (art. 178, II), que pode requerer as medidas pertinentes e recorrer (art. 179, II) e goza de prazo em dobro (art. 180); o art. 300 trata da tutela de urgência. O cabimento dos embargos de declaração por omissão e o seu prazo constam dos arts. 1.022 e 1.023, e a legitimidade recursal do Ministério Público consta do art. 996, que estão fora do texto compilado usado nesta revisão, que vai até o art. 746; o gabarito foi mantido."
+      "motivo": "Correta. O processo envolve interesse de incapaz, caso de intervenção do Ministério Público como fiscal da ordem jurídica (art. 178, II), que pode requerer as medidas processuais pertinentes e recorrer (art. 179, II; art. 996) e goza de prazo em dobro para as suas manifestações (art. 180). Os embargos de declaração cabem para suprir omissão de ponto sobre o qual devia se pronunciar o juiz a requerimento (art. 1.022, II), no prazo de 5 dias (art. 1.023), que em dobro são 10 dias úteis (art. 219); os opostos em 7 dias úteis são tempestivos, e o pedido de tutela provisória feito na inicial e não examinado na sentença configura a omissão. O texto não define, porém, se, suprida a omissão, a tutela será deferida, o que depende da presença dos requisitos do art. 300 e da avaliação do juiz; o gabarito foi mantido."
     },
     {
       "id": "decorando-cpc-pdf-0900",
@@ -520,18 +494,11 @@
       "motivo": "Correta. O Ministério Público intervém no processo de interesse de incapaz como fiscal da ordem jurídica (arts. 176 e 178, II), podendo produzir provas, requerer as medidas pertinentes e recorrer (art. 179, II); que possa opinar no mérito contra os interesses do incapaz é conclusão doutrinária sobre o papel de fiscal, que o texto não enuncia expressamente; o gabarito foi mantido."
     },
     {
-      "id": "decorando-cpc-pdf-0919",
-      "topico": "cpc-m06",
-      "dispositivo": "Arts. 179, 180, e 1.023, CPC",
-      "gabarito": "C",
-      "motivo": "Correta. O Ministério Público, que intervém no processo de interesse de incapaz como fiscal da ordem jurídica, pode produzir provas, requerer as medidas processuais pertinentes e recorrer (art. 179, II) e goza de prazo em dobro para manifestar-se (art. 180). O cabimento dos embargos de declaração por omissão e o seu prazo constam dos arts. 1.022 e 1.023, que estão fora do texto compilado usado nesta revisão, que vai até o art. 746; o gabarito foi mantido."
-    },
-    {
       "id": "decorando-cpc-pdf-0935",
       "topico": "cpc-m06",
       "dispositivo": "Art. 183, CPC c/c Art. 897-A, CLT",
       "gabarito": "E",
-      "motivo": "Errada. O art. 183 dá à União, aos Estados, ao Distrito Federal, aos Municípios e às suas autarquias e fundações de direito público prazo em dobro para todas as suas manifestações processuais; a extensão dessa prerrogativa a Assembleia Legislativa no processo do trabalho e o prazo dos embargos de declaração, previsto no art. 897-A da CLT citado no rótulo, constam de normas que não estão no texto compilado usado nesta revisão; o gabarito foi mantido."
+      "motivo": "Errada. O art. 183 dá à União, aos Estados, ao Distrito Federal, aos Municípios e às suas autarquias e fundações de direito público prazo em dobro para todas as suas manifestações processuais, e o art. 1.023 fixa em 5 dias o prazo dos embargos de declaração no CPC. O enunciado trata, porém, de Assembleia Legislativa no processo do trabalho, em que o prazo dos embargos de declaração está no art. 897-A da CLT, citado no rótulo; a extensão da prerrogativa do art. 183 a essa entidade e a disciplina trabalhista dos embargos não constam do texto do CPC usado nesta revisão, e o gabarito foi mantido."
     },
     {
       "id": "decorando-cpc-pdf-0942",
@@ -566,14 +533,7 @@
       "topico": "cpc-m07",
       "dispositivo": "Art. 203, § 1º, CPC",
       "gabarito": "C",
-      "motivo": "Correta. Pelo art. 203, § 1º, sentença é o pronunciamento que põe fim à fase cognitiva ou extingue a execução, e, pelo § 2º, decisão interlocutória é todo pronunciamento decisório que não se enquadre no § 1º; a decisão que declara inexigível apenas parte da execução, sem extingui-la, é interlocutória. O cabimento de agravo de instrumento nesse caso decorre do art. 1.015, que está fora do texto compilado usado nesta revisão, que vai até o art. 746; o gabarito foi mantido."
-    },
-    {
-      "id": "decorando-cpc-pdf-0998",
-      "topico": "cpc-m07",
-      "dispositivo": "Art. 203, § 1º c/c 1.009, CPC",
-      "gabarito": "C",
-      "motivo": "Correta. Pelo art. 203, § 1º, sentença é o pronunciamento que extingue a execução; a decisão que extingue a execução por considerar satisfeito o crédito é, portanto, sentença. O cabimento de apelação contra ela decorre do art. 1.009, citado no rótulo, que está fora do texto compilado usado nesta revisão, que vai até o art. 746; o gabarito foi mantido."
+      "motivo": "Correta. Pelo art. 203, § 1º, sentença é o pronunciamento que põe fim à fase cognitiva ou extingue a execução, e, pelo § 2º, decisão interlocutória é todo pronunciamento decisório que não se enquadre no § 1º; a decisão que declara inexigível apenas parte da execução, sem extingui-la, é interlocutória. Pelo art. 1.015, parágrafo único, cabe agravo de instrumento contra decisões interlocutórias proferidas no processo de execução, ao passo que a apelação é cabível apenas da sentença (art. 1.009). A parte final do enunciado (inadmitida a fungibilidade recursal com outro recurso) trata de construção jurisprudencial, pois o texto do CPC usado nesta revisão não traz regra geral de fungibilidade recursal; o gabarito foi mantido."
     },
     {
       "id": "decorando-cpc-pdf-1043",
@@ -588,13 +548,6 @@
       "dispositivo": "Art. 229, CPC",
       "gabarito": "C",
       "motivo": "Correta. Pelo art. 229, § 2º, a contagem em dobro dos prazos dos litisconsortes com procuradores de escritórios distintos não se aplica aos processos em autos eletrônicos, como o do caso, e o art. 15 aplica o Código supletiva e subsidiariamente ao processo do trabalho; o prazo de 8 dias do recurso ordinário e a jurisprudência do TST invocada no enunciado constam de normas e decisões que não estão no texto compilado usado nesta revisão; o gabarito foi mantido."
-    },
-    {
-      "id": "decorando-cpc-pdf-1069",
-      "topico": "cpc-m07",
-      "dispositivo": "Art. 229, § 2º c/c 997, § 2º, III, CPC",
-      "gabarito": "C",
-      "motivo": "Correta. No processo eletrônico, não se aplica o prazo em dobro aos litisconsortes com procuradores de escritórios distintos (art. 229, § 2º), e o Estado tem prazo em dobro para todas as suas manifestações (art. 183); a intempestividade das apelações dos réus e a inadmissibilidade do recurso adesivo do Estado dependem do prazo de 15 dias úteis da apelação (art. 1.003, § 5º) e do art. 997, § 2º, III, citado no rótulo, que estão fora do texto compilado usado nesta revisão, que vai até o art. 746; o gabarito foi mantido."
     },
     {
       "id": "decorando-cpc-pdf-1112",
@@ -657,14 +610,7 @@
       "topico": "cpc-m09",
       "dispositivo": "Art. 300, CPC",
       "gabarito": "C",
-      "motivo": "Correta. O art. 301 admite que a tutela de urgência de natureza cautelar seja efetivada mediante arresto, sequestro, arrolamento de bens, registro de protesto contra alienação de bem e qualquer outra medida idônea para asseguração do direito, sendo comprovados os requisitos do art. 300. A averbação de certidão de admissão da execução (art. 828) e a jurisprudência do STJ citada no enunciado estão fora do texto compilado usado nesta revisão, que vai até o art. 746; o gabarito foi mantido."
-    },
-    {
-      "id": "decorando-cpc-pdf-1266",
-      "topico": "cpc-m09",
-      "dispositivo": "Art. 301 e 830, CPC",
-      "gabarito": "C",
-      "motivo": "Correta. O art. 301 prevê o arresto como forma de efetivação da tutela de urgência de natureza cautelar, e o rótulo cita também o art. 830, que trata do arresto na execução e está fora do texto compilado usado nesta revisão, que vai até o art. 746; o gabarito foi mantido."
+      "motivo": "Correta. O art. 301 admite que a tutela de urgência de natureza cautelar seja efetivada mediante arresto, sequestro, arrolamento de bens, registro de protesto contra alienação de bem e qualquer outra medida idônea para asseguração do direito, desde que comprovados os requisitos do art. 300. A certidão de que trata o art. 828 é a de admissão da execução, para averbação em registros de bens, e o texto não a prevê para a ação de conhecimento; a sua obtenção como medida cautelar nessa ação decorre da jurisprudência do STJ citada no enunciado, que não consta do texto do CPC usado nesta revisão; o gabarito foi mantido."
     },
     {
       "id": "decorando-cpc-pdf-1310",
@@ -681,20 +627,6 @@
       "motivo": "Correta. Pelo art. 310, o indeferimento da tutela cautelar não obsta a que a parte formule o pedido principal, nem influi no julgamento desse, salvo se o motivo do indeferimento for o reconhecimento de decadência ou de prescrição. A ressalva pode ser lida como referente apenas à influência no julgamento do pedido principal; a leitura do enunciado, de que o indeferimento por esses motivos impede a formulação do pedido principal, depende dessa interpretação; o gabarito foi mantido."
     },
     {
-      "id": "decorando-cpc-pdf-1328",
-      "topico": "cpc-m09",
-      "dispositivo": "Art. 311, CPC",
-      "gabarito": "C",
-      "motivo": "Correta. Pelo art. 311, II, a tutela da evidência é concedida quando as alegações de fato puderem ser comprovadas apenas documentalmente e houver tese firmada em julgamento de casos repetitivos, e, pelo parágrafo único, o juiz poderá decidir liminarmente, sem ouvir a ré. Que o incidente de resolução de demandas repetitivas seja julgamento de casos repetitivos decorre do art. 928, que está fora do texto compilado usado nesta revisão, que vai até o art. 746; o gabarito foi mantido."
-    },
-    {
-      "id": "decorando-cpc-pdf-1333",
-      "topico": "cpc-m09",
-      "dispositivo": "Art. 311, II, CPC",
-      "gabarito": "C",
-      "motivo": "Correta. Pelo art. 311, II, a tutela da evidência é concedida quando as alegações de fato puderem ser comprovadas apenas documentalmente e houver tese firmada em julgamento de casos repetitivos, e, pelo parágrafo único, o juiz poderá decidir liminarmente, sem ouvir a ré. Que o incidente de resolução de demandas repetitivas seja julgamento de casos repetitivos decorre do art. 928, que está fora do texto compilado usado nesta revisão, que vai até o art. 746; o gabarito foi mantido."
-    },
-    {
       "id": "decorando-cpc-pdf-1360",
       "topico": "cpc-m10",
       "dispositivo": "Art. 313, § 2º, I, CPC",
@@ -709,32 +641,11 @@
       "motivo": "Correta. O art. 321 autoriza o juiz a determinar a emenda da petição inicial quando ela apresentar defeitos e irregularidades capazes de dificultar o julgamento de mérito, e o art. 330, III, trata da falta de interesse processual; a exigência fundamentada de demonstração do interesse de agir e da autenticidade da postulação diante de indícios de litigância abusiva decorre da jurisprudência dos tribunais superiores referida no enunciado, que não consta do texto compilado usado nesta revisão; o gabarito foi mantido."
     },
     {
-      "id": "decorando-cpc-pdf-1386",
-      "topico": "cpc-m10",
-      "dispositivo": "Art. 322, § 2º, CPC",
-      "gabarito": "C",
-      "motivo": "Correta. Pelo art. 5º, aquele que de qualquer forma participa do processo deve comportar-se de acordo com a boa-fé, e, pelo art. 322, § 2º, a interpretação do pedido considerará o conjunto da postulação e observará o princípio da boa-fé; a aplicação da boa-fé à interpretação da decisão judicial consta de dispositivo que está fora do texto compilado usado nesta revisão, que vai até o art. 746; o gabarito foi mantido."
-    },
-    {
       "id": "decorando-cpc-pdf-1452",
       "topico": "cpc-m07",
       "dispositivo": "Art. 190 e 334, CPC",
       "gabarito": "C",
       "motivo": "Correta. O art. 190 permite às partes capazes estipular mudanças no procedimento, antes ou durante o processo, e o art. 334, § 4º, I, dispensa a audiência quando ambas as partes manifestam desinteresse na composição consensual; a dispensa da audiência por convenção anterior ao processo, sem a manifestação do art. 334, § 5º, é leitura que decorre de doutrina e não do texto compilado usado nesta revisão; o gabarito foi mantido."
-    },
-    {
-      "id": "decorando-cpc-pdf-1454",
-      "topico": "cpc-m10",
-      "dispositivo": "Arts. 334 e 785, CPC",
-      "gabarito": "C",
-      "motivo": "Correta. O art. 334 determina que, preenchidos os requisitos essenciais da petição inicial e não sendo caso de improcedência liminar, o juiz designe audiência de conciliação ou de mediação e cite o réu; a possibilidade de o credor com título executivo extrajudicial optar pelo processo de conhecimento consta do art. 785, citado no rótulo, que está fora do texto compilado usado nesta revisão, que vai até o art. 746; o gabarito foi mantido."
-    },
-    {
-      "id": "decorando-cpc-pdf-1479",
-      "topico": "cpc-m11",
-      "dispositivo": "Art. 337, XI, § 5º, CPC",
-      "gabarito": "C",
-      "motivo": "Correta. O art. 337, XI e § 5º, permite ao juiz conhecer de ofício da falta de interesse processual, e o art. 229 prevê prazo em dobro para litisconsortes com procuradores de escritórios distintos, que não se aplica aos autos eletrônicos (§ 2º) nem cessa quando os dois réus oferecem defesa (§ 1º, a contrario); a conclusão de que os embargos de declaração eram tempestivos e admitem efeito modificativo depende dos arts. 1.022 e seguintes, que não constam do texto compilado usado nesta revisão, que vai até o art. 746; o gabarito foi mantido."
     },
     {
       "id": "decorando-cpc-pdf-1491",
@@ -804,7 +715,7 @@
       "topico": "cpc-m12",
       "dispositivo": "Art. 384, CPC",
       "gabarito": "C",
-      "motivo": "Correta. O art. 384 admite a ata notarial para atestar a existência e o modo de existir de fato; o cabimento do recurso especial por violação às normas de valoração da prova, distinto do reexame de provas, decorre da jurisprudência do STJ e dos dispositivos recursais, que não constam do texto compilado usado nesta revisão, que vai até o art. 746; o gabarito foi mantido."
+      "motivo": "Correta. O art. 384 admite que a existência e o modo de existir de algum fato sejam atestados ou documentados, a requerimento do interessado, mediante ata lavrada por tabelião (ata notarial). O cabimento do recurso especial por violação às normas de direito probatório quanto à valoração da ata notarial, distinto do mero reexame de provas, depende dos casos previstos na Constituição, a que o art. 1.029, caput, remete, e da jurisprudência do STJ, que não constam do texto do CPC usado nesta revisão; o gabarito foi mantido."
     },
     {
       "id": "decorando-cpc-pdf-1731",
@@ -856,25 +767,11 @@
       "motivo": "Correta. O art. 471 permite às partes escolher o perito de comum acordo desde que sejam plenamente capazes (I) e a causa possa ser resolvida por autocomposição (II), e o art. 190 admite o negócio jurídico processual nas causas que versem sobre direitos que admitam autocomposição; a aplicação específica à Fazenda Pública decorre de doutrina e de legislação sobre sua autocomposição, que não constam do texto compilado usado nesta revisão; o gabarito foi mantido."
     },
     {
-      "id": "decorando-cpc-pdf-1825",
-      "topico": "cpc-m13",
-      "dispositivo": "Art. 485, I c/c 486, CPC",
-      "gabarito": "E",
-      "motivo": "Errada. O art. 485, I, prevê que o indeferimento da petição inicial não resolve o mérito, o art. 486 permite propor de novo a ação nesses casos e o art. 502 reserva a coisa julgada material à decisão de mérito, de modo que a sentença de improcedência com coisa julgada material não é a consequência indicada. A rejeição liminar dos embargos à execução por intempestividade tem regra própria, em dispositivo que não consta do texto compilado usado nesta revisão, que vai até o art. 746; o gabarito foi mantido."
-    },
-    {
       "id": "decorando-cpc-pdf-1835",
       "topico": "cpc-m13",
       "dispositivo": "Art. 485, VI, CPC",
       "gabarito": "C",
       "motivo": "Correta. Pelo art. 17, para postular em juízo é necessário ter interesse, e o art. 485, VI, prevê a extinção sem resolução do mérito por ausência de interesse processual; que a ação declaratória negativa proposta após a ação de cobrança, já contestada com a negativa do contrato, careça de interesse decorre de interpretação doutrinária e jurisprudencial que não consta do texto compilado usado nesta revisão; o gabarito foi mantido."
-    },
-    {
-      "id": "decorando-cpc-pdf-1840",
-      "topico": "cpc-m13",
-      "dispositivo": "Arts. 485, VI, § 7º c/c 784, X e 785, CPC",
-      "gabarito": "C",
-      "motivo": "Correta. O art. 485, § 7º, prevê que, interposta a apelação contra sentença que não resolve o mérito, o juiz tem 5 dias para retratar-se; que a falta de interesse tenha sido indevidamente reconhecida, por a parte poder optar pela ação de conhecimento mesmo tendo título executivo, depende dos arts. 784, X, e 785, que estão fora do texto compilado usado nesta revisão, que vai até o art. 746; o gabarito foi mantido."
     },
     {
       "id": "decorando-cpc-pdf-1858",
@@ -889,13 +786,6 @@
       "dispositivo": "Art. 487, II, CPC e Art. 18, Lei 4.717/65",
       "gabarito": "C",
       "motivo": "Correta. Pelo art. 487, II, a decisão que reconhece a prescrição resolve o mérito, o que sujeita o primeiro pedido à coisa julgada material (art. 502); que o segundo pedido, rejeitado por insuficiência de provas na ação popular, não fique coberto pela coisa julgada material, e o cabimento da ação rescisória, decorrem da lei da ação popular e das regras da rescisória, que não constam do texto compilado usado nesta revisão; o gabarito foi mantido."
-    },
-    {
-      "id": "decorando-cpc-pdf-1927",
-      "topico": "cpc-m13",
-      "dispositivo": "Arts. 496, § 4º, III, c/c 1.003, § 5º, CPC",
-      "gabarito": "C",
-      "motivo": "Correta. Pelo art. 496, § 4º, III, não há remessa necessária quando a sentença está fundada em entendimento firmado em incidente de assunção de competência; a intempestividade das apelações, que leva a que nenhuma seja conhecida, depende do prazo recursal de 15 dias úteis e das regras do art. 1.003, § 5º, e dos demais dispositivos recursais, que não constam do texto compilado usado nesta revisão, que vai até o art. 746; o gabarito foi mantido."
     },
     {
       "id": "decorando-cpc-pdf-1930",
@@ -954,13 +844,6 @@
       "motivo": "Correta. Pelo art. 516, parágrafo único, nas hipóteses do inciso II o exequente poderá optar pelo juízo do atual domicílio do executado, casos em que a remessa dos autos será solicitada ao juízo de origem. O enunciado invoca também a jurisprudência do STJ sobre a possibilidade de exercer essa opção depois de iniciado o cumprimento de sentença, que não consta do texto compilado usado nesta revisão; o gabarito foi mantido."
     },
     {
-      "id": "decorando-cpc-pdf-2039",
-      "topico": "cpc-m14",
-      "dispositivo": "Art. 521, I, § único, CPC",
-      "gabarito": "C",
-      "motivo": "Correta. Pelo art. 521, I, a caução prevista no art. 520, IV, poderá ser dispensada quando o crédito for de natureza alimentar, independentemente de sua origem, ressalvado o parágrafo único (a exigência de caução é mantida quando da dispensa possa resultar manifesto risco de grave dano de difícil ou incerta reparação, o que o enunciado não indica). O cabimento do cumprimento provisório pressupõe apelação sem efeito suspensivo, o que, nas sentenças que condenam ao pagamento de alimentos, decorre de dispositivo recursal que não consta do texto compilado usado nesta revisão, que vai até o art. 746; o gabarito foi mantido."
-    },
-    {
       "id": "decorando-cpc-pdf-2068",
       "topico": "cpc-m14",
       "dispositivo": "Art. 525, § 15, CPC",
@@ -1010,18 +893,11 @@
       "motivo": "Errada. Pelo art. 676, caput, os embargos de terceiro são distribuídos por dependência ao juízo que ordenou a constrição. O enunciado afirma a competência do órgão de primeiro grau mesmo quando a constrição foi determinada em grau de recurso ou em ação de competência originária de tribunal, hipótese que o texto não trata expressamente e cuja resposta depende de jurisprudência que não consta do texto compilado usado nesta revisão; o gabarito foi mantido."
     },
     {
-      "id": "decorando-cpc-pdf-2250",
-      "topico": "cpc-m18",
-      "dispositivo": "Arts. 677, § 4º e 1.015, § único, CPC",
-      "gabarito": "C",
-      "motivo": "Correta. Pelo art. 677, § 4º, o adversário do sujeito a quem o ato de constrição aproveita no processo principal só é legitimado passivo dos embargos quando for sua a indicação do bem para a constrição; como o bem foi indicado pelo exequente Antônio, a exclusão de Bernardo foi correta, e o agravo deve ser desprovido. O conhecimento do agravo de instrumento depende do cabimento previsto no art. 1.015, citado no rótulo, que não consta do texto compilado usado nesta revisão, que vai até o art. 746; o gabarito foi mantido."
-    },
-    {
       "id": "decorando-cpc-pdf-2283",
       "topico": "cpc-m18",
       "dispositivo": "Art. 700, CPC c/c S. 299, STJ",
       "gabarito": "E",
-      "motivo": "Errada. O art. 700, caput, admite a ação monitória com base em prova escrita sem eficácia de título executivo, e o texto não exclui o cheque prescrito. O rótulo remete à Súmula 299 do STJ, que não consta do texto compilado usado nesta revisão, que vai até o art. 746; o gabarito foi mantido."
+      "motivo": "Errada. O art. 700, caput, admite a ação monitória a quem afirmar, com base em prova escrita sem eficácia de título executivo, ter direito de exigir do devedor capaz o pagamento de quantia em dinheiro, a entrega de coisa fungível ou infungível ou de bem móvel ou imóvel e o adimplemento de obrigação de fazer ou de não fazer, e o texto não exclui o cheque prescrito. O rótulo remete à Súmula 299 do STJ e o enunciado à jurisprudência dominante do STJ, que não constam do texto do CPC usado nesta revisão; o gabarito foi mantido."
     },
     {
       "id": "decorando-cpc-pdf-2296",
@@ -1031,39 +907,263 @@
       "motivo": "Errada. Pelo art. 700, § 6º, é admissível ação monitória em face da Fazenda Pública, e o caput a admite com base em prova escrita sem eficácia de título executivo; o texto não afirma que a via monitória seja inadmissível quando a dívida poderia ser executada diretamente, e a resposta para essa hipótese depende de jurisprudência que não consta do texto compilado usado nesta revisão; o gabarito foi mantido."
     },
     {
-      "id": "decorando-cpc-pdf-2519",
-      "topico": "cpc-m07",
-      "dispositivo": "Art. 229 c/c 915, § 3º, CPC",
+      "id": "decorando-cpc-pdf-2375",
+      "topico": "cpc-m16",
+      "dispositivo": "Art. 784, IV, CPC",
       "gabarito": "E",
-      "motivo": "Errada. O art. 229 prevê prazo em dobro para as manifestações dos litisconsortes com procuradores de escritórios distintos, mas a exclusão dessa regra para os embargos à execução consta do art. 915, § 3º, citado no rótulo, que está fora do texto compilado usado nesta revisão, que vai até o art. 746; o gabarito foi mantido."
+      "motivo": "Errada. O art. 784, IV, arrola entre os títulos executivos extrajudiciais o instrumento de transação referendado pelo Ministério Público, pela Defensoria Pública, pela Advocacia Pública, pelos advogados dos transatores ou por conciliador ou mediador credenciado; o rol do art. 784 trata de títulos extrajudiciais, e não judiciais. A eficácia específica do compromisso de ajustamento de conduta como título executivo extrajudicial vem da Lei 7.347/1985, que não consta do texto do CPC usado nesta revisão; o gabarito foi mantido."
     },
     {
-      "id": "decorando-cpc-pdf-2546",
-      "topico": "cpc-m07",
-      "dispositivo": "Arts. 203, § 1º, 924, V e 1.009, CPC",
+      "id": "decorando-cpc-pdf-2386",
+      "topico": "cpc-m16",
+      "dispositivo": "Art. 792, I a IV, CPC",
       "gabarito": "C",
-      "motivo": "Correta. Pelo art. 203, § 1º, sentença é o pronunciamento que extingue a execução, o que é o caso do reconhecimento da prescrição intercorrente. O cabimento de apelação decorre do art. 1.009, e a prescrição intercorrente na execução, do art. 924, V, ambos citados no rótulo, que estão fora do texto compilado usado nesta revisão, que vai até o art. 746; o gabarito foi mantido."
+      "motivo": "Correta. Os incisos I a IV transcritos reproduzem o art. 792, que ainda admite, no inciso V, os demais casos expressos em lei. A distinção em relação à fraude contra credores tem apoio no texto: a alienação em fraude à execução é ineficaz em relação ao exequente (§ 1º) e seus bens permanecem sujeitos à execução (art. 790, V), enquanto a fraude contra credores exige reconhecimento em ação autônoma (art. 790, VI). A natureza incidental da cognição e a ausência de anulação do ato decorrem de doutrina e jurisprudência, que não constam do texto do CPC usado nesta revisão; o gabarito foi mantido."
+    },
+    {
+      "id": "decorando-cpc-pdf-2391",
+      "topico": "cpc-m16",
+      "dispositivo": "Art. 797 e 805, CPC",
+      "gabarito": "C",
+      "motivo": "Correta. O art. 797 estabelece que a execução se realiza no interesse do exequente, que adquire pela penhora o direito de preferência, e o art. 805 manda que, havendo vários meios, a execução se faça pelo modo menos gravoso para o executado; o art. 4º assegura ao exequente a atividade satisfativa. A formulação desses dois comandos como princípios da execução forçada (plena satisfação do credor e menor onerosidade) é doutrinária; o gabarito foi mantido."
+    },
+    {
+      "id": "decorando-cpc-pdf-2396",
+      "topico": "cpc-m16",
+      "dispositivo": "Art. 804, CPC",
+      "gabarito": "C",
+      "motivo": "Correta. O art. 804 dispõe que a alienação de bem gravado por penhor, hipoteca ou anticrese será ineficaz em relação ao credor pignoratício, hipotecário ou anticrético não intimado, o que sustenta a parte final da afirmativa. A validade da alienação do bem dado em garantia real antes do vencimento decorre do direito material (Código Civil), que não integra o texto usado nesta revisão; o gabarito foi mantido."
+    },
+    {
+      "id": "decorando-cpc-pdf-2429",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 833, X, CPC",
+      "gabarito": "E",
+      "motivo": "Errada. O enunciado afirma ser incorreto dizer que são impenhoráveis as quantias depositadas em caderneta de poupança; mas, pelo art. 833, X, essa quantia é impenhorável até o limite de 40 (quarenta) salários-mínimos, ressalvado o § 2º (prestação alimentícia e importâncias excedentes a 50 salários-mínimos mensais). O enunciado é adaptado de questão em formato de alternativa a assinalar, cujo comando original não consta do texto do CPC usado nesta revisão; o gabarito foi mantido."
+    },
+    {
+      "id": "decorando-cpc-pdf-2435",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 835, § 1º, CPC",
+      "gabarito": "C",
+      "motivo": "Correta. Pelo art. 866, caput, o juiz pode ordenar a penhora de percentual de faturamento de empresa se o executado não tiver outros bens penhoráveis ou se, tendo-os, forem de difícil alienação ou insuficientes; e o art. 835, § 1º, permite ao juiz alterar a ordem de penhora conforme o caso concreto. A formulação do enunciado (\"bens classificados em posição superior na ordem\") é leitura interpretativa que não consta literalmente do texto do CPC usado nesta revisão; o gabarito foi mantido."
+    },
+    {
+      "id": "decorando-cpc-pdf-2438",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 882, CLT c/c 835, § 2º, CPC",
+      "gabarito": "C",
+      "motivo": "Correta. Pelo art. 835, § 2º, do CPC, para substituição da penhora equiparam-se a dinheiro a fiança bancária e o seguro garantia judicial, em valor não inferior ao do débito constante da inicial, acrescido de trinta por cento; R$ 50.000,00 acrescidos de 30% resultam em R$ 65.000,00. O rótulo cita o art. 882 da CLT (e não o art. 882 do CPC, que trata do leilão presencial); a CLT não consta do texto do CPC usado nesta revisão, e o gabarito foi mantido."
+    },
+    {
+      "id": "decorando-cpc-pdf-2442",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 841, § 2º, CPC",
+      "gabarito": "C",
+      "motivo": "Correta. Pelo art. 841, § 2º, se o executado não tiver advogado constituído nos autos, será intimado da penhora pessoalmente, de preferência por via postal (o § 1º determina a intimação ao advogado quando houver). A conclusão do enunciado, de que a intimação pessoal do curador especial não supre a do executado citado por edital, decorre da jurisprudência do STJ mencionada no próprio enunciado, que não consta do texto do CPC usado nesta revisão; o gabarito foi mantido."
+    },
+    {
+      "id": "decorando-cpc-pdf-2445",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 843, CPC",
+      "gabarito": "C",
+      "motivo": "Correta. Pelo art. 843, caput, na penhora de bem indivisível a quota-parte do coproprietário recai sobre o produto da alienação do bem; o § 1º reserva ao coproprietário a preferência na arrematação em igualdade de condições, e o § 2º veda a expropriação por preço inferior ao da avaliação quando o valor auferido não garantir a quota-parte calculada sobre o valor da avaliação. A afirmação de que não há vício no polo passivo por falta de citação dos irmãos decorre da sistemática do art. 843, que não prevê a citação do coproprietário, mas o texto usado nesta revisão não a declara expressamente; o gabarito foi mantido."
+    },
+    {
+      "id": "decorando-cpc-pdf-2495",
+      "topico": "cpc-m16",
+      "dispositivo": "Art. 910, CPC",
+      "gabarito": "C",
+      "motivo": "Correta. O art. 910 dá à Fazenda Pública 30 dias, contados da citação, para opor embargos na execução fundada em título extrajudicial, e o art. 914 dispensa penhora, depósito ou caução para os embargos. A execução do caso é trabalhista, de título judicial, regida por norma que não consta do texto do CPC usado nesta revisão (CLT e legislação sobre a Fazenda Pública); o gabarito foi mantido."
+    },
+    {
+      "id": "decorando-cpc-pdf-2502",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 914, CPC",
+      "gabarito": "E",
+      "motivo": "Errada. O art. 914, § 1º, determina que os embargos à execução sejam distribuídos por dependência, autuados em apartado e instruídos com cópias das peças processuais relevantes, o que os afasta da ideia de mero incidente dentro dos autos da execução. A classificação da natureza jurídica dos embargos (ação autônoma ou incidente) é questão doutrinária que não consta expressamente do texto do CPC usado nesta revisão; o gabarito foi mantido."
+    },
+    {
+      "id": "decorando-cpc-pdf-2512",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 914, § 2º, CPC",
+      "gabarito": "C",
+      "motivo": "Correta. Pelo art. 914, § 2º, na execução por carta os embargos podem ser oferecidos no juízo deprecante ou no deprecado, e a competência para julgá-los é do deprecante, salvo se versarem unicamente sobre vícios ou defeitos da penhora, da avaliação ou da alienação dos bens efetuadas no deprecado, caso em que o julgamento cabe ao deprecado. O enunciado, de 2008 (anterior ao CPC atual), não reproduz a palavra \"unicamente\" e generaliza a regra da origem do ato impugnado; o gabarito foi mantido por corresponder à exceção do dispositivo vigente."
+    },
+    {
+      "id": "decorando-cpc-pdf-2540",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 921, III, § 1º, CPC c/c S. 150, STF",
+      "gabarito": "C",
+      "motivo": "Correta. Pelo art. 921, III e § 1º, não localizado o devedor ou bens penhoráveis, o juiz suspende a execução por 1 (um) ano, uma única vez (§ 4º), e o artigo se aplica ao cumprimento de sentença (§ 7º). A identidade entre o prazo da prescrição intercorrente e o da pretensão de direito material decorre da Súmula 150 do STF, citada no rótulo, que não consta do texto do CPC usado nesta revisão; o gabarito foi mantido."
+    },
+    {
+      "id": "decorando-cpc-pdf-2550",
+      "topico": "cpc-m15",
+      "dispositivo": "Arts. 926, § 1º e 947, § 3º, CPC",
+      "gabarito": "C",
+      "motivo": "Correta. O art. 926, § 1º, prevê que os tribunais editarão enunciados de súmula correspondentes à sua jurisprudência dominante, e o art. 947 admite a assunção de competência, cujo acórdão vincula todos os juízes e órgãos fracionários, exceto se houver revisão de tese (§ 3º); ambos são instrumentos de uniformização, como afirma o enunciado. O Regimento Interno do TRF da 6ª Região, mencionado no enunciado, não consta do texto do CPC usado nesta revisão; o gabarito foi mantido."
+    },
+    {
+      "id": "decorando-cpc-pdf-2552",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 927, CPC",
+      "gabarito": "C",
+      "motivo": "Correta. O art. 927, III, manda juízes e tribunais observarem os acórdãos em incidente de resolução de demandas repetitivas e em julgamento de recursos extraordinário e especial repetitivos, e o art. 987, § 2º, prevê que a tese adotada pelo STF ou pelo STJ será aplicada em todo o território nacional; a prevalência da tese do STJ, em recurso repetitivo, sobre a de IRDR de tribunal local decorre dessa abrangência nacional e da hierarquia entre os órgãos, conclusão que o CPC não enuncia de forma expressa para essa hipótese; o gabarito foi mantido."
+    },
+    {
+      "id": "decorando-cpc-pdf-2555",
+      "topico": "cpc-m15",
+      "dispositivo": "Arts. 927, § 3º e 985, CPC",
+      "gabarito": "C",
+      "motivo": "Correta. O art. 927, § 3º, admite a modulação dos efeitos da alteração de jurisprudência, e o art. 985, I, manda aplicar a tese do incidente a todos os processos que versem sobre idêntica questão de direito na área de jurisdição do tribunal, cabendo reclamação se ela não for observada (§ 1º); assim, o juízo de primeiro grau vinculado ao tribunal não pode afastar o efeito prospectivo por ele fixado. A afirmação de que a competência para modular é exclusiva do TRF e a remissão à jurisprudência consolidada do STJ não constam do texto do CPC; o gabarito foi mantido."
+    },
+    {
+      "id": "decorando-cpc-pdf-2556",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 927, §§ 3º e 4º, CPC",
+      "gabarito": "C",
+      "motivo": "Correta. O art. 927, § 4º, exige, para modificar tese adotada em julgamento de casos repetitivos, fundamentação adequada e específica, considerando a segurança jurídica, a proteção da confiança e a isonomia; o § 3º admite a modulação dos efeitos da alteração; o § 2º prevê a participação de pessoas, órgãos ou entidades que possam contribuir para a rediscussão da tese; e o art. 986 prevê que a revisão da tese firmada no IRDR far-se-á pelo mesmo tribunal, de ofício ou a requerimento dos legitimados. A exigência de que a revisão ocorra somente por acórdão e a referência à jurisprudência dos tribunais superiores não constam do texto do CPC; o gabarito foi mantido."
+    },
+    {
+      "id": "decorando-cpc-pdf-2589",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 947, CPC",
+      "gabarito": "E",
+      "motivo": "Errada. Pelo art. 947, caput, a assunção de competência exige relevante questão de direito, com grande repercussão social, sem repetição em múltiplos processos, mas o § 4º aplica o mesmo regime quando ocorrer relevante questão de direito a respeito da qual seja conveniente a prevenção ou a composição de divergência entre câmaras ou turmas do tribunal; por isso, não se pode afirmar que o incidente é inadmissível nessa hipótese apenas porque há mais de um processo. A leitura de que o § 4º dispensa a ausência de repetição em múltiplos processos decorre da jurisprudência mencionada no enunciado, que não consta do texto do CPC usado nesta revisão; o gabarito foi mantido."
+    },
+    {
+      "id": "decorando-cpc-pdf-2641",
+      "topico": "cpc-m20",
+      "dispositivo": "Arts. 968, I e 974, CPC",
+      "gabarito": "E",
+      "motivo": "Errada. Pelo art. 968, I, o autor cumula ao pedido de rescisão, \"se for o caso\", o de novo julgamento, e, pelo art. 974, julgando procedente o pedido, o tribunal rescindirá a decisão e proferirá, \"se for o caso\", novo julgamento. A conclusão de que, na rescisória fundada em ofensa à coisa julgada (art. 966, IV), não há rejulgamento da causa originária (porque prevalece a coisa julgada anterior) decorre de doutrina e jurisprudência que não constam do texto do CPC usado nesta revisão; o gabarito foi mantido."
+    },
+    {
+      "id": "decorando-cpc-pdf-2643",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 968, II, CPC",
+      "gabarito": "C",
+      "motivo": "Correta. O art. 968, II, exige do autor da rescisória o depósito prévio de cinco por cento sobre o valor da causa, que se converte em multa se a ação for, por unanimidade de votos, declarada inadmissível ou improcedente, o que opera como desestímulo a rescisórias sem fundamento. A caracterização desse depósito como instrumento de desincentivo a demandas frívolas e a Recomendação nº 159/2024 do CNJ, citada no enunciado, não constam do texto do CPC usado nesta revisão; o gabarito foi mantido."
+    },
+    {
+      "id": "decorando-cpc-pdf-2657",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 970, CPC",
+      "gabarito": "E",
+      "motivo": "Errada. Pelo art. 970, o relator ordena a citação do réu designando-lhe prazo nunca inferior a 15 (quinze) dias nem superior a 30 (trinta) dias para apresentar resposta; a faixa fixada pelo relator não é de 30 a 60 dias. A eventual contagem em dobro do prazo da Fazenda Pública (art. 183) e sua incidência sobre prazo fixado pelo relator em rescisória é matéria de interpretação jurisprudencial que não consta do texto do CPC usado nesta revisão; o gabarito foi mantido."
     },
     {
       "id": "decorando-cpc-pdf-2659",
       "topico": "cpc-m06",
       "dispositivo": "Arts. 183 c/c 970, CPC",
       "gabarito": "E",
-      "motivo": "Errada. O art. 183 assegura à Fazenda Pública prazo em dobro para todas as suas manifestações processuais, e o art. 345, II, afasta os efeitos da revelia quando o litígio versar sobre direitos indisponíveis; o prazo de 15 a 30 dias para a resposta na ação rescisória consta do art. 970, citado no rótulo, que está fora do texto compilado usado nesta revisão, que vai até o art. 746; o gabarito foi mantido."
+      "motivo": "Errada. Pelo art. 970, o relator ordenará a citação do réu na ação rescisória, designando-lhe prazo nunca inferior a 15 nem superior a 30 dias para apresentar resposta; esse prazo é, portanto, o da resposta, e não o da citação. Quanto à revelia, o art. 345, II, afasta os seus efeitos quando o litígio versar sobre direitos indisponíveis, e o art. 183 assegura prazo em dobro à Fazenda Pública para as suas manifestações. Que a Fazenda Pública não sofra os efeitos da revelia nessa ação por defender direitos indisponíveis é entendimento que não consta do texto do CPC usado nesta revisão; o gabarito foi mantido."
     },
     {
-      "id": "decorando-cpc-pdf-2791",
-      "topico": "cpc-m07",
-      "dispositivo": "Art. 219 c/c 1.003, § 5º, CPC",
+      "id": "decorando-cpc-pdf-2674",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 976, CPC",
       "gabarito": "C",
-      "motivo": "Correta. Os prazos contam-se em dias úteis (art. 219), o prazo em dobro dos litisconsortes com procuradores de escritórios distintos não se aplica a autos eletrônicos (art. 229, § 2º) e a Defensoria Pública tem prazo em dobro (art. 186); o prazo de 15 dias úteis da apelação e o recurso adesivo constam dos arts. 1.003, § 5º, e 997, citados no rótulo ou necessários à solução, que estão fora do texto compilado usado nesta revisão, que vai até o art. 746; o gabarito foi mantido."
+      "motivo": "Correta. O art. 976 estabelece os requisitos de cabimento do IRDR, que devem estar presentes simultaneamente: efetiva repetição de processos sobre a mesma questão unicamente de direito (I) e risco de ofensa à isonomia e à segurança jurídica (II); a conclusão do enunciado, de que esses são os pressupostos objetivos de admissibilidade, consta do texto. A referência à aplicação do CPC ao processo penal por analogia depende do Código de Processo Penal, que não consta do texto do CPC usado nesta revisão; o gabarito foi mantido."
     },
     {
-      "id": "decorando-cpc-pdf-2806",
-      "topico": "cpc-m07",
-      "dispositivo": "Art. 203, § 1º c/c 1.009, CPC",
+      "id": "decorando-cpc-pdf-2694",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 976, § 2º, CPC",
       "gabarito": "C",
-      "motivo": "Correta. Pelo art. 203, § 1º, sentença é o pronunciamento que extingue a execução; o cabimento de apelação contra ela decorre do art. 1.009, citado no rótulo, que está fora do texto compilado usado nesta revisão, que vai até o art. 746; o gabarito foi mantido."
+      "motivo": "Correta. Pelo art. 976, § 2º, se não for o requerente, o Ministério Público intervirá obrigatoriamente no incidente. O enunciado usa como condição não ser parte no processo originário, ao passo que a lei usa \"se não for o requerente\"; a equivalência entre as duas condições é leitura do enunciado que não consta do texto do CPC usado nesta revisão; o gabarito foi mantido."
+    },
+    {
+      "id": "decorando-cpc-pdf-2695",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 976, § 2º, CPC",
+      "gabarito": "C",
+      "motivo": "Correta. O art. 976, § 2º, do CPC dispõe que, se não for o requerente, o Ministério Público intervirá obrigatoriamente no incidente e deverá assumir sua titularidade em caso de desistência ou de abandono. O enunciado pede a solução \"de acordo com o Regimento Interno do STM\" para o Ministério Público Militar, norma que não consta do texto do CPC usado nesta revisão; o gabarito foi mantido."
+    },
+    {
+      "id": "decorando-cpc-pdf-2731",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 985, I, CPC",
+      "gabarito": "E",
+      "motivo": "Errada. Pelo art. 948, a arguição de inconstitucionalidade em controle difuso é submetida pelo relator à turma ou à câmara à qual competir o conhecimento do processo e, pelo art. 949, II, acolhida a arguição, \"a questão\" (e não o julgamento do caso) é submetida ao plenário ou ao órgão especial. O art. 985, I, citado no rótulo, trata do IRDR e não do incidente de arguição de inconstitucionalidade. Que o julgamento do caso concreto retorne ao órgão fracionário que o havia sobrestado é consequência da sistemática desses artigos, mas o texto do CPC usado nesta revisão não o diz em termos expressos; o gabarito foi mantido."
+    },
+    {
+      "id": "decorando-cpc-pdf-2741",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 988, IV, § 5º, II, CPC",
+      "gabarito": "C",
+      "motivo": "Correta. Pelo art. 988, IV, cabe reclamação para garantir a observância de acórdão proferido em julgamento de incidente de resolução de demandas repetitivas, e, pelo § 4º, a hipótese compreende a aplicação indevida da tese jurídica e sua não aplicação aos casos que a ela correspondam. O cabimento de recurso especial contra o acórdão do Tribunal Regional Federal depende dos casos previstos na Constituição, a que o art. 1.029, caput, remete e que não consta do texto do CPC usado nesta revisão; o gabarito foi mantido. O rótulo cita o § 5º, II, que não trata do IRDR."
+    },
+    {
+      "id": "decorando-cpc-pdf-2745",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 988, § 5º, CPC",
+      "gabarito": "C",
+      "motivo": "Correta. Pelo art. 988, § 5º, I, é liminarmente indeferida apenas a reclamação proposta após o trânsito em julgado da decisão reclamada, e, pelo art. 992, julgando procedente a reclamação, o tribunal cassará a decisão exorbitante de seu julgado ou determinará medida adequada à solução da controvérsia. A conclusão de que, ajuizada a reclamação antes do trânsito e sem suspensão do processo principal, a procedência desconstitui tudo o que se decidir depois, inclusive o trânsito em julgado, decorre de jurisprudência que não consta do texto do CPC usado nesta revisão; o gabarito foi mantido."
+    },
+    {
+      "id": "decorando-cpc-pdf-2758",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 995, § único, CPC",
+      "gabarito": "C",
+      "motivo": "Correta. Pelo art. 995, parágrafo único, a eficácia da decisão recorrida poderá ser suspensa pelo relator se da imediata produção de seus efeitos houver risco de dano grave, de difícil ou impossível reparação, e ficar demonstrada a probabilidade de provimento do recurso; a afirmativa resume os dois requisitos cumulativos, mas omite que o dano deve ser grave e que basta ser de difícil ou impossível reparação. O gabarito foi mantido."
+    },
+    {
+      "id": "decorando-cpc-pdf-2795",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.005, CPC",
+      "gabarito": "C",
+      "motivo": "Correta. Pelo art. 1.005, o recurso interposto por um dos litisconsortes a todos aproveita, salvo se distintos ou opostos os seus interesses, e, pelo parágrafo único, havendo solidariedade passiva o recurso de um devedor aproveita aos outros quando as defesas opostas ao credor lhes forem comuns. O enquadramento da prescrição como defesa comum às devedoras solidárias decorre do direito material (Código Civil), que não integra o texto usado nesta revisão; o gabarito foi mantido."
+    },
+    {
+      "id": "decorando-cpc-pdf-2860",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.015, VIII, CPC",
+      "gabarito": "C",
+      "motivo": "Correta. Pelo art. 1.015, VIII, cabe agravo de instrumento contra a decisão que rejeita o pedido de limitação do litisconsórcio. O art. 113, § 1º, permite ao juiz limitar apenas o litisconsórcio facultativo, e o art. 114 define como necessário o litisconsórcio em que a eficácia da sentença depende da citação de todos; o desprovimento do agravo pressupõe reconhecer que os signatários do contrato cuja anulação se pede são litisconsortes necessários, enquadramento que decorre da natureza da relação jurídica e da doutrina, não de regra expressa; o gabarito foi mantido."
+    },
+    {
+      "id": "decorando-cpc-pdf-2866",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.015, § único, CPC",
+      "gabarito": "C",
+      "motivo": "Correta. Pelo art. 1.015, parágrafo único, cabe agravo de instrumento contra as decisões interlocutórias proferidas na fase de cumprimento de sentença, o que alcança a decisão que pronunciou a impenhorabilidade do bem. A afirmação de que o agravo deve ser provido depende da exceção à impenhorabilidade do bem de família prevista na Lei 8.009/1990, fora do texto do CPC usado nesta revisão; o gabarito foi mantido."
+    },
+    {
+      "id": "decorando-cpc-pdf-2871",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.017, II, CPC",
+      "gabarito": "C",
+      "motivo": "Correta. O art. 1.017, I, exige a juntada das procurações dos advogados do agravante e do agravado, e o inciso II admite a declaração de inexistência de qualquer desses documentos feita pelo advogado do agravante. No caso, o agravo foi interposto antes da citação do réu, sem advogado do agravado, e o agravante é a Fazenda Pública; a dispensa de procuração para a Advocacia Pública decorre de norma que não consta do texto do CPC usado nesta revisão; o gabarito foi mantido."
+    },
+    {
+      "id": "decorando-cpc-pdf-2878",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.021, CPC",
+      "gabarito": "C",
+      "motivo": "Correta. Pelo art. 1.021, a decisão do relator é impugnável por agravo interno para o órgão colegiado, de modo que não se esgotam as vias ordinárias de impugnação; por essa razão, a decisão monocrática do relator não é objeto de recurso extraordinário. Essa conclusão decorre do requisito constitucional de decisão de única ou última instância e da Súmula 281 do STF, que não constam do texto do CPC usado nesta revisão; o gabarito foi mantido."
+    },
+    {
+      "id": "decorando-cpc-pdf-2903",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.025, CPC",
+      "gabarito": "C",
+      "motivo": "Correta. O art. 1.025 considera incluídos no acórdão os elementos que o embargante suscitou, para fins de pré-questionamento, ainda que os embargos de declaração sejam rejeitados, caso o tribunal superior considere existentes erro, omissão, contradição ou obscuridade, o que sustenta a segunda parte da afirmativa. A primeira parte (o agravo do art. 1.042 não supre a falta de prequestionamento) e a referência às Súmulas 282 e 356 do STF decorrem de jurisprudência dos tribunais superiores, que não consta do texto do CPC usado nesta revisão; o gabarito foi mantido."
+    },
+    {
+      "id": "decorando-cpc-pdf-2912",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.025, CPC",
+      "gabarito": "C",
+      "motivo": "Correta. O art. 1.025 considera incluídos no acórdão, para fins de pré-questionamento, os elementos que o embargante suscitou, ainda que os embargos de declaração sejam inadmitidos ou rejeitados, caso o tribunal superior considere existentes erro, omissão, contradição ou obscuridade. A condição acrescentada no enunciado (matéria oportunamente submetida ao tribunal de origem) não consta do artigo, que exige que o tribunal superior reconheça o vício; o gabarito foi mantido."
+    },
+    {
+      "id": "decorando-cpc-pdf-2924",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.030, § 2º, CPC",
+      "gabarito": "C",
+      "motivo": "Correta. Pelo art. 1.030, I, b, o presidente ou o vice-presidente nega seguimento a recurso especial interposto contra acórdão em conformidade com entendimento do STJ exarado no regime de recursos repetitivos, e, pelo § 2º, dessa decisão caberá agravo interno, nos termos do art. 1.021, em que se pode demonstrar que o caso é distinto. O órgão colegiado competente (Plenário ou Órgão Especial) é definido pelo regimento interno do tribunal (art. 1.021, caput), que não consta do texto usado nesta revisão; o gabarito foi mantido."
     }
   ],
   "pendentes": [
@@ -1149,22 +1249,52 @@
       "topico": "cpc-m14",
       "dispositivo": "Art. 513, § 5º, CPC",
       "gabarito": "E",
-      "motivo": "Em revisão. O art. 513, § 5º, dispõe que o cumprimento da sentença não poderá ser promovido em face do fiador, do coobrigado ou do corresponsável que não tiver participado da fase de conhecimento, e o § 1º dispõe que ele se faz a requerimento do exequente. O enunciado fala em cumprimento \"pleiteado pelo credor e pelo fiador\", redação ambígua que pode ser lida como execução contra o fiador (hipótese vedada) ou como execução promovida pelo fiador, caso em que a sucessão do exequente depende de dispositivos que não constam do texto compilado usado nesta revisão, que vai até o art. 746. Por isso o gabarito (Errada) não foi confirmado."
+      "motivo": "Em revisão. O art. 513, § 5º, dispõe que o cumprimento da sentença não poderá ser promovido em face do fiador, do coobrigado ou do corresponsável que não tiver participado da fase de conhecimento, e o § 1º dispõe que ele se faz a requerimento do exequente. O enunciado fala em cumprimento \"pleiteado pelo credor e pelo fiador\", redação ambígua que pode ser lida como cumprimento contra o fiador (hipótese vedada pelo § 5º, o que sustentaria o gabarito Errada) ou como cumprimento promovido pelo fiador, caso em que o art. 778, § 1º, IV, admite que o sub-rogado, nos casos de sub-rogação legal ou convencional, promova a execução forçada ou nela prossiga em sucessão ao exequente originário, sem exigir que tenha sido parte na fase de conhecimento. O texto do CPC usado nesta revisão não resolve qual leitura é a pretendida, e a sub-rogação do fiador depende de lei material que dele não consta. Por isso o gabarito (Errada) não foi confirmado."
+    },
+    {
+      "id": "decorando-cpc-pdf-2415",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 833, CPC c/c 884, § 1º, CLT",
+      "gabarito": "C",
+      "motivo": "Em revisão. O art. 833, III, torna impenhoráveis os vestuários e os pertences de uso pessoal do executado, salvo se de elevado valor; a perícia apenas concluiu tratar-se de falsificação, sem precisar o valor. A conclusão do enunciado (extinguir os embargos sem exame de mérito e manter o relógio penhorado) depende da CLT (art. 884, § 1º, citado no rótulo) e do entendimento sobre a via adequada para alegar impenhorabilidade na execução trabalhista, o que não consta do texto do CPC usado nesta revisão e não pode ser confirmado a partir dele; o gabarito foi mantido, mas o item fica pendente."
+    },
+    {
+      "id": "decorando-cpc-pdf-2521",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 916, CPC",
+      "gabarito": "C",
+      "motivo": "Em revisão. O enunciado reproduz o art. 916, caput: depósito de trinta por cento do valor em execução, acrescido de custas e de honorários de advogado, e o restante em até 6 parcelas mensais, com correção monetária e juros de um por cento ao mês. Porém o § 7º do mesmo artigo dispõe que o parcelamento não se aplica ao cumprimento da sentença, e o caso trata de execução trabalhista de cálculo homologado; a aplicação subsidiária do art. 916 ao processo do trabalho depende da CLT e de normas do TST, que não constam do texto do CPC usado nesta revisão e não podem ser confirmadas a partir dele. O gabarito foi mantido, mas o item fica pendente."
+    },
+    {
+      "id": "decorando-cpc-pdf-2666",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 975, CPC e S. 401, STJ",
+      "gabarito": "C",
+      "motivo": "Em revisão. O art. 975, caput, dispõe que o direito à rescisão se extingue em 2 anos contados do trânsito em julgado da última decisão proferida no processo, o que confere com a primeira parte do enunciado. A parte final, que identifica como \"última decisão\" o ato que reconhece a intempestividade do recurso especial, depende da Súmula 401 do STJ (citada no rótulo) e do tratamento jurisprudencial do recurso intempestivo, quanto a prorrogar ou não o prazo da rescisória; esse tema não consta do texto do CPC usado nesta revisão e não pode ser confirmado a partir dele. O gabarito foi mantido, mas o item fica pendente."
+    },
+    {
+      "id": "decorando-cpc-pdf-2700",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 976, § 4º, CPC",
+      "gabarito": "C",
+      "motivo": "Em revisão. Pelo art. 977, II, as partes podem requerer a instauração do IRDR por petição dirigida ao presidente do tribunal; pelo art. 976, § 4º, o incidente é incabível se um tribunal superior já afetou recurso sobre a questão repetitiva; e, pelo § 3º, a inadmissão anterior por ausência de pressuposto não impede nova suscitação, uma vez satisfeito o requisito. Porém o art. 981 atribui o juízo de admissibilidade ao órgão colegiado competente para julgar o incidente, após a distribuição, e não ao presidente do tribunal, a quem o enunciado atribui o exame de admissibilidade; essa divergência com o texto impede confirmar o gabarito apenas por ele. O gabarito foi mantido, mas o item fica pendente."
+    },
+    {
+      "id": "decorando-cpc-pdf-2746",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 988, § 5º, I, CPC",
+      "gabarito": "E",
+      "motivo": "Em revisão. Pelo art. 988, § 5º, I, é liminarmente indeferida a reclamação proposta após o trânsito em julgado da decisão reclamada, o que coincide com a primeira parte do enunciado (\"apenas nos casos em que não tenha ocorrido o trânsito em julgado\"). A cláusula final (\"ainda que a reclamação seja anterior a preclusão máxima\") é ininteligível no texto atual e não permite confirmar, a partir do CPC, por que o enunciado seria errado. O gabarito foi mantido, mas o item fica pendente."
+    },
+    {
+      "id": "decorando-cpc-pdf-2784",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.000, CPC",
+      "gabarito": "C",
+      "motivo": "Em revisão. O art. 1.000 impede de recorrer a parte que aceitar, expressa ou tacitamente, a decisão, e considera aceitação tácita a prática, sem nenhuma reserva, de ato incompatível com a vontade de recorrer (parágrafo único). No caso, a manifestação do réu na contestação, admitindo o dano e dispondo-se a ressarci-lo, foi anterior à sentença e não é aceitação da decisão recorrida, de modo que o texto do art. 1.000 não basta para concluir que a apelação dele não deva ser conhecida; as demais questões do caso (tempestividade da apelação do Ministério Público, intimação pessoal e prazo em dobro) dependem de outros dispositivos e da legislação sobre improbidade. Por isso o gabarito (Correta) não foi confirmado."
     }
   ],
   "notasRotulo": [
-    {
-      "id": "decorando-cpc-pdf-0090",
-      "topico": "cpc-m01",
-      "dispositivo": "Art. 14 c/c 1.046, CPC",
-      "status": "certificado-parcial"
-    },
-    {
-      "id": "decorando-cpc-pdf-0093",
-      "topico": "cpc-m01",
-      "dispositivo": "Arts. 14 e 1.046, CPC",
-      "status": "certificado-parcial"
-    },
     {
       "id": "decorando-cpc-pdf-0239",
       "topico": "cpc-m03",
@@ -1184,34 +1314,16 @@
       "status": "certificado"
     },
     {
-      "id": "decorando-cpc-pdf-0620",
-      "topico": "cpc-m05",
-      "dispositivo": "Arts. 113, § 2º e 1.015, VIII, CPC",
-      "status": "certificado-parcial"
-    },
-    {
       "id": "decorando-cpc-pdf-0630",
       "topico": "cpc-m05",
       "dispositivo": "Art. 114 c/c 1.015, VII, CPC",
-      "status": "certificado-parcial"
-    },
-    {
-      "id": "decorando-cpc-pdf-0678",
-      "topico": "cpc-m05",
-      "dispositivo": "Arts. 125, § 2º e 1.015, IX, CPC",
-      "status": "certificado-parcial"
+      "status": "certificado"
     },
     {
       "id": "decorando-cpc-pdf-0679",
       "topico": "cpc-m05",
       "dispositivo": "Art. 125, § 2º, CPC",
       "status": "certificado"
-    },
-    {
-      "id": "decorando-cpc-pdf-0812",
-      "topico": "cpc-m06",
-      "dispositivo": "Arts. 144 e 966, CPC",
-      "status": "certificado-parcial"
     },
     {
       "id": "decorando-cpc-pdf-0818",
@@ -1226,22 +1338,10 @@
       "status": "certificado-parcial"
     },
     {
-      "id": "decorando-cpc-pdf-0998",
-      "topico": "cpc-m07",
-      "dispositivo": "Art. 203, § 1º c/c 1.009, CPC",
-      "status": "certificado-parcial"
-    },
-    {
       "id": "decorando-cpc-pdf-1066",
       "topico": "cpc-m07",
       "dispositivo": "Art. 229, § 2º, CPC",
       "status": "certificado"
-    },
-    {
-      "id": "decorando-cpc-pdf-1069",
-      "topico": "cpc-m07",
-      "dispositivo": "Art. 229, § 2º c/c 997, § 2º, III, CPC",
-      "status": "certificado-parcial"
     },
     {
       "id": "decorando-cpc-pdf-1144",
@@ -1256,12 +1356,6 @@
       "status": "certificado-parcial"
     },
     {
-      "id": "decorando-cpc-pdf-1266",
-      "topico": "cpc-m09",
-      "dispositivo": "Art. 301 e 830, CPC",
-      "status": "certificado-parcial"
-    },
-    {
       "id": "decorando-cpc-pdf-1427",
       "topico": "cpc-m10",
       "dispositivo": "Art. 321, CPC e S. 263, TST",
@@ -1272,12 +1366,6 @@
       "topico": "cpc-m10",
       "dispositivo": "Art. 332, § 3º, CPC",
       "status": "certificado"
-    },
-    {
-      "id": "decorando-cpc-pdf-1454",
-      "topico": "cpc-m10",
-      "dispositivo": "Arts. 334 e 785, CPC",
-      "status": "certificado-parcial"
     },
     {
       "id": "decorando-cpc-pdf-1650",
@@ -1298,6 +1386,12 @@
       "status": "certificado-parcial"
     },
     {
+      "id": "decorando-cpc-pdf-1825",
+      "topico": "cpc-m13",
+      "dispositivo": "Art. 485, I c/c 486, CPC",
+      "status": "certificado"
+    },
+    {
       "id": "decorando-cpc-pdf-1942",
       "topico": "cpc-m13",
       "dispositivo": "Art. 502, § 1º, I a III, CPC",
@@ -1316,16 +1410,10 @@
       "status": "certificado-parcial"
     },
     {
-      "id": "decorando-cpc-pdf-2031",
-      "topico": "cpc-m14",
-      "dispositivo": "Arts. 520 e 1.012, §1°, §2°, CPC",
-      "status": "certificado"
-    },
-    {
       "id": "decorando-cpc-pdf-2250",
       "topico": "cpc-m18",
       "dispositivo": "Arts. 677, § 4º e 1.015, § único, CPC",
-      "status": "certificado-parcial"
+      "status": "certificado"
     },
     {
       "id": "decorando-cpc-pdf-2283",
@@ -1334,74 +1422,157 @@
       "status": "certificado-parcial"
     },
     {
-      "id": "decorando-cpc-pdf-2519",
-      "topico": "cpc-m07",
-      "dispositivo": "Art. 229 c/c 915, § 3º, CPC",
-      "status": "certificado-parcial"
-    },
-    {
-      "id": "decorando-cpc-pdf-2546",
-      "topico": "cpc-m07",
-      "dispositivo": "Arts. 203, § 1º, 924, V e 1.009, CPC",
-      "status": "certificado-parcial"
-    },
-    {
-      "id": "decorando-cpc-pdf-2659",
-      "topico": "cpc-m06",
-      "dispositivo": "Arts. 183 c/c 970, CPC",
-      "status": "certificado-parcial"
-    },
-    {
-      "id": "decorando-cpc-pdf-2791",
-      "topico": "cpc-m07",
-      "dispositivo": "Art. 219 c/c 1.003, § 5º, CPC",
-      "status": "certificado-parcial"
-    },
-    {
-      "id": "decorando-cpc-pdf-2806",
-      "topico": "cpc-m07",
-      "dispositivo": "Art. 203, § 1º c/c 1.009, CPC",
-      "status": "certificado-parcial"
-    }
-  ],
-  "topicosNaoRevisados": [
-    {
+      "id": "decorando-cpc-pdf-2359",
       "topico": "cpc-m16",
-      "titulo": "Módulo 16 — Execução: princípios, títulos, obrigações e Fazenda",
-      "intervalo": "CPC, arts. 771 a 823 e 910 a 913",
-      "itens": 52
+      "dispositivo": "Art. 775, I, CPC",
+      "status": "certificado"
     },
     {
+      "id": "decorando-cpc-pdf-2415",
       "topico": "cpc-m17",
-      "titulo": "Módulo 17 — Execução por quantia, penhora, expropriação e embargos",
-      "intervalo": "CPC, arts. 824 a 909 e 914 a 925",
-      "itens": 131
+      "dispositivo": "Art. 833, CPC c/c 884, § 1º, CLT",
+      "status": "pendente"
     },
     {
+      "id": "decorando-cpc-pdf-2438",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 882, CLT c/c 835, § 2º, CPC",
+      "status": "certificado-parcial"
+    },
+    {
+      "id": "decorando-cpc-pdf-2453",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 854, §§ 2 e 3º, CPC",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2470",
+      "topico": "cpc-m17",
+      "dispositivo": "Arts. 870 e 871, I, CPC",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2472",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 871, I, parágrafo único, CPC",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2480",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 880, CPC",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2518",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 915, § 3º CPC",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2536",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 921, II, §§ 1º a 3º, CPC",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2537",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 921, II, §§ 1º e 4º, CPC",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2540",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 921, III, § 1º, CPC c/c S. 150, STF",
+      "status": "certificado-parcial"
+    },
+    {
+      "id": "decorando-cpc-pdf-2548",
       "topico": "cpc-m15",
-      "titulo": "Módulo 15 — Recursos, precedentes, repercussão e repetitivos",
-      "intervalo": "CPC, arts. 926 a 928 e 994 a 1.041",
-      "itens": 194
+      "dispositivo": "Art. 926, CPC",
+      "status": "certificado"
     },
     {
+      "id": "decorando-cpc-pdf-2549",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 926 e 1.043, CPC",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2655",
       "topico": "cpc-m20",
-      "titulo": "Módulo 20 — Processos nos tribunais, rescisória, IAC, IRDR e reclamação",
-      "intervalo": "CPC, arts. 947 a 959 e 966 a 993",
-      "itens": 156
+      "dispositivo": "Art. 969 c/c 988, I, CPC",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2666",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 975, CPC e S. 401, STJ",
+      "status": "pendente"
+    },
+    {
+      "id": "decorando-cpc-pdf-2680",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 976, I, II, § 2º, CPC",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2731",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 985, I, CPC",
+      "status": "certificado-parcial"
+    },
+    {
+      "id": "decorando-cpc-pdf-2741",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 988, IV, § 5º, II, CPC",
+      "status": "certificado-parcial"
+    },
+    {
+      "id": "decorando-cpc-pdf-2802",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.007, § 2º, CPC",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2823",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.009 c/c 1.012, § 1º, V, CPC",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2830",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.013, § 1º, III e § 3º, II, CPC",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2934",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.035, § 2º, CPC",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2936",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.035, § 6º, CPC",
+      "status": "certificado"
     }
   ],
   "datasetBlobShasBefore": {
     "tools/decorando-data-cpc.js": "6101ad48e4467574610a680060fc5b612e412848"
   },
   "datasetBlobShas": {
-    "tools/decorando-data-cpc.js": "603a0800cddc4f6567fad5519ed8395b3076c84d"
+    "tools/decorando-data-cpc.js": "215261269a305d190e140ce6505622a1fb899d4a"
   },
   "observacoes": [
     "Os enunciados e os campos de banca e cargo não foram alterados nesta revisão; só mudam parts, explicação e legalAudit.",
-    "Fonte: texto compilado do CPC (Lei 13.105/2015) enviado pelo proprietário (impressão do Planalto de 28/10/2026), do art. 1º ao art. 746; o arquivo enviado termina nesse artigo.",
-    "O cabeçalho do texto compilado traz a anotação \"Vide Lei nº 15.479, de 2026\"; essa lei não foi incorporada à conferência.",
+    "Fonte: texto compilado do CPC (Lei 13.105/2015) enviado pelo proprietário (impressão do Planalto de 28/10/2026), completo, do art. 1º ao art. 1.072.",
+    "O cabeçalho do texto compilado traz as anotações \"Vide Lei nº 15.479, de 2026\" e \"Vide Lei nº 15.484, de 2026\"; o conteúdo dessas leis não consta do arquivo e não foi incorporado à conferência.",
+    "Anotações do tipo \"Vide AR 2876\" e \"Vide ADI 5534\" no texto compilado remetem a decisões do STF cujo conteúdo não consta do arquivo; os itens que dependem delas ficaram certificados de forma parcial.",
     "Dispositivos com mais de uma redação no texto compilado (arts. 75, III; 246; 247; 397; 521, III; 537, § 3º, entre outros) foram conferidos pela redação vigente, a mais recente.",
-    "Itens cuja correção depende de jurisprudência, doutrina, súmula, outra lei (CLT, Código Civil, Constituição, Lei do Mandado de Segurança, Lei da Ação Popular, Estatuto da Pessoa com Deficiência, Lei Uniforme de Genebra) ou de artigo posterior ao art. 746 foram certificados de forma parcial, com a ressalva na explicação, e o gabarito foi mantido.",
+    "Itens cuja correção depende de jurisprudência, doutrina, súmula, outra lei (CLT, Código Civil, Constituição, Lei do Mandado de Segurança, Lei da Ação Popular, Estatuto da Pessoa com Deficiência, Lei Uniforme de Genebra) foram certificados de forma parcial, com a ressalva na explicação, e o gabarito foi mantido.",
     "Itens em que o gabarito não pôde ser confirmado com o texto, ou em que o enunciado é ambíguo ou incompleto, ficaram pendentes (\"Em revisão.\"), sem alteração do gabarito.",
     "Rótulos de dispositivo que não correspondem ao conteúdo cobrado foram mantidos e sinalizados dentro da explicação.",
     "O Código Civil enviado (2ª edição, 2008) não é texto compilado atual; os itens de Direito Civil não foram revisados com ele."
@@ -2042,7 +2213,7 @@
       "topico": "cpc-m01",
       "dispositivo": "Arts. 14 e 1.046, CPC",
       "gabarito": "C",
-      "status": "certificado-parcial"
+      "status": "certificado"
     },
     {
       "id": "decorando-cpc-pdf-0094",
@@ -2791,7 +2962,7 @@
       "topico": "cpc-m02",
       "dispositivo": "Art. 41, CPC",
       "gabarito": "E",
-      "status": "certificado-parcial"
+      "status": "certificado"
     },
     {
       "id": "decorando-cpc-pdf-0206",
@@ -5248,7 +5419,7 @@
       "topico": "cpc-m04",
       "dispositivo": "Art. 99, § 4º c/c 1/015, V, CPC",
       "gabarito": "C",
-      "status": "certificado-parcial"
+      "status": "certificado"
     },
     {
       "id": "decorando-cpc-pdf-0564",
@@ -5633,7 +5804,7 @@
       "topico": "cpc-m05",
       "dispositivo": "Arts. 113, § 2º e 1.015, VIII, CPC",
       "gabarito": "C",
-      "status": "certificado-parcial"
+      "status": "certificado"
     },
     {
       "id": "decorando-cpc-pdf-0621",
@@ -5703,7 +5874,7 @@
       "topico": "cpc-m05",
       "dispositivo": "Art. 114 c/c 1.015, VII, CPC",
       "gabarito": "C",
-      "status": "certificado-parcial"
+      "status": "certificado"
     },
     {
       "id": "decorando-cpc-pdf-0631",
@@ -6018,7 +6189,7 @@
       "topico": "cpc-m05",
       "dispositivo": "Arts. 125, § 2º e 1.015, IX, CPC",
       "gabarito": "C",
-      "status": "certificado-parcial"
+      "status": "certificado"
     },
     {
       "id": "decorando-cpc-pdf-0679",
@@ -6921,7 +7092,7 @@
       "topico": "cpc-m06",
       "dispositivo": "Arts. 144 e 966, CPC",
       "gabarito": "C",
-      "status": "certificado-parcial"
+      "status": "certificado"
     },
     {
       "id": "decorando-cpc-pdf-0813",
@@ -7418,7 +7589,7 @@
       "topico": "cpc-m06",
       "dispositivo": "Arts. 179, 180, e 1.023, CPC",
       "gabarito": "C",
-      "status": "certificado-parcial"
+      "status": "certificado"
     },
     {
       "id": "decorando-cpc-pdf-0920",
@@ -7943,7 +8114,7 @@
       "topico": "cpc-m07",
       "dispositivo": "Art. 203, § 1º c/c 1.009, CPC",
       "gabarito": "C",
-      "status": "certificado-parcial"
+      "status": "certificado"
     },
     {
       "id": "decorando-cpc-pdf-0999",
@@ -8412,7 +8583,7 @@
       "topico": "cpc-m07",
       "dispositivo": "Art. 229, § 2º c/c 997, § 2º, III, CPC",
       "gabarito": "C",
-      "status": "certificado-parcial"
+      "status": "certificado"
     },
     {
       "id": "decorando-cpc-pdf-1070",
@@ -9525,7 +9696,7 @@
       "topico": "cpc-m09",
       "dispositivo": "Art. 301 e 830, CPC",
       "gabarito": "C",
-      "status": "certificado-parcial"
+      "status": "certificado"
     },
     {
       "id": "decorando-cpc-pdf-1267",
@@ -9959,7 +10130,7 @@
       "topico": "cpc-m09",
       "dispositivo": "Art. 311, CPC",
       "gabarito": "C",
-      "status": "certificado-parcial"
+      "status": "certificado"
     },
     {
       "id": "decorando-cpc-pdf-1329",
@@ -9994,7 +10165,7 @@
       "topico": "cpc-m09",
       "dispositivo": "Art. 311, II, CPC",
       "gabarito": "C",
-      "status": "certificado-parcial"
+      "status": "certificado"
     },
     {
       "id": "decorando-cpc-pdf-1334",
@@ -10344,7 +10515,7 @@
       "topico": "cpc-m10",
       "dispositivo": "Art. 322, § 2º, CPC",
       "gabarito": "C",
-      "status": "certificado-parcial"
+      "status": "certificado"
     },
     {
       "id": "decorando-cpc-pdf-1387",
@@ -10792,7 +10963,7 @@
       "topico": "cpc-m10",
       "dispositivo": "Arts. 334 e 785, CPC",
       "gabarito": "C",
-      "status": "certificado-parcial"
+      "status": "certificado"
     },
     {
       "id": "decorando-cpc-pdf-1455",
@@ -10967,7 +11138,7 @@
       "topico": "cpc-m11",
       "dispositivo": "Art. 337, XI, § 5º, CPC",
       "gabarito": "C",
-      "status": "certificado-parcial"
+      "status": "certificado"
     },
     {
       "id": "decorando-cpc-pdf-1480",
@@ -13340,7 +13511,7 @@
       "topico": "cpc-m13",
       "dispositivo": "Art. 485, I c/c 486, CPC",
       "gabarito": "E",
-      "status": "certificado-parcial"
+      "status": "certificado"
     },
     {
       "id": "decorando-cpc-pdf-1826",
@@ -13445,7 +13616,7 @@
       "topico": "cpc-m13",
       "dispositivo": "Arts. 485, VI, § 7º c/c 784, X e 785, CPC",
       "gabarito": "C",
-      "status": "certificado-parcial"
+      "status": "certificado"
     },
     {
       "id": "decorando-cpc-pdf-1841",
@@ -14054,7 +14225,7 @@
       "topico": "cpc-m13",
       "dispositivo": "Arts. 496, § 4º, III, c/c 1.003, § 5º, CPC",
       "gabarito": "C",
-      "status": "certificado-parcial"
+      "status": "certificado"
     },
     {
       "id": "decorando-cpc-pdf-1928",
@@ -14817,7 +14988,7 @@
       "topico": "cpc-m14",
       "dispositivo": "Art. 521, I, § único, CPC",
       "gabarito": "C",
-      "status": "certificado-parcial"
+      "status": "certificado"
     },
     {
       "id": "decorando-cpc-pdf-2040",
@@ -15713,7 +15884,7 @@
       "topico": "cpc-m18",
       "dispositivo": "Arts. 677, § 4º e 1.015, § único, CPC",
       "gabarito": "C",
-      "status": "certificado-parcial"
+      "status": "certificado"
     },
     {
       "id": "decorando-cpc-pdf-2252",
@@ -15982,18 +16153,1817 @@
       "status": "certificado"
     },
     {
+      "id": "decorando-cpc-pdf-2357",
+      "topico": "cpc-m16",
+      "dispositivo": "Art. 774, § único, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2358",
+      "topico": "cpc-m16",
+      "dispositivo": "Art. 775, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2359",
+      "topico": "cpc-m16",
+      "dispositivo": "Art. 775, I, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2360",
+      "topico": "cpc-m16",
+      "dispositivo": "Art. 775, caput e § único, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2361",
+      "topico": "cpc-m16",
+      "dispositivo": "Art. 776, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2362",
+      "topico": "cpc-m16",
+      "dispositivo": "Art. 778, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2363",
+      "topico": "cpc-m16",
+      "dispositivo": "Art. 778, § 1º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2364",
+      "topico": "cpc-m16",
+      "dispositivo": "Art. 778, §§ 1º e 2º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2365",
+      "topico": "cpc-m16",
+      "dispositivo": "Art. 778, § 1º, III, § 2º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2366",
+      "topico": "cpc-m16",
+      "dispositivo": "Art. 780, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2367",
+      "topico": "cpc-m16",
+      "dispositivo": "Art. 782, § 3º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2368",
+      "topico": "cpc-m16",
+      "dispositivo": "Art. 782, § 3º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2369",
+      "topico": "cpc-m16",
+      "dispositivo": "Art. 782, § 3º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2370",
+      "topico": "cpc-m16",
+      "dispositivo": "Art. 782, § 3º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2371",
+      "topico": "cpc-m16",
+      "dispositivo": "Art. 784, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2372",
+      "topico": "cpc-m16",
+      "dispositivo": "Art. 784, I, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2373",
+      "topico": "cpc-m16",
+      "dispositivo": "Art. 784, I, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2374",
+      "topico": "cpc-m16",
+      "dispositivo": "Art. 784, III, § 4º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2375",
+      "topico": "cpc-m16",
+      "dispositivo": "Art. 784, IV, CPC",
+      "gabarito": "E",
+      "status": "certificado-parcial"
+    },
+    {
+      "id": "decorando-cpc-pdf-2376",
+      "topico": "cpc-m16",
+      "dispositivo": "Art. 785, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2377",
+      "topico": "cpc-m16",
+      "dispositivo": "Art. 785, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2378",
+      "topico": "cpc-m16",
+      "dispositivo": "Art. 785, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2379",
+      "topico": "cpc-m16",
+      "dispositivo": "Art. 785, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2380",
+      "topico": "cpc-m16",
+      "dispositivo": "Art. 785, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2381",
+      "topico": "cpc-m16",
+      "dispositivo": "Art. 785, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2382",
+      "topico": "cpc-m16",
+      "dispositivo": "Art. 786, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2383",
+      "topico": "cpc-m16",
+      "dispositivo": "Art. 790, II, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2384",
+      "topico": "cpc-m16",
+      "dispositivo": "Art. 791, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2385",
+      "topico": "cpc-m16",
+      "dispositivo": "Art. 792, I, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2386",
+      "topico": "cpc-m16",
+      "dispositivo": "Art. 792, I a IV, CPC",
+      "gabarito": "C",
+      "status": "certificado-parcial"
+    },
+    {
+      "id": "decorando-cpc-pdf-2387",
+      "topico": "cpc-m16",
+      "dispositivo": "Art. 792, II, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2388",
+      "topico": "cpc-m16",
+      "dispositivo": "Arts. 792, § 1°, e 856, § 3°, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2389",
+      "topico": "cpc-m16",
+      "dispositivo": "Art. 792, § 3°, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2390",
+      "topico": "cpc-m16",
+      "dispositivo": "Art. 794, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2391",
+      "topico": "cpc-m16",
+      "dispositivo": "Art. 797 e 805, CPC",
+      "gabarito": "C",
+      "status": "certificado-parcial"
+    },
+    {
+      "id": "decorando-cpc-pdf-2392",
+      "topico": "cpc-m16",
+      "dispositivo": "Art. 797, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2393",
+      "topico": "cpc-m16",
+      "dispositivo": "Arts. 797 e 844, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2394",
+      "topico": "cpc-m16",
+      "dispositivo": "Art. 798, I, a, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2395",
+      "topico": "cpc-m16",
+      "dispositivo": "Art. 803, I, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2396",
+      "topico": "cpc-m16",
+      "dispositivo": "Art. 804, CPC",
+      "gabarito": "C",
+      "status": "certificado-parcial"
+    },
+    {
+      "id": "decorando-cpc-pdf-2397",
+      "topico": "cpc-m16",
+      "dispositivo": "Art. 805, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2398",
+      "topico": "cpc-m16",
+      "dispositivo": "Art. 805, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2399",
+      "topico": "cpc-m16",
+      "dispositivo": "Art. 805, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2400",
+      "topico": "cpc-m16",
+      "dispositivo": "Art. 805, § único, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2401",
+      "topico": "cpc-m16",
+      "dispositivo": "Art. 816, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2402",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 825, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2403",
+      "topico": "cpc-m17",
+      "dispositivo": "Arts. 825 e 865, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2404",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 827, § 1º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2405",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 827, § 1º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2406",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 827, § 1º c/c 829, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2407",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 828, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2408",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 828, § 4º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2409",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 829, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2410",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 829, § 2º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2411",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 830, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2412",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 830, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2413",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 830, caput e § 3º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2414",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 833, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2415",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 833, CPC c/c 884, § 1º, CLT",
+      "gabarito": "C",
+      "status": "pendente"
+    },
+    {
+      "id": "decorando-cpc-pdf-2416",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 833, I, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2417",
+      "topico": "cpc-m17",
+      "dispositivo": "Arts. 833, I e 834, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2418",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 833, I, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2419",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 833, III, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2420",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 833, III, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2421",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 833, V, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2422",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 833, V, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2423",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 833, VI, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2424",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 833, VI, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2425",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 833, VI, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2426",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 833, VIII, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2427",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 833, VIII, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2428",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 833, X, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2429",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 833, X, CPC",
+      "gabarito": "E",
+      "status": "certificado-parcial"
+    },
+    {
+      "id": "decorando-cpc-pdf-2430",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 833, § 1º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2431",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 833, § 2º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2432",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 834, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2433",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 835, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2434",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 835, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2435",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 835, § 1º, CPC",
+      "gabarito": "C",
+      "status": "certificado-parcial"
+    },
+    {
+      "id": "decorando-cpc-pdf-2436",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 835, § 2º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2437",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 835, § 2º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2438",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 882, CLT c/c 835, § 2º, CPC",
+      "gabarito": "C",
+      "status": "certificado-parcial"
+    },
+    {
+      "id": "decorando-cpc-pdf-2439",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 836, § 1º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2440",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 836, § 1º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2441",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 840, II, §§ 1º e 2º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2442",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 841, § 2º, CPC",
+      "gabarito": "C",
+      "status": "certificado-parcial"
+    },
+    {
+      "id": "decorando-cpc-pdf-2443",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 842, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2444",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 843, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2445",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 843, CPC",
+      "gabarito": "C",
+      "status": "certificado-parcial"
+    },
+    {
+      "id": "decorando-cpc-pdf-2446",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 844, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2447",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 845, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2448",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 846, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2449",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 848, V, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2450",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 848, § único, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2451",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 854, § 2º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2452",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 854, § 2º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2453",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 854, §§ 2 e 3º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2454",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 854, § 3º, I, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2456",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 862, §§ 3º e 4º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2457",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 863, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2458",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 866, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2459",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 866, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2460",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 866, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2461",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 866, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2462",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 866, § 1º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2463",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 866, § 3º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2464",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 868, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2465",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 868, § 1º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2466",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 868, § 2º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2467",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 869, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2468",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 870, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2469",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 870, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2470",
+      "topico": "cpc-m17",
+      "dispositivo": "Arts. 870 e 871, I, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2471",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 871, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2472",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 871, I, parágrafo único, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2473",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 872, I e II, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2474",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 876, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2475",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 876, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2476",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 876, § 6º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2477",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 877, § 1º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2478",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 877, § 3º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2479",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 878, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2480",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 880, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2481",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 881, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2482",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 882, § 3º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2483",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 883, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2484",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 889, I, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2485",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 891, § único, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2486",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 891, § único, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2487",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 893, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2488",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 893, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2489",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 894, § 2º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2490",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 895, II, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2491",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 903, §§ 2º e 4º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2492",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 903, § 4º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2493",
+      "topico": "cpc-m16",
+      "dispositivo": "Art. 910, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2494",
+      "topico": "cpc-m16",
+      "dispositivo": "Art. 910, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2495",
+      "topico": "cpc-m16",
+      "dispositivo": "Art. 910, CPC",
+      "gabarito": "C",
+      "status": "certificado-parcial"
+    },
+    {
+      "id": "decorando-cpc-pdf-2496",
+      "topico": "cpc-m16",
+      "dispositivo": "Art. 910, § 1º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2497",
+      "topico": "cpc-m16",
+      "dispositivo": "Art. 910, § 1º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2498",
+      "topico": "cpc-m16",
+      "dispositivo": "Art. 910, § 2º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2499",
+      "topico": "cpc-m16",
+      "dispositivo": "Art. 910, § 2º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2500",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 914, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2501",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 914, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2502",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 914, CPC",
+      "gabarito": "E",
+      "status": "certificado-parcial"
+    },
+    {
+      "id": "decorando-cpc-pdf-2504",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 914, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2505",
+      "topico": "cpc-m17",
+      "dispositivo": "Arts. 914 e 915, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2506",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 914, § 1º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2507",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 914, § 2º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2508",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 914, § 2º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2509",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 914, § 2º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2511",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 914, § 2º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2512",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 914, § 2º, CPC",
+      "gabarito": "C",
+      "status": "certificado-parcial"
+    },
+    {
+      "id": "decorando-cpc-pdf-2513",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 915, § 1º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2514",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 915, § 1º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2515",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 915, § 1º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2516",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 915, § 1º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2517",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 915, § 2º, I, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2518",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 915, § 3º CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
       "id": "decorando-cpc-pdf-2519",
       "topico": "cpc-m07",
       "dispositivo": "Art. 229 c/c 915, § 3º, CPC",
       "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2521",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 916, CPC",
+      "gabarito": "C",
+      "status": "pendente"
+    },
+    {
+      "id": "decorando-cpc-pdf-2522",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 916, § 1º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2523",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 917, IV, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2524",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 917, § 3º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2526",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 917, § 4º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2527",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 918, I, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2528",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 919, § 1º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2529",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 919, § 1º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2530",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 919, § 1º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2532",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 919, § 1º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2533",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 919, § 1º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2534",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 920, II, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2535",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 921, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2536",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 921, II, §§ 1º a 3º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2537",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 921, II, §§ 1º e 4º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2538",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 921, III, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2539",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 921, III e § 1º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2540",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 921, III, § 1º, CPC c/c S. 150, STF",
+      "gabarito": "C",
       "status": "certificado-parcial"
+    },
+    {
+      "id": "decorando-cpc-pdf-2541",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 921, IV, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2542",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 921, § 4º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2543",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 921, § 4º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2544",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 921, § 5º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2545",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 922, CPC",
+      "gabarito": "C",
+      "status": "certificado"
     },
     {
       "id": "decorando-cpc-pdf-2546",
       "topico": "cpc-m07",
       "dispositivo": "Arts. 203, § 1º, 924, V e 1.009, CPC",
       "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2547",
+      "topico": "cpc-m17",
+      "dispositivo": "Art. 925, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2548",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 926, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2549",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 926 e 1.043, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2550",
+      "topico": "cpc-m15",
+      "dispositivo": "Arts. 926, § 1º e 947, § 3º, CPC",
+      "gabarito": "C",
       "status": "certificado-parcial"
+    },
+    {
+      "id": "decorando-cpc-pdf-2551",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 926, § 2º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2552",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 927, CPC",
+      "gabarito": "C",
+      "status": "certificado-parcial"
+    },
+    {
+      "id": "decorando-cpc-pdf-2553",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 927, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2554",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 927, § 3º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2555",
+      "topico": "cpc-m15",
+      "dispositivo": "Arts. 927, § 3º e 985, CPC",
+      "gabarito": "C",
+      "status": "certificado-parcial"
+    },
+    {
+      "id": "decorando-cpc-pdf-2556",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 927, §§ 3º e 4º, CPC",
+      "gabarito": "C",
+      "status": "certificado-parcial"
+    },
+    {
+      "id": "decorando-cpc-pdf-2557",
+      "topico": "cpc-m15",
+      "dispositivo": "Arts. 928, I e II c/c 947, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2558",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 928, I e II, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2588",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 947, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2589",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 947, CPC",
+      "gabarito": "E",
+      "status": "certificado-parcial"
+    },
+    {
+      "id": "decorando-cpc-pdf-2590",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 947, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2591",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 947, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2592",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 947, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2593",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 947, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2594",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 947, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2595",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 947, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2596",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 947, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2597",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 947, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2598",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 947, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2599",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 947, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2600",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 947, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2601",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 947, § 1º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2602",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 947, § 1º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2603",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 947, § 1°, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2604",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 947, § 1º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2605",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 947, § 3º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2606",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 947, § 3º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2607",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 947, § 4º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2608",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 947, § 4°, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2609",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 947, § 4º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2610",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 951, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2611",
+      "topico": "cpc-m20",
+      "dispositivo": "Arts. 955, § único , II e 966, § 5º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2612",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 957, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2620",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 966, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2621",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 966, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2622",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 966, II, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2623",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 966, II, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2624",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 966, II, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2626",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 966, VI, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2627",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 966, § 1º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2628",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 966, § 1º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2629",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 966, § 2º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2630",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 966, § 2º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2631",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 966, § 2º, I, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2632",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 966, § 2º, I, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2633",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 966, § 2º, II, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2634",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 966, § 3º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2635",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 966, § 3º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2636",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 966, § 5º, § 6º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2637",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 967, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2638",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 967, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2639",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 968, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2640",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 968, I, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2641",
+      "topico": "cpc-m20",
+      "dispositivo": "Arts. 968, I e 974, CPC",
+      "gabarito": "E",
+      "status": "certificado-parcial"
+    },
+    {
+      "id": "decorando-cpc-pdf-2642",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 968, II, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2643",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 968, II, CPC",
+      "gabarito": "C",
+      "status": "certificado-parcial"
+    },
+    {
+      "id": "decorando-cpc-pdf-2644",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 968, II, § 1º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2645",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 968, § 1º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2646",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 968, § 5º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2647",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 968, § 5º, II, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2648",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 969, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2649",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 969, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2650",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 969, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2651",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 969, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2652",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 969, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2653",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 969, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2654",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 969, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2655",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 969 c/c 988, I, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2656",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 970, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2657",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 970, CPC",
+      "gabarito": "E",
+      "status": "certificado-parcial"
+    },
+    {
+      "id": "decorando-cpc-pdf-2658",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 970, CPC",
+      "gabarito": "C",
+      "status": "certificado"
     },
     {
       "id": "decorando-cpc-pdf-2659",
@@ -16003,18 +17973,1950 @@
       "status": "certificado-parcial"
     },
     {
+      "id": "decorando-cpc-pdf-2660",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 972, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2661",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 972, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2662",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 974, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2663",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 975, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2664",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 975, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2665",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 975, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2666",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 975, CPC e S. 401, STJ",
+      "gabarito": "C",
+      "status": "pendente"
+    },
+    {
+      "id": "decorando-cpc-pdf-2667",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 975, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2668",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 975, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2669",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 975, § 2º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2670",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 975, § 2º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2671",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 975, § 2º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2672",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 975, § 3º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2673",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 976, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2674",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 976, CPC",
+      "gabarito": "C",
+      "status": "certificado-parcial"
+    },
+    {
+      "id": "decorando-cpc-pdf-2675",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 976, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2676",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 976, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2677",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 976, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2678",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 976, I, II, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2679",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 976, I e II, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2680",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 976, I, II, § 2º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2681",
+      "topico": "cpc-m20",
+      "dispositivo": "Arts. 976, § 1º, e 998, § único, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2682",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 976, § 1º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2683",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 976, § 1°, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2684",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 976, § 1º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2685",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 976, § 1º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2686",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 976, § 1º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2687",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 976, § 1º, § 2º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2688",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 976, § 2º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2689",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 976, § 2º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2690",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 976, § 2º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2691",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 976, § 2º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2692",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 976, § 2º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2693",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 976, § 2º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2694",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 976, § 2º, CPC",
+      "gabarito": "C",
+      "status": "certificado-parcial"
+    },
+    {
+      "id": "decorando-cpc-pdf-2695",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 976, § 2º, CPC",
+      "gabarito": "C",
+      "status": "certificado-parcial"
+    },
+    {
+      "id": "decorando-cpc-pdf-2696",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 976, § 3º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2697",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 976, § 4º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2698",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 976, § 4º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2699",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 976, § 4º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2700",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 976, § 4º, CPC",
+      "gabarito": "C",
+      "status": "pendente"
+    },
+    {
+      "id": "decorando-cpc-pdf-2701",
+      "topico": "cpc-m20",
+      "dispositivo": "Art 976, § 4º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2702",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 976, § 4º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2703",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 976, § 4º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2704",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 976, § 4º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2705",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 976, § 4º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2706",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 976,§ 4º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2707",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 976, § 4°, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2708",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 977, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2709",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 977, III, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2710",
+      "topico": "cpc-m20",
+      "dispositivo": "Arts. 977, III e 982, § 3º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2711",
+      "topico": "cpc-m20",
+      "dispositivo": "Arts. 977, III, e 986, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2712",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 978, parágrafo único, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2713",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 980, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2714",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 980, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2715",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 980, § único, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2716",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 981, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2717",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 982, I, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2718",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 982, I, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2719",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 982, § 2º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2720",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 982, § 2°, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2721",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 982, § 2º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2722",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 982, § 2º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2723",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 982, § 2º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2724",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 982, § 2º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2725",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 982, §§ 3º e 4º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2726",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 983, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2727",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 985, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2728",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 985, I, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2729",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 985, I, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2730",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 985, I, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2731",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 985, I, CPC",
+      "gabarito": "E",
+      "status": "certificado-parcial"
+    },
+    {
+      "id": "decorando-cpc-pdf-2732",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 985, I, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2733",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 986, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2734",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 987, caput e § 1º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2735",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 987, § 1º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2736",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 987, § 1º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2737",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 987, § 1º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2738",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 987, § 2º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2739",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 982, I, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2740",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 988, III, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2741",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 988, IV, § 5º, II, CPC",
+      "gabarito": "C",
+      "status": "certificado-parcial"
+    },
+    {
+      "id": "decorando-cpc-pdf-2742",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 988, § 1º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2743",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 988, § 1º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2744",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 988, § 5º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2745",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 988, § 5º, CPC",
+      "gabarito": "C",
+      "status": "certificado-parcial"
+    },
+    {
+      "id": "decorando-cpc-pdf-2746",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 988, § 5º, I, CPC",
+      "gabarito": "E",
+      "status": "pendente"
+    },
+    {
+      "id": "decorando-cpc-pdf-2747",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 988, § 5º, II, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2748",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 988, § 5º, II, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2749",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 988, § 6º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2750",
+      "topico": "cpc-m20",
+      "dispositivo": "Arts. 988 e 989, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2751",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 989, III, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2752",
+      "topico": "cpc-m20",
+      "dispositivo": "Art. 991, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2753",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 994, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2754",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 995, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2755",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 995, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2756",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 995, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2757",
+      "topico": "cpc-m15",
+      "dispositivo": "Arts. 995 e 1.012, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2758",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 995, § único, CPC",
+      "gabarito": "C",
+      "status": "certificado-parcial"
+    },
+    {
+      "id": "decorando-cpc-pdf-2759",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 996, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2760",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 996, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2761",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 996, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2762",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 997, § 1º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2763",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 997, § 2º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2764",
+      "topico": "cpc-m15",
+      "dispositivo": "Arts. 997, § 2º, e 998, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2765",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 997, § 2º, II, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2766",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 997, § 2º, II, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2767",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 997, § 2º, III, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2768",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 998, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2769",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 998, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2770",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 998, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2771",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 998, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2773",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 998, caput e § único, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2774",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 998, § único, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2775",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 998, § único, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2776",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 998, § único, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2777",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 998, § único, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2778",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 999, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2779",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 999, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2780",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 999, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2781",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 999, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2782",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 999, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2783",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 999, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2784",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.000, CPC",
+      "gabarito": "C",
+      "status": "pendente"
+    },
+    {
+      "id": "decorando-cpc-pdf-2785",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.000, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2786",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.000, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2787",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.000, § único, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2788",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.001, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2789",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.001, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2790",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.003, § 5º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
       "id": "decorando-cpc-pdf-2791",
       "topico": "cpc-m07",
       "dispositivo": "Art. 219 c/c 1.003, § 5º, CPC",
       "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2792",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.003, § 6º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2793",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.003, § 6º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2794",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.003, § 6º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2795",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.005, CPC",
+      "gabarito": "C",
       "status": "certificado-parcial"
+    },
+    {
+      "id": "decorando-cpc-pdf-2796",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.005, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2797",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.005, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2798",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.005, § único, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2799",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.006, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2800",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.007, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2801",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.007, § 1º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2802",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.007, § 2º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2803",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.007, § 2º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2804",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.007, § 4º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2805",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.009, CPC",
+      "gabarito": "E",
+      "status": "certificado"
     },
     {
       "id": "decorando-cpc-pdf-2806",
       "topico": "cpc-m07",
       "dispositivo": "Art. 203, § 1º c/c 1.009, CPC",
       "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2808",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.009, § 1º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2809",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.009, § 1º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2810",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.009, § 1º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2811",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.009, § 1º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2812",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.009, § 1º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2813",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.009, § 1º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2814",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.010, § 3º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2815",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.010, § 3º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2816",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.012, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2817",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.012, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2818",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.012, § 1º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2819",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.012, § 1º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2820",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.012, § 1º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2821",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.012, § 1º, II, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2822",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.012, § 1º, II e § 2º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2823",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.009 c/c 1.012, § 1º, V, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2824",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.012, § 1º, V, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2825",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.012, § 1º, V c/c § 3º, I e II, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2826",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.012, § 1º, VI, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2827",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.012, § 1º, VI, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2828",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.012, § 4º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2829",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.013, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2830",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.013, § 1º, III e § 3º, II, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2831",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.013, § 2º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2832",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.013, § 2º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2833",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.013, § 3º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2834",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.013, § 3º, I, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2835",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.013, § 3º, III, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2836",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.013, § 4º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2837",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.013, § 4º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2838",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.013, § 5º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2839",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.013, § 5º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2840",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.013, § 5º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2841",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.014, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2842",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.014, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2843",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.015, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2844",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.015, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2845",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.015, I, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2846",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.015, I, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2847",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.015, I, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2848",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.015, III, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2849",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.015, III, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2850",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.015, IV, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2851",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.015, IV, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2852",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.015, V, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2853",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.015, V, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2854",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.015, V, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2855",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.015, VII, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2856",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.015, VII, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2857",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.015, VII, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2859",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.015, VII, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2860",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.015, VIII, CPC",
+      "gabarito": "C",
       "status": "certificado-parcial"
+    },
+    {
+      "id": "decorando-cpc-pdf-2861",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.015, IX, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2862",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.015, IX, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2863",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.015, IX, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2864",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.015, XI, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2865",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.015, § único, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2866",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.015, § único, CPC",
+      "gabarito": "C",
+      "status": "certificado-parcial"
+    },
+    {
+      "id": "decorando-cpc-pdf-2867",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.015, § único, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2868",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.015, § único, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2869",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.015, § único, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2870",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.017, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2871",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.017, II, CPC",
+      "gabarito": "C",
+      "status": "certificado-parcial"
+    },
+    {
+      "id": "decorando-cpc-pdf-2872",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.017, § 1º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2873",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.018, § 1º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2874",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.018, §§ 2º e 3º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2876",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.021, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2877",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.021, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2878",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.021, CPC",
+      "gabarito": "C",
+      "status": "certificado-parcial"
+    },
+    {
+      "id": "decorando-cpc-pdf-2879",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.021, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2880",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.021, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2881",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.021, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2882",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.021, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2883",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.021, § 2º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2884",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.021, § 4º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2885",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.021, § 4º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2886",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.022, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2887",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.022, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2888",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.022, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2889",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.022, II, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2890",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.022, II, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2891",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.022, III, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2892",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.022, III, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2893",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.023, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2894",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.023, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2895",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.023 c/c 219, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2896",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.024, § 2º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2897",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.024, § 2º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2898",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.024, § 3º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2899",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.024, § 4º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2900",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.024, § 5°, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2901",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.025, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2902",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.025, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2903",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.025, CPC",
+      "gabarito": "C",
+      "status": "certificado-parcial"
+    },
+    {
+      "id": "decorando-cpc-pdf-2904",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.026, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2905",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.026, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2906",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.026, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2907",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.026, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2908",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.026, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2909",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.026, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2910",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.026, § 2º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2911",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.026, § 3°, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2912",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.025, CPC",
+      "gabarito": "C",
+      "status": "certificado-parcial"
+    },
+    {
+      "id": "decorando-cpc-pdf-2915",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.029, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2916",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.029, § 3º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2917",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.029, § 5º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2918",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.030, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2919",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.030, I, “a”, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2920",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.030, I, b, § 2°, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2921",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.030, III, § 2°, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2922",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.030, III, § 2º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2923",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.030, III c/c 2º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2924",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.030, § 2º, CPC",
+      "gabarito": "C",
+      "status": "certificado-parcial"
+    },
+    {
+      "id": "decorando-cpc-pdf-2925",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.031, § 2º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2926",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.031, §§ 2º e 3º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2927",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.031, § 3º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2928",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.033, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2929",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.033, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2930",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.033, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2931",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.033, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2932",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.035, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2933",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.035, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2934",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.035, § 2º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2935",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.035, § 3º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2936",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.035, § 6º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2937",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.035, § 7°, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2938",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.035, § 11, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2939",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.036, § 1º, CPC",
+      "gabarito": "E",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2940",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.036, §§ 1º e 6º, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2941",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.037, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2942",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.037, CPC",
+      "gabarito": "C",
+      "status": "certificado"
+    },
+    {
+      "id": "decorando-cpc-pdf-2943",
+      "topico": "cpc-m15",
+      "dispositivo": "Art. 1.039, § único, CPC",
+      "gabarito": "C",
+      "status": "certificado"
     }
   ]
 }

@@ -14,6 +14,8 @@ test('CPC (código) — banco íntegro e revisão de 28/10/2026 coerente com o r
   assert.equal(data.length,report.totalDoBanco);
   assert.equal(new Set(data.map(q=>q.id)).size,data.length);
   assert.equal(reviewed.length,report.totalRevisado);
+  assert.equal(reviewed.length,data.length,'todas as questões do CPC devem ter revisão jurídica');
+  assert.equal(report.totalNaoRevisado,0);
   assert.equal(report.gabaritosAlterados,0);
   assert.equal(report.itensForaDaRevisaoAlterados,0);
   const status={},gab={C:0,E:0};
