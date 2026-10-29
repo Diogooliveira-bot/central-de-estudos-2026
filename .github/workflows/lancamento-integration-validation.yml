@@ -71,3 +71,35 @@ jobs:
           tests/pwa-cache-recovery-unit.mjs
           tests/content-publication-integrity-unit.mjs
           tests/removed-disciplines-unit.mjs
+          tests/public-app-url-unit.mjs
+          tests/premium-expiry-reminders-unit.mjs
+          tests/premium-expiry-handler-unit.mjs
+  commercial-browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout sem credenciais persistentes
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Node.js 22
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Dependencias travadas
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Captura SMTP isolada, sem destinatarios reais
+        run: |
+          docker run -d --name bc-mailpit --rm -p 127.0.0.1:1025:1025 -p 127.0.0.1:8025:8025 axllent/mailpit:v1.27.8
+          for i in $(seq 1 30); do
+            if curl -fsS http://127.0.0.1:8025/api/v1/messages >/dev/null; then exit 0; fi
+            sleep 2
+          done
+          exit 1
+      - name: Confirmacao e recuperacao por SMTP local
+        run: node tests/free-signup-mailpit-4-5.mjs
+      - name: Chromium para desktop e celular
+        run: npx playwright install --with-deps chromium --only-shell
+      - name: Jornada visual desktop e celular, APIs simuladas
+        run: node tests/free-signup-browser-4-5.mjs

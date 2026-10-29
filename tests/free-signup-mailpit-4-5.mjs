@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import crypto from 'node:crypto';
 import nodemailer from 'nodemailer';
-import { createFreeSignupHandler } from '../lib/free-signup-handler.js';
+import { createFreeSignupHandler,FREE_SIGNUP_TERMS_VERSION } from '../lib/free-signup-handler.js';
 import { sendResetEmail,emailConfig } from '../lib/password-reset.js';
 
 const env={
@@ -46,7 +46,8 @@ try{
  }});
  const register=response();
  await handler(request({action:'request',name:'Aluno Ficticio Mailpit',
-   email:'mailpit@example.invalid',password:'SenhaFicticiaSegura123!'}),register);
+   email:'mailpit@example.invalid',password:'SenhaFicticiaSegura123!',
+   ageConfirmed:true,termsAccepted:true,termsVersion:FREE_SIGNUP_TERMS_VERSION}),register);
  assert.equal(register.statusCode,200,JSON.stringify(register.body));
  assert.equal(users.size,0,'Conta criada antes de confirmar!');
  let textMessage;
