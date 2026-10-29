@@ -324,9 +324,18 @@
       if (!button) return null;
       const explicit = button.textContent.match(/(\d+)\s*\/\s*(\d+)/);
       const requested = Number(button.getAttribute('onclick')?.match(/,\s*(\d+)\s*\)/)?.[1]) || (type === 'summary' ? 5 : 10);
-      const weekPool = typeof window.__cpcPool === 'function' ? window.__cpcPool(week) : [];
-      const verifiedPoolSize = weekPool.length || (Number(week.num) >= 7 && Number(week.num) <= 17 ? 15 : 0);
-      const count = explicit ? (Number(explicit[2]) ? Math.min(requested,Number(explicit[2])) : 0) : Math.min(requested,verifiedPoolSize);
+      let weekPool = [];
+      try {
+        const source = typeof window.__cpcPool === 'function' ? window.__cpcPool(week) : [];
+        if (Array.isArray(source)) weekPool = source.filter(item => item && Array.isArray(item.o) && item.o.length >= 4);
+      } catch (_) { /* Keep question controls unavailable until the verified pool loads. */ }
+      const nativeCount = Number(explicit?.[2] || 0);
+      const validatedCount = weekPool.length;
+      const knownLegacyCount = Number(week.num) >= 7 && Number(week.num) <= 17 ? 15 : 0;
+      // A stale 0/0 rendering must not hide an already loaded, validated question bank.
+      // Never enable a full 5/10-question quiz from a partial pool.
+      const available = validatedCount || (explicit ? nativeCount : knownLegacyCount);
+      const count = available >= requested ? requested : 0;
       return {button,count};
     };
     const card = (original,type,quiz) => {
