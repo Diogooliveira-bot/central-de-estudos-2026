@@ -23,7 +23,7 @@
 
 | Gate | Condição de fechamento | Estado |
 |---|---|---|
-| Identificação do fornecedor | Confirmar forma de atuação (pessoa física ou pessoa jurídica/MEI), denominação legal, identificador fiscal quando aplicável, endereço físico válido para atendimento e informações de contato publicáveis. Não inventar ou colocar CPF/endereço sensível em relatório interno. | **PENDENTE** |
+| Identificação do fornecedor | **Forma de atuação confirmada pelo proprietário em 29/10/2026: pessoa física (CPF), sem CNPJ por enquanto.** Falta validar identificação civil e informações de contato e localização, além de definir uma forma juridicamente adequada e segura de disponibilizá-las ao consumidor antes da venda. Não inserir número de CPF ou endereço residencial em repositório, issues ou ambientes de testes. | **FORMA DEFINIDA; DADOS E PUBLICAÇÃO LEGAL PENDENTES** |
 | Procedimento de atendimento | Confirmar meio de contato efetivo, confirmação de recebimento e tratamento de reclamações, suspensão, cancelamento e arrependimento; validar SLA e fluxo. | **PENDENTE** |
 | Compra Hotmart | Confirmar produto 8805543 e ofertas semestral/anual, pagamento único e sem renovação automática, valores, impostos/taxas aplicáveis, entrega, canais de reembolso e links definitivos no painel autenticado. | **PENDENTE** |
 | Política de privacidade | Auditar o fluxo exato de dados, prestadores/suboperadores, retenção por categoria, transferências internacionais, direitos do titular e resposta a solicitações. | **PENDENTE** |
@@ -40,8 +40,16 @@
 
 **Não classificar como conformidade jurídica certificada:** é um checkpoint técnico e de requisitos para revisão final profissional quando necessária.
 
-## 5. Próxima decisão mínima do proprietário
+## 5. Decisão do proprietário e execução fiscal como pessoa física
 
-Informar somente **se a operação comercial ocorrerá como pessoa física ou como empresa/MEI (CNPJ)**. Não solicitar CPF, CNPJ, endereço residencial, senhas ou chaves no chat. Com a forma confirmada, orientar o procedimento seguro para complementar a identificação do fornecedor no local devido e finalizar documentos. O restante pode continuar em paralelo (Hotmart e DNS) sem aguardar esta resposta.
+**Confirmado pelo proprietário em 29/10/2026:** a Base Completa iniciará a comercialização como **pessoa física, utilizando CPF**, sem MEI ou pessoa jurídica por enquanto. Isso define a modalidade de cadastro pretendida, mas **não equivale a regularidade fiscal comprovada nem à aprovação final da oferta**.
+
+- **Hotmart:** a plataforma aceita produtores pessoa física e solicita validação cadastral, documento com foto/CPF e biometria conforme regras da conta, além de titularidade bancária compatível. A efetiva situação cadastral da conta do produtor, a capacidade de receber e sacar valores e as ofertas comerciais ainda dependem de verificação autenticada. Fonte: https://suportehotmart.zendesk.com/hc/pt-br/articles/216440217-Como-cadastrar-meus-documentos-na-Hotmart
+- **Informação ao consumidor:** o art. 2º, I e II, do Decreto 7.962/2013 prevê identificação do fornecedor com CPF/CNPJ quando aplicável e endereço físico e eletrônico, em local de destaque e fácil acesso. Não presumir que somente nome e e-mail preencham essa obrigação. **Não publicar CPF ou endereço pessoal automaticamente**, nem adicioná-los a commits, mas **não suprimir obrigação de transparência**: escolher com orientação jurídica/contábil um canal e formato adequados de divulgação ao consumidor, antes de permitir venda pública.
+- **Tributos/obrigações locais:** consultar contabilidade quanto à tributação de recebimentos de pessoas físicas/pela plataforma, emissão de documento fiscal quando exigível e regras municipais pertinentes ao tipo de serviço ou produto digital; não presumir que a condição de PF dispensa recolhimento ou licenças. Referência geral Receita Federal: https://www.gov.br/receitafederal/pt-br/assuntos/meu-imposto-de-renda/pagamento/carne-leao/rendimentos/
+- **Documentos públicos:** manter rótulo de **minuta** até conferência jurídica. Não colocar a identificação civil nem dados fiscais no GitHub. As páginas de lançamento deverão refletir a modalidade PF e os dados legais aprovados no canal de publicação apropriado, com controle de acesso até o GO.
+- **Hotmart e DNS:** verificações comerciais podem continuar em paralelo, sem abrir produção.
+
+**A forma PF/CPF está DECIDIDA.** Os campos de identificação, atendimento, versão final dos Termos, tributos e checkout continuam **PENDENTES**.
 
 **Decisão: NO-GO para Production**, com edições restritas à Preview da integração e CI obrigatória após qualquer mudança.
