@@ -533,19 +533,25 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 1º, parágrafo único",
     "title": "Lei 11.079/2004 — Parcerias público-privadas",
     "parts": [
-      "Art. 1º, Parágrafo único - Esta Lei aplica-se aos órgãos da administração pública direta dos Poderes Executivo e Legislativo, aos fundos especiais, às autarquias, às fundações públicas, às empresas públicas, às sociedades de economia mista e às demais entidades controladas direta ou indiretamente pela União, Estados, Distrito Federal e Municípios."
+      "Parágrafo único. Esta Lei aplica-se aos órgãos da administração pública direta dos Poderes Executivo e Legislativo, aos fundos especiais, às autarquias, às fundações públicas, às empresas públicas, às sociedades de economia mista e às demais entidades controladas direta ou indiretamente pela União, Estados, Distrito Federal e Municípios."
     ],
     "origin": "real",
     "question": {
       "statement": "Leia o trecho a seguir. O secretário do Tesouro Nacional do Ministério da Fazenda, Rogério Ceron, anunciou nesta quinta-feira (20 de abril de 2022) o novo marco para as parcerias público-privadas (PPPs), que tem potencial para gerar cerca de R$ 100 bilhões em investimentos nos estados e municípios. O trecho apresentado trata de um instrumento conhecido como Parceria PúblicoPrivada (PPP), utilizado para a concessão de serviços públicos para a iniciativa privada e regido pela Lei nº 11.079/2004. Julgue se o item a seguir apresenta uma exigência desse instrumento. O âmbito de aplicação deve se restringir aos órgãos da Administração Pública dos Poderes e aos fundos especiais previstos em lei.",
       "answer": false,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Errada. A lei aplica-se também às autarquias, fundações públicas, empresas públicas, sociedades de economia mista e demais entidades controladas pelos entes federados (art. 1º, parágrafo único), e não apenas aos órgãos da administração direta e aos fundos especiais.",
       "source": "8.pdf · questão 1 · Art. 1º, § único, Lei 11.079/2004",
       "meta": "FGV 2023 - Analista - Perfil Interno (BBTS)",
       "bank": "FGV",
       "year": 2023,
       "role": "Analista - Perfil Interno (BBTS)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 11.079/2004 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 11.079/2004, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -556,19 +562,25 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 1º, parágrafo único",
     "title": "Lei 11.079/2004 — Parcerias público-privadas",
     "parts": [
-      "Art. 1º, Parágrafo único - Esta Lei aplica-se aos órgãos da administração pública direta dos Poderes Executivo e Legislativo, aos fundos especiais, às autarquias, às fundações públicas, às empresas públicas, às sociedades de economia mista e às demais entidades controladas direta ou indiretamente pela União, Estados, Distrito Federal e Municípios. Obs: a definição prevista no art. 1º, § único não veda a participação de consórcios, empresas estrangeiras ou entidades fechadas de previdência complementar nem prevê restrições quanto à natureza jurídica dos interessados."
+      "§ 1º Concessão patrocinada é a concessão de serviços públicos ou de obras públicas de que trata a Lei nº 8.987, de 13 de fevereiro de 1995, quando envolver, adicionalmente à tarifa cobrada dos usuários contraprestação pecuniária do parceiro público ao parceiro privado."
     ],
     "origin": "real",
     "question": {
-      "statement": "Regulação de Serviços de Transportes Terrestres (ANTT) A União instaurou processo licitatório na modalidade concorrência, visando à concessão comum para exploração da rodovia federal BR-381, situada integralmente no estado de Minas Gerais, relativamente ao trecho rodoviário compreendido entre os municípios de Belo Horizonte e Governador Valadares. O edital de licitação autorizou a participação de consórcios, empresas estrangeiras, entre outros. Apresentaram-se os seguintes três interessados em participar do certame: o consórcio de empresas nacionais X, a empresa estrangeira Y e a entidade fechada de previdência complementar Z. Tendo como referência a situação hipotética apresentada, julgue o item a seguir, à luz da Lei n.º 8.987/1995, Lei n.º 11.079/2004, Lei n.º 14.133/2021 e demais normas pertinentes a concessões em infraestruturas rodoviárias. Caso a União tivesse optado pelo modelo da parceria público-privada patrocinada, não haveria impedimento à participação de todos os três interessados.",
+      "statement": "A União instaurou processo licitatório na modalidade concorrência, visando à concessão comum para exploração da rodovia federal BR-381, situada integralmente no estado de Minas Gerais, relativamente ao trecho rodoviário compreendido entre os municípios de Belo Horizonte e Governador Valadares. O edital de licitação autorizou a participação de consórcios, empresas estrangeiras, entre outros. Apresentaram-se os seguintes três interessados em participar do certame: o consórcio de empresas nacionais X, a empresa estrangeira Y e a entidade fechada de previdência complementar Z. Tendo como referência a situação hipotética apresentada, julgue o item a seguir, à luz da Lei n.º 8.987/1995, Lei n.º 11.079/2004, Lei n.º 14.133/2021 e demais normas pertinentes a concessões em infraestruturas rodoviárias. Caso a União tivesse optado pelo modelo da parceria público-privada patrocinada, não haveria impedimento à participação de todos os três interessados.",
       "answer": true,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Correta. A concessão patrocinada é a concessão de serviços públicos ou de obras públicas da Lei 8.987/1995 que envolve, adicionalmente à tarifa, contraprestação pecuniária do parceiro público (art. 2º, § 1º). A Lei 11.079 não trata de quem pode participar da licitação: a possibilidade de consórcios, empresas estrangeiras e entidade fechada de previdência complementar decorre de outros diplomas (Lei 8.987, Lei 14.133 e normas setoriais), e o item os combina.",
       "source": "8.pdf · questão 2 · Art. 1º, § único, Lei 11.079/2004",
-      "meta": "CESPE/CEBRASPE 2024 - Especialista em",
+      "meta": "CESPE/CEBRASPE 2024 - Especialista em Regulação de Serviços de Transportes Terrestres (ANTT)",
       "bank": "CESPE/CEBRASPE",
       "year": 2024,
-      "role": "Especialista em",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "role": "Especialista em Regulação de Serviços de Transportes Terrestres (ANTT)",
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado-parcial",
+        "basis": "texto legal conferido (Lei 11.079/2004 compilada, Planalto); dispositivo ou precedente complementar ainda não conferido em fonte oficial",
+        "date": "2026-10-28",
+        "source": "Lei 11.079/2004, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -579,20 +591,26 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 1º",
     "title": "Lei 11.079/2004 — Parcerias público-privadas",
     "parts": [
-      "Art. 1º Esta Lei institui normas gerais para licitação e contratação de parceria públicoprivada no âmbito dos Poderes da União, dos Estados, do Distrito Federal e dos Municípios. Parágrafo único. Esta Lei aplica-se aos órgãos da administração pública direta dos Poderes Executivo e Legislativo, aos fundos especiais, às autarquias, às fundações públicas, às empresas públicas, às sociedades de economia mista e às demais entidades controladas direta ou indiretamente pela União, Estados, Distrito Federal e Municípios."
+      "Art. 1º Esta Lei institui normas gerais para licitação e contratação de parceria público-privada no âmbito dos Poderes da União, dos Estados, do Distrito Federal e dos Municípios."
     ],
     "origin": "real",
     "question": {
       "statement": "Conforme disciplina da Lei Federal nº 11.079/2004, os contratos de parcerias públicoprivadas somente podem ser celebrados pelas entidades da Administração Federal.",
       "answer": false,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Errada. A lei institui normas gerais para licitação e contratação de PPP no âmbito dos Poderes da União, dos Estados, do Distrito Federal e dos Municípios (art. 1º), e não apenas das entidades da Administração Federal.",
       "source": "8.pdf · questão 3 · Art. 1º, Lei 11.079/2004",
       "meta": "FCC 2019 - Assistente Técnico (DPE-AM)",
       "bank": "FCC",
       "year": 2019,
       "role": "Assistente Técnico (DPE-AM)",
       "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
-      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 11.079/2004 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 11.079/2004, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -603,19 +621,25 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 1º",
     "title": "Lei 11.079/2004 — Parcerias público-privadas",
     "parts": [
-      "Art. 1º Esta Lei institui normas gerais para licitação e contratação de parceria públicoprivada no âmbito dos Poderes da União, dos Estados, do Distrito Federal e dos Municípios. Parágrafo único. Esta Lei aplica-se aos órgãos da administração pública direta dos Poderes Executivo e Legislativo, aos fundos especiais, às autarquias, às fundações públicas, às empresas públicas, às sociedades de economia mista e às demais entidades controladas direta ou indiretamente pela União, Estados, Distrito Federal e Municípios."
+      "Parágrafo único. Esta Lei aplica-se aos órgãos da administração pública direta dos Poderes Executivo e Legislativo, aos fundos especiais, às autarquias, às fundações públicas, às empresas públicas, às sociedades de economia mista e às demais entidades controladas direta ou indiretamente pela União, Estados, Distrito Federal e Municípios."
     ],
     "origin": "real",
     "question": {
       "statement": "De acordo com a Lei Complementar nº 11.079/2004 - Parceria Público-Privada, é correto afirmar que esta Lei aplica-se aos órgãos da administração pública direta dos Poderes Executivo e Legislativo, aos fundos especiais, às autarquias, às fundações públicas, às empresas públicas, às sociedades de economia mista e às demais entidades controladas direta ou indiretamente pela União, Estados, Distrito Federal e Municípios.",
       "answer": true,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Correta. O conteúdo reproduz o art. 1º, parágrafo único. O item denomina o diploma de Lei Complementar, mas a Lei 11.079/2004 é lei ordinária; a imprecisão é de nomenclatura e não altera o conteúdo afirmado.",
       "source": "8.pdf · questão 4 · Art. 1º, Lei 11.079/2004",
       "meta": "FUNDATEC 2021 - Contador (Prefeitura de Vacaria - RS)",
       "bank": "FUNDATEC",
       "year": 2021,
       "role": "Contador (Prefeitura de Vacaria - RS)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado-parcial",
+        "basis": "texto legal conferido (Lei 11.079/2004 compilada, Planalto); dispositivo ou precedente complementar ainda não conferido em fonte oficial",
+        "date": "2026-10-28",
+        "source": "Lei 11.079/2004, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -632,13 +656,19 @@ const DATA_ADM_PACK2 = [
     "question": {
       "statement": "A Lei Nº 11.079, de 30 de dezembro de 2004, institui normas gerais para licitação e contratação de parceria público-privada no âmbito da administração pública. A Lei estabelece que a parceria público-privada é o contrato administrativo de concessão, nas modalidades patrocinada ou administrativa.",
       "answer": true,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Correta. Parceria público-privada é o contrato administrativo de concessão, na modalidade patrocinada ou administrativa (art. 2º, caput); a lei institui normas gerais de licitação e contratação (art. 1º).",
       "source": "8.pdf · questão 11 · Art. 2º, Lei 11.079/2004",
       "meta": "IBADE 2022 - Área de Gestão (SES-MG)",
       "bank": "IBADE",
       "year": 2022,
       "role": "Área de Gestão (SES-MG)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 11.079/2004 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 11.079/2004, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -649,19 +679,25 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 2º",
     "title": "Lei 11.079/2004 — Parcerias público-privadas",
     "parts": [
-      "Art. 2º - Parceria público-privada é o contrato administrativo de concessão, na modalidade patrocinada ou administrativa."
+      "Art. 2º Parceria público-privada é o contrato administrativo de concessão, na modalidade patrocinada ou administrativa."
     ],
     "origin": "real",
     "question": {
       "statement": "Parceria público-privada é o contrato administrativo de concessão, na modalidade patrocinada ou administrativa.",
       "answer": true,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Correta. Reproduz o art. 2º, caput.",
       "source": "8.pdf · questão 15 · Art. 2º, Lei 11.079/2004",
       "meta": "Unifil 2026 - Agente Administrativo (Prefeitura Centenário Sul - PR)",
       "bank": "Unifil",
       "year": 2026,
       "role": "Agente Administrativo (Prefeitura Centenário Sul - PR)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 11.079/2004 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 11.079/2004, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -672,19 +708,25 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 2º, § 1º",
     "title": "Lei 11.079/2004 — Parcerias público-privadas",
     "parts": [
-      "Art. 2º Parceria público-privada é o contrato administrativo de concessão, na modalidade patrocinada ou administrativa. § 1º Concessão patrocinada é a concessão de serviços públicos ou de obras públicas de que trata a Lei nº 8.987, de 13 de fevereiro de 1995, quando envolver, adicionalmente à tarifa cobrada dos usuários contraprestação pecuniária do parceiro público ao parceiro privado."
+      "§ 1º Concessão patrocinada é a concessão de serviços públicos ou de obras públicas de que trata a Lei nº 8.987, de 13 de fevereiro de 1995, quando envolver, adicionalmente à tarifa cobrada dos usuários contraprestação pecuniária do parceiro público ao parceiro privado."
     ],
     "origin": "real",
     "question": {
-      "statement": "Externo (TCE-MG) De acordo com o previsto na Lei n.º 11.079/2004, a concessão de serviços públicos ou de obras públicas que envolva adicionalmente à tarifa cobrada dos usuários contraprestação pecuniária do parceiro público ao parceiro privado é denominada concessão patrocinada.",
+      "statement": "De acordo com o previsto na Lei n.º 11.079/2004, a concessão de serviços públicos ou de obras públicas que envolva adicionalmente à tarifa cobrada dos usuários contraprestação pecuniária do parceiro público ao parceiro privado é denominada concessão patrocinada.",
       "answer": true,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Correta. Reproduz o art. 2º, § 1º.",
       "source": "8.pdf · questão 32 · Art. 2º, § 1º, Lei 11.079/2004",
-      "meta": "CESPE/CEBRASPE 2026 - Analista de Controle",
+      "meta": "CESPE/CEBRASPE 2026 - Analista de Controle Externo (TCE-MG)",
       "bank": "CESPE/CEBRASPE",
       "year": 2026,
-      "role": "Analista de Controle",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "role": "Analista de Controle Externo (TCE-MG)",
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 11.079/2004 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 11.079/2004, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -695,19 +737,25 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 2º, § 1º",
     "title": "Lei 11.079/2004 — Parcerias público-privadas",
     "parts": [
-      "Art. 2º, § 1º - Concessão patrocinada é a concessão de serviços públicos ou de obras públicas de que trata a Lei nº 8.987, de 13 de fevereiro de 1995, quando envolver, adicionalmente à tarifa cobrada dos usuários contraprestação pecuniária do parceiro público ao parceiro privado."
+      "§ 1º Concessão patrocinada é a concessão de serviços públicos ou de obras públicas de que trata a Lei nº 8.987, de 13 de fevereiro de 1995, quando envolver, adicionalmente à tarifa cobrada dos usuários contraprestação pecuniária do parceiro público ao parceiro privado."
     ],
     "origin": "real",
     "question": {
       "statement": "Sobre os contratos de parceria público-privada (PPP), é correto afirmar que a modalidade patrocinada das parcerias público-privadas poderá ou não envolver contraprestação pecuniária do agente público ao parceiro privado, além da tarifa que é cobrada do usuário.",
       "answer": false,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Errada. A concessão patrocinada sempre envolve, adicionalmente à tarifa, contraprestação pecuniária do parceiro público (art. 2º, § 1º); sem ela, a concessão é comum (art. 2º, § 3º).",
       "source": "8.pdf · questão 33 · Art. 2º, § 1º, Lei 11.079/2004",
       "meta": "VUNESP 2025 - Juiz de Direito (TJ-SP)",
       "bank": "VUNESP",
       "year": 2025,
       "role": "Juiz de Direito (TJ-SP)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 11.079/2004 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 11.079/2004, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -724,14 +772,20 @@ const DATA_ADM_PACK2 = [
     "question": {
       "statement": "As sociedades de economia mista podem ser prestadoras de serviço público.",
       "answer": true,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Correta. A lei abrange empresas públicas e sociedades de economia mista que explorem atividade econômica, ainda que seja de prestação de serviços públicos (art. 1º, caput).",
       "source": "28.pdf · questão 1 · Art. 1º, Lei 13.303/2016",
       "meta": "IDIB 2020 - Agente Legislativo (Câmara Municipal - PE)",
       "bank": "IDIB",
       "year": 2020,
       "role": "Agente Legislativo (Câmara Municipal - PE)",
       "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
-      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 13.303/2016 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.303/2016, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -748,13 +802,19 @@ const DATA_ADM_PACK2 = [
     "question": {
       "statement": "No que se refere às disposições aplicáveis às empresas públicas e às sociedades de economia mista, segundo a Lei n° 13.303 de 30 de junho de 2016, é correto afirmar que a exploração de atividade econômica pelo Estado será exercida por meio de empresa pública, de autarquia, de sociedade de economia mista e de suas subsidiárias.",
       "answer": false,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Errada. A exploração de atividade econômica pelo Estado é exercida por empresa pública, sociedade de economia mista e suas subsidiárias (art. 2º), sem inclusão de autarquia.",
       "source": "28.pdf · questão 2 · Art. 2°, Lei 13.303/2016",
       "meta": "FCC 2021 - Juiz Substituto (TJ-GO)",
       "bank": "FCC",
       "year": 2021,
       "role": "Juiz Substituto (TJ-GO)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 13.303/2016 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.303/2016, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -765,19 +825,25 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 2º, § 2º",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
-      "Art. 2º […] § 2º Depende de autorização legislativa a criação de subsidiárias de empresa pública e de sociedade de economia mista, assim como a participação de qualquer delas em empresa privada, cujo objeto social deve estar relacionado ao da investidora, nos termos do inciso XX do art. 37 da Constituição Federal."
+      "§ 2º Depende de autorização legislativa a criação de subsidiárias de empresa pública e de sociedade de economia mista, assim como a participação de qualquer delas em empresa privada, cujo objeto social deve estar relacionado ao da investidora, nos termos do inciso XX do art. 37 da Constituição Federal ."
     ],
     "origin": "real",
     "question": {
-      "statement": "(AGU) A criação de subsidiárias de empresa pública e de sociedade de economia mista depende de autorização legislativa, mas é livre a participação de qualquer delas em empresa privada, cujo objeto social deve estar relacionado ao da investidora.",
+      "statement": "A criação de subsidiárias de empresa pública e de sociedade de economia mista depende de autorização legislativa, mas é livre a participação de qualquer delas em empresa privada, cujo objeto social deve estar relacionado ao da investidora.",
       "answer": false,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Errada. A criação de subsidiárias e a participação em empresa privada dependem de autorização legislativa, e esta cobre ambas (art. 2º, § 2º); a participação não é livre, ressalvadas as hipóteses do § 3º.",
       "source": "28.pdf · questão 3 · Art. 2º, § 2º, Lei 13.303/2016",
-      "meta": "CESPE/CEBRASPE 2023 - Procurador Federal",
+      "meta": "CESPE/CEBRASPE 2023 - Procurador Federal (AGU)",
       "bank": "CESPE/CEBRASPE",
       "year": 2023,
-      "role": "Procurador Federal",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "role": "Procurador Federal (AGU)",
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 13.303/2016 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.303/2016, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -788,19 +854,25 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 3º",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
-      "Art. 3º Empresa pública é a entidade dotada de personalidade jurídica de direito privado, com criação autorizada por lei e com patrimônio próprio, cujo capital social é integralmente detido pela União, pelos Estados, pelo Distrito Federal ou pelos Municípios. Parágrafo único. Desde que a maioria do capital votante permaneça em propriedade da União, do Estado, do Distrito Federal ou do Município, será admitida, no capital da empresa pública, a participação de outras pessoas jurídicas de direito público interno, bem como de entidades da administração indireta da União, dos Estados, do Distrito Federal e dos Municípios."
+      "Art. 3º Empresa pública é a entidade dotada de personalidade jurídica de direito privado, com criação autorizada por lei e com patrimônio próprio, cujo capital social é integralmente detido pela União, pelos Estados, pelo Distrito Federal ou pelos Municípios."
     ],
     "origin": "real",
     "question": {
-      "statement": "Administrativa (TRT - 8ª Região) A entidade da administração pública indireta, dotada de personalidade jurídica de direito privado, com criação autorizada por lei e com patrimônio próprio, cujo capital social é integralmente público, é denominada empresa pública.",
+      "statement": "A entidade da administração pública indireta, dotada de personalidade jurídica de direito privado, com criação autorizada por lei e com patrimônio próprio, cujo capital social é integralmente público, é denominada empresa pública.",
       "answer": true,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Correta. Reproduz o conceito de empresa pública do art. 3º.",
       "source": "28.pdf · questão 5 · Art. 3º, Lei 13.303/2016",
-      "meta": "CESPE/CEBRASPE 2022 - Técnico Judiciário - Área",
+      "meta": "CESPE/CEBRASPE 2022 - Técnico Judiciário - Área Administrativa (TRT - 8ª Região)",
       "bank": "CESPE/CEBRASPE",
       "year": 2022,
-      "role": "Técnico Judiciário - Área",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "role": "Técnico Judiciário - Área Administrativa (TRT - 8ª Região)",
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 13.303/2016 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.303/2016, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -817,13 +889,19 @@ const DATA_ADM_PACK2 = [
     "question": {
       "statement": "Empresa pública é a entidade dotada de personalidade jurídica de direito público ou privado, com criação autorizada por lei e com patrimônio próprio e cujo capital social seja integralmente detido pela União, pelos estados, pelo Distrito Federal ou pelos municípios.",
       "answer": false,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Errada. A empresa pública é entidade de personalidade jurídica de direito privado (art. 3º), e não de direito público ou privado.",
       "source": "28.pdf · questão 7 · Art. 3º, Lei 13.303/2016",
       "meta": "CESPE/CEBRASPE 2023 - Procurador Federal (AGU)",
       "bank": "CESPE/CEBRASPE",
       "year": 2023,
       "role": "Procurador Federal (AGU)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 13.303/2016 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.303/2016, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -834,19 +912,25 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 3º, parágrafo único",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
-      "Art. 3º […] Parágrafo único. Desde que a maioria do capital votante permaneça em propriedade da União, do Estado, do Distrito Federal ou do Município, será admitida, no capital da empresa pública, a participação de outras pessoas jurídicas de direito público interno, bem como de entidades da administração indireta da União, dos Estados, do Distrito Federal e dos Municípios."
+      "Parágrafo único. Desde que a maioria do capital votante permaneça em propriedade da União, do Estado, do Distrito Federal ou do Município, será admitida, no capital da empresa pública, a participação de outras pessoas jurídicas de direito público interno, bem como de entidades da administração indireta da União, dos Estados, do Distrito Federal e dos Municípios."
     ],
     "origin": "real",
     "question": {
-      "statement": "(AGU) A maioria do capital votante da empresa pública deve permanecer em propriedade da União, do estado, do Distrito Federal ou do município, não se admitindo no capital a participação de outras pessoas jurídicas de direito público interno.",
+      "statement": "A maioria do capital votante da empresa pública deve permanecer em propriedade da União, do estado, do Distrito Federal ou do município, não se admitindo no capital a participação de outras pessoas jurídicas de direito público interno.",
       "answer": false,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Errada. A maioria do capital votante deve permanecer com o ente federado, mas se admite a participação de outras pessoas jurídicas de direito público interno e de entidades da administração indireta (art. 3º, parágrafo único).",
       "source": "28.pdf · questão 9 · Art. 3º, § único, Lei 13.303/2016",
-      "meta": "CESPE/CEBRASPE 2023 - Procurador Federal",
+      "meta": "CESPE/CEBRASPE 2023 - Procurador Federal (AGU)",
       "bank": "CESPE/CEBRASPE",
       "year": 2023,
-      "role": "Procurador Federal",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "role": "Procurador Federal (AGU)",
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 13.303/2016 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.303/2016, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -863,13 +947,19 @@ const DATA_ADM_PACK2 = [
     "question": {
       "statement": "Sociedade de economia mista é a entidade dotada de personalidade jurídica de direito privado, com criação autorizada por lei, sob a forma de sociedade anônima, cujas ações com direito a voto pertençam em sua maioria à União, aos estados, ao Distrito Federal, aos municípios ou a entidade da administração indireta.",
       "answer": true,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Correta. Reproduz o conceito de sociedade de economia mista do art. 4º.",
       "source": "28.pdf · questão 13 · Art. 4º, Lei 13.303/2016",
       "meta": "CESPE/CEBRASPE 2023 - Procurador Federal (AGU)",
       "bank": "CESPE/CEBRASPE",
       "year": 2023,
       "role": "Procurador Federal (AGU)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 13.303/2016 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.303/2016, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -884,15 +974,21 @@ const DATA_ADM_PACK2 = [
     ],
     "origin": "real",
     "question": {
-      "statement": "Registros - Remoção (TJ-PE) A entidade dotada de personalidade jurídica de direito privado, com criação autorizada por lei, sob a forma de sociedade anônima, cujas ações com direito a voto pertençam em sua maioria à União, aos estados, ao Distrito Federal, aos municípios ou a entidade da administração indireta denomina-se empresa pública.",
+      "statement": "A entidade dotada de personalidade jurídica de direito privado, com criação autorizada por lei, sob a forma de sociedade anônima, cujas ações com direito a voto pertençam em sua maioria à União, aos estados, ao Distrito Federal, aos municípios ou a entidade da administração indireta denomina-se empresa pública.",
       "answer": false,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Errada. O conceito descrito, com forma de sociedade anônima e ações com direito a voto em sua maioria do ente, é o de sociedade de economia mista (art. 4º), e não de empresa pública (art. 3º).",
       "source": "28.pdf · questão 14 · Arts. 4º, Lei 13.303/2016",
-      "meta": "CESPE/CEBRASPE 2024 - Tabelião / Oficial de",
+      "meta": "CESPE/CEBRASPE 2024 - Tabelião / Oficial de Registros - Remoção (TJ-PE)",
       "bank": "CESPE/CEBRASPE",
       "year": 2024,
-      "role": "Tabelião / Oficial de",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "role": "Tabelião / Oficial de Registros - Remoção (TJ-PE)",
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 13.303/2016 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.303/2016, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -907,15 +1003,21 @@ const DATA_ADM_PACK2 = [
     ],
     "origin": "real",
     "question": {
-      "statement": "(TCE-RJ) No que se refere a compliance e à adoção de mecanismos de controle das estatais, julgue o item seguinte. As estatais devem observar regras de governança corporativa, de composição da administração e, havendo acionistas, mecanismos para sua proteção.",
+      "statement": "No que se refere a compliance e à adoção de mecanismos de controle das estatais, julgue o item seguinte. As estatais devem observar regras de governança corporativa, de composição da administração e, havendo acionistas, mecanismos para sua proteção.",
       "answer": true,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Correta. O estatuto deve observar regras de governança corporativa, de transparência, de gestão de riscos e controle interno, de composição da administração e, havendo acionistas, mecanismos para sua proteção (art. 6º).",
       "source": "28.pdf · questão 15 · Art. 6º, Lei 13.303/2016",
-      "meta": "CESPE/CEBRASPE 2021 - Analista de Controle Externo",
+      "meta": "CESPE/CEBRASPE 2021 - Analista de Controle Externo (TCE-RJ)",
       "bank": "CESPE/CEBRASPE",
       "year": 2021,
-      "role": "Analista de Controle Externo",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "role": "Analista de Controle Externo (TCE-RJ)",
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 13.303/2016 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.303/2016, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -930,15 +1032,21 @@ const DATA_ADM_PACK2 = [
     ],
     "origin": "real",
     "question": {
-      "statement": "(TCE-RJ) No que se refere a compliance e à adoção de mecanismos de controle das estatais, julgue o item seguinte. As estatais devem adotar regras de estrutura organizacional e práticas de gestão de riscos e de controle interno e, também, de controle externo.",
+      "statement": "No que se refere a compliance e à adoção de mecanismos de controle das estatais, julgue o item seguinte. As estatais devem adotar regras de estrutura organizacional e práticas de gestão de riscos e de controle interno e, também, de controle externo.",
       "answer": false,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Errada. O art. 6º trata de estruturas e práticas de gestão de riscos e de controle interno, e não menciona regras de controle externo entre as exigências do estatuto.",
       "source": "28.pdf · questão 16 · Art. 6º, Lei 13.303/2016",
-      "meta": "CESPE/CEBRASPE 2021 - Analista de Controle Externo",
+      "meta": "CESPE/CEBRASPE 2021 - Analista de Controle Externo (TCE-RJ)",
       "bank": "CESPE/CEBRASPE",
       "year": 2021,
-      "role": "Analista de Controle Externo",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "role": "Analista de Controle Externo (TCE-RJ)",
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 13.303/2016 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.303/2016, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -955,13 +1063,19 @@ const DATA_ADM_PACK2 = [
     "question": {
       "statement": "Aplicam-se às empresas públicas as regras previstas na Lei de Sociedade por Ações, ao passo que às sociedades de economia mista de capital fechado e às suas subsidiárias são aplicadas as normas da Comissão de Valores Mobiliários.",
       "answer": false,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Errada. Aplicam-se a todas as empresas públicas, às sociedades de economia mista de capital fechado e às suas subsidiárias a Lei 6.404/1976 e as normas da CVM sobre escrituração e demonstrações financeiras (art. 7º); a distinção do item não consta da lei.",
       "source": "28.pdf · questão 17 · Art. 7º, Lei 13.303/2016",
       "meta": "CESPE/CEBRASPE 2023 - Procurador Federal (AGU)",
       "bank": "CESPE/CEBRASPE",
       "year": 2023,
       "role": "Procurador Federal (AGU)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 13.303/2016 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.303/2016, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -972,19 +1086,27 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 8º, inc. I",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
-      "Art. 8º As empresas públicas e as sociedades de economia mista deverão observar, no mínimo, os seguintes requisitos de transparência: I - elaboração de carta anual, subscrita pelos membros do Conselho de Administração, com a explicitação dos compromissos de consecução de objetivos de políticas públicas pela empresa pública, pela sociedade de economia mista e por suas subsidiárias, em atendimento ao interesse coletivo ou ao imperativo de segurança nacional que justificou a autorização para suas respectivas criações, com definição clara dos recursos a serem empregados para esse fim, bem como dos impactos econômico-financeiros da consecução desses objetivos, mensuráveis por meio de indicadores objetivos; […]"
+      "§ 1º O Título I desta Lei, exceto o disposto nos arts. 2º, 3º, 4º, 5º, 6º, 7º, 8º, 11, 12 e 27, não se aplica à empresa pública e à sociedade de economia mista que tiver, em conjunto com suas respectivas subsidiárias, no exercício social anterior, receita operacional bruta inferior a R$ 90.000.000,00 (noventa milhões de reais).",
+      "Art. 8º As empresas públicas e as sociedades de economia mista deverão observar, no mínimo, os seguintes requisitos de transparência:",
+      "I - elaboração de carta anual, subscrita pelos membros do Conselho de Administração, com a explicitação dos compromissos de consecução de objetivos de políticas públicas pela empresa pública, pela sociedade de economia mista e por suas subsidiárias, em atendimento ao interesse coletivo ou ao imperativo de segurança nacional que justificou a autorização para suas respectivas criações, com definição clara dos recursos a serem empregados para esse fim, bem como dos impactos econômico-financeiros da consecução desses objetivos, mensuráveis por meio de indicadores objetivos;"
     ],
     "origin": "real",
     "question": {
       "statement": "Dentre os requisitos de transparência que as empresas públicas e as sociedades de economia mista deverão observar inclui-se a elaboração de carta anual, subscrita pelos membros do Conselho de Administração. Acerca deste tema, analise as afirmativas a seguir. A obrigatoriedade de elaboração da carta anual não se aplica à empresa pública e à sociedade de economia mista que tiver, em conjunto com suas respectivas subsidiárias, no exercício social anterior, receita operacional bruta inferior a R$ 90.000.000,00 (noventa milhões de reais).",
       "answer": false,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Errada. O art. 8º, que inclui a carta anual do inciso I, está entre os dispositivos que continuam aplicáveis às empresas com receita operacional bruta inferior a R$ 90 milhões (art. 1º, § 1º).",
       "source": "28.pdf · questão 19 · Art. 8º, I, Lei 13.303/16",
       "meta": "FGV 2022 - Procurador do Estado (AGE-MG)",
       "bank": "FGV",
       "year": 2022,
       "role": "Procurador do Estado (AGE-MG)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 13.303/2016 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.303/2016, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -995,19 +1117,25 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 8º, inc. I",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
-      "Art. 8º As empresas públicas e as sociedades de economia mista deverão observar, no mínimo, os seguintes requisitos de transparência: […] § 1º O interesse público da empresa pública e da sociedade de economia mista, respeitadas as razões que motivaram a autorização legislativa, manifesta-se por meio do alinhamento entre seus objetivos e aqueles de políticas públicas, na forma explicitada na carta anual a que se refere o inciso I do caput . […]"
+      "§ 1º O interesse público da empresa pública e da sociedade de economia mista, respeitadas as razões que motivaram a autorização legislativa, manifesta-se por meio do alinhamento entre seus objetivos e aqueles de políticas públicas, na forma explicitada na carta anual a que se refere o inciso I do caput ."
     ],
     "origin": "real",
     "question": {
       "statement": "Dentre os requisitos de transparência que as empresas públicas e as sociedades de economia mista deverão observar inclui-se a elaboração de carta anual, subscrita pelos membros do Conselho de Administração. Acerca deste tema, analise as afirmativas a seguir. O interesse público da empresa pública e da sociedade de economia mista, respeitadas as razões que motivaram a autorização legislativa, manifesta-se por meio do alinhamento entre seus objetivos e aqueles de políticas públicas, na forma explicitada na carta anual.",
       "answer": true,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Correta. O interesse público manifesta-se pelo alinhamento entre os objetivos da empresa e os de políticas públicas, na forma explicitada na carta anual (art. 8º, § 1º).",
       "source": "28.pdf · questão 20 · Art. 8º, I, Lei 13.303/16",
       "meta": "FGV 2022 - Procurador do Estado (AGE-MG)",
       "bank": "FGV",
       "year": 2022,
       "role": "Procurador do Estado (AGE-MG)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 13.303/2016 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.303/2016, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -1018,19 +1146,26 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 8º, inc. III",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
-      "Art. 8º As empresas públicas e as sociedades de economia mista deverão observar, no mínimo, os seguintes requisitos de transparência: […] III - divulgação tempestiva e atualizada de informações relevantes, em especial as relativas a atividades desenvolvidas, estrutura de controle, fatores de risco, dados econômico-financeiros, comentários dos administradores sobre o desempenho, políticas e práticas de governança corporativa e descrição da composição e da remuneração da administração;"
+      "Art. 8º As empresas públicas e as sociedades de economia mista deverão observar, no mínimo, os seguintes requisitos de transparência:",
+      "III - divulgação tempestiva e atualizada de informações relevantes, em especial as relativas a atividades desenvolvidas, estrutura de controle, fatores de risco, dados econômico-financeiros, comentários dos administradores sobre o desempenho, políticas e práticas de governança corporativa e descrição da composição e da remuneração da administração;"
     ],
     "origin": "real",
     "question": {
       "statement": "O estatuto jurídico das empresas estatais estabelece que as empresas públicas e as sociedades de economia mista deverão observar, no mínimo, alguns requisitos de transparência. De acordo com a Lei nº 13.303/2016, um desses requisitos em relação a uma empresa estatal, em nível federal é: Divulgação tempestiva e atualizada de informações relevantes, em especial as relativas a atividades desenvolvidas, estrutura de controle, fatores de risco, dados econômico-financeiros, comentários dos administradores sobre o desempenho, políticas e práticas de governança corporativa e descrição da composição e da remuneração da administração.",
       "answer": true,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Correta. Reproduz o art. 8º, III.",
       "source": "28.pdf · questão 21 · Art. 8º, III, Lei 13.303/2016",
       "meta": "FGV 2022 - Advogado (Senado Federal) - Adaptada",
       "bank": "FGV",
       "year": 2022,
       "role": "Advogado (Senado Federal) - Adaptada",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 13.303/2016 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.303/2016, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -1041,19 +1176,28 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 8º, incisos IV, V e VII",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
-      "Art. 8º As empresas públicas e as sociedades de economia mista deverão observar, no mínimo, os seguintes requisitos de transparência: [...] IV - elaboração e divulgação de política de divulgação de informações, em conformidade com a legislação em vigor e com as melhores práticas; V - elaboração de política de distribuição de dividendos, à luz do interesse público que justificou a criação da empresa pública ou da sociedade de economia mista; [...] VII - elaboração e divulgação da política de transações com partes relacionadas, em conformidade com os requisitos de competitividade, conformidade, transparência, equidade e comutatividade, que deverá ser revista, no mínimo, anualmente e aprovada pelo Conselho de Administração; [...]"
+      "Art. 8º As empresas públicas e as sociedades de economia mista deverão observar, no mínimo, os seguintes requisitos de transparência:",
+      "IV - elaboração e divulgação de política de divulgação de informações, em conformidade com a legislação em vigor e com as melhores práticas;",
+      "V - elaboração de política de distribuição de dividendos, à luz do interesse público que justificou a criação da empresa pública ou da sociedade de economia mista;",
+      "VII - elaboração e divulgação da política de transações com partes relacionadas, em conformidade com os requisitos de competitividade, conformidade, transparência, equidade e comutatividade, que deverá ser revista, no mínimo, anualmente e aprovada pelo Conselho de Administração;"
     ],
     "origin": "real",
     "question": {
-      "statement": "Controle Externo (TCE-RJ) No que se refere a compliance e à adoção de mecanismos de controle das estatais, julgue o item seguinte. As estatais devem observar requisitos de transparência, tais como elaboração de políticas de divulgação de informações, distribuição de dividendos e de transações com partes relacionadas.",
+      "statement": "No que se refere a compliance e à adoção de mecanismos de controle das estatais, julgue o item seguinte. As estatais devem observar requisitos de transparência, tais como elaboração de políticas de divulgação de informações, distribuição de dividendos e de transações com partes relacionadas.",
       "answer": true,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Correta. São requisitos de transparência a política de divulgação de informações (art. 8º, IV), a política de distribuição de dividendos (art. 8º, V) e a política de transações com partes relacionadas (art. 8º, VII).",
       "source": "28.pdf · questão 22 · Art. 8º, IV, V e VII, Lei 13.303/2016",
-      "meta": "CESPE/CEBRASPE 2021 - Analista de",
+      "meta": "CESPE/CEBRASPE 2021 - Analista de Controle Externo (TCE-RJ)",
       "bank": "CESPE/CEBRASPE",
       "year": 2021,
-      "role": "Analista de",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "role": "Analista de Controle Externo (TCE-RJ)",
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 13.303/2016 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.303/2016, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -1064,19 +1208,26 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 8º, inc. V",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
-      "Art. 8º As empresas públicas e as sociedades de economia mista deverão observar, no mínimo, os seguintes requisitos de transparência: […] V - elaboração de política de distribuição de dividendos, à luz do interesse público que justificou a criação da empresa pública ou da sociedade de economia mista; […]"
+      "Art. 8º As empresas públicas e as sociedades de economia mista deverão observar, no mínimo, os seguintes requisitos de transparência:",
+      "V - elaboração de política de distribuição de dividendos, à luz do interesse público que justificou a criação da empresa pública ou da sociedade de economia mista;"
     ],
     "origin": "real",
     "question": {
       "statement": "O estatuto jurídico das empresas estatais estabelece que as empresas públicas e as sociedades de economia mista deverão observar, no mínimo, alguns requisitos de transparência. De acordo com a Lei nº 13.303/2016, um desses requisitos em relação a uma empresa estatal, em nível federal é: Elaboração de política de distribuição de dividendos, à luz do interesse público que justificou a criação da empresa pública ou da sociedade de economia mista;",
       "answer": true,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Correta. Reproduz o art. 8º, V.",
       "source": "28.pdf · questão 23 · Art. 8º, V, Lei 13.303/2016",
       "meta": "FGV 2022 - Advogado (Senado Federal) - Adaptada",
       "bank": "FGV",
       "year": 2022,
       "role": "Advogado (Senado Federal) - Adaptada",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 13.303/2016 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.303/2016, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -1087,19 +1238,26 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 8º, inc. VI",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
-      "Art. 8º As empresas públicas e as sociedades de economia mista deverão observar, no mínimo, os seguintes requisitos de transparência: […] VI - divulgação, em nota explicativa às demonstrações financeiras, dos dados operacionais e financeiros das atividades relacionadas à consecução dos fins de interesse coletivo ou de segurança nacional; […]"
+      "Art. 8º As empresas públicas e as sociedades de economia mista deverão observar, no mínimo, os seguintes requisitos de transparência:",
+      "VI - divulgação, em nota explicativa às demonstrações financeiras, dos dados operacionais e financeiros das atividades relacionadas à consecução dos fins de interesse coletivo ou de segurança nacional;"
     ],
     "origin": "real",
     "question": {
       "statement": "O estatuto jurídico das empresas estatais estabelece que as empresas públicas e as sociedades de economia mista deverão observar, no mínimo, alguns requisitos de transparência. De acordo com a Lei nº 13.303/2016, um desses requisitos em relação a uma empresa estatal, em nível federal é: Divulgação, em nota explicativa às demonstrações financeiras, dos dados operacionais e financeiros das atividades relacionadas à consecução dos fins de interesse coletivo ou de segurança nacional;",
       "answer": true,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Correta. Reproduz o art. 8º, VI.",
       "source": "28.pdf · questão 24 · Art. 8º, VI, Lei 13.303/2016",
       "meta": "FGV 2022 - Advogado (Senado Federal) - Adaptada",
       "bank": "FGV",
       "year": 2022,
       "role": "Advogado (Senado Federal) - Adaptada",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 13.303/2016 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.303/2016, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -1110,19 +1268,25 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 8º, inc. VII",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
-      "Art. 8º As empresas públicas e as sociedades de economia mista deverão observar, no mínimo, os seguintes requisitos de transparência: […] VII - elaboração e divulgação da política de transações com partes relacionadas, em conformidade com os requisitos de competitividade, conformidade, transparência, equidade e comutatividade, que deverá ser revista, no mínimo, anualmente e aprovada pelo Conselho de Administração;"
+      "§ 1º Sem prejuízo do disposto no caput , a diretoria deverá apresentar, até a última reunião ordinária do Conselho de Administração do ano anterior, a quem compete sua aprovação:"
     ],
     "origin": "real",
     "question": {
       "statement": "As sociedades de economia mista, por lei, estão subordinadas ao primado de governança corporativa que impõe a elaboração e divulgação do planejamento de suas atividades, o qual deverá ser submetido anualmente e aprovado por seu corpo de diretores.",
       "answer": false,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Errada. O planejamento (plano de negócios e estratégia de longo prazo) é apresentado pela diretoria e aprovado pelo Conselho de Administração (art. 23, § 1º), e não pelo corpo de diretores. O rótulo cita o art. 8º, VII.",
       "source": "28.pdf · questão 25 · Art. 8º, VII, Lei 13.303/2016",
       "meta": "MPDFT 2021 - Promotor de Justiça Adjunto",
       "bank": "MPDFT",
       "year": 2021,
       "role": "Promotor de Justiça Adjunto",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 13.303/2016 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.303/2016, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -1133,19 +1297,26 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 8º, inc. VII",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
-      "Art. 8º As empresas públicas e as sociedades de economia mista deverão observar, no mínimo, os seguintes requisitos de transparência: […] VII - elaboração e divulgação da política de transações com partes relacionadas, em conformidade com os requisitos de competitividade, conformidade, transparência, equidade e comutatividade, que deverá ser revista, no mínimo, anualmente e aprovada pelo Conselho de Administração; […]"
+      "Art. 8º As empresas públicas e as sociedades de economia mista deverão observar, no mínimo, os seguintes requisitos de transparência:",
+      "VII - elaboração e divulgação da política de transações com partes relacionadas, em conformidade com os requisitos de competitividade, conformidade, transparência, equidade e comutatividade, que deverá ser revista, no mínimo, anualmente e aprovada pelo Conselho de Administração;"
     ],
     "origin": "real",
     "question": {
       "statement": "O estatuto jurídico das empresas estatais estabelece que as empresas públicas e as sociedades de economia mista deverão observar, no mínimo, alguns requisitos de transparência. De acordo com a Lei nº 13.303/2016, um desses requisitos em relação a uma empresa estatal, em nível federal é: Elaboração e divulgação da política de transações com partes relacionadas, em conformidade com os requisitos de competitividade, conformidade, transparência, equidade e comutatividade, que deverá ser revista, no mínimo, anualmente, e aprovada pelo Senado Federal.",
       "answer": false,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Errada. A política de transações com partes relacionadas deve ser revista no mínimo anualmente e aprovada pelo Conselho de Administração (art. 8º, VII), e não pelo Senado Federal.",
       "source": "28.pdf · questão 26 · Art. 8º, VII, Lei 13.303/2016",
       "meta": "FGV 2022 - Advogado (Senado Federal) - Adaptada",
       "bank": "FGV",
       "year": 2022,
       "role": "Advogado (Senado Federal) - Adaptada",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 13.303/2016 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.303/2016, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -1156,19 +1327,26 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 8º, inc. VIII",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
-      "Art. 8º As empresas públicas e as sociedades de economia mista deverão observar, no mínimo, os seguintes requisitos de transparência: […] VIII - ampla divulgação, ao público em geral, de carta anual de governança corporativa, que consolide em um único documento escrito, em linguagem clara e direta, as informações de que trata o inciso III; […]"
+      "Art. 8º As empresas públicas e as sociedades de economia mista deverão observar, no mínimo, os seguintes requisitos de transparência:",
+      "VIII - ampla divulgação, ao público em geral, de carta anual de governança corporativa, que consolide em um único documento escrito, em linguagem clara e direta, as informações de que trata o inciso III;"
     ],
     "origin": "real",
     "question": {
       "statement": "Dentre os requisitos de transparência que as empresas públicas e as sociedades de economia mista deverão observar inclui-se a elaboração de carta anual, subscrita pelos membros do Conselho de Administração. Acerca deste tema, é correto afirmar que a carta anual deve ser elaborada em linguagem clara e direta, sendo composta por dois documentos: o primeiro com as informações relevantes da estatal, e o segundo com os comentários dos administradores sobre o desempenho, políticas e práticas de governança e descrição da composição e da remuneração da administração.",
       "answer": false,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Errada. A carta anual de governança corporativa consolida em um único documento escrito, em linguagem clara e direta, as informações do inciso III (art. 8º, VIII), e não em dois documentos.",
       "source": "28.pdf · questão 27 · Art. 8º, VIII, Lei 13.303/16",
       "meta": "FGV 2022 - Procurador do Estado (AGE-MG)",
       "bank": "FGV",
       "year": 2022,
       "role": "Procurador do Estado (AGE-MG)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 13.303/2016 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.303/2016, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -1179,19 +1357,26 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 8º, inc. IX",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
-      "Art. 8º As empresas públicas e as sociedades de economia mista deverão observar, no mínimo, os seguintes requisitos de transparência: […] IX - divulgação anual de relatório integrado ou de sustentabilidade. […]"
+      "Art. 8º As empresas públicas e as sociedades de economia mista deverão observar, no mínimo, os seguintes requisitos de transparência:",
+      "IX - divulgação anual de relatório integrado ou de sustentabilidade."
     ],
     "origin": "real",
     "question": {
       "statement": "O estatuto jurídico das empresas estatais estabelece que as empresas públicas e as sociedades de economia mista deverão observar, no mínimo, alguns requisitos de transparência. De acordo com a Lei nº 13.303/2016, um desses requisitos em relação a uma empresa estatal, em nível federal é: Divulgação anual de relatório integrado ou de sustentabilidade.",
       "answer": true,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Correta. Reproduz o art. 8º, IX.",
       "source": "28.pdf · questão 28 · Art. 8º, IX, Lei 13.303/2016",
       "meta": "FGV 2022 - Advogado (Senado Federal)",
       "bank": "FGV",
       "year": 2022,
       "role": "Advogado (Senado Federal)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 13.303/2016 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.303/2016, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -1202,20 +1387,27 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 8º, inc. X",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
-      "Art. 8º As empresas públicas e as sociedades de economia mista deverão observar, no mínimo, os seguintes requisitos de transparência: […] X – divulgação anual da política de igualdade entre homens e mulheres adotada, que deverá conter, entre outras informações relevantes: (Incluído pela Lei nº 15.177, de 2025) a) a quantidade e a proporção de mulheres empregadas, por níveis hierárquicos; (Incluído pela Lei nº 15.177, de 2025) b) a quantidade e a proporção de mulheres que ocupam cargos na administração; (Incluído pela Lei nº 15.177, de 2025) c) o demonstrativo da remuneração fixa, variável e eventual, segregada por sexo, relativa a cargos ou funções similares; (Incluído pela Lei nº 15.177, de 2025) d) a evolução comparativa dos indicadores previstos nas alíneas ‘a’, ‘b’ e ‘c’ deste inciso entre o exercício findo e o exercício anterior, especialmente na alta gestão. (Incluído pela Lei nº 15.177, de 2025)"
+      "Art. 8º As empresas públicas e as sociedades de economia mista deverão observar, no mínimo, os seguintes requisitos de transparência:",
+      "X – divulgação anual da política de igualdade entre homens e mulheres adotada, que deverá conter, entre outras informações relevantes:"
     ],
     "origin": "unverified",
     "question": {
       "statement": "De acordo com a Lei 13.303/2016, que dispõe sobre o estatuto jurídico da empresa pública, da sociedade de economia mista e de suas subsidiárias, no âmbito da União, dos Estados, do Distrito Federal e dos Municípios, é correto afirmar que as empresas públicas e as sociedades de economia mista deverão observar, dentre outros, o seguinte requisito de transparência: a divulgação anual da política de igualdade entre homens e mulheres adotada, que deverá conter, entre outras informações relevantes: a quantidade e a proporção de mulheres empregadas, por níveis hierárquicos; a quantidade e a proporção de mulheres que ocupam cargos na administração; o demonstrativo da remuneração fixa, variável e eventual, segregada por sexo, relativa a cargos ou funções similares; a evolução comparativa dos indicadores mencionados entre o exercício findo e o exercício anterior, especialmente na alta gestão.",
       "answer": true,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Correta. Reproduz o art. 8º, X.",
       "source": "28.pdf · questão 29 · Art 8º, X, Lei 13.303/2016",
       "meta": "Banca e ano não identificados no material enviado",
       "bank": "Banca não identificada",
       "year": null,
       "role": "",
       "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
-      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 13.303/2016 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.303/2016, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -1226,19 +1418,26 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 9º, § 1º, inc. VI",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
-      "Art. 9º A empresa pública e a sociedade de economia mista adotarão regras de estruturas e práticas de gestão de riscos e controle interno que abranjam: […] § 1º. […] VI - previsão de treinamento periódico, no mínimo anual, sobre Código de Conduta e Integridade, a empregados e administradores, e sobre a política de gestão de riscos, a administradores. […]"
+      "§ 1º Deverá ser elaborado e divulgado Código de Conduta e Integridade, que disponha sobre:",
+      "VI - previsão de treinamento periódico, no mínimo anual, sobre Código de Conduta e Integridade, a empregados e administradores, e sobre a política de gestão de riscos, a administradores."
     ],
     "origin": "real",
     "question": {
       "statement": "O Estado do Rio Grande do Sul, em observância às formalidades legais, criou a sociedade de economia mista XYZ, tornando-se imprescindível a elaboração e a divulgação de um Código de Conduta e Integridade da estatal. Nesse cenário, considerando o disposto na Lei nº 13.303/2016, o Código de Conduta e Integridade da sociedade de economia mista XYZ disporá sobre os seguintes itens, que estão corretos à exceção de um: I - Previsão de treinamento periódico, no mínimo semestral, sobre o Código de Conduta e Integridade, a administradores, e sobre a política de gestão de riscos, a empregados e administradores. II - Canal de denúncias que possibilite o recebimento de denúncias internas e externas relativas ao descumprimento do Código de Conduta e Integridade e das demais normas internas de ética e obrigacionais. III - Princípios, valores e missão da empresa pública e da sociedade de economia mista, bem como orientações sobre a prevenção de conflito de interesses e vedação de atos de corrupção e fraude. IV - Mecanismos de proteção que impeçam qualquer espécie de retaliação à pessoa que utilize o canal de denúncias. V - Instâncias internas responsáveis pela atualização e aplicação do Código de Conduta e Integridade. Pode-se afirmar que o item incorreto é o item I.",
       "answer": true,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Correta. O treinamento periódico é no mínimo anual (art. 9º, § 1º, VI), e não semestral, de modo que o item I é o incorreto. Os demais itens correspondem aos incisos I a IV do mesmo parágrafo.",
       "source": "28.pdf · questão 30 · Art. 9º, § 1º, VI, Lei 13.303/2016",
       "meta": "FGV 2025 - Auditor do Estado (SEFAZ-RS)",
       "bank": "FGV",
       "year": 2025,
       "role": "Auditor do Estado (SEFAZ-RS)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 13.303/2016 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.303/2016, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -1249,19 +1448,26 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 9º, § 3º, inc. II",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
-      "Art. 9º. [...] § 3º A auditoria interna deverá: [...] II - ser responsável por aferir a adequação do controle interno, a efetividade do gerenciamento dos riscos e dos processos de governança e a confiabilidade do processo de coleta, mensuração, classificação, acumulação, registro e divulgação de eventos e transações, visando ao preparo de demonstrações financeiras."
+      "§ 3º A auditoria interna deverá:",
+      "II - ser responsável por aferir a adequação do controle interno, a efetividade do gerenciamento dos riscos e dos processos de governança e a confiabilidade do processo de coleta, mensuração, classificação, acumulação, registro e divulgação de eventos e transações, visando ao preparo de demonstrações financeiras."
     ],
     "origin": "real",
     "question": {
-      "statement": "Externo (TCE-RJ) Com base nas Leis n.º 8.666/1993 e n.º 13.303/2016 (Lei das Estatais), julgue o item a seguir. Em empresas públicas, o conselho de administração é responsável por aferir a adequação do controle interno e a efetividade do gerenciamento dos riscos e dos processos de governança.",
+      "statement": "Com base nas Leis n.º 8.666/1993 e n.º 13.303/2016 (Lei das Estatais), julgue o item a seguir. Em empresas públicas, o conselho de administração é responsável por aferir a adequação do controle interno e a efetividade do gerenciamento dos riscos e dos processos de governança.",
       "answer": false,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Errada. Quem afere a adequação do controle interno e a efetividade do gerenciamento dos riscos e dos processos de governança é a auditoria interna (art. 9º, § 3º, II), e não o conselho de administração.",
       "source": "28.pdf · questão 31 · Art. 9º, § 3º, II, Lei 13.303/2016",
-      "meta": "CESPE/CEBRASPE 2021 - Analista de Controle",
+      "meta": "CESPE/CEBRASPE 2021 - Analista de Controle Externo (TCE-RJ)",
       "bank": "CESPE/CEBRASPE",
       "year": 2021,
-      "role": "Analista de Controle",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "role": "Analista de Controle Externo (TCE-RJ)",
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 13.303/2016 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.303/2016, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -1272,19 +1478,27 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 11º",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
-      "Art. 11. A empresa pública não poderá: I - lançar debêntures ou outros títulos ou valores mobiliários, conversíveis em ações; II - emitir partes beneficiárias."
+      "Art. 11. A empresa pública não poderá:",
+      "I - lançar debêntures ou outros títulos ou valores mobiliários, conversíveis em ações;",
+      "II - emitir partes beneficiárias."
     ],
     "origin": "real",
     "question": {
       "statement": "O Fundo de Investimento “Dex Capital”, de origem norte-americana, tem interesse em investir na República Federativa do Brasil, injetando milhões de dólares no mercado brasileiro, gerando externalidades positivas. Nesse contexto, a entidade realiza uma série de diligências in loco para tomar ciência dos riscos a que estará submetida. Surge, assim, uma dúvida quanto ao lançamento de debêntures e valores mobiliários e à emissão de partes beneficiárias pelas empresas públicas. Nesse cenário, considerando as disposições da Lei nº 13.303/16, é correto afirmar que as empresas públicas podem lançar debêntures ou outros títulos ou valores mobiliários, conversíveis em ações, mas não podem emitir partes beneficiárias.",
       "answer": false,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Errada. A empresa pública não pode lançar debêntures ou outros valores mobiliários conversíveis em ações nem emitir partes beneficiárias (art. 11, I e II).",
       "source": "28.pdf · questão 32 · Art. 11, Lei 13.303/2016",
       "meta": "FGV 2023 - Consultor Legislativo - Área VIII (Câmara dos Deputados)",
       "bank": "FGV",
       "year": 2023,
       "role": "Consultor Legislativo - Área VIII (Câmara dos Deputados)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 13.303/2016 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.303/2016, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -1295,19 +1509,26 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 11º, inc. I",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
-      "Art. 11. A empresa pública não poderá: I - lançar debêntures ou outros títulos ou valores mobiliários, conversíveis em ações;"
+      "Art. 11. A empresa pública não poderá:",
+      "I - lançar debêntures ou outros títulos ou valores mobiliários, conversíveis em ações;"
     ],
     "origin": "real",
     "question": {
       "statement": "No que se refere às disposições aplicáveis às empresas públicas e às sociedades de economia mista, segundo a Lei n° 13.303 de 30 de junho de 2016, é correto afirmar que, por explorar atividade econômica, a empresa pública poderá lançar debêntures ou outros títulos ou valores mobiliários, desde que conversíveis em ações.",
       "answer": false,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Errada. A empresa pública não pode lançar debêntures ou outros valores mobiliários conversíveis em ações (art. 11, I).",
       "source": "28.pdf · questão 33 · Art. 11, I, Lei 13.303/2016",
       "meta": "FCC 2021 - Juiz Substituto (TJ-GO)",
       "bank": "FCC",
       "year": 2021,
       "role": "Juiz Substituto (TJ-GO)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 13.303/2016 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.303/2016, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -1318,20 +1539,27 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 11º, inc. I",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
-      "Art. 11. A empresa pública não poderá: I - lançar debêntures ou outros títulos ou valores mobiliários, conversíveis em ações; [...]"
+      "Art. 11. A empresa pública não poderá:",
+      "I - lançar debêntures ou outros títulos ou valores mobiliários, conversíveis em ações;"
     ],
     "origin": "real",
     "question": {
       "statement": "Segundo art. 11º da Lei 13.303/2016, a empresa pública não poderá lançar debêntures ou outros títulos ou valores mobiliários, conversíveis em ações;",
       "answer": true,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Correta. Reproduz o art. 11, I.",
       "source": "28.pdf · questão 35 · Art. 11, I, Lei 13.303/2016",
       "meta": "EDUCA 2020 - Contador (Prefeitura de São Francisco - PB)",
       "bank": "EDUCA",
       "year": 2020,
       "role": "Contador (Prefeitura de São Francisco - PB)",
       "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
-      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 13.303/2016 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.303/2016, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -1342,19 +1570,27 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 11º, inc. II",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
-      "Art. 11. A empresa pública não poderá: I - lançar debêntures ou outros títulos ou valores mobiliários, conversíveis em ações; II - emitir partes beneficiárias."
+      "Art. 11. A empresa pública não poderá:",
+      "I - lançar debêntures ou outros títulos ou valores mobiliários, conversíveis em ações;",
+      "II - emitir partes beneficiárias."
     ],
     "origin": "real",
     "question": {
       "statement": "O Fundo de Investimento “Dex Capital”, de origem norte- americana, tem interesse em investir na República Federativa do Brasil, injetando milhões de dólares no mercado brasileiro, gerando externalidades positivas. Nesse contexto, a entidade realiza uma série de diligências in loco para tomar ciência dos riscos a que estará submetida. Surge, assim, uma dúvida quanto ao lançamento de debêntures e valores mobiliários e à emissão de partes beneficiárias pelas empresas públicas. Nesse cenário, considerando as disposições da Lei no 13.303/16, é correto afirmar que as empresas públicas não podem lançar debêntures ou outros títulos ou valores mobiliários, conversíveis em ações, nem tampouco podem emitir partes beneficiárias.",
       "answer": true,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Correta. Reproduz o art. 11, I e II.",
       "source": "28.pdf · questão 36 · Art. 11, II, Lei 13.303/2016",
       "meta": "FGV 2023 - Analista Legislativo (Câmara dos Deputados)",
       "bank": "FGV",
       "year": 2023,
       "role": "Analista Legislativo (Câmara dos Deputados)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 13.303/2016 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.303/2016, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -1365,19 +1601,25 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 15º, § 1º",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
-      "Art. 15. O acionista controlador da empresa pública e da sociedade de economia mista responderá pelos atos praticados com abuso de poder, nos termos da Lei nº 6.404, de 15 de dezembro de 1976. § 1º A ação de reparação poderá ser proposta pela sociedade, nos termos do art. 246 da Lei n° 6.404, de 15 de dezembro de 1976, pelo terceiro prejudicado ou pelos demais sócios, independentemente de autorização da assembleia-geral de acionistas."
+      "§ 1º A ação de reparação poderá ser proposta pela sociedade, nos termos do art. 246 da Lei nº 6.404, de 15 de dezembro de 1976 , pelo terceiro prejudicado ou pelos demais sócios, independentemente de autorização da assembleia-geral de acionistas."
     ],
     "origin": "real",
     "question": {
       "statement": "No que se refere às disposições aplicáveis às empresas públicas e às sociedades de economia mista, segundo a Lei n° 13.303 de 30 de junho de 2016, é correto afirmar que o acionista controlador da empresa pública e da sociedade de economia mista responderá pelos atos praticados com abuso de poder, podendo a ação ser proposta pelos demais sócios, desde que autorizados pela assembleia geral de acionistas.",
       "answer": false,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Errada. A ação de reparação pode ser proposta pela sociedade, por terceiro prejudicado ou pelos demais sócios, independentemente de autorização da assembleia-geral (art. 15, § 1º).",
       "source": "28.pdf · questão 37 · Art. 15, § 1°, Lei 13.303/2016",
       "meta": "FCC 2021 - Juiz Substituto (TJ-GO)",
       "bank": "FCC",
       "year": 2021,
       "role": "Juiz Substituto (TJ-GO)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 13.303/2016 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.303/2016, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -1388,19 +1630,28 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 17º, inc. I",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
-      "Art. 17. Os membros do Conselho de Administração e os indicados para os cargos de diretor, inclusive presidente, diretor-geral e diretor-presidente, serão escolhidos entre cidadãos de reputação ilibada e de notório conhecimento, devendo ser atendidos, alternativamente, um dos requisitos das alíneas “a”, “b” e “c” do inciso I e, cumulativamente, os requisitos dos incisos II e III: I - ter experiência profissional de, no mínimo: […] c) 4 (quatro) anos de experiência como profissional liberal em atividade direta ou indiretamente vinculada à área de atuação da empresa pública ou sociedade de economia mista; […] III - não se enquadrar nas hipóteses de inelegibilidade previstas nas alíneas do inciso I do caput do art. 1º da Lei Complementar nº 64, de 18 de maio de 1990 , com as alterações introduzidas pela Lei Complementar nº 135, de 4 de junho de 2010."
+      "Art. 17. Os membros do Conselho de Administração e os indicados para os cargos de diretor, inclusive presidente, diretor-geral e diretor-presidente, serão escolhidos entre cidadãos de reputação ilibada e de notório conhecimento, devendo ser atendidos, alternativamente, um dos requisitos das alíneas “a”, “b” e “c” do inciso I e, cumulativamente, os requisitos dos incisos II e III:",
+      "I - ter experiência profissional de, no mínimo:",
+      "II - ter formação acadêmica compatível com o cargo para o qual foi indicado; e",
+      "III - não se enquadrar nas hipóteses de inelegibilidade previstas nas alíneas do inciso I do caput do art. 1º da Lei Complementar nº 64, de 18 de maio de 1990 , com as alterações introduzidas pela Lei Complementar nº 135, de 4 de junho de 2010."
     ],
     "origin": "real",
     "question": {
-      "statement": "Remoção (TJ-ES) O acionista controlador de sociedade de economia mista estadual indicou Matheus para o cargo de diretor-presidente. O indicado tem 32 anos, reputação ilibada e notório conhecimento na área de atuação da sociedade de economia mista. Ademais, Matheus atua nos últimos cinco anos como profissional liberal em atividade diretamente vinculada à área de atuação da sociedade de economia mista. Por fim, o indicado tem formação acadêmica compatível com o cargo para o qual foi indicado e não se enquadra nas hipóteses legais de inelegibilidade para qualquer cargo. Considerando o caso narrado, é correto afirmar que Matheus pode ter sua indicação aceita para o cargo de diretor-presidente porque, cumulativamente, tem formação acadêmica compatível com o cargo e não se enquadra nas hipóteses legais de inelegibilidade para qualquer cargo.",
+      "statement": "O acionista controlador de sociedade de economia mista estadual indicou Matheus para o cargo de diretor-presidente. O indicado tem 32 anos, reputação ilibada e notório conhecimento na área de atuação da sociedade de economia mista. Ademais, Matheus atua nos últimos cinco anos como profissional liberal em atividade diretamente vinculada à área de atuação da sociedade de economia mista. Por fim, o indicado tem formação acadêmica compatível com o cargo para o qual foi indicado e não se enquadra nas hipóteses legais de inelegibilidade para qualquer cargo. Considerando o caso narrado, é correto afirmar que Matheus pode ter sua indicação aceita para o cargo de diretor-presidente porque, cumulativamente, tem formação acadêmica compatível com o cargo e não se enquadra nas hipóteses legais de inelegibilidade para qualquer cargo.",
       "answer": true,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Correta. O indicado deve ter reputação ilibada, notório conhecimento, experiência (inclusive 4 anos como profissional liberal em atividade vinculada à área, art. 17, I, c), formação compatível e não se enquadrar nas hipóteses de inelegibilidade (art. 17, II e III).",
       "source": "28.pdf · questão 38 · Art. 17, I, c, III, Lei 13.303/2016",
-      "meta": "FGV 2025 - Tabelião / Oficial de Registros -",
+      "meta": "FGV 2025 - Tabelião / Oficial de Registros - Remoção (TJ-ES)",
       "bank": "FGV",
       "year": 2025,
-      "role": "Tabelião / Oficial de Registros -",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "role": "Tabelião / Oficial de Registros - Remoção (TJ-ES)",
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 13.303/2016 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.303/2016, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -1411,19 +1662,25 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 17º, § 2º, inc. I",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
-      "Art. 17, § 2º É vedada a indicação, para o Conselho de Administração e para a diretoria: I - de representante do órgão regulador ao qual a empresa pública ou a sociedade de economia mista está sujeita, de Ministro de Estado, de Secretário de Estado, de Secretário Municipal, de titular de cargo, sem vínculo permanente com o serviço público, de natureza especial ou de direção e assessoramento superior na administração pública, de dirigente estatutário de partido político e de titular de mandato no Poder Legislativo de qualquer ente da federação, ainda que licenciados do cargo; [...]"
+      "I - de representante do órgão regulador ao qual a empresa pública ou a sociedade de economia mista está sujeita, de Ministro de Estado, de Secretário de Estado, de Secretário Municipal, de titular de cargo, sem vínculo permanente com o serviço público, de natureza especial ou de direção e assessoramento superior na administração pública, de dirigente estatutário de partido político e de titular de mandato no Poder Legislativo de qualquer ente da federação, ainda que licenciados do cargo;"
     ],
     "origin": "real",
     "question": {
-      "statement": "Externo (TCE-RJ) No que se refere a compliance e à composição do conselho de administração e da diretoria de empresas estatais, julgue o item subsequente. É vedada a indicação de dirigente estatutário de partido político para atuar no conselho de administração ou na diretoria de uma estatal.",
+      "statement": "No que se refere a compliance e à composição do conselho de administração e da diretoria de empresas estatais, julgue o item subsequente. É vedada a indicação de dirigente estatutário de partido político para atuar no conselho de administração ou na diretoria de uma estatal.",
       "answer": true,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Correta. É vedada a indicação de dirigente estatutário de partido político (art. 17, § 2º, I). O texto compilado traz a anotação \"Vide ADI 7331\" para este dispositivo; o alcance das decisões do Supremo Tribunal Federal nessa ação não consta do arquivo e não foi incorporado à conferência.",
       "source": "28.pdf · questão 40 · Art. 17, § 2º, I, Lei 13.303/2016",
-      "meta": "CESPE/CEBRASPE 2021 - Analista de Controle",
+      "meta": "CESPE/CEBRASPE 2021 - Analista de Controle Externo (TCE-RJ)",
       "bank": "CESPE/CEBRASPE",
       "year": 2021,
-      "role": "Analista de Controle",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "role": "Analista de Controle Externo (TCE-RJ)",
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado-parcial",
+        "basis": "texto legal conferido (Lei 13.303/2016 compilada, Planalto); dispositivo ou precedente complementar ainda não conferido em fonte oficial",
+        "date": "2026-10-28",
+        "source": "Lei 13.303/2016, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -1434,19 +1691,25 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 17º, § 2º, inc. I",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
-      "Art. 17, § 2º É vedada a indicação, para o Conselho de Administração e para a diretoria: I - de representante do órgão regulador ao qual a empresa pública ou a sociedade de economia mista está sujeita, de Ministro de Estado, de Secretário de Estado, de Secretário Municipal, de titular de cargo, sem vínculo permanente com o serviço público, de natureza especial ou de direção e assessoramento superior na administração pública, de dirigente estatutário de partido político e de titular de mandato no Poder Legislativo de qualquer ente da federação, ainda que licenciados do cargo; [...]"
+      "I - de representante do órgão regulador ao qual a empresa pública ou a sociedade de economia mista está sujeita, de Ministro de Estado, de Secretário de Estado, de Secretário Municipal, de titular de cargo, sem vínculo permanente com o serviço público, de natureza especial ou de direção e assessoramento superior na administração pública, de dirigente estatutário de partido político e de titular de mandato no Poder Legislativo de qualquer ente da federação, ainda que licenciados do cargo;"
     ],
     "origin": "real",
     "question": {
-      "statement": "Externo (TCE-RJ) No que se refere a compliance e à composição do conselho de administração e da diretoria de empresas estatais, julgue o item subsequente. Ainda que licenciado do cargo, titular de mandato no Poder Legislativo não pode ser indicado para atuar no conselho de administração ou na diretoria de estatais.",
+      "statement": "No que se refere a compliance e à composição do conselho de administração e da diretoria de empresas estatais, julgue o item subsequente. Ainda que licenciado do cargo, titular de mandato no Poder Legislativo não pode ser indicado para atuar no conselho de administração ou na diretoria de estatais.",
       "answer": true,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Correta. É vedada a indicação de titular de mandato no Poder Legislativo de qualquer ente, ainda que licenciado do cargo (art. 17, § 2º, I). O texto compilado traz a anotação \"Vide ADI 7331\" para este dispositivo; o alcance das decisões do Supremo Tribunal Federal nessa ação não consta do arquivo e não foi incorporado à conferência.",
       "source": "28.pdf · questão 41 · Art. 17, § 2º, I, Lei 13.303/2016",
-      "meta": "CESPE/CEBRASPE 2021 - Analista de Controle",
+      "meta": "CESPE/CEBRASPE 2021 - Analista de Controle Externo (TCE-RJ)",
       "bank": "CESPE/CEBRASPE",
       "year": 2021,
-      "role": "Analista de Controle",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "role": "Analista de Controle Externo (TCE-RJ)",
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado-parcial",
+        "basis": "texto legal conferido (Lei 13.303/2016 compilada, Planalto); dispositivo ou precedente complementar ainda não conferido em fonte oficial",
+        "date": "2026-10-28",
+        "source": "Lei 13.303/2016, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -1457,19 +1720,25 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 17º, § 2º, inc. II",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
-      "Art. 17, § 2º É vedada a indicação, para o Conselho de Administração e para a diretoria: [...] II - de pessoa que atuou, nos últimos 36 (trinta e seis) meses, como participante de estrutura decisória de partido político ou em trabalho vinculado a organização, estruturação e realização de campanha eleitoral; [...]"
+      "II - de pessoa que atuou, nos últimos 36 (trinta e seis) meses, como participante de estrutura decisória de partido político ou em trabalho vinculado a organização, estruturação e realização de campanha eleitoral;"
     ],
     "origin": "real",
     "question": {
       "statement": "Considerando a situação de determinada sociedade de economia mista estadual que atua na área de saneamento, bem como o regime jurídico previsto na Lei Federal nº 13.303/2016, julgue a assertiva a seguir. A pessoa que houver atuado em trabalho vinculado à organização, estruturação e realização de campanha eleitoral nos últimos 36 meses não pode ser indicada para a diretoria da estatal.",
       "answer": true,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Correta. É vedada a indicação de pessoa que atuou, nos últimos 36 meses, em trabalho vinculado a organização, estruturação e realização de campanha eleitoral (art. 17, § 2º, II). O texto compilado traz a anotação \"Vide ADI 7331\" para este dispositivo; o alcance das decisões do Supremo Tribunal Federal nessa ação não consta do arquivo e não foi incorporado à conferência.",
       "source": "28.pdf · questão 42 · Art. 17, § 2º, II, Lei 13.303/2016",
       "meta": "FGV 2024 - Juiz Substituto (TJ-MT)",
       "bank": "FGV",
       "year": 2024,
       "role": "Juiz Substituto (TJ-MT)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado-parcial",
+        "basis": "texto legal conferido (Lei 13.303/2016 compilada, Planalto); dispositivo ou precedente complementar ainda não conferido em fonte oficial",
+        "date": "2026-10-28",
+        "source": "Lei 13.303/2016, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -1480,19 +1749,25 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 17º, § 2º, inc. II",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
-      "Art. 17, § 2º É vedada a indicação, para o Conselho de Administração e para a diretoria: [...] II - de pessoa que atuou, nos últimos 36 (trinta e seis) meses, como participante de estrutura decisória de partido político ou em trabalho vinculado a organização, estruturação e realização de campanha eleitoral; [...]"
+      "II - de pessoa que atuou, nos últimos 36 (trinta e seis) meses, como participante de estrutura decisória de partido político ou em trabalho vinculado a organização, estruturação e realização de campanha eleitoral;"
     ],
     "origin": "real",
     "question": {
-      "statement": "Externo (TCE-RJ) No que se refere a compliance e à composição do conselho de administração e da diretoria de empresas estatais, julgue o item subsequente. É permitido que pessoa que tenha participado, nos últimos vinte e quatro meses, da estrutura decisória de partido políticoseja indicada para atuar no conselho de administração ou na diretoria de uma estatal.",
+      "statement": "No que se refere a compliance e à composição do conselho de administração e da diretoria de empresas estatais, julgue o item subsequente. É permitido que pessoa que tenha participado, nos últimos vinte e quatro meses, da estrutura decisória de partido políticoseja indicada para atuar no conselho de administração ou na diretoria de uma estatal.",
       "answer": false,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Errada. É vedada a indicação de quem atuou como participante de estrutura decisória de partido político nos últimos 36 meses (art. 17, § 2º, II), e não 24. O texto compilado traz a anotação \"Vide ADI 7331\" para este dispositivo; o alcance das decisões do Supremo Tribunal Federal nessa ação não consta do arquivo e não foi incorporado à conferência.",
       "source": "28.pdf · questão 43 · Art. 17, § 2º, II, Lei 13.303/2016",
-      "meta": "CESPE/CEBRASPE 2021 - Analista de Controle",
+      "meta": "CESPE/CEBRASPE 2021 - Analista de Controle Externo (TCE-RJ)",
       "bank": "CESPE/CEBRASPE",
       "year": 2021,
-      "role": "Analista de Controle",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "role": "Analista de Controle Externo (TCE-RJ)",
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado-parcial",
+        "basis": "texto legal conferido (Lei 13.303/2016 compilada, Planalto); dispositivo ou precedente complementar ainda não conferido em fonte oficial",
+        "date": "2026-10-28",
+        "source": "Lei 13.303/2016, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -1503,19 +1778,25 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 18º, inc. I",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
-      "Art. 18. Sem prejuízo das competências previstas no art. 142 da Lei nº 6.404, de 15 de dezembro de 1976, e das demais atribuições previstas nesta Lei, compete ao Conselho de Administração: I - discutir, aprovar e monitorar decisões envolvendo práticas de governança corporativa, relacionamento com partes interessadas, política de gestão de pessoas e código de conduta dos agentes;"
+      "I - discutir, aprovar e monitorar decisões envolvendo práticas de governança corporativa, relacionamento com partes interessadas, política de gestão de pessoas e código de conduta dos agentes;"
     ],
     "origin": "real",
     "question": {
       "statement": "De acordo com o disposto na Lei nº 13.303/2016, compete ao comitê de auditoria estatutário das empresas estatais discutir, aprovar e monitorar decisões que envolvam praticas de governança corporativa, relacionamento com partes interessadas, política de gestão de pessoas e código de conduta dos agentes.",
       "answer": false,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Errada. Discutir, aprovar e monitorar decisões sobre governança corporativa, partes interessadas, gestão de pessoas e código de conduta é competência do Conselho de Administração (art. 18, I), e não do comitê de auditoria estatutário.",
       "source": "28.pdf · questão 44 · Art. 18, I, Lei 13.303/2016",
       "meta": "CESPE/CEBRASPE 2023 - Advogado da União (AGU)",
       "bank": "CESPE/CEBRASPE",
       "year": 2023,
       "role": "Advogado da União (AGU)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 13.303/2016 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.303/2016, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -1526,19 +1807,25 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 18º, inc. III",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
-      "Art. 18. Sem prejuízo das competências previstas no art. 142 da Lei nº 6.404, de 15 de dezembro de 1976 , e das demais atribuições previstas nesta Lei, compete ao Conselho de Administração: […] III - estabelecer política de porta-vozes visando a eliminar risco de contradição entre informações de diversas áreas e as dos executivos da empresa pública ou da sociedade de economia mista; […]"
+      "III - estabelecer política de porta-vozes visando a eliminar risco de contradição entre informações de diversas áreas e as dos executivos da empresa pública ou da sociedade de economia mista;"
     ],
     "origin": "real",
     "question": {
       "statement": "De acordo com a Lei nº 13.303/2016, assinale sobre o que apresenta uma função do Conselho de Administração nas empresas públicas e nas sociedades de economia mista. Estabelecer política de porta-vozes visando a eliminar risco de contradição entre as informações de diversas áreas e as dos executivos da empresa pública ou da sociedade de economia mista.",
       "answer": true,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Correta. Estabelecer política de porta-vozes é competência do Conselho de Administração (art. 18, III).",
       "source": "28.pdf · questão 45 · Art. 18, III, Lei 13.303/16",
       "meta": "FGV 2021 - Analista Especializado (IMBEL)",
       "bank": "FGV",
       "year": 2021,
       "role": "Analista Especializado (IMBEL)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 13.303/2016 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.303/2016, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -1549,20 +1836,26 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 19º",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
-      "Art. 19-A. Nos conselhos de administração das empresas públicas e das sociedades de economia mista de que trata esta Lei, pelo menos 30% (trinta por cento) dos membros titulares serão mulheres. (Incluído pela Lei nº 15.177, de 2025)"
+      "Art. 19. É garantida a participação, no Conselho de Administração, de representante dos empregados e dos acionistas minoritários."
     ],
     "origin": "unverified",
     "question": {
       "statement": "De acordo com a Lei 13.303/2016, que dispõe sobre o estatuto jurídico da empresa pública, da sociedade de economia mista e de suas subsidiárias, no âmbito da União, dos Estados, do Distrito Federal e dos Municípios, é correto afirmar que nos conselhos de administração das empresas públicas e das sociedades de economia mista de que trata esta Lei, pelo menos 40% (quarenta por cento) dos membros titulares serão mulheres.",
       "answer": false,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Errada. O art. 19 garante a participação de representante dos empregados e dos acionistas minoritários no Conselho de Administração, sem prever cota de 40% de mulheres.",
       "source": "28.pdf · questão 46 · Art 19-A, Lei 13.303/2016",
       "meta": "Banca e ano não identificados no material enviado",
       "bank": "Banca não identificada",
       "year": null,
       "role": "",
       "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
-      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual."
+      "historicalNote": "Questão anterior a 2021. Conferir alterações legislativas posteriores antes de considerar o gabarito atual.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 13.303/2016 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.303/2016, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -1573,19 +1866,26 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 22º, inc. IV",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
-      "Art. 22. O Conselho de Administração deve ser composto, no mínimo, por 25% (vinte e cinco por cento) de membros independentes ou por pelo menos 1 (um), caso haja decisão pelo exercício da faculdade do voto múltiplo pelos acionistas minoritários, nos termos do art. 141 da Lei nº 6.404, de 15 de dezembro de 1976 . [...] IV - não ser ou não ter sido, nos últimos 3 (três) anos, empregado ou diretor da empresa pública, da sociedade de economia mista ou de sociedade controlada, coligada ou subsidiária da empresa pública ou da sociedade de economia mista, exceto se o vínculo for exclusivamente com instituições públicas de ensino ou pesquisa;"
+      "Art. 22. O Conselho de Administração deve ser composto, no mínimo, por 25% (vinte e cinco por cento) de membros independentes ou por pelo menos 1 (um), caso haja decisão pelo exercício da faculdade do voto múltiplo pelos acionistas minoritários, nos termos do art. 141 da Lei nº 6.404, de 15 de dezembro de 1976 .",
+      "IV - não ser ou não ter sido, nos últimos 3 (três) anos, empregado ou diretor da empresa pública, da sociedade de economia mista ou de sociedade controlada, coligada ou subsidiária da empresa pública ou da sociedade de economia mista, exceto se o vínculo for exclusivamente com instituições públicas de ensino ou pesquisa;"
     ],
     "origin": "real",
     "question": {
       "statement": "O Conselho de Administração das empresas públicas e das sociedades de economia mista deve ser composto, no mínimo, por vinte e cinco por cento de membros independentes ou por pelo menos um, caso haja decisão pelo exercício da faculdade do voto múltiplo pelos acionistas minoritários. De acordo com a narrativa e considerando as disposições da Lei nº 13.303/2016, os requisitos de elegibilidade do conselheiro independente inclui não ser ou não ter sido, nos últimos três anos, empregado ou diretor da empresa pública, da sociedade de economia mista ou de sociedade controlada, coligada ou subsidiária da empresa pública ou da sociedade de economia mista, exceto se o vínculo for exclusivamente com instituições públicas de ensino ou pesquisa.",
       "answer": true,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Correta. O conselheiro independente não pode ser ou ter sido, nos últimos 3 anos, empregado ou diretor da empresa ou de sociedade ligada, salvo vínculo exclusivo com instituições públicas de ensino ou pesquisa (art. 22, § 1º, IV); o mínimo é de 25% de independentes (art. 22, caput).",
       "source": "28.pdf · questão 47 · Art. 22, IV, Lei 13.303/2016",
       "meta": "FGV 2025 - Analista de Procuradoria - Direito (PGM\u0002RJ)",
       "bank": "FGV",
       "year": 2025,
       "role": "Analista de Procuradoria - Direito (PGM\u0002RJ)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 13.303/2016 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.303/2016, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -1602,13 +1902,19 @@ const DATA_ADM_PACK2 = [
     "question": {
       "statement": "A Lei nº 13.303/2016 dispõe sobre o estatuto jurídico da empresa pública, da sociedade de economia mista e de suas subsidiárias e traz disposições sobre o Comitê de Auditoria Estatutário. Sobre o assunto, analise a afirmativa abaixo. A empresa pública e a sociedade de economia mista deverão possuir em sua estrutura societária Comitê de Auditoria Estatutário como órgão auxiliar do Conselho de Administração, ao qual se reportará diretamente.",
       "answer": true,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Correta. Reproduz o art. 24, caput.",
       "source": "28.pdf · questão 48 · Art. 24, Lei 13.303/2016",
       "meta": "IBFC 2022 - Investigador de Polícia Civil (PC-BA)",
       "bank": "IBFC",
       "year": 2022,
       "role": "Investigador de Polícia Civil (PC-BA)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 13.303/2016 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.303/2016, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -1619,19 +1925,25 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 24º, § 1º, inc. I",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
-      "Art. 24. § 1º Competirá ao Comitê de Auditoria Estatutário, sem prejuízo de outras competências previstas no estatuto da empresa pública ou da sociedade de economia mista: I - opinar sobre a contratação e destituição de auditor independente;"
+      "I - opinar sobre a contratação e destituição de auditor independente;"
     ],
     "origin": "real",
     "question": {
       "statement": "De acordo com a Lei nº 13.303/2016, assinale sobre o que apresenta uma função do Conselho de Administração nas empresas públicas e nas sociedades de economia mista. Opinar sobre a contratação e destituição de auditor independente.",
       "answer": false,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Errada. Opinar sobre a contratação e destituição de auditor independente compete ao Comitê de Auditoria Estatutário (art. 24, § 1º, I), e não ao Conselho de Administração.",
       "source": "28.pdf · questão 49 · Art. 24, § 1º, I, Lei 13.303/16",
       "meta": "FGV 2021 - Analista Especializado (IMBEL)",
       "bank": "FGV",
       "year": 2021,
       "role": "Analista Especializado (IMBEL)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 13.303/2016 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.303/2016, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -1642,19 +1954,25 @@ const DATA_ADM_PACK2 = [
     "number": "Art. 24º, § 1º, inc. II",
     "title": "Lei 13.303/2016 — Empresas estatais",
     "parts": [
-      "Art. 24. § 1º Competirá ao Comitê de Auditoria Estatutário, sem prejuízo de outras competências previstas no estatuto da empresa pública ou da sociedade de economia mista: […] II - supervisionar as atividades dos auditores independentes, avaliando sua independência, a qualidade dos serviços prestados e a adequação de tais serviços às necessidades da empresa pública ou da sociedade de economia mista; […]"
+      "II - supervisionar as atividades dos auditores independentes, avaliando sua independência, a qualidade dos serviços prestados e a adequação de tais serviços às necessidades da empresa pública ou da sociedade de economia mista;"
     ],
     "origin": "real",
     "question": {
       "statement": "De acordo com a Lei nº 13.303/2016, assinale sobre o que apresenta uma função do Conselho de Administração nas empresas públicas e nas sociedades de economia mista. Supervisionar as atividades dos auditores independentes, avaliando sua independência, a qualidade dos serviços prestados e a adequação de tais serviços às necessidades da empresa pública ou da sociedade de economia mista.",
       "answer": false,
-      "explanation": "Gabarito reproduzido do arquivo fornecido. A validação jurídica está pendente.",
+      "explanation": "Errada. Supervisionar as atividades dos auditores independentes compete ao Comitê de Auditoria Estatutário (art. 24, § 1º, II), e não ao Conselho de Administração.",
       "source": "28.pdf · questão 50 · Art. 24, § 1º, II, Lei 13.303/16",
       "meta": "FGV 2021 - Analista Especializado (IMBEL)",
       "bank": "FGV",
       "year": 2021,
       "role": "Analista Especializado (IMBEL)",
-      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva."
+      "updateWarning": "Conteúdo em auditoria jurídica: conferir legislação vigente e gabarito antes da publicação definitiva.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 13.303/2016 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.303/2016, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {

@@ -8,19 +8,26 @@ const DATA_ADM_14133_EXTRA = [
     "number": "Art. 11, I",
     "title": "Lei 14.133/2021 — Licitações e Contratos Administrativos",
     "parts": [
-      "Fundamento legal: Art. 11, I da Lei 14.133/2021. O art. 11, I, inclui expressamente o ciclo de vida do objeto."
+      "Art. 11. O processo licitatório tem por objetivos:",
+      "I - assegurar a seleção da proposta apta a gerar o resultado de contratação mais vantajoso para a Administração Pública, inclusive no que se refere ao ciclo de vida do objeto;"
     ],
     "origin": "authorial",
     "question": {
       "statement": "A seleção da proposta mais vantajosa deve considerar também o ciclo de vida do objeto.",
       "answer": true,
-      "explanation": "O art. 11, I, inclui expressamente o ciclo de vida do objeto.",
+      "explanation": "Correta. O processo licitatório assegura a seleção da proposta apta a gerar o resultado de contratação mais vantajoso, inclusive quanto ao ciclo de vida do objeto (art. 11, I).",
       "source": "Fonte oficial (acesso em 08/10/2026): https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14133.htm — Art. 11, I",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia",
-      "origin": "authorial"
+      "origin": "authorial",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 14.133/2021 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 14.133/2021, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -31,19 +38,26 @@ const DATA_ADM_14133_EXTRA = [
     "number": "Art. 11, II",
     "title": "Lei 14.133/2021 — Licitações e Contratos Administrativos",
     "parts": [
-      "Fundamento legal: Art. 11, II da Lei 14.133/2021. O art. 11, II, exige isonomia e justa competição."
+      "Art. 11. O processo licitatório tem por objetivos:",
+      "II - assegurar tratamento isonômico entre os licitantes, bem como a justa competição;"
     ],
     "origin": "authorial",
     "question": {
       "statement": "A Administração pode dispensar a igualdade de tratamento entre os licitantes quando houver interesse em acelerar a contratação.",
       "answer": false,
-      "explanation": "O art. 11, II, exige isonomia e justa competição.",
+      "explanation": "Errada. O processo licitatório tem por objetivo assegurar tratamento isonômico entre os licitantes e a justa competição (art. 11, II), sem exceção por urgência.",
       "source": "Fonte oficial (acesso em 08/10/2026): https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14133.htm — Art. 11, II",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia",
-      "origin": "authorial"
+      "origin": "authorial",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 14.133/2021 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 14.133/2021, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -54,19 +68,25 @@ const DATA_ADM_14133_EXTRA = [
     "number": "Art. 11, parágrafo único",
     "title": "Lei 14.133/2021 — Licitações e Contratos Administrativos",
     "parts": [
-      "Fundamento legal: Art. 11, parágrafo único da Lei 14.133/2021. O parágrafo único atribui tais responsabilidades à alta administração."
+      "Parágrafo único. A alta administração do órgão ou entidade é responsável pela governança das contratações e deve implementar processos e estruturas, inclusive de gestão de riscos e controles internos, para avaliar, direcionar e monitorar os processos licitatórios e os respectivos contratos, com o intuito de alcançar os objetivos estabelecidos no caput deste artigo, promover um ambiente íntegro e confiável, assegurar o alinhamento das contratações ao planejamento estratégico e às leis orçamentárias e promover eficiência, efetividade e eficácia em suas contratações."
     ],
     "origin": "authorial",
     "question": {
       "statement": "A alta administração é responsável pela governança das contratações e deve implementar gestão de riscos e controles internos.",
       "answer": true,
-      "explanation": "O parágrafo único atribui tais responsabilidades à alta administração.",
+      "explanation": "Correta. A alta administração é responsável pela governança das contratações e deve implementar processos e estruturas, inclusive de gestão de riscos e controles internos (art. 11, parágrafo único).",
       "source": "Fonte oficial (acesso em 08/10/2026): https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14133.htm — Art. 11, parágrafo único",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia",
-      "origin": "authorial"
+      "origin": "authorial",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 14.133/2021 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 14.133/2021, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -77,19 +97,26 @@ const DATA_ADM_14133_EXTRA = [
     "number": "Art. 12, III",
     "title": "Lei 14.133/2021 — Licitações e Contratos Administrativos",
     "parts": [
-      "Fundamento legal: Art. 12, III da Lei 14.133/2021. O formalismo moderado é previsto no inciso III."
+      "Art. 12. No processo licitatório, observar-se-á o seguinte:",
+      "III - o desatendimento de exigências meramente formais que não comprometam a aferição da qualificação do licitante ou a compreensão do conteúdo de sua proposta não importará seu afastamento da licitação ou a invalidação do processo;"
     ],
     "origin": "authorial",
     "question": {
       "statement": "Exigências apenas formais que não afetem a avaliação da qualificação ou a compreensão da proposta não devem afastar licitantes.",
       "answer": true,
-      "explanation": "O formalismo moderado é previsto no inciso III.",
+      "explanation": "Correta. O desatendimento de exigências meramente formais que não comprometam a aferição da qualificação ou a compreensão da proposta não importa afastamento do licitante nem invalidação do processo (art. 12, III).",
       "source": "Fonte oficial (acesso em 08/10/2026): https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14133.htm — Art. 12, III",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia",
-      "origin": "authorial"
+      "origin": "authorial",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 14.133/2021 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 14.133/2021, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -100,19 +127,26 @@ const DATA_ADM_14133_EXTRA = [
     "number": "Art. 12, V",
     "title": "Lei 14.133/2021 — Licitações e Contratos Administrativos",
     "parts": [
-      "Fundamento legal: Art. 12, V da Lei 14.133/2021. O inciso V só admite essa exigência diante de dúvida de autenticidade ou de imposição legal."
+      "Art. 12. No processo licitatório, observar-se-á o seguinte:",
+      "V - o reconhecimento de firma somente será exigido quando houver dúvida de autenticidade, salvo imposição legal;"
     ],
     "origin": "authorial",
     "question": {
       "statement": "O reconhecimento de firma é obrigatório em todos os documentos apresentados pelo licitante, ainda que não exista dúvida de autenticidade.",
       "answer": false,
-      "explanation": "O inciso V só admite essa exigência diante de dúvida de autenticidade ou de imposição legal.",
+      "explanation": "Errada. O reconhecimento de firma somente será exigido quando houver dúvida de autenticidade, salvo imposição legal (art. 12, V).",
       "source": "Fonte oficial (acesso em 08/10/2026): https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14133.htm — Art. 12, V",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia",
-      "origin": "authorial"
+      "origin": "authorial",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 14.133/2021 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 14.133/2021, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -123,19 +157,26 @@ const DATA_ADM_14133_EXTRA = [
     "number": "Art. 12, VI",
     "title": "Lei 14.133/2021 — Licitações e Contratos Administrativos",
     "parts": [
-      "Fundamento legal: Art. 12, VI da Lei 14.133/2021. O inciso VI privilegia meios eletrônicos."
+      "Art. 12. No processo licitatório, observar-se-á o seguinte:",
+      "VI - os atos serão preferencialmente digitais, de forma a permitir que sejam produzidos, comunicados, armazenados e validados por meio eletrônico;"
     ],
     "origin": "authorial",
     "question": {
       "statement": "Os atos praticados no processo licitatório serão preferencialmente digitais.",
       "answer": true,
-      "explanation": "O inciso VI privilegia meios eletrônicos.",
+      "explanation": "Correta. Os atos serão preferencialmente digitais (art. 12, VI).",
       "source": "Fonte oficial (acesso em 08/10/2026): https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14133.htm — Art. 12, VI",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia",
-      "origin": "authorial"
+      "origin": "authorial",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 14.133/2021 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 14.133/2021, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -146,19 +187,25 @@ const DATA_ADM_14133_EXTRA = [
     "number": "Art. 18",
     "title": "Lei 14.133/2021 — Licitações e Contratos Administrativos",
     "parts": [
-      "Fundamento legal: Art. 18 da Lei 14.133/2021. O planejamento e seus fatores constam do caput do art. 18."
+      "Art. 18. A fase preparatória do processo licitatório é caracterizada pelo planejamento e deve compatibilizar-se com o plano de contratações anual de que trata o inciso VII do caput do art. 12 desta Lei, sempre que elaborado, e com as leis orçamentárias, bem como abordar todas as considerações técnicas, mercadológicas e de gestão que podem interferir na contratação, compreendidos:"
     ],
     "origin": "authorial",
     "question": {
       "statement": "A fase preparatória da licitação é caracterizada pelo planejamento e deve considerar fatores técnicos, de mercado e de gestão.",
       "answer": true,
-      "explanation": "O planejamento e seus fatores constam do caput do art. 18.",
+      "explanation": "Correta. A fase preparatória é caracterizada pelo planejamento e deve abordar as considerações técnicas, mercadológicas e de gestão que podem interferir na contratação (art. 18, caput).",
       "source": "Fonte oficial (acesso em 08/10/2026): https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14133.htm — Art. 18",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia",
-      "origin": "authorial"
+      "origin": "authorial",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 14.133/2021 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 14.133/2021, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -169,19 +216,26 @@ const DATA_ADM_14133_EXTRA = [
     "number": "Art. 18, I",
     "title": "Lei 14.133/2021 — Licitações e Contratos Administrativos",
     "parts": [
-      "Fundamento legal: Art. 18, I da Lei 14.133/2021. O inciso I aponta o estudo técnico preliminar como instrumento de caracterização da necessidade."
+      "Art. 18. A fase preparatória do processo licitatório é caracterizada pelo planejamento e deve compatibilizar-se com o plano de contratações anual de que trata o inciso VII do caput do art. 12 desta Lei, sempre que elaborado, e com as leis orçamentárias, bem como abordar todas as considerações técnicas, mercadológicas e de gestão que podem interferir na contratação, compreendidos:",
+      "I - a descrição da necessidade da contratação fundamentada em estudo técnico preliminar que caracterize o interesse público envolvido;"
     ],
     "origin": "authorial",
     "question": {
       "statement": "A fase preparatória compreende descrição da necessidade da contratação fundamentada em estudo técnico preliminar.",
       "answer": true,
-      "explanation": "O inciso I aponta o estudo técnico preliminar como instrumento de caracterização da necessidade.",
+      "explanation": "Correta. A fase preparatória compreende a descrição da necessidade da contratação fundamentada em estudo técnico preliminar (art. 18, I).",
       "source": "Fonte oficial (acesso em 08/10/2026): https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14133.htm — Art. 18, I",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia",
-      "origin": "authorial"
+      "origin": "authorial",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 14.133/2021 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 14.133/2021, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -192,19 +246,26 @@ const DATA_ADM_14133_EXTRA = [
     "number": "Art. 18, II",
     "title": "Lei 14.133/2021 — Licitações e Contratos Administrativos",
     "parts": [
-      "Fundamento legal: Art. 18, II da Lei 14.133/2021. O inciso II admite termo de referência, anteprojeto, projeto básico ou executivo, conforme o caso."
+      "Art. 18. A fase preparatória do processo licitatório é caracterizada pelo planejamento e deve compatibilizar-se com o plano de contratações anual de que trata o inciso VII do caput do art. 12 desta Lei, sempre que elaborado, e com as leis orçamentárias, bem como abordar todas as considerações técnicas, mercadológicas e de gestão que podem interferir na contratação, compreendidos:",
+      "II - a definição do objeto para o atendimento da necessidade, por meio de termo de referência, anteprojeto, projeto básico ou projeto executivo, conforme o caso;"
     ],
     "origin": "authorial",
     "question": {
       "statement": "O termo de referência é proibido para definir o objeto de contratações na fase preparatória.",
       "answer": false,
-      "explanation": "O inciso II admite termo de referência, anteprojeto, projeto básico ou executivo, conforme o caso.",
+      "explanation": "Errada. O objeto é definido por termo de referência, anteprojeto, projeto básico ou projeto executivo, conforme o caso (art. 18, II); o termo de referência não é proibido.",
       "source": "Fonte oficial (acesso em 08/10/2026): https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14133.htm — Art. 18, II",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia",
-      "origin": "authorial"
+      "origin": "authorial",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 14.133/2021 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 14.133/2021, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -215,19 +276,25 @@ const DATA_ADM_14133_EXTRA = [
     "number": "Art. 23",
     "title": "Lei 14.133/2021 — Licitações e Contratos Administrativos",
     "parts": [
-      "Fundamento legal: Art. 23 da Lei 14.133/2021. O caput do art. 23 trata dos parâmetros do valor estimado."
+      "Art. 23. O valor previamente estimado da contratação deverá ser compatível com os valores praticados pelo mercado, considerados os preços constantes de bancos de dados públicos e as quantidades a serem contratadas, observadas a potencial economia de escala e as peculiaridades do local de execução do objeto."
     ],
     "origin": "authorial",
     "question": {
       "statement": "O valor estimado da contratação deve ser compatível com os preços praticados no mercado, consideradas as condições de economia de escala e as peculiaridades locais.",
       "answer": true,
-      "explanation": "O caput do art. 23 trata dos parâmetros do valor estimado.",
+      "explanation": "Correta. O valor estimado deve ser compatível com os valores praticados pelo mercado, considerados as quantidades e a potencial economia de escala e peculiaridades locais (art. 23, caput).",
       "source": "Fonte oficial (acesso em 08/10/2026): https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14133.htm — Art. 23",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia",
-      "origin": "authorial"
+      "origin": "authorial",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 14.133/2021 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 14.133/2021, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -238,19 +305,26 @@ const DATA_ADM_14133_EXTRA = [
     "number": "Art. 40, II",
     "title": "Lei 14.133/2021 — Licitações e Contratos Administrativos",
     "parts": [
-      "Fundamento legal: Art. 40, II da Lei 14.133/2021. O art. 40, II, prevê essa possibilidade."
+      "Art. 40. O planejamento de compras deverá considerar a expectativa de consumo anual e observar o seguinte:",
+      "II - processamento por meio de sistema de registro de preços, quando pertinente;"
     ],
     "origin": "authorial",
     "question": {
       "statement": "O planejamento das compras deve considerar o processamento por sistema de registro de preços quando pertinente.",
       "answer": true,
-      "explanation": "O art. 40, II, prevê essa possibilidade.",
+      "explanation": "Correta. O planejamento de compras considera o processamento por sistema de registro de preços, quando pertinente (art. 40, II).",
       "source": "Fonte oficial (acesso em 08/10/2026): https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14133.htm — Art. 40, II",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia",
-      "origin": "authorial"
+      "origin": "authorial",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 14.133/2021 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 14.133/2021, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -261,19 +335,26 @@ const DATA_ADM_14133_EXTRA = [
     "number": "Art. 40, IV",
     "title": "Lei 14.133/2021 — Licitações e Contratos Administrativos",
     "parts": [
-      "Fundamento legal: Art. 40, IV da Lei 14.133/2021. O inciso IV exige condições que evitem a deterioração do material."
+      "Art. 40. O planejamento de compras deverá considerar a expectativa de consumo anual e observar o seguinte:",
+      "IV - condições de guarda e armazenamento que não permitam a deterioração do material;"
     ],
     "origin": "authorial",
     "question": {
       "statement": "O planejamento de compras pode desconsiderar as condições de guarda e armazenamento dos materiais adquiridos.",
       "answer": false,
-      "explanation": "O inciso IV exige condições que evitem a deterioração do material.",
+      "explanation": "Errada. O planejamento deve observar condições de guarda e armazenamento que não permitam a deterioração do material (art. 40, IV).",
       "source": "Fonte oficial (acesso em 08/10/2026): https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14133.htm — Art. 40, IV",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia",
-      "origin": "authorial"
+      "origin": "authorial",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 14.133/2021 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 14.133/2021, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -284,19 +365,27 @@ const DATA_ADM_14133_EXTRA = [
     "number": "Art. 46",
     "title": "Lei 14.133/2021 — Licitações e Contratos Administrativos",
     "parts": [
-      "Fundamento legal: Art. 46 da Lei 14.133/2021. Ambos são previstos no art. 46."
+      "Art. 46. Na execução indireta de obras e serviços de engenharia, são admitidos os seguintes regimes:",
+      "V - contratação integrada;",
+      "VI - contratação semi-integrada;"
     ],
     "origin": "authorial",
     "question": {
       "statement": "A contratação integrada e a contratação semi-integrada estão entre os regimes admitidos na execução indireta de obras e serviços de engenharia.",
       "answer": true,
-      "explanation": "Ambos são previstos no art. 46.",
+      "explanation": "Correta. A contratação integrada e a semi-integrada são regimes admitidos na execução indireta de obras e serviços de engenharia (art. 46, V e VI).",
       "source": "Fonte oficial (acesso em 08/10/2026): https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14133.htm — Art. 46",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia",
-      "origin": "authorial"
+      "origin": "authorial",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 14.133/2021 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 14.133/2021, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -307,19 +396,26 @@ const DATA_ADM_14133_EXTRA = [
     "number": "Art. 46, I",
     "title": "Lei 14.133/2021 — Licitações e Contratos Administrativos",
     "parts": [
-      "Fundamento legal: Art. 46, I da Lei 14.133/2021. O art. 46, I, prevê expressamente a empreitada por preço unitário."
+      "Art. 46. Na execução indireta de obras e serviços de engenharia, são admitidos os seguintes regimes:",
+      "I - empreitada por preço unitário;"
     ],
     "origin": "authorial",
     "question": {
       "statement": "A empreitada por preço unitário foi excluída dos regimes de execução indireta da Lei 14.133/2021.",
       "answer": false,
-      "explanation": "O art. 46, I, prevê expressamente a empreitada por preço unitário.",
+      "explanation": "Errada. A empreitada por preço unitário é regime admitido (art. 46, I).",
       "source": "Fonte oficial (acesso em 08/10/2026): https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14133.htm — Art. 46, I",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia",
-      "origin": "authorial"
+      "origin": "authorial",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 14.133/2021 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 14.133/2021, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -330,19 +426,25 @@ const DATA_ADM_14133_EXTRA = [
     "number": "Art. 53",
     "title": "Lei 14.133/2021 — Licitações e Contratos Administrativos",
     "parts": [
-      "Fundamento legal: Art. 53 da Lei 14.133/2021. O órgão de assessoramento jurídico realiza controle prévio de legalidade."
+      "Art. 53. Ao final da fase preparatória, o processo licitatório seguirá para o órgão de assessoramento jurídico da Administração, que realizará controle prévio de legalidade mediante análise jurídica da contratação."
     ],
     "origin": "authorial",
     "question": {
       "statement": "Ao final da fase preparatória, a contratação segue para análise jurídica de controle prévio de legalidade.",
       "answer": true,
-      "explanation": "O órgão de assessoramento jurídico realiza controle prévio de legalidade.",
+      "explanation": "Correta. Ao final da fase preparatória, o processo segue para o órgão de assessoramento jurídico, que realiza controle prévio de legalidade mediante análise jurídica (art. 53, caput).",
       "source": "Fonte oficial (acesso em 08/10/2026): https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14133.htm — Art. 53",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia",
-      "origin": "authorial"
+      "origin": "authorial",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 14.133/2021 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 14.133/2021, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -353,19 +455,26 @@ const DATA_ADM_14133_EXTRA = [
     "number": "Art. 53, § 1º, II",
     "title": "Lei 14.133/2021 — Licitações e Contratos Administrativos",
     "parts": [
-      "Fundamento legal: Art. 53, § 1º, II da Lei 14.133/2021. O art. 53, § 1º, II, disciplina a linguagem e o conteúdo da análise."
+      "§ 1º Na elaboração do parecer jurídico, o órgão de assessoramento jurídico da Administração deverá:",
+      "II - redigir sua manifestação em linguagem simples e compreensível e de forma clara e objetiva, com apreciação de todos os elementos indispensáveis à contratação e com exposição dos pressupostos de fato e de direito levados em consideração na análise jurídica;"
     ],
     "origin": "authorial",
     "question": {
       "statement": "O parecer jurídico deve apresentar análise clara, objetiva e em linguagem simples, expondo seus pressupostos de fato e de direito.",
       "answer": true,
-      "explanation": "O art. 53, § 1º, II, disciplina a linguagem e o conteúdo da análise.",
+      "explanation": "Correta. O parecer jurídico deve ser redigido em linguagem simples e compreensível, de forma clara e objetiva, com exposição dos pressupostos de fato e de direito (art. 53, § 1º, II).",
       "source": "Fonte oficial (acesso em 08/10/2026): https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14133.htm — Art. 53, § 1º, II",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia",
-      "origin": "authorial"
+      "origin": "authorial",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 14.133/2021 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 14.133/2021, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -376,19 +485,25 @@ const DATA_ADM_14133_EXTRA = [
     "number": "Art. 54",
     "title": "Lei 14.133/2021 — Licitações e Contratos Administrativos",
     "parts": [
-      "Fundamento legal: Art. 54 da Lei 14.133/2021. A divulgação no PNCP está no art. 54."
+      "Art. 54. A publicidade do edital de licitação será realizada mediante divulgação e manutenção do inteiro teor do ato convocatório e de seus anexos no Portal Nacional de Contratações Públicas (PNCP)."
     ],
     "origin": "authorial",
     "question": {
       "statement": "A publicidade do edital da licitação ocorre mediante divulgação e manutenção de seu inteiro teor e anexos no Portal Nacional de Contratações Públicas.",
       "answer": true,
-      "explanation": "A divulgação no PNCP está no art. 54.",
+      "explanation": "Correta. A publicidade do edital é realizada mediante divulgação e manutenção do inteiro teor do ato convocatório e de seus anexos no PNCP (art. 54, caput).",
       "source": "Fonte oficial (acesso em 08/10/2026): https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14133.htm — Art. 54",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia",
-      "origin": "authorial"
+      "origin": "authorial",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 14.133/2021 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 14.133/2021, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -399,19 +514,26 @@ const DATA_ADM_14133_EXTRA = [
     "number": "Art. 59, I",
     "title": "Lei 14.133/2021 — Licitações e Contratos Administrativos",
     "parts": [
-      "Fundamento legal: Art. 59, I da Lei 14.133/2021. O inciso I determina a desclassificação por vício insanável."
+      "Art. 59. Serão desclassificadas as propostas que:",
+      "I - contiverem vícios insanáveis;"
     ],
     "origin": "authorial",
     "question": {
       "statement": "A proposta que contiver vícios insanáveis deve ser desclassificada.",
       "answer": true,
-      "explanation": "O inciso I determina a desclassificação por vício insanável.",
+      "explanation": "Correta. Serão desclassificadas as propostas que contiverem vícios insanáveis (art. 59, I).",
       "source": "Fonte oficial (acesso em 08/10/2026): https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14133.htm — Art. 59, I",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia",
-      "origin": "authorial"
+      "origin": "authorial",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 14.133/2021 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 14.133/2021, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -422,19 +544,25 @@ const DATA_ADM_14133_EXTRA = [
     "number": "Art. 60",
     "title": "Lei 14.133/2021 — Licitações e Contratos Administrativos",
     "parts": [
-      "Fundamento legal: Art. 60 da Lei 14.133/2021. O art. 60 disciplina o desempate."
+      "Art. 60. Em caso de empate entre duas ou mais propostas, serão utilizados os seguintes critérios de desempate, nesta ordem:"
     ],
     "origin": "authorial",
     "question": {
       "statement": "A Lei 14.133/2021 estabelece critérios sucessivos para desempate entre duas ou mais propostas.",
       "answer": true,
-      "explanation": "O art. 60 disciplina o desempate.",
+      "explanation": "Correta. Em caso de empate, são utilizados critérios de desempate sucessivos, nesta ordem (art. 60, caput).",
       "source": "Fonte oficial (acesso em 08/10/2026): https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14133.htm — Art. 60",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia",
-      "origin": "authorial"
+      "origin": "authorial",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 14.133/2021 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 14.133/2021, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -445,19 +573,26 @@ const DATA_ADM_14133_EXTRA = [
     "number": "Art. 71",
     "title": "Lei 14.133/2021 — Licitações e Contratos Administrativos",
     "parts": [
-      "Fundamento legal: Art. 71 da Lei 14.133/2021. O art. 71 prevê a devolução para saneamento."
+      "Art. 71. Encerradas as fases de julgamento e habilitação, e exauridos os recursos administrativos, o processo licitatório será encaminhado à autoridade superior, que poderá:",
+      "I - determinar o retorno dos autos para saneamento de irregularidades;"
     ],
     "origin": "authorial",
     "question": {
       "statement": "A autoridade superior pode determinar o retorno dos autos para saneamento de irregularidades após encerradas as fases de julgamento e habilitação.",
       "answer": true,
-      "explanation": "O art. 71 prevê a devolução para saneamento.",
+      "explanation": "Correta. Encerradas as fases de julgamento e habilitação e exauridos os recursos, a autoridade superior pode determinar o retorno dos autos para saneamento de irregularidades (art. 71, I).",
       "source": "Fonte oficial (acesso em 08/10/2026): https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14133.htm — Art. 71",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia",
-      "origin": "authorial"
+      "origin": "authorial",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 14.133/2021 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 14.133/2021, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -468,19 +603,26 @@ const DATA_ADM_14133_EXTRA = [
     "number": "Art. 72, VI",
     "title": "Lei 14.133/2021 — Licitações e Contratos Administrativos",
     "parts": [
-      "Fundamento legal: Art. 72, VI da Lei 14.133/2021. É documento exigido pelo inciso VI do art. 72."
+      "Art. 72. O processo de contratação direta, que compreende os casos de inexigibilidade e de dispensa de licitação, deverá ser instruído com os seguintes documentos:",
+      "VI - razão da escolha do contratado;"
     ],
     "origin": "authorial",
     "question": {
       "statement": "A contratação direta deve conter a razão da escolha do contratado no respectivo processo.",
       "answer": true,
-      "explanation": "É documento exigido pelo inciso VI do art. 72.",
+      "explanation": "Correta. O processo de contratação direta deve ser instruído com a razão da escolha do contratado (art. 72, VI).",
       "source": "Fonte oficial (acesso em 08/10/2026): https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14133.htm — Art. 72, VI",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia",
-      "origin": "authorial"
+      "origin": "authorial",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 14.133/2021 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 14.133/2021, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -491,19 +633,26 @@ const DATA_ADM_14133_EXTRA = [
     "number": "Art. 72, VII",
     "title": "Lei 14.133/2021 — Licitações e Contratos Administrativos",
     "parts": [
-      "Fundamento legal: Art. 72, VII da Lei 14.133/2021. O inciso VII exige justificativa de preço."
+      "Art. 72. O processo de contratação direta, que compreende os casos de inexigibilidade e de dispensa de licitação, deverá ser instruído com os seguintes documentos:",
+      "VII - justificativa de preço;"
     ],
     "origin": "authorial",
     "question": {
       "statement": "A contratação direta dispensa a justificativa de preço por definição legal.",
       "answer": false,
-      "explanation": "O inciso VII exige justificativa de preço.",
+      "explanation": "Errada. O processo de contratação direta deve conter justificativa de preço (art. 72, VII).",
       "source": "Fonte oficial (acesso em 08/10/2026): https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14133.htm — Art. 72, VII",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia",
-      "origin": "authorial"
+      "origin": "authorial",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 14.133/2021 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 14.133/2021, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -514,19 +663,26 @@ const DATA_ADM_14133_EXTRA = [
     "number": "Art. 72, VIII",
     "title": "Lei 14.133/2021 — Licitações e Contratos Administrativos",
     "parts": [
-      "Fundamento legal: Art. 72, VIII da Lei 14.133/2021. O inciso VIII exige a autorização."
+      "Art. 72. O processo de contratação direta, que compreende os casos de inexigibilidade e de dispensa de licitação, deverá ser instruído com os seguintes documentos:",
+      "VIII - autorização da autoridade competente."
     ],
     "origin": "authorial",
     "question": {
       "statement": "O processo de contratação direta deve ser autorizado pela autoridade competente.",
       "answer": true,
-      "explanation": "O inciso VIII exige a autorização.",
+      "explanation": "Correta. O processo de contratação direta deve conter a autorização da autoridade competente (art. 72, VIII).",
       "source": "Fonte oficial (acesso em 08/10/2026): https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14133.htm — Art. 72, VIII",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia",
-      "origin": "authorial"
+      "origin": "authorial",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 14.133/2021 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 14.133/2021, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -537,19 +693,25 @@ const DATA_ADM_14133_EXTRA = [
     "number": "Art. 80",
     "title": "Lei 14.133/2021 — Licitações e Contratos Administrativos",
     "parts": [
-      "Fundamento legal: Art. 80 da Lei 14.133/2021. A pré-qualificação pode recair sobre licitantes e bens."
+      "Art. 80. A pré-qualificação é o procedimento técnico-administrativo para selecionar previamente:"
     ],
     "origin": "authorial",
     "question": {
       "statement": "A pré-qualificação é procedimento técnico-administrativo para selecionar previamente licitantes ou bens que reúnam condições de habilitação ou atendam exigências técnicas.",
       "answer": true,
-      "explanation": "A pré-qualificação pode recair sobre licitantes e bens.",
+      "explanation": "Correta. A pré-qualificação é o procedimento técnico-administrativo para selecionar previamente licitantes com condições de habilitação e bens que atendam às exigências técnicas ou de qualidade (art. 80, I e II).",
       "source": "Fonte oficial (acesso em 08/10/2026): https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14133.htm — Art. 80",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia",
-      "origin": "authorial"
+      "origin": "authorial",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 14.133/2021 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 14.133/2021, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -560,19 +722,26 @@ const DATA_ADM_14133_EXTRA = [
     "number": "Art. 82, V",
     "title": "Lei 14.133/2021 — Licitações e Contratos Administrativos",
     "parts": [
-      "Fundamento legal: Art. 82, V da Lei 14.133/2021. O inciso V do art. 82 prevê esses critérios."
+      "Art. 82. O edital de licitação para registro de preços observará as regras gerais desta Lei e deverá dispor sobre:",
+      "V - o critério de julgamento da licitação, que será o de menor preço ou o de maior desconto sobre tabela de preços praticada no mercado;"
     ],
     "origin": "authorial",
     "question": {
       "statement": "O critério de julgamento do registro de preços pode ser menor preço ou maior desconto sobre tabela de preços de mercado.",
       "answer": true,
-      "explanation": "O inciso V do art. 82 prevê esses critérios.",
+      "explanation": "Correta. O edital de registro de preços dispõe que o critério de julgamento será o de menor preço ou o de maior desconto sobre tabela de preços praticada no mercado (art. 82, V).",
       "source": "Fonte oficial (acesso em 08/10/2026): https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14133.htm — Art. 82, V",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia",
-      "origin": "authorial"
+      "origin": "authorial",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 14.133/2021 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 14.133/2021, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -583,19 +752,25 @@ const DATA_ADM_14133_EXTRA = [
     "number": "Art. 90, § 1º",
     "title": "Lei 14.133/2021 — Licitações e Contratos Administrativos",
     "parts": [
-      "Fundamento legal: Art. 90, § 1º da Lei 14.133/2021. O § 1º admite uma prorrogação por igual período, sob condições."
+      "§ 1º O prazo de convocação poderá ser prorrogado 1 (uma) vez, por igual período, mediante solicitação da parte durante seu transcurso, devidamente justificada, e desde que o motivo apresentado seja aceito pela Administração."
     ],
     "origin": "authorial",
     "question": {
       "statement": "O prazo de convocação para assinatura do contrato pode ser prorrogado indefinidamente sem solicitação do licitante.",
       "answer": false,
-      "explanation": "O § 1º admite uma prorrogação por igual período, sob condições.",
+      "explanation": "Errada. O prazo de convocação poderá ser prorrogado uma vez, por igual período, mediante solicitação da parte durante seu transcurso, devidamente justificada e aceita pela Administração (art. 90, § 1º).",
       "source": "Fonte oficial (acesso em 08/10/2026): https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14133.htm — Art. 90, § 1º",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia",
-      "origin": "authorial"
+      "origin": "authorial",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 14.133/2021 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 14.133/2021, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -606,19 +781,25 @@ const DATA_ADM_14133_EXTRA = [
     "number": "Art. 90, § 3º",
     "title": "Lei 14.133/2021 — Licitações e Contratos Administrativos",
     "parts": [
-      "Fundamento legal: Art. 90, § 3º da Lei 14.133/2021. O § 3º libera os licitantes nessas condições."
+      "§ 3º Decorrido o prazo de validade da proposta indicado no edital sem convocação para a contratação, ficarão os licitantes liberados dos compromissos assumidos."
     ],
     "origin": "authorial",
     "question": {
       "statement": "Decorrido o prazo de validade da proposta sem convocação, os licitantes ficam liberados dos compromissos assumidos.",
       "answer": true,
-      "explanation": "O § 3º libera os licitantes nessas condições.",
+      "explanation": "Correta. Decorrido o prazo de validade da proposta sem convocação, os licitantes ficam liberados dos compromissos assumidos (art. 90, § 3º).",
       "source": "Fonte oficial (acesso em 08/10/2026): https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14133.htm — Art. 90, § 3º",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia",
-      "origin": "authorial"
+      "origin": "authorial",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 14.133/2021 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 14.133/2021, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -629,19 +810,26 @@ const DATA_ADM_14133_EXTRA = [
     "number": "Art. 104, I",
     "title": "Lei 14.133/2021 — Licitações e Contratos Administrativos",
     "parts": [
-      "Fundamento legal: Art. 104, I da Lei 14.133/2021. O inciso I reconhece prerrogativa unilateral condicionada."
+      "Art. 104. O regime jurídico dos contratos instituído por esta Lei confere à Administração, em relação a eles, as prerrogativas de:",
+      "I - modificá-los, unilateralmente, para melhor adequação às finalidades de interesse público, respeitados os direitos do contratado;"
     ],
     "origin": "authorial",
     "question": {
       "statement": "A Administração tem a prerrogativa de modificar unilateralmente contratos para adequá-los ao interesse público, respeitados os direitos do contratado.",
       "answer": true,
-      "explanation": "O inciso I reconhece prerrogativa unilateral condicionada.",
+      "explanation": "Correta. A Administração tem a prerrogativa de modificar unilateralmente os contratos para melhor adequação ao interesse público, respeitados os direitos do contratado (art. 104, I).",
       "source": "Fonte oficial (acesso em 08/10/2026): https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14133.htm — Art. 104, I",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia",
-      "origin": "authorial"
+      "origin": "authorial",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 14.133/2021 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 14.133/2021, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -652,19 +840,25 @@ const DATA_ADM_14133_EXTRA = [
     "number": "Art. 104, § 1º",
     "title": "Lei 14.133/2021 — Licitações e Contratos Administrativos",
     "parts": [
-      "Fundamento legal: Art. 104, § 1º da Lei 14.133/2021. O § 1º exige concordância prévia do contratado."
+      "§ 1º As cláusulas econômico-financeiras e monetárias dos contratos não poderão ser alteradas sem prévia concordância do contratado."
     ],
     "origin": "authorial",
     "question": {
       "statement": "A Administração pode alterar unilateralmente as cláusulas econômico-financeiras do contrato sem consentimento do contratado.",
       "answer": false,
-      "explanation": "O § 1º exige concordância prévia do contratado.",
+      "explanation": "Errada. As cláusulas econômico-financeiras e monetárias não podem ser alteradas sem prévia concordância do contratado (art. 104, § 1º).",
       "source": "Fonte oficial (acesso em 08/10/2026): https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14133.htm — Art. 104, § 1º",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia",
-      "origin": "authorial"
+      "origin": "authorial",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 14.133/2021 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 14.133/2021, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -675,19 +869,25 @@ const DATA_ADM_14133_EXTRA = [
     "number": "Art. 106",
     "title": "Lei 14.133/2021 — Licitações e Contratos Administrativos",
     "parts": [
-      "Fundamento legal: Art. 106 da Lei 14.133/2021. O caput do art. 106 prevê o prazo de até cinco anos nessas hipóteses."
+      "Art. 106. A Administração poderá celebrar contratos com prazo de até 5 (cinco) anos nas hipóteses de serviços e fornecimentos contínuos, observadas as seguintes diretrizes:"
     ],
     "origin": "authorial",
     "question": {
       "statement": "A lei admite contratos de serviços e fornecimentos contínuos com prazo de até cinco anos, observadas as condições legais.",
       "answer": true,
-      "explanation": "O caput do art. 106 prevê o prazo de até cinco anos nessas hipóteses.",
+      "explanation": "Correta. A Administração poderá celebrar contratos com prazo de até 5 anos nas hipóteses de serviços e fornecimentos contínuos, observadas as diretrizes legais (art. 106, caput).",
       "source": "Fonte oficial (acesso em 08/10/2026): https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14133.htm — Art. 106",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia",
-      "origin": "authorial"
+      "origin": "authorial",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 14.133/2021 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 14.133/2021, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -698,19 +898,25 @@ const DATA_ADM_14133_EXTRA = [
     "number": "Art. 117",
     "title": "Lei 14.133/2021 — Licitações e Contratos Administrativos",
     "parts": [
-      "Fundamento legal: Art. 117 da Lei 14.133/2021. O art. 117 disciplina acompanhamento e fiscalização por representantes designados."
+      "Art. 117. A execução do contrato deverá ser acompanhada e fiscalizada por 1 (um) ou mais fiscais do contrato, representantes da Administração especialmente designados conforme requisitos estabelecidos no art. 7º desta Lei, ou pelos respectivos substitutos, permitida a contratação de terceiros para assisti-los e subsidiá-los com informações pertinentes a essa atribuição."
     ],
     "origin": "authorial",
     "question": {
       "statement": "A execução contratual deve ser acompanhada e fiscalizada por fiscais especialmente designados pela Administração.",
       "answer": true,
-      "explanation": "O art. 117 disciplina acompanhamento e fiscalização por representantes designados.",
+      "explanation": "Correta. A execução do contrato deve ser acompanhada e fiscalizada por fiscais especialmente designados (art. 117, caput).",
       "source": "Fonte oficial (acesso em 08/10/2026): https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14133.htm — Art. 117",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia",
-      "origin": "authorial"
+      "origin": "authorial",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 14.133/2021 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 14.133/2021, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -721,19 +927,25 @@ const DATA_ADM_14133_EXTRA = [
     "number": "Art. 117, § 1º",
     "title": "Lei 14.133/2021 — Licitações e Contratos Administrativos",
     "parts": [
-      "Fundamento legal: Art. 117, § 1º da Lei 14.133/2021. O § 1º prevê registro e medidas de regularização."
+      "§ 1º O fiscal do contrato anotará em registro próprio todas as ocorrências relacionadas à execução do contrato, determinando o que for necessário para a regularização das faltas ou dos defeitos observados."
     ],
     "origin": "authorial",
     "question": {
       "statement": "O fiscal do contrato deve registrar ocorrências da execução e determinar a regularização de faltas ou defeitos observados.",
       "answer": true,
-      "explanation": "O § 1º prevê registro e medidas de regularização.",
+      "explanation": "Correta. O fiscal anotará em registro próprio as ocorrências da execução e determinará o necessário para a regularização das faltas ou defeitos (art. 117, § 1º).",
       "source": "Fonte oficial (acesso em 08/10/2026): https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14133.htm — Art. 117, § 1º",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia",
-      "origin": "authorial"
+      "origin": "authorial",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 14.133/2021 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 14.133/2021, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -744,19 +956,26 @@ const DATA_ADM_14133_EXTRA = [
     "number": "Art. 124, I",
     "title": "Lei 14.133/2021 — Licitações e Contratos Administrativos",
     "parts": [
-      "Fundamento legal: Art. 124, I da Lei 14.133/2021. O inciso I admite modificação unilateral nas condições legais."
+      "Art. 124. Os contratos regidos por esta Lei poderão ser alterados, com as devidas justificativas, nos seguintes casos:",
+      "I - unilateralmente pela Administração:"
     ],
     "origin": "authorial",
     "question": {
       "statement": "A Administração pode alterar unilateralmente o contrato para adequação técnica do projeto ou das especificações, dentro das hipóteses legais.",
       "answer": true,
-      "explanation": "O inciso I admite modificação unilateral nas condições legais.",
+      "explanation": "Correta. A Administração pode alterar unilateralmente o contrato quando houver modificação do projeto ou das especificações, para melhor adequação técnica (art. 124, I, a).",
       "source": "Fonte oficial (acesso em 08/10/2026): https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14133.htm — Art. 124, I",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia",
-      "origin": "authorial"
+      "origin": "authorial",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 14.133/2021 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 14.133/2021, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -767,19 +986,26 @@ const DATA_ADM_14133_EXTRA = [
     "number": "Art. 124, II",
     "title": "Lei 14.133/2021 — Licitações e Contratos Administrativos",
     "parts": [
-      "Fundamento legal: Art. 124, II da Lei 14.133/2021. O inciso II contempla ajustes consensuais e hipóteses de reequilíbrio."
+      "Art. 124. Os contratos regidos por esta Lei poderão ser alterados, com as devidas justificativas, nos seguintes casos:",
+      "II - por acordo entre as partes:"
     ],
     "origin": "authorial",
     "question": {
       "statement": "A alteração contratual por acordo das partes é admitida, entre outras hipóteses, para recomposição do equilíbrio econômico-financeiro inicial.",
       "answer": true,
-      "explanation": "O inciso II contempla ajustes consensuais e hipóteses de reequilíbrio.",
+      "explanation": "Correta. A alteração por acordo das partes é admitida para restabelecer o equilíbrio econômico-financeiro inicial nos casos legais (art. 124, II, d).",
       "source": "Fonte oficial (acesso em 08/10/2026): https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14133.htm — Art. 124, II",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia",
-      "origin": "authorial"
+      "origin": "authorial",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 14.133/2021 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 14.133/2021, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -790,19 +1016,25 @@ const DATA_ADM_14133_EXTRA = [
     "number": "Art. 125",
     "title": "Lei 14.133/2021 — Licitações e Contratos Administrativos",
     "parts": [
-      "Fundamento legal: Art. 125 da Lei 14.133/2021. O art. 125 estabelece o limite geral de 25%."
+      "Art. 125. Nas alterações unilaterais a que se refere o inciso I do caput do art. 124 desta Lei, o contratado será obrigado a aceitar, nas mesmas condições contratuais, acréscimos ou supressões de até 25% (vinte e cinco por cento) do valor inicial atualizado do contrato que se fizerem nas obras, nos serviços ou nas compras, e, no caso de reforma de edifício ou de equipamento, o limite para os acréscimos será de 50% (cinquenta por cento)."
     ],
     "origin": "authorial",
     "question": {
       "statement": "Nas alterações unilaterais de obras, serviços ou compras, o contratado deve aceitar, em regra, acréscimos e supressões de até 25% do valor inicial atualizado.",
       "answer": true,
-      "explanation": "O art. 125 estabelece o limite geral de 25%.",
+      "explanation": "Correta. O contratado é obrigado a aceitar acréscimos ou supressões de até 25% do valor inicial atualizado do contrato nas obras, serviços ou compras (art. 125).",
       "source": "Fonte oficial (acesso em 08/10/2026): https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14133.htm — Art. 125",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia",
-      "origin": "authorial"
+      "origin": "authorial",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 14.133/2021 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 14.133/2021, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -813,19 +1045,25 @@ const DATA_ADM_14133_EXTRA = [
     "number": "Art. 125",
     "title": "Lei 14.133/2021 — Licitações e Contratos Administrativos",
     "parts": [
-      "Fundamento legal: Art. 125 da Lei 14.133/2021. O art. 125 permite acréscimo de até 50% em reforma de edifício ou de equipamento."
+      "Art. 125. Nas alterações unilaterais a que se refere o inciso I do caput do art. 124 desta Lei, o contratado será obrigado a aceitar, nas mesmas condições contratuais, acréscimos ou supressões de até 25% (vinte e cinco por cento) do valor inicial atualizado do contrato que se fizerem nas obras, nos serviços ou nas compras, e, no caso de reforma de edifício ou de equipamento, o limite para os acréscimos será de 50% (cinquenta por cento)."
     ],
     "origin": "authorial",
     "question": {
       "statement": "O limite de acréscimo unilateral na reforma de edifício ou equipamento é necessariamente de 25%, sem qualquer exceção.",
       "answer": false,
-      "explanation": "O art. 125 permite acréscimo de até 50% em reforma de edifício ou de equipamento.",
+      "explanation": "Errada. Na reforma de edifício ou de equipamento, o limite para os acréscimos é de 50% (art. 125).",
       "source": "Fonte oficial (acesso em 08/10/2026): https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14133.htm — Art. 125",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia",
-      "origin": "authorial"
+      "origin": "authorial",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 14.133/2021 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 14.133/2021, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -836,19 +1074,25 @@ const DATA_ADM_14133_EXTRA = [
     "number": "Art. 126",
     "title": "Lei 14.133/2021 — Licitações e Contratos Administrativos",
     "parts": [
-      "Fundamento legal: Art. 126 da Lei 14.133/2021. O art. 126 veda a transfiguração do objeto."
+      "Art. 126. As alterações unilaterais a que se refere o inciso I do caput do art. 124 desta Lei não poderão transfigurar o objeto da contratação."
     ],
     "origin": "authorial",
     "question": {
       "statement": "A Administração pode transformar inteiramente o objeto contratado por meio de alteração unilateral.",
       "answer": false,
-      "explanation": "O art. 126 veda a transfiguração do objeto.",
+      "explanation": "Errada. As alterações unilaterais não podem transfigurar o objeto da contratação (art. 126).",
       "source": "Fonte oficial (acesso em 08/10/2026): https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14133.htm — Art. 126",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia",
-      "origin": "authorial"
+      "origin": "authorial",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 14.133/2021 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 14.133/2021, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -859,19 +1103,25 @@ const DATA_ADM_14133_EXTRA = [
     "number": "Art. 130",
     "title": "Lei 14.133/2021 — Licitações e Contratos Administrativos",
     "parts": [
-      "Fundamento legal: Art. 130 da Lei 14.133/2021. O art. 130 impõe o reequilíbrio no próprio aditivo."
+      "Art. 130. Caso haja alteração unilateral do contrato que aumente ou diminua os encargos do contratado, a Administração deverá restabelecer, no mesmo termo aditivo, o equilíbrio econômico-financeiro inicial."
     ],
     "origin": "authorial",
     "question": {
       "statement": "Quando a alteração unilateral aumentar ou diminuir os encargos do contratado, a Administração deve restabelecer o equilíbrio inicial no mesmo termo aditivo.",
       "answer": true,
-      "explanation": "O art. 130 impõe o reequilíbrio no próprio aditivo.",
+      "explanation": "Correta. Havendo alteração unilateral que aumente ou diminua os encargos do contratado, a Administração deve restabelecer, no mesmo termo aditivo, o equilíbrio econômico-financeiro inicial (art. 130).",
       "source": "Fonte oficial (acesso em 08/10/2026): https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14133.htm — Art. 130",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia",
-      "origin": "authorial"
+      "origin": "authorial",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 14.133/2021 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 14.133/2021, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -882,19 +1132,26 @@ const DATA_ADM_14133_EXTRA = [
     "number": "Art. 140, I, a",
     "title": "Lei 14.133/2021 — Licitações e Contratos Administrativos",
     "parts": [
-      "Fundamento legal: Art. 140, I, a da Lei 14.133/2021. É a hipótese do inciso I, alínea a."
+      "Art. 140. O objeto do contrato será recebido:",
+      "I - em se tratando de obras e serviços:"
     ],
     "origin": "authorial",
     "question": {
       "statement": "Obras e serviços podem ser recebidos provisoriamente pelo responsável pelo acompanhamento e pela fiscalização, mediante termo detalhado.",
       "answer": true,
-      "explanation": "É a hipótese do inciso I, alínea a.",
+      "explanation": "Correta. Obras e serviços são recebidos provisoriamente pelo responsável por seu acompanhamento e fiscalização, mediante termo detalhado (art. 140, I, a).",
       "source": "Fonte oficial (acesso em 08/10/2026): https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14133.htm — Art. 140, I, a",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia",
-      "origin": "authorial"
+      "origin": "authorial",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 14.133/2021 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 14.133/2021, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -905,19 +1162,25 @@ const DATA_ADM_14133_EXTRA = [
     "number": "Art. 140, § 1º",
     "title": "Lei 14.133/2021 — Licitações e Contratos Administrativos",
     "parts": [
-      "Fundamento legal: Art. 140, § 1º da Lei 14.133/2021. O § 1º permite rejeição no todo ou em parte."
+      "§ 1º O objeto do contrato poderá ser rejeitado, no todo ou em parte, quando estiver em desacordo com o contrato."
     ],
     "origin": "authorial",
     "question": {
       "statement": "O objeto contratual pode ser rejeitado total ou parcialmente quando estiver em desacordo com o contrato.",
       "answer": true,
-      "explanation": "O § 1º permite rejeição no todo ou em parte.",
+      "explanation": "Correta. O objeto do contrato pode ser rejeitado, no todo ou em parte, quando estiver em desacordo com o contrato (art. 140, § 1º).",
       "source": "Fonte oficial (acesso em 08/10/2026): https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14133.htm — Art. 140, § 1º",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia",
-      "origin": "authorial"
+      "origin": "authorial",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 14.133/2021 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 14.133/2021, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   }
 ];

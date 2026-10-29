@@ -8,20 +8,26 @@ const DATA_ADM_PACK4 = [
     "number": "Art. 3º",
     "title": "Lei 13.460/2017 — Direitos dos Usuários de Serviços Públicos",
     "parts": [
-      "Fundamento: Art. 3º de Lei 13.460/2017. O quadro deve identificar serviços, órgãos ou entidades responsáveis e vinculação administrativa."
+      "Art. 3º Com periodicidade mínima anual, cada Poder e esfera de Governo publicará quadro geral dos serviços públicos prestados, que especificará os órgãos ou entidades responsáveis por sua realização e a autoridade administrativa a quem estão subordinados ou vinculados."
     ],
     "origin": "authorial",
     "question": {
       "statement": "A Lei 13.460/2017 prevê a publicação de quadro geral dos serviços públicos prestados com periodicidade mínima anual.",
       "answer": true,
-      "explanation": "O quadro deve identificar serviços, órgãos ou entidades responsáveis e vinculação administrativa.",
+      "explanation": "Correta. Com periodicidade mínima anual, cada Poder e esfera de Governo publicará quadro geral dos serviços públicos prestados (art. 3º).",
       "source": "Fonte legislativa oficial (verificada em 08/10/2026): https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13460.htm — Art. 3º.",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia — estudo ativo",
       "origin": "authorial",
-      "updateWarning": "Questão autoral baseada em texto legislativo; conferir alterações posteriores e entendimento judicial pertinente."
+      "updateWarning": "Questão autoral baseada em texto legislativo; conferir alterações posteriores e entendimento judicial pertinente.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 13.460/2017 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.460/2017, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -32,20 +38,26 @@ const DATA_ADM_PACK4 = [
     "number": "Art. 3º",
     "title": "Lei 13.460/2017 — Direitos dos Usuários de Serviços Públicos",
     "parts": [
-      "Fundamento: Art. 3º de Lei 13.460/2017. O artigo impõe periodicidade mínima anual."
+      "Art. 3º Com periodicidade mínima anual, cada Poder e esfera de Governo publicará quadro geral dos serviços públicos prestados, que especificará os órgãos ou entidades responsáveis por sua realização e a autoridade administrativa a quem estão subordinados ou vinculados."
     ],
     "origin": "authorial",
     "question": {
       "statement": "A divulgação do quadro geral dos serviços públicos prestados depende apenas de iniciativa espontânea do gestor, sem periodicidade legal mínima.",
       "answer": false,
-      "explanation": "O artigo impõe periodicidade mínima anual.",
+      "explanation": "Errada. A lei fixa periodicidade mínima anual para a publicação do quadro geral dos serviços públicos prestados (art. 3º).",
       "source": "Fonte legislativa oficial (verificada em 08/10/2026): https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13460.htm — Art. 3º.",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia — estudo ativo",
       "origin": "authorial",
-      "updateWarning": "Questão autoral baseada em texto legislativo; conferir alterações posteriores e entendimento judicial pertinente."
+      "updateWarning": "Questão autoral baseada em texto legislativo; conferir alterações posteriores e entendimento judicial pertinente.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 13.460/2017 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.460/2017, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -56,20 +68,26 @@ const DATA_ADM_PACK4 = [
     "number": "Art. 4º",
     "title": "Lei 13.460/2017 — Direitos dos Usuários de Serviços Públicos",
     "parts": [
-      "Fundamento: Art. 4º de Lei 13.460/2017. O art. 4º inclui esses valores no padrão de prestação adequada."
+      "Art. 4º Os serviços públicos e o atendimento do usuário serão realizados de forma adequada, observados os princípios da regularidade, continuidade, efetividade, segurança, atualidade, generalidade, transparência e cortesia."
     ],
     "origin": "authorial",
     "question": {
       "statement": "Regularidade, continuidade, efetividade, segurança, transparência e cortesia estão entre os parâmetros legais do atendimento ao usuário.",
       "answer": true,
-      "explanation": "O art. 4º inclui esses valores no padrão de prestação adequada.",
+      "explanation": "Correta. Regularidade, continuidade, efetividade, segurança, transparência e cortesia constam dos princípios do art. 4º, ao lado da atualidade e da generalidade.",
       "source": "Fonte legislativa oficial (verificada em 08/10/2026): https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13460.htm — Art. 4º.",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia — estudo ativo",
       "origin": "authorial",
-      "updateWarning": "Questão autoral baseada em texto legislativo; conferir alterações posteriores e entendimento judicial pertinente."
+      "updateWarning": "Questão autoral baseada em texto legislativo; conferir alterações posteriores e entendimento judicial pertinente.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 13.460/2017 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.460/2017, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -80,20 +98,27 @@ const DATA_ADM_PACK4 = [
     "number": "Art. 5º, II",
     "title": "Lei 13.460/2017 — Direitos dos Usuários de Serviços Públicos",
     "parts": [
-      "Fundamento: Art. 5º, II de Lei 13.460/2017. A presunção de boa-fé está expressa no inciso II do art. 5º."
+      "Art. 5º O usuário de serviço público tem direito à adequada prestação dos serviços, devendo os agentes públicos e prestadores de serviços públicos observar as seguintes diretrizes:",
+      "II - presunção de boa-fé do usuário;"
     ],
     "origin": "authorial",
     "question": {
       "statement": "No atendimento ao usuário de serviços públicos, a boa-fé do usuário é presumida.",
       "answer": true,
-      "explanation": "A presunção de boa-fé está expressa no inciso II do art. 5º.",
+      "explanation": "Correta. A presunção de boa-fé do usuário é diretriz do atendimento (art. 5º, II).",
       "source": "Fonte legislativa oficial (verificada em 08/10/2026): https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13460.htm — Art. 5º, II.",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia — estudo ativo",
       "origin": "authorial",
-      "updateWarning": "Questão autoral baseada em texto legislativo; conferir alterações posteriores e entendimento judicial pertinente."
+      "updateWarning": "Questão autoral baseada em texto legislativo; conferir alterações posteriores e entendimento judicial pertinente.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 13.460/2017 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.460/2017, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -104,20 +129,27 @@ const DATA_ADM_PACK4 = [
     "number": "Art. 5º, IX",
     "title": "Lei 13.460/2017 — Direitos dos Usuários de Serviços Públicos",
     "parts": [
-      "Fundamento: Art. 5º, IX de Lei 13.460/2017. A autenticação pode ser feita pelo agente perante o original; reconhecimento de firma exige dúvida de autenticidade."
+      "Art. 5º O usuário de serviço público tem direito à adequada prestação dos serviços, devendo os agentes públicos e prestadores de serviços públicos observar as seguintes diretrizes:",
+      "IX - autenticação de documentos pelo próprio agente público, à vista dos originais apresentados pelo usuário, vedada a exigência de reconhecimento de firma, salvo em caso de dúvida de autenticidade;"
     ],
     "origin": "authorial",
     "question": {
       "statement": "A Administração deve exigir reconhecimento de firma de todo documento apresentado pelo usuário, mesmo quando o agente pode conferir o original.",
       "answer": false,
-      "explanation": "A autenticação pode ser feita pelo agente perante o original; reconhecimento de firma exige dúvida de autenticidade.",
+      "explanation": "Errada. A autenticação de documentos é feita pelo próprio agente público, à vista dos originais, sendo vedada a exigência de reconhecimento de firma, salvo em caso de dúvida de autenticidade (art. 5º, IX).",
       "source": "Fonte legislativa oficial (verificada em 08/10/2026): https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13460.htm — Art. 5º, IX.",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia — estudo ativo",
       "origin": "authorial",
-      "updateWarning": "Questão autoral baseada em texto legislativo; conferir alterações posteriores e entendimento judicial pertinente."
+      "updateWarning": "Questão autoral baseada em texto legislativo; conferir alterações posteriores e entendimento judicial pertinente.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 13.460/2017 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.460/2017, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -128,20 +160,27 @@ const DATA_ADM_PACK4 = [
     "number": "Art. 5º, XIV",
     "title": "Lei 13.460/2017 — Direitos dos Usuários de Serviços Públicos",
     "parts": [
-      "Fundamento: Art. 5º, XIV de Lei 13.460/2017. A simplificação da linguagem é exigência prevista no inciso XIV."
+      "Art. 5º O usuário de serviço público tem direito à adequada prestação dos serviços, devendo os agentes públicos e prestadores de serviços públicos observar as seguintes diretrizes:",
+      "XIV - utilização de linguagem simples e compreensível, evitando o uso de siglas, jargões e estrangeirismos; e"
     ],
     "origin": "authorial",
     "question": {
       "statement": "A linguagem simples e compreensível, evitando jargões e siglas, constitui diretriz do atendimento ao usuário.",
       "answer": true,
-      "explanation": "A simplificação da linguagem é exigência prevista no inciso XIV.",
+      "explanation": "Correta. A utilização de linguagem simples e compreensível, evitando siglas, jargões e estrangeirismos, é diretriz do atendimento (art. 5º, XIV).",
       "source": "Fonte legislativa oficial (verificada em 08/10/2026): https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13460.htm — Art. 5º, XIV.",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia — estudo ativo",
       "origin": "authorial",
-      "updateWarning": "Questão autoral baseada em texto legislativo; conferir alterações posteriores e entendimento judicial pertinente."
+      "updateWarning": "Questão autoral baseada em texto legislativo; conferir alterações posteriores e entendimento judicial pertinente.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 13.460/2017 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.460/2017, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -152,20 +191,27 @@ const DATA_ADM_PACK4 = [
     "number": "Art. 5º, XV",
     "title": "Lei 13.460/2017 — Direitos dos Usuários de Serviços Públicos",
     "parts": [
-      "Fundamento: Art. 5º, XV de Lei 13.460/2017. O inciso XV veda a exigência de nova prova sobre fato já comprovado."
+      "Art. 5º O usuário de serviço público tem direito à adequada prestação dos serviços, devendo os agentes públicos e prestadores de serviços públicos observar as seguintes diretrizes:",
+      "XV - vedação da exigência de nova prova sobre fato já comprovado em documentação válida apresentada."
     ],
     "origin": "authorial",
     "question": {
       "statement": "A apresentação de documentação válida que já comprove um fato afasta a exigência de nova prova desse mesmo fato.",
       "answer": true,
-      "explanation": "O inciso XV veda a exigência de nova prova sobre fato já comprovado.",
+      "explanation": "Correta. É vedada a exigência de nova prova sobre fato já comprovado em documentação válida apresentada (art. 5º, XV).",
       "source": "Fonte legislativa oficial (verificada em 08/10/2026): https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13460.htm — Art. 5º, XV.",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia — estudo ativo",
       "origin": "authorial",
-      "updateWarning": "Questão autoral baseada em texto legislativo; conferir alterações posteriores e entendimento judicial pertinente."
+      "updateWarning": "Questão autoral baseada em texto legislativo; conferir alterações posteriores e entendimento judicial pertinente.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 13.460/2017 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.460/2017, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -176,20 +222,27 @@ const DATA_ADM_PACK4 = [
     "number": "Art. 6º, I",
     "title": "Lei 13.460/2017 — Direitos dos Usuários de Serviços Públicos",
     "parts": [
-      "Fundamento: Art. 6º, I de Lei 13.460/2017. A participação no acompanhamento e na avaliação integra os direitos básicos do usuário."
+      "Art. 6º São direitos básicos do usuário:",
+      "I - participação no acompanhamento da prestação e na avaliação dos serviços;"
     ],
     "origin": "authorial",
     "question": {
       "statement": "O usuário tem direito de participar do acompanhamento da prestação e da avaliação de serviços públicos.",
       "answer": true,
-      "explanation": "A participação no acompanhamento e na avaliação integra os direitos básicos do usuário.",
+      "explanation": "Correta. O usuário tem direito básico à participação no acompanhamento da prestação e na avaliação dos serviços (art. 6º, I).",
       "source": "Fonte legislativa oficial (verificada em 08/10/2026): https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13460.htm — Art. 6º, I.",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia — estudo ativo",
       "origin": "authorial",
-      "updateWarning": "Questão autoral baseada em texto legislativo; conferir alterações posteriores e entendimento judicial pertinente."
+      "updateWarning": "Questão autoral baseada em texto legislativo; conferir alterações posteriores e entendimento judicial pertinente.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 13.460/2017 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.460/2017, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -200,20 +253,26 @@ const DATA_ADM_PACK4 = [
     "number": "Art. 7º",
     "title": "Lei 13.460/2017 — Direitos dos Usuários de Serviços Públicos",
     "parts": [
-      "Fundamento: Art. 7º de Lei 13.460/2017. A Carta de Serviços deve informar os serviços prestados e os compromissos de atendimento."
+      "Art. 7º Os órgãos e entidades abrangidos por esta Lei divulgarão Carta de Serviços ao Usuário."
     ],
     "origin": "authorial",
     "question": {
       "statement": "Os órgãos e entidades abrangidos pela lei devem divulgar Carta de Serviços ao Usuário.",
       "answer": true,
-      "explanation": "A Carta de Serviços deve informar os serviços prestados e os compromissos de atendimento.",
+      "explanation": "Correta. Os órgãos e entidades abrangidos pela lei divulgarão Carta de Serviços ao Usuário (art. 7º, caput).",
       "source": "Fonte legislativa oficial (verificada em 08/10/2026): https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13460.htm — Art. 7º.",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia — estudo ativo",
       "origin": "authorial",
-      "updateWarning": "Questão autoral baseada em texto legislativo; conferir alterações posteriores e entendimento judicial pertinente."
+      "updateWarning": "Questão autoral baseada em texto legislativo; conferir alterações posteriores e entendimento judicial pertinente.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 13.460/2017 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.460/2017, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -224,20 +283,27 @@ const DATA_ADM_PACK4 = [
     "number": "Art. 8º, IV",
     "title": "Lei 13.460/2017 — Direitos dos Usuários de Serviços Públicos",
     "parts": [
-      "Fundamento: Art. 8º, IV de Lei 13.460/2017. A preservação dos bens públicos consta entre os deveres do art. 8º."
+      "Art. 8º São deveres do usuário:",
+      "IV - preservar as condições dos bens públicos por meio dos quais lhe são prestados os serviços de que trata esta Lei."
     ],
     "origin": "authorial",
     "question": {
       "statement": "Preservar as condições dos bens públicos por meio dos quais os serviços são prestados constitui dever do usuário.",
       "answer": true,
-      "explanation": "A preservação dos bens públicos consta entre os deveres do art. 8º.",
+      "explanation": "Correta. Preservar as condições dos bens públicos por meio dos quais lhe são prestados os serviços é dever do usuário (art. 8º, IV).",
       "source": "Fonte legislativa oficial (verificada em 08/10/2026): https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13460.htm — Art. 8º, IV.",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia — estudo ativo",
       "origin": "authorial",
-      "updateWarning": "Questão autoral baseada em texto legislativo; conferir alterações posteriores e entendimento judicial pertinente."
+      "updateWarning": "Questão autoral baseada em texto legislativo; conferir alterações posteriores e entendimento judicial pertinente.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 13.460/2017 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.460/2017, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -248,20 +314,26 @@ const DATA_ADM_PACK4 = [
     "number": "Art. 9º",
     "title": "Lei 13.460/2017 — Direitos dos Usuários de Serviços Públicos",
     "parts": [
-      "Fundamento: Art. 9º de Lei 13.460/2017. O art. 9º assegura o canal de manifestação."
+      "Art. 9º Para garantir seus direitos, o usuário poderá apresentar manifestações perante a administração pública acerca da prestação de serviços públicos."
     ],
     "origin": "authorial",
     "question": {
       "statement": "O usuário pode apresentar manifestações à Administração Pública relacionadas à prestação de serviços públicos.",
       "answer": true,
-      "explanation": "O art. 9º assegura o canal de manifestação.",
+      "explanation": "Correta. Para garantir seus direitos, o usuário poderá apresentar manifestações perante a administração pública acerca da prestação de serviços públicos (art. 9º).",
       "source": "Fonte legislativa oficial (verificada em 08/10/2026): https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13460.htm — Art. 9º.",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia — estudo ativo",
       "origin": "authorial",
-      "updateWarning": "Questão autoral baseada em texto legislativo; conferir alterações posteriores e entendimento judicial pertinente."
+      "updateWarning": "Questão autoral baseada em texto legislativo; conferir alterações posteriores e entendimento judicial pertinente.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 13.460/2017 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.460/2017, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -272,20 +344,26 @@ const DATA_ADM_PACK4 = [
     "number": "Art. 10, § 2º",
     "title": "Lei 13.460/2017 — Direitos dos Usuários de Serviços Públicos",
     "parts": [
-      "Fundamento: Art. 10, § 2º de Lei 13.460/2017. A lei veda exigências sobre motivos determinantes da manifestação."
+      "§ 2º São vedadas quaisquer exigências relativas aos motivos determinantes da apresentação de manifestações perante a ouvidoria."
     ],
     "origin": "authorial",
     "question": {
       "statement": "O usuário que apresenta manifestação à ouvidoria deve demonstrar previamente os motivos determinantes de sua reclamação como condição de recebimento.",
       "answer": false,
-      "explanation": "A lei veda exigências sobre motivos determinantes da manifestação.",
+      "explanation": "Errada. São vedadas quaisquer exigências relativas aos motivos determinantes da apresentação de manifestações perante a ouvidoria (art. 10, § 2º).",
       "source": "Fonte legislativa oficial (verificada em 08/10/2026): https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13460.htm — Art. 10, § 2º.",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia — estudo ativo",
       "origin": "authorial",
-      "updateWarning": "Questão autoral baseada em texto legislativo; conferir alterações posteriores e entendimento judicial pertinente."
+      "updateWarning": "Questão autoral baseada em texto legislativo; conferir alterações posteriores e entendimento judicial pertinente.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 13.460/2017 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.460/2017, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -296,20 +374,26 @@ const DATA_ADM_PACK4 = [
     "number": "Art. 10, § 4º",
     "title": "Lei 13.460/2017 — Direitos dos Usuários de Serviços Públicos",
     "parts": [
-      "Fundamento: Art. 10, § 4º de Lei 13.460/2017. Além da via verbal, são admitidos meios eletrônicos e correspondência convencional."
+      "§ 4º A manifestação poderá ser feita por meio eletrônico, ou correspondência convencional, ou verbalmente, hipótese em que deverá ser reduzida a termo."
     ],
     "origin": "authorial",
     "question": {
       "statement": "A manifestação perante a ouvidoria pode ser feita verbalmente, hipótese em que deverá ser reduzida a termo.",
       "answer": true,
-      "explanation": "Além da via verbal, são admitidos meios eletrônicos e correspondência convencional.",
+      "explanation": "Correta. A manifestação poderá ser feita verbalmente, hipótese em que deverá ser reduzida a termo (art. 10, § 4º).",
       "source": "Fonte legislativa oficial (verificada em 08/10/2026): https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13460.htm — Art. 10, § 4º.",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia — estudo ativo",
       "origin": "authorial",
-      "updateWarning": "Questão autoral baseada em texto legislativo; conferir alterações posteriores e entendimento judicial pertinente."
+      "updateWarning": "Questão autoral baseada em texto legislativo; conferir alterações posteriores e entendimento judicial pertinente.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 13.460/2017 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.460/2017, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -320,20 +404,26 @@ const DATA_ADM_PACK4 = [
     "number": "Art. 11",
     "title": "Lei 13.460/2017 — Direitos dos Usuários de Serviços Públicos",
     "parts": [
-      "Fundamento: Art. 11 de Lei 13.460/2017. A lei proíbe a recusa de recebimento de manifestação apresentada nos seus termos."
+      "Art. 11. Em nenhuma hipótese, será recusado o recebimento de manifestações formuladas nos termos desta Lei, sob pena de responsabilidade do agente público."
     ],
     "origin": "authorial",
     "question": {
       "statement": "O órgão público pode recusar uma manifestação regularmente formulada sempre que a considere pouco relevante.",
       "answer": false,
-      "explanation": "A lei proíbe a recusa de recebimento de manifestação apresentada nos seus termos.",
+      "explanation": "Errada. Em nenhuma hipótese será recusado o recebimento de manifestações formuladas nos termos da lei, sob pena de responsabilidade do agente público (art. 11).",
       "source": "Fonte legislativa oficial (verificada em 08/10/2026): https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13460.htm — Art. 11.",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia — estudo ativo",
       "origin": "authorial",
-      "updateWarning": "Questão autoral baseada em texto legislativo; conferir alterações posteriores e entendimento judicial pertinente."
+      "updateWarning": "Questão autoral baseada em texto legislativo; conferir alterações posteriores e entendimento judicial pertinente.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 13.460/2017 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.460/2017, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -344,20 +434,27 @@ const DATA_ADM_PACK4 = [
     "number": "Art. 13, III",
     "title": "Lei 13.460/2017 — Direitos dos Usuários de Serviços Públicos",
     "parts": [
-      "Fundamento: Art. 13, III de Lei 13.460/2017. O inciso III do art. 13 prevê a proposição de aperfeiçoamentos."
+      "Art. 13. As ouvidorias terão como atribuições precípuas, sem prejuízo de outras estabelecidas em regulamento específico:",
+      "III - propor aperfeiçoamentos na prestação dos serviços;"
     ],
     "origin": "authorial",
     "question": {
       "statement": "Uma das atribuições da ouvidoria é propor aperfeiçoamentos na prestação dos serviços públicos.",
       "answer": true,
-      "explanation": "O inciso III do art. 13 prevê a proposição de aperfeiçoamentos.",
+      "explanation": "Correta. Propor aperfeiçoamentos na prestação dos serviços é atribuição precípua das ouvidorias (art. 13, III).",
       "source": "Fonte legislativa oficial (verificada em 08/10/2026): https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13460.htm — Art. 13, III.",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia — estudo ativo",
       "origin": "authorial",
-      "updateWarning": "Questão autoral baseada em texto legislativo; conferir alterações posteriores e entendimento judicial pertinente."
+      "updateWarning": "Questão autoral baseada em texto legislativo; conferir alterações posteriores e entendimento judicial pertinente.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 13.460/2017 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 13.460/2017, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -1290,20 +1387,26 @@ const DATA_ADM_PACK4 = [
     "number": "Art. 1º",
     "title": "Lei 12.813/2013 — Conflito de Interesses",
     "parts": [
-      "Fundamento: Art. 1º de Lei 12.813/2013. A lei disciplina conflitos durante e depois do vínculo federal."
+      "Art. 1º As situações que configuram conflito de interesses envolvendo ocupantes de cargo ou emprego no âmbito do Poder Executivo federal, os requisitos e restrições a ocupantes de cargo ou emprego que tenham acesso a informações privilegiadas, os impedimentos posteriores ao exercício do cargo ou emprego e as competências para fiscalização, avaliação e prevenção de conflitos de interesses regulam-se pelo disposto nesta Lei."
     ],
     "origin": "authorial",
     "question": {
       "statement": "A Lei 12.813/2013 disciplina situações de conflito de interesses durante e após o exercício de cargo ou emprego no Poder Executivo federal.",
       "answer": true,
-      "explanation": "A lei disciplina conflitos durante e depois do vínculo federal.",
+      "explanation": "Correta. A lei regula as situações de conflito de interesses de ocupantes de cargo ou emprego no Poder Executivo federal, as restrições a quem tem acesso a informações privilegiadas e os impedimentos posteriores ao exercício do cargo (art. 1º).",
       "source": "Fonte legislativa oficial (verificada em 08/10/2026): https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2013/lei/l12813.htm — Art. 1º.",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia — estudo ativo",
       "origin": "authorial",
-      "updateWarning": "Questão autoral baseada em texto legislativo; conferir alterações posteriores e entendimento judicial pertinente."
+      "updateWarning": "Questão autoral baseada em texto legislativo; conferir alterações posteriores e entendimento judicial pertinente.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 12.813/2013 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 12.813/2013, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -1314,20 +1417,27 @@ const DATA_ADM_PACK4 = [
     "number": "Art. 2º, I",
     "title": "Lei 12.813/2013 — Conflito de Interesses",
     "parts": [
-      "Fundamento: Art. 2º, I de Lei 12.813/2013. O inciso I inclui os titulares dos ministérios."
+      "Art. 2º Submetem-se ao regime desta Lei os ocupantes dos seguintes cargos e empregos:",
+      "I - de ministro de Estado;"
     ],
     "origin": "authorial",
     "question": {
       "statement": "Ministros de Estado submetem-se ao regime da Lei 12.813/2013.",
       "answer": true,
-      "explanation": "O inciso I inclui os titulares dos ministérios.",
+      "explanation": "Correta. Submetem-se ao regime da lei os ocupantes do cargo de ministro de Estado (art. 2º, I).",
       "source": "Fonte legislativa oficial (verificada em 08/10/2026): https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2013/lei/l12813.htm — Art. 2º, I.",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia — estudo ativo",
       "origin": "authorial",
-      "updateWarning": "Questão autoral baseada em texto legislativo; conferir alterações posteriores e entendimento judicial pertinente."
+      "updateWarning": "Questão autoral baseada em texto legislativo; conferir alterações posteriores e entendimento judicial pertinente.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 12.813/2013 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 12.813/2013, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -1338,20 +1448,26 @@ const DATA_ADM_PACK4 = [
     "number": "Art. 2º, parágrafo único",
     "title": "Lei 12.813/2013 — Conflito de Interesses",
     "parts": [
-      "Fundamento: Art. 2º, parágrafo único de Lei 12.813/2013. O parágrafo único amplia o alcance nos termos de regulamento."
+      "Parágrafo único. Além dos agentes públicos mencionados nos incisos I a IV, sujeitam-se ao disposto nesta Lei os ocupantes de cargos ou empregos cujo exercício proporcione acesso a informação privilegiada capaz de trazer vantagem econômica ou financeira para o agente público ou para terceiro, conforme definido em regulamento."
     ],
     "origin": "authorial",
     "question": {
       "statement": "A lei alcança somente cargos expressamente listados nos incisos I a IV do art. 2º, sem admitir outros cargos com acesso a informações privilegiadas.",
       "answer": false,
-      "explanation": "O parágrafo único amplia o alcance nos termos de regulamento.",
+      "explanation": "Errada. Além dos cargos dos incisos I a IV, sujeitam-se à lei os ocupantes de cargos ou empregos cujo exercício proporcione acesso a informação privilegiada capaz de trazer vantagem econômica ou financeira, conforme regulamento (art. 2º, parágrafo único).",
       "source": "Fonte legislativa oficial (verificada em 08/10/2026): https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2013/lei/l12813.htm — Art. 2º, parágrafo único.",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia — estudo ativo",
       "origin": "authorial",
-      "updateWarning": "Questão autoral baseada em texto legislativo; conferir alterações posteriores e entendimento judicial pertinente."
+      "updateWarning": "Questão autoral baseada em texto legislativo; conferir alterações posteriores e entendimento judicial pertinente.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 12.813/2013 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 12.813/2013, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -1362,20 +1478,26 @@ const DATA_ADM_PACK4 = [
     "number": "Art. 3º, I",
     "title": "Lei 12.813/2013 — Conflito de Interesses",
     "parts": [
-      "Fundamento: Art. 3º, I de Lei 12.813/2013. É o conceito legal do inciso I."
+      "I - conflito de interesses: a situação gerada pelo confronto entre interesses públicos e privados, que possa comprometer o interesse coletivo ou influenciar, de maneira imprópria, o desempenho da função pública; e"
     ],
     "origin": "authorial",
     "question": {
       "statement": "Conflito de interesses envolve confronto entre interesses públicos e privados capaz de comprometer o interesse coletivo ou influenciar indevidamente o exercício da função.",
       "answer": true,
-      "explanation": "É o conceito legal do inciso I.",
+      "explanation": "Correta. Conflito de interesses é a situação gerada pelo confronto entre interesses públicos e privados, que possa comprometer o interesse coletivo ou influenciar, de maneira imprópria, o desempenho da função pública (art. 3º, I).",
       "source": "Fonte legislativa oficial (verificada em 08/10/2026): https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2013/lei/l12813.htm — Art. 3º, I.",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia — estudo ativo",
       "origin": "authorial",
-      "updateWarning": "Questão autoral baseada em texto legislativo; conferir alterações posteriores e entendimento judicial pertinente."
+      "updateWarning": "Questão autoral baseada em texto legislativo; conferir alterações posteriores e entendimento judicial pertinente.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 12.813/2013 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 12.813/2013, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -1386,20 +1508,26 @@ const DATA_ADM_PACK4 = [
     "number": "Art. 3º, II",
     "title": "Lei 12.813/2013 — Conflito de Interesses",
     "parts": [
-      "Fundamento: Art. 3º, II de Lei 12.813/2013. O inciso II define informação privilegiada."
+      "II - informação privilegiada: a que diz respeito a assuntos sigilosos ou aquela relevante ao processo de decisão no âmbito do Poder Executivo federal que tenha repercussão econômica ou financeira e que não seja de amplo conhecimento público."
     ],
     "origin": "authorial",
     "question": {
       "statement": "Informação privilegiada pode abranger informação relevante à decisão federal com repercussão econômica que não seja de amplo conhecimento público.",
       "answer": true,
-      "explanation": "O inciso II define informação privilegiada.",
+      "explanation": "Correta. Informação privilegiada é a relativa ao processo de decisão no Poder Executivo federal com repercussão econômica ou financeira e que não seja de amplo conhecimento público (art. 3º, II).",
       "source": "Fonte legislativa oficial (verificada em 08/10/2026): https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2013/lei/l12813.htm — Art. 3º, II.",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia — estudo ativo",
       "origin": "authorial",
-      "updateWarning": "Questão autoral baseada em texto legislativo; conferir alterações posteriores e entendimento judicial pertinente."
+      "updateWarning": "Questão autoral baseada em texto legislativo; conferir alterações posteriores e entendimento judicial pertinente.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 12.813/2013 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 12.813/2013, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -1410,20 +1538,26 @@ const DATA_ADM_PACK4 = [
     "number": "Art. 4º, § 2º",
     "title": "Lei 12.813/2013 — Conflito de Interesses",
     "parts": [
-      "Fundamento: Art. 4º, § 2º de Lei 12.813/2013. O § 2º dispensa lesão patrimonial e recebimento de ganho."
+      "§ 2º A ocorrência de conflito de interesses independe da existência de lesão ao patrimônio público, bem como do recebimento de qualquer vantagem ou ganho pelo agente público ou por terceiro."
     ],
     "origin": "authorial",
     "question": {
       "statement": "A caracterização de conflito de interesses exige obrigatoriamente dano comprovado ao erário ou vantagem recebida.",
       "answer": false,
-      "explanation": "O § 2º dispensa lesão patrimonial e recebimento de ganho.",
+      "explanation": "Errada. A ocorrência de conflito de interesses independe da existência de lesão ao patrimônio público e do recebimento de qualquer vantagem (art. 4º, § 2º).",
       "source": "Fonte legislativa oficial (verificada em 08/10/2026): https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2013/lei/l12813.htm — Art. 4º, § 2º.",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia — estudo ativo",
       "origin": "authorial",
-      "updateWarning": "Questão autoral baseada em texto legislativo; conferir alterações posteriores e entendimento judicial pertinente."
+      "updateWarning": "Questão autoral baseada em texto legislativo; conferir alterações posteriores e entendimento judicial pertinente.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 12.813/2013 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 12.813/2013, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -1434,20 +1568,27 @@ const DATA_ADM_PACK4 = [
     "number": "Art. 5º, I",
     "title": "Lei 12.813/2013 — Conflito de Interesses",
     "parts": [
-      "Fundamento: Art. 5º, I de Lei 12.813/2013. Conduta expressamente prevista no art. 5º, I."
+      "Art. 5º Configura conflito de interesses no exercício de cargo ou emprego no âmbito do Poder Executivo federal:",
+      "I - divulgar ou fazer uso de informação privilegiada, em proveito próprio ou de terceiro, obtida em razão das atividades exercidas;"
     ],
     "origin": "authorial",
     "question": {
       "statement": "Usar informação privilegiada em benefício próprio ou de terceiro constitui situação de conflito de interesses no exercício do cargo.",
       "answer": true,
-      "explanation": "Conduta expressamente prevista no art. 5º, I.",
+      "explanation": "Correta. Divulgar ou fazer uso de informação privilegiada em proveito próprio ou de terceiro configura conflito de interesses (art. 5º, I).",
       "source": "Fonte legislativa oficial (verificada em 08/10/2026): https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2013/lei/l12813.htm — Art. 5º, I.",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia — estudo ativo",
       "origin": "authorial",
-      "updateWarning": "Questão autoral baseada em texto legislativo; conferir alterações posteriores e entendimento judicial pertinente."
+      "updateWarning": "Questão autoral baseada em texto legislativo; conferir alterações posteriores e entendimento judicial pertinente.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 12.813/2013 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 12.813/2013, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -1458,20 +1599,27 @@ const DATA_ADM_PACK4 = [
     "number": "Art. 5º, II",
     "title": "Lei 12.813/2013 — Conflito de Interesses",
     "parts": [
-      "Fundamento: Art. 5º, II de Lei 12.813/2013. A situação é abrangida pelo inciso II."
+      "Art. 5º Configura conflito de interesses no exercício de cargo ou emprego no âmbito do Poder Executivo federal:",
+      "II - exercer atividade que implique a prestação de serviços ou a manutenção de relação de negócio com pessoa física ou jurídica que tenha interesse em decisão do agente público ou de colegiado do qual este participe;"
     ],
     "origin": "authorial",
     "question": {
       "statement": "Prestar serviços a pessoa jurídica interessada em decisão do agente público pode caracterizar conflito de interesses.",
       "answer": true,
-      "explanation": "A situação é abrangida pelo inciso II.",
+      "explanation": "Correta. Exercer atividade que implique prestação de serviços a pessoa que tenha interesse em decisão do agente público configura conflito de interesses (art. 5º, II).",
       "source": "Fonte legislativa oficial (verificada em 08/10/2026): https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2013/lei/l12813.htm — Art. 5º, II.",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia — estudo ativo",
       "origin": "authorial",
-      "updateWarning": "Questão autoral baseada em texto legislativo; conferir alterações posteriores e entendimento judicial pertinente."
+      "updateWarning": "Questão autoral baseada em texto legislativo; conferir alterações posteriores e entendimento judicial pertinente.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 12.813/2013 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 12.813/2013, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -1482,20 +1630,27 @@ const DATA_ADM_PACK4 = [
     "number": "Art. 5º, IV",
     "title": "Lei 12.813/2013 — Conflito de Interesses",
     "parts": [
-      "Fundamento: Art. 5º, IV de Lei 12.813/2013. O inciso IV inclui atuação formal ou informal."
+      "Art. 5º Configura conflito de interesses no exercício de cargo ou emprego no âmbito do Poder Executivo federal:",
+      "IV - atuar, ainda que informalmente, como procurador, consultor, assessor ou intermediário de interesses privados nos órgãos ou entidades da administração pública direta ou indireta de qualquer dos Poderes da União, dos Estados, do Distrito Federal e dos Municípios;"
     ],
     "origin": "authorial",
     "question": {
       "statement": "A atuação informal como intermediário de interesses privados perante órgãos públicos pode configurar conflito de interesses.",
       "answer": true,
-      "explanation": "O inciso IV inclui atuação formal ou informal.",
+      "explanation": "Correta. Atuar, ainda que informalmente, como procurador, consultor, assessor ou intermediário de interesses privados nos órgãos públicos configura conflito de interesses (art. 5º, IV).",
       "source": "Fonte legislativa oficial (verificada em 08/10/2026): https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2013/lei/l12813.htm — Art. 5º, IV.",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia — estudo ativo",
       "origin": "authorial",
-      "updateWarning": "Questão autoral baseada em texto legislativo; conferir alterações posteriores e entendimento judicial pertinente."
+      "updateWarning": "Questão autoral baseada em texto legislativo; conferir alterações posteriores e entendimento judicial pertinente.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 12.813/2013 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 12.813/2013, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -1506,20 +1661,27 @@ const DATA_ADM_PACK4 = [
     "number": "Art. 5º, VI",
     "title": "Lei 12.813/2013 — Conflito de Interesses",
     "parts": [
-      "Fundamento: Art. 5º, VI de Lei 12.813/2013. O inciso VI trata desse recebimento fora dos limites e condições do regulamento."
+      "Art. 5º Configura conflito de interesses no exercício de cargo ou emprego no âmbito do Poder Executivo federal:",
+      "VI - receber presente de quem tenha interesse em decisão do agente público ou de colegiado do qual este participe fora dos limites e condições estabelecidos em regulamento; e"
     ],
     "origin": "authorial",
     "question": {
       "statement": "Receber presente de pessoa interessada em decisão do agente público jamais configura conflito de interesses, independentemente de condições regulamentares.",
       "answer": false,
-      "explanation": "O inciso VI trata desse recebimento fora dos limites e condições do regulamento.",
+      "explanation": "Errada. Receber presente de quem tenha interesse em decisão do agente público fora dos limites e condições estabelecidos em regulamento configura conflito de interesses (art. 5º, VI).",
       "source": "Fonte legislativa oficial (verificada em 08/10/2026): https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2013/lei/l12813.htm — Art. 5º, VI.",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia — estudo ativo",
       "origin": "authorial",
-      "updateWarning": "Questão autoral baseada em texto legislativo; conferir alterações posteriores e entendimento judicial pertinente."
+      "updateWarning": "Questão autoral baseada em texto legislativo; conferir alterações posteriores e entendimento judicial pertinente.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 12.813/2013 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 12.813/2013, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -1530,20 +1692,26 @@ const DATA_ADM_PACK4 = [
     "number": "Art. 5º, parágrafo único",
     "title": "Lei 12.813/2013 — Conflito de Interesses",
     "parts": [
-      "Fundamento: Art. 5º, parágrafo único de Lei 12.813/2013. O parágrafo único estende a regra a essas situações."
+      "Parágrafo único. As situações que configuram conflito de interesses estabelecidas neste artigo aplicam-se aos ocupantes dos cargos ou empregos mencionados no art. 2º ainda que em gozo de licença ou em período de afastamento."
     ],
     "origin": "authorial",
     "question": {
       "statement": "Situações de conflito descritas no art. 5º podem alcançar ocupantes de cargo abrangido mesmo em licença ou afastamento.",
       "answer": true,
-      "explanation": "O parágrafo único estende a regra a essas situações.",
+      "explanation": "Correta. As situações do art. 5º aplicam-se aos ocupantes dos cargos do art. 2º ainda que em gozo de licença ou em período de afastamento (art. 5º, parágrafo único).",
       "source": "Fonte legislativa oficial (verificada em 08/10/2026): https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2013/lei/l12813.htm — Art. 5º, parágrafo único.",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia — estudo ativo",
       "origin": "authorial",
-      "updateWarning": "Questão autoral baseada em texto legislativo; conferir alterações posteriores e entendimento judicial pertinente."
+      "updateWarning": "Questão autoral baseada em texto legislativo; conferir alterações posteriores e entendimento judicial pertinente.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 12.813/2013 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 12.813/2013, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -1554,20 +1722,27 @@ const DATA_ADM_PACK4 = [
     "number": "Art. 6º, I",
     "title": "Lei 12.813/2013 — Conflito de Interesses",
     "parts": [
-      "Fundamento: Art. 6º, I de Lei 12.813/2013. A vedação do inciso I não se limita a seis meses."
+      "Art. 6º Configura conflito de interesses após o exercício de cargo ou emprego no âmbito do Poder Executivo federal:",
+      "I - a qualquer tempo, divulgar ou fazer uso de informação privilegiada obtida em razão das atividades exercidas; e"
     ],
     "origin": "authorial",
     "question": {
       "statement": "A qualquer tempo, o uso de informação privilegiada obtida em razão do antigo cargo pode configurar conflito de interesses posterior ao exercício.",
       "answer": true,
-      "explanation": "A vedação do inciso I não se limita a seis meses.",
+      "explanation": "Correta. Configura conflito de interesses após o exercício do cargo, a qualquer tempo, divulgar ou fazer uso de informação privilegiada obtida em razão das atividades exercidas (art. 6º, I).",
       "source": "Fonte legislativa oficial (verificada em 08/10/2026): https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2013/lei/l12813.htm — Art. 6º, I.",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia — estudo ativo",
       "origin": "authorial",
-      "updateWarning": "Questão autoral baseada em texto legislativo; conferir alterações posteriores e entendimento judicial pertinente."
+      "updateWarning": "Questão autoral baseada em texto legislativo; conferir alterações posteriores e entendimento judicial pertinente.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 12.813/2013 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 12.813/2013, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -1578,20 +1753,27 @@ const DATA_ADM_PACK4 = [
     "number": "Art. 6º, II",
     "title": "Lei 12.813/2013 — Conflito de Interesses",
     "parts": [
-      "Fundamento: Art. 6º, II de Lei 12.813/2013. A lei prevê seis meses em hipóteses específicas, ressalvada autorização expressa."
+      "Art. 6º Configura conflito de interesses após o exercício de cargo ou emprego no âmbito do Poder Executivo federal:",
+      "II - no período de 6 (seis) meses, contado da data da dispensa, exoneração, destituição, demissão ou aposentadoria, salvo quando expressamente autorizado, conforme o caso, pela Comissão de Ética Pública ou pela Controladoria-Geral da União:"
     ],
     "origin": "authorial",
     "question": {
       "statement": "A quarentena aplicável a determinadas atividades após o desligamento é sempre de vinte e quatro meses.",
       "answer": false,
-      "explanation": "A lei prevê seis meses em hipóteses específicas, ressalvada autorização expressa.",
+      "explanation": "Errada. O período de impedimento do art. 6º, II, é de 6 meses, e não de 24, salvo autorização expressa da Comissão de Ética Pública ou da Controladoria-Geral da União.",
       "source": "Fonte legislativa oficial (verificada em 08/10/2026): https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2013/lei/l12813.htm — Art. 6º, II.",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia — estudo ativo",
       "origin": "authorial",
-      "updateWarning": "Questão autoral baseada em texto legislativo; conferir alterações posteriores e entendimento judicial pertinente."
+      "updateWarning": "Questão autoral baseada em texto legislativo; conferir alterações posteriores e entendimento judicial pertinente.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 12.813/2013 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 12.813/2013, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {
@@ -1602,20 +1784,27 @@ const DATA_ADM_PACK4 = [
     "number": "Art. 6º, II",
     "title": "Lei 12.813/2013 — Conflito de Interesses",
     "parts": [
-      "Fundamento: Art. 6º, II de Lei 12.813/2013. O inciso II estabelece a quarentena de seis meses."
+      "Art. 6º Configura conflito de interesses após o exercício de cargo ou emprego no âmbito do Poder Executivo federal:",
+      "II - no período de 6 (seis) meses, contado da data da dispensa, exoneração, destituição, demissão ou aposentadoria, salvo quando expressamente autorizado, conforme o caso, pela Comissão de Ética Pública ou pela Controladoria-Geral da União:"
     ],
     "origin": "authorial",
     "question": {
       "statement": "Para determinadas atividades após o desligamento, a Lei 12.813/2013 prevê período de seis meses, salvo autorização expressa competente.",
       "answer": true,
-      "explanation": "O inciso II estabelece a quarentena de seis meses.",
+      "explanation": "Correta. Configura conflito de interesses, no período de 6 meses após o desligamento, praticar as condutas do art. 6º, II, salvo autorização expressa da Comissão de Ética Pública ou da CGU.",
       "source": "Fonte legislativa oficial (verificada em 08/10/2026): https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2013/lei/l12813.htm — Art. 6º, II.",
       "meta": "Questão autoral · Base Completa · 2026",
       "bank": "Base Completa",
       "year": 2026,
       "role": "Lei em Dia — estudo ativo",
       "origin": "authorial",
-      "updateWarning": "Questão autoral baseada em texto legislativo; conferir alterações posteriores e entendimento judicial pertinente."
+      "updateWarning": "Questão autoral baseada em texto legislativo; conferir alterações posteriores e entendimento judicial pertinente.",
+      "legalAudit": {
+        "status": "certificado",
+        "basis": "texto legal conferido (Lei 12.813/2013 compilada, Planalto)",
+        "date": "2026-10-28",
+        "source": "Lei 12.813/2013, texto compilado do Planalto enviado pelo proprietário em 29/10/2026"
+      }
     }
   },
   {

@@ -120,10 +120,23 @@ test("auditoria dos 321 gabaritos importados preserva a cadeia de origem",()=>{
  assert.equal(audit.byFile.reduce((a,x)=>a+x.answerMatch,0),321);
  const review=JSON.parse(readFileSync(new URL("audits/adm-leis-vade-revisao-juridica-20261028.json",root),"utf8"));
  assert.equal(review.gabaritosAlterados,0);
+ const review2=JSON.parse(readFileSync(new URL("audits/adm-leis-principais-revisao-juridica-20261029.json",root),"utf8"));
+ assert.equal(review2.gabaritosAlterados,0);
+ assert.equal(review2.itensForaDaRevisaoAlterados,0);
  for(const [path,sha] of Object.entries(audit.datasetBlobShas)){
    const content=Buffer.from(readFileSync(new URL(path,root),"utf8").replace(/\r\n/g,"\n"),"utf8");
    const gitBlob=createHash("sha1").update("blob "+content.length).update(Buffer.from([0])).update(content).digest("hex");
    const reviewedSha=review.datasetBlobShas[path];
+   const finalSha=review2.datasetBlobShas[path];
+   if(finalSha){
+     if(path==="tools/decorando-data-adm-pack2.js"){
+       const snapshot=JSON.parse(readFileSync(new URL("audits/lei-em-dia-auditoria-20261012-inventario.json",root),"utf8"));
+       assert.equal(snapshot.files.find(f=>f.path===path).originalBlobSha,sha,"SHA original do dataset administrativo alterado");
+     }
+     assert.equal(review2.datasetBlobShasBefore[path],reviewedSha||sha,"SHA anterior à revisão de 29/10/2026 não preservado: "+path);
+     assert.equal(gitBlob,finalSha,"Dataset alterado depois da revisão jurídica de 29/10/2026: "+path);
+     continue;
+   }
    if(reviewedSha){
      if(path==="tools/decorando-data-adm-pack2.js"){
        const snapshot=JSON.parse(readFileSync(new URL("audits/lei-em-dia-auditoria-20261012-inventario.json",root),"utf8"));
@@ -144,7 +157,7 @@ test("auditoria dos 321 gabaritos importados preserva a cadeia de origem",()=>{
  for(const [path,reviewedSha] of Object.entries(review.datasetBlobShas)){
    const content=Buffer.from(readFileSync(new URL(path,root),"utf8").replace(/\r\n/g,"\n"),"utf8");
    const gitBlob=createHash("sha1").update("blob "+content.length).update(Buffer.from([0])).update(content).digest("hex");
-   assert.equal(gitBlob,reviewedSha,"Dataset alterado depois da revisão jurídica de 28/10/2026: "+path);
+   assert.equal(gitBlob,review2.datasetBlobShas[path]||reviewedSha,"Dataset alterado depois da revisão jurídica de 28/10/2026: "+path);
  }
 });
 
