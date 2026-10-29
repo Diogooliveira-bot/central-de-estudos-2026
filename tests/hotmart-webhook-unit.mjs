@@ -116,8 +116,10 @@ test('falha de e-mail devolve 503 para reenvio pela Hotmart sem confirmar entreg
 });
 test('e-mails de ativação só usam HTTPS e evitam revelar tokens fora do destino',async()=>{
  assert.equal(hotmartSiteBase(env),'https://test-preview.vercel.app');
- assert.equal(hotmartSiteBase({...env,VERCEL_ENV:'production'}),'https://central-de-estudos-ecru.vercel.app');
- assert.throws(()=>hotmartSiteBase({...env,BC_PUBLIC_URL:'http://outro.exemplo'}));
+ assert.throws(()=>hotmartSiteBase({...env,VERCEL_ENV:'production'}),/BC_PUBLIC_APP_URL/);
+ assert.equal(hotmartSiteBase({...env,VERCEL_ENV:'production',BC_PUBLIC_APP_URL:'https://central-de-estudos.vercel.app/'}),'https://central-de-estudos.vercel.app');
+ assert.throws(()=>hotmartSiteBase({...env,VERCEL_ENV:'production',BC_PUBLIC_URL:'http://outro.exemplo'}));
+ assert.equal(hotmartSiteBase({...env,BC_PUBLIC_URL:'http://outro.exemplo'}),'https://test-preview.vercel.app');
  let message;
  await sendHotmartWelcome({env,to:'teste@example.com',token:'abc123',
    transport:async(m)=>{message=m;return 'test'}});
