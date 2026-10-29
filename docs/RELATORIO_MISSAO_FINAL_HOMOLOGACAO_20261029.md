@@ -2,38 +2,55 @@
 
 Estado: **NÃO LIBERADO PARA VENDER**. Relatório de 29/10/2026 (Fortaleza).
 
-## Prioridade: incidente de restauração Neon
+## Incidente de restauração Neon — corrigido
 
-Durante esta execução, foi usado `restore_snapshot` com `finalize:true` e sem `target_branch_id`. A intenção era testar a recuperação em uma nova branch. A finalização também moveu o endpoint produtivo e o vínculo Vercel da branch original para a cópia do snapshot. **Foi um erro de execução; não é correto afirmar que a produção permaneceu intocada.** Não houve merge em `main` nem publicação de uma nova versão do site em Production.
+Durante esta execução, foi usado `restore_snapshot` com `finalize:true` e sem `target_branch_id`. A intenção era testar a recuperação em uma nova branch. A finalização também moveu o endpoint produtivo e o vínculo Vercel da branch original para a cópia do snapshot. **Foi um erro de execução; não é correto afirmar que a produção permaneceu intocada.** Não houve merge em `main` nem publicação de uma nova versão do site em Production por esta execução.
 
-- Projeto: `shiny-hall-19564809`.
-- Original preservada: `br-blue-sunset-b7jcts9i`, novamente chamada `main`, `default=true`.
-- Cópia do snapshot: `br-shy-sound-b754sfmz`, chamada `test/restore-lancamento-20261028`.
-- Endpoint produtivo estável: `ep-curly-haze-b7ea2u0n`, ainda ligado à cópia do snapshot no último estado observado.
-- Compute adicional: `ep-calm-wind-b70hjyc6`, devolvido à branch original após cancelamento da tentativa de recuperação.
-- Espelho de recuperação preservado, sem compute: `br-dry-fire-b74n3v8s`, `recovery/endpoint-parking-20261029`.
+O proprietário autorizou expressamente em 29/10/2026 o procedimento de recuperação com troca temporária para o espelho verificado. A correção foi concluída e verificada aproximadamente às **07h29 de Fortaleza (10h29Z)**.
 
-### Preservação e reconciliação executadas
+| Recurso | Estado final confirmado |
+|---|---|
+| Projeto Neon | `shiny-hall-19564809` |
+| Banco original | `br-blue-sunset-b7jcts9i`, nome `main`, default=true |
+| Vínculo Neon → Vercel Production branch | `main` original |
+| Endpoint estável original | `ep-curly-haze-b7ea2u0n`, devolvido à `main` |
+| Cópia do snapshot preservada | `br-shy-sound-b754sfmz`, `test/restore-lancamento-20261028` |
+| Compute adicional | `ep-calm-wind-b70hjyc6`, ligado à cópia do snapshot |
+| Espelho de recuperação preservado | `br-dry-fire-b74n3v8s`, `recovery/endpoint-parking-20261029`, sem compute |
+
+### Preservação, reconciliação e verificações
 
 A comparação das 16 tabelas públicas encontrou diferenças somente em `central_users`, `central_user_preferences`, `central_user_sync_state` e `central_user_progress_summary`. Os dados originais não foram apagados. As identidades, hashes de senha e versões de sessão das seis contas eram iguais entre original e cópia; as diferenças de autenticação eram horários de acesso.
 
 O progresso escrito depois do redirecionamento foi recuperado para a original, com atualização condicional por `updated_at`:
 
-- Estado de sincronização mais recente: 28 chaves; todas as 21 chaves anteriores estavam presentes.
-- Sete chaves adicionais preservadas; três valores de navegação/atividade atualizados.
-- Resumo de estudo mais recente preservado, incluindo 660 segundos registrados.
+- Estado de sincronização e resumo de estudo mais recentes preservados.
+- Todas as 21 chaves anteriores estavam presentes no primeiro estado reconciliado, além de sete chaves adicionais; navegação/atividade atuais foram mantidas.
 - Preferência atual preservada sem eliminar a preferência adicional que existia somente na original.
-- Horário de login mais recente reconciliado, mantendo credenciais e versões de sessão.
+- Horários de login reconciliados pelo mais recente, mantendo credenciais e versões de sessão.
+- Antes da troca autorizada, foram encontradas novas gravações: sincronização às 10:09:17Z, resumo às 10:24:27Z e login às 10:07:18Z. Esses registros também foram incorporados à original e ao espelho.
 
-O espelho auxiliar foi atualizado com esses mesmos registros. Uma comparação de contagens e checksums de todas as 16 tabelas confirmou identidade com a original reconciliada. Nenhuma tabela, conta ou branch foi excluída. Original, cópia e espelho permanecem preservados.
+A cópia e a original foram relidas após a troca: não restavam gravações mais recentes na cópia a incorporar. As diferenças restantes entre as duas eram somente a preferência adicional original e um horário de login mais recente preservado na original.
 
-### Recuperação ainda bloqueada
+**Evidências finais:**
 
-A API Neon impede mover o endpoint da branch vinculada à produção Vercel. O proprietário autenticou o painel Neon por fluxo seguro. Foi preparada a troca temporária da configuração de produção para o espelho verificado, para permitir devolver o endpoint estável à original e então restabelecer a seleção `main`.
+- Contagens e checksums das 16 tabelas da original reconciliada e do espelho eram idênticos antes da troca e permaneceram idênticos na verificação posterior às 10:28Z.
+- Consulta SQL dirigida explicitamente ao endpoint `ep-curly-haze-b7ea2u0n` retornou `neon.branch_id=br-blue-sunset-b7jcts9i`, banco `neondb`, às 10:28:04Z.
+- Checksum das seis identidades completas, excluindo apenas horários de atualização/login, coincidiu entre original e cópia, incluindo hashes de senha e versões de sessão.
+- Painel Neon mostrou `main` como Production branch, com Save desabilitado; a API confirmou as restrições de branch produtiva na original.
+- API de endpoints confirmou o endpoint estável na original e o adicional na cópia.
+- O alias antigo `central-de-estudos-ecru.vercel.app` continuou no mesmo deployment `dpl_CRNXhAJdzN2pD9dGAjShtX3Z1SW1`, commit `26739f95be0aa2faf87336bc76e5dc279165ffa2`.
+- Consulta HTTP ao alias antigo retornou 200 para o status de cadastro, ainda `enabled:false` e `siteKey:null`. Não foi realizado login com conta real de aluno nesta etapa.
 
-A revisão automática rejeitou essa troca por considerá-la uma alteração consequente de produção por uma branch temporária, inicialmente por risco de gravações recentes e depois por exigir autorização específica para esse caminho. A alteração bloqueada **não foi confirmada**, nem executada por API ou outro contorno. O compute adicional foi devolvido à original. O painel continua mostrando a cópia do snapshot como Production branch.
+Nenhuma tabela, conta ou branch foi excluída. Original, cópia e espelho permanecem preservados. A troca de compute pode interromper conexões brevemente; não foi medida a duração de eventual interrupção.
 
-**É necessária autorização específica antes de prosseguir com esse procedimento.** Revalidar gravações recentes e espelhos imediatamente antes da troca. O movimento do compute pode reiniciar conexões e causar breve indisponibilidade. Não publicar novos deploys nem permitir lançamento comercial enquanto o vínculo não estiver corrigido e verificado.
+### Procedimento e revisão automática
+
+A revisão automática havia rejeitado duas tentativas anteriores por exigir autorização específica para a troca temporária e por risco de gravações recentes. Essas alterações bloqueadas não foram executadas nem contornadas.
+
+Após a autorização expressa do proprietário, foram executadas, em sequência: reconciliação e verificação; vínculo temporário com o espelho; devolução do endpoint estável à original; restabelecimento do vínculo definitivo com `main`; devolução do compute adicional à cópia; verificação final de dados e mapeamentos. Nenhum novo deploy Production foi solicitado para essa correção.
+
+O incidente de mapeamento está **resolvido**. Isso não libera o lançamento comercial: continuam pendentes os demais critérios de homologação descritos neste relatório.
 
 ## Código e integração
 
@@ -168,7 +185,7 @@ Snapshot disponível: `snap-red-lake-b7ytcuk2`, criado em 28/10/2026, com expira
 
 Antes de lançamento:
 
-1. Autorizar e concluir a correção do vínculo/endpoint Neon, revalidando dados atuais e origens da Vercel.
+1. **Concluído em 29/10 às 07h29:** corrigir o vínculo/endpoint Neon e verificar dados reconciliados e endpoint original. Manter os recursos de recuperação preservados.
 2. Publicar a versão exata da integração em Preview quando houver quota e revalidar o isolamento.
 3. Configurar Turnstile e SMTP TEST; concluir cadastro, confirmação, recuperação, sessão e revogação de consentimentos reais.
 4. Autenticar a Hotmart e conferir ofertas únicas de R$97/R$194, eventos e webhook atual.
@@ -176,4 +193,4 @@ Antes de lançamento:
 6. Repetir E2E hospedado desktop/celular, com quotas, compra sintética, reversão e progresso.
 7. Só então preparar migrations e rollout produtivo com rollback e backup atual.
 
-Não há autorização técnica para declarar **PRONTO PARA VENDER** neste estado.
+A correção do incidente Neon está concluída. Os demais gates ainda impedem declarar **PRONTO PARA VENDER**.
