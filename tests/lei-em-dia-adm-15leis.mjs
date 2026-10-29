@@ -32,7 +32,13 @@ test("gabarito, fundamento e filtro são coerentes com os dados",()=>{
     assert.equal(q.discipline,"adm");
     assert.equal(typeof q.question.answer,"boolean");
     assert.ok(q.question.statement.length>=25,q.id);
-    assert.ok(q.parts.length===1 && q.parts[0].length>=25,q.id);
+    const audit=q.question.legalAudit;
+    if(audit&&audit.date&&['certificado','certificado-parcial','pendente'].includes(audit.status)){
+      assert.ok(audit.basis&&audit.source&&/^2026-10-\d\d$/.test(audit.date),q.id);
+      assert.ok(q.parts.length>=1 && q.parts[0].length>=25,q.id);
+      if(audit.status==='pendente')assert.match(q.question.explanation,/^Em revisão\. /,q.id);
+      else{assert.match(q.question.explanation,/^(Correta|Errada)\. /,q.id);assert.equal(q.question.explanation.startsWith('Correta'),q.question.answer,q.id);}
+    }else assert.ok(q.parts.length===1 && q.parts[0].length>=25,q.id);
     assert.ok(q.question.bank && q.question.meta && q.question.source,q.id);
     const t=topics.find(t=>t.id===q.topicId);
     assert.ok(t?.subtopics.includes(q.subtopic),q.id);
@@ -112,10 +118,33 @@ test("auditoria dos 321 gabaritos importados preserva a cadeia de origem",()=>{
  assert.equal(audit.unmatched.length,0);
  assert.equal(audit.totalExcerptWarnings,0);
  assert.equal(audit.byFile.reduce((a,x)=>a+x.answerMatch,0),321);
+ const review=JSON.parse(readFileSync(new URL("audits/adm-leis-vade-revisao-juridica-20261028.json",root),"utf8"));
+ assert.equal(review.gabaritosAlterados,0);
+ const review2=JSON.parse(readFileSync(new URL("audits/adm-leis-principais-revisao-juridica-20261029.json",root),"utf8"));
+ assert.equal(review2.gabaritosAlterados,0);
+ assert.equal(review2.itensForaDaRevisaoAlterados,0);
  for(const [path,sha] of Object.entries(audit.datasetBlobShas)){
    const content=Buffer.from(readFileSync(new URL(path,root),"utf8").replace(/\r\n/g,"\n"),"utf8");
    const gitBlob=createHash("sha1").update("blob "+content.length).update(Buffer.from([0])).update(content).digest("hex");
-   if(path==="tools/decorando-data-adm-9784.js"){
+   const reviewedSha=review.datasetBlobShas[path];
+   const finalSha=review2.datasetBlobShas[path];
+   if(finalSha){
+     if(path==="tools/decorando-data-adm-pack2.js"){
+       const snapshot=JSON.parse(readFileSync(new URL("audits/lei-em-dia-auditoria-20261012-inventario.json",root),"utf8"));
+       assert.equal(snapshot.files.find(f=>f.path===path).originalBlobSha,sha,"SHA original do dataset administrativo alterado");
+     }
+     assert.equal(review2.datasetBlobShasBefore[path],reviewedSha||sha,"SHA anterior à revisão de 29/10/2026 não preservado: "+path);
+     assert.equal(gitBlob,finalSha,"Dataset alterado depois da revisão jurídica de 29/10/2026: "+path);
+     continue;
+   }
+   if(reviewedSha){
+     if(path==="tools/decorando-data-adm-pack2.js"){
+       const snapshot=JSON.parse(readFileSync(new URL("audits/lei-em-dia-auditoria-20261012-inventario.json",root),"utf8"));
+       assert.equal(snapshot.files.find(f=>f.path===path).originalBlobSha,sha,"SHA original do dataset administrativo alterado");
+     }
+     assert.equal(review.datasetBlobShasBefore[path],path==="tools/decorando-data-adm-pack2.js"?"e9a295f781c8b4d7da99ab430cac0179536e9930":sha,"SHA anterior à revisão de 28/10/2026 não preservado: "+path);
+     assert.equal(gitBlob,reviewedSha,"Dataset alterado depois da revisão jurídica de 28/10/2026: "+path);
+   }else if(path==="tools/decorando-data-adm-9784.js"){
      const snapshot=JSON.parse(readFileSync(new URL("audits/lei-em-dia-auditoria-20261012-inventario.json",root),"utf8"));
      assert.equal(snapshot.files.find(f=>f.path===path).originalBlobSha,sha,"SHA anterior à correção não preservado");
      assert.equal(gitBlob,"194ebd318ea05787d7face2e3f197096259c6d6c","Dataset piloto alterado fora da revisão 12/10/2026");
@@ -124,6 +153,11 @@ test("auditoria dos 321 gabaritos importados preserva a cadeia de origem",()=>{
      assert.equal(snapshot.files.find(f=>f.path===path).originalBlobSha,sha,"SHA original do dataset administrativo alterado");
      assert.equal(gitBlob,"e9a295f781c8b4d7da99ab430cac0179536e9930","Mudanças neste dataset devem limitar-se a metadados de referência");
    }else assert.equal(gitBlob,sha,"Dataset alterado depois da auditoria: "+path);
+ }
+ for(const [path,reviewedSha] of Object.entries(review.datasetBlobShas)){
+   const content=Buffer.from(readFileSync(new URL(path,root),"utf8").replace(/\r\n/g,"\n"),"utf8");
+   const gitBlob=createHash("sha1").update("blob "+content.length).update(Buffer.from([0])).update(content).digest("hex");
+   assert.equal(gitBlob,review2.datasetBlobShas[path]||reviewedSha,"Dataset alterado depois da revisão jurídica de 28/10/2026: "+path);
  }
 });
 
