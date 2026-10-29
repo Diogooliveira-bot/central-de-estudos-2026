@@ -49,7 +49,9 @@ test('somente em Preview isolada e com sinal explicito; Production bloqueada',()
   assert.equal(freeSignupEnabled(secretWithDummySite),false);
   const syntheticRealPair={...siteWithDummySecret,BC_SIGNUP_TURNSTILE_SECRET_KEY:'realFormatSecretKey_ABCDEFGHIJKLMNOPQRSTUVWXYZ'};
   // Syntactic configuration only: no assertion here proves the keys are real/operational.
-  assert.equal(freeSignupEnabled(syntheticRealPair),true);
+  // Even with all approval flags set, draft Terms must keep Production disabled.
+  assert.equal(FREE_SIGNUP_TERMS_VERSION.includes('draft'),true);
+  assert.equal(freeSignupEnabled(syntheticRealPair),false);
   assert.equal(freeSignupEnabled({...syntheticRealPair,BC_SIGNUP_PRIVACY_APPROVED:'NO'}),false);
   assert.equal(freeSignupEnabled({...syntheticRealPair,BC_SIGNUP_TERMS_FINAL_APPROVED:'NO'}),false);
 });
