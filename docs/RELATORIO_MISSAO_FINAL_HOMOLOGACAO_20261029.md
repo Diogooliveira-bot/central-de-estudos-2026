@@ -145,7 +145,22 @@ Os sete workflows encontrados para o commit `f1dd2b89` terminaram com sucesso. A
 
 ### Teste integrado adicional: handlers + Neon TEST
 
-Em andamento nesta atualização. Usa a identidade exata de branch antes de qualquer gravação, contas sintéticas únicas e captura de e-mail sem envio externo. Não constitui validação de Turnstile, SMTP externo ou UI hospedada. O resultado final será acrescentado antes de encerrar a etapa.
+Teste opt-in concluído com código de saída 0 em 29/10/2026. A identidade `br-sweet-waterfall-b7ry8jlw` é conferida antes de qualquer gravação. Contas sintéticas únicas foram usadas e a conta criada pelo teste foi desativada ao término. E-mails foram capturados em memória, sem envio externo.
+
+Resultados aprovados com banco real de TESTE:
+
+- Cadastro, aceites legais versionados, WhatsApp omitido, confirmação e token reutilizado bloqueado.
+- Sessão real, plano Gratuito, bloqueios TEC/QC e revogação independente do consentimento de e-mail.
+- Quota concorrente: 20 solicitações permitidas e a 21ª bloqueada.
+- Webhook com segredo inválido rejeitado; eventos recorrentes incompatíveis rejeitados.
+- Ativação Premium, idempotência e renovação manual por nova transação.
+- Progresso armazenado e recuperado.
+- Estornos, chargebacks e vencimento retornam ao Gratuito; progresso permanece armazenado.
+- Reaprovação de transação estornada não restaura Premium.
+
+Isso valida handlers + SQL real em TESTE; não constitui E2E de UI hospedada, Cloudflare ou SMTP externo. O harness teve uma correção de comparação de datas retornadas pelo driver antes de completar a execução; nenhum teste foi desativado.
+
+Código reutilizável: `tests/launch-neon-integration.mjs`, commit `fe431f4209d93d09b27116b08ec811c61a9117ba`.
 
 ## Backup, rollback e próximos critérios
 
