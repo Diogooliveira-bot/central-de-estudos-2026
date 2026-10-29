@@ -61,11 +61,12 @@ jobs:
       - name: Instalar dependencias travadas
         run: npm ci --ignore-scripts --no-audit --no-fund
       - name: Verificar sintaxe dos handlers alterados
-        run: node --check lib/free-signup-handler.js && node --check lib/free-signup-contact-preferences.js && node --check lib/hotmart-webhook.js && node --check api/auth.js
+        run: node --check lib/auth.js && node --check lib/free-signup-handler.js && node --check lib/free-signup-contact-preferences.js && node --check lib/hotmart-webhook.js && node --check api/auth.js
       - name: Regressao comercial, acesso e seguranca
         run: >-
           node --test
           tests/commercial-journey-4-5-unit.mjs
+          tests/auth-unit.mjs
           tests/public-free-signup-4-5-unit.mjs
           tests/free-signup-contact-preferences-4-5-unit.mjs
           tests/hotmart-webhook-unit.mjs

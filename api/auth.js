@@ -8,6 +8,7 @@ import {
   normalizeEmail,
   publicUser,
   readJsonBody,
+  recordFailedLogin,
   requireSession,
   safeSecretEqual,
   sessionCookie,
@@ -116,27 +117,28 @@ async function login(req, res) {
 
   const passwordOk = verifyPassword(password, row.password_hash);
   if (!passwordOk) {
-    const attempts = Number(row.failed_attempts || 0) + 1;
-    const shouldLock = attempts >= 5;
-    await sql`
-      UPDATE central_users
-      SET failed_attempts=${shouldLock ? 0 : attempts},
-          locked_until=${shouldLock ? new Date(Date.now() + 10 * 60 * 1000).toISOString() : null},
-          updated_at=NOW()
-      WHERE user_id=${row.user_id}
-    `;
-    return send(res, 401, { error: shouldLock ? 'Muitas tentativas. A conta foi bloqueada por 10 minutos' : 'E-mail ou senha inválidos' });
+    const attempt = await recordFailedLogin(sql, row.user_id);
+    return send(res, attempt.locked ? 429 : 401, {
+      error: attempt.locked ? 'Muitas tentativas. A conta foi bloqueada temporariamente' : 'E-mail ou senha inválidos',
+    });
   }
 
-  await sql`
+  // Do not issue a session if the account was locked, disabled or its password
+  // or session version changed while scrypt was being checked.
+  const authenticated = await sql`
     UPDATE central_users
     SET failed_attempts=0, locked_until=NULL, last_login=NOW(), updated_at=NOW()
-    WHERE user_id=${row.user_id}
+    WHERE user_id=${row.user_id} AND active=TRUE
+      AND password_hash=${row.password_hash}
+      AND session_version=${row.session_version}
+      AND (locked_until IS NULL OR locked_until <= NOW())
+    RETURNING user_id,name,email,role,active,session_version,created_at,updated_at,last_login
   `;
-  row.last_login = new Date().toISOString();
+  if (!authenticated.length) return send(res, 401, { error: 'Não foi possível autenticar. Tente novamente' });
+  const verifiedUser = authenticated[0];
   const ttl = remember ? 30 * 24 * 60 * 60 : undefined;
-  const token = createSessionToken(row, ttl);
-  return send(res, 200, { ok: true, user: publicUser(row), remembered: remember }, { 'Set-Cookie': sessionCookie(token, ttl) });
+  const token = createSessionToken(verifiedUser, ttl);
+  return send(res, 200, { ok: true, user: publicUser(verifiedUser), remembered: remember }, { 'Set-Cookie': sessionCookie(token, ttl) });
 }
 
 async function logout(res) {
@@ -207,7 +209,7 @@ export default async function handler(req, res) {
     res.setHeader('Allow', 'GET, POST');
     return send(res, 404, { error: 'Ação de autenticação inválida' });
   } catch (error) {
-    console.error('auth error', error);
-    return send(res, 500, { error: error?.message || 'Falha interna de autenticação' });
+    console.error('auth error', String(error?.code || error?.name || 'UNKNOWN').slice(0, 24));
+    return send(res, 503, { error: 'Autenticação temporariamente indisponível' });
   }
 }
