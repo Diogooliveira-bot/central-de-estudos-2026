@@ -72,6 +72,7 @@ jobs:
           tests/plan-access-unit.mjs
           tests/password-reset-unit.mjs
           tests/protected-content-unit.mjs
+          tests/preview-guest-middleware-unit.mjs
           tests/pwa-cache-recovery-unit.mjs
           tests/content-publication-integrity-unit.mjs
           tests/removed-disciplines-unit.mjs
