@@ -48,6 +48,10 @@ const PUBLIC_PATHS = new Set([
   '/login.html',
   '/convite.html',
   '/cadastro-gratuito.html',
+  // Páginas legais devem ser acessíveis antes do aceite do cadastro.
+  '/termos-de-uso.html',
+  '/politica-de-privacidade.html',
+  '/politica-de-cookies.html',
   '/conheca.html',
   '/recuperar-senha.html',
   '/ativar-acesso.html',

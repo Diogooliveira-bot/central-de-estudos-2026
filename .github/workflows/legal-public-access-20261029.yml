@@ -1,0 +1,25 @@
+name: Cadastro - acesso público aos documentos legais
+on:
+  push:
+    branches:
+      - fix/legal-public-access-preview-20261029
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  juridicos-publicos:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+      - name: Instalar dependências sem scripts
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Testar acesso sem autenticação e proteção Premium
+        run: node --test tests/legal-public-access-unit.mjs tests/public-free-signup-4-5-unit.mjs tests/protected-content-unit.mjs
+      - name: Garantir sintaxe do middleware
+        run: node --check middleware.js
