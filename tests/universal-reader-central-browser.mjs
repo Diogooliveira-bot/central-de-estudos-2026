@@ -128,7 +128,7 @@ try{
         if(id==='cpc')assert.equal(row.cards.cpc,3,'CPC requer três cards no módulo aberto');
       }
       const cpp=otherLayouts.find(x=>x.id==='cpp');
-      assert.equal(cpp.cppColumns.split(' ').length,1,'Processo Penal precisa de cards verticais');
+      assert.match(cpp.cppColumns,/^minmax\\(0px, 1fr\\)$/, 'Processo Penal precisa de uma coluna de cards');
 
 
     }catch(e){console.log('ADM_RUNTIME_BLOCKER',e.message.slice(0,300));throw e}
