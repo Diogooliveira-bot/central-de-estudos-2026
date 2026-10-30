@@ -83,6 +83,31 @@ try{
         failed:attempts.filter(x=>!x.success).slice(0,8)}));
       assert.equal(attempts.length,40,'20 módulos administrativos devem abrir em dois modos');
       assert.equal(attempts.filter(x=>x.success).length,40,'todas as teorias administrativas devem abrir');
+      const otherLayouts=await page.evaluate(async()=>{
+        const ids=['cf','civil','cpp','penal','cpc'],out=[];
+        for(const id of ids){
+          let error=null;
+          try{await window.CentralDisciplineLoader.load(id)}catch(e){error=e.message}
+          try{window.renderAll?.()}catch(_){}
+          await new Promise(resolve=>setTimeout(resolve,160));
+          const root=document.querySelector('.subject[data-id="'+id+'"]');
+          const body=root?.querySelector('.subject-body');
+          const modules=body?.querySelectorAll('.cf-module,.cv-module,[data-cpp-native-module]')||[];
+          out.push({id,error,ready:window.CentralDisciplineLoader?.isReady(id),
+            modules:modules.length,htmlLength:body?.innerHTML?.length||0,
+            flags:{cf:!!window.CfNativeStudy,civil:!!window.CivilNative,cpp:!!window.CppNative,
+              penal:!!window.__centralCurrentPenal,cpc:!!window.CpcStudyV1?.installed},
+            cards:{cf:body?.querySelectorAll('.cf-study-card').length||0,
+              civil:body?.querySelectorAll('.cv-standard-card').length||0,
+              cpp:body?.querySelectorAll('.adm-native-card').length||0,
+              penal:body?.querySelectorAll('.bc-native-material-card').length||0,
+              cpc:body?.querySelectorAll('.cpc-approved-card').length||0},
+            sample:body?.textContent?.replace(/\\s+/g,' ').slice(0,200)});
+        }
+        return out;
+      });
+      console.log('OTHER_LAYOUTS',JSON.stringify(otherLayouts));
+
     }catch(e){console.log('ADM_RUNTIME_BLOCKER',e.message.slice(0,300));throw e}
    }
   }catch(e){const debug=await page.evaluate(()=>({url:location.href,ready:document.readyState,title:document.title,status:document.querySelector('#status')?.textContent,body:document.body?.textContent?.slice(0,280),hasIndex:!!document.querySelector('#subjects'),hasAsset:!!document.querySelector('script[src*=universal-reader]')})).catch(x=>({evalError:x.message}));rows.push({viewport:vp.name,pass:false,error:e.message.slice(0,300),debug,events:events.slice(-8),missingAssets:assetErrors})}
