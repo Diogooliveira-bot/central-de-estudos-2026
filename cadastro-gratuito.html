@@ -56,13 +56,14 @@ button{margin-top:22px;width:100%;border:0;border-radius:9px;background:var(--na
 (function(){
 'use strict';
 var form=document.getElementById('register'),state=document.getElementById('state'),btn=document.getElementById('submit');
-var captchaToken='';
+var captchaToken='',captchaExpected=false;
 if(location.hostname==='app.basecompleta.com.br')document.getElementById('marketingSiteLink').href='https://basecompleta.com.br/';
 fetch('/api/auth?action=free-signup-status',{cache:'no-store'}).then(function(r){return r.ok?r.json():null;}).then(function(config){
  if(!config||!config.enabled){message('O cadastro gratuito ainda não está disponível. Se você já é aluno, utilize Entrar.','bad');return;}
  document.getElementById('signupPreviewNote').hidden=true;
  if(!token){form.hidden=false;message('Preencha seus dados para solicitar a confirmação.');}
  if(!config.siteKey){message('A verificação de segurança não está configurada. O cadastro está indisponível.','bad');return;}
+ captchaExpected=true;
  var script=document.createElement('script');
  script.src='https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
  script.async=true;
@@ -99,7 +100,7 @@ form.addEventListener('submit',async function(e){
 e.preventDefault();
 var p=document.getElementById('password').value,c=document.getElementById('confirm').value;
 if(p!==c){message('As senhas não coincidem.','bad');return}
-if(document.getElementById('signupCaptcha').childElementCount && !captchaToken){message('Conclua a verificação de segurança antes de solicitar o cadastro.','bad');return}
+if(captchaExpected && !captchaToken){message('Conclua a verificação de segurança antes de solicitar o cadastro.','bad');return}
 btn.disabled=true;message('Preparando confirmação...');
 try{
 var x=await post({action:'request',name:document.getElementById('name').value,email:document.getElementById('email').value,password:p,whatsapp:document.getElementById('whatsapp').value,ageConfirmed:document.getElementById('ageConfirmed').checked,termsAccepted:document.getElementById('termsAccepted').checked,termsVersion:'terms-2026-10-30-v1',marketingOptIn:document.getElementById('marketingOptIn').checked,emailMarketingOptIn:document.getElementById('emailMarketingOptIn').checked,turnstileToken:captchaToken});
