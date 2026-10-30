@@ -1,0 +1,108 @@
+/* Base Completa — visual Premium unificado das cinco disciplinas jurídicas.
+   Preserva leitores, dados, permissões, conteúdo e handlers nativos. */
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-material-grid,
+html.bc-ui-v1 #subjects .subject[data-id="cf"] .cf-native-cards,
+html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-cards,
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-cards,
+html.bc-ui-v1 #subjects .subject[data-id="cpc"] .cpc-approved-grid{
+ display:grid!important;
+ grid-template-columns:minmax(0,1fr)!important;
+ gap:12px!important;
+ width:100%;
+}
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-material-grid>.adm-native-card{
+ box-sizing:border-box;
+ display:grid!important;
+ grid-template-columns:86px minmax(0,1fr) 200px!important;
+ grid-template-rows:auto!important;
+ align-items:center;
+ gap:12px 18px;
+ min-height:148px;
+ width:100%;
+ margin:0;
+ padding:18px 22px!important;
+ border:1px solid #a8d0ef!important;
+ border-radius:16px!important;
+ background:linear-gradient(105deg,#e9f4ff,#f8fbff 92%)!important;
+ color:#173653!important;
+ box-shadow:0 4px 14px rgba(24,66,92,.05);
+}
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-material-grid>.adm-native-card[data-kind="summary"]{
+ border-color:#bfe0dc!important;
+ background:linear-gradient(105deg,#edf9f7,#f9fcfc 92%)!important;
+}
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-material-grid>.adm-native-card[data-kind="infographic"]{
+ border-color:#d7d2ed!important;
+ background:linear-gradient(105deg,#f3f0fc,#fbfaff 92%)!important;
+}
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-material-grid .adm-native-card-icon{
+ display:grid;place-items:center;align-self:center;
+ width:72px;height:72px;margin:0;
+ font-size:31px;border-radius:15px;
+ background:#d8ecff;color:#12436b;
+}
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-material-grid [data-kind="summary"] .adm-native-card-icon{background:#d7f2ed}
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-material-grid [data-kind="infographic"] .adm-native-card-icon{background:#e9e2f9}
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-material-grid .adm-native-card-copy{
+ display:grid;align-content:center;gap:6px;min-width:0;margin:0;
+}
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-material-grid .adm-native-card-copy h4{
+ margin:0;color:#173653;font-size:18px;line-height:1.3;font-weight:780;
+}
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-material-grid .adm-native-card-copy p{
+ margin:0;color:#49637d;font-size:13px;line-height:1.5;
+}
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-material-grid .adm-native-card-top{font-size:10px;color:#57758b}
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-material-grid .adm-native-card-actions{
+ display:grid;gap:8px;align-content:center;min-width:0;margin:0;
+}
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-material-grid .adm-native-card-actions button{
+ width:100%;min-height:39px;border-radius:9px;
+ font-size:12px;font-weight:750;
+}
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-material-grid .adm-native-card-actions .primary{
+ color:white;background:#176fb0;border:1px solid #176fb0;
+}
+html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-material-grid .adm-native-card-actions .ghost{
+ color:#155580;background:#fff;border:1px solid #bbd6ea;
+}
+/* Mesma linguagem visual no curso inteiro, sem alterar estrutura ou esconder módulos. */
+html.bc-ui-v1 #subjects .subject[data-id="cf"] .cf-study-card,
+html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-standard-card,
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-card,
+html.bc-ui-v1 #subjects .subject[data-id="cpc"] .cpc-approved-card{
+ border-radius:16px!important;
+ box-shadow:0 4px 14px rgba(24,66,92,.05)!important;
+}
+html.bc-ui-v1 #subjects .subject[data-id="cf"] .cf-study-open,
+html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-standard-button:not(.cv-standard-quiz),
+html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-primary,
+html.bc-ui-v1 #subjects .subject[data-id="cpc"] .cpc-approved-primary{
+ border-radius:9px!important;
+ font-weight:750!important;
+}
+html.bc-ui-v1 #subjects .subject[data-id="cf"] .cf-native-cards,
+html.bc-ui-v1 #subjects .subject[data-id="civil"] .cv-cards{
+ grid-template-columns:minmax(0,1fr)!important;
+}
+@media(max-width:760px){
+ html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-material-grid>.adm-native-card{
+  grid-template-columns:64px minmax(0,1fr)!important;
+  gap:10px 12px;padding:15px!important;min-height:0;
+ }
+ html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-material-grid .adm-native-card-icon{
+  width:58px;height:58px;font-size:27px;
+ }
+ html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-material-grid .adm-native-card-actions{
+  grid-column:1/-1;display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));
+ }
+ html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-material-grid .adm-native-card-copy h4{font-size:16px}
+}
+@media(max-width:380px){
+ html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-material-grid>.adm-native-card{
+  grid-template-columns:minmax(0,1fr)!important;
+ }
+ html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-material-grid .adm-native-card-actions{
+  grid-template-columns:minmax(0,1fr);
+ }
+}

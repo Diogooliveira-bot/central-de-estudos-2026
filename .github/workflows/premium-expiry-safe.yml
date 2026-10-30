@@ -1,0 +1,29 @@
+name: Avisos Premium - validação isolada sem envio
+on:
+  push:
+    branches:
+      - feature/premium-expiry-notices-20261028
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validacao:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Node 22
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+      - name: Dependencias
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Validar sintaxe do handler e do cron
+        run: |
+          node --check lib/premium-expiry-reminders.js
+          node --check api/auth.js
+      - name: Testar avisos com envio desativado
+        run: node --test tests/premium-expiry-reminders-unit.mjs tests/premium-expiry-handler-unit.mjs tests/plan-access-unit.mjs

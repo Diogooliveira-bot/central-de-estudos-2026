@@ -14,7 +14,7 @@ const weeks = Array.from({ length:20 }, (_, index) => ({
   read_focus:readFocus
 }));
 
-function fixture(emptyQuestions = false, questionLabelsWithoutTotals = false) {
+function fixture(emptyQuestions = false, questionLabelsWithoutTotals = false, validatedPoolSize = 0) {
   const modules = weeks.map((week, index) => {
     const n = String(index+1).padStart(2, '0');
     const id = week.id;
@@ -35,6 +35,11 @@ function fixture(emptyQuestions = false, questionLabelsWithoutTotals = false) {
   });
   const { window } = dom;
   window.__CPC_WEEKS = weeks;
+  if (validatedPoolSize) {
+    window.__cpcPool = () => Array.from({length:validatedPoolSize}, (_,i) => ({
+      id:'verified-'+i, q:'Pergunta validada '+i, o:['A','B','C','D'], a:0
+    }));
+  }
   window.cpcWeekState = id => ({ reading:window.readingState?.[id] || false });
   window.readingState = {};
   window.cpcUpdateWeek = (id, patch) => { window.readingState[id] = patch.reading; };
@@ -106,5 +111,26 @@ test('usa o banco validado para habilitar as baterias CPC M07–M17 sem depender
     assert.equal(buttons[1].textContent,available?'Resolver 5 questões':'Questões internas indisponíveis');
     assert.equal(buttons.every(button=>button.disabled),!available);
   }
+  dom.window.close();
+});
+
+test('reconhece banco CPC validado apesar de contador visual inicial 0/0', async () => {
+  const dom = fixture(true,false,15);
+  await new Promise(resolve => dom.window.requestAnimationFrame(() => dom.window.requestAnimationFrame(resolve)));
+  const module = dom.window.document.querySelector('.cf-module[data-cf="cpc1"]');
+  const buttons = [...module.querySelectorAll('.cpc-approved-card .cpc-approved-secondary')];
+  assert.deepEqual(buttons.map(button => button.textContent), ['Resolver 10 questões','Resolver 5 questões']);
+  assert.ok(buttons.every(button => !button.disabled));
+  dom.window.close();
+});
+
+test('não habilita questionário completo com banco validado insuficiente', async () => {
+  const dom = fixture(true,false,5);
+  await new Promise(resolve => dom.window.requestAnimationFrame(() => dom.window.requestAnimationFrame(resolve)));
+  const module = dom.window.document.querySelector('.cf-module[data-cf="cpc1"]');
+  const buttons = [...module.querySelectorAll('.cpc-approved-card .cpc-approved-secondary')];
+  assert.deepEqual(buttons.map(button => button.textContent), ['Questões internas indisponíveis','Resolver 5 questões']);
+  assert.equal(buttons[0].disabled,true);
+  assert.equal(buttons[1].disabled,false);
   dom.window.close();
 });

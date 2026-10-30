@@ -89,11 +89,24 @@ function placeholder(subject){
  const failed=states[subject.id]?.error;
  return '<section class="central-discipline-loading" role="status" aria-live="polite" aria-busy="'+(!failed)+'"><img src="/assets/base-completa-symbol.webp" alt="Logomarca Base Completa"><h3>'+escape(failed?'Não foi possível carregar':'Carregando '+subject.name)+'</h3><p>'+escape(failed?'Verifique sua conexão e tente novamente.':'Preparando seus módulos para estudar…')+'</p>'+(failed?'<button type="button" class="btn primary" onclick="CentralDisciplineLoader.open(\''+subject.id+'\')">Tentar novamente</button>':'<div class="loading-track" aria-hidden="true"><span></span></div>')+'</section>';
 }
-async function download(files){
+// As apostilas ADM atuais são carregadas pelos leitores nativos, módulo a módulo.
+// A falha isolada de um bundle legado não deve impedir a instalação do visual aprovado.
+const optionalAdmLegacy=path=>/^\/adm-m(?:\d+-(?:theory|correction|content-p\d+|runtime)-v\d+|9-m20-bundle-v\d+)\.js$/i.test(path);
+async function download(files,id){
  const sources=new Array(files.length);let index=0;
  await Promise.all(Array.from({length:Math.min(6,files.length)},async()=>{
   while(index<files.length){const i=index++,url=new URL(files[i],location.origin);const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),25000);
-   try{const response=await fetch(url.href,{cache:'no-store',signal:controller.signal});if(!response.ok)throw new Error('HTTP '+response.status+': '+url.pathname);sources[i]=await response.text();}finally{clearTimeout(timer);}
+   try{
+    const response=await fetch(url.href,{cache:'no-store',signal:controller.signal});
+    if(!response.ok){
+     if(id==='adm'&&optionalAdmLegacy(url.pathname)&&[403,404,410].includes(response.status)){
+      console.warn('[Central ADM] bundle legado indisponível; leitor nativo preservado:',url.pathname,response.status);
+      sources[i]='';continue;
+     }
+     throw new Error('HTTP '+response.status+': '+url.pathname);
+    }
+    sources[i]=await response.text();
+   }finally{clearTimeout(timer);}
   }
  }));
  return sources;
@@ -123,7 +136,7 @@ function load(id){
  state.promise=(async()=>{
   navigator.serviceWorker?.controller?.postMessage({type:'PAUSE_OFFLINE'});
   document.dispatchEvent(new CustomEvent('central:discipline-loading',{detail:{id}}));
-  const files=filesFor(id),sources=await download(files);
+  const files=filesFor(id),sources=await download(files,id);
   await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));
   // Download the whole ordered group before executing it, so connection retries do not redeclare globals.
   for(let i=0;i<files.length;i++){

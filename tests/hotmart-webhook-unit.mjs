@@ -66,6 +66,33 @@ test('apenas oferta e produto exatos definem os meses; desconto não altera plan
  const noEmail=event('PURCHASE_REFUNDED');delete noEmail.data.buyer.email;
  assert.equal(readHotmartEvent(noEmail,cfg).value.email,'');
 });
+test('ofertas reais Hotmart mapeiam 6 e 12 meses; preço e parcelas não alteram vigência',()=>{
+ const actual={...env,
+   HOTMART_OFFER_6M_CODE:'o4y1mlg9',
+   HOTMART_OFFER_12M_CODE:'gh4ajvj1'};
+ const config=webhookConfig(actual);
+ assert.ok(config);
+ assert.equal(config.productId,'8805543');
+ assert.equal(config.offers.o4y1mlg9,6);
+ assert.equal(config.offers.gh4ajvj1,12);
+ const semi=event('PURCHASE_APPROVED','o4y1mlg9');
+ semi.data.purchase.price.value=97;
+ semi.data.purchase.payment={type:'CREDIT_CARD',installments_number:3};
+ const yearly=event('PURCHASE_APPROVED','gh4ajvj1');
+ yearly.data.purchase.price.value=179;
+ yearly.data.purchase.payment={type:'CREDIT_CARD',installments_number:6};
+ assert.equal(readHotmartEvent(semi,config).value.months,6);
+ assert.equal(readHotmartEvent(yearly,config).value.months,12);
+ const staleOffer=event('PURCHASE_APPROVED','SYNTHETIC12M');
+ assert.equal(readHotmartEvent(staleOffer,config).ignored,true);
+ const refund=event('PURCHASE_REFUNDED','gh4ajvj1');
+ refund.data.purchase.status='REFUNDED';
+ assert.equal(readHotmartEvent(refund,config).value.months,12);
+ const recurring=event('PURCHASE_APPROVED','gh4ajvj1');
+ recurring.data.purchase.date_next_charge=Date.now()+86400000;
+ assert.match(readHotmartEvent(recurring,config).error,/recorrente/);
+});
+
 test('rota rejeita não autenticados, GET, tipo e payload grande sem banco',async()=>{
  let dbCalls=0;
  const handler=createHotmartWebhook({env,sqlProvider:()=>{dbCalls++;return()=>[]}});
@@ -106,18 +133,65 @@ test('nova compra envia link por e-mail e marca envio somente depois de aceito',
  assert.ok(queries[1].statement.includes('claim_sent_at=NOW()'));
  assert.match(queries[0].values[9],/^[a-f0-9]{64}$/);
 });
-test('falha de e-mail devolve 503 para reenvio pela Hotmart sem confirmar entrega',async()=>{
- let touched=0;
- const h=createHotmartWebhook({env,sqlProvider:()=>async()=>{touched++;return [{outcome:'pending_claim',should_send_email:true}]},
-   sendWelcome:async()=>{throw Error('SMTP indisponível')}});
- const r=res();const log=console.error;console.error=()=>{};
- try{await h(req(),r)}finally{console.error=log}
- assert.equal(r.statusCode,503);assert.equal(touched,1);
+test('falha de SMTP libera reserva e retry imediato envia token sem duplicar entrega',async()=>{
+ let attempts=0, released=0, confirmed=0, received=0;
+ const sql=async(chunks,...values)=>{
+   const statement=chunks.join('?');
+   if(statement.includes('central_hotmart_apply_event')){
+     received++;
+     return [{outcome:'pending_claim',should_send_email:true}];
+   }
+   if(statement.includes('SET claim_token_hash=NULL')){
+     released++;
+     assert.equal(values[0],'HP1234567890');
+     assert.match(values[1],/^[a-f0-9]{64}$/);
+     return [];
+   }
+   if(statement.includes('SET claim_sent_at=NOW()')){
+     confirmed++;
+     return [];
+   }
+   throw Error('SQL inesperado no teste');
+ };
+ const h=createHotmartWebhook({env,sqlProvider:()=>sql,
+   sendWelcome:async()=>{attempts++;if(attempts===1)throw Error('SMTP indisponível');}});
+ const first=res();const log=console.error;console.error=()=>{};
+ try{await h(req(),first)}finally{console.error=log}
+ assert.equal(first.statusCode,503);
+ assert.equal(released,1);assert.equal(confirmed,0);
+ const second=res();await h(req(),second);
+ assert.equal(second.statusCode,200);
+ assert.equal(attempts,2);assert.equal(received,2);
+ assert.equal(released,1);assert.equal(confirmed,1);
 });
+test('webhook não devolve 200 enquanto o claim ainda aguarda envio SMTP',async()=>{
+ let sentAt=null,checks=0;
+ const sql=async(chunks)=>{
+   const statement=chunks.join('?');
+   if(statement.includes('central_hotmart_apply_event'))
+     return [{outcome:'pending_claim',should_send_email:false}];
+   if(statement.includes('SELECT claim_sent_at')){
+     checks++;
+     return [{claim_sent_at:sentAt}];
+   }
+   throw Error('SQL inesperado no teste');
+ };
+ const h=createHotmartWebhook({env,sqlProvider:()=>sql,
+   sendWelcome:async()=>{throw Error('Nao deveria tentar enviar sem reserva')}});
+ const pending=res();await h(req(),pending);
+ assert.equal(pending.statusCode,503);
+ sentAt='2026-10-30T01:50:00.000Z';
+ const confirmed=res();await h(req(),confirmed);
+ assert.equal(confirmed.statusCode,200);
+ assert.equal(checks,2);
+});
+
 test('e-mails de ativação só usam HTTPS e evitam revelar tokens fora do destino',async()=>{
  assert.equal(hotmartSiteBase(env),'https://test-preview.vercel.app');
- assert.equal(hotmartSiteBase({...env,VERCEL_ENV:'production'}),'https://central-de-estudos-ecru.vercel.app');
- assert.throws(()=>hotmartSiteBase({...env,BC_PUBLIC_URL:'http://outro.exemplo'}));
+ assert.throws(()=>hotmartSiteBase({...env,VERCEL_ENV:'production'}),/BC_PUBLIC_APP_URL/);
+ assert.equal(hotmartSiteBase({...env,VERCEL_ENV:'production',BC_PUBLIC_APP_URL:'https://central-de-estudos.vercel.app/'}),'https://central-de-estudos.vercel.app');
+ assert.throws(()=>hotmartSiteBase({...env,VERCEL_ENV:'production',BC_PUBLIC_URL:'http://outro.exemplo'}));
+ assert.equal(hotmartSiteBase({...env,BC_PUBLIC_URL:'http://outro.exemplo'}),'https://test-preview.vercel.app');
  let message;
  await sendHotmartWelcome({env,to:'teste@example.com',token:'abc123',
    transport:async(m)=>{message=m;return 'test'}});
@@ -190,4 +264,37 @@ test('painel de compras exige administrador e permite reenvio protegido',async()
  assert.match(plans,/hotmartAdmin/);
  assert.match(plans,/claim_sent_at<NOW\(\)-INTERVAL '60 seconds'/);
  assert.match(menu,/href="\/vendas-hotmart\.html"/);
+});
+
+
+test('modelo sem renovacao automatica recusa aprovacao de assinatura recorrente',()=>{
+ const cfg=webhookConfig(env);
+ const recurringPayloads=[
+  event('PURCHASE_APPROVED','semestralTEST',{data:{...event().data,subscription:{status:'ACTIVE'}}}),
+  event('PURCHASE_APPROVED','semestralTEST',{data:{...event().data,purchase:{...event().data.purchase,recurrence_number:1}}}),
+  event('PURCHASE_APPROVED','semestralTEST',{data:{...event().data,purchase:{...event().data.purchase,date_next_charge:1799999999000}}}),
+  event('PURCHASE_APPROVED','anualTEST',{data:{...event().data,purchase:{...event().data.purchase,subscription_anticipation_purchase:true}}}),
+ ];
+ for(const p of recurringPayloads){
+  const parsed=readHotmartEvent(p,cfg);
+  assert.match(parsed.error,/recorrente/);
+  assert.equal(parsed.value,undefined);
+ }
+ // Um pagamento unico, mesmo parcelado no cartao, nao equivale a renovacao.
+ const oneTime=readHotmartEvent(event('PURCHASE_APPROVED','semestralTEST'),cfg);
+ assert.equal(oneTime.value.months,6);
+ // Eventos de reembolso/chargeback continuam aptos a revogar uma concessao anterior.
+ const refund=event('PURCHASE_REFUNDED','semestralTEST',{data:{...event().data,subscription:{status:'CANCELLED'}}});
+ refund.data.purchase.status='REFUNDED';
+ assert.equal(readHotmartEvent(refund,cfg).value.eventName,'PURCHASE_REFUNDED');
+});
+
+test('evento recorrente nao consulta banco nem libera Premium',async()=>{
+ let dbCalls=0;
+ const handler=createHotmartWebhook({env,sqlProvider:()=>{dbCalls++;throw Error('Banco nao deve ser consultado');}});
+ const body=event('PURCHASE_APPROVED','semestralTEST',{data:{...event().data,subscription:{status:'ACTIVE'}}});
+ const response=res();await handler(req(body),response);
+ assert.equal(response.statusCode,422);
+ assert.match(response.body.error,/renovação manual/);
+ assert.equal(dbCalls,0);
 });

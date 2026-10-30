@@ -1,0 +1,64 @@
+name: Etapa 4.4 - BACKUP PRIVADO Neon PG18 (somente branches autorizadas)
+# Não executa na main, em PR ou em push comum. Os nomes das branches atuam
+# como autorização de disparo APÓS configuração de Environment com revisão humana.
+on:
+  push:
+    branches:
+      - 'backup/pg18-drive-smoke-4-4-*'
+      - 'backup/pg18-real-approved-4-4-*'
+permissions:
+  contents: read
+concurrency:
+  group: bc-neon-backup-production-exclusive
+  cancel-in-progress: false
+jobs:
+  drive-smoke:
+    if: startsWith(github.ref, 'refs/heads/backup/pg18-drive-smoke-4-4-') && github.repository == 'Diogooliveira-bot/central-de-estudos-2026'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    environment: bc-neon-backup-private
+    steps:
+      - name: Checkout da branch específica, sem persistir credenciais
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Instalar ferramentas gratuitas para teste com dados FICTÍCIOS
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends rclone gnupg
+      - name: Upload de teste CRIPTOGRAFADO sem nenhuma conexão Neon
+        env:
+          BC_DRIVE_TEST_APPROVED: ${{ vars.BC_DRIVE_TEST_APPROVED }}
+          BC_RCLONE_CONFIG_B64: ${{ secrets.BC_RCLONE_CONFIG_B64 }}
+        shell: bash
+        run: bash scripts/test-drive-private-upload-synthetic.sh
+
+  backup-real:
+    if: startsWith(github.ref, 'refs/heads/backup/pg18-real-approved-4-4-') && github.repository == 'Diogooliveira-bot/central-de-estudos-2026'
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    environment: bc-neon-backup-private
+    steps:
+      - name: Checkout sem credenciais Git persistentes
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Instalar cliente seguro de upload privado
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends rclone gnupg
+      - name: Backup REAL somente após 5 portões de segurança
+        env:
+          BC_BACKUP_APPROVED: ${{ vars.BC_BACKUP_APPROVED }}
+          BC_PRIVATE_DESTINATION_APPROVED: ${{ vars.BC_PRIVATE_DESTINATION_APPROVED }}
+          BC_DRIVE_PREFLIGHT_VERIFIED: ${{ vars.BC_DRIVE_PREFLIGHT_VERIFIED }}
+          BC_RCLONE_CONFIG_B64: ${{ secrets.BC_RCLONE_CONFIG_B64 }}
+          BC_GPG_PUBLIC_KEY_B64: ${{ secrets.BC_GPG_PUBLIC_KEY_B64 }}
+          BC_GPG_RECIPIENT_FPR: ${{ vars.BC_GPG_RECIPIENT_FPR }}
+          PGHOST: ep-wild-math-awuoq9pk.c-12.us-east-1.aws.neon.tech
+          PGPORT: '5432'
+          PGDATABASE: neondb
+          PGUSER: ${{ secrets.BC_NEON_BACKUP_USER }}
+          PGPASSWORD: ${{ secrets.BC_NEON_BACKUP_PASSWORD }}
+        shell: bash
+        run: bash scripts/backup-neon-pg18-once.sh

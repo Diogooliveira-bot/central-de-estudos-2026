@@ -47,6 +47,12 @@ function previewForbidden() {
 const PUBLIC_PATHS = new Set([
   '/login.html',
   '/convite.html',
+  '/cadastro-gratuito.html',
+  // Páginas legais devem ser acessíveis antes do aceite do cadastro.
+  '/termos-de-uso.html',
+  '/politica-de-privacidade.html',
+  '/politica-de-cookies.html',
+  '/conheca.html',
   '/recuperar-senha.html',
   '/ativar-acesso.html',
   '/favicon.ico',
@@ -171,13 +177,37 @@ export default async function middleware(request) {
 
   if (await hasPreviewGuestCookie(request)) {
     if (path.startsWith('/api/')) {
-      // The synthetic identity is deliberately the ONLY API allowed.
-      // In particular, guest users cannot read/sync/write real database data.
+      // The synthetic identity and the read-only protected-content transport are
+      // the only APIs allowed. The latter reads bundled files and never touches
+      // student or entitlement data.
       if (request.method === 'GET' && path === '/api/auth' &&
           url.searchParams.get('action') === 'me') return next();
+      if ((request.method === 'GET' || request.method === 'HEAD') &&
+          path === '/api/private-content') return next();
       return previewForbidden();
     }
-    if (protectedAsset(path)) return previewForbidden();
+    // The private Preview link exists to validate the real readers and their
+    // static course bundles. It never grants an account or database access.
+    // Protected bundles are intentionally absent from the public static output.
+    // Route them through the same private transport used by real accounts; the
+    // handler validates the Preview cookie before reading the bundled file.
+    const previewAsset = protectedAsset(path);
+    if (previewAsset) {
+      if (request.method === 'GET' || request.method === 'HEAD') {
+        if (previewAsset.kind === 'blocked' || previewAsset.kind === 'lei-em-dia') return previewForbidden();
+        const destination = new URL('/api/private-content', request.url);
+        destination.searchParams.set('asset', path);
+        return new Response(null, {
+          status: 307,
+          headers: {
+            Location: destination.toString(),
+            'Cache-Control': 'private, no-store, max-age=0',
+            'Referrer-Policy': 'no-referrer',
+          },
+        });
+      }
+      return previewForbidden();
+    }
     if (path === '/usuarios.html' || path === '/update-central.html' || (path === '/planos.html' || path === '/vendas-hotmart.html')) return previewForbidden();
     if (path === '/login.html') return Response.redirect(new URL('/central-v119.html', request.url), 302);
     return next();
@@ -211,7 +241,17 @@ export default async function middleware(request) {
 
   const token = parseCookie(request.headers.get('cookie'), COOKIE_NAME);
   const session = await verifyToken(token);
-  if (!session) return redirectToLogin(request);
+  if (!session) {
+    const newVisitorCanSeeLanding=path==='/' &&
+      process.env.BC_PUBLIC_FREE_SIGNUP_ENABLED==='true' &&
+      ((process.env.VERCEL_ENV==='production' &&
+        process.env.BC_PUBLIC_FREE_SIGNUP_PRODUCTION_APPROVED==='YES' &&
+        process.env.BC_SIGNUP_PRIVACY_APPROVED==='YES') ||
+       (process.env.VERCEL_ENV==='preview' &&
+        process.env.BC_FREE_SIGNUP_PREVIEW_ISOLATED==='YES'));
+    if(newVisitorCanSeeLanding)return Response.redirect(new URL('/conheca.html',request.url),302);
+    return redirectToLogin(request);
+  }
 
   if ((path === '/usuarios.html' || path === '/update-central.html' || (path === '/planos.html' || path === '/vendas-hotmart.html')) && session.role !== 'admin') {
     return Response.redirect(new URL('/', request.url), 302);

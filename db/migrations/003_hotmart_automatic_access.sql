@@ -2,14 +2,35 @@
 -- DO NOT run on Neon production until verified live events and cutover approval.
 -- Idempotent extension of 002; does not insert buyers or activate any plan on migration.
 BEGIN;
-ALTER TABLE public.central_user_subscriptions
-  DROP CONSTRAINT IF EXISTS central_user_subscriptions_grant_source_check;
-ALTER TABLE public.central_user_subscriptions
-  ADD CONSTRAINT central_user_subscriptions_grant_source_check
-  CHECK (grant_source IN ('manual','mercadopago','hotmart'));
-ALTER TABLE public.central_user_subscriptions
-  ADD CONSTRAINT central_user_subscriptions_hotmart_requires_id
-  CHECK (grant_source <> 'hotmart' OR provider_subscription_id IS NOT NULL);
+-- Compatibilidade com reexecucao: somente ampliar a restricao antiga,
+-- sem removê-la em uma segunda passagem, e preservar tabelas/linhas existentes.
+DO $hotmart_constraints$
+DECLARE
+  v_grant_check TEXT;
+BEGIN
+  SELECT pg_get_constraintdef(c.oid) INTO v_grant_check
+  FROM pg_constraint c
+  WHERE c.conrelid='public.central_user_subscriptions'::regclass
+    AND c.conname='central_user_subscriptions_grant_source_check';
+  IF v_grant_check IS NULL OR position('hotmart' in lower(v_grant_check))=0 THEN
+    ALTER TABLE public.central_user_subscriptions
+      DROP CONSTRAINT IF EXISTS central_user_subscriptions_grant_source_check;
+    ALTER TABLE public.central_user_subscriptions
+      ADD CONSTRAINT central_user_subscriptions_grant_source_check
+      CHECK (grant_source IN ('manual','mercadopago','hotmart'));
+  END IF;
+
+  IF NOT EXISTS (
+    SELECT 1 FROM pg_constraint c
+    WHERE c.conrelid='public.central_user_subscriptions'::regclass
+      AND c.conname='central_user_subscriptions_hotmart_requires_id'
+  ) THEN
+    ALTER TABLE public.central_user_subscriptions
+      ADD CONSTRAINT central_user_subscriptions_hotmart_requires_id
+      CHECK (grant_source <> 'hotmart' OR provider_subscription_id IS NOT NULL);
+  END IF;
+END
+$hotmart_constraints$;
 
 CREATE TABLE IF NOT EXISTS public.central_hotmart_orders (
   transaction_id TEXT PRIMARY KEY,

@@ -78,7 +78,7 @@ test('public offline manifest excludes premium assets and PWA bypasses cache for
   const manifest = JSON.parse(await read('central-offline-files-v66172.json'));
   const sw = await read('sw.js');
   const boot = await read('central-v119.html');
-  assert.equal(manifest.build, '20261025-premium-main-v1');
+  assert.equal(manifest.build, '20261028-single-loading-v1');
   assert.match(sw, new RegExp(`var CACHE='central-${manifest.build}'`));
   assert.match(boot, new RegExp(`var BUILD='${manifest.build}'`));
   assert.ok(!manifest.files.some(file => protectedAsset(String(file).split(/[?#]/)[0])));

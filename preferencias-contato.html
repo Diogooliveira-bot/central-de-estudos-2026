@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><meta name="referrer" content="no-referrer">
+<title>Preferências de contato — Base Completa</title>
+<style>
+*{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;background:#f3f7fb;color:#132f49;font:16px/1.55 system-ui,Arial,sans-serif;padding:18px}
+main{max-width:530px;width:100%;background:#fff;border:1px solid #d9e3ec;border-radius:16px;padding:30px;box-shadow:0 8px 30px #132f4912}
+h1{font-size:1.65rem;margin:0 0 9px}p{color:#465e70}button{display:block;width:100%;font:700 1rem system-ui;margin-top:16px;padding:13px;border:1px solid #224563;border-radius:9px;background:white;color:#15354c;cursor:pointer}button:disabled{opacity:.6}button.danger{background:#15354c;color:white}
+a{color:#245980}.status{background:#edf5fa;padding:13px;border-radius:8px}button:focus-visible,a:focus-visible{outline:3px solid #dbac37;outline-offset:3px}
+</style></head><body><main>
+<p style="font-size:.85rem;letter-spacing:.08em;font-weight:700">BASE COMPLETA · MINHA CONTA</p>
+<h1>Preferências de contato</h1>
+<p>Escolha separadamente quais novidades e ofertas deseja receber. Alterar estas preferências não interfere no seu plano de estudos nem nos e-mails essenciais de segurança e assinatura.</p>
+<p id="status" class="status" role="status" aria-live="polite">Consultando suas preferências...</p>
+<section id="options" hidden>
+<h2 style="font-size:1.1rem;margin-bottom:8px">Ofertas por e-mail</h2>
+<div id="emailOptInArea">
+<label for="emailOptInConfirmation" style="display:flex;gap:10px;align-items:flex-start">
+<input id="emailOptInConfirmation" type="checkbox" style="flex:none;width:19px;height:19px;margin-top:5px">
+<span>Autorizo receber novidades, lançamentos e ofertas por e-mail. Posso revogar quando quiser.</span>
+</label>
+<button id="emailEnable" type="button">Ativar ofertas por e-mail</button>
+</div>
+<button id="emailRevoke" class="danger" type="button">Não quero mais receber ofertas por e-mail</button>
+<hr style="border:0;border-top:1px solid #d9e3ec;margin:22px 0">
+<h2 style="font-size:1.1rem;margin-bottom:8px">Ofertas pelo WhatsApp</h2>
+<button id="revoke" class="danger" type="button">Não quero mais receber ofertas pelo WhatsApp</button>
+<button id="erase" type="button">Excluir meu WhatsApp cadastrado</button>
+</section>
+<p><a href="/central-v119.html">Voltar aos estudos</a></p>
+</main>
+<script>
+(async function(){
+const state=document.getElementById('status'),box=document.getElementById('options');
+async function api(method,action,extra={}){
+const response=await fetch('/api/auth?action=free-signup-contact',{
+ method:method,credentials:'same-origin',cache:'no-store',
+ headers:method==='POST'?{'Content-Type':'application/json'}:{},
+ body:method==='POST'?JSON.stringify({action,...extra}):undefined
+});
+let body={};try{body=await response.json()}catch(_){}
+if(!response.ok)throw Error(body.error||'Não foi possível concluir.');
+return body;
+}
+async function refresh(){
+const p=await api('GET');
+state.textContent=(p.emailMarketingOptIn?'E-mail comercial: autorizado.':'E-mail comercial: não autorizado.')+' '+(p.marketingOptIn?'WhatsApp comercial: autorizado.':'WhatsApp comercial: não autorizado.');
+document.getElementById('emailOptInArea').hidden=p.emailMarketingOptIn;
+document.getElementById('emailRevoke').disabled=!p.emailMarketingOptIn;
+document.getElementById('emailEnable').disabled=!document.getElementById('emailOptInConfirmation').checked;
+document.getElementById('revoke').disabled=!p.marketingOptIn;
+document.getElementById('erase').disabled=!p.hasWhatsapp;
+box.dataset.emailNoticeVersion=p.emailNoticeVersion||'';
+box.hidden=false;
+}
+document.getElementById('emailOptInConfirmation').addEventListener('change',function(){
+ document.getElementById('emailEnable').disabled=!this.checked;
+});
+document.getElementById('emailEnable').addEventListener('click',async()=>{
+ if(!document.getElementById('emailOptInConfirmation').checked)return;
+ box.hidden=true;state.textContent='Registrando autorização...';
+ try{
+  await api('POST','enableEmailMarketing',{emailMarketingOptIn:true,emailNoticeVersion:box.dataset.emailNoticeVersion});
+  document.getElementById('emailOptInConfirmation').checked=false;
+  await refresh();
+ }catch(e){state.textContent=e.message;box.hidden=false}
+});
+for(const [id,action] of [['emailRevoke','revokeEmailMarketing'],['revoke','revokeMarketing'],['erase','eraseWhatsapp']]){
+document.getElementById(id).addEventListener('click',async()=>{
+box.hidden=true;state.textContent='Salvando preferências...';
+try{await api('POST',action);await refresh()}catch(e){state.textContent=e.message;box.hidden=false}
+});
+}
+try{await refresh()}catch(e){state.textContent=e.message+' Faça login para acessar suas preferências.'}
+})();
+</script></body></html>

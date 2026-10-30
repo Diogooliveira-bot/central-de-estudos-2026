@@ -16,7 +16,13 @@ for(const discipline of ['civil','cpc']){
   for(const q of added){
    assert.equal(q.discipline,discipline);assert.equal(typeof q.question.answer,'boolean');
    assert.ok(q.question.statement.length>20);assert.ok(q.parts[0].length>20);
-   assert.equal(q.question.explanation,q.parts[0]);
+   if(q.question.legalAudit){
+    const audit=q.question.legalAudit;
+    assert.ok(['certificado','certificado-parcial','pendente'].includes(audit.status),q.id);
+    assert.ok(audit.basis&&audit.source&&/^2026-10-\d\d$/.test(audit.date),q.id);
+    if(audit.status==='pendente')assert.match(q.question.explanation,/^Em revisão\. /,q.id);
+    else{assert.match(q.question.explanation,/^(Correta|Errada)\. /,q.id);assert.equal(q.question.explanation.startsWith('Correta'),q.question.answer,q.id);}
+   }else assert.equal(q.question.explanation,q.parts[0]);
    assert.ok(topics.find(t=>t.id===q.topicId)?.subtopics.includes(q.subtopic));
    assert.ok(!/https?:\/\/|Gabarito:|Decorando a Lei Seca|\(\s*\)\s*(Verdadeiro|Falso)/.test(q.question.statement+' '+q.parts[0]),q.id);
    assert.ok(!/^(Substituto|Nacional Unificado|\()/.test(q.question.statement),q.id);
@@ -25,7 +31,7 @@ for(const discipline of ['civil','cpc']){
   for(const source of report.sources)assert.equal(added.filter(q=>q.question.source.startsWith(source.pdf+' ·')).length,source.imported);
   for(const x of report.deviceReview.removed)assert.ok(x.keptIds.every(id=>[...base,...added].some(q=>q.id===id)));
   const offline=JSON.parse(readFileSync(new URL('central-offline-files-v66172.json',root)));
-  assert.ok(offline.files.includes(`/tools/decorando-data-${discipline}-leis.js?v=20261008civil1`));
+  assert.ok(!offline.files.some(p=>p.startsWith(`/tools/decorando-data-${discipline}-leis.js`)), 'questões Premium não podem entrar no manifesto público');
  });
 test(discipline+' — filtros, respostas e progresso, resposta e recarga preservam o progresso anterior',()=>{
   const html=readFileSync(new URL('tools/decorando.html',root),'utf8');
@@ -35,7 +41,7 @@ test(discipline+' — filtros, respostas e progresso, resposta e recarga preserv
     const document={documentElement:{dataset:{}},addEventListener(){},getElementById(){return null}};
     const window={scrollTo(){},addEventListener(){}};
     const localStorage={getItem:k=>storage.get(k)||null,setItem:(k,v)=>storage.set(k,v)};
-    const context=vm.createContext({document,window,localStorage,URLSearchParams,location:{search:''},setTimeout,clearTimeout});
+    const context=vm.createContext({document,window,localStorage,URLSearchParams,location:{search:''},setTimeout,clearTimeout,DATA_LED_APPROVED:[],TOPICS_LED_APPROVED:[]});
     for(const m of html.matchAll(/<script([^>]*)>([\s\S]*?)<\/script>/g)){
       const external=m[1].match(/src="\.\/(decorando-data-[^"?]+)(?:\?[^" ]*)?"/);
       if(external)vm.runInContext(readFileSync(new URL('tools/'+external[1],root),'utf8'),context);

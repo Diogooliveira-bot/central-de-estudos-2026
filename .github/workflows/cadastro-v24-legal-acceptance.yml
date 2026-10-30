@@ -1,0 +1,39 @@
+name: Cadastro V24 - Maioridade e Termos (isolado)
+on:
+  push:
+    branches:
+      - commercial/cadastro-legal-v24-20261028
+    paths:
+      - 'cadastro-gratuito.html'
+      - 'lib/free-signup-handler.js'
+      - 'db/migrations/005_free_signup_legal_acceptance.sql'
+      - 'termos-de-uso.html'
+      - 'politica-de-privacidade.html'
+      - 'politica-de-cookies.html'
+      - 'tests/public-free-signup-4-5-unit.mjs'
+      - 'tests/free-signup-browser-4-5.mjs'
+      - '.github/workflows/cadastro-v24-legal-acceptance.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - name: Checkout sem credenciais persistentes
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Node 22
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+      - name: Dependencias isoladas
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Unitarios cadastro e acesso
+        run: node --test tests/public-free-signup-4-5-unit.mjs tests/plan-access-unit.mjs
+      - name: Chromium headless
+        run: npx playwright install chromium --only-shell
+      - name: Navegadores desktop e celular (API simulada)
+        run: node tests/free-signup-browser-4-5.mjs

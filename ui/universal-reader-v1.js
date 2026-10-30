@@ -43,6 +43,19 @@
     const raw = pre.textContent || '';
     const lines = raw.split(/\r\n|\n|\r/);
     if (raw.length < 450 || lines.length < 8 || lines.filter(x => x.trim()).length < 5) return false;
+    // Quadros de texto tabulado não são parágrafos. Preserve colunas, caracteres
+    // e quebras originais: o CSS oferece uma área de rolagem horizontal.
+    const populated = lines.map(line => line.trim()).filter(Boolean);
+    const columnLines = populated.filter(line =>
+      line.split('|').length >= 3 ||
+      line.includes(String.fromCharCode(9)) ||
+      line.split('   ').length >= 3
+    );
+    if (populated.length >= 4 && columnLines.length / populated.length >= .4) {
+      pre.classList.add('bc-editorial-raw-table');
+      pre.dataset.bcUniversalDone='table-preserved';
+      return false;
+    }
     const projection = document.createElement('section');
     projection.className = 'bc-universal-projection';
     projection.setAttribute('aria-label', 'Texto da apostila formatado para leitura');
@@ -77,11 +90,28 @@
     projection.dataset.sourceLength=String(raw.length);
     return true;
   }
+  function enhanceTables(sheet) {
+    for (const table of sheet.querySelectorAll('table')) {
+      if (table.closest(EXCLUDE + ',.bc-editorial-table-scroll,td,th')) continue;
+      // Preserva os contêineres nativos de tabelas e seus controles.
+      const parent=table.parentElement;
+      if (!parent || parent.closest('.adm-table-scroll,.bc-native-table-wrap,.pen-m3-table,.table-wrap,.table-responsive,.table-container,.table-scroll,.cv-table-wrap,.cpc-table-wrap')) continue;
+      if (['auto','scroll'].includes(getComputedStyle(parent).overflowX)) continue;
+      const scroller=document.createElement('div');
+      scroller.className='bc-editorial-table-scroll';
+      scroller.setAttribute('role','region');
+      scroller.setAttribute('tabindex','0');
+      scroller.setAttribute('aria-label','Tabela do material: deslize horizontalmente para consultar todas as colunas');
+      parent.insertBefore(scroller,table);
+      scroller.appendChild(table);
+    }
+  }
   function enhance(sheet) {
     if (!(sheet instanceof Element) || sheet.matches(EXCLUDE) ||
         sheet.closest('.visual-editor-v1,.block-editor,.bc-universal-projection')) return;
     if (!sheet.classList.contains('bc-universal-sheet')) sheet.classList.add('bc-universal-sheet');
     sheet.querySelectorAll('pre').forEach(formatRaw);
+    enhanceTables(sheet);
   }
   function controls(overlay) {
     if (!(overlay instanceof Element) || !overlay.classList.contains('bc-native-reader-overlay')) return;

@@ -1,0 +1,82 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+const read=p=>readFileSync(new URL('../'+p,import.meta.url),'utf8');
+test('página comercial somente em prévia, com CTA de acesso já existente',()=>{
+const p=read('conheca.html');
+assert.match(p, /<html lang="pt-BR">/);
+assert.match(p,/name="viewport"/);
+assert.match(p,/noindex,nofollow/);
+assert.match(p,/href="\/login.html"/);
+assert.match(p,/href="\/recuperar-senha.html"/);
+assert.match(p,/href="#acesso"/);
+assert.match(p,/R\$ 97(?:<sup>)?,00/);
+assert.match(p,/R\$ 179(?:<sup>)?,00/);
+assert.doesNotMatch(p,/R\$ 194/);
+assert.match(p,/R\$ 14,92\/mês/);
+assert.match(p,/cta-premium-179/);
+assert.doesNotMatch(p,/R\$ 291,00|50% maiores|mesmo custo mensal equivalente/);
+assert.match(p,/6 meses/);
+assert.match(p,/12 meses/);
+assert.match(p,/Gratuito/i);
+assert.match(p,/Premium semestral/i);
+assert.match(p,/Premium anual/i);
+assert.match(p,/20 questões/);
+assert.match(p,/TEC Concursos e (?:do )?Qconcursos/i);
+assert.match(p,/sem promessa de aprovação|sem promessa de aprovaç|sem promessa/i);
+assert.match(p,/Checkout aguardando validação comercial/);
+assert.doesNotMatch(p,/href=["']https:\/\/pay\.hotmart\.com/);
+assert.doesNotMatch(p,/<form\b/i);
+});
+test('navegação sem links quebrados internos, com páginas conhecidas',()=>{
+const p=read('conheca.html');
+for(const fragment of ['#como','#acesso','#duvidas']){
+assert.ok(p.includes('id="'+fragment.slice(1)+'"'));
+}
+for(const file of ['login.html','recuperar-senha.html'])assert.ok(read(file).length>100);
+});
+test('V24 preserva demonstracoes e resolve cadastro no proprio ambiente',()=>{
+const p=read('conheca.html');
+assert.match(p,/id="v21-interactions"/);
+assert.match(p,/id="bc-v24-integration"/);
+assert.match(p,/free-signup-status/);
+assert.match(p,/registrationApproved=status.enabled===true/);
+assert.match(p,/href="\/termos-de-uso.html"/);
+assert.doesNotMatch(p,/https:\/\/(?:app\.basecompleta\.com\.br|central-de-estudos-ecru\.vercel\.app)/);
+});
+test('funcionamento Hotmart requer flags explícitas no ambiente certo',()=>{
+const p=read('lib/hotmart-webhook.js');
+assert.match(p,/HOTMART_LIVE_ENABLED/);
+assert.match(p,/HOTMART_TEST_RECEIVER_ENABLED/);
+assert.match(p,/x-hotmart-hottok/);
+assert.match(p,/safeSecretEqual/);
+});
+
+test('vitrine interna e Termos conservam preços consistentes e compra única',()=>{
+ const site=read('conheca.html');
+ const legal=read('termos-de-uso.html');
+ assert.match(site,/R\$ 179<sup>,00<\/sup>/);
+ assert.match(legal,/R\$ 179,00 por doze meses/);
+ assert.match(site,/R\$ 97<sup>,00<\/sup>/);
+ assert.match(legal,/R\$ 97,00 por seis meses/);
+ assert.match(site,/R\$ 15 a menos/);
+ assert.match(site,/renovação automática/i);
+ assert.match(legal,/cobrança recorrente automática/i);
+ assert.doesNotMatch(site,/R\$ 194|R\$ 291,00|50% maiores/);
+ assert.doesNotMatch(legal,/R\$ 194/);
+ assert.match(site,/data-preview-only="true"/);
+ assert.match(site,/Checkout aguardando validação comercial/);
+});
+
+test('e-mail oficial de atendimento está clicável sem habilitar a compra',()=>{
+ const p=read('conheca.html');
+ const anchor=p.match(/<p class="plans-contact">([\s\S]*?)<\/p>/)?.[1]||'';
+ assert.match(anchor, /href="mailto:basecompleta\.estudos@gmail\.com"/);
+ assert.match(anchor, /suporte, cancelamentos e reembolsos/i);
+ assert.doesNotMatch(anchor,/aria-disabled|data-preview-only/);
+ assert.match(p,/Checkout aguardando validação comercial/);
+ assert.match(p,/data-preview-only="true"/);
+ for(const legal of ['termos-de-uso.html','politica-de-privacidade.html','politica-de-cookies.html']){
+   assert.match(read(legal),/href="mailto:basecompleta\.estudos@gmail\.com"/);
+ }
+});

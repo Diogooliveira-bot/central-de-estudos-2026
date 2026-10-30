@@ -8,6 +8,7 @@ import {
   normalizeEmail,
   publicUser,
   readJsonBody,
+  recordFailedLogin,
   requireSession,
   safeSecretEqual,
   sessionCookie,
@@ -16,12 +17,16 @@ import {
   verifyPassword,
 } from '../lib/auth.js';
 import handleInviteAction from '../lib/invite-handler.js';
+import handleFreeSignup, {publicFreeSignupReady} from '../lib/free-signup-handler.js';
+import handleFreeSignupContactPreferences from '../lib/free-signup-contact-preferences.js';
+import {signupCaptchaConfigured} from '../lib/free-signup-security.js';
 import handlePasswordReset from '../lib/password-reset.js';
 import handleLeiEmDiaQuestions from '../lib/lei-em-dia-questions-handler.js';
 import handlePlans from '../lib/plans-handler.js';
 import handlePrivateContent from '../lib/private-content-handler.js';
 import handleHotmartWebhook from '../lib/hotmart-webhook.js';
 import handleHotmartClaim from '../lib/hotmart-claim-handler.js';
+import handlePremiumExpiryReminders from '../lib/premium-expiry-reminders.js';
 
 function send(res, status, body, extraHeaders = {}) {
   res.statusCode = status;
@@ -112,27 +117,28 @@ async function login(req, res) {
 
   const passwordOk = verifyPassword(password, row.password_hash);
   if (!passwordOk) {
-    const attempts = Number(row.failed_attempts || 0) + 1;
-    const shouldLock = attempts >= 5;
-    await sql`
-      UPDATE central_users
-      SET failed_attempts=${shouldLock ? 0 : attempts},
-          locked_until=${shouldLock ? new Date(Date.now() + 10 * 60 * 1000).toISOString() : null},
-          updated_at=NOW()
-      WHERE user_id=${row.user_id}
-    `;
-    return send(res, 401, { error: shouldLock ? 'Muitas tentativas. A conta foi bloqueada por 10 minutos' : 'E-mail ou senha inválidos' });
+    const attempt = await recordFailedLogin(sql, row.user_id);
+    return send(res, attempt.locked ? 429 : 401, {
+      error: attempt.locked ? 'Muitas tentativas. A conta foi bloqueada temporariamente' : 'E-mail ou senha inválidos',
+    });
   }
 
-  await sql`
+  // Do not issue a session if the account was locked, disabled or its password
+  // or session version changed while scrypt was being checked.
+  const authenticated = await sql`
     UPDATE central_users
     SET failed_attempts=0, locked_until=NULL, last_login=NOW(), updated_at=NOW()
-    WHERE user_id=${row.user_id}
+    WHERE user_id=${row.user_id} AND active=TRUE
+      AND password_hash=${row.password_hash}
+      AND session_version=${row.session_version}
+      AND (locked_until IS NULL OR locked_until <= NOW())
+    RETURNING user_id,name,email,role,active,session_version,created_at,updated_at,last_login
   `;
-  row.last_login = new Date().toISOString();
+  if (!authenticated.length) return send(res, 401, { error: 'Não foi possível autenticar. Tente novamente' });
+  const verifiedUser = authenticated[0];
   const ttl = remember ? 30 * 24 * 60 * 60 : undefined;
-  const token = createSessionToken(row, ttl);
-  return send(res, 200, { ok: true, user: publicUser(row), remembered: remember }, { 'Set-Cookie': sessionCookie(token, ttl) });
+  const token = createSessionToken(verifiedUser, ttl);
+  return send(res, 200, { ok: true, user: publicUser(verifiedUser), remembered: remember }, { 'Set-Cookie': sessionCookie(token, ttl) });
 }
 
 async function logout(res) {
@@ -173,29 +179,37 @@ async function bootstrap(req, res) {
 export default async function handler(req, res) {
   try {
     const premiumApi = String(req.query?.bc_api || '').toLowerCase();
-    if (premiumApi === 'hotmart-webhook') return handleHotmartWebhook(req, res);
-    if (premiumApi === 'hotmart-claim') return handleHotmartClaim(req, res);
-    if (premiumApi === 'plans') return handlePlans(req, res);
-    if (premiumApi === 'private-content') return handlePrivateContent(req, res);
-    if (premiumApi === 'lei-em-dia-questions') return handleLeiEmDiaQuestions(req, res);
+    if (premiumApi === 'hotmart-webhook') return await handleHotmartWebhook(req, res);
+    if (premiumApi === 'premium-expiry-reminders') return await handlePremiumExpiryReminders(req, res);
+    if (premiumApi === 'hotmart-claim') return await handleHotmartClaim(req, res);
+    if (premiumApi === 'plans') return await handlePlans(req, res);
+    if (premiumApi === 'private-content') return await handlePrivateContent(req, res);
+    if (premiumApi === 'lei-em-dia-questions') return await handleLeiEmDiaQuestions(req, res);
 
     const action = String(req.query?.action || '').toLowerCase();
     if (req.method === 'POST' && !sameOriginRequest(req)) return send(res, 403, { error: 'Origem da requisição não permitida' });
 
-    if (action.startsWith('invite-')) return handleInviteAction(req, res, action.slice('invite-'.length));
-    if (action.startsWith('password-reset-')) return handlePasswordReset(req, res, action.slice('password-reset-'.length));
+    if (action === 'free-signup' && req.method === 'POST') return await handleFreeSignup(req, res);
+    if (action === 'free-signup-contact' && ['GET','POST'].includes(req.method)) return await handleFreeSignupContactPreferences(req, res);
+    if (action === 'free-signup-status' && req.method === 'GET') return send(res, 200, {
+      enabled: publicFreeSignupReady(),
+      siteKey: publicFreeSignupReady() && signupCaptchaConfigured()
+        ? String(process.env.BC_SIGNUP_TURNSTILE_SITE_KEY) : null,
+    });
+    if (action.startsWith('invite-')) return await handleInviteAction(req, res, action.slice('invite-'.length));
+    if (action.startsWith('password-reset-')) return await handlePasswordReset(req, res, action.slice('password-reset-'.length));
 
-    if (req.method === 'GET' && action === 'me') return currentUser(req, res);
-    if (req.method === 'GET' && action === 'bootstrap-status') return bootstrapStatus(res);
+    if (req.method === 'GET' && action === 'me') return await currentUser(req, res);
+    if (req.method === 'GET' && action === 'bootstrap-status') return await bootstrapStatus(res);
 
-    if (req.method === 'POST' && action === 'login') return login(req, res);
-    if (req.method === 'POST' && action === 'logout') return logout(res);
-    if (req.method === 'POST' && action === 'bootstrap') return bootstrap(req, res);
+    if (req.method === 'POST' && action === 'login') return await login(req, res);
+    if (req.method === 'POST' && action === 'logout') return await logout(res);
+    if (req.method === 'POST' && action === 'bootstrap') return await bootstrap(req, res);
 
     res.setHeader('Allow', 'GET, POST');
     return send(res, 404, { error: 'Ação de autenticação inválida' });
   } catch (error) {
-    console.error('auth error', error);
-    return send(res, 500, { error: error?.message || 'Falha interna de autenticação' });
+    console.error('auth error', String(error?.code || error?.name || 'UNKNOWN').slice(0, 24));
+    return send(res, 503, { error: 'Autenticação temporariamente indisponível' });
   }
 }
