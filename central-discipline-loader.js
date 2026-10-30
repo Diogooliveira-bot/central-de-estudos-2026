@@ -113,6 +113,9 @@ function waitForNative(id){return new Promise((resolve,reject)=>{const start=Dat
 function resumeOffline(){if(!Object.values(states).some(state=>state.promise))navigator.serviceWorker?.controller?.postMessage({type:'RESUME_OFFLINE'})}
 function refresh(){try{global.renderAll?.();global.renderDisciplineGrid?.()}catch(error){console.error('[Central discipline render]',error)}}
 function filesFor(id){
+ // A apresentação ADM já carregada no bootstrap usa apostilas isoladas sob demanda.
+ // Não repita o pacote legado nem reinstale a camada e seus observadores.
+ if(id==='adm' && global.ADM_NATIVE_INDEX?.modules && global.AdmNative)return [];
  const files=(groups[id]||[]).concat(global.CentralTheoryFiles?.[id]||[]);
  const seen=new Set();return files.filter(src=>{const path=new URL(src,location.origin).pathname;if(seen.has(path)||executed.has(path))return false;seen.add(path);return true});
 }
