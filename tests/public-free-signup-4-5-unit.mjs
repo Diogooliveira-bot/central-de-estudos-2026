@@ -410,7 +410,7 @@ test('publicacao legal permanece bloqueada ate versao final coordenada e servico
  assert.match(FREE_SIGNUP_TERMS_VERSION,/draft|minuta|pre[-_]?launch/i);
  for(const html of [terms,privacy,cookies]){
    assert.match(html,/noindex,nofollow,noarchive/);
-   assert.match(html,/Documento em revisão de pré-lançamento/);
+   assert.match(html,/Texto consolidado para lançamento, ainda não liberado para contratação/);
    assert.match(html,/basecompleta\.estudos@gmail\.com/);
  }
  assert.match(terms,/R\$ 97,00 por seis meses/);
@@ -420,6 +420,6 @@ test('publicacao legal permanece bloqueada ate versao final coordenada e servico
  assert.match(terms,/confirmação imediata/);
  assert.match(terms,/sete dias/);
  assert.match(privacy,/quinze dias/);
- assert.match(privacy,/prazos e critérios por categoria/);
+ assert.match(privacy,/Os critérios de retenção variam conforme a categoria/);
  assert.match(cookies,/não equivale a uma auditoria concluída/);
 });
