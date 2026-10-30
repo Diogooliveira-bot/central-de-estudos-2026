@@ -14,7 +14,7 @@
 
 | Gate | Definição objetiva de aprovação | Situação em 29/10 |
 | --- | --- | --- |
-| **1 — Legal + atendimento** | Dados do fornecedor e canal de suporte efetivos e adequados; Termos, Privacidade e Cookies finais publicados; aceite versionado (sem `draft`); fluxo de reembolso/arrependimento e contato verificável. Dados pessoais e segredos não vão para GitHub. | **PENDENTE**: os termos ainda usam `v24-draft-2026-10-28`; identificação/operação não finalizadas. |
+| **1 — Legal + atendimento** | Dados do fornecedor e canal de suporte efetivos e adequados; Termos, Privacidade e Cookies finais publicados; aceite versionado (sem `draft`); fluxo de reembolso/arrependimento e contato verificável. Dados pessoais e segredos não vão para GitHub. | **PARCIAL**: **e-mail oficial de suporte confirmado** `basecompleta.estudos@gmail.com`; ainda faltam teste real de recebimento, confirmação/rotina de atendimento, identificação legal e versão final dos Termos (`v24-draft-2026-10-28`). |
 | **2 — Cadastro + acesso real** | Uma jornada hospedada com conta fictícia na Preview: cadastro, confirmação de e-mail, login, recuperação, sessão, Gratuito (Lei em Dia 20/dia, 21ª bloqueada, sem TEC/QC), Premium (recursos corretos), expiração/revogação com progresso preservado e bloqueio de acesso admin indevido. Testar em desktop e celular com o mesmo SHA final. | **PARCIAL**: código, Neon TEST e navegador simulado já testados; prova final hospedada no mesmo SHA pendente. |
 | **3 — Hotmart + pagamento** | Ofertas de 6 meses R$97 e 12 meses R$179 com duração, compra única e parcelamento claros. Webhook apontando para uma **URL estável do deployment produtivo**, com credencial correta e eventos de aprovação, reembolso, chargeback e expiração; verificar evento oficial de teste sem compra real e concessão/revogação apropriadas. | **PENDENTE**: última inspeção mostra webhook em Preview antiga e eventos incompletos. [Issue #193](https://github.com/Diogooliveira-bot/central-de-estudos-2026/issues/193). |
 | **4 — Recuperação + virada** | Backup externo recente **restaurável** e ensaio isolado de recuperação, ou proteção equivalente comprovada; banco TEST/Production isolados; 6 workflows CI verdes no HEAD final, Preview READY, URL estável válida, smoke e rollback documentados; promoção controlada para Production só quando os anteriores estiverem aprovados. | **PARCIAL**: CI 6/6, Preview READY e backup por branch interna; **backup externo e ensaio completo pendentes**. |
@@ -30,7 +30,7 @@
 
 ### Mínimas ações fora do ChatGPT
 
-1. **Titularidade e suporte:** fornecer/validar pelos canais seguros os dados legais e confirmar um canal de atendimento monitorado. Nunca colar CPF/endereço/senhas em issue pública.
+1. **Titularidade e suporte:** e-mail oficial confirmado: `basecompleta.estudos@gmail.com` (não pedir novamente). Falta verificar recebimento/monitoramento e fornecer/validar dados legais em canal seguro. Nunca colar CPF/endereço/senhas em issue pública.
 2. **Hotmart:** confirmar sessão autenticada e configurar **um** webhook correto com os eventos comerciais necessários; confirmar descrição e parcelamento das duas ofertas. Sem sessão, ninguém deve marcar esse gate como concluído.
 3. **DNS (opcional para o primeiro lançamento):** se usar domínio próprio imediatamente, criar/ajustar no provedor DNS o A do domínio raiz para `76.76.21.21` e o CNAME `app` para `cname.vercel-dns.com.` conforme recomendações atuais da Vercel, retirando conflitos; aguardar confirmação técnica. Não comprar domínio novo nem mexer no DNS sem acesso apropriado.
 

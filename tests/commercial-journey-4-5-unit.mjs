@@ -67,3 +67,16 @@ test('vitrine interna e Termos conservam preços consistentes e compra única',(
  assert.match(site,/data-preview-only="true"/);
  assert.match(site,/Checkout aguardando validação comercial/);
 });
+
+test('e-mail oficial de atendimento está clicável sem habilitar a compra',()=>{
+ const p=read('conheca.html');
+ const anchor=p.match(/<p class="plans-contact">([\s\S]*?)<\/p>/)?.[1]||'';
+ assert.match(anchor, /href="mailto:basecompleta\.estudos@gmail\.com"/);
+ assert.match(anchor, /suporte, cancelamentos e reembolsos/i);
+ assert.doesNotMatch(anchor,/aria-disabled|data-preview-only/);
+ assert.match(p,/Checkout aguardando validação comercial/);
+ assert.match(p,/data-preview-only="true"/);
+ for(const legal of ['termos-de-uso.html','politica-de-privacidade.html','politica-de-cookies.html']){
+   assert.match(read(legal),/href="mailto:basecompleta\.estudos@gmail\.com"/);
+ }
+});
