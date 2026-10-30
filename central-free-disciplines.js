@@ -32,6 +32,13 @@ style.textContent=[
 '.central-free-study .bc-free-reading,.central-free-study .bc-free-lock-panel{background:var(--bc-color-surface-elevated,var(--panel2,#f7fafc));border:1px solid var(--bc-color-border,var(--line,#d9e4ec));border-radius:11px;padding:18px}',
 '.central-free-study .bc-free-reading h4{font:750 17px/1.45 var(--bc-font,system-ui);margin:0 0 14px;color:var(--bc-color-text,var(--text,#16364d))}',
 '.central-free-study .bc-free-reading-text{white-space:pre-wrap;overflow-wrap:anywhere;font:400 var(--central-reading-font-large,16px)/1.8 var(--bc-font,system-ui);color:var(--bc-color-text,var(--text,#17344a))}',
+'.central-free-study .bc-free-reading-text.bc-free-rich{white-space:normal}',
+'.central-free-study .bc-free-rich :is(h1,h2,h3,h4,h5,h6){margin:16px 0 8px;line-height:1.4;color:var(--bc-color-text,var(--text,#17344a))}',
+'.central-free-study .bc-free-rich :is(p,li,blockquote){font-size:inherit;line-height:1.8;margin:8px 0}',
+'.central-free-study .bc-free-rich :is(ul,ol){padding-left:22px;margin:8px 0 14px}',
+'.central-free-study .bc-free-rich :is(table){width:100%;border-collapse:collapse;display:block;overflow-x:auto}',
+'.central-free-study .bc-free-rich :is(td,th){border:1px solid var(--bc-color-border,var(--line,#ddd));padding:9px}',
+
 '.central-free-study .bc-free-hint{font:400 13px/1.6 var(--bc-font,system-ui);color:var(--bc-color-text-secondary,var(--muted,#617585));margin:0}',
 '.central-free-study .bc-free-lock-panel strong{font:750 16px/1.5 var(--bc-font,system-ui);color:var(--bc-color-text,var(--text,#17344a))}',
 '.central-free-study .bc-free-lock-panel p{margin:7px 0 12px;line-height:1.55}',
@@ -59,7 +66,7 @@ function panelMarkup(id,n){
  }else if(state?.error){
   content='<p role="alert" class="bc-free-hint">'+escape(state.error)+'</p>';
  }else if(state){
-  content='<article class="ptn-content bc-free-reading"><h4>'+escape(state.title)+'</h4><div class="bc-free-reading-text">'+escape(state.summary)+'</div></article>';
+  content='<article class="ptn-content bc-free-reading"><h4>'+escape(state.title)+'</h4><div class="bc-free-reading-text'+(state.summaryHtml?' bc-free-rich':'')+'">'+(state.summaryHtml||escape(state.summary))+'</div></article>';
  }else{
   content='<p class="bc-free-hint">Preparando o resumo deste módulo...</p>';
  }
@@ -115,6 +122,26 @@ document.addEventListener('click',event=>{
  if(!id||!counts[id]||!isFree())return;
  event.preventDefault();event.stopImmediatePropagation();freeOpen(id);
 },true);
+// Preserva a estrutura editorial dos resumos; elimina scripts, links e atributos.
+// O backend já projeta somente os campos do plano Gratuito; esta camada trata a apresentação.
+function safeSummaryHtml(html){
+ const root=document.createElement('div');root.innerHTML=String(html||'');
+ const allowed=new Set(['H1','H2','H3','H4','H5','H6','P','DIV','SECTION','ARTICLE','STRONG','B','EM','I','U','UL','OL','LI','BLOCKQUOTE','BR','HR','TABLE','THEAD','TBODY','TFOOT','TR','TH','TD','CODE','PRE','MARK','SMALL','SUP','SUB','SPAN','DETAILS','SUMMARY']);
+ const denied=new Set(['SCRIPT','STYLE','IFRAME','OBJECT','EMBED','FORM','BUTTON','INPUT','SELECT','TEXTAREA','SVG','MATH','IMG','VIDEO','AUDIO','LINK','META','BASE']);
+ function clean(parent){
+  for(const child of Array.from(parent.childNodes)){
+   if(child.nodeType===8){child.remove();continue}
+   if(child.nodeType!==1){if(child.nodeType!==3)child.remove();continue}
+   if(denied.has(child.tagName)){child.remove();continue}
+   clean(child);
+   if(!allowed.has(child.tagName)){child.replaceWith(...Array.from(child.childNodes));continue}
+   for(const attr of Array.from(child.attributes))child.removeAttribute(attr.name);
+  }
+ }
+ clean(root);
+ return root.innerHTML;
+}
+
 function execute(source){
  const script=document.createElement('script');script.textContent=source;document.head.appendChild(script);script.remove();
 }
@@ -141,7 +168,7 @@ async function read(id,n){
  const html=record.summaryHtml||'',plain=document.createElement('div');plain.innerHTML=html;
  const summary=record.summary||plain.textContent;
  if(!String(summary||'').trim())throw Error('Resumo ainda não cadastrado para este módulo.');
- return {title:record.title||'Módulo '+n,summary};
+ return {title:record.title||'Módulo '+n,summary,summaryHtml:html?safeSummaryHtml(html):''};
 }
 async function module(id,n,silent=false,restore=false){
  if(!isFree()||!counts[id]||!Number.isInteger(n)||n<1||n>counts[id])return false;
