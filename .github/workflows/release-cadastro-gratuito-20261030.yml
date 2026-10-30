@@ -6,7 +6,8 @@ on:
     paths:
       - 'cadastro-gratuito.html'
       - 'usuarios.html'
-      - 'api/admin-public-signups.js'
+      - 'api/auth.js'
+      - 'lib/admin-public-signups-handler.js'
       - 'tests/admin-public-signups-unit.mjs'
       - 'lib/free-signup-handler.js'
       - 'termos-de-uso.html'
@@ -35,7 +36,7 @@ jobs:
       - name: Testes unitarios cadastro, protecao Premium e aceites
         run: node --test tests/public-free-signup-4-5-unit.mjs tests/plan-access-unit.mjs tests/admin-public-signups-unit.mjs
       - name: Sintaxe da API administrativa
-        run: node --check api/admin-public-signups.js
+        run: node --check lib/admin-public-signups-handler.js
       - name: Chromium isolado
         run: npx playwright install chromium --only-shell
       - name: Browser cadastro gratuito e Turnstile simulado
