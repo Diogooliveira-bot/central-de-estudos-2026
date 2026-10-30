@@ -53,15 +53,16 @@ try{
           try{
             const entry=typeof window.topicByUid==='function'?window.topicByUid(uid):null;
             const html=entry && typeof window.renderDetail==='function'?window.renderDetail(entry.s,entry.t,entry.r||{}):'';
-            stages.push({uid,htmlLength:String(html||'').length,legacyLength:String(window.ADM_NATIVE_LEGACY?.[uid]||'').length});
+            stages.push({uid,htmlLength:String(html||'').length,legacyLength:String(window.ADM_NATIVE_LEGACY?.[uid]||'').length,visualCards:(String(html||'').match(/<article class="adm-cf-card\b/g)||[]).length});
           }catch(e){problems.push({uid,error:e.message})}
         }
         return {indexCount:uids.length,legacyAvailable:stages.filter(x=>x.legacyLength>0).length,
-          stageCount:stages.filter(x=>x.htmlLength>0).length,problems:problems.slice(0,6),samples:stages.slice(0,2)};
+          stageCount:stages.filter(x=>x.htmlLength>0).length,threeCards:stages.filter(x=>x.visualCards===3).length,problems:problems.slice(0,6),samples:stages.slice(0,2)};
       });
       console.log('ADM_RUNTIME',JSON.stringify(adm));
       assert.equal(adm.indexCount,20);
       assert.equal(adm.legacyAvailable,20);
+      assert.equal(adm.threeCards,20,'todos os módulos ADM devem apresentar os três cards aprovados');
       const attempts=await page.evaluate(async()=>{
         const items=Object.keys(window.ADM_NATIVE_INDEX.modules),checks=[];
         for(const uid of items){
