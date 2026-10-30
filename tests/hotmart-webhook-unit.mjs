@@ -164,6 +164,28 @@ test('falha de SMTP libera reserva e retry imediato envia token sem duplicar ent
  assert.equal(attempts,2);assert.equal(received,2);
  assert.equal(released,1);assert.equal(confirmed,1);
 });
+test('webhook não devolve 200 enquanto o claim ainda aguarda envio SMTP',async()=>{
+ let sentAt=null,checks=0;
+ const sql=async(chunks)=>{
+   const statement=chunks.join('?');
+   if(statement.includes('central_hotmart_apply_event'))
+     return [{outcome:'pending_claim',should_send_email:false}];
+   if(statement.includes('SELECT claim_sent_at')){
+     checks++;
+     return [{claim_sent_at:sentAt}];
+   }
+   throw Error('SQL inesperado no teste');
+ };
+ const h=createHotmartWebhook({env,sqlProvider:()=>sql,
+   sendWelcome:async()=>{throw Error('Nao deveria tentar enviar sem reserva')}});
+ const pending=res();await h(req(),pending);
+ assert.equal(pending.statusCode,503);
+ sentAt='2026-10-30T01:50:00.000Z';
+ const confirmed=res();await h(req(),confirmed);
+ assert.equal(confirmed.statusCode,200);
+ assert.equal(checks,2);
+});
+
 test('e-mails de ativação só usam HTTPS e evitam revelar tokens fora do destino',async()=>{
  assert.equal(hotmartSiteBase(env),'https://test-preview.vercel.app');
  assert.throws(()=>hotmartSiteBase({...env,VERCEL_ENV:'production'}),/BC_PUBLIC_APP_URL/);
