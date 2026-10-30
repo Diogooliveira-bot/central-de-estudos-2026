@@ -19,6 +19,7 @@ import {
 import handleInviteAction from '../lib/invite-handler.js';
 import handleFreeSignup, {freeSignupWhatsappEnabled,publicFreeSignupReady} from '../lib/free-signup-handler.js';
 import handleFreeSignupContactPreferences from '../lib/free-signup-contact-preferences.js';
+import handleAdminPublicSignups from '../lib/admin-public-signups-handler.js';
 import {signupCaptchaConfigured} from '../lib/free-signup-security.js';
 import handlePasswordReset from '../lib/password-reset.js';
 import handleLeiEmDiaQuestions from '../lib/lei-em-dia-questions-handler.js';
@@ -189,6 +190,7 @@ export default async function handler(req, res) {
     const action = String(req.query?.action || '').toLowerCase();
     if (req.method === 'POST' && !sameOriginRequest(req)) return send(res, 403, { error: 'Origem da requisição não permitida' });
 
+    if (action === 'admin-public-signups') return await handleAdminPublicSignups(req, res);
     if (action === 'free-signup' && req.method === 'POST') return await handleFreeSignup(req, res);
     if (action === 'free-signup-contact' && ['GET','POST'].includes(req.method)) return await handleFreeSignupContactPreferences(req, res);
     if (action === 'free-signup-status' && req.method === 'GET') return send(res, 200, {
