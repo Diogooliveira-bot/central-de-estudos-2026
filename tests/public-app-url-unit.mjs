@@ -15,20 +15,20 @@ test('Preview usa somente hostname do próprio deployment, sem domínio próprio
  assert.equal(expiryAppUrl(env),expected);
 });
 
-test('Production requer endereço explicitamente escolhido, nunca cai na Preview ecru',()=>{
+test('Production requer endereço explícito, sem cair em deployment transitório',()=>{
  for(const env of [{VERCEL_ENV:'production'},{VERCEL_ENV:'production',VERCEL_URL:'test.vercel.app'}]){
   assert.throws(()=>publicAppBase(env),/BC_PUBLIC_APP_URL/);
   assert.equal(expiryAppUrl(env),'');
  }
- assert.throws(()=>publicAppBase({VERCEL_ENV:'production',BC_PUBLIC_APP_URL:'https://central-de-estudos-ecru.vercel.app/'}),/homologação/);
+ assert.throws(()=>publicAppBase({VERCEL_ENV:'production',BC_PUBLIC_APP_URL:'https://central-de-estudos-9abgbtvjw-estudotd.vercel.app/'}),/homologação/);
 });
 
-test('Acesso provisório Vercel é aceito em produção somente após configurar origem',()=>{
- const env={VERCEL_ENV:'production',BC_PUBLIC_APP_URL:'https://central-de-estudos.vercel.app/'};
- assert.equal(publicAppBase(env),'https://central-de-estudos.vercel.app');
- assert.equal(resetPageBase(env),'https://central-de-estudos.vercel.app');
- assert.equal(hotmartSiteBase(env),'https://central-de-estudos.vercel.app');
- assert.equal(expiryAppUrl(env),'https://central-de-estudos.vercel.app');
+test('Alias Vercel verificado funciona em Production e em links de confirmação e recuperação',()=>{
+ const env={VERCEL_ENV:'production',BC_PUBLIC_APP_URL:'https://central-de-estudos-ecru.vercel.app/'};
+ assert.equal(publicAppBase(env),'https://central-de-estudos-ecru.vercel.app');
+ assert.equal(resetPageBase(env),'https://central-de-estudos-ecru.vercel.app');
+ assert.equal(hotmartSiteBase(env),'https://central-de-estudos-ecru.vercel.app');
+ assert.equal(expiryAppUrl(env),'https://central-de-estudos-ecru.vercel.app');
 });
 
 test('Apenas URLs HTTPS de host conhecido e sem caminhos/credenciais',()=>{
@@ -36,9 +36,10 @@ test('Apenas URLs HTTPS de host conhecido e sem caminhos/credenciais',()=>{
   'https://central-de-estudos.vercel.app/login','https://central-de-estudos.vercel.app/?code=abc',
   'https://user:pass@central-de-estudos.vercel.app/',
   'https://central-de-estudos.vercel.app:444/','javascript:alert(1)',
-  'https://central-de-estudos-ecru.vercel.app/']){
+  'https://central-de-estudos-9abgbtvjw-estudotd.vercel.app/']){
   assert.throws(()=>validatedPublicOrigin(bad));
  }
+ assert.equal(validatedPublicOrigin('https://central-de-estudos-ecru.vercel.app/'),'https://central-de-estudos-ecru.vercel.app');
  assert.equal(validatedPublicOrigin('https://app.basecompleta.com.br/'),'https://app.basecompleta.com.br');
 });
 
