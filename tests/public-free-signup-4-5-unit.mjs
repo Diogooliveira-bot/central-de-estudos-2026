@@ -78,6 +78,16 @@ test('recusa solicitações cross-site e contas sem senha forte sem banco',async
  r=res();await handler(req({action:'request',name:'Nome Simulado',email:'teste@example.invalid',password:'short'}),r);
  assert.equal(r.statusCode,400);assert.equal(calls.length,0);
 });
+test('senha de 8 caracteres aceita; senha de 7 rejeitada antes do banco',async()=>{
+ const {handler,calls,sent}=setup();
+ const base={action:'request',name:'Pessoa Fictícia',email:'ficticio@example.invalid'};
+ let out=res();await handler(req({...base,password:'A1!bcde'}),out);
+ assert.equal(out.statusCode,400);
+ assert.equal(calls.length,0);
+ out=res();await handler(req({...base,password:'A1!bcdef'}),out);
+ assert.equal(out.statusCode,200);
+ assert.equal(sent.length,1);
+});
 test('maioridade e aceite de Termos sao obrigatorios no backend antes de SQL e e-mail',async()=>{
  const {handler,calls,sent}=setup();
  const base={action:'request',name:'Pessoa Fictícia',email:'ficticio@example.invalid',password:'Senhacom12ouMais@123'};
