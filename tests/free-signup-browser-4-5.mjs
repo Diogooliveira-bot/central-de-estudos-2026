@@ -57,7 +57,11 @@ try{
  for(const device of [{label:'desktop',width:1366,height:768},{label:'celular',width:390,height:844}]){
   const page=await browser.newPage({viewport:{width:device.width,height:device.height}});
   await page.route('**/api/auth?action=free-signup-status',r=>r.fulfill({
-   status:200,contentType:'application/json',body:JSON.stringify({enabled:true,siteKey:null})
+   status:200,contentType:'application/json',body:JSON.stringify({enabled:true,siteKey:'1x00000000000000000000AA'})
+  }));
+  await page.route('https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit',r=>r.fulfill({
+   status:200,contentType:'application/javascript',
+   body:"window.turnstile={render:function(selector,opts){opts.callback('token-simulado')}}"
   }));
   await page.route('**/api/auth?action=free-signup',async route=>{
    const body=route.request().postDataJSON();requests.push(body);
@@ -88,6 +92,7 @@ try{
   assert.equal(requests.at(-1).termsAccepted,true);
   assert.equal(requests.at(-1).termsVersion,'terms-2026-10-30-v1');
   assert.equal(requests.at(-1).action,'request');
+  assert.equal(requests.at(-1).turnstileToken,'token-simulado','Captcha deve acompanhar solicitação no navegador');
   assert.equal(requests.at(-1).marketingOptIn,device.label==='celular');
   assert.equal(requests.at(-1).emailMarketingOptIn,device.label==='desktop');
   assert.equal(requests.at(-1).whatsapp,device.label==='celular'?'(85) 99999-9999':'');
@@ -95,6 +100,29 @@ try{
   assert.equal(overflows,false,'Horizontal overflow at '+device.label);
   await page.close();
  }
+ const captchaError=await browser.newPage();
+ const blockedRequests=[];
+ await captchaError.route('**/api/auth?action=free-signup-status',r=>r.fulfill({
+  status:200,contentType:'application/json',body:JSON.stringify({enabled:true,siteKey:'1x00000000000000000000AA'})
+ }));
+ await captchaError.route('https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit',r=>r.fulfill({
+  status:200,contentType:'application/javascript',
+  body:"window.turnstile={render:function(selector,opts){opts['error-callback']('110200')}}"
+ }));
+ await captchaError.route('**/api/auth?action=free-signup',r=>{blockedRequests.push(r.request().postData());return r.fulfill({status:403,body:'{}'})});
+ await captchaError.goto(root+'/cadastro-gratuito.html');
+ await captchaError.getByText('O domínio desta página não está autorizado no Cloudflare Turnstile (110200).',{exact:false}).waitFor();
+ await captchaError.getByLabel('Seu nome').fill('Pessoa Fictícia');
+ await captchaError.getByLabel('Seu e-mail').fill('teste@example.invalid');
+ await captchaError.getByLabel('Crie uma senha (mínimo 12 caracteres)').fill('SenhaSegura1234!');
+ await captchaError.getByLabel('Confirme sua senha').fill('SenhaSegura1234!');
+ await captchaError.getByLabel(/Declaro que tenho/).check();
+ await captchaError.getByLabel(/Li e aceito os/).check();
+ await captchaError.getByRole('button',{name:'Enviar confirmação por e-mail'}).click();
+ assert.equal(blockedRequests.length,0,'Erro 110200 sem token não pode enviar cadastro');
+ await captchaError.close();
+ console.log('PASS: erro 110200 identificado no formulário e envio sem token bloqueado');
+
  // Painel de preferências: ativar/revogar email nao altera a escolha de WhatsApp.
  const pref=await browser.newPage({viewport:{width:390,height:844}});
  const preferences={marketingOptIn:true,hasWhatsapp:true,emailMarketingOptIn:false,emailNoticeVersion:'signup-email-v1-2026-10-28'};
