@@ -30,7 +30,7 @@
 
 ### Mínimas ações fora do ChatGPT
 
-1. **Titularidade e suporte:** e-mail oficial confirmado: `basecompleta.estudos@gmail.com` (não pedir novamente). Recebimento de mensagem de outra conta confirmado pelo proprietário; falta validar confirmação imediata/monitoramento contínuo e fornecer/validar dados legais em canal seguro. Nunca colar CPF/endereço/senhas em issue pública.
+1. **Titularidade e suporte:** e-mail oficial confirmado: `basecompleta.estudos@gmail.com` (não pedir novamente). Recebimento de mensagem de outra conta confirmado pelo proprietário. **O proprietário confirmou em 29/10/2026 que acompanhará o e-mail diariamente e responderá às solicitações dos alunos.** Falta validar confirmação imediata de recebimento e fornecer/validar dados legais em canal seguro. Nunca colar CPF/endereço/senhas em issue pública.
 2. **Hotmart:** confirmar sessão autenticada e configurar **um** webhook correto com os eventos comerciais necessários; confirmar descrição e parcelamento das duas ofertas. Sem sessão, ninguém deve marcar esse gate como concluído.
 3. **DNS (opcional para o primeiro lançamento):** se usar domínio próprio imediatamente, criar/ajustar no provedor DNS o A do domínio raiz para `76.76.21.21` e o CNAME `app` para `cname.vercel-dns.com.` conforme recomendações atuais da Vercel, retirando conflitos; aguardar confirmação técnica. Não comprar domínio novo nem mexer no DNS sem acesso apropriado.
 
