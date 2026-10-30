@@ -6,7 +6,9 @@ import {Script} from 'node:vm';
 const read=path=>readFileSync(new URL('../'+path,import.meta.url),'utf8');
 
 test('cadastros públicos são consultados somente com sessão administrativa',()=>{
-  const api=read('api/admin-public-signups.js');
+  const api=read('lib/admin-public-signups-handler.js'),auth=read('api/auth.js');
+  assert.match(auth,/action === 'admin-public-signups'/);
+  assert.match(auth,/handleAdminPublicSignups/);
   assert.match(api,/requireSession\(req,\['admin'\]\)/);
   assert.match(api,/req\.method!=='GET'/);
   assert.match(api,/Cache-Control','private, no-store'/);
@@ -23,7 +25,7 @@ test('painel diferencia solicitação pendente de aluno confirmado',()=>{
   const html=read('usuarios.html');
   assert.match(html,/id="cadastrosPublicos"/);
   assert.match(html,/id="publicSignups"/);
-  assert.match(html,/\/api\/admin-public-signups/);
+  assert.match(html,/\/api\/auth\?action=admin-public-signups/);
   assert.match(html,/AGUARDANDO E-MAIL/);
   assert.match(html,/LINK EXPIRADO/);
   assert.match(html,/E-MAIL CONFIRMADO/);
