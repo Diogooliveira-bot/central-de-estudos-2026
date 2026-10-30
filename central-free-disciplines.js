@@ -16,29 +16,28 @@ const getPlan=fetch('/api/plans?action=me',{cache:'no-store',credentials:'same-o
 const style=document.createElement('style');
 style.id='bc-free-unified-modules';
 style.textContent=[
-'.central-free-study{display:block!important;width:100%;padding:0!important;text-align:left!important;border:0!important;background:transparent!important;color:var(--bc-color-text,#17344a)!important}',
-'.central-free-study .bc-free-heading{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin:0 0 16px}',
-'.central-free-study .bc-free-heading h2{font:750 19px/1.4 var(--bc-font,system-ui);margin:0;color:var(--bc-color-text,#17344a)}',
-'.central-free-study .bc-free-heading p{font:400 13px/1.5 var(--bc-font,system-ui);color:var(--bc-color-text-secondary,#607686);margin:4px 0 0}',
-'.central-free-study .bc-free-plan{font:800 11px/1.4 var(--bc-font,system-ui);letter-spacing:.04em;background:var(--bc-color-surface-elevated,#edf6fb);border:1px solid var(--bc-color-border,#d9e4ec);border-radius:999px;padding:8px 11px;color:var(--bc-color-primary,#0e628a)}',
+'.central-free-study{display:block!important;width:100%;padding:0!important;text-align:left!important;border:0!important;background:transparent!important;color:var(--bc-color-text,var(--text,#17344a))!important}',
 '.central-free-study .bc-free-list{display:grid;gap:12px}',
-'.central-free-study .bc-free-module{margin:0!important;scroll-margin-top:100px;overflow:hidden}',
-'.central-free-study .bc-free-module-head{cursor:pointer}',
-'.central-free-study .bc-free-module-body{display:block!important;min-width:0}',
-'.central-free-study .bc-free-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin-bottom:16px}',
-'.central-free-study .bc-free-tab{min-width:0;min-height:52px!important;border:1px solid var(--bc-color-border,#d4e1e9)!important;border-radius:10px!important;background:var(--bc-color-surface-elevated,#f5f9fc)!important;color:var(--bc-color-text,#15364c)!important;padding:10px 7px!important;font:700 13px/1.35 var(--bc-font,system-ui)!important;cursor:pointer;white-space:normal!important}',
-'.central-free-study .bc-free-tab[aria-selected="true"]{background:var(--bc-color-primary,#0d4260)!important;color:#fff!important;border-color:var(--bc-color-primary,#0d4260)!important}',
-'.central-free-study .bc-free-lock{font-size:12px;margin-right:4px;opacity:.7}',
+'.central-free-study .bc-free-module{display:block!important;scroll-margin-top:100px;overflow:hidden}',
+'.central-free-study .bc-free-module-head{width:100%;cursor:pointer}',
+'.central-free-study .bc-free-module-head .cf-module-stat{color:var(--bc-color-text-secondary,var(--muted,#607686))}',
+'.central-free-study .bc-free-module-body{min-width:0}',
+'.central-free-study .bc-free-module:not(.open) .bc-free-module-body{display:none!important}',
+'.central-free-study .bc-free-module.open .bc-free-module-body{display:block!important}',
+'.central-free-study .bc-free-tabs{display:flex;flex-wrap:wrap;gap:8px;border-bottom:1px solid var(--bc-color-border,var(--line,#d9e4ec));padding:0 0 12px;margin:0 0 15px}',
+'.central-free-study .bc-free-tab{min-height:44px!important;min-width:0;border:1px solid var(--bc-color-border-interactive,var(--line2,#c5d8e4))!important;border-radius:9px!important;background:var(--bc-color-surface-elevated,var(--panel2,#f5f9fc))!important;color:var(--bc-color-text,var(--text,#15364c))!important;padding:9px 13px!important;font:700 13px/1.35 var(--bc-font,system-ui)!important;cursor:pointer;white-space:normal!important}',
+'.central-free-study .bc-free-tab[aria-selected="true"]{background:var(--bc-color-primary,var(--discipline-accent,#0d4260))!important;color:#fff!important;border-color:var(--bc-color-primary,var(--discipline-accent,#0d4260))!important}',
+'.central-free-study .bc-free-lock{font-size:12px;margin-right:4px;opacity:.8}',
 '.central-free-study .bc-free-panel{min-width:0;scroll-margin-top:90px}',
-'.central-free-study .bc-free-reading,.central-free-study .bc-free-lock-panel{background:var(--bc-color-surface-elevated,#f7fafc);border:1px solid var(--bc-color-border,#d9e4ec);border-radius:12px;padding:18px}',
-'.central-free-study .bc-free-reading h4{font:750 17px/1.45 var(--bc-font,system-ui);margin:0 0 14px;color:var(--bc-color-text,#16364d)}',
-'.central-free-study .bc-free-reading-text{white-space:pre-wrap;overflow-wrap:anywhere;font:400 var(--central-reading-font-large,16px)/1.8 var(--bc-font,system-ui);color:var(--bc-color-text,#17344a)}',
-'.central-free-study .bc-free-hint{font:400 13px/1.6 var(--bc-font,system-ui);color:var(--bc-color-text-secondary,#617585);margin:0}',
-'.central-free-study .bc-free-lock-panel strong{font:750 16px/1.5 var(--bc-font,system-ui);color:var(--bc-color-text,#17344a)}',
+'.central-free-study .bc-free-reading,.central-free-study .bc-free-lock-panel{background:var(--bc-color-surface-elevated,var(--panel2,#f7fafc));border:1px solid var(--bc-color-border,var(--line,#d9e4ec));border-radius:11px;padding:18px}',
+'.central-free-study .bc-free-reading h4{font:750 17px/1.45 var(--bc-font,system-ui);margin:0 0 14px;color:var(--bc-color-text,var(--text,#16364d))}',
+'.central-free-study .bc-free-reading-text{white-space:pre-wrap;overflow-wrap:anywhere;font:400 var(--central-reading-font-large,16px)/1.8 var(--bc-font,system-ui);color:var(--bc-color-text,var(--text,#17344a))}',
+'.central-free-study .bc-free-hint{font:400 13px/1.6 var(--bc-font,system-ui);color:var(--bc-color-text-secondary,var(--muted,#617585));margin:0}',
+'.central-free-study .bc-free-lock-panel strong{font:750 16px/1.5 var(--bc-font,system-ui);color:var(--bc-color-text,var(--text,#17344a))}',
 '.central-free-study .bc-free-lock-panel p{margin:7px 0 12px;line-height:1.55}',
-'.central-free-study .bc-free-upgrade{display:inline-block;font:700 13px/1.4 var(--bc-font,system-ui);color:var(--bc-color-primary,#136a94);text-decoration:underline;text-underline-offset:3px}',
-'.central-free-study :is(button,a):focus-visible{outline:3px solid var(--bc-color-accent,#1886c5)!important;outline-offset:2px}',
-'@media(max-width:600px){.central-free-study .bc-free-heading h2{font-size:17px}.central-free-study .bc-free-tabs{gap:6px}.central-free-study .bc-free-tab{font-size:12px!important;padding:9px 4px!important}.central-free-study .bc-free-reading,.central-free-study .bc-free-lock-panel{padding:13px}}'
+'.central-free-study .bc-free-upgrade{display:inline-block;font:700 13px/1.4 var(--bc-font,system-ui);color:var(--bc-color-primary,var(--discipline-accent,#136a94));text-decoration:underline;text-underline-offset:3px}',
+'.central-free-study :is(button,a):focus-visible{outline:3px solid var(--bc-color-accent,var(--discipline-accent,#1886c5))!important;outline-offset:2px}',
+'@media(max-width:680px){.central-free-study .bc-free-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}.central-free-study .bc-free-tab{padding:9px 4px!important;font-size:12px!important}.central-free-study .bc-free-reading,.central-free-study .bc-free-lock-panel{padding:13px}.central-free-study .bc-free-module-head .cf-module-stat{display:none}}'
 ].join('');
 document.head.appendChild(style);
 function titleFor(topic,num){
@@ -46,7 +45,7 @@ function titleFor(topic,num){
  return raw.replace(/^(?:M\s*0*\d{1,2}[\s.:-]+|0*\d{1,2}[\s.:-]+)/i,'').trim()||raw;
 }
 function tabMarkup(id,tab,caption,locked){
- return '<button type="button" class="bc-free-tab" role="tab" id="bc-free-tab-'+id+'-'+tab+'" aria-selected="'+((tabs[id]||'summary')===tab)+'" aria-controls="bc-free-panel-'+id+'" onclick="return CentralFreeReader.tab(\''+id+'\',\''+tab+'\')">'+(locked?'<span class="bc-free-lock" aria-hidden="true">🔒</span>':'')+caption+'</button>';
+ return '<button type="button" class="ptn-tab bc-free-tab" role="tab" id="bc-free-tab-'+id+'-'+tab+'" aria-selected="'+((tabs[id]||'summary')===tab)+'" aria-controls="bc-free-panel-'+id+'" onclick="return CentralFreeReader.tab(\''+id+'\',\''+tab+'\')">'+(locked?'<span class="bc-free-lock" aria-hidden="true">🔒</span>':'')+caption+'</button>';
 }
 function panelMarkup(id,n){
  const active=tabs[id]||'summary',state=cache[id+':'+n],wait=loading.has(id+':'+n);
@@ -60,30 +59,43 @@ function panelMarkup(id,n){
  }else if(state?.error){
   content='<p role="alert" class="bc-free-hint">'+escape(state.error)+'</p>';
  }else if(state){
-  content='<article class="bc-free-reading"><h4>'+escape(state.title)+'</h4><div class="bc-free-reading-text">'+escape(state.summary)+'</div></article>';
+  content='<article class="ptn-content bc-free-reading"><h4>'+escape(state.title)+'</h4><div class="bc-free-reading-text">'+escape(state.summary)+'</div></article>';
  }else{
   content='<p class="bc-free-hint">Preparando o resumo deste módulo...</p>';
  }
- return '<div class="ds-module-body bc-free-module-body" id="bc-free-body-'+id+'-'+n+'"><div class="bc-free-tabs" role="tablist" aria-label="Recursos do módulo M'+String(n).padStart(2,'0')+'">'+
+ return '<div class="cf-module-body ptn-module-body bc-free-module-body" id="bc-free-body-'+id+'-'+n+'"><div class="ptn-tabs bc-free-tabs" role="tablist" aria-label="Recursos do módulo M'+String(n).padStart(2,'0')+'">'+
  tabMarkup(id,'summary','Resumo',false)+tabMarkup(id,'complete','Completo',true)+tabMarkup(id,'infographic','Infográfico',true)+
  '</div><div class="bc-free-panel" role="tabpanel" id="bc-free-panel-'+id+'" aria-labelledby="bc-free-tab-'+id+'-'+active+'">'+content+'</div></div>';
 }
 function placeholder(subject){
  if(!opened.has(subject.id)||!isFree())return originalPlaceholder(subject);
- const id=subject.id,n=selection[id]||1,topics=subject.topics||[];
+ const id=subject.id,n=selection[id]||0,topics=subject.topics||[];
  const cards=Array.from({length:counts[id]},(_,i)=>{
   const num=i+1,active=num===n,title=titleFor(topics[i],num);
-  return '<article class="ds-module bc-free-module'+(active?' open':'')+'"><button type="button" class="ds-module-head bc-free-module-head" aria-expanded="'+active+'" aria-controls="bc-free-body-'+id+'-'+num+'" onclick="return CentralFreeReader.module(\''+id+'\','+num+')"><span class="civil-module-num">M'+String(num).padStart(2,'0')+'</span><span class="civil-module-title">'+escape(title)+'</span><span class="civil-module-state">Resumo disponível</span><span class="chev" aria-hidden="true">'+(active?'▴':'▾')+'</span></button>'+(active?panelMarkup(id,num):'')+'</article>';
+  return '<section class="cf-module bc-free-module'+(active?' open':'')+'" data-bc-free-module="'+id+'-'+num+'">'+
+   '<button type="button" class="cf-module-head bc-free-module-head" aria-expanded="'+active+'" aria-controls="bc-free-body-'+id+'-'+num+'" onclick="return CentralFreeReader.module(\''+id+'\','+num+')">'+
+   '<span class="cf-module-no">MÓDULO '+String(num).padStart(2,'0')+'</span>'+
+   '<span class="cf-module-title">'+escape(title)+'</span>'+
+   '<span class="cf-module-stat">'+(active?'Resumo aberto':'Resumo disponível')+'</span>'+
+   '<span class="chev" aria-hidden="true">⌄</span></button>'+
+   (active?panelMarkup(id,num):'<div class="cf-module-body ptn-module-body bc-free-module-body" id="bc-free-body-'+id+'-'+num+'" hidden></div>')+
+   '</section>';
  }).join('');
- return '<section class="central-discipline-loading central-free-study" aria-label="Módulos de '+escape(names[id])+'"><header class="bc-free-heading"><div><h2>'+escape(names[id])+'</h2><p>Escolha um módulo e utilize a aba Resumo para estudar.</p></div><span class="bc-free-plan">PLANO GRATUITO</span></header><div class="bc-free-list">'+cards+'</div></section>';
+ // Mesmo invólucro, cabeçalhos, expansão e tipografia do Português nativo.
+ return '<section class="central-discipline-loading ptn-master central-free-study" aria-label="Módulos de '+escape(names[id])+'"><div class="cf-modules bc-free-list">'+cards+'</div></section>';
 }
 loader.placeholder=placeholder;
 function refresh(){try{g.renderSubjects?.();g.renderDisciplineGrid?.()}catch(e){console.warn('[FreeReader] Render',e)}}
 function freeOpen(id){
- opened.add(id);selection[id]??=1;tabs[id]??='summary';
+ opened.add(id);
+ if(!(id in selection)){
+  const saved=Number(localStorage.getItem('central-v6:free-module:'+id));
+  selection[id]=Number.isInteger(saved)&&saved>0&&saved<=counts[id]?saved:0;
+ }
+ tabs[id]??='summary';
  g.openHome?.();localStorage.setItem('central-v6:open:'+id,'1');refresh();
  requestAnimationFrame(()=>document.querySelector('.subject[data-id="'+id+'"]')?.scrollIntoView({block:'start'}));
- module(id,selection[id],true);
+ if(selection[id])module(id,selection[id],true,true);
  return false;
 }
 loader.open=function(id,after){
@@ -131,10 +143,14 @@ async function read(id,n){
  if(!String(summary||'').trim())throw Error('Resumo ainda não cadastrado para este módulo.');
  return {title:record.title||'Módulo '+n,summary};
 }
-async function module(id,n,silent=false){
+async function module(id,n,silent=false,restore=false){
  if(!isFree()||!counts[id]||!Number.isInteger(n)||n<1||n>counts[id])return false;
+ if(!restore&&selection[id]===n){
+  selection[id]=0;localStorage.removeItem('central-v6:free-module:'+id);refresh();return false;
+ }
  if(selection[id]!==n)tabs[id]='summary';
- selection[id]=n;const key=id+':'+n;
+ selection[id]=n;localStorage.setItem('central-v6:free-module:'+id,String(n));
+ const key=id+':'+n;
  if(!cache[key]&&!loading.has(key)){
   loading.add(key);refresh();
   try{cache[key]=await read(id,n)}catch(e){cache[key]={error:e.message||'Não foi possível abrir o resumo.'}}
@@ -147,7 +163,7 @@ async function module(id,n,silent=false){
 function tab(id,value){
  if(!isFree()||!opened.has(id)||!counts[id]||!['summary','complete','infographic'].includes(value))return false;
  tabs[id]=value;refresh();
- if(value==='summary'&&!cache[id+':'+selection[id]])module(id,selection[id],true);
+ if(value==='summary'&&selection[id]&&!cache[id+':'+selection[id]])module(id,selection[id],true,true);
  return false;
 }
 g.CentralFreeReader={module,tab,isFree,isOpen:id=>isFree()&&opened.has(id)};
