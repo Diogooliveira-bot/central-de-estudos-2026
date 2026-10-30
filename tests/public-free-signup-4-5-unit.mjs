@@ -75,7 +75,7 @@ test('recusa solicitações cross-site e contas sem senha forte sem banco',async
 test('maioridade e aceite de Termos sao obrigatorios no backend antes de SQL e e-mail',async()=>{
  const {handler,calls,sent}=setup();
  const base={action:'request',name:'Pessoa Fictícia',email:'ficticio@example.invalid',password:'Senhacom12ouMais@123'};
- for(const overrides of [{ageConfirmed:false},{termsAccepted:false},{termsVersion:'versao-antiga'},{ageConfirmed:'true'},{termsAccepted:'true'}]){
+ for(const overrides of [{ageConfirmed:false},{termsAccepted:false},{termsVersion:'versao-antiga'},{termsVersion:'terms-2026-10-30-v1'},{ageConfirmed:'true'},{termsAccepted:'true'}]){
   const out=res();await handler(req({...base,...overrides}),out);
   assert.ok([400,409].includes(out.statusCode));
  }
@@ -410,7 +410,9 @@ test('publicacao legal permanece bloqueada ate versao final coordenada e servico
  assert.doesNotMatch(FREE_SIGNUP_TERMS_VERSION,/draft|minuta|pre[-_]?launch/i);
  for(const html of [terms,privacy,cookies]){
    assert.match(html,/noindex,nofollow,noarchive/);
-   assert.match(html,/Texto consolidado para lançamento, ainda não liberado para contratação/);
+   assert.match(html,/Cadastro gratuito disponível\. Contratação Premium ainda não aberta\./);
+   assert.ok(html.includes(FREE_SIGNUP_TERMS_VERSION),'Página legal deve exibir a versão vigente do aceite');
+   assert.doesNotMatch(html,/pré-lançamento|ainda não liberado|permanecem desabilitados/i);
    assert.match(html,/basecompleta\.estudos@gmail\.com/);
  }
  assert.match(terms,/R\$ 97,00 por seis meses/);
