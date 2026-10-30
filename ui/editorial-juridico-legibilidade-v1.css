@@ -1,0 +1,166 @@
+
+/* BASE COMPLETA · Revisão editorial dos leitores jurídicos
+   CSS exclusivamente de apresentação. Não modifica lei, questões, progresso,
+   imagens, marcações ou a estrutura de módulos. */
+html.bc-ui-v1 :is(
+ .bc-native-reader-overlay .bc-native-article,
+ .cf-native-reader article,
+ .cv-reader-content,
+ .cv-reader article,
+ .cpc-apostila-content,
+ .cpc-apostila-topic,
+ .cpp-source,
+ .ptn-session-body,
+ .pen-theory-scroll article,
+ .pen-theory-scroll main,
+ .central-reading-active-topic .ct-body,
+ .central-reading-active-topic .cf-theory-text,
+ .adm-native-content,
+ .bc-universal-sheet
+){
+ box-sizing:border-box;
+ min-width:0;
+ max-width:100%;
+ overflow-wrap:break-word;
+ word-break:normal;
+ hyphens:auto;
+}
+html.bc-ui-v1 :is(
+ .bc-native-reader-overlay .bc-native-article,
+ .cf-native-reader article,
+ .cv-reader-content,
+ .cv-reader article,
+ .cpc-apostila-content,
+ .cpc-apostila-topic,
+ .cpp-source,
+ .ptn-session-body,
+ .pen-theory-scroll article,
+ .pen-theory-scroll main,
+ .central-reading-active-topic .ct-body,
+ .central-reading-active-topic .cf-theory-text,
+ .adm-native-content,
+ .bc-universal-sheet
+) :is(p,li,dd,dt,blockquote){
+ text-align:justify;
+ text-align-last:start;
+ text-justify:inter-word;
+ hyphens:auto;
+ word-break:normal;
+ overflow-wrap:break-word;
+ line-height:1.68;
+}
+/* Textos importados possuem quebras de linha editoriais no meio da frase.
+   Espaços/CR/LF passam a renderizar como espaços, sem alterar texto-fonte.
+   Preservar PRE, fórmulas, citações com layout, tabelas e títulos. */
+html.bc-ui-v1 .bc-universal-projection :is(p,li){
+ white-space:normal!important;
+}
+html.bc-ui-v1 .bc-universal-sheet p,
+html.bc-ui-v1 .bc-native-article p,
+html.bc-ui-v1 .cf-native-reader article p,
+html.bc-ui-v1 .cv-reader-content p,
+html.bc-ui-v1 .cpc-apostila-content p,
+html.bc-ui-v1 .cpp-source p,
+html.bc-ui-v1 .adm-native-content p{
+ white-space:normal!important;
+}
+html.bc-ui-v1 :is(
+ .bc-native-reader-overlay .bc-native-article,
+ .cf-native-reader article,.cv-reader-content,
+ .cpc-apostila-content,.cpp-source,.pen-theory-scroll
+) :is(h1,h2,h3,h4,caption,th,td,button,label,summary){
+ text-align:start;
+ text-align-last:auto;
+}
+html.bc-ui-v1 .bc-universal-sheet :is(h1,h2,h3,h4){
+ text-wrap:pretty;
+ word-break:normal;
+ hyphens:auto;
+}
+/* Tabelas ficam tabelas, com linhas e colunas preservadas.
+   Deslizar horizontalmente é mais legível do que quebrar cada palavra. */
+html.bc-ui-v1 .bc-editorial-table-scroll,
+html.bc-ui-v1 :is(
+ .adm-table-scroll,.bc-native-table-wrap,.table-responsive,
+ .table-scroll,.table-wrap,.cpc-table-wrap,.cv-table-wrap,
+ .pen-m3-table,.adm-m2-table-wrap,.adm-m3-table-wrap
+){
+ display:block;
+ width:100%;
+ max-width:100%;
+ min-width:0;
+ overflow-x:auto!important;
+ overscroll-behavior-inline:contain;
+ -webkit-overflow-scrolling:touch;
+ scrollbar-gutter:stable;
+ border-radius:9px;
+}
+html.bc-ui-v1 .bc-editorial-table-scroll{
+ margin:1.2em 0;
+ border:1px solid var(--bc-universal-line,#dbe1e5);
+ background:var(--bc-reading-paper,#fff);
+}
+html.bc-ui-v1 .bc-editorial-table-scroll>table{
+ display:table!important;
+ width:max-content!important;
+ min-width:100%;
+ max-width:none!important;
+ overflow:visible!important;
+ table-layout:auto!important;
+ border-collapse:collapse;
+ margin:0!important;
+ font-family:system-ui,sans-serif;
+ font-size:clamp(12px,.85em,14px);
+ line-height:1.5;
+}
+html.bc-ui-v1 .bc-editorial-table-scroll>table :is(th,td){
+ box-sizing:border-box;
+ min-width:clamp(112px,19vw,172px);
+ max-width:42ch;
+ padding:10px 12px;
+ vertical-align:top;
+ text-align:start!important;
+ text-align-last:auto!important;
+ white-space:normal!important;
+ overflow-wrap:break-word!important;
+ word-break:normal!important;
+ hyphens:auto;
+ border:1px solid var(--bc-universal-line,#dbe1e5);
+}
+html.bc-ui-v1 .bc-editorial-table-scroll>table th{
+ font-weight:700;
+ background:var(--bc-universal-inset,#edf2f3);
+}
+html.bc-ui-v1 .bc-editorial-table-scroll>table tbody tr:nth-child(even){
+ background:color-mix(in srgb,var(--bc-universal-inset,#edf2f3) 38%,white);
+}
+/* Quadros tabulares de texto puro: nunca converter células em parágrafos. */
+html.bc-ui-v1 .bc-universal-sheet pre.bc-editorial-raw-table{
+ box-sizing:border-box;display:block;
+ max-width:100%;width:100%;
+ overflow-x:auto!important;
+ white-space:pre!important;
+ overflow-wrap:normal!important;
+ word-break:normal!important;
+ hyphens:none!important;
+ font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+ font-size:clamp(11px,.8em,13px);
+ line-height:1.55;
+}
+/* Nada de colunas comprimidas no celular/tablet. */
+@media(max-width:760px){
+ html.bc-ui-v1 :is(
+  .bc-native-reader-overlay .bc-native-article,
+  .cf-native-reader article,.cv-reader-content,
+  .cpc-apostila-content,.cpp-source,.adm-native-content
+ ){
+  max-width:100%;
+ }
+ html.bc-ui-v1 .bc-editorial-table-scroll{margin-inline:0}
+ html.bc-ui-v1 .bc-editorial-table-scroll>table{
+  font-size:12px;
+ }
+ html.bc-ui-v1 .bc-editorial-table-scroll>table :is(th,td){
+  min-width:125px;padding:9px 10px;line-height:1.52;
+ }
+}
