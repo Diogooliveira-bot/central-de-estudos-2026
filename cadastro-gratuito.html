@@ -96,7 +96,7 @@ var p=document.getElementById('password').value,c=document.getElementById('confi
 if(p!==c){message('As senhas não coincidem.','bad');return}
 btn.disabled=true;message('Preparando confirmação...');
 try{
-var x=await post({action:'request',name:document.getElementById('name').value,email:document.getElementById('email').value,password:p,whatsapp:document.getElementById('whatsapp').value,ageConfirmed:document.getElementById('ageConfirmed').checked,termsAccepted:document.getElementById('termsAccepted').checked,termsVersion:'v24-draft-2026-10-28',marketingOptIn:document.getElementById('marketingOptIn').checked,emailMarketingOptIn:document.getElementById('emailMarketingOptIn').checked,turnstileToken:captchaToken});
+var x=await post({action:'request',name:document.getElementById('name').value,email:document.getElementById('email').value,password:p,whatsapp:document.getElementById('whatsapp').value,ageConfirmed:document.getElementById('ageConfirmed').checked,termsAccepted:document.getElementById('termsAccepted').checked,termsVersion:'terms-2026-10-30-v1',marketingOptIn:document.getElementById('marketingOptIn').checked,emailMarketingOptIn:document.getElementById('emailMarketingOptIn').checked,turnstileToken:captchaToken});
 form.hidden=true;message(x.message||'Confira seu e-mail.','good');
 }catch(err){message(err.message,'bad');btn.disabled=false}
 });
