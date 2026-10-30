@@ -17,7 +17,7 @@ import {
   verifyPassword,
 } from '../lib/auth.js';
 import handleInviteAction from '../lib/invite-handler.js';
-import handleFreeSignup, {publicFreeSignupReady} from '../lib/free-signup-handler.js';
+import handleFreeSignup, {freeSignupWhatsappEnabled,publicFreeSignupReady} from '../lib/free-signup-handler.js';
 import handleFreeSignupContactPreferences from '../lib/free-signup-contact-preferences.js';
 import {signupCaptchaConfigured} from '../lib/free-signup-security.js';
 import handlePasswordReset from '../lib/password-reset.js';
@@ -195,6 +195,7 @@ export default async function handler(req, res) {
       enabled: publicFreeSignupReady(),
       siteKey: publicFreeSignupReady() && signupCaptchaConfigured()
         ? String(process.env.BC_SIGNUP_TURNSTILE_SITE_KEY) : null,
+      whatsapp: freeSignupWhatsappEnabled(),
     });
     if (action.startsWith('invite-')) return await handleInviteAction(req, res, action.slice('invite-'.length));
     if (action.startsWith('password-reset-')) return await handlePasswordReset(req, res, action.slice('password-reset-'.length));

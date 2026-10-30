@@ -57,7 +57,7 @@ try{
  for(const device of [{label:'desktop',width:1366,height:768},{label:'celular',width:390,height:844}]){
   const page=await browser.newPage({viewport:{width:device.width,height:device.height}});
   await page.route('**/api/auth?action=free-signup-status',r=>r.fulfill({
-   status:200,contentType:'application/json',body:JSON.stringify({enabled:true,siteKey:'1x00000000000000000000AA'})
+   status:200,contentType:'application/json',body:JSON.stringify({enabled:true,siteKey:'1x00000000000000000000AA',whatsapp:true})
   }));
   await page.route('https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit',r=>r.fulfill({
    status:200,contentType:'application/javascript',
@@ -103,7 +103,7 @@ try{
  const captchaError=await browser.newPage();
  const blockedRequests=[];
  await captchaError.route('**/api/auth?action=free-signup-status',r=>r.fulfill({
-  status:200,contentType:'application/json',body:JSON.stringify({enabled:true,siteKey:'1x00000000000000000000AA'})
+  status:200,contentType:'application/json',body:JSON.stringify({enabled:true,siteKey:'1x00000000000000000000AA',whatsapp:true})
  }));
  await captchaError.route('https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit',r=>r.fulfill({
   status:200,contentType:'application/javascript',
@@ -122,6 +122,19 @@ try{
  assert.equal(blockedRequests.length,0,'Erro 110200 sem token não pode enviar cadastro');
  await captchaError.close();
  console.log('PASS: erro 110200 identificado no formulário e envio sem token bloqueado');
+ const noWhatsapp=await browser.newPage();
+ await noWhatsapp.route('**/api/auth?action=free-signup-status',r=>r.fulfill({
+  status:200,contentType:'application/json',body:JSON.stringify({enabled:true,siteKey:'1x00000000000000000000AA',whatsapp:false})
+ }));
+ await noWhatsapp.route('https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit',r=>r.fulfill({status:200,contentType:'application/javascript',body:'window.turnstile={render:function(){}}'}));
+ await noWhatsapp.goto(root+'/cadastro-gratuito.html');
+ await noWhatsapp.waitForSelector('#register:not([hidden])');
+ assert.equal(await noWhatsapp.isVisible('#whatsapp'),false,'WhatsApp deve ficar oculto sem chave PII');
+ assert.equal(await noWhatsapp.isVisible('#marketingOptIn'),false,'Opt-in WhatsApp deve ficar oculto sem chave PII');
+ assert.equal(await noWhatsapp.isVisible('#emailMarketingOptIn'),true,'Opt-in de e-mail permanece disponível');
+ assert.equal(await noWhatsapp.isVisible('#name'),true);
+ await noWhatsapp.close();
+ console.log('PASS: sem chave PII o cadastro abre sem campo WhatsApp e mantém opt-in de e-mail');
 
  // Painel de preferências: ativar/revogar email nao altera a escolha de WhatsApp.
  const pref=await browser.newPage({viewport:{width:390,height:844}});

@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import {createFreeSignupHandler,freeSignupEnabled,publicFreeSignupReady,FREE_SIGNUP_TERMS_VERSION} from '../lib/free-signup-handler.js';
+import {freeSignupWhatsappEnabled,createFreeSignupHandler,freeSignupEnabled,publicFreeSignupReady,FREE_SIGNUP_TERMS_VERSION} from '../lib/free-signup-handler.js';
 import {signupCaptchaConfigured,verifySignupBot,safeSignupBody,verifiedClientIp} from '../lib/free-signup-security.js';
 import crypto from 'node:crypto';
 import {normalizeWhatsapp,protectWhatsapp,signupPiiKeyConfigured,EMAIL_MARKETING_NOTICE_VERSION} from '../lib/free-signup-contact.js';
@@ -54,6 +54,12 @@ test('somente em Preview isolada e com sinal explicito; Production bloqueada',()
   assert.equal(freeSignupEnabled(syntheticRealPair),true);
   assert.equal(freeSignupEnabled({...syntheticRealPair,BC_SIGNUP_PRIVACY_APPROVED:'NO'}),false);
   assert.equal(freeSignupEnabled({...syntheticRealPair,BC_SIGNUP_TERMS_FINAL_APPROVED:'NO'}),false);
+  // WhatsApp fora do lançamento: cadastro abre sem chave PII, mas o campo fica desativado.
+  const withoutPii={...syntheticRealPair};delete withoutPii.BC_SIGNUP_PII_KEY;
+  assert.equal(freeSignupEnabled(withoutPii),true);
+  assert.equal(freeSignupWhatsappEnabled(withoutPii),false);
+  assert.equal(freeSignupWhatsappEnabled({...syntheticRealPair,BC_SIGNUP_PII_KEY:'66'.repeat(32)}),true);
+  assert.equal(freeSignupEnabled({...syntheticRealPair,BC_PUBLIC_FREE_SIGNUP_ENABLED:'false'}),false);
 });
 test('botão público não aparece sem SMTP, sessão e Neon, mesmo com flag habilitada',()=>{
  const ready={...env,DATABASE_URL:'postgresql://placeholder.invalid/nao-conectar'};
