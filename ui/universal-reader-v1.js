@@ -47,9 +47,9 @@
     // e quebras originais: o CSS oferece uma área de rolagem horizontal.
     const populated = lines.map(line => line.trim()).filter(Boolean);
     const columnLines = populated.filter(line =>
-      (line.match(/\\|/g)||[]).length >= 2 ||
-      /\\t\\S/.test(line) ||
-      /\\S {3,}\\S {3,}\\S/.test(line)
+      line.split('|').length >= 3 ||
+      line.includes(String.fromCharCode(9)) ||
+      line.split('   ').length >= 3
     );
     if (populated.length >= 4 && columnLines.length / populated.length >= .4) {
       pre.classList.add('bc-editorial-raw-table');
