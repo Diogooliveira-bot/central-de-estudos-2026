@@ -113,10 +113,13 @@ function waitForNative(id){return new Promise((resolve,reject)=>{const start=Dat
 function resumeOffline(){if(!Object.values(states).some(state=>state.promise))navigator.serviceWorker?.controller?.postMessage({type:'RESUME_OFFLINE'})}
 function refresh(){try{global.renderAll?.();global.renderDisciplineGrid?.()}catch(error){console.error('[Central discipline render]',error)}}
 function filesFor(id){
- // A apresentação ADM já carregada no bootstrap usa apostilas isoladas sob demanda.
- // Não repita o pacote legado nem reinstale a camada e seus observadores.
- if(id==='adm' && global.ADM_NATIVE_INDEX?.modules && global.AdmNative)return [];
- const files=(groups[id]||[]).concat(global.CentralTheoryFiles?.[id]||[]);
+ // O visual aprovado já está no bootstrap; conservar todo o material legado,
+ // sem executar novamente os três scripts de inicialização da camada ADM.
+ const files=(groups[id]||[]).concat(global.CentralTheoryFiles?.[id]||[]).filter(src=>{
+  if(id!=='adm'||!global.ADM_NATIVE_INDEX?.modules||!global.AdmNative)return true;
+  const path=new URL(src,location.origin).pathname;
+  return !/^\/(?:content\/adm\/adm-(?:native|session)-index|ui\/adm-native-layer)\.js$/i.test(path);
+ });
  const seen=new Set();return files.filter(src=>{const path=new URL(src,location.origin).pathname;if(seen.has(path)||executed.has(path))return false;seen.add(path);return true});
 }
 function load(id){
