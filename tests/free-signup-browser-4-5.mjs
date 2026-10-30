@@ -72,8 +72,8 @@ try{
   await page.goto(root+'/cadastro-gratuito.html');
   await page.getByLabel('Seu nome').fill('Pessoa Fictícia');
   await page.getByLabel('Seu e-mail').fill('aluno@example.invalid');
-  await page.getByLabel('Crie uma senha (mínimo 12 caracteres)').fill('SenhaSegura1234!');
-  await page.getByLabel('Confirme sua senha').fill('SenhaSegura1234!');
+  await page.getByLabel('Crie uma senha (mínimo 8 caracteres)').fill('A1!bcdef');
+  await page.getByLabel('Confirme sua senha').fill('A1!bcdef');
   if(device.label==='celular'){
     await page.getByLabel('WhatsApp (opcional)').fill('(85) 99999-9999');
     await page.getByLabel(/Quero receber novidades e ofertas pelo WhatsApp/).check();
@@ -114,7 +114,7 @@ try{
  await captchaError.getByText('O domínio desta página não está autorizado no Cloudflare Turnstile (110200).',{exact:false}).waitFor();
  await captchaError.getByLabel('Seu nome').fill('Pessoa Fictícia');
  await captchaError.getByLabel('Seu e-mail').fill('teste@example.invalid');
- await captchaError.getByLabel('Crie uma senha (mínimo 12 caracteres)').fill('SenhaSegura1234!');
+ await captchaError.getByLabel('Crie uma senha (mínimo 8 caracteres)').fill('SenhaSegura1234!');
  await captchaError.getByLabel('Confirme sua senha').fill('SenhaSegura1234!');
  await captchaError.getByLabel(/Declaro que tenho/).check();
  await captchaError.getByLabel(/Li e aceito os/).check();
