@@ -83,6 +83,42 @@ try{
         failed:attempts.filter(x=>!x.success).slice(0,8)}));
       assert.equal(attempts.length,40,'20 módulos administrativos devem abrir em dois modos');
       assert.equal(attempts.filter(x=>x.success).length,40,'todas as teorias administrativas devem abrir');
+
+      const editorial=await page.evaluate(()=>{
+        const box=document.createElement('div');
+        box.className='bc-native-reader-overlay';
+        box.innerHTML='<article class="bc-native-article">'+
+          '<p id="bc-editorial-paragraph">Os requisitos legais devem ser analisados\\nconjuntamente antes de concluir o caso.</p>'+
+          '<table id="bc-editorial-test-table"><thead><tr><th>Regra</th><th>Exceção</th></tr></thead>'+
+          '<tbody><tr><td>Regra geral prevista em lei</td><td>Hipótese prevista na norma.</td></tr></tbody></table>'+
+          '<pre id="bc-editorial-test-raw"></pre><pre id="bc-editorial-test-prose"></pre></article>';
+        document.body.appendChild(box);
+        const raw=box.querySelector('#bc-editorial-test-raw');
+        const prose=box.querySelector('#bc-editorial-test-prose');
+        raw.textContent=Array.from({length:14},(_,i)=>
+          'Item '+i+' | Regra aplicável em cada hipótese | Efeito jurídico da ocorrência').join(String.fromCharCode(10));
+        prose.textContent=Array.from({length:14},(_,i)=>
+          'O conteúdo do parágrafo '+i+' demonstra que o leitor deve respeitar o texto integral.').join(String.fromCharCode(10));
+        window.CentralUniversalReader.scan(box);
+        const p=box.querySelector('#bc-editorial-paragraph');
+        const table=box.querySelector('#bc-editorial-test-table');
+        const projection=box.querySelector('.bc-universal-projection');
+        const result={css:!![...document.styleSheets].find(x=>x.href?.includes('editorial-juridico-legibilidade-v1.css')),
+          aligned:getComputedStyle(p).textAlign,paragraphWhitespace:getComputedStyle(p).whiteSpace,
+          rawPreserved:raw.dataset.bcUniversalDone==='table-preserved'&&!raw.hidden,
+          rawWhitespace:getComputedStyle(raw).whiteSpace,sourceText:raw.textContent.includes('Efeito jurídico'),
+          tableScrollable:table.parentElement.classList.contains('bc-editorial-table-scroll'),
+          tableDisplay:getComputedStyle(table).display,tableSemantics:table.rows.length===2,
+          proseProjected:!!projection,projectionWhitespace:projection?getComputedStyle(projection.querySelector('p')).whiteSpace:null};
+        box.remove();return result;
+      });
+      console.log('EDITORIAL_READABILITY',JSON.stringify(editorial));
+      assert.ok(editorial.css&&editorial.tableScrollable&&editorial.tableSemantics,'tabelas devem preservar linhas e rolagem');
+      assert.equal(editorial.tableDisplay,'table','tabelas devem preservar células e colunas reais');
+      assert.equal(editorial.aligned,'justify','texto do leitor deve ser justificado');
+      assert.equal(editorial.paragraphWhitespace,'normal','não preservar quebra manual dentro de frases');
+      assert.ok(editorial.rawPreserved&&editorial.sourceText&&editorial.rawWhitespace==='pre','quadros de texto tabular devem manter colunas');
+      assert.ok(editorial.proseProjected&&editorial.projectionWhitespace==='normal','parágrafos importados devem fluir sem quebra artificial');
       const otherLayouts=await page.evaluate(async()=>{
         const ids=['cf','civil','cpp','penal','cpc'],out=[];
         for(const id of ids){
