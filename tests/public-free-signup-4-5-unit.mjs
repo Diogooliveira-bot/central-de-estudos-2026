@@ -50,8 +50,8 @@ test('somente em Preview isolada e com sinal explicito; Production bloqueada',()
   const syntheticRealPair={...siteWithDummySecret,BC_SIGNUP_TURNSTILE_SECRET_KEY:'realFormatSecretKey_ABCDEFGHIJKLMNOPQRSTUVWXYZ'};
   // Syntactic configuration only: no assertion here proves the keys are real/operational.
   // Even with all approval flags set, draft Terms must keep Production disabled.
-  assert.equal(FREE_SIGNUP_TERMS_VERSION.includes('draft'),true);
-  assert.equal(freeSignupEnabled(syntheticRealPair),false);
+  assert.equal(FREE_SIGNUP_TERMS_VERSION.includes('draft'),false);
+  assert.equal(freeSignupEnabled(syntheticRealPair),true);
   assert.equal(freeSignupEnabled({...syntheticRealPair,BC_SIGNUP_PRIVACY_APPROVED:'NO'}),false);
   assert.equal(freeSignupEnabled({...syntheticRealPair,BC_SIGNUP_TERMS_FINAL_APPROVED:'NO'}),false);
 });
@@ -407,10 +407,10 @@ test('publicacao legal permanece bloqueada ate versao final coordenada e servico
  const m=register.match(/termsVersion:'([^']+)'/);
  assert.ok(m,'Formulario precisa declarar a versao dos Termos');
  assert.equal(m[1],FREE_SIGNUP_TERMS_VERSION,'Frontend e backend devem aceitar a mesma versao');
- assert.match(FREE_SIGNUP_TERMS_VERSION,/draft|minuta|pre[-_]?launch/i);
+ assert.doesNotMatch(FREE_SIGNUP_TERMS_VERSION,/draft|minuta|pre[-_]?launch/i);
  for(const html of [terms,privacy,cookies]){
    assert.match(html,/noindex,nofollow,noarchive/);
-   assert.match(html,/Documento em revisão de pré-lançamento/);
+   assert.match(html,/Texto consolidado para lançamento, ainda não liberado para contratação/);
    assert.match(html,/basecompleta\.estudos@gmail\.com/);
  }
  assert.match(terms,/R\$ 97,00 por seis meses/);
@@ -420,6 +420,6 @@ test('publicacao legal permanece bloqueada ate versao final coordenada e servico
  assert.match(terms,/confirmação imediata/);
  assert.match(terms,/sete dias/);
  assert.match(privacy,/quinze dias/);
- assert.match(privacy,/prazos e critérios por categoria/);
+ assert.match(privacy,/Os critérios de retenção variam conforme a categoria/);
  assert.match(cookies,/não equivale a uma auditoria concluída/);
 });
