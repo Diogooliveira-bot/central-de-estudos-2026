@@ -5,6 +5,9 @@ on:
       - release/cadastro-gratuito-production-20261030
     paths:
       - 'cadastro-gratuito.html'
+      - 'usuarios.html'
+      - 'api/admin-public-signups.js'
+      - 'tests/admin-public-signups-unit.mjs'
       - 'lib/free-signup-handler.js'
       - 'termos-de-uso.html'
       - 'politica-de-privacidade.html'
@@ -30,7 +33,9 @@ jobs:
       - name: Dependencias
         run: npm ci --ignore-scripts --no-audit --no-fund
       - name: Testes unitarios cadastro, protecao Premium e aceites
-        run: node --test tests/public-free-signup-4-5-unit.mjs tests/plan-access-unit.mjs
+        run: node --test tests/public-free-signup-4-5-unit.mjs tests/plan-access-unit.mjs tests/admin-public-signups-unit.mjs
+      - name: Sintaxe da API administrativa
+        run: node --check api/admin-public-signups.js
       - name: Chromium isolado
         run: npx playwright install chromium --only-shell
       - name: Browser cadastro gratuito e Turnstile simulado
