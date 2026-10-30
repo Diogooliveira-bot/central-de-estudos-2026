@@ -46,3 +46,6 @@
 - Nenhuma chave Hotmart, credencial Gmail, segredo Turnstile, CPF ou endereço residencial em GitHub/CI ou respostas públicas.
 
 **Critério final:** esta etapa fica **PRONTA PARA REVISÃO FINAL**, mas não legalmente aprovada nem publicada em Production. A aprovação dependerá da decisão explícita do proprietário após os gates restantes, especialmente dados legais, suporte, Hotmart e backup.
+
+## Aprovação dos textos em 30/10/2026
+O proprietário aprovou expressamente os três textos legais consolidados para uso no lançamento. Esta aprovação editorial não confirma dados identificatórios faltantes, atendimento operacional, auditoria de cookies ou homologação externa de cadastro/pagamentos. Manter os gates técnicos até validação e não expor CPF/endereço em GitHub.
