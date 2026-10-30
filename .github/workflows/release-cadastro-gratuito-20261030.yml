@@ -6,6 +6,8 @@ on:
     paths:
       - 'cadastro-gratuito.html'
       - 'usuarios.html'
+      - 'central-free-disciplines.js'
+      - 'tests/free-reader-unified-ui-unit.mjs'
       - 'api/auth.js'
       - 'lib/admin-public-signups-handler.js'
       - 'tests/admin-public-signups-unit.mjs'
@@ -34,7 +36,7 @@ jobs:
       - name: Dependencias
         run: npm ci --ignore-scripts --no-audit --no-fund
       - name: Testes unitarios cadastro, protecao Premium e aceites
-        run: node --test tests/public-free-signup-4-5-unit.mjs tests/plan-access-unit.mjs tests/admin-public-signups-unit.mjs
+        run: node --test tests/public-free-signup-4-5-unit.mjs tests/plan-access-unit.mjs tests/admin-public-signups-unit.mjs tests/free-reader-unified-ui-unit.mjs
       - name: Sintaxe da API administrativa
         run: node --check lib/admin-public-signups-handler.js
       - name: Chromium isolado
