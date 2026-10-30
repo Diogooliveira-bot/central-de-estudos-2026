@@ -133,13 +133,36 @@ test('nova compra envia link por e-mail e marca envio somente depois de aceito',
  assert.ok(queries[1].statement.includes('claim_sent_at=NOW()'));
  assert.match(queries[0].values[9],/^[a-f0-9]{64}$/);
 });
-test('falha de e-mail devolve 503 para reenvio pela Hotmart sem confirmar entrega',async()=>{
- let touched=0;
- const h=createHotmartWebhook({env,sqlProvider:()=>async()=>{touched++;return [{outcome:'pending_claim',should_send_email:true}]},
-   sendWelcome:async()=>{throw Error('SMTP indisponível')}});
- const r=res();const log=console.error;console.error=()=>{};
- try{await h(req(),r)}finally{console.error=log}
- assert.equal(r.statusCode,503);assert.equal(touched,1);
+test('falha de SMTP libera reserva e retry imediato envia token sem duplicar entrega',async()=>{
+ let attempts=0, released=0, confirmed=0, received=0;
+ const sql=async(chunks,...values)=>{
+   const statement=chunks.join('?');
+   if(statement.includes('central_hotmart_apply_event')){
+     received++;
+     return [{outcome:'pending_claim',should_send_email:true}];
+   }
+   if(statement.includes('SET claim_token_hash=NULL')){
+     released++;
+     assert.equal(values[0],'HP1234567890');
+     assert.match(values[1],/^[a-f0-9]{64}$/);
+     return [];
+   }
+   if(statement.includes('SET claim_sent_at=NOW()')){
+     confirmed++;
+     return [];
+   }
+   throw Error('SQL inesperado no teste');
+ };
+ const h=createHotmartWebhook({env,sqlProvider:()=>sql,
+   sendWelcome:async()=>{attempts++;if(attempts===1)throw Error('SMTP indisponível');}});
+ const first=res();const log=console.error;console.error=()=>{};
+ try{await h(req(),first)}finally{console.error=log}
+ assert.equal(first.statusCode,503);
+ assert.equal(released,1);assert.equal(confirmed,0);
+ const second=res();await h(req(),second);
+ assert.equal(second.statusCode,200);
+ assert.equal(attempts,2);assert.equal(received,2);
+ assert.equal(released,1);assert.equal(confirmed,1);
 });
 test('e-mails de ativação só usam HTTPS e evitam revelar tokens fora do destino',async()=>{
  assert.equal(hotmartSiteBase(env),'https://test-preview.vercel.app');
