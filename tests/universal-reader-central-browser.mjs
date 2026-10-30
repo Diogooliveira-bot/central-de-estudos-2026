@@ -86,10 +86,15 @@ try{
       const otherLayouts=await page.evaluate(async()=>{
         const ids=['cf','civil','cpp','penal','cpc'],out=[];
         for(const id of ids){
+          localStorage.setItem('central-v6:open:'+id,'1');
           let error=null;
           try{await window.CentralDisciplineLoader.load(id)}catch(e){error=e.message}
           try{window.renderAll?.()}catch(_){}
-          await new Promise(resolve=>setTimeout(resolve,160));
+          if(['penal','cpc'].includes(id)){
+            const m=document.querySelector('.subject[data-id="'+id+'"] .cf-module');
+            if(m&&!m.classList.contains('open'))m.querySelector('.cf-module-head')?.click();
+          }
+          await new Promise(resolve=>setTimeout(resolve,240));
           const root=document.querySelector('.subject[data-id="'+id+'"]');
           const body=root?.querySelector('.subject-body');
           const modules=body?.querySelectorAll('.cf-module,.cv-module,[data-cpp-native-module]')||[];
