@@ -421,5 +421,6 @@ test('publicacao legal permanece bloqueada ate versao final coordenada e servico
  assert.match(terms,/sete dias/);
  assert.match(privacy,/quinze dias/);
  assert.match(privacy,/Os critérios de retenção variam conforme a categoria/);
- assert.match(cookies,/não equivale a uma auditoria concluída/);
+ assert.match(cookies,/verificação técnica realizada em 30\/10\/2026/);
+ assert.match(cookies,/não há cookies opcionais que dependam de consentimento/);
 });
