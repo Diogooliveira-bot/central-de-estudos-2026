@@ -4,6 +4,15 @@
 **Responsável pelo código:** PR [#187](https://github.com/Diogooliveira-bot/central-de-estudos-2026/pull/187).  
 **Regra:** não refazer auditorias aprovadas; retestar exclusivamente as alterações e os fluxos críticos que ainda não tiveram prova hospedada. Os relatórios históricos permanecem disponíveis como evidência.
 
+## Atualização após Missão 03 — 29/10/2026 (Fortaleza)
+
+**Executado com autorização explícita do proprietário:** migrações `db/migrations/002` a `007` aplicadas, em sequência, cada uma em transação própria, na branch Neon Production `br-blue-sunset-b7jcts9i`. Confirmada a existência das sete tabelas novas, quatro funções Hotmart e constraints respectivas. Contagens produtivas antes/depois preservadas: 6 usuários, 5 assinaturas, 3 preferências, 2 registros de sincronização. Novas tabelas de pedidos, inbox, cadastro pendente e avisos de vencimento permaneceram vazias (zero registros). **Não houve publicação, concessão Premium, transações financeiras nem ativação do webhook.**
+
+A migração `001` não foi reaplicada. O backup usado como ponto de recuperação é **interno** ao Neon (`br-delicate-cake-b7dnbrbf`); ele foi validado em missão anterior em cópia isolada, mas a branch direta não possui compute ativo para consulta nesta rodada. Backup externo ainda não foi comprovado. A autorização do proprietário aceita esse risco residual enquanto as contas forem de testes; preparar backup externo antes de clientes reais.
+
+**Próxima pendência:** Missão 04 — cadastro gratuito hospedado, versões finais dos textos legais e configuração segura de Production. **Nenhum gate comercial foi liberado por esta migração.**
+
+
 ## Objetivo: apenas DUAS entregas
 
 **Entrega A — vitrine informativa, sem venda nem cadastro aberto:** já existe deployment **Production READY** do projeto de vitrine Vercel; manter checkout fechado e não prometer funcionamento de cadastro. Se desejar acesso pelo domínio próprio, corrigir DNS. A vitrine atual tem `noindex`; alterar isso somente após aprovar transparência comercial e políticas. Não fazer merge da Central por causa da vitrine.
