@@ -55,7 +55,8 @@ jobs:
           BC_RCLONE_CONFIG_B64: ${{ secrets.BC_RCLONE_CONFIG_B64 }}
           BC_GPG_PUBLIC_KEY_B64: ${{ secrets.BC_GPG_PUBLIC_KEY_B64 }}
           BC_GPG_RECIPIENT_FPR: ${{ vars.BC_GPG_RECIPIENT_FPR }}
-          PGHOST: ep-wild-math-awuoq9pk.c-12.us-east-1.aws.neon.tech
+          # Neon Production: projeto shiny-hall-19564809, branch br-blue-sunset-b7jcts9i (endpoint direto, sem pooler).
+          PGHOST: ep-curly-haze-b7ea2u0n.c-13.us-east-1.aws.neon.tech
           PGPORT: '5432'
           PGDATABASE: neondb
           PGUSER: ${{ secrets.BC_NEON_BACKUP_USER }}

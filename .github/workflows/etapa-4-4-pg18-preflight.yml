@@ -35,9 +35,9 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          HOST=ep-wild-math-awuoq9pk.c-12.us-east-1.aws.neon.tech
+          HOST=ep-curly-haze-b7ea2u0n.c-13.us-east-1.aws.neon.tech
           getent ahostsv4 "$HOST" >/dev/null
-          timeout 10 bash -c 'exec 3<>/dev/tcp/ep-wild-math-awuoq9pk.c-12.us-east-1.aws.neon.tech/5432'
+          timeout 10 bash -c 'exec 3<>/dev/tcp/ep-curly-haze-b7ea2u0n.c-13.us-east-1.aws.neon.tech/5432'
           echo 'NEON_DNS_AND_TCP_5432_OK - nenhum dado lido'
       - name: Validar clientes 18 e ferramentas de criptografia e checksum
         shell: bash

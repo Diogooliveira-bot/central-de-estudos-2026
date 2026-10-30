@@ -5,13 +5,16 @@ set -Eeuo pipefail
 set +x
 umask 077
 die(){ printf 'BACKUP_BLOQUEADO: %s\n' "$1" >&2; exit 1; }
-for key in BC_BACKUP_APPROVED BC_PRIVATE_DESTINATION_APPROVED BC_DRIVE_PREFLIGHT_VERIFIED; do
+# BC_BACKUP_APPROVED é exigida somente antes do pg_dump: sem ela, a rotina
+# valida conexão, banco e permissões (preflight) e encerra sem copiar dados.
+for key in BC_PRIVATE_DESTINATION_APPROVED BC_DRIVE_PREFLIGHT_VERIFIED; do
   [[ "$(printenv "$key" 2>/dev/null || true)" == YES ]] || die "Falta aprovação: $key"
 done
 for key in PGHOST PGPORT PGDATABASE PGUSER PGPASSWORD BC_GPG_PUBLIC_KEY_B64 BC_GPG_RECIPIENT_FPR BC_RCLONE_CONFIG_B64; do
   [[ -n "$(printenv "$key" 2>/dev/null || true)" ]] || die "Configuração privada ausente: $key"
 done
-[[ "$PGHOST" == ep-wild-math-awuoq9pk.c-12.us-east-1.aws.neon.tech ]] || die 'Endpoint não aprovado.'
+# Somente o endpoint da branch principal do Neon Production (shiny-hall-19564809).
+[[ "$PGHOST" == ep-curly-haze-b7ea2u0n.c-13.us-east-1.aws.neon.tech ]] || die 'Endpoint não aprovado.'
 [[ "$PGDATABASE" == neondb && "$PGPORT" == 5432 ]] || die 'Banco/porta inesperados.'
 [[ "$BC_GPG_RECIPIENT_FPR" =~ ^[[:xdigit:]]{40}$ ]] || die 'Fingerprint GPG inválido.'
 for tool in docker gpg sha256sum rclone python3 base64 tar mktemp; do
@@ -87,6 +90,16 @@ SELECT CASE WHEN
 THEN 'READ_ONLY_OK' ELSE 'EXCESS_PRIVILEGES' END" 2>"$tmp/role.err" || true)"
 [[ "$privilege_status" == READ_ONLY_OK ]] || die 'Usuário Neon possui privilégios de escrita, é administrador ou não foi possível avaliar: interrompido.'
 
+# Identidade do banco: tabelas da Central presentes e com contas. Só contagens, nunca dados.
+count_sql="SELECT (SELECT count(*) FROM public.central_users)||':'||(SELECT count(*) FROM public.central_user_subscriptions)"
+source_counts="$(pg18 psql --no-psqlrc -Atqc "$count_sql" 2>"$tmp/identity.err" || true)"
+[[ "$source_counts" =~ ^[1-9][0-9]*:[0-9]+$ ]] || die 'Banco conectado não contém as tabelas/contas da Central: interrompido.'
+printf 'PREFLIGHT_OK: endpoint Production, PostgreSQL 18, usuário somente leitura; contas:assinaturas=%s\n' "$source_counts"
+if [[ "$(printenv BC_BACKUP_APPROVED 2>/dev/null || true)" != YES ]]; then
+  printf 'PREFLIGHT_CONCLUIDO: BC_BACKUP_APPROVED != YES; nenhum dado copiado.\n'
+  exit 0
+fi
+
 if ! pg18 pg_dump --format=custom --blobs --compress=6 \
   --lock-wait-timeout=10000 --dbname=neondb > "$tmp/database.dump" 2>"$tmp/dump.err"; then
   die 'pg_dump falhou: não foi enviado nenhum backup. Verificar permissões em canal privado.'
@@ -111,6 +124,9 @@ if ! docker exec -i "$container" pg_restore -U postgres -d restore_check \
   --no-owner --no-privileges --exit-on-error < "$tmp/database.dump" >"$tmp/restore.out" 2>"$tmp/restore.err"; then
   die 'Restauração isolada não passou. Não liberar produção.'
 fi
+restored_counts="$(docker exec "$container" psql -U postgres -d restore_check --no-psqlrc -Atqc "$count_sql" 2>/dev/null || true)"
+[[ "$restored_counts" == "$source_counts" ]] || die 'Contagens da restauração divergem do banco de origem.'
+printf 'RESTAURACAO_ISOLADA_CONFERIDA: contas:assinaturas=%s\n' "$restored_counts"
 
 tar -C "$tmp" -cf "$tmp/backup.tar" database.dump database.dump.sha256 archive.list
 stamp="$(date -u +%Y%m%dT%H%M%SZ)"
