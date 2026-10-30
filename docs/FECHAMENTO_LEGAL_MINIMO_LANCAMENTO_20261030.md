@@ -18,7 +18,7 @@
 - [x] Consolidar editorialmente as três páginas legais sem inventar fatos ou dados pessoais.
 - [ ] Aprovar a versão pública definitiva, retirando avisos de pré-lançamento após conferir dados reais; sincronizar links com a vitrine comercial.
 - [ ] Conferir provedores efetivos, prazos/critério de retenção, transferência de dados e cookies tecnicamente, sem cláusulas fictícias.
-- [ ] Substituir **em conjunto** a versão `v24-draft-2026-10-28` do formulário e do backend por identificador final novo e idêntico; testar rejeição de aceite antigo/ausente, maioridade e opt-in comercial facultativo.
+- [x] Substituir **em conjunto** a versão `v24-draft-2026-10-28` do formulário e do backend por `terms-2026-10-30-v1`; testes de CI cobrindo versão antiga/ausente, maioridade e opt-ins separados. Homologação E2E real de cadastro na Preview concluída em 30/10/2026 (evidências abaixo).
 - [ ] Confirmar Hotmart/checkout, entrega Premium e arrependimento/reembolso por testes reais antes de receber pagamentos.
 - [ ] Confirmar backup utilizável e reversão antes de ativar acesso público; manter Neon Production intacto na homologação.
 - [ ] Publicar sem desativar artificialmente os gates do cadastro ou pagamentos; validar URL e telas autenticadas.
@@ -33,3 +33,12 @@
 - Site de vendas está em projeto Vercel separado; atualizar somente a Central não atualiza automaticamente a vitrine.
 
 **Referências jurídicas oficiais:** Decreto 7.962/2013, CDC art. 49, LGPD arts. 9, 18 e 19. Esta consolidação reduz o escopo; não substitui validação de fatos/condições de operação real.
+
+
+## Homologação operacional concluída — cadastro Gratuito na Preview (30/10/2026)
+
+- Usuário confirmou inclusão dos hostnames do widget Cloudflare Turnstile e a conclusão do fluxo real de cadastro por e-mail.
+- Preview Vercel `dpl_KLhXsZneGzmGK6AJpbrFfmMNVNmy` = `READY`, commit `16ca5cfd4ac46fb7016d4405129188421981b7db`, com **6 workflows de CI aprovados**. A URL do domínio estável da branch foi utilizada no teste.
+- Conferência SQL **somente leitura** no Neon TEST `shiny-hall-19564809`, branch `test/codex-lancamento-20261028`: registro confirmado em `central_free_signup_legal_acceptances` com `terms_version='terms-2026-10-30-v1'` em **2026-10-30T12:08:35.363Z**. Conta vinculada com `role='aluno'`, `active=true`, assinatura `plan_code='free'`, `status='active'`, com o mesmo timestamp de criação. `central_free_signup_pending` sem registros após a confirmação. Nenhum e-mail, token, senha ou credencial registrado nesta evidência.
+- O Gmail da Base Completa apresentou mensagem enviada com assunto “Confirme seu cadastro gratuito — Base Completa”. Sucesso do cadastro real, validação Turnstile e Gmail corroborados pela jornada relatada pelo proprietário e pelo estado persistido no Neon TEST.
+- **Status: cadastro gratuito operacionalmente homologado na Preview isolada.** Não significa GO para Production: dados legais exigíveis/atendimento, revisão da vitrine, Hotmart/checkout, backup/rollback e gates finais de produção permanecem separados. Production e Neon Production não foram alterados.
