@@ -107,11 +107,29 @@ try{
               cpp:body?.querySelectorAll('.adm-native-card').length||0,
               penal:body?.querySelectorAll('.bc-native-material-card').length||0,
               cpc:body?.querySelectorAll('.cpc-approved-card').length||0},
+            penalApproved:body?.querySelectorAll('.penal-approved-card').length||0,
+            unifiedCss:!!document.querySelector('link[href*="premium-juridico-unificado-v1.css"]')&&
+              [...document.styleSheets].some(x=>x.href?.includes('premium-juridico-unificado-v1.css')),
+            cppColumns:id==='cpp'?getComputedStyle(body.querySelector('.adm-native-material-grid')).gridTemplateColumns:null,
             sample:body?.textContent?.replace(/\\s+/g,' ').slice(0,200)});
         }
         return out;
       });
       console.log('OTHER_LAYOUTS',JSON.stringify(otherLayouts));
+      assert.ok(otherLayouts.every(x=>x.ready&&!x.error),'todas as disciplinas devem carregar sem erro');
+      assert.ok(otherLayouts.every(x=>x.unifiedCss),'CSS Premium deve estar ativo nas cinco disciplinas');
+      for(const [id,n] of Object.entries({cf:15,civil:15,cpp:22,penal:17,cpc:20})){
+        const row=otherLayouts.find(x=>x.id===id);
+        assert.equal(row?.modules,n,id+' deve apresentar todos os módulos');
+        if(id==='cf')assert.ok(row.cards.cf>=45,'Constitucional requer três cards por módulo');
+        if(id==='civil')assert.equal(row.cards.civil,45,'Civil requer os 45 cards');
+        if(id==='cpp')assert.equal(row.cards.cpp,66,'Processo Penal requer os 66 cards');
+        if(id==='penal')assert.ok(row.cards.penal+row.penalApproved>=49,'Penal requer os cards nativos');
+        if(id==='cpc')assert.equal(row.cards.cpc,3,'CPC requer três cards no módulo aberto');
+      }
+      const cpp=otherLayouts.find(x=>x.id==='cpp');
+      assert.equal(cpp.cppColumns.split(' ').length,1,'Processo Penal precisa de cards verticais');
+
 
     }catch(e){console.log('ADM_RUNTIME_BLOCKER',e.message.slice(0,300));throw e}
    }
