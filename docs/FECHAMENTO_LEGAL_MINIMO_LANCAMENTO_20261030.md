@@ -1,5 +1,5 @@
 # Base Completa — fechamento legal mínimo para lançamento
-**Consolidação:** 30/10/2026 · **Estado:** pendências objetivas; não significa aprovação jurídica, autorização de cobrança ou liberação de cadastro.
+**Consolidação:** 30/10/2026 · **Estado:** as três páginas legais receberam revisão editorial e foram salvas na PR #187. A identificação legal, validação de cookies e operação real de atendimento continuam pendentes; isto não libera cadastro ou vendas.
 
 ## Decisão: três páginas públicas, sem documentos extras
 1. **Termos de Uso** — manter `termos-de-uso.html`; esclarecer fornecedor, acesso gratuito, Premium 6/12 meses, compra única sem renovação automática, preços da oferta, terceiros TEC/QC, suporte, arrependimento legal de sete dias, reembolso e não garantia de aprovação.
@@ -15,7 +15,8 @@
 ## O que resta fazer — critério mínimo sem extravagância
 - [ ] Confirmar identificação legal exigível do fornecedor PF e forma segura de exibição no site, nos termos do Decreto 7.962/2013; avaliar profissionalmente se houver dúvida.
 - [ ] Confirmar que endereço de suporte e recebimento das solicitações operam com confirmação imediata e resposta no prazo legal; testar e registrar evidência.
-- [ ] Revisar e aprovar as três páginas legais, retirando avisos de minuta somente após os dados reais serem confirmados; sincronizar links com vitrine comercial.
+- [x] Consolidar editorialmente as três páginas legais sem inventar fatos ou dados pessoais.
+- [ ] Aprovar a versão pública definitiva, retirando avisos de pré-lançamento após conferir dados reais; sincronizar links com a vitrine comercial.
 - [ ] Conferir provedores efetivos, prazos/critério de retenção, transferência de dados e cookies tecnicamente, sem cláusulas fictícias.
 - [ ] Substituir **em conjunto** a versão `v24-draft-2026-10-28` do formulário e do backend por identificador final novo e idêntico; testar rejeição de aceite antigo/ausente, maioridade e opt-in comercial facultativo.
 - [ ] Confirmar Hotmart/checkout, entrega Premium e arrependimento/reembolso por testes reais antes de receber pagamentos.
