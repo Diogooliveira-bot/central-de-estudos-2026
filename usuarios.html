@@ -159,7 +159,7 @@ async function loadPublicSignups(){
  var box=document.getElementById('publicSignups');
  box.textContent='Atualizando cadastros públicos...';
  try{
-  var data=await fetchJson('/api/admin-public-signups');
+  var data=await fetchJson('/api/auth?action=admin-public-signups');
   var pending=Array.isArray(data.pending)?data.pending:[],confirmed=Array.isArray(data.confirmed)?data.confirmed:[];
   box.innerHTML='';
   var summary=document.createElement('p');summary.className='hint';
