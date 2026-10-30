@@ -4,7 +4,7 @@
 
 ## 1. Canal central, governança e limites
 
-- **Canal oficial de atendimento confirmado pelo proprietário em 29/10/2026:** `basecompleta.estudos@gmail.com`. Único endereço público para dúvidas pré-compra, suporte, cancelamentos, reembolsos e privacidade. O endereço consta das três páginas legais e há link de contato na vitrine interna. **Isso confirma a escolha do endereço, não o monitoramento da caixa nem o envio automático de resposta**; confirmação imediata de recebimento, teste de e-mail real e rotina diária continuam pendentes.
+- **Canal oficial de atendimento:** `basecompleta.estudos@gmail.com`. Único endereço público para dúvidas pré-compra, suporte, cancelamentos, reembolsos e privacidade. O endereço consta das três páginas legais e há link de contato na vitrine interna. **Atualização de 30/10/2026:** o proprietário confirmou o recebimento de mensagem externa e o acompanhamento diário da caixa oficial. Isso **não** comprova a confirmação imediata de recebimento das demandas no mesmo canal, ainda pendente de procedimento testado. A resposta automática do Gmail permanece adiada por decisão do proprietário; não apresentá-la como implementada.
 - Escopo de atendimento: dúvida antes da compra; acesso/conta; erro de cobrança; arrependimento; reembolso; suspensão/cancelamento; acesso após pagamento; privacidade e exclusão de dados; denúncia de segurança.
 - Cada demanda precisa ter identificador interno único, data/hora de entrada, categoria, estado, responsável, confirmação de recebimento, próxima providência, manifestação e data de resolução. Guardar somente dados mínimos; **nunca registrar senha, token, cartão completo, CPF ou endereço pessoal em GitHub, tickets públicos ou planilhas compartilhadas**.
 - A manifestação sobre pedidos do consumidor será encaminhada em **até cinco dias**, nos termos do art. 4º, parágrafo único, do Decreto 7.962/2013. Para controle interno, fixar prazo conservador de **até cinco dias corridos** e antecipar casos urgentes. **Confirmar imediatamente o recebimento no mesmo canal**, conforme art. 4º, VI, e art. 5º, §4º. Validar tecnicamente a automação/operacionalização antes do GO.
@@ -67,7 +67,7 @@
 
 ## 7. Critérios para considerar esta operação ativa
 
-- [ ] Testar recebimento real no Gmail oficial e confirmar que solicitações de clientes não vão para spam/filtros incorretos.
+- [x] Proprietário confirmou recebimento de e-mail externo no Gmail oficial e acompanhamento diário. A triagem de spam/filtros e a operação com pedidos reais continuam pendentes de teste.
 - [ ] Implementar e testar **confirmação imediata no mesmo canal** e registro do pedido; não presumir que apenas possuir Gmail cumpra a obrigação.
 - [ ] Confirmar responsável e rotina de monitoramento da caixa, procedimentos de contingência e **resposta em até cinco dias**.
 - [ ] Ensaiar pedidos simulados de arrependimento, reembolso, privacidade e acesso sem pagar/transacionar dinheiro de verdade.
