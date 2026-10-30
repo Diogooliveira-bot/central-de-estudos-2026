@@ -1,0 +1,37 @@
+name: Cadastro Gratuito - release isolada
+on:
+  push:
+    branches:
+      - release/cadastro-gratuito-production-20261030
+    paths:
+      - 'cadastro-gratuito.html'
+      - 'lib/free-signup-handler.js'
+      - 'termos-de-uso.html'
+      - 'politica-de-privacidade.html'
+      - 'politica-de-cookies.html'
+      - 'tests/public-free-signup-4-5-unit.mjs'
+      - 'tests/free-signup-browser-4-5.mjs'
+      - '.github/workflows/release-cadastro-gratuito-20261030.yml'
+permissions:
+  contents: read
+jobs:
+  verificar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - name: Checkout seguro
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9aaf683
+        with:
+          persist-credentials: false
+      - name: Node 22
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+      - name: Dependencias
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Testes unitarios cadastro, protecao Premium e aceites
+        run: node --test tests/public-free-signup-4-5-unit.mjs tests/plan-access-unit.mjs
+      - name: Chromium isolado
+        run: npx playwright install chromium --only-shell
+      - name: Browser cadastro gratuito e Turnstile simulado
+        run: node tests/free-signup-browser-4-5.mjs
