@@ -1,0 +1,41 @@
+import { createServer } from 'node:http';
+import { readFile } from 'node:fs/promises';
+import { resolve, extname } from 'node:path';
+import assert from 'node:assert/strict';
+import { chromium } from 'playwright';
+// Teoria completa no padrão único (modelo Administrativo) nas seis disciplinas jurídicas.
+const root=resolve('.');
+const mime={'.html':'text/html','.js':'application/javascript','.css':'text/css','.json':'application/json','.webp':'image/webp','.png':'image/png','.svg':'image/svg+xml','.avif':'image/avif','.ico':'image/x-icon','.txt':'text/plain'};
+const ent=Object.fromEntries(['theory.summary','theory.complete','vade_mecum','lei_em_dia','tec.links','qc.links','premium.reviews','progress.advanced_sync'].map(k=>[k,{enabled:true}]));
+const server=createServer(async(req,res)=>{const path=new URL(req.url,'http://l').pathname;const json=b=>{res.writeHead(200,{'content-type':'application/json'});res.end(JSON.stringify(b))};
+ if(path==='/api/auth')return json({authenticated:true,user:{id:'p',name:'Aluno',role:'aluno',plan:'premium'}});
+ if(path==='/api/plans')return json({role:'aluno',plan:'premium',status:'active',isStaff:false,entitlements:ent});
+ if(path==='/api/sync')return json({exists:false});if(path==='/api/objective')return json({objectiveId:'career-tribunais-analista'});if(path.startsWith('/api/'))return json({});
+ try{const f=resolve(root,'.'+(path==='/'?'/central-v119.html':decodeURIComponent(path)));const d=await readFile(f);res.writeHead(200,{'content-type':mime[extname(f)]||'application/octet-stream'});res.end(d)}catch(e){res.writeHead(404);res.end()}});
+await new Promise(r=>server.listen(0,'127.0.0.1',r));const base='http://127.0.0.1:'+server.address().port;
+const browser=await chromium.launch();const page=await browser.newPage({viewport:{width:Number(process.env.W||1280),height:Number(process.env.H||900)}});const errs=[];page.on('pageerror',e=>errs.push(e.message.slice(0,160)));
+const S={adm:'.open-topic >> nth=0',cf:'.cf-module-head >> nth=0',civil:'.cv-module-head >> nth=0',cpc:'.cf-module-head >> nth=1',penal:'.cf-module-head >> nth=0',cpp:'.open-topic >> nth=0'};
+const NAMES={adm:'DIREITO ADMINISTRATIVO',cf:'DIREITO CONSTITUCIONAL',civil:'DIREITO CIVIL',cpc:'DIREITO PROCESSUAL CIVIL',penal:'DIREITO PENAL',cpp:'DIREITO PROCESSUAL PENAL'};
+for(const id of Object.keys(S)){
+ await page.goto(base+'/central-v119.html?view=home');await page.waitForFunction(()=>document.documentElement.dataset.centralReady==='true',{timeout:40000});
+ await page.evaluate(()=>window.openDisciplines());await page.locator('#disciplineGrid [data-study-open-subject="'+id+'"]').first().click();
+ await page.waitForFunction(id=>window.CentralDisciplineLoader.isReady(id),id,{timeout:40000});await page.waitForTimeout(800);
+ const sec=page.locator('.subject[data-id="'+id+'"]');await sec.locator(S[id]).click();await page.waitForTimeout(900);
+ await sec.locator('button:visible').filter({hasText:/^Estudar conteúdo$/}).first().click();await page.waitForTimeout(3000);
+ const info=await page.evaluate(()=>{const o=[...document.querySelectorAll('.bc-native-reader-overlay')].pop();if(!o)return null;return {id:o.id,title:o.querySelector('.bc-native-reader-title b')?.textContent,eyebrow:o.querySelector('.bc-native-reader-title small')?.textContent,tools:[...o.querySelector('.bc-native-reader-tools').children].filter(e=>!e.hidden&&getComputedStyle(e).display!=='none').map(e=>e.tagName==='INPUT'?'[Buscar]':e.classList.contains('bc-reading-appearance-controls')?'[Aparência]':e.textContent.trim()),first:(o.querySelector('.bc-native-article h1')?.textContent||'').trim().slice(0,60)}});
+ assert.ok(info,id+': leitor não abriu');
+ assert.match(info.eyebrow,new RegExp('^'+NAMES[id]+' · MÓDULO \\d{2} · TEORIA COMPLETA$'),id+': cabeçalho fora do padrão');
+ assert.doesNotMatch(info.title,/^(?:PEN|CPC|CF)\s*M\d+/,id+': título com prefixo antigo');
+ assert.deepEqual(info.tools.map(t=>t.replace(/^\d+% lido$/,'% lido')),['% lido','Concluir leitura','[Buscar]','Capítulos','[Aparência]'],id+': barra fora do padrão');
+ assert.equal(info.first,info.title.slice(0,60),id+': abertura sem o título do módulo');
+ const article=await page.locator('.bc-native-reader-overlay').last().locator('.bc-native-article').innerText();
+ assert.doesNotMatch(article.slice(0,1500),/A P O S? ?T I L A|BASE COMPLETA M\d/,id+': capa do PDF no início');
+ const inp=page.locator('.bc-native-reader-overlay input[type=search]').last();
+ await inp.fill('a');await inp.fill('de');await page.waitForTimeout(500);
+ assert.ok(await page.locator('.bc-native-reader-overlay mark').count()>0,id+': busca sem resultado');
+ await page.locator('.bc-native-reader-overlay').last().getByRole('button',{name:'Concluir leitura'}).click();await page.waitForTimeout(500);
+ assert.equal((await page.locator('.bc-native-reader-overlay .bc-native-reader-meta').last().textContent()).trim(),'100% lido',id+': Concluir leitura não chegou a 100%');
+ console.log('READER_STANDARD_OK='+id);
+}
+assert.deepEqual([...new Set(errs)],[],'erros de JavaScript');
+await browser.close();server.close();

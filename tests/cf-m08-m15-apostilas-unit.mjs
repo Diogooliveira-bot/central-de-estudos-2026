@@ -121,7 +121,7 @@ test('Lei em Dia e cache offline apontam para a mesma versão em M08 a M15', () 
     w.CfNativeStudy.openDecorando(n);
     assert.deepEqual(law, [null,'cf',`cf-${key}`]);
   }
-  const uiAsset = `/ui/cf-native-study-v2.js?v=${version}`;
+  const uiAsset = `/ui/cf-native-study-v2.js?v=20261031readerstd1`;
   assert.ok(index.includes(`src="${uiAsset}"`));
   assert.ok(manifest.includes(uiAsset));
   assert.ok(read('sw.js').includes(`var CACHE='central-${offline.build}'`));

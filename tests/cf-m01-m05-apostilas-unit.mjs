@@ -107,7 +107,7 @@ test('index e pacote offline usam os mesmos recursos versionados', () => {
     ...Array.from({ length:15 }, (_, index) => `/content/cf/m${String(index + 1).padStart(2, '0')}-teoria-guiada-data.js?v=20261022cf-guided-release1`),
     '/content/cf/cf-teoria-guiada-lei-seca.js?v=20261023leiseca1',
     '/content/cf/cf-teoria-guiada-reader-v1.js?v=20261023leiseca1',
-    '/ui/cf-native-study-v2.js?v=20261022cfm08m15apostila1',
+    '/ui/cf-native-study-v2.js?v=20261031readerstd1',
   ];
   for (const asset of assets) {
     assert.ok(html.includes(`src="${asset}"`), `index: ${asset}`);

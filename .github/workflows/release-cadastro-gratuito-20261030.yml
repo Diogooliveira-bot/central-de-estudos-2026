@@ -14,6 +14,9 @@ on:
       - 'tests/helpers/free-plan-content.mjs'
       - 'tools/decorando.html'
       - 'lib/lei-em-dia-questions-handler.js'
+      - 'ui/reader-standard-v1.js'
+      - 'ui/cf-native-study-v2.js'
+      - 'tests/reader-standard-browser.mjs'
       - 'api/auth.js'
       - 'lib/admin-public-signups-handler.js'
       - 'tests/admin-public-signups-unit.mjs'
@@ -29,7 +32,7 @@ permissions:
 jobs:
   verificar:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 18
     steps:
       - name: Checkout seguro
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
@@ -51,3 +54,5 @@ jobs:
         run: node tests/free-signup-browser-4-5.mjs
       - name: Gratuito com a mesma interface do Premium (6 disciplinas)
         run: node tests/central-free-boot-browser.mjs
+      - name: Teoria completa no padrão único (6 disciplinas)
+        run: node tests/reader-standard-browser.mjs
