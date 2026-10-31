@@ -29,7 +29,7 @@ test('confirmation: names are HTML-escaped; no link injection',()=>{
 
 test('welcome: only grants Free; premium is presented as optional',()=>{
   const msg=welcomeEmail({name:'Maria Ferreira',link:loginLink});
-  assert.match(msg.html,/Olá, Maria/);
+  assert.match(msg.html,/Bem-vindo, Maria/);
   assert.match(msg.html,/Lei em Dia/i);
   assert.match(msg.html,/Cronograma de estudos/i);
   assert.match(msg.html,/Premium/i);
