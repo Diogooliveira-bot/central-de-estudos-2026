@@ -32,7 +32,7 @@ for(const id of Object.keys(S)){
  assert.ok(info,id+': leitor não abriu');
  assert.match(info.eyebrow,new RegExp('^'+NAMES[id]+' · MÓDULO \\d{2} · TEORIA COMPLETA$'),id+': cabeçalho fora do padrão');
  assert.doesNotMatch(info.title,/^(?:PEN|CPC|CF)\s*M\d+/,id+': título com prefixo antigo');
- assert.deepEqual(info.tools.map(t=>t.replace(/^\d+% lido$/,'% lido')),['% lido','Concluir leitura','[Buscar]','Capítulos','[Aparência]'],id+': barra fora do padrão');
+ assert.deepEqual(info.tools.map(t=>t.replace(/^\d+% lido$/,'% lido')),['% lido','Concluir leitura','[Buscar]','Capítulos','[Aparência]','☰ Justificar'],id+': barra fora do padrão');
  assert.equal(info.first,info.title.slice(0,60),id+': abertura sem o título do módulo');
  const article=await page.locator('.bc-native-reader-overlay').last().locator('.bc-native-article').innerText();
  assert.doesNotMatch(article.slice(0,1500),/A P O S? ?T I L A|BASE COMPLETA M\d|DIREITO ADMINISTRATIVO ?M[ÓO]DULO|Apostila de estudo|OFFLINE|n[ãa]o publicar/,id+': capa ou anotação interna no início');
@@ -41,6 +41,13 @@ for(const id of Object.keys(S)){
  assert.ok(await page.locator('.bc-native-reader-overlay mark').count()>1,id+': busca deve destacar todos os resultados');
  await page.locator('.bc-native-reader-overlay').last().getByRole('button',{name:'Concluir leitura'}).click();await page.waitForTimeout(500);
  assert.equal((await page.locator('.bc-native-reader-overlay .bc-native-reader-meta').last().textContent()).trim(),'100% lido',id+': Concluir leitura não chegou a 100%');
+ // Opção de justificar: liga, aplica aos parágrafos e desliga (preferência no aparelho).
+ const justify=page.locator('.bc-native-reader-overlay').last().locator('.bc-std-justify');
+ await justify.click();
+ assert.equal(await page.evaluate(()=>getComputedStyle([...document.querySelectorAll('.bc-native-reader-overlay .bc-native-article p')].pop()).textAlign),'justify',id+': texto não justificou');
+ assert.equal(await justify.getAttribute('aria-pressed'),'true');
+ await justify.click();
+ assert.notEqual(await page.evaluate(()=>getComputedStyle([...document.querySelectorAll('.bc-native-reader-overlay .bc-native-article p')].pop()).textAlign),'justify',id+': texto não voltou ao alinhamento normal');
  console.log('READER_STANDARD_OK='+id);
 }
 assert.deepEqual([...new Set(errs)],[],'erros de JavaScript');

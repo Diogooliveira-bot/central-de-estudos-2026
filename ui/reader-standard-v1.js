@@ -137,6 +137,32 @@
   }
 
   // Ordem fixa da barra, igual em todas as disciplinas.
+  // Texto justificado: opção do aluno, guardada no aparelho e válida para todos
+  // os leitores (teoria completa e revisão guiada).
+  const JUSTIFY_KEY = 'base-completa:reading-justify:v1';
+  let justify = false;
+  try { justify = localStorage.getItem(JUSTIFY_KEY) === '1'; } catch (_) {}
+  function applyJustify() {
+    document.documentElement.classList.toggle('bc-reading-justify', justify);
+    document.querySelectorAll('.bc-std-justify').forEach(b => {
+      b.setAttribute('aria-pressed', String(justify));
+      b.textContent = justify ? '☰ Justificado' : '☰ Justificar';
+    });
+  }
+  function justifyButton(host) {
+    if (!host || host.querySelector('.bc-std-justify')) return;
+    const button = document.createElement('button');
+    button.type = 'button'; button.className = 'bc-std-justify';
+    button.setAttribute('aria-label', 'Justificar o texto da leitura');
+    button.addEventListener('click', () => {
+      justify = !justify;
+      try { localStorage.setItem(JUSTIFY_KEY, justify ? '1' : '0'); } catch (_) {}
+      applyJustify();
+    });
+    host.appendChild(button);
+    applyJustify();
+  }
+
   function order(overlay) {
     const tools = overlay.querySelector('.bc-native-reader-tools');
     const pick = selector => tools.querySelector(selector);
@@ -146,6 +172,9 @@
     [pick('.bc-native-reader-meta'), pick('[data-finish-reading], .bc-std-finish'), pick('input[type="search"]'),
       pick('.bc-reading-chapters-toggle'), pick('.bc-reading-appearance-controls')]
       .filter(Boolean).forEach(element => tools.appendChild(element));
+    justifyButton(tools);
+    const justifyNode = pick('.bc-std-justify');
+    if (justifyNode) tools.appendChild(justifyNode);
   }
 
   // CPC M01–M07: capa do PDF (BASE COMPLETA, letras espaçadas) antes do 1º capítulo,
@@ -225,6 +254,9 @@
   const style = document.createElement('style');
   style.id = 'bc-reader-standard-v1';
   style.textContent =
+    'html.bc-reading-justify :is(.bc-native-reader-overlay .bc-native-article,.bc-guided-overlay .bc-m01-paper) :is(p,li,dd,blockquote)' +
+    '{text-align:justify;text-align-last:start;text-justify:inter-word;-webkit-hyphens:auto;hyphens:auto;overflow-wrap:break-word}' +
+    '.bc-std-justify[aria-pressed=true]{border-color:#1d7f86;color:#0f6f75;background:rgba(29,127,134,.1)}' +
     '.bc-std-reader .bc-native-reader-tools [hidden]{display:none!important}' +
     '.bc-std-reader .bc-native-reader-tools input[type=search]{min-width:180px;max-width:280px;flex:1 1 200px}' +
     '.bc-std-reader .bc-std-legacy-article>.bc-native-kicker,.bc-std-reader .bc-std-legacy-article>.lead,' +
@@ -237,8 +269,10 @@
   function scan() {
     queued = false;
     document.querySelectorAll('.bc-native-reader-overlay').forEach(standardize);
+    document.querySelectorAll('.bc-guided-overlay .bc-m01-toolbar').forEach(justifyButton);
   }
   new MutationObserver(() => { if (!queued) { queued = true; requestAnimationFrame(() => requestAnimationFrame(scan)); } })
     .observe(document.documentElement, {childList: true, subtree: true});
+  applyJustify();
   g.CentralReaderStandard = {standardize, identify};
 })(window);
