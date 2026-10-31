@@ -2,7 +2,7 @@ import { createServer } from 'node:http';
 import { readFile } from 'node:fs/promises';
 import { resolve, extname } from 'node:path';
 import { chromium } from 'playwright';
-import { protectedAsset } from '../lib/protected-content.js';
+import { freePlanAsset } from './helpers/free-plan-content.mjs';
 
 const root=resolve('.');
 const mime={'.html':'text/html','.js':'application/javascript','.css':'text/css','.json':'application/json','.webmanifest':'application/manifest+json','.webp':'image/webp','.png':'image/png','.svg':'image/svg+xml','.ico':'image/x-icon'};
@@ -20,23 +20,8 @@ const server=createServer(async(req,res)=>{
  }
 
  if(path.startsWith('/api/')){return json({},200)}
- const policy=protectedAsset(path);
- if(policy){
-   counts.protected++;
-   const body=policy.kind==='native'
-     ? 'window.BASE_NATIVE_CONTENT=window.BASE_NATIVE_CONTENT||{};window.BASE_NATIVE_CONTENT['+JSON.stringify(policy.discipline)+']=window.BASE_NATIVE_CONTENT['+JSON.stringify(policy.discipline)+']||{};window.BASE_NATIVE_CONTENT['+JSON.stringify(policy.discipline)+']['+JSON.stringify(policy.moduleKey)+']={number:1,title:"Resumo de teste",summary:"Resumo gratuito validado no navegador."};'
-     : policy.kind==='admin-lite'?'window.ADM_NATIVE_CONTENT={};'
-     : policy.kind==='cpp-course'?'window.CPP_COURSE_MODULES=[];'
-     : policy.kind==='portuguese-native'?'window.PT_NATIVE_DATA=window.PT_NATIVE_DATA||{};'
-     : policy.kind==='packed-native'?'window.CIVIL_NATIVE_PACKED_B64="";window.CPP_NATIVE_PACKED_B64="";'
-     : path==='/content/tec-cadernos-data.js'?'window.TEC_CADERNOS_DATA={schemaVersion:1,locked:true,cadernos:[]};'
-     : path==='/content/qc-sharing-links.js'?'window.QC_CENTRAL_SHARING_LINKS={schemaVersion:1,locked:true,items:[]};'
-     : path==='/content/qc-notebook-catalog.js'?'window.QC_NOTEBOOK_CATALOG={schemaVersion:1,locked:true,notebooks:[]};'
-     : path==='/content/cpc/cpc-sharing-links.js'?'window.CPC_SHARING_LINKS={schemaVersion:1,locked:true,modules:{}};'
-     : null;
-   if(body!==null){res.writeHead(200,{'content-type':'application/javascript','cache-control':'no-store'});res.end(body);return}
-   res.writeHead(403,{'content-type':'application/json','cache-control':'no-store'});res.end('{"error":"Premium"}');return;
- }
+ const projected=await freePlanAsset(root,path);
+ if(projected){counts.protected++;res.writeHead(projected.status,{'content-type':projected.type,'cache-control':'no-store'});res.end(projected.body);return}
  const file=resolve(root,'.'+(path==='/'?'/central-v119.html':decodeURIComponent(path)));
  if(!file.startsWith(root+'/')){res.writeHead(403);res.end();return}
  try{const data=await readFile(file);if(extname(file)==='.css')counts.styles++;counts.files++;res.writeHead(200,{'content-type':mime[extname(file)]||'application/octet-stream'});res.end(data)}
@@ -75,21 +60,45 @@ try{
   cards:[...document.querySelectorAll('[data-id="cf"]')].map(x=>({tag:x.tagName,class:x.className,outer:x.outerHTML.slice(0,250)})),
   nav:document.querySelector('#centralSidebar .nav')?.textContent?.slice(0,500)
  }))));
- await page.locator('#disciplineGrid [data-study-open-subject="cf"]').click({timeout:8000});
- await page.waitForFunction(()=>window.CentralFreeReader?.isFree(),{timeout:10000});
- console.log('FREE_NAV_DOM='+JSON.stringify(await page.evaluate(()=>{
- const e=document.querySelector('.subject[data-id="cf"]'),b=e?.querySelector('.subject-body'),p=e?.querySelector('.central-free-study'),h=document.querySelector('#homeView');
- const state=el=>el?{class:el.className,display:getComputedStyle(el).display,visibility:getComputedStyle(el).visibility,hidden:el.hidden,rect:el.getBoundingClientRect().toJSON()}:null;
- return {section:state(e),body:state(b),paper:state(p),home:state(h),isFree:window.CentralFreeReader?.isFree(),isOpen:window.CentralFreeReader?.isOpen?.('cf'),route:location.href};
- })));
- await page.locator('.subject[data-id="cf"] .central-free-study').waitFor({state:'visible',timeout:6000});
- const subject=page.locator('.subject[data-id="cf"]');
- if(!await subject.evaluate(el=>el.classList.contains('open')))throw Error('A disciplina ainda está fechada para o aluno');
- await page.locator('.subject[data-id="cf"] .central-free-cards button').first().click();
- await page.locator('.subject[data-id="cf"] #centralFreeResult').getByText('Resumo gratuito validado no navegador.',{exact:false}).waitFor({state:'visible',timeout:10000});
- const freeHTML=await page.locator('.subject[data-id="cf"] #centralFreeResult').innerText();
- if(!freeHTML.includes('Resumo gratuito validado no navegador.'))throw Error('Resumo gratuito não visível');
- console.log('FREE_DISCIPLINE_VISIBLE_OK='+freeHTML.slice(0,130));
+ await page.waitForFunction(()=>window.CentralPlanAccess?.isKnown?.()&&window.CentralPlanAccess.isFree(),{timeout:10000});
+ // Mesma interface do Premium nas seis disciplinas, com resumo liberado e Premium bloqueado.
+ const subjects=[
+  ['cf','.cf-module-head >> nth=0','Abrir teoria guiada'],
+  ['penal','.cf-module-head >> nth=0','Revisar conteúdo'],
+  ['cpc','.cf-module-head >> nth=1','Revisar conteúdo'],
+  ['adm','.open-topic >> nth=0','Revisar conteúdo'],
+  ['civil','.cv-module-head >> nth=0','Abrir teoria guiada'],
+  ['cpp','.open-topic >> nth=0','Revisar conteúdo'],
+ ];
+ for(const [id,head,summary] of subjects){
+  await page.evaluate(()=>window.openDisciplines());
+  await page.locator('#disciplineGrid [data-study-open-subject="'+id+'"]').first().click({timeout:8000});
+  await page.waitForFunction(id=>window.CentralDisciplineLoader.isReady(id)||window.CentralDisciplineLoader.hasError(id),id,{timeout:30000});
+  if(await page.evaluate(id=>window.CentralDisciplineLoader.hasError(id),id))throw Error(id+': disciplina não carregou para o Gratuito');
+  if(await page.locator('.central-free-study').count())throw Error(id+': ainda usa a tela gratuita separada');
+  const section=page.locator('.subject[data-id="'+id+'"]');
+  await section.locator(head).click({timeout:8000});
+  const locked=section.locator('button.bc-plan-locked:visible').filter({hasText:'Estudar conteúdo'}).first();
+  await locked.waitFor({state:'visible',timeout:10000});
+  await locked.click();
+  await page.locator('.bc-plan-lock-box').getByText('exclusivo do Base Completa Premium',{exact:false}).waitFor({timeout:5000});
+  await page.locator('.bc-plan-lock-box button').click();
+  if(await page.locator('.bc-plan-lock-dialog').count())throw Error(id+': aviso Premium não fechou');
+  const visuals=section.locator('button:visible').filter({hasText:/Visualizar (?:infográfico|mapa mental)/});
+  for(let i=0;i<await visuals.count();i++){
+   if(!await visuals.nth(i).evaluate(el=>el.classList.contains('bc-plan-locked')))throw Error(id+': infográfico liberado no Gratuito');
+  }
+  const open=section.locator('button:visible').filter({hasText:summary}).first();
+  if(await open.evaluate(el=>el.classList.contains('bc-plan-locked')))throw Error(id+': resumo marcado como Premium');
+  await open.click();
+  await page.waitForTimeout(2500);
+  const reader=await page.evaluate(()=>{const t=document.body.innerText;return {failed:/Não foi possível carregar a leitura/.test(t),premiumOnly:/exclusivo do Base Completa Premium/.test(t)}});
+  if(reader.failed)throw Error(id+': leitura do resumo falhou');
+  console.log('FREE_SAME_UI_OK='+id);
+  await page.keyboard.press('Escape');
+  await page.goto(base+'/central-v119.html?view=home',{waitUntil:'domcontentloaded'});
+  await page.waitForFunction(()=>document.documentElement.dataset.centralReady==='true',{timeout:30000});
+ }
  await page.goto(base+'/tools/decorando.html',{waitUntil:'domcontentloaded'});
  await page.waitForURL('**/tools/lei-em-dia-gratis.html',{timeout:12000});
  await page.waitForSelector('#filters:not(.hidden)',{timeout:10000});

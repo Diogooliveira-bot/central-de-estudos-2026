@@ -99,6 +99,9 @@ async function download(files,id){
    try{
     const response=await fetch(url.href,{cache:'no-store',signal:controller.signal});
     if(!response.ok){
+     // Plano gratuito: arquivos exclusivos do Premium (403) ficam de fora e a
+     // mesma interface é montada apenas com os resumos liberados pelo servidor.
+     if(response.status===403&&global.CentralPlanAccess?.isFree?.()){sources[i]='';continue;}
      if(id==='adm'&&optionalAdmLegacy(url.pathname)&&[403,404,410].includes(response.status)){
       console.warn('[Central ADM] bundle legado indisponível; leitor nativo preservado:',url.pathname,response.status);
       sources[i]='';continue;
@@ -118,7 +121,8 @@ function nativeReady(id){
  if(id==='adm')return !!global.AdmNative;
  if(id==='civil')return !!global.CivilNative;
  if(id!=='cpc')return true;
- if(!global.CpcStudyV1?.installed||!global.__M08Installed)return false;
+ // A projeção gratuita do M08 traz só o resumo, sem o marcador do pacote completo.
+ if(!global.CpcStudyV1?.installed||!(global.__M08Installed||global.BASE_NATIVE_CONTENT?.cpc?.m08))return false;
  for(let n=2;n<=20;n++){if(n===8)continue;const module=global['CpcStudyM'+String(n).padStart(2,'0')];if(module!==true&&!module?.installed)return false;}
  return true;
 }

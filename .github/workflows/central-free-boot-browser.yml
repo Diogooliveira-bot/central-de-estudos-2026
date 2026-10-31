@@ -4,6 +4,9 @@ on:
     paths:
       - 'tests/central-free-boot-browser.mjs'
       - 'central-free-disciplines.js'
+      - 'central-discipline-loader.js'
+      - 'lib/protected-content.js'
+      - 'tests/helpers/free-plan-content.mjs'
       - 'tests/free-summary-projections.mjs'
       - 'tools/lei-em-dia-gratis.html'
       - 'tools/decorando.html'

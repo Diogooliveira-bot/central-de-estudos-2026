@@ -7,7 +7,11 @@ on:
       - 'cadastro-gratuito.html'
       - 'usuarios.html'
       - 'central-free-disciplines.js'
-      - 'tests/free-reader-unified-ui-unit.mjs'
+      - 'central-discipline-loader.js'
+      - 'central-v119.html'
+      - 'lib/protected-content.js'
+      - 'tests/central-free-boot-browser.mjs'
+      - 'tests/helpers/free-plan-content.mjs'
       - 'api/auth.js'
       - 'lib/admin-public-signups-handler.js'
       - 'tests/admin-public-signups-unit.mjs'
@@ -36,10 +40,12 @@ jobs:
       - name: Dependencias
         run: npm ci --ignore-scripts --no-audit --no-fund
       - name: Testes unitarios cadastro, protecao Premium e aceites
-        run: node --test tests/public-free-signup-4-5-unit.mjs tests/plan-access-unit.mjs tests/admin-public-signups-unit.mjs tests/free-reader-unified-ui-unit.mjs
+        run: node --test tests/public-free-signup-4-5-unit.mjs tests/plan-access-unit.mjs tests/admin-public-signups-unit.mjs tests/protected-content-unit.mjs
       - name: Sintaxe da API administrativa
         run: node --check lib/admin-public-signups-handler.js
       - name: Chromium isolado
         run: npx playwright install chromium --only-shell
       - name: Browser cadastro gratuito e Turnstile simulado
         run: node tests/free-signup-browser-4-5.mjs
+      - name: Gratuito com a mesma interface do Premium (6 disciplinas)
+        run: node tests/central-free-boot-browser.mjs
