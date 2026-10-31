@@ -227,7 +227,7 @@ test('bootstrap Civil preserva os 66 destinos e remove sua exibição antiga do 
     assert.match(await page.locator('#cv-q-eye').textContent(), /COMPLETA/);
     await page.evaluate(() => CivilNative.closeQuestions());
     await page.locator('[data-civil-native-module="1"] .cv-card-infographic .cv-standard-button').click();
-    await page.waitForFunction(() => !document.getElementById('civil-native-image-viewer')?.hidden && document.getElementById('cv-img')?.complete);
+    await page.waitForFunction(() => !document.getElementById('civil-native-image-viewer')?.hidden && document.getElementById('cv-img')?.complete && document.getElementById('cv-img').naturalWidth > 0);
     const image = await page.locator('#cv-img').evaluate((img) => ({ width: img.naturalWidth, height: img.naturalHeight, src: img.src, fit: getComputedStyle(img).objectFit, download: document.getElementById('cv-img-download').download }));
     assert(image.width > 0 && image.height > 0, 'O infográfico real não abriu integralmente.');
     assert.equal(image.fit, 'contain');
