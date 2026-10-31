@@ -17,6 +17,9 @@ on:
       - 'ui/reader-standard-v1.js'
       - 'ui/cf-native-study-v2.js'
       - 'tests/reader-standard-browser.mjs'
+      - 'ui/reader-questions-v1.js'
+      - 'ui/acronyms-v1.js'
+      - 'tests/reader-questions-browser.mjs'
       - 'api/auth.js'
       - 'lib/admin-public-signups-handler.js'
       - 'tests/admin-public-signups-unit.mjs'
@@ -32,7 +35,7 @@ permissions:
 jobs:
   verificar:
     runs-on: ubuntu-latest
-    timeout-minutes: 18
+    timeout-minutes: 25
     steps:
       - name: Checkout seguro
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
@@ -56,3 +59,5 @@ jobs:
         run: node tests/central-free-boot-browser.mjs
       - name: Teoria completa no padrão único (6 disciplinas)
         run: node tests/reader-standard-browser.mjs
+      - name: Questões interativas e siglas com descrição
+        run: node tests/reader-questions-browser.mjs
