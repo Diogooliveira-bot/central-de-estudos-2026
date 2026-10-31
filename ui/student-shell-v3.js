@@ -75,11 +75,12 @@
     return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+paths[kind]+'</svg>';
   }
   function openEdital() {
-    // Um edital oficial não pode ser inventado a partir dos módulos da Central.
-    const handlers = [global.CentralEditaisVerticais?.open,global.CentralEditalVertical?.open,global.EditalVertical?.open];
-    const handler = handlers.find((item) => typeof item === 'function');
-    if (handler) return handler();
-    global.alert('Editais Verticais ainda não estão integrados a esta versão da Central. Nenhum conteúdo ou progresso foi alterado.');
+    // Editais verticalizados existentes: TJPB e TRT-8; dependem do objetivo selecionado.
+    if (global.CentralExamVerticalized?.open?.() === true) return true;
+    if (global.CentralTRT8Verticalized?.open?.() === true) return true;
+    // Objetivos gerais não possuem um edital oficial específico.
+    if (global.CentralStudyObjectives?.open) return global.CentralStudyObjectives.open();
+    global.alert('Não há edital verticalizado associado ao objetivo atual.');
     return false;
   }
   function ensureNavigation() {
