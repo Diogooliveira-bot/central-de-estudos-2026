@@ -50,6 +50,8 @@
   }
   function runMoreAction(action) {
     closeMore(false);
+    if (action === 'home') return global.openHome?.();
+    if (action === 'subjects') return global.centralHardOpen?.('disciplines');
     if (action === 'law') return global.openEmbeddedTool?.('decorando', {});
     if (action === 'vade') return global.openEmbeddedTool?.('vade', {});
     if (action === 'settings') return global.openCentralSettings?.();
@@ -61,14 +63,57 @@
     }
     return false;
   }
+  // Barra compacta: seis ferramentas com rolagem, mais menu fixo à direita.
+  // Os atalhos reutilizam as rotas já implementadas; não alteram permissões.
+  function quickIcon(kind) {
+    const paths = {
+      law:'<path d="M4 4h12a3 3 0 0 1 3 3v13H7a3 3 0 0 1-3-3z"/><path d="M7 4v16M10 9h6M10 13h6"/>',
+      vade:'<path d="M5 4h13a2 2 0 0 1 2 2v14H7a3 3 0 0 1-3-3V6a2 2 0 0 1 1-2z"/><path d="M8 4v16M11 9h6M11 13h6"/>',
+      edital:'<rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/>',
+      filters:'<path d="M4 7h16M7 12h10M10 17h4"/><circle cx="8" cy="7" r="2" fill="#12344d"/><circle cx="14" cy="12" r="2" fill="#12344d"/>',
+    };
+    return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+paths[kind]+'</svg>';
+  }
+  function openEdital() {
+    // Um edital oficial não pode ser inventado a partir dos módulos da Central.
+    const handlers = [global.CentralEditaisVerticais?.open,global.CentralEditalVertical?.open,global.EditalVertical?.open];
+    const handler = handlers.find((item) => typeof item === 'function');
+    if (handler) return handler();
+    global.alert('Editais Verticais ainda não estão integrados a esta versão da Central. Nenhum conteúdo ou progresso foi alterado.');
+    return false;
+  }
   function ensureNavigation() {
     const nav = document.querySelector('#centralSidebar .nav');
     if (!nav) return;
-    renameNavButton(nav.querySelector('button[onclick*="\'home\'"]'), 'Hoje', 'today');
-    renameNavButton(nav.querySelector('[data-central-agenda]'), 'Plano', 'plan');
-    renameNavButton(nav.querySelector('[data-central-native="disciplines"]'), 'Disciplinas', 'subjects');
-    renameNavButton(nav.querySelector('button[onclick*="\'performance\'"]'), 'Progresso', 'progress');
-
+    if (!nav.querySelector('.student-nav-scroll')) {
+      const agenda = nav.querySelector('[data-central-agenda]');
+      const progress = Array.from(nav.querySelectorAll('button')).find((item) => (item.getAttribute('onclick') || '').includes('performance'));
+      const rail = document.createElement('div');
+      rail.className = 'student-nav-scroll';
+      rail.setAttribute('role', 'group');
+      rail.setAttribute('aria-label', 'Ferramentas de estudo');
+      nav.prepend(rail);
+      if (agenda) {renameNavButton(agenda,'Agenda','agenda');rail.appendChild(agenda);}
+      if (progress) {renameNavButton(progress,'Progresso','progress');rail.appendChild(progress);}
+      const actions = [
+        ['law','Lei em Dia',() => global.openEmbeddedTool?.('decorando', {})],
+        ['vade','Vade Mecum',() => global.openEmbeddedTool?.('vade', {})],
+        ['edital','Edital',openEdital],
+        ['filters','Filtro de questões',(button) => global.ExternalQuestionFilters?.openPage(button,{tab:'filters'})],
+      ];
+      actions.forEach(([key,label,action]) => {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'student-quick-nav';
+        button.dataset.studentPrimaryNav = key;
+        button.setAttribute('aria-label',label);
+        button.setAttribute('title',label);
+        const shortLabel = key === 'filters' ? 'Filtros' : label;
+        button.innerHTML = '<span class="nav-icon" aria-hidden="true">'+quickIcon(key)+'</span><span class="nav-text">'+shortLabel+'</span>';
+        button.addEventListener('click',() => action(button));
+        rail.appendChild(button);
+      });
+    }
     if (!byId('studentMoreButton')) {
       const button = document.createElement('button');
       button.id = 'studentMoreButton';
@@ -91,7 +136,6 @@
       });
       nav.appendChild(button);
     }
-
     if (!byId('studentMorePanel')) {
       const panel = document.createElement('section');
       panel.id = 'studentMorePanel';
@@ -101,12 +145,12 @@
       panel.setAttribute('aria-modal', 'false');
       panel.setAttribute('aria-label', 'Mais opções');
       panel.innerHTML = `
-        <div class="student-more-head"><div><small>BASE COMPLETA</small><b>Ferramentas</b></div><button type="button" data-student-close-more aria-label="Fechar">×</button></div>
+        <div class="student-more-head"><div><small>BASE COMPLETA</small><b>Mais opções</b></div><button type="button" data-student-close-more aria-label="Fechar">×</button></div>
         <div class="student-more-grid">
-          <button type="button" data-student-more-action="law"><span aria-hidden="true">✓</span><span><b>Lei em Dia</b><small>Revisão de lei seca</small></span></button>
-          <button type="button" data-student-more-action="vade"><span aria-hidden="true">§</span><span><b>Vade Mecum</b><small>Consulta rápida</small></span></button>
-          <button type="button" data-student-more-action="onboarding"><span aria-hidden="true">◎</span><span><b>Meu plano</b><small>Objetivo e rotina</small></span></button>
+          <button type="button" data-student-more-action="home"><span aria-hidden="true">⌂</span><span><b>Início</b><small>Meu painel</small></span></button>
+          <button type="button" data-student-more-action="subjects"><span aria-hidden="true">▤</span><span><b>Disciplinas</b><small>Módulos e materiais</small></span></button>
           <button type="button" data-student-more-action="settings"><span aria-hidden="true">⚙</span><span><b>Configurações</b><small>Aparência e dados</small></span></button>
+          <button type="button" data-student-more-action="onboarding"><span aria-hidden="true">◎</span><span><b>Meu perfil e plano</b><small>Objetivos e rotina</small></span></button>
           <button type="button" data-student-more-action="logout"><span aria-hidden="true">⇥</span><span><b>Sair da conta</b><small>Encerrar esta sessão</small></span></button>
         </div>
         <div id="studentConnectionStatus" class="student-connection-status" role="status"></div>`;
@@ -188,7 +232,7 @@
     const visible = Array.from(document.querySelectorAll('#centralSidebar [data-student-primary-nav]'));
     visible.forEach((button) => button.removeAttribute('aria-current'));
     const map = [
-      ['homeView', 'today'], ['agendaView', 'plan'], ['disciplinesView', 'subjects'], ['performanceView', 'progress'],
+      ['agendaView', 'agenda'], ['performanceView', 'progress'], ['leiSecaView', 'law'], ['vadeMecumView', 'vade'], ['questionFiltersView', 'filters'],
     ];
     for (const [viewId, key] of map) {
       if (!byId(viewId)?.classList.contains('hidden')) document.querySelector(`[data-student-primary-nav="${key}"]`)?.setAttribute('aria-current', 'page');
@@ -198,7 +242,7 @@
     const crumb = byId('crumb');
     if (!crumb) return;
     if (!byId('performanceView')?.classList.contains('hidden')) setText(crumb, 'Progresso');
-    else if (!byId('agendaView')?.classList.contains('hidden')) setText(crumb, 'Plano');
+    else if (!byId('agendaView')?.classList.contains('hidden')) setText(crumb, 'Agenda');
     else if (!byId('homeView')?.classList.contains('hidden')) setText(crumb, 'Hoje');
   }
   function enhance() {
