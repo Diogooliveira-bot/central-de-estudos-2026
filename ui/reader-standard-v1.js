@@ -137,11 +137,11 @@
   }
 
   // Ordem fixa da barra, igual em todas as disciplinas.
-  // Texto justificado: opção do aluno, guardada no aparelho e válida para todos
-  // os leitores (teoria completa e revisão guiada).
+  // Texto justificado por padrão (decisão do proprietário); o aluno pode desligar
+  // e a escolha fica guardada no aparelho, para todos os leitores.
   const JUSTIFY_KEY = 'base-completa:reading-justify:v1';
-  let justify = false;
-  try { justify = localStorage.getItem(JUSTIFY_KEY) === '1'; } catch (_) {}
+  let justify = true;
+  try { justify = localStorage.getItem(JUSTIFY_KEY) !== '0'; } catch (_) {}
   function applyJustify() {
     document.documentElement.classList.toggle('bc-reading-justify', justify);
     document.querySelectorAll('.bc-std-justify').forEach(b => {
