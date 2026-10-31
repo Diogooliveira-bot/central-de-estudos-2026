@@ -3,10 +3,12 @@ import { readFile } from 'node:fs/promises';
 import { resolve, extname } from 'node:path';
 import { chromium } from 'playwright';
 import { freePlanAsset } from './helpers/free-plan-content.mjs';
+import { approvedBank, projectCatalogQuestion, questionById } from '../lib/lei-em-dia-questions-handler.js';
 
 const root=resolve('.');
 const mime={'.html':'text/html','.js':'application/javascript','.css':'text/css','.json':'application/json','.webmanifest':'application/manifest+json','.webp':'image/webp','.png':'image/png','.svg':'image/svg+xml','.ico':'image/x-icon'};
 const counts={protected:0,styles:0,files:0};
+const ledUsed=new Set();
 const server=createServer(async(req,res)=>{
  const url=new URL(req.url,'http://localhost'),path=url.pathname;
  const json=(body,status=200)=>{res.writeHead(status,{'content-type':'application/json','cache-control':'no-store'});res.end(JSON.stringify(body))};
@@ -15,8 +17,14 @@ const server=createServer(async(req,res)=>{
  if(path==='/api/objective')return json({objectiveId:'career-tribunais-analista'});
  if(path==='/api/plans')return json({role:'aluno',plan:'free',status:'active',isStaff:false,entitlements:{'theory.summary':{enabled:true},'progress.advanced_sync':{enabled:false}}});
  if(path==='/api/lei-em-dia-questions'){
-  if(req.method==='GET'){res.writeHead(200,{'content-type':'application/javascript'});res.end('const DATA_LED_APPROVED=[{id:"LED-FREE-1",discipline:"cf",topicId:"led-cf",number:"Art. 5º",title:"Constituição Federal"}];');return}
-  return json({question:{id:'LED-FREE-1',title:'Constituição Federal',discipline:'cf',question:{statement:'A lei protege os direitos fundamentais.',answer:true,explanation:'Revisão de questão de teste.'}},plan:'free'});
+  // Mesmo contrato do servidor: catálogo só com metadados e questão liberada uma a
+  // uma, com limite de 20 questões diferentes por dia no plano Gratuito.
+  const bank=await approvedBank();
+  if(req.method==='GET'){res.writeHead(200,{'content-type':'application/javascript'});res.end('const DATA_LED_APPROVED = '+JSON.stringify(bank.map(projectCatalogQuestion))+';');return}
+  let raw='';for await(const chunk of req)raw+=chunk;
+  const id=String(JSON.parse(raw||'{}').id||'');
+  if(!ledUsed.has(id)){if(ledUsed.size>=20)return json({error:'Você já utilizou as 20 questões gratuitas de hoje',used:20,dailyLimit:20},429);ledUsed.add(id)}
+  return json({question:questionById(bank,id),plan:'free'});
  }
 
  if(path.startsWith('/api/')){return json({},200)}
@@ -99,14 +107,19 @@ try{
   await page.goto(base+'/central-v119.html?view=home',{waitUntil:'domcontentloaded'});
   await page.waitForFunction(()=>document.documentElement.dataset.centralReady==='true',{timeout:30000});
  }
+ // Lei em Dia: interface original também no Gratuito, com limite diário no servidor.
  await page.goto(base+'/tools/decorando.html',{waitUntil:'domcontentloaded'});
- await page.waitForURL('**/tools/lei-em-dia-gratis.html',{timeout:12000});
- await page.waitForSelector('#filters:not(.hidden)',{timeout:10000});
- await page.locator('#load').click();
- await page.waitForFunction(()=>document.querySelector('.statement')?.textContent?.includes('direitos fundamentais'),{timeout:10000});
- await page.locator('#exercise button').first().click();
- const result=await page.locator('#exercise').innerText();
- if(!result.includes('Resposta correta.'))throw Error('Questão gratuita não foi respondida');
- console.log('FREE_LEI_EM_DIA_OK='+result.slice(0,160));
+ await page.getByText('Selecione a disciplina').first().waitFor({timeout:15000});
+ if(!page.url().includes('/tools/decorando.html'))throw Error('Gratuito foi desviado do Lei em Dia original');
+ await page.getByText('Selecione a disciplina').first().click();
+ await page.getByText(/Direito Administrativo/).first().click();
+ await page.getByRole('button',{name:/Resolver questões/}).click();
+ await page.getByRole('button',{name:/Certo/}).first().waitFor({timeout:10000});
+ await page.getByRole('button',{name:/Certo/}).first().click();
+ for(let i=0;i<20&&!(await page.getByText('Limite diário atingido').count());i++){
+  await page.getByRole('button',{name:/Próximo/}).click({timeout:5000});await page.waitForTimeout(250);
+ }
+ await page.getByText('Limite diário atingido').waitFor({timeout:8000});
+ console.log('FREE_LEI_EM_DIA_ORIGINAL_OK=limite de 20 aplicado');
  await context.close();
 }finally{await browser.close();server.close()}

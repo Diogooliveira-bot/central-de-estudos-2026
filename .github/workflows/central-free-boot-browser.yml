@@ -8,7 +8,7 @@ on:
       - 'lib/protected-content.js'
       - 'tests/helpers/free-plan-content.mjs'
       - 'tests/free-summary-projections.mjs'
-      - 'tools/lei-em-dia-gratis.html'
+      - 'lib/lei-em-dia-questions-handler.js'
       - 'tools/decorando.html'
       - 'central-v119.html'
       - '.github/workflows/central-free-boot-browser.yml'

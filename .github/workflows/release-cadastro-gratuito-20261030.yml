@@ -12,6 +12,8 @@ on:
       - 'lib/protected-content.js'
       - 'tests/central-free-boot-browser.mjs'
       - 'tests/helpers/free-plan-content.mjs'
+      - 'tools/decorando.html'
+      - 'lib/lei-em-dia-questions-handler.js'
       - 'api/auth.js'
       - 'lib/admin-public-signups-handler.js'
       - 'tests/admin-public-signups-unit.mjs'

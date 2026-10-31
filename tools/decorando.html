@@ -1,14 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR" data-theme="light">
-<head><script id="bc-free-lei-entry">
-(function(){
-  // Apenas o plano gratuito troca a interface; o catálogo original Premium não é alterado.
-  fetch('/api/plans?action=me',{cache:'no-store',credentials:'same-origin'})
-    .then(r=>r.ok?r.json():null)
-    .then(p=>{if(p&&p.plan==='free'&&!p.isStaff)location.replace('/tools/lei-em-dia-gratis.html'+location.search+location.hash)})
-    .catch(()=>{});
-})();
-</script><script id="central-folder-storage-v6659">
+<head><script id="central-folder-storage-v6659">
 const localStorage=(()=>{try{const s=window.localStorage,k='__central_folder_probe__';s.setItem(k,'1');s.removeItem(k);return s}catch(e){const P='CENTRAL_SHARED_STORAGE_V1:',L=['CENTRAL_V6648_STORAGE:','CENTRAL_CHILD_STORAGE:'];let d={};try{const r=String(window.name||'');if(r.startsWith(P))d=JSON.parse(decodeURIComponent(r.slice(P.length)))||{};else for(const p of L)if(r.startsWith(p)){d=JSON.parse(decodeURIComponent(r.slice(p.length)))||{};break}}catch(_){d={}}const save=()=>{try{window.name=P+encodeURIComponent(JSON.stringify(d))}catch(_){}};save();return{getItem(k){k=String(k);return Object.prototype.hasOwnProperty.call(d,k)?String(d[k]):null},setItem(k,v){d[String(k)]=String(v);save()},removeItem(k){delete d[String(k)];save()},clear(){d={};save()},key(i){return Object.keys(d)[Number(i)]??null},get length(){return Object.keys(d).length}}}})();
 </script>
 <meta charset="utf-8">
@@ -842,6 +834,42 @@ globalThis.DATA_LED_APPROVED=[];
 </script>
 <script src="/api/lei-em-dia-questions?mode=catalog&v=20261024progressive1"></script>
 <script src="./decorando-data-modulos.js?v=20261024rm2"></script>
+<script id="bc-led-free-fallback">
+// Plano gratuito: os bancos completos acima são exclusivos do Premium (403).
+// As variáveis ausentes ficam vazias e a página usa apenas o catálogo aprovado
+// da API, com enunciado e gabarito liberados um a um (limite diário no servidor).
+if(typeof DATA_CF==='undefined')globalThis.DATA_CF=[];
+if(typeof DATA_CIVIL_LEIS==='undefined')globalThis.DATA_CIVIL_LEIS=[];
+if(typeof TOPICS_CIVIL_LEIS==='undefined')globalThis.TOPICS_CIVIL_LEIS=[];
+if(typeof DATA_CIVIL==='undefined')globalThis.DATA_CIVIL=[];
+if(typeof DATA_PENAL==='undefined')globalThis.DATA_PENAL=[];
+if(typeof DATA_CPC_LEIS==='undefined')globalThis.DATA_CPC_LEIS=[];
+if(typeof TOPICS_CPC_LEIS==='undefined')globalThis.TOPICS_CPC_LEIS=[];
+if(typeof DATA_CPC==='undefined')globalThis.DATA_CPC=[];
+if(typeof DATA_CPP==='undefined')globalThis.DATA_CPP=[];
+if(typeof DATA_ADM==='undefined')globalThis.DATA_ADM=[];
+if(typeof TOPICS_ADM==='undefined')globalThis.TOPICS_ADM=[];
+if(typeof DATA_ADM_PACK1==='undefined')globalThis.DATA_ADM_PACK1=[];
+if(typeof TOPICS_ADM_PACK1==='undefined')globalThis.TOPICS_ADM_PACK1=[];
+if(typeof DATA_ADM_PACK2==='undefined')globalThis.DATA_ADM_PACK2=[];
+if(typeof TOPICS_ADM_PACK2==='undefined')globalThis.TOPICS_ADM_PACK2=[];
+if(typeof DATA_ADM_PACK3==='undefined')globalThis.DATA_ADM_PACK3=[];
+if(typeof TOPICS_ADM_PACK3==='undefined')globalThis.TOPICS_ADM_PACK3=[];
+if(typeof DATA_ADM_PACK4==='undefined')globalThis.DATA_ADM_PACK4=[];
+if(typeof TOPICS_ADM_PACK4==='undefined')globalThis.TOPICS_ADM_PACK4=[];
+if(typeof DATA_ADM_14133_EXTRA==='undefined')globalThis.DATA_ADM_14133_EXTRA=[];
+if(typeof DATA_ADM_8112_EXTRA==='undefined')globalThis.DATA_ADM_8112_EXTRA=[];
+if(typeof DATA_ADM_8429_EXTRA==='undefined')globalThis.DATA_ADM_8429_EXTRA=[];
+if(typeof DATA_ADM_9784_EXPANSAO==='undefined')globalThis.DATA_ADM_9784_EXPANSAO=[];
+if(typeof DATA_ADM_12527_EXPANSAO==='undefined')globalThis.DATA_ADM_12527_EXPANSAO=[];
+if(typeof DATA_ADM_13709_EXPANSAO==='undefined')globalThis.DATA_ADM_13709_EXPANSAO=[];
+if(typeof DATA_ADM_PACK5==='undefined')globalThis.DATA_ADM_PACK5=[];
+if(typeof DATA_CF_LEIS==='undefined')globalThis.DATA_CF_LEIS=[];
+if(typeof TOPICS_CF_LEIS==='undefined')globalThis.TOPICS_CF_LEIS=[];
+if(typeof DATA_RESTANTES==='undefined')globalThis.DATA_RESTANTES=[];
+if(typeof TOPICS_RESTANTES==='undefined')globalThis.TOPICS_RESTANTES={penal:[],cpp:[],cpc:[]};
+if(typeof CENTRAL_LAW_MODULES==='undefined')globalThis.CENTRAL_LAW_MODULES={};
+</script>
 <script>
 const DATA_ADM_EXTRAS = [...DATA_ADM_14133_EXTRA,...DATA_ADM_8112_EXTRA,...DATA_ADM_8429_EXTRA,...DATA_ADM_9784_EXPANSAO,...DATA_ADM_12527_EXPANSAO,...DATA_ADM_13709_EXPANSAO,...DATA_ADM_PACK5];
 const DATA = [...DATA_CF,...DATA_CF_LEIS,...DATA_CIVIL,...DATA_CIVIL_LEIS,...DATA_PENAL,...DATA_CPC,...DATA_CPC_LEIS,...DATA_CPP,...DATA_ADM,...DATA_ADM_PACK1,...DATA_ADM_PACK2,...DATA_ADM_PACK3,...DATA_ADM_PACK4,...DATA_ADM_EXTRAS,...DATA_RESTANTES,...DATA_LED_APPROVED];
