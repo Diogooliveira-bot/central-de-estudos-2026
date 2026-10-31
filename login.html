@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex">
-<title>Entrar — Base Completa</title>
+<title>Entrar — Base Completa | Central de Estudos</title>
 <link rel="manifest" href="/manifest.webmanifest">
-<meta name="theme-color" content="#f4f1ea">
+<meta name="theme-color" content="#12344d">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
@@ -43,7 +43,7 @@ button{width:100%;margin-top:18px;border:0;border-radius:10px;padding:12px 14px;
 <label for="email">E-mail</label>
 <input id="email" type="email" autocomplete="username" required>
 <label for="password">Senha</label>
-<input id="password" type="password" autocomplete="current-password" required>
+<div class="password-field"><input id="password" type="password" autocomplete="current-password" required><button type="button" id="togglePassword" class="password-toggle" aria-label="Mostrar senha" aria-pressed="false">Mostrar</button></div>
 <label class="remember" for="remember"><input id="remember" type="checkbox"> Manter conectado neste dispositivo</label>
 <button id="loginBtn" type="submit">Entrar</button>
 <p class="access-help"><a href="/recuperar-senha.html" style="color:#17658a;font-weight:750;text-decoration:none">Esqueci minha senha</a></p>
@@ -92,6 +92,10 @@ async function init(){
   }
  }catch(e){setMsg(e.message,'err')}
 }
+document.getElementById('togglePassword').addEventListener('click',function(){
+ var input=document.getElementById('password'),visible=input.type==='text';
+ input.type=visible?'password':'text';this.textContent=visible?'Mostrar':'Ocultar';this.setAttribute('aria-pressed',String(!visible));this.setAttribute('aria-label',visible?'Mostrar senha':'Ocultar senha');
+});
 loginForm.addEventListener('submit',async function(e){
  e.preventDefault();var btn=document.getElementById('loginBtn');btn.disabled=true;setMsg('Entrando...');
  try{
