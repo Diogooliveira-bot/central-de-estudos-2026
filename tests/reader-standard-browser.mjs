@@ -21,6 +21,12 @@ for(const id of Object.keys(S)){
  await page.evaluate(()=>window.openDisciplines());await page.locator('#disciplineGrid [data-study-open-subject="'+id+'"]').first().click();
  await page.waitForFunction(id=>window.CentralDisciplineLoader.isReady(id),id,{timeout:40000});await page.waitForTimeout(800);
  const sec=page.locator('.subject[data-id="'+id+'"]');await sec.locator(S[id]).click();await page.waitForTimeout(900);
+ // Tela do módulo: mesmo nome do cartão de revisão e, em Constitucional, o painel aprovado.
+ const moduleText=await sec.innerText();
+ assert.doesNotMatch(moduleText,/Teoria guiada|Abrir teoria guiada/,id+': nome antigo do cartão de revisão');
+ assert.ok(await sec.locator('button:visible').filter({hasText:/^Revisar conteúdo/}).count(),id+': botão "Revisar conteúdo" ausente');
+ if(id==='cf'){assert.match(moduleText,/Progresso da teoria/);assert.match(moduleText,/Questões externas/);assert.doesNotMatch(moduleText,/PROGRESSO DE ESTUDO/);}
+
  await sec.locator('button:visible').filter({hasText:/^Estudar conteúdo$/}).first().click();await page.waitForTimeout(3000);
  const info=await page.evaluate(()=>{const o=[...document.querySelectorAll('.bc-native-reader-overlay')].pop();if(!o)return null;return {id:o.id,title:o.querySelector('.bc-native-reader-title b')?.textContent,eyebrow:o.querySelector('.bc-native-reader-title small')?.textContent,tools:[...o.querySelector('.bc-native-reader-tools').children].filter(e=>!e.hidden&&getComputedStyle(e).display!=='none').map(e=>e.tagName==='INPUT'?'[Buscar]':e.classList.contains('bc-reading-appearance-controls')?'[Aparência]':e.textContent.trim()),first:(o.querySelector('.bc-native-article h1')?.textContent||'').trim().slice(0,60)}});
  assert.ok(info,id+': leitor não abriu');
@@ -29,10 +35,10 @@ for(const id of Object.keys(S)){
  assert.deepEqual(info.tools.map(t=>t.replace(/^\d+% lido$/,'% lido')),['% lido','Concluir leitura','[Buscar]','Capítulos','[Aparência]'],id+': barra fora do padrão');
  assert.equal(info.first,info.title.slice(0,60),id+': abertura sem o título do módulo');
  const article=await page.locator('.bc-native-reader-overlay').last().locator('.bc-native-article').innerText();
- assert.doesNotMatch(article.slice(0,1500),/A P O S? ?T I L A|BASE COMPLETA M\d/,id+': capa do PDF no início');
+ assert.doesNotMatch(article.slice(0,1500),/A P O S? ?T I L A|BASE COMPLETA M\d|DIREITO ADMINISTRATIVO ?M[ÓO]DULO|Apostila de estudo|OFFLINE|n[ãa]o publicar/,id+': capa ou anotação interna no início');
  const inp=page.locator('.bc-native-reader-overlay input[type=search]').last();
  await inp.fill('a');await inp.fill('de');await page.waitForTimeout(500);
- assert.ok(await page.locator('.bc-native-reader-overlay mark').count()>0,id+': busca sem resultado');
+ assert.ok(await page.locator('.bc-native-reader-overlay mark').count()>1,id+': busca deve destacar todos os resultados');
  await page.locator('.bc-native-reader-overlay').last().getByRole('button',{name:'Concluir leitura'}).click();await page.waitForTimeout(500);
  assert.equal((await page.locator('.bc-native-reader-overlay .bc-native-reader-meta').last().textContent()).trim(),'100% lido',id+': Concluir leitura não chegou a 100%');
  console.log('READER_STANDARD_OK='+id);

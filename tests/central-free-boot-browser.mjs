@@ -71,11 +71,11 @@ try{
  await page.waitForFunction(()=>window.CentralPlanAccess?.isKnown?.()&&window.CentralPlanAccess.isFree(),{timeout:10000});
  // Mesma interface do Premium nas seis disciplinas, com resumo liberado e Premium bloqueado.
  const subjects=[
-  ['cf','.cf-module-head >> nth=0','Abrir teoria guiada'],
+  ['cf','.cf-module-head >> nth=0','Revisar conteúdo'],
   ['penal','.cf-module-head >> nth=0','Revisar conteúdo'],
   ['cpc','.cf-module-head >> nth=1','Revisar conteúdo'],
   ['adm','.open-topic >> nth=0','Revisar conteúdo'],
-  ['civil','.cv-module-head >> nth=0','Abrir teoria guiada'],
+  ['civil','.cv-module-head >> nth=0','Revisar conteúdo'],
   ['cpp','.open-topic >> nth=0','Revisar conteúdo'],
  ];
  for(const [id,head,summary] of subjects){

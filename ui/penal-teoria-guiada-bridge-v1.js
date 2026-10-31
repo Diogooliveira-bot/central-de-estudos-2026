@@ -33,7 +33,7 @@ function paint(){
   const n=moduleNumber(card);
   if(!n)return;
   const title=card.querySelector('strong');
-  if(title&&title.textContent!=='Teoria guiada')title.textContent='Teoria guiada';
+  if(title&&title.textContent!=='Versão de revisão')title.textContent='Versão de revisão';
   const desc=card.querySelector('small');
   const copy='Explicações, exemplos, aprofundamento, pegadinhas e revisão rápida.';
   if(desc&&desc.textContent!==copy)desc.textContent=copy;

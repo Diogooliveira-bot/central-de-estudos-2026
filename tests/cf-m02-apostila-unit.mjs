@@ -60,7 +60,7 @@ test('botão Lei em Dia usa o filtro explícito do módulo e mantém as chaves d
   const offline = JSON.parse(read('central-offline-files-v66172.json'));
   for (const asset of [
     '/content/cf/m02-native-data.js?v=20261022cfm01m05apostila1',
-    '/ui/cf-native-study-v2.js?v=20261031readerstd1',
+    '/ui/cf-native-study-v2.js?v=20261031readerstd2',
   ]) {
     assert.ok(index.includes(`src="${asset}"`), asset);
     assert.equal(offline.files.includes(asset), !protectedAsset(new URL(asset, 'https://unit.test').pathname), asset);

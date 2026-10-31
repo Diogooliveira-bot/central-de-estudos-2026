@@ -54,13 +54,21 @@
     return Math.round(checks.filter(b => b.classList.contains('done')).length / checks.length * 100);
   }
 
-  function search(overlay) {
+  // Busca padrão: destaca todos os resultados e "Enter" avança para o próximo.
+  // Penal mantém a própria busca; a do CPC (só o primeiro resultado) é trocada.
+  function search(overlay, info) {
     let input = overlay.querySelector('.bc-native-reader-tools input[type="search"]');
-    if (input) return input;
-    input = document.createElement('input');
-    input.type = 'search';
-    input.placeholder = 'Buscar neste material…';
-    input.setAttribute('aria-label', 'Buscar neste material');
+    if (input?.dataset.bcStdSearch || (input && !(info.legacy && info.subject === 'cpc'))) return input;
+    const fresh = document.createElement('input');
+    fresh.type = 'search';
+    fresh.placeholder = 'Buscar neste material…';
+    fresh.setAttribute('aria-label', 'Buscar neste material');
+    fresh.dataset.bcStdSearch = '1';
+    if (input) {
+      overlay.querySelector('.bc-native-article')?.querySelectorAll('mark.cpc-hit').forEach(m => m.replaceWith(document.createTextNode(m.textContent)));
+      input.replaceWith(fresh);
+    } else overlay.querySelector('.bc-native-reader-tools').appendChild(fresh);
+    input = fresh;
     let hits = [], index = -1;
     const clear = article => {
       article.querySelectorAll('mark.bc-std-hit').forEach(m => m.replaceWith(document.createTextNode(m.textContent)));
@@ -104,7 +112,6 @@
     let timer = 0;
     input.addEventListener('input', () => { clearTimeout(timer); timer = setTimeout(run, 180); });
     input.addEventListener('keydown', event => { if (event.key === 'Enter') { event.preventDefault(); next(); } });
-    overlay.querySelector('.bc-native-reader-tools').appendChild(input);
     return input;
   }
 
@@ -151,6 +158,30 @@
     const text = nodes.map(node => node.textContent).join(' ');
     if (/BASE COMPLETA|(?:\b\p{Lu} ){6,}/u.test(text)) nodes.forEach(node => node.remove());
   }
+  // ADM: linhas de capa e anotações internas da apostila antes do 1º título
+  // ("DIREITO ADMINISTRATIVOMÓDULO 01", "Apostila de estudo", título repetido,
+  // "Modo: OFFLINE · não publicar"...). Orientações e fontes permanecem.
+  const ADM_COVER = /^(?:DIREITO ADMINISTRATIVO|Apostila de estudo\b|ADM M\d+\b|Central de Estudos\b)|OFFLINE\b|n[ãa]o publica(?:r|do)|UID futuro|pacote offline|pronto para integra/i;
+  const plain = text => String(text || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+  function cleanAdmCover(article) {
+    const h1 = article.querySelector(':scope > h1');
+    if (!h1) return;
+    const title = plain(h1.textContent);
+    for (let node = h1.nextElementSibling, next; node && !/^H[1-6]$/.test(node.tagName); node = next) {
+      next = node.nextElementSibling;
+      if (node.tagName !== 'P') continue;
+      const flat = document.createElement('span'); flat.innerHTML = node.innerHTML.replace(/<br\s*\/?>/gi, ' ');
+      const whole = plain(flat.textContent);
+      if (whole && (title === whole || title.startsWith(whole + ' '))) { node.remove(); continue; }
+      const parts = node.innerHTML.split(/<br\s*\/?>/i).filter(part => {
+        const holder = document.createElement('span'); holder.innerHTML = part;
+        const text = holder.textContent.trim();
+        return text && !ADM_COVER.test(text);
+      });
+      if (!parts.length) node.remove();
+      else if (parts.length !== node.innerHTML.split(/<br\s*\/?>/i).length) node.innerHTML = parts.join('<br>');
+    }
+  }
   function intro(overlay, info) {
     const article = overlay.querySelector('.bc-native-article');
     if (!article || article.querySelector('.bc-std-intro')) return;
@@ -160,6 +191,10 @@
       article.classList.add('bc-std-legacy-article');
       if (info.subject === 'cpc' && info.mode === 'complete') removeCover(article);
       return;
+    }
+    if (info.subject === 'adm' && info.mode === 'complete' && !article.dataset.bcStdCover) {
+      article.dataset.bcStdCover = '1';
+      cleanAdmCover(article);
     }
     const title = overlay.querySelector('.bc-native-reader-title b')?.textContent || '';
     const key = text => String(text || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
@@ -182,7 +217,7 @@
       header(overlay, info);
       if (info.legacy) legacyTools(overlay);
     }
-    search(overlay);
+    search(overlay, info);
     intro(overlay, info);
     order(overlay);
   }

@@ -31,7 +31,7 @@ test('Civil M01–M15: carregador e leitor oficiais na Preview sem mudar banco o
     assert.ok(boot.includes(file),'script ausente '+file);
     assert.ok(boot.indexOf(file)<boot.indexOf('civil-teoria-guiada-reader-v1.js'),'ordem incorreta '+file);
   }
-  assert.ok(boot.indexOf('civil-teoria-guiada-reader-v1.js')<boot.indexOf('ui/civil-native-study-v1.js?v=20261022civilpilot3'));
+  assert.ok(boot.indexOf('civil-teoria-guiada-reader-v1.js')<boot.indexOf('ui/civil-native-study-v1.js?v=20261031readerstd2'));
   assert.ok(ui.includes("kind==='summary'&&n>=1&&n<=15&&g.BcCivilGuidedReader?.open(n)"));
   assert.ok(ui.includes('d.completeHtml'),'teoria completa original preservada');
   assert.ok(ui.includes("openQuestions(${m.number},'${kind}')"),'questões internas preservadas');

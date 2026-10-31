@@ -32,6 +32,26 @@
       '<article class="penal-approved-progress-card"><div class="penal-approved-progress-head"><b>Questões externas</b><strong>' + roundPct + '% · ' + roundCount + '/3 rodadas</strong></div><div class="penal-approved-progress-track" role="progressbar" aria-label="Progresso das questões externas" aria-valuemin="0" aria-valuemax="3" aria-valuenow="' + roundCount + '"><span style="width:' + roundPct + '%"></span></div><small>' + (roundCount ? done + ' questões registradas · ' + correct + ' certas' : 'Nenhuma rodada registrada ainda') + '</small></article>';
   }
 
+  // Constitucional: mesmo cartão de Penal (teoria + questões externas), com a
+  // teoria calculada como no padrão ADM (versão de revisão + teoria completa).
+  function cfApprovedProgress(module, meta, body) {
+    const n = Number(String(meta.id).replace(/\D/g,''));
+    const native = window.CfNativeStudy?.theory?.(n);
+    const theoryPct = Number.isFinite(native) ? Math.max(0,Math.min(100,native)) : (readingStats(module, meta).pct || 0);
+    const rounds = footerRounds(meta), roundCount = Math.min(rounds.length,3), roundPct = Math.round(roundCount / 3 * 100);
+    const done = rounds.reduce((sum,row) => sum + row.done, 0), correct = rounds.reduce((sum,row) => sum + row.correct, 0);
+    let panel = body.querySelector(':scope > .penal-approved-progress');
+    if (!panel) {
+      panel = document.createElement('section');
+      panel.className = 'penal-approved-progress';
+      panel.setAttribute('aria-label','Progresso do módulo');
+      body.insertBefore(panel,body.firstElementChild);
+    }
+    const html = '<article class="penal-approved-progress-card"><div class="penal-approved-progress-head"><b>Progresso da teoria</b><strong>' + theoryPct + '% concluído</strong></div><div class="penal-approved-progress-track" role="progressbar" aria-label="Progresso da teoria" aria-valuemin="0" aria-valuemax="100" aria-valuenow="' + theoryPct + '"><span style="width:' + theoryPct + '%"></span></div><small>Versão de revisão + teoria completa</small></article>' +
+      '<article class="penal-approved-progress-card"><div class="penal-approved-progress-head"><b>Questões externas</b><strong>' + roundPct + '% · ' + roundCount + '/3 rodadas</strong></div><div class="penal-approved-progress-track" role="progressbar" aria-label="Progresso das questões externas" aria-valuemin="0" aria-valuemax="3" aria-valuenow="' + roundCount + '"><span style="width:' + roundPct + '%"></span></div><small>' + (roundCount ? done + ' questões registradas · ' + correct + ' certas' : 'Nenhuma rodada registrada ainda') + '</small></article>';
+    if (panel.innerHTML !== html) panel.innerHTML = html;
+  }
+
   function penalQuestionAction(week, desired, mode) {
     const pool = typeof penalPool === 'function' ? penalPool(week) : [];
     const real = pool.filter(question => question.real !== false);
@@ -677,6 +697,14 @@
       return;
     }
 
+    if (meta.subject === 'cf') {
+      body.querySelector(':scope > .csp-panel[data-ds-summary]')?.remove();
+      body.querySelector(':scope > .ds-module-nav')?.remove();
+      cfApprovedProgress(module,meta,body);
+      moduleFooter(module,body,meta);
+      notes(module,body,meta);
+      return;
+    }
     if (!body.querySelector('.csp-panel')) body.insertAdjacentHTML('afterbegin',progressPanel(module,meta));
     else {
       const panel = body.querySelector('[data-ds-summary]');

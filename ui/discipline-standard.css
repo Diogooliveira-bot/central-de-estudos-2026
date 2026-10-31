@@ -215,20 +215,20 @@ html.bc-ui-v1 #subjects .adm-native-module-row > .topic-detail {
 
 /* Penal and CPP use the same vertical study-card hierarchy as the approved CPC layout. */
 html.bc-ui-v1 #subjects .subject[data-id="penal"] .cf-module-bar { display:none!important; }
-html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-progress {
+html.bc-ui-v1 #subjects :is(.subject[data-id="penal"],.subject[data-id="cf"]) .penal-approved-progress {
   display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; margin:0 0 14px;
 }
-html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-progress-card {
+html.bc-ui-v1 #subjects :is(.subject[data-id="penal"],.subject[data-id="cf"]) .penal-approved-progress-card {
   min-width:0; padding:13px 14px; border:1px solid #d9e1e6; border-radius:14px; background:#fff;
 }
-html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-progress-head {
+html.bc-ui-v1 #subjects :is(.subject[data-id="penal"],.subject[data-id="cf"]) .penal-approved-progress-head {
   display:flex; align-items:center; justify-content:space-between; gap:8px; margin-bottom:8px; color:#263442; font-size:12px;
 }
-html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-progress-head strong { color:#12a8ad; font-size:11px; text-align:right; }
-html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-progress-card small { display:block; margin-top:6px; color:#687582; font-size:10px; line-height:1.4; }
-html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-progress-track { height:7px; overflow:hidden; border-radius:99px; background:#e9edf0; }
-html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-progress-track span { display:block; height:100%; border-radius:inherit; background:#16824a; transition:width .2s ease; }
-html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-progress-card:nth-child(2) .penal-approved-progress-track span { background:#16824a; }
+html.bc-ui-v1 #subjects :is(.subject[data-id="penal"],.subject[data-id="cf"]) .penal-approved-progress-head strong { color:#12a8ad; font-size:11px; text-align:right; }
+html.bc-ui-v1 #subjects :is(.subject[data-id="penal"],.subject[data-id="cf"]) .penal-approved-progress-card small { display:block; margin-top:6px; color:#687582; font-size:10px; line-height:1.4; }
+html.bc-ui-v1 #subjects :is(.subject[data-id="penal"],.subject[data-id="cf"]) .penal-approved-progress-track { height:7px; overflow:hidden; border-radius:99px; background:#e9edf0; }
+html.bc-ui-v1 #subjects :is(.subject[data-id="penal"],.subject[data-id="cf"]) .penal-approved-progress-track span { display:block; height:100%; border-radius:inherit; background:#16824a; transition:width .2s ease; }
+html.bc-ui-v1 #subjects :is(.subject[data-id="penal"],.subject[data-id="cf"]) .penal-approved-progress-card:nth-child(2) .penal-approved-progress-track span { background:#16824a; }
 
 html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-reading {
   display:block; margin:0 0 14px; padding:16px; border:1px solid #d8d5e4; border-radius:16px; background:#f8f7fc; color:#17212f;
@@ -365,7 +365,7 @@ html.bc-ui-v1 .cpp-native-image-viewer header { display:flex; align-items:center
 html.bc-ui-v1 .cpp-native-image-viewer>div { overflow:auto; align-items:flex-start; justify-content:center; }
 html.bc-ui-v1 .cpp-native-infographic-svg { width:min(100%,700px); height:auto; }
 @media(max-width:700px) {
-  html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-progress { grid-template-columns:1fr; }
+  html.bc-ui-v1 #subjects :is(.subject[data-id="penal"],.subject[data-id="cf"]) .penal-approved-progress { grid-template-columns:1fr; }
   html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-card { grid-template-columns:58px minmax(0,1fr); gap:12px; padding:15px; }
   html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-icon { width:56px; height:56px; border-radius:16px; font-size:29px; }
   html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-copy h3 { font-size:18px; }
@@ -383,7 +383,7 @@ html.bc-ui-v1 .cpp-native-infographic-svg { width:min(100%,700px); height:auto; 
 @media(max-width:420px) {
   html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-reading { padding:13px; }
   html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-review { padding:15px; }
-  html.bc-ui-v1 #subjects .subject[data-id="penal"] .penal-approved-progress-head { align-items:flex-start; }
+  html.bc-ui-v1 #subjects :is(.subject[data-id="penal"],.subject[data-id="cf"]) .penal-approved-progress-head { align-items:flex-start; }
   html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-guided-reading { gap:9px; }
   html.bc-ui-v1 #subjects .subject[data-id="cpp"] .adm-native-reading-icon { flex-basis:34px; width:34px; height:34px; font-size:20px; }
 }

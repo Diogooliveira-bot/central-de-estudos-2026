@@ -42,7 +42,7 @@ test('CF: leitor de revisão é substituído sem botão de piloto, sem tocar nos
  assert.ok(ui.includes('Teoria completa'));
  assert.ok(ui.includes('Resolver 10 questões'));
  assert.ok(ui.includes('Resolver 5 questões'));
- assert.ok(ui.includes('Abrir teoria guiada'));
+ assert.ok(ui.includes('Revisar conteúdo'));
  assert.ok(ui.includes('markSummaryRead(n)'));
  assert.ok(!html.includes('m01-teoria-guiada-preview.js'));
  assert.ok(!reader.includes('Nova teoria guiada · testar'));

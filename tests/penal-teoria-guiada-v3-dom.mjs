@@ -28,7 +28,7 @@ function env(mod){
 test('V3 DOM M08: card abre Teoria Guiada, modos, lei por extenso, checklist e 23 questões',()=>{
  const dom=env(8),w=dom.window,d=w.document;
  const card=d.querySelector('[data-native-kind="summary"]');
- assert.equal(card.querySelector('strong').textContent,'Teoria guiada');
+ assert.equal(card.querySelector('strong').textContent,'Versão de revisão');
  card.click();
  assert.ok(d.querySelector('.bc-m01-overlay'),'leitor não abriu');
  assert.match(d.querySelector('.bc-m01-overlay').textContent,/Punibilidade e causas que a extinguem/);
