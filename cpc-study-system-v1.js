@@ -106,6 +106,16 @@ function pick(list,n,seed){
   return a.map((q,i)=>({q,k:(h^Math.imul(i+1,2654435761))>>>0})).sort((x,y)=>x.k-y.k).slice(0,n).map(x=>x.q);
 }
 function internalQuestions(id,track){
+  // M01-M06: bateria fixa recuperada (content/cpc/cpc-fixation-questions-m01-m06-v1.js).
+  const fixed=global.__CPCFixedFixation?.[legacyId(id)]?.[track];
+  if(Array.isArray(fixed)&&fixed.length){
+    const w=cpcWeeks().find(x=>x.id===legacyId(id)),byId=new Map((w?cpcPoolSafe(w):[]).map(q=>[q.id,q]));
+    const list=fixed.map(qid=>byId.get(qid)).filter(Boolean);
+    if(list.length===fixed.length){
+      const labels=track==='summary'?['easy','easy','medium','medium','hard']:['easy','easy','easy','easy','medium','medium','medium','medium','hard','hard'];
+      return list.map((q,i)=>Object.assign({},q,{_difficulty:labels[i]||'hard'}));
+    }
+  }
   const b=bucketed(id),need=track==='summary'?{easy:2,medium:2,hard:1}:{easy:4,medium:4,hard:2};
   const out=[];
   for(const level of ['easy','medium','hard']){

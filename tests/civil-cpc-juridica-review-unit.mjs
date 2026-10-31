@@ -3,6 +3,7 @@ import { readFile } from 'node:fs/promises';
 import vm from 'node:vm';
 import { gunzipSync } from 'node:zlib';
 import test from 'node:test';
+import { protectedAsset } from '../lib/protected-content.js';
 
 const read = (path) => readFile(new URL(`../${path}`, import.meta.url), 'utf8');
 
@@ -95,12 +96,13 @@ test('carregadores e pacote offline apontam para a revisão jurídica atual', as
     const id = String(number).padStart(2, '0');
     const reference = `content/cpc/m${id}-native-data.js?v=20261018cpcjur1`;
     assert(shell.includes(reference) || boot.includes(reference), `${reference}: fora do carregamento ativo`);
-    assert(manifest.includes(`/${reference}`), `${reference}: fora do pacote offline`);
+    // Conteúdo Premium fica fora do pacote offline público.
+    assert.equal(manifest.includes(`/${reference}`), !protectedAsset(`/${reference.split('?')[0]}`), `${reference}: política do pacote offline`);
   }
 
   assert(lazy.includes('content/civil/civil-native-index.js?v=20261018civiljur1'));
-  assert(lazy.includes('ui/civil-native-study-v1.js?v=20261018civiljur1'));
-  assert(manifest.includes('/content/civil/civil-native-content-packed.js?v=20261018civiljur1'));
+  assert.match(lazy, /ui\/civil-native-study-v1\.js\?v=\w+/);
+  assert.equal(manifest.includes('/content/civil/civil-native-content-packed.js?v=20261018civiljur1'), !protectedAsset('/content/civil/civil-native-content-packed.js'));
   assert(civilReader.includes('/content/civil/civil-native-content-packed.js?v=20261018civiljur1'));
   assert(exporter.includes('/content/civil/civil-native-content-packed.js?v=20261018civiljur1'));
 });

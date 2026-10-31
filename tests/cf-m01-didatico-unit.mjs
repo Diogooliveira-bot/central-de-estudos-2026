@@ -4,6 +4,7 @@ import path from 'node:path';
 import test from 'node:test';
 import vm from 'node:vm';
 import { JSDOM } from 'jsdom';
+import { protectedAsset } from '../lib/protected-content.js';
 import { renderGuidedM01 } from '../scripts/render-cf-m01-guided.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
@@ -95,7 +96,8 @@ test('leitor M01 apresenta comparações legíveis e checklist persistente, isol
 test('M01 não perde referências de cache na integração local', () => {
   const asset = '/content/cf/m01-native-data.js?v=20261022cfm01m05apostila1';
   assert.ok(read('index.html').includes(`src="${asset}"`));
-  assert.ok(JSON.parse(read('central-offline-files-v66172.json')).files.includes(asset));
+  // Conteúdo Premium fica fora do pacote offline público (mesma regra dos demais módulos).
+  assert.equal(JSON.parse(read('central-offline-files-v66172.json')).files.includes(asset), !protectedAsset(new URL(asset, 'https://unit.test').pathname));
 });
 
 function guided(seed = {}) {

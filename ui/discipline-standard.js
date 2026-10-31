@@ -52,7 +52,36 @@
     if (panel.innerHTML !== html) panel.innerHTML = html;
   }
 
-  function penalQuestionAction(week, desired, mode) {
+  // Fixação interna do Penal (5 da revisão + 10 da teoria completa): fica nos dados
+  // nativos do módulo e é respondida no fim do próprio leitor.
+  function penalNativeQuestions(week, type) {
+    const key = 'm' + String(week?.num || String(week?.id || '').replace(/\D/g,'')).padStart(2,'0');
+    const list = window.BASE_NATIVE_CONTENT?.penal?.[key]?.internalQuestions?.[type];
+    return Array.isArray(list) ? list : [];
+  }
+
+  function openReaderQuestions(primary) {
+    primary.click();
+    let tries = 0;
+    const jump = () => {
+      const card = document.querySelector('.bc-native-reader-overlay .bc-native-quiz-card');
+      if (card) { card.scrollIntoView({block:'start'}); return; }
+      if (++tries < 40) setTimeout(jump, 150);
+    };
+    setTimeout(jump, 150);
+  }
+
+  function penalQuestionAction(week, desired, mode, primary, type) {
+    const native = penalNativeQuestions(week, type);
+    if (native.length && primary) {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'cf-btn penal-approved-secondary';
+      button.dataset.penalApprovedQuestions = String(desired);
+      button.textContent = 'Resolver ' + native.length + ' questões';
+      button.addEventListener('click', () => openReaderQuestions(primary));
+      return button;
+    }
     const pool = typeof penalPool === 'function' ? penalPool(week) : [];
     const real = pool.filter(question => question.real !== false);
     const available = real.length ? real : pool.filter(question => question.real === false);
@@ -121,7 +150,7 @@
       if (handler) primary.setAttribute('onclick', handler);
       else primary.addEventListener('click', () => original.click());
       actions.appendChild(primary);
-      actions.appendChild(penalQuestionAction(week, isComplete ? 10 : 5, isComplete ? 'fixation' : 'intermediate'));
+      actions.appendChild(penalQuestionAction(week, isComplete ? 10 : 5, isComplete ? 'fixation' : 'intermediate', primary, type));
       return article;
     };
     const fullCard = makeCard(complete, 'complete');
@@ -354,7 +383,9 @@
       const knownLegacyCount = Number(week.num) >= 7 && Number(week.num) <= 17 ? 15 : 0;
       // A stale 0/0 rendering must not hide an already loaded, validated question bank.
       // Never enable a full 5/10-question quiz from a partial pool.
-      const available = validatedCount || (explicit ? nativeCount : knownLegacyCount);
+      // M18-M20 trazem bateria própria de 5 + 10 no leitor do módulo (cpc-study-mNN-lite.js).
+      const ownBattery = /^\s*cpcM\d+OpenQuiz\(/.test(button.getAttribute('onclick') || '') ? requested : 0;
+      const available = validatedCount || ownBattery || (explicit ? nativeCount : knownLegacyCount);
       const count = available >= requested ? requested : 0;
       return {button,count};
     };

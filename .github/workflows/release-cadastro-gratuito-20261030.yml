@@ -29,6 +29,12 @@ on:
       - 'politica-de-cookies.html'
       - 'tests/public-free-signup-4-5-unit.mjs'
       - 'tests/free-signup-browser-4-5.mjs'
+      - 'ui/discipline-standard.js'
+      - 'cpc-study-system-v1.js'
+      - 'content/cpc/cpc-fixation-questions-m01-m06-v1.js'
+      - 'ui/civil-native-study-v1.js'
+      - 'tests/internal-questions-browser.mjs'
+      - 'tests/civil-sharing-links-unit.mjs'
       - '.github/workflows/release-cadastro-gratuito-20261030.yml'
 permissions:
   contents: read
@@ -48,7 +54,7 @@ jobs:
       - name: Dependencias
         run: npm ci --ignore-scripts --no-audit --no-fund
       - name: Testes unitarios cadastro, protecao Premium e aceites
-        run: node --test tests/public-free-signup-4-5-unit.mjs tests/plan-access-unit.mjs tests/admin-public-signups-unit.mjs tests/protected-content-unit.mjs
+        run: node --test tests/public-free-signup-4-5-unit.mjs tests/plan-access-unit.mjs tests/admin-public-signups-unit.mjs tests/protected-content-unit.mjs tests/cf-m01-didatico-unit.mjs tests/civil-cpc-juridica-review-unit.mjs tests/fixation-only-contract-unit.mjs
       - name: Sintaxe da API administrativa
         run: node --check lib/admin-public-signups-handler.js
       - name: Chromium isolado
@@ -61,3 +67,7 @@ jobs:
         run: node tests/reader-standard-browser.mjs
       - name: Questões interativas e siglas com descrição
         run: node tests/reader-questions-browser.mjs
+      - name: Questões internas de Penal e Processo Civil (Premium)
+        run: node tests/internal-questions-browser.mjs
+      - name: Civil - módulos, infográfico e catálogo preservados
+        run: node --test tests/civil-sharing-links-unit.mjs

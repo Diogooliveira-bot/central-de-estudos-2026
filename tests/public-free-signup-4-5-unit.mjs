@@ -23,6 +23,7 @@ function setup(){
   const sql=async(strings,...values)=>{
     const source=strings.join('?');calls.push({source,values});
     if(source.includes('central_free_signup_limits'))return [{identity_hash:'dummy'}];
+    if(source.startsWith('DELETE FROM public.central_free_signup_pending WHERE expires_at<NOW()'))return [];
     if(source.includes('SELECT 1 FROM public.central_users'))return [];
     if(source.includes('INSERT INTO public.central_free_signup_pending'))return [];
     if(source.includes('WITH claimed AS'))return [{
@@ -441,4 +442,14 @@ test('publicacao legal permanece bloqueada ate versao final coordenada e servico
  assert.match(privacy,/Os critérios de retenção variam conforme a categoria/);
  assert.match(cookies,/verificação técnica realizada em 30\/10\/2026/);
  assert.match(cookies,/não há cookies opcionais que dependam de consentimento/);
+});
+
+test('pedido válido apaga solicitações expiradas e controles antigos (retenção)',async()=>{
+ const {handler,calls}=setup();
+ const ok=await handler(req({action:'request',name:'Pessoa Fictícia',email:'retencao@example.invalid',password:'SenhaForte#2026',ageConfirmed:true,termsAccepted:true,termsVersion:'terms-2026-10-30-v2'}),res());
+ const sources=calls.map(c=>c.source);
+ assert.ok(sources.some(s=>/^DELETE FROM public\.central_free_signup_pending WHERE expires_at<NOW\(\)$/.test(s)));
+ assert.ok(sources.some(s=>/DELETE FROM public\.central_free_signup_limits WHERE window_start<NOW\(\)-INTERVAL '7 days'/.test(s)));
+ const prune=sources.findIndex(s=>s.startsWith('DELETE FROM public.central_free_signup_pending'));
+ assert.ok(prune<sources.findIndex(s=>s.includes('INSERT INTO public.central_free_signup_pending')));
 });
