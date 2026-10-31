@@ -30,3 +30,5 @@ jobs:
         run: npm ci --ignore-scripts
       - name: Run transactional e-mail tests
         run: npm run test:emails
+      - name: Check existing password recovery and authentication flows
+        run: npm run test:password-reset
