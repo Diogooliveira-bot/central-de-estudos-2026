@@ -50,3 +50,12 @@ button:active{transform:translateY(1px)}
   .subtitle{margin-bottom:20px}
 }
 @media(prefers-reduced-motion:reduce){button{transition:none}}
+
+.password-field{position:relative}
+.password-field>input{padding-right:93px}
+.password-toggle,.password-toggle:hover{
+  position:absolute;right:7px;top:50%;transform:translateY(-50%);
+  width:auto;min-height:37px;margin:0;padding:8px 10px;border-radius:8px;
+  background:#eaf6f8;color:#065b66;font-size:12px;font-weight:800;
+}
+.password-toggle:active{transform:translateY(-50%)}
