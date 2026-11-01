@@ -35,6 +35,13 @@ on:
       - 'ui/civil-native-study-v1.js'
       - 'tests/internal-questions-browser.mjs'
       - 'tests/civil-sharing-links-unit.mjs'
+      - 'ui/editorial-reading-v2.js'
+      - 'ui/universal-reader-v1.js'
+      - 'ui/universal-reader-v1.css'
+      - 'ui/acronyms-v1.js'
+      - 'ui/student-experience-v3.css'
+      - 'tests/editorial-reading-v2-unit.mjs'
+      - 'tests/editorial-reading-browser.mjs'
       - 'lei-em-dia-aprovadas-20261012.js'
       - 'tools/decorando-data-cf-leis.js'
       - 'tools/decorando-data-led-aprovadas.js'
@@ -45,7 +52,7 @@ permissions:
 jobs:
   verificar:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 40
     steps:
       - name: Checkout seguro
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
@@ -58,7 +65,7 @@ jobs:
       - name: Dependencias
         run: npm ci --ignore-scripts --no-audit --no-fund
       - name: Testes unitarios cadastro, protecao Premium e aceites
-        run: node --test tests/public-free-signup-4-5-unit.mjs tests/plan-access-unit.mjs tests/admin-public-signups-unit.mjs tests/protected-content-unit.mjs tests/cf-m01-didatico-unit.mjs tests/civil-cpc-juridica-review-unit.mjs tests/fixation-only-contract-unit.mjs tests/lei-em-dia-constitucional.mjs tests/lei-em-dia-catalogo-integridade.mjs
+        run: node --test tests/public-free-signup-4-5-unit.mjs tests/plan-access-unit.mjs tests/admin-public-signups-unit.mjs tests/protected-content-unit.mjs tests/cf-m01-didatico-unit.mjs tests/civil-cpc-juridica-review-unit.mjs tests/fixation-only-contract-unit.mjs tests/lei-em-dia-constitucional.mjs tests/lei-em-dia-catalogo-integridade.mjs tests/editorial-reading-v2-unit.mjs
       - name: Sintaxe da API administrativa
         run: node --check lib/admin-public-signups-handler.js
       - name: Chromium isolado
@@ -75,3 +82,7 @@ jobs:
         run: node tests/internal-questions-browser.mjs
       - name: Civil - módulos, infográfico e catálogo preservados
         run: node --test tests/civil-sharing-links-unit.mjs
+      - name: Correção editorial V2 (parágrafos, tabelas em cartões, glossário, Aa)
+        env:
+          WIDTHS: '360,1366'
+        run: node tests/editorial-reading-browser.mjs
