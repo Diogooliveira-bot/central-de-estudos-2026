@@ -66,49 +66,31 @@ test('catálogo TJPB possui dez blocos oficiais e sem links fictícios para prep
   dom.window.close();
 });
 
-test('primeiro acesso escolhe carreira, edital ou estudo livre e mantém o objetivo no armazenamento local', async () => {
-  const progress = {
-    'central-v6:done:cf-m01':'1',
-    'central-v6:note:cf-m01':'anotação preservada',
-    'central-v6:external-filter-sessions:v1':JSON.stringify({ version:1, filters:{ 'qc:123':[{ id:'s1', answered:12, correct:9 }] } }),
-  };
-  const { dom, storage } = setup(makeStorage(progress));
-  const { window } = dom;
-  await settle(window);
-  assert.match(window.document.querySelector('#studyObjectiveDialog').textContent, /Como você quer estudar\?/);
-  assert.equal(window.document.querySelectorAll('[data-study-type]').length, 2);
-  assert.ok(window.document.querySelector('[data-study-select="free-study"]'));
-
-  chooseType(window, 'exam');
-  chooseGoal(window, 'exam-tjpb-2026-analista-judiciaria');
-  await settle(window);
-  assert.equal(window.CentralStudyObjectives.getActive(), 'exam-tjpb-2026-analista-judiciaria');
-  assert.equal(storage.getItem('central-v6:study-objective:v1'), 'exam-tjpb-2026-analista-judiciaria');
-  assert.equal(window.CentralStudentUX.subjects().length, 7);
-  assert.equal(window.document.querySelectorAll('#disciplineGrid [data-study-open-subject]').length, 7);
-  assert.equal(window.document.querySelectorAll('#disciplineGrid .study-objective-card--pending [data-study-open-subject]').length, 0);
-  assert.equal(window.document.querySelectorAll('#disciplineGrid .study-objective-card--pending').length, 3);
-  assert.match(window.document.querySelector('#disciplineGrid').textContent, /Direito do Consumidor — Em preparação/);
-  assert.match(window.document.querySelector('#disciplineGrid').textContent, /módulos 11 a 17 pendente/);
-  assert.equal(window.document.querySelector('#subjects [data-id="trab"]').hidden, true);
-  assert.equal(window.document.querySelector('#subjects [data-id="ptra"]').hidden, true);
-  assert.equal(window.document.querySelector('#studyObjectiveTopbar [data-study-objective-label]').textContent, 'TJPB 2026 · Analista');
-
-  window.document.querySelector('#studyObjectiveTopbar button').click();
-  chooseType(window, 'career');
-  chooseGoal(window, 'career-tribunais-tecnico');
-  await settle(window);
-  assert.equal(window.CentralStudentUX.subjects().length, 8);
-  assert.equal(window.document.querySelector('#subjects [data-id="trab"]').hidden, true);
-
-  window.document.querySelector('#studyObjectiveTopbar button').click();
-  chooseGoal(window, 'free-study');
-  await settle(window);
-  assert.equal(window.CentralStudentUX.subjects().length, 8);
-  assert.equal(window.document.querySelectorAll('#disciplineGrid [data-study-open-subject]').length, 8);
-  for (const [key, value] of Object.entries(progress)) assert.equal(storage.getItem(key), value);
-  assert.equal(window.__fetchCalls, 0);
-  await settle(window); await settle(window);
+test('boas-vindas: áreas, cargo, edital e estudo livre',async()=>{
+  const storage=makeStorage({'central-v6:done:cf-m01':'1'});
+  const {dom}=setup(storage),w=dom.window;
+  await settle(w);
+  assert.match(w.document.querySelector('#studyObjectiveDialog').textContent,/Bem-vindo à Base Completa/);
+  assert.equal(w.document.querySelectorAll('[data-study-area]').length,9);
+  assert.ok(w.document.querySelector('[data-study-free]'));
+  chooseExam(w,'exam-tjpb-2026-analista-judiciaria');
+  await settle(w);
+  assert.equal(w.CentralStudyObjectives.getActive(),'exam-tjpb-2026-analista-judiciaria');
+  assert.equal(w.document.querySelectorAll('#disciplineGrid .study-objective-card--pending').length,3);
+  w.CentralStudyObjectives.open();
+  openArea(w,'judiciaria');
+  chooseRole(w,'career-tribunais-tecnico');
+  await settle(w);
+  assert.equal(w.CentralStudyObjectives.getActive(),'career-tribunais-tecnico');
+  w.CentralStudyObjectives.open();
+  chooseFree(w,['pt','penal']);
+  await settle(w);
+  assert.equal(w.CentralStudyObjectives.getActive(),'free-study');
+  assert.deepEqual(Array.from(w.CentralStudyObjectives.activeSubjectIds()),['pt','penal']);
+  assert.equal(w.document.querySelectorAll('#disciplineGrid [data-study-open-subject]').length,2);
+  assert.equal(w.document.querySelector('#subjects [data-id="adm"]').hidden,true);
+  assert.equal(storage.getItem('central-v6:done:cf-m01'),'1');
+  assert.equal(w.__fetchCalls,0);
   dom.window.close();
 });
 
