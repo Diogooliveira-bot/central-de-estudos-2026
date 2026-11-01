@@ -33,7 +33,7 @@ function makeStorage(seed = {}) {
 
 function setup(storage = makeStorage()) {
   const sections = ids.map((id) => `<article class="subject" data-id="${id}"><button class="subject-head">${id}</button></article>`).join('');
-  const dom = new JSDOM(`<!doctype html><html><body><div class="topbar"><b>Central</b></div><div id="homeView"><div id="subjects">${sections}</div></div><div id="disciplinesView"><div id="disciplineGrid"><button class="disc-card">Original</button></div></div><div id="moduleView" class="hidden"></div></body></html>`, {
+  const dom = new JSDOM(`<!doctype html><html><body><div class="topbar"><b>Central</b></div><div id="homeView"><div id="subjects">${sections}</div></div><div id="disciplinesView"><div id="disciplineGrid"><button class="disc-card">Original</button></div></div><div id="moduleView" class="hidden"></div><div id="centralSettingsBackdrop" class="hidden"><section class="central-settings"><div class="central-settings-body"><div class="central-appearance-heading"><h3>Aparência</h3></div></div></section></div></body></html>`, {
     url:'https://preview.example.test/central-v119.html', runScripts:'outside-only', pretendToBeVisual:true,
   });
   const { window } = dom;
@@ -74,13 +74,18 @@ test('boas-vindas: áreas, cargo e estudo livre sem atalho para edital',async()=
   assert.equal(w.document.querySelectorAll('[data-study-area]').length,9);
   assert.ok(w.document.querySelector('[data-study-free]'));
   assert.equal(w.document.querySelector('[data-study-exams]'),null);
+  assert.equal(w.document.querySelector('#studyObjectiveTopbar'),null);
+  const settings=w.document.querySelector('#studySettingsObjective');
+  assert.ok(settings);
+  assert.match(settings.textContent,/Alterar objetivo/);
   assert.doesNotMatch(w.document.querySelector('#studyObjectiveDialog').textContent,/estudar por um edital já cadastrado/i);
   // O catálogo de editais já existente continua disponível para objetivos previamente salvos.
   w.CentralStudyObjectives.setActive('exam-tjpb-2026-analista-judiciaria');
   await settle(w);
   assert.equal(w.CentralStudyObjectives.getActive(),'exam-tjpb-2026-analista-judiciaria');
   assert.equal(w.document.querySelectorAll('#disciplineGrid .study-objective-card--pending').length,3);
-  w.CentralStudyObjectives.open();
+  w.document.querySelector('#studySettingsObjective [data-settings-change-objective]').click();
+  assert.ok(w.document.querySelector('#studyObjectiveDialog'));
   openArea(w,'judiciaria');
   chooseRole(w,'career-tribunais-tecnico');
   await settle(w);
@@ -141,5 +146,75 @@ test('objetivo escolhido sem conexão entra na fila e sincroniza quando a conex�
   assert.deepEqual(saved, { objectiveId:'career-tribunais-analista' });
   assert.equal(storage.getItem('central-v6:study-objective:pending:v1'), null);
   dom.window.close();
+});
+
+
+test('seleção do Estudo livre sincroniza entre aparelhos na conta do aluno', async () => {
+  const remote = { objectiveId:null, freeSubjectIds:null };
+  const writes = [];
+  const original = setup(makeStorage());
+  const w1 = original.dom.window;
+  w1.__BASE_COMPLETA_PREVIEW_GUEST__ = false;
+  w1.fetch = async (_url, options) => {
+    if (options?.method === 'PUT') {
+      const data = JSON.parse(options.body);
+      writes.push(data);
+      remote.objectiveId = data.objectiveId;
+      if (data.freeSubjectIds) remote.freeSubjectIds = data.freeSubjectIds.slice();
+      return { ok:true, json:async () => ({ ...remote, ok:true }) };
+    }
+    return { ok:true, json:async () => ({ ...remote }) };
+  };
+  await settle(w1);
+  chooseFree(w1,['pt','civil','rlm']);
+  await settle(w1);
+  assert.deepEqual(writes.at(-1), { objectiveId:'free-study', freeSubjectIds:['pt','civil','rlm'] });
+  assert.equal(remote.objectiveId,'free-study');
+  assert.equal(w1.document.querySelector('#studyObjectiveTopbar'),null);
+  original.dom.window.close();
+
+  const second = setup(makeStorage());
+  const w2=second.dom.window;
+  w2.__BASE_COMPLETA_PREVIEW_GUEST__ = false;
+  w2.fetch = async () => ({ ok:true, json:async () => ({ ...remote }) });
+  await settle(w2);
+  assert.equal(w2.CentralStudyObjectives.getActive(),'free-study');
+  assert.deepEqual(Array.from(w2.CentralStudyObjectives.activeSubjectIds()),['pt','civil','rlm']);
+  assert.equal(w2.document.querySelector('#subjects [data-id="penal"]').hidden,true);
+  assert.ok(w2.document.querySelector('#studySettingsObjective [data-settings-change-objective]'));
+  second.dom.window.close();
+});
+
+test('escolha livre desconectada é enviada na volta da internet, sem limpar progresso', async () => {
+  const storage=makeStorage({'central-v6:done:cf-m01':'1'});
+  const {dom}=setup(storage),w=dom.window;
+  await settle(w);
+  w.__BASE_COMPLETA_PREVIEW_GUEST__ = false;
+  Object.defineProperty(w.navigator,'onLine',{value:false,configurable:true});
+  chooseFree(w,['adm','cpp']);
+  await settle(w);
+  assert.equal(storage.getItem('central-v6:study-objective:pending:v1'),'1');
+  const submissions=[];
+  w.fetch=async (_url,options) => {
+    submissions.push(JSON.parse(options.body));
+    return {ok:true,json:async()=>({ok:true})};
+  };
+  Object.defineProperty(w.navigator,'onLine',{value:true,configurable:true});
+  w.dispatchEvent(new w.Event('online'));
+  await settle(w);await settle(w);
+  assert.deepEqual(submissions.at(-1),{objectiveId:'free-study',freeSubjectIds:['adm','cpp']});
+  assert.equal(storage.getItem('central-v6:study-objective:pending:v1'),null);
+  assert.equal(storage.getItem('central-v6:done:cf-m01'),'1');
+  dom.window.close();
+});
+
+test('API do objetivo valida disciplinas, persiste JSONB e mantém dados ao mudar de carreira',()=>{
+  const api=read('api/objective.js');
+  assert.match(api,/free_subject_ids JSONB/);
+  assert.match(api,/validFreeSubjectIds\(freeSubjectIds\)/);
+  assert.match(api,/freeSubjectIds:validFreeSubjectIds/);
+  assert.match(api,/CASE WHEN \$\{hasFreeSelection\}/);
+  assert.match(api,/free_subject_ids=CASE WHEN/);
+  assert.doesNotMatch(api,/DELETE FROM central_user_preferences/i);
 });
 
