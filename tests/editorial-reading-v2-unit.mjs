@@ -179,3 +179,17 @@ test('tabelas de Civil reconstruídas no material (M05, M11, M15) sem bloco de l
   assert.match(data['civil-m05'].completeHtml, /<h2>10\. REVISÃO FINAL<\/h2>/);
   assert.match(data['civil-m11'].completeHtml, /<td>Aquisição\/transmissão<\/td>/);
 });
+
+test('Civil: nenhuma frase marcada como subtítulo (continuações e listas de artigos)', async () => {
+  const vm = await import('node:vm'); const zlib = await import('node:zlib');
+  const sb = {}; sb.window = sb; vm.runInNewContext(read('content/civil/civil-native-content-packed.js'), sb);
+  const data = JSON.parse(zlib.gunzipSync(Buffer.from(sb.CIVIL_NATIVE_PACKED_B64, 'base64')).toString());
+  const bad = [];
+  for (const [mod, m] of Object.entries(data)) for (const key of ['summaryHtml', 'completeHtml'])
+    for (const x of (m[key] || '').matchAll(/<(h[23])>([\s\S]*?)<\/\1>/g)) {
+      const t = x[2].replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+      if (t.length > 90 || /•/.test(t) || /^\d\.\d{3}/.test(t) || /^[a-zà-ÿ]/.test(t)) bad.push(mod + ': ' + t.slice(0, 60));
+    }
+  assert.deepEqual(bad, []);
+  assert.match(data['civil-m15'].completeHtml, /hipóteses legais do art\. 1\.814\. Tradicionalmente, a exclusão/);
+});
