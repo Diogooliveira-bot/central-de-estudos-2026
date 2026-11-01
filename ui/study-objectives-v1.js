@@ -55,7 +55,10 @@
     try {
       const response = await fetch('/api/objective', {
         method:'PUT', cache:'no-store', headers:{ 'Content-Type':'application/json' },
-        body:JSON.stringify({ objectiveId:id }),
+        body:JSON.stringify({
+          objectiveId:id,
+          ...(id === 'free-study' && savedFreeSubjectIds() ? { freeSubjectIds:savedFreeSubjectIds() } : {}),
+        }),
       });
       if (!response.ok) throw new Error('Falha HTTP ' + response.status);
       localStorage.removeItem(PENDING_KEY);
@@ -68,8 +71,9 @@
     }
   }
   function setSyncMessage(message) {
-    const node = document.querySelector('[data-study-objective-sync]');
-    if (node) node.textContent = message;
+    document.querySelectorAll('[data-study-objective-sync],[data-settings-objective-sync]').forEach((node) => {
+      if (node.textContent !== message) node.textContent = message;
+    });
   }
   async function selectObjective(id) {
     if (!catalog.goals[id]) return false;
@@ -116,21 +120,35 @@
     host.innerHTML = html;
     host.dataset.studyObjectiveSignature = signature;
   }
-  function renderTopbar() {
-    const host = document.querySelector('#appRoot .view.central-view-visible:not(.hidden)') || document.querySelector('#appRoot .view:not(.hidden)') || document.getElementById('homeView') || document.getElementById('appRoot') || document.body;
-    if (!host) return;
-    let control = document.getElementById('studyObjectiveTopbar');
-    if (!control) {
-      control = document.createElement('div'); control.id = 'studyObjectiveTopbar'; control.className = 'study-objective-topbar';
-      control.innerHTML = '<span class="study-objective-topbar-label">Objetivo</span><span data-study-objective-label></span><button type="button">Alterar</button>';
-      control.querySelector('button').addEventListener('click', () => open());
+  function ensureSettingsObjectiveControl() {
+    const body = document.querySelector('#centralSettingsBackdrop .central-settings-body');
+    if (!body) return;
+    let block = document.getElementById('studySettingsObjective');
+    if (!block) {
+      block = document.createElement('section');
+      block.id = 'studySettingsObjective';
+      block.className = 'study-settings-objective';
+      block.setAttribute('aria-labelledby', 'studySettingsObjectiveTitle');
+      block.innerHTML =
+        '<div><span class="study-settings-objective-kicker">MEUS ESTUDOS</span>' +
+        '<h3 id="studySettingsObjectiveTitle">Objetivo de estudo</h3>' +
+        '<p data-settings-objective-label>Carregando objetivo…</p></div>' +
+        '<button type="button" data-settings-change-objective>Alterar objetivo</button>' +
+        '<p class="study-settings-sync" data-settings-objective-sync role="status"></p>';
+      block.querySelector('[data-settings-change-objective]').addEventListener('click', () => {
+        global.closeCentralSettings?.();
+        open();
+      });
+      body.insertBefore(block, body.firstElementChild);
     }
-    if (control.parentElement !== host || host.firstElementChild !== control) host.insertBefore(control, host.firstElementChild);
-    const label = control.querySelector('[data-study-objective-label]');
-    const shortLabel = goal()?.shortLabel || 'Escolher';
-    const accessibleLabel = 'Objetivo ativo: ' + (goal()?.title || 'nenhum');
-    if (label.textContent !== shortLabel) label.textContent = shortLabel;
-    if (control.getAttribute('aria-label') !== accessibleLabel) control.setAttribute('aria-label', accessibleLabel);
+    const label = block.querySelector('[data-settings-objective-label]');
+    const next = goal()?.title || 'Nenhum objetivo selecionado';
+    if (label && label.textContent !== next) label.textContent = next;
+  }
+  function renderTopbar() {
+    // O objetivo fica exclusivamente em Configurações para não ocupar o topo.
+    document.getElementById('studyObjectiveTopbar')?.remove();
+    ensureSettingsObjectiveControl();
   }
   function applyObjective() {
     const allowed = new Set(activeSubjectIds());
@@ -320,13 +338,26 @@
         if (!response.ok) throw new Error('Preferência indisponível');
         const result = await response.json();
         const remote = catalog.goals[result.objectiveId] ? result.objectiveId : '';
-        if (localStorage.getItem(PENDING_KEY) === '1' && local) {
+        const validRemoteSubjects = Array.isArray(result.freeSubjectIds) &&
+          result.freeSubjectIds.length > 0 &&
+          result.freeSubjectIds.every((id) => !!catalog.subjects[id]) &&
+          new Set(result.freeSubjectIds).size === result.freeSubjectIds.length;
+        const pending = localStorage.getItem(PENDING_KEY) === '1';
+        // Uma seleção pendente deste aparelho tem prioridade até sua sincronização.
+        if (!pending && validRemoteSubjects) {
+          localStorage.setItem(FREE_SUBJECTS_KEY, JSON.stringify(result.freeSubjectIds));
+        }
+        if (pending && local) {
           activeId = local;
           persistRemote(local);
         } else {
           activeId = remote || local;
           if (activeId) localStorage.setItem(KEY, activeId);
           if (!remote && local) persistRemote(local);
+          else if (activeId === 'free-study' && !validRemoteSubjects && savedFreeSubjectIds()) {
+            // Migração das escolhas salvas antes da sincronização entre dispositivos.
+            persistRemote(activeId);
+          }
         }
       } catch (_) { activeId = local; }
     }
