@@ -125,8 +125,8 @@ test('objetivo escolhido sem conex√£o entra na fila e sincroniza quando a conex√
   await settle(window);
   window.__BASE_COMPLETA_PREVIEW_GUEST__ = false;
   Object.defineProperty(window.navigator, 'onLine', { value:false, configurable:true });
-  chooseType(window, 'career');
-  chooseGoal(window, 'career-tribunais-analista');
+  openArea(window,'judiciaria');
+  chooseRole(window,'career-tribunais-analista');
   await settle(window);
   assert.equal(storage.getItem('central-v6:study-objective:pending:v1'), '1');
 
