@@ -94,17 +94,29 @@ test('boas-vindas: áreas, cargo, edital e estudo livre',async()=>{
   dom.window.close();
 });
 
-test('preferência local reaparece após recriar a sessão de demonstração', async () => {
-  const storage = makeStorage();
-  const first = setup(storage); await settle(first.dom.window);
-  chooseGoal(first.dom.window, 'free-study'); await settle(first.dom.window); await settle(first.dom.window);
-  first.dom.window.close();
+test('estudo livre guarda escolha local e exige pelo menos uma disciplina',async()=>{
+ const storage=makeStorage();const first=setup(storage);await settle(first.dom.window);
+ const w=first.dom.window;
+ w.document.querySelector('[data-study-free]').click();
+ w.document.querySelector('[data-study-save-free]').click();
+ assert.match(w.document.querySelector('.study-form-error').textContent,/pelo menos uma/);
+ w.document.querySelector('input[value="pt"]').checked=true;
+ w.document.querySelector('input[value="civil"]').checked=true;
+ w.document.querySelector('[data-study-save-free]').click();
+ await settle(w);first.dom.window.close();
+ const second=setup(storage);await settle(second.dom.window);
+ assert.equal(second.dom.window.CentralStudyObjectives.getActive(),'free-study');
+ assert.deepEqual(Array.from(second.dom.window.CentralStudyObjectives.activeSubjectIds()),['pt','civil']);
+ assert.equal(second.dom.window.document.querySelector('#studyObjectiveDialog'),null);
+ second.dom.window.close();
+});
 
-  const second = setup(storage); await settle(second.dom.window);
-  assert.equal(second.dom.window.CentralStudyObjectives.getActive(), 'free-study');
-  assert.equal(second.dom.window.document.querySelector('#studyObjectiveDialog'), null);
-  await settle(second.dom.window); await settle(second.dom.window);
-  second.dom.window.close();
+test('catálogo de carreiras usa apenas disciplinas canônicas disponíveis',()=>{
+ const {dom}=setup();const c=dom.window.CentralStudyObjectiveCatalog;
+ assert.equal(c.areas.length,9);
+ for(const g of Object.values(c.goals))for(const id of g.subjectIds)assert.ok(c.subjects[id],g.id+': '+id);
+ for(const id of ['career-policial-civil-investigador','career-guarda-municipal','career-agente-transito','career-oficial-justica'])assert.ok(c.goals[id]);
+ dom.window.close();
 });
 
 test('objetivo escolhido sem conexão entra na fila e sincroniza quando a conexão volta', async () => {
