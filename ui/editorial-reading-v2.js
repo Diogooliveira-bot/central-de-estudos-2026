@@ -239,7 +239,7 @@
     }
   };
   // ---- Lote 2 (01/11/2026): aguarda revisão do proprietário; só entra quando aprovado. ----
-  const LOTE2_APROVADO = false;
+  const LOTE2_APROVADO = true;
   const LOTE2 = {
     jurisdição: {
       label: 'Jurisdição',
