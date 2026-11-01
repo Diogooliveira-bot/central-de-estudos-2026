@@ -47,8 +47,8 @@ for(const id of only){
    await page.waitForFunction(id=>window.CentralDisciplineLoader.isReady(id),id,{timeout:40000});await page.waitForTimeout(600);
    const sec=page.locator('.subject[data-id="'+id+'"]');const heads=sec.locator(S[id]+':visible');
    const idx=id==='cpc'?n:n-1; if(idx>=await heads.count())continue;
-   await heads.nth(idx).click();await page.waitForTimeout(800);
    const btn=sec.locator('button:visible').filter({hasText:new RegExp('^'+mode)}).first();
+   for(let k=0;k<2&&!(await btn.count());k++){await heads.nth(idx).click();await page.waitForTimeout(800);}
    if(!await btn.count()){report.push({id,n,mode,err:'sem botão'});console.log('AUDIT='+JSON.stringify(report[report.length-1]));continue}
    await btn.click();await page.waitForTimeout(3500);
    const m=await metrics();report.push({id,n,mode:mode.split(' ')[0],...(m||{err:'leitor não abriu'})});

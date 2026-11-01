@@ -24,8 +24,10 @@ const open=async(id,head,idx,label)=>{
  await page.goto(base+'/central-v119.html?view=home');await page.waitForFunction(()=>document.documentElement.dataset.centralReady==='true',{timeout:40000});
  await page.evaluate(()=>window.openDisciplines());await page.locator('#disciplineGrid [data-study-open-subject="'+id+'"]').first().click();
  await page.waitForFunction(id=>window.CentralDisciplineLoader.isReady(id),id,{timeout:40000});await page.waitForTimeout(600);
- const sec=page.locator('.subject[data-id="'+id+'"]');await sec.locator(head+':visible').nth(idx).click();await page.waitForTimeout(700);
- await sec.locator('button:visible').filter({hasText:new RegExp('^'+label)}).first().click();await page.waitForTimeout(3200);
+ const sec=page.locator('.subject[data-id="'+id+'"]');const btn=sec.locator('button:visible').filter({hasText:new RegExp('^'+label)}).first();
+ // O módulo pode já estar aberto (estado lembrado): só clica no cabeçalho se o botão não estiver visível.
+ for(let k=0;k<2&&!(await btn.count());k++){await sec.locator(head+':visible').nth(idx).click();await page.waitForTimeout(800);}
+ await btn.click();await page.waitForTimeout(3200);
 };
 const state=()=>page.evaluate(()=>{
  const a=[...document.querySelectorAll('.bc-native-reader-overlay .bc-native-article')].pop();
