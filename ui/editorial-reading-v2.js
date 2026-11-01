@@ -236,6 +236,91 @@
       simples: 'É o conjunto de decisões dos tribunais sobre um mesmo tema.',
       juridico: 'Os tribunais devem uniformizar sua jurisprudência e mantê-la estável, íntegra e coerente (CPC, art. 926).',
       exemplo: 'Súmulas e teses de repercussão geral são formas de consolidar a jurisprudência.'
+    },
+    // ---- Lote 2 (01/11/2026) ----
+    jurisdição: {
+      label: 'Jurisdição',
+      simples: 'É o poder do Estado de resolver conflitos aplicando a lei ao caso concreto, por meio dos juízes e tribunais.',
+      juridico: 'A jurisdição civil é exercida pelos juízes e pelos tribunais em todo o território nacional (CPC, art. 16). A lei não excluirá da apreciação do Poder Judiciário lesão ou ameaça a direito (CF, art. 5º, XXXV).',
+      exemplo: 'Quando duas pessoas discordam sobre um contrato e não chegam a acordo, o juiz decide quem tem razão.'
+    },
+    'competência': {
+      label: 'Competência',
+      simples: 'É a medida da jurisdição: indica qual juiz ou tribunal deve julgar cada caso.',
+      juridico: 'As causas cíveis são processadas e decididas pelo juiz nos limites de sua competência (CPC, art. 42), fixada por critérios como matéria, pessoa, valor, função e território.',
+      exemplo: 'Em regra, causa em que a União é parte é julgada pela Justiça Federal (CF, art. 109, I).'
+    },
+    contraditório: {
+      label: 'Contraditório',
+      simples: 'É o direito de saber o que a outra parte alegou e de poder responder antes da decisão.',
+      juridico: 'Aos litigantes, em processo judicial ou administrativo, são assegurados o contraditório e a ampla defesa (CF, art. 5º, LV). O juiz não pode decidir com base em fundamento sobre o qual as partes não puderam se manifestar (CPC, art. 10).',
+      exemplo: ''
+    },
+    'trânsito em julgado': {
+      label: 'Trânsito em julgado',
+      simples: 'É o momento em que a decisão judicial não pode mais ser contestada por recurso.',
+      juridico: 'Chama-se coisa julgada ou caso julgado a decisão judicial de que já não caiba recurso (LINDB, art. 6º, § 3º).',
+      exemplo: 'Se ninguém recorre de uma sentença no prazo, ela transita em julgado.'
+    },
+    'litisconsórcio': {
+      label: 'Litisconsórcio',
+      simples: 'É quando há mais de uma pessoa como autora ou como ré no mesmo processo.',
+      juridico: 'Duas ou mais pessoas podem litigar, no mesmo processo, em conjunto, ativa ou passivamente, nas hipóteses do CPC, art. 113. O litisconsórcio é necessário quando a lei o exige ou quando a decisão depender da citação de todos (CPC, art. 114).',
+      exemplo: 'Dois vizinhos que processam juntos a mesma construtora formam um litisconsórcio ativo.'
+    },
+    revelia: {
+      label: 'Revelia',
+      simples: 'É quando o réu, citado, não apresenta defesa (contestação) no processo.',
+      juridico: 'Se o réu não contestar a ação, será considerado revel e presumir-se-ão verdadeiras as alegações de fato formuladas pelo autor (CPC, art. 344), salvo nas hipóteses do art. 345.',
+      exemplo: ''
+    },
+    dolo: {
+      label: 'Dolo',
+      simples: 'No Direito Penal, é agir querendo o resultado ou assumindo o risco de produzi-lo.',
+      juridico: 'Diz-se o crime doloso quando o agente quis o resultado ou assumiu o risco de produzi-lo (CP, art. 18, I). No Direito Civil, dolo é também um defeito do negócio jurídico: o artifício usado para enganar a outra parte, que torna o negócio anulável quando foi a sua causa (CC, art. 145).',
+      exemplo: ''
+    },
+    culpa: {
+      label: 'Culpa',
+      simples: 'É causar um resultado sem querer, por falta de cuidado.',
+      juridico: 'No Direito Penal, o crime é culposo quando o agente deu causa ao resultado por imprudência, negligência ou imperícia (CP, art. 18, II). No Direito Civil, quem, por ação ou omissão voluntária, negligência ou imprudência, viola direito e causa dano a outrem comete ato ilícito (CC, art. 186).',
+      exemplo: 'Motorista que causa um acidente por dirigir distraído age com culpa, não com dolo.'
+    },
+    flagrante: {
+      label: 'Flagrante',
+      simples: 'É a situação em que a pessoa é surpreendida cometendo o crime ou logo depois dele.',
+      juridico: 'Considera-se em flagrante delito quem está cometendo a infração penal, acaba de cometê-la, é perseguido logo após em situação que faça presumir ser autor da infração, ou é encontrado logo depois com objetos que façam presumir ser ele o autor (CPP, art. 302).',
+      exemplo: ''
+    },
+    tipicidade: {
+      label: 'Tipicidade',
+      simples: 'É a correspondência entre o fato praticado e a descrição de um crime na lei.',
+      juridico: 'Decorre da legalidade penal: não há crime sem lei anterior que o defina (CF, art. 5º, XXXIX; CP, art. 1º). O fato só é típico se se ajusta ao modelo descrito no tipo penal.',
+      exemplo: ''
+    },
+    'reformatio in pejus': {
+      label: 'Reformatio in pejus',
+      simples: 'Expressão latina para “reforma para pior”: piorar a situação de quem recorreu.',
+      juridico: 'No processo penal, quando somente o réu recorre, a pena não pode ser agravada (CPP, art. 617).',
+      exemplo: ''
+    },
+    'usucapião': {
+      label: 'Usucapião',
+      simples: 'É a forma de adquirir a propriedade de um bem pela posse prolongada, nos requisitos da lei.',
+      juridico: 'Na usucapião extraordinária, quem possui como seu um imóvel por quinze anos, sem interrupção nem oposição, adquire-lhe a propriedade, independentemente de título e boa-fé (CC, art. 1.238). Os imóveis públicos não são adquiridos por usucapião (CF, arts. 183, § 3º, e 191, parágrafo único).',
+      exemplo: ''
+    },
+    autarquia: {
+      label: 'Autarquia',
+      simples: 'É uma entidade pública criada por lei para executar, com autonomia, uma atividade típica do Estado.',
+      juridico: 'Pessoa jurídica de direito público, integrante da Administração indireta, criada por lei específica (CF, art. 37, XIX; Decreto-Lei 200/1967, art. 5º, I).',
+      exemplo: 'O INSS é uma autarquia federal.'
+    },
+    'erga omnes': {
+      label: 'Erga omnes',
+      simples: 'Expressão latina que significa “contra todos”: o efeito alcança todas as pessoas, não só as partes do processo.',
+      juridico: 'As decisões definitivas de mérito do STF nas ações diretas de inconstitucionalidade e declaratórias de constitucionalidade produzem eficácia contra todos e efeito vinculante (CF, art. 102, § 2º).',
+      exemplo: ''
     }
   };
   const TERM_KEYS = Object.keys(TERMS).sort((a, b) => b.length - a.length);

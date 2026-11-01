@@ -39,7 +39,7 @@
       section.dataset.qcSharingPanel = `${disciplineKey}:${moduleCode}`;
       section.setAttribute('aria-label', `Recurso Premium QConcursos de ${moduleCode}`);
       section.innerHTML = '<div class="qc-platform-sharing-head"><b>QConcursos · 🔒 Premium</b><small>Cadernos e filtros exclusivos</small></div><p>Este recurso é exclusivo do Base Completa Premium.</p><button type="button" class="qc-premium-cta">Conhecer o Premium</button>';
-      section.querySelector('.qc-premium-cta').addEventListener('click', () => g.alert('Este recurso é exclusivo do Base Completa Premium.'));
+      section.querySelector('.qc-premium-cta').addEventListener('click', () => (g.CentralPlanAccess?.showLock ? g.CentralPlanAccess.showLock() : g.alert('Este recurso é exclusivo do Base Completa Premium.')));
       return section;
     }
     const rows = rowsFor(disciplineKey, moduleCode);

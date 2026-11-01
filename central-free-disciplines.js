@@ -57,8 +57,9 @@ ready.then(()=>{
  if(!isFree())return;
  mark(document);
  let queued=false;
+ // A resposta do plano pode chegar antes do <body>: observa o documento inteiro.
  new MutationObserver(()=>{if(queued)return;queued=true;requestAnimationFrame(()=>{queued=false;mark(document)})})
-  .observe(document.body,{childList:true,subtree:true});
+  .observe(document.body||document.documentElement,{childList:true,subtree:true});
 });
 
 function showLock(){

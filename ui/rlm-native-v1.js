@@ -343,8 +343,10 @@ function review(){
 }
 function speed(){
  return title('Treino de velocidade','O motor do antigo módulo de cálculo rápido foi preservado com seus seis treinos, cronômetro e histórico. Funciona dentro da janela da Central.')+
+ // Plano Gratuito: o motor do treino é Premium (o servidor recusa a página); mostra o aviso padrão.
+ (g.CentralPlanAccess?.isFree?.()?'<div class="bc-rlm-warn">🔒 O treino de velocidade é exclusivo do Base Completa Premium. <button type="button" onclick="CentralPlanAccess.showLock()">Saiba mais</button></div>':
  '<div class="bc-rlm-warn">Treino original mantido. Os demais módulos antigos de RLM não fazem parte do novo curso.</div>'+
- '<iframe class="bc-rlm-speed" title="Motor original de treino de velocidade" src="/tools/rlm.html#calculo" loading="eager" onload="RlmNative.speedReady(this)"></iframe>';
+ '<iframe class="bc-rlm-speed" title="Motor original de treino de velocidade" src="/tools/rlm.html#calculo" loading="eager" onload="RlmNative.speedReady(this)"></iframe>');
 }
 function speedReady(frame){
  try{
