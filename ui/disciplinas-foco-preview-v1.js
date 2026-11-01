@@ -3,6 +3,8 @@
    Nenhum dado, autorização ou script editorial é substituído. */
 (function (global) {
   'use strict';
+  // Ativar somente no modo visitante da Preview; não afetar sessões reais.
+  if (global.__BASE_COMPLETA_PREVIEW_GUEST__ !== true) return;
   if (global.BaseCompletaFocusPreview) return;
   const SELECTORS = '.cf-module > .cf-module-head, .cv-module > .cv-module-head, .ds-module > .ds-module-head, .pt-module-card > .pt-module-head, .topic-item .open-topic, [data-civil-native-module] > button, .civil-module > button, .module > .module-head';
   const BOX_SELECTOR = '.cf-module,.cv-module,.ds-module,.pt-module-card,.topic-item,[data-civil-native-module],.civil-module,.module';
