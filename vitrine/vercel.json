@@ -1,0 +1,64 @@
+{
+  "version": 2,
+  "cleanUrls": true,
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        }
+      ]
+    },
+    {
+      "source": "/img/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400, stale-while-revalidate=604800"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/termos-de-uso",
+      "destination": "https://app.basecompleta.com.br/termos-de-uso.html",
+      "permanent": false
+    },
+    {
+      "source": "/termos-de-uso.html",
+      "destination": "https://app.basecompleta.com.br/termos-de-uso.html",
+      "permanent": false
+    },
+    {
+      "source": "/politica-de-privacidade",
+      "destination": "https://app.basecompleta.com.br/politica-de-privacidade.html",
+      "permanent": false
+    },
+    {
+      "source": "/politica-de-privacidade.html",
+      "destination": "https://app.basecompleta.com.br/politica-de-privacidade.html",
+      "permanent": false
+    },
+    {
+      "source": "/politica-de-cookies",
+      "destination": "https://app.basecompleta.com.br/politica-de-cookies.html",
+      "permanent": false
+    },
+    {
+      "source": "/politica-de-cookies.html",
+      "destination": "https://app.basecompleta.com.br/politica-de-cookies.html",
+      "permanent": false
+    }
+  ]
+}

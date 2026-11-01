@@ -10,6 +10,8 @@ const excludedDirectories = new Set([
   'scripts', 'docs', 'audits', 'merge', 'upstream', 'dist', 'coverage',
   // Relatórios de trabalho e auditorias internas não fazem parte do site.
   'qa', 'reports',
+  // Cópia versionada da vitrine (basecompleta.com.br), publicada em outro projeto.
+  'vitrine',
 ]);
 const excludedFiles = new Set([
   'vercel.json', 'package.json', 'package-lock.json', 'README.md', 'LEIA-ME.txt',
