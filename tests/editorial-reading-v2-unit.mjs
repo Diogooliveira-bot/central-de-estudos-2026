@@ -166,3 +166,16 @@ test('alerta ou dispositivo continuado na linha seguinte forma um só parágrafo
     'Art. 50. Em caso de abuso da personalidade jurídica, caracterizado pelo desvio de finalidade ou pela confusão patrimonial, pode o juiz desconsiderá-la.'
   ]);
 });
+
+test('tabelas de Civil reconstruídas no material (M05, M11, M15) sem bloco de largura fixa', async () => {
+  const vm = await import('node:vm'); const zlib = await import('node:zlib');
+  const sb = {}; sb.window = sb; vm.runInNewContext(read('content/civil/civil-native-content-packed.js'), sb);
+  const data = JSON.parse(zlib.gunzipSync(Buffer.from(sb.CIVIL_NATIVE_PACKED_B64, 'base64')).toString());
+  const tables = mod => (data[mod].completeHtml.match(/<table class="cv-rebuilt-table">/g) || []).length;
+  assert.equal(tables('civil-m05'), 4);
+  assert.equal(tables('civil-m11'), 3);
+  assert.equal(tables('civil-m15'), 2);
+  assert.doesNotMatch(data['civil-m05'].completeHtml, /<pre class="civil-source-table">|Página \d/, 'M05 sem bloco do PDF nem número de página');
+  assert.match(data['civil-m05'].completeHtml, /<h2>10\. REVISÃO FINAL<\/h2>/);
+  assert.match(data['civil-m11'].completeHtml, /<td>Aquisição\/transmissão<\/td>/);
+});
