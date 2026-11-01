@@ -71,7 +71,7 @@ test('Central de Questões possui rota nativa e exatamente cinco abas', async ()
   assert.deepEqual(Array.from(document.querySelectorAll('[data-bcq-tab]')).map((button) => button.textContent.trim()), [
     'Visão geral', 'Disciplinas', 'Meus filtros', 'Histórico', 'Revisão'
   ]);
-  assert.equal(document.querySelector('[data-bcq-more-nav] b').textContent, 'Central de Questões');
+  assert.equal(document.querySelector('[data-bcq-more-nav]'), null, 'A Central de Questões não deve se duplicar no Mais');
   assert.equal(document.querySelectorAll('[data-bcq-panel]').length, 5);
   assert.equal(document.querySelector('[data-bcq-panel="overview"]').hidden, false);
 });

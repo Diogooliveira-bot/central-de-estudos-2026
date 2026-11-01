@@ -27,7 +27,7 @@ async function setup(role, previewGuest = false) {
   return { win, dom, enhance };
 }
 
-test('menu Mais não duplica Cadernos TEC e mantém acesso à Central de Questões', async () => {
+test('menu Mais não duplica atalhos da navegação inferior', async () => {
   const { win } = await setup('aluno');
   const panel = win.document.getElementById('studentMorePanel');
   assert.ok(panel);
@@ -38,9 +38,12 @@ test('menu Mais não duplica Cadernos TEC e mantém acesso à Central de Questõ
   assert.ok(win.document.querySelector('[data-student-primary-nav="vade"]'));
   assert.ok(win.document.querySelector('[data-student-primary-nav="edital"]'));
   assert.ok(win.document.querySelector('[data-student-primary-nav="filters"]'));
-  assert.ok(panel.querySelector('[data-student-more-action="subjects"]'));
-  assert.ok(panel.querySelector('[data-student-more-action="home"]'));
+  assert.equal(panel.querySelector('[data-student-more-action="subjects"]'), null);
+  assert.equal(panel.querySelector('[data-student-more-action="home"]'), null);
+  assert.equal(panel.querySelector('[data-bcq-more-nav]'), null);
   assert.ok(panel.querySelector('[data-student-more-action="settings"]'));
+  assert.ok(panel.querySelector('[data-student-more-action="onboarding"]'));
+  assert.ok(panel.querySelector('[data-student-more-action="logout"]'));
   win.close();
 });
 
@@ -95,8 +98,8 @@ test('o visual desktop é compacto e o menu móvel continua responsivo', async (
 test('recursos editados estão no carregador e no manifesto offline', async () => {
   const boot = await read('central-v119.html');
   const offline = await read('central-offline-files-v66172.json');
-  assert.match(boot, /student-shell-v3\.js\?v=20261031nav4/);
-  assert.match(offline, /student-shell-v3\.js\?v=20261031nav4/);
+  assert.match(boot, /student-shell-v3\.js\?v=20261101mais1/);
+  assert.match(offline, /student-shell-v3\.js\?v=20261101mais1/);
 });
 
 

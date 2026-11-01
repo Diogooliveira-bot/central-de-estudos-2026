@@ -403,7 +403,7 @@ html.student-experience-v3 .student-more-grid>button b {
 html.student-experience-v3 .student-more-grid>button small {
   color:#687d8b!important;font-size:10px!important;line-height:1.3!important;
 }
-html.student-experience-v3 .student-more-grid>[data-student-more-action="settings"] {
+html.student-experience-v3 .student-more-grid>:is([data-student-more-action="settings"],[data-student-more-action="onboarding"]) {
   grid-column:1/-1;
 }
 html.student-experience-v3 .student-more-grid>button.student-more-admin {
