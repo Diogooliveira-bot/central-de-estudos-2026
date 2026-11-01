@@ -167,6 +167,11 @@
     if(!home()||!root())return;
     nodes();render();
     new MutationObserver(schedule).observe(root(),{childList:true,subtree:true});
+    let wasHidden=home().classList.contains('hidden');
+    new MutationObserver(()=>{
+      const hidden=home().classList.contains('hidden');
+      if(hidden!==wasHidden){wasHidden=hidden;schedule()}
+    }).observe(home(),{attributes:true,attributeFilter:['class']});
     document.addEventListener('click',event=>{
       const target=event.target instanceof Element?event.target:event.target?.parentElement;
       if(!target)return;
