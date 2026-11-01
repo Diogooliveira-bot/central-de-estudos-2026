@@ -60,7 +60,7 @@
   const plain = text => String(text || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
 
   function containers() {
-    const list = [...document.querySelectorAll('.bc-native-reader-overlay .bc-native-article, .cv-reader article, .cv-reader-content, .cpp-source, .adm-native-content')];
+    const list = [...document.querySelectorAll('.bc-native-reader-overlay .bc-native-article, .bc-guided-overlay .bc-m01-paper, .cv-reader article, .cv-reader-content, .cpp-source, .adm-native-content')];
     SUBJECTS.forEach(id => document.querySelectorAll('#subjects .subject[data-id="' + id + '"] :is(.cf-module-body,.cv-module-body,.detail-panel,.cpp-mod-body,.civil-module-body)')
       .forEach(el => list.push(el)));
     return list.filter(el => el.isConnected);
@@ -121,7 +121,7 @@
     tip = document.createElement('div');
     tip.className = 'bc-acr-tip'; tip.setAttribute('role', 'tooltip'); tip.id = 'bc-acr-tip';
     tip.textContent = el.textContent + ' — ' + el.title;
-    (el.closest('.bc-native-reader-overlay') || document.body).appendChild(tip);
+    (el.closest('.bc-native-reader-overlay,.bc-guided-overlay') || document.body).appendChild(tip);
     const r = el.getBoundingClientRect(), w = Math.min(320, innerWidth - 24);
     tip.style.maxWidth = w + 'px';
     tip.style.left = Math.max(12, Math.min(r.left, innerWidth - tip.offsetWidth - 12)) + 'px';

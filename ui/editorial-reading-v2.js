@@ -10,7 +10,7 @@
   'use strict';
   if (g.CentralEditorialReading) return;
   const ROOTS = [
-    '.bc-native-reader-overlay .bc-native-article',
+    '.bc-native-reader-overlay .bc-native-article', '.bc-guided-overlay .bc-m01-paper',
     '.cf-native-reader article', '.cv-reader article', '.cv-reader-content',
     '.cpc-apostila-content', '.cpc-apostila-topic', '.cpp-source', '.adm-native-content',
     '.pen-theory-scroll article', '.pen-theory-scroll main',
@@ -280,7 +280,7 @@
       '<p><strong>Explicação jurídica:</strong> ' + esc(data.juridico) + '</p>' +
       (data.exemplo ? '<p><strong>Exemplo prático:</strong> ' + esc(data.exemplo) + '</p>' : '') +
       '<small>Explicação complementar da Base Completa; não substitui a apostila.</small>';
-    (el.closest('.bc-native-reader-overlay') || document.body).appendChild(pop);
+    (el.closest('.bc-native-reader-overlay,.bc-guided-overlay') || document.body).appendChild(pop);
     const r = el.getBoundingClientRect(), w = Math.min(360, innerWidth - 24);
     pop.style.width = w + 'px';
     pop.style.left = Math.max(12, Math.min(r.left, innerWidth - w - 12)) + 'px';
