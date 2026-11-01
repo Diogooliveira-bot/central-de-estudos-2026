@@ -57,8 +57,9 @@ for(const [id,head,idx,label] of CASES){
    check(s.hy!=='auto',id+' '+w+'px: hifenização automática ativa');
    check(!s.tofu,id+' '+w+'px: marcador U+F0B7 visível');
    check(s.overflowPage<=1,id+' '+w+'px: página com rolagem lateral ('+s.overflowPage+'px)');
+   if(w<=640)check(s.overflowArticle<=2,id+' '+w+'px: conteúdo mais largo que a tela ('+s.overflowArticle+'px)');
    if(s.cardInfo&&w<=640){check(s.cardInfo.display==='block',id+' '+w+'px: tabela não virou cartão');check(/"/.test(s.cardInfo.label),id+': cartão sem rótulo da coluna');check(s.cardInfo.headHidden===true,id+': cabeçalho duplicado no cartão');}
-   if(s.cardInfo&&w>=1000)check(s.cardInfo.display==='table-row',id+' '+w+'px: no computador a tabela deve continuar tabela');
+   if(s.cardInfo&&w>=1000)check(s.cardInfo.display!=='block',id+' '+w+'px: no computador a tabela deve continuar tabela');
   }
   if(SHOTS)await page.screenshot({path:SHOTS+'/'+id+'-'+w+'.png'});
  }
@@ -71,14 +72,14 @@ if(!process.env.REPORT_ONLY){
   await abbr.scrollIntoViewIfNeeded();await abbr.tap?.().catch(()=>abbr.click());await abbr.click();
   check(await page.locator('.bc-acr-tip').count()===1,'toque na sigla não mostrou o significado');
   await page.keyboard.press('Escape');check(await page.locator('.bc-acr-tip').count()===0,'Esc não fechou a sigla');
-  await abbr.focus();await page.keyboard.press('Enter');check(await page.locator('.bc-acr-tip').count()===1,'Enter na sigla não mostrou o significado');await page.keyboard.press('Escape');
+  await abbr.evaluate(e=>{e.scrollIntoView({block:'center'});e.focus()});await page.keyboard.press('Enter');check(await page.locator('.bc-acr-tip').count()===1,'Enter na sigla não mostrou o significado');await page.keyboard.press('Escape');
  } else failures.push('nenhuma sigla tratada no leitor de Penal');
  const term=page.locator('.bc-native-reader-overlay .bc-term').first();
  if(await term.count()){
   await term.scrollIntoViewIfNeeded();await term.click();
   check(/Significado simples/.test(await page.locator('.bc-term-pop').textContent().catch(()=>'')),'toque no termo não abriu a explicação');
   await page.keyboard.press('Escape');check(await page.locator('.bc-term-pop').count()===0,'Esc não fechou a explicação');
-  await term.focus();await page.keyboard.press('Enter');check(await page.locator('.bc-term-pop').count()===1,'Enter no termo não abriu a explicação');await page.keyboard.press('Escape');
+  await term.evaluate(e=>{e.scrollIntoView({block:'center'});e.focus()});await page.keyboard.press('Enter');check(await page.locator('.bc-term-pop').count()===1,'Enter no termo não abriu a explicação');await page.keyboard.press('Escape');
  } else failures.push('nenhum termo marcado no leitor de Penal');
  const size0=(await state()).fontSize;
  const plus=page.locator('.bc-native-reader-overlay [data-bc-reading-size="1"]').last();

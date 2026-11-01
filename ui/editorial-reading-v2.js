@@ -335,7 +335,7 @@
     '.bc-rebuilt-list p:last-child,.bc-rebuilt-list ul{margin-bottom:0}',
     '@media (max-width:640px){' +
       '.bc-table-scroll:has(>table.bc-tcards){overflow-x:visible}' +
-      'table.bc-tcards,table.bc-tcards tbody,table.bc-tcards tr,table.bc-tcards td{display:block;width:auto!important}' +
+      'table.bc-tcards,table.bc-tcards tbody,table.bc-tcards tr,table.bc-tcards td{display:block;width:auto!important;min-width:0!important;max-width:100%!important;box-sizing:border-box}' +
       'table.bc-tcards{border:0!important;background:none!important;min-width:0}' +
       'table.bc-tcards thead,table.bc-tcards tr:has(>th:only-child),table.bc-tcards tr:first-child:has(>th){display:none}' +
       'table.bc-tcards tr{margin:0 0 12px;padding:12px 14px;border:1px solid var(--line,#d9e2ea);border-radius:12px;background:var(--surface,#fff);box-shadow:0 1px 2px rgba(10,30,45,.05)}' +
