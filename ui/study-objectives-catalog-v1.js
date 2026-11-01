@@ -70,6 +70,66 @@
     },
   };
 
-  global.CentralStudyObjectiveCatalog = Object.freeze({ version:1, subjects, goals });
+  // Orientação inicial por área e cargo. Nunca afirma equivalência com edital.
+  const areas = [
+    { id:"policial", title:"Área Policial", icon:"♜", description:"Polícias Civil, Militar, Federal, Rodoviária e Penal" },
+    { id:"guarda", title:"Guarda Municipal", icon:"⬡", description:"Segurança municipal e proteção comunitária" },
+    { id:"transito", title:"Trânsito e Mobilidade", icon:"◇", description:"Fiscalização, mobilidade urbana e trânsito" },
+    { id:"judiciaria", title:"Área Judiciária", icon:"⚖", description:"Tribunais, justiça e apoio judiciário" },
+    { id:"administrativa", title:"Área Administrativa", icon:"▤", description:"Prefeituras, órgãos públicos e gestão" },
+    { id:"fiscal", title:"Fiscal e Controle", icon:"▥", description:"Auditoria, tributos e fiscalização" },
+    { id:"bancaria", title:"Área Bancária", icon:"▣", description:"Instituições financeiras e bancos públicos" },
+    { id:"educacao", title:"Educação", icon:"▦", description:"Carreiras educacionais" },
+    { id:"saude", title:"Saúde Pública", icon:"✚", description:"Atendimento e apoio à saúde" },
+  ];
+  const careerRoles = [
+    { id:"career-policial-militar-soldado",area:"policial",title:"Soldado da Polícia Militar",subjectIds:["pt","rlm","cf","adm","penal","cpp"] },
+    { id:"career-policial-militar-oficial",area:"policial",title:"Oficial da Polícia Militar",subjectIds:["pt","rlm","cf","adm","penal","cpp"] },
+    { id:"career-policial-civil-investigador",area:"policial",title:"Investigador da Polícia Civil",subjectIds:["pt","rlm","cf","adm","penal","cpp"] },
+    { id:"career-policial-civil-escrivao",area:"policial",title:"Escrivão da Polícia Civil",subjectIds:["pt","rlm","cf","adm","penal","cpp"] },
+    { id:"career-policial-civil-delegado",area:"policial",title:"Delegado de Polícia Civil",subjectIds:["pt","cf","adm","civil","penal","cpp","cpc"] },
+    { id:"career-policial-federal-agente",area:"policial",title:"Agente de Polícia Federal",subjectIds:["pt","rlm","cf","adm","penal","cpp"] },
+    { id:"career-policial-federal-escrivao",area:"policial",title:"Escrivão de Polícia Federal",subjectIds:["pt","rlm","cf","adm","penal","cpp"] },
+    { id:"career-policial-rodoviario-federal",area:"policial",title:"Policial Rodoviário Federal",subjectIds:["pt","rlm","cf","adm","penal","cpp"] },
+    { id:"career-policial-penal",area:"policial",title:"Policial Penal",subjectIds:["pt","rlm","cf","adm","penal","cpp"] },
+    { id:"career-perito-criminal",area:"policial",title:"Perito Criminal",subjectIds:["pt","rlm","cf","adm","penal","cpp"] },
+    { id:"career-guarda-municipal",area:"guarda",title:"Guarda Municipal",subjectIds:["pt","rlm","cf","adm","penal","cpp"] },
+    { id:"career-inspetor-guarda-municipal",area:"guarda",title:"Inspetor da Guarda Municipal",subjectIds:["pt","rlm","cf","adm","penal","cpp"] },
+    { id:"career-agente-transito",area:"transito",title:"Agente de Trânsito",subjectIds:["pt","rlm","cf","adm"] },
+    { id:"career-fiscal-transito",area:"transito",title:"Fiscal de Trânsito",subjectIds:["pt","rlm","cf","adm"] },
+    { id:"career-agente-mobilidade-urbana",area:"transito",title:"Agente de Mobilidade Urbana",subjectIds:["pt","rlm","cf","adm"] },
+    { id:"career-analista-transito",area:"transito",title:"Analista de Trânsito",subjectIds:["pt","rlm","cf","adm"] },
+    { id:"career-tribunais-analista",area:"judiciaria",title:"Analista Judiciário",subjectIds:["pt","rlm","cf","adm","civil","cpc","penal","cpp"] },
+    { id:"career-tribunais-tecnico",area:"judiciaria",title:"Técnico Judiciário",subjectIds:["pt","rlm","cf","adm","civil","cpc","penal","cpp"] },
+    { id:"career-oficial-justica",area:"judiciaria",title:"Oficial de Justiça",subjectIds:["pt","cf","adm","civil","cpc"] },
+    { id:"career-analista-judiciario-administrativo",area:"judiciaria",title:"Analista Judiciário — Área Administrativa",subjectIds:["pt","rlm","cf","adm"] },
+    { id:"career-tecnico-judiciario-administrativo",area:"judiciaria",title:"Técnico Judiciário — Área Administrativa",subjectIds:["pt","rlm","cf","adm"] },
+    { id:"career-agente-administrativo",area:"administrativa",title:"Agente Administrativo",subjectIds:["pt","rlm","cf","adm"] },
+    { id:"career-assistente-administrativo",area:"administrativa",title:"Assistente Administrativo",subjectIds:["pt","rlm","cf","adm"] },
+    { id:"career-tecnico-administrativo",area:"administrativa",title:"Técnico Administrativo",subjectIds:["pt","rlm","cf","adm"] },
+    { id:"career-analista-administrativo",area:"administrativa",title:"Analista Administrativo",subjectIds:["pt","rlm","cf","adm"] },
+    { id:"career-auditor-fiscal",area:"fiscal",title:"Auditor Fiscal",subjectIds:["pt","rlm","cf","adm"] },
+    { id:"career-fiscal-tributario",area:"fiscal",title:"Fiscal Tributário",subjectIds:["pt","rlm","cf","adm"] },
+    { id:"career-auditor-controle-externo",area:"fiscal",title:"Auditor de Controle Externo",subjectIds:["pt","rlm","cf","adm"] },
+    { id:"career-tecnico-controle-externo",area:"fiscal",title:"Técnico de Controle Externo",subjectIds:["pt","rlm","cf","adm"] },
+    { id:"career-escriturario-bancario",area:"bancaria",title:"Escriturário Bancário",subjectIds:["pt","rlm"] },
+    { id:"career-tecnico-bancario",area:"bancaria",title:"Técnico Bancário",subjectIds:["pt","rlm"] },
+    { id:"career-professor-educacao-basica",area:"educacao",title:"Professor da Educação Básica",subjectIds:["pt","rlm","cf"] },
+    { id:"career-pedagogo",area:"educacao",title:"Pedagogo",subjectIds:["pt","rlm","cf"] },
+    { id:"career-tecnico-enfermagem",area:"saude",title:"Técnico de Enfermagem",subjectIds:["pt","rlm","cf"] },
+    { id:"career-agente-comunitario-saude",area:"saude",title:"Agente Comunitário de Saúde",subjectIds:["pt","rlm","cf"] },
+  ];
+  for (const role of careerRoles) {
+    const area = areas.find((item) => item.id === role.area);
+    const existing = goals[role.id];
+    goals[role.id] = {
+      ...(existing || {}),
+      id:role.id, type:'career', group:area.title, area:area.id,
+      shortLabel:role.title, title:role.title,
+      description:'Sugestão inicial com as disciplinas disponíveis. Ajuste os assuntos conforme o edital do seu concurso.',
+      subjectIds:role.subjectIds.slice(),
+    };
+  }
+  global.CentralStudyObjectiveCatalog = Object.freeze({ version:2, subjects, goals, areas });
 })(window);
 
