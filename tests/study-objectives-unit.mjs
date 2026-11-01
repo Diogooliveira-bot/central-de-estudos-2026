@@ -16,6 +16,7 @@ const ids = ['pt','cf','adm','civil','cpc','penal','cpp','trab','ptra','rlm'];
 test('objetivo usa persistência de preferência própria e não entra no snapshot de progresso', () => {
   assert.equal(isSyncKey('central-v6:study-objective:v1'), false);
   assert.equal(isSyncKey('central-v6:study-objective:pending:v1'), false);
+  assert.equal(isSyncKey('central-v6:free-study-subjects:v1'), false);
   assert.equal(isSyncKey('central-v6:done:cf-m01'), true);
 });
 
