@@ -3,6 +3,7 @@ import { readFile } from 'node:fs/promises';
 import { resolve, extname } from 'node:path';
 import assert from 'node:assert/strict';
 import { chromium } from 'playwright';
+import { openModule } from './helpers/focus-navigation.mjs';
 // Questões do texto em modo interativo e siglas com descrição nos leitores jurídicos.
 const root=resolve('.');
 const mime={'.html':'text/html','.js':'application/javascript','.css':'text/css','.json':'application/json','.webp':'image/webp','.png':'image/png','.svg':'image/svg+xml','.avif':'image/avif','.ico':'image/x-icon','.txt':'text/plain'};
@@ -19,7 +20,8 @@ for(const id of (process.env.SUBJ||Object.keys(S).join(',')).split(',')){
  await page.goto(base+'/central-v119.html?view=home');await page.waitForFunction(()=>document.documentElement.dataset.centralReady==='true',{timeout:40000});
  await page.evaluate(()=>window.openDisciplines());await page.locator('#disciplineGrid [data-study-open-subject="'+id+'"]').first().click();
  await page.waitForFunction(id=>window.CentralDisciplineLoader.isReady(id),id,{timeout:40000});await page.waitForTimeout(800);
- const sec=page.locator('.subject[data-id="'+id+'"]');await sec.locator(S[id][0]).click();await page.waitForTimeout(900);
+ const sec=page.locator('.subject[data-id="'+id+'"]');
+ {const [headSel,nth]=S[id][0].split(' >> nth=');await openModule(page,id,Number(nth),headSel);}
  const modAbbr=await sec.locator('.bc-acr-full').count();
  await sec.locator('button:visible').filter({hasText:/^Estudar conteúdo$/}).first().click();await page.waitForTimeout(3500);
  const r=await page.evaluate(()=>{const a=[...document.querySelectorAll('.bc-native-reader-overlay .bc-native-article')].pop();const vis=el=>el.offsetParent!==null;
