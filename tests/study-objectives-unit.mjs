@@ -1,3 +1,4 @@
+// Preview V2: seleção de áreas, cargos e matérias livres com as regras atuais da Central.
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
