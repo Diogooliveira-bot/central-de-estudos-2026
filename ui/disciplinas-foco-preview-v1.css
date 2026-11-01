@@ -1,0 +1,171 @@
+/* Preview real — Base Completa: escolha de disciplina -> módulos -> leitura.
+   Aplica-se apenas à home; leitor, provas e outras ferramentas não mudam. */
+#homeView .bc-focus-header[hidden],#homeView .bc-focus-modules[hidden]{display:none!important}
+#homeView .bc-focus-header{
+  display:flex;align-items:center;gap:12px;width:100%;
+  padding:11px 13px;margin:0 0 13px;
+  background:#fff;border:1px solid #d5e5ec;border-radius:13px;
+  box-shadow:0 3px 12px rgba(14,47,67,.055);
+  color:#12344d;box-sizing:border-box;
+}
+#homeView .bc-focus-header.bc-focus-sticky{
+  position:sticky;top:0;z-index:120;
+  margin:0 0 12px;border-radius:0 0 12px 12px;
+  border-top-color:transparent;box-shadow:0 7px 18px rgba(12,52,77,.12);
+}
+#homeView .bc-focus-back,#homeView .bc-focus-back-modules{
+  flex:0 0 auto;min-height:42px;padding:7px 10px;
+  border:1px solid #d5e7ed;border-radius:9px;background:#f3fafc;
+  color:#0b5972;font:700 12px/1.15 system-ui,sans-serif;cursor:pointer;
+}
+#homeView .bc-focus-back{display:flex;align-items:center;gap:4px}
+#homeView .bc-focus-back:first-letter{font-size:21px}
+#homeView .bc-focus-back-modules[hidden]{display:none!important}
+#homeView .bc-focus-back-modules{background:#fff}
+#homeView .bc-focus-breadcrumb{display:grid;gap:2px;min-width:0;flex:1}
+#homeView .bc-focus-breadcrumb small{
+  color:#0f6980;font:850 11px/1.25 system-ui,sans-serif;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+}
+#homeView .bc-focus-breadcrumb strong{
+  font:750 13px/1.3 system-ui,sans-serif;color:#12344d;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+}
+#homeView .bc-focus-modules{display:grid;gap:9px;margin-bottom:17px}
+#homeView .bc-focus-modules-intro{padding:4px 2px 7px}
+#homeView .bc-focus-modules-intro h2{
+  margin:0!important;color:#12344d!important;font:850 20px/1.25 system-ui,sans-serif!important;
+}
+#homeView .bc-focus-modules-intro p{
+  margin:5px 0 0;color:#6a8090!important;font:500 12px/1.4 system-ui,sans-serif!important;
+}
+#homeView .bc-focus-module-card{
+  width:100%;min-height:67px;display:grid;align-items:center;
+  grid-template-columns:75px minmax(0,1fr) 18px;gap:10px;
+  padding:12px 15px;text-align:left;background:#fff;
+  border:1px solid #d7e7ed;border-radius:13px;
+  box-shadow:0 3px 12px rgba(14,47,67,.035);
+  color:#12344d;cursor:pointer;
+}
+#homeView .bc-focus-module-card:hover,#homeView .bc-focus-module-card:focus-visible{
+  border-color:#20aaa9;background:#f5fcfd;
+  outline:2px solid #15c4bd;outline-offset:1px;
+}
+#homeView .bc-focus-module-number{
+  color:#117184;font:850 11px/1.25 system-ui,sans-serif;
+  text-transform:uppercase;letter-spacing:.025em;
+}
+#homeView .bc-focus-module-card strong{
+  min-width:0;color:#12344d;font:750 14px/1.3 system-ui,sans-serif;
+}
+#homeView .bc-focus-arrow{
+  color:#0c7e94;font:750 23px/1 system-ui,sans-serif;justify-self:end;
+}
+#homeView .bc-focus-loading{
+  padding:18px;border:1px dashed #b5d5e0;border-radius:12px;
+  color:#597c8d;background:#f7fcfd;font-size:13px;
+}
+/* Durante a escolha, a lista original das disciplinas mostra apenas
+   o essencial. Nenhuma disciplina ou conteúdo é excluído do DOM. */
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView.bc-focus-choice #subjects{
+  gap:9px!important;
+}
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView.bc-focus-choice #subjects>.subject{
+  background:#fff!important;border:1px solid #dde9ef!important;
+  border-radius:13px!important;box-shadow:0 3px 12px rgba(14,47,67,.03)!important;
+}
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView.bc-focus-choice #subjects>.subject>.subject-head{
+  grid-template-columns:42px minmax(0,1fr) auto 20px!important;
+  grid-template-rows:auto!important;
+  min-height:65px!important;padding:11px 13px!important;gap:11px!important;
+}
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView.bc-focus-choice #subjects .student-subject-summary,
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView.bc-focus-choice #subjects .subject-body,
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView.bc-focus-choice #subjects .subject-pct,
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView.bc-focus-choice #subjects .bc-row-track{
+  display:none!important;
+}
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView.bc-focus-choice .bc-row-icon{
+  grid-column:1!important;grid-row:1!important;
+  width:40px;height:40px;border-radius:10px!important;
+}
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView.bc-focus-choice #subjects .subject-name{
+  grid-column:2!important;grid-row:1!important;font-size:14px!important;
+}
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView.bc-focus-choice #subjects .bc-row-meta{
+  grid-column:3!important;grid-row:1!important;
+  border:0!important;padding:0!important;
+  color:#698495;font-size:11px!important;white-space:nowrap;
+}
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView.bc-focus-choice #subjects .chev{
+  grid-column:4!important;grid-row:1!important;transform:rotate(-90deg)!important;
+}
+/* Ao escolher uma disciplina, só o seletor de módulos ocupa a tela. */
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView:is(.bc-focus-modules-stage,.bc-focus-reading) .home-grid{
+  display:block!important;max-width:870px!important;margin:auto!important;
+}
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView:is(.bc-focus-modules-stage,.bc-focus-reading) .home-grid>.side-col,
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView:is(.bc-focus-modules-stage,.bc-focus-reading) #disciplinasHome,
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView:is(.bc-focus-modules-stage,.bc-focus-reading) .home-grid>div:first-child>:not(#bcFocusHeader):not(#bcFocusModules):not(#subjects){
+  display:none!important;
+}
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView.bc-focus-modules-stage #subjects{
+  display:none!important;
+}
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView.bc-focus-reading #subjects>.subject:not(.bc-focus-selected-subject){
+  display:none!important;
+}
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView.bc-focus-reading #subjects>.bc-focus-selected-subject{
+  overflow:visible!important;border:0!important;box-shadow:none!important;
+  background:transparent!important;
+}
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView.bc-focus-reading #subjects>.subject>.subject-head,
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView.bc-focus-reading #subjects>.subject>.student-subject-summary,
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView.bc-focus-reading #subjects>.subject>.subject-body>.subject-bar{
+  display:none!important;
+}
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView.bc-focus-reading #subjects>.subject.open>.subject-body{
+  display:block!important;padding:0!important;
+  border:0!important;background:transparent!important;
+}
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView.bc-focus-reading #subjects>.subject .cf-master-tools,
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView.bc-focus-reading #subjects>.subject .cf-metrics,
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView.bc-focus-reading #subjects>.subject .ptn-intro{
+  display:none!important;
+}
+/* Durante a leitura de um módulo identificado, os irmãos não competem
+   por espaço, mas permanecem intactos e disponíveis via Voltar aos módulos. */
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView.bc-focus-reading.bc-focus-has-module #subjects .cf-modules>.cf-module:not(.bc-focus-current-module),
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView.bc-focus-reading.bc-focus-has-module #subjects .pt-modules>.pt-module-card:not(.bc-focus-current-module),
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView.bc-focus-reading.bc-focus-has-module #subjects .topic-item:not(.bc-focus-current-module),
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView.bc-focus-reading.bc-focus-has-module #subjects .cv-module:not(.bc-focus-current-module),
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView.bc-focus-reading.bc-focus-has-module #subjects .ds-module:not(.bc-focus-current-module){
+  display:none!important;
+}
+html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView.bc-focus-reading.bc-focus-has-module #subjects .cf-module.bc-focus-current-module>.cf-module-head{
+  display:none!important;
+}
+html.student-reader-active #bcFocusHeader{display:none!important}
+@media(max-width:600px){
+  #homeView .bc-focus-header{gap:8px;padding:9px 8px;border-radius:11px}
+  #homeView .bc-focus-back{padding:8px 9px}
+  #homeView .bc-focus-back span{font-size:11px}
+  #homeView .bc-focus-breadcrumb strong{font-size:12px}
+  #homeView .bc-focus-back-modules{padding:9px 8px;font-size:11px}
+  #homeView .bc-focus-module-card{
+    grid-template-columns:64px minmax(0,1fr) 15px;
+    padding:11px 12px;gap:9px;min-height:62px;
+  }
+  #homeView .bc-focus-module-number{font-size:10px}
+  #homeView .bc-focus-module-card strong{font-size:13px}
+  html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView.bc-focus-choice #subjects>.subject>.subject-head{
+    grid-template-columns:38px minmax(0,1fr) auto 17px!important;
+    grid-template-rows:auto!important;padding:10px!important;gap:8px!important;
+  }
+  html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView.bc-focus-choice #subjects .bc-row-meta{
+    font-size:10px!important;
+  }
+  html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView.bc-focus-choice #subjects .subject-name{
+    font-size:13px!important;
+  }
+}
