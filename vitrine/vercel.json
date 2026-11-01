@@ -60,5 +60,11 @@
       "destination": "https://app.basecompleta.com.br/politica-de-cookies.html",
       "permanent": false
     }
+  ],
+  "rewrites": [
+    {
+      "source": "/img/:path*",
+      "destination": "https://base-completa-vitrine-estatica-20261027-671jixlsk-estudotd.vercel.app/img/:path*"
+    }
   ]
 }

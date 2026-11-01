@@ -7,3 +7,9 @@ As imagens (img/) continuam somente na Vercel e são reaproveitadas a cada publi
 Termos de Uso, Política de Privacidade e Política de Cookies NÃO ficam mais na vitrine:
 os endereços /termos-de-uso, /politica-de-privacidade e /politica-de-cookies redirecionam
 para as páginas oficiais em app.basecompleta.com.br, para que exista uma única versão vigente.
+
+Publicação a partir do Git (desde 01/11/2026): a pasta vitrine/ é publicada no projeto da
+vitrine. As imagens de img/ continuam guardadas na publicação original da Vercel
+(base-completa-vitrine-estatica-20261027-671jixlsk-estudotd.vercel.app) e são servidas por
+reescrita em vercel.json — não apague essa publicação. Indexação liberada (sem noindex),
+com robots.txt e sitemap.xml.
