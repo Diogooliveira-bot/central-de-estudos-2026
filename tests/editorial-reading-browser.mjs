@@ -69,7 +69,7 @@ if(!process.env.REPORT_ONLY){
  await page.setViewportSize({width:390,height:820});await open('penal','.cf-module-head',4,'Estudar conteúdo');
  const abbr=page.locator('.bc-native-reader-overlay abbr.bc-acr').first();
  if(await abbr.count()){
-  await abbr.scrollIntoViewIfNeeded();await abbr.tap?.().catch(()=>abbr.click());await abbr.click();
+  await abbr.scrollIntoViewIfNeeded();await abbr.click();
   check(await page.locator('.bc-acr-tip').count()===1,'toque na sigla não mostrou o significado');
   await page.keyboard.press('Escape');check(await page.locator('.bc-acr-tip').count()===0,'Esc não fechou a sigla');check(await page.locator('.bc-native-reader-overlay').count()===1,'Esc na sigla fechou o leitor inteiro');
   await abbr.evaluate(e=>{e.scrollIntoView({block:'center'});e.focus()});await page.keyboard.press('Enter');check(await page.locator('.bc-acr-tip').count()===1,'Enter na sigla não mostrou o significado');await page.keyboard.press('Escape');
