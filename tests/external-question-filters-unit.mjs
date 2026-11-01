@@ -133,8 +133,9 @@ test('componente compartilhado substitui a apresentação antiga no módulo', as
   assert.equal(body.querySelectorAll('[data-bcq-module-panel] .bcq-platform').length, 2);
   assert.equal(body.querySelector('[data-bcq-platform="qc"] .bcq-add').textContent, '+');
   assert.equal(body.querySelector('[data-bcq-platform="tec"] .bcq-ring b').textContent, '—');
-  assert.ok(dom.window.document.querySelector('[data-bcq-nav]'));
-  assert.ok(dom.window.document.querySelector('[data-bcq-more-nav]'));
+  assert.equal(dom.window.document.querySelector('[data-bcq-nav]'), null);
+  assert.equal(dom.window.document.querySelector('[data-bcq-more-nav]'), null);
+  assert.equal(typeof dom.window.ExternalQuestionFilters.openPage, 'function');
   assert.ok(dom.window.document.getElementById('questionFiltersView'));
   assert.equal(body.querySelector('[data-native-metric-detail="external"]').textContent, 'Histórico legado preservado');
   await settle(dom.window);

@@ -641,22 +641,11 @@
   }
 
   function injectNavigation() {
+    // O botão Filtros da barra inferior já abre a Central de Questões.
+    // Remover atalho antigo para não aparecer duas vezes no menu Mais.
     const nav = document.querySelector('#centralSidebar .nav');
     nav?.querySelector('[data-bcq-nav]:not([data-bcq-more-nav])')?.remove();
-    const moreGrid = document.querySelector('#studentMorePanel .student-more-grid');
-    if (moreGrid && !moreGrid.querySelector('[data-bcq-more-nav]')) {
-      const moreButton = document.createElement('button');
-      moreButton.type = 'button'; moreButton.dataset.bcqMoreNav = '1'; moreButton.dataset.bcqNav = '1';
-      moreButton.innerHTML = '<span aria-hidden="true">Q</span><span><b>Central de Questões</b><small>Filtros, histórico e revisão</small></span>';
-      moreButton.addEventListener('click', () => {
-        const panel = document.getElementById('studentMorePanel');
-        if (panel) panel.hidden = true;
-        document.documentElement.classList.remove('student-more-open');
-        document.getElementById('studentMoreButton')?.setAttribute('aria-expanded', 'false');
-        openPage(moreButton);
-      });
-      moreGrid.prepend(moreButton);
-    }
+    document.querySelector('#studentMorePanel [data-bcq-more-nav]')?.remove();
   }
   function injectPage() {
     if (document.getElementById('questionFiltersView')) return;
