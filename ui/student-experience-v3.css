@@ -184,7 +184,7 @@ html.student-experience-v3 .student-reader-shell:not(.bc-rlm-overlay) :is(.bc-na
   html.student-experience-v3 .student-reader-shell:not(.bc-rlm-overlay) .cf-native-shell>header b {font-size:13px!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important;}
   html.student-experience-v3 .student-reader-shell:not(.bc-rlm-overlay) :is(.bc-native-reader-tools,.cf-native-reader>aside) {display:none!important;max-height:38dvh!important;overflow:auto!important;padding:9px!important;}
   html.student-experience-v3 .student-reader-shell.student-reader-options-open:not(.bc-rlm-overlay) :is(.bc-native-reader-tools,.cf-native-reader>aside) {display:flex!important;}
-  html.student-experience-v3 .student-reader-shell:not(.bc-rlm-overlay) .bc-native-article {padding:24px 17px 84px!important;font-size:18px!important;line-height:1.72!important;}
+  html.student-experience-v3 .student-reader-shell:not(.bc-rlm-overlay) .bc-native-article {padding:24px 17px 84px!important;font-size:var(--bc-reading-size,18px)!important;line-height:1.72!important;}
 }
 
 @media (max-width:460px) {
