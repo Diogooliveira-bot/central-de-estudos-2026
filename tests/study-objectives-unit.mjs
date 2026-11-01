@@ -54,7 +54,6 @@ function setup(storage = makeStorage()) {
 const settle = (window) => new Promise((resolve) => window.setTimeout(resolve, 25));
 function openArea(w,id){w.document.querySelector('[data-study-area="'+id+'"]').click()}
 function chooseRole(w,id){w.document.querySelector('[data-study-role="'+id+'"]').click();w.document.querySelector('[data-study-confirm="'+id+'"]').click()}
-function chooseExam(w,id){w.document.querySelector('[data-study-exams]').click();w.document.querySelector('[data-study-exam="'+id+'"]').click()}
 function chooseFree(w,ids){w.document.querySelector('[data-study-free]').click();for(const id of ids)w.document.querySelector('input[name="studyFreeSubject"][value="'+id+'"]').checked=true;w.document.querySelector('[data-study-save-free]').click()}
 
 test('catálogo TJPB possui dez blocos oficiais e sem links fictícios para preparação', () => {
@@ -67,14 +66,17 @@ test('catálogo TJPB possui dez blocos oficiais e sem links fictícios para prep
   dom.window.close();
 });
 
-test('boas-vindas: áreas, cargo, edital e estudo livre',async()=>{
+test('boas-vindas: áreas, cargo e estudo livre sem atalho para edital',async()=>{
   const storage=makeStorage({'central-v6:done:cf-m01':'1'});
   const {dom}=setup(storage),w=dom.window;
   await settle(w);
   assert.match(w.document.querySelector('#studyObjectiveDialog').textContent,/Bem-vindo à Base Completa/);
   assert.equal(w.document.querySelectorAll('[data-study-area]').length,9);
   assert.ok(w.document.querySelector('[data-study-free]'));
-  chooseExam(w,'exam-tjpb-2026-analista-judiciaria');
+  assert.equal(w.document.querySelector('[data-study-exams]'),null);
+  assert.doesNotMatch(w.document.querySelector('#studyObjectiveDialog').textContent,/estudar por um edital já cadastrado/i);
+  // O catálogo de editais já existente continua disponível para objetivos previamente salvos.
+  w.CentralStudyObjectives.setActive('exam-tjpb-2026-analista-judiciaria');
   await settle(w);
   assert.equal(w.CentralStudyObjectives.getActive(),'exam-tjpb-2026-analista-judiciaria');
   assert.equal(w.document.querySelectorAll('#disciplineGrid .study-objective-card--pending').length,3);
