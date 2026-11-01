@@ -113,3 +113,22 @@ test('home minimalista utiliza o mascote oficial hospedado na Central', async ()
   assert.match(css, /#homeView/);
   assert.doesNotMatch(css, /#studentMorePanel/);
 });
+
+
+test('fluxo progressivo usa módulos reais e não altera o conteúdo ou o acesso', async () => {
+  const [boot, css, script, offline]=await Promise.all([
+    read('central-v119.html'),read('ui/disciplinas-foco-v1.css'),
+    read('ui/disciplinas-foco-v1.js'),read('central-offline-files-v66172.json'),
+  ]);
+  assert.match(boot,/disciplinas-foco-v1\.js\?v=20261101release1/);
+  assert.match(boot,/disciplinas-foco-v1\.css\?v=20261101release1/);
+  assert.ok(JSON.parse(offline).files.includes('/ui/disciplinas-foco-v1.js?v=20261101release1'));
+  assert.ok(JSON.parse(offline).files.includes('/ui/disciplinas-foco-v1.css?v=20261101release1'));
+  assert.match(script,/BaseCompletaFocusNavigation/);
+  assert.match(script,/moduleNodes\(subject\)/);
+  assert.match(script,/m\.head\.click\(\)/);
+  assert.match(script,/external\.dataset\.studyOpenSubject/);
+  assert.doesNotMatch(script,/__BASE_COMPLETA_PREVIEW_GUEST__ !== true/);
+  assert.doesNotMatch(css,/#studentMorePanel/);
+  assert.match(css,/#homeView\.bc-focus-choice/);
+});
