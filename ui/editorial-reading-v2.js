@@ -236,8 +236,11 @@
       simples: 'É o conjunto de decisões dos tribunais sobre um mesmo tema.',
       juridico: 'Os tribunais devem uniformizar sua jurisprudência e mantê-la estável, íntegra e coerente (CPC, art. 926).',
       exemplo: 'Súmulas e teses de repercussão geral são formas de consolidar a jurisprudência.'
-    },
-    // ---- Lote 2 (01/11/2026) ----
+    }
+  };
+  // ---- Lote 2 (01/11/2026): aguarda revisão do proprietário; só entra quando aprovado. ----
+  const LOTE2_APROVADO = false;
+  const LOTE2 = {
     jurisdição: {
       label: 'Jurisdição',
       simples: 'É o poder do Estado de resolver conflitos aplicando a lei ao caso concreto, por meio dos juízes e tribunais.',
@@ -323,6 +326,7 @@
       exemplo: ''
     }
   };
+  if (LOTE2_APROVADO) Object.assign(TERMS, LOTE2);
   const TERM_KEYS = Object.keys(TERMS).sort((a, b) => b.length - a.length);
   const TERM_RE = new RegExp('(?<![\\p{L}\\p{N}])(' + TERM_KEYS.map(k => k.replace(/ /g, '\\s+')).join('|') + ')(?![\\p{L}\\p{N}])', 'iu');
   const keyOf = text => text.toLocaleLowerCase('pt-BR').replace(/\s+/g, ' ');
@@ -458,5 +462,5 @@
   }
   new MutationObserver(() => { if (!queued) { queued = true; setTimeout(scan, 140); } })
     .observe(document.documentElement, { childList: true, subtree: true });
-  g.CentralEditorialReading = { process, mergeSplitParagraphs, tableShape, fixedWidthTable, TERMS };
+  g.CentralEditorialReading = { process, mergeSplitParagraphs, tableShape, fixedWidthTable, TERMS, LOTE2 };
 })(window);
