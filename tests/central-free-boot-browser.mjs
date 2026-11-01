@@ -85,7 +85,15 @@ try{
   if(await page.evaluate(id=>window.CentralDisciplineLoader.hasError(id),id))throw Error(id+': disciplina não carregou para o Gratuito');
   if(await page.locator('.central-free-study').count())throw Error(id+': ainda usa a tela gratuita separada');
   const section=page.locator('.subject[data-id="'+id+'"]');
-  await section.locator(head).click({timeout:8000});
+  // Com a nova seleção progressiva, o módulo é aberto pelo seletor visível.
+  await page.waitForFunction((sid)=>{
+    const state=window.BaseCompletaFocusNavigation?.state;
+    return state?.stage==='modules' && state.subject===sid;
+  },id,{timeout:10000});
+  const entries=page.locator('#bcFocusModules .bc-focus-module-card');
+  await entries.first().waitFor({state:'visible',timeout:10000});
+  await entries.nth(id==='cpc'?1:0).click({timeout:8000});
+  await page.waitForFunction(()=>window.BaseCompletaFocusNavigation?.state.stage==='reading',{timeout:5000});
   const locked=section.locator('button.bc-plan-locked:visible').filter({hasText:'Estudar conteúdo'}).first();
   await locked.waitFor({state:'visible',timeout:10000});
   await locked.click();
