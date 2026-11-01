@@ -207,7 +207,7 @@
         otherAreas.map(card).join('') + '</div></details>' +
         '<div class="study-start-alternatives">' +
         '<button type="button" class="study-free-entry" data-study-free><span aria-hidden="true">✦</span><span><strong>Estudo livre</strong><small>Escolha as disciplinas que deseja estudar, sem escolher um cargo.</small></span><b aria-hidden="true">›</b></button>' +
-        '<button type="button" class="study-exam-entry" data-study-exams>Ou estudar por um edital já cadastrado</button></div>';
+        '</div>';
     } else if (step === 'roles') {
       const area = catalog.areas.find((a) => a.id === value);
       if (!area) return renderChooser('areas');
