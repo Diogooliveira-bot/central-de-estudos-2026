@@ -145,7 +145,7 @@ test('Entenda o termo: primeira ocorrência marcada e explicação por toque e t
 
 test('módulo editorial carregado na Central e no pacote offline com versões novas', () => {
   const boot = read('central-v119.html');
-  assert.match(boot, /ui\/acronyms-v1\.js\?v=20261101acr5'\)\+tag\('ui\/editorial-reading-v2\.js\?v=20261101ed5'\)/);
+  assert.match(boot, /ui\/acronyms-v1\.js\?v=20261101acr6'\)\+tag\('ui\/editorial-reading-v2\.js\?v=20261101ed6'\)/);
   assert.match(read('index.html'), /ui\/universal-reader-v1\.js\?v=20261101ed1/);
   const offline = JSON.parse(read('central-offline-files-v66172.json')).files;
   assert.ok(offline.includes('/ui/universal-reader-v1.js?v=20261101ed1'));

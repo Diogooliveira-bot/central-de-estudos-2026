@@ -151,7 +151,16 @@
   document.head.appendChild(style);
 
   let queued = false;
-  function scan() { queued = false; containers().forEach(process); }
+  const lastLength = new WeakMap();
+  function scan() {
+    queued = false;
+    containers().forEach(el => {
+      const len = el.textContent.length;
+      if (lastLength.get(el) === len) return; // conteúdo igual: nada novo a tratar
+      process(el);
+      lastLength.set(el, el.textContent.length);
+    });
+  }
   new MutationObserver(() => { if (!queued) { queued = true; setTimeout(scan, 120); } })
     .observe(document.documentElement, {childList: true, subtree: true});
   g.CentralAcronyms = {process, GLOSSARY};

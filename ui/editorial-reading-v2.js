@@ -358,9 +358,18 @@
   document.head.appendChild(style);
 
   let queued = false;
+  // Só reprocessa um texto quando o conteúdo muda (destaques da busca, por exemplo,
+  // não mudam o texto e não disparam nova varredura).
+  const lastLength = new WeakMap();
   function scan() {
     queued = false;
-    document.querySelectorAll(ROOTS).forEach(el => { if (el.isConnected) process(el); });
+    document.querySelectorAll(ROOTS).forEach(el => {
+      if (!el.isConnected) return;
+      const len = el.textContent.length;
+      if (lastLength.get(el) === len) return;
+      process(el);
+      lastLength.set(el, el.textContent.length);
+    });
   }
   new MutationObserver(() => { if (!queued) { queued = true; setTimeout(scan, 140); } })
     .observe(document.documentElement, { childList: true, subtree: true });
