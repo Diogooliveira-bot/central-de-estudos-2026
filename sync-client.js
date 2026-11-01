@@ -124,7 +124,7 @@ async function init(){
   try{var r=await fetch('/api/auth?action=me',{cache:'no-store'}),j=await r.json();if(j&&j.authenticated&&j.user){user=j.user;userId=String(j.user.id||'')}}catch(_){}
  }
  if(!userId)return;
- localState=await import('./sync-local-state.js?v=20261007');
+ localState=await import('./sync-local-state.js?v=20261101objective4');
  await localState.prepareLocalUserState(userId);
  localReady=true;
  injectUi();
