@@ -29,7 +29,7 @@ button{width:100%;margin-top:18px;border:0;border-radius:10px;padding:12px 14px;
 .setup{display:none}.setup.show{display:block}.login.hide{display:none}.note{margin-top:18px;padding:11px 12px;border-radius:10px;background:#f3eee7;color:var(--muted);font-size:11px}.remember{display:flex;align-items:center;gap:9px;margin-top:12px;color:var(--muted);font-size:12px;font-weight:700}.remember input{width:16px;height:16px;margin:0;accent-color:var(--accent)}
 .access-help{margin:13px 0 0;text-align:center;color:var(--muted);font-size:12px}.access-help strong{color:var(--ink)}
 </style>
-<link rel="stylesheet" href="/ui/login-brand-v1.css?v=20261031">
+<link rel="stylesheet" href="/ui/login-brand-v1.css?v=20261101-olho">
 </head>
 <body>
 <main class="card">
@@ -43,7 +43,7 @@ button{width:100%;margin-top:18px;border:0;border-radius:10px;padding:12px 14px;
 <label for="email">E-mail</label>
 <input id="email" type="email" autocomplete="username" required>
 <label for="password">Senha</label>
-<div class="password-field"><input id="password" type="password" autocomplete="current-password" required><button type="button" id="togglePassword" class="password-toggle" aria-label="Mostrar senha" aria-pressed="false">Mostrar</button></div>
+<div class="password-field"><input id="password" type="password" autocomplete="current-password" required><button type="button" id="togglePassword" class="password-toggle" aria-label="Mostrar senha" title="Mostrar senha" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.2 12s3.5-6 9.8-6 9.8 6 9.8 6-3.5 6-9.8 6-9.8-6-9.8-6Z"/><circle cx="12" cy="12" r="3"/><path class="eye-slash" d="m4 20 16-16"/></svg></button></div>
 <label class="remember" for="remember"><input id="remember" type="checkbox"> Manter conectado neste dispositivo</label>
 <button id="loginBtn" type="submit">Entrar</button>
 <p class="access-help"><a href="/recuperar-senha.html" style="color:#17658a;font-weight:750;text-decoration:none">Esqueci minha senha</a></p>
@@ -94,7 +94,7 @@ async function init(){
 }
 document.getElementById('togglePassword').addEventListener('click',function(){
  var input=document.getElementById('password'),visible=input.type==='text';
- input.type=visible?'password':'text';this.textContent=visible?'Mostrar':'Ocultar';this.setAttribute('aria-pressed',String(!visible));this.setAttribute('aria-label',visible?'Mostrar senha':'Ocultar senha');
+ input.type=visible?'password':'text';this.classList.toggle('is-visible',!visible);this.setAttribute('aria-pressed',String(!visible));this.setAttribute('aria-label',visible?'Mostrar senha':'Ocultar senha');this.setAttribute('title',visible?'Mostrar senha':'Ocultar senha');
 });
 loginForm.addEventListener('submit',async function(e){
  e.preventDefault();var btn=document.getElementById('loginBtn');btn.disabled=true;setMsg('Entrando...');
