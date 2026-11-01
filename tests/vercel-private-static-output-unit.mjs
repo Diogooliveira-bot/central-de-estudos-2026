@@ -44,6 +44,9 @@ test('Vercel static output omits protected source files but retains the public a
     assert.equal(paths.has('/package-lock.json'), false);
     assert.equal(paths.has('/vercel.json'), false);
     assert.equal(files.some(file => file.startsWith('api/')), false);
+    for (const internal of ['/CLAUDE.md', '/AGENTS.md', '/AUDITORIA_BASE_COMPLETA.md', '/BANCO_BACKUP_VERCEL.md', '/.gitignore'])
+      assert.equal(paths.has(internal), false, `${internal} é documento interno`);
+    assert.equal(files.some(file => /\.(?:md|cjs)$/i.test(file) || file.startsWith('qa/') || file.startsWith('reports/')), false, 'relatórios internos fora do site');
 
     for (let n = 1; n <= 20; n++) {
       const name = `/content/adm/m${String(n).padStart(2,'0')}-approved-complete.js`;

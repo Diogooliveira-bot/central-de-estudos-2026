@@ -138,8 +138,21 @@
       summary.dataset.signature = signature;
       summary.innerHTML = `<div class="student-subject-status ${progress.status}"><span>${statusLabel}</span><b>${moduleLabel}</b><small>${recent}</small></div>
         <button type="button" class="student-subject-action">${progress.status === 'new' ? 'Começar' : progress.status === 'done' ? 'Revisar' : 'Continuar'} <span aria-hidden="true">→</span></button>`;
-      summary.querySelector('button').onclick = (event) => { event.stopPropagation(); (global.centralHardSubject || global.jumpSubject)?.(subject.id); };
+      summary.querySelector('button').onclick = (event) => { event.stopPropagation(); (global.centralHardSubject || global.jumpSubject)?.(subject.id); openCurrentModule(subject.id, progress.current); };
     }
+  }
+  // "Começar/Continuar →" leva ao módulo atual: abre o módulo (se estiver fechado) e rola até ele.
+  function openCurrentModule(id, number, tries = 0) {
+    const section = document.querySelector(`#subjects .subject[data-id="${id}"]`);
+    const heads = section ? [...section.querySelectorAll('.cf-module-head,.cv-module-head,.ds-module-head,.open-topic')].filter((el) => el.offsetParent !== null) : [];
+    if (!heads.length) { if (tries < 20) setTimeout(() => openCurrentModule(id, number, tries + 1), 150); return; }
+    const n = Number(number) || 1;
+    const pattern = new RegExp(`M[ÓO]DULO\\s*0?${n}(?!\\d)`, 'i');
+    const head = heads.find((el) => pattern.test(el.textContent)) || heads[Math.min(n, heads.length) - 1];
+    const box = head.closest('.cf-module,.cv-module,[data-civil-native-module],details,.topic,.module');
+    const open = head.getAttribute('aria-expanded') === 'true' || box?.classList.contains('open') || box?.open === true;
+    if (!open) head.click();
+    setTimeout(() => head.scrollIntoView({ behavior: 'smooth', block: 'start' }), 120);
   }
   function ensureDisciplineCards() {
     for (const subject of subjects()) {

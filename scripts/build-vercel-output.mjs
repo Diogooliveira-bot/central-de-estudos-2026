@@ -8,6 +8,8 @@ const defaultOutput = path.join(projectRoot, 'dist');
 const excludedDirectories = new Set([
   '.git', '.vercel', '.next', 'node_modules', 'api', 'lib', 'db', 'tests',
   'scripts', 'docs', 'audits', 'merge', 'upstream', 'dist', 'coverage',
+  // Relatórios de trabalho e auditorias internas não fazem parte do site.
+  'qa', 'reports',
 ]);
 const excludedFiles = new Set([
   'vercel.json', 'package.json', 'package-lock.json', 'README.md', 'LEIA-ME.txt',
@@ -22,6 +24,8 @@ function excludedFile(relativePath) {
   const normalized = relativePath.split(path.sep).join('/');
   const basename = path.posix.basename(normalized);
   if (excludedFiles.has(basename) || basename.startsWith('.env') || basename === '.DS_Store') return true;
+  // Documentação interna (.md), scripts de apoio (.cjs) e arquivos ocultos ficam fora do site público.
+  if (basename.startsWith('.') || /\.(?:md|cjs)$/i.test(basename)) return true;
   if (/\.(?:zip|tar|tgz|gz|log|sql)$/i.test(basename)) return true;
   return Boolean(protectedAsset(`/${normalized}`));
 }
