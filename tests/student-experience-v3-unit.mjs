@@ -113,3 +113,24 @@ test('home minimalista utiliza o mascote oficial hospedado na Central', async ()
   assert.match(css, /#homeView/);
   assert.doesNotMatch(css, /#studentMorePanel/);
 });
+
+
+test('prévia real usa disciplinas e módulos originais sem duplicar conteúdo', async () => {
+  const [boot, offline, behavior, style] = await Promise.all([
+    read('central-v119.html'), read('central-offline-files-v66172.json'),
+    read('ui/disciplinas-foco-preview-v1.js'), read('ui/disciplinas-foco-preview-v1.css')
+  ]);
+  assert.match(boot, /disciplinas-foco-preview-v1\.js\?v=20261101real1/);
+  assert.match(boot, /disciplinas-foco-preview-v1\.css\?v=20261101real1/);
+  const files = JSON.parse(offline).files;
+  assert.ok(files.includes('/ui/disciplinas-foco-preview-v1.js?v=20261101real1'));
+  assert.ok(files.includes('/ui/disciplinas-foco-preview-v1.css?v=20261101real1'));
+  assert.match(behavior, /__BASE_COMPLETA_PREVIEW_GUEST__ !== true/);
+  assert.match(behavior, /moduleNodes\(subject\)/);
+  assert.match(behavior, /global\.toggleSubject\(id\)/);
+  assert.match(behavior, /m\.head\.click\(\)/);
+  assert.doesNotMatch(behavior, /innerHTML\s*=\s*.*(?:questões|teoria completa|gabarito)/i);
+  assert.match(style, /#homeView\.bc-focus-choice/);
+  assert.match(style, /#homeView\.bc-focus-reading/);
+  assert.doesNotMatch(style, /#studentMorePanel/);
+});
