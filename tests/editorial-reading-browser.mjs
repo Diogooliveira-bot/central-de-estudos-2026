@@ -82,8 +82,11 @@ if(!process.env.REPORT_ONLY){
   await term.evaluate(e=>{e.scrollIntoView({block:'center'});e.focus()});await page.keyboard.press('Enter');check(await page.locator('.bc-term-pop').count()===1,'Enter no termo não abriu a explicação');await page.keyboard.press('Escape');
  } else failures.push('nenhum termo marcado no leitor de Penal');
  const size0=(await state()).fontSize;
- const plus=page.locator('.bc-native-reader-overlay [data-bc-reading-size="1"]').last();
- if(await plus.count()){await plus.click();await page.waitForTimeout(300);check((await state()).fontSize>size0,'botão Aa (A+) não aumentou a fonte');const minus=page.locator('.bc-native-reader-overlay [data-bc-reading-size="-1"]').last();await minus.click();}
+ // No celular as ferramentas de leitura ficam atrás do botão "Aa".
+ const aa=page.locator('.bc-native-reader-overlay button:visible').filter({hasText:/^Aa$/}).first();
+ if(await aa.count()){await aa.click();await page.waitForTimeout(300);}
+ const plus=page.locator('.bc-native-reader-overlay [data-bc-reading-size="1"]:visible').last();
+ if(await plus.count()){await plus.click();await page.waitForTimeout(300);check((await state()).fontSize>size0,'botão Aa (A+) não aumentou a fonte');const minus=page.locator('.bc-native-reader-overlay [data-bc-reading-size="-1"]:visible').last();await minus.click();}
  else failures.push('botão Aa ausente');
 }
 check([...new Set(errs)].length===0,'erros de JavaScript: '+[...new Set(errs)].join(' | '));
