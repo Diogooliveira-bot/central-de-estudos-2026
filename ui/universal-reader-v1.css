@@ -21,7 +21,7 @@
 :is(.bc-native-reader-overlay .bc-native-article,.cf-native-reader article,
    .central-reading-active-topic .ct-body,.central-reading-active-topic .cf-theory-text,
    #subjects .bc-universal-sheet){
-  overflow-wrap:break-word;word-break:normal;hyphens:auto;
+  overflow-wrap:break-word;word-break:normal;-webkit-hyphens:manual;hyphens:manual;
 }
 .bc-universal-sheet{
   max-width:88ch;
@@ -83,10 +83,10 @@
 }
 .bc-universal-sheet :is(mark,.highlight){box-decoration-break:clone;}
 .bc-universal-projection{display:flow-root;font:inherit;color:inherit;}
-.bc-universal-projection p{white-space:pre-wrap;}
+.bc-universal-projection p{white-space:normal;}
 .bc-universal-projection :is(h2,h3){white-space:pre-wrap;}
 .bc-universal-projection ul{list-style:none;padding-left:1em;}
-.bc-universal-projection li{white-space:pre-wrap;padding:.25em 0;}
+.bc-universal-projection li{white-space:normal;padding:.25em 0;}
 .bc-universal-raw-source[hidden]{display:none!important;}
 .bc-native-reader-tools .bc-universal-index{
   min-height:40px;padding:8px 12px;white-space:nowrap;

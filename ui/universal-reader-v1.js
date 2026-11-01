@@ -35,10 +35,23 @@
   function bullet(line) {
     return /^\s*(?:[•●▪◦*\-]\s+|[a-z]\)\s+|(?:I|II|III|IV|V|VI|VII|VIII|IX|X)\.\s+)/i.test(line);
   }
+  /* As quebras de linha dentro de um parágrafo vêm da diagramação do material de origem
+     (PDF/Word), não do texto jurídico: as linhas são unidas por espaço. Uma linha que
+     termina em hífen é unida sem espaço, preservando o hífen (palavras compostas como
+     "pré-processual"); nenhuma palavra é reescrita ou "corrigida". */
+  function reflow(lines) {
+    return lines.reduce((text, line) => {
+      const part = line.replace(/\s+$/, '').replace(/^\s+/, '');
+      if (!text) return part;
+      return /[\p{L}]-$/u.test(text) ? text + part : text + ' ' + part;
+    }, '');
+  }
   /* Mantém o <pre> original, oculto apenas quando uma projeção semântica segura é criada.
      Nenhuma palavra é apagada ou gravada no armazenamento do aluno. */
   function formatRaw(pre) {
-    if (!pre || pre.dataset.bcUniversalDone || pre.querySelector('code') ||
+    // Tabelas importadas como texto de largura fixa são reconstruídas como tabela pelo
+    // módulo editorial (ui/editorial-reading-v2.js), não viram parágrafos.
+    if (!pre || pre.dataset.bcUniversalDone || pre.querySelector('code') || /(?:^|\s)[\w-]*source-table(?:\s|$)/.test(pre.className) ||
         pre.closest(EXCLUDE + ',.bc-universal-projection')) return false;
     const raw = pre.textContent || '';
     const lines = raw.split(/\r\n|\n|\r/);
@@ -53,8 +66,8 @@
       projection.appendChild(el);
       return el;
     };
-    let para = [], list = null;
-    const flush = () => { if (para.length) add('p', para.join('\n')); para=[]; list=null; };
+    let para = [], list = null, paraClass = '';
+    const flush = () => { if (para.length) add('p', reflow(para), paraClass); para=[]; list=null; paraClass=''; };
     for (const line of lines) {
       if (!line.trim()) { flush(); continue; }
       const level = heading(line);
@@ -64,7 +77,9 @@
         if (!list) { list=document.createElement('ul'); projection.appendChild(list); }
         const li=document.createElement('li'); li.textContent=line; list.appendChild(li); continue;
       }
-      if (legal(line)) { flush(); add('p', line, 'bc-universal-law'); continue; }
+      // Dispositivo/alerta: abre um parágrafo próprio; as linhas seguintes que continuam a
+      // frase pertencem a ele (não viram um novo parágrafo).
+      if (legal(line)) { flush(); para.push(line); paraClass='bc-universal-law'; continue; }
       list=null;
       para.push(line);
     }
@@ -142,7 +157,7 @@
       }
     }).observe(document.body,{childList:true,subtree:true});
   }
-  global.CentralUniversalReader=Object.freeze({scan,enhance,formatRaw,heading,legal,bullet});
+  global.CentralUniversalReader=Object.freeze({scan,enhance,formatRaw,heading,legal,bullet,reflow});
   if (document.readyState==='loading') document.addEventListener('DOMContentLoaded',boot,{once:true});
   else boot();
 })(window);

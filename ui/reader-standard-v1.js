@@ -255,7 +255,7 @@
   style.id = 'bc-reader-standard-v1';
   style.textContent =
     'html.bc-reading-justify :is(.bc-native-reader-overlay .bc-native-article,.bc-guided-overlay .bc-m01-paper) :is(p,li,dd,blockquote)' +
-    '{text-align:justify;text-align-last:start;text-justify:inter-word;-webkit-hyphens:auto;hyphens:auto;overflow-wrap:break-word}' +
+    '{text-align:justify;text-align-last:start;text-justify:inter-word;-webkit-hyphens:manual;hyphens:manual;overflow-wrap:break-word}' +
     '.bc-std-justify[aria-pressed=true]{border-color:#1d7f86;color:#0f6f75;background:rgba(29,127,134,.1)}' +
     '.bc-std-reader .bc-native-reader-tools [hidden]{display:none!important}' +
     '.bc-std-reader .bc-native-reader-tools input[type=search]{min-width:180px;max-width:280px;flex:1 1 200px}' +
