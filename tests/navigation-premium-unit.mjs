@@ -34,7 +34,12 @@ test('menu Mais não duplica Cadernos TEC e mantém acesso à Central de Questõ
   assert.doesNotMatch(panel.textContent, /Cadernos TEC/);
   assert.equal(panel.querySelector('[data-student-more-action="tec"]'), null);
   assert.equal(panel.querySelector('[data-student-more-action="admin"]'), null);
-  assert.ok(panel.querySelector('[data-student-more-action="law"]'));
+  assert.ok(win.document.querySelector('[data-student-primary-nav="law"]'));
+  assert.ok(win.document.querySelector('[data-student-primary-nav="vade"]'));
+  assert.ok(win.document.querySelector('[data-student-primary-nav="edital"]'));
+  assert.ok(win.document.querySelector('[data-student-primary-nav="filters"]'));
+  assert.ok(panel.querySelector('[data-student-more-action="subjects"]'));
+  assert.ok(panel.querySelector('[data-student-more-action="home"]'));
   assert.ok(panel.querySelector('[data-student-more-action="settings"]'));
   win.close();
 });
@@ -90,6 +95,17 @@ test('o visual desktop é compacto e o menu móvel continua responsivo', async (
 test('recursos editados estão no carregador e no manifesto offline', async () => {
   const boot = await read('central-v119.html');
   const offline = await read('central-offline-files-v66172.json');
-  assert.match(boot, /student-shell-v3\.js\?v=20261021nav3/);
-  assert.match(offline, /student-shell-v3\.js\?v=20261021nav3/);
+  assert.match(boot, /student-shell-v3\.js\?v=20261031nav4/);
+  assert.match(offline, /student-shell-v3\.js\?v=20261031nav4/);
+});
+
+
+test('login mostra olho discreto e links oficiais sem alterar autenticação', async () => {
+  const login = await read('login.html');
+  assert.match(login, /id="togglePassword" class="password-toggle"/);
+  assert.match(login, /\.password-field #togglePassword svg\{[^}]*width:21px/);
+  assert.match(login, /id="publicSignupLink"[^>]*>Ainda não tem conta\?/);
+  assert.match(login, /href="\/cadastro-gratuito\.html"/);
+  assert.match(login, /href="\/recuperar-senha\.html"/);
+  assert.match(login, /href="https:\/\/basecompleta\.com\.br\/"/);
 });

@@ -38,6 +38,28 @@
   ],
   "redirects": [
     {
+      "source": "/login.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "central-de-estudos-ecru.vercel.app"
+        }
+      ],
+      "destination": "https://app.basecompleta.com.br/login.html",
+      "permanent": false
+    },
+    {
+      "source": "/cadastro-gratuito.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "central-de-estudos-ecru.vercel.app"
+        }
+      ],
+      "destination": "https://app.basecompleta.com.br/cadastro-gratuito.html",
+      "permanent": false
+    },
+    {
       "source": "/portugues",
       "destination": "/portugues.html",
       "permanent": false
