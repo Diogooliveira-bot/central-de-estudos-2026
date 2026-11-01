@@ -51,8 +51,10 @@ function setup(storage = makeStorage()) {
 }
 
 const settle = (window) => new Promise((resolve) => window.setTimeout(resolve, 25));
-function chooseType(window, type) { window.document.querySelector(`[data-study-type="${type}"]`).click(); }
-function chooseGoal(window, id) { window.document.querySelector(`[data-study-select="${id}"]`).click(); }
+function openArea(w,id){w.document.querySelector('[data-study-area="'+id+'"]').click()}
+function chooseRole(w,id){w.document.querySelector('[data-study-role="'+id+'"]').click();w.document.querySelector('[data-study-confirm="'+id+'"]').click()}
+function chooseExam(w,id){w.document.querySelector('[data-study-exams]').click();w.document.querySelector('[data-study-exam="'+id+'"]').click()}
+function chooseFree(w,ids){w.document.querySelector('[data-study-free]').click();for(const id of ids)w.document.querySelector('input[name="studyFreeSubject"][value="'+id+'"]').checked=true;w.document.querySelector('[data-study-save-free]').click()}
 
 test('catálogo TJPB possui dez blocos oficiais e sem links fictícios para preparação', () => {
   const { dom } = setup();
