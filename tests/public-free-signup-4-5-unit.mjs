@@ -218,20 +218,23 @@ test('token inválido não consulta banco',async()=>{
  assert.equal(calls.length,0);
 });
 
-test('link cadastro aparece só quando a API confirmar que está habilitado',()=>{
- const page=readFileSync(new URL('../login.html',import.meta.url),'utf8');
- const auth=readFileSync(new URL('../api/auth.js',import.meta.url),'utf8');
- assert.match(page,/id="publicSignupLink"[^>]*hidden/);
- assert.match(page,/free-signup-status/);
- assert.match(page,/if\(signup\.enabled\)/);
- assert.match(page,/id="firstAccessInviteHint"/);
- assert.match(page,/firstAccessInviteHint'\)\.hidden=true/);
- assert.match(page,/id="commercialSiteLink"/);
- assert.match(page,/base-completa-vitrine-estatica-2026\.vercel\.app/);
- assert.match(auth,/free-signup-status/);
- assert.match(auth,/publicFreeSignupReady\(\)/);
+test('link de cadastro fica visível, mas inscrição continua controlada pela API',()=>{
+  const page=readFileSync(new URL('../login.html',import.meta.url),'utf8');
+  const auth=readFileSync(new URL('../api/auth.js',import.meta.url),'utf8');
+  const signup=readFileSync(new URL('../cadastro-gratuito.html',import.meta.url),'utf8');
+  assert.match(page,/id="publicSignupLink"[^>]*class="access-help bc-signup-link"/);
+  assert.doesNotMatch(page,/id="publicSignupLink"[^>]*hidden/);
+  assert.match(page,/href="\/cadastro-gratuito\.html"/);
+  assert.match(page,/free-signup-status/);
+  assert.match(page,/if\(signup\.enabled\)/);
+  assert.match(page,/id="firstAccessInviteHint"/);
+  assert.match(page,/firstAccessInviteHint'\)\.hidden=true/);
+  assert.match(page,/id="commercialSiteLink"/);
+  assert.match(page,/href="https:\/\/basecompleta\.com\.br\/"/);
+  assert.match(auth,/free-signup-status/);
+  assert.match(auth,/publicFreeSignupReady\(\)/);
+  assert.match(signup,/if\(!config\|\|!config\.enabled\)/);
 });
-
 test('falha simulada de entrega SMTP não confirma cadastro',async()=>{
  let emails=0;
  const fakeSql=async(strings,...values)=>{
