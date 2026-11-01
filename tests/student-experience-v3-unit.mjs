@@ -125,6 +125,7 @@ test('prévia real usa disciplinas e módulos originais sem duplicar conteúdo',
   const files = JSON.parse(offline).files;
   assert.ok(files.includes('/ui/disciplinas-foco-preview-v1.js?v=20261101real1'));
   assert.ok(files.includes('/ui/disciplinas-foco-preview-v1.css?v=20261101real1'));
+  assert.match(behavior, /__BASE_COMPLETA_PREVIEW_GUEST__ !== true/);
   assert.match(behavior, /moduleNodes\(subject\)/);
   assert.match(behavior, /global\.toggleSubject\(id\)/);
   assert.match(behavior, /m\.head\.click\(\)/);
