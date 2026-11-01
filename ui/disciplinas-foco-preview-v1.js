@@ -71,6 +71,7 @@
     h.classList.toggle('bc-focus-choice',state.stage==='choose');
     h.classList.toggle('bc-focus-modules-stage',state.stage==='modules');
     h.classList.toggle('bc-focus-reading',state.stage==='reading');
+    h.classList.toggle('bc-focus-has-module',state.stage==='reading' && !!state.moduleKey);
     header.hidden=state.stage==='choose'||!visible;
     list.hidden=state.stage!=='modules'||!visible;
     for(const el of s.children) {
