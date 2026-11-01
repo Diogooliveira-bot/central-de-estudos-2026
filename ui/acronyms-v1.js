@@ -134,7 +134,7 @@
     hideTip();
   });
   // Fase de captura: com a explicação aberta, Esc fecha só ela (não o leitor).
-  document.addEventListener('keydown', e => {
+  g.addEventListener('keydown', e => {
     if (e.key === 'Escape' && tip) { e.preventDefault(); e.stopImmediatePropagation(); hideTip(); }
   }, true);
   document.addEventListener('keydown', e => {

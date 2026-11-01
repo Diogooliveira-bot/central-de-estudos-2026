@@ -295,7 +295,7 @@
     if (t) { e.preventDefault(); openTerm(t); return; }
     if (pop && !e.target.closest('.bc-term-pop')) closePop();
   });
-  document.addEventListener('keydown', e => {
+  g.addEventListener('keydown', e => {
     if (e.key === 'Escape' && pop) { e.preventDefault(); e.stopImmediatePropagation(); closePop(); }
   }, true);
   document.addEventListener('keydown', e => {
