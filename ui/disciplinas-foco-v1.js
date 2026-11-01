@@ -28,7 +28,13 @@
   function moduleNodes(subject) {
     if (!subject) return [];
     const seen = new Set();
-    return [...subject.querySelectorAll(SELECTORS)].map((head, index) => {
+    // Alguns módulos (ex.: ADM) têm cabeçalho nativo e controle de tópico no mesmo bloco.
+    // Priorizar a abertura real do tópico; contar cada módulo apenas uma vez.
+    const heads=[...subject.querySelectorAll(SELECTORS)].filter(head=>{
+      const box=head.closest(BOX_SELECTOR);
+      return !(box?.matches('.topic-item') && box.querySelector('.open-topic') && !head.matches('.open-topic'));
+    });
+    return heads.map((head, index) => {
       const box = head.closest(BOX_SELECTOR);
       if (!box || seen.has(box)) return null;
       seen.add(box);
