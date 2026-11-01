@@ -222,9 +222,9 @@
     "/ui/universal-reader-v1.js?v=20261011a",
     "/ui/penal-cpp-tec-links.css?v=20261014tec1",
     "/tools/lei-em-dia-admin-editor.js?v=20261014edit3",
-    "/ui/student-experience-v3.css?v=20261025-adm-tabelas-v1",
+    "/ui/student-experience-v3.css?v=20261028-single-loading-v1-nav4",
     "/ui/student-ux-core-v3.js?v=20261023-remove-labor-disciplines-v1",
-    "/ui/student-shell-v3.js?v=20261021nav3",
+    "/ui/student-shell-v3.js?v=20261031nav4",
     "/ui/student-dashboard-v3.js?v=20261023-remove-labor-disciplines-v1",
     "/ui/student-plan-v3.js?v=20261019-qc-catalog1",
     "/ui/external-question-filters-v1.css?v=20261022-cf-m08-m15-apostilas-v1",
@@ -238,6 +238,7 @@
     "/content/trt8-2026-verticalized.js?v=20261021multiexam2",
     "/ui/exam-verticalized-v1.js?v=20261023-remove-labor-disciplines-v1",
     "/ui/exam-verticalized-v1.css?v=20261020exam1",
-    "/ui/available-disciplines-v1.js?v=20261023-remove-labor-disciplines-v1"
+    "/ui/available-disciplines-v1.js?v=20261023-remove-labor-disciplines-v1",
+    "/ui/login-brand-v1.css?v=20261101-olho"
   ]
 }
