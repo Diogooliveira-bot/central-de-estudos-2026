@@ -133,8 +133,12 @@
     if (a) { e.preventDefault(); a === tipFor ? hideTip() : showTip(a); return; }
     hideTip();
   });
+  // Fase de captura: com a explicação aberta, Esc fecha só ela (não o leitor).
   document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') { hideTip(); return; }
+    if (e.key === 'Escape' && tip) { e.preventDefault(); e.stopImmediatePropagation(); hideTip(); }
+  }, true);
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') return;
     const a = e.target.closest?.('abbr.bc-acr');
     if (a && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); a === tipFor ? hideTip() : showTip(a); }
   });

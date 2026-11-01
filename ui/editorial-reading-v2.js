@@ -296,7 +296,10 @@
     if (pop && !e.target.closest('.bc-term-pop')) closePop();
   });
   document.addEventListener('keydown', e => {
-    if (e.key === 'Escape' && pop) { closePop(); return; }
+    if (e.key === 'Escape' && pop) { e.preventDefault(); e.stopImmediatePropagation(); closePop(); }
+  }, true);
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') return;
     const t = e.target.closest?.('.bc-term');
     if (t && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); openTerm(t); }
   });
