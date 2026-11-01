@@ -2,6 +2,7 @@ import { createServer } from 'node:http';
 import { readFile } from 'node:fs/promises';
 import { resolve, extname } from 'node:path';
 import { chromium } from 'playwright';
+import { openModule } from './helpers/focus-navigation.mjs';
 const root=process.cwd();
 const mime={'.html':'text/html','.js':'application/javascript','.css':'text/css','.json':'application/json'};
 const server=createServer(async(req,res)=>{
@@ -35,14 +36,14 @@ for(const id of ['cpc','penal']){
  const n=await heads.count();
  if(n<(id==='cpc'?20:17))failures.push(id+': apenas '+n+' módulos');
  for(let i=0;i<n;i++){
-  await heads.nth(i).click();await page.waitForTimeout(400);
+  await heads.nth(i).evaluate(e=>e.click());await page.waitForTimeout(400);
   const labels=await page.evaluate(([id,i])=>{const m=document.querySelectorAll('.subject[data-id="'+id+'"] .cf-module')[i];return [...(m?.querySelectorAll('.cpc-approved-secondary,.penal-approved-secondary')||[])].map(b=>b.textContent.trim()+(b.disabled?' [desativado]':'')).filter(t=>/quest/i.test(t))},[id,i]);
   if(labels.sort().join('|')!=='Resolver 10 questões|Resolver 5 questões')failures.push(id+' M'+(i+1)+': '+labels.join(', '));
-  await heads.nth(i).click();await page.waitForTimeout(120);
+  await heads.nth(i).evaluate(e=>e.click());await page.waitForTimeout(120);
  }
  // Abre uma bateria e confere as questões.
  for(const [mi,label,expect] of id==='cpc'?[[0,'Resolver 10 questões',10],[17,'Resolver 5 questões',5]]:[[2,'Resolver 10 questões',10]]){
-  await heads.nth(mi).click();await page.waitForTimeout(500);
+  await openModule(page,id,mi,'.cf-module-head');
   const module=page.locator('.subject[data-id="'+id+'"] .cf-module').nth(mi);
   await module.getByRole('button',{name:label,exact:true}).click();
   await page.waitForTimeout(2500);

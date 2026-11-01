@@ -3,6 +3,7 @@ import { readFile } from 'node:fs/promises';
 import { resolve, extname } from 'node:path';
 import assert from 'node:assert/strict';
 import { chromium } from 'playwright';
+import { openModule } from './helpers/focus-navigation.mjs';
 // Teoria completa no padrão único (modelo Administrativo) nas seis disciplinas jurídicas.
 const root=resolve(process.env.ROOT||'.');
 const mime={'.html':'text/html','.js':'application/javascript','.css':'text/css','.json':'application/json','.webp':'image/webp','.png':'image/png','.svg':'image/svg+xml','.avif':'image/avif','.ico':'image/x-icon','.txt':'text/plain'};
@@ -25,9 +26,11 @@ const open=async(id,head,idx,label)=>{
  await page.evaluate(()=>window.openDisciplines());await page.locator('#disciplineGrid [data-study-open-subject="'+id+'"]').first().click();
  await page.waitForFunction(id=>window.CentralDisciplineLoader.isReady(id),id,{timeout:40000});await page.waitForTimeout(600);
  const sec=page.locator('.subject[data-id="'+id+'"]');const btn=sec.locator('button:visible').filter({hasText:new RegExp('^'+label)}).first();
- // O módulo pode já estar aberto (estado lembrado): só clica no cabeçalho se o botão não estiver visível.
- for(let k=0;k<2&&!(await btn.count());k++){await sec.locator(head+':visible').nth(idx).click();await page.waitForTimeout(800);}
- await btn.click();await page.waitForTimeout(3200);
+ const box=await openModule(page,id,idx,head);
+ const inBox=box.locator('button:visible').filter({hasText:new RegExp('^'+label)}).first();
+ // Sem a navegação simplificada o módulo pode já estar aberto (estado lembrado).
+ if(!(await inBox.count()))for(let k=0;k<2&&!(await btn.count());k++){await sec.locator(head+':visible').nth(idx).click();await page.waitForTimeout(800);}
+ await ((await inBox.count())?inBox:btn).click();await page.waitForTimeout(3200);
 };
 const state=()=>page.evaluate(()=>{
  const a=[...document.querySelectorAll('.bc-native-reader-overlay .bc-native-article')].pop();

@@ -3,6 +3,7 @@ import { readFile } from 'node:fs/promises';
 import { resolve, extname } from 'node:path';
 import assert from 'node:assert/strict';
 import { chromium } from 'playwright';
+import { openModule } from './helpers/focus-navigation.mjs';
 // Teoria completa no padrão único (modelo Administrativo) nas seis disciplinas jurídicas.
 const root=resolve('.');
 const mime={'.html':'text/html','.js':'application/javascript','.css':'text/css','.json':'application/json','.webp':'image/webp','.png':'image/png','.svg':'image/svg+xml','.avif':'image/avif','.ico':'image/x-icon','.txt':'text/plain'};
@@ -20,7 +21,8 @@ for(const id of Object.keys(S)){
  await page.goto(base+'/central-v119.html?view=home');await page.waitForFunction(()=>document.documentElement.dataset.centralReady==='true',{timeout:40000});
  await page.evaluate(()=>window.openDisciplines());await page.locator('#disciplineGrid [data-study-open-subject="'+id+'"]').first().click();
  await page.waitForFunction(id=>window.CentralDisciplineLoader.isReady(id),id,{timeout:40000});await page.waitForTimeout(800);
- const sec=page.locator('.subject[data-id="'+id+'"]');await sec.locator(S[id]).click();await page.waitForTimeout(900);
+ const sec=page.locator('.subject[data-id="'+id+'"]');
+ const [headSel,nth]=S[id].split(' >> nth=');await openModule(page,id,Number(nth),headSel);
  // Tela do módulo: mesmo nome do cartão de revisão e, em Constitucional, o painel aprovado.
  const moduleText=await sec.innerText();
  assert.doesNotMatch(moduleText,/Teoria guiada|Abrir teoria guiada/,id+': nome antigo do cartão de revisão');
@@ -36,8 +38,12 @@ for(const id of Object.keys(S)){
  assert.equal(info.first,info.title.slice(0,60),id+': abertura sem o título do módulo');
  const article=await page.locator('.bc-native-reader-overlay').last().locator('.bc-native-article').innerText();
  assert.doesNotMatch(article.slice(0,1500),/A P O S? ?T I L A|BASE COMPLETA M\d|DIREITO ADMINISTRATIVO ?M[ÓO]DULO|Apostila de estudo|OFFLINE|n[ãa]o publicar/,id+': capa ou anotação interna no início');
- const inp=page.locator('.bc-native-reader-overlay input[type=search]').last();
+ // A busca padrão substitui a busca antiga do leitor (CPC) logo após abrir: espera a versão padrão.
+ const inp=page.locator('.bc-native-reader-overlay input[type=search]'+(id==='cpc'?'[data-bc-std-search]':'')).last();
+ await inp.waitFor({state:'visible',timeout:10000});
  await inp.fill('a');await inp.fill('de');await page.waitForTimeout(500);
+ // Se a busca do leitor ainda não estava pronta ao digitar, digita de novo uma vez.
+ if(await page.locator('.bc-native-reader-overlay mark').count()<=1){const again=page.locator('.bc-native-reader-overlay input[type=search]').last();await again.fill('');await again.fill('de');await page.waitForTimeout(900);}
  assert.ok(await page.locator('.bc-native-reader-overlay mark').count()>1,id+': busca deve destacar todos os resultados');
  await page.locator('.bc-native-reader-overlay').last().getByRole('button',{name:'Concluir leitura'}).click();await page.waitForTimeout(500);
  assert.equal((await page.locator('.bc-native-reader-overlay .bc-native-reader-meta').last().textContent()).trim(),'100% lido',id+': Concluir leitura não chegou a 100%');
