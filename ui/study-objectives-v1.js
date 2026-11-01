@@ -106,7 +106,7 @@
     if (!current) return;
     const selectedIds = activeSubjectIds();
     const signature = activeId + '|' + selectedIds.join(',');
-    if (host.dataset.studyObjectiveSignature === signature) return;
+    if (host.dataset.studyObjectiveSignature === signature && host.children.length === (current.examSubjects?.length || selectedIds.length) && [...host.children].every((el) => el.dataset.studyObjectiveGoal === activeId)) return;
     let html = '';
     if (current.examSubjects) {
       html = current.examSubjects.map((entry) => objectiveCard(catalog.subjects[entry.subjectId], entry)).join('');
