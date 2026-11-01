@@ -22,15 +22,25 @@ function send(res, status, body) {
   res.end(JSON.stringify(body));
 }
 
-async function ensureTable(sql) {
-  await sql`
-    CREATE TABLE IF NOT EXISTS central_user_preferences (
-      user_id TEXT PRIMARY KEY REFERENCES central_users(user_id) ON DELETE CASCADE,
-      study_objective_id TEXT,
-      updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
-    )
-  `;
-  await sql`ALTER TABLE central_user_preferences ADD COLUMN IF NOT EXISTS free_subject_ids JSONB`;
+// A verificação/migração é executada no máximo uma vez por instância da função.
+let preferencesReadyPromise = null;
+function ensureTable(sql) {
+  if (!preferencesReadyPromise) {
+    preferencesReadyPromise = (async () => {
+      await sql`
+        CREATE TABLE IF NOT EXISTS central_user_preferences (
+          user_id TEXT PRIMARY KEY REFERENCES central_users(user_id) ON DELETE CASCADE,
+          study_objective_id TEXT,
+          updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+        )
+      `;
+      await sql`ALTER TABLE central_user_preferences ADD COLUMN IF NOT EXISTS free_subject_ids JSONB`;
+    })().catch((error) => {
+      preferencesReadyPromise = null;
+      throw error;
+    });
+  }
+  return preferencesReadyPromise;
 }
 
 const DEFAULT_EXAM_ID = 'tjp-2026-aj-area-judiciaria';
