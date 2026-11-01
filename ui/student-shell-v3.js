@@ -57,7 +57,7 @@
     if (action === 'logout') return document.querySelector('[data-bc-logout]')?.click();
     if (action === 'admin' && isAdmin()) return global.location.assign('/usuarios.html');
     if (action === 'admin-preview' && global.__BASE_COMPLETA_PREVIEW_GUEST__ === true) {
-      return global.location.assign('https://central-de-estudos-ecru.vercel.app/usuarios.html#convites');
+      return global.location.assign('https://app.basecompleta.com.br/usuarios.html#convites');
     }
     return false;
   }

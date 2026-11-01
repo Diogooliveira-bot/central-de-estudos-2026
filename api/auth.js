@@ -19,6 +19,7 @@ import {
 import handleInviteAction from '../lib/invite-handler.js';
 import handleFreeSignup, {freeSignupWhatsappEnabled,publicFreeSignupReady} from '../lib/free-signup-handler.js';
 import handleFreeSignupContactPreferences from '../lib/free-signup-contact-preferences.js';
+import handleAccountDeletion from '../lib/account-deletion-handler.js';
 import handleAdminPublicSignups from '../lib/admin-public-signups-handler.js';
 import {signupCaptchaConfigured} from '../lib/free-signup-security.js';
 import handlePasswordReset from '../lib/password-reset.js';
@@ -193,6 +194,7 @@ export default async function handler(req, res) {
     if (action === 'admin-public-signups') return await handleAdminPublicSignups(req, res);
     if (action === 'free-signup' && req.method === 'POST') return await handleFreeSignup(req, res);
     if (action === 'free-signup-contact' && ['GET','POST'].includes(req.method)) return await handleFreeSignupContactPreferences(req, res);
+    if (action === 'delete-account' && req.method === 'POST') return await handleAccountDeletion(req, res);
     if (action === 'free-signup-status' && req.method === 'GET') return send(res, 200, {
       enabled: publicFreeSignupReady(),
       siteKey: publicFreeSignupReady() && signupCaptchaConfigured()

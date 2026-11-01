@@ -84,7 +84,7 @@ test('modo demonstração nunca autoriza rota administrativa local', async () =>
   const src = await read('ui/student-shell-v3.js');
   assert.match(src, /action === 'admin' && isAdmin\(\)/);
   assert.match(src, /action === 'admin-preview' && global\.__BASE_COMPLETA_PREVIEW_GUEST__ === true/);
-  assert.match(src, /central-de-estudos-ecru\.vercel\.app\/usuarios\.html#convites/);
+  assert.match(src, /app\.basecompleta\.com\.br\/usuarios\.html#convites/);
 });
 
 test('o visual desktop é compacto e o menu móvel continua responsivo', async () => {
@@ -98,8 +98,8 @@ test('o visual desktop é compacto e o menu móvel continua responsivo', async (
 test('recursos editados estão no carregador e no manifesto offline', async () => {
   const boot = await read('central-v119.html');
   const offline = await read('central-offline-files-v66172.json');
-  assert.match(boot, /student-shell-v3\.js\?v=20261101mais1/);
-  assert.match(offline, /student-shell-v3\.js\?v=20261101mais1/);
+  assert.match(boot, /student-shell-v3\.js\?v=20261101mais2/);
+  assert.match(offline, /student-shell-v3\.js\?v=20261101mais2/);
 });
 
 
