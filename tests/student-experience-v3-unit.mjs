@@ -95,3 +95,21 @@ test('acessibilidade e sincronização possuem retorno visível', async () => {
   assert.match(styles, /prefers-reduced-motion:reduce/);
 });
 
+
+test('home minimalista utiliza o mascote oficial hospedado na Central', async () => {
+  const [boot, css, offline, mascot] = await Promise.all([
+    read('central-v119.html'),
+    read('ui/home-minimal-a-v1.css'),
+    read('central-offline-files-v66172.json'),
+    readFile(new URL('../assets/mascote-oficial-estudando.png', import.meta.url)),
+  ]);
+  assert.match(boot, /home-minimal-a-v1\.css\?v=20261101oficial1/);
+  assert.match(css, /\/assets\/mascote-oficial-estudando\.png\?v=20261101-oficial1/);
+  assert.doesNotMatch(css, /basecompleta\.com\.br\/img\/mascote-estudando\.webp/);
+  assert.ok(JSON.parse(offline).files.includes('/ui/home-minimal-a-v1.css?v=20261101oficial1'));
+  assert.ok(JSON.parse(offline).files.includes('/assets/mascote-oficial-estudando.png?v=20261101-oficial1'));
+  assert.ok(mascot.byteLength > 1000);
+  assert.equal(mascot.subarray(0,8).toString('hex'), '89504e470d0a1a0a');
+  assert.match(css, /#homeView/);
+  assert.doesNotMatch(css, /#studentMorePanel/);
+});
