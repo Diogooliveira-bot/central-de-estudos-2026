@@ -7,6 +7,14 @@ function validObjectiveId(value) {
   return id === 'free-study' || (id.length <= 120 && /^(career|exam)-[a-z0-9]+(?:-[a-z0-9]+)*$/.test(id));
 }
 
+const FREE_STUDY_SUBJECT_IDS = new Set(['pt','cf','adm','civil','cpc','penal','cpp','rlm']);
+
+function validFreeSubjectIds(value) {
+  return Array.isArray(value) && value.length >= 1 && value.length <= FREE_STUDY_SUBJECT_IDS.size &&
+    value.every((id) => typeof id === 'string' && FREE_STUDY_SUBJECT_IDS.has(id)) &&
+    new Set(value).size === value.length;
+}
+
 function send(res, status, body) {
   res.statusCode = status;
   res.setHeader('Content-Type', 'application/json; charset=utf-8');
@@ -22,6 +30,7 @@ async function ensureTable(sql) {
       updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
     )
   `;
+  await sql`ALTER TABLE central_user_preferences ADD COLUMN IF NOT EXISTS free_subject_ids JSONB`;
 }
 
 const DEFAULT_EXAM_ID = 'tjp-2026-aj-area-judiciaria';
@@ -114,24 +123,42 @@ export default async function handler(req, res) {
 
     if (req.method === 'GET') {
       const rows = await sql`
-        SELECT study_objective_id, updated_at
+        SELECT study_objective_id, free_subject_ids, updated_at
         FROM central_user_preferences WHERE user_id=${session.user.id} LIMIT 1
       `;
-      return send(res, 200, { objectiveId:rows[0]?.study_objective_id || null, updatedAt:rows[0]?.updated_at || null });
+      const row = rows[0];
+      return send(res, 200, {
+        objectiveId:row?.study_objective_id || null,
+        freeSubjectIds:validFreeSubjectIds(row?.free_subject_ids) ? row.free_subject_ids : null,
+        updatedAt:row?.updated_at || null,
+      });
     }
 
     const body = await readJsonBody(req);
     const objectiveId = String(body?.objectiveId || '');
     if (!validObjectiveId(objectiveId)) return send(res, 400, { error:'Objetivo inválido' });
+    const hasFreeSelection = Object.prototype.hasOwnProperty.call(body || {}, 'freeSubjectIds');
+    const freeSubjectIds = body?.freeSubjectIds;
+    if (hasFreeSelection && (objectiveId !== 'free-study' || !validFreeSubjectIds(freeSubjectIds))) {
+      return send(res, 400, { error:'Selecione de 1 a 8 disciplinas válidas, sem repetições, para o Estudo livre' });
+    }
+    // Sem seleção enviada: preservar o que o aluno já escolheu quando alternar de carreira.
+    const freeSubjectJson = hasFreeSelection ? JSON.stringify(freeSubjectIds) : null;
     const rows = await sql`
-      INSERT INTO central_user_preferences (user_id, study_objective_id, updated_at)
-      VALUES (${session.user.id}, ${objectiveId}, NOW())
+      INSERT INTO central_user_preferences (user_id, study_objective_id, free_subject_ids, updated_at)
+      VALUES (${session.user.id}, ${objectiveId}, ${freeSubjectJson}::jsonb, NOW())
       ON CONFLICT (user_id) DO UPDATE SET
         study_objective_id=EXCLUDED.study_objective_id,
+        free_subject_ids=CASE WHEN ${hasFreeSelection} THEN EXCLUDED.free_subject_ids ELSE central_user_preferences.free_subject_ids END,
         updated_at=NOW()
-      RETURNING study_objective_id, updated_at
+      RETURNING study_objective_id, free_subject_ids, updated_at
     `;
-    return send(res, 200, { ok:true, objectiveId:rows[0].study_objective_id, updatedAt:rows[0].updated_at });
+    const row = rows[0];
+    return send(res, 200, {
+      ok:true, objectiveId:row.study_objective_id,
+      freeSubjectIds:validFreeSubjectIds(row.free_subject_ids) ? row.free_subject_ids : null,
+      updatedAt:row.updated_at,
+    });
   } catch (error) {
     console.error('study objective preference error', error);
     return send(res, 500, { error:error?.message || 'Falha ao salvar o objetivo' });
