@@ -9,6 +9,17 @@
 
   const KEY = 'central-v6:study-objective:v1';
   const PENDING_KEY = 'central-v6:study-objective:pending:v1';
+  const FREE_SUBJECTS_KEY = 'central-v6:free-study-subjects:v1';
+  function savedFreeSubjectIds() {
+    try {
+      const raw = localStorage.getItem(FREE_SUBJECTS_KEY);
+      if (raw === null) return null;
+      const parsed = JSON.parse(raw);
+      if (!Array.isArray(parsed)) return null;
+      const unique = [...new Set(parsed.filter((id) => !!catalog.subjects[id]))];
+      return unique.length ? unique : null;
+    } catch (_) { return null; }
+  }
   let activeId = '';
   let loaded = false;
   let loading = false;
@@ -18,11 +29,12 @@
   const allSubjectIds = () => Object.keys(catalog.subjects);
   function activeSubjectIds() {
     const current = goal();
-    return !current || current.type === 'free' ? allSubjectIds() : current.subjectIds.slice();
+    if (!current) return allSubjectIds();
+    return current.type === 'free' ? (savedFreeSubjectIds() || allSubjectIds()) : current.subjectIds.slice();
   }
   function activeQuestionKeys() {
     const allowed = new Set(activeSubjectIds());
-    if (activeId === 'free-study' || !activeId) return null;
+    if (!activeId || (activeId === 'free-study' && !savedFreeSubjectIds())) return null;
     return new Set(Object.values(catalog.subjects).filter((subject) => allowed.has(subject.id) && subject.questionKey).map((subject) => subject.questionKey));
   }
   function dispatchChange() {
@@ -92,15 +104,17 @@
     if (!host) return;
     const current = goal();
     if (!current) return;
-    const expectedCount = current.examSubjects?.length || current.subjectIds.length;
-    if (host.children.length === expectedCount && Array.from(host.children).every((item) => item.dataset.studyObjectiveGoal === activeId)) return;
+    const selectedIds = activeSubjectIds();
+    const signature = activeId + '|' + selectedIds.join(',');
+    if (host.dataset.studyObjectiveSignature === signature) return;
     let html = '';
     if (current.examSubjects) {
       html = current.examSubjects.map((entry) => objectiveCard(catalog.subjects[entry.subjectId], entry)).join('');
     } else {
-      html = current.subjectIds.map((id) => objectiveCard(catalog.subjects[id], { subjectId:id, title:catalog.subjects[id].name })).join('');
+      html = selectedIds.map((id) => objectiveCard(catalog.subjects[id], { subjectId:id, title:catalog.subjects[id].name })).join('');
     }
     host.innerHTML = html;
+    host.dataset.studyObjectiveSignature = signature;
   }
   function renderTopbar() {
     const host = document.querySelector('#appRoot .view.central-view-visible:not(.hidden)') || document.querySelector('#appRoot .view:not(.hidden)') || document.getElementById('homeView') || document.getElementById('appRoot') || document.body;
@@ -159,37 +173,117 @@
       app.__studyObjectiveViewObserver = viewObserver;
     }
   }
-  function renderChooser(step = 'types', type = '') {
+  function renderChooser(step = 'areas', value = '') {
     let modal = document.getElementById('studyObjectiveDialog');
-    if (!modal) { modal = document.createElement('div'); modal.id = 'studyObjectiveDialog'; modal.className = 'study-objective-backdrop'; document.body.appendChild(modal); }
-    const isInitial = !activeId;
+    if (!modal) {
+      modal = document.createElement('div');
+      modal.id = 'studyObjectiveDialog';
+      modal.className = 'study-objective-backdrop';
+      document.body.appendChild(modal);
+    }
+    const initial = !activeId;
     const selected = goal();
-    const choices = Object.values(catalog.goals).filter((item) => item.type === type);
-    const title = step === 'types' ? 'Como você quer estudar?' : type === 'career' ? 'Escolha sua carreira' : 'Escolha seu edital';
-    const intro = step === 'types'
-      ? 'Escolha um caminho para organizar as disciplinas. Seu progresso e suas anotações continuarão guardados.'
-      : type === 'career'
-        ? 'Esta é uma trilha inicial configurável; o programa muda conforme o tribunal e o edital.'
-        : 'As disciplinas que ainda não têm conteúdo próprio aparecem como “Em preparação”.';
-    const options = step === 'types'
-      ? `<div class="study-objective-options">
-          <button type="button" data-study-type="career"><strong>Por carreira</strong><span>Trilha configurável para uma área de atuação.</span></button>
-          <button type="button" data-study-type="exam"><strong>Por edital</strong><span>Disciplinas relacionadas a um concurso específico.</span></button>
-          <button type="button" data-study-select="free-study"><strong>Estudo livre</strong><span>Acesse todas as disciplinas disponíveis.</span></button>
-        </div>`
-      : `<div class="study-objective-options">${choices.map((item) => `<button type="button" data-study-select="${UX.escapeHTML(item.id)}"${item.id === activeId ? ' aria-current="true"' : ''}><strong>${UX.escapeHTML(item.title)}</strong><span>${UX.escapeHTML(item.description)}</span></button>`).join('')}</div>`;
-    modal.innerHTML = `<section class="study-objective-dialog" role="dialog" aria-modal="true" aria-labelledby="studyObjectiveTitle">
-      <div class="study-objective-brand"><span aria-hidden="true">◎</span><div><small>BASE COMPLETA</small><b>Seu objetivo de estudo</b></div></div>
-      <div class="study-objective-intro"><span>${selected ? 'Objetivo atual: ' + UX.escapeHTML(selected.shortLabel) : 'Primeiro acesso'}</span><h1 id="studyObjectiveTitle">${title}</h1><p>${intro}</p></div>
-      ${options}
-      <p class="study-objective-sync" data-study-objective-sync role="status">${global.__BASE_COMPLETA_PREVIEW_GUEST__ === true ? 'Prévia de teste: preferência guardada apenas neste navegador.' : ''}</p>
-      <div class="study-objective-actions">${step === 'options' ? '<button type="button" data-study-back>Voltar</button>' : '<span></span>'}${!isInitial ? '<button type="button" data-study-close>Manter objetivo atual</button>' : ''}</div>
-    </section>`;
+    const escape = (v) => UX.escapeHTML(v);
+    const card = (area) =>
+      '<button type="button" class="study-area-card" data-study-area="' + escape(area.id) + '">' +
+      '<span class="study-area-icon" aria-hidden="true">' + escape(area.icon) + '</span>' +
+      '<span class="study-area-copy"><strong>' + escape(area.title) + '</strong><small>' + escape(area.description) + '</small></span>' +
+      '<span class="study-area-chevron" aria-hidden="true">›</span></button>';
+    const roleCard = (item) =>
+      '<button type="button" class="study-role-card" data-study-role="' + escape(item.id) + '">' +
+      '<span><strong>' + escape(item.title) + '</strong><small>Ver matérias sugeridas</small></span><b aria-hidden="true">›</b></button>';
+
+    let title = 'Bem-vindo à Base Completa!';
+    let intro = 'Vamos organizar seus estudos. Primeiro, escolha a área em que deseja atuar.';
+    let badge = initial ? 'SEU PRIMEIRO ACESSO' : 'ALTERAR OBJETIVO';
+    let options = '';
+    let backStep = '';
+    let backValue = '';
+    if (step === 'areas') {
+      const mainAreas = catalog.areas.slice(0,6);
+      const otherAreas = catalog.areas.slice(6);
+      options = '<div class="study-area-grid">' + mainAreas.map(card).join('') + '</div>' +
+        '<details class="study-more-areas"><summary>Ver outras áreas</summary><div class="study-area-grid">' +
+        otherAreas.map(card).join('') + '</div></details>' +
+        '<div class="study-start-alternatives">' +
+        '<button type="button" class="study-free-entry" data-study-free><span aria-hidden="true">✦</span><span><strong>Estudo livre</strong><small>Escolha as disciplinas que deseja estudar, sem escolher um cargo.</small></span><b aria-hidden="true">›</b></button>' +
+        '<button type="button" class="study-exam-entry" data-study-exams>Ou estudar por um edital já cadastrado</button></div>';
+    } else if (step === 'roles') {
+      const area = catalog.areas.find((a) => a.id === value);
+      if (!area) return renderChooser('areas');
+      title = 'Qual cargo você pretende conquistar?';
+      intro = area.title + ' — selecione seu cargo para ver uma sugestão inicial de disciplinas.';
+      badge = 'ETAPA 2 DE 3';
+      const roles = Object.values(catalog.goals).filter((item) => item.type === 'career' && item.area === area.id);
+      options = '<div class="study-role-grid">' + roles.map(roleCard).join('') + '</div>';
+      backStep = 'areas';
+    } else if (step === 'review') {
+      const chosen = catalog.goals[value];
+      if (!chosen || chosen.type !== 'career') return renderChooser('areas');
+      title = 'Sua primeira trilha de estudos';
+      intro = chosen.title;
+      badge = 'ETAPA 3 DE 3';
+      options = '<div class="study-review"><p>Estas são as disciplinas <strong>já disponíveis</strong> na Base Completa que podem ajudar a começar:</p>' +
+        '<div class="study-subject-chips">' + chosen.subjectIds.map((id) =>
+          '<span>' + escape(catalog.subjects[id]?.name || id) + '</span>').join('') +
+        '</div><p class="study-disclaimer">Esta seleção é uma referência inicial, não substitui o conteúdo programático do edital. Outras matérias específicas podem estar em preparação.</p>' +
+        '<button type="button" class="study-primary-button" data-study-confirm="' + escape(value) + '">Começar meus estudos</button></div>';
+      backStep = 'roles';backValue = chosen.area;
+    } else if (step === 'free') {
+      title = 'Monte seu estudo livre';
+      intro = 'Escolha as disciplinas que deseja estudar. Pode alterar sua seleção depois, sem perder o progresso.';
+      badge = 'ESTUDO LIVRE';
+      const selectedIds = savedFreeSubjectIds() || [];
+      options = '<div class="study-free-picker"><p>Selecione pelo menos uma disciplina.</p><div class="study-free-grid">' +
+        Object.values(catalog.subjects).filter((item) => item.available).map((item) =>
+          '<label class="study-free-choice"><input type="checkbox" name="studyFreeSubject" value="' + escape(item.id) + '"' +
+          (selectedIds.includes(item.id) ? ' checked' : '') +
+          '><span>' + escape(item.name) + '</span></label>').join('') +
+        '</div><p class="study-form-error" role="alert" hidden></p>' +
+        '<button type="button" class="study-primary-button" data-study-save-free>Começar estudo livre</button></div>';
+      backStep = 'areas';
+    } else if (step === 'exams') {
+      title = 'Escolha um edital cadastrado';
+      intro = 'Veja os concursos já cadastrados. Alguns assuntos ainda estão em preparação.';
+      badge = 'ESTUDO POR EDITAL';
+      const exams = Object.values(catalog.goals).filter((item) => item.type === 'exam');
+      options = '<div class="study-role-grid">' + exams.map((item) =>
+        '<button type="button" class="study-role-card" data-study-exam="' + escape(item.id) + '"><span><strong>' +
+        escape(item.title) + '</strong><small>' + escape(item.description) + '</small></span><b aria-hidden="true">›</b></button>'
+      ).join('') + '</div>';
+      backStep = 'areas';
+    }
+    modal.innerHTML = '<section class="study-objective-dialog study-welcome-dialog" role="dialog" aria-modal="true" aria-labelledby="studyObjectiveTitle">' +
+      '<header class="study-welcome-brand"><img src="/assets/base-completa-symbol.webp" alt="" width="40" height="40"><div><b>BASE COMPLETA</b><small>CENTRAL DE ESTUDOS</small></div></header>' +
+      '<div class="study-welcome-intro"><div><span>' + badge + '</span><h1 id="studyObjectiveTitle">' + escape(title) +
+      '</h1><p>' + escape(intro) + '</p></div><img src="/assets/mascote-oficial-estudando.png" alt="" aria-hidden="true" loading="lazy"></div>' +
+      options +
+      '<p class="study-objective-sync" data-study-objective-sync role="status">' +
+      (global.__BASE_COMPLETA_PREVIEW_GUEST__ === true ? 'Prévia: escolha guardada somente neste navegador.' : '') +
+      '</p><footer class="study-welcome-actions">' +
+      (backStep ? '<button type="button" class="study-back-button" data-study-back>‹ Voltar</button>' : '<span></span>') +
+      (!initial ? '<button type="button" class="study-keep-button" data-study-close>Manter minha escolha atual</button>' : '') +
+      '</footer></section>';
     modal.hidden = false;
-    modal.querySelector('[data-study-back]')?.addEventListener('click', () => renderChooser('types'));
+    modal.querySelector('[data-study-back]')?.addEventListener('click', () => renderChooser(backStep, backValue));
     modal.querySelector('[data-study-close]')?.addEventListener('click', () => close(true));
-    modal.querySelectorAll('[data-study-type]').forEach((button) => button.addEventListener('click', () => renderChooser('options', button.dataset.studyType)));
-    modal.querySelectorAll('[data-study-select]').forEach((button) => button.addEventListener('click', () => selectObjective(button.dataset.studySelect)));
+    modal.querySelectorAll('[data-study-area]').forEach((button) => button.addEventListener('click', () => renderChooser('roles', button.dataset.studyArea)));
+    modal.querySelectorAll('[data-study-role]').forEach((button) => button.addEventListener('click', () => renderChooser('review', button.dataset.studyRole)));
+    modal.querySelector('[data-study-free]')?.addEventListener('click', () => renderChooser('free'));
+    modal.querySelector('[data-study-exams]')?.addEventListener('click', () => renderChooser('exams'));
+    modal.querySelectorAll('[data-study-exam]').forEach((button) => button.addEventListener('click', () => selectObjective(button.dataset.studyExam)));
+    modal.querySelector('[data-study-confirm]')?.addEventListener('click', (event) => selectObjective(event.currentTarget.dataset.studyConfirm));
+    modal.querySelector('[data-study-save-free]')?.addEventListener('click', () => {
+      const chosen = [...modal.querySelectorAll('input[name="studyFreeSubject"]:checked')].map((input) => input.value);
+      if (!chosen.length) {
+        const error = modal.querySelector('.study-form-error');
+        error.textContent = 'Escolha pelo menos uma disciplina para continuar.';
+        error.hidden = false;
+        return;
+      }
+      localStorage.setItem(FREE_SUBJECTS_KEY, JSON.stringify(chosen));
+      selectObjective('free-study');
+    });
     if (!modal.__studyObjectiveTrap) {
       modal.addEventListener('keydown', trapFocus);
       modal.__studyObjectiveTrap = true;
@@ -207,7 +301,7 @@
     if (event.shiftKey && document.activeElement === focusable[0]) { event.preventDefault(); focusable.at(-1).focus(); }
     else if (!event.shiftKey && document.activeElement === focusable.at(-1)) { event.preventDefault(); focusable[0].focus(); }
   }
-  function open() { returnFocus = document.activeElement; renderChooser('types'); }
+  function open() { returnFocus = document.activeElement; renderChooser('areas'); }
   function close(restoreFocus = false) {
     if (!activeId) return;
     document.getElementById('studyObjectiveDialog')?.remove();
