@@ -52,4 +52,4 @@ Nenhum texto jurídico, questão, gabarito, progresso, anotação, autenticaçã
 - Português e RLM não usam estes leitores jurídicos e não fizeram parte da auditoria.
 - 6 tabelas de Civil com alinhamento irregular no material de origem ficam como bloco com rolagem; a correção definitiva é refazê-las como tabela no conteúdo.
 - O texto justificado sem hifenização pode deixar alguns espaços maiores em linhas curtas no celular; o aluno pode desligar a justificação no botão “☰ Justificado”.
-- As explicações de “Entenda o termo” são conteúdo novo: recomendo revisão jurídica do proprietário antes da publicação.
+- As explicações de “Entenda o termo” (9 termos) foram revisadas e **aprovadas pelo proprietário em 01/11/2026**, na versão publicada (commit 280d16a1).
