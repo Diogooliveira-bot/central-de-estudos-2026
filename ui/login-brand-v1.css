@@ -51,11 +51,19 @@ button:active{transform:translateY(1px)}
 }
 @media(prefers-reduced-motion:reduce){button{transition:none}}
 
+
+/* Controle de visibilidade da senha: somente ícone, sem texto aparente. */
 .password-field{position:relative}
-.password-field>input{padding-right:93px}
+.password-field>input{padding-right:58px}
 .password-toggle,.password-toggle:hover{
-  position:absolute;right:7px;top:50%;transform:translateY(-50%);
-  width:auto;min-height:37px;margin:0;padding:8px 10px;border-radius:8px;
-  background:#eaf6f8;color:#065b66;font-size:12px;font-weight:800;
+  position:absolute;right:4px;top:50%;transform:translateY(-50%);
+  display:grid;place-items:center;width:44px;height:44px;min-height:44px;
+  margin:0;padding:0;border:0;border-radius:11px;
+  background:transparent;color:#5a7587;
+  cursor:pointer;
 }
+.password-toggle:hover,.password-toggle:focus-visible{background:rgba(11,143,156,.08);color:#08717c}
+.password-toggle svg{width:22px;height:22px;display:block}
+.password-toggle .eye-slash{display:none}
+.password-toggle.is-visible .eye-slash{display:block}
 .password-toggle:active{transform:translateY(-50%)}
