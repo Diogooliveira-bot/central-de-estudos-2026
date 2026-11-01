@@ -94,6 +94,14 @@ try{
   await entries.first().waitFor({state:'visible',timeout:10000});
   await entries.nth(id==='cpc'?1:0).click({timeout:8000});
   await page.waitForFunction(()=>window.BaseCompletaFocusNavigation?.state.stage==='reading',{timeout:5000});
+  if(id==='adm'){
+    const debug=await page.evaluate(()=>{
+      const section=document.querySelector('#subjects>.subject[data-id="adm"]');
+      const topics=[...(section?.querySelectorAll('.topic-item')||[])];
+      return {stage:window.BaseCompletaFocusNavigation?.state,subjectOpen:section?.className,head:document.getElementById('bcFocusHeader')?.outerHTML.slice(0,450),moduleList:document.getElementById('bcFocusModules')?.innerText.slice(0,450),topics:topics.slice(0,2).map(el=>({class:el.className,title:el.querySelector('.topic-title')?.textContent?.slice(0,90),display:getComputedStyle(el).display,detail:getComputedStyle(el.querySelector('.topic-detail')).display,body:el.querySelector('.topic-detail')?.textContent.slice(0,130)})),buttons:[...(section?.querySelectorAll('button.bc-plan-locked')||[])].slice(0,3).map(el=>({text:el.textContent,visible:!!el.getClientRects().length}))};
+    });
+    console.log('FOCUS_ADM_DIAGNOSTIC='+JSON.stringify(debug));
+  }
   const locked=section.locator('button.bc-plan-locked:visible').filter({hasText:'Estudar conteúdo'}).first();
   await locked.waitFor({state:'visible',timeout:10000});
   await locked.click();
