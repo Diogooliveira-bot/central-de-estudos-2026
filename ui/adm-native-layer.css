@@ -99,7 +99,7 @@ html.bc-ui-v1 #subjects .subject[data-id="adm"] .adm-cf-oriented-top{display:fle
 html.bc-ui-v1 #subjects .subject[data-id="adm"] .adm-cf-oriented-symbol{display:grid;place-items:center;flex:none;width:42px;height:42px;border-radius:12px;background:#edf0fa;font-size:22px}
 html.bc-ui-v1 #subjects .subject[data-id="adm"] .adm-cf-oriented-top b{display:block;font-size:14px;line-height:1.35}
 html.bc-ui-v1 #subjects .subject[data-id="adm"] .adm-cf-oriented-top small{display:block;color:var(--adm-cf-muted);font-size:12px;line-height:1.5}
-html.bc-ui-v1 #subjects .subject[data-id="adm"] .adm-cf-oriented details{margin:10px 0 0 54px}
+html.bc-ui-v1 #subjects .subject[data-id="adm"] .adm-cf-oriented>.adm-reading-focus{margin:13px 0 0}
 html.bc-ui-v1 #subjects .subject[data-id="adm"] .adm-cf-oriented summary{cursor:pointer;font-size:12px;font-weight:700;color:#175f9d}
 html.bc-ui-v1 #subjects .subject[data-id="adm"] .adm-cf-oriented ul{margin:8px 0;padding-left:18px;font-size:12px;line-height:1.6}
 html.bc-ui-v1 #subjects .subject[data-id="adm"] .adm-cf-oriented .adm-cf-button{margin:10px 0 0}
@@ -194,4 +194,85 @@ html.bc-ui-v1 #subjects .subject[data-id="adm"] .adm-cf-cards~[data-bcq-module-p
  #adm-native-reader .adm-approved-reading > h1{font-size:1.52em;margin-bottom:1.3em}
  #adm-native-reader .adm-approved-reading > h2{font-size:1.23em;padding:.75em .78em;margin-top:2.3em}
  #adm-native-reader .adm-approved-reading > h3{font-size:1.1em;margin-top:1.75em}
+}
+
+
+/* ADM — guia editorial M01–M20, alinhado ao visual aprovado de Constitucional. */
+html.bc-ui-v1 #subjects .subject[data-id="adm"] .adm-cf-oriented{
+  container:adm-reading/inline-size;min-width:0;background:linear-gradient(110deg,#f9fbff,#fff);
+  border-color:#d3e0eb;padding:17px 18px;
+}
+html.bc-ui-v1 #subjects .subject[data-id="adm"] .adm-cf-oriented-top{
+  display:flex;align-items:flex-start;gap:11px;min-width:0;
+}
+html.bc-ui-v1 #subjects .subject[data-id="adm"] .adm-cf-oriented-top>div{min-width:0;flex:1}
+html.bc-ui-v1 #subjects .subject[data-id="adm"] .adm-cf-oriented-top b{
+  font-size:14px;line-height:1.5;color:#12344d;
+}
+html.bc-ui-v1 #subjects .subject[data-id="adm"] .adm-cf-oriented-top small{
+  font-size:12.5px;line-height:1.65;overflow-wrap:break-word;
+}
+html.bc-ui-v1 #subjects .subject[data-id="adm"] .adm-learning-guide{
+  display:grid;grid-template-columns:minmax(0,1fr);gap:12px;
+  width:100%;min-width:0;max-width:100%;align-items:stretch;margin:16px 0 12px;
+}
+html.bc-ui-v1 #subjects .subject[data-id="adm"] .adm-learning-panel{
+  display:block;box-sizing:border-box;min-width:0;width:100%;max-width:100%;
+  padding:15px 17px;border:1px solid #d7e3ed;border-radius:11px;
+  background:#fff;color:#1b3757;line-height:1.6;
+}
+html.bc-ui-v1 #subjects .subject[data-id="adm"] .adm-learning-goals,
+html.bc-ui-v1 #subjects .subject[data-id="adm"] .adm-learning-check{grid-column:1/-1}
+html.bc-ui-v1 #subjects .subject[data-id="adm"] .adm-learning-goals{
+  background:#f2f8ff;border-left:3px solid #3474ad;
+}
+html.bc-ui-v1 #subjects .subject[data-id="adm"] .adm-learning-tip{border-left:3px solid #4c9aa8}
+html.bc-ui-v1 #subjects .subject[data-id="adm"] .adm-learning-warning{
+  background:#fffaf1;border-left:3px solid #d5a04d;
+}
+html.bc-ui-v1 #subjects .subject[data-id="adm"] .adm-learning-panel strong{
+  display:block;font-size:14px;font-weight:800;line-height:1.45;color:#133c62;margin:0 0 8px;
+}
+html.bc-ui-v1 #subjects .subject[data-id="adm"] .adm-learning-panel p,
+html.bc-ui-v1 #subjects .subject[data-id="adm"] .adm-learning-panel li{
+  margin:0;font-size:13px;line-height:1.7;color:#2b4058;
+  overflow-wrap:break-word;word-break:normal;
+}
+html.bc-ui-v1 #subjects .subject[data-id="adm"] .adm-learning-panel ul{
+  padding-left:21px;margin:8px 0 0;
+}
+html.bc-ui-v1 #subjects .subject[data-id="adm"] .adm-learning-panel li{margin:6px 0}
+html.bc-ui-v1 #subjects .subject[data-id="adm"] .adm-learning-check{
+  padding:0;background:#f3fbf7;
+}
+html.bc-ui-v1 #subjects .subject[data-id="adm"] .adm-learning-check>summary{
+  display:block;padding:13px 16px;font-size:13.5px;font-weight:800;
+  line-height:1.5;color:#185c46;list-style:none;cursor:pointer;
+}
+html.bc-ui-v1 #subjects .subject[data-id="adm"] .adm-learning-check>summary::-webkit-details-marker{display:none}
+html.bc-ui-v1 #subjects .subject[data-id="adm"] .adm-learning-check>summary::after{content:'▾';float:right;margin-left:8px}
+html.bc-ui-v1 #subjects .subject[data-id="adm"] .adm-learning-check[open]>summary::after{content:'▴'}
+html.bc-ui-v1 #subjects .subject[data-id="adm"] .adm-learning-check[open]{padding-bottom:14px}
+html.bc-ui-v1 #subjects .subject[data-id="adm"] .adm-learning-check[open]>ul{padding:0 17px 0 37px}
+html.bc-ui-v1 #subjects .subject[data-id="adm"] .adm-learning-check[open]>p{padding:8px 17px 0;font-size:12.5px;color:#5f7486}
+html.bc-ui-v1 #subjects .subject[data-id="adm"] .adm-cf-oriented>.adm-reading-focus{
+  display:block;width:100%;min-width:0;padding:12px 15px;
+  border:1px solid #d7e3ed;border-radius:10px;background:#fff;box-sizing:border-box;
+}
+html.bc-ui-v1 #subjects .subject[data-id="adm"] .adm-cf-oriented>.adm-reading-focus>summary{
+  color:#245f92;font-size:13px;font-weight:750;line-height:1.5;
+}
+html.bc-ui-v1 #subjects .subject[data-id="adm"] .adm-cf-oriented>.adm-reading-focus li{
+  font-size:12.5px;line-height:1.65;margin:7px 0;
+}
+@container adm-reading (min-width:610px){
+  html.bc-ui-v1 #subjects .subject[data-id="adm"] .adm-learning-guide{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+}
+@media(max-width:480px){
+ html.bc-ui-v1 #subjects .subject[data-id="adm"] .adm-cf-oriented{padding:13px}
+ html.bc-ui-v1 #subjects .subject[data-id="adm"] .adm-learning-panel{padding:13px 14px}
+ html.bc-ui-v1 #subjects .subject[data-id="adm"] .adm-learning-panel p,
+ html.bc-ui-v1 #subjects .subject[data-id="adm"] .adm-learning-panel li{font-size:12.5px}
 }
