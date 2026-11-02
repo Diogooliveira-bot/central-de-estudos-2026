@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { JSDOM } from 'jsdom';
 import { imageSignature } from '../api/content-editor.js';
-import { validWebp } from '../api/content-images.js';
+import { validWebp } from '../lib/content-image-handler.js';
 
 function tick(ms=20){return new Promise(resolve=>setTimeout(resolve,ms))}
 async function makeEditor(role){
@@ -19,12 +19,12 @@ async function makeEditor(role){
   const {window}=dom;let saved='',uploads=0;
   window.fetch=async (url,opts={})=>{
     if(String(url).startsWith('/api/auth'))return {ok:true,json:async()=>({authenticated:true,user:{role}})};
-    if(String(url).startsWith('/api/content-images')){
+    if(String(url).startsWith('/api/content-editor?action=image')){
       uploads++;
       const body=JSON.parse(opts.body);
       assert.match(body.contentId,/^reader:[a-z0-9]+$/);
       assert.match(body.dataUrl,/^data:image\/webp;base64,/);
-      return {ok:true,json:async()=>({ok:true,url:'/api/content-images?id=00000000-0000-4000-8000-000000000001'})};
+      return {ok:true,json:async()=>({ok:true,url:'/api/content-editor?action=image?id=00000000-0000-4000-8000-000000000001'})};
     }
     if(opts.method==='POST'){saved=JSON.parse(opts.body).html;return{ok:true,json:async()=>({ok:true})}}
     return {ok:true,json:async()=>({exists:false})};
@@ -51,7 +51,7 @@ test('administrador insere imagem e salva legenda, descrição e tamanho',async(
  await tick(30);
  const figure=document.querySelector('.bc-editor-image');
  assert.ok(figure);
- assert.equal(figure.querySelector('img').getAttribute('src'),'/api/content-images?id=00000000-0000-4000-8000-000000000001');
+ assert.equal(figure.querySelector('img').getAttribute('src'),'/api/content-editor?action=image?id=00000000-0000-4000-8000-000000000001');
  assert.equal(app.uploads,1);
  figure.click();
  let action=document.querySelector('[data-image-action]');
@@ -82,7 +82,7 @@ test('aluno não recebe ferramentas de edição',async()=>{
 });
 
 test('assinatura de imagens distingue substituição e alterações de figura',()=>{
- const original='<p>Um</p><figure class="bc-editor-image"><img src="/api/content-images?id=a"><figcaption>Legenda</figcaption></figure>';
+ const original='<p>Um</p><figure class="bc-editor-image"><img src="/api/content-editor?action=image?id=a"><figcaption>Legenda</figcaption></figure>';
  assert.equal(imageSignature(original),imageSignature(original.replace('Um','Dois')));
  assert.notEqual(imageSignature(original),imageSignature(original.replace('id=a','id=b')));
  assert.notEqual(imageSignature(original),imageSignature(original.replace('Legenda','Outra')));
