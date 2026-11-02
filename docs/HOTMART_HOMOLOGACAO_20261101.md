@@ -70,3 +70,11 @@ conta de equipe/inativa/Premium manual ⇒ revisão manual com alerta.
    eventos Compra aprovada, reembolsada, chargeback, cancelada, expirada (+ boleto impresso, atrasada e
    protesto só para registro). HOTTOK do painel = `HOTMART_HOTTOK` de Production. Reversão: desativar o webhook.
 5. **Smoke**: teste oficial da Hotmart → 200; `/vendas-hotmart.html` sem falhas abertas; checkout só depois.
+
+## Auditoria do painel Hotmart (somente leitura, 01/11, sessão do proprietário)
+
+- ⚠️ Produto 8805543 com **"Vendas ativas" LIGADO** (não é mais rascunho) e webhook de Production ativo. Nenhuma venda real até agora.
+- Ofertas: `o4y1mlg9` "Base Completa Premium — Semestral" R$ 97,00; `gh4ajvj1` com nome **"Preço base"** R$ 179,00 (nome não informa "Anual 12 meses"). Ambas parceladas com juros pagos pelo cliente; **conversão de moeda ativa** (compra em moeda ≠ BRL não libera e gera alerta). Reembolso: 7 dias.
+- Webhook "Base Completa — Teste de pagamentos": ativo, versão 2.0.0, produto 8805543, URL `https://central-de-estudos-ecru.vercel.app/api/hotmart-webhook` (alias de Production). Eventos: compra aprovada, completa, cancelada, reembolsada, expirada, chargeback e cancelamento de assinatura — **lacuna da Issue #193 já resolvida**.
+- Histórico: só eventos de teste oficial (transação `HP16015479281022`, produto de teste), 25/10 e 30/10, todos **200 - Processado** ⇒ o HOTTOK da Hotmart confere com o de Production.
+- Pendente: links de checkout, textos públicos, termos e e-mail de suporte no checkout (página de links não carregou).
