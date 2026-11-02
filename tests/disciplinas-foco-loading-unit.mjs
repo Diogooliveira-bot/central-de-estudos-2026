@@ -7,7 +7,7 @@ const script = readFileSync('ui/disciplinas-foco-v1.js','utf8');
 const css = readFileSync('ui/disciplinas-foco-v1.css','utf8');
 const pause = ms => new Promise(resolve => setTimeout(resolve,ms));
 
-function setup() {
+async function setup() {
   const dom=new JSDOM(`<!doctype html><html><body>
     <main id="homeView"><div class="home-grid"><div>
       <div id="disciplinasHome"></div>
@@ -28,7 +28,12 @@ function setup() {
     open:id=>{if(id==='cf')state.retryCount++;},
   };
   win.toggleSubject=id=>win.document.querySelector(`[data-id="${id}"]`)?.classList.add('open');
+  const ready=new Promise(resolve=>{
+    if(win.document.readyState==='loading')win.document.addEventListener('DOMContentLoaded',resolve,{once:true});
+    else resolve();
+  });
   win.eval(script);
+  await ready;
   const subject=win.document.querySelector('.subject');
   subject.querySelector('.subject-head').click();
   const list=()=>win.document.getElementById('bcFocusModules');
@@ -36,7 +41,7 @@ function setup() {
 }
 
 test('exibe loading animado sem fallback durante download de disciplina',async t=>{
-  const c=setup();t.after(()=>c.win.close());
+  const c=await setup();t.after(()=>c.win.close());
   await pause(45);
   const panel=c.list().querySelector('.bc-focus-loading');
   assert.ok(panel,'Painel de carregamento exibido');
@@ -49,7 +54,7 @@ test('exibe loading animado sem fallback durante download de disciplina',async t
 });
 
 test('substitui loading pelos módulos automaticamente após evento de prontidão',async t=>{
-  const c=setup();t.after(()=>c.win.close());
+  const c=await setup();t.after(()=>c.win.close());
   await pause(45);
   c.state.loading=false;c.state.ready=true;
   c.subject.classList.remove('central-subject-pending');
@@ -64,7 +69,7 @@ test('substitui loading pelos módulos automaticamente após evento de prontidã
 });
 
 test('falha real mostra recuperação sem spinner infinito',async t=>{
-  const c=setup();t.after(()=>c.win.close());
+  const c=await setup();t.after(()=>c.win.close());
   await pause(45);
   c.state.loading=false;c.state.error=true;
   c.subject.classList.remove('central-subject-pending');
@@ -80,7 +85,7 @@ test('falha real mostra recuperação sem spinner infinito',async t=>{
 });
 
 test('ausência definitiva de módulos não cria botão espremido',async t=>{
-  const c=setup();t.after(()=>c.win.close());
+  const c=await setup();t.after(()=>c.win.close());
   await pause(45);
   c.state.loading=false;c.state.ready=true;
   c.subject.classList.remove('central-subject-pending');
