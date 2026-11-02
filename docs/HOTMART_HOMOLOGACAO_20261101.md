@@ -95,3 +95,10 @@ conta de equipe/inativa/Premium manual ⇒ revisão manual com alerta.
 - ❌ **Banco errado nos relatórios**: o registro falhou com `42P01`. A Production usa o Neon `neon-beige-arrow` (`solitary-dust-76502943`), branch `br-gentle-rice-aw5a3i2i` (endpoint ativo às 09:51:44Z, durante o teste), com 12 usuários / 9 alunos ativos / 3 Premium manuais, migrações 002–006, **sem 007 e sem 008**. O projeto `shiny-hall-19564809` (`br-blue-sunset`), tratado como "Production" desde a Missão 03, **não é usado pelo app** — a 008 aplicada lá é inofensiva.
 - ⚠️ Backup no banco real bloqueado: limite de 10 branches e de snapshots do plano gratuito. Ponto de restauração PITR registrado: LSN `0/1E6FE470` em 02/11/2026 06:55:34 (retenção de 6 h).
 - Impacto enquanto a 008 não estiver no banco real: compras são liberadas/revogadas normalmente (003 presente); ficam sem efeito o registro de falhas (só log Vercel), o reprocessamento pelo painel e o fuso de Fortaleza. A 007 ausente afeta os avisos de vencimento Premium.
+
+## Migrações no banco real de Production (02/11/2026, com aprovação do proprietário)
+
+- Backup antigo `backup-pre-base-completa-7-20261020` apagado pelo proprietário (limite de branches); novo backup `backup/pre-007-008-hotmart-prod-20261102` = `br-winter-bar-aw631mw4` (pai `br-gentle-rice-aw5a3i2i`, LSN 0/1E7245D8).
+- Migrações **007 e 008** executadas pelo proprietário no `br-gentle-rice-aw5a3i2i` (18 instruções, trava de branch). Verificação: 12 usuários e 3 Premium ativos preservados; `central_premium_expiry_notices` e `central_hotmart_webhook_issues` criadas; reprocessamento disponível; 5 funções em America/Fortaleza. Avisos de vencimento continuam desligados (`BC_EXPIRY_REMINDERS_ENABLED` ausente em Production).
+- ✅ Teste oficial Hotmart 02/11 07:18: 7 × **200 - Processado**; 7 ocorrências gravadas (5 `product_not_configured`, 2 `informational_event`), sem dados pessoais.
+- ⚠️ Alerta: 5 e-mails em vez de 1 — o limite por motivo não resiste a notificações simultâneas (verificação lê `alerted_at` antes de enviar). Correção sugerida: tabela de controle por motivo com `INSERT … ON CONFLICT DO UPDATE … WHERE last_alert_at < NOW()-30 min`.
