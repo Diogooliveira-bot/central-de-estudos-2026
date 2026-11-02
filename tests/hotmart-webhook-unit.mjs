@@ -95,18 +95,20 @@ test('ofertas reais Hotmart mapeiam 6 e 12 meses; preço e parcelas não alteram
 
 test('rota rejeita não autenticados, GET, tipo e payload grande sem banco',async()=>{
  let dbCalls=0;
- const handler=createHotmartWebhook({env,sqlProvider:()=>{dbCalls++;return()=>[]}});
+ const handler=createHotmartWebhook({env,sendAlert:async()=>{},sqlProvider:()=>{dbCalls++;return()=>[]}});
  const r1=res();await handler(req(event(),'errado'),r1);assert.equal(r1.statusCode,401);
  const r2=res();await handler({...req(),method:'GET'},r2);assert.equal(r2.statusCode,405);
  const r3=res();await handler({...req(),headers:{...req().headers,'content-type':'text/plain'}},r3);assert.equal(r3.statusCode,415);
  const r4=res();await handler({...req(),headers:{...req().headers,'content-length':'34000'}},r4);assert.equal(r4.statusCode,413);
- const r5=res();await handler(req({version:'inválido'}),r5);assert.equal(r5.statusCode,422);
  assert.equal(dbCalls,0);
+ // Autenticado mas inválido: o banco só registra a ocorrência.
+ const r5=res();await handler(req({version:'inválido'}),r5);assert.equal(r5.statusCode,422);
+ assert.equal(dbCalls,1);
 });
 test('compra aprovada existente chama função atômica sem criar conta fictícia',async()=>{
  const queries=[];
  const sql=async (chunks,...values)=>{queries.push({sql:chunks.join('?'),values});return [{outcome:'applied',should_send_email:false}]};
- const handler=createHotmartWebhook({env,sqlProvider:()=>sql,
+ const handler=createHotmartWebhook({env,sendAlert:async()=>{},sqlProvider:()=>sql,
    sendWelcome:async()=>{throw Error('E-mail desnecessário')}});
  const response=res();await handler(req(),response);
  assert.equal(response.statusCode,200);
@@ -122,7 +124,7 @@ test('nova compra envia link por e-mail e marca envio somente depois de aceito',
    return statement.includes('central_hotmart_apply_event')
      ?[{outcome:'pending_claim',should_send_email:true}]:[];
  };
- const handler=createHotmartWebhook({env,sqlProvider:()=>sql,
+ const handler=createHotmartWebhook({env,sendAlert:async()=>{},sqlProvider:()=>sql,
    sendWelcome:async({to,token})=>{
     assert.equal(to,'teste@example.com');
     assert.match(token,/^[A-Za-z0-9_-]{43}$/);smtp++;
@@ -153,7 +155,7 @@ test('falha de SMTP libera reserva e retry imediato envia token sem duplicar ent
    }
    throw Error('SQL inesperado no teste');
  };
- const h=createHotmartWebhook({env,sqlProvider:()=>sql,
+ const h=createHotmartWebhook({env,sendAlert:async()=>{},sqlProvider:()=>sql,
    sendWelcome:async()=>{attempts++;if(attempts===1)throw Error('SMTP indisponível');}});
  const first=res();const log=console.error;console.error=()=>{};
  try{await h(req(),first)}finally{console.error=log}
@@ -176,7 +178,7 @@ test('webhook não devolve 200 enquanto o claim ainda aguarda envio SMTP',async(
    }
    throw Error('SQL inesperado no teste');
  };
- const h=createHotmartWebhook({env,sqlProvider:()=>sql,
+ const h=createHotmartWebhook({env,sendAlert:async()=>{},sqlProvider:()=>sql,
    sendWelcome:async()=>{throw Error('Nao deveria tentar enviar sem reserva')}});
  const pending=res();await h(req(),pending);
  assert.equal(pending.statusCode,503);
@@ -289,12 +291,23 @@ test('modelo sem renovacao automatica recusa aprovacao de assinatura recorrente'
  assert.equal(readHotmartEvent(refund,cfg).value.eventName,'PURCHASE_REFUNDED');
 });
 
-test('evento recorrente nao consulta banco nem libera Premium',async()=>{
- let dbCalls=0;
- const handler=createHotmartWebhook({env,sqlProvider:()=>{dbCalls++;throw Error('Banco nao deve ser consultado');}});
+test('evento recorrente so e registrado como falha, sem processar compra nem liberar Premium',async()=>{
+ const queries=[];
+ const fakeSql=(strings)=>{queries.push(strings.join('?'));return Promise.resolve([{id:1,recent:0}]);};
+ const alerts=[];
+ const handler=createHotmartWebhook({env,sendAlert:async()=>{},sqlProvider:()=>fakeSql,sendAlert:async m=>{alerts.push(m)}});
  const body=event('PURCHASE_APPROVED','semestralTEST',{data:{...event().data,subscription:{status:'ACTIVE'}}});
  const response=res();await handler(req(body),response);
  assert.equal(response.statusCode,422);
  assert.match(response.body.error,/renovação manual/);
- assert.equal(dbCalls,0);
+ assert.ok(queries.every(q=>!/apply_event|central_hotmart_orders|central_user_subscriptions/.test(q)));
+ assert.ok(queries.some(q=>/central_hotmart_webhook_issues/.test(q)));
+ assert.equal(alerts.length,1);assert.equal(alerts[0].issue.reason,'recurring_offer');
+});
+
+test('falha ao registrar ou alertar nao altera a resposta a Hotmart',async()=>{
+ const handler=createHotmartWebhook({env,sendAlert:async()=>{},sqlProvider:()=>{throw Error('sem banco')},sendAlert:async()=>{throw Error('sem smtp')}});
+ const body=event('PURCHASE_APPROVED','semestralTEST',{data:{...event().data,subscription:{status:'ACTIVE'}}});
+ const response=res();await handler(req(body),response);
+ assert.equal(response.statusCode,422);
 });
