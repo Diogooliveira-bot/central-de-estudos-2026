@@ -72,7 +72,7 @@ function chooseModuleImage(article,state,replace){
   var file=input.files&&input.files[0];if(!file){input.remove();return}
   try{
    var dataUrl=await fitModuleImage(file);
-   var r=await fetch('/api/content-images',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({contentId:contentId(state.overlay),dataUrl:dataUrl})});
+   var r=await fetch('/api/content-editor?action=image',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({contentId:contentId(state.overlay),dataUrl:dataUrl})});
    var result=await r.json();
    if(!r.ok||!result.ok)throw new Error(result.error||'Não foi possível enviar a imagem');
    if(!state.editing)throw new Error('A edição do módulo foi encerrada');
