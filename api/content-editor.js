@@ -1,6 +1,7 @@
 import { neon } from '@neondatabase/serverless';
 import { requireSession, sameOriginRequest } from '../lib/auth.js';
 import { requirePlanFeature } from '../lib/plan-access.js';
+import { handleContentImage } from '../lib/content-image-handler.js';
 
 function send(res,status,body){
   res.statusCode=status;
@@ -38,7 +39,16 @@ function cleanHtml(value){
   html=html.replace(/\s(href|src)\s*=\s*(["'])\s*javascript:[\s\S]*?\2/gi,'');
   return html;
 }
+export function imageSignature(html){
+  const value=String(html||'');
+  // O perfil editor pode preservar imagens existentes, mas não incluir,
+  // remover, substituir ou alterar figuras já publicadas pelo administrador.
+  const figures=(value.match(/<figure\b[^>]*>[\s\S]*?<\/figure\s*>/gi)||[]).filter(x=>/<(?:img|picture|svg|image)\b/i.test(x));
+  const media=(value.match(/<\s*(?:img|picture|svg|image|source)\b[^>]*>/gi)||[]);
+  return JSON.stringify({figures,media});
+}
 export default async function handler(req,res){
+  if(req.query?.action==='image')return handleContentImage(req,res);
   try{
     const sql=database();await ensureTable(sql);
     const id=String(req.query?.id||'').trim().slice(0,240);
@@ -64,6 +74,12 @@ export default async function handler(req,res){
       if(!contentId||!html)return send(res,400,{error:'Conteúdo definitivo inválido'});
       const bytes=Buffer.byteLength(html,'utf8');
       if(bytes>1_500_000)return send(res,413,{error:'Conteúdo acima de 1,5 MB'});
+      if(auth.user.role!=='admin'){
+        const previous=await sql`SELECT html FROM central_content_overrides WHERE content_id=${contentId} LIMIT 1`;
+        if(imageSignature(html)!==imageSignature(previous[0]?.html||'')){
+          return send(res,403,{error:'Somente o administrador pode adicionar, remover ou alterar imagens do módulo'});
+        }
+      }
       const rows=await sql`
         INSERT INTO central_content_overrides(content_id,label,html,revision,updated_at)
         VALUES(${contentId},${label},${html},1,NOW())
