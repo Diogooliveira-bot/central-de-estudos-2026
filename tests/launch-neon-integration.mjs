@@ -58,7 +58,7 @@ try{
  const claims=await Promise.all(Array.from({length:21},(_,i)=>sql`SELECT * FROM public.central_claim_lei_em_dia_question(${userId},${'synthetic-'+i})`));
  assert.equal(claims.filter(x=>x[0].allowed).length,20);assert.equal(claims.filter(x=>!x[0].allowed).length,1);
  console.log('PASS: real Neon concurrent quota: 20 allowed, request 21 blocked');
- const webhook=createHotmartWebhook({env,sqlProvider:()=>sql,sendWelcome:async()=>{throw Error('Existing user must not receive activation email')}});
+ const webhook=createHotmartWebhook({env,sendAlert:async()=>{},sqlProvider:()=>sql,sendWelcome:async()=>{throw Error('Existing user must not receive activation email')}});
  const transaction='SYNTH-'+crypto.randomUUID();
  function event(kind='PURCHASE_APPROVED',tx=transaction,offer='SYNTHETIC6M'){
   return {version:'2.0.0',id:'SYNTH-EVT-'+crypto.randomUUID(),event:kind,creation_date:Date.now(),data:{product:{id:8805543},buyer:{email,name:'Pessoa Ficticia Neon'},purchase:{transaction:tx,offer:{code:offer},status:({PURCHASE_APPROVED:'APPROVED',PURCHASE_REFUNDED:'REFUNDED',PURCHASE_CHARGEBACK:'CHARGEBACK',PURCHASE_EXPIRED:'EXPIRED'})[kind],price:{currency_value:'BRL'}}}};

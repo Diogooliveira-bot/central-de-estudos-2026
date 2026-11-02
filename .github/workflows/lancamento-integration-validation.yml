@@ -81,6 +81,7 @@ jobs:
           tests/public-app-url-unit.mjs
           tests/premium-expiry-reminders-unit.mjs
           tests/premium-expiry-handler-unit.mjs
+          tests/hotmart-pg-scenarios.mjs
   commercial-browser:
     runs-on: ubuntu-latest
     timeout-minutes: 15
