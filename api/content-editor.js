@@ -38,7 +38,7 @@ function cleanHtml(value){
   html=html.replace(/\s(href|src)\s*=\s*(["'])\s*javascript:[\s\S]*?\2/gi,'');
   return html;
 }
-function imageSignature(html){
+export function imageSignature(html){
   const value=String(html||'');
   // O perfil editor pode preservar imagens existentes, mas não incluir,
   // remover, substituir ou alterar figuras já publicadas pelo administrador.
