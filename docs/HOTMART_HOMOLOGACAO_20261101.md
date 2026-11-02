@@ -43,7 +43,7 @@ conta de equipe/inativa/Premium manual ⇒ revisão manual com alerta.
 
 | Suíte | Resultado |
 | --- | --- |
-| `tests/hotmart-pg-scenarios.mjs` (17 jornadas, PostgreSQL 17 real via PGlite, migrações 001–008, handlers reais) | 17/17 ✅ local e no CI. **Antes das correções: 12/17** (falhas = itens 1, 3, 4, 5). |
+| `tests/hotmart-pg-scenarios.mjs` (18 jornadas, PostgreSQL 17 real via PGlite, migrações 001–008, handlers reais) | 18/18 ✅ local e no CI. **Antes das correções: 12/17** (falhas = itens 1, 3, 4, 5). |
 | `tests/hotmart-webhook-unit.mjs` | 15/15 ✅ |
 | Regressão focada do CI (`focused-regression`) | 142/142 ✅ |
 | `test:premium-and-auth` | 27 + 18 ✅ |
@@ -78,3 +78,12 @@ conta de equipe/inativa/Premium manual ⇒ revisão manual com alerta.
 - Webhook "Base Completa — Teste de pagamentos": ativo, versão 2.0.0, produto 8805543, URL `https://central-de-estudos-ecru.vercel.app/api/hotmart-webhook` (alias de Production). Eventos: compra aprovada, completa, cancelada, reembolsada, expirada, chargeback e cancelamento de assinatura — **lacuna da Issue #193 já resolvida**.
 - Histórico: só eventos de teste oficial (transação `HP16015479281022`, produto de teste), 25/10 e 30/10, todos **200 - Processado** ⇒ o HOTTOK da Hotmart confere com o de Production.
 - Pendente: links de checkout, textos públicos, termos e e-mail de suporte no checkout (página de links não carregou).
+
+## Execução aprovada pelo proprietário (02/11/2026, Fortaleza)
+
+- ✅ **Neon TEST** `br-sweet-waterfall-b7ry8jlw`: migração 008 aplicada com trava de branch; jornada SQL sintética **10/10** (aprovação 6m, duplicidade, recompra +12m, reembolso parcial, chargeback, reaprovação ignorada, fora de ordem, Pix expirado, progresso preservado, convite + reprocessamento, fuso). Transação de referência `SYNTH-efa6bb1d…`; contas sintéticas desativadas.
+- ✅ **Backup Production**: branch `backup/pre-008-hotmart-20261102` = `br-cool-dew-b7rkcgo4` (pai `br-blue-sunset-b7jcts9i`, LSN 0/24EA298).
+- ✅ **Migração 008 em Production** (`br-blue-sunset-b7jcts9i`, trava de branch): antes/depois 6 usuários, 5 assinaturas, 0 pedidos; tabela de falhas, função de reprocessamento e 5 funções no fuso de Fortaleza confirmadas.
+- ⚠️ **Conversão de moeda**: a Hotmart não permite desligar para preços em BRL. Código ajustado: aprovação em outra moeda libera o plano da oferta (cenário novo, 18/18).
+- ⚠️ **Nome da oferta anual**: salvar exige marcar novo aceite sobre recuperador automático/pagamento recorrente; não aceito sem autorização específica — nada alterado. "Descrição na página de pagamento" das ofertas está vazia.
+- ❌ **Merge/deploy**: bloqueado (merge dispara Production e precisa ser feito pelo proprietário); Vercel Hobby com limite de deploys ("retry in 24 hours").

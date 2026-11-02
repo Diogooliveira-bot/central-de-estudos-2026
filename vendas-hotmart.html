@@ -101,8 +101,7 @@ async function post(payload,button,waiting){
  catch(e){button.disabled=false;msg(e.message)}
 }
 const REASONS={offer_not_configured:'Oferta desconhecida — a venda NÃO foi liberada; confira os códigos de oferta',
- product_not_configured:'Produto diferente do configurado',currency_not_brl:'Moeda diferente de BRL',
- recurring_offer:'Oferta recorrente (assinatura) recusada',status_mismatch:'Aprovação com estado inesperado',
+ product_not_configured:'Produto diferente do configurado', recurring_offer:'Oferta recorrente (assinatura) recusada',status_mismatch:'Aprovação com estado inesperado',
  invalid_identifiers:'Dados da notificação inválidos',invalid_format:'Formato/versão inválidos',
  manual_review:'Compra aguardando revisão manual (conta da equipe, inativa ou Premium manual)'};
 function renderIssues(issues){

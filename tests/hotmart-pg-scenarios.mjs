@@ -244,6 +244,13 @@ test('revisão manual (conta da equipe) é registrada e alertada; reprocessament
   assert.equal((await getEffectivePlan(sql,id)).plan,'premium');
 });
 
+test('compra internacional (conversão automática de moeda) libera o plano da oferta',async()=>{
+  const email=mail(),uid=await student(email),body=event('PURCHASE_APPROVED',{email,offer:OFFER12});
+  body.data.purchase.price={value:34.5,currency_value:'USD'};
+  assert.equal((await hook(body)).body.state,'applied');
+  assert.ok(close(await endsAt(uid),monthsFromNow(12)));
+});
+
 test('Production sem HOTMART_LIVE_ENABLED permanece fechada (503)',async()=>{
   const prod=createHotmartWebhook({env:{...env,VERCEL_ENV:'production',HOTMART_TEST_RECEIVER_ENABLED:'true'},sqlProvider:()=>sql});
   const r=await call(prod,{method:'POST',headers:{'content-type':'application/json','x-hotmart-hottok':HOTTOK},body:event('PURCHASE_APPROVED',{email:mail()})});
