@@ -17,6 +17,8 @@ async function makeEditor(role){
     runScripts:'outside-only',pretendToBeVisual:true
   });
   const {window}=dom;let saved='',uploads=0;
+  // Impede tarefas agendadas pelo observador de correr após fechar o JSDOM.
+  window.MutationObserver=class{observe(){}disconnect(){}};
   window.fetch=async (url,opts={})=>{
     if(String(url).startsWith('/api/auth'))return {ok:true,json:async()=>({authenticated:true,user:{role}})};
     if(String(url).startsWith('/api/content-editor?action=image')){
