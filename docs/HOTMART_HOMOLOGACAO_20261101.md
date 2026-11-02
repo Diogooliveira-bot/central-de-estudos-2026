@@ -87,3 +87,11 @@ conta de equipe/inativa/Premium manual ⇒ revisão manual com alerta.
 - ⚠️ **Conversão de moeda**: a Hotmart não permite desligar para preços em BRL. Código ajustado: aprovação em outra moeda libera o plano da oferta (cenário novo, 18/18).
 - ⚠️ **Nome da oferta anual**: salvar exige marcar novo aceite sobre recuperador automático/pagamento recorrente; não aceito sem autorização específica — nada alterado. "Descrição na página de pagamento" das ofertas está vazia.
 - ❌ **Merge/deploy**: bloqueado (merge dispara Production e precisa ser feito pelo proprietário); Vercel Hobby com limite de deploys ("retry in 24 hours").
+
+## Pós-merge (02/11/2026 06:52–06:56, Fortaleza)
+
+- ✅ PR #209 mergeada (`a40cb57`), deploy Production `dpl_Aw4PRMbuRXjQq3ZivMBbug9hm3NX` READY; sem HOTTOK → 401 em ecru e app.basecompleta.com.br.
+- ✅ Teste oficial Hotmart 02/11 06:52: 7 eventos → **200 - Processado**; logs Vercel mostram `product_not_configured` (produto de teste) e `informational_event`, como esperado.
+- ❌ **Banco errado nos relatórios**: o registro falhou com `42P01`. A Production usa o Neon `neon-beige-arrow` (`solitary-dust-76502943`), branch `br-gentle-rice-aw5a3i2i` (endpoint ativo às 09:51:44Z, durante o teste), com 12 usuários / 9 alunos ativos / 3 Premium manuais, migrações 002–006, **sem 007 e sem 008**. O projeto `shiny-hall-19564809` (`br-blue-sunset`), tratado como "Production" desde a Missão 03, **não é usado pelo app** — a 008 aplicada lá é inofensiva.
+- ⚠️ Backup no banco real bloqueado: limite de 10 branches e de snapshots do plano gratuito. Ponto de restauração PITR registrado: LSN `0/1E6FE470` em 02/11/2026 06:55:34 (retenção de 6 h).
+- Impacto enquanto a 008 não estiver no banco real: compras são liberadas/revogadas normalmente (003 presente); ficam sem efeito o registro de falhas (só log Vercel), o reprocessamento pelo painel e o fuso de Fortaleza. A 007 ausente afeta os avisos de vencimento Premium.
