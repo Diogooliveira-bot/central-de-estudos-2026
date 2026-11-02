@@ -25,7 +25,7 @@ async function ensureTable(sql) {
     )
   `;
 }
-function validWebp(bytes) {
+export function validWebp(bytes) {
   return bytes.length >= 16 &&
     bytes.toString('ascii', 0, 4) === 'RIFF' &&
     bytes.toString('ascii', 8, 12) === 'WEBP' &&
@@ -42,7 +42,6 @@ export default async function handler(req, res) {
       const id = String(req.query?.id || '');
       if (!UUID.test(id)) return json(res, 400, { error: 'Imagem inválida' });
       const sql = neon(process.env.DATABASE_URL);
-      await ensureTable(sql);
       const rows = await sql`SELECT encode(image_bytes,'base64') AS base64 FROM central_content_images WHERE image_id=${id}::uuid LIMIT 1`;
       if (!rows.length) return json(res, 404, { error: 'Imagem não encontrada' });
       const data = Buffer.from(rows[0].base64, 'base64');
