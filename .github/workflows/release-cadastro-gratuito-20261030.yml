@@ -88,3 +88,5 @@ jobs:
         run: node tests/editorial-reading-browser.mjs
       - name: Browser excluir minha conta (servidor simulado)
         run: node tests/account-deletion-browser.mjs
+      - name: Questões do texto com botões (CF e ADM)
+        run: node tests/text-questions-browser.mjs
