@@ -48,6 +48,40 @@
       return { head,box,key,label,count };
     }).filter(Boolean);
   }
+  // O estado provisório depende do carregador real, nunca de um tempo artificial.
+  function modulePhase(subject, modules) {
+    if (modules.length) return 'ready';
+    const loader=global.CentralDisciplineLoader;
+    if (loader?.hasError?.(state.subject)) return 'error';
+    if (subject?.classList.contains('central-subject-pending') ||
+        loader?.isLoading?.(state.subject) ||
+        loader?.isReady?.(state.subject)===false) return 'loading';
+    return 'empty';
+  }
+  function loadingPanel(subject) {
+    const panel=document.createElement('section');
+    panel.className='bc-focus-loading';
+    panel.setAttribute('role','status');
+    panel.setAttribute('aria-live','polite');
+    panel.setAttribute('aria-busy','true');
+    panel.innerHTML='<div class="bc-focus-loading-emblem" aria-hidden="true"><span class="bc-focus-loading-spinner"></span><img src="/assets/base-completa-symbol.webp" alt=""></div>'+
+      '<h2></h2><p>Organizando os conteúdos e preparando seus módulos de estudo.</p>'+
+      '<div class="bc-focus-loading-track" aria-hidden="true"><span></span></div>'+
+      '<div class="bc-focus-loading-preview" aria-hidden="true"><span></span><span></span><span></span></div>';
+    panel.querySelector('h2').textContent='Preparando '+titleOf(subject);
+    return panel;
+  }
+  function failurePanel() {
+    const panel=document.createElement('section');
+    panel.className='bc-focus-load-error';
+    panel.setAttribute('role','alert');
+    const title=document.createElement('h2');title.textContent='Não foi possível carregar os módulos';
+    const message=document.createElement('p');message.textContent='Confira sua conexão e tente novamente. Seu progresso está preservado.';
+    const retry=document.createElement('button');retry.type='button';retry.className='bc-focus-retry';retry.textContent='Tentar novamente';
+    retry.addEventListener('click',()=>{global.CentralDisciplineLoader?.open?.(state.subject);schedule();});
+    panel.append(title,message,retry);
+    return panel;
+  }
   function nodes() {
     const h=home(),s=root();
     if (!h || !s) return null;
@@ -84,42 +118,49 @@
     for(const el of s.children) {
       if (el.classList.contains('subject')) el.classList.toggle('bc-focus-selected-subject',el.dataset.id===state.subject);
     }
-    const subject=current(), modules=moduleNodes(subject);
+    const subject=current(), modules=moduleNodes(subject), phase=modulePhase(subject,modules);
     text($('bcFocusSubjectLabel'),titleOf(subject));
-    text($('bcFocusModuleLabel'),state.stage==='reading'?state.moduleNumber+' · '+state.moduleTitle:'Escolha um módulo');
+    text($('bcFocusModuleLabel'),state.stage==='reading'?state.moduleNumber+' · '+state.moduleTitle:(state.stage==='modules'&&phase==='loading'?'Carregando módulos…':'Escolha um módulo'));
     const back=header.querySelector('[data-bc-back="modules"]');
     if(back)back.hidden=state.stage!=='reading';
     header.classList.toggle('bc-focus-sticky',state.stage==='reading');
     if(state.stage==='modules') {
-      const signature=JSON.stringify([state.subject,modules.map(m=>[m.key,m.label,m.count])]);
+      const signature=JSON.stringify([state.subject,phase,modules.map(m=>[m.key,m.label,m.count])]);
       if(list.dataset.signature!==signature) {
         list.dataset.signature=signature;
         list.replaceChildren();
-        const intro=document.createElement('div');
-        intro.className='bc-focus-modules-intro';
-        intro.innerHTML='<h2>Escolha um módulo</h2><p>Conteúdo original da Base Completa, sem alterações.</p>';
-        list.appendChild(intro);
-        if(modules.length===0){
-          const loading=document.createElement('div');loading.className='bc-focus-loading';
-          loading.textContent=subject?.classList.contains('central-subject-pending')?
-            'Carregando os módulos reais desta disciplina…':'Os módulos ainda não foram carregados. Você pode abrir o conteúdo original.';
-          list.appendChild(loading);
-          const fallback=document.createElement('button');
-          fallback.type='button';fallback.className='bc-focus-module-card';
-          fallback.textContent='Abrir conteúdo completo desta disciplina';
-          fallback.addEventListener('click',()=>openOriginal());
-          list.appendChild(fallback);
+        if(phase==='loading'){
+          // Nada de botão de fallback ou lista incompleta enquanto o download roda.
+          list.appendChild(loadingPanel(subject));
+        } else if(phase==='error'){
+          list.appendChild(failurePanel());
         } else {
-          modules.forEach((m,index)=>{
-            const button=document.createElement('button');button.type='button';button.className='bc-focus-module-card';
-            button.setAttribute('aria-label',m.count+': '+m.label);
-            const number=document.createElement('span');number.className='bc-focus-module-number';number.textContent=m.count;
-            const name=document.createElement('strong');name.textContent=m.label;
-            const arrow=document.createElement('span');arrow.className='bc-focus-arrow';arrow.textContent='›';arrow.setAttribute('aria-hidden','true');
-            button.append(number,name,arrow);
-            button.addEventListener('click',()=>openModule(index));
-            list.appendChild(button);
-          });
+          const intro=document.createElement('div');
+          intro.className='bc-focus-modules-intro';
+          intro.innerHTML='<h2>Escolha um módulo</h2><p>Conteúdo original da Base Completa, sem alterações.</p>';
+          list.appendChild(intro);
+          if(phase==='empty'){
+            const empty=document.createElement('div');empty.className='bc-focus-empty';
+            empty.textContent='Os módulos ainda não estão disponíveis. Você pode tentar abrir o conteúdo original.';
+            list.appendChild(empty);
+            const fallback=document.createElement('button');
+            fallback.type='button';fallback.className='bc-focus-module-card bc-focus-fallback';
+            const label=document.createElement('strong');label.textContent='Abrir conteúdo completo desta disciplina';
+            fallback.appendChild(label);
+            fallback.addEventListener('click',()=>openOriginal());
+            list.appendChild(fallback);
+          } else {
+            modules.forEach((m,index)=>{
+              const button=document.createElement('button');button.type='button';button.className='bc-focus-module-card';
+              button.setAttribute('aria-label',m.count+': '+m.label);
+              const number=document.createElement('span');number.className='bc-focus-module-number';number.textContent=m.count;
+              const name=document.createElement('strong');name.textContent=m.label;
+              const arrow=document.createElement('span');arrow.className='bc-focus-arrow';arrow.textContent='›';arrow.setAttribute('aria-hidden','true');
+              button.append(number,name,arrow);
+              button.addEventListener('click',()=>openModule(index));
+              list.appendChild(button);
+            });
+          }
         }
       }
     }
@@ -172,6 +213,16 @@
     if(!home()||!root())return;
     nodes();render();
     new MutationObserver(schedule).observe(root(),{childList:true,subtree:true});
+    // Concluir a animação imediatamente quando a disciplina estiver pronta.
+    // A falha real é comunicada pelo carregador, para exibir uma ação de repetição.
+    ['central:discipline-loading','central:discipline-ready','central:discipline-error'].forEach(eventName=>{
+      document.addEventListener(eventName,event=>{
+        if(event.detail?.id!==state.subject)return;
+        const list=$('bcFocusModules');if(list)list.dataset.signature='';
+        schedule();
+      });
+    });
+
     let wasHidden=home().classList.contains('hidden');
     new MutationObserver(()=>{
       const hidden=home().classList.contains('hidden');
