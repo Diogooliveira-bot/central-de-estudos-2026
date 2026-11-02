@@ -120,10 +120,10 @@ test('fluxo progressivo usa módulos reais e não altera o conteúdo ou o acesso
     read('central-v119.html'),read('ui/disciplinas-foco-v1.css'),
     read('ui/disciplinas-foco-v1.js'),read('central-offline-files-v66172.json'),
   ]);
-  assert.match(boot,/disciplinas-foco-v1\.js\?v=20261101release1/);
-  assert.match(boot,/disciplinas-foco-v1\.css\?v=20261101release1/);
-  assert.ok(JSON.parse(offline).files.includes('/ui/disciplinas-foco-v1.js?v=20261101release1'));
-  assert.ok(JSON.parse(offline).files.includes('/ui/disciplinas-foco-v1.css?v=20261101release1'));
+  assert.match(boot,/disciplinas-foco-v1\.js\?v=20261102-loading-ui1/);
+  assert.match(boot,/disciplinas-foco-v1\.css\?v=20261102-loading-ui1/);
+  assert.ok(JSON.parse(offline).files.includes('/ui/disciplinas-foco-v1.js?v=20261102-loading-ui1'));
+  assert.ok(JSON.parse(offline).files.includes('/ui/disciplinas-foco-v1.css?v=20261102-loading-ui1'));
   assert.match(script,/BaseCompletaFocusNavigation/);
   assert.match(script,/moduleNodes\(subject\)/);
   assert.match(script,/m\.head\.click\(\)/);
