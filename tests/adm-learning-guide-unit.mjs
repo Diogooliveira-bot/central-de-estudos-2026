@@ -38,6 +38,7 @@ test('módulos ADM apresentam guia antes de materiais, sem alterar funcionalidad
  });
  const win=dom.window;
  win.eval(read('content/adm/adm-native-index.js'));
+ win.eval(read('content/adm/adm-session-index.js'));
  win.renderDetail=()=>'<div class="adm-m1"><p>Leitura original mantida</p></div>';
  win.renderAll=()=>{};
  win.renderDisciplineGrid=()=>{};
