@@ -1,6 +1,7 @@
 import { neon } from '@neondatabase/serverless';
 import { requireSession, sameOriginRequest } from '../lib/auth.js';
 import { requirePlanFeature } from '../lib/plan-access.js';
+import { handleContentImage } from '../lib/content-image-handler.js';
 
 function send(res,status,body){
   res.statusCode=status;
@@ -47,6 +48,7 @@ export function imageSignature(html){
   return JSON.stringify({figures,media});
 }
 export default async function handler(req,res){
+  if(req.query?.action==='image')return handleContentImage(req,res);
   try{
     const sql=database();await ensureTable(sql);
     const id=String(req.query?.id||'').trim().slice(0,240);
