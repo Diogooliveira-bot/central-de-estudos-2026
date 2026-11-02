@@ -149,7 +149,7 @@ function load(id){
   }
   await waitForNative(id);state.ready=true;state.promise=null;refresh();resumeOffline();
   document.dispatchEvent(new CustomEvent('central:discipline-ready',{detail:{id}}));
- })().catch(error=>{state.promise=null;state.error=error;refresh();resumeOffline();console.error('[Central discipline load]',id,error);throw error});
+ })().catch(error=>{state.promise=null;state.error=error;refresh();resumeOffline();document.dispatchEvent(new CustomEvent('central:discipline-error',{detail:{id}}));console.error('[Central discipline load]',id,error);throw error});
  return state.promise;
 }
 function open(id,after){
