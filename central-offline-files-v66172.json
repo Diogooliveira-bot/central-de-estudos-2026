@@ -200,7 +200,7 @@
     "/ui/lei-em-dia-v1.css?v=20261014filter4",
     "/tools/decorando.html",
     "/central-home-progress-data.js?v=20261005-civil-native-v1",
-    "/central-discipline-loader.js?v=20261005-civil-native-v1",
+    "/central-discipline-loader.js?v=20261102-loading-ui1",
     "/assets/base-completa-symbol.webp",
     "/study-cycle-planner-v1.js",
     "/content/adm/adm-native-index.js?v=20261005adm1",
@@ -241,7 +241,7 @@
     "/ui/available-disciplines-v1.js?v=20261023-remove-labor-disciplines-v1",
     "/ui/home-minimal-a-v1.css?v=20261101oficial1",
     "/assets/mascote-oficial-estudando.png?v=20261101-oficial1",
-    "/ui/disciplinas-foco-v1.css?v=20261101release1",
-    "/ui/disciplinas-foco-v1.js?v=20261101release1"
+    "/ui/disciplinas-foco-v1.css?v=20261102-loading-ui1",
+    "/ui/disciplinas-foco-v1.js?v=20261102-loading-ui1"
   ]
 }
