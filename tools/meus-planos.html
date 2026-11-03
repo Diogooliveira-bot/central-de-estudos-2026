@@ -49,12 +49,12 @@ dialog label{display:block;font-weight:700;font-size:13px;margin:13px 0}dialog s
 <div>
 <section class="panel">
  <h2>Importar plano do Léo</h2>
- <p class="tiny">O arquivo precisa ser um ZIP com <b>plano.pdf</b> e <b>plano.json</b>. O calendário é criado pelo JSON, sem leitura automática do PDF.</p>
- <label class="upload">Escolher arquivo do plano (.zip)<input type="file" id="zip" accept=".zip,application/zip"></label>
+ <p class="tiny">O aluno só precisa selecionar o <b>PDF inteligente</b> recebido do Léo. O cronograma já está incluído no arquivo, sem precisar enviar ZIP ou JSON separados.</p>
+ <label class="upload">Selecionar meu plano de estudos (PDF)<input type="file" id="zip" accept=".pdf,application/pdf,.zip,application/zip"></label>
  <div class="actions"><button id="check" class="primary" disabled>Verificar e visualizar prévia</button><button id="clear" type="button">Limpar</button></div>
  <div id="preview" class="preview note" aria-live="polite"></div>
  <div class="actions"><button id="import" class="primary" disabled>Confirmar importação</button></div>
- <p class="tiny">Limite: 3 MB por ZIP e 20 planos por aluno. Arquivos armazenados de forma privada por até 24 meses.</p>
+ <p class="tiny">Limite: 2,6 MB por PDF e 20 planos por aluno. Planos antigos em ZIP continuam aceitos. Os arquivos ficam privados por até 24 meses.</p>
 </section>
 <section class="panel" id="detailPanel" hidden>
  <h2 id="detailTitle">Meu cronograma</h2>
@@ -68,7 +68,7 @@ dialog label{display:block;font-weight:700;font-size:13px;margin:13px 0}dialog s
 </div>
 <aside>
  <section class="panel"><h2>Planos anteriores</h2><div id="plans"><p class="tiny">Carregando...</p></div></section>
- <section class="panel"><h2>Como funciona</h2><div class="note"><b>1.</b> Receba o ZIP do Léo no WhatsApp.<br><b>2.</b> Envie o arquivo e confira a prévia.<br><b>3.</b> Confirme e acompanhe seu calendário.<br><b>4.</b> Marque as tarefas realizadas.<br><br>O progresso das disciplinas e o cronograma de seis meses não serão apagados.</div></section>
+ <section class="panel"><h2>Como funciona</h2><div class="note"><b>1.</b> Receba seu PDF personalizado do Léo no WhatsApp.<br><b>2.</b> Envie o arquivo e confira a prévia.<br><b>3.</b> Confirme e acompanhe seu calendário.<br><b>4.</b> Marque as tarefas realizadas.<br><br>O progresso das disciplinas e o cronograma de seis meses não serão apagados.</div></section>
 </aside>
 </div>
 </main>
@@ -79,7 +79,7 @@ const by=id=>document.getElementById(id);
 const apiUrl='/api/study-plans';
 const labels={pt:'Português',cf:'Direito Constitucional',adm:'Direito Administrativo',civil:'Direito Civil',cpc:'Direito Processual Civil',penal:'Direito Penal',cpp:'Direito Processual Penal',rlm:'Raciocínio Lógico'};
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-let selected=null,list=[],zip64='',normalized=null,catalog=[],mappingTask=null,shownMonth='';
+let selected=null,list=[],file64='',fileField='',normalized=null,catalog=[],mappingTask=null,shownMonth='';
 function status(s,isError=false){by('status').textContent=s;by('status').className=isError?'error':'';}
 async function request(query='',method='GET',body){
  const response=await fetch(apiUrl+query,{method,credentials:'same-origin',
@@ -91,21 +91,25 @@ async function request(query='',method='GET',body){
 }
 function dateLabel(s){return new Date(s+'T12:00:00').toLocaleDateString('pt-BR',{weekday:'long',day:'2-digit',month:'long'})}
 function monthShift(value,delta){const [year,month]=value.split('-').map(Number),d=new Date(year,month-1+delta,1);return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')}
-async function readZip(){
+async function readPlanFile(){
  const file=by('zip').files?.[0];
- if(!file||!file.name.toLowerCase().endsWith('.zip'))throw Error('Escolha um arquivo .zip');
- if(file.size>3000000)throw Error('O ZIP deve ter no máximo 3 MB');
+ if(!file)throw Error('Escolha o PDF do plano de estudos');
+ const ext=file.name.toLowerCase();
+ const isPdf=ext.endsWith('.pdf'),isZip=ext.endsWith('.zip');
+ if(!isPdf&&!isZip)throw Error('Selecione um PDF inteligente da Base Completa');
+ const limit=isPdf?2600000:3000000;
+ if(file.size>limit)throw Error('O arquivo excede o limite de '+(isPdf?'2,6 MB':'3 MB'));
  const raw=new Uint8Array(await file.arrayBuffer());
  let binary='';for(let i=0;i<raw.length;i+=32768)binary+=String.fromCharCode(...raw.subarray(i,i+32768));
- return btoa(binary);
+ return {base64:btoa(binary),field:isPdf?'pdfBase64':'zipBase64'};
 }
-by('zip').addEventListener('change',()=>{zip64='';normalized=null;by('check').disabled=!by('zip').files.length;by('import').disabled=true;by('preview').classList.remove('show')});
-by('clear').onclick=()=>{by('zip').value='';zip64='';normalized=null;by('check').disabled=true;by('import').disabled=true;by('preview').classList.remove('show');status('Seleção limpa.')};
+by('zip').addEventListener('change',()=>{file64='';fileField='';normalized=null;by('check').disabled=!by('zip').files.length;by('import').disabled=true;by('preview').classList.remove('show')});
+by('clear').onclick=()=>{by('zip').value='';file64='';fileField='';normalized=null;by('check').disabled=true;by('import').disabled=true;by('preview').classList.remove('show');status('Seleção limpa.')};
 by('check').onclick=async()=>{
  try{
   status('Verificando formato, integridade e cronograma...');
-  zip64=await readZip();
-  const data=await request('?action=preview','POST',{zipBase64:zip64});
+  const file=await readPlanFile();file64=file.base64;fileField=file.field;
+  const data=await request('?action=preview','POST',{[fileField]:file64});
   normalized=data.plano;
   const a=normalized.atividades;
   by('preview').innerHTML=`<b>Prévia validada</b><p><strong>${esc(normalized.nome)}</strong> · ${esc(normalized.objetivo)} ${esc(normalized.cargo)}<br>${esc(normalized.periodo_inicio)} a ${esc(normalized.periodo_fim)} · ${a.length} atividades · ${normalized.resumo.minutos} min<br>${normalized.resumo.sem_modulo} atividade(s) sem vínculo automático de módulo.</p><b>Primeiras atividades</b><ul>${a.slice(0,6).map(x=>'<li>'+esc(x.data)+' · '+esc(x.disciplina)+' · '+esc(x.atividade)+'</li>').join('')}</ul>`;
@@ -113,13 +117,13 @@ by('check').onclick=async()=>{
  }catch(e){status(e.message,true);by('import').disabled=true}
 };
 by('import').onclick=async()=>{
- if(!zip64||!normalized)return;
+ if(!file64||!fileField||!normalized)return;
  try{
   by('import').disabled=true;status('Salvando plano na sua conta...');
-  const data=await request('?action=import','POST',{zipBase64:zip64,ativar:true});
+  const data=await request('?action=import','POST',{[fileField]:file64,ativar:true});
   status(data.jaExistia?'Plano já importado; atualizado como ativo.':'Plano importado com sucesso.');
   await loadPlans(data.id);
-  zip64='';normalized=null;by('zip').value='';by('preview').classList.remove('show');by('check').disabled=true;
+  file64='';fileField='';normalized=null;by('zip').value='';by('preview').classList.remove('show');by('check').disabled=true;
  }catch(e){status(e.message,true);by('import').disabled=false}
 };
 async function loadPlans(preferred){
