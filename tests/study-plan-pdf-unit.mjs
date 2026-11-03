@@ -21,6 +21,7 @@ function pdfFixture(document=doc(),opts={}){
    '1 0 obj\n<< /Type /Catalog >>\nendobj\n'+
    (opts.marker===false?'':xmp)+(opts.double?xmp:'')+'\n'+
    (opts.active?'/OpenAction (evil)\n':'')+
+   ('PDF de amostra sintética para testar metadados. '.repeat(4))+'\n'+
    '%%EOF\n');
  return source.toString('base64');
 }
