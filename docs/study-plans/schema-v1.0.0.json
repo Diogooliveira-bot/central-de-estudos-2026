@@ -1,0 +1,217 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://basecompleta.com.br/schemas/study-plan/1.0.0",
+  "title": "Base Completa — Plano de Estudo Personalizado",
+  "description": "Contrato oficial do arquivo plano.json, empacotado com plano.pdf. Nenhuma API direta com o Léo.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "documento",
+    "aluno",
+    "cronograma"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "plano_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 120
+    },
+    "documento": {
+      "type": "object",
+      "required": [
+        "periodo_inicio",
+        "periodo_fim"
+      ],
+      "properties": {
+        "versao_modelo": {
+          "type": "string"
+        },
+        "titulo": {
+          "type": "string",
+          "maxLength": 160
+        },
+        "data_elaboracao": {
+          "type": "string",
+          "format": "date"
+        },
+        "periodo_inicio": {
+          "type": "string",
+          "format": "date"
+        },
+        "periodo_fim": {
+          "type": "string",
+          "format": "date"
+        },
+        "duracao_semanas": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 52
+        }
+      },
+      "additionalProperties": true
+    },
+    "aluno": {
+      "type": "object",
+      "required": [
+        "nome",
+        "objetivo"
+      ],
+      "properties": {
+        "nome": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 120
+        },
+        "objetivo": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160
+        },
+        "cargo": {
+          "type": "string",
+          "maxLength": 160
+        },
+        "banca": {
+          "type": "string",
+          "maxLength": 120
+        },
+        "nivel_conhecimento": {
+          "type": "string"
+        },
+        "fuso_horario": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "cronograma": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 52,
+      "items": {
+        "type": "object",
+        "required": [
+          "inicio",
+          "fim",
+          "atividades"
+        ],
+        "properties": {
+          "numero_semana": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 52
+          },
+          "inicio": {
+            "type": "string",
+            "format": "date"
+          },
+          "fim": {
+            "type": "string",
+            "format": "date"
+          },
+          "atividades": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 80,
+            "items": {
+              "type": "object",
+              "required": [
+                "disciplina",
+                "atividade",
+                "duracao_minutos"
+              ],
+              "anyOf": [
+                {
+                  "required": [
+                    "dia"
+                  ]
+                },
+                {
+                  "required": [
+                    "data"
+                  ]
+                }
+              ],
+              "properties": {
+                "dia": {
+                  "type": "string",
+                  "enum": [
+                    "domingo",
+                    "segunda",
+                    "terça",
+                    "terca",
+                    "quarta",
+                    "quinta",
+                    "sexta",
+                    "sábado",
+                    "sabado"
+                  ]
+                },
+                "data": {
+                  "type": "string",
+                  "format": "date"
+                },
+                "horario_inicio": {
+                  "type": "string",
+                  "pattern": "^([01][0-9]|2[0-3]):[0-5][0-9]$"
+                },
+                "disciplina": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 120
+                },
+                "modulo": {
+                  "type": "string",
+                  "maxLength": 200
+                },
+                "modulo_uid": {
+                  "type": "string",
+                  "maxLength": 150,
+                  "description": "UID exato do catálogo da Central, se conhecido; caso contrário não inferir"
+                },
+                "atividade": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 280
+                },
+                "duracao_minutos": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 480
+                },
+                "marcado_concluido": {
+                  "type": "boolean",
+                  "description": "Apenas histórico do PDF; acompanhamento começa na Central, sem sobrescrever progresso"
+                }
+              },
+              "additionalProperties": true
+            }
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "perfil": {
+      "type": "object"
+    },
+    "disciplinas": {
+      "type": "array"
+    },
+    "estrategia": {
+      "type": "object"
+    },
+    "metas": {
+      "type": "object"
+    },
+    "acompanhamento": {
+      "type": "object"
+    },
+    "orientacoes_leo": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": true
+}
