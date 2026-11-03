@@ -11,6 +11,9 @@ test('interface de planos é um HTML válido quanto à sintaxe do JavaScript inl
  assert.doesNotThrow(()=>new Script(scripts[0][1]));
  assert.match(html,/data-plan/);
  assert.match(html,/api\/study-plans/);
+ assert.match(html,/pdfBase64/);
+ assert.match(html,/application\/pdf/);
+ assert.match(html,/PDF inteligente/);
 });
 
 test('nova funcionalidade reaproveita a função de autenticação existente',()=>{
