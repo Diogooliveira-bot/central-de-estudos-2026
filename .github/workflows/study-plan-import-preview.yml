@@ -1,0 +1,40 @@
+name: Planos personalizados - validacao Preview
+on:
+  push:
+    branches:
+      - feature/planos-leo-importacao-20261103
+  pull_request:
+    paths:
+      - 'lib/study-plan-*'
+      - 'api/study-plans.js'
+      - 'tools/meus-planos.html'
+      - 'tests/study-plan-*'
+      - 'docs/study-plans/**'
+      - 'index.html'
+      - 'tools/cronograma.html'
+jobs:
+  validar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - name: Sintaxe ESM
+        run: |
+          node --check lib/study-plan-import.js
+          node --check lib/study-plan-handler.js
+          node --check lib/study-plan-module-catalog.js
+          node --check api/study-plans.js
+          node --check tests/study-plan-import-unit.mjs
+      - name: Contrato ZIP e JSON
+        run: node --test tests/study-plan-import-unit.mjs
+      - name: Regressao das contas e da agenda
+        run: node --test tests/auth-unit.mjs tests/agenda-responsive.mjs tests/preview-neon-isolation-unit.mjs
+      - name: Build estatico
+        run: npm run build:vercel-output
+      - name: Interface presente
+        run: test -s dist/tools/meus-planos.html
