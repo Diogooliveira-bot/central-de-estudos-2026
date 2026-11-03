@@ -41,5 +41,6 @@ jobs:
       - name: Build estatico
         run: npm run build:vercel-output
       - name: Interface presente
-        run: test -s dist/tools/meus-planos.html
+        run: |
+          test -s dist/tools/meus-planos.html
           test -s dist/ui/study-plan-deeplink-v1.js
