@@ -886,6 +886,9 @@ setTimeout(function(){
    </span>
    <span class="nav-text">Agenda</span>
   </button>
+  <button type="button" data-i="PL" onclick="location.href='/tools/meus-planos.html'">
+   <span class="nav-icon nav-badge">P</span><span class="nav-text">Meus Planos de Estudo</span>
+  </button>
   <button type="button" data-i="▤" data-central-native="disciplines" onclick="return centralHardOpen('disciplines',this)">
    <span class="nav-icon">
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h12l4 4v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm13 0v4h4"/><path d="M8 11h8M8 15h8M8 19h6"/></svg>
@@ -965,6 +968,7 @@ setTimeout(function(){
 
   <section class="view hidden" id="agendaView"><button type="button" class="central-view-back" onclick="return openHome()" aria-label="Voltar ao início">‹ Central</button>
    <div class="hero"><div><h1>Agenda</h1><p>Checklist editável por dia.</p></div></div>
+   <div class="card" style="padding:15px;margin-bottom:12px"><b>Planos personalizados do Léo</b><p class="muted" style="margin:4px 0 12px">Importe o ZIP recebido no WhatsApp e acompanhe o progresso sem alterar suas tarefas atuais.</p><a href="/tools/meus-planos.html" class="btn primary" style="display:inline-block;text-decoration:none">Abrir meus planos de estudo</a></div>
    <div class="card" style="padding:16px">
     <div class="form-grid">
      <div class="field"><label>Data</label><input id="agendaDate" type="date"></div>
