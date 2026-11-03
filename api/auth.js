@@ -25,6 +25,7 @@ import {signupCaptchaConfigured} from '../lib/free-signup-security.js';
 import handlePasswordReset from '../lib/password-reset.js';
 import handleLeiEmDiaQuestions from '../lib/lei-em-dia-questions-handler.js';
 import handlePlans from '../lib/plans-handler.js';
+import handleStudyPlans from '../lib/study-plan-handler.js';
 import handlePrivateContent from '../lib/private-content-handler.js';
 import handleHotmartWebhook from '../lib/hotmart-webhook.js';
 import handleHotmartClaim from '../lib/hotmart-claim-handler.js';
@@ -185,6 +186,7 @@ export default async function handler(req, res) {
     if (premiumApi === 'premium-expiry-reminders') return await handlePremiumExpiryReminders(req, res);
     if (premiumApi === 'hotmart-claim') return await handleHotmartClaim(req, res);
     if (premiumApi === 'plans') return await handlePlans(req, res);
+    if (premiumApi === 'study-plans') return await handleStudyPlans(req, res);
     if (premiumApi === 'private-content') return await handlePrivateContent(req, res);
     if (premiumApi === 'lei-em-dia-questions') return await handleLeiEmDiaQuestions(req, res);
 
