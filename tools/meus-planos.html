@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex"><meta name="theme-color" content="#08233e">
+<title>Meus Planos de Estudo · Base Completa</title>
+<style>
+:root{--navy:#08233e;--blue:#15466e;--cyan:#10b7cf;--line:#dce8f0;--ink:#143047;--muted:#61758a;--bg:#f4f8fb;--white:#fff}
+*{box-sizing:border-box}body{font:15px/1.55 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink);margin:0}
+header{background:var(--navy);color:#fff;border-bottom:4px solid var(--cyan)}.head{max-width:1180px;margin:auto;display:flex;align-items:center;gap:15px;padding:17px 21px}
+.head img{height:47px;width:54px;object-fit:contain}.brand{font-size:16px;font-weight:800;letter-spacing:.03em}.brand span{display:block;font-size:11px;letter-spacing:.11em;color:#b2dbea;font-weight:500}
+nav{margin-left:auto;display:flex;gap:10px;flex-wrap:wrap}nav a{color:white;text-decoration:none;border:1px solid #487089;border-radius:8px;padding:7px 12px;font-size:12px}
+main{max-width:1180px;margin:28px auto 80px;padding:0 20px}
+h1{font-size:clamp(25px,4vw,35px);line-height:1.16;margin:0 0 5px;letter-spacing:-.035em}h2{font-size:18px;margin:0 0 12px;color:var(--navy)}h3{font-size:15px;color:var(--navy);margin:0 0 9px}
+.sub{color:var(--muted);margin:0 0 24px}.grid{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(280px,.75fr);gap:18px}
+.panel{border:1px solid var(--line);background:#fff;border-radius:15px;padding:21px;margin-bottom:18px;box-shadow:0 8px 24px rgba(9,37,64,.035)}
+.upload{border:2px dashed #a5c7d9;border-radius:12px;background:#f4fbff;padding:25px;text-align:center;cursor:pointer;display:block}
+.upload:hover{border-color:#10a9c3}.upload input{display:block;max-width:100%;margin:12px auto 0;font-size:13px}
+button,.button{font:700 13px/1.2 inherit;font-family:inherit;cursor:pointer;border:1px solid #bcd3e0;background:#fff;color:var(--navy);padding:10px 14px;border-radius:9px;text-decoration:none;display:inline-block}
+button:hover,.button:hover{border-color:#1a7593}button.primary,.button.primary{background:var(--navy);border-color:var(--navy);color:white}
+button:disabled{opacity:.45;cursor:not-allowed}button.danger{color:#af3240;border-color:#efc9cb}
+.actions{display:flex;gap:7px;align-items:center;flex-wrap:wrap;margin:15px 0 3px}.tiny{font-size:12px;color:var(--muted)}.note{border-left:3px solid var(--cyan);background:#f2fbfd;padding:11px 13px;font-size:13px}
+#status{min-height:23px;margin:14px 0;color:#1a6c79}#status.error{color:#b02e42}
+.plan{padding:14px;border:1px solid var(--line);border-radius:10px;margin:9px 0;background:#fff;cursor:pointer}
+.plan:hover,.plan.selected{border-color:#2f9cbd;background:#f3fbff}.plan b{display:block;font-size:14px}.plan p{margin:3px 0;color:var(--muted);font-size:12px}
+.badge{font:700 10px/1.3 inherit;display:inline-block;background:#d9f2f6;color:#14556e;padding:4px 8px;border-radius:5px;margin-left:8px}
+.info{display:flex;gap:8px;flex-wrap:wrap}.chip{background:#eef5fa;color:#305a77;border-radius:7px;font-size:12px;padding:6px 9px}
+.progress{height:11px;background:#edf2f6;border-radius:99px;overflow:hidden;margin:10px 0}.progress>span{display:block;background:#17a7bc;height:100%;width:0}
+.calendar-controls{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin:17px 0}.calendar-controls input{font:inherit;border:1px solid #c4d6e3;border-radius:8px;padding:9px}
+.day{margin:13px 0;border:1px solid var(--line);border-radius:11px;overflow:hidden}.dayhead{background:#eff6fa;padding:10px 13px;font-weight:750;font-size:12px}
+.task{display:grid;grid-template-columns:24px 1fr auto;gap:11px;padding:13px;border-top:1px solid #eef2f5;align-items:start}
+.task input{margin-top:3px;width:19px;height:19px;accent-color:#158ea6;cursor:pointer}.task.done{opacity:.62}.task-title{font-weight:750;font-size:13px}
+.task-meta{font-size:12px;color:var(--muted)}.task button{padding:6px 9px;font-size:11px}.task a{font-size:12px;color:#126a85}
+.meter{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:12px 0}.meter>div{background:#f0f7fb;border-radius:10px;padding:14px}.meter strong{display:block;font-size:22px;color:var(--navy)}.meter small{font-size:11px;color:var(--muted)}
+.preview{display:none}.preview.show{display:block}.preview ul{max-height:180px;overflow:auto;padding-left:21px;font-size:12px;color:var(--muted)}
+dialog{border:1px solid var(--line);border-radius:15px;padding:25px;width:min(490px,calc(100% - 25px));box-shadow:0 20px 90px rgba(0,0,0,.26)}dialog::backdrop{background:#08233ebb}
+dialog label{display:block;font-weight:700;font-size:13px;margin:13px 0}dialog select{width:100%;padding:10px;border:1px solid #bccfdb;border-radius:8px;margin-top:5px}
+[hidden]{display:none!important}@media(max-width:830px){.grid{grid-template-columns:1fr}.head{flex-wrap:wrap}nav{margin-left:0;width:100%}.meter{grid-template-columns:repeat(3,1fr)}.task{grid-template-columns:23px 1fr}.task>div:last-child{grid-column:2}.panel{padding:16px}}
+@media print{header,nav,.upload,.actions,.calendar-controls,button{display:none!important}.panel{box-shadow:none;border:0}body{background:#fff}}
+</style>
+</head>
+<body>
+<header><div class="head"><img src="../assets/base-completa-symbol.webp" alt="Logomarca oficial Base Completa"><div class="brand">BASE COMPLETA<span>CENTRAL DE ESTUDOS</span></div><nav><a href="../index.html">Voltar à Central</a><a href="cronograma.html">Cronograma de 6 meses</a></nav></div></header>
+<main>
+<h1>Meus Planos de Estudo</h1>
+<p class="sub">Importe o plano personalizado recebido pelo WhatsApp, acompanhe tarefas e guarde seu PDF original.</p>
+<p id="status" role="status" aria-live="polite">Verificando sua conta...</p>
+<div class="grid">
+<div>
+<section class="panel">
+ <h2>Importar plano do Léo</h2>
+ <p class="tiny">O aluno só precisa selecionar o <b>PDF inteligente</b> recebido do Léo. O cronograma já está incluído no arquivo, sem precisar enviar ZIP ou JSON separados.</p>
+ <label class="upload">Selecionar meu plano de estudos (PDF)<input type="file" id="zip" accept=".pdf,application/pdf,.zip,application/zip"></label>
+ <div class="actions"><button id="check" class="primary" disabled>Verificar e visualizar prévia</button><button id="clear" type="button">Limpar</button></div>
+ <div id="preview" class="preview note" aria-live="polite"></div>
+ <div class="actions"><button id="import" class="primary" disabled>Confirmar importação</button></div>
+ <p class="tiny">Limite: 2,6 MB por PDF e 20 planos por aluno. Planos antigos em ZIP continuam aceitos. Os arquivos ficam privados por até 24 meses.</p>
+</section>
+<section class="panel" id="detailPanel" hidden>
+ <h2 id="detailTitle">Meu cronograma</h2>
+ <div id="detailSub" class="tiny"></div>
+ <div class="meter"><div><strong id="mTotal">0</strong><small>Atividades</small></div><div><strong id="mDone">0</strong><small>Concluídas</small></div><div><strong id="mPct">0%</strong><small>Progresso</small></div></div>
+ <div class="progress"><span id="progBar"></span></div>
+ <div class="actions" id="planActions"><a id="pdf" class="button" target="_blank" rel="noopener">Abrir PDF original</a><a id="download" class="button">Baixar PDF</a><button id="activate">Tornar plano ativo</button><button id="delete" class="danger">Excluir plano</button></div>
+ <p class="tiny">Os links levam aos módulos da Central. Somente módulos identificados com segurança são vinculados automaticamente; tarefas concluídas continuam independentes do progresso das disciplinas.</p>
+ <div class="calendar-controls"><strong>Calendário</strong><button id="previous" aria-label="Mês anterior">‹</button><input id="month" type="month" aria-label="Mês do cronograma"><button id="next" aria-label="Mês seguinte">›</button></div>
+ <div id="calendar"></div>
+</section>
+</div>
+<aside>
+ <section class="panel"><h2>Planos anteriores</h2><div id="plans"><p class="tiny">Carregando...</p></div></section>
+ <section class="panel"><h2>Como funciona</h2><div class="note"><b>1.</b> Receba seu PDF personalizado do Léo no WhatsApp.<br><b>2.</b> Envie o arquivo e confira a prévia.<br><b>3.</b> Confirme e acompanhe seu calendário.<br><b>4.</b> Marque as tarefas realizadas.<br><br>O progresso das disciplinas e o cronograma de seis meses não serão apagados.</div></section>
+</aside>
+</div>
+</main>
+<dialog id="mapping"><h2>Confirmar disciplina ou módulo</h2><p class="tiny" id="mappingName"></p><label>Disciplina<select id="subjectSelect"></select></label><label>Módulo (opcional)<select id="moduleSelect"></select></label><div class="actions"><button id="cancelMapping">Cancelar</button><button class="primary" id="saveMapping">Salvar vínculo</button></div></dialog>
+<script>
+'use strict';
+const by=id=>document.getElementById(id);
+const apiUrl='/api/study-plans';
+const labels={pt:'Português',cf:'Direito Constitucional',adm:'Direito Administrativo',civil:'Direito Civil',cpc:'Direito Processual Civil',penal:'Direito Penal',cpp:'Direito Processual Penal',rlm:'Raciocínio Lógico'};
+const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+let selected=null,list=[],file64='',fileField='',normalized=null,catalog=[],mappingTask=null,shownMonth='';
+function status(s,isError=false){by('status').textContent=s;by('status').className=isError?'error':'';}
+async function request(query='',method='GET',body){
+ const response=await fetch(apiUrl+query,{method,credentials:'same-origin',
+   headers:method==='GET'?{}:{'Content-Type':'application/json'},
+   body:method==='GET'?undefined:JSON.stringify(body||{})});
+ let data;try{data=await response.json()}catch(_){throw Error('Resposta do servidor inválida')}
+ if(!response.ok)throw Error(data.error||'Erro de comunicação');
+ return data;
+}
+function dateLabel(s){return new Date(s+'T12:00:00').toLocaleDateString('pt-BR',{weekday:'long',day:'2-digit',month:'long'})}
+function monthShift(value,delta){const [year,month]=value.split('-').map(Number),d=new Date(year,month-1+delta,1);return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')}
+async function readPlanFile(){
+ const file=by('zip').files?.[0];
+ if(!file)throw Error('Escolha o PDF do plano de estudos');
+ const ext=file.name.toLowerCase();
+ const isPdf=ext.endsWith('.pdf'),isZip=ext.endsWith('.zip');
+ if(!isPdf&&!isZip)throw Error('Selecione um PDF inteligente da Base Completa');
+ const limit=isPdf?2600000:3000000;
+ if(file.size>limit)throw Error('O arquivo excede o limite de '+(isPdf?'2,6 MB':'3 MB'));
+ const raw=new Uint8Array(await file.arrayBuffer());
+ let binary='';for(let i=0;i<raw.length;i+=32768)binary+=String.fromCharCode(...raw.subarray(i,i+32768));
+ return {base64:btoa(binary),field:isPdf?'pdfBase64':'zipBase64'};
+}
+by('zip').addEventListener('change',()=>{file64='';fileField='';normalized=null;by('check').disabled=!by('zip').files.length;by('import').disabled=true;by('preview').classList.remove('show')});
+by('clear').onclick=()=>{by('zip').value='';file64='';fileField='';normalized=null;by('check').disabled=true;by('import').disabled=true;by('preview').classList.remove('show');status('Seleção limpa.')};
+by('check').onclick=async()=>{
+ try{
+  status('Verificando formato, integridade e cronograma...');
+  const file=await readPlanFile();file64=file.base64;fileField=file.field;
+  const data=await request('?action=preview','POST',{[fileField]:file64});
+  normalized=data.plano;
+  const a=normalized.atividades;
+  by('preview').innerHTML=`<b>Prévia validada</b><p><strong>${esc(normalized.nome)}</strong> · ${esc(normalized.objetivo)} ${esc(normalized.cargo)}<br>${esc(normalized.periodo_inicio)} a ${esc(normalized.periodo_fim)} · ${a.length} atividades · ${normalized.resumo.minutos} min<br>${normalized.resumo.sem_modulo} atividade(s) sem vínculo automático de módulo.</p><b>Primeiras atividades</b><ul>${a.slice(0,6).map(x=>'<li>'+esc(x.data)+' · '+esc(x.disciplina)+' · '+esc(x.atividade)+'</li>').join('')}</ul>`;
+  by('preview').classList.add('show');by('import').disabled=false;status('Prévia pronta. Confira os dados e confirme.');
+ }catch(e){status(e.message,true);by('import').disabled=true}
+};
+by('import').onclick=async()=>{
+ if(!file64||!fileField||!normalized)return;
+ try{
+  by('import').disabled=true;status('Salvando plano na sua conta...');
+  const data=await request('?action=import','POST',{[fileField]:file64,ativar:true});
+  status(data.jaExistia?'Plano já importado; atualizado como ativo.':'Plano importado com sucesso.');
+  await loadPlans(data.id);
+  file64='';fileField='';normalized=null;by('zip').value='';by('preview').classList.remove('show');by('check').disabled=true;
+ }catch(e){status(e.message,true);by('import').disabled=false}
+};
+async function loadPlans(preferred){
+ try{
+  const data=await request();list=data.planos||[];
+  by('plans').innerHTML=list.length?list.map(p=>`<div class="plan ${selected?.plano?.id===p.id?'selected':''}" data-plan="${esc(p.id)}" tabindex="0" role="button"><b>${esc(p.titulo)}${p.ativo?'<span class="badge">ATIVO</span>':''}</b><p>${esc(p.aluno)} · ${esc(p.objetivo)}<br>${esc(p.inicio)} a ${esc(p.fim)} · ${p.resumo.total||0} tarefas</p></div>`).join(''):'<p class="tiny">Nenhum plano importado.</p>';
+  const chosen=preferred||selected?.plano?.id||data.ativoId||list[0]?.id;
+  if(chosen&&list.some(p=>p.id===chosen))await selectPlan(chosen);
+  else {selected=null;by('detailPanel').hidden=true}
+ }catch(e){status(e.message,true)}
+}
+by('plans').addEventListener('click',event=>{const card=event.target.closest('[data-plan]');if(card)selectPlan(card.dataset.plan)});
+by('plans').addEventListener('keydown',event=>{if(event.key==='Enter'){const card=event.target.closest('[data-plan]');if(card)selectPlan(card.dataset.plan)}});
+async function selectPlan(id){
+ try{
+  const data=await request('?id='+encodeURIComponent(id));selected=data;
+  by('detailPanel').hidden=false;
+  by('detailTitle').textContent=data.plano.titulo;
+  by('detailSub').textContent=data.plano.aluno+' · '+data.plano.objetivo+' · '+data.plano.inicio+' a '+data.plano.fim+(data.plano.ativo?' · Plano ativo':'');
+  by('mTotal').textContent=data.progresso.total;by('mDone').textContent=data.progresso.concluidas;
+  by('mPct').textContent=data.progresso.percentual+'%';by('progBar').style.width=data.progresso.percentual+'%';
+  by('activate').hidden=data.plano.ativo;
+  by('pdf').href=apiUrl+'?action=pdf&id='+encodeURIComponent(id);
+  by('download').href=apiUrl+'?action=pdf&download=1&id='+encodeURIComponent(id);
+  if(!shownMonth||!data.atividades.some(t=>t.data.startsWith(shownMonth)))shownMonth=data.plano.inicio.slice(0,7);
+  by('month').value=shownMonth;
+  renderCalendar();
+  by('plans').querySelectorAll('[data-plan]').forEach(x=>x.classList.toggle('selected',x.dataset.plan===id));
+ }catch(e){status(e.message,true)}
+}
+function moduleUrl(task){
+ const subject=task.disciplina_confirmada||task.disciplina_id;
+ if(!Object.hasOwn(labels,subject))return null;
+ const uid=task.modulo_confirmado||task.modulo_uid;
+ const module=uid?catalog.find(m=>m.uid===uid&&m.disciplina_id===subject):null;
+ const params=new URLSearchParams({bc_plan_subject:subject});
+ if(module)params.set('bc_plan_uid',module.uid);
+ return {url:'/central-v119.html?'+params.toString(),module:Boolean(module)};
+}
+function renderCalendar(){
+ if(!selected)return;
+ const tasks=selected.atividades.filter(t=>t.data.startsWith(shownMonth));
+ const grouped={};for(const t of tasks)(grouped[t.data] ||= []).push(t);
+ by('calendar').innerHTML=Object.keys(grouped).sort().map(date=>`<section class="day"><div class="dayhead">${esc(dateLabel(date))}</div>${grouped[date].map(t=>{
+ const link=moduleUrl(t);
+ const needConfirmation=!t.vinculo_confirmado&&!t.modulo_uid;
+ return `<div class="task ${t.concluida?'done':''}"><input type="checkbox" aria-label="Marcar ${esc(t.atividade)}" data-task="${esc(t.id)}" ${t.concluida?'checked':''}><div><div class="task-title">${esc(t.disciplina)} · ${esc(t.atividade)}</div><div class="task-meta">${esc(t.modulo||'Sem módulo específico')} · ${t.minutos} min ${t.hora?' · '+esc(t.hora):''}</div></div><div>${link?'<a target="_blank" rel="noopener" href="'+esc(link.url)+'">'+(link.module?'Abrir módulo na Central':'Abrir disciplina na Central')+'</a>':''} ${needConfirmation?'<button data-map="'+esc(t.id)+'">Confirmar módulo</button>':''}</div></div>`;
+ }).join('')}</section>`).join('')||'<div class="note">Nenhuma atividade para este mês. Selecione outro mês.</div>';
+}
+by('month').onchange=()=>{shownMonth=by('month').value;renderCalendar()};
+by('previous').onclick=()=>{shownMonth=monthShift(shownMonth,-1);by('month').value=shownMonth;renderCalendar()};
+by('next').onclick=()=>{shownMonth=monthShift(shownMonth,1);by('month').value=shownMonth;renderCalendar()};
+by('calendar').addEventListener('change',async e=>{
+ const id=e.target.dataset.task;if(!id||!selected)return;
+ const previous=!e.target.checked;
+ try{await request('?action=toggle&id='+encodeURIComponent(selected.plano.id),'PATCH',{taskId:id,concluida:e.target.checked});
+  await selectPlan(selected.plano.id);
+ }catch(err){e.target.checked=previous;status(err.message,true)}
+});
+by('activate').onclick=async()=>{try{await request('?action=activate&id='+encodeURIComponent(selected.plano.id),'PATCH',{});status('Plano ativo atualizado.');await loadPlans(selected.plano.id)}catch(e){status(e.message,true)}};
+by('delete').onclick=async()=>{if(!selected||!confirm('Excluir o plano selecionado e as marcações dele? O progresso das disciplinas permanecerá intacto.'))return;try{
+  await request('?id='+encodeURIComponent(selected.plano.id),'DELETE',{});selected=null;shownMonth='';await loadPlans();status('Plano excluído.');
+ }catch(e){status(e.message,true)}};
+by('calendar').addEventListener('click',e=>{const id=e.target.dataset.map;if(id)openMapping(id)});
+function openMapping(id){
+ mappingTask=selected?.atividades.find(x=>x.id===id);if(!mappingTask)return;
+ by('mappingName').textContent=mappingTask.disciplina+' · '+(mappingTask.modulo||mappingTask.atividade);
+ by('subjectSelect').innerHTML='<option value="">Selecione</option>'+Object.entries(labels).map(([id,name])=>'<option value="'+id+'">'+esc(name)+'</option>').join('');
+ by('subjectSelect').value=mappingTask.disciplina_confirmada||mappingTask.disciplina_id||'';
+ refreshModules();by('mapping').showModal();
+}
+function refreshModules(){
+ const sid=by('subjectSelect').value;
+ by('moduleSelect').innerHTML='<option value="">Apenas a disciplina (sem módulo)</option>'+
+  catalog.filter(x=>x.disciplina_id===sid).map(x=>'<option value="'+esc(x.uid)+'">'+esc(x.titulo)+'</option>').join('');
+ by('moduleSelect').value=mappingTask?.modulo_confirmado||mappingTask?.modulo_uid||'';
+}
+by('subjectSelect').onchange=()=>{mappingTask={...mappingTask,modulo_confirmado:null,modulo_uid:null};refreshModules()};
+by('cancelMapping').onclick=()=>by('mapping').close();
+by('saveMapping').onclick=async()=>{
+ const sid=by('subjectSelect').value;if(!sid){status('Escolha uma disciplina.',true);return}
+ try{await request('?action=confirm&id='+encodeURIComponent(selected.plano.id),'PATCH',
+ {taskId:mappingTask.id,disciplinaId:sid,moduloUid:by('moduleSelect').value});
+ by('mapping').close();await selectPlan(selected.plano.id);status('Vínculo confirmado.');
+ }catch(e){status(e.message,true)}
+};
+(async function boot(){
+ try{
+  const r=await fetch('/api/auth?action=me',{credentials:'same-origin',cache:'no-store'});
+  const me=await r.json();if(!r.ok||!me.authenticated)throw Error('Entre na sua conta para acessar seus planos.');
+  if(me.previewGuest)throw Error('Modo de demonstração: importações reais exigem uma conta fictícia autenticada no banco de testes.');
+  const cat=await request('?action=catalog');catalog=cat.modulos||[];
+  await loadPlans();status('Pronto para importar ou consultar seus planos.');
+ }catch(e){status(e.message,true);by('plans').innerHTML='<p class="tiny">Acesso indisponível nesta sessão.</p>'}
+})();
+</script></body></html>
