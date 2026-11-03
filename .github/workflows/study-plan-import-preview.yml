@@ -32,11 +32,14 @@ jobs:
           node --check lib/study-plan-module-catalog.js
           node --check api/auth.js
           node --check tests/study-plan-import-unit.mjs
+          node --check tests/study-plan-links-unit.mjs
+          node --check ui/study-plan-deeplink-v1.js
       - name: Contrato ZIP e JSON
-        run: node --test tests/study-plan-import-unit.mjs tests/study-plan-pdf-unit.mjs tests/study-plan-ui-unit.mjs
+        run: node --test tests/study-plan-import-unit.mjs tests/study-plan-pdf-unit.mjs tests/study-plan-ui-unit.mjs tests/study-plan-links-unit.mjs
       - name: Regressao das contas e da agenda
         run: node --test tests/auth-unit.mjs tests/preview-neon-isolation-unit.mjs
       - name: Build estatico
         run: npm run build:vercel-output
       - name: Interface presente
         run: test -s dist/tools/meus-planos.html
+          test -s dist/ui/study-plan-deeplink-v1.js
