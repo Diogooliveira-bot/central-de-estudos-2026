@@ -43,6 +43,15 @@ O PDF visual permanece normal, sem alterar as páginas impressas.
 - SHA-256 garante integridade do JSON incorporado, **não prova** que o conteúdo visível do PDF corresponde aos dados. Por isso, a prévia exige confirmação do aluno.
 - Na homologação, usar apenas dados e contas fictícios.
 
+## Vínculos com as disciplinas da Central
+
+- Ao gerar um PDF novo, o Léo deve usar o **UID exato do módulo real** em `modulo_uid` quando houver correspondência segura no catálogo atual. Não criar UIDs próprios.
+- Para PDFs já importados, a Central reconcilia os nomes abreviados somente quando **número do módulo e assunto** coincidirem na mesma disciplina; a reconciliação não altera o PDF nem as marcações anteriores.
+- Se houver divergência de numeração (por exemplo, “RLM M01 · Proposições” em um catálogo em que Proposições é M08), **não** vincular automaticamente. Oferecer ao aluno a disciplina e a escolha manual do módulo.
+- O botão “Abrir módulo na Central” abre o navegador de módulos atual, não rotas de cronograma descontinuadas.
+- Marcar uma atividade do plano como concluída **não** marca o módulo inteiro da Central como concluído, pois essas atividades podem ser apenas uma leitura ou revisão parcial.
+- Vínculos manuais confirmados pelo aluno ficam preservados no Neon da conta e têm precedência sobre qualquer associação automática.
+
 ## Testes e publicação
 
 - Executar testes PDF, ZIP e interface em CI: tests/study-plan-pdf-unit.mjs, tests/study-plan-import-unit.mjs, tests/study-plan-ui-unit.mjs.
