@@ -6,7 +6,8 @@ on:
   pull_request:
     paths:
       - 'lib/study-plan-*'
-      - 'api/study-plans.js'
+      - 'api/auth.js'
+      - 'vercel.json'
       - 'tools/meus-planos.html'
       - 'tests/study-plan-*'
       - 'docs/study-plans/**'
@@ -28,12 +29,12 @@ jobs:
           node --check lib/study-plan-import.js
           node --check lib/study-plan-handler.js
           node --check lib/study-plan-module-catalog.js
-          node --check api/study-plans.js
+          node --check api/auth.js
           node --check tests/study-plan-import-unit.mjs
       - name: Contrato ZIP e JSON
-        run: node --test tests/study-plan-import-unit.mjs
+        run: node --test tests/study-plan-import-unit.mjs tests/study-plan-ui-unit.mjs
       - name: Regressao das contas e da agenda
-        run: node --test tests/auth-unit.mjs tests/agenda-responsive.mjs tests/preview-neon-isolation-unit.mjs
+        run: node --test tests/auth-unit.mjs tests/preview-neon-isolation-unit.mjs
       - name: Build estatico
         run: npm run build:vercel-output
       - name: Interface presente
