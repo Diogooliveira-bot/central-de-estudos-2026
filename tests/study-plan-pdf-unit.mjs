@@ -44,6 +44,48 @@ test('metadados adulterados ou duplicados não podem ser importados',()=>{
 test('bloqueio de ações ativas no arquivo PDF',()=>{
  assert.throws(()=>parseStudyPlanPdf(pdfFixture(doc(),{active:true})),/ações ativas/);
 });
+
+test('PDF oficial com Content Credentials C2PA deve ser aceito',()=>{
+ const c2pa = [
+  '23 0 obj << /Type /Catalog /AF [34 0 R]',
+  '/Names << /EmbeddedFiles << /Names [(Content Credentials) 34 0 R] >> >> >> endobj',
+  '33 0 obj << /Length 10 /Type /EmbeddedFile /Subtype /application#2Fc2pa >> stream',
+  'content-credential', 'endstream endobj',
+  '34 0 obj << /AFRelationship /C2PA_Manifest /Desc (Content Credentials)',
+  '/F (Content Credentials) /EF << /F 33 0 R >>',
+  '/Subtype (application/c2pa) /Type /Filespec /UF (Content Credentials) >> endobj',
+ ].join('\n');
+ const b64=pdfFixture();
+ const pdf=Buffer.from(b64,'base64').toString('latin1');
+ const allowedPdf=pdf.replace('%%EOF',c2pa+'\n%%EOF');
+ const parsed=parseStudyPlanPdf(Buffer.from(allowedPdf,'latin1').toString('base64'));
+ assert.equal(parsed.normalized.resumo.total,2);
+ assert.equal(parsed.pdf.toString('latin1').includes('C2PA_Manifest'),true);
+});
+
+test('arquivos incorporados que não são C2PA continuam proibidos',()=>{
+ const orig=Buffer.from(pdfFixture(),'base64').toString('latin1');
+ const attachment=[
+  '23 0 obj << /Type /Catalog /AF [34 0 R]',
+  '/Names << /EmbeddedFiles << /Names [(notas.txt) 34 0 R] >> >> >> endobj',
+  '33 0 obj << /Type /EmbeddedFile /Subtype /text#2Fplain >> endobj',
+  '34 0 obj << /Type /Filespec /F (notas.txt) /EF << /F 33 0 R >> >> endobj',
+ ].join('\n');
+ assert.throws(()=>parseStudyPlanPdf(Buffer.from(orig.replace('%%EOF',attachment+'\n%%EOF'),'latin1').toString('base64')),/anexos não permitidos/);
+});
+test('ações executáveis continuam bloqueadas mesmo com Content Credentials',()=>{
+ const orig=Buffer.from(pdfFixture(),'base64').toString('latin1');
+ const attachment=[
+  '23 0 obj << /Type /Catalog /AF [34 0 R]',
+  '/Names << /EmbeddedFiles << /Names [(Content Credentials) 34 0 R] >> >> >> endobj',
+  '33 0 obj << /Type /EmbeddedFile /Subtype /application#2Fc2pa >> endobj',
+  '34 0 obj << /AFRelationship /C2PA_Manifest /EF << /F 33 0 R >>',
+  '/Subtype (application/c2pa) /Type /Filespec >> endobj',
+  '35 0 obj << /OpenAction 44 0 R >> endobj',
+ ].join('\n');
+ assert.throws(()=>parseStudyPlanPdf(Buffer.from(orig.replace('%%EOF',attachment+'\n%%EOF'),'latin1').toString('base64')),/ações ativas/);
+});
+
 test('versão XMP inválida é recusada',()=>{
  assert.throws(()=>parseStudyPlanPdf(pdfFixture(doc(),{version:'2.0.0'})),/PDF atualizado/);
 });
