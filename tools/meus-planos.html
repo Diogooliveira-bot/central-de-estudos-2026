@@ -62,6 +62,7 @@ dialog label{display:block;font-weight:700;font-size:13px;margin:13px 0}dialog s
  <div class="meter"><div><strong id="mTotal">0</strong><small>Atividades</small></div><div><strong id="mDone">0</strong><small>Concluídas</small></div><div><strong id="mPct">0%</strong><small>Progresso</small></div></div>
  <div class="progress"><span id="progBar"></span></div>
  <div class="actions" id="planActions"><a id="pdf" class="button" target="_blank" rel="noopener">Abrir PDF original</a><a id="download" class="button">Baixar PDF</a><button id="activate">Tornar plano ativo</button><button id="delete" class="danger">Excluir plano</button></div>
+ <p class="tiny">Os links levam aos módulos da Central. Somente módulos identificados com segurança são vinculados automaticamente; tarefas concluídas continuam independentes do progresso das disciplinas.</p>
  <div class="calendar-controls"><strong>Calendário</strong><button id="previous" aria-label="Mês anterior">‹</button><input id="month" type="month" aria-label="Mês do cronograma"><button id="next" aria-label="Mês seguinte">›</button></div>
  <div id="calendar"></div>
 </section>
@@ -155,19 +156,22 @@ async function selectPlan(id){
  }catch(e){status(e.message,true)}
 }
 function moduleUrl(task){
+ const subject=task.disciplina_confirmada||task.disciplina_id;
+ if(!Object.hasOwn(labels,subject))return null;
  const uid=task.modulo_confirmado||task.modulo_uid;
- const module=catalog.find(m=>m.uid===uid);
- const url=module?.url||(!task.modulo_confirmado?task.modulo_url:'');
- return typeof url==='string'&&/^(?:\/)?modules\/[a-z0-9/_?=&.%+-]+$/i.test(url)?'/'+url.replace(/^\//,''):null;
+ const module=uid?catalog.find(m=>m.uid===uid&&m.disciplina_id===subject):null;
+ const params=new URLSearchParams({bc_plan_subject:subject});
+ if(module)params.set('bc_plan_uid',module.uid);
+ return {url:'/central-v119.html?'+params.toString(),module:Boolean(module)};
 }
 function renderCalendar(){
  if(!selected)return;
  const tasks=selected.atividades.filter(t=>t.data.startsWith(shownMonth));
  const grouped={};for(const t of tasks)(grouped[t.data] ||= []).push(t);
  by('calendar').innerHTML=Object.keys(grouped).sort().map(date=>`<section class="day"><div class="dayhead">${esc(dateLabel(date))}</div>${grouped[date].map(t=>{
- const url=moduleUrl(t);
- const needConfirmation=!t.disciplina_confirmada&&!t.disciplina_id||(!t.modulo_confirmado&&!t.modulo_uid);
- return `<div class="task ${t.concluida?'done':''}"><input type="checkbox" aria-label="Marcar ${esc(t.atividade)}" data-task="${esc(t.id)}" ${t.concluida?'checked':''}><div><div class="task-title">${esc(t.disciplina)} · ${esc(t.atividade)}</div><div class="task-meta">${esc(t.modulo||'Sem módulo específico')} · ${t.minutos} min ${t.hora?' · '+esc(t.hora):''}</div></div><div>${url?'<a target="_blank" rel="noopener" href="'+esc(url)+'">Abrir módulo</a>':''} ${needConfirmation?'<button data-map="'+esc(t.id)+'">Confirmar vínculo</button>':''}</div></div>`;
+ const link=moduleUrl(t);
+ const needConfirmation=!t.vinculo_confirmado&&!t.modulo_uid;
+ return `<div class="task ${t.concluida?'done':''}"><input type="checkbox" aria-label="Marcar ${esc(t.atividade)}" data-task="${esc(t.id)}" ${t.concluida?'checked':''}><div><div class="task-title">${esc(t.disciplina)} · ${esc(t.atividade)}</div><div class="task-meta">${esc(t.modulo||'Sem módulo específico')} · ${t.minutos} min ${t.hora?' · '+esc(t.hora):''}</div></div><div>${link?'<a target="_blank" rel="noopener" href="'+esc(link.url)+'">'+(link.module?'Abrir módulo na Central':'Abrir disciplina na Central')+'</a>':''} ${needConfirmation?'<button data-map="'+esc(t.id)+'">Confirmar módulo</button>':''}</div></div>`;
  }).join('')}</section>`).join('')||'<div class="note">Nenhuma atividade para este mês. Selecione outro mês.</div>';
 }
 by('month').onchange=()=>{shownMonth=by('month').value;renderCalendar()};
