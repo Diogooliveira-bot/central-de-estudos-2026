@@ -27,12 +27,13 @@ jobs:
       - name: Sintaxe ESM
         run: |
           node --check lib/study-plan-import.js
+          node --check tests/study-plan-pdf-unit.mjs
           node --check lib/study-plan-handler.js
           node --check lib/study-plan-module-catalog.js
           node --check api/auth.js
           node --check tests/study-plan-import-unit.mjs
       - name: Contrato ZIP e JSON
-        run: node --test tests/study-plan-import-unit.mjs tests/study-plan-ui-unit.mjs
+        run: node --test tests/study-plan-import-unit.mjs tests/study-plan-pdf-unit.mjs tests/study-plan-ui-unit.mjs
       - name: Regressao das contas e da agenda
         run: node --test tests/auth-unit.mjs tests/preview-neon-isolation-unit.mjs
       - name: Build estatico
