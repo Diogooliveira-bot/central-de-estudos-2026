@@ -4,12 +4,13 @@
 
 ## Arquivo entregue ao aluno
 
-O Léo envia pelo WhatsApp um arquivo .zip contendo, **somente na raiz**:
+**Formato recomendado ao aluno: somente um arquivo `.pdf`.** O PDF mantém a logomarca original e as seis seções do modelo aprovado em 03/11/2026; os dados do cronograma ficam embutidos em metadados XMP, sem alteração visual. O aluno recebe o PDF pelo WhatsApp e o importa diretamente na Central.
 
-- `plano.pdf` — PDF visual com a logomarca oficial e as seis seções do modelo aprovado em 03/11/2026.
-- `plano.json` — cronograma estruturado seguindo [schema-v1.0.0.json](schema-v1.0.0.json).
+O Léo gera internamente `plano.json` conforme [schema-v1.0.0.json](schema-v1.0.0.json), mas **não precisa enviar o JSON ao aluno**. O gerador oficial [`scripts/study-plan-embed-xmp.py`](../../scripts/study-plan-embed-xmp.py) coloca esse conteúdo dentro do PDF. Instruções detalhadas em [PDF_UNICO.md](PDF_UNICO.md).
 
-O Léo não precisa se autenticar ou comunicar-se diretamente com a Central. O aluno importa o ZIP manualmente.
+**Compatibilidade:** o ZIP antigo contendo apenas `plano.pdf` e `plano.json` ainda é aceito temporariamente para importações antigas; novos planos devem usar PDF único.
+
+O Léo não precisa se autenticar nem se comunicar diretamente com a Central.
 
 ## Campos obrigatórios
 
@@ -54,7 +55,7 @@ O Léo não precisa se autenticar ou comunicar-se diretamente com a Central. O a
 }
 ```
 
-ZIP com Python, após gerar o PDF no modelo oficial:
+**Formato legado (compatibilidade apenas):** ZIP com Python, após gerar o PDF no modelo oficial:
 
 ```python
 from zipfile import ZipFile, ZIP_DEFLATED
@@ -65,7 +66,7 @@ with ZipFile("plano-para-aluno.zip", "w", compression=ZIP_DEFLATED) as z:
 
 ## Segurança e limites
 
-- ZIP até 3.000.000 bytes; PDF até 2.600.000 bytes; JSON até 250.000 bytes; máximo 800 atividades.
+- PDF inteligente até 2.600.000 bytes e JSON embutido até 250.000 bytes; máximo 800 atividades. ZIP legado até 3.000.000 bytes.
 - Até 20 planos por conta. Retenção por até 24 meses (exclusão pelo aluno ou exclusão da conta).
 - Somente Deflate/Store, ZIP não criptografado, sem ZIP64, diretórios, symlinks, entradas sobrepostas, caminhos ou extras.
 - CRC32 obrigatório, PDF com assinatura e EOF; rejeitar gatilhos de JavaScript ou execução.
