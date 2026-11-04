@@ -430,7 +430,9 @@ test('publicacao legal permanece bloqueada ate versao final coordenada e servico
  assert.doesNotMatch(FREE_SIGNUP_TERMS_VERSION,/draft|minuta|pre[-_]?launch/i);
  for(const html of [terms,privacy,cookies]){
    assert.match(html,/noindex,nofollow,noarchive/);
-   assert.match(html,/Cadastro gratuito disponível\. Contratação Premium ainda não aberta\./);
+   assert.match(html,/Cadastro gratuito e contratação Premium disponíveis\./);
+   assert.doesNotMatch(html,/\{\{[A-Z_]+\}\}/,'Dados do fornecedor pendentes de preenchimento');
+   assert.doesNotMatch(html,/ainda não aberta|nenhum pagamento é solicitado|antes da abertura das vendas|antes do lançamento das vendas/i);
    assert.ok(html.includes(FREE_SIGNUP_TERMS_VERSION),'Página legal deve exibir a versão vigente do aceite');
    assert.doesNotMatch(html,/pré-lançamento|ainda não liberado|permanecem desabilitados/i);
    assert.match(html,/basecompleta\.estudos@gmail\.com/);
@@ -449,7 +451,7 @@ test('publicacao legal permanece bloqueada ate versao final coordenada e servico
 
 test('pedido válido apaga solicitações expiradas e controles antigos (retenção)',async()=>{
  const {handler,calls}=setup();
- const ok=await handler(req({action:'request',name:'Pessoa Fictícia',email:'retencao@example.invalid',password:'SenhaForte#2026',ageConfirmed:true,termsAccepted:true,termsVersion:'terms-2026-10-30-v2'}),res());
+ const ok=await handler(req({action:'request',name:'Pessoa Fictícia',email:'retencao@example.invalid',password:'SenhaForte#2026',ageConfirmed:true,termsAccepted:true,termsVersion:'terms-2026-11-04-v3'}),res());
  const sources=calls.map(c=>c.source);
  assert.ok(sources.some(s=>/^DELETE FROM public\.central_free_signup_pending WHERE expires_at<NOW\(\)$/.test(s)));
  assert.ok(sources.some(s=>/DELETE FROM public\.central_free_signup_limits WHERE window_start<NOW\(\)-INTERVAL '7 days'/.test(s)));
