@@ -102,3 +102,10 @@ conta de equipe/inativa/Premium manual ⇒ revisão manual com alerta.
 - Migrações **007 e 008** executadas pelo proprietário no `br-gentle-rice-aw5a3i2i` (18 instruções, trava de branch). Verificação: 12 usuários e 3 Premium ativos preservados; `central_premium_expiry_notices` e `central_hotmart_webhook_issues` criadas; reprocessamento disponível; 5 funções em America/Fortaleza. Avisos de vencimento continuam desligados (`BC_EXPIRY_REMINDERS_ENABLED` ausente em Production).
 - ✅ Teste oficial Hotmart 02/11 07:18: 7 × **200 - Processado**; 7 ocorrências gravadas (5 `product_not_configured`, 2 `informational_event`), sem dados pessoais.
 - ⚠️ Alerta: 5 e-mails em vez de 1 — o limite por motivo não resiste a notificações simultâneas (verificação lê `alerted_at` antes de enviar). Correção sugerida: tabela de controle por motivo com `INSERT … ON CONFLICT DO UPDATE … WHERE last_alert_at < NOW()-30 min`.
+
+## Alerta único (04/11/2026)
+
+- ✅ PR #219 mergeada (`58d62dc`), deploy Production concluído; webhook sem HOTTOK → 401.
+- ✅ Migração 009 (`central_hotmart_alert_throttle`) aplicada no Neon TEST e, pelo proprietário, em Production (`br-gentle-rice-aw5a3i2i`); 12 usuários e 3 Premium preservados.
+- ✅ Cenário "5 notificações simultâneas → 1 alerta": falha no código antigo (5) e passa no novo (1); suíte Hotmart 34/34.
+- ⏳ Reteste com o envio oficial da Hotmart pendente (sessão Hotmart expirada); esperado: 7 × 200 e 1 e-mail de alerta.
