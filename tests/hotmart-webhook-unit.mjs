@@ -89,8 +89,12 @@ test('ofertas reais Hotmart mapeiam 6 e 12 meses; preço e parcelas não alteram
  refund.data.purchase.status='REFUNDED';
  assert.equal(readHotmartEvent(refund,config).value.months,12);
  const recurring=event('PURCHASE_APPROVED','gh4ajvj1');
- recurring.data.purchase.date_next_charge=Date.now()+86400000;
+ recurring.data.subscription={status:'ACTIVE',plan:{id:1},subscriber:{code:'S1'}};
  assert.match(readHotmartEvent(recurring,config).error,/recorrente/);
+ // Recuperador automatico: proxima cobranca agendada nao torna a compra assinatura.
+ const recovered=event('PURCHASE_APPROVED','gh4ajvj1');
+ recovered.data.purchase.date_next_charge=Date.now()+86400000;
+ assert.equal(readHotmartEvent(recovered,config).value.months,12);
 });
 
 test('rota rejeita não autenticados, GET, tipo e payload grande sem banco',async()=>{
@@ -273,8 +277,7 @@ test('modelo sem renovacao automatica recusa aprovacao de assinatura recorrente'
  const cfg=webhookConfig(env);
  const recurringPayloads=[
   event('PURCHASE_APPROVED','semestralTEST',{data:{...event().data,subscription:{status:'ACTIVE'}}}),
-  event('PURCHASE_APPROVED','semestralTEST',{data:{...event().data,purchase:{...event().data.purchase,recurrence_number:1}}}),
-  event('PURCHASE_APPROVED','semestralTEST',{data:{...event().data,purchase:{...event().data.purchase,date_next_charge:1799999999000}}}),
+  event('PURCHASE_APPROVED','semestralTEST',{data:{...event().data,subscription:{subscriber:{code:'X1'}}}}),
   event('PURCHASE_APPROVED','anualTEST',{data:{...event().data,purchase:{...event().data.purchase,subscription_anticipation_purchase:true}}}),
  ];
  for(const p of recurringPayloads){
@@ -285,6 +288,11 @@ test('modelo sem renovacao automatica recusa aprovacao de assinatura recorrente'
  // Um pagamento unico, mesmo parcelado no cartao, nao equivale a renovacao.
  const oneTime=readHotmartEvent(event('PURCHASE_APPROVED','semestralTEST'),cfg);
  assert.equal(oneTime.value.months,6);
+ // Recuperador automatico: 1a cobranca libera; parcelas seguintes nao somam tempo.
+ const recovered=event('PURCHASE_APPROVED','semestralTEST',{data:{...event().data,purchase:{...event().data.purchase,recurrence_number:1,date_next_charge:1799999999000,payment:{type:'CREDIT_CARD',installments_number:1}}}});
+ assert.equal(readHotmartEvent(recovered,cfg).value.months,6);
+ const nextInstallment=event('PURCHASE_APPROVED','semestralTEST',{data:{...event().data,purchase:{...event().data.purchase,recurrence_number:2,date_next_charge:1802599999000}}});
+ assert.equal(readHotmartEvent(nextInstallment,cfg).code,'installment_charge');
  // Eventos de reembolso/chargeback continuam aptos a revogar uma concessao anterior.
  const refund=event('PURCHASE_REFUNDED','semestralTEST',{data:{...event().data,subscription:{status:'CANCELLED'}}});
  refund.data.purchase.status='REFUNDED';

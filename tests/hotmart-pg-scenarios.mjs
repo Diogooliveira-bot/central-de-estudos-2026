@@ -254,6 +254,26 @@ test('notificações simultâneas com o mesmo problema geram um único alerta',a
   assert.ok(rows[0].n>=5,'todas as ocorrências registradas');
 });
 
+test('compra recuperada em parcelas: 1ª cobrança libera, parcelas seguintes não somam tempo nem alertam',async()=>{
+  const email=mail(),uid=await student(email);
+  const first=event('PURCHASE_APPROVED',{email,offer:OFFER6});
+  Object.assign(first.data.purchase,{recurrence_number:1,date_next_charge:Date.now()+30*86400000});
+  assert.equal((await hook(first)).body.state,'applied');
+  const end=await endsAt(uid);
+  assert.ok(close(end,monthsFromNow(6)));
+  const before=alerts.length;
+  for(const n of [2,3,4,5,6]){
+    const next=event('PURCHASE_APPROVED',{email,offer:OFFER6});
+    Object.assign(next.data.purchase,{recurrence_number:n,date_next_charge:Date.now()+n*30*86400000});
+    const r=await hook(next);
+    assert.equal(r.statusCode,200);assert.equal(r.body.ignored,true);
+  }
+  assert.equal((await endsAt(uid)).getTime(),end.getTime(),'prazo inalterado');
+  assert.equal(alerts.length,before,'parcelas não geram alerta');
+  const sub=event('PURCHASE_APPROVED',{email:mail()});sub.data.subscription={status:'ACTIVE',plan:{id:1},subscriber:{code:'S'}};
+  assert.equal((await hook(sub)).statusCode,422,'assinatura real continua recusada');
+});
+
 test('compra internacional (conversão automática de moeda) libera o plano da oferta',async()=>{
   const email=mail(),uid=await student(email),body=event('PURCHASE_APPROVED',{email,offer:OFFER12});
   body.data.purchase.price={value:34.5,currency_value:'USD'};
