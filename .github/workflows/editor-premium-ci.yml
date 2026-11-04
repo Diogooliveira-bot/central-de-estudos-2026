@@ -1,0 +1,42 @@
+name: Editor Premium — testes isolados
+
+on:
+  pull_request:
+    paths:
+      - 'ui/editor-premium-v1.*'
+      - 'api/content-editor.js'
+      - 'central-v119.html'
+      - 'tests/editor-premium-v1-unit.mjs'
+      - 'package.json'
+      - '.github/workflows/editor-premium-ci.yml'
+  push:
+    branches:
+      - feature/editor-premium-base-completa-20261104
+
+permissions:
+  contents: read
+
+jobs:
+  editor-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - name: Configurar Node
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Instalar dependencias do projeto
+        run: npm ci --ignore-scripts
+      - name: Verificar sintaxe
+        run: |
+          node --check ui/editor-premium-v1.js
+          node --check api/content-editor.js
+      - name: Rodar testes do Editor Premium e das imagens
+        run: npm run test:editor-premium
+      - name: Verificar build estatico sem material protegido
+        run: npm run build:vercel-output

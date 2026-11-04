@@ -1,0 +1,100 @@
+/* Base Completa — Editor Premium v1, area isolada de edicao */
+.bcpe-launch{min-height:40px!important;padding:8px 13px!important;margin-left:6px;border:1px solid #bed4df!important;border-radius:8px!important;background:#eff7fb!important;color:#124d6a!important;font:700 12px/1.3 system-ui,sans-serif!important;cursor:pointer}
+.bcpe-launch:hover{background:#e3f1f8!important}
+body.bcpe-open{overflow:hidden!important}
+.bcpe-screen{position:fixed;inset:0;z-index:2147483400;display:flex;flex-direction:column;background:#f3f6f9;color:#243446;font:14px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif;isolation:isolate}
+.bcpe-screen *, .bcpe-screen *::before,.bcpe-screen *::after{box-sizing:border-box}
+.bcpe-toolbar{position:relative;z-index:3;flex:none;background:#fff;border-bottom:1px solid #dbe4ec;box-shadow:0 3px 15px #17293e12;padding:9px max(16px,calc((100vw - 1330px)/2));display:grid;gap:7px}
+.bcpe-row{display:flex;align-items:center;flex-wrap:wrap;gap:6px;min-height:32px}
+.bcpe-row strong{font-size:15px;color:#102e4c;letter-spacing:-.03em}
+.bcpe-row strong span{font-weight:500;color:#627388}
+.bcpe-row [data-status]{font-size:12px;color:#5f6e81;max-width:270px;text-overflow:ellipsis;overflow:hidden;white-space:nowrap}
+.bcpe-spacer{flex:1}
+.bcpe-toolbar button,.bcpe-toolbar select,.bcpe-color{font:600 12px system-ui,-apple-system,"Segoe UI",sans-serif;border:1px solid #d7e1eb;background:#fff;color:#263f56;border-radius:7px;min-height:32px;padding:6px 10px;cursor:pointer}
+.bcpe-toolbar button:hover,.bcpe-toolbar select:hover{background:#eff5fa;border-color:#a9c7d8}
+.bcpe-toolbar button:focus-visible,.bcpe-toolbar select:focus-visible,.bcpe-block-actions button:focus-visible{outline:3px solid #6aadd1;outline-offset:2px}
+.bcpe-toolbar button:disabled{opacity:.6;cursor:progress}
+.bcpe-toolbar .bcpe-primary{background:#143c61;color:#fff;border-color:#143c61;padding:8px 18px}
+.bcpe-toolbar .bcpe-primary:hover{background:#0a5b8a;color:#fff}
+.bcpe-color{display:flex;align-items:center;gap:6px;padding:0 7px}
+.bcpe-color input{border:0;width:24px;height:24px;background:transparent;cursor:pointer;padding:0}
+.bcpe-scroll{flex:1;overflow:auto;overscroll-behavior:contain;padding:24px 20px 80px}
+.bcpe-paper{width:min(940px,100%);min-height:72vh;margin:0 auto;background:white;border:1px solid #dce5ec;border-radius:12px;box-shadow:0 12px 42px #0a264014;padding:45px clamp(16px,5vw,64px)}
+.bcpe-document-title{font:700 19px/1.3 system-ui,sans-serif!important;color:#193752!important;margin:0 0 25px!important;border-bottom:1px solid #e1e9ef;padding-bottom:14px;letter-spacing:-.02em}
+.bcpe-workspace{display:flex;flex-direction:column;gap:7px}
+.bcpe-block{position:relative;border:1px solid transparent;border-radius:8px;padding:6px 10px 10px;min-width:0;background:#fff;transition:background .13s,border .13s}
+.bcpe-block:hover{border-color:#dfebf1;background:#fcfeff}
+.bcpe-block.selected{border-color:#9dbfd5;background:#fbfdff;box-shadow:0 0 0 2px #d5e7f480}
+.bcpe-block-head{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:25px;color:#637c8e;font:600 10px/1.1 system-ui,sans-serif;margin-bottom:3px}
+.bcpe-block-name{letter-spacing:.02em;text-transform:uppercase}
+.bcpe-block-actions{display:flex;gap:3px;opacity:.15;transition:opacity .15s}
+.bcpe-block:hover .bcpe-block-actions,.bcpe-block.selected .bcpe-block-actions,.bcpe-block:focus-within .bcpe-block-actions{opacity:1}
+.bcpe-block-actions button{min-width:28px;height:26px;border:1px solid #d6e4ee;border-radius:5px;background:white;color:#415970;font:700 13px/1 system-ui,sans-serif;cursor:pointer}
+.bcpe-block-actions button:hover{background:#e9f3fa}
+.bcpe-node{display:block;max-width:100%;min-height:1.4em;overflow-wrap:break-word}
+.bcpe-node:focus,.bcpe-node [data-bcpe-edit]:focus{outline:0}
+.bcpe-node [data-bcpe-edit]{border-radius:3px;min-height:1.3em;cursor:text;outline-offset:3px}
+.bcpe-block.selected .bcpe-node [data-bcpe-edit]:focus,.bcpe-block.selected .bcpe-node[data-bcpe-edit]:focus{outline:2px solid #c5e1ef}
+.bcpe-workspace h1.bcpe-node,.bcpe-workspace h1[data-bcpe-edit]{font:750 26px/1.35 system-ui,sans-serif!important;color:#152e4d!important;margin:10px 0!important}
+.bcpe-workspace h2.bcpe-node,.bcpe-workspace h2[data-bcpe-edit]{font:750 22px/1.4 system-ui,sans-serif!important;color:#1b496c!important;margin:10px 0!important}
+.bcpe-workspace h3.bcpe-node,.bcpe-workspace h3[data-bcpe-edit]{font:700 18px/1.4 system-ui,sans-serif!important;color:#20617f!important;margin:8px 0!important}
+.bcpe-workspace h4{font-weight:750;color:#16466b}
+.bcpe-workspace p.bcpe-node,.bcpe-workspace .bcpe-node p{font-size:15px!important;line-height:1.7!important;margin:5px 0!important;color:#273749!important}
+.bcpe-workspace :is(ul,ol){padding-left:30px;margin:7px 0!important;list-style:revert}
+.bcpe-workspace li{margin:4px 0}
+.bcpe-workspace :is(strong,b){font-weight:750}
+.bcpe-workspace mark{background:#ffeab2;color:inherit}
+.bcpe-educational{border:1px solid #cce0ec;border-left:4px solid #317ba2;border-radius:7px;background:#f4f9fc;padding:16px 19px;margin:12px 0;display:grid;gap:7px}
+.bcpe-educational h4{margin:0!important;font:750 13px/1.4 system-ui,sans-serif!important;letter-spacing:.035em;color:#225978!important}
+.bcpe-educational p{margin:0!important;font:400 14px/1.65 system-ui,sans-serif!important;color:#263e53!important}
+.bcpe-kind-atencao{border-left-color:#c28d28;background:#fffbf2}
+.bcpe-kind-atencao h4{color:#805615!important}
+.bcpe-kind-pegadinha{border-left-color:#a65c4a;background:#fff8f6}
+.bcpe-kind-pegadinha h4{color:#914a38!important}
+.bcpe-kind-decore{border-left-color:#216e97;background:#f1f8fd}
+.bcpe-kind-exemplo{border-left-color:#47806f;background:#f2faf6}
+.bcpe-kind-resumo{border-left-color:#5974a8;background:#f4f7fc}
+.bcpe-workspace .bc-editor-card,.bcpe-workspace .bc-editor-review-box,.bcpe-workspace .bc-editor-compare-card{display:block;min-width:0;background:#f6f9fc;border:1px solid #dbe7ef;border-radius:8px;padding:16px;margin:8px 0}
+.bcpe-workspace .bc-editor-compare,.bcpe-workspace .bc-editor-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:13px;margin:8px 0}
+.bcpe-workspace .bc-editor-table-wrap{max-width:100%;overflow-x:auto}
+.bcpe-workspace table{border-collapse:collapse;width:100%;font:14px/1.4 system-ui,sans-serif}
+.bcpe-workspace :is(td,th){border:1px solid #cfdfe9;padding:9px;text-align:left;min-width:80px}
+.bcpe-workspace th{background:#eff5f9;font-weight:750}
+.bcpe-workspace figure{margin:10px auto!important;max-width:100%;text-align:center}
+.bcpe-workspace img{display:block;max-width:100%;height:auto;margin:0 auto}
+.bcpe-workspace figcaption{font:12px/1.4 system-ui,sans-serif;color:#637c8e;padding:6px}
+.bcpe-workspace :is(blockquote,pre){border-left:3px solid #8aacc3;background:#f5f9fc;padding:12px 16px;margin:12px 0}
+.bcpe-preview .bcpe-block{border-color:transparent!important;background:transparent!important;box-shadow:none!important}
+.bcpe-preview .bcpe-block-head{display:none}
+.bcpe-preview .bcpe-workspace [contenteditable]{pointer-events:none;outline:none!important}
+.bcpe-toast{position:fixed;z-index:2147483500;bottom:20px;left:50%;transform:translate(-50%,12px);opacity:0;pointer-events:none;transition:.2s;padding:13px 18px;border-radius:8px;background:#18344e;color:#fff;box-shadow:0 12px 35px #09233633;font:600 13px/1.4 system-ui,sans-serif;max-width:min(600px,calc(100vw - 30px));text-align:center}
+.bcpe-toast.show{opacity:1;transform:translate(-50%,0)}
+/* Cards educacionais no leitor publicado, sem alterar outros estilos de cards. */
+.bc-native-article .bcpe-educational,.cf-native-reader article .bcpe-educational{border:1px solid #cce0ec;border-left:4px solid #317ba2;border-radius:8px;background:#f4f9fc;padding:16px 19px;margin:18px 0;display:block}
+.bc-native-article .bcpe-educational h4,.cf-native-reader article .bcpe-educational h4{margin:0 0 7px!important;font-size:.95em!important;font-weight:800!important;color:#205a7c}
+.bc-native-article .bcpe-educational p,.cf-native-reader article .bcpe-educational p{margin:0!important;line-height:1.6}
+.bc-native-article .bcpe-kind-atencao,.cf-native-reader article .bcpe-kind-atencao{border-left-color:#c28d28;background:#fffbf2}
+.bc-native-article .bcpe-kind-pegadinha,.cf-native-reader article .bcpe-kind-pegadinha{border-left-color:#a65c4a;background:#fff8f6}
+.bc-native-article .bcpe-kind-decore,.cf-native-reader article .bcpe-kind-decore{border-left-color:#216e97;background:#f1f8fd}
+.bc-native-article .bcpe-kind-exemplo,.cf-native-reader article .bcpe-kind-exemplo{border-left-color:#47806f;background:#f2faf6}
+.bc-native-article .bcpe-kind-resumo,.cf-native-reader article .bcpe-kind-resumo{border-left-color:#5974a8;background:#f4f7fc}
+@media(max-width:720px){
+ .bcpe-toolbar{padding:8px 10px;gap:5px}
+ .bcpe-row strong{font-size:12px}.bcpe-row strong span{display:none}
+ .bcpe-row [data-status]{display:none}
+ .bcpe-toolbar :is(button,select){padding:5px 7px;min-height:35px}
+ .bcpe-scroll{padding:10px 8px 45px}
+ .bcpe-paper{border-radius:6px;padding:20px 12px}
+ .bcpe-document-title{font-size:16px!important}
+ .bcpe-block{padding:4px 5px 8px}
+ .bcpe-block-actions{opacity:1}
+ .bcpe-workspace .bc-editor-compare,.bcpe-workspace .bc-editor-cards{grid-template-columns:1fr}
+}
+.bcpe-paste-dialog{position:absolute;inset:0;z-index:10;display:grid;place-items:center;background:#11283d88;padding:16px}
+.bcpe-paste-panel{width:min(780px,100%);max-height:calc(100vh - 32px);overflow:auto;background:white;border:1px solid #c6d6e2;border-radius:12px;box-shadow:0 22px 70px #031d3780;padding:24px}
+.bcpe-paste-panel h3{margin:0 0 7px;font:750 20px/1.3 system-ui,sans-serif;color:#1b3c5b}
+.bcpe-paste-panel p{margin:0 0 14px;font:13px/1.5 system-ui,sans-serif;color:#5e7080}
+.bcpe-paste-panel textarea{display:block;width:100%;min-height:280px;padding:14px;border:1px solid #c7d7e3;border-radius:7px;resize:vertical;font:14px/1.6 ui-monospace,Consolas,monospace;color:#20374a;background:#fafdff}
+.bcpe-paste-actions{display:flex;justify-content:flex-end;gap:9px;margin-top:15px}
+.bcpe-paste-actions button{padding:9px 16px;border:1px solid #b4cbdc;border-radius:6px;background:white;cursor:pointer;font:650 13px system-ui,sans-serif}
+.bcpe-paste-actions .bcpe-primary{background:#143c61;border-color:#143c61;color:#fff}
