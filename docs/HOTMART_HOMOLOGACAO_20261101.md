@@ -109,3 +109,9 @@ conta de equipe/inativa/Premium manual ⇒ revisão manual com alerta.
 - ✅ Migração 009 (`central_hotmart_alert_throttle`) aplicada no Neon TEST e, pelo proprietário, em Production (`br-gentle-rice-aw5a3i2i`); 12 usuários e 3 Premium preservados.
 - ✅ Cenário "5 notificações simultâneas → 1 alerta": falha no código antigo (5) e passa no novo (1); suíte Hotmart 34/34.
 - ⏳ Reteste com o envio oficial da Hotmart pendente (sessão Hotmart expirada); esperado: 7 × 200 e 1 e-mail de alerta.
+
+## Ofertas e Recuperador automático (04/11/2026)
+
+- ✅ Ofertas: Anual "Base Completa Premium — Anual" com descrição de 12 meses; Semestral com descrição reescrita em 228 caracteres (a anterior passava do limite de 255 e era cortada em "…Pagamen"). Aceite do recuperador marcado e salvo pelo proprietário.
+- ✅ PR #221 mergeada (`275ea0e`), Production `dpl_GJAhtXe5WEDenBGA5omaUgtJTRyW` READY; webhook sem HOTTOK → 401. Compras do Recuperador automático: 1ª cobrança libera o prazo; parcelas seguintes (`recurrence_number` > 1) não somam tempo nem alertam; assinatura real continua recusada.
+- Risco residual: inadimplência das parcelas é cobrada pela Hotmart; acesso só é revogado por reembolso/chargeback/cancelamento da transação original.
