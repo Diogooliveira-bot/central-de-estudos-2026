@@ -98,3 +98,17 @@ body.bcpe-open{overflow:hidden!important}
 .bcpe-paste-actions{display:flex;justify-content:flex-end;gap:9px;margin-top:15px}
 .bcpe-paste-actions button{padding:9px 16px;border:1px solid #b4cbdc;border-radius:6px;background:white;cursor:pointer;font:650 13px system-ui,sans-serif}
 .bcpe-paste-actions .bcpe-primary{background:#143c61;border-color:#143c61;color:#fff}
+
+
+/* V1.1 — ajustes observados no vídeo de edição (04/11/2026) */
+.bcpe-block.bcpe-block-composite{border-color:transparent!important;background:transparent!important;box-shadow:none!important}
+.bcpe-block.bcpe-block-composite>.bcpe-block-head{border-bottom:1px solid #e5edf2;padding:0 4px 5px;margin-bottom:6px}
+.bcpe-block.bcpe-block-composite .bcpe-block-name{color:#476a83}
+.bcpe-workspace [data-bcpe-edit]{transition:box-shadow .15s,background .15s}
+.bcpe-workspace [data-bcpe-edit]:hover{box-shadow:inset 0 0 0 1px #cfe6f2;background:#f8fbff}
+.bcpe-workspace [data-bcpe-edit].bcpe-field-selected{box-shadow:inset 0 0 0 1px #8fbed8;background:#f5fbff;outline:0!important}
+.bcpe-workspace :is(p,li,blockquote,figcaption) :is(code,font){font-family:inherit!important;font-size:inherit!important;white-space:normal;letter-spacing:inherit}
+.bcpe-row [data-context]{display:inline-block;max-width:260px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font:650 11px/1.35 system-ui,sans-serif;color:#296787;background:#f3f9fc;padding:6px 9px;border-radius:6px}
+.bcpe-workspace .bcpe-block .bcpe-node[data-bcpe-edit]:focus{box-shadow:inset 0 0 0 2px #9fcade;outline:0!important}
+.bcpe-workspace .bcpe-block-composite>.bcpe-node{border:0!important;background:transparent!important}
+@media(max-width:740px){.bcpe-row [data-context]{max-width:150px;font-size:10px}}
