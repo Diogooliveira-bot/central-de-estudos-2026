@@ -244,6 +244,16 @@ test('revisão manual (conta da equipe) é registrada e alertada; reprocessament
   assert.equal((await getEffectivePlan(sql,id)).plan,'premium');
 });
 
+test('notificações simultâneas com o mesmo problema geram um único alerta',async()=>{
+  const before=alerts.length;
+  const burst=Array.from({length:5},()=>event('PURCHASE_APPROVED',{email:mail(),product:'999001'}));
+  const answers=await Promise.all(burst.map(b=>hook(b)));
+  assert.ok(answers.every(r=>r.statusCode===200));
+  assert.equal(alerts.length-before,1,'um alerta para cinco ocorrências');
+  const rows=await sql`SELECT count(*)::int AS n FROM central_hotmart_webhook_issues WHERE reason='product_not_configured'`;
+  assert.ok(rows[0].n>=5,'todas as ocorrências registradas');
+});
+
 test('compra internacional (conversão automática de moeda) libera o plano da oferta',async()=>{
   const email=mail(),uid=await student(email),body=event('PURCHASE_APPROVED',{email,offer:OFFER12});
   body.data.purchase.price={value:34.5,currency_value:'USD'};
