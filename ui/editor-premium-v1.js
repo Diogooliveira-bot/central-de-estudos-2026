@@ -115,7 +115,11 @@ function block(node){
  const top=document.createElement('header');top.className='bcpe-block-head';
  const label=document.createElement('span');label.className='bcpe-block-name';label.textContent=getType(node);
  const commands=document.createElement('div');commands.className='bcpe-block-actions';
- const options=[['up','↑','Mover para cima'],['down','↓','Mover para baixo'],['duplicate','⧉','Duplicar'],['delete','×','Excluir bloco']];
+ // Seções compostas podem conter imagem, tabelas e diversos capítulos.
+ // Nunca oferecer exclusão/duplicação em um clique para o conjunto inteiro.
+ const composite=box.classList.contains('bcpe-block-composite');
+ const options=composite?[['up','↑','Mover seção para cima'],['down','↓','Mover seção para baixo']]:
+  [['up','↑','Mover para cima'],['down','↓','Mover para baixo'],['duplicate','⧉','Duplicar'],['delete','×','Excluir bloco']];
  if(node.matches('table,.bc-editor-table-wrap,.adm-table-scroll'))options.unshift(['table-row','+ Linha','Adicionar linha'],['table-col','+ Coluna','Adicionar coluna']);
  options.forEach(function(item){
   const b=document.createElement('button');b.type='button';b.dataset.action=item[0];b.textContent=item[1];b.title=item[2];b.setAttribute('aria-label',item[2]);commands.appendChild(b);
