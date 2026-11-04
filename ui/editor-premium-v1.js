@@ -139,7 +139,8 @@ function serialize(state){
  blocks(state).forEach(function(box){
   const node=box.querySelector(':scope > .bcpe-node');if(!node)return;
   const cloned=node.cloneNode(true);
-  cloned.classList.remove('bcpe-node');
+  cloned.classList.remove('bcpe-node','bcpe-field-selected');
+  cloned.querySelectorAll('.bcpe-field-selected').forEach(el=>el.classList.remove('bcpe-field-selected'));
   cloned.querySelectorAll('[data-bcpe-edit]').forEach(el=>{el.removeAttribute('data-bcpe-edit');el.removeAttribute('contenteditable')});
   cloned.removeAttribute('contenteditable');cloned.removeAttribute('data-bcpe-edit');
   clean(cloned);
