@@ -364,6 +364,7 @@ function makeToolbar(state){
  '<div class="bcpe-row"><select data-insert><option value="">+ Inserir</option><option value="p">Parágrafo</option><option value="h2">Título</option><option value="h3">Subtítulo</option><option value="ul">Lista</option><option value="ol">Lista numerada</option><option value="table">Tabela</option><option value="atencao">Card ATENÇÃO</option><option value="decore">Card DECORE</option><option value="pegadinha">Card PEGADINHA</option><option value="exemplo">Card EXEMPLO</option><option value="resumo">Card RESUMO</option><option value="image">Imagem</option></select>'+
  '<button data-action="paste">Colar capítulo</button><button data-action="undo" title="Desfazer">↶ Desfazer</button><button data-action="redo" title="Refazer">↷ Refazer</button>'+
  '<span class="bcpe-spacer"></span><button data-action="versions">Versões</button><button data-action="preview">Prévia</button><button class="bcpe-primary" data-action="publish">Publicar conteúdo</button></div>';
+ if(!isAdmin){const imageOption=bar.querySelector('[data-insert] option[value="image"]');if(imageOption)imageOption.remove()}
  state.status=bar.querySelector('[data-status]');state.typeSelect=bar.querySelector('[data-style]');
  bar.addEventListener('pointerdown',function(e){if(e.target.closest('button[data-format]'))e.preventDefault()});
  bar.addEventListener('change',function(e){
