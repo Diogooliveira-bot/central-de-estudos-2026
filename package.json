@@ -29,7 +29,8 @@
     "test:premium-and-auth": "npm run test:premium-protection && npm run test:password-reset",
     "test:hotmart-webhook": "node --test tests/hotmart-webhook-unit.mjs tests/hotmart-pg-scenarios.mjs",
     "test:discipline-loading": "node --test tests/disciplinas-foco-loading-unit.mjs",
-    "test:adm-didatico": "node --test tests/adm-learning-guide-unit.mjs tests/adm-standardization-unit.mjs tests/adm-approved-complete-unit.mjs"
+    "test:adm-didatico": "node --test tests/adm-learning-guide-unit.mjs tests/adm-standardization-unit.mjs tests/adm-approved-complete-unit.mjs",
+    "test:editor-premium": "node --test tests/editor-premium-v1-unit.mjs tests/admin-module-images-unit.mjs"
   },
   "devDependencies": {
     "@electric-sql/pglite": "^0.3.16",
