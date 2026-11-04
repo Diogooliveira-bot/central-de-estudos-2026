@@ -101,17 +101,25 @@ function getType(node){
  if(node.matches('.bcpe-educational'))return 'Card educativo';
  if(node.matches('.bc-editor-cards,.bc-editor-compare'))return 'Grupo de cards';
  if(node.matches('.bc-editor-review-box'))return 'Caixa de revisão';
- if(node.matches('figure'))return 'Imagem';
+ if(node.matches('figure')){
+  const descendants=node.querySelectorAll('p,h1,h2,h3,h4,li,td,th');
+  return descendants.length>2?'Seção ilustrada · textos independentes':'Imagem';
+ }
  if(node.matches('table,.bc-editor-table-wrap,.adm-table-scroll'))return 'Tabela';
  const names={p:'Parágrafo',h1:'Título 1',h2:'Título 2',h3:'Título 3',h4:'Título 4',ul:'Lista',ol:'Lista numerada',blockquote:'Citação'};
  return names[node.tagName.toLowerCase()]||'Bloco especial';
 }
 function block(node){
  const box=document.createElement('section');box.className='bcpe-block';
+ if(node.matches('figure,section,div')&&node.querySelectorAll('p,h1,h2,h3,h4,li,td,th').length>2)box.classList.add('bcpe-block-composite');
  const top=document.createElement('header');top.className='bcpe-block-head';
  const label=document.createElement('span');label.className='bcpe-block-name';label.textContent=getType(node);
  const commands=document.createElement('div');commands.className='bcpe-block-actions';
- const options=[['up','↑','Mover para cima'],['down','↓','Mover para baixo'],['duplicate','⧉','Duplicar'],['delete','×','Excluir bloco']];
+ // Seções compostas podem conter imagem, tabelas e diversos capítulos.
+ // Nunca oferecer exclusão/duplicação em um clique para o conjunto inteiro.
+ const composite=box.classList.contains('bcpe-block-composite');
+ const options=composite?[['up','↑','Mover seção para cima'],['down','↓','Mover seção para baixo']]:
+  [['up','↑','Mover para cima'],['down','↓','Mover para baixo'],['duplicate','⧉','Duplicar'],['delete','×','Excluir bloco']];
  if(node.matches('table,.bc-editor-table-wrap,.adm-table-scroll'))options.unshift(['table-row','+ Linha','Adicionar linha'],['table-col','+ Coluna','Adicionar coluna']);
  options.forEach(function(item){
   const b=document.createElement('button');b.type='button';b.dataset.action=item[0];b.textContent=item[1];b.title=item[2];b.setAttribute('aria-label',item[2]);commands.appendChild(b);
@@ -126,14 +134,17 @@ function select(state,box){
  box.classList.add('selected');state.selected=box;
  const node=box.querySelector(':scope > .bcpe-node');
  const label=box.querySelector('.bcpe-block-name');if(label&&node)label.textContent=getType(node);
- if(state.typeSelect)state.typeSelect.value=node&&/^(P|H1|H2|H3|BLOCKQUOTE)$/.test(node.tagName)?node.tagName.toLowerCase():'';
+ if(state.currentField&&!box.contains(state.currentField))state.currentField=null;
+ updateContext(state);
+
 }
 function serialize(state){
  const doc=document.createElement('div');
  blocks(state).forEach(function(box){
   const node=box.querySelector(':scope > .bcpe-node');if(!node)return;
   const cloned=node.cloneNode(true);
-  cloned.classList.remove('bcpe-node');
+  cloned.classList.remove('bcpe-node','bcpe-field-selected');
+  cloned.querySelectorAll('.bcpe-field-selected').forEach(el=>el.classList.remove('bcpe-field-selected'));
   cloned.querySelectorAll('[data-bcpe-edit]').forEach(el=>{el.removeAttribute('data-bcpe-edit');el.removeAttribute('contenteditable')});
   cloned.removeAttribute('contenteditable');cloned.removeAttribute('data-bcpe-edit');
   clean(cloned);
@@ -188,47 +199,121 @@ function tableNode(){
  for(let r=0;r<3;r++){const tr=document.createElement('tr');for(let c=0;c<2;c++){const td=document.createElement(r===0?'th':'td');td.textContent=r===0?'Cabeçalho '+(c+1):'Conteúdo';tr.appendChild(td)}body.appendChild(tr)}
  table.appendChild(body);wrap.appendChild(table);return wrap;
 }
+function fieldFromRange(state,range){
+ if(!range||!range.startContainer||!range.endContainer)return null;
+ const root=range.commonAncestorContainer.nodeType===1?range.commonAncestorContainer:range.commonAncestorContainer.parentElement;
+ const field=root&&root.closest('[data-bcpe-edit]');
+ if(!field||!field.isConnected||!state.workspace.contains(field))return null;
+ if(!field.contains(range.startContainer)||!field.contains(range.endContainer))return null;
+ return field;
+}
 function getSelectionRange(state){
  const selection=window.getSelection();if(!selection||!selection.rangeCount||selection.isCollapsed)return null;
  const range=selection.getRangeAt(0);
- if(!state.workspace.contains(range.commonAncestorContainer))return null;
- const root=range.commonAncestorContainer.nodeType===1?range.commonAncestorContainer:range.commonAncestorContainer.parentElement;
- const field=root&&root.closest('[data-bcpe-edit]');
- if(!field||!field.contains(range.startContainer)||!field.contains(range.endContainer))return null;
- return range;
+ return fieldFromRange(state,range)?range:null;
+}
+function rememberSelection(state){
+ const range=getSelectionRange(state);
+ if(!range)return;
+ state.savedRange=range.cloneRange();
+ state.currentField=fieldFromRange(state,range);
+ updateContext(state);
+}
+function currentEditable(state){
+ const field=state.currentField;
+ if(field&&field.isConnected&&state.workspace.contains(field)&&field.hasAttribute('data-bcpe-edit'))return field;
+ const selected=state.selected&&state.selected.querySelector(':scope > .bcpe-node');
+ return selected&&selected.matches('[data-bcpe-edit]')?selected:null;
+}
+function fieldLabel(field){
+ if(!field)return 'Clique em um parágrafo para editar';
+ const names={p:'Parágrafo',h1:'Título 1',h2:'Título 2',h3:'Título 3',h4:'Título 4',li:'Item de lista',td:'Célula da tabela',th:'Cabeçalho da tabela',figcaption:'Legenda',blockquote:'Citação'};
+ return 'Editando: '+(names[field.tagName.toLowerCase()]||'Trecho de texto');
+}
+function updateContext(state){
+ const field=currentEditable(state);
+ if(state.typeSelect)state.typeSelect.value=field&&/^(P|H1|H2|H3|BLOCKQUOTE)$/.test(field.tagName)?field.tagName.toLowerCase():'';
+ if(state.context)state.context.textContent=fieldLabel(field);
+ if(state.workspace){
+  state.workspace.querySelectorAll('.bcpe-field-selected').forEach(x=>x.classList.remove('bcpe-field-selected'));
+  if(field)field.classList.add('bcpe-field-selected');
+ }
 }
 function styleSelected(state,tag,styles){
- const range=getSelectionRange(state)||(state.savedRange&&state.savedRange.startContainer.isConnected?state.savedRange.cloneRange():null);
- if(!range)return notify('Selecione primeiro um trecho dentro do mesmo parágrafo ou card.');
- state.savedRange=null;
+ const live=getSelectionRange(state);
+ const remembered=state.savedRange&&fieldFromRange(state,state.savedRange)?state.savedRange.cloneRange():null;
+ const range=live||remembered;
+ const field=range?fieldFromRange(state,range):currentEditable(state);
+ if(!field)return notify('Clique no parágrafo desejado ou selecione um trecho antes de formatar.');
+ if(!range){
+  // Without a selection, Word-like behavior: format only the active paragraph.
+  if(styles&&Object.keys(styles).length){
+   Object.entries(styles).forEach(([k,v])=>field.style.setProperty(k.replace(/[A-Z]/g,m=>'-'+m.toLowerCase()),v,'important'));
+  }else{
+   const el=document.createElement(tag);
+   while(field.firstChild)el.appendChild(field.firstChild);
+   field.appendChild(el);
+  }
+  queueDraft(state);updateContext(state);
+  notify('Formato aplicado apenas ao parágrafo ativo.');
+  return;
+ }
  const el=document.createElement(tag);
  Object.entries(styles||{}).forEach(([k,v])=>el.style[k]=v);
- try{el.appendChild(range.extractContents());range.insertNode(el);
- const sel=window.getSelection();sel.removeAllRanges();const next=document.createRange();next.selectNodeContents(el);sel.addRange(next);
- queueDraft(state);
+ try{
+  el.appendChild(range.extractContents());range.insertNode(el);
+  const sel=window.getSelection();sel.removeAllRanges();
+  const newRange=document.createRange();newRange.selectNodeContents(el);sel.addRange(newRange);
+  state.savedRange=newRange.cloneRange();state.currentField=field;
+  queueDraft(state);updateContext(state);
  }catch(_){notify('Não foi possível formatar esta seleção. Selecione um trecho menor.')}
 }
 function nearestEditable(state){
- const sel=window.getSelection();if(!sel||!sel.anchorNode)return null;
- const root=sel.anchorNode.nodeType===1?sel.anchorNode:sel.anchorNode.parentElement;
- const field=root&&root.closest('[data-bcpe-edit]');
- return field&&state.workspace.contains(field)?field:null;
+ const sel=window.getSelection();
+ if(sel&&sel.rangeCount){
+  const range=sel.getRangeAt(0),field=fieldFromRange(state,range);
+  if(field)return field;
+ }
+ return currentEditable(state);
 }
 function selectedNode(state){return state.selected&&state.selected.querySelector(':scope > .bcpe-node')}
 function changeType(state,tag){
- const old=selectedNode(state);if(!old||!/^(P|H1|H2|H3|BLOCKQUOTE)$/.test(old.tagName))return notify('Selecione um parágrafo ou título para mudar o estilo.');
+ const old=nearestEditable(state);
+ if(!old||!/^(P|H1|H2|H3|H4|BLOCKQUOTE)$/.test(old.tagName)){
+  if(state.typeSelect)state.typeSelect.value='';
+  return notify('Clique dentro de um parágrafo ou título para alterar o estilo.');
+ }
  if(old.tagName.toLowerCase()===tag)return;
+ const wasTopLevel=old.classList.contains('bcpe-node');
  const newNode=document.createElement(tag);newNode.innerHTML=old.innerHTML;
- Array.from(old.attributes).forEach(a=>{if(a.name!=='class'&&a.name!=='contenteditable'&&a.name!=='data-bcpe-edit')newNode.setAttribute(a.name,a.value)});
- old.replaceWith(newNode);newNode.className=old.className;newNode.classList.add('bcpe-node');markFields(newNode);
- select(state,newNode.closest('.bcpe-block'));newNode.focus();queueDraft(state);
+ Array.from(old.attributes).forEach(a=>{if(!['contenteditable','data-bcpe-edit','class'].includes(a.name))newNode.setAttribute(a.name,a.value)});
+ // Remove the legacy monospace font when converting a code-like paragraph to a heading.
+ if(tag!=='p'){newNode.style.removeProperty('font-family');newNode.style.removeProperty('font-size')}
+ newNode.className=old.className;
+ if(wasTopLevel)newNode.classList.add('bcpe-node');
+ old.replaceWith(newNode);
+ newNode.setAttribute('contenteditable','true');newNode.setAttribute('data-bcpe-edit','true');
+ if(wasTopLevel)markFields(newNode);
+ state.currentField=newNode;state.savedRange=null;
+ select(state,newNode.closest('.bcpe-block'));newNode.focus();updateContext(state);queueDraft(state);
 }
 function applyParagraphStyle(state,name,value){
- const field=nearestEditable(state)||selectedNode(state);
- if(!field)return notify('Selecione um trecho do capítulo.');
+ const field=nearestEditable(state);
+ if(!field)return notify('Clique no parágrafo desejado para ajustar o alinhamento ou espaçamento.');
  if(name==='textAlign')field.style.textAlign=value;
  if(name==='lineHeight')field.style.lineHeight=value;
- queueDraft(state);
+ state.currentField=field;queueDraft(state);updateContext(state);
+}
+function clearParagraphFormatting(state){
+ const field=nearestEditable(state);
+ if(!field)return notify('Selecione primeiro o parágrafo que deseja normalizar.');
+ const nodes=Array.from(field.querySelectorAll('span,font,code'));
+ nodes.reverse().forEach(n=>n.replaceWith(...Array.from(n.childNodes)));
+ field.removeAttribute('style');
+ field.querySelectorAll('[style]').forEach(n=>n.removeAttribute('style'));
+ field.normalize();
+ state.currentField=field;state.savedRange=null;queueDraft(state);updateContext(state);
+ notify('Formatação de fonte normalizada neste parágrafo, sem alterar outros blocos.');
 }
 function safeInlinePaste(state,event){
  const field=event.target.closest('[data-bcpe-edit]');if(!field)return;
@@ -360,17 +445,17 @@ function makeToolbar(state){
  '<div class="bcpe-row"><select data-style aria-label="Estilo"><option value="">Estilo do bloco</option><option value="p">Texto normal</option><option value="h1">Título 1</option><option value="h2">Título 2</option><option value="h3">Título 3</option><option value="blockquote">Citação</option></select>'+
  '<select data-font aria-label="Fonte"><option value="">Fonte</option><option value="Arial">Arial</option><option value="Georgia">Georgia</option><option value="Verdana">Verdana</option><option value="Tahoma">Tahoma</option></select>'+
  '<select data-size aria-label="Tamanho"><option value="">Tamanho</option><option value="12">12</option><option value="14">14</option><option value="16">16</option><option value="18">18</option><option value="20">20</option><option value="24">24</option></select>'+
- '<button data-format="strong" title="Negrito"><b>B</b></button><button data-format="em" title="Itálico"><i>I</i></button><button data-format="u" title="Sublinhado"><u>U</u></button><button data-format="mark">Destaque</button>'+
+ '<button data-format="strong" title="Negrito"><b>B</b></button><button data-format="em" title="Itálico"><i>I</i></button><button data-format="u" title="Sublinhado"><u>U</u></button><button data-format="mark">Destaque</button><button data-action="clear-format" title="Remover formatação de fonte do parágrafo atual">Limpar formatação</button>'+
  '<label class="bcpe-color">Cor <input type="color" data-color value="#17293e"></label>'+
  '<select data-align aria-label="Alinhamento"><option value="">Alinhar</option><option value="left">Esquerda</option><option value="center">Centro</option><option value="right">Direita</option><option value="justify">Justificado</option></select>'+
- '<select data-line aria-label="Espaçamento"><option value="">Linhas</option><option value="1.3">1,3</option><option value="1.5">1,5</option><option value="1.8">1,8</option><option value="2">2,0</option></select></div>'+
+ '<select data-line aria-label="Espaçamento"><option value="">Linhas</option><option value="1.3">1,3</option><option value="1.5">1,5</option><option value="1.8">1,8</option><option value="2">2,0</option></select><span data-context aria-live="polite">Clique em um parágrafo para editar</span></div>'+
  '<div class="bcpe-row"><select data-insert><option value="">+ Inserir</option><option value="p">Parágrafo</option><option value="h2">Título</option><option value="h3">Subtítulo</option><option value="ul">Lista</option><option value="ol">Lista numerada</option><option value="table">Tabela</option><option value="atencao">Card ATENÇÃO</option><option value="decore">Card DECORE</option><option value="pegadinha">Card PEGADINHA</option><option value="exemplo">Card EXEMPLO</option><option value="resumo">Card RESUMO</option><option value="image">Imagem</option></select>'+
  '<button data-action="paste">Colar capítulo</button><button data-action="undo" title="Desfazer">↶ Desfazer</button><button data-action="redo" title="Refazer">↷ Refazer</button>'+
  '<span class="bcpe-spacer"></span><button data-action="versions">Versões</button><button data-action="preview">Prévia</button><button class="bcpe-primary" data-action="publish">Publicar conteúdo</button></div>';
  if(!isAdmin){const imageOption=bar.querySelector('[data-insert] option[value="image"]');if(imageOption)imageOption.remove()}
- state.status=bar.querySelector('[data-status]');state.typeSelect=bar.querySelector('[data-style]');
+ state.status=bar.querySelector('[data-status]');state.typeSelect=bar.querySelector('[data-style]');state.context=bar.querySelector('[data-context]');
  bar.addEventListener('pointerdown',function(e){
-  const selection=getSelectionRange(state);if(selection)state.savedRange=selection.cloneRange();
+  rememberSelection(state);
   if(e.target.closest('button[data-format]'))e.preventDefault()
  });
  bar.addEventListener('change',function(e){
@@ -394,6 +479,7 @@ function makeToolbar(state){
   const b=e.target.closest('button');if(!b)return;
   if(b.dataset.format){styleSelected(state,b.dataset.format);return}
   const action=b.dataset.action;
+  if(action==='clear-format')clearParagraphFormatting(state);
   if(action==='close')close(state);
   if(action==='undo')undo(state,-1);
   if(action==='redo')undo(state,1);
@@ -423,10 +509,18 @@ function makeDialog(state,html){
  dialog.append(toolbar,scroll,input);
  workspace.addEventListener('focusin',function(e){
   const box=e.target.closest('.bcpe-block');if(box)select(state,box);
+  const field=e.target.closest('[data-bcpe-edit]');
+  if(field&&workspace.contains(field)){state.currentField=field;state.savedRange=null;updateContext(state)}
  });
  workspace.addEventListener('pointerdown',function(e){
   const box=e.target.closest('.bcpe-block');if(box)select(state,box);
+  const field=e.target.closest('[data-bcpe-edit]');
+  if(field&&workspace.contains(field)){state.currentField=field;updateContext(state)}
  });
+ workspace.addEventListener('keyup',function(){rememberSelection(state)});
+ workspace.addEventListener('mouseup',function(){rememberSelection(state)});
+ state.onSelectionChange=function(){rememberSelection(state)};
+ document.addEventListener('selectionchange',state.onSelectionChange);
  workspace.addEventListener('input',function(){queueDraft(state)});
  workspace.addEventListener('paste',function(e){safeInlinePaste(state,e)});
  workspace.addEventListener('click',function(e){
@@ -471,6 +565,7 @@ function close(state){
  if(state!==active)return;
  if(state.dirty&&!window.confirm('Fechar o editor? O rascunho ficará salvo neste navegador, mas não será publicado.'))return;
  clearTimeout(editorTimer);if(state.dirty)draftWrite(state);
+ if(state.onSelectionChange)document.removeEventListener('selectionchange',state.onSelectionChange);
  state.dialog.remove();document.body.classList.remove('bcpe-open');active=null;
 }
 async function publish(state,button){
@@ -485,6 +580,7 @@ async function publish(state,button){
   state.revision=Number(result.revision||0);state.dirty=false;draftClear(state.id);
   applySnapshot(state.article,html);state.status.textContent='Publicado · revisão '+state.revision;
   notify('Capítulo publicado com sucesso.');
+  if(state.onSelectionChange)document.removeEventListener('selectionchange',state.onSelectionChange);
   state.dialog.remove();document.body.classList.remove('bcpe-open');active=null;
  }catch(err){
   if(err.status===409){state.status.textContent='Conflito: outra alteração foi publicada';notify('O conteúdo foi atualizado em outra sessão. Seu rascunho está preservado; feche e recarregue para comparar.')}
@@ -494,7 +590,7 @@ async function publish(state,button){
 async function open(overlay){
  if(active)return notify('Conclua ou feche o capítulo que está sendo editado.');
  const article=articleFor(overlay);if(!article)return;
- const state={overlay,article,id:contentId(overlay),label:identity(overlay),revision:0,selected:null,dirty:false,saving:false,snapshots:[],cursor:0};
+ const state={overlay,article,id:contentId(overlay),label:identity(overlay),revision:0,selected:null,currentField:null,savedRange:null,dirty:false,saving:false,snapshots:[],cursor:0};
  let html=capture(article);
  try{
   const remote=await api('/api/content-editor?id='+encodeURIComponent(state.id));
