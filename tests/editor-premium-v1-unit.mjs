@@ -102,6 +102,7 @@ test('historico carrega versão antiga como rascunho sem publicar',async()=>{
  const app=await setup(),d=app.win.document;app.win.prompt=()=> '1';
  d.querySelector('.bcpe-launch').click();await wait();
  d.querySelector('[data-action="versions"]').click();await wait();
+ d.querySelector('.bcpe-versions button[data-revision="1"]').click();await wait();
  assert.match(d.querySelector('.bcpe-workspace').textContent,/Versão anterior/);
  assert.equal(app.posted,null);
  app.cleanup();

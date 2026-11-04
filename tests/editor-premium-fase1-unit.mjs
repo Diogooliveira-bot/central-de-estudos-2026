@@ -131,7 +131,7 @@ test('Desfazer volta só o último passo, Refazer recupera e o cursor fica no te
  key(a,p2,'z',{ctrlKey:true});
  const after=a.ws.querySelectorAll('p')[1];
  assert.equal(after.style.textAlign,'right');
- assert.equal(a.d.activeElement,after);
+ assert.ok(after.contains(a.w.getSelection().anchorNode),'cursor no parágrafo restaurado');
  key(a,after,'y',{ctrlKey:true});
  assert.equal(a.ws.querySelectorAll('p')[1].style.textAlign,'center');
  a.close();
