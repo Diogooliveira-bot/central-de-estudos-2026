@@ -90,3 +90,11 @@ body.bcpe-open{overflow:hidden!important}
  .bcpe-block-actions{opacity:1}
  .bcpe-workspace .bc-editor-compare,.bcpe-workspace .bc-editor-cards{grid-template-columns:1fr}
 }
+.bcpe-paste-dialog{position:absolute;inset:0;z-index:10;display:grid;place-items:center;background:#11283d88;padding:16px}
+.bcpe-paste-panel{width:min(780px,100%);max-height:calc(100vh - 32px);overflow:auto;background:white;border:1px solid #c6d6e2;border-radius:12px;box-shadow:0 22px 70px #031d3780;padding:24px}
+.bcpe-paste-panel h3{margin:0 0 7px;font:750 20px/1.3 system-ui,sans-serif;color:#1b3c5b}
+.bcpe-paste-panel p{margin:0 0 14px;font:13px/1.5 system-ui,sans-serif;color:#5e7080}
+.bcpe-paste-panel textarea{display:block;width:100%;min-height:280px;padding:14px;border:1px solid #c7d7e3;border-radius:7px;resize:vertical;font:14px/1.6 ui-monospace,Consolas,monospace;color:#20374a;background:#fafdff}
+.bcpe-paste-actions{display:flex;justify-content:flex-end;gap:9px;margin-top:15px}
+.bcpe-paste-actions button{padding:9px 16px;border:1px solid #b4cbdc;border-radius:6px;background:white;cursor:pointer;font:650 13px system-ui,sans-serif}
+.bcpe-paste-actions .bcpe-primary{background:#143c61;border-color:#143c61;color:#fff}
