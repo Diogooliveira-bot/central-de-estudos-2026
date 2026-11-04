@@ -8,6 +8,7 @@ on:
       - 'central-v119.html'
       - 'tests/editor-premium-v1-unit.mjs'
       - 'tests/editor-premium-fase1-unit.mjs'
+      - 'tests/editor-premium-fase2-unit.mjs'
       - 'ui/visual-editor-v1.js'
       - 'package.json'
       - '.github/workflows/editor-premium-ci.yml'
