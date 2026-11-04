@@ -32,6 +32,7 @@ button:disabled{opacity:.5}
 <nav><a href="/planos.html">← Gerenciar planos</a><a href="/usuarios.html">Usuários</a><a href="/">Central de Estudos</a></nav>
 <div class="info"><strong>Como funciona:</strong> quando o pagamento for aprovado, o sistema libera o Premium de quem já tem conta ou envia por e-mail um link para o novo aluno criar sua senha. Reembolsos e contestações são conciliados com a compra original. Pedidos em revisão não são liberados automaticamente.</div>
 <div class="toolbar"><input id="search" type="search" placeholder="Buscar compra ou e-mail do comprador" aria-label="Buscar vendas"><button type="button" id="refresh">Atualizar</button></div>
+<section id="issues" hidden><h2>Falhas do webhook a verificar</h2><div id="issue-list"></div></section>
 <div id="status" role="status" aria-live="polite">Carregando compras...</div><div id="list"></div>
 </main><script>
 (function(){
@@ -84,11 +85,41 @@ function render(){
   if(order.state==='approved'&&order.user_id&&!order.credit_applied){
    row.append(ele('p','meta','Verifique o histórico do aluno no painel de planos antes de intervir.'));
   }
+  if(order.state==='approved'&&!order.credit_applied){
+   const actions=ele('div','actions'),button=ele('button','','Reprocessar liberação');
+   button.type='button';
+   button.onclick=()=>post({action:'reprocess',transaction:order.transaction_id},button,'Reprocessando...');
+   actions.append(button);row.append(actions);
+  }
   list.append(row);
  }
 }
+async function post(payload,button,waiting){
+ button.disabled=true;msg(waiting);
+ try{const r=await api('/api/plans?action=hotmart',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+  await load();msg(r.message||'Concluído.')}
+ catch(e){button.disabled=false;msg(e.message)}
+}
+const REASONS={offer_not_configured:'Oferta desconhecida — a venda NÃO foi liberada; confira os códigos de oferta',
+ product_not_configured:'Produto diferente do configurado', recurring_offer:'Oferta recorrente (assinatura) recusada',status_mismatch:'Aprovação com estado inesperado',
+ invalid_identifiers:'Dados da notificação inválidos',invalid_format:'Formato/versão inválidos',
+ manual_review:'Compra aguardando revisão manual (conta da equipe, inativa ou Premium manual)'};
+function renderIssues(issues){
+ const box=document.getElementById('issues'),target=document.getElementById('issue-list');
+ target.replaceChildren();box.hidden=!issues.length;
+ for(const issue of issues){
+  const row=ele('article','row'),top=ele('div','top'),title=ele('div');
+  title.append(ele('h3','',REASONS[issue.reason]||('Falha de processamento ('+issue.reason+')')),
+   ele('div','meta',(issue.event_name||'-')+' · Transação: '+(issue.transaction_id||'-')+' · HTTP '+issue.http_status));
+  top.append(title,ele('span','badge revoked',date(issue.received_at)));row.append(top);
+  const actions=ele('div','actions'),done=ele('button','','Marcar como resolvida');
+  done.type='button';done.onclick=()=>post({action:'resolve-issue',id:issue.id},done,'Atualizando...');
+  actions.append(done);row.append(actions);target.append(row);
+ }
+}
 async function load(){msg('Atualizando vendas...');
- try{const r=await api('/api/plans?action=hotmart');sales=Array.isArray(r.orders)?r.orders:[];render();msg(sales.length+' compra(s) registrada(s).')}
+ try{const r=await api('/api/plans?action=hotmart');sales=Array.isArray(r.orders)?r.orders:[];
+  renderIssues(Array.isArray(r.issues)?r.issues:[]);render();msg(sales.length+' compra(s) registrada(s).')}
  catch(e){msg(e.message)}}
 document.getElementById('search').addEventListener('input',render);
 document.getElementById('refresh').addEventListener('click',load);

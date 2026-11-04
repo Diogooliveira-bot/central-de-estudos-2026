@@ -61,10 +61,79 @@
 #homeView .bc-focus-arrow{
   color:#0c7e94;font:750 23px/1 system-ui,sans-serif;justify-self:end;
 }
+/* Loading da seleção: ocupa o lugar da lista provisória, sem bloquear a navegação. */
 #homeView .bc-focus-loading{
-  padding:18px;border:1px dashed #b5d5e0;border-radius:12px;
-  color:#597c8d;background:#f7fcfd;font-size:13px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  width:100%;min-width:0;min-height:350px;gap:0;
+  padding:30px 22px;text-align:center;box-sizing:border-box;
+  border:1px solid #d9e7f3;border-radius:17px;
+  background:radial-gradient(circle at 50% 0, #edf6ff 0, #fff 72%);
+  color:#13395d;box-shadow:0 8px 25px rgba(14,47,67,.045);
 }
+#homeView .bc-focus-loading-emblem{
+  display:grid;place-items:center;position:relative;
+  width:92px;height:92px;margin:0 0 17px;flex:none;
+}
+#homeView .bc-focus-loading-spinner{
+  position:absolute;inset:0;border-radius:50%;box-sizing:border-box;
+  border:3px solid #d9eafa;border-top-color:#1679be;border-right-color:#65b4d7;
+  animation:bc-focus-spin 1.05s linear infinite;
+}
+#homeView .bc-focus-loading-emblem img{
+  width:52px;height:52px;object-fit:contain;display:block;
+}
+#homeView .bc-focus-loading h2{
+  color:#123e67!important;font:800 clamp(17px,2.4vw,21px)/1.3 system-ui,sans-serif!important;
+  margin:0 0 8px!important;letter-spacing:-.02em;
+}
+#homeView .bc-focus-loading p{
+  color:#657c90;font:500 13px/1.65 system-ui,sans-serif;
+  margin:0!important;max-width:390px;
+}
+#homeView .bc-focus-loading-track{
+  width:min(220px,75%);height:4px;background:#dfeaf4;
+  border-radius:99px;overflow:hidden;margin:20px 0 15px;
+}
+#homeView .bc-focus-loading-track span{
+  display:block;width:38%;height:100%;border-radius:99px;
+  background:linear-gradient(90deg,#1875ba,#36b8c9);
+  animation:bc-focus-sweep 1.45s ease-in-out infinite alternate;
+}
+#homeView .bc-focus-loading-preview{
+  display:grid;gap:8px;width:min(270px,78%);opacity:.64;
+}
+#homeView .bc-focus-loading-preview span{
+  display:block;height:8px;border-radius:99px;
+  background:linear-gradient(100deg,#e4edf5 25%,#f7fafc 45%,#e4edf5 65%);
+  background-size:210% 100%;animation:bc-focus-shimmer 1.65s ease-in-out infinite;
+}
+#homeView .bc-focus-loading-preview span:nth-child(2){width:82%;justify-self:center}
+#homeView .bc-focus-loading-preview span:nth-child(3){width:65%;justify-self:center}
+#homeView .bc-focus-load-error,
+#homeView .bc-focus-empty{
+  width:100%;box-sizing:border-box;padding:22px;text-align:center;
+  border:1px solid #d9e7f3;border-radius:14px;background:#fff;color:#34516f;
+}
+#homeView .bc-focus-load-error h2{margin:0 0 8px;color:#123e67;font-size:17px}
+#homeView .bc-focus-load-error p{margin:0 0 15px;color:#637b90;font-size:13px}
+#homeView .bc-focus-retry{
+  padding:11px 17px;min-height:42px;border-radius:10px;
+  border:1px solid #1768a9;background:#1768a9;color:#fff;font-weight:800;cursor:pointer;
+}
+#homeView .bc-focus-retry:hover,#homeView .bc-focus-retry:focus-visible{background:#104d83;outline-offset:3px}
+#homeView .bc-focus-module-card.bc-focus-fallback{
+  display:block;min-height:55px;text-align:center;white-space:normal;
+}
+@keyframes bc-focus-spin{to{transform:rotate(360deg)}}
+@keyframes bc-focus-sweep{from{transform:translateX(-100%)}to{transform:translateX(270%)}}
+@keyframes bc-focus-shimmer{to{background-position-x:-210%}}
+@media(prefers-reduced-motion:reduce){
+  #homeView .bc-focus-loading-spinner,
+  #homeView .bc-focus-loading-track span,
+  #homeView .bc-focus-loading-preview span{animation:none}
+  #homeView .bc-focus-loading-track span{width:100%}
+}
+
 /* Durante a escolha, a lista original das disciplinas mostra apenas
    o essencial. Nenhuma disciplina ou conteúdo é excluído do DOM. */
 html.student-experience-v3.bc-ui-v1.bc-topnav #appRoot #homeView.bc-focus-choice #subjects{
