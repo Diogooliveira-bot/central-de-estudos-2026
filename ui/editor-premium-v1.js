@@ -111,7 +111,9 @@ function block(node){
  const top=document.createElement('header');top.className='bcpe-block-head';
  const label=document.createElement('span');label.className='bcpe-block-name';label.textContent=getType(node);
  const commands=document.createElement('div');commands.className='bcpe-block-actions';
- [['up','↑','Mover para cima'],['down','↓','Mover para baixo'],['duplicate','⧉','Duplicar'],['delete','×','Excluir bloco']].forEach(function(item){
+ const options=[['up','↑','Mover para cima'],['down','↓','Mover para baixo'],['duplicate','⧉','Duplicar'],['delete','×','Excluir bloco']];
+ if(node.matches('table,.bc-editor-table-wrap,.adm-table-scroll'))options.unshift(['table-row','+ Linha','Adicionar linha'],['table-col','+ Coluna','Adicionar coluna']);
+ options.forEach(function(item){
   const b=document.createElement('button');b.type='button';b.dataset.action=item[0];b.textContent=item[1];b.title=item[2];b.setAttribute('aria-label',item[2]);commands.appendChild(b);
  });
  top.append(label,commands);box.append(top);
@@ -196,8 +198,9 @@ function getSelectionRange(state){
  return range;
 }
 function styleSelected(state,tag,styles){
- const range=getSelectionRange(state);
+ const range=getSelectionRange(state)||(state.savedRange&&state.savedRange.startContainer.isConnected?state.savedRange.cloneRange():null);
  if(!range)return notify('Selecione primeiro um trecho dentro do mesmo parágrafo ou card.');
+ state.savedRange=null;
  const el=document.createElement(tag);
  Object.entries(styles||{}).forEach(([k,v])=>el.style[k]=v);
  try{el.appendChild(range.extractContents());range.insertNode(el);
@@ -217,7 +220,7 @@ function changeType(state,tag){
  if(old.tagName.toLowerCase()===tag)return;
  const newNode=document.createElement(tag);newNode.innerHTML=old.innerHTML;
  Array.from(old.attributes).forEach(a=>{if(a.name!=='class'&&a.name!=='contenteditable'&&a.name!=='data-bcpe-edit')newNode.setAttribute(a.name,a.value)});
- old.replaceWith(newNode);newNode.className='bcpe-node';markFields(newNode);
+ old.replaceWith(newNode);newNode.className=old.className;newNode.classList.add('bcpe-node');markFields(newNode);
  select(state,newNode.closest('.bcpe-block'));newNode.focus();queueDraft(state);
 }
 function applyParagraphStyle(state,name,value){
@@ -366,7 +369,10 @@ function makeToolbar(state){
  '<span class="bcpe-spacer"></span><button data-action="versions">Versões</button><button data-action="preview">Prévia</button><button class="bcpe-primary" data-action="publish">Publicar conteúdo</button></div>';
  if(!isAdmin){const imageOption=bar.querySelector('[data-insert] option[value="image"]');if(imageOption)imageOption.remove()}
  state.status=bar.querySelector('[data-status]');state.typeSelect=bar.querySelector('[data-style]');
- bar.addEventListener('pointerdown',function(e){if(e.target.closest('button[data-format]'))e.preventDefault()});
+ bar.addEventListener('pointerdown',function(e){
+  const selection=getSelectionRange(state);if(selection)state.savedRange=selection.cloneRange();
+  if(e.target.closest('button[data-format]'))e.preventDefault()
+ });
  bar.addEventListener('change',function(e){
   const t=e.target;
   if(t.matches('[data-style]')&&t.value)changeType(state,t.value);
@@ -428,6 +434,16 @@ function makeDialog(state,html){
   const box=b.closest('.bcpe-block');if(!box)return;
   select(state,box);
   const cmd=b.dataset.action, list=blocks(state),idx=list.indexOf(box);
+  if(cmd==='table-row'||cmd==='table-col'){
+   const table=box.querySelector('table');if(!table)return notify('Tabela não encontrada.');
+   if(cmd==='table-row'){
+    const sample=table.rows[table.rows.length-1],cols=sample?sample.cells.length:2;
+    const row=table.insertRow(-1);for(let i=0;i<cols;i++){const cell=row.insertCell(-1);cell.textContent='Nova célula';cell.setAttribute('contenteditable','true');cell.setAttribute('data-bcpe-edit','true')}
+   }else{
+    Array.from(table.rows).forEach(function(row){const cell=row.insertCell(-1);cell.textContent='Nova coluna';cell.setAttribute('contenteditable','true');cell.setAttribute('data-bcpe-edit','true')});
+   }
+   queueDraft(state);return;
+  }
   if(cmd==='delete'){
    if(box.querySelector('[data-bc-editor-preserve]'))return notify('Este componente não pode ser removido.');
    if(!window.confirm('Excluir este bloco do rascunho?'))return;
