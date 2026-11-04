@@ -23,6 +23,16 @@ async function ensureTable(sql){
       updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
     )
   `;
+  await sql`
+    CREATE TABLE IF NOT EXISTS central_content_override_history (
+      content_id TEXT NOT NULL,
+      revision BIGINT NOT NULL,
+      label TEXT,
+      html TEXT NOT NULL,
+      archived_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+      PRIMARY KEY(content_id, revision)
+    )
+  `;
 }
 async function readJsonBody(req){
   if(req.body&&typeof req.body==='object')return req.body;
@@ -52,6 +62,20 @@ export default async function handler(req,res){
   try{
     const sql=database();await ensureTable(sql);
     const id=String(req.query?.id||'').trim().slice(0,240);
+    if(req.method==='GET'&&req.query?.action==='history'){
+      const historian=await requireSession(req,['admin','editor']);
+      if(!historian.ok)return send(res,historian.status,{error:historian.error});
+      if(!id)return send(res,400,{error:'ID do conteúdo não informado'});
+      if(req.query?.revision!==undefined){
+        const revision=Number(req.query.revision);
+        if(!Number.isSafeInteger(revision)||revision<1)return send(res,400,{error:'Revisão inválida'});
+        const rows=await sql`SELECT revision,label,html,archived_at FROM central_content_override_history WHERE content_id=${id} AND revision=${revision} LIMIT 1`;
+        if(!rows.length)return send(res,404,{error:'Revisão não encontrada'});
+        return send(res,200,{id,revision:Number(rows[0].revision),label:rows[0].label||'',html:rows[0].html,archivedAt:rows[0].archived_at});
+      }
+      const rows=await sql`SELECT revision,label,archived_at FROM central_content_override_history WHERE content_id=${id} ORDER BY revision DESC LIMIT 25`;
+      return send(res,200,{id,versions:rows.map(r=>({revision:Number(r.revision),label:r.label||'',archivedAt:r.archived_at}))});
+    }
     if(req.method==='GET'){
       // Override HTML may contain complete theory. Fail closed for students
       // until content IDs have an explicit, audited free/premium classification.
@@ -80,20 +104,59 @@ export default async function handler(req,res){
           return send(res,403,{error:'Somente o administrador pode adicionar, remover ou alterar imagens do módulo'});
         }
       }
-      const rows=await sql`
-        INSERT INTO central_content_overrides(content_id,label,html,revision,updated_at)
-        VALUES(${contentId},${label},${html},1,NOW())
-        ON CONFLICT(content_id) DO UPDATE SET
-          label=EXCLUDED.label,
-          html=EXCLUDED.html,
-          revision=central_content_overrides.revision+1,
-          updated_at=NOW()
-        RETURNING revision,updated_at
-      `;
+      // expectedRevision is optional to preserve compatibility with the legacy editor.
+      // The Premium editor always sends it to prevent overwriting another session.
+      const hasExpected=body?.expectedRevision!==undefined&&body?.expectedRevision!==null;
+      const expected=hasExpected?Number(body.expectedRevision):null;
+      if(hasExpected&&(!Number.isSafeInteger(expected)||expected<0)){
+        return send(res,400,{error:'Revisão esperada inválida'});
+      }
+      let rows;
+      if(hasExpected){
+        rows=await sql`
+          INSERT INTO central_content_overrides(content_id,label,html,revision,updated_at)
+          VALUES(${contentId},${label},${html},1,NOW())
+          ON CONFLICT(content_id) DO UPDATE SET
+            label=EXCLUDED.label,
+            html=EXCLUDED.html,
+            revision=central_content_overrides.revision+1,
+            updated_at=NOW()
+          WHERE central_content_overrides.revision=${expected}
+          RETURNING revision,updated_at
+        `;
+        if(!rows.length)return send(res,409,{error:'Este conteúdo foi alterado em outra sessão. Seu rascunho não foi publicado.'});
+      }else{
+        rows=await sql`
+          INSERT INTO central_content_overrides(content_id,label,html,revision,updated_at)
+          VALUES(${contentId},${label},${html},1,NOW())
+          ON CONFLICT(content_id) DO UPDATE SET
+            label=EXCLUDED.label,
+            html=EXCLUDED.html,
+            revision=central_content_overrides.revision+1,
+            updated_at=NOW()
+          RETURNING revision,updated_at
+        `;
+      }
+      // Each published revision can be restored in a later controlled publication.
+      try{
+        await sql`
+          INSERT INTO central_content_override_history(content_id,revision,label,html,archived_at)
+          VALUES(${contentId},${rows[0].revision},${label},${html},NOW())
+          ON CONFLICT(content_id,revision) DO NOTHING
+        `;
+      }catch(historyError){console.error('content editor history error',historyError)}
       return send(res,200,{ok:true,id:contentId,revision:Number(rows[0].revision),updatedAt:rows[0].updated_at});
     }
     if(req.method==='DELETE'){
       if(!id)return send(res,400,{error:'ID do conteúdo não informado'});
+      const current=await sql`SELECT revision,label,html FROM central_content_overrides WHERE content_id=${id} LIMIT 1`;
+      if(current.length){
+        await sql`
+          INSERT INTO central_content_override_history(content_id,revision,label,html,archived_at)
+          VALUES(${id},${current[0].revision},${current[0].label},${current[0].html},NOW())
+          ON CONFLICT(content_id,revision) DO NOTHING
+        `;
+      }
       await sql`DELETE FROM central_content_overrides WHERE content_id=${id}`;
       return send(res,200,{ok:true,id});
     }
