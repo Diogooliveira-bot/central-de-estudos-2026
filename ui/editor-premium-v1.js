@@ -111,6 +111,7 @@ function getType(node){
 }
 function block(node){
  const box=document.createElement('section');box.className='bcpe-block';
+ if(node.matches('figure,section,div')&&node.querySelectorAll('p,h1,h2,h3,h4,li,td,th').length>2)box.classList.add('bcpe-block-composite');
  const top=document.createElement('header');top.className='bcpe-block-head';
  const label=document.createElement('span');label.className='bcpe-block-name';label.textContent=getType(node);
  const commands=document.createElement('div');commands.className='bcpe-block-actions';
