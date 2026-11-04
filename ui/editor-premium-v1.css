@@ -125,3 +125,6 @@ body.bcpe-open{overflow:hidden!important}
  .bcpe-toolbar .bcpe-row:nth-child(3) button[data-action="publish"]{margin-left:auto}
  .bcpe-row [data-status]{max-width:170px}
 }
+/* Fase 1 — botões de formatação mostram quando estão ativos, como no Word. */
+.bcpe-toolbar button[data-format].is-active{background:#dcebf6;border-color:#4f8db5;color:#0d3d5e;box-shadow:inset 0 1px 2px #0d3d5e33}
+.bcpe-workspace [data-bcpe-edit]:empty::before{content:"\200b"}
