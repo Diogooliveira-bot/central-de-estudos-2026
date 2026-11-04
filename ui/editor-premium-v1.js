@@ -90,7 +90,7 @@ function markFields(node){
  }else{
   const children=Array.from(node.querySelectorAll(fieldTags));
   const leaf=children.filter(el=>!Array.from(el.children).some(ch=>ch.matches(fieldTags)));
-  leaf.forEach(el=>{el.setAttribute('contenteditable','true');el.setAttribute('data-bcpe-edit','true')});
+  leaf.forEach(el=>{if(!isAdmin&&node.matches('figure'))return;el.setAttribute('contenteditable','true');el.setAttribute('data-bcpe-edit','true')});
   // Estruturas desconhecidas continuam preservadas, sem permitir editar HTML de componentes JS.
  }
  node.querySelectorAll('img,svg,button,input,select,video,audio').forEach(el=>el.setAttribute('contenteditable','false'));
@@ -286,7 +286,53 @@ function htmlToNodes(html){
   }
  });
  if(!found.length)return textToNodes(tpl.content.textContent||'');
+ // Descarta classes e estilos colados do Word para manter o design da Central.
+ found.forEach(function(root){
+  [root,...root.querySelectorAll('*')].forEach(function(n){
+   if(n.nodeType!==1)return;
+   for(const a of Array.from(n.attributes)){
+    if(!['href','colspan','rowspan'].includes(a.name))n.removeAttribute(a.name);
+   }
+   if(n.tagName==='IMG')n.remove();
+  });
+ });
  return found.slice(0,200);
+}
+function showPasteDialog(state){
+ const backdrop=document.createElement('div');backdrop.className='bcpe-paste-dialog';
+ const panel=document.createElement('div');panel.className='bcpe-paste-panel';
+ const title=document.createElement('h3');title.textContent='Importar capítulo';
+ const hint=document.createElement('p');hint.textContent='Cole aqui o texto do Word ou Markdown. Títulos, listas e parágrafos serão transformados em blocos independentes.';
+ const area=document.createElement('textarea');area.rows=13;area.placeholder='## 1. Conceito e finalidade\n\nTexto do capítulo...';
+ const actions=document.createElement('div');actions.className='bcpe-paste-actions';
+ const cancel=document.createElement('button');cancel.textContent='Cancelar';cancel.type='button';
+ const confirm=document.createElement('button');confirm.textContent='Inserir conteúdo';confirm.type='button';confirm.className='bcpe-primary';
+ cancel.onclick=function(){backdrop.remove()};
+ confirm.onclick=function(){
+  if(!area.value.trim())return notify('Cole o texto do capítulo primeiro.');
+  const nodes=textToNodes(area.value);
+  if(nodes.length>300)return notify('Este capítulo é muito grande para uma importação. Divida-o em partes.');
+  let after=state.selected;nodes.forEach(function(n){after=add(state,n,after)});
+  backdrop.remove();notify(nodes.length+' blocos importados.');
+ };
+ actions.append(cancel,confirm);panel.append(title,hint,area,actions);backdrop.appendChild(panel);
+ backdrop.addEventListener('click',function(e){if(e.target===backdrop)backdrop.remove()});
+ state.dialog.appendChild(backdrop);area.focus();
+}
+async function showVersions(state){
+ try{
+  const result=await api('/api/content-editor?action=history&id='+encodeURIComponent(state.id));
+  const list=(result.versions||[]).slice(0,25);
+  if(!list.length)return notify('Este módulo ainda não possui versões publicadas.');
+  const desc=list.map(x=>x.revision+' — '+new Date(x.archivedAt).toLocaleString('pt-BR')).join('\n');
+  const selected=window.prompt('Histórico do módulo:\n'+desc+'\n\nDigite o número da versão para carregar como rascunho (não publica automaticamente):','');
+  if(selected===null||selected.trim()==='')return;
+  const revision=Number(selected);if(!Number.isSafeInteger(revision)||!list.some(x=>x.revision===revision))return notify('Selecione uma das revisões exibidas.');
+  const version=await api('/api/content-editor?action=history&id='+encodeURIComponent(state.id)+'&revision='+revision);
+  if(!window.confirm('Carregar a versão '+revision+' no editor? Você ainda precisará clicar em Publicar conteúdo.'))return;
+  historyPush(state);renderSnapshot(state,version.html);historyPush(state);
+  notify('Revisão '+revision+' carregada como rascunho.');
+ }catch(err){notify(err.message||'Não foi possível consultar o histórico.')}
 }
 async function uploadImage(state,file){
  if(!isAdmin)return notify('Somente o administrador pode incluir ou alterar imagens.');
@@ -317,7 +363,7 @@ function makeToolbar(state){
  '<select data-line aria-label="Espaçamento"><option value="">Linhas</option><option value="1.3">1,3</option><option value="1.5">1,5</option><option value="1.8">1,8</option><option value="2">2,0</option></select></div>'+
  '<div class="bcpe-row"><select data-insert><option value="">+ Inserir</option><option value="p">Parágrafo</option><option value="h2">Título</option><option value="h3">Subtítulo</option><option value="ul">Lista</option><option value="ol">Lista numerada</option><option value="table">Tabela</option><option value="atencao">Card ATENÇÃO</option><option value="decore">Card DECORE</option><option value="pegadinha">Card PEGADINHA</option><option value="exemplo">Card EXEMPLO</option><option value="resumo">Card RESUMO</option><option value="image">Imagem</option></select>'+
  '<button data-action="paste">Colar capítulo</button><button data-action="undo" title="Desfazer">↶ Desfazer</button><button data-action="redo" title="Refazer">↷ Refazer</button>'+
- '<span class="bcpe-spacer"></span><button data-action="preview">Prévia</button><button class="bcpe-primary" data-action="publish">Publicar conteúdo</button></div>';
+ '<span class="bcpe-spacer"></span><button data-action="versions">Versões</button><button data-action="preview">Prévia</button><button class="bcpe-primary" data-action="publish">Publicar conteúdo</button></div>';
  state.status=bar.querySelector('[data-status]');state.typeSelect=bar.querySelector('[data-style]');
  bar.addEventListener('pointerdown',function(e){if(e.target.closest('button[data-format]'))e.preventDefault()});
  bar.addEventListener('change',function(e){
@@ -344,10 +390,8 @@ function makeToolbar(state){
   if(action==='close')close(state);
   if(action==='undo')undo(state,-1);
   if(action==='redo')undo(state,1);
-  if(action==='paste'){
-   const text=window.prompt('Cole aqui o capítulo (texto ou Markdown). Cada título e parágrafo ficará separado.','');
-   if(text&&text.trim()){let after=state.selected;textToNodes(text).forEach(function(n){after=add(state,n,after)})}
-  }
+  if(action==='paste')showPasteDialog(state);
+  if(action==='versions')await showVersions(state);
   if(action==='preview'){
    state.dialog.classList.toggle('bcpe-preview');
    b.textContent=state.dialog.classList.contains('bcpe-preview')?'Voltar a editar':'Prévia';
@@ -392,6 +436,7 @@ function makeDialog(state,html){
    if(box.querySelector('[data-bc-editor-preserve]'))return notify('Este componente não pode ser duplicado.');
    const clone=box.querySelector(':scope > .bcpe-node').cloneNode(true);add(state,clone,box);
   }
+  if((cmd==='up'||cmd==='down')&&box.querySelector('[data-bc-editor-preserve]'))return notify('Componentes protegidos não podem ser movidos.');
   if(cmd==='up'&&idx>0){list[idx-1].before(box);select(state,box);queueDraft(state)}
   if(cmd==='down'&&idx<list.length-1){list[idx+1].after(box);select(state,box);queueDraft(state)}
  });
