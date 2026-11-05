@@ -28,7 +28,10 @@ function cleanLines(raw){
 function headingInfo(line){
  const l=norm(line); if(!l)return null;
  let m=l.match(/^(\d+)\.\s+(.{3,180})$/); if(m)return {level:2,text:l};
- m=l.match(/^(\d+)\.(\d+)\s+(.{3,180})$/); if(m)return {level:3,text:l};
+ // "2.1 Conceito" e "2.1. Conceito" (com ponto, como no material de origem).
+ m=l.match(/^(\d+)\.(\d+)(?:\.\d+)?\.?\s+(.{3,120})$/); if(m&&!/[;,]$/.test(l))return {level:3,text:l};
+ // Subtítulo de enumeração: "b) Substitutividade" (curto e sem pontuação final).
+ if(/^[a-z]\)\s+[A-ZÀ-Ý][^.;:!?]{2,70}$/.test(l))return {level:4,text:l};
  if(/^(VISÃO GERAL|TEORIA ESSENCIAL|ARTIGOS PARA DECORAR|PEGADINHAS DE PROVA|REVISÃO ATIVA)$/i.test(l))return {level:2,text:l};
  return null;
 }
@@ -40,24 +43,61 @@ function calloutType(line){
  if(/^REGRA DE BOLSO/.test(l))return ['memory','Regra de bolso'];
  return null;
 }
+/* Material importado de PDF: não há linha em branco entre parágrafos e os marcadores
+   "•" às vezes saem em linhas próprias, separados dos itens. Nenhuma palavra muda:
+   - marcador sozinho na linha é descartado;
+   - linhas terminadas em ";" depois de uma linha terminada em ":" formam uma lista;
+   - linha curta que termina frase encerra o parágrafo (quebra real do material). */
+function lineWidth(lines){const ls=lines.filter(Boolean).map(l=>l.length).sort((a,b)=>a-b);return ls.length?ls[Math.floor(ls.length*0.9)]:0}
+function listRun(lines,i){
+ const items=[];
+ for(let j=i;j<lines.length;j++){
+   const l=lines[j];if(!l)break;if(/^(?:[•●▪◦]|\d{1,2}\.|[a-z]\))$/.test(l))continue;
+   const t=l.replace(/^[•●▪◦*-]\s+/,'');
+   if(t.length>160||headingInfo(t)||calloutType(t))break;
+   if(/;$/.test(t)){items.push(t);continue}
+   if(items.length&&/[.]$/.test(t)){items.push(t);j++;return items.length>=3?{items,next:j}:null}
+   break;
+ }
+ return items.length>=3?{items,next:i+items.length}:null;
+}
 function parse(raw){
- const lines=cleanLines(raw),blocks=[];let para=[];
+ // Título grudado no fim da frase anterior ("…absoluta.3. ARBITRAGEM") volta para a própria linha.
+ const lines=[];cleanLines(raw).forEach(l=>{const m=l.match(/^(.*[.!?:;)])(\d{1,2}\.\s+[A-ZÀ-Ý][A-ZÀ-Ý0-9 ,/—–-]{3,})$/);if(m&&headingInfo(m[2]))lines.push(m[1],m[2]);else lines.push(l)});
+ const blocks=[];let para=[];
+ const width=lineWidth(lines);
  const flush=()=>{if(para.length){blocks.push({type:'p',text:para.join(' ')});para=[]}};
  for(let i=0;i<lines.length;i++){
    const line=lines[i];
    if(!line){flush();continue}
+   if(/^(?:[•●▪◦]|\d{1,2}\.|[a-z]\))$/.test(line))continue;
+   // Marcador grudado num título ("• 10. CONFLITO DE COMPETÊNCIA").
+   if(/^(?:[•●▪◦]|\d{1,2}\.)\s+\d/.test(line)&&headingInfo(line.replace(/^(?:[•●▪◦]|\d{1,2}\.)\s+/,''))&&/^(?:[•●▪◦]|\d{1,2}\.\s+\d{1,2}\.\s)/.test(line)){lines[i]=line.replace(/^(?:[•●▪◦]|\d{1,2}\.)\s+/,'');i--;continue}
+   // Lista logo depois de um título, sem linha introdutória terminada em ":".
+   if(!para.length&&/;$/.test(line)){const run=listRun(lines,i);if(run){blocks.push({type:'ul',items:run.items});
+     let used=0,j=i;while(used<run.items.length&&j<lines.length){if(!/^(?:[•●▪◦]|\d{1,2}\.|[a-z]\))$/.test(lines[j]))used++;j++}
+     i=j-1;continue}}
+   if(/:$/.test(line)){
+     let k=i+1;while(k<lines.length&&/^(?:[•●▪◦]|\d{1,2}\.|[a-z]\))$/.test(lines[k]))k++;
+     const run=listRun(lines,k);
+     if(run){para.push(line);flush();blocks.push({type:'ul',items:run.items});
+       let used=0,j=k;while(used<run.items.length&&j<lines.length){if(!/^(?:[•●▪◦]|\d{1,2}\.|[a-z]\))$/.test(lines[j]))used++;j++}
+       i=j-1;continue}
+   }
    const hi=headingInfo(line);
    if(hi){flush();blocks.push({type:'h',level:hi.level,text:hi.text});continue}
    const co=calloutType(line);
-   if(co){flush();const body=[];for(let j=i+1;j<lines.length;j++){const n=lines[j];if(!n){if(body.length)break;else continue}if(headingInfo(n)||calloutType(n))break;body.push(n);i=j}blocks.push({type:'callout',kind:co[0],label:co[1],text:body.join(' ')});continue}
+   if(co){flush();const body=[];for(let j=i+1;j<lines.length;j++){const n=lines[j];if(!n){if(body.length)break;else continue}if(/^(?:[•●▪◦]|\d{1,2}\.|[a-z]\))$/.test(n)){i=j;continue}if(headingInfo(n)||headingInfo(n.replace(/^[•●▪◦]\s+/,''))||calloutType(n))break;body.push(n);i=j}blocks.push({type:'callout',kind:co[0],label:co[1],text:body.join(' ')});continue}
    if(isBullet(line)){flush();const items=[line.replace(/^[•●▪◦*-]\s+/,'')];while(i+1<lines.length&&isBullet(lines[i+1]))items.push(lines[++i].replace(/^[•●▪◦*-]\s+/,''));blocks.push({type:'ul',items});continue}
    para.push(line);
+   if(width&&/[.!?]["”»)]?$/.test(line)&&line.length<width*0.8)flush();
  }
  flush(); return blocks;
 }
 function build(raw){
  let h=0; const blocks=parse(raw);
  const body=blocks.map(b=>{
+   if(b.type==='h'&&b.level===4)return '<h4>'+esc(b.text)+'</h4>';
    if(b.type==='h'){const id='cpcsec-'+(++h)+'-'+normKey(b.text).replace(/\s+/g,'-').slice(0,60);return '<h'+b.level+' id="'+id+'">'+esc(b.text)+'</h'+b.level+'>'}
    if(b.type==='p')return '<p>'+esc(b.text)+'</p>';
    if(b.type==='ul')return '<ul>'+b.items.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul>';
@@ -73,11 +113,22 @@ function findHeading(ch){
  if(!current||!ch)return null;
  const ordered=Array.from(current.article.querySelectorAll('h2,h3'));
  if(!ordered.length)return null;
- const pos=String(ch.id||'').match(/^[sc](\d+)$/);
- if(pos){const index=Math.max(0,Number(pos[1])-1),direct=ordered[Math.min(index,ordered.length-1)];if(direct)return direct}
+ // Primeiro pelo título do capítulo: a posição muda quando há subtítulos.
  const target=normKey(ch.match||ch.title);
  const exact=ordered.find(el=>{const key=normKey(el.textContent);return key===target||key.startsWith(target)||target.startsWith(key)});
  if(exact)return exact;
+ const majors=ordered.filter(el=>el.tagName==='H2');
+ // Nome do capítulo diferente do título ("Atos eletrônicos" x "7. PRÁTICA ELETRÔNICA"):
+ // título principal com mais palavras em comum, comparando o início de cada palavra.
+ const stem=w=>w.slice(0,6),wanted=[...new Set(normKey((ch.title||'')+' '+(ch.match||'')).split(' ').filter(w=>w.length>3).map(stem))];
+ let near=null,nearScore=0;
+ // Palavra rara pesa mais que palavra presente em muitos títulos ("atos", "processual").
+ const stems=majors.map(el=>normKey(el.textContent).split(' ').map(stem));
+ const weight=w=>1/Math.max(1,stems.filter(s=>s.includes(w)).length);
+ majors.forEach((el,i)=>{const v=wanted.filter(w=>stems[i].includes(w)).reduce((t,w)=>t+weight(w),0);if(v>nearScore){nearScore=v;near=el}});
+ if(near)return near;
+ const pos=String(ch.id||'').match(/^[sc](\d+)$/);
+ if(pos){const index=Math.max(0,Number(pos[1])-1),direct=majors[Math.min(index,majors.length-1)];if(direct)return direct}
  const words=target.split(' ').filter(Boolean);let best=null,score=0;
  ordered.forEach(el=>{const key=normKey(el.textContent);let value=0;words.forEach(word=>{if(key.includes(word))value++});if(value>score){score=value;best=el}});
  return best||ordered[0];
