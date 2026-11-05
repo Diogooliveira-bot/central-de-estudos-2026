@@ -27,6 +27,11 @@
    const link=document.createElement('a');link.href=law.officialUrl;link.target='_blank';link.rel='noopener noreferrer';link.textContent='Consultar fonte oficial';
    box.append(summary,text,link);group.append(box);
   });
+  groups.forEach(group=>{
+   const count=group.querySelectorAll('.cppv-literal-law').length;if(count<=3)return;
+   const fold=document.createElement('details');fold.className='cppv-law-fold';const summary=document.createElement('summary');summary.textContent=group.firstElementChild.textContent+' · '+count+' artigos';
+   group.firstElementChild.remove();while(group.firstChild)fold.append(group.firstChild);fold.prepend(summary);group.append(fold);
+  });
   article.querySelector('.cppv-hero')?.after(section);
  }
  const routes={2:['Lei no tempo','Lei no espaço','Interpretação'],3:['Investigação','Características','Controle'],4:['Ação pública','Ação privada','Condições'],5:['Juiz','Partes','Auxiliares'],6:['Jurisdição','Competência','Conflitos'],7:['Prejudiciais','Exceções','Incidentes'],8:['Prejuízo','Classificação','Consequências'],9:['Atos','Prazos','Contagem'],10:['Citação','Intimação','Efeitos'],11:['Estrutura','Fundamentação','Decisões'],12:['Prova','Limites','Valoração'],13:['Cautelares','Flagrante','Controle'],14:['Preventiva','Alternativas','Liberdade'],15:['Ritos','Defesa','Julgamento'],16:['Princípios','Fases','Plenário'],17:['Ritos especiais','Particularidades','Comparações'],18:['Âmbito','Defesa preliminar','Procedimento'],19:['Admissibilidade','Princípios','Efeitos'],20:['Cabimento','Prazos','Efeitos'],21:['Competência','Procedimento','Soluções consensuais'],22:['Habeas corpus','Cabimento','Outras ações']};

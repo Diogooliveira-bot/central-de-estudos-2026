@@ -21,7 +21,7 @@ for(const [law,source]of Object.entries(sources)){
  }
 }
 // The official compilation groups these repealed provisions on one line.
-for(const [n,t]of Object.entries(sources.cpp.lines))if(/^Arts\. 498 a 502\./.test(t))for(let id=498;id<=502;id++)all.cpp[id]={label:'CPP — art. '+id+' (revogado)',law:'cpp',ref:String(id),paragraphs:[clean(t)],officialUrl:sources.cpp.url,sourceLines:[+n,+n]};
+for(const [n,t]of Object.entries(sources.cpp.lines)){const m=/^Arts\. (\d+) a (\d+)\./.exec(t);if(m)for(let id=+m[1];id<=+m[2];id++)all.cpp[id]={label:'CPP — art. '+id+' (revogado)',law:'cpp',ref:String(id),paragraphs:[clean(t)],officialUrl:sources.cpp.url,sourceLines:[+n,+n]};}
 const modules={};
 for(const [n,module]of Object.entries(audit.modules)){
  modules[n]=[];

@@ -54,3 +54,5 @@
 .cpp-visual-pilot .cppv-law-group{margin:20px 0 30px}
 #cpp-native-reader .cpp-visual-pilot .cppv-law-group>h4{font-size:12px!important;letter-spacing:.06em;text-transform:uppercase;color:#365b7a!important;margin:0 0 8px!important}
 .cpp-visual-pilot .cppv-literal-law summary:focus-visible{outline:2px solid #235578;outline-offset:5px;border-radius:2px}
+.cpp-visual-pilot .cppv-law-fold{border:1px solid #cbdce9;border-radius:8px;padding:14px 18px;background:#f7fbff}
+.cpp-visual-pilot .cppv-law-fold>summary{cursor:pointer;color:#235578;font-weight:700;font-size:14px;line-height:1.6}

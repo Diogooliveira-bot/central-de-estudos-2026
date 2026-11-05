@@ -5,8 +5,8 @@ import {JSDOM} from 'jsdom';
 const root=new URL('../',import.meta.url),read=p=>readFileSync(new URL(p,root),'utf8');
 const ctx={window:{}};vm.runInNewContext(read('content/cpp/cpp-native-content-packed.js'),ctx);
 const modules=JSON.parse(gunzipSync(Buffer.from(ctx.window.CPP_NATIVE_PACKED_B64,'base64')));
-vm.runInNewContext(read('content/cpp/cpp-visual-law.js'),ctx);
-const old=ctx.window.CPP_VISUAL_LAW;
+const official=JSON.parse(read('audits/cpp-official-source-lines.json'));
+const scopes={2:[[1,3]],3:[[4,23]],4:[[24,68]],5:[[251,281]],6:[[69,91]],7:[[92,154]],8:[[563,573]],9:[[791,802]],10:[[351,372]],11:[[381,393]],12:[[155,250]],13:[[282,310]],14:[[311,350]],15:[[394,405],[531,538]],16:[[406,497]],17:[[519,530],[541,548]],18:[[513,518]],19:[[574,580]],20:[[581,646]],22:[[647,667]]};
 const lawOf=(text,fallback='cpp')=>{
  const named=[...text.matchAll(/\b(CPPM|CPM|CPP|CPC|CF|CP|CC|CADH|ECA)\b|Constitui[çc][aã]o(?: Federal)?|C[oó]digo Penal|C[oó]digo Civil|Lei\s*(?:n[º°.o]?\s*)?([\d.]+)(?:\s*\/\s*\d+)?/gi)];
  if(!named.length)return fallback;
@@ -101,6 +101,15 @@ for(const d of Object.values(modules)){
  }
  const supplements={6:{cf:['5','93','98','102','105','108','109','121','144']},9:{l11419:['4','5']},10:{cpc:['1046']},12:{eca:['239','240','241','241-A','241-B','241-C','241-D','244-A']},16:{l15358:['2']},19:{cf:['5','93']},21:{cf:['98'],cp:['14','77']},22:{cf:['102','105'],l12016:['5','6','7','12','14','23']}};
  for(const [law,ids] of Object.entries(supplements[d.number]||{}))for(const ref of ids)if(!refs.some(x=>x.law===law&&x.ref===ref))refs.push({law,ref,section:'Leitura complementar',context:''});
+ // Cover each module's full statutory chapter, even where the theory explains a rule without naming its article.
+ const scopeLaw=d.number===21?'l9099':'cpp',ranges=d.number===21?[[60,92]]:scopes[d.number]||[];
+ const chapterRefs=[];
+ for(const text of Object.values(official[scopeLaw].lines)){
+  const m=/^Art\.\s*(\d+)[º°]?(?:-([A-Z]))?(?:\.|\s)/.exec(text);
+  if(m&&ranges.some(([a,b])=>+m[1]>=a&&+m[1]<=b))chapterRefs.push(m[1]+(m[2]?'-'+m[2]:''));
+  const span=/^Arts\. (\d+) a (\d+)\./.exec(text);if(span)for(let n=+span[1];n<=+span[2];n++)if(ranges.some(([a,b])=>n>=a&&n<=b))chapterRefs.push(String(n));
+ }
+ for(const ref of chapterRefs)if(!refs.some(x=>x.law===scopeLaw&&x.ref===ref))refs.push({law:scopeLaw,ref,section:'Recorte legal do módulo',context:''});
  report.modules[d.number]={title:d.title,references:refs};dom.window.close();
 }
 writeFileSync(new URL('audits/cpp-law-coverage.json',root),JSON.stringify(report,null,2)+'\n');

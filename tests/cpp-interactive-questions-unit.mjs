@@ -19,6 +19,7 @@ test('CPP lei seca: cobertura auditada, fontes literais e lacunas anteriores',()
   assert.equal(article.officialUrl,source.url);
  }
  for(const [n,keys]of Object.entries({1:['cf:5','cpp:3-F'],3:['cpp:6','l12830:2','l8906:7'],10:['cpc:252','cpc:1046'],12:['cpp:158-F','lep:9-A'],14:['eca:241-D','cpp:350-B'],18:['cpp:396-A'],21:['l10741:94','cpp:798-A'],22:['cpp:647-A','l12016:23']}))for(const key of keys)assert.ok(data.modules[n].some(x=>x.key===key),n+': '+key);
+ for(const [n,first,last]of [[4,24,68],[12,155,250],[16,406,497],[20,581,646]])for(let ref=first;ref<=last;ref++)assert.ok(data.modules[n].some(x=>x.key==='cpp:'+ref),n+': capítulo integral, art. '+ref);
 });
 function setup(){
  const dom=new JSDOM('<!doctype html><html><body></body></html>',{url:'https://example.test',runScripts:'outside-only'});
