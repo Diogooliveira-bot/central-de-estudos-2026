@@ -234,6 +234,8 @@
     for (const [viewId, key] of map) {
       if (!byId(viewId)?.classList.contains('hidden')) document.querySelector(`[data-student-primary-nav="${key}"]`)?.setAttribute('aria-current', 'page');
     }
+    // O destaque visual acompanha a tela aberta: ao voltar ao Início, nenhum atalho fica marcado.
+    visible.forEach((button) => button.classList.toggle('active', button.getAttribute('aria-current') === 'page'));
   }
   function syncVisibleLabels() {
     const crumb = byId('crumb');

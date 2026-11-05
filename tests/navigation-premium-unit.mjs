@@ -98,8 +98,8 @@ test('o visual desktop é compacto e o menu móvel continua responsivo', async (
 test('recursos editados estão no carregador e no manifesto offline', async () => {
   const boot = await read('central-v119.html');
   const offline = await read('central-offline-files-v66172.json');
-  assert.match(boot, /student-shell-v3\.js\?v=20261101mais2/);
-  assert.match(offline, /student-shell-v3\.js\?v=20261101mais2/);
+  assert.match(boot, /student-shell-v3\.js\?v=20261105nav1/);
+  assert.match(offline, /student-shell-v3\.js\?v=20261105nav1/);
 });
 
 
@@ -111,4 +111,33 @@ test('login mostra olho discreto e links oficiais sem alterar autenticação', a
   assert.match(login, /href="\/cadastro-gratuito\.html"/);
   assert.match(login, /href="\/recuperar-senha\.html"/);
   assert.match(login, /href="https:\/\/basecompleta\.com\.br\/"/);
+});
+
+test('ao voltar ao Início, a Agenda deixa de ficar destacada no menu', async () => {
+  const dom = new JSDOM('<!doctype html><html><body><div id="centralSidebar"><div class="nav"><button data-central-agenda="true" class="active">Agenda</button><button onclick="centralSidebarAction(\'performance\',this)">Progresso</button></div></div>'+
+    '<main id="appRoot"><section id="homeView" class="view"></section><section id="agendaView" class="view hidden"></section><section id="performanceView" class="view hidden"></section></main></body></html>', {
+    url: 'https://preview.example.test/', runScripts: 'outside-only', pretendToBeVisual: true,
+  });
+  const win = dom.window;
+  win.BASE_COMPLETA_USER = { id:'test', role:'aluno' };
+  let enhance;
+  win.CentralStudentUX = { byId:(id) => win.document.getElementById(id), setText:(node, text) => { node.textContent = text; }, failures:new Set(), register:(name, fn) => { if (name === 'shell') enhance = fn; }, schedule:() => enhance?.() };
+  win.eval(await read('ui/student-shell-v3.js'));
+  enhance();
+  const agenda = win.document.querySelector('[data-central-agenda]');
+  assert.equal(agenda.classList.contains('active'), false);
+  win.document.getElementById('homeView').classList.add('hidden');
+  win.document.getElementById('agendaView').classList.remove('hidden');
+  enhance();
+  assert.equal(agenda.classList.contains('active'), true);
+  assert.equal(agenda.getAttribute('aria-current'), 'page');
+  win.close();
+});
+
+test('Agenda e Progresso mostram o botão Voltar à Central e a Agenda rola no computador', async () => {
+  const student = await read('ui/student-experience-v3.css');
+  const topnav = await read('ui/home-topnav-v1.css');
+  assert.match(student, /#appRoot :is\(#agendaView,#performanceView\)>\.central-view-back \{display:inline-flex!important/);
+  assert.doesNotMatch(student, /:is\(#disciplinesView,#agendaView,#performanceView\)>\.central-view-back \{display:none/);
+  assert.match(topnav, /@media\(min-width:801px\) \{\s*html\.bc-ui-v1\.bc-topnav #appRoot #agendaView\.central-agenda-visible:not\(\.hidden\) \{[^}]*overflow-y:auto!important/);
 });
