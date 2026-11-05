@@ -14,7 +14,7 @@ function setup(){
  w.requestAnimationFrame=()=>0;
  w.HTMLElement.prototype.scrollIntoView=function(){};
  w.CPP_NATIVE_CONTENT=content;
- for(const p of ['content/cpp/cpp-native-index.js','ui/native-reading-session.js','ui/cpp-native-study-v1.js','ui/reader-questions-v1.js'])w.eval(read(p));
+ for(const p of ['content/cpp/cpp-native-index.js','ui/native-reading-session.js','ui/cpp-m01-visual-pilot.js','ui/cpp-native-study-v1.js','ui/reader-questions-v1.js'])w.eval(read(p));
  return {dom,w};
 }
 test('CPP M01–M22: as 330 questões originais oferecem alternativas e correção',async()=>{
@@ -44,6 +44,35 @@ test('CPP M01–M22: as 330 questões originais oferecem alternativas e correç�
    original.defaultView.close();
   }
   assert.equal(total,330);
+ }finally{dom.window.close()}
+});
+test('CPP visual: 22 completas preservam texto e tabelas, com quadros inteiros e revisão antes das questões',async()=>{
+ const {dom,w}=setup();try{
+  for(const d of Object.values(content)){
+   await w.CppNative.open(d.number,'complete',false);
+   const article=w.document.querySelector('.cpp-visual-pilot');
+   assert.ok(article,d.uid);
+   assert.equal(article.querySelectorAll('.cppv-hero').length,1);
+   assert.ok(article.querySelectorAll('.cppv-scheme').length>=3,d.uid);
+   const original=new JSDOM(d.completeHtml).window.document;
+   const tables=[...original.querySelectorAll('table')].map(t=>t.textContent);
+   assert.deepEqual([...article.querySelectorAll('table')].map(t=>t.textContent),tables,'tabelas originais preservadas');
+   const questionStart=[...original.querySelectorAll('h1,h2,h3,h4,h5,h6')].find(h=>/quest[aã]o\s+\d+/i.test(h.textContent));
+   for(const p of original.querySelectorAll('p')){
+    if(questionStart&&(questionStart.compareDocumentPosition(p)&original.defaultView.Node.DOCUMENT_POSITION_FOLLOWING))continue;
+    if(/Gabarito:|Explicação:|Dificuldade:|^[A-E][).]/.test(p.textContent.trim()))continue;
+    const normalize=s=>s.replace(/\s+/g,' ').trim();
+    assert.ok(normalize(article.textContent).includes(normalize(p.textContent)),d.uid+': texto preservado: '+p.textContent.slice(0,240));
+   }
+   const review=[...article.querySelectorAll('.cppv-scheme')].find(el=>el.textContent.includes('ANTES DE RESPONDER'));
+   assert.ok(review.compareDocumentPosition(article.querySelector('.cpp-native-question'))&w.Node.DOCUMENT_POSITION_FOLLOWING);
+   const count=article.querySelectorAll('.cppv-scheme').length;
+   w.CppVisualPilot.enhance(w.document.querySelector('.bc-native-scroll'),d.number,'complete');
+   assert.equal(article.querySelectorAll('.cppv-scheme').length,count);
+   original.defaultView.close();
+   w.CppNative.close();await w.CppNative.open(d.number,'summary',false);
+   assert.equal(w.document.querySelector('.cpp-visual-pilot'),null,'resumida permanece no formato anterior');
+  }
  }finally{dom.window.close()}
 });
 test('CPP: erro, refazer e respostas preservadas ao reabrir; módulos e modos isolados',async()=>{
