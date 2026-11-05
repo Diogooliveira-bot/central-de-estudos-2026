@@ -249,7 +249,7 @@
       backStep = 'roles';backValue = chosen.area;
     } else if (step === 'free') {
       title = 'Monte seu estudo livre';
-      intro = 'Escolha as disciplinas que deseja estudar. Pode alterar sua seleção depois, sem perder o progresso.';
+      intro = 'Escolha as disciplinas que deseja estudar. Depois de salvar, abra uma delas na página inicial e comece pelo primeiro módulo. Pode alterar sua seleção depois, sem perder o progresso.';
       badge = 'ESTUDO LIVRE';
       const selectedIds = savedFreeSubjectIds() || [];
       options = '<div class="study-free-picker"><p>Selecione pelo menos uma disciplina.</p><div class="study-free-grid">' +
