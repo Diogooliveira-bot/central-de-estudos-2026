@@ -532,7 +532,7 @@ function richTopicHtml(topic){
     html+='</tbody></table></div>';
   }
   if(topic.example)html+='<aside class="ct-callout ct-example"><b>Exemplo aplicado</b><p>'+esc(topic.example)+'</p></aside>';
-  if(topic.trap)html+='<aside class="ct-callout ct-trap"><b>Pegadinha FCC</b><p>'+esc(topic.trap)+'</p></aside>';
+  if(topic.trap)html+='<aside class="ct-callout ct-trap"><b>Pegadinha de prova</b><p>'+esc(topic.trap)+'</p></aside>';
   if(topic.memorize&&topic.memorize.length)html+='<aside class="ct-callout ct-memorize"><b>O que memorizar</b><ul>'+topic.memorize.map(function(item){return '<li>'+esc(item)+'</li>'}).join('')+'</ul></aside>';
   html+='<div class="ct-basis"><b>Base legal</b><span>'+esc(topic.basis)+'</span></div>';
   return html;

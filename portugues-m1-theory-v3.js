@@ -8,7 +8,7 @@ if(window.__PT_M1_THEORY_V3__)return;window.__PT_M1_THEORY_V3__=true;
 
 var LESSONS={
  s4:{
-  title:'S4 — Regra do hiato + FCC',source:'PDF 1, p. 55–62',
+  title:'S4 — Regra do hiato + prática',source:'PDF 1, p. 55–62',
   lead:'A regra do hiato é especial porque não depende de a palavra ser oxítona ou paroxítona. O que importa é a separação silábica e a posição do I ou U tônico. Se você dominar a regra-base e quatro contrastes, resolve a maior parte das questões sem decorar dezenas de palavras.',
   parts:[
    {kind:'rule',title:'1. Regra-base',html:'<p>Acentua-se o <strong>I</strong> ou o <strong>U</strong> tônico quando ele forma hiato com vogal ou ditongo anterior e fica <strong>sozinho na sílaba ou acompanhado apenas de S</strong>. Exemplos do material: <em>caí, faísca, Paraíba, egoísta, ruído, saúde, saúva, balaústre</em>.</p>'},
@@ -17,7 +17,7 @@ var LESSONS={
    {kind:'trap',title:'4. Exceção clássica — NH',html:'<p>Se o hiato vier seguido de <strong>NH</strong> na sílaba seguinte, não se acentua: <em>ra-i-nha, ba-i-nha, mo-i-nho</em>. Essa é uma das exceções que o próprio material aponta como recorrente em prova.</p>'},
    {kind:'trap',title:'5. Ditongo anterior — grave os contrastes',html:'<p>Em <strong>paroxítonas</strong>, I/U tônico depois de ditongo <strong>decrescente</strong> não recebe acento: <em>feiura, baiuca, bocaiuva, Sauipe</em>. Mas <em>Guaíba</em> e <em>Guaíra</em> recebem acento, e nas <strong>oxítonas</strong> como <em>Piauí, tuiuiú, teiú</em> o acento permanece.</p>'},
    {kind:'trap',title:'6. EE e OO',html:'<p>Não se acentuam as sequências <strong>eem</strong> e <strong>oo(s)</strong>: <em>creem, deem, leem, enjoo, voo, zoo</em>. Essa mudança aparece muito em alternativas que tentam ressuscitar a grafia antiga.</p>'},
-   {kind:'example',title:'7. Como a FCC pode cobrar',html:'<p>Quando a questão disser que <em>ciúme, atribuída e reúne</em> seguem a mesma regra, procure o I/U tônico em hiato: <em>ci-ú-me, a-tri-bu-í-da, re-ú-ne</em>. Aqui a tonicidade global da palavra não impede que a justificativa seja a mesma.</p>'},
+   {kind:'example',title:'7. Como a banca examinadora pode cobrar',html:'<p>Quando a questão disser que <em>ciúme, atribuída e reúne</em> seguem a mesma regra, procure o I/U tônico em hiato: <em>ci-ú-me, a-tri-bu-í-da, re-ú-ne</em>. Aqui a tonicidade global da palavra não impede que a justificativa seja a mesma.</p>'},
    {kind:'rule',title:'Algoritmo de 10 segundos',html:'<p><strong>Separe as sílabas → ache I/U tônico → veja se existe vogal/ditongo antes → confira se I/U está sozinho ou +S → procure NH → só então verifique os casos após ditongo.</strong></p>'}
   ],
   remember:['Hiato e tonicidade são classificações diferentes.','Regra-base: I/U tônico em hiato, sozinho ou +S.','NH bloqueia o acento.','Juiz/ruim/Raul não entram na regra porque I/U não fica sozinho nem +S.','Feiura não; Guaíba/Guaíra sim; Piauí sim.','Creem, deem, leem, enjoo e voo sem acento.']

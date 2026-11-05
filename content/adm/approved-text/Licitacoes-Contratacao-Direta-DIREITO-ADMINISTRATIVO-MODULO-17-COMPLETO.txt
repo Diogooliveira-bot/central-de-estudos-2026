@@ -3,13 +3,13 @@ DIREITO ADMINISTRATIVO · MÓDULO 17 · COMPLETO
 
 DIREITO ADMINISTRATIVOMÓDULO 17
 
-Apostila de estudo · nível Analista · FCC
+Apostila de estudo · nível Analista · Concursos
 
 Licitações — Contratação Direta
 
 Processo do art. 72, responsabilidade, inexigibilidade, dispensa, valores 2026, fracionamento, emergência, licitação deserta/fracassada, preço, habilitação e publicidade.
 
-Base conferida em 18/09/2026: Lei 14.133/2021 consolidada no Planalto e Decreto 12.807/2025. Materiais “17.pdf”, revisão FCC TJ-CE e baralho M17 foram usados apenas para calibrar cobertura e pegadinhas. STF ADI 6.890 usado no ponto de emergência. M14–M16 e M18 não foram invadidos em profundidade.
+Base conferida em 18/09/2026: Lei 14.133/2021 consolidada no Planalto e Decreto 12.807/2025. Materiais “17.pdf”, revisão de prova TJ-CE e baralho M17 foram usados apenas para calibrar cobertura e pegadinhas. STF ADI 6.890 usado no ponto de emergência. M14–M16 e M18 não foram invadidos em profundidade.
 
 Como estudar este módulo
 
@@ -42,7 +42,7 @@ Exemplo
 
 Um órgão precisa de peça produzida por um único fornecedor comprovadamente exclusivo. Não faz sentido organizar disputa inexistente: raciocínio de inexigibilidade. Se o órgão pretende comprar material comum de pequeno valor abaixo do limite legal, fornecedores existem, mas o art. 75 pode permitir dispensa.
 
-Como cai na FCC
+Como cai na prova
 
 A banca costuma trocar a causa jurídica: chama de dispensa uma situação de competição inviável, ou chama de inexigibilidade uma hipótese de baixo valor. Resolva pela pergunta: há competição viável? Se não, pense primeiro em inexigibilidade. Se sim, procure autorização legal de dispensa.
 
@@ -56,7 +56,7 @@ Direta = inexigibilidade + dispensa. Inexigibilidade = competição inviável. D
 
 O que levar para a prova
 
-Antes de identificar o inciso, identifique a lógica. A troca de conceitos é uma das pegadinhas mais rentáveis da FCC.
+Antes de identificar o inciso, identifique a lógica. A troca de conceitos é uma das pegadinhas mais rentáveis da banca examinadora.
 
 ☐ Check manual: consigo explicar, sem olhar, a diferença entre inexigibilidade, dispensa e licitação dispensada.
 
@@ -99,7 +99,7 @@ Exemplo
 
 Se a Administração pretende contratar artista consagrado por empresário exclusivo, não basta juntar o contrato de exclusividade. O processo deve também explicar a necessidade do evento, a escolha do artista, a compatibilidade do preço, a qualificação mínima, a existência de recursos, os pareceres cabíveis e a autorização.
 
-Como cai na FCC
+Como cai na prova
 
 A alternativa costuma retirar um dos elementos que parecem “burocráticos”, especialmente justificativa de preço, razão da escolha ou habilitação. Todos permanecem no art. 72.
 
@@ -142,7 +142,7 @@ Exemplo
 
 Uma empresa combina com agente público a falsa emissão de documento de exclusividade para simular inexigibilidade e vender acima do mercado. Havendo dano, a situação se encaixa com clareza na lógica do art. 73, sem excluir outras esferas sancionatórias.
 
-Como cai na FCC
+Como cai na prova
 
 A banca pode trocar “dolo, fraude ou erro grosseiro” por “qualquer culpa” ou afirmar responsabilidade objetiva automática do contratado. A literalidade não autoriza essa simplificação.
 
@@ -156,7 +156,7 @@ Indevida + dolo/fraude/erro grosseiro + dano → solidariedade do contratado e d
 
 O que levar para a prova
 
-FCC gosta de absolutos: “sempre”, “automaticamente”, “independentemente de dolo ou erro grosseiro”. Desconfie.
+A banca examinadora gosta de absolutos: “sempre”, “automaticamente”, “independentemente de dolo ou erro grosseiro”. Desconfie.
 
 ☐ Check manual: sei explicar por que o art. 73 não cria responsabilidade automática por toda falha formal.
 
@@ -192,7 +192,7 @@ Exemplo
 
 Duas consultorias são excelentes e conseguem competir objetivamente pelo mesmo serviço. O simples fato de uma delas ter reputação elevada não torna a licitação inexigível. Notória especialização deve ser lida junto com o requisito maior: inviabilidade de competição.
 
-Como cai na FCC
+Como cai na prova
 
 Questões recentes exploram a frase “quando inviável a competição” e tentam transformar um caso típico de inexigibilidade em dispensa.
 
@@ -235,7 +235,7 @@ Exemplo
 
 Se um equipamento em garantia exige peça original fornecida por agente exclusivo, podem existir dois enquadramentos a examinar: a exclusividade do art. 74, I, ou a hipótese específica de dispensa do art. 75, IV, “a”, quando a compra ao fornecedor original for indispensável para a vigência da garantia. A Administração deve usar o fundamento que corresponda aos fatos e documentá-lo corretamente.
 
-Como cai na FCC
+Como cai na prova
 
 A banca gosta de aceitar como suficiente qualquer “declaração de exclusividade”. A lei fala em documento idôneo; a Administração precisa verificar se a prova realmente alcança o objeto e o território da contratação.
 
@@ -279,7 +279,7 @@ Exemplo
 
 Uma produtora apresenta carta assinada na véspera dizendo que será “exclusiva para o show do Município X”. Isso não preenche o conceito legal de empresário exclusivo, porque a representação é episódica e limitada ao evento.
 
-Como cai na FCC
+Como cai na prova
 
 Troca clássica: a alternativa diz que basta empresário “exclusivo para o evento”. É exatamente o que a lei afasta.
 
@@ -332,7 +332,7 @@ Exemplo
 
 Contratar consultoria para tarefa padronizável, com múltiplos agentes aptos e critérios objetivos de seleção, não se torna inexigível só porque uma empresa tem muitos prêmios. A Administração precisa demonstrar a inviabilidade competitiva do caso concreto.
 
-Como cai na FCC
+Como cai na prova
 
 Duas pegadinhas fortes: inserir serviços de publicidade/divulgação no rol e afirmar que a nova lei ainda exige literalmente “singularidade do serviço” no inciso III. O primeiro é falso porque há vedação expressa; o segundo é impreciso porque a palavra não está no requisito textual do inciso, embora a inviabilidade de competição permaneça indispensável.
 
@@ -366,7 +366,7 @@ Seleção por terceiros | beneficiário direto escolhe entre credenciados
 Mercado fluido | oscilação constante de preço/condições dificulta seleção por licitação clássica
 Comércio eletrônico / Sicx | plataforma para bens e serviços comuns padronizados, conforme disciplina específica
 
-Pegadinha FCC
+Pegadinha de prova
 
 Credenciamento não é hipótese de dispensa. O art. 74, IV, coloca o objeto credenciável no campo da inexigibilidade.
 
@@ -389,7 +389,7 @@ Credenciamento = art. 74, IV. Imóvel = art. 74, V + avaliação + inexistência
 
 O que levar para a prova
 
-A FCC pode deslocar credenciamento para dispensa ou retirar um dos três blocos de requisitos do imóvel.
+A banca examinadora pode deslocar credenciamento para dispensa ou retirar um dos três blocos de requisitos do imóvel.
 
 ☐ Check manual: sei dizer por que credenciamento é inexigibilidade e listar os três requisitos do imóvel.
 
@@ -424,7 +424,7 @@ Exemplo
 
 Compra comum de R$ 60 mil pode, em 2026, caber no art. 75, II, desde que o cálculo contra fracionamento e os demais requisitos estejam atendidos. Compra de R$ 70 mil não cabe nesse inciso apenas por “estar perto” do limite.
 
-Como cai na FCC
+Como cai na prova
 
 A banca usa valores de anos anteriores ou troca os dois limites. Fixe pares: engenharia/manutenção de veículo ≈ 130,9 mil; demais compras/serviços ≈ 65,49 mil em 2026.
 
@@ -484,7 +484,7 @@ Exemplo
 
 Unidade gestora prevê comprar itens do mesmo ramo ao longo do ano. Não pode fazer várias dispensas isoladas de R$ 40 mil e ignorar a soma apenas porque cada nota individual está abaixo de R$ 65.492,11.
 
-Como cai na FCC
+Como cai na prova
 
 Trocas frequentes: “por órgão inteiro” no lugar de unidade gestora; “mesmo objeto idêntico” no lugar de mesma natureza/ramo de atividade; “obrigatoriamente” no lugar de preferencialmente para o aviso do §3º.
 
@@ -533,7 +533,7 @@ Exemplo
 
 Se contrato essencial termina por grave falha de gestão e a interrupção imediata ameaçaria serviço público, a Administração pode precisar contratar emergencialmente para evitar dano. Isso não “perdoa” os responsáveis pela falta de planejamento; a lei manda apurar responsabilidades.
 
-Como cai na FCC
+Como cai na prova
 
 A banca costuma afirmar que emergência fabricada por culpa administrativa “nunca permite” dispensa. A formulação é excessiva. A lei protege a continuidade e, paralelamente, determina apuração de responsabilidade.
 
@@ -576,7 +576,7 @@ Exemplo
 
 Licitação encerrada há quatro meses sem interessados. A Administração mantém integralmente as condições do edital e instrui o processo direto. Há caminho pelo art. 75, III, “a”. Se, ao contrário, a Administração muda substancialmente o objeto ou relaxa requisitos centrais, deixa de cumprir a condição legal de manutenção das condições.
 
-Como cai na FCC
+Como cai na prova
 
 A alternativa pode apagar o requisito temporal de menos de um ano ou autorizar alterar as condições do edital para “facilitar” a contratação direta. Ambos os movimentos quebram a hipótese legal.
 
@@ -624,7 +624,7 @@ P&D
 
 Para obras e serviços de engenharia ligados a produtos de pesquisa e desenvolvimento, o valor atualizado do art. 75, IV, “c”, é R$ 392.952,63 em 2026.
 
-Como cai na FCC
+Como cai na prova
 
 A banca troca uma palavra qualificadora que muda tudo: “alta complexidade tecnológica ou defesa nacional”, quando a lei exige cumulação; retira compatibilidade com preço de mercado; ou desloca uma hipótese de dispensa para inexigibilidade.
 
@@ -690,7 +690,7 @@ Exemplo integrado
 
 Órgão compra material comum por dispensa de valor. Deve verificar soma do exercício/mesma natureza, estimar e justificar preço, demonstrar habilitação mínima, motivar por que escolheu o fornecedor, obter autorização, observar preferencialmente o aviso de 3 dias úteis e fazer as divulgações legais. “Abaixo do limite” é só uma peça do caso.
 
-Como cai na FCC
+Como cai na prova
 
 A banca tende a fundir requisitos: afirmar que o aviso do §3º é sempre obrigatório; dizer que justificativa de preço some na inexigibilidade; ou declarar que habilitação só existe em licitação.
 
@@ -731,7 +731,7 @@ Publicidade | sítio oficial + PNCP; contrato direto em 10 dias úteis | 72, p.�
 
 ---
 
-Camada FCC — 20 armadilhas para revisar antes da prova
+Camada de prova — 20 armadilhas para revisar antes da prova
 
 • “Contratação direta = inexigibilidade.” Errado: também inclui dispensa.
 • “Inexigibilidade é escolha discricionária.” Errado: pressupõe inviabilidade de competição demonstrada.

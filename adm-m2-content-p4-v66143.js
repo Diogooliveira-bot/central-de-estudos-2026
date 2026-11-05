@@ -55,7 +55,7 @@
  </section>
 
  <section class="adm-m2-questions">
-  <h3>Camada FCC: frases para julgar em 1 minuto</h3>
+  <h3>Camada de prova: frases para julgar em 1 minuto</h3>
   <div class="adm-m2-rapid">
    <p><b>1.</b> “A desconcentração administrativa pressupõe criação de pessoa jurídica.” <span>ERRADO — cria/distribui órgãos na mesma pessoa.</span></p>
    <p><b>2.</b> “Autarquia federal é subordinada ao ministério ao qual se vincula.” <span>ERRADO — vinculação não é hierarquia.</span></p>

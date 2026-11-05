@@ -3,13 +3,13 @@ DIREITO ADMINISTRATIVO · MÓDULO 13 · COMPLETO
 
 DIREITO ADMINISTRATIVOMÓDULO 13 · OFFLINE
 
-Apostila de estudo · nível Analista · FCC
+Apostila de estudo · nível Analista · Concursos
 
 Improbidade Administrativa — Lei 8.429/1992
 
 Dolo, tipicidade, arts. 9º–11, sanções, indisponibilidade, ação, ANPC, prescrição, retroatividade, ressarcimento, agentes políticos e sucessão.
 
-Base conferida em 18/09/2026: PDF local “LEI 8429_92 – IMPROBIDADE ADMINISTRATIVA-COLUNAS.pdf” (atualizado até 05/02/2026) como fonte normativa de partida; redação consolidada da Lei 8.429/92 no Planalto; Constituição; Tema 1199 e Tema 897 do STF; ADIs 7042/7043 e 7156/7236; Tema 1257/STJ. Materiais TEC da Biblioteca foram usados apenas para cobertura e padrão FCC.
+Base conferida em 18/09/2026: PDF local “LEI 8429_92 – IMPROBIDADE ADMINISTRATIVA-COLUNAS.pdf” (atualizado até 05/02/2026) como fonte normativa de partida; redação consolidada da Lei 8.429/92 no Planalto; Constituição; Tema 1199 e Tema 897 do STF; ADIs 7042/7043 e 7156/7236; Tema 1257/STJ. Materiais TEC da Biblioteca foram usados apenas para cobertura e padrão de prova.
 
 Como estudar este módulo
 
@@ -54,7 +54,7 @@ Regra de prova | elementos do tipo e dolo não podem ser presumidos | depende do
 
 Como cai na prova
 
-A FCC tende a trocar expressões decisivas: “mera ilegalidade”, “voluntariedade”, “culpa”, “dano presumido” e “violação genérica a princípio”. A resposta correta normalmente exige lembrar que a LIA atual estreitou a responsabilização: nem toda ilegalidade é improbidade.
+A banca examinadora tende a trocar expressões decisivas: “mera ilegalidade”, “voluntariedade”, “culpa”, “dano presumido” e “violação genérica a princípio”. A resposta correta normalmente exige lembrar que a LIA atual estreitou a responsabilização: nem toda ilegalidade é improbidade.
 
 Pegadinha
 
@@ -132,7 +132,7 @@ O art. 8º estabelece que sucessor ou herdeiro daquele que causou dano ao erári
 
 Como cai na prova
 
-A FCC costuma trabalhar com três trocas:
+A banca examinadora costuma trabalhar com três trocas:
 
 • transformar o dolo em mera voluntariedade;
 • impor responsabilidade automática ao sócio/diretor;
@@ -197,7 +197,7 @@ Se o agente desvia R$ 100 mil para o próprio patrimônio, podem coexistir conse
 
 Como cai na prova
 
-Expressões-chave de art. 9º: “vantagem econômica”, “receber”, “perceber”, “incorporar”, “usar em proveito próprio”. A FCC pode descrever enriquecimento e tentar deslocar o candidato para art. 10 ou 11.
+Expressões-chave de art. 9º: “vantagem econômica”, “receber”, “perceber”, “incorporar”, “usar em proveito próprio”. A banca examinadora pode descrever enriquecimento e tentar deslocar o candidato para art. 10 ou 11.
 
 Pegadinha
 
@@ -327,7 +327,7 @@ Art. 11 não é “tipo residual” automático. Se não houve enriquecimento ne
 
 Como cai na prova
 
-A FCC explora muito material antigo. Se o enunciado usar “notadamente” para o art. 11 ou disser que o rol é meramente exemplificativo, desconfie. O STJ, em 2026, reafirmou a taxatividade do rol atual e rejeitou continuidade típico-normativa quando a conduta do revogado inciso II não encontrou tipo atual correspondente.
+A banca examinadora explora muito material antigo. Se o enunciado usar “notadamente” para o art. 11 ou disser que o rol é meramente exemplificativo, desconfie. O STJ, em 2026, reafirmou a taxatividade do rol atual e rejeitou continuidade típico-normativa quando a conduta do revogado inciso II não encontrou tipo atual correspondente.
 
 Pegadinha
 
@@ -362,7 +362,7 @@ Quadro comparativo dos arts. 9º, 10 e 11
 
 Entenda primeiro
 
-O método mais eficiente para FCC é identificar o centro de gravidade do fato: ganho indevido, dano efetivo ou violação típica a dever/princípio. Depois, conferir dolo e requisitos especiais.
+O método mais eficiente para a prova é identificar o centro de gravidade do fato: ganho indevido, dano efetivo ou violação típica a dever/princípio. Depois, conferir dolo e requisitos especiais.
 
 Regra jurídica
 
@@ -465,7 +465,7 @@ Condenado por art. 10 pode receber multa equivalente ao dano e também ser obrig
 
 Como cai na prova
 
-A FCC gosta de misturar a tabela do art. 12. O art. 11 atual não traz perda da função nem suspensão de direitos políticos. Essa é uma mudança forte em relação ao regime antigo.
+A banca examinadora gosta de misturar a tabela do art. 12. O art. 11 atual não traz perda da função nem suspensão de direitos políticos. Essa é uma mudança forte em relação ao regime antigo.
 
 Pegadinha
 
@@ -603,7 +603,7 @@ pode cumular ressarcimento | pode subsistir mesmo quando pretensão sancionadora
 
 Como cai na prova
 
-A FCC pode copiar a literalidade do art. 17 (“será proposta pelo MP”) e ignorar ADI 7043. Hoje, a exclusividade é falsa.
+A banca examinadora pode copiar a literalidade do art. 17 (“será proposta pelo MP”) e ignorar ADI 7043. Hoje, a exclusividade é falsa.
 
 Pegadinha
 
@@ -817,7 +817,7 @@ ANPC | evolução legislativa recente | disciplinado no art. 17-B, com correçõ
 
 Como cai na prova
 
-A FCC costuma montar casos antigos com processo ainda em andamento. O candidato precisa perguntar: há trânsito em julgado? o tema é elemento subjetivo ou prescrição? a regra é material sancionadora ou processual?
+A banca examinadora costuma montar casos antigos com processo ainda em andamento. O candidato precisa perguntar: há trânsito em julgado? o tema é elemento subjetivo ou prescrição? a regra é material sancionadora ou processual?
 
 Pegadinha
 
@@ -919,7 +919,7 @@ Check manual
 
 SESSÃO 14
 
-Revisão integrada, quadro-mestre, FCC e leitura final
+Revisão integrada, quadro-mestre e leitura final
 
 Entenda primeiro
 
@@ -964,9 +964,9 @@ ANPC § 3º | TCE/TCU obrigatório em 90 dias | dispositivo inconstitucional em 
 prescrição após interrupção | 4 anos | redução pela metade invalidada em 2026; teto de 20 anos
 absolvição penal | comunicação ampla | STF 2026 restringiu às hipóteses definidas no julgamento
 
-Como cai na prova — camada FCC
+Como cai na prova — camada de prova
 
-A FCC trabalha muito bem com redação legal “quase certa”. Os termos que mais mudam a resposta são:
+A banca examinadora trabalha muito bem com redação legal “quase certa”. Os termos que mais mudam a resposta são:
 
 • “dolo” × “culpa”;
 • “efetivo e comprovado” × “presumido”;

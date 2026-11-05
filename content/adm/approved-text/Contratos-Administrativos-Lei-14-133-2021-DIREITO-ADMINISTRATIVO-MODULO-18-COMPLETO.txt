@@ -5,7 +5,7 @@ DIREITO ADMINISTRATIVO — M18
 
 Contratos Administrativos — Lei 14.133/2021
 
-Central de Estudos — TJ-CE / Analista — padrão FCC
+Central de Estudos — TJ-CE / Analista — padrão de prova
 Modo: OFFLINE · não publicar
 Base normativa conferida: Lei 14.133/2021 consolidada, redação consultada em fonte oficial em 18/09/2026.
 Escopo central: arts. 89 a 154, com conexão contratual indispensável aos arts. 155 a 163.
@@ -20,7 +20,7 @@ Use um único fluxo mental:
 
 FORMAR → GARANTIR → ALOCAR RISCOS → DEFINIR DURAÇÃO → EXECUTAR/FISCALIZAR → ALTERAR/REEQUILIBRAR → RECEBER/PAGAR → SANCIONAR/EXTINGUIR → TRATAR NULIDADE/CONTROVÉRSIA.
 
-A FCC costuma errar a alternativa por troca de instituto vizinho. Em contratos, as trocas mais comuns são: cláusula necessária × prerrogativa; reajuste × repactuação × revisão; fiscal × gestor; prorrogação comum × prorrogação automática de contrato por escopo; alteração qualitativa × quantitativa; impedimento × inidoneidade; extinção × nulidade.
+A banca examinadora costuma errar a alternativa por troca de instituto vizinho. Em contratos, as trocas mais comuns são: cláusula necessária × prerrogativa; reajuste × repactuação × revisão; fiscal × gestor; prorrogação comum × prorrogação automática de contrato por escopo; alteração qualitativa × quantitativa; impedimento × inidoneidade; extinção × nulidade.
 
 ---
 
@@ -52,7 +52,7 @@ Se o vencedor não assinar ou não aceitar/retirar o instrumento no prazo:
 
 A recusa injustificada do adjudicatário caracteriza descumprimento total da obrigação assumida, sujeitando-o às penalidades cabíveis e à imediata perda da garantia de proposta, quando exigida.
 
-A Lei também disciplina a convocação de remanescentes para assumir o remanescente de obra, serviço ou fornecimento após a extinção do contrato, observada a ordem de classificação e a sistemática legal de condições e negociação. Para a FCC, o ponto central é não transformar a convocação de remanescentes em nova licitação automática.
+A Lei também disciplina a convocação de remanescentes para assumir o remanescente de obra, serviço ou fornecimento após a extinção do contrato, observada a ordem de classificação e a sistemática legal de condições e negociação. Para a prova, o ponto central é não transformar a convocação de remanescentes em nova licitação automática.
 
 Nota de completude — art. 93
 
@@ -85,11 +85,11 @@ Regime | Pode haver regime predominantemente privado, conforme o ajuste | Direit
 Posição da Administração | Pode atuar sem prerrogativas típicas de autoridade | Possui prerrogativas legais específicas
 Interesse | Sempre deve haver finalidade pública, ainda que o instrumento tenha traços privados | Finalidade pública vinculada ao regime administrativo
 Exemplo didático | Ajustes patrimoniais de feição privada, conforme lei | Obra, serviço, fornecimento regidos pela Lei 14.133
-FCC | Errado dizer que todo contrato da Administração é “contrato administrativo” em sentido doutrinário | Correto associar contrato administrativo a regime público e prerrogativas legais
+Na prova | Errado dizer que todo contrato da Administração é “contrato administrativo” em sentido doutrinário | Correto associar contrato administrativo a regime público e prerrogativas legais
 
-Como cai na FCC
+Como cai na prova
 
-A FCC gosta de três formulações:
+A banca examinadora gosta de três formulações:
 
 • “O direito privado não se aplica aos contratos administrativos.” Errado. Aplica-se supletivamente.
 • “A divulgação no PNCP é mera publicidade sem efeito sobre a eficácia.” Errado. O art. 94 a trata como condição indispensável de eficácia.
@@ -190,7 +190,7 @@ Exemplo | preço, pagamento, garantia, matriz de risco, prazo | alteração unil
 Natureza | Conteúdo que o instrumento deve prever | Poderes decorrentes do regime legal, não de mera vontade privada
 Limite | Legalidade e aderência ao edital/proposta | Legalidade, motivação, processo, direitos do contratado e equilíbrio
 
-Como cai na FCC
+Como cai na prova
 
 A banca troca “pode alterar unilateralmente nas hipóteses legais” por “pode alterar qualquer cláusula unilateralmente”. A segunda é falsa. O poder é juridicamente delimitado e não alcança livremente as cláusulas econômico-financeiras.
 
@@ -262,9 +262,9 @@ Objeto típico | Obras, serviços e fornecimentos | Obras e serviços de engenha
 Percentual | até 5%; até 10% com justificativa | até 30% do valor inicial
 Modalidades | 4 modalidades legais | Seguro-garantia
 Retomada | Não é elemento necessário | Seguradora pode assumir/concluir o objeto
-FCC | “garantia é sempre obrigatória” = erro | “30% vale para qualquer obra” = erro
+Na prova | “garantia é sempre obrigatória” = erro | “30% vale para qualquer obra” = erro
 
-Como cai na FCC
+Como cai na prova
 
 Três trocas frequentes:
 
@@ -344,9 +344,9 @@ Risco expressamente assumido na matriz | Em regra, suportado por quem o assumiu 
 Alteração unilateral administrativa | Deve preservar equilíbrio | Os encargos aumentaram/diminuíram?
 Tributo superveniente com repercussão comprovada | Preço pode alterar para mais ou menos | Há impacto comprovado no preço?
 
-Como cai na FCC
+Como cai na prova
 
-A FCC tende a apresentar uma causa verdadeira e um efeito absoluto falso. Exemplo: “força maior autoriza automaticamente qualquer revisão”. O correto exige análise de causalidade, relevância e matriz de riscos.
+A banca examinadora tende a apresentar uma causa verdadeira e um efeito absoluto falso. Exemplo: “força maior autoriza automaticamente qualquer revisão”. O correto exige análise de causalidade, relevância e matriz de riscos.
 
 Pegadinha
 
@@ -371,7 +371,7 @@ SESSÃO 05 — Reajuste, repactuação e revisão
 
 Entenda primeiro
 
-Este é um dos duelos mais importantes da FCC. Os três institutos preservam a equação econômica, mas não são sinônimos.
+Este é um dos duelos mais importantes da banca examinadora. Os três institutos preservam a equação econômica, mas não são sinônimos.
 
 • Reajuste em sentido estrito: atualização ordinária por índice previamente definido.
 • Repactuação: recomposição analítica de custos em serviços contínuos com dedicação exclusiva ou predominância de mão de obra.
@@ -423,9 +423,9 @@ Contrato de manutenção sem predominância de mão de obra: o preço é atualiz
 
 Enchente excepcional destrói acesso ao canteiro e impõe custos imprevisíveis, sem atribuição daquele risco ao contratado. Pode haver revisão, desde que provados os requisitos.
 
-Como cai na FCC
+Como cai na prova
 
-Materiais FCC da Biblioteca repetem exatamente este duelo. A banca costuma descrever corretamente o instituto e trocar o nome na alternativa. Resolva pela característica, não pela palavra usada pelo enunciado.
+Compare essas duas situações em questões de concursos. A banca costuma descrever corretamente o instituto e trocar o nome na alternativa. Resolva pela característica, não pela palavra usada pelo enunciado.
 
 Pegadinha
 
@@ -447,7 +447,7 @@ SESSÃO 06 — Duração, vigência e prorrogação
 
 Entenda primeiro
 
-Na Lei 14.133, “contrato administrativo só pode durar até o fim do exercício financeiro” é uma regra ultrapassada. A lei trabalha com vários regimes de duração, conforme o objeto e a estrutura econômica do vínculo. A FCC explora exatamente essa variedade.
+Na Lei 14.133, “contrato administrativo só pode durar até o fim do exercício financeiro” é uma regra ultrapassada. A lei trabalha com vários regimes de duração, conforme o objeto e a estrutura econômica do vínculo. A banca examinadora explora exatamente essa variedade.
 
 A regra do art. 105 é: a duração será a prevista em edital; na contratação e em cada exercício deve existir disponibilidade de créditos orçamentários, e a previsão no plano plurianual deve ser observada quando a duração ultrapassar um exercício financeiro. A lei admite, portanto, contratos plurianuais.
 
@@ -516,9 +516,9 @@ Um órgão contrata serviço contínuo por 5 anos e, ao final, conclui que o pre
 
 Em uma obra por escopo, o prazo termina antes da conclusão. O art. 111 prevê prorrogação automática da vigência, mas isso não perdoa atraso imputável à contratada: se houver culpa, surgem mora e sanções e a Administração pode optar pela extinção.
 
-Como cai na FCC
+Como cai na prova
 
-Cadernos FCC da Biblioteca cobram três pontos repetidamente:
+Revise estes três pontos para a prova:
 
 • serviço público em monopólio pode ter prazo indeterminado;
 • contrato por escopo pode ter prorrogação automática;
@@ -610,13 +610,13 @@ Foco | Coordenação, providências administrativas, integração das fiscaliza�
 Atua em | prazos, prorrogações, alterações, encaminhamentos, pagamento, encerramento | execução cotidiana, verificação e registros
 Pode haver mais de um? | Conforme modelo de gestão/regulamento | Sim; a lei fala em um ou mais fiscais
 Apoio externo | Pode receber apoio institucional | Terceiro pode assistir e subsidiar, sem substituí-lo
-FCC | gestor ≠ “fiscal mais graduado” | fiscal ≠ mero observador sem dever de registrar
+Na prova | gestor ≠ “fiscal mais graduado” | fiscal ≠ mero observador sem dever de registrar
 
 Exemplo
 
 O fiscal constata repetida entrega de material abaixo da especificação. Ele registra a ocorrência, determina correção dentro de sua competência e comunica ao gestor/superior o quadro que pode demandar sanção ou alteração de providências. Não deve “aplicar qualquer sanção por conta própria” se a competência sancionadora pertencer a outra autoridade.
 
-Como cai na FCC
+Como cai na prova
 
 A banca transforma dever em faculdade: “a fiscalização pode deixar de registrar defeitos se a contratada prometer corrigir informalmente”. Errado. O registro formal é elemento essencial do acompanhamento.
 
@@ -692,7 +692,7 @@ Uma empresa contratada muda apenas sua denominação social. Não há razão par
 
 Em outro caso, ocorre cisão e a sociedade que permanece responsável perde toda equipe técnica indispensável ao objeto. Aqui há fundamento para avaliar se a alteração restringiu a capacidade de concluir o contrato, com processo e motivação.
 
-Como cai na FCC
+Como cai na prova
 
 A alternativa errada costuma usar palavras absolutas: “qualquer alteração societária extingue o contrato” ou “subcontratação transfere à subcontratada a responsabilidade contratual”. As duas generalizações são inadequadas.
 
@@ -781,9 +781,9 @@ A obra exige alteração do material especificado para atender melhor ao desempe
 
 O órgão decide ampliar de 100 para 120 unidades a quantidade de um item contratado. Trata-se de mudança quantitativa e deve ser examinada dentro do limite legal e da base de cálculo correta.
 
-Como cai na FCC
+Como cai na prova
 
-A FCC troca a natureza consensual: “a Administração pode impor unilateralmente mudança do regime de execução porque é tecnicamente mais conveniente”. Errado. A modificação do regime de execução do art. 124, II, “b”, é por acordo.
+A banca examinadora troca a natureza consensual: “a Administração pode impor unilateralmente mudança do regime de execução porque é tecnicamente mais conveniente”. Errado. A modificação do regime de execução do art. 124, II, “b”, é por acordo.
 
 Pegadinha
 
@@ -832,7 +832,7 @@ Cuidado histórico: supressão consensual além de 25%
 
 A Lei 8.666/1993 continha regra expressa sobre supressão consensual acima do limite. A Lei 14.133/2021 não reproduz essa autorização com a mesma redação. Por isso, em prova literal da nova lei, não importe automaticamente a frase “supressão por acordo pode exceder 25%” como se fosse norma expressa vigente.
 
-Isso não impede que questões complexas de consensualidade sejam analisadas dentro do sistema jurídico, mas para FCC sobre literalidade da Lei 14.133 o caminho seguro é: art. 125 disciplina alterações unilaterais e fixa 25%, com 50% apenas para acréscimos em reforma.
+Isso não impede que questões complexas de consensualidade sejam analisadas dentro do sistema jurídico, mas para a prova sobre literalidade da Lei 14.133 o caminho seguro é: art. 125 disciplina alterações unilaterais e fixa 25%, com 50% apenas para acréscimos em reforma.
 
 Base de cálculo — exemplos
 
@@ -861,9 +861,9 @@ Termo aditivo | modificação contratual que altera conteúdo do ajuste | acrés
 Apostila | registro que não caracteriza alteração contratual substancial | reajuste/repactuação prevista; razão social; dotação; ajustes financeiros previstos
 Exceção temporal | efeitos de mudança podem ser antecipados em urgência justificada | formalizar o aditivo em até 1 mês
 
-Como cai na FCC
+Como cai na prova
 
-A FCC oferece “25% para tudo” e “50% para qualquer reforma”. O primeiro erra a exceção; o segundo erra porque 50% vale apenas para acréscimos.
+A banca examinadora oferece “25% para tudo” e “50% para qualquer reforma”. O primeiro erra a exceção; o segundo erra porque 50% vale apenas para acréscimos.
 
 Outra armadilha: usar percentuais para legitimar mudança que transforma a natureza do objeto. O art. 126 barra a transfiguração.
 
@@ -887,7 +887,7 @@ SESSÃO 11 — Recebimento do objeto e pagamentos
 
 Entenda primeiro
 
-Executar não é a mesma coisa que receber; receber não é a mesma coisa que liberar toda responsabilidade; liquidar a despesa não é a mesma coisa que pagar. A FCC usa essas transições para criar alternativas aparentemente plausíveis.
+Executar não é a mesma coisa que receber; receber não é a mesma coisa que liberar toda responsabilidade; liquidar a despesa não é a mesma coisa que pagar. A banca examinadora usa essas transições para criar alternativas aparentemente plausíveis.
 
 Recebimento — art. 140
 
@@ -964,7 +964,7 @@ Exemplo
 
 A contratada entrega 1.000 equipamentos; 900 estão conformes e 100 são contestados. Havendo parcela incontroversa devidamente liquidada, a controvérsia sobre 100 itens não autoriza reter automaticamente o pagamento dos 900 corretos.
 
-Como cai na FCC
+Como cai na prova
 
 A banca frequentemente afirma que “o recebimento definitivo exonera a contratada”. Errado. O próprio art. 140 preserva responsabilidades.
 
@@ -1072,7 +1072,7 @@ A empresa atrasa parte pequena e não essencial da entrega, causando impacto red
 
 Em outro caso, a empresa frauda documentos durante a execução para ocultar entrega inferior. A gravidade pode levar ao regime de inidoneidade, com processo próprio.
 
-Como cai na FCC
+Como cai na prova
 
 A banca adora trocar os alcances:
 
@@ -1209,7 +1209,7 @@ Exemplo
 
 Uma obra complexa tem divergência sobre evento alocado na matriz de riscos e impacto financeiro. As partes podem usar dispute board ou arbitragem, conforme o contrato e a lei, em vez de presumir que apenas o Judiciário pode resolver.
 
-Como cai na FCC
+Como cai na prova
 
 A banca costuma afirmar que “arbitragem é proibida porque a Administração não pode dispor do interesse público”. Errado. A lei admite arbitragem para direitos patrimoniais disponíveis e exige arbitragem de direito e publicidade.
 
@@ -1236,7 +1236,7 @@ Check manual — consigo distinguir causa de extinção de vício de nulidade e 
 
 ---
 
-SESSÃO 14 — Revisão integrada, quadro-mestre e memorização FCC
+SESSÃO 14 — Revisão integrada, quadro-mestre e memorização em provas
 
 Revisão de 5–10 minutos
 
@@ -1321,7 +1321,7 @@ Impedimento | até 3 anos
 Inidoneidade | 3 a 6 anos
 Reabilitação — lapso mínimo | 1 ano impedimento; 3 anos inidoneidade
 
-Quadro 21 — percentuais que a FCC pode misturar
+Quadro 21 — percentuais que a banca examinadora pode misturar
 
 Percentual | Instituto
 5% | garantia contratual ordinária máxima
@@ -1416,7 +1416,7 @@ O QUE DECORAR — LISTA SEPARADA
 
 ---
 
-CAMADA FCC — 20 ARMADILHAS DE CERTO/ERRADO
+CAMADA de prova — 20 ARMADILHAS DE CERTO/ERRADO
 
 • “Direito privado jamais se aplica a contrato administrativo.” ERRADO. Aplicação supletiva.
 • “Publicação no PNCP é condição de eficácia.” CERTO.
@@ -1451,7 +1451,7 @@ Se você dominar cinco eixos, estará muito acima do nível de memorização sec
 • alterações e limites;
 • recebimento, sanção, extinção e solução de conflitos.
 
-A Lei 14.133 não substituiu apenas números da Lei 8.666. Ela reorganizou o sistema contratual: fortaleceu gestão de riscos, planejamento da execução, matriz de riscos, meios alternativos, análise consequencial da nulidade e novas estruturas de garantia. Para a FCC, a maior vantagem está em não misturar regra atual com fórmulas antigas.
+A Lei 14.133 não substituiu apenas números da Lei 8.666. Ela reorganizou o sistema contratual: fortaleceu gestão de riscos, planejamento da execução, matriz de riscos, meios alternativos, análise consequencial da nulidade e novas estruturas de garantia. Para a prova, a maior vantagem está em não misturar regra atual com fórmulas antigas.
 
 Check final do módulo — consigo explicar os 14 duelos do quadro-mestre sem consultar o texto? ☐
 

@@ -83,7 +83,7 @@ window.CF_FINAL_AUDIT_INTEGRATION={
     },
     "w7": {
       "title": "Processo Legislativo e Fiscalização Contábil, Financeira e Orçamentária",
-      "subtitle": "Arts. 59 a 75 · processo legislativo, reforma constitucional, controle externo, TCU, controle interno, finanças públicas e orçamentos · TJ-CE/FCC",
+      "subtitle": "Arts. 59 a 75 · processo legislativo, reforma constitucional, controle externo, TCU, controle interno, finanças públicas e orçamentos · Tribunais",
       "topics": [
         "legislativo",
         "processo_legislativo",
@@ -129,7 +129,7 @@ window.CF_FINAL_AUDIT_INTEGRATION={
     },
     "w10": {
       "title": "Poder Judiciário II — CNJ, STJ, Justiça Federal e Justiça do Trabalho",
-      "subtitle": "CNJ · STJ · Justiça Federal · Justiça do Trabalho · Justiça dos Estados · nível Analista/Oficial de Justiça · FCC",
+      "subtitle": "CNJ · STJ · Justiça Federal · Justiça do Trabalho · Justiça dos Estados · nível Analista/Oficial de Justiça · Concursos",
       "auditStatus": "auditado-final-2026-09-19"
     }
   },

@@ -33,7 +33,7 @@
  <div class="adm-m3-grid2"><div><b>Não pode delegar — art. 13</b><span>edição de atos normativos; decisão de recursos administrativos; matérias de competência exclusiva.</span></div><div><b>Avocação — art. 15</b><span>excepcional, temporária, por motivos relevantes e justificados, de competência de órgão hierarquicamente inferior.</span></div></div>
  <p>O ato de delegação e sua revogação devem ser publicados no meio oficial; deve especificar matéria, poderes, limites, duração, objetivos e recurso cabível. A delegação é revogável a qualquer tempo e a decisão praticada por delegação é considerada editada pelo <b>delegado</b>.</p>
  <div class="adm-m3-table-wrap"><table><thead><tr><th>Delegação</th><th>Avocação</th></tr></thead><tbody><tr><td>transfere exercício de parte da competência; pode ocorrer sem hierarquia; não alcança hipóteses do art. 13; revogável a qualquer tempo</td><td>chama competência para cima; exige relação hierárquica; excepcional; temporária; exige motivos relevantes e justificados</td></tr></tbody></table></div>
- <div class="adm-m3-callout trap"><b>Pegadinha FCC:</b> competência é irrenunciável, mas seu <b>exercício</b> pode ser delegado nos limites legais. Delegação não transforma o delegante em incompetente de forma definitiva.</div>
+ <div class="adm-m3-callout trap"><b>Pegadinha de prova:</b> competência é irrenunciável, mas seu <b>exercício</b> pode ser delegado nos limites legais. Delegação não transforma o delegante em incompetente de forma definitiva.</div>
 </article>
 
 <article class="adm-m3-session" id="adm-m3-s3">

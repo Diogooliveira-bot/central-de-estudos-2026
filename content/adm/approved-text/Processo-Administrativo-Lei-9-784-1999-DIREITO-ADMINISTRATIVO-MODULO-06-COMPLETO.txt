@@ -7,9 +7,9 @@ Apostila de estudo · nível Analista
 
 Processo Administrativo — Lei 9.784/99
 
-Do devido processo ao recurso: princípios, competência, instrução, motivação, autotutela, decadência, revisão, prazos e nulidades com leitura orientada para FCC/TJ-CE.
+Do devido processo ao recurso: princípios, competência, instrução, motivação, autotutela, decadência, revisão, prazos e nulidades com leitura orientada para concursos.
 
-Base conferida em 17/09/2026: Lei 9.784/99 do Porto Seguro como fonte normativa principal, cotejada com o texto oficial vigente do Planalto; Constituição Federal, art. 5º, LIV–LVI e art. 37, caput; LINDB, arts. 20–24 e 30; STF (Súmula 473, Tema 138 e Súmula Vinculante 5) e STJ apenas no ponto de nulidade sem prejuízo. Materiais TEC da Biblioteca, inclusive cadernos com questões FCC de 2022–2026, foram usados somente para calibrar cobertura e padrão de cobrança.
+Base conferida em 17/09/2026: Lei 9.784/99 do Porto Seguro como fonte normativa principal, cotejada com o texto oficial vigente do Planalto; Constituição Federal, art. 5º, LIV–LVI e art. 37, caput; LINDB, arts. 20–24 e 30; STF (Súmula 473, Tema 138 e Súmula Vinculante 5) e STJ apenas no ponto de nulidade sem prejuízo. Materiais TEC da Biblioteca, inclusive cadernos com questões de concursos de 2022–2026, foram usados somente para calibrar cobertura e padrão de cobrança.
 
 Como estudar este módulo
 
@@ -17,7 +17,7 @@ Pense no processo como uma linha de controle: quem decide → quem participa →
 
 início→competência→instrução→decisão→autotutela/recurso
 
-Regra de ouro: a FCC frequentemente usa uma frase legal correta no lugar errado. Um prazo verdadeiro pode estar ligado ao ato errado; uma regra de revisão pode ser transplantada para recurso; uma regra de delegação pode ser usada para avocação.
+Regra de ouro: a banca examinadora frequentemente usa uma frase legal correta no lugar errado. Um prazo verdadeiro pode estar ligado ao ato errado; uma regra de revisão pode ser transplantada para recurso; uma regra de delegação pode ser usada para avocação.
 
 SESSÃO 01 · FUNDAMENTOS
 
@@ -50,7 +50,7 @@ Um tribunal federal, ao julgar uma ação, exerce jurisdição e não aplica a L
 
 Como cai na prova
 
-A FCC costuma testar o alcance: “a Lei 9.784 aplica-se exclusivamente ao Executivo federal” é falso; “aplica-se automaticamente a toda Administração Pública brasileira” também é excessivo.
+A banca examinadora costuma testar o alcance: “a Lei 9.784 aplica-se exclusivamente ao Executivo federal” é falso; “aplica-se automaticamente a toda Administração Pública brasileira” também é excessivo.
 
 Pegadinha: federal ≠ nacional. E “processo administrativo” ≠ “processo disciplinar”: PAD é apenas uma espécie.
 
@@ -98,7 +98,7 @@ LINDB em diálogo
 
 Os arts. 20 a 24 e 30 da LINDB reforçam decisão responsável: consideração das consequências práticas, explicitação das razões e alternativas, consideração das dificuldades reais do gestor, regime de transição quando necessário, respeito a orientações gerais vigentes na época e incremento da segurança jurídica por regulamentos, súmulas administrativas e respostas a consultas.
 
-FCC: cuidado com absolutos. “Sempre”, “somente”, “independentemente de lei” e “pode renunciar competência por conveniência” são sinais clássicos de alternativa errada.
+Na prova: cuidado com absolutos. “Sempre”, “somente”, “independentemente de lei” e “pode renunciar competência por conveniência” são sinais clássicos de alternativa errada.
 
 O que decorar
 
@@ -171,7 +171,7 @@ Exemplo
 
 Um ministro pode delegar determinada atribuição administrativa a dirigente de autarquia mesmo que não exista subordinação hierárquica direta, se presentes os pressupostos do art. 12. Já não pode delegar o julgamento de recurso administrativo nem competência que a lei qualificou como exclusiva.
 
-FCC: “delegação pressupõe hierarquia” = falso. “avocação dispensa hierarquia” = falso. “competência é renunciável por acordo” = falso.
+Na prova: “delegação pressupõe hierarquia” = falso. “avocação dispensa hierarquia” = falso. “competência é renunciável por acordo” = falso.
 
 O que decorar
 
@@ -199,7 +199,7 @@ Se a autoridade é credora do interessado em litígio judicial, há hipótese ob
 
 Como cai
 
-A FCC explora a expressão “até o terceiro grau” e tenta inserir “quarto grau”; troca amizade íntima por impedimento; ou afirma que recurso contra indeferimento de suspeição suspende automaticamente o processo.
+A banca examinadora explora a expressão “até o terceiro grau” e tenta inserir “quarto grau”; troca amizade íntima por impedimento; ou afirma que recurso contra indeferimento de suspeição suspende automaticamente o processo.
 
 Pegadinha: impedimento ≠ suspeição. A lei impõe ao impedido dever de comunicação e abstenção.
 
@@ -238,7 +238,7 @@ Atos que exigem intimação — art. 28
 
 Devem ser intimados os interessados de atos que resultem em imposição de deveres, ônus, sanções ou restrição ao exercício de direitos e atividades, bem como atos de outra natureza de seu interesse.
 
-FCC: comparecimento espontâneo cura falta/irregularidade de intimação. Revelia administrativa não equivale automaticamente a confissão.
+Na prova: comparecimento espontâneo cura falta/irregularidade de intimação. Revelia administrativa não equivale automaticamente a confissão.
 
 O que decorar
 
@@ -316,7 +316,7 @@ LINDB e qualidade da decisão
 
 O art. 20 da LINDB impede decisão administrativa baseada apenas em valores jurídicos abstratos sem considerar consequências práticas. A motivação deve demonstrar necessidade e adequação da medida, inclusive à vista das alternativas possíveis. Isso não converte o processo em cálculo utilitarista: consequências integram a justificação sem afastar legalidade e direitos.
 
-FCC: atos discricionários não estão dispensados de motivação quando enquadrados nas hipóteses legais. Discricionariedade não significa decisão sem razões controláveis.
+Na prova: atos discricionários não estão dispensados de motivação quando enquadrados nas hipóteses legais. Discricionariedade não significa decisão sem razões controláveis.
 
 O que decorar
 
@@ -383,7 +383,7 @@ Como cai
 
 A prova afirma que, iniciado o processo, nunca se pode desistir; ou que a desistência de um interessado extingue necessariamente todo o processo. Ambas estão erradas.
 
-FCC: diferencie ato do interessado de decisão administrativa de extinção. Desistir não equivale automaticamente a “arquivar sem exame de qualquer interesse público”.
+Na prova: diferencie ato do interessado de decisão administrativa de extinção. Desistir não equivale automaticamente a “arquivar sem exame de qualquer interesse público”.
 
 O que levar
 
@@ -460,7 +460,7 @@ Reformatio in pejus
 
 No recurso, a autoridade pode modificar a decisão e, se disso puder decorrer gravame ao recorrente, deve cientificá-lo para formular alegações antes da decisão. Portanto, a lei não estabelece proibição absoluta de agravamento no recurso. Na revisão do processo sancionador, ao contrário, o art. 65 proíbe expressamente o agravamento da sanção.
 
-FCC: três trocas recorrentes: recurso = legalidade e mérito; reconsideração = 5 dias; revisão não pode agravar sanção.
+Na prova: três trocas recorrentes: recurso = legalidade e mérito; reconsideração = 5 dias; revisão não pode agravar sanção.
 
 O que decorar
 
@@ -507,7 +507,7 @@ Exclui começo, inclui vencimento · dias contínuos · mês/ano data a data · 
 
 SESSÃO 14 · QUADRO-MESTRE DE PRAZOS E FECHAMENTO
 
-Os números que a FCC troca entre si
+Os números que a banca examinadora troca entre si
 
 Situação | Prazo/regra | Chave de prova
 Prática de ato sem prazo específico — art. 24 | 5 dias, salvo força maior; dilatação até o dobro com justificação comprovada. | Não confundir com reconsideração: também 5, mas fundamento diferente.
@@ -545,7 +545,7 @@ Camada de prova — 12 gatilhos
 
 1. Federal, não automaticamente nacional. 2. Legislativo/Judiciário da União entram quando administram. 3. Início de ofício ou a pedido. 4. Competência irrenunciável. 5. Delegação pode existir sem hierarquia. 6. Avocação exige hierarquia. 7. Prova ilícita é inadmissível. 8. Motivação pode ser aliunde. 9. Há dever de decidir. 10. Recurso não tem efeito suspensivo automático. 11. Art. 54 protege boa-fé após 5 anos. 12. Revisão não agrava sanção.
 
-Regra de ouro: quando a questão trouxer um prazo, pergunte primeiro “qual ato?”. A FCC costuma usar um número verdadeiro no instituto errado.
+Regra de ouro: quando a questão trouxer um prazo, pergunte primeiro “qual ato?”. A banca examinadora costuma usar um número verdadeiro no instituto errado.
 
 O que levar
 

@@ -19,7 +19,7 @@ var THEORY={
       ],
       table:{headers:['Conceito','Situação','Ponto central'],rows:[['Pessoa nascida','Nasceu com vida','Tem personalidade civil'],['Nascituro','Já foi concebido','A lei resguarda seus direitos desde a concepção'],['Prole eventual','Ainda não foi concebida','Só recebe proteção nas hipóteses legais específicas']]},
       example:'Ana falece durante o parto. O bebê respira após o nascimento e morre minutos depois. Como nasceu com vida, adquiriu personalidade e pode ter herdado de Ana; o patrimônio recebido será transmitido segundo a sucessão do próprio bebê.',
-      trap:'A FCC pode trocar “personalidade” por “capacidade de exercício” ou afirmar que a personalidade depende de viabilidade. Está errado: personalidade começa com o nascimento com vida; capacidade para exercer atos pessoalmente é outro tema.',
+      trap:'A banca examinadora pode trocar “personalidade” por “capacidade de exercício” ou afirmar que a personalidade depende de viabilidade. Está errado: personalidade começa com o nascimento com vida; capacidade para exercer atos pessoalmente é outro tema.',
       memorize:['Personalidade: aptidão para titularizar direitos e deveres.','Regra literal: nascimento com vida.','Proteção do nascituro: desde a concepção.','Nascituro já foi concebido; prole eventual ainda não.']
     },
     {
@@ -296,7 +296,7 @@ var THEORY={
       ],
       table:{headers:['Regime','Pressuposto central','Alcance'],rows:[['Teoria maior — CC','Abuso por desvio de finalidade ou confusão patrimonial','Sócios ou administradores beneficiados pelo abuso'],['Teoria menor — CDC','Personalidade como obstáculo ao ressarcimento do consumidor','Aplicação excepcional no campo de consumo']]},
       example:'Uma sociedade paga reiteradamente despesas pessoais do sócio e transfere ativos a ele sem contraprestação, ficando sem recursos para cumprir obrigações. Esses fatos podem demonstrar confusão patrimonial; a dívida isolada ou a simples falta de dinheiro, por si sós, não bastariam no regime do Código Civil.',
-      trap:'A FCC pode somar indevidamente os requisitos: no art. 50, desvio de finalidade ou confusão patrimonial bastam alternativamente, desde que provados. Também é errado tratar a desconsideração como extinção da pessoa jurídica ou fazê-la alcançar automaticamente todos os sócios.',
+      trap:'A banca examinadora pode somar indevidamente os requisitos: no art. 50, desvio de finalidade ou confusão patrimonial bastam alternativamente, desde que provados. Também é errado tratar a desconsideração como extinção da pessoa jurídica ou fazê-la alcançar automaticamente todos os sócios.',
       memorize:['CC = teoria maior: abuso comprovado.','Abuso: desvio de finalidade OU confusão patrimonial.','Grupo, insolvência e encerramento irregular isolados não bastam no CC.','CDC § 5º = personalidade como obstáculo ao ressarcimento.']
     },
     {
@@ -382,7 +382,7 @@ var THEORY={
       ],
       table:{headers:['Categoria','Situação jurídica','Exemplo'],rows:[['Res nullius','Nunca teve dono e admite apropriação nas condições legais','Coisa originariamente sem proprietário'],['Res derelicta','Foi abandonada com intenção de renúncia','Móvel deixado para descarte'],['Coisa perdida','Ainda possui proprietário','Celular esquecido em restaurante'],['Bem fora do comércio','Não admite livre apropriação ou alienação','Bem público afetado']]},
       example:'Uma bicicleta deixada ao lado do lixo com aviso de descarte pode revelar abandono. Já a bicicleta esquecida diante de uma loja continua sendo coisa perdida, mesmo que o proprietário demore a retornar.',
-      trap:'A FCC pode tratar toda coisa aparentemente sem dono como res nullius. Está errado: coisa perdida possui dono e não pode ser apropriada pelo descobridor. Também não inverta a regra do art. 1.911: inalienabilidade implica impenhorabilidade e incomunicabilidade, mas o inverso não é automático.',
+      trap:'A banca examinadora pode tratar toda coisa aparentemente sem dono como res nullius. Está errado: coisa perdida possui dono e não pode ser apropriada pelo descobridor. Também não inverta a regra do art. 1.911: inalienabilidade implica impenhorabilidade e incomunicabilidade, mas o inverso não é automático.',
       memorize:['Bem e coisa não possuem distinção doutrinária pacífica.','Patrimônio reúne relações jurídicas de valor econômico.','Abandono exige intenção de renunciar; perda não.','Coisa perdida deve ser restituída ou entregue à autoridade.']
     },
     {
@@ -438,7 +438,7 @@ var THEORY={
       ],
       table:{headers:['Critério','Consumível','Inconsumível'],rows:[['Físico','Uso destrói imediatamente a substância','Uso permite repetição'],['Jurídico','Móvel concretamente destinado à alienação','Não destinado à alienação no contexto'],['Exemplo','Alimento; mercadoria em estoque','Livro de biblioteca; veículo de uso pessoal']]},
       example:'Dois computadores idênticos podem ter classificação jurídica diferente: o exposto para venda numa loja é consumível por destinação; o utilizado diariamente pelo escritório é inconsumível, embora ambos possam ser fisicamente alienados.',
-      trap:'“Pode ser vendido” não significa, sozinho, “destinado à alienação”. A FCC pode transformar qualquer bem alienável em consumível, ampliando indevidamente o art. 86.',
+      trap:'“Pode ser vendido” não significa, sozinho, “destinado à alienação”. A banca examinadora pode transformar qualquer bem alienável em consumível, ampliando indevidamente o art. 86.',
       memorize:['Consumo físico: destruição imediata pelo uso.','Consumo jurídico: móvel destinado à alienação.','Deterioração lenta não é consumo imediato.','A finalidade concreta pode alterar a classificação do mesmo objeto.']
     },
     {
@@ -494,7 +494,7 @@ var THEORY={
       ],
       table:{headers:['Critério','Parte integrante','Pertença'],rows:[['Vínculo','Compõe material ou funcionalmente o principal','Destinação duradoura, sem integração'],['Autonomia','Reduzida em relação ao conjunto','Conservada'],['Negócio com o principal','Em regra acompanha','Em regra não acompanha'],['Exemplo','Fiação elétrica','Piano destinado ao aformoseamento da casa']]},
       example:'Na venda de uma residência, a fiação e as portas acompanham o imóvel como partes integrantes. Um piano utilizado na decoração não será incluído automaticamente, salvo previsão contratual, lei ou circunstâncias que demonstrem o contrário.',
-      trap:'Pertença é acessória, mas não segue automaticamente o principal. A FCC costuma aplicar indiscriminadamente o princípio da gravitação e contrariar o art. 94.',
+      trap:'Pertença é acessória, mas não segue automaticamente o principal. A banca examinadora costuma aplicar indiscriminadamente o princípio da gravitação e contrariar o art. 94.',
       memorize:['Parte integrante completa o principal.','Pertença mantém autonomia.','Pertença exige destinação duradoura.','Negócio do principal não abrange pertenças, salvo lei, vontade ou circunstâncias.']
     },
     {
@@ -880,7 +880,7 @@ var THEORY={
       ],
       table:{headers:['Categoria','Conteúdo','Relação com o tempo'],rows:[['Direito subjetivo','Vantagem protegida pelo ordenamento','Pode originar pretensão se violado'],['Pretensão','Poder de exigir prestação','Sujeita à prescrição'],['Ação processual','Direito de provocar a jurisdição','Não se confunde com a pretensão material'],['Direito potestativo','Poder de alterar uma relação jurídica','Pode sujeitar-se à decadência']]},
       example:'Se o comprador não paga o preço, o vendedor tem pretensão de cobrança. Se uma parte foi coagida a contratar, possui direito potestativo de obter a anulação, sujeito ao prazo decadencial.',
-      trap:'A expressão “prescrição da ação” é frequente, mas a literalidade atual do Código Civil afirma que a prescrição extingue a pretensão. A FCC pode explorar exatamente essa troca terminológica.',
+      trap:'A expressão “prescrição da ação” é frequente, mas a literalidade atual do Código Civil afirma que a prescrição extingue a pretensão. A banca examinadora pode explorar exatamente essa troca terminológica.',
       memorize:['Direito violado → nasce a pretensão.','Pretensão → exigir prestação.','Ação → provocar o Judiciário.','Direito potestativo → modificar situação jurídica.']
     },
     {
@@ -936,7 +936,7 @@ var THEORY={
       ],
       table:{headers:['Questão','Regra'],rows:[['Quem pode alegar?','Parte a quem a prescrição aproveita'],['O juiz pode reconhecer?','Sim, de ofício ou a requerimento'],['Há contraditório?','Em regra, manifestação prévia das partes'],['Natureza da decisão','Resolução do mérito']]},
       example:'Ao perceber possível prescrição, o juiz abre vista às partes. O autor demonstra que houve interrupção por reconhecimento inequívoco da dívida, fato que precisa ser analisado antes da decisão.',
-      trap:'A possibilidade de reconhecimento de ofício não dispensa automaticamente o contraditório. A FCC pode apresentar como correta uma decisão-surpresa fundada apenas na constatação do prazo.',
+      trap:'A possibilidade de reconhecimento de ofício não dispensa automaticamente o contraditório. A banca examinadora pode apresentar como correta uma decisão-surpresa fundada apenas na constatação do prazo.',
       memorize:['Art. 193: alegação pela parte beneficiada.','CPC: reconhecimento de ofício é possível.','Regra: ouvir as partes antes.','Prescrição reconhecida → mérito resolvido.']
     },
     {
@@ -1006,7 +1006,7 @@ var THEORY={
       ],
       table:{headers:['Situação','Efeito'],rows:[['Credores solidários + obrigação divisível','Suspensão beneficia apenas o credor protegido'],['Credores solidários + obrigação indivisível','Suspensão aproveita aos demais']]},
       example:'Três credores solidários possuem crédito em dinheiro, normalmente divisível. Uma causa pessoal que suspenda a prescrição para um deles não paralisa automaticamente o prazo dos outros.',
-      trap:'A FCC pode afirmar que a solidariedade sempre comunica a suspensão. O art. 201 exige também indivisibilidade da obrigação.',
+      trap:'A banca examinadora pode afirmar que a solidariedade sempre comunica a suspensão. O art. 201 exige também indivisibilidade da obrigação.',
       memorize:['Suspensão tem efeito pessoal.','Solidariedade, sozinha, não comunica.','Comunicação aos demais somente se a obrigação for indivisível.']
     },
     {
@@ -1348,7 +1348,7 @@ function richTopicHtml(topic){
     html+='</tbody></table></div>';
   }
   if(topic.example)html+='<aside class="ct-callout ct-example"><b>Exemplo aplicado</b><p>'+esc(topic.example)+'</p></aside>';
-  if(topic.trap)html+='<aside class="ct-callout ct-trap"><b>Pegadinha FCC</b><p>'+esc(topic.trap)+'</p></aside>';
+  if(topic.trap)html+='<aside class="ct-callout ct-trap"><b>Pegadinha de prova</b><p>'+esc(topic.trap)+'</p></aside>';
   if(topic.memorize&&topic.memorize.length)html+='<aside class="ct-callout ct-memorize"><b>O que memorizar</b><ul>'+topic.memorize.map(function(item){return '<li>'+esc(item)+'</li>'}).join('')+'</ul></aside>';
   html+='<div class="ct-basis"><b>Base legal</b><span>'+esc(topic.basis)+'</span></div>';
   return html;

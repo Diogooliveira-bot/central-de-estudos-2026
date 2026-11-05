@@ -3,7 +3,7 @@ DIREITO ADMINISTRATIVO · MÓDULO 11 · COMPLETO
 
 DIREITO ADMINISTRATIVOMÓDULO 11
 
-Apostila de estudo · nível Analista · FCC
+Apostila de estudo · nível Analista · Concursos
 
 MROSC — Lei 13.019/2014
 
@@ -49,7 +49,7 @@ Finalidade da parceria | Interesse público e recíproco | Relação privada ou 
 Distribuição de resultados | Vedada para a entidade sem fins lucrativos enquadrada na alínea “a” | Pode existir conforme a natureza societária
 Instrumentos MROSC | Colaboração, fomento ou cooperação | Não automaticamente
 
-Como cai na FCC
+Como cai na prova
 
 A banca tende a trocar a ideia de parceria pela de contrato administrativo comum ou afirmar que qualquer pessoa jurídica sem fins lucrativos é automaticamente apta a celebrar qualquer parceria. As duas simplificações estão erradas.
 
@@ -73,7 +73,7 @@ S2 — Conceitos essenciais do art. 2º
 
 Entenda primeiro
 
-A Lei 13.019/2014 traz conceitos que a FCC pode trocar entre si. A solução é memorizar função, não apenas o nome.
+A Lei 13.019/2014 traz conceitos que a banca examinadora pode trocar entre si. A solução é memorizar função, não apenas o nome.
 
 Regra jurídica
 
@@ -94,7 +94,7 @@ Critério | Atividade | Projeto
 Duração | Contínua ou permanente | Limitada no tempo
 Resultado | Produto ou serviço continuado | Produto delimitado
 Palavra-chave | continuidade | temporalidade
-Erro FCC | tratar toda atuação permanente como projeto | chamar operação temporária de atividade permanente
+Erro de prova | tratar toda atuação permanente como projeto | chamar operação temporária de atividade permanente
 
 Quadro obrigatório — administrador público × gestor
 
@@ -114,13 +114,13 @@ Composição mínima destacada na lei | ao menos 1 servidor efetivo/empregado pe
 
 Compare
 
-Administrador e gestor são pessoas/agentes com papéis distintos; comissão de seleção e comissão de monitoramento são órgãos colegiados de fases distintas. A FCC costuma errar justamente ao trocar quem celebra, quem fiscaliza, quem escolhe e quem avalia.
+Administrador e gestor são pessoas/agentes com papéis distintos; comissão de seleção e comissão de monitoramento são órgãos colegiados de fases distintas. A banca examinadora costuma errar justamente ao trocar quem celebra, quem fiscaliza, quem escolhe e quem avalia.
 
 Exemplo
 
 Se o caso descreve o agente que assina o termo, pense em administrador público. Se descreve quem acompanha metas, comunica problemas e emite parecer técnico final, pense em gestor.
 
-Como cai na FCC
+Como cai na prova
 
 Trocas clássicas: “administrador público é o fiscal cotidiano” ou “gestor é quem necessariamente assina o termo”. A lei separa as funções.
 
@@ -176,7 +176,7 @@ Compare
 
 A diferença entre colaboração e fomento não está no valor do repasse nem no nome escolhido pelas partes. Está na origem da proposta/concepção. Já o acordo de cooperação se distingue pela ausência de transferência financeira.
 
-Como cai na FCC
+Como cai na prova
 
 A banca frequentemente inverte colaboração/fomento e acrescenta expressões absolutas como “todo acordo de cooperação dispensa chamamento”. Cuidado: o art. 29 cria exceção quando o acordo envolver comodato, doação de bens ou outra forma de compartilhamento de recurso patrimonial.
 
@@ -228,7 +228,7 @@ Confere regularidade jurídica/documental | Confere execução do objeto, metas 
 Continua relevante | É priorizado como diretriz do MROSC
 Não pode ser ignorado | Não significa liberdade para descumprir a lei
 
-Como cai na FCC
+Como cai na prova
 
 Questão típica afirma que o controle de resultados elimina controle financeiro/documental. Errado. O sistema prioriza resultados, mas mantém prestação de contas, rastreabilidade e controles interno/externo.
 
@@ -276,7 +276,7 @@ Regido pela Lei 13.019 | Regido pela Lei 14.133
 Objeto: parceria de interesse público e recíproco | Objeto: contratação de obra, bem ou serviço etc.
 Não é “modalidade de licitação” | Possui modalidades legalmente definidas
 
-Como cai na FCC
+Como cai na prova
 
 • afirmar que homologação obriga assinatura → errado;
 • chamar chamamento de modalidade de licitação → errado;
@@ -334,7 +334,7 @@ Exemplo
 
 Se apenas uma entidade possui condição exclusiva para alcançar a meta, a lógica é inexigibilidade. Se várias poderiam executar, mas há calamidade pública enquadrada na lei, a figura pode ser dispensa.
 
-Como cai na FCC
+Como cai na prova
 
 A banca troca “dispensa” por “inexigibilidade” ou afirma que a ausência de chamamento afasta requisitos de celebração, plano, execução e prestação de contas. O §4º do art. 32 derruba essa última afirmação.
 
@@ -374,7 +374,7 @@ O art. 34 exige documentação comprobatória, incluindo certidões, estatuto/at
 
 Quadro obrigatório — requisitos da OSC
 
-Grupo | Conteúdo essencial | Atenção FCC
+Grupo | Conteúdo essencial | Atenção na prova
 Normas internas | finalidade pública/social, destinação patrimonial, contabilidade | há exceções legais para certas OSCs/instrumentos
 Tempo mínimo | 1/2/3 anos conforme ente celebrante | Município / Estado-DF / União
 Experiência | prévia e efetiva no objeto ou semelhante | não basta existência formal
@@ -400,7 +400,7 @@ Exemplo
 
 Uma OSC municipal com apenas oito meses de CNPJ, em regra, não atende ao prazo de um ano; pode haver redução apenas na hipótese e pela forma autorizadas pela própria lei.
 
-Como cai na FCC
+Como cai na prova
 
 A sequência “1, 2, 3” é favorita: Município 1; Estado/DF 2; União 3.
 
@@ -460,7 +460,7 @@ Exemplo
 
 O instrumento pode dizer que a parceria dura 12 meses e prevê prestação de contas. O plano detalha a realidade social, metas de atendimento, atividades, custos e parâmetros para saber se as metas foram alcançadas.
 
-Como cai na FCC
+Como cai na prova
 
 Cobrança perigosa: reproduzir o art. 22 antigo como se vigente fosse. A redação atual é mais enxuta.
 
@@ -517,7 +517,7 @@ Exemplo
 
 A OSC pode remunerar equipe diretamente ligada ao objeto se o gasto estiver aprovado e dentro das regras. Isso não transforma os trabalhadores em empregados do Estado.
 
-Como cai na FCC
+Como cai na prova
 
 Duas pegadinhas de versão histórica: “custos indiretos limitados a 15%” e “todos os incisos antigos do art. 45 continuam vigentes”. Ambas devem ser confrontadas com o texto compilado.
 
@@ -568,7 +568,7 @@ Exemplo
 
 No sexto mês, o gestor constata que a meta de atendimentos está 40% abaixo do previsto. Isso é matéria de monitoramento e pode gerar providências corretivas antes do encerramento.
 
-Como cai na FCC
+Como cai na prova
 
 A banca pode dizer que o relatório técnico só existe quando a OSC deixa de prestar contas. Errado: a lei expressamente separa os instrumentos.
 
@@ -622,7 +622,7 @@ Exemplo
 
 A OSC atingiu todas as metas, mas cometeu falha formal sem dano: pode haver aprovação com ressalvas. Se deixou injustificadamente de alcançar metas centrais, a conta pode ser irregular.
 
-Como cai na FCC
+Como cai na prova
 
 A banca costuma usar a redação antiga, segundo a qual o relatório financeiro seria sempre obrigatório. Pela redação compilada, o relatório financeiro aparece quando não comprovado o cumprimento das metas e resultados.
 
@@ -673,7 +673,7 @@ Exemplo
 
 OSC executa parceria em desacordo grave com o plano. A Administração deve abrir processo, assegurar defesa e aplicar sanção proporcional e competente. Não pode simplesmente declarar inidoneidade sem devido procedimento.
 
-Como cai na FCC
+Como cai na prova
 
 Troca recorrente: afirmar que a suspensão alcança automaticamente todas as esferas. Quem tem esse alcance amplo é a inidoneidade, segundo a redação do art. 73.
 
@@ -744,7 +744,7 @@ Exemplo
 
 Cidadãos apresentam proposta para programa de inclusão de idosos. O Município pode avaliar, publicizar e abrir PMIS, mas não fica obrigado a lançar chamamento ou celebrar parceria.
 
-Como cai na FCC
+Como cai na prova
 
 “Apresentou PMIS, então ganhou preferência/exclusividade” → errado.
 
@@ -802,7 +802,7 @@ administrador × gestor | celebra ou acompanha? | administrador celebra; gestor 
 seleção × monitoramento | escolher ou acompanhar? | seleção julga chamamento; monitoramento avalia execução
 chamamento × dispensa × inexigibilidade | há competição e qual fundamento? | regra / exceção legal / inviabilidade
 
-Como cai na FCC
+Como cai na prova
 
 A banca cria híbridos inexistentes: “termo de parceria do MROSC”, “contrato de gestão da OSC comum” ou “termo de fomento de OS por ser organização social”. Identifique o regime antes do instrumento.
 

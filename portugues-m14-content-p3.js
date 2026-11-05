@@ -14,7 +14,7 @@ window.PT_M14_SESSIONS=(window.PT_M14_SESSIONS||[]).concat([
 <h3>Exemplo desmontado</h3>
 <p><b>“Precisamos de uma solução imediata. Portanto, devemos adiar qualquer decisão por tempo indeterminado.”</b></p>
 <p>O conector “portanto” anuncia conclusão coerente com a primeira ideia, mas o conteúdo seguinte aponta para adiamento indefinido, incompatível com a urgência sem uma justificativa intermediária. O problema não é a existência de conector; é a <b>relação lógica construída</b>.</p>
-<div class="exam"><span class="label">BIZU FCC</span>Troque o conector por uma pergunta: “isso é realmente consequência?”, “isso ocorre apesar de quê?”, “há oposição?”. Se a resposta natural não combina com o conector, suspeite de incoerência ou mudança de sentido.</div>
+<div class="exam"><span class="label">BIZU de prova</span>Troque o conector por uma pergunta: “isso é realmente consequência?”, “isso ocorre apesar de quê?”, “há oposição?”. Se a resposta natural não combina com o conector, suspeite de incoerência ou mudança de sentido.</div>
 <h3>Comparação perigosa</h3>
 <div class="contrast"><div><b>“Estudou muito; por isso, foi aprovado.”</b><span>Expectativa preservada.</span></div><div><b>“Estudou muito; mesmo assim, foi aprovado.”</b><span>O conector trata a aprovação como resultado inesperado. Sem contexto adicional, a lógica fica problemática.</span></div></div>
 <h3>Erro frequente</h3>
@@ -23,7 +23,7 @@ window.PT_M14_SESSIONS=(window.PT_M14_SESSIONS||[]).concat([
 <div class="quiz" data-answer="b" data-explanation="Discordar da tese não torna o texto incoerente; é preciso verificar se as relações internas de sentido são logicamente construídas."><div class="quiz-title">Teste imediato 1</div><p>Qual afirmação está correta?</p><div class="quiz-options"><button class="quiz-opt" data-choice="a">Texto coerente é aquele com o qual o leitor concorda.</button><button class="quiz-opt" data-choice="b">Texto coerente apresenta relações de sentido logicamente recuperáveis, ainda que o leitor discorde da tese.</button><button class="quiz-opt" data-choice="c">Qualquer mudança de palavra torna o texto incoerente.</button></div><div class="quiz-feedback"></div></div>
 <div class="quiz" data-answer="c" data-explanation="A concessão pressupõe um obstáculo que não impede o resultado; aqui, a preparação favorece o resultado, em vez de contrariá-lo."><div class="quiz-title">Teste imediato 2</div><p>Sem contexto adicional, qual trecho apresenta maior problema de coerência relacional?</p><div class="quiz-options"><button class="quiz-opt" data-choice="a">Embora estivesse cansado, terminou o trabalho.</button><button class="quiz-opt" data-choice="b">O sistema falhou; por isso, o envio foi interrompido.</button><button class="quiz-opt" data-choice="c">Preparou-se adequadamente; mesmo assim, alcançou o resultado esperado.</button></div><div class="quiz-feedback"></div></div>
 <div class="takeaway"><span class="label">O que levar para a prova</span><b>COERÊNCIA = expectativas compatíveis + ausência de contradição injustificada + relação lógica reconhecível.</b></div>`},
-{id:'s6',title:'Reescritura — o filtro exato do comando da FCC',html:`
+{id:'s6',title:'Reescritura — o filtro exato do comando da banca examinadora',html:`
 <h3>Comece por aqui</h3>
 <p>Em reescritura, a primeira tarefa não é comparar alternativas. É ler o <b>comando</b> e descobrir o que precisa ser preservado: <b>correção gramatical</b>, <b>sentido</b>, <b>coerência</b>, <b>clareza</b> — ou uma combinação.</p>
 <div class="remember"><span class="label">Filtro de prova</span><b>CORREÇÃO ≠ SENTIDO ≠ COERÊNCIA.</b> Uma frase pode estar gramaticalmente correta e alterar o sentido; pode alterar o sentido e continuar coerente.</div>
@@ -43,7 +43,7 @@ window.PT_M14_SESSIONS=(window.PT_M14_SESSIONS||[]).concat([
 <h3>Exemplo desmontado</h3>
 <p>Original: <b>“Os alunos estudaram e não jogaram.”</b><br>Proposta: <b>“Os alunos estudaram, mas não jogaram.”</b></p>
 <p>As duas frases podem ser gramaticalmente corretas e coerentes. Porém, <b>e</b> estabelece adição; <b>mas</b> introduz oposição. Se o comando exigir manutenção do sentido, a troca reprova.</p>
-<div class="exam"><span class="label">BIZU FCC</span>Não pergunte “a alternativa soa boa?”. Pergunte: <b>qual requisito ela precisa cumprir?</b> Depois procure a primeira violação objetiva. Isso reduz releituras e evita eliminar alternativa válida por critério que o enunciado não pediu.</div>
+<div class="exam"><span class="label">BIZU de prova</span>Não pergunte “a alternativa soa boa?”. Pergunte: <b>qual requisito ela precisa cumprir?</b> Depois procure a primeira violação objetiva. Isso reduz releituras e evita eliminar alternativa válida por critério que o enunciado não pediu.</div>
 <h3>Comparação perigosa</h3>
 <div class="contrast"><div><b>Sinônimo de dicionário</b><span>Pode falhar no contexto por intensidade, registro ou regência.</span></div><div><b>Equivalência contextual</b><span>Preserva a ideia concreta naquele trecho e respeita a nova estrutura.</span></div></div>
 <h3>Erro frequente</h3>

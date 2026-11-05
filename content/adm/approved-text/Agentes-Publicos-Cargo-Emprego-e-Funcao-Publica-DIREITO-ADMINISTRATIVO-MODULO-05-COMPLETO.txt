@@ -7,7 +7,7 @@ Apostila de estudo · nível Analista
 
 Agentes Públicos, Cargo, Emprego e Função Pública
 
-Da classificação dos agentes à investidura, provimento, estabilidade, acumulação, remuneração e responsabilidades — com jurisprudência atualizada e foco nas trocas conceituais típicas da FCC.
+Da classificação dos agentes à investidura, provimento, estabilidade, acumulação, remuneração e responsabilidades — com jurisprudência atualizada e foco nas trocas conceituais típicas da banca examinadora.
 
 Base conferida em 17/09/2026: PDF teórico de Herbert Almeida da Biblioteca · Constituição Federal, arts. 37–41 · Lei 8.112/90 · Lei 8.745/93 · STF (ADI 2.135 e Temas 161, 377/384, 531, 784, 1.081 e 1.164). Materiais TEC foram usados apenas para mapear cobertura e padrão de cobrança.
 
@@ -80,7 +80,7 @@ Agentes de fato
 
 São os que exercem função pública sem investidura regular. A doutrina costuma separar putativos — aparência de investidura, embora exista vício — e necessários — atuação excepcional em situação urgente ou anormal, sem prévia investidura. A teoria da aparência e a proteção da boa-fé podem preservar efeitos de atos perante terceiros, sem “regularizar” automaticamente a situação pessoal do agente.
 
-FCC: “agente político = eleito” é simplificação errada. “jurado/mesário = servidor público” também é errada: são agentes públicos, tradicionalmente classificados como honoríficos/particulares em colaboração.
+Na prova: “agente político = eleito” é simplificação errada. “jurado/mesário = servidor público” também é errada: são agentes públicos, tradicionalmente classificados como honoríficos/particulares em colaboração.
 
 Jurisprudência essencial
 
@@ -188,7 +188,7 @@ Lei 8.112/90
 
 O concurso federal será de provas ou provas e títulos. A lei repete validade de até dois anos, prorrogável uma única vez por igual período, e estabelece que não se abrirá novo concurso enquanto houver candidato aprovado em concurso anterior com prazo de validade não expirado — regra federal mais específica, que deve ser distinguida do texto constitucional.
 
-FCC: “validade obrigatória de dois anos” é falso. A CF diz até dois anos. Se o edital fixar 18 meses, a prorrogação constitucional possível é uma vez por igual período de 18 meses.
+Na prova: “validade obrigatória de dois anos” é falso. A CF diz até dois anos. Se o edital fixar 18 meses, a prorrogação constitucional possível é uma vez por igual período de 18 meses.
 
 Compare
 
@@ -250,7 +250,7 @@ A Lei 8.112 enumera nacionalidade brasileira (ressalvas legais), gozo de direito
 
 Como cai na prova
 
-A FCC troca o marco temporal: estabilidade e estágio probatório contam do efetivo exercício, não da nomeação. A posse não é exercício. Nomeação não é investidura completa no regime da Lei 8.112.
+A banca examinadora troca o marco temporal: estabilidade e estágio probatório contam do efetivo exercício, não da nomeação. A posse não é exercício. Nomeação não é investidura completa no regime da Lei 8.112.
 
 Fórmula: NOMEAÇÃO → POSSE (investidura) → EXERCÍCIO (desempenho).
 
@@ -273,7 +273,7 @@ Provimento originário × derivado
 
 Nomeação é a forma originária: não depende de vínculo anterior com aquele cargo. As demais formas do art. 8º operam dentro de uma relação funcional já existente ou anterior e são chamadas, em linguagem doutrinária, de provimento derivado.
 
-FCC: promoção e readaptação são simultaneamente formas de provimento e hipóteses de vacância. Exoneração é vacância, mas não pena disciplinar.
+Na prova: promoção e readaptação são simultaneamente formas de provimento e hipóteses de vacância. Exoneração é vacância, mas não pena disciplinar.
 
 □ Check manual: consigo recitar as sete formas de provimento e as sete hipóteses de vacância da Lei 8.112.
 
@@ -459,7 +459,7 @@ Irredutibilidade e vinculação
 
 A Constituição protege a irredutibilidade de subsídio e vencimentos nos termos do art. 37, XV, ressalvadas as incidências e limites constitucionais. É vedada vinculação ou equiparação de espécies remuneratórias para efeito de remuneração de pessoal, bem como o efeito cascata nos termos do art. 37, XIII e XIV.
 
-FCC: “revisão anual = reajuste automático pela inflação” é falso. “teto em acumulação lícita = soma dos vínculos” também é falso segundo o STF.
+Na prova: “revisão anual = reajuste automático pela inflação” é falso. “teto em acumulação lícita = soma dos vínculos” também é falso segundo o STF.
 
 □ Check manual: diferencio vencimento, remuneração e subsídio e sei a lógica de lei específica + teto.
 
@@ -574,7 +574,7 @@ Atualizações que anulam material velho
 
 ADI 2.135: não há obrigatoriedade constitucional vigente de regime jurídico único. Tema 1.081: acumulação constitucionalmente autorizada depende de compatibilidade real, sem teto abstrato infraconstitucional de 60h como requisito constitucional. Tema 1.164: desde 2026, memorize a hipótese excepcional de extinção superveniente de cargos por limite prudencial, devidamente motivada, como possível mitigação do direito à nomeação dentro das vagas.
 
-Algoritmo FCC: identifique o vínculo → encontre a regra constitucional → veja se há exceção legal → confira o efeito → desconfie de “sempre”, “automaticamente”, “qualquer” e “exclusivamente”.
+Algoritmo de prova: identifique o vínculo → encontre a regra constitucional → veja se há exceção legal → confira o efeito → desconfie de “sempre”, “automaticamente”, “qualquer” e “exclusivamente”.
 
 □ Check manual: consigo percorrer todas as distinções deste quadro sem consultar a teoria.
 

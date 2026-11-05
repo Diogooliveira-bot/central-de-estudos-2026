@@ -85,7 +85,7 @@ Devido processo
 
 Quando o desfazimento de ato já produziu efeitos concretos favoráveis ao interessado, deve-se observar processo administrativo regular, com contraditório e ampla defesa quando juridicamente exigidos. Autotutela é poder-dever, não licença para decisão surpresa.
 
-FCC: Administração anula por ilegalidade e revoga por mérito. Judiciário pode anular ilegalidade, mas não substitui a Administração na revogação.
+Na prova: Administração anula por ilegalidade e revoga por mérito. Judiciário pode anular ilegalidade, mas não substitui a Administração na revogação.
 
 ☐ Check manual — diferencio anulação, revogação, iniciativa de ofício e provocação.
 
@@ -258,7 +258,7 @@ CPIs
 
 Quando apuram fato determinado envolvendo a Administração, as CPIs são instrumentos de controle parlamentar. Seus poderes investigatórios não significam exercício de jurisdição nem autorização para substituir competências judicialmente reservadas.
 
-FCC: controle legislativo não cria hierarquia entre Legislativo e Executivo. É controle constitucionalmente delimitado.
+Na prova: controle legislativo não cria hierarquia entre Legislativo e Executivo. É controle constitucionalmente delimitado.
 
 ☐ Check manual — separo controle político direto de controle técnico com Tribunal de Contas.
 
@@ -377,7 +377,7 @@ Tribunais de Contas
 
 No registro inicial de aposentadoria, reforma e pensão, o Tema 445 do STF estabeleceu prazo de cinco anos contado da chegada do processo ao Tribunal de Contas. Já a cobrança de ressarcimento fundada em decisão de Tribunal de Contas é prescritível, conforme Tema 899.
 
-FCC: “autotutela é imprescritível e ilimitada” = errado. A Administração deve respeitar, entre outros limites, o art. 54 da Lei 9.784/99.
+Na prova: “autotutela é imprescritível e ilimitada” = errado. A Administração deve respeitar, entre outros limites, o art. 54 da Lei 9.784/99.
 
 ☐ Check manual — sei aplicar o prazo do art. 54 e não confundi-lo com o Tema 445.
 

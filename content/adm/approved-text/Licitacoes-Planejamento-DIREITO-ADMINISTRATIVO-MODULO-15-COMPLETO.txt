@@ -3,7 +3,7 @@ DIREITO ADMINISTRATIVO · MÓDULO 15 · COMPLETO
 
 DIREITO ADMINISTRATIVOMÓDULO 15 · OFFLINE
 
-Apostila de estudo · nível Analista · foco FCC
+Apostila de estudo · nível Analista · foco em concursos
 
 Licitações — Planejamento
 
@@ -27,7 +27,7 @@ NECESSIDADE → SOLUÇÃO → OBJETO → QUANTIDADE/PREÇO → RISCOS → ESTRAT
 • Como estruturar a contratação para obter resultado vantajoso? — parcelamento ou não, padronização, requisitos, sustentabilidade, regime de fornecimento/execução e combinação adequada entre modalidade, critério de julgamento e modo de disputa.
 • Como documentar e justificar as escolhas? — art. 18 e documentos preparatórios.
 
-Regra de ouro para a FCC: planejamento não é burocracia posterior à decisão de contratar. É o processo que transforma um problema público em uma solução juridicamente justificável, tecnicamente viável, economicamente adequada e apta a ser disputada no mercado.
+Regra de ouro para a prova: planejamento não é burocracia posterior à decisão de contratar. É o processo que transforma um problema público em uma solução juridicamente justificável, tecnicamente viável, economicamente adequada e apta a ser disputada no mercado.
 
 ---
 
@@ -64,7 +64,7 @@ Núcleo | planejamento e instrução | competição e seleção
 Pergunta principal | “o que, por que, quanto e como contratar?” | “qual proposta/licitação produzirá o resultado previsto?”
 Documentos típicos | ETP, TR/projetos, estimativas, análise/matriz de riscos, justificativas | edital publicado, propostas, lances, julgamento, habilitação, recursos
 Módulo da Central | M15 | M16
-Erro FCC | dizer que o planejamento começa com a publicação do edital | transportar documento preparatório para momento posterior
+Erro de prova | dizer que o planejamento começa com a publicação do edital | transportar documento preparatório para momento posterior
 
 Quadro comparativo 2 — PCA × fase preparatória de uma contratação
 
@@ -75,7 +75,7 @@ nasce de demandas formalizadas | parte da necessidade concreta e aprofunda a sol
 pode ser disciplinado por regulamento do ente | art. 18 fornece núcleo normativo nacional
 quando elaborado, deve ser considerado | verifica alinhamento com o PCA existente
 
-Como cai na FCC
+Como cai na prova
 
 A banca tende a trocar uma palavra decisiva. Se disser que o PCA é “sempre obrigatório por força direta do art. 12, VII”, desconfie: o dispositivo diz poderão. Se disser que a fase preparatória começa apenas depois da publicação do edital, está invertendo a lógica. Se disser que planejamento é apenas orçamento, também erra: o art. 18 exige considerações técnicas, mercadológicas e de gestão.
 
@@ -137,9 +137,9 @@ Exemplo
 
 Uma contratação de solução tecnológica complexa não deve ter modalidade, critério e exigências de qualificação escolhidos por hábito. A equipe deve justificar por que aquela combinação é adequada para gerar o resultado mais vantajoso, considerando desempenho, risco, ciclo de vida e estrutura do mercado.
 
-Como cai na FCC
+Como cai na prova
 
-A FCC gosta de afirmar que a escolha da modalidade é automática e isolada das demais decisões. O art. 18, VIII, exige analisar a adequação e eficiência da combinação modalidade + critério + modo de disputa.
+A banca examinadora gosta de afirmar que a escolha da modalidade é automática e isolada das demais decisões. O art. 18, VIII, exige analisar a adequação e eficiência da combinação modalidade + critério + modo de disputa.
 
 Pegadinha
 
@@ -210,7 +210,7 @@ Exemplo
 
 Necessidade: reduzir filas de atendimento. O ETP pode comparar aumento de equipe, agendamento digital, novo sistema, reengenharia do fluxo ou combinação dessas soluções. O TR só deve especificar o sistema se a análise demonstrar que essa é a alternativa adequada.
 
-Como cai na FCC
+Como cai na prova
 
 A banca explora a inversão “ETP = especificação final do objeto”. Errado. Ele deve estudar o problema, as alternativas e a viabilidade da solução.
 
@@ -267,7 +267,7 @@ núcleo mínimo | I, IV, VI, VIII, XIII | devem constar do ETP
 demais | II, III, V, VII, IX, X, XI, XII | podem não ser contemplados, desde que haja justificativa
 consequência | — | ausência injustificada ≠ simplificação válida
 
-Como cai na FCC
+Como cai na prova
 
 Dois extremos são típicos:
 
@@ -284,7 +284,7 @@ I, IV, VI, VIII, XIII.
 
 Leve para a prova
 
-Se a FCC trouxer a sequência necessidade + quantidades + valor + parcelamento + conclusão, reconheça o núcleo mínimo do §2º.
+Se a banca examinadora trouxer a sequência necessidade + quantidades + valor + parcelamento + conclusão, reconheça o núcleo mínimo do §2º.
 
 ☐ Check manual: consigo apontar os cinco incisos mínimos e explicar o que acontece com os outros oito.
 
@@ -331,9 +331,9 @@ Exemplo
 
 ETP conclui que o tribunal deve contratar serviço de digitalização. O TR passa a definir volume aproximado, requisitos de qualidade, segurança, prazos, níveis de serviço, modo de execução, fiscalização, medição, pagamento e critérios de seleção.
 
-Como cai na FCC
+Como cai na prova
 
-A FCC pode afirmar que o TR é “exclusivo de obras”. Errado. A própria definição do art. 6º, XXIII, o situa como documento necessário para bens e serviços.
+A banca examinadora pode afirmar que o TR é “exclusivo de obras”. Errado. A própria definição do art. 6º, XXIII, o situa como documento necessário para bens e serviços.
 
 Pegadinha
 
@@ -357,7 +357,7 @@ Anteprojeto, projeto básico e projeto executivo
 
 Visão geral
 
-Nos objetos de engenharia, a profundidade do documento técnico cresce progressivamente. A FCC explora principalmente a troca de funções entre anteprojeto, projeto básico e projeto executivo.
+Nos objetos de engenharia, a profundidade do documento técnico cresce progressivamente. A banca examinadora explora principalmente a troca de funções entre anteprojeto, projeto básico e projeto executivo.
 
 Anteprojeto
 
@@ -391,7 +391,7 @@ contratado elabora PB + PE | contratado elabora PE
 PB do contratado é submetido à aprovação | PB administrativo pode admitir alteração autorizada nas condições legais
 matriz de riscos obrigatória | matriz de riscos obrigatória
 
-Como cai na FCC
+Como cai na prova
 
 Pegadinha recorrente: “na integrada, a Administração deve elaborar projeto básico completo antes da licitação”. Errado. A lei dispensa o PB administrativo e exige anteprojeto.
 
@@ -473,7 +473,7 @@ Exemplo
 
 Se o órgão precisa de 2.000 cadeiras, não basta encontrar preço unitário de uma compra varejista de duas unidades. A estimativa precisa considerar quantidade, escala, especificação, entrega, local, garantia e condições comparáveis.
 
-Como cai na FCC
+Como cai na prova
 
 A banca pode afirmar: “a pesquisa direta com fornecedores é obrigatória em qualquer contratação e deve ser sempre a única fonte”. Errado. O art. 23 apresenta múltiplos parâmetros e admite combinação deles para bens e serviços em geral.
 
@@ -532,7 +532,7 @@ Exemplo
 
 Um órgão pode motivar que revelar previamente seu orçamento de referência prejudicaria a dinâmica competitiva. Ainda assim, precisa fornecer especificações, quantitativos e condições suficientes para que os licitantes formulem preços e deve franquear o orçamento aos órgãos de controle.
 
-Como cai na FCC
+Como cai na prova
 
 A palavra “sigiloso” costuma ser transformada em “secreto”. Isso é incorreto. Trata-se de sigilo relativo e temporalmente administrado, sujeito à motivação e ao controle.
 
@@ -600,7 +600,7 @@ Risco e valor estimado
 
 O art. 22 permite que, quando houver matriz, o cálculo do valor estimado considere taxa de risco compatível com o objeto e com os riscos atribuídos ao contratado, segundo metodologia previamente definida pelo ente.
 
-Como cai na FCC
+Como cai na prova
 
 A banca troca “análise” por “matriz” ou transforma a matriz em documento obrigatório em toda licitação. A obrigatoriedade geral não existe; há hipóteses específicas do art. 22, §3º.
 
@@ -660,7 +660,7 @@ Exemplo
 
 Comprar mobiliário por itens distintos porque há mercados especializados e isso amplia competição pode ser parcelamento legítimo. Dividir artificialmente uma necessidade previsível em vários processos apenas para tratar cada parcela como contratação de menor relevância econômica é outra situação.
 
-Como cai na FCC
+Como cai na prova
 
 A banca pode dizer que “parcelar sempre reduz economia de escala, logo é proibido” ou que “parcelamento e fracionamento são sinônimos”. Ambos estão errados.
 
@@ -726,7 +726,7 @@ Exemplo
 
 Em compra de equipamento que deve interoperar com infraestrutura existente, a Administração pode justificar compatibilidade, definir requisitos objetivos e, se necessário e proporcional, prever prova de conceito para demonstrar funcionamento real.
 
-Como cai na FCC
+Como cai na prova
 
 Erros típicos:
 
@@ -781,7 +781,7 @@ Exemplo
 
 Ao comparar aparelhos de ar-condicionado, o órgão pode considerar consumo energético, manutenção, durabilidade, disponibilidade de assistência e descarte ambientalmente adequado, desde que os critérios sejam objetivos e relacionados ao objeto.
 
-Como cai na FCC
+Como cai na prova
 
 A banca costuma aproximar “mais vantajoso” de “menor preço nominal”. A lei não autoriza essa redução. O ciclo de vida pode ser juridicamente relevante para a solução e para a estratégia de seleção.
 
@@ -851,7 +851,7 @@ Matriz de decisão simplificada
 • Execução: qual regime distribui melhor obrigações e riscos?
 • Motivação: consigo explicar documentalmente cada escolha?
 
-Como cai na FCC
+Como cai na prova
 
 A banca pode afirmar que “a fase preparatória se limita a descrever objeto e preço”. O art. 18 mostra o contrário: também inclui estratégia, condições do edital, riscos e transparência orçamentária.
 
@@ -899,7 +899,7 @@ Edital/minuta preparados
 ↓
 FASE EXTERNA — M16
 
-14.2 Quadro-mestre das distinções que a FCC pode inverter
+14.2 Quadro-mestre das distinções que a banca examinadora pode inverter
 
 Quadro comparativo 20 — Revisão geral
 
@@ -959,7 +959,7 @@ Leia apenas as respostas abaixo e tente explicar cada uma em voz alta:
 • Sustentabilidade? ciclo de vida e impactos entram no planejamento quando pertinentes.
 • Estratégia? escolhas devem ser combinadas e motivadas antes da fase externa.
 
-Como cai na FCC
+Como cai na prova
 
 Na revisão integrada, espere enunciados que misturem duas regras verdadeiras para produzir uma conclusão falsa: por exemplo, reconhecer que o orçamento pode ser sigiloso e concluir que o controle externo não pode acessá-lo; ou reconhecer que a marca pode ser indicada e concluir que basta preferência administrativa.
 
@@ -979,7 +979,7 @@ Antes de marcar a alternativa, pergunte: qual documento? em qual momento? com qu
 
 ---
 
-Camada FCC — padrões de cobrança
+Camada de prova — padrões de cobrança
 
 1. Absolutização
 
@@ -991,7 +991,7 @@ A banca pode atribuir ao TR função do ETP; ao ETP, função de PB; ao PB, fun�
 
 3. Exceção convertida em regra
 
-Indicação de marca, orçamento sigiloso, amostra e matriz de riscos possuem hipóteses e condições. A FCC pode retirar a condição e apresentar a exceção como regra geral.
+Indicação de marca, orçamento sigiloso, amostra e matriz de riscos possuem hipóteses e condições. A banca examinadora pode retirar a condição e apresentar a exceção como regra geral.
 
 4. Momento errado
 
@@ -999,7 +999,7 @@ Planejamento é anterior à disputa. Uma alternativa pode descrever corretamente
 
 5. Sujeito errado
 
-Quem faz o PB na integrada? Quem acessa orçamento sigiloso? A quem se restringe amostra na fase de julgamento? A FCC explora a troca do sujeito jurídico.
+Quem faz o PB na integrada? Quem acessa orçamento sigiloso? A quem se restringe amostra na fase de julgamento? A banca examinadora explora a troca do sujeito jurídico.
 
 6. Regulamento federal tratado como norma nacional
 

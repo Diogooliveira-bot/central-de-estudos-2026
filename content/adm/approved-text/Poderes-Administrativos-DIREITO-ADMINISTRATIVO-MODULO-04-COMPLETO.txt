@@ -7,7 +7,7 @@ Apostila de estudo · nível Analista
 
 Poderes Administrativos
 
-Do poder-dever e da discricionariedade ao poder de polícia, abuso de poder e Lei 13.869/19 — com foco em distinções que a FCC usa para induzir ao erro.
+Do poder-dever e da discricionariedade ao poder de polícia, abuso de poder e Lei 13.869/19 — com foco em distinções que a banca examinadora usa para induzir ao erro.
 
 Base vigente conferida: Constituição Federal · Lei 9.784/99 · CTN, art. 78 · Lei 13.869/19 · STF Tema 532 · STJ, REsp 1.950.332/RJ. O caderno TEC da Biblioteca foi usado apenas para mapear cobertura e padrão de cobrança.
 
@@ -17,7 +17,7 @@ Em toda questão, pergunte primeiro qual relação jurídica está sendo exercid
 
 identifique a relação→ache o poder→verifique o limite→procure a pegadinha
 
-Regra de ouro: a FCC costuma deixar o conceito certo e trocar uma palavra-limitadora: “sempre”, “exclusivamente”, “sem hierarquia”, “permanente”, “imune”, “todo”.
+Regra de ouro: a banca examinadora costuma deixar o conceito certo e trocar uma palavra-limitadora: “sempre”, “exclusivamente”, “sem hierarquia”, “permanente”, “imune”, “todo”.
 
 SESSÃO 01 · VISÃO GERAL
 
@@ -194,7 +194,7 @@ Controle pelo Congresso
 
 O art. 49, V, atribui ao Congresso competência exclusiva para sustar atos normativos do Executivo que exorbitem do poder regulamentar ou dos limites de delegação legislativa.
 
-Pegadinha FCC: decreto regulamentar não “altera a lei para torná-la mais eficiente”. Se exorbita, pode ser controlado judicialmente e, na hipótese constitucional, sustado pelo Congresso.
+Pegadinha de prova: decreto regulamentar não “altera a lei para torná-la mais eficiente”. Se exorbita, pode ser controlado judicialmente e, na hipótese constitucional, sustado pelo Congresso.
 
 Resoluções, instruções e portarias
 

@@ -85,7 +85,7 @@ function reviewCard(){
  const opened=isModuleOpen('RF'),done=isDone('RF');
  return '<section class="cf-module ds-module bc-rlm-module'+(opened?' open':'')+'" data-rlm-module="RF">'+
  '<button class="cf-module-head ds-module-head" aria-expanded="'+opened+'" onclick="return RlmNative.toggleModule(\'RF\')">'+
- '<span class="cf-module-no">REVISÃO FINAL</span><span class="cf-module-title">Revisão cumulativa e simulado FCC</span>'+
+ '<span class="cf-module-no">REVISÃO FINAL</span><span class="cf-module-title">Revisão cumulativa e simulado de concursos</span>'+
  '<span class="cf-module-stat">'+(done?'100%':'0%')+'</span><span class="chev" aria-hidden="true">⌄</span></button>'+
  '<div class="cf-module-body ds-module-body"><div class="cf-subtitle">20 questões autorais, reunindo os 14 módulos teóricos.</div>'+
  '<section class="bc-native-materials bc-native-materials-static"><div class="bc-native-materials-head"><div><b>Material de revisão</b><small>Questões comentadas com correção imediata.</small></div><small>RF · conteúdo nativo</small></div>'+
@@ -102,7 +102,7 @@ function renderMaster(){
  ];
  const done=list.filter(m=>isDone(m.id)).length;
  return '<div class="bc-rlm-course" data-central-native-rlm="1"><section class="bc-rlm-intro ds-course-intro">'+
- '<span class="bc-rlm-kicker">Analista Judiciário · TJCE 2026 · FCC</span>'+
+ '<span class="bc-rlm-kicker">Analista Judiciário · TJCE 2026 · Concursos</span>'+
  '<h3>Raciocínio Lógico-Matemático</h3><p>Aula, questões comentadas e mapa mental em cada módulo, com os filtros de questões do TEC e do QC.</p>'+
  '<div class="bc-rlm-stats"><span class="bc-rlm-stat"><strong>15</strong> módulos</span>'+
  '<span class="bc-rlm-stat"><strong>14</strong> apostilas</span><span class="bc-rlm-stat"><strong>140</strong> questões autorais</span>'+
@@ -119,7 +119,7 @@ function oldTarget(value){
  return map[t]||'M01';
 }
 function open(id='M02',stage='theory'){
- const m=id==='RF'?{id:'RF',titulo:'Revisão cumulativa FCC'}:mod(id);
+ const m=id==='RF'?{id:'RF',titulo:'Revisão cumulativa'}:mod(id);
  if(!m)return false;
  close(false);
  lastFocus=document.activeElement;
@@ -213,7 +213,7 @@ function setFont(delta){
 function renderOverlay(){
  if(!active)return;
  const host=el(OVER);if(!host)return;
- const m=active.id==='RF'?{id:'RF',titulo:'Revisão cumulativa FCC'}:mod(active.id);
+ const m=active.id==='RF'?{id:'RF',titulo:'Revisão cumulativa'}:mod(active.id);
  if(!m)return;
  const stage=active.stage;
  const previous=el('bcRlmScroll'),oldY=previous?.scrollTop||0;

@@ -37,7 +37,7 @@ window.RLM_CURSO_AULAS=Object.assign(window.RLM_CURSO_AULAS||{}, {
       {
         "title": "Método de prova e erros recorrentes",
         "paragraphs": [
-          "Ao enfrentar uma questão FCC: destaque as proposições simples, atribua letras, identifique o conectivo principal, escreva a expressão e só então avalie alternativas. Essa sequência evita resolver pela intuição frases com 'apenas se', 'não é verdade que' e 'mas'. Na lógica formal, 'mas' funciona como 'e': expressa contraste retórico, não uma tabela nova.",
+          "Ao enfrentar uma questão de concurso: destaque as proposições simples, atribua letras, identifique o conectivo principal, escreva a expressão e só então avalie alternativas. Essa sequência evita resolver pela intuição frases com 'apenas se', 'não é verdade que' e 'mas'. Na lógica formal, 'mas' funciona como 'e': expressa contraste retórico, não uma tabela nova.",
           "Use contraexemplos controlados. Para derrubar 'P implica Q', basta encontrar um caso permitido em que P seja verdadeiro e Q falso. Para derrubar 'P e Q', basta uma parte falsa. Não extrapole além das premissas: a lógica das proposições analisa a forma, e não a plausibilidade do assunto narrado."
         ],
         "example": "Exemplo resolvido: 'Ana estuda, mas Bruno não estuda' corresponde a A ∧ ¬B; basta Bruno estudar para a afirmação inteira ser falsa."
@@ -530,7 +530,7 @@ window.RLM_CURSO_AULAS=Object.assign(window.RLM_CURSO_AULAS||{}, {
         "title": "Argumentos categóricos e método operacional",
         "paragraphs": [
           "Palavras como todo, nenhum e algum exigem raciocínio por inclusão de conjuntos: Todo A é B, Todo B é C implica Todo A é C. Já 'Todo A é B' e 'Algum B é C' não autorizam concluir que algum A é C. A área B compartilhada pode conter elementos alheios a A.",
-          "Procedimento de prova: reescreva cada premissa em uma linha, traduza conectivos e quantificadores, trace uma pequena cadeia/diagrama, teste a alternativa como conclusão necessária. A FCC pode misturar conteúdos verbais, espaciais e matemáticos; a obrigação é demonstrar, e não apenas achar plausível."
+          "Procedimento de prova: reescreva cada premissa em uma linha, traduza conectivos e quantificadores, trace uma pequena cadeia/diagrama, teste a alternativa como conclusão necessária. A banca examinadora pode misturar conteúdos verbais, espaciais e matemáticos; a obrigação é demonstrar, e não apenas achar plausível."
         ],
         "example": "Exemplo resolvido: Todo técnico é servidor; nenhum servidor é robô. Portanto, nenhum técnico é robô."
       }

@@ -11,7 +11,7 @@
    <tr><td><b>Empresa pública</b></td><td>Direito privado</td><td>Lei específica <b>autoriza</b>.</td><td>Após atos constitutivos/registro.</td></tr>
    <tr><td><b>Sociedade de economia mista</b></td><td>Direito privado</td><td>Lei específica <b>autoriza</b>.</td><td>Após constituição societária/registro.</td></tr>
   </tbody></table></div>
-  <div class="adm-m2-callout exam"><b>FCC adora a troca verbal:</b> autarquia é <b>criada</b> por lei; empresa pública e SEM têm criação <b>autorizada</b> por lei. Para as fundações, identifique primeiro se a questão está tratando de fundação de direito público ou de direito privado.</div>
+  <div class="adm-m2-callout exam"><b>A banca examinadora adora a troca verbal:</b> autarquia é <b>criada</b> por lei; empresa pública e SEM têm criação <b>autorizada</b> por lei. Para as fundações, identifique primeiro se a questão está tratando de fundação de direito público ou de direito privado.</div>
   <h4>3. Subsidiárias, participação e extinção</h4>
   <p>O art. 37, XX, da Constituição exige <b>autorização legislativa</b> para criação de subsidiárias das entidades referidas no inciso XIX e para sua participação em empresa privada. A jurisprudência constitucional admite que a autorização possa constar da própria lei instituidora quando estabelecida de modo pertinente, sem exigir necessariamente uma lei individual para cada operação em todas as situações.</p>
   <p><b>Extinção segue a lógica da forma de nascimento:</b> para autarquias e fundações autárquicas, a desconstituição da própria pessoa de direito público exige lei. Para pessoas estatais de direito privado, a autorização legislativa pertinente antecede os atos societários de dissolução, liquidação e baixa. Em prova, desconfie da ideia de que um simples ato administrativo pode extinguir livremente uma entidade cuja existência dependeu de lei.</p>
@@ -65,7 +65,7 @@
   <p>As fundações integrantes da Administração Indireta estão sujeitas aos princípios do art. 37 e ao concurso público para ingresso efetivo nos termos constitucionais. Quanto ao regime funcional, evite fórmulas absolutas: a natureza pública ou privada da fundação, a legislação do ente instituidor e o atual entendimento constitucional sobre pluralidade de regimes precisam ser considerados.</p>
   <h4>4. Jurisprudência essencial</h4>
   <p>O STJ, alinhado à orientação do STF, registra três categorias relevantes: fundações privadas instituídas por particulares, fundações públicas de direito privado e fundações públicas de direito público. As de direito público possuem natureza jurídica de autarquia; as de direito privado dependem de autorização legal para instituição.</p>
-  <div class="adm-m2-callout exam"><b>Como a FCC pode induzir ao erro:</b> “Toda fundação instituída pelo poder público tem personalidade de direito privado porque o DL 200 assim define.” A frase ignora a construção jurisprudencial das fundações públicas de direito público.</div>
+  <div class="adm-m2-callout exam"><b>Como a banca examinadora pode induzir ao erro:</b> “Toda fundação instituída pelo poder público tem personalidade de direito privado porque o DL 200 assim define.” A frase ignora a construção jurisprudencial das fundações públicas de direito público.</div>
   <h4>5. Autarquia x fundação pública</h4>
   <div class="adm-m2-table-wrap"><table><thead><tr><th>Autarquia</th><th>Fundação pública</th></tr></thead><tbody>
    <tr><td>Sempre pessoa de direito público.</td><td>Pode ser de direito público ou privado.</td></tr>

@@ -1,5 +1,5 @@
 window.PT_M12_SESSIONS=(window.PT_M12_SESSIONS||[]).concat([
-{id:'s7',title:'Método FCC completo — reescrita, pegadinhas e revisão final',html:`
+{id:'s7',title:'Método de prova completo — reescrita, pegadinhas e revisão final',html:`
 <h3>Comece por aqui</h3>
 <p>Na prova, regência raramente aparece isolada. Ela vem misturada a reescrita, pronome relativo, crase, paralelismo e sentido. O objetivo desta sessão é transformar tudo em um <b>procedimento único</b>.</p>
 <div class="remember"><span class="label">Árvore de decisão</span><b>1.</b> Qual é o regente? → <b>2.</b> Qual o sentido? → <b>3.</b> Qual moldura ele exige? → <b>4.</b> Há relativo/pronome? → <b>5.</b> Há artigo que se funde à preposição? → <b>6.</b> A reescrita preserva gramática <i>e</i> sentido?</div>
@@ -15,7 +15,7 @@ window.PT_M12_SESSIONS=(window.PT_M12_SESSIONS||[]).concat([
 <h3>Simulado mental de 20 segundos</h3>
 <p><b>“A norma que o servidor aspirava foi alterada.”</b></p>
 <ol><li>Regente: <i>aspirava</i>.</li><li>Sentido provável: almejava/pretendia.</li><li>Moldura: <i>aspirar <b>a</b> algo</i>.</li><li>Relativo retoma <i>norma</i>.</li><li>Reconstrução: <i>o servidor aspirava <b>à norma</b></i>.</li><li>Correção: <i>A norma <b>a que</b> o servidor aspirava...</i></li></ol>
-<div class="exam"><span class="label">BIZU FCC</span>Quando a alternativa parece “soar melhor”, desconfie. O ouvido cotidiano costuma aceitar justamente as construções que a prova tradicional usa como distratores. Volte ao método e reconstrua.</div>
+<div class="exam"><span class="label">BIZU de prova</span>Quando a alternativa parece “soar melhor”, desconfie. O ouvido cotidiano costuma aceitar justamente as construções que a prova tradicional usa como distratores. Volte ao método e reconstrua.</div>
 <h3>Mapa de revisão</h3>
 <div class="mini-grid"><div><b>SENTIDO</b>agradar, aspirar, assistir, implicar, visar, proceder.</div><div><b>MOLDURA</b>preferir X a Y; obedecer a; coisa/pessoa em pagar e perdoar.</div><div><b>FORMA</b>lembrar X / lembrar-se de X; esquecer X / esquecer-se de X.</div><div><b>RELATIVO</b>a que, de que, em que, com que conforme o regente.</div><div><b>NOMINAL</b>favorável a; convencido de; compatível com; residente em.</div><div><b>CRASE</b>é consequência: preposição exigida + artigo feminino.</div></div>
 <div class="warning"><span class="label">Limite seguro</span>Não transforme exemplos normativos em afirmações universais sobre todo uso contemporâneo. Em itens de concurso, leia o comando, a variedade linguística cobrada e a moldura formal assumida pelo material/banca.</div>
