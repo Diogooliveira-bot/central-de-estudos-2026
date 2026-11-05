@@ -106,6 +106,28 @@ function parse(raw,mode){
   return blocks;
 }
 function buildHtml(data,mode){
+  // Teoria completa do M01: a apostila em HTML (acentos, tabelas e quadros originais) no
+  // lugar do texto extraído do PDF, que perdeu acentuação e desmontou as tabelas.
+  // Mesmo caminho já usado pelos leitores do M02 em diante.
+  const book=mode==='complete'?global.PENAL_FULL_THEORY?.p1?.html:'';
+  if(book){
+    const host=document.createElement('div');
+    host.innerHTML=book;
+    host.querySelector('.pen-m1-hero')?.remove();
+    host.querySelector('.pen-m1-toc')?.remove();
+    const headings=[];
+    host.querySelectorAll('h2').forEach((h,index)=>{
+      if(!h.id)h.id='bcsec-'+(index+1)+'-'+slug(h.textContent);
+      headings.push({id:h.id,text:norm(h.textContent),level:2,key:normKey(h.textContent)});
+    });
+    const kinds={example:'case',fcc:'trap',decore:'memory',law:'case',court:'case',comparison:'case',scope:'case'};
+    host.querySelectorAll('.layer').forEach(el=>{
+      const kind=Object.keys(kinds).find(k=>el.classList.contains(k));
+      el.classList.add('bc-native-callout',kinds[kind]||'case');
+    });
+    const words=norm(host.textContent).split(/\s+/).filter(Boolean).length;
+    return {body:host.innerHTML,headings,words,mins:Math.max(1,Math.round(words/190))};
+  }
   const raw=mode==='summary'?data.summary:data.complete;
   const blocks=parse(raw,mode);
   const headings=[];

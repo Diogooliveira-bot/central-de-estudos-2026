@@ -46,6 +46,36 @@
       return /[\p{L}]-$/u.test(text) ? text + part : text + ' ' + part;
     }, '');
   }
+  /* Quadros de largura fixa dentro do texto corrido: linhas com duas ou mais colunas
+     separadas por 3+ espaços, mais as linhas de continuação recuadas (célula que quebrou).
+     Cabeçalho repetido antes de cada linha (comum na exportação do material) aparece uma vez.
+     Devolve, por linha inicial, o trecho original e a última linha usada. */
+  function columns(line) { return (line.trim().match(/\S {3,}(?=\S)/g) || []).length; }
+  function tableRuns(lines) {
+    const runs = new Map();
+    for (let i = 0; i < lines.length; i++) {
+      // Começo: cabeçalho com 3+ colunas, ou duas linhas seguidas com colunas.
+      if (!(columns(lines[i]) >= 2 || columns(lines[i]) >= 1 && columns(lines[i + 1] || '') >= 1)) continue;
+      const indent = lines[i].search(/\S/);
+      let end = i, rows = 0;
+      for (let j = i; j < lines.length; j++) {
+        const l = lines[j];
+        // Linha em branco de quebra de página: o quadro continua se a próxima linha tiver colunas.
+        if (!l.trim()) { const k = lines.findIndex((x, n) => n > j && x.trim()); if (k > 0 && columns(lines[k]) >= 1) continue; break; }
+        if (columns(l) >= 1) { rows++; end = j; continue; }
+        if (j > i && l.search(/\S/) >= indent + 8) { end = j; continue; }
+        // 1ª coluna que quebrou ("Arts. 1.358-B a" / "1.358-U"): linha curta e o quadro segue.
+        if (j > i && l.trim().length <= 25 && columns(lines[j + 1] || '') >= 1) { end = j; continue; }
+        break;
+      }
+      if (rows < 2) continue;
+      const head = lines[i].trim().replace(/\s+/g, ' ');
+      const kept = lines.slice(i, end + 1).filter((l, k) => k === 0 || l.trim().replace(/\s+/g, ' ') !== head);
+      runs.set(i, { end, text: kept.join('\n') });
+      i = end;
+    }
+    return runs;
+  }
   /* Mantém o <pre> original, oculto apenas quando uma projeção semântica segura é criada.
      Nenhuma palavra é apagada ou gravada no armazenamento do aluno. */
   function formatRaw(pre) {
@@ -68,7 +98,19 @@
     };
     let para = [], list = null, paraClass = '';
     const flush = () => { if (para.length) add('p', reflow(para), paraClass); para=[]; list=null; paraClass=''; };
-    for (const line of lines) {
+    const tables = tableRuns(lines);
+    for (let i = 0; i < lines.length; i++) {
+      const line = lines[i];
+      const run = tables.get(i);
+      if (run) {
+        // Quadro em colunas alinhadas por espaços: vai inteiro para o módulo editorial,
+        // que o reconstrói como tabela (ou o mantém com rolagem, sem juntar as linhas).
+        flush();
+        const box = add('pre', run.text, 'bc-universal-source-table');
+        box.setAttribute('aria-label', 'Quadro');
+        i = run.end;
+        continue;
+      }
       if (!line.trim()) { flush(); continue; }
       const level = heading(line);
       if (level) { flush(); add('h' + level, line); continue; }

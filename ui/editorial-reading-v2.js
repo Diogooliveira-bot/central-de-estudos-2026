@@ -52,13 +52,31 @@
     if (!head) return null;
     const labels = [...head.cells].map(c => c.textContent.replace(/\s+/g, ' ').trim());
     if (labels.length < 2 || labels.length > 6 || labels.some(l => !l || l.length > 60)) return null;
-    const body = rows.filter(r => r !== head && r.parentElement !== t.tHead);
+    const body = rows.filter(r => r !== head && r.parentElement !== t.tHead && !r.hidden);
     if (!body.length || body.some(r => r.cells.length !== labels.length)) return null;
     return { labels, body };
   }
   function enhanceTable(t) {
     if (done.has(t) || t.closest('.bc-iq,[contenteditable="true"]')) return;
     done.add(t);
+    // Linha que repete o cabeçalho no meio da tabela (exportação do material): fica oculta.
+    const key = r => [...r.cells].map(c => c.textContent.replace(/\s+/g, ' ').trim()).join('|');
+    const first = t.tHead?.rows[0] || t.rows[0];
+    if (first) [...t.rows].forEach(r => { if (r !== first && r.parentElement !== t.tHead && key(r) === key(first)) { r.hidden = true; r.classList.add('bc-repeated-head'); } });
+    // Cabeçalho deslocado: a 1ª linha traz dados (artigo, número) e o rótulo verdadeiro
+    // ("Artigo | Lembre") aparece no meio. O rótulo sobe para o topo; nada é apagado.
+    const labelRow = r => r.cells.length >= 2 && [...r.cells].every(c => { const x = c.textContent.trim(); return x.length > 1 && x.length <= 24 && /^[A-ZÀ-Ý]/.test(x) && !/[\d.;:]/.test(x); });
+    if (first && /\d/.test(first.textContent) && !t.querySelector('[colspan]:not([colspan="1"]),[rowspan]:not([rowspan="1"])')) {
+      const real = [...t.rows].find(r => r !== first && !r.hidden && labelRow(r) && r.cells.length === first.cells.length);
+      if (real) {
+        const body = t.tBodies[0] || t.createTBody();
+        body.insertBefore(first, body.firstChild);
+        [...first.cells].forEach(c => { if (c.tagName === 'TH') { const td = document.createElement('td'); td.append(...c.childNodes); c.replaceWith(td); } });
+        const head = t.tHead || t.createTHead();
+        head.appendChild(real);
+        [...real.cells].forEach(c => { const th = document.createElement('th'); th.scope = 'col'; th.append(...c.childNodes); c.replaceWith(th); });
+      }
+    }
     const shape = tableShape(t);
     if (shape) {
       shape.body.forEach(r => [...r.cells].forEach((c, i) => { c.dataset.label = shape.labels[i]; }));
@@ -87,27 +105,37 @@
     const starts = [];
     for (const m of head.matchAll(/\S+(?: \S+)*/g)) starts.push(m.index);
     if (starts.length < 2 || starts.length > 6) return null;
-    const cut = line => starts.map((s, i) => line.slice(s, i + 1 < starts.length ? starts[i + 1] : undefined));
-    // A linha cabe na grade quando nenhum texto atravessa uma divisa e nada começa antes da 1ª coluna.
-    const fits = line => {
-      const lead = line.search(/\S/);
-      if (lead < 0) return true;
-      if (lead < starts[0]) return false;
-      for (let k = 1; k < starts.length; k++) {
-        const b = starts[k];
-        if (line[b - 1] && line[b - 1] !== ' ' && line[b] && line[b] !== ' ') return false;
-      }
-      return true;
+    // Cada trecho (separado por 2+ espaços) vai para a coluna cujo início está mais perto.
+    // Tolerância de 3 caracteres: quebras de página do material deslocam as colunas.
+    const TOL = 3;
+    const chunks = line => [...line.matchAll(/\S+(?: \S+)*/g)].map(m => ({ i: m.index, t: m[0] }));
+    const col = i => { let k = 0; starts.forEach((s, j) => { if (s <= i + TOL) k = j; }); return k; };
+    const cut = line => {
+      const cells = starts.map(() => '');
+      chunks(line).forEach(c => { const k = col(c.i); cells[k] = cells[k] ? cells[k] + ' ' + c.t : c.t; });
+      return cells;
     };
+    // A linha cabe na grade quando nada começa antes da 1ª coluna e nenhum trecho invade a seguinte.
+    const fits = line => chunks(line).every(c => {
+      const k = col(c.i);
+      return c.i >= starts[0] && (k + 1 >= starts.length || c.i + c.t.length <= starts[k + 1] + TOL);
+    });
     let end = 1;
     while (end < all.length && fits(all[end])) end++;
-    const lines = all.slice(0, end).filter(l => l.trim());
+    // O cabeçalho repetido antes de cada linha (exportação do material) aparece uma vez só.
+    const flat = l => l.trim().replace(/\s+/g, ' ');
+    const lines = all.slice(0, end).filter((l, k) => l.trim() && (k === 0 || flat(l) !== flat(head)));
     const rest = all.slice(end).join('\n');
     const labels = cut(head).map(c => c.trim());
     const rows = [];
+    // Célula que ocupa duas linhas no original continua na mesma linha da tabela: a 1ª coluna
+    // vazia, ou retomando em minúscula um rótulo ainda aberto ("Imóvel por" + "natureza…").
+    const continues = (prev, cells) => !cells[0] || cells.filter(Boolean).length === 1 ||
+      /(?:,|\s(?:e|a|ou))$/.test(prev[0] || '') ||
+      /^[a-zà-ÿ(/]/.test(cells[0]) && !/^(?:arts?\.|inc\.|al\.|§)/i.test(cells[0]) && !/[.;:!?)]$/.test(prev[0] || '');
     for (const line of lines.slice(1)) {
       const cells = cut(line).map(c => c.trim());
-      if (cells[0] || !rows.length) rows.push(cells);
+      if (!rows.length || !continues(rows[rows.length - 1], cells)) rows.push(cells);
       else cells.forEach((c, i) => { if (c) rows[rows.length - 1][i] = (rows[rows.length - 1][i] ? rows[rows.length - 1][i] + ' ' : '') + c; });
     }
     const word = t => /[\p{L}\p{N}]/u.test(t);
@@ -147,6 +175,9 @@
   function convertPreTable(pre) {
     if (done.has(pre)) return;
     done.add(pre);
+    // Bloco de tópicos ("•      texto", com linhas de continuação recuadas) é lista, não quadro.
+    const filled = pre.textContent.split('\n').filter(l => l.trim());
+    if (filled.length && filled.every(l => /^\s*[•▪◦–-]\s/.test(l) || /^\s{4,}\S/.test(l)) && /^\s*[•▪◦–-]\s/.test(filled[0])) { listFromPre(pre); return; }
     const data = fixedWidthTable(pre);
     if (!data && !looksTabular(pre)) { listFromPre(pre); return; }
     if (!data) {
@@ -406,7 +437,8 @@
   function process(root) {
     if (!(root instanceof Element) || root.closest('.visual-editor-v1,.block-editor,[contenteditable="true"]')) return;
     fixSymbolBullets(root);
-    root.querySelectorAll('pre[class*="source-table"]').forEach(convertPreTable);
+    // Quadros de largura fixa: <pre …source-table> e os blocos do M03 de Civil (.bc-bens-table).
+    root.querySelectorAll('pre[class*="source-table"],.bc-bens-table').forEach(convertPreTable);
     mergeSplitParagraphs(root);
     root.querySelectorAll('table').forEach(enhanceTable);
     markTerms(root);
@@ -418,6 +450,19 @@
     // Leitura: sem hifenização automática (palavras partidas); quebras do texto viram espaço.
     ':is(' + ROOTS + ') :is(p,li,dd,dt,blockquote,td,th){-webkit-hyphens:manual;hyphens:manual;word-break:normal;overflow-wrap:break-word}',
     ':is(' + ROOTS + ') p{margin-block:0 .9em}',
+    'tr.bc-repeated-head{display:none!important}',
+    // Original substituído pela tabela/lista reconstruída: oculto mesmo quando o módulo força display.
+    '[data-bc-rebuilt][hidden]{display:none!important}',
+    // Padrão de apostila: tabelas iguais em todas as disciplinas — fonte sem serifa (leitura
+    // rápida em colunas), mesmo tamanho, cabeçalho com o mesmo peso, células alinhadas ao topo.
+    ':is(' + ROOTS + ') table{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif!important;font-size:.86em!important;line-height:1.55!important}',
+    ':is(' + ROOTS + ') table :is(th,td){font-family:inherit!important;font-size:inherit!important;line-height:inherit!important;vertical-align:top}',
+    ':is(' + ROOTS + ') table th{font-weight:700!important}',
+    // M03 de Civil: o texto segue a mesma fonte e escala dos demais módulos.
+    '.bc-bens-apostila .civil-source-content{font-family:inherit!important;font-size:inherit!important}',
+    '.bc-bens-apostila .bc-bens-section{font-family:inherit!important;font-size:1.5em!important}',
+    '.bc-bens-apostila .bc-bens-subsection{font-family:inherit!important;font-size:1.22em!important}',
+    '.bc-rebuilt-list ul{margin:.4em 0 1em;padding-left:1.3em}.bc-rebuilt-list li{margin:.35em 0}',
     // Tabelas: área com rolagem quando a tabela não cabe.
     '.bc-table-scroll{max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;margin:1em 0}',
     '.bc-table-scroll:focus-visible{outline:3px solid #1d7f86;outline-offset:2px;border-radius:6px}',

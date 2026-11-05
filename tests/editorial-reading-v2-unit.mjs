@@ -145,10 +145,10 @@ test('Entenda o termo: primeira ocorrência marcada e explicação por toque e t
 
 test('módulo editorial carregado na Central e no pacote offline com versões novas', () => {
   const boot = read('central-v119.html');
-  assert.match(boot, /ui\/acronyms-v1\.js\?v=20261101acr6'\)\+tag\('ui\/editorial-reading-v2\.js\?v=20261101ed8'\)/);
-  assert.match(read('index.html'), /ui\/universal-reader-v1\.js\?v=20261101ed1/);
+  assert.match(boot, /ui\/acronyms-v1\.js\?v=20261101acr6'\)\+tag\('ui\/editorial-reading-v2\.js\?v=20261105teorias1'\)/);
+  assert.match(read('index.html'), /ui\/universal-reader-v1\.js\?v=20261105teorias1/);
   const offline = JSON.parse(read('central-offline-files-v66172.json')).files;
-  assert.ok(offline.includes('/ui/universal-reader-v1.js?v=20261101ed1'));
+  assert.ok(offline.includes('/ui/universal-reader-v1.js?v=20261105teorias1'));
 });
 
 test('alerta ou dispositivo continuado na linha seguinte forma um só parágrafo', () => {
@@ -192,4 +192,75 @@ test('Civil: nenhuma frase marcada como subtítulo (continuações e listas de a
     }
   assert.deepEqual(bad, []);
   assert.match(data['civil-m15'].completeHtml, /hipóteses legais do art\. 1\.814\. Tradicionalmente, a exclusão/);
+});
+
+const fixed = (w, lines) => { const pre = w.document.createElement('pre'); pre.textContent = lines.join('\n'); return w.CentralEditorialReading.fixedWidthTable(pre); };
+
+test('célula que ocupa duas linhas continua na mesma linha da tabela (sem frases partidas)', () => {
+  const w = setup();
+  const data = JSON.parse(JSON.stringify(fixed(w, [
+    '  Categoria           Regra                                 Exemplo / pegadinha',
+    '  Imóvel por          Solo e o que se incorpora natural ou  Terreno e construção incorporada.',
+    '  natureza/incorp.    artificialmente.',
+    '  Arts. 1.239, 1.240 e   modalidades especiais              Verifique área, moradia e',
+    '  1.240-A                                                   prazo.',
+    '  CC 6º-8º            Morte presumida.                      extremamente provável'
+  ])));
+  assert.deepEqual(data.rows[0], ['Imóvel por natureza/incorp.', 'Solo e o que se incorpora natural ou artificialmente.', 'Terreno e construção incorporada.']);
+  assert.equal(data.rows[1][0], 'Arts. 1.239, 1.240 e 1.240-A');
+  assert.equal(data.rows[1][2], 'Verifique área, moradia e prazo.');
+  assert.equal(data.rows[2][0], 'CC 6º-8º', 'nova linha que começa com rótulo próprio não é colada na anterior');
+});
+
+test('cabeçalho repetido a cada linha aparece uma vez e colunas deslocadas na quebra de página são aceitas', () => {
+  const w = setup();
+  const data = fixed(w, [
+    '  Dispositivo    Regra                 Pegadinha',
+    '  CC 1º-2º       Personalidade.        Nascituro.',
+    '  Dispositivo    Regra                 Pegadinha',
+    '  CC 3º-4º        Incapacidade.         Deficiência não é causa.'
+  ]);
+  assert.equal(data.rows.length, 2);
+  assert.deepEqual([...data.rows[1]], ['CC 3º-4º', 'Incapacidade.', 'Deficiência não é causa.']);
+});
+
+test('quadro em colunas dentro do texto corrido vai para a tabela, não para um parágrafo emendado', () => {
+  const w = setup('<div class="cv-reader"><article><pre></pre></article></div>');
+  const pre = w.document.querySelector('pre');
+  pre.textContent = ['3. LEI SECA ESSENCIAL',
+    'Texto introdutório do quadro, com frase completa e várias palavras para formar parágrafo.',
+    '   Dispositivo    Regra                               Pegadinha',
+    '   CC 1º-2º       Capacidade de direitos/deveres e    Não confundir personalidade',
+    '                  início da personalidade.            com proteção do nascituro.',
+    '   Dispositivo    Regra                               Pegadinha',
+    '   CC 5º          Maioridade e emancipação.           Emancipação não revoga',
+    '                                                      limites de leis especiais.',
+    'Depois do quadro o texto segue normalmente em parágrafo próprio, sem colunas nem recuos.',
+    'Mais uma linha de texto comum para completar o tamanho mínimo do bloco de leitura.',
+    'E outra linha comum, apenas para garantir o volume mínimo exigido pelo leitor universal.'].join('\n');
+  w.CentralUniversalReader.formatRaw(pre);
+  w.CentralEditorialReading.process(w.document.querySelector('article'));
+  const table = w.document.querySelector('table.bc-rebuilt-table');
+  assert.ok(table, 'quadro reconstruído como tabela');
+  assert.equal(table.tBodies[0].rows.length, 2);
+  assert.equal(table.tBodies[0].rows[0].cells[1].textContent, 'Capacidade de direitos/deveres e início da personalidade.');
+  assert.doesNotMatch([...w.document.querySelectorAll('.bc-universal-projection p')].map(p => p.textContent).join(' '), /Dispositivo/);
+});
+
+test('cabeçalho deslocado para o meio da tabela volta ao topo e linhas repetidas somem', () => {
+  const w = setup('<div class="cv-reader"><article><table><thead><tr><th>Art. 1.245</th><th>registro</th></tr></thead><tbody>' +
+    '<tr><td>Art. 1.275</td><td>perda</td></tr><tr><td>Artigo</td><td>Lembre</td></tr><tr><td>Art. 1.285</td><td>passagem</td></tr></tbody></table></article></div>');
+  w.CentralEditorialReading.process(w.document.querySelector('article'));
+  const t = w.document.querySelector('table');
+  assert.deepEqual([...t.tHead.rows[0].cells].map(c => c.textContent), ['Artigo', 'Lembre']);
+  assert.equal(t.tBodies[0].rows[0].cells[0].textContent, 'Art. 1.245', 'nenhum dado perdido');
+  assert.equal(t.tBodies[0].rows.length, 3);
+});
+
+test('bloco de tópicos com marcador e recuo vira lista, não quadro com rolagem', () => {
+  const w = setup('<div class="cv-reader"><article><pre class="civil-source-table"></pre></article></div>');
+  w.document.querySelector('pre').textContent = '•      Faixa normativa principal: CC, arts. 104 a 184.\n•      Risco máximo: nulidade x anulabilidade; fraude contra credores x\n       simulação.';
+  w.CentralEditorialReading.process(w.document.querySelector('article'));
+  const items = [...w.document.querySelectorAll('.bc-rebuilt-list li')].map(li => li.textContent);
+  assert.deepEqual(items, ['Faixa normativa principal: CC, arts. 104 a 184.', 'Risco máximo: nulidade x anulabilidade; fraude contra credores x simulação.']);
 });
