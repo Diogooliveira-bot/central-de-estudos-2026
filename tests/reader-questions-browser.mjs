@@ -26,13 +26,19 @@ for(const id of (process.env.SUBJ||Object.keys(S).join(',')).split(',')){
  await sec.locator('button:visible').filter({hasText:/^Estudar conteúdo$/}).first().click();await page.waitForTimeout(3500);
  const r=await page.evaluate(()=>{const a=[...document.querySelectorAll('.bc-native-reader-overlay .bc-native-article')].pop();const vis=el=>el.offsetParent!==null;
   const gab=[...a.querySelectorAll('p,li,div')].filter(e=>!e.querySelector('p,li,div')&&/Gabarito\s*[:\-–]/.test(e.textContent)&&vis(e)).length;
-  return {choice:a.querySelectorAll('.bc-iq-choice').length,tf:a.querySelectorAll('.bc-iq-tf').length,reveal:a.querySelectorAll('.bc-iq-reveal').length,gabaritoVisivel:gab,siglasExpandidas:a.querySelectorAll('.bc-acr-full').length,siglas:a.querySelectorAll('abbr.bc-acr').length,
+  return {choice:a.querySelectorAll('.bc-iq-choice,.cpp-native-question').length,tf:a.querySelectorAll('.bc-iq-tf').length,reveal:a.querySelectorAll('.bc-iq-reveal').length,gabaritoVisivel:gab,siglasExpandidas:a.querySelectorAll('.bc-acr-full').length,siglas:a.querySelectorAll('abbr.bc-acr').length,
   exemplos:[...a.querySelectorAll('.bc-acr-full')].slice(0,4).map(e=>e.textContent)}});
  const MIN={cpp:['choice',10],adm:['choice',10],cpc:['tf',10],cf:['reveal',10]}[id];
  if(MIN)assert.ok(r[MIN[0]]>=MIN[1],id+': esperadas '+MIN[1]+' questões interativas ('+MIN[0]+'), obtidas '+r[MIN[0]]);
  assert.equal(r.gabaritoVisivel,0,id+': gabarito à vista antes da resposta');
  assert.ok(r.siglasExpandidas>0&&r.siglas>0,id+': siglas sem descrição');
  assert.ok(modAbbr>0||id==='civil',id+': siglas da tela do módulo sem descrição');
+ if(id==='cpp'){
+  const card=page.locator('.cpp-native-question').first();
+  await card.locator('[data-cpp-option]').first().click();
+  await card.locator('[data-cpp-retry]').waitFor();
+  assert.match(await card.locator('[role="status"]').textContent(),/Gabarito:/);
+ }
  const q=page.locator('.bc-native-reader-overlay .bc-iq').first();
  if(await q.count()){
   const hidden=await q.evaluate(box=>{const sib=[...box.parentElement.children];const i=sib.indexOf(box);return sib.slice(i+1,i+3).some(e=>e.hidden&&/Gabarito/.test(e.textContent))});
