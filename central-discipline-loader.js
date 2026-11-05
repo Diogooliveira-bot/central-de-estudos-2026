@@ -94,10 +94,14 @@ function placeholder(subject){
 const optionalAdmLegacy=path=>/^\/adm-m(?:\d+-(?:theory|correction|content-p\d+|runtime)-v\d+|9-m20-bundle-v\d+)\.js$/i.test(path);
 async function download(files,id){
  const sources=new Array(files.length);let index=0;
- await Promise.all(Array.from({length:Math.min(6,files.length)},async()=>{
+ // Até 16 downloads simultâneos (HTTP/2 da Vercel usa uma só conexão). A ordem de
+ // execução não muda: tudo é baixado antes e executado na sequência original.
+ await Promise.all(Array.from({length:Math.min(16,files.length)},async()=>{
   while(index<files.length){const i=index++,url=new URL(files[i],location.origin);const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),25000);
    try{
-    const response=await fetch(url.href,{cache:'no-store',signal:controller.signal});
+    // "no-cache": sempre confere com o servidor, mas reaproveita o arquivo se não mudou (304).
+    // Conteúdo protegido continua sem cache, pois o servidor responde "no-store".
+    const response=await fetch(url.href,{cache:'no-cache',signal:controller.signal});
     if(!response.ok){
      // Plano gratuito: arquivos exclusivos do Premium (403) ficam de fora e a
      // mesma interface é montada apenas com os resumos liberados pelo servidor.
