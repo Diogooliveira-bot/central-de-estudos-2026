@@ -25,7 +25,7 @@ function result(id){
 function stats(){
  const modules=manifest();
  const done=modules.filter(m=>isDone(m.id)).length;
- return {total:modules.length+1,done,pct:Math.round(done/(modules.length+1)*100)||0,unit:'módulos'};
+ return {total:modules.length,done,pct:Math.round(done/modules.length*100)||0,unit:'módulos'};
 }
 function syncCentral(){try{if(typeof g.renderSubjects==='function')g.renderSubjects()}catch(e){console.warn('[RLM] Falha ao atualizar card',e)};try{if(typeof g.renderDisciplineGrid==='function')g.renderDisciplineGrid()}catch(_){}}
 function mark(id,checked){
@@ -60,11 +60,11 @@ function card(m){
  const openState=isModuleOpen(m.id);
  const percent=done?100:p;
  const cards=m.id==='M01'?
-  materialCard(m.id,'speed','Treino de velocidade','Os seis treinos e o cronômetro original, sem sair da Central.','⏱'):
+  materialCard(m.id,'speed','Treino de velocidade','Seis treinos cronometrados, sem sair da Central.','⏱'):
   materialCard(m.id,'theory','Aula','Teoria, exemplos resolvidos e revisão rápida com bizus.','📚')+
   materialCard(m.id,'quiz','Questões','10 questões: clique na alternativa e veja a correção na hora.','✓')+
   materialCard(m.id,'map','Mapa mental','Síntese visual com os ramos e conceitos do módulo.','🧠');
- const sub=m.id==='M01'?'Treino original preservado · cálculo rápido':m.eixo;
+ const sub=m.id==='M01'?'Treino de cálculo rápido':m.eixo;
  return '<section class="cf-module ds-module bc-rlm-module'+(openState?' open':'')+'" data-rlm-module="'+m.id+'">'+
  '<button class="cf-module-head ds-module-head" type="button" aria-expanded="'+openState+'" onclick="return RlmNative.toggleModule(\''+m.id+'\')">'+
  '<span class="cf-module-no">'+(m.id==='M01'?'MÓDULO 01':'MÓDULO '+Number(m.id.slice(1)))+'</span>'+
@@ -75,8 +75,8 @@ function card(m){
  '<article class="bc-native-metric-card"><div class="bc-native-ring" style="--pct:'+percent+'"><div class="bc-native-ring-inner"><b>'+percent+'%</b><span>'+ (m.id==='M01'?'módulo':'atividade')+'</span></div></div>'+
  '<div class="bc-native-metric-copy"><small>'+ (m.id==='M01'?'CONCLUSÃO DO TREINO':'ACOMPANHAMENTO DO MÓDULO')+'</small>'+
  '<strong>'+ (done?'Módulo concluído':m.id==='M01'?'Treino disponível':result(m.id).count+' de 10 questões respondidas')+'</strong>'+
- '<span>'+ (m.id==='M01'?'Histórico e cronômetro originais preservados.':'O percentual da prática não substitui a conclusão manual do módulo.')+'</span></div></article></div>'+
- '<div class="bc-native-materials-head"><div><b>Materiais do módulo</b><small>Escolha como estudar</small></div><small>'+esc(m.id)+' · conteúdo nativo</small></div>'+
+ '<span>'+ (m.id==='M01'?'Seu histórico e o cronômetro ficam salvos.':'O percentual da prática não substitui a conclusão manual do módulo.')+'</span></div></article></div>'+
+ '<div class="bc-native-materials-head"><div><b>Materiais do módulo</b><small>Escolha como estudar</small></div><small>'+esc(m.id)+'</small></div>'+
  '<div class="bc-native-material-grid">'+cards+'</div></section>'+
  '<label class="bc-rlm-complete bc-rlm-complete-inline"><input type="checkbox" '+(done?'checked ':'')+
  'onchange="RlmNative.mark(\''+m.id+'\',this.checked)">Marcar módulo como concluído</label></div></section>';
@@ -88,7 +88,7 @@ function reviewCard(){
  '<span class="cf-module-no">REVISÃO FINAL</span><span class="cf-module-title">Revisão cumulativa e simulado de concursos</span>'+
  '<span class="cf-module-stat">'+(done?'100%':'0%')+'</span><span class="chev" aria-hidden="true">⌄</span></button>'+
  '<div class="cf-module-body ds-module-body"><div class="cf-subtitle">20 questões autorais, reunindo os 14 módulos teóricos.</div>'+
- '<section class="bc-native-materials bc-native-materials-static"><div class="bc-native-materials-head"><div><b>Material de revisão</b><small>Questões comentadas com correção imediata.</small></div><small>RF · conteúdo nativo</small></div>'+
+ '<section class="bc-native-materials bc-native-materials-static"><div class="bc-native-materials-head"><div><b>Material de revisão</b><small>Questões comentadas com correção imediata.</small></div><small>Revisão final</small></div>'+
  '<div class="bc-native-material-grid">'+materialCard('RF','review','Simulado cumulativo','20 questões autorais e comentários imediatos.','✓')+'</div></section>'+
  '<label class="bc-rlm-complete bc-rlm-complete-inline"><input type="checkbox" '+(done?'checked ':'')+'onchange="RlmNative.mark(\'RF\',this.checked)">Revisão concluída</label></div></section>';
 }

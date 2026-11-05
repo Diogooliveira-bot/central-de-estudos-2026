@@ -55,6 +55,7 @@
   // Sigla isolada (não parte de outra palavra, nem de "CF-88-x" ou identificadores).
   const PATTERN = new RegExp('(?<![\\p{L}\\p{N}_/.-])(' + KEYS.join('|') + ')(?![\\p{L}\\p{N}_-])', 'gu');
   const SUBJECTS = ['cf', 'penal', 'cpc', 'adm', 'civil', 'cpp'];
+  const LIST_ACRONYMS = new Set(['LIMPE']);
   const SKIP = 'script,style,textarea,input,select,button,code,pre,a,abbr,mark,svg,.bc-acr-full,[contenteditable="true"]';
   const seen = new WeakSet();
   const plain = text => String(text || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
@@ -99,7 +100,9 @@
         abbr.className = 'bc-acr'; abbr.title = name; abbr.textContent = key;
         abbr.tabIndex = 0; abbr.setAttribute('role', 'button'); abbr.setAttribute('aria-label', key + ': ' + name);
         // Expande a primeira ocorrência do texto, salvo em títulos ou quando o nome já vem antes.
-        if (!heading && !expanded.has(key) && !before.includes(plain(name))) {
+        // Sigla que é uma lista (LIMPE) não é expandida no meio da frase ("ao LIMPE" viraria
+        // "ao Legalidade, Impessoalidade…"): fica a sigla com o significado ao tocar.
+        if (!heading && !expanded.has(key) && !LIST_ACRONYMS.has(key) && !before.includes(plain(name))) {
           const full = document.createElement('span');
           full.className = 'bc-acr-full'; full.dataset.acr = key;
           full.append(name + ' (', abbr, ')');

@@ -1279,7 +1279,7 @@ function topbar(audit=false){
     <div class="brand"><div class="bc-logo"><img src="/assets/base-completa-symbol.png" alt="Logo Base Completa"></div><div><strong>Base Completa</strong><span>${audit?"Desempenho nos estudos":"Lei em Dia"}</span></div></div>
     <div class="header-controls"><span class="sync-indicator saved">✓ Salvo neste dispositivo</span>
       <button class="theme-toggle" onclick="setPref('theme','${saved.preferences.theme==="light"?"dark":"light"}')">${saved.preferences.theme==="light"?"☾ Noturno":"☀ Claro"}</button>
-      <button class="header-action" onclick="setScreen('${audit?"filters":"audit"}')">${audit?"← Voltar ao início":"Ver auditoria"}</button>
+      <button class="header-action" onclick="setScreen('${audit?"filters":"audit"}')">${audit?"← Voltar ao início":"Meu desempenho"}</button>
     </div>
   </header>`
 }

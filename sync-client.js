@@ -66,7 +66,7 @@ async function sync(reason){
   if(!cloud.exists){
    var first=await push(local,localHash,0);
    meta.revision=first.revision;meta.hash=localHash;lastCheckHash=localHash;await saveMeta();
-   status('Conta sincronizada • primeira cópia criada.','ok');return;
+   status('Seus dados estão salvos na sua conta.','ok');return;
   }
   if(cloud.revision>meta.revision){
    if(localHash!==meta.hash&&meta.revision>0)await safetyBackup(local,'Cópia automática antes de receber dados mais recentes');
