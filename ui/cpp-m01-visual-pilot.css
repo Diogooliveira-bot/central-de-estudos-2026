@@ -29,3 +29,17 @@
 .cpp-visual-pilot th{background:var(--bc-color-bg-secondary,#edf4fa);text-align:left;padding:14px}
 .cpp-visual-pilot td{padding:14px;border-bottom:1px solid var(--bc-color-border,#dce6ef);vertical-align:top}
 @media(max-width:600px){.bc-native-article.cpp-visual-pilot{padding:26px 20px 70px}.cpp-visual-pilot .cppv-hero h1{font-size:31px}.cpp-visual-pilot .cppv-route{grid-template-columns:repeat(2,1fr)}.cpp-visual-pilot .cppv-scheme{padding:18px}.cpp-visual-pilot .cppv-grid{grid-template-columns:1fr}}
+/* Override the older paper reader rules only while this pilot is open. */
+#cpp-native-reader:has(.cpp-visual-pilot) .bc-native-scroll{background:#fff!important}
+#cpp-native-reader .cpp-visual-pilot{background:#fff!important;color:#172e45!important;width:min(100%,940px)!important;max-width:940px!important;padding:36px 48px 90px!important;font-family:Arial,Helvetica,sans-serif!important;text-align:left!important}
+#cpp-native-reader .cpp-visual-pilot :is(p,li,td,th,h1,h2,h3,h4,b,strong,span,small,div){font-family:Arial,Helvetica,sans-serif!important;color:inherit}
+#cpp-native-reader .cpp-visual-pilot .bc-std-intro{display:none!important}
+#cpp-native-reader .cpp-visual-pilot>h1:first-of-type{display:none!important}
+#cpp-native-reader .cpp-visual-pilot .cppv-hero h1{font-size:40px!important;line-height:1.15!important;margin:0 0 18px!important;color:#142d46!important}
+#cpp-native-reader .cpp-visual-pilot .cppv-section-heading{font-size:22px!important;line-height:1.4!important}
+#cpp-native-reader .cpp-visual-pilot .cppv-scheme{background:#f1f7fc!important;border-color:#cfdfec!important}
+#cpp-native-reader .cpp-visual-pilot .cppv-tile{background:#fff!important;border-color:#dce6ef!important}
+#cpp-native-reader .cpp-visual-pilot .cppv-scheme h3{font-size:22px!important;line-height:1.3!important;margin:8px 0 20px!important}
+#cpp-native-reader .cpp-visual-pilot .cppv-tile p{font-size:14px!important;line-height:1.65!important;margin:8px 0 0!important}
+#cpp-native-reader .cpp-visual-pilot .cppv-callout{background:#f8fafc!important;color:#172e45!important}
+@media(max-width:600px){#cpp-native-reader .cpp-visual-pilot{padding:26px 20px 70px!important}#cpp-native-reader .cpp-visual-pilot .cppv-hero h1{font-size:30px!important}}
