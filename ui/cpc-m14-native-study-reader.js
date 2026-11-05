@@ -117,8 +117,17 @@ function findHeading(ch){
  const target=normKey(ch.match||ch.title);
  const exact=ordered.find(el=>{const key=normKey(el.textContent);return key===target||key.startsWith(target)||target.startsWith(key)});
  if(exact)return exact;
- const pos=String(ch.id||'').match(/^[sc](\d+)$/);
  const majors=ordered.filter(el=>el.tagName==='H2');
+ // Nome do capítulo diferente do título ("Atos eletrônicos" x "7. PRÁTICA ELETRÔNICA"):
+ // título principal com mais palavras em comum, comparando o início de cada palavra.
+ const stem=w=>w.slice(0,6),wanted=[...new Set(normKey((ch.title||'')+' '+(ch.match||'')).split(' ').filter(w=>w.length>3).map(stem))];
+ let near=null,nearScore=0;
+ // Palavra rara pesa mais que palavra presente em muitos títulos ("atos", "processual").
+ const stems=majors.map(el=>normKey(el.textContent).split(' ').map(stem));
+ const weight=w=>1/Math.max(1,stems.filter(s=>s.includes(w)).length);
+ majors.forEach((el,i)=>{const v=wanted.filter(w=>stems[i].includes(w)).reduce((t,w)=>t+weight(w),0);if(v>nearScore){nearScore=v;near=el}});
+ if(near)return near;
+ const pos=String(ch.id||'').match(/^[sc](\d+)$/);
  if(pos){const index=Math.max(0,Number(pos[1])-1),direct=majors[Math.min(index,majors.length-1)];if(direct)return direct}
  const words=target.split(' ').filter(Boolean);let best=null,score=0;
  ordered.forEach(el=>{const key=normKey(el.textContent);let value=0;words.forEach(word=>{if(key.includes(word))value++});if(value>score){score=value;best=el}});
