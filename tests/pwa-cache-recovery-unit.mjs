@@ -193,3 +193,105 @@ test('erro real em folha de estilo ainda pode bloquear inicializacao quebrada',(
   assert.equal(ui.spinner.hidden,true);
   assert.match(ui.status.textContent,/Nao foi possivel|Não foi possível/);
 });
+
+// Carregamento rápido: arquivos versionados (?v=) abrem do aparelho e são conferidos depois.
+function sessionStore(extra={}){
+  const puts=[];
+  return {puts,store:{
+    async match(key){
+      const url=typeof key==='string'?key:key.url;
+      if(url==='/__bc_offline_auth__')return new Response(JSON.stringify({verifiedAt:Date.now(),data:{authenticated:true,user:{id:'ficticio'}}}));
+      if(extra[url])return new Response(extra[url],{status:200,headers:{ETag:'"v1"'}});
+      return undefined;
+    },
+    async put(request,response){puts.push(typeof request==='string'?request:request.url)},
+    async delete(){return true},
+    async keys(){return []}
+  }};
+}
+
+test('arquivo versionado abre do aparelho com sessão verificada e é conferido em segundo plano',async()=>{
+  const url=origin+'/ui/app.js?v=1';
+  const {store,puts}=sessionStore({[url]:'cached code'});
+  const w=createWorker({cacheOpen:async()=>store,network:async()=>new Response('network code',{status:200,headers:{ETag:'"v1"'}})});
+  const response=await w.trigger('fetch',asset('/ui/app.js?v=1'));
+  assert.equal(await response.text(),'cached code');
+  await Promise.all(w.background);
+  assert.equal(w.requests.length,1,'conferência em segundo plano');
+  assert.equal(w.requests[0].options.cache,'no-cache');
+  assert.deepEqual(puts,[],'mesmo ETag não regrava o cache');
+});
+
+test('conferência em segundo plano atualiza o cache quando o arquivo mudou',async()=>{
+  const url=origin+'/ui/app.js?v=1';
+  const {store,puts}=sessionStore({[url]:'old code'});
+  const w=createWorker({cacheOpen:async()=>store,network:async()=>new Response('new code',{status:200,headers:{ETag:'"v2"'}})});
+  await w.trigger('fetch',asset('/ui/app.js?v=1'));
+  await Promise.all(w.background);
+  assert.deepEqual(puts,[url]);
+});
+
+test('sem sessão verificada, arquivo versionado vem da rede',async()=>{
+  const url=origin+'/ui/app.js?v=1';
+  const store={async match(key){return (typeof key==='string'?key:key.url)===url?new Response('cached'):undefined},async put(){},async delete(){return true}};
+  const w=createWorker({cacheOpen:async()=>store,network:async()=>new Response('network',{status:200})});
+  const response=await w.trigger('fetch',asset('/ui/app.js?v=1'));
+  assert.equal(await response.text(),'network');
+  assert.equal(w.requests[0].options.cache,'no-cache');
+});
+
+test('conteúdo protegido nunca sai do cache e continua sem armazenamento',async()=>{
+  const path='/content/civil/m01-native-data.js?v=1';
+  const {store}=sessionStore({[origin+path]:'PREMIUM CACHED'});
+  const w=createWorker({cacheOpen:async()=>store,network:async()=>new Response('premium online',{status:200})});
+  const response=await w.trigger('fetch',asset(path));
+  assert.equal(await response.text(),'premium online');
+  assert.equal(w.requests[0].options.cache,'no-store');
+});
+
+test('pedido "no-store" da página ignora o cache do aparelho',async()=>{
+  const url=origin+'/ui/app.js?v=1';
+  const {store}=sessionStore({[url]:'cached'});
+  const w=createWorker({cacheOpen:async()=>store,network:async()=>new Response('fresh',{status:200})});
+  const response=await w.trigger('fetch',{...asset('/ui/app.js?v=1'),cache:'no-store'});
+  assert.equal(await response.text(),'fresh');
+  assert.equal(w.requests[0].options.cache,'no-store');
+});
+
+test('arquivo sem versão é sempre conferido com o servidor (304 reaproveita)',async()=>{
+  const {store}=sessionStore({[origin+'/ui/app.js']:'cached'});
+  const w=createWorker({cacheOpen:async()=>store,network:async()=>new Response('online',{status:200})});
+  const response=await w.trigger('fetch',asset('/ui/app.js'));
+  assert.equal(await response.text(),'online');
+  assert.equal(w.requests[0].options.cache,'no-cache');
+});
+
+test('a Central pede autorização, estrutura e estado local ao mesmo tempo',()=>{
+  const entry=readFileSync(new URL('../central-v119.html',import.meta.url),'utf8');
+  const shell=entry.indexOf("var shellRequest=fetch('/index.html?central_source='+BUILD,{cache:'no-cache'})");
+  const auth=entry.indexOf("fetch('/api/auth?action=me'");
+  assert.ok(shell>0&&shell<auth,'estrutura começa antes de esperar a autorização');
+  assert.ok(entry.indexOf("import('/sync-local-state.js")<auth);
+  assert.match(entry,/location\.replace\('\/login\.html\?next='/);
+  const loader=readFileSync(new URL('../central-discipline-loader.js',import.meta.url),'utf8');
+  assert.match(loader,/fetch\(url\.href,\{cache:'no-cache'/);
+});
+
+test('resposta marcada "private" pelo servidor não é guardada nem servida do aparelho',async()=>{
+  const url=origin+'/ui/cpc-sharing-links.js?v=1';
+  const puts=[];
+  const store={
+    async match(key){
+      const k=typeof key==='string'?key:key.url;
+      if(k==='/__bc_offline_auth__')return new Response(JSON.stringify({verifiedAt:Date.now(),data:{authenticated:true,user:{id:'ficticio'}}}));
+      if(k===url)return new Response('PREMIUM ANTIGO',{headers:{'Cache-Control':'private, no-store, max-age=0'}});
+      return undefined;
+    },
+    async put(request){puts.push(request)},async delete(){return true}
+  };
+  const w=createWorker({cacheOpen:async()=>store,network:async()=>new Response('premium online',{status:200,headers:{'Cache-Control':'private, no-store, max-age=0'}})});
+  const response=await w.trigger('fetch',asset('/ui/cpc-sharing-links.js?v=1'));
+  assert.equal(await response.text(),'premium online');
+  await Promise.all(w.background);
+  assert.deepEqual(puts,[]);
+});

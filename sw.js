@@ -63,9 +63,38 @@ async function purgeProtectedOfflineContent(){
     await Promise.all(requests.filter(function(request){return protectedContentPath(new URL(request.url).pathname)}).map(function(request){return cache.delete(request).catch(function(){return false})}));
   }catch(_){}
 }
+// Arquivos com ?v= mudam de endereço quando o conteúdo muda (regra do projeto).
+// Eles podem abrir direto do cache do aparelho e são conferidos em segundo plano.
+function versionedAsset(url){
+  return url.searchParams.has('v')&&/\.(?:js|css|webp|png|svg|ico|woff2?)$/i.test(url.pathname)&&!protectedContentPath(url.pathname);
+}
+// Sessão verificada recentemente neste aparelho (evita ler o cache a cada arquivo).
+var sessionMemo={at:0,ok:false};
+async function recentSession(){
+  if(Date.now()-sessionMemo.at<10000)return sessionMemo.ok;
+  var ok=await offlineAllowed();
+  sessionMemo={at:Date.now(),ok:ok};
+  return ok;
+}
+// O servidor marca conteúdo Premium como "private": nunca fica guardado no aparelho,
+// mesmo que o arquivo não esteja na lista protectedContentPath acima.
+function privateResponse(response){
+  return /(?:^|[,\s])private(?:$|[,\s])/i.test(String(response&&response.headers&&response.headers.get('Cache-Control')||''));
+}
+function sameVersion(a,b){
+  var etagA=a&&a.headers.get('ETag'),etagB=b&&b.headers.get('ETag');
+  return !!etagA&&etagA===etagB;
+}
+function revalidate(event,request,hit){
+  // "no-cache" pergunta ao servidor se mudou (resposta 304 é quase sem dados).
+  event.waitUntil(fetch(request,{cache:'no-cache'}).then(function(response){
+    if(!response||!response.ok||response.redirected||privateResponse(response)||sameVersion(response,hit))return;
+    return caches.open(CACHE).then(function(cache){return cache.put(request,response)});
+  }).catch(function(){}));
+}
 function cacheResponse(event,request,response){
   // Cache Storage must never prevent a healthy online response from loading.
-  if(response&&response.ok&&!response.redirected&&!protectedContentPath(new URL(request.url).pathname)){
+  if(response&&response.ok&&!response.redirected&&!privateResponse(response)&&!protectedContentPath(new URL(request.url).pathname)){
     try {
       var copy=response.clone();
       event.waitUntil(caches.open(CACHE).then(function(cache){return cache.put(request,copy)}).catch(function(){}));
@@ -74,10 +103,12 @@ function cacheResponse(event,request,response){
   return response;
 }
 async function clearOfflineAuth(){
+  sessionMemo={at:0,ok:false};
   try{var cache=await caches.open(AUTH_CACHE);await cache.delete(AUTH_KEY)}catch(_){}
   await purgeProtectedOfflineContent();
 }
 async function cacheOfflineAuth(response){
+  sessionMemo={at:0,ok:false};
   if(!response||!response.ok)return response;
   try{
     var data=await response.clone().json(),cache=await caches.open(AUTH_CACHE);
@@ -132,7 +163,9 @@ async function prepareOffline(){
           await yieldToStudy();
           var url=files[index++];
           try{
-            var asset=await fetch(url,{cache:'no-store'});
+            // Arquivo versionado já salvo nesta versão do cache não precisa baixar de novo.
+            if(versionedAsset(new URL(url,self.location.origin))&&await cache.match(url)){saved++;continue}
+            var asset=await fetch(url,{cache:'no-cache'});
             if(asset&&asset.ok&&!asset.redirected){await cache.put(url,asset.clone());saved++}else failed.push(url+': HTTP '+asset.status);
           }catch(error){failed.push(url+': '+error.message)}
         }
@@ -221,9 +254,21 @@ self.addEventListener('fetch',function(event){
   var html=/\.html$/.test(url.pathname);
   var dynamic=/\.(?:js|css|json|woff2?|png|webp|avif|ico|svg)$/.test(url.pathname)||/\.txt$/.test(url.pathname)||url.search;
   if(html||dynamic){
+    // A página pode exigir download novo pedindo "no-store"; o padrão agora é
+    // "no-cache": o navegador reaproveita o arquivo quando o servidor responde 304.
+    var mode=request.cache==='no-store'||request.cache==='reload'?'no-store':'no-cache';
+    var fromDevice=mode==='no-cache'&&versionedAsset(url);
     event.respondWith((async function(){
+      if(fromDevice){
+        try{
+          if(await recentSession()){
+            var saved=await (await caches.open(CACHE)).match(request);
+            if(saved&&!privateResponse(saved)){revalidate(event,request,saved);return saved}
+          }
+        }catch(_){}
+      }
       try{
-        var response=await fetch(request,{cache:'no-store'});
+        var response=await fetch(request,{cache:mode});
         return cacheResponse(event,request,response);
       }catch(_){
         if(!publicPath(url.pathname)&&!(await offlineAllowed())){
