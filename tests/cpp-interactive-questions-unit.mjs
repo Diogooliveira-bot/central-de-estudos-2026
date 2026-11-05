@@ -8,6 +8,18 @@ const read=p=>readFileSync(new URL('../'+p,import.meta.url),'utf8');
 const packed={};
 vm.runInNewContext(read('content/cpp/cpp-native-content-packed.js'),{window:packed});
 const content=JSON.parse(gunzipSync(Buffer.from(packed.CPP_NATIVE_PACKED_B64,'base64')));
+test('CPP lei seca: cobertura auditada, fontes literais e lacunas anteriores',()=>{
+ const audit=JSON.parse(read('audits/cpp-law-coverage.json')),sources=JSON.parse(read('audits/cpp-official-source-lines.json')),ctx={window:{}};
+ vm.runInNewContext(read('content/cpp/cpp-visual-law.js'),ctx);const data=ctx.window.CPP_VISUAL_LAW;
+ const clean=t=>t.replace(/【\d+†([^†】]+)(?:†[^】]*)?】/g,'$1').replace(/^#+\s*/,'').trim();
+ for(const [n,module]of Object.entries(audit.modules))for(const r of module.references)assert.ok(data.modules[n].some(x=>x.key===r.law+':'+r.ref),n+': '+r.law+':'+r.ref);
+ for(const article of Object.values(data.articles)){
+  const source=sources[article.law],lines=[];for(let n=article.sourceLines[0];n<=article.sourceLines[1];n++){assert.ok(n in source.lines,article.label+': linha ausente');lines.push(clean(source.lines[n]));}
+  for(const p of article.paragraphs)assert.ok(lines.includes(p),article.label+': literalidade');
+  assert.equal(article.officialUrl,source.url);
+ }
+ for(const [n,keys]of Object.entries({1:['cf:5','cpp:3-F'],3:['cpp:6','l12830:2','l8906:7'],10:['cpc:252','cpc:1046'],12:['cpp:158-F','lep:9-A'],14:['eca:241-D','cpp:350-B'],18:['cpp:396-A'],21:['l10741:94','cpp:798-A'],22:['cpp:647-A','l12016:23']}))for(const key of keys)assert.ok(data.modules[n].some(x=>x.key===key),n+': '+key);
+});
 function setup(){
  const dom=new JSDOM('<!doctype html><html><body></body></html>',{url:'https://example.test',runScripts:'outside-only'});
  const w=dom.window;
@@ -55,21 +67,24 @@ test('CPP visual: 22 completas preservam texto e tabelas, com quadros inteiros e
    assert.equal(article.querySelectorAll('.cppv-hero').length,1);
    const lawBlocks=[...article.querySelectorAll('.cppv-literal-law')];
    assert.equal(lawBlocks.length,w.CPP_VISUAL_LAW.modules[d.number].length);
-   lawBlocks.forEach((box,i)=>{
-    const source=w.CPP_VISUAL_LAW.modules[d.number][i];
+   lawBlocks.forEach(box=>{
+    const source=w.CPP_VISUAL_LAW.articles[box.dataset.lawKey];
     assert.deepEqual([...box.querySelectorAll('blockquote p')].map(p=>p.textContent),[...source.paragraphs]);
-    assert.match(box.querySelector('a').href,/^https:\/\/www2\.camara\.leg\.br\//);
+    assert.match(box.querySelector('a').href,/^https:\/\/(www2\.camara\.leg\.br|legis\.senado\.leg\.br)\//);
+    assert.ok(box.compareDocumentPosition(article.querySelector('.cpp-native-question'))&w.Node.DOCUMENT_POSITION_FOLLOWING,'lei seca antes das questões');
+    assert.equal(box.closest('table,li,.cpp-native-question'),null);
    });
+   assert.equal(new Set(lawBlocks.map(x=>x.dataset.lawKey)).size,lawBlocks.length,'sem repetir artigos no módulo');
    assert.ok(article.querySelectorAll('.cppv-scheme').length>=3,d.uid);
    const original=new JSDOM(d.completeHtml).window.document;
    const tables=[...original.querySelectorAll('table')].map(t=>t.textContent);
    assert.deepEqual([...article.querySelectorAll('table')].map(t=>t.textContent),tables,'tabelas originais preservadas');
    const questionStart=[...original.querySelectorAll('h1,h2,h3,h4,h5,h6')].find(h=>/quest[aã]o\s+\d+/i.test(h.textContent));
+   const normalize=s=>s.replace(/\s+/g,' ').trim(),articleText=normalize(article.textContent);
    for(const p of original.querySelectorAll('p')){
     if(questionStart&&(questionStart.compareDocumentPosition(p)&original.defaultView.Node.DOCUMENT_POSITION_FOLLOWING))continue;
     if(/Gabarito:|Explicação:|Dificuldade:|^[A-E][).]/.test(p.textContent.trim()))continue;
-    const normalize=s=>s.replace(/\s+/g,' ').trim();
-    assert.ok(normalize(article.textContent).includes(normalize(p.textContent)),d.uid+': texto preservado: '+p.textContent.slice(0,240));
+    assert.ok(articleText.includes(normalize(p.textContent)),d.uid+': texto preservado: '+p.textContent.slice(0,240));
    }
    const review=[...article.querySelectorAll('.cppv-scheme')].find(el=>el.textContent.includes('ANTES DE RESPONDER'));
    assert.ok(review.compareDocumentPosition(article.querySelector('.cpp-native-question'))&w.Node.DOCUMENT_POSITION_FOLLOWING);

@@ -2,17 +2,30 @@
 (function(g){
  'use strict';
  function addLiteralLaw(article,n){
-  const laws=g.CPP_VISUAL_LAW?.modules[n];if(!laws?.length||article.querySelector('.cppv-law-library'))return;
+  const data=g.CPP_VISUAL_LAW,laws=data?.modules[n];if(!laws?.length||article.querySelector('.cppv-law-library'))return;
+  const normalize=t=>String(t||'').replace(/\s+/g,' ').trim();
+  const candidates=[...article.querySelectorAll('h1,h2,h3,h4,h5,h6,p,li,td')].filter(el=>!el.closest('.cppv-hero,.cppv-scheme,.cpp-native-question')&&!el.querySelector('p,li,table'));
+  const firstQuestion=article.querySelector('.cpp-native-question');
+  const theory=candidates.filter(el=>!firstQuestion||(el.compareDocumentPosition(firstQuestion)&Node.DOCUMENT_POSITION_FOLLOWING));
   const section=document.createElement('section');section.className='cppv-law-library';
   const title=document.createElement('h2');title.textContent='Lei seca — redação literal';
-  const intro=document.createElement('p');intro.textContent='Dispositivos centrais para acompanhar a leitura. O texto da lei aparece abaixo; as explicações, a doutrina e as interpretações dos tribunais continuam nas respectivas seções da apostila. As notas e remissões da legislação foram preservadas.';
+  const intro=document.createElement('p');intro.textContent='Abra as caixas de lei seca junto às referências da teoria para consultar os artigos e seus desdobramentos. As notas da fonte oficial foram preservadas. Doutrina e jurisprudência continuam nas respectivas explicações.';
   section.append(title,intro);
-  laws.forEach((law,i)=>{
-   const box=document.createElement('details');box.className='cppv-literal-law';box.open=i===0;
+  const groups=new Map();
+  laws.forEach(entry=>{
+   const law=data.articles[entry.key];if(!law)return;
+   const anchor=normalize(entry.anchor);
+   let target=anchor&&theory.find(el=>normalize(el.textContent).startsWith(anchor));
+   if(!target&&entry.section!=='Leitura complementar')target=theory.find(el=>/^H/.test(el.tagName)&&normalize(el.textContent)===normalize(entry.section));
+   // A legal box must remain outside lists, tables and existing callouts.
+   if(target)while(target.parentElement&&target.parentElement!==article)target=target.parentElement;
+   const host=target||section;let group=groups.get(host);
+   if(!group){group=document.createElement('section');group.className='cppv-law-group';const label=document.createElement('h4');label.textContent=target?'Lei seca desta referência':'Dispositivos complementares';group.append(label);if(target)target.after(group);else section.append(group);groups.set(host,group);}
+   const box=document.createElement('details');box.className='cppv-literal-law';box.dataset.lawKey=entry.key;
    const summary=document.createElement('summary');summary.textContent=law.label+' · Ler texto da lei';
    const text=document.createElement('blockquote');law.paragraphs.forEach(line=>{const p=document.createElement('p');p.textContent=line;text.append(p)});
    const link=document.createElement('a');link.href=law.officialUrl;link.target='_blank';link.rel='noopener noreferrer';link.textContent='Consultar fonte oficial';
-   box.append(summary,text,link);section.append(box);
+   box.append(summary,text,link);group.append(box);
   });
   article.querySelector('.cppv-hero')?.after(section);
  }
