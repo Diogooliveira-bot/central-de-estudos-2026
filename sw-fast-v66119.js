@@ -76,8 +76,8 @@ var CIVIL_SCRIPTS=[
 
 function injectMain(response){
   return response.text().then(function(html){
-    if(html.indexOf('central-sync-v6679')<0&&html.indexOf('sync-client.js?v=66107')<0){
-      html=html.replace('</body>','<script defer src="./sync-client.js?v=66107"></script></body>');
+    if(html.indexOf('central-sync-v6679')<0&&html.indexOf('sync-client.js?v=20261105fasea1')<0){
+      html=html.replace('</body>','<script defer src="./sync-client.js?v=20261105fasea1"></script></body>');
     }
     html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*(?:central-updater|central-version)-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');
     html=html.replace(/<script\b[^>]*\bsrc=["'][^"']*central-progress-entry-v\d+\.js[^"']*["'][^>]*>\s*<\/script>/gi,'');

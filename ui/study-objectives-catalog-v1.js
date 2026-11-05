@@ -9,7 +9,7 @@
     adm: { id:'adm', name:'Direito Administrativo', available:true, questionKey:'administrativo' },
     civil: { id:'civil', name:'Direito Civil', available:true, questionKey:'civil' },
     cpc: { id:'cpc', name:'Direito Processual Civil', available:true, questionKey:'processual-civil' },
-    penal: { id:'penal', name:'Direito Penal', available:true, questionKey:'penal', notice:'Carregamento da teoria completa dos módulos 11 a 17 pendente.' },
+    penal: { id:'penal', name:'Direito Penal', available:true, questionKey:'penal', },
     cpp: { id:'cpp', name:'Direito Processual Penal', available:true, questionKey:'processual-penal' },
     rlm: { id:'rlm', name:'Raciocínio Lógico-Matemático', available:true, questionKey:'rlm' },
   };

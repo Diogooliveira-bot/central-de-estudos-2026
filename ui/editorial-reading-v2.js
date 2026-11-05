@@ -434,11 +434,18 @@
     const nodes = []; for (let n = walker.nextNode(); n; n = walker.nextNode()) nodes.push(n);
     nodes.forEach(n => { n.nodeValue = n.nodeValue.replace(/\uf0b7/g, '•'); });
   }
+  /* Nota de produção ("Base: PDF '1. Princípios…' · apoio: …") não é texto de estudo. */
+  function hideSourceNotes(root) {
+    root.querySelectorAll('p').forEach(p => {
+      if (/^Base:\s*PDF/i.test(p.textContent.trim()) && !p.closest('[contenteditable="true"]')) p.classList.add('bc-source-note');
+    });
+  }
   function process(root) {
     if (!(root instanceof Element) || root.closest('.visual-editor-v1,.block-editor,[contenteditable="true"]')) return;
     fixSymbolBullets(root);
     // Quadros de largura fixa: <pre …source-table> e os blocos do M03 de Civil (.bc-bens-table).
     root.querySelectorAll('pre[class*="source-table"],.bc-bens-table').forEach(convertPreTable);
+    hideSourceNotes(root);
     mergeSplitParagraphs(root);
     root.querySelectorAll('table').forEach(enhanceTable);
     markTerms(root);
@@ -451,6 +458,11 @@
     ':is(' + ROOTS + ') :is(p,li,dd,dt,blockquote,td,th){-webkit-hyphens:manual;hyphens:manual;word-break:normal;overflow-wrap:break-word}',
     ':is(' + ROOTS + ') p{margin-block:0 .9em}',
     'tr.bc-repeated-head{display:none!important}',
+    'p.bc-source-note{display:none!important}',
+    // Dificuldade das questões internas ("FÁCIL", "MÉDIA", "DIFÍCIL") como etiqueta, separada do enunciado.
+    'details.question>summary .level{display:inline-block;margin:0 .6em .15em 0;padding:.12em .6em;border-radius:999px;font:700 .68em/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:.06em;vertical-align:.15em;background:#e3f2ec;color:#1d6a4c}',
+    'details.question>summary .level.média,details.question>summary .level.media{background:#fdf1dc;color:#8a5a12}',
+    'details.question>summary .level.difícil,details.question>summary .level.dificil{background:#fbe4e1;color:#9b2c22}',
     // Original substituído pela tabela/lista reconstruída: oculto mesmo quando o módulo força display.
     '[data-bc-rebuilt][hidden]{display:none!important}',
     // Padrão de apostila: tabelas iguais em todas as disciplinas — fonte sem serifa (leitura

@@ -4763,7 +4763,7 @@ function renderTopic(s,t){
  return `<div class="topic-item ${topicIsOpen?'open':''}" data-uid="${t.uid}">
   <div class="topic-row">
    <input type="checkbox" ${done?'checked':''} onchange="toggleGoal('${t.uid}',this.checked,event)">
-   <div class="topic-title ${done?'done':''}">${esc(t.title)}${stats?` <span class="muted" style="font-weight:400">· ${stats.cards!=null?stats.cards+' cards':stats.questions!=null?stats.questions+' questões':stats.blocks!=null?stats.blocks+' blocos':'dados'}</span>`:''}</div>
+   <div class="topic-title ${done?'done':''}">${esc(t.title)}${stats&&stats.questions!=null?` <span class="muted" style="font-weight:400">· ${stats.questions} questões</span>`:''}</div>
    <div class="topic-origin">${esc(t.origin)}</div>
    <div><span class="type">${esc(t.type)}</span></div>
    <button class="open-topic" onclick="toggleTopic('${t.uid}')">⌄</button>

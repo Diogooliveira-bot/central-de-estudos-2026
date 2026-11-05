@@ -145,7 +145,7 @@ test('Entenda o termo: primeira ocorrência marcada e explicação por toque e t
 
 test('módulo editorial carregado na Central e no pacote offline com versões novas', () => {
   const boot = read('central-v119.html');
-  assert.match(boot, /ui\/acronyms-v1\.js\?v=20261101acr6'\)\+tag\('ui\/editorial-reading-v2\.js\?v=20261105teorias1'\)/);
+  assert.match(boot, /ui\/acronyms-v1\.js\?v=20261105fasea1'\)\+tag\('ui\/editorial-reading-v2\.js\?v=20261105fasea1'\)/);
   assert.match(read('index.html'), /ui\/universal-reader-v1\.js\?v=20261105teorias1/);
   const offline = JSON.parse(read('central-offline-files-v66172.json')).files;
   assert.ok(offline.includes('/ui/universal-reader-v1.js?v=20261105teorias1'));
@@ -263,4 +263,16 @@ test('bloco de tópicos com marcador e recuo vira lista, não quadro com rolagem
   w.CentralEditorialReading.process(w.document.querySelector('article'));
   const items = [...w.document.querySelectorAll('.bc-rebuilt-list li')].map(li => li.textContent);
   assert.deepEqual(items, ['Faixa normativa principal: CC, arts. 104 a 184.', 'Risco máximo: nulidade x anulabilidade; fraude contra credores x simulação.']);
+});
+
+test('sigla que é lista (LIMPE) não é expandida no meio da frase; nota de PDF fica oculta', () => {
+  const w = setup('<div class="cv-reader"><article><p>Base: PDF “1. Princípios Administrativos” · apoio: Lei 9.784/99.</p>' +
+    '<p>Do regime jurídico-administrativo ao LIMPE e aos princípios reconhecidos pela doutrina.</p></article></div>');
+  const article = w.document.querySelector('article');
+  w.CentralAcronyms?.process?.(article);
+  w.CentralEditorialReading.process(article);
+  const [note, text] = article.querySelectorAll('p');
+  assert.ok(note.classList.contains('bc-source-note'));
+  assert.match(text.textContent, /ao LIMPE e aos princípios/);
+  assert.equal(text.querySelector('abbr.bc-acr')?.title, 'Legalidade, Impessoalidade, Moralidade, Publicidade e Eficiência');
 });
