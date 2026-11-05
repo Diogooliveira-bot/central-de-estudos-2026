@@ -440,12 +440,36 @@
       if (/^Base:\s*PDF/i.test(p.textContent.trim()) && !p.closest('[contenteditable="true"]')) p.classList.add('bc-source-note');
     });
   }
+  /* Títulos no mesmo padrão em todas as apostilas (só classes; o texto não muda):
+     - "SESSÃO 01" vira etiqueta discreta acima do assunto (antes: faixa cinza);
+     - "Conteúdo Resumido/Completo" logo abaixo do nome do módulo vira etiqueta;
+     - títulos inteiros em MAIÚSCULAS ficam um pouco menores, para não ocuparem várias linhas. */
+  function normalizeHeadings(root) {
+    root.querySelectorAll('h1,h2,h3,h4').forEach(h => {
+      if (h.closest('[contenteditable="true"],.bc-iq,.bc-native-quiz-card')) return;
+      const t = h.textContent.replace(/\s+/g, ' ').trim();
+      if (/^SESS[ÃA]O\s+\d+$/i.test(t)) h.classList.add('bc-session-label');
+      else if (/^Conte[uú]do (?:Resumido|Completo)$/i.test(t)) h.classList.add('bc-kicker-heading');
+      else if (/^H[23]$/.test(h.tagName) && t.length >= 12 && (t.match(/[A-Za-zÀ-ÿ]/g) || []).length >= 8 &&
+        t === t.toLocaleUpperCase('pt-BR')) h.classList.add('bc-caps-heading');
+    });
+  }
+  /* Setas digitadas como "->" aparecem como "→". */
+  function arrows(root) {
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+      acceptNode: n => n.nodeValue.includes('->') && !n.parentElement?.closest('code,pre,textarea,input,[contenteditable="true"]') ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT
+    });
+    const nodes = []; for (let n = walker.nextNode(); n; n = walker.nextNode()) nodes.push(n);
+    nodes.forEach(n => { n.nodeValue = n.nodeValue.replace(/\s*->\s*/g, ' → '); });
+  }
   function process(root) {
     if (!(root instanceof Element) || root.closest('.visual-editor-v1,.block-editor,[contenteditable="true"]')) return;
     fixSymbolBullets(root);
     // Quadros de largura fixa: <pre …source-table> e os blocos do M03 de Civil (.bc-bens-table).
     root.querySelectorAll('pre[class*="source-table"],.bc-bens-table').forEach(convertPreTable);
     hideSourceNotes(root);
+    normalizeHeadings(root);
+    arrows(root);
     mergeSplitParagraphs(root);
     root.querySelectorAll('table').forEach(enhanceTable);
     markTerms(root);
@@ -459,6 +483,10 @@
     ':is(' + ROOTS + ') p{margin-block:0 .9em}',
     'tr.bc-repeated-head{display:none!important}',
     'p.bc-source-note{display:none!important}',
+    'html body :is(' + ROOTS + ') :is(h1,h2,h3,h4).bc-session-label{background:none!important;border:0!important;border-top:1px solid rgba(120,110,95,.28)!important;border-radius:0!important;box-shadow:none!important;padding:1.15em 0 0!important;margin:2.4em 0 .35em!important;font:700 .74rem/1.4 system-ui,-apple-system,"Segoe UI",sans-serif!important;letter-spacing:.14em!important;text-transform:uppercase!important;color:#0f7f81!important}',
+    'html body :is(' + ROOTS + ') :is(h1,h2,h3,h4).bc-kicker-heading{background:none!important;border:0!important;padding:0!important;margin:.2em 0 1.4em!important;font:700 .74rem/1.4 system-ui,-apple-system,"Segoe UI",sans-serif!important;letter-spacing:.14em!important;text-transform:uppercase!important;color:inherit!important;opacity:.62}',
+    'html body :is(' + ROOTS + ') h2.bc-caps-heading{font-size:1.28em!important;letter-spacing:.01em!important;line-height:1.3!important}',
+    'html body :is(' + ROOTS + ') h3.bc-caps-heading{font-size:1.06em!important;letter-spacing:.015em!important;line-height:1.35!important}',
     // Dificuldade das questões internas ("FÁCIL", "MÉDIA", "DIFÍCIL") como etiqueta, separada do enunciado.
     'details.question>summary .level{display:inline-block;margin:0 .6em .15em 0;padding:.12em .6em;border-radius:999px;font:700 .68em/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:.06em;vertical-align:.15em;background:#e3f2ec;color:#1d6a4c}',
     'details.question>summary .level.média,details.question>summary .level.media{background:#fdf1dc;color:#8a5a12}',
