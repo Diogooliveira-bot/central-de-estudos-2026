@@ -185,8 +185,12 @@ try{
  await disabledPage.close();
  const page=await browser.newPage();
  await page.route('**/api/auth?action=free-signup',async route=>route.fulfill({status:410,contentType:'application/json',body:JSON.stringify({error:'Link inválido, expirado ou utilizado'})}));
+ // A disponibilidade responde depois da confirmação: não pode trocar a mensagem do link.
+ await page.route('**/api/auth?action=free-signup-status',async route=>{await new Promise(r=>setTimeout(r,600));await route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({enabled:false,siteKey:null})})});
  await page.goto(root+'/cadastro-gratuito.html#token='+'A'.repeat(43));
  await page.getByText('Link inválido, expirado ou utilizado').waitFor();
+ await page.waitForTimeout(900);
+ assert.equal(await page.locator('#state').textContent(),'Link inválido, expirado ou utilizado','mensagem do link não pode ser sobrescrita');
  assert.equal(new URL(page.url()).hash,'','Token must be removed from visible URL');
  await page.close();
 

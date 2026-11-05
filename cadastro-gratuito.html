@@ -58,6 +58,9 @@ var form=document.getElementById('register'),state=document.getElementById('stat
 var captchaToken='',captchaExpected=false;
 if(location.hostname==='app.basecompleta.com.br')document.getElementById('marketingSiteLink').href='https://basecompleta.com.br/';
 fetch('/api/auth?action=free-signup-status',{cache:'no-store'}).then(function(r){return r.ok?r.json():null;}).then(function(config){
+ // Link de confirmação em andamento: a mensagem é a da confirmação (sucesso ou erro do link),
+ // não a da disponibilidade do formulário, que pode responder depois e sobrescrevê-la.
+ if(token)return;
  if(!config||!config.enabled){message('O cadastro gratuito ainda não está disponível. Se você já é aluno, utilize Entrar.','bad');return;}
  document.getElementById('signupPreviewNote').hidden=true;
  if(!config.whatsapp){['whatsappBlock','whatsappMarketingBlock'].forEach(function(id){var el=document.getElementById(id);el.hidden=true;el.querySelectorAll('input').forEach(function(i){i.value=i.type==='checkbox'?i.value:'';i.checked=false;i.disabled=true;});});}
@@ -82,7 +85,7 @@ fetch('/api/auth?action=free-signup-status',{cache:'no-store'}).then(function(r)
  };
  script.onerror=function(){message('O serviço de verificação de segurança está indisponível. Tente novamente.','bad')};
  document.head.appendChild(script);
-}).catch(function(){message('Não foi possível verificar a disponibilidade do cadastro. Tente novamente mais tarde.','bad')});
+}).catch(function(){if(token)return;message('Não foi possível verificar a disponibilidade do cadastro. Tente novamente mais tarde.','bad')});
 
 function message(s,b){state.textContent=s;state.className='state'+(b?' '+b:'')}
 async function post(body){var r=await fetch('/api/auth?action=free-signup',{method:'POST',cache:'no-store',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)}),j={};try{j=await r.json()}catch(_){}if(!r.ok)throw Error(j.error||'Não foi possível concluir o cadastro');return j}
