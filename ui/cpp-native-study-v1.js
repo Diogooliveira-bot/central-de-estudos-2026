@@ -72,6 +72,7 @@ async function open(n,kind,jump){
   const d=await load(n);if(active!==session)return;
   const body=reader.show(o,kind==='summary'?d.summaryHtml:d.completeHtml,toc,Number(localStorage.getItem(k(n,kind,'scroll'))||0),onScroll);
   bindQuestions(body,n,kind);
+  g.CppVisualPilot?.enhance(body,n,kind);
   if(jump)requestAnimationFrame(()=>requestAnimationFrame(()=>{if(active!==session)return;const q=body.querySelector('.cpp-native-question');(q?.previousElementSibling||q)?.scrollIntoView({block:'start'})}));
   localStorage.setItem('central-v6:last',JSON.stringify({cppModule:n,cppKind:kind,title:`Direito Processual Penal · M${String(n).padStart(2,'0')} · ${d.title}`,at:Date.now()}));
   g.renderContinue?.();
