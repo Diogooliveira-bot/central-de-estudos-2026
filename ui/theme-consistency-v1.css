@@ -1,0 +1,54 @@
+/* Base Completa — padrão visual único (Fase B).
+   1) O Início segue o tema de aparência escolhido pelo aluno, como Agenda, Progresso,
+      Filtros e Disciplinas (antes ficava sempre azul-claro, inclusive no tema Noturno).
+   2) Botões de ação usam a cor de botão do tema; as cores do QConcursos (laranja) e do TEC
+      (azul) ficam só nas etiquetas que identificam a plataforma.
+   Só apresentação: nenhum dado, texto ou ação muda. Carregado por último na Central.
+   Os seletores repetem "html.student-experience-v3.bc-ui-v1.bc-topnav[data-central-theme] body #appRoot #homeView"
+   para vencer as regras com !important de home-topnav-v1.css, home-minimal-a-v1.css e disciplinas-foco-v1.css. */
+
+/* 1) Início */
+html.student-experience-v3.bc-ui-v1.bc-topnav[data-central-theme] body #appRoot #homeView {
+  background: var(--bg) !important;
+  color: var(--text) !important;
+}
+html.student-experience-v3.bc-ui-v1.bc-topnav[data-central-theme] body #appRoot #homeView .home-today-card,
+html.student-experience-v3.bc-ui-v1.bc-topnav[data-central-theme] body #appRoot #homeView #studentWeekSummary,
+html.student-experience-v3.bc-ui-v1.bc-topnav[data-central-theme] body #appRoot #homeView #subjects > .subject {
+  background: var(--card) !important;
+  border-color: var(--border) !important;
+  color: var(--text) !important;
+}
+html.student-experience-v3.bc-ui-v1.bc-topnav[data-central-theme] body #appRoot #homeView .home-today-card :is(h2, h3, b, strong),
+html.student-experience-v3.bc-ui-v1.bc-topnav[data-central-theme] body #appRoot #homeView #subjects > .subject .subject-name {
+  color: var(--text) !important;
+}
+html.student-experience-v3.bc-ui-v1.bc-topnav[data-central-theme] body #appRoot #homeView .home-today-card :is(small, p),
+html.student-experience-v3.bc-ui-v1.bc-topnav[data-central-theme] body #appRoot #homeView #subjects > .subject :is(.bc-row-meta, .subject-count) {
+  color: var(--text-muted) !important;
+}
+/* Resumo da semana: o título é o <small> e o estado é o <b>; nos números, o inverso. */
+html.student-experience-v3.bc-ui-v1.bc-topnav[data-central-theme] body #appRoot #homeView #studentWeekSummary > div:first-child > small { color: var(--text) !important; }
+html.student-experience-v3.bc-ui-v1.bc-topnav[data-central-theme] body #appRoot #homeView #studentWeekSummary > div:first-child > b { color: var(--text-muted) !important; }
+html.student-experience-v3.bc-ui-v1.bc-topnav[data-central-theme] body #appRoot #homeView #studentWeekSummary span > b { color: var(--text) !important; }
+html.student-experience-v3.bc-ui-v1.bc-topnav[data-central-theme] body #appRoot #homeView #studentWeekSummary span > small { color: var(--text-muted) !important; }
+html.student-experience-v3.bc-ui-v1.bc-topnav[data-central-theme] body #appRoot #homeView > :is(h2, h3) {
+  color: var(--text) !important;
+}
+html.student-experience-v3.bc-ui-v1.bc-topnav[data-central-theme] body #appRoot #homeView .home-today-card .btn.sm {
+  background: transparent !important;
+  border-color: var(--border) !important;
+  color: var(--accent) !important;
+}
+/* Ícones das disciplinas numa cor só (antes alternavam sem significado). */
+html.student-experience-v3.bc-ui-v1.bc-topnav[data-central-theme] body #appRoot #homeView .bc-row-icon {
+  background: var(--button-bg) !important;
+  color: var(--button-text) !important;
+}
+
+/* 2) Central de Questões: ação principal na cor do tema; a plataforma segue na etiqueta. */
+html[data-central-theme] body .bcq-detail-head button {
+  background: var(--button-bg) !important;
+  border-color: var(--button-bg) !important;
+  color: var(--button-text) !important;
+}

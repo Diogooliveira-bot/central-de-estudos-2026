@@ -140,8 +140,10 @@
   // Texto justificado por padrão (decisão do proprietário); o aluno pode desligar
   // e a escolha fica guardada no aparelho, para todos os leitores.
   const JUSTIFY_KEY = 'base-completa:reading-justify:v1';
-  let justify = true;
-  try { justify = localStorage.getItem(JUSTIFY_KEY) !== '0'; } catch (_) {}
+  // Padrão: justificado no computador; no celular, alinhado à esquerda (justificar em tela
+  // estreita abre buracos entre as palavras). A escolha do aluno no botão sempre prevalece.
+  let justify = !(g.matchMedia && g.matchMedia('(max-width: 640px)').matches);
+  try { const saved = localStorage.getItem(JUSTIFY_KEY); if (saved === '0' || saved === '1') justify = saved === '1'; } catch (_) {}
   function applyJustify() {
     document.documentElement.classList.toggle('bc-reading-justify', justify);
     document.querySelectorAll('.bc-std-justify').forEach(b => {

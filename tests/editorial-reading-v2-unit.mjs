@@ -145,7 +145,7 @@ test('Entenda o termo: primeira ocorrência marcada e explicação por toque e t
 
 test('módulo editorial carregado na Central e no pacote offline com versões novas', () => {
   const boot = read('central-v119.html');
-  assert.match(boot, /ui\/acronyms-v1\.js\?v=20261105fasea1'\)\+tag\('ui\/editorial-reading-v2\.js\?v=20261105fasea1'\)/);
+  assert.match(boot, /ui\/acronyms-v1\.js\?v=20261105fasea1'\)\+tag\('ui\/editorial-reading-v2\.js\?v=20261105faseb1'\)/);
   assert.match(read('index.html'), /ui\/universal-reader-v1\.js\?v=20261105teorias1/);
   const offline = JSON.parse(read('central-offline-files-v66172.json')).files;
   assert.ok(offline.includes('/ui/universal-reader-v1.js?v=20261105teorias1'));
@@ -275,4 +275,18 @@ test('sigla que é lista (LIMPE) não é expandida no meio da frase; nota de PDF
   assert.ok(note.classList.contains('bc-source-note'));
   assert.match(text.textContent, /ao LIMPE e aos princípios/);
   assert.equal(text.querySelector('abbr.bc-acr')?.title, 'Legalidade, Impessoalidade, Moralidade, Publicidade e Eficiência');
+});
+
+test('títulos padronizados: "SESSÃO 01" e "Conteúdo Resumido" viram etiqueta, MAIÚSCULAS ficam menores, "->" vira "→"', () => {
+  const w = setup('<div class="cv-reader"><article><h2>Conteúdo Resumido</h2><h2>SESSÃO 01</h2><h3>Regime jurídico-administrativo</h3>' +
+    '<h3>4.2. QUATRO PERGUNTAS QUE NÃO DEVEM SER MISTURADAS</h3><h2>CPC</h2><p>JURISDIÇÃO -> DEMANDA -> PROCESSO</p><pre>a -> b</pre></article></div>');
+  w.CentralEditorialReading.process(w.document.querySelector('article'));
+  const [kicker, session, normal, caps, short] = w.document.querySelectorAll('h2,h3');
+  assert.ok(kicker.classList.contains('bc-kicker-heading'));
+  assert.ok(session.classList.contains('bc-session-label'));
+  assert.equal(normal.className, '');
+  assert.ok(caps.classList.contains('bc-caps-heading'));
+  assert.equal(short.className, '', 'sigla curta não é tratada como título em maiúsculas');
+  assert.equal(w.document.querySelector('p').textContent, 'JURISDIÇÃO → DEMANDA → PROCESSO');
+  assert.equal(w.document.querySelector('pre').textContent, 'a -> b', 'código/quadro de largura fixa não muda');
 });
