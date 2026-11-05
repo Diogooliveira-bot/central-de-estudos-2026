@@ -23,6 +23,42 @@ function render(){if(g.CentralDisciplineLoader&&!g.CentralDisciplineLoader.isRea
 function openModule(n){n=Number(n);if(!BYNUM[n])return;localStorage.setItem(OPEN+n,'1');render();document.querySelector('[data-cpp-native-module="'+n+'"]')?.scrollIntoView({block:'start',behavior:'auto'});}
 function toggle(n){const kk=OPEN+n;localStorage.setItem(kk,localStorage.getItem(kk)==='1'?'0':'1');render()}
 let packedPromise=null;function loadPacked(){if(packedPromise)return packedPromise;packedPromise=(async()=>{if(!g.CPP_NATIVE_PACKED_B64){await new Promise((res,rej)=>{const s=document.createElement('script');s.src='/content/cpp/cpp-native-content-packed.js?v=cpp20261005prod1';s.onload=res;s.onerror=()=>rej(new Error('Falha ao carregar conteúdo CPP'));document.head.appendChild(s)})}if(typeof DecompressionStream!=='function')throw new Error('Navegador sem suporte ao leitor compactado');const bin=Uint8Array.from(atob(g.CPP_NATIVE_PACKED_B64),c=>c.charCodeAt(0)),stream=new Blob([bin]).stream().pipeThrough(new DecompressionStream('gzip')),text=await new Response(stream).text();Object.assign(CONTENT,JSON.parse(text));return CONTENT})().catch(e=>{packedPromise=null;throw e});return packedPromise}function load(n){const uid=BYNUM[n].uid;if(CONTENT[uid])return Promise.resolve(CONTENT[uid]);return loadPacked().then(()=>CONTENT[uid]||Promise.reject(new Error('Conteúdo CPP M'+n+' não localizado')))}
+// Convert only complete question blocks; the original text remains available if parsing fails.
+function questionText(node){const copy=node.cloneNode(true);copy.querySelectorAll('summary,.lei-seca').forEach(el=>el.remove());copy.querySelectorAll('br').forEach(el=>el.replaceWith('\n'));return copy.textContent.trim()}
+function questionBlocks(body){
+ return [...body.querySelectorAll('h1,h2,h3,h4,h5,h6')].filter(h=>/\bquest[aã]o\s+\d+\b/i.test(h.textContent)).map(h=>{
+  const nodes=[];let next=h.nextElementSibling;
+  while(next&&!/^H[1-6]$/.test(next.tagName)&&next.tagName!=='HR'){nodes.push(next);next=next.nextElementSibling}
+  const text=nodes.map(questionText).join('\n'),key=/Gabarito:\s*([A-E])\b/i.exec(text);
+  if(!key)return null;
+  const before=text.slice(0,key.index),parts=[...before.matchAll(/(?:^|\n)\s*([A-E])[).]\s*/g)];
+  if(parts.length<2||parts.length>5||parts.map(p=>p[1]).join('')!=='ABCDE'.slice(0,parts.length)||key[1].toUpperCase().charCodeAt(0)-65>=parts.length)return null;
+  const prompt=before.slice(0,parts[0].index).trim(),options=parts.map((p,i)=>before.slice(p.index+p[0].length,parts[i+1]?.index??before.length).trim());
+  const explanation=/Explica[çc][aã]o:\s*([\s\S]*?)(?:\n\s*Dificuldade:|$)/i.exec(text.slice(key.index))?.[1]?.trim();
+  if(!prompt||options.some(x=>!x)||!explanation)return null;
+  return {heading:h,nodes,id:Number(/quest[aã]o\s+(\d+)/i.exec(h.textContent)[1]),prompt,options,answer:key[1].toUpperCase().charCodeAt(0)-65,explanation};
+ }).filter(Boolean);
+}
+function bindQuestions(body,n,kind){
+ const questions=questionBlocks(body);if(!questions.length)return;
+ const storageKey=k(n,kind,'answers');let saved={};try{saved=JSON.parse(localStorage.getItem(storageKey)||'{}')||{}}catch(_){}
+ if(typeof saved!=='object'||Array.isArray(saved))saved={};
+ questions.forEach(q=>{
+  const signature=JSON.stringify([q.prompt,q.options,q.answer]);
+  let selected=saved[q.id]?.signature===signature&&Number.isInteger(saved[q.id]?.selected)&&saved[q.id].selected>=0&&saved[q.id].selected<q.options.length?saved[q.id].selected:null;
+  const card=document.createElement('section');card.className='bc-native-quiz-card cpp-native-question';card.dataset.cppQuestion=String(q.id);
+  card.setAttribute('aria-label',q.heading.textContent.trim());
+  q.nodes[0].before(card);q.nodes.forEach(el=>el.remove());
+  function draw(){
+   card.innerHTML='<p style="white-space:pre-line">'+esc(q.prompt)+'</p><div class="bc-native-quiz-options">'+q.options.map((option,i)=>'<button type="button" class="bc-native-quiz-option'+(selected!==null?(i===q.answer?' correct':i===selected?' wrong':''):'')+'" data-cpp-option="'+i+'" '+(selected!==null?'disabled':'')+'><span>'+String.fromCharCode(65+i)+'</span>'+esc(option)+'</button>').join('')+'</div><div class="bc-native-quiz-feedback '+(selected!==null?(selected===q.answer?'ok':'bad'):'')+'" role="status">'+(selected===null?'Escolha uma alternativa para conferir sua resposta.':'<b>'+(selected===q.answer?'✓ Correto':'✕ Incorreto')+' · Gabarito: '+String.fromCharCode(65+q.answer)+'</b><p>'+esc(q.explanation)+'</p><button type="button" data-cpp-retry>Refazer questão</button>')+'</div>';
+   card.querySelectorAll('[data-cpp-option]').forEach(button=>button.addEventListener('click',()=>{
+    if(selected!==null)return;selected=Number(button.dataset.cppOption);saved[q.id]={selected,signature};try{localStorage.setItem(storageKey,JSON.stringify(saved))}catch(_){}draw();card.querySelector('[data-cpp-retry]')?.focus({preventScroll:true});
+   }));
+   card.querySelector('[data-cpp-retry]')?.addEventListener('click',()=>{selected=null;delete saved[q.id];try{localStorage.setItem(storageKey,JSON.stringify(saved))}catch(_){}draw();card.querySelector('[data-cpp-option]')?.focus({preventScroll:true})});
+  }
+  draw();
+ });
+}
 let active=null;function toc(body){return [...body.querySelectorAll('h1,h2,h3')].slice(0,50).map((h,i)=>{if(!h.id)h.id='cpp-native-h-'+i;return `<button onclick="document.getElementById('${h.id}').scrollIntoView({behavior:'smooth',block:'start'})">${h.textContent.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]))}</button>`}).join('')}
 async function open(n,kind,jump){
  n=Number(n);if(!BYNUM[n])return;
@@ -35,7 +71,8 @@ async function open(n,kind,jump){
  try{
   const d=await load(n);if(active!==session)return;
   const body=reader.show(o,kind==='summary'?d.summaryHtml:d.completeHtml,toc,Number(localStorage.getItem(k(n,kind,'scroll'))||0),onScroll);
-  if(jump)requestAnimationFrame(()=>requestAnimationFrame(()=>{if(active!==session)return;const q=[...body.querySelectorAll('h1,h2,h3')].find(h=>/quest/i.test(h.textContent));q?.scrollIntoView({block:'start'})}));
+  bindQuestions(body,n,kind);
+  if(jump)requestAnimationFrame(()=>requestAnimationFrame(()=>{if(active!==session)return;const q=body.querySelector('.cpp-native-question');(q?.previousElementSibling||q)?.scrollIntoView({block:'start'})}));
   localStorage.setItem('central-v6:last',JSON.stringify({cppModule:n,cppKind:kind,title:`Direito Processual Penal · M${String(n).padStart(2,'0')} · ${d.title}`,at:Date.now()}));
   g.renderContinue?.();
  }catch(error){if(active===session){console.warn('[CPP reader]',error);reader.fail(o,()=>open(n,kind,jump))}}
