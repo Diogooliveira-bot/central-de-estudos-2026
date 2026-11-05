@@ -15,19 +15,27 @@ function source(){return global.BASE_NATIVE_CONTENT?.penal?.m01||null}
 function storageKey(part){return STORAGE_PREFIX+':'+part}
 
 function cleanLines(raw,mode){
-  const lines=String(raw||'').replace(/\r/g,'').split('\n').map(norm);
+  let lines=String(raw||'').replace(/\r/g,'').split('\n').map(norm)
+    // Rodapé de página do PDF grudado no fim de uma linha ("…ESCA.BASE COMPLETA | DIREITO PENAL | PEN M1 Resumo…").
+    .map(line=>line.replace(/\s*BASE COMPLETA \| DIREITO PENAL \| PEN M1 Resumo estruturado.*$/i,''));
+  // Resumo: a capa do PDF (título quebrado em linhas e lista de seções) fica de fora; começa em "1 VISÃO GERAL".
+  if(mode==='summary'){const start=lines.findIndex(l=>/^1\s+VIS[AÃ]O GERAL$/i.test(l));if(start>0)lines=lines.slice(start)}
   const out=[];
-  let skipOldSummaryReview=false;
+  let skipOldSummaryReview=false,afterFooter=false;
   for(let line of lines){
-    if(mode==='summary' && /^REVISAO ATIVA$/i.test(line)){skipOldSummaryReview=true;continue}
-    if(mode==='summary' && /^REVISAO DE 60 SEGUNDOS$/i.test(line)){skipOldSummaryReview=false;out.push(line);continue}
+    // Aceita o texto com e sem acentos (o resumo do M01 foi reacentuado).
+    if(mode==='summary' && /^REVIS[AÃ]O ATIVA$/i.test(line)){skipOldSummaryReview=true;continue}
+    if(mode==='summary' && /^REVIS[AÃ]O DE 60 SEGUNDOS$/i.test(line)){skipOldSummaryReview=false;out.push(line);continue}
     if(skipOldSummaryReview)continue;
     if(!line){out.push('');continue}
     if(/^BASE COMPLETA(?:\s*[|•-]|$)/i.test(line))continue;
     if(/^D\s*IRE\s*ITO PENAL\s*•\s*M0?1$/i.test(line))continue;
     if(/^\d+\s*\/\s*\d+$/.test(line))continue;
     if(/^P[aá]gina\s+\d+$/i.test(line))continue;
-    if(/^Conteudo restrito ao PEN M1/i.test(line))continue;
+    if(/^Conte[uú]do restrito ao PEN M1/i.test(line)){afterFooter=true;continue}
+    // Cabeçalho de página do PDF logo após o rodapé ("TEORIA ESSENCIAL", "ARTIGOS PARA DECORAR + PEGADINHAS DE" / "PROVA").
+    if(afterFooter&&mode==='summary'&&/^[A-ZÀ-Ý][A-ZÀ-Ý\s+]*$/.test(line)&&line.length<=60)continue;
+    afterFooter=false;
     out.push(line);
   }
   return out;
@@ -39,6 +47,8 @@ function headingInfo(line){
   if(m)return {level:3,text:l};
   m=l.match(/^(\d+)\.?\s+(.{3,140})$/);
   if(m && !/^\d+\s*\/\s*\d+/.test(l) && !/^\d+\s+(Quais|Qual|A |O |Como |Quando |Pequeno|Pessoalidade|Na )/i.test(l)){
+    // "6 INSIGNIFICÂNCIA…" é seção; "1. Mínima ofensividade" (com ponto e em caixa normal) é item dentro dela.
+    if(/^\d+\.\s/.test(l)&&m[2]!==m[2].toUpperCase())return {level:3,text:l};
     return {level:2,text:l};
   }
   if(/^(VISÃO GERAL|VISAO GERAL|REVISÃO ATIVA|REVISAO ATIVA|ARTIGOS PARA DECORAR|PEGADINHAS DE PROVA|MAPA DO MÓDULO|MAPA DO MODULO|TEORIA ESSENCIAL)$/i.test(l)){
@@ -51,7 +61,7 @@ function calloutType(line){
   if(/^(✅\s*)?EXEMPLO/.test(l))return ['example','Exemplo'];
   if(/PEGADINHA/.test(l))return ['trap','Pegadinha'];
   if(/^(⚖️\s*)?LEI SECA/.test(l))return ['law','Lei seca'];
-  if(/^(DECORE|MEMÓRIA|MEMORIA|MNEMÔNICO|MNEMONICO|REGRA DE OURO|IDEIA-CENTRAL|IDEIA CENTRAL|FÓRMULA|FORMULA|MEMORIZACAO RAPIDA)/.test(l))return ['memory',norm(line)];
+  if(/^(DECORE|MEMÓRIA|MEMORIA|MNEMÔNICO|MNEMONICO|REGRA DE OURO|IDEIA-CENTRAL|IDEIA CENTRAL|FÓRMULA|FORMULA|MEMORIZACAO RAPIDA|MEMORIZAÇÃO RÁPIDA)/.test(l))return ['memory',norm(line)];
   if(/^(STF|STJ|JURISPRUDÊNCIA|JURISPRUDENCIA|ATUALIZAÇÃO|ATUALIZACAO)/.test(l))return ['case',norm(line)];
   if(/^(COMPARAÇÃO|COMPARACAO|ATENÇÃO|ATENCAO|PROVA|CUIDADO|FRONTEIRA DO MÓDULO|FRONTEIRA DO MODULO)/.test(l))return ['case',norm(line)];
   return null;
@@ -84,7 +94,9 @@ function parse(raw,mode){
         if(headingInfo(next)||calloutType(next)||looksTitle(next))break;
         body.push(next);i=j;
       }
-      blocks.push({type:'callout',kind:co[0],label:co[1],text:body.join(' ')});
+      // Rótulo sem texto logo abaixo (o conteúdo vem num quadro do PDF): vira subtítulo, não quadro vazio.
+      if(!body.length)blocks.push({type:'h',level:3,text:norm(line)});
+      else blocks.push({type:'callout',kind:co[0],label:co[1],text:body.join(' ')});
       continue;
     }
     if(isBullet(line)){
@@ -95,6 +107,16 @@ function parse(raw,mode){
       continue;
     }
     if(looksTitle(line)&&mode==='summary'){flush();blocks.push({type:'h',level:3,text:line});continue}
+    // Resumo: rótulo curto numa linha e a explicação nas seguintes ("Legalidade" / "Crime e pena…")
+    // vira item com o rótulo em destaque, em vez de "Legalidade Crime e pena…" emendado.
+    if(mode==='summary'&&/^[A-ZÀ-Ý][a-zà-ÿ-]+(?: [a-zà-ÿ-]+){0,2}$/.test(line)&&line.length<=32&&/^[A-ZÀ-Ý]/.test(lines[i+1]||'')&&!/^(?:CF|CP|CPP|CC|Lei|Art)\b/.test(lines[i+1]||'')){
+      flush();para=[];blocks.push({type:'lp',label:line,text:''});
+      const first=i+1;
+      for(let j=first;j<lines.length;j++){const next=lines[j];if(!next||headingInfo(next)||calloutType(next)||looksTitle(next))break;
+        if(j>first&&/^[A-ZÀ-Ý][a-zà-ÿ-]+(?: [a-zà-ÿ-]+){0,2}$/.test(next)&&next.length<=32&&/[.!?]$/.test(lines[j-1]))break;
+        blocks[blocks.length-1].text+=(blocks[blocks.length-1].text?' ':'')+next;i=j}
+      continue;
+    }
     para.push(line);
   }
   flush();
@@ -140,6 +162,7 @@ function buildHtml(data,mode){
     }
     if(b.type==='lead')return '<p class="lead">'+esc(b.text)+'</p>';
     if(b.type==='p')return '<p>'+esc(b.text)+'</p>';
+    if(b.type==='lp')return '<p class="bc-native-labelled"><strong>'+esc(b.label)+'.</strong> '+esc(b.text)+'</p>';
     if(b.type==='ul')return '<ul>'+b.items.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul>';
     if(b.type==='callout')return '<aside class="bc-native-callout '+b.kind+'"><b>'+esc(b.label)+'</b><div>'+esc(b.text)+'</div></aside>';
     return '';
