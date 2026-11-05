@@ -209,6 +209,37 @@
     state.stage='choose';state.subject='';state.moduleKey='';state.moduleTitle='';state.moduleNumber='';
     schedule();setTimeout(()=> $('disciplinasHome')?.scrollIntoView({behavior:'instant',block:'start'}),30);
   }
+  function lastDestination(last){
+    if(!last||typeof last!=='object'||global.CentralDisciplineAvailability?.isRemovedRecord(last))return null;
+    for(const [field,subject] of Object.entries({cppModule:'cpp',civilModule:'civil',cfWeek:'cf',penalWeek:'penal',cpcWeek:'cpc',ptAutoModule:'pt',ptModule:'pt',rlmModule:'rlm'})){
+      if(last[field])return {subject,module:String(last[field])};
+    }
+    const topic=last.topicUid&&global.topicByUid?.(last.topicUid);
+    return topic?{subject:topic.s.id,module:last.topicUid,number:topic.s.topics.indexOf(topic.t)+1}:null;
+  }
+  async function resumeLast(){
+    let last;try{last=JSON.parse(localStorage.getItem('central-v6:last')||'null')}catch(_){}
+    const destination=lastDestination(last);
+    if(!destination){
+      if(last&&(last.url||last.tool))return legacyResume?.();
+      global.openHome?.();backToSubjects();return false;
+    }
+    global.openHome?.();chooseSubject(destination.subject);
+    try{
+      await global.CentralDisciplineLoader?.load(destination.subject);
+      const modules=moduleNodes(current());
+      const exact=modules.findIndex(m=>m.key===destination.module||[...m.box.attributes].some(a=>a.name.startsWith('data-')&&a.value===destination.module));
+      const number=destination.number||Number(destination.module.match(/(\d+)$/)?.[1]);
+      const index=exact>=0?exact:(Number.isInteger(number)&&number>0&&number<=modules.length?number-1:-1);
+      if(index<0){schedule();return false;}
+      openModule(index);
+      // Preserve native readers and their saved scroll position after revealing the module.
+      legacyResume?.();
+      return true;
+    }catch(_){schedule();return false;}
+  }
+  const legacyResume=global.centralResumeLast;
+  global.centralResumeLast=resumeLast;
   function init(){
     if(!home()||!root())return;
     nodes();render();
@@ -260,7 +291,7 @@
     },true);
     global.addEventListener('popstate',schedule);
   }
-  global.BaseCompletaFocusNavigation={state,chooseSubject,backToModules,backToSubjects,openModule};
+  global.BaseCompletaFocusNavigation={state,chooseSubject,backToModules,backToSubjects,openModule,resumeLast};
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});
   else init();
 })(window);

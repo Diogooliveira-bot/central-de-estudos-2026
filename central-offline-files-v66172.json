@@ -226,7 +226,7 @@
     "/ui/student-experience-v3.css?v=20261028-single-loading-v1-nav4-mais1-aa1-back1",
     "/ui/student-ux-core-v3.js?v=20261023-remove-labor-disciplines-v1",
     "/ui/student-shell-v3.js?v=20261105nav1",
-    "/ui/student-dashboard-v3.js?v=20261101start1",
+    "/ui/student-dashboard-v3.js?v=20261105resume1",
     "/ui/student-plan-v3.js?v=20261019-qc-catalog1",
     "/ui/external-question-filters-v1.css?v=20261022-cf-m08-m15-apostilas-v1",
     "/ui/external-question-filters-v1.js?v=20261028-single-loading-v1-mais1",
@@ -242,8 +242,8 @@
     "/ui/available-disciplines-v1.js?v=20261023-remove-labor-disciplines-v1",
     "/ui/home-minimal-a-v1.css?v=20261101oficial1",
     "/assets/mascote-oficial-estudando.png?v=20261101-oficial1",
-    "/ui/disciplinas-foco-v1.css?v=20261102-loading-ui1",
+    "/ui/disciplinas-foco-v1.css?v=20261105resume1",
     "/ui/theme-consistency-v1.css?v=20261105faseb1",
-    "/ui/disciplinas-foco-v1.js?v=20261102-loading-ui1"
+    "/ui/disciplinas-foco-v1.js?v=20261105resume1"
   ]
 }

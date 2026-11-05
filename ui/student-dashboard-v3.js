@@ -48,7 +48,7 @@
     const last = readLast();
     if (last && typeof last === 'object') return {
       eyebrow:'Continuar de onde parou', title:friendlyLastTitle(last),
-      meta:'Seu progresso foi salvo · cerca de 25 min', action:'resume', label:'Continuar estudo',
+      meta:Number.isFinite(Number(last.at)) && Number(last.at)>0 ? 'Último acesso: '+new Date(Number(last.at)).toLocaleString('pt-BR') : 'Retome o último conteúdo acessado', action:'resume', label:'Continuar estudo',
     };
     const list = subjects().filter((subject) => subject.id !== 'rlm');
     let selected = list[0]; let moduleNumber = 1;
