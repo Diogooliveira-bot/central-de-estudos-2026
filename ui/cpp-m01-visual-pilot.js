@@ -1,6 +1,21 @@
 /* Visual editorial layer for all complete CPP modules. Source blocks are preserved. */
 (function(g){
  'use strict';
+ function addLiteralLaw(article,n){
+  const laws=g.CPP_VISUAL_LAW?.modules[n];if(!laws?.length||article.querySelector('.cppv-law-library'))return;
+  const section=document.createElement('section');section.className='cppv-law-library';
+  const title=document.createElement('h2');title.textContent='Lei seca — redação literal';
+  const intro=document.createElement('p');intro.textContent='Dispositivos centrais para acompanhar a leitura. O texto da lei aparece abaixo; as explicações, a doutrina e as interpretações dos tribunais continuam nas respectivas seções da apostila. As notas e remissões da legislação foram preservadas.';
+  section.append(title,intro);
+  laws.forEach((law,i)=>{
+   const box=document.createElement('details');box.className='cppv-literal-law';box.open=i===0;
+   const summary=document.createElement('summary');summary.textContent=law.label+' · Ler texto da lei';
+   const text=document.createElement('blockquote');law.paragraphs.forEach(line=>{const p=document.createElement('p');p.textContent=line;text.append(p)});
+   const link=document.createElement('a');link.href=law.officialUrl;link.target='_blank';link.rel='noopener noreferrer';link.textContent='Consultar fonte oficial';
+   box.append(summary,text,link);section.append(box);
+  });
+  article.querySelector('.cppv-hero')?.after(section);
+ }
  const routes={2:['Lei no tempo','Lei no espaço','Interpretação'],3:['Investigação','Características','Controle'],4:['Ação pública','Ação privada','Condições'],5:['Juiz','Partes','Auxiliares'],6:['Jurisdição','Competência','Conflitos'],7:['Prejudiciais','Exceções','Incidentes'],8:['Prejuízo','Classificação','Consequências'],9:['Atos','Prazos','Contagem'],10:['Citação','Intimação','Efeitos'],11:['Estrutura','Fundamentação','Decisões'],12:['Prova','Limites','Valoração'],13:['Cautelares','Flagrante','Controle'],14:['Preventiva','Alternativas','Liberdade'],15:['Ritos','Defesa','Julgamento'],16:['Princípios','Fases','Plenário'],17:['Ritos especiais','Particularidades','Comparações'],18:['Âmbito','Defesa preliminar','Procedimento'],19:['Admissibilidade','Princípios','Efeitos'],20:['Cabimento','Prazos','Efeitos'],21:['Competência','Procedimento','Soluções consensuais'],22:['Habeas corpus','Cabimento','Outras ações']};
  function general(body,n){
   const article=body.querySelector('.bc-native-article'),module=g.CPP_NATIVE_INDEX?.modules.find(m=>m.number===n);
@@ -35,6 +50,7 @@
   const firstQuestion=article.querySelector('.cpp-native-question');
   if(firstQuestion){const {s,grid}=section('ANTES DE RESPONDER','Recupere o caminho do módulo');topics.forEach((topic,i)=>tile(grid,topic,['Explique o tema com suas palavras e confira as regras, distinções e exceções na teoria.'],i));const questionHeading=firstQuestion.previousElementSibling;const sectionHeading=questionHeading?.previousElementSibling;(/questões.*fixação|questões.*internas/i.test(sectionHeading?.textContent||'')?sectionHeading:questionHeading||firstQuestion).before(s);}
   styleCallouts(article);
+  addLiteralLaw(article,n);
  }
  function styleCallouts(article){
   article.querySelectorAll('div,aside,blockquote').forEach(el=>{
@@ -90,6 +106,7 @@
   insertBeforeHeading(/^4\. 10 QUESTÕES/,visual('ANTES DE RESPONDER','Recupere o caminho do módulo',[
    ['Conceito','Explique as dimensões instrumental e garantidora.'],['Sistemas','Diferencie concentração e separação de funções.'],['Garantias','Relacione cada garantia à sua função no processo.']
   ]));
+  addLiteralLaw(article,1);
  }
  g.CppVisualPilot={enhance};
 })(window);

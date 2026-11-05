@@ -14,7 +14,7 @@ function setup(){
  w.requestAnimationFrame=()=>0;
  w.HTMLElement.prototype.scrollIntoView=function(){};
  w.CPP_NATIVE_CONTENT=content;
- for(const p of ['content/cpp/cpp-native-index.js','ui/native-reading-session.js','ui/cpp-m01-visual-pilot.js','ui/cpp-native-study-v1.js','ui/reader-questions-v1.js'])w.eval(read(p));
+ for(const p of ['content/cpp/cpp-native-index.js','content/cpp/cpp-visual-law.js','ui/native-reading-session.js','ui/cpp-m01-visual-pilot.js','ui/cpp-native-study-v1.js','ui/reader-questions-v1.js'])w.eval(read(p));
  return {dom,w};
 }
 test('CPP M01–M22: as 330 questões originais oferecem alternativas e correção',async()=>{
@@ -53,6 +53,13 @@ test('CPP visual: 22 completas preservam texto e tabelas, com quadros inteiros e
    const article=w.document.querySelector('.cpp-visual-pilot');
    assert.ok(article,d.uid);
    assert.equal(article.querySelectorAll('.cppv-hero').length,1);
+   const lawBlocks=[...article.querySelectorAll('.cppv-literal-law')];
+   assert.equal(lawBlocks.length,w.CPP_VISUAL_LAW.modules[d.number].length);
+   lawBlocks.forEach((box,i)=>{
+    const source=w.CPP_VISUAL_LAW.modules[d.number][i];
+    assert.deepEqual([...box.querySelectorAll('blockquote p')].map(p=>p.textContent),[...source.paragraphs]);
+    assert.match(box.querySelector('a').href,/^https:\/\/www2\.camara\.leg\.br\//);
+   });
    assert.ok(article.querySelectorAll('.cppv-scheme').length>=3,d.uid);
    const original=new JSDOM(d.completeHtml).window.document;
    const tables=[...original.querySelectorAll('table')].map(t=>t.textContent);
